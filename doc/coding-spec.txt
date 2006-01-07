@@ -1,0 +1,171 @@
+$Id$
+
+              Vidalia Coding and Repository Specification
+
+0. Introduction
+  
+  This document is intended to loosely specify coding conventions followed in
+  Vidalia code, as well as conventions used in Vidalia's Subversion
+  repository.
+
+1. Repository Organization
+
+1.1. Subversion Location
+  
+  Vidalia's repository supports anonymous checkout. You can grab the current
+  Vidalia source via:
+
+    svn co svn://svn.seul.org/svn/vidalia/
+    
+1.2 Directory Layout
+
+  The following are the current directories found in Vidalia's SVN repository
+  and a general decription of their intended contents:
+  
+     ./releases:
+
+        Snapshots of all Vidalia releases will be contained in a sub-directory
+        of ./releases, named according to the Vidalia version specification.
+        For example, ./releases/0.0.1-alpha/ would contain the 0.0.1-alpha
+        release of Vidalia.
+  
+     ./trunk:
+
+        Contains the main branch of Vidalia's source code.
+
+     ./trunk/doc:
+
+        Contains Vidalia's documentation, such as licensing information,
+        readme files, todo lists, etc.
+
+     ./trunk/src:
+
+        All Vidalia source code will be contained under this directory.
+
+     ./trunk/src/config:
+
+        Source code pertaining to storing and retrieving Vidalia's
+        configuration and settings information will be stored in this
+        directory.
+
+     ./trunk/src/control:
+
+        Code in this directory implements Tor's control protocol. It also
+        handles things such as starting and stopping Tor and checking the
+        status of the Tor process.
+
+     ./trunk/src/gui:
+
+       This directory contains code that implements the GUI components of
+       Vidalia. Whenever possible and sane, each component should be placed in
+       an appropriately-named subdirectory of ./trunk/src/gui.
+    
+    ./trunk/src/util:
+
+       If a source file doesn't belong in the previous directories, it should
+       go here. This directory will containg various utility functions, such
+       as date or time parsing, custom string manipulation functions, etc. If
+       a particular utility has multiple source files, they should all be
+       placed in a subdirectory. For example, if there were several source
+       files that implemented various string manipulation functions, they
+       could go in ./trunk/src/util/string.
+
+2. Coding Conventions
+  
+  This section aims to provide a small overview of coding conventions used in
+  Vidalia, to keep the look of the code consistent between developers and
+  contributors. Since it would be impossible to specify all aspects of coding
+  here, common sense should be employed for things not specified below.
+
+2.1. Naming Conventions
+
+2.1.1. Source File Names
+  
+  C++ classes should be divided in to a <classname>.h file, containing the
+  class declarations, and a <classname>.cpp file containg the class
+  implementation. Each .cpp file should implement only one class.
+
+  Source files that do not implement a C++ class should be named logically.
+  For example, threading code would go in thread.cpp and thread.h.
+  
+  Filenames should be all lower case to prevent potential cross-platform
+  compilation issues due to Windows being case insensitive as opposed to
+  nearly every OS being case sensitive.
+
+2.1.2. Class Names
+
+  Class names should begin with a capital letter. If a name is a combination
+  of distinct words, each word should be capitalized. Example:
+
+    class MyClass
+    {
+    }
+
+2.1.3. Method Names
+  
+  Method names should begin with a lower case letter. If a method name is a
+  combination of distint words, each word should be capitalized. Example:
+
+    int MyClass::someMethod(int foo)
+    {
+    }
+    
+2.1.4. Variable Names
+
+  Variable names should follow a convention similar to method names. Variable
+  names should be descriptive if their purpose is non-obvious.
+  
+2.2. Comments
+
+  Comments should be standard C style comments. For example:
+
+    int fooCounter;  /* Comment about counting foo */
+
+  Multi-line comments should be formatted as:
+
+    /*
+      This section of code is potentially confusing or ambiguous, so here is a
+      long comment that takes up multiple lines.
+    */
+
+2.3. Indentation
+  
+  All source code should follow these conventions:
+  
+    1. Tabs should be 2 characters wide. 
+    2. Your editor should be set to replace tabs with spaces. 
+    3. Lines should be less than 80 characters wide whenever possible.
+
+2.4. Bracing
+
+2.4.1. Functions
+
+  Opening and closing braces for functions should be placed at column 1. For
+  example:
+
+     void Foo::Bar(void)
+     {
+     }
+
+2.4.2. Loops
+
+  Braces for loops should be formatted as follows:
+     
+     for (i = 0; i < 10; i++) {
+       /* Do something ten times */
+     }
+
+2.4.3. if-else Statements
+
+  The `else' portion of an if-else statement, if present, should begin on the
+  same line as the closing brace of the `if' portion.
+
+     if (foo == bar) {
+       /* Do something */
+     } else {
+       /* My foo doesn't equal bar */
+     }
+
+2.5. Parentheses
+
+   See the previous code examples to see how parentheses should be used.
