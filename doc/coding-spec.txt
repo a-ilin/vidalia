@@ -99,7 +99,7 @@ $Id$
 
     class MyClass
     {
-    }
+    };
 
 2.1.3. Method Names
   
@@ -114,6 +114,15 @@ $Id$
 
   Variable names should follow a convention similar to method names. Variable
   names should be descriptive if their purpose is non-obvious.
+
+  Variables that are members of a class should have a leading underscore to
+  distinguish them from local variables in a method. For example:
+
+  class MyClass
+  {
+    private:
+      int _myVariable;
+  };
   
 2.2. Comments
 
