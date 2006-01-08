@@ -28,10 +28,10 @@
 MainWindow::MainWindow()
 {
   /* Set Vidalia's application icon */
-  setWindowIcon(QIcon(":/images/tor_on.png"));
+  setWindowIcon(QIcon(":/images/tor_on32.png"));
   
   /* Put an icon in the system tray to indicate the status of Tor */
-  _trayIcon = new TrayIcon(QPixmap(":/images/tor_on.png"),
+  _trayIcon = new TrayIcon(QPixmap(":/images/tor_on32.png"),
                            tr("Vidalia"), 0, this);
   _trayIcon->show();
 }

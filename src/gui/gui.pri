@@ -27,13 +27,11 @@ SOURCES += $$PWD/main.cpp \
 
 RESOURCES += $$PWD/res/vidalia.qrc
 
-# Uncomment the following when we have the right icons made
-#
 #macx {
-#  ICON = $$PWD/res/vidalia.icns
+  ICON = $$PWD/res/vidalia.icns
 #}
-#win32 {
-#  RC_FILE = $$PWD/res/vidalia.rc
-#}
+win32 {
+  RC_FILE = $$PWD/res/vidalia.rc
+}
 
 include($$PWD/trayicon/trayicon.pri)

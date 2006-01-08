@@ -1,7 +1,14 @@
 <!DOCTYPE RCC><RCC version="1.0">
   <qresource prefix="/images">
-    <file>tor_on.png</file>
-    <file>tor_off.png</file>
+    <file>vidalia.ico</file>
+    <file>vidalia.icns</file>
+    <file>tor_logo32.ico</file>
+    <file>tor_off32.png</file>
+    <file>tor_off48.png</file>
+    <file>tor_off128.png</file>
+    <file>tor_on32.png</file>
+    <file>tor_on48.png</file>
+    <file>tor_on128.png</file>
   </qresource>
 </RCC>
 
