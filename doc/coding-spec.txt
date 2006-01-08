@@ -111,10 +111,13 @@ $Id$
   Method names should begin with a lower case letter. If a method name is a
   combination of distint words, each word should be capitalized. Example:
 
-    int MyClass::someMethod(int foo)
+    int 
+    MyClass::someMethod(int foo)
     {
     }
     
+  Note that the method's return type is declared on a line by itself.
+
 2.1.4. Variable Names
 
   Variable names should follow a convention similar to method names. Variable
@@ -157,7 +160,8 @@ $Id$
   Opening and closing braces for functions should be placed at column 1. For
   example:
 
-     void Foo::Bar(void)
+     void 
+     Foo::Bar(void)
      {
      }
 
