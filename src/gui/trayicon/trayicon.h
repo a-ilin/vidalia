@@ -31,67 +31,68 @@ class QMouseEvent;
 
 class TrayIcon : public QObject
 {
-	Q_OBJECT
+  Q_OBJECT
 
-	Q_PROPERTY( QString toolTip READ toolTip WRITE setToolTip )
-	Q_PROPERTY( QPixmap icon READ icon WRITE setIcon )
+  Q_PROPERTY(QString toolTip READ toolTip WRITE setToolTip)
+  Q_PROPERTY(QPixmap icon READ icon WRITE setIcon)
 
 public:
-	TrayIcon( QObject *parent = 0, const char *name = 0 );
-	TrayIcon( const QPixmap &, const QString &, QMenu *popup = 0, QObject *parent = 0, const char *name = 0 );
-	~TrayIcon();
+  TrayIcon(QObject *parent = 0, const char *name = 0);
+  TrayIcon(const QPixmap &, const QString &, QMenu *popup = 0, QObject *parent = 0, const char *name = 0);
+  ~TrayIcon();
 
-	// use WindowMaker dock mode.  ignored on non-X11 platforms
-	void setWMDock(bool use) { v_isWMDock = use; }
-	bool isWMDock() { return v_isWMDock; }
+  // use WindowMaker dock mode.  ignored on non-X11 platforms
+  void setWMDock(bool use) { v_isWMDock = use; }
+  bool isWMDock() { return v_isWMDock; }
 
-	// Set a popup menu to handle RMB
-	void setPopup( QMenu * );
-	QMenu* popup() const;
+  // Set a popup menu to handle RMB
+  void setPopup(QMenu *);
+  QMenu* popup() const;
 
-	QPixmap icon() const;
-	QString toolTip() const;
+  QPixmap icon() const;
+  QString toolTip() const;
 
-	void gotCloseEvent();
+  void gotCloseEvent();
 
 public slots:
-	void setIcon( const QPixmap &icon );
-	void setToolTip( const QString &tip );
+  void setIcon(const QPixmap &icon);
+  void setToolTip(const QString &tip);
 
-	void show();
-	void hide();
+  void show();
+  void hide();
 
-	void newTrayOwner();
+  void newTrayOwner();
 
 signals:
-	void clicked( const QPoint&, int);
-	void doubleClicked( const QPoint& );
-	void closed();
+  void clicked(const QPoint&, int);
+  void doubleClicked(const QPoint&);
+  void closed();
 
 protected:
-	bool event( QEvent * );
-	virtual void mouseMoveEvent( QMouseEvent *e );
-	virtual void mousePressEvent( QMouseEvent *e );
-	virtual void mouseReleaseEvent( QMouseEvent *e );
-	virtual void mouseDoubleClickEvent( QMouseEvent *e );
+  bool event(QEvent *);
+  virtual void mouseMoveEvent(QMouseEvent *e);
+  virtual void mousePressEvent(QMouseEvent *e);
+  virtual void mouseReleaseEvent(QMouseEvent *e);
+  virtual void mouseDoubleClickEvent(QMouseEvent *e);
 
 private:
-	QMenu *pop;
-	QPixmap pm;
-	QString tip;
-	bool v_isWMDock;
+  QMenu *pop;
+  QPixmap pm;
+  QString tip;
+  bool v_isWMDock;
 
-	// system-dependant part
+  // system-dependant part
 public:
-	class TrayIconPrivate;
+  class TrayIconPrivate;
+  
 private:
-	TrayIconPrivate *d;
-	void sysInstall();
-	void sysRemove();
-	void sysUpdateIcon();
-	void sysUpdateToolTip();
+  TrayIconPrivate *d;
+  void sysInstall();
+  void sysRemove();
+  void sysUpdateIcon();
+  void sysUpdateToolTip();
 
-	friend class TrayIconPrivate;
+  friend class TrayIconPrivate;
 };
 
 #endif // CS_TRAYICON_H

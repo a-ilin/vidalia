@@ -1,18 +1,22 @@
 #include "trayicon.h"
 
-void TrayIcon::sysInstall()
+void 
+TrayIcon::sysInstall()
 {
 }
 
-void TrayIcon::sysRemove()
+void 
+TrayIcon::sysRemove()
 {
 }
 
-void TrayIcon::sysUpdateIcon()
+void 
+TrayIcon::sysUpdateIcon()
 {
 }
 
-void TrayIcon::sysUpdateToolTip()
+void 
+TrayIcon::sysUpdateToolTip()
 {
 }
 
