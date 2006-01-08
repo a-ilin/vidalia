@@ -1,0 +1,7 @@
+<!DOCTYPE RCC><RCC version="1.0">
+  <qresource prefix="/images">
+    <file>tor_on.png</file>
+    <file>tor_off.png</file>
+  </qresource>
+</RCC>
+
