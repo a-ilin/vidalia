@@ -29,7 +29,7 @@ RESOURCES += $$PWD/res/vidalia.qrc
 
 # Uncomment the following when we have the right icons made
 #
-#mac {
+#macx {
 #  ICON = $$PWD/res/vidalia.icns
 #}
 #win32 {
