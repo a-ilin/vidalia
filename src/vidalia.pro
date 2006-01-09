@@ -24,6 +24,12 @@
 CONFIG += qt thread
 TEMPLATE = app
 DESTDIR = ../bin/
+TARGET = Vidalia
+
+# It doesn't seem Qt 4.1 on Windows can build in debug mode
+!win32 {
+  CONFIG += debug
+}
 
 win32:LIBS += -lshell32 -gdi32
 
