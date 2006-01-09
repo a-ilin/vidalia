@@ -22,6 +22,7 @@
  ****************************************************************/
 
 #include <QtGui>
+#include <QMenu>
 
 #include "mainwindow.h"
 
@@ -29,10 +30,37 @@ MainWindow::MainWindow()
 {
   /* Set Vidalia's application icon */
   setWindowIcon(QIcon(":/images/tor_on32.png"));
-  
+ 
   /* Put an icon in the system tray to indicate the status of Tor */
+  QMenu* trayMenu;
+  QMenu* toolsMenu;
+  QMenu* signalMenu;
+  trayMenu = new QMenu(this);
+  toolsMenu = new QMenu(QString(tr("Tools")), trayMenu);
+  signalMenu = new QMenu(QString(tr("Send Signal")), toolsMenu);
+
+  signalMenu->addAction(QString(tr("Reload Config")));
+  signalMenu->addAction(QString(tr("Dump Stats")));
+  signalMenu->addAction(QString(tr("Debug Mode")));
+  signalMenu->addAction(QString(tr("Shutdown")));
+  signalMenu->addAction(QString(tr("Kill")));
+  
+  toolsMenu->addAction(QString(tr("Bandwidth Graph")));
+  toolsMenu->addAction(QString(tr("Message History")));
+  toolsMenu->addSeparator();
+  toolsMenu->addMenu(signalMenu);
+
+  trayMenu->addAction(QString(tr("Start Tor")));
+  trayMenu->addAction(QString(tr("Stop Tor")));
+  trayMenu->addMenu(toolsMenu);
+  trayMenu->addSeparator();
+  trayMenu->addAction(QString(tr("Configure")));
+  trayMenu->addAction(QString(tr("About")));
+  trayMenu->addSeparator();
+  trayMenu->addAction(QString(tr("Exit")));
+  
   _trayIcon = new TrayIcon(QPixmap(":/images/tor_on32.png"),
-                           tr("Vidalia"), 0, this);
+                           tr("Vidalia"), trayMenu, this);
   _trayIcon->show();
 }
 

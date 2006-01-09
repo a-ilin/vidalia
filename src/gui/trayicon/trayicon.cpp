@@ -213,7 +213,7 @@ TrayIcon::mouseMoveEvent(QMouseEvent *e)
 void 
 TrayIcon::mousePressEvent(QMouseEvent *e)
 {
-#ifndef Q_WS_WIN
+//#ifndef Q_WS_WIN
 // This is for X11, menus appear on mouse press
 // I'm not sure whether Mac should be here or below.. Somebody check?
   switch (e->button()) {
@@ -232,7 +232,7 @@ TrayIcon::mousePressEvent(QMouseEvent *e)
     default:
       break;
   }
-#endif
+//#endif
   e->ignore();
 }
 
