@@ -25,6 +25,7 @@
 
 #include "vidaliasettings.h"
 
+
 /* Vidalia's Settings */
 #define SETTING_TOR_PATH       "Tor/TorPath"
 #define SETTING_CONTROL_PORT   "Tor/ControlPort"
@@ -49,32 +50,26 @@ VidaliaSettings::~VidaliaSettings()
 /** Get the path to Tor's executable from Vidalia's configuration. If a path
  * hasn't been specified, then default to the current directory.
  */
-QString
+QDir
 VidaliaSettings::getTorPath()
 {
-  return value(SETTING_TOR_PATH, 
-               QCoreApplication::applicationDirPath()).toString();
+  QString path = value(SETTING_TOR_PATH, 
+                       QCoreApplication::applicationDirPath()).toString();
+  return QDir(path);
 }
 
 /** Set the path to Tor's executable */
 void
-VidaliaSettings::setTorPath(QString path)
+VidaliaSettings::setTorPath(QDir path)
 {
-  setValue(SETTING_TOR_PATH, path);
+  setValue(SETTING_TOR_PATH, path.absolutePath());
 }
 
-/** Returns a fully-qualified path to Tor's executable, including the
- * executable name. (and adds a ".exe" on win32) */
-QString
-VidaliaSettings::getTorApp()
+/** Returns a fully-qualified path to Tor's executable */
+QFileInfo
+VidaliaSettings::getTorExecutable()
 {
-  QString path = getTorPath();
-#ifdef Q_OS_WIN32
-  QString app = "tor.exe";
-#else
-  QString app = "tor";
-#endif
-  return (path + "/" + app);
+  return QFileInfo(getTorPath(), TOR_EXECUTABLE);
 }
 
 /** Get the control port used to connect to Tor */

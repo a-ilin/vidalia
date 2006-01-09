@@ -20,8 +20,18 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, 
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
-                     
+
 #include <QSettings>
+#include <QDir>
+#include <QFileInfo>
+
+/* On win32, we need to add the .exe onto Tor's filename */
+#ifdef Q_OS_WIN32
+#define TOR_EXECUTABLE    "tor.exe"
+#else
+#define TOR_EXECUTABLE    "tor"
+#endif
+
 
 /** Handles saving and restoring Vidalia's settings, such as the
  * location of Tor, the control port, etc.
@@ -35,9 +45,9 @@ public:
   ~VidaliaSettings();
 
   /* Get and set Tor's location information */
-  QString getTorPath();
-  void    setTorPath(QString path);
-  QString getTorApp();
+  QDir       getTorPath();
+  void       setTorPath(QDir path);
+  QFileInfo  getTorExecutable();
   
   /* Get and set Tor's control port */
   quint16 getControlPort();
