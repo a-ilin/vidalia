@@ -256,9 +256,9 @@ TrayIcon::mouseReleaseEvent(QMouseEvent *e)
       if (pop) {
         // Necessary to make keyboard focus
         // and menu closing work on Windows.
-        pop->setActiveWindow();
-        pop->popup(e->globalPos());
-        pop->setActiveWindow();
+        //pop->setActiveWindow();
+        //pop->popup(e->globalPos());
+        //pop->setActiveWindow();
         e->accept();
       }
       break;

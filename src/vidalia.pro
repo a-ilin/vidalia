@@ -21,9 +21,11 @@
 #  02110-1301, USA.
 #################################################################
 
-CONFIG += qt thread debug
+CONFIG += qt thread
 TEMPLATE = app
 DESTDIR = ../bin/
+
+win32:LIBS += -lshell32 -gdi32
 
 include($$PWD/config/config.pri)
 include($$PWD/control/control.pri)
