@@ -77,6 +77,7 @@ public:
   {
     if (!WM_TASKBARCREATED)
       WM_TASKBARCREATED = RegisterWindowMessage(TEXT("TaskbarCreated"));
+    resolveLibs();
   }
 
   ~TrayIconPrivate()
@@ -115,11 +116,9 @@ public:
 
 #ifdef UNICODE
     bool trayMessageW(DWORD msg)
-    {
-      resolveLibs();
-      
-      //if (!(ptrShell_NotifyIcon && qWinVersion() & QSysInfo::WV_NT_based))
-      //  return trayMessageA(msg);
+    {           
+      if (!ptrShell_NotifyIcon)
+        return trayMessageA(msg);
 
       NOTIFYICONDATAW tnd;
       ZeroMemory(&tnd, sizeof(NOTIFYICONDATAW));
@@ -136,20 +135,21 @@ public:
           // Tip is limited to 63 + NULL; lstrcpyn appends a NULL terminator.
           QString tip = iconObject->toolTip().left(63) + QChar();
           lstrcpynW(tnd.szTip, (TCHAR*)tip.unicode(), qMin(tip.length()+1, 64));
-          //lstrcpynW(tnd.szTip, (TCHAR*)qt_winTchar( tip, FALSE ), QMIN( tip.length()+1, 64 ) );
         }
       }
       return ptrShell_NotifyIcon(msg, &tnd);
     }
 #endif
 
-    bool trayMessage(DWORD msg)
+    bool 
+    trayMessage(DWORD msg)
     {
       QT_WA(return trayMessageW(msg);,
             return trayMessageA(msg);)
     }
 
-    bool iconDrawItem(LPDRAWITEMSTRUCT lpdi)
+    bool 
+    iconDrawItem(LPDRAWITEMSTRUCT lpdi)
     {
       if (!hIcon)
         return FALSE;
@@ -158,7 +158,8 @@ public:
       return TRUE;
     }
 
-    bool winEvent(MSG *m, long *result)
+    bool 
+    winEvent(MSG *m, long *result)
     {
       switch(m->message) {
         case WM_DRAWITEM:
@@ -240,20 +241,20 @@ static HICON
 createIcon(const QPixmap &pm, HBITMAP &hbm)
 {
   QPixmap maskpm(pm.size());
-  QBitmap mask(pm.size());
   if (!pm.mask().isNull()) {
     /* Make masked area black */
     maskpm.fill(Qt::black);	
-    QPainter p(&mask);
+    QPainter p(&maskpm);
     p.drawPixmap(0, 0, pm.mask());
+    p.end();
   } else {
     maskpm.fill(Qt::color1);
   }
 
   ICONINFO iconInfo;
   iconInfo.fIcon    = TRUE;
-  iconInfo.hbmMask  = hbm = createIconMask(mask);
-  iconInfo.hbmColor = maskpm.toWinHBITMAP();
+  iconInfo.hbmMask  = hbm = createIconMask(maskpm);
+  iconInfo.hbmColor = pm.toWinHBITMAP();
 
   HICON icon = CreateIconIndirect(&iconInfo);
   ptrDeleteObject(iconInfo.hbmMask);
@@ -267,7 +268,6 @@ TrayIcon::sysInstall()
   if (!d) {
     d = new TrayIconPrivate(this);
     d->hIcon = createIcon(pm, d->hMask);
-
     d->trayMessage(NIM_ADD);
   }
 }

@@ -21,15 +21,16 @@
 #  02110-1301, USA.
 #################################################################
 
-CONFIG += qt thread
-TEMPLATE = app
 DESTDIR = ../bin/
 TARGET = Vidalia
+TEMPLATE = app
 
-# It doesn't seem Qt 4.1 on Windows can build in debug mode
+CONFIG += qt thread
 !win32 {
+  # It doesn't seem Qt 4.1 on Windows can build in debug mode
   CONFIG += debug
 }
+CONFIG += warn_on
 
 win32:LIBS += -lshell32 -gdi32
 
