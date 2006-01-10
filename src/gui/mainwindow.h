@@ -26,8 +26,8 @@
 
 #include <QMainWindow>
 
-#include "traymenu/traymenu.h"
-#include "trayicon/trayicon.h"
+#include "tray/traymenu.h"
+#include "tray/trayicon.h"
 
 class MainWindow : public QMainWindow
 {

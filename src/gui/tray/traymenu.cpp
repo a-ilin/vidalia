@@ -24,13 +24,13 @@
 #include "traymenu.h"
 
 /*
-  Creates a QMenu object that has is to be used as the system tray
+  Creates a QMenu object that is to be used as the system tray
   context menu.
 */
 TrayMenu::TrayMenu(QWidget* parent) 
 : QMenu(parent)
 {
-  toolsMenu = new QMenu(QString(tr("Tools")), trayMenu);
+  toolsMenu = new QMenu(QString(tr("Tools")), this);
   signalMenu = new QMenu(QString(tr("Send Signal")), toolsMenu);
 
   /* Signals menu */
@@ -47,14 +47,14 @@ TrayMenu::TrayMenu(QWidget* parent)
   toolsMenu->addMenu(signalMenu);
 
   /* Systray context menu */
-  this.addAction(QString(tr("Start Tor")));
-  this.addAction(QString(tr("Stop Tor")));
-  this.addMenu(toolsMenu);
-  this.addSeparator();
-  this.addAction(QString(tr("Configure")));
-  this.addAction(QString(tr("About")));
-  this.addSeparator();
-  this.addAction(QString(tr("Exit")));
+  addAction(QString(tr("Start Tor")));
+  addAction(QString(tr("Stop Tor")));
+  addMenu(toolsMenu);
+  addSeparator();
+  addAction(QString(tr("Configure")));
+  addAction(QString(tr("About")));
+  addSeparator();
+  addAction(QString(tr("Exit")));
 }
 
 TrayMenu::~TrayMenu()

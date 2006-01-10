@@ -28,7 +28,7 @@
 
 class TrayMenu : public QMenu
 {
-  Q_OBJECT;
+  Q_OBJECT
   
 public:
   TrayMenu(QWidget* parent = 0);

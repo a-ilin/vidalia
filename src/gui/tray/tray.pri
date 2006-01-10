@@ -21,8 +21,10 @@
 #  02110-1301, USA.
 #################################################################
 
-HEADERS += $$PWD/trayicon.h
-SOURCES += $$PWD/trayicon.cpp
+HEADERS += $$PWD/trayicon.h \
+           $$PWD/traymenu.h
+SOURCES += $$PWD/trayicon.cpp \
+           $$PWD/traymenu.cpp
 
 unix:!mac {
     SOURCES += $$PWD/trayicon_x11.cpp

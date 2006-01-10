@@ -27,11 +27,11 @@ SOURCES += $$PWD/main.cpp \
 
 RESOURCES += $$PWD/res/vidalia.qrc
 
-#macx {
+macx {
   ICON = $$PWD/res/vidalia.icns
-#}
+}
 win32 {
   RC_FILE = $$PWD/res/vidalia.rc
 }
 
-include($$PWD/trayicon/trayicon.pri)
+include($$PWD/tray/tray.pri)
