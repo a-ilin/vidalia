@@ -247,6 +247,7 @@ createIcon(const QPixmap &pm, HBITMAP &hbm)
     p.drawPixmap(0, 0, pm.mask());
     p.end();
   } else {
+    mask.fill(Qt::color0);
     maskpm.fill(Qt::color1);
   }
   
