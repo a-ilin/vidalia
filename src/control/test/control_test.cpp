@@ -31,16 +31,26 @@ main(int argc, char *argv[])
   TorControl control;
   QString errmsg;
 
+  /* Start Tor */
+  if (!control.startTor(&errmsg)) {
+    qDebug() << "Could not start Tor:" << errmsg;
+    return -1;
+  } else {
+    qDebug("Tor Started!");
+  }
+  
   /* Connect the control socket */
   if (!control.connect(&errmsg)) {
     qDebug() << "Could not connect to Tor:" << errmsg;
+    control.stopTor();
     return -1;
   } else {
     qDebug( "Connected!");
   }
 
-  /* Disconnect the control socket */
+  /* Disconnect the control socket and stop Tor */
   control.disconnect();
+  control.stopTor();
   
   return 0;
 }

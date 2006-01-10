@@ -49,10 +49,16 @@ public:
   ~VidaliaSettings();
 
   /* Get and set Tor's location information */
-  QDir       getTorPath();
-  void       setTorPath(QDir path);
-  QFileInfo  getTorExecutable();
-  
+  QDir        getTorPath();
+  void        setTorPath(QDir path);
+  QFileInfo   getTorExecutable();
+
+  /* Add/remove/retrieve Tor command-line arguments */
+  QStringList getTorArguments(); 
+  void setTorArguments(QStringList args);
+  void addTorArgument(QString arg);
+  void removeTorArgument(QString arg);
+
   /* Get and set Tor's control port */
   quint16 getControlPort();
   void    setControlPort(quint16 port);

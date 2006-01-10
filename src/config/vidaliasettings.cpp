@@ -21,24 +21,31 @@
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
 
-#include <QCoreApplication>
-
 #include "vidaliasettings.h"
 
 
 /* Vidalia's Settings */
 #define SETTING_TOR_PATH       "Tor/TorPath"
+#define SETTING_TOR_ARGUMENTS  "Tor/Arguments"
 #define SETTING_CONTROL_PORT   "Tor/ControlPort"
 
 /* Default Settings */
-#define DEFAULT_CONTROL_PORT   9051
+#if defined( Q_OS_WIN32)
+#define DEFAULT_TOR_PATH       "C:\\Program\\ Files\\Tor"
+#elif defined(Q_OS_MACX)
+#define DEFAULT_TOR_PATH       "/usr/bin"
+#else
+#define DEFAULT_TOR_PATH       "/usr/local/bin"
+#endif
 
+#define DEFAULT_TOR_ARGUMENTS  "-ControlPort 9051"
+#define DEFAULT_CONTROL_PORT   9051
 
 /** Default Constructor
  * We use "Vidalia" for both the company name and the application name.
  */
 VidaliaSettings::VidaliaSettings()
-  : QSettings("Vidalia", "Vidalia")
+  : QSettings("vidalia", "vidalia")
 {
 }
 
@@ -53,8 +60,7 @@ VidaliaSettings::~VidaliaSettings()
 QDir
 VidaliaSettings::getTorPath()
 {
-  QString path = value(SETTING_TOR_PATH, 
-                       QCoreApplication::applicationDirPath()).toString();
+  QString path = value(SETTING_TOR_PATH, DEFAULT_TOR_PATH).toString(); 
   return QDir(path);
 }
 
@@ -70,6 +76,48 @@ QFileInfo
 VidaliaSettings::getTorExecutable()
 {
   return QFileInfo(getTorPath(), TOR_EXECUTABLE);
+}
+
+/** Returns a QStringList containing all arguments to be passed to Tor's
+ * executable. Arguments are stored in the settings file as a ;-delimited
+ * list. */
+QStringList
+VidaliaSettings::getTorArguments()
+{
+  QString args = value(SETTING_TOR_ARGUMENTS,
+                       DEFAULT_TOR_ARGUMENTS).toString();
+  return args.split(";");
+}
+
+void
+VidaliaSettings::setTorArguments(QStringList args)
+{
+  setValue(SETTING_TOR_ARGUMENTS, args.join(";"));
+}
+
+/** Add an argument to the list of command-line arguments used when starting
+ * Tor. */
+void
+VidaliaSettings::addTorArgument(QString arg)
+{
+  QStringList args = getTorArguments();
+  args << arg;
+  setTorArguments(args);
+}
+
+void
+VidaliaSettings::removeTorArgument(QString arg)
+{
+  QStringList args = getTorArguments();
+
+  /* QStringList doesn't appear to have a case-insensitive find()-esque
+   * method, so we'll do it the hard way */
+  for (int i = 0; i < args.size(); ++i) {
+    if (args.at(i).toLower() == arg.toLower()) {
+      args.removeAt(i);
+      break;
+    }
+  }
 }
 
 /** Get the control port used to connect to Tor */

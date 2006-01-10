@@ -21,6 +21,9 @@
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
 
+#include <QFileInfo>
+
+#include "../config/vidaliasettings.h"
 #include "torprocess.h"
 
 TorProcess::TorProcess()
@@ -29,5 +32,80 @@ TorProcess::TorProcess()
 
 TorProcess::~TorProcess()
 {
+}
+
+/** Attempts to start the Tor process using the location, executable, and
+ * command-line arguments specified in Vidalia's settings. If Tor doesn't
+ * start, <b>errmsg</b> will be set appropriately and the function will return
+ * false. */
+bool
+TorProcess::start(QString *errmsg)
+{
+  VidaliaSettings settings;
+
+  /* Get the location of Tor and the desired arguments */
+  QFileInfo app = settings.getTorExecutable();
+  QStringList args = settings.getTorArguments();
+  
+  /* If the path doesn't point to an executable, then bail */
+  if (!app.isExecutable()) {
+    if (errmsg) {
+      *errmsg = "Unable to find Tor's executable";
+    }
+    return false;
+  }
+  
+  /* Attempt to start Tor */
+  QProcess::start(app.absoluteFilePath(), args);
+  
+  /* Wait for Tor to start. If it fails to start, report the error message and
+   * return false. */
+  if (!waitForStarted(-1)) {
+    if (errmsg) {
+      *errmsg = errorString();
+    }
+    return false;
+  }
+  return true;
+}
+
+/** Stops the Tor process */
+bool
+TorProcess::stop(QString *errmsg)
+{
+  /* Tell the process to stop */
+  kill();
+
+  /* Wait for it to complete */
+  if (!waitForFinished(-1)) {
+    if (errmsg) {
+      *errmsg = errorString();
+    }
+    return false;
+  }
+  return true;
+}
+
+/** Returns a string description of the last QProcess::ProcessError
+ * encountered. */
+QString
+TorProcess::errorString()
+{
+  QString err;
+  switch (error()) {
+    case QProcess::FailedToStart:
+      err = "Failed to start"; break;
+    case QProcess::Crashed:
+      err = "Crashed"; break;
+    case QProcess::Timedout:
+      err = "Timed out"; break;
+    case QProcess::WriteError:
+      err = "Write error"; break;
+    case QProcess::ReadError:
+      err = "Read error"; break;
+    default:
+      err = "Unknown error"; break;
+  }
+  return err;
 }
 

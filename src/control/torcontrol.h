@@ -43,6 +43,9 @@ public:
   /** Stop the Tor process */
   void stopTor();
 
+  /** Detect if the Tor process is running */
+  bool torIsRunning();
+
   /** Connect to Tor's control socket */
   bool connect(QString *errmsg = 0);
 

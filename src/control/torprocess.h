@@ -27,4 +27,13 @@ class TorProcess : public QProcess
 public:
   TorProcess();
   ~TorProcess();
+
+  /* Start the Tor process */
+  bool start(QString *errmsg = 0);
+  
+  /* Stop the Tor process */
+  bool stop(QString *errmsg = 0);
+
+  /* Returns a QString describing the last QProcess::ProcessError */
+  QString errorString();
 };

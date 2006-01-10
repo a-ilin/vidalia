@@ -41,7 +41,7 @@ TorControl::~TorControl()
 bool
 TorControl::startTor(QString *errmsg)
 {
-  return false;
+  return _torProcess.start(errmsg);
 }
 
 
@@ -49,6 +49,14 @@ TorControl::startTor(QString *errmsg)
 void
 TorControl::stopTor()
 {
+  _torProcess.stop();
+}
+
+/** Detect if the Tor process is running. */
+bool
+TorControl::torIsRunning()
+{
+  return (_torProcess.pid() != 0);
 }
 
 /** Connect to Tor's control port. The control port to use is determined by
