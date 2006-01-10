@@ -38,4 +38,7 @@ public:
 
   /* Returns a QString describing the last QProcess::ProcessError */
   QString errorString();
+
+  /* Return the Tor process's PID (workaround for some Windows funkiness) */
+  qint64 pid();
 };
