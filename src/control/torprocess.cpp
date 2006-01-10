@@ -75,10 +75,15 @@ TorProcess::stop(QString *errmsg)
 
   /* Wait for it to complete */
   if (!waitForFinished(-1)) {
+    
+/* FIXME This is just stupid. Make pid() work for Win32 */
+#ifndef Q_WS_WIN
     if (errmsg) {
       *errmsg = 
         QString("Process %1 failed to stop. [%2]").arg(pid()).arg(errorString());
     }
+#endif
+    
     return false;
   }
   return true;
