@@ -26,19 +26,29 @@
 
 #include <QMainWindow>
 
-#include "tray/traymenu.h"
 #include "tray/trayicon.h"
+
+class QAction;
+class QMenu;
 
 class MainWindow : public QMainWindow
 {
   Q_OBJECT
 
-private:
-  TrayMenu* _trayMenu;
-  TrayIcon* _trayIcon;
-
 public:
   MainWindow();
+
+private:
+  void createMenus();
+  void createActions();
+
+  TrayIcon* _trayIcon;
+  
+  QMenu* _trayMenu;
+  QMenu* _toolsMenu;
+  QMenu* _signalMenu;
+  
+  QAction* _exitAct;
 };
 
 #endif
