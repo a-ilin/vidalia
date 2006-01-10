@@ -26,6 +26,7 @@
 
 #include <QMainWindow>
 
+#include "traymenu/traymenu.h"
 #include "trayicon/trayicon.h"
 
 class MainWindow : public QMainWindow
@@ -33,6 +34,7 @@ class MainWindow : public QMainWindow
   Q_OBJECT
 
 private:
+  TrayMenu* _trayMenu;
   TrayIcon* _trayIcon;
 
 public:
