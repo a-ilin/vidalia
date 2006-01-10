@@ -28,9 +28,6 @@
 
 #include "tray/trayicon.h"
 
-class QAction;
-class QMenu;
-
 class MainWindow : public QMainWindow
 {
   Q_OBJECT

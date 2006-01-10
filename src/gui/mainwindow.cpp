@@ -39,8 +39,9 @@ MainWindow::MainWindow()
   _trayIcon->show();
 }
 
-/* Binds events to actions which are then 
-   used in the tray menu. 
+/* 
+  Binds events to actions which are then 
+  used in the tray menu. 
 */
 void MainWindow::createActions()
 {
