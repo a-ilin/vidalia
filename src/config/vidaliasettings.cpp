@@ -91,6 +91,8 @@ VidaliaSettings::getTorArguments()
   return args.split(";");
 }
 
+/** Set Tor arguments to a ;-delimited list of all arguments in the supplied
+ * QStringList. */
 void
 VidaliaSettings::setTorArguments(QStringList args)
 {
@@ -107,6 +109,7 @@ VidaliaSettings::addTorArgument(QString arg)
   setTorArguments(args);
 }
 
+/** Remove a single Tor command-line argument. */
 void
 VidaliaSettings::removeTorArgument(QString arg)
 {
