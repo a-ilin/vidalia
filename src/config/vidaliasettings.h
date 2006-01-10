@@ -24,6 +24,7 @@
 #include <QSettings>
 #include <QDir>
 #include <QFileInfo>
+#include <QHostAddress>
 
 /* On win32, we need to add the .exe onto Tor's filename */
 #ifdef Q_OS_WIN32
@@ -59,8 +60,13 @@ public:
   void addTorArgument(QString arg);
   void removeTorArgument(QString arg);
 
+  /* Get and set Tor's control address */
+  QHostAddress getControlAddress();
+  void setControlAddress(QHostAddress addr);
+
   /* Get and set Tor's control port */
   quint16 getControlPort();
   void    setControlPort(quint16 port);
+ 
 };
 

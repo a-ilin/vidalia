@@ -27,6 +27,7 @@
 /* Vidalia's Settings */
 #define SETTING_TOR_PATH       "Tor/TorPath"
 #define SETTING_TOR_ARGUMENTS  "Tor/Arguments"
+#define SETTING_CONTROL_ADDR   "Tor/ControlAddr"
 #define SETTING_CONTROL_PORT   "Tor/ControlPort"
 
 /* Default Settings */
@@ -39,6 +40,7 @@
 #endif
 
 #define DEFAULT_TOR_ARGUMENTS  "-ControlPort 9051"
+#define DEFAULT_CONTROL_ADDR   "127.0.0.1"
 #define DEFAULT_CONTROL_PORT   9051
 
 /** Default Constructor
@@ -118,6 +120,22 @@ VidaliaSettings::removeTorArgument(QString arg)
       break;
     }
   }
+}
+
+/** Get the address or hostname used to connect to Tor */
+QHostAddress
+VidaliaSettings::getControlAddress()
+{
+  QString addr = value(SETTING_CONTROL_ADDR,
+                       DEFAULT_CONTROL_ADDR).toString();
+  return QHostAddress(addr);
+}
+
+/** Set the address or hostname used to connect to Tor */
+void
+VidaliaSettings::setControlAddress(QHostAddress addr)
+{
+  setValue(SETTING_CONTROL_PORT, addr.toString());
 }
 
 /** Get the control port used to connect to Tor */

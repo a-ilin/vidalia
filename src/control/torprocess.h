@@ -20,7 +20,9 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, 
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
-#include <QProcess>
+
+ #include <QProcess>
+#include <QFileInfo>
 
 class TorProcess : public QProcess
 {
@@ -29,7 +31,7 @@ public:
   ~TorProcess();
 
   /* Start the Tor process */
-  bool start(QString *errmsg = 0);
+  bool start(QFileInfo app, QStringList args, QString *errmsg = 0);
   
   /* Stop the Tor process */
   bool stop(QString *errmsg = 0);

@@ -23,7 +23,6 @@
 
 #include <QFileInfo>
 
-#include "../config/vidaliasettings.h"
 #include "torprocess.h"
 
 TorProcess::TorProcess()
@@ -39,14 +38,8 @@ TorProcess::~TorProcess()
  * start, <b>errmsg</b> will be set appropriately and the function will return
  * false. */
 bool
-TorProcess::start(QString *errmsg)
+TorProcess::start(QFileInfo app, QStringList args, QString *errmsg)
 {
-  VidaliaSettings settings;
-
-  /* Get the location of Tor and the desired arguments */
-  QFileInfo app = settings.getTorExecutable();
-  QStringList args = settings.getTorArguments();
-  
   /* If the path doesn't point to an executable, then bail */
   if (!app.isExecutable()) {
     if (errmsg) {

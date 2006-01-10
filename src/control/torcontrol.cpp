@@ -41,7 +41,9 @@ TorControl::~TorControl()
 bool
 TorControl::startTor(QString *errmsg)
 {
-  return _torProcess.start(errmsg);
+  VidaliaSettings settings;
+  return _torProcess.start(settings.getTorExecutable(),
+                           settings.getTorArguments(), errmsg);
 }
 
 
@@ -65,7 +67,7 @@ bool
 TorControl::connect(QString *errmsg)
 {
   VidaliaSettings settings;
-  return _controlConn.connect(QHostAddress::LocalHost,
+  return _controlConn.connect(settings.getControlAddress(),
                               settings.getControlPort(), errmsg);
 }
 
