@@ -241,20 +241,23 @@ static HICON
 createIcon(const QPixmap &pm, HBITMAP &hbm)
 {
   QPixmap maskpm(pm.size());
+  QPixmap mask(pm.size());
   if (!pm.mask().isNull()) {
-    /* Make masked area black */
-    maskpm.fill(Qt::black);	
-    QPainter p(&maskpm);
+    QPainter p(&mask);
     p.drawPixmap(0, 0, pm.mask());
     p.end();
   } else {
     maskpm.fill(Qt::color1);
   }
+  
+  QPainter q(&maskpm);
+  q.drawPixmap(0, 0, pm);
+  q.end();
 
   ICONINFO iconInfo;
   iconInfo.fIcon    = TRUE;
-  iconInfo.hbmMask  = hbm = createIconMask(maskpm);
-  iconInfo.hbmColor = pm.toWinHBITMAP();
+  iconInfo.hbmMask  = hbm = createIconMask(mask);
+  iconInfo.hbmColor = maskpm.toWinHBITMAP();
 
   HICON icon = CreateIconIndirect(&iconInfo);
   ptrDeleteObject(iconInfo.hbmMask);
