@@ -35,6 +35,10 @@
 
 /** Handles saving and restoring Vidalia's settings, such as the
  * location of Tor, the control port, etc.
+ *
+ * NOTE: Qt 4.1 documentation states that constructing a QSettings object is
+ * "very fast", so we shouldn't need to create a global instance of this
+ * class.
  */
 class VidaliaSettings : public QSettings
 {
