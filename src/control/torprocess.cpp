@@ -43,7 +43,8 @@ TorProcess::start(QFileInfo app, QStringList args, QString *errmsg)
   /* If the path doesn't point to an executable, then bail */
   if (!app.isExecutable()) {
     if (errmsg) {
-      *errmsg = "Unable to find Tor's executable";
+      *errmsg = 
+        QString("\"%1\" is not an executable.").arg(app.absoluteFilePath());
     }
     return false;
   }
@@ -55,7 +56,8 @@ TorProcess::start(QFileInfo app, QStringList args, QString *errmsg)
    * return false. */
   if (!waitForStarted(-1)) {
     if (errmsg) {
-      *errmsg = errorString();
+      *errmsg = 
+        QString("\"%1\" failed to start. [%2]").arg(app.absoluteFilePath()).arg(errorString());
     }
     return false;
   }
@@ -72,7 +74,8 @@ TorProcess::stop(QString *errmsg)
   /* Wait for it to complete */
   if (!waitForFinished(-1)) {
     if (errmsg) {
-      *errmsg = errorString();
+      *errmsg = 
+        QString("Process %1 failed to stop. [%2]").arg(pid()).arg(errorString());
     }
     return false;
   }
