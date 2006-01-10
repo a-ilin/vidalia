@@ -20,3 +20,11 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  
 #  02110-1301, USA.
 #################################################################
+
+HEADERS += $$PWD/torcontrol.h \
+           $$PWD/torprocess.h \
+           $$PWD/controlconnection.h
+
+SOURCES += $$PWD/torcontrol.cpp \
+           $$PWD/torprocess.cpp \
+           $$PWD/controlconnection.cpp

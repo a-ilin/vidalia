@@ -35,6 +35,10 @@ CONFIG += qt thread
 }
 CONFIG += warn_on
 
+# Include the network module
+QT += network
+
+# Link against these libraries on Win32
 win32:LIBS += -lshell32 -gdi32
 
 include($$PWD/config/config.pri)
