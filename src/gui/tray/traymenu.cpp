@@ -30,26 +30,26 @@
 TrayMenu::TrayMenu(QWidget* parent) 
 : QMenu(parent)
 {
-  toolsMenu = new QMenu(QString(tr("Tools")), this);
-  signalMenu = new QMenu(QString(tr("Send Signal")), toolsMenu);
+  _toolsMenu = new QMenu(QString(tr("Tools")), this);
+  _signalMenu = new QMenu(QString(tr("Send Signal")), _toolsMenu);
 
   /* Signals menu */
-  signalMenu->addAction(QString(tr("Reload Config")));
-  signalMenu->addAction(QString(tr("Dump Stats")));
-  signalMenu->addAction(QString(tr("Debug Mode")));
-  signalMenu->addAction(QString(tr("Shutdown")));
-  signalMenu->addAction(QString(tr("Kill")));
+  _signalMenu->addAction(QString(tr("Reload Config")));
+  _signalMenu->addAction(QString(tr("Dump Stats")));
+  _signalMenu->addAction(QString(tr("Debug Mode")));
+  _signalMenu->addAction(QString(tr("Shutdown")));
+  _signalMenu->addAction(QString(tr("Kill")));
   
   /* Tools menu */
-  toolsMenu->addAction(QString(tr("Bandwidth Graph")));
-  toolsMenu->addAction(QString(tr("Message History")));
-  toolsMenu->addSeparator();
-  toolsMenu->addMenu(signalMenu);
+  _toolsMenu->addAction(QString(tr("Bandwidth Graph")));
+  _toolsMenu->addAction(QString(tr("Message History")));
+  _toolsMenu->addSeparator();
+  _toolsMenu->addMenu(_signalMenu);
 
   /* Systray context menu */
   addAction(QString(tr("Start Tor")));
   addAction(QString(tr("Stop Tor")));
-  addMenu(toolsMenu);
+  addMenu(_toolsMenu);
   addSeparator();
   addAction(QString(tr("Configure")));
   addAction(QString(tr("About")));

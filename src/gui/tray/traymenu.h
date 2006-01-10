@@ -34,8 +34,8 @@ public:
   TrayMenu(QWidget* parent = 0);
   ~TrayMenu();
 private:
-  QMenu* toolsMenu;
-  QMenu* signalMenu;
+  QMenu* _toolsMenu;
+  QMenu* _signalMenu;
 };
 
 #endif
