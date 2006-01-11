@@ -23,7 +23,8 @@
 
 #include <QtDebug>
 
-#include "../torcontrol.cpp"
+#include "../torcontrol.h"
+#include "../../util/compat.h"
 
 int
 main(int argc, char *argv[])
@@ -36,18 +37,33 @@ main(int argc, char *argv[])
     qDebug() << "Could not start Tor:" << errmsg;
     return -1;
   } else {
-    qDebug("Tor Started!");
+    qDebug("Started the Tor process...");
   }
-  
+
   /* Connect the control socket */
   if (!control.connect(&errmsg)) {
     qDebug() << "Could not connect to Tor:" << errmsg;
     control.stopTor();
     return -1;
   } else {
-    qDebug( "Connected!");
+    qDebug("Connected to Tor...");
   }
 
+  /* Authenticate */
+  if (control.authenticate(QByteArray(), &errmsg)) {
+    qDebug() << "Authentication Successful...";
+    
+    /* Get Tor's version */
+    QString torVersion = control.getTorVersion(&errmsg);
+    if (torVersion == "<unknown>") {
+      qDebug() << "Error getting Tor version:" << errmsg;
+    } else {
+      qDebug() << "Detected Tor version:" << torVersion;
+    }
+  } else {
+    qDebug() << "Authentication error:" << errmsg;
+  }
+ 
   /* Disconnect the control socket and stop Tor */
   control.disconnect();
   control.stopTor();

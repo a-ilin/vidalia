@@ -78,3 +78,88 @@ TorControl::disconnect()
   _controlConn.disconnect();
 }
 
+/** Check if theh control socket is connected */
+bool
+TorControl::isConnected()
+{
+  return (_controlConn.state() == QAbstractSocket::ConnectedState);
+}
+
+/** Sends an authentication token to Tor. This must be done before sending 
+ * any control commands to Tor. The syntax is:
+ * 
+ *   "AUTHENTICATE" [ SP 1*HEXDIG / QuotedString ] CRLF
+ */
+bool
+TorControl::authenticate(QByteArray token, QString *errmsg)
+{
+  ControlCommand cmd("AUTHENTICATE", QString(token));
+  ControlReply reply;
+
+  if (_controlConn.send(cmd, reply, errmsg)) {
+    ReplyLine line = reply.getLine();
+    if (line.getStatus() == "250") {
+      return true;
+    }
+  }
+  return false;
+}
+
+/** Sends a GETINFO message to Tor based on the given map of keyvals. The
+ * syntax is:
+ * 
+ *    "GETINFO" 1*(SP keyword) CRLF 
+ */
+bool
+TorControl::getInfo(QMap<QString,QString> &map, QString *errmsg)
+{
+  ControlCommand cmd("GETINFO");
+  ControlReply reply;
+
+  /* Add the keys as arguments to the GETINFO message */
+  foreach (QString key, map.keys()) {
+    cmd.addArgument(key);
+  }
+ 
+  /* Ask Tor for the specified info values */
+  if (_controlConn.send(cmd, reply, errmsg)) {
+  
+    /* Parse the response for the returned values */
+    foreach (ReplyLine line, reply.getLines()) {
+      if (line.getStatus() != "250") {
+        *errmsg = line.getMessage();
+        return false;
+      }
+
+      /* Split the "key=val" line and map them */
+      QStringList keyval = line.getMessage().split("=");
+      if (keyval.size() == 2) {
+        map.insert(keyval.at(0), keyval.at(1));
+      }
+    }
+  }
+  return true;
+}
+
+/** Overloaded method to send a GETINFO command for a single info value */
+bool
+TorControl::getInfo(QString key, QString &val, QString *errmsg)
+{
+  QMap<QString,QString> map;
+  map.insert(key, "");
+
+  if (getInfo(map, errmsg)) {
+    val = map.value(key);
+  }
+  return false;
+}
+
+/** Ask Tor for its version */
+QString
+TorControl::getTorVersion(QString *errmsg)
+{
+  QString ver("<unknown>");
+  getInfo("version", ver, errmsg);
+  return ver;
+}
+

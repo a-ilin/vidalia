@@ -23,6 +23,8 @@
                      
 #include <QHostAddress>
 
+#include <QtDebug>
+
 #include "controlconnection.h"
 
 ControlConnection::ControlConnection()
@@ -52,9 +54,112 @@ ControlConnection::connect(QHostAddress addr, quint16 port, QString *errmsg)
 }
 
 /** Disconnects from Tor's control socket */
-void
-ControlConnection::disconnect()
+bool
+ControlConnection::disconnect(QString *errmsg)
 {
   disconnectFromHost();
+  if (!waitForDisconnected(-1)) {
+    if (errmsg) {
+      *errmsg =
+        QString("Error disconnecting socket. [%1]").arg(errorString());
+    }
+    return false;
+  }
+  return true;
+}
+
+/** Send a control command to Tor on the control socket, conforming to Tor's
+ * Control Protocol V1:
+ *
+ *   Command = Keyword Arguments CRLF / "+" Keyword Arguments CRLF Data
+ *   Keyword = 1*ALPHA
+ *   Arguments = *(SP / VCHAR)
+ */
+bool
+ControlConnection::sendCommand(ControlCommand cmd, QString *errmsg)
+{
+  /* Format the control command */
+  QString strCmd = cmd.toString();
+
+  /* Attempt to send the command to Tor */
+  if (write(strCmd.toAscii()) != strCmd.length()) {
+    if (errmsg) {
+      *errmsg = 
+        QString("Error sending control command. [%1]").arg(errorString());
+    }
+    return false;
+  }
+  flush();
+  return true;
+}
+
+/** Read a complete reply from the control socket. Replies take the following
+ * form, based on Tor's Control Protocol v1:
+ *
+ *    Reply = *(MidReplyLine / DataReplyLine) EndReplyLine
+ *
+ *    MidReplyLine = "-" ReplyLine
+ *    DataReplyLine = "+" ReplyLine Data
+ *    EndReplyLine = SP ReplyLine
+ *    ReplyLine = StatusCode [ SP ReplyText ]  CRLF
+ *    ReplyText = XXXX
+ *    StatusCode = XXiX
+ */
+bool
+ControlConnection::readReply(ControlReply &reply, QString *errmsg)
+{
+  QChar c;
+  QString line;
+
+  /* The implementation below is based on the Java control library from Tor */
+  do {
+    /* Make sure we have data to read before attempting anything. Note that this
+     * essentially makes our socket a blocking socket */
+    while (!canReadLine()) {
+      waitForReadyRead(-1);
+    }
+  
+    /* Read a line of the response */
+    line = QString(readLine());
+    if (line.length() < 4) {
+      if (errmsg) {
+        *errmsg = 
+          QString("Invalid control reply. [%1]").arg(line);
+      }
+      return false;
+    }
+
+    /* Parse the status and message */
+    ReplyLine replyLine(line.mid(0, 3), line.mid(4));
+    c = line.at(3);
+
+    /* If the reply line contains data, then parse out the data up until the
+     * trailing CRLF "." CRLF */
+    if (c == QChar('+')) {
+      QString data;
+      while (true) {
+        line = QString(readLine());
+        if (line == ".") {
+          break;
+        }
+        replyLine.appendData(line);
+      }
+    }
+    reply.appendLine(replyLine);
+  } while (c != QChar(' '));
+  return true;
+}
+
+/** Sends a control command and immediately waits for the control reply */
+bool
+ControlConnection::send(ControlCommand cmd, 
+                        ControlReply &reply, QString *errmsg)
+{
+  if (sendCommand(cmd, errmsg)) {
+    if (readReply(reply, errmsg)) {
+      return true;
+    }
+  }
+  return false;
 }
 

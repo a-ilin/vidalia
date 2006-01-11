@@ -25,9 +25,9 @@
 
 /* Needed for _PROCESS_INFORMATION so that pid() works on Win32 */
 #if defined (Q_OS_WIN32)
-  #include <windows.h>
+#include <windows.h>
 #endif
-
+  
 #include "torprocess.h"
 
 TorProcess::TorProcess()
@@ -46,6 +46,7 @@ bool
 TorProcess::start(QFileInfo app, QStringList args, QString *errmsg)
 {
   QString path = app.absoluteFilePath();
+  QString exec;
   
   /* If the path doesn't point to an executable, then bail */
   if (!app.isExecutable()) {
@@ -56,8 +57,15 @@ TorProcess::start(QFileInfo app, QStringList args, QString *errmsg)
     return false;
   }
   
-  /* Attempt to start Tor */
-  QProcess::start(path, args);
+  /* If I simply pass the QStringList of command-line arguments to
+   * QProcess::start(path, args), then Qt will quote any arguments with spaces
+   * in them. This is logical, but Tor doesn't like it because you end up with
+   * something like "-ControlPort 9051", which Tor thinks is a single
+   * argument. So I'll just do the joining myself. */
+  exec = path + " " + args.join(" ");
+  
+  /* Attempt to start Tor with the given command-line arguments */
+  QProcess::start(exec);
   
   /* Wait for Tor to start. If it fails to start, report the error message and
    * return false. */

@@ -23,8 +23,14 @@
 
 HEADERS += $$PWD/torcontrol.h \
            $$PWD/torprocess.h \
-           $$PWD/controlconnection.h
+           $$PWD/controlconnection.h \
+           $$PWD/controlcommand.h \
+           $$PWD/controlreply.h \
+           $$PWD/replyline.h
 
 SOURCES += $$PWD/torcontrol.cpp \
            $$PWD/torprocess.cpp \
-           $$PWD/controlconnection.cpp
+           $$PWD/controlconnection.cpp \
+           $$PWD/controlcommand.cpp \
+           $$PWD/controlreply.cpp \
+           $$PWD/replyline.cpp

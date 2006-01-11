@@ -20,7 +20,12 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, 
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
-                     
+
+#ifndef _TORCONTROL_H
+#define _TORCONTROL_H
+
+#include <QMap>
+
 #include "controlconnection.h"
 #include "torprocess.h"
 
@@ -51,4 +56,23 @@ public:
 
   /** Disconnect from Tor's control socket */
   void disconnect();
+
+  /** Check if we're connected to Tor's control socket */
+  bool isConnected();
+
+  /** Sends an authentication token to Tor */
+  bool authenticate(QByteArray token, QString *errmsg = 0);
+
+  /** Sends a GETINFO message to Tor based on the given keys */
+  bool getInfo(QMap<QString,QString> &map, QString *errmsg = 0);
+
+  /** Sends a GETINFO message for a single info value to Tor */
+  bool getInfo(QString key, QString &val, QString *errmsg = 0);
+
+  /** Ask Tor for its version */
+  QString getTorVersion(QString *errmsg = 0);
+  
 };
+
+#endif
+

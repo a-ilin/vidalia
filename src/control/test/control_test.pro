@@ -22,7 +22,7 @@
 #################################################################
 
 TEMPLATE = app
-CONFIG += qt console
+CONFIG += qt qtestlib console
 SOURCES += control_test.cpp
 
 !win32 {
@@ -35,3 +35,4 @@ QT += network
 
 include(../control.pri)
 include(../../config/config.pri)
+include(../../util/util.pri)

@@ -21,7 +21,10 @@
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
 
- #include <QProcess>
+#ifndef _TORPROCESS_H
+#define _TORPROCESS_H
+
+#include <QProcess>
 #include <QFileInfo>
 
 class TorProcess : public QProcess
@@ -42,3 +45,6 @@ public:
   /* Return the Tor process's PID (workaround for some Windows funkiness) */
   qint64 pid();
 };
+
+#endif
+

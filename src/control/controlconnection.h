@@ -20,15 +20,37 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, 
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
-                     
+
+#ifndef _CONTROLCONNECTION_H
+#define _CONTROLCONNECTION_H
+
 #include <QTcpSocket>
+
+#include "controlcommand.h"
+#include "controlreply.h"
 
 class ControlConnection : public QTcpSocket
 {
 public:
+  /** Default constructor and destructor */
   ControlConnection();
   ~ControlConnection();
 
+  /** Connect to Tor on the specified host and port */
   bool connect(QHostAddress addr, quint16 port, QString *errmsg = 0);
-  void disconnect();
+  
+  /** Disconnect from Tor */
+  bool disconnect(QString *errmsg = 0);
+
+  /** Send a command to Tor */
+  bool sendCommand(ControlCommand cmd, QString *errmsg = 0);
+
+  /** Read a response from Tor */
+  bool readReply(ControlReply &reply, QString *errmsg = 0);
+
+  /** Send a command to Tor and immediately read the response */
+  bool send(ControlCommand cmd, ControlReply &reply, QString *errmsg = 0);
 };
+
+#endif
+

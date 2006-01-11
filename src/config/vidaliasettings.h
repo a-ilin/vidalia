@@ -21,6 +21,9 @@
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
 
+#ifndef _VIDALIASETTINGS_H
+#define _VIDALIASETTINGS_H
+
 #include <QSettings>
 #include <QDir>
 #include <QFileInfo>
@@ -69,4 +72,6 @@ public:
   void    setControlPort(quint16 port);
  
 };
+
+#endif
 
