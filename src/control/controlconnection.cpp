@@ -23,8 +23,6 @@
                      
 #include <QHostAddress>
 
-#include <QtDebug>
-
 #include "controlconnection.h"
 
 ControlConnection::ControlConnection()
