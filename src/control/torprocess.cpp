@@ -23,6 +23,11 @@
 
 #include <QFileInfo>
 
+/* Needed for _PROCESS_INFORMATION so that pid() works on Win32 */
+#if defined (Q_OS_WIN32)
+  #include <windows.h>
+#endif
+
 #include "torprocess.h"
 
 TorProcess::TorProcess()
