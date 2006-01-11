@@ -111,7 +111,7 @@ TorControl::authenticate(QByteArray token, QString *errmsg)
  *    "GETINFO" 1*(SP keyword) CRLF 
  */
 bool
-TorControl::getInfo(QMap<QString,QString> &map, QString *errmsg)
+TorControl::getInfo(QHash<QString,QString> &map, QString *errmsg)
 {
   ControlCommand cmd("GETINFO");
   ControlReply reply;
@@ -145,7 +145,7 @@ TorControl::getInfo(QMap<QString,QString> &map, QString *errmsg)
 bool
 TorControl::getInfo(QString key, QString &val, QString *errmsg)
 {
-  QMap<QString,QString> map;
+  QHash<QString,QString> map;
   map.insert(key, "");
 
   if (getInfo(map, errmsg)) {

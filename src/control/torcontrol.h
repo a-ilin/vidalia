@@ -24,7 +24,7 @@
 #ifndef _TORCONTROL_H
 #define _TORCONTROL_H
 
-#include <QMap>
+#include <QHash>
 
 #include "controlconnection.h"
 #include "torprocess.h"
@@ -64,7 +64,7 @@ public:
   bool authenticate(QByteArray token, QString *errmsg = 0);
 
   /** Sends a GETINFO message to Tor based on the given keys */
-  bool getInfo(QMap<QString,QString> &map, QString *errmsg = 0);
+  bool getInfo(QHash<QString,QString> &map, QString *errmsg = 0);
 
   /** Sends a GETINFO message for a single info value to Tor */
   bool getInfo(QString key, QString &val, QString *errmsg = 0);
