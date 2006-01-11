@@ -27,6 +27,7 @@
 #include <QMainWindow>
 
 #include "tray/trayicon.h"
+#include "about.h"
 
 class MainWindow : public QMainWindow
 {
@@ -34,6 +35,9 @@ class MainWindow : public QMainWindow
 
 public:
   MainWindow();
+
+private slots:
+  void about();
 
 private:
   void createMenus();
@@ -45,6 +49,7 @@ private:
   QMenu* _toolsMenu;
   QMenu* _signalMenu;
   
+  QAction* _aboutAct;
   QAction* _exitAct;
 };
 

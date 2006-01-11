@@ -45,6 +45,9 @@ MainWindow::MainWindow()
 */
 void MainWindow::createActions()
 {
+  _aboutAct = new QAction(tr("About"), this);
+  connect(_aboutAct, SIGNAL(triggered()), this, SLOT(about()));
+  
   _exitAct = new QAction(tr("Exit"), this);
   connect(_exitAct, SIGNAL(triggered()), this, SLOT(close()));
 }
@@ -62,7 +65,7 @@ void MainWindow::createMenus()
   _toolsMenu = _trayMenu->addMenu(tr("Tools"));
   _trayMenu->addSeparator();
   _trayMenu->addAction(tr("Configure"));
-  _trayMenu->addAction(tr("About"));
+  _trayMenu->addAction(_aboutAct);
   _trayMenu->addSeparator();
   _trayMenu->addAction(_exitAct);
 
@@ -78,4 +81,12 @@ void MainWindow::createMenus()
   _signalMenu->addAction(QString(tr("Debug Mode")));
   _signalMenu->addAction(QString(tr("Shutdown")));
   _signalMenu->addAction(QString(tr("Kill")));
+}
+
+/*
+ Creates an instance of AboutDialog
+*/
+void MainWindow::about()
+{
+  AboutDialog::AboutDialog(this);
 }

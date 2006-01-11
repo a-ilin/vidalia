@@ -20,11 +20,15 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  
 #  02110-1301, USA.
 #################################################################
+FORMS = $$PWD/aboutdialog.ui
 
-HEADERS += $$PWD/mainwindow.h
+HEADERS += $$PWD/mainwindow.h \
+           $$PWD/about.h
+           
 SOURCES += $$PWD/main.cpp \
-           $$PWD/mainwindow.cpp
-
+           $$PWD/mainwindow.cpp \
+           $$PWD/about.cpp
+           
 RESOURCES += $$PWD/res/vidalia.qrc
 
 macx {
