@@ -88,5 +88,7 @@ void MainWindow::createMenus()
 */
 void MainWindow::about()
 {
-  AboutDialog::AboutDialog(this);
+  AboutDialog* a = new AboutDialog(this);
+  a->show();
+  
 }
