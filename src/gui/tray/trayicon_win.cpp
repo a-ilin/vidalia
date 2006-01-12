@@ -290,18 +290,22 @@ TrayIcon::sysRemove()
 void 
 TrayIcon::sysUpdateIcon()
 {
-  if (d) {
-    if (d->hMask) {
-      ptrDeleteObject( d->hMask );
-      d->hMask = 0; // michalj
-    }
-    if (d->hIcon) {
-      DestroyIcon(d->hIcon);
+  if ( d ) {
+    if ( d->hMask )
+      if ( d->hMask ) {
+        ptrDeleteObject( d->hMask );
+        if ( d->hIcon ) {
+          d->hMask = 0; // michalj
+        }
+      }
+    if ( d->hIcon ) {
+      DestroyIcon( d->hIcon );
       d->hIcon = 0; // michalj
     }
-
-    d->hIcon = createIcon(pm, d->hMask);
-    d->trayMessage(NIM_MODIFY);
+    
+    d->hMask = createIconMask( pm );
+ 		d->hIcon = createIcon( pm, d->hMask );
+ 		d->trayMessage( NIM_MODIFY );
   }
 }
 
