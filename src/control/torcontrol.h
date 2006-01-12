@@ -24,17 +24,20 @@
 #ifndef _TORCONTROL_H
 #define _TORCONTROL_H
 
+#include <QObject>
 #include <QHash>
 
 #include "controlconnection.h"
 #include "torprocess.h"
 
-class TorControl
+class TorControl : public QObject
 {
+  Q_OBJECT
+  
 private:
   ControlConnection _controlConn;
   TorProcess _torProcess;
-  
+
 public:
   /** Default constructor */
   TorControl();
@@ -43,13 +46,13 @@ public:
   ~TorControl();
 
   /** Start the Tor process */
-  bool startTor(QString *errmsg = 0);
+  bool start(QString *errmsg = 0);
 
   /** Stop the Tor process */
-  void stopTor();
+  void stop();
 
   /** Detect if the Tor process is running */
-  bool torIsRunning();
+  bool isRunning();
 
   /** Connect to Tor's control socket */
   bool connect(QString *errmsg = 0);

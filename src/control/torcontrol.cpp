@@ -39,7 +39,7 @@ TorControl::~TorControl()
 /** Start the Tor process. Returns true if the process was successfully
  * started, otherwise returns false. */
 bool
-TorControl::startTor(QString *errmsg)
+TorControl::start(QString *errmsg)
 {
   VidaliaSettings settings;
   return _torProcess.start(settings.getTorExecutable(),
@@ -49,14 +49,14 @@ TorControl::startTor(QString *errmsg)
 
 /** Stop the Tor process. */
 void
-TorControl::stopTor()
+TorControl::stop()
 {
   _torProcess.stop();
 }
 
 /** Detect if the Tor process is running. */
 bool
-TorControl::torIsRunning()
+TorControl::isRunning()
 {
   return (_torProcess.pid() != 0);
 }
