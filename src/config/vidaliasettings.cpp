@@ -23,6 +23,8 @@
 
 #include "vidaliasettings.h"
 
+/* Vidalia's version string */
+#define VIDALIA_VERSION        "0.0.1-alpha"
 
 /* Vidalia's Settings */
 #define SETTING_TOR_PATH       "Tor/TorPath"
@@ -54,6 +56,13 @@ VidaliaSettings::VidaliaSettings()
 /** Default Destructor */
 VidaliaSettings::~VidaliaSettings()
 {
+}
+
+/** Return Vidalia's version string */
+QString
+VidaliaSettings::getVersion()
+{
+  return QString(VIDALIA_VERSION);
 }
 
 /** Get the path to Tor's executable from Vidalia's configuration. If a path

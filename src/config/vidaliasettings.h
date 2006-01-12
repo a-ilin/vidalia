@@ -52,6 +52,9 @@ public:
   VidaliaSettings();
   ~VidaliaSettings();
 
+  /* Return Vidalia's version string */
+  static QString getVersion();
+  
   /* Get and set Tor's location information */
   QDir        getTorPath();
   void        setTorPath(QDir path);
@@ -70,7 +73,6 @@ public:
   /* Get and set Tor's control port */
   quint16 getControlPort();
   void    setControlPort(quint16 port);
- 
 };
 
 #endif
