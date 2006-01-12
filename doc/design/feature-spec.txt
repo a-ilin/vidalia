@@ -1,0 +1,246 @@
+$Id$
+
+                       Vidalia Feature Specification
+
+0. Introduction
+
+The purpose of this document is to give an overview of Vidalia's design goals,
+as well as a general description of what features must be present in Vidalia.
+In addition, this document contains descriptions of features which we have
+considered, but which Vidalia does not currently implement either for
+technical reasons or because there simply isn't any demand for a feature.
+
+
+1. Design Overview
+
+Vidalia aims for a "minimalist" interface, meaning that its use should be
+unobtrusive wihle the user is doing other tasks on her machine, while still
+providing adequate information about the status of their Tor process.
+
+Vidalia also does not aim to support every configuration option offered by
+Tor. Tor's configuration file (the user's 'torrc' file) supports a plethora of
+configuration options, allowing the user extensive customization over the
+behavior of their Tor process; however, not all users need or want to
+configure every aspect of Tor. Additionally, it has been the author's
+experience that few users actually understand all of Tor's configuration
+options nor do they understand the implications of changing those
+configuration options (e.g., changing the set of default authoritative
+directory servers or allowing only nodes from a specified country).
+
+Vidalia should be able to run Tor with a standard set of default arguments
+that allow the user to run Tor without doing any complex initial
+configuration. Also, Vidalia users should be able to use and configure Tor
+without having to understand details of Tor's inner-workings. 
+
+
+2. Required Features
+
+Items described in this section represent features or functionality that MUST
+be present in Vidalia. These features are considered necessary for
+providing a useful Tor controller.
+
+2.1. Tor Process Management
+
+Vidalia must support starting and stopping Tor at the user's request, without
+the user having to repeatedly specify the location of their Tor executable. In
+addition, Vidalia must be able to monitor the status of the Tor process and
+alert the user should Tor exit unexpectedly.
+
+Information about the status of Tor should be reflected in an icon on the
+user's screen in an area appropriate for their operating system (e.g., the
+system tray on Windows or the menu bar on Mac OS X). Hovering over the icon
+should give the user a brief description of what the currently displayed icon
+indicates (e.g., "Tor is stopped"). Any status indicators the user did not
+explicitly ask for, such as a notification balloon on Windows, should be able
+to be disabled at the user's discretion.
+
+2.2. Tor Log Messages
+
+Tor has the ability to notify a controller about what it's doing by asking for
+a configurable set of log message severity levels. These messages should be
+displayed for the user in a single dialog, able to be hidden at the user's
+request while continuing to accept log messages from Tor in the background.
+Vidalia must also allow the user to configure the severity of messages in
+which he is interested.
+
+NOTE: It is entirely possible that the user's Tor process could terminate
+before the controller has the ability to connect to Tor's control port,
+meaning the user has no way of knowing why their Tor process exited
+unexpectedly. In such case, Vidalia must provide an alternative way to view
+Tor's output, such as capturing messages logged to stdout.
+
+2.3. Tor Configuration
+
+Vidalia must provide a screen (or set of screens) through which the user can
+configure their Tor. As mentioned in Section 1, Vidalia does not need to
+support every possible configuratino option, but rather should allow the user
+to configure the most often modified options. Configuration options that are
+not often changed or have security implications should be placed on an
+"Advanced" configuration screen.
+
+With each configuration option displayed, Vidalia must provide a way for the
+user to read a text description of what the configuration option represents
+and how changing that option affects their Tor process.
+
+2.4. Bandwidth Monitoring
+
+Users are often interested in the rate at which they are currently sending and
+receiving through the Tor network. Vidalia must provide a graph of the user's
+current transfer rates, based on the amount of data sent and received roughly
+each second as reported by Tor via the control protocol.
+
+The bandwidth graph must have an intuitive default appearance and
+interpretation, but should also be configurable should the user not like the
+defaults. The bandwidth graph must also be able to be resized and "docked"
+in a region of the user's screen.
+
+2.5. Current Circuit Information
+
+Vidalia must provide a screen allowing the user to see a list of their
+currently opened circuits, including a list of Tor routers which are in each
+circuit. The user must be able to select one of the routers in a circuit and
+view detailed information about that router, as parsed from its server
+descriptor. Such information should include the router's nickname as chosen by
+the router operator, the router operator's contact information, that router's
+exit policy, etc.
+
+Vidalia should allow the user to see which streams are currently attached to
+which circuits. Vidalia may also provide information about the geographic
+location of the exit node for each circuit, since outbound connections from
+that circuit will appear to originate in the country of that circuit's exit
+node.
+
+Vidalia may also give users the ability to destroy a specific circuit should
+the user decide that the nodes in that circuit are not providing adequate
+performance.
+
+2.6. Tor Network Status
+
+Vidalia must provide a way to view a list of routers currently in the Tor
+network and information about each router, such as its nickname, exit policy,
+uptime, or bandwidth. In essence, this is a compacted and more intuitive view
+of Tor's directory.
+
+Users should be able to search the list of current routers for a specific
+nickname or for a router that allows exiting to a specified port. In addition,
+users should be able to order the list of available routers by statistics such
+as uptime and bandwidth.
+
+2.7. Server Management
+
+2.7.1. Server Setup
+
+The Tor network depends on volunteers to run the Tor routers in the network.
+To further encourage users to run a router (server), server setup must be
+simple. A small form that prompts the user for necessary information, such as
+a nickname for the user's server or contact information, should be displayed.
+After completing the form and confirming the entered information, the user's
+Tor process should automatically be configured to run as a server with the
+information just entered.
+
+2.7.2. Exit Policy Configuration
+
+Many server operators prefer to limit the types of traffic that they will
+relay for the Tor network. Since traffic from an exit node appears to
+originate from that machine's IP address, server operators may want to try to
+cut down on traffic that could get them in trouble, such as file-sharing
+traffic. Tor supports this through an ``exit policy'' at each router, which
+defines IPs and ports that the operator may either accept or reject. Server
+operators may also opt to be a ``middleman node'', who doesn't allow traffic
+to exit the Tor network from their node but is willing to relay traffic
+between other Tor routers.
+
+Vidalia must make configuring an exit policy easy and intuitive. Vidalia may
+also display helpful information for the user, such as what ports are commonly
+associated with what sorts of network traffic.
+
+2.7.3. Rate-limiting Configuration
+
+In addition to exit policies, Tor also allows server operators to specify how
+much of their bandwidth they are willing to devote to relaying Tor traffic;
+however, users may want to devote varying amounts of bandwidth depending on
+the time of day. As an example, a server operator may be willing to devote all
+of his available bandwidth to the Tor network at night while he is sleeping,
+but only a small fraction of it during the day when he is using his machine
+for his own activities.
+
+Vidalia must allow server operators to easily schedule rate-limiting depending
+on the current date and time. Vidalia could also allow the user to configure
+``rate-limiting profiles''. Examples of a profile may include ``weekday''
+which would all Tor to use all available bandwidth while the user is at work
+and during the evening, ``weekend'' which is similar to ``weekday'' except the
+user keeps most of his bandwidth to himself during the day, or ``vacation''
+which devotes all bandwidth to Tor all the time.
+
+2.8. Signals
+
+On non-Windows machines, Tor performs a certain action when it receives a
+signal. For instance, Tor will reload its torrc if it receives a SIGHUP.
+Unfortunately, Windows users are unable to send Tor such signals.
+
+Vidalia must allow the user to simulate sending signals to Tor by using the
+SIGNAL feature of the control protocol. Vidalia should also include
+descriptions informing the user what each signal does and what it is used for.
+
+
+3. Desired Features
+
+Features in this section are currently considered useful, but whose design has
+yet to be fully considered and planned. These features would be nice to have
+in Vidalia, but whose absence would not seriously adversely affect the
+usability or utility of Vidalia.
+
+3.1. Graphical display of current circuits
+
+The user should be able to see a map of the world with indicators pointing to
+the rough geographic location of each router in the Tor network. Circuits will
+be represented by drawing a link between router indicators on the map.
+Hovering over an indicator on the map will display information about the
+router, as was mentioned in Section 2.5.
+
+The primary difficulty with this feature is finding a free, accurate database
+used to map an IP address to a latitude and longitude. Another difficulty with
+this is how to represent situations where multiple routers are run at the same
+geographic location. For example, there are currently three routers being run
+at MIT; the user should be able to easily distinguish between the three.
+
+3.2. Circuit latency information
+
+Users are often interested in how their current circuit is performing, so they
+may be interested to see the additional delay added by routing their traffic
+through the Tor network. One could imagine an implementation as follows:
+
+  Vidalia creates a circuit using the same sequence of nodes in the circuit
+  whose performance we wish to measure. Vidalia then connects to itself
+  through that circuit and sends small chunks of data to itself, measuring the
+  delay between the time the chunk of data is sent and the time it is
+  received. Vidalia is essentially "pinging" itself through a circuit.
+
+A technical problem with the above approach is that, if the user has a
+firewall configured, it must accept connections from the exit node of the
+circuit being measured otherwise Vidalia would be unable to connect back to
+itself.
+
+
+4. Questionable Features
+
+Features in this section may or may not be useful. We might consider
+implementing them pending a number of users who desire such features.
+
+4.1. Support for running Vidalia on a separate machine than Tor
+
+Tor gives users the ability to run their Tor process on a server on a LAN
+and then point their browser's proxy settings to that server from other
+machines on the LAN. In such cases, users of the machines on the LAN not
+running Tor would still want to know about the status of the Tor process on
+the server but Vidalia would be unable to monitor the process on a remote
+machine.
+
+A possible solution for this would be to have an "agent" running on the server
+that monitored the state of the Tor process. Vidalia would then connect to
+this agent and ask the agent for the state of its Tor process. Vidalia could
+also tell the agent to start and stop Tor, forward control messages, etc.
+
+This is probably not worth the effort unless we hear an uproar from users
+demanding this feature.
+
