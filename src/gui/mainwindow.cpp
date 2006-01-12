@@ -45,14 +45,14 @@ MainWindow::MainWindow()
 */
 void MainWindow::createActions()
 {
-  _startAct = new QAction(tr("Start Vidalia"), this);
+  _startAct = new QAction(tr("Start"), this);
   connect(_startAct, SIGNAL(triggered()), this, SLOT(start()));
   _startAct->setEnabled(false);
   
-  _stopAct = new QAction(tr("Stop Vidalia"), this);
+  _stopAct = new QAction(tr("Stop"), this);
   connect(_stopAct, SIGNAL(triggered()), this, SLOT(stop()));
 
-  _configAct = new QAction(tr("Configure Vidalia"), this);
+  _configAct = new QAction(tr("Configure"), this);
   
   _aboutAct = new QAction(tr("About"), this);
   connect(_aboutAct, SIGNAL(triggered()), this, SLOT(about()));
