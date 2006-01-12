@@ -25,6 +25,7 @@
 
 #include "../torcontrol.h"
 #include "../../util/compat.h"
+#include "../../config/vidaliasettings.h"
 
 int
 main(int argc, char *argv[])
@@ -32,6 +33,9 @@ main(int argc, char *argv[])
   TorControl control;
   QString errmsg;
 
+  /* Output Vidalia's version */
+  qDebug() << "Vidalia Version:" << VidaliaSettings::getVersion();
+  
   /* Start Tor */
   if (!control.startTor(&errmsg)) {
     qDebug() << "Could not start Tor:" << errmsg;
