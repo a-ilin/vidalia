@@ -28,7 +28,10 @@ AboutDialog::AboutDialog(QWidget *parent)
 {
   ui.setupUi(this);
 
-/* FIXME Need access to global TorControl object to retrieve vesion */
+  /* Get Vidalia's version number */
+  ui.lblVidaliaVersion->setText(VidaliaSettings::getVersion());
+
+/* FIXME Need access to global TorControl object to retrieve version */
 /*
   QString* errmsg;
   QString torVersion = TorControl::getTorVersion(errmsg);
@@ -39,6 +42,6 @@ AboutDialog::AboutDialog(QWidget *parent)
   }
 */
 
-  /* Get Qt's Version number */
+  /* Get Qt's version number */
   ui.lblQtVersion->setText(QT_VERSION_STR);
 }

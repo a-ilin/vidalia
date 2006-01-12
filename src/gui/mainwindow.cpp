@@ -35,7 +35,7 @@ MainWindow::MainWindow()
   
   /* Put an icon in the system tray to indicate the status of Tor */
   _trayIcon = new TrayIcon(QPixmap(":/images/tor_on32.png"),
-                           tr("Vidalia"), _trayMenu, this);
+                           tr("Tor is Started"), _trayMenu, this);
   _trayIcon->show();
 }
 
@@ -94,6 +94,9 @@ void MainWindow::start()
 {
   /* Set correct tray icon */
   _trayIcon->setIcon(QPixmap(":/images/tor_on32.png"));
+  
+  /* Set ToolTip */
+  _trayIcon->setToolTip(QString("Tor is started"));
 
   /* Set menu actions appropriately */
   _startAct->setEnabled(false);
@@ -110,6 +113,9 @@ void MainWindow::stop()
 {
   /* Set correct tray icon */
   _trayIcon->setIcon(QPixmap(":/images/tor_off32.png"));
+
+  /* Set ToolTip */
+  _trayIcon->setToolTip(QString("Tor is stopped"));
 
   /* Set menu actions appropriately */
   _stopAct->setEnabled(false);

@@ -25,6 +25,7 @@
 #define _ABOUT_H
 
 #include "ui_aboutdialog.h"
+#include "../config/vidaliasettings.h"
 // #include "../control/torcontrol.h"
 
 class AboutDialog : public QDialog
