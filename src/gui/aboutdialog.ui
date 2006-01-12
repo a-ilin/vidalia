@@ -56,25 +56,6 @@
   <property name="modal" >
    <bool>true</bool>
   </property>
-  <widget class="QPushButton" name="btnOK" >
-   <property name="geometry" >
-    <rect>
-     <x>150</x>
-     <y>370</y>
-     <width>77</width>
-     <height>26</height>
-    </rect>
-   </property>
-   <property name="contextMenuPolicy" >
-    <enum>Qt::NoContextMenu</enum>
-   </property>
-   <property name="text" >
-    <string>OK</string>
-   </property>
-   <property name="default" >
-    <bool>true</bool>
-   </property>
-  </widget>
   <widget class="QWidget" name="layoutWidget" >
    <property name="geometry" >
     <rect>
@@ -277,6 +258,25 @@ See LICENSE for licensing information</string>
     <pixmap resource="res\vidalia.qrc" >:/images/tor_about.png</pixmap>
    </property>
   </widget>
+  <widget class="QPushButton" name="btnOK" >
+   <property name="geometry" >
+    <rect>
+     <x>150</x>
+     <y>370</y>
+     <width>77</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="contextMenuPolicy" >
+    <enum>Qt::NoContextMenu</enum>
+   </property>
+   <property name="text" >
+    <string>OK</string>
+   </property>
+   <property name="default" >
+    <bool>true</bool>
+   </property>
+  </widget>
  </widget>
  <pixmapfunction></pixmapfunction>
  <resources>
@@ -287,7 +287,7 @@ See LICENSE for licensing information</string>
    <sender>btnOK</sender>
    <signal>clicked()</signal>
    <receiver>AboutDialog</receiver>
-   <slot>accept()</slot>
+   <slot>hide()</slot>
    <hints>
     <hint type="sourcelabel" >
      <x>192</x>
