@@ -26,14 +26,14 @@
 
 #include "ui_aboutdialog.h"
 #include "../config/vidaliasettings.h"
-// #include "../control/torcontrol.h"
+#include "../control/torcontrol.h"
 
 class AboutDialog : public QDialog
 {
   Q_OBJECT
 
 public:
-    AboutDialog(QWidget *parent = 0);
+    AboutDialog(TorControl *torControl, QWidget *parent = 0);
 
 private:
     Ui::AboutDialog ui;

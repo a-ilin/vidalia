@@ -32,11 +32,21 @@ MainWindow::MainWindow()
   
   createActions();
   createMenus();
+ 
+  /* Create a new TorControl object, used to communicate with and manipulate Tor */
+  _torControl = new TorControl();
   
   /* Put an icon in the system tray to indicate the status of Tor */
   _trayIcon = new TrayIcon(QPixmap(":/images/tor_on32.png"),
                            tr("Tor is Started"), _trayMenu, this);
   _trayIcon->show();
+}
+
+MainWindow::~MainWindow()
+{
+  if (_torControl) {
+    delete _torControl;
+  }
 }
 
 /* 
@@ -130,6 +140,7 @@ void MainWindow::stop()
 */
 void MainWindow::about()
 {
-  AboutDialog* aboutDialog = new AboutDialog(this);
+  AboutDialog* aboutDialog = new AboutDialog(_torControl, this);
   aboutDialog->show();
 }
+

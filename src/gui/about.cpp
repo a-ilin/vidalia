@@ -23,7 +23,7 @@
 
 #include "about.h"
 
-AboutDialog::AboutDialog(QWidget *parent)
+AboutDialog::AboutDialog(TorControl *torControl, QWidget *parent)
 : QDialog(parent)
 {
   ui.setupUi(this);
@@ -31,17 +31,10 @@ AboutDialog::AboutDialog(QWidget *parent)
   /* Get Vidalia's version number */
   ui.lblVidaliaVersion->setText(VidaliaSettings::getVersion());
 
-/* FIXME Need access to global TorControl object to retrieve version */
-/*
-  QString* errmsg;
-  QString torVersion = TorControl::getTorVersion(errmsg);
-  if (errmsg) {
-    ui.lblTorVersion->setText("Unknown");
-  } else {
-    ui.lblTorVersion->setText(torVersion);
-  }
-*/
+  /* Access the TorControl object to retrieve version */
+  ui.lblTorVersion->setText(torControl->getTorVersion());
 
   /* Get Qt's version number */
   ui.lblQtVersion->setText(QT_VERSION_STR);
 }
+

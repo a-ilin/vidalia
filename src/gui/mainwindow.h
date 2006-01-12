@@ -26,6 +26,8 @@
 
 #include <QMainWindow>
 
+#include "../control/torcontrol.h"
+
 #include "tray/trayicon.h"
 #include "about.h"
 
@@ -35,7 +37,8 @@ class MainWindow : public QMainWindow
 
 public:
   MainWindow();
-
+  ~MainWindow();
+  
 private slots:
   void start();
   void stop();
@@ -45,6 +48,8 @@ private:
   void createMenus();
   void createActions();
 
+  TorControl* _torControl;
+  
   TrayIcon* _trayIcon;
   
   QMenu* _trayMenu;
