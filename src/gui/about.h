@@ -25,6 +25,7 @@
 #define _ABOUT_H
 
 #include "ui_aboutdialog.h"
+// #include "../control/torcontrol.h"
 
 class AboutDialog : public QDialog
 {

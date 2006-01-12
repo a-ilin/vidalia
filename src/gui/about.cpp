@@ -27,4 +27,18 @@ AboutDialog::AboutDialog(QWidget *parent)
 : QDialog(parent)
 {
   ui.setupUi(this);
+
+/* FIXME Need access to global TorControl object to retrieve vesion */
+/*
+  QString* errmsg;
+  QString torVersion = TorControl::getTorVersion(errmsg);
+  if (errmsg) {
+    ui.lblTorVersion->setText("Unknown");
+  } else {
+    ui.lblTorVersion->setText(torVersion);
+  }
+*/
+
+  /* Get Qt's Version number */
+  ui.lblQtVersion->setText(QT_VERSION_STR);
 }
