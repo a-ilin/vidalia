@@ -49,8 +49,7 @@ main(int argc, char *argv[])
   QApplication::setStyle(new QPlastiqueStyle);
 #endif
   
-  MainWindow mainWin;
-  mainWin.show(); 
+  MainWindow mainWin; 
 
   return app.exec();
 }

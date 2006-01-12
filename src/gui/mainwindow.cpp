@@ -60,19 +60,9 @@ void MainWindow::createActions()
   _exitAct = new QAction(tr("Exit"), this);
   connect(_exitAct, SIGNAL(triggered()), this, SLOT(close()));
 
-  _bandwidthAct = new QAction(tr("Bandwidth Usage Graph"), this);
+  _bandwidthAct = new QAction(tr("Bandwidth Usage Graph"), this); 
 
   _messageAct = new QAction(tr("Log Message History"), this);
-
-  _reloadAct = new QAction(tr("Reload Configuration"), this);
-
-  _dumpAct = new QAction(tr("Dump Statistics"), this);
-
-  _debugAct = new QAction(tr("Debug Mode"), this);
-
-  _shutdownAct = new QAction(tr("Shutdown"), this);
-
-  _killAct = new QAction(tr("Kill"), this);
 }
 
 /*
@@ -95,15 +85,6 @@ void MainWindow::createMenus()
   /* Tools menu */
   _toolsMenu->addAction(_bandwidthAct);
   _toolsMenu->addAction(_messageAct);
-  _toolsMenu->addSeparator();
-  _signalMenu = _toolsMenu->addMenu(tr("Send Signal"));
-
-  /* Signals menu */
-  _signalMenu->addAction(_reloadAct);
-  _signalMenu->addAction(_dumpAct);
-  _signalMenu->addAction(_debugAct);
-  _signalMenu->addAction(_shutdownAct);
-  _signalMenu->addAction(_killAct);
 }
 
 /*
