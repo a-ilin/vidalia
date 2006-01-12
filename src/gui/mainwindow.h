@@ -37,6 +37,8 @@ public:
   MainWindow();
 
 private slots:
+  void start();
+  void stop();
   void about();
 
 private:
@@ -48,9 +50,19 @@ private:
   QMenu* _trayMenu;
   QMenu* _toolsMenu;
   QMenu* _signalMenu;
-  
+ 
+  QAction* _startAct;
+  QAction* _stopAct;
+  QAction* _configAct;
   QAction* _aboutAct;
   QAction* _exitAct;
+  QAction* _bandwidthAct;
+  QAction* _messageAct;
+  QAction* _reloadAct;
+  QAction* _dumpAct;
+  QAction* _debugAct;
+  QAction* _shutdownAct;
+  QAction* _killAct;
 };
 
 #endif
