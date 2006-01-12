@@ -219,7 +219,9 @@ through the Tor network. One could imagine an implementation as follows:
 A technical problem with the above approach is that, if the user has a
 firewall configured, it must accept connections from the exit node of the
 circuit being measured otherwise Vidalia would be unable to connect back to
-itself.
+itself. Also, an adversary who can observe the user would see that a Tor
+exit node is connecting back to the user and sending these "pings", yielding
+the identity of this user's exit node.
 
 
 4. Questionable Features
