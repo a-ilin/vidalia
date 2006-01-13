@@ -233,8 +233,10 @@ TorControl::signal(Signal sig, QString *errmsg)
 QString
 TorControl::getTorVersion(QString *errmsg)
 {
-  QString ver("<unknown>");
-  getInfo("version", ver, errmsg);
-  return ver;
+  QString ver;
+  if (getInfo("version", ver, errmsg)) {
+    return ver;
+  }
+  return "<unknown>";
 }
 
