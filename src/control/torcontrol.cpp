@@ -29,6 +29,17 @@
 /** Default constructor */
 TorControl::TorControl()
 {
+  /* Plumb the process signals */
+  QObject::connect(&_torProcess, SIGNAL(started()),
+                   this, SLOT(onStarted()));
+  QObject::connect(&_torProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
+                   this, SLOT(onStopped(int, QProcess::ExitStatus)));
+  
+  /* Plumb the appropriate socket signals */
+  QObject::connect(&_controlConn, SIGNAL(connected()),
+                   this, SLOT(onConnected()));
+  QObject::connect(&_controlConn, SIGNAL(disconnected()),
+                   this, SLOT(onDisconnected()));
 }
 
 /** Default destructor */
@@ -46,12 +57,25 @@ TorControl::start(QString *errmsg)
                            settings.getTorArguments(), errmsg);
 }
 
+/** Emits a signal that the Tor process started */
+void
+TorControl::onStarted()
+{
+  emit started();
+}
 
 /** Stop the Tor process. */
 void
 TorControl::stop()
 {
   _torProcess.stop();
+}
+
+/** Emits a signal that the Tor process stopped */
+void
+TorControl::onStopped(int exitCode, QProcess::ExitStatus exitStatus)
+{
+  emit stopped(exitCode, exitStatus);
 }
 
 /** Detect if the Tor process is running. */
@@ -71,11 +95,26 @@ TorControl::connect(QString *errmsg)
                               settings.getControlPort(), errmsg);
 }
 
+/** Emits a signal that the control socket successfully established a
+ * connection to Tor. */
+void
+TorControl::onConnected()
+{
+  emit connected();
+}
+
 /** Disconnect from Tor's control port */
 void
 TorControl::disconnect()
 {
   _controlConn.disconnect();
+}
+
+/** Emits a signal that the control socket disconnected from Tor */
+void
+TorControl::onDisconnected()
+{
+  emit disconnected();
 }
 
 /** Check if theh control socket is connected */

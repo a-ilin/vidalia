@@ -34,10 +34,6 @@ class TorControl : public QObject
 {
   Q_OBJECT
   
-private:
-  ControlConnection _controlConn;
-  TorProcess _torProcess;
-
 public:
   /** Default constructor */
   TorControl();
@@ -74,7 +70,34 @@ public:
 
   /** Ask Tor for its version */
   QString getTorVersion(QString *errmsg = 0);
+
+
+signals:
+  /** Emitted when the Tor process has started */
+  void started();
   
+  /** Emitted when the Tor process has stopped */
+  void stopped(int exitCode, QProcess::ExitStatus exitStatus);
+
+  /** Emitted when the controller has connected to Tor */
+  void connected();
+
+  /** Emitted when the controller has disconnected from Tor */
+  void disconnected();
+
+
+private:
+  /** Instantiates a socket used to connect to Tor's control port */
+  ControlConnection _controlConn;
+  /** Manages and monitors the Tor process */
+  TorProcess _torProcess;  
+
+/* The slots below simply relay signals from the appropriate member objects */
+private slots:
+  void onStarted();
+  void onStopped(int exitCode, QProcess::ExitStatus exitStatus);
+  void onConnected();
+  void onDisconnected();
 };
 
 #endif
