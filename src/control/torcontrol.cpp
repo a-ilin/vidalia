@@ -137,11 +137,14 @@ TorControl::authenticate(QByteArray token, QString *errmsg)
 
   if (_controlConn.send(cmd, reply, errmsg)) {
     ReplyLine line = reply.getLine();
-    if (line.getStatus() == "250") {
-      return true;
+    if (line.getStatus() != "250") {
+      if (errmsg) {
+        *errmsg = line.getMessage();
+      }
+      return false;
     }
   }
-  return false;
+  return true;
 }
 
 /** Sends a GETINFO message to Tor based on the given map of keyvals. The
@@ -166,7 +169,9 @@ TorControl::getInfo(QHash<QString,QString> &map, QString *errmsg)
     /* Parse the response for the returned values */
     foreach (ReplyLine line, reply.getLines()) {
       if (line.getStatus() != "250") {
-        *errmsg = line.getMessage();
+        if (errmsg) {
+          *errmsg = line.getMessage();
+        }
         return false;
       }
 
@@ -191,6 +196,37 @@ TorControl::getInfo(QString key, QString &val, QString *errmsg)
     val = map.value(key);
   }
   return false;
+}
+
+/** Sends a signal to Tor */
+bool
+TorControl::signal(Signal sig, QString *errmsg)
+{
+  ControlCommand cmd("SIGNAL");
+  ControlReply reply;
+  QString sigtype;
+  
+  /* Convert the signal to the correct string */
+  switch (sig) {
+    case Reload:   sigtype = "RELOAD"; break;
+    case Shutdown: sigtype = "SHUTDOWN"; break;
+    case Dump:     sigtype = "DUMP"; break;
+    case Debug:    sigtype = "DEBUG"; break;
+    case Halt:     sigtype = "HALT"; break;
+    default: return false; break;
+  }
+  
+  /* Send and check the response */
+  if (_controlConn.send(cmd, reply, errmsg)) {
+    ReplyLine line = reply.getLine();
+    if (line.getStatus() != "250") {
+      if (errmsg) {
+        *errmsg = line.getMessage();
+      }
+      return false;
+    }
+  }
+  return true;
 }
 
 /** Ask Tor for its version */

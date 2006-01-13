@@ -35,6 +35,15 @@ class TorControl : public QObject
   Q_OBJECT
   
 public:
+  /** Signals that can be sent by the controller */
+  enum Signal {
+    Reload,
+    Shutdown,
+    Dump,
+    Debug,
+    Halt
+  };
+  
   /** Default constructor */
   TorControl();
   
@@ -68,6 +77,9 @@ public:
   /** Sends a GETINFO message for a single info value to Tor */
   bool getInfo(QString key, QString &val, QString *errmsg = 0);
 
+  /** Sends a signal to Tor */
+  bool signal(Signal sig, QString *errmsg = 0);
+  
   /** Ask Tor for its version */
   QString getTorVersion(QString *errmsg = 0);
 
