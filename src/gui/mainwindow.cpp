@@ -32,7 +32,7 @@ MainWindow::MainWindow()
   
   createActions();
   createMenus();
- 
+  
   /* Create a new TorControl object, used to communicate with and manipulate Tor */
   _torControl = new TorControl();
   
@@ -95,6 +95,21 @@ void MainWindow::createMenus()
   /* Tools menu */
   _toolsMenu->addAction(_bandwidthAct);
   _toolsMenu->addAction(_messageAct);
+
+#if defined(Q_WS_MAC)
+  /* The File, Help, and Configure menus will get merged into the application
+   * menu by Qt. */
+  _menuBar = new QMenuBar();
+  _fileMenu = _menuBar->addMenu(tr("File"));
+  _fileMenu->addAction(_exitAct);
+  _torMenu = _menuBar->addMenu(tr("Tor"));
+  _torMenu->addAction(_startAct);
+  _torMenu->addAction(_stopAct);
+  _torMenu->addAction(_configAct);
+  _menuBar->addMenu(_toolsMenu);
+  _helpMenu = _menuBar->addMenu(tr("Help"));
+  _helpMenu->addAction(_aboutAct);
+#endif
 }
 
 /*

@@ -47,6 +47,7 @@ private slots:
 private:
   void createMenus();
   void createActions();
+  void createMenuBar();
 
   TorControl* _torControl;
   
@@ -54,7 +55,7 @@ private:
   
   QMenu* _trayMenu;
   QMenu* _toolsMenu;
- 
+
   QAction* _startAct;
   QAction* _stopAct;
   QAction* _configAct;
@@ -62,6 +63,14 @@ private:
   QAction* _exitAct;
   QAction* _bandwidthAct;
   QAction* _messageAct;
+
+/* GUI elements unique on Mac so we can use the system menubar */
+#if defined(Q_WS_MAC)
+  QMenuBar* _menuBar;
+  QMenu* _fileMenu;
+  QMenu* _torMenu;
+  QMenu* _helpMenu;
+#endif
 };
 
 #endif

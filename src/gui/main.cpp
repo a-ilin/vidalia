@@ -50,7 +50,6 @@ main(int argc, char *argv[])
 #endif
   
   MainWindow mainWin; 
-
   return app.exec();
 }
 
