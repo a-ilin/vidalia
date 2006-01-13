@@ -47,7 +47,6 @@ private slots:
 private:
   void createMenus();
   void createActions();
-  void createMenuBar();
 
   TorControl* _torControl;
   
