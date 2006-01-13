@@ -66,9 +66,9 @@ TorControl::onStarted()
 
 /** Stop the Tor process. */
 void
-TorControl::stop()
+TorControl::stop(QString *errmsg)
 {
-  _torProcess.stop();
+  _torProcess.stop(errmsg);
 }
 
 /** Emits a signal that the Tor process stopped */
