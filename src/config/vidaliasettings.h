@@ -73,6 +73,10 @@ public:
   /* Get and set Tor's control port */
   quint16 getControlPort();
   void    setControlPort(quint16 port);
+
+  /* Get and set Tor's authentication information */
+  QByteArray getAuthToken();
+  void setAuthToken(QByteArray token);
 };
 
 #endif

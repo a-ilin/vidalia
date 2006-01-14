@@ -31,6 +31,7 @@
 #define SETTING_TOR_ARGUMENTS  "Tor/Arguments"
 #define SETTING_CONTROL_ADDR   "Tor/ControlAddr"
 #define SETTING_CONTROL_PORT   "Tor/ControlPort"
+#define SETTING_AUTH_TOKEN     "Tor/AuthToken"
 
 /* Default Settings */
 #if defined( Q_OS_WIN32)
@@ -44,6 +45,7 @@
 #define DEFAULT_TOR_ARGUMENTS  "-ControlPort 9051"
 #define DEFAULT_CONTROL_ADDR   "127.0.0.1"
 #define DEFAULT_CONTROL_PORT   9051
+#define DEFAULT_AUTH_TOKEN    ""
 
 /** Default Constructor
  * We use "Vidalia" for both the company name and the application name.
@@ -163,5 +165,22 @@ void
 VidaliaSettings::setControlPort(quint16 port)
 {
   setValue(SETTING_CONTROL_PORT, port);
+}
+
+/** Get the authentication token sent by the controller to Tor. For now, this
+ * just sends the default (blank) authentication token. It is implemented as a
+ * stub here to make it easy to do real authentication in the future. */
+QByteArray
+VidaliaSettings::getAuthToken()
+{
+  return QByteArray::fromBase64(value(SETTING_AUTH_TOKEN,
+                                QByteArray(DEFAULT_AUTH_TOKEN)).toByteArray());
+}
+
+/** Set the authentication token sent by the controller to Tor. */
+void
+VidaliaSettings::setAuthToken(QByteArray token)
+{
+  setValue(SETTING_AUTH_TOKEN, token.toBase64());
 }
 
