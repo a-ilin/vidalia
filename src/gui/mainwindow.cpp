@@ -24,24 +24,41 @@
 #include <QtGui>
 
 #include "mainwindow.h"
+#include "../util/compat.h"
 
+/* On Mac, we need to put the 128x128 icon in the dock */
+#if defined(Q_WS_MAC)
+#define IMG_TOR_STOPPED    ":/images/tor_off128.png"
+#define IMG_TOR_RUNNING    ":/images/tor_on128.png"
+#else
+#define IMG_TOR_STOPPED    ":/images/tor_off32.png"
+#define IMG_TOR_RUNNING    ":/images/tor_on32.png"
+#endif
+
+
+/** Default constructor */
 MainWindow::MainWindow()
 {
   /* Set Vidalia's application icon */
-  setWindowIcon(QIcon(":/images/tor_on32.png"));
-  
+  setWindowIcon(QIcon(IMG_TOR_STOPPED));
+  QApplication::setWindowIcon(QIcon(IMG_TOR_STOPPED));
+
   createActions();
   createMenus();
   
   /* Create a new TorControl object, used to communicate with and manipulate Tor */
   _torControl = new TorControl();
-  
+  connect(_torControl, SIGNAL(started()), this, SLOT(started()));
+  connect(_torControl, SIGNAL(stopped(int, QProcess::ExitStatus)),
+                 this, SLOT(stopped(int, QProcess::ExitStatus)));
+
   /* Put an icon in the system tray to indicate the status of Tor */
-  _trayIcon = new TrayIcon(QPixmap(":/images/tor_on32.png"),
-                           tr("Tor is Started"), _trayMenu, this);
+  _trayIcon = new TrayIcon(QPixmap(IMG_TOR_STOPPED),
+                           tr("Tor is Stopped"), _trayMenu, this);
   _trayIcon->show();
 }
 
+/** Default destructor */
 MainWindow::~MainWindow()
 {
   if (_torControl) {
@@ -57,10 +74,11 @@ void MainWindow::createActions()
 {
   _startAct = new QAction(tr("Start"), this);
   connect(_startAct, SIGNAL(triggered()), this, SLOT(start()));
-  _startAct->setEnabled(false);
+  _startAct->setEnabled(true);
   
   _stopAct = new QAction(tr("Stop"), this);
   connect(_stopAct, SIGNAL(triggered()), this, SLOT(stop()));
+  _stopAct->setEnabled(false);
 
   _configAct = new QAction(tr("Configure"), this);
   
@@ -117,37 +135,111 @@ void MainWindow::createMenus()
 */
 void MainWindow::start()
 {
-  /* Set correct tray icon */
-  _trayIcon->setIcon(QPixmap(":/images/tor_on32.png"));
+  QString errmsg;
+  if (!_torControl->start(&errmsg)) {
+    QMessageBox::warning(this, tr("Error Starting Tor"),
+       tr("Vidalia was unable to start Tor.\r\n\r\nError: ") + errmsg,
+       QMessageBox::Ok, QMessageBox::NoButton);
+  }
+}
+
+/** Slot: Called when the Tor process is started. It will connect the control
+ * socket and set the icons and tooltips accordingly. */
+void MainWindow::started()
+{
+  /* Set the window icon */
+  QApplication::setWindowIcon(QIcon(IMG_TOR_RUNNING));
   
-  /* Set ToolTip */
-  _trayIcon->setToolTip(QString("Tor is started"));
+  /* Set correct tray icon and tooltip */
+  _trayIcon->setIcon(QPixmap(IMG_TOR_RUNNING));
+  _trayIcon->setToolTip(tr("Tor is started"));
 
   /* Set menu actions appropriately */
   _startAct->setEnabled(false);
   _stopAct->setEnabled(true);
 
-  /* FIXME Add code for starting Tor */
-
+  /* Try to connect to Tor's control port */
+  QString errmsg;
+  if (!_torControl->connect(&errmsg)) {
+    /* There's a possibility that Tor has started, but it just hasn't had a
+     * chance to bind the control socket yet. So pause for a second and try
+     * again.*/
+    v_sleep(1);
+    if(!_torControl->connect(&errmsg)) {
+      /* Ok, ok. It really isn't going to connect. I give up. */
+      QMessageBox::warning(this, tr("Error Connecting to Tor"),
+         tr("Tor started successfully, but Vidalia was unable to "
+            "connect to it. Check your control port settings and try "
+            "again.\r\n\r\n") + errmsg,
+         QMessageBox::Ok, QMessageBox::NoButton);
+    }
+  } else {
+    /* The controller connected, so now send the AUTHENTICATE command */
+    if (!_torControl->authenticate(&errmsg)) {
+      QMessageBox::warning(this, tr("Authentication Error"),
+        tr("Vidalia was unable to authenticate itself to Tor."
+           "Check your authentication information and try again."
+           "\r\n\r\nError: ") + errmsg,
+        QMessageBox::Ok, QMessageBox::NoButton);
+    }
+  }
 }
 
 /*
- Stops Tor, modifies tray icon and tray menu appropriately
+ Stops Tor
 */
 void MainWindow::stop()
 {
-  /* Set correct tray icon */
-  _trayIcon->setIcon(QPixmap(":/images/tor_off32.png"));
+  QString errmsg;
+  
+  /* Disconnect the controller. Note that we don't check any error messages or
+   * return values, since we'll just be killing Tor anyway. */
+  if (_torControl->isConnected()) {
+    _torControl->disconnect();
+  }
 
-  /* Set ToolTip */
-  _trayIcon->setToolTip(QString("Tor is stopped"));
+  /* Stop the Tor process */
+  _isIntentionalExit = true;
+  if (!_torControl->stop(&errmsg)) {
+    QMessageBox::warning(this, tr("Error Stopping Tor"),
+       tr("Vidalia was unable to stop Tor.\r\n\r\nError: ") + errmsg,
+       QMessageBox::Ok, QMessageBox::NoButton);
+  }
+  _isIntentionalExit = false;
+}
+
+/** Slot: Called when the Tor process has exited. It will adjust the tray
+ * icons and tooltips accordingly. */
+void MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
+{
+  /* Set the window icon */
+  QApplication::setWindowIcon(QIcon(IMG_TOR_STOPPED));
+  
+  /* Set correct tray icon and tooltip */
+  _trayIcon->setIcon(QPixmap(IMG_TOR_STOPPED));
+  _trayIcon->setToolTip(tr("Tor is stopped"));
 
   /* Set menu actions appropriately */
   _stopAct->setEnabled(false);
   _startAct->setEnabled(true);
 
-  /* FIXME Add code for stopping Tor */
-  
+  /* Check if the Tor process fell over or exited cleanly */
+  if (exitStatus == QProcess::CrashExit) {
+    if (!_isIntentionalExit) {
+      QMessageBox::warning(this, tr("Tor Crashed"),
+        tr("Vidalia detected that the Tor process crashed. "
+            "Please check the message log."),
+         QMessageBox::Ok, QMessageBox::NoButton);
+    }
+  } else if (exitCode != 0) {
+    /* A quick overview of Tor's code tells me that if it catches a SIGTERM or
+     * SIGINT, Tor will exit(0). We might need to change this warning message
+     * if this turns out to not be the case. */
+    QMessageBox::warning(this, tr("Tor Exited"),
+       tr("Tor exited and returned a non-zero exit code. "
+          "Please check the message log."),
+       QMessageBox::Ok, QMessageBox::NoButton);
+  }
 }
 
 /*

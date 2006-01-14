@@ -41,13 +41,18 @@ public:
   
 private slots:
   void start();
+  void started();
   void stop();
+  void stopped(int errorCode, QProcess::ExitStatus exitStatus);
   void about();
 
 private:
   void createMenus();
   void createActions();
 
+  /* Used to determine if the Tor process exiting was intentional or not */
+  bool _isIntentionalExit;
+  
   TorControl* _torControl;
   
   TrayIcon* _trayIcon;
