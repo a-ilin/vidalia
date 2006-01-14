@@ -91,6 +91,16 @@ void MainWindow::createActions()
   _bandwidthAct = new QAction(tr("Bandwidth Usage Graph"), this); 
 
   _messageAct = new QAction(tr("Log Message History"), this);
+
+#if defined(Q_WS_MAC)
+  /* Mac users sure like their shortcuts. Actions NOT mentioned below
+   * don't explicitly need shortcuts, since they are merged to the default
+   * menubar and get the default shortcuts anyway. */
+  _startAct->setShortcut(tr("Ctrl+S"));
+  _stopAct->setShortcut(tr("Ctrl+T"));
+  _bandwidthAct->setShortcut(tr("Ctrl+B"));
+  _messageAct->setShortcut(tr("Ctrl+L"));
+#endif
 }
 
 /*
