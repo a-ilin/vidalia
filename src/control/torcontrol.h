@@ -69,7 +69,7 @@ public:
   bool isConnected();
 
   /** Sends an authentication token to Tor */
-  bool authenticate(QByteArray token, QString *errmsg = 0);
+  bool authenticate(QString *errmsg = 0);
 
   /** Sends a GETINFO message to Tor based on the given keys */
   bool getInfo(QHash<QString,QString> &map, QString *errmsg = 0);

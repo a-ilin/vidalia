@@ -37,7 +37,7 @@ main(int argc, char *argv[])
   qDebug() << "Vidalia Version:" << VidaliaSettings::getVersion();
   
   /* Start Tor */
-  if (!control.startTor(&errmsg)) {
+  if (!control.start(&errmsg)) {
     qDebug() << "Could not start Tor:" << errmsg;
     return -1;
   } else {
@@ -47,14 +47,14 @@ main(int argc, char *argv[])
   /* Connect the control socket */
   if (!control.connect(&errmsg)) {
     qDebug() << "Could not connect to Tor:" << errmsg;
-    control.stopTor();
+    control.stop();
     return -1;
   } else {
     qDebug("Connected to Tor...");
   }
 
   /* Authenticate */
-  if (control.authenticate(QByteArray(), &errmsg)) {
+  if (control.authenticate(&errmsg)) {
     qDebug() << "Authentication Successful...";
     
     /* Get Tor's version */
@@ -70,7 +70,7 @@ main(int argc, char *argv[])
  
   /* Disconnect the control socket and stop Tor */
   control.disconnect();
-  control.stopTor();
+  control.stop();
   
   return 0;
 }

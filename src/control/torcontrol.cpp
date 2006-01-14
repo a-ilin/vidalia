@@ -121,7 +121,7 @@ TorControl::onDisconnected()
 bool
 TorControl::isConnected()
 {
-  return (_controlConn.state() == QAbstractSocket::ConnectedState);
+  return _controlConn.isValid();
 }
 
 /** Sends an authentication token to Tor. This must be done before sending 
@@ -130,9 +130,10 @@ TorControl::isConnected()
  *   "AUTHENTICATE" [ SP 1*HEXDIG / QuotedString ] CRLF
  */
 bool
-TorControl::authenticate(QByteArray token, QString *errmsg)
+TorControl::authenticate(QString *errmsg)
 {
-  ControlCommand cmd("AUTHENTICATE", QString(token));
+  VidaliaSettings settings;
+  ControlCommand cmd("AUTHENTICATE", QString(settings.getAuthToken()));
   ControlReply reply;
 
   if (_controlConn.send(cmd, reply, errmsg)) {
@@ -181,6 +182,9 @@ TorControl::getInfo(QHash<QString,QString> &map, QString *errmsg)
         map.insert(keyval.at(0), keyval.at(1));
       }
     }
+  } else {
+    /* Sending the control command failed */
+    return false;
   }
   return true;
 }
@@ -194,6 +198,7 @@ TorControl::getInfo(QString key, QString &val, QString *errmsg)
 
   if (getInfo(map, errmsg)) {
     val = map.value(key);
+    return true;
   }
   return false;
 }

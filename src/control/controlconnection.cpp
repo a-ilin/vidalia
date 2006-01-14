@@ -56,12 +56,14 @@ bool
 ControlConnection::disconnect(QString *errmsg)
 {
   disconnectFromHost();
-  if (!waitForDisconnected(-1)) {
-    if (errmsg) {
-      *errmsg =
-        QString("Error disconnecting socket. [%1]").arg(errorString());
+  if (state() != QAbstractSocket::UnconnectedState) {
+    if (!waitForDisconnected(-1)) {
+      if (errmsg) {
+        *errmsg =
+          QString("Error disconnecting socket. [%1]").arg(errorString());
+      }
+      return false;
     }
-    return false;
   }
   return true;
 }
@@ -76,6 +78,10 @@ ControlConnection::disconnect(QString *errmsg)
 bool
 ControlConnection::sendCommand(ControlCommand cmd, QString *errmsg)
 {
+  if (!isValid()) {
+    return false;
+  }
+  
   /* Format the control command */
   QString strCmd = cmd.toString();
 
@@ -108,6 +114,10 @@ ControlConnection::readReply(ControlReply &reply, QString *errmsg)
 {
   QChar c;
   QString line;
+
+  if (!isValid()) {
+    return false;
+  }
 
   /* The implementation below is based on the Java control library from Tor */
   do {
