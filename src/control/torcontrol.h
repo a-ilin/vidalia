@@ -54,7 +54,7 @@ public:
   bool start(QString *errmsg = 0);
 
   /** Stop the Tor process */
-  void stop(QString *errmsg = 0);
+  bool stop(QString *errmsg = 0);
 
   /** Detect if the Tor process is running */
   bool isRunning();
