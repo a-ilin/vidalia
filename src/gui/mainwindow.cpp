@@ -180,7 +180,7 @@ void MainWindow::started()
       QMessageBox::warning(this, tr("Error Connecting to Tor"),
          tr("Tor started successfully, but Vidalia was unable to "
             "connect to it. Check your control port settings and try "
-            "again.\r\n\r\n") + errmsg,
+            "again.\n\n") + errmsg,
          QMessageBox::Ok, QMessageBox::NoButton);
     }
   } else {
@@ -189,7 +189,7 @@ void MainWindow::started()
       QMessageBox::warning(this, tr("Authentication Error"),
         tr("Vidalia was unable to authenticate itself to Tor."
            "Check your authentication information and try again."
-           "\r\n\r\nError: ") + errmsg,
+           "\n\nError: ") + errmsg,
         QMessageBox::Ok, QMessageBox::NoButton);
     }
   }
@@ -212,7 +212,7 @@ void MainWindow::stop()
   _isIntentionalExit = true;
   if (!_torControl->stop(&errmsg)) {
     QMessageBox::warning(this, tr("Error Stopping Tor"),
-       tr("Vidalia was unable to stop Tor.\r\n\r\nError: ") + errmsg,
+       tr("Vidalia was unable to stop Tor.\n\nError: ") + errmsg,
        QMessageBox::Ok, QMessageBox::NoButton);
   }
   _isIntentionalExit = false;
@@ -237,7 +237,7 @@ void MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
   if (exitStatus == QProcess::CrashExit) {
     if (!_isIntentionalExit) {
       QMessageBox::warning(this, tr("Tor Crashed"),
-        tr("Vidalia detected that the Tor process crashed. "
+        tr("Vidalia detected that the Tor process crashed.\n"
             "Please check the message log."),
          QMessageBox::Ok, QMessageBox::NoButton);
     }
@@ -246,7 +246,7 @@ void MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
      * SIGINT, Tor will exit(0). We might need to change this warning message
      * if this turns out to not be the case. */
     QMessageBox::warning(this, tr("Tor Exited"),
-       tr("Tor exited and returned a non-zero exit code. "
+       tr("Tor exited and returned a non-zero exit code.\n"
           "Please check the message log."),
        QMessageBox::Ok, QMessageBox::NoButton);
   }
