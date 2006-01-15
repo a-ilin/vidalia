@@ -83,6 +83,12 @@ TorProcess::start(QFileInfo app, QStringList args, QString *errmsg)
 bool
 TorProcess::stop(QString *errmsg)
 {
+  /* First, check if the process is already stopped before closing it
+   * forcefully. */
+  if (state() == QProcess::NotRunning) {
+    return true;
+  }
+
   /* Tell the process to stop */
   kill();
 
