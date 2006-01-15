@@ -45,6 +45,7 @@ private slots:
   void stop();
   void stopped(int errorCode, QProcess::ExitStatus exitStatus);
   void about();
+  void close();
 
 private:
   void createMenus();

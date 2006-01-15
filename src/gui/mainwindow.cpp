@@ -66,6 +66,29 @@ MainWindow::~MainWindow()
   }
 }
 
+/** Called when the application is closing, by selecting "Exit" from the tray
+ * menu. This function disconnects the control socket and ends the Tor
+ * process. */
+void
+MainWindow::close()
+{
+  /* Disconnect all of the TorControl object's signals */
+  disconnect(_torControl, 0, 0, 0);
+
+  /* Close the control socket */
+  if (_torControl->isConnected()) {
+    _torControl->disconnect();
+  }
+
+  /* Stop the Tor process */
+  if (_torControl->isRunning()) {
+    _torControl->stop();
+  }
+
+  /* And then quit for real */
+  QMainWindow::close();
+}
+
 /* 
   Create and bind actions to events. Setup for initial
   tray menu configuration.
