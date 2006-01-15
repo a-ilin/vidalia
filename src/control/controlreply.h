@@ -45,6 +45,9 @@ public:
 
   /** Returns all lines for this reply */
   QList<ReplyLine> getLines();
+
+  /** Returns the status of the first line in the reply */
+  QString getStatus();
   
 private:
   QList<ReplyLine> _lines;

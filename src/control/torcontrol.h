@@ -29,6 +29,9 @@
 
 #include "controlconnection.h"
 #include "torprocess.h"
+#include "messagepump.h"
+#include "torevents.h"
+
 
 class TorControl : public QObject
 {
@@ -37,34 +40,26 @@ class TorControl : public QObject
 public:
   /** Signals that can be sent by the controller */
   enum Signal {
-    Reload,
-    Shutdown,
-    Dump,
-    Debug,
-    Halt
+    SignalReload, SignalShutdown, SignalDump, SignalDebug, SignalHalt
   };
-  
+ 
+
   /** Default constructor */
   TorControl();
-  
   /** Default destructor */
   ~TorControl();
 
   /** Start the Tor process */
   bool start(QString *errmsg = 0);
-
   /** Stop the Tor process */
   bool stop(QString *errmsg = 0);
-
   /** Detect if the Tor process is running */
   bool isRunning();
 
   /** Connect to Tor's control socket */
   bool connect(QString *errmsg = 0);
-
   /** Disconnect from Tor's control socket */
   void disconnect();
-
   /** Check if we're connected to Tor's control socket */
   bool isConnected();
 
@@ -73,7 +68,6 @@ public:
 
   /** Sends a GETINFO message to Tor based on the given keys */
   bool getInfo(QHash<QString,QString> &map, QString *errmsg = 0);
-
   /** Sends a GETINFO message for a single info value to Tor */
   bool getInfo(QString key, QString &val, QString *errmsg = 0);
 
@@ -83,33 +77,65 @@ public:
   /** Ask Tor for its version */
   QString getTorVersion(QString *errmsg = 0);
 
+  /** Register another event of interest with Tor */
+  bool addEvent(TorEvents::Event e, QString *errmsg = 0);
+  /** Remove a previously registered event */
+  bool removeEvent(TorEvents::Event e, QString *errmsg = 0);
+
 
 signals:
   /** Emitted when the Tor process has started */
   void started();
-  
   /** Emitted when the Tor process has stopped */
   void stopped(int exitCode, QProcess::ExitStatus exitStatus);
-
   /** Emitted when the controller has connected to Tor */
   void connected();
-
   /** Emitted when the controller has disconnected from Tor */
   void disconnected();
+  /** Emitted when a bandwidth update is received from Tor */
+  void bandwidth(quint64 bytesIn, quint64 bytesOut);
+  /** Emitted when a log message is received from Tor */
+  void log(TorEvents::LogSeverity severity, QString msg);
+  /** Emitted when a circuit status event is received from Tor */
+  void circuit(quint64 circId, TorEvents::CircuitStatus status, QString path);
+  /** Emitted when a stream status event is received from Tor */
+  void stream(quint64 streamId, TorEvents::StreamStatus status,
+              quint64 circId, QString target);
 
-
+  
 private:
   /** Instantiates a socket used to connect to Tor's control port */
   ControlConnection _controlConn;
   /** Manages and monitors the Tor process */
   TorProcess _torProcess;  
+  /** Handles sending and receiving messages from Tor over the control
+   * connection */
+  MessagePump *_messages;
+  /** Dispatches asynchronous events sent by Tor */
+  TorEvents _events;
+  /** Keep track of which events we're interested in */
+  QStringList _eventList;
 
+  /** Register events of interest with Tor */
+  bool registerEvents(QString *errmsg);
+  /** Sends a message to Tor and discards the response */
+  bool send(ControlCommand cmd, QString *errmsg = 0);
+  /** Send a message to Tor and read the response */
+  bool send(ControlCommand cmd, ControlReply &reply, QString *errmsg = 0);
+  
+  
 /* The slots below simply relay signals from the appropriate member objects */
 private slots:
   void onStarted();
   void onStopped(int exitCode, QProcess::ExitStatus exitStatus);
   void onConnected();
   void onDisconnected();
+  void onBandwidthUpdate(quint64 bytesIn, quint64 bytesOut);
+  void onLogMessage(TorEvents::LogSeverity severity, QString msg);
+  void onCircuitStatus(quint64 circId, 
+                       TorEvents::CircuitStatus status, QString path);
+  void onStreamStatus(quint64 streamId, TorEvents::StreamStatus status,
+                      quint64 circId, QString target);
 };
 
 #endif

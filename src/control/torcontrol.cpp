@@ -20,7 +20,7 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, 
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
-                     
+                   
 #include <QHostAddress>
 
 #include "../config/vidaliasettings.h"
@@ -29,6 +29,28 @@
 /** Default constructor */
 TorControl::TorControl()
 {
+  /* Construct the message pump and give it a control connection and TorEvents
+   * object, used to translate and dispatch event messages sent by Tor */
+  _messages = new MessagePump(&_controlConn, &_events);
+
+  /* Plumb the signal relays between the TorEvents object and The Outside */
+  QObject::connect(&_events, SIGNAL(bandwidth(quint64, quint64)),
+                   this, SLOT(onBandwidthUpdate(quint64, quit64)),
+                   Qt::DirectConnection);
+  QObject::connect(&_events, SIGNAL(log(TorEvents::LogSeverity, QString)),
+                   this, SLOT(onLogMessage(TorEvents::LogSeverity, QString)),
+                   Qt::DirectConnection);
+  QObject::connect(&_events, SIGNAL(circuit(quint64, TorEvents::CircuitStatus,
+                                            QString)),
+                   this, SLOT(onCircuitStatus(quint64, TorEvents::CircuitStatus,
+                                              QString)),
+                   Qt::DirectConnection);
+  QObject::connect(&_events, SIGNAL(stream(quint64, TorEvents::StreamStatus,
+                                           quint64, QString)),
+                   this, SLOT(onStreamStatus(quint64, TorEvents::StreamStatus,
+                                             quint64, QString)),
+                   Qt::DirectConnection);
+  
   /* Plumb the process signals */
   QObject::connect(&_torProcess, SIGNAL(started()),
                    this, SLOT(onStarted()));
@@ -45,6 +67,15 @@ TorControl::TorControl()
 /** Default destructor */
 TorControl::~TorControl()
 {
+  if (isConnected()) {
+    disconnect();
+  }
+  if (isRunning()) {
+    stop();
+  }
+  if (_messages) {
+    delete _messages;
+  }
 }
 
 /** Start the Tor process. Returns true if the process was successfully
@@ -68,6 +99,9 @@ TorControl::onStarted()
 bool
 TorControl::stop(QString *errmsg)
 {
+  if (isConnected()) {
+    disconnect();
+  }
   return _torProcess.stop(errmsg);
 }
 
@@ -91,8 +125,13 @@ bool
 TorControl::connect(QString *errmsg)
 {
   VidaliaSettings settings;
-  return _controlConn.connect(settings.getControlAddress(),
-                              settings.getControlPort(), errmsg);
+  if ( _controlConn.connect(settings.getControlAddress(),
+                            settings.getControlPort(), errmsg)
+     ) {
+    _messages->start();
+    return true;
+  }
+  return false;
 }
 
 /** Emits a signal that the control socket successfully established a
@@ -107,6 +146,8 @@ TorControl::onConnected()
 void
 TorControl::disconnect()
 {
+  _messages->stop();
+  send(ControlCommand("QUIT"), 0);
   _controlConn.disconnect();
 }
 
@@ -124,6 +165,21 @@ TorControl::isConnected()
   return _controlConn.isValid();
 }
 
+/** Sends a message to Tor and discards the response */
+bool
+TorControl::send(ControlCommand cmd, QString *errmsg)
+{
+  ControlReply reply;
+  return send(cmd, reply, errmsg);
+}
+
+/** Send a message to Tor and read the response */
+bool
+TorControl::send(ControlCommand cmd, ControlReply &reply, QString *errmsg)
+{
+  return _messages->send(cmd, reply, errmsg);
+}
+
 /** Sends an authentication token to Tor. This must be done before sending 
  * any control commands to Tor. The syntax is:
  * 
@@ -136,7 +192,7 @@ TorControl::authenticate(QString *errmsg)
   ControlCommand cmd("AUTHENTICATE", QString(settings.getAuthToken()));
   ControlReply reply;
 
-  if (_controlConn.send(cmd, reply, errmsg)) {
+  if (send(cmd, reply, errmsg)) {
     ReplyLine line = reply.getLine();
     if (line.getStatus() != "250") {
       if (errmsg) {
@@ -165,7 +221,7 @@ TorControl::getInfo(QHash<QString,QString> &map, QString *errmsg)
   }
  
   /* Ask Tor for the specified info values */
-  if (_controlConn.send(cmd, reply, errmsg)) {
+  if (send(cmd, reply, errmsg)) {
   
     /* Parse the response for the returned values */
     foreach (ReplyLine line, reply.getLines()) {
@@ -213,16 +269,18 @@ TorControl::signal(Signal sig, QString *errmsg)
   
   /* Convert the signal to the correct string */
   switch (sig) {
-    case Reload:   sigtype = "RELOAD"; break;
-    case Shutdown: sigtype = "SHUTDOWN"; break;
-    case Dump:     sigtype = "DUMP"; break;
-    case Debug:    sigtype = "DEBUG"; break;
-    case Halt:     sigtype = "HALT"; break;
-    default: return false; break;
+    case SignalReload:   sigtype = "RELOAD"; break;
+    case SignalShutdown: sigtype = "SHUTDOWN"; break;
+    case SignalDump:     sigtype = "DUMP"; break;
+    case SignalDebug:    sigtype = "DEBUG"; break;
+    case SignalHalt:     sigtype = "HALT"; break;
+    default: return false;
   }
   
   /* Send and check the response */
-  if (_controlConn.send(cmd, reply, errmsg)) {
+  if (!send(cmd, reply, errmsg)) {
+    return false;
+  } else {
     ReplyLine line = reply.getLine();
     if (line.getStatus() != "250") {
       if (errmsg) {
@@ -243,5 +301,83 @@ TorControl::getTorVersion(QString *errmsg)
     return ver;
   }
   return "<unknown>";
+}
+
+/** Adds an event to the event list and registers it with Tor. If registration
+ * fails, then the event is NOT added to the event list. */
+bool
+TorControl::addEvent(TorEvents::Event e, QString *errmsg)
+{
+  QString event = TorEvents::toString(e);
+  _eventList << event;
+  if (!registerEvents(errmsg)) {
+    /* Registering the event failed, so remove it from the list */
+    _eventList.removeAt(_eventList.indexOf(event));
+    return false;
+  }
+  return true;
+}
+
+/** Removes an event from the event list and unregisters it from Tor. If
+ * unregistration fails, then the event is NOT removed from the event list. */
+bool
+TorControl::removeEvent(TorEvents::Event e, QString *errmsg)
+{
+  QString event = TorEvents::toString(e);
+  if (_eventList.contains(event)) {
+    _eventList.removeAt(_eventList.indexOf(event));
+    if (!registerEvents(errmsg)) {
+      /* Unregistration failed, so leave it in the list */
+      _eventList << event;
+      return false;
+    }
+  }
+  return true;
+}
+
+/** Register for the events currently in the event list */
+bool
+TorControl::registerEvents(QString *errmsg)
+{
+  ControlCommand cmd("SETEVENTS", _eventList.join(" ")); 
+  ControlReply reply;
+  if (!send(cmd, reply, errmsg)) {
+    return false;
+  } else {
+    ReplyLine line = reply.getLine();
+    if (line.getStatus() != "250") {
+      if (errmsg) {
+        *errmsg = line.getMessage();
+      }
+      return false;
+    }
+  }
+  return true;
+}
+
+/**
+ * The methods below relay the appropriate signals from the TorEvents object.
+ */
+void
+TorControl::onBandwidthUpdate(quint64 bytesIn, quint64 bytesOut)
+{
+  emit bandwidth(bytesIn, bytesOut);
+}
+void
+TorControl::onLogMessage(TorEvents::LogSeverity severity, QString msg)
+{
+  emit log(severity, msg);
+}
+void
+TorControl::onCircuitStatus(quint64 circId, 
+                            TorEvents::CircuitStatus status, QString path)
+{
+  emit circuit(circId, status, path);
+}
+void
+TorControl::onStreamStatus(quint64 streamId, TorEvents::StreamStatus status,
+                           quint64 circId, QString target)
+{
+  emit stream(streamId, status, circId, target);
 }
 

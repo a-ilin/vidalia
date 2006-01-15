@@ -26,11 +26,15 @@ HEADERS += $$PWD/torcontrol.h \
            $$PWD/controlconnection.h \
            $$PWD/controlcommand.h \
            $$PWD/controlreply.h \
-           $$PWD/replyline.h
+           $$PWD/replyline.h \
+           $$PWD/torevents.h \
+           $$PWD/messagepump.h
 
 SOURCES += $$PWD/torcontrol.cpp \
            $$PWD/torprocess.cpp \
            $$PWD/controlconnection.cpp \
            $$PWD/controlcommand.cpp \
            $$PWD/controlreply.cpp \
-           $$PWD/replyline.cpp
+           $$PWD/replyline.cpp \
+           $$PWD/torevents.cpp \
+           $$PWD/messagepump.cpp

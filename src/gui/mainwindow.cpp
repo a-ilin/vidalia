@@ -148,7 +148,7 @@ void MainWindow::start()
   QString errmsg;
   if (!_torControl->start(&errmsg)) {
     QMessageBox::warning(this, tr("Error Starting Tor"),
-       tr("Vidalia was unable to start Tor.\r\n\r\nError: ") + errmsg,
+       tr("Vidalia was unable to start Tor.\n\nError: ") + errmsg,
        QMessageBox::Ok, QMessageBox::NoButton);
   }
 }
@@ -191,6 +191,14 @@ void MainWindow::started()
            "Check your authentication information and try again."
            "\n\nError: ") + errmsg,
         QMessageBox::Ok, QMessageBox::NoButton);
+    } else {
+      if (!_torControl->addEvent(TorEvents::Bandwidth, &errmsg)) {
+      QMessageBox::warning(this, tr("Authentication Error"),
+        tr("Vidalia was unable to authenticate itself to Tor."
+           "Check your authentication information and try again."
+           "\n\nError: ") + errmsg,
+        QMessageBox::Ok, QMessageBox::NoButton);
+      }
     }
   }
 }
@@ -237,7 +245,7 @@ void MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
   if (exitStatus == QProcess::CrashExit) {
     if (!_isIntentionalExit) {
       QMessageBox::warning(this, tr("Tor Crashed"),
-        tr("Vidalia detected that the Tor process crashed.\n"
+        tr("Vidalia detected that the Tor process crashed.\n\n"
             "Please check the message log."),
          QMessageBox::Ok, QMessageBox::NoButton);
     }
@@ -246,7 +254,7 @@ void MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
      * SIGINT, Tor will exit(0). We might need to change this warning message
      * if this turns out to not be the case. */
     QMessageBox::warning(this, tr("Tor Exited"),
-       tr("Tor exited and returned a non-zero exit code.\n"
+       tr("Tor exited and returned a non-zero exit code.\n\n"
           "Please check the message log."),
        QMessageBox::Ok, QMessageBox::NoButton);
   }

@@ -53,3 +53,10 @@ ControlReply::getLines()
   return _lines;
 }
 
+/** Returns the status of the first line in the reply */
+QString
+ControlReply::getStatus()
+{
+  return getLine().getStatus();
+}
+
