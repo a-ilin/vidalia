@@ -100,6 +100,7 @@ bool
 TorControl::stop(QString *errmsg)
 {
   if (isConnected()) {
+    signal(SignalHalt);
     disconnect();
   }
   return _torProcess.stop(errmsg);
