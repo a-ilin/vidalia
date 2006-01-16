@@ -59,10 +59,10 @@
   <widget class="QWidget" name="layoutWidget" >
    <property name="geometry" >
     <rect>
-     <x>90</x>
-     <y>120</y>
-     <width>227</width>
-     <height>246</height>
+     <x>10</x>
+     <y>110</y>
+     <width>381</width>
+     <height>248</height>
     </rect>
    </property>
    <layout class="QVBoxLayout" >
@@ -82,8 +82,19 @@
       </property>
       <item>
        <widget class="QLabel" name="label_4" >
+        <property name="font" >
+         <font>
+          <family>Arial</family>
+          <pointsize>10</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+          <underline>false</underline>
+          <strikeout>false</strikeout>
+         </font>
+        </property>
         <property name="text" >
-         <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:MS Shell Dlg; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;span style=" font-weight:600;">Vidalia&lt;/span> &lt;/p>&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">Copyright (c) 2006 Matt Edman , Justin Hipple&lt;/p>&lt;/body>&lt;/html></string>
+         <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg; font-size:8pt;">&lt;span style=" font-size:10pt; font-weight:600;">Vidalia&lt;/span>&lt;span style=" font-size:10pt;"> &lt;/span>&lt;/p>&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:MS Shell Dlg;">Copyright (c) 2006 Matt Edman , Justin Hipple&lt;/p>&lt;/body>&lt;/html></string>
         </property>
         <property name="textFormat" >
          <enum>Qt::AutoText</enum>
@@ -103,6 +114,17 @@
         </property>
         <item>
          <widget class="QLabel" name="label_5" >
+          <property name="font" >
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+           </font>
+          </property>
           <property name="text" >
            <string>Detected Version:</string>
           </property>
@@ -113,6 +135,17 @@
         </item>
         <item>
          <widget class="QLabel" name="lblVidaliaVersion" >
+          <property name="font" >
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+           </font>
+          </property>
           <property name="text" >
            <string>Version Number</string>
           </property>
@@ -142,8 +175,19 @@
       </property>
       <item>
        <widget class="QLabel" name="label" >
+        <property name="font" >
+         <font>
+          <family>Arial</family>
+          <pointsize>10</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+          <underline>false</underline>
+          <strikeout>false</strikeout>
+         </font>
+        </property>
         <property name="text" >
-         <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:MS Shell Dlg; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Tor&lt;/span> &lt;/p>&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Copyright (c) 2001 - 2005 Roger Dingledine &lt;/p>&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Copyright (c) 2004 - 2005 Nick Mathewson &lt;/p>&lt;/body>&lt;/html></string>
+         <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:MS Shell Dlg; font-size:8.25pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8pt;">&lt;span style=" font-size:10pt; font-weight:600;">Tor&lt;/span>&lt;span style=" font-size:10pt;"> &lt;/span>&lt;/p>&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;">Copyright (c) 2001 - 2004 Roger Dingledine &lt;/p>&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;">Copyright (c) 2004 - 2006 Roger Dingledine, Nick Mathewson &lt;/p>&lt;/body>&lt;/html></string>
         </property>
         <property name="alignment" >
          <set>Qt::AlignCenter</set>
@@ -160,6 +204,17 @@
         </property>
         <item>
          <widget class="QLabel" name="label_2" >
+          <property name="font" >
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+           </font>
+          </property>
           <property name="text" >
            <string>Detected Version:</string>
           </property>
@@ -170,6 +225,17 @@
         </item>
         <item>
          <widget class="QLabel" name="lblTorVersion" >
+          <property name="font" >
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+           </font>
+          </property>
           <property name="text" >
            <string>Version Number</string>
           </property>
@@ -199,6 +265,17 @@
       </property>
       <item>
        <widget class="QLabel" name="label_7" >
+        <property name="font" >
+         <font>
+          <family>Arial</family>
+          <pointsize>10</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+          <underline>false</underline>
+          <strikeout>false</strikeout>
+         </font>
+        </property>
         <property name="text" >
          <string>Vidalia uses Qt by Trolltech
 See LICENSE for licensing information</string>
@@ -218,6 +295,17 @@ See LICENSE for licensing information</string>
         </property>
         <item>
          <widget class="QLabel" name="label_8" >
+          <property name="font" >
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+           </font>
+          </property>
           <property name="text" >
            <string>Detected Version:</string>
           </property>
@@ -228,6 +316,17 @@ See LICENSE for licensing information</string>
         </item>
         <item>
          <widget class="QLabel" name="lblQtVersion" >
+          <property name="font" >
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+           </font>
+          </property>
           <property name="text" >
            <string>Version Number</string>
           </property>
@@ -245,9 +344,9 @@ See LICENSE for licensing information</string>
   <widget class="QLabel" name="lblTorLogo" >
    <property name="geometry" >
     <rect>
-     <x>20</x>
-     <y>20</y>
-     <width>361</width>
+     <x>10</x>
+     <y>10</y>
+     <width>381</width>
      <height>101</height>
     </rect>
    </property>
@@ -261,7 +360,7 @@ See LICENSE for licensing information</string>
   <widget class="QPushButton" name="btnOK" >
    <property name="geometry" >
     <rect>
-     <x>150</x>
+     <x>160</x>
      <y>370</y>
      <width>77</width>
      <height>26</height>
