@@ -124,7 +124,13 @@ ControlConnection::readReply(ControlReply &reply, QString *errmsg)
     /* Make sure we have data to read before attempting anything. Note that this
      * essentially makes our socket a blocking socket */
     while (!canReadLine()) {
-      waitForReadyRead(-1);
+      if (state() != QAbstractSocket::ConnectedState) {
+        if (errmsg) {
+          *errmsg = "Socket is not connected.";
+        }
+        return false;
+      }
+      waitForReadyRead(250);
     }
   
     /* Read a line of the response */
