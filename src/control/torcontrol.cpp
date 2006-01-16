@@ -29,6 +29,13 @@
 /** Default constructor */
 TorControl::TorControl()
 {
+  /* For reasons currently unknown to me, QProcess saves some state
+   * information between executions of a process. Consequently, if we started
+   * Tor, it crashed, and then we tried to restart it, Vidalia would crash in
+   * the QProcess code. So, we create a new TorProcess object each time we
+   * start Tor and then destroy it when it stops. */
+  _torProcess = 0;
+
   /* Construct the message pump and give it a control connection and TorEvents
    * object, used to translate and dispatch event messages sent by Tor */
   _messages = new MessagePump(&_controlConn, &_events);
@@ -50,12 +57,6 @@ TorControl::TorControl()
                    this, SLOT(onStreamStatus(quint64, TorEvents::StreamStatus,
                                              quint64, QString)),
                    Qt::DirectConnection);
-  
-  /* Plumb the process signals */
-  QObject::connect(&_torProcess, SIGNAL(started()),
-                   this, SLOT(onStarted()));
-  QObject::connect(&_torProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
-                   this, SLOT(onStopped(int, QProcess::ExitStatus)));
   
   /* Plumb the appropriate socket signals */
   QObject::connect(&_controlConn, SIGNAL(connected()),
@@ -84,8 +85,24 @@ bool
 TorControl::start(QString *errmsg)
 {
   VidaliaSettings settings;
-  return _torProcess.start(settings.getTorExecutable(),
-                           settings.getTorArguments(), errmsg);
+  _torProcess = new TorProcess;
+  
+  /* Plumb the process signals */
+  QObject::connect(_torProcess, SIGNAL(started()),
+                   this, SLOT(onStarted()));
+  QObject::connect(_torProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
+                   this, SLOT(onStopped(int, QProcess::ExitStatus)));
+  
+  /* Attempt to start the Tor process */
+  if (!_torProcess->start(settings.getTorExecutable(),
+                          settings.getTorArguments(), errmsg)) {
+    /* Disconnect the signals for this TorProcess, cleanup and return  */
+    QObject::disconnect(_torProcess, 0, 0, 0);
+    delete _torProcess;
+    _torProcess = 0;
+    return false;
+  }
+  return true;
 }
 
 /** Emits a signal that the Tor process started */
@@ -100,16 +117,18 @@ bool
 TorControl::stop(QString *errmsg)
 {
   if (isConnected()) {
-    signal(SignalHalt);
     disconnect();
   }
-  return _torProcess.stop(errmsg);
+  return _torProcess->stop(errmsg);
 }
 
 /** Emits a signal that the Tor process stopped */
 void
 TorControl::onStopped(int exitCode, QProcess::ExitStatus exitStatus)
 {
+  delete _torProcess;
+  _torProcess = 0;
+
   emit stopped(exitCode, exitStatus);
 }
 
@@ -117,7 +136,10 @@ TorControl::onStopped(int exitCode, QProcess::ExitStatus exitStatus)
 bool
 TorControl::isRunning()
 {
-  return (_torProcess.pid() != 0);
+  if (_torProcess) {
+    return (_torProcess->pid() != 0);
+  }
+  return false;
 }
 
 /** Connect to Tor's control port. The control port to use is determined by
@@ -148,7 +170,7 @@ void
 TorControl::disconnect()
 {
   _messages->stop();
-  send(ControlCommand("QUIT"), 0);
+  _controlConn.sendCommand(ControlCommand("QUIT"), 0);
   _controlConn.disconnect();
 }
 

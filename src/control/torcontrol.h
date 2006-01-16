@@ -107,7 +107,7 @@ private:
   /** Instantiates a socket used to connect to Tor's control port */
   ControlConnection _controlConn;
   /** Manages and monitors the Tor process */
-  TorProcess _torProcess;  
+  TorProcess *_torProcess;  
   /** Handles sending and receiving messages from Tor over the control
    * connection */
   MessagePump *_messages;
