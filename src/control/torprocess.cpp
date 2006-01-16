@@ -40,12 +40,11 @@ TorProcess::~TorProcess()
 
 /** Attempts to start the Tor process using the location, executable, and
  * command-line arguments specified in Vidalia's settings. If Tor doesn't
- * start, <b>errmsg</b> will be set appropriately and the function will return
- * false. */
-bool
-TorProcess::start(QFileInfo app, QStringList args, QString *errmsg)
+ * exist at the given path, <b>errmsg</b> will be set appropriately and the
+ * function will return false. */
+bool TorProcess::start(QFileInfo app, QStringList args, QString *errmsg) 
 {
-  QString path = app.absoluteFilePath();
+  QString path = app.absoluteFilePath(); 
   QString exec;
   
   /* If the path doesn't point to an executable, then bail */
@@ -66,16 +65,6 @@ TorProcess::start(QFileInfo app, QStringList args, QString *errmsg)
   
   /* Attempt to start Tor with the given command-line arguments */
   QProcess::start(exec);
-  
-  /* Wait for Tor to start. If it fails to start, report the error message and
-   * return false. */
-  if (!waitForStarted(-1)) {
-    if (errmsg) {
-      *errmsg = 
-        QString("\"%1\" failed to start. [%2]").arg(path).arg(errorString());
-    }
-    return false;
-  }
   return true;
 }
 
