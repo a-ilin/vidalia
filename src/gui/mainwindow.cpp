@@ -256,22 +256,27 @@ void MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
   _stopAct->setEnabled(false);
   _startAct->setEnabled(true);
 
-  /* Check if the Tor process fell over or exited cleanly */
-  if (exitStatus == QProcess::CrashExit) {
-    if (!_isIntentionalExit) {
-      QMessageBox::warning(this, tr("Tor Crashed"),
-        tr("Vidalia detected that the Tor process crashed.\n\n"
+  /* If we didn't intentionally close Tor, then check to see if it crashed or
+   * if it closed itself and returned an error code. */
+  if (!_isIntentionalExit) {
+    if (exitStatus == QProcess::CrashExit) {
+        QMessageBox::warning(this, tr("Tor Crashed"),
+         tr("Vidalia detected that the Tor process crashed.\n\n"
+              "Please check the message log."),
+           QMessageBox::Ok, QMessageBox::NoButton);
+    } else if (exitCode != 0) {
+      /* A quick overview of Tor's code tells me that if it catches a SIGTERM or
+      * SIGINT, Tor will exit(0). We might need to change this warning message
+      * if this turns out to not be the case. */
+      QMessageBox::warning(this, tr("Tor Exited"),
+         tr("Tor exited and returned a non-zero exit code.\n\n"
             "Please check the message log."),
          QMessageBox::Ok, QMessageBox::NoButton);
     }
-  } else if (exitCode != 0) {
-    /* A quick overview of Tor's code tells me that if it catches a SIGTERM or
-     * SIGINT, Tor will exit(0). We might need to change this warning message
-     * if this turns out to not be the case. */
-    QMessageBox::warning(this, tr("Tor Exited"),
-       tr("Tor exited and returned a non-zero exit code.\n\n"
-          "Please check the message log."),
-       QMessageBox::Ok, QMessageBox::NoButton);
+    
+    /* Regardless of why it closed, it closed unintentionally so close the
+     * control socket */
+     _torControl->disconnect();
   }
 }
 
