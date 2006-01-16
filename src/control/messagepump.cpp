@@ -58,21 +58,26 @@ MessagePump::stop()
 bool
 MessagePump::send(ControlCommand cmd, ControlReply &reply, QString *errmsg)
 {
+  bool rc;
   _mutex.lock();
-  if (_conn->sendCommand(cmd, errmsg)) {
-    /* Add a new waiter and add it to the queue */
-    Waiter *w = new Waiter(&_mutex, &_waitCond);
-    _queue.push_back(w);
-    _mutex.unlock();
+  if ((rc = _conn->sendCommand(cmd, errmsg)) == true) {
+    if (_run) {
+      /* Add a new waiter and add it to the queue */
+      Waiter *w = new Waiter(&_mutex, &_waitCond);
+      _queue.push_back(w);
+      _mutex.unlock();
   
-    /* Wait for the response message */
-    reply = w->getReply();
-    delete w; 
-  } else {
-    _mutex.unlock();
-    return false;
+      /* Wait for the response message */
+      reply = w->getReply();
+      delete w;
+      return true; 
+    } else {
+      _mutex.unlock();
+      return _conn->readReply(reply, errmsg);
+    }
   }
-  return true;
+  _mutex.unlock();
+  return false;
 }
 
 /** Implements the Tor event processing loop */
