@@ -57,21 +57,6 @@ TorEvents::toSignal(Signal sig)
   return signal;
 }
 
-/** Connects a signal in this class to the specified slot */
-bool
-TorEvents::connect(Signal sig, QObject *obj, const char *method)
-{
-  return QObject::connect(this, toSignal(sig), 
-                          obj, method, Qt::QueuedConnection);
-}
-
-/** Disconnects a signal in this class from the specified slot */
-bool
-TorEvents::disconnect(Signal sig, QObject *obj, const char *method)
-{
-  return QObject::disconnect(this, toSignal(sig), obj, method);
-}
-
 /** Converts an event type to a string Tor understands */
 QString
 TorEvents::toString(Event e)
