@@ -48,7 +48,14 @@ main(int argc, char *argv[])
 #else
   QApplication::setStyle(new QPlastiqueStyle);
 #endif
+
+  /* Since we don't have a visible main window, if we were to display a
+   * QMessageBox (for example, to display an error when starting or stopping
+   * Tor) then the application would exit when that message box was closed.
+   * Setting quitOnLastWindowClosed to false fixes this behavior. */
+  QApplication::setQuitOnLastWindowClosed(false);
   
+  /* Create an instance of the mainwindow and start the application */
   MainWindow mainWin; 
   return app.exec();
 }
