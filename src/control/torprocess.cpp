@@ -90,7 +90,7 @@ TorProcess::stop(QString *errmsg)
   }
 
   /* Tell the process to stop */
-  kill();
+  terminate();
 
   /* Wait for it to complete */
   if (!waitForFinished(-1)) {
