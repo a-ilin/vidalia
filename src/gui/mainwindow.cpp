@@ -109,7 +109,7 @@ void MainWindow::createActions()
   connect(_aboutAct, SIGNAL(triggered()), this, SLOT(about()));
   
   _exitAct = new QAction(tr("Exit"), this);
-  connect(_exitAct, SIGNAL(triggered()), this, SLOT(close()));
+  connect(_exitAct, SIGNAL(triggered()), qApp, SLOT(quit()));
 
   _bandwidthAct = new QAction(tr("Bandwidth Usage Graph"), this); 
 
@@ -214,6 +214,7 @@ void MainWindow::started()
            "Check your authentication information and try again."
            "\n\nError: ") + errmsg,
         QMessageBox::Ok, QMessageBox::NoButton);
+      _torControl->disconnect();
     } 
   }
 }
