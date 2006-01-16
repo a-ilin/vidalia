@@ -214,15 +214,7 @@ void MainWindow::started()
            "Check your authentication information and try again."
            "\n\nError: ") + errmsg,
         QMessageBox::Ok, QMessageBox::NoButton);
-    } else {
-      if (!_torControl->addEvent(TorEvents::Bandwidth, &errmsg)) {
-      QMessageBox::warning(this, tr("Authentication Error"),
-        tr("Vidalia was unable to authenticate itself to Tor."
-           "Check your authentication information and try again."
-           "\n\nError: ") + errmsg,
-        QMessageBox::Ok, QMessageBox::NoButton);
-      }
-    }
+    } 
   }
 }
 
