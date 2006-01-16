@@ -205,8 +205,10 @@ void MainWindow::started()
             "connect to it. Check your control port settings and try "
             "again.\n\n") + errmsg,
          QMessageBox::Ok, QMessageBox::NoButton);
+      return;
     }
-  } else {
+  } 
+  if (_torControl->isConnected()) {
     /* The controller connected, so now send the AUTHENTICATE command */
     if (!_torControl->authenticate(&errmsg)) {
       QMessageBox::warning(this, tr("Authentication Error"),
