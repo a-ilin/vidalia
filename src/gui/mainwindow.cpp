@@ -86,7 +86,7 @@ MainWindow::close()
   }
 
   /* And then quit for real */
-  QMainWindow::close();
+  QCoreApplication::quit();
 }
 
 /* 
@@ -109,7 +109,7 @@ void MainWindow::createActions()
   connect(_aboutAct, SIGNAL(triggered()), this, SLOT(about()));
   
   _exitAct = new QAction(tr("Exit"), this);
-  connect(_exitAct, SIGNAL(triggered()), qApp, SLOT(quit()));
+  connect(_exitAct, SIGNAL(triggered()), this, SLOT(close()));
 
   _bandwidthAct = new QAction(tr("Bandwidth Usage Graph"), this); 
 
