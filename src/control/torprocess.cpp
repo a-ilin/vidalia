@@ -56,6 +56,13 @@ bool TorProcess::start(QFileInfo app, QStringList args, QString *errmsg)
     return false;
   }
   
+  /* This lovely little hack here is because the isExecutable() method above
+   * doesn't understand quoted paths, but the QProcess::start() method below
+   * requires it, on Windows. */
+#if defined(Q_OS_WIN32)
+  path = "\"" + path + "\"";
+#endif
+
   /* If I simply pass the QStringList of command-line arguments to
    * QProcess::start(path, args), then Qt will quote any arguments with spaces
    * in them. This is logical, but Tor doesn't like it because you end up with
