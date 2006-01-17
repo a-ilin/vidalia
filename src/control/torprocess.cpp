@@ -86,6 +86,11 @@ TorProcess::stop(QString *errmsg)
   }
 
   /* Tell the process to stop */
+#if defined(Q_OS_WIN32)
+  /* Tor on Windows doesn't understand a WM_CLOSE message (which is what 
+   * QProcess::terminate() sends it), so we have to kill it harshly. */
+  kill();
+#else
   terminate();
 
   /* Wait for it to complete */
@@ -96,6 +101,7 @@ TorProcess::stop(QString *errmsg)
     }
     return false;
   }
+#endif
   return true;
 }
 
