@@ -69,9 +69,18 @@ main(int argc, char *argv[])
   }
  
   /* Disconnect the control socket and stop Tor */
+  qDebug("Disconnecting Control Socket...");
   control.disconnect();
-  control.stop();
+  qDebug("Control Socket Disconnected");
+
+  qDebug("Stopping Tor...");
+  if (!control.stop(&errmsg)) {
+    qDebug() << "Error stopping the Tor process:" << errmsg;
+  } else {
+    qDebug("Tor Stopped");
+  }
   
+  qDebug("Exiting");
   return 0;
 }
 
