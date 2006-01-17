@@ -34,9 +34,11 @@ class AboutDialog : public QDialog
 
 public:
     AboutDialog(TorControl *torControl, QWidget *parent = 0);
+    void show();
 
 private:
     Ui::AboutDialog ui;
+    TorControl *_torControl;
 };
 
 #endif

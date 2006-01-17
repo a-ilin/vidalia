@@ -28,13 +28,22 @@ AboutDialog::AboutDialog(TorControl *torControl, QWidget *parent)
 {
   ui.setupUi(this);
 
+  /* Save the TorControl object to use later */
+  _torControl = torControl;
+
   /* Get Vidalia's version number */
   ui.lblVidaliaVersion->setText(VidaliaSettings::getVersion());
 
-  /* Access the TorControl object to retrieve version */
-  ui.lblTorVersion->setText(torControl->getTorVersion());
-
   /* Get Qt's version number */
   ui.lblQtVersion->setText(QT_VERSION_STR);
+}
+
+void
+AboutDialog::show()
+{
+  /* Access the TorControl object to retrieve version */
+  ui.lblTorVersion->setText(_torControl->getTorVersion());
+
+  QDialog::show();
 }
 
