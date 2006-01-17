@@ -34,8 +34,8 @@
 #define SETTING_AUTH_TOKEN     "Tor/AuthToken"
 
 /* Default Settings */
-#if defined( Q_OS_WIN32)
-#define DEFAULT_TOR_PATH       "\"C:\\Program Files\\Tor\""
+#if defined(Q_OS_WIN32)
+#define DEFAULT_TOR_PATH       "C:\\Program Files\\Tor"
 #elif defined(Q_OS_MACX)
 #define DEFAULT_TOR_PATH       "/usr/bin"
 #else
