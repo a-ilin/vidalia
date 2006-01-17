@@ -44,8 +44,17 @@ MainWindow::MainWindow()
   QApplication::setWindowIcon(QIcon(IMG_TOR_STOPPED));
 
   createActions();
-  createMenus();
-  
+  createMenus(); 
+
+  /* Create a new MessageLog object so messages can be logged when not shown */
+  _messageLog = new MessageLog(this);
+  _messageLog->write(MSG_DEV, "This is a development message");
+  _messageLog->write(MSG_INFO, "This is an info message");
+  _messageLog->write(MSG_WARN, "This is a warning");
+  _messageLog->write(MSG_ERROR, "This is an error");
+  _messageLog->write(MSG_DEBUG, "This is a debug message");
+  _messageLog->write(MSG_NOTE, "This is a note");
+
   /* Create a new TorControl object, used to communicate with and manipulate Tor */
   _torControl = new TorControl();
   connect(_torControl, SIGNAL(started()), this, SLOT(started()));
@@ -114,6 +123,7 @@ void MainWindow::createActions()
   _bandwidthAct = new QAction(tr("Bandwidth Usage Graph"), this); 
 
   _messageAct = new QAction(tr("Log Message History"), this);
+  connect(_messageAct, SIGNAL(triggered()), this, SLOT(message()));
 
 #if defined(Q_WS_MAC)
   /* Mac users sure like their shortcuts. Actions NOT mentioned below
@@ -241,6 +251,7 @@ void MainWindow::stop()
        tr("Vidalia was unable to stop Tor.\n\nError: ") + errmsg,
        QMessageBox::Ok, QMessageBox::NoButton);
   }
+  _isIntentionalExit = false;
 }
 
 /** Slot: Called when the Tor process has exited. It will adjust the tray
@@ -280,15 +291,33 @@ void MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
      * control socket */
      _torControl->disconnect();
   }
-  _isIntentionalExit = false;
 }
 
 /*
- Creates an instance of AboutDialog
+ Creates an instance of AboutDialog or displays current
+ instance if already created. 
 */
 void MainWindow::about()
 {
-  AboutDialog* aboutDialog = new AboutDialog(_torControl, this);
-  aboutDialog->show();
+  static AboutDialog* aboutDialog = new AboutDialog(_torControl, this);
+  if(!aboutDialog->isVisible()) {
+    aboutDialog->show();
+  } else {
+    aboutDialog->activateWindow();
+    aboutDialog->raise();
+  }
 }
 
+/*
+ Creates an instance of MessageLog or displays current
+ instance if already created.
+*/
+void MainWindow::message()
+{
+  if(!_messageLog->isVisible()) {
+    _messageLog->show();
+  } else {
+    _messageLog->activateWindow();
+    _messageLog->raise();
+  }
+}

@@ -30,6 +30,7 @@
 
 #include "tray/trayicon.h"
 #include "about.h"
+#include "messagelog.h"
 
 class MainWindow : public QMainWindow
 {
@@ -45,6 +46,7 @@ private slots:
   void stop();
   void stopped(int errorCode, QProcess::ExitStatus exitStatus);
   void about();
+  void message();
   void close();
 
 private:
@@ -53,6 +55,8 @@ private:
 
   /* Used to determine if the Tor process exiting was intentional or not */
   bool _isIntentionalExit;
+  
+  MessageLog* _messageLog;
   
   TorControl* _torControl;
   
