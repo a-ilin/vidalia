@@ -251,7 +251,6 @@ void MainWindow::stop()
        tr("Vidalia was unable to stop Tor.\n\nError: ") + errmsg,
        QMessageBox::Ok, QMessageBox::NoButton);
   }
-  _isIntentionalExit = false;
 }
 
 /** Slot: Called when the Tor process has exited. It will adjust the tray
@@ -291,6 +290,7 @@ void MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
      * control socket */
      _torControl->disconnect();
   }
+  _isIntentionalExit = false;
 }
 
 /*
