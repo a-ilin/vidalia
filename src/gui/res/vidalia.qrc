@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/images" >
         <file>tor_about.png</file>
+        <file>tor_logo16.png</file>
         <file>tor_logo32.ico</file>
         <file>tor_off128.png</file>
         <file>tor_off32.png</file>
