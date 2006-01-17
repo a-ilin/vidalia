@@ -42,7 +42,7 @@
    <string>About Vidalia</string>
   </property>
   <property name="windowIcon" >
-   <iconset>..\..\..\..\..\..\src\Vidalia\trunk\src\gui\res\tor_logo16.png</iconset>
+   <iconset resource="res\vidalia.qrc" >:/images/tor_logo16.png</iconset>
   </property>
   <property name="layoutDirection" >
    <enum>Qt::LeftToRight</enum>
@@ -54,7 +54,7 @@
    <bool>false</bool>
   </property>
   <property name="modal" >
-   <bool>true</bool>
+   <bool>false</bool>
   </property>
   <widget class="QWidget" name="layoutWidget" >
    <property name="geometry" >
