@@ -48,10 +48,10 @@ MainWindow::MainWindow()
 
   /* Create a new MessageLog object so messages can be logged when not shown */
   _messageLog = new MessageLog(this);
-  _messageLog->write(MSG_DEV, "This is a development message");
+  _messageLog->write(MSG_VIDERR, "This is a critical Vidalia error");
   _messageLog->write(MSG_INFO, "This is an info message");
   _messageLog->write(MSG_WARN, "This is a warning");
-  _messageLog->write(MSG_ERROR, "This is an error");
+  _messageLog->write(MSG_TORERR, "This is a critical Tor error");
   _messageLog->write(MSG_DEBUG, "This is a debug message");
   _messageLog->write(MSG_NOTE, "This is a note");
 

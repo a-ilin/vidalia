@@ -31,12 +31,13 @@
 #include "ui_messagelog.h"
 #include "../config/vidaliasettings.h"
 
-#define MSG_ERROR     "Error"
+#define MSG_TORERR    "Tor Error"
 #define MSG_WARN      "Warn"
 #define MSG_NOTE      "Notice"
 #define MSG_INFO      "Info"
 #define MSG_DEBUG     "Debug"
-#define MSG_DEV       "Development"
+#define MSG_VIDERR    "Vidalia Error"
+#define MSG_VIDSTAT   "Vidalia Status"
 
 class MessageLog : public QMainWindow
 {

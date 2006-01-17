@@ -38,11 +38,24 @@ MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
 void MessageLog::write(const char* type, const char* message)
 {
   QTreeWidgetItem *newMessage = new QTreeWidgetItem(ui.lstMessages);
-  
+
+  /* Change row color and text for serious warnings and errors */
+  if (!qstrcmp(type, MSG_VIDERR) or !qstrcmp(type, MSG_TORERR)) {
+    for (int i=0; i < ui.lstMessages->columnCount(); i++) {
+      newMessage->setBackgroundColor(i, Qt::red);
+      newMessage->setTextColor(i, Qt::white);
+    }
+  } else if (!qstrcmp(type, MSG_WARN)) {
+    for (int i=0; i < ui.lstMessages->columnCount(); i++) {
+      newMessage->setBackgroundColor(i, Qt::yellow);
+    }
+  }
+    
   /* Set Time */
   newMessage->setText(0, _clock->currentDateTime().toString(Qt::TextDate));
 
   /* Set Type */
+  newMessage->setTextAlignment(1, Qt::AlignCenter);
   newMessage->setText(1, tr(type));
 
   /* Set Message Body */
