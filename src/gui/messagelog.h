@@ -28,6 +28,7 @@
 #include <QTreeWidgetItem>
 #include <QDateTime>
 #include <QInputDialog>
+#include <QCloseEvent>
 
 #include "ui_messagelog.h"
 #include "../config/vidaliasettings.h"
@@ -42,9 +43,17 @@ public:
  
   void write(const char* type, const char* message);
 
+protected:
+  /** Catches the close event when the user clicks on the X in the titlebar */
+  void closeEvent(QCloseEvent *e);
+
+public slots:
+  /** Called when the user selects File->Close */
+  void close();
+
 private slots:
   void setMaxCount();
-
+  
 private:
   void _createActions();
 

@@ -27,7 +27,6 @@
 #include <QMainWindow>
 
 #include "../control/torcontrol.h"
-
 #include "tray/trayicon.h"
 #include "about.h"
 #include "messagelog.h"
@@ -37,9 +36,17 @@ class MainWindow : public QMainWindow
   Q_OBJECT
 
 public:
+  /** Default constructor */
   MainWindow();
+  /** Default destructor */
   ~MainWindow();
-  
+
+
+public slots:
+  /** Overrides the default show() slot to display the default menubar */
+  void show();
+
+
 private slots:
   void start();
   void started();
@@ -49,22 +56,35 @@ private slots:
   void message();
   void close();
 
-private:
-  void createMenus();
-  void createActions();
 
+private:
+  /** Create the tray popup menu and it's submenus */
+  void createMenus();
+  /** Create the actions on the tray menu or menubar */
+  void createActions();
+  
+  /** Creates a default menubar on Mac */
+  void createMenuBar();
+  /** Removes the default menubar on Mac */
+  void removeMenuBar();
+  
   /* Used to determine if the Tor process exiting was intentional or not */
   bool _isIntentionalExit;
-  
+ 
+  /** Instantiates a window for logging messages from Tor */
   MessageLog* _messageLog;
   
+  /** A TorControl object that handles communication with Tor */
   TorControl* _torControl;
   
+  /** Instance of a tray icon that will appear in the system tray */
   TrayIcon* _trayIcon;
   
+  /** Define the popup menus for the system tray icon */
   QMenu* _trayMenu;
   QMenu* _toolsMenu;
-
+  
+  /** Defines the actions for the tray menu */
   QAction* _startAct;
   QAction* _stopAct;
   QAction* _configAct;

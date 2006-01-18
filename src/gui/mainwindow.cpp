@@ -40,12 +40,20 @@
 /** Default constructor */
 MainWindow::MainWindow()
 {
+#if defined(Q_WS_MAC)
+  _menuBar = 0;
+#endif
+
   /* Set Vidalia's application icon */
   setWindowIcon(QIcon(IMG_TOR_STOPPED));
   QApplication::setWindowIcon(QIcon(IMG_TOR_STOPPED));
 
+  /* Create the actions that will go in the tray menu */
   createActions();
+  /* Create the tray menu itself */
   createMenus(); 
+  /* Create the menubar (Mac) */
+  createMenuBar();
 
   /* Create a new MessageLog object so messages can be logged when not shown */
   _messageLog = new MessageLog(this);
@@ -77,6 +85,13 @@ MainWindow::~MainWindow()
   }
 }
 
+/** Shows the menubar on Mac */
+void
+MainWindow::show()
+{
+  createMenuBar();
+}
+
 /** Called when the application is closing, by selecting "Exit" from the tray
  * menu. This function disconnects the control socket and ends the Tor
  * process. */
@@ -96,6 +111,9 @@ MainWindow::close()
     _torControl->stop();
   }
 
+  /* Remove the menu bar on Mac */
+  removeMenuBar();
+  
   /* And then quit for real */
   QCoreApplication::quit();
 }
@@ -126,16 +144,6 @@ void MainWindow::createActions()
 
   _messageAct = new QAction(tr("Log Message History"), this);
   connect(_messageAct, SIGNAL(triggered()), this, SLOT(message()));
-
-#if defined(Q_WS_MAC)
-  /* Mac users sure like their shortcuts. Actions NOT mentioned below
-   * don't explicitly need shortcuts, since they are merged to the default
-   * menubar and get the default shortcuts anyway. */
-  _startAct->setShortcut(tr("Ctrl+S"));
-  _stopAct->setShortcut(tr("Ctrl+T"));
-  _bandwidthAct->setShortcut(tr("Ctrl+B"));
-  _messageAct->setShortcut(tr("Ctrl+L"));
-#endif
 }
 
 /*
@@ -158,10 +166,27 @@ void MainWindow::createMenus()
   /* Tools menu */
   _toolsMenu->addAction(_bandwidthAct);
   _toolsMenu->addAction(_messageAct);
+}
 
+/** Creates a new menubar with no parent, so Qt will use this as the "default
+ * menubar" on Mac. Note that to force this menubar to be displayed after all
+ * child windows are closed (since we don't actually have a visible main
+ * window), you must remove and re-add this no-parent menubar */
+void
+MainWindow::createMenuBar()
+{
 #if defined(Q_WS_MAC)
+  /* Mac users sure like their shortcuts. Actions NOT mentioned below
+   * don't explicitly need shortcuts, since they are merged to the default
+   * menubar and get the default shortcuts anyway. */
+  _startAct->setShortcut(tr("Ctrl+S"));
+  _stopAct->setShortcut(tr("Ctrl+T"));
+  _bandwidthAct->setShortcut(tr("Ctrl+B"));
+  _messageAct->setShortcut(tr("Ctrl+L"));
+  
   /* The File, Help, and Configure menus will get merged into the application
    * menu by Qt. */
+   if (_menuBar) delete _menuBar;
   _menuBar = new QMenuBar();
   _fileMenu = _menuBar->addMenu(tr("File"));
   _fileMenu->addAction(_exitAct);
@@ -172,6 +197,17 @@ void MainWindow::createMenus()
   _menuBar->addMenu(_toolsMenu);
   _helpMenu = _menuBar->addMenu(tr("Help"));
   _helpMenu->addAction(_aboutAct);
+#endif
+}
+
+/** Removes the menubar. */
+void
+MainWindow::removeMenuBar()
+{
+#if defined(Q_WS_MAC)
+  if (_menuBar) {
+    delete _menuBar;
+  }
 #endif
 }
 
