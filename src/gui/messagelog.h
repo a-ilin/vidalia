@@ -27,31 +27,33 @@
 #include <QMainWindow>
 #include <QTreeWidgetItem>
 #include <QDateTime>
+#include <QInputDialog>
 
 #include "ui_messagelog.h"
 #include "../config/vidaliasettings.h"
-
-#define MSG_TORERR    "Tor Error"
-#define MSG_WARN      "Warn"
-#define MSG_NOTE      "Notice"
-#define MSG_INFO      "Info"
-#define MSG_DEBUG     "Debug"
-#define MSG_VIDERR    "Vidalia Error"
-#define MSG_VIDSTAT   "Vidalia Status"
+#include "../config/messagetypes.h"
 
 class MessageLog : public QMainWindow
 {
   Q_OBJECT
 
 public:
-    MessageLog(QWidget *parent = 0, Qt::WFlags flags = 0);
+  MessageLog(QWidget *parent = 0, Qt::WFlags flags = 0);
  
-    void write(const char* type, const char* message);
-    
-private:
-    QDateTime* _clock;
+  void write(const char* type, const char* message);
 
-    Ui::MessageLog ui;
+private slots:
+  void setMaxCount();
+
+private:
+  void _createActions();
+
+  int _maxCount;
+  QDateTime* _clock;
+
+  VidaliaSettings* _settings;
+    
+  Ui::MessageLog ui;
 };
 
 #endif

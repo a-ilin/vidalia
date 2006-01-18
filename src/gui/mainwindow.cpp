@@ -25,6 +25,7 @@
 
 #include "mainwindow.h"
 #include "../util/compat.h"
+#include "../config/messagetypes.h"
 
 /* On Mac, we need to put the 128x128 icon in the dock */
 #if defined(Q_WS_MAC)
@@ -49,11 +50,12 @@ MainWindow::MainWindow()
   /* Create a new MessageLog object so messages can be logged when not shown */
   _messageLog = new MessageLog(this);
   _messageLog->write(MSG_VIDERR, "This is a critical Vidalia error");
-  _messageLog->write(MSG_INFO, "This is an info message");
-  _messageLog->write(MSG_WARN, "This is a warning");
-  _messageLog->write(MSG_TORERR, "This is a critical Tor error");
-  _messageLog->write(MSG_DEBUG, "This is a debug message");
-  _messageLog->write(MSG_NOTE, "This is a note");
+  _messageLog->write(MSG_VIDSTAT, "This is a Vidalia status message");
+  _messageLog->write(MSG_TORINFO, "This is a tor info message");
+  _messageLog->write(MSG_TORWARN, "This is a tor warning");
+  _messageLog->write(MSG_TORERR, "This is a critical tor error");
+  _messageLog->write(MSG_TORDEBUG, "This is a tor debug message");
+  _messageLog->write(MSG_TORNOTE, "This is a note");
 
   /* Create a new TorControl object, used to communicate with and manipulate Tor */
   _torControl = new TorControl();

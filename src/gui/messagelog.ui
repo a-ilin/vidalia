@@ -131,6 +131,15 @@
      <height>19</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menu_File" >
+    <property name="title" >
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actionSave_All" />
+    <addaction name="actionSave_Selected" />
+    <addaction name="separator" />
+    <addaction name="actionClose" />
+   </widget>
    <widget class="QMenu" name="menu_View" >
     <property name="title" >
      <string>&amp;View</string>
@@ -150,15 +159,6 @@
     </property>
     <addaction name="actionMessage_Filters" />
     <addaction name="actionHistory_Size" />
-   </widget>
-   <widget class="QMenu" name="menu_File" >
-    <property name="title" >
-     <string>&amp;File</string>
-    </property>
-    <addaction name="actionSave_All" />
-    <addaction name="actionSave_Selected" />
-    <addaction name="separator" />
-    <addaction name="actionClose" />
    </widget>
    <addaction name="menu_File" />
    <addaction name="menu_Edit" />
@@ -334,6 +334,38 @@
     <hint type="destinationlabel" >
      <x>407</x>
      <y>378</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionClear</sender>
+   <signal>triggered()</signal>
+   <receiver>lstMessages</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>407</x>
+     <y>393</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSelect_All</sender>
+   <signal>triggered()</signal>
+   <receiver>lstMessages</receiver>
+   <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>407</x>
+     <y>393</y>
     </hint>
    </hints>
   </connection>
