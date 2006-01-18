@@ -29,6 +29,8 @@
 #include <QFileInfo>
 #include <QHostAddress>
 
+#include "messagetypes.h"
+
 /* On win32, we need to add the .exe onto Tor's filename */
 #ifdef Q_OS_WIN32
 #define TOR_EXECUTABLE    "tor.exe"
@@ -77,6 +79,14 @@ public:
   /* Get and set Tor's authentication information */
   QByteArray getAuthToken();
   void setAuthToken(QByteArray token);
+
+  /* Get and set display messages */
+  bool getShowMsg(const char* type);
+  void setShowMsg(const char* type, bool status);
+
+  /* Get and set maximum number of messages to display in log */
+  int getMaxMsgCount();
+  void setMaxMsgCount(int max);
 };
 
 #endif

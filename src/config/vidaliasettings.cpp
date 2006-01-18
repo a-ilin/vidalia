@@ -32,6 +32,14 @@
 #define SETTING_CONTROL_ADDR   "Tor/ControlAddr"
 #define SETTING_CONTROL_PORT   "Tor/ControlPort"
 #define SETTING_AUTH_TOKEN     "Tor/AuthToken"
+#define SETTING_SHOW_TORERR    "Tor/ShowTorErr"
+#define SETTING_SHOW_TORWARN   "Tor/ShowTorWarn"
+#define SETTING_SHOW_TORNOTE   "Tor/ShowTorNote"
+#define SETTING_SHOW_TORINFO   "Tor/ShowTorInfo"
+#define SETTING_SHOW_TORDEBUG  "Tor/ShowTorDebug"
+#define SETTING_SHOW_VIDERR    "Tor/ShowVidError"
+#define SETTING_SHOW_VIDSTAT   "Tor/ShowVidStat"
+#define SETTING_MAX_MESSAGE    "Tor/MaxMsgCount"
 
 /* Default Settings */
 #if defined(Q_OS_WIN32)
@@ -45,7 +53,17 @@
 #define DEFAULT_TOR_ARGUMENTS  "-ControlPort 9051"
 #define DEFAULT_CONTROL_ADDR   "127.0.0.1"
 #define DEFAULT_CONTROL_PORT   9051
-#define DEFAULT_AUTH_TOKEN    ""
+#define DEFAULT_AUTH_TOKEN     ""
+
+#define DEFAULT_SHOW_TORERR    true
+#define DEFAULT_SHOW_TORWARN   true
+#define DEFAULT_SHOW_TORNOTE   true
+#define DEFAULT_SHOW_TORINFO   false
+#define DEFAULT_SHOW_TORDEBUG  false
+#define DEFAULT_SHOW_VIDERR    true
+#define DEFAULT_SHOW_VIDSTAT   true
+
+#define DEFAULT_MAX_MESSAGE    500
 
 /** Default Constructor
  * We use "Vidalia" for both the company name and the application name.
@@ -184,3 +202,81 @@ VidaliaSettings::setAuthToken(QByteArray token)
   setValue(SETTING_AUTH_TOKEN, token.toBase64());
 }
 
+/*
+ Set whether or not messages of type are displayed in the log
+*/
+void
+VidaliaSettings::setShowMsg(const char* type, bool status)
+{
+  if (!qstrcmp(type, MSG_TORERR)) {
+    setValue(SETTING_SHOW_TORERR, status);
+  
+  } else if (!qstrcmp(type, MSG_TORWARN)) {
+    setValue(SETTING_SHOW_TORWARN, status);
+  
+  } else if (!qstrcmp(type, MSG_TORNOTE)) {
+    setValue(SETTING_SHOW_TORNOTE, status);
+  
+  } else if (!qstrcmp(type, MSG_TORINFO)) {
+    setValue(SETTING_SHOW_TORINFO, status);
+  
+  } else if (!qstrcmp(type, MSG_TORDEBUG)) {
+    setValue(SETTING_SHOW_TORDEBUG, status);
+  
+  } else if (!qstrcmp(type, MSG_VIDERR)) {
+    setValue(SETTING_SHOW_VIDERR, status);
+ 
+  } else if (!qstrcmp(type, MSG_VIDSTAT)) {
+    setValue(SETTING_SHOW_VIDSTAT, status); 
+  }
+}
+
+/*
+ Returns bool indicating whether the type of message is to be shown
+*/
+bool
+VidaliaSettings::getShowMsg(const char* type)
+{
+  if (!qstrcmp(type, MSG_TORERR)) {
+    return value(SETTING_SHOW_TORERR, DEFAULT_SHOW_TORERR).toBool(); 
+  
+  } else if (!qstrcmp(type, MSG_TORWARN)) {
+    return value(SETTING_SHOW_TORWARN, DEFAULT_SHOW_TORWARN).toBool();
+  
+  } else if (!qstrcmp(type, MSG_TORNOTE)) {
+    return value(SETTING_SHOW_TORNOTE, DEFAULT_SHOW_TORNOTE).toBool();
+  
+  } else if (!qstrcmp(type, MSG_TORINFO)) {
+    return value(SETTING_SHOW_TORINFO, DEFAULT_SHOW_TORINFO).toBool();
+  
+  } else if (!qstrcmp(type, MSG_TORDEBUG)) {
+    return value(SETTING_SHOW_TORDEBUG, DEFAULT_SHOW_TORDEBUG).toBool();
+  
+  } else if (!qstrcmp(type, MSG_VIDERR)) {
+    return value(SETTING_SHOW_VIDERR, DEFAULT_SHOW_VIDERR).toBool();
+ 
+  } else if (!qstrcmp(type, MSG_VIDSTAT)) {
+    return value(SETTING_SHOW_VIDSTAT, DEFAULT_SHOW_VIDSTAT).toBool(); 
+  
+  } else {
+    return false;
+  }
+}
+
+/* 
+ Set maximum number of messages to display in log
+*/
+void
+VidaliaSettings::setMaxMsgCount(int max)
+{
+  setValue(SETTING_MAX_MESSAGE, max);
+}
+
+/*
+ Return maximum number of messages to display in log
+*/
+int
+VidaliaSettings::getMaxMsgCount()
+{
+  return value(SETTING_MAX_MESSAGE, DEFAULT_MAX_MESSAGE).toInt();
+}
