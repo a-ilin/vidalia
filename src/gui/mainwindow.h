@@ -28,8 +28,8 @@
 
 #include "../control/torcontrol.h"
 #include "tray/trayicon.h"
-#include "about.h"
-#include "messagelog.h"
+#include "aboutdialog/aboutdialog.h"
+#include "messagelog/messagelog.h"
 
 class MainWindow : public QMainWindow
 {

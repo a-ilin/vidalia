@@ -20,17 +20,11 @@
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  
 #  02110-1301, USA.
 #################################################################
-FORMS = $$PWD/aboutdialog.ui \
-        $$PWD/messagelog.ui
 
 HEADERS += $$PWD/mainwindow.h \
-           $$PWD/about.h \
-           $$PWD/messagelog.h
            
 SOURCES += $$PWD/main.cpp \
-           $$PWD/mainwindow.cpp \
-           $$PWD/about.cpp \
-           $$PWD/messagelog.cpp 
+           $$PWD/mainwindow.cpp 
 
 RESOURCES += $$PWD/res/vidalia.qrc
 
@@ -42,3 +36,5 @@ win32 {
 }
 
 include($$PWD/tray/tray.pri)
+include($$PWD/aboutdialog/aboutdialog.pri)
+include($$PWD/messagelog/messagelog.pri)
