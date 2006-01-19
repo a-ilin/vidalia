@@ -92,15 +92,6 @@ signals:
   void connected();
   /** Emitted when the controller has disconnected from Tor */
   void disconnected();
-  /** Emitted when a bandwidth update is received from Tor */
-  void bandwidth(quint64 bytesIn, quint64 bytesOut);
-  /** Emitted when a log message is received from Tor */
-  void log(TorEvents::LogSeverity severity, QString msg);
-  /** Emitted when a circuit status event is received from Tor */
-  void circuit(quint64 circId, TorEvents::CircuitStatus status, QString path);
-  /** Emitted when a stream status event is received from Tor */
-  void stream(quint64 streamId, TorEvents::StreamStatus status,
-              quint64 circId, QString target);
 
   
 private:
@@ -111,8 +102,6 @@ private:
   /** Handles sending and receiving messages from Tor over the control
    * connection */
   MessagePump *_messages;
-  /** Dispatches asynchronous events sent by Tor */
-  TorEvents _events;
   /** Keep track of which events we're interested in */
   QStringList _eventList;
 
@@ -130,12 +119,6 @@ private slots:
   void onStopped(int exitCode, QProcess::ExitStatus exitStatus);
   void onConnected();
   void onDisconnected();
-  void onBandwidthUpdate(quint64 bytesIn, quint64 bytesOut);
-  void onLogMessage(TorEvents::LogSeverity severity, QString msg);
-  void onCircuitStatus(quint64 circId, 
-                       TorEvents::CircuitStatus status, QString path);
-  void onStreamStatus(quint64 streamId, TorEvents::StreamStatus status,
-                      quint64 circId, QString target);
 };
 
 #endif

@@ -38,26 +38,8 @@ TorControl::TorControl()
 
   /* Construct the message pump and give it a control connection and TorEvents
    * object, used to translate and dispatch event messages sent by Tor */
-  _messages = new MessagePump(&_controlConn, &_events);
+  _messages = new MessagePump(&_controlConn);
 
-  /* Plumb the signal relays between the TorEvents object and The Outside */
-  QObject::connect(&_events, SIGNAL(bandwidth(quint64, quint64)),
-                   this, SLOT(onBandwidthUpdate(quint64, quit64)),
-                   Qt::DirectConnection);
-  QObject::connect(&_events, SIGNAL(log(TorEvents::LogSeverity, QString)),
-                   this, SLOT(onLogMessage(TorEvents::LogSeverity, QString)),
-                   Qt::DirectConnection);
-  QObject::connect(&_events, SIGNAL(circuit(quint64, TorEvents::CircuitStatus,
-                                            QString)),
-                   this, SLOT(onCircuitStatus(quint64, TorEvents::CircuitStatus,
-                                              QString)),
-                   Qt::DirectConnection);
-  QObject::connect(&_events, SIGNAL(stream(quint64, TorEvents::StreamStatus,
-                                           quint64, QString)),
-                   this, SLOT(onStreamStatus(quint64, TorEvents::StreamStatus,
-                                             quint64, QString)),
-                   Qt::DirectConnection);
-  
   /* Plumb the appropriate socket signals */
   QObject::connect(&_controlConn, SIGNAL(connected()),
                    this, SLOT(onConnected()));
@@ -376,31 +358,5 @@ TorControl::registerEvents(QString *errmsg)
     }
   }
   return true;
-}
-
-/**
- * The methods below relay the appropriate signals from the TorEvents object.
- */
-void
-TorControl::onBandwidthUpdate(quint64 bytesIn, quint64 bytesOut)
-{
-  emit bandwidth(bytesIn, bytesOut);
-}
-void
-TorControl::onLogMessage(TorEvents::LogSeverity severity, QString msg)
-{
-  emit log(severity, msg);
-}
-void
-TorControl::onCircuitStatus(quint64 circId, 
-                            TorEvents::CircuitStatus status, QString path)
-{
-  emit circuit(circId, status, path);
-}
-void
-TorControl::onStreamStatus(quint64 streamId, TorEvents::StreamStatus status,
-                           quint64 circId, QString target)
-{
-  emit stream(streamId, status, circId, target);
 }
 

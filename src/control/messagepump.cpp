@@ -25,10 +25,9 @@
 
 /** Constructor. This message pump will process messages over the given
  * ControlConnection object. */
-MessagePump::MessagePump(ControlConnection *conn, TorEvents *e)
+MessagePump::MessagePump(ControlConnection *conn)
 {
   _conn = conn;
-  _eventHandler = e;
 }
 
 /** Default destructor */
@@ -95,7 +94,7 @@ MessagePump::run()
       /* A status of "650" means "asynchronous event notification */
       if (reply.getStatus() == "650") {
         /* Dispatch the event */
-        _eventHandler->handleEvent(reply);
+        TorEvents::handleEvent(reply);
       } else {
         /* Remove the first waiter from the queue of messages awaiting a
          * response. */ 

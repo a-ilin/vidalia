@@ -23,6 +23,12 @@
 
 #include "torevents.h"
 
+/* Include the event types */
+#include "bandwidthevent.h"
+#include "circuitevent.h"
+#include "streamevent.h"
+#include "logevent.h"
+
 /** Default constructor */
 TorEvents::TorEvents()
 {
@@ -31,30 +37,6 @@ TorEvents::TorEvents()
 /** Default destructor */
 TorEvents::~TorEvents()
 {
-}
-
-const char *
-TorEvents::toSignal(Signal sig)
-{
-  const char *signal;
-  switch (sig) {
-    case BandwidthSignal: 
-      signal = SIGNAL(bandwidth(quint64, quint64));
-      break;
-    case CircuitSignal:
-      signal = SIGNAL(circuit(quint64, CircuitStatus, QString));
-      break;
-    case StreamSignal:
-      signal = SIGNAL(stream(quint64, StreamStatus, quint64, QString));
-      break;
-    case LogSignal:
-      signal = SIGNAL(log(LogSeverity, QString));
-      break;
-    default:
-      return signal = 0;
-      break;
-  }
-  return signal;
 }
 
 /** Converts an event type to a string Tor understands */
@@ -76,6 +58,35 @@ TorEvents::toString(Event e)
   return event;
 }
 
+TorEvents::Event
+TorEvents::toEvent(QString event)
+{
+  Event e;
+  event = event.toUpper();
+  if (event == "BW") {
+    e = Bandwidth;
+  } else if (event == "CIRCUIT") {
+    e = Circuit;
+  } else if (event == "STREAM") {
+    e = Stream;
+  } else if (event == "DEBUG") {
+    e = LogDebug;
+  } else if (event == "NOTICE") {
+    e = LogNotice;
+  } else if (event == "INFO") {
+    e = LogInfo;
+  } else if (event == "NOTICE") {
+    e = LogNotice;
+  } else if (event == "WARN") {
+    e = LogWarn;
+  } else if (event == "ERR") {
+    e = LogError;
+  } else {
+    e = Unknown;
+  }
+  return e;
+}
+
 /** Parse the event type out of a message line and return the corresponding
  * Event enum value */
 TorEvents::Event
@@ -83,28 +94,7 @@ TorEvents::parseEventType(ReplyLine line)
 {
   QString msg = line.getMessage();
   int i = msg.indexOf(" ");
-  QString event = msg.mid(0, i).toUpper();
-
-  if (event == "BW") {
-    return Bandwidth;
-  } else if (event == "CIRCUIT") {
-    return Circuit;
-  } else if (event == "STREAM") {
-    return Stream;
-  } else if (event == "DEBUG") {
-    return LogDebug;
-  } else if (event == "NOTICE") {
-    return LogNotice;
-  } else if (event == "INFO") {
-    return LogInfo;
-  } else if (event == "NOTICE") {
-    return LogNotice;
-  } else if (event == "WARN") {
-    return LogWarn;
-  } else if (event == "ERR") {
-    return LogError;
-  }
-  return Unknown;
+  return toEvent(msg.mid(0, i));
 }
 
 /** Handles an event message from Tor. An event message can potentially have
@@ -144,7 +134,10 @@ TorEvents::handleBandwidthUpdate(ReplyLine line)
   if (msg.size() >= 3) {
     quint64 bytesIn = (quint64)msg.at(1).toULongLong();
     quint64 bytesOut = (quint64)msg.at(2).toULongLong();
-    emit bandwidth(bytesIn, bytesOut);
+    
+    /*
+      Post the new event here
+    */
   }
 }
 
@@ -164,25 +157,13 @@ TorEvents::handleCircuitStatus(ReplyLine line)
 {
   QStringList msg = line.getMessage().split(" ");
   if (msg.size() >= 4) {
-    CircuitStatus status;
     quint64 circId = (quint64)msg.at(1).toULongLong();
-    QString strStatus = msg.at(2).toUpper();
+    CircuitEvent::Status status = CircuitEvent::toStatus(msg.at(2));
     QString path = msg.at(3);
-    
-    if (strStatus == "LAUNCHED") {
-      status = CircuitLaunched;
-    } else if (strStatus == "BUILT") {
-      status = CircuitBuilt;
-    } else if (strStatus == "EXTENDED") {
-      status = CircuitExtended;
-    } else if (strStatus == "FAILED") {
-      status = CircuitFailed;
-    } else if (strStatus == "CLOSED") {
-      status = CircuitClosed;
-    } else {
-      return; /* Unknown status, so bail */
-    }
-    emit circuit(circId, status, path);
+  
+    /*
+      Post the new event here
+    */
   }
 }
 
@@ -207,32 +188,14 @@ TorEvents::handleStreamStatus(ReplyLine line)
 {
   QStringList msg = line.getMessage().split(" ");
   if (msg.size() >= 4) {
-    StreamStatus status;
     quint64 streamId = (quint64)msg.at(1).toULongLong();
-    QString strStatus = msg.at(2).toUpper();
+    StreamEvent::Status status = StreamEvent::toStatus(msg.at(2));
     quint64 circId = (quint64)msg.at(3).toULongLong();
     QString target = msg.at(4);
 
-    if (strStatus == "NEW") {
-      status = StreamNew;
-    } else if (strStatus == "NEWRESOLVE") {
-      status = StreamNewResolve;
-    } else if (strStatus == "SENTCONNECT") {
-      status = StreamSentConnect;
-    } else if (strStatus == "SENTRESOLVE") {
-      status = StreamSentResolve;
-    } else if (strStatus == "SUCCEEDED") {
-      status = StreamSucceeded;
-    } else if (strStatus == "FAILED") {
-      status = StreamFailed;
-    } else if (strStatus == "CLOSED") {
-      status = StreamClosed;
-    } else if (strStatus == "DETACHED") {
-      status = StreamDetached;
-    } else {
-      return; /* Unknown status, so bail */
-    }
-    emit stream(streamId, status, circId, target);
+    /*
+      Post the new event here
+    */
   }
 }
 
@@ -249,28 +212,16 @@ TorEvents::handleLogMessage(ReplyLine line)
 {
   QString msg = line.getMessage();
   int i = msg.indexOf(" ");
-  QString strSeverity = msg.mid(0, i).toUpper();
-
-  LogSeverity severity;
-  if (strSeverity == "DEBUG") {
-    severity = Debug;
-  } else if (strSeverity == "INFO") {
-    severity = Info;
-  } else if (strSeverity == "NOTICE") {
-    severity = Notice;
-  } else if (strSeverity == "WARN") {
-    severity = Warn;
-  } else if (strSeverity == "ERR") {
-    severity = Error;
-  } else {
-    return; /* Unknown severity, so bail */
-  }
+  LogEvent::Severity severity = LogEvent::toSeverity(msg.mid(0, i));
   
   /* Determine if the message spanned multiple lines or not. */
+  /* 
+    Post the new event here
   if (line.getData().size() > 0) {
     emit log(severity, line.getData().join("\n"));
   } else {
     emit log(severity, msg.mid(i+1));
   }
+  */
 }
 

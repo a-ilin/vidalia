@@ -41,85 +41,33 @@ public:
     Circuit,
     Stream
   };
-  /** Types of signals that can be connected to slots */
-  enum Signal {
-    BandwidthSignal,
-    CircuitSignal,
-    StreamSignal,
-    LogSignal
-  };
-  /** Log message severity levels */
-  enum LogSeverity {
-    Debug,
-    Info,
-    Notice,
-    Warn,
-    Error
-  };
-  /** Circuit status events */
-  enum CircuitStatus {
-    CircuitLaunched,  /* Circuit ID assigned to new circuit */
-    CircuitBuilt,     /* All hops finished */
-    CircuitExtended,  /* Circuit extended by one hop */
-    CircuitFailed,    /* Circuit closed (was not built) */
-    CircuitClosed     /* Circuit closed (was built) */
-  };
-  /** Stream status events */
-  enum StreamStatus {
-    StreamNew,          /* New request to connect */
-    StreamNewResolve,   /* New request to resolve an address */
-    StreamSentConnect,  /* Sent a connect cell */
-    StreamSentResolve,  /* Sent a resolve cell */
-    StreamSucceeded,    /* Stream established */
-    StreamFailed,       /* Stream failed */
-    StreamClosed,       /* Stream closed */
-    StreamDetached      /* Detached from circuit */
-  };
  
   /** Default Constructor */
   TorEvents();
   /** Default Destructor */
   ~TorEvents();
 
-  /** Connects a signal in this class to the specified slot */
-  bool connect(Signal e, QObject *obj, const char *method);
-  /** Disconnects a signal in this class from the specified slot */
-  bool disconnect(Signal e, QObject *obj, const char *method);
-  
   /** Parses an event message and emits the proper signal */
-  void handleEvent(ControlReply reply);
+  static void handleEvent(ControlReply reply);
  
   /** Converts an Event to a string */
   static QString toString(TorEvents::Event e);
 
-
-signals:
-  /** Reports the bandwidth used in the last second */
-  void bandwidth(quint64 bytesRead, quint64 bytesWritten);
-  /** Tor sent a log message to the controller */
-  void log(LogSeverity severity, QString msg);
-  /** Circuit status changed event */
-  void circuit(quint64 circId, CircuitStatus status, QString path);
-  /** Stream status changed event */
-  void stream(quint64 streamId, StreamStatus status, 
-              quint64 circId, QString target);
-
+  /** Converts a string to an Event */
+  static Event toEvent(QString event);
 
 private:
-  /** Converts a Signal enum to a SIGNAL() */
-  const char* toSignal(Signal sig);
-
   /** Parses the event type from the event message */
-  Event parseEventType(ReplyLine line);
+  static Event parseEventType(ReplyLine line);
 
   /** Handle a bandwidth update event */
-  void handleBandwidthUpdate(ReplyLine line);
+  static void handleBandwidthUpdate(ReplyLine line);
   /** Handle a circuit status event */
-  void handleCircuitStatus(ReplyLine line);
+  static void handleCircuitStatus(ReplyLine line);
   /** Handle a stream status event */
-  void handleStreamStatus(ReplyLine line);
+  static void handleStreamStatus(ReplyLine line);
   /** Handle a log message event */
-  void handleLogMessage(ReplyLine line);
+  static void handleLogMessage(ReplyLine line);
 };
 
 #endif
