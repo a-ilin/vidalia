@@ -34,7 +34,7 @@ class TorEvents : public QObject
 
 public:
   /** Asynchronous events sent from Tor to the controller */
-  enum Event {
+  enum TorEvent {
     Unknown,
     Bandwidth,
     LogDebug, LogInfo, LogNotice, LogWarn, LogError,
@@ -51,14 +51,14 @@ public:
   static void handleEvent(ControlReply reply);
  
   /** Converts an Event to a string */
-  static QString toString(TorEvents::Event e);
+  static QString toString(TorEvents::TorEvent e);
 
   /** Converts a string to an Event */
-  static Event toEvent(QString event);
+  static TorEvent toTorEvent(QString event);
 
 private:
   /** Parses the event type from the event message */
-  static Event parseEventType(ReplyLine line);
+  static TorEvent parseEventType(ReplyLine line);
 
   /** Handle a bandwidth update event */
   static void handleBandwidthUpdate(ReplyLine line);

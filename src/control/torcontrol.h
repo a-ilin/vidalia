@@ -78,9 +78,9 @@ public:
   QString getTorVersion(QString *errmsg = 0);
 
   /** Register another event of interest with Tor */
-  bool addEvent(TorEvents::Event e, QString *errmsg = 0);
+  bool addEvent(TorEvents::TorEvent e, QString *errmsg = 0);
   /** Remove a previously registered event */
-  bool removeEvent(TorEvents::Event e, QString *errmsg = 0);
+  bool removeEvent(TorEvents::TorEvent e, QString *errmsg = 0);
 
 
 signals:

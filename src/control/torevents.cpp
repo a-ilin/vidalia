@@ -41,7 +41,7 @@ TorEvents::~TorEvents()
 
 /** Converts an event type to a string Tor understands */
 QString
-TorEvents::toString(Event e)
+TorEvents::toString(TorEvent e)
 {
   QString event;
   switch (e) {
@@ -58,10 +58,10 @@ TorEvents::toString(Event e)
   return event;
 }
 
-TorEvents::Event
-TorEvents::toEvent(QString event)
+TorEvents::TorEvent
+TorEvents::toTorEvent(QString event)
 {
-  Event e;
+  TorEvent e;
   event = event.toUpper();
   if (event == "BW") {
     e = Bandwidth;
@@ -89,12 +89,12 @@ TorEvents::toEvent(QString event)
 
 /** Parse the event type out of a message line and return the corresponding
  * Event enum value */
-TorEvents::Event
+TorEvents::TorEvent
 TorEvents::parseEventType(ReplyLine line)
 {
   QString msg = line.getMessage();
   int i = msg.indexOf(" ");
-  return toEvent(msg.mid(0, i));
+  return toTorEvent(msg.mid(0, i));
 }
 
 /** Handles an event message from Tor. An event message can potentially have

@@ -311,7 +311,7 @@ TorControl::getTorVersion(QString *errmsg)
 /** Adds an event to the event list and registers it with Tor. If registration
  * fails, then the event is NOT added to the event list. */
 bool
-TorControl::addEvent(TorEvents::Event e, QString *errmsg)
+TorControl::addEvent(TorEvents::TorEvent e, QString *errmsg)
 {
   QString event = TorEvents::toString(e);
   _eventList << event;
@@ -326,7 +326,7 @@ TorControl::addEvent(TorEvents::Event e, QString *errmsg)
 /** Removes an event from the event list and unregisters it from Tor. If
  * unregistration fails, then the event is NOT removed from the event list. */
 bool
-TorControl::removeEvent(TorEvents::Event e, QString *errmsg)
+TorControl::removeEvent(TorEvents::TorEvent e, QString *errmsg)
 {
   QString event = TorEvents::toString(e);
   if (_eventList.contains(event)) {
