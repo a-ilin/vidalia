@@ -83,6 +83,8 @@ public:
   /* Get and set display messages */
   bool getShowMsg(const char* type);
   void setShowMsg(const char* type, bool status);
+  bool getShowMsg(QString type);
+  void setShowMsg(QString type, bool status);
 
   /* Get and set maximum number of messages to display in log */
   int getMaxMsgCount();

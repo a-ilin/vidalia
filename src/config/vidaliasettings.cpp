@@ -32,14 +32,14 @@
 #define SETTING_CONTROL_ADDR   "Tor/ControlAddr"
 #define SETTING_CONTROL_PORT   "Tor/ControlPort"
 #define SETTING_AUTH_TOKEN     "Tor/AuthToken"
-#define SETTING_SHOW_TORERR    "Tor/ShowTorErr"
-#define SETTING_SHOW_TORWARN   "Tor/ShowTorWarn"
-#define SETTING_SHOW_TORNOTE   "Tor/ShowTorNote"
-#define SETTING_SHOW_TORINFO   "Tor/ShowTorInfo"
-#define SETTING_SHOW_TORDEBUG  "Tor/ShowTorDebug"
-#define SETTING_SHOW_VIDERR    "Tor/ShowVidError"
-#define SETTING_SHOW_VIDSTAT   "Tor/ShowVidStat"
-#define SETTING_MAX_MESSAGE    "Tor/MaxMsgCount"
+#define SETTING_SHOW_TORERR    "MessageLog/ShowTorErr"
+#define SETTING_SHOW_TORWARN   "MessageLog/ShowTorWarn"
+#define SETTING_SHOW_TORNOTE   "MessageLog/ShowTorNote"
+#define SETTING_SHOW_TORINFO   "MessageLog/ShowTorInfo"
+#define SETTING_SHOW_TORDEBUG  "MessageLog/ShowTorDebug"
+#define SETTING_SHOW_VIDERR    "MessageLog/ShowVidError"
+#define SETTING_SHOW_VIDSTAT   "MessageLog/ShowVidStat"
+#define SETTING_MAX_MESSAGE    "MessageLog/MaxMsgCount"
 
 /* Default Settings */
 #if defined(Q_OS_WIN32)
@@ -203,59 +203,78 @@ VidaliaSettings::setAuthToken(QByteArray token)
 }
 
 /*
- Set whether or not messages of type are displayed in the log
+ Wrapper for handling straigt text. Behaves same as below.
 */
 void
 VidaliaSettings::setShowMsg(const char* type, bool status)
 {
-  if (!qstrcmp(type, MSG_TORERR)) {
+  setShowMsg(QString(type), status);
+}
+
+/*
+ Set whether or not messages of type are displayed in the log
+*/
+void
+VidaliaSettings::setShowMsg(QString type, bool status)
+{
+  
+  if (!QString::compare(type, QString(MSG_TORERR))) {
     setValue(SETTING_SHOW_TORERR, status);
   
-  } else if (!qstrcmp(type, MSG_TORWARN)) {
+  } else if (!QString::compare(type, QString(MSG_TORWARN))) {
     setValue(SETTING_SHOW_TORWARN, status);
   
-  } else if (!qstrcmp(type, MSG_TORNOTE)) {
+  } else if (!QString::compare(type, QString(MSG_TORNOTE))) {
     setValue(SETTING_SHOW_TORNOTE, status);
   
-  } else if (!qstrcmp(type, MSG_TORINFO)) {
+  } else if (!QString::compare(type, QString(MSG_TORINFO))) {
     setValue(SETTING_SHOW_TORINFO, status);
   
-  } else if (!qstrcmp(type, MSG_TORDEBUG)) {
+  } else if (!QString::compare(type, QString(MSG_TORDEBUG))) {
     setValue(SETTING_SHOW_TORDEBUG, status);
   
-  } else if (!qstrcmp(type, MSG_VIDERR)) {
+  } else if (!QString::compare(type, QString(MSG_VIDERR))) {
     setValue(SETTING_SHOW_VIDERR, status);
  
-  } else if (!qstrcmp(type, MSG_VIDSTAT)) {
+  } else if (!QString::compare(type, QString(MSG_VIDSTAT))) {
     setValue(SETTING_SHOW_VIDSTAT, status); 
   }
+}
+
+/*
+ Wrapper for handling straight text. Behaves same as below.
+*/
+bool
+VidaliaSettings::getShowMsg(const char* type)
+{
+  return getShowMsg(QString(type));
 }
 
 /*
  Returns bool indicating whether the type of message is to be shown
 */
 bool
-VidaliaSettings::getShowMsg(const char* type)
+VidaliaSettings::getShowMsg(QString type)
 {
-  if (!qstrcmp(type, MSG_TORERR)) {
+  if (!QString::compare(type, QString(MSG_TORERR))) {
     return value(SETTING_SHOW_TORERR, DEFAULT_SHOW_TORERR).toBool(); 
   
-  } else if (!qstrcmp(type, MSG_TORWARN)) {
+  } else if (!QString::compare(type, QString(MSG_TORWARN))) {
     return value(SETTING_SHOW_TORWARN, DEFAULT_SHOW_TORWARN).toBool();
   
-  } else if (!qstrcmp(type, MSG_TORNOTE)) {
+  } else if (!QString::compare(type, QString(MSG_TORNOTE))) {
     return value(SETTING_SHOW_TORNOTE, DEFAULT_SHOW_TORNOTE).toBool();
   
-  } else if (!qstrcmp(type, MSG_TORINFO)) {
+  } else if (!QString::compare(type, QString(MSG_TORINFO))) {
     return value(SETTING_SHOW_TORINFO, DEFAULT_SHOW_TORINFO).toBool();
   
-  } else if (!qstrcmp(type, MSG_TORDEBUG)) {
+  } else if (!QString::compare(type, QString(MSG_TORDEBUG))) {
     return value(SETTING_SHOW_TORDEBUG, DEFAULT_SHOW_TORDEBUG).toBool();
   
-  } else if (!qstrcmp(type, MSG_VIDERR)) {
+  } else if (!QString::compare(type, QString(MSG_VIDERR))) {
     return value(SETTING_SHOW_VIDERR, DEFAULT_SHOW_VIDERR).toBool();
  
-  } else if (!qstrcmp(type, MSG_VIDSTAT)) {
+  } else if (!QString::compare(type, QString(MSG_VIDSTAT))) {
     return value(SETTING_SHOW_VIDSTAT, DEFAULT_SHOW_VIDSTAT).toBool(); 
   
   } else {
