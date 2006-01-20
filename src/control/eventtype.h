@@ -27,12 +27,10 @@
 #include <QEvent>
 
 namespace EventType {
-  enum Type {
-    BandwidthEvent = QEvent::User,
-    CircuitEvent   = QEvent::User+1,
-    StreamEvent    = QEvent::User+2,
-    LogEvent       = QEvent::User+3
-  };
+  const int BandwidthEvent = QEvent::User;
+  const int CircuitEvent   = QEvent::User+1;
+  const int StreamEvent    = QEvent::User+2;
+  const int LogEvent       = QEvent::User+3;
 }
 
 #endif
