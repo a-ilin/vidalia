@@ -31,6 +31,7 @@ MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
  
   _settings = new VidaliaSettings();
   _clock = new QDateTime(QDateTime::currentDateTime());
+  _clipboard = QApplication::clipboard();
  
   _messagesShown = 0;
   _maxCount = _settings->getMaxMsgCount();
@@ -52,11 +53,45 @@ MessageLog::_createActions()
   connect(ui.actionSave_All, SIGNAL(triggered()), 
       this, SLOT(saveAll()));
   
+  connect(ui.actionCopy, SIGNAL(triggered()),
+      this, SLOT(copy()));
+  
   connect(ui.actionHistory_Size, SIGNAL(triggered()), 
       this, SLOT(setMaxCount()));
   
   connect(ui.actionMessage_Filters, SIGNAL(triggered()),
       this, SLOT(setMsgFilter()));
+}
+
+/* Copies contents of currently selected messages to the 'clipboard'
+*/
+void
+MessageLog::copy()
+{
+  QList<QTreeWidgetItem *> selected = ui.lstMessages->selectedItems();
+  int count = selected.size();
+  
+  /* Do nothing if there are no selected messages */
+  if (!count) {
+    return;
+  }
+  
+  /* Clear anything on the clipboard */
+  _clipboard->clear();
+
+  QString contents;
+  QString current;
+
+  /* Copy the selected messages to the clipboard */
+  for(int i=0; i < count; i++) {
+    current.clear();
+    for (int j=0; j < ui.lstMessages->columnCount(); j++) {
+        current += selected[i]->text(j) += "    ";
+    }
+    current += "\n";
+    contents += current;
+  }
+  _clipboard->setText(contents);
 }
 
 /*
@@ -65,6 +100,14 @@ MessageLog::_createActions()
 void
 MessageLog::saveSelected()
 {
+  /* Do nothing if there are no selected messages */
+  QList<QTreeWidgetItem *> selected = ui.lstMessages->selectedItems();
+  int count = selected.size();
+  
+  if (!count) {
+    return;
+  }
+
   QString fileName = QFileDialog::getSaveFileName(this,
                           tr("Save Selected Messages"),
                           "Vidalia Log " + 
@@ -85,10 +128,9 @@ MessageLog::saveSelected()
     
     /* Write out the message log to the file */
     QTextStream out(&file);
-    QList<QTreeWidgetItem *> selected = ui.lstMessages->selectedItems();
     QApplication::setOverrideCursor(Qt::WaitCursor);
     
-    for (int i=0; i < selected.size(); ++i) {
+    for (int i=0; i < count; ++i) {
       for (int j=0; j < ui.lstMessages->columnCount(); j++) {
         out << selected[i]->text(j) << "    ";
       }
@@ -126,8 +168,9 @@ MessageLog::saveAll()
     /* Write out the message log to the file */
     QTextStream out(&file);
     QApplication::setOverrideCursor(Qt::WaitCursor);
+    int count = ui.lstMessages->topLevelItemCount();
     
-    for (int i=0; i < ui.lstMessages->topLevelItemCount(); i++) {
+    for (int i=0; i < count; i++) {
       for (int j=0; j < ui.lstMessages->columnCount(); j++) {
         out << ui.lstMessages->topLevelItem(i)->text(j) << "    ";
       }

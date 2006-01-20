@@ -32,6 +32,7 @@
 #include <QCloseEvent>
 #include <QMessageBox>
 #include <QTextStream>
+#include <QClipboard>
 
 #include "ui_messagelog.h"
 #include "filterdialog.h"
@@ -61,6 +62,7 @@ private slots:
   void setMsgFilter();
   void saveAll();
   void saveSelected();
+  void copy();
   
 private:
   void _createActions();
@@ -69,6 +71,7 @@ private:
   int _maxCount;
   int _messagesShown;
   QDateTime* _clock;
+  QClipboard* _clipboard;
 
   VidaliaSettings* _settings;
     
