@@ -48,12 +48,21 @@ public slots:
 
 
 private slots:
+  /** Called when the user selects "Start" from the popup menu. */
   void start();
+  /** Called when the Tor process has successfully started. */
   void started();
+  /** Called when the user selects "Stop" form the popup menu. */
   void stop();
+  /** Called when the Tor process has exited, either expectedly or not. */
   void stopped(int errorCode, QProcess::ExitStatus exitStatus);
+  /** Called when the control socket has connected to Tor. */
+  void connected();
+  /** Called when the user selects "About" from the popup menu. */
   void about();
+  /** Called when the user selects "View Message Log" from the popup menu. */
   void message();
+  /** Called when the user exits Vidalia. */
   void close();
 
 

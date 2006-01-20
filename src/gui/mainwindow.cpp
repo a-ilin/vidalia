@@ -70,6 +70,7 @@ MainWindow::MainWindow()
   connect(_torControl, SIGNAL(started()), this, SLOT(started()));
   connect(_torControl, SIGNAL(stopped(int, QProcess::ExitStatus)),
                  this, SLOT(stopped(int, QProcess::ExitStatus)));
+  connect(_torControl, SIGNAL(connected()), this, SLOT(connected()));
 
   /* Put an icon in the system tray to indicate the status of Tor */
   _trayIcon = new TrayIcon(QPixmap(IMG_TOR_STOPPED),
@@ -122,7 +123,8 @@ MainWindow::close()
   Create and bind actions to events. Setup for initial
   tray menu configuration.
 */
-void MainWindow::createActions()
+void 
+MainWindow::createActions()
 {
   _startAct = new QAction(tr("Start"), this);
   connect(_startAct, SIGNAL(triggered()), this, SLOT(start()));
@@ -150,7 +152,8 @@ void MainWindow::createActions()
   Creates a QMenu object that contains QActions
   which compose the system tray menu.
 */
-void MainWindow::createMenus()
+void 
+MainWindow::createMenus()
 {
   /* Tray menu */ 
   _trayMenu = new QMenu(this);
@@ -214,7 +217,8 @@ MainWindow::removeMenuBar()
 /*
  Starts Tor, modifies tray icon and tray menu appropriately
 */
-void MainWindow::start()
+void 
+MainWindow::start()
 {
   QString errmsg;
   if (!_torControl->start(&errmsg)) {
@@ -226,7 +230,8 @@ void MainWindow::start()
 
 /** Slot: Called when the Tor process is started. It will connect the control
  * socket and set the icons and tooltips accordingly. */
-void MainWindow::started()
+void 
+MainWindow::started()
 {
   /* Set the window icon */
   QApplication::setWindowIcon(QIcon(IMG_TOR_RUNNING));
@@ -272,7 +277,8 @@ void MainWindow::started()
 /*
  Stops Tor
 */
-void MainWindow::stop()
+void 
+MainWindow::stop()
 {
   QString errmsg;
   
@@ -293,7 +299,8 @@ void MainWindow::stop()
 
 /** Slot: Called when the Tor process has exited. It will adjust the tray
  * icons and tooltips accordingly. */
-void MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
+void 
+MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
 {
   /* Set the window icon */
   QApplication::setWindowIcon(QIcon(IMG_TOR_STOPPED));
@@ -331,11 +338,19 @@ void MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
   _isIntentionalExit = false;
 }
 
+/** Called when the control socket has successfully connected to Tor. */
+void
+MainWindow::connected()
+{
+  _torControl->setEvents();
+}
+
 /*
  Creates an instance of AboutDialog or displays current
  instance if already created. 
 */
-void MainWindow::about()
+void 
+MainWindow::about()
 {
   static AboutDialog* aboutDialog = new AboutDialog(_torControl, this);
   if(!aboutDialog->isVisible()) {
@@ -350,7 +365,8 @@ void MainWindow::about()
  Creates an instance of MessageLog or displays current
  instance if already created.
 */
-void MainWindow::message()
+void 
+MainWindow::message()
 {
   if(!_messageLog->isVisible()) {
     _messageLog->show();
@@ -359,3 +375,4 @@ void MainWindow::message()
     _messageLog->raise();
   }
 }
+
