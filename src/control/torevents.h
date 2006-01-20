@@ -25,7 +25,10 @@
 #define _TOREVENTS_H
 
 #include <QObject>
+#include <QMultiHash>
+#include <QList>
 
+#include "logevent.h"
 #include "controlreply.h"
 
 class TorEvents : public QObject
@@ -47,27 +50,43 @@ public:
   /** Default Destructor */
   ~TorEvents();
 
+  /** Adds an event and interested object to the event list */
+  void add(TorEvent event, QObject *obj);
+  /** Removes an event and object from the event list */
+  void remove(TorEvent event, QObject *obj);
+  /** Returns true if an event has any registered handlers */
+  bool contains(TorEvent event);
+  /** Returns the list of events in which we're interested */
+  QList<TorEvent> eventList();
+
   /** Parses an event message and emits the proper signal */
-  static void handleEvent(ControlReply reply);
+  void handleEvent(ControlReply reply);
  
   /** Converts an Event to a string */
   static QString toString(TorEvents::TorEvent e);
 
-  /** Converts a string to an Event */
-  static TorEvent toTorEvent(QString event);
 
 private:
+  /** Stores a mapping of Tor events to a list of the objects interested in
+   * hearing about those events. */
+  QMultiHash<TorEvent, QObject*> _eventList;
+  
   /** Parses the event type from the event message */
   static TorEvent parseEventType(ReplyLine line);
 
+  /** Converts a string to an Event */
+  static TorEvent toTorEvent(QString event);
+  /** Converts a log severity to an event */
+  static TorEvent toTorEvent(LogEvent::Severity severity);
+  
   /** Handle a bandwidth update event */
-  static void handleBandwidthUpdate(ReplyLine line);
+  void handleBandwidthUpdate(ReplyLine line);
   /** Handle a circuit status event */
-  static void handleCircuitStatus(ReplyLine line);
+  void handleCircuitStatus(ReplyLine line);
   /** Handle a stream status event */
-  static void handleStreamStatus(ReplyLine line);
+  void handleStreamStatus(ReplyLine line);
   /** Handle a log message event */
-  static void handleLogMessage(ReplyLine line);
+  void handleLogMessage(ReplyLine line);
 };
 
 #endif

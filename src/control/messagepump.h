@@ -35,7 +35,7 @@
 class MessagePump : public QThread
 {
 public:
-  MessagePump(ControlConnection *conn);
+  MessagePump(ControlConnection *conn, TorEvents *events);
   ~MessagePump();
   
   /** Start the event processing thread */
@@ -50,6 +50,8 @@ public:
 private:
   /** Pointer to a previously constructed control conn */
   ControlConnection *_conn;
+  /** Pointer to a previously constructed TorEvents list of event handlers */
+  TorEvents *_events;
   /** Set to true while the event loop is running */
   bool _run; 
   /** Lock around the waiting message queue */

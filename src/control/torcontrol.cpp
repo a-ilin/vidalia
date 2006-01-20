@@ -38,7 +38,7 @@ TorControl::TorControl()
 
   /* Construct the message pump and give it a control connection and TorEvents
    * object, used to translate and dispatch event messages sent by Tor */
-  _messages = new MessagePump(&_controlConn);
+  _messages = new MessagePump(&_controlConn, &_torEvents);
 
   /* Plumb the appropriate socket signals */
   QObject::connect(&_controlConn, SIGNAL(connected()),
@@ -308,51 +308,53 @@ TorControl::getTorVersion(QString *errmsg)
   return "<unknown>";
 }
 
-/** Adds an event to the event list and registers it with Tor. If registration
- * fails, then the event is NOT added to the event list. */
+/** Adds an event and target object to the event list. If the control socket
+ * is connected, then this method will try to register the new event with Tor,
+ * otherwise it simply adds the event and handler to the event list and
+ * returns true. */ 
 bool
-TorControl::addEvent(TorEvents::TorEvent e, QString *errmsg)
+TorControl::addEvent(TorEvents::TorEvent e, QObject *obj, QString *errmsg)
 {
-  QString event = TorEvents::toString(e);
-  _eventList << event;
-  if (!registerEvents(errmsg)) {
-    /* Registering the event failed, so remove it from the list */
-    _eventList.removeAt(_eventList.indexOf(event));
-    return false;
+  _torEvents.add(e, obj);
+  if (isConnected()) {
+    return setEvents(errmsg);
   }
   return true;
 }
 
-/** Removes an event from the event list and unregisters it from Tor. If
- * unregistration fails, then the event is NOT removed from the event list. */
+/** Removes an event and target object from the event list. If the control
+ * socket is connected, then this method will try to register the new list of
+ * events with Tor. Otherwise, it simply adds the event and handler to the
+ * event list and returns true. */
 bool
-TorControl::removeEvent(TorEvents::TorEvent e, QString *errmsg)
+TorControl::removeEvent(TorEvents::TorEvent e, QObject *obj, QString *errmsg)
 {
-  QString event = TorEvents::toString(e);
-  if (_eventList.contains(event)) {
-    _eventList.removeAt(_eventList.indexOf(event));
-    if (!registerEvents(errmsg)) {
-      /* Unregistration failed, so leave it in the list */
-      _eventList << event;
-      return false;
-    }
+  _torEvents.remove(e, obj);
+  if (isConnected()) {
+    return setEvents(errmsg);
   }
   return true;
 }
 
 /** Register for the events currently in the event list */
 bool
-TorControl::registerEvents(QString *errmsg)
+TorControl::setEvents(QString *errmsg)
 {
-  ControlCommand cmd("SETEVENTS", _eventList.join(" ")); 
+  ControlCommand cmd("SETEVENTS"); 
   ControlReply reply;
+
+  /* Add each event to the argument list */
+  foreach (TorEvents::TorEvent e, _torEvents.eventList()) {
+    cmd.addArgument(TorEvents::toString(e));
+  }
+
+  /* Send the new list of events to Tor */
   if (!send(cmd, reply, errmsg)) {
     return false;
   } else {
-    ReplyLine line = reply.getLine();
-    if (line.getStatus() != "250") {
+    if (reply.getStatus() != "250") {
       if (errmsg) {
-        *errmsg = line.getMessage();
+        *errmsg = reply.getLine().getMessage();
       }
       return false;
     }

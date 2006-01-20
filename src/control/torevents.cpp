@@ -21,6 +21,8 @@
 *  Boston, MA  02110-1301, USA.
 ****************************************************************/
 
+#include <QApplication>
+
 #include "torevents.h"
 
 /* Include the event types */
@@ -39,6 +41,45 @@ TorEvents::~TorEvents()
 {
 }
 
+/** Adds an event and interested object to the list */
+void
+TorEvents::add(TorEvent e, QObject *obj)
+{
+  if (!_eventList.values(e).contains(obj)) {
+    _eventList.insert(e, obj);
+  }
+}
+
+/** Removes an event and object from the event list */
+void
+TorEvents::remove(TorEvent e, QObject *obj)
+{
+  int i;
+  if ((i = _eventList.values(e).indexOf(obj)) >= 0) {
+    _eventList.values(e).removeAt(i);
+    if (_eventList.values(e).size() == 0) {
+      _eventList.remove(e);
+    }
+  }
+}
+
+/** Returns true if an event has any registered handlers */
+bool
+TorEvents::contains(TorEvent event)
+{
+  if (_eventList.contains(event)) {
+    return (_eventList.values(event).count() > 0);
+  }
+  return false;
+}
+
+/** Returns the list of events in which we're interested */
+QList<TorEvents::TorEvent>
+TorEvents::eventList()
+{
+  return _eventList.keys();
+}
+
 /** Converts an event type to a string Tor understands */
 QString
 TorEvents::toString(TorEvent e)
@@ -46,18 +87,35 @@ TorEvents::toString(TorEvent e)
   QString event;
   switch (e) {
     case Bandwidth: event = "BW"; break;
-    case LogDebug: event = "DEBUG"; break;
-    case LogInfo: event = "INFO"; break;
+    case LogDebug:  event = "DEBUG"; break;
+    case LogInfo:   event = "INFO"; break;
     case LogNotice: event = "NOTICE"; break;
-    case LogWarn: event = "WARN"; break;
-    case LogError: event = "ERR"; break;
-    case Circuit: event = "CIRC"; break;
-    case Stream: event = "STREAM"; break;
+    case LogWarn:   event = "WARN"; break;
+    case LogError:  event = "ERR"; break;
+    case Circuit:   event = "CIRC"; break;
+    case Stream:    event = "STREAM"; break;
     default: event = "UNKNOWN"; break;
   }
   return event;
 }
 
+/** Converts a log severity to its related Tor event */
+TorEvents::TorEvent
+TorEvents::toTorEvent(LogEvent::Severity severity)
+{
+  TorEvent e;
+  switch (severity) {
+    case LogEvent::Debug:  e = LogDebug; break;
+    case LogEvent::Info:   e = LogInfo; break;
+    case LogEvent::Notice: e = LogNotice; break;
+    case LogEvent::Warn:   e = LogWarn; break;
+    case LogEvent::Error:  e = LogError; break;
+    default: e = Unknown; break;
+  }
+  return e;
+}
+
+/** Converts an event in the string form sent by Tor to its enum value */
 TorEvents::TorEvent
 TorEvents::toTorEvent(QString event)
 {
@@ -134,10 +192,11 @@ TorEvents::handleBandwidthUpdate(ReplyLine line)
   if (msg.size() >= 3) {
     quint64 bytesIn = (quint64)msg.at(1).toULongLong();
     quint64 bytesOut = (quint64)msg.at(2).toULongLong();
-    
-    /*
-      Post the new event here
-    */
+  
+    /* Post the event to each of the interested targets */
+    foreach (QObject *target, _eventList.values(Bandwidth)) {
+      QApplication::postEvent(target, new BandwidthEvent(bytesIn, bytesOut));
+    }
   }
 }
 
@@ -160,10 +219,11 @@ TorEvents::handleCircuitStatus(ReplyLine line)
     quint64 circId = (quint64)msg.at(1).toULongLong();
     CircuitEvent::Status status = CircuitEvent::toStatus(msg.at(2));
     QString path = msg.at(3);
-  
-    /*
-      Post the new event here
-    */
+ 
+    /* Post the event to each of the interested targets */
+    foreach (QObject *target, _eventList.values(Circuit)) {
+      QApplication::postEvent(target, new CircuitEvent(circId, status, path));
+    }
   }
 }
 
@@ -191,11 +251,13 @@ TorEvents::handleStreamStatus(ReplyLine line)
     quint64 streamId = (quint64)msg.at(1).toULongLong();
     StreamEvent::Status status = StreamEvent::toStatus(msg.at(2));
     quint64 circId = (quint64)msg.at(3).toULongLong();
-    QString target = msg.at(4);
+    QString targetAddr = msg.at(4);
 
-    /*
-      Post the new event here
-    */
+    /* Post the event to each of the interested targets */
+    foreach (QObject *target, _eventList.values(Stream)) {
+      QApplication::postEvent(target, 
+          new StreamEvent(streamId, status, circId, targetAddr));
+    }
   }
 }
 
@@ -213,15 +275,12 @@ TorEvents::handleLogMessage(ReplyLine line)
   QString msg = line.getMessage();
   int i = msg.indexOf(" ");
   LogEvent::Severity severity = LogEvent::toSeverity(msg.mid(0, i));
+  QString logLine = (line.getData().size() > 0 ? line.getData().join("\n") :
+                                                 msg.mid(i+1));
   
-  /* Determine if the message spanned multiple lines or not. */
-  /* 
-    Post the new event here
-  if (line.getData().size() > 0) {
-    emit log(severity, line.getData().join("\n"));
-  } else {
-    emit log(severity, msg.mid(i+1));
+  /* Post the event to each of the interested targets */
+  foreach (QObject *target, _eventList.values(toTorEvent(severity))) {
+    QApplication::postEvent(target, new LogEvent(severity, logLine));
   }
-  */
 }
 

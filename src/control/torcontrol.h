@@ -26,6 +26,7 @@
 
 #include <QObject>
 #include <QHash>
+#include <QList>
 
 #include "controlconnection.h"
 #include "torprocess.h"
@@ -78,10 +79,12 @@ public:
   QString getTorVersion(QString *errmsg = 0);
 
   /** Register another event of interest with Tor */
-  bool addEvent(TorEvents::TorEvent e, QString *errmsg = 0);
+  bool addEvent(TorEvents::TorEvent e, QObject *obj, QString *errmsg = 0);
   /** Remove a previously registered event */
-  bool removeEvent(TorEvents::TorEvent e, QString *errmsg = 0);
-
+  bool removeEvent(TorEvents::TorEvent e, QObject *obj, QString *errmsg = 0);
+  /** Register events of interest with Tor */
+  bool setEvents(QString *errmsg = 0);
+  
 
 signals:
   /** Emitted when the Tor process has started */
@@ -103,10 +106,9 @@ private:
    * connection */
   MessagePump *_messages;
   /** Keep track of which events we're interested in */
-  QStringList _eventList;
+  //QList<TorEvents::TorEvent> _eventList;
+  TorEvents _torEvents;
 
-  /** Register events of interest with Tor */
-  bool registerEvents(QString *errmsg);
   /** Sends a message to Tor and discards the response */
   bool send(ControlCommand cmd, QString *errmsg = 0);
   /** Send a message to Tor and read the response */
