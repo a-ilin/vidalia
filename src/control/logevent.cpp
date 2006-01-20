@@ -26,7 +26,7 @@
 
 /** Default constructor */
 LogEvent::LogEvent(Severity severity, QString message)
-  : QEvent(QEvent::User)
+  : QEvent((QEvent::Type)EventType::LogEvent)
 {
   _severity = severity;
   _message  = message;
@@ -35,13 +35,6 @@ LogEvent::LogEvent(Severity severity, QString message)
 /** Default destructor */
 LogEvent::~LogEvent()
 {
-}
-
-/** Returns the event type */
-int
-LogEvent::type()
-{
-  return EventType::LogEvent;
 }
 
 /** Converts a string description of a severity to its enum value */

@@ -48,9 +48,6 @@ public:
   /** Default destructor */
   ~StreamEvent();
 
-  /** Returns the type of event */
-  int type();
-
   /** Converts a string description of a stream's status to its enum value */
   static Status toStatus(QString strStatus);
 

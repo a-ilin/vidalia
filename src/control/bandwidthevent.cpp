@@ -26,7 +26,7 @@
 
 /** Default constructor */
 BandwidthEvent::BandwidthEvent(quint64 bytesRead, quint64 bytesWritten)
- : QEvent(QEvent::User)
+ : QEvent((QEvent::Type)EventType::BandwidthEvent)
 {
   _bytesRead    = bytesRead;
   _bytesWritten = bytesWritten;
@@ -35,13 +35,6 @@ BandwidthEvent::BandwidthEvent(quint64 bytesRead, quint64 bytesWritten)
 /** Default destructor */
 BandwidthEvent::~BandwidthEvent()
 {
-}
-
-/** Returns the event type */
-int
-BandwidthEvent::type()
-{
-  return EventType::BandwidthEvent;
 }
 
 /** Return the number of bytes read in the last second */

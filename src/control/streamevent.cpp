@@ -27,7 +27,7 @@
 /** Default constructor */
 StreamEvent::StreamEvent(quint64 streamId, Status status, 
                          quint64 circuitId, QString target)
-  : QEvent(QEvent::User)
+  : QEvent((QEvent::Type)EventType::StreamEvent)
 {
   _streamId  = streamId;
   _status    = status;
@@ -38,13 +38,6 @@ StreamEvent::StreamEvent(quint64 streamId, Status status,
 /** Default destructor */
 StreamEvent::~StreamEvent()
 {
-}
-
-/** Returns the type of event */
-int
-StreamEvent::type()
-{
-  return EventType::StreamEvent;
 }
 
 /** Converts a string description of a stream's status to its enum value */

@@ -26,7 +26,7 @@
 
 /** Default constructor */
 CircuitEvent::CircuitEvent(quint64 circId, Status status, QString path)
-  : QEvent(QEvent::User)
+  : QEvent((QEvent::Type)EventType::CircuitEvent)
 {
   _circId = circId;
   _status = status;
@@ -36,13 +36,6 @@ CircuitEvent::CircuitEvent(quint64 circId, Status status, QString path)
 /** Default destructor */
 CircuitEvent::~CircuitEvent()
 {
-}
-
-/** Returns the type of event */
-int
-CircuitEvent::type()
-{
-  return EventType::CircuitEvent;
 }
 
 /** Converts the circuit status string to its proper enum value */

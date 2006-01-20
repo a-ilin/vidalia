@@ -45,9 +45,6 @@ public:
   /** Default destructor */
   ~CircuitEvent();
 
-  /** Returns the type of event */
-  int type();
-
   /** Converts a string description of a circuit's status to an enum value */
   static Status toStatus(QString strStatus);
   

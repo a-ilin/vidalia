@@ -45,9 +45,6 @@ public:
   /** Default destructor */
   ~LogEvent();
 
-  /** Returns the type of event */
-  int type();
-
   /** Converts the string description of a severity to its enum value */
   static Severity toSeverity(QString strSeverity);
   
