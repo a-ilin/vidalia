@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>807</width>
-    <height>712</height>
+    <width>811</width>
+    <height>711</height>
    </rect>
   </property>
   <property name="font" >
@@ -38,7 +38,7 @@
      <number>6</number>
     </property>
     <item>
-     <layout class="QVBoxLayout" >
+     <layout class="QHBoxLayout" >
       <property name="margin" >
        <number>0</number>
       </property>
@@ -46,79 +46,82 @@
        <number>6</number>
       </property>
       <item>
-       <layout class="QHBoxLayout" >
-        <property name="margin" >
-         <number>0</number>
-        </property>
-        <property name="spacing" >
-         <number>6</number>
-        </property>
-        <item>
-         <widget class="QLabel" name="label" >
-          <property name="text" >
-           <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Message History&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <spacer>
-          <property name="orientation" >
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" >
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <widget class="QTreeWidget" name="lstMessages" >
+       <widget class="QLabel" name="label_3" >
         <property name="contextMenuPolicy" >
          <enum>Qt::NoContextMenu</enum>
         </property>
-        <property name="autoFillBackground" >
-         <bool>false</bool>
+        <property name="text" >
+         <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Messages Shown:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
         </property>
-        <property name="alternatingRowColors" >
-         <bool>true</bool>
-        </property>
-        <property name="selectionMode" >
-         <enum>QAbstractItemView::ExtendedSelection</enum>
-        </property>
-        <property name="rootIsDecorated" >
-         <bool>false</bool>
-        </property>
-        <property name="uniformRowHeights" >
-         <bool>true</bool>
-        </property>
-        <property name="itemsExpandable" >
-         <bool>false</bool>
-        </property>
-        <property name="sortingEnabled" >
-         <bool>true</bool>
-        </property>
-        <column>
-         <property name="text" >
-          <string>Time</string>
-         </property>
-        </column>
-        <column>
-         <property name="text" >
-          <string>Type</string>
-         </property>
-        </column>
-        <column>
-         <property name="text" >
-          <string>Message</string>
-         </property>
-        </column>
        </widget>
       </item>
+      <item>
+       <widget class="QLabel" name="lblMessageCount" >
+        <property name="contextMenuPolicy" >
+         <enum>Qt::NoContextMenu</enum>
+        </property>
+        <property name="text" >
+         <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Num of Messages&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
      </layout>
+    </item>
+    <item>
+     <widget class="QTreeWidget" name="lstMessages" >
+      <property name="contextMenuPolicy" >
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <property name="autoFillBackground" >
+       <bool>false</bool>
+      </property>
+      <property name="alternatingRowColors" >
+       <bool>true</bool>
+      </property>
+      <property name="selectionMode" >
+       <enum>QAbstractItemView::ExtendedSelection</enum>
+      </property>
+      <property name="rootIsDecorated" >
+       <bool>false</bool>
+      </property>
+      <property name="uniformRowHeights" >
+       <bool>true</bool>
+      </property>
+      <property name="itemsExpandable" >
+       <bool>false</bool>
+      </property>
+      <property name="sortingEnabled" >
+       <bool>true</bool>
+      </property>
+      <column>
+       <property name="text" >
+        <string>Time</string>
+       </property>
+      </column>
+      <column>
+       <property name="text" >
+        <string>Type</string>
+       </property>
+      </column>
+      <column>
+       <property name="text" >
+        <string>Message</string>
+       </property>
+      </column>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -127,19 +130,10 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>807</width>
+     <width>811</width>
      <height>19</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menu_File" >
-    <property name="title" >
-     <string>&amp;File</string>
-    </property>
-    <addaction name="actionSave_All" />
-    <addaction name="actionSave_Selected" />
-    <addaction name="separator" />
-    <addaction name="actionClose" />
-   </widget>
    <widget class="QMenu" name="menu_View" >
     <property name="title" >
      <string>&amp;View</string>
@@ -160,6 +154,15 @@
     <addaction name="actionMessage_Filters" />
     <addaction name="actionHistory_Size" />
    </widget>
+   <widget class="QMenu" name="menu_File" >
+    <property name="title" >
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actionSave_All" />
+    <addaction name="actionSave_Selected" />
+    <addaction name="separator" />
+    <addaction name="actionClose" />
+   </widget>
    <addaction name="menu_File" />
    <addaction name="menu_Edit" />
    <addaction name="menu_View" />
@@ -169,8 +172,8 @@
    <property name="geometry" >
     <rect>
      <x>0</x>
-     <y>690</y>
-     <width>807</width>
+     <y>689</y>
+     <width>811</width>
      <height>22</height>
     </rect>
    </property>
@@ -313,6 +316,9 @@
      <underline>false</underline>
      <strikeout>false</strikeout>
     </font>
+   </property>
+   <property name="shortcut" >
+    <string>Alt+F4</string>
    </property>
   </action>
  </widget>

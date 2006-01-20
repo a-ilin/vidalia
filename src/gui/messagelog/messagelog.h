@@ -28,7 +28,10 @@
 #include <QTreeWidgetItem>
 #include <QDateTime>
 #include <QInputDialog>
+#include <QFileDialog>
 #include <QCloseEvent>
+#include <QMessageBox>
+#include <QTextStream>
 
 #include "ui_messagelog.h"
 #include "filterdialog.h"
@@ -56,11 +59,13 @@ public slots:
 private slots:
   void setMaxCount();
   void setMsgFilter();
+  void saveAll();
+  void saveSelected();
   
 private:
   void _createActions();
   void _filterLog();
-
+  
   int _maxCount;
   int _messagesShown;
   QDateTime* _clock;

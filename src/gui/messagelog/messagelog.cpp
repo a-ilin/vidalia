@@ -36,6 +36,8 @@ MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
   _maxCount = _settings->getMaxMsgCount();
 
   _createActions();
+
+  ui.lblMessageCount->setText("0");
 }
 
 /*
@@ -44,11 +46,96 @@ MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
 void
 MessageLog::_createActions()
 {
+  connect(ui.actionSave_Selected, SIGNAL(triggered()), 
+      this, SLOT(saveSelected()));
+  
+  connect(ui.actionSave_All, SIGNAL(triggered()), 
+      this, SLOT(saveAll()));
+  
   connect(ui.actionHistory_Size, SIGNAL(triggered()), 
       this, SLOT(setMaxCount()));
   
   connect(ui.actionMessage_Filters, SIGNAL(triggered()),
       this, SLOT(setMsgFilter()));
+}
+
+/*
+ Saves currently selected messages to a file
+*/
+void
+MessageLog::saveSelected()
+{
+  QString fileName = QFileDialog::getSaveFileName(this,
+                          tr("Save Selected Messages"),
+                          "Vidalia Log " + 
+                          _clock->currentDateTime().toString("MM.dd.yyyy"));
+  
+  /* If the choose to save */
+  if (!fileName.isEmpty()) {
+    QFile file(fileName);
+    
+    /* If can't write to file, show error message */
+    if (!file.open(QFile::WriteOnly | QFile::Text)) {
+      QMessageBox::warning(this, tr("Vidalia"),
+                          tr("Cannot write file %1:\n%2.")
+                          .arg(fileName)
+                          .arg(file.errorString()));
+      return;
+    }
+    
+    /* Write out the message log to the file */
+    QTextStream out(&file);
+    QList<QTreeWidgetItem *> selected = ui.lstMessages->selectedItems();
+    QApplication::setOverrideCursor(Qt::WaitCursor);
+    
+    for (int i=0; i < selected.size(); ++i) {
+      for (int j=0; j < ui.lstMessages->columnCount(); j++) {
+        out << selected[i]->text(j) << "    ";
+      }
+      out << "\n";
+    }
+    
+    QApplication::restoreOverrideCursor();
+  }
+}
+
+/*
+ Saves all (shown) messages to a file
+*/
+void
+MessageLog::saveAll()
+{
+  QString fileName = QFileDialog::getSaveFileName(this,
+                          tr("Save All Messages"),
+                          "Vidalia Log " + 
+                          _clock->currentDateTime().toString("MM.dd.yyyy"));
+  
+  /* If the choose to save */
+  if (!fileName.isEmpty()) {
+    QFile file(fileName);
+    
+    /* If can't write to file, show error message */
+    if (!file.open(QFile::WriteOnly | QFile::Text)) {
+      QMessageBox::warning(this, tr("Vidalia"),
+                          tr("Cannot write file %1:\n%2.")
+                          .arg(fileName)
+                          .arg(file.errorString()));
+      return;
+    }
+    
+    /* Write out the message log to the file */
+    QTextStream out(&file);
+    QApplication::setOverrideCursor(Qt::WaitCursor);
+    
+    for (int i=0; i < ui.lstMessages->topLevelItemCount(); i++) {
+      for (int j=0; j < ui.lstMessages->columnCount(); j++) {
+        out << ui.lstMessages->topLevelItem(i)->text(j) << "    ";
+      }
+      out << "\n";
+    }
+    
+    QApplication::restoreOverrideCursor();
+  }
 }
 
 /*
@@ -74,6 +161,7 @@ MessageLog::setMaxCount()
     }
     _settings->setMaxMsgCount(value);
     _maxCount = value;
+    ui.lblMessageCount->setText(QString("%1").arg(_messagesShown));
   }
 }
 
@@ -91,7 +179,8 @@ MessageLog::setMsgFilter()
   
   /* If filters changed, refilter the log message list */
   if (ok_clicked) {
-    _filterLog(); 
+    _filterLog();
+    ui.lblMessageCount->setText(QString("%1").arg(_messagesShown));
   }
 }
 
@@ -171,6 +260,7 @@ MessageLog::write(const char* type, const char* message)
   /* Hide the message if necessary */
   if (_settings->getShowMsg(type)) {
     _messagesShown++;
+    ui.lblMessageCount->setText(QString("%1").arg(_messagesShown));
   } else {
     ui.lstMessages->setItemHidden(newMessage, true);
   }
