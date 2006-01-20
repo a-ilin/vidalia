@@ -100,9 +100,7 @@ ControlCommand::toString()
   str += _keyword + " ";
   
   /* Append all specified arguments separated by a space */
-  for (i = 0; i < _arguments.size(); i++) {
-    str += _arguments.at(i) + " ";
-  }
+  str += _arguments.join(" ");
 
   /* Append whatever data lines have been specified */
   if (_data.size() > 0) {
