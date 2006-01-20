@@ -28,6 +28,7 @@
 #include <QMultiHash>
 #include <QList>
 
+#include "eventtype.h"
 #include "logevent.h"
 #include "controlreply.h"
 
