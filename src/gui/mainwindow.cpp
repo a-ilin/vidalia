@@ -258,20 +258,8 @@ MainWindow::started()
             "connect to it. Check your control port settings and try "
             "again.\n\n") + errmsg,
          QMessageBox::Ok, QMessageBox::NoButton);
-      return;
     }
   } 
-  if (_torControl->isConnected()) {
-    /* The controller connected, so now send the AUTHENTICATE command */
-    if (!_torControl->authenticate(&errmsg)) {
-      QMessageBox::warning(this, tr("Authentication Error"),
-        tr("Vidalia was unable to authenticate itself to Tor."
-           "Check your authentication information and try again."
-           "\n\nError: ") + errmsg,
-        QMessageBox::Ok, QMessageBox::NoButton);
-      _torControl->disconnect();
-    } 
-  }
 }
 
 /*
@@ -342,7 +330,27 @@ MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
 void
 MainWindow::connected()
 {
-  _torControl->setEvents();
+  QString errmsg;
+
+  /* The controller connected, so now send the AUTHENTICATE command */
+  if (!_torControl->authenticate(&errmsg)) {
+    QMessageBox::warning(this, tr("Authentication Error"),
+      tr("Vidalia was unable to authenticate itself to Tor."
+         "Check your authentication information and try again."
+         "\n\nError: ") + errmsg,
+      QMessageBox::Ok, QMessageBox::NoButton);
+    _torControl->disconnect();
+    return;
+  }
+
+  /* Register for interesting events */
+  if (!_torControl->setEvents(&errmsg)) {
+    QMessageBox::warning(this, tr("Error Setting Events"),
+      tr("Vidalia was unable to register for events from Tor. "
+         "Some features of Vidalia will be unavailable. "
+         "\n\nError: ") + errmsg,
+      QMessageBox::Ok, QMessageBox::NoButton);
+  }
 }
 
 /*
