@@ -29,8 +29,8 @@
 
 /* On Mac, we need to put the 128x128 icon in the dock */
 #if defined(Q_WS_MAC)
-#define IMG_TOR_STOPPED    ":/images/tor_off128.png"
-#define IMG_TOR_RUNNING    ":/images/tor_on128.png"
+#define IMG_TOR_STOPPED    ":/images/tor_off48.png"
+#define IMG_TOR_RUNNING    ":/images/tor_on48.png"
 #else
 #define IMG_TOR_STOPPED    ":/images/tor_off32.png"
 #define IMG_TOR_RUNNING    ":/images/tor_on32.png"
