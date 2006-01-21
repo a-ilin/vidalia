@@ -55,14 +55,14 @@
   <property name="modal" >
    <bool>true</bool>
   </property>
-  <layout class="QGridLayout" >
+  <layout class="QVBoxLayout" >
    <property name="margin" >
     <number>9</number>
    </property>
    <property name="spacing" >
     <number>6</number>
    </property>
-   <item row="0" column="0" >
+   <item>
     <widget class="QGroupBox" name="groupBox" >
      <property name="contextMenuPolicy" >
       <enum>Qt::NoContextMenu</enum>
@@ -107,6 +107,9 @@
             <property name="text" >
              <string>Tor Error</string>
             </property>
+            <property name="icon" >
+             <iconset resource="..\res\vidalia.qrc" >:/images/msg_error.png</iconset>
+            </property>
            </widget>
           </item>
           <item>
@@ -142,6 +145,9 @@
             </property>
             <property name="text" >
              <string>Tor Warning</string>
+            </property>
+            <property name="icon" >
+             <iconset resource="..\res\vidalia.qrc" >:/images/msg_warn.png</iconset>
             </property>
            </widget>
           </item>
@@ -179,6 +185,9 @@
             <property name="text" >
              <string>Tor Notice</string>
             </property>
+            <property name="icon" >
+             <iconset resource="..\res\vidalia.qrc" >:/images/msg_notice.png</iconset>
+            </property>
            </widget>
           </item>
           <item>
@@ -214,6 +223,9 @@
             </property>
             <property name="text" >
              <string>Tor Info</string>
+            </property>
+            <property name="icon" >
+             <iconset resource="..\res\vidalia.qrc" >:/images/msg_info.png</iconset>
             </property>
            </widget>
           </item>
@@ -251,6 +263,9 @@
             <property name="text" >
              <string>Tor Debug</string>
             </property>
+            <property name="icon" >
+             <iconset resource="..\res\vidalia.qrc" >:/images/msg_debug.png</iconset>
+            </property>
            </widget>
           </item>
           <item>
@@ -273,57 +288,7 @@
      </layout>
     </widget>
    </item>
-   <item row="2" column="0" >
-    <layout class="QHBoxLayout" >
-     <property name="margin" >
-      <number>0</number>
-     </property>
-     <property name="spacing" >
-      <number>6</number>
-     </property>
-     <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>221</width>
-         <height>31</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QPushButton" name="okButton" >
-       <property name="text" >
-        <string>OK</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="cancelButton" >
-       <property name="text" >
-        <string>Cancel</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>211</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
-   </item>
-   <item row="1" column="0" >
+   <item>
     <widget class="QGroupBox" name="groupBox_2" >
      <property name="contextMenuPolicy" >
       <enum>Qt::NoContextMenu</enum>
@@ -422,6 +387,56 @@
       </item>
      </layout>
     </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <item>
+      <spacer>
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" >
+        <size>
+         <width>221</width>
+         <height>31</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="okButton" >
+       <property name="text" >
+        <string>OK</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="cancelButton" >
+       <property name="text" >
+        <string>Cancel</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer>
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" >
+        <size>
+         <width>211</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
    </item>
   </layout>
  </widget>
