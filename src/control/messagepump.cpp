@@ -56,7 +56,9 @@ MessagePump::stop()
    * we either need to find a way to make QAbstractSocket break out of a 
    * blocking read, or we have to kill the thread harshly. For now, we just
    * do the latter, but it would be nice to know how to do the former. */
-  QThread::terminate();
+  if (isRunning()) {
+    QThread::terminate();
+  }
 }
 
 /** Sends a message and waits for the response from Tor */
