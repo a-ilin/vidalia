@@ -89,7 +89,7 @@ MessagePump::send(ControlCommand cmd, ControlReply &reply, QString *errmsg)
 void
 MessagePump::run()
 {
-  while (_run) {
+  while (_run && _conn->isValid()) {
     ControlReply reply;
     if (_conn->readReply(reply)) {
       /* A status of "650" means "asynchronous event notification */
