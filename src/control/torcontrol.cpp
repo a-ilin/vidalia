@@ -110,7 +110,6 @@ TorControl::onStopped(int exitCode, QProcess::ExitStatus exitStatus)
 {
   delete _torProcess;
   _torProcess = 0;
-
   emit stopped(exitCode, exitStatus);
 }
 
@@ -130,13 +129,8 @@ bool
 TorControl::connect(QString *errmsg)
 {
   VidaliaSettings settings;
-  if ( _controlConn.connect(settings.getControlAddress(),
-                            settings.getControlPort(), errmsg)
-     ) {
-    _messages->start();
-    return true;
-  }
-  return false;
+  return _controlConn.connect(settings.getControlAddress(),
+                              settings.getControlPort(), errmsg);
 }
 
 /** Emits a signal that the control socket successfully established a
@@ -144,6 +138,7 @@ TorControl::connect(QString *errmsg)
 void
 TorControl::onConnected()
 {
+  _messages->start();
   emit connected();
 }
 
