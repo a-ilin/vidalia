@@ -40,8 +40,6 @@ AboutDialog::AboutDialog(TorControl *torControl, QWidget *parent)
 
 AboutDialog::~AboutDialog()
 {
-  _torControl = 0;
-  delete _torControl;
 }
 
 void
