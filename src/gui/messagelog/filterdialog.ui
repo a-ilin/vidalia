@@ -78,7 +78,7 @@
       </property>
       <property name="sizeHint" >
        <size>
-        <width>31</width>
+        <width>33</width>
         <height>31</height>
        </size>
       </property>
@@ -105,7 +105,7 @@
       </property>
       <property name="sizeHint" >
        <size>
-        <width>21</width>
+        <width>32</width>
         <height>31</height>
        </size>
       </property>
@@ -128,76 +128,13 @@
    <property name="title" >
     <string>Tor Messages</string>
    </property>
-   <widget class="QWidget" name="layoutWidget" >
+   <widget class="QWidget" name="" >
     <property name="geometry" >
      <rect>
-      <x>11</x>
-      <y>28</y>
-      <width>201</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" >
-     <property name="margin" >
-      <number>0</number>
-     </property>
-     <property name="spacing" >
-      <number>6</number>
-     </property>
-     <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>78</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="chkTorErr" >
-       <property name="contextMenuPolicy" >
-        <enum>Qt::NoContextMenu</enum>
-       </property>
-       <property name="toolTip" >
-        <string/>
-       </property>
-       <property name="whatsThis" >
-        <string/>
-       </property>
-       <property name="text" >
-        <string>Tor Error</string>
-       </property>
-       <property name="icon" >
-        <iconset resource="..\res\vidalia.qrc" >:/images/msg_error.png</iconset>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>78</width>
-         <height>22</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget" >
-    <property name="geometry" >
-     <rect>
-      <x>11</x>
-      <y>53</y>
+      <x>10</x>
+      <y>20</y>
       <width>221</width>
-      <height>24</height>
+      <height>138</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" >
@@ -214,27 +151,104 @@
        </property>
        <property name="sizeHint" >
         <size>
-         <width>78</width>
+         <width>48</width>
          <height>20</height>
         </size>
        </property>
       </spacer>
      </item>
      <item>
-      <widget class="QCheckBox" name="chkTorWarn" >
-       <property name="contextMenuPolicy" >
-        <enum>Qt::NoContextMenu</enum>
+      <layout class="QVBoxLayout" >
+       <property name="margin" >
+        <number>0</number>
        </property>
-       <property name="toolTip" >
-        <string/>
+       <property name="spacing" >
+        <number>6</number>
        </property>
-       <property name="text" >
-        <string>Tor Warning</string>
-       </property>
-       <property name="icon" >
-        <iconset resource="..\res\vidalia.qrc" >:/images/msg_warn.png</iconset>
-       </property>
-      </widget>
+       <item>
+        <widget class="QCheckBox" name="chkTorErr" >
+         <property name="contextMenuPolicy" >
+          <enum>Qt::NoContextMenu</enum>
+         </property>
+         <property name="toolTip" >
+          <string/>
+         </property>
+         <property name="whatsThis" >
+          <string/>
+         </property>
+         <property name="text" >
+          <string>Tor Error</string>
+         </property>
+         <property name="icon" >
+          <iconset resource="..\res\vidalia.qrc" >:/images/msg_error.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="chkTorWarn" >
+         <property name="contextMenuPolicy" >
+          <enum>Qt::NoContextMenu</enum>
+         </property>
+         <property name="toolTip" >
+          <string/>
+         </property>
+         <property name="text" >
+          <string>Tor Warning</string>
+         </property>
+         <property name="icon" >
+          <iconset resource="..\res\vidalia.qrc" >:/images/msg_warn.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="chkTorNote" >
+         <property name="contextMenuPolicy" >
+          <enum>Qt::NoContextMenu</enum>
+         </property>
+         <property name="toolTip" >
+          <string/>
+         </property>
+         <property name="text" >
+          <string>Tor Notice</string>
+         </property>
+         <property name="icon" >
+          <iconset resource="..\res\vidalia.qrc" >:/images/msg_notice.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="chkTorInfo" >
+         <property name="contextMenuPolicy" >
+          <enum>Qt::NoContextMenu</enum>
+         </property>
+         <property name="toolTip" >
+          <string/>
+         </property>
+         <property name="text" >
+          <string>Tor Info</string>
+         </property>
+         <property name="icon" >
+          <iconset resource="..\res\vidalia.qrc" >:/images/msg_info.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="chkTorDebug" >
+         <property name="contextMenuPolicy" >
+          <enum>Qt::NoContextMenu</enum>
+         </property>
+         <property name="toolTip" >
+          <string/>
+         </property>
+         <property name="text" >
+          <string>Tor Debug</string>
+         </property>
+         <property name="icon" >
+          <iconset resource="..\res\vidalia.qrc" >:/images/msg_debug.png</iconset>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
       <spacer>
@@ -243,187 +257,7 @@
        </property>
        <property name="sizeHint" >
         <size>
-         <width>78</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget" >
-    <property name="geometry" >
-     <rect>
-      <x>11</x>
-      <y>78</y>
-      <width>211</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" >
-     <property name="margin" >
-      <number>0</number>
-     </property>
-     <property name="spacing" >
-      <number>6</number>
-     </property>
-     <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>78</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="chkTorNote" >
-       <property name="contextMenuPolicy" >
-        <enum>Qt::NoContextMenu</enum>
-       </property>
-       <property name="toolTip" >
-        <string/>
-       </property>
-       <property name="text" >
-        <string>Tor Notice</string>
-       </property>
-       <property name="icon" >
-        <iconset resource="..\res\vidalia.qrc" >:/images/msg_notice.png</iconset>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>78</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget" >
-    <property name="geometry" >
-     <rect>
-      <x>11</x>
-      <y>103</y>
-      <width>191</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" >
-     <property name="margin" >
-      <number>0</number>
-     </property>
-     <property name="spacing" >
-      <number>6</number>
-     </property>
-     <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>78</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="chkTorInfo" >
-       <property name="contextMenuPolicy" >
-        <enum>Qt::NoContextMenu</enum>
-       </property>
-       <property name="toolTip" >
-        <string/>
-       </property>
-       <property name="text" >
-        <string>Tor Info</string>
-       </property>
-       <property name="icon" >
-        <iconset resource="..\res\vidalia.qrc" >:/images/msg_info.png</iconset>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>78</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget" >
-    <property name="geometry" >
-     <rect>
-      <x>11</x>
-      <y>128</y>
-      <width>211</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" >
-     <property name="margin" >
-      <number>0</number>
-     </property>
-     <property name="spacing" >
-      <number>6</number>
-     </property>
-     <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>78</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="chkTorDebug" >
-       <property name="contextMenuPolicy" >
-        <enum>Qt::NoContextMenu</enum>
-       </property>
-       <property name="toolTip" >
-        <string/>
-       </property>
-       <property name="text" >
-        <string>Tor Debug</string>
-       </property>
-       <property name="icon" >
-        <iconset resource="..\res\vidalia.qrc" >:/images/msg_debug.png</iconset>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>78</width>
+         <width>47</width>
          <height>20</height>
         </size>
        </property>
@@ -447,13 +281,13 @@
    <property name="title" >
     <string>Vidalia Messages</string>
    </property>
-   <widget class="QWidget" name="layoutWidget" >
+   <widget class="QWidget" name="" >
     <property name="geometry" >
      <rect>
-      <x>10</x>
-      <y>20</y>
-      <width>201</width>
-      <height>24</height>
+      <x>21</x>
+      <y>21</y>
+      <width>200</width>
+      <height>54</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" >
@@ -477,74 +311,40 @@
       </spacer>
      </item>
      <item>
-      <widget class="QCheckBox" name="chkVidErr" >
-       <property name="contextMenuPolicy" >
-        <enum>Qt::NoContextMenu</enum>
+      <layout class="QVBoxLayout" >
+       <property name="margin" >
+        <number>0</number>
        </property>
-       <property name="toolTip" >
-        <string/>
+       <property name="spacing" >
+        <number>6</number>
        </property>
-       <property name="text" >
-        <string>Vidalia Error</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QWidget" name="layoutWidget" >
-    <property name="geometry" >
-     <rect>
-      <x>10</x>
-      <y>50</y>
-      <width>211</width>
-      <height>24</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" >
-     <property name="margin" >
-      <number>0</number>
-     </property>
-     <property name="spacing" >
-      <number>6</number>
-     </property>
-     <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="chkVidStat" >
-       <property name="contextMenuPolicy" >
-        <enum>Qt::NoContextMenu</enum>
-       </property>
-       <property name="toolTip" >
-        <string/>
-       </property>
-       <property name="text" >
-        <string>Vidalia Status</string>
-       </property>
-      </widget>
+       <item>
+        <widget class="QCheckBox" name="chkVidErr" >
+         <property name="contextMenuPolicy" >
+          <enum>Qt::NoContextMenu</enum>
+         </property>
+         <property name="toolTip" >
+          <string/>
+         </property>
+         <property name="text" >
+          <string>Vidalia Error</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="chkVidStat" >
+         <property name="contextMenuPolicy" >
+          <enum>Qt::NoContextMenu</enum>
+         </property>
+         <property name="toolTip" >
+          <string/>
+         </property>
+         <property name="text" >
+          <string>Vidalia Status</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
      </item>
      <item>
       <spacer>
@@ -580,13 +380,13 @@
  </resources>
  <connections>
   <connection>
-   <sender>okButton</sender>
+   <sender>cancelButton</sender>
    <signal>clicked()</signal>
    <receiver>FilterDialog</receiver>
-   <slot>accept()</slot>
+   <slot>reject()</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>176</x>
+     <x>259</x>
      <y>372</y>
     </hint>
     <hint type="destinationlabel" >
@@ -596,13 +396,13 @@
    </hints>
   </connection>
   <connection>
-   <sender>cancelButton</sender>
+   <sender>okButton</sender>
    <signal>clicked()</signal>
    <receiver>FilterDialog</receiver>
-   <slot>reject()</slot>
+   <slot>accept()</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>259</x>
+     <x>176</x>
      <y>372</y>
     </hint>
     <hint type="destinationlabel" >
