@@ -29,6 +29,9 @@
   <property name="windowIcon" >
    <iconset resource="..\res\vidalia.qrc" >:/images/tor_logo16.png</iconset>
   </property>
+  <property name="statusTip" >
+   <string/>
+  </property>
   <widget class="QWidget" name="centralwidget" >
    <layout class="QVBoxLayout" >
     <property name="margin" >
@@ -37,49 +40,6 @@
     <property name="spacing" >
      <number>6</number>
     </property>
-    <item>
-     <layout class="QHBoxLayout" >
-      <property name="margin" >
-       <number>0</number>
-      </property>
-      <property name="spacing" >
-       <number>6</number>
-      </property>
-      <item>
-       <widget class="QLabel" name="label_3" >
-        <property name="contextMenuPolicy" >
-         <enum>Qt::NoContextMenu</enum>
-        </property>
-        <property name="text" >
-         <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Messages Shown:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLabel" name="lblMessageCount" >
-        <property name="contextMenuPolicy" >
-         <enum>Qt::NoContextMenu</enum>
-        </property>
-        <property name="text" >
-         <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-weight:600;">Num of Messages&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer>
-        <property name="orientation" >
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" >
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
-    </item>
     <item>
      <widget class="QTreeWidget" name="lstMessages" >
       <property name="contextMenuPolicy" >
@@ -134,25 +94,12 @@
      <height>19</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menu_View" >
-    <property name="title" >
-     <string>&amp;View</string>
-    </property>
-    <addaction name="actionClear" />
-   </widget>
    <widget class="QMenu" name="menu_Edit" >
     <property name="title" >
      <string>&amp;Edit</string>
     </property>
     <addaction name="actionCopy" />
     <addaction name="actionSelect_All" />
-   </widget>
-   <widget class="QMenu" name="menu_Settings" >
-    <property name="title" >
-     <string>&amp;Settings</string>
-    </property>
-    <addaction name="actionMessage_Filters" />
-    <addaction name="actionHistory_Size" />
    </widget>
    <widget class="QMenu" name="menu_File" >
     <property name="title" >
@@ -162,6 +109,19 @@
     <addaction name="actionSave_Selected" />
     <addaction name="separator" />
     <addaction name="actionClose" />
+   </widget>
+   <widget class="QMenu" name="menu_Settings" >
+    <property name="title" >
+     <string>&amp;Settings</string>
+    </property>
+    <addaction name="actionMessage_Filters" />
+    <addaction name="actionHistory_Size" />
+   </widget>
+   <widget class="QMenu" name="menu_View" >
+    <property name="title" >
+     <string>&amp;View</string>
+    </property>
+    <addaction name="actionClear" />
    </widget>
    <addaction name="menu_File" />
    <addaction name="menu_Edit" />
@@ -182,6 +142,9 @@
    <property name="text" >
     <string>Message Filters...</string>
    </property>
+   <property name="statusTip" >
+    <string>Set message filters</string>
+   </property>
    <property name="font" >
     <font>
      <family>Arial</family>
@@ -201,6 +164,9 @@
    <property name="text" >
     <string>History Size...</string>
    </property>
+   <property name="statusTip" >
+    <string>Set maximum number of messages to display</string>
+   </property>
    <property name="font" >
     <font>
      <family>Arial</family>
@@ -216,6 +182,9 @@
   <action name="actionClear" >
    <property name="text" >
     <string>Clear History</string>
+   </property>
+   <property name="statusTip" >
+    <string>Clear all messages from the Message Log</string>
    </property>
    <property name="font" >
     <font>
@@ -236,6 +205,9 @@
    <property name="text" >
     <string>Copy</string>
    </property>
+   <property name="statusTip" >
+    <string>Copy the selected messages to the clipboard</string>
+   </property>
    <property name="font" >
     <font>
      <family>Arial</family>
@@ -254,6 +226,9 @@
   <action name="actionSelect_All" >
    <property name="text" >
     <string>Select All</string>
+   </property>
+   <property name="statusTip" >
+    <string>Select all messages</string>
    </property>
    <property name="font" >
     <font>
@@ -274,6 +249,9 @@
    <property name="text" >
     <string>Save All</string>
    </property>
+   <property name="statusTip" >
+    <string>Save all messages to a file</string>
+   </property>
    <property name="font" >
     <font>
      <family>Arial</family>
@@ -290,6 +268,9 @@
    <property name="text" >
     <string>Save Selected</string>
    </property>
+   <property name="statusTip" >
+    <string>Save selected messages to a file</string>
+   </property>
    <property name="font" >
     <font>
      <family>Arial</family>
@@ -305,6 +286,9 @@
   <action name="actionClose" >
    <property name="text" >
     <string>Close</string>
+   </property>
+   <property name="statusTip" >
+    <string>Close the Message Log</string>
    </property>
    <property name="font" >
     <font>

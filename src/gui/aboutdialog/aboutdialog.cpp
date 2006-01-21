@@ -38,6 +38,12 @@ AboutDialog::AboutDialog(TorControl *torControl, QWidget *parent)
   ui.lblQtVersion->setText(QT_VERSION_STR);
 }
 
+AboutDialog::~AboutDialog()
+{
+  _torControl = 0;
+  delete _torControl;
+}
+
 void
 AboutDialog::show()
 {

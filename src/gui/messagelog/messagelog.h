@@ -46,6 +46,7 @@ class MessageLog : public QMainWindow
 
 public:
   MessageLog(QWidget *parent = 0, Qt::WFlags flags = 0);
+  ~MessageLog();
  
   void write(const char* type, const char* message);
 

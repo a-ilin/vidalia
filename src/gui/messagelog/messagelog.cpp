@@ -38,9 +38,14 @@ MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
 
   _createActions();
 
-  ui.lblMessageCount->setText("0");
+  ui.lstMessages->setStatusTip(tr("Messages Shown: ") += "0");
 }
 
+MessageLog::~MessageLog()
+{
+  delete _settings;
+  delete _clock; 
+}
 /*
  Binds events to actions 
 */
@@ -92,6 +97,12 @@ MessageLog::copy()
     contents += current;
   }
   _clipboard->setText(contents);
+
+  /* Free the list */
+  for (int i=0; i < count; i++) {
+    selected[i] = 0;
+    delete selected[i];
+  }
 }
 
 /*
@@ -130,11 +141,17 @@ MessageLog::saveSelected()
     QTextStream out(&file);
     QApplication::setOverrideCursor(Qt::WaitCursor);
     
-    for (int i=0; i < count; ++i) {
+    for (int i=0; i < count; i++) {
       for (int j=0; j < ui.lstMessages->columnCount(); j++) {
         out << selected[i]->text(j) << "    ";
       }
       out << "\n";
+    }
+    
+    /* Free the list */
+    for (int i=0; i < count; ++i) {
+      selected[i] = 0;
+      delete selected[i];
     }
     
     QApplication::restoreOverrideCursor();
@@ -204,7 +221,8 @@ MessageLog::setMaxCount()
     }
     _settings->setMaxMsgCount(value);
     _maxCount = value;
-    ui.lblMessageCount->setText(QString("%1").arg(_messagesShown));
+    ui.lstMessages->setStatusTip(QString("Messages Shown: %1")
+                                  .arg(_messagesShown));
   }
 }
 
@@ -223,7 +241,8 @@ MessageLog::setMsgFilter()
   /* If filters changed, refilter the log message list */
   if (ok_clicked) {
     _filterLog();
-    ui.lblMessageCount->setText(QString("%1").arg(_messagesShown));
+    ui.lstMessages->setStatusTip(QString("Messages Shown: %1")
+                                  .arg(_messagesShown));
   }
 }
 
@@ -257,6 +276,8 @@ MessageLog::_filterLog()
     }
     currentIndex--;
   }
+  current = 0;
+  delete current;
 }
 
 /*
@@ -303,10 +324,13 @@ MessageLog::write(const char* type, const char* message)
   /* Hide the message if necessary */
   if (_settings->getShowMsg(type)) {
     _messagesShown++;
-    ui.lblMessageCount->setText(QString("%1").arg(_messagesShown));
+    ui.lstMessages->setStatusTip(QString("Messages Shown: %1")
+                                  .arg(_messagesShown));
   } else {
     ui.lstMessages->setItemHidden(newMessage, true);
   }
+  newMessage = 0;
+  delete newMessage;
 }
 
 /** Overloads the default close() slot, so we can force the parent to become
