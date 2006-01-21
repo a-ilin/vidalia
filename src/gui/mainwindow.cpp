@@ -84,8 +84,9 @@ MainWindow::~MainWindow()
   if (_torControl) {
     delete _torControl;
   }
-  delete _messageLog;
-  
+  if (_messageLog) {
+    delete _messageLog;
+  }
 }
 
 /** Shows the menubar on Mac */

@@ -43,8 +43,12 @@ MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
 
 MessageLog::~MessageLog()
 {
-  delete _settings;
-  delete _clock; 
+  if (_settings) {
+    delete _settings;
+  }
+  if (_clock) {
+    delete _clock;
+  }
 }
 /*
  Binds events to actions 
@@ -97,12 +101,6 @@ MessageLog::copy()
     contents += current;
   }
   _clipboard->setText(contents);
-
-  /* Free the list */
-  for (int i=0; i < count; i++) {
-    selected[i] = 0;
-    delete selected[i];
-  }
 }
 
 /*
@@ -147,13 +145,6 @@ MessageLog::saveSelected()
       }
       out << "\n";
     }
-    
-    /* Free the list */
-    for (int i=0; i < count; ++i) {
-      selected[i] = 0;
-      delete selected[i];
-    }
-    
     QApplication::restoreOverrideCursor();
   }
 }
@@ -276,8 +267,6 @@ MessageLog::_filterLog()
     }
     currentIndex--;
   }
-  current = 0;
-  delete current;
 }
 
 /*
@@ -329,8 +318,6 @@ MessageLog::write(const char* type, const char* message)
   } else {
     ui.lstMessages->setItemHidden(newMessage, true);
   }
-  newMessage = 0;
-  delete newMessage;
 }
 
 /** Overloads the default close() slot, so we can force the parent to become
