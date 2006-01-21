@@ -50,6 +50,10 @@ public:
 
   /** Send a command to Tor and immediately read the response */
   bool send(ControlCommand cmd, ControlReply &reply, QString *errmsg = 0);
+
+private:
+  /** Reads a line of data from the socket (blocking) */
+  bool readLine(QString &line, QString *errmsg = 0);
 };
 
 #endif

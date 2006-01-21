@@ -97,6 +97,27 @@ ControlConnection::sendCommand(ControlCommand cmd, QString *errmsg)
   return true;
 }
 
+/** Reads a line of data from the socket and returns true if successful or
+ * false if an error occurred while waiting for a line of data to become
+ * available. */
+bool
+ControlConnection::readLine(QString &line, QString *errmsg)
+{
+  /* Make sure we have data to read before attempting anything. Note that this
+   * essentially makes our socket a blocking socket */
+  while (!canReadLine()) {
+    if (!isValid()) {
+      if (errmsg) {
+        *errmsg = "Socket is not connected";
+      }
+      return false;
+    }
+    waitForReadyRead(250);
+  }
+  line = QAbstractSocket::readLine();
+  return true;
+}
+
 /** Read a complete reply from the control socket. Replies take the following
  * form, based on Tor's Control Protocol v1:
  *
@@ -119,22 +140,13 @@ ControlConnection::readReply(ControlReply &reply, QString *errmsg)
     return false;
   }
 
-  /* The implementation below is based on the Java control library from Tor */
+  /* The implementation below is (loosely) based on the Java control library from Tor */
   do {
-    /* Make sure we have data to read before attempting anything. Note that this
-     * essentially makes our socket a blocking socket */
-    while (!canReadLine()) {
-      if (state() != QAbstractSocket::ConnectedState) {
-        if (errmsg) {
-          *errmsg = "Socket is not connected.";
-        }
-        return false;
-      }
-      waitForReadyRead(250);
-    }
-  
     /* Read a line of the response */
-    line = QString(readLine());
+    if (!readLine(line, errmsg)) {
+      return false;
+    }
+    
     if (line.length() < 4) {
       if (errmsg) {
         *errmsg = 
@@ -152,7 +164,7 @@ ControlConnection::readReply(ControlReply &reply, QString *errmsg)
     if (c == QChar('+')) {
       QString data;
       while (true) {
-        line = QString(readLine());
+        readLine(line);
         if (line == ".") {
           break;
         }
