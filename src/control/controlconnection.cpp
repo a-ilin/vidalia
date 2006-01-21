@@ -108,7 +108,7 @@ ControlConnection::readLine(QString &line, QString *errmsg)
   while (!canReadLine()) {
     if (!isValid()) {
       if (errmsg) {
-        *errmsg = "Socket is not connected";
+        *errmsg = "Socket disconnected while attempting to read a line of data.";
       }
       return false;
     }
