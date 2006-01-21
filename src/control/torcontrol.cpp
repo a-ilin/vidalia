@@ -151,6 +151,7 @@ TorControl::onConnected()
 void
 TorControl::disconnect()
 {
+  _messages->stop();
   _controlConn.sendCommand(ControlCommand("QUIT"), 0);
   _controlConn.disconnect();
 }
@@ -159,7 +160,6 @@ TorControl::disconnect()
 void
 TorControl::onDisconnected()
 {
-  _messages->stop();
   emit disconnected();
 }
 
