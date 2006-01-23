@@ -119,6 +119,10 @@ MessageLog::_setToolTips()
 void
 MessageLog::saveChanges()
 {
+  /* Hide the settings frame and reset toggle button*/
+  ui.btnToggleSettings->setChecked(false);
+  ui.frmSettings->setVisible(false);
+  
   /* Disable the cursor to prevent problems while refiltering */
   QApplication::setOverrideCursor(Qt::WaitCursor);
   
@@ -160,6 +164,11 @@ MessageLog::saveChanges()
 void 
 MessageLog::cancelChanges()
 {
+  /* Hide the settings frame and reset toggle button */
+  ui.btnToggleSettings->setChecked(false);
+  ui.frmSettings->setVisible(false);
+
+  /* Reload the settings */
   _loadSettings();
 }
 
