@@ -28,7 +28,6 @@ HEADERS += $$PWD/torcontrol.h \
            $$PWD/controlreply.h \
            $$PWD/replyline.h \
            $$PWD/torevents.h \
-           $$PWD/eventtype.h \
            $$PWD/circuitevent.h \
            $$PWD/streamevent.h \
            $$PWD/logevent.h
