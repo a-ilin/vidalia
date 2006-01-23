@@ -25,12 +25,16 @@
 #define _CONTROLCONNECTION_H
 
 #include <QTcpSocket>
+#include <QMutex>
+#include <QQueue>
 
 #include "controlcommand.h"
 #include "controlreply.h"
 
 class ControlConnection : public QTcpSocket
 {
+  Q_OBJECT
+
 public:
   /** Default constructor and destructor */
   ControlConnection();
@@ -42,18 +46,28 @@ public:
   /** Disconnect from Tor */
   bool disconnect(QString *errmsg = 0);
 
-  /** Send a command to Tor */
-  bool sendCommand(ControlCommand cmd, QString *errmsg = 0);
-
-  /** Read a response from Tor */
-  bool readReply(ControlReply &reply, QString *errmsg = 0);
-
   /** Send a command to Tor and immediately read the response */
   bool send(ControlCommand cmd, ControlReply &reply, QString *errmsg = 0);
 
+signals:
+  /** Emitted when the socket receives an asynchronous event from Tor */
+  void torEvent(ControlReply event);
+ 
+private slots:
+  /** Called when there is data available to be read on the socket */
+  void onReadyRead();
+  
 private:
+  QQueue<ControlReply> _recvQueue;
+
   /** Reads a line of data from the socket (blocking) */
   bool readLine(QString &line, QString *errmsg = 0);
+  
+  /** Send a command to Tor */
+  bool sendCommand(ControlCommand cmd, QString *errmsg = 0);
+  
+  /** Read a response from Tor */
+  bool readReply(ControlReply &reply, QString *errmsg = 0);
 };
 
 #endif

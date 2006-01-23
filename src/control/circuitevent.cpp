@@ -21,22 +21,7 @@
 *  Boston, MA  02110-1301, USA.
 ****************************************************************/
 
-#include "eventtype.h"
 #include "circuitevent.h"
-
-/** Default constructor */
-CircuitEvent::CircuitEvent(quint64 circId, Status status, QString path)
-  : QEvent((QEvent::Type)EventType::CircuitEvent)
-{
-  _circId = circId;
-  _status = status;
-  _path   = path;
-}
-
-/** Default destructor */
-CircuitEvent::~CircuitEvent()
-{
-}
 
 /** Converts the circuit status string to its proper enum value */
 CircuitEvent::Status
@@ -58,26 +43,5 @@ CircuitEvent::toStatus(QString strStatus)
     status = Unknown;
   }
   return status;
-}
-
-/** Returns the ID assigned to this circuit */
-quint64
-CircuitEvent::circuitId()
-{
-  return _circId;
-}
-
-/** Returns the new status for this circuit */
-CircuitEvent::Status
-CircuitEvent::status()
-{
-  return _status;
-}
-
-/** Returns the path used for this circuit */
-QString
-CircuitEvent::path()
-{
-  return _path;
 }
 

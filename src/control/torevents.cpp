@@ -25,12 +25,6 @@
 
 #include "torevents.h"
 
-/* Include the event types */
-#include "bandwidthevent.h"
-#include "circuitevent.h"
-#include "streamevent.h"
-#include "logevent.h"
-
 /** Default constructor */
 TorEvents::TorEvents()
 {
@@ -43,41 +37,71 @@ TorEvents::~TorEvents()
 
 /** Adds an event and interested object to the list */
 void
-TorEvents::add(TorEvent e, QObject *obj)
+TorEvents::add(TorEvent e)
 {
-  if (!_eventList.values(e).contains(obj)) {
-    _eventList.insert(e, obj);
+  if (!_eventList.contains(e)) {
+    _eventList.append(e);
   }
 }
 
 /** Removes an event and object from the event list */
 void
-TorEvents::remove(TorEvent e, QObject *obj)
+TorEvents::remove(TorEvent e)
 {
   int i;
-  if ((i = _eventList.values(e).indexOf(obj)) >= 0) {
-    _eventList.values(e).removeAt(i);
-    if (_eventList.values(e).size() == 0) {
-      _eventList.remove(e);
-    }
+  if ((i = _eventList.indexOf(e)) >= 0) {
+    _eventList.removeAt(i);
   }
 }
 
 /** Returns true if an event has any registered handlers */
 bool
-TorEvents::contains(TorEvent event)
+TorEvents::contains(TorEvent e)
 {
-  if (_eventList.contains(event)) {
-    return (_eventList.values(event).count() > 0);
+  return _eventList.contains(e);
+}
+
+/** Converts a Signal enum value to a SIGNAL() */
+const char*
+TorEvents::toSignal(Signal s)
+{
+  const char *signal = 0;
+  switch (s) {
+    case BandwidthSignal:
+      signal = SIGNAL(bandwidth(quint64, quint64)); 
+      break;
+    case LogSignal:
+      signal = SIGNAL(log(LogEvent::Severity, QString)); 
+      break;
+    case CircuitSignal:
+      signal = SIGNAL(circuit(quint64, CircuitEvent::Status, QString));
+      break;
+    case StreamSignal:
+      signal = SIGNAL(stream(quint64, StreamEvent::Status, quint64, QString));
+      break;
   }
-  return false;
+  return signal;
+}
+
+/** Connects a slot to the specified Tor event signal */
+bool
+TorEvents::connect(Signal s, QObject *obj, const char *slot)
+{
+  return QObject::connect(this, toSignal(s), obj, slot);
+}
+
+/** Disconnects a slot from one of the Tor event signals */
+bool
+TorEvents::disconnect(Signal s, QObject *obj, const char *slot)
+{
+  return QObject::disconnect(this, toSignal(s), obj, slot);
 }
 
 /** Returns the list of events in which we're interested */
 QList<TorEvents::TorEvent>
 TorEvents::eventList()
 {
-  return _eventList.keys();
+  return _eventList;
 }
 
 /** Converts an event type to a string Tor understands */
@@ -193,10 +217,8 @@ TorEvents::handleBandwidthUpdate(ReplyLine line)
     quint64 bytesIn = (quint64)msg.at(1).toULongLong();
     quint64 bytesOut = (quint64)msg.at(2).toULongLong();
   
-    /* Post the event to each of the interested targets */
-    foreach (QObject *target, _eventList.values(Bandwidth)) {
-      QApplication::postEvent(target, new BandwidthEvent(bytesIn, bytesOut));
-    }
+    /* Let connected slots know about this bandwidth update */
+    emit bandwidth(bytesIn, bytesOut);
   }
 }
 
@@ -220,10 +242,8 @@ TorEvents::handleCircuitStatus(ReplyLine line)
     CircuitEvent::Status status = CircuitEvent::toStatus(msg.at(2));
     QString path = msg.at(3);
  
-    /* Post the event to each of the interested targets */
-    foreach (QObject *target, _eventList.values(Circuit)) {
-      QApplication::postEvent(target, new CircuitEvent(circId, status, path));
-    }
+    /* Let connected slots know about this circuit status event */
+    emit circuit(circId, status, path);
   }
 }
 
@@ -253,11 +273,8 @@ TorEvents::handleStreamStatus(ReplyLine line)
     quint64 circId = (quint64)msg.at(3).toULongLong();
     QString targetAddr = msg.at(4);
 
-    /* Post the event to each of the interested targets */
-    foreach (QObject *target, _eventList.values(Stream)) {
-      QApplication::postEvent(target, 
-          new StreamEvent(streamId, status, circId, targetAddr));
-    }
+    /* Let connected slots know about this stream status event */
+    emit stream(streamId, status, circId, targetAddr);
   }
 }
 
@@ -278,9 +295,7 @@ TorEvents::handleLogMessage(ReplyLine line)
   QString logLine = (line.getData().size() > 0 ? line.getData().join("\n") :
                                                  msg.mid(i+1));
   
-  /* Post the event to each of the interested targets */
-  foreach (QObject *target, _eventList.values(toTorEvent(severity))) {
-    QApplication::postEvent(target, new LogEvent(severity, logLine));
-  }
+  /* Let connected slots know about this log event */
+  emit log(severity, logLine);
 }
 

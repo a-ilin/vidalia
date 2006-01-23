@@ -21,24 +21,7 @@
 *  Boston, MA  02110-1301, USA.
 ****************************************************************/
 
-#include "eventtype.h"
 #include "streamevent.h"
-
-/** Default constructor */
-StreamEvent::StreamEvent(quint64 streamId, Status status, 
-                         quint64 circuitId, QString target)
-  : QEvent((QEvent::Type)EventType::StreamEvent)
-{
-  _streamId  = streamId;
-  _status    = status;
-  _circuitId = circuitId;
-  _target    = target;
-}
-
-/** Default destructor */
-StreamEvent::~StreamEvent()
-{
-}
 
 /** Converts a string description of a stream's status to its enum value */
 StreamEvent::Status
@@ -66,33 +49,5 @@ StreamEvent::toStatus(QString strStatus)
     status = Unknown;
   }
   return status;
-}
-
-/** Returns the ID assigned to this stream */
-quint64
-StreamEvent::streamId()
-{
-  return _streamId;
-}
-
-/** Returns the status of this stream */
-StreamEvent::Status
-StreamEvent::status()
-{
-  return _status;
-}
-
-/** Returns the ID of the circuit to which this stream is assigned */
-quint64
-StreamEvent::circuitId()
-{
-  return _circuitId;
-}
-
-/** Returns the target for this stream */
-QString
-StreamEvent::target()
-{
-  return _target;
 }
 

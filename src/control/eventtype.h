@@ -24,8 +24,6 @@
 #ifndef _EVENTTYPE_H
 #define _EVENTTYPE_H
 
-#include <QEvent>
-
 namespace EventType {
   const int BandwidthEvent = QEvent::User;
   const int CircuitEvent   = QEvent::User+1;
