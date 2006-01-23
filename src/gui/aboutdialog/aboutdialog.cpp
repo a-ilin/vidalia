@@ -23,6 +23,7 @@
 
 #include "aboutdialog.h"
 
+/** Default Constructor **/
 AboutDialog::AboutDialog(TorControl *torControl, QWidget *parent)
 : QDialog(parent)
 {
@@ -38,10 +39,12 @@ AboutDialog::AboutDialog(TorControl *torControl, QWidget *parent)
   ui.lblQtVersion->setText(QT_VERSION_STR);
 }
 
+/** Default Destructor **/
 AboutDialog::~AboutDialog()
 {
 }
 
+/** Displays the About dialog window **/
 void
 AboutDialog::show()
 {

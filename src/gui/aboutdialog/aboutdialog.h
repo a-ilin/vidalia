@@ -33,12 +33,20 @@ class AboutDialog : public QDialog
   Q_OBJECT
 
 public:
+  /** Default constructor **/
   AboutDialog(TorControl *torControl, QWidget *parent = 0);
+  
+  /** Default destructor **/
   ~AboutDialog();
+  
+  /** Overriden QWidget.show() **/
   void show();
 
 private:
+  /** Qt Designer generated QObject **/
   Ui::AboutDialog ui;
+
+  /** TorControl for access to Tor version info **/
   TorControl *_torControl;
 };
 

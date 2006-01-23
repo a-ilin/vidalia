@@ -1,8 +1,5 @@
-FORMS += $$PWD/filterdialog.ui \
-         $$PWD/messagelog.ui
+FORMS += $$PWD/messagelog.ui
 
-HEADERS += $$PWD/filterdialog.h \
-           $$PWD/messagelog.h
+HEADERS += $$PWD/messagelog.h
 
-SOURCES += $$PWD/filterdialog.cpp \
-           $$PWD/messagelog.cpp
+SOURCES += $$PWD/messagelog.cpp

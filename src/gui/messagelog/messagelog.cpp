@@ -24,23 +24,39 @@
 #include "../mainwindow.h"
 #include "messagelog.h"
 
+/** Default Constructor **/
 MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
 : QMainWindow(parent, flags)
 {
+  /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
  
+  /* Create necessary Message Log QObjects */
   _settings = new VidaliaSettings();
   _clock = new QDateTime(QDateTime::currentDateTime());
   _clipboard = QApplication::clipboard();
  
+  /* Bind events to actions */
+  _createActions();
+
+  /* Set tooltips for necessary widgets */
+  _setToolTips();
+
+  /* Load saved filter and count settings */
+  _loadSettings();
+  
+  /* Initialize message counters */
   _messagesShown = 0;
   _maxCount = _settings->getMaxMsgCount();
 
-  _createActions();
-
+  /* Show number of message displayed in Status bar */
   ui.lstMessages->setStatusTip(tr("Messages Shown: ") += "0");
+
+  /* Hide Message Log Settings frame */
+  ui.frmSettings->setVisible(false);
 }
 
+/** Default Destructor **/
 MessageLog::~MessageLog()
 {
   if (_settings) {
@@ -50,9 +66,10 @@ MessageLog::~MessageLog()
     delete _clock;
   }
 }
-/*
+
+/**
  Binds events to actions 
-*/
+**/
 void
 MessageLog::_createActions()
 {
@@ -64,48 +81,142 @@ MessageLog::_createActions()
   
   connect(ui.actionCopy, SIGNAL(triggered()),
       this, SLOT(copy()));
+
+  connect(ui.actionClear, SIGNAL(triggered()),
+      this, SLOT(clear()));
   
-  connect(ui.actionHistory_Size, SIGNAL(triggered()), 
-      this, SLOT(setMaxCount()));
-  
-  connect(ui.actionMessage_Filters, SIGNAL(triggered()),
-      this, SLOT(setMsgFilter()));
+  connect(ui.btnSaveSettings, SIGNAL(clicked()),
+      this, SLOT(saveChanges()));
+
+  connect(ui.btnCancelSettings, SIGNAL(clicked()),
+      this, SLOT(cancelChanges()));
 }
 
-/* Copies contents of currently selected messages to the 'clipboard'
-*/
+/**
+ Set tooltips for Message Filter checkboxes in code because they are long
+**/
 void
-MessageLog::copy()
+MessageLog::_setToolTips()
 {
-  QList<QTreeWidgetItem *> selected = ui.lstMessages->selectedItems();
-  int count = selected.size();
+  ui.chkTorErr->setToolTip(tr("Messages that appear when something has \ngone very wrong and Tor cannot proceed."));
   
-  /* Do nothing if there are no selected messages */
-  if (!count) {
-    return;
-  }
-  
-  /* Clear anything on the clipboard */
-  _clipboard->clear();
+  ui.chkTorWarn->setToolTip(tr("Messages that only appear when \nsomething has gone wrong."));
 
-  QString contents;
-  QString current;
+  ui.chkTorNote->setToolTip(tr("Messages that appear infrequently \nduring normal Tor operation and are \nnot considered errors, but you may \ncare about."));
 
-  /* Copy the selected messages to the clipboard */
-  for(int i=0; i < count; i++) {
-    current.clear();
-    for (int j=0; j < ui.lstMessages->columnCount(); j++) {
-        current += selected[i]->text(j) += "    ";
-    }
-    current += "\n";
-    contents += current;
-  }
-  _clipboard->setText(contents);
+  ui.chkTorInfo->setToolTip(tr("Messages that appear frequently \nduring normal Tor operation."));
+
+  ui.chkTorDebug->setToolTip(tr("Hyper-verbose messages primarily of \ninterest to Tor developers.")); 
+
+  ui.chkVidErr->setToolTip(tr("Messages that appear when something \nhas gone very wrong with Vidalia.")); 
+
+  ui.chkVidStat->setToolTip(tr("Messages that appear freqently indicating \nVidalia operation status information."));
 }
 
-/*
+/**
+ Saves the Message Log settings and adjusts the message list if required 
+**/
+void
+MessageLog::saveChanges()
+{
+  /* Disable the cursor to prevent problems while refiltering */
+  QApplication::setOverrideCursor(Qt::WaitCursor);
+  
+  int newMax = ui.spnbxMaxCount->value();
+  /* If necessary, save new max counter and remove extra messages */
+  if (_maxCount != newMax) {
+    /* if new max is < number of shown messages then remove some */
+    while (newMax < _messagesShown) {
+      if (!ui.lstMessages->isItemHidden(ui.lstMessages->topLevelItem(0))) {
+        _messagesShown--;
+      }
+      ui.lstMessages->takeTopLevelItem(0);
+    }
+    _settings->setMaxMsgCount(newMax);
+    _maxCount = newMax;
+    ui.lstMessages->setStatusTip(QString("Messages Shown: %1")
+                                  .arg(_messagesShown));
+  }
+
+  /* Save message filter and refilter the list */
+  _settings->setShowMsg(MSG_TORERR, ui.chkTorErr->isChecked());
+  _settings->setShowMsg(MSG_TORWARN, ui.chkTorWarn->isChecked());
+  _settings->setShowMsg(MSG_TORNOTE, ui.chkTorNote->isChecked());
+  _settings->setShowMsg(MSG_TORINFO, ui.chkTorInfo->isChecked());
+  _settings->setShowMsg(MSG_TORDEBUG, ui.chkTorDebug->isChecked());
+  _settings->setShowMsg(MSG_VIDERR, ui.chkVidErr->isChecked());
+  _settings->setShowMsg(MSG_VIDSTAT, ui.chkVidStat->isChecked());
+
+  /* Refilter the list */
+  _filterLog();
+
+  /* Restore the cursor */
+  QApplication::restoreOverrideCursor();
+}
+
+/** 
+ Simply restores the previously saved settings
+**/
+void 
+MessageLog::cancelChanges()
+{
+  _loadSettings();
+}
+
+/**
+ Loads the saved Message Log settings
+**/
+void
+MessageLog::_loadSettings()
+{
+  /* Set Max Count widget */
+  ui.spnbxMaxCount->setValue(_settings->getMaxMsgCount());
+
+  /* Set the checkboxes accordingly */
+  ui.chkTorErr->setChecked(_settings->getShowMsg(MSG_TORERR));
+  ui.chkTorWarn->setChecked(_settings->getShowMsg(MSG_TORWARN));
+  ui.chkTorNote->setChecked(_settings->getShowMsg(MSG_TORNOTE));
+  ui.chkTorInfo->setChecked(_settings->getShowMsg(MSG_TORINFO));
+  ui.chkTorDebug->setChecked(_settings->getShowMsg(MSG_TORDEBUG));
+  ui.chkVidErr->setChecked(_settings->getShowMsg(MSG_VIDERR));
+  ui.chkVidStat->setChecked(_settings->getShowMsg(MSG_VIDSTAT));
+}
+
+/**
+ Cycles through the list, hiding and showing appropriate messages.
+ Removes messages if newly shown messages put us over _maxCount.
+**/
+void
+MessageLog::_filterLog()
+{
+  QTreeWidgetItem* current = new QTreeWidgetItem();
+  int currentIndex = ui.lstMessages->topLevelItemCount() - 1;
+  bool showCurrent;
+  _messagesShown = 0;
+  
+  while (currentIndex > -1) {
+    current = ui.lstMessages->topLevelItem(currentIndex);
+    
+    /* Keep ALL messages until SHOWING maximum possible */
+    if (_messagesShown < _maxCount) {
+      
+      /* Show or hide message accordingly */
+      showCurrent = _settings->getShowMsg(current->text(1));
+      ui.lstMessages->setItemHidden(current, !showCurrent);
+      if (showCurrent) {
+        _messagesShown++;
+      }
+    /* If we are showing the maximum, then get rid of the rest */
+    } else {
+      ui.lstMessages->takeTopLevelItem(currentIndex);
+    }
+    currentIndex--;
+  }
+}
+
+/**
  Saves currently selected messages to a file
-*/
+**/
 void
 MessageLog::saveSelected()
 {
@@ -149,9 +260,9 @@ MessageLog::saveSelected()
   }
 }
 
-/*
+/**
  Saves all (shown) messages to a file
-*/
+**/
 void
 MessageLog::saveAll()
 {
@@ -189,90 +300,52 @@ MessageLog::saveAll()
   }
 }
 
-/*
- Creates a dialog that allows changing of the maxiumum
- number of message to display in the message history log.
-*/
+/** 
+ Copies contents of currently selected messages to the 'clipboard'
+**/
 void
-MessageLog::setMaxCount()
+MessageLog::copy()
 {
-  bool ok_clicked = false;
-  int value = 0;
+  QList<QTreeWidgetItem *> selected = ui.lstMessages->selectedItems();
+  int count = selected.size();
   
-  value = QInputDialog::getInteger(this, tr("Enter Max History Size"),
-      tr("(1 - 99,999 items)"), _maxCount, 1, 99999, 1, &ok_clicked);
+  /* Do nothing if there are no selected messages */
+  if (!count) {
+    return;
+  }
   
-  if (ok_clicked) {
-    /* if new max is < number of shown messages then remove some */
-    while (value < _messagesShown) {
-      if (!ui.lstMessages->isItemHidden(ui.lstMessages->topLevelItem(0))) {
-        _messagesShown--;
-      }
-      ui.lstMessages->takeTopLevelItem(0);
+  /* Clear anything on the clipboard */
+  _clipboard->clear();
+
+  QString contents;
+  QString current;
+
+  /* Copy the selected messages to the clipboard */
+  for(int i=0; i < count; i++) {
+    current.clear();
+    for (int j=0; j < ui.lstMessages->columnCount(); j++) {
+        current += selected[i]->text(j) += "    ";
     }
-    _settings->setMaxMsgCount(value);
-    _maxCount = value;
-    ui.lstMessages->setStatusTip(QString("Messages Shown: %1")
-                                  .arg(_messagesShown));
+    current += "\n";
+    contents += current;
   }
+  _clipboard->setText(contents);
 }
 
-/*
- Creates a dialog that allows changing of the message
- filter, that is, which messages the log displays
-*/
-void
-MessageLog::setMsgFilter()
+/**
+ Clears the message list and resets the message counter
+**/
+void MessageLog::clear()
 {
-  bool ok_clicked = false;
-  
-  FilterDialog* filterDialog = new FilterDialog(_settings, this);
-  ok_clicked = filterDialog->exec();
-  
-  /* If filters changed, refilter the log message list */
-  if (ok_clicked) {
-    _filterLog();
-    ui.lstMessages->setStatusTip(QString("Messages Shown: %1")
-                                  .arg(_messagesShown));
-  }
-}
-
-/*
- Cycles through the list, hiding and showing appropriate messages.
- Removes messages if newly shown messages put us over _maxCount.
-*/
-void
-MessageLog::_filterLog()
-{
-  QTreeWidgetItem* current = new QTreeWidgetItem();
-  int currentIndex = ui.lstMessages->topLevelItemCount() - 1;
-  bool showCurrent;
   _messagesShown = 0;
-  
-  while (currentIndex > -1) {
-    current = ui.lstMessages->topLevelItem(currentIndex);
-    
-    /* Keep ALL messages until SHOWING maximum possible */
-    if (_messagesShown < _maxCount) {
-      
-      /* Show or hide message accordingly */
-      showCurrent = _settings->getShowMsg(current->text(1));
-      ui.lstMessages->setItemHidden(current, !showCurrent);
-      if (showCurrent) {
-        _messagesShown++;
-      }
-    /* If we are showing the maximum, then get rid of the rest */
-    } else {
-      ui.lstMessages->takeTopLevelItem(currentIndex);
-    }
-    currentIndex--;
-  }
+  ui.lstMessages->setStatusTip(QString("Messages Shown: %1")
+                                  .arg(_messagesShown));
 }
 
-/*
+/**
  Writes a message to the Message History and tags it with
  the proper date, time and type.
-*/
+**/
 void 
 MessageLog::write(const char* type, const char* message)
 {
