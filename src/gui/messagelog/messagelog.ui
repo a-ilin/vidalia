@@ -141,6 +141,12 @@
         <height>200</height>
        </size>
       </property>
+      <property name="maximumSize" >
+       <size>
+        <width>680</width>
+        <height>200</height>
+       </size>
+      </property>
       <property name="contextMenuPolicy" >
        <enum>Qt::NoContextMenu</enum>
       </property>
