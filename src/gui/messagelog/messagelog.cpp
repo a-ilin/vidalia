@@ -141,8 +141,6 @@ MessageLog::saveChanges()
     }
     _settings->setMaxMsgCount(newMax);
     _maxCount = newMax;
-    ui.lstMessages->setStatusTip(QString("Messages Shown: %1")
-                                  .arg(_messagesShown));
   }
 
   /* Save message filter and refilter the list */
@@ -157,6 +155,9 @@ MessageLog::saveChanges()
   /* Refilter the list */
   _filterLog();
 
+  /* Set Message Counter */
+  ui.lstMessages->setStatusTip(QString("Messages Shown: %1")
+                                  .arg(_messagesShown));
   /* Save Message Log opacity */
   _settings->setMsgLogOpacity(this->windowOpacity());
 
@@ -389,6 +390,11 @@ MessageLog::write(const char* type, const char* message)
  
   /* Remove top message if message log is at maximum setting */
   if (ui.lstMessages->topLevelItemCount() == _maxCount) {
+    
+    /* Decrease shown messages counter if removing a shown message */
+    if (!ui.lstMessages->isItemHidden(ui.lstMessages->topLevelItem(0))) {
+      _messagesShown--;
+    }
     ui.lstMessages->takeTopLevelItem(0);
   }
   
@@ -423,7 +429,7 @@ MessageLog::write(const char* type, const char* message)
   if (_settings->getShowMsg(type)) {
     _messagesShown++;
     ui.lstMessages->setStatusTip(QString("Messages Shown: %1")
-                                  .arg(_messagesShown));
+                                  .arg(_messagesShown)); 
   } else {
     ui.lstMessages->setItemHidden(newMessage, true);
   }
