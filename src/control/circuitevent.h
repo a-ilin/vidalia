@@ -22,11 +22,12 @@
 ****************************************************************/
 
 #ifndef _CIRCUITEVENT_H
-#define _CIRCUITEVENT_h
+#define _CIRCUITEVENT_H
 
 #include <QString>
+#include <QEvent>
 
-class CircuitEvent
+class CircuitEvent : public QEvent
 {
 public:
   /** Circuit status events */
@@ -39,9 +40,27 @@ public:
     Closed     /* Circuit closed (was built) */
   };
   
+  /** Default constructor */
+  CircuitEvent(quint64 circId, Status status, QString path);
+  /** Default destructor */
+  ~CircuitEvent();
+  
   /** Converts a string description of a circuit's status to an enum value */
   static Status toStatus(QString strStatus);
+  
+  /** Returns the ID for this circuit */
+  quint64 circuitId();
+  
+  /** Returns the status of this circuit */
+  Status status();
+  
+  /** Returns the path chosen for this circuit */
+  QString path();
+  
+private:
+    quint64 _circId;
+  Status _status;
+  QString _path;
 };
 
 #endif
-

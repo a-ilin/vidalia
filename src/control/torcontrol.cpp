@@ -20,7 +20,7 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, 
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
- 
+                   
 #include <QHostAddress>
 
 #include "../config/vidaliasettings.h"
@@ -36,13 +36,15 @@ TorControl::TorControl()
    * start Tor and then destroy it when it stops. */
   _torProcess = 0;
 
+  /* Construct the message pump and give it a control connection and TorEvents
+   * object, used to translate and dispatch event messages sent by Tor */
+  _messages = new MessagePump(&_controlConn, &_torEvents);
+
   /* Plumb the appropriate socket signals */
   QObject::connect(&_controlConn, SIGNAL(connected()),
                    this, SLOT(onConnected()));
   QObject::connect(&_controlConn, SIGNAL(disconnected()),
                    this, SLOT(onDisconnected()));
-  QObject::connect(&_controlConn, SIGNAL(torEvent(ControlReply)),
-                   this, SLOT(onTorEvent(ControlReply)));
 }
 
 /** Default destructor */
@@ -53,6 +55,9 @@ TorControl::~TorControl()
   }
   if (isRunning()) {
     stop();
+  }
+  if (_messages) {
+    delete _messages;
   }
 }
 
@@ -105,6 +110,7 @@ TorControl::onStopped(int exitCode, QProcess::ExitStatus exitStatus)
 {
   delete _torProcess;
   _torProcess = 0;
+  disconnect();
   emit stopped(exitCode, exitStatus);
 }
 
@@ -133,6 +139,7 @@ TorControl::connect(QString *errmsg)
 void
 TorControl::onConnected()
 {
+  _messages->start();
   emit connected();
 }
 
@@ -140,6 +147,7 @@ TorControl::onConnected()
 void
 TorControl::disconnect()
 {
+  _messages->stop();
   _controlConn.disconnect();
 }
 
@@ -161,7 +169,7 @@ TorControl::isConnected()
 bool
 TorControl::send(ControlCommand cmd, ControlReply &reply, QString *errmsg)
 {
-  return _controlConn.send(cmd, reply, errmsg);
+  return _messages->send(cmd, reply, errmsg);
 }
 
 /** Sends an authentication token to Tor. This must be done before sending 
@@ -176,9 +184,7 @@ TorControl::authenticate(QString *errmsg)
   ControlCommand cmd("AUTHENTICATE", QString(settings.getAuthToken()));
   ControlReply reply;
 
-  if (!send(cmd, reply, errmsg)) {
-    return false;
-  } else {
+  if (send(cmd, reply, errmsg)) {
     ReplyLine line = reply.getLine();
     if (line.getStatus() != "250") {
       if (errmsg) {
@@ -207,9 +213,8 @@ TorControl::getInfo(QHash<QString,QString> &map, QString *errmsg)
   }
  
   /* Ask Tor for the specified info values */
-  if (!send(cmd, reply, errmsg)) {
-    return false;
-  } else {
+  if (send(cmd, reply, errmsg)) {
+  
     /* Parse the response for the returned values */
     foreach (ReplyLine line, reply.getLines()) {
       if (line.getStatus() != "250") {
@@ -223,14 +228,11 @@ TorControl::getInfo(QHash<QString,QString> &map, QString *errmsg)
       QStringList keyval = line.getMessage().split("=");
       if (keyval.size() == 2) {
         map.insert(keyval.at(0), keyval.at(1));
-      } else if (line.getMessage() != "OK") {
-        if (errmsg) {
-          *errmsg = QString("Invalid GETINFO response line. [%1]")
-                                           .arg(line.getMessage());
-        }
-        return false;
       }
     }
+  } else {
+    /* Sending the control command failed */
+    return false;
   }
   return true;
 }
@@ -240,10 +242,10 @@ bool
 TorControl::getInfo(QString key, QString &val, QString *errmsg)
 {
   QHash<QString,QString> map;
-  map.insert(key.toLower(), "");
+  map.insert(key, "");
 
   if (getInfo(map, errmsg)) {
-    val = map.value(key.toLower());
+    val = map.value(key);
     return true;
   }
   return false;
@@ -298,9 +300,9 @@ TorControl::getTorVersion(QString *errmsg)
  * otherwise it simply adds the event and handler to the event list and
  * returns true. */ 
 bool
-TorControl::addEvent(TorEvents::TorEvent e, QString *errmsg)
+TorControl::addEvent(TorEvents::TorEvent e, QObject *obj, QString *errmsg)
 {
-  _torEvents.add(e);
+  _torEvents.add(e, obj);
   if (isConnected()) {
     return setEvents(errmsg);
   }
@@ -312,9 +314,9 @@ TorControl::addEvent(TorEvents::TorEvent e, QString *errmsg)
  * events with Tor. Otherwise, it simply adds the event and handler to the
  * event list and returns true. */
 bool
-TorControl::removeEvent(TorEvents::TorEvent e, QString *errmsg)
+TorControl::removeEvent(TorEvents::TorEvent e, QObject *obj, QString *errmsg)
 {
-  _torEvents.remove(e);
+  _torEvents.remove(e, obj);
   if (isConnected()) {
     return setEvents(errmsg);
   }
@@ -345,26 +347,5 @@ TorControl::setEvents(QString *errmsg)
     }
   }
   return true;
-}
-
-/** Called when we receive a control event from Tor */
-void
-TorControl::onTorEvent(ControlReply event)
-{
-  _torEvents.handleEvent(event);
-}
-
-/** Connects a Tor event signal to the given slot */
-bool
-TorControl::connect(TorEvents::Signal s, QObject *obj, const char *slot)
-{
-  return _torEvents.connect(s, obj, slot);   
-}
-
-/** Disconnects a Tor event signal from the given slot */
-bool
-TorControl::disconnect(TorEvents::Signal s, QObject *obj, const char *slot)
-{
-  return _torEvents.disconnect(s, obj, slot);
 }
 

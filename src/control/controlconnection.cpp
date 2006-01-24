@@ -20,15 +20,13 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, 
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
-
-#include <QCoreApplication>
+                     
 #include <QHostAddress>
 
 #include "controlconnection.h"
 
 ControlConnection::ControlConnection()
 {
-  QObject::connect(this, SIGNAL(readyRead()), this, SLOT(onReadyRead()));
 }
 
 ControlConnection::~ControlConnection()
@@ -46,13 +44,10 @@ ControlConnection::connect(QHostAddress addr, quint16 port, QString *errmsg)
   if (!waitForConnected(-1)) {
     if (errmsg) {
       *errmsg = 
-        QString("Error connecting to %1:%2 [%3]").arg(addr.toString())
-                                                 .arg(port)
-                                                 .arg(errorString());
+        QString("Error connecting to %1:%2 [%3]").arg(addr.toString()).arg(port).arg(errorString());
     }
     return false;
   }
-  _recvQueue.clear();
   return true;
 }
 
@@ -61,7 +56,7 @@ bool
 ControlConnection::disconnect(QString *errmsg)
 {
   disconnectFromHost();
-  if (state() != QAbstractSocket::UnconnectedState) {
+  if (isConnected()) {
     if (!waitForDisconnected(-1)) {
       if (errmsg) {
         *errmsg =
@@ -70,8 +65,15 @@ ControlConnection::disconnect(QString *errmsg)
       return false;
     }
   }
-  _recvQueue.clear();
   return true;
+}
+
+/** Returns true if the control socket is connected and ready to send or
+ * receive. */
+bool
+ControlConnection::isConnected()
+{
+  return (isValid() && state() == QAbstractSocket::ConnectedState);
 }
 
 /** Send a control command to Tor on the control socket, conforming to Tor's
@@ -84,7 +86,7 @@ ControlConnection::disconnect(QString *errmsg)
 bool
 ControlConnection::sendCommand(ControlCommand cmd, QString *errmsg)
 {
-  if (!isValid()) {
+  if (!isConnected()) {
     return false;
   }
   
@@ -112,7 +114,7 @@ ControlConnection::readLine(QString &line, QString *errmsg)
   /* Make sure we have data to read before attempting anything. Note that this
    * essentially makes our socket a blocking socket */
   while (!canReadLine()) {
-    if (!isValid()) {
+    if (!isConnected()) {
       if (errmsg) {
         *errmsg = "Socket disconnected while attempting to read a line of data.";
       }
@@ -142,7 +144,7 @@ ControlConnection::readReply(ControlReply &reply, QString *errmsg)
   QChar c;
   QString line;
 
-  if (!isValid()) {
+  if (!isConnected()) {
     return false;
   }
 
@@ -152,8 +154,7 @@ ControlConnection::readReply(ControlReply &reply, QString *errmsg)
     if (!readLine(line, errmsg)) {
       return false;
     }
-   
-    /* A valid line MUST include a status code and trailing space */
+    
     if (line.length() < 4) {
       if (errmsg) {
         *errmsg = 
@@ -181,49 +182,5 @@ ControlConnection::readReply(ControlReply &reply, QString *errmsg)
     reply.appendLine(replyLine);
   } while (c != QChar(' '));
   return true;
-}
-
-/** Called when there is data available to be read on the socket. */
-void
-ControlConnection::onReadyRead()
-{  
-  ControlReply reply;
-  if (readReply(reply)) {
-    /* A status of "650" means "asynchronous event notification */
-    if (reply.getStatus() == "650") {
-      /* Dispatch the event */
-      emit torEvent(reply);
-    } else {
-      /* Add the message to the received message queue */
-      _recvQueue.enqueue(reply);
-    }
-  }
-}
-
-/** Sends a control command and immediately waits for the control reply */
-bool
-ControlConnection::send(ControlCommand cmd, 
-                        ControlReply &reply, QString *errmsg)
-{
-  if (sendCommand(cmd, errmsg)) {
-    /* Wait for the response to trigger a readyRead */
-    QCoreApplication::processEvents(QEventLoop::ExcludeUserInputEvents);
-    while (_recvQueue.isEmpty()) {
-      if (!waitForReadyRead(250) && 
-           error() != QAbstractSocket::SocketTimeoutError) {
-        /* An error occured while waiting for data on the socket */
-        if (errmsg) {
-          *errmsg = QString("Error waiting for control reply. [%1]")
-                      .arg(errorString());
-        }
-        return false;
-      }
-      /* Process events so we know the readyRead will get triggered */
-      QCoreApplication::processEvents(QEventLoop::ExcludeUserInputEvents);
-    }
-    reply = _recvQueue.dequeue();
-    return true; 
-  }
-  return false;
 }
 

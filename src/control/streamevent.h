@@ -25,8 +25,9 @@
 #define _STREAMEVENT_H
 
 #include <QString>
+#include <QEvent>
 
-class StreamEvent
+class StreamEvent : public QEvent
 {
 public:
   /** Stream status events */
@@ -41,10 +42,32 @@ public:
     Closed,       /* Stream closed */
     Detached      /* Detached from circuit */
   };
-
+  
+  /** Default constructor */
+  StreamEvent(quint64 streamId, Status status, quint64 circuitId, QString target);
+  /** Default destructor */
+  ~StreamEvent();
+  
   /** Converts a string description of a stream's status to its enum value */
   static Status toStatus(QString strStatus);
+  
+  /** Returns the ID for this stream */
+  quint64 streamId();
+  
+  /** Returns the status for this stream */
+  Status status();
+  
+  /** Returns the ID of the circuit to which this stream is assigned */
+  quint64 circuitId();
+  
+  /** Returns the target for this stream */
+  QString target();
+  
+private:
+    quint64 _streamId;
+  Status  _status;
+  quint64 _circuitId;
+  QString _target;
 };
 
 #endif
-

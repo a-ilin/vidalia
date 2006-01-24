@@ -25,8 +25,9 @@
 #define _LOGEVENT_H
 
 #include <QString>
+#include <QEvent>
 
-class LogEvent
+class LogEvent : public QEvent
 {
 public:
   /** Log message severity levels */
@@ -38,10 +39,24 @@ public:
     Warn,
     Error
   };
-
+  
+  /** Default constructor */
+  LogEvent(Severity severity, QString message);
+  /** Default destructor */
+  ~LogEvent();
+  
   /** Converts the string description of a severity to its enum value */
   static Severity toSeverity(QString strSeverity);
+  
+  /** Returns the severity of this log event */
+  Severity severity();
+  
+  /** Returns the message for this log event */
+  QString message();
+  
+private:
+    Severity _severity;
+  QString  _message;
 };
 
 #endif
-

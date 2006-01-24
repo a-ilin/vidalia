@@ -21,7 +21,21 @@
 *  Boston, MA  02110-1301, USA.
 ****************************************************************/
 
+#include "eventtype.h"
 #include "logevent.h"
+
+/** Default constructor */
+LogEvent::LogEvent(Severity severity, QString message)
+: QEvent((QEvent::Type)EventType::LogEvent)
+{
+  _severity = severity;
+  _message  = message;
+}
+
+/** Default destructor */
+LogEvent::~LogEvent()
+{
+}
 
 /** Converts a string description of a severity to its enum value */
 LogEvent::Severity
@@ -45,3 +59,16 @@ LogEvent::toSeverity(QString strSeverity)
   return s;
 }
 
+/** Returns the severity of this log event */
+LogEvent::Severity
+LogEvent::severity()
+{
+  return _severity;
+}
+
+/** Returns the message for this log event */
+QString
+LogEvent::message()
+{
+  return _message;
+}

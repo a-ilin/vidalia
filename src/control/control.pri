@@ -27,7 +27,10 @@ HEADERS += $$PWD/torcontrol.h \
            $$PWD/controlcommand.h \
            $$PWD/controlreply.h \
            $$PWD/replyline.h \
+           $$PWD/messagepump.h \
            $$PWD/torevents.h \
+           $$PWD/eventtype.h \
+           $$PWD/bandwidthevent.h \
            $$PWD/circuitevent.h \
            $$PWD/streamevent.h \
            $$PWD/logevent.h
@@ -38,7 +41,9 @@ SOURCES += $$PWD/torcontrol.cpp \
            $$PWD/controlcommand.cpp \
            $$PWD/controlreply.cpp \
            $$PWD/replyline.cpp \
+           $$PWD/messagepump.cpp \
            $$PWD/torevents.cpp \
+           $$PWD/bandwidthevent.cpp \
            $$PWD/circuitevent.cpp \
            $$PWD/streamevent.cpp \
            $$PWD/logevent.cpp
