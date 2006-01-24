@@ -78,6 +78,9 @@ private slots:
  
   /** Called when the opactity slider changes value **/
   void setOpacity();
+
+  /** Called when settings button is toggled **/
+  void showSettingsFrame(bool show);
   
   /** Called when user saves settings **/
   void saveChanges();
@@ -94,6 +97,9 @@ private:
 
   /** Loads the saved Message Log settings **/
   void _loadSettings(bool init);
+
+  /** Returns the current opacity of the Message Log window **/
+  qreal _getOpacity();
   
   /** Shows/Hides messages based on message filters **/
   void _filterLog();

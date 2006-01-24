@@ -1,17 +1,12 @@
-- Create necessary graphics based on Corinna's images
-  - We need:
-    o  A 16x16 .png made from the onion part of
-       http://homes.eff.org/~renbucholz/tor/tor_logo.png
-    o  A 32x32 .ico made from tor_on.png
-    o  A 32x32 .ico made from the onion part of
-       http://homes.eff.org/~renbucholz/tor/tor_logo.png
-    o  A 32x32 .png made from tor_on.png and tor_off.png
-    o  A 48x48 .png made from tor_on.png and tor_off.png
-    o  A 128x128 .png made from tor_on.png and tor_off.png
+1-23-06
+Regarding window transparancy:
+    "This feature is available on Mac OS X, X11 platforms that support the Composite 
+    extension, and Windows 2000 and later.
 
-    Names should follow a naming convention like tor_on32.ico, tor_off128.png,
-    etc.
+    Note that under X11 you need to have a composite manager running, and the X11 
+    specific _NET_WM_WINDOW_OPACITY atom needs to be supported by the window manager 
+    you are using."
 
-- Decide if we want to add a menubar icon on Mac, or just stick with the dock
-  icon. If we do, we'll need to create:
-    o  A 16x16 .png made from tor_on.png and tor_off.png (in grayscale)
+So basically transparancy is not supported on < Win 2000, and we need to figure out
+how to detect that atom thing in X11 and respond accordingly.
+      

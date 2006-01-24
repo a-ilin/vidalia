@@ -413,7 +413,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QGroupBox" name="groupBox_4" >
+          <widget class="QGroupBox" name="grpOpacity" >
            <property name="contextMenuPolicy" >
             <enum>Qt::NoContextMenu</enum>
            </property>
@@ -851,22 +851,6 @@
     <hint type="destinationlabel" >
      <x>407</x>
      <y>393</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>btnToggleSettings</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>frmSettings</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>60</x>
-     <y>728</y>
-    </hint>
-    <hint type="destinationlabel" >
-     <x>418</x>
-     <y>848</y>
     </hint>
    </hints>
   </connection>

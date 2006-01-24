@@ -53,7 +53,18 @@ MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
   ui.lstMessages->setStatusTip(tr("Messages Shown: ") += "0");
 
   /* Hide Message Log Settings frame */
-  ui.frmSettings->setVisible(false);
+  showSettingsFrame(false);
+
+  /* Turn off opacity group on unsupported platforms */
+#if defined(Q_WS_WIN)
+  if(!(QSysInfo::WV_2000 <= QSysInfo::WindowsVersion <= QSysInfo::WV_2003)) {
+    ui.grpOpacity->setDisabled(true);
+    }
+#endif
+  
+#if defined(Q_WS_X11)
+  ui.grpOpacity->setDisabled(true);
+#endif
 }
 
 /** Default Destructor **/
@@ -93,6 +104,9 @@ MessageLog::_createActions()
 
   connect(ui.sldrOpacity, SIGNAL(sliderReleased()),
       this, SLOT(setOpacity()));
+
+  connect(ui.btnToggleSettings, SIGNAL(toggled(bool)),
+      this, SLOT(showSettingsFrame(bool)));
 }
 
 /**
@@ -159,7 +173,7 @@ MessageLog::saveChanges()
   ui.lstMessages->setStatusTip(QString("Messages Shown: %1")
                                   .arg(_messagesShown));
   /* Save Message Log opacity */
-  _settings->setMsgLogOpacity(this->windowOpacity());
+  _settings->setMsgLogOpacity(_getOpacity());
 
   /* Restore the cursor */
   QApplication::restoreOverrideCursor();
@@ -363,20 +377,66 @@ MessageLog::copy()
 /**
  Clears the message list and resets the message counter
 **/
-void MessageLog::clear()
+void
+MessageLog::clear()
 {
   _messagesShown = 0;
   ui.lstMessages->setStatusTip(QString("Messages Shown: %1")
                                   .arg(_messagesShown));
 }
 
+/** 
+ Toggles the Settings pane on and off, changes toggle button text
+**/
+void
+MessageLog::showSettingsFrame(bool show)
+{
+  if (show) {
+    ui.frmSettings->setVisible(true);
+    ui.btnToggleSettings->setText("Hide Settings");
+  } else {
+    ui.frmSettings->setVisible(false);
+    ui.btnToggleSettings->setText("Show Settings");
+  }
+}
+
 /**
  Sets the opacity of the Message Log window
 **/
-void MessageLog::setOpacity()
+void
+MessageLog::setOpacity()
 {
   qreal newValue = ui.sldrOpacity->value() / 100.0;
-  this->setWindowOpacity(newValue);
+
+  /** Opacity only supported by Mac and Win32 **/
+  #if defined(Q_WS_MAC)
+    this->setWindowOpacity(newValue);
+  #endif
+
+  #if defined(Q_WS_WIN)
+    if(QSysInfo::WV_2000 <= QSysInfo::WindowsVersion <= QSysInfo::WV_2003) {
+      this->setWindowOpacity(newValue);
+    }
+  #endif
+}
+
+/**
+ Returns the opacity of the Message Log window
+**/
+qreal
+MessageLog::_getOpacity()
+{
+  #if defined(Q_WS_MAC)
+    return this->windowOpacity();
+  #endif
+
+  #if defined(Q_WS_WIN)
+    if(QSysInfo::WV_2000 <= QSysInfo::WindowsVersion <= QSysInfo::WV_2003) {
+      return this->windowOpacity();
+    }
+  #endif
+    
+  return 1.0;
 }
 
 /**
