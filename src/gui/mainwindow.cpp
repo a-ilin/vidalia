@@ -145,9 +145,9 @@ MainWindow::createActions()
   _exitAct = new QAction(tr("Exit"), this);
   connect(_exitAct, SIGNAL(triggered()), this, SLOT(close()));
 
-  _bandwidthAct = new QAction(tr("Bandwidth Usage Graph"), this); 
+  _bandwidthAct = new QAction(tr("Bandwidth Graph"), this); 
 
-  _messageAct = new QAction(tr("Log Message History"), this);
+  _messageAct = new QAction(tr("Message Log"), this);
   connect(_messageAct, SIGNAL(triggered()), this, SLOT(message()));
 }
 
@@ -162,16 +162,14 @@ MainWindow::createMenus()
   _trayMenu = new QMenu(this);
   _trayMenu->addAction(_startAct);
   _trayMenu->addAction(_stopAct);
-  _toolsMenu = _trayMenu->addMenu(tr("Tools"));
+  _trayMenu->addSeparator();
+  _trayMenu->addAction(_bandwidthAct);
+  _trayMenu->addAction(_messageAct);
   _trayMenu->addSeparator();
   _trayMenu->addAction(_configAct);
   _trayMenu->addAction(_aboutAct);
   _trayMenu->addSeparator();
   _trayMenu->addAction(_exitAct);
-
-  /* Tools menu */
-  _toolsMenu->addAction(_bandwidthAct);
-  _toolsMenu->addAction(_messageAct);
 }
 
 /** Creates a new menubar with no parent, so Qt will use this as the "default
@@ -199,8 +197,9 @@ MainWindow::createMenuBar()
   _torMenu = _menuBar->addMenu(tr("Tor"));
   _torMenu->addAction(_startAct);
   _torMenu->addAction(_stopAct);
+  _torMenu->addAction(_bandwidthAct);
+  _torMenu->addAction(_messageAct);
   _torMenu->addAction(_configAct);
-  _menuBar->addMenu(_toolsMenu);
   _helpMenu = _menuBar->addMenu(tr("Help"));
   _helpMenu->addAction(_aboutAct);
 #endif

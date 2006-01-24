@@ -24,7 +24,7 @@
    </font>
   </property>
   <property name="windowTitle" >
-   <string>Recent Log Messages</string>
+   <string>Message Log</string>
   </property>
   <property name="windowIcon" >
    <iconset resource="..\res\vidalia.qrc" >:/images/tor_logo16.png</iconset>
@@ -629,7 +629,7 @@
    <property name="geometry" >
     <rect>
      <x>0</x>
-     <y>768</y>
+     <y>713</y>
      <width>735</width>
      <height>22</height>
     </rect>

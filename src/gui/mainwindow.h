@@ -91,7 +91,6 @@ private:
   
   /** Define the popup menus for the system tray icon */
   QMenu* _trayMenu;
-  QMenu* _toolsMenu;
   
   /** Defines the actions for the tray menu */
   QAction* _startAct;
