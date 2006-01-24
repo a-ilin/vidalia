@@ -66,7 +66,7 @@
 
 #define DEFAULT_MAX_MESSAGE    500
 
-#define DEFAULT_MSGLOG_OPACITY 1.0
+#define DEFAULT_MSGLOG_OPACITY 100
 
 /** Default Constructor
  * We use "Vidalia" for both the company name and the application name.
@@ -306,17 +306,17 @@ VidaliaSettings::getMaxMsgCount()
 /**
  Get the level of opacity for the MessageLog window
 **/
-qreal
+int
 VidaliaSettings::getMsgLogOpacity()
 {
-  return value(SETTING_MSGLOG_OPACITY, DEFAULT_MSGLOG_OPACITY).toDouble();
+  return value(SETTING_MSGLOG_OPACITY, DEFAULT_MSGLOG_OPACITY).toInt();
 }
 
 /**
  Set the level of opacity for the MessageLog window
 **/
 void
-VidaliaSettings::setMsgLogOpacity(qreal value)
+VidaliaSettings::setMsgLogOpacity(int value)
 {
   setValue(SETTING_MSGLOG_OPACITY, value);
 }

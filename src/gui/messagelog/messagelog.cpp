@@ -41,9 +41,6 @@ MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
 
   /* Set tooltips for necessary widgets */
   _setToolTips();
-
-  /* Load saved filter and count settings */
-  _loadSettings(true);
   
   /* Initialize message counters */
   _messagesShown = 0;
@@ -102,8 +99,8 @@ MessageLog::_createActions()
   connect(ui.btnCancelSettings, SIGNAL(clicked()),
       this, SLOT(cancelChanges()));
 
-  connect(ui.sldrOpacity, SIGNAL(sliderReleased()),
-      this, SLOT(setOpacity()));
+  connect(ui.sldrOpacity, SIGNAL(valueChanged(int)),
+      this, SLOT(setOpacity(int)));
 
   connect(ui.btnToggleSettings, SIGNAL(toggled(bool)),
       this, SLOT(showSettingsFrame(bool)));
@@ -131,14 +128,39 @@ MessageLog::_setToolTips()
 }
 
 /**
+ Loads the saved Message Log settings.
+ Only set window transparancy if not initial call from constructor
+**/
+void
+MessageLog::_loadSettings()
+{
+  /* Set Max Count widget */
+  ui.spnbxMaxCount->setValue(_settings->getMaxMsgCount());
+
+  /* Set the window opacity slider widget */
+  ui.sldrOpacity->setValue(_settings->getMsgLogOpacity());
+
+  /* Set the window opacity label */
+  ui.lblPercentOpacity->setNum(ui.sldrOpacity->value());
+
+  /* Set the checkboxes accordingly */
+  ui.chkTorErr->setChecked(_settings->getShowMsg(MSG_TORERR));
+  ui.chkTorWarn->setChecked(_settings->getShowMsg(MSG_TORWARN));
+  ui.chkTorNote->setChecked(_settings->getShowMsg(MSG_TORNOTE));
+  ui.chkTorInfo->setChecked(_settings->getShowMsg(MSG_TORINFO));
+  ui.chkTorDebug->setChecked(_settings->getShowMsg(MSG_TORDEBUG));
+  ui.chkVidErr->setChecked(_settings->getShowMsg(MSG_VIDERR));
+  ui.chkVidStat->setChecked(_settings->getShowMsg(MSG_VIDSTAT));
+}
+
+/**
  Saves the Message Log settings and adjusts the message list if required 
 **/
 void
 MessageLog::saveChanges()
 {
   /* Hide the settings frame and reset toggle button*/
-  ui.btnToggleSettings->setChecked(false);
-  ui.frmSettings->setVisible(false);
+  showSettingsFrame(false);
   
   /* Disable the cursor to prevent problems while refiltering */
   QApplication::setOverrideCursor(Qt::WaitCursor);
@@ -173,7 +195,7 @@ MessageLog::saveChanges()
   ui.lstMessages->setStatusTip(QString("Messages Shown: %1")
                                   .arg(_messagesShown));
   /* Save Message Log opacity */
-  _settings->setMsgLogOpacity(_getOpacity());
+  _settings->setMsgLogOpacity(ui.sldrOpacity->value());
 
   /* Restore the cursor */
   QApplication::restoreOverrideCursor();
@@ -186,42 +208,10 @@ void
 MessageLog::cancelChanges()
 {
   /* Hide the settings frame and reset toggle button */
-  ui.btnToggleSettings->setChecked(false);
-  ui.frmSettings->setVisible(false);
+  showSettingsFrame(false);
 
   /* Reload the settings */
-  _loadSettings(false);
-}
-
-/**
- Loads the saved Message Log settings.
- Only set window transparancy if not initial call from constructor
-**/
-void
-MessageLog::_loadSettings(bool init)
-{
-  /* Set Max Count widget */
-  ui.spnbxMaxCount->setValue(_settings->getMaxMsgCount());
-
-  /* Set the window opacity slider widget */
-  ui.sldrOpacity->setValue(int(_settings->getMsgLogOpacity() * 100));
-
-  /* Set the window opacity label */
-  ui.lblPercentOpacity->setNum(ui.sldrOpacity->value());
-
-  /* If necessary, set the window opacity */
-  if (!init) {
-    setOpacity();
-  }
-
-  /* Set the checkboxes accordingly */
-  ui.chkTorErr->setChecked(_settings->getShowMsg(MSG_TORERR));
-  ui.chkTorWarn->setChecked(_settings->getShowMsg(MSG_TORWARN));
-  ui.chkTorNote->setChecked(_settings->getShowMsg(MSG_TORNOTE));
-  ui.chkTorInfo->setChecked(_settings->getShowMsg(MSG_TORINFO));
-  ui.chkTorDebug->setChecked(_settings->getShowMsg(MSG_TORDEBUG));
-  ui.chkVidErr->setChecked(_settings->getShowMsg(MSG_VIDERR));
-  ui.chkVidStat->setChecked(_settings->getShowMsg(MSG_VIDSTAT));
+  _loadSettings();
 }
 
 /**
@@ -393,9 +383,11 @@ MessageLog::showSettingsFrame(bool show)
 {
   if (show) {
     ui.frmSettings->setVisible(true);
+    ui.btnToggleSettings->setChecked(true);
     ui.btnToggleSettings->setText("Hide Settings");
   } else {
     ui.frmSettings->setVisible(false);
+    ui.btnToggleSettings->setChecked(false);
     ui.btnToggleSettings->setText("Show Settings");
   }
 }
@@ -404,9 +396,9 @@ MessageLog::showSettingsFrame(bool show)
  Sets the opacity of the Message Log window
 **/
 void
-MessageLog::setOpacity()
+MessageLog::setOpacity(int value)
 {
-  qreal newValue = ui.sldrOpacity->value() / 100.0;
+  qreal newValue = value / 100.0;
 
   /** Opacity only supported by Mac and Win32 **/
   #if defined(Q_WS_MAC)
@@ -423,20 +415,20 @@ MessageLog::setOpacity()
 /**
  Returns the opacity of the Message Log window
 **/
-qreal
+int
 MessageLog::_getOpacity()
 {
   #if defined(Q_WS_MAC)
-    return this->windowOpacity();
+    return int(this->windowOpacity() * 100);
   #endif
 
   #if defined(Q_WS_WIN)
     if(QSysInfo::WV_2000 <= QSysInfo::WindowsVersion <= QSysInfo::WV_2003) {
-      return this->windowOpacity();
+      return int(this->windowOpacity() * 100);
     }
   #endif
     
-  return 1.0;
+  return 100;
 }
 
 /**
@@ -501,7 +493,7 @@ MessageLog::write(const char* type, const char* message)
 void
 MessageLog::show()
 {
-  setOpacity();
+  _loadSettings();
   QWidget::show();
 }
 
