@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>835</width>
-    <height>744</height>
+    <width>735</width>
+    <height>790</height>
    </rect>
   </property>
   <property name="font" >
@@ -137,8 +137,8 @@
       </property>
       <property name="minimumSize" >
        <size>
-        <width>811</width>
-        <height>181</height>
+        <width>680</width>
+        <height>200</height>
        </size>
       </property>
       <property name="contextMenuPolicy" >
@@ -269,81 +269,71 @@
         </widget>
        </item>
        <item>
-        <layout class="QVBoxLayout" >
-         <property name="margin" >
-          <number>0</number>
+        <widget class="QGroupBox" name="groupBox_2" >
+         <property name="contextMenuPolicy" >
+          <enum>Qt::NoContextMenu</enum>
          </property>
-         <property name="spacing" >
-          <number>6</number>
+         <property name="title" >
+          <string>Vidalia Messages</string>
          </property>
-         <item>
-          <widget class="QGroupBox" name="groupBox_2" >
-           <property name="contextMenuPolicy" >
-            <enum>Qt::NoContextMenu</enum>
-           </property>
-           <property name="title" >
-            <string>Vidalia Messages</string>
-           </property>
+         <layout class="QVBoxLayout" >
+          <property name="margin" >
+           <number>9</number>
+          </property>
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+          <item>
            <layout class="QVBoxLayout" >
             <property name="margin" >
-             <number>9</number>
+             <number>0</number>
             </property>
             <property name="spacing" >
              <number>6</number>
             </property>
             <item>
-             <layout class="QVBoxLayout" >
-              <property name="margin" >
-               <number>0</number>
+             <widget class="QCheckBox" name="chkVidErr" >
+              <property name="contextMenuPolicy" >
+               <enum>Qt::NoContextMenu</enum>
               </property>
-              <property name="spacing" >
-               <number>6</number>
+              <property name="toolTip" >
+               <string/>
               </property>
-              <item>
-               <widget class="QCheckBox" name="chkVidErr" >
-                <property name="contextMenuPolicy" >
-                 <enum>Qt::NoContextMenu</enum>
-                </property>
-                <property name="toolTip" >
-                 <string/>
-                </property>
-                <property name="text" >
-                 <string>Vidalia Error</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QCheckBox" name="chkVidStat" >
-                <property name="contextMenuPolicy" >
-                 <enum>Qt::NoContextMenu</enum>
-                </property>
-                <property name="toolTip" >
-                 <string/>
-                </property>
-                <property name="text" >
-                 <string>Vidalia Status</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
+              <property name="text" >
+               <string>Vidalia Error</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="chkVidStat" >
+              <property name="contextMenuPolicy" >
+               <enum>Qt::NoContextMenu</enum>
+              </property>
+              <property name="toolTip" >
+               <string/>
+              </property>
+              <property name="text" >
+               <string>Vidalia Status</string>
+              </property>
+             </widget>
             </item>
            </layout>
-          </widget>
-         </item>
-         <item>
-          <spacer>
-           <property name="orientation" >
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" >
-            <size>
-             <width>20</width>
-             <height>71</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-        </layout>
+          </item>
+          <item>
+           <spacer>
+            <property name="orientation" >
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" >
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </widget>
        </item>
        <item>
         <layout class="QVBoxLayout" >
@@ -417,17 +407,93 @@
           </widget>
          </item>
          <item>
-          <spacer>
-           <property name="orientation" >
-            <enum>Qt::Vertical</enum>
+          <widget class="QGroupBox" name="groupBox_4" >
+           <property name="contextMenuPolicy" >
+            <enum>Qt::NoContextMenu</enum>
            </property>
-           <property name="sizeHint" >
-            <size>
-             <width>20</width>
-             <height>81</height>
-            </size>
+           <property name="title" >
+            <string>Window Opacity</string>
            </property>
-          </spacer>
+           <layout class="QVBoxLayout" >
+            <property name="margin" >
+             <number>9</number>
+            </property>
+            <property name="spacing" >
+             <number>6</number>
+            </property>
+            <item>
+             <layout class="QHBoxLayout" >
+              <property name="margin" >
+               <number>0</number>
+              </property>
+              <property name="spacing" >
+               <number>6</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="lblPercentOpacity" >
+                <property name="text" >
+                 <string>TextLabel</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="label" >
+                <property name="text" >
+                 <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">% Opaque&lt;/p>&lt;/body>&lt;/html></string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer>
+                <property name="orientation" >
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" >
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QSlider" name="sldrOpacity" >
+              <property name="contextMenuPolicy" >
+               <enum>Qt::NoContextMenu</enum>
+              </property>
+              <property name="toolTip" >
+               <string>Changes the transparancy of the Message Log</string>
+              </property>
+              <property name="minimum" >
+               <number>30</number>
+              </property>
+              <property name="maximum" >
+               <number>100</number>
+              </property>
+              <property name="value" >
+               <number>100</number>
+              </property>
+              <property name="sliderPosition" >
+               <number>100</number>
+              </property>
+              <property name="orientation" >
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="invertedAppearance" >
+               <bool>false</bool>
+              </property>
+              <property name="tickPosition" >
+               <enum>QSlider::TicksBelow</enum>
+              </property>
+              <property name="tickInterval" >
+               <number>10</number>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
          </item>
         </layout>
        </item>
@@ -513,7 +579,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>835</width>
+     <width>735</width>
      <height>19</height>
     </rect>
    </property>
@@ -554,8 +620,8 @@
    <property name="geometry" >
     <rect>
      <x>0</x>
-     <y>722</y>
-     <width>835</width>
+     <y>768</y>
+     <width>735</width>
      <height>22</height>
     </rect>
    </property>
@@ -795,6 +861,22 @@
     <hint type="destinationlabel" >
      <x>418</x>
      <y>848</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>sldrOpacity</sender>
+   <signal>valueChanged(int)</signal>
+   <receiver>lblPercentOpacity</receiver>
+   <slot>setNum(int)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>396</x>
+     <y>748</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>337</x>
+     <y>718</y>
     </hint>
    </hints>
   </connection>

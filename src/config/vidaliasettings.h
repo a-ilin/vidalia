@@ -89,6 +89,10 @@ public:
   /* Get and set maximum number of messages to display in log */
   int getMaxMsgCount();
   void setMaxMsgCount(int max);
+
+  /* Get and set Msg Log window opacity */
+  qreal getMsgLogOpacity();
+  void setMsgLogOpacity(qreal value);
 };
 
 #endif

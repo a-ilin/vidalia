@@ -40,6 +40,7 @@
 #define SETTING_SHOW_VIDERR    "MessageLog/ShowVidError"
 #define SETTING_SHOW_VIDSTAT   "MessageLog/ShowVidStat"
 #define SETTING_MAX_MESSAGE    "MessageLog/MaxMsgCount"
+#define SETTING_MSGLOG_OPACITY "MessageLog/Opacity"
 
 /* Default Settings */
 #if defined(Q_OS_WIN32)
@@ -64,6 +65,8 @@
 #define DEFAULT_SHOW_VIDSTAT   true
 
 #define DEFAULT_MAX_MESSAGE    500
+
+#define DEFAULT_MSGLOG_OPACITY 1.0
 
 /** Default Constructor
  * We use "Vidalia" for both the company name and the application name.
@@ -202,18 +205,18 @@ VidaliaSettings::setAuthToken(QByteArray token)
   setValue(SETTING_AUTH_TOKEN, token.toBase64());
 }
 
-/*
+/**
  Wrapper for handling straigt text. Behaves same as below.
-*/
+**/
 void
 VidaliaSettings::setShowMsg(const char* type, bool status)
 {
   setShowMsg(QString(type), status);
 }
 
-/*
+/**
  Set whether or not messages of type are displayed in the log
-*/
+**/
 void
 VidaliaSettings::setShowMsg(QString type, bool status)
 {
@@ -241,18 +244,18 @@ VidaliaSettings::setShowMsg(QString type, bool status)
   }
 }
 
-/*
+/**
  Wrapper for handling straight text. Behaves same as below.
-*/
+**/
 bool
 VidaliaSettings::getShowMsg(const char* type)
 {
   return getShowMsg(QString(type));
 }
 
-/*
+/**
  Returns bool indicating whether the type of message is to be shown
-*/
+**/
 bool
 VidaliaSettings::getShowMsg(QString type)
 {
@@ -282,7 +285,7 @@ VidaliaSettings::getShowMsg(QString type)
   }
 }
 
-/* 
+/** 
  Set maximum number of messages to display in log
 */
 void
@@ -291,11 +294,29 @@ VidaliaSettings::setMaxMsgCount(int max)
   setValue(SETTING_MAX_MESSAGE, max);
 }
 
-/*
+/**
  Return maximum number of messages to display in log
-*/
+**/
 int
 VidaliaSettings::getMaxMsgCount()
 {
   return value(SETTING_MAX_MESSAGE, DEFAULT_MAX_MESSAGE).toInt();
+}
+
+/**
+ Get the level of opacity for the MessageLog window
+**/
+qreal
+VidaliaSettings::getMsgLogOpacity()
+{
+  return value(SETTING_MSGLOG_OPACITY, DEFAULT_MSGLOG_OPACITY).toDouble();
+}
+
+/**
+ Set the level of opacity for the MessageLog window
+**/
+void
+VidaliaSettings::setMsgLogOpacity(qreal value)
+{
+  setValue(SETTING_MSGLOG_OPACITY, value);
 }

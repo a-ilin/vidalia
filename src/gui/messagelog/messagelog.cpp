@@ -43,7 +43,7 @@ MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
   _setToolTips();
 
   /* Load saved filter and count settings */
-  _loadSettings();
+  _loadSettings(true);
   
   /* Initialize message counters */
   _messagesShown = 0;
@@ -90,6 +90,9 @@ MessageLog::_createActions()
 
   connect(ui.btnCancelSettings, SIGNAL(clicked()),
       this, SLOT(cancelChanges()));
+
+  connect(ui.sldrOpacity, SIGNAL(sliderReleased()),
+      this, SLOT(setOpacity()));
 }
 
 /**
@@ -154,6 +157,9 @@ MessageLog::saveChanges()
   /* Refilter the list */
   _filterLog();
 
+  /* Save Message Log opacity */
+  _settings->setMsgLogOpacity(this->windowOpacity());
+
   /* Restore the cursor */
   QApplication::restoreOverrideCursor();
 }
@@ -169,17 +175,29 @@ MessageLog::cancelChanges()
   ui.frmSettings->setVisible(false);
 
   /* Reload the settings */
-  _loadSettings();
+  _loadSettings(false);
 }
 
 /**
- Loads the saved Message Log settings
+ Loads the saved Message Log settings.
+ Only set window transparancy if not initial call from constructor
 **/
 void
-MessageLog::_loadSettings()
+MessageLog::_loadSettings(bool init)
 {
   /* Set Max Count widget */
   ui.spnbxMaxCount->setValue(_settings->getMaxMsgCount());
+
+  /* Set the window opacity slider widget */
+  ui.sldrOpacity->setValue(int(_settings->getMsgLogOpacity() * 100));
+
+  /* Set the window opacity label */
+  ui.lblPercentOpacity->setNum(ui.sldrOpacity->value());
+
+  /* If necessary, set the window opacity */
+  if (!init) {
+    setOpacity();
+  }
 
   /* Set the checkboxes accordingly */
   ui.chkTorErr->setChecked(_settings->getShowMsg(MSG_TORERR));
@@ -352,6 +370,15 @@ void MessageLog::clear()
 }
 
 /**
+ Sets the opacity of the Message Log window
+**/
+void MessageLog::setOpacity()
+{
+  qreal newValue = ui.sldrOpacity->value() / 100.0;
+  this->setWindowOpacity(newValue);
+}
+
+/**
  Writes a message to the Message History and tags it with
  the proper date, time and type.
 **/
@@ -400,6 +427,16 @@ MessageLog::write(const char* type, const char* message)
   } else {
     ui.lstMessages->setItemHidden(newMessage, true);
   }
+}
+
+/** 
+ Overrloads the default show() slot so we can set opacity
+**/
+void
+MessageLog::show()
+{
+  setOpacity();
+  QWidget::show();
 }
 
 /** Overloads the default close() slot, so we can force the parent to become

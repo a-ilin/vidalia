@@ -58,6 +58,8 @@ protected:
   void closeEvent(QCloseEvent *e);
 
 public slots:
+  /** Overridden QWidget.show() **/
+  void show();
   /** Called when the user selects File->Close or Alt-F4*/
   void close();
 
@@ -73,6 +75,9 @@ private slots:
 
   /** Called when the user selects View->Clear all or Ctrl-E **/
   void clear();
+ 
+  /** Called when the opactity slider changes value **/
+  void setOpacity();
   
   /** Called when user saves settings **/
   void saveChanges();
@@ -88,9 +93,9 @@ private:
   void _setToolTips();
 
   /** Loads the saved Message Log settings **/
-  void _loadSettings();
+  void _loadSettings(bool init);
   
-  /** Called when user makes changes to message filters **/
+  /** Shows/Hides messages based on message filters **/
   void _filterLog();
   
   /** Holds the maximum number of messages to log **/
