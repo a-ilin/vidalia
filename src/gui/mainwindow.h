@@ -106,6 +106,7 @@ private:
   QMenuBar* _menuBar;
   QMenu* _fileMenu;
   QMenu* _torMenu;
+  QMenu* _viewMenu;
   QMenu* _helpMenu;
 #endif
 };

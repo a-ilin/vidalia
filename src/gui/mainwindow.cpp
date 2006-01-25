@@ -190,9 +190,10 @@ MainWindow::createMenuBar()
   _torMenu = _menuBar->addMenu(tr("Tor"));
   _torMenu->addAction(_startAct);
   _torMenu->addAction(_stopAct);
-  _torMenu->addAction(_bandwidthAct);
-  _torMenu->addAction(_messageAct);
-  _torMenu->addAction(_configAct);
+  _viewMenu = _menuBar->addMenu(tr("View"));
+  _viewMenu->addAction(_bandwidthAct);
+  _viewMenu->addAction(_messageAct);
+  _viewMenu->addAction(_configAct);
   _helpMenu = _menuBar->addMenu(tr("Help"));
   _helpMenu->addAction(_aboutAct);
 #endif
