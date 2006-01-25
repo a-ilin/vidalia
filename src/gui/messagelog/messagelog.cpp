@@ -301,12 +301,18 @@ MessageLog::_save(QList<QTreeWidgetItem *> items)
                           .arg(file.errorString()));
       return;
     }
+   
+    /* Sort the list of log messages by time */
+    QMap<QString, QTreeWidgetItem *> sortedList;
+    foreach (QTreeWidgetItem *item, items) {
+      sortedList.insert(item->text(COL_TIME), item);
+    }
     
     /* Write out the message log to the file */
     QTextStream out(&file);
     QApplication::setOverrideCursor(Qt::WaitCursor);
     
-    foreach (QTreeWidgetItem *item, items) {
+    foreach (QTreeWidgetItem *item, sortedList) {
       out << item->text(COL_TIME) << " ";
       out << "[" << item->text(COL_TYPE) << "] ";
       out << item->text(COL_MSG) << "\n";
