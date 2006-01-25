@@ -503,9 +503,11 @@ MessageLog::write(LogEvent::Severity type, QString message)
 
   /* Hide the message if necessary */
   if (_filter & (uint)type) {
+    /* If shown, update counter and select the newly added message */
     _messagesShown++;
     ui.lstMessages->setStatusTip(QString("Messages Shown: %1")
-                                  .arg(_messagesShown)); 
+                                  .arg(_messagesShown));
+    ui.lstMessages->setCurrentItem(newMessage);
   } else {
     ui.lstMessages->setItemHidden(newMessage, true);
   }
