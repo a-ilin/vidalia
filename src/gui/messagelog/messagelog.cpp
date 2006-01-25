@@ -116,19 +116,22 @@ MessageLog::_createActions()
 void
 MessageLog::_setToolTips()
 {
-  ui.chkTorErr->setToolTip(tr("Messages that appear when something has \ngone very wrong and Tor cannot proceed."));
-  
-  ui.chkTorWarn->setToolTip(tr("Messages that only appear when \nsomething has gone wrong."));
-
-  ui.chkTorNote->setToolTip(tr("Messages that appear infrequently \nduring normal Tor operation and are \nnot considered errors, but you may \ncare about."));
-
-  ui.chkTorInfo->setToolTip(tr("Messages that appear frequently \nduring normal Tor operation."));
-
-  ui.chkTorDebug->setToolTip(tr("Hyper-verbose messages primarily of \ninterest to Tor developers.")); 
-
-  ui.chkVidErr->setToolTip(tr("Messages that appear when something \nhas gone very wrong with Vidalia.")); 
-
-  ui.chkVidStat->setToolTip(tr("Messages that appear freqently indicating \nVidalia operation status information."));
+  ui.chkTorErr->setToolTip(tr("Messages that appear when something has \n"
+                              "gone very wrong and Tor cannot proceed."));
+  ui.chkTorWarn->setToolTip(tr("Messages that only appear when \n"
+                               "something has gone wrong."));
+  ui.chkTorNote->setToolTip(tr("Messages that appear infrequently \n"
+                               "during normal Tor operation and are \n"
+                               "not considered errors, but you may \n"
+                               "care about."));
+  ui.chkTorInfo->setToolTip(tr("Messages that appear frequently \n"
+                               "during normal Tor operation."));
+  ui.chkTorDebug->setToolTip(tr("Hyper-verbose messages primarily of \n"
+                                "interest to Tor developers.")); 
+  ui.chkVidErr->setToolTip(tr("Messages that appear when something \n"
+                              "has gone very wrong with Vidalia.")); 
+  ui.chkVidStat->setToolTip(tr("Messages that appear freqently indicating \n"
+                               "Vidalia operation status information."));
 }
 
 /**
