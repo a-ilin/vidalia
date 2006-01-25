@@ -25,13 +25,14 @@
 #include "messagelog.h"
 
 /** Default Constructor **/
-MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
+MessageLog::MessageLog(TorControl *torControl, QWidget *parent, Qt::WFlags flags)
 : QMainWindow(parent, flags)
 {
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
  
   /* Create necessary Message Log QObjects */
+  _torControl = torControl;
   _settings = new VidaliaSettings();
   _clock = new QDateTime(QDateTime::currentDateTime());
   _clipboard = QApplication::clipboard();
@@ -45,6 +46,9 @@ MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
   /* Initialize message counters */
   _messagesShown = 0;
   _maxCount = _settings->getMaxMsgCount();
+
+  /* Ask Tor to give me some log events */
+  _registerLogEvents();
 
   /* Show number of message displayed in Status bar */
   ui.lstMessages->setStatusTip(tr("Messages Shown: ") += "0");
@@ -129,7 +133,7 @@ MessageLog::_setToolTips()
 
 /**
  Loads the saved Message Log settings.
- Only set window transparancy if not initial call from constructor
+ Only set window transparency if not initial call from constructor
 **/
 void
 MessageLog::_loadSettings()
@@ -144,13 +148,29 @@ MessageLog::_loadSettings()
   ui.lblPercentOpacity->setNum(ui.sldrOpacity->value());
 
   /* Set the checkboxes accordingly */
-  ui.chkTorErr->setChecked(_settings->getShowMsg(MSG_TORERR));
-  ui.chkTorWarn->setChecked(_settings->getShowMsg(MSG_TORWARN));
-  ui.chkTorNote->setChecked(_settings->getShowMsg(MSG_TORNOTE));
-  ui.chkTorInfo->setChecked(_settings->getShowMsg(MSG_TORINFO));
-  ui.chkTorDebug->setChecked(_settings->getShowMsg(MSG_TORDEBUG));
-  ui.chkVidErr->setChecked(_settings->getShowMsg(MSG_VIDERR));
-  ui.chkVidStat->setChecked(_settings->getShowMsg(MSG_VIDSTAT));
+  _filter = _settings->getMsgFilter();
+  ui.chkTorErr->setChecked(_filter & LogEvent::TorError);
+  ui.chkTorWarn->setChecked(_filter & LogEvent::TorWarn);
+  ui.chkTorNote->setChecked(_filter & LogEvent::TorNotice);
+  ui.chkTorInfo->setChecked(_filter & LogEvent::TorInfo);
+  ui.chkTorDebug->setChecked(_filter & LogEvent::TorDebug);
+  ui.chkVidErr->setChecked(_filter & LogEvent::VidaliaError);
+  ui.chkVidStat->setChecked(_filter & LogEvent::VidaliaWarn);
+}
+
+/** Attempts to register the selected message filter with Tor and displays an
+ * error if setting the events fails. */
+void
+MessageLog::_registerLogEvents()
+{
+  QString errmsg;
+  _filter = _settings->getMsgFilter();
+  if (!_torControl->setLogEvents(_filter, this, &errmsg)) {
+    QMessageBox::warning(this, tr("Error Setting Filter"),
+      tr("Vidalia was unable to register for Tor's log events.\n\n"
+         "Error: ") + errmsg,
+       QMessageBox::Ok, QMessageBox::NoButton);
+  }
 }
 
 /**
@@ -180,15 +200,16 @@ MessageLog::saveChanges()
   }
 
   /* Save message filter and refilter the list */
-  _settings->setShowMsg(MSG_TORERR, ui.chkTorErr->isChecked());
-  _settings->setShowMsg(MSG_TORWARN, ui.chkTorWarn->isChecked());
-  _settings->setShowMsg(MSG_TORNOTE, ui.chkTorNote->isChecked());
-  _settings->setShowMsg(MSG_TORINFO, ui.chkTorInfo->isChecked());
-  _settings->setShowMsg(MSG_TORDEBUG, ui.chkTorDebug->isChecked());
-  _settings->setShowMsg(MSG_VIDERR, ui.chkVidErr->isChecked());
-  _settings->setShowMsg(MSG_VIDSTAT, ui.chkVidStat->isChecked());
+  _settings->setMsgFilter(LogEvent::TorError, ui.chkTorErr->isChecked());
+  _settings->setMsgFilter(LogEvent::TorWarn, ui.chkTorWarn->isChecked());
+  _settings->setMsgFilter(LogEvent::TorNotice, ui.chkTorNote->isChecked());
+  _settings->setMsgFilter(LogEvent::TorInfo, ui.chkTorInfo->isChecked());
+  _settings->setMsgFilter(LogEvent::TorDebug, ui.chkTorDebug->isChecked());
+  _settings->setMsgFilter(LogEvent::VidaliaError, ui.chkVidErr->isChecked());
+  _settings->setMsgFilter(LogEvent::VidaliaWarn, ui.chkVidStat->isChecked());
 
   /* Refilter the list */
+  _registerLogEvents();
   _filterLog();
 
   /* Set Message Counter */
@@ -233,7 +254,7 @@ MessageLog::_filterLog()
     if (_messagesShown < _maxCount) {
       
       /* Show or hide message accordingly */
-      showCurrent = _settings->getShowMsg(current->text(1));
+      showCurrent = (bool)(_filter & (uint)current->data(1,1).toUInt());
       ui.lstMessages->setItemHidden(current, !showCurrent);
       if (showCurrent) {
         _messagesShown++;
@@ -436,7 +457,7 @@ MessageLog::_getOpacity()
  the proper date, time and type.
 **/
 void 
-MessageLog::write(const char* type, const char* message)
+MessageLog::write(LogEvent::Severity type, QString message)
 {
   QTreeWidgetItem *newMessage = new QTreeWidgetItem();
  
@@ -451,13 +472,13 @@ MessageLog::write(const char* type, const char* message)
   }
   
   /* Change row color and text for serious warnings and errors */
-  if (!qstrcmp(type, MSG_VIDERR) or !qstrcmp(type, MSG_TORERR)) {
+  if (type == LogEvent::TorError || type == LogEvent::VidaliaError) {
     /* Critical messages are red with white text */
     for (int i=0; i < ui.lstMessages->columnCount(); i++) {
       newMessage->setBackgroundColor(i, Qt::red);
       newMessage->setTextColor(i, Qt::white);
     }
-  } else if (!qstrcmp(type, MSG_TORWARN)) {
+  } else if (type == LogEvent::TorWarn) {
     /* Warning messages are yellow with black text */
     for (int i=0; i < ui.lstMessages->columnCount(); i++) {
       newMessage->setBackgroundColor(i, Qt::yellow);
@@ -469,21 +490,35 @@ MessageLog::write(const char* type, const char* message)
 
   /* Set Type */
   newMessage->setTextAlignment(1, Qt::AlignCenter);
-  newMessage->setText(1, tr(type));
+  newMessage->setText(1, LogEvent::severityToString(type));
 
   /* Set Message Body */
-  newMessage->setText(2, tr(message));
+  newMessage->setText(2, message);
 
+  /* Store the numerical representation of the severity for this message */
+  newMessage->setData(1, 1, (uint)type);
+  
   /* Add the message to the bottom of the list */
   ui.lstMessages->addTopLevelItem(newMessage);
 
   /* Hide the message if necessary */
-  if (_settings->getShowMsg(type)) {
+  if (_filter & (uint)type) {
     _messagesShown++;
     ui.lstMessages->setStatusTip(QString("Messages Shown: %1")
                                   .arg(_messagesShown)); 
   } else {
     ui.lstMessages->setItemHidden(newMessage, true);
+  }
+}
+
+/** Custom event handler. Checks if the event is a log event. If it is, then
+ * it will write the message to the message log. */
+void
+MessageLog::customEvent(QEvent *event)
+{
+  if (event->type() == EventType::LogEvent) {
+    LogEvent *log = (LogEvent *)event;
+    write(log->severity(), log->message());
   }
 }
 

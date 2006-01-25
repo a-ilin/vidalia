@@ -26,18 +26,24 @@
 
 #include <QString>
 #include <QEvent>
+#include "../config/messagetypes.h"
 
 class LogEvent : public QEvent
 {
 public:
   /** Log message severity levels */
   enum Severity {
-    Unknown,
-    Debug,
-    Info,
-    Notice,
-    Warn,
-    Error
+    Unknown = 0,
+    TorDebug      = TOR_DEBUG,
+    TorInfo       = TOR_INFO,
+    TorNotice     = TOR_NOTICE,
+    TorWarn       = TOR_WARN,
+    TorError      = TOR_ERROR,
+    VidaliaDebug  = VIDALIA_DEBUG,
+    VidaliaInfo   = VIDALIA_INFO,
+    VidaliaNotice = VIDALIA_NOTICE,
+    VidaliaWarn   = VIDALIA_WARN,
+    VidaliaError  = VIDALIA_ERROR
   };
   
   /** Default constructor */
@@ -47,7 +53,10 @@ public:
   
   /** Converts the string description of a severity to its enum value */
   static Severity toSeverity(QString strSeverity);
-  
+
+  /** Converts the Severity enum value to a string description */
+  static QString severityToString(Severity severity);
+
   /** Returns the severity of this log event */
   Severity severity();
   
@@ -55,7 +64,7 @@ public:
   QString message();
   
 private:
-    Severity _severity;
+  Severity _severity;
   QString  _message;
 };
 

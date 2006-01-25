@@ -78,10 +78,13 @@ public:
   /** Ask Tor for its version */
   QString getTorVersion(QString *errmsg = 0);
 
-  /** Register another event of interest with Tor */
-  bool addEvent(TorEvents::TorEvent e, QObject *obj, QString *errmsg = 0);
-  /** Remove a previously registered event */
-  bool removeEvent(TorEvents::TorEvent e, QObject *obj, QString *errmsg = 0);
+  /** Sets an event and its handler. If add is true, then the event is added,
+   * otherwise it is removed. If set is true, then the given event will be
+   * registered with Tor. */
+  bool setEvent(TorEvents::TorEvent e, QObject *obj, 
+                bool add, bool set = true, QString *errmsg = 0);
+  /** Registers for a set of logging events according to the given filter. */
+  bool setLogEvents(uint filter, QObject *obj, QString *errmsg = 0);
   /** Register events of interest with Tor */
   bool setEvents(QString *errmsg = 0);
   

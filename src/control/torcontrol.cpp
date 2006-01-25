@@ -295,32 +295,36 @@ TorControl::getTorVersion(QString *errmsg)
   return "<unknown>";
 }
 
-/** Adds an event and target object to the event list. If the control socket
- * is connected, then this method will try to register the new event with Tor,
- * otherwise it simply adds the event and handler to the event list and
- * returns true. */ 
+/** Sets an event and its handler. If add is true, then the event is added,
+ * otherwise it is removed. If set is true, then the given event will be
+ * registered with Tor. */
 bool
-TorControl::addEvent(TorEvents::TorEvent e, QObject *obj, QString *errmsg)
+TorControl::setEvent(TorEvents::TorEvent e, QObject *obj, 
+                     bool add, bool set, QString *errmsg)
 {
-  _torEvents.add(e, obj);
-  if (isConnected()) {
+  if (add) {
+    _torEvents.add(e, obj);
+  } else {
+    _torEvents.remove(e, obj);
+  }
+  if (set && isConnected()) {
     return setEvents(errmsg);
   }
   return true;
 }
 
-/** Removes an event and target object from the event list. If the control
- * socket is connected, then this method will try to register the new list of
- * events with Tor. Otherwise, it simply adds the event and handler to the
- * event list and returns true. */
+/** Registers for a set of logging events according to the given filter. If
+ * the control socket is currently connected, this method will try to register
+ * the log events with Tor, otherwise it will simply return true. */
 bool
-TorControl::removeEvent(TorEvents::TorEvent e, QObject *obj, QString *errmsg)
+TorControl::setLogEvents(uint filter, QObject *obj, QString *errmsg)
 {
-  _torEvents.remove(e, obj);
-  if (isConnected()) {
-    return setEvents(errmsg);
-  }
-  return true;
+  setEvent(TorEvents::LogError , obj, filter & LogEvent::TorError , false);
+  setEvent(TorEvents::LogWarn  , obj, filter & LogEvent::TorWarn  , false);
+  setEvent(TorEvents::LogNotice, obj, filter & LogEvent::TorNotice, false);
+  setEvent(TorEvents::LogInfo  , obj, filter & LogEvent::TorInfo  , false);
+  setEvent(TorEvents::LogDebug , obj, filter & LogEvent::TorDebug , false);
+  return (isConnected() ? setEvents(errmsg) : true);
 }
 
 /** Register for the events currently in the event list */

@@ -36,8 +36,8 @@
 
 #include "ui_messagelog.h"
 
+#include "../../control/torcontrol.h"
 #include "../../config/vidaliasettings.h"
-#include "../../config/messagetypes.h"
 
 class MessageLog : public QMainWindow
 {
@@ -45,24 +45,26 @@ class MessageLog : public QMainWindow
 
 public:
   /** Default constructor **/
-  MessageLog(QWidget *parent = 0, Qt::WFlags flags = 0);
+  MessageLog(TorControl *torControl, QWidget *parent = 0, Qt::WFlags flags = 0);
   
   /** Default destructor **/
   ~MessageLog();
   
   /** Adds the passed message to the message log as the specified type **/
-  void write(const char* type, const char* message);
+  void write(LogEvent::Severity, QString msg);
 
 protected:
   /** Catches the close event when the user clicks on the X in the titlebar */
   void closeEvent(QCloseEvent *e);
+  /** Called to deliver custom event types */
+  void customEvent(QEvent *event);
 
 public slots:
   /** Overridden QWidget.show() **/
   void show();
   /** Called when the user selects File->Close or Alt-F4*/
   void close();
-
+  
 private slots:
   /** Called when the user selects File->Save All **/
   void saveAll();
@@ -104,21 +106,26 @@ private:
   /** Shows/Hides messages based on message filters **/
   void _filterLog();
   
+  /** Registers the current message filter with Tor */
+  void _registerLogEvents();
+  
   /** Holds the maximum number of messages to log **/
   int _maxCount;
   
   /** Holds the number of messages currently displayed **/
   int _messagesShown;
 
+  /** A pointer to a TorControl object, used to register for log events */
+  TorControl* _torControl;
   /** A QDateTime object that handles getting the current time **/
   QDateTime* _clock;
-
   /** A QClipboard object that handles copying to the clipboard **/
   QClipboard* _clipboard;
-
   /** A VidaliaSettings object that handles getting/saving settings **/
   VidaliaSettings* _settings;
-  
+  /** Stores the current message filter */
+  uint _filter;
+
   /** Qt Designer generatated QObject **/
   Ui::MessageLog ui;
 };

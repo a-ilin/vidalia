@@ -29,7 +29,7 @@
 #include <QFileInfo>
 #include <QHostAddress>
 
-#include "messagetypes.h"
+#include "../control/logevent.h"
 
 /* On win32, we need to add the .exe onto Tor's filename */
 #ifdef Q_OS_WIN32
@@ -81,10 +81,8 @@ public:
   void setAuthToken(QByteArray token);
 
   /* Get and set display messages */
-  bool getShowMsg(const char* type);
-  void setShowMsg(const char* type, bool status);
-  bool getShowMsg(QString type);
-  void setShowMsg(QString type, bool status);
+  uint getMsgFilter();
+  void setMsgFilter(LogEvent::Severity severity, bool status);
 
   /* Get and set maximum number of messages to display in log */
   int getMaxMsgCount();

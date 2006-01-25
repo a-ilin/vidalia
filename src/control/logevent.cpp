@@ -44,19 +44,40 @@ LogEvent::toSeverity(QString strSeverity)
   Severity s;
   strSeverity = strSeverity.toUpper();
   if (strSeverity == "DEBUG") {
-    s = Debug;
+    s = TorDebug;
   } else if (strSeverity == "INFO") {
-    s = Info;
+    s = TorInfo;
   } else if (strSeverity == "NOTICE") {
-    s = Notice;
+    s = TorNotice;
   } else if (strSeverity == "WARN") {
-    s = Warn;
+    s = TorWarn;
   } else if (strSeverity == "ERR") {
-    s = Error;
+    s = TorError;
   } else {
     s = Unknown;
   }
   return s;
+}
+
+/** Converts a Severity enum value to a string description */
+QString
+LogEvent::severityToString(Severity s)
+{
+  QString str;
+  switch (s) {
+    case TorDebug:  str = MSG_TOR_DEBUG; break;
+    case TorInfo:   str = MSG_TOR_INFO; break;
+    case TorNotice: str = MSG_TOR_NOTICE; break;
+    case TorWarn:   str = MSG_TOR_WARN; break;
+    case TorError:  str = MSG_TOR_ERROR; break;
+    case VidaliaDebug:  str = MSG_VIDALIA_DEBUG; break;
+    case VidaliaInfo:   str = MSG_VIDALIA_INFO; break;
+    case VidaliaNotice: str = MSG_VIDALIA_NOTICE; break;
+    case VidaliaWarn:   str = MSG_VIDALIA_WARN; break;
+    case VidaliaError:  str = MSG_VIDALIA_ERROR; break;
+    default: str = "Unknown Error"; break;
+  }
+  return str;
 }
 
 /** Returns the severity of this log event */

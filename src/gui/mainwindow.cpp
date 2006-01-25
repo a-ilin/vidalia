@@ -55,16 +55,6 @@ MainWindow::MainWindow()
   /* Create the menubar (Mac) */
   createMenuBar();
 
-  /* Create a new MessageLog object so messages can be logged when not shown */
-  _messageLog = new MessageLog(this);
-  _messageLog->write(MSG_VIDERR, "This is a critical Vidalia error");
-  _messageLog->write(MSG_VIDSTAT, "This is a Vidalia status message");
-  _messageLog->write(MSG_TORINFO, "This is a tor info message");
-  _messageLog->write(MSG_TORWARN, "This is a tor warning");
-  _messageLog->write(MSG_TORERR, "This is a critical tor error");
-  _messageLog->write(MSG_TORDEBUG, "This is a tor debug message");
-  _messageLog->write(MSG_TORNOTE, "This is a note");
-
   /* Create a new TorControl object, used to communicate with and manipulate Tor */
   _torControl = new TorControl();
   connect(_torControl, SIGNAL(started()), this, SLOT(started()));
@@ -72,6 +62,9 @@ MainWindow::MainWindow()
                  this, SLOT(stopped(int, QProcess::ExitStatus)));
   connect(_torControl, SIGNAL(connected()), this, SLOT(connected()));
 
+  /* Create a new MessageLog object so messages can be logged when not shown */
+  _messageLog = new MessageLog(_torControl, this);
+  
   /* Put an icon in the system tray to indicate the status of Tor */
   _trayIcon = new TrayIcon(QPixmap(IMG_TOR_STOPPED),
                            tr("Tor is Stopped"), _trayMenu, this);
