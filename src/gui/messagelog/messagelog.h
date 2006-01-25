@@ -109,6 +109,9 @@ private:
   /** Registers the current message filter with Tor */
   void _registerLogEvents();
   
+  /** Saves the given list of items to a file */
+  void _save(QList<QTreeWidgetItem *> items);
+  
   /** Holds the maximum number of messages to log **/
   int _maxCount;
   
