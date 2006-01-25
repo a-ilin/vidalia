@@ -29,6 +29,9 @@
 #define COL_MSG   2 /* Message body column */
 #define ROLE_TYPE 1 /* Role used to store the numeric type */
 
+/* Define the format used for displaying the date and time of a log message */
+#define DATETIME_FMT  "MMM dd hh:mm:ss:zzz"
+      
 /** Default Constructor **/
 MessageLog::MessageLog(TorControl *torControl, QWidget *parent, Qt::WFlags flags)
 : QMainWindow(parent, flags)
@@ -303,9 +306,10 @@ MessageLog::_save(QList<QTreeWidgetItem *> items)
     }
    
     /* Sort the list of log messages by time */
-    QMap<QString, QTreeWidgetItem *> sortedList;
+    QMap<QDateTime, QTreeWidgetItem *> sortedList;
     foreach (QTreeWidgetItem *item, items) {
-      sortedList.insert(item->text(COL_TIME), item);
+      sortedList.insert(
+         QDateTime::fromString(item->text(COL_TIME), DATETIME_FMT), item);
     }
     
     /* Write out the message log to the file */
@@ -473,7 +477,7 @@ MessageLog::write(LogEvent::Severity type, QString message)
     
   /* Set Time */
   newMessage->setText(COL_TIME,
-      _clock->currentDateTime().toString("MMM dd hh:mm:ss:zzz"));
+      _clock->currentDateTime().toString(DATETIME_FMT));
 
   /* Set Type */
   newMessage->setTextAlignment(COL_TYPE, Qt::AlignCenter);
