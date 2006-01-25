@@ -24,6 +24,11 @@
 #include "../mainwindow.h"
 #include "messagelog.h"
 
+#define COL_TIME  0 /* Date/time column */
+#define COL_TYPE  1 /* Message severity type column */
+#define COL_MSG   2 /* Message body column */
+#define ROLE_TYPE 1 /* Role used to store the numeric type */
+
 /** Default Constructor **/
 MessageLog::MessageLog(TorControl *torControl, QWidget *parent, Qt::WFlags flags)
 : QMainWindow(parent, flags)
@@ -257,7 +262,7 @@ MessageLog::_filterLog()
     if (_messagesShown < _maxCount) {
       
       /* Show or hide message accordingly */
-      showCurrent = (bool)(_filter & (uint)current->data(1,1).toUInt());
+      showCurrent = (bool)(_filter & (uint)current->data(COL_TYPE,ROLE_TYPE).toUInt());
       ui.lstMessages->setItemHidden(current, !showCurrent);
       if (showCurrent) {
         _messagesShown++;
@@ -489,18 +494,18 @@ MessageLog::write(LogEvent::Severity type, QString message)
   }
     
   /* Set Time */
-  newMessage->setText(0, 
+  newMessage->setText(COL_TIME,
       _clock->currentDateTime().toString("MMM dd hh:mm:ss:zzz"));
 
   /* Set Type */
-  newMessage->setTextAlignment(1, Qt::AlignCenter);
-  newMessage->setText(1, LogEvent::severityToString(type));
+  newMessage->setTextAlignment(COL_TYPE, Qt::AlignCenter);
+  newMessage->setText(COL_TYPE, LogEvent::severityToString(type));
 
   /* Set Message Body */
-  newMessage->setText(2, message);
+  newMessage->setText(COL_MSG, message);
 
   /* Store the numerical representation of the severity for this message */
-  newMessage->setData(1, 1, (uint)type);
+  newMessage->setData(COL_TYPE, ROLE_TYPE, (uint)type);
   
   /* Add the message to the bottom of the list */
   ui.lstMessages->addTopLevelItem(newMessage);
