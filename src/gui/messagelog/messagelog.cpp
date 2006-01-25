@@ -486,7 +486,8 @@ MessageLog::write(LogEvent::Severity type, QString message)
   }
     
   /* Set Time */
-  newMessage->setText(0, _clock->currentDateTime().toString(Qt::TextDate));
+  newMessage->setText(0, 
+      _clock->currentDateTime().toString("MMM dd hh:mm:ss:zzz"));
 
   /* Set Type */
   newMessage->setTextAlignment(1, Qt::AlignCenter);
