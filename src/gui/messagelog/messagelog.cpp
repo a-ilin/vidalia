@@ -307,10 +307,9 @@ MessageLog::_save(QList<QTreeWidgetItem *> items)
     QApplication::setOverrideCursor(Qt::WaitCursor);
     
     foreach (QTreeWidgetItem *item, items) {
-      for (int j=0; j < ui.lstMessages->columnCount(); j++) {
-        out << item->text(j) << "    ";
-      }
-      out << "\n";
+      out << item->text(COL_TIME) << " ";
+      out << "[" << item->text(COL_TYPE) << "] ";
+      out << item->text(COL_MSG) << "\n";
     }
     QApplication::restoreOverrideCursor();
   }
