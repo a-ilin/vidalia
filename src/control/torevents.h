@@ -62,9 +62,14 @@ public:
 
   /** Parses an event message and emits the proper signal */
   void handleEvent(ControlReply reply);
- 
+
+  /** Dispatches a given event to all its handler targets. */
+  void dispatch(TorEvent e, QEvent *event);
+  
   /** Converts an Event to a string */
   static QString toString(TorEvents::TorEvent e);
+  /** Converts a log severity to an event */
+  static TorEvent toTorEvent(LogEvent::Severity severity);
 
 
 private:
@@ -74,11 +79,8 @@ private:
   
   /** Parses the event type from the event message */
   static TorEvent parseEventType(ReplyLine line);
-
   /** Converts a string to an Event */
   static TorEvent toTorEvent(QString event);
-  /** Converts a log severity to an event */
-  static TorEvent toTorEvent(LogEvent::Severity severity);
   
   /** Handle a bandwidth update event */
   void handleBandwidthUpdate(ReplyLine line);

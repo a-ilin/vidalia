@@ -80,6 +80,15 @@ TorEvents::eventList()
   return _eventList.keys();
 }
 
+/** Dispatches a given event to all its handler targets. */
+void
+TorEvents::dispatch(TorEvent e, QEvent *event)
+{
+  foreach (QObject *obj, _eventList.values(e)) {
+    QApplication::postEvent(obj, event);
+  }
+}
+
 /** Converts an event type to a string Tor understands */
 QString
 TorEvents::toString(TorEvent e)
@@ -194,9 +203,7 @@ TorEvents::handleBandwidthUpdate(ReplyLine line)
     quint64 bytesOut = (quint64)msg.at(2).toULongLong();
   
     /* Post the event to each of the interested targets */
-    foreach (QObject *target, _eventList.values(Bandwidth)) {
-      QApplication::postEvent(target, new BandwidthEvent(bytesIn, bytesOut));
-    }
+    dispatch(Bandwidth, new BandwidthEvent(bytesIn, bytesOut));
   }
 }
 
@@ -221,9 +228,7 @@ TorEvents::handleCircuitStatus(ReplyLine line)
     QString path = msg.at(3);
  
     /* Post the event to each of the interested targets */
-    foreach (QObject *target, _eventList.values(Circuit)) {
-      QApplication::postEvent(target, new CircuitEvent(circId, status, path));
-    }
+    dispatch(Circuit, new CircuitEvent(circId, status, path));
   }
 }
 
@@ -254,10 +259,7 @@ TorEvents::handleStreamStatus(ReplyLine line)
     QString targetAddr = msg.at(4);
 
     /* Post the event to each of the interested targets */
-    foreach (QObject *target, _eventList.values(Stream)) {
-      QApplication::postEvent(target, 
-          new StreamEvent(streamId, status, circId, targetAddr));
-    }
+    dispatch(Stream, new StreamEvent(streamId, status, circId, targetAddr));
   }
 }
 
@@ -279,8 +281,6 @@ TorEvents::handleLogMessage(ReplyLine line)
                                                  msg.mid(i+1));
   
   /* Post the event to each of the interested targets */
-  foreach (QObject *target, _eventList.values(toTorEvent(severity))) {
-    QApplication::postEvent(target, new LogEvent(severity, logLine));
-  }
+  dispatch(toTorEvent(severity), new LogEvent(severity, logLine));
 }
 
