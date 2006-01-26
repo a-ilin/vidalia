@@ -30,6 +30,7 @@
 #include "tray/trayicon.h"
 #include "aboutdialog/aboutdialog.h"
 #include "messagelog/messagelog.h"
+#include "bwgraph/bwgraph.h"
 
 class MainWindow : public QMainWindow
 {
@@ -48,20 +49,24 @@ public slots:
 
 
 private slots:
-  /** Called when the user selects "Start" from the popup menu. */
+  /** Called when the user selects "Start" from the menu. */
   void start();
   /** Called when the Tor process has successfully started. */
   void started();
-  /** Called when the user selects "Stop" form the popup menu. */
+  /** Called when the user selects "Stop" form the menu. */
   void stop();
   /** Called when the Tor process has exited, either expectedly or not. */
   void stopped(int errorCode, QProcess::ExitStatus exitStatus);
   /** Called when the control socket has connected to Tor. */
   void connected();
-  /** Called when the user selects "About" from the popup menu. */
-  void about();
-  /** Called when the user selects "View Message Log" from the popup menu. */
-  void message();
+  /** Called when the user selects "About" from the menu. */
+  void showAbout();
+  /** Called when the user selects "Message Log" from the menu. */
+  void showMessageLog();
+  /** Called when the user selects "Bandwidth Graph" from the menu. */
+  void showBandwidthGraph();
+  /** Called when the user selects chooses to display dialog */
+  void showWindow(QWidget *dialog);
   /** Called when the user exits Vidalia. */
   void close();
 
@@ -71,27 +76,24 @@ private:
   void createMenus();
   /** Create the actions on the tray menu or menubar */
   void createActions();
-  
   /** Creates a default menubar on Mac */
   void createMenuBar();
   /** Removes the default menubar on Mac */
   void removeMenuBar();
-  
   /* Used to determine if the Tor process exiting was intentional or not */
   bool _isIntentionalExit;
  
   /** Instantiates a window for logging messages from Tor */
   MessageLog* _messageLog;
-  
+  /** A pointer to a BandwidthGraph object, which displays bw usage */
+  BandwidthGraph* _bandwidthGraph;
   /** A TorControl object that handles communication with Tor */
-  TorControl* _torControl;
-  
+  TorControl* _torControl; 
   /** Instance of a tray icon that will appear in the system tray */
-  TrayIcon* _trayIcon;
+  TrayIcon* _trayIcon; 
   
   /** Define the popup menus for the system tray icon */
   QMenu* _trayMenu;
-  
   /** Defines the actions for the tray menu */
   QAction* _startAct;
   QAction* _stopAct;

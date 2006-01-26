@@ -21,8 +21,8 @@
 #  02110-1301, USA.
 #################################################################
 
-FORMS += $$PWD/aboutdialog.ui
+FORMS += $$PWD/bwgraph.ui
 
-HEADERS += $$PWD/aboutdialog.h
+HEADERS += $$PWD/bwgraph.h
 
-SOURCES += $$PWD/aboutdialog.cpp
+SOURCES += $$PWD/bwgraph.cpp

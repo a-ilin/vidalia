@@ -38,3 +38,4 @@ win32 {
 include($$PWD/tray/tray.pri)
 include($$PWD/aboutdialog/aboutdialog.pri)
 include($$PWD/messagelog/messagelog.pri)
+include($$PWD/bwgraph/bwgraph.pri)

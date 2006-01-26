@@ -64,6 +64,9 @@ MainWindow::MainWindow()
 
   /* Create a new MessageLog object so messages can be logged when not shown */
   _messageLog = new MessageLog(_torControl, this);
+ 
+  /* Create a new BandwidthGraph object so we can monitor bandwidth usage */
+  _bandwidthGraph = new BandwidthGraph(this);
   
   /* Put an icon in the system tray to indicate the status of Tor */
   _trayIcon = new TrayIcon(QPixmap(IMG_TOR_STOPPED),
@@ -79,6 +82,9 @@ MainWindow::~MainWindow()
   }
   if (_messageLog) {
     delete _messageLog;
+  }
+  if (_bandwidthGraph) {
+    delete _bandwidthGraph;
   }
 }
 
@@ -123,25 +129,32 @@ void
 MainWindow::createActions()
 {
   _startAct = new QAction(tr("Start"), this);
-  connect(_startAct, SIGNAL(triggered()), this, SLOT(start()));
+  connect(_startAct, SIGNAL(triggered()),
+      this, SLOT(start()));
   _startAct->setEnabled(true);
   
   _stopAct = new QAction(tr("Stop"), this);
-  connect(_stopAct, SIGNAL(triggered()), this, SLOT(stop()));
+  connect(_stopAct, SIGNAL(triggered()),
+      this, SLOT(stop()));
   _stopAct->setEnabled(false);
 
   _configAct = new QAction(tr("Configure"), this);
   
   _aboutAct = new QAction(tr("About"), this);
-  connect(_aboutAct, SIGNAL(triggered()), this, SLOT(about()));
+  connect(_aboutAct, SIGNAL(triggered()),
+      this, SLOT(showAbout()));
   
   _exitAct = new QAction(tr("Exit"), this);
-  connect(_exitAct, SIGNAL(triggered()), this, SLOT(close()));
+  connect(_exitAct, SIGNAL(triggered()),
+      this, SLOT(close()));
 
-  _bandwidthAct = new QAction(tr("Bandwidth Graph"), this); 
+  _bandwidthAct = new QAction(tr("Bandwidth Graph"), this);
+  connect(_bandwidthAct, SIGNAL(triggered()),
+      this, SLOT(showBandwidthGraph()));
 
   _messageAct = new QAction(tr("Message Log"), this);
-  connect(_messageAct, SIGNAL(triggered()), this, SLOT(message()));
+  connect(_messageAct, SIGNAL(triggered()),
+      this, SLOT(showMessageLog()));
 }
 
 /*
@@ -352,33 +365,44 @@ MainWindow::connected()
 }
 
 /*
- Creates an instance of AboutDialog or displays current
- instance if already created. 
+ Creates an instance of AboutDialog and shows it 
 */
 void 
-MainWindow::about()
+MainWindow::showAbout()
 {
   static AboutDialog* aboutDialog = new AboutDialog(_torControl, this);
-  if(!aboutDialog->isVisible()) {
-    aboutDialog->show();
-  } else {
-    aboutDialog->activateWindow();
-    aboutDialog->raise();
-  }
+  showWindow(aboutDialog);
 }
 
 /*
- Creates an instance of MessageLog or displays current
- instance if already created.
+ Shows Message Log
+*/
+void
+MainWindow::showMessageLog()
+{
+  showWindow(_messageLog);
+}
+
+/*
+ Shows Bandwidth Graph
+*/
+void
+MainWindow::showBandwidthGraph()
+{
+  showWindow(_bandwidthGraph);
+}
+
+/*
+ Displays a dialog or sets it as current if it's already displayed
 */
 void 
-MainWindow::message()
+MainWindow::showWindow(QWidget* dialog)
 {
-  if(!_messageLog->isVisible()) {
-    _messageLog->show();
+  if(!dialog->isVisible()) {
+    dialog->show();
   } else {
-    _messageLog->activateWindow();
-    _messageLog->raise();
+    dialog->activateWindow();
+    dialog->raise();
   }
 }
 
