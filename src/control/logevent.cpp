@@ -51,7 +51,7 @@ LogEvent::toSeverity(QString strSeverity)
     s = TorNotice;
   } else if (strSeverity == "WARN") {
     s = TorWarn;
-  } else if (strSeverity == "ERR") {
+  } else if (strSeverity == "ERR" || strSeverity == "ERROR") {
     s = TorError;
   } else {
     s = Unknown;
