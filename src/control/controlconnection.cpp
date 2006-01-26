@@ -44,7 +44,9 @@ ControlConnection::connect(QHostAddress addr, quint16 port, QString *errmsg)
   if (!waitForConnected(-1)) {
     if (errmsg) {
       *errmsg = 
-        QString("Error connecting to %1:%2 [%3]").arg(addr.toString()).arg(port).arg(errorString());
+        QString("Error connecting to %1:%2 [%3]").arg(addr.toString())
+                                                 .arg(port)
+                                                 .arg(errorString());
     }
     return false;
   }
