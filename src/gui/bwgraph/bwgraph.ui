@@ -8,9 +8,274 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>595</width>
-    <height>417</height>
+    <width>440</width>
+    <height>297</height>
    </rect>
+  </property>
+  <property name="palette" >
+   <palette>
+    <active>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+     <color>
+      <red>208</red>
+      <green>208</green>
+      <blue>208</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>247</red>
+      <green>247</green>
+      <blue>247</blue>
+     </color>
+     <color>
+      <red>120</red>
+      <green>120</green>
+      <blue>120</blue>
+     </color>
+     <color>
+      <red>160</red>
+      <green>160</green>
+      <blue>160</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>240</red>
+      <green>240</green>
+      <blue>240</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>128</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>247</red>
+      <green>247</green>
+      <blue>247</blue>
+     </color>
+    </active>
+    <inactive>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+     <color>
+      <red>208</red>
+      <green>208</green>
+      <blue>208</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>247</red>
+      <green>247</green>
+      <blue>247</blue>
+     </color>
+     <color>
+      <red>120</red>
+      <green>120</green>
+      <blue>120</blue>
+     </color>
+     <color>
+      <red>160</red>
+      <green>160</green>
+      <blue>160</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>240</red>
+      <green>240</green>
+      <blue>240</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+     <color>
+      <red>192</red>
+      <green>192</green>
+      <blue>192</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>247</red>
+      <green>247</green>
+      <blue>247</blue>
+     </color>
+    </inactive>
+    <disabled>
+     <color>
+      <red>120</red>
+      <green>120</green>
+      <blue>120</blue>
+     </color>
+     <color>
+      <red>208</red>
+      <green>208</green>
+      <blue>208</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>247</red>
+      <green>247</green>
+      <blue>247</blue>
+     </color>
+     <color>
+      <red>120</red>
+      <green>120</green>
+      <blue>120</blue>
+     </color>
+     <color>
+      <red>160</red>
+      <green>160</green>
+      <blue>160</blue>
+     </color>
+     <color>
+      <red>120</red>
+      <green>120</green>
+      <blue>120</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>120</red>
+      <green>120</green>
+      <blue>120</blue>
+     </color>
+     <color>
+      <red>240</red>
+      <green>240</green>
+      <blue>240</blue>
+     </color>
+     <color>
+      <red>240</red>
+      <green>240</green>
+      <blue>240</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>128</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>247</red>
+      <green>247</green>
+      <blue>247</blue>
+     </color>
+    </disabled>
+   </palette>
   </property>
   <property name="font" >
    <font>
@@ -32,14 +297,278 @@
   <property name="windowIcon" >
    <iconset resource="..\res\vidalia.qrc" >:/images/tor_logo16.png</iconset>
   </property>
-  <layout class="QGridLayout" >
+  <layout class="QVBoxLayout" >
    <property name="margin" >
     <number>9</number>
    </property>
    <property name="spacing" >
     <number>6</number>
    </property>
-   <item row="1" column="0" >
+   <item>
+    <layout class="QHBoxLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>0</number>
+     </property>
+     <item>
+      <layout class="QHBoxLayout" >
+       <property name="margin" >
+        <number>0</number>
+       </property>
+       <property name="spacing" >
+        <number>3</number>
+       </property>
+       <item>
+        <layout class="QHBoxLayout" >
+         <property name="margin" >
+          <number>0</number>
+         </property>
+         <property name="spacing" >
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_4" >
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>27</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Arial</family>
+             <pointsize>8</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+             <underline>false</underline>
+             <strikeout>false</strikeout>
+            </font>
+           </property>
+           <property name="text" >
+            <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:8pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;">&lt;span style=" font-size:8pt;">Since:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblStartTime" >
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>27</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Arial</family>
+             <pointsize>8</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+             <underline>false</underline>
+             <strikeout>false</strikeout>
+            </font>
+           </property>
+           <property name="text" >
+            <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:8pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;">&lt;span style=" font-size:8pt;">Jan 26 00:55:07&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" >
+         <property name="margin" >
+          <number>0</number>
+         </property>
+         <property name="spacing" >
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_3" >
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>27</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Arial</family>
+             <pointsize>8</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+             <underline>false</underline>
+             <strikeout>false</strikeout>
+            </font>
+           </property>
+           <property name="text" >
+            <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:8pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;">&lt;span style=" font-size:8pt;">Sent:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblSent" >
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>27</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Arial</family>
+             <pointsize>8</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+             <underline>false</underline>
+             <strikeout>false</strikeout>
+            </font>
+           </property>
+           <property name="contextMenuPolicy" >
+            <enum>Qt::NoContextMenu</enum>
+           </property>
+           <property name="frameShape" >
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow" >
+            <enum>QFrame::Plain</enum>
+           </property>
+           <property name="text" >
+            <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:8pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;">&lt;span style=" font-size:8pt;">679.07 MB&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+           </property>
+           <property name="scaledContents" >
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" >
+         <property name="margin" >
+          <number>0</number>
+         </property>
+         <property name="spacing" >
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_2" >
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>27</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Arial</family>
+             <pointsize>8</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+             <underline>false</underline>
+             <strikeout>false</strikeout>
+            </font>
+           </property>
+           <property name="text" >
+            <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:8pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;">&lt;span style=" font-size:8pt;">Recieved:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblRecieved" >
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>27</height>
+            </size>
+           </property>
+           <property name="font" >
+            <font>
+             <family>Arial</family>
+             <pointsize>8</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+             <underline>false</underline>
+             <strikeout>false</strikeout>
+            </font>
+           </property>
+           <property name="contextMenuPolicy" >
+            <enum>Qt::NoContextMenu</enum>
+           </property>
+           <property name="toolTip" >
+            <string/>
+           </property>
+           <property name="frameShape" >
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow" >
+            <enum>QFrame::Plain</enum>
+           </property>
+           <property name="text" >
+            <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">435.38 MB&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+           </property>
+           <property name="scaledContents" >
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer>
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" >
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QFrame" name="grmGraph" >
+     <property name="minimumSize" >
+      <size>
+       <width>381</width>
+       <height>111</height>
+      </size>
+     </property>
+     <property name="font" >
+      <font>
+       <family>Arial</family>
+       <pointsize>8</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+       <underline>false</underline>
+       <strikeout>false</strikeout>
+      </font>
+     </property>
+     <property name="contextMenuPolicy" >
+      <enum>Qt::CustomContextMenu</enum>
+     </property>
+     <property name="frameShape" >
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Plain</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QFrame" name="frmProperties" >
      <property name="sizePolicy" >
       <sizepolicy>
@@ -51,268 +580,15 @@
      </property>
      <property name="minimumSize" >
       <size>
-       <width>170</width>
-       <height>340</height>
+       <width>381</width>
+       <height>71</height>
       </size>
      </property>
      <property name="maximumSize" >
       <size>
-       <width>170</width>
-       <height>340</height>
+       <width>381</width>
+       <height>71</height>
       </size>
-     </property>
-     <property name="contextMenuPolicy" >
-      <enum>Qt::NoContextMenu</enum>
-     </property>
-     <property name="frameShape" >
-      <enum>QFrame::StyledPanel</enum>
-     </property>
-     <property name="frameShadow" >
-      <enum>QFrame::Raised</enum>
-     </property>
-     <layout class="QVBoxLayout" >
-      <property name="margin" >
-       <number>9</number>
-      </property>
-      <property name="spacing" >
-       <number>6</number>
-      </property>
-      <item>
-       <widget class="QGroupBox" name="grpGraphs" >
-        <property name="contextMenuPolicy" >
-         <enum>Qt::NoContextMenu</enum>
-        </property>
-        <property name="title" >
-         <string>Graphs</string>
-        </property>
-        <layout class="QVBoxLayout" >
-         <property name="margin" >
-          <number>9</number>
-         </property>
-         <property name="spacing" >
-          <number>6</number>
-         </property>
-         <item>
-          <layout class="QVBoxLayout" >
-           <property name="margin" >
-            <number>0</number>
-           </property>
-           <property name="spacing" >
-            <number>6</number>
-           </property>
-           <item>
-            <widget class="QCheckBox" name="chkShowUpload" >
-             <property name="contextMenuPolicy" >
-              <enum>Qt::NoContextMenu</enum>
-             </property>
-             <property name="toolTip" >
-              <string>Toggles display of Upload Graph</string>
-             </property>
-             <property name="layoutDirection" >
-              <enum>Qt::RightToLeft</enum>
-             </property>
-             <property name="text" >
-              <string>Show Upload</string>
-             </property>
-             <property name="checked" >
-              <bool>false</bool>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QCheckBox" name="chkShowDownload" >
-             <property name="toolTip" >
-              <string>Toggles display of Download Graph</string>
-             </property>
-             <property name="layoutDirection" >
-              <enum>Qt::RightToLeft</enum>
-             </property>
-             <property name="text" >
-              <string>Show Download</string>
-             </property>
-             <property name="checked" >
-              <bool>false</bool>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <spacer>
-           <property name="orientation" >
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" >
-            <size>
-             <width>20</width>
-             <height>31</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item>
-       <widget class="QGroupBox" name="grpOpacity" >
-        <property name="contextMenuPolicy" >
-         <enum>Qt::NoContextMenu</enum>
-        </property>
-        <property name="title" >
-         <string>Window Opacity</string>
-        </property>
-        <layout class="QVBoxLayout" >
-         <property name="margin" >
-          <number>9</number>
-         </property>
-         <property name="spacing" >
-          <number>6</number>
-         </property>
-         <item>
-          <layout class="QHBoxLayout" >
-           <property name="margin" >
-            <number>0</number>
-           </property>
-           <property name="spacing" >
-            <number>0</number>
-           </property>
-           <item>
-            <widget class="QLabel" name="lblPercentOpacity" >
-             <property name="text" >
-              <string>TextLabel</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QLabel" name="label" >
-             <property name="text" >
-              <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">% Opaque&lt;/p>&lt;/body>&lt;/html></string>
-             </property>
-            </widget>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <widget class="QSlider" name="sldrOpacity" >
-           <property name="contextMenuPolicy" >
-            <enum>Qt::NoContextMenu</enum>
-           </property>
-           <property name="toolTip" >
-            <string>Changes the transparancy of the Message Log</string>
-           </property>
-           <property name="minimum" >
-            <number>30</number>
-           </property>
-           <property name="maximum" >
-            <number>100</number>
-           </property>
-           <property name="value" >
-            <number>100</number>
-           </property>
-           <property name="sliderPosition" >
-            <number>100</number>
-           </property>
-           <property name="tracking" >
-            <bool>false</bool>
-           </property>
-           <property name="orientation" >
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="invertedAppearance" >
-            <bool>false</bool>
-           </property>
-           <property name="tickPosition" >
-            <enum>QSlider::TicksBelow</enum>
-           </property>
-           <property name="tickInterval" >
-            <number>10</number>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </widget>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" >
-        <property name="margin" >
-         <number>0</number>
-        </property>
-        <property name="spacing" >
-         <number>6</number>
-        </property>
-        <item>
-         <spacer>
-          <property name="orientation" >
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" >
-           <size>
-            <width>31</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-        <item>
-         <layout class="QVBoxLayout" >
-          <property name="margin" >
-           <number>0</number>
-          </property>
-          <property name="spacing" >
-           <number>6</number>
-          </property>
-          <item>
-           <widget class="QPushButton" name="btnOK" >
-            <property name="contextMenuPolicy" >
-             <enum>Qt::NoContextMenu</enum>
-            </property>
-            <property name="text" >
-             <string>OK</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="btnCancel" >
-            <property name="contextMenuPolicy" >
-             <enum>Qt::NoContextMenu</enum>
-            </property>
-            <property name="text" >
-             <string>Cancel</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <spacer>
-          <property name="orientation" >
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" >
-           <size>
-            <width>31</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
-       </layout>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="0" column="0" colspan="2" >
-    <widget class="QFrame" name="frmStats" >
-     <property name="font" >
-      <font>
-       <family>Arial</family>
-       <pointsize>10</pointsize>
-       <weight>50</weight>
-       <italic>false</italic>
-       <bold>false</bold>
-       <underline>false</underline>
-       <strikeout>false</strikeout>
-      </font>
      </property>
      <property name="contextMenuPolicy" >
       <enum>Qt::NoContextMenu</enum>
@@ -325,300 +601,380 @@
      </property>
      <layout class="QHBoxLayout" >
       <property name="margin" >
-       <number>9</number>
+       <number>2</number>
       </property>
       <property name="spacing" >
-       <number>6</number>
+       <number>5</number>
       </property>
       <item>
-       <widget class="QPushButton" name="btnProperties" >
-        <property name="font" >
-         <font>
-          <family>Arial</family>
-          <pointsize>8</pointsize>
-          <weight>50</weight>
-          <italic>false</italic>
-          <bold>false</bold>
-          <underline>false</underline>
-          <strikeout>false</strikeout>
-         </font>
-        </property>
-        <property name="contextMenuPolicy" >
-         <enum>Qt::NoContextMenu</enum>
-        </property>
-        <property name="toolTip" >
-         <string>Toggles Properties window</string>
-        </property>
-        <property name="text" >
-         <string>Show Properties</string>
-        </property>
-        <property name="checkable" >
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
        <layout class="QHBoxLayout" >
         <property name="margin" >
          <number>0</number>
         </property>
         <property name="spacing" >
-         <number>0</number>
+         <number>3</number>
         </property>
         <item>
-         <widget class="QLabel" name="label_4" >
-          <property name="font" >
-           <font>
-            <family>Arial</family>
-            <pointsize>8</pointsize>
-            <weight>50</weight>
-            <italic>false</italic>
-            <bold>false</bold>
-            <underline>false</underline>
-            <strikeout>false</strikeout>
-           </font>
+         <layout class="QVBoxLayout" >
+          <property name="margin" >
+           <number>0</number>
           </property>
-          <property name="text" >
-           <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:8pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;">&lt;span style=" font-size:8pt;">Since:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+          <property name="spacing" >
+           <number>2</number>
           </property>
-         </widget>
+          <item>
+           <widget class="QCheckBox" name="chkRecieveRate" >
+            <property name="font" >
+             <font>
+              <family>Arial</family>
+              <pointsize>8</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+              <underline>false</underline>
+              <strikeout>false</strikeout>
+             </font>
+            </property>
+            <property name="contextMenuPolicy" >
+             <enum>Qt::NoContextMenu</enum>
+            </property>
+            <property name="toolTip" >
+             <string/>
+            </property>
+            <property name="layoutDirection" >
+             <enum>Qt::RightToLeft</enum>
+            </property>
+            <property name="text" >
+             <string>Recieve Rate</string>
+            </property>
+            <property name="checked" >
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="chkSendRate" >
+            <property name="font" >
+             <font>
+              <family>Arial</family>
+              <pointsize>8</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+              <underline>false</underline>
+              <strikeout>false</strikeout>
+             </font>
+            </property>
+            <property name="contextMenuPolicy" >
+             <enum>Qt::NoContextMenu</enum>
+            </property>
+            <property name="toolTip" >
+             <string/>
+            </property>
+            <property name="layoutDirection" >
+             <enum>Qt::RightToLeft</enum>
+            </property>
+            <property name="text" >
+             <string>Send Rate</string>
+            </property>
+            <property name="checked" >
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="chkTotalRate" >
+            <property name="font" >
+             <font>
+              <family>Arial</family>
+              <pointsize>8</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+              <underline>false</underline>
+              <strikeout>false</strikeout>
+             </font>
+            </property>
+            <property name="contextMenuPolicy" >
+             <enum>Qt::NoContextMenu</enum>
+            </property>
+            <property name="toolTip" >
+             <string/>
+            </property>
+            <property name="layoutDirection" >
+             <enum>Qt::RightToLeft</enum>
+            </property>
+            <property name="text" >
+             <string>Total Rate</string>
+            </property>
+            <property name="checked" >
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
         <item>
-         <widget class="QLabel" name="lblStartTime" >
-          <property name="font" >
-           <font>
-            <family>Arial</family>
-            <pointsize>8</pointsize>
-            <weight>50</weight>
-            <italic>false</italic>
-            <bold>false</bold>
-            <underline>false</underline>
-            <strikeout>false</strikeout>
-           </font>
+         <layout class="QVBoxLayout" >
+          <property name="margin" >
+           <number>0</number>
           </property>
-          <property name="text" >
-           <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:8pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;">&lt;span style=" font-size:8pt;">Jan 26 00:55:07&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+          <property name="spacing" >
+           <number>2</number>
           </property>
-         </widget>
+          <item>
+           <widget class="QCheckBox" name="chkShowGrid" >
+            <property name="font" >
+             <font>
+              <family>Arial</family>
+              <pointsize>8</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+              <underline>false</underline>
+              <strikeout>false</strikeout>
+             </font>
+            </property>
+            <property name="contextMenuPolicy" >
+             <enum>Qt::NoContextMenu</enum>
+            </property>
+            <property name="toolTip" >
+             <string/>
+            </property>
+            <property name="layoutDirection" >
+             <enum>Qt::RightToLeft</enum>
+            </property>
+            <property name="text" >
+             <string>Show Grid</string>
+            </property>
+            <property name="checked" >
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="chkShowLegend" >
+            <property name="font" >
+             <font>
+              <family>Arial</family>
+              <pointsize>8</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+              <underline>false</underline>
+              <strikeout>false</strikeout>
+             </font>
+            </property>
+            <property name="contextMenuPolicy" >
+             <enum>Qt::NoContextMenu</enum>
+            </property>
+            <property name="toolTip" >
+             <string/>
+            </property>
+            <property name="layoutDirection" >
+             <enum>Qt::RightToLeft</enum>
+            </property>
+            <property name="text" >
+             <string>Show Legend</string>
+            </property>
+            <property name="checked" >
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="chkShowScale" >
+            <property name="font" >
+             <font>
+              <family>Arial</family>
+              <pointsize>8</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+              <underline>false</underline>
+              <strikeout>false</strikeout>
+             </font>
+            </property>
+            <property name="contextMenuPolicy" >
+             <enum>Qt::NoContextMenu</enum>
+            </property>
+            <property name="toolTip" >
+             <string/>
+            </property>
+            <property name="layoutDirection" >
+             <enum>Qt::RightToLeft</enum>
+            </property>
+            <property name="text" >
+             <string>Show Scale</string>
+            </property>
+            <property name="checked" >
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
        </layout>
       </item>
       <item>
-       <spacer>
-        <property name="orientation" >
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" >
-         <size>
-          <width>51</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" >
+       <layout class="QVBoxLayout" >
         <property name="margin" >
-         <number>0</number>
+         <number>2</number>
         </property>
         <property name="spacing" >
-         <number>0</number>
+         <number>6</number>
         </property>
         <item>
-         <widget class="QLabel" name="label_3" >
-          <property name="font" >
-           <font>
-            <family>Arial</family>
-            <pointsize>8</pointsize>
-            <weight>50</weight>
-            <italic>false</italic>
-            <bold>false</bold>
-            <underline>false</underline>
-            <strikeout>false</strikeout>
-           </font>
+         <layout class="QHBoxLayout" >
+          <property name="margin" >
+           <number>0</number>
           </property>
-          <property name="text" >
-           <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:8pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;">&lt;span style=" font-size:8pt;">Sent:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+          <property name="spacing" >
+           <number>0</number>
           </property>
-         </widget>
+          <item>
+           <widget class="QLabel" name="lblPercentOpacity" >
+            <property name="font" >
+             <font>
+              <family>Arial</family>
+              <pointsize>8</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+              <underline>false</underline>
+              <strikeout>false</strikeout>
+             </font>
+            </property>
+            <property name="text" >
+             <string>TextLabel</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label" >
+            <property name="font" >
+             <font>
+              <family>Arial</family>
+              <pointsize>8</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+              <underline>false</underline>
+              <strikeout>false</strikeout>
+             </font>
+            </property>
+            <property name="text" >
+             <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:8pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;">&lt;span style=" font-size:8pt;">% Opaque&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+            </property>
+           </widget>
+          </item>
+         </layout>
         </item>
         <item>
-         <widget class="QLabel" name="lblSent" >
-          <property name="font" >
-           <font>
-            <family>Arial</family>
-            <pointsize>8</pointsize>
-            <weight>50</weight>
-            <italic>false</italic>
-            <bold>false</bold>
-            <underline>false</underline>
-            <strikeout>false</strikeout>
-           </font>
-          </property>
-          <property name="contextMenuPolicy" >
-           <enum>Qt::NoContextMenu</enum>
-          </property>
-          <property name="frameShape" >
-           <enum>QFrame::StyledPanel</enum>
-          </property>
-          <property name="frameShadow" >
-           <enum>QFrame::Plain</enum>
-          </property>
-          <property name="text" >
-           <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:8pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;">&lt;span style=" font-size:8pt;">679.07 MB&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
-          </property>
-          <property name="scaledContents" >
-           <bool>false</bool>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </item>
-      <item>
-       <layout class="QHBoxLayout" >
-        <property name="margin" >
-         <number>0</number>
-        </property>
-        <property name="spacing" >
-         <number>0</number>
-        </property>
-        <item>
-         <widget class="QLabel" name="label_2" >
-          <property name="font" >
-           <font>
-            <family>Arial</family>
-            <pointsize>8</pointsize>
-            <weight>50</weight>
-            <italic>false</italic>
-            <bold>false</bold>
-            <underline>false</underline>
-            <strikeout>false</strikeout>
-           </font>
-          </property>
-          <property name="text" >
-           <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:8pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;">&lt;span style=" font-size:8pt;">Recieved:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="lblRecieved" >
-          <property name="font" >
-           <font>
-            <family>Arial</family>
-            <pointsize>8</pointsize>
-            <weight>50</weight>
-            <italic>false</italic>
-            <bold>false</bold>
-            <underline>false</underline>
-            <strikeout>false</strikeout>
-           </font>
-          </property>
+         <widget class="QSlider" name="sldrOpacity" >
           <property name="contextMenuPolicy" >
            <enum>Qt::NoContextMenu</enum>
           </property>
           <property name="toolTip" >
-           <string/>
+           <string>Changes the transparancy of the Message Log</string>
           </property>
-          <property name="frameShape" >
-           <enum>QFrame::StyledPanel</enum>
+          <property name="minimum" >
+           <number>30</number>
           </property>
-          <property name="frameShadow" >
-           <enum>QFrame::Plain</enum>
+          <property name="maximum" >
+           <number>100</number>
           </property>
-          <property name="text" >
-           <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:8pt;">435.38 MB&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+          <property name="value" >
+           <number>100</number>
           </property>
-          <property name="scaledContents" >
+          <property name="sliderPosition" >
+           <number>100</number>
+          </property>
+          <property name="tracking" >
            <bool>false</bool>
+          </property>
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="invertedAppearance" >
+           <bool>false</bool>
+          </property>
+          <property name="tickPosition" >
+           <enum>QSlider::TicksBelow</enum>
+          </property>
+          <property name="tickInterval" >
+           <number>10</number>
           </property>
          </widget>
         </item>
        </layout>
       </item>
       <item>
-       <widget class="QPushButton" name="btnReset_2" >
-        <property name="font" >
-         <font>
-          <family>Arial</family>
-          <pointsize>8</pointsize>
-          <weight>50</weight>
-          <italic>false</italic>
-          <bold>false</bold>
-          <underline>false</underline>
-          <strikeout>false</strikeout>
-         </font>
+       <layout class="QVBoxLayout" >
+        <property name="margin" >
+         <number>0</number>
         </property>
-        <property name="contextMenuPolicy" >
-         <enum>Qt::NoContextMenu</enum>
+        <property name="spacing" >
+         <number>6</number>
         </property>
-        <property name="toolTip" >
-         <string>Resets Sent/Recieved statistics</string>
-        </property>
-        <property name="text" >
-         <string>Reset</string>
-        </property>
-       </widget>
+        <item>
+         <widget class="QPushButton" name="btnOK" >
+          <property name="maximumSize" >
+           <size>
+            <width>61</width>
+            <height>21</height>
+           </size>
+          </property>
+          <property name="font" >
+           <font>
+            <family>Arial</family>
+            <pointsize>8</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+           </font>
+          </property>
+          <property name="contextMenuPolicy" >
+           <enum>Qt::NoContextMenu</enum>
+          </property>
+          <property name="text" >
+           <string>OK</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnCancel" >
+          <property name="maximumSize" >
+           <size>
+            <width>61</width>
+            <height>21</height>
+           </size>
+          </property>
+          <property name="font" >
+           <font>
+            <family>Arial</family>
+            <pointsize>8</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+           </font>
+          </property>
+          <property name="contextMenuPolicy" >
+           <enum>Qt::NoContextMenu</enum>
+          </property>
+          <property name="text" >
+           <string>Cancel</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </widget>
-   </item>
-   <item row="1" column="1" >
-    <layout class="QVBoxLayout" >
-     <property name="margin" >
-      <number>0</number>
-     </property>
-     <property name="spacing" >
-      <number>6</number>
-     </property>
-     <item>
-      <widget class="QTabWidget" name="tabUpload" >
-       <property name="minimumSize" >
-        <size>
-         <width>90</width>
-         <height>150</height>
-        </size>
-       </property>
-       <property name="focusPolicy" >
-        <enum>Qt::NoFocus</enum>
-       </property>
-       <property name="contextMenuPolicy" >
-        <enum>Qt::NoContextMenu</enum>
-       </property>
-       <property name="tabPosition" >
-        <enum>QTabWidget::North</enum>
-       </property>
-       <property name="tabShape" >
-        <enum>QTabWidget::Rounded</enum>
-       </property>
-       <widget class="QWidget" name="pgUpload" >
-        <attribute name="title" >
-         <string>Upload Rate</string>
-        </attribute>
-       </widget>
-      </widget>
-     </item>
-     <item>
-      <widget class="QTabWidget" name="tabDownload" >
-       <property name="minimumSize" >
-        <size>
-         <width>90</width>
-         <height>150</height>
-        </size>
-       </property>
-       <property name="focusPolicy" >
-        <enum>Qt::NoFocus</enum>
-       </property>
-       <property name="tabShape" >
-        <enum>QTabWidget::Rounded</enum>
-       </property>
-       <widget class="QWidget" name="pgDownload" >
-        <attribute name="title" >
-         <string>Download Rate</string>
-        </attribute>
-       </widget>
-      </widget>
-     </item>
-    </layout>
    </item>
   </layout>
  </widget>
@@ -626,22 +982,5 @@
  <resources>
   <include location="../res/vidalia.qrc" />
  </resources>
- <connections>
-  <connection>
-   <sender>btnProperties</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>frmProperties</receiver>
-   <slot>setHidden(bool)</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>208</x>
-     <y>59</y>
-    </hint>
-    <hint type="destinationlabel" >
-     <x>85</x>
-     <y>262</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>
