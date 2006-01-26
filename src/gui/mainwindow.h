@@ -65,8 +65,6 @@ private slots:
   void showMessageLog();
   /** Called when the user selects "Bandwidth Graph" from the menu. */
   void showBandwidthGraph();
-  /** Called when the user selects chooses to display dialog */
-  void showWindow(QWidget *dialog);
   /** Called when the user exits Vidalia. */
   void close();
 

@@ -371,7 +371,12 @@ void
 MainWindow::showAbout()
 {
   static AboutDialog* aboutDialog = new AboutDialog(_torControl, this);
-  showWindow(aboutDialog);
+  if(!aboutDialog->isVisible()) {
+    aboutDialog->show();
+  } else {
+    aboutDialog->activateWindow();
+    aboutDialog->raise();
+  }
 }
 
 /*
@@ -380,7 +385,12 @@ MainWindow::showAbout()
 void
 MainWindow::showMessageLog()
 {
-  showWindow(_messageLog);
+  if(!_messageLog->isVisible()) {
+    _messageLog->show();
+  } else {
+    _messageLog->activateWindow();
+    _messageLog->raise();
+  }
 }
 
 /*
@@ -389,20 +399,10 @@ MainWindow::showMessageLog()
 void
 MainWindow::showBandwidthGraph()
 {
-  showWindow(_bandwidthGraph);
-}
-
-/*
- Displays a dialog or sets it as current if it's already displayed
-*/
-void 
-MainWindow::showWindow(QWidget* dialog)
-{
-  if(!dialog->isVisible()) {
-    dialog->show();
+  if(!_bandwidthGraph->isVisible()) {
+    _bandwidthGraph->show();
   } else {
-    dialog->activateWindow();
-    dialog->raise();
+    _bandwidthGraph->activateWindow();
+    _bandwidthGraph->raise();
   }
 }
-
