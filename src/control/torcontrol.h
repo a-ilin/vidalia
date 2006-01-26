@@ -121,6 +121,7 @@ private slots:
   void onStopped(int exitCode, QProcess::ExitStatus exitStatus);
   void onConnected();
   void onDisconnected();
+  void onLogStdout(QString severity, QString message);
 };
 
 #endif

@@ -74,7 +74,9 @@ TorControl::start(QString *errmsg)
                    this, SLOT(onStarted()));
   QObject::connect(_torProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
                    this, SLOT(onStopped(int, QProcess::ExitStatus)));
-  
+  QObject::connect(_torProcess, SIGNAL(log(QString, QString)),
+                   this, SLOT(onLogStdout(QString, QString)));
+
   /* Attempt to start the Tor process */
   if (!_torProcess->start(settings.getTorExecutable(),
                           settings.getTorArguments(), errmsg)) {
@@ -124,6 +126,14 @@ TorControl::isRunning()
   return false;
 }
 
+/** Called when Tor has printed a log message to stdout. */
+void
+TorControl::onLogStdout(QString severity, QString message)
+{
+  LogEvent::Severity s = LogEvent::toSeverity(severity);
+  _torEvents.dispatch(TorEvents::toTorEvent(s), new LogEvent(s, message));
+}
+
 /** Connect to Tor's control port. The control port to use is determined by
  * Vidalia's configuration file. */
 bool
@@ -139,8 +149,12 @@ TorControl::connect(QString *errmsg)
 void
 TorControl::onConnected()
 {
+  /* Start the message pump */
   _messages->start();
+  /* Let interested parties know that the control socket connected */
   emit connected();
+  /* The control socket is connected, so we can stop reading from stdout */
+  _torProcess->logStdout(false);
 }
 
 /** Disconnect from Tor's control port */
