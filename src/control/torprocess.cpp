@@ -22,6 +22,8 @@
  ****************************************************************/
 
 #include <QFileInfo>
+#include <QCoreApplication>
+
 
 /* Needed for _PROCESS_INFORMATION so that pid() works on Win32 */
 #if defined (Q_OS_WIN32)
@@ -30,12 +32,21 @@
   
 #include "torprocess.h"
 
+/** Default constructor */
 TorProcess::TorProcess()
 {
+  _log = true;
+  setReadChannelMode(QProcess::MergedChannels);
+  QObject::connect(this, SIGNAL(readyRead()), 
+                   this, SLOT(onReadyRead()), Qt::DirectConnection);
 }
 
+/** Destructor */
 TorProcess::~TorProcess()
 {
+  /* We're being destroyed. Don't read stdout anymore and flush any pending
+   * events. */
+  logStdout(false);
 }
 
 /** Attempts to start the Tor process using the location, executable, and
@@ -71,7 +82,7 @@ bool TorProcess::start(QFileInfo app, QStringList args, QString *errmsg)
   exec = path + " " + args.join(" ");
   
   /* Attempt to start Tor with the given command-line arguments */
-  QProcess::start(exec);
+  QProcess::start(exec, QIODevice::ReadOnly | QIODevice::Text);
   return true;
 }
 
@@ -105,6 +116,7 @@ TorProcess::stop(QString *errmsg)
   return true;
 }
 
+/** Return the process ID for the current process. */
 qint64
 TorProcess::pid()
 {
@@ -113,6 +125,41 @@ TorProcess::pid()
 #else
   return QProcess::pid();
 #endif
+}
+
+/** If the boolean value <b>log</b> is true, then the log() signal will be
+ * emitted when Tor writes a log message to stdout. If <b>log</b> is false,
+ * then no signal will be emitted for a log message. */
+void
+TorProcess::logStdout(bool log)
+{
+  if (!log) {
+    /* We're going to stop monitoring log events on stdout, so make sure all
+     * events up until now have been processed. */
+    QCoreApplication::processEvents();
+  }
+  _log = log;
+}
+
+/** Called when there is data to be read from stdout */
+void
+TorProcess::onReadyRead()
+{
+  int i, j;
+  while (canReadLine()) {
+    /* Pull the waiting data from the buffer. Note that we do this even if the
+     * log event won't be emitted, so that the size of the waiting buffer doesn't 
+     * keep growing. */
+    QString line = readLine();
+    if (_log) {
+      /* If _log is set, then we will parse the log message and emit log() */
+      i = line.indexOf("[") ;
+      j = line.indexOf("]") ;
+      if (i > 0 && j > 0) {
+        emit log(line.mid(i+1, j-i-1), line.mid(j+2));
+      }
+    }
+  }
 }
 
 /** Returns a string description of the last QProcess::ProcessError

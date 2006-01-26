@@ -29,21 +29,38 @@
 
 class TorProcess : public QProcess
 {
+  Q_OBJECT
+
 public:
   TorProcess();
   ~TorProcess();
 
-  /* Start the Tor process */
+  /** Start the Tor process */
   bool start(QFileInfo app, QStringList args, QString *errmsg = 0);
-  
-  /* Stop the Tor process */
+  /** Stop the Tor process */
   bool stop(QString *errmsg = 0);
 
-  /* Returns a QString describing the last QProcess::ProcessError */
+  /** Returns a QString describing the last QProcess::ProcessError */
   QString errorString();
 
-  /* Return the Tor process's PID (workaround for some Windows funkiness) */
+  /** Return the Tor process's PID (workaround for some Windows funkiness) */
   qint64 pid();
+
+  /** Logs messages Tor prints to stdout */
+  void logStdout(bool log);
+
+signals:
+  /** Emitted when Tor prints a log message to the console */
+  void log(QString severity, QString message);
+
+private slots:
+  /** Called when there is data to be read from stdout */
+  void onReadyRead();
+
+private:
+  /** If _log is true, then the log() signal will be emitted when a log
+   * message is written to stdout. */
+  bool _log;
 };
 
 #endif
