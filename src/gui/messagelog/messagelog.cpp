@@ -38,7 +38,10 @@ MessageLog::MessageLog(TorControl *torControl, QWidget *parent, Qt::WFlags flags
 {
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
- 
+
+  /* FIXME Hide this for now, remove/enable later on */
+  ui.grpVidMessages->setVisible(false);
+
   /* Create necessary Message Log QObjects */
   _torControl = torControl;
   _settings = new VidaliaSettings();
@@ -127,7 +130,7 @@ MessageLog::_setToolTips()
   ui.chkTorErr->setToolTip(tr("Messages that appear when something has \n"
                               "gone very wrong and Tor cannot proceed."));
   ui.chkTorWarn->setToolTip(tr("Messages that only appear when \n"
-                               "something has gone wrong."));
+                               "something has gone wrong with Tor."));
   ui.chkTorNote->setToolTip(tr("Messages that appear infrequently \n"
                                "during normal Tor operation and are \n"
                                "not considered errors, but you may \n"
@@ -138,8 +141,16 @@ MessageLog::_setToolTips()
                                 "interest to Tor developers.")); 
   ui.chkVidErr->setToolTip(tr("Messages that appear when something \n"
                               "has gone very wrong with Vidalia.")); 
-  ui.chkVidStat->setToolTip(tr("Messages that appear freqently indicating \n"
-                               "Vidalia operation status information."));
+  ui.chkVidWarn->setToolTip(tr("Messages that only appear when \n"
+                               "something has gone wrong with Vidalia."));
+  ui.chkVidNote->setToolTip(tr("Messages that appear infrequently \n"
+                               "during normal Vidalia operation and are \n"
+                               "not considered errors, but you may \n"
+                               "care about.")); 
+  ui.chkVidInfo->setToolTip(tr("Messages that appear freqently \n"
+                               "during normal Vidalia operation."));
+  ui.chkVidDebug->setToolTip(tr("Vidalia messages used by developers for  \n"
+                                "debugging purposes.")); 
 }
 
 /**
@@ -166,7 +177,10 @@ MessageLog::_loadSettings()
   ui.chkTorInfo->setChecked(_filter & LogEvent::TorInfo);
   ui.chkTorDebug->setChecked(_filter & LogEvent::TorDebug);
   ui.chkVidErr->setChecked(_filter & LogEvent::VidaliaError);
-  ui.chkVidStat->setChecked(_filter & LogEvent::VidaliaWarn);
+  ui.chkVidWarn->setChecked(_filter & LogEvent::VidaliaWarn);
+  ui.chkVidNote->setChecked(_filter & LogEvent::VidaliaNotice);
+  ui.chkVidInfo->setChecked(_filter & LogEvent::VidaliaInfo);
+  ui.chkVidDebug->setChecked(_filter & LogEvent::VidaliaInfo);
 }
 
 /** Attempts to register the selected message filter with Tor and displays an
@@ -217,7 +231,10 @@ MessageLog::saveChanges()
   _settings->setMsgFilter(LogEvent::TorInfo, ui.chkTorInfo->isChecked());
   _settings->setMsgFilter(LogEvent::TorDebug, ui.chkTorDebug->isChecked());
   _settings->setMsgFilter(LogEvent::VidaliaError, ui.chkVidErr->isChecked());
-  _settings->setMsgFilter(LogEvent::VidaliaWarn, ui.chkVidStat->isChecked());
+  _settings->setMsgFilter(LogEvent::VidaliaWarn, ui.chkVidWarn->isChecked());
+  _settings->setMsgFilter(LogEvent::VidaliaNotice, ui.chkVidNote->isChecked());
+  _settings->setMsgFilter(LogEvent::VidaliaInfo, ui.chkVidInfo->isChecked());
+  _settings->setMsgFilter(LogEvent::VidaliaDebug, ui.chkVidDebug->isChecked());
 
   /* Refilter the list */
   _registerLogEvents();
@@ -468,7 +485,7 @@ MessageLog::write(LogEvent::Severity type, QString message)
       newMessage->setBackgroundColor(i, Qt::red);
       newMessage->setTextColor(i, Qt::white);
     }
-  } else if (type == LogEvent::TorWarn) {
+  } else if (type == LogEvent::TorWarn || type == LogEvent::VidaliaWarn) {
     /* Warning messages are yellow with black text */
     for (int i=0; i < ui.lstMessages->columnCount(); i++) {
       newMessage->setBackgroundColor(i, Qt::yellow);
@@ -516,7 +533,7 @@ MessageLog::customEvent(QEvent *event)
 }
 
 /** 
- Overrloads the default show() slot so we can set opacity
+ Overloads the default show() slot so we can set opacity
 **/
 void
 MessageLog::show()

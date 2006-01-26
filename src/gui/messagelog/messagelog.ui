@@ -275,7 +275,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QGroupBox" name="groupBox_2" >
+        <widget class="QGroupBox" name="grpVidMessages" >
          <property name="contextMenuPolicy" >
           <enum>Qt::NoContextMenu</enum>
          </property>
@@ -311,7 +311,7 @@
              </widget>
             </item>
             <item>
-             <widget class="QCheckBox" name="chkVidStat" >
+             <widget class="QCheckBox" name="chkVidWarn" >
               <property name="contextMenuPolicy" >
                <enum>Qt::NoContextMenu</enum>
               </property>
@@ -319,24 +319,41 @@
                <string/>
               </property>
               <property name="text" >
-               <string>Vidalia Status</string>
+               <string>Vidalia Warn</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="chkVidNote" >
+              <property name="contextMenuPolicy" >
+               <enum>Qt::NoContextMenu</enum>
+              </property>
+              <property name="text" >
+               <string>Vidalia Notice</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="chkVidInfo" >
+              <property name="contextMenuPolicy" >
+               <enum>Qt::NoContextMenu</enum>
+              </property>
+              <property name="text" >
+               <string>Vidalia Info</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QCheckBox" name="chkVidDebug" >
+              <property name="contextMenuPolicy" >
+               <enum>Qt::NoContextMenu</enum>
+              </property>
+              <property name="text" >
+               <string>Vidalia Debug</string>
               </property>
              </widget>
             </item>
            </layout>
-          </item>
-          <item>
-           <spacer>
-            <property name="orientation" >
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" >
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
           </item>
          </layout>
         </widget>

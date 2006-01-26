@@ -33,6 +33,7 @@
 #include <QMessageBox>
 #include <QTextStream>
 #include <QClipboard>
+#include <QHeaderView>
 
 #include "ui_messagelog.h"
 
@@ -46,10 +47,8 @@ class MessageLog : public QMainWindow
 public:
   /** Default constructor **/
   MessageLog(TorControl *torControl, QWidget *parent = 0, Qt::WFlags flags = 0);
-  
   /** Default destructor **/
   ~MessageLog();
-  
   /** Adds the passed message to the message log as the specified type **/
   void write(LogEvent::Severity, QString msg);
 
@@ -60,7 +59,7 @@ protected:
   void customEvent(QEvent *event);
 
 public slots:
-  /** Overridden QWidget.show() **/
+  /** Overloaded QWidget.show() **/
   void show();
   /** Called when the user selects File->Close or Alt-F4*/
   void close();
@@ -68,53 +67,38 @@ public slots:
 private slots:
   /** Called when the user selects File->Save All **/
   void saveAll();
- 
   /** Called when the user selects File->Save Selected **/
   void saveSelected();
-  
   /** Called when the user selects Edit->Copy or Ctrl-C **/
   void copy();
-
   /** Called when the user selects View->Clear all or Ctrl-E **/
   void clear();
- 
   /** Called when the opactity slider changes value **/
   void setOpacity(int value);
-
   /** Called when settings button is toggled **/
   void showSettingsFrame(bool show);
-  
   /** Called when user saves settings **/
   void saveChanges();
-  
   /** Called when user cancels changed settings **/
   void cancelChanges();
   
 private:  
   /** Create and bind actions to events **/
   void _createActions();
-  
   /** Set Tool Tips for various widgets **/
   void _setToolTips();
-
   /** Loads the saved Message Log settings **/
   void _loadSettings();
-
   /** Returns the current opacity of the Message Log window **/
   int _getOpacity();
-  
   /** Shows/Hides messages based on message filters **/
   void _filterLog();
-  
   /** Registers the current message filter with Tor */
   void _registerLogEvents();
-  
   /** Saves the given list of items to a file */
   void _save(QList<QTreeWidgetItem *> items);
-  
   /** Holds the maximum number of messages to log **/
   int _maxCount;
-  
   /** Holds the number of messages currently displayed **/
   int _messagesShown;
 
