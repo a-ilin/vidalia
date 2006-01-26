@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>445</width>
-    <height>335</height>
+    <width>546</width>
+    <height>421</height>
    </rect>
   </property>
   <property name="palette" >
@@ -297,14 +297,14 @@
   <property name="windowIcon" >
    <iconset resource="..\res\vidalia.qrc" >:/images/tor_logo16.png</iconset>
   </property>
-  <layout class="QGridLayout" >
+  <layout class="QVBoxLayout" >
    <property name="margin" >
     <number>9</number>
    </property>
    <property name="spacing" >
     <number>6</number>
    </property>
-   <item row="0" column="0" >
+   <item>
     <layout class="QHBoxLayout" >
      <property name="margin" >
       <number>0</number>
@@ -538,7 +538,37 @@
      </item>
     </layout>
    </item>
-   <item row="2" column="0" >
+   <item>
+    <widget class="QFrame" name="grmGraph" >
+     <property name="minimumSize" >
+      <size>
+       <width>429</width>
+       <height>111</height>
+      </size>
+     </property>
+     <property name="font" >
+      <font>
+       <family>Arial</family>
+       <pointsize>8</pointsize>
+       <weight>50</weight>
+       <italic>false</italic>
+       <bold>false</bold>
+       <underline>false</underline>
+       <strikeout>false</strikeout>
+      </font>
+     </property>
+     <property name="contextMenuPolicy" >
+      <enum>Qt::CustomContextMenu</enum>
+     </property>
+     <property name="frameShape" >
+      <enum>QFrame::Box</enum>
+     </property>
+     <property name="frameShadow" >
+      <enum>QFrame::Plain</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
     <layout class="QHBoxLayout" >
      <property name="margin" >
       <number>0</number>
@@ -627,37 +657,7 @@
      </item>
     </layout>
    </item>
-   <item row="1" column="0" >
-    <widget class="QFrame" name="grmGraph" >
-     <property name="minimumSize" >
-      <size>
-       <width>429</width>
-       <height>111</height>
-      </size>
-     </property>
-     <property name="font" >
-      <font>
-       <family>Arial</family>
-       <pointsize>8</pointsize>
-       <weight>50</weight>
-       <italic>false</italic>
-       <bold>false</bold>
-       <underline>false</underline>
-       <strikeout>false</strikeout>
-      </font>
-     </property>
-     <property name="contextMenuPolicy" >
-      <enum>Qt::CustomContextMenu</enum>
-     </property>
-     <property name="frameShape" >
-      <enum>QFrame::Box</enum>
-     </property>
-     <property name="frameShadow" >
-      <enum>QFrame::Plain</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="3" column="0" >
+   <item>
     <widget class="QFrame" name="frmProperties" >
      <property name="sizePolicy" >
       <sizepolicy>
@@ -690,10 +690,10 @@
      </property>
      <layout class="QHBoxLayout" >
       <property name="margin" >
-       <number>2</number>
+       <number>3</number>
       </property>
       <property name="spacing" >
-       <number>5</number>
+       <number>3</number>
       </property>
       <item>
        <layout class="QHBoxLayout" >
@@ -1001,30 +1001,13 @@
       <item>
        <layout class="QVBoxLayout" >
         <property name="margin" >
-         <number>6</number>
+         <number>0</number>
         </property>
         <property name="spacing" >
          <number>6</number>
         </property>
         <item>
          <widget class="QPushButton" name="btnOK" >
-          <property name="maximumSize" >
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="font" >
-           <font>
-            <family>Arial</family>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <italic>false</italic>
-            <bold>false</bold>
-            <underline>false</underline>
-            <strikeout>false</strikeout>
-           </font>
-          </property>
           <property name="contextMenuPolicy" >
            <enum>Qt::NoContextMenu</enum>
           </property>
@@ -1035,23 +1018,6 @@
         </item>
         <item>
          <widget class="QPushButton" name="btnCancel" >
-          <property name="maximumSize" >
-           <size>
-            <width>16777215</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="font" >
-           <font>
-            <family>Arial</family>
-            <pointsize>10</pointsize>
-            <weight>50</weight>
-            <italic>false</italic>
-            <bold>false</bold>
-            <underline>false</underline>
-            <strikeout>false</strikeout>
-           </font>
-          </property>
           <property name="contextMenuPolicy" >
            <enum>Qt::NoContextMenu</enum>
           </property>
