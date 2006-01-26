@@ -498,7 +498,7 @@ MessageLog::write(LogEvent::Severity type, QString message)
     _messagesShown++;
     ui.lstMessages->setStatusTip(QString("Messages Shown: %1")
                                   .arg(_messagesShown));
-    ui.lstMessages->setCurrentItem(newMessage);
+    ui.lstMessages->scrollToItem(newMessage);
   } else {
     ui.lstMessages->setItemHidden(newMessage, true);
   }
