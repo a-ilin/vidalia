@@ -314,21 +314,18 @@ MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
   /* If we didn't intentionally close Tor, then check to see if it crashed or
    * if it closed itself and returned an error code. */
   if (!_isIntentionalExit) {
-    if (exitStatus == QProcess::CrashExit) {
-      QMessageBox::warning(this, tr("Tor Exited"),
-         tr("Vidalia detected that Tor exited unexpectedly.\n\n"
-            "Please check the message log for indicators\n"
-            "about what happened to Tor before it exited."),
-         QMessageBox::Ok, QMessageBox::NoButton);
-    } else if (exitCode != 0) {
-      /* A quick overview of Tor's code tells me that if it catches a SIGTERM or
-      * SIGINT, Tor will exit(0). We might need to change this warning message
-      * if this turns out to not be the case. */
-      QMessageBox::warning(this, tr("Tor Exited"),
-         tr("Tor exited and returned a non-zero exit code.\n\n"
-            "Please check the message log for indicators\n"
-            "about what happened to Tor before it exited."),
-         QMessageBox::Ok, QMessageBox::NoButton);
+    /* A quick overview of Tor's code tells me that if it catches a SIGTERM or
+     * SIGINT, Tor will exit(0). We might need to change this warning message
+     * if this turns out to not be the case. */
+    if (exitStatus == QProcess::CrashExit || exitCode != 0) {
+      int ret = QMessageBox::warning(this, tr("Tor Exited"),
+                  tr("Vidalia detected that Tor exited unexpectedly.\n\n"
+                     "Please check the message log for indicators\n"
+                     "about what happened to Tor before it exited."),
+                  tr("Show Log"), tr("Close"));
+      if (ret == 0) {
+        showMessageLog();  
+      }
     }
     
     /* Regardless of why it closed, it closed unintentionally so close the
