@@ -25,6 +25,14 @@
 
 #include "controlconnection.h"
 
+/** We wait a maximum of three seconds for the controll to connect or
+ * disconnect. */
+#define CONN_TIMEOUT 3000
+
+/** Timeout a read in 250 milliseconds. This can be short, because if there is
+ * no data waiting on the socket, we want to return anyway. */
+#define READ_TIMEOUT 250
+
 ControlConnection::ControlConnection()
 {
 }
@@ -41,7 +49,7 @@ bool
 ControlConnection::connect(QHostAddress addr, quint16 port, QString *errmsg)
 {
   connectToHost(addr, port);
-  if (!waitForConnected(-1)) {
+  if (!waitForConnected(CONN_TIMEOUT)) {
     if (errmsg) {
       *errmsg = 
         QString("Error connecting to %1:%2 [%3]").arg(addr.toString())
@@ -59,7 +67,7 @@ ControlConnection::disconnect(QString *errmsg)
 {
   disconnectFromHost();
   if (isConnected()) {
-    if (!waitForDisconnected(-1)) {
+    if (!waitForDisconnected(CONN_TIMEOUT)) {
       if (errmsg) {
         *errmsg =
           QString("Error disconnecting socket. [%1]").arg(errorString());
@@ -122,7 +130,7 @@ ControlConnection::readLine(QString &line, QString *errmsg)
       }
       return false;
     }
-    waitForReadyRead(250);
+    waitForReadyRead(READ_TIMEOUT);
   }
   line = QAbstractSocket::readLine();
   return true;
