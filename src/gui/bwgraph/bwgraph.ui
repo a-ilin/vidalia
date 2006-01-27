@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>423</width>
-    <height>286</height>
+    <width>439</width>
+    <height>302</height>
    </rect>
   </property>
   <property name="palette" >
@@ -297,12 +297,15 @@
   <property name="windowIcon" >
    <iconset resource="..\res\vidalia.qrc" >:/images/tor_logo16.png</iconset>
   </property>
+  <property name="sizeGripEnabled" >
+   <bool>true</bool>
+  </property>
   <layout class="QVBoxLayout" >
    <property name="margin" >
-    <number>2</number>
+    <number>9</number>
    </property>
    <property name="spacing" >
-    <number>2</number>
+    <number>6</number>
    </property>
    <item>
     <layout class="QHBoxLayout" >
