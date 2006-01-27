@@ -8,7 +8,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>439</width>
+    <width>360</width>
     <height>302</height>
    </rect>
   </property>
@@ -459,10 +459,10 @@
             <enum>Qt::NoContextMenu</enum>
            </property>
            <property name="frameShape" >
-            <enum>QFrame::StyledPanel</enum>
+            <enum>QFrame::Panel</enum>
            </property>
            <property name="frameShadow" >
-            <enum>QFrame::Plain</enum>
+            <enum>QFrame::Sunken</enum>
            </property>
            <property name="text" >
             <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:8pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;">679.07 MB&lt;/p>&lt;/body>&lt;/html></string>
@@ -502,12 +502,12 @@
             </font>
            </property>
            <property name="text" >
-            <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:8pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;">Recieved:&lt;/p>&lt;/body>&lt;/html></string>
+            <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Received:&lt;/p>&lt;/body>&lt;/html></string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QLabel" name="lblRecieved" >
+          <widget class="QLabel" name="lblReceived" >
            <property name="maximumSize" >
             <size>
              <width>16777215</width>
@@ -532,10 +532,10 @@
             <string/>
            </property>
            <property name="frameShape" >
-            <enum>QFrame::StyledPanel</enum>
+            <enum>QFrame::Panel</enum>
            </property>
            <property name="frameShadow" >
-            <enum>QFrame::Plain</enum>
+            <enum>QFrame::Sunken</enum>
            </property>
            <property name="text" >
             <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">435.38 MB&lt;/p>&lt;/body>&lt;/html></string>
@@ -587,10 +587,10 @@
       <enum>Qt::CustomContextMenu</enum>
      </property>
      <property name="frameShape" >
-      <enum>QFrame::Box</enum>
+      <enum>QFrame::Panel</enum>
      </property>
      <property name="frameShadow" >
-      <enum>QFrame::Plain</enum>
+      <enum>QFrame::Sunken</enum>
      </property>
     </widget>
    </item>
@@ -674,7 +674,7 @@
         <enum>Qt::NoContextMenu</enum>
        </property>
        <property name="toolTip" >
-        <string>Resets the Sent/Recieved Statistics</string>
+        <string>Resets the Sent/Received Statistics</string>
        </property>
        <property name="text" >
         <string>Reset Statistics</string>
@@ -695,13 +695,13 @@
      </property>
      <property name="minimumSize" >
       <size>
-       <width>421</width>
+       <width>341</width>
        <height>82</height>
       </size>
      </property>
      <property name="maximumSize" >
       <size>
-       <width>421</width>
+       <width>341</width>
        <height>82</height>
       </size>
      </property>
@@ -738,7 +738,7 @@
            <number>2</number>
           </property>
           <item>
-           <widget class="QCheckBox" name="chkRecieveRate" >
+           <widget class="QCheckBox" name="chkReceiveRate" >
             <property name="font" >
              <font>
               <family>Arial</family>
@@ -760,7 +760,7 @@
              <enum>Qt::RightToLeft</enum>
             </property>
             <property name="text" >
-             <string>Recieve Rate</string>
+             <string>Receive Rate</string>
             </property>
             <property name="checked" >
              <bool>false</bool>
@@ -821,106 +821,6 @@
             </property>
             <property name="text" >
              <string>Total Rate</string>
-            </property>
-            <property name="checked" >
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QVBoxLayout" >
-          <property name="margin" >
-           <number>2</number>
-          </property>
-          <property name="spacing" >
-           <number>2</number>
-          </property>
-          <item>
-           <widget class="QCheckBox" name="chkShowGrid" >
-            <property name="font" >
-             <font>
-              <family>Arial</family>
-              <pointsize>10</pointsize>
-              <weight>50</weight>
-              <italic>false</italic>
-              <bold>false</bold>
-              <underline>false</underline>
-              <strikeout>false</strikeout>
-             </font>
-            </property>
-            <property name="contextMenuPolicy" >
-             <enum>Qt::NoContextMenu</enum>
-            </property>
-            <property name="toolTip" >
-             <string/>
-            </property>
-            <property name="layoutDirection" >
-             <enum>Qt::RightToLeft</enum>
-            </property>
-            <property name="text" >
-             <string>Grid</string>
-            </property>
-            <property name="checked" >
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="chkShowLegend" >
-            <property name="font" >
-             <font>
-              <family>Arial</family>
-              <pointsize>10</pointsize>
-              <weight>50</weight>
-              <italic>false</italic>
-              <bold>false</bold>
-              <underline>false</underline>
-              <strikeout>false</strikeout>
-             </font>
-            </property>
-            <property name="contextMenuPolicy" >
-             <enum>Qt::NoContextMenu</enum>
-            </property>
-            <property name="toolTip" >
-             <string/>
-            </property>
-            <property name="layoutDirection" >
-             <enum>Qt::RightToLeft</enum>
-            </property>
-            <property name="text" >
-             <string>Legend</string>
-            </property>
-            <property name="checked" >
-             <bool>false</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QCheckBox" name="chkShowScale" >
-            <property name="font" >
-             <font>
-              <family>Arial</family>
-              <pointsize>10</pointsize>
-              <weight>50</weight>
-              <italic>false</italic>
-              <bold>false</bold>
-              <underline>false</underline>
-              <strikeout>false</strikeout>
-             </font>
-            </property>
-            <property name="contextMenuPolicy" >
-             <enum>Qt::NoContextMenu</enum>
-            </property>
-            <property name="toolTip" >
-             <string/>
-            </property>
-            <property name="layoutDirection" >
-             <enum>Qt::RightToLeft</enum>
-            </property>
-            <property name="text" >
-             <string>Scale</string>
             </property>
             <property name="checked" >
              <bool>false</bool>
