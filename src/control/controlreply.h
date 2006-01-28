@@ -48,7 +48,10 @@ public:
 
   /** Returns the status of the first line in the reply */
   QString getStatus();
-  
+
+  /** Returns the messasge of the first line in the reply */
+  QString getMessage();
+
 private:
   QList<ReplyLine> _lines;
 };

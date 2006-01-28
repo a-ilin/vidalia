@@ -40,6 +40,7 @@ ControlReply::appendLine(ReplyLine line)
   _lines << line;
 }
 
+/** Returns the requested line from this reply */
 ReplyLine
 ControlReply::getLine(int idx)
 {
@@ -58,5 +59,12 @@ QString
 ControlReply::getStatus()
 {
   return getLine().getStatus();
+}
+
+/** Returns the message of the first line in the reply */
+QString
+ControlReply::getMessage()
+{
+  return getLine().getMessage();
 }
 
