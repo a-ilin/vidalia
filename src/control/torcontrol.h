@@ -129,7 +129,8 @@ private:
 
   /** Send a message to Tor and read the response */
   bool send(ControlCommand cmd, ControlReply &reply, QString *errmsg = 0);
-  
+  /** Send a message to Tor and discard the response */
+  bool send(ControlCommand cmd, QString *errmsg = 0);
   
 /* The slots below simply relay signals from the appropriate member objects */
 private slots:

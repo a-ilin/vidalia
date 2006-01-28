@@ -179,11 +179,30 @@ TorControl::isConnected()
   return _controlConn.isValid();
 }
 
-/** Send a message to Tor and read the response */
+/** Send a message to Tor and reads the response. If Vidalia was unable to
+ * send the command to Tor or read its response, false is returned. If the
+ * response was read and the status code is not 250 OK, false is also
+ * returned. */
 bool
 TorControl::send(ControlCommand cmd, ControlReply &reply, QString *errmsg)
 {
-  return _messages->send(cmd, reply, errmsg);
+  if (_messages->send(cmd, reply, errmsg)) {
+    if (reply.getStatus() == "250") {
+      return true;
+    }
+    if (errmsg) {
+      *errmsg = reply.getMessage();
+    }
+  }
+  return false;
+}
+
+/** Sends a message to Tor and discards the response. */
+bool
+TorControl::send(ControlCommand cmd, QString *errmsg)
+{
+  ControlReply reply;
+  return send(cmd, reply, errmsg);
 }
 
 /** Sends an authentication token to Tor. This must be done before sending 
@@ -196,18 +215,7 @@ TorControl::authenticate(QString *errmsg)
 {
   VidaliaSettings settings;
   ControlCommand cmd("AUTHENTICATE", QString(settings.getAuthToken()));
-  ControlReply reply;
-
-  if (send(cmd, reply, errmsg)) {
-    ReplyLine line = reply.getLine();
-    if (line.getStatus() != "250") {
-      if (errmsg) {
-        *errmsg = line.getMessage();
-      }
-      return false;
-    }
-  }
-  return true;
+  return send(cmd, errmsg);
 }
 
 /** Sends a GETINFO message to Tor based on the given map of keyvals. The
@@ -228,27 +236,17 @@ TorControl::getInfo(QHash<QString,QString> &map, QString *errmsg)
  
   /* Ask Tor for the specified info values */
   if (send(cmd, reply, errmsg)) {
-  
     /* Parse the response for the returned values */
     foreach (ReplyLine line, reply.getLines()) {
-      if (line.getStatus() != "250") {
-        if (errmsg) {
-          *errmsg = line.getMessage();
-        }
-        return false;
-      }
-
       /* Split the "key=val" line and map them */
       QStringList keyval = line.getMessage().split("=");
       if (keyval.size() == 2) {
         map.insert(keyval.at(0), keyval.at(1));
       }
     }
-  } else {
-    /* Sending the control command failed */
-    return false;
+    return true;
   }
-  return true;
+  return false;
 }
 
 /** Overloaded method to send a GETINFO command for a single info value */
@@ -270,7 +268,6 @@ bool
 TorControl::signal(Signal sig, QString *errmsg)
 {
   ControlCommand cmd("SIGNAL");
-  ControlReply reply;
   QString sigtype;
   
   /* Convert the signal to the correct string */
@@ -282,20 +279,7 @@ TorControl::signal(Signal sig, QString *errmsg)
     case SignalHalt:     sigtype = "HALT"; break;
     default: return false;
   }
-  
-  /* Send and check the response */
-  if (!send(cmd, reply, errmsg)) {
-    return false;
-  } else {
-    ReplyLine line = reply.getLine();
-    if (line.getStatus() != "250") {
-      if (errmsg) {
-        *errmsg = line.getMessage();
-      }
-      return false;
-    }
-  }
-  return true;
+  return send(cmd, errmsg); 
 }
 
 /** Ask Tor for its version */
@@ -346,25 +330,12 @@ bool
 TorControl::setEvents(QString *errmsg)
 {
   ControlCommand cmd("SETEVENTS"); 
-  ControlReply reply;
 
   /* Add each event to the argument list */
   foreach (TorEvents::TorEvent e, _torEvents.eventList()) {
     cmd.addArgument(TorEvents::toString(e));
   }
-
-  /* Send the new list of events to Tor */
-  if (!send(cmd, reply, errmsg)) {
-    return false;
-  } else {
-    if (reply.getStatus() != "250") {
-      if (errmsg) {
-        *errmsg = reply.getLine().getMessage();
-      }
-      return false;
-    }
-  }
-  return true;
+  return send(cmd, errmsg);
 }
 
 /** Sets each configuration key in \emph map to the value associated with its
@@ -373,7 +344,6 @@ bool
 TorControl::setConf(QHash<QString,QString> map, QString *errmsg)
 {
   ControlCommand cmd("SETCONF");
-  ControlReply reply;
   QString arg, value;
   
   /* Add each keyvalue to the argument list */
@@ -385,19 +355,7 @@ TorControl::setConf(QHash<QString,QString> map, QString *errmsg)
     }
     cmd.addArgument(arg);
   }
-  
-  /* Send the new configuration values to Tor */
-  if (!send(cmd, reply, errmsg)) {
-    return false;
-  } else {
-    if (reply.getStatus() != "250") {
-      if (errmsg) {
-        *errmsg = reply.getLine().getMessage();
-      }
-      return false;
-    }
-  }
-  return true;
+  return send(cmd, errmsg); 
 }
 
 /** Sets a single configuration key to the given value. */
@@ -425,24 +383,15 @@ TorControl::getConf(QHash<QString,QString> &map, QString *errmsg)
   if (send(cmd, reply, errmsg)) {
     /* Parse the response for the returned values */
     foreach (ReplyLine line, reply.getLines()) {
-      if (line.getStatus() != "250") {
-        if (errmsg) {
-          *errmsg = line.getMessage();
-        }
-        return false;
-      }
-
       /* Split the "key=val" line and map them */
       QStringList keyval = line.getMessage().split("=");
       if (keyval.size() == 2) {
         map.insert(keyval.at(0), keyval.at(1));
       }
     }
-  } else {
-    /* Sending the control command failed */
-    return false;
+    return true;
   }
-  return true;
+  return false;
 }
 
 /** Gets a single configuration keyvalue. */
@@ -464,19 +413,7 @@ bool
 TorControl::saveConf(QString *errmsg)
 {
   ControlCommand cmd("SAVECONF");
-  ControlReply reply;
-
-  if(!send(cmd, reply, errmsg)) {
-    return false;
-  } else {
-    if (reply.getStatus() != "250") {
-      if (errmsg) {
-        *errmsg = reply.getMessage();
-      }
-      return false;
-    }
-  }
-  return true;
+  return send(cmd, errmsg);
 }
 
 /** Tells Tor to reset the given configuration keys back to defaults. */
@@ -484,23 +421,11 @@ bool
 TorControl::resetConf(QList<QString> keys, QString *errmsg)
 {
   ControlCommand cmd("RESETCONF");
-  ControlReply reply;
 
   /* Add each key to the argument list */
   foreach (QString key, keys) {
     cmd.addArgument(key);
   }
-  
-  if(!send(cmd, reply, errmsg)) {
-    return false;
-  } else {
-    if (reply.getStatus() != "250") {
-      if (errmsg) {
-        *errmsg = reply.getMessage();
-      }
-      return false;
-    }
-  }
-  return true;
+  return send(cmd, errmsg);
 }
 
