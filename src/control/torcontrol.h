@@ -41,10 +41,13 @@ class TorControl : public QObject
 public:
   /** Signals that can be sent by the controller */
   enum Signal {
-    SignalReload, SignalShutdown, SignalDump, SignalDebug, SignalHalt
+    SignalReload,   /**< SIGHUP: Reloads config items and refetch directory */
+    SignalShutdown, /**< SIGINT: Controlled shutdown */
+    SignalDump,     /**< SIGUSR1: Log information about current circuits */
+    SignalDebug,    /**< SIGUSR2: Switch all open logs to loglevel debug */
+    SignalHalt      /**< SIGTERM: Immediate shutdown */
   };
  
-
   /** Default constructor */
   TorControl();
   /** Default destructor */
@@ -88,6 +91,19 @@ public:
   /** Register events of interest with Tor */
   bool setEvents(QString *errmsg = 0);
   
+
+  /** Sets each configuration key in \emph map to the value associated with its key. */
+  bool setConf(QHash<QString,QString> map, QString *errmsg = 0);
+  /** Sets a single configuration key to the given value. */
+  bool setConf(QString key, QString value, QString *errmsg = 0);
+  /** Gets a set of configuration keyvalues and stores them in \emph map. */
+  bool getConf(QHash<QString,QString> &map, QString *errmsg = 0);
+  /** Gets a single configuration keyvalue. */
+  bool getConf(QString key, QString &value, QString *errmsg = 0);
+  /** Asks Tor to save the current configuration to its torrc */
+  bool saveConf(QString *errmsg = 0);
+  /** Tells Tor to reset the given configuration keys back to defaults. */
+  bool resetConf(QList<QString> keys, QString *errmsg = 0);
 
 signals:
   /** Emitted when the Tor process has started */

@@ -367,3 +367,140 @@ TorControl::setEvents(QString *errmsg)
   return true;
 }
 
+/** Sets each configuration key in \emph map to the value associated with its
+ * key. */
+bool
+TorControl::setConf(QHash<QString,QString> map, QString *errmsg)
+{
+  ControlCommand cmd("SETCONF");
+  ControlReply reply;
+  QString arg, value;
+  
+  /* Add each keyvalue to the argument list */
+  foreach (QString key, map.keys()) {
+    arg = key;
+    value = map.value(key);
+    if (value.length() > 0) {
+      arg += "=" + value;
+    }
+    cmd.addArgument(arg);
+  }
+  
+  /* Send the new configuration values to Tor */
+  if (!send(cmd, reply, errmsg)) {
+    return false;
+  } else {
+    if (reply.getStatus() != "250") {
+      if (errmsg) {
+        *errmsg = reply.getLine().getMessage();
+      }
+      return false;
+    }
+  }
+  return true;
+}
+
+/** Sets a single configuration key to the given value. */
+bool
+TorControl::setConf(QString key, QString value, QString *errmsg)
+{
+  QHash<QString,QString> map;
+  map.insert(key, value);
+  return setConf(map, errmsg);
+}
+
+/** Gets a set of configuration keyvalues and stores them in \emph map. */
+bool
+TorControl::getConf(QHash<QString,QString> &map, QString *errmsg)
+{
+  ControlCommand cmd("GETCONF");
+  ControlReply reply;
+
+  /* Add the keys as arguments to the GETINFO message */
+  foreach (QString key, map.keys()) {
+    cmd.addArgument(key);
+  }
+ 
+  /* Ask Tor for the specified info values */
+  if (send(cmd, reply, errmsg)) {
+    /* Parse the response for the returned values */
+    foreach (ReplyLine line, reply.getLines()) {
+      if (line.getStatus() != "250") {
+        if (errmsg) {
+          *errmsg = line.getMessage();
+        }
+        return false;
+      }
+
+      /* Split the "key=val" line and map them */
+      QStringList keyval = line.getMessage().split("=");
+      if (keyval.size() == 2) {
+        map.insert(keyval.at(0), keyval.at(1));
+      }
+    }
+  } else {
+    /* Sending the control command failed */
+    return false;
+  }
+  return true;
+}
+
+/** Gets a single configuration keyvalue. */
+bool
+TorControl::getConf(QString key, QString &value, QString *errmsg)
+{
+  QHash<QString,QString> map;
+  map.insert(key, "");
+
+  if (getConf(map, errmsg)) {
+    value = map.value(key);
+    return true;
+  }
+  return false;
+}
+
+/** Asks Tor to save the current configuration to its torrc. */
+bool
+TorControl::saveConf(QString *errmsg)
+{
+  ControlCommand cmd("SAVECONF");
+  ControlReply reply;
+
+  if(!send(cmd, reply, errmsg)) {
+    return false;
+  } else {
+    if (reply.getStatus() != "250") {
+      if (errmsg) {
+        *errmsg = reply.getMessage();
+      }
+      return false;
+    }
+  }
+  return true;
+}
+
+/** Tells Tor to reset the given configuration keys back to defaults. */
+bool
+TorControl::resetConf(QList<QString> keys, QString *errmsg)
+{
+  ControlCommand cmd("RESETCONF");
+  ControlReply reply;
+
+  /* Add each key to the argument list */
+  foreach (QString key, keys) {
+    cmd.addArgument(key);
+  }
+  
+  if(!send(cmd, reply, errmsg)) {
+    return false;
+  } else {
+    if (reply.getStatus() != "250") {
+      if (errmsg) {
+        *errmsg = reply.getMessage();
+      }
+      return false;
+    }
+  }
+  return true;
+}
+
