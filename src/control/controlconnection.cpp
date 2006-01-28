@@ -25,14 +25,6 @@
 
 #include "controlconnection.h"
 
-/** We wait a maximum of three seconds for the controll to connect or
- * disconnect. */
-#define CONN_TIMEOUT 3000
-
-/** Timeout a read in 250 milliseconds. This can be short, because if there is
- * no data waiting on the socket, we want to return anyway. */
-#define READ_TIMEOUT 250
-
 ControlConnection::ControlConnection()
 {
 }

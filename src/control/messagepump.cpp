@@ -125,7 +125,7 @@ MessagePump::run()
       }
     } else {
       /* No data is on the socket, so wait a little bit and then try again */
-      _conn->waitForReadyRead(250);
+      _conn->waitForReadyRead(READ_TIMEOUT);
     }
   }
   /* Let stop() know that we're exiting now */

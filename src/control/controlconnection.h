@@ -29,6 +29,14 @@
 #include "controlcommand.h"
 #include "controlreply.h"
 
+/** Give up after waiting three seconds for the control socket to connect to
+ * Tor. */
+#define CONN_TIMEOUT  3000
+
+/** Timeout reads in 250ms. We can set this to a short value because if there
+ * isn't any data to read, we want to return anyway. */
+#define READ_TIMEOUT  250
+ 
 class ControlConnection : public QTcpSocket
 {
 public:
