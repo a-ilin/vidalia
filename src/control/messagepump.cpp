@@ -71,9 +71,8 @@ MessagePump::stop()
 bool
 MessagePump::send(ControlCommand cmd, ControlReply &reply, QString *errmsg)
 {
-  bool rc;
   _mutex.lock();
-  if ((rc = _conn->sendCommand(cmd, errmsg)) == true) {
+  if (_conn->sendCommand(cmd, errmsg)) {
     if (_run) {
       /* Add a new waiter and add it to the queue */
       Waiter *w = new Waiter(&_mutex, &_waitCond);
