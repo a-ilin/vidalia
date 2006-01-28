@@ -1,6 +1,4 @@
 /****************************************************************
- *  $Id$
- * 
  *  Vidalia is distributed under the following license:
  *
  *  Copyright (C) 2006,  Matt Edman, Justin Hipple
@@ -21,6 +19,14 @@
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
 
+/** \file mainwindow.cpp
+ * \version $Id$
+ *
+ * Implements the main window. The main window is a hidden window that serves
+ * as the parent of the tray icon and popup menu, as well as other application
+ * dialogs.
+ */
+
 #include <QtGui>
 
 #include "mainwindow.h"
@@ -37,7 +43,8 @@
 #endif
 
 
-/** Default constructor */
+/** Default constructor. It installs an icon in the system tray area and
+ * creates the popup menu associated with that icon. */
 MainWindow::MainWindow()
 {
 #if defined(Q_WS_MAC)
@@ -122,10 +129,8 @@ MainWindow::close()
   QCoreApplication::quit();
 }
 
-/* 
-  Create and bind actions to events. Setup for initial
-  tray menu configuration.
-*/
+/** Create and bind actions to events. Setup for initial
+ * tray menu configuration. */
 void 
 MainWindow::createActions()
 {
@@ -158,10 +163,10 @@ MainWindow::createActions()
       this, SLOT(showMessageLog()));
 }
 
-/*
-  Creates a QMenu object that contains QActions
-  which compose the system tray menu.
-*/
+/**
+ * Creates a QMenu object that contains QActions
+ *  which compose the system tray menu.
+ */
 void 
 MainWindow::createMenus()
 {
@@ -213,7 +218,7 @@ MainWindow::createMenuBar()
 #endif
 }
 
-/** Removes the menubar. */
+/** Removes the menubar (Mac only). */
 void
 MainWindow::removeMenuBar()
 {
@@ -224,9 +229,11 @@ MainWindow::removeMenuBar()
 #endif
 }
 
-/*
- Starts Tor, modifies tray icon and tray menu appropriately
-*/
+/** Attempts to start Tor. If starting Tor fails, then it will display a
+ * message box giving the user an error message regarding why Tor failed to
+ * start.
+ * \sa started()
+ */
 void 
 MainWindow::start()
 {
@@ -272,9 +279,7 @@ MainWindow::started()
   } 
 }
 
-/*
- Stops Tor
-*/
+/** Disconnects the control socket and stops the Tor process. */
 void 
 MainWindow::stop()
 {
@@ -362,9 +367,8 @@ MainWindow::connected()
   }
 }
 
-/*
- Creates an instance of AboutDialog and shows it 
-*/
+/** Creates an instance of AboutDialog and shows it. If the About dialog is
+ * already displayed, the existing instance will be brought to the foreground. */
 void 
 MainWindow::showAbout()
 {
@@ -377,9 +381,8 @@ MainWindow::showAbout()
   }
 }
 
-/*
- Shows Message Log
-*/
+/** Shows Message Log. If the message log is already displayed, the existing
+ * instance will be brought to the foreground. */
 void
 MainWindow::showMessageLog()
 {
@@ -391,9 +394,8 @@ MainWindow::showMessageLog()
   }
 }
 
-/*
- Shows Bandwidth Graph
-*/
+/** Shows Bandwidth Graph. If the bandwidth graph is already displayed, the
+ * existing instance will be brought to the foreground. */
 void
 MainWindow::showBandwidthGraph()
 {
@@ -404,3 +406,4 @@ MainWindow::showBandwidthGraph()
     _bandwidthGraph->raise();
   }
 }
+

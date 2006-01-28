@@ -1,6 +1,4 @@
 /****************************************************************
- *  $Id$
- * 
  *  Vidalia is distributed under the following license:
  *
  *  Copyright (C) 2006,  Matt Edman, Justin Hipple
@@ -21,6 +19,13 @@
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
 
+/** \file main.cpp
+ * \version $Id$
+ * Contains the main Vidalia entry point.
+ * On Mac, it will use the native Mac style and use the Plastique style on all
+ * other platforms.
+ */
+ 
 #include <QApplication>
 
 #ifdef Q_WS_MAC
@@ -31,6 +36,8 @@
 
 #include "mainwindow.h"
 
+
+/** Main application entry point. */
 int 
 main(int argc, char *argv[])
 {
