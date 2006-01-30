@@ -25,13 +25,8 @@ DESTDIR = ../bin/
 TEMPLATE = app
 
 CONFIG += qt thread
-!win32 {
-  # It doesn't seem Qt 4.1 on Windows can build in debug mode
-  CONFIG += debug
-} else {
-  # Force building in release mode
-  CONFIG += release
-}
+CONFIG += debug
+CONFIG += release
 CONFIG += warn_on
 
 # Include the network module
