@@ -89,8 +89,6 @@ private:
   void _setToolTips();
   /** Loads the saved Message Log settings **/
   void _loadSettings();
-  /** Returns the current opacity of the Message Log window **/
-  int _getOpacity();
   /** Shows/Hides messages based on message filters **/
   void _filterLog();
   /** Registers the current message filter with Tor */

@@ -629,7 +629,7 @@
           <number>0</number>
          </property>
          <property name="spacing" >
-          <number>6</number>
+          <number>3</number>
          </property>
          <item>
           <widget class="QGroupBox" name="groupBox_3" >
@@ -693,6 +693,19 @@
             </item>
            </layout>
           </widget>
+         </item>
+         <item>
+          <spacer>
+           <property name="orientation" >
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" >
+            <size>
+             <width>20</width>
+             <height>21</height>
+            </size>
+           </property>
+          </spacer>
          </item>
          <item>
           <widget class="QGroupBox" name="grpOpacity" >

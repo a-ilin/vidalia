@@ -70,12 +70,12 @@ MessageLog::MessageLog(TorControl *torControl, QWidget *parent, Qt::WFlags flags
   /* Turn off opacity group on unsupported platforms */
 #if defined(Q_WS_WIN)
   if(!(QSysInfo::WV_2000 <= QSysInfo::WindowsVersion <= QSysInfo::WV_2003)) {
-    ui.grpOpacity->setDisabled(true);
+    ui.grpOpacity->setVisible(false);
     }
 #endif
   
 #if defined(Q_WS_X11)
-  ui.grpOpacity->setDisabled(true);
+  ui.grpOpacity->setVisible(false);
 #endif
 }
 
@@ -154,8 +154,7 @@ MessageLog::_setToolTips()
 }
 
 /**
- Loads the saved Message Log settings.
- Only set window transparency if not initial call from constructor
+ Loads the saved Message Log settings
 **/
 void
 MessageLog::_loadSettings()
@@ -438,25 +437,6 @@ MessageLog::setOpacity(int value)
       this->setWindowOpacity(newValue);
     }
   #endif
-}
-
-/**
- Returns the opacity of the Message Log window
-**/
-int
-MessageLog::_getOpacity()
-{
-  #if defined(Q_WS_MAC)
-    return int(this->windowOpacity() * 100);
-  #endif
-
-  #if defined(Q_WS_WIN)
-    if(QSysInfo::WV_2000 <= QSysInfo::WindowsVersion <= QSysInfo::WV_2003) {
-      return int(this->windowOpacity() * 100);
-    }
-  #endif
-    
-  return 100;
 }
 
 /**
