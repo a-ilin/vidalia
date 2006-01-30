@@ -30,6 +30,7 @@
 #include <QHostAddress>
 
 #include "../control/logevent.h"
+#include "../gui/bwgraph/linetypes.h"
 
 /* On win32, we need to add the .exe onto Tor's filename */
 #ifdef Q_OS_WIN32
@@ -91,6 +92,14 @@ public:
   /* Get and set Msg Log window opacity */
   int getMsgLogOpacity();
   void setMsgLogOpacity(int value);
+
+  /* Get and set BWGraph line filter */
+  uint getBWGraphFilter();
+  void setBWGraphFilter(uint line, bool status);
+
+  /* Get and set BWGraph window opacity */
+  int getBWGraphOpacity();
+  void setBWGraphOpacity(int value);
 };
 
 #endif

@@ -37,6 +37,9 @@
 #define SETTING_MAX_MESSAGE     "MessageLog/MaxMsgCount"
 #define SETTING_MSGLOG_OPACITY  "MessageLog/Opacity"
 
+#define SETTING_BWGRAPH_FILTER      "BandwidthGraph/BWLineFilter"
+#define SETTING_BWGRAPH_OPACITY     "BandwidthGraph/Opacity"
+
 /* Default Settings */
 #if defined(Q_OS_WIN32)
 #define DEFAULT_TOR_PATH       "C:\\Program Files\\Tor"
@@ -45,6 +48,7 @@
 #else
 #define DEFAULT_TOR_PATH       "/usr/local/bin"
 #endif
+#define DEFAULT_OPACITY 100
 
 #define DEFAULT_TOR_ARGUMENTS  "-ControlPort 9051"
 #define DEFAULT_CONTROL_ADDR   "127.0.0.1"
@@ -54,7 +58,8 @@
 #define DEFAULT_MSG_FILTER     (TOR_ERROR|TOR_WARN|TOR_NOTICE| \
                                 VIDALIA_ERROR|VIDALIA_WARN|VIDALIA_NOTICE)
 #define DEFAULT_MAX_MESSAGE    500
-#define DEFAULT_MSGLOG_OPACITY 100
+
+#define DEFAULT_BWGRAPH_FILTER  (BWGRAPH_SEND|BWGRAPH_REC|BWGRAPH_TOTAL)
 
 /** Default Constructor
  * We use "Vidalia" for both the company name and the application name.
@@ -234,7 +239,7 @@ VidaliaSettings::getMaxMsgCount()
 int
 VidaliaSettings::getMsgLogOpacity()
 {
-  return value(SETTING_MSGLOG_OPACITY, DEFAULT_MSGLOG_OPACITY).toInt();
+  return value(SETTING_MSGLOG_OPACITY, DEFAULT_OPACITY).toInt();
 }
 
 /**
@@ -246,3 +251,36 @@ VidaliaSettings::setMsgLogOpacity(int value)
   setValue(SETTING_MSGLOG_OPACITY, value);
 }
 
+/** Returns the bandwidth line filter. */
+uint
+VidaliaSettings::getBWGraphFilter()
+{
+  return value(SETTING_BWGRAPH_FILTER, DEFAULT_BWGRAPH_FILTER).toUInt(); 
+}
+
+/** Saves the setting for whether or not the given line will be graphed */
+void
+VidaliaSettings::setBWGraphFilter(uint line, bool status)
+{
+  uint filter = getBWGraphFilter();
+  filter = (status ? (filter | line) : (filter & ~(line)));
+  setValue(SETTING_BWGRAPH_FILTER, filter);
+}
+
+/**
+ Get the level of opacity for the BandwidthGraph window
+**/
+int
+VidaliaSettings::getBWGraphOpacity()
+{
+  return value(SETTING_BWGRAPH_OPACITY, DEFAULT_OPACITY).toInt();
+}
+
+/**
+ Set the level of opacity for the BandwidthGraph window
+**/
+void
+VidaliaSettings::setBWGraphOpacity(int value)
+{
+  setValue(SETTING_BWGRAPH_OPACITY, value);
+}

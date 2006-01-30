@@ -88,12 +88,6 @@ MainWindow::~MainWindow()
   if (_torControl) {
     delete _torControl;
   }
-  if (_messageLog) {
-    delete _messageLog;
-  }
-  if (_bandwidthGraph) {
-    delete _bandwidthGraph;
-  }
 }
 
 /** Shows the menubar on Mac */
