@@ -126,7 +126,8 @@ $Id$
     {
     }
     
-  Note that the method's return type is declared on a line by itself.
+  Note that the method's return type is declared on a line by itself. Private
+  member function should NOT have an underscore prepended to their name.
 
 2.1.4. Variable Names
 
@@ -177,7 +178,7 @@ $Id$
   example:
 
      void 
-     Foo::Bar(void)
+     Foo::bar(void)
      {
      }
 
@@ -203,4 +204,8 @@ $Id$
 2.5. Parentheses
 
    See the previous code examples to see how parentheses should be used.
+
+2.6. Other
+
+  Source files should end with a single blank line.
 
