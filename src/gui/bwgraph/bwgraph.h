@@ -49,28 +49,26 @@ public slots:
 
 private slots:
   /** Adds new data to the graph and counters **/
-  void _updateGraph();
+  void updateGraph();
   /** Called when settings button is toggled */
-  void _showSettingsFrame(bool show);
+  void showSettingsFrame(bool show);
   /** Called when the settings button is toggled */
-  void _setOpacity(int value);
+  void setOpacity(int value);
   /** Called when the user saves settings */
-  void _saveChanges();
+  void saveChanges();
   /** Called when the user cancels changes settings */
-  void _cancelChanges();
+  void cancelChanges();
   /** Called when the reset button is pressed */
-  void _reset();
+  void reset();
   
 private:
   /** Create and bind actions to events **/
-  void _createActions();
+  void createActions();
   /** Loads the saved Bandwidth Graph settings **/
-  void _loadSettings();
+  void loadSettings();
   
   /** A QTimer object that handles calling the draw function **/
   QTimer* _timer;
-  /** A QDateTime object that handles getting the current time **/
-  QDateTime* _clock;
   /** A VidaliaSettings object that handles getting/saving settings **/
   VidaliaSettings* _settings;
   
@@ -79,3 +77,4 @@ private:
 };
 
 #endif
+

@@ -84,32 +84,28 @@ private slots:
   
 private:  
   /** Create and bind actions to events **/
-  void _createActions();
+  void createActions();
   /** Set Tool Tips for various widgets **/
-  void _setToolTips();
+  void setToolTips();
   /** Loads the saved Message Log settings **/
-  void _loadSettings();
+  void loadSettings();
   /** Shows/Hides messages based on message filters **/
-  void _filterLog();
+  void filterLog();
   /** Registers the current message filter with Tor */
-  void _registerLogEvents();
+  void registerLogEvents();
   /** Saves the given list of items to a file */
-  void _save(QList<QTreeWidgetItem *> items);
-  /** Holds the maximum number of messages to log **/
-  int _maxCount;
-  /** Holds the number of messages currently displayed **/
-  int _messagesShown;
-
+  void save(QList<QTreeWidgetItem *> items);
+  
   /** A pointer to a TorControl object, used to register for log events */
   TorControl* _torControl;
-  /** A QDateTime object that handles getting the current time **/
-  QDateTime* _clock;
-  /** A QClipboard object that handles copying to the clipboard **/
-  QClipboard* _clipboard;
   /** A VidaliaSettings object that handles getting/saving settings **/
   VidaliaSettings* _settings;
   /** Stores the current message filter */
   uint _filter;
+  /** Holds the maximum number of messages to log **/
+  int _maxCount;
+  /** Holds the number of messages currently displayed **/
+  int _messagesShown;
 
   /** Qt Designer generatated QObject **/
   Ui::MessageLog ui;

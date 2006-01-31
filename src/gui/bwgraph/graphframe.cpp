@@ -33,7 +33,7 @@ GraphFrame::GraphFrame(QWidget *parent)
   _sendData = new QVector<quint64>();
   
   /* Get maximum number of points to store */
-  maxPoints = _getNumPoints();  
+  maxPoints = getNumPoints();  
 }
 
 /** Default destructor **/
@@ -57,7 +57,7 @@ GraphFrame::~GraphFrame()
  number of points we can plot in the graph
 **/
 int
-GraphFrame::_getNumPoints()
+GraphFrame::getNumPoints()
 {
   QDesktopWidget *desktop = QApplication::desktop();
   int width = desktop->width();
@@ -99,13 +99,13 @@ GraphFrame::paintEvent(QPaintEvent *event)
   painter->fillRect(this->frameRect(), QBrush(Qt::white));
   
   /* Paint the gridlines */
-  _paintGrid(painter);
+  paintGrid(painter);
 
   /* Paint the send/receive rate lines */
-  _paintRates(painter, filter);
+  paintRates(painter, filter);
   
   /* Paint the Scale */
-  _paintScale(painter);
+  paintScale(painter);
   
   delete painter;
 }
@@ -114,7 +114,7 @@ GraphFrame::paintEvent(QPaintEvent *event)
  Paints grid lines in the bandwidth graph
 **/
 void
-GraphFrame::_paintGrid(QPainter* painter)
+GraphFrame::paintGrid(QPainter* painter)
 {
   /* Set the pen to the correct style */
   painter->setPen(QPen(Qt::darkGray));
@@ -127,7 +127,7 @@ GraphFrame::_paintGrid(QPainter* painter)
  Paints selected rate indicators on the graph
 **/
 void
-GraphFrame::_paintRates(QPainter* painter, uint filter)
+GraphFrame::paintRates(QPainter* painter, uint filter)
 {
   /* If received rate is selected */
   if (filter & BWGRAPH_REC) {
@@ -150,7 +150,8 @@ GraphFrame::_paintRates(QPainter* painter, uint filter)
  Paints the scale on the graph
 **/
 void
-GraphFrame::_paintScale(QPainter* painter)
+GraphFrame::paintScale(QPainter* painter)
 {
 
 }
+

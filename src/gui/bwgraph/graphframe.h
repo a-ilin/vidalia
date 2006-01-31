@@ -66,13 +66,13 @@ protected:
 
 private:
   /** Gets the width of the desktop, the max # of points **/
-  int _getNumPoints();
+  int getNumPoints();
   /** Paints grid lines in the graph **/
-  void _paintGrid(QPainter* painter);
+  void paintGrid(QPainter* painter);
   /** Paints send/receive rate indicators **/
-  void _paintRates(QPainter* painter, uint filter);
+  void paintRates(QPainter* painter, uint filter);
   /** Paints the scale in the graph **/
-  void _paintScale(QPainter* painter);
+  void paintScale(QPainter* painter);
 
   /** Holds the received data points **/
   QVector<quint64> *_recvData;

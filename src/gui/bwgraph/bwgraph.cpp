@@ -35,26 +35,25 @@ BandwidthGraph::BandwidthGraph(QWidget *parent, Qt::WFlags f)
 
   /** Create Bandwidth Graph related QObjects */
   _settings = new VidaliaSettings();
-  _clock = new QDateTime(QDateTime::currentDateTime());
   _timer = new QTimer(this);
   
   /** Bind events to actions */
-  _createActions();
+  createActions();
 
   /** Start the update timer **/
   _timer->start(REFRESH_RATE);
 
   /** Initialize Sent/Receive data counters */
-  _reset();
+  reset();
 
   /** Hide Bandwidth Graph Settings frame */
-  _showSettingsFrame(false);
+  showSettingsFrame(false);
 
   /** Turn off opacity group on unsupported platforms */
 #if defined(Q_WS_WIN)
   if(!(QSysInfo::WV_2000 <= QSysInfo::WindowsVersion <= QSysInfo::WV_2003)) {
     ui.frmOpacity->setVisible(false);
-    }
+  }
 #endif
   
 #if defined(Q_WS_X11)
@@ -68,34 +67,31 @@ BandwidthGraph::~BandwidthGraph()
   if (_settings) {
     delete _settings;
   }
-  if (_clock) {
-    delete _clock;
-  }
 }
 
 /**
  Binds events to actions
 **/
 void
-BandwidthGraph::_createActions()
+BandwidthGraph::createActions()
 {
   connect(_timer, SIGNAL(timeout()),
-      this, SLOT(_updateGraph()));
+      this, SLOT(updateGraph()));
   
   connect(ui.btnToggleSettings, SIGNAL(toggled(bool)),
-      this, SLOT(_showSettingsFrame(bool)));
+      this, SLOT(showSettingsFrame(bool)));
 
   connect(ui.btnReset, SIGNAL(clicked()),
-      this, SLOT(_reset()));
+      this, SLOT(reset()));
 
   connect(ui.btnSaveSettings, SIGNAL(clicked()),
-      this, SLOT(_saveChanges()));
+      this, SLOT(saveChanges()));
 
   connect(ui.btnCancelSettings, SIGNAL(clicked()),
-      this, SLOT(_cancelChanges()));
+      this, SLOT(cancelChanges()));
   
   connect(ui.sldrOpacity, SIGNAL(valueChanged(int)),
-      this, SLOT(_setOpacity(int)));
+      this, SLOT(setOpacity(int)));
 }
 
 /**
@@ -103,7 +99,7 @@ BandwidthGraph::_createActions()
  and adds them to the data counters
 **/
 void
-BandwidthGraph::_updateGraph()
+BandwidthGraph::updateGraph()
 {
   ui.frmGraph->update();
 }
@@ -112,7 +108,7 @@ BandwidthGraph::_updateGraph()
  Loads the saved Bandwidth Graph settings
 **/
 void
-BandwidthGraph::_loadSettings()
+BandwidthGraph::loadSettings()
 {
   /** Set window opacity slider widget **/
   ui.sldrOpacity->setValue(_settings->getBWGraphOpacity());
@@ -131,14 +127,14 @@ BandwidthGraph::_loadSettings()
  Resets the Sent/Received data counters and the log start time
 **/
 void
-BandwidthGraph::_reset()
+BandwidthGraph::reset()
 {
   /** Reset the data counter labels **/
   ui.lblSent->setText(tr("0.0 MB"));
   ui.lblReceived->setText(tr("0.0 MB"));
 
   /** Reset the log start timer **/
-  ui.lblStartTime->setText(_clock->currentDateTime().toString(DATETIME_FMT));
+  ui.lblStartTime->setText(QDateTime::currentDateTime().toString(DATETIME_FMT));
 
   /** Reset the graph **/
   ui.frmGraph->resetGraph();
@@ -148,10 +144,10 @@ BandwidthGraph::_reset()
  Saves the Bandwidth Graph settings and adjusts the graph if necessary
 **/
 void
-BandwidthGraph::_saveChanges()
+BandwidthGraph::saveChanges()
 {
   /** Hide the settings frame and reset toggle button **/
-  _showSettingsFrame(false);
+  showSettingsFrame(false);
   
   /** Save the opacity **/
   _settings->setBWGraphOpacity(ui.sldrOpacity->value());
@@ -169,20 +165,20 @@ BandwidthGraph::_saveChanges()
  Simply restores the previously saved settings
 **/
 void 
-BandwidthGraph::_cancelChanges()
+BandwidthGraph::cancelChanges()
 {
   /* Hide the settings frame and reset toggle button */
-  _showSettingsFrame(false);
+  showSettingsFrame(false);
 
   /* Reload the settings */
-  _loadSettings();
+  loadSettings();
 }
 
 /** 
  Toggles the Settings pane on and off, changes toggle button text
 **/
 void
-BandwidthGraph::_showSettingsFrame(bool show)
+BandwidthGraph::showSettingsFrame(bool show)
 {
   if (show) {
     ui.frmSettings->setVisible(true);
@@ -199,7 +195,7 @@ BandwidthGraph::_showSettingsFrame(bool show)
  Sets the opacity of the Bandwidth Graph window
 **/
 void
-BandwidthGraph::_setOpacity(int value)
+BandwidthGraph::setOpacity(int value)
 {
   qreal newValue = value / 100.0;
 
@@ -221,6 +217,7 @@ BandwidthGraph::_setOpacity(int value)
 void
 BandwidthGraph::show()
 {
-  _loadSettings();
+  loadSettings();
   QWidget::show();
 }
+

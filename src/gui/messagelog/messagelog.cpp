@@ -45,21 +45,19 @@ MessageLog::MessageLog(TorControl *torControl, QWidget *parent, Qt::WFlags flags
   /* Create necessary Message Log QObjects */
   _torControl = torControl;
   _settings = new VidaliaSettings();
-  _clock = new QDateTime(QDateTime::currentDateTime());
-  _clipboard = QApplication::clipboard();
  
   /* Bind events to actions */
-  _createActions();
+  createActions();
 
   /* Set tooltips for necessary widgets */
-  _setToolTips();
+  setToolTips();
   
   /* Initialize message counters */
   _messagesShown = 0;
   _maxCount = _settings->getMaxMsgCount();
 
   /* Ask Tor to give me some log events */
-  _registerLogEvents();
+  registerLogEvents();
 
   /* Show number of message displayed in Status bar */
   ui.lstMessages->setStatusTip(tr("Messages Shown: ") += "0");
@@ -71,7 +69,7 @@ MessageLog::MessageLog(TorControl *torControl, QWidget *parent, Qt::WFlags flags
 #if defined(Q_WS_WIN)
   if(!(QSysInfo::WV_2000 <= QSysInfo::WindowsVersion <= QSysInfo::WV_2003)) {
     ui.grpOpacity->setVisible(false);
-    }
+  }
 #endif
   
 #if defined(Q_WS_X11)
@@ -85,16 +83,13 @@ MessageLog::~MessageLog()
   if (_settings) {
     delete _settings;
   }
-  if (_clock) {
-    delete _clock;
-  }
 }
 
 /**
  Binds events to actions 
 **/
 void
-MessageLog::_createActions()
+MessageLog::createActions()
 {
   connect(ui.actionSave_Selected, SIGNAL(triggered()), 
       this, SLOT(saveSelected()));
@@ -125,7 +120,7 @@ MessageLog::_createActions()
  Set tooltips for Message Filter checkboxes in code because they are long
 **/
 void
-MessageLog::_setToolTips()
+MessageLog::setToolTips()
 {
   ui.chkTorErr->setToolTip(tr("Messages that appear when something has \n"
                               "gone very wrong and Tor cannot proceed."));
@@ -157,7 +152,7 @@ MessageLog::_setToolTips()
  Loads the saved Message Log settings
 **/
 void
-MessageLog::_loadSettings()
+MessageLog::loadSettings()
 {
   /* Set Max Count widget */
   ui.spnbxMaxCount->setValue(_settings->getMaxMsgCount());
@@ -185,7 +180,7 @@ MessageLog::_loadSettings()
 /** Attempts to register the selected message filter with Tor and displays an
  * error if setting the events fails. */
 void
-MessageLog::_registerLogEvents()
+MessageLog::registerLogEvents()
 {
   QString errmsg;
   _filter = _settings->getMsgFilter();
@@ -236,8 +231,8 @@ MessageLog::saveChanges()
   _settings->setMsgFilter(LogEvent::VidaliaDebug, ui.chkVidDebug->isChecked());
 
   /* Refilter the list */
-  _registerLogEvents();
-  _filterLog();
+  registerLogEvents();
+  filterLog();
 
   /* Set Message Counter */
   ui.lstMessages->setStatusTip(QString("Messages Shown: %1")
@@ -259,7 +254,7 @@ MessageLog::cancelChanges()
   showSettingsFrame(false);
 
   /* Reload the settings */
-  _loadSettings();
+  loadSettings();
 }
 
 /**
@@ -267,7 +262,7 @@ MessageLog::cancelChanges()
  Removes messages if newly shown messages put us over _maxCount.
 **/
 void
-MessageLog::_filterLog()
+MessageLog::filterLog()
 {
   QTreeWidgetItem* current = new QTreeWidgetItem();
   int currentIndex = ui.lstMessages->topLevelItemCount() - 1;
@@ -296,7 +291,7 @@ MessageLog::_filterLog()
 
 /** Saves the given list of items to a file */
 void
-MessageLog::_save(QList<QTreeWidgetItem *> items)
+MessageLog::save(QList<QTreeWidgetItem *> items)
 {
   if (!items.size()) {
     return;
@@ -305,7 +300,7 @@ MessageLog::_save(QList<QTreeWidgetItem *> items)
   QString fileName = QFileDialog::getSaveFileName(this,
                           tr("Save Log Messages"),
                           "VidaliaLog-" + 
-                          _clock->currentDateTime().toString("MM.dd.yyyy") +
+                          QDateTime::currentDateTime().toString("MM.dd.yyyy") +
                           ".txt");
   
   /* If the choose to save */
@@ -347,7 +342,7 @@ MessageLog::_save(QList<QTreeWidgetItem *> items)
 void
 MessageLog::saveSelected()
 {
-  _save(ui.lstMessages->selectedItems());
+  save(ui.lstMessages->selectedItems());
 }
 
 /**
@@ -356,7 +351,7 @@ MessageLog::saveSelected()
 void
 MessageLog::saveAll()
 {
-  _save(ui.lstMessages->findItems("*", Qt::MatchWildcard));
+  save(ui.lstMessages->findItems("*", Qt::MatchWildcard));
 }
 
 /** 
@@ -374,7 +369,7 @@ MessageLog::copy()
   }
   
   /* Clear anything on the clipboard */
-  _clipboard->clear();
+  QApplication::clipboard()->clear();
 
   QString contents;
   QString current;
@@ -388,7 +383,7 @@ MessageLog::copy()
     current += "\n";
     contents += current;
   }
-  _clipboard->setText(contents);
+  QApplication::clipboard()->setText(contents);
 }
 
 /**
@@ -474,7 +469,7 @@ MessageLog::write(LogEvent::Severity type, QString message)
     
   /* Set Time */
   newMessage->setText(COL_TIME,
-      _clock->currentDateTime().toString(DATETIME_FMT));
+      QDateTime::currentDateTime().toString(DATETIME_FMT));
 
   /* Set Type */
   newMessage->setTextAlignment(COL_TYPE, Qt::AlignCenter);
@@ -518,7 +513,7 @@ MessageLog::customEvent(QEvent *event)
 void
 MessageLog::show()
 {
-  _loadSettings();
+  loadSettings();
   QWidget::show();
 }
 
