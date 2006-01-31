@@ -25,10 +25,13 @@
 #define _BWGRAPH_H
 
 #include <QDateTime>
-#include <QCloseEvent>
+#include <QTimer>
 #include "ui_bwgraph.h"
 #include "linetypes.h"
 #include "../../config/vidaliasettings.h"
+
+/** Redraw graph every 1000ms **/
+#define REFRESH_RATE    1000
 
 class BandwidthGraph : public QDialog
 {
@@ -43,8 +46,10 @@ public:
 public slots:
   /** Overloaded QWidget.show */
   void show();
-  
+
 private slots:
+  /** Adds new data to the graph and counters **/
+  void _updateGraph();
   /** Called when settings button is toggled */
   void _showSettingsFrame(bool show);
   /** Called when the settings button is toggled */
@@ -61,7 +66,9 @@ private:
   void _createActions();
   /** Loads the saved Bandwidth Graph settings **/
   void _loadSettings();
-   
+  
+  /** A QTimer object that handles calling the draw function **/
+  QTimer* _timer;
   /** A QDateTime object that handles getting the current time **/
   QDateTime* _clock;
   /** A VidaliaSettings object that handles getting/saving settings **/

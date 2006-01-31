@@ -36,9 +36,13 @@ BandwidthGraph::BandwidthGraph(QWidget *parent, Qt::WFlags f)
   /** Create Bandwidth Graph related QObjects */
   _settings = new VidaliaSettings();
   _clock = new QDateTime(QDateTime::currentDateTime());
-
+  _timer = new QTimer(this);
+  
   /** Bind events to actions */
   _createActions();
+
+  /** Start the update timer **/
+  _timer->start(REFRESH_RATE);
 
   /** Initialize Sent/Receive data counters */
   _reset();
@@ -64,6 +68,9 @@ BandwidthGraph::~BandwidthGraph()
   if (_settings) {
     delete _settings;
   }
+  if (_clock) {
+    delete _clock;
+  }
 }
 
 /**
@@ -72,6 +79,9 @@ BandwidthGraph::~BandwidthGraph()
 void
 BandwidthGraph::_createActions()
 {
+  connect(_timer, SIGNAL(timeout()),
+      this, SLOT(_updateGraph()));
+  
   connect(ui.btnToggleSettings, SIGNAL(toggled(bool)),
       this, SLOT(_showSettingsFrame(bool)));
 
@@ -89,6 +99,16 @@ BandwidthGraph::_createActions()
 }
 
 /**
+ Fetches new statistics and plots them on the graph
+ and adds them to the data counters
+**/
+void
+BandwidthGraph::_updateGraph()
+{
+  ui.frmGraph->update();
+}
+
+/**
  Loads the saved Bandwidth Graph settings
 **/
 void
@@ -102,6 +122,9 @@ BandwidthGraph::_loadSettings()
   ui.chkReceiveRate->setChecked(filter & BWGRAPH_REC);
   ui.chkSendRate->setChecked(filter & BWGRAPH_SEND);
   ui.chkTotalRate->setChecked(filter & BWGRAPH_TOTAL);
+
+  /** Manually update the graph **/
+  ui.frmGraph->update();
 }
 
 /** 
@@ -116,6 +139,9 @@ BandwidthGraph::_reset()
 
   /** Reset the log start timer **/
   ui.lblStartTime->setText(_clock->currentDateTime().toString(DATETIME_FMT));
+
+  /** Reset the graph **/
+  ui.frmGraph->resetGraph();
 }
 
 /**
@@ -134,6 +160,9 @@ BandwidthGraph::_saveChanges()
   _settings->setBWGraphFilter(BWGRAPH_REC, ui.chkReceiveRate->isChecked());
   _settings->setBWGraphFilter(BWGRAPH_SEND, ui.chkSendRate->isChecked());
   _settings->setBWGraphFilter(BWGRAPH_TOTAL, ui.chkTotalRate->isChecked());
+
+  /** Manually update the graph **/
+  ui.frmGraph->update();
 }
 
 /** 

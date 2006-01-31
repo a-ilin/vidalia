@@ -577,7 +577,7 @@
     </layout>
    </item>
    <item>
-    <widget class="QFrame" name="frmGraph" >
+    <widget class="GraphFrame" name="frmGraph" >
      <property name="minimumSize" >
       <size>
        <width>120</width>
@@ -596,13 +596,13 @@
       </font>
      </property>
      <property name="contextMenuPolicy" >
-      <enum>Qt::CustomContextMenu</enum>
+      <enum>Qt::NoContextMenu</enum>
      </property>
      <property name="frameShape" >
-      <enum>QFrame::Panel</enum>
+      <enum>QFrame::Box</enum>
      </property>
      <property name="frameShadow" >
-      <enum>QFrame::Sunken</enum>
+      <enum>QFrame::Plain</enum>
      </property>
     </widget>
    </item>
@@ -689,7 +689,7 @@
         <string>Resets the Sent/Received Statistics</string>
        </property>
        <property name="text" >
-        <string>Reset Statistics</string>
+        <string>Reset</string>
        </property>
       </widget>
      </item>
@@ -1024,6 +1024,15 @@
   </layout>
  </widget>
  <pixmapfunction></pixmapfunction>
+ <customwidgets>
+  <customwidget>
+   <class>GraphFrame</class>
+   <extends>QFrame</extends>
+   <header>gui/bwgraph/graphframe.h</header>
+   <container>0</container>
+   <pixmap></pixmap>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="../res/vidalia.qrc" />
  </resources>

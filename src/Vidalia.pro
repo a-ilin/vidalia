@@ -26,7 +26,6 @@ TEMPLATE = app
 
 CONFIG += qt thread
 CONFIG += debug
-CONFIG += release
 CONFIG += warn_on
 
 # Include the network module
