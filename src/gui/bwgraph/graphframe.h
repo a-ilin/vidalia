@@ -29,22 +29,18 @@
 #include <QFrame>
 #include <QPainter>
 #include <QPen>
-#include <QVector>
-#include "linetypes.h"
-#include "../../config/vidaliasettings.h"
+#include <QList>
 
 #define GRID_X        12  // Width of a grid cell
-#define GRID_Y        20  // Height of a grid cell
+#define GRID_Y        12  // Height of a grid cell
 #define HOR_SPC       2   // Space between data points
-#define SCALE_WIDTH   68  // Width of the scale 
+#define SCALE_WIDTH   68  // Width of the scale
+#define MIN_SCALE     10  // 10 kB/s is the minimum scale
 
 #define RECV_COLOR    90,90,0
 #define SEND_COLOR    60,60,255
 
 #define FONT_SIZE     10
-#define FONT_FACE     "Arial"
-
-#define ABS(x)  ((x)<0 ? -(x) : (x))
 
 class GraphFrame : public QFrame
 {
@@ -59,6 +55,8 @@ public:
   void addPoints(quint64 send, quint64 recv);
   /** Clears the graph **/
   void resetGraph();
+  /** Toggles display of data counters **/
+  void setShowCounters(bool showRecv, bool showSend);
 
 protected:
   /** Overloaded QWidget::paintEvent() **/
@@ -69,20 +67,24 @@ private:
   int getNumPoints();
   /** Paints grid lines in the graph **/
   void paintGrid(QPainter* painter);
-  /** Paints send/receive rate indicators **/
-  void paintRates(QPainter* painter, uint filter);
+  /** Paints send/receive graph lines **/
+  void paintLines(QPainter* painter);
+  /** Paints the send/receive rate indicators **/
+  void paintRates(QPainter* painter);
   /** Paints the scale in the graph **/
   void paintScale(QPainter* painter);
 
   /** Holds the received data points **/
-  QVector<quint64> *_recvData;
+  QList<quint64> *_recvData;
   /** Holds the sent data points **/
-  QVector<quint64> *_sendData;
+  QList<quint64> *_sendData;
+  /** The maximum data value plotted **/
+  quint64 _maxValue;
   /** The maximum number of points to store **/
-  int maxPoints;
-  
-  /** A VidaliaSettings object that tells us what to draw **/
-  VidaliaSettings* _settings;
+  int _maxPoints;
+  /** Show the respective lines and counters **/
+  bool _showRecv;
+  bool _showSend;
 };
 
 #endif

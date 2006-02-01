@@ -101,7 +101,8 @@ BandwidthGraph::createActions()
 void
 BandwidthGraph::updateGraph()
 {
-  ui.frmGraph->update();
+  // add data points to graph
+  // add data value to counters
 }
 
 /**
@@ -117,10 +118,10 @@ BandwidthGraph::loadSettings()
   uint filter = _settings->getBWGraphFilter();
   ui.chkReceiveRate->setChecked(filter & BWGRAPH_REC);
   ui.chkSendRate->setChecked(filter & BWGRAPH_SEND);
-  ui.chkTotalRate->setChecked(filter & BWGRAPH_TOTAL);
 
-  /** Manually update the graph **/
-  ui.frmGraph->update();
+  /** Set graph frame settings **/
+  ui.frmGraph->setShowCounters(ui.chkReceiveRate->isChecked(),
+                               ui.chkSendRate->isChecked());
 }
 
 /** 
@@ -155,10 +156,10 @@ BandwidthGraph::saveChanges()
   /** Save the line filter values **/
   _settings->setBWGraphFilter(BWGRAPH_REC, ui.chkReceiveRate->isChecked());
   _settings->setBWGraphFilter(BWGRAPH_SEND, ui.chkSendRate->isChecked());
-  _settings->setBWGraphFilter(BWGRAPH_TOTAL, ui.chkTotalRate->isChecked());
 
-  /** Manually update the graph **/
-  ui.frmGraph->update();
+  /** Update the graph frame settings **/
+  ui.frmGraph->setShowCounters(ui.chkReceiveRate->isChecked(),
+                               ui.chkSendRate->isChecked());
 }
 
 /** 

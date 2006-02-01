@@ -23,4 +23,3 @@
 
 #define BWGRAPH_SEND    (1u<<0)
 #define BWGRAPH_REC     (1u<<1)
-#define BWGRAPH_TOTAL   (1u<<2)

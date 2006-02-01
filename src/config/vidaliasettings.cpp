@@ -59,7 +59,7 @@
                                 VIDALIA_ERROR|VIDALIA_WARN|VIDALIA_NOTICE)
 #define DEFAULT_MAX_MESSAGE    500
 
-#define DEFAULT_BWGRAPH_FILTER  (BWGRAPH_SEND|BWGRAPH_REC|BWGRAPH_TOTAL)
+#define DEFAULT_BWGRAPH_FILTER  (BWGRAPH_SEND|BWGRAPH_REC)
 
 /** Default Constructor
  * We use "Vidalia" for both the company name and the application name.
