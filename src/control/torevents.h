@@ -30,6 +30,10 @@
 
 #include "eventtype.h"
 #include "logevent.h"
+#include "bandwidthevent.h"
+#include "circuitevent.h"
+#include "streamevent.h"
+
 #include "controlreply.h"
 
 class TorEvents : public QObject

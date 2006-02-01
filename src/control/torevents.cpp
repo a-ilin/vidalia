@@ -25,12 +25,6 @@
 
 #include "torevents.h"
 
-/* Include the event types */
-#include "bandwidthevent.h"
-#include "circuitevent.h"
-#include "streamevent.h"
-#include "logevent.h"
-
 /** Default constructor */
 TorEvents::TorEvents()
 {
