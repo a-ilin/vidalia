@@ -35,10 +35,7 @@ GraphFrame::GraphFrame(QWidget *parent)
   _maxPoints = getNumPoints();  
   _showRecv = true;
   _showSend = true;
-  _maxValue = MIN_SCALE;
-
-  /* Get maximum number of points to store */
-  maxPoints = getNumPoints();  
+  _maxValue = MIN_SCALE; 
 }
 
 /** Default destructor **/
