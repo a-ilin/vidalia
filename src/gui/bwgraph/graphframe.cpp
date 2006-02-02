@@ -28,8 +28,8 @@ GraphFrame::GraphFrame(QWidget *parent)
 : QFrame(parent)
 {
   /* Create Graph Frame related objects */
-  _recvData = new QList<quint64>();
-  _sendData = new QList<quint64>();
+  _recvData = new QList<qreal>();
+  _sendData = new QList<qreal>();
   
   /* Initialize graph values */
   _maxPoints = getNumPoints();  
@@ -59,7 +59,6 @@ GraphFrame::getNumPoints()
 {
   QDesktopWidget *desktop = QApplication::desktop();
   int width = desktop->width();
-  delete desktop;
   return width;
 }
 
@@ -67,7 +66,7 @@ GraphFrame::getNumPoints()
  Adds new data points to the graph
 **/
 void
-GraphFrame::addPoints(quint64 send, quint64 recv)
+GraphFrame::addPoints(qreal send, qreal recv)
 {
   /* If maximum number of points plotted, remove oldest */
   if (_sendData->size() == _maxPoints) {
@@ -119,7 +118,7 @@ GraphFrame::paintEvent(QPaintEvent *event)
   QPainter* painter = new QPainter(this);
   
   /* Fill in the background */
-  painter->fillRect(this->frameRect(), QBrush(Qt::white));
+  painter->fillRect(this->frameRect(), QBrush(Qt::black));
   painter->drawRect(this->frameRect());
   
   /* Paint the gridlines */
@@ -162,16 +161,21 @@ GraphFrame::paintLines(QPainter* painter)
 void
 GraphFrame::paintRates(QPainter* painter)
 {
+  int rateX = SCALE_WIDTH + FONT_SIZE;
+  int rateY = this->frameRect().y() + FONT_SIZE;
+  
   /* If received rate is selected */
   if (_showRecv) {
     painter->setPen(QColor(RECV_COLOR));
-    // Draw counter
+    qreal recv = _recvData->value(0);
+    painter->drawText(QPoint(rateX, rateY), tr("%1 kB/s").arg(recv));
   }
 
   /* If send rate is selected */
   if (_showSend) {
     painter->setPen(QColor(SEND_COLOR));
-    // Draw counter
+    qreal send = _sendData->value(0);
+    painter->drawText(QPoint(rateX, rateY+FONT_SIZE), tr("%1 kB/s").arg(send));
   }
 }
 
@@ -181,28 +185,25 @@ GraphFrame::paintRates(QPainter* painter)
 void
 GraphFrame::paintScale(QPainter* painter)
 {
-  painter->setPen(Qt::black);
+  painter->setPen(Qt::green);
   
   qreal markStep = _maxValue * .25;
   int top = this->frameRect().y();
-  int left = this->frameRect().x();
   int bottom = this->frameRect().y() + this->frameRect().height();
   int paintStep = bottom / 4;
   
   /* Draw vertical separator */
   painter->drawLine(SCALE_WIDTH, top, SCALE_WIDTH, bottom);
   
-  /* Draw 0.0 kB/s at the bottom */
-  painter->drawText(QPoint(FONT_SIZE, bottom), tr("0.0 kB/s"));
-  
   /* Draw the other marks in their correctly scaled locations */
   qreal scale;
   int pos;
-  for (int i = 0; i < 4; i++) {
-    pos = (i * paintStep) + FONT_SIZE;
-    scale = _maxValue - (i*markStep);
-    painter->drawLine(left, pos, SCALE_WIDTH, pos);
-    painter->drawText(QPoint(FONT_SIZE, pos), tr("%1 kB/s").arg(scale));
+  for (int i = 1; i < 5; i++) {
+    pos = bottom - ((i * paintStep));
+    scale = i * markStep;
+    painter->drawLine(SCALE_WIDTH-5, pos, SCALE_WIDTH, pos);
+    painter->drawText(QPoint(5, pos+FONT_SIZE), 
+                      tr("%1 kB/s").arg(scale, 0, 'f', 2));
   }
 }
 
@@ -212,7 +213,7 @@ GraphFrame::paintScale(QPainter* painter)
 void
 GraphFrame::paintGrid(QPainter* painter)
 {
-  painter->setPen(Qt::darkGray);
+  painter->setPen(Qt::darkGreen);
   QRect rec = this->frameRect();
   int x, y;
   

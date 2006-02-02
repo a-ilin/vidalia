@@ -34,13 +34,13 @@
 #define GRID_X        12  // Width of a grid cell
 #define GRID_Y        12  // Height of a grid cell
 #define HOR_SPC       2   // Space between data points
-#define SCALE_WIDTH   68  // Width of the scale
-#define MIN_SCALE     10  // 10 kB/s is the minimum scale
+#define SCALE_WIDTH   74  // Width of the scale
+#define MIN_SCALE     10  // 10 kB/s is the minimum scale       
 
-#define RECV_COLOR    90,90,0
-#define SEND_COLOR    60,60,255
+#define RECV_COLOR    Qt::yellow
+#define SEND_COLOR    Qt::cyan
 
-#define FONT_SIZE     10
+#define FONT_SIZE     11
 
 class GraphFrame : public QFrame
 {
@@ -52,7 +52,7 @@ public:
   /** Default Destructor **/
   ~GraphFrame();
   /** Add data points **/
-  void addPoints(quint64 send, quint64 recv);
+  void addPoints(qreal send, qreal recv);
   /** Clears the graph **/
   void resetGraph();
   /** Toggles display of data counters **/
@@ -75,11 +75,11 @@ private:
   void paintScale(QPainter* painter);
 
   /** Holds the received data points **/
-  QList<quint64> *_recvData;
+  QList<qreal> *_recvData;
   /** Holds the sent data points **/
-  QList<quint64> *_sendData;
+  QList<qreal> *_sendData;
   /** The maximum data value plotted **/
-  quint64 _maxValue;
+  qreal _maxValue;
   /** The maximum number of points to store **/
   int _maxPoints;
   /** Show the respective lines and counters **/

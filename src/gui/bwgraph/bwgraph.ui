@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>357</width>
-    <height>304</height>
+    <width>359</width>
+    <height>282</height>
    </rect>
   </property>
   <property name="palette" >
@@ -403,163 +403,133 @@
       <number>6</number>
      </property>
      <item>
-      <layout class="QHBoxLayout" >
-       <property name="margin" >
-        <number>0</number>
+      <widget class="QLabel" name="label_3" >
+       <property name="maximumSize" >
+        <size>
+         <width>16777215</width>
+         <height>27</height>
+        </size>
        </property>
-       <property name="spacing" >
-        <number>6</number>
+       <property name="font" >
+        <font>
+         <family>Arial</family>
+         <pointsize>10</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+         <underline>false</underline>
+         <strikeout>false</strikeout>
+        </font>
        </property>
-       <item>
-        <layout class="QHBoxLayout" >
-         <property name="margin" >
-          <number>0</number>
-         </property>
-         <property name="spacing" >
-          <number>0</number>
-         </property>
-         <item>
-          <widget class="QLabel" name="label_3" >
-           <property name="maximumSize" >
-            <size>
-             <width>16777215</width>
-             <height>27</height>
-            </size>
-           </property>
-           <property name="font" >
-            <font>
-             <family>Arial</family>
-             <pointsize>10</pointsize>
-             <weight>50</weight>
-             <italic>false</italic>
-             <bold>false</bold>
-             <underline>false</underline>
-             <strikeout>false</strikeout>
-            </font>
-           </property>
-           <property name="contextMenuPolicy" >
-            <enum>Qt::NoContextMenu</enum>
-           </property>
-           <property name="text" >
-            <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:8pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;">Sent:&lt;/p>&lt;/body>&lt;/html></string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="lblSent" >
-           <property name="maximumSize" >
-            <size>
-             <width>16777215</width>
-             <height>27</height>
-            </size>
-           </property>
-           <property name="font" >
-            <font>
-             <family>Arial</family>
-             <pointsize>10</pointsize>
-             <weight>50</weight>
-             <italic>false</italic>
-             <bold>false</bold>
-             <underline>false</underline>
-             <strikeout>false</strikeout>
-            </font>
-           </property>
-           <property name="contextMenuPolicy" >
-            <enum>Qt::NoContextMenu</enum>
-           </property>
-           <property name="frameShape" >
-            <enum>QFrame::Panel</enum>
-           </property>
-           <property name="frameShadow" >
-            <enum>QFrame::Sunken</enum>
-           </property>
-           <property name="text" >
-            <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:8pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;">679.07 MB&lt;/p>&lt;/body>&lt;/html></string>
-           </property>
-           <property name="scaledContents" >
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" >
-         <property name="margin" >
-          <number>0</number>
-         </property>
-         <property name="spacing" >
-          <number>0</number>
-         </property>
-         <item>
-          <widget class="QLabel" name="label_2" >
-           <property name="maximumSize" >
-            <size>
-             <width>16777215</width>
-             <height>27</height>
-            </size>
-           </property>
-           <property name="font" >
-            <font>
-             <family>Arial</family>
-             <pointsize>10</pointsize>
-             <weight>50</weight>
-             <italic>false</italic>
-             <bold>false</bold>
-             <underline>false</underline>
-             <strikeout>false</strikeout>
-            </font>
-           </property>
-           <property name="contextMenuPolicy" >
-            <enum>Qt::NoContextMenu</enum>
-           </property>
-           <property name="text" >
-            <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Received:&lt;/p>&lt;/body>&lt;/html></string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="lblReceived" >
-           <property name="maximumSize" >
-            <size>
-             <width>16777215</width>
-             <height>27</height>
-            </size>
-           </property>
-           <property name="font" >
-            <font>
-             <family>Arial</family>
-             <pointsize>10</pointsize>
-             <weight>50</weight>
-             <italic>false</italic>
-             <bold>false</bold>
-             <underline>false</underline>
-             <strikeout>false</strikeout>
-            </font>
-           </property>
-           <property name="contextMenuPolicy" >
-            <enum>Qt::NoContextMenu</enum>
-           </property>
-           <property name="toolTip" >
-            <string/>
-           </property>
-           <property name="frameShape" >
-            <enum>QFrame::Panel</enum>
-           </property>
-           <property name="frameShadow" >
-            <enum>QFrame::Sunken</enum>
-           </property>
-           <property name="text" >
-            <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">435.38 MB&lt;/p>&lt;/body>&lt;/html></string>
-           </property>
-           <property name="scaledContents" >
-            <bool>false</bool>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
+       <property name="contextMenuPolicy" >
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="text" >
+        <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:8pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;">Sent:&lt;/p>&lt;/body>&lt;/html></string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblSent" >
+       <property name="maximumSize" >
+        <size>
+         <width>16777215</width>
+         <height>18</height>
+        </size>
+       </property>
+       <property name="font" >
+        <font>
+         <family>Arial</family>
+         <pointsize>10</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+         <underline>false</underline>
+         <strikeout>false</strikeout>
+        </font>
+       </property>
+       <property name="contextMenuPolicy" >
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="frameShape" >
+        <enum>QFrame::Panel</enum>
+       </property>
+       <property name="frameShadow" >
+        <enum>QFrame::Sunken</enum>
+       </property>
+       <property name="text" >
+        <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:8pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;">679.07 MB&lt;/p>&lt;/body>&lt;/html></string>
+       </property>
+       <property name="scaledContents" >
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_2" >
+       <property name="maximumSize" >
+        <size>
+         <width>16777215</width>
+         <height>27</height>
+        </size>
+       </property>
+       <property name="font" >
+        <font>
+         <family>Arial</family>
+         <pointsize>10</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+         <underline>false</underline>
+         <strikeout>false</strikeout>
+        </font>
+       </property>
+       <property name="contextMenuPolicy" >
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="text" >
+        <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Received:&lt;/p>&lt;/body>&lt;/html></string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblReceived" >
+       <property name="maximumSize" >
+        <size>
+         <width>16777215</width>
+         <height>18</height>
+        </size>
+       </property>
+       <property name="font" >
+        <font>
+         <family>Arial</family>
+         <pointsize>10</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+         <underline>false</underline>
+         <strikeout>false</strikeout>
+        </font>
+       </property>
+       <property name="contextMenuPolicy" >
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="toolTip" >
+        <string/>
+       </property>
+       <property name="frameShape" >
+        <enum>QFrame::Panel</enum>
+       </property>
+       <property name="frameShadow" >
+        <enum>QFrame::Sunken</enum>
+       </property>
+       <property name="text" >
+        <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">435.38 MB&lt;/p>&lt;/body>&lt;/html></string>
+       </property>
+       <property name="scaledContents" >
+        <bool>false</bool>
+       </property>
+      </widget>
      </item>
      <item>
       <spacer>
@@ -568,8 +538,8 @@
        </property>
        <property name="sizeHint" >
         <size>
-         <width>82</width>
-         <height>20</height>
+         <width>54</width>
+         <height>31</height>
         </size>
        </property>
       </spacer>
@@ -587,7 +557,7 @@
      <property name="font" >
       <font>
        <family>Arial</family>
-       <pointsize>8</pointsize>
+       <pointsize>10</pointsize>
        <weight>50</weight>
        <italic>false</italic>
        <bold>false</bold>

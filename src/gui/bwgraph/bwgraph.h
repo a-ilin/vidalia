@@ -25,7 +25,6 @@
 #define _BWGRAPH_H
 
 #include <QDateTime>
-#include <QTimer>
 #include <QEvent>
 
 #include "ui_bwgraph.h"
@@ -42,9 +41,9 @@ class BandwidthGraph : public QDialog
   Q_OBJECT
 
 public:
-  /** Default constructor **/
+  /** Default constructor */
   BandwidthGraph(TorControl *torControl, QWidget *parent = 0, Qt::WFlags f = 0);
-  /** Default destructor **/
+  /** Default destructor */
   ~BandwidthGraph();
 
 public slots:
@@ -56,7 +55,7 @@ protected:
   void customEvent(QEvent *event);
   
 private slots:
-  /** Adds new data to the graph and counters **/
+  /** Adds new data to the graph and counters */
   void updateGraph(quint64 bytesRead, quint64 bytesWritten);
   /** Called when settings button is toggled */
   void showSettingsFrame(bool show);
@@ -72,17 +71,20 @@ private slots:
 private:
   /** Create and bind actions to events **/
   void createActions();
-  /** Loads the saved Bandwidth Graph settings **/
+  /** Loads the saved Bandwidth Graph settings */
   void loadSettings();
+  /** Adds the new data values to the total and returns a formatted string */
+  QString addDataToStr(quint64 data, quint64 &total);
  
   /** A TorControl object used to talk to Tor. */
   TorControl* _torControl;
-  /** A QTimer object that handles calling the draw function **/
-  QTimer* _timer;
-  /** A VidaliaSettings object that handles getting/saving settings **/
+  /** A VidaliaSettings object that handles getting/saving settings */
   VidaliaSettings* _settings;
+  /** Counters that keep track of the total data sent/received */
+  quint64 _totalSent;
+  quint64 _totalReceived;
   
-  /** Qt Designer generated object **/
+  /** Qt Designer generated object */
   Ui::BandwidthGraph ui;
 };
 
