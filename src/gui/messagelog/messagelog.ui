@@ -292,7 +292,7 @@
    <string>Message Log</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="..\res\vidalia.qrc" >:/images/tor_logo16.png</iconset>
+   <iconset resource="../res/vidalia.qrc" >:/images/tor_logo16.png</iconset>
   </property>
   <property name="statusTip" >
    <string/>
@@ -466,7 +466,7 @@
                <string>Tor Error</string>
               </property>
               <property name="icon" >
-               <iconset resource="..\res\vidalia.qrc" >:/images/msg_error.png</iconset>
+               <iconset resource="../res/vidalia.qrc" >:/images/msg_error.png</iconset>
               </property>
              </widget>
             </item>
@@ -482,7 +482,7 @@
                <string>Tor Warning</string>
               </property>
               <property name="icon" >
-               <iconset resource="..\res\vidalia.qrc" >:/images/msg_warn.png</iconset>
+               <iconset resource="../res/vidalia.qrc" >:/images/msg_warn.png</iconset>
               </property>
              </widget>
             </item>
@@ -498,7 +498,7 @@
                <string>Tor Notice</string>
               </property>
               <property name="icon" >
-               <iconset resource="..\res\vidalia.qrc" >:/images/msg_notice.png</iconset>
+               <iconset resource="../res/vidalia.qrc" >:/images/msg_notice.png</iconset>
               </property>
              </widget>
             </item>
@@ -514,7 +514,7 @@
                <string>Tor Info</string>
               </property>
               <property name="icon" >
-               <iconset resource="..\res\vidalia.qrc" >:/images/msg_info.png</iconset>
+               <iconset resource="../res/vidalia.qrc" >:/images/msg_info.png</iconset>
               </property>
              </widget>
             </item>
@@ -530,7 +530,7 @@
                <string>Tor Debug</string>
               </property>
               <property name="icon" >
-               <iconset resource="..\res\vidalia.qrc" >:/images/msg_debug.png</iconset>
+               <iconset resource="../res/vidalia.qrc" >:/images/msg_debug.png</iconset>
               </property>
              </widget>
             </item>
@@ -899,16 +899,9 @@
      <x>0</x>
      <y>0</y>
      <width>701</width>
-     <height>19</height>
+     <height>22</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menu_Edit" >
-    <property name="title" >
-     <string>&amp;Edit</string>
-    </property>
-    <addaction name="actionCopy" />
-    <addaction name="actionSelect_All" />
-   </widget>
    <widget class="QMenu" name="menu_File" >
     <property name="title" >
      <string>&amp;File</string>
@@ -931,6 +924,15 @@
     </property>
     <addaction name="actionClear" />
    </widget>
+   <widget class="QMenu" name="menu_Edit" >
+    <property name="title" >
+     <string>&amp;Edit</string>
+    </property>
+    <addaction name="actionCopy" />
+    <addaction name="actionSelect_All" />
+    <addaction name="separator" />
+    <addaction name="actionFind" />
+   </widget>
    <addaction name="menu_File" />
    <addaction name="menu_Edit" />
    <addaction name="menu_View" />
@@ -939,9 +941,9 @@
    <property name="geometry" >
     <rect>
      <x>0</x>
-     <y>536</y>
+     <y>538</y>
      <width>701</width>
-     <height>22</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>
@@ -1112,10 +1114,30 @@
     <string>Alt+F4</string>
    </property>
   </action>
+  <action name="actionFind" >
+   <property name="text" >
+    <string>Find</string>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <underline>false</underline>
+     <strikeout>false</strikeout>
+    </font>
+   </property>
+   <property name="shortcut" >
+    <string>⌘F</string>
+   </property>
+  </action>
  </widget>
  <pixmapfunction></pixmapfunction>
  <resources>
   <include location="res/vidalia.qrc" />
+  <include location="../res/vidalia.qrc" />
   <include location="../res/vidalia.qrc" />
  </resources>
  <connections>

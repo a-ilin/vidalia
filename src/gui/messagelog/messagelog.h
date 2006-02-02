@@ -73,6 +73,10 @@ private slots:
   void copy();
   /** Called when the user selects View->Clear all or Ctrl-E **/
   void clear();
+  /** Called when the user selects Edit->Find or Ctrl-F. This will search
+   * through all currently displayed log entries for text specified by the
+   * user, highlighting the entires that contain a match. */
+  void find();
   /** Called when the opactity slider changes value **/
   void setOpacity(int value);
   /** Called when settings button is toggled **/
@@ -95,7 +99,11 @@ private:
   void registerLogEvents();
   /** Saves the given list of items to a file */
   void save(QList<QTreeWidgetItem *> items);
-  
+  /** Searches the message log for entries that contain the given text. */
+  QList<QTreeWidgetItem *> search(QString text);
+  /** Deselects all currently selected items. */
+  void deselectAllItems();
+
   /** A pointer to a TorControl object, used to register for log events */
   TorControl* _torControl;
   /** A VidaliaSettings object that handles getting/saving settings **/

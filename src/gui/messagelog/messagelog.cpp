@@ -21,6 +21,9 @@
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
 
+#include <QMessageBox>
+#include <QInputDialog>
+
 #include "../mainwindow.h"
 #include "messagelog.h"
 
@@ -103,6 +106,9 @@ MessageLog::createActions()
   connect(ui.actionClear, SIGNAL(triggered()),
       this, SLOT(clear()));
   
+  connect(ui.actionFind, SIGNAL(triggered()),
+      this, SLOT(find()));
+
   connect(ui.btnSaveSettings, SIGNAL(clicked()),
       this, SLOT(saveChanges()));
 
@@ -386,6 +392,41 @@ MessageLog::copy()
   QApplication::clipboard()->setText(contents);
 }
 
+/** Prompts the user for a search string. If the search string is not found in
+ * any of the currently displayed log entires, then a message will be
+ * displayed for the user informing them that no matches were found. 
+ * \sa search()
+ */
+void
+MessageLog::find()
+{
+  QString empty;
+  bool ok;
+  QString text = QInputDialog::getText(this, tr("Find in Message Log"),
+                  tr("Find:"), QLineEdit::Normal, QString(), &ok);
+  
+  if (ok && !text.isEmpty()) {
+    QTreeWidget *tree = ui.lstMessages;
+    QList<QTreeWidgetItem *> results = search(text);
+    if (!results.size()) {
+      QMessageBox::information(this, tr("Not Found"), 
+                               tr("Search found 0 matches."), 
+                               QMessageBox::Ok, QMessageBox::NoButton);
+    } else {
+      /* Deselect all currently selected items */
+      deselectAllItems();
+      /* Select the new matching items */
+      foreach(QTreeWidgetItem *item, results) {
+        if (!tree->isItemHidden(item)) {
+           tree->setItemSelected(item, true);
+         }
+      }
+      /* Set the focus to the first match */
+      tree->scrollToItem(results.at(0));
+    }
+  }
+}
+
 /**
  Clears the message list and resets the message counter
 **/
@@ -395,6 +436,31 @@ MessageLog::clear()
   _messagesShown = 0;
   ui.lstMessages->setStatusTip(QString("Messages Shown: %1")
                                   .arg(_messagesShown));
+}
+
+/** Searches the currently displayed log entries for the given search text.
+ *
+ * \param text The text to search for.
+ * \returns A list of all log items containing the search text. 
+ */
+QList<QTreeWidgetItem *>
+MessageLog::search(QString text)
+{
+  QTreeWidget *tree = ui.lstMessages;
+  QList<QTreeWidgetItem *> results;
+
+  /* Search through the messages in the tree, case-insensitively */
+  return tree->findItems(text, Qt::MatchContains|Qt::MatchWrap, COL_MSG);
+}
+
+/** Deselects all currently selected items. */
+void
+MessageLog::deselectAllItems()
+{
+  QTreeWidget *tree = ui.lstMessages;
+  foreach(QTreeWidgetItem *item, tree->selectedItems()) {
+    tree->setItemSelected(item, false);
+  }
 }
 
 /** 
