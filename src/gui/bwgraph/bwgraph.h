@@ -26,9 +26,13 @@
 
 #include <QDateTime>
 #include <QTimer>
+#include <QEvent>
+
 #include "ui_bwgraph.h"
 #include "linetypes.h"
+
 #include "../../config/vidaliasettings.h"
+#include "../../control/torcontrol.h"
 
 /** Redraw graph every 1000ms **/
 #define REFRESH_RATE    1000
@@ -39,7 +43,7 @@ class BandwidthGraph : public QDialog
 
 public:
   /** Default constructor **/
-  BandwidthGraph(QWidget *parent = 0, Qt::WFlags f = 0);
+  BandwidthGraph(TorControl *torControl, QWidget *parent = 0, Qt::WFlags f = 0);
   /** Default destructor **/
   ~BandwidthGraph();
 
@@ -47,9 +51,13 @@ public slots:
   /** Overloaded QWidget.show */
   void show();
 
+protected:
+  /** Called to deliver a bandwidth update event from Tor. */
+  void customEvent(QEvent *event);
+  
 private slots:
   /** Adds new data to the graph and counters **/
-  void updateGraph();
+  void updateGraph(quint64 bytesRead, quint64 bytesWritten);
   /** Called when settings button is toggled */
   void showSettingsFrame(bool show);
   /** Called when the settings button is toggled */
@@ -66,7 +74,9 @@ private:
   void createActions();
   /** Loads the saved Bandwidth Graph settings **/
   void loadSettings();
-  
+ 
+  /** A TorControl object used to talk to Tor. */
+  TorControl* _torControl;
   /** A QTimer object that handles calling the draw function **/
   QTimer* _timer;
   /** A VidaliaSettings object that handles getting/saving settings **/

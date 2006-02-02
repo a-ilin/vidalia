@@ -74,7 +74,7 @@ MainWindow::MainWindow()
  
   /* Create a new BandwidthGraph object so we can monitor bandwidth usage */
   Qt::WFlags bw_flags = (Qt::Tool | Qt::WindowStaysOnTopHint);
-  _bandwidthGraph = new BandwidthGraph(this, bw_flags);
+  _bandwidthGraph = new BandwidthGraph(_torControl, this, bw_flags);
   
   /* Put an icon in the system tray to indicate the status of Tor */
   _trayIcon = new TrayIcon(QPixmap(IMG_TOR_STOPPED),

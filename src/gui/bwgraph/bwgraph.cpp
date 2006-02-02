@@ -27,7 +27,7 @@
 #define DATETIME_FMT  "MMM dd hh:mm:ss:zzz"
 
 /** Default constructor **/
-BandwidthGraph::BandwidthGraph(QWidget *parent, Qt::WFlags f)
+BandwidthGraph::BandwidthGraph(TorControl *torControl, QWidget *parent, Qt::WFlags f)
 : QDialog(parent, f)
 {
   /** Invoke Qt Designer generated QObject setup routine */
@@ -40,6 +40,10 @@ BandwidthGraph::BandwidthGraph(QWidget *parent, Qt::WFlags f)
   /** Bind events to actions */
   createActions();
 
+  /** Ask Tor to notify us about bandwidth updates */
+  _torControl = torControl;
+  _torControl->setEvent(TorEvents::Bandwidth, this, true);
+  
   /** Start the update timer **/
   _timer->start(REFRESH_RATE);
 
@@ -67,6 +71,21 @@ BandwidthGraph::~BandwidthGraph()
   if (_settings) {
     delete _settings;
   }
+  /* Unregister this object for bandwidth update events */
+  _torControl->setEvent(TorEvents::Bandwidth, this, false);
+}
+
+/**
+ Custom event handler. Checks if the event is a bandwidth update event. If it
+ is, it will add the data point to the history and updates the graph.
+**/
+void
+BandwidthGraph::customEvent(QEvent *event)
+{
+  if (event->type() == EventType::BandwidthEvent) {
+    BandwidthEvent *bw = (BandwidthEvent *)event;
+    updateGraph(bw->bytesRead(), bw->bytesWritten());
+  }
 }
 
 /**
@@ -75,8 +94,8 @@ BandwidthGraph::~BandwidthGraph()
 void
 BandwidthGraph::createActions()
 {
-  connect(_timer, SIGNAL(timeout()),
-      this, SLOT(updateGraph()));
+//  connect(_timer, SIGNAL(timeout()),
+//      this, SLOT(updateGraph()));
   
   connect(ui.btnToggleSettings, SIGNAL(toggled(bool)),
       this, SLOT(showSettingsFrame(bool)));
@@ -99,10 +118,15 @@ BandwidthGraph::createActions()
  and adds them to the data counters
 **/
 void
-BandwidthGraph::updateGraph()
+BandwidthGraph::updateGraph(quint64 bytesRead, quint64 bytesWritten)
 {
   // add data points to graph
   // add data value to counters
+
+  /* Obviously this isn't what you're going to do with the data, but this lets
+   * you see that it's working in the meantime. */
+  ui.lblSent->setText(QString::number(bytesRead));
+  ui.lblReceived->setText(QString::number(bytesWritten));
 }
 
 /**
