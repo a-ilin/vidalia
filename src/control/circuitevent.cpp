@@ -26,7 +26,7 @@
 
 /** Default constructor */
 CircuitEvent::CircuitEvent(quint64 circId, Status status, QString path)
-: QEvent((QEvent::Type)EventType::CircuitEvent)
+: QEvent((QEvent::Type)CustomEventType::CircuitEvent)
 {
   _circId = circId;
   _status = status;

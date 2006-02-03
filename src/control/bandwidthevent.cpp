@@ -26,7 +26,7 @@
 
 /** Default constructor */
 BandwidthEvent::BandwidthEvent(quint64 bytesRead, quint64 bytesWritten)
- : QEvent((QEvent::Type)EventType::BandwidthEvent)
+ : QEvent((QEvent::Type)CustomEventType::BandwidthEvent)
 {
   _bytesRead    = bytesRead;
   _bytesWritten = bytesWritten;

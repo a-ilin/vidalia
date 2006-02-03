@@ -27,7 +27,7 @@
 /** Default constructor */
 StreamEvent::StreamEvent(quint64 streamId, Status status, 
                          quint64 circuitId, QString target)
-: QEvent((QEvent::Type)EventType::StreamEvent)
+: QEvent((QEvent::Type)CustomEventType::StreamEvent)
 {
   _streamId  = streamId;
   _status    = status;

@@ -26,7 +26,7 @@
 
 #include <QEvent>
 
-namespace EventType {
+namespace CustomEventType {
   const int BandwidthEvent = QEvent::User;
   const int CircuitEvent   = QEvent::User+1;
   const int StreamEvent    = QEvent::User+2;

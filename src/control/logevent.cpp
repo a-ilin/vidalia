@@ -26,7 +26,7 @@
 
 /** Default constructor */
 LogEvent::LogEvent(Severity severity, QString message)
-: QEvent((QEvent::Type)EventType::LogEvent)
+: QEvent((QEvent::Type)CustomEventType::LogEvent)
 {
   _severity = severity;
   _message  = message;
