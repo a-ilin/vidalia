@@ -21,22 +21,6 @@
 #  02110-1301, USA.
 #################################################################
 
-HEADERS += $$PWD/mainwindow.h \
-           
-SOURCES += $$PWD/main.cpp \
-           $$PWD/mainwindow.cpp 
+HEADERS += $$PWD/dock.h 
+SOURCES += $$PWD/dock.cpp
 
-RESOURCES += $$PWD/res/vidalia.qrc
-
-macx {
-  ICON = $$PWD/res/vidalia.icns
-  include($$PWD/dock/dock.pri)
-}
-win32 {
-  RC_FILE = $$PWD/res/vidalia.rc
-}
-
-include($$PWD/tray/tray.pri)
-include($$PWD/aboutdialog/aboutdialog.pri)
-include($$PWD/messagelog/messagelog.pri)
-include($$PWD/bwgraph/bwgraph.pri)

@@ -28,15 +28,17 @@
  */
 
 #include <QtGui>
+#include <QApplication>
 
 #include "mainwindow.h"
 #include "../util/compat.h"
 #include "../config/messagetypes.h"
 
-/* On Mac, we need to put the 128x128 icon in the dock */
+/* On Mac, we go straight to Carbon to load our dock images from .icns files */
 #if defined(Q_WS_MAC)
-#define IMG_TOR_STOPPED    ":/images/tor_off48.png"
-#define IMG_TOR_RUNNING    ":/images/tor_on48.png"
+#include "dock/dock.h"
+#define IMG_TOR_STOPPED    "tor_off"
+#define IMG_TOR_RUNNING    "tor_on"
 #else
 #define IMG_TOR_STOPPED    ":/images/tor_off32.png"
 #define IMG_TOR_RUNNING    ":/images/tor_on32.png"
@@ -52,8 +54,7 @@ MainWindow::MainWindow()
 #endif
 
   /* Set Vidalia's application icon */
-  setWindowIcon(QIcon(IMG_TOR_STOPPED));
-  QApplication::setWindowIcon(QIcon(IMG_TOR_STOPPED));
+  setApplicationIcon(IMG_TOR_STOPPED);
 
   /* Create the actions that will go in the tray menu */
   createActions();
@@ -90,6 +91,19 @@ MainWindow::~MainWindow()
   }
 }
 
+/** Changes the application's window icon. On Mac, we update the
+ * application's dock icon. */ 
+void
+MainWindow::setApplicationIcon(QString res)
+{
+#if defined(Q_WS_MAC)
+  setDockIcon(res.toAscii().data());
+#else
+  QIcon icon(res);
+  setWindowIcon(icon);
+#endif
+}
+
 /** Shows the menubar on Mac */
 void
 MainWindow::show()
@@ -118,7 +132,12 @@ MainWindow::close()
 
   /* Remove the menu bar on Mac */
   removeMenuBar();
-  
+
+  /* If we're running on Mac, then restore the application's dock icon. */
+#if defined (Q_WS_MAC)
+  restoreDockIcon();
+#endif
+
   /* And then quit for real */
   QCoreApplication::quit();
 }
@@ -245,7 +264,7 @@ void
 MainWindow::started()
 {
   /* Set the window icon */
-  QApplication::setWindowIcon(QIcon(IMG_TOR_RUNNING));
+  setApplicationIcon(IMG_TOR_RUNNING);
   
   /* Set correct tray icon and tooltip */
   _trayIcon->setIcon(QPixmap(IMG_TOR_RUNNING));
@@ -300,7 +319,7 @@ void
 MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
 {
   /* Set the window icon */
-  QApplication::setWindowIcon(QIcon(IMG_TOR_STOPPED));
+  setApplicationIcon(IMG_TOR_STOPPED);
   
   /* Set correct tray icon and tooltip */
   _trayIcon->setIcon(QPixmap(IMG_TOR_STOPPED));
