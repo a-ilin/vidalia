@@ -33,30 +33,19 @@ setDockIcon(const char *dockIcon) {
   /* Load the dock icon from the application's resource bundle */
   CGImageRef image = getImageRef(dockIcon);
   
-  if (image != NULL) {
-    // without the following two statements SetApplicationDockTileImage would not work
-    CGrafPtr p= BeginQDContextForApplicationDockTile();
-    if (p == NULL)
+  if (image) {
+    /* Grab a drawing context reference */
+    CGContextRef ref = BeginCGContextForApplicationDockTile();
+    if (!ref) {
       return;
-    EndQDContextForApplicationDockTile(p);
+    }
     
     /* Attempt to set the dock icon */
-    OSStatus status = SetApplicationDockTileImage(image);
-    if (status == noErr) {
-      EventRecord event;
-      for (;;) {
-        Boolean gotEvent = WaitNextEvent(everyEvent, &event, 32767L, nil);
-        if (gotEvent) {
-          switch (event.what) {
-            case kHighLevelEvent:
-              AEProcessAppleEvent(&event);
-              break;
-          }
-          break;
-        }
-      }
-    }
+    SetApplicationDockTileImage(image);
+    
+    /* Free the resources and return */
     CGImageRelease(image);
+    EndCGContextForApplicationDockTile(ref);
   }
 }
 
@@ -147,6 +136,11 @@ getImageRef(const char *icns)
 void
 restoreDockIcon()
 {
+  CGContextRef ref = BeginCGContextForApplicationDockTile();
+  if (!ref) {
+    return;
+  }
   RestoreApplicationDockTileImage();
+  EndCGContextForApplicationDockTile(ref);
 }
 
