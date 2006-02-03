@@ -288,6 +288,9 @@
     <strikeout>false</strikeout>
    </font>
   </property>
+  <property name="contextMenuPolicy" >
+   <enum>Qt::NoContextMenu</enum>
+  </property>
   <property name="windowTitle" >
    <string>Message Log</string>
   </property>
@@ -296,6 +299,9 @@
   </property>
   <property name="statusTip" >
    <string/>
+  </property>
+  <property name="autoFillBackground" >
+   <bool>false</bool>
   </property>
   <widget class="QWidget" name="centralwidget" >
    <layout class="QVBoxLayout" >

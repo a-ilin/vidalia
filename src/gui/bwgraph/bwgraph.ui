@@ -297,6 +297,9 @@
   <property name="windowIcon" >
    <iconset resource="..\res\vidalia.qrc" >:/images/tor_logo16.png</iconset>
   </property>
+  <property name="autoFillBackground" >
+   <bool>false</bool>
+  </property>
   <property name="sizeGripEnabled" >
    <bool>true</bool>
   </property>
