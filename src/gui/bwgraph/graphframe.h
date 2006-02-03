@@ -34,8 +34,9 @@
 #define GRID_X        12  // Width of a grid cell
 #define GRID_Y        12  // Height of a grid cell
 #define HOR_SPC       2   // Space between data points
-#define SCALE_WIDTH   74  // Width of the scale
-#define MIN_SCALE     10000  // 10 kB/s is the minimum scale       
+#define SCALE_WIDTH   75  // Width of the scale
+#define MIN_SCALE     10  // 10 kB/s is the minimum scale  
+#define SCROLL_STEP   4   // Horizontal change on graph update
 
 #define BACK_COLOR    Qt::black
 #define SCALE_COLOR   Qt::green
@@ -55,7 +56,7 @@ public:
   /** Default Destructor **/
   ~GraphFrame();
   /** Add data points **/
-  void addPoints(quint64 send, quint64 recv);
+  void addPoints(qreal recv, qreal send);
   /** Clears the graph **/
   void resetGraph();
   /** Toggles display of data counters **/
@@ -70,26 +71,28 @@ private:
   int getNumPoints();
   /** Paints grid lines in the graph **/
   void paintGrid(QPainter* painter);
-  /** Paints send/receive graph lines **/
+  /** Paints appropriate lines on the graph **/
   void paintLines(QPainter* painter);
   /** Paints the send/receive totals **/
   void paintTotals(QPainter* painter);
   /** Paints the scale in the graph **/
   void paintScale(QPainter* painter);
   /** Returns a formatted string representation of total **/
-  QString totalToStr(quint64 total);
+  QString totalToStr(qreal total);
+  /** Paints a line with the data in list **/
+  void paintLine(QPainter* painter, QList<qreal>* list);
 
   /** Holds the received data points **/
-  QList<quint64> *_recvData;
+  QList<qreal> *_recvData;
   /** Holds the sent data points **/
-  QList<quint64> *_sendData;
+  QList<qreal> *_sendData;
   /** The maximum data value plotted **/
-  quint64 _maxValue;
+  qreal _maxValue;
   /** The maximum number of points to store **/
   int _maxPoints;
   /** The total data sent/recv **/
-  quint64 _totalSend;
-  quint64 _totalRecv;
+  qreal _totalSend;
+  qreal _totalRecv;
   /** Show the respective lines and counters **/
   bool _showRecv;
   bool _showSend;

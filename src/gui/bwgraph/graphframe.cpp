@@ -23,22 +23,24 @@
 
 #include "graphframe.h"
 
-/** Default contructor **/
+/** Default contructor */
 GraphFrame::GraphFrame(QWidget *parent)
 : QFrame(parent)
 {
   /* Create Graph Frame related objects */
-  _recvData = new QList<quint64>();
-  _sendData = new QList<quint64>();
+  _recvData = new QList<qreal>();
+  _sendData = new QList<qreal>();
   
   /* Initialize graph values */
+  _recvData->prepend(0);
+  _sendData->prepend(0);
   _maxPoints = getNumPoints();  
   _showRecv = true;
   _showSend = true;
   _maxValue = MIN_SCALE; 
 }
 
-/** Default destructor **/
+/** Default destructor */
 GraphFrame::~GraphFrame()
 {
   if (_recvData) {
@@ -53,7 +55,7 @@ GraphFrame::~GraphFrame()
 /**
  Gets the width of the desktop, which is the maximum 
  number of points we can plot in the graph
-**/
+*/
 int
 GraphFrame::getNumPoints()
 {
@@ -64,9 +66,9 @@ GraphFrame::getNumPoints()
 
 /**
  Adds new data points to the graph
-**/
+*/
 void
-GraphFrame::addPoints(quint64 send, quint64 recv)
+GraphFrame::addPoints(qreal recv, qreal send)
 {
   /* If maximum number of points plotted, remove oldest */
   if (_sendData->size() == _maxPoints) {
@@ -91,12 +93,14 @@ GraphFrame::addPoints(quint64 send, quint64 recv)
 
 /**
  Clears the graph
-**/
+*/
 void
 GraphFrame::resetGraph()
 {
   _recvData->clear();
   _sendData->clear();
+  _recvData->prepend(0);
+  _sendData->prepend(0);
   _maxValue = MIN_SCALE;
   _totalSend = 0;
   _totalRecv = 0;
@@ -105,7 +109,7 @@ GraphFrame::resetGraph()
 
 /**
  Toggles display of respective graph lines and counters
-**/
+*/
 void
 GraphFrame::setShowCounters(bool showRecv, bool showSend)
 {
@@ -117,7 +121,7 @@ GraphFrame::setShowCounters(bool showRecv, bool showSend)
 /** 
  Overloads default QWidget::paintEvent
  Draws the actual bandwidth graph 
-**/
+*/
 void
 GraphFrame::paintEvent(QPaintEvent *event)
 {
@@ -130,40 +134,72 @@ GraphFrame::paintEvent(QPaintEvent *event)
   /* Paint the gridlines */
   paintGrid(painter);
   
-  /* Paint the scale */
-  paintScale(painter);
-  
   /* Paint the send/receive lines */
   paintLines(painter);
+
+  /* Paint the scale */
+  paintScale(painter);
 
   /* Paint the send/recv totals */
   paintTotals(painter);
 
   delete painter;
 }
-
+#include <QtDebug>
 /**
- Paints the selected graph lines on the graph
-**/
+ Calls paint function for each line that is supposed to 
+ be painted.
+*/
 void
 GraphFrame::paintLines(QPainter* painter)
 {
   /* If show received rate is selected */
   if (_showRecv) {
     painter->setPen(QColor(RECV_COLOR));
-    // Draw line
+    paintLine(painter, _recvData);
   }
 
   /* If show send rate is selected */
   if (_showSend) {
     painter->setPen(QColor(SEND_COLOR));
-    // Draw line
+    paintLine(painter, _sendData);
+  }
+}
+
+/** Iterates the input list and draws a line on the graph
+ in the appropriate color
+*/
+void
+GraphFrame::paintLine(QPainter* painter, QList<qreal>* list)
+{
+  QRect rec = this->frameRect();
+  qreal x = rec.x() + rec.width();
+  qreal y = rec.y() + rec.height();
+  qreal scale = y / _maxValue;
+  
+  qreal prevValue = y - (list->at(0) * scale);
+  qreal currValue;
+  
+  for (int i = 0; i < list->size(); ++i) {
+    currValue = y - (list->at(i) * scale);
+    
+    /* Don't draw past the scale */
+    if (x - SCROLL_STEP < SCALE_WIDTH) {
+      painter->drawLine(QPointF(x, prevValue), QPointF(SCALE_WIDTH, currValue));
+      break;
+    }
+     
+    painter->drawLine(QPointF(x, prevValue), QPointF(x-SCROLL_STEP, currValue));
+      
+    /* Update for next iteration */
+    prevValue = currValue;
+    x -= SCROLL_STEP;
   }
 }
 
 /**
  Paints selected total indicators on the graph
-**/
+*/
 void
 GraphFrame::paintTotals(QPainter* painter)
 {
@@ -190,35 +226,30 @@ GraphFrame::paintTotals(QPainter* painter)
  with the correct size suffix
 */
 QString
-GraphFrame::totalToStr(quint64 total)
+GraphFrame::totalToStr(qreal total)
 {
   /* Determine the correct size suffix */
   if (total < 1000) {
-    /* Use bytes suffix */
-    return tr("%1 bytes").arg(total, 0);
-  } else if (total < 1000000) {
     /* Use KB suffix */
-    return tr("%1 KB").arg(total/1000.0, 0, 'f', 2);
-  } else if (total < 1000000000) {
+    return tr("%1 KB").arg(total, 0, 'f', 2);
+  } else if (total < 1000000) {
     /* Use MB suffix */
-    return tr("%1 MB").arg(total/1000000.0, 0, 'f', 2);
+    return tr("%1 MB").arg(total/1000.0, 0, 'f', 2);
   } else {
     /* Use GB suffix */
-    return tr("%1 GB").arg(total/1000000000.0, 0, 'f', 2);
+    return tr("%1 GB").arg(total/1000000.0, 0, 'f', 2);
   }
 }
 
 /**
  Paints the scale on the graph
-**/
+*/
 void
 GraphFrame::paintScale(QPainter* painter)
 {
   painter->setPen(SCALE_COLOR);
   
-  /* Convert from bytes to kilobytes */
-  qreal markStep = (_maxValue/1000.0) * .25;
-  
+  qreal markStep = _maxValue * .25;
   int top = this->frameRect().y();
   int bottom = this->frameRect().y() + this->frameRect().height();
   int paintStep = bottom / 4;
@@ -240,7 +271,7 @@ GraphFrame::paintScale(QPainter* painter)
 
 /**
  Paints grid lines in the bandwidth graph
-**/
+*/
 void
 GraphFrame::paintGrid(QPainter* painter)
 {
