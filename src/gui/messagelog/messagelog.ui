@@ -292,7 +292,7 @@
    <string>Message Log</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="../res/vidalia.qrc" >:/images/tor_logo16.png</iconset>
+   <iconset resource="..\res\vidalia.qrc" >:/images/tor_logo16.png</iconset>
   </property>
   <property name="statusTip" >
    <string/>
@@ -466,7 +466,7 @@
                <string>Tor Error</string>
               </property>
               <property name="icon" >
-               <iconset resource="../res/vidalia.qrc" >:/images/msg_error.png</iconset>
+               <iconset resource="..\res\vidalia.qrc" >:/images/msg_error.png</iconset>
               </property>
              </widget>
             </item>
@@ -482,7 +482,7 @@
                <string>Tor Warning</string>
               </property>
               <property name="icon" >
-               <iconset resource="../res/vidalia.qrc" >:/images/msg_warn.png</iconset>
+               <iconset resource="..\res\vidalia.qrc" >:/images/msg_warn.png</iconset>
               </property>
              </widget>
             </item>
@@ -498,7 +498,7 @@
                <string>Tor Notice</string>
               </property>
               <property name="icon" >
-               <iconset resource="../res/vidalia.qrc" >:/images/msg_notice.png</iconset>
+               <iconset resource="..\res\vidalia.qrc" >:/images/msg_notice.png</iconset>
               </property>
              </widget>
             </item>
@@ -514,7 +514,7 @@
                <string>Tor Info</string>
               </property>
               <property name="icon" >
-               <iconset resource="../res/vidalia.qrc" >:/images/msg_info.png</iconset>
+               <iconset resource="..\res\vidalia.qrc" >:/images/msg_info.png</iconset>
               </property>
              </widget>
             </item>
@@ -530,7 +530,7 @@
                <string>Tor Debug</string>
               </property>
               <property name="icon" >
-               <iconset resource="../res/vidalia.qrc" >:/images/msg_debug.png</iconset>
+               <iconset resource="..\res\vidalia.qrc" >:/images/msg_debug.png</iconset>
               </property>
              </widget>
             </item>
@@ -899,7 +899,7 @@
      <x>0</x>
      <y>0</y>
      <width>701</width>
-     <height>22</height>
+     <height>19</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_File" >
@@ -941,9 +941,9 @@
    <property name="geometry" >
     <rect>
      <x>0</x>
-     <y>538</y>
+     <y>536</y>
      <width>701</width>
-     <height>20</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>
@@ -1118,6 +1118,9 @@
    <property name="text" >
     <string>Find</string>
    </property>
+   <property name="statusTip" >
+    <string>Find all messages containing the search text</string>
+   </property>
    <property name="font" >
     <font>
      <family>Arial</family>
@@ -1130,14 +1133,13 @@
     </font>
    </property>
    <property name="shortcut" >
-    <string>⌘F</string>
+    <string>Ctrl+F</string>
    </property>
   </action>
  </widget>
  <pixmapfunction></pixmapfunction>
  <resources>
   <include location="res/vidalia.qrc" />
-  <include location="../res/vidalia.qrc" />
   <include location="../res/vidalia.qrc" />
  </resources>
  <connections>
