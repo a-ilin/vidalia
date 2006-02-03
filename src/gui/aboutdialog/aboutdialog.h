@@ -42,12 +42,27 @@ public:
   /** Overriden QWidget.show() **/
   void show();
 
+private slots:
+  /** Shows or hides the licensing information. */
+  void showLicense(bool show);
+  /** Hides the licensing information and then the dialog */
+  void hide();
+
 private:
+  /** Loads the license information from the resource file. */
+  void loadLicense();
+  /** Resizes the dialog to the given size and fixes it at that size. */
+  void resize(QSize size);
+
   /** Qt Designer generated QObject **/
   Ui::AboutDialog ui;
-
   /** TorControl for access to Tor version info **/
   TorControl *_torControl;
+  /** Minimum dialog size */
+  QSize _minSize;
+  /** Maximum dialog size */
+  QSize _maxSize;
+
 };
 
 #endif
