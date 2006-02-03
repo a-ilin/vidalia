@@ -55,7 +55,7 @@ protected:
   void customEvent(QEvent *event);
   
 private slots:
-  /** Adds new data to the graph and counters */
+  /** Adds new data to the graph */
   void updateGraph(quint64 bytesRead, quint64 bytesWritten);
   /** Called when settings button is toggled */
   void showSettingsFrame(bool show);
@@ -73,16 +73,11 @@ private:
   void createActions();
   /** Loads the saved Bandwidth Graph settings */
   void loadSettings();
-  /** Adds the new data values to the total and returns a formatted string */
-  QString addDataToStr(quint64 data, quint64 &total);
  
   /** A TorControl object used to talk to Tor. */
   TorControl* _torControl;
   /** A VidaliaSettings object that handles getting/saving settings */
   VidaliaSettings* _settings;
-  /** Counters that keep track of the total data sent/received */
-  quint64 _totalSent;
-  quint64 _totalReceived;
   
   /** Qt Designer generated object */
   Ui::BandwidthGraph ui;

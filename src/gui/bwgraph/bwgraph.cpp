@@ -105,40 +105,12 @@ BandwidthGraph::createActions()
 }
 
 /**
- Adds new data to the graph and the counters
+ Adds new data to the graph
 */
 void
 BandwidthGraph::updateGraph(quint64 bytesRead, quint64 bytesWritten)
 {
-  /* Send the data in kilobits */
-  ui.frmGraph->addPoints(bytesRead/1000.0, bytesWritten/1000.0);
-  ui.lblSent->setText(addDataToStr(bytesWritten, _totalSent));
-  ui.lblReceived->setText(addDataToStr(bytesRead, _totalReceived));
-}
-
-/**
- Adds data to the total counters and returns a correctly
- formatted string with the correct size suffix
-*/
-QString
-BandwidthGraph::addDataToStr(quint64 data, quint64 &total)
-{
-  total += data;
-
-  /* Determine the correct size suffix */
-  if (total < 1000) {
-    /* Use bytes suffix */
-    return tr("%1 bytes").arg(total, 0);
-  } else if (total < 1000000) {
-    /* Use KB suffix */
-    return tr("%1 KB").arg(total/1000.0, 0, 'f', 2);
-  } else if (total < 1000000000) {
-    /* Use MB suffix */
-    return tr("%1 MB").arg(total/1000000.0, 0, 'f', 2);
-  } else {
-    /* Use GB suffix */
-    return tr("%1 MB").arg(total/1000000000.0, 0, 'f', 2);
-  }
+  ui.frmGraph->addPoints(bytesRead, bytesWritten);
 }
 
 /**
@@ -161,19 +133,11 @@ BandwidthGraph::loadSettings()
 }
 
 /** 
- Resets the Sent/Received data counters and the log start time
+ Resets the log start time
 */
 void
 BandwidthGraph::reset()
 {
-  /* Reset the data total counters */
-  _totalSent = 0;
-  _totalReceived = 0;
-  
-  /* Reset the data counter labels */
-  ui.lblSent->setText(tr("0 bytes"));
-  ui.lblReceived->setText(tr("0 bytes"));
-
   /* Reset the data counter clock */
   ui.lblStartTime->setText(QDateTime::currentDateTime().toString(DATETIME_FMT));
 

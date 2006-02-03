@@ -28,8 +28,8 @@ GraphFrame::GraphFrame(QWidget *parent)
 : QFrame(parent)
 {
   /* Create Graph Frame related objects */
-  _recvData = new QList<qreal>();
-  _sendData = new QList<qreal>();
+  _recvData = new QList<quint64>();
+  _sendData = new QList<quint64>();
   
   /* Initialize graph values */
   _maxPoints = getNumPoints();  
@@ -66,7 +66,7 @@ GraphFrame::getNumPoints()
  Adds new data points to the graph
 **/
 void
-GraphFrame::addPoints(qreal send, qreal recv)
+GraphFrame::addPoints(quint64 send, quint64 recv)
 {
   /* If maximum number of points plotted, remove oldest */
   if (_sendData->size() == _maxPoints) {
@@ -77,6 +77,10 @@ GraphFrame::addPoints(qreal send, qreal recv)
   /* Add the points to their respective lists */
   _sendData->prepend(send);
   _recvData->prepend(recv);
+
+  /* Add to the total counters */
+  _totalSend += send;
+  _totalRecv += recv;
   
   /* Check for a new maximum value */
   if (send > _maxValue) _maxValue = send;
@@ -94,6 +98,8 @@ GraphFrame::resetGraph()
   _recvData->clear();
   _sendData->clear();
   _maxValue = MIN_SCALE;
+  _totalSend = 0;
+  _totalRecv = 0;
   this->update();
 }
 
@@ -118,7 +124,7 @@ GraphFrame::paintEvent(QPaintEvent *event)
   QPainter* painter = new QPainter(this);
   
   /* Fill in the background */
-  painter->fillRect(this->frameRect(), QBrush(Qt::black));
+  painter->fillRect(this->frameRect(), QBrush(BACK_COLOR));
   painter->drawRect(this->frameRect());
   
   /* Paint the gridlines */
@@ -130,8 +136,8 @@ GraphFrame::paintEvent(QPaintEvent *event)
   /* Paint the send/receive lines */
   paintLines(painter);
 
-  /* Paint the send/receive rate indicators */
-  paintRates(painter);
+  /* Paint the send/recv totals */
+  paintTotals(painter);
 
   delete painter;
 }
@@ -156,26 +162,49 @@ GraphFrame::paintLines(QPainter* painter)
 }
 
 /**
- Paints selected rate indicators on the graph
+ Paints selected total indicators on the graph
 **/
 void
-GraphFrame::paintRates(QPainter* painter)
+GraphFrame::paintTotals(QPainter* painter)
 {
-  int rateX = SCALE_WIDTH + FONT_SIZE;
-  int rateY = this->frameRect().y() + FONT_SIZE;
+  int totalX = SCALE_WIDTH + FONT_SIZE;
+  int totalY = this->frameRect().y() + FONT_SIZE;
   
-  /* If received rate is selected */
+  /* If total received is selected */
   if (_showRecv) {
     painter->setPen(QColor(RECV_COLOR));
-    qreal recv = _recvData->value(0);
-    painter->drawText(QPoint(rateX, rateY), tr("%1 kB/s").arg(recv));
+    painter->drawText(QPoint(totalX, totalY), 
+                             tr("Recv: ") + totalToStr(_totalRecv));
   }
 
-  /* If send rate is selected */
+  /* If total sent is selected */
   if (_showSend) {
     painter->setPen(QColor(SEND_COLOR));
-    qreal send = _sendData->value(0);
-    painter->drawText(QPoint(rateX, rateY+FONT_SIZE), tr("%1 kB/s").arg(send));
+    painter->drawText(QPoint(totalX, totalY+FONT_SIZE), 
+                             tr("Sent: ") + totalToStr(_totalSend));
+  }
+}
+
+/**
+ Returns a formatted string 
+ with the correct size suffix
+*/
+QString
+GraphFrame::totalToStr(quint64 total)
+{
+  /* Determine the correct size suffix */
+  if (total < 1000) {
+    /* Use bytes suffix */
+    return tr("%1 bytes").arg(total, 0);
+  } else if (total < 1000000) {
+    /* Use KB suffix */
+    return tr("%1 KB").arg(total/1000.0, 0, 'f', 2);
+  } else if (total < 1000000000) {
+    /* Use MB suffix */
+    return tr("%1 MB").arg(total/1000000.0, 0, 'f', 2);
+  } else {
+    /* Use GB suffix */
+    return tr("%1 GB").arg(total/1000000000.0, 0, 'f', 2);
   }
 }
 
@@ -185,9 +214,11 @@ GraphFrame::paintRates(QPainter* painter)
 void
 GraphFrame::paintScale(QPainter* painter)
 {
-  painter->setPen(Qt::green);
+  painter->setPen(SCALE_COLOR);
   
-  qreal markStep = _maxValue * .25;
+  /* Convert from bytes to kilobytes */
+  qreal markStep = (_maxValue/1000.0) * .25;
+  
   int top = this->frameRect().y();
   int bottom = this->frameRect().y() + this->frameRect().height();
   int paintStep = bottom / 4;
@@ -213,7 +244,7 @@ GraphFrame::paintScale(QPainter* painter)
 void
 GraphFrame::paintGrid(QPainter* painter)
 {
-  painter->setPen(Qt::darkGreen);
+  painter->setPen(GRID_COLOR);
   QRect rec = this->frameRect();
   int x, y;
   
