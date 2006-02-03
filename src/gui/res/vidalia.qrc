@@ -1,20 +1,27 @@
 <RCC>
     <qresource prefix="/images" >
-        <file>tor_about.png</file>
-        <file>tor_logo16.png</file>
-        <file>tor_logo32.ico</file>
-        <file>tor_off128.png</file>
-        <file>tor_off32.png</file>
-        <file>tor_off48.png</file>
-        <file>tor_on128.png</file>
-        <file>tor_on32.png</file>
-        <file>tor_on48.png</file>
-        <file>vidalia.icns</file>
-        <file>vidalia.ico</file>
         <file>msg_debug.png</file>
         <file>msg_error.png</file>
         <file>msg_info.png</file>
         <file>msg_notice.png</file>
         <file>msg_warn.png</file>
+        <file>qt_logo.png</file>
+        <file>tor_about.png</file>
+        <file>tor_logo128.png</file>
+        <file>tor_logo16.png</file>
+        <file>tor_logo32.ico</file>
+        <file>tor_off128.png</file>
+        <file>tor_off32.png</file>
+        <file>tor_off40.png</file>
+        <file>tor_off48.png</file>
+        <file>tor_on128.png</file>
+        <file>tor_on32.png</file>
+        <file>tor_on40.png</file>
+        <file>tor_on48.png</file>
+        <file>vidalia.icns</file>
+        <file>vidalia.ico</file>
+    </qresource>
+    <qresource prefix="/docs">
+        <file>short_license.txt</file>
     </qresource>
 </RCC>
