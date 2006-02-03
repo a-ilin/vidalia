@@ -567,7 +567,7 @@ MessageLog::write(LogEvent::Severity type, QString message)
 void
 MessageLog::customEvent(QEvent *event)
 {
-  if (event->type() == EventType::LogEvent) {
+  if (event->type() == CustomEventType::LogEvent) {
     LogEvent *log = (LogEvent *)event;
     write(log->severity(), log->message());
   }

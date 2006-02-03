@@ -76,7 +76,7 @@ BandwidthGraph::~BandwidthGraph()
 void
 BandwidthGraph::customEvent(QEvent *event)
 {
-  if (event->type() == EventType::BandwidthEvent) {
+  if (event->type() == CustomEventType::BandwidthEvent) {
     BandwidthEvent *bw = (BandwidthEvent *)event;
     updateGraph(bw->bytesRead(), bw->bytesWritten());
   }
