@@ -42,9 +42,6 @@ MessageLog::MessageLog(TorControl *torControl, QWidget *parent, Qt::WFlags flags
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
 
-  /* FIXME Hide this for now, remove/enable later on */
-  ui.grpVidMessages->setVisible(false);
-
   /* Create necessary Message Log QObjects */
   _torControl = torControl;
   _settings = new VidaliaSettings();
@@ -140,18 +137,6 @@ MessageLog::setToolTips()
                                "during normal Tor operation."));
   ui.chkTorDebug->setToolTip(tr("Hyper-verbose messages primarily of \n"
                                 "interest to Tor developers.")); 
-  ui.chkVidErr->setToolTip(tr("Messages that appear when something \n"
-                              "has gone very wrong with Vidalia.")); 
-  ui.chkVidWarn->setToolTip(tr("Messages that only appear when \n"
-                               "something has gone wrong with Vidalia."));
-  ui.chkVidNote->setToolTip(tr("Messages that appear infrequently \n"
-                               "during normal Vidalia operation and are \n"
-                               "not considered errors, but you may \n"
-                               "care about.")); 
-  ui.chkVidInfo->setToolTip(tr("Messages that appear freqently \n"
-                               "during normal Vidalia operation."));
-  ui.chkVidDebug->setToolTip(tr("Vidalia messages used by developers for  \n"
-                                "debugging purposes.")); 
 }
 
 /**
@@ -176,11 +161,6 @@ MessageLog::loadSettings()
   ui.chkTorNote->setChecked(_filter & LogEvent::TorNotice);
   ui.chkTorInfo->setChecked(_filter & LogEvent::TorInfo);
   ui.chkTorDebug->setChecked(_filter & LogEvent::TorDebug);
-  ui.chkVidErr->setChecked(_filter & LogEvent::VidaliaError);
-  ui.chkVidWarn->setChecked(_filter & LogEvent::VidaliaWarn);
-  ui.chkVidNote->setChecked(_filter & LogEvent::VidaliaNotice);
-  ui.chkVidInfo->setChecked(_filter & LogEvent::VidaliaInfo);
-  ui.chkVidDebug->setChecked(_filter & LogEvent::VidaliaInfo);
 }
 
 /** Attempts to register the selected message filter with Tor and displays an
@@ -230,11 +210,6 @@ MessageLog::saveChanges()
   _settings->setMsgFilter(LogEvent::TorNotice, ui.chkTorNote->isChecked());
   _settings->setMsgFilter(LogEvent::TorInfo, ui.chkTorInfo->isChecked());
   _settings->setMsgFilter(LogEvent::TorDebug, ui.chkTorDebug->isChecked());
-  _settings->setMsgFilter(LogEvent::VidaliaError, ui.chkVidErr->isChecked());
-  _settings->setMsgFilter(LogEvent::VidaliaWarn, ui.chkVidWarn->isChecked());
-  _settings->setMsgFilter(LogEvent::VidaliaNotice, ui.chkVidNote->isChecked());
-  _settings->setMsgFilter(LogEvent::VidaliaInfo, ui.chkVidInfo->isChecked());
-  _settings->setMsgFilter(LogEvent::VidaliaDebug, ui.chkVidDebug->isChecked());
 
   /* Refilter the list */
   registerLogEvents();
@@ -520,13 +495,13 @@ MessageLog::write(LogEvent::Severity type, QString message)
   }
   
   /* Change row color and text for serious warnings and errors */
-  if (type == LogEvent::TorError || type == LogEvent::VidaliaError) {
+  if (type == LogEvent::TorError) {
     /* Critical messages are red with white text */
     for (int i=0; i < ui.lstMessages->columnCount(); i++) {
       newMessage->setBackgroundColor(i, Qt::red);
       newMessage->setTextColor(i, Qt::white);
     }
-  } else if (type == LogEvent::TorWarn || type == LogEvent::VidaliaWarn) {
+  } else if (type == LogEvent::TorWarn) {
     /* Warning messages are yellow with black text */
     for (int i=0; i < ui.lstMessages->columnCount(); i++) {
       newMessage->setBackgroundColor(i, Qt::yellow);

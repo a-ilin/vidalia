@@ -39,11 +39,6 @@ public:
     TorNotice     = TOR_NOTICE,
     TorWarn       = TOR_WARN,
     TorError      = TOR_ERROR,
-    VidaliaDebug  = VIDALIA_DEBUG,
-    VidaliaInfo   = VIDALIA_INFO,
-    VidaliaNotice = VIDALIA_NOTICE,
-    VidaliaWarn   = VIDALIA_WARN,
-    VidaliaError  = VIDALIA_ERROR
   };
   
   /** Default constructor */
