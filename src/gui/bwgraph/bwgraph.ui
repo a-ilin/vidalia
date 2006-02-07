@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>358</width>
-    <height>243</height>
+    <width>366</width>
+    <height>259</height>
    </rect>
   </property>
   <property name="palette" >
@@ -295,7 +295,7 @@
    <string>Tor Bandwidth Usage</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="..\res\vidalia.qrc" >:/images/tor_logo16.png</iconset>
+   <iconset/>
   </property>
   <property name="sizeGripEnabled" >
    <bool>true</bool>
@@ -434,51 +434,11 @@
      </property>
      <item>
       <widget class="QPushButton" name="btnToggleSettings" >
-       <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>13</hsizetype>
-         <vsizetype>13</vsizetype>
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize" >
-        <size>
-         <width>94</width>
-         <height>27</height>
-        </size>
-       </property>
-       <property name="maximumSize" >
-        <size>
-         <width>94</width>
-         <height>27</height>
-        </size>
-       </property>
-       <property name="font" >
-        <font>
-         <family>Arial</family>
-         <pointsize>10</pointsize>
-         <weight>50</weight>
-         <italic>false</italic>
-         <bold>false</bold>
-         <underline>false</underline>
-         <strikeout>false</strikeout>
-        </font>
-       </property>
-       <property name="contextMenuPolicy" >
-        <enum>Qt::NoContextMenu</enum>
-       </property>
-       <property name="toolTip" >
-        <string>Toggles Properties menu</string>
-       </property>
        <property name="text" >
         <string>Show Settings</string>
        </property>
        <property name="checkable" >
         <bool>true</bool>
-       </property>
-       <property name="checked" >
-        <bool>false</bool>
        </property>
       </widget>
      </item>
@@ -489,51 +449,14 @@
        </property>
        <property name="sizeHint" >
         <size>
-         <width>151</width>
-         <height>29</height>
+         <width>40</width>
+         <height>20</height>
         </size>
        </property>
       </spacer>
      </item>
      <item>
       <widget class="QPushButton" name="btnReset" >
-       <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>13</hsizetype>
-         <vsizetype>13</vsizetype>
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize" >
-        <size>
-         <width>90</width>
-         <height>27</height>
-        </size>
-       </property>
-       <property name="maximumSize" >
-        <size>
-         <width>90</width>
-         <height>27</height>
-        </size>
-       </property>
-       <property name="font" >
-        <font>
-         <family>Arial</family>
-         <pointsize>10</pointsize>
-         <weight>50</weight>
-         <italic>false</italic>
-         <bold>false</bold>
-         <underline>false</underline>
-         <strikeout>false</strikeout>
-        </font>
-       </property>
-       <property name="contextMenuPolicy" >
-        <enum>Qt::NoContextMenu</enum>
-       </property>
-       <property name="toolTip" >
-        <string>Resets the Sent/Received Statistics</string>
-       </property>
        <property name="text" >
         <string>Reset</string>
        </property>
@@ -813,33 +736,10 @@
          <number>0</number>
         </property>
         <property name="spacing" >
-         <number>6</number>
+         <number>1</number>
         </property>
         <item>
          <widget class="QPushButton" name="btnSaveSettings" >
-          <property name="sizePolicy" >
-           <sizepolicy>
-            <hsizetype>13</hsizetype>
-            <vsizetype>13</vsizetype>
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize" >
-           <size>
-            <width>75</width>
-            <height>21</height>
-           </size>
-          </property>
-          <property name="maximumSize" >
-           <size>
-            <width>75</width>
-            <height>21</height>
-           </size>
-          </property>
-          <property name="contextMenuPolicy" >
-           <enum>Qt::NoContextMenu</enum>
-          </property>
           <property name="text" >
            <string>Save</string>
           </property>
@@ -847,29 +747,6 @@
         </item>
         <item>
          <widget class="QPushButton" name="btnCancelSettings" >
-          <property name="sizePolicy" >
-           <sizepolicy>
-            <hsizetype>13</hsizetype>
-            <vsizetype>13</vsizetype>
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="minimumSize" >
-           <size>
-            <width>75</width>
-            <height>21</height>
-           </size>
-          </property>
-          <property name="maximumSize" >
-           <size>
-            <width>75</width>
-            <height>21</height>
-           </size>
-          </property>
-          <property name="contextMenuPolicy" >
-           <enum>Qt::NoContextMenu</enum>
-          </property>
           <property name="text" >
            <string>Cancel</string>
           </property>
