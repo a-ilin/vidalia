@@ -434,16 +434,24 @@
      </property>
      <item>
       <widget class="QPushButton" name="btnToggleSettings" >
+       <property name="sizePolicy" >
+        <sizepolicy>
+         <hsizetype>1</hsizetype>
+         <vsizetype>0</vsizetype>
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="minimumSize" >
         <size>
-         <width>96</width>
-         <height>29</height>
+         <width>16</width>
+         <height>16</height>
         </size>
        </property>
        <property name="maximumSize" >
         <size>
-         <width>96</width>
-         <height>29</height>
+         <width>16777215</width>
+         <height>16777215</height>
         </size>
        </property>
        <property name="font" >
@@ -481,24 +489,32 @@
        </property>
        <property name="sizeHint" >
         <size>
-         <width>211</width>
-         <height>20</height>
+         <width>151</width>
+         <height>29</height>
         </size>
        </property>
       </spacer>
      </item>
      <item>
       <widget class="QPushButton" name="btnReset" >
+       <property name="sizePolicy" >
+        <sizepolicy>
+         <hsizetype>1</hsizetype>
+         <vsizetype>0</vsizetype>
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
        <property name="minimumSize" >
         <size>
-         <width>77</width>
-         <height>29</height>
+         <width>16</width>
+         <height>16</height>
         </size>
        </property>
        <property name="maximumSize" >
         <size>
-         <width>77</width>
-         <height>29</height>
+         <width>16777215</width>
+         <height>16777215</height>
         </size>
        </property>
        <property name="font" >
@@ -803,14 +819,14 @@
          <widget class="QPushButton" name="btnSaveSettings" >
           <property name="minimumSize" >
            <size>
-            <width>77</width>
-            <height>29</height>
+            <width>16</width>
+            <height>16</height>
            </size>
           </property>
           <property name="maximumSize" >
            <size>
-            <width>77</width>
-            <height>29</height>
+            <width>16777215</width>
+            <height>16777215</height>
            </size>
           </property>
           <property name="contextMenuPolicy" >
@@ -825,14 +841,14 @@
          <widget class="QPushButton" name="btnCancelSettings" >
           <property name="minimumSize" >
            <size>
-            <width>77</width>
-            <height>29</height>
+            <width>16</width>
+            <height>16</height>
            </size>
           </property>
           <property name="maximumSize" >
            <size>
-            <width>77</width>
-            <height>29</height>
+            <width>16777215</width>
+            <height>16777215</height>
            </size>
           </property>
           <property name="contextMenuPolicy" >
