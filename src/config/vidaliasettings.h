@@ -93,6 +93,14 @@ public:
   int getMsgLogOpacity();
   void setMsgLogOpacity(int value);
 
+  /* Get and set whether to write log messages to disk */
+  bool isLogFileEnabled();
+  void enableLogFile(bool enable);
+  
+  /* Get and set the destination log file */
+  QFileInfo getLogFile();
+  void setLogFile(QString file);
+
   /* Get and set BWGraph line filter */
   uint getBWGraphFilter();
   void setBWGraphFilter(uint line, bool status);
