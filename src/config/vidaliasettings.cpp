@@ -61,10 +61,11 @@
 #define DEFAULT_MSG_FILTER     (TOR_ERROR|TOR_WARN|TOR_NOTICE)
 #define DEFAULT_MAX_MESSAGE    500
 #define DEFAULT_ENABLE_LOG_FILE false
+
 #if defined(Q_OS_WIN32)
-#define DEFAULT_LOG_FILE       "%APPDATA%\\Tor\\tor.log"
+#define DEFAULT_LOG_FILE       (QDir::homePath() + "\\Tor\\tor.log")
 #else
-#define DEFAULT_LOG_FILE       "~/.tor/tor.log"
+#define DEFAULT_LOG_FILE       (QDir::homePath() + "/.tor/tor.log")
 #endif
 
 /* Default bandwidth graph settings */
