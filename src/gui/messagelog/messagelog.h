@@ -49,8 +49,7 @@ public:
   MessageLog(TorControl *torControl, QWidget *parent = 0, Qt::WFlags flags = 0);
   /** Default destructor **/
   ~MessageLog();
-  /** Adds the passed message to the message log as the specified type **/
-  void write(LogEvent::Severity, QString msg);
+  
 
 protected:
   /** Catches the close event when the user clicks on the X in the titlebar */
@@ -85,7 +84,9 @@ private slots:
   void saveChanges();
   /** Called when user cancels changed settings **/
   void cancelChanges();
-  
+  /** Called when the user clicks "Browse" to select a new log file. */
+  void browse();
+
 private:  
   /** Create and bind actions to events **/
   void createActions();
@@ -103,6 +104,17 @@ private:
   QList<QTreeWidgetItem *> search(QString text);
   /** Deselects all currently selected items. */
   void deselectAllItems();
+  /** Adds the passed message to the message log as the specified type **/
+  void log(LogEvent::Severity, QString msg);
+  /** Creates a new log message item and returns a pointer to it. */
+  QTreeWidgetItem* newMessageItem(LogEvent::Severity type, QString msg);
+  /** Returns a QString with the elements of the given message item properly
+   * formatted for writing to a log file. */
+  QString format(QTreeWidgetItem *messageItem);
+  /** Chronologically sorts the given list of log message items */
+  QList<QTreeWidgetItem *> sort(QList<QTreeWidgetItem *> list);
+  /** Opens a QTextStream to the log file */
+  bool openLogFile(QString filename);
 
   /** A pointer to a TorControl object, used to register for log events */
   TorControl* _torControl;
@@ -114,6 +126,12 @@ private:
   int _maxCount;
   /** Holds the number of messages currently displayed **/
   int _messagesShown;
+  /** Set to true if we will log all messages to a file. */
+  bool _enableLogging;
+  /** The log file used to store log messages. */
+  QFile *_logFile;
+  /** Text stream used to write to the log file if _enableLogging is true. */
+  QTextStream _logStream;
 
   /** Qt Designer generatated QObject **/
   Ui::MessageLog ui;

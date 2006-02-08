@@ -27,15 +27,21 @@
 #include "../mainwindow.h"
 #include "messagelog.h"
 
-#define COL_TIME  0 /* Date/time column */
-#define COL_TYPE  1 /* Message severity type column */
-#define COL_MSG   2 /* Message body column */
-#define ROLE_TYPE 1 /* Role used to store the numeric type */
+#define COL_TIME  0 /** Date/time column */
+#define COL_TYPE  1 /** Message severity type column */
+#define COL_MSG   2 /** Message body column */
+#define ROLE_TYPE 1 /** Role used to store the numeric type */
 
-/* Define the format used for displaying the date and time of a log message */
+/** Defines the format used for displaying the date and time of a log message */
 #define DATETIME_FMT  "MMM dd hh:mm:ss:zzz"
       
-/** Default Constructor **/
+/** Constructor. The constructor will load the message log's settings from
+ * VidaliSettings and register for log events according to the most recently
+ * set severity filter. 
+ * \param torControl A TorControl object used to register for log events.
+ * \param parent The parent widget of this MessageLog object.
+ * \param flags Any desired window creation flags. 
+ */
 MessageLog::MessageLog(TorControl *torControl, QWidget *parent, Qt::WFlags flags)
 : QMainWindow(parent, flags)
 {
@@ -55,6 +61,12 @@ MessageLog::MessageLog(TorControl *torControl, QWidget *parent, Qt::WFlags flags
   /* Initialize message counters */
   _messagesShown = 0;
   _maxCount = _settings->getMaxMsgCount();
+
+  /* Load the message log's stored settings */
+  _logFile = 0;
+  if (_settings->isLogFileEnabled()) {
+    openLogFile(_settings->getLogFile());
+  }
 
   /* Ask Tor to give me some log events */
   registerLogEvents();
@@ -77,7 +89,8 @@ MessageLog::MessageLog(TorControl *torControl, QWidget *parent, Qt::WFlags flags
 #endif
 }
 
-/** Default Destructor **/
+/** Default Destructor. Simply frees up any memory allocated for member
+ * variables. */
 MessageLog::~MessageLog()
 {
   if (_settings) {
@@ -85,9 +98,7 @@ MessageLog::~MessageLog()
   }
 }
 
-/**
- Binds events to actions 
-**/
+/** Binds events (signals) to actions (slots). */
 void
 MessageLog::createActions()
 {
@@ -117,11 +128,13 @@ MessageLog::createActions()
 
   connect(ui.btnToggleSettings, SIGNAL(toggled(bool)),
       this, SLOT(showSettingsFrame(bool)));
+
+  connect(ui.btnBrowse, SIGNAL(clicked()),
+      this, SLOT(browse()));
 }
 
-/**
- Set tooltips for Message Filter checkboxes in code because they are long
-**/
+/** Set tooltips for Message Filter checkboxes in code because they are long
+ * and Designer wouldn't let us insert newlines into the text. */
 void
 MessageLog::setToolTips()
 {
@@ -139,9 +152,8 @@ MessageLog::setToolTips()
                                 "interest to Tor developers.")); 
 }
 
-/**
- Loads the saved Message Log settings
-**/
+/** Loads the saved Message Log settings, including maximum message count,
+ * message log window opacity, and message severity filter. */
 void
 MessageLog::loadSettings()
 {
@@ -153,6 +165,11 @@ MessageLog::loadSettings()
 
   /* Set the window opacity label */
   ui.lblPercentOpacity->setNum(ui.sldrOpacity->value());
+
+  /* Set whether or not logging to file is enabled */
+  _enableLogging = _settings->isLogFileEnabled();
+  ui.chkEnableLogFile->setChecked(_enableLogging);
+  ui.lineFile->setText(_settings->getLogFile());
 
   /* Set the checkboxes accordingly */
   _filter = _settings->getMsgFilter();
@@ -178,12 +195,26 @@ MessageLog::registerLogEvents()
   }
 }
 
-/**
- Saves the Message Log settings and adjusts the message list if required 
-**/
+/** Saves the Message Log settings, adjusts the message list if required, and
+ * then hides the settings frame. */
 void
 MessageLog::saveChanges()
 {
+  /* Try to open the log file. If it can't be opened, then give the user an
+   * error message and stop saving the changes. */
+  if (ui.chkEnableLogFile->isChecked()) {
+    //QFileInfo file(ui.lineFile->text());
+    if (!openLogFile(ui.lineFile->text())) {
+      QMessageBox::warning(this, tr("Error Opening Log File"),
+        tr("Vidalia was unable to open the specified log file for writing."),
+        QMessageBox::Ok, QMessageBox::NoButton);
+      return;
+    }
+    _settings->setLogFile(ui.lineFile->text());
+  }
+  _settings->enableLogFile(ui.chkEnableLogFile->isChecked());
+  
+  
   /* Hide the settings frame and reset toggle button*/
   showSettingsFrame(false);
   
@@ -225,9 +256,8 @@ MessageLog::saveChanges()
   QApplication::restoreOverrideCursor();
 }
 
-/** 
- Simply restores the previously saved settings
-**/
+/** Simply restores the previously saved settings and hides the settings
+ * frame. */
 void 
 MessageLog::cancelChanges()
 {
@@ -238,10 +268,41 @@ MessageLog::cancelChanges()
   loadSettings();
 }
 
-/**
- Cycles through the list, hiding and showing appropriate messages.
- Removes messages if newly shown messages put us over _maxCount.
-**/
+/** Attempts to open the specified log file and sets _logStream to use the
+ * opened file. If a log file is previously opened and opening the new log
+ * file fails, then the old log file will not be affected.
+ * \param filename The name of a file to which log messages will be saved.
+ * \return true if the log was successfully opened.
+ */
+bool
+MessageLog::openLogFile(QString filename)
+{
+  QFile *newLogFile;
+  if (_logFile && _logFile->isOpen()) {
+    if (_logFile->fileName() == filename) {
+      /* The specified log file is already open */
+      return true;
+    }
+  }
+  newLogFile = new QFile(filename, this);
+  
+  /* Try to open the new log file */
+  if (!newLogFile->open(QFile::WriteOnly | QIODevice::Append | QIODevice::Text)) {
+    delete newLogFile;
+    return false;
+  }
+  
+  /* Opening succeeded, so swap out the old logfile for the new one and adjust
+   * the QTextStream object's device. */
+  delete _logFile;
+  _logFile = newLogFile;
+  _logStream.setDevice(_logFile);
+  
+  return true;
+}
+
+/** Cycles through the list, hiding and showing appropriate messages.
+ * Removes messages if newly shown messages put us over _maxCount. */
 void
 MessageLog::filterLog()
 {
@@ -270,7 +331,49 @@ MessageLog::filterLog()
   }
 }
 
-/** Saves the given list of items to a file */
+/** Formats a message item from the message log into a format suitable for
+ * writing to the clipboard or saving to a file.
+ * \param messageItem A message log item to format.
+ * \return A properly formatted log message as a string.
+ */
+QString
+MessageLog::format(QTreeWidgetItem *item)
+{
+  return QString("%1 [%2] %3\n").arg(item->text(COL_TIME))
+                                .arg(item->text(COL_TYPE))
+                                .arg(item->text(COL_MSG));
+}
+
+/** Sorts the given list of log message items in ascending chronological
+ * order.
+ * \param list The unsorted list of message items.
+ * \return The sorted list of message items.
+ */
+QList<QTreeWidgetItem *>
+MessageLog::sort(QList<QTreeWidgetItem *> items)
+{
+  QMap<QDateTime, QTreeWidgetItem *> sortedList;
+  foreach (QTreeWidgetItem *item, items) {
+    sortedList.insert(
+       QDateTime::fromString(item->text(COL_TIME), DATETIME_FMT), item);
+  }
+  return sortedList.values();
+}
+
+/** Called when the user clicks "Browse" to select a new log file. */
+void
+MessageLog::browse()
+{
+  QString filename = QFileDialog::getSaveFileName(this,
+                         tr("Select Log File"), "tor.log");
+  if (!filename.isEmpty()) {
+    ui.lineFile->setText(filename);
+  }
+}
+
+/** Saves the given list of items to a file.
+ * \param items A list of log message items to save. 
+ */
 void
 MessageLog::save(QList<QTreeWidgetItem *> items)
 {
@@ -297,51 +400,35 @@ MessageLog::save(QList<QTreeWidgetItem *> items)
       return;
     }
    
-    /* Sort the list of log messages by time */
-    QMap<QDateTime, QTreeWidgetItem *> sortedList;
-    foreach (QTreeWidgetItem *item, items) {
-      sortedList.insert(
-         QDateTime::fromString(item->text(COL_TIME), DATETIME_FMT), item);
-    }
-    
     /* Write out the message log to the file */
     QTextStream out(&file);
     QApplication::setOverrideCursor(Qt::WaitCursor);
-    
-    foreach (QTreeWidgetItem *item, sortedList) {
-      out << item->text(COL_TIME) << " ";
-      out << "[" << item->text(COL_TYPE) << "] ";
-      out << item->text(COL_MSG) << "\n";
+    foreach (QTreeWidgetItem *item, sort(items)) {
+      out << format(item);
     }
     QApplication::restoreOverrideCursor();
   }
 }
 
-/**
- Saves currently selected messages to a file
-**/
+/** Saves currently selected messages to a file. */
 void
 MessageLog::saveSelected()
 {
   save(ui.lstMessages->selectedItems());
 }
 
-/**
- Saves all (shown) messages to a file
-**/
+/** Saves all shown messages to a file. */
 void
 MessageLog::saveAll()
 {
   save(ui.lstMessages->findItems("*", Qt::MatchWildcard));
 }
 
-/** 
- Copies contents of currently selected messages to the 'clipboard'
-**/
+/** Copies contents of currently selected messages to the 'clipboard'. */
 void
 MessageLog::copy()
 {
-  QList<QTreeWidgetItem *> selected = ui.lstMessages->selectedItems();
+  QList<QTreeWidgetItem *> selected = sort(ui.lstMessages->selectedItems());
   int count = selected.size();
   
   /* Do nothing if there are no selected messages */
@@ -352,17 +439,10 @@ MessageLog::copy()
   /* Clear anything on the clipboard */
   QApplication::clipboard()->clear();
 
-  QString contents;
-  QString current;
-
   /* Copy the selected messages to the clipboard */
+  QString contents;
   for(int i=0; i < count; i++) {
-    current.clear();
-    for (int j=0; j < ui.lstMessages->columnCount(); j++) {
-        current += selected[i]->text(j) += "    ";
-    }
-    current += "\n";
-    contents += current;
+    contents += format(selected[i]); 
   }
   QApplication::clipboard()->setText(contents);
 }
@@ -382,7 +462,7 @@ MessageLog::find()
   
   if (ok && !text.isEmpty()) {
     QTreeWidget *tree = ui.lstMessages;
-    QList<QTreeWidgetItem *> results = search(text);
+    QList<QTreeWidgetItem *> results = sort(search(text));
     if (!results.size()) {
       QMessageBox::information(this, tr("Not Found"), 
                                tr("Search found 0 matches."), 
@@ -402,9 +482,7 @@ MessageLog::find()
   }
 }
 
-/**
- Clears the message list and resets the message counter
-**/
+/** Clears the message list and resets the message counter. */
 void
 MessageLog::clear()
 {
@@ -414,9 +492,8 @@ MessageLog::clear()
 }
 
 /** Searches the currently displayed log entries for the given search text.
- *
  * \param text The text to search for.
- * \returns A list of all log items containing the search text. 
+ * \return A list of all log items containing the search text. 
  */
 QList<QTreeWidgetItem *>
 MessageLog::search(QString text)
@@ -438,9 +515,9 @@ MessageLog::deselectAllItems()
   }
 }
 
-/** 
- Toggles the Settings pane on and off, changes toggle button text
-**/
+/** Toggles the Settings pane on and off and changes toggle button text.
+ * \param show Whether to show or hide the Settings frame.
+ */
 void
 MessageLog::showSettingsFrame(bool show)
 {
@@ -455,9 +532,9 @@ MessageLog::showSettingsFrame(bool show)
   }
 }
 
-/**
- Sets the opacity of the Message Log window
-**/
+/** Sets the opacity of the Message Log window.
+ * \param value The opaqueness of the window (0-100)
+ */
 void
 MessageLog::setOpacity(int value)
 {
@@ -475,24 +552,15 @@ MessageLog::setOpacity(int value)
   #endif
 }
 
-/**
- Writes a message to the Message History and tags it with
- the proper date, time and type.
-**/
-void 
-MessageLog::write(LogEvent::Severity type, QString message)
+/** Creates a new log item in the message log and returns a pointer to it.
+ * \param type The log event severity
+ * \param message The log message.
+ * \return A pointer to the new message log item.
+ */
+QTreeWidgetItem *
+MessageLog::newMessageItem(LogEvent::Severity type, QString message)
 {
   QTreeWidgetItem *newMessage = new QTreeWidgetItem();
- 
-  /* Remove top message if message log is at maximum setting */
-  if (ui.lstMessages->topLevelItemCount() == _maxCount) {
-    
-    /* Decrease shown messages counter if removing a shown message */
-    if (!ui.lstMessages->isItemHidden(ui.lstMessages->topLevelItem(0))) {
-      _messagesShown--;
-    }
-    ui.lstMessages->takeTopLevelItem(0);
-  }
   
   /* Change row color and text for serious warnings and errors */
   if (type == LogEvent::TorError) {
@@ -507,20 +575,36 @@ MessageLog::write(LogEvent::Severity type, QString message)
       newMessage->setBackgroundColor(i, Qt::yellow);
     }
   }
-    
-  /* Set Time */
+  
+  /* Assemble the new log message item */
   newMessage->setText(COL_TIME,
       QDateTime::currentDateTime().toString(DATETIME_FMT));
-
-  /* Set Type */
   newMessage->setTextAlignment(COL_TYPE, Qt::AlignCenter);
   newMessage->setText(COL_TYPE, LogEvent::severityToString(type));
-
-  /* Set Message Body */
   newMessage->setText(COL_MSG, message);
-
-  /* Store the numerical representation of the severity for this message */
   newMessage->setData(COL_TYPE, ROLE_TYPE, (uint)type);
+  
+  return newMessage;
+}
+
+/** Writes a message to the Message History and tags it with
+ * the proper date, time and type.
+ * \param type The message's severity type.
+ * \param message The log message to be added.
+ */
+void 
+MessageLog::log(LogEvent::Severity type, QString message)
+{
+  QTreeWidgetItem *newMessage = newMessageItem(type, message);
+  
+  /* Remove top message if message log is at maximum setting */
+  if (ui.lstMessages->topLevelItemCount() == _maxCount) {
+    /* Decrease shown messages counter if removing a shown message */
+    if (!ui.lstMessages->isItemHidden(ui.lstMessages->topLevelItem(0))) {
+      _messagesShown--;
+    }
+    ui.lstMessages->takeTopLevelItem(0);
+  }
   
   /* Add the message to the bottom of the list */
   ui.lstMessages->addTopLevelItem(newMessage);
@@ -535,22 +619,28 @@ MessageLog::write(LogEvent::Severity type, QString message)
   } else {
     ui.lstMessages->setItemHidden(newMessage, true);
   }
+
+  /* If we're saving log messages to a file, go ahead and do that now */
+  if (_enableLogging) {
+    _logStream << format(newMessage);
+    _logStream.flush(); /* Write to disk right away */
+  }
 }
 
 /** Custom event handler. Checks if the event is a log event. If it is, then
- * it will write the message to the message log. */
+ * it will write the message to the message log. 
+ * \param event The custom log event. 
+ */
 void
 MessageLog::customEvent(QEvent *event)
 {
   if (event->type() == CustomEventType::LogEvent) {
-    LogEvent *log = (LogEvent *)event;
-    write(log->severity(), log->message());
+    LogEvent *e = (LogEvent *)event;
+    log(e->severity(), e->message());
   }
 }
 
-/** 
- Overloads the default show() slot so we can set opacity
-**/
+/** Overloads the default show() slot so we can set opacity. */
 void
 MessageLog::show()
 {
