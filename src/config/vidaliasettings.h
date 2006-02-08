@@ -98,7 +98,7 @@ public:
   void enableLogFile(bool enable);
   
   /* Get and set the destination log file */
-  QFileInfo getLogFile();
+  QString getLogFile();
   void setLogFile(QString file);
 
   /* Get and set BWGraph line filter */

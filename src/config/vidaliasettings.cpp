@@ -278,10 +278,10 @@ VidaliaSettings::enableLogFile(bool enable)
 }
 
 /** Gets the destination file on disk to which log messages can be saved. */
-QFileInfo
+QString
 VidaliaSettings::getLogFile()
 {
-  return QFileInfo(value(SETTING_LOG_FILE, DEFAULT_LOG_FILE).toString());
+  return value(SETTING_LOG_FILE, DEFAULT_LOG_FILE).toString();
 }
 
 /** Sets the destination file on disk to which log messages can be saved. */
