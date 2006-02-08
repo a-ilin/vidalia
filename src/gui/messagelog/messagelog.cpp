@@ -341,7 +341,7 @@ MessageLog::format(QTreeWidgetItem *item)
 {
   return QString("%1 [%2] %3\n").arg(item->text(COL_TIME))
                                 .arg(item->text(COL_TYPE))
-                                .arg(item->text(COL_MSG));
+                                .arg(item->text(COL_MSG).trimmed());
 }
 
 /** Sorts the given list of log message items in ascending chronological
