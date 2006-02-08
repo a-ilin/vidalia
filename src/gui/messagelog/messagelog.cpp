@@ -167,8 +167,7 @@ MessageLog::loadSettings()
   ui.lblPercentOpacity->setNum(ui.sldrOpacity->value());
 
   /* Set whether or not logging to file is enabled */
-  _enableLogging = _settings->isLogFileEnabled();
-  ui.chkEnableLogFile->setChecked(_enableLogging);
+  ui.chkEnableLogFile->setChecked(_settings->isLogFileEnabled());
   ui.lineFile->setText(_settings->getLogFile());
 
   /* Set the checkboxes accordingly */
@@ -203,7 +202,6 @@ MessageLog::saveChanges()
   /* Try to open the log file. If it can't be opened, then give the user an
    * error message and stop saving the changes. */
   if (ui.chkEnableLogFile->isChecked()) {
-    //QFileInfo file(ui.lineFile->text());
     if (!openLogFile(ui.lineFile->text())) {
       QMessageBox::warning(this, tr("Error Opening Log File"),
         tr("Vidalia was unable to open the specified log file for writing."),
@@ -211,6 +209,7 @@ MessageLog::saveChanges()
       return;
     }
     _settings->setLogFile(ui.lineFile->text());
+    ui.lineFile->setText(QDir::convertSeparators(ui.lineFile->text()));
   }
   _settings->enableLogFile(ui.chkEnableLogFile->isChecked());
   
@@ -364,8 +363,10 @@ MessageLog::sort(QList<QTreeWidgetItem *> items)
 void
 MessageLog::browse()
 {
-  QString filename = QFileDialog::getSaveFileName(this,
-                         tr("Select Log File"), "tor.log");
+  /* Strangely, QFileDialog returns a non seperator converted path. */
+  QString filename = QDir::convertSeparators(
+                          QFileDialog::getSaveFileName(this,
+                              tr("Select Log File"), "tor.log"));
   if (!filename.isEmpty()) {
     ui.lineFile->setText(filename);
   }
@@ -621,7 +622,7 @@ MessageLog::log(LogEvent::Severity type, QString message)
   }
 
   /* If we're saving log messages to a file, go ahead and do that now */
-  if (_enableLogging) {
+  if (_settings->isLogFileEnabled()) {
     _logStream << format(newMessage);
     _logStream.flush(); /* Write to disk right away */
   }

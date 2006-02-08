@@ -126,11 +126,9 @@ private:
   int _maxCount;
   /** Holds the number of messages currently displayed **/
   int _messagesShown;
-  /** Set to true if we will log all messages to a file. */
-  bool _enableLogging;
   /** The log file used to store log messages. */
   QFile *_logFile;
-  /** Text stream used to write to the log file if _enableLogging is true. */
+  /** Text stream used to write to the log file if enabled*/
   QTextStream _logStream;
 
   /** Qt Designer generatated QObject **/

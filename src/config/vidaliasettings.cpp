@@ -63,7 +63,7 @@
 #define DEFAULT_ENABLE_LOG_FILE false
 
 #if defined(Q_OS_WIN32)
-#define DEFAULT_LOG_FILE       (QDir::homePath() + "\\Tor\\tor.log")
+#define DEFAULT_LOG_FILE       "C:\\Program Files\\Tor\\tor.log"
 #else
 #define DEFAULT_LOG_FILE       (QDir::homePath() + "/.tor/tor.log")
 #endif
@@ -282,14 +282,15 @@ VidaliaSettings::enableLogFile(bool enable)
 QString
 VidaliaSettings::getLogFile()
 {
-  return value(SETTING_LOG_FILE, DEFAULT_LOG_FILE).toString();
+  return QDir::convertSeparators(
+                  value(SETTING_LOG_FILE, DEFAULT_LOG_FILE).toString());
 }
 
 /** Sets the destination file on disk to which log messages can be saved. */
 void
 VidaliaSettings::setLogFile(QString file)
 {
-  setValue(SETTING_LOG_FILE, file);
+  setValue(SETTING_LOG_FILE, QDir::convertSeparators(file));
 }
 
 /** Returns the bandwidth line filter. */
