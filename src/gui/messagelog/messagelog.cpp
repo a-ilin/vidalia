@@ -64,7 +64,8 @@ MessageLog::MessageLog(TorControl *torControl, QWidget *parent, Qt::WFlags flags
 
   /* Load the message log's stored settings */
   _logFile = 0;
-  if (_settings->isLogFileEnabled()) {
+  _enableLogging = _settings->isLogFileEnabled();
+  if (_enableLogging) {
     openLogFile(_settings->getLogFile());
   }
 
@@ -167,7 +168,8 @@ MessageLog::loadSettings()
   ui.lblPercentOpacity->setNum(ui.sldrOpacity->value());
 
   /* Set whether or not logging to file is enabled */
-  ui.chkEnableLogFile->setChecked(_settings->isLogFileEnabled());
+  _enableLogging = _settings->isLogFileEnabled();
+  ui.chkEnableLogFile->setChecked(_enableLogging);
   ui.lineFile->setText(_settings->getLogFile());
 
   /* Set the checkboxes accordingly */
@@ -211,7 +213,8 @@ MessageLog::saveChanges()
     _settings->setLogFile(ui.lineFile->text());
     ui.lineFile->setText(QDir::convertSeparators(ui.lineFile->text()));
   }
-  _settings->enableLogFile(ui.chkEnableLogFile->isChecked());
+  _enableLogging = ui.chkEnableLogFile->isChecked();
+  _settings->enableLogFile(_enableLogging);
   
   
   /* Hide the settings frame and reset toggle button*/
@@ -622,7 +625,7 @@ MessageLog::log(LogEvent::Severity type, QString message)
   }
 
   /* If we're saving log messages to a file, go ahead and do that now */
-  if (_settings->isLogFileEnabled()) {
+  if (_enableLogging) {
     _logStream << format(newMessage);
     _logStream.flush(); /* Write to disk right away */
   }
