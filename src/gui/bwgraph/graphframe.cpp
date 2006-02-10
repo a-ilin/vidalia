@@ -149,7 +149,7 @@ GraphFrame::paintEvent(QPaintEvent *event)
 
   delete painter;
 }
-#include <QtDebug>
+
 /**
  Calls paint function for each line that is supposed to 
  be painted.

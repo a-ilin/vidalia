@@ -158,6 +158,8 @@ MainWindow::createActions()
   _stopAct->setEnabled(false);
 
   _configAct = new QAction(tr("Configure"), this);
+  connect(_configAct, SIGNAL(triggered()),
+      this, SLOT(showConfig()));
   
   _aboutAct = new QAction(tr("About"), this);
   connect(_aboutAct, SIGNAL(triggered()),
@@ -417,6 +419,20 @@ MainWindow::showBandwidthGraph()
   } else {
     _bandwidthGraph->activateWindow();
     _bandwidthGraph->raise();
+  }
+}
+
+/** Shows Configuration dialog. If the config dialog is already displayed, the
+ * existing instance will be brought to the foreground. */
+void
+MainWindow::showConfig()
+{
+  static ConfigDialog* configDialog = new ConfigDialog(this);
+  if(!configDialog->isVisible()) {
+    configDialog->show();
+  } else {
+    configDialog->activateWindow();
+    configDialog->raise();
   }
 }
 

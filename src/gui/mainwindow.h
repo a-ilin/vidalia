@@ -35,6 +35,7 @@
 #include "aboutdialog/aboutdialog.h"
 #include "messagelog/messagelog.h"
 #include "bwgraph/bwgraph.h"
+#include "configdialog/configdialog.h"
 
 class MainWindow : public QMainWindow
 {
@@ -69,6 +70,8 @@ private slots:
   void showMessageLog();
   /** Called when the user selects "Bandwidth Graph" from the menu. */
   void showBandwidthGraph();
+  /** Called when the user selects "Configuration" from the menu. */
+  void showConfig();
   /** Called when the user exits Vidalia. */
   void close();
 
@@ -87,9 +90,9 @@ private:
   /* Used to determine if the Tor process exiting was intentional or not */
   bool _isIntentionalExit;
  
-  /** Instantiates a window for logging messages from Tor */
+  /** A MessageLog object which handles logging Tor messages */
   MessageLog* _messageLog;
-  /** A pointer to a BandwidthGraph object, which displays bw usage */
+  /** A BandwidthGraph object which handles monitoring Tor bandwidth usage */
   BandwidthGraph* _bandwidthGraph;
   /** A TorControl object that handles communication with Tor */
   TorControl* _torControl; 
