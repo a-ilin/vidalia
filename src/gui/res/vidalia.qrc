@@ -5,6 +5,9 @@
         <file>msg_info.png</file>
         <file>msg_notice.png</file>
         <file>msg_warn.png</file>
+        <file>config_general.png</file>
+        <file>config_server.png</file>
+        <file>config_advanced.png</file>
         <file>qt_logo.png</file>
         <file>tor_about.png</file>
         <file>tor_logo128.png</file>

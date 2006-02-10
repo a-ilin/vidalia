@@ -370,7 +370,7 @@
        <string>General</string>
       </property>
       <property name="icon" >
-       <iconset resource="..\res\vidalia.qrc" >:/images/tor_logo48.png</iconset>
+       <iconset resource="..\res\vidalia.qrc" >:/images/config_general.png</iconset>
       </property>
      </item>
      <item>
@@ -378,7 +378,7 @@
        <string>Advanced</string>
       </property>
       <property name="icon" >
-       <iconset resource="..\res\vidalia.qrc" >:/images/msg_debug.png</iconset>
+       <iconset resource="..\res\vidalia.qrc" >:/images/config_advanced.png</iconset>
       </property>
      </item>
     </widget>
