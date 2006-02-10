@@ -29,7 +29,15 @@ SOURCES += $$PWD/main.cpp \
 RESOURCES += $$PWD/res/vidalia.qrc
 
 macx {
+  # Set the application's icon file
   ICON = $$PWD/res/vidalia.icns
+  
+  # Add in additional applications icon files
+  icons.files = $$PWD/res/tor_on.icns \
+                $$PWD/res/tor_off.icns
+  icons.path = Contents/Resources
+  QMAKE_BUNDLE_DATA += icons
+  
   include($$PWD/dock/dock.pri)
 }
 win32 {
