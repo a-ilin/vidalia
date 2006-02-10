@@ -21,6 +21,8 @@
 *  Boston, MA  02110-1301, USA.
 ****************************************************************/
 
+#include <QtGlobal>
+
 #include "dock.h" 
 
 CGImageRef getImageRef(const char *icns);
@@ -52,6 +54,8 @@ setDockIcon(const char *dockIcon) {
 /** Callback used by CGDataProviderCreateWithData(). */
 void 
 releaseData(void *info, const void *data, size_t size) {
+  Q_UNUSED(info);
+  Q_UNUSED(size);
   free((void*)data);
 }
 
