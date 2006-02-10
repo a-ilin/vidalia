@@ -21,6 +21,8 @@
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
 
+#include <QtGlobal>
+
 #include "graphframe.h"
 
 /** Default contructor */
@@ -125,6 +127,8 @@ GraphFrame::setShowCounters(bool showRecv, bool showSend)
 void
 GraphFrame::paintEvent(QPaintEvent *event)
 {
+  Q_UNUSED(event);
+
   QPainter* painter = new QPainter(this);
   
   /* Fill in the background */
