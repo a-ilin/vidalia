@@ -57,7 +57,7 @@
 #endif
 #define DEFAULT_OPACITY 100
 
-#define DEFAULT_TOR_ARGUMENTS  "-ControlPort 9051"
+#define DEFAULT_TOR_ARGUMENTS  ""
 #define DEFAULT_CONTROL_ADDR   "127.0.0.1"
 #define DEFAULT_CONTROL_PORT   9051
 #define DEFAULT_AUTH_TOKEN     ""
@@ -141,9 +141,10 @@ VidaliaSettings::getTorExecutable()
 QStringList
 VidaliaSettings::getTorArguments()
 {
-  QString args = value(SETTING_TOR_ARGUMENTS,
-                       DEFAULT_TOR_ARGUMENTS).toString();
-  return args.split(";");
+  QStringList args = value(SETTING_TOR_ARGUMENTS,
+                           DEFAULT_TOR_ARGUMENTS).toString().split(";");
+  args << QString("-ControlPort %1").arg(getControlPort());
+  return args;
 }
 
 /** Set Tor arguments to a ;-delimited list of all arguments in the supplied
