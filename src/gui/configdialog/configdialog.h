@@ -57,8 +57,17 @@ private slots:
 private:
   /** Connects actions to events */
   void createActions();
+  
   /** Loads the current configuration settings */
   void loadSettings();
+  void loadGeneralSettings();
+  void loadServerSettings();
+  void loadAdvancedSettings();
+
+  /** Saves the current configuration settings */
+  void saveGeneralSettings();
+  void saveServerSettings();
+  void saveAdvancedSettings();
 
   /** A VidaliaSettings object taht handles getting/saving settings */
   VidaliaSettings* _settings;

@@ -81,8 +81,31 @@ ConfigDialog::changePage(QListWidgetItem *current, QListWidgetItem *previous)
 void
 ConfigDialog::loadSettings()
 {
-  /* Load the saved settings from VidaliaSettings */
+  /* Load General settings */
+  loadGeneralSettings();
+  /* Load Server settings */
+  loadServerSettings();
+  /* Load Advanced settings */
+  loadAdvancedSettings();
+}
+
+/** Load and display settings for the General settings page. */
+void
+ConfigDialog::loadGeneralSettings()
+{
   ui.lineTorPath->setText(_settings->getTorPath());
+}
+
+/** Load and display settings for the Server settings page. */
+void
+ConfigDialog::loadServerSettings()
+{
+}
+
+/** Load and display settings for the Advanced settings page. */
+void
+ConfigDialog::loadAdvancedSettings()
+{
   ui.lineControlPort->setText(QString::number(_settings->getControlPort()));
 }
 
@@ -101,10 +124,31 @@ void
 ConfigDialog::saveChanges()
 {
   /* Save the settings and exit */
-  _settings->setTorPath(ui.lineTorPath->text());
-  _settings->setControlPort(ui.lineControlPort->text().toUShort());
+  saveGeneralSettings();
+  saveServerSettings();
+  saveAdvancedSettings();
 
   QDialog::close();
+}
+
+/** Save changes made to settings on the General settings page. */
+void
+ConfigDialog::saveGeneralSettings()
+{
+  _settings->setTorPath(ui.lineTorPath->text());
+}
+
+/** Saves changes made to settings on the Server settings page. */
+void
+ConfigDialog::saveServerSettings()
+{
+}
+
+/** Save changes made to settings on the Advanced settings page. */
+void
+ConfigDialog::saveAdvancedSettings()
+{
+  _settings->setControlPort(ui.lineControlPort->text().toUShort());
 }
 
 /** Open a QFileDialog to browse for Tor executable. */
