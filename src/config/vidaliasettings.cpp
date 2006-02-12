@@ -27,6 +27,8 @@
 #define VIDALIA_VERSION        "0.0.1-alpha"
 
 /* Vidalia's Settings */
+#define SETTING_RUN_TOR_AT_START "RunTorAtStart"
+
 #define SETTING_TOR_PATH       "Tor/TorPath"
 #define SETTING_TOR_ARGUMENTS  "Tor/Arguments"
 #define SETTING_CONTROL_ADDR   "Tor/ControlAddr"
@@ -41,6 +43,9 @@
 
 #define SETTING_BWGRAPH_FILTER      "BandwidthGraph/BWLineFilter"
 #define SETTING_BWGRAPH_OPACITY     "BandwidthGraph/Opacity"
+
+/* Default Vidalia Settings */
+#define DEFAULT_RUN_TOR_AT_START false
 
 /* Default Tor Settings */
 #if defined(Q_OS_WIN32)
@@ -89,6 +94,20 @@ QString
 VidaliaSettings::getVersion()
 {
   return QString(VIDALIA_VERSION);
+}
+
+/** Returns true if Tor is to be run when Vidalia starts. */
+bool
+VidaliaSettings::runTorAtStart()
+{
+  return value(SETTING_RUN_TOR_AT_START, DEFAULT_RUN_TOR_AT_START).toBool();
+}
+
+/** If <b>run</b> is set to true, then Tor will be run when Vidalia starts. */
+void
+VidaliaSettings::setRunTorAtStart(bool run)
+{
+  setValue(SETTING_RUN_TOR_AT_START, run);
 }
 
 /** Get the path to Tor's executable from Vidalia's configuration. If a path

@@ -94,6 +94,7 @@ void
 ConfigDialog::loadGeneralSettings()
 {
   ui.lineTorPath->setText(_settings->getTorPath());
+  ui.chkRunTor->setChecked(_settings->runTorAtStart());
 }
 
 /** Load and display settings for the Server settings page. */
@@ -136,6 +137,7 @@ void
 ConfigDialog::saveGeneralSettings()
 {
   _settings->setTorPath(ui.lineTorPath->text());
+  _settings->setRunTorAtStart(ui.chkRunTor->isChecked());
 }
 
 /** Saves changes made to settings on the Server settings page. */

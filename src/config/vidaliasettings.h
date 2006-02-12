@@ -81,6 +81,10 @@ public:
   QByteArray getAuthToken();
   void setAuthToken(QByteArray token);
 
+  /* Get and set whether to run Tor when Vidalia starts */
+  bool runTorAtStart();
+  void setRunTorAtStart(bool run);
+
   /* Get and set display messages */
   uint getMsgFilter();
   void setMsgFilter(LogEvent::Severity severity, bool status);

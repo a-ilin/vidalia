@@ -49,6 +49,8 @@
  * creates the popup menu associated with that icon. */
 MainWindow::MainWindow()
 {
+  VidaliaSettings settings;
+  
 #if defined(Q_WS_MAC)
   _menuBar = 0;
 #endif
@@ -81,6 +83,11 @@ MainWindow::MainWindow()
   _trayIcon = new TrayIcon(QPixmap(IMG_TOR_STOPPED),
                            tr("Tor is Stopped"), _trayMenu, this);
   _trayIcon->show();
+
+  /* If we're supposed to start Tor when Vidalia starts, then do it now */
+  if (settings.runTorAtStart()) {
+    start();
+  }
 }
 
 /** Default destructor */
