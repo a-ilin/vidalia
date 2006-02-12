@@ -8,14 +8,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>729</width>
-    <height>552</height>
+    <width>650</width>
+    <height>500</height>
    </rect>
   </property>
   <property name="minimumSize" >
    <size>
-    <width>350</width>
-    <height>275</height>
+    <width>650</width>
+    <height>500</height>
    </size>
   </property>
   <property name="palette" >
@@ -406,7 +406,7 @@
         <enum>QFrame::StyledPanel</enum>
        </property>
        <property name="currentIndex" >
-        <number>1</number>
+        <number>0</number>
        </property>
        <widget class="QWidget" name="pageGeneral" >
         <layout class="QVBoxLayout" >
