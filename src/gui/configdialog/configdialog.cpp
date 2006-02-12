@@ -99,7 +99,8 @@ void
 ConfigDialog::saveChanges()
 {
   /* Save the settings and exit */
-  
+  _settings->setTorPath(ui.lineTorPath->text());
+
   QDialog::close();
 }
 
