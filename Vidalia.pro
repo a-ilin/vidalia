@@ -21,7 +21,12 @@
 #  02110-1301, USA.
 #################################################################
 
-DESTDIR = ../bin/
+DESTDIR = bin/
+OBJECTS_DIR = bin/obj/
+RCC_DIR = src/
+UI_DIR  = src/
+MOC_DIR = src/
+
 TEMPLATE = app
 
 CONFIG += qt thread
@@ -34,7 +39,5 @@ QT += network
 # Link against these libraries on Win32
 win32:LIBS += -lshell32 -gdi32
 
-include($$PWD/config/config.pri)
-include($$PWD/control/control.pri)
-include($$PWD/util/util.pri)
-include($$PWD/gui/gui.pri)
+include($$PWD/src/src.pri)
+
