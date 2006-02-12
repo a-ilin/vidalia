@@ -36,7 +36,7 @@ public:
   ~TorProcess();
 
   /** Start the Tor process */
-  bool start(QFileInfo app, QStringList args, QString *errmsg = 0);
+  bool start(QString app, QStringList args, QString *errmsg = 0);
   /** Stop the Tor process */
   bool stop(QString *errmsg = 0);
 

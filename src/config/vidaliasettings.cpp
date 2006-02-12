@@ -94,25 +94,26 @@ VidaliaSettings::getVersion()
 /** Get the path to Tor's executable from Vidalia's configuration. If a path
  * hasn't been specified, then default to the current directory.
  */
-QDir
+QString
 VidaliaSettings::getTorPath()
 {
-  QString path = value(SETTING_TOR_PATH, DEFAULT_TOR_PATH).toString(); 
-  return QDir(path);
+  return QDir::convertSeparators(value(SETTING_TOR_PATH,
+                                       DEFAULT_TOR_PATH).toString()); 
 }
 
 /** Set the path to Tor's executable */
 void
-VidaliaSettings::setTorPath(QDir path)
+VidaliaSettings::setTorPath(QString path)
 {
-  setValue(SETTING_TOR_PATH, path.absolutePath());
+  setValue(SETTING_TOR_PATH, path);
 }
 
 /** Returns a fully-qualified path to Tor's executable */
-QFileInfo
+QString
 VidaliaSettings::getTorExecutable()
 {
-  return QFileInfo(getTorPath(), TOR_EXECUTABLE);
+  return QDir::convertSeparators(
+           QFileInfo(getTorPath(), TOR_EXECUTABLE).absoluteFilePath());
 }
 
 /** Returns a QStringList containing all arguments to be passed to Tor's

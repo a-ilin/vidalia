@@ -53,13 +53,14 @@ TorProcess::~TorProcess()
  * command-line arguments specified in Vidalia's settings. If Tor doesn't
  * exist at the given path, <b>errmsg</b> will be set appropriately and the
  * function will return false. */
-bool TorProcess::start(QFileInfo app, QStringList args, QString *errmsg) 
+bool TorProcess::start(QString app, QStringList args, QString *errmsg) 
 {
-  QString path = app.absoluteFilePath(); 
+  QFileInfo appInfo(app);
+  QString path = appInfo.absoluteFilePath();
   QString exec;
   
   /* If the path doesn't point to an executable, then bail */
-  if (!app.isExecutable()) {
+  if (!appInfo.isExecutable()) {
     if (errmsg) {
       *errmsg = 
         QString("\"%1\" is not an executable.").arg(path);

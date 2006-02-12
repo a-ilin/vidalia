@@ -59,9 +59,9 @@ public:
   static QString getVersion();
   
   /* Get and set Tor's location information */
-  QDir        getTorPath();
-  void        setTorPath(QDir path);
-  QFileInfo   getTorExecutable();
+  QString  getTorPath();
+  void     setTorPath(QString path);
+  QString  getTorExecutable();
 
   /* Add/remove/retrieve Tor command-line arguments */
   QStringList getTorArguments(); 
