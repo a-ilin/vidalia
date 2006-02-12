@@ -29,7 +29,8 @@ ConfigDialog::ConfigDialog(QWidget* parent)
 {
   /* Invoke the Qt Designer generated QObject setup routine */
   ui.setupUi(this);
-
+  ui.lineControlPort->setValidator(new QIntValidator(0, 65535, this));
+  
   /* Create necessary ConfigDialog QObjects */
   _settings = new VidaliaSettings();
 
@@ -82,6 +83,7 @@ ConfigDialog::loadSettings()
 {
   /* Load the saved settings from VidaliaSettings */
   ui.lineTorPath->setText(_settings->getTorPath());
+  ui.lineControlPort->setText(QString::number(_settings->getControlPort()));
 }
 
 /** Cancels changes made to settings. */
@@ -100,6 +102,7 @@ ConfigDialog::saveChanges()
 {
   /* Save the settings and exit */
   _settings->setTorPath(ui.lineTorPath->text());
+  _settings->setControlPort(ui.lineControlPort->text().toUShort());
 
   QDialog::close();
 }
