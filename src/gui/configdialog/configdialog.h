@@ -28,6 +28,7 @@
 
 #include "ui_configdialog.h"
 
+#include "../../control/torcontrol.h"
 #include "../../config/vidaliasettings.h"
 
 class ConfigDialog : public QDialog
@@ -36,7 +37,7 @@ class ConfigDialog : public QDialog
 
 public:
   /** Default Constructor */
-  ConfigDialog(QWidget *parent = 0);
+  ConfigDialog(TorControl *torControl, QWidget *parent = 0);
   /** Default Destructor */
   ~ConfigDialog();
 
@@ -69,6 +70,8 @@ private:
   void saveServerSettings();
   void saveAdvancedSettings();
 
+  /** A TorControl object used to talk to Tor. */
+  TorControl* _torControl;
   /** A VidaliaSettings object taht handles getting/saving settings */
   VidaliaSettings* _settings;
   

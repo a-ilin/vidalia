@@ -24,12 +24,15 @@
 #include "configdialog.h"
 
 /** Constructor */
-ConfigDialog::ConfigDialog(QWidget* parent)
+ConfigDialog::ConfigDialog(TorControl *torControl, QWidget* parent)
 : QDialog(parent)
 {
   /* Invoke the Qt Designer generated QObject setup routine */
   ui.setupUi(this);
   ui.lineControlPort->setValidator(new QIntValidator(0, 65535, this));
+  
+  /* A previously-created TorControl object used to talk to Tor */
+  _torControl = torControl;
   
   /* Create necessary ConfigDialog QObjects */
   _settings = new VidaliaSettings();

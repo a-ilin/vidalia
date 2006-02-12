@@ -434,7 +434,7 @@ MainWindow::showBandwidthGraph()
 void
 MainWindow::showConfig()
 {
-  static ConfigDialog* configDialog = new ConfigDialog(this);
+  static ConfigDialog* configDialog = new ConfigDialog(_torControl, this);
   if(!configDialog->isVisible()) {
     configDialog->show();
   } else {
