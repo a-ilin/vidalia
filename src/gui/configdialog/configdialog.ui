@@ -703,7 +703,7 @@
           <enum>Qt::NoContextMenu</enum>
          </property>
          <property name="toolTip" >
-          <string>Cencels any changes made to settings</string>
+          <string>Cancels any changes made to settings</string>
          </property>
          <property name="text" >
           <string>Cancel</string>
