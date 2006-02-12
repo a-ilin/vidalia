@@ -50,7 +50,7 @@ private slots:
   /** Called when user clicks "Save Settings" */
   void saveChanges();
   /** Called when user clicks "Browse" to choose location of Tor executable */
-  void browseTorExec();
+  void browseTorPath();
   /** Called when user clicks "Browse" to choose location of Tor config file */
   void browseTorConfig();
   

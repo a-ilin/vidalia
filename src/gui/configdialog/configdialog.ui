@@ -434,7 +434,7 @@
                <number>6</number>
               </property>
               <item>
-               <widget class="QLineEdit" name="lineTorExec" >
+               <widget class="QLineEdit" name="lineTorPath" >
                 <property name="enabled" >
                  <bool>true</bool>
                 </property>
@@ -442,12 +442,12 @@
                  <enum>Qt::NoContextMenu</enum>
                 </property>
                 <property name="toolTip" >
-                 <string>Location of Tor executable</string>
+                 <string>Path to Tor's executable</string>
                 </property>
                </widget>
               </item>
               <item>
-               <widget class="QPushButton" name="btnBrowseTorExec" >
+               <widget class="QPushButton" name="btnBrowseTorPath" >
                 <property name="enabled" >
                  <bool>true</bool>
                 </property>

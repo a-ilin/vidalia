@@ -48,9 +48,7 @@ ConfigDialog::~ConfigDialog()
   }
 }
 
-/**
- Connects actions to events
-*/
+/** Connects actions to events. */
 void
 ConfigDialog::createActions()
 {
@@ -62,14 +60,12 @@ ConfigDialog::createActions()
 
   connect(ui.btnSave, SIGNAL(clicked()), this, SLOT(saveChanges()));
 
-  connect(ui.btnBrowseTorExec, SIGNAL(clicked()), this, SLOT(browseTorExec()));
+  connect(ui.btnBrowseTorPath, SIGNAL(clicked()), this, SLOT(browseTorPath()));
 
   connect(ui.btnBrowseTorConfig, SIGNAL(clicked()), this, SLOT(browseTorConfig()));
 }
 
-/**
- Changes settings page
-*/
+/** Changes settings page. */
 void
 ConfigDialog::changePage(QListWidgetItem *current, QListWidgetItem *previous)
 {
@@ -80,18 +76,15 @@ ConfigDialog::changePage(QListWidgetItem *current, QListWidgetItem *previous)
   ui.stackPages->setCurrentIndex(ui.lstPages->row(current));
 }
 
-/**
- Loads the saved ConfigDialog settings
-*/
+/** Loads the saved ConfigDialog settings. */
 void
 ConfigDialog::loadSettings()
 {
   /* Load the saved settings from VidaliaSettings */
+  ui.lineTorPath->setText(_settings->getTorPath());
 }
 
-/** 
- Cancels changes made to settings 
-*/
+/** Cancels changes made to settings. */
 void
 ConfigDialog::cancelChanges()
 {
@@ -101,9 +94,7 @@ ConfigDialog::cancelChanges()
   QDialog::close();
 }
 
-/**
- Saves changes made to settings
-*/
+/** Saves changes made to settings. */
 void
 ConfigDialog::saveChanges()
 {
@@ -112,23 +103,20 @@ ConfigDialog::saveChanges()
   QDialog::close();
 }
 
-/**
- Open a QFileDialog to browse for Tor executable
-*/
+/** Open a QFileDialog to browse for Tor executable. */
 void 
-ConfigDialog::browseTorExec()
+ConfigDialog::browseTorPath()
 {
   QString filename = QDir::convertSeparators(
-                          QFileDialog::getSaveFileName(this,
-                              tr("Select Tor Executable"), "tor.exe"));
+                          QFileDialog::getExistingDirectory(this,
+                              tr("Select Path to Tor"), 
+                              ui.lineTorPath->text()));
   if (!filename.isEmpty()) {
-    ui.lineTorExec->setText(filename);
+    ui.lineTorPath->setText(filename);
   }
 }
 
-/**
- Open a QFileDialog to browse for Tor config file
-*/
+/** Open a QFileDialog to browse for Tor config file. */
 void
 ConfigDialog::browseTorConfig()
 {
