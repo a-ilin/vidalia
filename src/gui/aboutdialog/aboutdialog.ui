@@ -186,14 +186,14 @@
       <blue>0</blue>
      </color>
      <color>
-      <red>192</red>
-      <green>192</green>
-      <blue>192</blue>
-     </color>
-     <color>
       <red>0</red>
       <green>0</green>
-      <blue>0</blue>
+      <blue>128</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
      </color>
      <color>
       <red>0</red>
@@ -275,7 +275,7 @@
      <color>
       <red>0</red>
       <green>0</green>
-      <blue>128</blue>
+      <blue>107</blue>
      </color>
      <color>
       <red>255</red>
@@ -313,7 +313,7 @@
    <enum>Qt::LeftToRight</enum>
   </property>
   <property name="autoFillBackground" >
-   <bool>false</bool>
+   <bool>true</bool>
   </property>
   <property name="sizeGripEnabled" >
    <bool>false</bool>
@@ -417,25 +417,6 @@
    </property>
    <property name="pixmap" >
     <pixmap resource="..\res\vidalia.qrc" >:/images/tor_logo128.png</pixmap>
-   </property>
-  </widget>
-  <widget class="QLabel" name="lblVidaliaLogo" >
-   <property name="geometry" >
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>128</width>
-     <height>128</height>
-    </rect>
-   </property>
-   <property name="contextMenuPolicy" >
-    <enum>Qt::NoContextMenu</enum>
-   </property>
-   <property name="text" >
-    <string/>
-   </property>
-   <property name="pixmap" >
-    <pixmap resource="..\res\vidalia.qrc" >:/images/tor_on128.png</pixmap>
    </property>
   </widget>
   <widget class="QPushButton" name="btnLicense" >
@@ -636,6 +617,25 @@
    </property>
    <property name="alignment" >
     <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblVidaliaLogo" >
+   <property name="geometry" >
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>128</width>
+     <height>128</height>
+    </rect>
+   </property>
+   <property name="contextMenuPolicy" >
+    <enum>Qt::NoContextMenu</enum>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="..\res\vidalia.qrc" >:/images/tor_on128.png</pixmap>
    </property>
   </widget>
  </widget>
