@@ -49,7 +49,7 @@
 
 /* Default Tor Settings */
 #if defined(Q_OS_WIN32)
-#define DEFAULT_TOR_PATH       (QDir::rootPath() + "\\Program Files\\Tor")
+#define DEFAULT_TOR_PATH       (QDir::rootPath() + "Program Files\\Tor")
 #elif defined(Q_OS_MACX)
 #define DEFAULT_TOR_PATH       "/usr/bin"
 #else
@@ -68,7 +68,7 @@
 #define DEFAULT_ENABLE_LOG_FILE false
 
 #if defined(Q_OS_WIN32)
-#define DEFAULT_LOG_FILE       (QDir::rootPath() + "\\Program Files\\Tor\\tor.log")
+#define DEFAULT_LOG_FILE       (QDir::rootPath() + "Program Files\\Tor\\tor.log")
 #else
 #define DEFAULT_LOG_FILE       (QDir::homePath() + "/.tor/tor.log")
 #endif
