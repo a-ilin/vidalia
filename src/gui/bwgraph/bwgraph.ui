@@ -670,7 +670,7 @@
             <enum>Qt::NoContextMenu</enum>
            </property>
            <property name="toolTip" >
-            <string>Changes the transparancy of the Bandwidth Graph</string>
+            <string>Changes the transparency of the Bandwidth Graph</string>
            </property>
            <property name="minimum" >
             <number>30</number>

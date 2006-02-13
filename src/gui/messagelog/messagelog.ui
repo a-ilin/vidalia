@@ -705,7 +705,7 @@
                    <enum>Qt::NoContextMenu</enum>
                   </property>
                   <property name="toolTip" >
-                   <string>Changes the transparancy of the Message Log</string>
+                   <string>Changes the transparency of the Message Log</string>
                   </property>
                   <property name="minimum" >
                    <number>30</number>
