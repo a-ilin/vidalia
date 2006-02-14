@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>581</width>
-    <height>388</height>
+    <width>519</width>
+    <height>391</height>
    </rect>
   </property>
   <property name="palette" >
@@ -300,7 +300,7 @@
   <property name="sizeGripEnabled" >
    <bool>true</bool>
   </property>
-  <layout class="QHBoxLayout" >
+  <layout class="QVBoxLayout" >
    <property name="margin" >
     <number>9</number>
    </property>
@@ -308,354 +308,362 @@
     <number>6</number>
    </property>
    <item>
-    <widget class="QListWidget" name="lstPages" >
-     <property name="sizePolicy" >
-      <sizepolicy>
-       <hsizetype>0</hsizetype>
-       <vsizetype>7</vsizetype>
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="minimumSize" >
-      <size>
-       <width>84</width>
-       <height>180</height>
-      </size>
-     </property>
-     <property name="maximumSize" >
-      <size>
-       <width>84</width>
-       <height>16777215</height>
-      </size>
-     </property>
-     <property name="palette" >
-      <palette>
-       <active>
-        <color>
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-        <color>
-         <red>208</red>
-         <green>208</green>
-         <blue>208</blue>
-        </color>
-        <color>
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
-        </color>
-        <color>
-         <red>247</red>
-         <green>247</green>
-         <blue>247</blue>
-        </color>
-        <color>
-         <red>120</red>
-         <green>120</green>
-         <blue>120</blue>
-        </color>
-        <color>
-         <red>160</red>
-         <green>160</green>
-         <blue>160</blue>
-        </color>
-        <color>
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-        <color>
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
-        </color>
-        <color>
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-        <color>
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
-        </color>
-        <color>
-         <red>240</red>
-         <green>240</green>
-         <blue>240</blue>
-        </color>
-        <color>
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-        <color>
-         <red>0</red>
-         <green>0</green>
-         <blue>128</blue>
-        </color>
-        <color>
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
-        </color>
-        <color>
-         <red>0</red>
-         <green>0</green>
-         <blue>255</blue>
-        </color>
-        <color>
-         <red>255</red>
-         <green>0</green>
-         <blue>255</blue>
-        </color>
-        <color>
-         <red>247</red>
-         <green>247</green>
-         <blue>247</blue>
-        </color>
-       </active>
-       <inactive>
-        <color>
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-        <color>
-         <red>208</red>
-         <green>208</green>
-         <blue>208</blue>
-        </color>
-        <color>
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
-        </color>
-        <color>
-         <red>247</red>
-         <green>247</green>
-         <blue>247</blue>
-        </color>
-        <color>
-         <red>120</red>
-         <green>120</green>
-         <blue>120</blue>
-        </color>
-        <color>
-         <red>160</red>
-         <green>160</green>
-         <blue>160</blue>
-        </color>
-        <color>
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-        <color>
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
-        </color>
-        <color>
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-        <color>
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
-        </color>
-        <color>
-         <red>240</red>
-         <green>240</green>
-         <blue>240</blue>
-        </color>
-        <color>
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-        <color>
-         <red>0</red>
-         <green>0</green>
-         <blue>128</blue>
-        </color>
-        <color>
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
-        </color>
-        <color>
-         <red>0</red>
-         <green>0</green>
-         <blue>255</blue>
-        </color>
-        <color>
-         <red>255</red>
-         <green>0</green>
-         <blue>255</blue>
-        </color>
-        <color>
-         <red>247</red>
-         <green>247</green>
-         <blue>247</blue>
-        </color>
-       </inactive>
-       <disabled>
-        <color>
-         <red>120</red>
-         <green>120</green>
-         <blue>120</blue>
-        </color>
-        <color>
-         <red>208</red>
-         <green>208</green>
-         <blue>208</blue>
-        </color>
-        <color>
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
-        </color>
-        <color>
-         <red>247</red>
-         <green>247</green>
-         <blue>247</blue>
-        </color>
-        <color>
-         <red>120</red>
-         <green>120</green>
-         <blue>120</blue>
-        </color>
-        <color>
-         <red>160</red>
-         <green>160</green>
-         <blue>160</blue>
-        </color>
-        <color>
-         <red>120</red>
-         <green>120</green>
-         <blue>120</blue>
-        </color>
-        <color>
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
-        </color>
-        <color>
-         <red>120</red>
-         <green>120</green>
-         <blue>120</blue>
-        </color>
-        <color>
-         <red>240</red>
-         <green>240</green>
-         <blue>240</blue>
-        </color>
-        <color>
-         <red>240</red>
-         <green>240</green>
-         <blue>240</blue>
-        </color>
-        <color>
-         <red>0</red>
-         <green>0</green>
-         <blue>0</blue>
-        </color>
-        <color>
-         <red>0</red>
-         <green>0</green>
-         <blue>107</blue>
-        </color>
-        <color>
-         <red>255</red>
-         <green>255</green>
-         <blue>255</blue>
-        </color>
-        <color>
-         <red>0</red>
-         <green>0</green>
-         <blue>255</blue>
-        </color>
-        <color>
-         <red>255</red>
-         <green>0</green>
-         <blue>255</blue>
-        </color>
-        <color>
-         <red>247</red>
-         <green>247</green>
-         <blue>247</blue>
-        </color>
-       </disabled>
-      </palette>
-     </property>
-     <property name="contextMenuPolicy" >
-      <enum>Qt::NoContextMenu</enum>
-     </property>
-     <property name="verticalScrollBarPolicy" >
-      <enum>Qt::ScrollBarAlwaysOff</enum>
-     </property>
-     <property name="horizontalScrollBarPolicy" >
-      <enum>Qt::ScrollBarAlwaysOff</enum>
-     </property>
-     <property name="autoScroll" >
-      <bool>false</bool>
-     </property>
-     <property name="iconSize" >
-      <size>
-       <width>48</width>
-       <height>48</height>
-      </size>
-     </property>
-     <property name="movement" >
-      <enum>QListView::Static</enum>
-     </property>
-     <property name="flow" >
-      <enum>QListView::TopToBottom</enum>
-     </property>
-     <property name="spacing" >
-      <number>11</number>
-     </property>
-     <property name="viewMode" >
-      <enum>QListView::IconMode</enum>
-     </property>
-     <property name="uniformItemSizes" >
-      <bool>true</bool>
-     </property>
-     <property name="currentRow" >
-      <number>0</number>
-     </property>
-     <item>
-      <property name="text" >
-       <string>General</string>
-      </property>
-      <property name="icon" >
-       <iconset resource="..\res\vidalia.qrc" >:/images/config_general.png</iconset>
-      </property>
-     </item>
-     <item>
-      <property name="text" >
-       <string>Advanced</string>
-      </property>
-      <property name="icon" >
-       <iconset resource="..\res\vidalia.qrc" >:/images/config_advanced.png</iconset>
-      </property>
-     </item>
-    </widget>
-   </item>
-   <item>
-    <layout class="QVBoxLayout" >
+    <layout class="QHBoxLayout" >
      <property name="margin" >
       <number>0</number>
      </property>
      <property name="spacing" >
       <number>6</number>
      </property>
+     <item>
+      <widget class="QListWidget" name="lstPages" >
+       <property name="sizePolicy" >
+        <sizepolicy>
+         <hsizetype>0</hsizetype>
+         <vsizetype>7</vsizetype>
+         <horstretch>0</horstretch>
+         <verstretch>0</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="minimumSize" >
+        <size>
+         <width>84</width>
+         <height>180</height>
+        </size>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>84</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="palette" >
+        <palette>
+         <active>
+          <color>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+          <color>
+           <red>208</red>
+           <green>208</green>
+           <blue>208</blue>
+          </color>
+          <color>
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+          <color>
+           <red>247</red>
+           <green>247</green>
+           <blue>247</blue>
+          </color>
+          <color>
+           <red>120</red>
+           <green>120</green>
+           <blue>120</blue>
+          </color>
+          <color>
+           <red>160</red>
+           <green>160</green>
+           <blue>160</blue>
+          </color>
+          <color>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+          <color>
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+          <color>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+          <color>
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+          <color>
+           <red>240</red>
+           <green>240</green>
+           <blue>240</blue>
+          </color>
+          <color>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+          <color>
+           <red>0</red>
+           <green>0</green>
+           <blue>128</blue>
+          </color>
+          <color>
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+          <color>
+           <red>0</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+          <color>
+           <red>255</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+          <color>
+           <red>247</red>
+           <green>247</green>
+           <blue>247</blue>
+          </color>
+         </active>
+         <inactive>
+          <color>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+          <color>
+           <red>208</red>
+           <green>208</green>
+           <blue>208</blue>
+          </color>
+          <color>
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+          <color>
+           <red>247</red>
+           <green>247</green>
+           <blue>247</blue>
+          </color>
+          <color>
+           <red>120</red>
+           <green>120</green>
+           <blue>120</blue>
+          </color>
+          <color>
+           <red>160</red>
+           <green>160</green>
+           <blue>160</blue>
+          </color>
+          <color>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+          <color>
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+          <color>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+          <color>
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+          <color>
+           <red>240</red>
+           <green>240</green>
+           <blue>240</blue>
+          </color>
+          <color>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+          <color>
+           <red>0</red>
+           <green>0</green>
+           <blue>128</blue>
+          </color>
+          <color>
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+          <color>
+           <red>0</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+          <color>
+           <red>255</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+          <color>
+           <red>247</red>
+           <green>247</green>
+           <blue>247</blue>
+          </color>
+         </inactive>
+         <disabled>
+          <color>
+           <red>120</red>
+           <green>120</green>
+           <blue>120</blue>
+          </color>
+          <color>
+           <red>208</red>
+           <green>208</green>
+           <blue>208</blue>
+          </color>
+          <color>
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+          <color>
+           <red>247</red>
+           <green>247</green>
+           <blue>247</blue>
+          </color>
+          <color>
+           <red>120</red>
+           <green>120</green>
+           <blue>120</blue>
+          </color>
+          <color>
+           <red>160</red>
+           <green>160</green>
+           <blue>160</blue>
+          </color>
+          <color>
+           <red>120</red>
+           <green>120</green>
+           <blue>120</blue>
+          </color>
+          <color>
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+          <color>
+           <red>120</red>
+           <green>120</green>
+           <blue>120</blue>
+          </color>
+          <color>
+           <red>240</red>
+           <green>240</green>
+           <blue>240</blue>
+          </color>
+          <color>
+           <red>240</red>
+           <green>240</green>
+           <blue>240</blue>
+          </color>
+          <color>
+           <red>0</red>
+           <green>0</green>
+           <blue>0</blue>
+          </color>
+          <color>
+           <red>0</red>
+           <green>0</green>
+           <blue>107</blue>
+          </color>
+          <color>
+           <red>255</red>
+           <green>255</green>
+           <blue>255</blue>
+          </color>
+          <color>
+           <red>0</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+          <color>
+           <red>255</red>
+           <green>0</green>
+           <blue>255</blue>
+          </color>
+          <color>
+           <red>247</red>
+           <green>247</green>
+           <blue>247</blue>
+          </color>
+         </disabled>
+        </palette>
+       </property>
+       <property name="contextMenuPolicy" >
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="verticalScrollBarPolicy" >
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="horizontalScrollBarPolicy" >
+        <enum>Qt::ScrollBarAlwaysOff</enum>
+       </property>
+       <property name="autoScroll" >
+        <bool>false</bool>
+       </property>
+       <property name="iconSize" >
+        <size>
+         <width>48</width>
+         <height>48</height>
+        </size>
+       </property>
+       <property name="movement" >
+        <enum>QListView::Static</enum>
+       </property>
+       <property name="flow" >
+        <enum>QListView::TopToBottom</enum>
+       </property>
+       <property name="spacing" >
+        <number>11</number>
+       </property>
+       <property name="viewMode" >
+        <enum>QListView::IconMode</enum>
+       </property>
+       <property name="uniformItemSizes" >
+        <bool>true</bool>
+       </property>
+       <property name="currentRow" >
+        <number>-1</number>
+       </property>
+       <item>
+        <property name="text" >
+         <string>General</string>
+        </property>
+        <property name="icon" >
+         <iconset resource="..\res\vidalia.qrc" >:/images/config_general.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Server</string>
+        </property>
+        <property name="icon" >
+         <iconset resource="..\res\vidalia.qrc" >:/images/config_server.png</iconset>
+        </property>
+       </item>
+       <item>
+        <property name="text" >
+         <string>Advanced</string>
+        </property>
+        <property name="icon" >
+         <iconset resource="..\res\vidalia.qrc" >:/images/config_advanced.png</iconset>
+        </property>
+       </item>
+      </widget>
+     </item>
      <item>
       <widget class="QStackedWidget" name="stackPages" >
        <property name="contextMenuPolicy" >
@@ -788,6 +796,713 @@
             <size>
              <width>20</width>
              <height>309</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="page" >
+        <layout class="QVBoxLayout" >
+         <property name="margin" >
+          <number>9</number>
+         </property>
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <item>
+          <widget class="QCheckBox" name="chkEnableServer" >
+           <property name="contextMenuPolicy" >
+            <enum>Qt::NoContextMenu</enum>
+           </property>
+           <property name="toolTip" >
+            <string>Check to run as a Tor network server</string>
+           </property>
+           <property name="text" >
+            <string>Act as Tor Server</string>
+           </property>
+           <property name="checked" >
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="frmServer" >
+           <property name="contextMenuPolicy" >
+            <enum>Qt::NoContextMenu</enum>
+           </property>
+           <property name="frameShape" >
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="frameShadow" >
+            <enum>QFrame::Plain</enum>
+           </property>
+           <layout class="QVBoxLayout" >
+            <property name="margin" >
+             <number>0</number>
+            </property>
+            <property name="spacing" >
+             <number>6</number>
+            </property>
+            <item>
+             <widget class="QGroupBox" name="grpServerConfig" >
+              <property name="contextMenuPolicy" >
+               <enum>Qt::NoContextMenu</enum>
+              </property>
+              <property name="title" >
+               <string>Server Configuration</string>
+              </property>
+              <layout class="QVBoxLayout" >
+               <property name="margin" >
+                <number>9</number>
+               </property>
+               <property name="spacing" >
+                <number>6</number>
+               </property>
+               <item>
+                <layout class="QHBoxLayout" >
+                 <property name="margin" >
+                  <number>0</number>
+                 </property>
+                 <property name="spacing" >
+                  <number>6</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_2" >
+                   <property name="contextMenuPolicy" >
+                    <enum>Qt::NoContextMenu</enum>
+                   </property>
+                   <property name="text" >
+                    <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" color:#ff0000;">Nickname:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineServerNickname" >
+                   <property name="contextMenuPolicy" >
+                    <enum>Qt::NoContextMenu</enum>
+                   </property>
+                   <property name="toolTip" >
+                    <string>Name of your server</string>
+                   </property>
+                   <property name="text" >
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" >
+                 <property name="margin" >
+                  <number>0</number>
+                 </property>
+                 <property name="spacing" >
+                  <number>6</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_1" >
+                   <property name="contextMenuPolicy" >
+                    <enum>Qt::NoContextMenu</enum>
+                   </property>
+                   <property name="text" >
+                    <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Contact Info:&lt;/p>&lt;/body>&lt;/html></string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineServerContact" >
+                   <property name="contextMenuPolicy" >
+                    <enum>Qt::NoContextMenu</enum>
+                   </property>
+                   <property name="toolTip" >
+                    <string>Email address at which you may be reached if there is a problem with your server</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" >
+                 <property name="margin" >
+                  <number>0</number>
+                 </property>
+                 <property name="spacing" >
+                  <number>6</number>
+                 </property>
+                 <item>
+                  <layout class="QHBoxLayout" >
+                   <property name="margin" >
+                    <number>0</number>
+                   </property>
+                   <property name="spacing" >
+                    <number>6</number>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="label" >
+                     <property name="contextMenuPolicy" >
+                      <enum>Qt::NoContextMenu</enum>
+                     </property>
+                     <property name="text" >
+                      <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" color:#ff0000;">Server Port:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="lineServerPort" >
+                     <property name="sizePolicy" >
+                      <sizepolicy>
+                       <hsizetype>0</hsizetype>
+                       <vsizetype>0</vsizetype>
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="maximumSize" >
+                      <size>
+                       <width>50</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="contextMenuPolicy" >
+                      <enum>Qt::NoContextMenu</enum>
+                     </property>
+                     <property name="toolTip" >
+                      <string>Port on which users and other servers can communicate with your server</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QHBoxLayout" >
+                   <property name="margin" >
+                    <number>0</number>
+                   </property>
+                   <property name="spacing" >
+                    <number>6</number>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="label_3" >
+                     <property name="contextMenuPolicy" >
+                      <enum>Qt::NoContextMenu</enum>
+                     </property>
+                     <property name="text" >
+                      <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Directory Port:&lt;/p>&lt;/body>&lt;/html></string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="lineDirPort" >
+                     <property name="sizePolicy" >
+                      <sizepolicy>
+                       <hsizetype>0</hsizetype>
+                       <vsizetype>0</vsizetype>
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="maximumSize" >
+                      <size>
+                       <width>50</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="contextMenuPolicy" >
+                      <enum>Qt::NoContextMenu</enum>
+                     </property>
+                     <property name="toolTip" >
+                      <string>Setting this port will mirror the directory for other servers to use</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <spacer>
+                   <property name="orientation" >
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" >
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" >
+                 <property name="margin" >
+                  <number>0</number>
+                 </property>
+                 <property name="spacing" >
+                  <number>6</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_4" >
+                   <property name="contextMenuPolicy" >
+                    <enum>Qt::NoContextMenu</enum>
+                   </property>
+                   <property name="text" >
+                    <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" color:#ff0000;">Address:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineServerAddress" >
+                   <property name="contextMenuPolicy" >
+                    <enum>Qt::NoContextMenu</enum>
+                   </property>
+                   <property name="toolTip" >
+                    <string>Domain name or IP address of your server</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnGetAddress" >
+                   <property name="minimumSize" >
+                    <size>
+                     <width>0</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="contextMenuPolicy" >
+                    <enum>Qt::NoContextMenu</enum>
+                   </property>
+                   <property name="toolTip" >
+                    <string>Attempts to determine the correct address for your server</string>
+                   </property>
+                   <property name="text" >
+                    <string>Get Address</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QLabel" name="label_5" >
+                 <property name="layoutDirection" >
+                  <enum>Qt::LeftToRight</enum>
+                 </property>
+                 <property name="text" >
+                  <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" color:#ff0000;">Required Fields&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+                 </property>
+                 <property name="alignment" >
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </widget>
+            </item>
+            <item>
+             <widget class="QGroupBox" name="grpServerPolicies" >
+              <property name="contextMenuPolicy" >
+               <enum>Qt::NoContextMenu</enum>
+              </property>
+              <property name="title" >
+               <string>Exit Policies</string>
+              </property>
+              <layout class="QVBoxLayout" >
+               <property name="margin" >
+                <number>9</number>
+               </property>
+               <property name="spacing" >
+                <number>6</number>
+               </property>
+               <item>
+                <layout class="QHBoxLayout" >
+                 <property name="margin" >
+                  <number>0</number>
+                 </property>
+                 <property name="spacing" >
+                  <number>6</number>
+                 </property>
+                 <item>
+                  <layout class="QVBoxLayout" >
+                   <property name="margin" >
+                    <number>0</number>
+                   </property>
+                   <property name="spacing" >
+                    <number>6</number>
+                   </property>
+                   <item>
+                    <layout class="QHBoxLayout" >
+                     <property name="margin" >
+                      <number>0</number>
+                     </property>
+                     <property name="spacing" >
+                      <number>6</number>
+                     </property>
+                     <item>
+                      <spacer>
+                       <property name="orientation" >
+                        <enum>Qt::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" >
+                        <size>
+                         <width>16</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item>
+                      <layout class="QHBoxLayout" >
+                       <property name="margin" >
+                        <number>0</number>
+                       </property>
+                       <property name="spacing" >
+                        <number>2</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_6" >
+                         <property name="contextMenuPolicy" >
+                          <enum>Qt::NoContextMenu</enum>
+                         </property>
+                         <property name="text" >
+                          <string>Action:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QComboBox" name="cmboAction" >
+                         <property name="contextMenuPolicy" >
+                          <enum>Qt::NoContextMenu</enum>
+                         </property>
+                         <property name="toolTip" >
+                          <string>Action for new exit policy</string>
+                         </property>
+                         <property name="insertPolicy" >
+                          <enum>QComboBox::NoInsert</enum>
+                         </property>
+                         <item>
+                          <property name="text" >
+                           <string>Accept</string>
+                          </property>
+                         </item>
+                         <item>
+                          <property name="text" >
+                           <string>Reject</string>
+                          </property>
+                         </item>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                     <item>
+                      <layout class="QHBoxLayout" >
+                       <property name="margin" >
+                        <number>0</number>
+                       </property>
+                       <property name="spacing" >
+                        <number>2</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_7" >
+                         <property name="contextMenuPolicy" >
+                          <enum>Qt::NoContextMenu</enum>
+                         </property>
+                         <property name="text" >
+                          <string>From:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="lineFromPort" >
+                         <property name="sizePolicy" >
+                          <sizepolicy>
+                           <hsizetype>0</hsizetype>
+                           <vsizetype>0</vsizetype>
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="minimumSize" >
+                          <size>
+                           <width>50</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize" >
+                          <size>
+                           <width>50</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="toolTip" >
+                          <string>Start port for new exit policy</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                     <item>
+                      <layout class="QHBoxLayout" >
+                       <property name="margin" >
+                        <number>0</number>
+                       </property>
+                       <property name="spacing" >
+                        <number>2</number>
+                       </property>
+                       <item>
+                        <widget class="QLabel" name="label_8" >
+                         <property name="contextMenuPolicy" >
+                          <enum>Qt::NoContextMenu</enum>
+                         </property>
+                         <property name="text" >
+                          <string>To:</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QLineEdit" name="lineToPort" >
+                         <property name="sizePolicy" >
+                          <sizepolicy>
+                           <hsizetype>0</hsizetype>
+                           <vsizetype>0</vsizetype>
+                           <horstretch>0</horstretch>
+                           <verstretch>0</verstretch>
+                          </sizepolicy>
+                         </property>
+                         <property name="minimumSize" >
+                          <size>
+                           <width>50</width>
+                           <height>0</height>
+                          </size>
+                         </property>
+                         <property name="maximumSize" >
+                          <size>
+                           <width>50</width>
+                           <height>16777215</height>
+                          </size>
+                         </property>
+                         <property name="toolTip" >
+                          <string>End port for new exit policy</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <widget class="QTreeWidget" name="lstExitPolicies" >
+                     <property name="sizePolicy" >
+                      <sizepolicy>
+                       <hsizetype>7</hsizetype>
+                       <vsizetype>7</vsizetype>
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="minimumSize" >
+                      <size>
+                       <width>0</width>
+                       <height>0</height>
+                      </size>
+                     </property>
+                     <property name="maximumSize" >
+                      <size>
+                       <width>16777215</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="contextMenuPolicy" >
+                      <enum>Qt::NoContextMenu</enum>
+                     </property>
+                     <property name="editTriggers" >
+                      <set>QAbstractItemView::NoEditTriggers</set>
+                     </property>
+                     <property name="showDropIndicator" stdset="0" >
+                      <bool>true</bool>
+                     </property>
+                     <property name="alternatingRowColors" >
+                      <bool>true</bool>
+                     </property>
+                     <property name="selectionMode" >
+                      <enum>QAbstractItemView::NoSelection</enum>
+                     </property>
+                     <property name="uniformRowHeights" >
+                      <bool>true</bool>
+                     </property>
+                     <column>
+                      <property name="text" >
+                       <string>Action</string>
+                      </property>
+                     </column>
+                     <column>
+                      <property name="text" >
+                       <string>From</string>
+                      </property>
+                     </column>
+                     <column>
+                      <property name="text" >
+                       <string>To</string>
+                      </property>
+                     </column>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QVBoxLayout" >
+                   <property name="margin" >
+                    <number>0</number>
+                   </property>
+                   <property name="spacing" >
+                    <number>6</number>
+                   </property>
+                   <item>
+                    <widget class="QPushButton" name="btnAddPolicy" >
+                     <property name="minimumSize" >
+                      <size>
+                       <width>0</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="contextMenuPolicy" >
+                      <enum>Qt::NoContextMenu</enum>
+                     </property>
+                     <property name="toolTip" >
+                      <string>Add the new exit policy</string>
+                     </property>
+                     <property name="text" >
+                      <string>Add</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btnMoveUp" >
+                     <property name="minimumSize" >
+                      <size>
+                       <width>0</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="contextMenuPolicy" >
+                      <enum>Qt::NoContextMenu</enum>
+                     </property>
+                     <property name="toolTip" >
+                      <string>Increase the priority of the selected exit policy</string>
+                     </property>
+                     <property name="text" >
+                      <string>Move Up</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btnMoveDown" >
+                     <property name="minimumSize" >
+                      <size>
+                       <width>0</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="contextMenuPolicy" >
+                      <enum>Qt::NoContextMenu</enum>
+                     </property>
+                     <property name="toolTip" >
+                      <string>Decrease the priority of the selected exit policy</string>
+                     </property>
+                     <property name="text" >
+                      <string>Move Down</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QPushButton" name="btnRemove" >
+                     <property name="minimumSize" >
+                      <size>
+                       <width>0</width>
+                       <height>30</height>
+                      </size>
+                     </property>
+                     <property name="contextMenuPolicy" >
+                      <enum>Qt::NoContextMenu</enum>
+                     </property>
+                     <property name="toolTip" >
+                      <string>Remove the selected exit policy</string>
+                     </property>
+                     <property name="text" >
+                      <string>Remove</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <spacer>
+                     <property name="orientation" >
+                      <enum>Qt::Vertical</enum>
+                     </property>
+                     <property name="sizeHint" >
+                      <size>
+                       <width>20</width>
+                       <height>37</height>
+                      </size>
+                     </property>
+                    </spacer>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <spacer>
+                   <property name="orientation" >
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" >
+                    <size>
+                     <width>102</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkMiddleMan" >
+                 <property name="contextMenuPolicy" >
+                  <enum>Qt::NoContextMenu</enum>
+                 </property>
+                 <property name="toolTip" >
+                  <string>If selected, your server will only relay traffic between other Tor servers</string>
+                 </property>
+                 <property name="text" >
+                  <string>Disable exits from the Tor network from this server</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer>
+                 <property name="orientation" >
+                  <enum>Qt::Vertical</enum>
+                 </property>
+                 <property name="sizeHint" >
+                  <size>
+                   <width>20</width>
+                   <height>16</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+              </layout>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <spacer>
+           <property name="orientation" >
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" >
+            <size>
+             <width>20</width>
+             <height>16</height>
             </size>
            </property>
           </spacer>
@@ -1018,66 +1733,66 @@
        </widget>
       </widget>
      </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
      <item>
-      <layout class="QHBoxLayout" >
-       <property name="margin" >
-        <number>0</number>
+      <spacer>
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
        </property>
-       <property name="spacing" >
-        <number>6</number>
+       <property name="sizeHint" >
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
        </property>
-       <item>
-        <spacer>
-         <property name="orientation" >
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" >
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnSave" >
-         <property name="minimumSize" >
-          <size>
-           <width>30</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="contextMenuPolicy" >
-          <enum>Qt::NoContextMenu</enum>
-         </property>
-         <property name="toolTip" >
-          <string>Saves current settings</string>
-         </property>
-         <property name="text" >
-          <string>Save Settings</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnCancel" >
-         <property name="minimumSize" >
-          <size>
-           <width>30</width>
-           <height>0</height>
-          </size>
-         </property>
-         <property name="contextMenuPolicy" >
-          <enum>Qt::NoContextMenu</enum>
-         </property>
-         <property name="toolTip" >
-          <string>Cancels any changes made to settings</string>
-         </property>
-         <property name="text" >
-          <string>Cancel</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnSave" >
+       <property name="minimumSize" >
+        <size>
+         <width>30</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="contextMenuPolicy" >
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="toolTip" >
+        <string>Saves current settings</string>
+       </property>
+       <property name="text" >
+        <string>Save Settings</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnCancel" >
+       <property name="minimumSize" >
+        <size>
+         <width>30</width>
+         <height>0</height>
+        </size>
+       </property>
+       <property name="contextMenuPolicy" >
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="toolTip" >
+        <string>Cancels any changes made to settings</string>
+       </property>
+       <property name="text" >
+        <string>Cancel</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </item>
@@ -1087,5 +1802,22 @@
  <resources>
   <include location="../res/vidalia.qrc" />
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>chkEnableServer</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>frmServer</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>407</x>
+     <y>45</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>346</x>
+     <y>290</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

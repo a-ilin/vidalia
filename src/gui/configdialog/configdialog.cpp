@@ -84,12 +84,22 @@ ConfigDialog::changePage(QListWidgetItem *current, QListWidgetItem *previous)
 void
 ConfigDialog::loadSettings()
 {
+  /* Toggle Server config frame */
+  showServerConfig(ui.chkEnableServer->isChecked());
+  
   /* Load General settings */
   loadGeneralSettings();
   /* Load Server settings */
   loadServerSettings();
   /* Load Advanced settings */
   loadAdvancedSettings();
+}
+
+/** Toggle display of server configuration settings frame */
+void
+ConfigDialog::showServerConfig(bool show)
+{
+  ui.frmServer->setVisible(show);
 }
 
 /** Load and display settings for the General settings page. */

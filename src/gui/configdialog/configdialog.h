@@ -70,6 +70,9 @@ private:
   void saveServerSettings();
   void saveAdvancedSettings();
 
+  /** Toggles display of server config frame */
+  void showServerConfig(bool show);
+
   /** A TorControl object used to talk to Tor. */
   TorControl* _torControl;
   /** A VidaliaSettings object taht handles getting/saving settings */
