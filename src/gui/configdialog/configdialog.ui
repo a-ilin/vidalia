@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>519</width>
-    <height>391</height>
+    <width>490</width>
+    <height>396</height>
    </rect>
   </property>
   <property name="palette" >
@@ -819,7 +819,7 @@
             <string>Check to run as a Tor network server</string>
            </property>
            <property name="text" >
-            <string>Act as Tor Server</string>
+            <string>Relay traffic for the Tor network</string>
            </property>
            <property name="checked" >
             <bool>false</bool>
@@ -1047,7 +1047,7 @@
                     <enum>Qt::NoContextMenu</enum>
                    </property>
                    <property name="text" >
-                    <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" color:#ff0000;">Address:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+                    <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" color:#000000;">Address:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
                    </property>
                   </widget>
                  </item>
@@ -1081,6 +1081,19 @@
                   </widget>
                  </item>
                 </layout>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="chkMiddleMan" >
+                 <property name="contextMenuPolicy" >
+                  <enum>Qt::NoContextMenu</enum>
+                 </property>
+                 <property name="toolTip" >
+                  <string>If selected, clients will not exit the Tor network through your server</string>
+                 </property>
+                 <property name="text" >
+                  <string>Only relay traffic between other Tor servers (middle-man)</string>
+                 </property>
+                </widget>
                </item>
                <item>
                 <widget class="QLabel" name="label_5" >
@@ -1461,19 +1474,6 @@
                   </spacer>
                  </item>
                 </layout>
-               </item>
-               <item>
-                <widget class="QCheckBox" name="chkMiddleMan" >
-                 <property name="contextMenuPolicy" >
-                  <enum>Qt::NoContextMenu</enum>
-                 </property>
-                 <property name="toolTip" >
-                  <string>If selected, your server will only relay traffic between other Tor servers</string>
-                 </property>
-                 <property name="text" >
-                  <string>Disable exits from the Tor network from this server</string>
-                 </property>
-                </widget>
                </item>
                <item>
                 <spacer>

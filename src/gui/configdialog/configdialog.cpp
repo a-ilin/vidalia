@@ -42,6 +42,9 @@ ConfigDialog::ConfigDialog(TorControl *torControl, QWidget* parent)
 
   /* Load saved settings */
   loadSettings();
+
+  /* Hide future features for now */
+  ui.grpServerPolicies->setVisible(false);
 }
 
 /** Destructor */
