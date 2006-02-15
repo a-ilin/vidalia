@@ -1,0 +1,53 @@
+                Building the Tor/TorCP/Privoxy Bundle
+
+
+1. Create a base directory under which the necessary sources will be extracted
+and place the .nsi file in it. For this example, we will just use C:\bundle\.
+      
+       C:\bundle\bundle-alpha.nsi
+
+2. Create directories for each component in the bundle.
+
+        C:\bundle\privoxy\
+        C:\bundle\tor\
+        C:\bundle\torcp\
+
+3. The TorCP section of the installer looks for a special directory from which
+it will grab the following dlls:
+
+        C:\bundle\torcp\dll\mfc70.dll
+        C:\bundle\torcp\dll\msvcp70.dll
+        C:\bundle\torcp\dll\msvcr70.dll
+
+4. Modify the appropriate version values (TORCP_VERSION, TOR_VERSION, and
+PRIVOXY_VERSION) at the top of the .nsi file.
+
+5. Create directories for the appropriate versions of each component.
+
+        C:\bundle\privoxy\3.0.3\
+        C:\bundle\tor\0.1.1.12\
+        C:\bundle\torcp\0.0.4\
+
+6. Install Privoxy to the directory you created for its version and modify its
+config.txt file as follows:
+
+    * Add "forward-socks4a / localhost:9050 ." (without quotes) to the top
+    * Comment out "logfile privoxy.log" in Section 1.5
+    * Comment out "jarfile jar.log" in Section 1.6
+    * Uncomment "log-messages 1" in Section 6 and change the '1' to a '0'
+
+7. Install TorCP to the directory you created for its version.
+
+8. Install Tor to the directory you created for its version. Remember that you
+may need to grab the torrc.sample file from %APPDATA%\Tor that was created by
+the installer and place it in the directory for the bundle's version of Tor.
+
+9. Run the .nsi script. The bundle will be named according the the versions
+you specified in Step 4 and placed in the base directory created in Step 1.
+
+--------------------------------------------------------------------------------
+
+For each additional release of some component of the bundle, follow Steps 4-9.
+If the version of some component didn't change, you can skip its step. For
+example, if the version of Privoxy didn't change then you can skip Step 6.
+
