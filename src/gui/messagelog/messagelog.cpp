@@ -31,6 +31,8 @@
 #define COL_TYPE  1 /** Message severity type column */
 #define COL_MSG   2 /** Message body column */
 #define ROLE_TYPE 1 /** Role used to store the numeric type */
+#define COL_TIME_WIDTH 135 /** Default width of date/time column */
+#define COL_TYPE_WIDTH 70 /** Default width of the severity type column */
 
 /** Defines the format used for displaying the date and time of a log message */
 #define DATETIME_FMT  "MMM dd hh:mm:ss:zzz"
@@ -75,6 +77,10 @@ MessageLog::MessageLog(TorControl *torControl, QWidget *parent, Qt::WFlags flags
   /* Show number of message displayed in Status bar */
   ui.lstMessages->setStatusTip(tr("Messages Shown: ") += "0");
 
+  /* Set columns to correct widths */
+  ui.lstMessages->header()->resizeSection(COL_TIME, COL_TIME_WIDTH);
+  ui.lstMessages->header()->resizeSection(COL_TYPE, COL_TYPE_WIDTH);
+  
   /* Hide Message Log Settings frame */
   showSettingsFrame(false);
 
