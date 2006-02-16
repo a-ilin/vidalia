@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>490</width>
-    <height>396</height>
+    <width>461</width>
+    <height>372</height>
    </rect>
   </property>
   <property name="palette" >
@@ -766,6 +766,9 @@
               <property name="contextMenuPolicy" >
                <enum>Qt::NoContextMenu</enum>
               </property>
+              <property name="toolTip" >
+               <string>Select to start Vidalia on system boot</string>
+              </property>
               <property name="text" >
                <string>Run Vidalia on system start</string>
               </property>
@@ -778,6 +781,9 @@
              <widget class="QCheckBox" name="chkRunTor" >
               <property name="contextMenuPolicy" >
                <enum>Qt::NoContextMenu</enum>
+              </property>
+              <property name="toolTip" >
+               <string>Set to start Tor when you launch Vidalia</string>
               </property>
               <property name="text" >
                <string>Start Tor on Vidalia start</string>
@@ -875,6 +881,15 @@
                    <property name="text" >
                     <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" color:#ff0000;">Nickname:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
                    </property>
+                   <property name="alignment" >
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                   </property>
+                   <property name="margin" >
+                    <number>-1</number>
+                   </property>
+                   <property name="indent" >
+                    <number>13</number>
+                   </property>
                   </widget>
                  </item>
                  <item>
@@ -907,6 +922,9 @@
                    </property>
                    <property name="text" >
                     <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Contact Info:&lt;/p>&lt;/body>&lt;/html></string>
+                   </property>
+                   <property name="alignment" >
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                    </property>
                   </widget>
                  </item>
@@ -945,6 +963,15 @@
                      </property>
                      <property name="text" >
                       <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" color:#ff0000;">Server Port:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+                     </property>
+                     <property name="alignment" >
+                      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                     </property>
+                     <property name="margin" >
+                      <number>-1</number>
+                     </property>
+                     <property name="indent" >
+                      <number>7</number>
                      </property>
                     </widget>
                    </item>
@@ -1048,6 +1075,15 @@
                    </property>
                    <property name="text" >
                     <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" color:#000000;">Address:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+                   </property>
+                   <property name="alignment" >
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                   </property>
+                   <property name="margin" >
+                    <number>0</number>
+                   </property>
+                   <property name="indent" >
+                    <number>21</number>
                    </property>
                   </widget>
                  </item>
@@ -1549,7 +1585,7 @@
                  <enum>Qt::NoContextMenu</enum>
                 </property>
                 <property name="toolTip" >
-                 <string>Location of Tor executable</string>
+                 <string>Location of Tor configuration file (torrc)</string>
                 </property>
                </widget>
               </item>
@@ -1576,41 +1612,6 @@
                </widget>
               </item>
              </layout>
-            </item>
-            <item>
-             <widget class="QLabel" name="lblConfigFile" >
-              <property name="minimumSize" >
-               <size>
-                <width>370</width>
-                <height>40</height>
-               </size>
-              </property>
-              <property name="font" >
-               <font>
-                <family>Arial</family>
-                <pointsize>10</pointsize>
-                <weight>50</weight>
-                <italic>false</italic>
-                <bold>false</bold>
-                <underline>false</underline>
-                <strikeout>false</strikeout>
-               </font>
-              </property>
-              <property name="contextMenuPolicy" >
-               <enum>Qt::NoContextMenu</enum>
-              </property>
-              <property name="text" >
-               <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1"
-               />&lt;/head>&lt;body style=" white-space: pre-wrap;
-               font-family:Arial; font-size:10pt; font-weight:400;
-               font-style:normal; text-decoration:none;">&lt;p style="
-               margin-top:0px; margin-bottom:0px; margin-left:0px;
-               margin-right:0px; -qt-block-indent:0; text-indent:0px;">Vidalia will start Tor using an alternate Tor configuration file (torrc), if one is specified above.&lt;/p>&lt;/body>&lt;/html></string>
-              </property>
-              <property name="wordWrap" >
-               <bool>true</bool>
-              </property>
-             </widget>
             </item>
            </layout>
           </widget>
@@ -1657,6 +1658,9 @@
                 <property name="contextMenuPolicy" >
                  <enum>Qt::NoContextMenu</enum>
                 </property>
+                <property name="toolTip" >
+                 <string>Port that Vidalia uses to communicate with Tor. </string>
+                </property>
                 <property name="text" >
                  <string>9051</string>
                 </property>
@@ -1676,42 +1680,6 @@
                </spacer>
               </item>
              </layout>
-            </item>
-            <item>
-             <widget class="QLabel" name="lblPortLabel" >
-              <property name="minimumSize" >
-               <size>
-                <width>370</width>
-                <height>75</height>
-               </size>
-              </property>
-              <property name="font" >
-               <font>
-                <family>Arial</family>
-                <pointsize>10</pointsize>
-                <weight>50</weight>
-                <italic>false</italic>
-                <bold>false</bold>
-                <underline>false</underline>
-                <strikeout>false</strikeout>
-               </font>
-              </property>
-              <property name="contextMenuPolicy" >
-               <enum>Qt::NoContextMenu</enum>
-              </property>
-              <property name="text" >
-               <string>The control port is the port Vidalia uses to communicate with Tor. You only need to change this value if you have a service running on your machine that conflicts with the default port of 9051.</string>
-              </property>
-              <property name="textFormat" >
-               <enum>Qt::AutoText</enum>
-              </property>
-              <property name="wordWrap" >
-               <bool>true</bool>
-              </property>
-              <property name="margin" >
-               <number>0</number>
-              </property>
-             </widget>
             </item>
            </layout>
           </widget>

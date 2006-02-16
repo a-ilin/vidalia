@@ -45,6 +45,11 @@ ConfigDialog::ConfigDialog(TorControl *torControl, QWidget* parent)
 
   /* Hide future features for now */
   ui.grpServerPolicies->setVisible(false);
+
+  /* Also hide platform specific features where necessary */
+#ifndef Q_WS_WIN
+  ui.chkRunWithSys->setVisible(false);
+#endif
 }
 
 /** Destructor */
