@@ -70,22 +70,26 @@ private:
   /** Gets the width of the desktop, the max # of points **/
   int getNumPoints();
   /** Paints grid lines in the graph **/
-  void paintGrid(QPainter* painter);
+  void paintGrid();
   /** Paints appropriate lines on the graph **/
-  void paintLines(QPainter* painter);
+  void paintLines();
   /** Paints the send/receive totals **/
-  void paintTotals(QPainter* painter);
+  void paintTotals();
   /** Paints the scale in the graph **/
-  void paintScale(QPainter* painter);
+  void paintScale();
   /** Returns a formatted string representation of total **/
   QString totalToStr(qreal total);
   /** Paints a line with the data in list **/
-  void paintLine(QPainter* painter, QList<qreal>* list);
+  void paintLine(QList<qreal>* list);
 
+  /** A QPainter object that handles drawing the various graph elements */
+  QPainter* _painter;
   /** Holds the received data points **/
   QList<qreal> *_recvData;
   /** Holds the sent data points **/
   QList<qreal> *_sendData;
+  /** The current dimensions of the graph */
+  QRect _rec;
   /** The maximum data value plotted **/
   qreal _maxValue;
   /** The maximum number of points to store **/

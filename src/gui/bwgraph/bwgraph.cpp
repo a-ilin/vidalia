@@ -24,7 +24,7 @@
 #include "bwgraph.h"
 
 /* Define the format used for displaying the date and time */
-#define DATETIME_FMT  "MMM dd hh:mm:ss:zzz"
+#define DATETIME_FMT  "MMM dd hh:mm:ss"
 
 /** Default constructor */
 BandwidthGraph::BandwidthGraph(TorControl *torControl, QWidget *parent, Qt::WFlags f)

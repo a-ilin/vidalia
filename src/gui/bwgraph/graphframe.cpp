@@ -32,6 +32,8 @@ GraphFrame::GraphFrame(QWidget *parent)
   /* Create Graph Frame related objects */
   _recvData = new QList<qreal>();
   _sendData = new QList<qreal>();
+  _painter = new QPainter();
+  
   
   /* Initialize graph values */
   _recvData->prepend(0);
@@ -39,12 +41,17 @@ GraphFrame::GraphFrame(QWidget *parent)
   _maxPoints = getNumPoints();  
   _showRecv = true;
   _showSend = true;
-  _maxValue = MIN_SCALE; 
+  _maxValue = MIN_SCALE;
+
 }
 
 /** Default destructor */
 GraphFrame::~GraphFrame()
 {
+  if (_painter) {
+    delete _painter;
+  }
+
   if (_recvData) {
     delete _recvData;
   }
@@ -129,25 +136,30 @@ GraphFrame::paintEvent(QPaintEvent *event)
 {
   Q_UNUSED(event);
 
-  QPainter* painter = new QPainter(this);
+  /* Set current graph dimensions */
+  _rec = this->frameRect();
+  
+  /* Start the painter */
+  _painter->begin(this);
   
   /* Fill in the background */
-  painter->fillRect(this->frameRect(), QBrush(BACK_COLOR));
-  painter->drawRect(this->frameRect());
-  
+  _painter->fillRect(_rec, QBrush(BACK_COLOR));
+  _painter->drawRect(_rec);
+
   /* Paint the gridlines */
-  paintGrid(painter);
+  paintGrid();
   
   /* Paint the send/receive lines */
-  paintLines(painter);
+  paintLines();
 
   /* Paint the scale */
-  paintScale(painter);
+  paintScale();
 
   /* Paint the send/recv totals */
-  paintTotals(painter);
+  paintTotals();
 
-  delete painter;
+  /* Stop the painter */
+  _painter->end();
 }
 
 /**
@@ -155,18 +167,18 @@ GraphFrame::paintEvent(QPaintEvent *event)
  be painted.
 */
 void
-GraphFrame::paintLines(QPainter* painter)
+GraphFrame::paintLines()
 {
   /* If show received rate is selected */
   if (_showRecv) {
-    painter->setPen(QColor(RECV_COLOR));
-    paintLine(painter, _recvData);
+    _painter->setPen(QColor(RECV_COLOR));
+    paintLine(_recvData);
   }
 
   /* If show send rate is selected */
   if (_showSend) {
-    painter->setPen(QColor(SEND_COLOR));
-    paintLine(painter, _sendData);
+    _painter->setPen(QColor(SEND_COLOR));
+    paintLine(_sendData);
   }
 }
 
@@ -174,12 +186,11 @@ GraphFrame::paintLines(QPainter* painter)
  in the appropriate color
 */
 void
-GraphFrame::paintLine(QPainter* painter, QList<qreal>* list)
+GraphFrame::paintLine(QList<qreal>* list)
 {
-  QRect rec = this->frameRect();
-  qreal x = rec.x() + rec.width();
-  qreal y = rec.y() + rec.height();
-  qreal scale = y / _maxValue;
+  int x = _rec.width();
+  int y = _rec.height();
+  qreal scale = (y - (y/10)) / _maxValue;
   
   qreal prevValue = y - (list->at(0) * scale);
   qreal currValue;
@@ -189,11 +200,13 @@ GraphFrame::paintLine(QPainter* painter, QList<qreal>* list)
     
     /* Don't draw past the scale */
     if (x - SCROLL_STEP < SCALE_WIDTH) {
-      painter->drawLine(QPointF(x, prevValue), QPointF(SCALE_WIDTH, currValue));
+      _painter->drawLine(QPointF(x, prevValue),
+                         QPointF(SCALE_WIDTH, currValue));
       break;
     }
      
-    painter->drawLine(QPointF(x, prevValue), QPointF(x-SCROLL_STEP, currValue));
+    _painter->drawLine(QPointF(x, prevValue),
+                       QPointF(x-SCROLL_STEP, currValue));
       
     /* Update for next iteration */
     prevValue = currValue;
@@ -205,23 +218,20 @@ GraphFrame::paintLine(QPainter* painter, QList<qreal>* list)
  Paints selected total indicators on the graph
 */
 void
-GraphFrame::paintTotals(QPainter* painter)
+GraphFrame::paintTotals()
 {
-  int totalX = SCALE_WIDTH + FONT_SIZE;
-  int totalY = this->frameRect().y() + FONT_SIZE;
+  int x = SCALE_WIDTH + FONT_SIZE;
   
   /* If total received is selected */
   if (_showRecv) {
-    painter->setPen(QColor(RECV_COLOR));
-    painter->drawText(QPoint(totalX, totalY), 
-                             tr("Recv: ") + totalToStr(_totalRecv));
+    _painter->setPen(QColor(RECV_COLOR));
+    _painter->drawText(x, FONT_SIZE, tr("Recv: ") + totalToStr(_totalRecv));
   }
 
   /* If total sent is selected */
   if (_showSend) {
-    painter->setPen(QColor(SEND_COLOR));
-    painter->drawText(QPoint(totalX, totalY+FONT_SIZE), 
-                             tr("Sent: ") + totalToStr(_totalSend));
+    _painter->setPen(QColor(SEND_COLOR));
+    _painter->drawText(x, (2*FONT_SIZE), tr("Sent: ") + totalToStr(_totalSend));
   }
 }
 
@@ -249,27 +259,28 @@ GraphFrame::totalToStr(qreal total)
  Paints the scale on the graph
 */
 void
-GraphFrame::paintScale(QPainter* painter)
+GraphFrame::paintScale()
 {
-  painter->setPen(SCALE_COLOR);
+  _painter->setPen(SCALE_COLOR);
   
   qreal markStep = _maxValue * .25;
-  int top = this->frameRect().y();
-  int bottom = this->frameRect().y() + this->frameRect().height();
-  int paintStep = bottom / 4;
+  int top = _rec.y();
+  int bottom = _rec.height();
+  qreal paintStep = (bottom - (bottom/10)) / 4;
   
   /* Draw vertical separator */
-  painter->drawLine(SCALE_WIDTH, top, SCALE_WIDTH, bottom);
+  _painter->drawLine(SCALE_WIDTH, top, SCALE_WIDTH, bottom);
   
   /* Draw the other marks in their correctly scaled locations */
   qreal scale;
-  int pos;
+  qreal pos;
   for (int i = 1; i < 5; i++) {
-    pos = bottom - ((i * paintStep));
+    pos = bottom - (i * paintStep);
     scale = i * markStep;
-    painter->drawLine(SCALE_WIDTH-5, pos, SCALE_WIDTH, pos);
-    painter->drawText(QPoint(5, pos+FONT_SIZE), 
-                      tr("%1 kB/s").arg(scale, 0, 'f', 2));
+    _painter->drawLine(QPointF(SCALE_WIDTH-5, pos), 
+                       QPointF(SCALE_WIDTH, pos));
+    _painter->drawText(QPointF(5, pos+FONT_SIZE), 
+                       tr("%1 kB/s").arg(scale, 0, 'f', 2));
   }
 }
 
@@ -277,23 +288,21 @@ GraphFrame::paintScale(QPainter* painter)
  Paints grid lines in the bandwidth graph
 */
 void
-GraphFrame::paintGrid(QPainter* painter)
+GraphFrame::paintGrid()
 {
-  painter->setPen(GRID_COLOR);
-  QRect rec = this->frameRect();
-  int x, y;
-  
+  _painter->setPen(GRID_COLOR);
+  int y = _rec.height() - GRID_Y;
+  int x = _rec.width() - GRID_X;
+
   /* Draw horizontal grid lines */
-  y = (rec.y() + rec.height()) - GRID_Y;
-  while (y > rec.y()) {
-    painter->drawLine(SCALE_WIDTH, y, rec.width(), y);
+  while (y > _rec.y()) {
+    _painter->drawLine(SCALE_WIDTH, y, _rec.width(), y);
     y -= GRID_Y;
   }
 
   /* Draw vertical grid lines */
-  x = (rec.x() + rec.width()) - GRID_X;
   while (x > SCALE_WIDTH) {
-    painter->drawLine(x, rec.y(), x, (rec.y() + rec.height()));
+    _painter->drawLine(x, _rec.y(), x, _rec.height());
     x -= GRID_X;
   }
 }
