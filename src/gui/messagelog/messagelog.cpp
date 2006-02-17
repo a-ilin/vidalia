@@ -103,6 +103,10 @@ MessageLog::~MessageLog()
   if (_settings) {
     delete _settings;
   }
+
+  if (_logFile) {
+    delete _logFile;
+  }
 }
 
 /** Binds events (signals) to actions (slots). */
@@ -207,21 +211,28 @@ MessageLog::registerLogEvents()
 void
 MessageLog::saveChanges()
 {
+  _enableLogging = ui.chkEnableLogFile->isChecked();
   /* Try to open the log file. If it can't be opened, then give the user an
-   * error message and stop saving the changes. */
-  if (ui.chkEnableLogFile->isChecked()) {
+   * error message and undo changes so what they see is still what is set */
+  if (_enableLogging) {
     if (!openLogFile(ui.lineFile->text())) {
       QMessageBox::warning(this, tr("Error Opening Log File"),
         tr("Vidalia was unable to open the specified log file for writing."),
         QMessageBox::Ok, QMessageBox::NoButton);
+      cancelChanges();
       return;
     }
     _settings->setLogFile(ui.lineFile->text());
     ui.lineFile->setText(QDir::convertSeparators(ui.lineFile->text()));
   }
-  _enableLogging = ui.chkEnableLogFile->isChecked();
+  /* If they were previously logging and turned it off, close the file */
+  else {
+    if (_logFile) {
+      delete _logFile;
+      _logFile = 0;
+    }
+  }
   _settings->enableLogFile(_enableLogging);
-  
   
   /* Hide the settings frame and reset toggle button*/
   showSettingsFrame(false);
@@ -309,8 +320,7 @@ MessageLog::openLogFile(QString filename)
   return true;
 }
 
-/** Cycles through the list, hiding and showing appropriate messages.
- * Removes messages if newly shown messages put us over _maxCount. */
+/** Cycles through the list, applies current message filter to the list */
 void
 MessageLog::filterLog()
 {
@@ -322,15 +332,15 @@ MessageLog::filterLog()
   while (currentIndex > -1) {
     current = ui.lstMessages->topLevelItem(currentIndex);
     
-    /* Keep ALL messages until SHOWING maximum possible */
+    /* Interate through list, check each message along the way */
     if (_messagesShown < _maxCount) {
-      
-      /* Show or hide message accordingly */
+      /* Remove messages we aren't interested in, leave the rest */
       showCurrent = (bool)(_filter & (uint)current->data(COL_TYPE,ROLE_TYPE).toUInt());
-      ui.lstMessages->setItemHidden(current, !showCurrent);
       if (showCurrent) {
         _messagesShown++;
-      }
+      } else {
+        ui.lstMessages->takeTopLevelItem(currentIndex);
+      }     
     /* If we are showing the maximum, then get rid of the rest */
     } else {
       ui.lstMessages->takeTopLevelItem(currentIndex);
@@ -606,34 +616,27 @@ void
 MessageLog::log(LogEvent::Severity type, QString message)
 {
   QTreeWidgetItem *newMessage = newMessageItem(type, message);
-  
-  /* Remove top message if message log is at maximum setting */
-  if (ui.lstMessages->topLevelItemCount() == _maxCount) {
-    /* Decrease shown messages counter if removing a shown message */
-    if (!ui.lstMessages->isItemHidden(ui.lstMessages->topLevelItem(0))) {
+
+  /* Only add the message if it's not being filtered out */
+  if (_filter & (uint)type) {
+    /* Remove oldest message if log is at maximum length */
+    if (_messagesShown == _maxCount) {
+      ui.lstMessages->takeTopLevelItem(0);
       _messagesShown--;
     }
-    ui.lstMessages->takeTopLevelItem(0);
-  }
-  
-  /* Add the message to the bottom of the list */
-  ui.lstMessages->addTopLevelItem(newMessage);
+    
+    ui.lstMessages->addTopLevelItem(newMessage);
 
-  /* Hide the message if necessary */
-  if (_filter & (uint)type) {
-    /* If shown, update counter and select the newly added message */
     _messagesShown++;
     ui.lstMessages->setStatusTip(QString("Messages Shown: %1")
                                   .arg(_messagesShown));
     ui.lstMessages->scrollToItem(newMessage);
-  } else {
-    ui.lstMessages->setItemHidden(newMessage, true);
-  }
 
-  /* If we're saving log messages to a file, go ahead and do that now */
-  if (_enableLogging) {
-    _logStream << format(newMessage);
-    _logStream.flush(); /* Write to disk right away */
+    /* If we're saving log messages to a file, go ahead and do that now */
+    if (_enableLogging) {
+      _logStream << format(newMessage);
+      _logStream.flush(); /* Write to disk right away */
+    }
   }
 }
 
@@ -655,7 +658,7 @@ void
 MessageLog::show()
 {
   loadSettings();
-  QWidget::show();
+  QMainWindow::show();
 }
 
 /** Overloads the default close() slot, so we can force the parent to become
