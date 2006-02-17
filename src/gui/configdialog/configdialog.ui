@@ -770,7 +770,7 @@
                <string>Select to start Vidalia on system boot</string>
               </property>
               <property name="text" >
-               <string>Run Vidalia on system start</string>
+               <string>Run Vidalia on system startup</string>
               </property>
               <property name="checked" >
                <bool>true</bool>
@@ -786,7 +786,7 @@
                <string>Set to start Tor when you launch Vidalia</string>
               </property>
               <property name="text" >
-               <string>Start Tor on Vidalia start</string>
+               <string>Start Tor when Vidalia starts</string>
               </property>
              </widget>
             </item>
