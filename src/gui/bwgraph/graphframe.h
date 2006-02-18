@@ -31,8 +31,6 @@
 #include <QPen>
 #include <QList>
 
-#define GRID_X        12  // Width of a grid cell
-#define GRID_Y        12  // Height of a grid cell
 #define HOR_SPC       2   // Space between data points
 #define SCALE_WIDTH   75  // Width of the scale
 #define MIN_SCALE     10  // 10 kB/s is the minimum scale  
@@ -69,8 +67,6 @@ protected:
 private:
   /** Gets the width of the desktop, the max # of points **/
   int getNumPoints();
-  /** Paints grid lines in the graph **/
-  void paintGrid();
   /** Paints appropriate lines on the graph **/
   void paintLines();
   /** Paints the send/receive totals **/

@@ -34,7 +34,6 @@ GraphFrame::GraphFrame(QWidget *parent)
   _sendData = new QList<qreal>();
   _painter = new QPainter();
   
-  
   /* Initialize graph values */
   _recvData->prepend(0);
   _sendData->prepend(0);
@@ -142,18 +141,19 @@ GraphFrame::paintEvent(QPaintEvent *event)
   /* Start the painter */
   _painter->begin(this);
   
+  /* We want antialiased lines and text */
+  _painter->setRenderHint(QPainter::Antialiasing);
+  _painter->setRenderHint(QPainter::TextAntialiasing);
+  
   /* Fill in the background */
   _painter->fillRect(_rec, QBrush(BACK_COLOR));
   _painter->drawRect(_rec);
 
-  /* Paint the gridlines */
-  paintGrid();
-  
-  /* Paint the send/receive lines */
-  paintLines();
-
   /* Paint the scale */
   paintScale();
+
+  /* Paint the send/receive lines */
+  paintLines();
 
   /* Paint the send/recv totals */
   paintTotals();
@@ -171,13 +171,13 @@ GraphFrame::paintLines()
 {
   /* If show received rate is selected */
   if (_showRecv) {
-    _painter->setPen(QColor(RECV_COLOR));
+    _painter->setPen(QPen(RECV_COLOR, 2));
     paintLine(_recvData);
   }
 
   /* If show send rate is selected */
   if (_showSend) {
-    _painter->setPen(QColor(SEND_COLOR));
+    _painter->setPen(QPen(SEND_COLOR, 2));
     paintLine(_sendData);
   }
 }
@@ -188,7 +188,7 @@ GraphFrame::paintLines()
 void
 GraphFrame::paintLine(QList<qreal>* list)
 {
-  int x = _rec.width();
+  int x = _rec.width() + SCROLL_STEP;
   int y = _rec.height();
   qreal scale = (y - (y/10)) / _maxValue;
   
@@ -224,13 +224,13 @@ GraphFrame::paintTotals()
   
   /* If total received is selected */
   if (_showRecv) {
-    _painter->setPen(QColor(RECV_COLOR));
+    _painter->setPen(RECV_COLOR);
     _painter->drawText(x, FONT_SIZE, tr("Recv: ") + totalToStr(_totalRecv));
   }
 
   /* If total sent is selected */
   if (_showSend) {
-    _painter->setPen(QColor(SEND_COLOR));
+    _painter->setPen(SEND_COLOR);
     _painter->drawText(x, (2*FONT_SIZE), tr("Sent: ") + totalToStr(_totalSend));
   }
 }
@@ -261,15 +261,10 @@ GraphFrame::totalToStr(qreal total)
 void
 GraphFrame::paintScale()
 {
-  _painter->setPen(SCALE_COLOR);
-  
   qreal markStep = _maxValue * .25;
   int top = _rec.y();
   int bottom = _rec.height();
   qreal paintStep = (bottom - (bottom/10)) / 4;
-  
-  /* Draw vertical separator */
-  _painter->drawLine(SCALE_WIDTH, top, SCALE_WIDTH, bottom);
   
   /* Draw the other marks in their correctly scaled locations */
   qreal scale;
@@ -277,33 +272,15 @@ GraphFrame::paintScale()
   for (int i = 1; i < 5; i++) {
     pos = bottom - (i * paintStep);
     scale = i * markStep;
-    _painter->drawLine(QPointF(SCALE_WIDTH-5, pos), 
-                       QPointF(SCALE_WIDTH, pos));
+    _painter->setPen(SCALE_COLOR);
     _painter->drawText(QPointF(5, pos+FONT_SIZE), 
                        tr("%1 kB/s").arg(scale, 0, 'f', 2));
+    _painter->setPen(GRID_COLOR);
+    _painter->drawLine(QPointF(SCALE_WIDTH, pos), 
+                       QPointF(_rec.width(), pos));
   }
-}
-
-/**
- Paints grid lines in the bandwidth graph
-*/
-void
-GraphFrame::paintGrid()
-{
-  _painter->setPen(GRID_COLOR);
-  int y = _rec.height() - GRID_Y;
-  int x = _rec.width() - GRID_X;
-
-  /* Draw horizontal grid lines */
-  while (y > _rec.y()) {
-    _painter->drawLine(SCALE_WIDTH, y, _rec.width(), y);
-    y -= GRID_Y;
-  }
-
-  /* Draw vertical grid lines */
-  while (x > SCALE_WIDTH) {
-    _painter->drawLine(x, _rec.y(), x, _rec.height());
-    x -= GRID_X;
-  }
+  
+  /* Draw vertical separator */
+  _painter->drawLine(SCALE_WIDTH, top, SCALE_WIDTH, bottom);
 }
 
