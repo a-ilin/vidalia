@@ -418,7 +418,7 @@ TorControl::saveConf(QString *errmsg)
 
 /** Tells Tor to reset the given configuration keys back to defaults. */
 bool
-TorControl::resetConf(QList<QString> keys, QString *errmsg)
+TorControl::resetConf(QStringList keys, QString *errmsg)
 {
   ControlCommand cmd("RESETCONF");
 

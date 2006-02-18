@@ -103,7 +103,7 @@ public:
   /** Asks Tor to save the current configuration to its torrc */
   bool saveConf(QString *errmsg = 0);
   /** Tells Tor to reset the given configuration keys back to defaults. */
-  bool resetConf(QList<QString> keys, QString *errmsg = 0);
+  bool resetConf(QStringList keys, QString *errmsg = 0);
 
 signals:
   /** Emitted when the Tor process has started */
