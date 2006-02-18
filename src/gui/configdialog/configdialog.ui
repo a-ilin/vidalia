@@ -1565,7 +1565,7 @@
             <enum>Qt::NoContextMenu</enum>
            </property>
            <property name="title" >
-            <string>Tor Configuration File</string>
+            <string>Alternate Tor Configuration File</string>
            </property>
            <layout class="QVBoxLayout" >
             <property name="margin" >
@@ -1591,7 +1591,7 @@
                  <enum>Qt::NoContextMenu</enum>
                 </property>
                 <property name="toolTip" >
-                 <string>Location of Tor configuration file (torrc)</string>
+                 <string>Start Tor with the specified configuration file (torrc)</string>
                 </property>
                </widget>
               </item>

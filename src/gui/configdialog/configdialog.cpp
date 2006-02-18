@@ -128,7 +128,9 @@ ConfigDialog::loadServerSettings()
 void
 ConfigDialog::loadAdvancedSettings()
 {
+  QMap<QString, QVariant> args = _settings->getTorArguments();
   ui.lineControlPort->setText(QString::number(_settings->getControlPort()));
+  ui.lineTorConfig->setText(args.value("-f").toString().remove("\""));
 }
 
 /** Cancels changes made to settings. */
@@ -171,7 +173,15 @@ ConfigDialog::saveServerSettings()
 void
 ConfigDialog::saveAdvancedSettings()
 {
+  /* Save the control port setting */
   _settings->setControlPort(ui.lineControlPort->text().toUShort());
+
+  /* If the user specified a torrc, use that. */
+  if (!ui.lineTorConfig->text().isEmpty()) {
+    _settings->addTorArgument("-f", "\"" + ui.lineTorConfig->text() + "\"");
+  } else {
+    _settings->removeTorArgument("-f");
+  }
 }
 
 /** Open a QFileDialog to browse for Tor executable. */
@@ -192,8 +202,8 @@ void
 ConfigDialog::browseTorConfig()
 {
   QString filename = QDir::convertSeparators(
-                          QFileDialog::getSaveFileName(this,
-                              tr("Select Tor Configuration File"), "torrc"));
+                          QFileDialog::getOpenFileName(this,
+                              tr("Select Tor Configuration File")));
   if (!filename.isEmpty()) {
     ui.lineTorConfig->setText(filename);
   }
