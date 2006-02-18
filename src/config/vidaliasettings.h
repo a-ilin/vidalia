@@ -64,9 +64,9 @@ public:
   QString  getTorExecutable();
 
   /* Add/remove/retrieve Tor command-line arguments */
-  QStringList getTorArguments(); 
-  void setTorArguments(QStringList args);
-  void addTorArgument(QString arg);
+  QMap<QString, QVariant> getTorArguments(); 
+  void setTorArguments(QMap<QString, QVariant> args);
+  void addTorArgument(QString arg, QString value);
   void removeTorArgument(QString arg);
 
   /* Get and set Tor's control address */

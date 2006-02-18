@@ -53,11 +53,12 @@ TorProcess::~TorProcess()
  * command-line arguments specified in Vidalia's settings. If Tor doesn't
  * exist at the given path, <b>errmsg</b> will be set appropriately and the
  * function will return false. */
-bool TorProcess::start(QString app, QStringList args, QString *errmsg) 
+bool TorProcess::start(QString app, QMap<QString, QVariant> args, QString *errmsg) 
 {
   QFileInfo appInfo(app);
   QString path = appInfo.absoluteFilePath();
-  QString exec;
+  QString arguments;
+  QList<QString> argKeys;
   
   /* If the path doesn't point to an executable, then bail */
   if (!appInfo.isExecutable()) {
@@ -80,10 +81,13 @@ bool TorProcess::start(QString app, QStringList args, QString *errmsg)
    * in them. This is logical, but Tor doesn't like it because you end up with
    * something like "-ControlPort 9051", which Tor thinks is a single
    * argument. So I'll just do the joining myself. */
-  exec = path + " " + args.join(" ");
+  argKeys = args.keys();
+  foreach(QString key, argKeys) {
+    arguments.append(" " + key + " " + args.value(key).toString());
+  }
   
   /* Attempt to start Tor with the given command-line arguments */
-  QProcess::start(exec, QIODevice::ReadOnly | QIODevice::Text);
+  QProcess::start(path + " " + arguments, QIODevice::ReadOnly | QIODevice::Text);
   return true;
 }
 

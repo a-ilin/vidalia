@@ -26,6 +26,8 @@
 
 #include <QProcess>
 #include <QFileInfo>
+#include <QVariant>
+#include <QMap>
 
 class TorProcess : public QProcess
 {
@@ -36,7 +38,7 @@ public:
   ~TorProcess();
 
   /** Start the Tor process */
-  bool start(QString app, QStringList args, QString *errmsg = 0);
+  bool start(QString app, QMap<QString, QVariant> args, QString *errmsg = 0);
   /** Stop the Tor process */
   bool stop(QString *errmsg = 0);
 

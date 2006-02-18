@@ -57,7 +57,7 @@
 #endif
 #define DEFAULT_OPACITY 100
 
-#define DEFAULT_TOR_ARGUMENTS  ""
+#define DEFAULT_TOR_ARGUMENTS  QMap<QString,QVariant>()
 #define DEFAULT_CONTROL_ADDR   "127.0.0.1"
 #define DEFAULT_CONTROL_PORT   9051
 #define DEFAULT_AUTH_TOKEN     ""
@@ -135,33 +135,31 @@ VidaliaSettings::getTorExecutable()
            QFileInfo(getTorPath(), TOR_EXECUTABLE).absoluteFilePath());
 }
 
-/** Returns a QStringList containing all arguments to be passed to Tor's
- * executable. Arguments are stored in the settings file as a ;-delimited
- * list. */
-QStringList
+/** Returns a QMap<arg, value> containing all arguments to be passed to Tor's
+ * executable. */
+QMap<QString, QVariant>
 VidaliaSettings::getTorArguments()
 {
-  QStringList args = value(SETTING_TOR_ARGUMENTS,
-                           DEFAULT_TOR_ARGUMENTS).toString().split(";");
-  args << QString("-ControlPort %1").arg(getControlPort());
+  QMap<QString, QVariant> args = value(SETTING_TOR_ARGUMENTS,
+                                       DEFAULT_TOR_ARGUMENTS).toMap();
+  args.insert("-ControlPort", QString::number(getControlPort()));
   return args;
 }
 
-/** Set Tor arguments to a ;-delimited list of all arguments in the supplied
- * QStringList. */
+/** Set Tor arguments to the supplied arg-value map. */
 void
-VidaliaSettings::setTorArguments(QStringList args)
+VidaliaSettings::setTorArguments(QMap<QString, QVariant> args)
 {
-  setValue(SETTING_TOR_ARGUMENTS, args.join(";"));
+  setValue(SETTING_TOR_ARGUMENTS, args);
 }
 
 /** Add an argument to the list of command-line arguments used when starting
  * Tor. */
 void
-VidaliaSettings::addTorArgument(QString arg)
+VidaliaSettings::addTorArgument(QString arg, QString value)
 {
-  QStringList args = getTorArguments();
-  args << arg;
+  QMap<QString, QVariant> args = getTorArguments();
+  args.insert(arg, value);
   setTorArguments(args);
 }
 
@@ -169,16 +167,9 @@ VidaliaSettings::addTorArgument(QString arg)
 void
 VidaliaSettings::removeTorArgument(QString arg)
 {
-  QStringList args = getTorArguments();
-
-  /* QStringList doesn't appear to have a case-insensitive find()-esque
-   * method, so we'll do it the hard way */
-  for (int i = 0; i < args.size(); ++i) {
-    if (args.at(i).toLower() == arg.toLower()) {
-      args.removeAt(i);
-      break;
-    }
-  }
+  QMap<QString, QVariant> args = getTorArguments();
+  args.remove(arg);
+  setTorArguments(args);
 }
 
 /** Get the address or hostname used to connect to Tor */
