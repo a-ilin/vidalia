@@ -30,6 +30,8 @@
 
 #include "../../control/torcontrol.h"
 #include "../../config/vidaliasettings.h"
+#include "../../config/serversettings.h"
+
 
 class ConfigDialog : public QDialog
 {
@@ -44,7 +46,9 @@ public:
 public slots:
   /** Called when user selects an item from the settings page list */
   void changePage(QListWidgetItem *current, QListWidgetItem *previous);
-
+  /** Called when this dialog is to be displayed */
+  void show();
+  
 private slots:
   /** Called when user clicks "Cancel" */
   void cancelChanges();
@@ -67,7 +71,7 @@ private:
 
   /** Saves the current configuration settings */
   void saveGeneralSettings();
-  void saveServerSettings();
+  bool saveServerSettings(QString *errmsg = 0);
   void saveAdvancedSettings();
 
   /** Toggles display of server config frame */
@@ -75,8 +79,11 @@ private:
 
   /** A TorControl object used to talk to Tor. */
   TorControl* _torControl;
-  /** A VidaliaSettings object taht handles getting/saving settings */
+  /** A VidaliaSettings object that handles getting/saving settings */
   VidaliaSettings* _settings;
+  /** A ServerSettings object used to get and set information about how a
+   * local Tor server is configured. */
+  ServerSettings*  _serverSettings;
   
   /** Qt Designer generated object */
   Ui::ConfigDialog ui;

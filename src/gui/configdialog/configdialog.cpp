@@ -21,7 +21,14 @@
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
 
+#include <QMessageBox>
+
 #include "configdialog.h"
+
+/* Page indices in the QListWidget */
+#define PAGE_GENERAL  0
+#define PAGE_SERVER   1
+#define PAGE_ADVANCED 2
 
 /** Constructor */
 ConfigDialog::ConfigDialog(TorControl *torControl, QWidget* parent)
@@ -29,19 +36,21 @@ ConfigDialog::ConfigDialog(TorControl *torControl, QWidget* parent)
 {
   /* Invoke the Qt Designer generated QObject setup routine */
   ui.setupUi(this);
-  ui.lineControlPort->setValidator(new QIntValidator(0, 65535, this));
-  
-  /* A previously-created TorControl object used to talk to Tor */
+
+  /* Set some validators for the port value fields */
+  ui.lineControlPort->setValidator(new QIntValidator(1, 65535, this));
+  ui.lineServerPort->setValidator(new QIntValidator(1, 65535, this));
+  ui.lineDirPort->setValidator(new QIntValidator(1, 65535, this));
+
+  /* Keep a pointer to the TorControl object used to talk to Tor */
   _torControl = torControl;
   
   /* Create necessary ConfigDialog QObjects */
   _settings = new VidaliaSettings();
+  _serverSettings = new ServerSettings(_torControl);
 
   /* Bind events to actions */
   createActions();
-
-  /* Load saved settings */
-  loadSettings();
 
   /* Hide future features for now */
   ui.grpServerPolicies->setVisible(false);
@@ -58,6 +67,15 @@ ConfigDialog::~ConfigDialog()
   if (_settings) {
     delete _settings;
   }
+}
+
+void
+ConfigDialog::show()
+{
+  /* Load saved settings */
+  loadSettings();
+  /* Show the dialog */
+  QDialog::show();
 }
 
 /** Connects actions to events. */
@@ -118,10 +136,12 @@ ConfigDialog::loadGeneralSettings()
   ui.chkRunTor->setChecked(_settings->runTorAtStart());
 }
 
-/** Load and display settings for the Server settings page. */
+/** Save changes made to settings on the General settings page. */
 void
-ConfigDialog::loadServerSettings()
+ConfigDialog::saveGeneralSettings()
 {
+  _settings->setTorPath(ui.lineTorPath->text());
+  _settings->setRunTorAtStart(ui.chkRunTor->isChecked());
 }
 
 /** Load and display settings for the Advanced settings page. */
@@ -131,6 +151,56 @@ ConfigDialog::loadAdvancedSettings()
   QMap<QString, QVariant> args = _settings->getTorArguments();
   ui.lineControlPort->setText(QString::number(_settings->getControlPort()));
   ui.lineTorConfig->setText(args.value("-f").toString().remove("\""));
+}
+
+/** Save changes made to settings on the Advanced settings page. */
+void
+ConfigDialog::saveAdvancedSettings()
+{
+  /* Save the control port setting */
+  _settings->setControlPort(ui.lineControlPort->text().toUShort());
+
+  /* If the user specified a torrc, use that. */
+  if (!ui.lineTorConfig->text().isEmpty()) {
+    _settings->addTorArgument("-f", "\"" + ui.lineTorConfig->text() + "\"");
+  } else {
+    _settings->removeTorArgument("-f");
+  }
+}
+
+/** Load and display settings for the Server settings page. */
+void
+ConfigDialog::loadServerSettings()
+{
+  ui.chkEnableServer->setChecked(_serverSettings->isServerEnabled());
+  ui.chkMirrorDirectory->setChecked(_serverSettings->isDirectoryMirror());
+  ui.chkMiddleMan->setChecked(_serverSettings->isMiddleman());
+  ui.lineServerNickname->setText(_serverSettings->getNickname());
+  ui.lineServerPort->setText(QString::number(_serverSettings->getORPort()));
+  ui.lineDirPort->setText(QString::number(_serverSettings->getDirPort()));
+  ui.lineServerAddress->setText(_serverSettings->getAddress());
+  ui.lineServerContact->setText(_serverSettings->getContactInfo());
+}
+
+/** Saves changes made to settings on the Server settings page. */
+bool
+ConfigDialog::saveServerSettings(QString *errmsg)
+{
+  if (ui.chkEnableServer->isChecked() &&
+      (ui.lineServerPort->text().isEmpty() ||
+       ui.lineServerNickname->text().isEmpty())) {
+    *errmsg = "You must specify at least a server nickname and port.";
+    return false;
+  }
+  _serverSettings->setServerEnabled(ui.chkEnableServer->isChecked());
+  _serverSettings->setDirectoryMirror(ui.chkMirrorDirectory->isChecked());
+  _serverSettings->setMiddleman(ui.chkMiddleMan->isChecked());
+  _serverSettings->setNickname(ui.lineServerNickname->text());
+  _serverSettings->setORPort(ui.lineServerPort->text().toUInt());
+  _serverSettings->setDirPort(ui.lineDirPort->text().toUInt());
+  _serverSettings->setAddress(ui.lineServerAddress->text());
+  _serverSettings->setContactInfo(ui.lineServerContact->text());
+  return (_torControl->isConnected() ? _serverSettings->apply(errmsg) : true);    
 }
 
 /** Cancels changes made to settings. */
@@ -147,41 +217,26 @@ ConfigDialog::cancelChanges()
 void
 ConfigDialog::saveChanges()
 {
+  QString errmsg;
+  
   /* Save the settings and exit */
   saveGeneralSettings();
-  saveServerSettings();
   saveAdvancedSettings();
-
-  QDialog::close();
-}
-
-/** Save changes made to settings on the General settings page. */
-void
-ConfigDialog::saveGeneralSettings()
-{
-  _settings->setTorPath(ui.lineTorPath->text());
-  _settings->setRunTorAtStart(ui.chkRunTor->isChecked());
-}
-
-/** Saves changes made to settings on the Server settings page. */
-void
-ConfigDialog::saveServerSettings()
-{
-}
-
-/** Save changes made to settings on the Advanced settings page. */
-void
-ConfigDialog::saveAdvancedSettings()
-{
-  /* Save the control port setting */
-  _settings->setControlPort(ui.lineControlPort->text().toUShort());
-
-  /* If the user specified a torrc, use that. */
-  if (!ui.lineTorConfig->text().isEmpty()) {
-    _settings->addTorArgument("-f", "\"" + ui.lineTorConfig->text() + "\"");
-  } else {
-    _settings->removeTorArgument("-f");
+ 
+  /* Try to save the user's server settings. If something goes awry, then
+   * notify the user, don't save their settings, and show them the offending
+   * page. */
+  if (!saveServerSettings(&errmsg)) {
+    QMessageBox::warning(this, 
+      tr("Error Saving Server Configuration"),
+      tr("Vidalia encountered an error applying your "
+         "server configuration.\n\n") + errmsg,
+      QMessageBox::Ok, QMessageBox::NoButton);
+    _serverSettings->revert();
+    ui.lstPages->setCurrentRow(PAGE_SERVER);
+    return;
   }
+  QDialog::close();
 }
 
 /** Open a QFileDialog to browse for Tor executable. */
@@ -202,8 +257,8 @@ void
 ConfigDialog::browseTorConfig()
 {
   QString filename = QDir::convertSeparators(
-                          QFileDialog::getOpenFileName(this,
-                              tr("Select Tor Configuration File")));
+                       QFileDialog::getOpenFileName(this,
+                         tr("Select Tor Configuration File")));
   if (!filename.isEmpty()) {
     ui.lineTorConfig->setText(filename);
   }

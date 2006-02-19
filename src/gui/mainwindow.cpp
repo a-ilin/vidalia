@@ -74,7 +74,7 @@ MainWindow::MainWindow()
 
   /* Create a new MessageLog object so messages can be logged when not shown */
   _messageLog = new MessageLog(_torControl, this);
- 
+  
   /* Create a new BandwidthGraph object so we can monitor bandwidth usage */
   Qt::WFlags bw_flags = (Qt::Tool | Qt::WindowStaysOnTopHint);
   _bandwidthGraph = new BandwidthGraph(_torControl, this, bw_flags);
@@ -298,7 +298,7 @@ MainWindow::started()
             "again.\n\n") + errmsg,
          QMessageBox::Ok, QMessageBox::NoButton);
     }
-  } 
+  }
 }
 
 /** Disconnects the control socket and stops the Tor process. */
@@ -366,6 +366,7 @@ MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
 void
 MainWindow::connected()
 {
+  ServerSettings serverSettings(_torControl);
   QString errmsg;
 
   /* The controller connected, so now send the AUTHENTICATE command */
@@ -386,6 +387,12 @@ MainWindow::connected()
          "Some features of Vidalia will be unavailable. "
          "\n\nError: ") + errmsg,
       QMessageBox::Ok, QMessageBox::NoButton);
+  }
+
+  /* If the user changed some of the server's settings while Tor wasn't 
+   * running, then we better let Tor know about the changes now. */
+  if (serverSettings.changedSinceLastApply()) {
+    serverSettings.apply();
   }
 }
 
