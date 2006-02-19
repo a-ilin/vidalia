@@ -260,6 +260,7 @@ void
 MainWindow::start()
 {
   QString errmsg;
+  _isIntentionalExit = false;
   if (!_torControl->start(&errmsg)) {
     QMessageBox::warning(this, tr("Error Starting Tor"),
        tr("Vidalia was unable to start Tor.\n\nError: ") + errmsg,
@@ -359,7 +360,6 @@ MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
      * control socket */
      _torControl->disconnect();
   }
-  _isIntentionalExit = false;
 }
 
 /** Called when the control socket has successfully connected to Tor. */
