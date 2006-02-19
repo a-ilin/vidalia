@@ -24,6 +24,8 @@
 #include <QHostInfo>
 
 #include "serversettings.h"
+#include "../util/net.h"
+
 
 /* Server-related torrc configuration parameters */
 #define SERVER_NICKNAME       "Nickname"
@@ -53,7 +55,7 @@
 #define DEFAULT_SERVER_ORPORT     9001
 #define DEFAULT_SERVER_DIRPORT    9030
 #define DEFAULT_SERVER_CONTACT    "<your@email.com>"
-#define DEFAULT_SERVER_ADDRESS    "" 
+#define DEFAULT_SERVER_ADDRESS    net_local_address().toString() 
 
 #define EXIT_POLICY_MIDDLEMAN     "reject *:*"
 
