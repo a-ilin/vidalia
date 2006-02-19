@@ -65,6 +65,7 @@ public:
 
   /* Add/remove/retrieve Tor command-line arguments */
   QMap<QString, QVariant> getTorArguments(); 
+  bool hasTorArgument(QString arg);
   void setTorArguments(QMap<QString, QVariant> args);
   void addTorArgument(QString arg, QString value);
   void removeTorArgument(QString arg);

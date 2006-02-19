@@ -146,6 +146,13 @@ VidaliaSettings::getTorArguments()
   return args;
 }
 
+/** Returns true if we have a setting for the given Tor argument. */
+bool
+VidaliaSettings::hasTorArgument(QString arg)
+{
+  return getTorArguments().contains(arg);
+}
+
 /** Set Tor arguments to the supplied arg-value map. */
 void
 VidaliaSettings::setTorArguments(QMap<QString, QVariant> args)
