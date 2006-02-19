@@ -81,9 +81,7 @@ TorControl::start(QString *errmsg)
   if (!_torProcess->start(settings.getTorExecutable(),
                           settings.getTorArguments(), errmsg)) {
     /* Disconnect the signals for this TorProcess, cleanup and return  */
-    QObject::disconnect(_torProcess, 0, 0, 0);
-    delete _torProcess;
-    _torProcess = 0;
+    closeTorProcess();
     return false;
   }
   return true;
@@ -110,10 +108,20 @@ TorControl::stop(QString *errmsg)
 void
 TorControl::onStopped(int exitCode, QProcess::ExitStatus exitStatus)
 {
-  delete _torProcess;
-  _torProcess = 0;
+  closeTorProcess();
   disconnect();
   emit stopped(exitCode, exitStatus);
+}
+
+/** Disconnect signals from _torProcess and clean up after it. */
+void
+TorControl::closeTorProcess()
+{
+  if (_torProcess) {
+    QObject::disconnect(_torProcess, 0, 0, 0);
+    delete _torProcess;
+    _torProcess = 0;
+  }
 }
 
 /** Detect if the Tor process is running. */
