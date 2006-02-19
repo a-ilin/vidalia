@@ -104,6 +104,8 @@ public:
   bool saveConf(QString *errmsg = 0);
   /** Tells Tor to reset the given configuration keys back to defaults. */
   bool resetConf(QStringList keys, QString *errmsg = 0);
+  /** Tells Tor to reset a configuration key back to its default value. */
+  bool resetConf(QString key, QString *errmsg = 0);
 
 signals:
   /** Emitted when the Tor process has started */

@@ -429,3 +429,11 @@ TorControl::resetConf(QStringList keys, QString *errmsg)
   return send(cmd, errmsg);
 }
 
+/** Tells Tor to reset a single given configuration key back to its default
+ * value. */
+bool
+TorControl::resetConf(QString key, QString *errmsg)
+{
+  return resetConf(QStringList() << key, errmsg);
+}
+
