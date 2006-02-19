@@ -154,7 +154,9 @@ TorControl::onConnected()
   /* Let interested parties know that the control socket connected */
   emit connected();
   /* The control socket is connected, so we can stop reading from stdout */
-  _torProcess->logStdout(false);
+  if (_torProcess) {
+    _torProcess->logStdout(false);
+  }
 }
 
 /** Disconnect from Tor's control port */
@@ -351,7 +353,7 @@ TorControl::setConf(QHash<QString,QString> map, QString *errmsg)
     arg = key;
     value = map.value(key);
     if (value.length() > 0) {
-      arg += "=" + value;
+      arg += "=\"" + value + "\"";
     }
     cmd.addArgument(arg);
   }
@@ -378,7 +380,7 @@ TorControl::getConf(QHash<QString,QString> &map, QString *errmsg)
   foreach (QString key, map.keys()) {
     cmd.addArgument(key);
   }
- 
+
   /* Ask Tor for the specified info values */
   if (send(cmd, reply, errmsg)) {
     /* Parse the response for the returned values */
