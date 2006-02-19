@@ -204,17 +204,17 @@ void
 BandwidthGraph::setOpacity(int value)
 {
   qreal newValue = value / 100.0;
-
+  
   /* Opacity only supported by Mac and Win32 */
-  #if defined(Q_WS_MAC)
+#if defined(Q_WS_MAC)
+  this->setWindowOpacity(newValue);
+#elif defined(Q_WS_WIN)
+  if(QSysInfo::WV_2000 <= QSysInfo::WindowsVersion <= QSysInfo::WV_2003) {
     this->setWindowOpacity(newValue);
-  #endif
-
-  #if defined(Q_WS_WIN)
-    if(QSysInfo::WV_2000 <= QSysInfo::WindowsVersion <= QSysInfo::WV_2003) {
-      this->setWindowOpacity(newValue);
-    }
-  #endif
+  }
+#else
+  Q_UNUSED(newValue);
+#endif
 }
 
 /** 
