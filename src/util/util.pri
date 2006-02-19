@@ -21,5 +21,9 @@
 #  02110-1301, USA.
 #################################################################
 
-HEADERS += $$PWD/compat.h
-SOURCES += $$PWD/compat.cpp
+HEADERS += $$PWD/compat.h \
+           $$PWD/net.h
+           
+SOURCES += $$PWD/compat.cpp \
+           $$PWD/net.cpp
+
