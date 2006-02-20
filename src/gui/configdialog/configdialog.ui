@@ -689,7 +689,7 @@
             <enum>Qt::NoContextMenu</enum>
            </property>
            <property name="title" >
-            <string>Tor Location</string>
+            <string>Tor Directory</string>
            </property>
            <layout class="QVBoxLayout" >
             <property name="margin" >
@@ -1620,6 +1620,74 @@
           <number>6</number>
          </property>
          <item>
+          <widget class="QGroupBox" name="grpControlPort" >
+           <property name="contextMenuPolicy" >
+            <enum>Qt::NoContextMenu</enum>
+           </property>
+           <property name="title" >
+            <string>Control Port</string>
+           </property>
+           <layout class="QVBoxLayout" >
+            <property name="margin" >
+             <number>9</number>
+            </property>
+            <property name="spacing" >
+             <number>6</number>
+            </property>
+            <item>
+             <layout class="QHBoxLayout" >
+              <property name="margin" >
+               <number>0</number>
+              </property>
+              <property name="spacing" >
+               <number>6</number>
+              </property>
+              <item>
+               <widget class="QLineEdit" name="lineControlPort" >
+                <property name="sizePolicy" >
+                 <sizepolicy>
+                  <hsizetype>0</hsizetype>
+                  <vsizetype>0</vsizetype>
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="maximumSize" >
+                 <size>
+                  <width>55</width>
+                  <height>16777215</height>
+                 </size>
+                </property>
+                <property name="contextMenuPolicy" >
+                 <enum>Qt::NoContextMenu</enum>
+                </property>
+                <property name="toolTip" >
+                 <string>Port that Vidalia uses to communicate with Tor. </string>
+                </property>
+                <property name="text" >
+                 <string>9051</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer>
+                <property name="orientation" >
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" >
+                 <size>
+                  <width>221</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
           <widget class="QGroupBox" name="grpTorConfigFile" >
            <property name="contextMenuPolicy" >
             <enum>Qt::NoContextMenu</enum>
@@ -1769,75 +1837,7 @@
            </layout>
           </widget>
          </item>
-         <item>
-          <widget class="QGroupBox" name="grpControlPort" >
-           <property name="contextMenuPolicy" >
-            <enum>Qt::NoContextMenu</enum>
-           </property>
-           <property name="title" >
-            <string>Control Port</string>
-           </property>
-           <layout class="QVBoxLayout" >
-            <property name="margin" >
-             <number>9</number>
-            </property>
-            <property name="spacing" >
-             <number>6</number>
-            </property>
-            <item>
-             <layout class="QHBoxLayout" >
-              <property name="margin" >
-               <number>0</number>
-              </property>
-              <property name="spacing" >
-               <number>6</number>
-              </property>
-              <item>
-               <widget class="QLineEdit" name="lineControlPort" >
-                <property name="sizePolicy" >
-                 <sizepolicy>
-                  <hsizetype>0</hsizetype>
-                  <vsizetype>0</vsizetype>
-                  <horstretch>0</horstretch>
-                  <verstretch>0</verstretch>
-                 </sizepolicy>
-                </property>
-                <property name="maximumSize" >
-                 <size>
-                  <width>55</width>
-                  <height>16777215</height>
-                 </size>
-                </property>
-                <property name="contextMenuPolicy" >
-                 <enum>Qt::NoContextMenu</enum>
-                </property>
-                <property name="toolTip" >
-                 <string>Port that Vidalia uses to communicate with Tor. </string>
-                </property>
-                <property name="text" >
-                 <string>9051</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <spacer>
-                <property name="orientation" >
-                 <enum>Qt::Horizontal</enum>
-                </property>
-                <property name="sizeHint" >
-                 <size>
-                  <width>221</width>
-                  <height>20</height>
-                 </size>
-                </property>
-               </spacer>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </widget>
-         </item>
-         <item>
+                 <item>
           <spacer>
            <property name="orientation" >
             <enum>Qt::Vertical</enum>
