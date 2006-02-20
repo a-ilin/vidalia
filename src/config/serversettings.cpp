@@ -24,6 +24,7 @@
 #include <QHostInfo>
 
 #include "serversettings.h"
+#include "torsettings.h"
 #include "../util/net.h"
 
 
@@ -249,8 +250,9 @@ ServerSettings::setServerEnabled(bool enable)
 bool
 ServerSettings::isServerEnabled()
 {
+  TorSettings settings;
   QHash<QString,QString> confValues;
-  if (_torControl->isConnected() && hasTorArgument("-f")) {
+  if (_torControl->isConnected() && settings.usingAlternateTorrc()) {
     confValues.insert(SERVER_ORPORT, "");
     confValues.insert(SERVER_NICKNAME, "");
     if (_torControl->getConf(confValues)) {

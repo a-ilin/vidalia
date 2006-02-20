@@ -30,6 +30,7 @@
 
 #include "../../control/torcontrol.h"
 #include "../../config/vidaliasettings.h"
+#include "../../config/torsettings.h"
 #include "../../config/serversettings.h"
 
 
@@ -83,12 +84,14 @@ private:
 
   /** A TorControl object used to talk to Tor. */
   TorControl* _torControl;
-  /** A VidaliaSettings object that handles getting/saving settings */
-  VidaliaSettings* _settings;
+  /** A VidaliaSettings object that handles getting and setting Vidalia settings */
+  VidaliaSettings* _vidaliaSettings;
   /** A ServerSettings object used to get and set information about how a
    * local Tor server is configured. */
   ServerSettings*  _serverSettings;
-  
+  /** A TorSettings object that handles getting and setting Tor-specific settings. */
+  TorSettings* _torSettings;
+
   /** Qt Designer generated object */
   Ui::ConfigDialog ui;
 };

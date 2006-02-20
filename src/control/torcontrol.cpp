@@ -23,7 +23,7 @@
                    
 #include <QHostAddress>
 
-#include "../config/vidaliasettings.h"
+#include "../config/torsettings.h"
 #include "torcontrol.h"
 
 /** Default constructor */
@@ -66,7 +66,7 @@ TorControl::~TorControl()
 bool
 TorControl::start(QString *errmsg)
 {
-  VidaliaSettings settings;
+  TorSettings settings;
   _torProcess = new TorProcess;
   
   /* Plumb the process signals */
@@ -78,8 +78,8 @@ TorControl::start(QString *errmsg)
                    this, SLOT(onLogStdout(QString, QString)));
 
   /* Attempt to start the Tor process */
-  if (!_torProcess->start(settings.getTorExecutable(),
-                          settings.getTorArguments(), errmsg)) {
+  if (!_torProcess->start(settings.getExecutable(),
+                          settings.getArguments(), errmsg)) {
     /* Disconnect the signals for this TorProcess, cleanup and return  */
     closeTorProcess();
     return false;
@@ -147,7 +147,7 @@ TorControl::onLogStdout(QString severity, QString message)
 bool
 TorControl::connect(QString *errmsg)
 {
-  VidaliaSettings settings;
+  TorSettings settings;
   return _controlConn.connect(settings.getControlAddress(),
                               settings.getControlPort(), errmsg);
 }
@@ -226,7 +226,7 @@ TorControl::send(ControlCommand cmd, QString *errmsg)
 bool
 TorControl::authenticate(QString *errmsg)
 {
-  VidaliaSettings settings;
+  TorSettings settings;
   ControlCommand cmd("AUTHENTICATE", QString(settings.getAuthToken()));
   return send(cmd, errmsg);
 }

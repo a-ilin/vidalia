@@ -22,8 +22,10 @@
 #################################################################
 
 HEADERS += $$PWD/vidaliasettings.h \
-           $$PWD/serversettings.h 
+           $$PWD/serversettings.h \
+           $$PWD/torsettings.h
            
 SOURCES += $$PWD/vidaliasettings.cpp \
-           $$PWD/serversettings.cpp
+           $$PWD/serversettings.cpp \
+           $$PWD/torsettings.cpp
 

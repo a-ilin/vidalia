@@ -24,8 +24,6 @@
 #include <QFileInfo>
 #include <QCoreApplication>
 
-#include <QtDebug>
-
 
 /* Needed for _PROCESS_INFORMATION so that pid() works on Win32 */
 #if defined (Q_OS_WIN32)
@@ -53,12 +51,10 @@ TorProcess::~TorProcess()
  * command-line arguments specified in Vidalia's settings. If Tor doesn't
  * exist at the given path, <b>errmsg</b> will be set appropriately and the
  * function will return false. */
-bool TorProcess::start(QString app, QMap<QString, QVariant> args, QString *errmsg) 
+bool TorProcess::start(QString app, QString args, QString *errmsg) 
 {
   QFileInfo appInfo(app);
   QString path = appInfo.absoluteFilePath();
-  QString arguments;
-  QList<QString> argKeys;
   
   /* If the path doesn't point to an executable, then bail */
   if (!appInfo.isExecutable()) {
@@ -76,18 +72,8 @@ bool TorProcess::start(QString app, QMap<QString, QVariant> args, QString *errms
   path = "\"" + path + "\"";
 #endif
 
-  /* If I simply pass the QStringList of command-line arguments to
-   * QProcess::start(path, args), then Qt will quote any arguments with spaces
-   * in them. This is logical, but Tor doesn't like it because you end up with
-   * something like "-ControlPort 9051", which Tor thinks is a single
-   * argument. So I'll just do the joining myself. */
-  argKeys = args.keys();
-  foreach(QString key, argKeys) {
-    arguments.append(" " + key + " " + args.value(key).toString());
-  }
-  
   /* Attempt to start Tor with the given command-line arguments */
-  QProcess::start(path + " " + arguments, QIODevice::ReadOnly | QIODevice::Text);
+  QProcess::start(path + " " + args, QIODevice::ReadOnly | QIODevice::Text);
   return true;
 }
 

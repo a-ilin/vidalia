@@ -40,7 +40,7 @@ public:
   ~TorProcess();
 
   /** Start the Tor process */
-  bool start(QString app, QMap<QString, QVariant> args, QString *errmsg = 0);
+  bool start(QString app, QString args, QString *errmsg = 0);
   /** Stop the Tor process */
   bool stop(QString *errmsg = 0);
 

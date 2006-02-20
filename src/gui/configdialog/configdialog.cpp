@@ -48,8 +48,9 @@ ConfigDialog::ConfigDialog(TorControl *torControl, QWidget* parent)
   _torControl = torControl;
   
   /* Create necessary ConfigDialog QObjects */
-  _settings = new VidaliaSettings();
+  _vidaliaSettings = new VidaliaSettings();
   _serverSettings = new ServerSettings(_torControl);
+  _torSettings = new TorSettings();
 
   /* Bind events to actions */
   createActions();
@@ -68,9 +69,9 @@ ConfigDialog::ConfigDialog(TorControl *torControl, QWidget* parent)
 /** Destructor */
 ConfigDialog::~ConfigDialog()
 {
-  if (_settings) {
-    delete _settings;
-  }
+  delete _vidaliaSettings;
+  delete _torSettings;
+  delete _serverSettings;
 }
 
 void
@@ -134,40 +135,36 @@ ConfigDialog::showServerConfig(bool show)
 void
 ConfigDialog::loadGeneralSettings()
 {
-  ui.lineTorPath->setText(_settings->getTorPath());
-  ui.chkRunTor->setChecked(_settings->runTorAtStart());
+  ui.lineTorPath->setText(_torSettings->getPath());
+  ui.chkRunTor->setChecked(_vidaliaSettings->runTorAtStart());
 }
 
 /** Save changes made to settings on the General settings page. */
 void
 ConfigDialog::saveGeneralSettings()
 {
-  _settings->setTorPath(ui.lineTorPath->text());
-  _settings->setRunTorAtStart(ui.chkRunTor->isChecked());
+  _torSettings->setPath(ui.lineTorPath->text());
+  _vidaliaSettings->setRunTorAtStart(ui.chkRunTor->isChecked());
 }
 
 /** Load and display settings for the Advanced settings page. */
 void
 ConfigDialog::loadAdvancedSettings()
 {
-  QMap<QString, QVariant> args = _settings->getTorArguments();
-  ui.lineControlPort->setText(QString::number(_settings->getControlPort()));
-  ui.lineTorConfig->setText(args.value("-f").toString().remove("\""));
+  ui.lineControlPort->setText(QString::number(_torSettings->getControlPort()));
+  ui.lineTorConfig->setText(_torSettings->getTorrc());
+  ui.lineUser->setText(_torSettings->getUser());
+  ui.lineGroup->setText(_torSettings->getGroup());
 }
 
 /** Save changes made to settings on the Advanced settings page. */
 void
 ConfigDialog::saveAdvancedSettings()
 {
-  /* Save the control port setting */
-  _settings->setControlPort(ui.lineControlPort->text().toUShort());
-
-  /* If the user specified a torrc, use that. */
-  if (!ui.lineTorConfig->text().isEmpty()) {
-    _settings->addTorArgument("-f", "\"" + ui.lineTorConfig->text() + "\"");
-  } else {
-    _settings->removeTorArgument("-f");
-  }
+  _torSettings->setControlPort(ui.lineControlPort->text().toUShort());
+  _torSettings->setTorrc(ui.lineTorConfig->text());
+  _torSettings->setUser(ui.lineUser->text());
+  _torSettings->setGroup(ui.lineGroup->text());
 }
 
 /** Load and display settings for the Server settings page. */
@@ -303,4 +300,4 @@ ConfigDialog::browseTorConfig()
     ui.lineTorConfig->setText(filename);
   }
 }
- 
+
