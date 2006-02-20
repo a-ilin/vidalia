@@ -60,8 +60,8 @@
 /* Arguments we can pass to Tor on the command-line */
 #define TOR_ARG_CONTROL_PORT    "ControlPort"
 #define TOR_ARG_TORRC           "-f"
-#define TOR_ARG_RUN_AS_USER     "RunAsUser"
-#define TOR_ARG_RUN_AS_GROUP    "RunAsGroup"
+#define TOR_ARG_RUN_AS_USER     "User"
+#define TOR_ARG_RUN_AS_GROUP    "Group"
 
 
 /** Default constructor */
