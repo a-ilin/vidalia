@@ -24,6 +24,8 @@
 #include <QFileInfo>
 #include <QCoreApplication>
 
+#include <QtDebug>
+
 
 /* Needed for _PROCESS_INFORMATION so that pid() works on Win32 */
 #if defined (Q_OS_WIN32)
@@ -32,21 +34,19 @@
   
 #include "torprocess.h"
 
+/** Format of log message timestamps Tor prints to stdout */
+#define FMT_TIMESTAMP "MMM dd hh:mm:ss.zzz yyyy"
+
 /** Default constructor */
 TorProcess::TorProcess()
 {
-  _log = true;
-  setReadChannelMode(QProcess::MergedChannels);
-  QObject::connect(this, SIGNAL(readyRead()), 
-                   this, SLOT(onReadyRead()), Qt::DirectConnection);
+  openStdout();
+  connect(this, SIGNAL(readyReadStandardOutput()), this, SLOT(onReadyRead()));
 }
 
 /** Destructor */
 TorProcess::~TorProcess()
 {
-  /* We're being destroyed. Don't read stdout anymore and flush any pending
-   * events. */
-  logStdout(false);
 }
 
 /** Attempts to start the Tor process using the location, executable, and
@@ -132,18 +132,23 @@ TorProcess::pid()
 #endif
 }
 
-/** If the boolean value <b>log</b> is true, then the log() signal will be
- * emitted when Tor writes a log message to stdout. If <b>log</b> is false,
- * then no signal will be emitted for a log message. */
+/** Opens logging on stdout. When this is open, the log() signal will be
+ * emitted when Tor prints a message to stdout. */
 void
-TorProcess::logStdout(bool log)
+TorProcess::openStdout()
 {
-  if (!log) {
-    /* We're going to stop monitoring log events on stdout, so make sure all
-     * events up until now have been processed. */
-    QCoreApplication::processEvents();
-  }
-  _log = log;
+  _logState = Open;
+  setReadChannelMode(QProcess::MergedChannels);
+  setReadChannel(QProcess::StandardOutput);
+}
+
+/** Closes logging on stdout. When this is closed, the log() signal will not
+ * be emitted when Tor prints a message to stdout. */
+void
+TorProcess::closeStdout()
+{
+  _logState = Closing;
+  _logCloseTime = QDateTime::currentDateTime();
 }
 
 /** Called when there is data to be read from stdout */
@@ -156,11 +161,27 @@ TorProcess::onReadyRead()
      * log event won't be emitted, so that the size of the waiting buffer doesn't 
      * keep growing. */
     QString line = readLine();
-    if (_log) {
-      /* If _log is set, then we will parse the log message and emit log() */
-      i = line.indexOf("[") ;
-      j = line.indexOf("]") ;
-      if (i > 0 && j > 0) {
+    if (_logState == Closed) {
+      continue;
+    }
+    
+    /* If _logState != Closed, then we will parse the log message and emit log() */
+    i = line.indexOf("[");
+    j = line.indexOf("]");
+    if (i > 0 && j > 0) {
+      if (_logState == Closing) {
+        /* Parse the timestamp from this log message */
+        QString msgTime = QString("%1 %2").arg(line.mid(0, i-1))
+                                          .arg(_logCloseTime.date().year());
+          
+        if (_logCloseTime < QDateTime::fromString(msgTime, FMT_TIMESTAMP)) {
+          /* We've read all log messages from stdout since closeStdout() was
+           * called, so go ahead and close stdout for real. */
+          _logState = Closed;
+          closeReadChannel(QProcess::StandardOutput);
+        }
+      }
+      if (_logState != Closed) {
         emit log(line.mid(i+1, j-i-1), line.mid(j+2));
       }
     }

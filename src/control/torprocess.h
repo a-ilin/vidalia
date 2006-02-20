@@ -28,6 +28,8 @@
 #include <QFileInfo>
 #include <QVariant>
 #include <QMap>
+#include <QDateTime>
+
 
 class TorProcess : public QProcess
 {
@@ -48,8 +50,10 @@ public:
   /** Return the Tor process's PID (workaround for some Windows funkiness) */
   qint64 pid();
 
-  /** Logs messages Tor prints to stdout */
-  void logStdout(bool log);
+  /** Enable reading log messages from stdout. */
+  void openStdout();
+  /** Disable reading log messages from stdout. */
+  void closeStdout();
 
 signals:
   /** Emitted when Tor prints a log message to the console */
@@ -60,9 +64,16 @@ private slots:
   void onReadyRead();
 
 private:
-  /** If _log is true, then the log() signal will be emitted when a log
-   * message is written to stdout. */
-  bool _log;
+  /** Status of logging to stdout. */
+  enum LogState {
+    Open,     /**< stdout logs enabled. */
+    Closing,  /**< stdout in the process of closing. */
+    Closed    /**< stdout logs closed. */
+  };
+  /** Current state of logging on stdout. */
+  LogState _logState;
+  /** Timestamp of when stdout logs closed. */
+  QDateTime _logCloseTime;
 };
 
 #endif

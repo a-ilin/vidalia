@@ -286,19 +286,17 @@ MainWindow::started()
 
   /* Try to connect to Tor's control port */
   QString errmsg;
-  if (!_torControl->connect(&errmsg)) {
-    /* There's a possibility that Tor has started, but it just hasn't had a
-     * chance to bind the control socket yet. So pause for a second and try
-     * again.*/
-    v_sleep(1);
-    if(!_torControl->connect(&errmsg)) {
-      /* Ok, ok. It really isn't going to connect. I give up. */
-      QMessageBox::warning(this, tr("Error Connecting to Tor"),
-         tr("Tor started successfully, but Vidalia was unable to "
-            "connect to it. Check your control port settings and try "
-            "again.\n\n") + errmsg,
-         QMessageBox::Ok, QMessageBox::NoButton);
-    }
+  /* The started() signal is emitted by TorProcess when the Tor process
+   * starts, but Tor hasn't necessarily bound its ControlPort yet. Give it a
+   * second to bind this port and then try to connect. */ 
+  v_sleep(1);
+  if(!_torControl->connect(&errmsg)) {
+    /* Ok, ok. It really isn't going to connect. I give up. */
+    QMessageBox::warning(this, tr("Error Connecting to Tor"),
+       tr("Tor started successfully, but Vidalia was unable to "
+          "connect to it. Check your control port settings and try "
+          "again.\n\n") + errmsg,
+       QMessageBox::Ok, QMessageBox::NoButton);
   }
 }
 

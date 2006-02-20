@@ -163,7 +163,7 @@ TorControl::onConnected()
   emit connected();
   /* The control socket is connected, so we can stop reading from stdout */
   if (_torProcess) {
-    _torProcess->logStdout(false);
+    _torProcess->closeStdout();
   }
 }
 
@@ -179,6 +179,9 @@ TorControl::disconnect()
 void
 TorControl::onDisconnected()
 {
+  if (_torProcess) {
+    _torProcess->openStdout();
+  }
   emit disconnected();
 }
 
