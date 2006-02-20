@@ -46,8 +46,11 @@ public:
   /** Destructor. */
   ~VidaliaSettings();
 
-  /* Return Vidalia's version string */
+  /** Return Vidalia's version string */
   static QString getVersion();
+
+  /** Resets all of Vidalia's settings. */
+  void reset();
 
   /** Returns true if Vidalia should start Tor when it starts. */
   bool runTorAtStart();

@@ -34,8 +34,18 @@
 #include <QPlastiqueStyle>
 #endif
 
+#include "../config/vidaliasettings.h"
 #include "mainwindow.h"
 
+void
+process_arguments()
+{
+  QStringList args = QCoreApplication::arguments();
+  if (args.contains("-reset")) {
+    VidaliaSettings settings;
+    settings.reset();
+  }
+}
 
 /** Main application entry point. */
 int 
@@ -46,6 +56,11 @@ main(int argc, char *argv[])
 
   QApplication app(argc, argv);
   
+  /* Handle any command-line arguments */
+  if (argc > 1) {
+    process_arguments();
+  }
+
 /* 
   If we're building on Mac, then use the Mac style,
   otherwise we'll use the Plastique style.
