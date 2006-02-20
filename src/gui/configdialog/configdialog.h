@@ -58,7 +58,9 @@ private slots:
   void browseTorPath();
   /** Called when user clicks "Browse" to choose location of Tor config file */
   void browseTorConfig();
-  
+  /** Called when the user clicks "Get Address" to guess our local IP */
+  void getServerAddress();
+
 private:
   /** Connects actions to events */
   void createActions();
@@ -76,6 +78,8 @@ private:
 
   /** Toggles display of server config frame */
   void showServerConfig(bool show);
+  /** Attempts to find the server's public IP address */
+  void getServerPublicIP();
 
   /** A TorControl object used to talk to Tor. */
   TorControl* _torControl;

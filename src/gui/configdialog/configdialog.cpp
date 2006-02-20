@@ -24,6 +24,8 @@
 #include <QMessageBox>
 
 #include "configdialog.h"
+#include "../../util/net.h"
+#include "../../util/http.h"
 
 /* Page indices in the QListWidget */
 #define PAGE_GENERAL  0
@@ -87,12 +89,10 @@ ConfigDialog::createActions()
           this, SLOT(changePage(QListWidgetItem *, QListWidgetItem *)));
 
   connect(ui.btnCancel, SIGNAL(clicked()), this, SLOT(cancelChanges()));
-
   connect(ui.btnSave, SIGNAL(clicked()), this, SLOT(saveChanges()));
-
   connect(ui.btnBrowseTorPath, SIGNAL(clicked()), this, SLOT(browseTorPath()));
-
   connect(ui.btnBrowseTorConfig, SIGNAL(clicked()), this, SLOT(browseTorConfig()));
+  connect(ui.btnGetAddress, SIGNAL(clicked()), this, SLOT(getServerAddress()));
 }
 
 /** Changes settings page. */
@@ -201,6 +201,44 @@ ConfigDialog::saveServerSettings(QString *errmsg)
   _serverSettings->setAddress(ui.lineServerAddress->text());
   _serverSettings->setContactInfo(ui.lineServerContact->text());
   return (_torControl->isConnected() ? _serverSettings->apply(errmsg) : true);    
+}
+
+/** Attempts to determine this machine's IP address. If the local IP address
+ * is a private address, then the user is asked whether they would like to
+ * access an external site to try to get their public IP. */
+void
+ConfigDialog::getServerAddress()
+{
+  QHostAddress addr = net_local_address();
+  if (net_is_private_address(addr)) {
+    int button = QMessageBox::information(this, tr("Get Address"),
+                   tr("Vidalia was only able to find a private IP " 
+                      "address for your server. Would you like to "
+                      "access an external service, such as "
+                      "checkip.dyndns.org, to determine your public " 
+                      "IP address?"),
+                    QMessageBox::Yes, QMessageBox::No);
+    if (button == QMessageBox::Yes) {
+      getServerPublicIP();
+      return;
+    }
+  } else {
+    ui.lineServerAddress->setText(addr.toString());
+  }
+}
+
+/** Accesses an external site to try to get the user's public IP address. */
+void
+ConfigDialog::getServerPublicIP()
+{
+  QString ip;
+  if (net_get_public_ip(ip)) {
+    ui.lineServerAddress->setText(ip);
+  } else {
+    QMessageBox::warning(this, tr("Error"),
+      tr("Viadlia was uanble to determine your public IP address."),
+      QMessageBox::Ok, QMessageBox::NoButton);
+  }
 }
 
 /** Cancels changes made to settings. */

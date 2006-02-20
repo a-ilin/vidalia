@@ -22,8 +22,10 @@
 #################################################################
 
 HEADERS += $$PWD/compat.h \
-           $$PWD/net.h
+           $$PWD/net.h \
+           $$PWD/http.h
            
 SOURCES += $$PWD/compat.cpp \
-           $$PWD/net.cpp
+           $$PWD/net.cpp \
+           $$PWD/http.cpp
 

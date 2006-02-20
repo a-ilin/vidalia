@@ -22,6 +22,8 @@
 ****************************************************************/
 
 #include "net.h"
+#include "http.h"
+
 
 /** Returns the IP address of the local machine. */
 QHostAddress
@@ -47,5 +49,44 @@ net_is_private_address(QHostAddress addr)
           ((ip & 0xFFF00000) == 0xAC100000) || /*  172.16/12 */
           ((ip & 0xFFFF0000) == 0xA9FE0000) || /* 169.254/16 */
           ((ip & 0xFFFF0000) == 0xC0A80000));  /* 192.168/16 */
+}
+
+/** Returns true if the given string representation of an IP 
+ * address is valid. */
+bool
+net_is_valid_ip(QString ip)
+{
+  return QHostAddress().setAddress(ip);
+}
+
+/** Returns a pre-defined list of servers whom we can ask for our public IP
+ * address. */
+static QMap<QString, QString>
+get_check_ip_sites()
+{
+  QMap<QString, QString> sites;
+  sites.insert("ipid.shat.net", "/iponly/");
+  return sites;
+}
+
+/** Asks a pre-defined list of servers what they think this machine's public
+ * IP address is.
+ * \param ip Stores the ip after a successful request
+ * \return false if none of the requests were successful
+ */
+bool
+net_get_public_ip(QString &ip)
+{
+  QMap<QString, QString> sites = get_check_ip_sites();
+  foreach(QString host, sites.keys()) {
+    Http http(host);
+    if (http.request(sites.value(host))) {
+      if (net_is_valid_ip(http.body())) {
+        ip = http.body();
+        return true;
+      }
+    }
+  }
+  return false;
 }
 

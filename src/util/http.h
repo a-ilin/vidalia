@@ -21,22 +21,30 @@
 *  Boston, MA  02110-1301, USA.
 ****************************************************************/
 
-#ifndef _NET_H
-#define _NET_H
+#ifndef _HTTP_H
+#define _HTTP_H
 
-#include <QHostAddress>
+#include <QHttp>
 
-/** Returns the local machine's IP address. */
-QHostAddress net_local_address();
+class Http : private QHttp
+{
+  Q_OBJECT
 
-/** Returns true if the given address is a private IP. */
-bool net_is_private_address(QHostAddress addr);
+public:
+  /** Constructor */
+  Http(QString host, quint16 port = 80);
+  /** Destructor */
+  ~Http();
 
-/** Returns true if the given IP address is a valid IPv4 address. */
-bool net_is_valid_ip(QString ip);
+  /** Requests the given file from the specified host. */
+  bool request(QString path);
+  /** Returns the body of the HTML response. */
+  QString body();
 
-/** Tries to determine this machine's external IP. */
-bool net_get_public_ip(QString &ip);
+private:
+  /** Contains the HTTP server's response after a successful request */
+  QByteArray _response;  
+};
 
 #endif
 
