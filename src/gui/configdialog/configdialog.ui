@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>348</width>
-    <height>275</height>
+    <width>424</width>
+    <height>362</height>
    </rect>
   </property>
   <property name="palette" >
@@ -717,6 +717,9 @@
                   <height>0</height>
                  </size>
                 </property>
+                <property name="cursor" >
+                 <cursor>4</cursor>
+                </property>
                 <property name="contextMenuPolicy" >
                  <enum>Qt::NoContextMenu</enum>
                 </property>
@@ -900,6 +903,9 @@
                  </item>
                  <item>
                   <widget class="QLineEdit" name="lineServerNickname" >
+                   <property name="cursor" >
+                    <cursor>4</cursor>
+                   </property>
                    <property name="contextMenuPolicy" >
                     <enum>Qt::NoContextMenu</enum>
                    </property>
@@ -936,6 +942,9 @@
                  </item>
                  <item>
                   <widget class="QLineEdit" name="lineServerContact" >
+                   <property name="cursor" >
+                    <cursor>4</cursor>
+                   </property>
                    <property name="contextMenuPolicy" >
                     <enum>Qt::NoContextMenu</enum>
                    </property>
@@ -997,6 +1006,9 @@
                        <height>16777215</height>
                       </size>
                      </property>
+                     <property name="cursor" >
+                      <cursor>4</cursor>
+                     </property>
                      <property name="contextMenuPolicy" >
                       <enum>Qt::NoContextMenu</enum>
                      </property>
@@ -1051,6 +1063,9 @@
                  </item>
                  <item>
                   <widget class="QLineEdit" name="lineServerAddress" >
+                   <property name="cursor" >
+                    <cursor>4</cursor>
+                   </property>
                    <property name="contextMenuPolicy" >
                     <enum>Qt::NoContextMenu</enum>
                    </property>
@@ -1140,6 +1155,9 @@
                        <width>50</width>
                        <height>16777215</height>
                       </size>
+                     </property>
+                     <property name="cursor" >
+                      <cursor>4</cursor>
                      </property>
                      <property name="contextMenuPolicy" >
                       <enum>Qt::NoContextMenu</enum>
@@ -1629,6 +1647,9 @@
                 <property name="enabled" >
                  <bool>true</bool>
                 </property>
+                <property name="cursor" >
+                 <cursor>4</cursor>
+                </property>
                 <property name="contextMenuPolicy" >
                  <enum>Qt::NoContextMenu</enum>
                 </property>
@@ -1656,6 +1677,90 @@
                 </property>
                 <property name="text" >
                  <string>Browse</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="grpPermissions" >
+           <property name="minimumSize" >
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="contextMenuPolicy" >
+            <enum>Qt::NoContextMenu</enum>
+           </property>
+           <property name="title" >
+            <string>Permissions</string>
+           </property>
+           <layout class="QVBoxLayout" >
+            <property name="margin" >
+             <number>9</number>
+            </property>
+            <property name="spacing" >
+             <number>6</number>
+            </property>
+            <item>
+             <layout class="QHBoxLayout" >
+              <property name="margin" >
+               <number>0</number>
+              </property>
+              <property name="spacing" >
+               <number>6</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="label_3" >
+                <property name="contextMenuPolicy" >
+                 <enum>Qt::NoContextMenu</enum>
+                </property>
+                <property name="text" >
+                 <string>Run as User:</string>
+                </property>
+                <property name="indent" >
+                 <number>8</number>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="lineUser" >
+                <property name="contextMenuPolicy" >
+                 <enum>Qt::NoContextMenu</enum>
+                </property>
+                <property name="toolTip" >
+                 <string>Vidalia will run with this User's permissions</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" >
+              <property name="margin" >
+               <number>0</number>
+              </property>
+              <property name="spacing" >
+               <number>6</number>
+              </property>
+              <item>
+               <widget class="QLabel" name="label_9" >
+                <property name="contextMenuPolicy" >
+                 <enum>Qt::NoContextMenu</enum>
+                </property>
+                <property name="text" >
+                 <string>Run as Group:</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLineEdit" name="lineGroup" >
+                <property name="toolTip" >
+                 <string>Vidalia will run with this Group's permissions</string>
                 </property>
                </widget>
               </item>
