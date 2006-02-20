@@ -27,7 +27,7 @@
 #include "vidaliasettings.h"
 #include "../control/torcontrol.h"
 
-class ServerSettings : public VidaliaSettings
+class ServerSettings : private VidaliaSettings
 {
 
 public:
