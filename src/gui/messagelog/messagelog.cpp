@@ -89,9 +89,7 @@ MessageLog::MessageLog(TorControl *torControl, QWidget *parent, Qt::WFlags flags
   if(!(QSysInfo::WV_2000 <= QSysInfo::WindowsVersion <= QSysInfo::WV_2003)) {
     ui.grpOpacity->setVisible(false);
   }
-#endif
-  
-#if defined(Q_WS_X11)
+#elif defined(Q_WS_X11)
   ui.grpOpacity->setVisible(false);
 #endif
 }
@@ -561,15 +559,15 @@ MessageLog::setOpacity(int value)
   qreal newValue = value / 100.0;
 
   /** Opacity only supported by Mac and Win32 **/
-  #if defined(Q_WS_MAC)
-    this->setWindowOpacity(newValue);
-  #endif
-
-  #if defined(Q_WS_WIN)
+#if defined(Q_WS_MAC)
+  this->setWindowOpacity(newValue);
+#elif defined(Q_WS_WIN)
     if(QSysInfo::WV_2000 <= QSysInfo::WindowsVersion <= QSysInfo::WV_2003) {
       this->setWindowOpacity(newValue);
     }
-  #endif
+#else
+    Q_UNUSED(newValue);
+#endif
 }
 
 /** Creates a new log item in the message log and returns a pointer to it.
