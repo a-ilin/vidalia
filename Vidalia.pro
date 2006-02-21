@@ -29,6 +29,11 @@ MOC_DIR = src/
 
 TEMPLATE = app
 
+# On non-Mac, make the binary all lowercase
+!macx {
+  TARGET = vidalia
+}
+
 CONFIG += qt thread debug warn_on
 
 # Include the network module
