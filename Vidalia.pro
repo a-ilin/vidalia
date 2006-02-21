@@ -44,7 +44,7 @@ win32:LIBS += -lshell32 -gdi32
 
 unix {
   # Setup the `make install` target
-  target.path = /usr/local/bin/vidalia
+  target.path = /usr/local/bin
   INSTALLS += target
 }
   
