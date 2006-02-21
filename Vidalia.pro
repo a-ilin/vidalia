@@ -29,9 +29,7 @@ MOC_DIR = src/
 
 TEMPLATE = app
 
-CONFIG += qt thread
-CONFIG += debug
-CONFIG += warn_on
+CONFIG += qt thread debug warn_on
 
 # Include the network module
 QT += network
@@ -39,5 +37,11 @@ QT += network
 # Link against these libraries on Win32
 win32:LIBS += -lshell32 -gdi32
 
+unix {
+  # Setup the `make install` target
+  target.path = /usr/local/bin/vidalia
+  INSTALLS += target
+}
+  
 include($$PWD/src/src.pri)
 
