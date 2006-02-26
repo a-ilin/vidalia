@@ -280,9 +280,9 @@ ControlConnection::run()
     if (_sock->isConnected()) {
       _sock->disconnect();
     }
-    _connected = _run = false;
     emit disconnected();
   }
+  _connected = _run = false;
   delete _sock;
 }
 
