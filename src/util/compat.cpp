@@ -20,7 +20,7 @@
  ****************************************************************/
 
 /** 
- * \file mainwindow.h
+ * \file compat.cpp
  * \version $Id$
  *
  * Functions in this file contain system calls with enough #ifdef mojo to be

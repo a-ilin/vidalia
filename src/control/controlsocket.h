@@ -21,7 +21,7 @@
 
 /** 
  * \file controlsocket.h
- * \version $Id: mainwindow.h 351 2006-02-26 08:27:19Z edmanm $
+ * \version $Id: $
  */
 
 #ifndef _CONTROLSOCKET_H
@@ -40,7 +40,8 @@
 /** Timeout reads in 250ms. We can set this to a short value because if there
  * isn't any data to read, we want to return anyway. */
 #define READ_TIMEOUT  250
- 
+
+
 class ControlSocket : public QTcpSocket
 {
 public:

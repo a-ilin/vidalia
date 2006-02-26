@@ -21,7 +21,7 @@
 
 /** 
  * \file controlsocket.cpp
- * \version $Id: mainwindow.h 351 2006-02-26 08:27:19Z edmanm $
+ * \version $Id: $
  */
 
 #include <QHostAddress>
