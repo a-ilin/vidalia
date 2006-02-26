@@ -26,8 +26,8 @@
 
 #include <QSettings>
 
-#include "../control/logevent.h"
-#include "../gui/bwgraph/linetypes.h"
+#include <control/logevent.h>
+#include <gui/bwgraph/linetypes.h>
 
 
 /** Handles saving and restoring Vidalia's settings, such as the

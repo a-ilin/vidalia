@@ -24,8 +24,10 @@
 #ifndef _SERVERSETTINGS_H
 #define _SERVERSETTINGS_H
 
+#include <control/torcontrol.h>
+
 #include "vidaliasettings.h"
-#include "../control/torcontrol.h"
+
 
 class ServerSettings : private VidaliaSettings
 {
