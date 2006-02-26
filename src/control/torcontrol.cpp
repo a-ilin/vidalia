@@ -36,14 +36,14 @@ TorControl::TorControl()
    * start Tor and then destroy it when it stops. */
   _torProcess = 0;
 
-  /* Construct the message pump and give it a control connection and TorEvents
-   * object, used to translate and dispatch event messages sent by Tor */
-  _messages = new MessagePump(&_controlConn, &_torEvents);
+  /** Create an instance of a connection to Tor's control interface and give
+   * it an object to use to handle asynchronous events. */
+  _controlConn = new ControlConnection(&_torEvents);
 
   /* Plumb the appropriate socket signals */
-  QObject::connect(&_controlConn, SIGNAL(connected()),
+  QObject::connect(_controlConn, SIGNAL(connected()),
                    this, SLOT(onConnected()));
-  QObject::connect(&_controlConn, SIGNAL(disconnected()),
+  QObject::connect(_controlConn, SIGNAL(disconnected()),
                    this, SLOT(onDisconnected()));
 }
 
@@ -56,9 +56,7 @@ TorControl::~TorControl()
   if (isRunning()) {
     stop();
   }
-  if (_messages) {
-    delete _messages;
-  }
+  delete _controlConn;
 }
 
 /** Start the Tor process. Returns true if the process was successfully
@@ -148,8 +146,8 @@ bool
 TorControl::connect(QString *errmsg)
 {
   TorSettings settings;
-  return _controlConn.connect(settings.getControlAddress(),
-                              settings.getControlPort(), errmsg);
+  return _controlConn->connect(settings.getControlAddress(),
+                               settings.getControlPort(), errmsg);
 }
 
 /** Emits a signal that the control socket successfully established a
@@ -157,8 +155,6 @@ TorControl::connect(QString *errmsg)
 void
 TorControl::onConnected()
 {
-  /* Start the message pump */
-  _messages->start();
   /* Let interested parties know that the control socket connected */
   emit connected();
   /* The control socket is connected, so we can stop reading from stdout */
@@ -171,8 +167,9 @@ TorControl::onConnected()
 void
 TorControl::disconnect()
 {
-  _messages->stop();
-  _controlConn.disconnect();
+  if (_controlConn->isConnected()) {
+    _controlConn->disconnect();
+  }
 }
 
 /** Emits a signal that the control socket disconnected from Tor */
@@ -189,7 +186,7 @@ TorControl::onDisconnected()
 bool
 TorControl::isConnected()
 {
-  return _controlConn.isValid();
+  return _controlConn->isConnected();
 }
 
 /** Send a message to Tor and reads the response. If Vidalia was unable to
@@ -199,7 +196,7 @@ TorControl::isConnected()
 bool
 TorControl::send(ControlCommand cmd, ControlReply &reply, QString *errmsg)
 {
-  if (_messages->send(cmd, reply, errmsg)) {
+  if (_controlConn->send(cmd, reply, errmsg)) {
     if (reply.getStatus() == "250") {
       return true;
     }

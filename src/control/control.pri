@@ -24,10 +24,10 @@
 HEADERS += $$PWD/torcontrol.h \
            $$PWD/torprocess.h \
            $$PWD/controlconnection.h \
+           $$PWD/controlsocket.h \
            $$PWD/controlcommand.h \
            $$PWD/controlreply.h \
            $$PWD/replyline.h \
-           $$PWD/messagepump.h \
            $$PWD/torevents.h \
            $$PWD/eventtype.h \
            $$PWD/bandwidthevent.h \
@@ -38,10 +38,10 @@ HEADERS += $$PWD/torcontrol.h \
 SOURCES += $$PWD/torcontrol.cpp \
            $$PWD/torprocess.cpp \
            $$PWD/controlconnection.cpp \
+           $$PWD/controlsocket.cpp \
            $$PWD/controlcommand.cpp \
            $$PWD/controlreply.cpp \
            $$PWD/replyline.cpp \
-           $$PWD/messagepump.cpp \
            $$PWD/torevents.cpp \
            $$PWD/bandwidthevent.cpp \
            $$PWD/circuitevent.cpp \

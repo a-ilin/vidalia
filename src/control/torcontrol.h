@@ -30,7 +30,6 @@
 
 #include "controlconnection.h"
 #include "torprocess.h"
-#include "messagepump.h"
 #include "torevents.h"
 
 
@@ -119,13 +118,10 @@ signals:
 
   
 private:
-  /** Instantiates a socket used to connect to Tor's control port */
-  ControlConnection _controlConn;
+  /** Instantiates a connection used to talk to Tor's control port */
+  ControlConnection* _controlConn;
   /** Manages and monitors the Tor process */
   TorProcess *_torProcess;  
-  /** Handles sending and receiving messages from Tor over the control
-   * connection */
-  MessagePump *_messages;
   /** Keep track of which events we're interested in */
   TorEvents _torEvents;
 
