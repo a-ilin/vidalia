@@ -103,7 +103,7 @@ $Id$
   of distinct words, each word should be capitalized. The purpose of the class
   should be explained in Doxygen tags. Example:
 
-    /** A brief description of MyClass.
+    /** A brief description of MyClass. */
     /**
      * Alternatively, here is a more detailed description of MyClass.
      */
