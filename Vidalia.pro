@@ -28,19 +28,18 @@ UI_DIR  = src/
 MOC_DIR = src/
 
 TEMPLATE = app
+CONFIG  += qt thread debug warn_on
+QT      += network
 
-# On non-Mac, make the binary all lowercase
 !macx {
+  # On non-Mac, make the binary all lowercase
   TARGET = vidalia
 }
 
-CONFIG += qt thread debug warn_on
-
-# Include the network module
-QT += network
-
-# Link against these libraries on Win32
-win32:LIBS += -lshell32 -gdi32
+win32 {
+  # Link against these libraries on Win32
+  LIBS += -lshell32 -gdi32
+}
 
 unix {
   # Setup the `make install` target
