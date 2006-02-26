@@ -19,8 +19,10 @@
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
 
-/** \file main.cpp
+/** 
+ * \file main.cpp
  * \version $Id$
+ *
  * Contains the main Vidalia entry point.
  * On Mac, it will use the native Mac style and use the Plastique style on all
  * other platforms.

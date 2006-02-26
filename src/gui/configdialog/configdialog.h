@@ -1,6 +1,4 @@
 /****************************************************************
- *  $Id$ 
- * 
  *  Vidalia is distributed under the following license:
  *
  *  Copyright (C) 2006,  Matt Edman, Justin Hipple
@@ -20,6 +18,11 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, 
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
+
+/** 
+ * \file configdialog.h
+ * \version $Id$
+ */
 
 #ifndef _CONFIGDIALOG_H
 #define _CONFIGDIALOG_H

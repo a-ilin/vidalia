@@ -19,7 +19,8 @@
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
 
-/** \file mainwindow.cpp
+/** 
+ * \file mainwindow.cpp
  * \version $Id$
  *
  * Implements the main window. The main window is a hidden window that serves
@@ -30,9 +31,10 @@
 #include <QtGui>
 #include <QApplication>
 
+#include <util/compat.h>
+#include <config/messagetypes.h>
+
 #include "mainwindow.h"
-#include "../util/compat.h"
-#include "../config/messagetypes.h"
 
 /* On Mac, we go straight to Carbon to load our dock images from .icns files */
 #if defined(Q_WS_MAC)

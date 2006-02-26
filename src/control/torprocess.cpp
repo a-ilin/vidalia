@@ -1,6 +1,4 @@
 /****************************************************************
- *  $Id$
- * 
  *  Vidalia is distributed under the following license:
  *
  *  Copyright (C) 2006,  Matt Edman, Justin Hipple
@@ -21,9 +19,13 @@
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
 
+/** 
+ * \file torprocess.cpp
+ * \version $Id$
+ */
+
 #include <QFileInfo>
 #include <QCoreApplication>
-
 
 /* Needed for _PROCESS_INFORMATION so that pid() works on Win32 */
 #if defined (Q_OS_WIN32)

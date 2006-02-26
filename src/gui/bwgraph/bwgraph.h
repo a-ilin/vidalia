@@ -1,6 +1,4 @@
 /****************************************************************
- *  $Id$
- * 
  *  Vidalia is distributed under the following license:
  *
  *  Copyright (C) 2006,  Matt Edman, Justin Hipple
@@ -21,6 +19,11 @@
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
 
+/** 
+ * \file bwgraph.h
+ * \version $Id$
+ */
+
 #ifndef _BWGRAPH_H
 #define _BWGRAPH_H
 
@@ -33,9 +36,9 @@
 #include "ui_bwgraph.h"
 #include "linetypes.h"
 
-
 /** Redraw graph every 1000ms **/
 #define REFRESH_RATE    1000
+
 
 class BandwidthGraph : public QDialog
 {

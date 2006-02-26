@@ -1,6 +1,4 @@
 /****************************************************************
- *  $Id$
- * 
  *  Vidalia is distributed under the following license:
  *
  *  Copyright (C) 2006,  Matt Edman, Justin Hipple
@@ -21,6 +19,11 @@
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
 
+/** 
+ * \file torprocess.h
+ * \version $Id$
+ */
+
 #ifndef _TORPROCESS_H
 #define _TORPROCESS_H
 
@@ -36,7 +39,9 @@ class TorProcess : public QProcess
   Q_OBJECT
 
 public:
+  /** Default constructor. */
   TorProcess();
+  /** Destructor. */
   ~TorProcess();
 
   /** Start the Tor process */

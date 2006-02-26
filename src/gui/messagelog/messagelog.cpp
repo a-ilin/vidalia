@@ -1,6 +1,4 @@
 /****************************************************************
- *  $Id$
- * 
  *  Vidalia is distributed under the following license:
  *
  *  Copyright (C) 2006,  Matt Edman, Justin Hipple
@@ -21,6 +19,11 @@
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
 
+/** 
+ * \file messagelog.cpp
+ * \version $Id$ 
+ */
+
 #include <QMessageBox>
 #include <QInputDialog>
 
@@ -37,6 +40,7 @@
 /** Defines the format used for displaying the date and time of a log message */
 #define DATETIME_FMT  "MMM dd hh:mm:ss:zzz"
       
+
 /** Constructor. The constructor will load the message log's settings from
  * VidaliSettings and register for log events according to the most recently
  * set severity filter. 

@@ -1,6 +1,4 @@
 /****************************************************************
- *  $Id$
- * 
  *  Vidalia is distributed under the following license:
  *
  *  Copyright (C) 2006,  Matt Edman, Justin Hipple
@@ -20,6 +18,11 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, 
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
+
+/** 
+ * \file aboutdialog.cpp
+ * \version $Id$
+ */
 
 #include "aboutdialog.h"
 

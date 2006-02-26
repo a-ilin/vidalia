@@ -1,6 +1,4 @@
 /****************************************************************
- *  $Id$ 
- * 
  *  Vidalia is distributed under the following license:
  *
  *  Copyright (C) 2006,  Matt Edman, Justin Hipple
@@ -21,11 +19,17 @@
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
 
+/** 
+ * \file configdialog.cpp
+ * \version $Id$
+ */
+
 #include <QMessageBox>
 
+#include <util/net.h>
+#include <util/http.h>
+
 #include "configdialog.h"
-#include "../../util/net.h"
-#include "../../util/http.h"
 
 /* Page indices in the QListWidget */
 #define PAGE_GENERAL  0

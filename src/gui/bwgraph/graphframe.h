@@ -1,6 +1,4 @@
 /****************************************************************
- *  $Id$
- * 
  *  Vidalia is distributed under the following license:
  *
  *  Copyright (C) 2006,  Matt Edman, Justin Hipple
@@ -21,6 +19,11 @@
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
 
+/** 
+ * \file graphframe.h
+ * \version $Id$
+ */
+
 #ifndef _GRAPHFRAME_H
 #define _GRAPHFRAME_H
 
@@ -31,10 +34,10 @@
 #include <QPen>
 #include <QList>
 
-#define HOR_SPC       2   // Space between data points
-#define SCALE_WIDTH   75  // Width of the scale
-#define MIN_SCALE     10  // 10 kB/s is the minimum scale  
-#define SCROLL_STEP   4   // Horizontal change on graph update
+#define HOR_SPC       2   /** Space between data points */
+#define SCALE_WIDTH   75  /** Width of the scale */
+#define MIN_SCALE     10  /** 10 kB/s is the minimum scale */  
+#define SCROLL_STEP   4   /** Horizontal change on graph update */
 
 #define BACK_COLOR    Qt::black
 #define SCALE_COLOR   Qt::green

@@ -1,6 +1,4 @@
 /****************************************************************
- *  $Id$
- * 
  *  Vidalia is distributed under the following license:
  *
  *  Copyright (C) 2006,  Matt Edman, Justin Hipple
@@ -21,12 +19,13 @@
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
 
-#ifndef _MAINWINDOW_H
-#define _MAINWINDOW_H
-
-/** \file mainwindow.h
+/** 
+ * \file mainwindow.h
  * \version $Id$
  */
+
+#ifndef _MAINWINDOW_H
+#define _MAINWINDOW_H
 
 #include <QMainWindow>
 
@@ -37,6 +36,7 @@
 #include "messagelog/messagelog.h"
 #include "bwgraph/bwgraph.h"
 #include "configdialog/configdialog.h"
+
 
 class MainWindow : public QMainWindow
 {

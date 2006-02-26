@@ -1,6 +1,4 @@
 /****************************************************************
- *  $Id: controlconnection.cpp 206 2006-01-28 09:13:28Z edmanm $
- * 
  *  Vidalia is distributed under the following license:
  *
  *  Copyright (C) 2006,  Matt Edman, Justin Hipple
@@ -20,7 +18,12 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, 
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
-                     
+
+/** 
+ * \file controlsocket.cpp
+ * \version $Id: mainwindow.h 351 2006-02-26 08:27:19Z edmanm $
+ */
+
 #include <QHostAddress>
 
 #include "controlsocket.h"
