@@ -34,7 +34,7 @@
 #include <QPlastiqueStyle>
 #endif
 
-#include "../config/vidaliasettings.h"
+#include <config/vidaliasettings.h>
 #include "mainwindow.h"
 
 void

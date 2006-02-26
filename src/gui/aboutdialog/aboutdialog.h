@@ -24,9 +24,11 @@
 #ifndef _ABOUTDIALOG_H
 #define _ABOUTDIALOG_H
 
+#include <config/vidaliasettings.h>
+#include <control/torcontrol.h>
+
 #include "ui_aboutdialog.h"
-#include "../../config/vidaliasettings.h"
-#include "../../control/torcontrol.h"
+
 
 class AboutDialog : public QDialog
 {

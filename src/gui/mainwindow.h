@@ -30,7 +30,8 @@
 
 #include <QMainWindow>
 
-#include "../control/torcontrol.h"
+#include <control/torcontrol.h>
+
 #include "tray/trayicon.h"
 #include "aboutdialog/aboutdialog.h"
 #include "messagelog/messagelog.h"

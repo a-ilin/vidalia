@@ -35,10 +35,11 @@
 #include <QClipboard>
 #include <QHeaderView>
 
+#include <control/torcontrol.h>
+#include <config/vidaliasettings.h>
+
 #include "ui_messagelog.h"
 
-#include "../../control/torcontrol.h"
-#include "../../config/vidaliasettings.h"
 
 class MessageLog : public QMainWindow
 {

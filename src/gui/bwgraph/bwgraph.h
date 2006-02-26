@@ -27,11 +27,12 @@
 #include <QDateTime>
 #include <QEvent>
 
+#include <config/vidaliasettings.h>
+#include <control/torcontrol.h>
+
 #include "ui_bwgraph.h"
 #include "linetypes.h"
 
-#include "../../config/vidaliasettings.h"
-#include "../../control/torcontrol.h"
 
 /** Redraw graph every 1000ms **/
 #define REFRESH_RATE    1000

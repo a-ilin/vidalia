@@ -23,7 +23,7 @@
                    
 #include <QHostAddress>
 
-#include "../config/torsettings.h"
+#include <config/torsettings.h>
 #include "torcontrol.h"
 
 /** Default constructor */

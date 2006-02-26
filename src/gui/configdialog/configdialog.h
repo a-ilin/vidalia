@@ -26,12 +26,12 @@
 
 #include <QFileDialog>
 
-#include "ui_configdialog.h"
+#include <control/torcontrol.h>
+#include <config/vidaliasettings.h>
+#include <config/torsettings.h>
+#include <config/serversettings.h>
 
-#include "../../control/torcontrol.h"
-#include "../../config/vidaliasettings.h"
-#include "../../config/torsettings.h"
-#include "../../config/serversettings.h"
+#include "ui_configdialog.h"
 
 
 class ConfigDialog : public QDialog
