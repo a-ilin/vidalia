@@ -8,13 +8,13 @@
 
 ;---------------------------------
 ; Global Definitions
-!define APPVERSION "0.0.1-alpha"
+!define APPVERSION "0.0.1"
 !define PRODVERSION "0.0.1.0" ; Unfortunately, product version must be x.x.x.x
 !define APPNAME "Vidalia"
 !define APPEXEC "vidalia.exe"
-!define APPDESCRIPTION "Vidalia Tor Controller ${APPVERSION}"
+!define APPDESCRIPTION "${APPNAME} ${APPVERSION}"
 !define AUTHOR "Matt Edman, Justin Hipple"
-!define INSTALLFILE "${APPNAME}_${APPVERSION}_install.exe"
+!define INSTALLFILE "${APPNAME}_${APPVERSION}.exe"
 
 
 ;--------------------------------
@@ -121,7 +121,7 @@ SectionEnd
 ; Run At Startup
 Section "Run At Startup" RunAtStartup
   SectionIn 1 2
-  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "${APPNAME}" "$INSTDIR\${APPEXEC}"
+  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "${APPNAME}" '"$INSTDIR\${APPEXEC}"'
 SectionEnd
 
 

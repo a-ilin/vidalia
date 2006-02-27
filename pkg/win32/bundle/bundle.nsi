@@ -9,7 +9,7 @@
 ; Global Definitions
 !define VIDALIA_NAME "Vidalia"
 !define VIDALIA_EXEC "vidalia.exe"
-!define VIDALIA_VERSION "0.0.1-alpha"
+!define VIDALIA_VERSION "0.0.1"
 
 !define TOR_NAME "Tor"
 !define TOR_EXEC "tor.exe"
@@ -21,11 +21,11 @@
 
 !define BUNDLE_REVISION "1"
 
-!define APPNAME "Vidalia-Tor-Privoxy Bundle"
+!define APPNAME "Vidalia-Tor-Privoxy_Bundle"
 !define APPVERSION "${TOR_VERSION}-${VIDALIA_VERSION}"
 !define PRODVERSION "0.0.1.0" ; Product version must be x.x.x.x
 !define APPDESCRIPTION "${APPNAME} ${APPVERSION}"
-!define INSTALLFILE "${APPNAME}_${APPVERSION}_install.exe"
+!define INSTALLFILE "${APPNAME}_${APPVERSION}.exe"
 !define BUNDLE_UNINSTALLER "vidalia-bundle-uninstall.exe"
 
 
@@ -133,7 +133,7 @@ SectionGroup "!Tor ${TOR_VERSION}" TorGroup
        IntOp $bInstallTor 0 + 1
     SectionEnd
 
-    Section "OpenSSL 0.9.7e" TorOpenSSL
+    Section "OpenSSL 0.9.8a" TorOpenSSL
        SectionIn 1 2
        SetOutPath "$INSTDIR\Tor"
        File "tor\${TOR_VERSION}\libeay32.dll"
@@ -147,7 +147,14 @@ SectionGroup "!Tor ${TOR_VERSION}" TorGroup
        File "tor\${TOR_VERSION}\Documents\HACKING"
        File "tor\${TOR_VERSION}\Documents\rend-spec.txt"
        File "tor\${TOR_VERSION}\Documents\control-spec.txt"
+       File "tor\${TOR_VERSION}\Documents\dir-spec.txt"
+       File "tor\${TOR_VERSION}\Documents\socks-extensions.txt"
        File "tor\${TOR_VERSION}\Documents\tor-doc-win32.html"
+       File "tor\${TOR_VERSION}\Documents\tor-doc-server.html"
+       File "tor\${TOR_VERSION}\Documents\tor-doc-osx.html"
+       File "tor\${TOR_VERSION}\Documents\tor-doc-unix.html"
+       File "tor\${TOR_VERSION}\Documents\tor-hidden-service.html"
+       File "tor\${TOR_VERSION}\Documents\tor-switchproxy.html"
        File "tor\${TOR_VERSION}\Documents\stylesheet.css"
        File "tor\${TOR_VERSION}\Documents\tor-reference.html"
        File "tor\${TOR_VERSION}\Documents\tor-resolve.html"
@@ -228,7 +235,7 @@ SectionGroup "Vidalia ${VIDALIA_VERSION}" VidaliaGroup
     ; Run At Startup
     Section "Run At Startup" VidaliaRunAtStartup
       SectionIn 1 2
-      WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "${VIDALIA_NAME}" "$INSTDIR\Vidalia\${VIDALIA_EXEC}"
+      WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "${VIDALIA_NAME}" '"$INSTDIR\Vidalia\${VIDALIA_EXEC}"'
     SectionEnd    
 SectionGroupEnd
 
