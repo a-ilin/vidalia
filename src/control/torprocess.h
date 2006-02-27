@@ -53,7 +53,7 @@ public:
   QString errorString();
 
   /** Return the Tor process's PID (workaround for some Windows funkiness) */
-  qint64 pid();
+  quint64 pid();
 
   /** Enable reading log messages from stdout. */
   void openStdout();

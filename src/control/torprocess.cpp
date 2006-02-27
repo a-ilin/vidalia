@@ -110,11 +110,11 @@ TorProcess::stop(QString *errmsg)
 }
 
 /** Return the process ID for the current process. */
-qint64
+quint64
 TorProcess::pid()
 {
 #if defined(Q_OS_WIN32)
-  return (qint64)((QProcess::pid())->dwProcessId);
+  return (quint64)((QProcess::pid())->dwProcessId);
 #else
   return QProcess::pid();
 #endif
