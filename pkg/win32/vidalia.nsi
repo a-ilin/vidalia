@@ -8,14 +8,13 @@
 
 ;---------------------------------
 ; Global Definitions
-!define APPVERSION "0.0.4"
-!define PRODVERSION "0.0.4.0" ; Unfortunately, product version must be x.x.x.x
-!define APPNAME "TorCP"
-!define APPEXEC "torcp.exe"
-!define APPDESCRIPTION "Tor Control Panel ${APPVERSION}"
-!define AUTHOR "Matt Edman"
-!define INSTALLFILE "..\releases\${APPVERSION}\torcp_${APPVERSION}_install.exe"
-!packhdr header.dat "upx --best header.dat"
+!define APPVERSION "0.0.1-alpha"
+!define PRODVERSION "0.0.1.0" ; Unfortunately, product version must be x.x.x.x
+!define APPNAME "Vidalia"
+!define APPEXEC "vidalia.exe"
+!define APPDESCRIPTION "Vidalia Tor Controller ${APPVERSION}"
+!define AUTHOR "Matt Edman, Justin Hipple"
+!define INSTALLFILE "${APPNAME}_${APPVERSION}_install.exe"
 
 
 ;--------------------------------
@@ -43,6 +42,7 @@ InstallDirRegKey HKCU "Software" "${APPNAME}"
 SetOverWrite ifnewer
 AutoCloseWindow false
 ShowInstDetails show
+SetCompressor /SOLID lzma
 XPStyle on
 
 
@@ -73,7 +73,6 @@ XPStyle on
 !insertmacro MUI_PAGE_WELCOME
 !insertmacro MUI_PAGE_COMPONENTS
 !insertmacro MUI_PAGE_DIRECTORY
-Page custom SelectTorDirectory ValidateTorDirectory
 !insertmacro MUI_PAGE_INSTFILES
 !insertmacro MUI_PAGE_FINISH
 !insertmacro MUI_UNPAGE_WELCOME
@@ -82,65 +81,30 @@ Page custom SelectTorDirectory ValidateTorDirectory
 !insertmacro MUI_UNPAGE_FINISH
 !insertmacro MUI_LANGUAGE "English"
 
-
-;-----------------------------------
-; Put the InstallOptions file first
-ReserveFile "ioFile.ini"
-!insertmacro MUI_RESERVEFILE_INSTALLOPTIONS
-  
-Function .onInit
-  !insertmacro MUI_INSTALLOPTIONS_EXTRACT "ioFile.ini"
-FunctionEnd
-
 ;--------------------------------
 ; Required Components
-Section "${APPNAME} (required)" TorCP
+Section "${APPNAME} (required)" Vidalia
   SectionIn RO
   
   ; Set output path to the installation directory.
   SetOutPath $INSTDIR    
-  File "..\src\Release\${APPEXEC}"
-  File "..\README"
-  File "..\CHANGELOG"
-  File "..\LICENSE"
-  File "..\TODO"
-
-  ; Check if these files exist before trying to overwrite them
-  SetOutPath $SYSDIR
-  IfFileExists $SYSDIR\mfc70.dll +2 0
-    File "..\dll\mfc70.dll"
-  IfFileExists $SYSDIR\msvcp70.dll +2 0
-    File "..\dll\msvcp70.dll"
-  IfFileExists $SYSDIR\msvcr70.dll +2 0
-    File "..\dll\msvcr70.dll"  
+  File "..\..\bin\${APPEXEC}"
+  File "..\..\AUTHORS"
+  File "..\..\CHANGELOG"
+  File "..\..\LICENSE"
+  File "..\..\COPYING"
+  File "..\..\README"
 
   ; Write the installation path into the registry
   WriteRegStr HKCU SOFTWARE\${APPNAME} "Install_Dir" "$INSTDIR"
-
-  ; Write the location of Tor's executable
-  !insertmacro MUI_INSTALLOPTIONS_READ $R0 "ioFile.ini" "Field 3" "State"
-  WriteRegStr HKCU SOFTWARE\${APPNAME} "TorPath" $R0
   
   ; Write the uninstall keys for Windows
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APPNAME}" "DisplayName" "Tor Control Panel"
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APPNAME}" "DisplayName" "${APPNAME} ${APPVERSION}"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APPNAME}" "UninstallString" '"$INSTDIR\uninstall.exe"'
   WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APPNAME}" "NoModify" 1
   WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APPNAME}" "NoRepair" 1
   WriteUninstaller "uninstall.exe" 
 SectionEnd
-
-
-;--------------------------------
-; Check to see if tor.exe exists in selected directory
-Function ValidateTorDirectory
-  !insertmacro MUI_INSTALLOPTIONS_READ $R0 "ioFile.ini" "Field 3" "State"
-  IfFileExists $R0\tor.exe found 0
-    MessageBox MB_ICONEXCLAMATION|MB_YESNO "Tor was not found in the specified directory. Continue anyway?" IDYES found IDNO notfound
-notfound:    
-      Abort
-found:    
-FunctionEnd
-
 
 ;--------------------------------
 ; Start Menu Shortcuts
@@ -159,16 +123,6 @@ Section "Run At Startup" RunAtStartup
   SectionIn 1 2
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "${APPNAME}" "$INSTDIR\${APPEXEC}"
 SectionEnd
-
-
-;--------------------------------
-; Select location where Tor is
-Function SelectTorDirectory
-  !insertmacro MUI_HEADER_TEXT "Select the location of Tor's executable" "Choose the folder in which Tor is currently installed"
-  !insertmacro MUI_INSTALLOPTIONS_WRITE "ioFile.ini" "Field 3" "State" "$PROGRAMFILES\Tor"
-  !insertmacro MUI_INSTALLOPTIONS_DISPLAY "ioFile.ini"
-FunctionEnd
-
 
 
 ;--------------------------------
@@ -192,7 +146,7 @@ SectionEnd
 
 
 !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
-  !insertmacro MUI_DESCRIPTION_TEXT ${TorCP} "${APPNAME} Executable"
+  !insertmacro MUI_DESCRIPTION_TEXT ${Vidalia} "${APPNAME} Executable"
   !insertmacro MUI_DESCRIPTION_TEXT ${Shortcuts} "Add Shortcuts to Start Menu"
   !insertmacro MUI_DESCRIPTION_TEXT ${RunAtStartup} "Automatically start ${APPNAME} at startup"
 !insertmacro MUI_FUNCTION_DESCRIPTION_END

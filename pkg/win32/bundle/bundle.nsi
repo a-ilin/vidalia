@@ -7,13 +7,13 @@
 
 ;---------------------------------
 ; Global Definitions
-!define TORCP_NAME "TorCP"
-!define TORCP_EXEC "torcp.exe"
-!define TORCP_VERSION "0.0.4"
+!define VIDALIA_NAME "Vidalia"
+!define VIDALIA_EXEC "vidalia.exe"
+!define VIDALIA_VERSION "0.0.1-alpha"
 
 !define TOR_NAME "Tor"
 !define TOR_EXEC "tor.exe"
-!define TOR_VERSION "0.1.1.13"
+!define TOR_VERSION "0.1.1.14"
 
 !define PRIVOXY_NAME "Privoxy"
 !define PRIVOXY_EXEC "privoxy.exe"
@@ -21,19 +21,18 @@
 
 !define BUNDLE_REVISION "1"
 
-!define APPNAME "Tor-TorCP-Privoxy Bundle"
-!define APPVERSION "${TOR_VERSION}-${TORCP_VERSION}"
-!define PRODVERSION "0.0.4.2" ; Product version must be x.x.x.x
+!define APPNAME "Vidalia-Tor-Privoxy Bundle"
+!define APPVERSION "${TOR_VERSION}-${VIDALIA_VERSION}"
+!define PRODVERSION "0.0.1.0" ; Product version must be x.x.x.x
 !define APPDESCRIPTION "${APPNAME} ${APPVERSION}"
-!define INSTALLFILE "tor-${TOR_VERSION}-torcp-${TORCP_VERSION}-bundle.exe"
-!define BUNDLE_UNINSTALLER "tor-bundle-uninstall.exe"
-!packhdr header.dat "upx --best header.dat"
+!define INSTALLFILE "${APPNAME}_${APPVERSION}_install.exe"
+!define BUNDLE_UNINSTALLER "vidalia-bundle-uninstall.exe"
 
 
 ;--------------------------------
 ; Basic Installer Information
-Name "Tor-TorCP-Privoxy Bundle"
-Caption "Tor-TorCP-Privoxy Bundle"
+Name "Vidalia-Tor-Privoxy Bundle"
+Caption "Vidalia-Tor-Privoxy Bundle"
 BrandingText "${APPDESCRIPTION} (Rev. ${BUNDLE_REVISION})"
 OutFile "${INSTALLFILE}"
 CRCCheck on
@@ -49,6 +48,7 @@ OutFile "${INSTALLFILE}"
 InstallDir "$PROGRAMFILES"
 InstallDirRegKey HKCU "Software" "${APPNAME}"
 
+SetCompressor /SOLID lzma
 SetOverWrite ifnewer
 AutoCloseWindow false
 ShowInstDetails show
@@ -67,7 +67,7 @@ XPStyle on
 ;--------------------------------
 ; MUI Options
 !define MUI_WELCOMEPAGE_TITLE "Welcome to the ${APPNAME} Setup Wizard"
-!define MUI_WELCOMEPAGE_TEXT "This wizard will guide you through the installation of:\r\n\tTor\t${TOR_VERSION}\r\n\tTorCP\t${TORCP_VERSION}\r\n\tPrivoxy\t${PRIVOXY_VERSION}\r\n\r\nIf you have previously installed Tor, TorCP, or Privoxy, please make sure they are not running before continuing this installation.\r\n\r\n$_CLICK"
+!define MUI_WELCOMEPAGE_TEXT "This wizard will guide you through the installation of:\r\n\tVidalia\t${VIDALIA_VERSION}\r\n\tTor\t${TOR_VERSION}\r\n\tPrivoxy\t${PRIVOXY_VERSION}\r\n\r\nIf you have previously installed Vidalia, Tor, or Privoxy, please make sure they are not running before continuing this installation.\r\n\r\n$_CLICK"
 !define MUI_ABORTWARNING
 !define MUI_ICON "${NSISDIR}\Contrib\Graphics\Icons\win-install.ico"
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\win-uninstall.ico"
@@ -147,8 +147,8 @@ SectionGroup "!Tor ${TOR_VERSION}" TorGroup
        File "tor\${TOR_VERSION}\Documents\HACKING"
        File "tor\${TOR_VERSION}\Documents\rend-spec.txt"
        File "tor\${TOR_VERSION}\Documents\control-spec.txt"
-       File "tor\${TOR_VERSION}\Documents\tor-doc.html"
-       File "tor\${TOR_VERSION}\Documents\tor-doc.css"
+       File "tor\${TOR_VERSION}\Documents\tor-doc-win32.html"
+       File "tor\${TOR_VERSION}\Documents\stylesheet.css"
        File "tor\${TOR_VERSION}\Documents\tor-reference.html"
        File "tor\${TOR_VERSION}\Documents\tor-resolve.html"
        File "tor\${TOR_VERSION}\Documents\tor-design.pdf"
@@ -187,59 +187,48 @@ SectionGroupEnd
 
 
 ;--------------------------------
-; TorCP
-var bInstallTorCP
-SectionGroup "TorCP ${TORCP_VERSION}" TorCPGroup
-    Section "TorCP" TorCP
+; Vidalia
+var bInstallVidalia
+SectionGroup "Vidalia ${VIDALIA_VERSION}" VidaliaGroup
+    Section "Vidalia" Vidalia
       SectionIn 1 2
 
       ; Set output path to the installation directory.
-      SetOutPath "$INSTDIR\TorCP"
-      File "TorCP\${TORCP_VERSION}\${TORCP_EXEC}"
-      File "TorCP\${TORCP_VERSION}\README"
-      File "TorCP\${TORCP_VERSION}\CHANGELOG"
-      File "TorCP\${TORCP_VERSION}\LICENSE"
-      File "TorCP\${TORCP_VERSION}\TODO"
-
-      ; Check if these files exist before trying to overwrite them
-      SetOutPath $SYSDIR
-      IfFileExists $SYSDIR\mfc70.dll +2 0
-        File "TorCP\dll\mfc70.dll"
-      IfFileExists $SYSDIR\msvcp70.dll +2 0
-        File "TorCP\dll\msvcp70.dll"
-      IfFileExists $SYSDIR\msvcr70.dll +2 0
-        File "TorCP\dll\msvcr70.dll"  
+      SetOutPath "$INSTDIR\Vidalia"
+      File "Vidalia\${VIDALIA_VERSION}\${VIDALIA_EXEC}"
+      File "Vidalia\${VIDALIA_VERSION}\README"
+      File "Vidalia\${VIDALIA_VERSION}\CHANGELOG"
+      File "Vidalia\${VIDALIA_VERSION}\LICENSE"
+      File "Vidalia\${VIDALIA_VERSION}\COPYING"
+      File "Vidalia\${VIDALIA_VERSION}\AUTHORS"
 
       ; Write the installation path into the registry
-      WriteRegStr HKCU SOFTWARE\TorCP "Install_Dir" "$INSTDIR"
-
-      ; Write the location of Tor's executable
-      WriteRegStr HKCU SOFTWARE\TorCP "TorPath" "$INSTDIR\Tor"
+      WriteRegStr HKCU SOFTWARE\Vidalia "Install_Dir" "$INSTDIR"
 
       ; Write the uninstall keys for Windows
-      WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\TorCP" "DisplayName" "Tor Control Panel"
-      WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\TorCP" "UninstallString" '"$INSTDIR\TorCP\${BUNDLE_UNINSTALLER}"'
-      WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\TorCP" "NoModify" 1
-      WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\TorCP" "NoRepair" 1
+      WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "DisplayName" "${APPDESCRIPTION}"
+      WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "UninstallString" '"$INSTDIR\${BUNDLE_UNINSTALLER}"'
+      WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "NoModify" 1
+      WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "NoRepair" 1
       
-      IntOp $bInstallTorCP 0 + 1
+      IntOp $bInstallVidalia 0 + 1
     SectionEnd
 
     ;--------------------------------
     ; Start Menu Shortcuts
     ; Optional section (can be disabled by the user)
-    Section "Start Menu Shortcuts" TorCPShortcuts
+    Section "Start Menu Shortcuts" VidaliaShortcuts
       SectionIn 1 2
-      CreateDirectory "$SMPROGRAMS\TorCP"
-      CreateShortCut "$SMPROGRAMS\TorCP\TorCP.lnk" "$INSTDIR\TorCP\${TORCP_EXEC}" "" "$INSTDIR\TorCP\${TORCP_EXEC}" 0  
-      CreateShortCut "$SMPROGRAMS\TorCP\Uninstall.lnk" "$INSTDIR\${BUNDLE_UNINSTALLER}" "" "$INSTDIR\${BUNDLE_UNINSTALLER}" 0
+      CreateDirectory "$SMPROGRAMS\Vidalia"
+      CreateShortCut "$SMPROGRAMS\Vidalia\Vidalia.lnk" "$INSTDIR\Vidalia\${VIDALIA_EXEC}" "" "$INSTDIR\Vidalia\${VIDALIA_EXEC}" 0  
+      CreateShortCut "$SMPROGRAMS\Vidalia\Uninstall.lnk" "$INSTDIR\${BUNDLE_UNINSTALLER}" "" "$INSTDIR\${BUNDLE_UNINSTALLER}" 0
     SectionEnd
 
     ;--------------------------------
     ; Run At Startup
-    Section "Run At Startup" TorCPRunAtStartup
+    Section "Run At Startup" VidaliaRunAtStartup
       SectionIn 1 2
-      WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "${TORCP_NAME}" "$INSTDIR\TorCP\${TORCP_EXEC}"
+      WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "${VIDALIA_NAME}" "$INSTDIR\Vidalia\${VIDALIA_EXEC}"
     SectionEnd    
 SectionGroupEnd
 
@@ -298,9 +287,9 @@ Section "" end
 SectionEnd
 
 Function CustomFinishFn
-    IntCmp $bInstallTorCP 1 run_torcp check_tor check_tor
-    run_torcp:
-        Exec '"$INSTDIR\TorCP\${TORCP_EXEC}"'
+    IntCmp $bInstallVidalia 1 run_vidalia check_tor check_tor
+    run_vidalia:
+        Exec '"$INSTDIR\Vidalia\${VIDALIA_EXEC}"'
         goto check_privoxy
     
     check_tor:
@@ -338,18 +327,18 @@ Section "un.Tor ${TOR_VERSION}" UninstallTor
        DeleteRegKey HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Tor"
 SectionEnd
 
-Section "un.TorCP ${TORCP_VERSION}" UninstallTorCP
+Section "un.Vidalia ${VIDALIA_VERSION}" UninstallVidalia
        ; Remove registry keys
-       DeleteRegKey HKCU "Software\Microsoft\Windows\CurrentVersion\Run\${TORCP_NAME}"
-       DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${TORCP_NAME}"
-       DeleteRegKey HKCU "Software\${TORCP_NAME}"
+       DeleteRegKey HKCU "Software\Microsoft\Windows\CurrentVersion\Run\${VIDALIA_NAME}"
+       DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${VIDALIA_NAME}"
+       DeleteRegKey HKCU "Software\${VIDALIA_NAME}"
 
        ; Remove shortcuts, if any
-       Delete "$SMPROGRAMS\${TORCP_NAME}\*.*"
+       Delete "$SMPROGRAMS\${VIDALIA_NAME}\*.*"
 
        ; Remove directories used
-       RMDir "$SMPROGRAMS\${TORCP_NAME}"
-       RMDir /r "$INSTDIR\TorCP"
+       RMDir "$SMPROGRAMS\${VIDALIA_NAME}"
+       RMDir /r "$INSTDIR\Vidalia"
 SectionEnd
 
 Section "un.Privoxy ${PRIVOXY_VERSION}" UninstallPrivoxy
@@ -380,10 +369,10 @@ SectionEnd
   !insertmacro MUI_DESCRIPTION_TEXT ${TorStartMenu} "Add ${TOR_NAME} to your Start menu"
   !insertmacro MUI_DESCRIPTION_TEXT ${TorDesktop} "Add ${TOR_NAME} to your desktop"
 
-  !insertmacro MUI_DESCRIPTION_TEXT ${TorCP} "Install ${TORCP_NAME} ${TORCP_VERSION}"
-  !insertmacro MUI_DESCRIPTION_TEXT ${TorCPGroup} "Install ${TORCP_NAME} ${TORCP_VERSION}"
-  !insertmacro MUI_DESCRIPTION_TEXT ${TorCPShortcuts} "Add ${TORCP_NAME} to your Start menu"
-  !insertmacro MUI_DESCRIPTION_TEXT ${TorCPRunAtStartup} "Run ${TORCP_NAME} at startup"
+  !insertmacro MUI_DESCRIPTION_TEXT ${Vidalia} "Install ${VIDALIA_NAME} ${VIDALIA_VERSION}"
+  !insertmacro MUI_DESCRIPTION_TEXT ${VidaliaGroup} "Install ${VIDALIA_NAME} ${VIDALIA_VERSION}"
+  !insertmacro MUI_DESCRIPTION_TEXT ${VidaliaShortcuts} "Add ${VIDALIA_NAME} to your Start menu"
+  !insertmacro MUI_DESCRIPTION_TEXT ${VidaliaRunAtStartup} "Run ${VIDALIA_NAME} at startup"
 
   !insertmacro MUI_DESCRIPTION_TEXT ${Privoxy} "Install ${PRIVOXY_NAME} ${PRIVOXY_VERSION}"
   !insertmacro MUI_DESCRIPTION_TEXT ${PrivoxyGroup} "Install ${PRIVOXY_NAME} ${PRIVOXY_VERSION}"
@@ -392,6 +381,6 @@ SectionEnd
 
 !insertmacro MUI_UNFUNCTION_DESCRIPTION_BEGIN
   !insertmacro MUI_DESCRIPTION_TEXT ${UninstallTor} "Remove ${TOR_NAME} ${TOR_VERSION} from your computer"
-  !insertmacro MUI_DESCRIPTION_TEXT ${UninstallTorCP} "Remove ${TORCP_NAME} ${TORCP_VERSION} from your computer"
+  !insertmacro MUI_DESCRIPTION_TEXT ${UninstallVidalia} "Remove ${VIDALIA_NAME} ${VIDALIA_VERSION} from your computer"
   !insertmacro MUI_DESCRIPTION_TEXT ${UninstallPrivoxy} "Remove ${PRIVOXY_NAME} ${PRIVOXY_VERSION} from your computer"
 !insertmacro MUI_UNFUNCTION_DESCRIPTION_END
