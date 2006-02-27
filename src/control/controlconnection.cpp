@@ -52,7 +52,7 @@ ControlConnection::~ControlConnection()
 void
 ControlConnection::processEvents()
 {
-  QCoreApplication::urocessEvents(QEventLoop::ExcludeUserInputEvents,
+  QCoreApplication::processEvents(QEventLoop::ExcludeUserInputEvents,
                                   EVENTS_TIMEOUT);
 }
 
