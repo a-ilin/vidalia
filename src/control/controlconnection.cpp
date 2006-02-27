@@ -31,7 +31,9 @@
 
 /** Maximum time to wait for data to arrive on the socket. */
 #define WAIT_TIMEOUT    10
-
+/** Maximum time to process events before checking on the status of a
+ * long-running operation again. (in milliseconds) */
+#define EVENTS_TIMEOUT  250
 
 /** Constructor.
  * \param events a TorEvents object used to dispatch asynchronous events
@@ -45,6 +47,13 @@ ControlConnection::ControlConnection(TorEvents *events)
 /** Destructor. */
 ControlConnection::~ControlConnection()
 {
+}
+
+void
+ControlConnection::processEvents()
+{
+  QCoreApplication::urocessEvents(QEventLoop::ExcludeUserInputEvents,
+                                  EVENTS_TIMEOUT);
 }
 
 /** Connects to Tor's control interface and starts a thread used to process
@@ -103,7 +112,7 @@ ControlConnection::disconnect()
  
   /* Flush any outstanding waiters in the send queue */
   while (!_sendMutex.tryLock()) {
-    QCoreApplication::processEvents();
+    processEvents();
   }
   while (!_sendQueue.isEmpty()) {
     SendWaiter *waiter = _sendQueue.dequeue();
@@ -113,7 +122,7 @@ ControlConnection::disconnect()
 
   /* Flush any outstanding waiters in the receive queue */
   while (!_recvMutex.tryLock()) {
-    QCoreApplication::processEvents();
+    processEvents();
   }
   while (!_recvQueue.isEmpty()) {
     ReceiveWaiter *waiter = _recvQueue.dequeue();
@@ -123,7 +132,7 @@ ControlConnection::disconnect()
 
   /* Wait for the socket to disconnect and thread to finish */
   while (_connected) {
-    QCoreApplication::processEvents();
+    processEvents();
   }
 }
 
@@ -144,7 +153,7 @@ ControlConnection::sendCommand(ControlCommand cmd, QString *errmsg)
   /* Wait for the message to be sent */
   while (waiter.status() == Waiting) {
     /* Allow the gui to remain responsive while waiting */
-    QCoreApplication::processEvents();
+    processEvents();
   }
   
   /* If the send failed, then get the error string */
@@ -182,7 +191,7 @@ ControlConnection::send(ControlCommand cmd, ControlReply &reply,  QString *errms
  
       while (waiter.status() == Waiting) {
         /* Allow the gui to remain responsive while waiting */
-        QCoreApplication::processEvents();
+        processEvents();
       }
 
       /* If the send failed, then get the error string */

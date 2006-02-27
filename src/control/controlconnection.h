@@ -72,6 +72,8 @@ private:
   void processSendQueue();
   /** Processes any messages waiting on the control socket. */
   void processReceiveQueue();
+  /** Processes some events while waiting for a long operation to complete. */
+  void processEvents();
 
   /** Control socket used to communicate with Tor's control interface. */
   ControlSocket* _sock;
