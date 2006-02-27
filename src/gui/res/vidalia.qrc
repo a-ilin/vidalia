@@ -9,22 +9,13 @@
         <file>config_server.png</file>
         <file>config_advanced.png</file>
         <file>qt_logo.png</file>
-        <file>tor_about.png</file>
         <file>tor_logo128.png</file>
-        <file>tor_logo48.png</file>
         <file>tor_logo32.png</file>
         <file>tor_logo16.png</file>
         <file>tor_logo32.ico</file>
-        <file>tor_off128.png</file>
         <file>tor_off32.png</file>
-        <file>tor_off48.png</file>
-        <file>tor_off_gray16.png</file>
-        <file>tor_on_gray16.png</file>
         <file>tor_on128.png</file>
         <file>tor_on32.png</file>
-        <file>tor_on48.png</file>
-        <file>vidalia.icns</file>
-        <file>vidalia.ico</file>
     </qresource>
     <qresource prefix="/docs">
         <file>short_license.txt</file>
