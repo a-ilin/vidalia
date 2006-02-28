@@ -14,7 +14,7 @@
 !define APPEXEC "vidalia.exe"
 !define APPDESCRIPTION "${APPNAME} ${APPVERSION}"
 !define AUTHOR "Matt Edman, Justin Hipple"
-!define INSTALLFILE "${APPNAME}_${APPVERSION}.exe"
+!define INSTALLFILE "vidalia-${APPVERSION}.exe"
 
 
 ;--------------------------------
