@@ -34,7 +34,7 @@
 #endif
 
 /* Vidalia's version string */
-#define VIDALIA_VERSION             "0.0.1"
+#define VIDALIA_VERSION             "0.0.2-svn"
 
 /* Vidalia's Settings */
 #define SETTING_RUN_TOR_AT_START    "RunTorAtStart"
