@@ -28,6 +28,10 @@
 
 #include "vidaliasettings.h"
 
+#if defined(Q_WS_WIN)
+#include <util/registry.h>
+#endif
+
 /* Vidalia's version string */
 #define VIDALIA_VERSION             "0.0.1-svn"
 
@@ -55,6 +59,9 @@
 
 #if defined(Q_OS_WIN32)
 #define DEFAULT_LOG_FILE       (QDir::rootPath() + "Program Files\\Tor\\tor.log")
+#define VIDALIA_PATH           (QDir::rootPath() + "Program Files\\Vidalia\\vidalia.exe")
+#define STARTUP_REG_KEY        "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
+#define VIDALIA_REG_KEY        "Vidalia" 
 #else
 #define DEFAULT_LOG_FILE       (QDir::homePath() + "/.tor/tor.log")
 #endif
@@ -102,6 +109,40 @@ VidaliaSettings::setRunTorAtStart(bool run)
 {
   setValue(SETTING_RUN_TOR_AT_START, run);
 }
+
+/** Returns true if Vidalia is set to run on system boot. */
+bool
+VidaliaSettings::runVidaliaOnBoot()
+{
+#if defined(Q_WS_WIN)
+  if (!getKeyValue(STARTUP_REG_KEY, VIDALIA_REG_KEY).isEmpty()) {
+    return true;
+  } else {
+    return false;
+  }
+#else
+  /* Platforms other than windows aren't supported yet */
+  return false;
+#endif
+}
+
+/** If <b>run</b> is set to true, then Vidalia will run on system boot. */
+void
+VidaliaSettings::setRunVidaliaOnBoot(bool run)
+{
+#if defined(Q_WS_WIN)
+  if (run) {
+    setKeyValue(STARTUP_REG_KEY, VIDALIA_REG_KEY,
+                QDir::convertSeparators(VIDALIA_PATH));
+  } else {
+    removeKey(STARTUP_REG_KEY, VIDALIA_REG_KEY);
+  }
+#else
+  /* Platforms othe rthan windows aren't supported yet */
+  return;
+#endif
+}
+
 
 /** Returns the current message filter. */
 uint

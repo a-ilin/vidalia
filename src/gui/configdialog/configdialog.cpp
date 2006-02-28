@@ -141,6 +141,7 @@ ConfigDialog::loadGeneralSettings()
 {
   ui.lineTorPath->setText(_torSettings->getPath());
   ui.chkRunTor->setChecked(_vidaliaSettings->runTorAtStart());
+  ui.chkRunWithSys->setChecked(_vidaliaSettings->runVidaliaOnBoot());
 }
 
 /** Save changes made to settings on the General settings page. */
@@ -149,6 +150,7 @@ ConfigDialog::saveGeneralSettings()
 {
   _torSettings->setPath(ui.lineTorPath->text());
   _vidaliaSettings->setRunTorAtStart(ui.chkRunTor->isChecked());
+  _vidaliaSettings->setRunVidaliaOnBoot(ui.chkRunWithSys->isChecked());
 }
 
 /** Load and display settings for the Advanced settings page. */

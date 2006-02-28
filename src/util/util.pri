@@ -29,3 +29,8 @@ SOURCES += $$PWD/compat.cpp \
            $$PWD/net.cpp \
            $$PWD/http.cpp
 
+win32 {
+    HEADERS += $$PWD/registry.h
+    SOURCES += $$PWD/registry.cpp
+}
+

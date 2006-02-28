@@ -60,6 +60,11 @@ public:
   /** Set whether to run Tor when Vidalia starts. */
   void setRunTorAtStart(bool run);
 
+  /** Returns true if Vidalia should start on system boot. */
+  bool runVidaliaOnBoot();
+  /** Set whether to run Vidalia on system boot. */
+  void setRunVidaliaOnBoot(bool run);
+
   /** Get filter used to determine which messages to display is the
    * messagelog. */
   uint getMsgFilter();
