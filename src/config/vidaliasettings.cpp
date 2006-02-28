@@ -25,6 +25,7 @@
  */
 
 #include <QDir>
+#include <QCoreApplication>
 
 #include "vidaliasettings.h"
 
@@ -59,7 +60,6 @@
 
 #if defined(Q_OS_WIN32)
 #define DEFAULT_LOG_FILE       (QDir::rootPath() + "Program Files\\Tor\\tor.log")
-#define VIDALIA_PATH           (QDir::rootPath() + "Program Files\\Vidalia\\vidalia.exe")
 #define STARTUP_REG_KEY        "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
 #define VIDALIA_REG_KEY        "Vidalia" 
 #else
@@ -115,7 +115,7 @@ bool
 VidaliaSettings::runVidaliaOnBoot()
 {
 #if defined(Q_WS_WIN)
-  if (!getKeyValue(STARTUP_REG_KEY, VIDALIA_REG_KEY).isEmpty()) {
+  if (!registry_get_key_value(STARTUP_REG_KEY, VIDALIA_REG_KEY).isEmpty()) {
     return true;
   } else {
     return false;
@@ -132,10 +132,12 @@ VidaliaSettings::setRunVidaliaOnBoot(bool run)
 {
 #if defined(Q_WS_WIN)
   if (run) {
-    setKeyValue(STARTUP_REG_KEY, VIDALIA_REG_KEY,
-                QDir::convertSeparators(VIDALIA_PATH));
+    registry_set_key_value(STARTUP_REG_KEY, VIDALIA_REG_KEY,
+        QString("\"" +
+                QDir::convertSeparators(QCoreApplication::applicationFilePath())) +
+                "\"");
   } else {
-    removeKey(STARTUP_REG_KEY, VIDALIA_REG_KEY);
+    registry_remove_key(STARTUP_REG_KEY, VIDALIA_REG_KEY);
   }
 #else
   /* Platforms othe rthan windows aren't supported yet */

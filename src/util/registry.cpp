@@ -29,10 +29,9 @@
 /** Returns the value in keyName at keyLocation. 
  *  Returns an empty QString if the keyName doesn't exist */
 QString
-getKeyValue(QString keyLocation, QString keyName)
+registry_get_key_value(QString keyLocation, QString keyName)
 {
   HKEY key;
-  DWORD type = REG_SZ;
   char data[255] = {0};
   DWORD size = sizeof(data);
 
@@ -43,7 +42,7 @@ getKeyValue(QString keyLocation, QString keyName)
     
     /* Key exists, so read the value into data */
     RegQueryValueExA(key, qPrintable(keyName), 
-                    NULL, &type, (LPBYTE)data, &size);
+                    NULL, NULL, (LPBYTE)data, &size);
   }
 
   /* Close anything that was opened */
@@ -54,7 +53,7 @@ getKeyValue(QString keyLocation, QString keyName)
 
 /** Creates and/or sets the key to the specified value */
 void
-setKeyValue(QString keyLocation, QString keyName, QString keyValue)
+registry_set_key_value(QString keyLocation, QString keyName, QString keyValue)
 {
   HKEY key;
   
@@ -81,7 +80,7 @@ setKeyValue(QString keyLocation, QString keyName, QString keyValue)
 
 /** Removes the key from the registry if it exists */
 void
-removeKey(QString keyLocation, QString keyName)
+registry_remove_key(QString keyLocation, QString keyName)
 {
   
   HKEY key;

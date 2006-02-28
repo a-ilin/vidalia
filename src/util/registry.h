@@ -33,13 +33,13 @@
 #include "windows.h"
 
 /** Returns value of keyName or empty QString if keyName doesn't exist */
-QString getKeyValue(QString keyLocation, QString keyName);
+QString registry_get_key_value(QString keyLocation, QString keyName);
 
 /** Creates and/or sets the key to the specified value */
-void setKeyValue(QString keyLocation, QString keyName, QString keyValue);
+void registry_set_key_value(QString keyLocation, QString keyName, QString keyValue);
 
 /** Removes the key from the registry if it exists */
-void removeKey(QString keyLocation, QString keyName);  
+void registry_remove_key(QString keyLocation, QString keyName);  
 
 #endif
 
