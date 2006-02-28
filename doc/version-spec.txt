@@ -4,39 +4,30 @@ $Id$
 
 Vidalia releases will follow the following versioning convention:
 
-  Version ::= <MAJOR>.<MINOR>.<MICRO>[-<FLAG>]
+  Version ::= <MAJOR>.<MINOR>.<MICRO>[-svn]
   MAJOR   ::= Integer >= 0
   MINOR   ::= Integer >= 0
   MICRO   ::= Integer >= 0
-  FLAG    ::= alpha | beta | rc
 
   MICRO will start at 1 and increase monotonically until a stable release, at
-  which point MINOR will be inremented and no flag identifier will be appended
-  to the version. MICRO will be set to 0 for a stable release and reset to 1
-  for the subsequent testing release.
-  
-  FLAG indicates the release type and is one of the following:
-    alpha   An initial, unstable release. Some functionality may be broken or
-            unimplemented..
-    beta    An unstable release, but most features should be functional.
-    rc      The developers expect this release to be stable, but more testing
-            needs to be completed.
-
-  Not all flags have to be used in a sequence of releases. For example, an -rc
-  release could immediately follow an -alpha release.
+  which point MINOR will be inremented MICRO will be set to 0 for a stable
+  release and reset to 1 for the subsequent testing release.
   
   MAJOR will be incremented following several MINOR stable releases in which
   extensive functionality has been added or modified. Developers will use
   their discretion in determining MAJOR releases.
+  
+  The -svn flag will be used to denote the latest snapshot in the Subversion
+  repository. It will be removed for an official release. For example,
+  0.0.2-svn would become 0.0.2 when it is officially released.
 
   An example of a possible sequence of versions is as follows:
 
-    0.0.1-alpha  __
-    0.0.2-alpha   |
-    0.0.3-beta    |-  Testing
-    0.0.4-rc     _|
-    0.1.0         ]-  Stable
-    0.1.1-alpha  --
-    0.1.2-rc      |-  Testing
-    0.1.3-rc     _|
-    1.0.0         ]-  Stable
+    0.0.1
+    0.0.2
+    0.0.3
+    0.1.0  <-- Stable
+    0.1.1
+    0.1.2
+    0.1.3
+    1.0.0  <-- Stable
