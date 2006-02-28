@@ -29,7 +29,7 @@
 #include "vidaliasettings.h"
 
 /* Vidalia's version string */
-#define VIDALIA_VERSION             "0.0.1-alpha"
+#define VIDALIA_VERSION             "0.0.1-svn"
 
 /* Vidalia's Settings */
 #define SETTING_RUN_TOR_AT_START    "RunTorAtStart"
