@@ -141,6 +141,7 @@ VidaliaSettings::setRunVidaliaOnBoot(bool run)
   }
 #else
   /* Platforms othe rthan windows aren't supported yet */
+  Q_UNUSED(run);
   return;
 #endif
 }
