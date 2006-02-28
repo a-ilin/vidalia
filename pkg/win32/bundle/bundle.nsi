@@ -21,7 +21,7 @@
 
 !define BUNDLE_REVISION "1"
 
-!define APPNAME "Vidalia-Tor-Privoxy_Bundle"
+!define APPNAME "Vidalia Bundle"
 !define APPVERSION "${TOR_VERSION}-${VIDALIA_VERSION}"
 !define PRODVERSION "0.0.1.0" ; Product version must be x.x.x.x
 !define APPDESCRIPTION "${APPNAME} ${APPVERSION}"
@@ -203,6 +203,7 @@ SectionGroup "Vidalia ${VIDALIA_VERSION}" VidaliaGroup
       ; Set output path to the installation directory.
       SetOutPath "$INSTDIR\Vidalia"
       File "Vidalia\${VIDALIA_VERSION}\${VIDALIA_EXEC}"
+      File "Vidalia\${VIDALIA_VERSION}\mingwm10.dll"
       File "Vidalia\${VIDALIA_VERSION}\README"
       File "Vidalia\${VIDALIA_VERSION}\CHANGELOG"
       File "Vidalia\${VIDALIA_VERSION}\LICENSE"
