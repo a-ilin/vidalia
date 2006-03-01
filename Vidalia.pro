@@ -21,11 +21,11 @@
 #  02110-1301, USA.
 #################################################################
 
-DESTDIR = bin/
-OBJECTS_DIR = bin/obj/
-RCC_DIR = src/
-UI_DIR  = src/
-MOC_DIR = src/
+DESTDIR = bin
+OBJECTS_DIR = bin/obj
+RCC_DIR = src
+UI_DIR  = src
+MOC_DIR = src
 
 TEMPLATE = app
 CONFIG  += qt thread debug warn_on
