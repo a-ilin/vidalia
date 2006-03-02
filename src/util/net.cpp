@@ -69,6 +69,7 @@ get_check_ip_sites()
 {
   QMap<QString, QString> sites;
   sites.insert("ipid.shat.net", "/iponly/");
+  sites.insert("freehaven.net", "/~edmanm/ip.php");
   return sites;
 }
 
