@@ -24,6 +24,9 @@
  * \version $Id$
  */
 
+#include <QList>
+#include <QUrl>
+
 #include "net.h"
 #include "http.h"
 
@@ -62,14 +65,20 @@ net_is_valid_ip(QString ip)
   return QHostAddress().setAddress(ip);
 }
 
-/** Returns a pre-defined list of servers whom we can ask for our public IP
- * address. */
-static QMap<QString, QString>
+/** Returns a pre-defined, static list of servers whom we can ask for our 
+ * public IP address. */
+//QMap<QString, QString>
+QList<QUrl>
 get_check_ip_sites()
 {
-  QMap<QString, QString> sites;
-  sites.insert("ipid.shat.net", "/iponly/");
-  sites.insert("freehaven.net", "/~edmanm/ip.php");
+  static QList<QUrl> sites;
+  if (sites.count() == 0) {
+    sites.append(QUrl("http://ipid.shat.net/iponly/"));
+    sites.append(QUrl("http://freehaven.net/~edmanm/ip.php"));
+    sites.append(QUrl("http://vidalia-project.net/iptest/ip.php"));
+  } else {
+    sites.append(sites.takeFirst());
+  }
   return sites;
 }
 
@@ -81,10 +90,10 @@ get_check_ip_sites()
 bool
 net_get_public_ip(QString &ip)
 {
-  QMap<QString, QString> sites = get_check_ip_sites();
-  foreach(QString host, sites.keys()) {
-    Http http(host);
-    if (http.request(sites.value(host))) {
+  QList<QUrl> sites = get_check_ip_sites();
+  foreach (QUrl site, sites) {
+    Http http(site.host());
+    if (http.request(site.path())) {
       if (net_is_valid_ip(http.body())) {
         ip = http.body();
         return true;
