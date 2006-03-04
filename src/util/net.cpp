@@ -67,7 +67,6 @@ net_is_valid_ip(QString ip)
 
 /** Returns a pre-defined, static list of servers whom we can ask for our 
  * public IP address. */
-//QMap<QString, QString>
 QList<QUrl>
 get_check_ip_sites()
 {
