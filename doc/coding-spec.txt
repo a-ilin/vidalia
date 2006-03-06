@@ -15,7 +15,7 @@ $Id$
   Vidalia's repository supports anonymous checkout. You can grab the current
   Vidalia source via:
 
-    svn co svn://svn.seul.org/svn/vidalia/
+    svn co svn://svn.vidalia-project.org/vidalia/trunk/ vidalia
     
 1.2 Directory Layout
 
