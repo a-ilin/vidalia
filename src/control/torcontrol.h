@@ -47,7 +47,8 @@ public:
     SignalShutdown, /**< SIGINT: Controlled shutdown */
     SignalDump,     /**< SIGUSR1: Log information about current circuits */
     SignalDebug,    /**< SIGUSR2: Switch all open logs to loglevel debug */
-    SignalHalt      /**< SIGTERM: Immediate shutdown */
+    SignalHalt,     /**< SIGTERM: Immediate shutdown */
+    SignalNewNym    /**< NEWNYM: Switch to all new clean circuits */
   };
  
   /** Default constructor */

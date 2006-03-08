@@ -290,6 +290,7 @@ TorControl::signal(Signal sig, QString *errmsg)
     case SignalDump:     sigtype = "DUMP"; break;
     case SignalDebug:    sigtype = "DEBUG"; break;
     case SignalHalt:     sigtype = "HALT"; break;
+    case SignalNewNym:   sigtype = "NEWNYM"; break;
     default: return false;
   }
   return send(cmd, errmsg); 
