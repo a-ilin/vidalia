@@ -34,6 +34,7 @@ namespace CustomEventType {
   const int CircuitEvent   = QEvent::User+1;
   const int StreamEvent    = QEvent::User+2;
   const int LogEvent       = QEvent::User+3;
+  const int OrConnEvent    = QEvent::User+4;
 }
 
 #endif

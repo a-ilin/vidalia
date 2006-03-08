@@ -54,16 +54,17 @@ public:
   
   /** Returns the ID for this circuit */
   quint64 circuitId();
-  
   /** Returns the status of this circuit */
   Status status();
-  
   /** Returns the path chosen for this circuit */
   QString path();
   
 private:
-    quint64 _circId;
+  /** Circuit ID */
+  quint64 _circId;
+  /** Circuit status */
   Status _status;
+  /** Circuit path */
   QString _path;
 };
 

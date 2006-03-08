@@ -100,6 +100,7 @@ TorEvents::toString(TorEvent e)
     case LogError:  event = "ERR"; break;
     case Circuit:   event = "CIRC"; break;
     case Stream:    event = "STREAM"; break;
+    case OrConn:    event = "ORCONN"; break;
     default: event = "UNKNOWN"; break;
   }
   return event;
@@ -145,6 +146,8 @@ TorEvents::toTorEvent(QString event)
     e = LogWarn;
   } else if (event == "ERR") {
     e = LogError;
+  } else if (event == "ORCONN") {
+    e = OrConn;
   } else {
     e = Unknown;
   }
@@ -172,7 +175,8 @@ TorEvents::handleEvent(ControlReply reply)
       case Bandwidth:  handleBandwidthUpdate(line); break;
       case Circuit:    handleCircuitStatus(line); break;
       case Stream:     handleStreamStatus(line); break;
-    
+      case OrConn:     handleOrConnStatus(line); break;
+
       case LogDebug: 
       case LogInfo:
       case LogNotice:
@@ -279,5 +283,29 @@ TorEvents::handleLogMessage(ReplyLine line)
   
   /* Post the event to each of the interested targets */
   dispatch(toTorEvent(severity), new LogEvent(severity, logLine));
+}
+
+/** Handle an OR Connection Status event. The syntax is:
+ *     "650" SP "ORCONN" SP (ServerID / Target) SP ORStatus
+ *
+ *     ORStatus = "NEW" / "LAUNCHED" / "CONNECTED" / "FAILED" / "CLOSED"
+ *
+ *     NEW is for incoming connections, and LAUNCHED is for outgoing
+ *     connections. CONNECTED means the TLS handshake has finished (in
+ *     either direction). FAILED means a connection is being closed
+ *     that hasn't finished its handshake, and CLOSED is for connections
+ *     that have handshaked.
+ *
+ *     A ServerID is specified unless it's a NEW connection, in which
+ *     case we don't know what server it is yet, so we use Address:Port.
+ */
+void
+TorEvents::handleOrConnStatus(ReplyLine line)
+{
+  QStringList msg = line.getMessage().split(" ");
+  if (msg.size() >= 2) {
+    dispatch(OrConn, new OrConnEvent(OrConnEvent::toStatus(msg.at(1)), 
+                                     msg.at(0)));
+  }
 }
 

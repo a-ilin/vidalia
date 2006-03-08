@@ -36,6 +36,7 @@
 #include "bandwidthevent.h"
 #include "circuitevent.h"
 #include "streamevent.h"
+#include "orconnevent.h"
 
 #include "controlreply.h"
 
@@ -51,7 +52,8 @@ public:
     Bandwidth,
     LogDebug, LogInfo, LogNotice, LogWarn, LogError,
     Circuit,
-    Stream
+    Stream,
+    OrConn
   };
  
   /** Default Constructor */
@@ -98,6 +100,8 @@ private:
   void handleStreamStatus(ReplyLine line);
   /** Handle a log message event */
   void handleLogMessage(ReplyLine line);
+  /** Handle an OR connection status event. */
+  void handleOrConnStatus(ReplyLine line);
 };
 
 #endif
