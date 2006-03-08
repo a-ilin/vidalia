@@ -278,22 +278,10 @@ TorControl::getInfo(QString key, QString &val, QString *errmsg)
 
 /** Sends a signal to Tor */
 bool
-TorControl::signal(Signal sig, QString *errmsg)
+TorControl::signal(TorSignal::Signal sig, QString *errmsg)
 {
   ControlCommand cmd("SIGNAL");
-  QString sigtype;
-  
-  /* Convert the signal to the correct string */
-  switch (sig) {
-    case SignalReload:   sigtype = "RELOAD"; break;
-    case SignalShutdown: sigtype = "SHUTDOWN"; break;
-    case SignalDump:     sigtype = "DUMP"; break;
-    case SignalDebug:    sigtype = "DEBUG"; break;
-    case SignalHalt:     sigtype = "HALT"; break;
-    case SignalNewNym:   sigtype = "NEWNYM"; break;
-    default: return false;
-  }
-  return send(cmd, errmsg); 
+  return send(TorSignal::toString(sig), errmsg); 
 }
 
 /** Ask Tor for its version */

@@ -34,6 +34,7 @@
 #include "controlconnection.h"
 #include "torprocess.h"
 #include "torevents.h"
+#include "torsignal.h"
 
 
 class TorControl : public QObject
@@ -41,16 +42,6 @@ class TorControl : public QObject
   Q_OBJECT
   
 public:
-  /** Signals that can be sent by the controller */
-  enum Signal {
-    SignalReload,   /**< SIGHUP: Reloads config items and refetch directory */
-    SignalShutdown, /**< SIGINT: Controlled shutdown */
-    SignalDump,     /**< SIGUSR1: Log information about current circuits */
-    SignalDebug,    /**< SIGUSR2: Switch all open logs to loglevel debug */
-    SignalHalt,     /**< SIGTERM: Immediate shutdown */
-    SignalNewNym    /**< NEWNYM: Switch to all new clean circuits */
-  };
- 
   /** Default constructor */
   TorControl();
   /** Default destructor */
@@ -79,7 +70,7 @@ public:
   bool getInfo(QString key, QString &val, QString *errmsg = 0);
 
   /** Sends a signal to Tor */
-  bool signal(Signal sig, QString *errmsg = 0);
+  bool signal(TorSignal::Signal sig, QString *errmsg = 0);
   
   /** Ask Tor for its version */
   QString getTorVersion(QString *errmsg = 0);
