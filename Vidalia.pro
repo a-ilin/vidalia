@@ -22,7 +22,7 @@
 #################################################################
 
 DESTDIR = bin
-OBJECTS_DIR = bin/obj
+OBJECTS_DIR = obj
 RCC_DIR = src
 UI_DIR  = src
 MOC_DIR = src
