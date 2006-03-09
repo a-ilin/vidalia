@@ -6,7 +6,7 @@
 # Check for proper script arguments
 if [ "$#" -ne 1 ]
 then
-  echo "Usage: $1 <tarball|win32|osx>"
+  echo "Usage: $0 <tarball|win32|osx>"
   exit 1
 fi
 
