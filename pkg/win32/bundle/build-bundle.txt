@@ -18,7 +18,7 @@ PRIVOXY_VERSION) at the top of the .nsi file.
 4. Create directories for the appropriate versions of each component.
 
         C:\bundle\privoxy\3.0.3\
-        C:\bundle\tor\0.1.1.14\
+        C:\bundle\tor\0.1.1.15\
         C:\bundle\vidalia\0.0.1\
 
 5. Install Vidalia, Tor, and Privoxy to the directories you created for them.
