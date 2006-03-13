@@ -49,3 +49,5 @@ include($$PWD/aboutdialog/aboutdialog.pri)
 include($$PWD/messagelog/messagelog.pri)
 include($$PWD/bwgraph/bwgraph.pri)
 include($$PWD/configdialog/configdialog.pri)
+include($$PWD/help/help.pri)
+

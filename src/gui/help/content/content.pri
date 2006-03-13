@@ -1,0 +1,3 @@
+
+RESOURCES += $$PWD/content.qrc
+

@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="/help">
+    <file>contents.dtd</file>
+    <file>contents.xml</file>
+  </qresource>
+</RCC>
+
