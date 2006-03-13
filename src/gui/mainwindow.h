@@ -32,10 +32,10 @@
 #include <control/torcontrol.h>
 
 #include "tray/trayicon.h"
-#include "aboutdialog/aboutdialog.h"
-#include "messagelog/messagelog.h"
+#include "about/aboutdialog.h"
+#include "log/messagelog.h"
 #include "bwgraph/bwgraph.h"
-#include "configdialog/configdialog.h"
+#include "config/configdialog.h"
 
 
 class MainWindow : public QMainWindow
