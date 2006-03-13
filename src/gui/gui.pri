@@ -45,9 +45,9 @@ win32 {
 }
 
 include($$PWD/tray/tray.pri)
-include($$PWD/aboutdialog/aboutdialog.pri)
-include($$PWD/messagelog/messagelog.pri)
+include($$PWD/about/aboutdialog.pri)
+include($$PWD/log/messagelog.pri)
 include($$PWD/bwgraph/bwgraph.pri)
-include($$PWD/configdialog/configdialog.pri)
+include($$PWD/config/configdialog.pri)
 include($$PWD/help/help.pri)
 
