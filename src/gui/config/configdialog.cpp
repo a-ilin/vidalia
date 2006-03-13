@@ -218,9 +218,8 @@ ConfigDialog::getServerAddress()
   if (net_is_private_address(addr)) {
     int button = QMessageBox::information(this, tr("Get Address"),
                    tr("Vidalia was only able to find a private IP " 
-                      "address for your server. Would you like to "
-                      "access an external service, such as "
-                      "checkip.dyndns.org, to determine your public " 
+                      "address for your server.\nWould you like to "
+                      "access an external service to determine your public " 
                       "IP address?"),
                     QMessageBox::Yes, QMessageBox::No);
     if (button == QMessageBox::Yes) {
