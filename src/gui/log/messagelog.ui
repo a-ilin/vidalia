@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>701</width>
-    <height>558</height>
+    <width>695</width>
+    <height>450</height>
    </rect>
   </property>
   <property name="palette" >
@@ -427,14 +427,332 @@
       <property name="frameShadow" >
        <enum>QFrame::Raised</enum>
       </property>
-      <layout class="QHBoxLayout" >
+      <layout class="QGridLayout" >
        <property name="margin" >
         <number>9</number>
        </property>
        <property name="spacing" >
         <number>6</number>
        </property>
-       <item>
+       <item row="1" column="1" >
+        <widget class="QGroupBox" name="groupBox_2" >
+         <property name="contextMenuPolicy" >
+          <enum>Qt::NoContextMenu</enum>
+         </property>
+         <property name="title" >
+          <string>Log File</string>
+         </property>
+         <layout class="QGridLayout" >
+          <property name="margin" >
+           <number>9</number>
+          </property>
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+          <item row="1" column="1" >
+           <widget class="QPushButton" name="btnBrowse" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+            <property name="minimumSize" >
+             <size>
+              <width>0</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="contextMenuPolicy" >
+             <enum>Qt::NoContextMenu</enum>
+            </property>
+            <property name="toolTip" >
+             <string>Select File for Message Logging</string>
+            </property>
+            <property name="text" >
+             <string>Browse</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0" colspan="2" >
+           <widget class="QCheckBox" name="chkEnableLogFile" >
+            <property name="contextMenuPolicy" >
+             <enum>Qt::NoContextMenu</enum>
+            </property>
+            <property name="toolTip" >
+             <string>Enable saving of all messages to a file</string>
+            </property>
+            <property name="text" >
+             <string>Save Messages to File</string>
+            </property>
+            <property name="checked" >
+             <bool>false</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0" >
+           <widget class="QLineEdit" name="lineFile" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+            <property name="contextMenuPolicy" >
+             <enum>Qt::NoContextMenu</enum>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item row="0" column="1" >
+        <layout class="QHBoxLayout" >
+         <property name="margin" >
+          <number>0</number>
+         </property>
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <item>
+          <layout class="QHBoxLayout" >
+           <property name="margin" >
+            <number>0</number>
+           </property>
+           <property name="spacing" >
+            <number>6</number>
+           </property>
+           <item>
+            <widget class="QGroupBox" name="groupBox_3" >
+             <property name="contextMenuPolicy" >
+              <enum>Qt::NoContextMenu</enum>
+             </property>
+             <property name="title" >
+              <string>Log History Size</string>
+             </property>
+             <layout class="QVBoxLayout" >
+              <property name="margin" >
+               <number>9</number>
+              </property>
+              <property name="spacing" >
+               <number>6</number>
+              </property>
+              <item>
+               <layout class="QHBoxLayout" >
+                <property name="margin" >
+                 <number>0</number>
+                </property>
+                <property name="spacing" >
+                 <number>6</number>
+                </property>
+                <item>
+                 <widget class="QSpinBox" name="spnbxMaxCount" >
+                  <property name="minimumSize" >
+                   <size>
+                    <width>100</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="contextMenuPolicy" >
+                   <enum>Qt::NoContextMenu</enum>
+                  </property>
+                  <property name="toolTip" >
+                   <string>Number of messages to keep in log</string>
+                  </property>
+                  <property name="maximum" >
+                   <number>99999</number>
+                  </property>
+                  <property name="minimum" >
+                   <number>1</number>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer>
+                  <property name="orientation" >
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" >
+                   <size>
+                    <width>62</width>
+                    <height>23</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <widget class="QGroupBox" name="grpOpacity" >
+             <property name="contextMenuPolicy" >
+              <enum>Qt::NoContextMenu</enum>
+             </property>
+             <property name="title" >
+              <string>Window Opacity</string>
+             </property>
+             <layout class="QVBoxLayout" >
+              <property name="margin" >
+               <number>9</number>
+              </property>
+              <property name="spacing" >
+               <number>6</number>
+              </property>
+              <item>
+               <layout class="QHBoxLayout" >
+                <property name="margin" >
+                 <number>0</number>
+                </property>
+                <property name="spacing" >
+                 <number>1</number>
+                </property>
+                <item>
+                 <widget class="QLabel" name="lblPercentOpacity" >
+                  <property name="minimumSize" >
+                   <size>
+                    <width>25</width>
+                    <height>0</height>
+                   </size>
+                  </property>
+                  <property name="contextMenuPolicy" >
+                   <enum>Qt::NoContextMenu</enum>
+                  </property>
+                  <property name="layoutDirection" >
+                   <enum>Qt::RightToLeft</enum>
+                  </property>
+                  <property name="text" >
+                   <string>100</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label" >
+                  <property name="contextMenuPolicy" >
+                   <enum>Qt::NoContextMenu</enum>
+                  </property>
+                  <property name="text" >
+                   <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">% Opaque&lt;/p>&lt;/body>&lt;/html></string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer>
+                  <property name="orientation" >
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" >
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <widget class="QSlider" name="sldrOpacity" >
+                <property name="contextMenuPolicy" >
+                 <enum>Qt::NoContextMenu</enum>
+                </property>
+                <property name="toolTip" >
+                 <string>Changes the transparency of the Message Log</string>
+                </property>
+                <property name="minimum" >
+                 <number>30</number>
+                </property>
+                <property name="maximum" >
+                 <number>100</number>
+                </property>
+                <property name="value" >
+                 <number>100</number>
+                </property>
+                <property name="sliderPosition" >
+                 <number>100</number>
+                </property>
+                <property name="tracking" >
+                 <bool>false</bool>
+                </property>
+                <property name="orientation" >
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="invertedAppearance" >
+                 <bool>false</bool>
+                </property>
+                <property name="tickPosition" >
+                 <enum>QSlider::TicksBelow</enum>
+                </property>
+                <property name="tickInterval" >
+                 <number>10</number>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <spacer>
+             <property name="orientation" >
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" >
+              <size>
+               <width>16</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" >
+           <property name="margin" >
+            <number>0</number>
+           </property>
+           <property name="spacing" >
+            <number>6</number>
+           </property>
+           <item>
+            <widget class="QPushButton" name="btnSaveSettings" >
+             <property name="contextMenuPolicy" >
+              <enum>Qt::NoContextMenu</enum>
+             </property>
+             <property name="toolTip" >
+              <string>Saves the current Message Log settings</string>
+             </property>
+             <property name="text" >
+              <string>Save Settings</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnCancelSettings" >
+             <property name="contextMenuPolicy" >
+              <enum>Qt::NoContextMenu</enum>
+             </property>
+             <property name="toolTip" >
+              <string>Cancels changes made to settings</string>
+             </property>
+             <property name="text" >
+              <string>Cancel</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer>
+             <property name="orientation" >
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" >
+              <size>
+               <width>20</width>
+               <height>21</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+       <item rowspan="2" row="0" column="0" >
         <widget class="QGroupBox" name="groupBox" >
          <property name="contextMenuPolicy" >
           <enum>Qt::NoContextMenu</enum>
@@ -545,344 +863,6 @@
          </layout>
         </widget>
        </item>
-       <item>
-        <layout class="QVBoxLayout" >
-         <property name="margin" >
-          <number>0</number>
-         </property>
-         <property name="spacing" >
-          <number>6</number>
-         </property>
-         <item>
-          <layout class="QHBoxLayout" >
-           <property name="margin" >
-            <number>0</number>
-           </property>
-           <property name="spacing" >
-            <number>6</number>
-           </property>
-           <item>
-            <layout class="QHBoxLayout" >
-             <property name="margin" >
-              <number>0</number>
-             </property>
-             <property name="spacing" >
-              <number>6</number>
-             </property>
-             <item>
-              <widget class="QGroupBox" name="groupBox_3" >
-               <property name="contextMenuPolicy" >
-                <enum>Qt::NoContextMenu</enum>
-               </property>
-               <property name="title" >
-                <string>Log History Size</string>
-               </property>
-               <layout class="QVBoxLayout" >
-                <property name="margin" >
-                 <number>9</number>
-                </property>
-                <property name="spacing" >
-                 <number>6</number>
-                </property>
-                <item>
-                 <layout class="QHBoxLayout" >
-                  <property name="margin" >
-                   <number>0</number>
-                  </property>
-                  <property name="spacing" >
-                   <number>6</number>
-                  </property>
-                  <item>
-                   <widget class="QSpinBox" name="spnbxMaxCount" >
-                    <property name="minimumSize" >
-                     <size>
-                      <width>100</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="contextMenuPolicy" >
-                     <enum>Qt::NoContextMenu</enum>
-                    </property>
-                    <property name="toolTip" >
-                     <string>Number of messages to keep in log</string>
-                    </property>
-                    <property name="maximum" >
-                     <number>99999</number>
-                    </property>
-                    <property name="minimum" >
-                     <number>1</number>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <spacer>
-                    <property name="orientation" >
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" >
-                     <size>
-                      <width>62</width>
-                      <height>23</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                 </layout>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item>
-              <widget class="QGroupBox" name="grpOpacity" >
-               <property name="contextMenuPolicy" >
-                <enum>Qt::NoContextMenu</enum>
-               </property>
-               <property name="title" >
-                <string>Window Opacity</string>
-               </property>
-               <layout class="QVBoxLayout" >
-                <property name="margin" >
-                 <number>9</number>
-                </property>
-                <property name="spacing" >
-                 <number>6</number>
-                </property>
-                <item>
-                 <layout class="QHBoxLayout" >
-                  <property name="margin" >
-                   <number>0</number>
-                  </property>
-                  <property name="spacing" >
-                   <number>1</number>
-                  </property>
-                  <item>
-                   <widget class="QLabel" name="lblPercentOpacity" >
-                    <property name="minimumSize" >
-                     <size>
-                      <width>25</width>
-                      <height>0</height>
-                     </size>
-                    </property>
-                    <property name="contextMenuPolicy" >
-                     <enum>Qt::NoContextMenu</enum>
-                    </property>
-                    <property name="layoutDirection" >
-                     <enum>Qt::RightToLeft</enum>
-                    </property>
-                    <property name="text" >
-                     <string>100</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QLabel" name="label" >
-                    <property name="contextMenuPolicy" >
-                     <enum>Qt::NoContextMenu</enum>
-                    </property>
-                    <property name="text" >
-                     <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">% Opaque&lt;/p>&lt;/body>&lt;/html></string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <spacer>
-                    <property name="orientation" >
-                     <enum>Qt::Horizontal</enum>
-                    </property>
-                    <property name="sizeHint" >
-                     <size>
-                      <width>40</width>
-                      <height>20</height>
-                     </size>
-                    </property>
-                   </spacer>
-                  </item>
-                 </layout>
-                </item>
-                <item>
-                 <widget class="QSlider" name="sldrOpacity" >
-                  <property name="contextMenuPolicy" >
-                   <enum>Qt::NoContextMenu</enum>
-                  </property>
-                  <property name="toolTip" >
-                   <string>Changes the transparency of the Message Log</string>
-                  </property>
-                  <property name="minimum" >
-                   <number>30</number>
-                  </property>
-                  <property name="maximum" >
-                   <number>100</number>
-                  </property>
-                  <property name="value" >
-                   <number>100</number>
-                  </property>
-                  <property name="sliderPosition" >
-                   <number>100</number>
-                  </property>
-                  <property name="tracking" >
-                   <bool>false</bool>
-                  </property>
-                  <property name="orientation" >
-                   <enum>Qt::Horizontal</enum>
-                  </property>
-                  <property name="invertedAppearance" >
-                   <bool>false</bool>
-                  </property>
-                  <property name="tickPosition" >
-                   <enum>QSlider::TicksBelow</enum>
-                  </property>
-                  <property name="tickInterval" >
-                   <number>10</number>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item>
-              <spacer>
-               <property name="orientation" >
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" >
-                <size>
-                 <width>16</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QVBoxLayout" >
-             <property name="margin" >
-              <number>0</number>
-             </property>
-             <property name="spacing" >
-              <number>6</number>
-             </property>
-             <item>
-              <widget class="QPushButton" name="btnSaveSettings" >
-               <property name="contextMenuPolicy" >
-                <enum>Qt::NoContextMenu</enum>
-               </property>
-               <property name="toolTip" >
-                <string>Saves the current Message Log settings</string>
-               </property>
-               <property name="text" >
-                <string>Save Settings</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="btnCancelSettings" >
-               <property name="contextMenuPolicy" >
-                <enum>Qt::NoContextMenu</enum>
-               </property>
-               <property name="toolTip" >
-                <string>Cancels changes made to settings</string>
-               </property>
-               <property name="text" >
-                <string>Cancel</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <spacer>
-               <property name="orientation" >
-                <enum>Qt::Vertical</enum>
-               </property>
-               <property name="sizeHint" >
-                <size>
-                 <width>20</width>
-                 <height>21</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-            </layout>
-           </item>
-          </layout>
-         </item>
-         <item>
-          <widget class="QGroupBox" name="groupBox_2" >
-           <property name="contextMenuPolicy" >
-            <enum>Qt::NoContextMenu</enum>
-           </property>
-           <property name="title" >
-            <string>Log File</string>
-           </property>
-           <layout class="QVBoxLayout" >
-            <property name="margin" >
-             <number>4</number>
-            </property>
-            <property name="spacing" >
-             <number>3</number>
-            </property>
-            <item>
-             <widget class="QCheckBox" name="chkEnableLogFile" >
-              <property name="contextMenuPolicy" >
-               <enum>Qt::NoContextMenu</enum>
-              </property>
-              <property name="toolTip" >
-               <string>Enable saving of all messages to a file</string>
-              </property>
-              <property name="text" >
-               <string>Save Messages to File</string>
-              </property>
-              <property name="checked" >
-               <bool>false</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <layout class="QHBoxLayout" >
-              <property name="margin" >
-               <number>0</number>
-              </property>
-              <property name="spacing" >
-               <number>6</number>
-              </property>
-              <item>
-               <widget class="QLineEdit" name="lineFile" >
-                <property name="enabled" >
-                 <bool>false</bool>
-                </property>
-                <property name="contextMenuPolicy" >
-                 <enum>Qt::NoContextMenu</enum>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="btnBrowse" >
-                <property name="enabled" >
-                 <bool>false</bool>
-                </property>
-                <property name="minimumSize" >
-                 <size>
-                  <width>0</width>
-                  <height>30</height>
-                 </size>
-                </property>
-                <property name="contextMenuPolicy" >
-                 <enum>Qt::NoContextMenu</enum>
-                </property>
-                <property name="toolTip" >
-                 <string>Select File for Message Logging</string>
-                </property>
-                <property name="text" >
-                 <string>Browse</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </widget>
-         </item>
-        </layout>
-       </item>
       </layout>
      </widget>
     </item>
@@ -893,7 +873,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>701</width>
+     <width>695</width>
      <height>19</height>
     </rect>
    </property>
@@ -936,8 +916,8 @@
    <property name="geometry" >
     <rect>
      <x>0</x>
-     <y>536</y>
-     <width>701</width>
+     <y>428</y>
+     <width>695</width>
      <height>22</height>
     </rect>
    </property>

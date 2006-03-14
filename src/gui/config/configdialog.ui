@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>416</width>
-    <height>342</height>
+    <width>334</width>
+    <height>322</height>
    </rect>
   </property>
   <property name="palette" >
@@ -847,7 +847,7 @@
              <number>0</number>
             </property>
             <property name="spacing" >
-             <number>6</number>
+             <number>0</number>
             </property>
             <item>
              <widget class="QGroupBox" name="grpServerConfig" >
@@ -857,235 +857,91 @@
               <property name="title" >
                <string>Server Configuration</string>
               </property>
-              <layout class="QVBoxLayout" >
+              <layout class="QGridLayout" >
                <property name="margin" >
                 <number>9</number>
                </property>
                <property name="spacing" >
                 <number>6</number>
                </property>
-               <item>
-                <layout class="QHBoxLayout" >
+               <item row="3" column="0" >
+                <widget class="QLabel" name="label_4" >
+                 <property name="contextMenuPolicy" >
+                  <enum>Qt::NoContextMenu</enum>
+                 </property>
+                 <property name="text" >
+                  <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" color:#000000;">Address:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+                 </property>
+                 <property name="alignment" >
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                 </property>
                  <property name="margin" >
                   <number>0</number>
                  </property>
-                 <property name="spacing" >
-                  <number>6</number>
+                 <property name="indent" >
+                  <number>21</number>
                  </property>
-                 <item>
-                  <widget class="QLabel" name="label_2" >
-                   <property name="contextMenuPolicy" >
-                    <enum>Qt::NoContextMenu</enum>
-                   </property>
-                   <property name="text" >
-                    <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" color:#ff0000;">Nickname:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
-                   </property>
-                   <property name="alignment" >
-                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                   </property>
-                   <property name="margin" >
-                    <number>-1</number>
-                   </property>
-                   <property name="indent" >
-                    <number>13</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLineEdit" name="lineServerNickname" >
-                   <property name="cursor" >
-                    <cursor>4</cursor>
-                   </property>
-                   <property name="contextMenuPolicy" >
-                    <enum>Qt::NoContextMenu</enum>
-                   </property>
-                   <property name="toolTip" >
-                    <string>Name of your server</string>
-                   </property>
-                   <property name="text" >
-                    <string/>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
+                </widget>
                </item>
-               <item>
-                <layout class="QHBoxLayout" >
-                 <property name="margin" >
-                  <number>0</number>
+               <item row="3" column="2" >
+                <widget class="QPushButton" name="btnGetAddress" >
+                 <property name="minimumSize" >
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
                  </property>
-                 <property name="spacing" >
-                  <number>6</number>
+                 <property name="contextMenuPolicy" >
+                  <enum>Qt::NoContextMenu</enum>
                  </property>
-                 <item>
-                  <widget class="QLabel" name="label_1" >
-                   <property name="contextMenuPolicy" >
-                    <enum>Qt::NoContextMenu</enum>
-                   </property>
-                   <property name="text" >
-                    <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Contact Info:&lt;/p>&lt;/body>&lt;/html></string>
-                   </property>
-                   <property name="alignment" >
-                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLineEdit" name="lineServerContact" >
-                   <property name="cursor" >
-                    <cursor>4</cursor>
-                   </property>
-                   <property name="contextMenuPolicy" >
-                    <enum>Qt::NoContextMenu</enum>
-                   </property>
-                   <property name="toolTip" >
-                    <string>Email address at which you may be reached if there is a problem with your server</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
+                 <property name="toolTip" >
+                  <string>Attempts to determine the correct address for your server</string>
+                 </property>
+                 <property name="text" >
+                  <string>Get Address</string>
+                 </property>
+                </widget>
                </item>
-               <item>
-                <layout class="QHBoxLayout" >
-                 <property name="margin" >
-                  <number>0</number>
+               <item row="3" column="1" >
+                <widget class="QLineEdit" name="lineServerAddress" >
+                 <property name="cursor" >
+                  <cursor>4</cursor>
                  </property>
-                 <property name="spacing" >
-                  <number>6</number>
+                 <property name="contextMenuPolicy" >
+                  <enum>Qt::NoContextMenu</enum>
                  </property>
-                 <item>
-                  <layout class="QHBoxLayout" >
-                   <property name="margin" >
-                    <number>0</number>
-                   </property>
-                   <property name="spacing" >
-                    <number>6</number>
-                   </property>
-                   <item>
-                    <widget class="QLabel" name="label" >
-                     <property name="contextMenuPolicy" >
-                      <enum>Qt::NoContextMenu</enum>
-                     </property>
-                     <property name="text" >
-                      <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" color:#ff0000;">Server Port:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
-                     </property>
-                     <property name="alignment" >
-                      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                     </property>
-                     <property name="margin" >
-                      <number>-1</number>
-                     </property>
-                     <property name="indent" >
-                      <number>7</number>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLineEdit" name="lineServerPort" >
-                     <property name="sizePolicy" >
-                      <sizepolicy>
-                       <hsizetype>0</hsizetype>
-                       <vsizetype>0</vsizetype>
-                       <horstretch>0</horstretch>
-                       <verstretch>0</verstretch>
-                      </sizepolicy>
-                     </property>
-                     <property name="maximumSize" >
-                      <size>
-                       <width>50</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="cursor" >
-                      <cursor>4</cursor>
-                     </property>
-                     <property name="contextMenuPolicy" >
-                      <enum>Qt::NoContextMenu</enum>
-                     </property>
-                     <property name="toolTip" >
-                      <string>Port on which users and other servers can communicate with your server</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </item>
-                 <item>
-                  <spacer>
-                   <property name="orientation" >
-                    <enum>Qt::Horizontal</enum>
-                   </property>
-                   <property name="sizeHint" >
-                    <size>
-                     <width>40</width>
-                     <height>20</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
-                </layout>
+                 <property name="toolTip" >
+                  <string>Domain name or IP address of your server</string>
+                 </property>
+                </widget>
                </item>
-               <item>
-                <layout class="QHBoxLayout" >
-                 <property name="margin" >
-                  <number>0</number>
+               <item row="6" column="0" colspan="3" >
+                <widget class="QLabel" name="label_5" >
+                 <property name="layoutDirection" >
+                  <enum>Qt::LeftToRight</enum>
                  </property>
-                 <property name="spacing" >
-                  <number>6</number>
+                 <property name="text" >
+                  <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" color:#ff0000;">Required Fields&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
                  </property>
-                 <item>
-                  <widget class="QLabel" name="label_4" >
-                   <property name="contextMenuPolicy" >
-                    <enum>Qt::NoContextMenu</enum>
-                   </property>
-                   <property name="text" >
-                    <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" color:#000000;">Address:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
-                   </property>
-                   <property name="alignment" >
-                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                   </property>
-                   <property name="margin" >
-                    <number>0</number>
-                   </property>
-                   <property name="indent" >
-                    <number>21</number>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QLineEdit" name="lineServerAddress" >
-                   <property name="cursor" >
-                    <cursor>4</cursor>
-                   </property>
-                   <property name="contextMenuPolicy" >
-                    <enum>Qt::NoContextMenu</enum>
-                   </property>
-                   <property name="toolTip" >
-                    <string>Domain name or IP address of your server</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="btnGetAddress" >
-                   <property name="minimumSize" >
-                    <size>
-                     <width>0</width>
-                     <height>30</height>
-                    </size>
-                   </property>
-                   <property name="contextMenuPolicy" >
-                    <enum>Qt::NoContextMenu</enum>
-                   </property>
-                   <property name="toolTip" >
-                    <string>Attempts to determine the correct address for your server</string>
-                   </property>
-                   <property name="text" >
-                    <string>Get Address</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
+                 <property name="alignment" >
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
                </item>
-               <item>
+               <item row="5" column="0" colspan="3" >
+                <widget class="QCheckBox" name="chkMiddleMan" >
+                 <property name="contextMenuPolicy" >
+                  <enum>Qt::NoContextMenu</enum>
+                 </property>
+                 <property name="toolTip" >
+                  <string>If selected, clients will not exit the Tor network through your server</string>
+                 </property>
+                 <property name="text" >
+                  <string>Only relay traffic between other Tor servers (middle-man)</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0" colspan="3" >
                 <layout class="QHBoxLayout" >
                  <property name="margin" >
                   <number>0</number>
@@ -1174,31 +1030,165 @@
                  </item>
                 </layout>
                </item>
-               <item>
-                <widget class="QCheckBox" name="chkMiddleMan" >
-                 <property name="contextMenuPolicy" >
-                  <enum>Qt::NoContextMenu</enum>
+               <item row="2" column="0" colspan="3" >
+                <layout class="QHBoxLayout" >
+                 <property name="margin" >
+                  <number>0</number>
                  </property>
-                 <property name="toolTip" >
-                  <string>If selected, clients will not exit the Tor network through your server</string>
+                 <property name="spacing" >
+                  <number>6</number>
                  </property>
-                 <property name="text" >
-                  <string>Only relay traffic between other Tor servers (middle-man)</string>
-                 </property>
-                </widget>
+                 <item>
+                  <layout class="QHBoxLayout" >
+                   <property name="margin" >
+                    <number>0</number>
+                   </property>
+                   <property name="spacing" >
+                    <number>6</number>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="label" >
+                     <property name="contextMenuPolicy" >
+                      <enum>Qt::NoContextMenu</enum>
+                     </property>
+                     <property name="text" >
+                      <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" color:#ff0000;">Server Port:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+                     </property>
+                     <property name="alignment" >
+                      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                     </property>
+                     <property name="margin" >
+                      <number>-1</number>
+                     </property>
+                     <property name="indent" >
+                      <number>7</number>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLineEdit" name="lineServerPort" >
+                     <property name="sizePolicy" >
+                      <sizepolicy>
+                       <hsizetype>0</hsizetype>
+                       <vsizetype>0</vsizetype>
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="maximumSize" >
+                      <size>
+                       <width>50</width>
+                       <height>16777215</height>
+                      </size>
+                     </property>
+                     <property name="cursor" >
+                      <cursor>4</cursor>
+                     </property>
+                     <property name="contextMenuPolicy" >
+                      <enum>Qt::NoContextMenu</enum>
+                     </property>
+                     <property name="toolTip" >
+                      <string>Port on which users and other servers can communicate with your server</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <spacer>
+                   <property name="orientation" >
+                    <enum>Qt::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" >
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
                </item>
-               <item>
-                <widget class="QLabel" name="label_5" >
-                 <property name="layoutDirection" >
-                  <enum>Qt::LeftToRight</enum>
+               <item row="1" column="0" colspan="3" >
+                <layout class="QHBoxLayout" >
+                 <property name="margin" >
+                  <number>0</number>
                  </property>
-                 <property name="text" >
-                  <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" color:#ff0000;">Required Fields&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+                 <property name="spacing" >
+                  <number>6</number>
                  </property>
-                 <property name="alignment" >
-                  <set>Qt::AlignCenter</set>
+                 <item>
+                  <widget class="QLabel" name="label_1" >
+                   <property name="contextMenuPolicy" >
+                    <enum>Qt::NoContextMenu</enum>
+                   </property>
+                   <property name="text" >
+                    <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Contact Info:&lt;/p>&lt;/body>&lt;/html></string>
+                   </property>
+                   <property name="alignment" >
+                    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineServerContact" >
+                   <property name="cursor" >
+                    <cursor>4</cursor>
+                   </property>
+                   <property name="contextMenuPolicy" >
+                    <enum>Qt::NoContextMenu</enum>
+                   </property>
+                   <property name="toolTip" >
+                    <string>Email address at which you may be reached if there is a problem with your server</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item row="0" column="0" colspan="3" >
+                <layout class="QHBoxLayout" >
+                 <property name="margin" >
+                  <number>0</number>
                  </property>
-                </widget>
+                 <property name="spacing" >
+                  <number>6</number>
+                 </property>
+                 <item>
+                  <widget class="QLabel" name="label_2" >
+                   <property name="contextMenuPolicy" >
+                    <enum>Qt::NoContextMenu</enum>
+                   </property>
+                   <property name="text" >
+                    <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" color:#ff0000;">Nickname:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+                   </property>
+                   <property name="alignment" >
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                   </property>
+                   <property name="margin" >
+                    <number>-1</number>
+                   </property>
+                   <property name="indent" >
+                    <number>13</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineServerNickname" >
+                   <property name="cursor" >
+                    <cursor>4</cursor>
+                   </property>
+                   <property name="contextMenuPolicy" >
+                    <enum>Qt::NoContextMenu</enum>
+                   </property>
+                   <property name="toolTip" >
+                    <string>Name of your server</string>
+                   </property>
+                   <property name="text" >
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </item>
               </layout>
              </widget>
@@ -1685,7 +1675,7 @@
            <property name="title" >
             <string>Alternate Tor Configuration File</string>
            </property>
-           <layout class="QVBoxLayout" >
+           <layout class="QHBoxLayout" >
             <property name="margin" >
              <number>9</number>
             </property>
@@ -1693,52 +1683,42 @@
              <number>6</number>
             </property>
             <item>
-             <layout class="QHBoxLayout" >
-              <property name="margin" >
-               <number>0</number>
+             <widget class="QLineEdit" name="lineTorConfig" >
+              <property name="enabled" >
+               <bool>true</bool>
               </property>
-              <property name="spacing" >
-               <number>6</number>
+              <property name="cursor" >
+               <cursor>4</cursor>
               </property>
-              <item>
-               <widget class="QLineEdit" name="lineTorConfig" >
-                <property name="enabled" >
-                 <bool>true</bool>
-                </property>
-                <property name="cursor" >
-                 <cursor>4</cursor>
-                </property>
-                <property name="contextMenuPolicy" >
-                 <enum>Qt::NoContextMenu</enum>
-                </property>
-                <property name="toolTip" >
-                 <string>Start Tor with the specified configuration file (torrc)</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="btnBrowseTorConfig" >
-                <property name="enabled" >
-                 <bool>true</bool>
-                </property>
-                <property name="minimumSize" >
-                 <size>
-                  <width>0</width>
-                  <height>30</height>
-                 </size>
-                </property>
-                <property name="contextMenuPolicy" >
-                 <enum>Qt::NoContextMenu</enum>
-                </property>
-                <property name="toolTip" >
-                 <string>Select path to Tor configuration file</string>
-                </property>
-                <property name="text" >
-                 <string>Browse</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
+              <property name="contextMenuPolicy" >
+               <enum>Qt::NoContextMenu</enum>
+              </property>
+              <property name="toolTip" >
+               <string>Start Tor with the specified configuration file (torrc)</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnBrowseTorConfig" >
+              <property name="enabled" >
+               <bool>true</bool>
+              </property>
+              <property name="minimumSize" >
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="contextMenuPolicy" >
+               <enum>Qt::NoContextMenu</enum>
+              </property>
+              <property name="toolTip" >
+               <string>Select path to Tor configuration file</string>
+              </property>
+              <property name="text" >
+               <string>Browse</string>
+              </property>
+             </widget>
             </item>
            </layout>
           </widget>
