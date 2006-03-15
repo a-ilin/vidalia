@@ -100,8 +100,11 @@ void
 AboutDialog::show()
 {
   /* Access the TorControl object to retrieve version */
-  ui.lblTorVersion->setText(_torControl->getTorVersion());
-
+  if (_torControl->isRunning()) {
+    ui.lblTorVersion->setText(_torControl->getTorVersion());
+  } else {
+    ui.lblTorVersion->setText("<Not Running>");
+  }
   QDialog::show();
 }
 

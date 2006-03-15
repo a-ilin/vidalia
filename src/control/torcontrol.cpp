@@ -292,7 +292,7 @@ TorControl::getTorVersion(QString *errmsg)
   if (getInfo("version", ver, errmsg)) {
     return ver;
   }
-  return "<unknown>";
+  return "<Unavailable>";
 }
 
 /** Sets an event and its handler. If add is true, then the event is added,
