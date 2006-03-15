@@ -26,25 +26,18 @@
 
 #include <QList>
 #include <QUrl>
-#include <QUdpSocket>
 
 #include "net.h"
 #include "http.h"
 
-#include <QtDebug>
 
 /** Returns the IP address of the local machine. */
 QHostAddress
 net_local_address()
 {
-  QUdpSocket localSock;
-  //QAbstractSocket localSock(QAbstractSocket::UdpSocket, 0);
-  localSock.connectToHost("18.0.0.1", 9);
-  localSock.waitForConnected();
+  QAbstractSocket localSock(QAbstractSocket::TcpSocket, 0);
   QHostAddress localAddr = localSock.localAddress();
-  qDebug() << localAddr.toString();
   if (localAddr.isNull()) {
-    qDebug("Is null!");
     return QHostAddress::LocalHost;
   }
   return localAddr;
