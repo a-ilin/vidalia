@@ -28,7 +28,7 @@ UI_DIR  = src
 MOC_DIR = src
 
 TEMPLATE = app
-CONFIG  += qt thread debug warn_on
+CONFIG  += qt thread warn_on
 QT      += network
 
 !macx {
