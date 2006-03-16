@@ -80,6 +80,9 @@ MainWindow::MainWindow()
   /* Create a new BandwidthGraph object so we can monitor bandwidth usage */
   Qt::WFlags bw_flags = (Qt::Tool | Qt::WindowStaysOnTopHint);
   _bandwidthGraph = new BandwidthGraph(_torControl, this, bw_flags);
+ 
+  /* Create a new HelpBrowser object so we can display help to the user */
+  _helpBrowser = new HelpBrowser(this);
   
   /* Put an icon in the system tray to indicate the status of Tor */
   _trayIcon = new TrayIcon(QPixmap(IMG_TOR_STOPPED),
@@ -185,6 +188,10 @@ MainWindow::createActions()
   _messageAct = new QAction(tr("Message Log"), this);
   connect(_messageAct, SIGNAL(triggered()),
       this, SLOT(showMessageLog()));
+
+  _helpAct = new QAction(tr("Help"), this);
+  connect(_helpAct, SIGNAL(triggered()), 
+      this, SLOT(showHelp()));
 }
 
 /**
@@ -203,6 +210,7 @@ MainWindow::createMenus()
   _trayMenu->addAction(_messageAct);
   _trayMenu->addSeparator();
   _trayMenu->addAction(_configAct);
+  _trayMenu->addAction(_helpAct);
   _trayMenu->addAction(_aboutAct);
   _trayMenu->addSeparator();
   _trayMenu->addAction(_exitAct);
@@ -238,6 +246,7 @@ MainWindow::createMenuBar()
   _viewMenu->addAction(_messageAct);
   _viewMenu->addAction(_configAct);
   _helpMenu = _menuBar->addMenu(tr("Help"));
+  _helpMenu->addAction(_helpAct);
   _helpMenu->addAction(_aboutAct);
 #endif
 }
@@ -447,6 +456,19 @@ MainWindow::showConfig()
   } else {
     configDialog->activateWindow();
     configDialog->raise();
+  }
+}
+
+/** Shows Help Browser. If the browser is already displayed, the existing
+ * instance will be brought to the foreground. */
+void
+MainWindow::showHelp()
+{
+  if(!_helpBrowser->isVisible()) {
+    _helpBrowser->show();
+  } else {
+    _helpBrowser->activateWindow();
+    _helpBrowser->raise();
   }
 }
 

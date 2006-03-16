@@ -16,12 +16,10 @@
         <file>tor_off32.png</file>
         <file>tor_on128.png</file>
         <file>tor_on32.png</file>
-        <!--
         <file>forward.png</file>
         <file>back.png</file>
         <file>home.png</file>
         <file>search.png</file>
-        -->
     </qresource>
     <qresource prefix="/docs">
         <file>short_license.txt</file>

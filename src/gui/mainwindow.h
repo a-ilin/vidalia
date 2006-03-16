@@ -36,6 +36,7 @@
 #include "log/messagelog.h"
 #include "bwgraph/bwgraph.h"
 #include "config/configdialog.h"
+#include "help/browser/helpbrowser.h"
 
 
 class MainWindow : public QMainWindow
@@ -73,6 +74,8 @@ private slots:
   void showBandwidthGraph();
   /** Called when the user selects "Configuration" from the menu. */
   void showConfig();
+  /** Called when the user selects "Help" from the menu. */
+  void showHelp();
   /** Called when the user exits Vidalia. */
   void close();
 
@@ -95,10 +98,12 @@ private:
   MessageLog* _messageLog;
   /** A BandwidthGraph object which handles monitoring Tor bandwidth usage */
   BandwidthGraph* _bandwidthGraph;
+  /** A HelpBrowser object which handles displaying help files */
+  HelpBrowser* _helpBrowser;
   /** A TorControl object that handles communication with Tor */
   TorControl* _torControl; 
   /** Instance of a tray icon that will appear in the system tray */
-  TrayIcon* _trayIcon; 
+  TrayIcon* _trayIcon;
   
   /** Define the popup menus for the system tray icon */
   QMenu* _trayMenu;
@@ -110,6 +115,7 @@ private:
   QAction* _exitAct;
   QAction* _bandwidthAct;
   QAction* _messageAct;
+  QAction* _helpAct;
 
 /* GUI elements unique on Mac so we can use the system menubar */
 #if defined(Q_WS_MAC)
