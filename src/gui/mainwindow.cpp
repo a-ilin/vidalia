@@ -240,7 +240,8 @@ MainWindow::createMenuBar()
   _stopAct->setShortcut(tr("Ctrl+T"));
   _bandwidthAct->setShortcut(tr("Ctrl+B"));
   _messageAct->setShortcut(tr("Ctrl+L"));
-  
+  _helpAct->setShortcut(tr("Ctrl+?"));
+
   /* The File, Help, and Configure menus will get merged into the application
    * menu by Qt. */
    if (_menuBar) delete _menuBar;
@@ -255,6 +256,7 @@ MainWindow::createMenuBar()
   _viewMenu->addAction(_messageAct);
   _viewMenu->addAction(_configAct);
   _helpMenu = _menuBar->addMenu(tr("Help"));
+  _helpAct->setText(tr("Vidalia Help"));
   _helpMenu->addAction(_helpAct);
   _helpMenu->addAction(_aboutAct);
 #endif
