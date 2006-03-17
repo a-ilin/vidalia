@@ -1,0 +1,18 @@
+
+Instruction for Building and Installing Vidalia from Source
+
+   1. Make sure you have Qt 4.1 and Tor 0.1.1.13 or later installed.
+   
+   2. Run qmake && make
+   
+   3. When the previous command finishes, Vidalia's binary will be
+      placed in the bin/ directory.
+   
+   4. Optionally, you can run make install to install Vidalia into
+      your /usr/local/bin/ directory. 
+
+
+NOTE: If you get linker errors like bin/ld: cannot find -lQtGui_debug, then
+you will need to replace the qmake command in Step 2 with qmake -config
+release to avoid linking against the debug versions of Qt's libraries.
+
