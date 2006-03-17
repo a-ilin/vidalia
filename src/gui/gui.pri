@@ -30,11 +30,11 @@ RESOURCES += $$PWD/res/vidalia.qrc
 
 macx {
   # Set the application's icon file
-  ICON = $$PWD/res/vidalia.icns
+  ICON = $$PWD/res/icons/vidalia.icns
   
   # Add in additional applications icon files
-  icons.files = $$PWD/res/tor_on.icns \
-                $$PWD/res/tor_off.icns
+  icons.files = $$PWD/res/icons/tor-on.icns \
+                $$PWD/res/icons/tor-off.icns
   icons.path = Contents/Resources
   QMAKE_BUNDLE_DATA += icons
   

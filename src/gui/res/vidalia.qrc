@@ -1,36 +1,61 @@
 <RCC>
-    <qresource prefix="/docs" >
+    <qresource prefix="/docs">
         <file>short_license.txt</file>
     </qresource>
-    <qresource prefix="/images" >
-        <file>config_general.png</file>
-        <file>edit-clear.png</file>
-        <file>edit-copy.png</file>
-        <file>edit-select-all.png</file>
-        <file>emblem-system.png</file>
-        <file>emblem-unreadable.png</file>
-        <file>format-justify-fill.png</file>
-        <file>go-home.png</file>
-        <file>go-next.png</file>
-        <file>go-previous.png</file>
-        <file>help-browser.png</file>
-        <file>media-floppy.png</file>
-        <file>msg_debug.png</file>
-        <file>msg_error.png</file>
-        <file>msg_info.png</file>
-        <file>msg_notice.png</file>
-        <file>msg_warn.png</file>
-        <file>network-server.png</file>
-        <file>preferences-system.png</file>
-        <file>qt_logo.png</file>
-        <file>save-all.png</file>
-        <file>system-search.png</file>
-        <file>tor_logo128.png</file>
-        <file>tor_logo16.png</file>
-        <file>tor_logo32.png</file>
-        <file>tor_off32.png</file>
-        <file>tor_on128.png</file>
-        <file>tor_on32.png</file>
-        <file>utilities-system-monitor.png</file>
+    <qresource prefix="/images/16x16">
+        <file>16x16/emblem-unreadable.png</file>
+        <file>16x16/format-justify-fill.png</file>
+        <file>16x16/go-next.png</file>
+        <file>16x16/go-previous.png</file>
+        <file>16x16/help-browser.png</file>
+        <file>16x16/msg-debug.png</file>
+        <file>16x16/msg-error.png</file>
+        <file>16x16/msg-info.png</file>
+        <file>16x16/msg-notice.png</file>
+        <file>16x16/msg-warn.png</file>
+        <file>16x16/preferences-system.png</file>
+        <file>16x16/tor-logo.png</file>
+        <file>16x16/tor-off.png</file>
+        <file>16x16/tor-off-gray.png</file>
+        <file>16x16/tor-on.png</file>
+        <file>16x16/tor-on-gray.png</file>
+        <file>16x16/utilities-system-monitor.png</file>
+    </qresource>
+    <qresource prefix="/images/22x22">
+        <file>22x22/edit-clear.png</file>
+        <file>22x22/edit-copy.png</file>
+        <file>22x22/edit-select-all.png</file>
+        <file>22x22/emblem-system.png</file>
+        <file>22x22/emblem-unreadable.png</file>
+        <file>22x22/format-justify-fill.png</file>
+        <file>22x22/go-home.png</file>
+        <file>22x22/go-next.png</file>
+        <file>22x22/go-previous.png</file>
+        <file>22x22/help-browser.png</file>
+        <file>22x22/media-floppy.png</file>
+        <file>22x22/network-server.png</file>
+        <file>22x22/preferences-system.png</file>
+        <file>22x22/save-all.png</file>
+        <file>22x22/system-search.png</file>
+        <file>22x22/utilities-system-monitor.png</file>
+    </qresource>
+    <qresource prefix="/images/32x32">
+        <file>32x32/tor-logo.png</file>
+        <file>32x32/tor-off.png</file>
+        <file>32x32/tor-on.png</file>
+    </qresource>
+    <qresource prefix="/images/48x48">
+        <file>48x48/emblem-system.png</file>
+        <file>48x48/network-server.png</file>
+        <file>48x48/preferences-system.png</file>
+        <file>48x48/tor-logo.png</file>
+        <file>48x48/tor-off.png</file>
+        <file>48x48/tor-on.png</file>
+    </qresource>
+    <qresource prefix="/images/128x128">
+        <file>128x128/qt-logo.png</file>
+        <file>128x128/tor-logo.png</file>
+        <file>128x128/tor-off.png</file>
+        <file>128x128/tor-on.png</file>
     </qresource>
 </RCC>

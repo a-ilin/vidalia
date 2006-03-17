@@ -36,23 +36,23 @@
 
 #include "mainwindow.h"
 
-#define IMG_START          ":/images/tor_on32.png"
-#define IMG_STOP           ":/images/tor_off32.png"
-#define IMG_BWGRAPH        ":/images/utilities-system-monitor.png"
-#define IMG_MESSAGELOG     ":/images/format-justify-fill.png"
-#define IMG_CONFIG         ":/images/preferences-system.png"
-#define IMG_HELP           ":/images/help-browser.png"
-#define IMG_ABOUT          ":/images/tor_logo32.png"
-#define IMG_EXIT           ":/images/emblem-unreadable.png"
+#define IMG_START          ":/images/16x16/16x16/tor-on.png"
+#define IMG_STOP           ":/images/16x16/16x16/tor-off.png"
+#define IMG_BWGRAPH        ":/images/16x16/16x16/utilities-system-monitor.png"
+#define IMG_MESSAGELOG     ":/images/16x16/16x16/format-justify-fill.png"
+#define IMG_CONFIG         ":/images/16x16/16x16/preferences-system.png"
+#define IMG_HELP           ":/images/16x16/16x16/help-browser.png"
+#define IMG_ABOUT          ":/images/16x16/16x16/tor-logo.png"
+#define IMG_EXIT           ":/images/16x16/16x16/emblem-unreadable.png"
 
 /* On Mac, we go straight to Carbon to load our dock images from .icns files */
 #if defined(Q_WS_MAC)
 #include "dock/dock.h"
-#define IMG_TOR_STOPPED    "tor_off"
-#define IMG_TOR_RUNNING    "tor_on"
+#define IMG_TOR_STOPPED    "tor-off"
+#define IMG_TOR_RUNNING    "tor-on"
 #else
-#define IMG_TOR_STOPPED    ":/images/tor_off32.png"
-#define IMG_TOR_RUNNING    ":/images/tor_on32.png"
+#define IMG_TOR_STOPPED    ":/images/16x16/16x16/tor-off.png"
+#define IMG_TOR_RUNNING    ":/images/16x16/16x16/tor-on.png"
 #endif
 
 

@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>628</width>
-    <height>451</height>
+    <width>685</width>
+    <height>562</height>
    </rect>
   </property>
   <property name="sizePolicy" >
@@ -309,7 +309,7 @@
    <string>Vidalia Help</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="..\..\res\vidalia.qrc" >:/images/help-browser.png</iconset>
+   <iconset resource="..\..\res\vidalia.qrc" >:/images/16x16/16x16/help-browser.png</iconset>
   </property>
   <property name="statusTip" >
    <string/>
@@ -341,13 +341,13 @@
       <property name="minimumSize" >
        <size>
         <width>450</width>
-        <height>49</height>
+        <height>55</height>
        </size>
       </property>
       <property name="maximumSize" >
        <size>
         <width>16777215</width>
-        <height>49</height>
+        <height>55</height>
        </size>
       </property>
       <property name="contextMenuPolicy" >
@@ -368,16 +368,24 @@
        </property>
        <item>
         <widget class="QToolButton" name="btnCloseSearch" >
+         <property name="sizePolicy" >
+          <sizepolicy>
+           <hsizetype>5</hsizetype>
+           <vsizetype>5</vsizetype>
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="minimumSize" >
           <size>
-           <width>22</width>
-           <height>22</height>
+           <width>0</width>
+           <height>0</height>
           </size>
          </property>
          <property name="maximumSize" >
           <size>
-           <width>22</width>
-           <height>22</height>
+           <width>24</width>
+           <height>24</height>
           </size>
          </property>
          <property name="contextMenuPolicy" >
@@ -387,7 +395,7 @@
           <string/>
          </property>
          <property name="icon" >
-          <iconset resource="..\..\res\vidalia.qrc" >:/images/emblem-unreadable.png</iconset>
+          <iconset resource="..\..\res\vidalia.qrc" >:/images/22x22/22x22/emblem-unreadable.png</iconset>
          </property>
          <property name="iconSize" >
           <size>
@@ -432,7 +440,7 @@
           <string>Find Next</string>
          </property>
          <property name="icon" >
-          <iconset/>
+          <iconset resource="..\..\res\vidalia.qrc" >:/images/16x16/16x16/go-next.png</iconset>
          </property>
         </widget>
        </item>
@@ -445,7 +453,7 @@
           <string>Find Previous</string>
          </property>
          <property name="icon" >
-          <iconset/>
+          <iconset resource="..\..\res\vidalia.qrc" >:/images/16x16/16x16/go-previous.png</iconset>
          </property>
         </widget>
        </item>
@@ -556,8 +564,8 @@
    <property name="geometry" >
     <rect>
      <x>0</x>
-     <y>429</y>
-     <width>628</width>
+     <y>540</y>
+     <width>685</width>
      <height>22</height>
     </rect>
    </property>
@@ -593,7 +601,7 @@
   </widget>
   <action name="actionBack" >
    <property name="icon" >
-    <iconset resource="..\..\res\vidalia.qrc" >:/images/go-previous.png</iconset>
+    <iconset resource="..\..\res\vidalia.qrc" >:/images/22x22/22x22/go-previous.png</iconset>
    </property>
    <property name="text" >
     <string>Back</string>
@@ -618,7 +626,7 @@
   </action>
   <action name="actionForward" >
    <property name="icon" >
-    <iconset resource="..\..\res\vidalia.qrc" >:/images/go-next.png</iconset>
+    <iconset resource="..\..\res\vidalia.qrc" >:/images/22x22/22x22/go-next.png</iconset>
    </property>
    <property name="text" >
     <string>Forward</string>
@@ -643,7 +651,7 @@
   </action>
   <action name="actionHome" >
    <property name="icon" >
-    <iconset resource="..\..\res\vidalia.qrc" >:/images/go-home.png</iconset>
+    <iconset resource="..\..\res\vidalia.qrc" >:/images/22x22/22x22/go-home.png</iconset>
    </property>
    <property name="text" >
     <string>Home</string>
@@ -668,7 +676,7 @@
   </action>
   <action name="actionSearch" >
    <property name="icon" >
-    <iconset resource="..\..\res\vidalia.qrc" >:/images/system-search.png</iconset>
+    <iconset resource="..\..\res\vidalia.qrc" >:/images/22x22/22x22/system-search.png</iconset>
    </property>
    <property name="text" >
     <string>Search</string>
@@ -693,7 +701,7 @@
   </action>
   <action name="actionClose" >
    <property name="icon" >
-    <iconset resource="..\..\res\vidalia.qrc" >:/images/emblem-unreadable.png</iconset>
+    <iconset resource="..\..\res\vidalia.qrc" >:/images/22x22/22x22/emblem-unreadable.png</iconset>
    </property>
    <property name="text" >
     <string>Close</string>

@@ -295,7 +295,7 @@
    <string>Configure Settings</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="..\res\vidalia.qrc" >:/images/preferences-system.png</iconset>
+   <iconset resource="..\res\vidalia.qrc" >:/images/16x16/16x16/preferences-system.png</iconset>
   </property>
   <property name="sizeGripEnabled" >
    <bool>true</bool>
@@ -643,7 +643,7 @@
          <string>General</string>
         </property>
         <property name="icon" >
-         <iconset resource="..\res\vidalia.qrc" >:/images/config_general.png</iconset>
+         <iconset resource="..\res\vidalia.qrc" >:/images/48x48/48x48/preferences-system.png</iconset>
         </property>
        </item>
        <item>
@@ -651,7 +651,7 @@
          <string>Server</string>
         </property>
         <property name="icon" >
-         <iconset resource="..\res\vidalia.qrc" >:/images/network-server.png</iconset>
+         <iconset resource="..\res\vidalia.qrc" >:/images/48x48/48x48/network-server.png</iconset>
         </property>
        </item>
        <item>
@@ -659,7 +659,7 @@
          <string>Advanced</string>
         </property>
         <property name="icon" >
-         <iconset resource="..\res\vidalia.qrc" >:/images/emblem-system.png</iconset>
+         <iconset resource="..\res\vidalia.qrc" >:/images/48x48/48x48/emblem-system.png</iconset>
         </property>
        </item>
       </widget>
