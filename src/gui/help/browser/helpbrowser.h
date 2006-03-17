@@ -42,6 +42,10 @@ public:
   /** Default destructor **/
   ~HelpBrowser();
 
+public:
+  /** Called when the user triggers the close action */
+  void close();
+
 protected:
   /** Catches the close event when the user clicks on the X in the titlebar */
   void closeEvent(QCloseEvent *event);

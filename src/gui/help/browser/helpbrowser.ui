@@ -8,13 +8,21 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>552</width>
-    <height>380</height>
+    <width>628</width>
+    <height>451</height>
    </rect>
+  </property>
+  <property name="sizePolicy" >
+   <sizepolicy>
+    <hsizetype>5</hsizetype>
+    <vsizetype>5</vsizetype>
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="minimumSize" >
    <size>
-    <width>230</width>
+    <width>0</width>
     <height>0</height>
    </size>
   </property>
@@ -301,7 +309,7 @@
    <string>Vidalia Help</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="..\..\res\vidalia.qrc" >:/images/tor_logo16.png</iconset>
+   <iconset resource="..\..\res\vidalia.qrc" >:/images/help-browser.png</iconset>
   </property>
   <property name="statusTip" >
    <string/>
@@ -321,14 +329,136 @@
      <number>6</number>
     </property>
     <item>
-     <widget class="QSplitter" name="splitter" >
+     <widget class="QFrame" name="frmSearch" >
       <property name="sizePolicy" >
        <sizepolicy>
         <hsizetype>5</hsizetype>
-        <vsizetype>5</vsizetype>
+        <vsizetype>0</vsizetype>
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
+      </property>
+      <property name="minimumSize" >
+       <size>
+        <width>450</width>
+        <height>49</height>
+       </size>
+      </property>
+      <property name="maximumSize" >
+       <size>
+        <width>16777215</width>
+        <height>49</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy" >
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <property name="frameShape" >
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow" >
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" >
+       <property name="margin" >
+        <number>9</number>
+       </property>
+       <property name="spacing" >
+        <number>6</number>
+       </property>
+       <item>
+        <widget class="QToolButton" name="btnCloseSearch" >
+         <property name="minimumSize" >
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="contextMenuPolicy" >
+          <enum>Qt::NoContextMenu</enum>
+         </property>
+         <property name="text" >
+          <string/>
+         </property>
+         <property name="icon" >
+          <iconset resource="..\..\res\vidalia.qrc" >:/images/emblem-unreadable.png</iconset>
+         </property>
+         <property name="iconSize" >
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="toolButtonStyle" >
+          <enum>Qt::ToolButtonIconOnly</enum>
+         </property>
+         <property name="autoRaise" >
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label" >
+         <property name="contextMenuPolicy" >
+          <enum>Qt::NoContextMenu</enum>
+         </property>
+         <property name="text" >
+          <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:11pt; color:#000000;">Search For:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+         </property>
+         <property name="buddy" >
+          <cstring></cstring>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineSearch" >
+         <property name="contextMenuPolicy" >
+          <enum>Qt::NoContextMenu</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnFindNext" >
+         <property name="contextMenuPolicy" >
+          <enum>Qt::NoContextMenu</enum>
+         </property>
+         <property name="text" >
+          <string>Find Next</string>
+         </property>
+         <property name="icon" >
+          <iconset/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnFindPrev" >
+         <property name="contextMenuPolicy" >
+          <enum>Qt::NoContextMenu</enum>
+         </property>
+         <property name="text" >
+          <string>Find Previous</string>
+         </property>
+         <property name="icon" >
+          <iconset/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSplitter" name="splitter" >
+      <property name="minimumSize" >
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
       </property>
       <property name="orientation" >
        <enum>Qt::Horizontal</enum>
@@ -426,8 +556,8 @@
    <property name="geometry" >
     <rect>
      <x>0</x>
-     <y>358</y>
-     <width>552</width>
+     <y>429</y>
+     <width>628</width>
      <height>22</height>
     </rect>
    </property>
@@ -448,6 +578,9 @@
    <property name="orientation" >
     <enum>Qt::Horizontal</enum>
    </property>
+   <property name="toolButtonStyle" >
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
    <attribute name="toolBarArea" >
     <number>4</number>
    </attribute>
@@ -455,16 +588,18 @@
    <addaction name="actionForward" />
    <addaction name="actionHome" />
    <addaction name="actionSearch" />
+   <addaction name="separator" />
+   <addaction name="actionClose" />
   </widget>
   <action name="actionBack" >
    <property name="icon" >
-    <iconset resource="..\..\res\vidalia.qrc" >:/images/back.png</iconset>
+    <iconset resource="..\..\res\vidalia.qrc" >:/images/go-previous.png</iconset>
    </property>
    <property name="text" >
     <string>Back</string>
    </property>
    <property name="statusTip" >
-    <string/>
+    <string>Move to previous page (Backspace)</string>
    </property>
    <property name="font" >
     <font>
@@ -477,16 +612,19 @@
      <strikeout>false</strikeout>
     </font>
    </property>
+   <property name="shortcut" >
+    <string>Backspace</string>
+   </property>
   </action>
   <action name="actionForward" >
    <property name="icon" >
-    <iconset resource="..\..\res\vidalia.qrc" >:/images/forward.png</iconset>
+    <iconset resource="..\..\res\vidalia.qrc" >:/images/go-next.png</iconset>
    </property>
    <property name="text" >
     <string>Forward</string>
    </property>
    <property name="statusTip" >
-    <string/>
+    <string>Move to next page (Shift+Backspace)</string>
    </property>
    <property name="font" >
     <font>
@@ -498,15 +636,21 @@
      <underline>false</underline>
      <strikeout>false</strikeout>
     </font>
+   </property>
+   <property name="shortcut" >
+    <string>Shift+Backspace</string>
    </property>
   </action>
   <action name="actionHome" >
    <property name="icon" >
-    <iconset resource="..\..\res\vidalia.qrc" >:/images/home.png</iconset>
+    <iconset resource="..\..\res\vidalia.qrc" >:/images/go-home.png</iconset>
    </property>
    <property name="text" >
     <string>Home</string>
    </property>
+   <property name="statusTip" >
+    <string>Move to the Home page (Ctrl+H)</string>
+   </property>
    <property name="font" >
     <font>
      <family>Arial</family>
@@ -517,14 +661,20 @@
      <underline>false</underline>
      <strikeout>false</strikeout>
     </font>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+H</string>
    </property>
   </action>
   <action name="actionSearch" >
    <property name="icon" >
-    <iconset resource="..\..\res\vidalia.qrc" >:/images/search.png</iconset>
+    <iconset resource="..\..\res\vidalia.qrc" >:/images/system-search.png</iconset>
    </property>
    <property name="text" >
     <string>Search</string>
+   </property>
+   <property name="statusTip" >
+    <string>Search for a word or phrase (Ctrl+F)</string>
    </property>
    <property name="font" >
     <font>
@@ -536,6 +686,34 @@
      <underline>false</underline>
      <strikeout>false</strikeout>
     </font>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actionClose" >
+   <property name="icon" >
+    <iconset resource="..\..\res\vidalia.qrc" >:/images/emblem-unreadable.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Close</string>
+   </property>
+   <property name="statusTip" >
+    <string>Close Vidalia Help</string>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <underline>false</underline>
+     <strikeout>false</strikeout>
+    </font>
+   </property>
+   <property name="shortcut" >
+    <string>Esc</string>
    </property>
   </action>
  </widget>
@@ -544,5 +722,70 @@
   <include location="../../log/res/vidalia.qrc" />
   <include location="../../res/vidalia.qrc" />
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>actionSearch</sender>
+   <signal>triggered()</signal>
+   <receiver>lineSearch</receiver>
+   <slot>setFocus()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>200</x>
+     <y>108</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnCloseSearch</sender>
+   <signal>clicked()</signal>
+   <receiver>frmSearch</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>34</x>
+     <y>107</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>243</x>
+     <y>108</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSearch</sender>
+   <signal>triggered()</signal>
+   <receiver>frmSearch</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>243</x>
+     <y>108</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionClose</sender>
+   <signal>triggered()</signal>
+   <receiver>HelpBrowser</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>317</x>
+     <y>248</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

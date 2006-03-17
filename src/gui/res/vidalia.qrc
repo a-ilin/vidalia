@@ -1,27 +1,36 @@
 <RCC>
+    <qresource prefix="/docs" >
+        <file>short_license.txt</file>
+    </qresource>
     <qresource prefix="/images" >
+        <file>config_general.png</file>
+        <file>edit-clear.png</file>
+        <file>edit-copy.png</file>
+        <file>edit-select-all.png</file>
+        <file>emblem-system.png</file>
+        <file>emblem-unreadable.png</file>
+        <file>format-justify-fill.png</file>
+        <file>go-home.png</file>
+        <file>go-next.png</file>
+        <file>go-previous.png</file>
+        <file>help-browser.png</file>
+        <file>media-floppy.png</file>
         <file>msg_debug.png</file>
         <file>msg_error.png</file>
         <file>msg_info.png</file>
         <file>msg_notice.png</file>
         <file>msg_warn.png</file>
-        <file>config_general.png</file>
-        <file>config_server.png</file>
-        <file>config_advanced.png</file>
+        <file>network-server.png</file>
+        <file>preferences-system.png</file>
         <file>qt_logo.png</file>
+        <file>save-all.png</file>
+        <file>system-search.png</file>
         <file>tor_logo128.png</file>
-        <file>tor_logo32.png</file>
         <file>tor_logo16.png</file>
-        <file>tor_logo32.ico</file>
+        <file>tor_logo32.png</file>
         <file>tor_off32.png</file>
         <file>tor_on128.png</file>
         <file>tor_on32.png</file>
-        <file>forward.png</file>
-        <file>back.png</file>
-        <file>home.png</file>
-        <file>search.png</file>
-    </qresource>
-    <qresource prefix="/docs">
-        <file>short_license.txt</file>
+        <file>utilities-system-monitor.png</file>
     </qresource>
 </RCC>

@@ -295,7 +295,7 @@
    <string>Configure Settings</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="..\res\vidalia.qrc" >:/images/tor_logo16.png</iconset>
+   <iconset resource="..\res\vidalia.qrc" >:/images/preferences-system.png</iconset>
   </property>
   <property name="sizeGripEnabled" >
    <bool>true</bool>
@@ -651,7 +651,7 @@
          <string>Server</string>
         </property>
         <property name="icon" >
-         <iconset resource="..\res\vidalia.qrc" >:/images/config_server.png</iconset>
+         <iconset resource="..\res\vidalia.qrc" >:/images/network-server.png</iconset>
         </property>
        </item>
        <item>
@@ -659,7 +659,7 @@
          <string>Advanced</string>
         </property>
         <property name="icon" >
-         <iconset resource="..\res\vidalia.qrc" >:/images/config_advanced.png</iconset>
+         <iconset resource="..\res\vidalia.qrc" >:/images/emblem-system.png</iconset>
         </property>
        </item>
       </widget>

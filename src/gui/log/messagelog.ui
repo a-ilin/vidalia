@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>718</width>
-    <height>524</height>
+    <width>690</width>
+    <height>513</height>
    </rect>
   </property>
   <property name="palette" >
@@ -295,7 +295,7 @@
    <string>Message Log</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="..\res\vidalia.qrc" >:/images/tor_logo16.png</iconset>
+   <iconset resource="..\res\vidalia.qrc" >:/images/format-justify-fill.png</iconset>
   </property>
   <property name="statusTip" >
    <string/>
@@ -852,59 +852,40 @@
     </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar" >
-   <property name="geometry" >
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>718</width>
-     <height>19</height>
-    </rect>
-   </property>
-   <widget class="QMenu" name="menu_File" >
-    <property name="title" >
-     <string>&amp;File</string>
-    </property>
-    <addaction name="actionSave_All" />
-    <addaction name="actionSave_Selected" />
-    <addaction name="separator" />
-    <addaction name="actionClose" />
-   </widget>
-   <widget class="QMenu" name="menu_Settings" >
-    <property name="title" >
-     <string>&amp;Settings</string>
-    </property>
-    <addaction name="actionMessage_Filters" />
-    <addaction name="actionHistory_Size" />
-   </widget>
-   <widget class="QMenu" name="menu_View" >
-    <property name="title" >
-     <string>&amp;View</string>
-    </property>
-    <addaction name="actionClear" />
-   </widget>
-   <widget class="QMenu" name="menu_Edit" >
-    <property name="title" >
-     <string>&amp;Edit</string>
-    </property>
-    <addaction name="actionCopy" />
-    <addaction name="actionSelect_All" />
-    <addaction name="separator" />
-    <addaction name="actionFind" />
-   </widget>
-   <addaction name="menu_File" />
-   <addaction name="menu_Edit" />
-   <addaction name="menu_View" />
-  </widget>
   <widget class="QStatusBar" name="statusbar" >
    <property name="geometry" >
     <rect>
      <x>0</x>
-     <y>502</y>
-     <width>718</width>
+     <y>491</y>
+     <width>690</width>
      <height>22</height>
     </rect>
    </property>
+  </widget>
+  <widget class="QToolBar" name="toolBar" >
+   <property name="contextMenuPolicy" >
+    <enum>Qt::NoContextMenu</enum>
+   </property>
+   <property name="movable" >
+    <bool>false</bool>
+   </property>
+   <property name="orientation" >
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="toolButtonStyle" >
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea" >
+    <number>4</number>
+   </attribute>
+   <addaction name="actionSave_All" />
+   <addaction name="actionSave_Selected" />
+   <addaction name="actionCopy" />
+   <addaction name="actionSelect_All" />
+   <addaction name="actionFind" />
+   <addaction name="actionClear" />
+   <addaction name="separator" />
+   <addaction name="actionClose" />
   </widget>
   <action name="actionMessage_Filters" >
    <property name="text" >
@@ -948,11 +929,17 @@
    </property>
   </action>
   <action name="actionClear" >
+   <property name="icon" >
+    <iconset resource="..\res\vidalia.qrc" >:/images/edit-clear.png</iconset>
+   </property>
    <property name="text" >
-    <string>Clear History</string>
+    <string>Cl&amp;ear</string>
+   </property>
+   <property name="iconText" >
+    <string>Cl&amp;ear</string>
    </property>
    <property name="statusTip" >
-    <string>Clear all messages from the Message Log</string>
+    <string>Clear all messages from the Message Log (Ctrl+E)</string>
    </property>
    <property name="font" >
     <font>
@@ -970,11 +957,20 @@
    </property>
   </action>
   <action name="actionCopy" >
+   <property name="icon" >
+    <iconset resource="..\res\vidalia.qrc" >:/images/edit-copy.png</iconset>
+   </property>
    <property name="text" >
+    <string>&amp;Copy</string>
+   </property>
+   <property name="iconText" >
+    <string>&amp;Copy</string>
+   </property>
+   <property name="toolTip" >
     <string>Copy</string>
    </property>
    <property name="statusTip" >
-    <string>Copy the selected messages to the clipboard</string>
+    <string>Copy the selected messages to the clipboard (Ctrl+C)</string>
    </property>
    <property name="font" >
     <font>
@@ -992,11 +988,17 @@
    </property>
   </action>
   <action name="actionSelect_All" >
+   <property name="icon" >
+    <iconset resource="..\res\vidalia.qrc" >:/images/edit-select-all.png</iconset>
+   </property>
    <property name="text" >
-    <string>Select All</string>
+    <string>Select &amp;All</string>
+   </property>
+   <property name="iconText" >
+    <string>Select &amp;All</string>
    </property>
    <property name="statusTip" >
-    <string>Select all messages</string>
+    <string>Select all messages (Ctrl+A)</string>
    </property>
    <property name="font" >
     <font>
@@ -1014,6 +1016,9 @@
    </property>
   </action>
   <action name="actionSave_All" >
+   <property name="icon" >
+    <iconset resource="..\res\vidalia.qrc" >:/images/save-all.png</iconset>
+   </property>
    <property name="text" >
     <string>Save All</string>
    </property>
@@ -1033,6 +1038,9 @@
    </property>
   </action>
   <action name="actionSave_Selected" >
+   <property name="icon" >
+    <iconset resource="..\res\vidalia.qrc" >:/images/media-floppy.png</iconset>
+   </property>
    <property name="text" >
     <string>Save Selected</string>
    </property>
@@ -1052,6 +1060,9 @@
    </property>
   </action>
   <action name="actionClose" >
+   <property name="icon" >
+    <iconset resource="..\res\vidalia.qrc" >:/images/emblem-unreadable.png</iconset>
+   </property>
    <property name="text" >
     <string>Close</string>
    </property>
@@ -1070,15 +1081,21 @@
     </font>
    </property>
    <property name="shortcut" >
-    <string>Alt+F4</string>
+    <string>Esc</string>
    </property>
   </action>
   <action name="actionFind" >
+   <property name="icon" >
+    <iconset resource="..\res\vidalia.qrc" >:/images/system-search.png</iconset>
+   </property>
    <property name="text" >
-    <string>Find</string>
+    <string>&amp;Find</string>
+   </property>
+   <property name="iconText" >
+    <string>&amp;Find</string>
    </property>
    <property name="statusTip" >
-    <string>Find all messages containing the search text</string>
+    <string>Find all messages containing the search text (Ctrl+F)</string>
    </property>
    <property name="font" >
     <font>

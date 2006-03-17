@@ -36,6 +36,15 @@
 
 #include "mainwindow.h"
 
+#define IMG_START          ":/images/tor_on32.png"
+#define IMG_STOP           ":/images/tor_off32.png"
+#define IMG_BWGRAPH        ":/images/utilities-system-monitor.png"
+#define IMG_MESSAGELOG     ":/images/format-justify-fill.png"
+#define IMG_CONFIG         ":/images/preferences-system.png"
+#define IMG_HELP           ":/images/help-browser.png"
+#define IMG_ABOUT          ":/images/tor_logo32.png"
+#define IMG_EXIT           ":/images/emblem-unreadable.png"
+
 /* On Mac, we go straight to Carbon to load our dock images from .icns files */
 #if defined(Q_WS_MAC)
 #include "dock/dock.h"
@@ -159,37 +168,37 @@ MainWindow::close()
 void 
 MainWindow::createActions()
 {
-  _startAct = new QAction(tr("Start"), this);
+  _startAct = new QAction(QIcon(IMG_START), tr("Start"), this);
   connect(_startAct, SIGNAL(triggered()),
       this, SLOT(start()));
   _startAct->setEnabled(true);
   
-  _stopAct = new QAction(tr("Stop"), this);
+  _stopAct = new QAction(QIcon(IMG_STOP), tr("Stop"), this);
   connect(_stopAct, SIGNAL(triggered()),
       this, SLOT(stop()));
   _stopAct->setEnabled(false);
 
-  _configAct = new QAction(tr("Configure"), this);
+  _configAct = new QAction(QIcon(IMG_CONFIG), tr("Configure"), this);
   connect(_configAct, SIGNAL(triggered()),
       this, SLOT(showConfig()));
   
-  _aboutAct = new QAction(tr("About"), this);
+  _aboutAct = new QAction(QIcon(IMG_ABOUT), tr("About"), this);
   connect(_aboutAct, SIGNAL(triggered()),
       this, SLOT(showAbout()));
   
-  _exitAct = new QAction(tr("Exit"), this);
+  _exitAct = new QAction(QIcon(IMG_EXIT), tr("Exit"), this);
   connect(_exitAct, SIGNAL(triggered()),
       this, SLOT(close()));
 
-  _bandwidthAct = new QAction(tr("Bandwidth Graph"), this);
+  _bandwidthAct = new QAction(QIcon(IMG_BWGRAPH), tr("Bandwidth Graph"), this);
   connect(_bandwidthAct, SIGNAL(triggered()),
       this, SLOT(showBandwidthGraph()));
 
-  _messageAct = new QAction(tr("Message Log"), this);
+  _messageAct = new QAction(QIcon(IMG_MESSAGELOG), tr("Message Log"), this);
   connect(_messageAct, SIGNAL(triggered()),
       this, SLOT(showMessageLog()));
 
-  _helpAct = new QAction(tr("Help"), this);
+  _helpAct = new QAction(QIcon(IMG_HELP), tr("Help"), this);
   connect(_helpAct, SIGNAL(triggered()), 
       this, SLOT(showHelp()));
 }

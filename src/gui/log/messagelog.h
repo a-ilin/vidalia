@@ -68,15 +68,15 @@ public slots:
   void close();
   
 private slots:
-  /** Called when the user selects File->Save All **/
+  /** Called when the user triggers the save all action **/
   void saveAll();
-  /** Called when the user selects File->Save Selected **/
+  /** Called when the user triggers save selected action **/
   void saveSelected();
-  /** Called when the user selects Edit->Copy or Ctrl-C **/
+  /** Called when the user triggers the copy action **/
   void copy();
-  /** Called when the user selects View->Clear all or Ctrl-E **/
+  /** Called when the user tiggers the clear action **/
   void clear();
-  /** Called when the user selects Edit->Find or Ctrl-F. This will search
+  /** Called when the user triggers the find action. This will search
    * through all currently displayed log entries for text specified by the
    * user, highlighting the entires that contain a match. */
   void find();

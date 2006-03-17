@@ -27,6 +27,10 @@
 #include "helpbrowser.h"
 #include "../../mainwindow.h"
 
+#define LEFT_PANE_INDEX     0
+#define NO_STRETCH          0
+#define MINIMUM_PANE_SIZE   1
+
 /** Constuctor. This will probably do more later */
 HelpBrowser::HelpBrowser(QWidget *parent)
 : QMainWindow(parent)
@@ -34,8 +38,16 @@ HelpBrowser::HelpBrowser(QWidget *parent)
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
 
-  /* Set the width of the treeContents widget to a reasonable default */
-  ui.treeContents->adjustSize();
+  /* Hide Search frame */
+  ui.frmSearch->setHidden(true);
+ 
+  /* Set the splitter pane sizes so that only the txtTopic pane expands
+   * and set to arbitrary sizes (the minimum sizes will take effect */
+  QList<int> sizes;
+  sizes.append(MINIMUM_PANE_SIZE); 
+  sizes.append(MINIMUM_PANE_SIZE);
+  ui.splitter->setSizes(sizes);
+  ui.splitter->setStretchFactor(LEFT_PANE_INDEX, NO_STRETCH);
 }
 
 /** Destructor */
@@ -44,8 +56,20 @@ HelpBrowser::~HelpBrowser()
 
 }
 
-/** Serves the same purpose as MessageLog::close(), but this time responds to
- * when the user clicks on the X in the titlebar */
+/** Overloads the default close() slot, so we can force the parent to become
+ * visible. This only matters on Mac, so we can ensure the correct menubar is
+ * displayed. */
+void
+HelpBrowser::close()
+{
+  MainWindow *p = (MainWindow *)parent();
+  if (p) {
+    p->show();
+  }
+  QMainWindow::close();
+}
+
+/** Responds to when the user closes the form via the 'X' */
 void
 HelpBrowser::closeEvent(QCloseEvent *e)
 {
