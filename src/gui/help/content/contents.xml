@@ -1,4 +1,24 @@
-<Contents name="Vidalia Help Contents" html="index.html">
-  <Topic id="example" name="Example Help Topic" html="foo.html"/>
+<Contents name="Vidalia Help" html="index.html">
+  <Topic id="help" name="Using Vidalia Help" html="help.html"/>
+  <Topic id="running" name="Running Tor" html="running-tor.html">
+    <Topic id="starting-tor" name="Starting and Stopping Tor" html="starting-tor.html"/>
+    <Topic id="monitoring-tor" name="Monitoring Tor's Status" html="starting-tor.html" section="monitoring"/>
+  </Topic>
+  <Topic id="log" name="Message Log" html="log.html">
+    <Topic id="intro" name="Basic Information" html="log.html" section="intro"/>
+    <Topic id="severities" name="Message Severities" html="log.html" section="severities"/>
+    <Topic id="save-to-file" name="Logging to a File" html="log.html" section="tofile"/>
+  </Topic>
+  <Topic id="config" name="Configuring Tor" html="config.html">
+    <Topic id="general" name="General Settings" html="config.html" section="general"/>
+    <Topic id="advanced" name="Advanced Settings" html="config.html" section="advanced"/>
+  </Topic>
+  <Topic id="server" name="Running a Server" html="server.html">
+    <Topic id="intro" name="Basic Setup" html="sever.html" section="intro"/>
+    <Topic id="exitpolicy" name="Exit Policies" html="sever.html" section="exitpolicy"/>
+  </Topic>
+  <Topic id="troubleshooting" name="Troubleshooting" html="troubleshooting.html">
+    <Topic id="starting-tor" name="I Can't Start Tor" html="troubleshooting.html" section="starting"/>
+  </Topic>
 </Contents>
 
