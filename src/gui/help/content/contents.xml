@@ -1,24 +1,23 @@
 <Contents name="Vidalia Help" html="index.html">
-  <Topic id="help" name="Using Vidalia Help" html="help.html"/>
-  <Topic id="running" name="Running Tor" html="running-tor.html">
-    <Topic id="starting-tor" name="Starting and Stopping Tor" html="starting-tor.html"/>
-    <Topic id="monitoring-tor" name="Monitoring Tor's Status" html="starting-tor.html" section="monitoring"/>
+  <Topic id="running" name="Running Tor" html="running.html">
+    <Topic id="starting" name="Starting and Stopping Tor" html="running.html" section="starting"/>
+    <Topic id="monitoring" name="Monitoring Tor's Status" html="running.html" section="monitoring"/>
   </Topic>
   <Topic id="log" name="Message Log" html="log.html">
-    <Topic id="intro" name="Basic Information" html="log.html" section="intro"/>
+    <Topic id="basic" name="Basic Information" html="log.html" section="basic"/>
     <Topic id="severities" name="Message Severities" html="log.html" section="severities"/>
-    <Topic id="save-to-file" name="Logging to a File" html="log.html" section="tofile"/>
+    <Topic id="logfile" name="Logging to a File" html="log.html" section="tofile"/>
   </Topic>
   <Topic id="config" name="Configuring Tor" html="config.html">
     <Topic id="general" name="General Settings" html="config.html" section="general"/>
     <Topic id="advanced" name="Advanced Settings" html="config.html" section="advanced"/>
   </Topic>
   <Topic id="server" name="Running a Server" html="server.html">
-    <Topic id="intro" name="Basic Setup" html="sever.html" section="intro"/>
-    <Topic id="exitpolicy" name="Exit Policies" html="sever.html" section="exitpolicy"/>
+    <Topic id="basic" name="Basic Setup" html="server.html" section="basic"/>
+    <Topic id="exitpolicy" name="Exit Policies" html="server.html" section="exitpolicy"/>
   </Topic>
   <Topic id="troubleshooting" name="Troubleshooting" html="troubleshooting.html">
-    <Topic id="starting-tor" name="I Can't Start Tor" html="troubleshooting.html" section="starting"/>
+    <Topic id="starting" name="I Can't Start Tor" html="troubleshooting.html" section="starting"/>
   </Topic>
 </Contents>
 

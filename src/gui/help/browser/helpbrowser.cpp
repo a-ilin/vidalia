@@ -65,14 +65,32 @@ HelpBrowser::HelpBrowser(QWidget *parent)
   ui.splitter->setSizes(sizes);
   ui.splitter->setStretchFactor(LEFT_PANE_INDEX, NO_STRETCH);
 
+  connect(ui.treeContents,
+          SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)),
+          this, SLOT(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)));
+
+  /* Connect the navigation actions to their slots */
+  connect(ui.actionHome, SIGNAL(triggered()), ui.txtTopic, SLOT(home()));
+
   /* Load the help topics from XML */
   loadContentsFromXml(":/help/contents.xml");
+
+  /* Show the first help topic in the tree */
+  home(); 
 }
 
 /** Destructor */
 HelpBrowser::~HelpBrowser()
 {
 }
+
+/** Goes back to the first help topic in the tree. */
+void
+HelpBrowser::home()
+{
+  ui.treeContents->setCurrentItem(ui.treeContents->topLevelItem(0));
+}
+
 
 /** Load the contents of the help topics tree from the specified XML file. */
 void
@@ -106,8 +124,7 @@ HelpBrowser::loadContents(const QDomDocument *document, QString &errorString)
   }
   
   /* Create the home item */
-  QTreeWidgetItem *home = new QTreeWidgetItem();
-  home->setText(0, root.attribute(ATTRIBUTE_TOPIC_NAME));
+  QTreeWidgetItem *home = createTopicTreeItem(root, 0);
   ui.treeContents->addTopLevelItem(home);
   
   /* Process all top-level help topics */
@@ -122,15 +139,12 @@ HelpBrowser::loadContents(const QDomDocument *document, QString &errorString)
 /** Parse a Topic element and handle all its children recursively. */
 void
 HelpBrowser::parseHelpTopic(const QDomElement &topicElement, 
-                             QTreeWidgetItem *parent)
+                            QTreeWidgetItem *parent)
 {
   /* Check that we have a valid help topic */
   if (isValidTopicElement(topicElement)) {
     /* Create and populate the new topic item in the tree */
-    QTreeWidgetItem *topic = new QTreeWidgetItem(parent);
-    topic->setText(0, topicElement.attribute(ATTRIBUTE_TOPIC_NAME));
-    topic->setData(0, ROLE_TOPIC_ID, topicElement.attribute(ATTRIBUTE_TOPIC_ID));
-    topic->setData(0, ROLE_TOPIC_QRC_PATH, getResourcePath(topicElement));
+    QTreeWidgetItem *topic = createTopicTreeItem(topicElement, parent);
 
     /* Process all its child elements */
     QDomElement child = topicElement.firstChildElement(ELEMENT_TOPIC);
@@ -161,6 +175,26 @@ HelpBrowser::getResourcePath(const QDomElement &topicElement)
     link += "#" + topicElement.attribute(ATTRIBUTE_TOPIC_SECTION);
   }
   return link;
+}
+
+/** Creates a new element to be inserted into the topic tree. */
+QTreeWidgetItem*
+HelpBrowser::createTopicTreeItem(const QDomElement &topicElement, 
+                                 QTreeWidgetItem *parent)
+{
+  QTreeWidgetItem *topic = new QTreeWidgetItem(parent);
+  topic->setText(0, topicElement.attribute(ATTRIBUTE_TOPIC_NAME));
+  topic->setData(0, ROLE_TOPIC_ID, topicElement.attribute(ATTRIBUTE_TOPIC_ID));
+  topic->setData(0, ROLE_TOPIC_QRC_PATH, getResourcePath(topicElement));
+  return topic;
+}
+
+/** Called when the user selects a different item in the topic tree. */
+void
+HelpBrowser::currentItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *prev)
+{
+  Q_UNUSED(prev);
+  ui.txtTopic->setSource(QUrl(current->data(0, ROLE_TOPIC_QRC_PATH).toString()));
 }
 
 /** Overloads the default close() slot, so we can force the parent to become

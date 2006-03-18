@@ -53,6 +53,12 @@ protected:
   /** Catches the close event when the user clicks on the X in the titlebar */
   void closeEvent(QCloseEvent *event);
 
+private slots:
+  /** Called when the user selects a different item in the topic tree. */
+  void currentItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *prev);
+  /** Go back to the first help topic in the tree. */
+  void home();
+  
 private:
   /** Load the contents of the help topics tree from the specified XML file. */
   void loadContentsFromXml(QString xmlFile);
@@ -64,6 +70,10 @@ private:
   bool isValidTopicElement(const QDomElement &topicElement);
   /** Builds a resource path to an html file associated with a help topic. */
   QString getResourcePath(const QDomElement &topicElement);
+  /** Creates a new item to be placed in the topic tree. */
+  QTreeWidgetItem* createTopicTreeItem(const QDomElement &topicElement,
+                                       QTreeWidgetItem *parent);
+
   
   /** Qt Designer generated QObject */
   Ui::HelpBrowser ui;

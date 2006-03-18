@@ -2,6 +2,12 @@
   <qresource prefix="/help">
     <file>contents.dtd</file>
     <file>contents.xml</file>
+    <file alias="index.html">html/index.html</file>
+    <file alias="running.html">html/running.html</file>
+    <file alias="log.html">html/log.html</file>
+    <file alias="config.html">html/config.html</file>
+    <file alias="server.html">html/server.html</file>
+    <file alias="troubleshooting.html">html/troubleshooting.html</file>
   </qresource>
 </RCC>
 
