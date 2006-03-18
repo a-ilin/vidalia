@@ -29,6 +29,9 @@
 
 #include <QMainWindow>
 #include <QCloseEvent>
+#include <QDomDocument>
+#include <QDomElement>
+#include <QTreeWidgetItem>
 
 #include "ui_helpbrowser.h"
 
@@ -51,6 +54,17 @@ protected:
   void closeEvent(QCloseEvent *event);
 
 private:
+  /** Load the contents of the help topics tree from the specified XML file. */
+  void loadContentsFromXml(QString xmlFile);
+  /** Load the contents of the help topics tree from the given DOM document. */
+  bool loadContents(const QDomDocument *document, QString &errorString);
+  /** Parse a Topic element and handle all its children. */
+  void parseHelpTopic(const QDomElement &element, QTreeWidgetItem *parent);
+  /** Returns true if the given Topic element has the necessary attributes. */
+  bool isValidTopicElement(const QDomElement &topicElement);
+  /** Builds a resource path to an html file associated with a help topic. */
+  QString getResourcePath(const QDomElement &topicElement);
+  
   /** Qt Designer generated QObject */
   Ui::HelpBrowser ui;
 };

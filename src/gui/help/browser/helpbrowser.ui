@@ -482,7 +482,7 @@
        </property>
        <property name="minimumSize" >
         <size>
-         <width>100</width>
+         <width>200</width>
          <height>0</height>
         </size>
        </property>
@@ -509,38 +509,8 @@
          <string>Help Topics</string>
         </property>
        </column>
-       <item>
-        <property name="text" >
-         <string>Blah Blah</string>
-        </property>
-        <item>
-         <property name="text" >
-          <string>New Sub Item</string>
-         </property>
-         <item>
-          <property name="text" >
-           <string>New Sub Item</string>
-          </property>
-          <item>
-           <property name="text" >
-            <string>New Sub Item</string>
-           </property>
-           <item>
-            <property name="text" >
-             <string>New Sub Item</string>
-            </property>
-            <item>
-             <property name="text" >
-              <string>New Sub Item</string>
-             </property>
-            </item>
-           </item>
-          </item>
-         </item>
-        </item>
-       </item>
       </widget>
-      <widget class="QTextEdit" name="txtTopic" >
+      <widget class="QTextBrowser" name="txtTopic" >
        <property name="sizePolicy" >
         <sizepolicy>
          <hsizetype>7</hsizetype>

@@ -26,3 +26,4 @@ FORMS += $$PWD/helpbrowser.ui
 HEADERS += $$PWD/helpbrowser.h
 
 SOURCES += $$PWD/helpbrowser.cpp
+
