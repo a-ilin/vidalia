@@ -33,7 +33,7 @@
 #define COL_TIME  0 /** Date/time column */
 #define COL_TYPE  1 /** Message severity type column */
 #define COL_MSG   2 /** Message body column */
-#define ROLE_TYPE 1 /** Role used to store the numeric type */
+#define ROLE_TYPE Qt::UserRole /** Role used to store the numeric type */
 #define COL_TIME_WIDTH 135 /** Default width of date/time column */
 #define COL_TYPE_WIDTH 70 /** Default width of the severity type column */
 
