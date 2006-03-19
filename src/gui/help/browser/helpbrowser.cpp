@@ -195,27 +195,3 @@ HelpBrowser::currentItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *prev)
   ui.txtTopic->setSource(QUrl(current->data(0, ROLE_TOPIC_QRC_PATH).toString()));
 }
 
-/** Overloads the default close() slot, so we can force the parent to become
- * visible. This only matters on Mac, so we can ensure the correct menubar is
- * displayed. */
-void
-HelpBrowser::close()
-{
-  MainWindow *p = (MainWindow *)parent();
-  if (p) {
-    p->show();
-  }
-  QMainWindow::close();
-}
-
-/** Responds to when the user closes the form via the 'X' */
-void
-HelpBrowser::closeEvent(QCloseEvent *e)
-{
-  MainWindow *p = (MainWindow *)parent();
-  if (p) {
-    p->show();
-  }
-  e->accept();
-}
-

@@ -45,14 +45,6 @@ public:
   /** Default destructor **/
   ~HelpBrowser();
 
-public:
-  /** Called when the user triggers the close action */
-  void close();
-
-protected:
-  /** Catches the close event when the user clicks on the X in the titlebar */
-  void closeEvent(QCloseEvent *event);
-
 private slots:
   /** Called when the user selects a different item in the topic tree. */
   void currentItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *prev);
@@ -72,7 +64,6 @@ private:
   QTreeWidgetItem* createTopicTreeItem(const QDomElement &topicElement,
                                        QTreeWidgetItem *parent);
 
-  
   /** Qt Designer generated QObject */
   Ui::HelpBrowser ui;
 };
