@@ -43,13 +43,17 @@ License along with this library; if not, write to the Free Software
 Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
 02111-1307  USA
 ===================================================================
-Some images used in Vidalia, including:
+The following images used in Vidalia were created by 
+The Tango Desktop Project:
 
-  forward.png, back.png, home.png, config_advanced.png, config_server.png
+  edit-clear.png       edit-copy.png           edit-select-all.png
+  emblem-system.png    emblem-unreadable.png   format-justify-fill.png
+  go-next.png          go-previous.png         help-browser.png
+  media-floppy.png     network-server.png      preferences-system.png
+  utilities-system-monitor.png
 
-are licensed by The Tango Desktop Project under the Creative Commons
-Attribution Share-Alike License which can be found at the following
-address:
+They are licensed by The Tango Desktop Project under the Creative Commons
+Attribution Share-Alike License which can be found at the following address:
 
 http://creativecommons.org/licenses/by-sa/2.5/legalcode
 ===================================================================
