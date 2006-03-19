@@ -56,10 +56,6 @@ protected:
 private slots:
   /** Called when the user selects a different item in the topic tree. */
   void currentItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *prev);
-  /** Called when the availability of backward() changes and updates the UI. */
-  void backwardAvailable(bool available);
-  /** Called when the availability of forward() changes and updates the UI. */
-  void forwardAvailable(bool available);
   
 private:
   /** Load the contents of the help topics tree from the specified XML file. */

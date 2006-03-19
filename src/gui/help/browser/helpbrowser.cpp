@@ -74,9 +74,9 @@ HelpBrowser::HelpBrowser(QWidget *parent)
   connect(ui.actionBack, SIGNAL(triggered()), ui.txtTopic, SLOT(backward()));
   connect(ui.actionForward, SIGNAL(triggered()), ui.txtTopic, SLOT(forward()));
   connect(ui.txtTopic, SIGNAL(backwardAvailable(bool)), 
-          this, SLOT(backwardAvailable(bool)));
+          ui.actionBack, SLOT(setEnabled(bool)));
   connect(ui.txtTopic, SIGNAL(forwardAvailable(bool)),
-          this, SLOT(forwardAvailable(bool)));
+          ui.actionForward, SLOT(setEnabled(bool)));
 
   /* Load the help topics from XML */
   loadContentsFromXml(":/help/contents.xml");
@@ -88,20 +88,6 @@ HelpBrowser::HelpBrowser(QWidget *parent)
 /** Destructor */
 HelpBrowser::~HelpBrowser()
 {
-}
-
-/** Called when the availability of backward() changes and updates the UI. */
-void
-HelpBrowser::backwardAvailable(bool available)
-{
-  ui.actionBack->setEnabled(available);
-}
-
-/** Called when the availability of forward() changes and updates the UI. */
-void
-HelpBrowser::forwardAvailable(bool available)
-{
-  ui.actionForward->setEnabled(available);
 }
 
 /** Load the contents of the help topics tree from the specified XML file. */
