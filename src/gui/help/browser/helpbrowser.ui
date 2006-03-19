@@ -593,6 +593,9 @@
    <property name="shortcut" >
     <string>Backspace</string>
    </property>
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
   </action>
   <action name="actionForward" >
    <property name="icon" >
@@ -617,6 +620,9 @@
    </property>
    <property name="shortcut" >
     <string>Shift+Backspace</string>
+   </property>
+   <property name="enabled" >
+    <bool>false</bool>
    </property>
   </action>
   <action name="actionHome" >
