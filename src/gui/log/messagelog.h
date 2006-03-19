@@ -56,16 +56,12 @@ public:
   
 
 protected:
-  /** Catches the close event when the user clicks on the X in the titlebar */
-  void closeEvent(QCloseEvent *e);
   /** Called to deliver custom event types */
   void customEvent(QEvent *event);
 
 public slots:
   /** Overloaded QWidget.show() **/
   void show();
-  /** Called when the user selects File->Close or Alt-F4*/
-  void close();
   
 private slots:
   /** Called when the user triggers the save all action **/

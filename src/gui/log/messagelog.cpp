@@ -663,28 +663,3 @@ MessageLog::show()
   QMainWindow::show();
 }
 
-/** Overloads the default close() slot, so we can force the parent to become
- * visible. This only matters on Mac, so we can ensure the correct menubar is
- * displayed. */
-void
-MessageLog::close()
-{
-  MainWindow *p = (MainWindow *)parent();
-  if (p) {
-    p->show();
-  }
-  QMainWindow::close();
-}
-
-/** Serves the same purpose as MessageLog::close(), but this time responds to
- * when the user clicks on the X in the titlebar */
-void
-MessageLog::closeEvent(QCloseEvent *e)
-{
-  MainWindow *p = (MainWindow *)parent();
-  if (p) {
-    p->show();
-  }
-  e->accept();
-}
-
