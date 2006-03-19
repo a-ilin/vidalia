@@ -49,8 +49,6 @@ public:
   
   /** Default constructor */
   StreamEvent(quint64 streamId, Status status, quint64 circuitId, QString target);
-  /** Default destructor */
-  ~StreamEvent();
   
   /** Converts a string description of a stream's status to its enum value */
   static Status toStatus(QString strStatus);

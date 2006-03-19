@@ -56,11 +56,6 @@ AboutDialog::AboutDialog(TorControl *torControl, QWidget *parent)
           this, SLOT(hide()));
 }
 
-/** Default Destructor **/
-AboutDialog::~AboutDialog()
-{
-}
-
 /** Hides the licensing information and then hides the About dialog. */
 void
 AboutDialog::hide()

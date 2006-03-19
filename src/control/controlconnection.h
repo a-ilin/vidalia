@@ -43,8 +43,6 @@ class ControlConnection : public QThread
 public:
   /** Default constructor. */
   ControlConnection(TorEvents *events = 0);
-  /** Destructor. */
-  ~ControlConnection();
 
   /** Connect to the specified Tor control interface. */
   bool connect(QHostAddress addr, quint16 port, QString *errmsg = 0);

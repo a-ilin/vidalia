@@ -50,17 +50,9 @@ GraphFrame::GraphFrame(QWidget *parent)
 /** Default destructor */
 GraphFrame::~GraphFrame()
 {
-  if (_painter) {
-    delete _painter;
-  }
-
-  if (_recvData) {
-    delete _recvData;
-  }
-
-  if (_sendData) {
-    delete _sendData;
-  }
+  delete _painter;
+  delete _recvData;
+  delete _sendData;
 }
 
 /**

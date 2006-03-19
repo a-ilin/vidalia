@@ -41,9 +41,6 @@ public:
   /** Default constructor **/
   AboutDialog(TorControl *torControl, QWidget *parent = 0);
   
-  /** Default destructor **/
-  ~AboutDialog();
-  
   /** Overriden QWidget.show() **/
   void show();
 

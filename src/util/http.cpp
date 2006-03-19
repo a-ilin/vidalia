@@ -34,11 +34,6 @@ Http::Http(QString host, quint16 port)
 {
 }
 
-/** Destructor */
-Http::~Http()
-{
-}
-
 /** Executes a single request for the given file. User input is blocked while
  * the request is executing, so this should only be used for very small requests.
  * \param path the file to request.

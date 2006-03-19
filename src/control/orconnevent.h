@@ -45,8 +45,6 @@ public:
 
   /** Contructor */
   OrConnEvent(Status status, QString server);
-  /** Destructor */
-  ~OrConnEvent();
 
   /** Converts a string description of a connection's status to an enum value */
   static Status toStatus(QString status);

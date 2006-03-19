@@ -41,8 +41,6 @@ class TorProcess : public QProcess
 public:
   /** Default constructor. */
   TorProcess();
-  /** Destructor. */
-  ~TorProcess();
 
   /** Start the Tor process */
   bool start(QString app, QString args, QString *errmsg = 0);

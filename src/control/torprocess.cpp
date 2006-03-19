@@ -44,11 +44,6 @@ TorProcess::TorProcess()
   connect(this, SIGNAL(readyReadStandardOutput()), this, SLOT(onReadyRead()));
 }
 
-/** Destructor */
-TorProcess::~TorProcess()
-{
-}
-
 /** Attempts to start the Tor process using the location, executable, and
  * command-line arguments specified in Vidalia's settings. If Tor doesn't
  * exist at the given path, <b>errmsg</b> will be set appropriately and the

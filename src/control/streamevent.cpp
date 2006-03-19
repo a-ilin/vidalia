@@ -38,11 +38,6 @@ StreamEvent::StreamEvent(quint64 streamId, Status status,
   _target    = target;
 }
 
-/** Default destructor */
-StreamEvent::~StreamEvent()
-{
-}
-
 /** Converts a string description of a stream's status to its enum value */
 StreamEvent::Status
 StreamEvent::toStatus(QString strStatus)

@@ -47,8 +47,6 @@ public:
   
   /** Default constructor */
   LogEvent(Severity severity, QString message);
-  /** Default destructor */
-  ~LogEvent();
   
   /** Converts the string description of a severity to its enum value */
   static Severity toSeverity(QString strSeverity);

@@ -35,11 +35,6 @@ LogEvent::LogEvent(Severity severity, QString message)
   _message  = message;
 }
 
-/** Default destructor */
-LogEvent::~LogEvent()
-{
-}
-
 /** Converts a string description of a severity to its enum value */
 LogEvent::Severity
 LogEvent::toSeverity(QString strSeverity)

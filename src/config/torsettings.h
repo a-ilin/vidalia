@@ -38,8 +38,6 @@ class TorSettings : private VidaliaSettings
 public:
   /** Default constructor. */
   TorSettings();
-  /** Destructor. */
-  ~TorSettings();
   
   /** Gets the path to Tor's executable. */
   QString  getPath();

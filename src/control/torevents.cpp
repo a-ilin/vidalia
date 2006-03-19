@@ -33,11 +33,6 @@ TorEvents::TorEvents()
 {
 }
 
-/** Default destructor */
-TorEvents::~TorEvents()
-{
-}
-
 /** Adds an event and interested object to the list */
 void
 TorEvents::add(TorEvent e, QObject *obj)

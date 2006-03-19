@@ -46,8 +46,6 @@ public:
   
   /** Default constructor */
   CircuitEvent(quint64 circId, Status status, QString path);
-  /** Default destructor */
-  ~CircuitEvent();
   
   /** Converts a string description of a circuit's status to an enum value */
   static Status toStatus(QString strStatus);

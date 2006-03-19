@@ -39,8 +39,6 @@ class ServerSettings : private VidaliaSettings
 public:
   /** Constructor */
   ServerSettings(TorControl *torControl);
-  /** Destructor */
-  ~ServerSettings();
 
   /** Reverts all settings changes since the last apply. */
   void revert();

@@ -37,7 +37,6 @@ public:
   ControlCommand(QString keyword);
   ControlCommand(QString keyword, QString arg);
   ControlCommand(QString keyword, QStringList args);
-  ~ControlCommand();
 
   /** Set the keyword for this control command */
   void setKeyword(QString keyword);

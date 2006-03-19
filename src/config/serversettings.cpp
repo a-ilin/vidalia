@@ -74,11 +74,6 @@ ServerSettings::ServerSettings(TorControl *torControl)
   _backupSettings = allSettings();
 }
 
-/** Destructor. */
-ServerSettings::~ServerSettings()
-{
-}
-
 /** Stores a boolean value indicating if the server's configuration has
  * changed since it was last applied.
  * \param changed Boolean value indicating whether settings have been changed.

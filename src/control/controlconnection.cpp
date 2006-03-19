@@ -44,11 +44,8 @@ ControlConnection::ControlConnection(TorEvents *events)
   _events = events;
 }
 
-/** Destructor. */
-ControlConnection::~ControlConnection()
-{
-}
-
+/** Process events for EVENTS_TIMEOUT milliseconds or until there are no more
+ * events left to process, whichever is shorter. */
 void
 ControlConnection::processEvents()
 {

@@ -47,7 +47,6 @@ class ControlSocket : public QTcpSocket
 public:
   /** Default constructor and destructor */
   ControlSocket();
-  ~ControlSocket();
 
   /** Connect to Tor on the specified host and port */
   bool connect(QHostAddress addr, quint16 port, QString *errmsg = 0);

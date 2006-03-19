@@ -42,8 +42,6 @@ class HelpBrowser : public QMainWindow
 public:
   /** Default constructor **/
   HelpBrowser(QWidget *parent = 0);
-  /** Default destructor **/
-  ~HelpBrowser();
 
 private slots:
   /** Called when the user selects a different item in the topic tree. */

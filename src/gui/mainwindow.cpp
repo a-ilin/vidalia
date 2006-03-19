@@ -107,9 +107,7 @@ MainWindow::MainWindow()
 /** Default destructor */
 MainWindow::~MainWindow()
 {
-  if (_torControl) {
-    delete _torControl;
-  }
+  delete _torControl;
 }
 
 /** Changes the application's window icon. On Mac, we update the

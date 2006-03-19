@@ -46,11 +46,6 @@ ReplyLine::ReplyLine(QString status, QString msg, QString data)
   appendData(data);
 }
 
-/** Default destructor */
-ReplyLine::~ReplyLine()
-{
-}
-
 /** Set the status code for this reply line. See Tor Control Protocol V1
  * specification for a description of status codes. */
 void

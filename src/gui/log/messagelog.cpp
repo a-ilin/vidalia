@@ -102,9 +102,7 @@ MessageLog::MessageLog(TorControl *torControl, QWidget *parent, Qt::WFlags flags
  * variables. */
 MessageLog::~MessageLog()
 {
-  if (_settings) {
-    delete _settings;
-  }
+  delete _settings;
 
   if (_logFile) {
     delete _logFile;

@@ -36,11 +36,6 @@ CircuitEvent::CircuitEvent(quint64 circId, Status status, QString path)
   _path   = path;
 }
 
-/** Default destructor */
-CircuitEvent::~CircuitEvent()
-{
-}
-
 /** Converts the circuit status string to its proper enum value */
 CircuitEvent::Status
 CircuitEvent::toStatus(QString strStatus)

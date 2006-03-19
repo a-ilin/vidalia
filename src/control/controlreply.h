@@ -37,9 +37,6 @@ public:
   /** Default constructor */
   ControlReply();
 
-  /** Default destructor */
-  ~ControlReply();
-
   /** Add a line associated with this reply */
   void appendLine(ReplyLine line);
 

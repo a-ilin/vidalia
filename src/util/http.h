@@ -37,8 +37,6 @@ class Http : private QHttp
 public:
   /** Constructor */
   Http(QString host, quint16 port = 80);
-  /** Destructor */
-  ~Http();
 
   /** Requests the given file from the specified host. */
   bool request(QString path);

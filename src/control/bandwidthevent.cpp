@@ -35,11 +35,6 @@ BandwidthEvent::BandwidthEvent(quint64 bytesRead, quint64 bytesWritten)
   _bytesWritten = bytesWritten;
 }
 
-/** Default destructor */
-BandwidthEvent::~BandwidthEvent()
-{
-}
-
 /** Return the number of bytes read in the last second */
 quint64
 BandwidthEvent::bytesRead()

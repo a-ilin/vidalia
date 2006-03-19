@@ -34,11 +34,6 @@ OrConnEvent::OrConnEvent(Status status, QString server)
   _server = server;
 }
 
-/** Destructor */
-OrConnEvent::~OrConnEvent()
-{
-}
-
 /** Converts a string description of a connection's status to an enum value */
 OrConnEvent::Status
 OrConnEvent::toStatus(QString status)

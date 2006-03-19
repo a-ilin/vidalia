@@ -33,11 +33,6 @@ ControlSocket::ControlSocket()
 {
 }
 
-/** Destructor. */
-ControlSocket::~ControlSocket()
-{
-}
-
 /** Connects to Tor's control socket on the specified host and port. If the
  * connection is successful, true is returned. If the connection fails, then
  * this function returns false and sets <b>errmsg</b> appropriately, if not

@@ -72,11 +72,6 @@ TorSettings::TorSettings()
 {
 }
 
-/** Destructor */
-TorSettings::~TorSettings()
-{
-}
-
 /** Get the path to Tor's executable from Vidalia's configuration. If a path
 * hasn't been specified, then default to the current directory.
 */

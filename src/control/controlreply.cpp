@@ -31,11 +31,6 @@ ControlReply::ControlReply()
 {
 }
 
-/** Default destructor */
-ControlReply::~ControlReply()
-{
-}
-
 /** Add a line associated with this reply */
 void
 ControlReply::appendLine(ReplyLine line)

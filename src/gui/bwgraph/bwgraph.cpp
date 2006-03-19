@@ -67,9 +67,7 @@ BandwidthGraph::BandwidthGraph(TorControl *torControl, QWidget *parent, Qt::WFla
 /** Default destructor */
 BandwidthGraph::~BandwidthGraph()
 {
-  if (_settings) {
-    delete _settings;
-  }
+  delete _settings;
 }
 
 /**

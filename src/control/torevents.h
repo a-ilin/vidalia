@@ -58,8 +58,6 @@ public:
  
   /** Default Constructor */
   TorEvents();
-  /** Default Destructor */
-  ~TorEvents();
 
   /** Adds an event and interested object to the event list */
   void add(TorEvent event, QObject *obj);

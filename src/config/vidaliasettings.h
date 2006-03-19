@@ -46,8 +46,6 @@ class VidaliaSettings : protected QSettings
 public:
   /** Default constructor. */
   VidaliaSettings();
-  /** Destructor. */
-  ~VidaliaSettings();
 
   /** Return Vidalia's version string */
   static QString getVersion();

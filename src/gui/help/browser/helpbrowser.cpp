@@ -85,11 +85,6 @@ HelpBrowser::HelpBrowser(QWidget *parent)
   ui.treeContents->setCurrentItem(ui.treeContents->topLevelItem(0));
 }
 
-/** Destructor */
-HelpBrowser::~HelpBrowser()
-{
-}
-
 /** Load the contents of the help topics tree from the specified XML file. */
 void
 HelpBrowser::loadContentsFromXml(QString xmlFile)

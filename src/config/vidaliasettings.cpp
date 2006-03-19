@@ -77,11 +77,6 @@ VidaliaSettings::VidaliaSettings()
 {
 }
 
-/** Default Destructor */
-VidaliaSettings::~VidaliaSettings()
-{
-}
-
 /** Return Vidalia's version string */
 QString
 VidaliaSettings::getVersion()

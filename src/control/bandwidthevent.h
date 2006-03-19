@@ -34,8 +34,6 @@ class BandwidthEvent : public QEvent
 public:
   /** Default constructor */
   BandwidthEvent(quint64 bytesRead, quint64 bytesWritten);
-  /** Default destructor */
-  ~BandwidthEvent();
 
   /** Returns the number of bytes read in the last second */
   quint64 bytesRead();

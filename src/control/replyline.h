@@ -36,7 +36,6 @@ public:
   ReplyLine();
   ReplyLine(QString status, QString message);
   ReplyLine(QString status, QString message, QString data);
-  ~ReplyLine();
 
   /* Get/set the status for this reply line */
   void setStatus(QString status);
