@@ -25,10 +25,10 @@
  */
 
 #include <QHostInfo>
+#include <util/net.h>
 
 #include "serversettings.h"
 #include "torsettings.h"
-#include "../util/net.h"
 
 
 /* Server-related torrc configuration parameters */
@@ -49,6 +49,7 @@
 #define SETTING_SERVER_DIRPORT    "Server/"SERVER_DIRPORT
 #define SETTING_SERVER_ADDRESS    "Server/"SERVER_ADDRESS
 #define SETTING_SERVER_CONTACT    "Server/"SERVER_CONTACTINFO
+#define SETTING_SERVER_EXITPOLICY "Server/"SERVER_EXITPOLICY
 
 /* Default server configuration */
 #define DEFAULT_SERVER_ENABLED    false
@@ -60,8 +61,7 @@
 #define DEFAULT_SERVER_DIRPORT    9030
 #define DEFAULT_SERVER_CONTACT    "<your@email.com>"
 #define DEFAULT_SERVER_ADDRESS    net_local_address().toString() 
-
-#define EXIT_POLICY_MIDDLEMAN     "reject *:*"
+#define DEFAULT_SERVER_EXITPOLICY (ExitPolicy().toString()) 
 
 
 /** Constructor.
@@ -107,7 +107,7 @@ void
 ServerSettings::revert()
 {
   beginGroup("Server");
-  remove("");
+  remove(""); /* Removes all settings in the Server group */
   foreach(QString key, _backupSettings.keys()) {
     setValue(key, _backupSettings.value(key));
   }
@@ -201,14 +201,19 @@ ServerSettings::confValues()
     (isDirectoryMirror() ? QSettings::value(SETTING_SERVER_DIRPORT, 
                                             DEFAULT_SERVER_DIRPORT).toString() 
                          : "0"));
+  /* Server Exit Policy */
+  conf.insert(SERVER_EXITPOLICY, 
+    (isMiddleman() ? ExitPolicy(ExitPolicy::Middleman).toString()
+                   : QSettings::value(SETTING_SERVER_EXITPOLICY,
+                                      DEFAULT_SERVER_EXITPOLICY).toString()));
   /* Server Address */
   conf.insert(SERVER_ADDRESS,      
     QSettings::value(SETTING_SERVER_ADDRESS, DEFAULT_SERVER_ADDRESS).toString());
+  
   /* Server Contact Information */
   conf.insert(SERVER_CONTACTINFO, 
     QSettings::value(SETTING_SERVER_CONTACT, DEFAULT_SERVER_CONTACT).toString());
-  /* Server Exit Policy */
-  conf.insert(SERVER_EXITPOLICY, (isMiddleman() ? EXIT_POLICY_MIDDLEMAN : ""));
+  
   return conf;
 }
 
@@ -369,5 +374,20 @@ void
 ServerSettings::setMiddleman(bool middleman)
 {
   setValue(SETTING_SERVER_MIDDLEMAN, middleman);
+}
+
+/** Returns the exit policy for this server. */
+ExitPolicy
+ServerSettings::getExitPolicy()
+{
+  return ExitPolicy(value(SETTING_SERVER_EXITPOLICY, 
+                          DEFAULT_SERVER_EXITPOLICY).toString());
+}
+
+/** Sets the exit policy for this server. */
+void
+ServerSettings::setExitPolicy(ExitPolicy &exitPolicy)
+{
+  setValue(SETTING_SERVER_EXITPOLICY, exitPolicy.toString());
 }
 

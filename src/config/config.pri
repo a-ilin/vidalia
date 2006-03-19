@@ -23,9 +23,13 @@
 
 HEADERS += $$PWD/vidaliasettings.h \
            $$PWD/serversettings.h \
-           $$PWD/torsettings.h
+           $$PWD/torsettings.h \
+           $$PWD/policy.h \
+           $$PWD/exitpolicy.h
            
 SOURCES += $$PWD/vidaliasettings.cpp \
            $$PWD/serversettings.cpp \
-           $$PWD/torsettings.cpp
+           $$PWD/torsettings.cpp \
+           $$PWD/policy.cpp \
+           $$PWD/exitpolicy.cpp
 

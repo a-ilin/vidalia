@@ -30,6 +30,7 @@
 #include <control/torcontrol.h>
 
 #include "vidaliasettings.h"
+#include "exitpolicy.h"
 
 
 class ServerSettings : private VidaliaSettings
@@ -87,6 +88,11 @@ public:
   void setMiddleman(bool middleman);
   /** Returns true if the server is a middleman server. */
   bool isMiddleman();
+
+  /** Sets the exit policy for this server. */
+  void setExitPolicy(ExitPolicy &policy);
+  /** Gets the exit policy for this server. */
+  ExitPolicy getExitPolicy();
 
 private:
   /** Sets a value indicating that the server settings have changed since
