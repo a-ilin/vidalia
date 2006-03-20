@@ -24,6 +24,7 @@
  * \version $Id$
  */
 
+#include <QHostInfo>
 #include <QList>
 #include <QUrl>
 
@@ -35,12 +36,16 @@
 QHostAddress
 net_local_address()
 {
-  QAbstractSocket localSock(QAbstractSocket::TcpSocket, 0);
-  QHostAddress localAddr = localSock.localAddress();
-  if (localAddr.isNull()) {
-    return QHostAddress::LocalHost;
+  QHostInfo localInfo = QHostInfo::fromName(QHostInfo::localHostName());
+  if (localInfo.error() == QHostInfo::NoError) {
+    foreach (QHostAddress addr, localInfo.addresses()) {
+      if (addr.protocol() == QAbstractSocket::IPv4Protocol &&
+          !(addr == QHostAddress::LocalHost)) {
+        return addr;
+      }
+    }
   }
-  return localAddr;
+  return QHostAddress::LocalHost;
 }
 
 /** Returns true if the given address is a private IP address. */
