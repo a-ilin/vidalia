@@ -55,9 +55,9 @@ HelpBrowser::HelpBrowser(QWidget *parent)
   ui.setupUi(this);
 
   /* Hide Search frame */
-  ui.frmSearch->setHidden(true);
+  ui.frmFind->setHidden(true);
  
-  /* Set the splitter pane sizes so that only the txtTopic pane expands
+  /* Set the splitter pane sizes so that only the txtBrowser pane expands
    * and set to arbitrary sizes (the minimum sizes will take effect */
   QList<int> sizes;
   sizes.append(MINIMUM_PANE_SIZE); 
@@ -67,22 +67,38 @@ HelpBrowser::HelpBrowser(QWidget *parent)
 
   connect(ui.treeContents,
           SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)),
-          this, SLOT(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)));
+          this, SLOT(contentsItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)));
+
+  connect(ui.treeSearch,
+          SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)),
+          this, SLOT(searchItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)));
 
   /* Connect the navigation actions to their slots */
-  connect(ui.actionHome, SIGNAL(triggered()), ui.txtTopic, SLOT(home()));
-  connect(ui.actionBack, SIGNAL(triggered()), ui.txtTopic, SLOT(backward()));
-  connect(ui.actionForward, SIGNAL(triggered()), ui.txtTopic, SLOT(forward()));
-  connect(ui.txtTopic, SIGNAL(backwardAvailable(bool)), 
+  connect(ui.actionHome, SIGNAL(triggered()), ui.txtBrowser, SLOT(home()));
+  connect(ui.actionBack, SIGNAL(triggered()), ui.txtBrowser, SLOT(backward()));
+  connect(ui.actionForward, SIGNAL(triggered()), ui.txtBrowser, SLOT(forward()));
+  connect(ui.txtBrowser, SIGNAL(backwardAvailable(bool)), 
           ui.actionBack, SLOT(setEnabled(bool)));
-  connect(ui.txtTopic, SIGNAL(forwardAvailable(bool)),
+  connect(ui.txtBrowser, SIGNAL(forwardAvailable(bool)),
           ui.actionForward, SLOT(setEnabled(bool)));
-
+  connect(ui.btnFindNext, SIGNAL(clicked()), this, SLOT(findNext()));
+  connect(ui.btnFindPrev, SIGNAL(clicked()), this, SLOT(findPrev()));
+  connect(ui.btnSearch, SIGNAL(clicked()), this, SLOT(search()));
+  
+  /* Create a new empty dom document */
+  _document = new QDomDocument();
+  
   /* Load the help topics from XML */
   loadContentsFromXml(":/help/contents.xml");
 
   /* Show the first help topic in the tree */
   ui.treeContents->setCurrentItem(ui.treeContents->topLevelItem(0));
+}
+
+/** Destructor */
+HelpBrowser::~HelpBrowser()
+{
+    delete _document;
 }
 
 /** Load the contents of the help topics tree from the specified XML file. */
@@ -95,14 +111,17 @@ HelpBrowser::loadContentsFromXml(QString xmlFile)
   
   /* Load the XML contents into the DOM document */
   if (!document.setContent(&file, true, &errorString)) {
-    ui.txtTopic->setPlainText(tr("Error Loading Help Contents: ")+errorString);
+    ui.txtBrowser->setPlainText(tr("Error Loading Help Contents: ")+errorString);
     return;
   }
   /* Load the DOM document contents into the tree view */
   if (!loadContents(&document, errorString)) {
-    ui.txtTopic->setPlainText(tr("Error Loading Help Contents: ")+errorString);
+    ui.txtBrowser->setPlainText(tr("Error Loading Help Contents: ")+errorString);
     return;
   }
+
+  /* If successful, save document for later use */
+  *_document = document;
 }
 
 /** Load the contents of the help topics tree from the given DOM document. */
@@ -182,11 +201,182 @@ HelpBrowser::createTopicTreeItem(const QDomElement &topicElement,
   return topic;
 }
 
-/** Called when the user selects a different item in the topic tree. */
+/** Called when the user selects a different item in the content topic tree */
+void
+HelpBrowser::contentsItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *prev)
+{
+  QList<QTreeWidgetItem *> selected = ui.treeSearch->selectedItems();
+  /* Deselect the selection in the search tree */
+  if (!selected.isEmpty()) {
+    ui.treeSearch->setItemSelected(selected[0], false);
+  }
+  currentItemChanged(current, prev);
+}
+
+/** Called when the user selects a different item in the content topic tree */
+void
+HelpBrowser::searchItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *prev)
+{
+  QList<QTreeWidgetItem *> selected = ui.treeContents->selectedItems();
+  /* Deselect the selection in the contents tree */
+  if (!selected.isEmpty()) {
+    ui.treeContents->setItemSelected(selected[0], false);
+  }
+  currentItemChanged(current, prev);
+}
+
+/** Called when the user selects a different item in the tree. */
 void
 HelpBrowser::currentItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *prev)
 {
   Q_UNUSED(prev);
-  ui.txtTopic->setSource(QUrl(current->data(0, ROLE_TOPIC_QRC_PATH).toString()));
+  if (current) {
+    ui.txtBrowser->setSource(QUrl(current->data(0, 
+                                              ROLE_TOPIC_QRC_PATH).toString()));
+  }
+  _foundBefore = false;
+}
+
+/** Called when the user clicks "Find Next". */
+void
+HelpBrowser::findNext()
+{
+  find(true);
+}
+
+/** Called when the user clicks "Find Previous". */
+void
+HelpBrowser::findPrev()
+{
+  find(false);
+}
+
+/** Searches the current page for the phrase in the Find box.
+ *  Highlights the first instance found in the document
+ *  \param forward true search forward if true, backward if false
+ **/
+void
+HelpBrowser::find(bool forward)
+{
+  /* Don't bother searching if there is no search phrase */
+  if (ui.lineFind->text().isEmpty()) {
+    return;
+  }
+  
+  QTextDocument::FindFlags flags = 0;
+  QTextCursor cursor = ui.txtBrowser->textCursor();
+  QString searchPhrase = ui.lineFind->text();
+  
+  /* Clear status bar */
+  this->statusBar()->clearMessage();
+  
+  /* Set search direction */
+  if (!forward) {
+    flags |= QTextDocument::FindBackward;
+  }
+
+  /* Set search flags */
+  if (ui.chkbxMatchCase->isChecked()) {
+    flags |= QTextDocument::FindCaseSensitively;
+  }
+  if (ui.chkbxWholePhrase->isChecked()) {
+    flags |= QTextDocument::FindWholeWords;
+  }
+  
+  /* Check if search phrase is the same as the previous */
+  if (searchPhrase != _lastPhrase) {
+    _foundBefore = false;
+  }
+  _lastPhrase = searchPhrase;
+  
+  /* Set the cursor to the appropriate start location if necessary */
+  if (!cursor.hasSelection()) {
+    if (forward) {
+      cursor.movePosition(QTextCursor::Start);
+    } else {
+      cursor.movePosition(QTextCursor::End);
+    }
+
+    ui.txtBrowser->setTextCursor(cursor);
+  }
+
+  /* Search the page */
+  QTextCursor found;
+  found = ui.txtBrowser->document()->find(searchPhrase, cursor, flags);
+  
+  /* If found, move the cursor to the location */
+  if (!found.isNull()) {
+    ui.txtBrowser->setTextCursor(found);
+  /* If not found, display appropriate error message */
+  } else {
+    if (_foundBefore) {
+      if (forward) 
+        this->statusBar()->showMessage(tr("Search reached end of document"));
+      else 
+        this->statusBar()->showMessage(tr("Search reached start of document"));
+    } else {
+      this->statusBar()->showMessage(tr("Text not found in document"));
+    }
+  }
+  
+  /* Even if not found this time, may have been found previously */
+  _foundBefore |= !found.isNull();
+}
+ 
+/** Searches all help pages for the phrase the Search box.
+ *  Fills treeSearch with documents containing matches and sets the
+ *  status bar text appropriately.
+ */
+void
+HelpBrowser::search()
+{
+  QList<QDomElement> elementList;
+  QDomElement child;
+
+  /* Don't search if invalid document or blank search phrase */
+  if (_document->isNull() || ui.lineSearch->text().isEmpty()) {
+    return;
+  }
+  
+  /* Clear the list */
+  ui.treeSearch->clear();
+    
+  /* Prime the list with the root */
+  elementList.append(_document->documentElement());
+
+  /* Traverse the XML document, flattening into a list of elements */
+  for (int i=0; i < elementList.size(); ++i) {
+    child = elementList[i].firstChildElement(ELEMENT_TOPIC);
+ 
+    while(!child.isNull()) {
+      elementList.append(child);
+      child = child.nextSiblingElement(ELEMENT_TOPIC);
+    }
+  }
+
+  QTextBrowser browser;
+  QTextCursor found;
+  QTextDocument::FindFlags flags = 0;
+
+  /* Search through all the pages looking for the phrase */
+  for (int i=0; i < elementList.size(); ++i) {
+    /* Load page data into browser */
+    browser.setSource(QUrl(getResourcePath(elementList[i])));
+      
+    /* Search for whole words only */
+    flags |= QTextDocument::FindWholeWords;
+
+    /* Search current document */
+    found = browser.document()->find(ui.lineSearch->text(), 0, flags);
+
+    /* If found, add page to tree */
+    if (!found.isNull()) {
+      ui.treeSearch->addTopLevelItem(createTopicTreeItem(elementList[i], 0));
+      }
+  }
+
+  /* Set the status bar text */
+  this->statusBar()->showMessage(QString("Found %1 results")
+                                .arg(ui.treeSearch->topLevelItemCount()));
 }
 

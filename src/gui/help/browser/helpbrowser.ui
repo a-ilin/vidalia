@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>685</width>
-    <height>562</height>
+    <width>713</width>
+    <height>520</height>
    </rect>
   </property>
   <property name="sizePolicy" >
@@ -329,7 +329,7 @@
      <number>6</number>
     </property>
     <item>
-     <widget class="QFrame" name="frmSearch" >
+     <widget class="QFrame" name="frmFind" >
       <property name="sizePolicy" >
        <sizepolicy>
         <hsizetype>5</hsizetype>
@@ -341,13 +341,13 @@
       <property name="minimumSize" >
        <size>
         <width>450</width>
-        <height>55</height>
+        <height>79</height>
        </size>
       </property>
       <property name="maximumSize" >
        <size>
         <width>16777215</width>
-        <height>55</height>
+        <height>79</height>
        </size>
       </property>
       <property name="contextMenuPolicy" >
@@ -359,92 +359,100 @@
       <property name="frameShadow" >
        <enum>QFrame::Raised</enum>
       </property>
-      <layout class="QHBoxLayout" >
+      <layout class="QGridLayout" >
        <property name="margin" >
         <number>9</number>
        </property>
        <property name="spacing" >
         <number>6</number>
        </property>
-       <item>
-        <widget class="QToolButton" name="btnCloseSearch" >
-         <property name="sizePolicy" >
-          <sizepolicy>
-           <hsizetype>5</hsizetype>
-           <vsizetype>5</vsizetype>
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
+       <item row="0" column="0" >
+        <layout class="QHBoxLayout" >
+         <property name="margin" >
+          <number>0</number>
          </property>
-         <property name="minimumSize" >
-          <size>
-           <width>0</width>
-           <height>0</height>
-          </size>
+         <property name="spacing" >
+          <number>6</number>
          </property>
-         <property name="maximumSize" >
-          <size>
-           <width>24</width>
-           <height>24</height>
-          </size>
-         </property>
-         <property name="contextMenuPolicy" >
-          <enum>Qt::NoContextMenu</enum>
-         </property>
-         <property name="text" >
-          <string/>
-         </property>
-         <property name="icon" >
-          <iconset resource="..\..\res\vidalia.qrc" >:/images/22x22/22x22/emblem-unreadable.png</iconset>
-         </property>
-         <property name="iconSize" >
-          <size>
-           <width>22</width>
-           <height>22</height>
-          </size>
-         </property>
-         <property name="toolButtonStyle" >
-          <enum>Qt::ToolButtonIconOnly</enum>
-         </property>
-         <property name="autoRaise" >
-          <bool>true</bool>
-         </property>
-        </widget>
+         <item>
+          <widget class="QToolButton" name="btnCloseFind" >
+           <property name="sizePolicy" >
+            <sizepolicy>
+             <hsizetype>5</hsizetype>
+             <vsizetype>5</vsizetype>
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>0</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>24</width>
+             <height>24</height>
+            </size>
+           </property>
+           <property name="contextMenuPolicy" >
+            <enum>Qt::NoContextMenu</enum>
+           </property>
+           <property name="text" >
+            <string/>
+           </property>
+           <property name="icon" >
+            <iconset resource="..\..\res\vidalia.qrc" >:/images/22x22/22x22/emblem-unreadable.png</iconset>
+           </property>
+           <property name="iconSize" >
+            <size>
+             <width>22</width>
+             <height>22</height>
+            </size>
+           </property>
+           <property name="toolButtonStyle" >
+            <enum>Qt::ToolButtonIconOnly</enum>
+           </property>
+           <property name="autoRaise" >
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label" >
+           <property name="font" >
+            <font>
+             <family>Arial</family>
+             <pointsize>10</pointsize>
+             <weight>50</weight>
+             <italic>false</italic>
+             <bold>false</bold>
+             <underline>false</underline>
+             <strikeout>false</strikeout>
+            </font>
+           </property>
+           <property name="contextMenuPolicy" >
+            <enum>Qt::NoContextMenu</enum>
+           </property>
+           <property name="text" >
+            <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" color:#000000;">Find:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+           </property>
+           <property name="buddy" >
+            <cstring>lineFind</cstring>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLineEdit" name="lineFind" >
+           <property name="contextMenuPolicy" >
+            <enum>Qt::NoContextMenu</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
-       <item>
-        <widget class="QLabel" name="label" >
-         <property name="contextMenuPolicy" >
-          <enum>Qt::NoContextMenu</enum>
-         </property>
-         <property name="text" >
-          <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" font-size:11pt; color:#000000;">Search For:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
-         </property>
-         <property name="buddy" >
-          <cstring></cstring>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineSearch" >
-         <property name="contextMenuPolicy" >
-          <enum>Qt::NoContextMenu</enum>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QPushButton" name="btnFindNext" >
-         <property name="contextMenuPolicy" >
-          <enum>Qt::NoContextMenu</enum>
-         </property>
-         <property name="text" >
-          <string>Find Next</string>
-         </property>
-         <property name="icon" >
-          <iconset resource="..\..\res\vidalia.qrc" >:/images/16x16/16x16/go-next.png</iconset>
-         </property>
-        </widget>
-       </item>
-       <item>
+       <item row="0" column="2" >
         <widget class="QPushButton" name="btnFindPrev" >
          <property name="contextMenuPolicy" >
           <enum>Qt::NoContextMenu</enum>
@@ -457,60 +465,243 @@
          </property>
         </widget>
        </item>
+       <item row="0" column="1" >
+        <widget class="QPushButton" name="btnFindNext" >
+         <property name="contextMenuPolicy" >
+          <enum>Qt::NoContextMenu</enum>
+         </property>
+         <property name="text" >
+          <string>Find Next</string>
+         </property>
+         <property name="icon" >
+          <iconset resource="..\..\res\vidalia.qrc" >:/images/16x16/16x16/go-next.png</iconset>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0" colspan="3" >
+        <layout class="QHBoxLayout" >
+         <property name="margin" >
+          <number>0</number>
+         </property>
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <item>
+          <spacer>
+           <property name="orientation" >
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" >
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="chkbxMatchCase" >
+           <property name="contextMenuPolicy" >
+            <enum>Qt::NoContextMenu</enum>
+           </property>
+           <property name="text" >
+            <string>Case sensitive</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="chkbxWholePhrase" >
+           <property name="contextMenuPolicy" >
+            <enum>Qt::NoContextMenu</enum>
+           </property>
+           <property name="text" >
+            <string>Match entire phrase</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
       </layout>
      </widget>
     </item>
     <item>
      <widget class="QSplitter" name="splitter" >
-      <property name="minimumSize" >
-       <size>
-        <width>0</width>
-        <height>0</height>
-       </size>
-      </property>
       <property name="orientation" >
        <enum>Qt::Horizontal</enum>
       </property>
-      <widget class="QTreeWidget" name="treeContents" >
-       <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>5</hsizetype>
-         <vsizetype>7</vsizetype>
-         <horstretch>1</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize" >
-        <size>
-         <width>200</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="maximumSize" >
-        <size>
-         <width>16777215</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="focusPolicy" >
-        <enum>Qt::NoFocus</enum>
-       </property>
+      <widget class="QTabWidget" name="tabsMenu" >
        <property name="contextMenuPolicy" >
         <enum>Qt::NoContextMenu</enum>
        </property>
-       <property name="selectionBehavior" >
-        <enum>QAbstractItemView::SelectItems</enum>
+       <property name="tabPosition" >
+        <enum>QTabWidget::North</enum>
        </property>
-       <property name="uniformRowHeights" >
-        <bool>true</bool>
+       <property name="tabShape" >
+        <enum>QTabWidget::Rounded</enum>
        </property>
-       <column>
-        <property name="text" >
-         <string>Help Topics</string>
-        </property>
-       </column>
+       <widget class="QWidget" name="tabTOC" >
+        <attribute name="title" >
+         <string>Contents</string>
+        </attribute>
+        <layout class="QVBoxLayout" >
+         <property name="margin" >
+          <number>9</number>
+         </property>
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <item>
+          <widget class="QTreeWidget" name="treeContents" >
+           <property name="sizePolicy" >
+            <sizepolicy>
+             <hsizetype>5</hsizetype>
+             <vsizetype>7</vsizetype>
+             <horstretch>1</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>200</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="focusPolicy" >
+            <enum>Qt::WheelFocus</enum>
+           </property>
+           <property name="contextMenuPolicy" >
+            <enum>Qt::NoContextMenu</enum>
+           </property>
+           <property name="selectionBehavior" >
+            <enum>QAbstractItemView::SelectItems</enum>
+           </property>
+           <property name="uniformRowHeights" >
+            <bool>true</bool>
+           </property>
+           <column>
+            <property name="text" >
+             <string>Help Topics</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QWidget" name="tabSearch" >
+        <attribute name="title" >
+         <string>Search</string>
+        </attribute>
+        <layout class="QGridLayout" >
+         <property name="margin" >
+          <number>9</number>
+         </property>
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <item row="2" column="1" >
+          <layout class="QHBoxLayout" >
+           <property name="margin" >
+            <number>0</number>
+           </property>
+           <property name="spacing" >
+            <number>6</number>
+           </property>
+           <item>
+            <spacer>
+             <property name="orientation" >
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" >
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnSearch" >
+             <property name="contextMenuPolicy" >
+              <enum>Qt::NoContextMenu</enum>
+             </property>
+             <property name="text" >
+              <string>Search</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="0" column="0" >
+          <widget class="QLabel" name="label_2" >
+           <property name="contextMenuPolicy" >
+            <enum>Qt::NoContextMenu</enum>
+           </property>
+           <property name="text" >
+            <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">&lt;span style=" color:#000000;">Searching for:&lt;/span>&lt;/p>&lt;/body>&lt;/html></string>
+           </property>
+           <property name="buddy" >
+            <cstring>lineSearch</cstring>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0" colspan="2" >
+          <widget class="QTreeWidget" name="treeSearch" >
+           <property name="sizePolicy" >
+            <sizepolicy>
+             <hsizetype>5</hsizetype>
+             <vsizetype>7</vsizetype>
+             <horstretch>1</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="minimumSize" >
+            <size>
+             <width>200</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="focusPolicy" >
+            <enum>Qt::WheelFocus</enum>
+           </property>
+           <property name="contextMenuPolicy" >
+            <enum>Qt::NoContextMenu</enum>
+           </property>
+           <property name="selectionBehavior" >
+            <enum>QAbstractItemView::SelectItems</enum>
+           </property>
+           <property name="uniformRowHeights" >
+            <bool>true</bool>
+           </property>
+           <column>
+            <property name="text" >
+             <string>Found Documents</string>
+            </property>
+           </column>
+          </widget>
+         </item>
+         <item row="1" column="0" colspan="2" >
+          <widget class="QLineEdit" name="lineSearch" >
+           <property name="contextMenuPolicy" >
+            <enum>Qt::NoContextMenu</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
       </widget>
-      <widget class="QTextBrowser" name="txtTopic" >
+      <widget class="QTextBrowser" name="txtBrowser" >
        <property name="sizePolicy" >
         <sizepolicy>
          <hsizetype>7</hsizetype>
@@ -534,8 +725,8 @@
    <property name="geometry" >
     <rect>
      <x>0</x>
-     <y>540</y>
-     <width>685</width>
+     <y>498</y>
+     <width>713</width>
      <height>22</height>
     </rect>
    </property>
@@ -565,7 +756,7 @@
    <addaction name="actionBack" />
    <addaction name="actionForward" />
    <addaction name="actionHome" />
-   <addaction name="actionSearch" />
+   <addaction name="actionFind" />
    <addaction name="separator" />
    <addaction name="actionClose" />
   </widget>
@@ -593,9 +784,6 @@
    <property name="shortcut" >
     <string>Backspace</string>
    </property>
-   <property name="enabled" >
-    <bool>false</bool>
-   </property>
   </action>
   <action name="actionForward" >
    <property name="icon" >
@@ -620,9 +808,6 @@
    </property>
    <property name="shortcut" >
     <string>Shift+Backspace</string>
-   </property>
-   <property name="enabled" >
-    <bool>false</bool>
    </property>
   </action>
   <action name="actionHome" >
@@ -650,15 +835,21 @@
     <string>Ctrl+H</string>
    </property>
   </action>
-  <action name="actionSearch" >
+  <action name="actionFind" >
    <property name="icon" >
     <iconset resource="..\..\res\vidalia.qrc" >:/images/22x22/22x22/system-search.png</iconset>
    </property>
    <property name="text" >
-    <string>Search</string>
+    <string>Find</string>
+   </property>
+   <property name="iconText" >
+    <string>Find</string>
+   </property>
+   <property name="toolTip" >
+    <string>Find</string>
    </property>
    <property name="statusTip" >
-    <string>Search for a word or phrase (Ctrl+F)</string>
+    <string>Search for a word or phrase on current page (Ctrl+F)</string>
    </property>
    <property name="font" >
     <font>
@@ -702,15 +893,29 @@
   </action>
  </widget>
  <pixmapfunction></pixmapfunction>
+ <tabstops>
+  <tabstop>tabsMenu</tabstop>
+  <tabstop>btnCloseFind</tabstop>
+  <tabstop>lineFind</tabstop>
+  <tabstop>btnFindNext</tabstop>
+  <tabstop>btnFindPrev</tabstop>
+  <tabstop>chkbxMatchCase</tabstop>
+  <tabstop>chkbxWholePhrase</tabstop>
+  <tabstop>treeContents</tabstop>
+  <tabstop>txtBrowser</tabstop>
+  <tabstop>lineSearch</tabstop>
+  <tabstop>btnSearch</tabstop>
+  <tabstop>treeSearch</tabstop>
+ </tabstops>
  <resources>
   <include location="../../log/res/vidalia.qrc" />
   <include location="../../res/vidalia.qrc" />
  </resources>
  <connections>
   <connection>
-   <sender>actionSearch</sender>
+   <sender>actionFind</sender>
    <signal>triggered()</signal>
-   <receiver>lineSearch</receiver>
+   <receiver>lineFind</receiver>
    <slot>setFocus()</slot>
    <hints>
     <hint type="sourcelabel" >
@@ -724,9 +929,9 @@
    </hints>
   </connection>
   <connection>
-   <sender>btnCloseSearch</sender>
+   <sender>btnCloseFind</sender>
    <signal>clicked()</signal>
-   <receiver>frmSearch</receiver>
+   <receiver>frmFind</receiver>
    <slot>hide()</slot>
    <hints>
     <hint type="sourcelabel" >
@@ -740,9 +945,9 @@
    </hints>
   </connection>
   <connection>
-   <sender>actionSearch</sender>
+   <sender>actionFind</sender>
    <signal>triggered()</signal>
-   <receiver>frmSearch</receiver>
+   <receiver>frmFind</receiver>
    <slot>show()</slot>
    <hints>
     <hint type="sourcelabel" >
@@ -768,6 +973,38 @@
     <hint type="destinationlabel" >
      <x>317</x>
      <y>248</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineFind</sender>
+   <signal>returnPressed()</signal>
+   <receiver>btnFindNext</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>293</x>
+     <y>108</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>539</x>
+     <y>108</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineSearch</sender>
+   <signal>returnPressed()</signal>
+   <receiver>btnSearch</receiver>
+   <slot>click()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>153</x>
+     <y>245</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>244</x>
+     <y>277</y>
     </hint>
    </hints>
   </connection>

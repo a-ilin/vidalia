@@ -31,7 +31,10 @@
 #include <QCloseEvent>
 #include <QDomDocument>
 #include <QDomElement>
+#include <QDomNodeList>
 #include <QTreeWidgetItem>
+#include <QTextBrowser>
+#include <QTextCursor>
 
 #include "ui_helpbrowser.h"
 
@@ -42,10 +45,20 @@ class HelpBrowser : public QMainWindow
 public:
   /** Default constructor **/
   HelpBrowser(QWidget *parent = 0);
+  /** Default destructor **/
+  ~HelpBrowser();
 
 private slots:
-  /** Called when the user selects a different item in the topic tree. */
-  void currentItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *prev);
+  /** Called when the user clicks "Find Next" */
+  void findNext();
+  /** Called when the user clicks "Find Previous" */
+  void findPrev();
+  /** Called when the user starts a search */
+  void search();
+  /** Called when the user selects a different item in the contents tree */
+  void contentsItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *prev);
+  /** Called when the user selects a different item in the search tree */
+  void searchItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *prev);
   
 private:
   /** Load the contents of the help topics tree from the specified XML file. */
@@ -58,10 +71,20 @@ private:
   bool isValidTopicElement(const QDomElement &topicElement);
   /** Builds a resource path to an html file associated with a help topic. */
   QString getResourcePath(const QDomElement &topicElement);
+  /** Searches the current page for the phrase in the Find box */
+  void find(bool forward);
   /** Creates a new item to be placed in the topic tree. */
   QTreeWidgetItem* createTopicTreeItem(const QDomElement &topicElement,
                                        QTreeWidgetItem *parent);
+  /** Called when the user selects a different item in the tree. */
+  void currentItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *prev);
 
+  /** Dom document for storing the XML schema */
+  QDomDocument* _document;
+  /** Last phrase searched for */
+  QString _lastPhrase;
+  /** Indicates if phrase was previously found on current page */
+  bool _foundBefore;
   /** Qt Designer generated QObject */
   Ui::HelpBrowser ui;
 };
