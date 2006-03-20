@@ -45,8 +45,6 @@ class HelpBrowser : public QMainWindow
 public:
   /** Default constructor **/
   HelpBrowser(QWidget *parent = 0);
-  /** Default destructor **/
-  ~HelpBrowser();
 
 private slots:
   /** Called when the user clicks "Find Next" */
@@ -79,8 +77,8 @@ private:
   /** Called when the user selects a different item in the tree. */
   void currentItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *prev);
 
-  /** Dom document for storing the XML schema */
-  QDomDocument* _document;
+  /** List of DOM elements representing topics. */
+  QList<QDomElement> _elementList;
   /** Last phrase searched for */
   QString _lastPhrase;
   /** Indicates if phrase was previously found on current page */

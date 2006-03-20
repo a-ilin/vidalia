@@ -85,20 +85,11 @@ HelpBrowser::HelpBrowser(QWidget *parent)
   connect(ui.btnFindPrev, SIGNAL(clicked()), this, SLOT(findPrev()));
   connect(ui.btnSearch, SIGNAL(clicked()), this, SLOT(search()));
   
-  /* Create a new empty dom document */
-  _document = new QDomDocument();
-  
   /* Load the help topics from XML */
   loadContentsFromXml(":/help/contents.xml");
 
   /* Show the first help topic in the tree */
   ui.treeContents->setCurrentItem(ui.treeContents->topLevelItem(0));
-}
-
-/** Destructor */
-HelpBrowser::~HelpBrowser()
-{
-    delete _document;
 }
 
 /** Load the contents of the help topics tree from the specified XML file. */
@@ -119,9 +110,6 @@ HelpBrowser::loadContentsFromXml(QString xmlFile)
     ui.txtBrowser->setPlainText(tr("Error Loading Help Contents: ")+errorString);
     return;
   }
-
-  /* If successful, save document for later use */
-  *_document = document;
 }
 
 /** Load the contents of the help topics tree from the given DOM document. */
@@ -134,7 +122,8 @@ HelpBrowser::loadContents(const QDomDocument *document, QString &errorString)
     errorString = "Supplied XML file is not a valid Contents document.";
     return false;
   }
-  
+  _elementList << root;
+
   /* Create the home item */
   QTreeWidgetItem *home = createTopicTreeItem(root, 0);
   ui.treeContents->addTopLevelItem(home);
@@ -155,6 +144,9 @@ HelpBrowser::parseHelpTopic(const QDomElement &topicElement,
 {
   /* Check that we have a valid help topic */
   if (isValidTopicElement(topicElement)) {
+    /* Save this element for later (used for searching) */
+    _elementList << topicElement;
+
     /* Create and populate the new topic item in the tree */
     QTreeWidgetItem *topic = createTopicTreeItem(topicElement, parent);
 
@@ -270,12 +262,10 @@ HelpBrowser::find(bool forward)
   /* Clear status bar */
   this->statusBar()->clearMessage();
   
-  /* Set search direction */
+  /* Set search direction and other flags */
   if (!forward) {
     flags |= QTextDocument::FindBackward;
   }
-
-  /* Set search flags */
   if (ui.chkbxMatchCase->isChecked()) {
     flags |= QTextDocument::FindCaseSensitively;
   }
@@ -296,7 +286,6 @@ HelpBrowser::find(bool forward)
     } else {
       cursor.movePosition(QTextCursor::End);
     }
-
     ui.txtBrowser->setTextCursor(cursor);
   }
 
@@ -330,49 +319,30 @@ HelpBrowser::find(bool forward)
 void
 HelpBrowser::search()
 {
-  QList<QDomElement> elementList;
-  QDomElement child;
-
   /* Don't search if invalid document or blank search phrase */
-  if (_document->isNull() || ui.lineSearch->text().isEmpty()) {
+  if (ui.lineSearch->text().isEmpty()) {
     return;
   }
   
   /* Clear the list */
   ui.treeSearch->clear();
     
-  /* Prime the list with the root */
-  elementList.append(_document->documentElement());
-
-  /* Traverse the XML document, flattening into a list of elements */
-  for (int i=0; i < elementList.size(); ++i) {
-    child = elementList[i].firstChildElement(ELEMENT_TOPIC);
- 
-    while(!child.isNull()) {
-      elementList.append(child);
-      child = child.nextSiblingElement(ELEMENT_TOPIC);
-    }
-  }
-
   QTextBrowser browser;
   QTextCursor found;
-  QTextDocument::FindFlags flags = 0;
+  QTextDocument::FindFlags flags = QTextDocument::FindWholeWords;
 
   /* Search through all the pages looking for the phrase */
-  for (int i=0; i < elementList.size(); ++i) {
+  for (int i=0; i < _elementList.size(); ++i) {
     /* Load page data into browser */
-    browser.setSource(QUrl(getResourcePath(elementList[i])));
+    browser.setSource(QUrl(getResourcePath(_elementList[i])));
       
-    /* Search for whole words only */
-    flags |= QTextDocument::FindWholeWords;
-
     /* Search current document */
     found = browser.document()->find(ui.lineSearch->text(), 0, flags);
 
     /* If found, add page to tree */
     if (!found.isNull()) {
-      ui.treeSearch->addTopLevelItem(createTopicTreeItem(elementList[i], 0));
-      }
+      ui.treeSearch->addTopLevelItem(createTopicTreeItem(_elementList[i], 0));
+    }
   }
 
   /* Set the status bar text */
