@@ -515,7 +515,7 @@
             <enum>Qt::NoContextMenu</enum>
            </property>
            <property name="text" >
-            <string>Match entire phrase</string>
+            <string>Whole words only</string>
            </property>
           </widget>
          </item>
