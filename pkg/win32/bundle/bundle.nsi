@@ -13,7 +13,7 @@
 
 !define TOR_NAME "Tor"
 !define TOR_EXEC "tor.exe"
-!define TOR_VERSION "0.1.1.15"
+!define TOR_VERSION "0.1.1.16-rc"
 
 !define PRIVOXY_NAME "Privoxy"
 !define PRIVOXY_EXEC "privoxy.exe"
