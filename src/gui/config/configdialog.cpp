@@ -236,7 +236,15 @@ void
 ConfigDialog::getServerPublicIP()
 {
   QString ip;
-  if (net_get_public_ip(ip)) {
+  bool success;
+
+  /* This could take a bit, so show the wait cursor. */
+  QApplication::setOverrideCursor(Qt::WaitCursor);
+  success = net_get_public_ip(ip);
+  QApplication::restoreOverrideCursor();
+  
+  /* Handle the result */
+  if (success) {
     ui.lineServerAddress->setText(ip);
   } else {
     QMessageBox::warning(this, tr("Error"),
