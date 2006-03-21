@@ -1,12 +1,36 @@
-1-23-06
-Regarding window transparancy:
-    "This feature is available on Mac OS X, X11 platforms that support the Composite 
-    extension, and Windows 2000 and later.
 
-    Note that under X11 you need to have a composite manager running, and the X11 
-    specific _NET_WM_WINDOW_OPACITY atom needs to be supported by the window manager 
-    you are using."
+Short-Term Goals:
+  * Conduct a semi-formal survey to try to learn more about what users really
+    want from a controller.
+  
+  
+Pre-competition-deadline Goals:
+  * Circuit and stream visualization
+  
+  * Simplified (coarse-grained) rate-limiting control
+  
+  * Add a "Help" button to as many error message boxes as possible and link to
+    the appropriate help topics.
+  
+  * Create a bundle for Mac OS X, similar to what we have for Windows
+  
+  * Create a Vidalia package for at least one Linux distro (preferably Debian)
 
-So basically transparancy is not supported on < Win 2000, and we need to figure out
-how to detect that atom thing in X11 and respond accordingly.
-      
+  
+Pie-in-the-sky Goals:
+  * Circuit and stream control. "click-click-click, I want that circuit"
+  
+  * Scheduled rate-limiting, so the user can adjust their bandwidth
+    limits depending on what time of day it is.
+
+
+Miscellaneous Tasks:
+  * Improve window transparency support. In particular, figure out how to do the
+    following correctly on X11 (from the Qt docs):
+      "This feature is available on Mac OS X, X11 platforms that support the Composite 
+      extension, and Windows 2000 and later.
+
+      Note that under X11 you need to have a composite manager running, and the X11 
+      specific _NET_WM_WINDOW_OPACITY atom needs to be supported by the window manager 
+      you are using."
+
