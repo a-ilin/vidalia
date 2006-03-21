@@ -102,6 +102,9 @@ TorControl::stop(QString *errmsg)
   if (isConnected()) {
     disconnect();
   }
+  if (!isRunning()) {
+    return true;
+  }
   return _torProcess->stop(errmsg);
 }
 
