@@ -312,9 +312,7 @@ MainWindow::started()
   v_sleep(1);
   if(!_torControl->connect(&errmsg)) {
     /* Ok, ok. It really isn't going to connect. I give up. */
-    QMessageBox::warning(this, tr("Error Connecting to Tor"),
-       tr("Vidalia was unable to connect to Tor. " 
-          "Check your control port setting and try again.\n\n") + errmsg,
+    QMessageBox::warning(this, tr("Error Connecting to Tor"), errmsg,
        QMessageBox::Ok, QMessageBox::NoButton);
 
     /* Since Vidalia can't connect, we can't really do much, so stop Tor.
