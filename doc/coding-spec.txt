@@ -26,8 +26,8 @@ $Id$
 
         Snapshots of all Vidalia releases will be contained in a sub-directory
         of ./releases, named according to the Vidalia version specification.
-        For example, ./releases/0.0.1-alpha/ would contain the 0.0.1-alpha
-        release of Vidalia.
+        For example, ./releases/0.0.1/ would contain the 0.0.1 release of
+        Vidalia.
   
      ./trunk:
 
@@ -35,8 +35,8 @@ $Id$
 
      ./trunk/doc:
 
-        Contains Vidalia's documentation, such as licensing information,
-        readme files, todo lists, etc.
+        Contains Vidalia's documentation, such as specifications and todo
+        lists.
 
      ./trunk/src:
 
@@ -63,7 +63,9 @@ $Id$
     ./trunk/src/gui/res:
 
        All GUI-related resource files, such as images, should go in this
-       directory.
+       directory. Images should be placed in sub-directories appropriate for
+       their image size. For example, 16x16 images would go in
+       ./trunk/src/gui/res/16x16/
        
     ./trunk/src/util:
 
