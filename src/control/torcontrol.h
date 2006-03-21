@@ -60,7 +60,6 @@ public:
   void disconnect();
   /** Check if we're connected to Tor's control socket */
   bool isConnected();
-
   /** Sends an authentication token to Tor */
   bool authenticate(QString *errmsg = 0);
 
