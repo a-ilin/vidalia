@@ -1,4 +1,4 @@
-#################################################################
+###############################################################
 #  $Id$
 # 
 #  Vidalia is distributed under the following license:
@@ -25,4 +25,5 @@ include($$PWD/config/config.pri)
 include($$PWD/control/control.pri)
 include($$PWD/util/util.pri)
 include($$PWD/gui/gui.pri)
+include($$PWD/lang/lang.pri)
 
