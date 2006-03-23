@@ -44,6 +44,8 @@
 
 class ControlSocket : public QTcpSocket
 {
+  Q_OBJECT
+
 public:
   /** Default constructor and destructor */
   ControlSocket();
