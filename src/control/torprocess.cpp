@@ -57,7 +57,7 @@ bool TorProcess::start(QString app, QString args, QString *errmsg)
   if (!appInfo.isExecutable()) {
     if (errmsg) {
       *errmsg = 
-        QString("\"%1\" is not an executable.").arg(path);
+        tr("\"%1\" is not an executable.").arg(path);
     }
     return false;
   }
@@ -96,7 +96,7 @@ TorProcess::stop(QString *errmsg)
   if (!waitForFinished(-1)) {
     if (errmsg) {
       *errmsg = 
-        QString("Process %1 failed to stop. [%2]").arg(pid()).arg(errorString());
+        tr("Process %1 failed to stop. [%2]").arg(pid()).arg(errorString());
     }
     return false;
   }
@@ -179,17 +179,17 @@ TorProcess::errorString()
   QString err;
   switch (error()) {
     case QProcess::FailedToStart:
-      err = "Failed to start"; break;
+      err = tr("Failed to start"); break;
     case QProcess::Crashed:
-      err = "Crashed"; break;
+      err = tr("Crashed"); break;
     case QProcess::Timedout:
-      err = "Timed out"; break;
+      err = tr("Timed out"); break;
     case QProcess::WriteError:
-      err = "Write error"; break;
+      err = tr("Write error"); break;
     case QProcess::ReadError:
-      err = "Read error"; break;
+      err = tr("Read error"); break;
     default:
-      err = "Unknown error"; break;
+      err = tr("Unknown error"); break;
   }
   return err;
 }

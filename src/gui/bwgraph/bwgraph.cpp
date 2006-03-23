@@ -190,11 +190,11 @@ BandwidthGraph::showSettingsFrame(bool show)
   if (show) {
     ui.frmSettings->setVisible(true);
     ui.btnToggleSettings->setChecked(true);
-    ui.btnToggleSettings->setText("Hide Settings");
+    ui.btnToggleSettings->setText(tr("Hide Settings"));
   } else {
     ui.frmSettings->setVisible(false);
     ui.btnToggleSettings->setChecked(false);
-    ui.btnToggleSettings->setText("Show Settings");
+    ui.btnToggleSettings->setText(tr("Show Settings"));
   }
 }
 

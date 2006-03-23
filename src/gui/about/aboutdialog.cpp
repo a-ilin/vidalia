@@ -82,11 +82,11 @@ AboutDialog::showLicense(bool show)
   if (show) {
     resize(_maxSize);
     ui.btnLicense->setChecked(true);
-    ui.btnLicense->setText("Hide License");
+    ui.btnLicense->setText(tr("Hide License"));
   } else {
     resize(_minSize);
     ui.btnLicense->setChecked(false);
-    ui.btnLicense->setText("View License");
+    ui.btnLicense->setText(tr("View License"));
   }
 }
 
@@ -98,7 +98,7 @@ AboutDialog::show()
   if (_torControl->isRunning()) {
     ui.lblTorVersion->setText(_torControl->getTorVersion());
   } else {
-    ui.lblTorVersion->setText("<Not Running>");
+    ui.lblTorVersion->setText(tr("<Not Running>"));
   }
   QDialog::show();
 }

@@ -81,7 +81,7 @@ ControlSocket::disconnect(QString *errmsg)
     if (!waitForDisconnected(CONN_TIMEOUT)) {
       if (errmsg) {
         *errmsg =
-          QString("Error disconnecting socket. [%1]").arg(errorString());
+          tr("Error disconnecting socket. [%1]").arg(errorString());
       }
       return false;
     }
@@ -140,7 +140,7 @@ ControlSocket::sendCommand(ControlCommand cmd, QString *errmsg)
   if (write(strCmd.toAscii()) != strCmd.length()) {
     if (errmsg) {
       *errmsg = 
-        QString("Error sending control command. [%1]").arg(errorString());
+        tr("Error sending control command. [%1]").arg(errorString());
     }
     return false;
   }
@@ -159,7 +159,7 @@ ControlSocket::readLine(QString &line, QString *errmsg)
   while (!canReadLine()) {
     if (!isConnected()) {
       if (errmsg) {
-        *errmsg = "Socket disconnected while attempting to read a line of data.";
+        *errmsg = tr("Socket disconnected while attempting to read a line of data.");
       }
       return false;
     }
@@ -201,7 +201,7 @@ ControlSocket::readReply(ControlReply &reply, QString *errmsg)
     if (line.length() < 4) {
       if (errmsg) {
         *errmsg = 
-          QString("Invalid control reply. [%1]").arg(line);
+          tr("Invalid control reply. [%1]").arg(line);
       }
       return false;
     }

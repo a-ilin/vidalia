@@ -119,7 +119,7 @@ HelpBrowser::loadContents(const QDomDocument *document, QString &errorString)
   /* Grab the root document element and make sure it's the right one */
   QDomElement root = document->documentElement();
   if (root.tagName() != ELEMENT_CONTENTS) {
-    errorString = "Supplied XML file is not a valid Contents document.";
+    errorString = tr("Supplied XML file is not a valid Contents document.");
     return false;
   }
   _elementList << root;
@@ -358,7 +358,7 @@ HelpBrowser::search()
   }
 
   /* Set the status bar text */
-  this->statusBar()->showMessage(QString("Found %1 results")
+  this->statusBar()->showMessage(tr("Found %1 results")
                                 .arg(ui.treeSearch->topLevelItemCount()));
 }
 

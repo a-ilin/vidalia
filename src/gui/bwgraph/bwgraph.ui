@@ -399,7 +399,7 @@
           <enum>Qt::NoContextMenu</enum>
          </property>
          <property name="text" >
-          <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Since:&lt;/p>&lt;/body>&lt;/html></string>
+          <string>Since:</string>
          </property>
         </widget>
        </item>
@@ -426,7 +426,7 @@
           <enum>Qt::NoContextMenu</enum>
          </property>
          <property name="text" >
-          <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">Jan 26 00:55:07&lt;/p>&lt;/body>&lt;/html></string>
+          <string>Jan 1 2000</string>
          </property>
         </widget>
        </item>
@@ -627,7 +627,7 @@
               <enum>Qt::RightToLeft</enum>
              </property>
              <property name="text" >
-              <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">100&lt;/p>&lt;/body>&lt;/html></string>
+              <string>100</string>
              </property>
             </widget>
            </item>
@@ -648,7 +648,7 @@
               <enum>Qt::NoContextMenu</enum>
              </property>
              <property name="text" >
-              <string>&lt;html>&lt;head>&lt;meta name="qrichtext" content="1" />&lt;/head>&lt;body style=" white-space: pre-wrap; font-family:Arial; font-size:10pt; font-weight:400; font-style:normal; text-decoration:none;">&lt;p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;">% Opaque&lt;/p>&lt;/body>&lt;/html></string>
+              <string>% Opaque</string>
              </property>
             </widget>
            </item>

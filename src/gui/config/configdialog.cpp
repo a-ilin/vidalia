@@ -194,7 +194,7 @@ ConfigDialog::saveServerSettings(QString *errmsg)
   if (ui.chkEnableServer->isChecked() &&
       (ui.lineServerPort->text().isEmpty() ||
        ui.lineServerNickname->text().isEmpty())) {
-    *errmsg = "You must specify at least a server nickname and port.";
+    *errmsg = tr("You must specify at least a server nickname and port.");
     return false;
   }
   _serverSettings->setServerEnabled(ui.chkEnableServer->isChecked());

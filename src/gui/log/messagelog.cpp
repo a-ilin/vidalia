@@ -266,7 +266,7 @@ MessageLog::saveChanges()
   filterLog();
 
   /* Set Message Counter */
-  ui.lstMessages->setStatusTip(QString("Messages Shown: %1")
+  ui.lstMessages->setStatusTip(tr("Messages Shown: %1")
                                   .arg(_messagesShown));
   /* Save Message Log opacity */
   _settings->setMsgLogOpacity(ui.sldrOpacity->value());
@@ -357,7 +357,7 @@ MessageLog::filterLog()
 QString
 MessageLog::format(QTreeWidgetItem *item)
 {
-  return QString("%1 [%2] %3\n").arg(item->text(COL_TIME))
+  return tr("%1 [%2] %3\n").arg(item->text(COL_TIME))
                                 .arg(item->text(COL_TYPE))
                                 .arg(item->text(COL_MSG).trimmed());
 }
@@ -507,7 +507,7 @@ void
 MessageLog::clear()
 {
   _messagesShown = 0;
-  ui.lstMessages->setStatusTip(QString("Messages Shown: %1")
+  ui.lstMessages->setStatusTip(tr("Messages Shown: %1")
                                   .arg(_messagesShown));
 }
 
@@ -544,11 +544,11 @@ MessageLog::showSettingsFrame(bool show)
   if (show) {
     ui.frmSettings->setVisible(true);
     ui.btnToggleSettings->setChecked(true);
-    ui.btnToggleSettings->setText("Hide Settings");
+    ui.btnToggleSettings->setText(tr("Hide Settings"));
   } else {
     ui.frmSettings->setVisible(false);
     ui.btnToggleSettings->setChecked(false);
-    ui.btnToggleSettings->setText("Show Settings");
+    ui.btnToggleSettings->setText(tr("Show Settings"));
   }
 }
 
@@ -628,7 +628,7 @@ MessageLog::log(LogEvent::Severity type, QString message)
     ui.lstMessages->addTopLevelItem(newMessage);
 
     _messagesShown++;
-    ui.lstMessages->setStatusTip(QString("Messages Shown: %1")
+    ui.lstMessages->setStatusTip(tr("Messages Shown: %1")
                                   .arg(_messagesShown));
     ui.lstMessages->scrollToItem(newMessage);
 
