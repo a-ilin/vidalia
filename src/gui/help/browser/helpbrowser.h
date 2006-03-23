@@ -79,8 +79,10 @@ private:
 
   /** List of DOM elements representing topics. */
   QList<QDomElement> _elementList;
-  /** Last phrase searched for */
-  QString _lastPhrase;
+  /** Last phrase used for 'Find' */
+  QString _lastFind;
+  /** Last phrase searched on */
+  QString _lastSearch;
   /** Indicates if phrase was previously found on current page */
   bool _foundBefore;
   /** Qt Designer generated QObject */

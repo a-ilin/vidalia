@@ -214,7 +214,17 @@ HelpBrowser::searchItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *prev)
   if (!selected.isEmpty()) {
     ui.treeContents->setItemSelected(selected[0], false);
   }
+
+  /* Change to selected page */
   currentItemChanged(current, prev);
+
+  /* Highlight search phrase */
+  QTextCursor found;
+  QTextDocument::FindFlags flags = QTextDocument::FindWholeWords;
+  found = ui.txtBrowser->document()->find(_lastSearch, 0, flags);
+  if (!found.isNull()) {
+    ui.txtBrowser->setTextCursor(found);
+  }
 }
 
 /** Called when the user selects a different item in the tree. */
@@ -274,10 +284,10 @@ HelpBrowser::find(bool forward)
   }
   
   /* Check if search phrase is the same as the previous */
-  if (searchPhrase != _lastPhrase) {
+  if (searchPhrase != _lastFind) {
     _foundBefore = false;
   }
-  _lastPhrase = searchPhrase;
+  _lastFind = searchPhrase;
   
   /* Set the cursor to the appropriate start location if necessary */
   if (!cursor.hasSelection()) {
@@ -319,17 +329,19 @@ HelpBrowser::find(bool forward)
 void
 HelpBrowser::search()
 {
+  /* Clear the list */
+  ui.treeSearch->clear();
+  
   /* Don't search if invalid document or blank search phrase */
   if (ui.lineSearch->text().isEmpty()) {
     return;
   }
-  
-  /* Clear the list */
-  ui.treeSearch->clear();
     
   QTextBrowser browser;
   QTextCursor found;
   QTextDocument::FindFlags flags = QTextDocument::FindWholeWords;
+
+  _lastSearch = ui.lineSearch->text();
 
   /* Search through all the pages looking for the phrase */
   for (int i=0; i < _elementList.size(); ++i) {
