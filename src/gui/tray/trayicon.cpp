@@ -251,26 +251,15 @@ TrayIcon::mouseReleaseEvent(QMouseEvent *e)
 {
 #ifdef Q_WS_WIN
 // This is for Windows, where menus appear on mouse release
-  switch (e->button()) {
-    case Qt::RightButton:
-      if (pop) {
-        // Necessary to make keyboard focus
-        // and menu closing work on Windows.
-        pop->activateWindow();
-        pop->popup(e->globalPos());
-        pop->activateWindow();
-        e->accept();
-      }
-      break;
-      
-    case Qt::LeftButton:
-    case Qt::MidButton:
-      emit clicked(e->globalPos(), e->button());
-      break;
-      
-    default:
-      break;
-  }
+
+  /* Make the menu pop up on any single mouse button release - JH 3/23/06 */
+  // Necessary to make keyboard focus
+  // and menu closing work on Windows.
+  pop->activateWindow();
+  pop->popup(e->globalPos());
+  pop->activateWindow();
+  e->accept();
+
 #endif
   e->ignore();
 }
