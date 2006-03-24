@@ -21,6 +21,10 @@
 #  02110-1301, USA.
 #################################################################
 
+HEADERS += $$PWD/languagesupport.h
+
+SOURCES += $$PWD/languagesupport.cpp
+
 TRANSLATIONS += $$PWD/vidalia_en.ts
 
 RESOURCES += $$PWD/lang.qrc

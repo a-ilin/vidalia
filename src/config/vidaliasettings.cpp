@@ -26,6 +26,7 @@
 
 #include <QDir>
 #include <QCoreApplication>
+#include <lang/languagesupport.h>
 
 #include "vidaliasettings.h"
 
@@ -37,6 +38,7 @@
 #define VIDALIA_VERSION             "0.0.2-svn"
 
 /* Vidalia's Settings */
+#define SETTING_LANGUAGE            "LanguageCode"
 #define SETTING_RUN_TOR_AT_START    "RunTorAtStart"
 
 #define SETTING_MSG_FILTER          "MessageLog/MessageFilter"
@@ -49,6 +51,7 @@
 #define SETTING_BWGRAPH_OPACITY     "BandwidthGraph/Opacity"
 
 /* Default Vidalia Settings */
+#define DEFAULT_LANGUAGE         LanguageSupport::defaultLanguageCode()
 #define DEFAULT_RUN_TOR_AT_START false
 
 #define DEFAULT_OPACITY 100
@@ -90,6 +93,20 @@ VidaliaSettings::reset()
 {
   QSettings settings("vidalia", "vidalia");
   settings.clear();
+}
+
+/** Gets the currently preferred language code for Vidalia. */
+QString
+VidaliaSettings::getLanguageCode()
+{
+  return value(SETTING_LANGUAGE, DEFAULT_LANGUAGE).toString();
+}
+
+/** Sets the preferred language code. */
+void
+VidaliaSettings::setLanguageCode(QString languageCode)
+{
+  setValue(SETTING_LANGUAGE, languageCode);
 }
 
 /** Returns true if Tor is to be run when Vidalia starts. */
@@ -141,7 +158,6 @@ VidaliaSettings::setRunVidaliaOnBoot(bool run)
   return;
 #endif
 }
-
 
 /** Returns the current message filter. */
 uint

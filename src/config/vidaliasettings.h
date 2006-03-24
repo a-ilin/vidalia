@@ -53,6 +53,11 @@ public:
   /** Resets all of Vidalia's settings. */
   static void reset();
 
+  /** Gets the currently preferred language code for Vidalia. */
+  QString getLanguageCode();
+  /** Saves the preferred language code. */
+  void setLanguageCode(QString languageCode);
+  
   /** Returns true if Vidalia should start Tor when it starts. */
   bool runTorAtStart();
   /** Set whether to run Tor when Vidalia starts. */
