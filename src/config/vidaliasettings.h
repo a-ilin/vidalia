@@ -51,7 +51,7 @@ public:
   static QString getVersion();
 
   /** Resets all of Vidalia's settings. */
-  void reset();
+  static void reset();
 
   /** Returns true if Vidalia should start Tor when it starts. */
   bool runTorAtStart();

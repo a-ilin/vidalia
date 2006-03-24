@@ -88,7 +88,8 @@ VidaliaSettings::getVersion()
 void
 VidaliaSettings::reset()
 {
-  clear();
+  QSettings settings("vidalia", "vidalia");
+  settings.clear();
 }
 
 /** Returns true if Tor is to be run when Vidalia starts. */
