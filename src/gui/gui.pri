@@ -21,10 +21,9 @@
 #  02110-1301, USA.
 #################################################################
 
-HEADERS += $$PWD/mainwindow.h \
+HEADERS += $$PWD/mainwindow.h
            
-SOURCES += $$PWD/main.cpp \
-           $$PWD/mainwindow.cpp 
+SOURCES += $$PWD/mainwindow.cpp 
 
 RESOURCES += $$PWD/res/vidalia.qrc
 

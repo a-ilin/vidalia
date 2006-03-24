@@ -27,3 +27,8 @@ include($$PWD/util/util.pri)
 include($$PWD/gui/gui.pri)
 include($$PWD/lang/lang.pri)
 
+INCLUDEPATH += $$PWD
+
+SOURCES += $$PWD/main.cpp
+
+

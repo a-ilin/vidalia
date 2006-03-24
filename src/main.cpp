@@ -38,7 +38,7 @@
 #endif
 
 #include <config/vidaliasettings.h>
-#include "mainwindow.h"
+#include <gui/mainwindow.h>
 
 
 /** Prints the available arguments for Vidalia. The format of the usage
