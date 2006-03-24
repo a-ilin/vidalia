@@ -73,6 +73,7 @@ XPStyle on
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\win-uninstall.ico"
 !define MUI_HEADERIMAGE_BITMAP "${NSISDIR}\Contrib\Graphics\Header\win.bmp"
 !define MUI_HEADERIMAGE
+!define MUI_FINISHPAGE_TEXT "Installation is complete.\r\n\r\nPlease see http://tor.eff.org/docs/tor-doc-win32.html to learn how to configure your applications to use Tor.\r\n"
 !define MUI_FINISHPAGE_RUN
 !define MUI_FINISHPAGE_RUN_FUNCTION CustomFinishFn
 !define MUI_FINISHPAGE_RUN_TEXT "Run installed components now"
