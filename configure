@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Generate the translation files
+lrelease Vidalia.pro
+if [ $? -ne 0 ]
+then
+  exit 1
+fi
+
+# Run qmake to generate a Makefile
+qmake
+
