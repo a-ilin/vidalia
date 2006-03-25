@@ -246,6 +246,36 @@ HelpBrowser::currentItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *prev)
   _foundBefore = false;
 }
 
+/** Searches for a topic in the topic tree. Returns a pointer to that topics
+ * item in the topic tree if it is found, 0 otherwise. */
+QTreeWidgetItem*
+HelpBrowser::findTopicItem(QTreeWidgetItem *startItem, QString topic)
+{
+  QString subtopic = topic.mid(0, topic.indexOf(".")).toLower();
+  for (int i = 0; i < startItem->childCount(); i++) {
+    QTreeWidgetItem *item = startItem->child(i);
+    if (subtopic == item->data(0, ROLE_TOPIC_ID).toString().toLower()) {
+      if (!topic.contains(".")) {
+        return item;
+      }
+      return findTopicItem(item, topic.mid(topic.indexOf(".")+1));
+    }
+  }
+  return 0;
+}
+
+/** Shows a topic based on the topic's ID (e.g., "log.basic") */
+void
+HelpBrowser::showTopic(QString topic)
+{
+  QTreeWidgetItem *item =
+    findTopicItem(ui.treeContents->topLevelItem(0), topic);
+  if (item) {
+    this->show();
+    currentItemChanged(item, 0);
+  }
+}
+
 /** Called when the user clicks "Find Next". */
 void
 HelpBrowser::findNext()

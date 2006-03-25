@@ -45,7 +45,9 @@ class HelpBrowser : public QMainWindow
 public:
   /** Default constructor **/
   HelpBrowser(QWidget *parent = 0);
-
+  /** Shows a topic in the browser. */
+  void showTopic(QString topic);
+  
 private slots:
   /** Called when the user clicks "Find Next" */
   void findNext();
@@ -57,7 +59,7 @@ private slots:
   void contentsItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *prev);
   /** Called when the user selects a different item in the search tree */
   void searchItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *prev);
-  
+   
 private:
   /** Load the contents of the help topics tree from the specified XML file. */
   void loadContentsFromXml(QString xmlFile);
@@ -76,7 +78,9 @@ private:
                                        QTreeWidgetItem *parent);
   /** Called when the user selects a different item in the tree. */
   void currentItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *prev);
-
+  /** Finds a topic in the topic tree. */
+  QTreeWidgetItem* findTopicItem(QTreeWidgetItem *startItem, QString topic);
+  
   /** List of DOM elements representing topics. */
   QList<QDomElement> _elementList;
   /** Last phrase used for 'Find' */
