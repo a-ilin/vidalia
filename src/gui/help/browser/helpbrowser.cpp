@@ -251,13 +251,21 @@ HelpBrowser::currentItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *prev)
 QTreeWidgetItem*
 HelpBrowser::findTopicItem(QTreeWidgetItem *startItem, QString topic)
 {
+  /* Parse the first subtopic in the topic id. */
   QString subtopic = topic.mid(0, topic.indexOf(".")).toLower();
+
+  /* Search through all children of startItem and look for a subtopic match */
   for (int i = 0; i < startItem->childCount(); i++) {
     QTreeWidgetItem *item = startItem->child(i);
+    
     if (subtopic == item->data(0, ROLE_TOPIC_ID).toString().toLower()) {
+      /* Found a subtopic match, so expand this item */
+      ui.treeContents->setItemExpanded(item, true);
       if (!topic.contains(".")) {
+        /* Found the exact topic */
         return item;
       }
+      /* Search recursively for the next subtopic */
       return findTopicItem(item, topic.mid(topic.indexOf(".")+1));
     }
   }
@@ -268,10 +276,17 @@ HelpBrowser::findTopicItem(QTreeWidgetItem *startItem, QString topic)
 void
 HelpBrowser::showTopic(QString topic)
 {
+  /* Search for the topic in the contents tree */
   QTreeWidgetItem *item =
     findTopicItem(ui.treeContents->topLevelItem(0), topic);
+    
   if (item) {
+    /* Item was found, so show its location in the hierarchy and select its
+     * tree item. */
     this->show();
+    ui.treeContents->setItemExpanded(ui.treeContents->topLevelItem(0), true);
+    ui.treeContents->setItemSelected(ui.treeContents->topLevelItem(0), false);
+    ui.treeContents->setItemSelected(item, true);
     currentItemChanged(item, 0);
   }
 }
