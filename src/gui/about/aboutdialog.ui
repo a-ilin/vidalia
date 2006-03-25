@@ -307,7 +307,7 @@
    <string>About Vidalia</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="..\res\vidalia.qrc" >:/images/16x16/16x16/tor-logo.png</iconset>
+   <iconset resource="..\res\vidalia.qrc" >:/images/16x16/tor-logo.png</iconset>
   </property>
   <property name="layoutDirection" >
    <enum>Qt::LeftToRight</enum>
@@ -597,7 +597,7 @@
     <string/>
    </property>
    <property name="pixmap" >
-    <pixmap resource="..\res\vidalia.qrc" >:/images/128x128/128x128/tor-on.png</pixmap>
+    <pixmap resource="..\res\vidalia.qrc" >:/images/128x128/tor-on.png</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="lblTorLogo" >
@@ -616,7 +616,7 @@
     <string/>
    </property>
    <property name="pixmap" >
-    <pixmap resource="..\res\vidalia.qrc" >:/images/128x128/128x128/tor-logo.png</pixmap>
+    <pixmap resource="..\res\vidalia.qrc" >:/images/128x128/tor-logo.png</pixmap>
    </property>
   </widget>
   <widget class="QLabel" name="lblQtLogo" >
@@ -635,7 +635,7 @@
     <string/>
    </property>
    <property name="pixmap" >
-    <pixmap resource="..\res\vidalia.qrc" >:/images/128x128/128x128/qt-logo.png</pixmap>
+    <pixmap resource="..\res\vidalia.qrc" >:/images/128x128/qt-logo.png</pixmap>
    </property>
   </widget>
  </widget>

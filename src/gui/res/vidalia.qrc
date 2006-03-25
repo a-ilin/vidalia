@@ -2,7 +2,7 @@
     <qresource prefix="/docs">
         <file>short_license.txt</file>
     </qresource>
-    <qresource prefix="/images/16x16">
+    <qresource prefix="/images">
         <file>16x16/emblem-unreadable.png</file>
         <file>16x16/format-justify-fill.png</file>
         <file>16x16/go-next.png</file>
@@ -21,7 +21,7 @@
         <file>16x16/tor-on-gray.png</file>
         <file>16x16/utilities-system-monitor.png</file>
     </qresource>
-    <qresource prefix="/images/22x22">
+    <qresource prefix="/images">
         <file>22x22/edit-clear.png</file>
         <file>22x22/edit-copy.png</file>
         <file>22x22/edit-select-all.png</file>
@@ -39,12 +39,12 @@
         <file>22x22/system-search.png</file>
         <file>22x22/utilities-system-monitor.png</file>
     </qresource>
-    <qresource prefix="/images/32x32">
+    <qresource prefix="/images">
         <file>32x32/tor-logo.png</file>
         <file>32x32/tor-off.png</file>
         <file>32x32/tor-on.png</file>
     </qresource>
-    <qresource prefix="/images/48x48">
+    <qresource prefix="/images">
         <file>48x48/emblem-system.png</file>
         <file>48x48/network-server.png</file>
         <file>48x48/preferences-system.png</file>
@@ -52,7 +52,7 @@
         <file>48x48/tor-off.png</file>
         <file>48x48/tor-on.png</file>
     </qresource>
-    <qresource prefix="/images/128x128">
+    <qresource prefix="/images">
         <file>128x128/qt-logo.png</file>
         <file>128x128/tor-logo.png</file>
         <file>128x128/tor-off.png</file>

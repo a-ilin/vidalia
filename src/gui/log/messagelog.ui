@@ -295,7 +295,7 @@
    <string>Message Log</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="..\res\vidalia.qrc" >:/images/16x16/16x16/format-justify-fill.png</iconset>
+   <iconset resource="..\res\vidalia.qrc" >:/images/16x16/format-justify-fill.png</iconset>
   </property>
   <property name="statusTip" >
    <string/>
@@ -774,7 +774,7 @@
                <string>Error</string>
               </property>
               <property name="icon" >
-               <iconset resource="..\res\vidalia.qrc" >:/images/16x16/16x16/msg-error.png</iconset>
+               <iconset resource="..\res\vidalia.qrc" >:/images/16x16/msg-error.png</iconset>
               </property>
              </widget>
             </item>
@@ -790,7 +790,7 @@
                <string>Warning</string>
               </property>
               <property name="icon" >
-               <iconset resource="..\res\vidalia.qrc" >:/images/16x16/16x16/msg-warn.png</iconset>
+               <iconset resource="..\res\vidalia.qrc" >:/images/16x16/msg-warn.png</iconset>
               </property>
              </widget>
             </item>
@@ -806,7 +806,7 @@
                <string>Notice</string>
               </property>
               <property name="icon" >
-               <iconset resource="..\res\vidalia.qrc" >:/images/16x16/16x16/msg-notice.png</iconset>
+               <iconset resource="..\res\vidalia.qrc" >:/images/16x16/msg-notice.png</iconset>
               </property>
              </widget>
             </item>
@@ -822,7 +822,7 @@
                <string>Info</string>
               </property>
               <property name="icon" >
-               <iconset resource="..\res\vidalia.qrc" >:/images/16x16/16x16/msg-info.png</iconset>
+               <iconset resource="..\res\vidalia.qrc" >:/images/16x16/msg-info.png</iconset>
               </property>
              </widget>
             </item>
@@ -838,7 +838,7 @@
                <string>Debug</string>
               </property>
               <property name="icon" >
-               <iconset resource="..\res\vidalia.qrc" >:/images/16x16/16x16/msg-debug.png</iconset>
+               <iconset resource="..\res\vidalia.qrc" >:/images/16x16/msg-debug.png</iconset>
               </property>
              </widget>
             </item>
@@ -930,7 +930,7 @@
   </action>
   <action name="actionClear" >
    <property name="icon" >
-    <iconset resource="..\res\vidalia.qrc" >:/images/22x22/22x22/edit-clear.png</iconset>
+    <iconset resource="..\res\vidalia.qrc" >:/images/22x22/edit-clear.png</iconset>
    </property>
    <property name="text" >
     <string>Clear</string>
@@ -958,7 +958,7 @@
   </action>
   <action name="actionCopy" >
    <property name="icon" >
-    <iconset resource="..\res\vidalia.qrc" >:/images/22x22/22x22/edit-copy.png</iconset>
+    <iconset resource="..\res\vidalia.qrc" >:/images/22x22/edit-copy.png</iconset>
    </property>
    <property name="text" >
     <string>Copy</string>
@@ -989,7 +989,7 @@
   </action>
   <action name="actionSelect_All" >
    <property name="icon" >
-    <iconset resource="..\res\vidalia.qrc" >:/images/22x22/22x22/edit-select-all.png</iconset>
+    <iconset resource="..\res\vidalia.qrc" >:/images/22x22/edit-select-all.png</iconset>
    </property>
    <property name="text" >
     <string>Select All</string>
@@ -1017,7 +1017,7 @@
   </action>
   <action name="actionSave_All" >
    <property name="icon" >
-    <iconset resource="..\res\vidalia.qrc" >:/images/22x22/22x22/save-all.png</iconset>
+    <iconset resource="..\res\vidalia.qrc" >:/images/22x22/save-all.png</iconset>
    </property>
    <property name="text" >
     <string>Save All</string>
@@ -1039,7 +1039,7 @@
   </action>
   <action name="actionSave_Selected" >
    <property name="icon" >
-    <iconset resource="..\res\vidalia.qrc" >:/images/22x22/22x22/media-floppy.png</iconset>
+    <iconset resource="..\res\vidalia.qrc" >:/images/22x22/media-floppy.png</iconset>
    </property>
    <property name="text" >
     <string>Save Selected</string>
@@ -1061,7 +1061,7 @@
   </action>
   <action name="actionClose" >
    <property name="icon" >
-    <iconset resource="..\res\vidalia.qrc" >:/images/22x22/22x22/emblem-unreadable.png</iconset>
+    <iconset resource="..\res\vidalia.qrc" >:/images/22x22/emblem-unreadable.png</iconset>
    </property>
    <property name="text" >
     <string>Close</string>
@@ -1086,7 +1086,7 @@
   </action>
   <action name="actionFind" >
    <property name="icon" >
-    <iconset resource="..\res\vidalia.qrc" >:/images/22x22/22x22/system-search.png</iconset>
+    <iconset resource="..\res\vidalia.qrc" >:/images/22x22/system-search.png</iconset>
    </property>
    <property name="text" >
     <string>Find</string>
