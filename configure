@@ -28,5 +28,10 @@ then
 fi
 
 # Run qmake to generate a Makefile
-qmake
+if [ $# -ge 1 ]
+then
+  qmake -config $1
+else
+  qmake
+fi
 
