@@ -134,9 +134,12 @@ getImageRef(const char *icns)
                                  kCGRenderingIntentDefault);
             
          CGColorSpaceRelease(cs);
+         CGDataProviderRelease(provider);
       }
     }
   }
+  CFRelease(iconFile);
+  CFRelease(url);
   return image;
 }
 
