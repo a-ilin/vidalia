@@ -4,11 +4,63 @@
 <h1>Configuring Vidalia and Tor</h1>
 <hr />
 
+<p>
+Vidalia allows you to configure some of the most commonly modified aspects of
+Vidalia and Tor. It also lets you set up and manage a <a
+href="qrc:/help/en/server.html">Tor server</a> so you can help the Tor network
+grow.
+</p>
+
 <a name="general"/>
 <h3>General Settings</h3>
+<p>
+Settings on the <i>General</i> page are the most commonly modified settings.
+</p>
+<ul>
+  <li><b>Tor Directory</b>: 
+    This is the directory in which Vidalia will look
+    for your Tor installation. If you have multiple versions of Tor installed,
+    you can tell Vidalia which version you would like to run by clicking the
+    <i>Browse</i> button and navigating to the particular Tor installation you
+    want.
+  </li>
+  <li><b>Startup Options</b>:
+    This setting allows you to have Vidalia automatically start Tor when
+    Vidalia starts. You can also configure Vidalia to run when your system
+    starts (<i>Windows only</i>).
+  </li>
+</ul>
+
+<a name="server"/>
+<h3>Server Settings</h3>
+<p>
+<i>
+  See <a href="qrc:/help/en/server.html">this file</a> for detailed
+  information about setting up and managing a Tor server.
+</i>
+</p>
 
 <a name="advanced"/>
 <h3>Advanced Settings</h3>
+<p>
+The settings on the <i>Advanced Settings</i> page should generally only be
+modified by more experienced users.
+</p>
+<ul>
+  <li><b>Control Port</b>:
+    The <i>Control Port</i> is the port which Vidalia uses to talk to Tor.
+    This doesn't need to be changed unless you have a conflict with another
+    service on your machine.
+  </li>
+  <li><b>Alternate Tor Configuration File</b>:
+    You can use this option to have Vidalia start Tor using a 
+    specific <i>torrc</i>, Tor's configuration file.
+  </li>
+  <li><b>Permissions</b>:
+    If you set this option, Tor will <i>setuid</i> to this User or
+    <i>setgid</i> to this group when it starts up.
+  </li>
+</ul>
 
 </body>
 </html>

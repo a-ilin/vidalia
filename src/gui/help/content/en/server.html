@@ -10,9 +10,64 @@ making it easy to set up a server of your own.
 
 <a name="basic"/>
 <h3>Basic Setup</h3>
+<p>
+If you decide you want to help the Tor network grow by running a server, you
+can follow these steps to get started:
+</p>
+<ol>
+  <li>
+    Open the <i>Configuration Dialog</i> by selecting <i>Configure</i> from
+    the tray menu or <i>Preferences</i> from your system menubar on Macintosh
+    systems.
+  </li>
+  <li>Select the <i>Server</i> configuration page.</li>
+  <li>Check the box labeled <i>Relay traffic for the Tor network</i>.
+  <li>Enter the following information:
+    <ul>
+      <li><b>Nickname</b>:
+        The name which your server will be known as on the Tor network. An
+        example of a server nickname is "myVidaliaServer".
+      </li>
+      <li><b>Contact Info</b>:
+        Your e-mail address or PGP key. This address will only be used to
+        contact you in case there is an important Tor security update or
+        something goes wrong with your server.
+      </li>
+      <li><b>Server Port</b>:
+        The port on which your server will listen for traffic from clients or
+        other Tor servers.
+      </li>
+      <li><b>Address</b>:
+        Enter an address at which your computer can be reached by other Tor
+        servers on the Internet. If you don't know your public IP address, you
+        can click on <i>Get Address</i> and Vidalia will contact an external
+        site (e.g., <i>http://www.vidalia-project.net/iptest/ip.php</i>) to
+        find out what it thinks your public IP address is.
+      </li>
+    </ul>
+  <li>
+    If you would like to mirror Tor's directory of servers for others on the
+    network you can check the box labeled <i>Mirror the server directory</i>.
+    If you do not have much bandwidth, leave this box unchecked. If you do
+    decide to mirror the server directory, make sure the <i>Port</i> is
+    different than the <i>Server port</i> you entered above.
+  </li>
+  <li>
+    Traffic exiting the Tor network from your router appears to come from your
+    IP address. If you do not want this, then check the box labeled <i>Only
+    relay traffic between other Tor servers</i> to act as a <i>middle-man</i>
+    node.
+  </li>
+</ol>
 
 <a name="exitpolicy"/>
 <h3>Exit Policies</h3>
+<p>
+Exit policies give you a way to specify what sort of traffic you are willing
+to allow exit from your Tor server. Tor uses a default list of exit policies
+that restrict services such as mail to prevent spam, or some default file
+sharing ports to reduce abuse of the Tor network.
+</p>
 
 </html>
 

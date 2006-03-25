@@ -11,11 +11,82 @@ Each message has a <i>severity</i> associated with it, ranging from
 <b>Error</b> (most serious) to <b>Debug</b> (most verbose). See the help
 section on <a href="#severities">message severities</a> for more information.
 
+
 <a name="severities"/>
 <h3>Message Severities</h3>
+<p>
+A message's severity tells you how important the message is. A higher severity
+message usually indicates that something has gone wrong with Tor. Lower
+severity messages appear frequently during normal Tor operations and usually
+do not need to be logged.
+</p>
+
+<p>
+The possible message severities, from most severe to least severe, are:
+</p>
+<ul>
+  <li>
+    <b>Error</b>: Messages that appear when something has gone very wrong and
+    Tor cannot proceed. These messages will be highlighted in <i>red</i> in the
+    message log.
+  </li>
+  <li>
+    <b>Warning</b>: Message that only appear when something has gone wrong
+    with Tor, but are not fatal and Tor will continue running. These messages
+    will be highlighted in <i>yellow</i>.
+  </li>
+  <li>
+    <b>Notice</b>: Messages that appear infrequently during normal Tor
+    operation and are not considered errors, but you still may care about.
+  </li>
+  <li>
+    <b>Info</b>: Messages that appear frequently during normal Tor operation
+    and are not usually of interest to most users.
+  </li>
+  <li>
+    <b>Debug</b>: Extremely verbose messages that are primarily of interest to
+    developers. You should generally not log debug messages unless you know
+    what you are doing.
+  </li>
+</ul>
+
+<p>
+Most users should only log <i>Error</i>, <i>Warning</i>, and <i>Notice</i>
+messages.
+</p>
+
+<p>
+To select which message severities you would like to see, do the following:
+<ol>
+  <li>Open the message log from the Vidalia tray menu.</li>
+  <li>Click on <i>Show Settings</i> at the bottom of the message log window.</li>
+  <li>
+    Check message severities you would like to see from the Message Filter
+    group on the left and uncheck message severities you would like to hide.
+  </li>
+  <li>Click <i>Save Settings</i> to apply your new message filter.</li>
+</ol>
+</p>
+
 
 <a name="logfile"/>
 <h3>Logging to a File</h3>
+<p>
+Vidalia can also write log messages to a file, as well as logging them in the
+message log window. To enable logging to a file, follow these steps:
+</p>
+
+<ol>
+  <li>Open the message log from the Vidalia tray menu.</li>
+  <li>Click on <i>Show Settings</i> at the bottom of the message log window.</li>
+  <li>Check the box labeled <i>Save Messages to File</i>.
+  <li>
+    If you would like to change the file to which messages will be written,
+    either type the path and filename into the text box, or click <i>Browse</i>
+    to navigate to a location for your log file.
+  </li>
+  <li>Click <i>Save Settings</i> to save your log destination.</li>
+</ol>
 
 </body>
 </html>

@@ -10,6 +10,7 @@
   </Topic>
   <Topic id="config" name="Configuring Tor" html="config.html">
     <Topic id="general" name="General Settings" html="config.html" section="general"/>
+    <Topic id="server" name="Server Settings" html="config.html" section="server"/>
     <Topic id="advanced" name="Advanced Settings" html="config.html" section="advanced"/>
   </Topic>
   <Topic id="server" name="Running a Server" html="server.html">
