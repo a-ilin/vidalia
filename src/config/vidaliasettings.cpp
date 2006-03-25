@@ -39,6 +39,7 @@
 
 /* Vidalia's Settings */
 #define SETTING_LANGUAGE            "LanguageCode"
+#define SETTING_STYLE               "InterfaceStyle"
 #define SETTING_RUN_TOR_AT_START    "RunTorAtStart"
 
 #define SETTING_MSG_FILTER          "MessageLog/MessageFilter"
@@ -51,15 +52,20 @@
 #define SETTING_BWGRAPH_OPACITY     "BandwidthGraph/Opacity"
 
 /* Default Vidalia Settings */
-#define DEFAULT_LANGUAGE         LanguageSupport::defaultLanguageCode()
-#define DEFAULT_RUN_TOR_AT_START false
+#if defined(Q_WS_MAC)
+#define DEFAULT_STYLE               "macintosh"
+#else
+#define DEFAULT_STYLE               "plastique"
+#endif
 
-#define DEFAULT_OPACITY 100
+#define DEFAULT_LANGUAGE            LanguageSupport::defaultLanguageCode()
+#define DEFAULT_RUN_TOR_AT_START    false
+#define DEFAULT_OPACITY             100
 
 /* Default message log settings */
-#define DEFAULT_MSG_FILTER      (TOR_ERROR|TOR_WARN|TOR_NOTICE)
-#define DEFAULT_MAX_MESSAGE     500
-#define DEFAULT_ENABLE_LOG_FILE false
+#define DEFAULT_MSG_FILTER          (TOR_ERROR|TOR_WARN|TOR_NOTICE)
+#define DEFAULT_MAX_MESSAGE         500
+#define DEFAULT_ENABLE_LOG_FILE     false
 
 #if defined(Q_OS_WIN32)
 #define DEFAULT_LOG_FILE       (QDir::rootPath() + "Program Files\\Tor\\tor.log")
@@ -107,6 +113,20 @@ void
 VidaliaSettings::setLanguageCode(QString languageCode)
 {
   setValue(SETTING_LANGUAGE, languageCode);
+}
+
+/** Gets the interface style key (e.g., "windows", "motif", etc.) */
+QString
+VidaliaSettings::getInterfaceStyle()
+{
+  return value(SETTING_STYLE, DEFAULT_STYLE).toString();
+}
+
+/** Sets the interface style key. */
+void
+VidaliaSettings::setInterfaceStyle(QString styleKey)
+{
+  setValue(SETTING_STYLE, styleKey);
 }
 
 /** Returns true if Tor is to be run when Vidalia starts. */

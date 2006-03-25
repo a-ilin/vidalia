@@ -57,6 +57,11 @@ public:
   QString getLanguageCode();
   /** Saves the preferred language code. */
   void setLanguageCode(QString languageCode);
+ 
+  /** Gets the interface style key (e.g., "windows", "motif", etc.) */
+  QString getInterfaceStyle();
+  /** Sets the interface style key. */
+  void setInterfaceStyle(QString styleKey);
   
   /** Returns true if Vidalia should start Tor when it starts. */
   bool runTorAtStart();
