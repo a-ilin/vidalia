@@ -30,13 +30,9 @@
  
 #include <QApplication>
 #include <QTextStream>
+#include <QStyleFactory>
 
-#if defined(Q_WS_MAC)
-#include <QMacStyle>
-#else
-#include <QPlastiqueStyle>
-#endif
-
+#include <lang/languagesupport.h>
 #include <config/vidaliasettings.h>
 #include <gui/mainwindow.h>
 
@@ -74,6 +70,14 @@ get_argument_name(QString arg)
   return arg.toLower();
 }
 
+/** Returns true if the specified argument requires a value. */
+bool
+argument_requires_value(QString arg)
+{
+  Q_UNUSED(arg);
+  return false;
+}
+
 /** Parses the arguments specified on the command-line and handles arguments
  * that are followed by values. */
 bool
@@ -81,27 +85,21 @@ parse_arguments(QMap<QString, QString> &argMap)
 {
   QStringList argv = QCoreApplication::arguments();
   
-  QString arg;
+  QString arg, value;
   for (int i = 1; i < argv.size(); i++) {
-    arg = get_argument_name(argv.at(i));
+    arg   = get_argument_name(argv.at(i));
+    value = "";
     
-    /* Handle arguments with values here */ 
-
-    argMap.insert(arg, "");
+    /* Handle arguments with values */ 
+    if (argument_requires_value(arg)) {
+      if (i >= argv.size() - 1) {
+        return false;
+      }
+      value = argv.at(++i);
+    }
+    argMap.insert(arg, value);
   }
   return true;
-}
-
-/** Applies an appropriate GUI style. If we're building on Mac, 
- * then use the Mac style, otherwise we'll use the Plastique style. */
-void
-apply_gui_style()
-{
-#if defined(Q_WS_MAC)
-  QApplication::setStyle(new QMacStyle);
-#else
-  QApplication::setStyle(new QPlastiqueStyle);
-#endif
 }
 
 /** Main application entry point. */
@@ -109,6 +107,7 @@ int
 main(int argc, char *argv[])
 {
   Q_INIT_RESOURCE(vidalia);
+  VidaliaSettings settings;
 
   /* Parse and validate any command-line arguments */
   QApplication app(argc, argv);
@@ -118,14 +117,17 @@ main(int argc, char *argv[])
     return -1;
   }
    
-  /* Check if we're supposed to reset our command-line arguments */
+  /* Check if we're supposed to reset our saved configuration */
   if (argMap.contains("reset")) {
     VidaliaSettings::reset();
   }
   
-  /* Apply a gui style, depending on OS */
-  apply_gui_style();
+  /* Translate the application's strings */
+  LanguageSupport::translate(settings.getLanguageCode());
 
+  /* Apply the saved gui style */
+  QApplication::setStyle(QStyleFactory::create(settings.getInterfaceStyle()));
+  
   /* Since we don't have a visible main window, if we were to display a
    * QMessageBox (for example, to display an error when starting or stopping
    * Tor) then the application would exit when that message box was closed.
