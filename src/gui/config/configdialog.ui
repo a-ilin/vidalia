@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>566</width>
-    <height>403</height>
+    <width>410</width>
+    <height>353</height>
    </rect>
   </property>
   <property name="palette" >
@@ -295,7 +295,7 @@
    <string>Configure Settings</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="..\res\vidalia.qrc" >:/images/16x16/preferences-system.png</iconset>
+   <iconset resource="../res/vidalia.qrc" >:/images/16x16/preferences-system.png</iconset>
   </property>
   <property name="sizeGripEnabled" >
    <bool>true</bool>
@@ -842,12 +842,15 @@
            <property name="frameShadow" >
             <enum>QFrame::Plain</enum>
            </property>
+           <property name="lineWidth" >
+            <number>0</number>
+           </property>
            <layout class="QVBoxLayout" >
             <property name="margin" >
              <number>0</number>
             </property>
             <property name="spacing" >
-             <number>0</number>
+             <number>6</number>
             </property>
             <item>
              <widget class="QGroupBox" name="grpServerConfig" >
@@ -864,74 +867,7 @@
                <property name="spacing" >
                 <number>6</number>
                </property>
-               <item row="3" column="0" >
-                <widget class="QLabel" name="label_4" >
-                 <property name="contextMenuPolicy" >
-                  <enum>Qt::NoContextMenu</enum>
-                 </property>
-                 <property name="text" >
-                  <string>Address:</string>
-                 </property>
-                 <property name="alignment" >
-                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-                 </property>
-                 <property name="margin" >
-                  <number>0</number>
-                 </property>
-                 <property name="indent" >
-                  <number>21</number>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="2" >
-                <widget class="QPushButton" name="btnGetAddress" >
-                 <property name="minimumSize" >
-                  <size>
-                   <width>0</width>
-                   <height>0</height>
-                  </size>
-                 </property>
-                 <property name="contextMenuPolicy" >
-                  <enum>Qt::NoContextMenu</enum>
-                 </property>
-                 <property name="toolTip" >
-                  <string>Attempts to determine the correct address for your server</string>
-                 </property>
-                 <property name="text" >
-                  <string>Get Address</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="3" column="1" >
-                <widget class="QLineEdit" name="lineServerAddress" >
-                 <property name="cursor" >
-                  <cursor>4</cursor>
-                 </property>
-                 <property name="contextMenuPolicy" >
-                  <enum>Qt::NoContextMenu</enum>
-                 </property>
-                 <property name="toolTip" >
-                  <string>Domain name or IP address of your server</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="6" column="0" colspan="3" >
-                <widget class="QLabel" name="lblRequired" >
-                 <property name="layoutDirection" >
-                  <enum>Qt::LeftToRight</enum>
-                 </property>
-                 <property name="text" >
-                  <string>Nickname and Server Port are required</string>
-                 </property>
-                 <property name="textFormat" >
-                  <enum>Qt::AutoText</enum>
-                 </property>
-                 <property name="alignment" >
-                  <set>Qt::AlignCenter</set>
-                 </property>
-                </widget>
-               </item>
-               <item row="5" column="0" colspan="3" >
+               <item row="6" column="0" colspan="4" >
                 <widget class="QCheckBox" name="chkMiddleMan" >
                  <property name="contextMenuPolicy" >
                   <enum>Qt::NoContextMenu</enum>
@@ -944,7 +880,7 @@
                  </property>
                 </widget>
                </item>
-               <item row="4" column="0" colspan="3" >
+               <item row="5" column="0" colspan="4" >
                 <layout class="QHBoxLayout" >
                  <property name="margin" >
                   <number>0</number>
@@ -1033,7 +969,58 @@
                  </item>
                 </layout>
                </item>
-               <item row="2" column="0" colspan="3" >
+               <item row="4" column="1" >
+                <widget class="QLineEdit" name="lineServerAddress" >
+                 <property name="cursor" >
+                  <cursor>4</cursor>
+                 </property>
+                 <property name="contextMenuPolicy" >
+                  <enum>Qt::NoContextMenu</enum>
+                 </property>
+                 <property name="toolTip" >
+                  <string>Domain name or IP address of your server</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0" >
+                <widget class="QLabel" name="label_4" >
+                 <property name="contextMenuPolicy" >
+                  <enum>Qt::NoContextMenu</enum>
+                 </property>
+                 <property name="text" >
+                  <string>Address:</string>
+                 </property>
+                 <property name="alignment" >
+                  <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="margin" >
+                  <number>0</number>
+                 </property>
+                 <property name="indent" >
+                  <number>21</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="2" colspan="2" >
+                <widget class="QPushButton" name="btnGetAddress" >
+                 <property name="minimumSize" >
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="contextMenuPolicy" >
+                  <enum>Qt::NoContextMenu</enum>
+                 </property>
+                 <property name="toolTip" >
+                  <string>Attempts to determine the correct address for your server</string>
+                 </property>
+                 <property name="text" >
+                  <string>Get Address</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0" colspan="4" >
                 <layout class="QHBoxLayout" >
                  <property name="margin" >
                   <number>0</number>
@@ -1112,7 +1099,7 @@
                  </item>
                 </layout>
                </item>
-               <item row="1" column="0" colspan="3" >
+               <item row="2" column="0" colspan="4" >
                 <layout class="QHBoxLayout" >
                  <property name="margin" >
                   <number>0</number>
@@ -1148,7 +1135,7 @@
                  </item>
                 </layout>
                </item>
-               <item row="0" column="0" colspan="3" >
+               <item row="1" column="0" colspan="4" >
                 <layout class="QHBoxLayout" >
                  <property name="margin" >
                   <number>0</number>
@@ -1196,6 +1183,22 @@
                  </item>
                 </layout>
                </item>
+               <item row="0" column="0" colspan="3" >
+                <widget class="QLabel" name="lblRequired" >
+                 <property name="layoutDirection" >
+                  <enum>Qt::LeftToRight</enum>
+                 </property>
+                 <property name="text" >
+                  <string>Nickname and Server Port are required</string>
+                 </property>
+                 <property name="textFormat" >
+                  <enum>Qt::AutoText</enum>
+                 </property>
+                 <property name="alignment" >
+                  <set>Qt::AlignCenter</set>
+                 </property>
+                </widget>
+               </item>
               </layout>
              </widget>
             </item>
@@ -1207,14 +1210,14 @@
               <property name="title" >
                <string>Exit Policies</string>
               </property>
-              <layout class="QVBoxLayout" >
+              <layout class="QGridLayout" >
                <property name="margin" >
                 <number>9</number>
                </property>
                <property name="spacing" >
                 <number>6</number>
                </property>
-               <item>
+               <item row="0" column="0" colspan="2" >
                 <layout class="QHBoxLayout" >
                  <property name="margin" >
                   <number>0</number>
@@ -1223,7 +1226,7 @@
                   <number>6</number>
                  </property>
                  <item>
-                  <layout class="QVBoxLayout" >
+                  <layout class="QHBoxLayout" >
                    <property name="margin" >
                     <number>0</number>
                    </property>
@@ -1231,7 +1234,7 @@
                     <number>6</number>
                    </property>
                    <item>
-                    <layout class="QHBoxLayout" >
+                    <layout class="QVBoxLayout" >
                      <property name="margin" >
                       <number>0</number>
                      </property>
@@ -1239,312 +1242,619 @@
                       <number>6</number>
                      </property>
                      <item>
-                      <spacer>
-                       <property name="orientation" >
-                        <enum>Qt::Horizontal</enum>
+                      <widget class="QLabel" name="label_6" >
+                       <property name="contextMenuPolicy" >
+                        <enum>Qt::NoContextMenu</enum>
                        </property>
-                       <property name="sizeHint" >
-                        <size>
-                         <width>16</width>
-                         <height>20</height>
-                        </size>
+                       <property name="text" >
+                        <string>Action:</string>
                        </property>
-                      </spacer>
+                       <property name="alignment" >
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
                      </item>
                      <item>
-                      <layout class="QHBoxLayout" >
-                       <property name="margin" >
-                        <number>0</number>
+                      <widget class="QComboBox" name="cmboAction" >
+                       <property name="sizePolicy" >
+                        <sizepolicy>
+                         <hsizetype>0</hsizetype>
+                         <vsizetype>0</vsizetype>
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
                        </property>
-                       <property name="spacing" >
-                        <number>2</number>
+                       <property name="contextMenuPolicy" >
+                        <enum>Qt::NoContextMenu</enum>
                        </property>
-                       <item>
-                        <widget class="QLabel" name="label_6" >
-                         <property name="contextMenuPolicy" >
-                          <enum>Qt::NoContextMenu</enum>
-                         </property>
-                         <property name="text" >
-                          <string>Action:</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QComboBox" name="cmboAction" >
-                         <property name="contextMenuPolicy" >
-                          <enum>Qt::NoContextMenu</enum>
-                         </property>
-                         <property name="toolTip" >
-                          <string>Action for new exit policy</string>
-                         </property>
-                         <property name="insertPolicy" >
-                          <enum>QComboBox::NoInsert</enum>
-                         </property>
-                         <item>
-                          <property name="text" >
-                           <string>Accept</string>
-                          </property>
-                         </item>
-                         <item>
-                          <property name="text" >
-                           <string>Reject</string>
-                          </property>
-                         </item>
-                        </widget>
-                       </item>
-                      </layout>
-                     </item>
-                     <item>
-                      <layout class="QHBoxLayout" >
-                       <property name="margin" >
-                        <number>0</number>
+                       <property name="toolTip" >
+                        <string>Action for new exit policy</string>
                        </property>
-                       <property name="spacing" >
-                        <number>2</number>
+                       <property name="insertPolicy" >
+                        <enum>QComboBox::NoInsert</enum>
                        </property>
                        <item>
-                        <widget class="QLabel" name="label_7" >
-                         <property name="contextMenuPolicy" >
-                          <enum>Qt::NoContextMenu</enum>
-                         </property>
-                         <property name="text" >
-                          <string>From:</string>
-                         </property>
-                        </widget>
+                        <property name="text" >
+                         <string>Accept</string>
+                        </property>
                        </item>
                        <item>
-                        <widget class="QLineEdit" name="lineFromPort" >
-                         <property name="sizePolicy" >
-                          <sizepolicy>
-                           <hsizetype>0</hsizetype>
-                           <vsizetype>0</vsizetype>
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="minimumSize" >
-                          <size>
-                           <width>50</width>
-                           <height>0</height>
-                          </size>
-                         </property>
-                         <property name="maximumSize" >
-                          <size>
-                           <width>50</width>
-                           <height>16777215</height>
-                          </size>
-                         </property>
-                         <property name="toolTip" >
-                          <string>Start port for new exit policy</string>
-                         </property>
-                        </widget>
+                        <property name="text" >
+                         <string>Reject</string>
+                        </property>
                        </item>
-                      </layout>
-                     </item>
-                     <item>
-                      <layout class="QHBoxLayout" >
-                       <property name="margin" >
-                        <number>0</number>
-                       </property>
-                       <property name="spacing" >
-                        <number>2</number>
-                       </property>
-                       <item>
-                        <widget class="QLabel" name="label_8" >
-                         <property name="contextMenuPolicy" >
-                          <enum>Qt::NoContextMenu</enum>
-                         </property>
-                         <property name="text" >
-                          <string>To:</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QLineEdit" name="lineToPort" >
-                         <property name="sizePolicy" >
-                          <sizepolicy>
-                           <hsizetype>0</hsizetype>
-                           <vsizetype>0</vsizetype>
-                           <horstretch>0</horstretch>
-                           <verstretch>0</verstretch>
-                          </sizepolicy>
-                         </property>
-                         <property name="minimumSize" >
-                          <size>
-                           <width>50</width>
-                           <height>0</height>
-                          </size>
-                         </property>
-                         <property name="maximumSize" >
-                          <size>
-                           <width>50</width>
-                           <height>16777215</height>
-                          </size>
-                         </property>
-                         <property name="toolTip" >
-                          <string>End port for new exit policy</string>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
+                      </widget>
                      </item>
                     </layout>
                    </item>
                    <item>
-                    <widget class="QTreeWidget" name="lstExitPolicies" >
-                     <property name="sizePolicy" >
-                      <sizepolicy>
-                       <hsizetype>7</hsizetype>
-                       <vsizetype>7</vsizetype>
-                       <horstretch>0</horstretch>
-                       <verstretch>0</verstretch>
-                      </sizepolicy>
+                    <layout class="QVBoxLayout" >
+                     <property name="margin" >
+                      <number>0</number>
                      </property>
-                     <property name="minimumSize" >
-                      <size>
-                       <width>0</width>
-                       <height>0</height>
-                      </size>
+                     <property name="spacing" >
+                      <number>6</number>
                      </property>
-                     <property name="maximumSize" >
-                      <size>
-                       <width>16777215</width>
-                       <height>16777215</height>
-                      </size>
-                     </property>
-                     <property name="contextMenuPolicy" >
-                      <enum>Qt::NoContextMenu</enum>
-                     </property>
-                     <property name="editTriggers" >
-                      <set>QAbstractItemView::NoEditTriggers</set>
-                     </property>
-                     <property name="showDropIndicator" stdset="0" >
-                      <bool>true</bool>
-                     </property>
-                     <property name="alternatingRowColors" >
-                      <bool>true</bool>
-                     </property>
-                     <property name="selectionMode" >
-                      <enum>QAbstractItemView::NoSelection</enum>
-                     </property>
-                     <property name="uniformRowHeights" >
-                      <bool>true</bool>
-                     </property>
-                     <column>
-                      <property name="text" >
-                       <string>Action</string>
-                      </property>
-                     </column>
-                     <column>
-                      <property name="text" >
-                       <string>From</string>
-                      </property>
-                     </column>
-                     <column>
-                      <property name="text" >
-                       <string>To</string>
-                      </property>
-                     </column>
-                    </widget>
+                     <item>
+                      <widget class="QLabel" name="label_7" >
+                       <property name="contextMenuPolicy" >
+                        <enum>Qt::NoContextMenu</enum>
+                       </property>
+                       <property name="text" >
+                        <string>IP Address:</string>
+                       </property>
+                       <property name="alignment" >
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QFrame" name="frame" >
+                       <property name="sizePolicy" >
+                        <sizepolicy>
+                         <hsizetype>0</hsizetype>
+                         <vsizetype>0</vsizetype>
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="contextMenuPolicy" >
+                        <enum>Qt::NoContextMenu</enum>
+                       </property>
+                       <property name="frameShape" >
+                        <enum>QFrame::StyledPanel</enum>
+                       </property>
+                       <property name="frameShadow" >
+                        <enum>QFrame::Plain</enum>
+                       </property>
+                       <layout class="QVBoxLayout" >
+                        <property name="margin" >
+                         <number>0</number>
+                        </property>
+                        <property name="spacing" >
+                         <number>0</number>
+                        </property>
+                        <item>
+                         <layout class="QHBoxLayout" >
+                          <property name="margin" >
+                           <number>0</number>
+                          </property>
+                          <property name="spacing" >
+                           <number>0</number>
+                          </property>
+                          <item>
+                           <widget class="QLineEdit" name="lineExitAddrA" >
+                            <property name="sizePolicy" >
+                             <sizepolicy>
+                              <hsizetype>0</hsizetype>
+                              <vsizetype>0</vsizetype>
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="minimumSize" >
+                             <size>
+                              <width>25</width>
+                              <height>0</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize" >
+                             <size>
+                              <width>25</width>
+                              <height>16777215</height>
+                             </size>
+                            </property>
+                            <property name="contextMenuPolicy" >
+                             <enum>Qt::NoContextMenu</enum>
+                            </property>
+                            <property name="toolTip" >
+                             <string>IP address for new exit policy</string>
+                            </property>
+                            <property name="inputMask" >
+                             <string/>
+                            </property>
+                            <property name="maxLength" >
+                             <number>3</number>
+                            </property>
+                            <property name="frame" >
+                             <bool>false</bool>
+                            </property>
+                            <property name="alignment" >
+                             <set>Qt::AlignHCenter</set>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLineEdit" name="spacer1" >
+                            <property name="enabled" >
+                             <bool>true</bool>
+                            </property>
+                            <property name="sizePolicy" >
+                             <sizepolicy>
+                              <hsizetype>0</hsizetype>
+                              <vsizetype>0</vsizetype>
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="minimumSize" >
+                             <size>
+                              <width>10</width>
+                              <height>0</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize" >
+                             <size>
+                              <width>10</width>
+                              <height>16777215</height>
+                             </size>
+                            </property>
+                            <property name="focusPolicy" >
+                             <enum>Qt::NoFocus</enum>
+                            </property>
+                            <property name="contextMenuPolicy" >
+                             <enum>Qt::NoContextMenu</enum>
+                            </property>
+                            <property name="toolTip" >
+                             <string>IP address for new exit policy</string>
+                            </property>
+                            <property name="text" >
+                             <string>.</string>
+                            </property>
+                            <property name="maxLength" >
+                             <number>1</number>
+                            </property>
+                            <property name="frame" >
+                             <bool>false</bool>
+                            </property>
+                            <property name="alignment" >
+                             <set>Qt::AlignHCenter</set>
+                            </property>
+                            <property name="readOnly" >
+                             <bool>true</bool>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLineEdit" name="lineExitAddrB" >
+                            <property name="sizePolicy" >
+                             <sizepolicy>
+                              <hsizetype>0</hsizetype>
+                              <vsizetype>0</vsizetype>
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="minimumSize" >
+                             <size>
+                              <width>25</width>
+                              <height>0</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize" >
+                             <size>
+                              <width>25</width>
+                              <height>16777215</height>
+                             </size>
+                            </property>
+                            <property name="contextMenuPolicy" >
+                             <enum>Qt::NoContextMenu</enum>
+                            </property>
+                            <property name="toolTip" >
+                             <string>IP address for new exit policy</string>
+                            </property>
+                            <property name="inputMask" >
+                             <string/>
+                            </property>
+                            <property name="maxLength" >
+                             <number>3</number>
+                            </property>
+                            <property name="frame" >
+                             <bool>false</bool>
+                            </property>
+                            <property name="alignment" >
+                             <set>Qt::AlignHCenter</set>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLineEdit" name="spacer2" >
+                            <property name="enabled" >
+                             <bool>true</bool>
+                            </property>
+                            <property name="sizePolicy" >
+                             <sizepolicy>
+                              <hsizetype>0</hsizetype>
+                              <vsizetype>0</vsizetype>
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="minimumSize" >
+                             <size>
+                              <width>10</width>
+                              <height>0</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize" >
+                             <size>
+                              <width>10</width>
+                              <height>16777215</height>
+                             </size>
+                            </property>
+                            <property name="focusPolicy" >
+                             <enum>Qt::NoFocus</enum>
+                            </property>
+                            <property name="contextMenuPolicy" >
+                             <enum>Qt::NoContextMenu</enum>
+                            </property>
+                            <property name="toolTip" >
+                             <string>IP address for new exit policy</string>
+                            </property>
+                            <property name="text" >
+                             <string>.</string>
+                            </property>
+                            <property name="maxLength" >
+                             <number>1</number>
+                            </property>
+                            <property name="frame" >
+                             <bool>false</bool>
+                            </property>
+                            <property name="alignment" >
+                             <set>Qt::AlignHCenter</set>
+                            </property>
+                            <property name="readOnly" >
+                             <bool>true</bool>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLineEdit" name="lineExitAddrC" >
+                            <property name="sizePolicy" >
+                             <sizepolicy>
+                              <hsizetype>0</hsizetype>
+                              <vsizetype>0</vsizetype>
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="minimumSize" >
+                             <size>
+                              <width>25</width>
+                              <height>0</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize" >
+                             <size>
+                              <width>25</width>
+                              <height>16777215</height>
+                             </size>
+                            </property>
+                            <property name="contextMenuPolicy" >
+                             <enum>Qt::NoContextMenu</enum>
+                            </property>
+                            <property name="toolTip" >
+                             <string>IP address for new exit policy</string>
+                            </property>
+                            <property name="inputMask" >
+                             <string/>
+                            </property>
+                            <property name="maxLength" >
+                             <number>3</number>
+                            </property>
+                            <property name="frame" >
+                             <bool>false</bool>
+                            </property>
+                            <property name="alignment" >
+                             <set>Qt::AlignHCenter</set>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLineEdit" name="spacer3" >
+                            <property name="enabled" >
+                             <bool>true</bool>
+                            </property>
+                            <property name="sizePolicy" >
+                             <sizepolicy>
+                              <hsizetype>0</hsizetype>
+                              <vsizetype>0</vsizetype>
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="minimumSize" >
+                             <size>
+                              <width>10</width>
+                              <height>0</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize" >
+                             <size>
+                              <width>10</width>
+                              <height>16777215</height>
+                             </size>
+                            </property>
+                            <property name="focusPolicy" >
+                             <enum>Qt::NoFocus</enum>
+                            </property>
+                            <property name="contextMenuPolicy" >
+                             <enum>Qt::NoContextMenu</enum>
+                            </property>
+                            <property name="toolTip" >
+                             <string>IP address for new exit policy</string>
+                            </property>
+                            <property name="text" >
+                             <string>.</string>
+                            </property>
+                            <property name="maxLength" >
+                             <number>1</number>
+                            </property>
+                            <property name="frame" >
+                             <bool>false</bool>
+                            </property>
+                            <property name="alignment" >
+                             <set>Qt::AlignHCenter</set>
+                            </property>
+                            <property name="readOnly" >
+                             <bool>true</bool>
+                            </property>
+                           </widget>
+                          </item>
+                          <item>
+                           <widget class="QLineEdit" name="lineExitAddrD" >
+                            <property name="sizePolicy" >
+                             <sizepolicy>
+                              <hsizetype>0</hsizetype>
+                              <vsizetype>0</vsizetype>
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                            <property name="minimumSize" >
+                             <size>
+                              <width>25</width>
+                              <height>0</height>
+                             </size>
+                            </property>
+                            <property name="maximumSize" >
+                             <size>
+                              <width>25</width>
+                              <height>16777215</height>
+                             </size>
+                            </property>
+                            <property name="contextMenuPolicy" >
+                             <enum>Qt::NoContextMenu</enum>
+                            </property>
+                            <property name="toolTip" >
+                             <string>IP address for new exit policy</string>
+                            </property>
+                            <property name="inputMask" >
+                             <string/>
+                            </property>
+                            <property name="maxLength" >
+                             <number>3</number>
+                            </property>
+                            <property name="frame" >
+                             <bool>false</bool>
+                            </property>
+                            <property name="alignment" >
+                             <set>Qt::AlignHCenter</set>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                    </layout>
                    </item>
-                  </layout>
-                 </item>
-                 <item>
-                  <layout class="QVBoxLayout" >
-                   <property name="margin" >
-                    <number>0</number>
-                   </property>
-                   <property name="spacing" >
-                    <number>6</number>
-                   </property>
                    <item>
-                    <widget class="QPushButton" name="btnAddPolicy" >
-                     <property name="minimumSize" >
-                      <size>
-                       <width>0</width>
-                       <height>30</height>
-                      </size>
+                    <layout class="QVBoxLayout" >
+                     <property name="margin" >
+                      <number>0</number>
                      </property>
-                     <property name="contextMenuPolicy" >
-                      <enum>Qt::NoContextMenu</enum>
+                     <property name="spacing" >
+                      <number>6</number>
                      </property>
-                     <property name="toolTip" >
-                      <string>Add the new exit policy</string>
-                     </property>
-                     <property name="text" >
-                      <string>Add</string>
-                     </property>
-                    </widget>
+                     <item>
+                      <widget class="QLabel" name="label_8" >
+                       <property name="contextMenuPolicy" >
+                        <enum>Qt::NoContextMenu</enum>
+                       </property>
+                       <property name="text" >
+                        <string>Mask:</string>
+                       </property>
+                       <property name="alignment" >
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineExitAddrMask" >
+                       <property name="sizePolicy" >
+                        <sizepolicy>
+                         <hsizetype>0</hsizetype>
+                         <vsizetype>0</vsizetype>
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize" >
+                        <size>
+                         <width>50</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize" >
+                        <size>
+                         <width>50</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                       <property name="contextMenuPolicy" >
+                        <enum>Qt::NoContextMenu</enum>
+                       </property>
+                       <property name="toolTip" >
+                        <string>IP address mask for new exit policy</string>
+                       </property>
+                       <property name="inputMask" >
+                        <string/>
+                       </property>
+                       <property name="maxLength" >
+                        <number>2</number>
+                       </property>
+                       <property name="alignment" >
+                        <set>Qt::AlignHCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="btnMoveUp" >
-                     <property name="minimumSize" >
-                      <size>
-                       <width>0</width>
-                       <height>30</height>
-                      </size>
+                    <layout class="QVBoxLayout" >
+                     <property name="margin" >
+                      <number>0</number>
                      </property>
-                     <property name="contextMenuPolicy" >
-                      <enum>Qt::NoContextMenu</enum>
+                     <property name="spacing" >
+                      <number>6</number>
                      </property>
-                     <property name="toolTip" >
-                      <string>Increase the priority of the selected exit policy</string>
-                     </property>
-                     <property name="text" >
-                      <string>Move Up</string>
-                     </property>
-                    </widget>
+                     <item>
+                      <widget class="QLabel" name="label_12" >
+                       <property name="contextMenuPolicy" >
+                        <enum>Qt::NoContextMenu</enum>
+                       </property>
+                       <property name="text" >
+                        <string>From Port:</string>
+                       </property>
+                       <property name="alignment" >
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineFromPort" >
+                       <property name="sizePolicy" >
+                        <sizepolicy>
+                         <hsizetype>0</hsizetype>
+                         <vsizetype>0</vsizetype>
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize" >
+                        <size>
+                         <width>60</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize" >
+                        <size>
+                         <width>60</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                       <property name="contextMenuPolicy" >
+                        <enum>Qt::NoContextMenu</enum>
+                       </property>
+                       <property name="toolTip" >
+                        <string>Start port for new exit policy</string>
+                       </property>
+                       <property name="inputMask" >
+                        <string/>
+                       </property>
+                       <property name="maxLength" >
+                        <number>5</number>
+                       </property>
+                       <property name="alignment" >
+                        <set>Qt::AlignHCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="btnMoveDown" >
-                     <property name="minimumSize" >
-                      <size>
-                       <width>0</width>
-                       <height>30</height>
-                      </size>
+                    <layout class="QVBoxLayout" >
+                     <property name="margin" >
+                      <number>0</number>
                      </property>
-                     <property name="contextMenuPolicy" >
-                      <enum>Qt::NoContextMenu</enum>
+                     <property name="spacing" >
+                      <number>6</number>
                      </property>
-                     <property name="toolTip" >
-                      <string>Decrease the priority of the selected exit policy</string>
-                     </property>
-                     <property name="text" >
-                      <string>Move Down</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QPushButton" name="btnRemove" >
-                     <property name="minimumSize" >
-                      <size>
-                       <width>0</width>
-                       <height>30</height>
-                      </size>
-                     </property>
-                     <property name="contextMenuPolicy" >
-                      <enum>Qt::NoContextMenu</enum>
-                     </property>
-                     <property name="toolTip" >
-                      <string>Remove the selected exit policy</string>
-                     </property>
-                     <property name="text" >
-                      <string>Remove</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <spacer>
-                     <property name="orientation" >
-                      <enum>Qt::Vertical</enum>
-                     </property>
-                     <property name="sizeHint" >
-                      <size>
-                       <width>20</width>
-                       <height>37</height>
-                      </size>
-                     </property>
-                    </spacer>
+                     <item>
+                      <widget class="QLabel" name="label_11" >
+                       <property name="contextMenuPolicy" >
+                        <enum>Qt::NoContextMenu</enum>
+                       </property>
+                       <property name="text" >
+                        <string>To Port:</string>
+                       </property>
+                       <property name="alignment" >
+                        <set>Qt::AlignCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QLineEdit" name="lineToPort" >
+                       <property name="sizePolicy" >
+                        <sizepolicy>
+                         <hsizetype>0</hsizetype>
+                         <vsizetype>0</vsizetype>
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="minimumSize" >
+                        <size>
+                         <width>60</width>
+                         <height>0</height>
+                        </size>
+                       </property>
+                       <property name="maximumSize" >
+                        <size>
+                         <width>60</width>
+                         <height>16777215</height>
+                        </size>
+                       </property>
+                       <property name="contextMenuPolicy" >
+                        <enum>Qt::NoContextMenu</enum>
+                       </property>
+                       <property name="toolTip" >
+                        <string>End port for new exit policy</string>
+                       </property>
+                       <property name="inputMask" >
+                        <string/>
+                       </property>
+                       <property name="maxLength" >
+                        <number>5</number>
+                       </property>
+                       <property name="alignment" >
+                        <set>Qt::AlignHCenter</set>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
                    </item>
                   </layout>
                  </item>
@@ -1555,7 +1865,7 @@
                    </property>
                    <property name="sizeHint" >
                     <size>
-                     <width>102</width>
+                     <width>40</width>
                      <height>20</height>
                     </size>
                    </property>
@@ -1563,18 +1873,148 @@
                  </item>
                 </layout>
                </item>
-               <item>
-                <spacer>
-                 <property name="orientation" >
-                  <enum>Qt::Vertical</enum>
+               <item row="1" column="0" >
+                <widget class="QTreeWidget" name="lstExitPolicies" >
+                 <property name="sizePolicy" >
+                  <sizepolicy>
+                   <hsizetype>7</hsizetype>
+                   <vsizetype>7</vsizetype>
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
                  </property>
-                 <property name="sizeHint" >
+                 <property name="minimumSize" >
                   <size>
-                   <width>20</width>
-                   <height>16</height>
+                   <width>0</width>
+                   <height>0</height>
                   </size>
                  </property>
-                </spacer>
+                 <property name="maximumSize" >
+                  <size>
+                   <width>16777215</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="contextMenuPolicy" >
+                  <enum>Qt::NoContextMenu</enum>
+                 </property>
+                 <property name="editTriggers" >
+                  <set>QAbstractItemView::NoEditTriggers</set>
+                 </property>
+                 <property name="showDropIndicator" stdset="0" >
+                  <bool>true</bool>
+                 </property>
+                 <property name="alternatingRowColors" >
+                  <bool>true</bool>
+                 </property>
+                 <property name="selectionMode" >
+                  <enum>QAbstractItemView::NoSelection</enum>
+                 </property>
+                 <property name="uniformRowHeights" >
+                  <bool>true</bool>
+                 </property>
+                 <column>
+                  <property name="text" >
+                   <string>Action</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text" >
+                   <string>Address</string>
+                  </property>
+                 </column>
+                 <column>
+                  <property name="text" >
+                   <string>Port</string>
+                  </property>
+                 </column>
+                </widget>
+               </item>
+               <item row="1" column="1" >
+                <layout class="QVBoxLayout" >
+                 <property name="margin" >
+                  <number>0</number>
+                 </property>
+                 <property name="spacing" >
+                  <number>6</number>
+                 </property>
+                 <item>
+                  <widget class="QPushButton" name="btnAddPolicy" >
+                   <property name="minimumSize" >
+                    <size>
+                     <width>0</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="contextMenuPolicy" >
+                    <enum>Qt::NoContextMenu</enum>
+                   </property>
+                   <property name="toolTip" >
+                    <string>Add the new exit policy</string>
+                   </property>
+                   <property name="text" >
+                    <string>Add</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnMoveUp" >
+                   <property name="minimumSize" >
+                    <size>
+                     <width>0</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="contextMenuPolicy" >
+                    <enum>Qt::NoContextMenu</enum>
+                   </property>
+                   <property name="toolTip" >
+                    <string>Increase the priority of the selected exit policy</string>
+                   </property>
+                   <property name="text" >
+                    <string>Move Up</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnMoveDown" >
+                   <property name="minimumSize" >
+                    <size>
+                     <width>0</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="contextMenuPolicy" >
+                    <enum>Qt::NoContextMenu</enum>
+                   </property>
+                   <property name="toolTip" >
+                    <string>Decrease the priority of the selected exit policy</string>
+                   </property>
+                   <property name="text" >
+                    <string>Move Down</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="btnRemove" >
+                   <property name="minimumSize" >
+                    <size>
+                     <width>0</width>
+                     <height>30</height>
+                    </size>
+                   </property>
+                   <property name="contextMenuPolicy" >
+                    <enum>Qt::NoContextMenu</enum>
+                   </property>
+                   <property name="toolTip" >
+                    <string>Remove the selected exit policy</string>
+                   </property>
+                   <property name="text" >
+                    <string>Remove</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
                </item>
               </layout>
              </widget>
@@ -1896,6 +2336,42 @@
   </layout>
  </widget>
  <pixmapfunction></pixmapfunction>
+ <tabstops>
+  <tabstop>lstPages</tabstop>
+  <tabstop>lineTorPath</tabstop>
+  <tabstop>btnBrowseTorPath</tabstop>
+  <tabstop>chkRunWithSys</tabstop>
+  <tabstop>chkRunTor</tabstop>
+  <tabstop>btnSave</tabstop>
+  <tabstop>btnCancel</tabstop>
+  <tabstop>chkEnableServer</tabstop>
+  <tabstop>lineServerNickname</tabstop>
+  <tabstop>lineServerContact</tabstop>
+  <tabstop>lineServerPort</tabstop>
+  <tabstop>lineServerAddress</tabstop>
+  <tabstop>btnGetAddress</tabstop>
+  <tabstop>chkMirrorDirectory</tabstop>
+  <tabstop>lineDirPort</tabstop>
+  <tabstop>chkMiddleMan</tabstop>
+  <tabstop>cmboAction</tabstop>
+  <tabstop>lineExitAddrA</tabstop>
+  <tabstop>lineExitAddrB</tabstop>
+  <tabstop>lineExitAddrC</tabstop>
+  <tabstop>lineExitAddrD</tabstop>
+  <tabstop>lineExitAddrMask</tabstop>
+  <tabstop>lineFromPort</tabstop>
+  <tabstop>lineToPort</tabstop>
+  <tabstop>btnAddPolicy</tabstop>
+  <tabstop>btnMoveUp</tabstop>
+  <tabstop>btnMoveDown</tabstop>
+  <tabstop>btnRemove</tabstop>
+  <tabstop>lstExitPolicies</tabstop>
+  <tabstop>lineControlPort</tabstop>
+  <tabstop>lineTorConfig</tabstop>
+  <tabstop>btnBrowseTorConfig</tabstop>
+  <tabstop>lineUser</tabstop>
+  <tabstop>lineGroup</tabstop>
+ </tabstops>
  <resources>
   <include location="../res/vidalia.qrc" />
  </resources>

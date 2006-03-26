@@ -43,11 +43,18 @@ ConfigDialog::ConfigDialog(TorControl *torControl, QWidget* parent)
   /* Invoke the Qt Designer generated QObject setup routine */
   ui.setupUi(this);
 
-  /* Set some validators for the port value fields */
+  /* Set validators for address, mask and various port number fields */
   ui.lineControlPort->setValidator(new QIntValidator(1, 65535, this));
   ui.lineServerPort->setValidator(new QIntValidator(1, 65535, this));
   ui.lineDirPort->setValidator(new QIntValidator(1, 65535, this));
-
+  ui.lineExitAddrA->setValidator(new QIntValidator(0, 255, this));
+  ui.lineExitAddrB->setValidator(new QIntValidator(0, 255, this));
+  ui.lineExitAddrC->setValidator(new QIntValidator(0, 255, this));
+  ui.lineExitAddrD->setValidator(new QIntValidator(0, 255, this));
+  ui.lineExitAddrMask->setValidator(new QIntValidator(0, 32, this));
+  ui.lineFromPort->setValidator(new QIntValidator(1, 65535, this));
+  ui.lineToPort->setValidator(new QIntValidator(0, 65535, this));
+  
   /* Keep a pointer to the TorControl object used to talk to Tor */
   _torControl = torControl;
   
@@ -59,8 +66,8 @@ ConfigDialog::ConfigDialog(TorControl *torControl, QWidget* parent)
   /* Bind events to actions */
   createActions();
 
-  /* Hide future features for now */
-  ui.grpServerPolicies->setVisible(false);
+  /* Set General Settings selected */
+  ui.lstPages->setItemSelected(ui.lstPages->item(PAGE_GENERAL), true);
 
   /* Also hide platform specific features where necessary */
 #ifdef Q_WS_WIN
