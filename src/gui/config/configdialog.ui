@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>593</width>
-    <height>373</height>
+    <width>621</width>
+    <height>346</height>
    </rect>
   </property>
   <property name="palette" >
@@ -1248,20 +1248,6 @@
                      </property>
                      <item>
                       <widget class="QPushButton" name="btnAddPolicy" >
-                       <property name="sizePolicy" >
-                        <sizepolicy>
-                         <hsizetype>0</hsizetype>
-                         <vsizetype>0</vsizetype>
-                         <horstretch>0</horstretch>
-                         <verstretch>0</verstretch>
-                        </sizepolicy>
-                       </property>
-                       <property name="minimumSize" >
-                        <size>
-                         <width>0</width>
-                         <height>30</height>
-                        </size>
-                       </property>
                        <property name="contextMenuPolicy" >
                         <enum>Qt::NoContextMenu</enum>
                        </property>
@@ -1272,26 +1258,18 @@
                         <string/>
                        </property>
                        <property name="icon" >
-                        <iconset resource="..\res\vidalia.qrc" >:/images/16x16/list-add.png</iconset>
+                        <iconset resource="..\res\vidalia.qrc" >:/images/22x22/list-add.png</iconset>
+                       </property>
+                       <property name="iconSize" >
+                        <size>
+                         <width>22</width>
+                         <height>22</height>
+                        </size>
                        </property>
                       </widget>
                      </item>
                      <item>
                       <widget class="QPushButton" name="btnMoveUp" >
-                       <property name="sizePolicy" >
-                        <sizepolicy>
-                         <hsizetype>0</hsizetype>
-                         <vsizetype>0</vsizetype>
-                         <horstretch>0</horstretch>
-                         <verstretch>0</verstretch>
-                        </sizepolicy>
-                       </property>
-                       <property name="minimumSize" >
-                        <size>
-                         <width>0</width>
-                         <height>30</height>
-                        </size>
-                       </property>
                        <property name="contextMenuPolicy" >
                         <enum>Qt::NoContextMenu</enum>
                        </property>
@@ -1302,26 +1280,18 @@
                         <string/>
                        </property>
                        <property name="icon" >
-                        <iconset resource="..\res\vidalia.qrc" >:/images/16x16/go-up.png</iconset>
+                        <iconset resource="..\res\vidalia.qrc" >:/images/22x22/go-up.png</iconset>
+                       </property>
+                       <property name="iconSize" >
+                        <size>
+                         <width>22</width>
+                         <height>22</height>
+                        </size>
                        </property>
                       </widget>
                      </item>
                      <item>
                       <widget class="QPushButton" name="btnMoveDown" >
-                       <property name="sizePolicy" >
-                        <sizepolicy>
-                         <hsizetype>0</hsizetype>
-                         <vsizetype>0</vsizetype>
-                         <horstretch>0</horstretch>
-                         <verstretch>0</verstretch>
-                        </sizepolicy>
-                       </property>
-                       <property name="minimumSize" >
-                        <size>
-                         <width>0</width>
-                         <height>30</height>
-                        </size>
-                       </property>
                        <property name="contextMenuPolicy" >
                         <enum>Qt::NoContextMenu</enum>
                        </property>
@@ -1332,26 +1302,18 @@
                         <string/>
                        </property>
                        <property name="icon" >
-                        <iconset resource="..\res\vidalia.qrc" >:/images/16x16/go-down.png</iconset>
+                        <iconset resource="..\res\vidalia.qrc" >:/images/22x22/go-down.png</iconset>
+                       </property>
+                       <property name="iconSize" >
+                        <size>
+                         <width>22</width>
+                         <height>22</height>
+                        </size>
                        </property>
                       </widget>
                      </item>
                      <item>
                       <widget class="QPushButton" name="btnRemove" >
-                       <property name="sizePolicy" >
-                        <sizepolicy>
-                         <hsizetype>0</hsizetype>
-                         <vsizetype>0</vsizetype>
-                         <horstretch>0</horstretch>
-                         <verstretch>0</verstretch>
-                        </sizepolicy>
-                       </property>
-                       <property name="minimumSize" >
-                        <size>
-                         <width>0</width>
-                         <height>30</height>
-                        </size>
-                       </property>
                        <property name="contextMenuPolicy" >
                         <enum>Qt::NoContextMenu</enum>
                        </property>
@@ -1362,7 +1324,13 @@
                         <string/>
                        </property>
                        <property name="icon" >
-                        <iconset resource="..\res\vidalia.qrc" >:/images/16x16/list-remove.png</iconset>
+                        <iconset resource="..\res\vidalia.qrc" >:/images/22x22/list-remove.png</iconset>
+                       </property>
+                       <property name="iconSize" >
+                        <size>
+                         <width>22</width>
+                         <height>22</height>
+                        </size>
                        </property>
                       </widget>
                      </item>
@@ -1391,20 +1359,6 @@
                      </property>
                      <item>
                       <widget class="QPushButton" name="btnExitHelp" >
-                       <property name="sizePolicy" >
-                        <sizepolicy>
-                         <hsizetype>0</hsizetype>
-                         <vsizetype>0</vsizetype>
-                         <horstretch>0</horstretch>
-                         <verstretch>0</verstretch>
-                        </sizepolicy>
-                       </property>
-                       <property name="minimumSize" >
-                        <size>
-                         <width>0</width>
-                         <height>30</height>
-                        </size>
-                       </property>
                        <property name="contextMenuPolicy" >
                         <enum>Qt::NoContextMenu</enum>
                        </property>
@@ -1415,7 +1369,13 @@
                         <string/>
                        </property>
                        <property name="icon" >
-                        <iconset resource="..\res\vidalia.qrc" >:/images/16x16/help-browser.png</iconset>
+                        <iconset resource="..\res\vidalia.qrc" >:/images/22x22/help-browser.png</iconset>
+                       </property>
+                       <property name="iconSize" >
+                        <size>
+                         <width>22</width>
+                         <height>22</height>
+                        </size>
                        </property>
                       </widget>
                      </item>
