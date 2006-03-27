@@ -44,7 +44,9 @@
 #define COL_PORT      2
 
 /** Constructor */
-ConfigDialog::ConfigDialog(TorControl *torControl, QWidget* parent)
+ConfigDialog::ConfigDialog(TorControl *torControl,
+                           HelpBrowser *helpBrowser,
+                           QWidget* parent)
 : QDialog(parent)
 {
   /* Invoke the Qt Designer generated QObject setup routine */
@@ -61,6 +63,9 @@ ConfigDialog::ConfigDialog(TorControl *torControl, QWidget* parent)
   
   /* Keep a pointer to the TorControl object used to talk to Tor */
   _torControl = torControl;
+
+  /* Keep a pointer to the HelpBrowser object used to show help */
+  _helpBrowser = helpBrowser;
   
   /* Create necessary ConfigDialog QObjects */
   _vidaliaSettings = new VidaliaSettings();
@@ -87,15 +92,22 @@ ConfigDialog::~ConfigDialog()
   delete _vidaliaSettings;
   delete _torSettings;
   delete _serverSettings;
+  delete _helpBrowser;
 }
 
+/** Overloads the default show so we can load settings */
 void
 ConfigDialog::show()
 {
   /* Load saved settings */
   loadSettings();
-  /* Show the dialog */
-  QDialog::show();
+
+  if (!this->isVisible()) {
+    QDialog::show();
+  } else {
+    QDialog::activateWindow();
+    QDialog::raise();
+  }
 }
 
 /** Connects actions to events. */
@@ -115,6 +127,7 @@ ConfigDialog::createActions()
   connect(ui.btnBrowseTorPath, SIGNAL(clicked()), this, SLOT(browseTorPath()));
   connect(ui.btnBrowseTorConfig, SIGNAL(clicked()), this, SLOT(browseTorConfig()));
   connect(ui.btnGetAddress, SIGNAL(clicked()), this, SLOT(getServerAddress()));
+  connect(ui.btnExitHelp, SIGNAL(clicked()), this, SLOT(exitHelp()));
 }
 
 /** Adds a new exit policy to the user's configuration */
@@ -208,6 +221,13 @@ ConfigDialog::selectedIndex()
     return ui.lstExitPolicies->indexOfTopLevelItem(selectedItem);
   }
   return -1;
+}
+
+/** Shows exit policy related help information */
+void
+ConfigDialog::exitHelp()
+{
+  _helpBrowser->showTopic("server.exitpolicy");
 }
 
 /** Changes settings page. */

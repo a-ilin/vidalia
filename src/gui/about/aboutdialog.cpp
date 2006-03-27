@@ -100,7 +100,13 @@ AboutDialog::show()
   } else {
     ui.lblTorVersion->setText(tr("<Not Running>"));
   }
-  QDialog::show();
+
+  if (!this->isVisible()) {
+    QDialog::show();
+  } else {
+    QDialog::activateWindow();
+    QDialog::raise();
+  }
 }
 
 /** Resizes the dialog to the given size and sets the minimum and maximum size

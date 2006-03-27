@@ -284,10 +284,13 @@ HelpBrowser::showTopic(QString topic)
     /* Item was found, so show its location in the hierarchy and select its
      * tree item. */
     this->show();
+    QTreeWidgetItem* selected = ui.treeContents->selectedItems()[0];
+    if (selected) {
+      ui.treeContents->setItemSelected(selected, false);
+    }
     ui.treeContents->setItemExpanded(ui.treeContents->topLevelItem(0), true);
-    ui.treeContents->setItemSelected(ui.treeContents->topLevelItem(0), false);
     ui.treeContents->setItemSelected(item, true);
-    currentItemChanged(item, 0);
+    currentItemChanged(item, selected);
   }
 }
 
@@ -412,5 +415,17 @@ HelpBrowser::search()
   /* Set the status bar text */
   this->statusBar()->showMessage(tr("Found %1 results")
                                 .arg(ui.treeSearch->topLevelItemCount()));
+}
+
+/** Overrides the default show method */
+void
+HelpBrowser::show()
+{
+  if (!this->isVisible()) {
+    QMainWindow::show();
+  } else {
+    QMainWindow::activateWindow();
+    QMainWindow::raise();
+  }
 }
 

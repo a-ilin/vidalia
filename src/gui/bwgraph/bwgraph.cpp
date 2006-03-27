@@ -225,6 +225,11 @@ void
 BandwidthGraph::show()
 {
   loadSettings();
-  QWidget::show();
+  if(!this->isVisible()) {
+    QDialog::show();
+  } else {
+    QDialog::activateWindow();
+    QDialog::raise();
+  }
 }
 

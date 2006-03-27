@@ -421,12 +421,7 @@ void
 MainWindow::showAbout()
 {
   static AboutDialog* aboutDialog = new AboutDialog(_torControl, this);
-  if(!aboutDialog->isVisible()) {
-    aboutDialog->show();
-  } else {
-    aboutDialog->activateWindow();
-    aboutDialog->raise();
-  }
+  aboutDialog->show();
 }
 
 /** Shows Message Log. If the message log is already displayed, the existing
@@ -434,12 +429,7 @@ MainWindow::showAbout()
 void
 MainWindow::showMessageLog()
 {
-  if(!_messageLog->isVisible()) {
-    _messageLog->show();
-  } else {
-    _messageLog->activateWindow();
-    _messageLog->raise();
-  }
+  _messageLog->show();
 }
 
 /** Shows Bandwidth Graph. If the bandwidth graph is already displayed, the
@@ -447,12 +437,7 @@ MainWindow::showMessageLog()
 void
 MainWindow::showBandwidthGraph()
 {
-  if(!_bandwidthGraph->isVisible()) {
-    _bandwidthGraph->show();
-  } else {
-    _bandwidthGraph->activateWindow();
-    _bandwidthGraph->raise();
-  }
+  _bandwidthGraph->show();
 }
 
 /** Shows Configuration dialog. If the config dialog is already displayed, the
@@ -460,13 +445,10 @@ MainWindow::showBandwidthGraph()
 void
 MainWindow::showConfig()
 {
-  static ConfigDialog* configDialog = new ConfigDialog(_torControl, this);
-  if(!configDialog->isVisible()) {
-    configDialog->show();
-  } else {
-    configDialog->activateWindow();
-    configDialog->raise();
-  }
+  static ConfigDialog* configDialog = new ConfigDialog(_torControl,
+                                                       _helpBrowser,
+                                                       this);
+  configDialog->show();
 }
 
 /** Shows Help Browser. If the browser is already displayed, the existing
@@ -474,11 +456,6 @@ MainWindow::showConfig()
 void
 MainWindow::showHelp()
 {
-  if(!_helpBrowser->isVisible()) {
-    _helpBrowser->show();
-  } else {
-    _helpBrowser->activateWindow();
-    _helpBrowser->raise();
-  }
+  _helpBrowser->show();
 }
 

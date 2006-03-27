@@ -33,6 +33,7 @@
 #include <config/vidaliasettings.h>
 #include <config/torsettings.h>
 #include <config/serversettings.h>
+#include "../help/browser/helpbrowser.h"
 
 #include "ui_configdialog.h"
 
@@ -43,7 +44,9 @@ class ConfigDialog : public QDialog
 
 public:
   /** Default Constructor */
-  ConfigDialog(TorControl *torControl, QWidget *parent = 0);
+  ConfigDialog(TorControl *torControl,
+               HelpBrowser *helpBrowser,
+               QWidget *parent = 0);
   /** Default Destructor */
   ~ConfigDialog();
 
@@ -70,8 +73,10 @@ private slots:
   void removePolicy();
   /** Called when the user clicks the "Raise Priority" button */
   void raisePriority();
-  /** Called when teh user clicks the "Lower Priority" button */
+  /** Called when the user clicks the "Lower Priority" button */
   void lowerPriority();
+  /** Called when the user clicks the exit policy help button */
+  void exitHelp();
 
 private:
   /** Connects actions to events */
@@ -98,6 +103,8 @@ private:
 
   /** A TorControl object used to talk to Tor. */
   TorControl* _torControl;
+  /** A HelpBrowser object used to show context sensitive help */
+  HelpBrowser* _helpBrowser;
   /** A VidaliaSettings object that handles getting and setting Vidalia settings */
   VidaliaSettings* _vidaliaSettings;
   /** A ServerSettings object used to get and set information about how a

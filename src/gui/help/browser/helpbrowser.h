@@ -47,6 +47,10 @@ public:
   HelpBrowser(QWidget *parent = 0);
   /** Shows a topic in the browser. */
   void showTopic(QString topic);
+ 
+public slots:
+  /** Overrides the default QWidget::show() */
+  void show();
   
 private slots:
   /** Called when the user clicks "Find Next" */

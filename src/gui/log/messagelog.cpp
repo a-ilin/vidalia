@@ -658,6 +658,11 @@ void
 MessageLog::show()
 {
   loadSettings();
-  QMainWindow::show();
+  if (!this->isVisible()) {
+    QMainWindow::show();
+  } else {
+    QMainWindow::activateWindow();
+    QMainWindow::raise();
+  }
 }
 
