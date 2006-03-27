@@ -47,13 +47,9 @@ ConfigDialog::ConfigDialog(TorControl *torControl, QWidget* parent)
   ui.lineControlPort->setValidator(new QIntValidator(1, 65535, this));
   ui.lineServerPort->setValidator(new QIntValidator(1, 65535, this));
   ui.lineDirPort->setValidator(new QIntValidator(1, 65535, this));
-  ui.lineExitAddrA->setValidator(new QIntValidator(0, 255, this));
-  ui.lineExitAddrB->setValidator(new QIntValidator(0, 255, this));
-  ui.lineExitAddrC->setValidator(new QIntValidator(0, 255, this));
-  ui.lineExitAddrD->setValidator(new QIntValidator(0, 255, this));
-  ui.lineExitAddrMask->setValidator(new QIntValidator(0, 32, this));
-  ui.lineFromPort->setValidator(new QIntValidator(1, 65535, this));
-  ui.lineToPort->setValidator(new QIntValidator(0, 65535, this));
+  ui.lineExitMask->setValidator(new QIntValidator(0, 32, this));
+  ui.lineExitFromPort->setValidator(new QIntValidator(1, 65535, this));
+  ui.lineExitToPort->setValidator(new QIntValidator(1, 65535, this));
   
   /* Keep a pointer to the TorControl object used to talk to Tor */
   _torControl = torControl;

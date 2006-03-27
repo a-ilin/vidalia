@@ -5,9 +5,13 @@
     <qresource prefix="/images">
         <file>16x16/emblem-unreadable.png</file>
         <file>16x16/format-justify-fill.png</file>
+        <file>16x16/go-down.png</file>
         <file>16x16/go-next.png</file>
         <file>16x16/go-previous.png</file>
+        <file>16x16/go-up.png</file>
         <file>16x16/help-browser.png</file>
+        <file>16x16/list-add.png</file>
+        <file>16x16/list-remove.png</file>
         <file>16x16/msg-debug.png</file>
         <file>16x16/msg-error.png</file>
         <file>16x16/msg-info.png</file>
