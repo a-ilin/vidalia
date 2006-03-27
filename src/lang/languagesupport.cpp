@@ -39,6 +39,7 @@ LanguageSupport::initialize()
 {
   _languages.clear();
   _languages.insert("en", "English");
+  _languages.insert("zh", "Chinese");
 }
 
 /** Returns the default language code for the system locale. */
