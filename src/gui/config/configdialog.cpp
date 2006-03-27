@@ -38,6 +38,11 @@
 #define PAGE_SERVER   1
 #define PAGE_ADVANCED 2
 
+/* Columns of the Exit Policy list */
+#define COL_ACTION    0
+#define COL_ADDRESS   1
+#define COL_PORT      2
+
 /** Constructor */
 ConfigDialog::ConfigDialog(TorControl *torControl, QWidget* parent)
 : QDialog(parent)
@@ -101,11 +106,108 @@ ConfigDialog::createActions()
           SIGNAL(currentItemChanged(QListWidgetItem *, QListWidgetItem *)),
           this, SLOT(changePage(QListWidgetItem *, QListWidgetItem *)));
 
+  connect(ui.btnAddPolicy, SIGNAL(clicked()), this, SLOT(addPolicy()));
+  connect(ui.btnRemovePolicy, SIGNAL(clicked()), this, SLOT(removePolicy()));
+  connect(ui.btnRaisePriority, SIGNAL(clicked()), this, SLOT(raisePriority()));
+  connect(ui.btnLowerPriority, SIGNAL(clicked()), this, SLOT(lowerPriority()));
   connect(ui.btnCancel, SIGNAL(clicked()), this, SLOT(cancelChanges()));
   connect(ui.btnSave, SIGNAL(clicked()), this, SLOT(saveChanges()));
   connect(ui.btnBrowseTorPath, SIGNAL(clicked()), this, SLOT(browseTorPath()));
   connect(ui.btnBrowseTorConfig, SIGNAL(clicked()), this, SLOT(browseTorConfig()));
   connect(ui.btnGetAddress, SIGNAL(clicked()), this, SLOT(getServerAddress()));
+}
+
+/** Adds a new exit policy to the user's configuration */
+void
+ConfigDialog::addPolicy()
+{
+  /* They have to at least enter something as an IP address */
+  if (ui.lineExitAddress->text().isEmpty()) {
+    return;
+  }
+  
+  QTreeWidgetItem *newPolicy = new QTreeWidgetItem();
+  
+  /* Add new policy's action */
+  newPolicy->setText(COL_ACTION, ui.cmboExitAction->currentText());
+  newPolicy->setTextAlignment(COL_ACTION, Qt::AlignCenter);
+
+  /* Add new policy's ip address */
+  QString address = ui.lineExitAddress->text();
+  if (!ui.lineExitMask->text().isEmpty()) {
+    address += ":" + ui.lineExitMask->text();
+  }  
+  newPolicy->setText(COL_ADDRESS, address);
+  newPolicy->setTextAlignment(COL_ADDRESS, Qt::AlignCenter);
+  
+  /* Add new policy's port or port range */
+  QString portRange = ui.lineExitFromPort->text();
+  if (!portRange.isEmpty()) {
+    QString toPort = ui.lineExitToPort->text();
+    if (!toPort.isEmpty() && portRange != "*") {
+      portRange += "-" + ui.lineExitToPort->text();
+    }
+  }
+  newPolicy->setText(COL_PORT, portRange);
+  newPolicy->setTextAlignment(COL_PORT, Qt::AlignCenter);
+  
+  /* Add new policy to list */
+  ui.lstExitPolicies->addTopLevelItem(newPolicy);
+
+  /* Clear input text boxes */
+  ui.lineExitAddress->clear();
+  ui.lineExitMask->clear();
+  ui.lineExitFromPort->clear();
+  ui.lineExitToPort->clear();
+}
+
+/** Removes selected exit policy from the user's configuration */
+void
+ConfigDialog::removePolicy()
+{
+  int index = selectedIndex();
+  
+  if (index > -1) {
+    ui.lstExitPolicies->takeTopLevelItem(index);
+  }
+}
+
+/** Raises selected exit policy's priority level */
+void
+ConfigDialog::raisePriority()
+{
+  int index = selectedIndex();
+  
+  if (index > 0) {
+      ui.lstExitPolicies->insertTopLevelItem(index - 1, 
+                                  ui.lstExitPolicies->takeTopLevelItem(index));
+  }
+}
+
+/** Lowers selected exit policy's priority level */
+void
+ConfigDialog::lowerPriority()
+{
+  int index = selectedIndex();
+  int lastItem = ui.lstExitPolicies->topLevelItemCount() - 1;
+
+  if (index > -1 && index < lastItem) {
+    ui.lstExitPolicies->insertTopLevelItem(index + 1, 
+                                  ui.lstExitPolicies->takeTopLevelItem(index));
+  }
+}
+
+/** Returns the index of the selected list item, -1 if none selected */
+int
+ConfigDialog::selectedIndex()
+{
+  /* This list only contains one element so take it */
+  QTreeWidgetItem *selectedItem = ui.lstExitPolicies->selectedItems()[0];
+
+  if (selectedItem) {
+    return ui.lstExitPolicies->indexOfTopLevelItem(selectedItem);
+  }
+  return -1;
 }
 
 /** Changes settings page. */

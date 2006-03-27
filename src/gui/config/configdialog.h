@@ -64,6 +64,14 @@ private slots:
   void browseTorConfig();
   /** Called when the user clicks "Get Address" to guess our local IP */
   void getServerAddress();
+  /** Called when the user clicks the "Add Policy" button */
+  void addPolicy();
+  /** Called when the user clicks the "Remove Policy" button */
+  void removePolicy();
+  /** Called when the user clicks the "Raise Priority" button */
+  void raisePriority();
+  /** Called when teh user clicks the "Lower Priority" button */
+  void lowerPriority();
 
 private:
   /** Connects actions to events */
@@ -84,6 +92,9 @@ private:
   void showServerConfig(bool show);
   /** Attempts to find the server's public IP address */
   void getServerPublicIP();
+
+  /** Returns the index of the selected item in lstExitPolicies */
+  int selectedIndex();
 
   /** A TorControl object used to talk to Tor. */
   TorControl* _torControl;
