@@ -45,7 +45,7 @@ IPValidator::IPValidator(QObject *parent)
 QValidator::State
 IPValidator::validate(QString &input, int &pos) const
 {
-  if (input == "*") {
+  if (input == MATCH_ALL) {
     return QValidator::Acceptable;
   }
   return QRegExpValidator::validate(input, pos);
