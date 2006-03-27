@@ -30,6 +30,8 @@
 #include <util/http.h>
 
 #include "configdialog.h"
+#include "portvalidator.h"
+#include "ipvalidator.h"
 
 /* Page indices in the QListWidget */
 #define PAGE_GENERAL  0
@@ -47,9 +49,10 @@ ConfigDialog::ConfigDialog(TorControl *torControl, QWidget* parent)
   ui.lineControlPort->setValidator(new QIntValidator(1, 65535, this));
   ui.lineServerPort->setValidator(new QIntValidator(1, 65535, this));
   ui.lineDirPort->setValidator(new QIntValidator(1, 65535, this));
+  ui.lineExitAddress->setValidator(new IPValidator(this));
   ui.lineExitMask->setValidator(new QIntValidator(0, 32, this));
-  ui.lineExitFromPort->setValidator(new QIntValidator(1, 65535, this));
-  ui.lineExitToPort->setValidator(new QIntValidator(1, 65535, this));
+  ui.lineExitFromPort->setValidator(new PortValidator(this));
+  ui.lineExitToPort->setValidator(new PortValidator(this));
   
   /* Keep a pointer to the TorControl object used to talk to Tor */
   _torControl = torControl;

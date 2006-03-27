@@ -23,6 +23,11 @@
 
 FORMS += $$PWD/configdialog.ui
 
-HEADERS += $$PWD/configdialog.h
+HEADERS += $$PWD/configdialog.h \
+           $$PWD/ipvalidator.h \
+           $$PWD/portvalidator.h
 
-SOURCES += $$PWD/configdialog.cpp
+SOURCES += $$PWD/configdialog.cpp \
+           $$PWD/ipvalidator.cpp \
+           $$PWD/portvalidator.cpp
+
