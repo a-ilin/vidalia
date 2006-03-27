@@ -1,0 +1,99 @@
+<!--
+  $Id$
+  
+  Vidalia is distributed under the following license:
+
+  Copyright (C) 2006,  Matt Edman, Justin Hipple
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU General Public License
+  as published by the Free Software Foundation; either version 2
+  of the License, or (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  
+  02110-1301, USA.
+-->
+
+<html>
+<body>
+
+<h1>消息日志</h1>
+<hr />
+
+通过消息日志您可以看到Tor进程的运行状态信息。
+<a name="basic"/>
+每则消息都有一个关联的<i>程度级别</i>，从<b>出错
+</b> (最严重) 到 <b>Debug</b> (最冗长)，可参考
+<a href="#severities">消息级别</a>段落的更多介绍。
+
+<a name="severities"/>
+<h3>消息级别</h3>
+<p>
+消息级别表明了该消息的重要程度。高级别的消息表明Tor出现了问题；
+低级别消息则在Tor的正常运行中出现，一般来说不需要纪录
+</p>
+
+<p>
+消息级别从高到低分为：
+</p>
+<ul>
+  <li>
+    <b>出错</b>：发生了严重的错误，Tor无法继续运行。此类消息在日志窗口中会以<i>红色</i>高亮显示。
+  </li>
+  <li>
+    <b>警告</b>：发生了错误，但还不致命，Tor可以继续运行。此类消息以<i>黄色</i>高亮显示。
+  </li>
+  <li>
+    <b>注意</b>：Tor正常运行中较少出现的消息，不被视作错误，但仍要引起注意。
+  </li>
+  <li>
+    <b>信息</b>：Tor正常运行中经常出现的消息，通常用不着关注。
+  </li>
+  <li>
+    <b>Debug</b>：非常冗长的消息，开发员会感兴趣。除非你知根知底，否则不需要纪录这类消息。
+  </li>
+</ul>
+
+<p>
+大部分用户只需要纪录<i>出错</i>、<i>警告</i>和<i>注意</i>三类消息。
+</p>
+
+<p>
+选择您要查看哪些消息级别，按如下步骤：
+<ol>
+  <li>从Vidalia托盘中打开消息日志；</li>
+  <li>在消息日志窗口底部点击<i>显示设置</i>；</li>
+  <li>
+    在消息过滤器组中，将想查看的消息级别打勾；想隐藏的话，就取消勾选。
+  </li>
+  <li>点击<i>保存设置</i>，以应用新的消息过滤器。</li>
+</ol>
+</p>
+
+
+<a name="logfile"/>
+<h3>记录到一个文件</h3>
+<p>
+除了将消息记录到窗口，也可以将其记录到一个文件。记录至文件的步骤如下：
+</p>
+
+<ol>
+  <li>从Vidalia托盘中打开消息日志；</li>
+  <li>在消息日志窗口底部点击<i>显示设置</i>；</li>
+  <li>勾选<i>将消息保存到文件</i>标签；
+  <li>
+    您若想改变消息写入的文件，可以在文本框中直接输入文件路径、名称，也可以点击<i>浏览</i>以重新定位日志文件。
+  </li>
+  <li>最后点击<i>保存设置</i>。</li>
+</ol>
+
+</body>
+</html>
+
