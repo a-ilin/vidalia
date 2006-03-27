@@ -43,6 +43,9 @@
 #define COL_ADDRESS   1
 #define COL_PORT      2
 
+/* Help topics */
+#define EXIT_HELP     "server.exitpolicy"
+
 /** Constructor */
 ConfigDialog::ConfigDialog(TorControl *torControl,
                            HelpBrowser *helpBrowser,
@@ -226,7 +229,7 @@ ConfigDialog::selectedIndex()
 void
 ConfigDialog::exitHelp()
 {
-  _helpBrowser->showTopic("server.exitpolicy");
+  _helpBrowser->showTopic(EXIT_HELP);
 }
 
 /** Changes settings page. */
