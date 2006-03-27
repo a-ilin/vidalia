@@ -92,7 +92,6 @@ ConfigDialog::~ConfigDialog()
   delete _vidaliaSettings;
   delete _torSettings;
   delete _serverSettings;
-  delete _helpBrowser;
 }
 
 /** Overloads the default show so we can load settings */
