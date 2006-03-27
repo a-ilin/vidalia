@@ -232,31 +232,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>From:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Start port for new exit policy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>To:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>End port for new exit policy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Action</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>From</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>To</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -264,15 +240,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Add</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Increase the priority of the selected exit policy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Move Up</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -280,15 +248,7 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Move Down</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Remove the selected exit policy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Remove</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -408,6 +368,50 @@ Would you like to access an external service to determine your public IP address
     </message>
     <message>
         <source>You must specify at least a server nickname and port.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show help topic on exit policies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IP address for new exit policy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mask:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IP address mask for new exit policy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ports:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Starting port number for new exit policy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ending port number for new exit policy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If enabled, appends &apos;reject *.*&apos; to the end of the policy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Override default exit policy</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
