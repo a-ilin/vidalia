@@ -60,13 +60,6 @@
         <source>Reset</source>
         <translation>重置</translation>
     </message>
-
-    <!--
-    <message>
-        <source>Receive Rate</source>
-        <translation>接收率</translation>
-    </message>
-    -->
     <message>
         <source>Send Rate</source>
         <translation>发送率</translation>
@@ -102,6 +95,10 @@
     <message>
         <source>Hide Settings</source>
         <translation>隐藏设置</translation>
+    </message>
+    <message>
+        <source>Receive Rate</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -236,19 +233,19 @@
     </message>
     <message>
         <source>From:</source>
-        <translation>来自：</translation>
+        <translation type="obsolete">来自：</translation>
     </message>
     <message>
         <source>Start port for new exit policy</source>
-        <translation>新退出策略的启动端口</translation>
+        <translation type="obsolete">新退出策略的启动端口</translation>
     </message>
     <message>
         <source>To:</source>
-        <translation>前往：</translation>
+        <translation type="obsolete">前往：</translation>
     </message>
     <message>
         <source>End port for new exit policy</source>
-        <translation>新退出策略的结束端口</translation>
+        <translation type="obsolete">新退出策略的结束端口</translation>
     </message>
     <message>
         <source>Action</source>
@@ -256,11 +253,11 @@
     </message>
     <message>
         <source>From</source>
-        <translation>来自</translation>
+        <translation type="obsolete">来自</translation>
     </message>
     <message>
         <source>To</source>
-        <translation>前往</translation>
+        <translation type="obsolete">前往</translation>
     </message>
     <message>
         <source>Add the new exit policy</source>
@@ -268,7 +265,7 @@
     </message>
     <message>
         <source>Add</source>
-        <translation>添加</translation>
+        <translation type="obsolete">添加</translation>
     </message>
     <message>
         <source>Increase the priority of the selected exit policy</source>
@@ -276,7 +273,7 @@
     </message>
     <message>
         <source>Move Up</source>
-        <translation>上移</translation>
+        <translation type="obsolete">上移</translation>
     </message>
     <message>
         <source>Decrease the priority of the selected exit policy</source>
@@ -284,7 +281,7 @@
     </message>
     <message>
         <source>Move Down</source>
-        <translation>下移</translation>
+        <translation type="obsolete">下移</translation>
     </message>
     <message>
         <source>Remove the selected exit policy</source>
@@ -292,7 +289,7 @@
     </message>
     <message>
         <source>Remove</source>
-        <translation>删除</translation>
+        <translation type="obsolete">删除</translation>
     </message>
     <message>
         <source>Control Port</source>
@@ -365,7 +362,7 @@ Would you like to access an external service to determine your public IP address
     </message>
     <message>
         <source>Vidalia encountered an error applying your server configuration.</source>
-        <translation>应用您的服务器配置时Vidalia出错</translation>
+        <translation type="obsolete">应用您的服务器配置时Vidalia出错</translation>
     </message>
     <message>
         <source>Select Path to Tor</source>
@@ -410,6 +407,72 @@ Would you like to access an external service to determine your public IP address
     <message>
         <source>You must specify at least a server nickname and port.</source>
         <translation>你必须至少指定一个服务器昵称和端口</translation>
+    </message>
+    <message>
+        <source>IP Address:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IP address for new exit policy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>/</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mask:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IP address mask for new exit policy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ports:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Starting port number for new exit policy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ending port number for new exit policy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>If enabled, appends &apos;reject *.*&apos; to the end of the policy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Override default exit policy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show help topic on exit policies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia encountered an error applying your server configuration.
+
+</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -678,10 +741,10 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Vidalia was unable to start Tor.
-		
+<byte value="x9"/><byte value="x9"/>
 Error: </source>
-        <translation>Vidalia无法启动Tor。
-		
+        <translation type="obsolete">Vidalia无法启动Tor。
+<byte value="x9"/><byte value="x9"/>
 出错：</translation>
     </message>
     <message>
@@ -701,7 +764,7 @@ Error: </source>
 
 Error: </source>
         <translation>Vidalia无法停止Tor。
-		
+<byte value="x9"/><byte value="x9"/>
 出错：</translation>
     </message>
     <message>
@@ -718,7 +781,7 @@ Error: </source>
 Please check the message log for indicators
 about what happened to Tor before it exited.</source>
         <translation>Vidalia检测到Tor异常退出。
-		
+<byte value="x9"/><byte value="x9"/>
 请检查信息日志，看看Tor退出前有何异常。</translation>
     </message>
     <message>
@@ -738,7 +801,7 @@ about what happened to Tor before it exited.</source>
 
 Error: </source>
         <translation>Vidalia无法通过Tor的验证，请检查您的验证信息，然后再试试。
-		
+<byte value="x9"/><byte value="x9"/>
 出错：</translation>
     </message>
     <message>
@@ -750,8 +813,14 @@ Error: </source>
 
 Error: </source>
         <translation>Vidalia无法由Tor注册事件，Vidalia的部分功能将无法使用。
-		
+<byte value="x9"/><byte value="x9"/>
 出错：</translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to start Tor.
+
+Error: </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -988,7 +1057,7 @@ interest to Tor developers.</source>
 
 Error: </source>
         <translation>Vidalia无法注册Tor的日志消息。
-		
+<byte value="x9"/><byte value="x9"/>
 出错：</translation>
     </message>
     <message>

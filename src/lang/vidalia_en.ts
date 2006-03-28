@@ -414,6 +414,22 @@ Would you like to access an external service to determine your public IP address
         <source>Override default exit policy</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>IP Address:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>/</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ControlSocket</name>
