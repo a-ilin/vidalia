@@ -25,11 +25,11 @@
  */
 
 /* Message Types */
-#define MSG_TOR_ERROR  "Error"
-#define MSG_TOR_WARN   "Warning"
-#define MSG_TOR_NOTICE "Notice"
-#define MSG_TOR_INFO   "Info"
-#define MSG_TOR_DEBUG  "Debug"
+#define MSG_TOR_ERROR  QT_TRANSLATE_NOOP("MessageTypes", "Error")
+#define MSG_TOR_WARN   QT_TRANSLATE_NOOP("MessageTypes", "Warning")
+#define MSG_TOR_NOTICE QT_TRANSLATE_NOOP("MessageTypes", "Notice")
+#define MSG_TOR_INFO   QT_TRANSLATE_NOOP("MessageTypes", "Info")
+#define MSG_TOR_DEBUG  QT_TRANSLATE_NOOP("MessageTypes", "Debug")
 
 #define TOR_ERROR      (1u<<0)
 #define TOR_WARN       (1u<<1)
