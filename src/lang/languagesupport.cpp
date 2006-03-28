@@ -38,8 +38,8 @@ void
 LanguageSupport::initialize()
 {
   _languages.clear();
-  _languages.insert("en", "English");
-  _languages.insert("zh", "Chinese");
+  _languages.insert("en",    "English");
+  _languages.insert("zh-cn", "\347\256\200\344\275\223\345\255\227");
 }
 
 /** Returns the default language code for the system locale. */
@@ -47,7 +47,11 @@ QString
 LanguageSupport::defaultLanguageCode()
 {
   QString localeName = QLocale::system().name();
-  return localeName.mid(0, localeName.indexOf("_"));
+  QString language   = localeName.mid(0, localeName.indexOf("_"));
+  if (language == "zh") {
+    language += "-" + localeName.mid(localeName.indexOf("_")+1).toLower();
+  }
+  return language;
 }
 
 /** Returns a list of all supported language codes. (e.g., "en"). */
