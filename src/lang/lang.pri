@@ -25,7 +25,8 @@ HEADERS += $$PWD/languagesupport.h
 
 SOURCES += $$PWD/languagesupport.cpp
 
-TRANSLATIONS += $$PWD/vidalia_en.ts
+TRANSLATIONS += $$PWD/vidalia_en.ts \
+                $$PWD/vidalia_zh.ts
 
 RESOURCES += $$PWD/lang.qrc
 

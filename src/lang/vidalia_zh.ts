@@ -3,11 +3,11 @@
     <name>AboutDialog</name>
     <message>
         <source>About Vidalia</source>
-        <translation>¹ØÓÚVidalia</translation>
+        <translation>å…³äºVidalia</translation>
     </message>
     <message>
         <source>View License</source>
-        <translation>²é¿´Ğí¿ÉÖ¤</translation>
+        <translation>æŸ¥çœ‹è®¸å¯è¯</translation>
     </message>
     <message>
         <source>OK</source>
@@ -27,66 +27,69 @@
     </message>
     <message>
         <source>Qt Version</source>
-        <translation>Qt°æ±¾</translation>
+        <translation>Qtç‰ˆæœ¬</translation>
     </message>
     <message>
         <source>Tor Version</source>
-        <translation>Tor°æ±¾</translation>
+        <translation>Torç‰ˆæœ¬</translation>
     </message>
     <message>
         <source>Vidalia Version</source>
-        <translation>Vidalia°æ±¾</translation>
+        <translation>Vidaliaç‰ˆæœ¬</translation>
     </message>
     <message>
         <source>Hide License</source>
-        <translation>Òş²ØĞí¿ÉÖ¤</translation>
+        <translation>éšè—è®¸å¯è¯</translation>
     </message>
     <message>
         <source>&lt;Not Running&gt;</source>
-        <translation>&lt;Î´ÔËĞĞ&gt;</translation>
+        <translation>&lt;æœªè¿è¡Œ&gt;</translation>
     </message>
 </context>
 <context>
     <name>BandwidthGraph</name>
     <message>
         <source>Tor Bandwidth Usage</source>
-        <translation>Tor´ø¿íÀûÓÃ</translation>
+        <translation>Torå¸¦å®½åˆ©ç”¨</translation>
     </message>
     <message>
         <source>Show Settings</source>
-        <translation>ÏÔÊ¾ÉèÖÃ</translation>
+        <translation>æ˜¾ç¤ºè®¾ç½®</translation>
     </message>
     <message>
         <source>Reset</source>
-        <translation>ÖØÖÃ</translation>
+        <translation>é‡ç½®</translation>
     </message>
+
+    <!--
     <message>
         <source>Receive Rate</source>
-        <translation>½ÓÊÕÂÊ</translation>
+        <translation>æ¥æ”¶ç‡</translation>
     </message>
+    -->
     <message>
         <source>Send Rate</source>
-        <translation>·¢ËÍÂÊ</translation>
+        <translation>å‘é€ç‡</translation>
     </message>
     <message>
         <source>Changes the transparency of the Bandwidth Graph</source>
-        <translation>¸Ä±ä´ø¿íÍ¼µÄÍ¸Ã÷¶È</translation>
+        <translation>æ”¹å˜å¸¦å®½å›¾çš„é€æ˜åº¦</translation>
     </message>
     <message>
         <source>Save</source>
-        <translation>±£´æ</translation>
+        <translation>ä¿å­˜</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>È¡Ïû</translation>
+        <translation>å–æ¶ˆ</translation>
     </message>
     <message>
         <source>Since:</source>
-        <translation>Ê¼ÓÚ£º</translation>
+        <translation>å§‹äºï¼š</translation>
     </message>
     <message>
         <source>Jan 1 2000</source>
-        <translation>2000Äê1Ô»1ÈÕ</translation>
+        <translation>2000å¹´1æ›°1æ—¥</translation>
     </message>
     <message>
         <source>100</source>
@@ -94,98 +97,98 @@
     </message>
     <message>
         <source>% Opaque</source>
-        <translation>%²»Í¸Ã÷</translation>
+        <translation>%ä¸é€æ˜</translation>
     </message>
     <message>
         <source>Hide Settings</source>
-        <translation>Òş²ØÉèÖÃ</translation>
+        <translation>éšè—è®¾ç½®</translation>
     </message>
 </context>
 <context>
     <name>ConfigDialog</name>
     <message>
         <source>Configure Settings</source>
-        <translation>ÅäÖÃÉè¶¨</translation>
+        <translation>é…ç½®è®¾å®š</translation>
     </message>
     <message>
         <source>General</source>
-        <translation>Ò»°ã</translation>
+        <translation>ä¸€èˆ¬</translation>
     </message>
     <message>
         <source>Server</source>
-        <translation>·şÎñÆ÷</translation>
+        <translation>æœåŠ¡å™¨</translation>
     </message>
     <message>
         <source>Advanced</source>
-        <translation>¸ß¼¶</translation>
+        <translation>é«˜çº§</translation>
     </message>
     <message>
         <source>Tor Directory</source>
-        <translation>TorÄ¿Â¼</translation>
+        <translation>Torç›®å½•</translation>
     </message>
     <message>
         <source>Path to Tor&apos;s executable</source>
-        <translation>Tor¿ÉÖ´ĞĞ³ÌĞòµÄÂ·¾¶</translation>
+        <translation>Torå¯æ‰§è¡Œç¨‹åºçš„è·¯å¾„</translation>
     </message>
     <message>
         <source>Select path to Tor executable</source>
-        <translation>Ñ¡ÔñTor¿ÉÖ´ĞĞ³ÌĞòµÄÂ·¾¶</translation>
+        <translation>é€‰æ‹©Torå¯æ‰§è¡Œç¨‹åºçš„è·¯å¾„</translation>
     </message>
     <message>
         <source>Browse</source>
-        <translation>ä¯ÀÀ</translation>
+        <translation>æµè§ˆ</translation>
     </message>
     <message>
         <source>Startup Options</source>
-        <translation>Æô¶¯¿ÉÑ¡Ïî</translation>
+        <translation>å¯åŠ¨å¯é€‰é¡¹</translation>
     </message>
     <message>
         <source>Select to start Vidalia on system boot</source>
-        <translation>Ñ¡ÔñÏµÍ³Æô¶¯Ê±Vidalia¾ÍÔËĞĞ</translation>
+        <translation>é€‰æ‹©ç³»ç»Ÿå¯åŠ¨æ—¶Vidaliaå°±è¿è¡Œ</translation>
     </message>
     <message>
         <source>Run Vidalia on system startup</source>
-        <translation>ÏµÍ³Æô¶¯Ê±Vidalia¾ÍÔËĞĞ</translation>
+        <translation>ç³»ç»Ÿå¯åŠ¨æ—¶Vidaliaå°±è¿è¡Œ</translation>
     </message>
     <message>
         <source>Set to start Tor when you launch Vidalia</source>
-        <translation>ÉèÎªÔËĞĞVidaliaÊ±Æô¶¯Tor</translation>
+        <translation>è®¾ä¸ºè¿è¡ŒVidaliaæ—¶å¯åŠ¨Tor</translation>
     </message>
     <message>
         <source>Start Tor when Vidalia starts</source>
-        <translation>ÔËĞĞVidaliaÊ±Æô¶¯Tor</translation>
+        <translation>è¿è¡ŒVidaliaæ—¶å¯åŠ¨Tor</translation>
     </message>
     <message>
         <source>Check to run as a Tor network server</source>
-        <translation>Èô×÷ÎªTorÍøÂçÖĞµÄ·şÎñÆ÷Çë´ò¹´</translation>
+        <translation>è‹¥ä½œä¸ºTorç½‘ç»œä¸­çš„æœåŠ¡å™¨è¯·æ‰“å‹¾</translation>
     </message>
     <message>
         <source>Relay traffic for the Tor network</source>
-        <translation>ÎªTorÍøÂçÖĞ¼Ì´«Êä</translation>
+        <translation>ä¸ºTorç½‘ç»œä¸­ç»§ä¼ è¾“</translation>
     </message>
     <message>
         <source>Server Configuration</source>
-        <translation>·şÎñÆ÷ÅäÖÃ</translation>
+        <translation>æœåŠ¡å™¨é…ç½®</translation>
     </message>
     <message>
         <source>Attempts to determine the correct address for your server</source>
-        <translation>³¢ÊÔÈ·¶¨ÄúµÄ·şÎñÆ÷µÄµØÖ·</translation>
+        <translation>å°è¯•ç¡®å®šæ‚¨çš„æœåŠ¡å™¨çš„åœ°å€</translation>
     </message>
     <message>
         <source>Get Address</source>
-        <translation>»ñÈ¡µØÖ·</translation>
+        <translation>è·å–åœ°å€</translation>
     </message>
     <message>
         <source>Domain name or IP address of your server</source>
-        <translation>ÄúµÄÓòÃû»òÕßIPµØÖ·</translation>
+        <translation>æ‚¨çš„åŸŸåæˆ–è€…IPåœ°å€</translation>
     </message>
     <message>
         <source>If selected, clients will not exit the Tor network through your server</source>
-        <translation>Ñ¡ÖĞºó£¬¿Í»§¶Ë²»»á´ÓÄúµÄ·şÎñÆ÷ÍË³ö</translation>
+        <translation>é€‰ä¸­åï¼Œå®¢æˆ·ç«¯ä¸ä¼šä»æ‚¨çš„æœåŠ¡å™¨é€€å‡º</translation>
     </message>
     <message>
         <source>Only relay traffic between other Tor servers (middle-man)</source>
-        <translation>Ö»½øĞĞÆäËûTor·şÎñÆ÷Ö®¼äµÄÖĞ¼Ì´«Êä(ÖĞ¼äÈËµÄ½ÇÉ«)</translation>
+        <translation>åªè¿›è¡Œå…¶ä»–ToræœåŠ¡å™¨ä¹‹é—´çš„ä¸­ç»§ä¼ è¾“(ä¸­é—´äººçš„è§’è‰²)</translation>
     </message>
     <message>
         <source>Enable to mirror the server directory</source>
@@ -193,111 +196,111 @@
     </message>
     <message>
         <source>Mirror the Server Directory </source>
-        <translation>¾µÏñ·şÎñÆ÷µÄÄ¿Â¼</translation>
+        <translation>é•œåƒæœåŠ¡å™¨çš„ç›®å½•</translation>
     </message>
     <message>
         <source>Directory Port Number</source>
-        <translation>Ä¿Â¼µÄ¶Ë¿ÚºÅ</translation>
+        <translation>ç›®å½•çš„ç«¯å£å·</translation>
     </message>
     <message>
         <source>Port on which users and other servers can communicate with your server</source>
-        <translation>ÓÃ»§ÓëÆäËû·şÎñÆ÷¾­ÓÉÄú·şÎñÆ÷µÄÍ¨ĞÅ¶Ë¿Ú</translation>
+        <translation>ç”¨æˆ·ä¸å…¶ä»–æœåŠ¡å™¨ç»ç”±æ‚¨æœåŠ¡å™¨çš„é€šä¿¡ç«¯å£</translation>
     </message>
     <message>
         <source>Email address at which you may be reached if there is a problem with your server</source>
-        <translation>ÍòÒ»Äú·şÎñÆ÷³öÏÖÎÊÌâ£¬¿ÉÌá¹©µÄEmailÁªÏµ·½Ê½</translation>
+        <translation>ä¸‡ä¸€æ‚¨æœåŠ¡å™¨å‡ºç°é—®é¢˜ï¼Œå¯æä¾›çš„Emailè”ç³»æ–¹å¼</translation>
     </message>
     <message>
         <source>Name of your server</source>
-        <translation>ÄúµÄ·şÎñÆ÷Ãû</translation>
+        <translation>æ‚¨çš„æœåŠ¡å™¨å</translation>
     </message>
     <message>
         <source>Exit Policies</source>
-        <translation>ÍË³ö²ßÂÔ</translation>
+        <translation>é€€å‡ºç­–ç•¥</translation>
     </message>
     <message>
         <source>Action:</source>
-        <translation>¶¯×÷£º</translation>
+        <translation>åŠ¨ä½œï¼š</translation>
     </message>
     <message>
         <source>Action for new exit policy</source>
-        <translation>ĞÂÍË³ö²ßÂÔµÄ¶¯×÷</translation>
+        <translation>æ–°é€€å‡ºç­–ç•¥çš„åŠ¨ä½œ</translation>
     </message>
     <message>
         <source>Accept</source>
-        <translation>½ÓÊÜ</translation>
+        <translation>æ¥å—</translation>
     </message>
     <message>
         <source>Reject</source>
-        <translation>¾Ü¾ø</translation>
+        <translation>æ‹’ç»</translation>
     </message>
     <message>
         <source>From:</source>
-        <translation>À´×Ô£º</translation>
+        <translation>æ¥è‡ªï¼š</translation>
     </message>
     <message>
         <source>Start port for new exit policy</source>
-        <translation>ĞÂÍË³ö²ßÂÔµÄÆô¶¯¶Ë¿Ú</translation>
+        <translation>æ–°é€€å‡ºç­–ç•¥çš„å¯åŠ¨ç«¯å£</translation>
     </message>
     <message>
         <source>To:</source>
-        <translation>Ç°Íù£º</translation>
+        <translation>å‰å¾€ï¼š</translation>
     </message>
     <message>
         <source>End port for new exit policy</source>
-        <translation>ĞÂÍË³ö²ßÂÔµÄ½áÊø¶Ë¿Ú</translation>
+        <translation>æ–°é€€å‡ºç­–ç•¥çš„ç»“æŸç«¯å£</translation>
     </message>
     <message>
         <source>Action</source>
-        <translation>¶¯×÷</translation>
+        <translation>åŠ¨ä½œ</translation>
     </message>
     <message>
         <source>From</source>
-        <translation>À´×Ô</translation>
+        <translation>æ¥è‡ª</translation>
     </message>
     <message>
         <source>To</source>
-        <translation>Ç°Íù</translation>
+        <translation>å‰å¾€</translation>
     </message>
     <message>
         <source>Add the new exit policy</source>
-        <translation>Ìí¼ÓĞÂµÄÍË³ö²ßÂÔ</translation>
+        <translation>æ·»åŠ æ–°çš„é€€å‡ºç­–ç•¥</translation>
     </message>
     <message>
         <source>Add</source>
-        <translation>Ìí¼Ó</translation>
+        <translation>æ·»åŠ </translation>
     </message>
     <message>
         <source>Increase the priority of the selected exit policy</source>
-        <translation>Ôö¼Ó±»Ñ¡ÍË³ö²ßÂÔµÄÓÅÏÈ¼¶</translation>
+        <translation>å¢åŠ è¢«é€‰é€€å‡ºç­–ç•¥çš„ä¼˜å…ˆçº§</translation>
     </message>
     <message>
         <source>Move Up</source>
-        <translation>ÉÏÒÆ</translation>
+        <translation>ä¸Šç§»</translation>
     </message>
     <message>
         <source>Decrease the priority of the selected exit policy</source>
-        <translation>½µµÍ±»Ñ¡ÍË³ö²ßÂÔµÄÓÅÏÈ¼¶</translation>
+        <translation>é™ä½è¢«é€‰é€€å‡ºç­–ç•¥çš„ä¼˜å…ˆçº§</translation>
     </message>
     <message>
         <source>Move Down</source>
-        <translation>ÏÂÒÆ</translation>
+        <translation>ä¸‹ç§»</translation>
     </message>
     <message>
         <source>Remove the selected exit policy</source>
-        <translation>É¾³ı±»Ñ¡µÄÍË³ö²ßÂÔ</translation>
+        <translation>åˆ é™¤è¢«é€‰çš„é€€å‡ºç­–ç•¥</translation>
     </message>
     <message>
         <source>Remove</source>
-        <translation>É¾³ı</translation>
+        <translation>åˆ é™¤</translation>
     </message>
     <message>
         <source>Control Port</source>
-        <translation>¿ØÖÆ¶Ë¿Ú</translation>
+        <translation>æ§åˆ¶ç«¯å£</translation>
     </message>
     <message>
         <source>Port that Vidalia uses to communicate with Tor. </source>
-        <translation>VidaliaÓÃÓÚ¸úTorÍ¨Ñ¶µÄ¶Ë¿Ú</translation>
+        <translation>Vidaliaç”¨äºè·ŸToré€šè®¯çš„ç«¯å£</translation>
     </message>
     <message>
         <source>9051</source>
@@ -305,147 +308,147 @@
     </message>
     <message>
         <source>Alternate Tor Configuration File</source>
-        <translation>¸Ä±äTorµÄÅäÖÃÎÄ¼ş</translation>
+        <translation>æ”¹å˜Torçš„é…ç½®æ–‡ä»¶</translation>
     </message>
     <message>
         <source>Start Tor with the specified configuration file (torrc)</source>
-        <translation>Ö¸¶¨TorÆô¶¯Ê±µÄÅäÖÃÎÄ¼ş(torrc)</translation>
+        <translation>æŒ‡å®šTorå¯åŠ¨æ—¶çš„é…ç½®æ–‡ä»¶(torrc)</translation>
     </message>
     <message>
         <source>Select path to Tor configuration file</source>
-        <translation>Ñ¡ÔñTorÅäÖÃÎÄ¼şµÄÂ·¾¶</translation>
+        <translation>é€‰æ‹©Toré…ç½®æ–‡ä»¶çš„è·¯å¾„</translation>
     </message>
     <message>
         <source>Permissions</source>
-        <translation>È¨ÏŞ</translation>
+        <translation>æƒé™</translation>
     </message>
     <message>
         <source>Vidalia will run with this User&apos;s permissions</source>
-        <translation>Vidalia½«¸ù¾İÓÃ»§µÄÈ¨ÏŞÔËĞĞ</translation>
+        <translation>Vidaliaå°†æ ¹æ®ç”¨æˆ·çš„æƒé™è¿è¡Œ</translation>
     </message>
     <message>
         <source>Vidalia will run with this Group&apos;s permissions</source>
-        <translation>Vidalia½«¸ù¾İÓÃ»§µÄÈ¨ÏŞÔËĞĞ</translation>
+        <translation>Vidaliaå°†æ ¹æ®ç”¨æˆ·çš„æƒé™è¿è¡Œ</translation>
     </message>
     <message>
         <source>Saves current settings</source>
-        <translation>±£´æµ±Ç°ÉèÖÃ</translation>
+        <translation>ä¿å­˜å½“å‰è®¾ç½®</translation>
     </message>
     <message>
         <source>Save Settings</source>
-        <translation>±£´æÉèÖÃ</translation>
+        <translation>ä¿å­˜è®¾ç½®</translation>
     </message>
     <message>
         <source>Cancels any changes made to settings</source>
-        <translation>È¡Ïû¶ÔÉèÖÃµÄĞŞ¸Ä</translation>
+        <translation>å–æ¶ˆå¯¹è®¾ç½®çš„ä¿®æ”¹</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>È¡Ïû</translation>
+        <translation>å–æ¶ˆ</translation>
     </message>
     <message>
         <source>Vidalia was only able to find a private IP address for your server.
 Would you like to access an external service to determine your public IP address?</source>
-        <translation>VidaliaÖ»ÄÜÎªÄúµÄ·şÎñÆ÷ÕÒµ½Ò»¸öË½ÓĞIPµØÖ·£¬ÄúÏëÍ¨¹ıÍâ²¿·şÎñÒÔÈ·¶¨ÄúµÄ¹«¹²IPµØÖ·Âğ£¿</translation>
+        <translation>Vidaliaåªèƒ½ä¸ºæ‚¨çš„æœåŠ¡å™¨æ‰¾åˆ°ä¸€ä¸ªç§æœ‰IPåœ°å€ï¼Œæ‚¨æƒ³é€šè¿‡å¤–éƒ¨æœåŠ¡ä»¥ç¡®å®šæ‚¨çš„å…¬å…±IPåœ°å€å—ï¼Ÿ</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>³ö´í</translation>
+        <translation>å‡ºé”™</translation>
     </message>
     <message>
         <source>Viadlia was uanble to determine your public IP address.</source>
-        <translation>ViadliaÎŞ·¨È·¶¨ÄúµÄ¹«¹²IPµØÖ·</translation>
+        <translation>Viadliaæ— æ³•ç¡®å®šæ‚¨çš„å…¬å…±IPåœ°å€</translation>
     </message>
     <message>
         <source>Error Saving Server Configuration</source>
-        <translation>±£´æ·şÎñÆ÷ÅäÖÃÊ±³ö´í</translation>
+        <translation>ä¿å­˜æœåŠ¡å™¨é…ç½®æ—¶å‡ºé”™</translation>
     </message>
     <message>
         <source>Vidalia encountered an error applying your server configuration.</source>
-        <translation>Ó¦ÓÃÄúµÄ·şÎñÆ÷ÅäÖÃÊ±Vidalia³ö´í</translation>
+        <translation>åº”ç”¨æ‚¨çš„æœåŠ¡å™¨é…ç½®æ—¶Vidaliaå‡ºé”™</translation>
     </message>
     <message>
         <source>Select Path to Tor</source>
-        <translation>Ñ¡ÔñTorµÄÂ·¾¶</translation>
+        <translation>é€‰æ‹©Torçš„è·¯å¾„</translation>
     </message>
     <message>
         <source>Select Tor Configuration File</source>
-        <translation>Ñ¡ÔñTorµÄÅäÖÃÎÄ¼ş</translation>
+        <translation>é€‰æ‹©Torçš„é…ç½®æ–‡ä»¶</translation>
     </message>
     <message>
         <source>Address:</source>
-        <translation>µØÖ·£º</translation>
+        <translation>åœ°å€ï¼š</translation>
     </message>
     <message>
         <source>Nickname and Server Port are required</source>
-        <translation>êÇ³ÆºÍ·şÎñÆ÷¶Ë¿ÚÊÇ±ØĞëµÄ</translation>
+        <translation>æ˜µç§°å’ŒæœåŠ¡å™¨ç«¯å£æ˜¯å¿…é¡»çš„</translation>
     </message>
     <message>
         <source>Directory Port:</source>
-        <translation>Ä¿Â¼¶Ë¿Ú£º</translation>
+        <translation>ç›®å½•ç«¯å£ï¼š</translation>
     </message>
     <message>
         <source>Server Port:</source>
-        <translation>·şÎñÆ÷¶Ë¿Ú£º</translation>
+        <translation>æœåŠ¡å™¨ç«¯å£ï¼š</translation>
     </message>
     <message>
         <source>Contact Info:</source>
-        <translation>ÁªÏµĞÅÏ¢£º</translation>
+        <translation>è”ç³»ä¿¡æ¯ï¼š</translation>
     </message>
     <message>
         <source>Nickname:</source>
-        <translation>êÇ³Æ£º</translation>
+        <translation>æ˜µç§°ï¼š</translation>
     </message>
     <message>
         <source>Run as User:</source>
-        <translation>ÔËĞĞÊ±×÷ÎªÓÃ»§£º</translation>
+        <translation>è¿è¡Œæ—¶ä½œä¸ºç”¨æˆ·ï¼š</translation>
     </message>
     <message>
         <source>Run as Group:</source>
-        <translation>ÔËĞĞÊ±×÷Îª×é£º</translation>
+        <translation>è¿è¡Œæ—¶ä½œä¸ºç»„ï¼š</translation>
     </message>
     <message>
         <source>You must specify at least a server nickname and port.</source>
-        <translation>Äã±ØĞëÖÁÉÙÖ¸¶¨Ò»¸ö·şÎñÆ÷êÇ³ÆºÍ¶Ë¿Ú</translation>
+        <translation>ä½ å¿…é¡»è‡³å°‘æŒ‡å®šä¸€ä¸ªæœåŠ¡å™¨æ˜µç§°å’Œç«¯å£</translation>
     </message>
 </context>
 <context>
     <name>ControlSocket</name>
     <message>
         <source>Error connecting to %1:%2 [%3]</source>
-        <translation>Á¬½Óµ½%1:%2 [%3]Ê±³ö´í</translation>
+        <translation>è¿æ¥åˆ°%1:%2 [%3]æ—¶å‡ºé”™</translation>
     </message>
     <message>
         <source>Vidalia only supports Version 1 of Tor&apos;s Control Protocol (Version %1 detected).
 Upgrade to a newer version of Tor.</source>
-        <translation>VidaliaÖ»Ö§³Ö°æ±¾1µÄTor¿ØÖÆĞ­Òé(ÒÑ¼ì²â³ö°æ±¾%1)£¬ÇëÉı¼¶µ½ĞÂ°æTor</translation>
+        <translation>Vidaliaåªæ”¯æŒç‰ˆæœ¬1çš„Toræ§åˆ¶åè®®(å·²æ£€æµ‹å‡ºç‰ˆæœ¬%1)ï¼Œè¯·å‡çº§åˆ°æ–°ç‰ˆTor</translation>
     </message>
     <message>
         <source>Error disconnecting socket. [%1]</source>
-        <translation>ÓëÌ×½Ó×Ö¶Ï¿ªÊ±³ö´í£¬[%1]</translation>
+        <translation>ä¸å¥—æ¥å­—æ–­å¼€æ—¶å‡ºé”™ï¼Œ[%1]</translation>
     </message>
     <message>
         <source>Error sending control command. [%1]</source>
-        <translation>·¢ËÍ¿ØÖÆÃüÁîÊ±³ö´í£¬[%1]</translation>
+        <translation>å‘é€æ§åˆ¶å‘½ä»¤æ—¶å‡ºé”™ï¼Œ[%1]</translation>
     </message>
     <message>
         <source>Socket disconnected while attempting to read a line of data.</source>
-        <translation>ÕıÔÚÊÔÍ¼¶ÁÈ¡Ò»ĞĞÊı¾İÊ±Ì×½Ó×Ö¶Ï¿ª¡£</translation>
+        <translation>æ­£åœ¨è¯•å›¾è¯»å–ä¸€è¡Œæ•°æ®æ—¶å¥—æ¥å­—æ–­å¼€ã€‚</translation>
     </message>
     <message>
         <source>Invalid control reply. [%1]</source>
-        <translation>²»¹æ·¶µÄ¿ØÖÆ»Ø¸´£¬[%1]</translation>
+        <translation>ä¸è§„èŒƒçš„æ§åˆ¶å›å¤ï¼Œ[%1]</translation>
     </message>
 </context>
 <context>
     <name>GraphFrame</name>
     <message>
         <source>Recv: </source>
-        <translation>ÊÕµ½£º</translation>
+        <translation>æ”¶åˆ°ï¼š</translation>
     </message>
     <message>
         <source>Sent: </source>
-        <translation>·¢ËÍ£º</translation>
+        <translation>å‘é€ï¼š</translation>
     </message>
     <message>
         <source>%1 KB</source>
@@ -468,43 +471,43 @@ Upgrade to a newer version of Tor.</source>
     <name>HelpBrowser</name>
     <message>
         <source>Vidalia Help</source>
-        <translation>Vidalia°ïÖú</translation>
+        <translation>Vidaliaå¸®åŠ©</translation>
     </message>
     <message>
         <source>Find Previous</source>
-        <translation>²éÕÒÇ°Ò»¸ö</translation>
+        <translation>æŸ¥æ‰¾å‰ä¸€ä¸ª</translation>
     </message>
     <message>
         <source>Find Next</source>
-        <translation>²éÕÒÏÂÒ»¸ö</translation>
+        <translation>æŸ¥æ‰¾ä¸‹ä¸€ä¸ª</translation>
     </message>
     <message>
         <source>Case sensitive</source>
-        <translation>´óĞ¡Ğ´Ãô¸Ğ</translation>
+        <translation>å¤§å°å†™æ•æ„Ÿ</translation>
     </message>
     <message>
         <source>Contents</source>
-        <translation>ÄÚÈİ</translation>
+        <translation>å†…å®¹</translation>
     </message>
     <message>
         <source>Help Topics</source>
-        <translation>°ïÖúÖ÷Ìâ</translation>
+        <translation>å¸®åŠ©ä¸»é¢˜</translation>
     </message>
     <message>
         <source>Search</source>
-        <translation>ËÑË÷</translation>
+        <translation>æœç´¢</translation>
     </message>
     <message>
         <source>Found Documents</source>
-        <translation>ÕÒµ½µÄÎÄµµ</translation>
+        <translation>æ‰¾åˆ°çš„æ–‡æ¡£</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation>Ïòºó</translation>
+        <translation>å‘å</translation>
     </message>
     <message>
         <source>Move to previous page (Backspace)</source>
-        <translation>ÒÆ¶¯µ½Ç°Ò»Ò³(Backspace)</translation>
+        <translation>ç§»åŠ¨åˆ°å‰ä¸€é¡µ(Backspace)</translation>
     </message>
     <message>
         <source>Backspace</source>
@@ -512,11 +515,11 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Forward</source>
-        <translation>ÏòÇ°</translation>
+        <translation>å‘å‰</translation>
     </message>
     <message>
         <source>Move to next page (Shift+Backspace)</source>
-        <translation>ÒÆ¶¯µ½ÏÂÒ»Ò³(Shift+Backspace)</translation>
+        <translation>ç§»åŠ¨åˆ°ä¸‹ä¸€é¡µ(Shift+Backspace)</translation>
     </message>
     <message>
         <source>Shift+Backspace</source>
@@ -524,11 +527,11 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Home</source>
-        <translation>Ê×Ò³</translation>
+        <translation>é¦–é¡µ</translation>
     </message>
     <message>
         <source>Move to the Home page (Ctrl+H)</source>
-        <translation>ÒÆ¶¯µ½Ê×Ò³ (Ctrl+H)</translation>
+        <translation>ç§»åŠ¨åˆ°é¦–é¡µ (Ctrl+H)</translation>
     </message>
     <message>
         <source>Ctrl+H</source>
@@ -536,11 +539,11 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Find</source>
-        <translation>²éÕÒ</translation>
+        <translation>æŸ¥æ‰¾</translation>
     </message>
     <message>
         <source>Search for a word or phrase on current page (Ctrl+F)</source>
-        <translation>ÔÚµ±Ç°Ò³²éÕÒ´ÊÓï (Ctrl+F)</translation>
+        <translation>åœ¨å½“å‰é¡µæŸ¥æ‰¾è¯è¯­ (Ctrl+F)</translation>
     </message>
     <message>
         <source>Ctrl+F</source>
@@ -548,11 +551,11 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Close</source>
-        <translation>¹Ø±Õ</translation>
+        <translation>å…³é—­</translation>
     </message>
     <message>
         <source>Close Vidalia Help</source>
-        <translation>¹Ø±ÕVidaliaµÄ°ïÖú</translation>
+        <translation>å…³é—­Vidaliaçš„å¸®åŠ©</translation>
     </message>
     <message>
         <source>Esc</source>
@@ -560,78 +563,78 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Error Loading Help Contents: </source>
-        <translation>ÔØÈë°ïÖúÄÚÈİÊ±³ö´í£º</translation>
+        <translation>è½½å…¥å¸®åŠ©å†…å®¹æ—¶å‡ºé”™ï¼š</translation>
     </message>
     <message>
         <source>Search reached end of document</source>
-        <translation>²éÕÒµ½ÁËÎÄµµÄ©Î²</translation>
+        <translation>æŸ¥æ‰¾åˆ°äº†æ–‡æ¡£æœ«å°¾</translation>
     </message>
     <message>
         <source>Search reached start of document</source>
-        <translation>²éÕÒµ½ÁËÎÄµµ¿ªÍ·</translation>
+        <translation>æŸ¥æ‰¾åˆ°äº†æ–‡æ¡£å¼€å¤´</translation>
     </message>
     <message>
         <source>Text not found in document</source>
-        <translation>ÎÄµµÖĞÎ´ÕÒµ½</translation>
+        <translation>æ–‡æ¡£ä¸­æœªæ‰¾åˆ°</translation>
     </message>
     <message>
         <source>Find:</source>
-        <translation>²éÕÒ£º</translation>
+        <translation>æŸ¥æ‰¾ï¼š</translation>
     </message>
     <message>
         <source>Whole words only</source>
-        <translation>Æ¥ÅäÕû¸öµ¥´Ê</translation>
+        <translation>åŒ¹é…æ•´ä¸ªå•è¯</translation>
     </message>
     <message>
         <source>Searching for:</source>
-        <translation>ËÑË÷£º</translation>
+        <translation>æœç´¢ï¼š</translation>
     </message>
     <message>
         <source>Supplied XML file is not a valid Contents document.</source>
-        <translation>Ìá¹©µÄXMLÎÄ¼şµÄÄÚÈİ²»¹æ·¶</translation>
+        <translation>æä¾›çš„XMLæ–‡ä»¶çš„å†…å®¹ä¸è§„èŒƒ</translation>
     </message>
     <message>
         <source>Found %1 results</source>
-        <translation>²éÕÒµ½%1¸ö½á¹û</translation>
+        <translation>æŸ¥æ‰¾åˆ°%1ä¸ªç»“æœ</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
     <message>
         <source>Tor is Stopped</source>
-        <translation>TorÒÑÍ£Ö¹</translation>
+        <translation>Torå·²åœæ­¢</translation>
     </message>
     <message>
         <source>Start</source>
-        <translation>Æô¶¯</translation>
+        <translation>å¯åŠ¨</translation>
     </message>
     <message>
         <source>Stop</source>
-        <translation>Í£Ö¹</translation>
+        <translation>åœæ­¢</translation>
     </message>
     <message>
         <source>Configure</source>
-        <translation>ÅäÖÃ</translation>
+        <translation>é…ç½®</translation>
     </message>
     <message>
         <source>About</source>
-        <translation>¹ØÓÚ</translation>
+        <translation>å…³äº</translation>
     </message>
     <message>
         <source>Exit</source>
-        <translation>ÍË³ö</translation>
+        <translation>é€€å‡º</translation>
     </message>
     <message>
         <source>Bandwidth Graph</source>
-        <translation>´ø¿íÍ¼</translation>
+        <translation>å¸¦å®½å›¾</translation>
     </message>
     <message>
         <source>Message Log</source>
-        <translation>ÏûÏ¢ÈÕÖ¾</translation>
+        <translation>æ¶ˆæ¯æ—¥å¿—</translation>
     </message>
     <message>
         <source>Help</source>
-        <translation>°ïÖú</translation>
+        <translation>å¸®åŠ©</translation>
     </message>
     <message>
         <source>Ctrl+S</source>
@@ -655,7 +658,7 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>File</source>
-        <translation>ÎÄ¼ş</translation>
+        <translation>æ–‡ä»¶</translation>
     </message>
     <message>
         <source>Tor</source>
@@ -663,147 +666,147 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>View</source>
-        <translation>²é¿´</translation>
+        <translation>æŸ¥çœ‹</translation>
     </message>
     <message>
         <source>Vidalia Help</source>
-        <translation>Vidalia°ïÖú</translation>
+        <translation>Vidaliaå¸®åŠ©</translation>
     </message>
     <message>
         <source>Error Starting Tor</source>
-        <translation>Æô¶¯TorÊ±³ö´í</translation>
+        <translation>å¯åŠ¨Toræ—¶å‡ºé”™</translation>
     </message>
     <message>
         <source>Vidalia was unable to start Tor.
 		
 Error: </source>
-        <translation>VidaliaÎŞ·¨Æô¶¯Tor¡£
+        <translation>Vidaliaæ— æ³•å¯åŠ¨Torã€‚
 		
-³ö´í£º</translation>
+å‡ºé”™ï¼š</translation>
     </message>
     <message>
         <source>Tor is started</source>
-        <translation>TorÒÑÆô¶¯</translation>
+        <translation>Torå·²å¯åŠ¨</translation>
     </message>
     <message>
         <source>Error Connecting to Tor</source>
-        <translation>Á¬½Óµ½TorÊ±³ö´í</translation>
+        <translation>è¿æ¥åˆ°Toræ—¶å‡ºé”™</translation>
     </message>
     <message>
         <source>Error Stopping Tor</source>
-        <translation>Í£Ö¹TorÊ±³ö´í</translation>
+        <translation>åœæ­¢Toræ—¶å‡ºé”™</translation>
     </message>
     <message>
         <source>Vidalia was unable to stop Tor.
 
 Error: </source>
-        <translation>VidaliaÎŞ·¨Í£Ö¹Tor¡£
+        <translation>Vidaliaæ— æ³•åœæ­¢Torã€‚
 		
-³ö´í£º</translation>
+å‡ºé”™ï¼š</translation>
     </message>
     <message>
         <source>Tor is stopped</source>
-        <translation>TorÒÑÍ£Ö¹</translation>
+        <translation>Torå·²åœæ­¢</translation>
     </message>
     <message>
         <source>Tor Exited</source>
-        <translation>TorÒÑÍË³ö</translation>
+        <translation>Torå·²é€€å‡º</translation>
     </message>
     <message>
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators
 about what happened to Tor before it exited.</source>
-        <translation>Vidalia¼ì²âµ½TorÒì³£ÍË³ö¡£
+        <translation>Vidaliaæ£€æµ‹åˆ°Torå¼‚å¸¸é€€å‡ºã€‚
 		
-Çë¼ì²éĞÅÏ¢ÈÕÖ¾£¬¿´¿´TorÍË³öÇ°ÓĞºÎÒì³£¡£</translation>
+è¯·æ£€æŸ¥ä¿¡æ¯æ—¥å¿—ï¼Œçœ‹çœ‹Toré€€å‡ºå‰æœ‰ä½•å¼‚å¸¸ã€‚</translation>
     </message>
     <message>
         <source>Show Log</source>
-        <translation>ÏÔÊ¾ÈÕÖ¾</translation>
+        <translation>æ˜¾ç¤ºæ—¥å¿—</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>¹Ø±Õ</translation>
+        <translation>å…³é—­</translation>
     </message>
     <message>
         <source>Authentication Error</source>
-        <translation>ÑéÖ¤³ö´í</translation>
+        <translation>éªŒè¯å‡ºé”™</translation>
     </message>
     <message>
         <source>Vidalia was unable to authenticate itself to Tor.Check your authentication information and try again.
 
 Error: </source>
-        <translation>VidaliaÎŞ·¨Í¨¹ıTorµÄÑéÖ¤£¬Çë¼ì²éÄúµÄÑéÖ¤ĞÅÏ¢£¬È»ºóÔÙÊÔÊÔ¡£
+        <translation>Vidaliaæ— æ³•é€šè¿‡Torçš„éªŒè¯ï¼Œè¯·æ£€æŸ¥æ‚¨çš„éªŒè¯ä¿¡æ¯ï¼Œç„¶åå†è¯•è¯•ã€‚
 		
-³ö´í£º</translation>
+å‡ºé”™ï¼š</translation>
     </message>
     <message>
         <source>Error Setting Events</source>
-        <translation>ÉèÖÃÊÂ¼şÊ±³ö´í</translation>
+        <translation>è®¾ç½®äº‹ä»¶æ—¶å‡ºé”™</translation>
     </message>
     <message>
         <source>Vidalia was unable to register for events from Tor. Some features of Vidalia will be unavailable. 
 
 Error: </source>
-        <translation>VidaliaÎŞ·¨ÓÉTor×¢²áÊÂ¼ş£¬VidaliaµÄ²¿·Ö¹¦ÄÜ½«ÎŞ·¨Ê¹ÓÃ¡£
+        <translation>Vidaliaæ— æ³•ç”±Toræ³¨å†Œäº‹ä»¶ï¼ŒVidaliaçš„éƒ¨åˆ†åŠŸèƒ½å°†æ— æ³•ä½¿ç”¨ã€‚
 		
-³ö´í£º</translation>
+å‡ºé”™ï¼š</translation>
     </message>
 </context>
 <context>
     <name>MessageLog</name>
     <message>
         <source>Message Log</source>
-        <translation>ÏûÏ¢ÈÕÖ¾</translation>
+        <translation>æ¶ˆæ¯æ—¥å¿—</translation>
     </message>
     <message>
         <source>Time</source>
-        <translation>Ê±¼ä</translation>
+        <translation>æ—¶é—´</translation>
     </message>
     <message>
         <source>Type</source>
-        <translation>ÀàĞÍ</translation>
+        <translation>ç±»å‹</translation>
     </message>
     <message>
         <source>Message</source>
-        <translation>ÏûÏ¢</translation>
+        <translation>æ¶ˆæ¯</translation>
     </message>
     <message>
         <source>Toggles display of Message Log settings</source>
-        <translation>ÏûÏ¢ÈÕÖ¾Éè¶¨µÄÏÔÊ¾ÇĞ»»</translation>
+        <translation>æ¶ˆæ¯æ—¥å¿—è®¾å®šçš„æ˜¾ç¤ºåˆ‡æ¢</translation>
     </message>
     <message>
         <source>Show Settings</source>
-        <translation>ÏÔÊ¾ÉèÖÃ</translation>
+        <translation>æ˜¾ç¤ºè®¾ç½®</translation>
     </message>
     <message>
         <source>Log File</source>
-        <translation>ÈÕÖ¾ÎÄ¼ş</translation>
+        <translation>æ—¥å¿—æ–‡ä»¶</translation>
     </message>
     <message>
         <source>Browse</source>
-        <translation>ä¯ÀÀ</translation>
+        <translation>æµè§ˆ</translation>
     </message>
     <message>
         <source>Enable saving of all messages to a file</source>
-        <translation>½«ËùÓĞÏûÏ¢±£´æµ½Ò»¸öÎÄ¼ş</translation>
+        <translation>å°†æ‰€æœ‰æ¶ˆæ¯ä¿å­˜åˆ°ä¸€ä¸ªæ–‡ä»¶</translation>
     </message>
     <message>
         <source>Save Messages to File</source>
-        <translation>½«ÏûÏ¢±£´æµ½ÎÄ¼ş</translation>
+        <translation>å°†æ¶ˆæ¯ä¿å­˜åˆ°æ–‡ä»¶</translation>
     </message>
     <message>
         <source>Log History Size</source>
-        <translation>ÈÕÖ¾¼ÇÂ¼µÄ´óĞ¡</translation>
+        <translation>æ—¥å¿—è®°å½•çš„å¤§å°</translation>
     </message>
     <message>
         <source>Number of messages to keep in log</source>
-        <translation>ÈÕÖ¾ÖĞ±£´æµÄÏûÏ¢ÊıÁ¿</translation>
+        <translation>æ—¥å¿—ä¸­ä¿å­˜çš„æ¶ˆæ¯æ•°é‡</translation>
     </message>
     <message>
         <source>Window Opacity</source>
-        <translation>´°¿ÚµÄ²»Í¸Ã÷¶È</translation>
+        <translation>çª—å£çš„ä¸é€æ˜åº¦</translation>
     </message>
     <message>
         <source>100</source>
@@ -811,43 +814,43 @@ Error: </source>
     </message>
     <message>
         <source>Changes the transparency of the Message Log</source>
-        <translation>¸Ä±äÏûÏ¢ÈÕÖ¾µÄÍ¸Ã÷¶È</translation>
+        <translation>æ”¹å˜æ¶ˆæ¯æ—¥å¿—çš„é€æ˜åº¦</translation>
     </message>
     <message>
         <source>Saves the current Message Log settings</source>
-        <translation>±£´æµ±Ç°ÏûÏ¢ÈÕÖ¾µÄÉèÖÃ</translation>
+        <translation>ä¿å­˜å½“å‰æ¶ˆæ¯æ—¥å¿—çš„è®¾ç½®</translation>
     </message>
     <message>
         <source>Save Settings</source>
-        <translation>±£´æÉèÖÃ</translation>
+        <translation>ä¿å­˜è®¾ç½®</translation>
     </message>
     <message>
         <source>Cancels changes made to settings</source>
-        <translation>È¡Ïû¶ÔÉèÖÃµÄĞŞ¸Ä</translation>
+        <translation>å–æ¶ˆå¯¹è®¾ç½®çš„ä¿®æ”¹</translation>
     </message>
     <message>
         <source>Cancel</source>
-        <translation>È¡Ïû</translation>
+        <translation>å–æ¶ˆ</translation>
     </message>
     <message>
         <source>Message Filter</source>
-        <translation>ÏûÏ¢¹ıÂËÆ÷</translation>
+        <translation>æ¶ˆæ¯è¿‡æ»¤å™¨</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>³ö´í</translation>
+        <translation>å‡ºé”™</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>¾¯¸æ</translation>
+        <translation>è­¦å‘Š</translation>
     </message>
     <message>
         <source>Notice</source>
-        <translation>×¢Òâ</translation>
+        <translation>æ³¨æ„</translation>
     </message>
     <message>
         <source>Info</source>
-        <translation>ĞÅÏ¢</translation>
+        <translation>ä¿¡æ¯</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -855,27 +858,27 @@ Error: </source>
     </message>
     <message>
         <source>Message Filters...</source>
-        <translation>ÏûÏ¢¹ıÂËÆ÷...</translation>
+        <translation>æ¶ˆæ¯è¿‡æ»¤å™¨...</translation>
     </message>
     <message>
         <source>Set message filters</source>
-        <translation>ÉèÖÃÏûÏ¢¹ıÂËÆ÷</translation>
+        <translation>è®¾ç½®æ¶ˆæ¯è¿‡æ»¤å™¨</translation>
     </message>
     <message>
         <source>History Size...</source>
-        <translation>ÀúÊ·¼ÇÂ¼´óĞ¡...</translation>
+        <translation>å†å²è®°å½•å¤§å°...</translation>
     </message>
     <message>
         <source>Set maximum number of messages to display</source>
-        <translation>½«ÏÔÊ¾ÉèÖÃÎ´×î´óÏûÏ¢Êı</translation>
+        <translation>å°†æ˜¾ç¤ºè®¾ç½®æœªæœ€å¤§æ¶ˆæ¯æ•°</translation>
     </message>
     <message>
         <source>Clear</source>
-        <translation>Çå¿Õ</translation>
+        <translation>æ¸…ç©º</translation>
     </message>
     <message>
         <source>Clear all messages from the Message Log (Ctrl+E)</source>
-        <translation>½«ÏûÏ¢ÈÕÖ¾ÖĞµÄËùÓĞÏûÏ¢¶¼Çå³ı (Ctrl+E)</translation>
+        <translation>å°†æ¶ˆæ¯æ—¥å¿—ä¸­çš„æ‰€æœ‰æ¶ˆæ¯éƒ½æ¸…é™¤ (Ctrl+E)</translation>
     </message>
     <message>
         <source>Ctrl+E</source>
@@ -883,11 +886,11 @@ Error: </source>
     </message>
     <message>
         <source>Copy</source>
-        <translation>¸´ÖÆ</translation>
+        <translation>å¤åˆ¶</translation>
     </message>
     <message>
         <source>Copy the selected messages to the clipboard (Ctrl+C)</source>
-        <translation>½«Ñ¡ÖĞµÄÏûÏ¢¸´ÖÆµ½¼ôÇĞ°å (Ctrl+C)</translation>
+        <translation>å°†é€‰ä¸­çš„æ¶ˆæ¯å¤åˆ¶åˆ°å‰ªåˆ‡æ¿ (Ctrl+C)</translation>
     </message>
     <message>
         <source>Ctrl+C</source>
@@ -895,11 +898,11 @@ Error: </source>
     </message>
     <message>
         <source>Select All</source>
-        <translation>È«Ñ¡</translation>
+        <translation>å…¨é€‰</translation>
     </message>
     <message>
         <source>Select all messages (Ctrl+A)</source>
-        <translation>Ñ¡ÔñÈ«²¿ÏûÏ¢ (Ctrl+A)</translation>
+        <translation>é€‰æ‹©å…¨éƒ¨æ¶ˆæ¯ (Ctrl+A)</translation>
     </message>
     <message>
         <source>Ctrl+A</source>
@@ -907,27 +910,27 @@ Error: </source>
     </message>
     <message>
         <source>Save All</source>
-        <translation>È«²¿±£´æ</translation>
+        <translation>å…¨éƒ¨ä¿å­˜</translation>
     </message>
     <message>
         <source>Save all messages to a file</source>
-        <translation>½«ËùÓĞÏûÏ¢È«²¿±£´æµ½Ò»¸öÎÄ¼şÖĞ</translation>
+        <translation>å°†æ‰€æœ‰æ¶ˆæ¯å…¨éƒ¨ä¿å­˜åˆ°ä¸€ä¸ªæ–‡ä»¶ä¸­</translation>
     </message>
     <message>
         <source>Save Selected</source>
-        <translation>±£´æÑ¡ÖĞµÄ</translation>
+        <translation>ä¿å­˜é€‰ä¸­çš„</translation>
     </message>
     <message>
         <source>Save selected messages to a file</source>
-        <translation>½«Ñ¡ÖĞµÄÏûÏ¢±£´æµ½Ò»¸öÎÄ¼şÖĞ</translation>
+        <translation>å°†é€‰ä¸­çš„æ¶ˆæ¯ä¿å­˜åˆ°ä¸€ä¸ªæ–‡ä»¶ä¸­</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>¹Ø±Õ</translation>
+        <translation>å…³é—­</translation>
     </message>
     <message>
         <source>Close the Message Log</source>
-        <translation>¹Ø±ÕÏûÏ¢ÈÕÖ¾</translation>
+        <translation>å…³é—­æ¶ˆæ¯æ—¥å¿—</translation>
     </message>
     <message>
         <source>Esc</source>
@@ -935,11 +938,11 @@ Error: </source>
     </message>
     <message>
         <source>Find</source>
-        <translation>²éÕÒ</translation>
+        <translation>æŸ¥æ‰¾</translation>
     </message>
     <message>
         <source>Find all messages containing the search text (Ctrl+F)</source>
-        <translation>´ÓËùÓĞÏûÏ¢ÖĞ²éÕÒÎÄ×Ö (Ctrl+F)</translation>
+        <translation>ä»æ‰€æœ‰æ¶ˆæ¯ä¸­æŸ¥æ‰¾æ–‡å­— (Ctrl+F)</translation>
     </message>
     <message>
         <source>Ctrl+F</source>
@@ -947,62 +950,62 @@ Error: </source>
     </message>
     <message>
         <source>Messages Shown: </source>
-        <translation>ÏÔÊ¾µÄÏûÏ¢£º</translation>
+        <translation>æ˜¾ç¤ºçš„æ¶ˆæ¯ï¼š</translation>
     </message>
     <message>
         <source>Messages that appear when something has 
 gone very wrong and Tor cannot proceed.</source>
-        <translation>·¢ÉúÑÏÖØ´íÎóµ¼ÖÂTorÎŞ·¨¼ÌĞø¶øÏÔÊ¾µÄÏûÏ¢</translation>
+        <translation>å‘ç”Ÿä¸¥é‡é”™è¯¯å¯¼è‡´Toræ— æ³•ç»§ç»­è€Œæ˜¾ç¤ºçš„æ¶ˆæ¯</translation>
     </message>
     <message>
         <source>Messages that only appear when 
 something has gone wrong with Tor.</source>
-        <translation>Tor³ö´íÊ±²Å»áÏÔÊ¾µÄÏûÏ¢¡£</translation>
+        <translation>Torå‡ºé”™æ—¶æ‰ä¼šæ˜¾ç¤ºçš„æ¶ˆæ¯ã€‚</translation>
     </message>
     <message>
         <source>Messages that appear infrequently 
 during normal Tor operation and are 
 not considered errors, but you may 
 care about.</source>
-        <translation>Õı³£Tor²Ù×÷¹ı³ÌÖĞ½ÏÉÙ³öÏÖµÄÏûÏ¢£¬ËäÈ»²»ÊÇ³ö´íÏûÏ¢£¬µ«Äú¿ÉÄÜÒª×¢ÒâµÄ¡£</translation>
+        <translation>æ­£å¸¸Toræ“ä½œè¿‡ç¨‹ä¸­è¾ƒå°‘å‡ºç°çš„æ¶ˆæ¯ï¼Œè™½ç„¶ä¸æ˜¯å‡ºé”™æ¶ˆæ¯ï¼Œä½†æ‚¨å¯èƒ½è¦æ³¨æ„çš„ã€‚</translation>
     </message>
     <message>
         <source>Messages that appear frequently 
 during normal Tor operation.</source>
-        <translation>Õı³£Tor²Ù×÷¹ı³ÌÖĞÆµ·±³öÏÖµÄÏûÏ¢</translation>
+        <translation>æ­£å¸¸Toræ“ä½œè¿‡ç¨‹ä¸­é¢‘ç¹å‡ºç°çš„æ¶ˆæ¯</translation>
     </message>
     <message>
         <source>Hyper-verbose messages primarily of 
 interest to Tor developers.</source>
-        <translation>Tor¿ª·¢Ô±¸ĞĞËÈ¤µÄ³¬¼¶Èß³¤ÏûÏ¢</translation>
+        <translation>Torå¼€å‘å‘˜æ„Ÿå…´è¶£çš„è¶…çº§å†—é•¿æ¶ˆæ¯</translation>
     </message>
     <message>
         <source>Error Setting Filter</source>
-        <translation>ÉèÖÃ¹ıÂËÆ÷Ê±³ö´í</translation>
+        <translation>è®¾ç½®è¿‡æ»¤å™¨æ—¶å‡ºé”™</translation>
     </message>
     <message>
         <source>Vidalia was unable to register for Tor&apos;s log events.
 
 Error: </source>
-        <translation>VidaliaÎŞ·¨×¢²áTorµÄÈÕÖ¾ÏûÏ¢¡£
+        <translation>Vidaliaæ— æ³•æ³¨å†ŒTorçš„æ—¥å¿—æ¶ˆæ¯ã€‚
 		
-³ö´í£º</translation>
+å‡ºé”™ï¼š</translation>
     </message>
     <message>
         <source>Error Opening Log File</source>
-        <translation>´ò¿ªÈÕÖ¾ÎÄ¼şÊ±³ö´í</translation>
+        <translation>æ‰“å¼€æ—¥å¿—æ–‡ä»¶æ—¶å‡ºé”™</translation>
     </message>
     <message>
         <source>Vidalia was unable to open the specified log file for writing.</source>
-        <translation>VidaliaÎŞ·¨´ò¿ªÒªĞ´ÈëµÄÖ¸¶¨ÈÕÖ¾ÎÄ¼ş</translation>
+        <translation>Vidaliaæ— æ³•æ‰“å¼€è¦å†™å…¥çš„æŒ‡å®šæ—¥å¿—æ–‡ä»¶</translation>
     </message>
     <message>
         <source>Select Log File</source>
-        <translation>Ñ¡ÔñÈÕÖ¾ÎÄ¼ş</translation>
+        <translation>é€‰æ‹©æ—¥å¿—æ–‡ä»¶</translation>
     </message>
     <message>
         <source>Save Log Messages</source>
-        <translation>±£´æÈÕÖ¾ÏûÏ¢</translation>
+        <translation>ä¿å­˜æ—¥å¿—æ¶ˆæ¯</translation>
     </message>
     <message>
         <source>Vidalia</source>
@@ -1011,32 +1014,32 @@ Error: </source>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>ÎŞ·¨Ğ´ÈëÎÄ¼ş %1£º
+        <translation>æ— æ³•å†™å…¥æ–‡ä»¶ %1ï¼š
 %2</translation>
     </message>
     <message>
         <source>Find in Message Log</source>
-        <translation>´ÓÏûÏ¢ÈÕÖ¾ÖĞ²éÕÒ</translation>
+        <translation>ä»æ¶ˆæ¯æ—¥å¿—ä¸­æŸ¥æ‰¾</translation>
     </message>
     <message>
         <source>Find:</source>
-        <translation>²éÕÒ£º</translation>
+        <translation>æŸ¥æ‰¾ï¼š</translation>
     </message>
     <message>
         <source>Not Found</source>
-        <translation>Î´ÕÒµ½</translation>
+        <translation>æœªæ‰¾åˆ°</translation>
     </message>
     <message>
         <source>Search found 0 matches.</source>
-        <translation>ËÑË÷µ½0¸öÆ¥Åä¡£</translation>
+        <translation>æœç´¢åˆ°0ä¸ªåŒ¹é…ã€‚</translation>
     </message>
     <message>
         <source>% Opaque</source>
-        <translation>% ²»Í¸Ã÷¶È</translation>
+        <translation>% ä¸é€æ˜åº¦</translation>
     </message>
     <message>
         <source>Messages Shown: %1</source>
-        <translation>ÏÔÊ¾µÄÏûÏ¢£º%1</translation>
+        <translation>æ˜¾ç¤ºçš„æ¶ˆæ¯ï¼š%1</translation>
     </message>
     <message>
         <source>%1 [%2] %3
@@ -1046,42 +1049,42 @@ Error: </source>
     </message>
     <message>
         <source>Hide Settings</source>
-        <translation>Òş²ØÉèÖÃ</translation>
+        <translation>éšè—è®¾ç½®</translation>
     </message>
 </context>
 <context>
     <name>TorProcess</name>
     <message>
         <source>&quot;%1&quot; is not an executable.</source>
-        <translation>&quot;%1&quot;²»ÊÇ¿ÉÖ´ĞĞ³ÌĞò¡£</translation>
+        <translation>&quot;%1&quot;ä¸æ˜¯å¯æ‰§è¡Œç¨‹åºã€‚</translation>
     </message>
     <message>
         <source>Process %1 failed to stop. [%2]</source>
-        <translation>½ø³Ì %1ÎŞ·¨Í£Ö¹£¬[%2]</translation>
+        <translation>è¿›ç¨‹ %1æ— æ³•åœæ­¢ï¼Œ[%2]</translation>
     </message>
     <message>
         <source>Failed to start</source>
-        <translation>Æô¶¯Ê§°Ü</translation>
+        <translation>å¯åŠ¨å¤±è´¥</translation>
     </message>
     <message>
         <source>Crashed</source>
-        <translation>±ÀÀ£</translation>
+        <translation>å´©æºƒ</translation>
     </message>
     <message>
         <source>Timed out</source>
-        <translation>³¬Ê±</translation>
+        <translation>è¶…æ—¶</translation>
     </message>
     <message>
         <source>Write error</source>
-        <translation>Ğ´Èë³ö´í</translation>
+        <translation>å†™å…¥å‡ºé”™</translation>
     </message>
     <message>
         <source>Read error</source>
-        <translation>¶ÁÈ¡³ö´í</translation>
+        <translation>è¯»å–å‡ºé”™</translation>
     </message>
     <message>
         <source>Unknown error</source>
-        <translation>Î´ÖªµÄ´íÎó</translation>
+        <translation>æœªçŸ¥çš„é”™è¯¯</translation>
     </message>
 </context>
 </TS>
