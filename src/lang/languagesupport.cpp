@@ -75,12 +75,25 @@ LanguageSupport::languages()
   return _languages;
 }
 
+/** Returns true if we understand the given language code. */
+bool
+LanguageSupport::isValidLanguageCode(QString code)
+{
+  return languageCodes().contains(code);
+}
+
 /** Sets the application's translator to the specified language. */
-void
+bool
 LanguageSupport::translate(QString langCode)
 {
-  QTranslator *translator = new QTranslator();
-  translator->load(QString(":/lang/") + langCode);
-  QApplication::installTranslator(translator);
+  if (isValidLanguageCode(langCode)) {
+    QTranslator *translator = new QTranslator();
+    if (translator->load(QString(":/lang/") + langCode)) {
+      QApplication::installTranslator(translator);
+      return true;
+    }
+    delete translator;
+  }
+  return false;
 }
 

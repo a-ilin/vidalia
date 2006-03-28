@@ -45,8 +45,10 @@ public:
   static QStringList languageNames();
   /** Returns a list of all supported language codes and names. */
   static QMap<QString, QString> languages();
+  /** Returns true if we understand the given language code. */
+  static bool isValidLanguageCode(QString code);
   /** Sets the application's translator to the specified language. */
-  static void translate(QString langCode);
+  static bool translate(QString langCode);
 };
 
 #endif
