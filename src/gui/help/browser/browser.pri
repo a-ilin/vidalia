@@ -23,7 +23,9 @@
 
 FORMS += $$PWD/helpbrowser.ui
 
-HEADERS += $$PWD/helpbrowser.h
+HEADERS += $$PWD/helpbrowser.h \
+           $$PWD/helptextbrowser.h
 
-SOURCES += $$PWD/helpbrowser.cpp
+SOURCES += $$PWD/helpbrowser.cpp \
+           $$PWD/helptextbrowser.cpp
 
