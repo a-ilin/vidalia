@@ -42,7 +42,7 @@ class Vidalia : public QApplication
 
 public:
   /** Constructor. */
-  Vidalia(int &argc, char **argv);
+  Vidalia(QStringList args, int &argc, char **argv);
 
   /** Return the map of command-line arguments and values. */
   static QMap<QString, QString> arguments() { return _args; }
@@ -65,7 +65,7 @@ public:
 
 private:
   /** Parse the list of command-line arguments. */
-  void parseArguments();
+  void parseArguments(QStringList args);
 
   static QMap<QString, QString> _args; /**< List of command-line arguments.  */
   static QString _style;               /**< The current GUI style.           */

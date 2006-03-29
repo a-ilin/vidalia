@@ -48,11 +48,11 @@ VidaliaSettings Vidalia::_settings;    /**< Vidalia's configurable settings. */
 /** Constructor. Parses the command-line arguments, resets Vidalia's
  * configuration (if requested), and sets up the GUI style and language
  * translation. */
-Vidalia::Vidalia(int &argc, char **argv)
+Vidalia::Vidalia(QStringList args, int &argc, char **argv)
 : QApplication(argc, argv)
 {
   /* Read in all our command-line arguments. */
-  parseArguments();
+  parseArguments(args);
   
   /* Check if we're supposed to reset our config before proceeding. */
   if (_args.contains(ARG_RESET)) {
@@ -96,10 +96,9 @@ Vidalia::printUsage(QString errmsg)
 
 /** */
 void
-Vidalia::parseArguments()
+Vidalia::parseArguments(QStringList args)
 {
   QString arg, value;
-  QStringList args = qApp->arguments();
 
   /* Loop through all command-line args/values and put them in a map */
   for (int i = 0; i < args.size(); i++) {

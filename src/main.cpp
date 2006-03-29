@@ -28,16 +28,19 @@
 
 #include <vidalia.h>
 #include <gui/mainwindow.h>
-
+#include <util/string.h>
 
 /** Main application entry point. */
 int 
 main(int argc, char *argv[])
 {
   Q_INIT_RESOURCE(vidalia);
-
-  /* Construct the application object */
-  Vidalia vidalia(argc, argv);
+  QStringList args = char_array_to_stringlist(argv+1, argc-1);
+  
+  /* Construct the application object. Qt strips any command-line arguments
+   * that it recognizes in argv, so we'll pass a stringlist of the original
+   * list of command-line arguments too. */
+  Vidalia vidalia(args, argc, argv);
 
   /* Validate any command-line arguments */
   QString errmsg;

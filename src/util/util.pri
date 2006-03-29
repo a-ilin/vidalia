@@ -23,11 +23,13 @@
 
 HEADERS += $$PWD/compat.h \
            $$PWD/net.h \
-           $$PWD/http.h
+           $$PWD/http.h \
+           $$PWD/string.h
            
 SOURCES += $$PWD/compat.cpp \
            $$PWD/net.cpp \
-           $$PWD/http.cpp
+           $$PWD/http.cpp \
+           $$PWD/string.cpp
 
 win32 {
     HEADERS += $$PWD/registry.h
