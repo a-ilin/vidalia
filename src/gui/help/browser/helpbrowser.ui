@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>713</width>
-    <height>520</height>
+    <width>703</width>
+    <height>583</height>
    </rect>
   </property>
   <property name="sizePolicy" >
@@ -526,6 +526,9 @@
     </item>
     <item>
      <widget class="QSplitter" name="splitter" >
+      <property name="contextMenuPolicy" >
+       <enum>Qt::NoContextMenu</enum>
+      </property>
       <property name="orientation" >
        <enum>Qt::Horizontal</enum>
       </property>
@@ -701,7 +704,7 @@
         </layout>
        </widget>
       </widget>
-      <widget class="QTextBrowser" name="txtBrowser" >
+      <widget class="HelpTextBrowser" name="txtBrowser" >
        <property name="sizePolicy" >
         <sizepolicy>
          <hsizetype>7</hsizetype>
@@ -725,8 +728,8 @@
    <property name="geometry" >
     <rect>
      <x>0</x>
-     <y>498</y>
-     <width>713</width>
+     <y>561</y>
+     <width>703</width>
      <height>22</height>
     </rect>
    </property>
@@ -893,6 +896,15 @@
   </action>
  </widget>
  <pixmapfunction></pixmapfunction>
+ <customwidgets>
+  <customwidget>
+   <class>HelpTextBrowser</class>
+   <extends>QTextBrowser</extends>
+   <header>gui\help\browser\helptextbrowser.h</header>
+   <container>0</container>
+   <pixmap></pixmap>
+  </customwidget>
+ </customwidgets>
  <tabstops>
   <tabstop>tabsMenu</tabstop>
   <tabstop>btnCloseFind</tabstop>
