@@ -42,13 +42,17 @@ main(int argc, char *argv[])
    * list of command-line arguments too. */
   Vidalia vidalia(args, argc, argv);
 
-  /* Validate any command-line arguments */
+
+#if !defined(Q_OS_WIN32)
+  /* Validate any command-line arguments. Don't bother doing this on Win32
+   * since they can't see the output anyway. */
   QString errmsg;
   if (!vidalia.validateArguments(errmsg)) {
     vidalia.printUsage(errmsg);
     return -1;
   }
-
+#endif
+  
   /* Since we don't have a visible main window, if we were to display a
    * QMessageBox (for example, to display an error when starting or stopping
    * Tor) then the application would exit when that message box was closed.
