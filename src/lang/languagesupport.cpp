@@ -29,11 +29,10 @@
 
 #include "languagesupport.h"
 
-/** Global list of supported languages and codes. */
-QMap<QString, QString> _languages;
+/** Static list of supported languages and codes. */
+QMap<QString, QString> LanguageSupport::_languages;
 
-
-/** Initializes the list of supported languages. */
+/** Initializes the list of available languages. */
 void
 LanguageSupport::initialize()
 {
@@ -79,7 +78,7 @@ LanguageSupport::languages()
 bool
 LanguageSupport::isValidLanguageCode(QString code)
 {
-  return languageCodes().contains(code);
+  return languageCodes().contains(code.toLower());
 }
 
 /** Sets the application's translator to the specified language. */
@@ -88,7 +87,7 @@ LanguageSupport::translate(QString langCode)
 {
   if (isValidLanguageCode(langCode)) {
     QTranslator *translator = new QTranslator();
-    if (translator->load(QString(":/lang/") + langCode)) {
+    if (translator->load(QString(":/lang/") + langCode.toLower())) {
       QApplication::installTranslator(translator);
       return true;
     }
