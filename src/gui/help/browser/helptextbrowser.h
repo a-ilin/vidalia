@@ -33,6 +33,8 @@
 
 class HelpTextBrowser : public QTextBrowser
 {
+  Q_OBJECT
+
 public:
   /** Default constructor. */
   HelpTextBrowser(QWidget *parent = 0);

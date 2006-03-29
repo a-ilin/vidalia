@@ -618,6 +618,13 @@ Upgrade to a newer version of Tor.</source>
     </message>
 </context>
 <context>
+    <name>HelpTextBrowser</name>
+    <message>
+        <source>Error opening help file: </source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <source>Tor is Stopped</source>
@@ -1089,6 +1096,17 @@ Error: </source>
     </message>
     <message>
         <source>Unknown error</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Vidalia</name>
+    <message>
+        <source>Invalid language code specified: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Invalid GUI style specified: </source>
         <translation type="unfinished"></translation>
     </message>
 </context>

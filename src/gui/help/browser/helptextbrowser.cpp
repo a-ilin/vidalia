@@ -43,7 +43,7 @@ HelpTextBrowser::loadResource(int type, const QUrl &name)
   if (type == QTextDocument::HtmlResource) {
     QFile file(":/help/" + name.path());
     if (!file.open(QIODevice::ReadOnly)) {
-      return "Error opening help file: " + name.path();
+      return tr("Error opening help file: ") + name.path();
     }
     return QString::fromUtf8(file.readAll());
   }
