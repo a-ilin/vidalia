@@ -21,27 +21,27 @@
   02110-1301, USA.
 -->
 
-<Contents name="Vidalia Help" html="index.html">
-  <Topic id="running" name="Running Tor" html="running.html">
-    <Topic id="starting" name="Starting and Stopping Tor" html="running.html" section="starting"/>
-    <Topic id="monitoring" name="Monitoring Tor's Status" html="running.html" section="monitoring"/>
+<Contents name="Vidalia帮助" html="index.html">
+  <Topic id="running" name="运行Tor" html="running.html">
+    <Topic id="starting" name="启动和停止Tor" html="running.html" section="starting"/>
+    <Topic id="monitoring" name="监视Tor的状态" html="running.html" section="monitoring"/>
   </Topic>
-  <Topic id="log" name="Message Log" html="log.html">
-    <Topic id="basic" name="Basic Information" html="log.html" section="basic"/>
-    <Topic id="severities" name="Message Severities" html="log.html" section="severities"/>
-    <Topic id="logfile" name="Logging to a File" html="log.html" section="tofile"/>
+  <Topic id="log" name="消息日志" html="log.html">
+    <Topic id="basic" name="基本信息" html="log.html" section="basic"/>
+    <Topic id="severities" name="消息级别" html="log.html" section="severities"/>
+    <Topic id="logfile" name="记录到文件" html="log.html" section="tofile"/>
   </Topic>
-  <Topic id="config" name="Configuring Tor" html="config.html">
-    <Topic id="general" name="General Settings" html="config.html" section="general"/>
-    <Topic id="server" name="Server Settings" html="config.html" section="server"/>
-    <Topic id="advanced" name="Advanced Settings" html="config.html" section="advanced"/>
+  <Topic id="config" name="配置Vidalia和Tor" html="config.html">
+    <Topic id="general" name="一般设置" html="config.html" section="general"/>
+    <Topic id="server" name="服务器设置" html="config.html" section="server"/>
+    <Topic id="advanced" name="高级设置" html="config.html" section="advanced"/>
   </Topic>
-  <Topic id="server" name="Running a Server" html="server.html">
-    <Topic id="basic" name="Basic Setup" html="server.html" section="basic"/>
-    <Topic id="exitpolicy" name="Exit Policies" html="server.html" section="exitpolicy"/>
+  <Topic id="server" name="运行Tor服务器" html="server.html">
+    <Topic id="basic" name="安装基础" html="server.html" section="basic"/>
+    <Topic id="exitpolicy" name="退出策略" html="server.html" section="exitpolicy"/>
   </Topic>
-  <Topic id="troubleshooting" name="Troubleshooting" html="troubleshooting.html">
-    <Topic id="starting" name="I Can't Start Tor" html="troubleshooting.html" section="starting"/>
+  <Topic id="troubleshooting" name="问题多多" html="troubleshooting.html">
+    <Topic id="starting" name="我无法运行Tor" html="troubleshooting.html" section="starting"/>
   </Topic>
 </Contents>
 

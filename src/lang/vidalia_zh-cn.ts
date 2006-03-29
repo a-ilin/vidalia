@@ -61,6 +61,10 @@
         <translation>重置</translation>
     </message>
     <message>
+        <source>Receive Rate</source>
+        <translation>接收率</translation>
+    </message>
+    <message>
         <source>Send Rate</source>
         <translation>发送率</translation>
     </message>
@@ -82,11 +86,11 @@
     </message>
     <message>
         <source>Jan 1 2000</source>
-        <translation>2000年1曰1日</translation>
+        <translation>2000年1月1日</translation>
     </message>
     <message>
         <source>100</source>
-        <translation></translation>
+        <translation>100</translation>
     </message>
     <message>
         <source>% Opaque</source>
@@ -95,10 +99,6 @@
     <message>
         <source>Hide Settings</source>
         <translation>隐藏设置</translation>
-    </message>
-    <message>
-        <source>Receive Rate</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -189,7 +189,7 @@
     </message>
     <message>
         <source>Enable to mirror the server directory</source>
-        <translation></translation>
+        <translation>启用服务器目录的镜像</translation>
     </message>
     <message>
         <source>Mirror the Server Directory </source>
@@ -201,7 +201,7 @@
     </message>
     <message>
         <source>Port on which users and other servers can communicate with your server</source>
-        <translation>用户与其他服务器经由您服务器的通信端口</translation>
+        <translation>用户与其他服务器与您服务器通信的端口</translation>
     </message>
     <message>
         <source>Email address at which you may be reached if there is a problem with your server</source>
@@ -346,7 +346,8 @@
     <message>
         <source>Vidalia was only able to find a private IP address for your server.
 Would you like to access an external service to determine your public IP address?</source>
-        <translation>Vidalia只能为您的服务器找到一个私有IP地址，您想通过外部服务以确定您的公共IP地址吗？</translation>
+        <translation>Vidalia只能为您的服务器找到一个私有IP地址，
+您想通过外部服务以确定您的公共IP地址吗？</translation>
     </message>
     <message>
         <source>Error</source>
@@ -994,7 +995,7 @@ Error: </source>
     </message>
     <message>
         <source>Save Selected</source>
-        <translation>保存选中的</translation>
+        <translation>选中保存</translation>
     </message>
     <message>
         <source>Save selected messages to a file</source>
@@ -1043,7 +1044,8 @@ something has gone wrong with Tor.</source>
 during normal Tor operation and are 
 not considered errors, but you may 
 care about.</source>
-        <translation>正常Tor操作过程中较少出现的消息，虽然不是出错消息，但您可能要注意的。</translation>
+        <translation>正常Tor操作过程中较少出现的消息，
+<byte value="x9"/><byte value="x9"/>虽然不是出错消息，但您可能要有所注意。</translation>
     </message>
     <message>
         <source>Messages that appear frequently 
