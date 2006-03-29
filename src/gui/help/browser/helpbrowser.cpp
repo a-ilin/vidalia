@@ -180,8 +180,7 @@ HelpBrowser::isValidTopicElement(const QDomElement &topicElement)
 QString
 HelpBrowser::getResourcePath(const QDomElement &topicElement)
 {
-  QString link = "qrc:/help/" + _language + "/"
-                              + topicElement.attribute(ATTRIBUTE_TOPIC_HTML);
+  QString link = _language + "/" + topicElement.attribute(ATTRIBUTE_TOPIC_HTML);
   if (topicElement.hasAttribute(ATTRIBUTE_TOPIC_SECTION)) {
     link += "#" + topicElement.attribute(ATTRIBUTE_TOPIC_SECTION);
   }

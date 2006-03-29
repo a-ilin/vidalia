@@ -24,6 +24,8 @@
  * \version $Id$ 
  */
 
+#include <QFile>
+
 #include "helptextbrowser.h"
 
 /** Default constructor. */
@@ -32,10 +34,20 @@ HelpTextBrowser::HelpTextBrowser(QWidget *parent)
 {
 }
 
-/** Loads a resource into the browser. */
+/** Loads a resource into the browser. If it is an HTML resource, we'll load
+ * it as UTF-8, so the special characters in our translations appear properly. */
 QVariant
 HelpTextBrowser::loadResource(int type, const QUrl &name)
 {
+  /* If it's an HTML file, we'll handle it ourselves */
+  if (type == QTextDocument::HtmlResource) {
+    QFile file(":/help/" + name.path());
+    if (!file.open(QIODevice::ReadOnly)) {
+      return "Error opening help file: " + name.path();
+    }
+    return QString::fromUtf8(file.readAll());
+  }
+  /* Everything else, just let QTextBrowser take care of it. */
   return QTextBrowser::loadResource(type, name);
 }
 
