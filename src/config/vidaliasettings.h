@@ -47,9 +47,6 @@ public:
   /** Default constructor. */
   VidaliaSettings();
 
-  /** Return Vidalia's version string */
-  static QString getVersion();
-
   /** Resets all of Vidalia's settings. */
   static void reset();
 

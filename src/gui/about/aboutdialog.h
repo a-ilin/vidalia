@@ -27,7 +27,6 @@
 #ifndef _ABOUTDIALOG_H
 #define _ABOUTDIALOG_H
 
-#include <config/vidaliasettings.h>
 #include <control/torcontrol.h>
 
 #include "ui_aboutdialog.h"

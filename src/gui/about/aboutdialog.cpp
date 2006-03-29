@@ -24,6 +24,7 @@
  * \version $Id$
  */
 
+#include <vidalia.h>
 #include "aboutdialog.h"
 
 /** Default Constructor **/
@@ -40,7 +41,7 @@ AboutDialog::AboutDialog(TorControl *torControl, QWidget *parent)
   _torControl = torControl;
 
   /* Get Vidalia's version number */
-  ui.lblVidaliaVersion->setText(VidaliaSettings::getVersion());
+  ui.lblVidaliaVersion->setText(Vidalia::version());
 
   /* Get Qt's version number */
   ui.lblQtVersion->setText(QT_VERSION_STR);

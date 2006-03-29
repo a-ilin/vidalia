@@ -34,8 +34,6 @@
 #include <util/registry.h>
 #endif
 
-/* Vidalia's version string */
-#define VIDALIA_VERSION             "0.0.2-svn"
 
 /* Vidalia's Settings */
 #define SETTING_LANGUAGE            "LanguageCode"
@@ -84,13 +82,6 @@
 VidaliaSettings::VidaliaSettings()
   : QSettings("vidalia", "vidalia")
 {
-}
-
-/** Return Vidalia's version string */
-QString
-VidaliaSettings::getVersion()
-{
-  return QString(VIDALIA_VERSION);
 }
 
 /** Resets all of Vidalia's settings. */
