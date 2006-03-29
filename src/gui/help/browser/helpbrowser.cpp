@@ -25,7 +25,7 @@
  */
 
 #include <QDomDocument>
-#include <config/vidaliasettings.h>
+#include <vidalia.h>
 #include <gui/mainwindow.h>
 
 #include "helpbrowser.h"
@@ -55,7 +55,7 @@ HelpBrowser::HelpBrowser(QWidget *parent)
   VidaliaSettings settings;
 
   /* Find out what language we want our help in */
-  _language = settings.getLanguageCode();
+  _language = Vidalia::language();
   
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
