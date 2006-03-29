@@ -29,6 +29,8 @@ include($$PWD/lang/lang.pri)
 
 INCLUDEPATH += $$PWD
 
-SOURCES += $$PWD/main.cpp
+HEADERS += $$PWD/vidalia.h
 
+SOURCES += $$PWD/main.cpp \
+           $$PWD/vidalia.cpp
 
