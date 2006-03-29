@@ -96,6 +96,7 @@ HelpBrowser::HelpBrowser(QWidget *parent)
 
   /* Show the first help topic in the tree */
   ui.treeContents->setCurrentItem(ui.treeContents->topLevelItem(0));
+  ui.treeContents->setItemExpanded(ui.treeContents->topLevelItem(0), true);
 }
 
 /** Load the contents of the help topics tree from the specified XML file. */
