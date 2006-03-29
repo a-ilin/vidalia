@@ -77,7 +77,7 @@ Vidalia::printUsage(QString errmsg)
   
   /* If there was an error message, print it out. */
   if (!errmsg.isEmpty()) {
-    out << errmsg << endl << endl;
+    out << "** " << errmsg << " **" << endl << endl;
   }
   
   /* Now print the application usage */
