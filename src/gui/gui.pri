@@ -40,7 +40,7 @@ macx {
   include($$PWD/dock/dock.pri)
 }
 win32 {
-  RC_FILE = $$PWD/res/vidalia.rc
+  RC_FILE = $$PWD/res/vidalia_win.rc
 }
 
 include($$PWD/tray/tray.pri)
