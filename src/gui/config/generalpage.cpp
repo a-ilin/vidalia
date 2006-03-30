@@ -38,7 +38,7 @@ GeneralPage::GeneralPage(QWidget *parent)
 
   /* Hide platform specific features */
 #ifndef Q_WS_WIN
-  ui.chkRunWIthSys->setVisible(false);
+  ui.chkRunWithSys->setVisible(false);
 #endif
 }
 
