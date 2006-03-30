@@ -135,7 +135,8 @@ Vidalia::validateArguments(QString &errmsg)
   }
   /* Check for a valid GUI style */
   if (_args.contains(ARG_GUISTYLE) &&
-      !QStyleFactory::keys().contains(_args.value(ARG_GUISTYLE))) {
+      !QStyleFactory::keys().contains(_args.value(ARG_GUISTYLE),
+                                      Qt::CaseInsensitive)) {
     errmsg = tr("Invalid GUI style specified: ") + _args.value(ARG_GUISTYLE);
     return false;
   }
