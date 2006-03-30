@@ -1,0 +1,527 @@
+<ui version="4.0" >
+ <author></author>
+ <comment></comment>
+ <exportmacro></exportmacro>
+ <class>AdvancedPage</class>
+ <widget class="QWidget" name="AdvancedPage" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>507</width>
+    <height>543</height>
+   </rect>
+  </property>
+  <property name="palette" >
+   <palette>
+    <active>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+     <color>
+      <red>208</red>
+      <green>208</green>
+      <blue>208</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>247</red>
+      <green>247</green>
+      <blue>247</blue>
+     </color>
+     <color>
+      <red>104</red>
+      <green>104</green>
+      <blue>104</blue>
+     </color>
+     <color>
+      <red>139</red>
+      <green>139</green>
+      <blue>139</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>240</red>
+      <green>240</green>
+      <blue>240</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>128</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>231</red>
+      <green>231</green>
+      <blue>231</blue>
+     </color>
+    </active>
+    <inactive>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+     <color>
+      <red>208</red>
+      <green>208</green>
+      <blue>208</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>247</red>
+      <green>247</green>
+      <blue>247</blue>
+     </color>
+     <color>
+      <red>104</red>
+      <green>104</green>
+      <blue>104</blue>
+     </color>
+     <color>
+      <red>139</red>
+      <green>139</green>
+      <blue>139</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>240</red>
+      <green>240</green>
+      <blue>240</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+     <color>
+      <red>192</red>
+      <green>192</green>
+      <blue>192</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>231</red>
+      <green>231</green>
+      <blue>231</blue>
+     </color>
+    </inactive>
+    <disabled>
+     <color>
+      <red>104</red>
+      <green>104</green>
+      <blue>104</blue>
+     </color>
+     <color>
+      <red>208</red>
+      <green>208</green>
+      <blue>208</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>247</red>
+      <green>247</green>
+      <blue>247</blue>
+     </color>
+     <color>
+      <red>104</red>
+      <green>104</green>
+      <blue>104</blue>
+     </color>
+     <color>
+      <red>139</red>
+      <green>139</green>
+      <blue>139</blue>
+     </color>
+     <color>
+      <red>104</red>
+      <green>104</green>
+      <blue>104</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>104</red>
+      <green>104</green>
+      <blue>104</blue>
+     </color>
+     <color>
+      <red>240</red>
+      <green>240</green>
+      <blue>240</blue>
+     </color>
+     <color>
+      <red>240</red>
+      <green>240</green>
+      <blue>240</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>128</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>255</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>0</red>
+      <green>0</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>255</red>
+      <green>0</green>
+      <blue>255</blue>
+     </color>
+     <color>
+      <red>231</red>
+      <green>231</green>
+      <blue>231</blue>
+     </color>
+    </disabled>
+   </palette>
+  </property>
+  <property name="font" >
+   <font>
+    <family>Arial</family>
+    <pointsize>10</pointsize>
+    <weight>50</weight>
+    <italic>false</italic>
+    <bold>false</bold>
+    <underline>false</underline>
+    <strikeout>false</strikeout>
+   </font>
+  </property>
+  <property name="contextMenuPolicy" >
+   <enum>Qt::NoContextMenu</enum>
+  </property>
+  <layout class="QVBoxLayout" >
+   <property name="margin" >
+    <number>9</number>
+   </property>
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <item>
+    <widget class="QGroupBox" name="grpControlPort" >
+     <property name="contextMenuPolicy" >
+      <enum>Qt::NoContextMenu</enum>
+     </property>
+     <property name="title" >
+      <string>Control Port</string>
+     </property>
+     <layout class="QVBoxLayout" >
+      <property name="margin" >
+       <number>9</number>
+      </property>
+      <property name="spacing" >
+       <number>6</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" >
+        <property name="margin" >
+         <number>0</number>
+        </property>
+        <property name="spacing" >
+         <number>6</number>
+        </property>
+        <item>
+         <widget class="QLineEdit" name="lineControlPort" >
+          <property name="sizePolicy" >
+           <sizepolicy>
+            <hsizetype>0</hsizetype>
+            <vsizetype>0</vsizetype>
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="maximumSize" >
+           <size>
+            <width>55</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="contextMenuPolicy" >
+           <enum>Qt::NoContextMenu</enum>
+          </property>
+          <property name="toolTip" >
+           <string>Port that Vidalia uses to communicate with Tor. </string>
+          </property>
+          <property name="text" >
+           <string>9051</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer>
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" >
+           <size>
+            <width>221</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="grpTorConfigFile" >
+     <property name="contextMenuPolicy" >
+      <enum>Qt::NoContextMenu</enum>
+     </property>
+     <property name="title" >
+      <string>Alternate Tor Configuration File</string>
+     </property>
+     <layout class="QHBoxLayout" >
+      <property name="margin" >
+       <number>9</number>
+      </property>
+      <property name="spacing" >
+       <number>6</number>
+      </property>
+      <item>
+       <widget class="QLineEdit" name="lineTorConfig" >
+        <property name="enabled" >
+         <bool>true</bool>
+        </property>
+        <property name="cursor" >
+         <cursor>4</cursor>
+        </property>
+        <property name="contextMenuPolicy" >
+         <enum>Qt::NoContextMenu</enum>
+        </property>
+        <property name="toolTip" >
+         <string>Start Tor with the specified configuration file (torrc)</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnBrowseTorConfig" >
+        <property name="enabled" >
+         <bool>true</bool>
+        </property>
+        <property name="minimumSize" >
+         <size>
+          <width>0</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="contextMenuPolicy" >
+         <enum>Qt::NoContextMenu</enum>
+        </property>
+        <property name="toolTip" >
+         <string>Select path to Tor configuration file</string>
+        </property>
+        <property name="text" >
+         <string>Browse</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="grpPermissions" >
+     <property name="minimumSize" >
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="contextMenuPolicy" >
+      <enum>Qt::NoContextMenu</enum>
+     </property>
+     <property name="title" >
+      <string>Permissions</string>
+     </property>
+     <layout class="QVBoxLayout" >
+      <property name="margin" >
+       <number>9</number>
+      </property>
+      <property name="spacing" >
+       <number>6</number>
+      </property>
+      <item>
+       <layout class="QHBoxLayout" >
+        <property name="margin" >
+         <number>0</number>
+        </property>
+        <property name="spacing" >
+         <number>6</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="label_3" >
+          <property name="contextMenuPolicy" >
+           <enum>Qt::NoContextMenu</enum>
+          </property>
+          <property name="text" >
+           <string>Run as User:</string>
+          </property>
+          <property name="indent" >
+           <number>8</number>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineUser" >
+          <property name="contextMenuPolicy" >
+           <enum>Qt::NoContextMenu</enum>
+          </property>
+          <property name="toolTip" >
+           <string>Vidalia will run with this User's permissions</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" >
+        <property name="margin" >
+         <number>0</number>
+        </property>
+        <property name="spacing" >
+         <number>6</number>
+        </property>
+        <item>
+         <widget class="QLabel" name="label_9" >
+          <property name="contextMenuPolicy" >
+           <enum>Qt::NoContextMenu</enum>
+          </property>
+          <property name="text" >
+           <string>Run as Group:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineGroup" >
+          <property name="toolTip" >
+           <string>Vidalia will run with this Group's permissions</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>443</width>
+       <height>27</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <pixmapfunction></pixmapfunction>
+ <resources/>
+ <connections/>
+</ui>

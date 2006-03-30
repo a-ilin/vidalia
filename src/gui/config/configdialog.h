@@ -32,11 +32,14 @@
 #include <control/torcontrol.h>
 #include <config/vidaliasettings.h>
 #include <config/torsettings.h>
-#include <config/serversettings.h>
+
+#include "generalpage.h"
+#include "serverpage.h"
+#include "advancedpage.h"
+
 #include "../help/browser/helpbrowser.h"
 
 #include "ui_configdialog.h"
-
 
 class ConfigDialog : public QDialog
 {
@@ -61,55 +64,20 @@ private slots:
   void cancelChanges();
   /** Called when user clicks "Save Settings" */
   void saveChanges();
-  /** Called when user clicks "Browse" to choose location of Tor executable */
-  void browseTorPath();
-  /** Called when user clicks "Browse" to choose location of Tor config file */
-  void browseTorConfig();
-  /** Called when the user clicks "Get Address" to guess our local IP */
-  void getServerAddress();
-  /** Called when the user clicks the "Add Policy" button */
-  void addPolicy();
-  /** Called when the user clicks the "Remove Policy" button */
-  void removePolicy();
-  /** Called when the user clicks the "Raise Priority" button */
-  void raisePriority();
-  /** Called when the user clicks the "Lower Priority" button */
-  void lowerPriority();
-  /** Called when the user clicks the exit policy help button */
-  void exitHelp();
 
 private:
-  /** Connects actions to events */
-  void createActions();
-  
   /** Loads the current configuration settings */
   void loadSettings();
-  void loadGeneralSettings();
-  void loadServerSettings();
-  void loadAdvancedSettings();
 
-  /** Saves the current configuration settings */
-  void saveGeneralSettings();
-  bool saveServerSettings(QString *errmsg = 0);
-  void saveAdvancedSettings();
-
-  /** Toggles display of server config frame */
-  void showServerConfig(bool show);
-  /** Attempts to find the server's public IP address */
-  void getServerPublicIP();
-
-  /** Returns the index of the selected item in lstExitPolicies */
-  int selectedIndex();
-
-  /** A TorControl object used to talk to Tor. */
-  TorControl* _torControl;
+  /** Pages that populate the stacked widget */
+  GeneralPage* _generalPage;
+  ServerPage* _serverPage;
+  AdvancedPage* _advancedPage;
+  
   /** A HelpBrowser object used to show context sensitive help */
   HelpBrowser* _helpBrowser;
   /** A VidaliaSettings object that handles getting and setting Vidalia settings */
   VidaliaSettings* _vidaliaSettings;
-  /** A ServerSettings object used to get and set information about how a
-   * local Tor server is configured. */
-  ServerSettings*  _serverSettings;
   /** A TorSettings object that handles getting and setting Tor-specific settings. */
   TorSettings* _torSettings;
 
