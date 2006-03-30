@@ -40,16 +40,20 @@ class GeneralPage : public QWidget
 public:
   /** Default Constructor */
   GeneralPage(QWidget *parent = 0);
+  /** Default Destructor */
+  ~GeneralPage();
   /** Saves the changes on this page */
-  void saveChanges(VidaliaSettings *vidaliasettings, TorSettings *torsettings);
+  void saveChanges(TorSettings *torsettings);
   /** Loads the settings for this page */
-  void loadSettings(VidaliaSettings *vidaliaSettings, TorSettings *torSettings);
+  void loadSettings(TorSettings *torSettings);
 
 private slots:
   /** Called when the user clicks "Browse" */
   void browseTorPath();
   
 private:
+  /* A VidaliaSettings object used for saving/loading settings */
+  VidaliaSettings *_settings;
   /** Qt Designer generated object */
   Ui::GeneralPage ui;
 };

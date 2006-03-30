@@ -30,7 +30,6 @@
 #include <QFileDialog>
 
 #include <control/torcontrol.h>
-#include <config/vidaliasettings.h>
 #include <config/torsettings.h>
 
 #include "generalpage.h"
@@ -76,8 +75,6 @@ private:
   
   /** A HelpBrowser object used to show context sensitive help */
   HelpBrowser* _helpBrowser;
-  /** A VidaliaSettings object that handles getting and setting Vidalia settings */
-  VidaliaSettings* _vidaliaSettings;
   /** A TorSettings object that handles getting and setting Tor-specific settings. */
   TorSettings* _torSettings;
 

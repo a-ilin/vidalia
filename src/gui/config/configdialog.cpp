@@ -51,7 +51,6 @@ ConfigDialog::ConfigDialog(TorControl *torControl,
   _helpBrowser = helpBrowser;
   
   /* Create necessary ConfigDialog QObjects */
-  _vidaliaSettings = new VidaliaSettings();
   _torSettings = new TorSettings();
 
   _generalPage = new GeneralPage(ui.stackPages);
@@ -78,7 +77,6 @@ ConfigDialog::ConfigDialog(TorControl *torControl,
 /** Destructor */
 ConfigDialog::~ConfigDialog()
 {
-  delete _vidaliaSettings;
   delete _torSettings;
 }
 
@@ -113,7 +111,7 @@ void
 ConfigDialog::loadSettings()
 {
   /* Load General settings */
-  _generalPage->loadSettings(_vidaliaSettings, _torSettings);
+  _generalPage->loadSettings(_torSettings);
   /* Load Server settings */
   _serverPage->loadSettings();
   /* Load Advanced settings */
@@ -137,7 +135,7 @@ ConfigDialog::saveChanges()
   QString errmsg;
   
   /* Save the settings and exit */
-  _generalPage->saveChanges(_vidaliaSettings, _torSettings);
+  _generalPage->saveChanges(_torSettings);
   _advancedPage->saveChanges(_torSettings);
  
   /* Try to save the user's server settings. If something goes awry, then

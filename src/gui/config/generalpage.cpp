@@ -33,6 +33,9 @@ GeneralPage::GeneralPage(QWidget *parent)
   /* Invoke the Qt Designer generated object setup routine */
   ui.setupUi(this);
 
+  /* Create VidaliaSettings object */
+  _settings = new VidaliaSettings;
+  
   /* Bind event to actions */
   connect(ui.btnBrowseTorPath, SIGNAL(clicked()), this, SLOT(browseTorPath()));
 
@@ -40,6 +43,12 @@ GeneralPage::GeneralPage(QWidget *parent)
 #ifndef Q_WS_WIN
   ui.chkRunWithSys->setVisible(false);
 #endif
+}
+
+/** Destructor */
+GeneralPage::~GeneralPage()
+{
+  delete _settings;
 }
 
 /* Open a QFileDialog to browse for Tor executable */
@@ -57,19 +66,19 @@ GeneralPage::browseTorPath()
 
 /* Saves all settings for this page */
 void
-GeneralPage::saveChanges(VidaliaSettings *vidaliaSettings, TorSettings *torSettings)
+GeneralPage::saveChanges(TorSettings *torSettings)
 {
   torSettings->setPath(ui.lineTorPath->text());
-  vidaliaSettings->setRunTorAtStart(ui.chkRunTor->isChecked());
-  vidaliaSettings->setRunVidaliaOnBoot(ui.chkRunWithSys->isChecked());
+  _settings->setRunTorAtStart(ui.chkRunTor->isChecked());
+  _settings->setRunVidaliaOnBoot(ui.chkRunWithSys->isChecked());
 }
 
 /* Loads previously saved settings */
 void
-GeneralPage::loadSettings(VidaliaSettings *vidaliaSettings, TorSettings *torSettings)
+GeneralPage::loadSettings(TorSettings *torSettings)
 {
   ui.lineTorPath->setText(torSettings->getPath());
-  ui.chkRunTor->setChecked(vidaliaSettings->runTorAtStart());
-  ui.chkRunWithSys->setChecked(vidaliaSettings->runVidaliaOnBoot());
+  ui.chkRunTor->setChecked(_settings->runTorAtStart());
+  ui.chkRunWithSys->setChecked(_settings->runVidaliaOnBoot());
 }
 
