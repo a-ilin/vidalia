@@ -54,9 +54,9 @@ ConfigDialog::ConfigDialog(TorControl *torControl,
   _vidaliaSettings = new VidaliaSettings();
   _torSettings = new TorSettings();
 
-  _generalPage = new GeneralPage(this);
-  _serverPage = new ServerPage(torControl, helpBrowser, this);
-  _advancedPage = new AdvancedPage(this);
+  _generalPage = new GeneralPage(ui.stackPages);
+  _serverPage = new ServerPage(torControl, helpBrowser, ui.stackPages);
+  _advancedPage = new AdvancedPage(ui.stackPages);
 
   /* Add pages to stacked widget */
   ui.stackPages->insertWidget(PAGE_GENERAL, _generalPage);
