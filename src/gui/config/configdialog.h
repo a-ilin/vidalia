@@ -60,19 +60,21 @@ private slots:
   void cancelChanges();
   /** Called when user clicks "Save Settings" */
   void saveChanges();
-  /** Called when user clicks "General" */
-  void showGeneral();
-  /** Called when user clicks "Server" */
-  void showServer();
-  /** Called when user clicks "Appearance" */
-  void showAppearance();
-  /** Called when user clicks "Advanced" */
-  void showAdvanced();
+  /** Called when user clicks the selected page */
+  void showPage(QAction *page);
 
 private:
   /** Loads the current configuration settings */
   void loadSettings();
 
+  /** Actions that populate the toolbar */
+  QAction* _actionGeneral;
+  QAction* _actionServer;
+  QAction* _actionAppearance;
+  QAction* _actionAdvanced;
+  QAction* _actionSave;
+  QAction* _actionCancel;
+  
   /** Pages that populate the stacked widget */
   GeneralPage* _generalPage;
   ServerPage* _serverPage;

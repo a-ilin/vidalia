@@ -28,6 +28,8 @@
 
 #include "configdialog.h"
 
+#define FONT        QFont(tr("Arial"), 10)
+
 /* Page indices in the QListWidget */
 #define PAGE_GENERAL      0
 #define PAGE_SERVER       1
@@ -38,6 +40,14 @@
 #define COL_ACTION    0
 #define COL_ADDRESS   1
 #define COL_PORT      2
+
+/* Images for toolbar icons */
+#define IMAGE_GENERAL       ":/images/22x22/preferences-system.png"
+#define IMAGE_SERVER        ":/images/22x22/network-server.png"
+#define IMAGE_APPEARANCE    ":/images/22x22/preferences-desktop-locale.png"
+#define IMAGE_ADVANCED      ":/images/22x22/emblem-system.png"
+#define IMAGE_SAVE          ":/images/22x22/media-floppy.png"
+#define IMAGE_CANCEL        ":/images/22x22/emblem-unreadable.png"
 
 /** Constructor */
 ConfigDialog::ConfigDialog(TorControl *torControl,
@@ -59,15 +69,50 @@ ConfigDialog::ConfigDialog(TorControl *torControl,
   ui.stackPages->insertWidget(PAGE_APPEARANCE, _appearancePage);
   ui.stackPages->insertWidget(PAGE_ADVANCED, _advancedPage);
   
-  /* Bind events to actions */
-  connect(ui.actionCancel, SIGNAL(triggered()), this, SLOT(cancelChanges()));
-  connect(ui.actionSave, SIGNAL(triggered()), this, SLOT(saveChanges()));
-  connect(ui.actionGeneral, SIGNAL(triggered()), this, SLOT(showGeneral()));
-  connect(ui.actionServer, SIGNAL(triggered()), this, SLOT(showServer()));
-  connect(ui.actionAppearance, SIGNAL(triggered()), this, SLOT(showAppearance()));
-  connect(ui.actionAdvanced, SIGNAL(triggered()), this, SLOT(showAdvanced()));
+  /* Create the toolbar */
+  QActionGroup *grp = new QActionGroup(this);
+  connect(grp, SIGNAL(triggered(QAction *)), this, SLOT(showPage(QAction *)));
+
+  _actionGeneral = new QAction(QIcon(IMAGE_GENERAL),
+                                      tr("General"), grp);
+  _actionGeneral->setCheckable(true);
+  _actionGeneral->setFont(FONT);
   
+  _actionServer = new QAction(QIcon(IMAGE_SERVER),
+                                     tr("Server"), grp);
+  _actionServer->setCheckable(true);
+  _actionServer->setFont(FONT);
+  
+  _actionAppearance = new QAction(QIcon(IMAGE_APPEARANCE),
+                                          tr("Appearance"), grp);
+  _actionAppearance->setCheckable(true);
+  _actionAppearance->setFont(FONT);
+  
+  _actionAdvanced = new QAction(QIcon(IMAGE_ADVANCED),
+                                       tr("Advanced"), grp);
+  _actionAdvanced->setCheckable(true);
+  _actionAdvanced->setFont(FONT);
+
+  ui.toolBar->addActions(grp->actions());
+  ui.toolBar->addSeparator();
+  
+  _actionSave = new QAction(QIcon(IMAGE_SAVE),
+                                   tr("Save"), grp);
+  _actionSave->setFont(FONT);
+  
+  _actionCancel = new QAction(QIcon(IMAGE_CANCEL),
+                                     tr("Cancel"), grp);
+  _actionCancel->setFont(FONT);
+
+  ui.toolBar->addAction(_actionSave);
+  ui.toolBar->addAction(_actionCancel);
+  
+  /* Bind events to actions */
+  connect(_actionCancel, SIGNAL(triggered()), this, SLOT(cancelChanges()));
+  connect(_actionSave, SIGNAL(triggered()), this, SLOT(saveChanges()));
+
   /* Set General Settings selected */
+  _actionGeneral->setChecked(true);
   ui.stackPages->setCurrentIndex(PAGE_GENERAL);
 }
 
@@ -137,29 +182,16 @@ ConfigDialog::saveChanges()
 
 /** Shows General page */
 void
-ConfigDialog::showGeneral()
+ConfigDialog::showPage(QAction *page)
 {
-  ui.stackPages->setCurrentIndex(PAGE_GENERAL);
-}
-
-/** Shows Server page */
-void
-ConfigDialog::showServer()
-{
-  ui.stackPages->setCurrentIndex(PAGE_SERVER);
-}
-
-/** Shows Appearance page */
-void
-ConfigDialog::showAppearance()
-{
-  ui.stackPages->setCurrentIndex(PAGE_APPEARANCE);
-}
-
-/** Shows Advanced page */
-void
-ConfigDialog::showAdvanced()
-{
-  ui.stackPages->setCurrentIndex(PAGE_ADVANCED);
+  if (page == _actionGeneral) {
+    ui.stackPages->setCurrentIndex(PAGE_GENERAL);
+  } else if (page == _actionServer) {
+    ui.stackPages->setCurrentIndex(PAGE_SERVER);
+  } else if (page == _actionAppearance) {
+    ui.stackPages->setCurrentIndex(PAGE_APPEARANCE);
+  } else {
+    ui.stackPages->setCurrentIndex(PAGE_ADVANCED);
+  }
 }
 
