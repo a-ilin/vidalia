@@ -20,45 +20,40 @@
  ****************************************************************/
 
 /** 
- * \file generalpage.h
- * \version $Id$
+ * \file appearancepage.cpp
+ * \version $Id: appearancepage.cpp 530 2006-03-30 19:09:35Z hipplej $
  */
 
-#ifndef _GENERALPAGE_H
-#define _GENERALPAGE_H
+#include "appearancepage.h"
 
-#include <QFileDialog>
-#include <config/vidaliasettings.h>
-#include <config/torsettings.h>
-
-#include "ui_generalpage.h"
-
-class GeneralPage : public QWidget
+/** Default Constructor */
+AppearancePage::AppearancePage(QWidget *parent)
+: QWidget(parent)
 {
-  Q_OBJECT
+  /* Invoke Designer-generated object setup routine */
+  ui.setupUi(this);
 
-public:
-  /** Default Constructor */
-  GeneralPage(QWidget *parent = 0);
-  /** Default Destructor */
-  ~GeneralPage();
-  /** Saves the changes on this page */
-  void saveChanges();
-  /** Loads the settings for this page */
-  void loadSettings();
+  /* Create VidaliaSettings object */
+  _settings = new VidaliaSettings();
+}
 
-private slots:
-  /** Called when the user clicks "Browse" */
-  void browseTorPath();
+/** Destructor */
+AppearancePage::~AppearancePage()
+{
+  delete _settings;
+}
+
+/** Saves the changes on this page */
+void
+AppearancePage::saveChanges()
+{
+
+}
   
-private:
-  /* A VidaliaSettings object used for saving/loading vidalia settings */
-  VidaliaSettings *_vidaliaSettings;
-  /* A TorSettings ovject used for saving/loading tor settings */
-  TorSettings *_torSettings;
-  /** Qt Designer generated object */
-  Ui::GeneralPage ui;
-};
+/** Loads the settings for this page */
+void
+AppearancePage::loadSettings()
+{
 
-#endif
+}
 

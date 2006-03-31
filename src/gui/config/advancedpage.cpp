@@ -33,6 +33,9 @@ AdvancedPage::AdvancedPage(QWidget *parent)
   /* Invoke the Qt Designer generated object setup routine */
   ui.setupUi(this);
 
+  /* Create TorSettings object */
+  _settings = new TorSettings();
+
   /* Bind event to actions */
   connect(ui.btnBrowseTorConfig, SIGNAL(clicked()), this, SLOT(browseTorConfig()));
 
@@ -42,24 +45,30 @@ AdvancedPage::AdvancedPage(QWidget *parent)
 #endif
 }
 
+/** Destructor */
+AdvancedPage::~AdvancedPage()
+{
+  delete _settings;
+}
+
 /* Saves all settings for this page */
 void
-AdvancedPage::saveChanges(TorSettings* torSettings)
+AdvancedPage::saveChanges()
 {
-  torSettings->setControlPort(ui.lineControlPort->text().toUShort());
-  torSettings->setTorrc(ui.lineTorConfig->text());
-  torSettings->setUser(ui.lineUser->text());
-  torSettings->setGroup(ui.lineGroup->text());
+  _settings->setControlPort(ui.lineControlPort->text().toUShort());
+  _settings->setTorrc(ui.lineTorConfig->text());
+  _settings->setUser(ui.lineUser->text());
+  _settings->setGroup(ui.lineGroup->text());
 }
 
 /* Loads previously saved settings */
 void
-AdvancedPage::loadSettings(TorSettings* torSettings)
+AdvancedPage::loadSettings()
 {
-  ui.lineControlPort->setText(QString::number(torSettings->getControlPort()));
-  ui.lineTorConfig->setText(torSettings->getTorrc());
-  ui.lineUser->setText(torSettings->getUser());
-  ui.lineGroup->setText(torSettings->getGroup());
+  ui.lineControlPort->setText(QString::number(_settings->getControlPort()));
+  ui.lineTorConfig->setText(_settings->getTorrc());
+  ui.lineUser->setText(_settings->getUser());
+  ui.lineGroup->setText(_settings->getGroup());
 }
 
 /** Open a QFileDialog to browse for Tor config file. */

@@ -39,16 +39,20 @@ class AdvancedPage : public QWidget
 public:
   /** Default Constructor */
   AdvancedPage(QWidget *parent = 0);
+  /** Default Destructor */
+  ~AdvancedPage();
   /** Saves the changes on this page */
-  void saveChanges(TorSettings *torsettings);
+  void saveChanges();
   /** Loads the settings for this page */
-  void loadSettings(TorSettings *torSettings);
+  void loadSettings();
 
 private slots:
   /** Called when user clicks "Browse" to choose location of Tor config file */
   void browseTorConfig();
   
 private:
+  /** A TorSettings object used to save/load settings */
+  TorSettings* _settings;
   /** Qt Designer generated object */
   Ui::AdvancedPage ui;
 };

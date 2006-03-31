@@ -24,19 +24,22 @@
 FORMS += $$PWD/configdialog.ui \
          $$PWD/generalpage.ui \
          $$PWD/serverpage.ui \
-         $$PWD/advancedpage.ui
+         $$PWD/advancedpage.ui \
+         $$PWD/appearancepage.ui
 
 HEADERS += $$PWD/configdialog.h \
            $$PWD/ipvalidator.h \
            $$PWD/portvalidator.h \
            $$PWD/generalpage.h \
            $$PWD/serverpage.h \
-           $$PWD/advancedpage.h
+           $$PWD/advancedpage.h \
+           $$PWD/appearancepage.h
 
 SOURCES += $$PWD/configdialog.cpp \
            $$PWD/ipvalidator.cpp \
            $$PWD/portvalidator.cpp \
            $$PWD/generalpage.cpp \
            $$PWD/serverpage.cpp \
-           $$PWD/advancedpage.cpp
+           $$PWD/advancedpage.cpp \
+           $$PWD/appearancepage.cpp
 

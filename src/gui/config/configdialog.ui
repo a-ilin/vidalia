@@ -3,13 +3,13 @@
  <comment></comment>
  <exportmacro></exportmacro>
  <class>ConfigDialog</class>
- <widget class="QDialog" name="ConfigDialog" >
+ <widget class="QMainWindow" name="ConfigDialog" >
   <property name="geometry" >
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>383</width>
-    <height>353</height>
+    <width>519</width>
+    <height>400</height>
    </rect>
   </property>
   <property name="palette" >
@@ -41,9 +41,9 @@
       <blue>120</blue>
      </color>
      <color>
-      <red>160</red>
-      <green>160</green>
-      <blue>160</blue>
+      <red>139</red>
+      <green>139</green>
+      <blue>139</blue>
      </color>
      <color>
       <red>0</red>
@@ -76,9 +76,9 @@
       <blue>0</blue>
      </color>
      <color>
-      <red>0</red>
-      <green>0</green>
-      <blue>128</blue>
+      <red>10</red>
+      <green>36</green>
+      <blue>106</blue>
      </color>
      <color>
       <red>255</red>
@@ -128,9 +128,9 @@
       <blue>120</blue>
      </color>
      <color>
-      <red>160</red>
-      <green>160</green>
-      <blue>160</blue>
+      <red>139</red>
+      <green>139</green>
+      <blue>139</blue>
      </color>
      <color>
       <red>0</red>
@@ -163,14 +163,14 @@
       <blue>0</blue>
      </color>
      <color>
-      <red>0</red>
-      <green>0</green>
-      <blue>128</blue>
+      <red>212</red>
+      <green>208</green>
+      <blue>200</blue>
      </color>
      <color>
-      <red>255</red>
-      <green>255</green>
-      <blue>255</blue>
+      <red>0</red>
+      <green>0</green>
+      <blue>0</blue>
      </color>
      <color>
       <red>0</red>
@@ -215,9 +215,9 @@
       <blue>120</blue>
      </color>
      <color>
-      <red>160</red>
-      <green>160</green>
-      <blue>160</blue>
+      <red>139</red>
+      <green>139</green>
+      <blue>139</blue>
      </color>
      <color>
       <red>120</red>
@@ -250,9 +250,9 @@
       <blue>0</blue>
      </color>
      <color>
-      <red>0</red>
-      <green>0</green>
-      <blue>107</blue>
+      <red>10</red>
+      <green>36</green>
+      <blue>106</blue>
      </color>
      <color>
       <red>255</red>
@@ -295,454 +295,453 @@
    <string>Configure Settings</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="..\res\vidalia.qrc" >:/images/16x16/preferences-system.png</iconset>
+   <iconset resource="../res/vidalia.qrc" >:/images/16x16/preferences-system.png</iconset>
   </property>
-  <property name="sizeGripEnabled" >
-   <bool>true</bool>
+  <property name="iconSize" >
+   <size>
+    <width>48</width>
+    <height>48</height>
+   </size>
   </property>
-  <layout class="QVBoxLayout" >
-   <property name="margin" >
-    <number>9</number>
+  <property name="toolButtonStyle" >
+   <enum>Qt::ToolButtonTextUnderIcon</enum>
+  </property>
+  <widget class="QWidget" name="centralwidget" >
+   <layout class="QVBoxLayout" >
+    <property name="margin" >
+     <number>9</number>
+    </property>
+    <property name="spacing" >
+     <number>6</number>
+    </property>
+    <item>
+     <widget class="QStackedWidget" name="stackPages" >
+      <property name="palette" >
+       <palette>
+        <active>
+         <color>
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+         <color>
+          <red>208</red>
+          <green>208</green>
+          <blue>208</blue>
+         </color>
+         <color>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+         <color>
+          <red>247</red>
+          <green>247</green>
+          <blue>247</blue>
+         </color>
+         <color>
+          <red>120</red>
+          <green>120</green>
+          <blue>120</blue>
+         </color>
+         <color>
+          <red>160</red>
+          <green>160</green>
+          <blue>160</blue>
+         </color>
+         <color>
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+         <color>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+         <color>
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+         <color>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+         <color>
+          <red>240</red>
+          <green>240</green>
+          <blue>240</blue>
+         </color>
+         <color>
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+         <color>
+          <red>10</red>
+          <green>36</green>
+          <blue>106</blue>
+         </color>
+         <color>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+         <color>
+          <red>0</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+         <color>
+          <red>255</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+         <color>
+          <red>247</red>
+          <green>247</green>
+          <blue>247</blue>
+         </color>
+        </active>
+        <inactive>
+         <color>
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+         <color>
+          <red>208</red>
+          <green>208</green>
+          <blue>208</blue>
+         </color>
+         <color>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+         <color>
+          <red>247</red>
+          <green>247</green>
+          <blue>247</blue>
+         </color>
+         <color>
+          <red>120</red>
+          <green>120</green>
+          <blue>120</blue>
+         </color>
+         <color>
+          <red>160</red>
+          <green>160</green>
+          <blue>160</blue>
+         </color>
+         <color>
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+         <color>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+         <color>
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+         <color>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+         <color>
+          <red>240</red>
+          <green>240</green>
+          <blue>240</blue>
+         </color>
+         <color>
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+         <color>
+          <red>212</red>
+          <green>208</green>
+          <blue>200</blue>
+         </color>
+         <color>
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+         <color>
+          <red>0</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+         <color>
+          <red>255</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+         <color>
+          <red>247</red>
+          <green>247</green>
+          <blue>247</blue>
+         </color>
+        </inactive>
+        <disabled>
+         <color>
+          <red>120</red>
+          <green>120</green>
+          <blue>120</blue>
+         </color>
+         <color>
+          <red>208</red>
+          <green>208</green>
+          <blue>208</blue>
+         </color>
+         <color>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+         <color>
+          <red>247</red>
+          <green>247</green>
+          <blue>247</blue>
+         </color>
+         <color>
+          <red>120</red>
+          <green>120</green>
+          <blue>120</blue>
+         </color>
+         <color>
+          <red>160</red>
+          <green>160</green>
+          <blue>160</blue>
+         </color>
+         <color>
+          <red>120</red>
+          <green>120</green>
+          <blue>120</blue>
+         </color>
+         <color>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+         <color>
+          <red>120</red>
+          <green>120</green>
+          <blue>120</blue>
+         </color>
+         <color>
+          <red>240</red>
+          <green>240</green>
+          <blue>240</blue>
+         </color>
+         <color>
+          <red>240</red>
+          <green>240</green>
+          <blue>240</blue>
+         </color>
+         <color>
+          <red>0</red>
+          <green>0</green>
+          <blue>0</blue>
+         </color>
+         <color>
+          <red>10</red>
+          <green>36</green>
+          <blue>106</blue>
+         </color>
+         <color>
+          <red>255</red>
+          <green>255</green>
+          <blue>255</blue>
+         </color>
+         <color>
+          <red>0</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+         <color>
+          <red>255</red>
+          <green>0</green>
+          <blue>255</blue>
+         </color>
+         <color>
+          <red>247</red>
+          <green>247</green>
+          <blue>247</blue>
+         </color>
+        </disabled>
+       </palette>
+      </property>
+      <property name="contextMenuPolicy" >
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <widget class="QWidget" name="widget" />
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>378</y>
+     <width>519</width>
+     <height>22</height>
+    </rect>
    </property>
-   <property name="spacing" >
-    <number>6</number>
+  </widget>
+  <widget class="QToolBar" name="toolBar" >
+   <property name="contextMenuPolicy" >
+    <enum>Qt::NoContextMenu</enum>
    </property>
-   <item>
-    <layout class="QHBoxLayout" >
-     <property name="margin" >
-      <number>0</number>
-     </property>
-     <property name="spacing" >
-      <number>6</number>
-     </property>
-     <item>
-      <widget class="QListWidget" name="lstPages" >
-       <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>0</hsizetype>
-         <vsizetype>7</vsizetype>
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="minimumSize" >
-        <size>
-         <width>84</width>
-         <height>275</height>
-        </size>
-       </property>
-       <property name="maximumSize" >
-        <size>
-         <width>84</width>
-         <height>16777215</height>
-        </size>
-       </property>
-       <property name="palette" >
-        <palette>
-         <active>
-          <color>
-           <red>0</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-          <color>
-           <red>208</red>
-           <green>208</green>
-           <blue>208</blue>
-          </color>
-          <color>
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
-          </color>
-          <color>
-           <red>247</red>
-           <green>247</green>
-           <blue>247</blue>
-          </color>
-          <color>
-           <red>120</red>
-           <green>120</green>
-           <blue>120</blue>
-          </color>
-          <color>
-           <red>160</red>
-           <green>160</green>
-           <blue>160</blue>
-          </color>
-          <color>
-           <red>0</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-          <color>
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
-          </color>
-          <color>
-           <red>0</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-          <color>
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
-          </color>
-          <color>
-           <red>240</red>
-           <green>240</green>
-           <blue>240</blue>
-          </color>
-          <color>
-           <red>0</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-          <color>
-           <red>0</red>
-           <green>0</green>
-           <blue>128</blue>
-          </color>
-          <color>
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
-          </color>
-          <color>
-           <red>0</red>
-           <green>0</green>
-           <blue>255</blue>
-          </color>
-          <color>
-           <red>255</red>
-           <green>0</green>
-           <blue>255</blue>
-          </color>
-          <color>
-           <red>247</red>
-           <green>247</green>
-           <blue>247</blue>
-          </color>
-         </active>
-         <inactive>
-          <color>
-           <red>0</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-          <color>
-           <red>208</red>
-           <green>208</green>
-           <blue>208</blue>
-          </color>
-          <color>
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
-          </color>
-          <color>
-           <red>247</red>
-           <green>247</green>
-           <blue>247</blue>
-          </color>
-          <color>
-           <red>120</red>
-           <green>120</green>
-           <blue>120</blue>
-          </color>
-          <color>
-           <red>160</red>
-           <green>160</green>
-           <blue>160</blue>
-          </color>
-          <color>
-           <red>0</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-          <color>
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
-          </color>
-          <color>
-           <red>0</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-          <color>
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
-          </color>
-          <color>
-           <red>240</red>
-           <green>240</green>
-           <blue>240</blue>
-          </color>
-          <color>
-           <red>0</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-          <color>
-           <red>0</red>
-           <green>0</green>
-           <blue>128</blue>
-          </color>
-          <color>
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
-          </color>
-          <color>
-           <red>0</red>
-           <green>0</green>
-           <blue>255</blue>
-          </color>
-          <color>
-           <red>255</red>
-           <green>0</green>
-           <blue>255</blue>
-          </color>
-          <color>
-           <red>247</red>
-           <green>247</green>
-           <blue>247</blue>
-          </color>
-         </inactive>
-         <disabled>
-          <color>
-           <red>120</red>
-           <green>120</green>
-           <blue>120</blue>
-          </color>
-          <color>
-           <red>208</red>
-           <green>208</green>
-           <blue>208</blue>
-          </color>
-          <color>
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
-          </color>
-          <color>
-           <red>247</red>
-           <green>247</green>
-           <blue>247</blue>
-          </color>
-          <color>
-           <red>120</red>
-           <green>120</green>
-           <blue>120</blue>
-          </color>
-          <color>
-           <red>160</red>
-           <green>160</green>
-           <blue>160</blue>
-          </color>
-          <color>
-           <red>120</red>
-           <green>120</green>
-           <blue>120</blue>
-          </color>
-          <color>
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
-          </color>
-          <color>
-           <red>120</red>
-           <green>120</green>
-           <blue>120</blue>
-          </color>
-          <color>
-           <red>240</red>
-           <green>240</green>
-           <blue>240</blue>
-          </color>
-          <color>
-           <red>240</red>
-           <green>240</green>
-           <blue>240</blue>
-          </color>
-          <color>
-           <red>0</red>
-           <green>0</green>
-           <blue>0</blue>
-          </color>
-          <color>
-           <red>0</red>
-           <green>0</green>
-           <blue>107</blue>
-          </color>
-          <color>
-           <red>255</red>
-           <green>255</green>
-           <blue>255</blue>
-          </color>
-          <color>
-           <red>0</red>
-           <green>0</green>
-           <blue>255</blue>
-          </color>
-          <color>
-           <red>255</red>
-           <green>0</green>
-           <blue>255</blue>
-          </color>
-          <color>
-           <red>247</red>
-           <green>247</green>
-           <blue>247</blue>
-          </color>
-         </disabled>
-        </palette>
-       </property>
-       <property name="contextMenuPolicy" >
-        <enum>Qt::NoContextMenu</enum>
-       </property>
-       <property name="verticalScrollBarPolicy" >
-        <enum>Qt::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="horizontalScrollBarPolicy" >
-        <enum>Qt::ScrollBarAlwaysOff</enum>
-       </property>
-       <property name="autoScroll" >
-        <bool>false</bool>
-       </property>
-       <property name="iconSize" >
-        <size>
-         <width>48</width>
-         <height>48</height>
-        </size>
-       </property>
-       <property name="movement" >
-        <enum>QListView::Static</enum>
-       </property>
-       <property name="flow" >
-        <enum>QListView::TopToBottom</enum>
-       </property>
-       <property name="spacing" >
-        <number>11</number>
-       </property>
-       <property name="viewMode" >
-        <enum>QListView::IconMode</enum>
-       </property>
-       <property name="uniformItemSizes" >
-        <bool>true</bool>
-       </property>
-       <property name="currentRow" >
-        <number>-1</number>
-       </property>
-       <item>
-        <property name="text" >
-         <string>General</string>
-        </property>
-        <property name="icon" >
-         <iconset resource="..\res\vidalia.qrc" >:/images/48x48/preferences-system.png</iconset>
-        </property>
-       </item>
-       <item>
-        <property name="text" >
-         <string>Server</string>
-        </property>
-        <property name="icon" >
-         <iconset resource="..\res\vidalia.qrc" >:/images/48x48/network-server.png</iconset>
-        </property>
-       </item>
-       <item>
-        <property name="text" >
-         <string>Advanced</string>
-        </property>
-        <property name="icon" >
-         <iconset resource="..\res\vidalia.qrc" >:/images/48x48/emblem-system.png</iconset>
-        </property>
-       </item>
-      </widget>
-     </item>
-     <item>
-      <widget class="QStackedWidget" name="stackPages" >
-       <property name="contextMenuPolicy" >
-        <enum>Qt::NoContextMenu</enum>
-       </property>
-       <widget class="QWidget" name="widget" />
-      </widget>
-     </item>
-    </layout>
-   </item>
-   <item>
-    <layout class="QHBoxLayout" >
-     <property name="margin" >
-      <number>0</number>
-     </property>
-     <property name="spacing" >
-      <number>6</number>
-     </property>
-     <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QPushButton" name="btnSave" >
-       <property name="minimumSize" >
-        <size>
-         <width>30</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="contextMenuPolicy" >
-        <enum>Qt::NoContextMenu</enum>
-       </property>
-       <property name="toolTip" >
-        <string>Saves current settings</string>
-       </property>
-       <property name="text" >
-        <string>Save Settings</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QPushButton" name="btnCancel" >
-       <property name="minimumSize" >
-        <size>
-         <width>30</width>
-         <height>0</height>
-        </size>
-       </property>
-       <property name="contextMenuPolicy" >
-        <enum>Qt::NoContextMenu</enum>
-       </property>
-       <property name="toolTip" >
-        <string>Cancels any changes made to settings</string>
-       </property>
-       <property name="text" >
-        <string>Cancel</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </item>
-  </layout>
+   <property name="movable" >
+    <bool>false</bool>
+   </property>
+   <property name="orientation" >
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="iconSize" >
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
+   <attribute name="toolBarArea" >
+    <number>4</number>
+   </attribute>
+   <addaction name="actionGeneral" />
+   <addaction name="actionServer" />
+   <addaction name="actionAppearance" />
+   <addaction name="actionAdvanced" />
+   <addaction name="separator" />
+   <addaction name="actionSave" />
+   <addaction name="actionCancel" />
+  </widget>
+  <action name="actionGeneral" >
+   <property name="icon" >
+    <iconset resource="../res/vidalia.qrc" >:/images/22x22/preferences-system.png</iconset>
+   </property>
+   <property name="text" >
+    <string>General</string>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <underline>false</underline>
+     <strikeout>false</strikeout>
+    </font>
+   </property>
+  </action>
+  <action name="actionServer" >
+   <property name="icon" >
+    <iconset resource="../res/vidalia.qrc" >:/images/22x22/network-server.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Server</string>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <underline>false</underline>
+     <strikeout>false</strikeout>
+    </font>
+   </property>
+  </action>
+  <action name="actionAppearance" >
+   <property name="icon" >
+    <iconset resource="../res/vidalia.qrc" >:/images/22x22/preferences-desktop-locale.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Appearance</string>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <underline>false</underline>
+     <strikeout>false</strikeout>
+    </font>
+   </property>
+  </action>
+  <action name="actionAdvanced" >
+   <property name="icon" >
+    <iconset resource="../res/vidalia.qrc" >:/images/22x22/emblem-system.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Advanced</string>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <underline>false</underline>
+     <strikeout>false</strikeout>
+    </font>
+   </property>
+  </action>
+  <action name="actionSave" >
+   <property name="icon" >
+    <iconset resource="../res/vidalia.qrc" >:/images/22x22/media-floppy.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Save</string>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <underline>false</underline>
+     <strikeout>false</strikeout>
+    </font>
+   </property>
+  </action>
+  <action name="actionCancel" >
+   <property name="icon" >
+    <iconset resource="../res/vidalia.qrc" >:/images/22x22/emblem-unreadable.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Cancel</string>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <underline>false</underline>
+     <strikeout>false</strikeout>
+    </font>
+   </property>
+  </action>
  </widget>
  <pixmapfunction></pixmapfunction>
- <tabstops>
-  <tabstop>lstPages</tabstop>
-  <tabstop>btnSave</tabstop>
-  <tabstop>btnCancel</tabstop>
- </tabstops>
  <resources>
   <include location="../res/vidalia.qrc" />
  </resources>

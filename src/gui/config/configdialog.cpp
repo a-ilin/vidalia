@@ -31,7 +31,8 @@
 /* Page indices in the QListWidget */
 #define PAGE_GENERAL      0
 #define PAGE_SERVER       1
-#define PAGE_ADVANCED     2
+#define PAGE_APPEARANCE   2
+#define PAGE_ADVANCED     3
 
 /* Columns of the Exit Policy list */
 #define COL_ACTION    0
@@ -42,42 +43,32 @@
 ConfigDialog::ConfigDialog(TorControl *torControl,
                            HelpBrowser *helpBrowser,
                            QWidget* parent)
-: QDialog(parent)
+: QMainWindow(parent)
 {
   /* Invoke the Qt Designer generated QObject setup routine */
   ui.setupUi(this);
-
-  /* Keep a pointer to the HelpBrowser object used to show help */
-  _helpBrowser = helpBrowser;
   
-  /* Create necessary ConfigDialog QObjects */
-  _torSettings = new TorSettings();
-
   _generalPage = new GeneralPage(ui.stackPages);
   _serverPage = new ServerPage(torControl, helpBrowser, ui.stackPages);
   _advancedPage = new AdvancedPage(ui.stackPages);
-
+  _appearancePage = new AppearancePage(ui.stackPages);
+  
   /* Add pages to stacked widget */
   ui.stackPages->insertWidget(PAGE_GENERAL, _generalPage);
   ui.stackPages->insertWidget(PAGE_SERVER, _serverPage);
+  ui.stackPages->insertWidget(PAGE_APPEARANCE, _appearancePage);
   ui.stackPages->insertWidget(PAGE_ADVANCED, _advancedPage);
-    
+  
   /* Bind events to actions */
-  connect(ui.lstPages, 
-          SIGNAL(currentItemChanged(QListWidgetItem *, QListWidgetItem *)),
-          this, SLOT(changePage(QListWidgetItem *, QListWidgetItem *)));
-  connect(ui.btnCancel, SIGNAL(clicked()), this, SLOT(cancelChanges()));
-  connect(ui.btnSave, SIGNAL(clicked()), this, SLOT(saveChanges()));
+  connect(ui.actionCancel, SIGNAL(triggered()), this, SLOT(cancelChanges()));
+  connect(ui.actionSave, SIGNAL(triggered()), this, SLOT(saveChanges()));
+  connect(ui.actionGeneral, SIGNAL(triggered()), this, SLOT(showGeneral()));
+  connect(ui.actionServer, SIGNAL(triggered()), this, SLOT(showServer()));
+  connect(ui.actionAppearance, SIGNAL(triggered()), this, SLOT(showAppearance()));
+  connect(ui.actionAdvanced, SIGNAL(triggered()), this, SLOT(showAdvanced()));
   
   /* Set General Settings selected */
   ui.stackPages->setCurrentIndex(PAGE_GENERAL);
-  ui.lstPages->setItemSelected(ui.lstPages->item(PAGE_GENERAL), true);
-}
-
-/** Destructor */
-ConfigDialog::~ConfigDialog()
-{
-  delete _torSettings;
 }
 
 /** Overloads the default show so we can load settings */
@@ -88,22 +79,11 @@ ConfigDialog::show()
   loadSettings();
 
   if (!this->isVisible()) {
-    QDialog::show();
+    QMainWindow::show();
   } else {
-    QDialog::activateWindow();
-    QDialog::raise();
+    QMainWindow::activateWindow();
+    QMainWindow::raise();
   }
-}
-
-/** Changes settings page. */
-void
-ConfigDialog::changePage(QListWidgetItem *current, QListWidgetItem *previous)
-{
-  if (!current) {
-    current = previous;
-  }
-  
-  ui.stackPages->setCurrentIndex(ui.lstPages->row(current));
 }
 
 /** Loads the saved ConfigDialog settings. */
@@ -111,11 +91,13 @@ void
 ConfigDialog::loadSettings()
 {
   /* Load General settings */
-  _generalPage->loadSettings(_torSettings);
+  _generalPage->loadSettings();
   /* Load Server settings */
   _serverPage->loadSettings();
   /* Load Advanced settings */
-  _advancedPage->loadSettings(_torSettings);
+  _advancedPage->loadSettings();
+  /* Load Appearance settings */
+  _appearancePage->loadSettings();
 }
 
 /** Cancels changes made to settings. */
@@ -125,7 +107,7 @@ ConfigDialog::cancelChanges()
   /* Reload saved settings and exit */
   loadSettings();
   
-  QDialog::close();
+  QMainWindow::close();
 }
 
 /** Saves changes made to settings. */
@@ -135,9 +117,10 @@ ConfigDialog::saveChanges()
   QString errmsg;
   
   /* Save the settings and exit */
-  _generalPage->saveChanges(_torSettings);
-  _advancedPage->saveChanges(_torSettings);
- 
+  _generalPage->saveChanges();
+  _advancedPage->saveChanges();
+  _appearancePage->saveChanges();
+
   /* Try to save the user's server settings. If something goes awry, then
    * notify the user, don't save their settings, and show them the offending
    * page. */
@@ -147,9 +130,36 @@ ConfigDialog::saveChanges()
       tr("Vidalia encountered an error applying your "
          "server configuration.\n\n") + errmsg,
       QMessageBox::Ok, QMessageBox::NoButton);
-    ui.lstPages->setCurrentRow(PAGE_SERVER);
     return;
   }
-  QDialog::close();
+  QMainWindow::close();
+}
+
+/** Shows General page */
+void
+ConfigDialog::showGeneral()
+{
+  ui.stackPages->setCurrentIndex(PAGE_GENERAL);
+}
+
+/** Shows Server page */
+void
+ConfigDialog::showServer()
+{
+  ui.stackPages->setCurrentIndex(PAGE_SERVER);
+}
+
+/** Shows Appearance page */
+void
+ConfigDialog::showAppearance()
+{
+  ui.stackPages->setCurrentIndex(PAGE_APPEARANCE);
+}
+
+/** Shows Advanced page */
+void
+ConfigDialog::showAdvanced()
+{
+  ui.stackPages->setCurrentIndex(PAGE_ADVANCED);
 }
 

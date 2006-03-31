@@ -20,45 +20,37 @@
  ****************************************************************/
 
 /** 
- * \file generalpage.h
- * \version $Id$
+ * \file appearancepage.h
+ * \version $Id: appearancepage.h 530 2006-03-30 19:09:35Z hipplej $
  */
 
-#ifndef _GENERALPAGE_H
-#define _GENERALPAGE_H
+#ifndef _APPEARANCEPAGE_H
+#define _APPEARANCEPAGE_H
 
-#include <QFileDialog>
 #include <config/vidaliasettings.h>
-#include <config/torsettings.h>
 
-#include "ui_generalpage.h"
+#include "ui_appearancepage.h"
 
-class GeneralPage : public QWidget
+class AppearancePage : public QWidget
 {
   Q_OBJECT
 
 public:
   /** Default Constructor */
-  GeneralPage(QWidget *parent = 0);
+  AppearancePage(QWidget *parent = 0);
   /** Default Destructor */
-  ~GeneralPage();
+  ~AppearancePage();
   /** Saves the changes on this page */
   void saveChanges();
   /** Loads the settings for this page */
   void loadSettings();
-
-private slots:
-  /** Called when the user clicks "Browse" */
-  void browseTorPath();
   
 private:
-  /* A VidaliaSettings object used for saving/loading vidalia settings */
-  VidaliaSettings *_vidaliaSettings;
-  /* A TorSettings ovject used for saving/loading tor settings */
-  TorSettings *_torSettings;
+  /** A VidaliaSettings object used for saving/loading settings */
+  VidaliaSettings* _settings;
+
   /** Qt Designer generated object */
-  Ui::GeneralPage ui;
+  Ui::AppearancePage ui;
 };
 
 #endif
-

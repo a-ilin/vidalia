@@ -27,20 +27,21 @@
 #ifndef _CONFIGDIALOG_H
 #define _CONFIGDIALOG_H
 
+#include <QMainWindow>
 #include <QFileDialog>
 
 #include <control/torcontrol.h>
-#include <config/torsettings.h>
 
 #include "generalpage.h"
 #include "serverpage.h"
 #include "advancedpage.h"
+#include "appearancepage.h"
 
 #include "../help/browser/helpbrowser.h"
 
 #include "ui_configdialog.h"
 
-class ConfigDialog : public QDialog
+class ConfigDialog : public QMainWindow
 {
   Q_OBJECT
 
@@ -49,12 +50,8 @@ public:
   ConfigDialog(TorControl *torControl,
                HelpBrowser *helpBrowser,
                QWidget *parent = 0);
-  /** Default Destructor */
-  ~ConfigDialog();
 
 public slots:
-  /** Called when user selects an item from the settings page list */
-  void changePage(QListWidgetItem *current, QListWidgetItem *previous);
   /** Called when this dialog is to be displayed */
   void show();
   
@@ -63,6 +60,14 @@ private slots:
   void cancelChanges();
   /** Called when user clicks "Save Settings" */
   void saveChanges();
+  /** Called when user clicks "General" */
+  void showGeneral();
+  /** Called when user clicks "Server" */
+  void showServer();
+  /** Called when user clicks "Appearance" */
+  void showAppearance();
+  /** Called when user clicks "Advanced" */
+  void showAdvanced();
 
 private:
   /** Loads the current configuration settings */
@@ -72,11 +77,7 @@ private:
   GeneralPage* _generalPage;
   ServerPage* _serverPage;
   AdvancedPage* _advancedPage;
-  
-  /** A HelpBrowser object used to show context sensitive help */
-  HelpBrowser* _helpBrowser;
-  /** A TorSettings object that handles getting and setting Tor-specific settings. */
-  TorSettings* _torSettings;
+  AppearancePage* _appearancePage;
 
   /** Qt Designer generated object */
   Ui::ConfigDialog ui;
