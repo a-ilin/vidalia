@@ -325,7 +325,7 @@
         <enum>Qt::NoContextMenu</enum>
        </property>
        <property name="text" >
-        <string>These changes will only take effect after restarting Vidalia!</string>
+        <string>Changes to Interface Language will only take effect after restarting Vidalia!</string>
        </property>
       </widget>
      </item>

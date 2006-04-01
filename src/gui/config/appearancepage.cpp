@@ -62,7 +62,9 @@ AppearancePage::save(QString &errmsg)
   
   _settings->setLanguageCode(languageCode);
   _settings->setInterfaceStyle(ui.cmboStyle->currentText());
-  
+ 
+  /* Set to new style */
+  Vidalia::setStyle(ui.cmboStyle->currentText());
   return true;
 }
   
@@ -70,11 +72,11 @@ AppearancePage::save(QString &errmsg)
 void
 AppearancePage::load()
 {
-  QString languageName = LanguageSupport::languageName(Vidalia::language());
+  QString languageName = LanguageSupport::languageName(_settings->getLanguageCode());
   int index = ui.cmboLanguage->findText(languageName, Qt::MatchExactly);
   ui.cmboLanguage->setCurrentIndex(index);
   
-  QString style = Vidalia::style(); 
+  QString style = _settings->getInterfaceStyle(); 
   index = ui.cmboStyle->findText(style, Qt::MatchExactly);
   ui.cmboStyle->setCurrentIndex(index);
 }
