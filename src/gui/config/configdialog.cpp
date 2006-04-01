@@ -65,13 +65,13 @@ ConfigDialog::ConfigDialog(TorControl *torControl, QWidget* parent)
   connect(grp, SIGNAL(triggered(QAction *)), ui.stackPages, SLOT(showPage(QAction *)));
   
   /* Create and bind the Save button */  
-  _actionSave = new QAction(QIcon(IMAGE_SAVE), tr("Save"), grp);
+  _actionSave = new QAction(QIcon(IMAGE_SAVE), tr("Save"), ui.toolBar);
   _actionSave->setFont(FONT);
   ui.toolBar->addAction(_actionSave);
   connect(_actionSave, SIGNAL(triggered()), this, SLOT(saveChanges()));
   
   /* Create and bind the Cancel button */
-  _actionCancel = new QAction(QIcon(IMAGE_CANCEL), tr("Cancel"), grp);
+  _actionCancel = new QAction(QIcon(IMAGE_CANCEL), tr("Cancel"), ui.toolBar);
   _actionCancel->setFont(FONT);
   ui.toolBar->addAction(_actionCancel);
   connect(_actionCancel, SIGNAL(triggered()), this, SLOT(cancelChanges()));
