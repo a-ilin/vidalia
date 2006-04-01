@@ -39,8 +39,12 @@ public:
   static void initialize();
   /** Returns the default language code for the system locale. */
   static QString defaultLanguageCode();
+  /** Returns the language code for a given language name. */
+  static QString languageCode(QString languageName);
   /** Returns a list of all supported language codes (e.g., "en"). */
   static QStringList languageCodes();
+  /** Returns the language name for a given language code. */
+  static QString languageName(QString languageCode);
   /** Returns a list of all supported language names (e.g., "English"). */
   static QStringList languageNames();
   /** Returns a list of all supported language codes and names. */
@@ -51,7 +55,7 @@ public:
   static bool translate(QString langCode);
 
 private:
-  static QMap<QString,QString> _languages;
+  static QMap<QString,QString> _languages; /**< List of support languages. */
 };
 
 #endif

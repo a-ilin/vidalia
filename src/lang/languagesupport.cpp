@@ -53,11 +53,25 @@ LanguageSupport::defaultLanguageCode()
   return language;
 }
 
+/** Returns the language code for a given language name. */
+QString
+LanguageSupport::languageCode(QString languageName)
+{
+  return _languages.key(languageName);
+}
+
 /** Returns a list of all supported language codes. (e.g., "en"). */
 QStringList
 LanguageSupport::languageCodes()
 {
   return _languages.keys();
+}
+
+/** Returns the language name for a given language code. */
+QString
+LanguageSupport::languageName(QString languageCode)
+{
+  return _languages.value(languageCode);
 }
 
 /** Returns a list of all supported language names (e.g., "English"). */
