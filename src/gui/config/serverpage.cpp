@@ -115,7 +115,7 @@ ServerPage::save(QString &errmsg)
   return success;
 }
 
-/* Loads previously saved settings */
+/** Loads previously saved settings */
 void
 ServerPage::load()
 {
