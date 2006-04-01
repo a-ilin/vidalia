@@ -30,9 +30,10 @@
 #include <QFileDialog>
 #include <config/torsettings.h>
 
+#include "configpage.h"
 #include "ui_advancedpage.h"
 
-class AdvancedPage : public QWidget
+class AdvancedPage : public ConfigPage 
 {
   Q_OBJECT
 
@@ -42,9 +43,9 @@ public:
   /** Default Destructor */
   ~AdvancedPage();
   /** Saves the changes on this page */
-  void saveChanges();
+  bool save(QString &errmsg = QString());
   /** Loads the settings for this page */
-  void loadSettings();
+  void load();
 
 private slots:
   /** Called when user clicks "Browse" to choose location of Tor config file */

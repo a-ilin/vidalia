@@ -32,9 +32,10 @@
 #include <config/serversettings.h>
 #include "../help/browser/helpbrowser.h"
 
+#include "configpage.h"
 #include "ui_serverpage.h"
 
-class ServerPage : public QWidget
+class ServerPage : public ConfigPage
 {
   Q_OBJECT
 
@@ -44,9 +45,9 @@ public:
   /** Default Destructor */
   ~ServerPage();
   /** Saves the changes on this page */
-  bool saveChanges(QString *errmsg = 0);
+  bool save(QString &errmsg = QString());
   /** Loads the settings for this page */
-  void loadSettings();
+  void load();
 
 private slots:
   /** Called when the user clicks "Get Address" to guess our local IP */

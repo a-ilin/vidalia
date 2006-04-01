@@ -28,7 +28,7 @@
 
 /** Constructor */
 AdvancedPage::AdvancedPage(QWidget *parent)
-: QWidget(parent)
+: ConfigPage(parent)
 {
   /* Invoke the Qt Designer generated object setup routine */
   ui.setupUi(this);
@@ -52,18 +52,20 @@ AdvancedPage::~AdvancedPage()
 }
 
 /* Saves all settings for this page */
-void
-AdvancedPage::saveChanges()
+bool
+AdvancedPage::save(QString &errmsg)
 {
+  Q_UNUSED(errmsg);
   _settings->setControlPort(ui.lineControlPort->text().toUShort());
   _settings->setTorrc(ui.lineTorConfig->text());
   _settings->setUser(ui.lineUser->text());
   _settings->setGroup(ui.lineGroup->text());
+  return true;
 }
 
 /* Loads previously saved settings */
 void
-AdvancedPage::loadSettings()
+AdvancedPage::load()
 {
   ui.lineControlPort->setText(QString::number(_settings->getControlPort()));
   ui.lineTorConfig->setText(_settings->getTorrc());

@@ -29,9 +29,10 @@
 
 #include <config/vidaliasettings.h>
 
+#include "configpage.h"
 #include "ui_appearancepage.h"
 
-class AppearancePage : public QWidget
+class AppearancePage : public ConfigPage
 {
   Q_OBJECT
 
@@ -41,9 +42,9 @@ public:
   /** Default Destructor */
   ~AppearancePage();
   /** Saves the changes on this page */
-  void saveChanges();
+  bool save(QString &errmsg = QString());
   /** Loads the settings for this page */
-  void loadSettings();
+  void load();
   
 private:
   /** A VidaliaSettings object used for saving/loading settings */

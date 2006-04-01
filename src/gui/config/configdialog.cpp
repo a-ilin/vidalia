@@ -30,17 +30,6 @@
 
 #define FONT        QFont(tr("Arial"), 10)
 
-/* Page indices in the QListWidget */
-#define PAGE_GENERAL      0
-#define PAGE_SERVER       1
-#define PAGE_APPEARANCE   2
-#define PAGE_ADVANCED     3
-
-/* Columns of the Exit Policy list */
-#define COL_ACTION    0
-#define COL_ADDRESS   1
-#define COL_PORT      2
-
 /* Images for toolbar icons */
 #define IMAGE_GENERAL       ":/images/22x22/preferences-system.png"
 #define IMAGE_SERVER        ":/images/22x22/network-server.png"
@@ -57,63 +46,50 @@ ConfigDialog::ConfigDialog(TorControl *torControl,
 {
   /* Invoke the Qt Designer generated QObject setup routine */
   ui.setupUi(this);
+
+  /* Create the config pages and actions */
+  QActionGroup *grp = new QActionGroup(this);
+  ui.stackPages->add(new GeneralPage(ui.stackPages),
+                     createPageAction(QIcon(IMAGE_GENERAL), tr("General"), grp));
   
-  _generalPage = new GeneralPage(ui.stackPages);
-  _serverPage = new ServerPage(torControl, helpBrowser, ui.stackPages);
-  _advancedPage = new AdvancedPage(ui.stackPages);
-  _appearancePage = new AppearancePage(ui.stackPages);
+  ui.stackPages->add(new ServerPage(torControl, helpBrowser, ui.stackPages),
+                     createPageAction(QIcon(IMAGE_SERVER), tr("Server"), grp));
   
-  /* Add pages to stacked widget */
-  ui.stackPages->insertWidget(PAGE_GENERAL, _generalPage);
-  ui.stackPages->insertWidget(PAGE_SERVER, _serverPage);
-  ui.stackPages->insertWidget(PAGE_APPEARANCE, _appearancePage);
-  ui.stackPages->insertWidget(PAGE_ADVANCED, _advancedPage);
+  ui.stackPages->add(new AppearancePage(ui.stackPages),
+                     createPageAction(QIcon(IMAGE_APPEARANCE), tr("Appearance"), grp));
+  
+  ui.stackPages->add(new AdvancedPage(ui.stackPages),
+                     createPageAction(QIcon(IMAGE_ADVANCED), tr("Advanced"), grp));
   
   /* Create the toolbar */
-  QActionGroup *grp = new QActionGroup(this);
-  connect(grp, SIGNAL(triggered(QAction *)), this, SLOT(showPage(QAction *)));
-
-  _actionGeneral = new QAction(QIcon(IMAGE_GENERAL),
-                                      tr("General"), grp);
-  _actionGeneral->setCheckable(true);
-  _actionGeneral->setFont(FONT);
-  
-  _actionServer = new QAction(QIcon(IMAGE_SERVER),
-                                     tr("Server"), grp);
-  _actionServer->setCheckable(true);
-  _actionServer->setFont(FONT);
-  
-  _actionAppearance = new QAction(QIcon(IMAGE_APPEARANCE),
-                                          tr("Appearance"), grp);
-  _actionAppearance->setCheckable(true);
-  _actionAppearance->setFont(FONT);
-  
-  _actionAdvanced = new QAction(QIcon(IMAGE_ADVANCED),
-                                       tr("Advanced"), grp);
-  _actionAdvanced->setCheckable(true);
-  _actionAdvanced->setFont(FONT);
-
   ui.toolBar->addActions(grp->actions());
   ui.toolBar->addSeparator();
+  connect(grp, SIGNAL(triggered(QAction *)), ui.stackPages, SLOT(showPage(QAction *)));
   
-  _actionSave = new QAction(QIcon(IMAGE_SAVE),
-                                   tr("Save"), grp);
+  /* Create and bind the Save button */  
+  _actionSave = new QAction(QIcon(IMAGE_SAVE), tr("Save"), grp);
   _actionSave->setFont(FONT);
-  
-  _actionCancel = new QAction(QIcon(IMAGE_CANCEL),
-                                     tr("Cancel"), grp);
-  _actionCancel->setFont(FONT);
-
   ui.toolBar->addAction(_actionSave);
-  ui.toolBar->addAction(_actionCancel);
-  
-  /* Bind events to actions */
-  connect(_actionCancel, SIGNAL(triggered()), this, SLOT(cancelChanges()));
   connect(_actionSave, SIGNAL(triggered()), this, SLOT(saveChanges()));
+  
+  /* Create and bind the Cancel button */
+  _actionCancel = new QAction(QIcon(IMAGE_CANCEL), tr("Cancel"), grp);
+  _actionCancel->setFont(FONT);
+  ui.toolBar->addAction(_actionCancel);
+  connect(_actionCancel, SIGNAL(triggered()), this, SLOT(cancelChanges()));
 
-  /* Set General Settings selected */
-  _actionGeneral->setChecked(true);
-  ui.stackPages->setCurrentIndex(PAGE_GENERAL);
+  /* Select the first action */
+  grp->actions()[0]->setChecked(true);
+}
+
+/** Creates a new action associated with a config page. */
+QAction*
+ConfigDialog::createPageAction(QIcon img, QString text, QActionGroup *group)
+{
+  QAction *action = new QAction(img, text, group);
+  action->setCheckable(true);
+  action->setFont(FONT);
+  return action;
 }
 
 /** Overloads the default show so we can load settings */
@@ -135,14 +111,10 @@ ConfigDialog::show()
 void
 ConfigDialog::loadSettings()
 {
-  /* Load General settings */
-  _generalPage->loadSettings();
-  /* Load Server settings */
-  _serverPage->loadSettings();
-  /* Load Advanced settings */
-  _advancedPage->loadSettings();
-  /* Load Appearance settings */
-  _appearancePage->loadSettings();
+  /* Call each config page's load() method to load its data */
+  foreach (ConfigPage *page, ui.stackPages->pages()) {
+    page->load();
+  }
 }
 
 /** Cancels changes made to settings. */
@@ -151,7 +123,6 @@ ConfigDialog::cancelChanges()
 {
   /* Reload saved settings and exit */
   loadSettings();
-  
   QMainWindow::close();
 }
 
@@ -161,37 +132,21 @@ ConfigDialog::saveChanges()
 {
   QString errmsg;
   
-  /* Save the settings and exit */
-  _generalPage->saveChanges();
-  _advancedPage->saveChanges();
-  _appearancePage->saveChanges();
+  /* Call each config page's save() method to save its data */
+  foreach (ConfigPage *page, ui.stackPages->pages()) {
+    if (!page->save(errmsg)) {
+      /* Display the offending page */
+      ui.stackPages->setCurrentWidget(page);
+      
+      /* Show the user what went wrong */
+      QMessageBox::warning(this, 
+        tr("Error Saving Configuration"), errmsg,
+        QMessageBox::Ok, QMessageBox::NoButton);
 
-  /* Try to save the user's server settings. If something goes awry, then
-   * notify the user, don't save their settings, and show them the offending
-   * page. */
-  if (!_serverPage->saveChanges(&errmsg)) {
-    QMessageBox::warning(this, 
-      tr("Error Saving Server Configuration"),
-      tr("Vidalia encountered an error applying your "
-         "server configuration.\n\n") + errmsg,
-      QMessageBox::Ok, QMessageBox::NoButton);
-    return;
+      /* Don't process the rest of the pages */
+      return;
+    }
   }
   QMainWindow::close();
-}
-
-/** Shows General page */
-void
-ConfigDialog::showPage(QAction *page)
-{
-  if (page == _actionGeneral) {
-    ui.stackPages->setCurrentIndex(PAGE_GENERAL);
-  } else if (page == _actionServer) {
-    ui.stackPages->setCurrentIndex(PAGE_SERVER);
-  } else if (page == _actionAppearance) {
-    ui.stackPages->setCurrentIndex(PAGE_APPEARANCE);
-  } else {
-    ui.stackPages->setCurrentIndex(PAGE_ADVANCED);
-  }
 }
 

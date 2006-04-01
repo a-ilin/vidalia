@@ -28,7 +28,7 @@
 
 /** Constructor */
 GeneralPage::GeneralPage(QWidget *parent)
-: QWidget(parent)
+: ConfigPage(parent)
 {
   /* Invoke the Qt Designer generated object setup routine */
   ui.setupUi(this);
@@ -67,17 +67,19 @@ GeneralPage::browseTorPath()
 }
 
 /* Saves all settings for this page */
-void
-GeneralPage::saveChanges()
+bool
+GeneralPage::save(QString &errmsg)
 {
+  Q_UNUSED(errmsg);
   _torSettings->setPath(ui.lineTorPath->text());
   _vidaliaSettings->setRunTorAtStart(ui.chkRunTor->isChecked());
   _vidaliaSettings->setRunVidaliaOnBoot(ui.chkRunWithSys->isChecked());
+  return true;
 }
 
 /* Loads previously saved settings */
 void
-GeneralPage::loadSettings()
+GeneralPage::load()
 {
   ui.lineTorPath->setText(_torSettings->getPath());
   ui.chkRunTor->setChecked(_vidaliaSettings->runTorAtStart());

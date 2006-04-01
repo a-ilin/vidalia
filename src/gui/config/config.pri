@@ -30,6 +30,8 @@ FORMS += $$PWD/configdialog.ui \
 HEADERS += $$PWD/configdialog.h \
            $$PWD/ipvalidator.h \
            $$PWD/portvalidator.h \
+           $$PWD/configpage.h \
+           $$PWD/configpagestack.h \
            $$PWD/generalpage.h \
            $$PWD/serverpage.h \
            $$PWD/advancedpage.h \
@@ -38,6 +40,7 @@ HEADERS += $$PWD/configdialog.h \
 SOURCES += $$PWD/configdialog.cpp \
            $$PWD/ipvalidator.cpp \
            $$PWD/portvalidator.cpp \
+           $$PWD/configpagestack.cpp \
            $$PWD/generalpage.cpp \
            $$PWD/serverpage.cpp \
            $$PWD/advancedpage.cpp \

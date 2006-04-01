@@ -31,9 +31,10 @@
 #include <config/vidaliasettings.h>
 #include <config/torsettings.h>
 
+#include "configpage.h"
 #include "ui_generalpage.h"
 
-class GeneralPage : public QWidget
+class GeneralPage : public ConfigPage
 {
   Q_OBJECT
 
@@ -43,9 +44,9 @@ public:
   /** Default Destructor */
   ~GeneralPage();
   /** Saves the changes on this page */
-  void saveChanges();
+  bool save(QString &errmsg = QString());
   /** Loads the settings for this page */
-  void loadSettings();
+  void load();
 
 private slots:
   /** Called when the user clicks "Browse" */

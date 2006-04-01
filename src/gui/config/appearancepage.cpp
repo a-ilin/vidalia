@@ -28,7 +28,7 @@
 
 /** Default Constructor */
 AppearancePage::AppearancePage(QWidget *parent)
-: QWidget(parent)
+: ConfigPage(parent)
 {
   /* Invoke Designer-generated object setup routine */
   ui.setupUi(this);
@@ -44,15 +44,16 @@ AppearancePage::~AppearancePage()
 }
 
 /** Saves the changes on this page */
-void
-AppearancePage::saveChanges()
+bool
+AppearancePage::save(QString &errmsg)
 {
-
+  Q_UNUSED(errmsg);
+  return true;
 }
   
 /** Loads the settings for this page */
 void
-AppearancePage::loadSettings()
+AppearancePage::load()
 {
 
 }

@@ -41,7 +41,7 @@
 
 /** Constructor */
 ServerPage::ServerPage(TorControl *torControl, HelpBrowser *browser, QWidget *parent)
-: QWidget(parent)
+: ConfigPage(parent)
 {
   /* Invoke the Qt Designer generated object setup routine */
   ui.setupUi(this);
@@ -80,12 +80,12 @@ ServerPage::~ServerPage()
 
 /** Saves changes made to settings on the Server settings page. */
 bool
-ServerPage::saveChanges(QString *errmsg)
+ServerPage::save(QString &errmsg)
 {
   if (ui.chkEnableServer->isChecked() &&
       (ui.lineServerPort->text().isEmpty() ||
        ui.lineServerNickname->text().isEmpty())) {
-    *errmsg = tr("You must specify at least a server nickname and port.");
+    errmsg = tr("You must specify at least a server nickname and port.");
     return false;
   }
   _settings->setServerEnabled(ui.chkEnableServer->isChecked());
@@ -96,7 +96,7 @@ ServerPage::saveChanges(QString *errmsg)
   _settings->setDirPort(ui.lineDirPort->text().toUInt());
   _settings->setAddress(ui.lineServerAddress->text());
   _settings->setContactInfo(ui.lineServerContact->text());
-  bool success = (_torControl->isConnected() ? _settings->apply(errmsg) : true);
+  bool success = (_torControl->isConnected() ? _settings->apply(&errmsg) : true);
   if (!success) {
     _settings->revert();
   }
@@ -105,7 +105,7 @@ ServerPage::saveChanges(QString *errmsg)
 
 /* Loads previously saved settings */
 void
-ServerPage::loadSettings()
+ServerPage::load()
 {
   ui.chkEnableServer->setChecked(_settings->isServerEnabled());
   ui.chkMirrorDirectory->setChecked(_settings->isDirectoryMirror());
