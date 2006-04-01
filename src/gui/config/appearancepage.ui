@@ -291,60 +291,80 @@
   <property name="contextMenuPolicy" >
    <enum>Qt::NoContextMenu</enum>
   </property>
-  <layout class="QGridLayout" >
+  <layout class="QVBoxLayout" >
    <property name="margin" >
     <number>9</number>
    </property>
    <property name="spacing" >
     <number>6</number>
    </property>
-   <item row="2" column="0" >
-    <layout class="QHBoxLayout" >
-     <property name="margin" >
-      <number>0</number>
+   <item>
+    <widget class="QGroupBox" name="grpLanguage" >
+     <property name="contextMenuPolicy" >
+      <enum>Qt::NoContextMenu</enum>
      </property>
-     <property name="spacing" >
-      <number>6</number>
+     <property name="title" >
+      <string>Language</string>
      </property>
-     <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-     <item>
-      <widget class="QLabel" name="label" >
-       <property name="contextMenuPolicy" >
-        <enum>Qt::NoContextMenu</enum>
-       </property>
-       <property name="text" >
-        <string>Changes to Interface Language will only take effect after restarting Vidalia!</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <spacer>
-       <property name="orientation" >
-        <enum>Qt::Horizontal</enum>
-       </property>
-       <property name="sizeHint" >
-        <size>
-         <width>40</width>
-         <height>20</height>
-        </size>
-       </property>
-      </spacer>
-     </item>
-    </layout>
+     <layout class="QGridLayout" >
+      <property name="margin" >
+       <number>9</number>
+      </property>
+      <property name="spacing" >
+       <number>6</number>
+      </property>
+      <item row="1" column="0" >
+       <widget class="QComboBox" name="cmboLanguage" >
+        <property name="minimumSize" >
+         <size>
+          <width>150</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="contextMenuPolicy" >
+         <enum>Qt::NoContextMenu</enum>
+        </property>
+        <property name="toolTip" >
+         <string>Choose the language used in Vidalia</string>
+        </property>
+        <property name="editable" >
+         <bool>false</bool>
+        </property>
+        <property name="iconSize" >
+         <size>
+          <width>24</width>
+          <height>16</height>
+         </size>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" >
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>300</width>
+          <height>16</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item row="0" column="0" colspan="2" >
+       <widget class="QLabel" name="label" >
+        <property name="contextMenuPolicy" >
+         <enum>Qt::NoContextMenu</enum>
+        </property>
+        <property name="text" >
+         <string>Changes to language will only take effect after restarting Vidalia!</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
    </item>
-   <item row="1" column="0" >
+   <item>
     <widget class="QGroupBox" name="grpStyle" >
      <property name="contextMenuPolicy" >
       <enum>Qt::NoContextMenu</enum>
@@ -353,7 +373,7 @@
       <string/>
      </property>
      <property name="title" >
-      <string>Interface Style</string>
+      <string>Style</string>
      </property>
      <layout class="QGridLayout" >
       <property name="margin" >
@@ -397,63 +417,7 @@
      </layout>
     </widget>
    </item>
-   <item row="0" column="0" >
-    <widget class="QGroupBox" name="grpLanguage" >
-     <property name="contextMenuPolicy" >
-      <enum>Qt::NoContextMenu</enum>
-     </property>
-     <property name="title" >
-      <string>Interface Language</string>
-     </property>
-     <layout class="QGridLayout" >
-      <property name="margin" >
-       <number>9</number>
-      </property>
-      <property name="spacing" >
-       <number>6</number>
-      </property>
-      <item row="0" column="1" >
-       <spacer>
-        <property name="orientation" >
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" >
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item row="0" column="0" >
-       <widget class="QComboBox" name="cmboLanguage" >
-        <property name="minimumSize" >
-         <size>
-          <width>150</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="contextMenuPolicy" >
-         <enum>Qt::NoContextMenu</enum>
-        </property>
-        <property name="toolTip" >
-         <string>Choose the language used in Vidalia</string>
-        </property>
-        <property name="editable" >
-         <bool>false</bool>
-        </property>
-        <property name="iconSize" >
-         <size>
-          <width>24</width>
-          <height>16</height>
-         </size>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="3" column="0" >
+   <item>
     <spacer>
      <property name="orientation" >
       <enum>Qt::Vertical</enum>
