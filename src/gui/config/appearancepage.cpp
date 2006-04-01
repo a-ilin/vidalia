@@ -76,7 +76,7 @@ AppearancePage::load()
   int index = ui.cmboLanguage->findText(languageName, Qt::MatchExactly);
   ui.cmboLanguage->setCurrentIndex(index);
   
-  QString style = _settings->getInterfaceStyle(); 
+  QString style = Vidalia::style(); 
   index = ui.cmboStyle->findText(style, Qt::MatchExactly);
   ui.cmboStyle->setCurrentIndex(index);
 }
