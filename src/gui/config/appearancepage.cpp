@@ -24,10 +24,9 @@
  * \version $Id: appearancepage.cpp 530 2006-03-30 19:09:35Z hipplej $
  */
 
+#include <vidalia.h>
 #include "appearancepage.h"
 
-#define FLAG_CN     ":/images/flags/cn.png"
-#define FLAG_EN     ":/images/flags/en.png"
 
 /** Default Constructor */
 AppearancePage::AppearancePage(QWidget *parent)
@@ -40,9 +39,10 @@ AppearancePage::AppearancePage(QWidget *parent)
   _settings = new VidaliaSettings();
 
   /* Populate combo boxes */
-  ui.cmboLanguage->addItem(QIcon(FLAG_EN), LanguageSupport::languages()["en"]);
-  ui.cmboLanguage->addItem(QIcon(FLAG_CN), LanguageSupport::languages()["zh-cn"]);
-    
+  foreach (QString code, LanguageSupport::languageCodes()) {
+    ui.cmboLanguage->addItem(QIcon(":/images/flags/" + code + ".png"),
+                              LanguageSupport::languageName(code));
+  } 
   ui.cmboStyle->addItems(QStyleFactory::keys());
 }
 
@@ -57,8 +57,8 @@ bool
 AppearancePage::save(QString &errmsg)
 {
   Q_UNUSED(errmsg);
-  QString languageName = ui.cmboLanguage-> currentText();
-  QString languageCode = LanguageSupport::languages().key(languageName);
+  QString languageCode =
+    LanguageSupport::languageCode(ui.cmboLanguage->currentText());
   
   _settings->setLanguageCode(languageCode);
   _settings->setInterfaceStyle(ui.cmboStyle->currentText());
@@ -70,12 +70,11 @@ AppearancePage::save(QString &errmsg)
 void
 AppearancePage::load()
 {
-  QString languageCode = _settings->getLanguageCode();
-  QString languageName = LanguageSupport::languages()[languageCode];
+  QString languageName = LanguageSupport::languageName(Vidalia::language());
   int index = ui.cmboLanguage->findText(languageName, Qt::MatchExactly);
   ui.cmboLanguage->setCurrentIndex(index);
   
-  QString style = _settings->getInterfaceStyle();
+  QString style = Vidalia::style(); 
   index = ui.cmboStyle->findText(style, Qt::MatchExactly);
   ui.cmboStyle->setCurrentIndex(index);
 }
