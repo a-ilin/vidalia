@@ -26,6 +26,9 @@
 
 #include "appearancepage.h"
 
+#define FLAG_CN     ":/images/flags/cn.png"
+#define FLAG_EN     ":/images/flags/en.png"
+
 /** Default Constructor */
 AppearancePage::AppearancePage(QWidget *parent)
 : ConfigPage(parent)
@@ -35,6 +38,12 @@ AppearancePage::AppearancePage(QWidget *parent)
 
   /* Create VidaliaSettings object */
   _settings = new VidaliaSettings();
+
+  /* Populate combo boxes */
+  ui.cmboLanguage->addItem(QIcon(FLAG_EN), LanguageSupport::languages()["en"]);
+  ui.cmboLanguage->addItem(QIcon(FLAG_CN), LanguageSupport::languages()["zh-cn"]);
+    
+  ui.cmboStyle->addItems(QStyleFactory::keys());
 }
 
 /** Destructor */
@@ -48,6 +57,12 @@ bool
 AppearancePage::save(QString &errmsg)
 {
   Q_UNUSED(errmsg);
+  QString languageName = ui.cmboLanguage-> currentText();
+  QString languageCode = LanguageSupport::languages().key(languageName);
+  
+  _settings->setLanguageCode(languageCode);
+  _settings->setInterfaceStyle(ui.cmboStyle->currentText());
+  
   return true;
 }
   
@@ -55,6 +70,13 @@ AppearancePage::save(QString &errmsg)
 void
 AppearancePage::load()
 {
-
+  QString languageCode = _settings->getLanguageCode();
+  QString languageName = LanguageSupport::languages()[languageCode];
+  int index = ui.cmboLanguage->findText(languageName, Qt::MatchExactly);
+  ui.cmboLanguage->setCurrentIndex(index);
+  
+  QString style = _settings->getInterfaceStyle();
+  index = ui.cmboStyle->findText(style, Qt::MatchExactly);
+  ui.cmboStyle->setCurrentIndex(index);
 }
 

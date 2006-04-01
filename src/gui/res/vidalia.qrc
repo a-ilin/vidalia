@@ -63,4 +63,8 @@
         <file>128x128/tor-off.png</file>
         <file>128x128/tor-on.png</file>
     </qresource>
+    <qresource prefix="/images">
+        <file>flags/cn.png</file>
+        <file>flags/en.png</file>
+    </qresource>
 </RCC>

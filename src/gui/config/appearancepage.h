@@ -27,7 +27,11 @@
 #ifndef _APPEARANCEPAGE_H
 #define _APPEARANCEPAGE_H
 
+#include <QStyleFactory>
+#include <QLineEdit>
+
 #include <config/vidaliasettings.h>
+#include <lang/languagesupport.h>
 
 #include "configpage.h"
 #include "ui_appearancepage.h"
