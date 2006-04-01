@@ -24,6 +24,7 @@
  * \version $Id$
  */
 
+#include <vidalia.h>
 #include <util/net.h>
 #include <util/http.h>
 
@@ -40,7 +41,7 @@
 #define EXIT_HELP     "server.exitpolicy"
 
 /** Constructor */
-ServerPage::ServerPage(TorControl *torControl, HelpBrowser *browser, QWidget *parent)
+ServerPage::ServerPage(TorControl *torControl, QWidget *parent)
 : ConfigPage(parent)
 {
   /* Invoke the Qt Designer generated object setup routine */
@@ -49,9 +50,6 @@ ServerPage::ServerPage(TorControl *torControl, HelpBrowser *browser, QWidget *pa
   /* Keep a pointer to the TorControl object used to talk to Tor */
   _torControl = torControl;
 
-  /* Keep a pointer to the HelpBrowser object used to show help */
-  _browser = browser;
-  
   /* Create ServerSettings object */
   _settings = new ServerSettings(_torControl);
 
@@ -216,7 +214,7 @@ ServerPage::selectedIndex()
 void
 ServerPage::exitHelp()
 {
-  _browser->showTopic(EXIT_HELP);
+  Vidalia::help(EXIT_HELP);
 }
 
 /** Accesses an external site to try to get the user's public IP address. */

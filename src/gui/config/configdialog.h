@@ -47,9 +47,7 @@ class ConfigDialog : public QMainWindow
 
 public:
   /** Default Constructor */
-  ConfigDialog(TorControl *torControl,
-               HelpBrowser *helpBrowser,
-               QWidget *parent = 0);
+  ConfigDialog(TorControl *torControl, QWidget *parent = 0);
 
 public slots:
   /** Called when this dialog is to be displayed */

@@ -43,6 +43,7 @@ QMap<QString, QString> Vidalia::_args; /**< List of command-line arguments.  */
 QString Vidalia::_style;               /**< The current GUI style.           */
 QString Vidalia::_language;            /**< The current language.            */
 VidaliaSettings Vidalia::_settings;    /**< Vidalia's configurable settings. */
+HelpBrowser*  Vidalia::_help = 0;      /**< Vidalia's help system.           */
 
 
 /** Constructor. Parses the command-line arguments, resets Vidalia's
@@ -67,6 +68,14 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
   
   /** Set the GUI style appropriately. */
   setStyle(_args.value(ARG_GUISTYLE));
+}
+
+/** Destructor */
+Vidalia::~Vidalia()
+{
+  if (_help) {
+    delete _help;
+  }
 }
 
 /** Display usage information regarding command-line arguments. */
@@ -179,5 +188,19 @@ Vidalia::setStyle(QString styleKey)
     return true;
   }
   return false;
+}
+
+/** Displays the help page associated with the specified topic. If no topic is
+ * specified, then the default help page will be displayed. */
+void
+Vidalia::help(QString topic)
+{
+  /* We can't construct the help browser object in our constructor, since it
+   * depends on QApplication being all constructed first. So, we'll just
+   * construct the help browser here if we need it. */
+  if (!_help) {
+    _help = new HelpBrowser();
+  }
+  _help->show(topic);
 }
 

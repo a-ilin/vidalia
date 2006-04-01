@@ -29,8 +29,8 @@
  */
 
 #include <QtGui>
-#include <QApplication>
 
+#include <vidalia.h>
 #include <util/compat.h>
 #include <config/messagetypes.h>
 
@@ -90,9 +90,6 @@ MainWindow::MainWindow()
   Qt::WFlags bw_flags = (Qt::Tool | Qt::WindowStaysOnTopHint);
   _bandwidthGraph = new BandwidthGraph(_torControl, this, bw_flags);
  
-  /* Create a new HelpBrowser object so we can display help to the user */
-  _helpBrowser = new HelpBrowser(this);
-  
   /* Put an icon in the system tray to indicate the status of Tor */
   _trayIcon = new TrayIcon(QPixmap(IMG_TOR_STOPPED),
                            tr("Tor is Stopped"), _trayMenu, this);
@@ -445,9 +442,7 @@ MainWindow::showBandwidthGraph()
 void
 MainWindow::showConfig()
 {
-  static ConfigDialog* configDialog = new ConfigDialog(_torControl,
-                                                       _helpBrowser,
-                                                       this);
+  static ConfigDialog* configDialog = new ConfigDialog(_torControl, this);
   configDialog->show();
 }
 
@@ -456,6 +451,6 @@ MainWindow::showConfig()
 void
 MainWindow::showHelp()
 {
-  _helpBrowser->show();
+  Vidalia::help(); 
 }
 

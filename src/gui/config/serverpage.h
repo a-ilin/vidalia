@@ -41,7 +41,7 @@ class ServerPage : public ConfigPage
 
 public:
   /** Default Constructor */
-  ServerPage(TorControl *torControl, HelpBrowser *browser, QWidget *parent = 0);
+  ServerPage(TorControl *torControl, QWidget *parent = 0);
   /** Default Destructor */
   ~ServerPage();
   /** Saves the changes on this page */
@@ -71,8 +71,6 @@ private:
  
   /** A TorControl object used to talk to Tor */
   TorControl* _torControl;
-  /** A HelpBrowser ovject used to show help */
-  HelpBrowser* _browser;
   /** A ServerSettings object used to get and set information about how a
    * local Tor server is configured. */
   ServerSettings*  _settings;

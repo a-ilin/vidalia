@@ -272,18 +272,18 @@ HelpBrowser::findTopicItem(QTreeWidgetItem *startItem, QString topic)
   return 0;
 }
 
-/** Shows a topic based on the topic's ID (e.g., "log.basic") */
+/** Shows the help browser. If a sepcified topic was given, the search for
+ * that topic's ID (e.g., "log.basic") and display the appropriate page. */
 void
 HelpBrowser::showTopic(QString topic)
 {
   /* Search for the topic in the contents tree */
   QTreeWidgetItem *item =
     findTopicItem(ui.treeContents->topLevelItem(0), topic);
-    
+  
   if (item) {
     /* Item was found, so show its location in the hierarchy and select its
      * tree item. */
-    this->show();
     QTreeWidgetItem* selected = ui.treeContents->selectedItems()[0];
     if (selected) {
       ui.treeContents->setItemSelected(selected, false);
@@ -419,13 +419,19 @@ HelpBrowser::search()
 
 /** Overrides the default show method */
 void
-HelpBrowser::show()
+HelpBrowser::show(QString topic)
 {
+  /* Bring the window to the top */
   if (!this->isVisible()) {
     QMainWindow::show();
   } else {
     QMainWindow::activateWindow();
     QMainWindow::raise();
+  }
+
+  /* If a topic was specified, then go ahead and display it. */
+  if (!topic.isEmpty()) {
+    showTopic(topic);
   }
 }
 

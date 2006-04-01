@@ -31,6 +31,7 @@
 #include <QMap>
 #include <QString>
 
+#include <gui/help/browser/helpbrowser.h>
 #include <config/vidaliasettings.h>
 
 #define VIDALIA_VERSION   "0.0.2-svn"
@@ -43,7 +44,9 @@ class Vidalia : public QApplication
 public:
   /** Constructor. */
   Vidalia(QStringList args, int &argc, char **argv);
-
+  /** Destructor. */
+  ~Vidalia();
+  
   /** Return the map of command-line arguments and values. */
   static QMap<QString, QString> arguments() { return _args; }
   /** Validates that all arguments were well-formed. */
@@ -56,6 +59,8 @@ public:
   /** Sets the current GUI style. */
   static bool setStyle(QString styleKey = QString());
  
+  static void help(QString topic = QString());
+  
   /** Returns the current language. */
   static QString language() { return _language; }
   /** Returns the current GUI style. */
@@ -71,6 +76,7 @@ private:
   static QString _style;               /**< The current GUI style.           */
   static QString _language;            /**< The current language.            */
   static VidaliaSettings _settings;    /**< Vidalia's configurable settings. */
+  static HelpBrowser* _help;           /**< Vidalia's configurable settings. */
 };
 
 #endif
