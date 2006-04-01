@@ -1,5 +1,12 @@
 <!DOCTYPE TS><TS>
 <context>
+    <name></name>
+    <message>
+        <source>Arial</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>AboutDialog</name>
     <message>
         <source>About Vidalia</source>
@@ -44,6 +51,84 @@
     <message>
         <source>&lt;Not Running&gt;</source>
         <translation>&lt;未运行&gt;</translation>
+    </message>
+</context>
+<context>
+    <name>AdvancedPage</name>
+    <message>
+        <source>Control Port</source>
+        <translation type="unfinished">控制端口</translation>
+    </message>
+    <message>
+        <source>Port that Vidalia uses to communicate with Tor. </source>
+        <translation type="unfinished">Vidalia用于跟Tor通讯的端口</translation>
+    </message>
+    <message>
+        <source>9051</source>
+        <translation type="unfinished">9051</translation>
+    </message>
+    <message>
+        <source>Alternate Tor Configuration File</source>
+        <translation type="unfinished">改变Tor的配置文件</translation>
+    </message>
+    <message>
+        <source>Start Tor with the specified configuration file (torrc)</source>
+        <translation type="unfinished">指定Tor启动时的配置文件(torrc)</translation>
+    </message>
+    <message>
+        <source>Select path to Tor configuration file</source>
+        <translation type="unfinished">选择Tor配置文件的路径</translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation type="unfinished">浏览</translation>
+    </message>
+    <message>
+        <source>Permissions</source>
+        <translation type="unfinished">权限</translation>
+    </message>
+    <message>
+        <source>Run as User:</source>
+        <translation type="unfinished">运行时作为用户：</translation>
+    </message>
+    <message>
+        <source>Vidalia will run with this User&apos;s permissions</source>
+        <translation type="unfinished">Vidalia将根据用户的权限运行</translation>
+    </message>
+    <message>
+        <source>Run as Group:</source>
+        <translation type="unfinished">运行时作为组：</translation>
+    </message>
+    <message>
+        <source>Vidalia will run with this Group&apos;s permissions</source>
+        <translation type="unfinished">Vidalia将根据用户的权限运行</translation>
+    </message>
+    <message>
+        <source>Select Tor Configuration File</source>
+        <translation type="unfinished">选择Tor的配置文件</translation>
+    </message>
+</context>
+<context>
+    <name>AppearancePage</name>
+    <message>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose the language used in Vidalia</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Changes to language will only take effect after restarting Vidalia!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Style</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Choose Vidalia&apos;s interface style</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -121,115 +206,115 @@
     </message>
     <message>
         <source>Tor Directory</source>
-        <translation>Tor目录</translation>
+        <translation type="obsolete">Tor目录</translation>
     </message>
     <message>
         <source>Path to Tor&apos;s executable</source>
-        <translation>Tor可执行程序的路径</translation>
+        <translation type="obsolete">Tor可执行程序的路径</translation>
     </message>
     <message>
         <source>Select path to Tor executable</source>
-        <translation>选择Tor可执行程序的路径</translation>
+        <translation type="obsolete">选择Tor可执行程序的路径</translation>
     </message>
     <message>
         <source>Browse</source>
-        <translation>浏览</translation>
+        <translation type="obsolete">浏览</translation>
     </message>
     <message>
         <source>Startup Options</source>
-        <translation>启动可选项</translation>
+        <translation type="obsolete">启动可选项</translation>
     </message>
     <message>
         <source>Select to start Vidalia on system boot</source>
-        <translation>选择系统启动时Vidalia就运行</translation>
+        <translation type="obsolete">选择系统启动时Vidalia就运行</translation>
     </message>
     <message>
         <source>Run Vidalia on system startup</source>
-        <translation>系统启动时Vidalia就运行</translation>
+        <translation type="obsolete">系统启动时Vidalia就运行</translation>
     </message>
     <message>
         <source>Set to start Tor when you launch Vidalia</source>
-        <translation>设为运行Vidalia时启动Tor</translation>
+        <translation type="obsolete">设为运行Vidalia时启动Tor</translation>
     </message>
     <message>
         <source>Start Tor when Vidalia starts</source>
-        <translation>运行Vidalia时启动Tor</translation>
+        <translation type="obsolete">运行Vidalia时启动Tor</translation>
     </message>
     <message>
         <source>Check to run as a Tor network server</source>
-        <translation>若作为Tor网络中的服务器请打勾</translation>
+        <translation type="obsolete">若作为Tor网络中的服务器请打勾</translation>
     </message>
     <message>
         <source>Relay traffic for the Tor network</source>
-        <translation>为Tor网络中继传输</translation>
+        <translation type="obsolete">为Tor网络中继传输</translation>
     </message>
     <message>
         <source>Server Configuration</source>
-        <translation>服务器配置</translation>
+        <translation type="obsolete">服务器配置</translation>
     </message>
     <message>
         <source>Attempts to determine the correct address for your server</source>
-        <translation>尝试确定您的服务器的地址</translation>
+        <translation type="obsolete">尝试确定您的服务器的地址</translation>
     </message>
     <message>
         <source>Get Address</source>
-        <translation>获取地址</translation>
+        <translation type="obsolete">获取地址</translation>
     </message>
     <message>
         <source>Domain name or IP address of your server</source>
-        <translation>您的域名或者IP地址</translation>
+        <translation type="obsolete">您的域名或者IP地址</translation>
     </message>
     <message>
         <source>If selected, clients will not exit the Tor network through your server</source>
-        <translation>选中后，客户端不会从您的服务器退出</translation>
+        <translation type="obsolete">选中后，客户端不会从您的服务器退出</translation>
     </message>
     <message>
         <source>Only relay traffic between other Tor servers (middle-man)</source>
-        <translation>只进行其他Tor服务器之间的中继传输(中间人的角色)</translation>
+        <translation type="obsolete">只进行其他Tor服务器之间的中继传输(中间人的角色)</translation>
     </message>
     <message>
         <source>Enable to mirror the server directory</source>
-        <translation>启用服务器目录的镜像</translation>
+        <translation type="obsolete">启用服务器目录的镜像</translation>
     </message>
     <message>
         <source>Mirror the Server Directory </source>
-        <translation>镜像服务器的目录</translation>
+        <translation type="obsolete">镜像服务器的目录</translation>
     </message>
     <message>
         <source>Directory Port Number</source>
-        <translation>目录的端口号</translation>
+        <translation type="obsolete">目录的端口号</translation>
     </message>
     <message>
         <source>Port on which users and other servers can communicate with your server</source>
-        <translation>用户与其他服务器与您服务器通信的端口</translation>
+        <translation type="obsolete">用户与其他服务器与您服务器通信的端口</translation>
     </message>
     <message>
         <source>Email address at which you may be reached if there is a problem with your server</source>
-        <translation>万一您服务器出现问题，可提供的Email联系方式</translation>
+        <translation type="obsolete">万一您服务器出现问题，可提供的Email联系方式</translation>
     </message>
     <message>
         <source>Name of your server</source>
-        <translation>您的服务器名</translation>
+        <translation type="obsolete">您的服务器名</translation>
     </message>
     <message>
         <source>Exit Policies</source>
-        <translation>退出策略</translation>
+        <translation type="obsolete">退出策略</translation>
     </message>
     <message>
         <source>Action:</source>
-        <translation>动作：</translation>
+        <translation type="obsolete">动作：</translation>
     </message>
     <message>
         <source>Action for new exit policy</source>
-        <translation>新退出策略的动作</translation>
+        <translation type="obsolete">新退出策略的动作</translation>
     </message>
     <message>
         <source>Accept</source>
-        <translation>接受</translation>
+        <translation type="obsolete">接受</translation>
     </message>
     <message>
         <source>Reject</source>
-        <translation>拒绝</translation>
+        <translation type="obsolete">拒绝</translation>
     </message>
     <message>
         <source>From:</source>
@@ -249,7 +334,7 @@
     </message>
     <message>
         <source>Action</source>
-        <translation>动作</translation>
+        <translation type="obsolete">动作</translation>
     </message>
     <message>
         <source>From</source>
@@ -261,7 +346,7 @@
     </message>
     <message>
         <source>Add the new exit policy</source>
-        <translation>添加新的退出策略</translation>
+        <translation type="obsolete">添加新的退出策略</translation>
     </message>
     <message>
         <source>Add</source>
@@ -269,7 +354,7 @@
     </message>
     <message>
         <source>Increase the priority of the selected exit policy</source>
-        <translation>增加被选退出策略的优先级</translation>
+        <translation type="obsolete">增加被选退出策略的优先级</translation>
     </message>
     <message>
         <source>Move Up</source>
@@ -277,7 +362,7 @@
     </message>
     <message>
         <source>Decrease the priority of the selected exit policy</source>
-        <translation>降低被选退出策略的优先级</translation>
+        <translation type="obsolete">降低被选退出策略的优先级</translation>
     </message>
     <message>
         <source>Move Down</source>
@@ -285,7 +370,7 @@
     </message>
     <message>
         <source>Remove the selected exit policy</source>
-        <translation>删除被选的退出策略</translation>
+        <translation type="obsolete">删除被选的退出策略</translation>
     </message>
     <message>
         <source>Remove</source>
@@ -293,51 +378,51 @@
     </message>
     <message>
         <source>Control Port</source>
-        <translation>控制端口</translation>
+        <translation type="obsolete">控制端口</translation>
     </message>
     <message>
         <source>Port that Vidalia uses to communicate with Tor. </source>
-        <translation>Vidalia用于跟Tor通讯的端口</translation>
+        <translation type="obsolete">Vidalia用于跟Tor通讯的端口</translation>
     </message>
     <message>
         <source>9051</source>
-        <translation>9051</translation>
+        <translation type="obsolete">9051</translation>
     </message>
     <message>
         <source>Alternate Tor Configuration File</source>
-        <translation>改变Tor的配置文件</translation>
+        <translation type="obsolete">改变Tor的配置文件</translation>
     </message>
     <message>
         <source>Start Tor with the specified configuration file (torrc)</source>
-        <translation>指定Tor启动时的配置文件(torrc)</translation>
+        <translation type="obsolete">指定Tor启动时的配置文件(torrc)</translation>
     </message>
     <message>
         <source>Select path to Tor configuration file</source>
-        <translation>选择Tor配置文件的路径</translation>
+        <translation type="obsolete">选择Tor配置文件的路径</translation>
     </message>
     <message>
         <source>Permissions</source>
-        <translation>权限</translation>
+        <translation type="obsolete">权限</translation>
     </message>
     <message>
         <source>Vidalia will run with this User&apos;s permissions</source>
-        <translation>Vidalia将根据用户的权限运行</translation>
+        <translation type="obsolete">Vidalia将根据用户的权限运行</translation>
     </message>
     <message>
         <source>Vidalia will run with this Group&apos;s permissions</source>
-        <translation>Vidalia将根据用户的权限运行</translation>
+        <translation type="obsolete">Vidalia将根据用户的权限运行</translation>
     </message>
     <message>
         <source>Saves current settings</source>
-        <translation>保存当前设置</translation>
+        <translation type="obsolete">保存当前设置</translation>
     </message>
     <message>
         <source>Save Settings</source>
-        <translation>保存设置</translation>
+        <translation type="obsolete">保存设置</translation>
     </message>
     <message>
         <source>Cancels any changes made to settings</source>
-        <translation>取消对设置的修改</translation>
+        <translation type="obsolete">取消对设置的修改</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -346,20 +431,20 @@
     <message>
         <source>Vidalia was only able to find a private IP address for your server.
 Would you like to access an external service to determine your public IP address?</source>
-        <translation>Vidalia只能为您的服务器找到一个私有IP地址，
+        <translation type="obsolete">Vidalia只能为您的服务器找到一个私有IP地址，
 您想通过外部服务以确定您的公共IP地址吗？</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>出错</translation>
+        <translation type="obsolete">出错</translation>
     </message>
     <message>
         <source>Viadlia was uanble to determine your public IP address.</source>
-        <translation>Viadlia无法确定您的公共IP地址</translation>
+        <translation type="obsolete">Viadlia无法确定您的公共IP地址</translation>
     </message>
     <message>
         <source>Error Saving Server Configuration</source>
-        <translation>保存服务器配置时出错</translation>
+        <translation type="obsolete">保存服务器配置时出错</translation>
     </message>
     <message>
         <source>Vidalia encountered an error applying your server configuration.</source>
@@ -367,112 +452,58 @@ Would you like to access an external service to determine your public IP address
     </message>
     <message>
         <source>Select Path to Tor</source>
-        <translation>选择Tor的路径</translation>
+        <translation type="obsolete">选择Tor的路径</translation>
     </message>
     <message>
         <source>Select Tor Configuration File</source>
-        <translation>选择Tor的配置文件</translation>
+        <translation type="obsolete">选择Tor的配置文件</translation>
     </message>
     <message>
         <source>Address:</source>
-        <translation>地址：</translation>
+        <translation type="obsolete">地址：</translation>
     </message>
     <message>
         <source>Nickname and Server Port are required</source>
-        <translation>昵称和服务器端口是必须的</translation>
+        <translation type="obsolete">昵称和服务器端口是必须的</translation>
     </message>
     <message>
         <source>Directory Port:</source>
-        <translation>目录端口：</translation>
+        <translation type="obsolete">目录端口：</translation>
     </message>
     <message>
         <source>Server Port:</source>
-        <translation>服务器端口：</translation>
+        <translation type="obsolete">服务器端口：</translation>
     </message>
     <message>
         <source>Contact Info:</source>
-        <translation>联系信息：</translation>
+        <translation type="obsolete">联系信息：</translation>
     </message>
     <message>
         <source>Nickname:</source>
-        <translation>昵称：</translation>
+        <translation type="obsolete">昵称：</translation>
     </message>
     <message>
         <source>Run as User:</source>
-        <translation>运行时作为用户：</translation>
+        <translation type="obsolete">运行时作为用户：</translation>
     </message>
     <message>
         <source>Run as Group:</source>
-        <translation>运行时作为组：</translation>
+        <translation type="obsolete">运行时作为组：</translation>
     </message>
     <message>
         <source>You must specify at least a server nickname and port.</source>
-        <translation>你必须至少指定一个服务器昵称和端口</translation>
+        <translation type="obsolete">你必须至少指定一个服务器昵称和端口</translation>
     </message>
     <message>
-        <source>IP Address:</source>
+        <source>Appearance</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>IP address for new exit policy</source>
-        <translation type="unfinished"></translation>
+        <source>Save</source>
+        <translation type="unfinished">保存</translation>
     </message>
     <message>
-        <source>/</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Mask:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>IP address mask for new exit policy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ports:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Starting port number for new exit policy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>-</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Ending port number for new exit policy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>If enabled, appends &apos;reject *.*&apos; to the end of the policy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Override default exit policy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Address</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Port</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show help topic on exit policies</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Vidalia encountered an error applying your server configuration.
-
-</source>
+        <source>Error Saving Configuration</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -502,6 +533,49 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <source>Invalid control reply. [%1]</source>
         <translation>不规范的控制回复，[%1]</translation>
+    </message>
+</context>
+<context>
+    <name>GeneralPage</name>
+    <message>
+        <source>Tor Directory</source>
+        <translation type="unfinished">Tor目录</translation>
+    </message>
+    <message>
+        <source>Path to Tor&apos;s executable</source>
+        <translation type="unfinished">Tor可执行程序的路径</translation>
+    </message>
+    <message>
+        <source>Select path to Tor executable</source>
+        <translation type="unfinished">选择Tor可执行程序的路径</translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation type="unfinished">浏览</translation>
+    </message>
+    <message>
+        <source>Startup Options</source>
+        <translation type="unfinished">启动可选项</translation>
+    </message>
+    <message>
+        <source>Select to start Vidalia on system boot</source>
+        <translation type="unfinished">选择系统启动时Vidalia就运行</translation>
+    </message>
+    <message>
+        <source>Run Vidalia on system startup</source>
+        <translation type="unfinished">系统启动时Vidalia就运行</translation>
+    </message>
+    <message>
+        <source>Set to start Tor when you launch Vidalia</source>
+        <translation type="unfinished">设为运行Vidalia时启动Tor</translation>
+    </message>
+    <message>
+        <source>Start Tor when Vidalia starts</source>
+        <translation type="unfinished">运行Vidalia时启动Tor</translation>
+    </message>
+    <message>
+        <source>Select Path to Tor</source>
+        <translation type="unfinished">选择Tor的路径</translation>
     </message>
 </context>
 <context>
@@ -851,11 +925,11 @@ Error: </source>
     </message>
     <message>
         <source>Toggles display of Message Log settings</source>
-        <translation>消息日志设定的显示切换</translation>
+        <translation type="obsolete">消息日志设定的显示切换</translation>
     </message>
     <message>
         <source>Show Settings</source>
-        <translation>显示设置</translation>
+        <translation type="obsolete">显示设置</translation>
     </message>
     <message>
         <source>Log File</source>
@@ -1127,7 +1201,220 @@ Error: </source>
     </message>
     <message>
         <source>Hide Settings</source>
-        <translation>隐藏设置</translation>
+        <translation type="obsolete">隐藏设置</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Adjust Message Log Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+T</source>
+        <translation type="unfinished">Ctrl+T</translation>
+    </message>
+</context>
+<context>
+    <name>ServerPage</name>
+    <message>
+        <source>Check to run as a Tor network server</source>
+        <translation type="unfinished">若作为Tor网络中的服务器请打勾</translation>
+    </message>
+    <message>
+        <source>Relay traffic for the Tor network</source>
+        <translation type="unfinished">为Tor网络中继传输</translation>
+    </message>
+    <message>
+        <source>Server Configuration</source>
+        <translation type="unfinished">服务器配置</translation>
+    </message>
+    <message>
+        <source>Directory Port:</source>
+        <translation type="unfinished">目录端口：</translation>
+    </message>
+    <message>
+        <source>Directory Port Number</source>
+        <translation type="unfinished">目录的端口号</translation>
+    </message>
+    <message>
+        <source>Nickname:</source>
+        <translation type="unfinished">昵称：</translation>
+    </message>
+    <message>
+        <source>Name of your server</source>
+        <translation type="unfinished">您的服务器名</translation>
+    </message>
+    <message>
+        <source>Email address at which you may be reached if there is a problem with your server</source>
+        <translation type="unfinished">万一您服务器出现问题，可提供的Email联系方式</translation>
+    </message>
+    <message>
+        <source>Contact Info:</source>
+        <translation type="unfinished">联系信息：</translation>
+    </message>
+    <message>
+        <source>Server Port:</source>
+        <translation type="unfinished">服务器端口：</translation>
+    </message>
+    <message>
+        <source>Port on which users and other servers can communicate with your server</source>
+        <translation type="unfinished">用户与其他服务器与您服务器通信的端口</translation>
+    </message>
+    <message>
+        <source>Address:</source>
+        <translation type="unfinished">地址：</translation>
+    </message>
+    <message>
+        <source>Domain name or IP address of your server</source>
+        <translation type="unfinished">您的域名或者IP地址</translation>
+    </message>
+    <message>
+        <source>Enable to mirror the server directory</source>
+        <translation type="unfinished">启用服务器目录的镜像</translation>
+    </message>
+    <message>
+        <source>Mirror the Server Directory </source>
+        <translation type="unfinished">镜像服务器的目录</translation>
+    </message>
+    <message>
+        <source>If selected, clients will not exit the Tor network through your server</source>
+        <translation type="unfinished">选中后，客户端不会从您的服务器退出</translation>
+    </message>
+    <message>
+        <source>Only relay traffic between other Tor servers (middle-man)</source>
+        <translation type="unfinished">只进行其他Tor服务器之间的中继传输(中间人的角色)</translation>
+    </message>
+    <message>
+        <source>Attempts to determine the correct address for your server</source>
+        <translation type="unfinished">尝试确定您的服务器的地址</translation>
+    </message>
+    <message>
+        <source>Get Address</source>
+        <translation type="unfinished">获取地址</translation>
+    </message>
+    <message>
+        <source>Nickname and Server Port are required</source>
+        <translation type="unfinished">昵称和服务器端口是必须的</translation>
+    </message>
+    <message>
+        <source>Exit Policies</source>
+        <translation type="unfinished">退出策略</translation>
+    </message>
+    <message>
+        <source>IP Address:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IP address for new exit policy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>/</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Mask:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>IP address mask for new exit policy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ports:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Starting port number for new exit policy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ending port number for new exit policy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Action:</source>
+        <translation type="unfinished">动作：</translation>
+    </message>
+    <message>
+        <source>Action for new exit policy</source>
+        <translation type="unfinished">新退出策略的动作</translation>
+    </message>
+    <message>
+        <source>Accept</source>
+        <translation type="unfinished">接受</translation>
+    </message>
+    <message>
+        <source>Reject</source>
+        <translation type="unfinished">拒绝</translation>
+    </message>
+    <message>
+        <source>If enabled, appends &apos;reject *.*&apos; to the end of the policy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Override default exit policy</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Action</source>
+        <translation type="unfinished">动作</translation>
+    </message>
+    <message>
+        <source>Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Add the new exit policy</source>
+        <translation type="unfinished">添加新的退出策略</translation>
+    </message>
+    <message>
+        <source>Increase the priority of the selected exit policy</source>
+        <translation type="unfinished">增加被选退出策略的优先级</translation>
+    </message>
+    <message>
+        <source>Decrease the priority of the selected exit policy</source>
+        <translation type="unfinished">降低被选退出策略的优先级</translation>
+    </message>
+    <message>
+        <source>Remove the selected exit policy</source>
+        <translation type="unfinished">删除被选的退出策略</translation>
+    </message>
+    <message>
+        <source>Show help topic on exit policies</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You must specify at least a server nickname and port.</source>
+        <translation type="unfinished">你必须至少指定一个服务器昵称和端口</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">出错</translation>
+    </message>
+    <message>
+        <source>Viadlia was uanble to determine your public IP address.</source>
+        <translation type="unfinished">Viadlia无法确定您的公共IP地址</translation>
+    </message>
+    <message>
+        <source>Vidalia was only able to find a private IP address for your server.
+Would you like to access an external service to determine your public IP address?</source>
+        <translation type="unfinished">Vidalia只能为您的服务器找到一个私有IP地址，
+您想通过外部服务以确定您的公共IP地址吗？</translation>
     </message>
 </context>
 <context>
