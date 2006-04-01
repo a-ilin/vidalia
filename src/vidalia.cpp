@@ -68,14 +68,15 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
   
   /** Set the GUI style appropriately. */
   setStyle(_args.value(ARG_GUISTYLE));
+ 
+  /** Create a help browser object, used to dispaly various help topics. */
+  _help = new HelpBrowser();
 }
 
 /** Destructor */
 Vidalia::~Vidalia()
 {
-  if (_help) {
-    delete _help;
-  }
+  delete _help;
 }
 
 /** Display usage information regarding command-line arguments. */
@@ -195,12 +196,6 @@ Vidalia::setStyle(QString styleKey)
 void
 Vidalia::help(QString topic)
 {
-  /* We can't construct the help browser object in our constructor, since it
-   * depends on QApplication being all constructed first. So, we'll just
-   * construct the help browser here if we need it. */
-  if (!_help) {
-    _help = new HelpBrowser();
-  }
   _help->show(topic);
 }
 
