@@ -32,6 +32,8 @@
 #include "ipvalidator.h"
 #include "portvalidator.h"
 
+/* Default Exit Policy */
+#define DEFAULT_POLICY    Policy(AcceptAll)
 /* Columns of the Exit Policy list */
 #define COL_ACTION    0
 #define COL_ADDRESS   1
@@ -94,6 +96,18 @@ ServerPage::save(QString &errmsg)
   _settings->setDirPort(ui.lineDirPort->text().toUInt());
   _settings->setAddress(ui.lineServerAddress->text());
   _settings->setContactInfo(ui.lineServerContact->text());
+  _settings->setOverridePolicy(ui.chkExitOverride->isChecked());
+
+  /* Remove/Add necessary default exit rule */
+  setDefaultRule();
+  
+  /* Save exit polices */
+  ExitPolicy exitPolicy;
+  for (int i = 0; i < ui.lstExitPolicies->topLevelItemCount(); ++i) {
+    savePolicy(ui.lstExitPolicies->topLevelItem(i), exitPolicy);
+  }
+  _settings->setExitPolicy(exitPolicy);
+  
   bool success = (_torControl->isConnected() ? _settings->apply(&errmsg) : true);
   if (!success) {
     _settings->revert();
@@ -108,13 +122,77 @@ ServerPage::load()
   ui.chkEnableServer->setChecked(_settings->isServerEnabled());
   ui.chkMirrorDirectory->setChecked(_settings->isDirectoryMirror());
   ui.chkMiddleMan->setChecked(_settings->isMiddleman());
+  
   ui.lineServerNickname->setText(_settings->getNickname());
   ui.lineServerPort->setText(QString::number(_settings->getORPort()));
   ui.lineDirPort->setText(QString::number(_settings->getDirPort()));
   ui.lineServerAddress->setText(_settings->getAddress());
   ui.lineServerContact->setText(_settings->getContactInfo());
-
+  ui.chkExitOverride->setChecked(_settings->getOverridePolicy());
+  
+  /* Load the exit policies into the list */
+  ui.lstExitPolicies->clear();
+  
+  foreach (Policy policy, _settings->getExitPolicy().policyList()) {
+    addPolicyItem(policy);
+  }
+  
   ui.frmServer->setVisible(ui.chkEnableServer->isChecked());
+}
+
+/** Adds the exit policy contained in item to the exitPolicy */
+void
+ServerPage::savePolicy(QTreeWidgetItem *item, ExitPolicy &exitPolicy)
+{
+  /* Build policy string */
+  QString policyString = item->text(COL_ACTION) + " ";
+  policyString += item->text(COL_ADDRESS) + ":" + item->text(COL_PORT);
+  
+  /* Add policy to ServerSettings */
+  exitPolicy.addPolicy(Policy(policyString));
+}
+
+/** Moves or appends the correct default exit rule to the policy list */
+void
+ServerPage::setDefaultRule()
+{
+  bool override = ui.chkExitOverride->isChecked();
+  Policy::SpecialPolicy action;
+  QString actionString;
+  QList<QTreeWidgetItem *> list;
+  bool found = false;
+  
+  if (override) {
+    action = Policy::RejectAll;
+    actionString = "reject";
+  } else {
+    action = Policy::AcceptAll;
+    actionString = "accept";
+  }
+  
+  /* Search for the policy, if exists: move to bottom else: append it */
+  /* Remove any of the opposite default exit policy */
+  list = ui.lstExitPolicies->findItems("0.0.0.0", Qt::MatchExactly, COL_ADDRESS);
+  
+  foreach (QTreeWidgetItem *item, list) {
+    if (item->text(COL_PORT) == "*") {
+      int index = ui.lstExitPolicies->indexOfTopLevelItem(item);
+      
+      /* Found target so move to bottom of list */
+      if (item->text(COL_ACTION) == actionString) {
+        ui.lstExitPolicies->addTopLevelItem(ui.lstExitPolicies->
+                                                      takeTopLevelItem(index));
+        found = true;
+        
+      /* Found the opposite so remove */
+      } else {
+        ui.lstExitPolicies->takeTopLevelItem(index);
+      }
+    }
+  }
+
+  /* Search failed so just append the necessary policy */
+  if (!found) addPolicyItem(Policy(action));
 }
 
 /** Adds a new exit policy to the user's configuration */
@@ -126,39 +204,64 @@ ServerPage::addPolicy()
     return;
   }
   
-  QTreeWidgetItem *newPolicy = new QTreeWidgetItem();
-  
-  /* Add new policy's action */
-  newPolicy->setText(COL_ACTION, ui.cmboExitAction->currentText());
-  newPolicy->setTextAlignment(COL_ACTION, Qt::AlignCenter);
-
-  /* Add new policy's ip address */
-  QString address = ui.lineExitAddress->text();
-  if (!ui.lineExitMask->text().isEmpty()) {
-    address += ":" + ui.lineExitMask->text();
-  }  
-  newPolicy->setText(COL_ADDRESS, address);
-  newPolicy->setTextAlignment(COL_ADDRESS, Qt::AlignCenter);
-  
-  /* Add new policy's port or port range */
-  QString portRange = ui.lineExitFromPort->text();
-  if (!portRange.isEmpty()) {
-    QString toPort = ui.lineExitToPort->text();
-    if (!toPort.isEmpty() && portRange != "*") {
-      portRange += "-" + ui.lineExitToPort->text();
-    }
-  }
-  newPolicy->setText(COL_PORT, portRange);
-  newPolicy->setTextAlignment(COL_PORT, Qt::AlignCenter);
-  
-  /* Add new policy to list */
-  ui.lstExitPolicies->addTopLevelItem(newPolicy);
+  /* Add the policy to the list */
+  addPolicyItem(ui.cmboExitAction->currentText(), ui.lineExitAddress->text(),
+                ui.lineExitMask->text(), ui.lineExitFromPort->text(),
+                ui.lineExitToPort->text());
 
   /* Clear input text boxes */
   ui.lineExitAddress->clear();
   ui.lineExitMask->clear();
   ui.lineExitFromPort->clear();
   ui.lineExitToPort->clear();
+}
+
+/* Adds a new QTreeWidget item to the exit policy list */
+void
+ServerPage::addPolicyItem(Policy policy)
+{
+  /* Convert to strings */
+  QString action = (policy.action() == Policy::Accept ? "accept" : "reject");
+  QHostAddress address = policy.address();
+  QString addr = (address.isNull() ? "*" : address.toString());
+  QString mask = (policy.mask() ? QString::number(policy.mask()) : "");
+  int port = policy.fromPort();
+  QString fromPort = (port ? QString::number(port) : "");
+  port = policy.toPort();
+  QString toPort = (port ? QString::number(port) : "");
+
+  /* Add to list */
+  addPolicyItem(action, addr, mask, fromPort, toPort);
+}
+
+/* Adds a new QTreeWidget item to the exit policy list */
+void
+ServerPage::addPolicyItem(QString action, QString address, QString mask,
+                          QString fromPort, QString toPort)
+{
+  QTreeWidgetItem *newPolicy = new QTreeWidgetItem();
+  
+  newPolicy->setText(COL_ACTION, action);
+  newPolicy->setTextAlignment(COL_ACTION, Qt::AlignCenter);
+  
+  if (!mask.isEmpty()) {
+    address += "/" + mask;
+  }
+  newPolicy->setText(COL_ADDRESS, address);
+  newPolicy->setTextAlignment(COL_ADDRESS, Qt::AlignCenter);
+
+  if (!fromPort.isEmpty()) {
+    if (!toPort.isEmpty() && fromPort != "*") {
+      fromPort += "-" + toPort;
+    }
+  } else {
+    fromPort = "*";
+  }
+
+  newPolicy->setText(COL_PORT, fromPort);
+  newPolicy->setTextAlignment(COL_PORT, Qt::AlignCenter);
+
+  ui.lstExitPolicies->addTopLevelItem(newPolicy);
 }
 
 /** Removes selected exit policy from the user's configuration */
@@ -201,13 +304,11 @@ ServerPage::lowerPriority()
 int
 ServerPage::selectedIndex()
 {
+  if (ui.lstExitPolicies->selectedItems().isEmpty()) return -1;
+  
   /* This list only contains one element so take it */
   QTreeWidgetItem *selectedItem = ui.lstExitPolicies->selectedItems()[0];
-
-  if (selectedItem) {
-    return ui.lstExitPolicies->indexOfTopLevelItem(selectedItem);
-  }
-  return -1;
+  return ui.lstExitPolicies->indexOfTopLevelItem(selectedItem);
 }
 
 /** Shows exit policy related help information */

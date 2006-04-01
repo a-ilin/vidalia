@@ -1061,12 +1061,12 @@
              </property>
              <item>
               <property name="text" >
-               <string>Accept</string>
+               <string>accept</string>
               </property>
              </item>
              <item>
               <property name="text" >
-               <string>Reject</string>
+               <string>reject</string>
               </property>
              </item>
             </widget>
@@ -1087,7 +1087,10 @@
           </spacer>
          </item>
          <item row="2" column="0" colspan="3" >
-          <widget class="QCheckBox" name="checkBox" >
+          <widget class="QCheckBox" name="chkExitOverride" >
+           <property name="contextMenuPolicy" >
+            <enum>Qt::NoContextMenu</enum>
+           </property>
            <property name="toolTip" >
             <string>If enabled, appends 'reject *.*' to the end of the policy</string>
            </property>
