@@ -136,7 +136,7 @@ ConfigDialog::saveChanges()
   foreach (ConfigPage *page, ui.stackPages->pages()) {
     if (!page->save(errmsg)) {
       /* Display the offending page */
-      ui.stackPages->setCurrentWidget(page);
+      ui.stackPages->setCurrentPage(page);
       
       /* Show the user what went wrong */
       QMessageBox::warning(this, 

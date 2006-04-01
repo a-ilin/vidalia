@@ -24,6 +24,7 @@
  * \version $Id$
  */
 
+#include <QAction>
 #include "configpagestack.h"
 
 /** Default constructor. */
@@ -38,6 +39,16 @@ ConfigPageStack::add(ConfigPage *page, QAction *action)
 {
   _pages.insert(action, page);
   insertWidget(count(), page);
+}
+
+/** Sets the current config page and checks its action. */
+void
+ConfigPageStack::setCurrentPage(ConfigPage *page)
+{
+  foreach (QAction *action, _pages.keys(page)) {
+    action->setChecked(true);
+  }
+  setCurrentWidget(page);
 }
 
 /** Shows the config page associated with the activated action. */

@@ -43,6 +43,8 @@ public:
 
   /** Adds a configuration page to the stack. */
   void add(ConfigPage *page, QAction *action);
+  /** Sets the current config page and checks its action. */
+  void setCurrentPage(ConfigPage *page);
   
   /** Returns a list of all pages in the stack. */
   QList<ConfigPage*> pages() { return _pages.values(); }
