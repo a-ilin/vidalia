@@ -78,8 +78,6 @@ private slots:
   void find();
   /** Called when the opactity slider changes value **/
   void setOpacity(int value);
-  /** Called when settings button is toggled **/
-  void showSettingsFrame(bool show);
   /** Called when user saves settings **/
   void saveChanges();
   /** Called when user cancels changed settings **/

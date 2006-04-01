@@ -355,48 +355,12 @@
      </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" >
-      <property name="margin" >
-       <number>0</number>
-      </property>
-      <property name="spacing" >
-       <number>6</number>
-      </property>
-      <item>
-       <widget class="QPushButton" name="btnToggleSettings" >
-        <property name="contextMenuPolicy" >
-         <enum>Qt::NoContextMenu</enum>
-        </property>
-        <property name="toolTip" >
-         <string>Toggles display of Message Log settings</string>
-        </property>
-        <property name="text" >
-         <string>Show Settings</string>
-        </property>
-        <property name="checkable" >
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer>
-        <property name="orientation" >
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" >
-         <size>
-          <width>709</width>
-          <height>29</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-     </layout>
-    </item>
-    <item>
      <widget class="QFrame" name="frmSettings" >
       <property name="enabled" >
        <bool>true</bool>
+      </property>
+      <property name="visible" >
+       <bool>false</bool>
       </property>
       <property name="sizePolicy" >
        <sizepolicy>
@@ -884,6 +848,7 @@
    <addaction name="actionSelect_All" />
    <addaction name="actionClear" />
    <addaction name="actionFind" />
+   <addaction name="actionSettings" />
    <addaction name="separator" />
    <addaction name="actionClose" />
   </widget>
@@ -1059,6 +1024,34 @@
     </font>
    </property>
   </action>
+  <action name="actionSettings" >
+   <property name="icon" >
+    <iconset resource="..\res\vidalia.qrc">:/images/22x22/preferences-desktop.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Settings</string>
+   </property>
+   <property name="statusTip" >
+    <string>Adjust Message Log Settings</string>
+   </property>
+   <property name="checkable" >
+    <bool>true</bool>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <underline>false</underline>
+     <strikeout>false</strikeout>
+    </font>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+T</string>
+   </property>
+  </action>
   <action name="actionClose" >
    <property name="icon" >
     <iconset resource="..\res\vidalia.qrc" >:/images/22x22/emblem-unreadable.png</iconset>
@@ -1156,6 +1149,22 @@
    <signal>triggered()</signal>
    <receiver>lstMessages</receiver>
    <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>407</x>
+     <y>393</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSettings</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>frmSettings</receiver>
+   <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel" >
      <x>-1</x>

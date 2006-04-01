@@ -85,9 +85,6 @@ MessageLog::MessageLog(TorControl *torControl, QWidget *parent, Qt::WFlags flags
   ui.lstMessages->header()->resizeSection(COL_TIME, COL_TIME_WIDTH);
   ui.lstMessages->header()->resizeSection(COL_TYPE, COL_TYPE_WIDTH);
   
-  /* Hide Message Log Settings frame */
-  showSettingsFrame(false);
-
   /* Turn off opacity group on unsupported platforms */
 #if defined(Q_WS_WIN)
   if(!(QSysInfo::WV_2000 <= QSysInfo::WindowsVersion <= QSysInfo::WV_2003)) {
@@ -136,9 +133,6 @@ MessageLog::createActions()
 
   connect(ui.sldrOpacity, SIGNAL(valueChanged(int)),
       this, SLOT(setOpacity(int)));
-
-  connect(ui.btnToggleSettings, SIGNAL(toggled(bool)),
-      this, SLOT(showSettingsFrame(bool)));
 
   connect(ui.btnBrowse, SIGNAL(clicked()),
       this, SLOT(browse()));
@@ -235,7 +229,7 @@ MessageLog::saveChanges()
   _settings->enableLogFile(_enableLogging);
   
   /* Hide the settings frame and reset toggle button*/
-  showSettingsFrame(false);
+  ui.actionSettings->toggle(); 
   
   /* Disable the cursor to prevent problems while refiltering */
   QApplication::setOverrideCursor(Qt::WaitCursor);
@@ -281,7 +275,7 @@ void
 MessageLog::cancelChanges()
 {
   /* Hide the settings frame and reset toggle button */
-  showSettingsFrame(false);
+  ui.actionSettings->toggle();
 
   /* Reload the settings */
   loadSettings();
@@ -532,23 +526,6 @@ MessageLog::deselectAllItems()
   QTreeWidget *tree = ui.lstMessages;
   foreach(QTreeWidgetItem *item, tree->selectedItems()) {
     tree->setItemSelected(item, false);
-  }
-}
-
-/** Toggles the Settings pane on and off and changes toggle button text.
- * \param show Whether to show or hide the Settings frame.
- */
-void
-MessageLog::showSettingsFrame(bool show)
-{
-  if (show) {
-    ui.frmSettings->setVisible(true);
-    ui.btnToggleSettings->setChecked(true);
-    ui.btnToggleSettings->setText(tr("Hide Settings"));
-  } else {
-    ui.frmSettings->setVisible(false);
-    ui.btnToggleSettings->setChecked(false);
-    ui.btnToggleSettings->setText(tr("Show Settings"));
   }
 }
 
