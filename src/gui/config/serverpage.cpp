@@ -153,10 +153,12 @@ ServerPage::addPolicy()
 {
   /* They must enter a valid address */
   QString address = ui.lineExitAddress->text();
-  int i;
-  if (ui.lineExitAddress->validator()->
-      validate(address, i) != QValidator::Acceptable) {
-    return;
+  if (!address.isEmpty()) {
+    int i;
+    if (ui.lineExitAddress->validator()->
+        validate(address, i) != QValidator::Acceptable) {
+      return;
+    }
   }
   
   /* Add the policy to the list */
