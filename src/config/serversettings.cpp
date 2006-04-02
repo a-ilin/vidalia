@@ -392,7 +392,17 @@ void
 ServerSettings::setOverridePolicy(bool override)
 {
   setValue(SETTING_SERVER_OVERRIDE, override);
-}
+
+  /* If overriding default, prepend RejectAll if necessary */
+  if (override) {
+    ExitPolicy exitPolicy = getExitPolicy();
+    Policy rejectAll(Policy::RejectAll);
+    
+    if (!exitPolicy.contains(rejectAll)) {
+      exitPolicy.addPolicy(rejectAll);
+    }
+  }
+}      
 
 /** Returns whether we override the default exit policy */
 bool

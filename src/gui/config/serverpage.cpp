@@ -97,9 +97,6 @@ ServerPage::save(QString &errmsg)
   _settings->setAddress(ui.lineServerAddress->text());
   _settings->setContactInfo(ui.lineServerContact->text());
   _settings->setOverridePolicy(ui.chkExitOverride->isChecked());
-
-  /* Remove/Add necessary default exit rule */
-  setDefaultRule();
   
   /* Save exit polices */
   ExitPolicy exitPolicy;
@@ -150,49 +147,6 @@ ServerPage::savePolicy(QTreeWidgetItem *item, ExitPolicy &exitPolicy)
   
   /* Add policy to ServerSettings */
   exitPolicy.addPolicy(Policy(policyString));
-}
-
-/** Moves or appends the correct default exit rule to the policy list */
-void
-ServerPage::setDefaultRule()
-{
-  bool override = ui.chkExitOverride->isChecked();
-  Policy::SpecialPolicy action;
-  QString actionString;
-  QList<QTreeWidgetItem *> list;
-  bool found = false;
-  
-  if (override) {
-    action = Policy::RejectAll;
-    actionString = "reject";
-  } else {
-    action = Policy::AcceptAll;
-    actionString = "accept";
-  }
-  
-  /* Search for the policy, if exists: move to bottom else: append it */
-  /* Remove any of the opposite default exit policy */
-  list = ui.lstExitPolicies->findItems("0.0.0.0", Qt::MatchExactly, COL_ADDRESS);
-  
-  foreach (QTreeWidgetItem *item, list) {
-    if (item->text(COL_PORT) == "*") {
-      int index = ui.lstExitPolicies->indexOfTopLevelItem(item);
-      
-      /* Found target so move to bottom of list */
-      if (item->text(COL_ACTION) == actionString) {
-        ui.lstExitPolicies->addTopLevelItem(ui.lstExitPolicies->
-                                                      takeTopLevelItem(index));
-        found = true;
-        
-      /* Found the opposite so remove */
-      } else {
-        ui.lstExitPolicies->takeTopLevelItem(index);
-      }
-    }
-  }
-
-  /* Search failed so just append the necessary policy */
-  if (!found) addPolicyItem(Policy(action));
 }
 
 /** Adds a new exit policy to the user's configuration */

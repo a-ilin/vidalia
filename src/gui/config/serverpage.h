@@ -75,8 +75,6 @@ private:
   void addPolicyItem(Policy policy);
   /** Saves the policy specified in item to the exitPolicy */
   void savePolicy(QTreeWidgetItem *item, ExitPolicy &exitPolicy);
-  /** Moves or appends the necessary default rule as specified by the user */
-  void setDefaultRule();
 
   /** A TorControl object used to talk to Tor */
   TorControl* _torControl;
