@@ -154,9 +154,8 @@ ServerPage::addPolicy()
   /* They must enter a valid address */
   QString address = ui.lineExitAddress->text();
   if (!address.isEmpty()) {
-    int i;
     if (ui.lineExitAddress->validator()->
-        validate(address, i) != QValidator::Acceptable) {
+        validate(address) != QValidator::Acceptable) {
       return;
     }
   }

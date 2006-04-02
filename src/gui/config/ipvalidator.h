@@ -36,7 +36,7 @@ public:
   /** Constructor. */
   IPValidator(QObject *parent);
   /** Validates the given input is either a valid IP or a "*". */
-  QValidator::State validate(QString &input, int &pos) const;
+  QValidator::State validate(QString &input, int &pos = 0) const;
 };
 
 #endif
