@@ -46,9 +46,11 @@ ExitPolicy::ExitPolicy(SpecialExitPolicy exitPolicy)
  * adds them to this this policy. */
 ExitPolicy::ExitPolicy(QString exitPolicy)
 {
-  QStringList policyList = exitPolicy.split(",");
-  foreach(QString policy, policyList) {
-    addPolicy(Policy(policy));
+  if (!exitPolicy.isEmpty()) {
+    QStringList policyList = exitPolicy.split(",");
+    foreach(QString policy, policyList) {
+      addPolicy(Policy(policy));
+    }
   }
 }
 

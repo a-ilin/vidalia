@@ -62,7 +62,7 @@
 #define DEFAULT_SERVER_DIRPORT    9030
 #define DEFAULT_SERVER_CONTACT    "<your@email.com>"
 #define DEFAULT_SERVER_ADDRESS    net_local_address().toString() 
-#define DEFAULT_SERVER_EXITPOLICY (ExitPolicy().toString()) 
+#define DEFAULT_SERVER_EXITPOLICY "" 
 #define DEFAULT_SERVER_OVERRIDE   false
 
 /** Constructor.
