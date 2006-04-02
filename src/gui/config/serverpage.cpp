@@ -219,7 +219,7 @@ ServerPage::addPolicy()
   ui.lineExitToPort->clear();
 }
 
-/* Adds a new QTreeWidget item to the exit policy list */
+/** Adds a new QTreeWidget item to the exit policy list */
 void
 ServerPage::addPolicyItem(Policy policy)
 {
@@ -237,7 +237,7 @@ ServerPage::addPolicyItem(Policy policy)
   addPolicyItem(action, addr, mask, fromPort, toPort);
 }
 
-/* Adds a new QTreeWidget item to the exit policy list */
+/** Adds a new QTreeWidget item to the exit policy list */
 void
 ServerPage::addPolicyItem(QString action, QString address, QString mask,
                           QString fromPort, QString toPort)
