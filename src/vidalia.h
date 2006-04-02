@@ -33,6 +33,7 @@
 
 #include <gui/help/browser/helpbrowser.h>
 #include <config/vidaliasettings.h>
+#include <control/torcontrol.h>
 
 #define VIDALIA_VERSION   "0.0.2-svn"
 
@@ -58,7 +59,7 @@ public:
   static bool setLanguage(QString languageCode = QString()); 
   /** Sets the current GUI style. */
   static bool setStyle(QString styleKey = QString());
- 
+  /** Shows the specified help topic, or the default if empty. */
   static void help(QString topic = QString());
   
   /** Returns the current language. */
@@ -68,6 +69,9 @@ public:
   /** Returns Vidalia's application version. */
   static QString version() { return VIDALIA_VERSION; }
 
+  /** Returns Vidalia's main TorControl object. */
+  static TorControl* torControl() { return _torControl; }
+
 private:
   /** Parse the list of command-line arguments. */
   void parseArguments(QStringList args);
@@ -76,6 +80,8 @@ private:
   static QString _style;               /**< The current GUI style.           */
   static QString _language;            /**< The current language.            */
   static VidaliaSettings _settings;    /**< Vidalia's configurable settings. */
+  
+  static TorControl* _torControl;      /**< Vidalia's main TorControl object.*/
   static HelpBrowser* _help;           /**< Vidalia's configurable settings. */
 };
 

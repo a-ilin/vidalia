@@ -46,8 +46,6 @@ class MainWindow : public QMainWindow
 public:
   /** Default constructor */
   MainWindow();
-  /** Default destructor */
-  ~MainWindow();
 
 
 public slots:

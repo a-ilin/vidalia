@@ -28,7 +28,7 @@
 #include "aboutdialog.h"
 
 /** Default Constructor **/
-AboutDialog::AboutDialog(TorControl *torControl, QWidget *parent)
+AboutDialog::AboutDialog(QWidget *parent)
 : QDialog(parent)
 {
   ui.setupUi(this);
@@ -38,7 +38,7 @@ AboutDialog::AboutDialog(TorControl *torControl, QWidget *parent)
   _maxSize = maximumSize();
 
   /* Save the TorControl object to use later */
-  _torControl = torControl;
+  _torControl = Vidalia::torControl();
 
   /* Get Vidalia's version number */
   ui.lblVidaliaVersion->setText(Vidalia::version());

@@ -77,18 +77,18 @@ MainWindow::MainWindow()
   createMenuBar();
 
   /* Create a new TorControl object, used to communicate with and manipulate Tor */
-  _torControl = new TorControl();
+  _torControl = Vidalia::torControl(); 
   connect(_torControl, SIGNAL(started()), this, SLOT(started()));
   connect(_torControl, SIGNAL(stopped(int, QProcess::ExitStatus)),
                  this, SLOT(stopped(int, QProcess::ExitStatus)));
   connect(_torControl, SIGNAL(connected()), this, SLOT(connected()));
 
   /* Create a new MessageLog object so messages can be logged when not shown */
-  _messageLog = new MessageLog(_torControl, this);
+  _messageLog = new MessageLog(this);
   
   /* Create a new BandwidthGraph object so we can monitor bandwidth usage */
   Qt::WFlags bw_flags = (Qt::Tool | Qt::WindowStaysOnTopHint);
-  _bandwidthGraph = new BandwidthGraph(_torControl, this, bw_flags);
+  _bandwidthGraph = new BandwidthGraph(this, bw_flags);
  
   /* Put an icon in the system tray to indicate the status of Tor */
   _trayIcon = new TrayIcon(QPixmap(IMG_TOR_STOPPED),
@@ -99,12 +99,6 @@ MainWindow::MainWindow()
   if (settings.runTorAtStart()) {
     start();
   }
-}
-
-/** Default destructor */
-MainWindow::~MainWindow()
-{
-  delete _torControl;
 }
 
 /** Changes the application's window icon. On Mac, we update the
@@ -417,7 +411,7 @@ MainWindow::connected()
 void 
 MainWindow::showAbout()
 {
-  static AboutDialog* aboutDialog = new AboutDialog(_torControl, this);
+  static AboutDialog* aboutDialog = new AboutDialog(this);
   aboutDialog->show();
 }
 
@@ -442,7 +436,7 @@ MainWindow::showBandwidthGraph()
 void
 MainWindow::showConfig()
 {
-  static ConfigDialog* configDialog = new ConfigDialog(_torControl, this);
+  static ConfigDialog* configDialog = new ConfigDialog(this);
   configDialog->show();
 }
 

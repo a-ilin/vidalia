@@ -38,7 +38,7 @@ class AboutDialog : public QDialog
 
 public:
   /** Default constructor **/
-  AboutDialog(TorControl *torControl, QWidget *parent = 0);
+  AboutDialog(QWidget *parent = 0);
   
   /** Overriden QWidget.show() **/
   void show();

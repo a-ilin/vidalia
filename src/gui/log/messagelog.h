@@ -50,7 +50,7 @@ class MessageLog : public QMainWindow
 
 public:
   /** Default constructor **/
-  MessageLog(TorControl *torControl, QWidget *parent = 0, Qt::WFlags flags = 0);
+  MessageLog(QWidget *parent = 0, Qt::WFlags flags = 0);
   /** Default destructor **/
   ~MessageLog();
   

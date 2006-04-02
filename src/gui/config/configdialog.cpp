@@ -39,7 +39,7 @@
 #define IMAGE_CANCEL        ":/images/22x22/emblem-unreadable.png"
 
 /** Constructor */
-ConfigDialog::ConfigDialog(TorControl *torControl, QWidget* parent)
+ConfigDialog::ConfigDialog(QWidget* parent)
 : QMainWindow(parent)
 {
   /* Invoke the Qt Designer generated QObject setup routine */
@@ -50,7 +50,7 @@ ConfigDialog::ConfigDialog(TorControl *torControl, QWidget* parent)
   ui.stackPages->add(new GeneralPage(ui.stackPages),
                      createPageAction(QIcon(IMAGE_GENERAL), tr("General"), grp));
   
-  ui.stackPages->add(new ServerPage(torControl, ui.stackPages),
+  ui.stackPages->add(new ServerPage(ui.stackPages),
                      createPageAction(QIcon(IMAGE_SERVER), tr("Server"), grp));
   
   ui.stackPages->add(new AppearancePage(ui.stackPages),

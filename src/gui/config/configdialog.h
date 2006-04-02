@@ -30,8 +30,6 @@
 #include <QMainWindow>
 #include <QFileDialog>
 
-#include <control/torcontrol.h>
-
 #include "generalpage.h"
 #include "serverpage.h"
 #include "advancedpage.h"
@@ -47,7 +45,7 @@ class ConfigDialog : public QMainWindow
 
 public:
   /** Default Constructor */
-  ConfigDialog(TorControl *torControl, QWidget *parent = 0);
+  ConfigDialog(QWidget *parent = 0);
 
 public slots:
   /** Called when this dialog is to be displayed */

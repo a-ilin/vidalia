@@ -44,6 +44,7 @@ QString Vidalia::_style;               /**< The current GUI style.           */
 QString Vidalia::_language;            /**< The current language.            */
 VidaliaSettings Vidalia::_settings;    /**< Vidalia's configurable settings. */
 HelpBrowser*  Vidalia::_help = 0;      /**< Vidalia's help system.           */
+TorControl* Vidalia::_torControl = 0;  /**< Main TorControl object.          */
 
 
 /** Constructor. Parses the command-line arguments, resets Vidalia's
@@ -68,7 +69,9 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
   
   /** Set the GUI style appropriately. */
   setStyle(_args.value(ARG_GUISTYLE));
- 
+
+  /** Creates a TorControl object, used to talk to Tor. */
+  _torControl = new TorControl();
   /** Create a help browser object, used to dispaly various help topics. */
   _help = new HelpBrowser();
 }
@@ -77,6 +80,7 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
 Vidalia::~Vidalia()
 {
   delete _help;
+  delete _torControl;
 }
 
 /** Display usage information regarding command-line arguments. */

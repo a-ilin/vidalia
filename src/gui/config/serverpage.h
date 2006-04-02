@@ -42,7 +42,7 @@ class ServerPage : public ConfigPage
 
 public:
   /** Default Constructor */
-  ServerPage(TorControl *torControl, QWidget *parent = 0);
+  ServerPage(QWidget *parent = 0);
   /** Default Destructor */
   ~ServerPage();
   /** Saves the changes on this page */

@@ -43,14 +43,14 @@
 #define EXIT_HELP     "server.exitpolicy"
 
 /** Constructor */
-ServerPage::ServerPage(TorControl *torControl, QWidget *parent)
+ServerPage::ServerPage(QWidget *parent)
 : ConfigPage(parent)
 {
   /* Invoke the Qt Designer generated object setup routine */
   ui.setupUi(this);
 
   /* Keep a pointer to the TorControl object used to talk to Tor */
-  _torControl = torControl;
+  _torControl = Vidalia::torControl();
 
   /* Create ServerSettings object */
   _settings = new ServerSettings(_torControl);

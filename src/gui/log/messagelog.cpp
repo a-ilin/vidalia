@@ -27,7 +27,7 @@
 #include <QMessageBox>
 #include <QInputDialog>
 
-#include "../mainwindow.h"
+#include <vidalia.h>
 #include "messagelog.h"
 
 #define COL_TIME  0 /** Date/time column */
@@ -48,14 +48,14 @@
  * \param parent The parent widget of this MessageLog object.
  * \param flags Any desired window creation flags. 
  */
-MessageLog::MessageLog(TorControl *torControl, QWidget *parent, Qt::WFlags flags)
+MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
 : QMainWindow(parent, flags)
 {
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
 
   /* Create necessary Message Log QObjects */
-  _torControl = torControl;
+  _torControl = Vidalia::torControl();
   _settings = new VidaliaSettings();
  
   /* Bind events to actions */

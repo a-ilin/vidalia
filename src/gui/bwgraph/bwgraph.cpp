@@ -24,13 +24,14 @@
  * \version $Id$
  */
 
+#include <vidalia.h>
 #include "bwgraph.h"
 
 /* Define the format used for displaying the date and time */
 #define DATETIME_FMT  "MMM dd hh:mm:ss"
 
 /** Default constructor */
-BandwidthGraph::BandwidthGraph(TorControl *torControl, QWidget *parent, Qt::WFlags f)
+BandwidthGraph::BandwidthGraph(QWidget *parent, Qt::WFlags f)
 : QDialog(parent, f)
 {
   /* Invoke Qt Designer generated QObject setup routine */
@@ -43,7 +44,7 @@ BandwidthGraph::BandwidthGraph(TorControl *torControl, QWidget *parent, Qt::WFla
   createActions();
 
   /* Ask Tor to notify us about bandwidth updates */
-  _torControl = torControl;
+  _torControl = Vidalia::torControl();
   _torControl->setEvent(TorEvents::Bandwidth, this, true);
 
   /* Initialize Sent/Receive data counters */
