@@ -96,7 +96,6 @@ ServerPage::save(QString &errmsg)
   _settings->setDirPort(ui.lineDirPort->text().toUInt());
   _settings->setAddress(ui.lineServerAddress->text());
   _settings->setContactInfo(ui.lineServerContact->text());
-  _settings->setOverridePolicy(ui.chkExitOverride->isChecked());
   
   /* Save exit polices */
   ExitPolicy exitPolicy;
@@ -125,7 +124,6 @@ ServerPage::load()
   ui.lineDirPort->setText(QString::number(_settings->getDirPort()));
   ui.lineServerAddress->setText(_settings->getAddress());
   ui.lineServerContact->setText(_settings->getContactInfo());
-  ui.chkExitOverride->setChecked(_settings->getOverridePolicy());
   
   /* Load the exit policies into the list */
   ui.lstExitPolicies->clear();
@@ -183,7 +181,11 @@ ServerPage::addPolicyItem(Policy policy)
   newPolicy->setText(COL_ACTION,  policy.action());
   newPolicy->setText(COL_ADDRESS, policy.address());
   newPolicy->setText(COL_PORT,    policy.ports());
-  
+ 
+  for (int i = 0; i < newPolicy->columnCount(); i++) {
+    newPolicy->setTextAlignment(i, Qt::AlignHCenter);
+  }
+
   ui.lstExitPolicies->addTopLevelItem(newPolicy);
 }
 

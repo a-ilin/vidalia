@@ -50,7 +50,6 @@
 #define SETTING_SERVER_ADDRESS    "Server/"SERVER_ADDRESS
 #define SETTING_SERVER_CONTACT    "Server/"SERVER_CONTACTINFO
 #define SETTING_SERVER_EXITPOLICY "Server/"SERVER_EXITPOLICY
-#define SETTING_SERVER_OVERRIDE   "Server/OverrideDefault"
 
 /* Default server configuration */
 #define DEFAULT_SERVER_ENABLED    false
@@ -62,8 +61,7 @@
 #define DEFAULT_SERVER_DIRPORT    9030
 #define DEFAULT_SERVER_CONTACT    "<your@email.com>"
 #define DEFAULT_SERVER_ADDRESS    net_local_address().toString() 
-#define DEFAULT_SERVER_EXITPOLICY "" 
-#define DEFAULT_SERVER_OVERRIDE   false
+#define DEFAULT_SERVER_EXITPOLICY ""
 
 /** Constructor.
  * \param torControl a TorControl object used to read and apply the server
@@ -385,29 +383,5 @@ void
 ServerSettings::setExitPolicy(ExitPolicy &exitPolicy)
 {
   setValue(SETTING_SERVER_EXITPOLICY, exitPolicy.toString());
-}
-
-/** Sets whether we override the default exit policy */
-void
-ServerSettings::setOverridePolicy(bool override)
-{
-  setValue(SETTING_SERVER_OVERRIDE, override);
-
-  /* If overriding default, prepend RejectAll if necessary */
-  if (override) {
-    ExitPolicy exitPolicy = getExitPolicy();
-    Policy rejectAll(Policy::RejectAll);
-    
-    if (!exitPolicy.contains(rejectAll)) {
-      exitPolicy.addPolicy(rejectAll);
-    }
-  }
-}      
-
-/** Returns whether we override the default exit policy */
-bool
-ServerSettings::getOverridePolicy()
-{
-  return value(SETTING_SERVER_OVERRIDE, DEFAULT_SERVER_OVERRIDE).toBool();
 }
 

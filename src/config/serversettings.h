@@ -92,11 +92,6 @@ public:
   /** Gets the exit policy for this server. */
   ExitPolicy getExitPolicy();
 
-  /** Sets whether we override the default exit policy */
-  void setOverridePolicy(bool override);
-  /** Gets whether we override the default exit policy */
-  bool getOverridePolicy();
-
 private:
   /** Sets a value indicating that the server settings have changed since
    * apply() was last called. */
