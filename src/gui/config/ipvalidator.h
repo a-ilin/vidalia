@@ -35,8 +35,10 @@ class IPValidator : public QRegExpValidator
 public:
   /** Constructor. */
   IPValidator(QObject *parent);
+  /** Validates the given input from position 0. */
+  QValidator::State validate(QString &input) const;
   /** Validates the given input is either a valid IP or a "*". */
-  QValidator::State validate(QString &input, int &pos = 0) const;
+  QValidator::State validate(QString &input, int &pos) const;
 };
 
 #endif

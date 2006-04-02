@@ -51,3 +51,11 @@ IPValidator::validate(QString &input, int &pos) const
   return QRegExpValidator::validate(input, pos);
 }
 
+/** Validates the given input from position 0. */
+QValidator::State
+IPValidator::validate(QString &input) const
+{
+  int discard = 0;
+  return validate(input, discard);
+}
+
