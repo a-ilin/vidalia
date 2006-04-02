@@ -23,7 +23,7 @@
 
 !define APPNAME "Vidalia Bundle"
 !define APPVERSION "${TOR_VERSION}-${VIDALIA_VERSION}"
-!define PRODVERSION "0.0.1.0" ; Product version must be x.x.x.x
+!define PRODVERSION "${VIDALIA_VERSION}.{BUNDLE_REVISION}" ; Product version must be x.x.x.x
 !define APPDESCRIPTION "${APPNAME} ${APPVERSION}"
 !define INSTALLFILE "vidalia-bundle-${APPVERSION}.exe"
 !define BUNDLE_UNINSTALLER "vidalia-bundle-uninstall.exe"
