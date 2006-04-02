@@ -199,8 +199,11 @@ ServerPage::setDefaultRule()
 void
 ServerPage::addPolicy()
 {
-  /* They have to at least enter something as an IP address */
-  if (ui.lineExitAddress->text().isEmpty()) {
+  /* They must enter a valid address */
+  QString address = ui.lineExitAddress->text();
+  int i;
+  if (ui.lineExitAddress->validator()->
+      validate(address, i) != QValidator::Acceptable) {
     return;
   }
   
