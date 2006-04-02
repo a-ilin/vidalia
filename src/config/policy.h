@@ -49,11 +49,10 @@ public:
   Policy();
   /** Parses the given policy, represented as a string. */
   Policy(QString policy);
+  /** Parses the given portions of a policy string. */
+  Policy(QString action, QString address, QString ports);
   /** Creates a policy of the given special type. */
   Policy(SpecialPolicy policy);
-  /** Create a policy using the specified information. */
-  Policy(Action action, QHostAddress addr, 
-         quint16 fromPort, quint16 toPort = 0);
   /** Creates a policy using the specified information. */
   Policy(Action action, QHostAddress addr, uchar mask,
          quint16 fromPort, quint16 toPort = 0);
@@ -65,17 +64,15 @@ public:
   void fromString(QString policy);
   /** Converts this policy to a format Tor understands. */
   QString toString();
-
+  /** Converts a string action to an Action enum value. */
+  static Action toAction(QString action);
+  
   /** Returns the action taken when this policy matches an address. */
-  Action action() { return _action; }
-  /** Returns the host address for this policy. */
-  QHostAddress address() { return _address; }
-  /** Returns the host address mask for this policy. */
-  uchar mask() { return _mask; }
-  /** Returns the first port in a range. */
-  quint16 fromPort() { return _fromPort; }
-  /** Returns the last port in a port range. */
-  quint16 toPort() { return _toPort; }
+  QString action();
+  /** Returns the host address (including mask, if set) for this policy. */
+  QString address();
+  /** Returns the port or port range for this policy. */
+  QString ports();
 
 private:
   Action _action; /**< The action to take for this policy. */

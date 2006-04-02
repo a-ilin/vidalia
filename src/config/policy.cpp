@@ -51,6 +51,18 @@ Policy::Policy(QString policy)
   fromString(policy);
 }
 
+/** Constructor. Creates a new Policy object from the string parts. */
+Policy::Policy(QString action, QString address, QString ports)
+{
+  /* Set the defaults */
+  _action   = Accept;
+  _address  = QHostAddress::Any;
+  _fromPort = _toPort = 0;
+  _mask = 0;
+  
+  fromString(action + " " + address + ":" + ports);
+}
+
 /** Constructor. Creates a new Policy object depending on the specified
  * special policy type. */
 Policy::Policy(SpecialPolicy policy)
@@ -58,17 +70,6 @@ Policy::Policy(SpecialPolicy policy)
   _action   = (policy == AcceptAll ? Accept : Reject);
   _address  = QHostAddress::Any;
   _fromPort = _toPort = 0;
-  _mask = 0;
-}
-
-/** Constructor. Creates a new policy object based on the given rules. */
-Policy::Policy(Action action, QHostAddress addr, 
-               quint16 fromPort, quint16 toPort)
-{
-  _action   = action;
-  _address  = addr;
-  _fromPort = fromPort;
-  _toPort   = toPort;
   _mask = 0;
 }
 
@@ -133,23 +134,44 @@ Policy::fromString(QString policy)
 QString
 Policy::toString()
 {
-  QString policy;
-  
-  /* Add the action to take for this policy */
-  policy = (_action == Accept ? "accept " : "reject ");
-  
-  /* Add the address (and mask, if specified) */
+  return action() + " " + address() + ":" + ports();
+}
+
+/** Converts the given action to a string. */
+Policy::Action
+Policy::toAction(QString action)
+{
+  if (action.toLower() == "accept") {
+    return Accept;
+  }
+  return Reject;
+}
+
+/** Returns the action associated with this policy. */
+QString
+Policy::action()
+{
+  return (_action == Accept ? "accept" : "reject");
+}
+
+/** Returns the address (and mask, if specified) for this policy. */
+QString
+Policy::address()
+{
   if (_mask && !_address.isNull()) {
-    policy += _address.toString() + "/" + QString::number(_mask);
-  } else {
-    policy += (_address.isNull() ? "*" : _address.toString());
-  }
-  
-  /* Add the port or port range (if specified) */
-  policy += ":" + (_fromPort ? QString::number(_fromPort) : "*");
+    return _address.toString() + "/" + QString::number(_mask);
+  } 
+  return (_address.isNull() ? "*" : _address.toString());
+}
+
+/** Returns the port (or port range, if specified) for this policy. */
+QString
+Policy::ports()
+{
+  QString ports = (_fromPort ? QString::number(_fromPort) : "*");
   if (_fromPort && _toPort) {
-    policy += "-" + QString::number(_toPort);
+    ports += "-" + QString::number(_toPort);
   }
-  return policy;
+  return ports;
 }
 

@@ -141,12 +141,10 @@ ServerPage::load()
 void
 ServerPage::savePolicy(QTreeWidgetItem *item, ExitPolicy &exitPolicy)
 {
-  /* Build policy string */
-  QString policyString = item->text(COL_ACTION) + " ";
-  policyString += item->text(COL_ADDRESS) + ":" + item->text(COL_PORT);
-  
   /* Add policy to ServerSettings */
-  exitPolicy.addPolicy(Policy(policyString));
+  exitPolicy.addPolicy(Policy(item->text(COL_ACTION),
+                              item->text(COL_ADDRESS),
+                              item->text(COL_PORT)));
 }
 
 /** Adds a new exit policy to the user's configuration */
@@ -162,9 +160,11 @@ ServerPage::addPolicy()
   }
   
   /* Add the policy to the list */
-  addPolicyItem(ui.cmboExitAction->currentText(), ui.lineExitAddress->text(),
-                ui.lineExitMask->text(), ui.lineExitFromPort->text(),
-                ui.lineExitToPort->text());
+  addPolicyItem(Policy(Policy::toAction(ui.cmboExitAction->currentText()), 
+                       QHostAddress(ui.lineExitAddress->text()),
+                       ui.lineExitMask->text().toUShort(), 
+                       ui.lineExitFromPort->text().toUShort(),
+                       ui.lineExitToPort->text().toUShort()));
 
   /* Clear input text boxes */
   ui.lineExitAddress->clear();
@@ -177,47 +177,12 @@ ServerPage::addPolicy()
 void
 ServerPage::addPolicyItem(Policy policy)
 {
-  /* Convert to strings */
-  QString action = (policy.action() == Policy::Accept ? "accept" : "reject");
-  QHostAddress address = policy.address();
-  QString addr = (address.isNull() ? "*" : address.toString());
-  QString mask = (policy.mask() ? QString::number(policy.mask()) : "");
-  int port = policy.fromPort();
-  QString fromPort = (port ? QString::number(port) : "");
-  port = policy.toPort();
-  QString toPort = (port ? QString::number(port) : "");
-
-  /* Add to list */
-  addPolicyItem(action, addr, mask, fromPort, toPort);
-}
-
-/** Adds a new QTreeWidget item to the exit policy list */
-void
-ServerPage::addPolicyItem(QString action, QString address, QString mask,
-                          QString fromPort, QString toPort)
-{
   QTreeWidgetItem *newPolicy = new QTreeWidgetItem();
+
+  newPolicy->setText(COL_ACTION,  policy.action());
+  newPolicy->setText(COL_ADDRESS, policy.address());
+  newPolicy->setText(COL_PORT,    policy.ports());
   
-  newPolicy->setText(COL_ACTION, action);
-  newPolicy->setTextAlignment(COL_ACTION, Qt::AlignCenter);
-  
-  if (!mask.isEmpty()) {
-    address += "/" + mask;
-  }
-  newPolicy->setText(COL_ADDRESS, address);
-  newPolicy->setTextAlignment(COL_ADDRESS, Qt::AlignCenter);
-
-  if (!fromPort.isEmpty()) {
-    if (!toPort.isEmpty() && fromPort != "*") {
-      fromPort += "-" + toPort;
-    }
-  } else {
-    fromPort = "*";
-  }
-
-  newPolicy->setText(COL_PORT, fromPort);
-  newPolicy->setTextAlignment(COL_PORT, Qt::AlignCenter);
-
   ui.lstExitPolicies->addTopLevelItem(newPolicy);
 }
 

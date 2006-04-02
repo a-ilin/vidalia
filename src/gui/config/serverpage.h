@@ -70,8 +70,6 @@ private:
   /** Returns the index of the selected item in lstExitPolicies */
   int selectedIndex();
   /** Adds a new exit policy to the exit policy list */
-  void addPolicyItem(QString action, QString address, QString mask,
-                     QString fromPort, QString toPort);
   void addPolicyItem(Policy policy);
   /** Saves the policy specified in item to the exitPolicy */
   void savePolicy(QTreeWidgetItem *item, ExitPolicy &exitPolicy);
