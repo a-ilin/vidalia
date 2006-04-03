@@ -1032,22 +1032,6 @@ Error: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Accept</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Reject</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>If enabled, appends &apos;reject *.*&apos; to the end of the policy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Override default exit policy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Action</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1094,6 +1078,14 @@ Error: </source>
     <message>
         <source>Vidalia was only able to find a private IP address for your server.
 Would you like to access an external service to determine your public IP address?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>accept</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>reject</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

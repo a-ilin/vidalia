@@ -1352,19 +1352,11 @@ Error: </source>
     </message>
     <message>
         <source>Accept</source>
-        <translation type="unfinished">接受</translation>
+        <translation type="obsolete">接受</translation>
     </message>
     <message>
         <source>Reject</source>
-        <translation type="unfinished">拒绝</translation>
-    </message>
-    <message>
-        <source>If enabled, appends &apos;reject *.*&apos; to the end of the policy</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Override default exit policy</source>
-        <translation type="unfinished"></translation>
+        <translation type="obsolete">拒绝</translation>
     </message>
     <message>
         <source>Action</source>
@@ -1415,6 +1407,14 @@ Error: </source>
 Would you like to access an external service to determine your public IP address?</source>
         <translation type="unfinished">Vidalia只能为您的服务器找到一个私有IP地址，
 您想通过外部服务以确定您的公共IP地址吗？</translation>
+    </message>
+    <message>
+        <source>accept</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>reject</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
