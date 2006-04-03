@@ -842,6 +842,9 @@
    <property name="icon" >
     <iconset resource="..\..\res\vidalia.qrc" >:/images/22x22/system-search.png</iconset>
    </property>
+   <property name="checkable" >
+     <bool>true</bool>
+   </property>
    <property name="text" >
     <string>Find</string>
    </property>
@@ -943,8 +946,8 @@
   <connection>
    <sender>btnCloseFind</sender>
    <signal>clicked()</signal>
-   <receiver>frmFind</receiver>
-   <slot>hide()</slot>
+   <receiver>actionFind</receiver>
+   <slot>toggle()</slot>
    <hints>
     <hint type="sourcelabel" >
      <x>34</x>
@@ -958,9 +961,9 @@
   </connection>
   <connection>
    <sender>actionFind</sender>
-   <signal>triggered()</signal>
+   <signal>toggled(bool)</signal>
    <receiver>frmFind</receiver>
-   <slot>show()</slot>
+   <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel" >
      <x>-1</x>
