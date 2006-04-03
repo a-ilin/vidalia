@@ -76,8 +76,6 @@ private slots:
    * through all currently displayed log entries for text specified by the
    * user, highlighting the entires that contain a match. */
   void find();
-  /** Called when the opactity slider changes value **/
-  void setOpacity(int value);
   /** Called when user saves settings **/
   void saveChanges();
   /** Called when user cancels changed settings **/

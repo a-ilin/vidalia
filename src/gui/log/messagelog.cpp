@@ -84,15 +84,6 @@ MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
   /* Set columns to correct widths */
   ui.lstMessages->header()->resizeSection(COL_TIME, COL_TIME_WIDTH);
   ui.lstMessages->header()->resizeSection(COL_TYPE, COL_TYPE_WIDTH);
-  
-  /* Turn off opacity group on unsupported platforms */
-#if defined(Q_WS_WIN)
-  if(!(QSysInfo::WV_2000 <= QSysInfo::WindowsVersion <= QSysInfo::WV_2003)) {
-    ui.grpOpacity->setVisible(false);
-  }
-#elif defined(Q_WS_X11)
-  ui.grpOpacity->setVisible(false);
-#endif
 }
 
 /** Default Destructor. Simply frees up any memory allocated for member
@@ -131,9 +122,6 @@ MessageLog::createActions()
   connect(ui.btnCancelSettings, SIGNAL(clicked()),
       this, SLOT(cancelChanges()));
 
-  connect(ui.sldrOpacity, SIGNAL(valueChanged(int)),
-      this, SLOT(setOpacity(int)));
-
   connect(ui.btnBrowse, SIGNAL(clicked()),
       this, SLOT(browse()));
 }
@@ -157,19 +145,12 @@ MessageLog::setToolTips()
                                 "interest to Tor developers.")); 
 }
 
-/** Loads the saved Message Log settings, including maximum message count,
- * message log window opacity, and message severity filter. */
+/** Loads the saved Message Log settings */
 void
 MessageLog::loadSettings()
 {
   /* Set Max Count widget */
   ui.spnbxMaxCount->setValue(_settings->getMaxMsgCount());
-
-  /* Set the window opacity slider widget */
-  ui.sldrOpacity->setValue(_settings->getMsgLogOpacity());
-
-  /* Set the window opacity label */
-  ui.lblPercentOpacity->setNum(ui.sldrOpacity->value());
 
   /* Set whether or not logging to file is enabled */
   _enableLogging = _settings->isLogFileEnabled();
@@ -262,8 +243,6 @@ MessageLog::saveChanges()
   /* Set Message Counter */
   ui.lstMessages->setStatusTip(tr("Messages Shown: %1")
                                   .arg(_messagesShown));
-  /* Save Message Log opacity */
-  _settings->setMsgLogOpacity(ui.sldrOpacity->value());
 
   /* Restore the cursor */
   QApplication::restoreOverrideCursor();
@@ -529,26 +508,6 @@ MessageLog::deselectAllItems()
   }
 }
 
-/** Sets the opacity of the Message Log window.
- * \param value The opaqueness of the window (0-100)
- */
-void
-MessageLog::setOpacity(int value)
-{
-  qreal newValue = value / 100.0;
-
-  /** Opacity only supported by Mac and Win32 **/
-#if defined(Q_WS_MAC)
-  this->setWindowOpacity(newValue);
-#elif defined(Q_WS_WIN)
-    if(QSysInfo::WV_2000 <= QSysInfo::WindowsVersion <= QSysInfo::WV_2003) {
-      this->setWindowOpacity(newValue);
-    }
-#else
-    Q_UNUSED(newValue);
-#endif
-}
-
 /** Creates a new log item in the message log and returns a pointer to it.
  * \param type The log event severity
  * \param message The log message.
@@ -630,7 +589,7 @@ MessageLog::customEvent(QEvent *event)
   }
 }
 
-/** Overloads the default show() slot so we can set opacity. */
+/** Overloads the default show() slot. */
 void
 MessageLog::show()
 {
