@@ -26,7 +26,7 @@ volname=`echo "$dmg" | sed -e "s/.*\///" | sed -e "s/.dmg//"`
 echo "Volume Name: $volname"
 
 # Create the disk image
-hdiutil create $dmg -size 13m -fs HFS+ -volname "$volname"
+hdiutil create $dmg -size 20m -fs HFS+ -volname "$volname"
 
 # Mount the image and get the device name
 mntdir="dist.mnt"
