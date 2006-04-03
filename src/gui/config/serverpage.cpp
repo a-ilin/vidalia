@@ -162,8 +162,9 @@ ServerPage::addPolicy()
   QString fromPort = ui.lineExitFromPort->text();
   QString toPort = ui.lineExitToPort->text();
   
-  if (!fromPort.isEmpty() && !toPort.isEmpty() && fromPort != "*") {
+  if (!fromPort.isEmpty() && !toPort.isEmpty() && toPort != fromPort) {
     if (toPort == "*") toPort = "65535";
+    if (fromPort == "*") fromPort = "1";
     if (fromPort.toUShort() > toPort.toUShort()) {
       return;
     }
