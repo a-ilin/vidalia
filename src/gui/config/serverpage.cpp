@@ -157,13 +157,14 @@ ServerPage::addPolicy()
       return;
     }
   }
-
+  
   /* If port range specified, must be valid */
-  if (!ui.lineExitFromPort->text().isEmpty() &&
-      !ui.lineExitToPort->text().isEmpty() &&
-      ui.lineExitFromPort->text() != "*") {
-    if (ui.lineExitFromPort->text().toUInt() > 
-        ui.lineExitToPort->text().toUInt()) {
+  QString fromPort = ui.lineExitFromPort->text();
+  QString toPort = ui.lineExitToPort->text();
+  
+  if (!fromPort.isEmpty() && !toPort.isEmpty() && fromPort != "*") {
+    if (toPort == "*") toPort = "65535";
+    if (fromPort.toUShort() > toPort.toUShort()) {
       return;
     }
   }
@@ -172,8 +173,8 @@ ServerPage::addPolicy()
   addPolicyItem(Policy(Policy::toAction(ui.cmboExitAction->currentText()), 
                        QHostAddress(ui.lineExitAddress->text()),
                        ui.lineExitMask->text().toUShort(), 
-                       ui.lineExitFromPort->text().toUShort(),
-                       ui.lineExitToPort->text().toUShort()));
+                       fromPort.toUShort(),
+                       toPort.toUShort()));
 
   /* Clear input text boxes */
   ui.lineExitAddress->clear();
