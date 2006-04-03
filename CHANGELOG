@@ -1,4 +1,13 @@
 
+0.0.2   02-Apr-2006
+  o Added an integrated help browser and documentation
+  o Added exit policy configuration support for servers
+  o Added support for language translations and language selection
+  o Added a Simplified Chinese (zh_CN) translation from Wu Xiaoguong
+  o Added support for changing Vidalia's interface style
+  o Aesthetic improvements in many dialogs
+
+  
 0.0.1   28-Feb-2006
   o Initial testing release
   o Basic features include:
