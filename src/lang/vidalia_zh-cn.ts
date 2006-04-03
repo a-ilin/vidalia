@@ -957,15 +957,15 @@ Error: </source>
     </message>
     <message>
         <source>Window Opacity</source>
-        <translation>窗口的不透明度</translation>
+        <translation type="obsolete">窗口的不透明度</translation>
     </message>
     <message>
         <source>100</source>
-        <translation>100</translation>
+        <translation type="obsolete">100</translation>
     </message>
     <message>
         <source>Changes the transparency of the Message Log</source>
-        <translation>改变消息日志的透明度</translation>
+        <translation type="obsolete">改变消息日志的透明度</translation>
     </message>
     <message>
         <source>Saves the current Message Log settings</source>
@@ -1187,7 +1187,7 @@ Error: </source>
     </message>
     <message>
         <source>% Opaque</source>
-        <translation>% 不透明度</translation>
+        <translation type="obsolete">% 不透明度</translation>
     </message>
     <message>
         <source>Messages Shown: %1</source>

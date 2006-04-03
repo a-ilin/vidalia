@@ -42,7 +42,6 @@
 
 #define SETTING_MSG_FILTER          "MessageLog/MessageFilter"
 #define SETTING_MAX_MESSAGE         "MessageLog/MaxMsgCount"
-#define SETTING_MSGLOG_OPACITY      "MessageLog/Opacity"
 #define SETTING_ENABLE_LOG_FILE     "MessageLog/EnableLogFile"
 #define SETTING_LOG_FILE            "MessageLog/LogFile"
 
@@ -199,20 +198,6 @@ int
 VidaliaSettings::getMaxMsgCount()
 {
   return value(SETTING_MAX_MESSAGE, DEFAULT_MAX_MESSAGE).toInt();
-}
-
-/** Get the level of opacity for the MessageLog window. */
-int
-VidaliaSettings::getMsgLogOpacity()
-{
-  return value(SETTING_MSGLOG_OPACITY, DEFAULT_OPACITY).toInt();
-}
-
-/** Set the level of opacity for the MessageLog window. */
-void
-VidaliaSettings::setMsgLogOpacity(int value)
-{
-  setValue(SETTING_MSGLOG_OPACITY, value);
 }
 
 /** Returns whether or not to enable automatically saving log messages from

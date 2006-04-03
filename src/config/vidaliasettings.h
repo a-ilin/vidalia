@@ -82,11 +82,6 @@ public:
   /** Set the maximum number of messages to display in the message log. */
   void setMaxMsgCount(int max);
 
-  /* Get the message log opacity setting. */
-  int getMsgLogOpacity();
-  /** Set the message log opacity setting.*/
-  void setMsgLogOpacity(int value);
-
   /* Returns true if log messages are to be written to disk. */
   bool isLogFileEnabled();
   /** Enable or disable writing log messages to disk. */

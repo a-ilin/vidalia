@@ -646,18 +646,6 @@ Error: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Window Opacity</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>100</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Changes the transparency of the Message Log</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Saves the current Message Log settings</source>
         <translation type="unfinished"></translation>
     </message>
@@ -869,10 +857,6 @@ Error: </source>
     </message>
     <message>
         <source>Search found 0 matches.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>% Opaque</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
