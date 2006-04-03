@@ -157,6 +157,16 @@ ServerPage::addPolicy()
       return;
     }
   }
+
+  /* If port range specified, must be valid */
+  if (!ui.lineExitFromPort->text().isEmpty() &&
+      !ui.lineExitToPort->text().isEmpty() &&
+      ui.lineExitFromPort->text() != "*") {
+    if (ui.lineExitFromPort->text().toUInt() > 
+        ui.lineExitToPort->text().toUInt()) {
+      return;
+    }
+  }
   
   /* Add the policy to the list */
   addPolicyItem(Policy(Policy::toAction(ui.cmboExitAction->currentText()), 
