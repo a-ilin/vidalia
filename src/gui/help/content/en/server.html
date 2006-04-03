@@ -89,7 +89,70 @@ can follow these steps to get started:
 Exit policies give you a way to specify what sort of traffic you are willing
 to allow exit from your Tor server. Tor uses a default list of exit policies
 that restrict services such as mail to prevent spam, or some default file
-sharing ports to reduce abuse of the Tor network.
+sharing ports to reduce abuse of the Tor network. <i>Note:</i> If you are
+a <i>middle-man</i> server, you don't have to worry about exit policies; no
+traffic is allowed to exit from your server at all.
+</p>
+
+<p>
+An exit policy is made up of zero or more lines, each one representing an
+action to be taken if a connection leaving the Tor network from your
+server matches the address or port specified in the policy. 
+</p>
+
+<p>
+Policies are considered by Tor from first to last and Tor takes the action
+associated with the first match it finds. Any policies you add will be added to
+the beginning of Tor's list of default exit policies. Since policies are
+considered from first to last, ordering is important. You can use the buttons
+with the Up Arrow and the Down Arrow icons to reorder your list of policies.
+</p>
+
+<h4>Action</h4>
+<p>
+Each line in an exit policy has an action associated with it. The actions are:
+<ul>
+  <li><b>reject</b>: Connections matching this policy will be <i>rejected</i>.</li>
+  <li><b>accept</b>: Connections matching this policy will be <i>accepted</i>.</li>
+</ul>
+</p>
+
+<h4>Address</h4>
+<p>
+Addresses in a policy can be either an IP address (e.g., <i>123.45.67.8</i>), 
+an IP address and mask (e.g., <i>123.45.0.0/16</i>), or a "*". If a "*" is 
+specified, it means "match all addresses."
+</p>
+
+<h4>Ports</h4>
+<p>
+Each policy has a port or a range of ports associated with it. Valid port 
+numbers range from 1 to 65535, or you can specify a "*" to indicate "all ports".
+</p>
+
+<h4>Examples</h4>
+<p>
+Here are a few examples of valid exit policy lines and a description of what
+they do:
+<ul>
+  <li><b>reject 123.45.67.8:*</b> - 
+    Tor will <i>reject</i> all connections from Tor clients that want to connect 
+    from your server to any port at <i>123.45.67.8</i>.
+  </li>
+  <li><b>accept *:80</b> -
+    Tor will <i>accept</i> connections from Tor clients that want to connect 
+    from your server to port 80 at any IP address.
+  </li>
+  <li><b>reject *:135-139</b> -
+    Tor will <i>reject</i> connections from Tor clients that want to connect 
+    from your server to ports 135 to 139 at any IP address.
+  </li>
+  <li><b>reject 128.23.0.0/16:*</b> -
+    Tor will <i>reject</i> connections from Tor clients that want to connect 
+    from your server to any port at any address from <i>128.23.0.0</i> to 
+    <i>128.23.255.255</i>.
+  </li>
+</ul>
 </p>
 
 </html>
