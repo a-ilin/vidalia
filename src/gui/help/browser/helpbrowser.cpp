@@ -392,7 +392,7 @@ HelpBrowser::search()
     return;
   }
     
-  QTextBrowser browser;
+  HelpTextBrowser browser;
   QTextCursor found;
   QTextDocument::FindFlags flags = QTextDocument::FindWholeWords;
 
