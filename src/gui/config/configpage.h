@@ -40,7 +40,7 @@ public:
   virtual void load() = 0;
   /** Pure virtual method. Subclassed pages save their config settings here
    * and return true if everything was saved successfully. */
-  virtual bool save(QString &errmsg = QString()) = 0;
+  virtual bool save(QString &errmsg) = 0;
 };
 
 #endif

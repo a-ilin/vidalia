@@ -51,7 +51,7 @@ public:
   /** Return the map of command-line arguments and values. */
   static QMap<QString, QString> arguments() { return _args; }
   /** Validates that all arguments were well-formed. */
-  bool validateArguments(QString &errmsg = QString());
+  bool validateArguments(QString &errmsg);
   /** Prints usage information to the given text stream. */
   void printUsage(QString errmsg = QString());
   

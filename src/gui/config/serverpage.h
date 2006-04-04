@@ -46,7 +46,7 @@ public:
   /** Default Destructor */
   ~ServerPage();
   /** Saves the changes on this page */
-  bool save(QString &errmsg = QString());
+  bool save(QString &errmsg);
   /** Loads the settings for this page */
   void load();
 
