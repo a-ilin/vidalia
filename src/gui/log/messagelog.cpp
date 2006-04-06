@@ -276,14 +276,24 @@ MessageLog::openLogFile(QString filename)
       return true;
     }
   }
+  
+  /* Create the directory if necessary */
+  QString path = filename.left(filename.lastIndexOf(QDir::separator()));
+  QDir dir(path);
+  if (!dir.exists()) {
+    if (!dir.mkpath(path)) {
+      return false;
+    }
+  }
+  
   newLogFile = new QFile(filename, this);
   
   /* Try to open the new log file */
   if (!newLogFile->open(QFile::WriteOnly | QIODevice::Append | QIODevice::Text)) {
     delete newLogFile;
     return false;
-  }
-  
+  } 
+
   /* Opening succeeded, so swap out the old logfile for the new one and adjust
    * the QTextStream object's device. */
   delete _logFile;
