@@ -56,16 +56,16 @@ private slots:
   void cancelChanges();
   /** Called when user clicks "Save Settings" */
   void saveChanges();
+  /** Called when user clicks "Help" */
+  void help();
 
 private:
   /** Loads the current configuration settings */
   void loadSettings();
   /** Creates a new action for a config page. */
   QAction* createPageAction(QIcon img, QString text, QActionGroup *group);
-
-  /** Actions that populate the toolbar */
-  QAction* _actionSave;
-  QAction* _actionCancel;
+  /** Adds a new action to the toolbar. */
+  void addAction(QAction *action, const char *slot = 0);
 
   /** Qt Designer generated object */
   Ui::ConfigDialog ui;

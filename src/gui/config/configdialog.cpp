@@ -25,6 +25,7 @@
  */
 
 #include <QMessageBox>
+#include <vidalia.h>
 
 #include "configdialog.h"
 
@@ -37,6 +38,7 @@
 #define IMAGE_ADVANCED      ":/images/22x22/emblem-system.png"
 #define IMAGE_SAVE          ":/images/22x22/media-floppy.png"
 #define IMAGE_CANCEL        ":/images/22x22/emblem-unreadable.png"
+#define IMAGE_HELP          ":/images/22x22/help-browser.png"
 
 /** Constructor */
 ConfigDialog::ConfigDialog(QWidget* parent)
@@ -65,16 +67,16 @@ ConfigDialog::ConfigDialog(QWidget* parent)
   connect(grp, SIGNAL(triggered(QAction *)), ui.stackPages, SLOT(showPage(QAction *)));
   
   /* Create and bind the Save button */  
-  _actionSave = new QAction(QIcon(IMAGE_SAVE), tr("Save"), ui.toolBar);
-  _actionSave->setFont(FONT);
-  ui.toolBar->addAction(_actionSave);
-  connect(_actionSave, SIGNAL(triggered()), this, SLOT(saveChanges()));
+  addAction(new QAction(QIcon(IMAGE_SAVE), tr("Save"), ui.toolBar), 
+            SLOT(saveChanges()));
+  
+  /* Create and bind the Save button */  
+  addAction(new QAction(QIcon(IMAGE_HELP), tr("Help"), ui.toolBar),
+            SLOT(help()));
   
   /* Create and bind the Cancel button */
-  _actionCancel = new QAction(QIcon(IMAGE_CANCEL), tr("Cancel"), ui.toolBar);
-  _actionCancel->setFont(FONT);
-  ui.toolBar->addAction(_actionCancel);
-  connect(_actionCancel, SIGNAL(triggered()), this, SLOT(cancelChanges()));
+  addAction(new QAction(QIcon(IMAGE_CANCEL), tr("Cancel"), ui.toolBar),
+            SLOT(cancelChanges()));
 
   /* Select the first action */
   grp->actions()[0]->setChecked(true);
@@ -88,6 +90,16 @@ ConfigDialog::createPageAction(QIcon img, QString text, QActionGroup *group)
   action->setCheckable(true);
   action->setFont(FONT);
   return action;
+}
+
+/** Adds the given action to the toolbar and hooks its triggered() signal to
+ * the specified slot (if given). */
+void
+ConfigDialog::addAction(QAction *action, const char *slot)
+{
+  action->setFont(FONT);
+  ui.toolBar->addAction(action);
+  connect(action, SIGNAL(triggered()), this, slot);
 }
 
 /** Overloads the default show so we can load settings */
@@ -146,5 +158,12 @@ ConfigDialog::saveChanges()
     }
   }
   QMainWindow::close();
+}
+
+/** Shows help information about the configuration dialog. */
+void
+ConfigDialog::help()
+{
+  Vidalia::help("config");
 }
 
