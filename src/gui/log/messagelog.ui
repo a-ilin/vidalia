@@ -697,6 +697,7 @@
    <addaction name="actionFind" />
    <addaction name="actionSettings" />
    <addaction name="separator" />
+   <addaction name="actionHelp" />
    <addaction name="actionClose" />
   </widget>
   <action name="actionMessage_Filters" >
@@ -897,6 +898,31 @@
    </property>
    <property name="shortcut" >
     <string>Ctrl+T</string>
+   </property>
+  </action>
+  <action name="actionHelp" >
+   <property name="icon" >
+    <iconset resource="..\res\vidalia.qrc" >:/images/22x22/help-browser.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Help</string>
+   </property>
+   <property name="statusTip" >
+    <string>Show the help browser</string>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <underline>false</underline>
+     <strikeout>false</strikeout>
+    </font>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+H</string>
    </property>
   </action>
   <action name="actionClose" >

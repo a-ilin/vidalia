@@ -116,6 +116,9 @@ MessageLog::createActions()
   connect(ui.actionFind, SIGNAL(triggered()),
       this, SLOT(find()));
 
+  connect(ui.actionHelp, SIGNAL(triggered()),
+      this, SLOT(help()));
+  
   connect(ui.btnSaveSettings, SIGNAL(clicked()),
       this, SLOT(saveChanges()));
 
@@ -610,5 +613,12 @@ MessageLog::show()
     QMainWindow::activateWindow();
     QMainWindow::raise();
   }
+}
+
+/** Displays help information about the message log. */
+void
+MessageLog::help()
+{
+  Vidalia::help("log");
 }
 

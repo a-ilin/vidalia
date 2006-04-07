@@ -82,6 +82,8 @@ private slots:
   void cancelChanges();
   /** Called when the user clicks "Browse" to select a new log file. */
   void browse();
+  /** Called when the user clicks "Help" to see help info about the log. */
+  void help();
 
 private:  
   /** Create and bind actions to events **/
