@@ -55,6 +55,15 @@
 #define IMG_TOR_RUNNING    ":/images/16x16/tor-on.png"
 #endif
 
+/* Buttons the use can click in error message boxes */
+#define BUTTON_OK         0
+#define BUTTON_RETRY      1
+#define BUTTON_HELP       2
+
+/* Maximum number of attempts to connect to Tor before deciding 
+ * that we really can't connect. */
+#define MAX_CONNECT_ATTEMPTS   3
+
 
 /** Default constructor. It installs an icon in the system tray area and
  * creates the popup menu associated with that icon. */
@@ -273,9 +282,15 @@ MainWindow::start()
   QString errmsg;
   _isIntentionalExit = false;
   if (!_torControl->start(&errmsg)) {
-    QMessageBox::warning(this, tr("Error Starting Tor"),
-       tr("Vidalia was unable to start Tor.\n\nError: ") + errmsg,
-       QMessageBox::Ok, QMessageBox::NoButton);
+    /* Display an error message and see if the user wants some help */
+    int response = QMessageBox::warning(this, tr("Error Starting Tor"),
+                     tr("Vidalia was unable to start Tor.\n\nError: ") + errmsg,
+                     tr("OK"), tr("Help"));
+
+    if (response == 1) {
+      /* Show troubleshooting information about starting Tor */
+      Vidalia::help("troubleshooting.start");
+    }
   }
 }
 
@@ -284,6 +299,9 @@ MainWindow::start()
 void 
 MainWindow::started()
 {
+  QString errmsg;
+  bool retry;
+  
   /* Set the window icon */
   setApplicationIcon(IMG_TOR_RUNNING);
   
@@ -296,20 +314,40 @@ MainWindow::started()
   _stopAct->setEnabled(true);
 
   /* Try to connect to Tor's control port */
-  QString errmsg;
-  /* The started() signal is emitted by TorProcess when the Tor process
-   * starts, but Tor hasn't necessarily bound its ControlPort yet. Give it a
-   * second to bind this port and then try to connect. */ 
-  v_sleep(1);
-  if(!_torControl->connect(&errmsg)) {
-    /* Ok, ok. It really isn't going to connect. I give up. */
-    QMessageBox::warning(this, tr("Error Connecting to Tor"), errmsg,
-       QMessageBox::Ok, QMessageBox::NoButton);
+  do {
+    retry = false;
 
-    /* Since Vidalia can't connect, we can't really do much, so stop Tor.
-     * Note: it's debatable whether or not this is The Right Thing to do. */
-    stop();
-  }
+    /* The started() signal is emitted by TorProcess when the Tor process
+     * starts, but Tor hasn't necessarily bound its ControlPort yet. Give it a
+     * few seconds to bind this port before deciding that we can't connect. */ 
+    for (int i = 0; i < MAX_CONNECT_ATTEMPTS; i++) {
+      if (_torControl->connect(&errmsg)) {
+        break;
+      }
+      v_sleep(1);
+    }
+    if(!_torControl->isConnected()) {
+      /* Ok, ok. It really isn't going to connect. I give up. */
+      int response = QMessageBox::warning(this, 
+                      tr("Error Connecting to Tor"), errmsg,
+                      tr("OK"), tr("Retry"), tr("Help"),
+                      BUTTON_OK, 0);
+
+
+      if (response == BUTTON_RETRY) {
+        /* We're going to give it another shot. */
+        retry = true;
+      } else {
+        /* Show the help browser (if requested) */
+        if (response == BUTTON_HELP) {
+          Vidalia::help("troubleshooting.connect");
+        }
+        /* Since Vidalia can't connect, we can't really do much, so stop Tor.
+         * Note: it's debatable whether or not this is The Right Thing to do. */
+        stop();
+      }
+    }
+  } while (retry);
 }
 
 /** Disconnects the control socket and stops the Tor process. */
@@ -317,6 +355,7 @@ void
 MainWindow::stop()
 {
   QString errmsg;
+  bool retry;
   
   /* Disconnect the controller. Note that we don't check any error messages or
    * return values, since we'll just be killing Tor anyway. */
@@ -325,12 +364,25 @@ MainWindow::stop()
   }
 
   /* Stop the Tor process */
-  _isIntentionalExit = true;
-  if (!_torControl->stop(&errmsg)) {
-    QMessageBox::warning(this, tr("Error Stopping Tor"),
-       tr("Vidalia was unable to stop Tor.\n\nError: ") + errmsg,
-       QMessageBox::Ok, QMessageBox::NoButton);
-  }
+  do {
+    retry = false;
+    _isIntentionalExit = true;
+    if (!_torControl->stop(&errmsg)) {
+      int response = QMessageBox::warning(this, tr("Error Stopping Tor"),
+                       tr("Vidalia was unable to stop Tor.\n\nError: ") + errmsg,
+                       tr("OK"), tr("Retry"), tr("Help"),
+                       BUTTON_OK, BUTTON_OK);
+      
+      if (response == BUTTON_RETRY) {
+        /* Try stopping Tor again */
+        retry = true;
+      } else if (response == BUTTON_HELP) {
+        /* Show some troubleshooting help */
+        Vidalia::help("troubleshooting.stop");
+      }
+      _isIntentionalExit = false;
+    }
+  } while (retry);
 }
 
 /** Slot: Called when the Tor process has exited. It will adjust the tray
