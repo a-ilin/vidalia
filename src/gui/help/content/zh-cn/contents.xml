@@ -41,7 +41,9 @@
     <Topic id="exitpolicy" name="退出策略" html="server.html" section="exitpolicy"/>
   </Topic>
   <Topic id="troubleshooting" name="问题多多" html="troubleshooting.html">
-    <Topic id="starting" name="我无法运行Tor" html="troubleshooting.html" section="starting"/>
-  </Topic>
+    <Topic id="start" name="我无法运行Tor" html="troubleshooting.html" section="start"/>
+    <Topic id="connect" name="Vidalia Can't Connect to Tor" html="troubleshooting.html" section="connect"/>
+    <Topic id="stop" name="Vidalia Can't Stop Tor" html="troubleshooting.html" section="stop"/>
+ </Topic>
 </Contents>
 

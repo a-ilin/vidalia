@@ -26,7 +26,7 @@
     <Topic id="starting" name="Starting and Stopping Tor" html="running.html" section="starting"/>
     <Topic id="monitoring" name="Monitoring Tor's Status" html="running.html" section="monitoring"/>
   </Topic>
-  <Topic id="log" name="Message Log" html="log.html">
+  <Topic id="Log" name="Message Log" html="log.html">
     <Topic id="basic" name="Basic Information" html="log.html" section="basic"/>
     <Topic id="severities" name="Message Severities" html="log.html" section="severities"/>
     <Topic id="logfile" name="Logging to a File" html="log.html" section="tofile"/>
@@ -41,7 +41,9 @@
     <Topic id="exitpolicy" name="Exit Policies" html="server.html" section="exitpolicy"/>
   </Topic>
   <Topic id="troubleshooting" name="Troubleshooting" html="troubleshooting.html">
-    <Topic id="starting" name="I Can't Start Tor" html="troubleshooting.html" section="starting"/>
+    <Topic id="start" name="I Can't Start Tor" html="troubleshooting.html" section="start"/>
+    <Topic id="connect" name="Vidalia Can't Connect to Tor" html="troubleshooting.html" section="connect"/>
+    <Topic id="stop" name="Vidalia Can't Stop Tor" html="troubleshooting.html" section="stop"/>
   </Topic>
 </Contents>
 
