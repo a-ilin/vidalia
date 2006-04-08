@@ -287,7 +287,7 @@ ServerPage::getServerAddress()
   if (net_is_private_address(addr)) {
     int button = QMessageBox::information(this, tr("Get Address"),
                    tr("Vidalia was only able to find a private IP " 
-                      "address for your server.<br/><br/>Would you like to "
+                      "address for your server.\n\nWould you like to "
                       "access an external service to determine your public " 
                       "IP address?"),
                     QMessageBox::Yes, QMessageBox::No);

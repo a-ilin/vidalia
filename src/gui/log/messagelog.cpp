@@ -178,7 +178,7 @@ MessageLog::registerLogEvents()
   _filter = _settings->getMsgFilter();
   if (!_torControl->setLogEvents(_filter, this, &errmsg)) {
     QMessageBox::warning(this, tr("Error Setting Filter"),
-      tr("Vidalia was unable to register for Tor's log events.<br/><br/>") + errmsg,
+      tr("Vidalia was unable to register for Tor's log events.\n\n") + errmsg,
        QMessageBox::Ok, QMessageBox::NoButton);
   }
 }
@@ -399,7 +399,7 @@ MessageLog::save(QList<QTreeWidgetItem *> items)
     /* If can't write to file, show error message */
     if (!file.open(QFile::WriteOnly | QFile::Text)) {
       QMessageBox::warning(this, tr("Vidalia"),
-                          tr("Cannot write file %1<br/><br/>%2.")
+                          tr("Cannot write file %1\n\n%2.")
                           .arg(fileName)
                           .arg(file.errorString()));
       return;
