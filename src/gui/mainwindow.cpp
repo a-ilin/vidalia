@@ -31,6 +31,7 @@
 #include <QtGui>
 
 #include <vidalia.h>
+#include <util/string.h>
 #include <util/compat.h>
 #include <config/messagetypes.h>
 
@@ -284,7 +285,7 @@ MainWindow::start()
   if (!_torControl->start(&errmsg)) {
     /* Display an error message and see if the user wants some help */
     int response = QMessageBox::warning(this, tr("Error Starting Tor"),
-                     tr("Vidalia was unable to start Tor.\n\n") + errmsg,
+                     p(tr("Vidalia was unable to start Tor.")) + p(errmsg),
                      tr("OK"), tr("Help"));
 
     if (response == 1) {
@@ -329,7 +330,7 @@ MainWindow::started()
     if(!_torControl->isConnected()) {
       /* Ok, ok. It really isn't going to connect. I give up. */
       int response = QMessageBox::warning(this, 
-                      tr("Error Connecting to Tor"), errmsg,
+                      tr("Error Connecting to Tor"), p(errmsg),
                       tr("OK"), tr("Retry"), tr("Help"),
                       BUTTON_OK, 0);
 
@@ -369,7 +370,7 @@ MainWindow::stop()
     _isIntentionalExit = true;
     if (!_torControl->stop(&errmsg)) {
       int response = QMessageBox::warning(this, tr("Error Stopping Tor"),
-                       tr("Vidalia was unable to stop Tor.\n\n") + errmsg,
+                       p(tr("Vidalia was unable to stop Tor.")) + p(errmsg),
                        tr("OK"), tr("Retry"), tr("Help"),
                        BUTTON_OK, BUTTON_OK);
       
@@ -409,9 +410,9 @@ MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
      * if this turns out to not be the case. */
     if (exitStatus == QProcess::CrashExit || exitCode != 0) {
       int ret = QMessageBox::warning(this, tr("Tor Exited"),
-                  tr("Vidalia detected that Tor exited unexpectedly.\n\n"
-                     "Please check the message log for indicators\n"
-                     "about what happened to Tor before it exited."),
+                  p(tr("Vidalia detected that Tor exited unexpectedly.\n\n"
+                       "Please check the message log for indicators\n"
+                       "about what happened to Tor before it exited.")),
                   tr("Show Log"), tr("Close"));
       if (ret == 0) {
         showMessageLog();  
@@ -434,8 +435,8 @@ MainWindow::connected()
   /* The controller connected, so now send the AUTHENTICATE command */
   if (!_torControl->authenticate(&errmsg)) {
     QMessageBox::warning(this, tr("Authentication Error"),
-      tr("Vidalia was unable to authenticate itself to Tor."
-         "Check your authentication information and try again.\n\n") + errmsg,
+      p(tr("Vidalia was unable to authenticate itself to Tor.\n"
+           "Check your authentication information and try again.")) + p(errmsg),
       QMessageBox::Ok, QMessageBox::NoButton);
     _torControl->disconnect();
     return;
@@ -444,8 +445,8 @@ MainWindow::connected()
   /* Register for interesting events */
   if (!_torControl->setEvents(&errmsg)) {
     QMessageBox::warning(this, tr("Error Setting Events"),
-      tr("Vidalia was unable to register for events from Tor. "
-         "Some features of Vidalia will be unavailable.\n\n") + errmsg,
+      p(tr("Vidalia was unable to register for events from Tor.\n"
+           "Some features of Vidalia will be unavailable.")) + p(errmsg),
       QMessageBox::Ok, QMessageBox::NoButton);
   }
 

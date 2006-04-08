@@ -32,5 +32,9 @@
 /** Creates a QStringList from the array of C strings. */
 QStringList char_array_to_stringlist(char **arr, int len);
 
+/** Wraps the given string in "<p>" tags, converts "\n" to "<br/>" and
+ * converts "\n\n" to a new paragraph. */
+QString p(QString str);
+
 #endif
 

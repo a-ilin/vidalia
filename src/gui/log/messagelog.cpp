@@ -28,6 +28,7 @@
 #include <QInputDialog>
 
 #include <vidalia.h>
+#include <util/string.h>
 #include "messagelog.h"
 
 #define COL_TIME  0 /** Date/time column */
@@ -178,7 +179,7 @@ MessageLog::registerLogEvents()
   _filter = _settings->getMsgFilter();
   if (!_torControl->setLogEvents(_filter, this, &errmsg)) {
     QMessageBox::warning(this, tr("Error Setting Filter"),
-      tr("Vidalia was unable to register for Tor's log events.\n\n") + errmsg,
+      p(tr("Vidalia was unable to register for Tor's log events.")) + p(errmsg),
        QMessageBox::Ok, QMessageBox::NoButton);
   }
 }
@@ -194,7 +195,7 @@ MessageLog::saveChanges()
   if (_enableLogging) {
     if (!openLogFile(ui.lineFile->text())) {
       QMessageBox::warning(this, tr("Error Opening Log File"),
-        tr("Vidalia was unable to open the specified log file for writing."),
+        p(tr("Vidalia was unable to open the specified log file for writing.")),
         QMessageBox::Ok, QMessageBox::NoButton);
       cancelChanges();
       return;
@@ -399,7 +400,7 @@ MessageLog::save(QList<QTreeWidgetItem *> items)
     /* If can't write to file, show error message */
     if (!file.open(QFile::WriteOnly | QFile::Text)) {
       QMessageBox::warning(this, tr("Vidalia"),
-                          tr("Cannot write file %1\n\n%2.")
+                          p(tr("Cannot write file %1\n\n%2."))
                           .arg(fileName)
                           .arg(file.errorString()));
       return;
@@ -470,7 +471,7 @@ MessageLog::find()
     QList<QTreeWidgetItem *> results = sort(search(text));
     if (!results.size()) {
       QMessageBox::information(this, tr("Not Found"), 
-                               tr("Search found 0 matches."), 
+                               p(tr("Search found 0 matches.")), 
                                QMessageBox::Ok, QMessageBox::NoButton);
     } else {
       /* Deselect all currently selected items */

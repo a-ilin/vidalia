@@ -38,3 +38,14 @@ char_array_to_stringlist(char **arr, int len)
   return list;
 }
 
+/** Wraps the given string in "<p>", converts "\n" to "<br/>" and converts
+ * "\n\n" to a new paragraph. */
+QString
+p(QString str)
+{
+  str = "<p>" + str + "</p>";
+  str.replace("\n\n", "</p><p>");
+  str.replace("\n", "<br/>");
+  return str;
+}
+

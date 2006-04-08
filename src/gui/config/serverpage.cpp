@@ -27,6 +27,7 @@
 #include <vidalia.h>
 #include <util/net.h>
 #include <util/http.h>
+#include <util/string.h>
 
 #include "serverpage.h"
 #include "ipvalidator.h"
@@ -272,7 +273,7 @@ ServerPage::getServerPublicIP()
     ui.lineServerAddress->setText(ip);
   } else {
     QMessageBox::warning(this, tr("Error"),
-      tr("Viadlia was uanble to determine your public IP address."),
+      p(tr("Viadlia was uanble to determine your public IP address.")),
       QMessageBox::Ok, QMessageBox::NoButton);
   }
 }
@@ -286,10 +287,10 @@ ServerPage::getServerAddress()
   QHostAddress addr = net_local_address();
   if (net_is_private_address(addr)) {
     int button = QMessageBox::information(this, tr("Get Address"),
-                   tr("Vidalia was only able to find a private IP " 
-                      "address for your server.\n\nWould you like to "
-                      "access an external service to determine your public " 
-                      "IP address?"),
+                   p(tr("Vidalia was only able to find a private IP " 
+                        "address for your server.\n\nWould you like to "
+                        "access an external service to determine your public " 
+                        "IP address?")),
                     QMessageBox::Yes, QMessageBox::No);
     if (button == QMessageBox::Yes) {
       getServerPublicIP();
