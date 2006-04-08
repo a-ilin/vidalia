@@ -273,7 +273,7 @@ ServerPage::getServerPublicIP()
     ui.lineServerAddress->setText(ip);
   } else {
     QMessageBox::warning(this, tr("Error"),
-      p(tr("Viadlia was uanble to determine your public IP address.")),
+      p(tr("Vidalia was unable to determine your public IP address.")),
       QMessageBox::Ok, QMessageBox::NoButton);
   }
 }
