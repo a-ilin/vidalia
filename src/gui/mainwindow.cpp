@@ -104,7 +104,7 @@ MainWindow::MainWindow()
   _bandwidthGraph = new BandwidthGraph(this, bw_flags);
  
   /* Put an icon in the system tray to indicate the status of Tor */
-  _trayIcon = new TrayIcon(QPixmap(IMG_TOR_STOPPED),
+  _trayIcon = new TrayIcon(IMG_TOR_STOPPED,
                            tr("Tor is Stopped"), _trayMenu);
   _trayIcon->show();
 
@@ -317,7 +317,7 @@ MainWindow::started()
   setApplicationIcon(IMG_TOR_RUNNING);
   
   /* Set correct tray icon and tooltip */
-  _trayIcon->setIcon(QPixmap(IMG_TOR_RUNNING));
+  _trayIcon->setIcon(IMG_TOR_RUNNING);
   _trayIcon->setToolTip(tr("Tor is started"));
 
   /* Set menu actions appropriately */
@@ -405,7 +405,7 @@ MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
   setApplicationIcon(IMG_TOR_STOPPED);
   
   /* Set correct tray icon and tooltip */
-  _trayIcon->setIcon(QPixmap(IMG_TOR_STOPPED));
+  _trayIcon->setIcon(IMG_TOR_STOPPED);
   _trayIcon->setToolTip(tr("Tor is stopped"));
 
   /* Set menu actions appropriately */

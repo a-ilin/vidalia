@@ -28,7 +28,6 @@
 #define _TRAYICON_H
 
 #include <QObject>
-#include <QPixmap>
 #include <QString>
 #include <QMenu>
 #include <QMouseEvent>
@@ -49,7 +48,7 @@ class TrayIcon : public TrayIconImpl
 
 public:
   /** Constructor */
-  TrayIcon(const QPixmap &icon, const QString &toolTip, QMenu *popupMenu = 0);
+  TrayIcon(const QString &iconFile, const QString &toolTip, QMenu *popupMenu = 0);
 
 signals:
   /** Emitted when the user double-clicks on the tray icon. */

@@ -27,8 +27,8 @@
 #include "trayicon.h"
 
 /** Constructor. */
-TrayIcon::TrayIcon(const QPixmap &icon, const QString &toolTip, QMenu *popupMenu)
-: TrayIconImpl(icon, toolTip)
+TrayIcon::TrayIcon(const QString &iconFile, const QString &toolTip, QMenu *popupMenu)
+: TrayIconImpl(iconFile, toolTip)
 {
   _popupMenu = popupMenu;
 }

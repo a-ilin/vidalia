@@ -52,7 +52,7 @@
 #define SYSTEM_TRAY_CANCEL_MESSAGE  2
 
 
-TrayIconImpl::TrayIconImpl(const QPixmap &icon, const QString &toolTip)
+TrayIconImpl::TrayIconImpl(const QString &iconFile, const QString &toolTip)
 {
   setObjectName("trayiconimpl");
   setMinimumSize(22, 22);
@@ -91,7 +91,7 @@ TrayIconImpl::TrayIconImpl(const QPixmap &icon, const QString &toolTip)
     XSync(dpy, false);
   }
 
-  setIcon(icon);
+  setIcon(iconFile);
   setToolTip(toolTip);
 
   //setAttribute(Qt::WA_NoBackground);
@@ -136,8 +136,11 @@ TrayIconImpl::setToolTip(const QString &toolTip)
 
 /** Set the tray icon's image. */
 void
-TrayIconImpl::setIcon(const QPixmap &icon)
+TrayIconImpl::setIcon(const QString &iconFile)
 {
+  /* Load the pixmap image from the specified resource file */
+  QPixmap icon(iconFile);
+  
   /* Scale the image to the correct size. */
   QPixmap scaledPixmap = icon.scaled(QWidget::size(), 
                                      Qt::IgnoreAspectRatio,

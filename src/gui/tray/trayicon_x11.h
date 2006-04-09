@@ -59,14 +59,14 @@ class TrayIconImpl : protected QLabel
 
 public:
   /** Constructor */
-  TrayIconImpl(const QPixmap &icon, const QString &toolTip);
+  TrayIconImpl(const QString &iconFile, const QString &toolTip);
 
   /** Show the tray icon image. */
   void show();
   /** Hide the tray icon image. */
   void hide();
   /** Modify the tray icon's image. */
-  void setIcon(const QPixmap &icon);
+  void setIcon(const QString &iconFile);
   /** Modify the tray icon's tooltip. */
   void setToolTip(const QString &toolTip);
 

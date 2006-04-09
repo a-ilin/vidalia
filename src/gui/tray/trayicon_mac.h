@@ -28,7 +28,6 @@
 #define _TRAYICON_MAC_H
 
 #include <QObject>
-#include <QPixmap>
 #include <QString>
 
 
@@ -39,12 +38,12 @@ class TrayIconImpl : protected QObject
   Q_OBJECT
     
 public:
-    TrayIconImpl(const QPixmap &icon, const QString &toolTip)
-    { Q_UNUSED(icon); Q_UNUSED(toolTip); }
+    TrayIconImpl(const QString &iconFile, const QString &toolTip)
+    { Q_UNUSED(iconFile); Q_UNUSED(toolTip); }
 
     void show() {}
     void hide() {}
-    void setIcon(const QPixmap &icon) { Q_UNUSED(icon) }
+    void setIcon(const QString &iconFile) { Q_UNUSED(iconFile) }
     void setToolTip(const QString &toolTip) { Q_UNUSED(toolTip) }
 };
 
