@@ -42,13 +42,22 @@
 #endif
 
 
-class TrayIcon : public TrayIconImpl
+class TrayIcon : private TrayIconImpl
 {
   Q_OBJECT
 
 public:
   /** Constructor */
   TrayIcon(const QString &iconFile, const QString &toolTip, QMenu *popupMenu = 0);
+
+  /** Show the tray icon. */
+  void show();
+  /** Hide the tray icon. */
+  void hide();
+  /** Update the tray icon's tooltip. */
+  void setToolTip(const QString &toolTip);
+  /** Update the tray icon's image. */
+  void setIcon(const QString &iconFile);
 
 signals:
   /** Emitted when the user double-clicks on the tray icon. */

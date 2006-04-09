@@ -98,3 +98,31 @@ TrayIcon::mouseButtonDblClick(QMouseEvent *event)
   }
 }
 
+/** Call the platform's tray icon implementation to show the tray icon. */
+void
+TrayIcon::show()
+{
+  TrayIconImpl::show();
+}
+
+/** Call the platform's tray icon implementation to hide the tray icon. */
+void
+TrayIcon::hide()
+{
+  TrayIconImpl::hide();
+}
+
+/** Call the platform's tray icon implementation to update the icon's tooltip.*/
+void
+TrayIcon::setToolTip(const QString &toolTip)
+{
+  TrayIconImpl::setToolTip(toolTip);
+}
+
+/** Call the platform's tray icon implementation to update the icon image. */
+void
+TrayIcon::setIcon(const QString &iconFile)
+{
+  TrayIconImpl::setIcon(iconFile);
+}
+

@@ -57,7 +57,7 @@ class TrayIconImpl : protected QLabel
 {
   Q_OBJECT
 
-public:
+protected:
   /** Constructor */
   TrayIconImpl(const QString &iconFile, const QString &toolTip);
 
@@ -70,7 +70,6 @@ public:
   /** Modify the tray icon's tooltip. */
   void setToolTip(const QString &toolTip);
 
-protected:
   /** Process events when the mouse enters the icon area. */
   void enterEvent(QEvent *event);
 };

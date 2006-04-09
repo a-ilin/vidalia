@@ -37,14 +37,14 @@ class TrayIconImpl : protected QObject
 {
   Q_OBJECT
     
-public:
-    TrayIconImpl(const QString &iconFile, const QString &toolTip)
-    { Q_UNUSED(iconFile); Q_UNUSED(toolTip); }
+protected:
+  TrayIconImpl(const QString &iconFile, const QString &toolTip)
+  { Q_UNUSED(iconFile); Q_UNUSED(toolTip); }
 
-    void show() {}
-    void hide() {}
-    void setIcon(const QString &iconFile) { Q_UNUSED(iconFile) }
-    void setToolTip(const QString &toolTip) { Q_UNUSED(toolTip) }
+  void show() {}
+  void hide() {}
+  void setIcon(const QString &iconFile) { Q_UNUSED(iconFile) }
+  void setToolTip(const QString &toolTip) { Q_UNUSED(toolTip) }
 };
 
 #endif
