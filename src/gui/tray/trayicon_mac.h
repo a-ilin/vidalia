@@ -44,8 +44,8 @@ public:
 
     void show() {}
     void hide() {}
-    void setIcon(const QPixmap &icon) {}
-    void setToolTip(const QString &toolTip) {}
+    void setIcon(const QPixmap &icon) { Q_UNUSED(icon) }
+    void setToolTip(const QString &toolTip) { Q_UNUSED(toolTip) }
 };
 
 #endif
