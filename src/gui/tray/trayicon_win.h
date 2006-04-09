@@ -27,7 +27,7 @@
 #ifndef _TRAYICON_WIN_H
 #define _TRAYICON_WIN_H
 
-#include <QPixmap>
+#include <QObject>
 #include <QString>
 
 
@@ -36,15 +36,18 @@ class TrayIconImpl : protected QObject
 {
   Q_OBJECT
     
-protected:    
-  TrayIconImpl(const QString &iconFile, const QString &toolTip)
-  { Q_UNUSED(iconFile); Q_UNUSED(toolTip); }
+protected:
+  /** Constructor */
+  TrayIconImpl(const QString &iconFile, const QString &toolTip);
 
-  void show() {}
-  void hide() {}
-  void setIcon(const QString &iconFile) {}
-  void setToolTip(const QString &toolTip) {}
+  /** Show the tray icon. */
+  void show();
+  /** Hide the tray icon. */
+  void hide();
+  /** Update the tray icon's image. */
+  void setIcon(const QString &iconFile);
+  /** Update the tray icon's tooltip. */
+  void setToolTip(const QString &toolTip);
 };
 
 #endif
-
