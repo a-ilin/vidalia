@@ -138,6 +138,10 @@ TrayIconImpl::setToolTip(const QString &toolTip)
 void
 TrayIconImpl::setIcon(const QPixmap &icon)
 {
-  QLabel::setPixmap(icon);
+  /* Scale the image to the correct size. */
+  QPixmap scaledPixmap = icon.scaled(QWidget::size(), 
+                                     Qt::KeepAspectRatio,
+                                     Qt::SmoothTransformation);
+  setPixmap(scaledPixmap);
 }
 
