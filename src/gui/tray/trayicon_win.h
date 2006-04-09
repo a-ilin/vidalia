@@ -20,53 +20,30 @@
  ****************************************************************/
 
 /** 
- * \file trayicon.h
- * \version $Id$
+ * \file trayicon_win.h
+ * \version $Id: mainwindow.cpp 604 2006-04-08 20:36:55Z edmanm $
  */
 
-#ifndef _TRAYICON_H
-#define _TRAYICON_H
+#ifndef _TRAYICON_WIN_H
+#define _TRAYICON_WIN_H
 
-#include <QObject>
 #include <QPixmap>
 #include <QString>
-#include <QMenu>
-#include <QMouseEvent>
-
-/* Include the correct tray icon implementation */
-#if defined(Q_WS_WIN)
-#include "trayicon_win.h"
-#elif defined(Q_WS_X11)
-#include "trayicon_x11.h"
-#else
-#include "trayicon_mac.h"
-#endif
 
 
-class TrayIcon : public TrayIconImpl
+/** Stub class that does nothing on Windows yet. */
+class TrayIconImpl : protected QObject
 {
   Q_OBJECT
-
+    
 public:
-  /** Constructor */
-  TrayIcon(const QPixmap &icon, const QString &toolTip, QMenu *popupMenu = 0);
+    TrayIconImpl(const QPixmap &icon, const QString &toolTip)
+    { Q_UNUSED(icon); Q_UNUSED(toolTip); }
 
-signals:
-  /** Emitted when the user double-clicks on the tray icon. */
-  void doubleClicked();
-
-protected:
-  /** Override's QObject' event() method to catch mouse-related events. */
-  bool event(QEvent *);
-  /** Respond to a mouse button being pressed. */ 
-  void mouseButtonPress(QMouseEvent *event);
-  /** Respond to a mouse button being released. */
-  void mouseButtonRelease(QMouseEvent *event);
-  /** Respond to a mouse button being double-clicked. */
-  void mouseButtonDblClick(QMouseEvent *event);
-
-private:
-  QMenu* _popupMenu; /**< Menu to display when the tray icon is clicked. */
+    void show() {}
+    void hide() {}
+    void setIcon(const QPixmap &icon) {}
+    void setToolTip(const QString &toolTip) {}
 };
 
 #endif

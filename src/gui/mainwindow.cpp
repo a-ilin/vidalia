@@ -51,6 +51,9 @@
 #include "dock/dock.h"
 #define IMG_TOR_STOPPED    "tor-off"
 #define IMG_TOR_RUNNING    "tor-on"
+#elif defined(Q_WS_X11)
+#define IMG_TOR_STOPPED    ":/images/22x22/tor-off.png"
+#define IMG_TOR_RUNNING    ":/images/22x22/tor-on.png"
 #else
 #define IMG_TOR_STOPPED    ":/images/16x16/tor-off.png"
 #define IMG_TOR_RUNNING    ":/images/16x16/tor-on.png"
@@ -102,13 +105,20 @@ MainWindow::MainWindow()
  
   /* Put an icon in the system tray to indicate the status of Tor */
   _trayIcon = new TrayIcon(QPixmap(IMG_TOR_STOPPED),
-                           tr("Tor is Stopped"), _trayMenu, this);
+                           tr("Tor is Stopped"), _trayMenu);
   _trayIcon->show();
 
   /* If we're supposed to start Tor when Vidalia starts, then do it now */
   if (settings.runTorAtStart()) {
     start();
   }
+}
+
+/** Destructor. */
+MainWindow::~MainWindow()
+{
+  _trayIcon->hide();
+  delete _trayIcon;
 }
 
 /** Changes the application's window icon. On Mac, we update the

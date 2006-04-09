@@ -46,7 +46,8 @@ class MainWindow : public QMainWindow
 public:
   /** Default constructor */
   MainWindow();
-
+  /** Destructor. */
+  ~MainWindow();
 
 public slots:
   /** Overrides the default show() slot to display the default menubar */
