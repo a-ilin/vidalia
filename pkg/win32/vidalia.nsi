@@ -130,7 +130,7 @@ SectionEnd
 ; Uninstaller
 Section "Uninstall"  
   ; Remove registry keys
-  DeleteRegKey HKCU "Software\Microsoft\Windows\CurrentVersion\Run\${APPNAME}"
+  DeleteRegValue HKCU "Software\Microsoft\Windows\CurrentVersion\Run\" "${APPNAME}"
   DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APPNAME}"
   DeleteRegKey HKCU "Software\${APPNAME}"
 
