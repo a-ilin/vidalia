@@ -24,36 +24,95 @@
  * \version $Id$
  */
 
-#include <windows.h>
+#include <QApplication>
 
 #include "trayicon_win.h"
 
+#define WM_NOTIFYICON   WM_APP
+#define TRAY_ICON_ID    0
+
+
+/** Constructor. */
 TrayIconImpl::TrayIconImpl(const QString &iconFile, const QString &toolTip)
 {
   setObjectName("trayiconimpl");
+  
+  /* Initialize the structure representing our tray icon. */
+  _nfd.cbSize = sizeof(NOTIFYICONDATA);
+  _nfd.hWnd = winId();
+  _nfd.uID = TRAY_ICON_ID;
+  _nfd.uCallbackMessage = WM_NOTIFYICON;
+  _nfd.uFlags = NIF_MESSAGE | NIF_ICON | NIF_TIP;
+
+  /* Add the tool tip to the structure */
+  setIcon(iconFile);
+
+  /* And give it an icon */
+  setToolTip(toolTip);
+}
+
+/** Catches and handles mouse-related native Windows event messages. */
+bool
+TrayIconImpl::winEvent(MSG *msg, long *result)
+{
+  if (msg->message == WM_NOTIFYICON) {
+    switch (msg->lParam) {
+      case WM_LBUTTONUP:
+        return postMouseEvent(QEvent::MouseButtonRelease, Qt::LeftButton);
+
+      case WM_RBUTTONUP:
+        return postMouseEvent(QEvent::MouseButtonRelease, Qt::RightButton);
+
+      case WM_LBUTTONDBLCLK:
+        return postMouseEvent(QEvent::MouseButtonDblClick, Qt::LeftButton);
+
+      default:
+        break;
+    }
+  }
+  return QWidget::winEvent(msg, result);
+}
+
+/** Posts a mouse-related event to the main TrayIcon class. */
+bool
+TrayIconImpl::postMouseEvent(QEvent::Type type, Qt::MouseButton button)
+{
+  QPoint pos = QCursor::pos();
+  QMouseEvent event(type, mapFromGlobal(pos), pos, button, button, Qt::NoModifier);
+  return QApplication::sendEvent(this, &event);
 }
 
 /** Show the tray icon image. */
 void
 TrayIconImpl::show()
 {
+  Shell_NotifyIcon(NIM_ADD, &_nfd);
 }
 
 /** Hide the tray icon image. */
 void
 TrayIconImpl::hide()
 {
+  Shell_NotifyIcon(NIM_DELETE, &_nfd);
 }
 
 /** Set the tray icon's tooltip. */
 void
 TrayIconImpl::setToolTip(const QString &toolTip)
 {
+#if defined(UNICODE)
+  lstrcpynW(_nfd.szTip, (TCHAR*)toolTip.unicode(), 
+            qMin(toolTip.length()+1, 64));
+#else
+  lstrcpynA(_nfd.szTip, (const char*)toolTip.toLocal8Bit(), 
+            qMin(toolTip.length()+1, 64));
+#endif
+  Shell_NotifyIcon(NIM_MODIFY, &_nfd);
 }
 
 /** Set the tray icon's image. */
 void
 TrayIconImpl::setIcon(const QString &iconFile)
 {
+  Shell_NotifyIcon(NIM_MODIFY, &_nfd);
 }
-

@@ -27,14 +27,17 @@
 #ifndef _TRAYICON_WIN_H
 #define _TRAYICON_WIN_H
 
-#include <QObject>
+#include <windows.h>
+
+#include <QWidget>
 #include <QString>
+#include <QMouseEvent>
 
 
 /** Stub class that does nothing on Windows yet. */
-class TrayIconImpl : protected QObject
+class TrayIconImpl : protected QWidget
 {
-  Q_OBJECT
+  //Q_OBJECT
     
 protected:
   /** Constructor */
@@ -48,6 +51,14 @@ protected:
   void setIcon(const QString &iconFile);
   /** Update the tray icon's tooltip. */
   void setToolTip(const QString &toolTip);
+
+private:
+  /** Catches native Windows event messages. */
+  bool winEvent (MSG *message, long *result);
+  /** Posts a new Qt-based mouse event. */
+  bool postMouseEvent(QEvent::Type type, Qt::MouseButton button);
+
+  NOTIFYICONDATA _nfd; /**< Structure representing a notify icon in the tray. */
 };
 
 #endif
