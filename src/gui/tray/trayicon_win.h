@@ -54,8 +54,8 @@ protected:
 private:
   /** Catches native Windows event messages. */
   bool winEvent (MSG *message, long *result);
-  /** Posts a new Qt-based mouse event. */
-  bool postMouseEvent(QEvent::Type type, Qt::MouseButton button);
+  /** Sends a new Qt-based mouse event. */
+  bool sendMouseEvent(QEvent::Type type, Qt::MouseButton button);
   /** Create an icon for the tray image from a pixmap. */
   HICON createIcon(const QPixmap &pixmap);
 

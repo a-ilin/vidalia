@@ -82,13 +82,13 @@ TrayIconImpl::winEvent(MSG *msg, long *result)
   if (msg->message == WM_NOTIFYICON) {
     switch (msg->lParam) {
       case WM_LBUTTONUP:
-        return postMouseEvent(QEvent::MouseButtonRelease, Qt::LeftButton);
+        return sendMouseEvent(QEvent::MouseButtonRelease, Qt::LeftButton);
 
       case WM_RBUTTONUP:
-        return postMouseEvent(QEvent::MouseButtonRelease, Qt::RightButton);
+        return sendMouseEvent(QEvent::MouseButtonRelease, Qt::RightButton);
 
       case WM_LBUTTONDBLCLK:
-        return postMouseEvent(QEvent::MouseButtonDblClick, Qt::LeftButton);
+        return sendMouseEvent(QEvent::MouseButtonDblClick, Qt::LeftButton);
 
       default:
         break;
@@ -101,9 +101,9 @@ TrayIconImpl::winEvent(MSG *msg, long *result)
   return QWidget::winEvent(msg, result);
 }
 
-/** Posts a mouse-related event to the main TrayIcon class. */
+/** Sends a mouse-related event to the main TrayIcon class. */
 bool
-TrayIconImpl::postMouseEvent(QEvent::Type type, Qt::MouseButton button)
+TrayIconImpl::sendMouseEvent(QEvent::Type type, Qt::MouseButton button)
 {
   QPoint pos = QCursor::pos();
   QMouseEvent event(type, mapFromGlobal(pos), pos, button, button, Qt::NoModifier);
