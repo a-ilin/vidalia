@@ -66,6 +66,8 @@ TrayIcon::mouseButtonPress(QMouseEvent *event)
   if (_popupMenu) {
     _popupMenu->popup(event->globalPos());
   }
+#else
+  Q_UNUSED(event);
 #endif
 }
 
