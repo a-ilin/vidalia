@@ -37,8 +37,6 @@
 /** Stub class that does nothing on Windows yet. */
 class TrayIconImpl : protected QWidget
 {
-  //Q_OBJECT
-    
 protected:
   /** Constructor */
   TrayIconImpl(const QString &iconFile, const QString &toolTip);
@@ -62,3 +60,4 @@ private:
 };
 
 #endif
+
