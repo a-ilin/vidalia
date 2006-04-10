@@ -20,31 +20,46 @@
  ****************************************************************/
 
 /** 
- * \file trayicon_mac.h
+ * \file trayicon_win.h
  * \version $Id: mainwindow.cpp 604 2006-04-08 20:36:55Z edmanm $
  */
 
 #ifndef _TRAYICON_MAC_H
 #define _TRAYICON_MAC_H
 
-#include <QObject>
+#include <Carbon/Carbon.h>
+
+#include <QWidget>
 #include <QString>
 
 
-/** Stub class that does nothing on Mac. Maybe someday this will house the
- * dock icon code. */
-class TrayIconImpl : protected QObject
+class TrayIconImpl : protected QWidget
 {
-  Q_OBJECT
-    
 protected:
-  TrayIconImpl(const QString &iconFile, const QString &toolTip)
-  { Q_UNUSED(iconFile); Q_UNUSED(toolTip); }
+  /** Constructor */
+  TrayIconImpl(const QString &iconFile, const QString &toolTip);
+  /** Destructor */
+  ~TrayIconImpl();
 
-  void show() {}
-  void hide() {}
-  void setIcon(const QString &iconFile) { Q_UNUSED(iconFile) }
-  void setToolTip(const QString &toolTip) { Q_UNUSED(toolTip) }
+  /** Show the tray icon. */
+  void show();
+  /** Hide the tray icon. */
+  void hide();
+  /** Update the tray icon's image. */
+  void setIcon(const QString &iconFile);
+  /** Update the tray icon's tooltip. */
+  void setToolTip(const QString &toolTip);
+
+private:
+  /** Load icon data from the given file and create a CGImageRef. */
+  CGImageRef createIconFromFile(FSSpec fileSpec);
+  /** Create an icon from the given filename in the application bundle. */
+  CGImageRef createIcon(const QString &iconFile);
+  /** Callback used by CGDataProviderCreateWithData(). */
+  static void releaseCallback(void *info, const void *data, size_t size);
+  
+  CGImageRef _imageRef; /**< Tray icon image. */
+  bool _shown; /**< True if the dock icon is to be displayed. */
 };
 
 #endif

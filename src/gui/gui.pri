@@ -36,8 +36,6 @@ macx {
                 $$PWD/res/icons/tor-off.icns
   icons.path = Contents/Resources
   QMAKE_BUNDLE_DATA += icons
-  
-  include($$PWD/dock/dock.pri)
 }
 win32 {
   RC_FILE = $$PWD/res/vidalia_win.rc

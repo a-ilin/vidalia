@@ -37,6 +37,7 @@
 
 #include "mainwindow.h"
 
+#define IMG_APP_ICON       ":/images/16x16/tor-logo.png"
 #define IMG_START          ":/images/16x16/tor-on.png"
 #define IMG_STOP           ":/images/16x16/tor-off.png"
 #define IMG_BWGRAPH        ":/images/16x16/utilities-system-monitor.png"
@@ -48,7 +49,6 @@
 
 /* On Mac, we go straight to Carbon to load our dock images from .icns files */
 #if defined(Q_WS_MAC)
-#include "dock/dock.h"
 #define IMG_TOR_STOPPED    "tor-off"
 #define IMG_TOR_RUNNING    "tor-on"
 #elif defined(Q_WS_X11)
@@ -80,7 +80,7 @@ MainWindow::MainWindow()
 #endif
 
   /* Set Vidalia's application icon */
-  setApplicationIcon(IMG_TOR_STOPPED);
+  setWindowIcon(QIcon(IMG_APP_ICON));
 
   /* Create the actions that will go in the tray menu */
   createActions();
@@ -121,19 +121,6 @@ MainWindow::~MainWindow()
   delete _trayIcon;
 }
 
-/** Changes the application's window icon. On Mac, we update the
- * application's dock icon. */ 
-void
-MainWindow::setApplicationIcon(QString res)
-{
-#if defined(Q_WS_MAC)
-  setDockIcon(res.toAscii().data());
-#else
-  QIcon icon(res);
-  setWindowIcon(icon);
-#endif
-}
-
 /** Shows the menubar on Mac */
 void
 MainWindow::show()
@@ -162,11 +149,6 @@ MainWindow::close()
 
   /* Remove the menu bar on Mac */
   removeMenuBar();
-
-  /* If we're running on Mac, then restore the application's dock icon. */
-#if defined (Q_WS_MAC)
-  restoreDockIcon();
-#endif
 
   /* And then quit for real */
   QCoreApplication::quit();
@@ -313,9 +295,6 @@ MainWindow::started()
   QString errmsg;
   bool retry;
   
-  /* Set the window icon */
-  setApplicationIcon(IMG_TOR_RUNNING);
-  
   /* Set correct tray icon and tooltip */
   _trayIcon->setIcon(IMG_TOR_RUNNING);
   _trayIcon->setToolTip(tr("Tor is started"));
@@ -401,9 +380,6 @@ MainWindow::stop()
 void 
 MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
 {
-  /* Set the window icon */
-  setApplicationIcon(IMG_TOR_STOPPED);
-  
   /* Set correct tray icon and tooltip */
   _trayIcon->setIcon(IMG_TOR_STOPPED);
   _trayIcon->setToolTip(tr("Tor is stopped"));

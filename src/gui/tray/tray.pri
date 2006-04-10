@@ -34,5 +34,6 @@ win32: {
 }
 mac: {
     HEADERS += $$PWD/trayicon_mac.h
+    SOURCES += $$PWD/trayicon_mac.cpp
 }
 

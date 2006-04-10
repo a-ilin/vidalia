@@ -80,8 +80,6 @@ private slots:
 
 
 private:
-  /** Sets the application's window or dock (Mac) icon. */
-  void setApplicationIcon(QString res);
   /** Create the tray popup menu and it's submenus */
   void createMenus();
   /** Create the actions on the tray menu or menubar */
