@@ -113,7 +113,7 @@ void
 BandwidthGraph::updateGraph(quint64 bytesRead, quint64 bytesWritten)
 {
   /* Graph only cares about kilobytes */
-  ui.frmGraph->addPoints(bytesRead/1000.0, bytesWritten/1000.0);
+  ui.frmGraph->addPoints(bytesRead/1024.0, bytesWritten/1024.0);
 }
 
 /**
