@@ -31,6 +31,7 @@
 
 #include <QWidget>
 #include <QString>
+#include <QPixmap>
 #include <QMouseEvent>
 
 
@@ -55,6 +56,8 @@ private:
   bool winEvent (MSG *message, long *result);
   /** Posts a new Qt-based mouse event. */
   bool postMouseEvent(QEvent::Type type, Qt::MouseButton button);
+  /** Create an icon for the tray image from a pixmap. */
+  HICON createIcon(const QPixmap &pixmap);
 
   NOTIFYICONDATA _nfd; /**< Structure representing a notify icon in the tray. */
 };
