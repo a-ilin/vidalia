@@ -36,7 +36,7 @@
 TrayIconImpl::TrayIconImpl(const QString &iconFile, const QString &toolTip)
 {
   setObjectName("trayiconimpl");
-  
+ 
   /* Initialize the structure representing our tray icon. */
   _nfd.cbSize = sizeof(NOTIFYICONDATA);
   _nfd.hWnd = winId();
@@ -116,3 +116,4 @@ TrayIconImpl::setIcon(const QString &iconFile)
 {
   Shell_NotifyIcon(NIM_MODIFY, &_nfd);
 }
+
