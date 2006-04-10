@@ -220,13 +220,17 @@ GraphFrame::paintTotals()
   /* If total received is selected */
   if (_showRecv) {
     _painter->setPen(RECV_COLOR);
-    _painter->drawText(x, FONT_SIZE, tr("Recv: ") + totalToStr(_totalRecv));
+    _painter->drawText(x, FONT_SIZE,
+        tr("Recv: ") + totalToStr(_totalRecv) + 
+        " (" + totalToStr(_recvData->first()) + "/s)");
   }
 
   /* If total sent is selected */
   if (_showSend) {
     _painter->setPen(SEND_COLOR);
-    _painter->drawText(x, (2*FONT_SIZE), tr("Sent: ") + totalToStr(_totalSend));
+    _painter->drawText(x, (2*FONT_SIZE),
+        tr("Sent: ") + totalToStr(_totalSend) +
+        " (" + totalToStr(_sendData->first()) + "/s)");
   }
 }
 
@@ -238,15 +242,15 @@ QString
 GraphFrame::totalToStr(qreal total)
 {
   /* Determine the correct size suffix */
-  if (total < 1000) {
+  if (total < 1024) {
     /* Use KB suffix */
     return tr("%1 KB").arg(total, 0, 'f', 2);
-  } else if (total < 1000000) {
+  } else if (total < 1048576) {
     /* Use MB suffix */
-    return tr("%1 MB").arg(total/1000.0, 0, 'f', 2);
+    return tr("%1 MB").arg(total/1024.0, 0, 'f', 2);
   } else {
     /* Use GB suffix */
-    return tr("%1 GB").arg(total/1000000.0, 0, 'f', 2);
+    return tr("%1 GB").arg(total/1048576.0, 0, 'f', 2);
   }
 }
 
