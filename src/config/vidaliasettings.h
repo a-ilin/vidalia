@@ -75,7 +75,7 @@ public:
   uint getMsgFilter();
   /** Set the filter used to determine which messages to display in the
    * message log. */
-  void setMsgFilter(LogEvent::Severity severity, bool status);
+  void setMsgFilter(LogEvent::Severity severity, bool add);
 
   /** Get the maximum number of messages to display in log. */
   int getMaxMsgCount();

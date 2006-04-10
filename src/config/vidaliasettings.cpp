@@ -179,10 +179,10 @@ VidaliaSettings::getMsgFilter()
 /** Saves the setting for whether or not the given message severity will be
  * displayed. */
 void
-VidaliaSettings::setMsgFilter(LogEvent::Severity severity, bool status)
+VidaliaSettings::setMsgFilter(LogEvent::Severity severity, bool add)
 {
   uint filter = getMsgFilter();
-  filter = (status ? (filter | (uint)severity) : (filter & ~((uint)severity)));
+  filter = (add ? (filter | (uint)severity) : (filter & ~((uint)severity)));
   setValue(SETTING_MSG_FILTER, filter);
 }
 
