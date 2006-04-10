@@ -28,8 +28,9 @@
 
 #include "trayicon_win.h"
 
-#define WM_NOTIFYICON   WM_APP
-#define TRAY_ICON_ID    0
+#define WM_NOTIFYICON   WM_APP /**< Message sent for events related to our icon.*/
+#define TRAY_ICON_ID    0   /**< ID for our tray icon. */
+UINT    WM_TASKBARCREATED;  /**< Message sent when taskbar is created. */
 
 
 /** Constructor. */
@@ -43,6 +44,9 @@ TrayIconImpl::TrayIconImpl(const QString &iconFile, const QString &toolTip)
   _nfd.uID = TRAY_ICON_ID;
   _nfd.uCallbackMessage = WM_NOTIFYICON;
   _nfd.uFlags = NIF_MESSAGE | NIF_ICON | NIF_TIP;
+
+  /* We want to know when Explorer crashes and recreates the taskbar. */
+  WM_TASKBARCREATED = RegisterWindowMessage(TEXT("TaskbarCreated"));
 
   /* Add the tool tip to the structure */
   setIcon(iconFile);
@@ -69,6 +73,10 @@ TrayIconImpl::winEvent(MSG *msg, long *result)
       default:
         break;
     }
+  } else if (msg->message == WM_TASKBARCREATED) {
+    /* We handle WM_TASKBARCREATED because it's possible that Explorer
+     * crashed and was recreated, in which case we need to re-add our icon. */
+    Shell_NotifyIcon(NIM_ADD, &_nfd);
   }
   return QWidget::winEvent(msg, result);
 }
