@@ -38,7 +38,7 @@ QT      += network xml
 
 win32 {
   # Link against these libraries on Win32
-  LIBS += -lshell32 -gdi32
+  LIBS += -lshell32 -lgdi32
 }
 
 unix {
