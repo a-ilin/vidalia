@@ -67,11 +67,11 @@ TrayIconImpl::TrayIconImpl(const QString &iconFile, const QString &toolTip)
 
   /* We want to know when Explorer crashes and recreates the taskbar. */
   WM_TASKBARCREATED = RegisterWindowMessage(TEXT("TaskbarCreated"));
-
-  /* Add the tool tip to the structure */
-  setIcon(iconFile);
-
+  
   /* And give it an icon */
+  setIcon(iconFile);
+  
+  /* Add the tool tip to the structure */
   setToolTip(toolTip);
 }
 
