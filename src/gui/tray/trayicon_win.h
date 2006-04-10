@@ -35,7 +35,6 @@
 #include <QMouseEvent>
 
 
-/** Stub class that does nothing on Windows yet. */
 class TrayIconImpl : protected QWidget
 {
 protected:
