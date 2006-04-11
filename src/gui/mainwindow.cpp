@@ -47,22 +47,25 @@
 #define IMG_ABOUT          ":/images/16x16/tor-logo.png"
 #define IMG_EXIT           ":/images/16x16/emblem-unreadable.png"
 
-/* On Mac, we go straight to Carbon to load our dock images from .icns files */
 #if defined(Q_WS_MAC)
+/* On Mac, we go straight to Carbon to load our dock images from .icns files */
 #define IMG_TOR_STOPPED    "tor-off"
 #define IMG_TOR_RUNNING    "tor-on"
 #define IMG_TOR_STARTING   "tor-starting"
 #define IMG_TOR_STOPPING   "tor-stopping"
 #elif defined(Q_WS_X11)
+/* On X11, we just use the .png files */
 #define IMG_TOR_STOPPED    ":/images/22x22/tor-off.png"
 #define IMG_TOR_RUNNING    ":/images/22x22/tor-on.png"
 #define IMG_TOR_STARTING   ":/images/22x22/tor-starting.png"
 #define IMG_TOR_STOPPING   ":/images/22x22/tor-stopping.png"
 #else
-#define IMG_TOR_STOPPED    ":/images/16x16/tor-off.png"
-#define IMG_TOR_RUNNING    ":/images/16x16/tor-on.png"
-#define IMG_TOR_STARTING   ":/images/16x16/tor-starting.png"
-#define IMG_TOR_STOPPING   ":/images/16x16/tor-stopping.png"
+/* On Win32, we load .ico files so our icons look correct on all Windowses */
+#include "res/vidalia_win.rc.h"
+#define IMG_TOR_STOPPED    QString::number(IDI_TOR_OFF)
+#define IMG_TOR_RUNNING    QString::number(IDI_TOR_ON)
+#define IMG_TOR_STARTING   QString::number(IDI_TOR_STARTING)
+#define IMG_TOR_STOPPING   QString::number(IDI_TOR_STOPPING)
 #endif
 
 /* Buttons the use can click in error message boxes */

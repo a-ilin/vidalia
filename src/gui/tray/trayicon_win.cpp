@@ -110,21 +110,12 @@ TrayIconImpl::sendMouseEvent(QEvent::Type type, Qt::MouseButton button)
   return QApplication::sendEvent(this, &event);
 }
 
-/** Create an icon for the tray image from a pixmap. */
+/** Create an icon for the tray image from a resource identifier. */
 HICON
-TrayIconImpl::createIcon(const QPixmap &pixmap)
+TrayIconImpl::createIcon(const int resourceId)
 {
-  HBITMAP hbm = pixmap.toWinHBITMAP(QPixmap::PremultipliedAlpha);
-
-  ICONINFO iconInfo;
-  iconInfo.fIcon    = TRUE;
-  iconInfo.hbmMask  = hbm;
-  iconInfo.hbmColor = hbm;
-
-  HICON hIcon = CreateIconIndirect(&iconInfo);
-  DeleteObject(hbm);
-
-  return hIcon;
+  return LoadIcon((HINSTANCE)GetModuleHandle(NULL), 
+                  MAKEINTRESOURCE(resourceId));
 }
 
 /** Show the tray icon image. */
@@ -159,7 +150,7 @@ TrayIconImpl::setToolTip(const QString &toolTip)
 void
 TrayIconImpl::setIcon(const QString &iconFile)
 {
-  _nfd.hIcon = createIcon(QPixmap(iconFile)); 
+  _nfd.hIcon = createIcon(iconFile.toInt());
   Shell_NotifyIcon(NIM_MODIFY, &_nfd);
 }
 

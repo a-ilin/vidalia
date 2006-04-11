@@ -55,8 +55,8 @@ private:
   bool winEvent (MSG *message, long *result);
   /** Sends a new Qt-based mouse event. */
   bool sendMouseEvent(QEvent::Type type, Qt::MouseButton button);
-  /** Create an icon for the tray image from a pixmap. */
-  HICON createIcon(const QPixmap &pixmap);
+  /** Create an icon for the tray image from a given icon resource identifier. */
+  HICON createIcon(const int resourceId);
 
   NOTIFYICONDATA _nfd; /**< Structure representing a notify icon in the tray. */
 };
