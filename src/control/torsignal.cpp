@@ -32,12 +32,12 @@ TorSignal::toString(Signal signal)
 {
   QString sigtype;
   switch (signal) {
-    case SignalReload:    sigtype = "RELOAD"; break;
-    case SignalShutdown:  sigtype = "SHUTDOWN"; break;
-    case SignalDump:      sigtype = "DUMP"; break;
-    case SignalDebug:     sigtype = "DEBUG"; break;
-    case SignalHalt:      sigtype = "HALT"; break;
-    case SignalNewNym:    sigtype = "NEWNYM"; break;
+    case Reload:    sigtype = "RELOAD"; break;
+    case Shutdown:  sigtype = "SHUTDOWN"; break;
+    case Dump:      sigtype = "DUMP"; break;
+    case Debug:     sigtype = "DEBUG"; break;
+    case Halt:      sigtype = "HALT"; break;
+    case NewNym:    sigtype = "NEWNYM"; break;
     default:  return "UNKNOWN";
   }
   return sigtype;

@@ -35,12 +35,12 @@ class TorSignal
 public:
   /** Signals that can be sent by the controller */
   enum Signal {
-    SignalReload,   /**< SIGHUP: Reloads config items and refetch directory */
-    SignalShutdown, /**< SIGINT: Controlled shutdown */
-    SignalDump,     /**< SIGUSR1: Log information about current circuits */
-    SignalDebug,    /**< SIGUSR2: Switch all open logs to loglevel debug */
-    SignalHalt,     /**< SIGTERM: Immediate shutdown */
-    SignalNewNym    /**< NEWNYM: Switch to all new clean circuits */
+    Reload,   /**< SIGHUP: Reloads config items and refetch directory */
+    Shutdown, /**< SIGINT: Controlled shutdown */
+    Dump,     /**< SIGUSR1: Log information about current circuits */
+    Debug,    /**< SIGUSR2: Switch all open logs to loglevel debug */
+    Halt,     /**< SIGTERM: Immediate shutdown */
+    NewNym    /**< NEWNYM: Switch to all new clean circuits */
   };
   
   /** Returns a string representation of a signal that Tor understands. */
