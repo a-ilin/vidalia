@@ -32,5 +32,5 @@ IDI_TOR_OFF       ICON    "icons/tor-off.ico"
 IDI_TOR_ON        ICON    "icons/tor-on.ico"
 
 // Change these to the correct icons when they're added
-IDI_TOR_STARTING  ICON    "icons/tor-off.ico"
-IDI_TOR_STOPPING  ICON    "icons/tor-on.ico"
+IDI_TOR_STARTING  ICON    "icons/tor-starting.ico"
+IDI_TOR_STOPPING  ICON    "icons/tor-stopping.ico"

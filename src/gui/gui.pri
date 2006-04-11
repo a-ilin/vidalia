@@ -28,7 +28,6 @@ RESOURCES += $$PWD/res/vidalia_common.qrc
 
 
 win32 {
-  RESOURCES += $$PWD/res/vidalia_win.qrc
   RC_FILE = $$PWD/res/vidalia_win.rc
 }
 unix:!macx {
