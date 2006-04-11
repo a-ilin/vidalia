@@ -273,7 +273,7 @@ GraphFrame::paintScale()
     scale = i * markStep;
     _painter->setPen(SCALE_COLOR);
     _painter->drawText(QPointF(5, pos+FONT_SIZE), 
-                       tr("%1 kB/s").arg(scale, 0, 'f', 2));
+                       tr("%1 KB/s").arg(scale, 0, 'f', 2));
     _painter->setPen(GRID_COLOR);
     _painter->drawLine(QPointF(SCALE_WIDTH, pos), 
                        QPointF(_rec.width(), pos));
