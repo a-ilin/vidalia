@@ -220,6 +220,10 @@
         <source>Error Saving Configuration</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ControlSocket</name>
@@ -536,12 +540,6 @@ Upgrade to a newer version of Tor.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Vidalia was unable to start Tor.
-
-Error: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Tor is started</source>
         <translation type="unfinished"></translation>
     </message>
@@ -551,12 +549,6 @@ Error: </source>
     </message>
     <message>
         <source>Error Stopping Tor</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Vidalia was unable to stop Tor.
-
-Error: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -587,19 +579,33 @@ about what happened to Tor before it exited.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Vidalia was unable to authenticate itself to Tor.Check your authentication information and try again.
-
-Error: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Error Setting Events</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Vidalia was unable to register for events from Tor. Some features of Vidalia will be unavailable. 
-
-Error: </source>
+        <source>Vidalia was unable to start Tor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Retry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to stop Tor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to authenticate itself to Tor.
+Check your authentication information and try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to register for events from Tor.
+Some features of Vidalia will be unavailable.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -813,12 +819,6 @@ interest to Tor developers.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Vidalia was unable to register for Tor&apos;s log events.
-
-Error: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Error Opening Log File</source>
         <translation type="unfinished"></translation>
     </message>
@@ -836,11 +836,6 @@ Error: </source>
     </message>
     <message>
         <source>Vidalia</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Cannot write file %1:
-%2.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -878,6 +873,28 @@ Error: </source>
     </message>
     <message>
         <source>Ctrl+T</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show the help browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+H</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to register for Tor&apos;s log events.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cannot write file %1
+
+%2.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1056,20 +1073,21 @@ Error: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Viadlia was uanble to determine your public IP address.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Vidalia was only able to find a private IP address for your server.
-Would you like to access an external service to determine your public IP address?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>accept</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>reject</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to determine your public IP address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was only able to find a private IP address for your server.
+
+Would you like to access an external service to determine your public IP address?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

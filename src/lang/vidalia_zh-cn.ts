@@ -506,6 +506,10 @@ Would you like to access an external service to determine your public IP address
         <source>Error Saving Configuration</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished">帮助</translation>
+    </message>
 </context>
 <context>
     <name>ControlSocket</name>
@@ -845,7 +849,7 @@ Error: </source>
         <source>Vidalia was unable to stop Tor.
 
 Error: </source>
-        <translation>Vidalia无法停止Tor。
+        <translation type="obsolete">Vidalia无法停止Tor。
 <byte value="x9"/><byte value="x9"/>
 出错：</translation>
     </message>
@@ -882,7 +886,7 @@ about what happened to Tor before it exited.</source>
         <source>Vidalia was unable to authenticate itself to Tor.Check your authentication information and try again.
 
 Error: </source>
-        <translation>Vidalia无法通过Tor的验证，请检查您的验证信息，然后再试试。
+        <translation type="obsolete">Vidalia无法通过Tor的验证，请检查您的验证信息，然后再试试。
 <byte value="x9"/><byte value="x9"/>
 出错：</translation>
     </message>
@@ -894,14 +898,34 @@ Error: </source>
         <source>Vidalia was unable to register for events from Tor. Some features of Vidalia will be unavailable. 
 
 Error: </source>
-        <translation>Vidalia无法由Tor注册事件，Vidalia的部分功能将无法使用。
+        <translation type="obsolete">Vidalia无法由Tor注册事件，Vidalia的部分功能将无法使用。
 <byte value="x9"/><byte value="x9"/>
 出错：</translation>
     </message>
     <message>
-        <source>Vidalia was unable to start Tor.
-
-Error: </source>
+        <source>Vidalia was unable to start Tor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>OK</source>
+        <translation type="unfinished">OK</translation>
+    </message>
+    <message>
+        <source>Retry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to stop Tor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to authenticate itself to Tor.
+Check your authentication information and try again.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to register for events from Tor.
+Some features of Vidalia will be unavailable.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1139,7 +1163,7 @@ interest to Tor developers.</source>
         <source>Vidalia was unable to register for Tor&apos;s log events.
 
 Error: </source>
-        <translation>Vidalia无法注册Tor的日志消息。
+        <translation type="obsolete">Vidalia无法注册Tor的日志消息。
 <byte value="x9"/><byte value="x9"/>
 出错：</translation>
     </message>
@@ -1166,7 +1190,7 @@ Error: </source>
     <message>
         <source>Cannot write file %1:
 %2.</source>
-        <translation>无法写入文件 %1：
+        <translation type="obsolete">无法写入文件 %1：
 %2</translation>
     </message>
     <message>
@@ -1214,6 +1238,28 @@ Error: </source>
     <message>
         <source>Ctrl+T</source>
         <translation type="unfinished">Ctrl+T</translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished">帮助</translation>
+    </message>
+    <message>
+        <source>Show the help browser</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+H</source>
+        <translation type="unfinished">Ctrl+H</translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to register for Tor&apos;s log events.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cannot write file %1
+
+%2.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1400,12 +1446,12 @@ Error: </source>
     </message>
     <message>
         <source>Viadlia was uanble to determine your public IP address.</source>
-        <translation type="unfinished">Viadlia无法确定您的公共IP地址</translation>
+        <translation type="obsolete">Viadlia无法确定您的公共IP地址</translation>
     </message>
     <message>
         <source>Vidalia was only able to find a private IP address for your server.
 Would you like to access an external service to determine your public IP address?</source>
-        <translation type="unfinished">Vidalia只能为您的服务器找到一个私有IP地址，
+        <translation type="obsolete">Vidalia只能为您的服务器找到一个私有IP地址，
 您想通过外部服务以确定您的公共IP地址吗？</translation>
     </message>
     <message>
@@ -1414,6 +1460,16 @@ Would you like to access an external service to determine your public IP address
     </message>
     <message>
         <source>reject</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to determine your public IP address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was only able to find a private IP address for your server.
+
+Would you like to access an external service to determine your public IP address?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
