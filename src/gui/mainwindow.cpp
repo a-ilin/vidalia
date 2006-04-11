@@ -280,6 +280,7 @@ MainWindow::start()
 {
   QString errmsg;
   _isIntentionalExit = false;
+  _trayIcon->update(IMG_TOR_STARTING, tr("Tor is starting"));
   if (!_torControl->start(&errmsg)) {
     /* Display an error message and see if the user wants some help */
     int response = QMessageBox::warning(this, tr("Error Starting Tor"),
@@ -290,8 +291,7 @@ MainWindow::start()
       /* Show troubleshooting information about starting Tor */
       Vidalia::help("troubleshooting.start");
     }
-  } else {
-    _trayIcon->update(IMG_TOR_STARTING, tr("Tor is starting"));
+    _trayIcon->update(IMG_TOR_STOPPED, tr("Tor is stopped"));
   }
 }
 
