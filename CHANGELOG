@@ -1,15 +1,27 @@
 
+0.0.3   11-Apr-2006
+  o Fixed a server configuration bug that caused people to not really be a
+    middleman node, even though the checkbox told them they were.
+  o Fixed a bug in choosing a default language that caused help documents to
+    sometimes not appear.
+  o Fixed the Win32 installer to not leave 2 files and a registry key laying
+    around after an uninstall.
+  o Improved (though not perfected) tray icon support.
+  o Improved help document accessibility by adding "Help" buttons to many
+    dialogs and error message boxes.
+
+  
 0.0.2   02-Apr-2006
-  o Added an integrated help browser and documentation
-  o Added exit policy configuration support for servers
-  o Added support for language translations and language selection
-  o Added a Simplified Chinese (zh_CN) translation from Wu Xiaoguong
-  o Added support for changing Vidalia's interface style
-  o Aesthetic improvements in many dialogs
+  o Added an integrated help browser and documentation.
+  o Added exit policy configuration support for servers.
+  o Added support for language translations and language selection.
+  o Added a Simplified Chinese (zh_CN) translation from Wu Xiaoguong.
+  o Added support for changing Vidalia's interface style.
+  o Aesthetic improvements in many dialogs.
 
   
 0.0.1   28-Feb-2006
-  o Initial testing release
+  o Initial testing release.
   o Basic features include:
     - Starting/stopping/monitoring Tor
     - Bandwidth graph
