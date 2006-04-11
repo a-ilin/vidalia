@@ -34,7 +34,7 @@
 int 
 main(int argc, char *argv[])
 {
-  Q_INIT_RESOURCE(vidalia);
+  Q_INIT_RESOURCE(vidalia_common);
   QStringList args = char_array_to_stringlist(argv+1, argc-1);
   
   /* Construct the application object. Qt strips any command-line arguments

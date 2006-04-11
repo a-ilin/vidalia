@@ -22,12 +22,21 @@
 #################################################################
 
 HEADERS += $$PWD/mainwindow.h
-           
 SOURCES += $$PWD/mainwindow.cpp 
 
-RESOURCES += $$PWD/res/vidalia.qrc
+RESOURCES += $$PWD/res/vidalia_common.qrc
 
+
+win32 {
+  RESOURCES += $$PWD/res/vidalia_win.qrc
+  RC_FILE = $$PWD/res/vidalia_win.rc
+}
+unix:!macx {
+  RESOURCES += $$PWD/res/vidalia_x11.qrc
+}
 macx {
+  RESOURCES += $$PWD/res/vidalia_mac.qrc
+
   # Set the application's icon file
   ICON = $$PWD/res/icons/vidalia.icns
   
@@ -37,9 +46,7 @@ macx {
   icons.path = Contents/Resources
   QMAKE_BUNDLE_DATA += icons
 }
-win32 {
-  RC_FILE = $$PWD/res/vidalia_win.rc
-}
+
 
 include($$PWD/tray/tray.pri)
 include($$PWD/about/about.pri)
