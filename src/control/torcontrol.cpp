@@ -284,7 +284,8 @@ bool
 TorControl::signal(TorSignal::Signal sig, QString *errmsg)
 {
   ControlCommand cmd("SIGNAL");
-  return send(TorSignal::toString(sig), errmsg); 
+  cmd.addArgument(TorSignal::toString(sig));
+  return send(cmd, errmsg); 
 }
 
 /** Ask Tor for its version */
