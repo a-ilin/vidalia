@@ -50,6 +50,9 @@ LanguageSupport::defaultLanguageCode()
   if (language == "zh") {
     language += "-" + localeName.mid(localeName.indexOf("_")+1).toLower();
   }
+  if (!isValidLanguageCode(language)) {
+    language = "en";
+  }
   return language;
 }
 
