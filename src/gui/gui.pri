@@ -41,6 +41,7 @@ macx {
   # Add in additional applications icon files
   icons.files = $$PWD/res/icons/tor-on.icns \
                 $$PWD/res/icons/tor-off.icns\
+                $$PWD/res/icons/tor-starting.icns\
                 $$PWD/res/icons/tor-stopping.icns
   icons.path = Contents/Resources
   QMAKE_BUNDLE_DATA += icons

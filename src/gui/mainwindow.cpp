@@ -50,12 +50,15 @@
 /* On Mac, we go straight to Carbon to load our dock images from .icns files */
 #if defined(Q_WS_MAC)
 #define IMG_TOR_STOPPED    "tor-off"
+#define IMG_TOR_STARTING   "tor-starting"
 #define IMG_TOR_RUNNING    "tor-on"
 #elif defined(Q_WS_X11)
 #define IMG_TOR_STOPPED    ":/images/22x22/tor-off.png"
+#define IMG_TOR_STARTING   ":/images/22x22/tor-starting.png"
 #define IMG_TOR_RUNNING    ":/images/22x22/tor-on.png"
 #else
 #define IMG_TOR_STOPPED    ":/images/16x16/tor-off.png"
+#define IMG_TOR_STARTING   ":/images/16x16/tor-starting.png"
 #define IMG_TOR_RUNNING    ":/images/16x16/tor-on.png"
 #endif
 
@@ -284,6 +287,8 @@ MainWindow::start()
       /* Show troubleshooting information about starting Tor */
       Vidalia::help("troubleshooting.start");
     }
+  } else {
+    _trayIcon->update(IMG_TOR_STARTING, tr("Tor is starting"));
   }
 }
 
@@ -296,8 +301,7 @@ MainWindow::started()
   bool retry;
   
   /* Set correct tray icon and tooltip */
-  _trayIcon->setIcon(IMG_TOR_RUNNING);
-  _trayIcon->setToolTip(tr("Tor is started"));
+  _trayIcon->update(IMG_TOR_RUNNING, tr("Tor is started"));
 
   /* Set menu actions appropriately */
   _startAct->setEnabled(false);
@@ -381,8 +385,7 @@ void
 MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
 {
   /* Set correct tray icon and tooltip */
-  _trayIcon->setIcon(IMG_TOR_STOPPED);
-  _trayIcon->setToolTip(tr("Tor is stopped"));
+  _trayIcon->update(IMG_TOR_STOPPED, tr("Tor is stopped"));
 
   /* Set menu actions appropriately */
   _stopAct->setEnabled(false);

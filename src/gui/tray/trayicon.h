@@ -54,6 +54,8 @@ public:
   void show();
   /** Hide the tray icon. */
   void hide();
+  /** Updates the icon image and tooltip. */
+  void update(const QString &iconFile, const QString &toolTip);
   /** Update the tray icon's tooltip. */
   void setToolTip(const QString &toolTip);
   /** Update the tray icon's image. */

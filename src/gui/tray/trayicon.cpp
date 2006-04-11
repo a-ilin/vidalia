@@ -100,6 +100,14 @@ TrayIcon::mouseButtonDblClick(QMouseEvent *event)
   }
 }
 
+/** Update the tray icon's image and tooltip. */
+void
+TrayIcon::update(const QString &iconFile, const QString &toolTip)
+{
+  setIcon(iconFile);
+  setToolTip(toolTip);
+}
+
 /** Call the platform's tray icon implementation to show the tray icon. */
 void
 TrayIcon::show()
