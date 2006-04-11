@@ -50,16 +50,19 @@
 /* On Mac, we go straight to Carbon to load our dock images from .icns files */
 #if defined(Q_WS_MAC)
 #define IMG_TOR_STOPPED    "tor-off"
-#define IMG_TOR_STARTING   "tor-starting"
 #define IMG_TOR_RUNNING    "tor-on"
+#define IMG_TOR_STARTING   "tor-starting"
+#define IMG_TOR_STOPPING   "tor-stopping"
 #elif defined(Q_WS_X11)
 #define IMG_TOR_STOPPED    ":/images/22x22/tor-off.png"
-#define IMG_TOR_STARTING   ":/images/22x22/tor-starting.png"
 #define IMG_TOR_RUNNING    ":/images/22x22/tor-on.png"
+#define IMG_TOR_STARTING   ":/images/22x22/tor-starting.png"
+#define IMG_TOR_STOPPING   ":/images/22x22/tor-stopping.png"
 #else
 #define IMG_TOR_STOPPED    ":/images/16x16/tor-off.png"
-#define IMG_TOR_STARTING   ":/images/16x16/tor-starting.png"
 #define IMG_TOR_RUNNING    ":/images/16x16/tor-on.png"
+#define IMG_TOR_STARTING   ":/images/16x16/tor-starting.png"
+#define IMG_TOR_STOPPING   ":/images/16x16/tor-stopping.png"
 #endif
 
 /* Buttons the use can click in error message boxes */
@@ -361,6 +364,8 @@ MainWindow::stop()
   do {
     retry = false;
     _isIntentionalExit = true;
+    _trayIcon->update(IMG_TOR_STOPPING, tr("Tor is stopping"));
+    
     if (!_torControl->stop(&errmsg)) {
       int response = QMessageBox::warning(this, tr("Error Stopping Tor"),
                        p(tr("Vidalia was unable to stop Tor.")) + p(errmsg),
