@@ -42,6 +42,15 @@
 ControlConnection::ControlConnection(TorEvents *events)
 {
   _events = events;
+  _sendMutex = new QMutex(QMutex::Recursive);
+  _recvMutex = new QMutex(QMutex::Recursive);
+}
+
+/** Destructor. */
+ControlConnection::~ControlConnection()
+{
+  delete _sendMutex;
+  delete _recvMutex;
 }
 
 /** Process events for EVENTS_TIMEOUT milliseconds or until there are no more
@@ -66,27 +75,25 @@ ControlConnection::processEvents()
 bool
 ControlConnection::connect(QHostAddress addr, quint16 port, QString *errmsg)
 {
-  bool connected;
-  
   /* Store the control interface address information */
   _addr = addr;
   _port = port;
   _run  = true;
 
   /* Start a thread and wait for it to finish its connection attempt */
-  QThread::start();
   _connMutex.lock();
+  QThread::start();
   _connWait.wait(&_connMutex);
-  connected = _connected;
   _connMutex.unlock();
 
   /* If an error occurred, return the reason if the caller wants it */
-  if (!connected) {
+  if (!isConnected()) {
     if (errmsg) {
       *errmsg = _errorString;
     }
+    return false;
   }
-  return connected;
+  return true;
 }
 
 /** \return true if the control socket is connected and the message handling
@@ -94,6 +101,7 @@ ControlConnection::connect(QHostAddress addr, quint16 port, QString *errmsg)
 bool
 ControlConnection::isConnected()
 {
+  QMutexLocker locker(&_connMutex);
   return (_connected && _run && isRunning());
 }
 
@@ -108,29 +116,24 @@ ControlConnection::disconnect()
   _run = false;
  
   /* Flush any outstanding waiters in the send queue */
-  while (!_sendMutex.tryLock()) {
+  while (!_sendMutex->tryLock()) {
     processEvents();
   }
   while (!_sendQueue.isEmpty()) {
     SendWaiter *waiter = _sendQueue.dequeue();
     waiter->setResult(Failed, "The control socket is closing.");
   }
-  _sendMutex.unlock();
+  _sendMutex->unlock();
 
   /* Flush any outstanding waiters in the receive queue */
-  while (!_recvMutex.tryLock()) {
+  while (!_recvMutex->tryLock()) {
     processEvents();
   }
   while (!_recvQueue.isEmpty()) {
     ReceiveWaiter *waiter = _recvQueue.dequeue();
     waiter->setResult(Failed, ControlReply(), "The control socket is closing.");
   }
-  _recvMutex.unlock();
-
-  /* Wait for the socket to disconnect and thread to finish */
-  while (_connected) {
-    processEvents();
-  }
+  _recvMutex->unlock();
 }
 
 /** Sends a control command to Tor.
@@ -143,9 +146,9 @@ ControlConnection::sendCommand(ControlCommand cmd, QString *errmsg)
   SendWaiter waiter(cmd);
 
   /* Place a message in the send queue */
-  _sendMutex.lock();
+  _sendMutex->lock();
   _sendQueue.enqueue(&waiter);
-  _sendMutex.unlock();
+  _sendMutex->unlock();
   
   /* Wait for the message to be sent */
   while (waiter.status() == Waiting) {
@@ -179,12 +182,12 @@ ControlConnection::send(ControlCommand cmd, ControlReply &reply,  QString *errms
       *errmsg = "Control socket not connected.";
     }
   } else {  
-    _recvMutex.lock();
+    _recvMutex->lock();
     /* Try to send the command to Tor */
     if (sendCommand(cmd, errmsg)) {
       /* Place a waiter in the receive queue */
       _recvQueue.enqueue(&waiter);
-      _recvMutex.unlock();
+      _recvMutex->unlock();
  
       while (waiter.status() == Waiting) {
         /* Allow the gui to remain responsive while waiting */
@@ -199,7 +202,7 @@ ControlConnection::send(ControlCommand cmd, ControlReply &reply,  QString *errms
       }
       return (waiter.status() == Success);
     }
-    _recvMutex.unlock();
+    _recvMutex->unlock();
   }
   return false;
 }
@@ -210,7 +213,7 @@ ControlConnection::send(ControlCommand cmd, ControlReply &reply,  QString *errms
 bool
 ControlConnection::isSendQueueEmpty()
 {
-  QMutexLocker locker(&_sendMutex);
+  QMutexLocker locker(_sendMutex);
   return _sendQueue.isEmpty();
 }
 
@@ -223,14 +226,14 @@ ControlConnection::processSendQueue()
   QString errorString;
  
   /* Iterate through all messages waiting in the queue */
-  _sendMutex.lock();
+  _sendMutex->lock();
   while (!_sendQueue.isEmpty()) {
     /* Grab a waiter, try to send it, and store the result */
     sendWaiter = _sendQueue.dequeue();
     result = _sock->sendCommand(sendWaiter->command(), &errorString);
     sendWaiter->setResult((result ? Success : Failed), errorString);
   }
-  _sendMutex.unlock();
+  _sendMutex->unlock();
 }
 
 /** Processes any messages waiting on the control socket. */
@@ -249,10 +252,10 @@ ControlConnection::processReceiveQueue()
         }
       } else {
         /* Response to a previous command */
-        _recvMutex.lock();
+        _recvMutex->lock();
         waiter = _recvQueue.dequeue();
         waiter->setResult(Success, reply);
-        _recvMutex.unlock();
+        _recvMutex->unlock();
       }
     }
   }
@@ -266,8 +269,10 @@ void
 ControlConnection::run()
 {
   /* Create a new control socket and try to connect to Tor */
+  _connMutex.lock();
   _sock = new ControlSocket(); 
   _connected = _sock->connect(_addr, _port, &_errorString);
+  _connMutex.unlock();
   _connWait.wakeAll();
 
   if (_connected) {
