@@ -337,7 +337,7 @@ bool
 MainWindow::initiateServerShutdown()
 {
   QString errmsg;
-  bool rc = true;
+  bool rc = false;
   
   /* Ask the user if they want to shutdown nicely. */
   int response = QMessageBox::question(this, tr("Server is Enabled"),
@@ -348,14 +348,13 @@ MainWindow::initiateServerShutdown()
                         "give clients time to find a new server?")),
                    QMessageBox::Yes, QMessageBox::No);
 
-  if (response == QMessageBox::No) {
-    /* Just terminate forcefully now */
-    rc = false;
-  } else {
+  if (response == QMessageBox::Yes) {
     /* Send a SHUTDOWN signal to Tor */
-    if (!_torControl->signal(TorSignal::Shutdown, &errmsg)) {
+    if (_torControl->signal(TorSignal::Shutdown, &errmsg)) {
+      rc = true; /* Shutdown successfully initiated */
+    } else {
       /* Let the user know that we couldn't shutdown gracefully and we'll
-       * kill Tor forcefully now. */
+       * kill Tor forcefully now if they want. */
       response = QMessageBox::warning(this, tr("Error Shutting Down"),
                   p(tr("Vidalia was unable to shutdown Tor gracefully.\n") 
                    + errmsg) + p(tr("Do you want to close Tor anyway?")),
@@ -366,7 +365,6 @@ MainWindow::initiateServerShutdown()
         _trayIcon->update(IMG_TOR_RUNNING, tr("Tor is running"));
         rc = true;
       }
-      rc = false;
     }
   }
   return rc;
