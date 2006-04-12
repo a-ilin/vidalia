@@ -88,9 +88,11 @@ private:
   void createMenuBar();
   /** Removes the default menubar on Mac */
   void removeMenuBar();
+  /** Starts a graceful server shutdown */
+  bool initiateServerShutdown();
+  
   /* Used to determine if the Tor process exiting was intentional or not */
   bool _isIntentionalExit;
- 
   /** A MessageLog object which handles logging Tor messages */
   MessageLog* _messageLog;
   /** A BandwidthGraph object which handles monitoring Tor bandwidth usage */

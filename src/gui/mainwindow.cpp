@@ -283,7 +283,6 @@ MainWindow::start()
 {
   QString errmsg;
   _isIntentionalExit = false;
-  _trayIcon->update(IMG_TOR_STARTING, tr("Tor is starting"));
   if (!_torControl->start(&errmsg)) {
     /* Display an error message and see if the user wants some help */
     int response = QMessageBox::warning(this, tr("Error Starting Tor"),
@@ -294,7 +293,6 @@ MainWindow::start()
       /* Show troubleshooting information about starting Tor */
       Vidalia::help("troubleshooting.start");
     }
-    _trayIcon->update(IMG_TOR_STOPPED, tr("Tor is stopped"));
   }
 }
 
@@ -307,7 +305,7 @@ MainWindow::started()
   bool retry;
   
   /* Set correct tray icon and tooltip */
-  _trayIcon->update(IMG_TOR_RUNNING, tr("Tor is started"));
+  _trayIcon->update(IMG_TOR_STARTING, tr("Tor is starting"));
 
   /* Set menu actions appropriately */
   _startAct->setEnabled(false);
@@ -326,7 +324,12 @@ MainWindow::started()
       }
       v_sleep(1);
     }
-    if(!_torControl->isConnected()) {
+
+    /* Check if we succeeded. */
+    if(_torControl->isConnected()) {
+      /* Tor is running and we connected to it. Yay! */
+      _trayIcon->update(IMG_TOR_RUNNING, tr("Tor is running"));
+    } else {
       /* Ok, ok. It really isn't going to connect. I give up. */
       int response = QMessageBox::warning(this, 
                       tr("Error Connecting to Tor"), p(errmsg),
@@ -344,30 +347,79 @@ MainWindow::started()
         }
         /* Since Vidalia can't connect, we can't really do much, so stop Tor.
          * Note: it's debatable whether or not this is The Right Thing to do. */
-        stop();
+        _torControl->stop();
       }
     }
   } while (retry);
+}
+
+/** Gives users the option of shutting down a server gracefully, giving
+ * clients time to find a new circuit. Returns true if the timed server
+ * shutdown was initiated successfully or false if we want to terminate
+ * forcefully. */
+bool
+MainWindow::initiateServerShutdown()
+{
+  QString errmsg;
+  bool rc;
+  
+  /* Ask the user if they want to shutdown nicely. */
+  int response = QMessageBox::question(this, tr("Server is Enabled"),
+                   p(tr("You are currently running a Tor server.\n"
+                        "Terminating your server will interrupt any"
+                        "open connections from clients.\n\n"
+                        "Would you like to shutdown gracefully and "
+                        "give clients time to find a new server?")),
+                   QMessageBox::Yes, QMessageBox::No);
+
+  if (response == QMessageBox::No) {
+    /* Just terminate forcefully now */
+    rc = false;
+  } else {
+    /* Send a SHUTDOWN signal to Tor */
+    if (!_torControl->signal(TorSignal::Shutdown, &errmsg)) {
+      /* Let the user know that we couldn't shutdown gracefully and we'll
+       * kill Tor forcefully now. */
+      response = QMessageBox::warning(this, tr("Error Shutting Down"),
+                  p(tr("Vidalia was unable to shutdown Tor gracefully.\n") 
+                   + errmsg) + p(tr("Do you want to close Tor anyway?")),
+                  QMessageBox::Yes, QMessageBox::No);
+
+      if (response == QMessageBox::No) {
+        /* Don't try to terminate Tor anymore. Just leave it running */
+        _trayIcon->update(IMG_TOR_RUNNING, tr("Tor is running"));
+        rc = true;
+      }
+      rc = false;
+    }
+  }
+  return rc;
 }
 
 /** Disconnects the control socket and stops the Tor process. */
 void 
 MainWindow::stop()
 {
+  ServerSettings server(_torControl);
   QString errmsg;
   bool retry;
-  
-  /* Disconnect the controller. Note that we don't check any error messages or
-   * return values, since we'll just be killing Tor anyway. */
-  if (_torControl->isConnected()) {
-    _torControl->disconnect();
+
+  /* Indicate that Tor is about to shut down */
+  _trayIcon->update(IMG_TOR_STOPPING, tr("Tor is stopping"));
+
+  /* If we're running a server, give users the option of terminating
+   * gracefully so clients have time to find new servers. */
+  if (server.isServerEnabled()) {
+    if (initiateServerShutdown()) {
+      /* Server shutdown was started successfully. */
+      return;
+    }
   }
 
-  /* Stop the Tor process */
+  /* Terminate the Tor process immediately */
   do {
     retry = false;
     _isIntentionalExit = true;
-    _trayIcon->update(IMG_TOR_STOPPING, tr("Tor is stopping"));
     
     if (!_torControl->stop(&errmsg)) {
       int response = QMessageBox::warning(this, tr("Error Stopping Tor"),
@@ -378,9 +430,13 @@ MainWindow::stop()
       if (response == BUTTON_RETRY) {
         /* Try stopping Tor again */
         retry = true;
-      } else if (response == BUTTON_HELP) {
-        /* Show some troubleshooting help */
-        Vidalia::help("troubleshooting.stop");
+      } else {
+        /* Tor is still running since stopping failed */
+        _trayIcon->update(IMG_TOR_RUNNING, tr("Tor is running"));
+        if (response == BUTTON_HELP) {
+          /* Show some troubleshooting help */
+          Vidalia::help("troubleshooting.stop");
+        }
       }
       _isIntentionalExit = false;
     }
@@ -415,10 +471,6 @@ MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
         showMessageLog();  
       }
     }
-    
-    /* Regardless of why it closed, it closed unintentionally so close the
-     * control socket */
-     _torControl->disconnect();
   }
 }
 
