@@ -41,9 +41,12 @@ AppearancePage::AppearancePage(QWidget *parent)
   /* Populate combo boxes */
   foreach (QString code, LanguageSupport::languageCodes()) {
     ui.cmboLanguage->addItem(QIcon(":/images/flags/" + code + ".png"),
-                              LanguageSupport::languageName(code));
-  } 
-  ui.cmboStyle->addItems(QStyleFactory::keys());
+                             LanguageSupport::languageName(code),
+                             code);
+  }
+  foreach (QString style, QStyleFactory::keys()) {
+    ui.cmboStyle->addItem(style, style.toLower());
+  }
 }
 
 /** Destructor */
@@ -72,12 +75,10 @@ AppearancePage::save(QString &errmsg)
 void
 AppearancePage::load()
 {
-  QString languageName = LanguageSupport::languageName(_settings->getLanguageCode());
-  int index = ui.cmboLanguage->findText(languageName, Qt::MatchExactly);
+  int index = ui.cmboLanguage->findData(_settings->getLanguageCode());
   ui.cmboLanguage->setCurrentIndex(index);
   
-  QString style = Vidalia::style(); 
-  index = ui.cmboStyle->findText(style, Qt::MatchExactly);
+  index = ui.cmboStyle->findData(Vidalia::style().toLower());
   ui.cmboStyle->setCurrentIndex(index);
 }
 
