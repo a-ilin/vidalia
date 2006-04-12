@@ -50,7 +50,7 @@
 
 /* Default Vidalia Settings */
 #if defined(Q_WS_MAC)
-#define DEFAULT_STYLE               "macintosh"
+#define DEFAULT_STYLE               "macintosh (aqua)"
 #else
 #define DEFAULT_STYLE               "plastique"
 #endif
