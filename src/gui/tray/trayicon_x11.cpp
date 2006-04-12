@@ -64,6 +64,7 @@ TrayIconImpl::TrayIconImpl(const QString &iconFile, const QString &toolTip)
   Screen *screen = XDefaultScreenOfDisplay(dpy);
   WId trayWin  = winId();
 
+  /* Standard tray window protocol */
   int iScreen = XScreenNumberOfScreen(screen);
   char szAtom[32];
   snprintf(szAtom, sizeof(szAtom), "_NET_SYSTEM_TRAY_S%d", iScreen);
@@ -91,6 +92,14 @@ TrayIconImpl::TrayIconImpl(const QString &iconFile, const QString &toolTip)
     XSync(dpy, false);
   }
 
+  /* KDE-related */
+  long data = 0;
+  Atom dockwindow = XInternAtom(dpy, "KWM_DOCKWINDOW", false);
+  Atom traywindow = XInternAtom(dpy, "_KDE_NET_WM_SYSTEM_TRAY_WINDOW_FOR", false);
+  XChangeProperty(dpy, winId(), dockwindow, dockwindow, 32, PropModeReplace, (uchar*)&data, 1);
+  XChangeProperty(dpy, winId(), traywindow, XA_WINDOW, 32, PropModeReplace, (uchar*)&data, 1);
+ 
+  /* Set the initial icon and tooltip */
   setIcon(iconFile);
   setToolTip(toolTip);
 
