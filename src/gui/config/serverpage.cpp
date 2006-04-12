@@ -68,7 +68,7 @@ ServerPage::ServerPage(QWidget *parent)
   ui.lineServerPort->setValidator(new QIntValidator(1, 65535, this));
   ui.lineDirPort->setValidator(new QIntValidator(1, 65535, this));
   ui.lineExitAddress->setValidator(new IPValidator(this));
-  ui.lineExitMask->setValidator(new QIntValidator(0, 32, this));
+  ui.lineExitMask->setValidator(new QIntValidator(0, 30, this));
   ui.lineExitFromPort->setValidator(new PortValidator(this));
   ui.lineExitToPort->setValidator(new PortValidator(this));
 }
