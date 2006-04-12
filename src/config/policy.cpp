@@ -35,7 +35,7 @@ Policy::Policy()
   _action   = Accept;
   _address  = QHostAddress::Any;
   _fromPort = _toPort = 0;
-  _mask = 33;
+  _mask = 0;
 }
 
 /** Constructor. Creates a new Policy object from the given string. */
@@ -45,7 +45,7 @@ Policy::Policy(QString policy)
   _action   = Accept;
   _address  = QHostAddress::Any;
   _fromPort = _toPort = 0;
-  _mask = 33;
+  _mask = 0;
   
   /* Parse the given string to override the defaults. */
   fromString(policy);
@@ -58,7 +58,7 @@ Policy::Policy(QString action, QString address, QString ports)
   _action   = Accept;
   _address  = QHostAddress::Any;
   _fromPort = _toPort = 0;
-  _mask = 33;
+  _mask = 0;
   
   fromString(action + " " + address + ":" + ports);
 }
@@ -70,7 +70,7 @@ Policy::Policy(SpecialPolicy policy)
   _action   = (policy == AcceptAll ? Accept : Reject);
   _address  = QHostAddress::Any;
   _fromPort = _toPort = 0;
-  _mask = 33;
+  _mask = 0;
 }
 
 /** Constructor. Creates a new policy object based on the given rules. */
@@ -158,18 +158,19 @@ Policy::action()
 QString
 Policy::address()
 {
-  QString address;
+  QString addrString;
   
-  if (_address.isNull() || _address == QHostAddress::Any) {
-    address = "*";
+  if (_mask) {
+    if (_address.isNull()) {
+      _address = QHostAddress::Any;
+    }
+    addrString = _address.toString() + "/" + QString::number(_mask);
+  } else if (_address == QHostAddress::Any || _address.isNull()) {
+    addrString = "*";
   } else {
-    address = _address.toString();
-  }
-
-  if (_mask < 33) {
-    address += "/" + QString::number(_mask);
-  }
-  return address;
+    addrString = _address.toString();
+  } 
+  return addrString;
 }
 
 /** Returns the port (or port range, if specified) for this policy. */
