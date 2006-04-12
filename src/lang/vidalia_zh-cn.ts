@@ -606,7 +606,11 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>%1 kB/s</source>
-        <translation>%1 kB/s</translation>
+        <translation type="obsolete">%1 kB/s</translation>
+    </message>
+    <message>
+        <source>%1 KB/s</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -835,7 +839,7 @@ Error: </source>
     </message>
     <message>
         <source>Tor is started</source>
-        <translation>Tor已启动</translation>
+        <translation type="obsolete">Tor已启动</translation>
     </message>
     <message>
         <source>Error Connecting to Tor</source>
@@ -926,6 +930,42 @@ Check your authentication information and try again.</source>
     <message>
         <source>Vidalia was unable to register for events from Tor.
 Some features of Vidalia will be unavailable.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tor is starting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tor is running</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Server is Enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are currently running a Tor server.
+Terminating your server will interrupt any open connections from clients.
+
+Would you like to shutdown gracefully and give clients time to find a new server?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error Shutting Down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to shutdown Tor gracefully.
+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Do you want to close Tor anyway?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tor is stopping</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
