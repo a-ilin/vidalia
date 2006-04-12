@@ -338,7 +338,7 @@ MainWindow::initiateServerShutdown()
   /* Ask the user if they want to shutdown nicely. */
   int response = QMessageBox::question(this, tr("Server is Enabled"),
                    p(tr("You are currently running a Tor server.\n"
-                        "Terminating your server will interrupt any"
+                        "Terminating your server will interrupt any "
                         "open connections from clients.\n\n"
                         "Would you like to shutdown gracefully and "
                         "give clients time to find a new server?")),
