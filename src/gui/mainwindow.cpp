@@ -361,7 +361,7 @@ bool
 MainWindow::initiateServerShutdown()
 {
   QString errmsg;
-  bool rc;
+  bool rc = true;
   
   /* Ask the user if they want to shutdown nicely. */
   int response = QMessageBox::question(this, tr("Server is Enabled"),
