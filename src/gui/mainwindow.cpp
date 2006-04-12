@@ -84,10 +84,6 @@ MainWindow::MainWindow()
 {
   VidaliaSettings settings;
   
-#if defined(Q_WS_MAC)
-  _menuBar = 0;
-#endif
-
   /* Set Vidalia's application icon */
   setWindowIcon(QIcon(IMG_APP_ICON));
 
@@ -95,8 +91,6 @@ MainWindow::MainWindow()
   createActions();
   /* Create the tray menu itself */
   createMenus(); 
-  /* Create the menubar (Mac) */
-  createMenuBar();
 
   /* Create a new TorControl object, used to communicate with and manipulate Tor */
   _torControl = Vidalia::torControl(); 
@@ -116,7 +110,7 @@ MainWindow::MainWindow()
   _trayIcon = new TrayIcon(IMG_TOR_STOPPED,
                            tr("Tor is Stopped"), _trayMenu);
   _trayIcon->show();
-
+  
   /* If we're supposed to start Tor when Vidalia starts, then do it now */
   if (settings.runTorAtStart()) {
     start();
@@ -128,13 +122,6 @@ MainWindow::~MainWindow()
 {
   _trayIcon->hide();
   delete _trayIcon;
-}
-
-/** Shows the menubar on Mac */
-void
-MainWindow::show()
-{
-  createMenuBar();
 }
 
 /** Called when the application is closing, by selecting "Exit" from the tray
@@ -155,9 +142,6 @@ MainWindow::close()
   if (_torControl->isRunning()) {
     _torControl->stop();
   }
-
-  /* Remove the menu bar on Mac */
-  removeMenuBar();
 
   /* And then quit for real */
   QCoreApplication::quit();
@@ -223,12 +207,13 @@ MainWindow::createMenus()
   _trayMenu->addAction(_aboutAct);
   _trayMenu->addSeparator();
   _trayMenu->addAction(_exitAct);
+
+  createMenuBar();
 }
 
 /** Creates a new menubar with no parent, so Qt will use this as the "default
- * menubar" on Mac. Note that to force this menubar to be displayed after all
- * child windows are closed (since we don't actually have a visible main
- * window), you must remove and re-add this no-parent menubar */
+ * menubar" on Mac. This adds on to the existing actions from the createMens()
+ * method. */
 void
 MainWindow::createMenuBar()
 {
@@ -244,32 +229,23 @@ MainWindow::createMenuBar()
 
   /* The File, Help, and Configure menus will get merged into the application
    * menu by Qt. */
-   if (_menuBar) delete _menuBar;
-  _menuBar = new QMenuBar();
-  _fileMenu = _menuBar->addMenu(tr("File"));
-  _fileMenu->addAction(_exitAct);
-  _torMenu = _menuBar->addMenu(tr("Tor"));
-  _torMenu->addAction(_startAct);
-  _torMenu->addAction(_stopAct);
-  _viewMenu = _menuBar->addMenu(tr("View"));
-  _viewMenu->addAction(_bandwidthAct);
-  _viewMenu->addAction(_messageAct);
-  _viewMenu->addAction(_configAct);
-  _helpMenu = _menuBar->addMenu(tr("Help"));
+  QMenuBar *menuBar = new QMenuBar();
+  QMenu *fileMenu = menuBar->addMenu(tr("File"));
+  fileMenu->addAction(_exitAct);
+  
+  QMenu *torMenu = menuBar->addMenu(tr("Tor"));
+  torMenu->addAction(_startAct);
+  torMenu->addAction(_stopAct);
+  
+  QMenu *viewMenu = menuBar->addMenu(tr("View"));
+  viewMenu->addAction(_bandwidthAct);
+  viewMenu->addAction(_messageAct);
+  viewMenu->addAction(_configAct);
+  
+  QMenu *helpMenu = menuBar->addMenu(tr("Help"));
   _helpAct->setText(tr("Vidalia Help"));
-  _helpMenu->addAction(_helpAct);
-  _helpMenu->addAction(_aboutAct);
-#endif
-}
-
-/** Removes the menubar (Mac only). */
-void
-MainWindow::removeMenuBar()
-{
-#if defined(Q_WS_MAC)
-  if (_menuBar) {
-    delete _menuBar;
-  }
+  helpMenu->addAction(_helpAct);
+  helpMenu->addAction(_aboutAct);
 #endif
 }
 

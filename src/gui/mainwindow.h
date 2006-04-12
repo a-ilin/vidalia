@@ -49,11 +49,6 @@ public:
   /** Destructor. */
   ~MainWindow();
 
-public slots:
-  /** Overrides the default show() slot to display the default menubar */
-  void show();
-
-
 private slots:
   /** Called when the user selects "Start" from the menu. */
   void start();
@@ -86,8 +81,6 @@ private:
   void createActions();
   /** Creates a default menubar on Mac */
   void createMenuBar();
-  /** Removes the default menubar on Mac */
-  void removeMenuBar();
   /** Starts a graceful server shutdown */
   bool initiateServerShutdown();
   
@@ -115,15 +108,6 @@ private:
   QAction* _bandwidthAct;
   QAction* _messageAct;
   QAction* _helpAct;
-
-/* GUI elements unique on Mac so we can use the system menubar */
-#if defined(Q_WS_MAC)
-  QMenuBar* _menuBar;
-  QMenu* _fileMenu;
-  QMenu* _torMenu;
-  QMenu* _viewMenu;
-  QMenu* _helpMenu;
-#endif
 };
 
 #endif
