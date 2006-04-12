@@ -64,9 +64,9 @@ XPStyle on
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\win-uninstall.ico"
 !define MUI_HEADERIMAGE_BITMAP "${NSISDIR}\Contrib\Graphics\Header\win.bmp"
 !define MUI_HEADERIMAGE
-!define MUI_FINISHPAGE_RUN "notepad.exe"
-!define MUI_FINISHPAGE_RUN_TEXT "View README"
-!define MUI_FINISHPAGE_RUN_PARAMETERS $INSTDIR\README
+!define MUI_FINISHPAGE_RUN "$INSTDIR\${APPEXEC}"
+!define MUI_FINISHPAGE_RUN_TEXT "Run Vidalia now"
+
 
 ;--------------------------------
 ; Pages
