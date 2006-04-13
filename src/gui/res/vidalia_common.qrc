@@ -44,6 +44,12 @@
         <file>22x22/utilities-system-monitor.png</file>
     </qresource>
     <qresource prefix="/images">
+        <file>32x32/tor-off.png</file>
+        <file>32x32/tor-on.png</file>
+        <file>32x32/tor-starting.png</file>
+        <file>32x32/tor-stopping.png</file>
+    </qresource>
+    <qresource prefix="/images">
         <file>128x128/qt-logo.png</file>
         <file>128x128/tor-logo.png</file>
         <file>128x128/tor-on.png</file>
