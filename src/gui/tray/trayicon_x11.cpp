@@ -42,6 +42,7 @@
 #include "trayicon_x11.h"
 
 #include <QApplication>
+#include <QTimer>
 #include <QX11Info>
 #include <X11/Xatom.h>
 #include <X11/Xlib.h>
@@ -126,7 +127,18 @@ TrayIconImpl::enterEvent(QEvent *event)
 void
 TrayIconImpl::show()
 {
-  QLabel::show();
+  static bool shown = false;
+  if (!shown) {
+    /* Sometimes the tray icon on my gnome desktop wouldn't dock and instead
+     * would appear as its own window. Looking at comments in other projects
+     * that used tray icons told me that this is a known problem and that gnome
+     * needs a delay before adding the icon the first time. The hack is to give
+     * gnome this delay so the icon appears properly docked. */
+    QTimer::singleShot(250, this, SLOT(show()));
+    shown = true;
+  } else {
+    QLabel::show();
+  }
 }
 
 /** Hide the tray icon image. */
