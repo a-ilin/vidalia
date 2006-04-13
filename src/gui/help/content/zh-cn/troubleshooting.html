@@ -1,4 +1,4 @@
-<!--
+<html><head><!--
   $Id$
   
   Vidalia is distributed under the following license:
@@ -19,57 +19,40 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  
   02110-1301, USA.
--->
-
-<html>
-<body>
+--></head><body>
 
 <h1>问题多多</h1>
-<hr />
+<hr>
 
 以下列出了一些常见的问题，包括运行Tor时出现的。如果您的问题没有解答，
 请访问我们的网站<i>www.vidalia-project.net</i>，以获得进一步的资讯支持。
 
-<a name="start"/>
-<h3>我无法运行Tor</h3>
+<a name="start">
+</a><h3><a name="start">我无法运行Tor</a></h3>
 <p>
-最常见的原因是已经有一个Tor进程在运行。请检查您的进程列表，如果找到先前进程，
+<a name="start">最常见的原因是已经有一个Tor进程在运行。请检查您的进程列表，如果找到先前进程，
 请将其停止。然后试试再运行Tor。
-</p>
+</a></p>
 <p>
-If that did not help, check your <a href="log.html">message
-log</a> to see if Tor printed any information about errors it encountered
-while trying to start.
-如果这个办法不管用，请检查 <a href="log.html">消息日志</a>，
-查看Tor是否显示了启动时的出错信息。 
+如果这个办法不管用，请检查 <a href="http://trac.vidalia-project.net/browser/trunk/src/gui/help/content/zh-cn/log.html">消息日志</a>，
+查看Tor是否显示有启动时的出错信息。 
 </p>
 
-<a name="connect"/>
-<h3>Vidalia Can't Connect to Tor</h3>
+<a name="connect">
+</a><h3><a name="connect">Vidalia无法连接到Tor</a></h3>
 <p>
-Vidalia manages Tor by communicating with it via Tor's <i>control port</i>. 
-</p>
+<a name="connect">Vidalia通过Tor的<i>控制端口</i>与Tor进行通讯。</a></p>
 <p>
-The most common reason that Vidalia cannot connect to Tor is because Tor
-started, but encountered an error and exited immediately. You should
-check your <a href="log.html">message log</a> to see if Tor reported any
-errors while it started.
-</p>
+<a name="connect">Vidalia无法与Tor连接的最常见原因是Tor启动后，遇到一个问题而导致立即退出。您可以通过检查您的</a><a href="http://trac.vidalia-project.net/browser/trunk/src/gui/help/content/zh-cn/log.html">消息日志</a>，看看Tor是否记录了启动时遇到的问题。</p>
 <p>
-If Tor is listening on a different port than Vidalia expects, Vidalia will
-be unable to connect to Tor. You rarely need to change this setting, but if
-there is another service running on your machine that conflicts with Tor's 
-control port, you will need to specify a different port. You can change this
-setting in Vidalia's <a href="config.html#advanced">advanced configuration
-settings</a>.
+如果Tor侦听的不是Vidalia希望的那个端口，当然Vidalia就无法连接到Tor。您一般不需要改变这个设置，但如果您机器另外运行的服务，与Tor的控制端口相冲突，这时您就需要重新制定一个不同的端口。您可以通过<a href="http://trac.vidalia-project.net/browser/trunk/src/gui/help/content/zh-cn/config.html#advanced">高级设置</a>来改变原来的设定。
 </p>
 
-<a name="stop"/>
-<h3>Vidalia Can't Stop Tor</h3>
+<a name="stop">
+</a><h3><a name="stop">Vidalia无法停止Tor</a></h3>
 <p>
-If Vidalia cannot stop Tor, you should check your <a href="log.html">message
-log</a> to see if Tor reported any errors while trying to exit.
-</p>
+<a name="stop">如果Vidalia无法停止Tor，您可以检查</a><a href="http://trac.vidalia-project.net/browser/trunk/src/gui/help/content/zh-cn/log.html">消息日志</a>，看看Tor试图退出时是否有错误报告。</p>
+
 
 </body>
 </html>
