@@ -10,12 +10,12 @@
 !define VIDALIA_NAME "Vidalia"
 !define VIDALIA_EXEC "vidalia.exe"
 !define VIDALIA_UNINST "uninstall.exe"
-!define VIDALIA_VERSION "0.0.2"
+!define VIDALIA_VERSION "0.0.3"
 
 !define TOR_NAME "Tor"
 !define TOR_EXEC "tor.exe"
 !define TOR_UNINST "Uninstall.exe"
-!define TOR_VERSION "0.1.1.17-rc"
+!define TOR_VERSION "0.1.1.18-rc"
 
 !define PRIVOXY_NAME "Privoxy"
 !define PRIVOXY_EXEC "privoxy.exe"
