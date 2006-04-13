@@ -1,5 +1,5 @@
 /****************************************************************
- *  Vidalia is distributed under the following license: 
+ *  Vidalia is distributed under the following license:
  *
  *  Copyright (C) 2006,  Matt Edman, Justin Hipple
  *
@@ -15,11 +15,11 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 51 Franklin Street, Fifth Floor, 
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor,
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
 
-/** 
+/**
  * \file vidalia.cpp
  * \version $Id$
  */
@@ -55,18 +55,18 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
 {
   /* Read in all our command-line arguments. */
   parseArguments(args);
-  
+
   /* Check if we're supposed to reset our config before proceeding. */
   if (_args.contains(ARG_RESET)) {
-    _settings.reset();  
+    _settings.reset();
   }
 
   /** Initialize support for language translations. */
   LanguageSupport::initialize();
-  
+
   /** Translate the GUI to the appropriate language. */
   setLanguage(_args.value(ARG_LANGUAGE));
-  
+
   /** Set the GUI style appropriately. */
   setStyle(_args.value(ARG_GUISTYLE));
 
@@ -83,21 +83,34 @@ Vidalia::~Vidalia()
   delete _torControl;
 }
 
+#if defined(Q_OS_WIN)
+/** On Windows, we need to catch the WM_QUERYENDSESSION message
+ * so we know that it is time to shutdown. */
+bool
+Vidalia::winEventFilter(MSG *msg, long *result)
+{
+  if (msg->message == WM_QUERYENDSESSION) {
+    emit shutdown();
+  }
+  return QApplication::winEventFilter(msg, result);
+}
+#endif
+
 /** Display usage information regarding command-line arguments. */
 void
 Vidalia::printUsage(QString errmsg)
 {
   QTextStream out(stdout);
-  
+
   /* If there was an error message, print it out. */
   if (!errmsg.isEmpty()) {
     out << "** " << errmsg << " **" << endl << endl;
   }
-  
+
   /* Now print the application usage */
   out << "Usage: " << endl;
   out << "\t" << qApp->arguments().at(0) << " [options]"    << endl;
- 
+
   /* And available options */
   out << endl << "Available Options:"                                   << endl;
   out << "\t-"ARG_HELP"\t\tDisplays this usage message and exits."      << endl;
@@ -106,7 +119,7 @@ Vidalia::printUsage(QString errmsg)
   out << "\t\t\t[" << QStyleFactory::keys().join("|") << "]"            << endl;
   out << "\t-"ARG_LANGUAGE"\t\tSets Vidalia's language."                << endl;
   out << "\t\t\t[" << LanguageSupport::languageCodes().join("|") << "]" << endl;
-} 
+}
 
 /** */
 void
@@ -119,14 +132,14 @@ Vidalia::parseArguments(QStringList args)
     /* Get the argument name and set a blank value */
     arg   = args.at(i).toLower();
     value = "";
-    
+
     /* Check if it starts with a - or -- */
     if (arg.startsWith("-")) {
       arg = arg.mid((arg.startsWith("--") ? 2 : 1));
     }
     /* Check if it takes a value and there is one on the command-line */
     if (i < args.size()-1 && (arg == ARG_GUISTYLE || arg == ARG_LANGUAGE)) {
-      value = args.at(++i); 
+      value = args.at(++i);
     }
     /* Place this arg/value in the map */
     _args.insert(arg, value);
@@ -142,7 +155,7 @@ Vidalia::validateArguments(QString &errmsg)
     return false;
   }
   /* Check for a language that Vidalia recognizes. */
-  if (_args.contains(ARG_LANGUAGE) && 
+  if (_args.contains(ARG_LANGUAGE) &&
       !LanguageSupport::isValidLanguageCode(_args.value(ARG_LANGUAGE))) {
     errmsg = tr("Invalid language code specified: ") + _args.value(ARG_LANGUAGE);
     return false;

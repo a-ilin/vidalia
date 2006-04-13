@@ -15,11 +15,11 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 51 Franklin Street, Fifth Floor, 
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor,
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
 
-/** 
+/**
  * \file mainwindow.h
  * \version $Id$
  */
@@ -49,6 +49,10 @@ public:
   /** Destructor. */
   ~MainWindow();
 
+public slots:
+  /** Called when the user exits Vidalia. */
+  void close();
+
 private slots:
   /** Called when the user selects "Start" from the menu. */
   void start();
@@ -70,9 +74,6 @@ private slots:
   void showConfig();
   /** Called when the user selects "Help" from the menu. */
   void showHelp();
-  /** Called when the user exits Vidalia. */
-  void close();
-
 
 private:
   /** Create the tray popup menu and it's submenus */
@@ -83,7 +84,7 @@ private:
   void createMenuBar();
   /** Starts a graceful server shutdown */
   bool initiateServerShutdown();
-  
+
   /* Used to determine if the Tor process exiting was intentional or not */
   bool _isIntentionalExit;
   /** A MessageLog object which handles logging Tor messages */
@@ -93,10 +94,10 @@ private:
   /** A HelpBrowser object which handles displaying help files */
   HelpBrowser* _helpBrowser;
   /** A TorControl object that handles communication with Tor */
-  TorControl* _torControl; 
+  TorControl* _torControl;
   /** Instance of a tray icon that will appear in the system tray */
   TrayIcon* _trayIcon;
-  
+
   /** Define the popup menus for the system tray icon */
   QMenu* _trayMenu;
   /** Defines the actions for the tray menu */
