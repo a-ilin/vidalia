@@ -144,32 +144,7 @@ SectionGroup "!Tor ${TOR_VERSION}" TorGroup
     Section "Documents" TorDocs
        SectionIn 1 2
        SetOutPath "$INSTDIR\Tor\Documents"
-       File "tor\${TOR_VERSION}\Documents\version-spec.txt"
-       File "tor\${TOR_VERSION}\Documents\HACKING"
-       File "tor\${TOR_VERSION}\Documents\rend-spec.txt"
-       File "tor\${TOR_VERSION}\Documents\control-spec.txt"
-       File "tor\${TOR_VERSION}\Documents\dir-spec.txt"
-       File "tor\${TOR_VERSION}\Documents\socks-extensions.txt"
-       File "tor\${TOR_VERSION}\Documents\tor-doc-win32.html.en"
-       File "tor\${TOR_VERSION}\Documents\tor-doc-win32.html.es"
-       File "tor\${TOR_VERSION}\Documents\tor-doc-win32.html.it"
-       File "tor\${TOR_VERSION}\Documents\tor-doc-server.html.en"
-       File "tor\${TOR_VERSION}\Documents\tor-doc-server.html.it"
-       File "tor\${TOR_VERSION}\Documents\tor-doc-osx.html.en"
-       File "tor\${TOR_VERSION}\Documents\tor-doc-osx.html.it"
-       File "tor\${TOR_VERSION}\Documents\tor-doc-unix.html.en"
-       File "tor\${TOR_VERSION}\Documents\tor-doc-unix.html.it"
-       File "tor\${TOR_VERSION}\Documents\tor-hidden-service.html.en"
-       File "tor\${TOR_VERSION}\Documents\tor-switchproxy.html.en"
-       File "tor\${TOR_VERSION}\Documents\tor-switchproxy.html.it"
-       File "tor\${TOR_VERSION}\Documents\stylesheet.css"
-       File "tor\${TOR_VERSION}\Documents\tor-reference.html"
-       File "tor\${TOR_VERSION}\Documents\tor-resolve.html"
-       File "tor\${TOR_VERSION}\Documents\tor-design.pdf"
-       File "tor\${TOR_VERSION}\Documents\README"
-       File "tor\${TOR_VERSION}\Documents\AUTHORS"
-       File "tor\${TOR_VERSION}\Documents\ChangeLog"
-       File "tor\${TOR_VERSION}\Documents\LICENSE"
+       File "tor\${TOR_VERSION}\Documents\*.*"
     SectionEnd
 
     SubSection /e "Shortcuts" TorShortcuts
@@ -185,9 +160,8 @@ SectionGroup "!Tor ${TOR_VERSION}" TorGroup
            CreateShortCut "$SMPROGRAMS\Tor\Uninstall.lnk" "$INSTDIR\Tor\${TOR_UNINST}"
            IfFileExists "$INSTDIR\Tor\Documents\*.*" "" endifdocs
               CreateDirectory "$SMPROGRAMS\Tor\Documents"
-              CreateShortCut "$SMPROGRAMS\Tor\Documents\Tor Manual.lnk" "$INSTDIR\Tor\Documents\tor-doc.html"
               CreateShortCut "$SMPROGRAMS\Tor\Documents\Tor Documentation.lnk" "$INSTDIR\Tor\Documents"
-              CreateShortCut "$SMPROGRAMS\Tor\Documents\Tor Specification.lnk" "$INSTDIR\Tor\Documents\tor-spec.txt"
+              CreateShortCut "$SMPROGRAMS\Tor\Documents\Version Specification.lnk" "$INSTDIR\Tor\Documents\version-spec.txt"
            endifdocs:
         SectionEnd
 
@@ -237,8 +211,8 @@ SectionGroup "Vidalia ${VIDALIA_VERSION}" VidaliaGroup
     Section "Start Menu Shortcuts" VidaliaShortcuts
       SectionIn 1 2
       CreateDirectory "$SMPROGRAMS\Vidalia"
-      CreateShortCut "$SMPROGRAMS\Vidalia\Vidalia.lnk" "$INSTDIR\Vidalia\${VIDALIA_EXEC}" "" "$INSTDIR\Vidalia\${VIDALIA_EXEC}" 0  
       CreateShortCut "$SMPROGRAMS\Vidalia\Uninstall.lnk" "$INSTDIR\Vidalia\uninstall.exe" "" "$INSTDIR\Vidalia\${VIDALIA_UNINST}" 0
+      CreateShortCut "$SMPROGRAMS\Vidalia\Vidalia.lnk" "$INSTDIR\Vidalia\${VIDALIA_EXEC}" "" "$INSTDIR\Vidalia\${VIDALIA_EXEC}" 0
     SectionEnd
 
     ;--------------------------------
