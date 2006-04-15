@@ -512,6 +512,17 @@ Would you like to access an external service to determine your public IP address
     </message>
 </context>
 <context>
+    <name>ControlConnection</name>
+    <message>
+        <source>The control socket is closing.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Control socket not connected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ControlSocket</name>
     <message>
         <source>Error connecting to %1:%2 [%3]</source>
