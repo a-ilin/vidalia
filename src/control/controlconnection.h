@@ -30,6 +30,7 @@
 #include <QThread>
 #include <QMutex>
 #include <QQueue>
+#include <QWaitCondition>
 
 #include "controlsocket.h"
 #include "torevents.h"
@@ -65,21 +66,17 @@ private:
   void run();
   /** Connections the given socket to Tor. */
   bool connect(ControlSocket *socket, QString *errmsg);
-  /** Sends a control command to Tor. */
-  bool sendCommand(ControlCommand cmd, QString *errmsg);
   /** Checks if there are any outoing messages waiting. */
   bool isSendQueueEmpty();
   /** Processes any messages waiting to be sent. */
   void processSendQueue(ControlSocket *sock);
   /** Processes any messages waiting on the control socket. */
   void processReceiveQueue(ControlSocket *sock);
-  /** Processes some events while waiting for a long operation to complete. */
-  void processEvents();
 
   QHostAddress _addr; /**< Address of Tor's control interface. */
   quint16 _port;      /**< Port of Tor's control interface. */
-  QMutex _sendMutex;  /** Mutex for the send queue. */
-  QMutex _recvMutex;  /** Mutex for the receive queue. */
+  QMutex _sendMutex;  /**< Mutex for the send queue. */
+  QMutex _recvMutex;  /**< Mutex for the receive queue. */
   /** Set to false when we are to disconnect and stop processing messages. */
   bool _run;
   /** Pointer to a previously constructed TorEvents list of event handlers */
@@ -98,7 +95,8 @@ private:
   {
     public:
       /** Create a new item for the send queue. */
-      SendWaiter(ControlCommand cmd) { _command = cmd; _status = Waiting; }
+      SendWaiter(ControlCommand cmd, QWaitCondition *waitCond) 
+      { _command = cmd; _status = Waiting; _waitCond = waitCond; }
       /** Gets the command waiting to be sent. */
       ControlCommand command() { return _command; }
       /** Gets the status of this item in the queue. */
@@ -107,9 +105,10 @@ private:
       QString errorString() { return _errmsg; }
       /** Sets the result of sending an item in the send queue. */
       void setResult(WaiterStatus status, QString errmsg = QString())
-      { _status = status; _errmsg = errmsg; }
+      { _status = status; _errmsg = errmsg; _waitCond->wakeAll(); }
     private:
       ControlCommand _command; /**< The command to send. */
+      QWaitCondition* _waitCond; /**< Waits for a command to be sent. */
       WaiterStatus _status;    /**< The status of this queue item. */
       QString _errmsg;         /**< An error message if the send failed. */
   };
@@ -120,16 +119,18 @@ private:
   {
     public:
       /** Create a new item for the receive queue. */
-      ReceiveWaiter(ControlReply *reply) { _reply = reply; _status = Waiting; }
+      ReceiveWaiter(ControlReply *reply, QWaitCondition *waitCond) 
+      { _reply = reply; _status = Waiting; _waitCond = waitCond; }
       /** Gets the status of this item in the queue. */
       WaiterStatus status() { return _status; }
       /** Returns an error message if the receive failed. */
       QString errorString() { return _errmsg; }
       /** Sets the result of waiting for a control response. */
       void setResult(WaiterStatus status, ControlReply reply, QString errmsg = QString())
-      { _status = status; *_reply = reply; _errmsg = errmsg; }
+      { _status = status; *_reply = reply; _errmsg = errmsg; _waitCond->wakeAll(); }
     private:
       ControlReply* _reply; /**< The response received */
+      QWaitCondition* _waitCond; /**< Waits for a reply to be received. */
       WaiterStatus _status; /**< The status of this queue item. */
       QString _errmsg;      /**< An error message if the receive failed. */
   };

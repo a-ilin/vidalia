@@ -36,5 +36,9 @@ QStringList char_array_to_stringlist(char **arr, int len);
  * converts "\n\n" to a new paragraph. */
 QString p(QString str);
 
+/** Conditionally assigns errmsg to string if str is not null and returns
+ * false. */
+bool err(QString *str, QString errmsg);
+
 #endif
 

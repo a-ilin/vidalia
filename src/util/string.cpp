@@ -49,3 +49,15 @@ p(QString str)
   return str;
 }
 
+/** Conditionally assigns errmsg to str if str is not null and returns false.
+ * This is a seemingly pointless function, but it saves some messiness in
+ * methods whose QString *errmsg parameter is optional. */
+bool
+err(QString *str, QString errmsg)
+{
+  if (str) {
+    *str = errmsg;
+  }
+  return false;
+}
+

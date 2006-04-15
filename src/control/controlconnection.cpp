@@ -25,15 +25,13 @@
  */
 
 #include <QCoreApplication>
+#include <util/string.h>
 
 #include "controlconnection.h"
 
 
 /** Maximum time to wait for new data to arrive on the socket. */
 #define WAIT_TIMEOUT          10
-/** Maximum time to process events before checking on the status of a
- * long-running operation again. (in milliseconds) */
-#define EVENTS_TIMEOUT        250
 /** Maximum number of times we'll try to connect to Tor before giving up.*/
 #define MAX_CONNECT_ATTEMPTS  6
 /** Time to wait between control connection attempts (in microseconds). */
@@ -47,15 +45,6 @@
 ControlConnection::ControlConnection(TorEvents *events)
 {
   _events = events;
-}
-
-/** Process events for EVENTS_TIMEOUT milliseconds or until there are no more
- * events left to process, whichever is shorter. */
-void
-ControlConnection::processEvents()
-{
-  QCoreApplication::processEvents(QEventLoop::ExcludeUserInputEvents,
-                                  EVENTS_TIMEOUT);
 }
 
 /** Connects to Tor's control interface and starts a thread used to process
@@ -118,35 +107,6 @@ ControlConnection::disconnect()
   _recvMutex.unlock();
 }
 
-/** Sends a control command to Tor.
- * \param cmd The command to send.
- * \return true if the command was sent successfully.
- */
-bool
-ControlConnection::sendCommand(ControlCommand cmd, QString *errmsg)
-{
-  SendWaiter waiter(cmd);
-
-  /* Place a message in the send queue */
-  _sendMutex.lock();
-  _sendQueue.enqueue(&waiter);
-  _sendMutex.unlock();
-  
-  /* Wait for the message to be sent */
-  while (waiter.status() == Waiting) {
-    /* WAIT_TIMEOUT is in ms and usleep() takes microseconds */
-    QThread::usleep(1000*WAIT_TIMEOUT);
-  }
-  
-  /* If the send failed, then get the error string */
-  if (waiter.status() == Failed) {
-    if (errmsg) {
-      *errmsg = waiter.errorString();
-    }
-  }
-  return (waiter.status() == Success);
-}
-
 /** Sends a control command to Tor and waits for the response.
  * \param cmd The command to send to Tor.
  * \param reply The response from Tor.
@@ -156,37 +116,43 @@ ControlConnection::sendCommand(ControlCommand cmd, QString *errmsg)
 bool
 ControlConnection::send(ControlCommand cmd, ControlReply &reply,  QString *errmsg)
 {
-  ReceiveWaiter waiter(&reply);
+  QWaitCondition waitCond;
+  SendWaiter sendWaiter(cmd, &waitCond);
+  ReceiveWaiter recvWaiter(&reply, &waitCond);
   
   /* Make sure we have a valid control socket before trying to send. */
   if (!isConnected()) {
-    if (errmsg) {
-      *errmsg = tr("Control socket not connected.");
-    }
-  } else {  
-    _recvMutex.lock();
-    /* Try to send the command to Tor */
-    if (sendCommand(cmd, errmsg)) {
-      /* Place a waiter in the receive queue */
-      _recvQueue.enqueue(&waiter);
-      _recvMutex.unlock();
- 
-      while (waiter.status() == Waiting) {
-        /* Allow the gui to remain responsive while waiting */
-        processEvents();
-      }
-
-      /* If the send failed, then get the error string */
-      if (waiter.status() == Failed) {
-        if (errmsg) {
-          *errmsg = waiter.errorString();
-        }
-      }
-      return (waiter.status() == Success);
-    }
-    _recvMutex.unlock();
+    return err(errmsg, tr("Control socket not connected."));
   }
-  return false;
+ 
+  /* Add a send waiter to the outgoing message queue */
+  _sendMutex.lock();
+  _sendQueue.enqueue(&sendWaiter);
+    
+  /* Lock the receive mutex and wait for the message to be sent. The receive
+   * mutex is locked so the response doesn't get added to the incoming message
+   * queue before we have a waiter for it, but we don't add a waiter yet
+   * because if the send fails, then no response will ever be received. */
+  _recvMutex.lock();
+  waitCond.wait(&_sendMutex);
+  _sendMutex.unlock();
+
+  /* Check if the send failed. */
+  if (sendWaiter.status() == Failed) {
+    _recvMutex.unlock();
+    return err(errmsg, sendWaiter.errorString());
+  }
+    
+  /* The send was successful, so add a waiter for the response. */
+  _recvQueue.enqueue(&recvWaiter);
+  waitCond.wait(&_recvMutex);
+  _recvMutex.unlock();
+     
+  /* If the receive failed, then get the error string */
+  if (recvWaiter.status() == Failed) {
+    return err(errmsg, recvWaiter.errorString());
+  }
+  return true;
 }
 
 /** Determines if there are any messages waiting in the outgoing message queue.
