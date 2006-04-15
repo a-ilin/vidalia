@@ -55,7 +55,7 @@ public:
   bool isRunning();
 
   /** Connect to Tor's control socket */
-  bool connect(QString *errmsg = 0);
+  void connect();
   /** Disconnect from Tor's control socket */
   void disconnect();
   /** Check if we're connected to Tor's control socket */
@@ -107,9 +107,10 @@ signals:
   void stopped(int exitCode, QProcess::ExitStatus exitStatus);
   /** Emitted when the controller has connected to Tor */
   void connected();
+  /** Emitted when the controller failed to connect to Tor. */
+  void connectFailed(QString errmsg);
   /** Emitted when the controller has disconnected from Tor */
   void disconnected();
-
   
 private:
   /** Instantiates a connection used to talk to Tor's control port */
@@ -131,6 +132,7 @@ private slots:
   void onStarted();
   void onStopped(int exitCode, QProcess::ExitStatus exitStatus);
   void onConnected();
+  void onConnectFailed(QString errmsg);
   void onDisconnected();
   void onLogStdout(QString severity, QString message);
 };

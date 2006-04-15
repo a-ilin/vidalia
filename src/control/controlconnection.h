@@ -29,7 +29,6 @@
 
 #include <QThread>
 #include <QMutex>
-#include <QWaitCondition>
 #include <QQueue>
 
 #include "controlsocket.h"
@@ -43,11 +42,9 @@ class ControlConnection : public QThread
 public:
   /** Default constructor. */
   ControlConnection(TorEvents *events = 0);
-  /** Destructor. */
-  ~ControlConnection();
 
   /** Connect to the specified Tor control interface. */
-  bool connect(QHostAddress addr, quint16 port, QString *errmsg = 0);
+  void connect(QHostAddress addr, quint16 port);
   /** Disconnect from Tor. */
   void disconnect();
   /** Returns true if we are connected to Tor and processing messages. */
@@ -60,42 +57,29 @@ signals:
   void connected();
   /** Emitted when a control connection has been closed. */
   void disconnected();
-  
+  /** Emitted when a control connection fails. */
+  void connectFailed(QString errmsg);
+
 private:
   /** Main thread implementation. */
   void run();
+  /** Connections the given socket to Tor. */
+  bool connect(ControlSocket *socket, QString *errmsg);
   /** Sends a control command to Tor. */
-  bool sendCommand(ControlCommand cmd, QString *errmsg = 0);
-  /** Cechks if there are any outoing messages waiting. */
+  bool sendCommand(ControlCommand cmd, QString *errmsg);
+  /** Checks if there are any outoing messages waiting. */
   bool isSendQueueEmpty();
   /** Processes any messages waiting to be sent. */
-  void processSendQueue();
+  void processSendQueue(ControlSocket *sock);
   /** Processes any messages waiting on the control socket. */
-  void processReceiveQueue();
+  void processReceiveQueue(ControlSocket *sock);
   /** Processes some events while waiting for a long operation to complete. */
   void processEvents();
 
-  /** Control socket used to communicate with Tor's control interface. */
-  ControlSocket* _sock;
-  /** Address of Tor's control interface. */
-  QHostAddress _addr;
-  /** Port of Tor's control interface. */
-  quint16 _port;
-  /** Stores the last error message resulting from a socket operation. */
-  QString _errorString;
-
-  /** Mutex around connection events. */
-  QMutex _connMutex;
-  /** Mutex for the send queue. */
-  QMutex* _sendMutex;
-  /** Mutex for the receive queue. */
-  QMutex* _recvMutex;
-  /** Wait condition for connection events. */
-  QWaitCondition _connWait;
-
-  
-  /** The status of the control connection to Tor. */
-  bool _connected;
+  QHostAddress _addr; /**< Address of Tor's control interface. */
+  quint16 _port;      /**< Port of Tor's control interface. */
+  QMutex _sendMutex;  /** Mutex for the send queue. */
+  QMutex _recvMutex;  /** Mutex for the receive queue. */
   /** Set to false when we are to disconnect and stop processing messages. */
   bool _run;
   /** Pointer to a previously constructed TorEvents list of event handlers */

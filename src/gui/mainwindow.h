@@ -64,6 +64,8 @@ private slots:
   void stopped(int errorCode, QProcess::ExitStatus exitStatus);
   /** Called when the control socket has connected to Tor. */
   void connected();
+  /** Called when the control connection fails. */
+  void connectFailed(QString errmsg);
   /** Called when the user selects "About" from the menu. */
   void showAbout();
   /** Called when the user selects "Message Log" from the menu. */

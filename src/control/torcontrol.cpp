@@ -46,6 +46,8 @@ TorControl::TorControl()
   /* Plumb the appropriate socket signals */
   QObject::connect(_controlConn, SIGNAL(connected()),
                    this, SLOT(onConnected()));
+  QObject::connect(_controlConn, SIGNAL(connectFailed(QString)),
+                   this, SLOT(onConnectFailed(QString)));
   QObject::connect(_controlConn, SIGNAL(disconnected()),
                    this, SLOT(onDisconnected()));
 }
@@ -148,12 +150,12 @@ TorControl::onLogStdout(QString severity, QString message)
 
 /** Connect to Tor's control port. The control port to use is determined by
  * Vidalia's configuration file. */
-bool
-TorControl::connect(QString *errmsg)
+void
+TorControl::connect()
 {
   TorSettings settings;
-  return _controlConn->connect(settings.getControlAddress(),
-                               settings.getControlPort(), errmsg);
+  _controlConn->connect(settings.getControlAddress(),
+                        settings.getControlPort());
 }
 
 /** Emits a signal that the control socket successfully established a
@@ -167,6 +169,13 @@ TorControl::onConnected()
   if (_torProcess) {
     _torProcess->closeStdout();
   }
+}
+
+/** Emits a signal that the control connection to Tor failed. */
+void
+TorControl::onConnectFailed(QString errmsg)
+{
+  emit connectFailed(errmsg);
 }
 
 /** Disconnect from Tor's control port */

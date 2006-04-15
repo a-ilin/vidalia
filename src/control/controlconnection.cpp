@@ -29,11 +29,16 @@
 #include "controlconnection.h"
 
 
-/** Maximum time to wait for data to arrive on the socket. */
-#define WAIT_TIMEOUT    10
+/** Maximum time to wait for new data to arrive on the socket. */
+#define WAIT_TIMEOUT          10
 /** Maximum time to process events before checking on the status of a
  * long-running operation again. (in milliseconds) */
-#define EVENTS_TIMEOUT  250
+#define EVENTS_TIMEOUT        250
+/** Maximum number of times we'll try to connect to Tor before giving up.*/
+#define MAX_CONNECT_ATTEMPTS  6
+/** Time to wait between control connection attempts (in microseconds). */
+#define CONNECT_RETRY_DELAY   500*1000
+
 
 /** Constructor.
  * \param events a TorEvents object used to dispatch asynchronous events
@@ -42,15 +47,6 @@
 ControlConnection::ControlConnection(TorEvents *events)
 {
   _events = events;
-  _sendMutex = new QMutex(QMutex::Recursive);
-  _recvMutex = new QMutex(QMutex::Recursive);
-}
-
-/** Destructor. */
-ControlConnection::~ControlConnection()
-{
-  delete _sendMutex;
-  delete _recvMutex;
 }
 
 /** Process events for EVENTS_TIMEOUT milliseconds or until there are no more
@@ -72,28 +68,17 @@ ControlConnection::processEvents()
  * \return true if a connection to Tor's control interface was successfully
  * established. Otherwise, returns false and sets errmsg.
  * */
-bool
-ControlConnection::connect(QHostAddress addr, quint16 port, QString *errmsg)
+void
+ControlConnection::connect(QHostAddress addr, quint16 port)
 {
   /* Store the control interface address information */
   _addr = addr;
   _port = port;
   _run  = true;
 
-  /* Start a thread and wait for it to finish its connection attempt */
-  _connMutex.lock();
+  /* Start a thread. Either connected() or connectFailed() will be emitted
+   * once the connection attempt has completed. */
   QThread::start();
-  _connWait.wait(&_connMutex);
-  _connMutex.unlock();
-
-  /* If an error occurred, return the reason if the caller wants it */
-  if (!isConnected()) {
-    if (errmsg) {
-      *errmsg = _errorString;
-    }
-    return false;
-  }
-  return true;
 }
 
 /** \return true if the control socket is connected and the message handling
@@ -101,8 +86,8 @@ ControlConnection::connect(QHostAddress addr, quint16 port, QString *errmsg)
 bool
 ControlConnection::isConnected()
 {
-  QMutexLocker locker(&_connMutex);
-  return (_connected && _run && isRunning());
+  /* If the socket gets disconnected, the thread exits */
+  return (_run && isRunning());
 }
 
 /** Disconnects the control socket and stops all message processing. */
@@ -116,24 +101,21 @@ ControlConnection::disconnect()
   _run = false;
  
   /* Flush any outstanding waiters in the send queue */
-  while (!_sendMutex->tryLock()) {
-    processEvents();
-  }
+  _sendMutex.lock();
   while (!_sendQueue.isEmpty()) {
     SendWaiter *waiter = _sendQueue.dequeue();
-    waiter->setResult(Failed, "The control socket is closing.");
+    waiter->setResult(Failed, tr("The control socket is closing."));
   }
-  _sendMutex->unlock();
+  _sendMutex.unlock();
 
   /* Flush any outstanding waiters in the receive queue */
-  while (!_recvMutex->tryLock()) {
-    processEvents();
-  }
+  _recvMutex.lock();
   while (!_recvQueue.isEmpty()) {
     ReceiveWaiter *waiter = _recvQueue.dequeue();
-    waiter->setResult(Failed, ControlReply(), "The control socket is closing.");
+    waiter->setResult(Failed, ControlReply(), 
+                       tr("The control socket is closing."));
   }
-  _recvMutex->unlock();
+  _recvMutex.unlock();
 }
 
 /** Sends a control command to Tor.
@@ -146,14 +128,14 @@ ControlConnection::sendCommand(ControlCommand cmd, QString *errmsg)
   SendWaiter waiter(cmd);
 
   /* Place a message in the send queue */
-  _sendMutex->lock();
+  _sendMutex.lock();
   _sendQueue.enqueue(&waiter);
-  _sendMutex->unlock();
+  _sendMutex.unlock();
   
   /* Wait for the message to be sent */
   while (waiter.status() == Waiting) {
-    /* Allow the gui to remain responsive while waiting */
-    processEvents();
+    /* WAIT_TIMEOUT is in ms and usleep() takes microseconds */
+    QThread::usleep(1000*WAIT_TIMEOUT);
   }
   
   /* If the send failed, then get the error string */
@@ -179,15 +161,15 @@ ControlConnection::send(ControlCommand cmd, ControlReply &reply,  QString *errms
   /* Make sure we have a valid control socket before trying to send. */
   if (!isConnected()) {
     if (errmsg) {
-      *errmsg = "Control socket not connected.";
+      *errmsg = tr("Control socket not connected.");
     }
   } else {  
-    _recvMutex->lock();
+    _recvMutex.lock();
     /* Try to send the command to Tor */
     if (sendCommand(cmd, errmsg)) {
       /* Place a waiter in the receive queue */
       _recvQueue.enqueue(&waiter);
-      _recvMutex->unlock();
+      _recvMutex.unlock();
  
       while (waiter.status() == Waiting) {
         /* Allow the gui to remain responsive while waiting */
@@ -202,7 +184,7 @@ ControlConnection::send(ControlCommand cmd, ControlReply &reply,  QString *errms
       }
       return (waiter.status() == Success);
     }
-    _recvMutex->unlock();
+    _recvMutex.unlock();
   }
   return false;
 }
@@ -213,38 +195,38 @@ ControlConnection::send(ControlCommand cmd, ControlReply &reply,  QString *errms
 bool
 ControlConnection::isSendQueueEmpty()
 {
-  QMutexLocker locker(_sendMutex);
+  QMutexLocker locker(&_sendMutex);
   return _sendQueue.isEmpty();
 }
 
 /** Processes any messages waiting in the send queue. */
 void
-ControlConnection::processSendQueue()
+ControlConnection::processSendQueue(ControlSocket *sock)
 {
   SendWaiter *sendWaiter;
   bool result;
   QString errorString;
  
   /* Iterate through all messages waiting in the queue */
-  _sendMutex->lock();
+  _sendMutex.lock();
   while (!_sendQueue.isEmpty()) {
     /* Grab a waiter, try to send it, and store the result */
     sendWaiter = _sendQueue.dequeue();
-    result = _sock->sendCommand(sendWaiter->command(), &errorString);
+    result = sock->sendCommand(sendWaiter->command(), &errorString);
     sendWaiter->setResult((result ? Success : Failed), errorString);
   }
-  _sendMutex->unlock();
+  _sendMutex.unlock();
 }
 
 /** Processes any messages waiting on the control socket. */
 void
-ControlConnection::processReceiveQueue()
+ControlConnection::processReceiveQueue(ControlSocket *sock)
 {
   ReceiveWaiter *waiter;
   
-  while (_sock->canReadLine()) {
+  while (sock->canReadLine()) {
     ControlReply reply;
-    if (_sock->readReply(reply)) {
+    if (sock->readReply(reply)) {
       if (reply.getStatus() == "650") {
         /* Asynchronous event message */
         if (_events) {
@@ -252,13 +234,28 @@ ControlConnection::processReceiveQueue()
         }
       } else {
         /* Response to a previous command */
-        _recvMutex->lock();
+        _recvMutex.lock();
         waiter = _recvQueue.dequeue();
         waiter->setResult(Success, reply);
-        _recvMutex->unlock();
+        _recvMutex.unlock();
       }
     }
   }
+}
+
+/** Attempt to establish a connection to Tor's control interface. We will try
+ * a maximum of MAX_CONNECT_ATTEMPTS, waiting CONNECT_RETRY_DELAY between each
+ * attempt, to give slow Tors a chance to finish binding their control port. */
+bool
+ControlConnection::connect(ControlSocket *sock, QString *errmsg)
+{
+  for (int i = 0; i < MAX_CONNECT_ATTEMPTS; i++) {
+    if (sock->connect(_addr, _port, errmsg)) {
+      return true;
+    }
+    QThread::usleep(CONNECT_RETRY_DELAY);
+  }
+  return false;
 }
 
 /** Main thread implementation. Creates and connects a control socket and
@@ -268,35 +265,35 @@ ControlConnection::processReceiveQueue()
 void
 ControlConnection::run()
 {
+  QString errmsg;
+  
   /* Create a new control socket and try to connect to Tor */
-  _connMutex.lock();
-  _sock = new ControlSocket(); 
-  _connected = _sock->connect(_addr, _port, &_errorString);
-  _connMutex.unlock();
-  _connWait.wakeAll();
-
-  if (_connected) {
+  ControlSocket *sock = new ControlSocket();
+  
+  if (!connect(sock, &errmsg)) {
+    emit connectFailed(errmsg);
+  } else {
     emit connected();
-    while (_run && _sock->isConnected()) {
+    while (_run && sock->isConnected()) {
       /* If there are messages in the send queue, then send them */
       if (!isSendQueueEmpty()) {
-        processSendQueue();
+        processSendQueue(sock);
       }
       
       /* Wait for some data to appear on the socket */
-      _sock->waitForReadyRead(WAIT_TIMEOUT);
+      sock->waitForReadyRead(WAIT_TIMEOUT);
       
       /* If there are messages waiting on the socket, read them in */
-      if (_sock->bytesAvailable()) {
-        processReceiveQueue();
+      if (sock->bytesAvailable()) {
+        processReceiveQueue(sock);
       }
     }
-    if (_sock->isConnected()) {
-      _sock->disconnect();
+    if (sock->isConnected()) {
+      sock->disconnect();
     }
     emit disconnected();
   }
-  _connected = _run = false;
-  delete _sock;
+  _run = false;
+  delete sock;
 }
 
