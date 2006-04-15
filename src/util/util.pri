@@ -21,13 +21,11 @@
 #  02110-1301, USA.
 #################################################################
 
-HEADERS += $$PWD/compat.h \
-           $$PWD/net.h \
+HEADERS += $$PWD/net.h \
            $$PWD/http.h \
            $$PWD/string.h
            
-SOURCES += $$PWD/compat.cpp \
-           $$PWD/net.cpp \
+SOURCES += $$PWD/net.cpp \
            $$PWD/http.cpp \
            $$PWD/string.cpp
 
