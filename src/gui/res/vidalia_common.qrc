@@ -3,6 +3,7 @@
         <file>short_license.txt</file>
     </qresource>
     <qresource prefix="/images">
+        <file>16x16/applications-internet.png</file>
         <file>16x16/emblem-unreadable.png</file>
         <file>16x16/format-justify-fill.png</file>
         <file>16x16/go-next.png</file>

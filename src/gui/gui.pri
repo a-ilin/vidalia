@@ -53,4 +53,5 @@ include($$PWD/log/log.pri)
 include($$PWD/bwgraph/bwgraph.pri)
 include($$PWD/config/config.pri)
 include($$PWD/help/help.pri)
+include($$PWD/network/network.pri)
 

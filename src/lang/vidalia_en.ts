@@ -651,6 +651,14 @@ Would you like to shutdown gracefully and give clients time to find a new server
         <source>Tor is stopping</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>View Network</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+N</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageLog</name>
@@ -938,6 +946,77 @@ interest to Tor developers.</source>
         <source>Cannot write file %1
 
 %2.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>NetViewer</name>
+    <message>
+        <source>View Tor Network</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Saves the current Message Log settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancels changes made to settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Message Filter</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notice</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log History Size</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Number of messages to keep in log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Log File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Browse</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable saving of all messages to a file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Save Messages to File</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

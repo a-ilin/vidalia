@@ -37,6 +37,7 @@
 #include "bwgraph/bwgraph.h"
 #include "config/configdialog.h"
 #include "help/browser/helpbrowser.h"
+#include "network/netviewer.h"
 
 
 class MainWindow : public QMainWindow
@@ -76,7 +77,9 @@ private slots:
   void showConfig();
   /** Called when the user selects "Help" from the menu. */
   void showHelp();
-
+  /** Called when the user selects "View Network" from the menu */
+  void showNetwork();
+  
 private:
   /** Create the tray popup menu and it's submenus */
   void createMenus();
@@ -95,6 +98,8 @@ private:
   BandwidthGraph* _bandwidthGraph;
   /** A HelpBrowser object which handles displaying help files */
   HelpBrowser* _helpBrowser;
+  /** A NetViewer object which displays the Tor network graphically */
+  NetViewer* _netViewer;
   /** A TorControl object that handles communication with Tor */
   TorControl* _torControl;
   /** Instance of a tray icon that will appear in the system tray */
@@ -111,6 +116,7 @@ private:
   QAction* _bandwidthAct;
   QAction* _messageAct;
   QAction* _helpAct;
+  QAction* _networkAct;
 };
 
 #endif

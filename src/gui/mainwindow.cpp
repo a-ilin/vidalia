@@ -45,6 +45,7 @@
 #define IMG_HELP           ":/images/16x16/help-browser.png"
 #define IMG_ABOUT          ":/images/16x16/tor-logo.png"
 #define IMG_EXIT           ":/images/16x16/emblem-unreadable.png"
+#define IMG_NETWORK        ":/images/16x16/applications-internet.png"
 
 #if defined(Q_WS_MAC)
 /* On Mac, we go straight to Carbon to load our dock images from .icns files */
@@ -102,7 +103,10 @@ MainWindow::MainWindow()
   /* Create a new BandwidthGraph object so we can monitor bandwidth usage */
   Qt::WFlags bw_flags = (Qt::Tool | Qt::WindowStaysOnTopHint);
   _bandwidthGraph = new BandwidthGraph(this, bw_flags);
- 
+
+  /* Create a new NetViewer object so we can monitor the network */
+  _netViewer = new NetViewer(this);
+
   /* Put an icon in the system tray to indicate the status of Tor */
   _trayIcon = new TrayIcon(IMG_TOR_STOPPED,
                            tr("Tor is Stopped"), _trayMenu);
@@ -182,6 +186,10 @@ MainWindow::createActions()
   _helpAct = new QAction(QIcon(IMG_HELP), tr("Help"), this);
   connect(_helpAct, SIGNAL(triggered()), 
       this, SLOT(showHelp()));
+
+  _networkAct = new QAction(QIcon(IMG_NETWORK), tr("View Network"), this);
+  connect(_networkAct, SIGNAL(triggered()),
+      this, SLOT(showNetwork()));
 }
 
 /**
@@ -198,6 +206,7 @@ MainWindow::createMenus()
   _trayMenu->addSeparator();
   _trayMenu->addAction(_bandwidthAct);
   _trayMenu->addAction(_messageAct);
+  _trayMenu->addAction(_networkAct);
   _trayMenu->addSeparator();
   _trayMenu->addAction(_configAct);
   _trayMenu->addAction(_helpAct);
@@ -222,6 +231,7 @@ MainWindow::createMenuBar()
   _stopAct->setShortcut(tr("Ctrl+T"));
   _bandwidthAct->setShortcut(tr("Ctrl+B"));
   _messageAct->setShortcut(tr("Ctrl+L"));
+  _networkAct->setShortcut(tr("Ctrl+N"));
   _helpAct->setShortcut(tr("Ctrl+?"));
 
   /* The File, Help, and Configure menus will get merged into the application
@@ -237,6 +247,7 @@ MainWindow::createMenuBar()
   QMenu *viewMenu = menuBar->addMenu(tr("View"));
   viewMenu->addAction(_bandwidthAct);
   viewMenu->addAction(_messageAct);
+  viewMenu->addAction(_networkAct);
   viewMenu->addAction(_configAct);
   
   QMenu *helpMenu = menuBar->addMenu(tr("Help"));
@@ -498,5 +509,13 @@ void
 MainWindow::showHelp()
 {
   Vidalia::help(); 
+}
+
+/** Shows the View Network dialog. If the View Network dialog is already
+ *  displayed, the existing instance will be brought to the foreground. */
+void
+MainWindow::showNetwork()
+{
+  _netViewer->show();  
 }
 
