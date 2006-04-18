@@ -193,9 +193,6 @@ SectionGroup "Vidalia ${VIDALIA_VERSION}" VidaliaGroup
       File "Vidalia\${VIDALIA_VERSION}\AUTHORS"
       File "BUNDLE_LICENSE"
 
-      ; Write the installation path into the registry
-      WriteRegStr HKCU SOFTWARE\Vidalia "Install_Dir" "$INSTDIR"
-
       ; Write the uninstall keys for Windows
       WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "DisplayName" "${VIDALIA_NAME} ${VIDALIA_VERSION}"
       WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "UninstallString" '"$INSTDIR\Vidalia\${VIDALIA_UNINST}"'
