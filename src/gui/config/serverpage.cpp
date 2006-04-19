@@ -90,7 +90,7 @@ ServerPage::~ServerPage()
 void
 ServerPage::setAutoUpdateTimer(bool enabled)
 {
-  if (enabled) {
+  if (enabled && _settings->isServerEnabled()) {
     connect(_autoUpdateTimer, SIGNAL(timeout()), 
             this, SLOT(updateServerIP()));
     _autoUpdateTimer->start(AUTO_UPDATE_ADDR_INTERVAL);
