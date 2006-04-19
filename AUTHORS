@@ -19,6 +19,9 @@ Contributors:
   Matt Hanson <http://www.zuerchertech.com/> tweaked Corinna's images a bit
   and created some .icos based off of them.
 
+  Geoff Goodell <http://afs.eecs.harvard.edu/~goodell/> created the US/UK icon
+  (src/gui/res/flags/en.png) that we use in the Appearance configuration page.
+
 Translators:
   Wu Xiaoguang    Simplified Chinese
 
