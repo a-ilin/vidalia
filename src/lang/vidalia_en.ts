@@ -659,6 +659,18 @@ Would you like to shutdown gracefully and give clients time to find a new server
         <source>Ctrl+N</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Error Applying Server Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to apply your server&apos;s settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>MessageLog</name>

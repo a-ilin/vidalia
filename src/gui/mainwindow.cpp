@@ -470,7 +470,7 @@ MainWindow::connected()
                   tr("Error Applying Server Settings"),
                   p(tr("Vidalia was unable to apply your server's settings."))
                     + p(errmsg),
-                  tr("OK"), tr("Show Config"), tr("Show Log"));
+                  tr("OK"), tr("Show Settings"), tr("Show Log"));
 
       if (ret == 1) {
         /* Show the config dialog with the server page already shown. */
