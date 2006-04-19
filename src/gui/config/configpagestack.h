@@ -45,7 +45,9 @@ public:
   void add(ConfigPage *page, QAction *action);
   /** Sets the current config page and checks its action. */
   void setCurrentPage(ConfigPage *page);
-  
+  /** Sets the current config page index and checks its action. */
+  void setCurrentIndex(int index);
+
   /** Returns a list of all pages in the stack. */
   QList<ConfigPage*> pages() { return _pages.values(); }
   

@@ -117,6 +117,17 @@ ConfigDialog::show()
   }
 }
 
+/** Shows the config dialog with focus set to the given page. */
+void
+ConfigDialog::show(Page page)
+{
+  /* Show the dialog. */
+  show();
+
+  /* Set the focus to the specified page. */
+  ui.stackPages->setCurrentIndex((int)page);
+}
+
 /** Loads the saved ConfigDialog settings. */
 void
 ConfigDialog::loadSettings()

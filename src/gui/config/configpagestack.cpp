@@ -51,6 +51,13 @@ ConfigPageStack::setCurrentPage(ConfigPage *page)
   setCurrentWidget(page);
 }
 
+/** Sets the current config page index and checks its action. */
+void
+ConfigPageStack::setCurrentIndex(int index)
+{
+  setCurrentPage((ConfigPage *)widget(index));
+}
+
 /** Shows the config page associated with the activated action. */
 void
 ConfigPageStack::showPage(QAction *pageAction)
