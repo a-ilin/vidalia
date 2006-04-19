@@ -1148,6 +1148,14 @@ interest to Tor developers.</source>
 Would you like to access an external service to determine your public IP address?</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>When enabled, Vidalia will periodically update your IP address if necessary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatically Update</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TorProcess</name>

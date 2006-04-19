@@ -301,16 +301,6 @@
    <enum>Qt::ToolButtonTextUnderIcon</enum>
   </property>
   <widget class="QWidget" name="centralwidget" />
-  <widget class="QMenuBar" name="menubar" >
-   <property name="geometry" >
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>19</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QStatusBar" name="statusbar" >
    <property name="geometry" >
     <rect>
@@ -320,6 +310,14 @@
      <height>19</height>
     </rect>
    </property>
+  </widget>
+  <widget class="QToolBar" name="toolBar" >
+   <property name="orientation" >
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <attribute name="toolBarArea" >
+    <number>4</number>
+   </attribute>
   </widget>
  </widget>
  <pixmapfunction></pixmapfunction>

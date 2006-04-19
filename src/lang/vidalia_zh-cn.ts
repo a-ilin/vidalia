@@ -1547,6 +1547,14 @@ Would you like to access an external service to determine your public IP address
 <byte value="x9"/><byte value="x9"/>
 您想通过外部服务来确定您的公共IP地址吗？</translation>
     </message>
+    <message>
+        <source>When enabled, Vidalia will periodically update your IP address if necessary</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Automatically Update</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>TorProcess</name>

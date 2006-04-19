@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>507</width>
-    <height>543</height>
+    <width>658</width>
+    <height>705</height>
    </rect>
   </property>
   <property name="palette" >
@@ -347,6 +347,45 @@
          <property name="spacing" >
           <number>6</number>
          </property>
+         <item row="4" column="4" >
+          <widget class="QLabel" name="label_3" >
+           <property name="minimumSize" >
+            <size>
+             <width>20</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="text" >
+            <string/>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="5" colspan="2" >
+          <widget class="QCheckBox" name="chkAutoUpdate" >
+           <property name="contextMenuPolicy" >
+            <enum>Qt::NoContextMenu</enum>
+           </property>
+           <property name="toolTip" >
+            <string>When enabled, Vidalia will periodically update your IP address if necessary</string>
+           </property>
+           <property name="text" >
+            <string>Automatically Update</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="7" >
+          <spacer>
+           <property name="orientation" >
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" >
+            <size>
+             <width>121</width>
+             <height>27</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
          <item row="5" column="3" colspan="3" >
           <layout class="QHBoxLayout" >
            <property name="margin" >
@@ -422,7 +461,7 @@
            </property>
           </widget>
          </item>
-         <item row="1" column="1" colspan="6" >
+         <item row="1" column="1" colspan="7" >
           <widget class="QLineEdit" name="lineServerNickname" >
            <property name="cursor" >
             <cursor>4</cursor>
@@ -438,7 +477,7 @@
            </property>
           </widget>
          </item>
-         <item row="2" column="1" colspan="6" >
+         <item row="2" column="1" colspan="7" >
           <widget class="QLineEdit" name="lineServerContact" >
            <property name="cursor" >
             <cursor>4</cursor>
@@ -510,7 +549,7 @@
            </property>
           </widget>
          </item>
-         <item row="3" column="2" colspan="5" >
+         <item row="3" column="2" colspan="6" >
           <spacer>
            <property name="orientation" >
             <enum>Qt::Horizontal</enum>
@@ -522,6 +561,61 @@
             </size>
            </property>
           </spacer>
+         </item>
+         <item row="5" column="6" colspan="2" >
+          <spacer>
+           <property name="orientation" >
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" >
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item row="0" column="0" colspan="8" >
+          <widget class="QLabel" name="lblRequired" >
+           <property name="layoutDirection" >
+            <enum>Qt::LeftToRight</enum>
+           </property>
+           <property name="text" >
+            <string>Nickname and Server Port are required</string>
+           </property>
+           <property name="textFormat" >
+            <enum>Qt::AutoText</enum>
+           </property>
+           <property name="alignment" >
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="5" column="0" colspan="3" >
+          <widget class="QCheckBox" name="chkMirrorDirectory" >
+           <property name="contextMenuPolicy" >
+            <enum>Qt::NoContextMenu</enum>
+           </property>
+           <property name="toolTip" >
+            <string>Enable to mirror the server directory</string>
+           </property>
+           <property name="text" >
+            <string>Mirror the Server Directory </string>
+           </property>
+          </widget>
+         </item>
+         <item row="6" column="0" colspan="8" >
+          <widget class="QCheckBox" name="chkMiddleMan" >
+           <property name="contextMenuPolicy" >
+            <enum>Qt::NoContextMenu</enum>
+           </property>
+           <property name="toolTip" >
+            <string>If selected, clients will not exit the Tor network through your server</string>
+           </property>
+           <property name="text" >
+            <string>Only relay traffic between other Tor servers (middle-man)</string>
+           </property>
+          </widget>
          </item>
          <item row="4" column="0" >
           <widget class="QLabel" name="label_4" >
@@ -542,7 +636,7 @@
            </property>
           </widget>
          </item>
-         <item row="4" column="1" colspan="3" >
+         <item row="4" column="1" colspan="2" >
           <widget class="QLineEdit" name="lineServerAddress" >
            <property name="sizePolicy" >
             <sizepolicy>
@@ -587,46 +681,7 @@
            </property>
           </widget>
          </item>
-         <item row="5" column="6" >
-          <spacer>
-           <property name="orientation" >
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" >
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="5" column="0" colspan="3" >
-          <widget class="QCheckBox" name="chkMirrorDirectory" >
-           <property name="contextMenuPolicy" >
-            <enum>Qt::NoContextMenu</enum>
-           </property>
-           <property name="toolTip" >
-            <string>Enable to mirror the server directory</string>
-           </property>
-           <property name="text" >
-            <string>Mirror the Server Directory </string>
-           </property>
-          </widget>
-         </item>
-         <item row="6" column="0" colspan="7" >
-          <widget class="QCheckBox" name="chkMiddleMan" >
-           <property name="contextMenuPolicy" >
-            <enum>Qt::NoContextMenu</enum>
-           </property>
-           <property name="toolTip" >
-            <string>If selected, clients will not exit the Tor network through your server</string>
-           </property>
-           <property name="text" >
-            <string>Only relay traffic between other Tor servers (middle-man)</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="4" >
+         <item row="4" column="3" >
           <widget class="QPushButton" name="btnGetAddress" >
            <property name="minimumSize" >
             <size>
@@ -642,35 +697,6 @@
            </property>
            <property name="text" >
             <string>Get Address</string>
-           </property>
-          </widget>
-         </item>
-         <item row="4" column="5" colspan="2" >
-          <spacer>
-           <property name="orientation" >
-            <enum>Qt::Horizontal</enum>
-           </property>
-           <property name="sizeHint" >
-            <size>
-             <width>40</width>
-             <height>20</height>
-            </size>
-           </property>
-          </spacer>
-         </item>
-         <item row="0" column="0" colspan="7" >
-          <widget class="QLabel" name="lblRequired" >
-           <property name="layoutDirection" >
-            <enum>Qt::LeftToRight</enum>
-           </property>
-           <property name="text" >
-            <string>Nickname and Server Port are required</string>
-           </property>
-           <property name="textFormat" >
-            <enum>Qt::AutoText</enum>
-           </property>
-           <property name="alignment" >
-            <set>Qt::AlignCenter</set>
            </property>
           </widget>
          </item>
