@@ -43,6 +43,7 @@
 #define SETTING_SERVER_ENABLED    "Server/Enabled"
 #define SETTING_SERVER_CHANGED    "Server/Changed"
 #define SETTING_SERVER_DIRMIRROR  "Server/DirectoryMirror"
+#define SETTING_SERVER_AUTOUPDATE_ADDRESS "Server/AutoUpdateAddress"
 #define SETTING_SERVER_MIDDLEMAN  "Server/Middleman"
 #define SETTING_SERVER_NICKNAME   "Server/"SERVER_NICKNAME
 #define SETTING_SERVER_ORPORT     "Server/"SERVER_ORPORT
@@ -62,6 +63,8 @@
 #define DEFAULT_SERVER_CONTACT    "<your@email.com>"
 #define DEFAULT_SERVER_ADDRESS    net_local_address().toString() 
 #define DEFAULT_SERVER_EXITPOLICY ""
+#define DEFAULT_SERVER_AUTOUPDATE_ADDRESS false
+
 
 /** Constructor.
  * \param torControl a TorControl object used to read and apply the server
@@ -383,5 +386,20 @@ void
 ServerSettings::setExitPolicy(ExitPolicy &exitPolicy)
 {
   setValue(SETTING_SERVER_EXITPOLICY, exitPolicy.toString());
+}
+
+/** Returns whether we should update the server's IP address automatically. */
+bool
+ServerSettings::getAutoUpdateAddress()
+{
+  return QSettings::value(SETTING_SERVER_AUTOUPDATE_ADDRESS,
+                          DEFAULT_SERVER_AUTOUPDATE_ADDRESS).toBool();
+}
+
+/** Sets whether we should update the server's IP address automatically. */
+void
+ServerSettings::setAutoUpdateAddress(bool enabled)
+{
+  setValue(SETTING_SERVER_AUTOUPDATE_ADDRESS, enabled);
 }
 

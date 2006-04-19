@@ -92,6 +92,11 @@ public:
   /** Gets the exit policy for this server. */
   ExitPolicy getExitPolicy();
 
+  /** Sets whether we automatically update the server address or not. */
+  void setAutoUpdateAddress(bool enabled);
+  /** Gets whether we automatically update the server address. */
+  bool getAutoUpdateAddress();
+
 private:
   /** Sets a value indicating that the server settings have changed since
    * apply() was last called. */
