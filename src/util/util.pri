@@ -30,7 +30,9 @@ SOURCES += $$PWD/net.cpp \
            $$PWD/string.cpp
 
 win32 {
-    HEADERS += $$PWD/registry.h
-    SOURCES += $$PWD/registry.cpp
+    HEADERS += $$PWD/registry.h \
+               $$PWD/win32.h
+    SOURCES += $$PWD/registry.cpp \
+               $$PWD/win32.cpp
 }
 

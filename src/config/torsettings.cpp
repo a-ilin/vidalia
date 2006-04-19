@@ -37,7 +37,8 @@
 
 /* Default Tor Location */
 #if defined(Q_OS_WIN32)
-#define DEFAULT_TOR_PATH       (QDir::rootPath() + "Program Files\\Tor")
+#include <util/win32.h>
+#define DEFAULT_TOR_PATH       (win32_program_files_folder() + "\\Tor")
 #elif defined(Q_OS_MACX)
 #define DEFAULT_TOR_PATH       "/usr/bin"
 #else
