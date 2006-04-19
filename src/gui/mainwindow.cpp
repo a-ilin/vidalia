@@ -465,7 +465,22 @@ MainWindow::connected()
   /* If the user changed some of the server's settings while Tor wasn't 
    * running, then we better let Tor know about the changes now. */
   if (serverSettings.changedSinceLastApply()) {
-    serverSettings.apply();
+    if (!serverSettings.apply(&errmsg)) {
+      int ret = QMessageBox::warning(this, 
+                  tr("Error Applying Server Settings"),
+                  p(tr("Vidalia was unable to apply your server's settings."))
+                    + p(errmsg),
+                  tr("OK"), tr("Show Config"), tr("Show Log"));
+
+      if (ret == 1) {
+        /* Show the config dialog with the server page already shown. */
+        ConfigDialog* configDialog = new ConfigDialog(this);
+        configDialog->show(ConfigDialog::Server);
+      } else if (ret == 2) {
+        /* Show the message log. */
+        showMessageLog(); 
+      }
+    }
   }
 }
 
