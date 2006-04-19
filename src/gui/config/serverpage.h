@@ -28,6 +28,7 @@
 #define _SERVERPAGE_H
 
 #include <QMessageBox>
+#include <QTimer>
 #include <control/torcontrol.h>
 #include <config/serversettings.h>
 #include <config/exitpolicy.h>
@@ -63,6 +64,8 @@ private slots:
   void lowerPriority();
   /** Called when the user clicks the exit policy help button */
   void exitHelp();
+  /** Called when the user's public IP address needs to be updated. */
+  void updateServerIP();
   
 private:
   /** Attempts to find the server's public IP address */
@@ -73,13 +76,17 @@ private:
   void addPolicyItem(Policy policy);
   /** Saves the policy specified in item to the exitPolicy */
   void savePolicy(QTreeWidgetItem *item, ExitPolicy &exitPolicy);
+  /** Enables or disables the automatic update timer. */
+  void setAutoUpdateTimer(bool enabled);
 
   /** A TorControl object used to talk to Tor */
   TorControl* _torControl;
   /** A ServerSettings object used to get and set information about how a
    * local Tor server is configured. */
   ServerSettings*  _settings;
-  
+  /** A timer that tells us when it's time to check if our server IP changed.*/
+  QTimer* _autoUpdateTimer;
+
   /** Qt Designer generated object */
   Ui::ServerPage ui;
 };

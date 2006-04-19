@@ -40,6 +40,9 @@
 #define COL_ADDRESS   1
 #define COL_PORT      2
 
+/** Delay between updating our server IP address (in ms). */
+#define AUTO_UPDATE_ADDR_INTERVAL  1000*60*60
+
 /* Help topics */
 #define EXIT_HELP     "server.exitpolicy"
 
@@ -49,13 +52,17 @@ ServerPage::ServerPage(QWidget *parent)
 {
   /* Invoke the Qt Designer generated object setup routine */
   ui.setupUi(this);
-
+  
   /* Keep a pointer to the TorControl object used to talk to Tor */
   _torControl = Vidalia::torControl();
 
   /* Create ServerSettings object */
   _settings = new ServerSettings(_torControl);
 
+  /* Create a timer that we can use to remind ourselves to check if our IP
+   * changed since last time we looked. */
+  _autoUpdateTimer = new QTimer(this);
+    
   /* Bind events to actions */
   connect(ui.btnAddPolicy, SIGNAL(clicked()), this, SLOT(addPolicy()));
   connect(ui.btnRemovePolicy, SIGNAL(clicked()), this, SLOT(removePolicy()));
@@ -79,6 +86,19 @@ ServerPage::~ServerPage()
   delete _settings;
 }
 
+/** Enables or disables the automatic IP address update timer. */
+void
+ServerPage::setAutoUpdateTimer(bool enabled)
+{
+  if (enabled) {
+    connect(_autoUpdateTimer, SIGNAL(timeout()), 
+            this, SLOT(updateServerIP()));
+    _autoUpdateTimer->start(AUTO_UPDATE_ADDR_INTERVAL);
+  } else {
+    _autoUpdateTimer->stop();
+  }
+}
+
 /** Saves changes made to settings on the Server settings page. */
 bool
 ServerPage::save(QString &errmsg)
@@ -92,12 +112,14 @@ ServerPage::save(QString &errmsg)
   _settings->setServerEnabled(ui.chkEnableServer->isChecked());
   _settings->setDirectoryMirror(ui.chkMirrorDirectory->isChecked());
   _settings->setMiddleman(ui.chkMiddleMan->isChecked());
+  _settings->setAutoUpdateAddress(ui.chkAutoUpdate->isChecked()); 
   _settings->setNickname(ui.lineServerNickname->text());
   _settings->setORPort(ui.lineServerPort->text().toUInt());
   _settings->setDirPort(ui.lineDirPort->text().toUInt());
   _settings->setAddress(ui.lineServerAddress->text());
   _settings->setContactInfo(ui.lineServerContact->text());
-  
+  setAutoUpdateTimer(ui.chkAutoUpdate->isChecked());
+
   /* Save exit polices */
   ExitPolicy exitPolicy;
   for (int i = 0; i < ui.lstExitPolicies->topLevelItemCount(); ++i) {
@@ -119,7 +141,9 @@ ServerPage::load()
   ui.chkEnableServer->setChecked(_settings->isServerEnabled());
   ui.chkMirrorDirectory->setChecked(_settings->isDirectoryMirror());
   ui.chkMiddleMan->setChecked(_settings->isMiddleman());
-  
+  ui.chkAutoUpdate->setChecked(_settings->getAutoUpdateAddress());
+  setAutoUpdateTimer(_settings->getAutoUpdateAddress());
+
   ui.lineServerNickname->setText(_settings->getNickname());
   ui.lineServerPort->setText(QString::number(_settings->getORPort()));
   ui.lineDirPort->setText(QString::number(_settings->getDirPort()));
@@ -298,6 +322,37 @@ ServerPage::getServerAddress()
     }
   } else {
     ui.lineServerAddress->setText(addr.toString());
+  }
+}
+
+/** Checks to see if this server's public IP had changed. If it has, then
+ * update the UI, and Tor (if it's running). */
+void
+ServerPage::updateServerIP()
+{
+  bool changed = false;
+  QString ip;
+  QHostAddress addr = net_local_address();
+  
+  if (net_is_private_address(addr)) {
+    /* Try to get our public IP and see if it changed recently. */
+    if (net_get_public_ip(ip) && ip != _settings->getAddress()) {
+      changed = true;
+    }
+  } else if (addr.toString() != _settings->getAddress()) {
+    ip = addr.toString();
+    changed = true;
+  }
+  
+  if (changed) {
+    /* It changed so update our settings and the UI. */
+    _settings->setAddress(ip);
+    ui.lineServerAddress->setText(ip);
+
+    /* If Tor is running, let it know about the change */
+    if (_torControl->isConnected()) {
+      _settings->apply();
+    }
   }
 }
 
