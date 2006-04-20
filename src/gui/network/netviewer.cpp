@@ -36,7 +36,7 @@ NetViewer::NetViewer(QWidget *parent)
   ui.setupUi(this);
 
   /* Create map and add it to this dialog */
-  _map = new MapFrame(this);
+  _map = new MapFrame;
   ui.gridLayout->addWidget(_map);
 
 }
