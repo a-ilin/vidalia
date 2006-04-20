@@ -28,6 +28,7 @@
 #define _NETVIEWER_H
 
 #include <QMainWindow>
+#include "mapframe.h"
 
 #include "ui_netviewer.h"
 
@@ -44,6 +45,9 @@ public slots:
   void show();
 
 private:
+  /** Custom QGLWidget MapFrame widget */
+  MapFrame* _map;
+
   /** Qt Designer generated object **/
   Ui::NetViewer ui;
 };

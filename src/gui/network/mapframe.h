@@ -20,36 +20,37 @@
  ****************************************************************/
 
 /** 
- * \file netviewer.cpp
- * \version $Id: netviewer.cpp 699 2006-04-15 03:12:22Z hipplej $
+ * \file mapframe.h
+ * \version $Id: mapframe.h 699 2006-04-15 03:12:22Z hipplej $
  */
 
-#include "netviewer.h"
+#ifndef _MAPFRAME_H
+#define _MAPFRAME_H
 
-/** Constructor. Loads settings from VidaliaSettings.
- * \param parent The parent widget of this NetViewer object.
- */
-NetViewer::NetViewer(QWidget *parent)
-: QMainWindow(parent)
+#include <QGLWidget>
+#include <QPixmap>
+
+class MapFrame : public QGLWidget
 {
-  /* Invoke Qt Designer generated QObject setup routine */
-  ui.setupUi(this);
+  Q_OBJECT
 
-  /* Create map and add it to this dialog */
-  _map = new MapFrame(this);
-  ui.gridLayout->addWidget(_map);
+public:
+  /** Default constructor */
+  MapFrame(QWidget* parent = 0);
+  /** Returns minimum allowable size */
+  QSize minimumSizeHint() const;
 
-}
+protected:
+  /* OpenGL functions */
+  void initializeGL();
+  void paintGL();
+  void resizeGL(int w, int h);
 
-/** Overloads the default show() slot. */
-void
-NetViewer::show()
-{
-  if (!this->isVisible()) {
-    QMainWindow::show();
-  } else {
-    QMainWindow::activateWindow();
-    QMainWindow::raise();
-  }
-}
+  void makeMapList();
+  
+private:
+  GLuint _mapList;
+};
+
+#endif
 

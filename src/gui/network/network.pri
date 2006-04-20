@@ -23,6 +23,8 @@
 
 FORMS += $$PWD/netviewer.ui
 
-HEADERS += $$PWD/netviewer.h
+HEADERS += $$PWD/netviewer.h \
+           $$PWD/mapframe.h
 
-SOURCES += $$PWD/netviewer.cpp
+SOURCES += $$PWD/netviewer.cpp \
+           $$PWD/mapframe.cpp
