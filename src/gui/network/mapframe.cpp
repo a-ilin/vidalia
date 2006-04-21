@@ -25,7 +25,7 @@
  */
 
 #define MIN_SIZE      QSize(400, 294)
-#define IMG_MAP       ":/images/128x128/tor-logo.png"
+#define IMG_MAP       ":/images/map/world-map.png"
 
 #include "mapframe.h"
 
@@ -82,9 +82,9 @@ MapFrame::makeMapList()
   texture = bindTexture(QPixmap(QString(IMG_MAP)),
                         GL_TEXTURE_2D);
   
-  int coords[4][2] = {{0,1024},
-                      {1024,1024},
-                      {1024,0},
+  int coords[4][2] = {{0,512},
+                      {512,512},
+                      {512,0},
                       {0,0}};  
 
   _mapList = glGenLists(1);
