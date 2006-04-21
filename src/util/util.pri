@@ -23,11 +23,13 @@
 
 HEADERS += $$PWD/net.h \
            $$PWD/http.h \
-           $$PWD/string.h
+           $$PWD/string.h \
+           $$PWD/torsocket.h
            
 SOURCES += $$PWD/net.cpp \
            $$PWD/http.cpp \
-           $$PWD/string.cpp
+           $$PWD/string.cpp \
+           $$PWD/torsocket.cpp
 
 win32 {
     HEADERS += $$PWD/registry.h \
