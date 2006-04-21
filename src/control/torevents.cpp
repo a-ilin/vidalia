@@ -96,6 +96,7 @@ TorEvents::toString(TorEvent e)
     case Circuit:   event = "CIRC"; break;
     case Stream:    event = "STREAM"; break;
     case OrConn:    event = "ORCONN"; break;
+    case NewDescriptor: event = "NEWDESC"; break;
     default: event = "UNKNOWN"; break;
   }
   return event;
@@ -143,6 +144,8 @@ TorEvents::toTorEvent(QString event)
     e = LogError;
   } else if (event == "ORCONN") {
     e = OrConn;
+  } else if (event == "NEWDESC") {
+    e = NewDescriptor;
   } else {
     e = Unknown;
   }
@@ -171,6 +174,7 @@ TorEvents::handleEvent(ControlReply reply)
       case Circuit:    handleCircuitStatus(line); break;
       case Stream:     handleStreamStatus(line); break;
       case OrConn:     handleOrConnStatus(line); break;
+      case NewDescriptor: handleNewDescriptor(line); break;
 
       case LogDebug: 
       case LogInfo:
@@ -301,6 +305,20 @@ TorEvents::handleOrConnStatus(ReplyLine line)
   if (msg.size() >= 2) {
     dispatch(OrConn, new OrConnEvent(OrConnEvent::toStatus(msg.at(1)), 
                                      msg.at(0)));
+  }
+}
+
+/** Handles a new descriptor event. The format for event messages of this type
+ * is:
+ *  
+ *   "650" SP "NEWDESC" 1*(SP ServerID)
+ */
+void
+TorEvents::handleNewDescriptor(ReplyLine line)
+{
+  QStringList descs = line.getMessage().split(" ");
+  if (descs.size() > 0) {
+    dispatch(NewDescriptor, new NewDescriptorEvent(descs));
   }
 }
 

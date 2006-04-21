@@ -35,7 +35,8 @@ HEADERS += $$PWD/torcontrol.h \
            $$PWD/streamevent.h \
            $$PWD/logevent.h \
            $$PWD/orconnevent.h \
-           $$PWD/torsignal.h
+           $$PWD/torsignal.h \
+           $$PWD/newdescriptorevent.h
 
 SOURCES += $$PWD/torcontrol.cpp \
            $$PWD/torprocess.cpp \
@@ -50,5 +51,6 @@ SOURCES += $$PWD/torcontrol.cpp \
            $$PWD/streamevent.cpp \
            $$PWD/logevent.cpp \
            $$PWD/orconnevent.cpp \
-           $$PWD/torsignal.cpp
+           $$PWD/torsignal.cpp \
+           $$PWD/newdescriptorevent.cpp
 

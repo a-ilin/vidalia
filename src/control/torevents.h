@@ -37,6 +37,7 @@
 #include "circuitevent.h"
 #include "streamevent.h"
 #include "orconnevent.h"
+#include "newdescriptorevent.h"
 
 #include "controlreply.h"
 
@@ -53,7 +54,8 @@ public:
     LogDebug, LogInfo, LogNotice, LogWarn, LogError,
     Circuit,
     Stream,
-    OrConn
+    OrConn,
+    NewDescriptor
   };
  
   /** Default Constructor */
@@ -100,6 +102,8 @@ private:
   void handleLogMessage(ReplyLine line);
   /** Handle an OR connection status event. */
   void handleOrConnStatus(ReplyLine line);
+  /** Handles a new list of descriptors event. */
+  void handleNewDescriptor(ReplyLine line);
 };
 
 #endif

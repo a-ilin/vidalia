@@ -20,23 +20,24 @@
  ****************************************************************/
 
 /** 
- * \file eventtype.h
+ * \file newdescriptorevent.cpp
  * \version $Id$
  */
 
-#ifndef _EVENTTYPE_H
-#define _EVENTTYPE_H
+#include "eventtype.h"
+#include "newdescriptorevent.h"
 
-#include <QEvent>
-
-namespace CustomEventType {
-  const int BandwidthEvent = QEvent::User;
-  const int CircuitEvent   = QEvent::User+1;
-  const int StreamEvent    = QEvent::User+2;
-  const int LogEvent       = QEvent::User+3;
-  const int OrConnEvent    = QEvent::User+4;
-  const int NewDescriptorEvent = QEvent::User+5;
+/** Default constructor */
+NewDescriptorEvent::NewDescriptorEvent(QStringList descList)
+: QEvent((QEvent::Type)CustomEventType::NewDescriptorEvent)
+{
+  _descList = descList;
 }
 
-#endif
+/** Returns the list of new descriptors available. */
+QStringList
+NewDescriptorEvent::descriptors()
+{
+  return _descList;
+}
 
