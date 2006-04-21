@@ -54,12 +54,13 @@
         <file>128x128/qt-logo.png</file>
         <file>128x128/tor-logo.png</file>
         <file>128x128/tor-on.png</file>
+        <file>128x128/tor-logo2.png</file>
     </qresource>
     <qresource prefix="/images">
         <file>flags/zh-cn.png</file>
         <file>flags/en.png</file>
     </qresource>
     <qresource prefix="/images">
-        <file>map/world-map.jpg</file>
+        <file>map/world-map.png</file>
     </qresource>
 </RCC>
