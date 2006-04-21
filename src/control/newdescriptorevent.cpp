@@ -28,16 +28,16 @@
 #include "newdescriptorevent.h"
 
 /** Default constructor */
-NewDescriptorEvent::NewDescriptorEvent(QStringList descList)
+NewDescriptorEvent::NewDescriptorEvent(QStringList idList)
 : QEvent((QEvent::Type)CustomEventType::NewDescriptorEvent)
 {
-  _descList = descList;
+  _idList = idList;
 }
 
 /** Returns the list of new descriptors available. */
 QStringList
-NewDescriptorEvent::descriptors()
+NewDescriptorEvent::descriptorIDs()
 {
-  return _descList;
+  return _idList;
 }
 

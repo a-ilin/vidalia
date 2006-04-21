@@ -35,14 +35,14 @@ class NewDescriptorEvent : public QEvent
 {
 public:
   /** Default constructor */
-  NewDescriptorEvent(QStringList descList);
+  NewDescriptorEvent(QStringList idList);
   
-  /** Returns the ID for this circuit */
-  QStringList descriptors();
+  /** Returns a list of new server IDs. */
+  QStringList descriptorIDs();
   
 private:
   /** A list of new descriptors available. */
-  QStringList _descList;
+  QStringList _idList;
 };
 
 #endif
