@@ -446,6 +446,7 @@
     <number>4</number>
    </attribute>
    <addaction name="actionNewNym" />
+   <addaction name="actionRefresh" />
    <addaction name="separator" />
    <addaction name="actionHelp" />
    <addaction name="actionClose" />
@@ -459,6 +460,25 @@
    </property>
    <property name="enabled" >
     <bool>false</bool>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <underline>false</underline>
+     <strikeout>false</strikeout>
+    </font>
+   </property>
+  </action>
+  <action name="actionRefresh" >
+   <property name="icon" >
+    <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/view-refresh.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Refresh</string>
    </property>
    <property name="font" >
     <font>
