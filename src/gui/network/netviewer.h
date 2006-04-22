@@ -28,6 +28,7 @@
 #define _NETVIEWER_H
 
 #include <QMainWindow>
+#include <QHash>
 
 #include <control/torcontrol.h>
 #include "mapframe.h"
@@ -45,16 +46,25 @@ public:
 public slots:
   /** Overloaded QWidget.show() **/
   void show();
+
+private slots:
+  /** Loads a list of routers that Tor knows about. */
+  void loadRouterList();
   /** Called when the user selects the "Help" action on the toolbar. */
   void help();
   /** Called when the user selects the "New Nym" action on the toolbar. */
   void newNym();
-
+  
 private:
+  /** Creates a new item for the router list, based on the given descriptor.*/
+  QTreeWidgetItem* createRouterItem(RouterDescriptor rd);
+  
   /** TorControl object used to talk to Tor. */
   TorControl* _torControl;
   /** Custom QGLWidget MapFrame widget */
   MapFrame* _map;
+  /** Stores a mapping of names to router descriptors. */
+  QHash<QString,RouterDescriptor> _routerList;
 
   /** Qt Designer generated object **/
   Ui::NetViewer ui;

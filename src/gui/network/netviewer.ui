@@ -352,7 +352,12 @@
       </property>
       <column>
        <property name="text" >
-        <string>Routers Online</string>
+        <string>Status</string>
+       </property>
+      </column>
+      <column>
+       <property name="text" >
+        <string>Router</string>
        </property>
       </column>
      </widget>
@@ -479,6 +484,9 @@
    </property>
    <property name="text" >
     <string>Refresh</string>
+   </property>
+   <property name="enabled" >
+    <bool>false</bool>
    </property>
    <property name="font" >
     <font>
