@@ -452,3 +452,46 @@ TorControl::resetConf(QString key, QString *errmsg)
   return resetConf(QStringList() << key, errmsg);
 }
 
+/** Gets the descriptor for the specified ID. If the ID has a "!" before it,
+ * indicating that the associated router is unresponsive, it will be stripped
+ * first. */
+RouterDescriptor
+TorControl::getRouterDescriptor(QString id, QString *errmsg)
+{
+  ControlCommand cmd("GETINFO", "desc/id/" + id.mid(id.indexOf("!")+1));
+  ControlReply reply;
+ 
+  if (send(cmd, reply, errmsg)) {
+    return RouterDescriptor(id, reply.getData());
+  }
+  return RouterDescriptor(id);
+}
+
+/** Gets a list of RouterDescriptor objects for all routers that Tor currently
+ * knows about. */
+QList<RouterDescriptor>
+TorControl::getRouterList(QString *errmsg)
+{
+  ControlCommand cmd("GETINFO", "network-status");
+  ControlReply reply;
+  QList<RouterDescriptor> descList;
+
+  if (send(cmd, reply, errmsg)) {
+    QString routerIDs = reply.getMessage().remove(0,qstrlen("network-status="));
+
+    /* Split the list of router IDs up */
+    QStringList routers = routerIDs.split(" ");
+    foreach (QString router, routers) {
+      /* A router ID may be of the form <name>=$<ID> or just $<ID> */
+      QString id = router.mid(router.indexOf("=")+1);
+      /* A "!" before <name> or $<ID> means "unresponsive" */
+      if (router.startsWith("!") && !id.startsWith("!")) {
+        id.prepend("!");
+      }
+      /* Get the descriptor for this router ID and add it to the list. */
+      descList << getRouterDescriptor(id, errmsg);
+    }
+  }
+  return descList;
+}
+

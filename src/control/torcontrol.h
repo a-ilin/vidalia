@@ -35,6 +35,7 @@
 #include "torprocess.h"
 #include "torevents.h"
 #include "torsignal.h"
+#include "routerdescriptor.h"
 
 
 class TorControl : public QObject
@@ -99,6 +100,11 @@ public:
   bool resetConf(QStringList keys, QString *errmsg = 0);
   /** Tells Tor to reset a configuration key back to its default value. */
   bool resetConf(QString key, QString *errmsg = 0);
+
+  /** Gets a descriptor for the given router ID. */
+  RouterDescriptor getRouterDescriptor(QString id, QString *errmsg = 0);
+  /** Gets a list of descriptors for all routers Tor knows about. */
+  QList<RouterDescriptor> getRouterList(QString *errmsg = 0);
 
 signals:
   /** Emitted when the Tor process has started */
