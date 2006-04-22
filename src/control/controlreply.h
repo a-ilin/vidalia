@@ -42,15 +42,15 @@ public:
 
   /** Returns a single line from this reply */
   ReplyLine getLine(int idx = 0);
-
   /** Returns all lines for this reply */
   QList<ReplyLine> getLines();
-
+  
   /** Returns the status of the first line in the reply */
   QString getStatus();
-
   /** Returns the messasge of the first line in the reply */
   QString getMessage();
+  /** Returns the data for the first line in the reply. */
+  QStringList getData();
 
 private:
   QList<ReplyLine> _lines;

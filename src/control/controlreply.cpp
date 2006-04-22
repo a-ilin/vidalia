@@ -66,3 +66,10 @@ ControlReply::getMessage()
   return getLine().getMessage();
 }
 
+/** Returns the data for the first line in the reply. */
+QStringList
+ControlReply::getData()
+{
+  return getLine().getData();
+}
+
