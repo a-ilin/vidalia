@@ -20,45 +20,39 @@
  ****************************************************************/
 
 /** 
- * \file netviewer.h
- * \version $Id: netviewer.h 699 2006-04-15 03:12:22Z hipplej $
+ * \file routerlistwidget.h
+ * \version $Id$
  */
 
-#ifndef _NETVIEWER_H
-#define _NETVIEWER_H
+#ifndef _ROUTERLISTWIDGET_H
+#define _ROUTERLISTWIDGET_H
 
-#include <QMainWindow>
+#include <QObject>
+#include <QTreeWidget>
+#include <QHash>
 #include <control/torcontrol.h>
 
-#include "mapframe.h"
-#include "ui_netviewer.h"
 
-class NetViewer : public QMainWindow
+class RouterListWidget : public QTreeWidget
 {
   Q_OBJECT
-
+  
 public:
-  /** Default constructor */
-  NetViewer(QWidget* parent = 0);
+  /** Default constructor. */
+  RouterListWidget(QWidget *parent = 0);
 
 public slots:
-  /** Overloaded QWidget.show() **/
-  void show();
+  /** Loads a list of routers that Tor knows about. */
+  void load();
 
-private slots:
-  /** Called when the user selects the "Help" action on the toolbar. */
-  void help();
-  /** Called when the user selects the "New Nym" action on the toolbar. */
-  void newNym();
-  
 private:
+  /** Creates a new item for the router list, based on the given descriptor.*/
+  QTreeWidgetItem* createRouterItem(RouterDescriptor rd);
+  
   /** TorControl object used to talk to Tor. */
   TorControl* _torControl;
-  /** Custom QGLWidget MapFrame widget */
-  MapFrame* _map;
-
-  /** Qt Designer generated object **/
-  Ui::NetViewer ui;
+  /** Stores a mapping of names to router descriptors. */
+  QHash<QString,RouterDescriptor> _routerList;
 };
 
 #endif
