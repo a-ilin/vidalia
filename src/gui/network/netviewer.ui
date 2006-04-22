@@ -457,6 +457,9 @@
    <property name="text" >
     <string>New Nym</string>
    </property>
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
    <property name="font" >
     <font>
      <family>Arial</family>

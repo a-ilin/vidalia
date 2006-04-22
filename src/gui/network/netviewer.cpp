@@ -48,6 +48,8 @@ NetViewer::NetViewer(QWidget *parent)
   /* Connect the necessary slots and signals */
   connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
   connect(ui.actionNewNym, SIGNAL(triggered()), this, SLOT(newNym()));
+  connect(_torControl, SIGNAL(connected(bool)), 
+          ui.actionNewNym, SLOT(setEnabled(bool)));
 }
 
 /** Overloads the default show() slot. */
