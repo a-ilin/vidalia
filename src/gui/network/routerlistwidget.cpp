@@ -54,6 +54,14 @@ RouterListWidget::RouterListWidget(QWidget *parent)
           this, SLOT(onItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)));
 }
 
+/** Clears the list of routers. */
+void
+RouterListWidget::clear()
+{
+  _routerList.clear();
+  QTreeWidget::clear();
+}
+
 /** Creates a new item for the router list, based on the given descriptor.*/
 QTreeWidgetItem*
 RouterListWidget::createRouterItem(RouterDescriptor rd)
@@ -78,25 +86,17 @@ RouterListWidget::createRouterItem(RouterDescriptor rd)
   
   /* Set the icon and text */
   item->setIcon(COL_STATUS, statusIcon);
+  item->setText(COL_STATUS, "");
   item->setText(COL_NAME, rd.name());
   return item;
 }
 
-/** Loads a list of router's that Tor knows about. */
+/** Adds a router descriptor to the list. */
 void
-RouterListWidget::load()
+RouterListWidget::addRouter(RouterDescriptor rd)
 {
-  QList<RouterDescriptor> routerList = _torControl->getRouterList();
-
-  /* Clear the existing list of routers and descriptors */
-  clear();
-  _routerList.clear();
-  
-  /* Create an item for each router and associate it with a descriptor */
-  foreach (RouterDescriptor rd, routerList) {
-    addTopLevelItem(createRouterItem(rd));
-    _routerList.insert(rd.name(), rd);
-  }
+  addTopLevelItem(createRouterItem(rd));
+  _routerList.insert(rd.name(), rd);
   sortByColumn(sortColumn());
 }
 

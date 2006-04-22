@@ -28,6 +28,8 @@
 #define _NETVIEWER_H
 
 #include <QMainWindow>
+#include <QStringList>
+#include <QEvent>
 #include <control/torcontrol.h>
 
 #include "mapframe.h"
@@ -44,6 +46,12 @@ public:
 public slots:
   /** Overloaded QWidget.show() **/
   void show();
+  /** Loads a list of routers that Tor knows about. */
+  void loadRouters();
+  
+protected:
+  /** Called to deliver a NEWDESC event from Tor. */
+  void customEvent(QEvent *event);
 
 private slots:
   /** Called when the user selects the "Help" action on the toolbar. */
@@ -52,6 +60,9 @@ private slots:
   void newNym();
   
 private:
+  /** Loads a list of new descriptors from the list of IDs. */
+  void loadNewDescriptors(QStringList ids);
+
   /** TorControl object used to talk to Tor. */
   TorControl* _torControl;
   /** Custom QGLWidget MapFrame widget */

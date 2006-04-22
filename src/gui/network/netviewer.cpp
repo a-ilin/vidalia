@@ -41,6 +41,7 @@ NetViewer::NetViewer(QWidget *parent)
 
   /* Get the TorControl object */
   _torControl = Vidalia::torControl();
+  _torControl->setEvent(TorEvents::NewDescriptor, this, true);
 
   /* Create the MapFrame and add it to the dialog */
   _map = new MapFrame;
@@ -52,11 +53,34 @@ NetViewer::NetViewer(QWidget *parent)
   connect(_torControl, SIGNAL(connected(bool)), 
           ui.actionNewNym, SLOT(setEnabled(bool)));
   connect(ui.actionRefresh, SIGNAL(triggered()), 
-          ui.treeRouterList, SLOT(load()));
+          this, SLOT(loadRouters()));
   connect(_torControl, SIGNAL(connected(bool)),
           ui.actionRefresh, SLOT(setEnabled(bool)));
   connect(ui.treeRouterList, SIGNAL(routerSelected(RouterDescriptor)),
           ui.textRouterInfo, SLOT(display(RouterDescriptor)));
+}
+
+/** Custom event handler. Catches the new descriptor events. */
+void
+NetViewer::customEvent(QEvent *event)
+{
+  if (event->type() == CustomEventType::NewDescriptorEvent) {
+    NewDescriptorEvent *nde = (NewDescriptorEvent *)event;
+    loadNewDescriptors(nde->descriptorIDs());
+  }
+}
+
+/** Loads a list of router's that Tor knows about. */
+void
+NetViewer::loadRouters()
+{
+  /* Clear the existing list of routers and descriptors */
+  ui.treeRouterList->clear();
+  
+  /* Create an item for each router and associate it with a descriptor */
+  foreach (RouterDescriptor rd, _torControl->getRouterList()) {
+    ui.treeRouterList->addRouter(rd);
+  }
 }
 
 /** Overloads the default show() slot. */
@@ -92,6 +116,15 @@ NetViewer::newNym()
     QMessageBox::warning(this,
       tr("New Nym Failed"), errmsg,
       QMessageBox::Ok, QMessageBox::NoButton);
+  }
+}
+
+/** Loads a list of new descriptors from the given IDs. */
+void
+NetViewer::loadNewDescriptors(QStringList ids)
+{
+  foreach (QString id, ids) {
+    ui.treeRouterList->addRouter(_torControl->getRouterDescriptor(id));
   }
 }
 

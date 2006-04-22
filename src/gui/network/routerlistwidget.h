@@ -40,10 +40,13 @@ class RouterListWidget : public QTreeWidget
 public:
   /** Default constructor. */
   RouterListWidget(QWidget *parent = 0);
+  
+  /** Adds a new descriptor the list. */
+  void addRouter(RouterDescriptor rd);
 
 public slots:
-  /** Loads a list of routers that Tor knows about. */
-  void load();
+  /** Clears the list of routers. */
+  void clear();
 
 signals:
   /** Called when the user selects a router from the list. */
