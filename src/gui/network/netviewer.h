@@ -29,6 +29,7 @@
 
 #include <QMainWindow>
 
+#include <control/torcontrol.h>
 #include "mapframe.h"
 
 #include "ui_netviewer.h"
@@ -46,8 +47,12 @@ public slots:
   void show();
   /** Called when the user selects the "Help" action on the toolbar. */
   void help();
+  /** Called when the user selects the "New Nym" action on the toolbar. */
+  void newNym();
 
 private:
+  /** TorControl object used to talk to Tor. */
+  TorControl* _torControl;
   /** Custom QGLWidget MapFrame widget */
   MapFrame* _map;
 

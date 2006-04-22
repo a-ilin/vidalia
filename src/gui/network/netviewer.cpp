@@ -24,8 +24,9 @@
  * \version $Id: netviewer.cpp 699 2006-04-15 03:12:22Z hipplej $
  */
 
-#include <vidalia.h>
+#include <QMessageBox>
 
+#include <vidalia.h>
 #include "netviewer.h"
 
 /** Constructor. Loads settings from VidaliaSettings.
@@ -36,13 +37,17 @@ NetViewer::NetViewer(QWidget *parent)
 {
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
-  
+
+  /* Get the TorControl object */
+  _torControl = Vidalia::torControl();
+
   /* Create the MapFrame and add it to the dialog */
   _map = new MapFrame;
   ui.gridLayout->addWidget(_map);
 
   /* Connect the necessary slots and signals */
   connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
+  connect(ui.actionNewNym, SIGNAL(triggered()), this, SLOT(newNym()));
 }
 
 /** Overloads the default show() slot. */
@@ -62,5 +67,22 @@ void
 NetViewer::help()
 {
   Vidalia::help("netview");
+}
+
+/** Called when the user selects the "New Nym" action from the toolbar. */
+void
+NetViewer::newNym()
+{
+  QString errmsg;
+  if (_torControl->signal(TorSignal::NewNym, &errmsg)) {
+    QMessageBox::information(this, 
+      tr("New Nym"), 
+      tr("All subsequent application requests will use new circuits."),
+      QMessageBox::Ok, QMessageBox::NoButton);
+  } else {
+    QMessageBox::warning(this,
+      tr("New Nym Failed"), errmsg,
+      QMessageBox::Ok, QMessageBox::NoButton);
+  }
 }
 
