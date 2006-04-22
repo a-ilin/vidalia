@@ -445,9 +445,30 @@
    <attribute name="toolBarArea" >
     <number>4</number>
    </attribute>
+   <addaction name="actionNewNym" />
+   <addaction name="separator" />
    <addaction name="actionHelp" />
    <addaction name="actionClose" />
   </widget>
+  <action name="actionNewNym" >
+   <property name="icon" >
+    <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/system-users.png</iconset>
+   </property>
+   <property name="text" >
+    <string>New Nym</string>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <underline>false</underline>
+     <strikeout>false</strikeout>
+    </font>
+   </property>
+  </action>
   <action name="actionHelp" >
    <property name="icon" >
     <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/help-browser.png</iconset>
