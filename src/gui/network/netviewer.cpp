@@ -58,6 +58,7 @@ NetViewer::NetViewer(QWidget *parent)
 
   /* Set the column widths on the router list */
   ui.treeRouterList->header()->resizeSection(COL_STATUS, 55);
+  ui.treeRouterList->sortItems(COL_NAME, Qt::AscendingOrder);
   
   /* Connect the necessary slots and signals */
   connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
@@ -128,7 +129,7 @@ NetViewer::createRouterItem(RouterDescriptor rd)
   }
   
   /* Set the icon and text */
-  item->setIcon(COL_STATUS, statusIcon);  
+  item->setIcon(COL_STATUS, statusIcon);
   item->setText(COL_NAME, rd.name());
   return item;
 }
@@ -148,5 +149,6 @@ NetViewer::loadRouterList()
     ui.treeRouterList->addTopLevelItem(createRouterItem(rd));
     _routerList.insert(rd.name(), rd);
   }
+  ui.treeRouterList->sortByColumn(ui.treeRouterList->sortColumn());
 }
 

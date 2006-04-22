@@ -350,6 +350,9 @@
       <property name="statusTip" >
        <string>Here's where I figure we'll list out all the Tor routers we know about, perhaps with color coded status icons</string>
       </property>
+      <property name="sortingEnabled" >
+        <bool>true</bool>
+      </property>
       <column>
        <property name="text" >
         <string>Status</string>
