@@ -310,7 +310,7 @@ MessageLog::openLogFile(QString filename)
 void
 MessageLog::filterLog()
 {
-  QTreeWidgetItem* current = new QTreeWidgetItem();
+  QTreeWidgetItem* current;
   int currentIndex = ui.lstMessages->topLevelItemCount() - 1;
   bool showCurrent;
   _messagesShown = 0;
