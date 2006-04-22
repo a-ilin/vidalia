@@ -106,6 +106,8 @@ void
 RouterListWidget::onItemChanged(QTreeWidgetItem *item, QTreeWidgetItem *prev)
 {
   Q_UNUSED(prev);
-  emit routerSelected(_routerList.value(item->text(COL_NAME)));
+  if (item) {
+    emit routerSelected(_routerList.value(item->text(COL_NAME)));
+  }
 }
 
