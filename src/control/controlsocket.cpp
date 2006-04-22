@@ -215,8 +215,10 @@ ControlSocket::readReply(ControlReply &reply, QString *errmsg)
     if (c == QChar('+')) {
       QString data;
       while (true) {
-        readLine(line);
-        if (line == ".") {
+        if (!readLine(line, errmsg)) {
+          return false;
+        }
+        if (line.trimmed() == ".") {
           break;
         }
         replyLine.appendData(line);
