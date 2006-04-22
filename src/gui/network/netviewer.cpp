@@ -55,6 +55,8 @@ NetViewer::NetViewer(QWidget *parent)
           ui.treeRouterList, SLOT(load()));
   connect(_torControl, SIGNAL(connected(bool)),
           ui.actionRefresh, SLOT(setEnabled(bool)));
+  connect(ui.treeRouterList, SIGNAL(routerSelected(RouterDescriptor)),
+          ui.textRouterInfo, SLOT(display(RouterDescriptor)));
 }
 
 /** Overloads the default show() slot. */

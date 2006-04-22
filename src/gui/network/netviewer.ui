@@ -407,7 +407,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="QTextBrowser" name="textRouterInfo" >
+      <widget class="RouterDescriptorView" name="textRouterInfo" >
        <property name="sizePolicy" >
         <sizepolicy>
          <hsizetype>7</hsizetype>
@@ -569,6 +569,13 @@
    <class>RouterListWidget</class>
    <extends>QTreeWidget</extends>
    <header>gui/network/routerlistwidget.h</header>
+   <container>0</container>
+   <pixmap></pixmap>
+  </customwidget>
+  <customwidget>
+   <class>RouterDescriptorView</class>
+   <extends>QTextEdit</extends>
+   <header>gui/network/routerdescriptorview.h</header>
    <container>0</container>
    <pixmap></pixmap>
   </customwidget>

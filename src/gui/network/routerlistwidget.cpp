@@ -48,6 +48,10 @@ RouterListWidget::RouterListWidget(QWidget *parent)
   /* Set the column widths on the router list */
   header()->resizeSection(COL_STATUS, 55);
   sortItems(COL_NAME, Qt::AscendingOrder);
+
+  /* Find out when the selected item has changed. */
+  connect(this, SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)),
+          this, SLOT(onItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)));
 }
 
 /** Creates a new item for the router list, based on the given descriptor.*/
@@ -94,5 +98,14 @@ RouterListWidget::load()
     _routerList.insert(rd.name(), rd);
   }
   sortByColumn(sortColumn());
+}
+
+/** Called when the selected item is changed. This emits the routerSelected
+ * signal with the descriptor for the selected router. */
+void
+RouterListWidget::onItemChanged(QTreeWidgetItem *item, QTreeWidgetItem *prev)
+{
+  Q_UNUSED(prev);
+  emit routerSelected(_routerList.value(item->text(COL_NAME)));
 }
 

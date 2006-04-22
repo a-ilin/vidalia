@@ -42,6 +42,8 @@ public:
     Offline       /**< Router is unresponsive. */
   };
 
+  /** Default constructor. */
+  RouterDescriptor() {}
   /** Constructor. */
   RouterDescriptor(QString id); 
   /** Constructor. */ 

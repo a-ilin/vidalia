@@ -25,9 +25,11 @@ FORMS += $$PWD/netviewer.ui
 
 HEADERS += $$PWD/netviewer.h \
            $$PWD/mapframe.h \
-           $$PWD/routerlistwidget.h
+           $$PWD/routerlistwidget.h \
+           $$PWD/routerdescriptorview.h
 
 SOURCES += $$PWD/netviewer.cpp \
            $$PWD/mapframe.cpp \
-           $$PWD/routerlistwidget.cpp
+           $$PWD/routerlistwidget.cpp \
+           $$PWD/routerdescriptorview.cpp
 

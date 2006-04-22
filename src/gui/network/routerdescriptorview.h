@@ -20,47 +20,30 @@
  ****************************************************************/
 
 /** 
- * \file routerlistwidget.h
+ * \file routerdescriptorview.cpp
  * \version $Id$
  */
 
-#ifndef _ROUTERLISTWIDGET_H
-#define _ROUTERLISTWIDGET_H
+#ifndef _ROUTERDESCRIPTORVIEW_H
+#define _ROUTERDESCRIPTORVIEW_H
 
 #include <QObject>
-#include <QTreeWidget>
-#include <QHash>
-#include <control/torcontrol.h>
+#include <QTextEdit>
+
+#include <control/routerdescriptor.h>
 
 
-class RouterListWidget : public QTreeWidget
+class RouterDescriptorView : public QTextEdit
 {
   Q_OBJECT
-  
+
 public:
   /** Default constructor. */
-  RouterListWidget(QWidget *parent = 0);
+  RouterDescriptorView(QWidget *parent = 0);
 
 public slots:
-  /** Loads a list of routers that Tor knows about. */
-  void load();
-
-signals:
-  /** Called when the user selects a router from the list. */
-  void routerSelected(RouterDescriptor rd);
- 
-private slots:
-  /** Called when the user clicks on an item in the list. */
-  void onItemChanged(QTreeWidgetItem *item, QTreeWidgetItem *prev);
-
-private:
-  /** Creates a new item for the router list, based on the given descriptor.*/
-  QTreeWidgetItem* createRouterItem(RouterDescriptor rd);
-  
-  /** TorControl object used to talk to Tor. */
-  TorControl* _torControl;
-  /** Stores a mapping of names to router descriptors. */
-  QHash<QString,RouterDescriptor> _routerList;
+  /** Shows the given router descriptor. */
+  void display(RouterDescriptor rd);
 };
 
 #endif
