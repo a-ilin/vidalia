@@ -1,6 +1,5 @@
 <RCC>
   <qresource prefix="/help">
-    <file>contents.dtd</file>
     <!-- English -->
     <file>en/contents.xml</file>
     <file>en/index.html</file>
@@ -9,6 +8,7 @@
     <file>en/config.html</file>
     <file>en/server.html</file>
     <file>en/troubleshooting.html</file>
+    <file>en/netview.html</file>
     <!-- Simplified Chinese -->
     <file>zh-cn/contents.xml</file>
     <file>zh-cn/index.html</file>
@@ -17,6 +17,7 @@
     <file>zh-cn/config.html</file>
     <file>zh-cn/server.html</file>
     <file>zh-cn/troubleshooting.html</file>
+    <file>zh-cn/netview.html</file>
   </qresource>
 </RCC>
 
