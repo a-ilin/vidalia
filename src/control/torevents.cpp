@@ -302,9 +302,9 @@ void
 TorEvents::handleOrConnStatus(ReplyLine line)
 {
   QStringList msg = line.getMessage().split(" ");
-  if (msg.size() >= 2) {
-    dispatch(OrConn, new OrConnEvent(OrConnEvent::toStatus(msg.at(1)), 
-                                     msg.at(0)));
+  if (msg.size() >= 3) {
+    dispatch(OrConn, new OrConnEvent(OrConnEvent::toStatus(msg.at(2)), 
+                                     msg.at(1)));
   }
 }
 
@@ -316,9 +316,10 @@ TorEvents::handleOrConnStatus(ReplyLine line)
 void
 TorEvents::handleNewDescriptor(ReplyLine line)
 {
-  QStringList descs = line.getMessage().split(" ");
-  if (descs.size() > 0) {
-    dispatch(NewDescriptor, new NewDescriptorEvent(descs));
+  QString descs = line.getMessage();
+  QStringList descList = descs.mid(descs.indexOf(" ")+1).split(" ");
+  if (descList.size() > 0) {
+    dispatch(NewDescriptor, new NewDescriptorEvent(descList));
   }
 }
 
