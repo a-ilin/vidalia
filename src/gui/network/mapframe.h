@@ -28,10 +28,7 @@
 #define _MAPFRAME_H
 
 #include <QGLWidget>
-#include <QSvgRenderer>
-#include <QPainter>
-#include <QWheelEvent>
-#include <QMouseEvent>
+#include <QPixmap>
 
 class MapFrame : public QGLWidget
 {
@@ -44,18 +41,15 @@ public:
   QSize minimumSizeHint() const;
 
 protected:
-  /** Handles painting the QGLWidget */
-  virtual void paintEvent(QPaintEvent *event);
-  /** Handles mouse wheel events, i.e zooming */
-  virtual void wheelEvent(QWheelEvent *event);
-  /** Handles mouse button press events, i.e start dragging */
-  void mousePressEvent(QMouseEvent *event);
-  /** Handles mouse movement, i.e scrolling */
-  void mouseMoveEvent(QMouseEvent *event);
+  /* OpenGL functions */
+  void initializeGL();
+  void paintGL();
+  void resizeGL(int w, int h);
+
+  void makeMapList();
   
 private:
-  /** A QSvgRendere object that takes care of drawing .svg files */
-  QSvgRenderer *_map;
+  GLuint _mapList;
 };
 
 #endif

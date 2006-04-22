@@ -29,7 +29,7 @@ MOC_DIR = src
 
 TEMPLATE = app
 CONFIG  += qt thread warn_on
-QT      += network xml opengl svg
+QT      += network xml opengl
 
 !macx {
   # On non-Mac, make the binary all lowercase

@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>629</width>
-    <height>622</height>
+    <width>565</width>
+    <height>400</height>
    </rect>
   </property>
   <property name="sizePolicy" >
@@ -22,7 +22,7 @@
   </property>
   <property name="maximumSize" >
    <size>
-    <width>1020</width>
+    <width>1258</width>
     <height>16777215</height>
    </size>
   </property>
@@ -323,7 +323,7 @@
      <number>6</number>
     </property>
     <item>
-     <widget class="RouterListWidget" name="treeRouterList" >
+     <widget class="QTreeWidget" name="treeRouterList" >
       <property name="sizePolicy" >
        <sizepolicy>
         <hsizetype>7</hsizetype>
@@ -351,7 +351,7 @@
        <string>Here's where I figure we'll list out all the Tor routers we know about, perhaps with color coded status icons</string>
       </property>
       <property name="sortingEnabled" >
-        <bool>true</bool>
+       <bool>true</bool>
       </property>
       <column>
        <property name="text" >
@@ -366,7 +366,7 @@
      </widget>
     </item>
     <item>
-     <widget class="QSplitter" name="" >
+     <widget class="QSplitter" name="splitter" >
       <property name="sizePolicy" >
        <sizepolicy>
         <hsizetype>7</hsizetype>
@@ -378,7 +378,24 @@
       <property name="orientation" >
        <enum>Qt::Vertical</enum>
       </property>
+      <property name="childrenCollapsible" >
+       <bool>false</bool>
+      </property>
       <widget class="QFrame" name="frmMap" >
+       <property name="sizePolicy" >
+        <sizepolicy>
+         <hsizetype>5</hsizetype>
+         <vsizetype>5</vsizetype>
+         <horstretch>0</horstretch>
+         <verstretch>1</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="maximumSize" >
+        <size>
+         <width>1030</width>
+         <height>518</height>
+        </size>
+       </property>
        <property name="contextMenuPolicy" >
         <enum>Qt::NoContextMenu</enum>
        </property>
@@ -390,7 +407,7 @@
        </property>
        <layout class="QHBoxLayout" >
         <property name="margin" >
-         <number>9</number>
+         <number>0</number>
         </property>
         <property name="spacing" >
          <number>6</number>
@@ -407,12 +424,12 @@
         </item>
        </layout>
       </widget>
-      <widget class="RouterDescriptorView" name="textRouterInfo" >
+      <widget class="QTextBrowser" name="textRouterInfo" >
        <property name="sizePolicy" >
         <sizepolicy>
          <hsizetype>7</hsizetype>
          <vsizetype>7</vsizetype>
-         <horstretch>100</horstretch>
+         <horstretch>0</horstretch>
          <verstretch>100</verstretch>
         </sizepolicy>
        </property>
@@ -434,8 +451,8 @@
    <property name="geometry" >
     <rect>
      <x>0</x>
-     <y>600</y>
-     <width>629</width>
+     <y>378</y>
+     <width>565</width>
      <height>22</height>
     </rect>
    </property>
@@ -460,14 +477,14 @@
    <addaction name="actionClose" />
   </widget>
   <action name="actionNewNym" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
    <property name="icon" >
     <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/system-users.png</iconset>
    </property>
    <property name="text" >
     <string>New Nym</string>
-   </property>
-   <property name="enabled" >
-    <bool>false</bool>
    </property>
    <property name="font" >
     <font>
@@ -482,14 +499,14 @@
    </property>
   </action>
   <action name="actionRefresh" >
+   <property name="enabled" >
+    <bool>false</bool>
+   </property>
    <property name="icon" >
     <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/view-refresh.png</iconset>
    </property>
    <property name="text" >
     <string>Refresh</string>
-   </property>
-   <property name="enabled" >
-    <bool>false</bool>
    </property>
    <property name="font" >
     <font>
@@ -564,20 +581,4 @@
    </hints>
   </connection>
  </connections>
- <customwidgets>
-  <customwidget>
-   <class>RouterListWidget</class>
-   <extends>QTreeWidget</extends>
-   <header>gui/network/routerlistwidget.h</header>
-   <container>0</container>
-   <pixmap></pixmap>
-  </customwidget>
-  <customwidget>
-   <class>RouterDescriptorView</class>
-   <extends>QTextEdit</extends>
-   <header>gui/network/routerdescriptorview.h</header>
-   <container>0</container>
-   <pixmap></pixmap>
-  </customwidget>
- </customwidgets>
 </ui>
