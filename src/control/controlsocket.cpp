@@ -148,6 +148,23 @@ ControlSocket::sendCommand(ControlCommand cmd, QString *errmsg)
   return true;
 }
 
+/** Reads line data, one chunk at a time, until a newline character is
+ * encountered. */
+bool
+ControlSocket::readLineData(QString &line, QString *errmsg)
+{
+  char buffer[1024];  /* Read in 1024 byte chunks at a time */
+  int bytesRecv = QAbstractSocket::readLine(buffer, 1024);
+  while (bytesRecv != -1) {
+    line.append(buffer);
+    if (buffer[bytesRecv-1] == '\n') {
+      break;
+    }
+    bytesRecv = QAbstractSocket::readLine(buffer, 1024);
+  }
+  return (bytesRecv != -1);
+}
+
 /** Reads a line of data from the socket and returns true if successful or
  * false if an error occurred while waiting for a line of data to become
  * available. */
@@ -165,8 +182,8 @@ ControlSocket::readLine(QString &line, QString *errmsg)
     }
     waitForReadyRead(READ_TIMEOUT);
   }
-  line = QAbstractSocket::readLine();
-  return true;
+  line.clear();
+  return readLineData(line, errmsg);
 }
 
 /** Read a complete reply from the control socket. Replies take the following
@@ -213,7 +230,6 @@ ControlSocket::readReply(ControlReply &reply, QString *errmsg)
     /* If the reply line contains data, then parse out the data up until the
      * trailing CRLF "." CRLF */
     if (c == QChar('+')) {
-      QString data;
       while (true) {
         if (!readLine(line, errmsg)) {
           return false;

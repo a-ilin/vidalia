@@ -52,13 +52,11 @@ public:
 
   /** Connect to Tor on the specified host and port */
   bool connect(QHostAddress addr, quint16 port, QString *errmsg = 0);
-  
   /** Disconnect from Tor */
   bool disconnect(QString *errmsg = 0);
   
   /** Send a command to Tor */
   bool sendCommand(ControlCommand cmd, QString *errmsg = 0);
-
   /** Read a response from Tor */
   bool readReply(ControlReply &reply, QString *errmsg = 0);
 
@@ -66,6 +64,12 @@ public:
    * receive. */
   bool isConnected();
 
+protected:
+  /** Reads line data off the socket in chunks. */
+  bool readLineData(QString &line, QString *errmsg = 0);
+  /** Reads a line of data from the socket (blocking) */
+  bool readLine(QString &line, QString *errmsg = 0);
+  
 private:
   /** Specifies a version of Tor's Control Protocol */
   enum ProtocolVersion {
@@ -76,9 +80,6 @@ private:
   /** Returns the version of Tor's control protocol being spoken on this
    * socket. */
   ProtocolVersion protocolVersion();
-
-  /** Reads a line of data from the socket (blocking) */
-  bool readLine(QString &line, QString *errmsg = 0);
 };
 
 #endif
