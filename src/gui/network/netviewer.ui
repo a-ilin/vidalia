@@ -323,7 +323,7 @@
      <number>6</number>
     </property>
     <item>
-     <widget class="QTreeWidget" name="treeRouterList" >
+     <widget class="RouterListWidget" name="treeRouterList" >
       <property name="sizePolicy" >
        <sizepolicy>
         <hsizetype>7</hsizetype>
@@ -424,7 +424,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="QTextBrowser" name="textRouterInfo" >
+      <widget class="RouterDescriptorView" name="textRouterInfo" >
        <property name="sizePolicy" >
         <sizepolicy>
          <hsizetype>7</hsizetype>
@@ -581,4 +581,20 @@
    </hints>
   </connection>
  </connections>
+ <customwidgets>
+  <customwidget>
+   <class>RouterListWidget</class> 
+   <extends>QTreeWidget</extends> 
+   <header>gui/network/routerlistwidget.h</header> 
+   <container>0</container> 
+   <pixmap></pixmap> 
+  </customwidget>
+  <customwidget> 
+   <class>RouterDescriptorView</class> 
+   <extends>QTextEdit</extends> 
+   <header>gui/network/routerdescriptorview.h</header> 
+   <container>0</container> 
+   <pixmap></pixmap> 
+  </customwidget> 
+ </customwidgets>
 </ui>
