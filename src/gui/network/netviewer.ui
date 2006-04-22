@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1020</width>
-    <height>814</height>
+    <width>629</width>
+    <height>622</height>
    </rect>
   </property>
   <property name="sizePolicy" >
@@ -315,7 +315,7 @@
    <enum>Qt::ToolButtonTextUnderIcon</enum>
   </property>
   <widget class="QWidget" name="centralwidget" >
-   <layout class="QVBoxLayout" >
+   <layout class="QHBoxLayout" >
     <property name="margin" >
      <number>9</number>
     </property>
@@ -323,75 +323,102 @@
      <number>6</number>
     </property>
     <item>
-     <widget class="QLabel" name="lblMap" >
+     <widget class="QTreeWidget" name="treeRouterList" >
+      <property name="sizePolicy" >
+       <sizepolicy>
+        <hsizetype>7</hsizetype>
+        <vsizetype>7</vsizetype>
+        <horstretch>1</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize" >
+       <size>
+        <width>200</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize" >
+       <size>
+        <width>200</width>
+        <height>16777215</height>
+       </size>
+      </property>
       <property name="contextMenuPolicy" >
        <enum>Qt::NoContextMenu</enum>
       </property>
-      <property name="frameShape" >
-       <enum>QFrame::StyledPanel</enum>
+      <property name="statusTip" >
+       <string>Here's where I figure we'll list out all the Tor routers we know about, perhaps with color coded status icons</string>
       </property>
-      <property name="frameShadow" >
-       <enum>QFrame::Raised</enum>
-      </property>
-      <property name="text" >
-       <string/>
-      </property>
-      <property name="textFormat" >
-       <enum>Qt::PlainText</enum>
-      </property>
-      <property name="pixmap" >
-       <pixmap resource="../res/vidalia_common.qrc" >:/images/map/world-map.png</pixmap>
-      </property>
-      <property name="scaledContents" >
-       <bool>false</bool>
-      </property>
+      <column>
+       <property name="text" >
+        <string>Routers Online</string>
+       </property>
+      </column>
      </widget>
     </item>
     <item>
-     <layout class="QHBoxLayout" >
-      <property name="margin" >
-       <number>0</number>
+     <widget class="QSplitter" name="" >
+      <property name="sizePolicy" >
+       <sizepolicy>
+        <hsizetype>7</hsizetype>
+        <vsizetype>7</vsizetype>
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
       </property>
-      <property name="spacing" >
-       <number>6</number>
+      <property name="orientation" >
+       <enum>Qt::Vertical</enum>
       </property>
-      <item>
-       <widget class="QTreeWidget" name="treeRouterList" >
-        <property name="sizePolicy" >
-         <sizepolicy>
-          <hsizetype>0</hsizetype>
-          <vsizetype>7</vsizetype>
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
+      <widget class="QFrame" name="frmMap" >
+       <property name="contextMenuPolicy" >
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="frameShape" >
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow" >
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QHBoxLayout" >
+        <property name="margin" >
+         <number>9</number>
         </property>
-        <property name="contextMenuPolicy" >
-         <enum>Qt::NoContextMenu</enum>
+        <property name="spacing" >
+         <number>6</number>
         </property>
-        <property name="statusTip" >
-         <string>Here's where I figure we'll list out all the Tor routers we know about, perhaps with color coded status icons</string>
-        </property>
-        <column>
-         <property name="text" >
-          <string>Routers Online</string>
-         </property>
-        </column>
-       </widget>
-      </item>
-      <item>
-       <widget class="QTextBrowser" name="textRouterInfo" >
-        <property name="contextMenuPolicy" >
-         <enum>Qt::NoContextMenu</enum>
-        </property>
-        <property name="statusTip" >
-         <string>Information about the selected Tor router will go here, generating html is easier than managing explicit labels</string>
-        </property>
-        <property name="acceptRichText" >
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-     </layout>
+        <item>
+         <layout class="QGridLayout" >
+          <property name="margin" >
+           <number>0</number>
+          </property>
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QTextBrowser" name="textRouterInfo" >
+       <property name="sizePolicy" >
+        <sizepolicy>
+         <hsizetype>7</hsizetype>
+         <vsizetype>7</vsizetype>
+         <horstretch>100</horstretch>
+         <verstretch>100</verstretch>
+        </sizepolicy>
+       </property>
+       <property name="contextMenuPolicy" >
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="statusTip" >
+        <string>Information about the selected Tor router will go here, generating html is easier than managing explicit labels</string>
+       </property>
+       <property name="acceptRichText" >
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
     </item>
    </layout>
   </widget>
@@ -399,9 +426,9 @@
    <property name="geometry" >
     <rect>
      <x>0</x>
-     <y>795</y>
-     <width>1020</width>
-     <height>19</height>
+     <y>600</y>
+     <width>629</width>
+     <height>22</height>
     </rect>
    </property>
   </widget>

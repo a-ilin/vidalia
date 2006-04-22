@@ -24,10 +24,13 @@
  * \version $Id: mapframe.cpp 699 2006-04-15 03:12:22Z hipplej $
  */
 
-#define MIN_SIZE      QSize(400, 294)
-#define IMG_MAP       ":/images/map/world-map.png"
+#define MIN_SIZE      QSize(275, 153)
+#define DEF_SIZE      QRect(QPoint(0,0), QSize(0,0))
+#define IMG_MAP       ":/images/map/world-map.svg"
 
 #include "mapframe.h"
+
+#include <QtDebug>
 
 /** Constructor.
  * \param parent The parent widget of this MapFrame object.
@@ -35,74 +38,63 @@
 MapFrame::MapFrame(QWidget *parent)
 : QGLWidget(QGLFormat(QGL::SampleBuffers), parent)
 {
+  /* Create a new SvgRenderer object */
+  _map = new QSvgRenderer(QString(IMG_MAP), this);
 
-}
-
-/** Initializes OpenGL */
-void
-MapFrame::initializeGL()
-{
-  qglClearColor(Qt::white); 
-  glEnable(GL_TEXTURE_2D);
-  makeMapList();
-}
-
-/** Handles resizing the widget */
-void
-MapFrame::resizeGL(int w, int h)
-{
-  /* FIXME - These nutty OpenGL functions could use some documentation */
-  glViewport (0, 0,
-               (GLsizei) w,
-               (GLsizei) h);
-  
-  glMatrixMode (GL_PROJECTION);
-  glLoadIdentity();
-  
-  gluOrtho2D (0.0, (GLdouble) w, 0.0, (GLdouble) h);
-  
-  glMatrixMode (GL_MODELVIEW);
-  glLoadIdentity();
-}  
-
-/** Performs the painting operations */
-void
-MapFrame::paintGL()
-{
-  glClear(GL_COLOR_BUFFER_BIT);
-  glCallList(_mapList);
-}
-
-/** Loads the map images into a texture and returns a display list */
-void
-MapFrame::makeMapList()
-{ 
-  /* FIXME - This is still probably more broken than not */
-  GLuint texture;
-  texture = bindTexture(QPixmap(QString(IMG_MAP)),
-                        GL_TEXTURE_2D);
-  
-  int coords[4][2] = {{0,512},
-                      {512,512},
-                      {512,0},
-                      {0,0}};  
-
-  _mapList = glGenLists(1);
-  glNewList(_mapList, GL_COMPILE);
-  {
-    glBindTexture(GL_TEXTURE_2D, texture);
-    glBegin(GL_QUADS);
-      for (int i = 0; i < 4; ++i) {
-        glTexCoord2d(i == 0 || i == 3, i == 0 || i == 1);
-        glVertex2d((GLdouble) coords[i][0],
-                   (GLdouble) coords[i][1]);
-      }
-    glEnd();      
+  if (!_map->isValid()) {
+    qDebug() << QString("Invalid image. Fix it.");
   }
-  glEndList();
+
+  connect(_map, SIGNAL(repaintNeeded()), this, SLOT(update()));
 }
 
-/** Returns a hint as to the minimum size of this widget */
+/** Overloaded QWidget::paintEvent(). Handles painting this widget */
+void
+MapFrame::paintEvent(QPaintEvent *event)
+{
+  QPainter painter(this);
+  _map->render(&painter);
+}
+
+/** Handles mouse button events. Start dragging */
+void
+MapFrame::mousePressEvent(QMouseEvent *event)
+{
+  Q_UNUSED(event);
+}
+
+/** Handles mouse movement events. Scrolling */
+void
+MapFrame::mouseMoveEvent(QMouseEvent *event)
+{
+  Q_UNUSED(event);
+}
+
+/** Handles mouse wheel events. Controls zoom in/out */
+void
+MapFrame::wheelEvent(QWheelEvent *event)
+{
+  const double diff = 0.25;
+  QSize size = _map->defaultSize();
+  int width  = size.width();
+  int height = size.height();
+  QRect currBox = _map->viewBox();
+  
+  qDebug() << QString("ViewBox: (%1 %2 %3 %4)").arg(currBox.x())
+                                               .arg(currBox.y())
+                                               .arg(currBox.width())
+                                               .arg(currBox.height());
+  
+  if (event->delta() > 0) {
+    width = int(this->width() + this->width() * diff);
+    height = int(this->height() + this->height() * diff);
+  } else {
+    width = int(this->width() - this->width() * diff);
+    height = int(this->height() - this->height() * diff);
+  }
+  resize(width, height);
+}
+
 QSize
 MapFrame::minimumSizeHint() const
 {

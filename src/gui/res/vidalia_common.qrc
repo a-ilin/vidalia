@@ -60,6 +60,6 @@
         <file>flags/en.png</file>
     </qresource>
     <qresource prefix="/images">
-        <file>map/world-map.png</file>
+        <file>map/world-map.svg</file>
     </qresource>
 </RCC>

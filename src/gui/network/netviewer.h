@@ -28,6 +28,7 @@
 #define _NETVIEWER_H
 
 #include <QMainWindow>
+
 #include "mapframe.h"
 
 #include "ui_netviewer.h"

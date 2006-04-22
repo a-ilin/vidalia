@@ -34,11 +34,10 @@ NetViewer::NetViewer(QWidget *parent)
 {
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
-
-  /* Create map and add it to this dialog */
-  //_map = new MapFrame;
-  //ui.gridLayout->addWidget(_map);
-
+  
+  /* Create the MapFrame and add it to the dialog */
+  _map = new MapFrame;
+  ui.gridLayout->addWidget(_map);
 }
 
 /** Overloads the default show() slot. */
