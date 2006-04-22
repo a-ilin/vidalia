@@ -165,6 +165,7 @@ TorControl::onConnected()
 {
   /* Let interested parties know that the control socket connected */
   emit connected();
+  emit connected(true);
   /* The control socket is connected, so we can stop reading from stdout */
   if (_torProcess) {
     _torProcess->closeStdout();
@@ -195,6 +196,7 @@ TorControl::onDisconnected()
     _torProcess->openStdout();
   }
   emit disconnected();
+  emit connected(false);
 }
 
 /** Check if theh control socket is connected */

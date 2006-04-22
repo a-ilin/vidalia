@@ -117,7 +117,9 @@ signals:
   void connectFailed(QString errmsg);
   /** Emitted when the controller has disconnected from Tor */
   void disconnected();
-  
+  /** Emitted when the connection status changes. */
+  void connected(bool connected);
+
 private:
   /** Instantiates a connection used to talk to Tor's control port */
   ControlConnection* _controlConn;
