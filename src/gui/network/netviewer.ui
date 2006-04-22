@@ -450,7 +450,7 @@
   </widget>
   <action name="actionHelp" >
    <property name="icon" >
-    <iconset resource="../res/vidalia_common.qrc" >:/images/16x16/help-browser.png</iconset>
+    <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/help-browser.png</iconset>
    </property>
    <property name="text" >
     <string>Help</string>
@@ -469,7 +469,7 @@
   </action>
   <action name="actionClose" >
    <property name="icon" >
-    <iconset resource="../res/vidalia_common.qrc" >:/images/16x16/emblem-unreadable.png</iconset>
+    <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/emblem-unreadable.png</iconset>
    </property>
    <property name="text" >
     <string>Close</string>
