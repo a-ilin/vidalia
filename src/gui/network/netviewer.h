@@ -44,6 +44,8 @@ public:
 public slots:
   /** Overloaded QWidget.show() **/
   void show();
+  /** Called when the user selects the "Help" action on the toolbar. */
+  void help();
 
 private:
   /** Custom QGLWidget MapFrame widget */

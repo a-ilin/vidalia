@@ -445,8 +445,28 @@
    <attribute name="toolBarArea" >
     <number>4</number>
    </attribute>
+   <addaction name="actionHelp" />
    <addaction name="actionClose" />
   </widget>
+  <action name="actionHelp" >
+   <property name="icon" >
+    <iconset resource="../res/vidalia_common.qrc" >:/images/16x16/help-browser.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Help</string>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <underline>false</underline>
+     <strikeout>false</strikeout>
+    </font>
+   </property>
+  </action>
   <action name="actionClose" >
    <property name="icon" >
     <iconset resource="../res/vidalia_common.qrc" >:/images/16x16/emblem-unreadable.png</iconset>

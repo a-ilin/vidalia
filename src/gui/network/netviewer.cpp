@@ -24,6 +24,8 @@
  * \version $Id: netviewer.cpp 699 2006-04-15 03:12:22Z hipplej $
  */
 
+#include <vidalia.h>
+
 #include "netviewer.h"
 
 /** Constructor. Loads settings from VidaliaSettings.
@@ -38,6 +40,9 @@ NetViewer::NetViewer(QWidget *parent)
   /* Create the MapFrame and add it to the dialog */
   _map = new MapFrame;
   ui.gridLayout->addWidget(_map);
+
+  /* Connect the necessary slots and signals */
+  connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
 }
 
 /** Overloads the default show() slot. */
@@ -50,5 +55,12 @@ NetViewer::show()
     QMainWindow::activateWindow();
     QMainWindow::raise();
   }
+}
+
+/** Called when the user selects the "Help" action from the toolbar. */
+void
+NetViewer::help()
+{
+  Vidalia::help("netview");
 }
 
