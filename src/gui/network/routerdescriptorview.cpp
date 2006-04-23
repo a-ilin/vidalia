@@ -79,10 +79,12 @@ void
 RouterDescriptorView::display(RouterDescriptor rd)
 {
   QString html = "<html><body>";
+
+  /* Router name and status */
+  html.append(p(b(rd.name()) + " (" + i(rd.status()) + ")"));
+  
+  /* IP and platform */
   html.append("<table>");
- 
-  /* Name, IP, and platform */
-  html.append(trow(tcol(b(rd.name()) + " (" + i(rd.status()) + ")")));
   html.append(trow(tcol(b(tr("IP Address:"))) + tcol(rd.ip())));
   html.append(trow(tcol(b(tr("Platform:")))   + tcol(rd.platform())));
 
