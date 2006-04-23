@@ -28,29 +28,30 @@
 #include "routerlistitem.h"
 
 /** Default constructor. */
-RouterListItem::RouterListItem()
+RouterListItem::RouterListItem(RouterListWidget *list)
 : QTreeWidgetItem()
 {
+  _list = list;
 }
 
 /** Overload the comparison operator. */
 bool
 RouterListItem::operator<(const QTreeWidgetItem &other) const
 {
-  RouterListWidget *list = (RouterListWidget *)treeWidget();
-   
-  if (list->sortColumn() == RouterListWidget::StatusColumn) {
-    /* Numeric comparison based on status and/or bandwidth */
-    return (this->data(RouterListWidget::StatusColumn,
-                       Qt::UserRole).toLongLong() >
-            other.data(RouterListWidget::StatusColumn,
-                       Qt::UserRole).toLongLong());
-  } else if (list->sortColumn() == RouterListWidget::NameColumn) {
-    /* Perform a case-insensitive comparison based on router name */
-    return (this->data(RouterListWidget::NameColumn,
-                       Qt::UserRole).toString() >
-            other.data(RouterListWidget::NameColumn,
-                       Qt::UserRole).toString());
+  if (_list) {
+    if (_list->sortColumn() == RouterListWidget::StatusColumn) {
+      /* Numeric comparison based on status and/or bandwidth */
+      return (this->data(RouterListWidget::StatusColumn,
+                         Qt::UserRole).toLongLong() >
+              other.data(RouterListWidget::StatusColumn,
+                         Qt::UserRole).toLongLong());
+    } else if (_list->sortColumn() == RouterListWidget::NameColumn) {
+      /* Perform a case-insensitive comparison based on router name */
+      return (this->data(RouterListWidget::NameColumn,
+                         Qt::UserRole).toString() >
+              other.data(RouterListWidget::NameColumn,
+                         Qt::UserRole).toString());
+    }
   }
   return QTreeWidgetItem::operator<(other);
 }

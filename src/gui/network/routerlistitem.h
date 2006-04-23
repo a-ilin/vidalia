@@ -28,16 +28,21 @@
 #define _ROUTERLISTITEM_H
 
 #include <QTreeWidgetItem>
+#include "routerlistwidget.h"
 
+class RouterListWidget;
 
 class RouterListItem : public QTreeWidgetItem
 {
 public:
   /** Default constructor. */
-  RouterListItem();
+  RouterListItem(RouterListWidget *list = 0);
 
   /** Overload the comparison operator. */
   virtual bool operator<(const QTreeWidgetItem &other) const;
+
+private:
+  RouterListWidget* _list;  /**< The list for this list item. */
 };
 
 #endif
