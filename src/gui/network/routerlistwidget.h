@@ -68,7 +68,9 @@ private:
   RouterListItem* createRouterItem(RouterDescriptor rd);
   /** Inserts a new item into the router list, maintaining the current order.*/
   void insertSorted(RouterListItem *item);
-
+  /** Finds the list item for the given descriptor. */
+  RouterListItem* findItem(RouterDescriptor rd);
+  
   /** TorControl object used to talk to Tor. */
   TorControl* _torControl;
   /** Stores a mapping of names to router descriptors. */

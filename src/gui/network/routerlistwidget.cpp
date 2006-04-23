@@ -89,6 +89,7 @@ RouterListWidget::createRouterItem(RouterDescriptor rd)
   item->setData(StatusColumn, Qt::UserRole, statusValue);
   item->setText(NameColumn, rd.name());
   item->setData(NameColumn, Qt::UserRole, rd.name().toLower());
+  item->setData(NameColumn, Qt::UserRole+1, rd.id());
   return item;
 }
 
@@ -126,13 +127,42 @@ RouterListWidget::insertSorted(RouterListItem *item)
   }
 }
 
+/** Finds the list item for the given descriptor. Returns 0 if not found. */
+RouterListItem*
+RouterListWidget::findItem(RouterDescriptor rd)
+{
+  QList<QTreeWidgetItem *> list = findItems(rd.name(), 
+                                            Qt::MatchExactly, 
+                                            NameColumn);
+
+  /* Many routers can have the same name, so find a match on the ID. */
+  foreach (QTreeWidgetItem *item, list) {
+    RouterListItem *ri = (RouterListItem *)takeTopLevelItem(
+                                           indexOfTopLevelItem(item));
+    if (ri->data(NameColumn, Qt::UserRole+1).toString() == rd.id()) {
+      return ri;
+    }
+  }
+  return 0;
+}
+
 /** Adds a router descriptor to the list. */
 void
 RouterListWidget::addRouter(RouterDescriptor rd)
 {
-  if (!rd.name().isEmpty() && !_routerList.contains(rd.name())) {
+  if (!rd.name().isEmpty()) {
+    if (_routerList.contains(rd.id())) {
+      /* This is an updated descriptor, so remove the list item and we'll 
+       * add a new, updated item. */
+      QTreeWidgetItem *item = findItem(rd);
+      if (item && indexOfTopLevelItem(item) != -1) {
+        delete takeTopLevelItem(indexOfTopLevelItem(item));
+      }
+    }
+
+    /* Add the router item to the list and store its descriptor. */
     insertSorted(createRouterItem(rd));
-    _routerList.insert(rd.name(), rd);
+    _routerList.insert(rd.id(), rd);
   }
 }
 
@@ -143,7 +173,8 @@ RouterListWidget::onItemChanged(QTreeWidgetItem *item, QTreeWidgetItem *prev)
 {
   Q_UNUSED(prev);
   if (item) {
-    emit routerSelected(_routerList.value(item->text(NameColumn)));
+    QString id = item->data(NameColumn, Qt::UserRole+1).toString();
+    emit routerSelected(_routerList.value(id));
   }
 }
 
