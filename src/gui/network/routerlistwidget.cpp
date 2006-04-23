@@ -29,8 +29,6 @@
 
 #include "routerlistwidget.h"
 
-#define COL_STATUS    0
-#define COL_NAME      1
 #define IMG_NODE_OFFLINE    ":/images/icons/node-unresponsive.png"
 #define IMG_NODE_SLEEPING   ":/images/icons/node-hibernating.png"
 #define IMG_NODE_NO_BW      ":/images/icons/node-bw-none.png"
@@ -46,8 +44,8 @@ RouterListWidget::RouterListWidget(QWidget *parent)
   _torControl = Vidalia::torControl();
  
   /* Set the column widths on the router list */
-  header()->resizeSection(COL_STATUS, 55);
-  sortItems(COL_NAME, Qt::AscendingOrder);
+  header()->resizeSection(StatusColumn, 55);
+  sortItems(NameColumn, Qt::AscendingOrder);
 
   /* Find out when the selected item has changed. */
   connect(this, SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)),
@@ -63,31 +61,38 @@ RouterListWidget::clear()
 }
 
 /** Creates a new item for the router list, based on the given descriptor.*/
-QTreeWidgetItem*
+RouterListItem*
 RouterListWidget::createRouterItem(RouterDescriptor rd)
 {
   QIcon statusIcon;
-  QTreeWidgetItem *item = new QTreeWidgetItem();
+  qint64 statusValue;
+  RouterListItem *item = new RouterListItem();
   
   /* Decide which status icon is appropriate */
   if (rd.offline()) {
-    statusIcon = QIcon(IMG_NODE_OFFLINE);
+    statusValue = -1;
+    statusIcon  = QIcon(IMG_NODE_OFFLINE);
   } else if (rd.hibernating()) {
-    statusIcon = QIcon(IMG_NODE_SLEEPING);
-  } else if (rd.averageBandwidth() >= 400*1024) {
-    statusIcon = QIcon(IMG_NODE_HIGH_BW);
-  } else if (rd.averageBandwidth() >= 60*1024) {
-    statusIcon = QIcon(IMG_NODE_MED_BW);
-  } else if (rd.averageBandwidth() >= 20*1024) {
-    statusIcon = QIcon(IMG_NODE_LOW_BW);
+    statusValue = 0;
+    statusIcon  = QIcon(IMG_NODE_SLEEPING);
   } else {
-    statusIcon = QIcon(IMG_NODE_NO_BW);
+    statusValue = (qint64)rd.observedBandwidth();
+    if (statusValue >= 400*1024) {
+      statusIcon = QIcon(IMG_NODE_HIGH_BW);
+    } else if (statusValue >= 60*1024) {
+      statusIcon = QIcon(IMG_NODE_MED_BW);
+    } else if (statusValue >= 20*1024) {
+      statusIcon = QIcon(IMG_NODE_LOW_BW);
+    } else {
+      statusIcon = QIcon(IMG_NODE_NO_BW);
+    }
   }
   
   /* Set the icon and text */
-  item->setIcon(COL_STATUS, statusIcon);
-  item->setText(COL_STATUS, "");
-  item->setText(COL_NAME, rd.name());
+  item->setIcon(StatusColumn, statusIcon);
+  item->setData(StatusColumn, Qt::UserRole, statusValue);
+  item->setText(NameColumn, rd.name());
+  item->setData(NameColumn, Qt::UserRole, rd.name().toLower());
   return item;
 }
 
@@ -107,7 +112,7 @@ RouterListWidget::onItemChanged(QTreeWidgetItem *item, QTreeWidgetItem *prev)
 {
   Q_UNUSED(prev);
   if (item) {
-    emit routerSelected(_routerList.value(item->text(COL_NAME)));
+    emit routerSelected(_routerList.value(item->text(NameColumn)));
   }
 }
 

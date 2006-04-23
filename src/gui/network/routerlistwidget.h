@@ -32,12 +32,19 @@
 #include <QHash>
 #include <control/torcontrol.h>
 
+#include "routerlistitem.h"
 
 class RouterListWidget : public QTreeWidget
 {
   Q_OBJECT
   
 public:
+  /** Columns in the list. */
+  enum Columns {
+    StatusColumn = 0, /**< Status column, indicating bandwidth */
+    NameColumn = 1    /*<< Router's name. */
+  };
+
   /** Default constructor. */
   RouterListWidget(QWidget *parent = 0);
   
@@ -58,7 +65,7 @@ private slots:
 
 private:
   /** Creates a new item for the router list, based on the given descriptor.*/
-  QTreeWidgetItem* createRouterItem(RouterDescriptor rd);
+  RouterListItem* createRouterItem(RouterDescriptor rd);
   
   /** TorControl object used to talk to Tor. */
   TorControl* _torControl;
