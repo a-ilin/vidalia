@@ -233,7 +233,7 @@ ServerPage::removePolicy()
   int index = selectedIndex();
   
   if (index > -1) {
-    ui.lstExitPolicies->takeTopLevelItem(index);
+    delete ui.lstExitPolicies->takeTopLevelItem(index);
   }
 }
 
