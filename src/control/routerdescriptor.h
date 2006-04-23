@@ -83,7 +83,8 @@ public:
   bool offline() { return _status == Offline; }
   /** Returns true if this router is hibernating. */
   bool hibernating() { return _status == Hibernating; }
-  
+  /** Returns a string representation of the status of this router. */
+  QString status();
 
 private:
   /** Parses this router's descriptor for relevant information. */

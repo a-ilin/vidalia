@@ -83,3 +83,15 @@ RouterDescriptor::parseDescriptor()
   }
 }
 
+/** Returns a string representation of the status of this router. */
+QString
+RouterDescriptor::status()
+{
+  if (_status == Online) {
+    return tr("Online");
+  } else if (_status = Hibernating) {
+    return tr("Hibernating");
+  }
+  return tr("Offline");
+}
+
