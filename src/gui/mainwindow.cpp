@@ -444,24 +444,6 @@ MainWindow::connected()
   /* Update our tray status icon */
   _trayIcon->update(IMG_TOR_RUNNING, tr("Tor is running"));
   
-  /* The controller connected, so now send the AUTHENTICATE command */
-  if (!_torControl->authenticate(&errmsg)) {
-    QMessageBox::warning(this, tr("Authentication Error"),
-      p(tr("Vidalia was unable to authenticate itself to Tor.\n"
-           "Check your authentication information and try again.")) + p(errmsg),
-      QMessageBox::Ok, QMessageBox::NoButton);
-    _torControl->disconnect();
-    return;
-  }
-
-  /* Register for interesting events */
-  if (!_torControl->setEvents(&errmsg)) {
-    QMessageBox::warning(this, tr("Error Setting Events"),
-      p(tr("Vidalia was unable to register for events from Tor.\n"
-           "Some features of Vidalia will be unavailable.")) + p(errmsg),
-      QMessageBox::Ok, QMessageBox::NoButton);
-  }
-
   /* If the user changed some of the server's settings while Tor wasn't 
    * running, then we better let Tor know about the changes now. */
   if (serverSettings.changedSinceLastApply()) {

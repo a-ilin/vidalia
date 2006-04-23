@@ -163,6 +163,15 @@ TorControl::connect()
 void
 TorControl::onConnected()
 {
+  QString errmsg;
+ 
+  /* Authenticate and register for any pertinent asynchronous events. */
+  if (!authenticate(&errmsg) || !setEvents(&errmsg)) {
+    emit connectFailed(errmsg);
+    stop();
+    return;
+  }
+  
   /* Let interested parties know that the control socket connected */
   emit connected();
   emit connected(true);
