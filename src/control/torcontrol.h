@@ -105,6 +105,8 @@ public:
   RouterDescriptor getRouterDescriptor(QString id, QString *errmsg = 0);
   /** Gets a list of descriptors for all routers Tor knows about. */
   QList<RouterDescriptor> getRouterList(QString *errmsg = 0);
+  /** Gets a list of router IDs for all routers Tor knows about. */
+  QStringList getRouterIDList(QString *errmsg = 0);
 
 signals:
   /** Emitted when the Tor process has started */

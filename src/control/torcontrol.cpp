@@ -483,9 +483,23 @@ TorControl::getRouterDescriptor(QString id, QString *errmsg)
 QList<RouterDescriptor>
 TorControl::getRouterList(QString *errmsg)
 {
+  QList<RouterDescriptor> descList;
+  QStringList idList = getRouterIDList(errmsg);
+
+  /* Get the descriptor for each ID and add it to the list */
+  foreach (QString id, idList) {
+    descList << getRouterDescriptor(id, errmsg);
+  }
+  return descList;
+}
+
+/** Gets a list of router IDs for all routers Tor knows about. */
+QStringList
+TorControl::getRouterIDList(QString *errmsg)
+{
   ControlCommand cmd("GETINFO", "network-status");
   ControlReply reply;
-  QList<RouterDescriptor> descList;
+  QStringList idList;
 
   if (send(cmd, reply, errmsg)) {
     QString routerIDs = reply.getMessage().remove(0,qstrlen("network-status="));
@@ -500,9 +514,9 @@ TorControl::getRouterList(QString *errmsg)
         id.prepend("!");
       }
       /* Get the descriptor for this router ID and add it to the list. */
-      descList << getRouterDescriptor(id, errmsg);
+      idList << id;
     }
   }
-  return descList;
+  return idList;
 }
 
