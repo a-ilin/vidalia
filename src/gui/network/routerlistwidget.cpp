@@ -100,9 +100,11 @@ RouterListWidget::createRouterItem(RouterDescriptor rd)
 void
 RouterListWidget::addRouter(RouterDescriptor rd)
 {
-  addTopLevelItem(createRouterItem(rd));
-  _routerList.insert(rd.name(), rd);
-  sortByColumn(sortColumn());
+  if (!rd.name().isEmpty()) {
+    addTopLevelItem(createRouterItem(rd));
+    _routerList.insert(rd.name(), rd);
+    sortByColumn(sortColumn());
+  }
 }
 
 /** Called when the selected item is changed. This emits the routerSelected
