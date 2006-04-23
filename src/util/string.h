@@ -32,10 +32,6 @@
 /** Creates a QStringList from the array of C strings. */
 QStringList char_array_to_stringlist(char **arr, int len);
 
-/** Wraps the given string in "<p>" tags, converts "\n" to "<br/>" and
- * converts "\n\n" to a new paragraph. */
-QString p(QString str);
-
 /** Conditionally assigns errmsg to string if str is not null and returns
  * false. */
 bool err(QString *str, QString errmsg);

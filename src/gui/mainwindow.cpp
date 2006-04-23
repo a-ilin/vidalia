@@ -31,7 +31,7 @@
 #include <QtGui>
 
 #include <vidalia.h>
-#include <util/string.h>
+#include <util/html.h>
 #include <config/messagetypes.h>
 
 #include "mainwindow.h"

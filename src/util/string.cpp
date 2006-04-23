@@ -38,17 +38,6 @@ char_array_to_stringlist(char **arr, int len)
   return list;
 }
 
-/** Wraps the given string in "<p>", converts "\n" to "<br/>" and converts
- * "\n\n" to a new paragraph. */
-QString
-p(QString str)
-{
-  str = "<p>" + str + "</p>";
-  str.replace("\n\n", "</p><p>");
-  str.replace("\n", "<br/>");
-  return str;
-}
-
 /** Conditionally assigns errmsg to str if str is not null and returns false.
  * This is a seemingly pointless function, but it saves some messiness in
  * methods whose QString *errmsg parameter is optional. */
