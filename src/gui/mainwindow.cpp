@@ -299,7 +299,8 @@ MainWindow::started()
   _torControl->connect();
 }
 
-/** */
+/** Called when the connection to the control socket fails. The reason will be
+ * given in the errmsg parameter. */
 void
 MainWindow::connectFailed(QString errmsg)
 {
