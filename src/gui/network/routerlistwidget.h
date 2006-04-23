@@ -66,7 +66,9 @@ private slots:
 private:
   /** Creates a new item for the router list, based on the given descriptor.*/
   RouterListItem* createRouterItem(RouterDescriptor rd);
-  
+  /** Inserts a new item into the router list, maintaining the current order.*/
+  void insertSorted(RouterListItem *item);
+
   /** TorControl object used to talk to Tor. */
   TorControl* _torControl;
   /** Stores a mapping of names to router descriptors. */

@@ -43,10 +43,6 @@ RouterListWidget::RouterListWidget(QWidget *parent)
   /* Get the TorControl object */
   _torControl = Vidalia::torControl();
  
-  /* Set the column widths on the router list */
-  header()->resizeSection(StatusColumn, 55);
-  sortItems(NameColumn, Qt::AscendingOrder);
-
   /* Find out when the selected item has changed. */
   connect(this, SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)),
           this, SLOT(onItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)));
@@ -66,7 +62,7 @@ RouterListWidget::createRouterItem(RouterDescriptor rd)
 {
   QIcon statusIcon;
   qint64 statusValue;
-  RouterListItem *item = new RouterListItem();
+  RouterListItem *item = new RouterListItem(this);
   
   /* Decide which status icon is appropriate */
   if (rd.offline()) {
@@ -96,14 +92,47 @@ RouterListWidget::createRouterItem(RouterDescriptor rd)
   return item;
 }
 
+/** Inserts a new router list item into the list, in its proper sorted place
+ * according to the current sort column. */
+void
+RouterListWidget::insertSorted(RouterListItem *item)
+{
+  Qt::SortOrder order = header()->sortIndicatorOrder();
+  int left  = 0;
+  int right = topLevelItemCount();
+  int mid;
+
+  while (left < right) {
+    mid = (left + right)/2;
+    if (order == Qt::AscendingOrder) {
+      if (*((RouterListItem *)topLevelItem(mid)) < *item) {
+        left = mid + 1;
+      } else {
+        right = mid;
+      }
+    } else {
+      if (*item < *((RouterListItem *)topLevelItem(mid))) {
+        left = mid+1;
+      } else {
+        right = mid;
+      }
+    }
+  }
+ 
+  if (left == topLevelItemCount()) {
+    addTopLevelItem(item);
+  } else {
+    insertTopLevelItem(left, item);
+  }
+}
+
 /** Adds a router descriptor to the list. */
 void
 RouterListWidget::addRouter(RouterDescriptor rd)
 {
-  if (!rd.name().isEmpty()) {
-    addTopLevelItem(createRouterItem(rd));
+  if (!rd.name().isEmpty() && !_routerList.contains(rd.name())) {
+    insertSorted(createRouterItem(rd));
     _routerList.insert(rd.name(), rd);
-    sortByColumn(sortColumn());
   }
 }
 

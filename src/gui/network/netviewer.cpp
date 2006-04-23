@@ -25,6 +25,7 @@
  */
 
 #include <QMessageBox>
+#include <QHeaderView>
 #include <vidalia.h>
 
 #include "netviewer.h"
@@ -46,7 +47,12 @@ NetViewer::NetViewer(QWidget *parent)
   /* Create the MapFrame and add it to the dialog */
   _map = new MapFrame;
   ui.gridLayout->addWidget(_map);
-  
+
+  /* Set the column size and sort order for the router list. */
+  ui.treeRouterList->header()->resizeSection(
+                                RouterListWidget::StatusColumn, 55);
+  ui.treeRouterList->sortByColumn(RouterListWidget::NameColumn);
+
   /* Connect the necessary slots and signals */
   connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
   connect(ui.actionNewNym, SIGNAL(triggered()), this, SLOT(newNym()));
