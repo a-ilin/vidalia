@@ -28,7 +28,7 @@
 #include <QInputDialog>
 
 #include <vidalia.h>
-#include <util/string.h>
+#include <util/html.h>
 #include "messagelog.h"
 
 #define COL_TIME  0 /** Date/time column */
@@ -226,7 +226,7 @@ MessageLog::saveChanges()
       if (!ui.lstMessages->isItemHidden(ui.lstMessages->topLevelItem(0))) {
         _messagesShown--;
       }
-      ui.lstMessages->takeTopLevelItem(0);
+      delete ui.lstMessages->takeTopLevelItem(0);
     }
     _settings->setMaxMsgCount(newMax);
     _maxCount = newMax;
@@ -325,11 +325,11 @@ MessageLog::filterLog()
       if (showCurrent) {
         _messagesShown++;
       } else {
-        ui.lstMessages->takeTopLevelItem(currentIndex);
+        delete ui.lstMessages->takeTopLevelItem(currentIndex);
       }     
     /* If we are showing the maximum, then get rid of the rest */
     } else {
-      ui.lstMessages->takeTopLevelItem(currentIndex);
+      delete ui.lstMessages->takeTopLevelItem(currentIndex);
     }
     currentIndex--;
   }
@@ -570,7 +570,7 @@ MessageLog::log(LogEvent::Severity type, QString message)
   if (_filter & (uint)type) {
     /* Remove oldest message if log is at maximum length */
     if (_messagesShown == _maxCount) {
-      ui.lstMessages->takeTopLevelItem(0);
+      delete ui.lstMessages->takeTopLevelItem(0);
       _messagesShown--;
     }
     
