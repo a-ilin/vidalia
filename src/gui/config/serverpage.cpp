@@ -27,7 +27,7 @@
 #include <vidalia.h>
 #include <util/net.h>
 #include <util/http.h>
-#include <util/string.h>
+#include <util/html.h>
 
 #include "serverpage.h"
 #include "ipvalidator.h"
