@@ -58,6 +58,7 @@ NetViewer::NetViewer(QWidget *parent)
           ui.actionRefresh, SLOT(setEnabled(bool)));
   connect(ui.treeRouterList, SIGNAL(routerSelected(RouterDescriptor)),
           ui.textRouterInfo, SLOT(display(RouterDescriptor)));
+  connect(_torControl, SIGNAL(connected()), this, SLOT(loadRouters()));
 }
 
 /** Custom event handler. Catches the new descriptor events. */
@@ -74,13 +75,23 @@ NetViewer::customEvent(QEvent *event)
 void
 NetViewer::loadRouters()
 {
+  QStringList idList;
+
+  /* Don't let the user refresh while we're refreshing. */
+  ui.actionRefresh->setEnabled(false);
+  
   /* Clear the existing list of routers and descriptors */
   ui.treeRouterList->clear();
-  
+ 
   /* Create an item for each router and associate it with a descriptor */
-  foreach (RouterDescriptor rd, _torControl->getRouterList()) {
-    ui.treeRouterList->addRouter(rd);
+  idList = _torControl->getRouterIDList();
+  foreach (QString id, idList) {
+    ui.treeRouterList->addRouter(_torControl->getRouterDescriptor(id));
+    Vidalia::processEvents();
   }
+
+  /* Ok, they can refresh again. */
+  ui.actionRefresh->setEnabled(true);
 }
 
 /** Overloads the default show() slot. */
@@ -125,6 +136,7 @@ NetViewer::loadNewDescriptors(QStringList ids)
 {
   foreach (QString id, ids) {
     ui.treeRouterList->addRouter(_torControl->getRouterDescriptor(id));
+    Vidalia::processEvents();
   }
 }
 
