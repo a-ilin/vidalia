@@ -507,9 +507,10 @@ TorControl::getRouterIDList(QString *errmsg)
     /* Split the list of router IDs up */
     QStringList routers = routerIDs.split(" ");
     foreach (QString router, routers) {
-      /* A router ID may be of the form <name>=$<ID> or just $<ID> */
+      /* A router ID may be of the form <name>=$<ID>, $<ID>, or <ID> */
       QString id = router.mid(router.indexOf("=")+1);
-      /* A "!" before <name> or $<ID> means "unresponsive" */
+      id = id.replace("$", "");
+      /* A "!" before <name> or <ID> means "unresponsive" */
       if (router.startsWith("!") && !id.startsWith("!")) {
         id.prepend("!");
       }
