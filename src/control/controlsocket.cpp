@@ -25,6 +25,7 @@
  */
 
 #include <QHostAddress>
+#include <util/string.h>
 
 #include "controlsocket.h"
 
@@ -162,7 +163,10 @@ ControlSocket::readLineData(QString &line, QString *errmsg)
     }
     bytesRecv = QAbstractSocket::readLine(buffer, 1024);
   }
-  return (bytesRecv != -1);
+  if (bytesRecv == -1) {
+    return err(errmsg, errorString());
+  }
+  return true;
 }
 
 /** Reads a line of data from the socket and returns true if successful or
