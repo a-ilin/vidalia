@@ -43,6 +43,61 @@ sent as a <i>stream</i> through that circuit. For efficieny, multiple streams
 may share the same circuit.
 </p>
 
+<a name="status"/>
+<h3>Router Status</h3>
+<p>
+On the left side of the network view, you will see a list of routers in the
+Tor network. Next to each router is an icon indicating that router's status.
+The following table summarizes the possible router status icons:
+</p>
+<p>
+<table border="1">
+<tr>
+  <td><img src="qrc:/images/icons/node-unresponsive.png"/></td>
+  <td valign="middle">
+    The router is offline or simply not responding.
+  </td>
+</tr>
+<tr>
+  <td><img src="qrc:/images/icons/node-hibernating.png"/></td>
+  <td valign="middle">
+    The router is <i>hibernating</i>, meaning it is online, but has used up as
+    much bandwidth as the operator is willing to allow for a given time
+    period.
+  </td>
+</tr>
+<tr>
+  <td><img src="qrc:/images/icons/node-bw-none.png"/></td>
+  <td valign="middle">
+    The router is online, but has shown only minimal throughput.
+  </td>
+</tr>
+<tr>
+  <td><img src="qrc:/images/icons/node-bw-low.png"/></td>
+  <td valign="middle">
+    The router is online and has shown a throughput &gt;= 20 KB/s.
+  </td>
+</tr>
+<tr>
+  <td><img src="qrc:/images/icons/node-bw-med.png"/></td>
+  <td valign="middle">
+    The router is online and has shown a throughput &gt;= 60 KB/s.
+  </td>
+</tr>
+<tr>
+  <td><img src="qrc:/images/icons/node-bw-high.png"/></td>
+  <td valign="middle">
+    The router is online and has shown a throughput &gt;= 400 KB/s.
+  </td>
+</tr>
+</table>
+</p>
+<p>
+All bandwidth values are estimates based on the minimum of either 
+the maximum bandwidth sustained input or output over any ten second period 
+in the past day.
+</p>
+
 </body>
 </html>
 

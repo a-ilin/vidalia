@@ -33,6 +33,7 @@
   </Topic>
   <Topic id="netview" name="Network Viewer" html="netview.html">
     <Topic id="overview" name="Overview" html="netview.html" section="overview"/>
+    <Topic id="status" name="Router Status" html="netview.html" section="status"/>
   </Topic>
   <Topic id="config" name="配置Vidalia和Tor" html="config.html">
     <Topic id="general" name="一般设置" html="config.html" section="general"/>
