@@ -30,6 +30,7 @@
 #include <QMainWindow>
 #include <QStringList>
 #include <QEvent>
+#include <QTimer>
 #include <control/torcontrol.h>
 
 #include "mapframe.h"
@@ -67,6 +68,8 @@ private:
   TorControl* _torControl;
   /** Custom QGLWidget MapFrame widget */
   MapFrame* _map;
+  /** Timer that fires once an hour to update the router list. */
+  QTimer* _timer;
 
   /** Qt Designer generated object **/
   Ui::NetViewer ui;

@@ -47,6 +47,15 @@ NetViewer::NetViewer(QWidget *parent)
   /* Create the MapFrame and add it to the dialog */
   _map = new MapFrame;
   ui.gridLayout->addWidget(_map);
+  
+  /* Create the timer that will be used to update the router list once every
+   * hour. We still receive the NEWDESC event to get new descriptors, but this
+   * needs to be called to get rid of any descriptors that were removed. */
+  _timer = new QTimer(this);
+  _timer->setInterval(60*60*1000);
+  connect(_timer, SIGNAL(timeout), this, SLOT(loadRouters()));
+  connect(_torControl, SIGNAL(connected()), _timer, SLOT(start()));
+  connect(_torControl, SIGNAL(disconnected()), _timer, SLOT(stop()));
 
   /* Set the column size and sort order for the router list. */
   ui.treeRouterList->header()->resizeSection(
