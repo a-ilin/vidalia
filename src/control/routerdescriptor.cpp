@@ -24,6 +24,8 @@
  * \version $Id$
  */
 
+#include <QtGlobal>
+
 #include "routerdescriptor.h"
 
 
@@ -88,10 +90,10 @@ QString
 RouterDescriptor::status()
 {
   if (_status == Online) {
-    return tr("Online");
-  } else if (_status = Hibernating) {
-    return tr("Hibernating");
+    return QT_TR_NOOP("Online");
+  } else if (_status == Hibernating) {
+    return QT_TR_NOOP("Hibernating");
   }
-  return tr("Offline");
+  return QT_TR_NOOP("Offline");
 }
 
