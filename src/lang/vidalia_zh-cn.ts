@@ -895,7 +895,7 @@ about what happened to Tor before it exited.</source>
     </message>
     <message>
         <source>Authentication Error</source>
-        <translation>验证出错</translation>
+        <translation type="obsolete">验证出错</translation>
     </message>
     <message>
         <source>Vidalia was unable to authenticate itself to Tor.Check your authentication information and try again.
@@ -907,7 +907,7 @@ Error: </source>
     </message>
     <message>
         <source>Error Setting Events</source>
-        <translation>设置事件时出错</translation>
+        <translation type="obsolete">设置事件时出错</translation>
     </message>
     <message>
         <source>Vidalia was unable to register for events from Tor. Some features of Vidalia will be unavailable. 
@@ -936,13 +936,13 @@ Error: </source>
     <message>
         <source>Vidalia was unable to authenticate itself to Tor.
 Check your authentication information and try again.</source>
-        <translation>Vidalia无法通过Tor的验证。
+        <translation type="obsolete">Vidalia无法通过Tor的验证。
 请检查您的验证信息并重试。</translation>
     </message>
     <message>
         <source>Vidalia was unable to register for events from Tor.
 Some features of Vidalia will be unavailable.</source>
-        <translation>Vidalia无法注册Tor过来的事件。
+        <translation type="obsolete">Vidalia无法注册Tor过来的事件。
 Vidalia的一些功能可能无法使用。</translation>
     </message>
     <message>

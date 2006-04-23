@@ -582,14 +582,6 @@ about what happened to Tor before it exited.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Authentication Error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Error Setting Events</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Vidalia was unable to start Tor.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -603,16 +595,6 @@ about what happened to Tor before it exited.</source>
     </message>
     <message>
         <source>Vidalia was unable to stop Tor.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Vidalia was unable to authenticate itself to Tor.
-Check your authentication information and try again.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Vidalia was unable to register for events from Tor.
-Some features of Vidalia will be unavailable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
