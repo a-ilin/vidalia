@@ -24,8 +24,10 @@
  * \version $Id$
  */
 
+#include <util/html.h>
 #include "routerdescriptorview.h"
 
+#define DATE_FORMAT   "yyyy-MM-dd HH:mm:ss"
 
 /** Default constructor. */
 RouterDescriptorView::RouterDescriptorView(QWidget *parent)
@@ -33,10 +35,76 @@ RouterDescriptorView::RouterDescriptorView(QWidget *parent)
 {
 }
 
+/** Format the date the descriptor was published. */
+QString
+RouterDescriptorView::formatPublished(QDateTime date)
+{
+  return date.toString(DATE_FORMAT) + " GMT";
+}
+
+/** Format the uptime for this router in a readable format. */
+QString
+RouterDescriptorView::formatUptime(quint64 seconds)
+{
+  QString uptime;
+  int secs  = (seconds % 60);
+  int mins  = (seconds / 60 % 60);
+  int hours = (seconds / 3600 % 24);
+  int days  = (seconds / 86400);
+
+  if (days) {
+    uptime += QString("%1 days ").arg(days);
+  }
+  if (hours) {
+    uptime += QString("%1 hours ").arg(hours);
+  }
+  if (mins) {
+    uptime += QString("%1 mins ").arg(mins);
+  }
+  if (secs) {
+    uptime += QString("%1 secs").arg(secs);
+  }
+  return uptime;
+}
+
+/** Format the bandwidth into KB/s. */
+QString
+RouterDescriptorView::formatBandwidth(quint64 bandwidth)
+{
+  return QString::number(bandwidth/1024);
+}
+
 /** Displays the given router descriptor. */
 void
 RouterDescriptorView::display(RouterDescriptor rd)
 {
-  setPlainText(rd.descriptor());
+  QString html = "<html><body>";
+  html.append("<table>");
+ 
+  /* Name, IP, and platform */
+  html.append(trow(tcol(b(rd.name()) + " (" + i(rd.status()) + ")")));
+  html.append(trow(tcol(b(tr("IP Address:"))) + tcol(rd.ip())));
+  html.append(trow(tcol(b(tr("Platform:")))   + tcol(rd.platform())));
+
+  /* If there is contact information, then show it */
+  if (!rd.contact().isEmpty()) {
+    html.append(trow(tcol(b(tr("Contact:")))    + tcol(escape(rd.contact()))));
+  }
+  
+  /* Date the router was published */
+  html.append(trow(tcol(b(tr("Published:")))  +
+                   tcol(formatPublished(rd.published()))));
+
+  /* If the router is online, then show the uptime and bandwidth stats. */
+  if (!rd.offline()) {
+    html.append(trow(tcol(b(tr("Uptime:")))   + 
+                     tcol(formatUptime(rd.uptime()))));
+    html.append(trow(tcol(b(tr("Bandwidth:")))  + 
+                     tcol(formatBandwidth(rd.observedBandwidth()) + " KB/s")));
+  }
+  
+  html.append("</table>");
+  html.append("</body></html>");
+  setHtml(html); 
 }
 

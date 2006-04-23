@@ -44,6 +44,14 @@ public:
 public slots:
   /** Shows the given router descriptor. */
   void display(RouterDescriptor rd);
+
+private:
+  /** Formats the descriptor's published date. */
+  QString formatPublished(QDateTime date);
+  /** Formats the router's uptime. */
+  QString formatUptime(quint64 seconds);
+  /** Formats the observed bandwidth into KB/s. */
+  QString formatBandwidth(quint64 bandwidth);
 };
 
 #endif
