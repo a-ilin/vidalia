@@ -1347,19 +1347,11 @@ Error: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Here&apos;s where I figure we&apos;ll list out all the Tor routers we know about, perhaps with color coded status icons</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Status</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Router</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Information about the selected Tor router will go here, generating html is easier than managing explicit labels</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1384,6 +1376,18 @@ Error: </source>
     </message>
     <message>
         <source>New Nym Failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom In</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom Out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Move</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

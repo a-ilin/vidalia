@@ -30,9 +30,13 @@
 
 #include "netviewer.h"
 
+#define FONT        QFont(tr("Arial"), 10)
+#define IMG_MOVE    ":/images/22x22/move-map.png"
+#define IMG_ZOOMIN  ":/images/22x22/zoom-in.png"
+#define IMG_ZOOMOUT ":/images/22x22/zoom-out.png"
 
 /** Constructor. Loads settings from VidaliaSettings.
- * \param parent The parent widget of this NetViewer object.
+ * \param parent The parent widget of this NetViewer object.\
  */
 NetViewer::NetViewer(QWidget *parent)
 : QMainWindow(parent)
@@ -47,13 +51,25 @@ NetViewer::NetViewer(QWidget *parent)
   /* Create the MapFrame and add it to the dialog */
   _map = new MapFrame;
   ui.gridLayout->addWidget(_map);
+ 
+  /* Add the map manipulation action group to the toolbar */
+  QActionGroup *grp = new QActionGroup(this);
+  createAction(QIcon(IMG_ZOOMIN), tr("Zoom In"), grp, MapFrame::ZoomIn);
+  createAction(QIcon(IMG_ZOOMOUT), tr("Zoom Out"), grp, MapFrame::ZoomOut);
+  createAction(QIcon(IMG_MOVE), tr("Move"), grp, MapFrame::Move);
+  foreach (QAction *act, grp->actions()) {
+    ui.toolBar->insertAction(ui.actionHelp, act);
+  }
+  ui.toolBar->insertSeparator(ui.actionHelp);
+  connect(grp, SIGNAL(triggered(QAction *)),
+          this, SLOT(setMapAction(QAction *)));
   
   /* Create the timer that will be used to update the router list once every
    * hour. We still receive the NEWDESC event to get new descriptors, but this
    * needs to be called to get rid of any descriptors that were removed. */
   _timer = new QTimer(this);
   _timer->setInterval(60*60*1000);
-  connect(_timer, SIGNAL(timeout), this, SLOT(loadRouters()));
+  connect(_timer, SIGNAL(timeout()), this, SLOT(loadRouters()));
   connect(_torControl, SIGNAL(connected()), _timer, SLOT(start()));
   connect(_torControl, SIGNAL(disconnected()), _timer, SLOT(stop()));
 
@@ -74,6 +90,24 @@ NetViewer::NetViewer(QWidget *parent)
   connect(ui.treeRouterList, SIGNAL(routerSelected(RouterDescriptor)),
           ui.textRouterInfo, SLOT(display(RouterDescriptor)));
   connect(_torControl, SIGNAL(connected()), this, SLOT(loadRouters()));
+}
+
+/** Creates and adds an action to the specified action group */
+void
+NetViewer::createAction(QIcon img, QString text,
+                        QActionGroup *group, MapFrame::MapAction mapAct)
+{
+  QAction *action = new QAction(img, text, group);
+  action->setCheckable(true);
+  action->setFont(FONT);
+  action->setData(mapAct);
+}
+
+/** Changes the current map action */
+void
+NetViewer::setMapAction(QAction *action)
+{
+  _map->setAction((MapFrame::MapAction) action->data().toInt());
 }
 
 /** Custom event handler. Catches the new descriptor events. */

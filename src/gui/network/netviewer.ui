@@ -380,7 +380,7 @@
           <hsizetype>5</hsizetype>
           <vsizetype>5</vsizetype>
           <horstretch>0</horstretch>
-          <verstretch>1</verstretch>
+          <verstretch>0</verstretch>
          </sizepolicy>
         </property>
         <property name="contextMenuPolicy" >
@@ -417,7 +417,7 @@
           <hsizetype>7</hsizetype>
           <vsizetype>7</vsizetype>
           <horstretch>0</horstretch>
-          <verstretch>100</verstretch>
+          <verstretch>0</verstretch>
          </sizepolicy>
         </property>
         <property name="contextMenuPolicy" >
@@ -530,6 +530,9 @@
    </property>
    <property name="text" >
     <string>Close</string>
+   </property>
+   <property name="statusTip" >
+    <string/>
    </property>
    <property name="font" >
     <font>

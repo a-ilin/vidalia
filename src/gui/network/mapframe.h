@@ -21,7 +21,7 @@
 
 /** 
  * \file mapframe.h
- * \version $Id: mapframe.h 699 2006-04-15 03:12:22Z hipplej $
+ * \version $Id: $
  */
 
 #ifndef _MAPFRAME_H
@@ -29,27 +29,60 @@
 
 #include <QGLWidget>
 #include <QPixmap>
+#include <QMouseEvent>
 
 class MapFrame : public QGLWidget
 {
   Q_OBJECT
 
 public:
+  /** MapAction types */
+  enum MapAction { Move, ZoomIn, ZoomOut };
+  
   /** Default constructor */
   MapFrame(QWidget* parent = 0);
-  /** Returns minimum allowable size */
+  /** Returns the minimum widget size */
   QSize minimumSizeHint() const;
+  /** Sets the current map action */
+  void setAction(MapAction action);
+  /** Returns the current map action */
+  MapAction getAction();
 
 protected:
-  /* OpenGL functions */
+  /** Initializes OpenGL. Gets called once on load only */
   void initializeGL();
-  void paintGL();
+  /** Gets called whenever the widget has been resized */
   void resizeGL(int w, int h);
+  /** Gets called when the widget needs repainting. */
+  void paintGL();
+  /** Handles mouse button press events */
+  void mousePressEvent(QMouseEvent *event);
+  /** Handles mouse button release events */
+  void mouseReleaseEvent(QMouseEvent *event);
+  /** Handles mouse movement events */
+  void mouseMoveEvent(QMouseEvent *event);  
 
+  /** Creates an OpenGL display list containing the map texture */
   void makeMapList();
   
 private:
+  /** Sets up the view so that it displays the rectagle in _viewBox */
+  void setViewBox();
+  /** Converts widget space coordinates to map space coordinates */
+  QPointF toMapSpace(const QPoint &pos) const;
+  /** Handles zooming */
+  void zoom(MapAction zoomDir);
+  
+  /** An OpenGL display list */
   GLuint _mapList;
+  /** Current viewing box */
+  QRectF _viewBox;
+  /** Coordinates of last position */
+  QPointF _lastPos;
+  /** Indicates if the mouse button is down */
+  bool _buttonPressed;
+  /** The current map aciton */
+  MapAction _action;
 };
 
 #endif
