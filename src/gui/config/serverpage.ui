@@ -417,7 +417,7 @@
             <string/>
            </property>
            <property name="maxLength" >
-            <number>15</number>
+            <number>255</number>
            </property>
            <property name="alignment" >
             <set>Qt::AlignLeading</set>
