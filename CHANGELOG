@@ -1,4 +1,17 @@
+0.0.4   27-Apr-2006
+  o Add a fixed set of Windows .ico files from Dan Christensen. Our
+    contributed set in 0.0.3 apparently had a blank image in it that some old
+    Windowses would use instead of the icon that actually had an image.
+  o Add an option for servers to check periodically to see if their public IP
+    address has changed.
+  o Give servers the option to shut down after 30 seconds, to give clients
+    time to find new circuits, instead of just always killing Tor immediately.
+  o Improve GUI responsiveness when waiting for the Tor process to finish
+    starting up.
+  o Be smarter about guessing the default location of Tor in non-English
+    Windowses.
 
+  
 0.0.3   13-Apr-2006
   o Fixed a server configuration bug that caused people to not really be a
     middleman node, even though the checkbox told them they were.
