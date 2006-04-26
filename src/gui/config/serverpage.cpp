@@ -32,6 +32,7 @@
 #include "serverpage.h"
 #include "ipvalidator.h"
 #include "portvalidator.h"
+#include "domainvalidator.h"
 
 /* Default Exit Policy */
 #define DEFAULT_POLICY    Policy(AcceptAll)
@@ -72,6 +73,7 @@ ServerPage::ServerPage(QWidget *parent)
   connect(ui.btnExitHelp, SIGNAL(clicked()), this, SLOT(exitHelp()));
   
   /* Set validators for address, mask and various port number fields */
+  ui.lineServerAddress->setValidator(new DomainValidator(this));
   ui.lineServerPort->setValidator(new QIntValidator(1, 65535, this));
   ui.lineDirPort->setValidator(new QIntValidator(1, 65535, this));
   ui.lineExitAddress->setValidator(new IPValidator(this));

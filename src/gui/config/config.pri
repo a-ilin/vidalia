@@ -28,6 +28,7 @@ FORMS += $$PWD/configdialog.ui \
          $$PWD/appearancepage.ui
 
 HEADERS += $$PWD/configdialog.h \
+           $$PWD/domainvalidator.h \
            $$PWD/ipvalidator.h \
            $$PWD/portvalidator.h \
            $$PWD/configpage.h \
@@ -38,6 +39,7 @@ HEADERS += $$PWD/configdialog.h \
            $$PWD/appearancepage.h
 
 SOURCES += $$PWD/configdialog.cpp \
+           $$PWD/domainvalidator.cpp \
            $$PWD/ipvalidator.cpp \
            $$PWD/portvalidator.cpp \
            $$PWD/configpagestack.cpp \
