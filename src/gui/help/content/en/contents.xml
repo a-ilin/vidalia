@@ -31,10 +31,12 @@
     <Topic id="severities" name="Message Severities" html="log.html" section="severities"/>
     <Topic id="logfile" name="Logging to a File" html="log.html" section="tofile"/>
   </Topic>
+  <!--
   <Topic id="netview" name="Network Viewer" html="netview.html">
     <Topic id="overview" name="Overview" html="netview.html" section="overview"/>
     <Topic id="status" name="Router Status" html="netview.html" section="status"/>
   </Topic>
+  -->
   <Topic id="config" name="Configuring Tor" html="config.html">
     <Topic id="general" name="General Settings" html="config.html" section="general"/>
     <Topic id="server" name="Server Settings" html="config.html" section="server"/>
