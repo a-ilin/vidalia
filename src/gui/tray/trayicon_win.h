@@ -57,8 +57,11 @@ private:
   bool sendMouseEvent(QEvent::Type type, Qt::MouseButton button);
   /** Create an icon for the tray image from a given icon resource identifier. */
   HICON createIcon(const int resourceId);
+  /** Updates the tray icon. */
+  void updateTrayIcon(DWORD msg);
 
-  NOTIFYICONDATA _nfd; /**< Structure representing a notify icon in the tray. */
+  HICON _icon;      /**< The tray icon image. */
+  QString _toolTip; /**< The tray icon's tooltip. */
 };
 
 #endif

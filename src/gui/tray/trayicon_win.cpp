@@ -45,6 +45,7 @@
  */
 
 #include <QApplication>
+#include <QtGlobal>
 
 #include "trayicon_win.h"
 
@@ -58,21 +59,45 @@ TrayIconImpl::TrayIconImpl(const QString &iconFile, const QString &toolTip)
 {
   setObjectName("trayiconimpl");
  
-  /* Initialize the structure representing our tray icon. */
-  _nfd.cbSize = sizeof(NOTIFYICONDATA);
-  _nfd.hWnd = winId();
-  _nfd.uID = TRAY_ICON_ID;
-  _nfd.uCallbackMessage = WM_NOTIFYICON;
-  _nfd.uFlags = NIF_MESSAGE | NIF_ICON | NIF_TIP;
-
   /* We want to know when Explorer crashes and recreates the taskbar. */
   WM_TASKBARCREATED = RegisterWindowMessage(TEXT("TaskbarCreated"));
   
-  /* And give it an icon */
+  /* Set the tray icon image */
   setIcon(iconFile);
   
   /* Add the tool tip to the structure */
   setToolTip(toolTip);
+}
+
+/** Updates the tray icon. */
+void
+TrayIconImpl::updateTrayIcon(DWORD msg)
+{
+QT_WA(  
+  { /* UNICODE */
+    NOTIFYICONDATAW nfd;
+    nfd.cbSize = sizeof(NOTIFYICONDATAW);
+    nfd.hWnd = winId();
+    nfd.uID = TRAY_ICON_ID;
+    nfd.uCallbackMessage = WM_NOTIFYICON;
+    nfd.uFlags = NIF_MESSAGE | NIF_ICON | NIF_TIP;
+    nfd.hIcon = _icon;
+    lstrcpynW(nfd.szTip, (TCHAR*)_toolTip.unicode(), 
+              qMin(_toolTip.length()+1, 64));
+    Shell_NotifyIconW(msg, &nfd);
+  },
+  { /* non-UNICODE */
+    NOTIFYICONDATAA nfd;
+    nfd.cbSize = sizeof(NOTIFYICONDATAA);
+    nfd.hWnd = winId();
+    nfd.uID = TRAY_ICON_ID;
+    nfd.uCallbackMessage = WM_NOTIFYICON;
+    nfd.uFlags = NIF_MESSAGE | NIF_ICON | NIF_TIP;
+    nfd.hIcon = _icon;
+    lstrcpynA(nfd.szTip, (const char*)_toolTip.toLocal8Bit(), 
+              qMin(_toolTip.length()+1, 64));
+    Shell_NotifyIconA(msg, &nfd);
+  })
 }
 
 /** Catches and handles mouse-related native Windows event messages. */
@@ -96,7 +121,7 @@ TrayIconImpl::winEvent(MSG *msg, long *result)
   } else if (msg->message == WM_TASKBARCREATED) {
     /* We handle WM_TASKBARCREATED because it's possible that Explorer
      * crashed and was recreated, in which case we need to re-add our icon. */
-    Shell_NotifyIcon(NIM_ADD, &_nfd);
+    updateTrayIcon(NIM_ADD);
   }
   return QWidget::winEvent(msg, result);
 }
@@ -122,35 +147,29 @@ TrayIconImpl::createIcon(const int resourceId)
 void
 TrayIconImpl::show()
 {
-  Shell_NotifyIcon(NIM_ADD, &_nfd);
+  updateTrayIcon(NIM_ADD);
 }
 
 /** Hide the tray icon image. */
 void
 TrayIconImpl::hide()
 {
-  Shell_NotifyIcon(NIM_DELETE, &_nfd);
+  updateTrayIcon(NIM_DELETE);
 }
 
 /** Set the tray icon's tooltip. */
 void
 TrayIconImpl::setToolTip(const QString &toolTip)
 {
-#if defined(UNICODE)
-  lstrcpynW(_nfd.szTip, (TCHAR*)toolTip.unicode(), 
-            qMin(toolTip.length()+1, 64));
-#else
-  lstrcpynA(_nfd.szTip, (const char*)toolTip.toLocal8Bit(), 
-            qMin(toolTip.length()+1, 64));
-#endif
-  Shell_NotifyIcon(NIM_MODIFY, &_nfd);
+  _toolTip = toolTip;
+  updateTrayIcon(NIM_MODIFY);
 }
 
 /** Set the tray icon's image. */
 void
 TrayIconImpl::setIcon(const QString &iconFile)
 {
-  _nfd.hIcon = createIcon(iconFile.toInt());
-  Shell_NotifyIcon(NIM_MODIFY, &_nfd);
+  _icon = createIcon(iconFile.toInt());
+  updateTrayIcon(NIM_MODIFY);
 }
 
