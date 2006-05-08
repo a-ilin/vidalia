@@ -48,12 +48,10 @@ win32_program_files_folder()
       m->Release();
     }
     if (SUCCEEDED(result)) {
-#if defined(UNICODE)
-      return QString::fromUtf16((const ushort *)path);
-#else
-      return QString::fromLocal8Bit((char *)path);
-#endif
+      QT_WA(return QString::fromUtf16((const ushort *)path);,
+            return QString::fromLocal8Bit((char *)path);)
     }
   }
   return QDir::rootPath() + "Program Files";
 }
+
