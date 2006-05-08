@@ -1,16 +1,8 @@
 
-Short-Term Goals:
-  * Conduct a semi-formal survey to try to learn more about what users really
-    want from a controller.
-  
-  
 Pre-competition-deadline Goals:
   * Circuit and stream visualization
   
   * Simplified (coarse-grained) rate-limiting control
-  
-  * Add a "Help" button to as many error message boxes as possible and link to
-    the appropriate help topics.
   
   * Create a bundle for Mac OS X, similar to what we have for Windows
   
