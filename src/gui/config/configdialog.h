@@ -29,13 +29,12 @@
 
 #include <QMainWindow>
 #include <QFileDialog>
+#include <gui/help/browser/helpbrowser.h>
 
 #include "generalpage.h"
 #include "serverpage.h"
 #include "advancedpage.h"
 #include "appearancepage.h"
-
-#include "../help/browser/helpbrowser.h"
 
 #include "ui_configdialog.h"
 
