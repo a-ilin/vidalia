@@ -32,7 +32,7 @@
 #include <control/torcontrol.h>
 #include <config/serversettings.h>
 #include <config/exitpolicy.h>
-#include "../help/browser/helpbrowser.h"
+#include <gui/help/browser/helpbrowser.h>
 
 #include "configpage.h"
 #include "ui_serverpage.h"
