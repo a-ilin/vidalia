@@ -105,7 +105,7 @@ MainWindow::MainWindow()
   _bandwidthGraph = new BandwidthGraph(this, bw_flags);
 
   /* Create a new NetViewer object so we can monitor the network */
-  //_netViewer = new NetViewer(this);
+  _netViewer = new NetViewer(this);
 
   /* Put an icon in the system tray to indicate the status of Tor */
   _trayIcon = new TrayIcon(IMG_TOR_STOPPED,
@@ -186,11 +186,10 @@ MainWindow::createActions()
   _helpAct = new QAction(QIcon(IMG_HELP), tr("Help"), this);
   connect(_helpAct, SIGNAL(triggered()), 
       this, SLOT(showHelp()));
-/*
+
   _networkAct = new QAction(QIcon(IMG_NETWORK), tr("View Network"), this);
   connect(_networkAct, SIGNAL(triggered()),
       this, SLOT(showNetwork()));
-*/
 }
 
 /**
@@ -207,7 +206,7 @@ MainWindow::createMenus()
   _trayMenu->addSeparator();
   _trayMenu->addAction(_bandwidthAct);
   _trayMenu->addAction(_messageAct);
-  //_trayMenu->addAction(_networkAct);
+  _trayMenu->addAction(_networkAct);
   _trayMenu->addSeparator();
   _trayMenu->addAction(_configAct);
   _trayMenu->addAction(_helpAct);
@@ -232,7 +231,7 @@ MainWindow::createMenuBar()
   _stopAct->setShortcut(tr("Ctrl+T"));
   _bandwidthAct->setShortcut(tr("Ctrl+B"));
   _messageAct->setShortcut(tr("Ctrl+L"));
-  //_networkAct->setShortcut(tr("Ctrl+N"));
+  _networkAct->setShortcut(tr("Ctrl+N"));
   _helpAct->setShortcut(tr("Ctrl+?"));
 
   /* The File, Help, and Configure menus will get merged into the application
@@ -248,7 +247,7 @@ MainWindow::createMenuBar()
   QMenu *viewMenu = menuBar->addMenu(tr("View"));
   viewMenu->addAction(_bandwidthAct);
   viewMenu->addAction(_messageAct);
-//  viewMenu->addAction(_networkAct);
+  viewMenu->addAction(_networkAct);
   viewMenu->addAction(_configAct);
   
   QMenu *helpMenu = menuBar->addMenu(tr("Help"));

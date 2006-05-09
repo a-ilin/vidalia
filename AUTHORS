@@ -21,6 +21,7 @@ Contributors:
 
   Geoff Goodell <http://afs.eecs.harvard.edu/~goodell/> created the US/UK icon
   (src/gui/res/flags/en.png) that we use in the Appearance configuration page.
+  He also created the router status icons we used in the network view dialog.
 
 Translators:
   Wu Xiaoguang    Simplified Chinese
