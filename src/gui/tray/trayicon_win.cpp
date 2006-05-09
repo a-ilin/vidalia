@@ -45,7 +45,6 @@
  */
 
 #include <QApplication>
-#include <QtGlobal>
 
 #include "trayicon_win.h"
 
@@ -139,8 +138,8 @@ TrayIconImpl::sendMouseEvent(QEvent::Type type, Qt::MouseButton button)
 HICON
 TrayIconImpl::createIcon(const int resourceId)
 {
-  return LoadIcon((HINSTANCE)GetModuleHandle(NULL), 
-                  MAKEINTRESOURCE(resourceId));
+  return LoadIconA((HINSTANCE)GetModuleHandleA(NULL),
+                   MAKEINTRESOURCEA(resourceId));
 }
 
 /** Show the tray icon image. */
