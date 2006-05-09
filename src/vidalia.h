@@ -39,7 +39,7 @@
 #include <config/vidaliasettings.h>
 #include <control/torcontrol.h>
 
-#define VIDALIA_VERSION   "0.0.4-svn"
+#define VIDALIA_VERSION   "0.0.4"
 
 
 class Vidalia : public QApplication
