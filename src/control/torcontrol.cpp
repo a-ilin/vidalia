@@ -171,14 +171,14 @@ TorControl::onConnected()
     stop();
     return;
   }
-  
-  /* Let interested parties know that the control socket connected */
-  emit connected();
-  emit connected(true);
   /* The control socket is connected, so we can stop reading from stdout */
   if (_torProcess) {
     _torProcess->closeStdout();
   }
+  
+  /* Let interested parties know that the control socket connected */
+  emit connected();
+  emit connected(true);
 }
 
 /** Emits a signal that the control connection to Tor failed. */
