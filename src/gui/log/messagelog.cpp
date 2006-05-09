@@ -80,7 +80,7 @@ MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
   registerLogEvents();
 
   /* Show number of message displayed in Status bar */
-  ui.lstMessages->setStatusTip(tr("Messages Shown: ") += "0");
+  ui.lstMessages->setStatusTip(tr("Messages Shown: ") + "0");
 
   /* Set columns to correct widths */
   ui.lstMessages->header()->resizeSection(COL_TIME, COL_TIME_WIDTH);
