@@ -38,7 +38,10 @@
 
 class LogTreeWidget : public QTreeWidget
 {
+  Q_OBJECT
+
 public:
+
   /** Log tree column indices. */
   enum LogColumns {
     TimeColumn    = 0, /**< Timestamp column. */
