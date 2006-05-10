@@ -150,8 +150,9 @@ NetViewer::show()
   if (!this->isVisible()) {
     QMainWindow::show();
   } else {
-    QMainWindow::activateWindow();
-    QMainWindow::raise();
+    activateWindow();
+    setWindowState(windowState() & ~Qt::WindowMinimized | Qt::WindowActive);
+    raise();
   }
 }
 

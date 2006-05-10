@@ -105,7 +105,7 @@ MainWindow::MainWindow()
   _bandwidthGraph = new BandwidthGraph(this, bw_flags);
 
   /* Create a new NetViewer object so we can monitor the network */
-  _netViewer = new NetViewer(this);
+  _netViewer = new NetViewer();
 
   /* Put an icon in the system tray to indicate the status of Tor */
   _trayIcon = new TrayIcon(IMG_TOR_STOPPED,
@@ -124,6 +124,7 @@ MainWindow::~MainWindow()
   _trayIcon->hide();
   delete _trayIcon;
   delete _messageLog;
+  delete _netViewer;
 }
 
 /** Called when the application is closing, by selecting "Exit" from the tray
