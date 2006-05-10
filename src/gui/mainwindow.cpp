@@ -98,7 +98,7 @@ MainWindow::MainWindow()
                  this, SLOT(connectFailed(QString)));
 
   /* Create a new MessageLog object so messages can be logged when not shown */
-  _messageLog = new MessageLog(this);
+  _messageLog = new MessageLog();
   
   /* Create a new BandwidthGraph object so we can monitor bandwidth usage */
   Qt::WFlags bw_flags = (Qt::Tool | Qt::WindowStaysOnTopHint);
@@ -123,6 +123,7 @@ MainWindow::~MainWindow()
 {
   _trayIcon->hide();
   delete _trayIcon;
+  delete _messageLog;
 }
 
 /** Called when the application is closing, by selecting "Exit" from the tray
