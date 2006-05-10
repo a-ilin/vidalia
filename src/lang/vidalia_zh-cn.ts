@@ -763,6 +763,17 @@ Upgrade to a newer version of Tor.</source>
     </message>
 </context>
 <context>
+    <name>LogTreeWidget</name>
+    <message>
+        <source>Messages Shown: </source>
+        <translation type="unfinished">显示的消息：</translation>
+    </message>
+    <message>
+        <source>Messages Shown: %1</source>
+        <translation type="unfinished">显示的消息：%1</translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <source>Tor is Stopped</source>
@@ -1201,7 +1212,7 @@ Would you like to shutdown gracefully and give clients time to find a new server
     </message>
     <message>
         <source>Messages Shown: </source>
-        <translation>显示的消息：</translation>
+        <translation type="obsolete">显示的消息：</translation>
     </message>
     <message>
         <source>Messages that appear when something has 
@@ -1291,12 +1302,12 @@ Error: </source>
     </message>
     <message>
         <source>Messages Shown: %1</source>
-        <translation>显示的消息：%1</translation>
+        <translation type="obsolete">显示的消息：%1</translation>
     </message>
     <message>
         <source>%1 [%2] %3
 </source>
-        <translation>%1 [%2] %3
+        <translation type="obsolete">%1 [%2] %3
 </translation>
     </message>
     <message>

@@ -473,6 +473,17 @@ Upgrade to a newer version of Tor.</source>
     </message>
 </context>
 <context>
+    <name>LogTreeWidget</name>
+    <message>
+        <source>Messages Shown: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Messages Shown: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <source>Tor is Stopped</source>
@@ -829,10 +840,6 @@ Would you like to shutdown gracefully and give clients time to find a new server
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Messages Shown: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Messages that appear when something has 
 gone very wrong and Tor cannot proceed.</source>
         <translation type="unfinished"></translation>
@@ -897,15 +904,6 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Search found 0 matches.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Messages Shown: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 [%2] %3
-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
