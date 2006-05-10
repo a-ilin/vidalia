@@ -312,7 +312,7 @@
      <number>6</number>
     </property>
     <item>
-     <widget class="QTreeWidget" name="lstMessages" >
+     <widget class="LogTreeWidget" name="lstMessages" >
       <property name="contextMenuPolicy" >
        <enum>Qt::NoContextMenu</enum>
       </property>
@@ -980,6 +980,15 @@
   </action>
  </widget>
  <pixmapfunction></pixmapfunction>
+ <customwidgets>
+  <customwidget>
+   <class>LogTreeWidget</class>
+   <extends>QTreeWidget</extends>
+   <header>gui/log/logtreewidget.h</header>
+   <container>0</container>
+   <pixmap></pixmap>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="res/vidalia_common.qrc" />
   <include location="../res/vidalia_common.qrc" />

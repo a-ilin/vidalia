@@ -28,19 +28,15 @@
 #define _MESSAGELOG_H
 
 #include <QMainWindow>
-#include <QTreeWidgetItem>
-#include <QDateTime>
 #include <QInputDialog>
 #include <QFileDialog>
-#include <QCloseEvent>
 #include <QMessageBox>
 #include <QTextStream>
-#include <QClipboard>
-#include <QHeaderView>
 
 #include <control/torcontrol.h>
 #include <config/vidaliasettings.h>
 
+#include "logtreeitem.h"
 #include "ui_messagelog.h"
 
 
@@ -54,7 +50,6 @@ public:
   /** Default destructor **/
   ~MessageLog();
   
-
 protected:
   /** Called to deliver custom event types */
   void customEvent(QEvent *event);
@@ -70,11 +65,9 @@ private slots:
   void saveSelected();
   /** Called when the user triggers the copy action **/
   void copy();
-  /** Called when the user tiggers the clear action **/
-  void clear();
   /** Called when the user triggers the find action. This will search
    * through all currently displayed log entries for text specified by the
-   * user, highlighting the entires that contain a match. */
+   * user, highlighting the entries that contain a match. */
   void find();
   /** Called when user saves settings **/
   void saveChanges();
@@ -92,25 +85,12 @@ private:
   void setToolTips();
   /** Loads the saved Message Log settings **/
   void loadSettings();
-  /** Shows/Hides messages based on message filters **/
-  void filterLog();
   /** Registers the current message filter with Tor */
   void registerLogEvents();
   /** Saves the given list of items to a file */
-  void save(QList<QTreeWidgetItem *> items);
-  /** Searches the message log for entries that contain the given text. */
-  QList<QTreeWidgetItem *> search(QString text);
-  /** Deselects all currently selected items. */
-  void deselectAllItems();
+  void save(QList<LogTreeItem *> items);
   /** Adds the passed message to the message log as the specified type **/
   void log(LogEvent::Severity, QString msg);
-  /** Creates a new log message item and returns a pointer to it. */
-  QTreeWidgetItem* newMessageItem(LogEvent::Severity type, QString msg);
-  /** Returns a QString with the elements of the given message item properly
-   * formatted for writing to a log file. */
-  QString format(QTreeWidgetItem *messageItem);
-  /** Chronologically sorts the given list of log message items */
-  QList<QTreeWidgetItem *> sort(QList<QTreeWidgetItem *> list);
   /** Opens a QTextStream to the log file */
   bool openLogFile(QString filename);
 
@@ -120,10 +100,6 @@ private:
   VidaliaSettings* _settings;
   /** Stores the current message filter */
   uint _filter;
-  /** Holds the maximum number of messages to log **/
-  int _maxCount;
-  /** Holds the number of messages currently displayed **/
-  int _messagesShown;
   /** Set to true if we will log all messages to a file. */  	 
   bool _enableLogging;  
   /** The log file used to store log messages. */

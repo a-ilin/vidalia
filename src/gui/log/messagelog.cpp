@@ -26,21 +26,12 @@
 
 #include <QMessageBox>
 #include <QInputDialog>
-
+#include <QClipboard>
 #include <vidalia.h>
 #include <util/html.h>
+
 #include "messagelog.h"
 
-#define COL_TIME  0 /** Date/time column */
-#define COL_TYPE  1 /** Message severity type column */
-#define COL_MSG   2 /** Message body column */
-#define ROLE_TYPE Qt::UserRole /** Role used to store the numeric type */
-#define COL_TIME_WIDTH 135 /** Default width of date/time column */
-#define COL_TYPE_WIDTH 70 /** Default width of the severity type column */
-
-/** Defines the format used for displaying the date and time of a log message */
-#define DATETIME_FMT  "MMM dd hh:mm:ss:zzz"
-      
 
 /** Constructor. The constructor will load the message log's settings from
  * VidaliSettings and register for log events according to the most recently
@@ -65,10 +56,6 @@ MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
   /* Set tooltips for necessary widgets */
   setToolTips();
   
-  /* Initialize message counters */
-  _messagesShown = 0;
-  _maxCount = _settings->getMaxMsgCount();
-
   /* Load the message log's stored settings */
   _logFile = 0;
   _enableLogging = _settings->isLogFileEnabled();
@@ -78,13 +65,6 @@ MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
 
   /* Ask Tor to give me some log events */
   registerLogEvents();
-
-  /* Show number of message displayed in Status bar */
-  ui.lstMessages->setStatusTip(tr("Messages Shown: ") + "0");
-
-  /* Set columns to correct widths */
-  ui.lstMessages->header()->resizeSection(COL_TIME, COL_TIME_WIDTH);
-  ui.lstMessages->header()->resizeSection(COL_TYPE, COL_TYPE_WIDTH);
 }
 
 /** Default Destructor. Simply frees up any memory allocated for member
@@ -112,7 +92,7 @@ MessageLog::createActions()
       this, SLOT(copy()));
 
   connect(ui.actionClear, SIGNAL(triggered()),
-      this, SLOT(clear()));
+      ui.lstMessages, SLOT(clear()));
   
   connect(ui.actionFind, SIGNAL(triggered()),
       this, SLOT(find()));
@@ -218,19 +198,9 @@ MessageLog::saveChanges()
   /* Disable the cursor to prevent problems while refiltering */
   QApplication::setOverrideCursor(Qt::WaitCursor);
   
-  int newMax = ui.spnbxMaxCount->value();
-  /* If necessary, save new max counter and remove extra messages */
-  if (_maxCount != newMax) {
-    /* if new max is < number of shown messages then remove some */
-    while (newMax < _messagesShown) {
-      if (!ui.lstMessages->isItemHidden(ui.lstMessages->topLevelItem(0))) {
-        _messagesShown--;
-      }
-      delete ui.lstMessages->takeTopLevelItem(0);
-    }
-    _settings->setMaxMsgCount(newMax);
-    _maxCount = newMax;
-  }
+  /* Update the maximum displayed item count */
+  _settings->setMaxMsgCount(ui.spnbxMaxCount->value());
+  ui.lstMessages->setMaximumItemCount(ui.spnbxMaxCount->value());
 
   /* Save message filter and refilter the list */
   _settings->setMsgFilter(LogEvent::TorError, ui.chkTorErr->isChecked());
@@ -241,11 +211,7 @@ MessageLog::saveChanges()
 
   /* Refilter the list */
   registerLogEvents();
-  filterLog();
-
-  /* Set Message Counter */
-  ui.lstMessages->setStatusTip(tr("Messages Shown: %1")
-                                  .arg(_messagesShown));
+  ui.lstMessages->filter(_filter);
 
   /* Restore the cursor */
   QApplication::restoreOverrideCursor();
@@ -306,64 +272,6 @@ MessageLog::openLogFile(QString filename)
   return true;
 }
 
-/** Cycles through the list, applies current message filter to the list */
-void
-MessageLog::filterLog()
-{
-  QTreeWidgetItem* current;
-  int currentIndex = ui.lstMessages->topLevelItemCount() - 1;
-  bool showCurrent;
-  _messagesShown = 0;
-  
-  while (currentIndex > -1) {
-    current = ui.lstMessages->topLevelItem(currentIndex);
-    
-    /* Interate through list, check each message along the way */
-    if (_messagesShown < _maxCount) {
-      /* Remove messages we aren't interested in, leave the rest */
-      showCurrent = (bool)(_filter & (uint)current->data(COL_TYPE,ROLE_TYPE).toUInt());
-      if (showCurrent) {
-        _messagesShown++;
-      } else {
-        delete ui.lstMessages->takeTopLevelItem(currentIndex);
-      }     
-    /* If we are showing the maximum, then get rid of the rest */
-    } else {
-      delete ui.lstMessages->takeTopLevelItem(currentIndex);
-    }
-    currentIndex--;
-  }
-}
-
-/** Formats a message item from the message log into a format suitable for
- * writing to the clipboard or saving to a file.
- * \param messageItem A message log item to format.
- * \return A properly formatted log message as a string.
- */
-QString
-MessageLog::format(QTreeWidgetItem *item)
-{
-  return tr("%1 [%2] %3\n").arg(item->text(COL_TIME))
-                                .arg(item->text(COL_TYPE))
-                                .arg(item->text(COL_MSG).trimmed());
-}
-
-/** Sorts the given list of log message items in ascending chronological
- * order.
- * \param list The unsorted list of message items.
- * \return The sorted list of message items.
- */
-QList<QTreeWidgetItem *>
-MessageLog::sort(QList<QTreeWidgetItem *> items)
-{
-  QMap<QDateTime, QTreeWidgetItem *> sortedList;
-  foreach (QTreeWidgetItem *item, items) {
-    sortedList.insert(
-       QDateTime::fromString(item->text(COL_TIME), DATETIME_FMT), item);
-  }
-  return sortedList.values();
-}
-
 /** Called when the user clicks "Browse" to select a new log file. */
 void
 MessageLog::browse()
@@ -381,7 +289,7 @@ MessageLog::browse()
  * \param items A list of log message items to save. 
  */
 void
-MessageLog::save(QList<QTreeWidgetItem *> items)
+MessageLog::save(QList<LogTreeItem *> items)
 {
   if (!items.size()) {
     return;
@@ -409,8 +317,8 @@ MessageLog::save(QList<QTreeWidgetItem *> items)
     /* Write out the message log to the file */
     QTextStream out(&file);
     QApplication::setOverrideCursor(Qt::WaitCursor);
-    foreach (QTreeWidgetItem *item, sort(items)) {
-      out << format(item);
+    foreach (LogTreeItem *item, items) {
+      out << item->toString();
     }
     QApplication::restoreOverrideCursor();
   }
@@ -427,30 +335,20 @@ MessageLog::saveSelected()
 void
 MessageLog::saveAll()
 {
-  save(ui.lstMessages->findItems("*", Qt::MatchWildcard));
+  save(ui.lstMessages->allItems());
 }
 
 /** Copies contents of currently selected messages to the 'clipboard'. */
 void
 MessageLog::copy()
 {
-  QList<QTreeWidgetItem *> selected = sort(ui.lstMessages->selectedItems());
-  int count = selected.size();
-  
-  /* Do nothing if there are no selected messages */
-  if (!count) {
-    return;
+  QString contents = ui.lstMessages->selectedItemsText();
+  if (!contents.isEmpty()) {
+    /* Clear anything on the clipboard */
+    QApplication::clipboard()->clear();
+    /* Copy the selected messages to the clipboard */
+    QApplication::clipboard()->setText(contents);
   }
-  
-  /* Clear anything on the clipboard */
-  QApplication::clipboard()->clear();
-
-  /* Copy the selected messages to the clipboard */
-  QString contents;
-  for(int i=0; i < count; i++) {
-    contents += format(selected[i]); 
-  }
-  QApplication::clipboard()->setText(contents);
 }
 
 /** Prompts the user for a search string. If the search string is not found in
@@ -461,99 +359,22 @@ MessageLog::copy()
 void
 MessageLog::find()
 {
-  QString empty;
   bool ok;
   QString text = QInputDialog::getText(this, tr("Find in Message Log"),
                   tr("Find:"), QLineEdit::Normal, QString(), &ok);
   
   if (ok && !text.isEmpty()) {
-    QTreeWidget *tree = ui.lstMessages;
-    QList<QTreeWidgetItem *> results = sort(search(text));
+    /* Search for the user-specified text */
+    QList<LogTreeItem *> results = ui.lstMessages->find(text);
     if (!results.size()) {
       QMessageBox::information(this, tr("Not Found"), 
                                p(tr("Search found 0 matches.")), 
                                QMessageBox::Ok, QMessageBox::NoButton);
     } else {
-      /* Deselect all currently selected items */
-      deselectAllItems();
-      /* Select the new matching items */
-      foreach(QTreeWidgetItem *item, results) {
-        if (!tree->isItemHidden(item)) {
-           tree->setItemSelected(item, true);
-         }
-      }
       /* Set the focus to the first match */
-      tree->scrollToItem(results.at(0));
+      ui.lstMessages->scrollToItem(results.at(0));
     }
   }
-}
-
-/** Clears the message list and resets the message counter. */
-void
-MessageLog::clear()
-{
-  _messagesShown = 0;
-  ui.lstMessages->setStatusTip(tr("Messages Shown: %1")
-                                  .arg(_messagesShown));
-}
-
-/** Searches the currently displayed log entries for the given search text.
- * \param text The text to search for.
- * \return A list of all log items containing the search text. 
- */
-QList<QTreeWidgetItem *>
-MessageLog::search(QString text)
-{
-  QTreeWidget *tree = ui.lstMessages;
-  QList<QTreeWidgetItem *> results;
-
-  /* Search through the messages in the tree, case-insensitively */
-  return tree->findItems(text, Qt::MatchContains|Qt::MatchWrap, COL_MSG);
-}
-
-/** Deselects all currently selected items. */
-void
-MessageLog::deselectAllItems()
-{
-  QTreeWidget *tree = ui.lstMessages;
-  foreach(QTreeWidgetItem *item, tree->selectedItems()) {
-    tree->setItemSelected(item, false);
-  }
-}
-
-/** Creates a new log item in the message log and returns a pointer to it.
- * \param type The log event severity
- * \param message The log message.
- * \return A pointer to the new message log item.
- */
-QTreeWidgetItem *
-MessageLog::newMessageItem(LogEvent::Severity type, QString message)
-{
-  QTreeWidgetItem *newMessage = new QTreeWidgetItem();
-  
-  /* Change row color and text for serious warnings and errors */
-  if (type == LogEvent::TorError) {
-    /* Critical messages are red with white text */
-    for (int i=0; i < ui.lstMessages->columnCount(); i++) {
-      newMessage->setBackgroundColor(i, Qt::red);
-      newMessage->setTextColor(i, Qt::white);
-    }
-  } else if (type == LogEvent::TorWarn) {
-    /* Warning messages are yellow with black text */
-    for (int i=0; i < ui.lstMessages->columnCount(); i++) {
-      newMessage->setBackgroundColor(i, Qt::yellow);
-    }
-  }
-  
-  /* Assemble the new log message item */
-  newMessage->setText(COL_TIME,
-      QDateTime::currentDateTime().toString(DATETIME_FMT));
-  newMessage->setTextAlignment(COL_TYPE, Qt::AlignCenter);
-  newMessage->setText(COL_TYPE, LogEvent::severityToString(type));
-  newMessage->setText(COL_MSG, message);
-  newMessage->setData(COL_TYPE, ROLE_TYPE, (uint)type);
-  
-  return newMessage;
 }
 
 /** Writes a message to the Message History and tags it with
@@ -564,26 +385,15 @@ MessageLog::newMessageItem(LogEvent::Severity type, QString message)
 void 
 MessageLog::log(LogEvent::Severity type, QString message)
 {
-  QTreeWidgetItem *newMessage = newMessageItem(type, message);
-
   /* Only add the message if it's not being filtered out */
   if (_filter & (uint)type) {
-    /* Remove oldest message if log is at maximum length */
-    if (_messagesShown == _maxCount) {
-      delete ui.lstMessages->takeTopLevelItem(0);
-      _messagesShown--;
-    }
-    
-    ui.lstMessages->addTopLevelItem(newMessage);
-
-    _messagesShown++;
-    ui.lstMessages->setStatusTip(tr("Messages Shown: %1")
-                                  .arg(_messagesShown));
-    ui.lstMessages->scrollToItem(newMessage);
+    /* Add the message to the list and scroll to it. */
+    LogTreeItem *item = ui.lstMessages->log(type, message);
+    ui.lstMessages->scrollToItem(item);
 
     /* If we're saving log messages to a file, go ahead and do that now */
     if (_enableLogging) {
-      _logStream << format(newMessage);
+      _logStream << item->toString();
       _logStream.flush(); /* Write to disk right away */
     }
   }
