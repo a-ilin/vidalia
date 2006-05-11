@@ -83,9 +83,6 @@ MessageLog::createActions()
   connect(ui.actionCopy, SIGNAL(triggered()),
       this, SLOT(copy()));
 
-  connect(ui.actionClear, SIGNAL(triggered()),
-      ui.lstMessages, SLOT(clear()));
-  
   connect(ui.actionFind, SIGNAL(triggered()),
       this, SLOT(find()));
 
@@ -100,9 +97,6 @@ MessageLog::createActions()
 
   connect(ui.btnBrowse, SIGNAL(clicked()),
       this, SLOT(browse()));
-
-  connect(ui.chkEnableLogFile, SIGNAL(toggled(bool)),
-          ui.btnBrowse, SLOT(setEnabled(bool)));
 }
 
 /** Set tooltips for Message Filter checkboxes in code because they are long
