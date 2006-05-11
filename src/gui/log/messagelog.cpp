@@ -74,6 +74,8 @@ MessageLog::~MessageLog()
 void
 MessageLog::resizeEvent(QResizeEvent *event)
 {
+  Q_UNUSED(event);
+
   /* Let the message list know that it may need to add a scrollbar */
   ui.lstMessages->adjustMessageColumn();
 }

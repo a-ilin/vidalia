@@ -1260,7 +1260,7 @@ Error: </source>
     </message>
     <message>
         <source>Vidalia was unable to open the specified log file for writing.</source>
-        <translation>Vidalia无法打开要写入的指定日志文件</translation>
+        <translation type="obsolete">Vidalia无法打开要写入的指定日志文件</translation>
     </message>
     <message>
         <source>Select Log File</source>
@@ -1349,6 +1349,10 @@ Error: </source>
         <translation>无法写入文件%1
 <byte value="x9"/><byte value="x9"/>
 %2。</translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to open the specified log file.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

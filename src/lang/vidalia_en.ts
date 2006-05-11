@@ -875,10 +875,6 @@ interest to Tor developers.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Vidalia was unable to open the specified log file for writing.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Select Log File</source>
         <translation type="unfinished"></translation>
     </message>
@@ -938,6 +934,10 @@ interest to Tor developers.</source>
         <source>Cannot write file %1
 
 %2.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to open the specified log file.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
