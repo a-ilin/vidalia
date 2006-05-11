@@ -121,7 +121,8 @@ Vidalia::printUsage(QString errmsg)
   out << "\t\t\t[" << LanguageSupport::languageCodes().join("|") << "]" << endl;
 }
 
-/** */
+/** Parses the list of command-line arguments for their argument names and
+ * values. */
 void
 Vidalia::parseArguments(QStringList args)
 {
