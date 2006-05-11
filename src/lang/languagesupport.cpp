@@ -38,7 +38,7 @@ LanguageSupport::initialize()
 {
   _languages.clear();
   _languages.insert("en",    "English");
-  _languages.insert("fi",    "sumoi");
+  _languages.insert("fi",    "suomi");
   _languages.insert("zh-cn", QString::fromUtf8("\347\256\200\344\275\223\345\255\227"));
 }
 
