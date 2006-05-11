@@ -31,6 +31,7 @@
 #include <QString>
 #include <QTreeWidget>
 #include <QHeaderView>
+#include <QShowEvent>
 #include <control/logevent.h>
 
 #include "logtreeitem.h"
@@ -52,6 +53,8 @@ public:
   /** Default constructor. */
   LogTreeWidget(QWidget *parent = 0);
 
+  /** Adds a message log item. */
+  void addItem(LogTreeItem *item);
   /** Returns a list of all currently selected items. */
   QList<LogTreeItem *> selectedItems();
   /** Returns a list of all selected items as a formatted string. */
@@ -67,13 +70,20 @@ public:
   void setMaximumItemCount(int max);
   /** Filters the log according to the specified filter. */
   void filter(uint filter);
-
+  
   /** Adds a log item to the tree. */
   LogTreeItem* log(LogEvent::Severity type, QString message);
   
   /** Searches the log for entries that contain the given text. */
   QList<LogTreeItem *> find(QString text, bool highlight = true);
 
+  /** Adjusts the message column, for long messages. */
+  void adjustMessageColumn();
+
+protected:
+  /** Sets the default, initial column header widths. */
+  void showEvent(QShowEvent *event);
+  
 private:
   /** Casts a QList of one pointer type to another. */
   QList<LogTreeItem *> qlist_cast(QList<QTreeWidgetItem *> inlist);

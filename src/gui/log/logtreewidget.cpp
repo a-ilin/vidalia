@@ -32,9 +32,9 @@
 LogTreeWidget::LogTreeWidget(QWidget *parent)
 : QTreeWidget(parent)
 {
-  setStatusTip(tr("Messages Shown: ") + "0");
-
   setHeader(new LogHeaderView(this));
+  
+  setStatusTip(tr("Messages Shown: ") + "0");
 }
 
 /** Cast a QList of QTreeWidgetItem pointers to a list of LogTreeWidget
@@ -58,6 +58,38 @@ LogTreeWidget::qlist_sort(QList<LogTreeItem *> inlist)
     outlist.insert(item->timestamp(), item);
   }
   return outlist.values();
+}
+
+/** The first time the log tree is shown, we need to set the default column
+ * widths. */
+void
+LogTreeWidget::showEvent(QShowEvent *event)
+{
+  static bool shown = false;
+  QTreeWidget::showEvent(event);
+  if (!shown) {
+    /* Set the default column widths the first time this is shown */
+    ((LogHeaderView *)header())->resetColumnWidths();
+    shown = true;
+  }
+}
+
+/** Adjusts the message column width to accomodate long messages. */
+void
+LogTreeWidget::adjustMessageColumn()
+{
+  /* Adjust the message column, based on the longest item. */
+  ((LogHeaderView *)header())->resize(sizeHintForColumn(MessageColumn));
+}
+
+/** Adds a message log item. */
+void
+LogTreeWidget::addItem(LogTreeItem *item)
+{
+  /* Add the new item. */
+  addTopLevelItem(item);
+  /* Adjust the column headers to accomodate a long message, if necesssary */
+  adjustMessageColumn();
 }
 
 /** Returns a list of all currently selected items. */
@@ -128,7 +160,7 @@ LogTreeWidget::log(LogEvent::Severity type, QString message)
   }
   
   /* Add the new message item */
-  addTopLevelItem(item);
+  addItem(item);
 
   /* Update our tooltip and return the new log item */
   setStatusTip(tr("Messages Shown: %1").arg(itemCount()));

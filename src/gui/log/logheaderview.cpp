@@ -27,9 +27,11 @@
 #include "logheaderview.h"
 #include "logtreewidget.h"
 
+
 /* Column indices */
 #define COL_TIME  LogTreeWidget::TimeColumn
 #define COL_TYPE  LogTreeWidget::TypeColumn
+#define COL_MESG  LogTreeWidget::MessageColumn
 
 /* Default column widths */
 #define COL_TIME_WIDTH    135
@@ -40,9 +42,29 @@
 LogHeaderView::LogHeaderView(QWidget *parent)
 : QHeaderView(Qt::Horizontal, parent)
 {
+}
+
+/** Resets all column widths back to their defaults. */
+void
+LogHeaderView::resetColumnWidths()
+{
   resizeSection(COL_TIME, COL_TIME_WIDTH);
   resizeSection(COL_TYPE, COL_TYPE_WIDTH);
-
   setStretchLastSection(true);
+}
+
+/** Resizes the column headers based on the longest message item. */
+void
+LogHeaderView::resize(int hint)
+{
+  int size = sectionSize(COL_MESG);
+  if (hint > size) {
+    /* The message is wider than the window, so expand the column */
+    setStretchLastSection(false);
+    resizeSection(COL_MESG, hint);
+  } else if (hint < size) {
+    /* The message is short, so just stretch the last column to the end */
+    setStretchLastSection(true);
+  }
 }
 

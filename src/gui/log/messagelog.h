@@ -28,6 +28,7 @@
 #define _MESSAGELOG_H
 
 #include <QMainWindow>
+#include <QResizeEvent>
 #include <control/torcontrol.h>
 #include <config/vidaliasettings.h>
 
@@ -74,6 +75,10 @@ private slots:
   /** Called when the user clicks "Help" to see help info about the log. */
   void help();
 
+protected:
+  /** Responds to the user resizing the message log. */
+  void resizeEvent(QResizeEvent *event);
+  
 private:  
   /** Create and bind actions to events **/
   void createActions();
