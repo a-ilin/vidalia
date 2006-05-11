@@ -25,7 +25,9 @@
  */
 
 #include <QMessageBox>
+#include <QFileDialog>
 #include <QInputDialog>
+#include <QMessageBox>
 #include <QClipboard>
 #include <vidalia.h>
 #include <util/html.h>
@@ -57,14 +59,7 @@ MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
   setToolTips();
   
   /* Load the message log's stored settings */
-  _logFile = 0;
-  _enableLogging = _settings->isLogFileEnabled();
-  if (_enableLogging) {
-    openLogFile(_settings->getLogFile());
-  }
-
-  /* Ask Tor to give me some log events */
-  registerLogEvents();
+  loadSettings();
 }
 
 /** Default Destructor. Simply frees up any memory allocated for member
@@ -72,10 +67,7 @@ MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
 MessageLog::~MessageLog()
 {
   delete _settings;
-
-  if (_logFile) {
-    delete _logFile;
-  }
+  _logFile.close();
 }
 
 /** Binds events (signals) to actions (slots). */
@@ -101,13 +93,16 @@ MessageLog::createActions()
       this, SLOT(help()));
   
   connect(ui.btnSaveSettings, SIGNAL(clicked()),
-      this, SLOT(saveChanges()));
+      this, SLOT(saveSettings()));
 
   connect(ui.btnCancelSettings, SIGNAL(clicked()),
       this, SLOT(cancelChanges()));
 
   connect(ui.btnBrowse, SIGNAL(clicked()),
       this, SLOT(browse()));
+
+  connect(ui.chkEnableLogFile, SIGNAL(toggled(bool)),
+          ui.btnBrowse, SLOT(setEnabled(bool)));
 }
 
 /** Set tooltips for Message Filter checkboxes in code because they are long
@@ -135,11 +130,13 @@ MessageLog::loadSettings()
 {
   /* Set Max Count widget */
   ui.spnbxMaxCount->setValue(_settings->getMaxMsgCount());
+  ui.lstMessages->setMaximumItemCount(_settings->getMaxMsgCount());
 
   /* Set whether or not logging to file is enabled */
   _enableLogging = _settings->isLogFileEnabled();
-  ui.chkEnableLogFile->setChecked(_enableLogging);
-  ui.lineFile->setText(_settings->getLogFile());
+  rotateLogFile(_settings->getLogFile());
+  ui.lineFile->setText(QDir::convertSeparators(_settings->getLogFile()));
+  ui.chkEnableLogFile->setChecked(_logFile.isOpen());
 
   /* Set the checkboxes accordingly */
   _filter = _settings->getMsgFilter();
@@ -148,6 +145,12 @@ MessageLog::loadSettings()
   ui.chkTorNote->setChecked(_filter & LogEvent::TorNotice);
   ui.chkTorInfo->setChecked(_filter & LogEvent::TorInfo);
   ui.chkTorDebug->setChecked(_filter & LogEvent::TorDebug);
+  registerLogEvents();
+ 
+  /* Filter the message log */
+  QApplication::setOverrideCursor(Qt::WaitCursor);
+  ui.lstMessages->filter(_filter);
+  QApplication::restoreOverrideCursor();
 }
 
 /** Attempts to register the selected message filter with Tor and displays an
@@ -156,7 +159,6 @@ void
 MessageLog::registerLogEvents()
 {
   QString errmsg;
-  _filter = _settings->getMsgFilter();
   if (!_torControl->setLogEvents(_filter, this, &errmsg)) {
     QMessageBox::warning(this, tr("Error Setting Filter"),
       p(tr("Vidalia was unable to register for Tor's log events.")) + p(errmsg),
@@ -164,57 +166,62 @@ MessageLog::registerLogEvents()
   }
 }
 
+/** Opens a log file if necessary, or closes it if logging is disabled. If a
+ * log file is already opened and a new filename is specified, then the log
+ * file will be rotated to the new filename. In the case that the new filename
+ * can not be openend, the old file will remain open and writable. */
+bool
+MessageLog::rotateLogFile(QString filename)
+{
+  QString errmsg;
+  if (_enableLogging) {
+    if (!_logFile.open(filename, &errmsg)) {
+      QMessageBox::warning(this, tr("Error Opening Log File"),
+        p(tr("Vidalia was unable to open the specified log file.")) +
+        p(errmsg),
+        QMessageBox::Ok, QMessageBox::NoButton);
+      return false;
+    }
+  } else {
+    /* Close the log file. */
+    _logFile.close();
+  }
+  return true;
+}
+
 /** Saves the Message Log settings, adjusts the message list if required, and
  * then hides the settings frame. */
 void
-MessageLog::saveChanges()
+MessageLog::saveSettings()
 {
+  /* Update the logging status */
   _enableLogging = ui.chkEnableLogFile->isChecked();
-  /* Try to open the log file. If it can't be opened, then give the user an
-   * error message and undo changes so what they see is still what is set */
-  if (_enableLogging) {
-    if (!openLogFile(ui.lineFile->text())) {
-      QMessageBox::warning(this, tr("Error Opening Log File"),
-        p(tr("Vidalia was unable to open the specified log file for writing.")),
-        QMessageBox::Ok, QMessageBox::NoButton);
-      cancelChanges();
-      return;
-    }
+  if (rotateLogFile(ui.lineFile->text())) {
     _settings->setLogFile(ui.lineFile->text());
-    ui.lineFile->setText(QDir::convertSeparators(ui.lineFile->text()));
+    _settings->enableLogFile(_logFile.isOpen());
   }
-  /* If they were previously logging and turned it off, close the file */
-  else {
-    if (_logFile) {
-      delete _logFile;
-      _logFile = 0;
-    }
-  }
-  _settings->enableLogFile(_enableLogging);
-  
-  /* Hide the settings frame and reset toggle button*/
-  ui.actionSettings->toggle(); 
-  
-  /* Disable the cursor to prevent problems while refiltering */
-  QApplication::setOverrideCursor(Qt::WaitCursor);
-  
+  ui.lineFile->setText(QDir::convertSeparators(ui.lineFile->text()));
+  ui.chkEnableLogFile->setChecked(_logFile.isOpen());
+
   /* Update the maximum displayed item count */
   _settings->setMaxMsgCount(ui.spnbxMaxCount->value());
   ui.lstMessages->setMaximumItemCount(ui.spnbxMaxCount->value());
-
+  
   /* Save message filter and refilter the list */
   _settings->setMsgFilter(LogEvent::TorError, ui.chkTorErr->isChecked());
   _settings->setMsgFilter(LogEvent::TorWarn, ui.chkTorWarn->isChecked());
   _settings->setMsgFilter(LogEvent::TorNotice, ui.chkTorNote->isChecked());
   _settings->setMsgFilter(LogEvent::TorInfo, ui.chkTorInfo->isChecked());
   _settings->setMsgFilter(LogEvent::TorDebug, ui.chkTorDebug->isChecked());
-
-  /* Refilter the list */
   registerLogEvents();
+  
+  /* Filter the message log */
+  QApplication::setOverrideCursor(Qt::WaitCursor);
   ui.lstMessages->filter(_filter);
-
-  /* Restore the cursor */
   QApplication::restoreOverrideCursor();
+   
+  /* Hide the settings frame and reset toggle button*/
+  ui.actionSettings->toggle(); 
 }
 
 /** Simply restores the previously saved settings and hides the settings
@@ -224,52 +231,8 @@ MessageLog::cancelChanges()
 {
   /* Hide the settings frame and reset toggle button */
   ui.actionSettings->toggle();
-
   /* Reload the settings */
   loadSettings();
-}
-
-/** Attempts to open the specified log file and sets _logStream to use the
- * opened file. If a log file is previously opened and opening the new log
- * file fails, then the old log file will not be affected.
- * \param filename The name of a file to which log messages will be saved.
- * \return true if the log was successfully opened.
- */
-bool
-MessageLog::openLogFile(QString filename)
-{
-  QFile *newLogFile;
-  if (_logFile && _logFile->isOpen()) {
-    if (_logFile->fileName() == filename) {
-      /* The specified log file is already open */
-      return true;
-    }
-  }
-  
-  /* Create the directory if necessary */
-  QString path = filename.left(filename.lastIndexOf(QDir::separator()));
-  QDir dir(path);
-  if (!dir.exists()) {
-    if (!dir.mkpath(path)) {
-      return false;
-    }
-  }
-  
-  newLogFile = new QFile(filename, this);
-  
-  /* Try to open the new log file */
-  if (!newLogFile->open(QFile::WriteOnly | QIODevice::Append | QIODevice::Text)) {
-    delete newLogFile;
-    return false;
-  } 
-
-  /* Opening succeeded, so swap out the old logfile for the new one and adjust
-   * the QTextStream object's device. */
-  delete _logFile;
-  _logFile = newLogFile;
-  _logStream.setDevice(_logFile);
-  
-  return true;
 }
 
 /** Called when the user clicks "Browse" to select a new log file. */
@@ -303,22 +266,22 @@ MessageLog::save(QList<LogTreeItem *> items)
   
   /* If the choose to save */
   if (!fileName.isEmpty()) {
-    QFile file(fileName);
+    LogFile logFile;
+    QString errmsg;
     
     /* If can't write to file, show error message */
-    if (!file.open(QFile::WriteOnly | QFile::Text)) {
+    if (!logFile.open(fileName, &errmsg)) {
       QMessageBox::warning(this, tr("Vidalia"),
-                          p(tr("Cannot write file %1\n\n%2."))
-                          .arg(fileName)
-                          .arg(file.errorString()));
+                           p(tr("Cannot write file %1\n\n%2."))
+                            .arg(fileName)
+                            .arg(errmsg));
       return;
     }
    
     /* Write out the message log to the file */
-    QTextStream out(&file);
     QApplication::setOverrideCursor(Qt::WaitCursor);
     foreach (LogTreeItem *item, items) {
-      out << item->toString();
+      logFile << item->toString();
     }
     QApplication::restoreOverrideCursor();
   }
@@ -393,8 +356,7 @@ MessageLog::log(LogEvent::Severity type, QString message)
 
     /* If we're saving log messages to a file, go ahead and do that now */
     if (_enableLogging) {
-      _logStream << item->toString();
-      _logStream.flush(); /* Write to disk right away */
+      _logFile << item->toString();
     }
   }
 }

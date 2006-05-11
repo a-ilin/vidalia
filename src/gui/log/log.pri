@@ -26,10 +26,12 @@ FORMS += $$PWD/messagelog.ui
 HEADERS += $$PWD/messagelog.h \
            $$PWD/logheaderview.h \
            $$PWD/logtreewidget.h \
-           $$PWD/logtreeitem.h
+           $$PWD/logtreeitem.h \
+           $$PWD/logfile.h
 
 SOURCES += $$PWD/messagelog.cpp \
            $$PWD/logheaderview.cpp \
            $$PWD/logtreewidget.cpp \
-           $$PWD/logtreeitem.cpp
+           $$PWD/logtreeitem.cpp \
+           $$PWD/logfile.cpp
 

@@ -28,14 +28,10 @@
 #define _MESSAGELOG_H
 
 #include <QMainWindow>
-#include <QInputDialog>
-#include <QFileDialog>
-#include <QMessageBox>
-#include <QTextStream>
-
 #include <control/torcontrol.h>
 #include <config/vidaliasettings.h>
 
+#include "logfile.h"
 #include "logtreeitem.h"
 #include "ui_messagelog.h"
 
@@ -70,7 +66,7 @@ private slots:
    * user, highlighting the entries that contain a match. */
   void find();
   /** Called when user saves settings **/
-  void saveChanges();
+  void saveSettings();
   /** Called when user cancels changed settings **/
   void cancelChanges();
   /** Called when the user clicks "Browse" to select a new log file. */
@@ -91,8 +87,8 @@ private:
   void save(QList<LogTreeItem *> items);
   /** Adds the passed message to the message log as the specified type **/
   void log(LogEvent::Severity, QString msg);
-  /** Opens a QTextStream to the log file */
-  bool openLogFile(QString filename);
+  /** Rotates the log file based on the filename and the current logging status. */
+  bool rotateLogFile(QString filename);
 
   /** A pointer to a TorControl object, used to register for log events */
   TorControl* _torControl;
@@ -102,10 +98,8 @@ private:
   uint _filter;
   /** Set to true if we will log all messages to a file. */  	 
   bool _enableLogging;  
-  /** The log file used to store log messages. */
-  QFile *_logFile;
-  /** Text stream used to write to the log file if enabled*/
-  QTextStream _logStream;
+  /* The log file used to store log messages. */
+  LogFile _logFile;
 
   /** Qt Designer generatated QObject **/
   Ui::MessageLog ui;
