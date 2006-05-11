@@ -17,7 +17,9 @@ Contributors:
   the Vidalia-Project website.
 
   Matt Hanson <http://www.zuerchertech.com/> tweaked Corinna's images a bit
-  and created some .icos based off of them.
+  and created some .icos based off of them. Dan Christensen
+  <http://opello.org/> added additional image formats to the .ico files to
+  support more Windowses.
 
   Geoff Goodell <http://afs.eecs.harvard.edu/~goodell/> created the US/UK icon
   (src/gui/res/flags/en.png) that we use in the Appearance configuration page.
