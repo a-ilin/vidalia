@@ -54,9 +54,6 @@ public:
   /** Returns the message associated with this log item. */
   QString message();
 
-  /** Overloaded comparison operator. */
-  virtual bool operator<(const LogTreeItem &other) const;
-  
   /** Returns a printable string representation of the item's contents.*/
   QString toString();
 };

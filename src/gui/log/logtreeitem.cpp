@@ -118,11 +118,3 @@ LogTreeItem::message()
   return text(COL_MESG);
 }
 
-/** Overloaded comparison operator. */
-bool
-LogTreeItem::operator<(const LogTreeItem &other) const
-{
-  /* Comparison is based on the message timestamps. */
-  return (timestamp() < other.timestamp());
-}
-

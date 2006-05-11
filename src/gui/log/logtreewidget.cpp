@@ -49,14 +49,24 @@ LogTreeWidget::qlist_cast(QList<QTreeWidgetItem *> inlist)
   return outlist;
 }
 
+/** Sorts the list of pointers to log tree items by timestamp. */
+QList<LogTreeItem *>
+LogTreeWidget::qlist_sort(QList<LogTreeItem *> inlist)
+{
+  QMap<QDateTime, LogTreeItem *> outlist;
+  foreach (LogTreeItem *item, inlist) {
+    outlist.insert(item->timestamp(), item);
+  }
+  return outlist.values();
+}
+
 /** Returns a list of all currently selected items. */
 QList<LogTreeItem *>
 LogTreeWidget::selectedItems()
 {
   QList<LogTreeItem *> items = 
     qlist_cast(QTreeWidget::selectedItems());
-  qSort(items); /* Sort items by timestamp */
-  return items;
+  return qlist_sort(items);
 }
 
 /** Returns a list of all selected items as a formatted string. */
@@ -163,7 +173,6 @@ LogTreeWidget::find(QString text, bool highlight)
   }
 
   /* Return the results, sorted by timestamp */
-  qSort(items);
-  return items;
+  return qlist_sort(items);
 }
 

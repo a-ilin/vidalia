@@ -77,7 +77,9 @@ public:
 private:
   /** Casts a QList of one pointer type to another. */
   QList<LogTreeItem *> qlist_cast(QList<QTreeWidgetItem *> inlist);
-  
+  /** Sortrs a QList of pointers to tree items. */
+  QList<LogTreeItem *> qlist_sort(QList<LogTreeItem *> inlist);
+
   int _maxItemCount; /**< Maximum number of items in the tree. */
 };
   
