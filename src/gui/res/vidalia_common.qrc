@@ -71,6 +71,7 @@
     <qresource prefix="/images">
         <file>flags/zh-cn.png</file>
         <file>flags/en.png</file>
+        <file>flags/fi.png</file>
     </qresource>
     <qresource prefix="/images">
         <file>map/world-map.png</file>

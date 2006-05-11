@@ -18,6 +18,15 @@
     <file>zh-cn/server.html</file>
     <file>zh-cn/troubleshooting.html</file>
     <file>zh-cn/netview.html</file>
+    <!-- Finnish -->
+    <file>fi/contents.xml</file>
+    <file>fi/index.html</file>
+    <file>fi/running.html</file>
+    <file>fi/log.html</file>
+    <file>fi/config.html</file>
+    <file>fi/server.html</file>
+    <file>fi/troubleshooting.html</file>
+    <file>fi/netview.html</file>
   </qresource>
 </RCC>
 

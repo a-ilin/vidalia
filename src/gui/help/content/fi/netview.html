@@ -1,0 +1,103 @@
+<!--
+  $Id$
+  
+  Vidalia is distributed under the following license:
+
+  Copyright (C) 2006,  Matt Edman, Justin Hipple
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU General Public License
+  as published by the Free Software Foundation; either version 2
+  of the License, or (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  
+  02110-1301, USA.
+-->
+
+<html>
+<body>
+
+<h1>Network Viewer</h1>
+<hr />
+
+<p>
+The network viewer lets you see routers in the Tor network and where
+your traffic is going.
+</p>
+
+
+<a name="overview"/>
+<h3>Overview</h3>
+<p>
+When you want to communicate anonymously through Tor (say, connecting to a
+website), Tor creates a tunnel, or <i>circuit</i>, of encrypted connections
+through a series of routers on the network. Your application's traffic is then
+sent as a <i>stream</i> through that circuit. For efficiency, multiple streams
+may share the same circuit.
+</p>
+
+<a name="status"/>
+<h3>Router Status</h3>
+<p>
+On the left side of the network view, you will see a list of routers in the
+Tor network. Next to each router is an icon indicating that router's status.
+The following table summarizes the possible router status icons:
+</p>
+<p>
+<table border="1">
+<tr>
+  <td><img src="qrc:/images/icons/node-unresponsive.png"/></td>
+  <td valign="middle">
+    The router is offline or simply not responding.
+  </td>
+</tr>
+<tr>
+  <td><img src="qrc:/images/icons/node-hibernating.png"/></td>
+  <td valign="middle">
+    The router is <i>hibernating</i>, meaning it is online, but has used up as
+    much bandwidth as the operator is willing to allow for a given time
+    period.
+  </td>
+</tr>
+<tr>
+  <td><img src="qrc:/images/icons/node-bw-none.png"/></td>
+  <td valign="middle">
+    The router is online, but has shown only minimal throughput.
+  </td>
+</tr>
+<tr>
+  <td><img src="qrc:/images/icons/node-bw-low.png"/></td>
+  <td valign="middle">
+    The router is online and has shown a throughput &gt;= 20 KB/s.
+  </td>
+</tr>
+<tr>
+  <td><img src="qrc:/images/icons/node-bw-med.png"/></td>
+  <td valign="middle">
+    The router is online and has shown a throughput &gt;= 60 KB/s.
+  </td>
+</tr>
+<tr>
+  <td><img src="qrc:/images/icons/node-bw-high.png"/></td>
+  <td valign="middle">
+    The router is online and has shown a throughput &gt;= 400 KB/s.
+  </td>
+</tr>
+</table>
+</p>
+<p>
+All bandwidth values are estimates based on the minimum of either 
+the maximum bandwidth sustained input or output over any ten second period 
+in the past day.
+</p>
+
+</body>
+</html>
+
