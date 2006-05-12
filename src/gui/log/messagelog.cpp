@@ -144,11 +144,11 @@ MessageLog::loadSettings()
 
   /* Set the checkboxes accordingly */
   _filter = _settings->getMsgFilter();
-  ui.chkTorErr->setChecked(_filter & LogEvent::TorError);
-  ui.chkTorWarn->setChecked(_filter & LogEvent::TorWarn);
-  ui.chkTorNote->setChecked(_filter & LogEvent::TorNotice);
-  ui.chkTorInfo->setChecked(_filter & LogEvent::TorInfo);
-  ui.chkTorDebug->setChecked(_filter & LogEvent::TorDebug);
+  ui.chkTorErr->setChecked(_filter & LogEvent::Error);
+  ui.chkTorWarn->setChecked(_filter & LogEvent::Warn);
+  ui.chkTorNote->setChecked(_filter & LogEvent::Notice);
+  ui.chkTorInfo->setChecked(_filter & LogEvent::Info);
+  ui.chkTorDebug->setChecked(_filter & LogEvent::Debug);
   registerLogEvents();
  
   /* Filter the message log */
@@ -163,6 +163,7 @@ void
 MessageLog::registerLogEvents()
 {
   QString errmsg;
+  _filter = _settings->getMsgFilter();
   if (!_torControl->setLogEvents(_filter, this, &errmsg)) {
     QMessageBox::warning(this, tr("Error Setting Filter"),
       p(tr("Vidalia was unable to register for Tor's log events.")) + p(errmsg),
@@ -212,11 +213,11 @@ MessageLog::saveSettings()
   ui.lstMessages->setMaximumItemCount(ui.spnbxMaxCount->value());
   
   /* Save message filter and refilter the list */
-  _settings->setMsgFilter(LogEvent::TorError, ui.chkTorErr->isChecked());
-  _settings->setMsgFilter(LogEvent::TorWarn, ui.chkTorWarn->isChecked());
-  _settings->setMsgFilter(LogEvent::TorNotice, ui.chkTorNote->isChecked());
-  _settings->setMsgFilter(LogEvent::TorInfo, ui.chkTorInfo->isChecked());
-  _settings->setMsgFilter(LogEvent::TorDebug, ui.chkTorDebug->isChecked());
+  _settings->setMsgFilter(LogEvent::Error, ui.chkTorErr->isChecked());
+  _settings->setMsgFilter(LogEvent::Warn, ui.chkTorWarn->isChecked());
+  _settings->setMsgFilter(LogEvent::Notice, ui.chkTorNote->isChecked());
+  _settings->setMsgFilter(LogEvent::Info, ui.chkTorInfo->isChecked());
+  _settings->setMsgFilter(LogEvent::Debug, ui.chkTorDebug->isChecked());
   registerLogEvents();
   
   /* Filter the message log */

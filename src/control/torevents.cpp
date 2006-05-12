@@ -108,11 +108,11 @@ TorEvents::toTorEvent(LogEvent::Severity severity)
 {
   TorEvent e;
   switch (severity) {
-    case LogEvent::TorDebug:  e = LogDebug; break;
-    case LogEvent::TorInfo:   e = LogInfo; break;
-    case LogEvent::TorNotice: e = LogNotice; break;
-    case LogEvent::TorWarn:   e = LogWarn; break;
-    case LogEvent::TorError:  e = LogError; break;
+    case LogEvent::Debug:  e = LogDebug; break;
+    case LogEvent::Info:   e = LogInfo; break;
+    case LogEvent::Notice: e = LogNotice; break;
+    case LogEvent::Warn:   e = LogWarn; break;
+    case LogEvent::Error:  e = LogError; break;
     default: e = Unknown; break;
   }
   return e;

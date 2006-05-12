@@ -473,6 +473,33 @@ Upgrade to a newer version of Tor.</source>
     </message>
 </context>
 <context>
+    <name>LogEvent</name>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Notice</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>LogTreeWidget</name>
     <message>
         <source>Messages Shown: </source>
@@ -578,13 +605,6 @@ Upgrade to a newer version of Tor.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Vidalia detected that Tor exited unexpectedly.
-
-Please check the message log for indicators
-about what happened to Tor before it exited.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Show Log</source>
         <translation type="unfinished"></translation>
     </message>
@@ -621,19 +641,7 @@ about what happened to Tor before it exited.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You are currently running a Tor server.
-Terminating your server will interrupt any open connections from clients.
-
-Would you like to shutdown gracefully and give clients time to find a new server?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Error Shutting Down</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Vidalia was unable to shutdown Tor gracefully.
-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -662,6 +670,22 @@ Would you like to shutdown gracefully and give clients time to find a new server
     </message>
     <message>
         <source>Show Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>You are currently running a Tor server. Terminating your server will interrupt any open connections from clients.
+
+Would you like to shutdown gracefully and give clients time to find a new server?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to shutdown Tor gracefully. (</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia detected that Tor exited unexpectedly.
+
+Please check the message log for indicators about what happened to Tor before it exited.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

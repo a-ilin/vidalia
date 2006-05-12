@@ -27,6 +27,7 @@
 #include "eventtype.h"
 #include "logevent.h"
 
+
 /** Default constructor */
 LogEvent::LogEvent(Severity severity, QString message)
 : QEvent((QEvent::Type)CustomEventType::LogEvent)
@@ -42,15 +43,15 @@ LogEvent::toSeverity(QString strSeverity)
   Severity s;
   strSeverity = strSeverity.toUpper();
   if (strSeverity == "DEBUG") {
-    s = TorDebug;
+    s = Debug;
   } else if (strSeverity == "INFO") {
-    s = TorInfo;
+    s = Info;
   } else if (strSeverity == "NOTICE") {
-    s = TorNotice;
+    s = Notice;
   } else if (strSeverity == "WARN") {
-    s = TorWarn;
+    s = Warn;
   } else if (strSeverity == "ERR" || strSeverity == "ERROR") {
-    s = TorError;
+    s = Error;
   } else {
     s = Unknown;
   }
@@ -63,12 +64,12 @@ LogEvent::severityToString(Severity s)
 {
   QString str;
   switch (s) {
-    case TorDebug:  str = MSG_TOR_DEBUG; break;
-    case TorInfo:   str = MSG_TOR_INFO; break;
-    case TorNotice: str = MSG_TOR_NOTICE; break;
-    case TorWarn:   str = MSG_TOR_WARN; break;
-    case TorError:  str = MSG_TOR_ERROR; break;
-    default: str = "Unknown Error"; break;
+    case Debug:  str = tr("Debug"); break;
+    case Info:   str = tr("Info"); break;
+    case Notice: str = tr("Notice"); break;
+    case Warn:   str = tr("Warning"); break;
+    case Error:  str = tr("Error"); break;
+    default: str = tr("Unknown"); break;
   }
   return str;
 }
@@ -86,3 +87,4 @@ LogEvent::message()
 {
   return _message;
 }
+

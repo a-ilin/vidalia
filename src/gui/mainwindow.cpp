@@ -32,7 +32,6 @@
 
 #include <vidalia.h>
 #include <util/html.h>
-#include <config/messagetypes.h>
 
 #include "mainwindow.h"
 

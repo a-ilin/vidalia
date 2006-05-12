@@ -72,13 +72,13 @@ void
 LogTreeItem::setSeverity(LogEvent::Severity type)
 {
   /* Change row and text color for serious warnings and errors. */
-  if (type == LogEvent::TorError) {
+  if (type == LogEvent::Error) {
     /* Critical messages are red with white text. */
     for (int i = 0; i < 3; i++) {
       setBackgroundColor(i, Qt::red);
       setTextColor(i, Qt::white);
     }
-  } else if (type == LogEvent::TorWarn) {
+  } else if (type == LogEvent::Warn) {
     /* Warning messages are yellow with black text. */
     for (int i = 0; i < 3; i++) {
       setBackgroundColor(i, Qt::yellow);

@@ -319,11 +319,11 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>%1 kt</source>
-        <translation>%1 KB</translation>
+        <translation type="obsolete">%1 KB</translation>
     </message>
     <message>
         <source>%1 MB</source>
-        <translation>>%1 mt</translation>
+        <translation>&gt;%1 mt</translation>
     </message>
     <message>
         <source>%1 GB</source>
@@ -332,6 +332,10 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <source>%1 KB/s</source>
         <translation>%1 kt/s</translation>
+    </message>
+    <message>
+        <source>%1 KB</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -473,6 +477,44 @@ Upgrade to a newer version of Tor.</source>
     </message>
 </context>
 <context>
+    <name>LogEvent</name>
+    <message>
+        <source>Notice</source>
+        <translation type="unfinished">Ilmoitus</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation type="unfinished">Varoitus</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation type="unfinished">Virhe</translation>
+    </message>
+    <message>
+        <source>Debug</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Info</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>LogTreeWidget</name>
+    <message>
+        <source>Messages Shown: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Messages Shown: %1</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>MainWindow</name>
     <message>
         <source>Tor is Stopped</source>
@@ -567,13 +609,6 @@ Upgrade to a newer version of Tor.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Vidalia detected that Tor exited unexpectedly.
-
-Please check the message log for indicators
-about what happened to Tor before it exited.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Show Log</source>
         <translation>Näytä loki</translation>
     </message>
@@ -610,19 +645,7 @@ about what happened to Tor before it exited.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>You are currently running a Tor server.
-Terminating your server will interrupt any open connections from clients.
-
-Would you like to shutdown gracefully and give clients time to find a new server?</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Error Shutting Down</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Vidalia was unable to shutdown Tor gracefully.
-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -652,6 +675,22 @@ Would you like to shutdown gracefully and give clients time to find a new server
     <message>
         <source>Show Settings</source>
         <translation>Näytä asetukset</translation>
+    </message>
+    <message>
+        <source>You are currently running a Tor server. Terminating your server will interrupt any open connections from clients.
+
+Would you like to shutdown gracefully and give clients time to find a new server?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to shutdown Tor gracefully. (</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia detected that Tor exited unexpectedly.
+
+Please check the message log for indicators about what happened to Tor before it exited.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -829,10 +868,6 @@ Would you like to shutdown gracefully and give clients time to find a new server
         <translation>Ctrl+F</translation>
     </message>
     <message>
-        <source>Messages Shown: </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Messages that appear when something has 
 gone very wrong and Tor cannot proceed.</source>
         <translation type="unfinished"></translation>
@@ -868,10 +903,6 @@ interest to Tor developers.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Vidalia was unable to open the specified log file for writing.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Select Log File</source>
         <translation>Valitse lokitiedosto</translation>
     </message>
@@ -897,15 +928,6 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Search found 0 matches.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Messages Shown: %1</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>%1 [%2] %3
-</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -940,6 +962,10 @@ interest to Tor developers.</source>
         <source>Cannot write file %1
 
 %2.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to open the specified log file.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

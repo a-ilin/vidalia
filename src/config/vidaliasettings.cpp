@@ -27,6 +27,7 @@
 #include <QDir>
 #include <QCoreApplication>
 #include <lang/languagesupport.h>
+#include <control/logevent.h>
 
 #include "vidaliasettings.h"
 
@@ -60,7 +61,7 @@
 #define DEFAULT_OPACITY             100
 
 /* Default message log settings */
-#define DEFAULT_MSG_FILTER          (TOR_ERROR|TOR_WARN|TOR_NOTICE)
+#define DEFAULT_MSG_FILTER          (LogEvent::Error|LogEvent::Warn|LogEvent::Notice)
 #define DEFAULT_MAX_MESSAGE         500
 #define DEFAULT_ENABLE_LOG_FILE     false
 

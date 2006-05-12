@@ -29,20 +29,23 @@
 
 #include <QString>
 #include <QEvent>
-#include <config/messagetypes.h>
+#include <QObject>
 
 
-class LogEvent : public QEvent
+class LogEvent : private QObject, public QEvent
 {
+  /* The only reason we inherit QObject is so we can use tr() */
+  Q_OBJECT
+
 public:
   /** Log message severity levels */
   enum Severity {
     Unknown = 0,
-    TorDebug      = TOR_DEBUG,  /**< Debug level log message. */
-    TorInfo       = TOR_INFO,   /**< Info level log message. */
-    TorNotice     = TOR_NOTICE, /**< Notice level log message. */
-    TorWarn       = TOR_WARN,   /**< Warn level log message. */
-    TorError      = TOR_ERROR,  /**< Error level log message. */
+    Debug      = (1u<<4),  /**< Debug level log message. */
+    Info       = (1u<<3),  /**< Info level log message. */
+    Notice     = (1u<<2),  /**< Notice level log message. */
+    Warn       = (1u<<1),  /**< Warn level log message. */
+    Error      = (1u<<0)   /**< Error level log message. */
   };
   
   /** Default constructor */
@@ -50,13 +53,11 @@ public:
   
   /** Converts the string description of a severity to its enum value */
   static Severity toSeverity(QString strSeverity);
-
   /** Converts the Severity enum value to a string description */
   static QString severityToString(Severity severity);
 
   /** Returns the severity of this log event */
-  Severity severity();
-  
+  Severity severity();  
   /** Returns the message for this log event */
   QString message();
   
@@ -66,3 +67,4 @@ private:
 };
 
 #endif
+

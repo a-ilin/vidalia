@@ -25,9 +25,10 @@
  */
 
 #include <QHostAddress>
-
 #include <config/torsettings.h>
+
 #include "torcontrol.h"
+
 
 /** Default constructor */
 TorControl::TorControl()
@@ -343,11 +344,11 @@ TorControl::setEvent(TorEvents::TorEvent e, QObject *obj,
 bool
 TorControl::setLogEvents(uint filter, QObject *obj, QString *errmsg)
 {
-  setEvent(TorEvents::LogError , obj, filter & LogEvent::TorError , false);
-  setEvent(TorEvents::LogWarn  , obj, filter & LogEvent::TorWarn  , false);
-  setEvent(TorEvents::LogNotice, obj, filter & LogEvent::TorNotice, false);
-  setEvent(TorEvents::LogInfo  , obj, filter & LogEvent::TorInfo  , false);
-  setEvent(TorEvents::LogDebug , obj, filter & LogEvent::TorDebug , false);
+  setEvent(TorEvents::LogError , obj, filter & LogEvent::Error , false);
+  setEvent(TorEvents::LogWarn  , obj, filter & LogEvent::Warn  , false);
+  setEvent(TorEvents::LogNotice, obj, filter & LogEvent::Notice, false);
+  setEvent(TorEvents::LogInfo  , obj, filter & LogEvent::Info  , false);
+  setEvent(TorEvents::LogDebug , obj, filter & LogEvent::Debug , false);
   return (isConnected() ? setEvents(errmsg) : true);
 }
 
