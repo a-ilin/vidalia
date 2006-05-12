@@ -337,7 +337,7 @@ MainWindow::initiateServerShutdown()
   
   /* Ask the user if they want to shutdown nicely. */
   int response = QMessageBox::question(this, tr("Server is Enabled"),
-                   p(tr("You are currently running a Tor server.\n"
+                   p(tr("You are currently running a Tor server. "
                         "Terminating your server will interrupt any "
                         "open connections from clients.\n\n"
                         "Would you like to shutdown gracefully and "
@@ -352,8 +352,9 @@ MainWindow::initiateServerShutdown()
       /* Let the user know that we couldn't shutdown gracefully and we'll
        * kill Tor forcefully now if they want. */
       response = QMessageBox::warning(this, tr("Error Shutting Down"),
-                  p(tr("Vidalia was unable to shutdown Tor gracefully.\n") 
-                   + errmsg) + p(tr("Do you want to close Tor anyway?")),
+                  p(tr("Vidalia was unable to shutdown Tor gracefully. (") 
+                    + errmsg + ")") + 
+                  p(tr("Do you want to close Tor anyway?")),
                   QMessageBox::Yes, QMessageBox::No);
 
       if (response == QMessageBox::No) {
@@ -427,7 +428,7 @@ MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
     if (exitStatus == QProcess::CrashExit || exitCode != 0) {
       int ret = QMessageBox::warning(this, tr("Tor Exited"),
                   p(tr("Vidalia detected that Tor exited unexpectedly.\n\n"
-                       "Please check the message log for indicators\n"
+                       "Please check the message log for indicators "
                        "about what happened to Tor before it exited.")),
                   tr("Show Log"), tr("Close"));
       if (ret == 0) {
