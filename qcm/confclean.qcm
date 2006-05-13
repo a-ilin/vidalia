@@ -1,0 +1,32 @@
+/*
+-----BEGIN QCMOD-----
+name: confclean
+-----END QCMOD-----
+*/
+class qc_confclean : public ConfObj
+{
+public:
+  qc_confclean(Conf *c) : ConfObj(c) {}
+  QString name() const { return "confclean"; }
+  QString shortname() const { return "confclean"; }
+  QString checkString() const { return "Cleaning Existing Configurations ... "; }
+  QString resultString() const { return (_ret ? "failed" : "done"); }
+  bool exec() 
+  {
+    QString rm = conf->findProgram("rm");
+    QString makefile = QDir(QDir::current().absolutePath())
+                                           .filePath("Makefile");
+
+    conf->debug(QString("rm path:    [%1]").arg(rm));
+    conf->debug(QString("Makefile:   [%1]").arg(makefile));
+
+    _ret = qc_runprogram(rm, QStringList() << "-f" << makefile, 0, true);
+    conf->debug(QString("Removing existing Makefile returned %1")
+                                                 .arg(QString::number(_ret)));
+    return (_ret == 0);
+  }
+
+private:
+  int _ret;
+};
+

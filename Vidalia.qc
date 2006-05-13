@@ -5,6 +5,9 @@
   <dep type='qtversion'>
     <required/>
   </dep>
+  <dep type='confclean'>
+    <required/>
+  </dep>
   <dep type='buildmode'>
     <required/>
   </dep>
