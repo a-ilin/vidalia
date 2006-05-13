@@ -35,17 +35,22 @@ QT      += network xml opengl
   # On non-Mac, make the binary all lowercase
   TARGET = vidalia
 }
-
-win32 {
-  # Link against these libraries on Win32
-  LIBS += -lshell32 -lgdi32
-}
-
 unix {
   # Setup the `make install` target
   target.path = /usr/local/bin
   INSTALLS += target
 }
-  
+win32 {
+  # Link against these libraries on Win32
+  LIBS += -lshell32 -lgdi32
+}
+!win32 {
+  # On non-Windows, ./configure generates a conf.pri, so
+  # include it if it exists
+  exists(conf.pri) {
+    include(conf.pri)
+  }
+}
+
 include($$PWD/src/src.pri)
 

@@ -1,0 +1,14 @@
+/*
+-----BEGIN QCMOD-----
+name: Qt >= 4.1.0
+-----END QCMOD-----
+*/
+class qc_qtversion : public ConfObj
+{
+public:
+  qc_qtversion(Conf *c) : ConfObj(c) {}
+  QString name() const { return "Qt >= 4.1.0"; }
+  QString shortname() const { return "qtversion"; }
+  bool exec() { return (QT_VERSION >= 0x040100); }
+};
+
