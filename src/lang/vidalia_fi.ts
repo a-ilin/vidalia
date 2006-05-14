@@ -1,4 +1,4 @@
-<!DOCTYPE TS><TS>
+﻿<!DOCTYPE TS><TS>
 <context>
     <name></name>
     <message>
@@ -50,7 +50,7 @@
     </message>
     <message>
         <source>&lt;Not Running&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>Poispäältä</translation>
     </message>
 </context>
 <context>
@@ -61,7 +61,7 @@
     </message>
     <message>
         <source>Port that Vidalia uses to communicate with Tor. </source>
-        <translation>Portti, jolla Vidalia käyttää Torria</translation>
+        <translation>Portti, jolla Vidalia käyttää Tor-ohjelmaa</translation>
     </message>
     <message>
         <source>9051</source>
@@ -93,7 +93,7 @@
     </message>
     <message>
         <source>Vidalia will run with this User&apos;s permissions</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia käynnistyy tämän käyttäjän oikeuksilla</translation>
     </message>
     <message>
         <source>Run as Group:</source>
@@ -101,7 +101,7 @@
     </message>
     <message>
         <source>Vidalia will run with this Group&apos;s permissions</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia käynnistyy tämän ryhmän oikeuksilla</translation>
     </message>
     <message>
         <source>Select Tor Configuration File</source>
@@ -124,18 +124,18 @@
     </message>
     <message>
         <source>Style</source>
-        <translation>Tyyli</translation>
+        <translation>Teema</translation>
     </message>
     <message>
         <source>Choose Vidalia&apos;s interface style</source>
-        <translation>Valitse Vidalian käyttöliittymän tyyli</translation>
+        <translation>Valitse Vidalian käyttöliittymän teema</translation>
     </message>
 </context>
 <context>
     <name>BandwidthGraph</name>
     <message>
         <source>Tor Bandwidth Usage</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor kaistankäyttö</translation>
     </message>
     <message>
         <source>Show Settings</source>
@@ -155,7 +155,7 @@
     </message>
     <message>
         <source>Changes the transparency of the Bandwidth Graph</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuttaa kaistankäyttökuvaajan läpinäkyvyyttä</translation>
     </message>
     <message>
         <source>Save</source>
@@ -179,7 +179,7 @@
     </message>
     <message>
         <source>% Opaque</source>
-        <translation>läpinäkyvä</translation>
+        <translation>% läpinäkyvä</translation>
     </message>
     <message>
         <source>Hide Settings</source>
@@ -202,7 +202,7 @@
     </message>
     <message>
         <source>Advanced</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisäasetukset</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -210,7 +210,7 @@
     </message>
     <message>
         <source>Appearance</source>
-        <translation>Ulkonäkö</translation>
+        <translation>Ulkoasu</translation>
     </message>
     <message>
         <source>Save</source>
@@ -229,11 +229,11 @@
     <name>ControlConnection</name>
     <message>
         <source>The control socket is closing.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjausyhteys on päättymässä.</translation>
     </message>
     <message>
         <source>Control socket not connected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjausyhtettä ei ole muodostettu.</translation>
     </message>
 </context>
 <context>
@@ -245,23 +245,24 @@
     <message>
         <source>Vidalia only supports Version 1 of Tor&apos;s Control Protocol (Version %1 detected).
 Upgrade to a newer version of Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia tukee vain Tor-ohjausprotokollan 1 versiota (versio %1 havaittu).
+Olkaapa hyvä ja päivittäkää uudempaan Tor-ohjelmaan.</translation>
     </message>
     <message>
         <source>Error disconnecting socket. [%1]</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe lopetettaessa yhteyttä. [%1]</translation>
     </message>
     <message>
         <source>Error sending control command. [%1]</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe lähetettäessä ohjauskomentoa. [%1]</translation>
     </message>
     <message>
         <source>Socket disconnected while attempting to read a line of data.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhteys päättyi yrittäessään lukea tietoa.</translation>
     </message>
     <message>
         <source>Invalid control reply. [%1]</source>
-        <translation type="unfinished"></translation>
+        <translation>Virheellinen ohjausvastaus. [%1]</translation>
     </message>
 </context>
 <context>
@@ -272,11 +273,11 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Path to Tor&apos;s executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-ohjelman sijainti</translation>
     </message>
     <message>
         <source>Select path to Tor executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse Tor-ohjelman sijainti</translation>
     </message>
     <message>
         <source>Browse</source>
@@ -288,7 +289,7 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Select to start Vidalia on system boot</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse käynnistääkseen Vidalia tietokoneen käynnistyessä</translation>
     </message>
     <message>
         <source>Run Vidalia on system startup</source>
@@ -296,15 +297,15 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Set to start Tor when you launch Vidalia</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse Tor käynnistymään samalla kun Vidalia käynnistyy</translation>
     </message>
     <message>
         <source>Start Tor when Vidalia starts</source>
-        <translation type="unfinished"></translation>
+        <translation>Käynnistä Tor samalla kun Vidalia käynnistyy</translation>
     </message>
     <message>
         <source>Select Path to Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse Tor-ohjelman sijainti</translation>
     </message>
 </context>
 <context>
@@ -319,23 +320,19 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>%1 kt</source>
-        <translation type="obsolete">%1 KB</translation>
+        <translation>%1 Kt</translation>
     </message>
     <message>
         <source>%1 MB</source>
-        <translation>&gt;%1 mt</translation>
+        <translation>%1 Mt</translation>
     </message>
     <message>
         <source>%1 GB</source>
-        <translation>%1 gt</translation>
+        <translation>%1 Gt</translation>
     </message>
     <message>
         <source>%1 KB/s</source>
-        <translation>%1 kt/s</translation>
-    </message>
-    <message>
-        <source>%1 KB</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Kt/s</translation>
     </message>
 </context>
 <context>
@@ -370,39 +367,39 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Found Documents</source>
-        <translation type="unfinished"></translation>
+        <translation>Löydetyt aiheet</translation>
     </message>
     <message>
         <source>Back</source>
-        <translation type="unfinished"></translation>
+        <translation>Edellinen</translation>
     </message>
     <message>
-        <source>Move to previous page (Backspace)</source>
-        <translation type="unfinished"></translation>
+        <source>Move to previous page (Askelpalautin)</source>
+        <translation>Siirry edelliselle sivulle (Backspace)</translation>
     </message>
     <message>
         <source>Backspace</source>
-        <translation type="unfinished"></translation>
+        <translation>Askelpalautin</translation>
     </message>
     <message>
         <source>Forward</source>
-        <translation type="unfinished"></translation>
+        <translation>Seuraava</translation>
     </message>
     <message>
         <source>Move to next page (Shift+Backspace)</source>
-        <translation type="unfinished"></translation>
+        <translation>Siirry seuraavalle sivulle (Shift+Askelpalautin)</translation>
     </message>
     <message>
         <source>Shift+Backspace</source>
-        <translation type="unfinished"></translation>
+        <translation>Shift+Askelpalautin</translation>
     </message>
     <message>
         <source>Home</source>
-        <translation type="unfinished"></translation>
+        <translation>Koti</translation>
     </message>
     <message>
         <source>Move to the Home page (Ctrl+H)</source>
-        <translation type="unfinished"></translation>
+        <translation>Siirry kotisivulle (Ctrl+H)</translation>
     </message>
     <message>
         <source>Ctrl+H</source>
@@ -414,7 +411,7 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Search for a word or phrase on current page (Ctrl+F)</source>
-        <translation type="unfinished"></translation>
+        <translation>Etsi sana tai ilmaisu nykyiseltä sivulta (Ctrl+F)</translation>
     </message>
     <message>
         <source>Ctrl+F</source>
@@ -434,19 +431,19 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Error Loading Help Contents: </source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe ladatessa ohjeen aiheita: </translation>
     </message>
     <message>
         <source>Search reached end of document</source>
-        <translation type="unfinished"></translation>
+        <translation>Etsintä saavutti sivun lopun</translation>
     </message>
     <message>
         <source>Search reached start of document</source>
-        <translation type="unfinished"></translation>
+        <translation>Etsintä saavutti sivun alun</translation>
     </message>
     <message>
         <source>Text not found in document</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekstiä ei löytynyt sivulta</translation>
     </message>
     <message>
         <source>Find:</source>
@@ -462,7 +459,7 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Supplied XML file is not a valid Contents document.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarjottu XML-tiedosto ei ole kelvollinen sisällön sivu</translation>
     </message>
     <message>
         <source>Found %1 results</source>
@@ -473,45 +470,46 @@ Upgrade to a newer version of Tor.</source>
     <name>HelpTextBrowser</name>
     <message>
         <source>Error opening help file: </source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe avatessa ohjetiedostoa: </translation>
     </message>
 </context>
 <context>
     <name>LogEvent</name>
     <message>
-        <source>Notice</source>
-        <translation type="unfinished">Ilmoitus</translation>
-    </message>
-    <message>
-        <source>Warning</source>
-        <translation type="unfinished">Varoitus</translation>
-    </message>
-    <message>
-        <source>Error</source>
-        <translation type="unfinished">Virhe</translation>
-    </message>
-    <message>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation>Debug</translation>
     </message>
     <message>
         <source>Info</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedote</translation>
+    </message>
+    <message>
+
+        <source>Notice</source>
+        <translation>Ilmoitus</translation>
+    </message>
+    <message>
+        <source>Warning</source>
+        <translation>Varoitus</translation>
+    </message>
+    <message>
+        <source>Error</source>
+        <translation>Virhe</translation>
     </message>
     <message>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuntematon</translation>
     </message>
 </context>
 <context>
     <name>LogTreeWidget</name>
     <message>
         <source>Messages Shown: </source>
-        <translation type="unfinished"></translation>
+        <translation>Tapahtumia näkyvillä</translation>
     </message>
     <message>
         <source>Messages Shown: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Tapahtumia näkyvillä: %1</translation>
     </message>
 </context>
 <context>
@@ -542,11 +540,11 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Bandwidth Graph</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaistankäyttökuvaaja</translation>
     </message>
     <message>
         <source>Message Log</source>
-        <translation type="unfinished"></translation>
+        <translation>Tapahtumaloki</translation>
     </message>
     <message>
         <source>Help</source>
@@ -594,7 +592,7 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Error Connecting to Tor</source>
-        <translation>Virhe yhdistettäessä Torriin</translation>
+        <translation>Virhe yhdistettäessä Tor-ohjelmaan</translation>
     </message>
     <message>
         <source>Error Stopping Tor</source>
@@ -606,7 +604,7 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Tor Exited</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor sammui yllättäem</translation>
     </message>
     <message>
         <source>Show Log</source>
@@ -618,7 +616,7 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Vidalia was unable to start Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia ei onnistunut käynnistämään Tor-ohjelmaa</translation>
     </message>
     <message>
         <source>OK</source>
@@ -630,7 +628,7 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Vidalia was unable to stop Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia ei onnistunut käynnistämään Tor-ohjelmaa</translation>
     </message>
     <message>
         <source>Tor is starting</source>
@@ -642,15 +640,15 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Server is Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Palvelin on käytössä</translation>
     </message>
     <message>
         <source>Error Shutting Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe lopetettaessa</translation>
     </message>
     <message>
         <source>Do you want to close Tor anyway?</source>
-        <translation type="unfinished"></translation>
+        <translation>Haluatko kuitenkin sulkea Tor-ohjelman?</translation>
     </message>
     <message>
         <source>Tor is stopping</source>
@@ -658,7 +656,7 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>View Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä verkko</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
@@ -666,11 +664,11 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Error Applying Server Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe palvelinasetusten käyttöön ottamisessa</translation>
     </message>
     <message>
         <source>Vidalia was unable to apply your server&apos;s settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia ei onnistunut ottamaan käyttöön palvelimesi asetuksia</translation>
     </message>
     <message>
         <source>Show Settings</source>
@@ -680,24 +678,29 @@ Upgrade to a newer version of Tor.</source>
         <source>You are currently running a Tor server. Terminating your server will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new server?</source>
-        <translation type="unfinished"></translation>
+        <translation>Koneellanne on paraikaa päällä Tor-palvelin. Palvelimen sulkeminen katkaisee avoimet yhteydet käyttäjiltä.
+
+Haluaisitteko sulkea kunnollisesti ja antaa käyttäjille aikaa löytää uuden palvelimen?</translation>
     </message>
     <message>
-        <source>Vidalia was unable to shutdown Tor gracefully. (</source>
-        <translation type="unfinished"></translation>
+        <source>Vidalia was unable to shutdown Tor gracefully. </source>
+        <translation>Vidalia ei onnistunut sulkemaan Tor-ohjelmaa kunnolla.</translation>
     </message>
     <message>
+
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia huomasi Tor-ohjelman sammuneen aavistamatta.
+
+Olkaapa hyvä ja tarkistakaapa tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen sen sammumista.</translation>
     </message>
 </context>
 <context>
     <name>MessageLog</name>
     <message>
         <source>Message Log</source>
-        <translation type="unfinished"></translation>
+        <translation>Tapahtumaloki</translation>
     </message>
     <message>
         <source>Time</source>
@@ -709,7 +712,7 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
         <source>Message</source>
-        <translation>Viesti</translation>
+        <translation>Tapahtuma</translation>
     </message>
     <message>
         <source>Log File</source>
@@ -721,23 +724,23 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
         <source>Enable saving of all messages to a file</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallentaa kaikki tapahtumat tiedostoon</translation>
     </message>
     <message>
         <source>Save Messages to File</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallenna tapahtumat tiedostoon.</translation>
     </message>
     <message>
         <source>Log History Size</source>
-        <translation type="unfinished"></translation>
+        <translation>Lokin koko</translation>
     </message>
     <message>
         <source>Number of messages to keep in log</source>
-        <translation type="unfinished"></translation>
+        <translation>Tapahtumien määrä lokissa</translation>
     </message>
     <message>
         <source>Saves the current Message Log settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallentaa nykyiset tapahtumalokin asetukset</translation>
     </message>
     <message>
         <source>Save Settings</source>
@@ -745,7 +748,7 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
         <source>Cancels changes made to settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Kumoaa muutokset asetuksiin</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -753,7 +756,7 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
         <source>Message Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Tapahtumien suodatin</translation>
     </message>
     <message>
         <source>Error</source>
@@ -769,27 +772,27 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
         <source>Info</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedote</translation>
     </message>
     <message>
         <source>Debug</source>
-        <translation type="unfinished"></translation>
+        <translation>Debug</translation>
     </message>
     <message>
         <source>Message Filters...</source>
-        <translation type="unfinished"></translation>
+        <translation>Tapahtumien suodatus...</translation>
     </message>
     <message>
         <source>Set message filters</source>
-        <translation type="unfinished"></translation>
+        <translation>Aseta tapahtumille suodatus</translation>
     </message>
     <message>
         <source>History Size...</source>
-        <translation type="unfinished"></translation>
+        <translation>Lokin koko...</translation>
     </message>
     <message>
         <source>Set maximum number of messages to display</source>
-        <translation type="unfinished"></translation>
+        <translation>Rajoita näytettävissä olevien tapahtumien määrä</translation>
     </message>
     <message>
         <source>Clear</source>
@@ -797,7 +800,7 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
         <source>Clear all messages from the Message Log (Ctrl+E)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tyhjennä kaikki tapahtumat tapahtumalokista (Ctrl+E)</translation>
     </message>
     <message>
         <source>Ctrl+E</source>
@@ -809,7 +812,7 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
         <source>Copy the selected messages to the clipboard (Ctrl+C)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopioi kaikki valitut tapahtumat leikepöydälle (Ctrl+C)</translation>
     </message>
     <message>
         <source>Ctrl+C</source>
@@ -821,7 +824,7 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
         <source>Select all messages (Ctrl+A)</source>
-        <translation>Valitse kaikki viestit (Ctrl+A) </translation>
+        <translation>Valitse kaikki tapahtumat (Ctrl+A) </translation>
     </message>
     <message>
         <source>Ctrl+A</source>
@@ -833,7 +836,7 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
         <source>Save all messages to a file</source>
-        <translation>Tallenna kaikki viestit tiedostoon</translation>
+        <translation>Tallenna kaikki tapahtumat tiedostoon</translation>
     </message>
     <message>
         <source>Save Selected</source>
@@ -841,7 +844,7 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
         <source>Save selected messages to a file</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallenna valitut tapahtumat tiedostoon</translation>
     </message>
     <message>
         <source>Close</source>
@@ -849,7 +852,7 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
         <source>Close the Message Log</source>
-        <translation type="unfinished"></translation>
+        <translation>Sulje tapahtumaloki</translation>
     </message>
     <message>
         <source>Esc</source>
@@ -861,46 +864,50 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
         <source>Find all messages containing the search text (Ctrl+F)</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä kaikki tapahtumat, jotka sisältävät hakuehdon (Ctrl+F)</translation>
     </message>
     <message>
         <source>Ctrl+F</source>
         <translation>Ctrl+F</translation>
     </message>
     <message>
+        <source>Messages Shown: </source>
+        <translation>Tapahtumia näkyvillä: </translation>
+    </message>
+    <message>
         <source>Messages that appear when something has 
 gone very wrong and Tor cannot proceed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tapahtumat, jotka tapahtuvat jonkin menneen pahasti pieleen eikä Tor ei pysty jatkamaan.</translation>
     </message>
     <message>
         <source>Messages that only appear when 
 something has gone wrong with Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tapahtumat, jotka tapahtuvat jonkin menneen pieleen Tor-ohjelman kanssa.</translation>
     </message>
     <message>
         <source>Messages that appear infrequently 
 during normal Tor operation and are 
 not considered errors, but you may 
 care about.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tapahtumat, jotka tapahtuvat aina välillä normaalin Tor-toiminnan yhteydessä ja joita ei pidetä virheinä, mutta voit huolehtia niistä.</translation>
     </message>
     <message>
         <source>Messages that appear frequently 
 during normal Tor operation.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tapahtumat, jotka tapahtuvat säännöllisesti normaalin Tor-toiminnan yhteydessä.</translation>
     </message>
     <message>
         <source>Hyper-verbose messages primarily of 
 interest to Tor developers.</source>
-        <translation type="unfinished"></translation>
+        <translation>Erittäin monisanaisia tapahtumia, jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     </message>
     <message>
         <source>Error Setting Filter</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe asettaessaan suodatusta</translation>
     </message>
     <message>
         <source>Error Opening Log File</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe avatessa lokitiedostoa</translation>
     </message>
     <message>
         <source>Select Log File</source>
@@ -908,7 +915,7 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Save Log Messages</source>
-        <translation>Tallena lokiviestit</translation>
+        <translation>Tallena lokitapahtumat</translation>
     </message>
     <message>
         <source>Vidalia</source>
@@ -916,7 +923,7 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Find in Message Log</source>
-        <translation type="unfinished"></translation>
+        <translation>Etsi tapahtumalokista</translation>
     </message>
     <message>
         <source>Find:</source>
@@ -924,11 +931,20 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Not Found</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei löytynyt</translation>
     </message>
     <message>
         <source>Search found 0 matches.</source>
-        <translation type="unfinished"></translation>
+        <translation>Löytyi 0 vastausta.</translation>
+    </message>
+    <message>
+        <source>Messages Shown: %1</source>
+        <translation>Tapahtumia näkyvillä: %1</translation>
+    </message>
+    <message>
+        <source>%1 [%2] %3
+</source>
+        <translation>%1 [%2] %3</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -936,7 +952,7 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Adjust Message Log Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuta tapahtumalokin asetuksia</translation>
     </message>
     <message>
         <source>Ctrl+T</source>
@@ -948,7 +964,7 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Show the help browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä ohjeselain</translation>
     </message>
     <message>
         <source>Ctrl+H</source>
@@ -956,32 +972,34 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Vidalia was unable to register for Tor&apos;s log events.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia ei onnistunut rekisteröitymään Tor-ohjelman lokitapahtumia varten.</translation>
     </message>
     <message>
         <source>Cannot write file %1
 
 %2.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedoston %1
+
+%2 kirjoittaminen ei onnistunut.</translation>
     </message>
     <message>
-        <source>Vidalia was unable to open the specified log file.</source>
-        <translation type="unfinished"></translation>
+        <source>Vidalia was unable to open the specified log file for writing.</source>
+        <translation>Vidalia ei onnistunut avaamaan määriteltyä lokitiedostoa kirjoittamiseen.</translation>
     </message>
 </context>
 <context>
     <name>NetViewer</name>
     <message>
         <source>View Tor Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä Tor-verkko</translation>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation>Tila</translation>
     </message>
     <message>
         <source>Router</source>
-        <translation type="unfinished"></translation>
+        <translation>Reititin</translation>
     </message>
     <message>
         <source>New Nym</source>
@@ -1009,30 +1027,30 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Zoom In</source>
-        <translation type="unfinished"></translation>
+        <translation>Suurenna</translation>
     </message>
     <message>
         <source>Zoom Out</source>
-        <translation type="unfinished"></translation>
+        <translation>Pienennä</translation>
     </message>
     <message>
         <source>Move</source>
-        <translation type="unfinished"></translation>
+        <translation>Siirrä</translation>
     </message>
 </context>
 <context>
     <name>RouterDescriptor</name>
     <message>
         <source>Online</source>
-        <translation type="unfinished"></translation>
+        <translation>Päällä</translation>
     </message>
     <message>
         <source>Hibernating</source>
-        <translation type="unfinished"></translation>
+        <translation>Valmiustilassa</translation>
     </message>
     <message>
         <source>Offline</source>
-        <translation type="unfinished"></translation>
+        <translation>Offline</translation>
     </message>
 </context>
 <context>
@@ -1043,70 +1061,70 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Platform:</source>
-        <translation type="unfinished"></translation>
+        <translation>Laitteisto:</translation>
     </message>
     <message>
         <source>Contact:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhteyshenkilö:</translation>
     </message>
     <message>
         <source>Published:</source>
-        <translation type="unfinished"></translation>
+        <translation>Julkaistu:</translation>
     </message>
     <message>
         <source>Bandwidth:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaistanleveys:</translation>
     </message>
     <message>
         <source>Uptime:</source>
-        <translation type="unfinished"></translation>
+        <translation>Päällä:</translation>
     </message>
 </context>
 <context>
     <name>ServerPage</name>
     <message>
         <source>Check to run as a Tor network server</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse ollaksesi Tor-verkon palvelin</translation>
     </message>
     <message>
         <source>Relay traffic for the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Välitä tietoa Tor-verkossa</translation>
     </message>
     <message>
         <source>Server Configuration</source>
-        <translation type="unfinished"></translation>
+        <translation>Palvelinasetukset</translation>
     </message>
     <message>
         <source>Directory Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lista-portti:</translation>
     </message>
     <message>
         <source>Directory Port Number</source>
-        <translation type="unfinished"></translation>
+        <translation>Listan portin numero</translation>
     </message>
     <message>
         <source>Nickname:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nimi:</translation>
     </message>
     <message>
         <source>Name of your server</source>
-        <translation type="unfinished"></translation>
+        <translation>Palvelimesi nimi</translation>
     </message>
     <message>
         <source>Email address at which you may be reached if there is a problem with your server</source>
-        <translation type="unfinished"></translation>
+        <translation>Sähköpostiosoite, johon voidaan ottaa yhteyttä sattuessa virheitä palvelimessanne</translation>
     </message>
     <message>
         <source>Contact Info:</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhteyshenkilö:</translation>
     </message>
     <message>
         <source>Server Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Palvelinportti:</translation>
     </message>
     <message>
         <source>Port on which users and other servers can communicate with your server</source>
-        <translation type="unfinished"></translation>
+        <translation>Portti, jolla käyttäjät ja palvelimet keskustelevat palvelimesi kanssa</translation>
     </message>
     <message>
         <source>Address:</source>
@@ -1114,39 +1132,39 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Domain name or IP address of your server</source>
-        <translation type="unfinished"></translation>
+        <translation>Palvelimesi nimi tai IP-osoite</translation>
     </message>
     <message>
         <source>Enable to mirror the server directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Välitä listaa Tor-palvelimista</translation>
     </message>
     <message>
         <source>Mirror the Server Directory </source>
-        <translation type="unfinished"></translation>
+        <translation>Välitä listaa Tor-palvelimista</translation>
     </message>
     <message>
         <source>If selected, clients will not exit the Tor network through your server</source>
-        <translation type="unfinished"></translation>
+        <translation>Valittuna, käyttäjät eivät poistu Tor-verkosta palvelimesi kautta</translation>
     </message>
     <message>
         <source>Only relay traffic between other Tor servers (middle-man)</source>
-        <translation type="unfinished"></translation>
+        <translation>Välitä tietoa vain Tor-palvelinten välillä (keskimies)</translation>
     </message>
     <message>
         <source>Attempts to determine the correct address for your server</source>
-        <translation type="unfinished"></translation>
+        <translation>Yrittää selvittää palvelimesi oikean osoitteen</translation>
     </message>
     <message>
         <source>Get Address</source>
-        <translation type="unfinished"></translation>
+        <translation>Nouda osoite</translation>
     </message>
     <message>
         <source>Nickname and Server Port are required</source>
-        <translation type="unfinished"></translation>
+        <translation>Nimi ja palvelimen portti tarvitaan</translation>
     </message>
     <message>
         <source>Exit Policies</source>
-        <translation type="unfinished"></translation>
+        <translation>Poistumistoimintaperiaatteet</translation>
     </message>
     <message>
         <source>IP Address:</source>
@@ -1154,7 +1172,7 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>IP address for new exit policy</source>
-        <translation type="unfinished"></translation>
+        <translation>IP-osoite uudelle poistumisperiaatteille</translation>
     </message>
     <message>
         <source>/</source>
@@ -1162,11 +1180,11 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Mask:</source>
-        <translation type="unfinished"></translation>
+        <translation>Verkkopeite:</translation>
     </message>
     <message>
         <source>IP address mask for new exit policy</source>
-        <translation type="unfinished"></translation>
+        <translation>Verkkopeitteen osoite uusille poistumisperiaatteille</translation>
     </message>
     <message>
         <source>:</source>
@@ -1178,7 +1196,7 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Starting port number for new exit policy</source>
-        <translation type="unfinished"></translation>
+        <translation>Alkamisportti uusille poistumisperiaatteille</translation>
     </message>
     <message>
         <source>-</source>
@@ -1186,19 +1204,19 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Ending port number for new exit policy</source>
-        <translation type="unfinished"></translation>
+        <translation>Viimeiset portit uusille poistumisperiaatteille</translation>
     </message>
     <message>
         <source>Action:</source>
-        <translation type="unfinished"></translation>
+        <translation>Toimenpide:</translation>
     </message>
     <message>
         <source>Action for new exit policy</source>
-        <translation type="unfinished"></translation>
+        <translation>Toiminta uusille poistumisperiaatteille</translation>
     </message>
     <message>
         <source>Action</source>
-        <translation type="unfinished"></translation>
+        <translation>Toimenpide</translation>
     </message>
     <message>
         <source>Address</source>
@@ -1210,27 +1228,27 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Add the new exit policy</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää uusi poistumisperiaate</translation>
     </message>
     <message>
         <source>Increase the priority of the selected exit policy</source>
-        <translation type="unfinished"></translation>
+        <translation>Nosta prioriteettia valitusta poistumisperiaatteesta</translation>
     </message>
     <message>
         <source>Decrease the priority of the selected exit policy</source>
-        <translation type="unfinished"></translation>
+        <translation>Alenna prioriteettia valitusta toimintaperiaatteesta</translation>
     </message>
     <message>
         <source>Remove the selected exit policy</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista valittu poistumisperiaate</translation>
     </message>
     <message>
         <source>Show help topic on exit policies</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä ohjeenaihe poistumisperiaatteista</translation>
     </message>
     <message>
         <source>You must specify at least a server nickname and port.</source>
-        <translation type="unfinished"></translation>
+        <translation>Palvelimelle on määriteltävä vähintään nimi ja portti.</translation>
     </message>
     <message>
         <source>Error</source>
@@ -1246,17 +1264,19 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Vidalia was unable to determine your public IP address.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia ei onnistunut selvittämään julkista IP-osoitettanne.</translation>
     </message>
     <message>
         <source>Vidalia was only able to find a private IP address for your server.
 
 Would you like to access an external service to determine your public IP address?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia löysi vain yksityisen IP-osoitteen palvelimellesi.
+
+Haluaisitko yrittää ulkoista palvelua saadakseen julkisen IP-osoitteesi?</translation>
     </message>
     <message>
         <source>When enabled, Vidalia will periodically update your IP address if necessary</source>
-        <translation type="unfinished"></translation>
+        <translation>Valittuna, Vidalia päivittää IP-osoitteenne jaksottain tarvittaessa</translation>
     </message>
     <message>
         <source>Automatically Update</source>
@@ -1267,23 +1287,23 @@ Would you like to access an external service to determine your public IP address
     <name>TorProcess</name>
     <message>
         <source>&quot;%1&quot; is not an executable.</source>
-        <translation type="unfinished"></translation>
+        <translation>&quot;%1&quot; ei ole suoritettava.</translation>
     </message>
     <message>
         <source>Process %1 failed to stop. [%2]</source>
-        <translation type="unfinished"></translation>
+        <translation>Prosessi %1 epäonnistui pysähtymästä. [%2]</translation>
     </message>
     <message>
         <source>Failed to start</source>
-        <translation type="unfinished"></translation>
+        <translation>Käynnistyminen epäonnistui</translation>
     </message>
     <message>
         <source>Crashed</source>
-        <translation type="unfinished"></translation>
+        <translation>Tilttasi</translation>
     </message>
     <message>
         <source>Timed out</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhteysaika päättyi</translation>
     </message>
     <message>
         <source>Write error</source>
@@ -1306,7 +1326,8 @@ Would you like to access an external service to determine your public IP address
     </message>
     <message>
         <source>Invalid GUI style specified: </source>
-        <translation type="unfinished"></translation>
+        <translation>Virheellinen teema valittu: </translation>
     </message>
 </context>
 </TS>
+
