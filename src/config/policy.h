@@ -27,12 +27,15 @@
 #ifndef _POLICY_H
 #define _POLICY_H
 
+#include <QCoreApplication>
 #include <QString>
 #include <QHostAddress>
 
 
 class Policy
 {
+  Q_DECLARE_TR_FUNCTIONS(Policy)
+
 public:
   /** A set of possible actions for a policy */
   enum Action {
@@ -56,7 +59,7 @@ public:
   /** Creates a policy using the specified information. */
   Policy(Action action, QHostAddress addr, uchar mask,
          quint16 fromPort, quint16 toPort = 0);
-
+ 
   /** Overloads the == operator. */
   bool operator==(const Policy &policy) const;
 

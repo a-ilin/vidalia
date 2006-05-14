@@ -46,7 +46,7 @@ Policy::Policy(QString policy)
   _address  = QHostAddress::Any;
   _fromPort = _toPort = 0;
   _mask = 0;
-  
+ 
   /* Parse the given string to override the defaults. */
   fromString(policy);
 }
@@ -59,7 +59,7 @@ Policy::Policy(QString action, QString address, QString ports)
   _address  = QHostAddress::Any;
   _fromPort = _toPort = 0;
   _mask = 0;
-  
+ 
   fromString(action + " " + address + ":" + ports);
 }
 
@@ -101,7 +101,7 @@ Policy::fromString(QString policy)
 {
   /* Separate the action and the address/mask/port info */
   QStringList ruleParts = policy.split(" ");
-  _action = (ruleParts.at(0).toLower() == "reject" ? Reject : Accept);
+  _action = toAction(ruleParts.at(0));
   
   /* If some address/mask/port stuff was specified, parse it. */
   if (ruleParts.size() > 1) {
@@ -134,24 +134,28 @@ Policy::fromString(QString policy)
 QString
 Policy::toString()
 {
-  return action() + " " + address() + ":" + ports();
+  QString act = (_action == Accept ? "accept" : "reject");
+  return act + " " + address() + ":" + ports();
 }
 
-/** Converts the given action to a string. */
+/** Converts the given action to a string. This function tolerates both the
+ * translated and untranslated forms of the string "accept" and "reject". */
 Policy::Action
 Policy::toAction(QString action)
 {
-  if (action.toLower() == "accept") {
+  action = action.toLower();
+  if (action == tr("accept") || action == "accept") {
     return Accept;
   }
   return Reject;
 }
 
-/** Returns the action associated with this policy. */
+/** Returns the action associated with this policy. NOTE: This string will be
+ * translated to whatever the current language setting is. */
 QString
 Policy::action()
 {
-  return (_action == Accept ? "accept" : "reject");
+  return (_action == Accept ? tr("accept") : tr("reject"));
 }
 
 /** Returns the address (and mask, if specified) for this policy. */
