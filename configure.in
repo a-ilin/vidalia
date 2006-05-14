@@ -1,5 +1,4 @@
 AC_INIT(vidalia,0.0.5-svn)
-AC_CONFIG_HEADERS(src/config.h)
 AC_MSG_NOTICE([Configuring AC_PACKAGE_STRING...])
 AC_PROG_CXX
 PROFILE="Vidalia.pro"
@@ -27,9 +26,6 @@ AC_MSG_NOTICE([Building in $BUILDMODE mode])
 
 dnl Clean out an existing Makefile
 AC_CHECK_FILE(Makefile, [rm Makefile])
-
-dnl Output config.h
-AC_OUTPUT
 
 dnl Build the translations
 AC_MSG_NOTICE([Processing language translations...])
