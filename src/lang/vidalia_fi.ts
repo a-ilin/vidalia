@@ -1,4 +1,4 @@
-﻿<!DOCTYPE TS><TS>
+<!DOCTYPE TS><TS>
 <context>
     <name></name>
     <message>
@@ -375,7 +375,7 @@ Olkaapa hyvä ja päivittäkää uudempaan Tor-ohjelmaan.</translation>
     </message>
     <message>
         <source>Move to previous page (Askelpalautin)</source>
-        <translation>Siirry edelliselle sivulle (Backspace)</translation>
+        <translation type="obsolete">Siirry edelliselle sivulle (Backspace)</translation>
     </message>
     <message>
         <source>Backspace</source>
@@ -465,6 +465,10 @@ Olkaapa hyvä ja päivittäkää uudempaan Tor-ohjelmaan.</translation>
         <source>Found %1 results</source>
         <translation>Löytyi %1 vastausta</translation>
     </message>
+    <message>
+        <source>Move to previous page (Backspace)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>HelpTextBrowser</name>
@@ -484,7 +488,6 @@ Olkaapa hyvä ja päivittäkää uudempaan Tor-ohjelmaan.</translation>
         <translation>Tiedote</translation>
     </message>
     <message>
-
         <source>Notice</source>
         <translation>Ilmoitus</translation>
     </message>
@@ -684,16 +687,19 @@ Haluaisitteko sulkea kunnollisesti ja antaa käyttäjille aikaa löytää uuden 
     </message>
     <message>
         <source>Vidalia was unable to shutdown Tor gracefully. </source>
-        <translation>Vidalia ei onnistunut sulkemaan Tor-ohjelmaa kunnolla.</translation>
+        <translation type="obsolete">Vidalia ei onnistunut sulkemaan Tor-ohjelmaa kunnolla.</translation>
     </message>
     <message>
-
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
         <translation>Vidalia huomasi Tor-ohjelman sammuneen aavistamatta.
 
 Olkaapa hyvä ja tarkistakaapa tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen sen sammumista.</translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to shutdown Tor gracefully. (</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -872,7 +878,7 @@ Olkaapa hyvä ja tarkistakaapa tapahtumalokista mitä tapahtui Tor-ohjelmalle en
     </message>
     <message>
         <source>Messages Shown: </source>
-        <translation>Tapahtumia näkyvillä: </translation>
+        <translation type="obsolete">Tapahtumia näkyvillä: </translation>
     </message>
     <message>
         <source>Messages that appear when something has 
@@ -939,12 +945,12 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Messages Shown: %1</source>
-        <translation>Tapahtumia näkyvillä: %1</translation>
+        <translation type="obsolete">Tapahtumia näkyvillä: %1</translation>
     </message>
     <message>
         <source>%1 [%2] %3
 </source>
-        <translation>%1 [%2] %3</translation>
+        <translation type="obsolete">%1 [%2] %3</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -984,7 +990,11 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Vidalia was unable to open the specified log file for writing.</source>
-        <translation>Vidalia ei onnistunut avaamaan määriteltyä lokitiedostoa kirjoittamiseen.</translation>
+        <translation type="obsolete">Vidalia ei onnistunut avaamaan määriteltyä lokitiedostoa kirjoittamiseen.</translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to open the specified log file.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1036,6 +1046,17 @@ interest to Tor developers.</source>
     <message>
         <source>Move</source>
         <translation>Siirrä</translation>
+    </message>
+</context>
+<context>
+    <name>Policy</name>
+    <message>
+        <source>accept</source>
+        <translation>hyväksy</translation>
+    </message>
+    <message>
+        <source>reject</source>
+        <translation>hylkää</translation>
     </message>
 </context>
 <context>
@@ -1330,4 +1351,3 @@ Haluaisitko yrittää ulkoista palvelua saadakseen julkisen IP-osoitteesi?</tran
     </message>
 </context>
 </TS>
-

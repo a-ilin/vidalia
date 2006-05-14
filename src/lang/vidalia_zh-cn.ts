@@ -1450,6 +1450,17 @@ Error: </source>
     </message>
 </context>
 <context>
+    <name>Policy</name>
+    <message>
+        <source>accept</source>
+        <translation type="unfinished">接受</translation>
+    </message>
+    <message>
+        <source>reject</source>
+        <translation type="unfinished">拒绝</translation>
+    </message>
+</context>
+<context>
     <name>RouterDescriptor</name>
     <message>
         <source>Online</source>

@@ -1017,6 +1017,17 @@ interest to Tor developers.</source>
     </message>
 </context>
 <context>
+    <name>Policy</name>
+    <message>
+        <source>accept</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>reject</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>RouterDescriptor</name>
     <message>
         <source>Online</source>
