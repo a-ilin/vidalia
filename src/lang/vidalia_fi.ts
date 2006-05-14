@@ -319,7 +319,7 @@ Olkaapa hyvä ja päivittäkää uudempaan Tor-ohjelmaan.</translation>
         <translation>Läh: </translation>
     </message>
     <message>
-        <source>%1 kt</source>
+        <source>%1 KB</source>
         <translation>%1 Kt</translation>
     </message>
     <message>
