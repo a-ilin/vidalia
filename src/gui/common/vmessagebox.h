@@ -33,6 +33,8 @@
 
 class VMessageBox : public QMessageBox
 {
+  Q_OBJECT
+
 public:
   enum Button {
     NoButton = 0,

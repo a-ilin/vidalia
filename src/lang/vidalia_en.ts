@@ -605,23 +605,7 @@ Upgrade to a newer version of Tor.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Show Log</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Close</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Vidalia was unable to start Tor.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Retry</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -666,10 +650,6 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Vidalia was unable to apply your server&apos;s settings.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Show Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1302,6 +1282,41 @@ Would you like to access an external service to determine your public IP address
     </message>
     <message>
         <source>Unknown error</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>VMessageBox</name>
+    <message>
+        <source>OK</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Retry</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Log</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show Settings</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

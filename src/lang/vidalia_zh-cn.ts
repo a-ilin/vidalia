@@ -925,11 +925,11 @@ about what happened to Tor before it exited.</source>
     </message>
     <message>
         <source>Show Log</source>
-        <translation>显示日志</translation>
+        <translation type="obsolete">显示日志</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>关闭</translation>
+        <translation type="obsolete">关闭</translation>
     </message>
     <message>
         <source>Authentication Error</source>
@@ -961,11 +961,11 @@ Error: </source>
     </message>
     <message>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation type="obsolete">OK</translation>
     </message>
     <message>
         <source>Retry</source>
-        <translation>重试</translation>
+        <translation type="obsolete">重试</translation>
     </message>
     <message>
         <source>Vidalia was unable to stop Tor.</source>
@@ -1040,7 +1040,7 @@ Would you like to shutdown gracefully and give clients time to find a new server
     </message>
     <message>
         <source>Show Settings</source>
-        <translation type="unfinished">显示设置</translation>
+        <translation type="obsolete">显示设置</translation>
     </message>
     <message>
         <source>You are currently running a Tor server. Terminating your server will interrupt any open connections from clients.
@@ -1756,6 +1756,41 @@ Would you like to access an external service to determine your public IP address
     <message>
         <source>Unknown error</source>
         <translation>未知的错误</translation>
+    </message>
+</context>
+<context>
+    <name>VMessageBox</name>
+    <message>
+        <source>OK</source>
+        <translation type="unfinished">OK</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">取消</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished">帮助</translation>
+    </message>
+    <message>
+        <source>Retry</source>
+        <translation type="unfinished">重试</translation>
+    </message>
+    <message>
+        <source>Show Log</source>
+        <translation type="unfinished">显示日志</translation>
+    </message>
+    <message>
+        <source>Show Settings</source>
+        <translation type="unfinished">显示设置</translation>
     </message>
 </context>
 <context>

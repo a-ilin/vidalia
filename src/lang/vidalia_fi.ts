@@ -611,11 +611,11 @@ Olkaapa hyvä ja päivittäkää uudempaan Tor-ohjelmaan.</translation>
     </message>
     <message>
         <source>Show Log</source>
-        <translation>Näytä loki</translation>
+        <translation type="obsolete">Näytä loki</translation>
     </message>
     <message>
         <source>Close</source>
-        <translation>Sulje</translation>
+        <translation type="obsolete">Sulje</translation>
     </message>
     <message>
         <source>Vidalia was unable to start Tor.</source>
@@ -623,11 +623,11 @@ Olkaapa hyvä ja päivittäkää uudempaan Tor-ohjelmaan.</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation type="obsolete">OK</translation>
     </message>
     <message>
         <source>Retry</source>
-        <translation>Yritä uudelleen</translation>
+        <translation type="obsolete">Yritä uudelleen</translation>
     </message>
     <message>
         <source>Vidalia was unable to stop Tor.</source>
@@ -675,7 +675,7 @@ Olkaapa hyvä ja päivittäkää uudempaan Tor-ohjelmaan.</translation>
     </message>
     <message>
         <source>Show Settings</source>
-        <translation>Näytä asetukset</translation>
+        <translation type="obsolete">Näytä asetukset</translation>
     </message>
     <message>
         <source>You are currently running a Tor server. Terminating your server will interrupt any open connections from clients.
@@ -1337,6 +1337,41 @@ Haluaisitko yrittää ulkoista palvelua saadakseen julkisen IP-osoitteesi?</tran
     <message>
         <source>Unknown error</source>
         <translation>Tuntematon virhe</translation>
+    </message>
+</context>
+<context>
+    <name>VMessageBox</name>
+    <message>
+        <source>OK</source>
+        <translation type="unfinished">OK</translation>
+    </message>
+    <message>
+        <source>Cancel</source>
+        <translation type="unfinished">Peruuta</translation>
+    </message>
+    <message>
+        <source>Yes</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>No</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Help</source>
+        <translation type="unfinished">Ohje</translation>
+    </message>
+    <message>
+        <source>Retry</source>
+        <translation type="unfinished">Yritä uudelleen</translation>
+    </message>
+    <message>
+        <source>Show Log</source>
+        <translation type="unfinished">Näytä loki</translation>
+    </message>
+    <message>
+        <source>Show Settings</source>
+        <translation type="unfinished">Näytä asetukset</translation>
     </message>
 </context>
 <context>
