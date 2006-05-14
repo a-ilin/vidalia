@@ -1,0 +1,41 @@
+AC_INIT(vidalia,0.0.5-svn)
+AC_CONFIG_HEADERS(src/config.h)
+AC_MSG_NOTICE([Configuring AC_PACKAGE_STRING...])
+AC_PROG_CXX
+PROFILE="Vidalia.pro"
+
+dnl Find qmake
+AC_PATH_PROG(QMAKE, qmake, qmake)
+if test x$QMAKE = x; then
+  AC_MSG_ERROR([qmake must be in your path])
+fi
+
+dnl Find lrelease
+AC_PATH_PROG(LRELEASE, lrelease, lrelease)
+if test x$LRELEASE = x; then
+  AC_MSG_ERROR([lrelease must be in your path])
+fi
+
+dnl Determine whether we should link to the debug versions of Qt or not
+BUILDMODE="debug"
+AC_ARG_ENABLE(debug,
+    AC_HELP_STRING(--disable-debug, Disable debugging support))
+if test x$enable_debug = xno; then
+  BUILDMODE="release"
+fi
+AC_MSG_NOTICE([Building in $BUILDMODE mode])
+
+dnl Clean out an existing Makefile
+AC_CHECK_FILE(Makefile, [rm Makefile])
+
+dnl Output config.h
+AC_OUTPUT
+
+dnl Build the translations
+AC_MSG_NOTICE([Processing language translations...])
+$LRELEASE $PROFILE
+
+dnl Run qmake to generate the Makefile
+AC_MSG_NOTICE([Running qmake...])
+$QMAKE -config $BUILDMODE $PROFILE
+

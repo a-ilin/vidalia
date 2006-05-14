@@ -44,13 +44,6 @@ win32 {
   # Link against these libraries on Win32
   LIBS += -lshell32 -lgdi32
 }
-!win32 {
-  # On non-Windows, ./configure generates a conf.pri, so
-  # include it if it exists
-  exists(conf.pri) {
-    include(conf.pri)
-  }
-}
 
 include($$PWD/src/src.pri)
 

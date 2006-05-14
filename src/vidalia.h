@@ -27,6 +27,8 @@
 #ifndef _VIDALIA_H
 #define _VIDALIA_H
 
+#include <config.h>
+
 #if defined(Q_OS_WIN)
 #include <windows.h>
 #endif
@@ -38,8 +40,6 @@
 #include <gui/help/browser/helpbrowser.h>
 #include <config/vidaliasettings.h>
 #include <control/torcontrol.h>
-
-#define VIDALIA_VERSION   "0.0.5-svn"
 
 
 class Vidalia : public QApplication
@@ -71,7 +71,7 @@ public:
   /** Returns the current GUI style. */
   static QString style() { return _style; }
   /** Returns Vidalia's application version. */
-  static QString version() { return VIDALIA_VERSION; }
+  static QString version() { return PACKAGE_VERSION; }
 
   /** Returns Vidalia's main TorControl object. */
   static TorControl* torControl() { return _torControl; }
