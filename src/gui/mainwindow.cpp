@@ -29,10 +29,10 @@
  */
 
 #include <QtGui>
-
 #include <vidalia.h>
 #include <util/html.h>
 
+#include "common/vmessagebox.h"
 #include "mainwindow.h"
 
 #define IMG_APP_ICON       ":/images/16x16/tor-logo.png"
@@ -66,11 +66,6 @@
 #define IMG_TOR_STARTING   QString::number(IDI_TOR_STARTING)
 #define IMG_TOR_STOPPING   QString::number(IDI_TOR_STOPPING)
 #endif
-
-/* Buttons the use can click in error message boxes */
-#define BUTTON_OK         0
-#define BUTTON_RETRY      1
-#define BUTTON_HELP       2
 
 
 /** Default constructor. It installs an icon in the system tray area and
@@ -272,11 +267,11 @@ MainWindow::start()
     _startAct->setEnabled(false);
   } else {
     /* Display an error message and see if the user wants some help */
-    int response = QMessageBox::warning(this, tr("Error Starting Tor"),
+    int response = VMessageBox::warning(this, tr("Error Starting Tor"),
                      p(tr("Vidalia was unable to start Tor.")) + p(errmsg),
-                     tr("OK"), tr("Help"));
+                     VMessageBox::Ok, VMessageBox::Help);
 
-    if (response == 1) {
+    if (response == VMessageBox::Help) {
       /* Show troubleshooting information about starting Tor */
       Vidalia::help("troubleshooting.start");
     }
@@ -306,17 +301,17 @@ void
 MainWindow::connectFailed(QString errmsg)
 {
   /* Ok, ok. It really isn't going to connect. I give up. */
-  int response = QMessageBox::warning(this, 
+  int response = VMessageBox::warning(this, 
                    tr("Error Connecting to Tor"), p(errmsg),
-                   tr("OK"), tr("Retry"), tr("Help"),
-                   BUTTON_OK, 0);
+                   VMessageBox::Ok|VMessageBox::Default|VMessageBox::Escape, 
+                   VMessageBox::Retry, VMessageBox::Help);
 
 
-  if (response == BUTTON_RETRY) {
+  if (response == VMessageBox::Retry) {
     _torControl->connect();
   } else {
     /* Show the help browser (if requested) */
-    if (response == BUTTON_HELP) {
+    if (response == VMessageBox::Help) {
       Vidalia::help("troubleshooting.connect");
     }
     /* Since Vidalia can't connect, we can't really do much, so stop Tor. */
@@ -335,28 +330,28 @@ MainWindow::initiateServerShutdown()
   bool rc = false;
   
   /* Ask the user if they want to shutdown nicely. */
-  int response = QMessageBox::question(this, tr("Server is Enabled"),
-                   p(tr("You are currently running a Tor server. "
-                        "Terminating your server will interrupt any "
-                        "open connections from clients.\n\n"
-                        "Would you like to shutdown gracefully and "
-                        "give clients time to find a new server?")),
-                   QMessageBox::Yes, QMessageBox::No);
+  int response = VMessageBox::question(this, tr("Server is Enabled"),
+                  p(tr("You are currently running a Tor server. "
+                       "Terminating your server will interrupt any "
+                       "open connections from clients.\n\n"
+                       "Would you like to shutdown gracefully and "
+                       "give clients time to find a new server?")),
+                  VMessageBox::Yes, VMessageBox::No);
 
-  if (response == QMessageBox::Yes) {
+  if (response == VMessageBox::Yes) {
     /* Send a SHUTDOWN signal to Tor */
     if (_torControl->signal(TorSignal::Shutdown, &errmsg)) {
       rc = true; /* Shutdown successfully initiated */
     } else {
       /* Let the user know that we couldn't shutdown gracefully and we'll
        * kill Tor forcefully now if they want. */
-      response = QMessageBox::warning(this, tr("Error Shutting Down"),
-                  p(tr("Vidalia was unable to shutdown Tor gracefully. (") 
-                    + errmsg + ")") + 
-                  p(tr("Do you want to close Tor anyway?")),
-                  QMessageBox::Yes, QMessageBox::No);
+      response = VMessageBox::warning(this, tr("Error Shutting Down"),
+                   p(tr("Vidalia was unable to shutdown Tor gracefully. (") 
+                     + errmsg + ")") + 
+                   p(tr("Do you want to close Tor anyway?")),
+                   VMessageBox::Yes, VMessageBox::No);
 
-      if (response == QMessageBox::No) {
+      if (response == VMessageBox::No) {
         /* Don't try to terminate Tor anymore. Just leave it running */
         _trayIcon->update(IMG_TOR_RUNNING, tr("Tor is running"));
         rc = true;
@@ -390,12 +385,12 @@ MainWindow::stop()
   if (_torControl->stop(&errmsg)) {
     _stopAct->setEnabled(false);
   } else {
-    int response = QMessageBox::warning(this, tr("Error Stopping Tor"),
+    int response = VMessageBox::warning(this, tr("Error Stopping Tor"),
                      p(tr("Vidalia was unable to stop Tor.")) + p(errmsg),
-                     tr("OK"), tr("Help"),
-                     BUTTON_OK, BUTTON_OK);
+                     VMessageBox::Ok|VMessageBox::Default|VMessageBox::Escape, 
+                     VMessageBox::Help);
       
-    if (response == BUTTON_HELP) {
+    if (response == VMessageBox::Help) {
       /* Show some troubleshooting help */
       Vidalia::help("troubleshooting.stop");
     }
@@ -425,12 +420,12 @@ MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
      * SIGINT, Tor will exit(0). We might need to change this warning message
      * if this turns out to not be the case. */
     if (exitStatus == QProcess::CrashExit || exitCode != 0) {
-      int ret = QMessageBox::warning(this, tr("Tor Exited"),
+      int ret = VMessageBox::warning(this, tr("Tor Exited"),
                   p(tr("Vidalia detected that Tor exited unexpectedly.\n\n"
                        "Please check the message log for indicators "
                        "about what happened to Tor before it exited.")),
-                  tr("Show Log"), tr("Close"));
-      if (ret == 0) {
+                  VMessageBox::Ok, VMessageBox::ShowLog);
+      if (ret == VMessageBox::ShowLog) {
         showMessageLog();  
       }
     }
@@ -451,17 +446,17 @@ MainWindow::connected()
    * running, then we better let Tor know about the changes now. */
   if (serverSettings.changedSinceLastApply()) {
     if (!serverSettings.apply(&errmsg)) {
-      int ret = QMessageBox::warning(this, 
+      int ret = VMessageBox::warning(this, 
                   tr("Error Applying Server Settings"),
                   p(tr("Vidalia was unable to apply your server's settings."))
                     + p(errmsg),
-                  tr("OK"), tr("Show Settings"), tr("Show Log"));
+                  VMessageBox::Ok, VMessageBox::ShowSettings, VMessageBox::ShowLog);
 
-      if (ret == 1) {
+      if (ret == VMessageBox::ShowSettings) {
         /* Show the config dialog with the server page already shown. */
         ConfigDialog* configDialog = new ConfigDialog(this);
         configDialog->show(ConfigDialog::Server);
-      } else if (ret == 2) {
+      } else if (ret == VMessageBox::ShowLog) {
         /* Show the message log. */
         showMessageLog(); 
       }

@@ -47,6 +47,7 @@ macx {
 }
 
 
+include($$PWD/common/common.pri)
 include($$PWD/tray/tray.pri)
 include($$PWD/about/about.pri)
 include($$PWD/log/log.pri)

@@ -31,6 +31,7 @@
 #include <QClipboard>
 #include <vidalia.h>
 #include <util/html.h>
+#include <gui/common/vmessagebox.h>
 
 #include "messagelog.h"
 
@@ -165,9 +166,9 @@ MessageLog::registerLogEvents()
   QString errmsg;
   _filter = _settings->getMsgFilter();
   if (!_torControl->setLogEvents(_filter, this, &errmsg)) {
-    QMessageBox::warning(this, tr("Error Setting Filter"),
+    VMessageBox::warning(this, tr("Error Setting Filter"),
       p(tr("Vidalia was unable to register for Tor's log events.")) + p(errmsg),
-       QMessageBox::Ok, QMessageBox::NoButton);
+      VMessageBox::Ok);
   }
 }
 
@@ -181,10 +182,9 @@ MessageLog::rotateLogFile(QString filename)
   QString errmsg;
   if (_enableLogging) {
     if (!_logFile.open(filename, &errmsg)) {
-      QMessageBox::warning(this, tr("Error Opening Log File"),
-        p(tr("Vidalia was unable to open the specified log file.")) +
-        p(errmsg),
-        QMessageBox::Ok, QMessageBox::NoButton);
+      VMessageBox::warning(this, tr("Error Opening Log File"),
+        p(tr("Vidalia was unable to open the specified log file."))+p(errmsg),
+        VMessageBox::Ok);
       return false;
     }
   } else {
@@ -276,10 +276,11 @@ MessageLog::save(QList<LogTreeItem *> items)
     
     /* If can't write to file, show error message */
     if (!logFile.open(fileName, &errmsg)) {
-      QMessageBox::warning(this, tr("Vidalia"),
+      VMessageBox::warning(this, tr("Vidalia"),
                            p(tr("Cannot write file %1\n\n%2."))
-                            .arg(fileName)
-                            .arg(errmsg));
+                                                .arg(fileName)
+                                                .arg(errmsg),
+                           VMessageBox::Ok);
       return;
     }
    
@@ -335,9 +336,9 @@ MessageLog::find()
     /* Search for the user-specified text */
     QList<LogTreeItem *> results = ui.lstMessages->find(text);
     if (!results.size()) {
-      QMessageBox::information(this, tr("Not Found"), 
+      VMessageBox::information(this, tr("Not Found"), 
                                p(tr("Search found 0 matches.")), 
-                               QMessageBox::Ok, QMessageBox::NoButton);
+                               VMessageBox::Ok);
     } else {
       /* Set the focus to the first match */
       ui.lstMessages->scrollToItem(results.at(0));
