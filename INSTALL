@@ -14,6 +14,6 @@ Instruction for Building and Installing Vidalia from Source
 
 NOTE: If you get linker errors like bin/ld: cannot find -lQtGui_debug, then
 you will need to replace the "./configure" command in Step 2 with 
-"./configure --release" to avoid linking against the debug versions of Qt's 
+"./configure --disable-debug" to avoid linking against the debug versions of Qt's 
 libraries.
 
