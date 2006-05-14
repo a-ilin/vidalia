@@ -222,7 +222,7 @@ GraphFrame::paintTotals()
     _painter->setPen(RECV_COLOR);
     _painter->drawText(x, FONT_SIZE,
         tr("Recv: ") + totalToStr(_totalRecv) + 
-        " (" + totalToStr(_recvData->first()) + "/s)");
+        " ("+tr("%1 KB/s").arg(_recvData->first(), 0, 'f', 2)+")");
   }
 
   /* If total sent is selected */
@@ -230,7 +230,7 @@ GraphFrame::paintTotals()
     _painter->setPen(SEND_COLOR);
     _painter->drawText(x, (2*FONT_SIZE),
         tr("Sent: ") + totalToStr(_totalSend) +
-        " (" + totalToStr(_sendData->first()) + "/s)");
+        " ("+tr("%1 KB/s").arg(_sendData->first(), 0, 'f', 2)+")");
   }
 }
 
