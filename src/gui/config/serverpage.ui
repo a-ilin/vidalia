@@ -553,7 +553,9 @@
             <enum>Qt::NoContextMenu</enum>
            </property>
            <property name="toolTip" >
-            <string>Email address at which you may be reached if there is a problem with your server</string>
+            <string>Email address at which you may be reached if there is a
+problem with your server. You might also include your PGP or GPG
+fingerprint.</string>
            </property>
           </widget>
          </item>
