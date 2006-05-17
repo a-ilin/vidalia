@@ -41,15 +41,24 @@ class ControlConnection : public QThread
   Q_OBJECT
 
 public:
+  /** Control connection status */
+  enum Status {
+    Disconnected, /**< Control connection disconnected.    */
+    Connecting,   /**< Control connection attempt pending. */
+    Connected     /**< Control connection established.     */
+  };
+
   /** Default constructor. */
   ControlConnection(TorEvents *events = 0);
 
   /** Connect to the specified Tor control interface. */
   void connect(QHostAddress addr, quint16 port);
+  /** Cancels a pending connection to Tor. */
+  void cancelConnect();
   /** Disconnect from Tor. */
   void disconnect();
-  /** Returns true if we are connected to Tor and processing messages. */
-  bool isConnected();
+  /** Returns the status of the control connection. */
+  Status status();
   /** Sends a control command to Tor and waits for the response. */
   bool send(ControlCommand cmd, ControlReply &reply, QString *errmsg = 0);
 
@@ -72,11 +81,16 @@ private:
   void processSendQueue(ControlSocket *sock);
   /** Processes any messages waiting on the control socket. */
   void processReceiveQueue(ControlSocket *sock);
+  /** Sets the control connection status */
+  void setStatus(Status status);
 
-  QHostAddress _addr; /**< Address of Tor's control interface. */
-  quint16 _port;      /**< Port of Tor's control interface. */
-  QMutex _sendMutex;  /**< Mutex for the send queue. */
-  QMutex _recvMutex;  /**< Mutex for the receive queue. */
+  Status _status;      /**< The status of the control connection. */
+  QHostAddress _addr;  /**< Address of Tor's control interface. */
+  quint16 _port;       /**< Port of Tor's control interface. */
+  QMutex _sendMutex;   /**< Mutex for the send queue. */
+  QMutex _recvMutex;   /**< Mutex for the receive queue. */
+  QMutex _connMutex;   /**< Mutex for the status of the connection. */
+  bool _cancelConnect; /**< Set to true when we cancel a pending connect. */
   /** Set to false when we are to disconnect and stop processing messages. */
   bool _run;
   /** Pointer to a previously constructed TorEvents list of event handlers */

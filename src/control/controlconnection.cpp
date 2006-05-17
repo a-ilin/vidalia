@@ -64,19 +64,42 @@ ControlConnection::connect(QHostAddress addr, quint16 port)
   _addr = addr;
   _port = port;
   _run  = true;
+  _status = Disconnected;
+  _cancelConnect = false;
 
   /* Start a thread. Either connected() or connectFailed() will be emitted
    * once the connection attempt has completed. */
   QThread::start();
 }
 
-/** \return true if the control socket is connected and the message handling
- * thread is running. */
-bool
-ControlConnection::isConnected()
+/** Cancels a pending connection attempt. */
+void
+ControlConnection::cancelConnect()
 {
-  /* If the socket gets disconnected, the thread exits */
-  return (_run && isRunning());
+  QMutexLocker locker(&_connMutex);
+  _cancelConnect = true;
+}
+
+/** Returns the status of the control connection. */
+ControlConnection::Status
+ControlConnection::status()
+{
+  QMutexLocker locker(&_connMutex);
+  if (_status == Connected) {
+    /* The thread must be running for us to be considered connected */
+    if (!_run || !isRunning()) {
+      return Disconnected;
+    }
+  }
+  return _status;
+}
+
+/** Sets the status of the control connection. */
+void
+ControlConnection::setStatus(Status status)
+{
+  QMutexLocker locker(&_connMutex);
+  _status = status;
 }
 
 /** Disconnects the control socket and stops all message processing. */
@@ -84,7 +107,7 @@ void
 ControlConnection::disconnect()
 {
   /* Check if we're already disconnected */
-  if (!isConnected()) {
+  if (status() != Connected) {
     return;
   }
   _run = false;
@@ -121,7 +144,7 @@ ControlConnection::send(ControlCommand cmd, ControlReply &reply,  QString *errms
   ReceiveWaiter recvWaiter(&reply, &waitCond);
   
   /* Make sure we have a valid control socket before trying to send. */
-  if (!isConnected()) {
+  if (status() != Connected) {
     return err(errmsg, tr("Control socket not connected."));
   }
  
@@ -215,7 +238,17 @@ ControlConnection::processReceiveQueue(ControlSocket *sock)
 bool
 ControlConnection::connect(ControlSocket *sock, QString *errmsg)
 {
+  setStatus(Connecting);
   for (int i = 0; i < MAX_CONNECT_ATTEMPTS; i++) {
+    /* Check if we're supposed to cancel our attempt to connect */
+    _connMutex.lock();
+    if (_cancelConnect) {
+      _connMutex.unlock();
+      return false;
+    }
+    _connMutex.unlock();
+    
+    /* Try to connect */
     if (sock->connect(_addr, _port, errmsg)) {
       return true;
     }
@@ -237,8 +270,12 @@ ControlConnection::run()
   ControlSocket *sock = new ControlSocket();
   
   if (!connect(sock, &errmsg)) {
-    emit connectFailed(errmsg);
+    if (!_cancelConnect) {
+      /* If the connect failed and wasn't cancelled, then emit the error */
+      emit connectFailed(errmsg);
+    }
   } else {
+    setStatus(Connected);
     emit connected();
     while (_run && sock->isConnected()) {
       /* If there are messages in the send queue, then send them */
@@ -259,6 +296,7 @@ ControlConnection::run()
     }
     emit disconnected();
   }
+  setStatus(Disconnected);
   _run = false;
   delete sock;
 }

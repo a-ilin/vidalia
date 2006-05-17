@@ -116,7 +116,13 @@ void
 TorControl::onStopped(int exitCode, QProcess::ExitStatus exitStatus)
 {
   closeTorProcess();
-  disconnect();
+  
+  if (_controlConn->status() == ControlConnection::Connecting) {
+    _controlConn->cancelConnect();
+  } else {
+    disconnect();
+  }
+
   emit stopped(exitCode, exitStatus);
 }
 
@@ -193,7 +199,7 @@ TorControl::onConnectFailed(QString errmsg)
 void
 TorControl::disconnect()
 {
-  if (_controlConn->isConnected()) {
+  if (isConnected()) {
     _controlConn->disconnect();
   }
 }
@@ -209,11 +215,11 @@ TorControl::onDisconnected()
   emit connected(false);
 }
 
-/** Check if theh control socket is connected */
+/** Check if the control socket is connected */
 bool
 TorControl::isConnected()
 {
-  return _controlConn->isConnected();
+  return (_controlConn->status() == ControlConnection::Connected);
 }
 
 /** Send a message to Tor and reads the response. If Vidalia was unable to
