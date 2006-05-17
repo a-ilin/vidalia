@@ -424,9 +424,11 @@ MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
                   p(tr("Vidalia detected that Tor exited unexpectedly.\n\n"
                        "Please check the message log for indicators "
                        "about what happened to Tor before it exited.")),
-                  VMessageBox::Ok, VMessageBox::ShowLog);
+                  VMessageBox::Ok, VMessageBox::ShowLog, VMessageBox::Help);
       if (ret == VMessageBox::ShowLog) {
         showMessageLog();  
+      } else if (ret == VMessageBox::Help) {
+        Vidalia::help("troubleshooting.torexited");
       }
     }
   }
