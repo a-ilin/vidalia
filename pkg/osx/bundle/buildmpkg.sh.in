@@ -1,0 +1,233 @@
+#!/bin/sh
+#  $Id: Vidalia.pro 834 2006-05-14 00:12:18Z edmanm $
+# 
+#  Vidalia is distributed under the following license:
+#
+#  Copyright (C) 2006,  Matt Edman, Justin Hipple
+#
+#  This program is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU General Public License
+#  as published by the Free Software Foundation; either version 2
+#  of the License, or (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  
+#  02110-1301, USA.
+#
+#                *     *     *    *    *    * 
+#
+#  This file is derived from contrib/osx/package.sh from Tor 
+#  (http://tor.eff.org), licensed as follows:
+#   
+#  Copyright (c) 2001-2004, Roger Dingledine
+#  Copyright (c) 2004-2006, Roger Dingledine, Nick Mathewson
+# 
+#  Redistribution and use in source and binary forms, with or without
+#  modification, are permitted provided that the following conditions are
+#  met:
+# 
+#     * Redistributions of source code must retain the above copyright
+#  notice, this list of conditions and the following disclaimer.
+# 
+#     * Redistributions in binary form must reproduce the above
+#  copyright notice, this list of conditions and the following disclaimer
+#  in the documentation and/or other materials provided with the
+#  distribution.
+# 
+#     * Neither the names of the copyright owners nor the names of its
+#  contributors may be used to endorse or promote products derived from
+#  this software without specific prior written permission.
+# 
+#  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+#  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+#  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+#  A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+#  OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+#  SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+#  LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+#  DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+#  THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+#  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+#  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#########################################################################
+
+
+# This script builds a Macintosh OS X metapackage containing 4 packages:
+#    - One for Vidalia.
+#    - One for Tor.
+#    - One for Privoxy.
+#    - One for a Tor-specific Privoxy configuration script.
+#
+
+if [ $# -ne 2 ] 
+then
+  echo "usage: package.sh <path-to-tor> <path-to-privoxy.zip>"
+  exit 1
+fi
+
+# Get the location of Vidalia
+VID_DIR="../../../"
+# Get the location of Tor
+TOR_DIR="$1"
+# Get the location of the Privoxy package zip file
+PRIVOXY_PKG="$2"
+# Vidalia's version string
+VIDALIAVERSION="@VERSION@"
+# Tor's version string
+TORVERSION=`echo "$TOR_DIR" | sed -e "s/.*\///" | sed -e "s/tor-//"`
+# Name of the output bundle
+BUNDLE="vidalia-bundle-$TORVERSION-$VIDALIAVERSION"
+# Set the location of the temporary files
+BUILD_DIR=/tmp/vidalia-osx-$$
+# Set the location of the .mpkg
+MPKG_DIR="$BUILD_DIR/output"
+# Set the location where sub-packages will be placed
+PKG_DIR="$MPKG_DIR/.contained_packages"
+# Set the location of the resulting .dmg file
+OUT_DIR="$VID_DIR/pkg"
+# Path to PackageMaker
+PACKAGEMAKER=/Developer/Applications/Utilities/PackageMaker.app/Contents/MacOS/PackageMaker
+
+
+umask 022
+echo I might ask you for your password now, so you can sudo.
+sudo rm -rf $BUILD_DIR
+mkdir $BUILD_DIR || exit 1
+for subdir in tor_packageroot tor_resources \
+              privoxyconf_packageroot \
+              privoxyconf_resources \
+              vidalia_packageroot \
+              vidaliabundle_resources \
+              output; do
+    mkdir $BUILD_DIR/$subdir
+done
+mkdir $PKG_DIR
+
+##
+# Assemble the Vidalia package
+##
+echo "** Building Vidalia.pkg **"
+mkdir -p $BUILD_DIR/vidalia_packageroot/Applications/Vidalia.app
+mkdir -p $BUILD_DIR/vidalia_packageroot/Library/Vidalia
+cp -r $VID_DIR/bin/Vidalia.app $BUILD_DIR/vidalia_packageroot/Applications/
+cp $VID_DIR/AUTHORS $VID_DIR/CHANGELOG $VID_DIR/README $BUILD_DIR/vidalia_packageroot/Library/Vidalia
+find $BUILD_DIR/vidalia_packageroot -print0 | sudo xargs -0 chown root:wheel
+
+$PACKAGEMAKER -build                  \
+    -p $PKG_DIR/Vidalia.pkg  \
+    -f $BUILD_DIR/vidalia_packageroot \
+    -i VidaliaInfo.plist              \
+    -d VidaliaDesc.plist
+
+
+##
+# Assemble the Tor package
+##
+echo "** Building Tor.pkg **"
+pushd $TOR_DIR
+make install DESTDIR=$BUILD_DIR/tor_packageroot
+popd
+chmod 755 TorPostFlight
+cp TorPostflight $BUILD_DIR/tor_resources/postflight
+
+# Tor's documentation
+DOC=$BUILD_DIR/tor_resources/documents
+mkdir $DOC
+mkdir $DOC/howto
+cp    $TOR_DIR/doc/website/stylesheet.css $TOR_DIR/doc/website/tor-doc-osx.html.* $DOC/howto
+cp    $TOR_DIR/doc/website/tor-doc-server.html.* $DOC/howto
+cp    $TOR_DIR/doc/website/tor-hidden-service.html.* $DOC/howto
+cp    $TOR_DIR/doc/website/tor-switchproxy.html.* $DOC/howto
+cp    $TOR_DIR/AUTHORS $DOC/AUTHORS.txt
+groff $TOR_DIR/doc/tor.1.in -T ps -m man | pstopdf -i -o $DOC/tor-reference.pdf
+groff $TOR_DIR/doc/tor-resolve.1 -T ps -m man | pstopdf -i -o $DOC/tor-resolve.pdf
+mkdir $DOC/Advanced
+cp    $TOR_DIR/doc/tor-spec.txt         \
+      $TOR_DIR/doc/rend-spec.txt        \
+      $TOR_DIR/doc/control-spec.txt     \
+      $TOR_DIR/doc/socks-extensions.txt \
+      $TOR_DIR/doc/version-spec.txt     \
+      $DOC/Advanced
+cp    $TOR_DIR/doc/HACKING $DOC/Advanced/HACKING.txt
+cp    $TOR_DIR/ChangeLog   $DOC/Advanced/ChangeLog.txt
+
+find $BUILD_DIR/tor_packageroot -print0 | sudo xargs -0 chown root:wheel
+
+$PACKAGEMAKER -build              \
+    -p $PKG_DIR/Tor.pkg           \
+    -f $BUILD_DIR/tor_packageroot \
+    -r $BUILD_DIR/tor_resources   \
+    -i $TOR_DIR/contrib/osx/TorInfo.plist  \
+    -d $TOR_DIR/contrib/osx/TorDesc.plist
+
+
+##
+# Unzip the Privoxy.pkg and move it into place
+##
+echo "** Extracting Privoxy.pkg **"
+unzip $PRIVOXY_PKG -d $PKG_DIR/
+find $PKG_DIR/Privoxy.pkg -type d -print0 | xargs -0 chmod u+w
+
+
+##
+# Build the Privoxy configuration package
+##
+echo "** Building PrivoxyConf.pkg **"
+mkdir -p $BUILD_DIR/privoxyconf_packageroot/Library/Privoxy
+cp privoxy.config $BUILD_DIR/privoxyconf_packageroot/Library/Privoxy/config
+chmod 755 PrivoxyConfPostFlight
+cp PrivoxyConfPostFlight $BUILD_DIR/privoxyconf_resources/postflight
+
+find $BUILD_DIR/privoxyconf_packageroot -print0 | sudo xargs -0 chown root:wheel
+
+$PACKAGEMAKER -build                      \
+    -p $PKG_DIR/PrivoxyConf.pkg           \
+    -f $BUILD_DIR/privoxyconf_packageroot \
+    -r $BUILD_DIR/privoxyconf_resources   \
+    -i PrivoxyConfInfo.plist              \
+    -d PrivoxyConfDesc.plist
+
+
+##
+# Build the metapackage
+##
+echo "** Building the bundle metapackage **"
+MPKG=$MPKG_DIR/$BUNDLE.mpkg
+mkdir -p "$MPKG/Contents/Resources"
+echo -n "pmkrpkg1" > "$MPKG/Contents/PkgInfo"
+cp VidaliaBundleWelcome.rtf "$MPKG/Contents/Resources/Welcome.rtf"
+cp VidaliaBundleInfo.plist  "$MPKG/Contents/Info.plist"
+cp VidaliaBundleDesc.plist  "$MPKG/Contents/Resources/Description.plist"
+
+### Copy readmes and licenses into toplevel.
+PRIVOXY_RESDIR=$PKG_DIR/Privoxy.pkg/Contents/Resources
+cp $PRIVOXY_RESDIR/License.html $MPKG_DIR/Privoxy\ License.html
+cp $PRIVOXY_RESDIR/ReadMe.txt   $MPKG_DIR/Privoxy\ ReadMe.txt
+cp $TOR_DIR/LICENSE             $MPKG_DIR/Tor\ License.txt
+cp $VID_DIR/LICENSE             $MPKG_DIR/Vidalia\ License.txt
+cp $VID_DIR/COPYING             $MPKG_DIR/GNU\ GPL.txt
+
+
+##
+# Put the metapackage into a dmg
+##
+echo "** Building $BUNDLE.dmg **"
+find   $MPKG_DIR -print0 | sudo xargs -0 chown root:wheel
+mv     $MPKG_DIR "$BUILD_DIR/$BUNDLE"
+rm -f "$BUNDLE.dmg"
+USER="`whoami`"
+sudo hdiutil create -format UDZO -srcfolder "$BUILD_DIR/$BUNDLE" "$OUT_DIR/$BUNDLE.dmg"
+sudo chown "$USER" "$OUT_DIR/$BUNDLE.dmg"
+
+
+##
+# Clean up and finish
+##
+sudo rm -rf $BUILD_DIR
+

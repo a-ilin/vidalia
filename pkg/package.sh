@@ -1,18 +1,43 @@
 #!/bin/bash
 #
+#  $Id: Vidalia.pro 834 2006-05-14 00:12:18Z edmanm $
+# 
+#  Vidalia is distributed under the following license:
+#
+#  Copyright (C) 2006,  Matt Edman, Justin Hipple
+#
+#  This program is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU General Public License
+#  as published by the Free Software Foundation; either version 2
+#  of the License, or (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  
+#  02110-1301, USA.
+#################################################################
+
 # Builds distribution packages for various platforms.
 
 
 # Check for proper script arguments
-if [ "$#" -ne 1 ]
+if [ "$#" -eq 0 ]
 then
-  echo "Usage: $0 <tarball|win32|osx>"
+  echo "Usage: $0 <tarball|win32|osx|osx-bundle>"
   exit 1
 fi
 
 
 # Make the distribution depending on what type was requested
 case "$1" in
+#
+# Source tarball (.tar.gz)
+#
 "tarball")
   # Put the tarball in the current directory
   destdir=`pwd`
@@ -27,7 +52,10 @@ case "$1" in
      tar -cz -T - -f "$tarball"
   popd -1 1>/dev/null
   ;;
-  
+ 
+#
+# OS X .dmg
+#
 "osx")
   dmg=`dirname $(pwd) | sed -e "s/.*\///"`.dmg
   srcdir="../"
@@ -35,10 +63,33 @@ case "$1" in
   osx/builddmg.sh "$srcdir" "$srcfiles" "$dmg"
   ;;
 
+#
+# OS X .mpkg (Bundle)
+#
+"osx-bundle")
+  if [ $# -ne 3 ]
+  then
+    echo "Usage: $0 osx-bundle <path-to-tor> <privoxy-pkg.zip>"
+    exit 1
+  fi
+  torpath="$2"
+  privoxy="$3"
+  
+  pushd "osx/bundle"
+  ./buildmpkg.sh "$torpath" "$privoxy"
+  popd
+  ;;
+  
+#
+#  Windows .exe installer
+#
 "win32")
   echo "Unimplemented"
   ;;
 
+#
+# Invalid
+#
 *)
   echo "Unrecognized distribution type."
   ;;

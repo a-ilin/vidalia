@@ -1,0 +1,59 @@
+           Building the Vidalia/Tor/Privoxy OS X Bundle
+
+Libevent
+1. Download and extract the latest libevent source from
+   http://www.monkey.org/~provos/libevent/
+
+2. Configure libevent with the following:
+   ./configure --enable-static --disable-shared
+
+3. Build and install libevent as follows:
+   make && make install
+
+   You will need to be root to `make install`
+
+
+Privoxy
+4. Download the OS X Privoxy package from 
+   http://prdownloads.sourceforge.net/ijbswa/privoxyosx_setup_3.0.3.zip?download
+  
+   Note the location in which you save this .zip file, because you will need
+   to specify it in Step 8.
+
+
+Tor
+5. Download and extract the latest Tor source from
+   http://tor.eff.org
+
+   Note the location in which you extract Tor's source, because you will need
+   to specify it in Step 8.
+   
+6. Configure Tor with the following:
+   ./configure --prefix=/Library/Tor --bindir=/Library/Tor \
+    --sysconfdir=/Library --enable-static --disable-shared
+
+
+Vidalia
+7. Configure Vidalia with the following:
+   ./configure --disable-debug
+
+   The Vidalia binary on OS X links to Qt statically, so you will need to have
+   your Qt installation configured appropriately.
+
+8. Run `make` to build Vidalia.
+
+   
+Finish
+8. From the location of Vidalia's source, run the following:
+   ./pkg/package.sh osx-bundle <path-to-tor> <privoxy-package.zip>
+  
+  Example:
+   ./pkg/package.sh osx-bundle ~/tor-0.1.1.19-rc ~/privoxyosx_setup_3.0.3.zip
+
+  The script that builds the .mpkg (pkg/osx/bundle/buildmpkg.sh) gets Tor's
+  version number from the directory name, so it should be name appropriately,
+  as in the example above.
+  
+The resulting .dmg containg the .mpkg and necessary licenses will be placed in
+the 'pkg' directory under Vidalia's source.
+
