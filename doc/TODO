@@ -4,8 +4,6 @@ Pre-competition-deadline Goals:
   
   * Simplified (coarse-grained) rate-limiting control
   
-  * Create a bundle for Mac OS X, similar to what we have for Windows
-  
   * Create a Vidalia package for at least one Linux distro (preferably Debian)
 
   
