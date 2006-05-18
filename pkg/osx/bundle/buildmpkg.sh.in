@@ -99,10 +99,11 @@ umask 022
 echo I might ask you for your password now, so you can sudo.
 sudo rm -rf $BUILD_DIR
 mkdir $BUILD_DIR || exit 1
-for subdir in tor_packageroot tor_resources \
+for subdir in tor_packageroot         \
+              tor_resources           \
               privoxyconf_packageroot \
-              privoxyconf_resources \
-              vidalia_packageroot \
+              privoxyconf_resources   \
+              vidalia_packageroot     \
               vidaliabundle_resources \
               output; do
     mkdir $BUILD_DIR/$subdir
@@ -117,14 +118,16 @@ mkdir -p $BUILD_DIR/vidalia_packageroot/Applications/Vidalia.app
 mkdir -p $BUILD_DIR/vidalia_packageroot/Library/Vidalia
 cp -r $VID_DIR/bin/Vidalia.app $BUILD_DIR/vidalia_packageroot/Applications/
 cp $VID_DIR/AUTHORS $VID_DIR/CHANGELOG $VID_DIR/README $BUILD_DIR/vidalia_packageroot/Library/Vidalia
-find $BUILD_DIR/vidalia_packageroot -print0 | sudo xargs -0 chown root:wheel
 
-$PACKAGEMAKER -build                  \
-    -p $PKG_DIR/Vidalia.pkg  \
-    -f $BUILD_DIR/vidalia_packageroot \
-    -i VidaliaInfo.plist              \
-    -d VidaliaDesc.plist
+find $BUILD_DIR/vidalia_packageroot \( -type d -or -perm +111 \) -print0 | sudo xargs -0 chmod 775
+find $BUILD_DIR/vidalia_packageroot -type f \! \( -perm +111 \) -print0 | sudo xargs -0 chmod 664
+find $BUILD_DIR/vidalia_packageroot -print0 | sudo xargs -0 chown root:admin
 
+$PACKAGEMAKER -build                   \
+     -p $PKG_DIR/Vidalia.pkg           \
+     -f $BUILD_DIR/vidalia_packageroot \
+     -i VidaliaInfo.plist              \
+     -d VidaliaDesc.plist
 
 ##
 # Assemble the Tor package
@@ -157,7 +160,9 @@ cp    $TOR_DIR/doc/tor-spec.txt         \
 cp    $TOR_DIR/doc/HACKING $DOC/Advanced/HACKING.txt
 cp    $TOR_DIR/ChangeLog   $DOC/Advanced/ChangeLog.txt
 
-find $BUILD_DIR/tor_packageroot -print0 | sudo xargs -0 chown root:wheel
+find $BUILD_DIR/tor_packageroot \( -type d -or -perm +111 \) -print0 | sudo xargs -0 chmod 775
+find $BUILD_DIR/tor_packageroot -type f \! \( -perm +111 \) -print0 | sudo xargs -0 chmod 664
+find $BUILD_DIR/tor_packageroot -print0 | sudo xargs -0 chown root:admin
 
 $PACKAGEMAKER -build              \
     -p $PKG_DIR/Tor.pkg           \

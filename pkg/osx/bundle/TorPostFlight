@@ -14,12 +14,13 @@ if [ ! -d $LOGDIR ]; then
   mkdir -p $LOGDIR
 fi
 # Check its permissions.
-chmod 700 $TORDIR
-chmod 700 $LOGDIR
+chmod 770 $TORDIR
+chmod 770 $LOGDIR
 
 # Create the configuration file only if there wan't one already.
 if [ ! -f $TARGET/torrc ]; then
   cp $TARGET/torrc.sample $TARGET/torrc
+  chmod 660 $TARGET/torrc
 fi
 
 # Ensure symbolic links
