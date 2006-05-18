@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>609</width>
-    <height>458</height>
+    <width>566</width>
+    <height>448</height>
    </rect>
   </property>
   <property name="sizePolicy" >
@@ -309,7 +309,7 @@
    <enum>Qt::ToolButtonTextUnderIcon</enum>
   </property>
   <widget class="QWidget" name="centralwidget" >
-   <layout class="QVBoxLayout" >
+   <layout class="QHBoxLayout" >
     <property name="margin" >
      <number>9</number>
     </property>
@@ -317,117 +317,132 @@
      <number>6</number>
     </property>
     <item>
+     <widget class="RouterListWidget" name="treeRouterList" >
+      <property name="sizePolicy" >
+       <sizepolicy>
+        <hsizetype>0</hsizetype>
+        <vsizetype>7</vsizetype>
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize" >
+       <size>
+        <width>180</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize" >
+       <size>
+        <width>180</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy" >
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <property name="statusTip" >
+       <string/>
+      </property>
+      <property name="sortingEnabled" >
+       <bool>true</bool>
+      </property>
+     </widget>
+    </item>
+    <item>
      <widget class="QSplitter" name="" >
+      <property name="sizePolicy" >
+       <sizepolicy>
+        <hsizetype>7</hsizetype>
+        <vsizetype>7</vsizetype>
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="orientation" >
-       <enum>Qt::Horizontal</enum>
+       <enum>Qt::Vertical</enum>
       </property>
       <property name="childrenCollapsible" >
        <bool>false</bool>
       </property>
-      <widget class="RouterListWidget" name="treeRouterList" >
+      <widget class="QFrame" name="frmMap" >
        <property name="sizePolicy" >
         <sizepolicy>
          <hsizetype>7</hsizetype>
          <vsizetype>7</vsizetype>
-         <horstretch>1</horstretch>
+         <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
-       </property>
-       <property name="minimumSize" >
-        <size>
-         <width>200</width>
-         <height>0</height>
-        </size>
        </property>
        <property name="contextMenuPolicy" >
         <enum>Qt::NoContextMenu</enum>
        </property>
-       <property name="statusTip" >
-        <string/>
+       <property name="frameShape" >
+        <enum>QFrame::StyledPanel</enum>
        </property>
-       <property name="sortingEnabled" >
+       <property name="frameShadow" >
+        <enum>QFrame::Raised</enum>
+       </property>
+       <layout class="QHBoxLayout" >
+        <property name="margin" >
+         <number>0</number>
+        </property>
+        <property name="spacing" >
+         <number>6</number>
+        </property>
+        <item>
+         <layout class="QGridLayout" >
+          <property name="margin" >
+           <number>0</number>
+          </property>
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="RouterDescriptorView" name="textRouterInfo" >
+       <property name="contextMenuPolicy" >
+        <enum>Qt::NoContextMenu</enum>
+       </property>
+       <property name="readOnly" >
         <bool>true</bool>
        </property>
-       <column>
-        <property name="text" >
-         <string>Status</string>
-        </property>
-       </column>
-       <column>
-        <property name="text" >
-         <string>Router</string>
-        </property>
-       </column>
       </widget>
-      <widget class="QSplitter" name="" >
-       <property name="sizePolicy" >
-        <sizepolicy>
-         <hsizetype>5</hsizetype>
-         <vsizetype>7</vsizetype>
-         <horstretch>100</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="orientation" >
-        <enum>Qt::Vertical</enum>
-       </property>
-       <property name="childrenCollapsible" >
-        <bool>false</bool>
-       </property>
-       <widget class="QFrame" name="frmMap" >
-        <property name="sizePolicy" >
-         <sizepolicy>
-          <hsizetype>5</hsizetype>
-          <vsizetype>5</vsizetype>
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="contextMenuPolicy" >
-         <enum>Qt::NoContextMenu</enum>
-        </property>
-        <property name="frameShape" >
-         <enum>QFrame::StyledPanel</enum>
-        </property>
-        <property name="frameShadow" >
-         <enum>QFrame::Raised</enum>
-        </property>
-        <layout class="QHBoxLayout" >
-         <property name="margin" >
-          <number>0</number>
-         </property>
-         <property name="spacing" >
-          <number>6</number>
-         </property>
-         <item>
-          <layout class="QGridLayout" >
-           <property name="margin" >
-            <number>0</number>
-           </property>
-           <property name="spacing" >
-            <number>6</number>
-           </property>
-          </layout>
-         </item>
-        </layout>
-       </widget>
-       <widget class="RouterDescriptorView" name="textRouterInfo" >
-        <property name="sizePolicy" >
-         <sizepolicy>
-          <hsizetype>7</hsizetype>
-          <vsizetype>7</vsizetype>
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-        <property name="contextMenuPolicy" >
-         <enum>Qt::NoContextMenu</enum>
-        </property>
-        <property name="readOnly" >
-         <bool>true</bool>
-        </property>
-       </widget>
-      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="RouterListWidget" name="treeCircuitList" >
+      <property name="sizePolicy" >
+       <sizepolicy>
+        <hsizetype>0</hsizetype>
+        <vsizetype>7</vsizetype>
+        <horstretch>1</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize" >
+       <size>
+        <width>180</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="maximumSize" >
+       <size>
+        <width>180</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="contextMenuPolicy" >
+       <enum>Qt::NoContextMenu</enum>
+      </property>
+      <property name="statusTip" >
+       <string/>
+      </property>
+      <property name="sortingEnabled" >
+       <bool>true</bool>
+      </property>
      </widget>
     </item>
    </layout>
@@ -436,9 +451,9 @@
    <property name="geometry" >
     <rect>
      <x>0</x>
-     <y>436</y>
-     <width>609</width>
-     <height>22</height>
+     <y>424</y>
+     <width>566</width>
+     <height>24</height>
     </rect>
    </property>
   </widget>
@@ -550,16 +565,16 @@
  <pixmapfunction></pixmapfunction>
  <customwidgets>
   <customwidget>
-   <class>RouterListWidget</class>
-   <extends>QTreeWidget</extends>
-   <header>gui/network/routerlistwidget.h</header>
+   <class>RouterDescriptorView</class>
+   <extends>QTextEdit</extends>
+   <header>gui/network/routerdescriptorview.h</header>
    <container>0</container>
    <pixmap></pixmap>
   </customwidget>
   <customwidget>
-   <class>RouterDescriptorView</class>
-   <extends>QTextEdit</extends>
-   <header>gui/network/routerdescriptorview.h</header>
+   <class>RouterListWidget</class>
+   <extends>QTreeWidget</extends>
+   <header>gui/network/routerlistwidget.h</header>
    <container>0</container>
    <pixmap></pixmap>
   </customwidget>
