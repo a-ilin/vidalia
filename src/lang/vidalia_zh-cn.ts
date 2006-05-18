@@ -1405,14 +1405,6 @@ Error: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Status</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Router</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>New Nym</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1534,7 +1526,7 @@ Error: </source>
     </message>
     <message>
         <source>Email address at which you may be reached if there is a problem with your server</source>
-        <translation>万一您服务器出现问题，可提供的Email联系方式</translation>
+        <translation type="obsolete">万一您服务器出现问题，可提供的Email联系方式</translation>
     </message>
     <message>
         <source>Contact Info:</source>
@@ -1720,6 +1712,12 @@ Would you like to access an external service to determine your public IP address
     </message>
     <message>
         <source>Automatically Update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Email address at which you may be reached if there is a
+problem with your server. You might also include your PGP or GPG
+fingerprint.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

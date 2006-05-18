@@ -1005,11 +1005,11 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Status</source>
-        <translation>Tila</translation>
+        <translation type="obsolete">Tila</translation>
     </message>
     <message>
         <source>Router</source>
-        <translation>Reititin</translation>
+        <translation type="obsolete">Reititin</translation>
     </message>
     <message>
         <source>New Nym</source>
@@ -1133,7 +1133,7 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Email address at which you may be reached if there is a problem with your server</source>
-        <translation>Sähköpostiosoite, johon voidaan ottaa yhteyttä sattuessa virheitä palvelimessanne</translation>
+        <translation type="obsolete">Sähköpostiosoite, johon voidaan ottaa yhteyttä sattuessa virheitä palvelimessanne</translation>
     </message>
     <message>
         <source>Contact Info:</source>
@@ -1302,6 +1302,12 @@ Haluaisitko yrittää ulkoista palvelua saadakseen julkisen IP-osoitteesi?</tran
     <message>
         <source>Automatically Update</source>
         <translation>Päivitä automaattisesti</translation>
+    </message>
+    <message>
+        <source>Email address at which you may be reached if there is a
+problem with your server. You might also include your PGP or GPG
+fingerprint.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
