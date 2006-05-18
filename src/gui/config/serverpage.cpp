@@ -64,7 +64,9 @@ ServerPage::ServerPage(QWidget *parent)
   /* Create a timer that we can use to remind ourselves to check if our IP
    * changed since last time we looked. */
   _autoUpdateTimer = new QTimer(this);
-    
+  connect(_autoUpdateTimer, SIGNAL(timeout()), 
+          this, SLOT(updateServerIP()));
+ 
   /* Bind events to actions */
   connect(ui.btnAddPolicy, SIGNAL(clicked()), this, SLOT(addPolicy()));
   connect(ui.btnRemovePolicy, SIGNAL(clicked()), this, SLOT(removePolicy()));
@@ -94,8 +96,6 @@ void
 ServerPage::setAutoUpdateTimer(bool enabled)
 {
   if (enabled && _settings->isServerEnabled()) {
-    connect(_autoUpdateTimer, SIGNAL(timeout()), 
-            this, SLOT(updateServerIP()));
     _autoUpdateTimer->start(AUTO_UPDATE_ADDR_INTERVAL);
   } else {
     _autoUpdateTimer->stop();
