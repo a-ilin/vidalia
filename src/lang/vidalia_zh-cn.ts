@@ -1718,7 +1718,7 @@ Would you like to access an external service to determine your public IP address
         <source>Email address at which you may be reached if there is a
 problem with your server. You might also include your PGP or GPG
 fingerprint.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">万一您服务器出现问题，可提供的Email联系方式</translation>
     </message>
 </context>
 <context>
