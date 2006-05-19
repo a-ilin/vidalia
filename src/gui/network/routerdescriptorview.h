@@ -29,6 +29,7 @@
 
 #include <QObject>
 #include <QTextEdit>
+#include <QList>
 
 #include <control/routerdescriptor.h>
 
@@ -44,7 +45,9 @@ public:
 public slots:
   /** Shows the given router descriptor. */
   void display(RouterDescriptor rd);
-
+  /** Shows all router descriptors in the given list. */
+  void display(QList<RouterDescriptor> rdlist);
+  
 private:
   /** Formats the descriptor's published date. */
   QString formatPublished(QDateTime date);
