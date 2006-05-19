@@ -27,11 +27,17 @@ HEADERS += $$PWD/netviewer.h \
            $$PWD/mapframe.h \
            $$PWD/routerlistwidget.h \
            $$PWD/routerlistitem.h \
-           $$PWD/routerdescriptorview.h
+           $$PWD/routerdescriptorview.h \
+           $$PWD/circuitlistwidget.h \
+           $$PWD/circuititem.h \
+           $$PWD/streamitem.h
 
 SOURCES += $$PWD/netviewer.cpp \
            $$PWD/mapframe.cpp \
            $$PWD/routerlistwidget.cpp \
            $$PWD/routerlistitem.cpp \
-           $$PWD/routerdescriptorview.cpp
+           $$PWD/routerdescriptorview.cpp \
+           $$PWD/circuitlistwidget.cpp \
+           $$PWD/circuititem.cpp \
+           $$PWD/streamitem.cpp
 
