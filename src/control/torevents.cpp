@@ -26,7 +26,10 @@
 
 #include <QApplication>
 
+#include "circuit.h"
+#include "stream.h"
 #include "torevents.h"
+
 
 /** Default constructor */
 TorEvents::TorEvents()
@@ -93,10 +96,10 @@ TorEvents::toString(TorEvent e)
     case LogNotice: event = "NOTICE"; break;
     case LogWarn:   event = "WARN"; break;
     case LogError:  event = "ERR"; break;
-    case Circuit:   event = "CIRC"; break;
-    case Stream:    event = "STREAM"; break;
-    case OrConn:    event = "ORCONN"; break;
-    case NewDescriptor: event = "NEWDESC"; break;
+    case CircuitStatus:   event = "CIRC"; break;
+    case StreamStatus:    event = "STREAM"; break;
+    case OrConnStatus:    event = "ORCONN"; break;
+    case NewDescriptor:   event = "NEWDESC"; break;
     default: event = "UNKNOWN"; break;
   }
   return event;
@@ -127,9 +130,9 @@ TorEvents::toTorEvent(QString event)
   if (event == "BW") {
     e = Bandwidth;
   } else if (event == "CIRCUIT") {
-    e = Circuit;
+    e = CircuitStatus;
   } else if (event == "STREAM") {
-    e = Stream;
+    e = StreamStatus;
   } else if (event == "DEBUG") {
     e = LogDebug;
   } else if (event == "NOTICE") {
@@ -143,7 +146,7 @@ TorEvents::toTorEvent(QString event)
   } else if (event == "ERR") {
     e = LogError;
   } else if (event == "ORCONN") {
-    e = OrConn;
+    e = OrConnStatus;
   } else if (event == "NEWDESC") {
     e = NewDescriptor;
   } else {
@@ -170,11 +173,11 @@ TorEvents::handleEvent(ControlReply reply)
 {
   foreach(ReplyLine line, reply.getLines()) {
     switch (parseEventType(line)) {
-      case Bandwidth:  handleBandwidthUpdate(line); break;
-      case Circuit:    handleCircuitStatus(line); break;
-      case Stream:     handleStreamStatus(line); break;
-      case OrConn:     handleOrConnStatus(line); break;
-      case NewDescriptor: handleNewDescriptor(line); break;
+      case Bandwidth:      handleBandwidthUpdate(line); break;
+      case CircuitStatus:  handleCircuitStatus(line); break;
+      case StreamStatus:   handleStreamStatus(line); break;
+      case OrConnStatus:   handleOrConnStatus(line); break;
+      case NewDescriptor:  handleNewDescriptor(line); break;
 
       case LogDebug: 
       case LogInfo:
@@ -224,11 +227,11 @@ TorEvents::handleCircuitStatus(ReplyLine line)
   QStringList msg = line.getMessage().split(" ");
   if (msg.size() >= 4) {
     quint64 circId = (quint64)msg.at(1).toULongLong();
-    CircuitEvent::Status status = CircuitEvent::toStatus(msg.at(2));
+    Circuit::Status status = Circuit::toStatus(msg.at(2));
     QString path = msg.at(3);
  
     /* Post the event to each of the interested targets */
-    dispatch(Circuit, new CircuitEvent(circId, status, path));
+    dispatch(CircuitStatus, new CircuitEvent(Circuit(circId, status, path)));
   }
 }
 
@@ -254,12 +257,13 @@ TorEvents::handleStreamStatus(ReplyLine line)
   QStringList msg = line.getMessage().split(" ");
   if (msg.size() >= 4) {
     quint64 streamId = (quint64)msg.at(1).toULongLong();
-    StreamEvent::Status status = StreamEvent::toStatus(msg.at(2));
+    Stream::Status status = Stream::toStatus(msg.at(2));
     quint64 circId = (quint64)msg.at(3).toULongLong();
     QString targetAddr = msg.at(4);
 
     /* Post the event to each of the interested targets */
-    dispatch(Stream, new StreamEvent(streamId, status, circId, targetAddr));
+    dispatch(StreamStatus, 
+      new StreamEvent(Stream(streamId, status, circId, targetAddr)));
   }
 }
 
@@ -303,8 +307,8 @@ TorEvents::handleOrConnStatus(ReplyLine line)
 {
   QStringList msg = line.getMessage().split(" ");
   if (msg.size() >= 3) {
-    dispatch(OrConn, new OrConnEvent(OrConnEvent::toStatus(msg.at(2)), 
-                                     msg.at(1)));
+    dispatch(OrConnStatus, 
+      new OrConnEvent(OrConnEvent::toStatus(msg.at(2)), msg.at(1)));
   }
 }
 

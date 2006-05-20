@@ -29,17 +29,19 @@
 
 #include <QEvent>
 
+
 class BandwidthEvent : public QEvent
 {
 public:
-  /** Default constructor */
-  BandwidthEvent(quint64 bytesRead, quint64 bytesWritten);
+  /** Constructor */
+  BandwidthEvent(quint64 bytesRead, quint64 bytesWritten)
+  : QEvent((QEvent::Type)CustomEventType::BandwidthEvent)
+  { _bytesRead = bytesRead; _bytesWritten = bytesWritten; }
 
   /** Returns the number of bytes read in the last second */
-  quint64 bytesRead();
-
+  quint64 bytesRead() { return _bytesRead; }
   /** Returns the number of bytes written in the last second */
-  quint64 bytesWritten();
+  quint64 bytesWritten() { return _bytesWritten; }
   
 private:
   quint64 _bytesWritten;

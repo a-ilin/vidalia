@@ -52,9 +52,9 @@ public:
     Unknown,
     Bandwidth,
     LogDebug, LogInfo, LogNotice, LogWarn, LogError,
-    Circuit,
-    Stream,
-    OrConn,
+    CircuitStatus,
+    StreamStatus,
+    OrConnStatus,
     NewDescriptor
   };
  

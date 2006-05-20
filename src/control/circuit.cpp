@@ -20,24 +20,48 @@
  ****************************************************************/
 
 /** 
- * \file newdescriptorevent.cpp
+ * \file circuit.cpp
  * \version $Id$
  */
 
-#include "eventtype.h"
-#include "newdescriptorevent.h"
+#include "circuit.h"
 
-/** Default constructor */
-NewDescriptorEvent::NewDescriptorEvent(QStringList idList)
-: QEvent((QEvent::Type)CustomEventType::NewDescriptorEvent)
+
+/** Default constructor. */
+Circuit::Circuit()
 {
-  _idList = idList;
+  _circId = 0;
+  _status = Unknown;
+  _path   = QString();
 }
 
-/** Returns the list of new descriptors available. */
-QStringList
-NewDescriptorEvent::descriptorIDs()
+/** Constructor */
+Circuit::Circuit(quint64 circId, Status status, QString path)
 {
-  return _idList;
+  _circId = circId;
+  _status = status;
+  _path   = path;
+}
+
+/** Converts the circuit status string to its proper enum value */
+Circuit::Status
+Circuit::toStatus(QString strStatus)
+{
+  Status status;
+  strStatus = strStatus.toUpper();
+  if (strStatus == "LAUNCHED") {
+    status = Launched;
+  } else if (strStatus == "BUILT") {
+    status = Built;
+  } else if (strStatus == "EXTENDED") {
+    status = Extended;
+  } else if (strStatus == "FAILED") {
+    status = Failed;
+  } else if (strStatus == "CLOSED") {
+    status = Closed;
+  } else {
+    status = Unknown;
+  }
+  return status;
 }
 

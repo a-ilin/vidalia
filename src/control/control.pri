@@ -37,7 +37,9 @@ HEADERS += $$PWD/torcontrol.h \
            $$PWD/orconnevent.h \
            $$PWD/torsignal.h \
            $$PWD/newdescriptorevent.h \
-           $$PWD/routerdescriptor.h
+           $$PWD/routerdescriptor.h \
+           $$PWD/circuit.h \
+           $$PWD/stream.h
 
 SOURCES += $$PWD/torcontrol.cpp \
            $$PWD/torprocess.cpp \
@@ -47,12 +49,10 @@ SOURCES += $$PWD/torcontrol.cpp \
            $$PWD/controlreply.cpp \
            $$PWD/replyline.cpp \
            $$PWD/torevents.cpp \
-           $$PWD/bandwidthevent.cpp \
-           $$PWD/circuitevent.cpp \
-           $$PWD/streamevent.cpp \
            $$PWD/logevent.cpp \
            $$PWD/orconnevent.cpp \
            $$PWD/torsignal.cpp \
-           $$PWD/newdescriptorevent.cpp \
-           $$PWD/routerdescriptor.cpp
+           $$PWD/routerdescriptor.cpp \
+           $$PWD/circuit.cpp \
+           $$PWD/stream.cpp
 

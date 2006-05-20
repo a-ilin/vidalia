@@ -27,49 +27,34 @@
 #ifndef _STREAMEVENT_H
 #define _STREAMEVENT_H
 
-#include <QString>
 #include <QEvent>
+
+#include "eventtype.h"
+#include "stream.h"
 
 
 class StreamEvent : public QEvent
 {
 public:
-  /** Stream status events */
-  enum Status {
-    Unknown,      /**< Unknown status type given */
-    New,          /**< New request to connect */
-    NewResolve,   /**< New request to resolve an address */
-    SentConnect,  /**< Sent a connect cell */
-    SentResolve,  /**< Sent a resolve cell */
-    Succeeded,    /**< Stream established */
-    Failed,       /**< Stream failed */
-    Closed,       /**< Stream closed */
-    Detached      /**< Detached from circuit */
-  };
-  
   /** Default constructor */
-  StreamEvent(quint64 streamId, Status status, quint64 circuitId, QString target);
+  StreamEvent(Stream stream)
+  : QEvent((QEvent::Type)CustomEventType::StreamEvent)
+  { _stream = stream; }
   
-  /** Converts a string description of a stream's status to its enum value */
-  static Status toStatus(QString strStatus);
-  
-  /** Returns the ID for this stream */
-  quint64 streamId();
-  
-  /** Returns the status for this stream */
-  Status status();
-  
+  /** Returns the Stream object for this stream event. */
+  Stream stream() { return _stream; }
+  /** Returns the ID for this stream event. */
+  quint64 id() { return _stream.id(); }
+  /** Returns the status for this stream event. */
+  Stream::Status status() { return _stream.status(); }
   /** Returns the ID of the circuit to which this stream is assigned */
-  quint64 circuitId();
-  
-  /** Returns the target for this stream */
-  QString target();
+  quint64 circuitId() { return _stream.circuitId(); }
+  /** Returns the target for this stream event. */
+  QString target() { return _stream.target(); }
   
 private:
-    quint64 _streamId;
-  Status  _status;
-  quint64 _circuitId;
-  QString _target;
+  Stream _stream; /**< Stream object for this stream event. */
 };
 
 #endif
+

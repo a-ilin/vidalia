@@ -35,10 +35,12 @@ class NewDescriptorEvent : public QEvent
 {
 public:
   /** Default constructor */
-  NewDescriptorEvent(QStringList idList);
+  NewDescriptorEvent(QStringList idList)
+  : QEvent((QEvent::Type)CustomEventType::NewDescriptorEvent)
+  { _idList = idList; }
   
   /** Returns a list of new server IDs. */
-  QStringList descriptorIDs();
+  QStringList descriptorIDs() { return _idList; }
   
 private:
   /** A list of new descriptors available. */
@@ -46,3 +48,4 @@ private:
 };
 
 #endif
+

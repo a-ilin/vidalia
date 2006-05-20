@@ -20,17 +20,24 @@
  ****************************************************************/
 
 /** 
- * \file streamevent.cpp
+ * \file stream.cpp
  * \version $Id$
  */
 
-#include "eventtype.h"
-#include "streamevent.h"
+#include "stream.h"
 
-/** Default constructor */
-StreamEvent::StreamEvent(quint64 streamId, Status status, 
-                         quint64 circuitId, QString target)
-: QEvent((QEvent::Type)CustomEventType::StreamEvent)
+
+/** Default constructor. */
+Stream::Stream()
+{
+  _streamId  = 0;
+  _status    = Unknown;
+  _circuitId = 0;
+  _target    = QString();
+}
+
+/** Constructor */
+Stream::Stream(quint64 streamId, Status status, quint64 circuitId, QString target)
 {
   _streamId  = streamId;
   _status    = status;
@@ -39,8 +46,8 @@ StreamEvent::StreamEvent(quint64 streamId, Status status,
 }
 
 /** Converts a string description of a stream's status to its enum value */
-StreamEvent::Status
-StreamEvent::toStatus(QString strStatus)
+Stream::Status
+Stream::toStatus(QString strStatus)
 {
   Status status;
   strStatus = strStatus.toUpper();
@@ -66,30 +73,3 @@ StreamEvent::toStatus(QString strStatus)
   return status;
 }
 
-/** Returns the ID assigned to this stream */
-quint64
-StreamEvent::streamId()
-{
-  return _streamId;
-}
-
-/** Returns the status of this stream */
-StreamEvent::Status
-StreamEvent::status()
-{
-  return _status;
-}
-
-/** Returns the ID of the circuit to which this stream is assigned */
-quint64
-StreamEvent::circuitId()
-{
-  return _circuitId;
-}
-
-/** Returns the target for this stream */
-QString
-StreamEvent::target()
-{
-  return _target;
-}
