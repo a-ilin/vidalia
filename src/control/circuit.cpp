@@ -24,6 +24,8 @@
  * \version $Id$
  */
 
+#include <QStringList>
+
 #include "circuit.h"
 
 
@@ -41,6 +43,30 @@ Circuit::Circuit(quint64 circId, Status status, QString path)
   _circId = circId;
   _status = status;
   _path   = path;
+}
+
+/** Parses the string given in Tor control protocol format for a circuit. The
+ * format is:
+ * 
+ *      CircuitID SP CircStatus [SP Path]
+ *
+ * If the status is "LAUNCHED", the Path is empty.
+ */
+Circuit
+Circuit::fromString(QString circuit)
+{
+  QStringList parts = circuit.split(" ");
+  if (parts.size() >= 2) {
+    /* Get the circuit ID */
+    quint64 circId = (quint64)parts.at(0).toULongLong();
+    /* Get the circuit status value */
+    Circuit::Status status = Circuit::toStatus(parts.at(1));
+    /* Get the circuit path (list of routers) */
+    QString path = (parts.size() > 2 ? parts.at(2) : "");
+
+    return Circuit(circId, status, path);
+  }
+  return Circuit();
 }
 
 /** Converts the circuit status string to its proper enum value */
@@ -63,5 +89,12 @@ Circuit::toStatus(QString strStatus)
     status = Unknown;
   }
   return status;
+}
+
+/** Returns true if all fields in this Circuit object are empty. */
+bool
+Circuit::isEmpty()
+{
+  return (!_circId && (_status == Unknown) && _path.isEmpty());
 }
 

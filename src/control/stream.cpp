@@ -24,6 +24,8 @@
  * \version $Id$
  */
 
+#include <QStringList>
+ 
 #include "stream.h"
 
 
@@ -43,6 +45,30 @@ Stream::Stream(quint64 streamId, Status status, quint64 circuitId, QString targe
   _status    = status;
   _circuitId = circuitId;
   _target    = target;
+}
+
+/** Parses the given string for stream information, given in Tor control
+ * protocol format. The format is:
+ *
+ *     StreamID SP StreamStatus SP CircID SP Target
+ */
+Stream
+Stream::fromString(QString stream)
+{
+  QStringList parts = stream.split(" ");
+  if (parts.size() >= 4) { 
+    /* Get the stream ID */
+    quint64 streamId = (quint64)parts.at(0).toULongLong();
+    /* Get the stream status value */
+    Stream::Status status = Stream::toStatus(parts.at(1));
+    /* Get the ID of the circuit on which this stream travels */
+    quint64 circId = (quint64)parts.at(2).toULongLong();
+    /* Get the target address for this stream */
+    QString target = parts.at(3);
+    
+    return Stream(streamId, status, circId, target);
+  }
+  return Stream();
 }
 
 /** Converts a string description of a stream's status to its enum value */
@@ -71,5 +97,13 @@ Stream::toStatus(QString strStatus)
     status = Unknown;
   }
   return status;
+}
+
+/** Returns true if all fields in this Stream object are empty. */
+bool
+Stream::isEmpty()
+{
+  return (!_streamId && !_circuitId && 
+          (_status == Unknown) && _target.isEmpty());
 }
 

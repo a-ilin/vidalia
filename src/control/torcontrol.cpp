@@ -528,3 +528,59 @@ TorControl::getRouterIDList(QString *errmsg)
   return idList;
 }
 
+/** Gets a list of current circuits. */
+QList<Circuit>
+TorControl::getCircuits(QString *errmsg)
+{
+  ControlCommand cmd("GETINFO", "circuit-status");
+  ControlReply reply;
+  QList<Circuit> circuits;
+  Circuit c;
+  
+  if (send(cmd, reply, errmsg)) {
+    /* Sometimes there is a circuit on the first message line */
+    QString msg = reply.getMessage();
+    c = Circuit::fromString(msg.mid(msg.indexOf("=")+1));
+    if (!c.isEmpty()) {
+      circuits << c;
+    }
+
+    /* The rest of the circuits just come as data, one per line */
+    foreach(QString line, reply.getData()) {
+      c = Circuit::fromString(line);
+      if (!c.isEmpty()) {
+        circuits << Circuit::fromString(line);
+      }
+    }
+  }
+  return circuits;
+}
+
+/** Gets a list of current streams. */
+QList<Stream>
+TorControl::getStreams(QString *errmsg)
+{
+  ControlCommand cmd("GETINFO", "stream-status");
+  ControlReply reply;
+  QList<Stream> streams;
+  Stream s;
+  
+  if (send(cmd, reply, errmsg)) {
+    /* Sometimes there is a stream on the first message line */
+    QString msg = reply.getMessage();
+    s = Stream::fromString(msg.mid(msg.indexOf("=")+1));
+    if (!s.isEmpty()) {
+      streams << s;
+    }
+    
+    /* The rest of the streams jsut come as data, one per line */
+    foreach (QString line, reply.getData()) {
+      s = Stream::fromString(line);
+      if (!s.isEmpty()) {
+        streams << s;
+      }
+    }
+  }
+  return streams;
+}
+

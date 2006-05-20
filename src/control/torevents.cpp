@@ -129,7 +129,7 @@ TorEvents::toTorEvent(QString event)
   event = event.toUpper();
   if (event == "BW") {
     e = Bandwidth;
-  } else if (event == "CIRCUIT") {
+  } else if (event == "CIRC") {
     e = CircuitStatus;
   } else if (event == "STREAM") {
     e = StreamStatus;
@@ -224,14 +224,11 @@ TorEvents::handleBandwidthUpdate(ReplyLine line)
 void
 TorEvents::handleCircuitStatus(ReplyLine line)
 {
-  QStringList msg = line.getMessage().split(" ");
-  if (msg.size() >= 4) {
-    quint64 circId = (quint64)msg.at(1).toULongLong();
-    Circuit::Status status = Circuit::toStatus(msg.at(2));
-    QString path = msg.at(3);
- 
+  QString msg = line.getMessage().trimmed();
+  int i = msg.indexOf(" ") + 1;
+  if (i > 0) {
     /* Post the event to each of the interested targets */
-    dispatch(CircuitStatus, new CircuitEvent(Circuit(circId, status, path)));
+    dispatch(CircuitStatus, new CircuitEvent(Circuit::fromString(msg.mid(i))));
   }
 }
 
@@ -254,16 +251,11 @@ TorEvents::handleCircuitStatus(ReplyLine line)
 void
 TorEvents::handleStreamStatus(ReplyLine line)
 {
-  QStringList msg = line.getMessage().split(" ");
-  if (msg.size() >= 4) {
-    quint64 streamId = (quint64)msg.at(1).toULongLong();
-    Stream::Status status = Stream::toStatus(msg.at(2));
-    quint64 circId = (quint64)msg.at(3).toULongLong();
-    QString targetAddr = msg.at(4);
-
+  QString msg = line.getMessage().trimmed();
+  int i  = msg.indexOf(" ") + 1;
+  if (i > 0) {
     /* Post the event to each of the interested targets */
-    dispatch(StreamStatus, 
-      new StreamEvent(Stream(streamId, status, circId, targetAddr)));
+    dispatch(StreamStatus, new StreamEvent(Stream::fromString(msg.mid(i))));
   }
 }
 

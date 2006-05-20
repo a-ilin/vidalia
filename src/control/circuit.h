@@ -47,9 +47,14 @@ public:
   Circuit();
   /** Constructor */
   Circuit(quint64 circId, Status status, QString path);
-  
+
+  /** Parses the given string (in Tor's control protocol format) */
+  static Circuit fromString(QString circuit);
   /** Converts a string description of a circuit's status to an enum value */
   static Status toStatus(QString strStatus);
+
+  /** Returns true if all fields in this Circuit are empty. */
+  bool isEmpty();
   
   /** Returns the ID for this circuit */
   quint64 id() { return _circId; }

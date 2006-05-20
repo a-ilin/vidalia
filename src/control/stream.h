@@ -50,9 +50,14 @@ public:
   Stream();
   /** Constructor */
   Stream(quint64 streamId, Status status, quint64 circuitId, QString target);
-  
+
+  /** Parses the given string for a stream, in Tor control protocol format. */
+  static Stream fromString(QString stream);
   /** Converts a string description of a stream's status to its enum value */
   static Status toStatus(QString strStatus);
+
+  /** Returns true if the Stream object's fields are all empty. */
+  bool isEmpty();
   
   /** Returns the ID for this stream */
   quint64 id() { return _streamId; }

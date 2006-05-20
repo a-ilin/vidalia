@@ -108,6 +108,11 @@ public:
   /** Gets a list of router IDs for all routers Tor knows about. */
   QStringList getRouterIDList(QString *errmsg = 0);
 
+  /** Gets a list of current circuits. */
+  QList<Circuit> getCircuits(QString *errmsg = 0);
+  /** Gets a list of current streams. */
+  QList<Stream> getStreams(QString *errmsg = 0);
+
 signals:
   /** Emitted when the Tor process has started */
   void started();
