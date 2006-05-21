@@ -23,9 +23,9 @@
 
 DESTDIR = bin
 OBJECTS_DIR = obj
-RCC_DIR = src
-UI_DIR  = src
-MOC_DIR = src
+RCC_DIR = src/gen/qrc
+UI_DIR  = src/gen/ui
+MOC_DIR = src/gen/moc
 
 TEMPLATE = app
 CONFIG  += qt thread warn_on
