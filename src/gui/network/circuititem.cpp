@@ -24,11 +24,38 @@
  * \version $Id$
  */
 
+#include "circuitlistwidget.h"
 #include "circuititem.h"
 
 
-CircuitItem::CircuitItem(CircuitListWidget *parent)
-: QTreeWidgetItem(parent)
+/** Constructor */
+CircuitItem::CircuitItem(Circuit circuit)
 {
+  /* Save the circuit id */
+  _id = circuit.id();
+  /* Update the displayed text */
+  update(circuit);
+}
+
+/** Updates the status and path of this circuit item. */
+void
+CircuitItem::update(Circuit circuit)
+{
+  /* Get the path, or put in a semi-meaningful value if the path is empty */
+  QString path = circuit.path();
+  if (path.isEmpty()) {
+    path = tr("<Path Empty>");
+  }
+
+  /* Update the column fields */
+  setText(CircuitListWidget::ConnectionColumn, path);
+  setText(CircuitListWidget::StatusColumn, circuit.statusString());
+}
+
+/** Adds a stream as a child of this circuit. */
+void
+CircuitItem::addStream(StreamItem *stream)
+{
+  addChild(stream);
 }
 

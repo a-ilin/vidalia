@@ -49,7 +49,9 @@ public slots:
   void show();
   /** Loads a list of routers that Tor knows about. */
   void loadRouters();
-  
+  /** Loads a list of current circuits and streams. */
+  void loadConnections();
+
 protected:
   /** Called to deliver a NEWDESC event from Tor. */
   void customEvent(QEvent *event);

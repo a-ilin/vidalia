@@ -28,15 +28,22 @@
 #define _STREAMITEM_H
 
 #include <QTreeWidgetItem>
-
-#include "circuititem.h"
+#include <control/stream.h>
 
 
 class StreamItem : public QTreeWidgetItem
 {
 public:
-  /** Default constructor */
-  StreamItem(CircuitItem *parent);
+  /** Constructor */
+  StreamItem(Stream stream);
+
+  /** Updates the status of this stream item. */
+  void update(Stream stream);
+  /** Returns the ID of the stream associated with this tree item. */
+  quint64 id() { return _id; }
+  
+private:
+  quint64 _id; /**< ID for this stream. */
 };
 
 #endif

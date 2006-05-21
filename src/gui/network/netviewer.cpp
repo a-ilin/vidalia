@@ -35,6 +35,7 @@
 #define IMG_ZOOMIN  ":/images/22x22/zoom-in.png"
 #define IMG_ZOOMOUT ":/images/22x22/zoom-out.png"
 
+
 /** Constructor. Loads settings from VidaliaSettings.
  * \param parent The parent widget of this NetViewer object.\
  */
@@ -47,7 +48,9 @@ NetViewer::NetViewer(QWidget *parent)
   /* Get the TorControl object */
   _torControl = Vidalia::torControl();
   _torControl->setEvent(TorEvents::NewDescriptor, this, true);
-
+  _torControl->setEvent(TorEvents::CircuitStatus, this, true);
+  _torControl->setEvent(TorEvents::StreamStatus,  this, true);
+  
   /* Create the MapFrame and add it to the dialog */
   _map = new MapFrame;
   ui.gridLayout->addWidget(_map);
@@ -81,15 +84,15 @@ NetViewer::NetViewer(QWidget *parent)
   /* Connect the necessary slots and signals */
   connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
   connect(ui.actionNewNym, SIGNAL(triggered()), this, SLOT(newNym()));
-  connect(_torControl, SIGNAL(connected(bool)), 
-          ui.actionNewNym, SLOT(setEnabled(bool)));
-  connect(ui.actionRefresh, SIGNAL(triggered()), 
-          this, SLOT(loadRouters()));
-  connect(_torControl, SIGNAL(connected(bool)),
-          ui.actionRefresh, SLOT(setEnabled(bool)));
+  connect(ui.actionRefresh, SIGNAL(triggered()), this, SLOT(loadRouters()));
   connect(ui.treeRouterList, SIGNAL(routerSelected(RouterDescriptor)),
           ui.textRouterInfo, SLOT(display(RouterDescriptor)));
+  
+  connect(_torControl, SIGNAL(connected(bool)), ui.actionRefresh, SLOT(setEnabled(bool)));
+  connect(_torControl, SIGNAL(connected(bool)), ui.actionNewNym, SLOT(setEnabled(bool)));
   connect(_torControl, SIGNAL(connected()), this, SLOT(loadRouters()));
+  connect(_torControl, SIGNAL(connected()), this, SLOT(loadConnections())); 
+  connect(_torControl, SIGNAL(disconnected()), ui.treeCircuitList, SLOT(clear()));
 }
 
 /** Creates and adds an action to the specified action group */
@@ -114,9 +117,19 @@ NetViewer::setMapAction(QAction *action)
 void
 NetViewer::customEvent(QEvent *event)
 {
-  if (event->type() == CustomEventType::NewDescriptorEvent) {
+  int type = event->type();
+  if (type == CustomEventType::NewDescriptorEvent) {
+    /* New router descriptor, so load it and add it to the list */
     NewDescriptorEvent *nde = (NewDescriptorEvent *)event;
     loadNewDescriptors(nde->descriptorIDs());
+  } else if (type == CustomEventType::CircuitEvent) {
+    /* New or updated circuit information */
+    CircuitEvent *ce = (CircuitEvent *)event;
+    ui.treeCircuitList->addCircuit(ce->circuit());
+  } else if (type == CustomEventType::StreamEvent) {
+    /* New or updated stream information */
+    StreamEvent *se = (StreamEvent *)event;
+    ui.treeCircuitList->addStream(se->stream());
   }
 }
 
@@ -141,6 +154,22 @@ NetViewer::loadRouters()
 
   /* Ok, they can refresh again. */
   ui.actionRefresh->setEnabled(true);
+}
+
+/** Loads a list of all current circuits and streams. */
+void
+NetViewer::loadConnections()
+{
+  /* Load all circuits */
+  QList<Circuit> circuits = _torControl->getCircuits();
+  foreach (Circuit circuit, circuits) {
+    ui.treeCircuitList->addCircuit(circuit);
+  }
+  /* Now load all streams */
+  QList<Stream> streams = _torControl->getStreams();
+  foreach (Stream stream, streams) {
+    ui.treeCircuitList->addStream(stream);
+  }
 }
 
 /** Overloads the default show() slot. */

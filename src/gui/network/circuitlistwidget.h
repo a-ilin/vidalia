@@ -28,13 +28,61 @@
 #define _CIRCUITLISTWIDGET_H
 
 #include <QTreeWidget>
+#include <QList>
+
+#include "circuititem.h"
+#include "streamitem.h"
 
 
 class CircuitListWidget : public QTreeWidget
 {
+  Q_OBJECT
+  
 public:
+  /** Circuit list columns. */
+  enum Columns {
+    ConnectionColumn = 0, /**< Column for either the circuit or stream */
+    StatusColumn = 1      /**< Status of the connection. */
+  };
+  
   /** Default constructor */
   CircuitListWidget(QWidget *parent = 0);
+
+  /** Adds a circuit to the list. If the circuit already exists in the list,
+   * the status and path will be updated. */
+  void addCircuit(Circuit circuit);
+  /** Adds a stream to the list. If the stream already exists in the list, the
+   * status and path will be updated. */
+  void addStream(Stream stream);
+  /** Removes the given circuit item and all streams on that circuit. */
+  void removeCircuit(CircuitItem *circuit);
+  /** Removes the given stream item. */
+  void removeStream(StreamItem *stream);
+
+public slots:
+  /** Clears all circuits and streams from the list. */
+  void clear();
+
+private slots:
+  /** Removes the circuit with the given ID and any streams on this circuit.*/
+  void removeCircuit(); 
+  /** Removes the stream with the given ID. */
+  void removeStream();
+
+private:
+  /** Finds the circuit with the given ID. */
+  CircuitItem* findCircuitItem(quint64 circid);
+  /** Finds the stream with the given ID. */
+  StreamItem* findStreamItem(quint64 streamid);
+  /** Schedules the given circuit item to be removed after the given timeout. */
+  void scheduleCircuitRemoval(CircuitItem *circuit, int delay);
+  /** Schedules a stream to be removed after the given timeout. */
+  void scheduleStreamRemoval(StreamItem *stream, int delay);
+
+  /** List of circuit items to be removed. */
+  QList<CircuitItem *> _circuitRemovalList;
+  /** List of stream items to be removed. */
+  QList<StreamItem *> _streamRemovalList;
 };
 
 #endif

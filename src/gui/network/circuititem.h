@@ -27,16 +27,31 @@
 #ifndef _CIRCUITITEM_H
 #define _CIRCUITITEM_H
 
+#include <QApplication>
 #include <QTreeWidgetItem>
+#include <control/circuit.h>
+#include <control/stream.h>
 
-#include "circuitlistwidget.h"
+#include "streamitem.h"
 
 
 class CircuitItem : public QTreeWidgetItem
 {
+  Q_DECLARE_TR_FUNCTIONS(CircuitItem)
+
 public:
   /** Default constructor */
-  CircuitItem(CircuitListWidget *parent);
+  CircuitItem(Circuit circuit);
+ 
+  /** Adds a stream to this circuit item */
+  void addStream(StreamItem *stream);
+  /** Updates the status of this circuit item using the given circuit. */
+  void update(Circuit circuit);
+  /** Returns the ID for this circuit. */
+  quint64 id() { return _id; }
+  
+private:
+  quint64 _id; /**< Circuit ID associated with this item. */
 };
 
 #endif
