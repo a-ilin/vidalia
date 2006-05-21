@@ -25,6 +25,7 @@
  */
 
 #include <vidalia.h>
+#include <control/bandwidthevent.h>
 #include "bwgraph.h"
 
 /* Define the format used for displaying the date and time */

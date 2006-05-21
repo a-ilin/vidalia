@@ -31,6 +31,7 @@
 #include "netviewer.h"
 
 #define FONT        QFont(tr("Arial"), 10)
+#define IMG_MAP     ":/images/map/world-map.png"
 #define IMG_MOVE    ":/images/22x22/move-map.png"
 #define IMG_ZOOMIN  ":/images/22x22/zoom-in.png"
 #define IMG_ZOOMOUT ":/images/22x22/zoom-out.png"
@@ -51,21 +52,23 @@ NetViewer::NetViewer(QWidget *parent)
   _torControl->setEvent(TorEvents::CircuitStatus, this, true);
   _torControl->setEvent(TorEvents::StreamStatus,  this, true);
   
-  /* Create the MapFrame and add it to the dialog */
-  _map = new MapFrame;
+  /* Create the ZImageView  and add it to the dialog */
+  _map = new ZImageView();
+  QImage image(IMG_MAP);
+  _map->setImage(image);
   ui.gridLayout->addWidget(_map);
  
   /* Add the map manipulation action group to the toolbar */
   QActionGroup *grp = new QActionGroup(this);
-  createAction(QIcon(IMG_ZOOMIN), tr("Zoom In"), grp, MapFrame::ZoomIn);
-  createAction(QIcon(IMG_ZOOMOUT), tr("Zoom Out"), grp, MapFrame::ZoomOut);
-  createAction(QIcon(IMG_MOVE), tr("Move"), grp, MapFrame::Move);
+  createAction(QIcon(IMG_ZOOMIN), tr("Zoom In"), grp);
+  createAction(QIcon(IMG_ZOOMOUT), tr("Zoom Out"), grp);
+  createAction(QIcon(IMG_MOVE), tr("Move"), grp);
   foreach (QAction *act, grp->actions()) {
     ui.toolBar->insertAction(ui.actionHelp, act);
   }
   ui.toolBar->insertSeparator(ui.actionHelp);
   connect(grp, SIGNAL(triggered(QAction *)),
-          this, SLOT(setMapAction(QAction *)));
+          this, SLOT(NULL));
   
   /* Create the timer that will be used to update the router list once every
    * hour. We still receive the NEWDESC event to get new descriptors, but this
@@ -97,20 +100,11 @@ NetViewer::NetViewer(QWidget *parent)
 
 /** Creates and adds an action to the specified action group */
 void
-NetViewer::createAction(QIcon img, QString text,
-                        QActionGroup *group, MapFrame::MapAction mapAct)
+NetViewer::createAction(QIcon img, QString text, QActionGroup *group)
 {
   QAction *action = new QAction(img, text, group);
   action->setCheckable(true);
   action->setFont(FONT);
-  action->setData(mapAct);
-}
-
-/** Changes the current map action */
-void
-NetViewer::setMapAction(QAction *action)
-{
-  _map->setAction((MapFrame::MapAction) action->data().toInt());
 }
 
 /** Custom event handler. Catches the new descriptor events. */

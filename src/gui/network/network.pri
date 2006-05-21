@@ -1,5 +1,5 @@
 #################################################################
-#  $Id: network.pri 422 2006-03-13 05:13:00Z hipplej$
+#  $Id: network.pri 422 2006-03-13 05:13:00 hipplej$
 #
 #  Vidalia is distributed under the following license:
 #
@@ -24,7 +24,7 @@
 FORMS += $$PWD/netviewer.ui
 
 HEADERS += $$PWD/netviewer.h \
-           $$PWD/mapframe.h \
+	   $$PWD/zimageview.h \
            $$PWD/routerlistwidget.h \
            $$PWD/routerlistitem.h \
            $$PWD/routerdescriptorview.h \
@@ -33,7 +33,7 @@ HEADERS += $$PWD/netviewer.h \
            $$PWD/streamitem.h
 
 SOURCES += $$PWD/netviewer.cpp \
-           $$PWD/mapframe.cpp \
+	   $$PWD/zimageview.cpp \
            $$PWD/routerlistwidget.cpp \
            $$PWD/routerlistitem.cpp \
            $$PWD/routerdescriptorview.cpp \

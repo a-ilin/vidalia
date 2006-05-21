@@ -33,7 +33,7 @@
 #include <QTimer>
 #include <control/torcontrol.h>
 
-#include "mapframe.h"
+#include "zimageview.h"
 #include "ui_netviewer.h"
 
 class NetViewer : public QMainWindow
@@ -62,21 +62,20 @@ private slots:
   /** Called when the user selects the "New Nym" action on the toolbar. */
   void newNym();
   /** Called when the user selects a map action on the toolbar */
-  void setMapAction(QAction *action);
   
 private:
   /** Loads a list of new descriptors from the list of IDs. */
   void loadNewDescriptors(QStringList ids);
   /** Creates a checkable action on the toolbar */
   void createAction(QIcon img, QString text,
-                    QActionGroup *group, MapFrame::MapAction mapAct);
+                    QActionGroup *group);
 
   /** TorControl object used to talk to Tor. */
   TorControl* _torControl;
-  /** Custom QGLWidget MapFrame widget */
-  MapFrame* _map;
   /** Timer that fires once an hour to update the router list. */
   QTimer* _timer;
+  /** ZImageView that displays the map **/
+  ZImageView* _map;
 
   /** Qt Designer generated object **/
   Ui::NetViewer ui;
