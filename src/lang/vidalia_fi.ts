@@ -187,6 +187,40 @@
     </message>
 </context>
 <context>
+    <name>Circuit</name>
+    <message>
+        <source>New</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Building</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Closed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation type="unfinished">Tuntematon</translation>
+    </message>
+</context>
+<context>
+    <name>CircuitItem</name>
+    <message>
+        <source>&lt;Path Empty&gt;</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ConfigDialog</name>
     <message>
         <source>Configure Settings</source>
@@ -1005,11 +1039,11 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Status</source>
-        <translation type="obsolete">Tila</translation>
+        <translation type="unfinished">Tila</translation>
     </message>
     <message>
         <source>Router</source>
-        <translation type="obsolete">Reititin</translation>
+        <translation type="unfinished">Reititin</translation>
     </message>
     <message>
         <source>New Nym</source>
@@ -1046,6 +1080,10 @@ interest to Tor developers.</source>
     <message>
         <source>Move</source>
         <translation>Siirrä</translation>
+    </message>
+    <message>
+        <source>Connection</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1308,6 +1346,41 @@ Haluaisitko yrittää ulkoista palvelua saadakseen julkisen IP-osoitteesi?</tran
 problem with your server. You might also include your PGP or GPG
 fingerprint.</source>
         <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>Stream</name>
+    <message>
+        <source>New</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Resolving</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Connecting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Open</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Closed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Detached</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unknown</source>
+        <translation type="unfinished">Tuntematon</translation>
     </message>
 </context>
 <context>
