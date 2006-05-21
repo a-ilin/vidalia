@@ -99,6 +99,26 @@ Stream::toStatus(QString strStatus)
   return status;
 }
 
+/** Returns a human-understandable string representation of this 
+ * stream's status. */
+QString
+Stream::statusString()
+{
+  QString status;
+  switch (_status) {
+    case New:           status = tr("New"); break;
+    case NewResolve:    
+    case SentResolve:   status = tr("Resolving"); break;
+    case SentConnect:   status = tr("Connecting"); break;
+    case Succeeded:     status = tr("Open"); break;
+    case Failed:        status = tr("Failed"); break;
+    case Closed:        status = tr("Closed"); break;
+    case Detached:      status = tr("Detached"); break;
+    default:            status = tr("Unknown"); break;
+  }
+  return status;
+}
+
 /** Returns true if all fields in this Stream object are empty. */
 bool
 Stream::isEmpty()

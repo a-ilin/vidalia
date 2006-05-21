@@ -91,6 +91,22 @@ Circuit::toStatus(QString strStatus)
   return status;
 }
 
+/** Returns a string representation of the circuit's status. */
+QString
+Circuit::statusString()
+{
+  QString status;
+  switch (_status) {
+    case Launched:    status = tr("New"); break;
+    case Built:       status = tr("Open"); break;
+    case Extended:    status = tr("Building"); break;
+    case Failed:      status = tr("Failed");  break;
+    case Closed:      status = tr("Closed"); break;
+    default:          status = tr("Unknown"); break;
+  }
+  return status;
+}
+
 /** Returns true if all fields in this Circuit object are empty. */
 bool
 Circuit::isEmpty()

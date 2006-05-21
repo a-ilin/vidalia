@@ -27,11 +27,14 @@
 #ifndef _CIRCUIT_H
 #define _CIRCUIT_H
 
+#include <QCoreApplication>
 #include <QString>
 
 
 class Circuit
 {
+  Q_DECLARE_TR_FUNCTIONS(Circuit)
+
 public:
   /** Circuit status events */
   enum Status {
@@ -52,7 +55,7 @@ public:
   static Circuit fromString(QString circuit);
   /** Converts a string description of a circuit's status to an enum value */
   static Status toStatus(QString strStatus);
-
+  
   /** Returns true if all fields in this Circuit are empty. */
   bool isEmpty();
   
@@ -60,6 +63,8 @@ public:
   quint64 id() { return _circId; }
   /** Returns the status of this circuit */
   Status status() { return _status; }
+  /** Returns a string representation of the status of this circuit. */
+  QString statusString();
   /** Returns the path chosen for this circuit */
   QString path() { return _path; }
   

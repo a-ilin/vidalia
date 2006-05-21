@@ -27,11 +27,14 @@
 #ifndef _STREAM_H
 #define _STREAM_H
 
+#include <QCoreApplication>
 #include <QString>
-
+#include <QObject>
 
 class Stream
 {
+  Q_DECLARE_TR_FUNCTIONS(Stream)
+
 public:
   /** Stream status values */
   enum Status {
@@ -59,13 +62,15 @@ public:
   /** Returns true if the Stream object's fields are all empty. */
   bool isEmpty();
   
-  /** Returns the ID for this stream */
+  /** Returns the ID for this stream. */
   quint64 id() { return _streamId; }
-  /** Returns the status for this stream */
+  /** Returns the status for this stream. */
   Status status() { return _status; }
-  /** Returns the ID of the circuit to which this stream is assigned */
+  /** Returns a string representation of this stream's status. */
+  QString statusString();
+  /** Returns the ID of the circuit to which this stream is assigned. */
   quint64 circuitId() { return _circuitId; }
-  /** Returns the target for this stream */
+  /** Returns the target for this stream. */
   QString target() { return _target; }
   
 private:
