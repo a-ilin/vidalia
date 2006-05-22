@@ -111,6 +111,6 @@ Circuit::statusString()
 bool
 Circuit::isEmpty()
 {
-  return (!_circId && (_status == Unknown) && _path.isEmpty());
+  return (!_circId && (_status == Unknown));
 }
 
