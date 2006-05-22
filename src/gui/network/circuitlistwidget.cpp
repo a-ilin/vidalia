@@ -38,6 +38,9 @@
 CircuitListWidget::CircuitListWidget(QWidget *parent)
 : QTreeWidget(parent)
 {
+  /* Find out when a circuit has been selected */
+  connect(this, SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)),
+          this, SLOT(onSelectionChanged(QTreeWidgetItem*,QTreeWidgetItem*)));
 }
 
 /** Adds a circuit to the list. If the circuit already exists in the list, the
@@ -86,7 +89,7 @@ CircuitListWidget::addStream(Stream stream)
 
     /* If the stream is closed or dead, schedule it for removal */
     Stream::Status status = stream.status();
-    if (status == Stream::Closed || status == Stream::Detached) {
+    if (status == Stream::Closed) {
       scheduleStreamRemoval(item, CLOSED_STREAM_REMOVE_DELAY);
     } else if (status == Stream::Failed) {
       scheduleStreamRemoval(item, FAILED_STREAM_REMOVE_DELAY);
@@ -98,16 +101,20 @@ CircuitListWidget::addStream(Stream stream)
 void
 CircuitListWidget::scheduleCircuitRemoval(CircuitItem *circuit, int delay)
 {
-  _circuitRemovalList << circuit;
-  QTimer::singleShot(delay, this, SLOT(removeCircuit()));
+  if (!_circuitRemovalList.contains(circuit)) {
+    _circuitRemovalList << circuit;
+    QTimer::singleShot(delay, this, SLOT(removeCircuit()));
+  } 
 }
 
 /** Schedules the given stream to be removed after the specified timeout. */
 void
 CircuitListWidget::scheduleStreamRemoval(StreamItem *stream, int delay)
 {
-  _streamRemovalList << stream;
-  QTimer::singleShot(delay, this, SLOT(removeStream()));
+  if (!_streamRemovalList.contains(stream)) {
+    _streamRemovalList << stream;
+    QTimer::singleShot(delay, this, SLOT(removeStream()));
+  } 
 }
 
 /** Removes the first circuit scheduled to be removed. */
@@ -126,9 +133,18 @@ CircuitListWidget::removeCircuit(CircuitItem *circuit)
 {
   if (circuit) {
     /* Remove all streams (if any) on this circuit. */
-    QList<QTreeWidgetItem *> streams = circuit->takeChildren();
-    foreach (QTreeWidgetItem *stream, streams) {
-      delete stream;
+    QList<StreamItem *> streams = circuit->streams();
+    foreach (StreamItem *stream, streams) {
+      /* Check if this stream was scheduled for removal already */
+      if (_streamRemovalList.contains(stream)) {
+        /* If this stream was already scheduled for removal, replace its pointer
+         * with 0, so it doesn't get removed twice. */
+        int index = _streamRemovalList.indexOf(stream);
+        _streamRemovalList.replace(index, (StreamItem *)0);
+      }
+      
+      /* Remove the stream item from the circuit */
+      circuit->removeStream(stream);
     }
     /* Remove the circuit item itself */
     delete takeTopLevelItem(indexOfTopLevelItem(circuit));
@@ -150,10 +166,13 @@ void
 CircuitListWidget::removeStream(StreamItem *stream)
 {
   if (stream) {
+    /* Try to get the stream's parent (a circuit item) */ 
     CircuitItem *circuit = (CircuitItem *)stream->parent();
     if (circuit) {
-      delete circuit->takeChild(circuit->indexOfChild(stream));
+      /* Remove the stream from the circuit and delete the item */
+      circuit->removeStream(stream);
     } else {
+      /* It isn't on a circuit, so just delete the stream */
       delete stream;
     }
   }
@@ -203,5 +222,20 @@ CircuitListWidget::findStreamItem(quint64 streamid)
     }
   }
   return 0;
+}
+
+/** Called when the current item selection has changed. */
+void
+CircuitListWidget::onSelectionChanged(QTreeWidgetItem *cur, 
+                                      QTreeWidgetItem *prev)
+{
+  Q_UNUSED(prev);
+
+  if (cur && !cur->parent()) {
+    Circuit circuit = ((CircuitItem *)cur)->circuit();
+    if (circuit.length() > 0) {
+      emit circuitSelected(circuit);
+    }
+  }
 }
 

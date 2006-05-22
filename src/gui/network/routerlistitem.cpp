@@ -27,30 +27,70 @@
 #include "routerlistwidget.h"
 #include "routerlistitem.h"
 
+#define STATUS_COLUMN (RouterListWidget::StatusColumn)
+#define NAME_COLUMN   (RouterListWidget::NameColumn)
+
+#define IMG_NODE_OFFLINE    ":/images/icons/node-unresponsive.png"
+#define IMG_NODE_SLEEPING   ":/images/icons/node-hibernating.png"
+#define IMG_NODE_NO_BW      ":/images/icons/node-bw-none.png"
+#define IMG_NODE_LOW_BW     ":/images/icons/node-bw-low.png"
+#define IMG_NODE_MED_BW     ":/images/icons/node-bw-med.png"
+#define IMG_NODE_HIGH_BW    ":/images/icons/node-bw-high.png"
+
+
 /** Default constructor. */
-RouterListItem::RouterListItem(RouterListWidget *list)
+RouterListItem::RouterListItem(RouterListWidget *list, RouterDescriptor rd)
 : QTreeWidgetItem()
 {
   _list = list;
+  update(rd);
+}
+
+void
+RouterListItem::update(RouterDescriptor rd)
+{
+  QIcon statusIcon;
+  _rd = rd;
+  
+  /* Determine the status value (used for sorting) and icon */
+  if (_rd.offline()) {
+    _statusValue = -1;
+    statusIcon = QIcon(IMG_NODE_OFFLINE);
+  } else if (_rd.hibernating()) {
+    _statusValue = 0;
+    statusIcon = QIcon(IMG_NODE_SLEEPING);
+  } else {
+    _statusValue = (qint64)_rd.observedBandwidth();
+    if (_statusValue >= 400*1024) {
+      statusIcon = QIcon(IMG_NODE_HIGH_BW);
+    } else if (_statusValue >= 60*1024) {
+      statusIcon = QIcon(IMG_NODE_MED_BW);
+    } else if (_statusValue >= 20*1024) {
+      statusIcon = QIcon(IMG_NODE_LOW_BW);
+    } else {
+      statusIcon = QIcon(IMG_NODE_NO_BW);
+    }
+  }
+  
+  /* Make the new information visible */
+  setIcon(STATUS_COLUMN, statusIcon);
+  setText(NAME_COLUMN, _rd.name());
 }
 
 /** Overload the comparison operator. */
 bool
 RouterListItem::operator<(const QTreeWidgetItem &other) const
 {
+  const RouterListItem *a = this;
+  const RouterListItem *b = (RouterListItem *)&other;
+
   if (_list) {
     if (_list->sortColumn() == RouterListWidget::StatusColumn) {
       /* Numeric comparison based on status and/or bandwidth */
-      return (this->data(RouterListWidget::StatusColumn,
-                         Qt::UserRole).toLongLong() >
-              other.data(RouterListWidget::StatusColumn,
-                         Qt::UserRole).toLongLong());
+      return (a->_statusValue > b->_statusValue);
     } else if (_list->sortColumn() == RouterListWidget::NameColumn) {
       /* Perform a case-insensitive comparison based on router name */
-      return (this->data(RouterListWidget::NameColumn,
-                         Qt::UserRole).toString() >
-              other.data(RouterListWidget::NameColumn,
-                         Qt::UserRole).toString());
+      return (a->name().toLower() > b->name().toLower());
     }
   }
   return QTreeWidgetItem::operator<(other);

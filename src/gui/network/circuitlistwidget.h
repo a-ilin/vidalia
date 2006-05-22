@@ -59,6 +59,10 @@ public:
   /** Removes the given stream item. */
   void removeStream(StreamItem *stream);
 
+signals:
+  /** Emitted when a circuit item is selected. */
+  void circuitSelected(Circuit circuit);
+
 public slots:
   /** Clears all circuits and streams from the list. */
   void clear();
@@ -68,6 +72,8 @@ private slots:
   void removeCircuit(); 
   /** Removes the stream with the given ID. */
   void removeStream();
+  /** Called when the current item selectio has changed. */
+  void onSelectionChanged(QTreeWidgetItem *cur, QTreeWidgetItem *prev);
 
 private:
   /** Finds the circuit with the given ID. */

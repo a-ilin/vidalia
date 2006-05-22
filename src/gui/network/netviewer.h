@@ -62,6 +62,8 @@ private slots:
   /** Called when the user selects the "New Nym" action on the toolbar. */
   void newNym();
   /** Called when the user selects a map action on the toolbar */
+  /** Called when the user selects a circuit on the circuit list */
+  void circuitSelected(Circuit circuit);
   
 private:
   /** Loads a list of new descriptors from the list of IDs. */

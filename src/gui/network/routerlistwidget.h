@@ -29,10 +29,9 @@
 
 #include <QObject>
 #include <QTreeWidget>
-#include <QHash>
-#include <control/torcontrol.h>
 
 #include "routerlistitem.h"
+
 
 class RouterListWidget : public QTreeWidget
 {
@@ -50,31 +49,24 @@ public:
   
   /** Adds a new descriptor the list. */
   void addRouter(RouterDescriptor rd);
-
-public slots:
-  /** Clears the list of routers. */
-  void clear();
+  /** Finds the list item for the given router name. */
+  RouterListItem* findRouterItem(QString router);
+  /** Deselects all currently selected routers. */
+  void deselectAll();
 
 signals:
-  /** Called when the user selects a router from the list. */
-  void routerSelected(RouterDescriptor rd);
- 
+  /** Called when the user selects one or more routers from the list. */
+  void routerSelected(QList<RouterDescriptor> rds);
+
 private slots:
   /** Called when the user clicks on an item in the list. */
-  void onItemChanged(QTreeWidgetItem *item, QTreeWidgetItem *prev);
+  void onSelectionChanged();
 
 private:
-  /** Creates a new item for the router list, based on the given descriptor.*/
-  RouterListItem* createRouterItem(RouterDescriptor rd);
   /** Inserts a new item into the router list, maintaining the current order.*/
   void insertSorted(RouterListItem *item);
   /** Finds the list item for the given descriptor. */
   RouterListItem* findItem(RouterDescriptor rd);
-  
-  /** TorControl object used to talk to Tor. */
-  TorControl* _torControl;
-  /** Stores a mapping of names to router descriptors. */
-  QHash<QString,RouterDescriptor> _routerList;
 };
 
 #endif

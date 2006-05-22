@@ -29,68 +29,23 @@
 
 #include "routerlistwidget.h"
 
-#define IMG_NODE_OFFLINE    ":/images/icons/node-unresponsive.png"
-#define IMG_NODE_SLEEPING   ":/images/icons/node-hibernating.png"
-#define IMG_NODE_NO_BW      ":/images/icons/node-bw-none.png"
-#define IMG_NODE_LOW_BW     ":/images/icons/node-bw-low.png"
-#define IMG_NODE_MED_BW     ":/images/icons/node-bw-med.png"
-#define IMG_NODE_HIGH_BW    ":/images/icons/node-bw-high.png"
-
 
 RouterListWidget::RouterListWidget(QWidget *parent)
 : QTreeWidget(parent)
 {
-  /* Get the TorControl object */
-  _torControl = Vidalia::torControl();
- 
   /* Find out when the selected item has changed. */
-  connect(this, SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)),
-          this, SLOT(onItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)));
+  connect(this, SIGNAL(itemSelectionChanged()), 
+          this, SLOT(onSelectionChanged()));
 }
 
-/** Clears the list of routers. */
+/** Deselects all currently selected routers. */
 void
-RouterListWidget::clear()
+RouterListWidget::deselectAll()
 {
-  _routerList.clear();
-  QTreeWidget::clear();
-}
-
-/** Creates a new item for the router list, based on the given descriptor.*/
-RouterListItem*
-RouterListWidget::createRouterItem(RouterDescriptor rd)
-{
-  QIcon statusIcon;
-  qint64 statusValue;
-  RouterListItem *item = new RouterListItem(this);
-  
-  /* Decide which status icon is appropriate */
-  if (rd.offline()) {
-    statusValue = -1;
-    statusIcon  = QIcon(IMG_NODE_OFFLINE);
-  } else if (rd.hibernating()) {
-    statusValue = 0;
-    statusIcon  = QIcon(IMG_NODE_SLEEPING);
-  } else {
-    statusValue = (qint64)rd.observedBandwidth();
-    if (statusValue >= 400*1024) {
-      statusIcon = QIcon(IMG_NODE_HIGH_BW);
-    } else if (statusValue >= 60*1024) {
-      statusIcon = QIcon(IMG_NODE_MED_BW);
-    } else if (statusValue >= 20*1024) {
-      statusIcon = QIcon(IMG_NODE_LOW_BW);
-    } else {
-      statusIcon = QIcon(IMG_NODE_NO_BW);
-    }
+  QList<QTreeWidgetItem *> selected = selectedItems();
+  foreach (QTreeWidgetItem *item, selected) {
+    setItemSelected(item, false);
   }
-  
-  /* Set the icon and text */
-  item->setIcon(StatusColumn, statusIcon);
-  item->setData(StatusColumn, Qt::UserRole, statusValue);
-  item->setText(NameColumn, rd.name());
-  item->setData(NameColumn, Qt::UserRole, rd.name().toLower());
-  item->setData(NameColumn, Qt::UserRole+1, rd.id());
-  return item;
 }
 
 /** Inserts a new router list item into the list, in its proper sorted place
@@ -137,11 +92,26 @@ RouterListWidget::findItem(RouterDescriptor rd)
 
   /* Many routers can have the same name, so find a match on the ID. */
   foreach (QTreeWidgetItem *item, list) {
-    RouterListItem *ri = (RouterListItem *)takeTopLevelItem(
-                                           indexOfTopLevelItem(item));
-    if (ri->data(NameColumn, Qt::UserRole+1).toString() == rd.id()) {
+    RouterListItem *ri = (RouterListItem *)item;
+    if (ri->id() == rd.id()) {
       return ri;
     }
+  }
+  return 0;
+}
+
+/** Finds the list item for the given router name. Returns 0 if not found.*/
+RouterListItem*
+RouterListWidget::findRouterItem(QString router)
+{
+  QList<QTreeWidgetItem *> list = findItems(router,
+                                            Qt::MatchExactly,
+                                            NameColumn);
+  /* It's possible that more than one router could have the same name, but
+   * without a fingerprint on which to match, we just have to pick one. We'll
+   * return the first match. */
+  if (list.size() > 0) {
+    return (RouterListItem *)list.at(0);
   }
   return 0;
 }
@@ -151,30 +121,32 @@ void
 RouterListWidget::addRouter(RouterDescriptor rd)
 {
   if (!rd.name().isEmpty()) {
-    if (_routerList.contains(rd.id())) {
-      /* This is an updated descriptor, so remove the list item and we'll 
+    RouterListItem *item = findItem(rd);
+    if (item) {
+      /* This is an updated descriptor, so remove the old item and we'll 
        * add a new, updated item. */
-      QTreeWidgetItem *item = findItem(rd);
-      if (item && indexOfTopLevelItem(item) != -1) {
-        delete takeTopLevelItem(indexOfTopLevelItem(item));
-      }
+      delete takeTopLevelItem(indexOfTopLevelItem(item));
     }
 
     /* Add the router item to the list and store its descriptor. */
-    insertSorted(createRouterItem(rd));
-    _routerList.insert(rd.id(), rd);
+    insertSorted(new RouterListItem(this, rd));
   }
 }
 
-/** Called when the selected item is changed. This emits the routerSelected
- * signal with the descriptor for the selected router. */
+/** Called when the selected items have changed. This emits the 
+ * routerSelected() signal with the descriptor (or descriptors) for the 
+ * selected router (or routers). */
 void
-RouterListWidget::onItemChanged(QTreeWidgetItem *item, QTreeWidgetItem *prev)
+RouterListWidget::onSelectionChanged()
 {
-  Q_UNUSED(prev);
-  if (item) {
-    QString id = item->data(NameColumn, Qt::UserRole+1).toString();
-    emit routerSelected(_routerList.value(id));
+  QList<RouterDescriptor> rds;
+  QList<QTreeWidgetItem *> items = selectedItems();
+
+  if (items.count() > 0) {
+    foreach (QTreeWidgetItem *item, items) {
+      rds << ((RouterListItem *)item)->descriptor();
+    }
+    emit routerSelected(rds);
   }
 }
 

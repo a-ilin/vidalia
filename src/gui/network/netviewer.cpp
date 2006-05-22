@@ -36,6 +36,10 @@
 #define IMG_ZOOMIN  ":/images/22x22/zoom-in.png"
 #define IMG_ZOOMOUT ":/images/22x22/zoom-out.png"
 
+/** Maximum time to proceess other events while loading the long list of
+ * router descriptors. */
+#define MAX_EVENTS_TIMEOUT  25
+
 
 /** Constructor. Loads settings from VidaliaSettings.
  * \param parent The parent widget of this NetViewer object.\
@@ -88,9 +92,11 @@ NetViewer::NetViewer(QWidget *parent)
   connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
   connect(ui.actionNewNym, SIGNAL(triggered()), this, SLOT(newNym()));
   connect(ui.actionRefresh, SIGNAL(triggered()), this, SLOT(loadRouters()));
-  connect(ui.treeRouterList, SIGNAL(routerSelected(RouterDescriptor)),
-          ui.textRouterInfo, SLOT(display(RouterDescriptor)));
-  
+  connect(ui.treeRouterList, SIGNAL(routerSelected(QList<RouterDescriptor>)),
+          ui.textRouterInfo, SLOT(display(QList<RouterDescriptor>)));
+  connect(ui.treeCircuitList, SIGNAL(circuitSelected(Circuit)),
+          this, SLOT(circuitSelected(Circuit)));
+
   connect(_torControl, SIGNAL(connected(bool)), ui.actionRefresh, SLOT(setEnabled(bool)));
   connect(_torControl, SIGNAL(connected(bool)), ui.actionNewNym, SLOT(setEnabled(bool)));
   connect(_torControl, SIGNAL(connected()), this, SLOT(loadRouters()));
@@ -143,7 +149,7 @@ NetViewer::loadRouters()
   idList = _torControl->getRouterIDList();
   foreach (QString id, idList) {
     ui.treeRouterList->addRouter(_torControl->getRouterDescriptor(id));
-    Vidalia::processEvents();
+    Vidalia::processEvents(QEventLoop::AllEvents, MAX_EVENTS_TIMEOUT);
   }
 
   /* Ok, they can refresh again. */
@@ -209,7 +215,24 @@ NetViewer::loadNewDescriptors(QStringList ids)
 {
   foreach (QString id, ids) {
     ui.treeRouterList->addRouter(_torControl->getRouterDescriptor(id));
-    Vidalia::processEvents();
+    Vidalia::processEvents(QEventLoop::AllEvents, MAX_EVENTS_TIMEOUT);
+  }
+}
+
+/** Called when the user selects a circuit from the circuit and streams
+ * list. */
+void
+NetViewer::circuitSelected(Circuit circuit)
+{
+  /* Clear any selected items. */
+  ui.treeRouterList->deselectAll();
+
+  foreach (QString router, circuit.hops()) {
+    /* Try to find and select each router in the path */
+    RouterListItem *item = ui.treeRouterList->findRouterItem(router);
+    if (item) {
+      ui.treeRouterList->setItemSelected(item, true);
+    }
   }
 }
 

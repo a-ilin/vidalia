@@ -28,21 +28,36 @@
 #define _ROUTERLISTITEM_H
 
 #include <QTreeWidgetItem>
+#include <QString>
+#include <control/routerdescriptor.h>
+
 #include "routerlistwidget.h"
 
 class RouterListWidget;
+
 
 class RouterListItem : public QTreeWidgetItem
 {
 public:
   /** Default constructor. */
-  RouterListItem(RouterListWidget *list = 0);
+  RouterListItem(RouterListWidget *list, RouterDescriptor rd);
+ 
+  /** Updates this router item using a new descriptor. */
+  void update(RouterDescriptor rd);
+  /** Returns the router's ID. */
+  QString id() const { return _rd.id(); }
+  /** Returns the router's name. */
+  QString name() const { return _rd.name(); }
+  /** Returns the descriptor for this router. */
+  RouterDescriptor descriptor() const { return _rd; }
 
   /** Overload the comparison operator. */
   virtual bool operator<(const QTreeWidgetItem &other) const;
 
 private:
-  RouterListWidget* _list;  /**< The list for this list item. */
+  RouterDescriptor _rd;    /**< Descriptor for this router item. */
+  RouterListWidget* _list; /**< The list for this list item. */
+  qint64 _statusValue;     /**< Value used to sort items by status. */
 };
 
 #endif
