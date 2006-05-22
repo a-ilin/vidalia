@@ -45,13 +45,19 @@ public:
  
   /** Adds a stream to this circuit item */
   void addStream(StreamItem *stream);
+  /** Removes the stream item from the list and frees its memory. */
+  void removeStream(StreamItem *stream);
   /** Updates the status of this circuit item using the given circuit. */
   void update(Circuit circuit);
   /** Returns the ID for this circuit. */
-  quint64 id() { return _id; }
+  quint64 id() { return _circuit.id(); }
+  /** Returns the Circuit object for this item. */
+  Circuit circuit() { return _circuit; }
+  /** Returns a list of all stream items on this circuit. */
+  QList<StreamItem *> streams();
   
 private:
-  quint64 _id; /**< Circuit ID associated with this item. */
+  Circuit _circuit; /**< Circuit associated with this item. */
 };
 
 #endif

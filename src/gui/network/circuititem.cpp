@@ -31,8 +31,6 @@
 /** Constructor */
 CircuitItem::CircuitItem(Circuit circuit)
 {
-  /* Save the circuit id */
-  _id = circuit.id();
   /* Update the displayed text */
   update(circuit);
 }
@@ -41,6 +39,9 @@ CircuitItem::CircuitItem(Circuit circuit)
 void
 CircuitItem::update(Circuit circuit)
 {
+  /* Save the Circuit object */
+  _circuit = circuit;
+  
   /* Get the path, or put in a semi-meaningful value if the path is empty */
   QString path = circuit.path();
   if (path.isEmpty()) {
@@ -57,5 +58,27 @@ void
 CircuitItem::addStream(StreamItem *stream)
 {
   addChild(stream);
+}
+
+/** Removes the stream item from this circuit and frees its memory */
+void
+CircuitItem::removeStream(StreamItem *stream)
+{
+  int index = indexOfChild(stream);
+  if (index > -1) {
+    delete takeChild(index);
+  }
+}
+
+/** Returns a list of all stream items on this circuit. */
+QList<StreamItem *>
+CircuitItem::streams()
+{
+  QList<StreamItem *> streams;
+  QList<QTreeWidgetItem *> items = this->takeChildren();
+  foreach (QTreeWidgetItem *item, items) {
+    streams << (StreamItem *)item;
+  }
+  return streams;
 }
 
