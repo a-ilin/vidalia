@@ -52,37 +52,37 @@ public:
   /** Returns the entire, unparsed router descriptor. */
   QString descriptor() { return _descriptor.join("\n"); }
   /** Returns the router's name. */
-  QString name() { return _name; }
+  QString name() const { return _name; }
   /** Returns the router's IP address. */
-  QString ip() { return _ip; }
+  QString ip() const { return _ip; }
   /** Returns the router's ORPort. */
-  quint16 orPort() { return _orPort; }
+  quint16 orPort() const { return _orPort; }
   /** Returns the router's DirPort. */
-  quint16 dirPort() { return _dirPort; }
+  quint16 dirPort() const { return _dirPort; }
   /** Returns the router's ID. */
-  QString id() { return _id; }
+  QString id() const { return _id; }
   /** Returns the platform on which this router is running. */
-  QString platform() { return _platform; }
+  QString platform() const { return _platform; }
   /** Returns the length of time this router has been up. */
-  quint64 uptime() { return _uptime; }
+  quint64 uptime() const { return _uptime; }
   /** Returns the router's contact information. */
-  QString contact() { return _contact; }
+  QString contact() const { return _contact; }
   /** Returns the date and time the router was published. */
-  QDateTime published() { return _published; }
+  QDateTime published() const { return _published; }
   /** Returns the fingerprint for this router. */
-  QString fingerprint() { return _fingerprint; }
+  QString fingerprint() const { return _fingerprint; }
   /** Returns the average bandwidth for this router. */
-  quint64 averageBandwidth() { return _avgBandwidth; }
+  quint64 averageBandwidth() const { return _avgBandwidth; }
   /** Returns the burst bandwidth for this router. */
-  quint64 burstBandwidth() { return _burstBandwidth; }
+  quint64 burstBandwidth() const { return _burstBandwidth; }
   /** Returns the observed bandwidth for this router. */
-  quint64 observedBandwidth() { return _observedBandwidth; }
+  quint64 observedBandwidth() const { return _observedBandwidth; }
   /** Returns true if this router is online and responsive. */
-  bool online() { return _status == Online; }
+  bool online() const { return _status == Online; }
   /** Returns true if this router is unresponsive. */
-  bool offline() { return _status == Offline; }
+  bool offline() const { return _status == Offline; }
   /** Returns true if this router is hibernating. */
-  bool hibernating() { return _status == Hibernating; }
+  bool hibernating() const { return _status == Hibernating; }
   /** Returns a string representation of the status of this router. */
   QString status();
 
