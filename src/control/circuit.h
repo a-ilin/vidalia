@@ -28,6 +28,7 @@
 #define _CIRCUIT_H
 
 #include <QCoreApplication>
+#include <QStringList>
 #include <QString>
 
 
@@ -67,7 +68,11 @@ public:
   QString statusString();
   /** Returns the path chosen for this circuit */
   QString path() { return _path; }
-  
+  /** Returns the length of the circuit's path. */
+  uint length() { return _path.split(",").size(); }
+  /** Returns a list of hops on the path. */
+  QStringList hops() { return _path.split(","); }
+
 private:
   quint64 _circId; /**< Circuit ID. */
   Status _status;  /**< Circuit status. */
