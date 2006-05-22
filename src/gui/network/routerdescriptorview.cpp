@@ -29,6 +29,7 @@
 
 #define DATE_FORMAT   "yyyy-MM-dd HH:mm:ss"
 
+
 /** Default constructor. */
 RouterDescriptorView::RouterDescriptorView(QWidget *parent)
 : QTextEdit(parent)
@@ -78,9 +79,12 @@ RouterDescriptorView::formatBandwidth(quint64 bandwidth)
 void
 RouterDescriptorView::display(QList<RouterDescriptor> rdlist)
 {
+  RouterDescriptor rd;
   QString html = "<html><body>";
-
-  foreach (RouterDescriptor rd, rdlist) {
+  
+  for (int r = 0; r < rdlist.size(); r++) { 
+    rd = rdlist.at(r);
+    
     /* Router name and status */
     html.append(p(b(rd.name()) + " (" + i(rd.status()) + ")"));
 
@@ -106,6 +110,12 @@ RouterDescriptorView::display(QList<RouterDescriptor> rdlist)
                        tcol(formatBandwidth(rd.observedBandwidth()) + " KB/s")));
     }
     html.append("</table>");
+    
+    /* If there are multiple descriptors, and this isn't is the last one 
+     * then separate them with a short horizontal line. */
+    if (r+1 != rdlist.size()) {
+      html.append("<center><hr width=\"50%\"/></center>");
+    }
   }
   html.append("</body></html>");
   setHtml(html); 
