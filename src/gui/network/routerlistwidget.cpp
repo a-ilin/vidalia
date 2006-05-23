@@ -33,6 +33,15 @@
 RouterListWidget::RouterListWidget(QWidget *parent)
 : QTreeWidget(parent)
 {
+  /* Create and initialize columns */
+  QStringList labels;
+  labels << "Status" << "Router";
+  setHeaderLabels(labels);
+
+  /* Set the column size and sort order for the router list. */
+  header()->resizeSection(StatusColumn, 55);
+  sortByColumn(NameColumn);
+
   /* Find out when the selected item has changed. */
   connect(this, SIGNAL(itemSelectionChanged()), 
           this, SLOT(onSelectionChanged()));

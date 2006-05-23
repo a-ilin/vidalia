@@ -83,11 +83,6 @@ NetViewer::NetViewer(QWidget *parent)
   connect(_torControl, SIGNAL(connected()), _timer, SLOT(start()));
   connect(_torControl, SIGNAL(disconnected()), _timer, SLOT(stop()));
 
-  /* Set the column size and sort order for the router list. */
-  ui.treeRouterList->header()->resizeSection(
-                                RouterListWidget::StatusColumn, 55);
-  ui.treeRouterList->sortByColumn(RouterListWidget::NameColumn);
-
   /* Connect the necessary slots and signals */
   connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
   connect(ui.actionNewNym, SIGNAL(triggered()), this, SLOT(newNym()));

@@ -5,7 +5,7 @@
 #include <QPainter>
 #include <QMouseEvent>
 
-#define MIN_SIZE QSize(250,125)
+#define MIN_SIZE QSize(512,256)
 
 //=============================================================================
 ZImageView::ZImageView(QWidget *parent)
@@ -246,7 +246,7 @@ ZImageView::updateViewport(int screendx, int screendy)
   vdy = 0;
    
   if (iw <= vw) {
-    vdx = (iw/2.0f) - vx;  // Center horizontally.
+    vdx = (iw / 2.0f) - vx;  // Center horizontally.
   } else {
     // Check that the edge of the view isn't past the edge of the image.
     float vl = float(_view.left());
@@ -259,7 +259,7 @@ ZImageView::updateViewport(int screendx, int screendy)
   }
     
   if (ih <= vh) {
-      vdy = (ih/2.0f) - vy; // Center vertically.
+      vdy = (ih / 2.0f) - vy; // Center vertically.
     } else {
       // Check that the edge of the view isn't past the edge of the image.
       float vt = float(_view.top());

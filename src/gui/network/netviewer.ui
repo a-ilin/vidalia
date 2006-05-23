@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>608</width>
-    <height>449</height>
+    <width>844</width>
+    <height>482</height>
    </rect>
   </property>
   <property name="sizePolicy" >
@@ -318,6 +318,9 @@
     </property>
     <item>
      <widget class="QSplitter" name="" >
+      <property name="contextMenuPolicy" >
+       <enum>Qt::NoContextMenu</enum>
+      </property>
       <property name="orientation" >
        <enum>Qt::Horizontal</enum>
       </property>
@@ -358,6 +361,9 @@
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="contextMenuPolicy" >
+        <enum>Qt::NoContextMenu</enum>
+       </property>
        <property name="orientation" >
         <enum>Qt::Vertical</enum>
        </property>
@@ -367,11 +373,17 @@
        <widget class="QFrame" name="frmMap" >
         <property name="sizePolicy" >
          <sizepolicy>
-          <hsizetype>5</hsizetype>
-          <vsizetype>5</vsizetype>
+          <hsizetype>7</hsizetype>
+          <vsizetype>7</vsizetype>
           <horstretch>100</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="minimumSize" >
+         <size>
+          <width>400</width>
+          <height>200</height>
+         </size>
         </property>
         <property name="contextMenuPolicy" >
          <enum>Qt::NoContextMenu</enum>
@@ -410,28 +422,15 @@
           <verstretch>100</verstretch>
          </sizepolicy>
         </property>
+        <property name="contextMenuPolicy" >
+         <enum>Qt::NoContextMenu</enum>
+        </property>
         <property name="orientation" >
          <enum>Qt::Horizontal</enum>
         </property>
         <property name="childrenCollapsible" >
          <bool>false</bool>
         </property>
-        <widget class="RouterDescriptorView" name="textRouterInfo" >
-         <property name="sizePolicy" >
-          <sizepolicy>
-           <hsizetype>7</hsizetype>
-           <vsizetype>7</vsizetype>
-           <horstretch>100</horstretch>
-           <verstretch>100</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="contextMenuPolicy" >
-          <enum>Qt::NoContextMenu</enum>
-         </property>
-         <property name="readOnly" >
-          <bool>true</bool>
-         </property>
-        </widget>
         <widget class="CircuitListWidget" name="treeCircuitList" >
          <property name="sizePolicy" >
           <sizepolicy>
@@ -443,7 +442,7 @@
          </property>
          <property name="minimumSize" >
           <size>
-           <width>150</width>
+           <width>300</width>
            <height>0</height>
           </size>
          </property>
@@ -457,6 +456,22 @@
           <bool>true</bool>
          </property>
         </widget>
+        <widget class="RouterDescriptorView" name="textRouterInfo" >
+         <property name="sizePolicy" >
+          <sizepolicy>
+           <hsizetype>5</hsizetype>
+           <vsizetype>7</vsizetype>
+           <horstretch>100</horstretch>
+           <verstretch>100</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="contextMenuPolicy" >
+          <enum>Qt::NoContextMenu</enum>
+         </property>
+         <property name="readOnly" >
+          <bool>true</bool>
+         </property>
+        </widget>
        </widget>
       </widget>
      </widget>
@@ -467,8 +482,8 @@
    <property name="geometry" >
     <rect>
      <x>0</x>
-     <y>425</y>
-     <width>608</width>
+     <y>458</y>
+     <width>844</width>
      <height>24</height>
     </rect>
    </property>

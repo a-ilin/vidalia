@@ -38,6 +38,11 @@
 CircuitListWidget::CircuitListWidget(QWidget *parent)
 : QTreeWidget(parent)
 {
+  /* Create and initialize columns */
+  QStringList labels;
+  labels << "Connection" << "Status";
+  setHeaderLabels(labels);
+
   /* Find out when a circuit has been selected */
   connect(this, SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)),
           this, SLOT(onSelectionChanged(QTreeWidgetItem*,QTreeWidgetItem*)));
