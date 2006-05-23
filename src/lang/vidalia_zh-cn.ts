@@ -221,6 +221,17 @@
     </message>
 </context>
 <context>
+    <name>CircuitListWidget</name>
+    <message>
+        <source>Connection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>ConfigDialog</name>
     <message>
         <source>Configure Settings</source>
@@ -1474,18 +1485,6 @@ Error: </source>
         <source>Move</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Status</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Router</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Connection</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>Policy</name>
@@ -1528,15 +1527,26 @@ Error: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Published:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Bandwidth:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Uptime:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Last Updated:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>RouterListWidget</name>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Router</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

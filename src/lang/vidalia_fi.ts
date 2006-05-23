@@ -221,6 +221,17 @@
     </message>
 </context>
 <context>
+    <name>CircuitListWidget</name>
+    <message>
+        <source>Connection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished">Tila</translation>
+    </message>
+</context>
+<context>
     <name>ConfigDialog</name>
     <message>
         <source>Configure Settings</source>
@@ -1039,11 +1050,11 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Status</source>
-        <translation type="unfinished">Tila</translation>
+        <translation type="obsolete">Tila</translation>
     </message>
     <message>
         <source>Router</source>
-        <translation type="unfinished">Reititin</translation>
+        <translation type="obsolete">Reititin</translation>
     </message>
     <message>
         <source>New Nym</source>
@@ -1080,10 +1091,6 @@ interest to Tor developers.</source>
     <message>
         <source>Move</source>
         <translation>Siirrä</translation>
-    </message>
-    <message>
-        <source>Connection</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1128,7 +1135,7 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Published:</source>
-        <translation>Julkaistu:</translation>
+        <translation type="obsolete">Julkaistu:</translation>
     </message>
     <message>
         <source>Bandwidth:</source>
@@ -1137,6 +1144,21 @@ interest to Tor developers.</source>
     <message>
         <source>Uptime:</source>
         <translation>Päällä:</translation>
+    </message>
+    <message>
+        <source>Last Updated:</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>RouterListWidget</name>
+    <message>
+        <source>Status</source>
+        <translation type="unfinished">Tila</translation>
+    </message>
+    <message>
+        <source>Router</source>
+        <translation type="unfinished">Reititin</translation>
     </message>
 </context>
 <context>
