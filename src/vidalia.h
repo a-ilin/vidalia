@@ -76,6 +76,11 @@ public:
 
   /** Returns Vidalia's main TorControl object. */
   static TorControl* torControl() { return _torControl; }
+  
+  /** Returns the location Vidalia uses for its data files. */
+  static QString dataDirectory();
+  /** Creates Vidalia's data directory, if it doesn't already exist. */
+  static bool createDataDirectory(QString *errmsg);
 
 signals:
   /** Signals that the application needs to shutdown now. */
@@ -90,6 +95,8 @@ protected:
 private:
   /** Parse the list of command-line arguments. */
   void parseArguments(QStringList args);
+  /** Returns true if the specified arguments wants a value. */
+  bool argNeedsValue(QString argName);
 
   static QMap<QString, QString> _args; /**< List of command-line arguments.  */
   static QString _style;               /**< The current GUI style.           */

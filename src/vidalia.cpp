@@ -24,19 +24,20 @@
  * \version $Id$
  */
 
+#include <QDir>
 #include <QTextStream>
 #include <QStyleFactory>
-
+#include <util/string.h>
 #include <lang/languagesupport.h>
 
 #include "vidalia.h"
 
 /* Available command-line arguments. */
-#define ARG_LANGUAGE   "lang"  /**< Argument specifying language.    */
-#define ARG_GUISTYLE   "style" /**< Argument specfying GUI style.    */
-#define ARG_RESET      "reset" /**< Reset Vidalia's saved settings.  */
-#define ARG_HELP       "help"  /**< Display usage informatino.       */
-
+#define ARG_LANGUAGE   "lang"    /**< Argument specifying language.    */
+#define ARG_GUISTYLE   "style"   /**< Argument specfying GUI style.    */
+#define ARG_RESET      "reset"   /**< Reset Vidalia's saved settings.  */
+#define ARG_HELP       "help"    /**< Display usage informatino.       */
+#define ARG_DATADIR    "datadir" /**< Directory to use for data files. */
 
 /* Static member variables */
 QMap<QString, QString> Vidalia::_args; /**< List of command-line arguments.  */
@@ -115,10 +116,20 @@ Vidalia::printUsage(QString errmsg)
   out << endl << "Available Options:"                                   << endl;
   out << "\t-"ARG_HELP"\t\tDisplays this usage message and exits."      << endl;
   out << "\t-"ARG_RESET"\t\tResets ALL stored Vidalia settings."        << endl;
+  out << "\t-"ARG_DATADIR"\tSets the directory Vidalia uses for data files"<< endl;
   out << "\t-"ARG_GUISTYLE"\t\tSets Vidalia's interface style."         << endl;
   out << "\t\t\t[" << QStyleFactory::keys().join("|") << "]"            << endl;
   out << "\t-"ARG_LANGUAGE"\t\tSets Vidalia's language."                << endl;
   out << "\t\t\t[" << LanguageSupport::languageCodes().join("|") << "]" << endl;
+}
+
+/** Returns true if the specified argument expects a value. */
+bool
+Vidalia::argNeedsValue(QString argName)
+{
+  return (argName == ARG_GUISTYLE ||
+          argName == ARG_LANGUAGE ||
+          argName == ARG_DATADIR);
 }
 
 /** Parses the list of command-line arguments for their argument names and
@@ -139,7 +150,7 @@ Vidalia::parseArguments(QStringList args)
       arg = arg.mid((arg.startsWith("--") ? 2 : 1));
     }
     /* Check if it takes a value and there is one on the command-line */
-    if (i < args.size()-1 && (arg == ARG_GUISTYLE || arg == ARG_LANGUAGE)) {
+    if (i < args.size()-1 && argNeedsValue(arg)) {
       value = args.at(++i);
     }
     /* Place this arg/value in the map */
@@ -215,5 +226,30 @@ void
 Vidalia::help(QString topic)
 {
   _help->show(topic);
+}
+
+/** Returns the directory Vidalia uses for its data files. */
+QString
+Vidalia::dataDirectory()
+{
+  if (_args.contains(ARG_DATADIR)) {
+    return _args.value(ARG_DATADIR);
+  }
+  return _settings.getDataDirectory();
+}
+
+/** Creates Vidalia's data directory, if it doesn't already exist. */
+bool
+Vidalia::createDataDirectory(QString *errmsg)
+{
+  QDir datadir(dataDirectory());
+  if (!datadir.exists()) {
+    QString path = datadir.absolutePath();
+    if (!datadir.mkpath(path)) {
+      return err(errmsg, 
+                 QString("Could not create data directory: %1").arg(path));
+    }
+  }
+  return true;
 }
 
