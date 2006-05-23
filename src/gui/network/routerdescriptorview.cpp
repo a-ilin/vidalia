@@ -98,17 +98,18 @@ RouterDescriptorView::display(QList<RouterDescriptor> rdlist)
       html.append(trow(tcol(b(tr("Contact:")))    + tcol(escape(rd.contact()))));
     }
 
-    /* Date the router was published */
-    html.append(trow(tcol(b(tr("Published:")))  +
-                     tcol(formatPublished(rd.published()))));
-
     /* If the router is online, then show the uptime and bandwidth stats. */
     if (!rd.offline()) {
-      html.append(trow(tcol(b(tr("Uptime:")))   + 
-                       tcol(formatUptime(rd.uptime()))));
       html.append(trow(tcol(b(tr("Bandwidth:")))  + 
                        tcol(formatBandwidth(rd.observedBandwidth()) + " KB/s")));
+      html.append(trow(tcol(b(tr("Uptime:")))   + 
+                       tcol(formatUptime(rd.uptime()))));
     }
+    
+    /* Date the router was published */
+    html.append(trow(tcol(b(tr("Last Updated:")))  +
+                     tcol(formatPublished(rd.published()))));
+    
     html.append("</table>");
     
     /* If there are multiple descriptors, and this isn't is the last one 
