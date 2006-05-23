@@ -40,6 +40,7 @@
 #define SETTING_LANGUAGE            "LanguageCode"
 #define SETTING_STYLE               "InterfaceStyle"
 #define SETTING_RUN_TOR_AT_START    "RunTorAtStart"
+#define SETTING_DATA_DIRECTORY      "DataDirectory"
 
 #define SETTING_MSG_FILTER          "MessageLog/MessageFilter"
 #define SETTING_MAX_MESSAGE         "MessageLog/MaxMsgCount"
@@ -66,10 +67,12 @@
 #define DEFAULT_ENABLE_LOG_FILE     false
 
 #if defined(Q_OS_WIN32)
+#define DEFAULT_DATA_DIRECTORY (QDir::homePath() + "\\Vidalia\\")
 #define DEFAULT_LOG_FILE       (QDir::rootPath() + "Program Files\\Tor\\tor.log")
 #define STARTUP_REG_KEY        "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
 #define VIDALIA_REG_KEY        "Vidalia" 
 #else
+#define DEFAULT_DATA_DIRECTORY (QDir::homePath() + "/.vidalia/")
 #define DEFAULT_LOG_FILE       (QDir::homePath() + "/.tor/tor.log")
 #endif
 
@@ -90,6 +93,20 @@ VidaliaSettings::reset()
 {
   QSettings settings("vidalia", "vidalia");
   settings.clear();
+}
+
+/** Returns the directory Vidalia will use for its data files. */
+QString
+VidaliaSettings::getDataDirectory()
+{
+  return value(SETTING_DATA_DIRECTORY, DEFAULT_DATA_DIRECTORY).toString();
+}
+
+/** Sets the directory Vidalia will use for its data files. */
+void
+VidaliaSettings::setDataDirectory(QString dir)
+{
+  setValue(SETTING_DATA_DIRECTORY, dir);
 }
 
 /** Gets the currently preferred language code for Vidalia. */

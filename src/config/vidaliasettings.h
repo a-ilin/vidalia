@@ -49,6 +49,11 @@ public:
 
   /** Resets all of Vidalia's settings. */
   static void reset();
+  
+  /** Returns the directory Vidalia uses for its own data files. */
+  QString getDataDirectory();
+  /** Sets the directory Vidalia will use for its own data files. */
+  void setDataDirectory(QString dir);
 
   /** Gets the currently preferred language code for Vidalia. */
   QString getLanguageCode();
