@@ -453,7 +453,7 @@
           <string/>
          </property>
          <property name="sortingEnabled" >
-          <bool>true</bool>
+          <bool>false</bool>
          </property>
         </widget>
         <widget class="RouterDescriptorView" name="textRouterInfo" >
