@@ -25,6 +25,7 @@
  */
 
 #include <QTimer>
+#include <QHeaderView>
 
 #include "circuitlistwidget.h"
 

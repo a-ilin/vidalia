@@ -41,7 +41,8 @@ public:
   /** Columns in the list. */
   enum Columns {
     StatusColumn = 0, /**< Status column, indicating bandwidth */
-    NameColumn = 1    /*<< Router's name. */
+    NameColumn = 1,    /*<< Router's name. */
+    StatusColumnWidth = 55
   };
 
   /** Default constructor. */

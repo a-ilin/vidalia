@@ -56,6 +56,14 @@ NetViewer::NetViewer(QWidget *parent)
   _torControl->setEvent(TorEvents::CircuitStatus, this, true);
   _torControl->setEvent(TorEvents::StreamStatus,  this, true);
   
+  /* Change the column widths of the tree widgets */
+  ui.treeRouterList->header()->
+    resizeSection(RouterListWidget::StatusColumn,
+		  RouterListWidget::StatusColumnWidth);
+  ui.treeCircuitList->header()->
+    resizeSection(CircuitListWidget::ConnectionColumn,
+		  CircuitListWidget::ConnectionColumnWidth);
+
   /* Create the ZImageView  and add it to the dialog */
   _map = new ZImageView();
   QImage image(IMG_MAP);

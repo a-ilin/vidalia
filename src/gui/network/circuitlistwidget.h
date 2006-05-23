@@ -42,7 +42,8 @@ public:
   /** Circuit list columns. */
   enum Columns {
     ConnectionColumn = 0, /**< Column for either the circuit or stream */
-    StatusColumn = 1      /**< Status of the connection. */
+    StatusColumn = 1,      /**< Status of the connection. */
+    ConnectionColumnWidth = 235
   };
   
   /** Default constructor */

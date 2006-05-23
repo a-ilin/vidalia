@@ -37,7 +37,6 @@ RouterListWidget::RouterListWidget(QWidget *parent)
   setHeaderLabels(QStringList() << tr("Status") << tr("Router"));
 
   /* Set the column size and sort order for the router list. */
-  header()->resizeSection(StatusColumn, 55);
   sortByColumn(NameColumn);
 
   /* Find out when the selected item has changed. */
