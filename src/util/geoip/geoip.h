@@ -39,9 +39,12 @@ public:
 
   /** Constructor */
   GeoIp(QHostAddress ip, float latitude, float longitude, 
-        QString city, QString state, QString country)
-  : _ip(ip), _latitude(latitude), _longitude(longitude),
-    _city(city), _state(state), _country(country) {} 
+        QString city, QString state, QString country);
+  
+  /** Creates a GeoIp object from a string. */
+  static GeoIp fromString(QString geoip);
+  /** Builds a comma-delimited string of GeoIp fields. */
+  QString toString() const;
 
   /** Returns the IP address for this object. */
   QHostAddress ip() const { return _ip; }
@@ -55,7 +58,10 @@ public:
   QString state() const { return _state; }
   /** Returns the country in which this IP lives. */
   QString country() const { return _country; }
-  
+ 
+  /** Returns true if the GeoIp object is invalid. */
+  bool isEmpty() const;
+
 private:
   QHostAddress _ip; /**< IP address for this location. */
   float _latitude;  /**< Latitudinal coordinate for this IP's location. */

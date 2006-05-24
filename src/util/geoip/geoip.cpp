@@ -1,0 +1,91 @@
+/****************************************************************
+ *  Vidalia is distributed under the following license:
+ *
+ *  Copyright (C) 2006,  Matt Edman, Justin Hipple
+ *
+ *  This program is free software; you can redistribute it and/or
+ *  modify it under the terms of the GNU General Public License
+ *  as published by the Free Software Foundation; either version 2
+ *  of the License, or (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ *  Boston, MA  02110-1301, USA.
+ ****************************************************************/
+
+/**
+ * \file geoip.cpp
+ * \version $Id$
+ */
+
+#include <QStringList>
+
+#include "geoip.h"
+
+
+/** Constructor. */
+GeoIp::GeoIp(QHostAddress ip, float latitude, float longitude, 
+             QString city, QString state, QString country)
+{
+  _ip        = ip;
+  _latitude  = latitude;
+  _longitude = longitude;
+  _city      = city;
+  _state     = state;
+  _country   = country;
+}
+
+/** Parses the GeoIp information from a comma-delimited string. The format of
+ * the string is as in the following example:
+ *
+ *      128.213.48.13,Troy,NY,US,42.7495,-73.5951,1138402852
+ */
+GeoIp
+GeoIp::fromString(QString geoip)
+{
+  /* Split comma-delimited data fields */
+  QStringList data = geoip.split(",");
+  if (data.size() < 6) {
+    return GeoIp();
+  }
+  
+  /* Parse the data from the string */
+  QHostAddress   ip(data.at(0));
+  QString city    = data.at(1);
+  QString state   = data.at(2);
+  QString country = data.at(3);
+  float latitude  = data.at(4).toFloat();
+  float longitude = data.at(5).toFloat();
+ 
+  /* Create a new GeoIp object with the parsed data. */
+  return GeoIp(ip, latitude, longitude, city, state, country);
+}
+
+/** Formats the GeoIp information as a comma-delimited string. */
+QString
+GeoIp::toString() const
+{
+  QString s;
+  /* Assemble and comma-delimit the data fields */
+  s.append(_ip.toString());
+  s.append("," + _city);
+  s.append("," + _state);
+  s.append("," + _country);
+  s.append("," + QString::number(_latitude,  'f', 4));
+  s.append("," + QString::number(_longitude, 'f', 4));
+  return s;
+}
+
+/** Returns true if the GeoIp object is invalid. */
+bool
+GeoIp::isEmpty() const
+{
+  return (_ip.isNull() && !_latitude && !_longitude);
+}
+

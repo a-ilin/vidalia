@@ -38,42 +38,27 @@ GeoIpCacheItem::GeoIpCacheItem(GeoIp geoip, QDateTime timestamp)
 
 /** Returns a string representing the contents of this cache item, suitable
  * for writing to disk. The format is as in the following example:
- *
- *    128.213.48.13,Troy,NY,US,42.7495,-73.5951,1138402852
+ *                     <Geo IP Data>:<Timestamp>
  */
 QString
 GeoIpCacheItem::toString() const
 {
-  QString s;
-  s.append(_geoip.ip().toString());
-  s.append("," + _geoip.city());
-  s.append("," + _geoip.state());
-  s.append("," + _geoip.country());
-  s.append("," + QString::number(_geoip.latitude(),  'f', 4));
-  s.append("," + QString::number(_geoip.longitude(), 'f', 4));
-  s.append("," + QString::number(_timestamp.toTime_t()));
-  return s;
+  return _geoip.toString() + ":" + QString::number(_timestamp.toTime_t());
 }
 
 /** Returns a GeoIpCacheItem from a string as read from the cache that was
- * written to disk. */
+ * written to disk. The format is:
+ *                     <Geo IP Data>:<Timestamp>
+ */
 GeoIpCacheItem
 GeoIpCacheItem::fromString(QString cacheString)
 {
   QDateTime timestamp;
-  QStringList cacheData = cacheString.split(",");
+  QStringList cacheData = cacheString.split(":");
   
-  QHostAddress   ip(cacheData.at(0));
-  QString city    = cacheData.at(1);
-  QString state   = cacheData.at(2);
-  QString country = cacheData.at(3);
-  float latitude  = cacheData.at(4).toFloat();
-  float longitude = cacheData.at(5).toFloat();
-  timestamp.setTime_t(cacheData.at(6).toUInt());
-
-  return GeoIpCacheItem(
-           GeoIp(ip, latitude, longitude, city, state, country), 
-           timestamp);
+  GeoIp geoip = GeoIp::fromString(cacheData.at(0));
+  timestamp.setTime_t(cacheData.at(1).toUInt());
+  return GeoIpCacheItem(geoip, timestamp);
 }
 
 /** Returns true if the cache item is too old to be considered valid. */
