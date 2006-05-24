@@ -31,9 +31,9 @@
 /** Host for the geo ip information. 
  * XXX we really need more than one host here, even with 
   *    smart caching. */
-#define GEOIP_HOST    "pasiphae.cs.rpi.edu"
+#define GEOIP_HOST    "geoip.vidalia-project.net"
 /** Page that we request the geo ip information from. */
-#define GEOIP_PAGE    "/cgi-bin/ipinfo.pl"
+#define GEOIP_PAGE    "/geoip.pl"
 
 
 /** Default constructor. */
