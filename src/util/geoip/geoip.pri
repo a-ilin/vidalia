@@ -23,8 +23,11 @@
 
 HEADERS += $$PWD/geoip.h \
            $$PWD/geoipcache.h \
-           $$PWD/geoipcacheitem.h
-
-SOURCES += $$PWD/geoipcache.cpp \
-           $$PWD/geoipcacheitem.cpp
+           $$PWD/geoipcacheitem.h \
+           $$PWD/geoipresolver.h
+           
+SOURCES += $$PWD/geoip.cpp \
+           $$PWD/geoipcache.cpp \
+           $$PWD/geoipcacheitem.cpp \
+           $$PWD/geoipresolver.cpp
 
