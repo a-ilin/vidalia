@@ -40,4 +40,6 @@ win32 {
                $$PWD/win32.cpp
 }
 
+include($$PWD/geoip/geoip.pri)
+
 
