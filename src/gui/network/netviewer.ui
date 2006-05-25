@@ -352,7 +352,7 @@
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QSplitter" name="splitter" >
+      <widget class="QSplitter" name="splitter3" >
        <property name="sizePolicy" >
         <sizepolicy>
          <hsizetype>5</hsizetype>
