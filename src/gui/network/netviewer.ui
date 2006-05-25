@@ -413,7 +413,7 @@
          </item>
         </layout>
        </widget>
-       <widget class="QSplitter" name="splitter" >
+       <widget class="QSplitter" name="splitter2" >
         <property name="sizePolicy" >
          <sizepolicy>
           <hsizetype>7</hsizetype>
