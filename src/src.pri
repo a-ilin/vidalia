@@ -21,9 +21,6 @@
 #  02110-1301, USA.
 #################################################################
 
-include($$PWD/config/config.pri)
-include($$PWD/control/control.pri)
-include($$PWD/util/util.pri)
 include($$PWD/gui/gui.pri)
 include($$PWD/lang/lang.pri)
 
@@ -33,4 +30,8 @@ HEADERS += $$PWD/vidalia.h
 
 SOURCES += $$PWD/main.cpp \
            $$PWD/vidalia.cpp
+
+include($$PWD/config/config.pri)
+include($$PWD/control/control.pri)
+include($$PWD/util/util.pri)
 
