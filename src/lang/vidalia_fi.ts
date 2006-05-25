@@ -1090,7 +1090,7 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Move</source>
-        <translation>Siirrä</translation>
+        <translation type="obsolete">Siirrä</translation>
     </message>
 </context>
 <context>

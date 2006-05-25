@@ -25,6 +25,10 @@ Contributors:
   (src/gui/res/flags/en.png) that we use in the Appearance configuration page.
   He also created the router status icons we used in the network view dialog.
 
+  Michael Zuercher and Adam Tomjack of Zuerchertech LLC <http://www.zuerchertech.com>
+  gave us the ZImageView class which handles drawing, scrolling and zooming the map 
+  image in the Network Viewer.
+
 Translators:
   Wu Xiaoguang    Simplified Chinese
   DJ Hasis        Finnish

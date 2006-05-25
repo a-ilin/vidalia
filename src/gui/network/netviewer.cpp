@@ -69,18 +69,10 @@ NetViewer::NetViewer(QWidget *parent)
   QImage image(IMG_MAP);
   _map->setImage(image);
   ui.gridLayout->addWidget(_map);
- 
-  /* Add the map manipulation action group to the toolbar */
-  QActionGroup *grp = new QActionGroup(this);
-  createAction(QIcon(IMG_ZOOMIN), tr("Zoom In"), grp);
-  createAction(QIcon(IMG_ZOOMOUT), tr("Zoom Out"), grp);
-  createAction(QIcon(IMG_MOVE), tr("Move"), grp);
-  foreach (QAction *act, grp->actions()) {
-    ui.toolBar->insertAction(ui.actionHelp, act);
-  }
-  ui.toolBar->insertSeparator(ui.actionHelp);
-  connect(grp, SIGNAL(triggered(QAction *)),
-          this, SLOT(NULL));
+
+  /* Connect zoom buttons to ZImageView zoom slots */
+  connect(ui.actionZoomIn, SIGNAL(triggered()), _map, SLOT(zoomIn()));
+  connect(ui.actionZoomOut, SIGNAL(triggered()), _map, SLOT(zoomOut()));
   
   /* Create the timer that will be used to update the router list once every
    * hour. We still receive the NEWDESC event to get new descriptors, but this
@@ -105,15 +97,6 @@ NetViewer::NetViewer(QWidget *parent)
   connect(_torControl, SIGNAL(connected()), this, SLOT(loadRouters()));
   connect(_torControl, SIGNAL(connected()), this, SLOT(loadConnections())); 
   connect(_torControl, SIGNAL(disconnected()), ui.treeCircuitList, SLOT(clear()));
-}
-
-/** Creates and adds an action to the specified action group */
-void
-NetViewer::createAction(QIcon img, QString text, QActionGroup *group)
-{
-  QAction *action = new QAction(img, text, group);
-  action->setCheckable(true);
-  action->setFont(FONT);
 }
 
 /** Custom event handler. Catches the new descriptor events. */

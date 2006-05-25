@@ -1,3 +1,29 @@
+/****************************************************************
+ *  Vidalia is distributed under the following license:
+ *
+ *  Copyright (C) 2006,  Matt Edman, Justin Hipple
+ *
+ *  This program is free software; you can redistribute it and/or
+ *  modify it under the terms of the GNU General Public License
+ *  as published by the Free Software Foundation; either version 2
+ *  of the License, or (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor, 
+ *  Boston, MA  02110-1301, USA.
+ ****************************************************************/
+
+/** 
+ * \file zimageview.cpp
+ * \version $Id: netviewer.cpp 699 2006-04-15 03:12:22Z hipplej $
+ */
+
 #include "zimageview.h"
 
 #include <cmath>
@@ -16,14 +42,11 @@ ZImageView::ZImageView(QWidget *parent)
   _mouseDown = false;
   _maxZoomFactor = 8.0;
   _padding = 60;
-  _paintRequested = false;
 
   setCursor(QCursor(Qt::CrossCursor));
   updateViewport();
   resetZoomPoint();
-  paintNow();
-  
-  connect(&_timer, SIGNAL(timeout()), this, SLOT(polishNow()));
+  repaint();
 }
 
 //=============================================================================
@@ -39,10 +62,11 @@ ZImageView::setImage(QImage& img)
   resetZoomPoint();
 
   if (isVisible()) {
-    polishNow();
+    repaint();
   }
 }
 
+#include <QtDebug>
 //=============================================================================
 void
 ZImageView::drawScaledImage()
@@ -50,7 +74,9 @@ ZImageView::drawScaledImage()
   if (!isVisible()) {
     return;
   }
-  
+
+  qDebug() << "drawing scaled image!";
+
   QBrush background(QColor("#fdfdfd"));
   if (_image.isNull()) {
     QPainter p(this);
@@ -98,7 +124,7 @@ ZImageView::drawScaledImage()
 
   QImage i;
   i = _image.scaled(scaleTo,
-		    Qt::IgnoreAspectRatio,
+		    Qt::KeepAspectRatioByExpanding,
 		    Qt::SmoothTransformation);
 
   int extraWidth = int(double(sRect.width() - i.width()) / 2.0);
@@ -136,37 +162,6 @@ ZImageView::drawScaledImage()
 
   // Finally, paint the image.
   p.drawImage(extraWidth, extraHeight, i);
-}
-
-//=============================================================================
-void
-ZImageView::paintNow()
-{
-  // If the timer is not active, start it.
-  // In a short time, it will go off and try to polish.  Any paints between now
-  // and then will stop it from trying to polish until a later timeout.
-  if (!_timer.isActive()) {
-    _timer.start(90);
-  } else {
-    _paintRequested = true;
-  }
-  
-  drawScaledImage();
-}
-
-//=============================================================================
-void
-ZImageView::polishNow()
-{
-  // If a paint has been recently requested, reset the flag to false, and wait.
-  // If not, then the user has paused for a bit, so we have time to polish.
-
-  if (_paintRequested) {
-    _paintRequested = false;
-  } else {
-    drawScaledImage();
-    _timer.stop();
-  }
 }
 	
 //=============================================================================
@@ -273,6 +268,8 @@ ZImageView::updateViewport(int screendx, int screendy)
 
   _view.translate(int(vdx), int(vdy));
 
+  qDebug() << "updating viewport!";
+
   return QPair<QRect, QRect>(QRect(0, 0, int(newmaxw), int(newmaxh)),
 			     QRect(0, 0, int(newminw), int(newminh)));
 }
@@ -291,7 +288,7 @@ void
 ZImageView::paintEvent(QPaintEvent*)
 {
   updateViewport();
-  paintNow();
+  drawScaledImage();
 }
 
 //=============================================================================
@@ -306,8 +303,21 @@ void
 ZImageView::zoom(float pct)
 {
   _zoom = clamp(pct, 0.0f, 1.0f);
-  updateViewport();
-  paintNow();
+  repaint();
+}
+
+//=============================================================================
+void
+ZImageView::zoomIn()
+{
+  zoom(_zoom + .05);
+}
+
+//=============================================================================
+void
+ZImageView::zoomOut()
+{
+  zoom(_zoom - .05);
 }
 
 //=============================================================================
@@ -348,7 +358,7 @@ ZImageView::zoomWidth()
     _desiredY = 0.0;
     updateViewport();
   }
-  paintNow();
+  repaint();
 }
 
 //=============================================================================
@@ -375,7 +385,7 @@ ZImageView::zoomHeight()
     _desiredX = 0.0;
     updateViewport();
   }
-  paintNow();
+  repaint();
 }
 
 //=============================================================================
@@ -383,6 +393,7 @@ void
 ZImageView::mousePressEvent(QMouseEvent* e)
 {
   e->accept();
+  setCursor(QCursor(Qt::SizeAllCursor));
   _mouseDown = true;
   _mouseX = e->x();
   _mouseY = e->y();
@@ -393,6 +404,7 @@ ZImageView::mousePressEvent(QMouseEvent* e)
 void ZImageView::mouseReleaseEvent(QMouseEvent* e)
 {
   e->accept();
+  setCursor(QCursor(Qt::CrossCursor));
   updateViewport();
   resetZoomPoint();
   _mouseDown = false;
@@ -410,7 +422,7 @@ ZImageView::mouseMoveEvent(QMouseEvent* e)
 
   updateViewport(dx, dy);
   if (0.001 <= _zoom) {
-    paintNow();
+    repaint();
   }
 }
 

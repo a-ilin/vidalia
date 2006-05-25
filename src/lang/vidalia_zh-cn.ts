@@ -1481,10 +1481,6 @@ Error: </source>
         <source>Zoom Out</source>
         <translation type="unfinished"></translation>
     </message>
-    <message>
-        <source>Move</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>Policy</name>
