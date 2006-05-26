@@ -185,12 +185,13 @@ NetViewer::newNym()
   QString errmsg;
   if (_torControl->signal(TorSignal::NewNym, &errmsg)) {
     QMessageBox::information(this, 
-      tr("New Nym"), 
-      tr("All subsequent application requests will use new circuits."),
+      tr("New Identity"), 
+      tr("All subsequent connections will appear to be different "
+         "than your old connections."),
       QMessageBox::Ok, QMessageBox::NoButton);
   } else {
     QMessageBox::warning(this,
-      tr("New Nym Failed"), errmsg,
+      tr("New Identity Request Failed"), errmsg,
       QMessageBox::Ok, QMessageBox::NoButton);
   }
 }

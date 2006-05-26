@@ -518,7 +518,13 @@
     <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/system-users.png</iconset>
    </property>
    <property name="text" >
-    <string>New Nym</string>
+    <string>New Identity</string>
+   </property>
+   <property name="statusTip" >
+    <string>Make new connections appear to be different than your old connections.</string>
+   </property>
+   <property name="toolTip" >
+    <string>Make new connections appear to be different than your old connections.</string>
    </property>
    <property name="font" >
     <font>
@@ -542,6 +548,12 @@
    <property name="text" >
     <string>Refresh</string>
    </property>
+   <property name="statusTip" >
+    <string>Refresh the list of routers and connections.</string>
+   </property>
+   <property name="toolTip" >
+    <string>Refresh the list of routers and connections.</string>
+   </property>
    <property name="font" >
     <font>
      <family>Arial</family>
@@ -560,6 +572,12 @@
    </property>
    <property name="text" >
     <string>Help</string>
+   </property>
+   <property name="statusTip" >
+    <string>Show network map help.</string>
+   </property>
+   <property name="toolTip" >
+    <string>Show the network map help.</string>
    </property>
    <property name="font" >
     <font>
@@ -581,7 +599,10 @@
     <string>Close</string>
    </property>
    <property name="statusTip" >
-    <string/>
+    <string>Close the network map.</string>
+   </property>
+   <property name="toolTip" >
+    <string>Close the network map.</string>
    </property>
    <property name="font" >
     <font>
@@ -602,6 +623,12 @@
    <property name="text" >
     <string>Zoom In</string>
    </property>
+   <property name="statusTip" >
+    <string>Zoom in on the network map.</string>
+   </property>
+   <property name="toolTip" >
+    <string>Zoom in on the network map.</string>
+   </property>
   </action>
   <action name="actionZoomOut" >
    <property name="icon" >
@@ -609,6 +636,12 @@
    </property>
    <property name="text" >
     <string>Zoom Out</string>
+   </property>
+   <property name="statusTip" >
+    <string>Zoom out on the network map.</string>
+   </property>
+   <property name="toolTip" >
+    <string>Zoom out on the network map.</string>
    </property>
   </action>
  </widget>
