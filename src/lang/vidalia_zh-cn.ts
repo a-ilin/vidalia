@@ -1450,10 +1450,6 @@ Error: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>New Nym</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Refresh</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1466,19 +1462,51 @@ Error: </source>
         <translation type="unfinished">关闭</translation>
     </message>
     <message>
-        <source>All subsequent application requests will use new circuits.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>New Nym Failed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Zoom In</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Zoom Out</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New Identity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Make new connections appear to be different than your old connections.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Refresh the list of routers and connections.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show network map help.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show the network map help.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Close the network map.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom in on the network map.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zoom out on the network map.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All subsequent connections will appear to be different than your old connections.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to Create New Identity</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
