@@ -45,10 +45,14 @@ public:
 signals:
   /** Emitted when a connection has been established to a remote host via Tor. */
   void connected();
+  /** Emmitted when a connection error has occurred. */
+  void socketError(QString errmsg);
   
 private slots:
   /** Handles the server's response part of a Socks4a handshake. */
   void onHandshakeResponse();
+  /** Called when a connection error has occurred. */
+  void onError(QAbstractSocket::SocketError error);
 
 private:
   /** Sends the client part of a Socks4a handshake with a proxy server. */

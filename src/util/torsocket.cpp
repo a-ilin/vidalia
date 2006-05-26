@@ -43,6 +43,8 @@ TorSocket::TorSocket(QHostAddress socksAddr, quint16 socksPort, QObject *parent)
   _socksAddr(socksAddr),
   _socksPort(socksPort)
 {
+  QObject::connect(this, SIGNAL(error(QAbstractSocket::SocketError)),
+                   this, SLOT(onError(QAbstractSocket::SocketError)));
 }
 
 /** Connects to the specified hostname and port via Tor. */
@@ -59,6 +61,14 @@ TorSocket::connectToHost(const QString &remoteHost, quint16 remotePort)
                      this, SLOT(onHandshakeResponse()));
     sendSocksHandshake(remoteHost, remotePort);
   }
+}
+
+/** Called when a connection error has occurred. */
+void
+TorSocket::onError(QAbstractSocket::SocketError error)
+{
+  Q_UNUSED(error);
+  emit socketError(errorString());
 }
 
 /** Sends the first part of a Socks4a handshake, using the remote hostname and
@@ -117,3 +127,4 @@ TorSocket::onHandshakeResponse()
     }
   }
 }
+
