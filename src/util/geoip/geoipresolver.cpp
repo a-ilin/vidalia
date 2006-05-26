@@ -24,8 +24,6 @@
  * \version $Id$
  */
 
-#include <util/torsocket.h>
-
 #include "geoipresolver.h"
 
 /** Host for the geo ip information. 
@@ -35,60 +33,6 @@
 /** Page that we request the geo ip information from. */
 #define GEOIP_PAGE    "/geoip.pl"
 
-
-/** Default constructor. */
-GeoIpResolver::GeoIpResolver()
-{
-  /* Set the geo ip information host */
-  setHost(GEOIP_HOST);
-  
-  /* We want to find out when our requests finish. */
-  connect(this, SIGNAL(requestFinished(int,bool)),
-          this,   SLOT(requestFinished(int,bool)));
-}
-
-/** Creates a request for the given list of IP addresses. */
-QByteArray
-GeoIpResolver::buildRequest(QList<QHostAddress> ips)
-{
-  int ipcount = ips.size();
-  QString request = "ip=";
-
-  /* Build a comma-delimited list of IPs whose geographic information we would
-   * like to learn. */
-  for (int i = 0; i < ipcount; i++) {
-    request.append(ips.at(i).toString());
-    if (i < ipcount-1) {
-      request.append(",");
-    }
-  }
-  return request.toAscii();
-}
-
-/** Parses the response from a request for GeoIp information. */
-QList<GeoIp> 
-GeoIpResolver::parseResponse(QString response)
-{
-  QList<GeoIp> geoips;
-  int newCacheItems = 0;
-  QStringList lines = response.split("\n");
-
-  /* For each line in the response, parse its geoip information */
-  foreach (QString line, lines) {
-    GeoIp geoip = GeoIp::fromString(line);
-    if (!geoip.isEmpty()) {
-      _cache.cache(geoip);
-      geoips << geoip;
-      newCacheItems++;
-    }
-  }
-
-  /* If there are any new cached items, save them to disk */
-  if (newCacheItems > 0) {
-    _cache.saveToDisk();
-  }
-  return geoips;
-}
 
 /** Resolves a list of IPs to a geographic location, but only those which are
  * cached. Returns a list of IPs that were not in the cache. */
@@ -105,9 +49,9 @@ GeoIpResolver::resolveFromCache(QList<QHostAddress> ips)
     }
   }
 
-  /* If any were cached, emit their results */
+  /* If any were cached, emit their results now */
   if (cached.size() > 0) {
-    emit resolved(cached);
+    emit resolved(-1, cached);
   }
   return ips;
 }
@@ -119,12 +63,116 @@ GeoIpResolver::resolve(QHostAddress ip)
   return resolve(QList<QHostAddress>() << ip);
 }
 
+/** Called when the socket has connected to the Geo IP host. */
+void
+GeoIpResolver::connected()
+{
+  /* Find the socket and request for whoever called this slot */ 
+  TorSocket *socket = (TorSocket *)sender();
+  if (!_requestList.contains(socket)) {
+    return;
+  }
+  GeoIpRequest *req = (GeoIpRequest *)_requestList.value(socket);
+  
+  /* Send the request */
+  socket->write(req->request());
+}
+
+/** Called when the socket has disconnected from the Geo IP host. */
+void
+GeoIpResolver::disconnected()
+{
+  /* Find the socket and request for whoever called this slot */ 
+  TorSocket *socket = (TorSocket *)sender();
+  if (!_requestList.contains(socket)) {
+    return;
+  }
+  GeoIpRequest *request = (GeoIpRequest *)_requestList.take(socket);
+
+  /* Read and parse the response */
+  GeoIpResponse response = GeoIpResponse(socket->readAll());
+
+  /* Check the response code and see what we got */
+  if (response.statusCode() == 200) {
+    /* We got a 200 OK, so get the Geo IP information and cache the results */
+    int numCached = 0;
+    QList<GeoIp> geoips = response.geoIps();
+    foreach (GeoIp geoip, geoips) {
+      if (!_cache.contains(geoip.ip())) {
+        _cache.cache(geoip);
+        numCached++;
+      }
+    }
+    /* If new results were cached, save them to disk */
+    if (numCached > 0) {
+      _cache.saveToDisk();
+    }
+    /* Emit the results */
+    emit resolved(request->id(), geoips);
+  } else {
+    /* We failed to get the Geo IP information, so emit resolveFailed and
+     * include the HTTP status message. */
+    emit resolveFailed(request->id(), response.statusMessage());
+  }
+  /* Close the socket and clean up */
+  socket->close();
+  delete socket;
+  delete request;
+}
+
+/** Called when an error has occurred requesting Geo IP information. */
+void
+GeoIpResolver::socketError(QString errorString)
+{
+  /* Find the socket and request for whoever called this slot */ 
+  TorSocket *socket = (TorSocket *)sender();
+  if (!_requestList.contains(socket)) {
+    return;
+  }
+  
+  /* We expect a remote host to close the socket, because that's how the HTTP
+   * server tells us he's done talkig to us. */
+  if (socket->error() != QAbstractSocket::RemoteHostClosedError) {
+    /* Emit the failure and clean up */
+    GeoIpRequest *request = (GeoIpRequest *)_requestList.take(socket);
+    emit resolveFailed(request->id(), errorString);
+    socket->abort();
+    delete socket;
+    delete request;
+  }
+}
+
+/** Creates an HTTP request for Geo IP information. */
+GeoIpRequest*
+GeoIpResolver::createRequest(QList<QHostAddress> ips)
+{
+  static int id = -1;
+  GeoIpRequest *request = new GeoIpRequest(++id);
+  request->setHost(GEOIP_HOST);
+  request->setPage(GEOIP_PAGE);
+  request->setRequest(ips);
+  return request;
+}
+
+/** Creates a TorSocket used to connect to the Geo IP host. */
+TorSocket*
+GeoIpResolver::createRequestSocket()
+{
+  TorSocket *socket = new TorSocket(QHostAddress::LocalHost, 9050);
+  connect(socket, SIGNAL(connected()), this, SLOT(connected()),
+          Qt::QueuedConnection);
+  connect(socket, SIGNAL(socketError(QString)), 
+            this,   SLOT(socketError(QString)),
+          Qt::QueuedConnection);
+  connect(socket, SIGNAL(disconnected()), this, SLOT(disconnected()),
+          Qt::QueuedConnection);
+  return socket;
+}
+
 /** Resolves a list of IPs to a geographic location. */
 int
 GeoIpResolver::resolve(QList<QHostAddress> ips)
 {
-  int requestId;
-  
   /* Resolve the cached IPs and get a list of IPs that still need to be
    * resolved to a lat and long. */
   QList<QHostAddress> uncached = resolveFromCache(ips);
@@ -132,39 +180,13 @@ GeoIpResolver::resolve(QList<QHostAddress> ips)
     return -1;
   }
 
-  /* Create a socket used ot request the geo ip information.
-   * XXX replace this with a TorSocket to do the request through Tor. */
-  QTcpSocket *socket = new QTcpSocket();
-  setSocket(socket);
- 
-  /* Send the request and return the request ID */
-  requestId = post(GEOIP_PAGE, buildRequest(uncached));
-  _requestList.insert(requestId, socket);
-  return requestId;
-}
-
-/** Called when a request has been completed. If no error occurred, then the
- * response will be parsed for IP geolocation information. */
-void
-GeoIpResolver::requestFinished(int id, bool error)
-{
-  /* Check if this is a request we are interested in */
-  if (!_requestList.contains(id)) {
-    return;
-  }
-  delete  _requestList.value(id);
- 
-  /* If the request failed, let callers know why */
-  if (error) {
-    emit resolveFailed(id, errorString());  
-    return;
-  }
+  /* Create a socket used ot request the geo ip information. */
+  TorSocket *socket = createRequestSocket();
+  GeoIpRequest *request = createRequest(ips);
+  _requestList.insert(socket, request);
   
-  /* Parse the responses and emit the results (if any) */
-  QByteArray response = readAll();
-  QList<GeoIp> geoips = parseResponse(response);
-  if (geoips.size() > 0) {
-    emit resolved(geoips);
-  }
+  /* Connect so we can send our request and return the request ID. */
+  socket->connectToHost(GEOIP_HOST, 80);
+  return request->id();
 }
 

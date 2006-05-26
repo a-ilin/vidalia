@@ -27,25 +27,26 @@
 #ifndef _GEOIPRESOLVER_H
 #define _GEOIPRESOLVER_H
 
+#include <QObject>
 #include <QList>
 #include <QHash>
-#include <QHttp>
 #include <QString>
-#include <QTcpSocket>
-#include <QByteArray>
 #include <QHostAddress>
+#include <util/torsocket.h>
 
 #include "geoip.h"
 #include "geoipcache.h"
+#include "geoiprequest.h"
+#include "geoipresponse.h"
 
 
-class GeoIpResolver : public QHttp
+class GeoIpResolver : public QObject
 {
   Q_OBJECT
 
 public:
   /** Default constructor. */
-  GeoIpResolver();
+  GeoIpResolver() {}
 
   /** Resolves a single IP to a geographic location. */
   int resolve(QHostAddress ip);
@@ -56,25 +57,29 @@ public:
   QList<QHostAddress> resolveFromCache(QList<QHostAddress> ips);
 
 signals:
-  /** Emitted when a single IP has been resolved to lat/long. */
-  void resolved(GeoIp geoip);
   /** Emitted when a list of IPs have been resolved to lat/long. */
-  void resolved(QList<GeoIp> geoips);
+  void resolved(int id, QList<GeoIp> geoips);
   /** Emitted when a resolve has failed. */
   void resolveFailed(int id, QString errorString);
 
 private slots:
-  /** Called when a request has been completed. */
-  void requestFinished(int id, bool error);
-  
-private:
-  /** Creates a request for the given list of IP addresses. */
-  QByteArray buildRequest(QList<QHostAddress> ip);
-  /** Parses the response from a request for GeoIp information. */
-  QList<GeoIp> parseResponse(QString response);
+  /** Called when the socket has connected to the Geo IP host. */
+  void connected();
+  /** Called when the socket has disconnected from the Geo IP host. */
+  void disconnected();
+  /** Called when an error has occurred getting the Geo IP information. */
+  void socketError(QString errorString);
 
-  GeoIpCache  _cache; /**< Cached GeoIp objects. */
-  QHash<int,QTcpSocket *> _requestList; /**< List of sockets used for requests. */
+private:
+  /** Creates an HTTP request for Geo IP information. */
+  GeoIpRequest* createRequest(QList<QHostAddress> ips);
+  /** Creates a socket used to request Geo IP information over Tor. */
+  TorSocket* createRequestSocket();
+  
+  /**< Cached GeoIp objects. */
+  GeoIpCache  _cache;
+  /**< List of sockets used for requests. */
+  QHash<TorSocket *,GeoIpRequest*> _requestList;
 };
 
 #endif
