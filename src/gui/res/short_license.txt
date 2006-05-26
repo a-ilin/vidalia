@@ -70,5 +70,8 @@ along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  
 02110-1301, USA.
 ===================================================================
-
+This product includes GeoIP data created by MaxMind, available from
+http://maxmind.com/
+===================================================================
 See LICENSE distributed with Vidalia for detailed licensing information.
+
