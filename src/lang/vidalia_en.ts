@@ -1351,11 +1351,11 @@ fingerprint.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Detached</source>
+        <source>Unknown</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Unknown</source>
+        <source>Retrying</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

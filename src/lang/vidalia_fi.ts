@@ -1425,12 +1425,12 @@ fingerprint.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Detached</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Unknown</source>
         <translation type="unfinished">Tuntematon</translation>
+    </message>
+    <message>
+        <source>Retrying</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

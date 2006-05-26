@@ -113,7 +113,7 @@ Stream::statusString()
     case Succeeded:     status = tr("Open"); break;
     case Failed:        status = tr("Failed"); break;
     case Closed:        status = tr("Closed"); break;
-    case Detached:      status = tr("Detached"); break;
+    case Detached:      status = tr("Retrying"); break;
     default:            status = tr("Unknown"); break;
   }
   return status;
