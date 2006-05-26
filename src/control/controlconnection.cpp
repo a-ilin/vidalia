@@ -45,6 +45,8 @@
 ControlConnection::ControlConnection(TorEvents *events)
 {
   _events = events;
+  _run    = false;
+  _status = Disconnected;
 }
 
 /** Connects to Tor's control interface and starts a thread used to process
