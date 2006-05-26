@@ -191,7 +191,7 @@ NetViewer::newNym()
       QMessageBox::Ok, QMessageBox::NoButton);
   } else {
     QMessageBox::warning(this,
-      tr("New Identity Request Failed"), errmsg,
+      tr("Failed to Create New Identity"), errmsg,
       QMessageBox::Ok, QMessageBox::NoButton);
   }
 }
