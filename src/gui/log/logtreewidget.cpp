@@ -24,6 +24,8 @@
  * \version $Id: messagelog.cpp 797 2006-05-09 04:42:35Z edmanm $ 
  */
 
+#include <QScrollBar>
+
 #include "logtreewidget.h"
 #include "logheaderview.h"
 
@@ -35,6 +37,22 @@ LogTreeWidget::LogTreeWidget(QWidget *parent)
   setHeader(new LogHeaderView(this));
   
   setStatusTip(tr("Messages Shown: ") + "0");
+
+  /* Default to always scrolling to the most recent item added */
+  _scrollOnNewItem = true;
+  connect(verticalScrollBar(), SIGNAL(valueChanged(int)),
+          this, SLOT(onVerticalScroll(int)));
+}
+
+/** Called when the user moves the vertical scrollbar. If the user has the
+ * scrollbar at within one step of its maximum, then always scroll to new
+ * items when added. Otherwise, leave the scrollbar alone since they are
+ * probably looking at something in their history. */
+void
+LogTreeWidget::onVerticalScroll(int value)
+{
+  QScrollBar *scrollbar = verticalScrollBar();
+  _scrollOnNewItem = (value >= (scrollbar->maximum()-scrollbar->singleStep()));
 }
 
 /** Cast a QList of QTreeWidgetItem pointers to a list of LogTreeWidget
@@ -159,8 +177,11 @@ LogTreeWidget::log(LogEvent::Severity type, QString message)
     delete takeTopLevelItem(0);
   }
   
-  /* Add the new message item */
+  /* Add the new message item and scroll to it (if necessary) */
   addItem(item);
+  if (_scrollOnNewItem) {
+    scrollToItem(item);
+  }
 
   /* Update our tooltip and return the new log item */
   setStatusTip(tr("Messages Shown: %1").arg(itemCount()));

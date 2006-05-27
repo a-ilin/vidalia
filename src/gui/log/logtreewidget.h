@@ -83,7 +83,11 @@ public:
 protected:
   /** Sets the default, initial column header widths. */
   void showEvent(QShowEvent *event);
-  
+
+private slots:
+  /** Called when the user moves the vertical scroll bar. */
+  void onVerticalScroll(int value);
+
 private:
   /** Casts a QList of one pointer type to another. */
   QList<LogTreeItem *> qlist_cast(QList<QTreeWidgetItem *> inlist);
@@ -91,6 +95,8 @@ private:
   QList<LogTreeItem *> qlist_sort(QList<LogTreeItem *> inlist);
 
   int _maxItemCount; /**< Maximum number of items in the tree. */
+  bool _scrollOnNewItem; /**< Set to true if we are to scroll to the new item
+                               after adding a message to the log. */
 };
   
 #endif

@@ -356,9 +356,8 @@ MessageLog::log(LogEvent::Severity type, QString message)
 {
   /* Only add the message if it's not being filtered out */
   if (_filter & (uint)type) {
-    /* Add the message to the list and scroll to it. */
-    LogTreeItem *item = ui.lstMessages->log(type, message);
-    ui.lstMessages->scrollToItem(item);
+    /* Add the message to the list and scroll to it if necessary. */
+    LogTreeItem *item = ui.lstMessages->log(type, message); 
 
     /* If we're saving log messages to a file, go ahead and do that now */
     if (_enableLogging) {
