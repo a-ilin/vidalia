@@ -79,7 +79,7 @@ NetViewer::NetViewer(QWidget *parent)
    * needs to be called to get rid of any descriptors that were removed. */
   _timer = new QTimer(this);
   _timer->setInterval(60*60*1000);
-  connect(_timer, SIGNAL(timeout()), this, SLOT(loadRouters()));
+  connect(_timer, SIGNAL(timeout()), this, SLOT(loadRouterList()));
   connect(_torControl, SIGNAL(connected()), _timer, SLOT(start()));
   connect(_torControl, SIGNAL(disconnected()), _timer, SLOT(stop()));
 
@@ -97,6 +97,10 @@ NetViewer::NetViewer(QWidget *parent)
   connect(_torControl, SIGNAL(connected()), this, SLOT(loadRouterList()));
   connect(_torControl, SIGNAL(connected()), this, SLOT(loadConnections())); 
   connect(_torControl, SIGNAL(disconnected()), ui.treeCircuitList, SLOT(clear()));
+
+  /* Connect the slot to find out when geoip information has arrived */
+  connect(&_geoip, SIGNAL(resolved(int, QList<GeoIp>)), 
+             this,   SLOT(resolved(int, QList<GeoIp>)));
 }
 
 /** Custom event handler. Catches the new descriptor events. */
@@ -196,15 +200,32 @@ NetViewer::newNym()
 void
 NetViewer::loadDescriptors(QStringList ids)
 {
+  QList<QHostAddress> iplist;
+  
   foreach (QString id, ids) {
     /* Load the router descriptor and add it to the router list. */
-    ui.treeRouterList->addRouter(_torControl->getRouterDescriptor(id));
+    RouterDescriptor rd = _torControl->getRouterDescriptor(id);
+    if (!rd.isEmpty()) {
+      ui.treeRouterList->addRouter(rd);
+
+      /* Add this IP to a list whose geographic location we'd like to find. */
+      QHostAddress ip(rd.ip());
+      if (!iplist.contains(ip)) {
+        iplist << ip;
+      }
+    }
+
     /* Process pending events for a bit so the GUI remains responsive */
     Vidalia::processEvents(QEventLoop::AllEvents, MAX_EVENTS_TIMEOUT);
     /* If the connection broke, then bail */
     if (!_torControl->isConnected()) {
-      break;
+      return;
     }
+  }
+
+  /* If there are any IPs in the list, then resolve them to locations */
+  if (iplist.size() > 0) {
+    _geoip.resolve(iplist);
   }
 }
 
@@ -222,6 +243,15 @@ NetViewer::circuitSelected(Circuit circuit)
     if (item) {
       ui.treeRouterList->setItemSelected(item, true);
     }
+  }
+}
+
+/** Called when a list of GeoIp information has been resolved. */
+void
+NetViewer::resolved(int id, QList<GeoIp> geoips)
+{
+  foreach (GeoIp geoip, geoips) {
+    /* Do something with our awesome new information */
   }
 }
 

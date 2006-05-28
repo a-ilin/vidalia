@@ -32,9 +32,11 @@
 #include <QEvent>
 #include <QTimer>
 #include <control/torcontrol.h>
+#include <util/geoip/geoipresolver.h>
 
 #include "zimageview.h"
 #include "ui_netviewer.h"
+
 
 class NetViewer : public QMainWindow
 {
@@ -64,6 +66,8 @@ private slots:
   /** Called when the user selects a map action on the toolbar */
   /** Called when the user selects a circuit on the circuit list */
   void circuitSelected(Circuit circuit);
+  /** Called when an IP has been resolved to geographic information. */
+  void resolved(int id, QList<GeoIp> geoips);
   
 private:
   /** Loads a list of router descriptors from the list of IDs. */
@@ -75,6 +79,8 @@ private:
   QTimer* _timer;
   /** ZImageView that displays the map **/
   ZImageView* _map;
+  /** GeoIpResolver used to geolocate routers by IP address. */
+  GeoIpResolver _geoip;
 
   /** Qt Designer generated object **/
   Ui::NetViewer ui;
