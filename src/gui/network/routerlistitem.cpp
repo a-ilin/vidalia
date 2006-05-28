@@ -43,24 +43,35 @@ RouterListItem::RouterListItem(RouterListWidget *list, RouterDescriptor rd)
 : QTreeWidgetItem()
 {
   _list = list;
+  _rd   = 0;
   update(rd);
 }
 
+/** Destructor. */
+RouterListItem::~RouterListItem()
+{
+  delete _rd;
+}
+
+/** Updates the router descriptor for this item. */
 void
 RouterListItem::update(RouterDescriptor rd)
 {
   QIcon statusIcon;
-  _rd = rd;
+  if (_rd) {
+    delete _rd;
+  }
+  _rd = new RouterDescriptor(rd);
   
   /* Determine the status value (used for sorting) and icon */
-  if (_rd.offline()) {
+  if (_rd->offline()) {
     _statusValue = -1;
     statusIcon = QIcon(IMG_NODE_OFFLINE);
-  } else if (_rd.hibernating()) {
+  } else if (_rd->hibernating()) {
     _statusValue = 0;
     statusIcon = QIcon(IMG_NODE_SLEEPING);
   } else {
-    _statusValue = (qint64)_rd.observedBandwidth();
+    _statusValue = (qint64)_rd->observedBandwidth();
     if (_statusValue >= 400*1024) {
       statusIcon = QIcon(IMG_NODE_HIGH_BW);
     } else if (_statusValue >= 60*1024) {
@@ -74,7 +85,14 @@ RouterListItem::update(RouterDescriptor rd)
   
   /* Make the new information visible */
   setIcon(STATUS_COLUMN, statusIcon);
-  setText(NAME_COLUMN, _rd.name());
+  setText(NAME_COLUMN, _rd->name());
+}
+
+/** Sets the location information for this item's router descriptor. */
+void
+RouterListItem::setLocation(QString location)
+{
+  _rd->setLocation(location);
 }
 
 /** Overload the comparison operator. */
