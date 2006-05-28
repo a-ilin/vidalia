@@ -29,6 +29,7 @@
 
 #include <QObject>
 #include <QTreeWidget>
+#include <QHostAddress>
 
 #include "routerlistitem.h"
 
@@ -40,9 +41,13 @@ class RouterListWidget : public QTreeWidget
 public:
   /** Columns in the list. */
   enum Columns {
-    StatusColumn = 0, /**< Status column, indicating bandwidth */
-    NameColumn = 1,    /*<< Router's name. */
-    StatusColumnWidth = 55
+    StatusColumn = 0,  /**< Status column, indicating bandwidth */
+    NameColumn = 1,    /*< Router's name. */
+    
+  };
+  /** Column widths. */
+  enum ColumnWidths {
+    StatusColumnWidth = 55 /**< Initial width of the status column. */
   };
 
   /** Default constructor. */
@@ -52,6 +57,8 @@ public:
   void addRouter(RouterDescriptor rd);
   /** Finds the list item for the given router name. */
   RouterListItem* findRouterItem(QString router);
+  /** Finds the list item or items for the given router IP. */
+  QList<RouterListItem *> findRouterItems(QHostAddress ip);
   /** Deselects all currently selected routers. */
   void deselectAll();
 

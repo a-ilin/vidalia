@@ -122,6 +122,23 @@ RouterListWidget::findRouterItem(QString router)
   return 0;
 }
 
+/** Finds the list item or items for the given router IP. */
+QList<RouterListItem *>
+RouterListWidget::findRouterItems(QHostAddress ip)
+{
+  RouterListItem *item;
+  QList<RouterListItem *> items;
+  
+  int itemCount = topLevelItemCount();
+  for (int i = 0; i < itemCount; i++) {
+    item = (RouterListItem *)topLevelItem(i);
+    if (ip.toString() == item->descriptor().ip()) {
+      items << item;
+    }
+  }
+  return items;
+}
+
 /** Adds a router descriptor to the list. */
 void
 RouterListWidget::addRouter(RouterDescriptor rd)
