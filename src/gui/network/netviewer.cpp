@@ -31,7 +31,6 @@
 #include "netviewer.h"
 
 #define FONT        QFont(tr("Arial"), 10)
-#define IMG_MAP     ":/images/map/world-map.png"
 #define IMG_MOVE    ":/images/22x22/move-map.png"
 #define IMG_ZOOMIN  ":/images/22x22/zoom-in.png"
 #define IMG_ZOOMOUT ":/images/22x22/zoom-out.png"
@@ -64,10 +63,8 @@ NetViewer::NetViewer(QWidget *parent)
     resizeSection(CircuitListWidget::ConnectionColumn,
 		  CircuitListWidget::ConnectionColumnWidth);
 
-  /* Create the ZImageView  and add it to the dialog */
-  _map = new ZImageView();
-  QImage image(IMG_MAP);
-  _map->setImage(image);
+  /* Create the TorMapWidget and add it to the dialog */
+  _map = new TorMapWidget();
   ui.gridLayout->addWidget(_map);
 
   /* Connect zoom buttons to ZImageView zoom slots */
@@ -91,7 +88,14 @@ NetViewer::NetViewer(QWidget *parent)
           ui.textRouterInfo, SLOT(display(QList<RouterDescriptor>)));
   connect(ui.treeCircuitList, SIGNAL(circuitSelected(Circuit)),
           this, SLOT(circuitSelected(Circuit)));
+  
+  /* Respond to user actions on the map. */
+  connect(_map, SIGNAL(circuitSelected(Circuit)), 
+          this,   SLOT(circuitSelected(Circuit)));
+  connect(_map, SIGNAL(routerSelected(QString)),
+          this,   SLOT(mapRouterSelected(QString)));
 
+  /* Respond to changes in the status of the control connection */
   connect(_torControl, SIGNAL(connected(bool)), ui.actionRefresh, SLOT(setEnabled(bool)));
   connect(_torControl, SIGNAL(connected(bool)), ui.actionNewNym, SLOT(setEnabled(bool)));
   connect(_torControl, SIGNAL(connected()), this, SLOT(loadRouterList()));
@@ -246,10 +250,22 @@ NetViewer::circuitSelected(Circuit circuit)
   }
 }
 
+/** Called when the user selects a router on the map. */
+void
+NetViewer::mapRouterSelected(QString name)
+{
+  RouterListItem *item = ui.treeRouterList->findRouterItem(name);
+  if (item) {
+    ui.treeRouterList->deselectAll();
+    ui.treeRouterList->setItemSelected(item, true);
+  }
+}
+
 /** Called when a list of GeoIp information has been resolved. */
 void
 NetViewer::resolved(int id, QList<GeoIp> geoips)
 {
+  Q_UNUSED(id);
   foreach (GeoIp geoip, geoips) {
     /* Do something with our awesome new information */
   }

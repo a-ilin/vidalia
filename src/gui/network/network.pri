@@ -24,7 +24,8 @@
 FORMS += $$PWD/netviewer.ui
 
 HEADERS += $$PWD/netviewer.h \
-	   $$PWD/zimageview.h \
+           $$PWD/zimageview.h \
+           $$PWD/tormapwidget.h \
            $$PWD/routerlistwidget.h \
            $$PWD/routerlistitem.h \
            $$PWD/routerdescriptorview.h \
@@ -33,7 +34,8 @@ HEADERS += $$PWD/netviewer.h \
            $$PWD/streamitem.h
 
 SOURCES += $$PWD/netviewer.cpp \
-	   $$PWD/zimageview.cpp \
+           $$PWD/zimageview.cpp \
+           $$PWD/tormapwidget.cpp \
            $$PWD/routerlistwidget.cpp \
            $$PWD/routerlistitem.cpp \
            $$PWD/routerdescriptorview.cpp \

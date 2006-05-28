@@ -34,7 +34,7 @@
 #include <control/torcontrol.h>
 #include <util/geoip/geoipresolver.h>
 
-#include "zimageview.h"
+#include "tormapwidget.h"
 #include "ui_netviewer.h"
 
 
@@ -68,7 +68,9 @@ private slots:
   void circuitSelected(Circuit circuit);
   /** Called when an IP has been resolved to geographic information. */
   void resolved(int id, QList<GeoIp> geoips);
-  
+  /** Called when the user selects a router on the map. */
+  void mapRouterSelected(QString name);
+
 private:
   /** Loads a list of router descriptors from the list of IDs. */
   void loadDescriptors(QStringList ids);
@@ -77,8 +79,8 @@ private:
   TorControl* _torControl;
   /** Timer that fires once an hour to update the router list. */
   QTimer* _timer;
-  /** ZImageView that displays the map **/
-  ZImageView* _map;
+  /** TorMapWidget that displays the map. */
+  TorMapWidget* _map;
   /** GeoIpResolver used to geolocate routers by IP address. */
   GeoIpResolver _geoip;
 
