@@ -58,7 +58,9 @@ public:
   QString state() const { return _state; }
   /** Returns the country in which this IP lives. */
   QString country() const { return _country; }
- 
+  /** Returns a human-readable string of city, region(state), and country. */
+  QString toLocation() const;
+
   /** Returns true if the GeoIp object is invalid. */
   bool isEmpty() const;
 

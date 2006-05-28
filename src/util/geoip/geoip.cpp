@@ -89,3 +89,34 @@ GeoIp::isEmpty() const
   return (_ip.isNull() && !_latitude && !_longitude);
 }
 
+/** Returns a human-readable string of GeoIp location information. */
+QString
+GeoIp::toLocation() const
+{
+  QStringList location;
+  
+  /* Add the city name (if present) */
+  if (!_city.isEmpty()) {
+    location << _city;
+  }
+  /* Add the state or region name (if present) */
+  if (!_state.isEmpty()) {
+    /* Only display non-numeric region codes. */
+    bool valid = true;
+    for (int i = 0; i < _state.length(); i++) {
+      if (_state[i].isDigit()) {
+        valid = false;
+        break;
+      }
+    }
+    if (valid) {
+      location << _state;
+    }
+  }
+  /* Add the country code (if present) */
+  if (!_country.isEmpty()) {
+    location << _country;
+  }
+  return location.join(", ");
+}
+
