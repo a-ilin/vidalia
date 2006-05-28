@@ -88,7 +88,13 @@ public:
   /** Returns a string representation of the status of this router. */
   QString status();
   
-
+  /** Returns geographic location information for this router. Note that this
+   * information is NOT part of the Tor directory protocol, but can be
+   * determined out of band and set using setLocation(). */
+  QString location() const { return _location; }
+  /** Sets geographic location information for this router. */
+  void setLocation(QString location) { _location = location; }
+  
 private:
   /** Parses this router's descriptor for relevant information. */
   void parseDescriptor();
@@ -108,6 +114,7 @@ private:
   quint64 _avgBandwidth;   /**< Average bandwidth. */
   quint64 _burstBandwidth; /**< Burst bandwidth. */
   quint64 _observedBandwidth; /**< Observed bandwidth. */
+  QString _location;       /**< Geographic location information. */
 };
 
 #endif
