@@ -83,8 +83,11 @@ public:
   bool offline() const { return _status == Offline; }
   /** Returns true if this router is hibernating. */
   bool hibernating() const { return _status == Hibernating; }
+  /** Returns true if the router has neither a nickname or an ID. */
+  bool isEmpty() { return (_id.isEmpty() && _name.isEmpty()); }
   /** Returns a string representation of the status of this router. */
   QString status();
+  
 
 private:
   /** Parses this router's descriptor for relevant information. */
