@@ -86,7 +86,7 @@ NetViewer::NetViewer(QWidget *parent)
   /* Connect the necessary slots and signals */
   connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
   connect(ui.actionNewNym, SIGNAL(triggered()), this, SLOT(newNym()));
-  connect(ui.actionRefresh, SIGNAL(triggered()), this, SLOT(loadRouters()));
+  connect(ui.actionRefresh, SIGNAL(triggered()), this, SLOT(loadRouterList()));
   connect(ui.treeRouterList, SIGNAL(routerSelected(QList<RouterDescriptor>)),
           ui.textRouterInfo, SLOT(display(QList<RouterDescriptor>)));
   connect(ui.treeCircuitList, SIGNAL(circuitSelected(Circuit)),
@@ -94,7 +94,7 @@ NetViewer::NetViewer(QWidget *parent)
 
   connect(_torControl, SIGNAL(connected(bool)), ui.actionRefresh, SLOT(setEnabled(bool)));
   connect(_torControl, SIGNAL(connected(bool)), ui.actionNewNym, SLOT(setEnabled(bool)));
-  connect(_torControl, SIGNAL(connected()), this, SLOT(loadRouters()));
+  connect(_torControl, SIGNAL(connected()), this, SLOT(loadRouterList()));
   connect(_torControl, SIGNAL(connected()), this, SLOT(loadConnections())); 
   connect(_torControl, SIGNAL(disconnected()), ui.treeCircuitList, SLOT(clear()));
 }
@@ -107,7 +107,7 @@ NetViewer::customEvent(QEvent *event)
   if (type == CustomEventType::NewDescriptorEvent) {
     /* New router descriptor, so load it and add it to the list */
     NewDescriptorEvent *nde = (NewDescriptorEvent *)event;
-    loadNewDescriptors(nde->descriptorIDs());
+    loadDescriptors(nde->descriptorIDs());
   } else if (type == CustomEventType::CircuitEvent) {
     /* New or updated circuit information */
     CircuitEvent *ce = (CircuitEvent *)event;
@@ -121,7 +121,7 @@ NetViewer::customEvent(QEvent *event)
 
 /** Loads a list of router's that Tor knows about. */
 void
-NetViewer::loadRouters()
+NetViewer::loadRouterList()
 {
   QStringList idList;
 
@@ -132,11 +132,7 @@ NetViewer::loadRouters()
   ui.treeRouterList->clear();
  
   /* Create an item for each router and associate it with a descriptor */
-  idList = _torControl->getRouterIDList();
-  foreach (QString id, idList) {
-    ui.treeRouterList->addRouter(_torControl->getRouterDescriptor(id));
-    Vidalia::processEvents(QEventLoop::AllEvents, MAX_EVENTS_TIMEOUT);
-  }
+  loadDescriptors(_torControl->getRouterIDList()); 
 
   /* Ok, they can refresh again. */
   ui.actionRefresh->setEnabled(true);
@@ -198,11 +194,17 @@ NetViewer::newNym()
 
 /** Loads a list of new descriptors from the given IDs. */
 void
-NetViewer::loadNewDescriptors(QStringList ids)
+NetViewer::loadDescriptors(QStringList ids)
 {
   foreach (QString id, ids) {
+    /* Load the router descriptor and add it to the router list. */
     ui.treeRouterList->addRouter(_torControl->getRouterDescriptor(id));
+    /* Process pending events for a bit so the GUI remains responsive */
     Vidalia::processEvents(QEventLoop::AllEvents, MAX_EVENTS_TIMEOUT);
+    /* If the connection broke, then bail */
+    if (!_torControl->isConnected()) {
+      break;
+    }
   }
 }
 

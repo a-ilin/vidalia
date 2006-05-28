@@ -48,7 +48,7 @@ public slots:
   /** Overloaded QWidget.show() **/
   void show();
   /** Loads a list of routers that Tor knows about. */
-  void loadRouters();
+  void loadRouterList();
   /** Loads a list of current circuits and streams. */
   void loadConnections();
 
@@ -66,8 +66,8 @@ private slots:
   void circuitSelected(Circuit circuit);
   
 private:
-  /** Loads a list of new descriptors from the list of IDs. */
-  void loadNewDescriptors(QStringList ids);
+  /** Loads a list of router descriptors from the list of IDs. */
+  void loadDescriptors(QStringList ids);
 
   /** TorControl object used to talk to Tor. */
   TorControl* _torControl;
