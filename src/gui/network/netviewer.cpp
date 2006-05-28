@@ -266,8 +266,14 @@ void
 NetViewer::resolved(int id, QList<GeoIp> geoips)
 {
   Q_UNUSED(id);
+  QList<RouterListItem *> routers;
+  
   foreach (GeoIp geoip, geoips) {
     /* Do something with our awesome new information */
+    routers = ui.treeRouterList->findRouterItems(geoip.ip());
+    foreach (RouterListItem *item, routers) {
+      item->setLocation(geoip.toLocation());
+    }
   }
 }
 
