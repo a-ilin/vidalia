@@ -90,6 +90,13 @@ RouterDescriptorView::display(QList<RouterDescriptor> rdlist)
 
     /* IP and platform */
     html.append("<table>");
+    
+    /* If we have location information, show that first. */
+    if (!rd.location().isEmpty()) {
+      html.append(trow(tcol(b(tr("Location:"))) + tcol(rd.location())));
+    }
+    
+    /* Add the IP address and router platform information */
     html.append(trow(tcol(b(tr("IP Address:"))) + tcol(rd.ip())));
     html.append(trow(tcol(b(tr("Platform:")))   + tcol(rd.platform())));
 
