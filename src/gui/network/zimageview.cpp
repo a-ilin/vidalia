@@ -123,34 +123,21 @@ ZImageView::drawScaledImage()
   int extraWidth = int(double(sRect.width() - i.width()) / 2.0);
   int extraHeight = int(double(sRect.height() - i.height()) / 2.0);
 
-  // Paint the white borders, then paint the image.
   // We don't want to paint the background
   // because this isn't double buffered and that would flicker.
   // We could double buffer it, but that would cost ~3 MB of memory.
   
   QPainter p(this);
-  p.setPen(QPen(QColor("#cccccc"), 1));
-  int x1 = extraWidth - 1;
-  int y1 = extraHeight - 1;
-  int x2 = extraWidth - 1 + i.width() + 2;
-  int y2 = extraHeight - 1 + i.height() + 2;
-
   if (extraWidth > 0) {
     p.fillRect(0, 0, extraWidth, sRect.height(), background);
     p.fillRect(sRect.width() - extraWidth, 0,
 	       sRect.width(), sRect.height(), background);
-
-    p.drawLine(x1, y1, x1, y2);
-    p.drawLine(x2, y1, x2, y2);
   }
 
   if (extraHeight > 0) {
     p.fillRect(0, 0, sRect.width(), extraHeight, background);
     p.fillRect(0, sRect.height() - extraHeight,
 	       sRect.width(), sRect.height(), background);
-
-    p.drawLine(x1,y1,x2,y1);
-    p.drawLine(x1,y2,x2,y2);
   }
 
   // Finally, paint the image.
