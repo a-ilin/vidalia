@@ -49,7 +49,7 @@ ZImageView::ZImageView(QWidget *parent)
   repaint();
 }
 
-/** Ssets the displayed image. */
+/** Sets the displayed image. */
 void
 ZImageView::setImage(QImage& img)
 {
