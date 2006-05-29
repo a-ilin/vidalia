@@ -30,7 +30,6 @@
 
 #include "netviewer.h"
 
-#define FONT        QFont(tr("Arial"), 10)
 #define IMG_MOVE    ":/images/22x22/move-map.png"
 #define IMG_ZOOMIN  ":/images/22x22/zoom-in.png"
 #define IMG_ZOOMOUT ":/images/22x22/zoom-out.png"
