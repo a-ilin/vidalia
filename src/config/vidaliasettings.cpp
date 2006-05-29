@@ -33,6 +33,7 @@
 
 #if defined(Q_WS_WIN)
 #include <util/registry.h>
+#include <util/win32.h>
 #endif
 
 
@@ -67,12 +68,12 @@
 #define DEFAULT_ENABLE_LOG_FILE     false
 
 #if defined(Q_OS_WIN32)
-#define DEFAULT_DATA_DIRECTORY (QDir::homePath() + "\\Vidalia\\")
-#define DEFAULT_LOG_FILE       (QDir::rootPath() + "Program Files\\Tor\\tor.log")
+#define DEFAULT_DATA_DIRECTORY (win32_app_data_folder() + "\\Vidalia")
+#define DEFAULT_LOG_FILE       (win32_program_files_folder() + "\\Tor\\tor.log")
 #define STARTUP_REG_KEY        "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
 #define VIDALIA_REG_KEY        "Vidalia" 
 #else
-#define DEFAULT_DATA_DIRECTORY (QDir::homePath() + "/.vidalia/")
+#define DEFAULT_DATA_DIRECTORY (QDir::homePath() + "/.vidalia")
 #define DEFAULT_LOG_FILE       (QDir::homePath() + "/.tor/tor.log")
 #endif
 

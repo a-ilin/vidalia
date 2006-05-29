@@ -29,7 +29,11 @@
 
 #include <QString>
 
-/** Retrieves the location of the user's %PROGRAMFILES% folder */
+/** Retrieves the location of the user's %PROGRAMFILES% folder. */
 QString win32_program_files_folder();
 
+/** Retrieves the location of the user's %APPDATA% folder. */
+QString win32_app_data_folder();
+
 #endif
+

@@ -30,9 +30,11 @@
 #include <QDir>
 #include "win32.h"
 
-/** Gets the location of the user's %PROGRAMFILES% folder. */
+
+/** Finds the location of the "special" Windows folder using the given CSIDL
+ * value. If the folder cannot be found, the given default path is used. */
 QString
-win32_program_files_folder()
+win32_get_folder_location(int folder, QString defaultPath)
 {
   TCHAR path[MAX_PATH+1];
   LPITEMIDLIST idl;
@@ -40,7 +42,7 @@ win32_program_files_folder()
   HRESULT result;
 
   /* Find the location of %PROGRAMFILES% */
-  if (SUCCEEDED(SHGetSpecialFolderLocation(NULL, CSIDL_PROGRAM_FILES, &idl))) {
+  if (SUCCEEDED(SHGetSpecialFolderLocation(NULL, folder, &idl))) {
     /* Get the path from the IDL */
     result = SHGetPathFromIDList(idl, path);
     SHGetMalloc(&m);
@@ -52,6 +54,22 @@ win32_program_files_folder()
             return QString::fromLocal8Bit((char *)path);)
     }
   }
-  return QDir::rootPath() + "Program Files";
+  return defaultPath;
+}
+
+/** Gets the location of the user's %PROGRAMFILES% folder. */
+QString
+win32_program_files_folder()
+{
+  return win32_get_folder_location(
+     CSIDL_PROGRAM_FILES, QDir::rootPath() + "\\Program Files");
+}
+
+/** Gets the location of the user's %APPDATA% folder. */
+QString
+win32_app_data_folder()
+{
+  return win32_get_folder_location(
+      CSIDL_APPDATA, QDir::homePath() + "\\Application Data");
 }
 
