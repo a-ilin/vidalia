@@ -32,36 +32,39 @@
 #include <QPixmap>
 #include <QWidget>
 
-//=============================================================================
-//
-//=============================================================================
+
 class ZImageView : public QWidget
 {
   Q_OBJECT
 
 public:
+  /** Default constructor. */
   ZImageView(QWidget *parent = 0);
-  virtual ~ZImageView();
-  float getZoom();
-  int getZoomInt();
+
   QSize minimumSizeHint() const;
 
 public slots:
+  /** Sets the displayed image. */
   void setImage(QImage& pixmap);
-  void zoom(float pct);
-  void zoomInt(int pct);
-  void zoomWidth();
-  void zoomHeight();
+  /** Resets the center zoom point back to the center of the viewport. */
   void resetZoomPoint();
+  /** Sets the current zoom level to the given percent. */
+  void zoom(float pct);
+  /** Zooms into the displayed image by 5% */
   void zoomIn();
+  /** Zooms away from the displayed image by 5% */
   void zoomOut();
 
 protected:
-  void paintNow();
+  /** Updates the viewport and repaints the displayed image. */
   virtual void paintEvent(QPaintEvent*);
+  /** Handles the user pressing a mouse button. */
   virtual void mousePressEvent(QMouseEvent* e);
+  /** Handles the user releasing a mouse button. */
   virtual void mouseReleaseEvent(QMouseEvent* e);
+  /** Handles the user moving the mouse. */
   virtual void mouseMoveEvent(QMouseEvent* e);
+  /** Handles events where the widget is resized. */
   virtual void resizeEvent(QResizeEvent* e);
   
   /** Update the viewport.  This will set _view to a region that,
@@ -73,23 +76,24 @@ protected:
    *  Returns the _zoom==0.0 viewport rect (the max) and the
    *  _zoom==1.0 viewport rect (the min). */
   QPair<QRect, QRect> updateViewport(int screendx=0, int screendy=0);
+  /** Redraws the scaled image in the viewport. */
   void drawScaledImage();
+  /** Ensures min <= value <= max */
   float clamp(const float value, const float min, const float max);
 
 private:
-  float _zoom;
-  QImage _image;
-  QImage _imageCopy;
-  float _padding;
-  float _maxZoomFactor;
+  float _zoom;     /**< The current zoom level. */
+  QImage _image;   /**< The displayed image. */
+  float _padding;  /**< Amount of padding to use on the side of the image. */
+  float _maxZoomFactor;  /**< Maximum amount to zoom into the image. */
 
-  bool _mouseDown;
-  int  _mouseX;
-  int  _mouseY;
+  bool _mouseDown;  /**< Set to true when a mouse button is depressed. */
+  int  _mouseX;     /**< The x-coordinate of the current mouse position. */
+  int  _mouseY;     /**< The y-coordinate of the current mouse position. */
   
-  QRect _view;
-  float _desiredX;
-  float _desiredY;
+  QRect _view;      /**< The displayed viewport. */
+  float _desiredX;  /**< The X value we desire (???). */
+  float _desiredY;  /**< The Y value we desire (???). */
 };
 
 #endif

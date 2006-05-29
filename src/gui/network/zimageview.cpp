@@ -33,7 +33,7 @@
 
 #define MIN_SIZE QSize(512,256)
 
-//=============================================================================
+/** Constructor. */
 ZImageView::ZImageView(QWidget *parent)
   : QWidget(parent)
 {
@@ -49,11 +49,7 @@ ZImageView::ZImageView(QWidget *parent)
   repaint();
 }
 
-//=============================================================================
-ZImageView::~ZImageView()
-{}
-
-//=============================================================================
+/** Ssets the displayed image. */
 void
 ZImageView::setImage(QImage& img)
 {
@@ -66,16 +62,13 @@ ZImageView::setImage(QImage& img)
   }
 }
 
-#include <QtDebug>
-//=============================================================================
+/** Draws the scaled image on the widget. */
 void
 ZImageView::drawScaledImage()
 {
   if (!isVisible()) {
     return;
   }
-
-  qDebug() << "drawing scaled image!";
 
   QBrush background(QColor("#fdfdfd"));
   if (_image.isNull()) {
@@ -123,7 +116,7 @@ ZImageView::drawScaledImage()
 		int(double(r.height()) * scaleFactor));
 
   QImage i;
-  i = _image.scaled(scaleTo,
+  i = _image.copy(r).scaled(scaleTo,
 		    Qt::KeepAspectRatioByExpanding,
 		    Qt::SmoothTransformation);
 
@@ -164,7 +157,7 @@ ZImageView::drawScaledImage()
   p.drawImage(extraWidth, extraHeight, i);
 }
 	
-//=============================================================================
+/** Updates the displayed viewport. */
 QPair<QRect, QRect>
 ZImageView::updateViewport(int screendx, int screendy)
 {
@@ -254,27 +247,25 @@ ZImageView::updateViewport(int screendx, int screendy)
   }
     
   if (ih <= vh) {
-      vdy = (ih / 2.0f) - vy; // Center vertically.
-    } else {
-      // Check that the edge of the view isn't past the edge of the image.
-      float vt = float(_view.top());
-      float vb = float(_view.bottom());
-      if (vt < 0) {
-	vdy = -vt;
-      } else if (vb > ih) {
-	vdy = ih - vb;
-      }
+    vdy = (ih / 2.0f) - vy; // Center vertically.
+  } else {
+    // Check that the edge of the view isn't past the edge of the image.
+    float vt = float(_view.top());
+    float vb = float(_view.bottom());
+    if (vt < 0) {
+      vdy = -vt;
+    } else if (vb > ih) {
+      vdy = ih - vb;
     }
+  }
 
   _view.translate(int(vdx), int(vdy));
-
-  qDebug() << "updating viewport!";
 
   return QPair<QRect, QRect>(QRect(0, 0, int(newmaxw), int(newmaxh)),
 			     QRect(0, 0, int(newminw), int(newminh)));
 }
 
-//=============================================================================
+/** Resets the zoom point back to the center of the viewport. */
 void
 ZImageView::resetZoomPoint()
 {
@@ -283,7 +274,8 @@ ZImageView::resetZoomPoint()
   _desiredY = viewCenter.y();
 }
 
-//=============================================================================
+/** Handles repainting this widget by updating the viewport and drawing the
+ * scaled image. */
 void
 ZImageView::paintEvent(QPaintEvent*)
 {
@@ -291,14 +283,7 @@ ZImageView::paintEvent(QPaintEvent*)
   drawScaledImage();
 }
 
-//=============================================================================
-void
-ZImageView::zoomInt(int pct)
-{
-  zoom(float(pct)/100.0);
-}
-
-//=============================================================================
+/** Sets the current zoom percentage to the given value. */
 void
 ZImageView::zoom(float pct)
 {
@@ -306,89 +291,21 @@ ZImageView::zoom(float pct)
   repaint();
 }
 
-//=============================================================================
+/** Zooms into the image by 5% */
 void
 ZImageView::zoomIn()
 {
   zoom(_zoom + .05);
 }
 
-//=============================================================================
+/** Zooms away from the image by 5% */
 void
 ZImageView::zoomOut()
 {
   zoom(_zoom - .05);
 }
 
-//=============================================================================
-float
-ZImageView::getZoom()
-{
-  return _zoom;
-}
-
-//=============================================================================
-int
-ZImageView::getZoomInt()
-{
-  return int(100.0 * _zoom);
-}
-
-//=============================================================================
-void
-ZImageView::zoomWidth()
-{
-  // Get the rectangles for the max and min zoom values:
-  QPair<QRect, QRect> bounds = updateViewport();
-
-  QRect iRect = _image.rect();
-  if (iRect.width() < iRect.height()) {
-    // The image is taller than it is wide.
-    // Therefore, we must zoom until it fills the width.
-    float max = bounds.first.width();
-    float min = bounds.second.width();
-    float i = iRect.width();
-    float rp = max - min + _padding;
-
-    // updateViewport() finds the viewport size with (1-_zoom)rp + min = v
-    // We want the scaled viewport to be equal to the image size + padding,
-    // so set v = i + _padding and solve for _zoom.
-    _zoom = 1.0 - (i + _padding - min) / rp;
-    _zoom = clamp(_zoom, 0.0f, 1.0f);
-    _desiredY = 0.0;
-    updateViewport();
-  }
-  repaint();
-}
-
-//=============================================================================
-void
-ZImageView::zoomHeight()
-{
-  // Get the rectangles for the max and min zoom values:
-  QPair<QRect, QRect> bounds = updateViewport();
-
-  QRect iRect = _image.rect();
-  if (iRect.height() < iRect.width()) {
-    // The image is wider than it is tall.  Therefore, we must zoom until it
-    // fills the height.
-    float max = bounds.first.height();
-    float min = bounds.second.height();
-    float i = iRect.height();
-    float rp = max - min + _padding;
-
-    // updateViewport() finds the viewport size with (1-_zoom)rp + min = v
-    // We want the scaled viewport to be equal to the image size + padding,
-    // so set v = i + _padding and solve for _zoom.
-    _zoom = 1.0 - (i + _padding - min) / rp;
-    _zoom = clamp(_zoom, 0.0f, 1.0f);
-    _desiredX = 0.0;
-    updateViewport();
-  }
-  repaint();
-}
-
-//=============================================================================
+/** Responds to the user pressing a mouse button. */
 void
 ZImageView::mousePressEvent(QMouseEvent* e)
 {
@@ -400,7 +317,7 @@ ZImageView::mousePressEvent(QMouseEvent* e)
   resetZoomPoint();
 }
 
-//=============================================================================
+/** Responds to the user releasing a mouse button. */
 void ZImageView::mouseReleaseEvent(QMouseEvent* e)
 {
   e->accept();
@@ -410,7 +327,7 @@ void ZImageView::mouseReleaseEvent(QMouseEvent* e)
   _mouseDown = false;
 }
 
-//=============================================================================
+/** Responds to the user moving the mouse. */
 void
 ZImageView::mouseMoveEvent(QMouseEvent* e)
 {
@@ -426,7 +343,7 @@ ZImageView::mouseMoveEvent(QMouseEvent* e)
   }
 }
 
-//=============================================================================
+/** Handles the event indicating the widget has been resized. */
 void
 ZImageView::resizeEvent(QResizeEvent* e)
 {
@@ -439,14 +356,13 @@ ZImageView::clamp(const float value, const float min, const float max)
 {
   float trueMin = min < max ? min : max;
   float trueMax = min < max ? max : min;
+  
   if (value < trueMin) {
     return trueMin;
   }
-
   if (trueMax < value) {
     return trueMax;
   }
-
   return value;
 }
 
@@ -455,3 +371,4 @@ ZImageView::minimumSizeHint() const
 {
   return MIN_SIZE;
 }
+
