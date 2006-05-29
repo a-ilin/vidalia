@@ -43,6 +43,7 @@ public:
   /** Plots the given circuit on the map. */
   void addCircuit(Circuit circuit);
 
+public slots:
   /** Selects and hightlights a router on the map. */
   void selectRouter(QString name);
   /** Selects and highlights a circuit on the map. */
