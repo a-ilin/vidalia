@@ -29,6 +29,10 @@ Contributors:
   gave us the ZImageView class which handles drawing, scrolling and zooming the map 
   image in the Network Viewer.
 
+  Christoph Sieghart (sigi) <http://www.0x2a.at/blog/> gave us some code that converts
+  world space coordinates (latitude,longitude) into image space coordinates (x,y) which 
+  we used in the Net Viewer.
+
 Translators:
   Wu Xiaoguang    Simplified Chinese
   DJ Hasis        Finnish

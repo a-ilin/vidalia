@@ -42,6 +42,8 @@ public:
   void addRouter(QString name, float latitude, float longitude);
   /** Plots the given circuit on the map. */
   void addCircuit(Circuit circuit);
+  /** Returns the minimum size of the widget */
+  QSize minimumSizeHint() const;
 
 public slots:
   /** Selects and hightlights a router on the map. */
@@ -54,6 +56,12 @@ signals:
   void routerSelected(QString name);
   /** Emitted when the user selects a circuit on the map. */
   void circuitSelected(Circuit circuit);
+
+private:
+  /** Converts world space coordinates into map space coordinates */
+  QPointF toMapSpace(float latitude, float longitude);
+  /** Linearly interpolates using the values in the projection table */
+  float lerp(float input, float *table);
 };
 
 #endif

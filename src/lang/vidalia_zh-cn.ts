@@ -1562,6 +1562,10 @@ Error: </source>
         <source>Last Updated:</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Location:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>RouterListWidget</name>

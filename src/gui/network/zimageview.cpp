@@ -31,8 +31,6 @@
 #include <QPainter>
 #include <QMouseEvent>
 
-#define MIN_SIZE QSize(512,256)
-
 /** Constructor. */
 ZImageView::ZImageView(QWidget *parent)
   : QWidget(parent)
@@ -352,10 +350,3 @@ ZImageView::clamp(const float value, const float min, const float max)
   }
   return value;
 }
-
-QSize
-ZImageView::minimumSizeHint() const
-{
-  return MIN_SIZE;
-}
-

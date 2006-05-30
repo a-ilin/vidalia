@@ -1,4 +1,4 @@
-﻿<!DOCTYPE TS><TS>
+<!DOCTYPE TS><TS>
 <context>
     <name></name>
     <message>
@@ -1039,8 +1039,8 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Vidalia was unable to open the specified log file.</source>
-	<translation>Vidalia ei onnistunut avaamaan kyseistä lokitiedostoa.</translation>
-    </message> 
+        <translation>Vidalia ei onnistunut avaamaan kyseistä lokitiedostoa.</translation>
+    </message>
 </context>
 <context>
     <name>NetViewer</name>
@@ -1054,7 +1054,7 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Router</source>
-        <translation >Reititin</translation>
+        <translation type="obsolete">Reititin</translation>
     </message>
     <message>
         <source>Refresh</source>
@@ -1177,6 +1177,10 @@ interest to Tor developers.</source>
         <source>Last Updated:</source>
         <translation>Viimeksi päivitetty:</translation>
     </message>
+    <message>
+        <source>Location:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>RouterListWidget</name>
@@ -1185,7 +1189,7 @@ interest to Tor developers.</source>
         <translation>Tila</translation>
     </message>
     <message>
-	<source>Router</source>
+        <source>Router</source>
         <translation>Reititin</translation>
     </message>
 </context>
@@ -1393,7 +1397,7 @@ Haluaisitko yrittää ulkoista palvelua saadakseen julkisen IP-osoitteesi?</tran
         <translation>Päivitä automaattisesti</translation>
     </message>
     <message>
-                <source>Email address at which you may be reached if there is a
+        <source>Email address at which you may be reached if there is a
 problem with your server. You might also include your PGP or GPG
 fingerprint.</source>
         <translation>Sähköpostiosoite, johon voidaan ottaa yhteyttä sattuessa virheitä palvelimessanne. Voit lisätä myös PGP- tai GPG-tunnistuksen.</translation>
@@ -1516,4 +1520,3 @@ fingerprint.</source>
     </message>
 </context>
 </TS>
-

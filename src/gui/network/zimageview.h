@@ -41,8 +41,6 @@ public:
   /** Default constructor. */
   ZImageView(QWidget *parent = 0);
 
-  QSize minimumSizeHint() const;
-
 public slots:
   /** Sets the displayed image. */
   void setImage(QImage& pixmap);
