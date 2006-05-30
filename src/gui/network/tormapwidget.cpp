@@ -23,7 +23,7 @@
  * \file tormapwidget.cpp
  * \version $Id$
  */
-
+#include <QtDebug>
 #include <QStringList>
 #include <cmath>
 #include "tormapwidget.h"
@@ -77,9 +77,8 @@ TorMapWidget::TorMapWidget(QWidget *parent)
 void
 TorMapWidget::addRouter(QString name, float latitude, float longitude)
 {
-  Q_UNUSED(name);
-  Q_UNUSED(latitude);
-  Q_UNUSED(longitude);
+  QPointF x = toMapSpace(latitude, longitude);
+  qDebug() << name << x.x() << " " << x.y();
 }
 
 /** Adds a circuit to the map using the given ordered list of routers. */
@@ -115,17 +114,19 @@ TorMapWidget::toMapSpace(float latitude, float longitude)
   float width = IMG_WIDTH - MAP_LEFT - MAP_RIGHT;
   float height = IMG_HEIGHT - MAP_TOP - MAP_BOTTOM;
   float deg = width / 360.0;
+  longitude += MAP_ORGIN;
 
   float lat;
   float lon;
-  lat = floor(longitude * (deg * lerp(abs(int(latitude)), plen))
-	      + width/2 + MAP_TOP);
+  
+  lat = floor(longitude * (deg * lerp(abs(latitude), plen))
+	      + width/2 + MAP_LEFT);
   
   if (lat < 0) {
-    lon = floor((height/2) + (lerp(abs(int(lat)), pdfe) * (height/2))
+    lon = floor((height/2) + (lerp(abs(lat), pdfe) * (height/2))
 		+ MAP_TOP);
   } else {
-    lon = floor((height/2) - (lerp(abs(int(lat)), pdfe) * (height/2))
+    lon = floor((height/2) - (lerp(abs(lat), pdfe) * (height/2))
 		+ MAP_TOP);
   }
 
@@ -138,7 +139,7 @@ TorMapWidget::lerp(float input, float *table)
 {
   int x = floor(input / 5);
 
-  return ((table[x+1] - table[x]) /
+  return ((table[x+1] - table[x]) / 
 	  (((x+1)*5) - (x*5))) * (input - x*5) + table[x];
 }
 

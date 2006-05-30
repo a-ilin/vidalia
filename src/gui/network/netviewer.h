@@ -61,7 +61,7 @@ protected:
 private slots:
   /** Called when the user selects the "Help" action on the toolbar. */
   void help();
-  /** Called when the user selects the "New Nym" action on the toolbar. */
+  /** Called when the user selects the "New Identity" action on the toolbar. */
   void newNym();
   /** Called when the user selects a map action on the toolbar */
   /** Called when the user selects a circuit on the circuit list */

@@ -201,8 +201,8 @@ ZImageView::updateViewport(int screendx, int screendy)
   float vdy = vh * (float(screendy) / sh);
 	
   // Constrain the center of the viewport to the image rect.
-  _desiredX = clamp(_desiredX + vdx, 0.0f, iw);
-  _desiredY = clamp(_desiredY + vdy, 0.0f, ih);
+  _desiredX = qBound(0.0f, _desiredX + vdx, iw);
+  _desiredY = qBound(0.0f, _desiredY + vdy, ih);
   _view.moveCenter(QPoint(int(_desiredX), int(_desiredY)));
 
   QPoint viewCenter = _view.center();
@@ -272,7 +272,7 @@ ZImageView::paintEvent(QPaintEvent*)
 void
 ZImageView::zoom(float pct)
 {
-  _zoom = clamp(pct, 0.0f, 1.0f);
+  _zoom = qBound(0.0f, pct, 1.0f);
   repaint();
 }
 
@@ -333,20 +333,4 @@ void
 ZImageView::resizeEvent(QResizeEvent* e)
 {
   QWidget::resizeEvent(e);
-}
-
-/* Untemplated version of clamp function in Zuerchertech ZUtil.h */
-float
-ZImageView::clamp(const float value, const float min, const float max)
-{
-  float trueMin = min < max ? min : max;
-  float trueMax = min < max ? max : min;
-  
-  if (value < trueMin) {
-    return trueMin;
-  }
-  if (trueMax < value) {
-    return trueMax;
-  }
-  return value;
 }

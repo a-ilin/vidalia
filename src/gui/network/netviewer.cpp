@@ -181,7 +181,7 @@ NetViewer::help()
   Vidalia::help("netview");
 }
 
-/** Called when the user selects the "New Nym" action from the toolbar. */
+/** Called when the user selects the "New Identity" action from the toolbar. */
 void
 NetViewer::newNym()
 {
@@ -272,6 +272,7 @@ NetViewer::resolved(int id, QList<GeoIp> geoips)
     routers = ui.treeRouterList->findRouterItems(geoip.ip());
     foreach (RouterListItem *item, routers) {
       item->setLocation(geoip.toLocation());
+      _map->addRouter(item->name(), geoip.latitude(), geoip.longitude());
     }
   }
 }

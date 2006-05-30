@@ -76,9 +76,7 @@ protected:
   QPair<QRect, QRect> updateViewport(int screendx=0, int screendy=0);
   /** Redraws the scaled image in the viewport. */
   void drawScaledImage();
-  /** Ensures min <= value <= max */
-  float clamp(const float value, const float min, const float max);
-
+  
 private:
   float _zoom;     /**< The current zoom level. */
   QImage _image;   /**< The displayed image. */
