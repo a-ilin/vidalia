@@ -106,6 +106,11 @@ public:
   int getBWGraphOpacity();
   /** Set the bandwidth graph opacity settings. */
   void setBWGraphOpacity(int value);
+
+  /** Gets whether the bandwidth graph is always on top. */
+  bool getBWGraphAlwaysOnTop();
+  /** Sets whether the bandwidth graph is always on top. */
+  void setBWGraphAlwaysOnTop(bool alwaysOnTop);
 };
 
 #endif

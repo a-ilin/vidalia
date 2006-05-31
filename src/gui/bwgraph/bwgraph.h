@@ -46,7 +46,7 @@ class BandwidthGraph : public QDialog
 
 public:
   /** Default constructor */
-  BandwidthGraph(QWidget *parent = 0, Qt::WFlags f = 0);
+  BandwidthGraph(QWidget *parent = 0);
   /** Default destructor */
   ~BandwidthGraph();
 

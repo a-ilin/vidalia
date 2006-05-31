@@ -95,8 +95,7 @@ MainWindow::MainWindow()
   _messageLog = new MessageLog();
   
   /* Create a new BandwidthGraph object so we can monitor bandwidth usage */
-  Qt::WFlags bw_flags = (Qt::Tool | Qt::WindowStaysOnTopHint);
-  _bandwidthGraph = new BandwidthGraph(this, bw_flags);
+  _bandwidthGraph = new BandwidthGraph(this);
 
   /* Create a new NetViewer object so we can monitor the network */
   _netViewer = new NetViewer();

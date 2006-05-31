@@ -32,8 +32,8 @@
 #define DATETIME_FMT  "MMM dd hh:mm:ss"
 
 /** Default constructor */
-BandwidthGraph::BandwidthGraph(QWidget *parent, Qt::WFlags f)
-: QDialog(parent, f)
+BandwidthGraph::BandwidthGraph(QWidget *parent)
+: QDialog(parent, Qt::Tool)
 {
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
@@ -125,6 +125,14 @@ BandwidthGraph::loadSettings()
 {
   /* Set window opacity slider widget */
   ui.sldrOpacity->setValue(_settings->getBWGraphOpacity());
+  
+  /* Set whether the window appears on top. */
+  ui.chkAlwaysOnTop->setChecked(_settings->getBWGraphAlwaysOnTop());
+  if (_settings->getBWGraphAlwaysOnTop()) {
+    setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint);
+  } else {
+    setWindowFlags(windowFlags() & ~Qt::WindowStaysOnTopHint);
+  }
 
   /* Set the line filter checkboxes accordingly */
   uint filter = _settings->getBWGraphFilter();
@@ -161,6 +169,14 @@ BandwidthGraph::saveChanges()
   /* Save the opacity */
   _settings->setBWGraphOpacity(ui.sldrOpacity->value());
 
+  /* Save the Always On Top setting */
+  _settings->setBWGraphAlwaysOnTop(ui.chkAlwaysOnTop->isChecked());
+  if (ui.chkAlwaysOnTop->isChecked()) {
+    setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint);
+  } else {
+    setWindowFlags(windowFlags() & ~Qt::WindowStaysOnTopHint);
+  }
+  
   /* Save the line filter values */
   _settings->setBWGraphFilter(BWGRAPH_REC, ui.chkReceiveRate->isChecked());
   _settings->setBWGraphFilter(BWGRAPH_SEND, ui.chkSendRate->isChecked());
@@ -168,6 +184,10 @@ BandwidthGraph::saveChanges()
   /* Update the graph frame settings */
   ui.frmGraph->setShowCounters(ui.chkReceiveRate->isChecked(),
                                ui.chkSendRate->isChecked());
+
+  /* A change in window flags causes the window to disappear, so make sure
+   * it's still visible. */
+  showNormal();
 }
 
 /** 

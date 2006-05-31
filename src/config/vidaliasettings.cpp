@@ -48,8 +48,9 @@
 #define SETTING_ENABLE_LOG_FILE     "MessageLog/EnableLogFile"
 #define SETTING_LOG_FILE            "MessageLog/LogFile"
 
-#define SETTING_BWGRAPH_FILTER      "BandwidthGraph/BWLineFilter"
-#define SETTING_BWGRAPH_OPACITY     "BandwidthGraph/Opacity"
+#define SETTING_BWGRAPH_FILTER        "BandwidthGraph/BWLineFilter"
+#define SETTING_BWGRAPH_OPACITY       "BandwidthGraph/Opacity"
+#define SETTING_BWGRAPH_ALWAYS_ON_TOP "BandwidthGraph/AlwaysOnTop"
 
 /* Default Vidalia Settings */
 #if defined(Q_WS_MAC)
@@ -78,7 +79,9 @@
 #endif
 
 /* Default bandwidth graph settings */
-#define DEFAULT_BWGRAPH_FILTER  (BWGRAPH_SEND|BWGRAPH_REC)
+#define DEFAULT_BWGRAPH_FILTER          (BWGRAPH_SEND|BWGRAPH_REC)
+#define DEFAULT_BWGRAPH_ALWAYS_ON_TOP   false
+
 
 /** Default Constructor
  * We use "Vidalia" for both the company name and the application name.
@@ -279,5 +282,20 @@ void
 VidaliaSettings::setBWGraphOpacity(int value)
 {
   setValue(SETTING_BWGRAPH_OPACITY, value);
+}
+
+/** Gets whether the bandwidth graph is always on top when displayed. */
+bool
+VidaliaSettings::getBWGraphAlwaysOnTop()
+{
+  return value(SETTING_BWGRAPH_ALWAYS_ON_TOP,
+               DEFAULT_BWGRAPH_ALWAYS_ON_TOP).toBool();
+}
+
+/** Sets whether the bandwidth graph is always on top when displayed. */
+void
+VidaliaSettings::setBWGraphAlwaysOnTop(bool alwaysOnTop)
+{
+  setValue(SETTING_BWGRAPH_ALWAYS_ON_TOP, alwaysOnTop);
 }
 
