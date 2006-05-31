@@ -8,7 +8,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>353</width>
+    <width>355</width>
     <height>202</height>
    </rect>
   </property>
@@ -295,7 +295,7 @@
    <string>Tor Bandwidth Usage</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="..\res\vidalia_common.qrc" >:/images/16x16/utilities-system-monitor.png</iconset>
+   <iconset/>
   </property>
   <property name="sizeGripEnabled" >
    <bool>true</bool>
@@ -557,6 +557,30 @@
           </property>
           <property name="checked" >
            <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="chkAlwaysOnTop" >
+          <property name="font" >
+           <font>
+            <family>Arial</family>
+            <pointsize>10</pointsize>
+            <weight>50</weight>
+            <italic>false</italic>
+            <bold>false</bold>
+            <underline>false</underline>
+            <strikeout>false</strikeout>
+           </font>
+          </property>
+          <property name="contextMenuPolicy" >
+           <enum>Qt::NoContextMenu</enum>
+          </property>
+          <property name="layoutDirection" >
+           <enum>Qt::RightToLeft</enum>
+          </property>
+          <property name="text" >
+           <string>Always On Top</string>
           </property>
          </widget>
         </item>
