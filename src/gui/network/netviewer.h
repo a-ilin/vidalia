@@ -49,10 +49,12 @@ public:
 public slots:
   /** Overloaded QWidget.show() **/
   void show();
-  /** Loads a list of routers that Tor knows about. */
-  void loadRouterList();
   /** Loads a list of current circuits and streams. */
   void loadConnections();
+  /** Adds a circuit to the list and the map */
+  void addCircuit(Circuit circuit);
+  /** Clears all known information */
+  void clear();
 
 protected:
   /** Called to deliver a NEWDESC event from Tor. */
@@ -63,13 +65,18 @@ private slots:
   void help();
   /** Called when the user selects the "New Identity" action on the toolbar. */
   void newNym();
-  /** Called when the user selects a map action on the toolbar */
+  /** Called when the user selects the "Refresh" action on the toolbar */
+  void refresh();
   /** Called when the user selects a circuit on the circuit list */
   void circuitSelected(Circuit circuit);
   /** Called when an IP has been resolved to geographic information. */
   void resolved(int id, QList<GeoIp> geoips);
   /** Called when the user selects a router on the map. */
   void mapRouterSelected(QString name);
+  /** Handles when we get connected to Tor network */
+  void gotConnected();
+  /** Handles when we get disconnected from Tor network */
+  void gotDisconnected();
 
 private:
   /** Loads a list of router descriptors from the list of IDs. */

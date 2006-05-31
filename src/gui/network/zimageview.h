@@ -31,6 +31,7 @@
 #include <QFrame>
 #include <QPixmap>
 #include <QWidget>
+#include <QPainterPath>
 
 
 class ZImageView : public QWidget
@@ -52,6 +53,12 @@ public slots:
   void zoomIn();
   /** Zooms away from the displayed image by 5% */
   void zoomOut();
+  /** Clears points and paths lists */
+  void clearLists();
+  /** Adds a point to the points list */
+  void addPoint(QPointF point);
+  /** Adds a path to the paths list */
+  void addPath(QPainterPath *path);
 
 protected:
   /** Updates the viewport and repaints the displayed image. */
@@ -90,6 +97,9 @@ private:
   QRect _view;      /**< The displayed viewport. */
   float _desiredX;  /**< The X value we desire (???). */
   float _desiredY;  /**< The Y value we desire (???). */
+
+  QList<QPointF> _points; /**< List of points to draw on the image. */
+  QList<QPainterPath *> _paths; /** List of paths to draw on the image. */
 };
 
 #endif

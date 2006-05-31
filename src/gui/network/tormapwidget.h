@@ -31,6 +31,7 @@
 
 #include "zimageview.h"
 
+#include <QHash>
 
 class TorMapWidget : public ZImageView
 {
@@ -44,12 +45,16 @@ public:
   void addCircuit(Circuit circuit);
   /** Returns the minimum size of the widget */
   QSize minimumSizeHint() const;
+  /** Repaints the map, use this with caution */
+  void update();
 
 public slots:
   /** Selects and hightlights a router on the map. */
   void selectRouter(QString name);
   /** Selects and highlights a circuit on the map. */
   void selectCircuit(Circuit circuit);
+  /** Clears the known routers and removes all the data from the map */
+  void clear();
 
 signals:
   /** Emitted when the user selects a router on the map. */
@@ -62,6 +67,11 @@ private:
   QPointF toMapSpace(float latitude, float longitude);
   /** Linearly interpolates using the values in the projection table */
   float lerp(float input, float *table);
+
+  /** Stores map locations for tor routers */
+  QHash<QString, QPointF> _routers;
+  /** Stores circuit information */
+  QHash<QString, QPainterPath *> _circuits;
 };
 
 #endif

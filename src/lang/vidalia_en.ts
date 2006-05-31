@@ -185,6 +185,10 @@
         <source>Hide Settings</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Always On Top</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Circuit</name>

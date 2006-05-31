@@ -77,26 +77,53 @@ TorMapWidget::TorMapWidget(QWidget *parent)
 void
 TorMapWidget::addRouter(QString name, float latitude, float longitude)
 {
-  Q_UNUSED(name);
-  QPointF newRouter = toMapSpace(latitude, longitude);
+  QPointF router_coord = toMapSpace(latitude, longitude);
+  
+  /** Add data the hash of known routers, and plot the point on the map */
+  _routers[name] = router_coord;
+  addPoint(router_coord);  
 }
 
 /** Adds a circuit to the map using the given ordered list of routers. */
 void
 TorMapWidget::addCircuit(Circuit circuit)
 {
+  QPainterPath *circ = new QPainterPath;
   QStringList hops = circuit.hops();
+  QString key;
+  
+  /** Build the new circuit */
   for (int i = 0; i < hops.size()-1; i++) {
     QString fromNode = hops.at(i);
     QString toNode = hops.at(i+1);
-    /* Plot a line between fromNode and toNode */
+   
+    /** Add the coordinates of the hops to the circuit */
+    if (_routers.contains(fromNode) && _routers.contains(toNode)) {
+      QPointF fromPos = _routers[fromNode];
+      QPointF endPos = _routers[toNode];
+    
+      circ->moveTo(fromPos);
+      circ->lineTo(endPos);
+      circ->moveTo(endPos);
+    }
   }
+  
+  /** Create a unique key from the hop names */
+  foreach(QString name, hops) {
+    key += name;
+  }
+  
+  /** Add the data to the hash of known circuits and plat the circuit on the map */
+  _circuits[key] = circ;
+  addPath(circ);
 }
 
 /** Selects and highlights a router on the map. */
 void
 TorMapWidget::selectRouter(QString name)
 {
+  // TODO: ZImageView will have to draw a router with a 
+  // different size and color than regular routers.
   Q_UNUSED(name);
 }
 
@@ -104,7 +131,24 @@ TorMapWidget::selectRouter(QString name)
 void
 TorMapWidget::selectCircuit(Circuit circuit)
 {
+  // TODO: ZimageView will have to draw a circuit with a
+  // different size and color than regular circuits.
   Q_UNUSED(circuit);
+}
+
+/** Clears the list of routers and removes all the data on the map */
+void
+TorMapWidget::clear()
+{
+  _routers.clear();
+  clearLists();
+}
+  
+/** Causes a repaint of the map widget, use sparingly and with caution */
+void
+TorMapWidget::update()
+{
+  repaint();
 }
 
 /** Converts world space coordinates into map space coordinates */

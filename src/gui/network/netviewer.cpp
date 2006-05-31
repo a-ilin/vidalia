@@ -76,13 +76,11 @@ NetViewer::NetViewer(QWidget *parent)
   _timer = new QTimer(this);
   _timer->setInterval(60*60*1000);
   connect(_timer, SIGNAL(timeout()), this, SLOT(loadRouterList()));
-  connect(_torControl, SIGNAL(connected()), _timer, SLOT(start()));
-  connect(_torControl, SIGNAL(disconnected()), _timer, SLOT(stop()));
 
   /* Connect the necessary slots and signals */
   connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
   connect(ui.actionNewNym, SIGNAL(triggered()), this, SLOT(newNym()));
-  connect(ui.actionRefresh, SIGNAL(triggered()), this, SLOT(loadRouterList()));
+  connect(ui.actionRefresh, SIGNAL(triggered()), this, SLOT(refresh()));
   connect(ui.treeRouterList, SIGNAL(routerSelected(QList<RouterDescriptor>)),
           ui.textRouterInfo, SLOT(display(QList<RouterDescriptor>)));
   connect(ui.treeCircuitList, SIGNAL(circuitSelected(Circuit)),
@@ -97,13 +95,28 @@ NetViewer::NetViewer(QWidget *parent)
   /* Respond to changes in the status of the control connection */
   connect(_torControl, SIGNAL(connected(bool)), ui.actionRefresh, SLOT(setEnabled(bool)));
   connect(_torControl, SIGNAL(connected(bool)), ui.actionNewNym, SLOT(setEnabled(bool)));
-  connect(_torControl, SIGNAL(connected()), this, SLOT(loadRouterList()));
-  connect(_torControl, SIGNAL(connected()), this, SLOT(loadConnections())); 
-  connect(_torControl, SIGNAL(disconnected()), ui.treeCircuitList, SLOT(clear()));
+  connect(_torControl, SIGNAL(connected()), this, SLOT(gotConnected()));
+  connect(_torControl, SIGNAL(disconnected()), this, SLOT(gotDisconnected())); 
 
   /* Connect the slot to find out when geoip information has arrived */
   connect(&_geoip, SIGNAL(resolved(int, QList<GeoIp>)), 
              this,   SLOT(resolved(int, QList<GeoIp>)));
+}
+
+/** Clears map, lists and stops timer when we get disconnected */
+void
+NetViewer::gotDisconnected()
+{
+  clear();
+  _timer->stop();
+}
+
+/** Loads data into map, lists and starts timer when we get connected*/
+void
+NetViewer::gotConnected()
+{
+  refresh();
+  _timer->start();
 }
 
 /** Custom event handler. Catches the new descriptor events. */
@@ -111,14 +124,17 @@ void
 NetViewer::customEvent(QEvent *event)
 {
   int type = event->type();
+  
   if (type == CustomEventType::NewDescriptorEvent) {
     /* New router descriptor, so load it and add it to the list */
     NewDescriptorEvent *nde = (NewDescriptorEvent *)event;
     loadDescriptors(nde->descriptorIDs());
+  
   } else if (type == CustomEventType::CircuitEvent) {
     /* New or updated circuit information */
     CircuitEvent *ce = (CircuitEvent *)event;
-    ui.treeCircuitList->addCircuit(ce->circuit());
+    addCircuit(ce->circuit());
+  
   } else if (type == CustomEventType::StreamEvent) {
     /* New or updated stream information */
     StreamEvent *se = (StreamEvent *)event;
@@ -126,23 +142,37 @@ NetViewer::customEvent(QEvent *event)
   }
 }
 
-/** Loads a list of router's that Tor knows about. */
+/** Reloads the lists of routers, circuits that Tor knows about */
 void
-NetViewer::loadRouterList()
+NetViewer::refresh()
 {
-  QStringList idList;
-
   /* Don't let the user refresh while we're refreshing. */
   ui.actionRefresh->setEnabled(false);
-  
-  /* Clear the existing list of routers and descriptors */
-  ui.treeRouterList->clear();
- 
-  /* Create an item for each router and associate it with a descriptor */
-  loadDescriptors(_torControl->getRouterIDList()); 
+
+  /* Clear the data */
+  clear();
+
+  /* Redraw the map */
+  _map->update();
+
+  /* Load router information */
+  loadDescriptors(_torControl->getRouterIDList());
+
+  /* Load Circuits and Streams information */
+  loadConnections();
 
   /* Ok, they can refresh again. */
   ui.actionRefresh->setEnabled(true);
+} 
+
+/** Clears the lists and the map */
+void
+NetViewer::clear()
+{
+  _map->clear();
+  ui.treeRouterList->clear();
+  ui.treeCircuitList->clear();
+  ui.textRouterInfo->clear();
 }
 
 /** Loads a list of all current circuits and streams. */
@@ -152,13 +182,21 @@ NetViewer::loadConnections()
   /* Load all circuits */
   QList<Circuit> circuits = _torControl->getCircuits();
   foreach (Circuit circuit, circuits) {
-    ui.treeCircuitList->addCircuit(circuit);
+    addCircuit(circuit);
   }
   /* Now load all streams */
   QList<Stream> streams = _torControl->getStreams();
   foreach (Stream stream, streams) {
     ui.treeCircuitList->addStream(stream);
   }
+}
+
+/** Adds a circuit to the map and the list */
+void
+NetViewer::addCircuit(Circuit circuit)
+{
+  ui.treeCircuitList->addCircuit(circuit);
+  _map->addCircuit(circuit);
 }
 
 /** Overloads the default show() slot. */
@@ -275,5 +313,8 @@ NetViewer::resolved(int id, QList<GeoIp> geoips)
       _map->addRouter(item->name(), geoip.latitude(), geoip.longitude());
     }
   }
+
+  /** Repaint the map */
+  _map->update();
 }
 
