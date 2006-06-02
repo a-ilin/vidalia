@@ -14,6 +14,7 @@
     requests.
   o Add a Mac OS X bundle.
   o Add a Finnish translation contributed by DJHasis.
+  o Add a German translation contributed by Christoph Sieghart.
   o Fix a bug that caused people running servers to update their public IP
     address too often if they had the "Automatically Update" option checked.
 
