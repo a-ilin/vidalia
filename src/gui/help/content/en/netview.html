@@ -43,6 +43,36 @@ sent as a <i>stream</i> through that circuit. For efficiency, multiple streams
 may share the same circuit.
 </p>
 
+<a name="netmap"/>
+<h3>Network Map</h3>
+<p>
+The network map consists of a map of the world, with red pinpoints indicating
+the geographic location of routers in the Tor network. Green lines are drawn
+between routers to indicate the path of circuits that your Tor client has
+created through the Tor network.
+</p>
+<p>
+You can zoom in on locations in the map by clicking the <b>Zoom In</b> and
+<b>Zoom Out</b> buttons in the toolbar. You can also scroll around on the map
+by clicking on the map and then dragging it in whatever direction you would
+like to move the map.
+</p>
+<p>
+The geographic location of a Tor router is determined by looking up the IP
+address of the router in a GeoIP database, created by MaxMind and located at
+geoip.vidalia-project.net.
+</p>
+<p>
+In the middle of the dialog, below the network map, you will see a list of
+your current circuits, as well as any application traffic currently on those
+circuits. When the network map first loads, you will probably see a connection
+to geoip.vidalia-project.net, which occurs when Vidalia is looking up
+geographic information for the list of Tor routers. It is important to note
+that this request is done through Tor, so your location is not revealed to the
+GeoIP server.
+</p>
+
+
 <a name="status"/>
 <h3>Router Status</h3>
 <p>
@@ -98,6 +128,65 @@ the maximum bandwidth sustained input or output over any ten second period
 in the past day.
 </p>
 
+
+<a name="details"/>
+<h3>Router Details</h3>
+<p>
+The router details panel at the right side of the screen gives you details
+about the router or routers currently selected in the 
+<a href="#routerlist">router list</a>. If you have selected a circuit or stream
+in the list of your current circuits and streams, this panel will show you
+details about each router through which your traffic is currently being
+relayed.
+</p>
+<p>
+The fields that you may see in the panel are as follows (<i>Note</i>: not all
+of these fields will always be present):
+</p>
+<p>
+<table>
+<tr>
+  <td><b>Location</b></td>
+  <td>The geographic location of this Tor router.</td>
+</tr>
+<tr>
+  <td><b>IP Address</b></td>
+  <td>IP address at which this Tor router can be reached.</td>
+</tr>
+<tr>
+  <td><b>Platform</b></td>
+  <td>
+    Operating system information and Tor version on which this router is
+    currently running.
+  </td>
+</tr>
+<tr>
+  <td><b>Contact</b></td>
+  <td>
+    Contact information for this router's operator, in case there is a
+    problem with the router.
+  </td>
+</tr>
+<tr>
+  <td><b>Bandwidth</b></td>
+  <td>
+    Estimated maximum amount of bandwidth that the directory servers have 
+    seen this router handle recently.
+  </td>
+</tr>
+<tr>
+  <td><b>Uptime</b></td>
+  <td>
+    Length of time this router has been available, which can be used to help
+    estimate this router's stability.
+  </td>
+</tr>
+<tr>
+  <td><b>Last Updated</b></td>
+  <td>Date this router's information was last updated.</td>
+</tr>
+</table>
+</p>
 </body>
 </html>
 

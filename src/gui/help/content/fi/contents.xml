@@ -33,7 +33,9 @@
   </Topic>
   <Topic id="netview" name="Network Viewer" html="netview.html">
     <Topic id="overview" name="Overview" html="netview.html" section="overview"/>
+    <Topic id="netmap" name="Network Map" html="netview.html" section="netmap"/>
     <Topic id="status" name="Router Status" html="netview.html" section="status"/>
+    <Topic id="details" name="Router Details" html="netview.html" section="details"/>
   </Topic>
   <Topic id="config" name="Configuring Tor" html="config.html">
     <Topic id="general" name="General Settings" html="config.html" section="general"/>
