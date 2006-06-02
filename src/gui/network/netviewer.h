@@ -71,8 +71,8 @@ private slots:
   void circuitSelected(Circuit circuit);
   /** Called when an IP has been resolved to geographic information. */
   void resolved(int id, QList<GeoIp> geoips);
-  /** Called when the user selects a router on the map. */
-  void mapRouterSelected(QString name);
+  /** Called when the user selects a router in the list. */
+  void routerSelected(RouterDescriptor router);
   /** Handles when we get connected to Tor network */
   void gotConnected();
   /** Handles when we get disconnected from Tor network */

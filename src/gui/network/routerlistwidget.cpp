@@ -157,19 +157,17 @@ RouterListWidget::addRouter(RouterDescriptor rd)
 }
 
 /** Called when the selected items have changed. This emits the 
- * routerSelected() signal with the descriptor (or descriptors) for the 
- * selected router (or routers). */
+ * routerSelected() signal with the descriptor for the selected router.
+ */
 void
 RouterListWidget::onSelectionChanged()
 {
-  QList<RouterDescriptor> rds;
+  RouterDescriptor rd;
   QList<QTreeWidgetItem *> items = selectedItems();
 
   if (items.count() > 0) {
-    foreach (QTreeWidgetItem *item, items) {
-      rds << ((RouterListItem *)item)->descriptor();
-    }
-    emit routerSelected(rds);
+      rd = ((RouterListItem *)items[0])->descriptor();
   }
+    emit routerSelected(rd);
 }
 

@@ -43,24 +43,20 @@ public:
   void addRouter(QString name, float latitude, float longitude);
   /** Plots the given circuit on the map. */
   void addCircuit(Circuit circuit);
+  /** Selects and hightlights a router on the map. */
+  void selectRouter(QString name);
+  /** Selects and highlights a circuit on the map. */
+  void selectCircuit(Circuit circuit);
   /** Returns the minimum size of the widget */
   QSize minimumSizeHint() const;
   /** Repaints the map, use this with caution */
   void update();
 
 public slots:
-  /** Selects and hightlights a router on the map. */
-  void selectRouter(QString name);
-  /** Selects and highlights a circuit on the map. */
-  void selectCircuit(Circuit circuit);
+  /** Deselects all the highlighted circuits and routers */
+  void deselectAll();
   /** Clears the known routers and removes all the data from the map */
   void clear();
-
-signals:
-  /** Emitted when the user selects a router on the map. */
-  void routerSelected(QString name);
-  /** Emitted when the user selects a circuit on the map. */
-  void circuitSelected(Circuit circuit);
 
 private:
   /** Converts world space coordinates into map space coordinates */

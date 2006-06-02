@@ -23,7 +23,6 @@
  * \file zimageview.cpp
  * \version $Id: netviewer.cpp 699 2006-04-15 03:12:22Z hipplej $
  */
-#include <QtDebug>
 #include "zimageview.h"
 
 #include <cmath>
@@ -32,8 +31,9 @@
 #include <QMouseEvent>
 
 /** QPens to use for drawing different elements */
-#define PEN_POINT        QPen(Qt::red, 1.0)
+#define PEN_POINT        QPen(QColor("#ff030d"), 1.0)
 #define PEN_PATH         QPen(Qt::yellow, 0.5)
+#define PEN_SELECTED     QPen(Qt::green, 2.0)
 
 /** Constructor. */
 ZImageView::ZImageView(QWidget *parent)
@@ -138,6 +138,15 @@ ZImageView::drawScaledImage()
   foreach(QPainterPath *path, _paths) {
     painter.drawPath(*path);
   }
+  
+  /** Draw selected elements */
+  painter.setPen(PEN_SELECTED);
+  if (!_selectedPoint.isNull()) {
+    painter.drawPoint(_selectedPoint);
+  } else if (!_selectedPath.isEmpty()) {
+    painter.drawPath(_selectedPath);
+  }
+
   painter.end();
 
   /** Rescale the image copy */
@@ -368,7 +377,6 @@ ZImageView::clearLists()
 {
   _points.clear();
   _paths.clear();
-  //repaint();
 }
 
 /** Adds a point to the points list */
@@ -376,7 +384,6 @@ void
 ZImageView::addPoint(QPointF point)
 {
   _points.append(point);
-  //repaint();
 }
 
 /** Adds a path to the paths list */
@@ -384,6 +391,31 @@ void
 ZImageView::addPath(QPainterPath *path)
 {
   _paths.append(path);
-  //repaint();
 }
 
+/** Sets the selected point */
+void
+ZImageView::selectPoint(QPointF point)
+{
+  _selectedPath = QPainterPath();
+  _selectedPoint = point;
+  repaint();
+}
+
+/** Sets the selected path */
+void
+ZImageView::selectPath(QPainterPath path)
+{
+  _selectedPoint = QPointF();
+  _selectedPath = path;
+  repaint();
+}
+
+/** Deselects all selects all selected elements */
+void
+ZImageView::clearSelected()
+{
+  _selectedPoint = QPointF();
+  _selectedPath = QPainterPath();
+  repaint();
+}

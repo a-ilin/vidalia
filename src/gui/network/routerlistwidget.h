@@ -63,8 +63,8 @@ public:
   void deselectAll();
 
 signals:
-  /** Called when the user selects one or more routers from the list. */
-  void routerSelected(QList<RouterDescriptor> rds);
+  /** Called when the user selects a router from the list. */
+  void routerSelected(RouterDescriptor rd);
 
 private slots:
   /** Called when the user clicks on an item in the list. */

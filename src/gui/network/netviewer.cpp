@@ -75,14 +75,14 @@ NetViewer::NetViewer(QWidget *parent)
    * needs to be called to get rid of any descriptors that were removed. */
   _timer = new QTimer(this);
   _timer->setInterval(60*60*1000);
-  connect(_timer, SIGNAL(timeout()), this, SLOT(loadRouterList()));
+  connect(_timer, SIGNAL(timeout()), this, SLOT(refresh()));
 
   /* Connect the necessary slots and signals */
   connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
   connect(ui.actionNewNym, SIGNAL(triggered()), this, SLOT(newNym()));
   connect(ui.actionRefresh, SIGNAL(triggered()), this, SLOT(refresh()));
-  connect(ui.treeRouterList, SIGNAL(routerSelected(QList<RouterDescriptor>)),
-          ui.textRouterInfo, SLOT(display(QList<RouterDescriptor>)));
+  connect(ui.treeRouterList, SIGNAL(routerSelected(RouterDescriptor)),
+	  this, SLOT(routerSelected(RouterDescriptor)));
   connect(ui.treeCircuitList, SIGNAL(circuitSelected(Circuit)),
           this, SLOT(circuitSelected(Circuit)));
   
@@ -140,6 +140,9 @@ NetViewer::customEvent(QEvent *event)
     StreamEvent *se = (StreamEvent *)event;
     ui.treeCircuitList->addStream(se->stream());
   }
+
+  /** Update the map */
+  _map->update();
 }
 
 /** Reloads the lists of routers, circuits that Tor knows about */
@@ -151,9 +154,6 @@ NetViewer::refresh()
 
   /* Clear the data */
   clear();
-
-  /* Redraw the map */
-  _map->update();
 
   /* Load router information */
   loadDescriptors(_torControl->getRouterIDList());
@@ -170,6 +170,7 @@ void
 NetViewer::clear()
 {
   _map->clear();
+  _map->update();
   ui.treeRouterList->clear();
   ui.treeCircuitList->clear();
   ui.textRouterInfo->clear();
@@ -189,6 +190,9 @@ NetViewer::loadConnections()
   foreach (Stream stream, streams) {
     ui.treeCircuitList->addStream(stream);
   }
+
+  /** Update the map */
+  _map->update();
 }
 
 /** Adds a circuit to the map and the list */
@@ -277,25 +281,33 @@ NetViewer::circuitSelected(Circuit circuit)
 {
   /* Clear any selected items. */
   ui.treeRouterList->deselectAll();
+  ui.textRouterInfo->clear();
+  _map->deselectAll();
+
+  /* Select the items on the map and in the list */
+  _map->selectCircuit(circuit);
+
+  QList<RouterDescriptor> routers;
 
   foreach (QString router, circuit.hops()) {
     /* Try to find and select each router in the path */
     RouterListItem *item = ui.treeRouterList->findRouterItem(router);
     if (item) {
-      ui.treeRouterList->setItemSelected(item, true);
+      routers.append(item->descriptor());
     }
   }
+
+  ui.textRouterInfo->display(routers);
 }
 
-/** Called when the user selects a router on the map. */
+/** Called when the user selects a router from the router list. */
 void
-NetViewer::mapRouterSelected(QString name)
+NetViewer::routerSelected(RouterDescriptor router)
 {
-  RouterListItem *item = ui.treeRouterList->findRouterItem(name);
-  if (item) {
-    ui.treeRouterList->deselectAll();
-    ui.treeRouterList->setItemSelected(item, true);
-  }
+  _map->deselectAll();
+  ui.textRouterInfo->clear();
+  ui.textRouterInfo->display(router);
+  _map->selectRouter(router.name());
 }
 
 /** Called when a list of GeoIp information has been resolved. */

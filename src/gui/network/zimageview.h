@@ -41,10 +41,18 @@ class ZImageView : public QWidget
 public:
   /** Default constructor. */
   ZImageView(QWidget *parent = 0);
-
-public slots:
   /** Sets the displayed image. */
   void setImage(QImage& pixmap);
+  /** Adds a point to the points list */
+  void addPoint(QPointF point);
+  /** Adds a path to the paths list */
+  void addPath(QPainterPath *path);
+  /** Sets the selected point */
+  void selectPoint(QPointF point);
+  /** Sets the selected path */
+  void selectPath(QPainterPath path);
+
+public slots:
   /** Resets the center zoom point back to the center of the viewport. */
   void resetZoomPoint();
   /** Sets the current zoom level to the given percent. */
@@ -55,10 +63,8 @@ public slots:
   void zoomOut();
   /** Clears points and paths lists */
   void clearLists();
-  /** Adds a point to the points list */
-  void addPoint(QPointF point);
-  /** Adds a path to the paths list */
-  void addPath(QPainterPath *path);
+  /** Deselects all selects all selected elements */
+  void clearSelected();
 
 protected:
   /** Updates the viewport and repaints the displayed image. */
@@ -99,7 +105,9 @@ private:
   float _desiredY;  /**< The Y value we desire (???). */
 
   QList<QPointF> _points; /**< List of points to draw on the image. */
-  QList<QPainterPath *> _paths; /** List of paths to draw on the image. */
+  QList<QPainterPath *> _paths; /**< List of paths to draw on the image. */
+  QPointF _selectedPoint;  /**< The point which is highlighted */
+  QPainterPath _selectedPath;  /**< The path which is highlighted */
 };
 
 #endif

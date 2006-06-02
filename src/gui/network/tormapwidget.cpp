@@ -23,7 +23,6 @@
  * \file tormapwidget.cpp
  * \version $Id$
  */
-
 #include <QStringList>
 #include <cmath>
 #include "tormapwidget.h"
@@ -122,18 +121,31 @@ TorMapWidget::addCircuit(Circuit circuit)
 void
 TorMapWidget::selectRouter(QString name)
 {
-  // TODO: ZImageView will have to draw a router with a 
-  // different size and color than regular routers.
-  Q_UNUSED(name);
+  if (_routers.contains(name)) {
+    selectPoint(_routers[name]);
+  }
 }
 
 /** Selects and highlights a circuit on the map. */
 void
 TorMapWidget::selectCircuit(Circuit circuit)
 {
-  // TODO: ZimageView will have to draw a circuit with a
-  // different size and color than regular circuits.
-  Q_UNUSED(circuit);
+  QString key;
+  
+  foreach (QString name, circuit.hops()) {
+    key += name;
+  }
+
+  if (_circuits.contains(key)) {
+    selectPath(*_circuits[key]);
+  }
+}
+
+/** Deselects any highlighted routers or circuits */
+void
+TorMapWidget::deselectAll()
+{
+  clearSelected();
 }
 
 /** Clears the list of routers and removes all the data on the map */
@@ -141,6 +153,7 @@ void
 TorMapWidget::clear()
 {
   _routers.clear();
+  _circuits.clear();
   clearLists();
 }
   
