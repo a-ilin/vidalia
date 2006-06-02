@@ -164,7 +164,7 @@ TrayIconImpl::setIcon(const QString &iconFile)
   
   /* Scale the image to the correct size. */
   QPixmap scaledPixmap = icon.scaled(QWidget::size(), 
-                                     Qt::IgnoreAspectRatio,
+                                     Qt::KeepAspectRatio,
                                      Qt::SmoothTransformation);
   setPixmap(scaledPixmap);
 }
