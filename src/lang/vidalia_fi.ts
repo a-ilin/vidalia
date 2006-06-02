@@ -1,4 +1,4 @@
-<!DOCTYPE TS><TS>
+﻿<!DOCTYPE TS><TS>
 <context>
     <name></name>
     <message>
@@ -187,7 +187,7 @@
     </message>
     <message>
         <source>Always On Top</source>
-        <translation type="unfinished"></translation>
+        <translation>Aina päällimmäisenä</translation>
     </message>
 </context>
 <context>
