@@ -27,6 +27,15 @@
     <file>fi/server.html</file>
     <file>fi/troubleshooting.html</file>
     <file>fi/netview.html</file>
+    <!-- German -->
+    <file>de/contents.xml</file>
+    <file>de/index.html</file>
+    <file>de/running.html</file>
+    <file>de/log.html</file>
+    <file>de/config.html</file>
+    <file>de/server.html</file>
+    <file>de/troubleshooting.html</file>
+    <file>de/netview.html</file>
   </qresource>
 </RCC>
 
