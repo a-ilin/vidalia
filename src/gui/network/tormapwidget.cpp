@@ -72,6 +72,14 @@ TorMapWidget::TorMapWidget(QWidget *parent)
   setImage(map);
 }
 
+/** Destructor */
+TorMapWidget::~TorMapWidget()
+{
+  foreach (QString key, _circuits.keys()) {
+    delete _circuits.take(key);
+  }
+}
+
 /** Adds a router to the map. */
 void
 TorMapWidget::addRouter(QString name, float latitude, float longitude)
@@ -108,9 +116,7 @@ TorMapWidget::addCircuit(Circuit circuit)
   }
   
   /** Create a unique key from the hop names */
-  foreach(QString name, hops) {
-    key += name;
-  }
+  key = hops.join("");
   
   /** Add the data to the hash of known circuits and plat the circuit on the map */
   _circuits[key] = circ;

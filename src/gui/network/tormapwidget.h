@@ -38,6 +38,8 @@ class TorMapWidget : public ZImageView
 public:
   /** Default constructor. */
   TorMapWidget(QWidget *parent = 0);
+  /** Destructor. */
+  ~TorMapWidget();
 
   /** Plots the given router on the map using the given coordinates. */
   void addRouter(QString name, float latitude, float longitude);
