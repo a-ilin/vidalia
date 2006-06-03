@@ -235,7 +235,18 @@ Vidalia::dataDirectory()
   if (_args.contains(ARG_DATADIR)) {
     return _args.value(ARG_DATADIR);
   }
-  return _settings.getDataDirectory();
+  return defaultDataDirectory();
+}
+
+/** Returns the default location of Vidalia's data directory. */
+QString
+Vidalia::defaultDataDirectory()
+{
+#if defined(Q_OS_WIN32)
+  return (win32_app_data_folder() + "\\Vidalia");
+#else
+  return (QDir::homePath() + "/.vidalia");
+#endif
 }
 
 /** Creates Vidalia's data directory, if it doesn't already exist. */

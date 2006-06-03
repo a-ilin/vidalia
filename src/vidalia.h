@@ -79,9 +79,11 @@ public:
   
   /** Returns the location Vidalia uses for its data files. */
   static QString dataDirectory();
+  /** Returns the default location of Vidalia's data directory. */
+  static QString defaultDataDirectory();
   /** Creates Vidalia's data directory, if it doesn't already exist. */
   static bool createDataDirectory(QString *errmsg);
-
+  
 signals:
   /** Signals that the application needs to shutdown now. */
   void shutdown();

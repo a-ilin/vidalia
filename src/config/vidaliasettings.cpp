@@ -28,6 +28,7 @@
 #include <QCoreApplication>
 #include <lang/languagesupport.h>
 #include <control/logevent.h>
+#include <vidalia.h>
 
 #include "vidaliasettings.h"
 
@@ -69,12 +70,10 @@
 #define DEFAULT_ENABLE_LOG_FILE     false
 
 #if defined(Q_OS_WIN32)
-#define DEFAULT_DATA_DIRECTORY QString(win32_app_data_folder() + "\\Vidalia")
 #define DEFAULT_LOG_FILE       (win32_program_files_folder() + "\\Tor\\tor.log")
 #define STARTUP_REG_KEY        "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
 #define VIDALIA_REG_KEY        "Vidalia" 
 #else
-#define DEFAULT_DATA_DIRECTORY QString(QDir::homePath() + "/.vidalia")
 #define DEFAULT_LOG_FILE       (QDir::homePath() + "/.tor/tor.log")
 #endif
 
@@ -82,12 +81,11 @@
 #define DEFAULT_BWGRAPH_FILTER          (BWGRAPH_SEND|BWGRAPH_REC)
 #define DEFAULT_BWGRAPH_ALWAYS_ON_TOP   false
 
-#define SETTINGS_FILE   (DEFAULT_DATA_DIRECTORY + "/vidalia.conf")
+/** The location of Vidalia's settings and configuration file. */
+#define SETTINGS_FILE   (Vidalia::dataDirectory() + "/vidalia.conf")
 
 
-/** Default Constructor
- * We use "Vidalia" for both the company name and the application name.
- */
+/** Default Constructor */
 VidaliaSettings::VidaliaSettings()
 : QSettings(SETTINGS_FILE, QSettings::IniFormat)
 {  
@@ -99,20 +97,6 @@ VidaliaSettings::reset()
 {
   QSettings settings(SETTINGS_FILE, QSettings::IniFormat);
   settings.clear();
-}
-
-/** Returns the directory Vidalia will use for its data files. */
-QString
-VidaliaSettings::getDataDirectory()
-{
-  return value(SETTING_DATA_DIRECTORY, DEFAULT_DATA_DIRECTORY).toString();
-}
-
-/** Sets the directory Vidalia will use for its data files. */
-void
-VidaliaSettings::setDataDirectory(QString dir)
-{
-  setValue(SETTING_DATA_DIRECTORY, dir);
 }
 
 /** Gets the currently preferred language code for Vidalia. */
