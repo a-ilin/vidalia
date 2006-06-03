@@ -10,7 +10,7 @@
 !define VIDALIA_NAME "Vidalia"
 !define VIDALIA_EXEC "vidalia.exe"
 !define VIDALIA_UNINST "uninstall.exe"
-!define VIDALIA_VERSION "0.0.5"
+!define VIDALIA_VERSION "0.0.6"
 
 !define TOR_NAME "Tor"
 !define TOR_EXEC "tor.exe"

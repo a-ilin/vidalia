@@ -8,7 +8,7 @@
 
 ;---------------------------------
 ; Global Definitions
-!define APPVERSION "0.0.5"
+!define APPVERSION "0.0.6"
 !define PRODVERSION "${APPVERSION}.0" ; Product version must be x.x.x.x
 !define APPNAME "Vidalia"
 !define APPEXEC "vidalia.exe"
