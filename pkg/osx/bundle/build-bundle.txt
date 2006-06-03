@@ -32,20 +32,30 @@ Tor
    ./configure --prefix=/Library/Tor --bindir=/Library/Tor \
     --sysconfdir=/Library --enable-static --disable-shared
 
+Qt
+7. Download and extract the open source version of Qt 4.1 or higher from 
+   Trolltech at the following address:
+   http://www.trolltech.com/developer/downloads/qt/mac
 
+8. Configure Qt with the following:
+   ./configure -static
+
+9. Build and install Qt as follows:
+   make && make install
+   
 Vidalia
-7. Configure Vidalia with the following:
-   ./configure --disable-debug
+10. Configure Vidalia with the following:
+    ./configure --disable-debug
 
    The Vidalia binary on OS X links to Qt statically, so you will need to have
    your Qt installation configured appropriately.
 
-8. Run `make` to build Vidalia.
+11. Run `make` to build Vidalia.
 
    
 Finish
-8. From the location of Vidalia's source, run the following:
-   ./pkg/package.sh osx-bundle <path-to-tor> <privoxy-package.zip>
+12. From the location of Vidalia's source, run the following:
+    ./pkg/package.sh osx-bundle <path-to-tor> <privoxy-package.zip>
   
   Example:
    ./pkg/package.sh osx-bundle ~/tor-0.1.1.19-rc ~/privoxyosx_setup_3.0.3.zip
