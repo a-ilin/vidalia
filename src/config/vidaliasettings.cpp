@@ -69,12 +69,12 @@
 #define DEFAULT_ENABLE_LOG_FILE     false
 
 #if defined(Q_OS_WIN32)
-#define DEFAULT_DATA_DIRECTORY (win32_app_data_folder() + "\\Vidalia")
+#define DEFAULT_DATA_DIRECTORY QString(win32_app_data_folder() + "\\Vidalia")
 #define DEFAULT_LOG_FILE       (win32_program_files_folder() + "\\Tor\\tor.log")
 #define STARTUP_REG_KEY        "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
 #define VIDALIA_REG_KEY        "Vidalia" 
 #else
-#define DEFAULT_DATA_DIRECTORY (QDir::homePath() + "/.vidalia")
+#define DEFAULT_DATA_DIRECTORY QString(QDir::homePath() + "/.vidalia")
 #define DEFAULT_LOG_FILE       (QDir::homePath() + "/.tor/tor.log")
 #endif
 
@@ -82,20 +82,22 @@
 #define DEFAULT_BWGRAPH_FILTER          (BWGRAPH_SEND|BWGRAPH_REC)
 #define DEFAULT_BWGRAPH_ALWAYS_ON_TOP   false
 
+#define SETTINGS_FILE   (DEFAULT_DATA_DIRECTORY + "/vidalia.conf")
+
 
 /** Default Constructor
  * We use "Vidalia" for both the company name and the application name.
  */
 VidaliaSettings::VidaliaSettings()
-  : QSettings("vidalia", "vidalia")
-{
+: QSettings(SETTINGS_FILE, QSettings::IniFormat)
+{  
 }
 
 /** Resets all of Vidalia's settings. */
 void
 VidaliaSettings::reset()
 {
-  QSettings settings("vidalia", "vidalia");
+  QSettings settings(SETTINGS_FILE, QSettings::IniFormat);
   settings.clear();
 }
 
