@@ -1,10 +1,8 @@
 
-Pre-competition-deadline Goals:
-  * Circuit and stream visualization
-  
+Near-future Goals:
   * Simplified (coarse-grained) rate-limiting control
   
-  * Create a Vidalia package for at least one Linux distro (preferably Debian)
+  * Create Vidalia packages for Red Hat and Debian
 
   
 Pie-in-the-sky Goals:
