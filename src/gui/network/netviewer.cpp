@@ -86,12 +86,6 @@ NetViewer::NetViewer(QWidget *parent)
   connect(ui.treeCircuitList, SIGNAL(circuitSelected(Circuit)),
           this, SLOT(circuitSelected(Circuit)));
   
-  /* Respond to user actions on the map. */
-  connect(_map, SIGNAL(circuitSelected(Circuit)), 
-          this,   SLOT(circuitSelected(Circuit)));
-  connect(_map, SIGNAL(routerSelected(QString)),
-          this,   SLOT(mapRouterSelected(QString)));
-
   /* Respond to changes in the status of the control connection */
   connect(_torControl, SIGNAL(connected(bool)), ui.actionRefresh, SLOT(setEnabled(bool)));
   connect(_torControl, SIGNAL(connected(bool)), ui.actionNewNym, SLOT(setEnabled(bool)));
