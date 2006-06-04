@@ -35,6 +35,8 @@
 
 class TorMapWidget : public ZImageView
 {
+  Q_OBJECT
+
 public:
   /** Default constructor. */
   TorMapWidget(QWidget *parent = 0);
@@ -55,6 +57,8 @@ public:
   void update();
 
 public slots:
+  /** Removes a circuit from the map. */
+  void removeCircuit(Circuit circuit);
   /** Deselects all the highlighted circuits and routers */
   void deselectAll();
   /** Clears the known routers and removes all the data from the map */

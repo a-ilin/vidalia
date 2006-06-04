@@ -30,6 +30,9 @@
 #include <QPainter>
 #include <QMouseEvent>
 
+#include <QtDebug>
+
+
 /** QPens to use for drawing different elements */
 #define PEN_POINT        QPen(QColor("#ff030d"), 1.0)
 #define PEN_PATH         QPen(Qt::yellow, 0.5)
@@ -118,7 +121,7 @@ ZImageView::drawScaledImage()
 		int(double(r.height()) * scaleFactor));
 
   /** Make a copy of the image so we don't ruin the original */
-  QImage i(_image);
+  QImage i = _image.copy();
   
   /** Create a QPainter that draws directly on the copied image */
   QPainter painter;
@@ -388,9 +391,23 @@ ZImageView::addPoint(QPointF point)
 
 /** Adds a path to the paths list */
 void
-ZImageView::addPath(QPainterPath *path)
+ZImageView::addPath(QString key, QPainterPath *path)
 {
-  _paths.append(path);
+  _paths.insert(key, path);
+}
+
+/** Removes the given path from the list, so it won't be drawn anymore. */
+void
+ZImageView::removePath(QString key)
+{
+  if (_paths.contains(key)) {
+    QPainterPath *path = _paths.value(key);
+    if (_selectedPath == *path) {
+      _selectedPath = QPainterPath();
+    }
+    _paths.remove(key);
+  }
+  repaint();
 }
 
 /** Sets the selected point */

@@ -125,8 +125,10 @@ void
 CircuitListWidget::removeCircuit()
 {
   if (!_circuitRemovalList.isEmpty()) {
-    CircuitItem *circuit = _circuitRemovalList.takeFirst();
-    removeCircuit(circuit);
+    CircuitItem *circuitItem = _circuitRemovalList.takeFirst();
+    Circuit circuit = circuitItem->circuit();
+    removeCircuit(circuitItem);
+    emit circuitRemoved(circuit);
   }
 }
 

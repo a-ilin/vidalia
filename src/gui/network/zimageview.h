@@ -31,6 +31,7 @@
 #include <QFrame>
 #include <QPixmap>
 #include <QWidget>
+#include <QHash>
 #include <QPainterPath>
 
 
@@ -46,7 +47,9 @@ public:
   /** Adds a point to the points list */
   void addPoint(QPointF point);
   /** Adds a path to the paths list */
-  void addPath(QPainterPath *path);
+  void addPath(QString key, QPainterPath *path);
+  /** Removes a path from the paths list. */
+  void removePath(QString key);
   /** Sets the selected point */
   void selectPoint(QPointF point);
   /** Sets the selected path */
@@ -105,7 +108,7 @@ private:
   float _desiredY;  /**< The Y value we desire (???). */
 
   QList<QPointF> _points; /**< List of points to draw on the image. */
-  QList<QPainterPath *> _paths; /**< List of paths to draw on the image. */
+  QHash<QString,QPainterPath *> _paths; /**< List of paths to draw on the image. */
   QPointF _selectedPoint;  /**< The point which is highlighted */
   QPainterPath _selectedPath;  /**< The path which is highlighted */
 };

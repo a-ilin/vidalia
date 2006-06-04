@@ -27,6 +27,7 @@
 #include <cmath>
 #include "tormapwidget.h"
 
+
 #define IMG_WORLD_MAP   ":/images/map/world-map.png"
 
 /** Size of the map image */
@@ -120,7 +121,19 @@ TorMapWidget::addCircuit(Circuit circuit)
   
   /** Add the data to the hash of known circuits and plat the circuit on the map */
   _circuits[key] = circ;
-  addPath(circ);
+  addPath(key, circ);
+}
+
+/** Removes a circuit from the map. */
+void
+TorMapWidget::removeCircuit(Circuit circuit)
+{
+  QString key = circuit.hops().join("");
+  QPainterPath *circ = _circuits.take(key);
+  if (circ) {
+    removePath(key);
+    delete circ;
+  }
 }
 
 /** Selects and highlights a router on the map. */
@@ -136,14 +149,9 @@ TorMapWidget::selectRouter(QString name)
 void
 TorMapWidget::selectCircuit(Circuit circuit)
 {
-  QString key;
-  
-  foreach (QString name, circuit.hops()) {
-    key += name;
-  }
-
+  QString key = circuit.hops().join("");
   if (_circuits.contains(key)) {
-    selectPath(*_circuits[key]);
+    selectPath(*(_circuits[key]));
   }
 }
 

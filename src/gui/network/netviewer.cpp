@@ -85,7 +85,9 @@ NetViewer::NetViewer(QWidget *parent)
 	  this, SLOT(routerSelected(RouterDescriptor)));
   connect(ui.treeCircuitList, SIGNAL(circuitSelected(Circuit)),
           this, SLOT(circuitSelected(Circuit)));
-  
+  connect(ui.treeCircuitList, SIGNAL(circuitRemoved(Circuit)),
+          _map, SLOT(removeCircuit(Circuit)));
+
   /* Respond to changes in the status of the control connection */
   connect(_torControl, SIGNAL(connected(bool)), ui.actionRefresh, SLOT(setEnabled(bool)));
   connect(_torControl, SIGNAL(connected(bool)), ui.actionNewNym, SLOT(setEnabled(bool)));

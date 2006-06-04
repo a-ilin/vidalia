@@ -63,6 +63,8 @@ public:
 signals:
   /** Emitted when a circuit item is selected. */
   void circuitSelected(Circuit circuit);
+  /** Emitted when a circuit is removed from the list. */
+  void circuitRemoved(Circuit circuit);
 
 public slots:
   /** Clears all circuits and streams from the list. */
