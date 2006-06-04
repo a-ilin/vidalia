@@ -73,7 +73,7 @@ private:
   /** Stores map locations for tor routers */
   QHash<QString, QPointF> _routers;
   /** Stores circuit information */
-  QHash<QString, QPainterPath *> _circuits;
+  QHash<int, QPainterPath *> _circuits;
 };
 
 #endif

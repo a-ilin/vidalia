@@ -27,7 +27,6 @@
 #include <cmath>
 #include "tormapwidget.h"
 
-
 #define IMG_WORLD_MAP   ":/images/map/world-map.png"
 
 /** Size of the map image */
@@ -76,7 +75,7 @@ TorMapWidget::TorMapWidget(QWidget *parent)
 /** Destructor */
 TorMapWidget::~TorMapWidget()
 {
-  foreach (QString key, _circuits.keys()) {
+  foreach (int key, _circuits.keys()) {
     delete _circuits.take(key);
   }
 }
@@ -98,7 +97,6 @@ TorMapWidget::addCircuit(Circuit circuit)
 {
   QPainterPath *circ = new QPainterPath;
   QStringList hops = circuit.hops();
-  QString key;
   
   /** Build the new circuit */
   for (int i = 0; i < hops.size()-1; i++) {
@@ -116,11 +114,12 @@ TorMapWidget::addCircuit(Circuit circuit)
     }
   }
   
-  /** Create a unique key from the hop names */
-  key = hops.join("");
-  
-  /** Add the data to the hash of known circuits and plat the circuit on the map */
-  _circuits[key] = circ;
+  /** Add the data to the hash of known circuits and plot the circuit on the map */
+  int key = circuit.id();
+  if (_circuits.contains(key)) {
+    delete _circuits.take(key);
+  }
+  _circuits.insert(key, circ);
   addPath(key, circ);
 }
 
@@ -128,7 +127,7 @@ TorMapWidget::addCircuit(Circuit circuit)
 void
 TorMapWidget::removeCircuit(Circuit circuit)
 {
-  QString key = circuit.hops().join("");
+  int key = circuit.id();
   QPainterPath *circ = _circuits.take(key);
   if (circ) {
     removePath(key);
@@ -149,7 +148,7 @@ TorMapWidget::selectRouter(QString name)
 void
 TorMapWidget::selectCircuit(Circuit circuit)
 {
-  QString key = circuit.hops().join("");
+  int key = circuit.id();
   if (_circuits.contains(key)) {
     selectPath(*(_circuits[key]));
   }

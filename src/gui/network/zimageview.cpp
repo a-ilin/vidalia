@@ -391,14 +391,14 @@ ZImageView::addPoint(QPointF point)
 
 /** Adds a path to the paths list */
 void
-ZImageView::addPath(QString key, QPainterPath *path)
+ZImageView::addPath(int key, QPainterPath *path)
 {
   _paths.insert(key, path);
 }
 
 /** Removes the given path from the list, so it won't be drawn anymore. */
 void
-ZImageView::removePath(QString key)
+ZImageView::removePath(int key)
 {
   if (_paths.contains(key)) {
     QPainterPath *path = _paths.value(key);
