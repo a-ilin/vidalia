@@ -29,6 +29,7 @@
 
 #if defined(Q_OS_WIN)
 #include <windows.h>
+#include <util/win32.h>
 #endif
 
 #include <QApplication>
