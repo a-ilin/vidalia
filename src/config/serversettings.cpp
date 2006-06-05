@@ -26,10 +26,15 @@
 
 #include <QHostInfo>
 #include <util/net.h>
+#include <util/string.h>
 
 #include "serversettings.h"
 #include "torsettings.h"
 
+
+/** Define the set of characters that are valid in a nickname. */
+#define VALID_NICKNAME_CHARS \
+  "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 
 /* Server-related torrc configuration parameters */
 #define SERVER_NICKNAME       "Nickname"
@@ -57,7 +62,7 @@
 #define DEFAULT_SERVER_CHANGED    false
 #define DEFAULT_SERVER_DIRMIRROR  false
 #define DEFAULT_SERVER_MIDDLEMAN  false
-#define DEFAULT_SERVER_NICKNAME   QHostInfo::localHostName() 
+#define DEFAULT_SERVER_NICKNAME   QHostInfo::localHostName()
 #define DEFAULT_SERVER_ORPORT     9001
 #define DEFAULT_SERVER_DIRPORT    9030
 #define DEFAULT_SERVER_CONTACT    "<your@email.com>"
@@ -324,7 +329,9 @@ ServerSettings::setNickname(QString nickname)
 QString
 ServerSettings::getNickname()
 {
-  return value(SETTING_SERVER_NICKNAME, DEFAULT_SERVER_NICKNAME).toString();
+  QString nickname = value(SETTING_SERVER_NICKNAME, 
+                           DEFAULT_SERVER_NICKNAME).toString();
+  return ensure_valid_chars(nickname, VALID_NICKNAME_CHARS);
 }
 
 /** Sets the server's contact information. */
