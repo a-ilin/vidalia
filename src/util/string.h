@@ -32,6 +32,11 @@
 /** Creates a QStringList from the array of C strings. */
 QStringList char_array_to_stringlist(char **arr, int len);
 
+/** Ensures all characters in str are in validChars. If a character appears
+ * in str but not in validChars, it will be removed and the resulting
+ * string returned. */
+QString ensure_valid_chars(QString str, QString validChars);
+
 /** Conditionally assigns errmsg to string if str is not null and returns
  * false. */
 bool err(QString *str, QString errmsg);
