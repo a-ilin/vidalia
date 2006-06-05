@@ -55,7 +55,7 @@ public slots:
 
 protected:
   /** Virtual method to let subclasses paint on the image before it's scaled. */
-  virtual void paintImage(QPainter *painter) {}
+  virtual void paintImage(QPainter *painter) { Q_UNUSED(painter); }
   /** Updates the viewport and repaints the displayed image. */
   virtual void paintEvent(QPaintEvent*);
   /** Handles the user pressing a mouse button. */
