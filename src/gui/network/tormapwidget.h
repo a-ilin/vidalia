@@ -27,11 +27,13 @@
 #ifndef _TORMAPWIDGET_H
 #define _TORMAPWIDGET_H
 
+#include <QHash>
+#include <QPair>
+#include <QPainter>
 #include <control/circuit.h>
 
 #include "zimageview.h"
 
-#include <QHash>
 
 class TorMapWidget : public ZImageView
 {
@@ -53,8 +55,6 @@ public:
   void selectCircuit(Circuit circuit);
   /** Returns the minimum size of the widget */
   QSize minimumSizeHint() const;
-  /** Repaints the map, use this with caution */
-  void update();
 
 public slots:
   /** Removes a circuit from the map. */
@@ -64,6 +64,10 @@ public slots:
   /** Clears the known routers and removes all the data from the map */
   void clear();
 
+protected:
+  /** Paints the current circuits and streams on the image. */
+  virtual void paintImage(QPainter *painter);
+  
 private:
   /** Converts world space coordinates into map space coordinates */
   QPointF toMapSpace(float latitude, float longitude);
@@ -71,9 +75,9 @@ private:
   float lerp(float input, float *table);
 
   /** Stores map locations for tor routers */
-  QHash<QString, QPointF> _routers;
+  QHash<QString, QPair<QPointF,bool>* > _routers;
   /** Stores circuit information */
-  QHash<int, QPainterPath *> _circuits;
+  QHash<int, QPair<QPainterPath *,bool>* > _circuits;
 };
 
 #endif

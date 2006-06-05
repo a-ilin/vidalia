@@ -29,6 +29,11 @@
 
 #define IMG_WORLD_MAP   ":/images/map/world-map.png"
 
+/** QPens to use for drawing different map elements */
+#define PEN_ROUTER        QPen(QColor("#ff030d"), 1.0)
+#define PEN_CIRCUIT       QPen(Qt::yellow, 0.5)
+#define PEN_SELECTED      QPen(Qt::green, 2.0)
+
 /** Size of the map image */
 #define IMG_WIDTH       1000
 #define IMG_HEIGHT      507
@@ -75,52 +80,56 @@ TorMapWidget::TorMapWidget(QWidget *parent)
 /** Destructor */
 TorMapWidget::~TorMapWidget()
 {
-  foreach (int key, _circuits.keys()) {
-    delete _circuits.take(key);
-  }
+  clear();
 }
 
 /** Adds a router to the map. */
 void
 TorMapWidget::addRouter(QString name, float latitude, float longitude)
 {
-  QPointF router_coord = toMapSpace(latitude, longitude);
+  QPointF routerCoord = toMapSpace(latitude, longitude);
   
-  /** Add data the hash of known routers, and plot the point on the map */
-  _routers[name] = router_coord;
-  addPoint(router_coord);  
+  /* Add data the hash of known routers, and plot the point on the map */
+  _routers.insert(name, new QPair<QPointF,bool>(routerCoord, false));
 }
 
 /** Adds a circuit to the map using the given ordered list of routers. */
 void
 TorMapWidget::addCircuit(Circuit circuit)
 {
-  QPainterPath *circ = new QPainterPath;
+  QPainterPath *circPainterPath = new QPainterPath;
   QStringList hops = circuit.hops();
   
-  /** Build the new circuit */
+  /* Build the new circuit */
   for (int i = 0; i < hops.size()-1; i++) {
     QString fromNode = hops.at(i);
     QString toNode = hops.at(i+1);
    
-    /** Add the coordinates of the hops to the circuit */
+    /* Add the coordinates of the hops to the circuit */
     if (_routers.contains(fromNode) && _routers.contains(toNode)) {
-      QPointF fromPos = _routers[fromNode];
-      QPointF endPos = _routers[toNode];
-    
-      circ->moveTo(fromPos);
-      circ->lineTo(endPos);
-      circ->moveTo(endPos);
+      /* Find the two endpoints for this path segment */
+      QPointF fromPos = _routers.value(fromNode)->first;
+      QPointF endPos = _routers.value(toNode)->first;
+      
+      /* Draw the path segment */ 
+      circPainterPath->moveTo(fromPos);
+      circPainterPath->lineTo(endPos);
+      circPainterPath->moveTo(endPos);
     }
   }
   
   /** Add the data to the hash of known circuits and plot the circuit on the map */
-  int key = circuit.id();
-  if (_circuits.contains(key)) {
-    delete _circuits.take(key);
+  int circid = circuit.id();
+  if (_circuits.contains(circid)) {
+    /* This circuit is being updated, so just update the path, making sure we
+     * free the memory allocated to the old one. */
+    QPair<QPainterPath*,bool> *circuitPair = _circuits.value(circid);
+    delete circuitPair->first;
+    circuitPair->first = circPainterPath;
+  } else {
+    /* This is a new path, so just add it to our list */
+    _circuits.insert(circid, new QPair<QPainterPath*,bool>(circPainterPath,false));
   }
-  _circuits.insert(key, circ);
-  addPath(key, circ);
 }
 
 /** Removes a circuit from the map. */
@@ -128,10 +137,10 @@ void
 TorMapWidget::removeCircuit(Circuit circuit)
 {
   int key = circuit.id();
-  QPainterPath *circ = _circuits.take(key);
-  if (circ) {
-    removePath(key);
-    delete circ;
+  QPair<QPainterPath*,bool> *circ = _circuits.take(key);
+  QPainterPath *circpath = circ->first;
+  if (circpath) {
+    delete circpath;
   }
 }
 
@@ -140,41 +149,74 @@ void
 TorMapWidget::selectRouter(QString name)
 {
   if (_routers.contains(name)) {
-    selectPoint(_routers[name]);
+    QPair<QPointF, bool> *routerPair = _routers.value(name);
+    routerPair->second = true;
   }
+  repaint();
 }
 
 /** Selects and highlights a circuit on the map. */
 void
 TorMapWidget::selectCircuit(Circuit circuit)
 {
-  int key = circuit.id();
-  if (_circuits.contains(key)) {
-    selectPath(*(_circuits[key]));
+  int circid = circuit.id();
+  if (_circuits.contains(circid)) {
+    QPair<QPainterPath*, bool> *circuitPair = _circuits.value(circid);
+    circuitPair->second = true;
   }
+  repaint();
 }
 
 /** Deselects any highlighted routers or circuits */
 void
 TorMapWidget::deselectAll()
 {
-  clearSelected();
+  /* Deselect all router points */
+  foreach (QString router, _routers.keys()) {
+    QPair<QPointF,bool> *routerPair = _routers.value(router);
+    routerPair->second = false;
+  }
+  /* Deselect all circuit paths */
+  foreach (int circid, _circuits.keys()) {
+    QPair<QPainterPath*,bool> *circuitPair = _circuits.value(circid);
+    circuitPair->second = false;
+  }
 }
 
 /** Clears the list of routers and removes all the data on the map */
 void
 TorMapWidget::clear()
 {
-  _routers.clear();
-  _circuits.clear();
-  clearLists();
+  /* Clear out all the router points and free their memory */
+  foreach (QString router, _routers.keys()) {
+    delete _routers.take(router);
+  }
+  /* Clear out all the circuit paths and free their memory */
+  foreach (int circid, _circuits.keys()) {
+    QPair<QPainterPath*,bool> *circuitPair = _circuits.take(circid);
+    delete circuitPair->first;
+    delete circuitPair;
+  }
 }
   
-/** Causes a repaint of the map widget, use sparingly and with caution */
+/** Draws the routers and paths onto the map image. */
 void
-TorMapWidget::update()
+TorMapWidget::paintImage(QPainter *painter)
 {
-  repaint();
+  painter->setRenderHint(QPainter::Antialiasing);
+  
+  /* Draw the router points */
+  foreach(QString router, _routers.keys()) {
+    QPair<QPointF,bool> *routerPair = _routers.value(router);
+    painter->setPen((routerPair->second ? PEN_SELECTED : PEN_ROUTER)); 
+    painter->drawPoint(routerPair->first);
+  }
+  /* Draw the circuit paths */
+  foreach(int circid, _circuits.keys()) {
+    QPair<QPainterPath*,bool> *circuitPair = _circuits.value(circid);
+    painter->setPen((circuitPair->second ? PEN_SELECTED : PEN_CIRCUIT));
+    painter->drawPath(*(circuitPair->first));
+  }
 }
 
 /** Converts world space coordinates into map space coordinates */
@@ -219,3 +261,4 @@ TorMapWidget::minimumSizeHint() const
 {
   return MIN_SIZE;
 }
+

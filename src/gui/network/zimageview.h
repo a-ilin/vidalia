@@ -31,8 +31,6 @@
 #include <QFrame>
 #include <QPixmap>
 #include <QWidget>
-#include <QHash>
-#include <QPainterPath>
 
 
 class ZImageView : public QWidget
@@ -44,17 +42,7 @@ public:
   ZImageView(QWidget *parent = 0);
   /** Sets the displayed image. */
   void setImage(QImage& pixmap);
-  /** Adds a point to the points list */
-  void addPoint(QPointF point);
-  /** Adds a path to the paths list */
-  void addPath(int key, QPainterPath *path);
-  /** Removes a path from the paths list. */
-  void removePath(int key);
-  /** Sets the selected point */
-  void selectPoint(QPointF point);
-  /** Sets the selected path */
-  void selectPath(QPainterPath path);
-
+  
 public slots:
   /** Resets the center zoom point back to the center of the viewport. */
   void resetZoomPoint();
@@ -64,12 +52,10 @@ public slots:
   void zoomIn();
   /** Zooms away from the displayed image by 5% */
   void zoomOut();
-  /** Clears points and paths lists */
-  void clearLists();
-  /** Deselects all selects all selected elements */
-  void clearSelected();
 
 protected:
+  /** Virtual method to let subclasses paint on the image before it's scaled. */
+  virtual void paintImage(QPainter *painter) {}
   /** Updates the viewport and repaints the displayed image. */
   virtual void paintEvent(QPaintEvent*);
   /** Handles the user pressing a mouse button. */
@@ -106,11 +92,6 @@ private:
   QRect _view;      /**< The displayed viewport. */
   float _desiredX;  /**< The X value we desire (???). */
   float _desiredY;  /**< The Y value we desire (???). */
-
-  QList<QPointF> _points; /**< List of points to draw on the image. */
-  QHash<int,QPainterPath *> _paths; /**< List of paths to draw on the image. */
-  QPointF _selectedPoint;  /**< The point which is highlighted */
-  QPainterPath _selectedPath;  /**< The path which is highlighted */
 };
 
 #endif

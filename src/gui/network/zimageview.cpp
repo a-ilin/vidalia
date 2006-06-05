@@ -23,20 +23,13 @@
  * \file zimageview.cpp
  * \version $Id: netviewer.cpp 699 2006-04-15 03:12:22Z hipplej $
  */
-#include "zimageview.h"
 
 #include <cmath>
-
 #include <QPainter>
 #include <QMouseEvent>
 
-#include <QtDebug>
+#include "zimageview.h"
 
-
-/** QPens to use for drawing different elements */
-#define PEN_POINT        QPen(QColor("#ff030d"), 1.0)
-#define PEN_PATH         QPen(Qt::yellow, 0.5)
-#define PEN_SELECTED     QPen(Qt::green, 2.0)
 
 /** Constructor. */
 ZImageView::ZImageView(QWidget *parent)
@@ -105,7 +98,6 @@ ZImageView::drawScaledImage()
   if (r.top() < 0) {
     r.setTop(0);
   }
-
   if (iRect.bottom() < r.bottom()) {
     r.setBottom(iRect.bottom());
   }
@@ -123,33 +115,11 @@ ZImageView::drawScaledImage()
   /** Make a copy of the image so we don't ruin the original */
   QImage i = _image.copy();
   
-  /** Create a QPainter that draws directly on the copied image */
+  /** Create a QPainter that draws directly on the copied image and call the
+   * virtual function to draw whatever the subclasses need to on the image. */
   QPainter painter;
   painter.begin(&i);
-
-  /** Setup QPainter to draw antialiased points and paths */
-  painter.setRenderHint(QPainter::Antialiasing);
-
-  /** Draw points */
-  painter.setPen(PEN_POINT);
-  foreach(QPointF point, _points) {
-    painter.drawPoint(point);
-  }
-
-  /** Draw paths */
-  painter.setPen(PEN_PATH);
-  foreach(QPainterPath *path, _paths) {
-    painter.drawPath(*path);
-  }
-  
-  /** Draw selected elements */
-  painter.setPen(PEN_SELECTED);
-  if (!_selectedPoint.isNull()) {
-    painter.drawPoint(_selectedPoint);
-  } else if (!_selectedPath.isEmpty()) {
-    painter.drawPath(_selectedPath);
-  }
-
+  paintImage(&painter);
   painter.end();
 
   /** Rescale the image copy */
@@ -374,65 +344,3 @@ ZImageView::resizeEvent(QResizeEvent* e)
   QWidget::resizeEvent(e);
 }
 
-/** Clears the points and paths lists */
-void
-ZImageView::clearLists()
-{
-  _points.clear();
-  _paths.clear();
-}
-
-/** Adds a point to the points list */
-void
-ZImageView::addPoint(QPointF point)
-{
-  _points.append(point);
-}
-
-/** Adds a path to the paths list */
-void
-ZImageView::addPath(int key, QPainterPath *path)
-{
-  _paths.insert(key, path);
-}
-
-/** Removes the given path from the list, so it won't be drawn anymore. */
-void
-ZImageView::removePath(int key)
-{
-  if (_paths.contains(key)) {
-    QPainterPath *path = _paths.value(key);
-    if (_selectedPath == *path) {
-      _selectedPath = QPainterPath();
-    }
-    _paths.remove(key);
-  }
-  repaint();
-}
-
-/** Sets the selected point */
-void
-ZImageView::selectPoint(QPointF point)
-{
-  _selectedPath = QPainterPath();
-  _selectedPoint = point;
-  repaint();
-}
-
-/** Sets the selected path */
-void
-ZImageView::selectPath(QPainterPath path)
-{
-  _selectedPoint = QPointF();
-  _selectedPath = path;
-  repaint();
-}
-
-/** Deselects all selects all selected elements */
-void
-ZImageView::clearSelected()
-{
-  _selectedPoint = QPointF();
-  _selectedPath = QPainterPath();
-  repaint();
-}
