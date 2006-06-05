@@ -295,7 +295,7 @@
    <string>Tor Bandwidth Usage</string>
   </property>
   <property name="windowIcon" >
-   <iconset/>
+   <iconset resource="../res/vidalia_common.qrc" >:/images/16x16/utilities-system-monitor.png</iconset>
   </property>
   <property name="sizeGripEnabled" >
    <bool>true</bool>
