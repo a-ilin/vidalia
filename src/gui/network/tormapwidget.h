@@ -30,6 +30,7 @@
 #include <QHash>
 #include <QPair>
 #include <QPainter>
+#include <QPainterPath>
 #include <control/circuit.h>
 
 #include "zimageview.h"
