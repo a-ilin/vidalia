@@ -35,6 +35,8 @@
 /** Define the set of characters that are valid in a nickname. */
 #define VALID_NICKNAME_CHARS \
   "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+/** Define the maximum length of a server's nickname. */
+#define MAX_NICKNAME_LEN   19
 
 /* Server-related torrc configuration parameters */
 #define SERVER_NICKNAME       "Nickname"
@@ -331,7 +333,9 @@ ServerSettings::getNickname()
 {
   QString nickname = value(SETTING_SERVER_NICKNAME, 
                            DEFAULT_SERVER_NICKNAME).toString();
-  return ensure_valid_chars(nickname, VALID_NICKNAME_CHARS);
+  /* Ensure the nickname contains only valid characters and is not too long. */
+  return ensure_valid_chars(nickname, 
+                            VALID_NICKNAME_CHARS).left(MAX_NICKNAME_LEN);
 }
 
 /** Sets the server's contact information. */
