@@ -34,6 +34,7 @@
 #include "ipvalidator.h"
 #include "portvalidator.h"
 #include "domainvalidator.h"
+#include "nicknamevalidator.h"
 
 /* Default Exit Policy */
 #define DEFAULT_POLICY    Policy(AcceptAll)
@@ -47,6 +48,7 @@
 
 /* Help topics */
 #define EXIT_HELP     "server.exitpolicy"
+
 
 /** Constructor */
 ServerPage::ServerPage(QWidget *parent)
@@ -76,6 +78,7 @@ ServerPage::ServerPage(QWidget *parent)
   connect(ui.btnExitHelp, SIGNAL(clicked()), this, SLOT(exitHelp()));
   
   /* Set validators for address, mask and various port number fields */
+  ui.lineServerNickname->setValidator(new NicknameValidator(this));
   ui.lineServerAddress->setValidator(new DomainValidator(this));
   ui.lineServerPort->setValidator(new QIntValidator(1, 65535, this));
   ui.lineDirPort->setValidator(new QIntValidator(1, 65535, this));

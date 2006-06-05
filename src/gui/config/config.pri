@@ -31,6 +31,7 @@ HEADERS += $$PWD/configdialog.h \
            $$PWD/domainvalidator.h \
            $$PWD/ipvalidator.h \
            $$PWD/portvalidator.h \
+           $$PWD/nicknamevalidator.h \
            $$PWD/configpage.h \
            $$PWD/configpagestack.h \
            $$PWD/generalpage.h \
@@ -42,6 +43,7 @@ SOURCES += $$PWD/configdialog.cpp \
            $$PWD/domainvalidator.cpp \
            $$PWD/ipvalidator.cpp \
            $$PWD/portvalidator.cpp \
+           $$PWD/nicknamevalidator.cpp \
            $$PWD/configpagestack.cpp \
            $$PWD/generalpage.cpp \
            $$PWD/serverpage.cpp \
