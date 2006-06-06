@@ -13,8 +13,20 @@ Libevent
    You will need to be root to `make install`
 
 
+Qt
+4. Download and extract the open source version of Qt 4.1 or higher from 
+   Trolltech at the following address:
+   http://www.trolltech.com/developer/downloads/qt/mac
+
+5. Configure Qt with the following:
+   ./configure -static
+
+6. Build and install Qt as follows:
+   make && make install
+ 
+ 
 Privoxy
-4. Download the OS X Privoxy package from 
+7. Download the OS X Privoxy package from 
    http://prdownloads.sourceforge.net/ijbswa/privoxyosx_setup_3.0.3.zip?download
   
    Note the location in which you save this .zip file, because you will need
@@ -22,27 +34,17 @@ Privoxy
 
 
 Tor
-5. Download and extract the latest Tor source from
+8. Download and extract the latest Tor source from
    http://tor.eff.org
 
    Note the location in which you extract Tor's source, because you will need
    to specify it in Step 8.
    
-6. Configure Tor with the following:
+9. Configure Tor with the following:
    ./configure --prefix=/Library/Tor --bindir=/Library/Tor \
     --sysconfdir=/Library --enable-static --disable-shared
 
-Qt
-7. Download and extract the open source version of Qt 4.1 or higher from 
-   Trolltech at the following address:
-   http://www.trolltech.com/developer/downloads/qt/mac
 
-8. Configure Qt with the following:
-   ./configure -static
-
-9. Build and install Qt as follows:
-   make && make install
-   
 Vidalia
 10. Configure Vidalia with the following:
     ./configure --disable-debug
@@ -54,16 +56,22 @@ Vidalia
 
    
 Finish
-12. From the location of Vidalia's source, run the following:
-    ./pkg/package.sh osx-bundle <path-to-tor> <privoxy-package.zip>
+12. From Vidalia's pkg/ directory in Vidalia's source, run the following:
+     ./package.sh osx-bundle <path-to-tor> <privoxy-package.zip>
   
   Example:
-   ./pkg/package.sh osx-bundle ~/tor-0.1.1.19-rc ~/privoxyosx_setup_3.0.3.zip
+     ./package.sh osx-bundle ~/tor-0.1.1.19-rc ~/privoxyosx_setup_3.0.3.zip
 
   The script that builds the .mpkg (pkg/osx/bundle/buildmpkg.sh) gets Tor's
-  version number from the directory name, so it should be name appropriately,
+  version number from the directory name, so it should be named appropriately,
   as in the example above.
   
 The resulting .dmg containg the .mpkg and necessary licenses will be placed in
 the 'pkg' directory under Vidalia's source.
+
+NOTE: Steps 1-6 only need to be done once initially, unless you need to change the
+packaged version of Libevent or Qt. Step 7 also only needs to be done once,
+unless Privoxy ever gets updated. Steps 8-9 need to be repeated when the
+bundled version of Tor changes. Steps 10-11 need to be repeated when the
+bundled version of Vidalia changes.
 
