@@ -49,7 +49,7 @@ public:
   ~TorControl();
 
   /** Start the Tor process */
-  bool start(QString *errmsg = 0);
+  void start();
   /** Stop the Tor process */
   bool stop(QString *errmsg = 0);
   /** Detect if the Tor process is running */
@@ -116,6 +116,8 @@ public:
 signals:
   /** Emitted when the Tor process has started */
   void started();
+  /** Emitted when the Tor process fails to start. */
+  void startFailed(QString errmsg);
   /** Emitted when the Tor process has stopped */
   void stopped(int exitCode, QProcess::ExitStatus exitStatus);
   /** Emitted when the controller has connected to Tor */
@@ -145,6 +147,7 @@ private:
 /* The slots below simply relay signals from the appropriate member objects */
 private slots:
   void onStarted();
+  void onStartFailed(QString errmsg);
   void onStopped(int exitCode, QProcess::ExitStatus exitStatus);
   void onConnected();
   void onConnectFailed(QString errmsg);

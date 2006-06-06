@@ -43,12 +43,10 @@ public:
   TorProcess();
 
   /** Start the Tor process */
-  bool start(QString app, QString args, QString *errmsg = 0);
+  void start(QString app, QString args, QString *errmsg = 0);
   /** Stop the Tor process */
   bool stop(QString *errmsg = 0);
 
-  /** Returns a QString describing the last QProcess::ProcessError */
-  QString errorString();
 
   /** Return the Tor process's PID (workaround for some Windows funkiness) */
   quint64 pid();
@@ -61,10 +59,15 @@ public:
 signals:
   /** Emitted when Tor prints a log message to the console */
   void log(QString severity, QString message);
-
+  /** Emitted when Tor fails to start, perhaps because the path to Tor was
+   * bogus. */
+  void startFailed(QString errorMessage);
+  
 private slots:
   /** Called when there is data to be read from stdout */
   void onReadyRead();
+  /** Called when an error occurs in the process. */
+  void onError(QProcess::ProcessError error);
 
 private:
   /** Status of logging to stdout. */

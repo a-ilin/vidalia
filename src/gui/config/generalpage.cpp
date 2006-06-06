@@ -38,7 +38,8 @@ GeneralPage::GeneralPage(QWidget *parent)
   _torSettings = new TorSettings;
   
   /* Bind event to actions */
-  connect(ui.btnBrowseTorPath, SIGNAL(clicked()), this, SLOT(browseTorPath()));
+  connect(ui.btnBrowseTorExecutable, SIGNAL(clicked()), 
+          this, SLOT(browseTorPath()));
 
   /* Hide platform specific features */
 #ifndef Q_WS_WIN
@@ -57,12 +58,21 @@ GeneralPage::~GeneralPage()
 void
 GeneralPage::browseTorPath()
 {
+#if defined(Q_OS_WIN32)
+  QString filter = tr("Executables (*.exe)");
+#else
+  QString filter = "";
+#endif
+ 
+  /* Prompt the user for an executable file. If we're on windows, filter for
+   * only .exe files. */
   QString filename = QDir::convertSeparators(
-                          QFileDialog::getExistingDirectory(this,
+                          QFileDialog::getOpenFileName(this,
                               tr("Select Path to Tor"), 
-                              ui.lineTorPath->text()));
+                              ui.lineTorExecutable->text(),
+                              filter));
   if (!filename.isEmpty()) {
-    ui.lineTorPath->setText(filename);
+    ui.lineTorExecutable->setText(filename);
   }
 }
 
@@ -71,7 +81,7 @@ bool
 GeneralPage::save(QString &errmsg)
 {
   Q_UNUSED(errmsg);
-  _torSettings->setPath(ui.lineTorPath->text());
+  _torSettings->setExecutable(ui.lineTorExecutable->text());
   _vidaliaSettings->setRunTorAtStart(ui.chkRunTor->isChecked());
   _vidaliaSettings->setRunVidaliaOnBoot(ui.chkRunWithSys->isChecked());
   return true;
@@ -81,7 +91,7 @@ GeneralPage::save(QString &errmsg)
 void
 GeneralPage::load()
 {
-  ui.lineTorPath->setText(_torSettings->getPath());
+  ui.lineTorExecutable->setText(_torSettings->getExecutable());
   ui.chkRunTor->setChecked(_vidaliaSettings->runTorAtStart());
   ui.chkRunWithSys->setChecked(_vidaliaSettings->runVidaliaOnBoot());
 }

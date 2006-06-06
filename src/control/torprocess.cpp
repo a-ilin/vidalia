@@ -41,37 +41,28 @@
 TorProcess::TorProcess()
 {
   openStdout();
-  connect(this, SIGNAL(readyReadStandardOutput()), this, SLOT(onReadyRead()));
+  connect(this, SIGNAL(readyReadStandardOutput()), 
+          this,   SLOT(onReadyRead()));
+  connect(this, SIGNAL(error(QProcess::ProcessError)), 
+          this,   SLOT(onError(QProcess::ProcessError)));
 }
 
 /** Attempts to start the Tor process using the location, executable, and
  * command-line arguments specified in Vidalia's settings. If Tor doesn't
  * exist at the given path, <b>errmsg</b> will be set appropriately and the
  * function will return false. */
-bool TorProcess::start(QString app, QString args, QString *errmsg) 
+void
+TorProcess::start(QString app, QString args, QString *errmsg) 
 {
-  QFileInfo appInfo(app);
-  QString path = appInfo.absoluteFilePath();
-  
-  /* If the path doesn't point to an executable, then bail */
-  if (!appInfo.isExecutable()) {
-    if (errmsg) {
-      *errmsg = 
-        tr("\"%1\" is not an executable.").arg(path);
-    }
-    return false;
-  }
-  
-  /* This lovely little hack here is because the isExecutable() method above
-   * doesn't understand quoted paths, but the QProcess::start() method below
-   * requires it, on Windows. */
 #if defined(Q_OS_WIN32)
-  path = "\"" + path + "\"";
+  /* If we're on Windows, QProcess::start requires that paths with spaces are
+   * quoted before being passed to it. */
+  app = "\"" + app + "\"";
 #endif
 
   /* Attempt to start Tor with the given command-line arguments */
-  QProcess::start(path + " " + args, QIODevice::ReadOnly | QIODevice::Text);
-  return true;
+  setEnvironment(QProcess::systemEnvironment());
+  QProcess::start(app + " " + args, QIODevice::ReadOnly | QIODevice::Text);
 }
 
 /** Stops the Tor process */
@@ -171,26 +162,15 @@ TorProcess::onReadyRead()
   }
 }
 
-/** Returns a string description of the last QProcess::ProcessError
- * encountered. */
-QString
-TorProcess::errorString()
+/** Called when the process encounters an error. If the error tells us that
+ * the process failed to start, then we will emit the startFailed() signal and
+ * an error message indicating why. */
+void
+TorProcess::onError(QProcess::ProcessError error)
 {
-  QString err;
-  switch (error()) {
-    case QProcess::FailedToStart:
-      err = tr("Failed to start"); break;
-    case QProcess::Crashed:
-      err = tr("Crashed"); break;
-    case QProcess::Timedout:
-      err = tr("Timed out"); break;
-    case QProcess::WriteError:
-      err = tr("Write error"); break;
-    case QProcess::ReadError:
-      err = tr("Read error"); break;
-    default:
-      err = tr("Unknown error"); break;
+  if (error == QProcess::FailedToStart) {
+    /* Tor didn't start, so let everyone know why. */
+    emit startFailed(errorString());
   }
-  return err;
 }
 

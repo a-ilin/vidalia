@@ -85,11 +85,13 @@ MainWindow::MainWindow()
   /* Create a new TorControl object, used to communicate with and manipulate Tor */
   _torControl = Vidalia::torControl(); 
   connect(_torControl, SIGNAL(started()), this, SLOT(started()));
+  connect(_torControl, SIGNAL(startFailed(QString)),
+                 this,   SLOT(startFailed(QString)));
   connect(_torControl, SIGNAL(stopped(int, QProcess::ExitStatus)),
-                 this, SLOT(stopped(int, QProcess::ExitStatus)));
+                 this,   SLOT(stopped(int, QProcess::ExitStatus)));
   connect(_torControl, SIGNAL(connected()), this, SLOT(connected()));
   connect(_torControl, SIGNAL(connectFailed(QString)), 
-                 this, SLOT(connectFailed(QString)));
+                 this,   SLOT(connectFailed(QString)));
 
   /* Create a new MessageLog object so messages can be logged when not shown */
   _messageLog = new MessageLog();
@@ -252,29 +254,49 @@ MainWindow::createMenuBar()
 #endif
 }
 
-/** Attempts to start Tor. If starting Tor fails, then it will display a
- * message box giving the user an error message regarding why Tor failed to
- * start.
- * \sa started()
- */
+/** Attempts to start Tor. If Tor fails to start, then startFailed() will be
+ * called with an error message containing the reason. */
 void 
 MainWindow::start()
 {
-  QString errmsg;
-  _isIntentionalExit = false;
-  if (_torControl->start(&errmsg)) {
-    _startAct->setEnabled(false);
-  } else {
-    /* Display an error message and see if the user wants some help */
-    int response = VMessageBox::warning(this, tr("Error Starting Tor"),
-                     p(tr("Vidalia was unable to start Tor.")) + p(errmsg),
-                     VMessageBox::Ok, VMessageBox::Help);
+  /* This doesn't get set to false until Tor is actually up and running, so we
+   * don't yell at users twice if their Tor doesn't even start, due to the fact
+   * that QProcess::stopped() is emitted even if the process didn't even
+   * start. */
+  _isIntentionalExit = true;
+  /* Kick off the Tor process */
+  _torControl->start();
+  /* Don't let the user start Tor twice. That would be silly. */
+  _startAct->setEnabled(false);
+}
 
-    if (response == VMessageBox::Help) {
-      /* Show troubleshooting information about starting Tor */
-      Vidalia::help("troubleshooting.start");
-    }
+/** Called when the Tor process fails to start, for example, because the path
+ * specified to the Tor executable didn't lead to an executable. */
+void
+MainWindow::startFailed(QString errmsg)
+{
+  /* We don't display the error message for now, because the error message
+   * that Qt gives us in this instance is almost always "Unknown Error". That
+   * will make users sad. */
+  Q_UNUSED(errmsg);
+  
+  /* Display an error message and see if the user wants some help */
+  int response = VMessageBox::warning(this, tr("Error Starting Tor"),
+                   p(tr("Vidalia was unable to start Tor. Check your settings "
+                        "to ensure the correct name and location of your Tor "
+                        "executable is specified.")),
+                   VMessageBox::Ok, VMessageBox::ShowSettings, VMessageBox::Help);
+
+  if (response == VMessageBox::ShowSettings) {
+    /* Show the settings dialog so the user can make sure they're pointing to
+     * the correct Tor. */
+     ConfigDialog* configDialog = new ConfigDialog(this);
+     configDialog->show(ConfigDialog::General);
+  } else if (response == VMessageBox::Help) {
+    /* Show troubleshooting information about starting Tor */
+    Vidalia::help("troubleshooting.start");
   }
+  _startAct->setEnabled(true);
 }
 
 /** Slot: Called when the Tor process is started. It will connect the control
@@ -282,14 +304,13 @@ MainWindow::start()
 void 
 MainWindow::started()
 {
-  QString errmsg;
-  
+  /* Now that Tor is running, we want to know if it dies when we didn't want
+   * it to. */
+  _isIntentionalExit = false;
   /* Set correct tray icon and tooltip */
   _trayIcon->update(IMG_TOR_STARTING, tr("Tor is starting"));
-
   /* Set menu actions appropriately */
   _stopAct->setEnabled(true);
-
   /* Try to connect to Tor's control port */
   _torControl->connect();
 }
@@ -307,6 +328,7 @@ MainWindow::connectFailed(QString errmsg)
 
 
   if (response == VMessageBox::Retry) {
+    /* Let's give it another try. */
     _torControl->connect();
   } else {
     /* Show the help browser (if requested) */

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE TS><TS>
+<!DOCTYPE TS><TS>
 <context>
     <name></name>
     <message>
@@ -318,7 +318,7 @@ Olkaapa hyvä ja päivitä uudempaan Tor-ohjelmaan.</translation>
     <name>GeneralPage</name>
     <message>
         <source>Tor Directory</source>
-        <translation>Tor-kansio</translation>
+        <translation type="obsolete">Tor-kansio</translation>
     </message>
     <message>
         <source>Path to Tor&apos;s executable</source>
@@ -355,6 +355,14 @@ Olkaapa hyvä ja päivitä uudempaan Tor-ohjelmaan.</translation>
     <message>
         <source>Select Path to Tor</source>
         <translation>Valitse Tor-ohjelman sijainti</translation>
+    </message>
+    <message>
+        <source>Tor Executable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Executables (*.exe)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -668,7 +676,7 @@ Olkaapa hyvä ja päivitä uudempaan Tor-ohjelmaan.</translation>
     </message>
     <message>
         <source>Vidalia was unable to start Tor.</source>
-        <translation>Vidalia ei onnistunut käynnistämään Tor-ohjelmaa</translation>
+        <translation type="obsolete">Vidalia ei onnistunut käynnistämään Tor-ohjelmaa</translation>
     </message>
     <message>
         <source>OK</source>
@@ -749,6 +757,10 @@ Olkaapa hyvä ja tarkistakaapa tapahtumalokista mitä tapahtui Tor-ohjelmalle en
     <message>
         <source>Vidalia was unable to shutdown Tor gracefully. (</source>
         <translation>Vidalia ei onnistunut sulkemaan Tor-ohjelmaa ongelmitta</translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1446,7 +1458,7 @@ fingerprint.</source>
     <name>TorProcess</name>
     <message>
         <source>&quot;%1&quot; is not an executable.</source>
-        <translation>&quot;%1&quot; ei ole suoritettava.</translation>
+        <translation type="obsolete">&quot;%1&quot; ei ole suoritettava.</translation>
     </message>
     <message>
         <source>Process %1 failed to stop. [%2]</source>
@@ -1454,27 +1466,27 @@ fingerprint.</source>
     </message>
     <message>
         <source>Failed to start</source>
-        <translation>Käynnistyminen epäonnistui</translation>
+        <translation type="obsolete">Käynnistyminen epäonnistui</translation>
     </message>
     <message>
         <source>Crashed</source>
-        <translation>Kaatui</translation>
+        <translation type="obsolete">Kaatui</translation>
     </message>
     <message>
         <source>Timed out</source>
-        <translation>Yhteysaika päättyi</translation>
+        <translation type="obsolete">Yhteysaika päättyi</translation>
     </message>
     <message>
         <source>Write error</source>
-        <translation>Kirjoitusvirhe</translation>
+        <translation type="obsolete">Kirjoitusvirhe</translation>
     </message>
     <message>
         <source>Read error</source>
-        <translation>Lukuvirhe</translation>
+        <translation type="obsolete">Lukuvirhe</translation>
     </message>
     <message>
         <source>Unknown error</source>
-        <translation>Tuntematon virhe</translation>
+        <translation type="obsolete">Tuntematon virhe</translation>
     </message>
 </context>
 <context>

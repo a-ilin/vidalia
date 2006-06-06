@@ -316,10 +316,6 @@ Upgrade to a newer version of Tor.</source>
 <context>
     <name>GeneralPage</name>
     <message>
-        <source>Tor Directory</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Path to Tor&apos;s executable</source>
         <translation type="unfinished"></translation>
     </message>
@@ -353,6 +349,14 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Select Path to Tor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tor Executable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Executables (*.exe)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -654,10 +658,6 @@ Upgrade to a newer version of Tor.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Vidalia was unable to start Tor.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Vidalia was unable to stop Tor.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -715,6 +715,10 @@ Would you like to shutdown gracefully and give clients time to find a new server
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1370,35 +1374,7 @@ fingerprint.</source>
 <context>
     <name>TorProcess</name>
     <message>
-        <source>&quot;%1&quot; is not an executable.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Process %1 failed to stop. [%2]</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Failed to start</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Crashed</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Timed out</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Write error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Read error</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Unknown error</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -39,14 +39,11 @@ public:
   /** Default constructor. */
   TorSettings();
   
-  /** Gets the path to Tor's executable. */
-  QString  getPath();
-  /** Sets the path to Tor's executable. */
-  void setPath(QString path);
-
-  /** Gets the name of Tor's executable. */
+  /** Gets the name and path of Tor's executable. */
   QString getExecutable();
- 
+  /** Sets the name and path of Tor's executable. */
+  void setExecutable(QString torExecutable);
+  
   /** Builds and formats a list of command-line arguments. */
   QString getArguments();
   

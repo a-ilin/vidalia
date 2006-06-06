@@ -57,6 +57,8 @@ public slots:
 private slots:
   /** Called when the user selects "Start" from the menu. */
   void start();
+  /** Called when the Tor process fails to start. */
+  void startFailed(QString errmsg);
   /** Called when the Tor process has successfully started. */
   void started();
   /** Called when the user selects "Stop" form the menu. */

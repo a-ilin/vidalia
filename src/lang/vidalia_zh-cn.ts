@@ -603,7 +603,7 @@ Upgrade to a newer version of Tor.</source>
     <name>GeneralPage</name>
     <message>
         <source>Tor Directory</source>
-        <translation>Tor目录</translation>
+        <translation type="obsolete">Tor目录</translation>
     </message>
     <message>
         <source>Path to Tor&apos;s executable</source>
@@ -640,6 +640,14 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <source>Select Path to Tor</source>
         <translation>选择Tor的路径</translation>
+    </message>
+    <message>
+        <source>Tor Executable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Executables (*.exe)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1006,7 +1014,7 @@ Error: </source>
     </message>
     <message>
         <source>Vidalia was unable to start Tor.</source>
-        <translation>Vidalia无法启动Tor。</translation>
+        <translation type="obsolete">Vidalia无法启动Tor。</translation>
     </message>
     <message>
         <source>OK</source>
@@ -1105,6 +1113,10 @@ Would you like to shutdown gracefully and give clients time to find a new server
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1848,7 +1860,7 @@ fingerprint.</source>
     <name>TorProcess</name>
     <message>
         <source>&quot;%1&quot; is not an executable.</source>
-        <translation>&quot;%1&quot;不是可执行程序。</translation>
+        <translation type="obsolete">&quot;%1&quot;不是可执行程序。</translation>
     </message>
     <message>
         <source>Process %1 failed to stop. [%2]</source>
@@ -1856,27 +1868,27 @@ fingerprint.</source>
     </message>
     <message>
         <source>Failed to start</source>
-        <translation>启动失败</translation>
+        <translation type="obsolete">启动失败</translation>
     </message>
     <message>
         <source>Crashed</source>
-        <translation>崩溃</translation>
+        <translation type="obsolete">崩溃</translation>
     </message>
     <message>
         <source>Timed out</source>
-        <translation>超时</translation>
+        <translation type="obsolete">超时</translation>
     </message>
     <message>
         <source>Write error</source>
-        <translation>写入出错</translation>
+        <translation type="obsolete">写入出错</translation>
     </message>
     <message>
         <source>Read error</source>
-        <translation>读取出错</translation>
+        <translation type="obsolete">读取出错</translation>
     </message>
     <message>
         <source>Unknown error</source>
-        <translation>未知的错误</translation>
+        <translation type="obsolete">未知的错误</translation>
     </message>
 </context>
 <context>

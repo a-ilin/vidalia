@@ -185,6 +185,10 @@
         <source>Hide Settings</source>
         <translation>Verstecke Einstellungen</translation>
     </message>
+    <message>
+        <source>Always On Top</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Circuit</name>
@@ -314,7 +318,7 @@ Protocol (Version %1 entdeckt). Installiere eine neuere Version von Tor.</transl
     <name>GeneralPage</name>
     <message>
         <source>Tor Directory</source>
-        <translation>Tor Directory</translation>
+        <translation type="obsolete">Tor Directory</translation>
     </message>
     <message>
         <source>Path to Tor&apos;s executable</source>
@@ -351,6 +355,14 @@ Protocol (Version %1 entdeckt). Installiere eine neuere Version von Tor.</transl
     <message>
         <source>Select Path to Tor</source>
         <translation>Wähle den Pfad zum Tor Verzeichnis</translation>
+    </message>
+    <message>
+        <source>Tor Executable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Executables (*.exe)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -652,7 +664,7 @@ Protocol (Version %1 entdeckt). Installiere eine neuere Version von Tor.</transl
     </message>
     <message>
         <source>Vidalia was unable to start Tor.</source>
-        <translation>Vidalia konnte Tor nicht starten.</translation>
+        <translation type="obsolete">Vidalia konnte Tor nicht starten.</translation>
     </message>
     <message>
         <source>Vidalia was unable to stop Tor.</source>
@@ -719,6 +731,10 @@ Please check the message log for indicators about what happened to Tor before it
 wurde.
 
 Überprüfen sie die Nachrichten Logdatei.</translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1129,6 +1145,10 @@ Verbindungen erscheinen.</translation>
         <source>Last Updated:</source>
         <translation>Letztes Update:</translation>
     </message>
+    <message>
+        <source>Location:</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>RouterListWidget</name>
@@ -1395,7 +1415,7 @@ angeben.</translation>
     <name>TorProcess</name>
     <message>
         <source>&quot;%1&quot; is not an executable.</source>
-        <translation>&quot;%1&quot; ist keine ausführbare Datei.</translation>
+        <translation type="obsolete">&quot;%1&quot; ist keine ausführbare Datei.</translation>
     </message>
     <message>
         <source>Process %1 failed to stop. [%2]</source>
@@ -1403,27 +1423,27 @@ angeben.</translation>
     </message>
     <message>
         <source>Failed to start</source>
-        <translation>Start fehlgeschlagen</translation>
+        <translation type="obsolete">Start fehlgeschlagen</translation>
     </message>
     <message>
         <source>Crashed</source>
-        <translation>Abgestürzt</translation>
+        <translation type="obsolete">Abgestürzt</translation>
     </message>
     <message>
         <source>Timed out</source>
-        <translation>Zeit abgelaufen</translation>
+        <translation type="obsolete">Zeit abgelaufen</translation>
     </message>
     <message>
         <source>Write error</source>
-        <translation>Schreibfehler</translation>
+        <translation type="obsolete">Schreibfehler</translation>
     </message>
     <message>
         <source>Read error</source>
-        <translation>Lesefehler</translation>
+        <translation type="obsolete">Lesefehler</translation>
     </message>
     <message>
         <source>Unknown error</source>
-        <translation>Unbekannter Fehler</translation>
+        <translation type="obsolete">Unbekannter Fehler</translation>
     </message>
 </context>
 <context>

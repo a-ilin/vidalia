@@ -67,28 +67,24 @@ TorControl::~TorControl()
 
 /** Start the Tor process. Returns true if the process was successfully
  * started, otherwise returns false. */
-bool
-TorControl::start(QString *errmsg)
+void
+TorControl::start()
 {
   TorSettings settings;
   _torProcess = new TorProcess;
   
   /* Plumb the process signals */
   QObject::connect(_torProcess, SIGNAL(started()),
-                   this, SLOT(onStarted()));
+                   this, SLOT(onStarted()), Qt::QueuedConnection);
   QObject::connect(_torProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
                    this, SLOT(onStopped(int, QProcess::ExitStatus)));
+  QObject::connect(_torProcess, SIGNAL(startFailed(QString)),
+                   this, SLOT(onStartFailed(QString)), Qt::QueuedConnection);
   QObject::connect(_torProcess, SIGNAL(log(QString, QString)),
                    this, SLOT(onLogStdout(QString, QString)));
-
-  /* Attempt to start the Tor process */
-  if (!_torProcess->start(settings.getExecutable(),
-                          settings.getArguments(), errmsg)) {
-    /* Disconnect the signals for this TorProcess, cleanup and return  */
-    closeTorProcess();
-    return false;
-  }
-  return true;
+  
+  /* Kick off the Tor process. */
+  _torProcess->start(settings.getExecutable(), settings.getArguments());
 }
 
 /** Emits a signal that the Tor process started */
@@ -96,6 +92,14 @@ void
 TorControl::onStarted()
 {
   emit started();
+}
+
+/** Emits a signal that the Tor process failed to start and includes an error
+ * message (hopefully) indicating why. */
+void
+TorControl::onStartFailed(QString errmsg)
+{
+  emit startFailed(errmsg);
 }
 
 /** Stop the Tor process. */

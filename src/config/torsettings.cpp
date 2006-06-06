@@ -29,27 +29,18 @@
 #include "torsettings.h"
 
 /* Tor Settings */
-#define SETTING_TOR_PATH       "Tor/TorPath"
-#define SETTING_TOR_ARGUMENTS  "Tor/Arguments"
-#define SETTING_CONTROL_ADDR   "Tor/ControlAddr"
-#define SETTING_CONTROL_PORT   "Tor/ControlPort"
-#define SETTING_AUTH_TOKEN     "Tor/AuthToken"
-
-/* Default Tor Location */
-#if defined(Q_OS_WIN32)
-#include <util/win32.h>
-#define DEFAULT_TOR_PATH       (win32_program_files_folder() + "\\Tor")
-#elif defined(Q_OS_MACX)
-#define DEFAULT_TOR_PATH       "/usr/bin"
-#else
-#define DEFAULT_TOR_PATH       "/usr/local/bin"
-#endif
+#define SETTING_TOR_EXECUTABLE  "Tor/TorExecutable"
+#define SETTING_TOR_ARGUMENTS   "Tor/Arguments"
+#define SETTING_CONTROL_ADDR    "Tor/ControlAddr"
+#define SETTING_CONTROL_PORT    "Tor/ControlPort"
+#define SETTING_AUTH_TOKEN      "Tor/AuthToken"
 
 /* On win32, we need to add the .exe onto Tor's filename */
-#ifdef Q_OS_WIN32
-#define TOR_EXECUTABLE    "tor.exe"
+#if defined(Q_OS_WIN32)
+#include <util/win32.h>
+#define DEFAULT_TOR_EXECUTABLE    (win32_program_files_folder() + "\\Tor\\tor.exe")
 #else
-#define TOR_EXECUTABLE    "tor"
+#define DEFAULT_TOR_EXECUTABLE    "tor"
 #endif
 
 /* Default Tor Settings */
@@ -73,30 +64,20 @@ TorSettings::TorSettings()
 {
 }
 
-/** Get the path to Tor's executable from Vidalia's configuration. If a path
-* hasn't been specified, then default to the current directory.
-*/
-QString
-TorSettings::getPath()
-{
-  return QDir::convertSeparators(value(SETTING_TOR_PATH,
-                                       DEFAULT_TOR_PATH).toString()); 
-}
-
-/** Set the path to Tor's executable */
-void
-TorSettings::setPath(QString path)
-{
-  setValue(SETTING_TOR_PATH, path);
-}
-
 /** Returns a fully-qualified path to Tor's executable, including the
  * executable name. */
 QString
 TorSettings::getExecutable()
 {
-  return QDir::convertSeparators(QFileInfo(getPath(), 
-                                           TOR_EXECUTABLE).absoluteFilePath());
+  return QDir::convertSeparators(value(SETTING_TOR_EXECUTABLE,
+                                       DEFAULT_TOR_EXECUTABLE).toString());
+}
+
+/** Sets the location and name of Tor's executable to the given string. */
+void
+TorSettings::setExecutable(QString torExecutable)
+{
+  setValue(SETTING_TOR_EXECUTABLE, torExecutable);
 }
 
 /** Returns a formatted QString of all currently set command-line arguments.
