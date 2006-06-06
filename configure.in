@@ -15,6 +15,9 @@ if test x$LRELEASE = x; then
   AC_MSG_ERROR([lrelease must be in your path])
 fi
 
+dnl Find chmod
+AC_PATH_PROG(CHMOD, chmod, chmod)
+
 dnl Determine whether we should link to the debug versions of Qt or not
 BUILDMODE="debug"
 AC_ARG_ENABLE(debug,
@@ -27,7 +30,7 @@ AC_MSG_NOTICE([Building in $BUILDMODE mode])
 dnl Clean out an existing Makefile
 AC_CHECK_FILE(Makefile, [rm Makefile])
 
-# Substitute the version number in places that need it
+dnl Substitute the version number in places that need it
 AC_SUBST(VERSION, AC_PACKAGE_VERSION)
 OSXBUNDLE="pkg/osx/bundle"
 AC_OUTPUT([$OSXBUNDLE/buildmpkg.sh            \
@@ -35,6 +38,11 @@ AC_OUTPUT([$OSXBUNDLE/buildmpkg.sh            \
            $OSXBUNDLE/VidaliaBundleInfo.plist \
            $OSXBUNDLE/VidaliaDesc.plist       \
            $OSXBUNDLE/VidaliaInfo.plist])
+
+dnl Make the mpkg script executable
+if test x$CHMOD != x; then
+  $CHMOD u+x pkg/osx/bundle/buildmpkg.sh
+fi
 
 dnl Build the translations
 AC_MSG_NOTICE([Processing language translations...])
