@@ -59,7 +59,7 @@ case "$1" in
 "osx")
   dmg=`dirname $(pwd) | sed -e "s/.*\///"`.dmg
   srcdir="../"
-  srcfiles="bin README AUTHORS LICENSE COPYING CHANGELOG"
+  srcfiles="Vidalia.app README AUTHORS LICENSE COPYING CHANGELOG"
   osx/builddmg.sh "$srcdir" "$srcfiles" "$dmg"
   ;;
 

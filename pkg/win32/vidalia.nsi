@@ -88,8 +88,8 @@ Section "${APPNAME} (required)" Vidalia
   
   ; Set output path to the installation directory.
   SetOutPath $INSTDIR    
-  File "..\..\bin\${APPEXEC}"
-  File "..\..\bin\mingwm10.dll"
+  File "..\..\${APPEXEC}"
+  File "..\..\mingwm10.dll"
   File "..\..\AUTHORS"
   File "..\..\CHANGELOG"
   File "..\..\LICENSE"

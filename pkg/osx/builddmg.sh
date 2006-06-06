@@ -57,8 +57,8 @@ dev_handle=`hdiutil info | grep "$mntdir" | grep "Apple_HFS" | awk '{print $1}'`
 # Copy over the specified files into the disk image
 for file in $filelist
 do
-  echo "Copying $srcdir/$file to $mntdir/"
-  ditto -rsrc "$srcdir/$file" "$mntdir/"
+  echo "Copying $srcdir/$file to $mntdir/$file"
+  ditto -rsrc "$srcdir/$file" "$mntdir/$file"
 done
 
 # Unmount the volumen
