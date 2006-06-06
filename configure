@@ -2914,5 +2914,5 @@ $LRELEASE $PROFILE
 
 { echo "$as_me:$LINENO: Running qmake..." >&5
 echo "$as_me: Running qmake..." >&6;}
-$QMAKE -config $BUILDMODE $PROFILE
+$QMAKE -config $BUILDMODE PREFIX=$prefix $PROFILE
 

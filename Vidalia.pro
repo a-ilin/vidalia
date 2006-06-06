@@ -21,7 +21,6 @@
 #  02110-1301, USA.
 #################################################################
 
-DESTDIR = bin
 OBJECTS_DIR = obj
 RCC_DIR = src/gen/qrc
 UI_DIR  = src/gen/ui
@@ -31,15 +30,20 @@ TEMPLATE = app
 CONFIG  += qt thread warn_on
 QT      += network xml
 
+isEmpty( PREFIX ) {
+    PREFIX = /usr/local
+}
+
 !macx {
   # On non-Mac, make the binary all lowercase
   TARGET = vidalia
 }
 unix {
   # Setup the `make install` target
-  target.path = /usr/local/bin
+  target.path = $${PREFIX}/bin
   INSTALLS += target
 }
+
 win32 {
   # Link against these libraries on Win32
   LIBS += -lshell32 -lgdi32

@@ -50,5 +50,5 @@ $LRELEASE $PROFILE
 
 dnl Run qmake to generate the Makefile
 AC_MSG_NOTICE([Running qmake...])
-$QMAKE -config $BUILDMODE $PROFILE
+$QMAKE -config $BUILDMODE PREFIX=$prefix $PROFILE
 
