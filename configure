@@ -1987,8 +1987,9 @@ fi
 
 VERSION=0.0.6-svn
 
+DOCS="doc"
 OSXBUNDLE="pkg/osx/bundle"
-                                                  ac_config_files="$ac_config_files $OSXBUNDLE/buildmpkg.sh $OSXBUNDLE/VidaliaBundleDesc.plist $OSXBUNDLE/VidaliaBundleInfo.plist $OSXBUNDLE/VidaliaDesc.plist $OSXBUNDLE/VidaliaInfo.plist"
+                                                            ac_config_files="$ac_config_files $DOCS/vidalia.1 $OSXBUNDLE/buildmpkg.sh $OSXBUNDLE/VidaliaBundleDesc.plist $OSXBUNDLE/VidaliaBundleInfo.plist $OSXBUNDLE/VidaliaDesc.plist $OSXBUNDLE/VidaliaInfo.plist"
 cat >confcache <<\_ACEOF
 # This file is a shell script that caches the results of configure
 # tests run on this system so they can be shared between configure
@@ -2539,6 +2540,7 @@ for ac_config_target in $ac_config_targets
 do
   case "$ac_config_target" in
   # Handling of arguments.
+  "$DOCS/vidalia.1" ) CONFIG_FILES="$CONFIG_FILES $DOCS/vidalia.1" ;;
   "$OSXBUNDLE/buildmpkg.sh" ) CONFIG_FILES="$CONFIG_FILES $OSXBUNDLE/buildmpkg.sh" ;;
   "$OSXBUNDLE/VidaliaBundleDesc.plist" ) CONFIG_FILES="$CONFIG_FILES $OSXBUNDLE/VidaliaBundleDesc.plist" ;;
   "$OSXBUNDLE/VidaliaBundleInfo.plist" ) CONFIG_FILES="$CONFIG_FILES $OSXBUNDLE/VidaliaBundleInfo.plist" ;;
@@ -2914,5 +2916,5 @@ $LRELEASE $PROFILE
 
 { echo "$as_me:$LINENO: Running qmake..." >&5
 echo "$as_me: Running qmake..." >&6;}
-$QMAKE -config $BUILDMODE PREFIX=$prefix $PROFILE
+$QMAKE -config $BUILDMODE PREFIX=$prefix MANDIR=$mandir $PROFILE
 

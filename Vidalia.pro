@@ -30,8 +30,11 @@ TEMPLATE = app
 CONFIG  += qt thread warn_on
 QT      += network xml
 
-isEmpty( PREFIX ) {
-    PREFIX = /usr/local
+isEmpty(PREFIX) {
+  PREFIX = /usr/local
+}
+isEmpty(MANDIR) {
+  MANDIR = $${PREFIX}/man
 }
 
 !macx {
@@ -41,9 +44,10 @@ isEmpty( PREFIX ) {
 unix {
   # Setup the `make install` target
   target.path = $${PREFIX}/bin
-  INSTALLS += target
+  man.files = $$PWD/doc/vidalia.1
+  man.path  = $${MANDIR}/man1
+ INSTALLS += target man
 }
-
 win32 {
   # Link against these libraries on Win32
   LIBS += -lshell32 -lgdi32

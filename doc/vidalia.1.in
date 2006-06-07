@@ -1,0 +1,45 @@
+.TH VIDALIA "1" "June 2006" "@VERSION@"
+
+.SH NAME
+vidalia \- Controller GUI for tor 
+
+.SH SYNOPSIS
+.B vidalia
+.RI [ options ]
+.br
+
+.SH DESCRIPTION
+Vidalia allows you to start and stop Tor, view the status of Tor at a
+glance, and monitor Tor's bandwidth usage. Vidalia also makes it easy to
+contribute to the Tor network by helping you setup a Tor server, if you wish.
+To find more information about what Tor is and how to use it, see the Tor
+homepage: http://tor.eff.org/index.html.
+.SH OPTIONS
+\fB\-help\fR
+Displays this usage message and exits.
+.TP
+\fB\-reset\fR
+Resets ALL stored Vidalia settings.
+.TP
+\fB\-datadir \fI<directory>\fR
+Sets Vidalia's datadir to \fI<directory>\fR
+.TP
+\fB\-style \fI<directory>\fR
+Sets Vidalia's interface style. [Windows|Motif|CDE|Plastique]
+.TP
+\fB\-lang \fI<langcode>\fR
+Sets Vidalia's language. [de|en|fi|zh-cn]
+
+.SH SEE ALSO
+.BR tor (1)
+
+.BR http://www.vidalia-project.net
+
+.SH AUTHORS
+Matt Edman <edmanm@vidalia-project.net>
+.br
+Justin Hipple <hipplej@vidalia-project.net>
+
+This manpage was written by Alexander Wirt <formorer@debian.org> for the
+Debian Distribution (but may be used by others).
+

@@ -32,8 +32,10 @@ AC_CHECK_FILE(Makefile, [rm Makefile])
 
 dnl Substitute the version number in places that need it
 AC_SUBST(VERSION, AC_PACKAGE_VERSION)
+DOCS="doc"
 OSXBUNDLE="pkg/osx/bundle"
-AC_OUTPUT([$OSXBUNDLE/buildmpkg.sh            \
+AC_OUTPUT([$DOCS/vidalia.1                    \
+           $OSXBUNDLE/buildmpkg.sh            \
            $OSXBUNDLE/VidaliaBundleDesc.plist \
            $OSXBUNDLE/VidaliaBundleInfo.plist \
            $OSXBUNDLE/VidaliaDesc.plist       \
@@ -50,5 +52,5 @@ $LRELEASE $PROFILE
 
 dnl Run qmake to generate the Makefile
 AC_MSG_NOTICE([Running qmake...])
-$QMAKE -config $BUILDMODE PREFIX=$prefix $PROFILE
+$QMAKE -config $BUILDMODE PREFIX=$prefix MANDIR=$mandir $PROFILE
 
