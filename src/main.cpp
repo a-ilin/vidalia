@@ -29,7 +29,22 @@
 #include <QObject>
 #include <vidalia.h>
 #include <gui/mainwindow.h>
+#include <gui/common/vmessagebox.h>
+#include <util/process.h>
 #include <util/string.h>
+
+
+/** Returns true if there is already another Vidalia process running. */
+bool
+is_vidalia_running(QString pidfile)
+{
+  /* Read the pidfile and find out if that process still exists */
+  qint64 pid = read_pidfile(pidfile);
+  if (pid > 0) {
+    return (is_process_running(pid));
+  }
+  return false;
+}
 
 /** Main application entry point. */
 int
@@ -54,6 +69,21 @@ main(int argc, char *argv[])
   }
 #endif
 
+  /* Check if Vidalia is already running. */
+  QString pidfile = vidalia.pidFile();
+  if (is_vidalia_running(pidfile)) {
+    /* Let the user know another Vidalia is running and we are going to exit
+     * now. */
+    VMessageBox::critical(0, 
+      QT_TRANSLATE_NOOP("Vidalia", "Vidalia is already running"),
+      QT_TRANSLATE_NOOP("Vidalia", 
+        "Another Vidalia process is already running. "
+        "This Vidalia process will now exit."),
+      VMessageBox::Ok);   
+    return 0;
+  }
+  write_pidfile(pidfile);
+
   /* Since we don't have a visible main window, if we were to display a
    * QMessageBox (for example, to display an error when starting or stopping
    * Tor) then the application would exit when that message box was closed.
@@ -68,6 +98,10 @@ main(int argc, char *argv[])
   QObject::connect(&vidalia, SIGNAL(shutdown()), &mainWin, SLOT(close()));
 
   /* Run Vidalia */
-  return vidalia.exec();
+  int ret = vidalia.exec();
+
+  /* Vidalia exited, so cleanup our pidfile and return */
+  QFile::remove(vidalia.pidFile());
+  return ret;
 }
 

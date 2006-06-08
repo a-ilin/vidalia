@@ -38,6 +38,7 @@
 #define ARG_RESET      "reset"   /**< Reset Vidalia's saved settings.  */
 #define ARG_HELP       "help"    /**< Display usage informatino.       */
 #define ARG_DATADIR    "datadir" /**< Directory to use for data files. */
+#define ARG_PIDFILE    "pidfile" /**< Location and name of our pidfile.*/
 
 /* Static member variables */
 QMap<QString, QString> Vidalia::_args; /**< List of command-line arguments.  */
@@ -117,6 +118,7 @@ Vidalia::printUsage(QString errmsg)
   out << "\t-"ARG_HELP"\t\tDisplays this usage message and exits."      << endl;
   out << "\t-"ARG_RESET"\t\tResets ALL stored Vidalia settings."        << endl;
   out << "\t-"ARG_DATADIR"\tSets the directory Vidalia uses for data files"<< endl;
+  out << "\t-"ARG_PIDFILE"\tSets the name and location of Vidalia's pidfile"<< endl;
   out << "\t-"ARG_GUISTYLE"\t\tSets Vidalia's interface style."         << endl;
   out << "\t\t\t[" << QStyleFactory::keys().join("|") << "]"            << endl;
   out << "\t-"ARG_LANGUAGE"\t\tSets Vidalia's language."                << endl;
@@ -129,7 +131,8 @@ Vidalia::argNeedsValue(QString argName)
 {
   return (argName == ARG_GUISTYLE ||
           argName == ARG_LANGUAGE ||
-          argName == ARG_DATADIR);
+          argName == ARG_DATADIR  ||
+          argName == ARG_PIDFILE);
 }
 
 /** Parses the list of command-line arguments for their argument names and
@@ -262,5 +265,15 @@ Vidalia::createDataDirectory(QString *errmsg)
     }
   }
   return true;
+}
+
+/** Returns the location of Vidalia's pid file. */
+QString
+Vidalia::pidFile()
+{
+  if (_args.contains(ARG_PIDFILE)) {
+    return _args.value(ARG_PIDFILE);
+  }
+  return QDir::convertSeparators(dataDirectory() + "/vidalia.pid");
 }
 

@@ -85,6 +85,9 @@ public:
   /** Creates Vidalia's data directory, if it doesn't already exist. */
   static bool createDataDirectory(QString *errmsg);
   
+  /** Returns the location of Vidalia's pid file. */
+  static QString pidFile();
+  
 signals:
   /** Signals that the application needs to shutdown now. */
   void shutdown();
