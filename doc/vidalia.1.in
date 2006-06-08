@@ -24,6 +24,9 @@ Resets ALL stored Vidalia settings.
 \fB\-datadir \fI<directory>\fR
 Sets Vidalia's datadir to \fI<directory>\fR
 .TP
+\fB\-pidfile \fI<directory/pidfile>\fR
+Sets Vidalia's pidfile to \fI<directory/pidfile>\fR
+.TP
 \fB\-style \fI<directory>\fR
 Sets Vidalia's interface style. [Windows|Motif|CDE|Plastique]
 .TP
