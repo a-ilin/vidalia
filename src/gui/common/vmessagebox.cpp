@@ -96,6 +96,23 @@ VMessageBox::buttonText(int btn)
   return text;
 }
 
+/** Displays a critical message box with the given caption, message text, and
+ * visible buttons. To specify a button as a default button or an escape
+ * button, OR the Button enum value with QMessageBox::Default or
+ * QMessageBox::Escape, respectively. */
+int
+VMessageBox::critical(QWidget *parent, QString caption, QString text,
+                      int button0, int button1, int button2)
+{
+  int ret = QMessageBox::critical(parent, caption, text,
+              VMessageBox::buttonText(button0), 
+              VMessageBox::buttonText(button1), 
+              VMessageBox::buttonText(button2),
+              VMessageBox::defaultButton(button0, button1, button2), 
+              VMessageBox::escapeButton(button0, button1, button2));
+  return VMessageBox::selected(ret, button0, button1, button2);
+}
+
 /** Displays an question message box with the given caption, message text, and
  * visible buttons. To specify a button as a default button or an escape
  * button, OR the Button enum value with QMessageBox::Default or
