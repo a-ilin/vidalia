@@ -1423,5 +1423,13 @@ fingerprint.</source>
         <source>Invalid GUI style specified: </source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Vidalia is already running</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Another Vidalia process is already running. This Vidalia process will now exit.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>
