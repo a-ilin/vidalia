@@ -24,7 +24,9 @@
  * \version $Id$
  */
 
-#if !defined(Q_OS_WIN32)
+#if defined(Q_OS_WIN)
+#include <windows.h>
+#else
 #include <unistd.h>
 #endif
 
@@ -40,7 +42,7 @@
 qint64
 get_pid()
 {
-#if defined(Q_OS_WIN32)
+#if defined(Q_OS_WIN)
   return (qint64)GetCurrentProcessId();
 #else
   return (qint64)getpid();
@@ -51,7 +53,7 @@ get_pid()
 bool
 is_process_running(qint64 pid)
 {
-#if defined(Q_OS_WIN32)
+#if defined(Q_OS_WIN)
   HANDLE process = OpenProcess(0, FALSE, (DWORD)pid);
   if (process == NULL) {
     return false;
