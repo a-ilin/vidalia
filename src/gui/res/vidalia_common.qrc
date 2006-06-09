@@ -72,6 +72,7 @@
         <file>flags/en.png</file>
         <file>flags/fi.png</file>
         <file>flags/de.png</file>
+        <file>flags/ru.png</file>
     </qresource>
     <qresource prefix="/images">
         <file>map/world-map.png</file>

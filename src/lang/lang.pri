@@ -28,7 +28,8 @@ SOURCES += $$PWD/languagesupport.cpp
 TRANSLATIONS += $$PWD/vidalia_en.ts \
                 $$PWD/vidalia_zh-cn.ts \
                 $$PWD/vidalia_fi.ts \
-                $$PWD/vidalia_de.ts
+                $$PWD/vidalia_de.ts \
+                $$PWD/vidalia_ru.ts
 
 RESOURCES += $$PWD/lang.qrc
 

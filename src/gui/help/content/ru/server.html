@@ -1,0 +1,160 @@
+<!--
+  $Id$
+  
+  Vidalia is distributed under the following license:
+
+  Copyright (C) 2006,  Matt Edman, Justin Hipple
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU General Public License
+  as published by the Free Software Foundation; either version 2
+  of the License, or (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  
+  02110-1301, USA.
+-->
+
+<html>
+<body>
+
+<h1>Running a Tor Server</h1>
+<hr />
+
+The Tor network is made up of volunteers all over the world who donate some of
+their spare bandwidth by running a server. Vidalia helps you do your part by
+making it easy to set up a server of your own.
+
+<a name="basic"/>
+<h3>Basic Setup</h3>
+<p>
+If you decide you want to help the Tor network grow by running a server, you
+can follow these steps to get started:
+</p>
+<ol>
+  <li>
+    Open the <i>Configuration Dialog</i> by selecting <i>Configure</i> from
+    the tray menu or <i>Preferences</i> from your system menubar on Macintosh
+    systems.
+  </li>
+  <li>Select the <i>Server</i> configuration page.</li>
+  <li>Check the box labeled <i>Relay traffic for the Tor network</i>.
+  <li>Enter the following information:
+    <ul>
+      <li><b>Nickname</b>:
+        The name which your server will be known as on the Tor network. An
+        example of a server nickname is "myVidaliaServer".
+      </li>
+      <li><b>Contact Info</b>:
+        Your e-mail address. This address will only be used to
+        contact you in case there is an important Tor security update or
+        something goes wrong with your server. You might also include your PGP
+        or GPG key ID and fingerprint.
+      </li>
+      <li><b>Server Port</b>:
+        The port on which your server will listen for traffic from clients or
+        other Tor servers.
+      </li>
+      <li><b>Address</b>:
+        Enter an address at which your computer can be reached by other Tor
+        servers on the Internet. If you don't know your public IP address, you
+        can click on <i>Get Address</i> and Vidalia will contact an external
+        site (e.g., <i>http://www.vidalia-project.net/iptest/ip.php</i>) to
+        find out what it thinks your public IP address is.
+      </li>
+    </ul>
+  <li>
+    If you would like to mirror Tor's directory of servers for others on the
+    network you can check the box labeled <i>Mirror the server directory</i>.
+    If you do not have much bandwidth, leave this box unchecked. If you do
+    decide to mirror the server directory, make sure the <i>Port</i> is
+    different than the <i>Server port</i> you entered above.
+  </li>
+  <li>
+    Traffic exiting the Tor network from your router appears to come from your
+    IP address. If you do not want this, then check the box labeled <i>Only
+    relay traffic between other Tor servers</i> to act as a <i>middle-man</i>
+    node.
+  </li>
+</ol>
+
+<a name="exitpolicy"/>
+<h3>Exit Policies</h3>
+<p>
+Exit policies give you a way to specify what sort of traffic you are willing
+to allow exit from your Tor server. Tor uses a default list of exit policies
+that restrict services such as mail to prevent spam, or some default file
+sharing ports to reduce abuse of the Tor network. <i>Note:</i> If you are
+a <i>middle-man</i> server, you don't have to worry about exit policies; no
+traffic is allowed to exit from your server at all.
+</p>
+
+<p>
+An exit policy is made up of zero or more lines, each one representing an
+action to be taken if a connection leaving the Tor network from your
+server matches the address or port specified in the policy. 
+</p>
+
+<p>
+Policies are considered by Tor from first to last and Tor takes the action
+associated with the first match it finds. Any policies you add will be added to
+the beginning of Tor's list of default exit policies. Since policies are
+considered from first to last, ordering is important. You can use the buttons
+with the Up Arrow and the Down Arrow icons to reorder your list of policies.
+</p>
+
+<h4>Action</h4>
+<p>
+Each line in an exit policy has an action associated with it. The actions are:
+<ul>
+  <li><b>reject</b>: Connections matching this policy will be <i>rejected</i>.</li>
+  <li><b>accept</b>: Connections matching this policy will be <i>accepted</i>.</li>
+</ul>
+</p>
+
+<h4>Address</h4>
+<p>
+Addresses in a policy can be either an IP address (e.g., <i>123.45.67.8</i>), 
+an IP address and mask (e.g., <i>123.45.0.0/16</i>), or a "*". If a "*" is 
+specified, it means "match all addresses."
+</p>
+
+<h4>Ports</h4>
+<p>
+Each policy has a port or a range of ports associated with it. Valid port 
+numbers range from 1 to 65535, or you can specify a "*" to indicate "all ports".
+</p>
+
+<h4>Examples</h4>
+<p>
+Here are a few examples of valid exit policy lines and a description of what
+they do:
+<ul>
+  <li><b>reject 123.45.67.8:*</b> - 
+    Tor will <i>reject</i> all connections from Tor clients that want to connect 
+    from your server to any port at <i>123.45.67.8</i>.
+  </li>
+  <li><b>accept *:80</b> -
+    Tor will <i>accept</i> connections from Tor clients that want to connect 
+    from your server to port 80 at any IP address.
+  </li>
+  <li><b>reject *:135-139</b> -
+    Tor will <i>reject</i> connections from Tor clients that want to connect 
+    from your server to ports 135 to 139 at any IP address.
+  </li>
+  <li><b>reject 128.23.0.0/16:*</b> -
+    Tor will <i>reject</i> connections from Tor clients that want to connect 
+    from your server to any port at any address from <i>128.23.0.0</i> to 
+    <i>128.23.255.255</i>.
+  </li>
+</ul>
+</p>
+
+</html>
+

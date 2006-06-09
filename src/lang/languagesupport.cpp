@@ -40,7 +40,10 @@ LanguageSupport::initialize()
   _languages.insert("en",    "English");
   _languages.insert("de",    "Deutsch");
   _languages.insert("fi",    "suomi");
-  _languages.insert("zh-cn", QString::fromUtf8("\347\256\200\344\275\223\345\255\227"));
+  _languages.insert("ru",
+    QString::fromUtf8("\320\240\320\276\321\201\321\201\320\270\321\217"));
+  _languages.insert("zh-cn", 
+    QString::fromUtf8("\347\256\200\344\275\223\345\255\227"));
 }
 
 /** Returns the default language code for the system locale. */

@@ -36,6 +36,15 @@
     <file>de/server.html</file>
     <file>de/troubleshooting.html</file>
     <file>de/netview.html</file>
+    <!-- Russian -->
+    <file>ru/contents.xml</file>
+    <file>ru/index.html</file>
+    <file>ru/running.html</file>
+    <file>ru/log.html</file>
+    <file>ru/config.html</file>
+    <file>ru/server.html</file>
+    <file>ru/troubleshooting.html</file>
+    <file>ru/netview.html</file>
   </qresource>
 </RCC>
 
