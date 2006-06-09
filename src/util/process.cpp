@@ -1,10 +1,34 @@
+/****************************************************************
+ *  Vidalia is distributed under the following license:
+ *
+ *  Copyright (C) 2006,  Matt Edman, Justin Hipple
+ *
+ *  This program is free software; you can redistribute it and/or
+ *  modify it under the terms of the GNU General Public License
+ *  as published by the Free Software Foundation; either version 2
+ *  of the License, or (at your option) any later version.
+ *
+ *  This program is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU General Public License for more details.
+ *
+ *  You should have received a copy of the GNU General Public License
+ *  along with this program; if not, write to the Free Software
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ *  Boston, MA  02110-1301, USA.
+ ****************************************************************/
 
-#if defined(Q_OS_WIN32)
-#include <windows.h>
-#else
+/**
+ * \file process.cpp
+ * \version $Id$
+ */
+
+#if !defined(Q_OS_WIN32)
 #include <unistd.h>
 #endif
 
+#include <QDir>
 #include <QFile>
 #include <QTextStream>
 
@@ -43,7 +67,13 @@ is_process_running(qint64 pid)
 bool
 write_pidfile(QString pidFileName, QString *errmsg)
 {
-  /* Try to open the pidfile */
+  /* Make sure the directory exists */
+  QDir pidFileDir = QFileInfo(pidFileName).absoluteDir();
+  if (!pidFileDir.exists()) {
+    pidFileDir.mkpath(QDir::convertSeparators(pidFileDir.absolutePath()));
+  }
+
+  /* Try to open (and create if it doesn't exist) the pidfile */
   QFile pidfile(pidFileName);
   if (!pidfile.open(QIODevice::WriteOnly | QIODevice::Text)) {
     return err(errmsg, pidfile.errorString());
