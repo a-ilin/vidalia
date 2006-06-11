@@ -48,11 +48,11 @@ TorProcess::TorProcess()
 }
 
 /** Attempts to start the Tor process using the location, executable, and
- * command-line arguments specified in Vidalia's settings. If Tor doesn't
- * exist at the given path, <b>errmsg</b> will be set appropriately and the
- * function will return false. */
+ * command-line arguments specified in Vidalia's settings. If Tor starts, the
+ * signal started() will be emitted. If Tor fails to start,
+ * startFailed(errmsg) will be emitted, with an appropriate error message. */
 void
-TorProcess::start(QString app, QString args, QString *errmsg) 
+TorProcess::start(QString app, QString args) 
 {
 #if defined(Q_OS_WIN32)
   /* If we're on Windows, QProcess::start requires that paths with spaces are

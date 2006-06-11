@@ -43,7 +43,7 @@ public:
   TorProcess();
 
   /** Start the Tor process */
-  void start(QString app, QString args, QString *errmsg = 0);
+  void start(QString app, QString args);
   /** Stop the Tor process */
   bool stop(QString *errmsg = 0);
 
