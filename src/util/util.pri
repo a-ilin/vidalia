@@ -32,14 +32,17 @@ SOURCES += $$PWD/net.cpp \
            $$PWD/http.cpp \
            $$PWD/string.cpp \
            $$PWD/torsocket.cpp \
-           $$PWD/html.cpp \
-           $$PWD/process.cpp
+           $$PWD/html.cpp
+unix : {
+    SOURCES += $$PWD/process_nix.cpp
+}
 
 win32 {
     HEADERS += $$PWD/registry.h \
                $$PWD/win32.h
     SOURCES += $$PWD/registry.cpp \
-               $$PWD/win32.cpp
+               $$PWD/win32.cpp \
+               $$PWD/process_win.cpp
 }
 
 include($$PWD/geoip/geoip.pri)
