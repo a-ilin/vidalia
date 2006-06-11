@@ -20,11 +20,9 @@
  ****************************************************************/
 
 /**
- * \file process_win.cpp
- * \version $Id$
+ * \file process.cpp
+ * \version $Id: process.cpp 995 2006-06-09 12:24:39Z edmanm $
  */
-
-#include <windows.h>
 
 #include <QDir>
 #include <QFile>
@@ -38,19 +36,27 @@
 qint64
 get_pid()
 {
+#if defined(Q_OS_WIN)
   return (qint64)GetCurrentProcessId();
+#else
+  return (qint64)getpid();
+#endif
 }
 
 /** Returns true if a process with the given PID is running. */
 bool
 is_process_running(qint64 pid)
 {
-  HANDLE process = OpenProcess(0, FALSE, (DWORD)pid);
+#if defined(Q_OS_WIN)
+  HANDLE process = OpenProcess(PROCESS_QUERY_INFORMATION, FALSE, (DWORD)pid);
   if (process == NULL) {
     return false;
   }
   CloseHandle(process);
   return true;
+#else
+  return (getsid((pid_t)pid) != -1);
+#endif
 }
 
 /** Writes the given file to disk containing the current process's PID. */

@@ -29,6 +29,13 @@
 
 #include <QString>
 
+#if defined(Q_OS_WIN)
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+#else
+#include <unistd.h>
+#endif
+
 
 /** Returns the PID of the current process. */
 qint64 get_pid();
