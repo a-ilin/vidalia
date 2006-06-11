@@ -75,10 +75,12 @@ main(int argc, char *argv[])
     /* Let the user know another Vidalia is running and we are going to exit
      * now. */
     VMessageBox::critical(0, 
-      QT_TRANSLATE_NOOP("Vidalia", "Vidalia is already running"),
-      QT_TRANSLATE_NOOP("Vidalia", 
-        "Another Vidalia process is already running. "
-        "This Vidalia process will now exit."),
+      qApp->translate("Vidalia",
+        QT_TRANSLATE_NOOP("Vidalia", "Vidalia is already running")),
+      qApp->translate("Vidalia",
+        QT_TRANSLATE_NOOP("Vidalia", 
+          "Another Vidalia process is already running. "
+          "This Vidalia process will now exit.")),
       VMessageBox::Ok);   
     return 0;
   }
