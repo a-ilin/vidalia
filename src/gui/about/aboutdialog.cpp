@@ -33,10 +33,6 @@ AboutDialog::AboutDialog(QWidget *parent)
 {
   ui.setupUi(this);
 
-  /* Save the dialog's size limits */
-  _minSize = minimumSize();
-  _maxSize = maximumSize();
-
   /* Save the TorControl object to use later */
   _torControl = Vidalia::torControl();
 
@@ -48,21 +44,6 @@ AboutDialog::AboutDialog(QWidget *parent)
 
   /* Load the brief licensing information and hide it initally */
   loadLicense();
-  showLicense(false);
- 
-  /* Connect the few signals we'll need */
-  connect(ui.btnLicense, SIGNAL(toggled(bool)),
-          this, SLOT(showLicense(bool)));
-  connect(ui.btnOK, SIGNAL(clicked()),
-          this, SLOT(hide()));
-}
-
-/** Hides the licensing information and then hides the About dialog. */
-void
-AboutDialog::hide()
-{
-  showLicense(false);
-  QWidget::hide();
 }
 
 /** Loads the license information */
@@ -73,22 +54,6 @@ AboutDialog::loadLicense()
   licenseFile.open(QFile::ReadOnly);
   ui.txtLicense->setPlainText(licenseFile.readAll());
   licenseFile.close();
-}
-
-/** Displays the licensing information */
-void
-AboutDialog::showLicense(bool show)
-{
-  ui.frmLicense->setVisible(show);
-  if (show) {
-    resize(_maxSize);
-    ui.btnLicense->setChecked(true);
-    ui.btnLicense->setText(tr("Hide License"));
-  } else {
-    resize(_minSize);
-    ui.btnLicense->setChecked(false);
-    ui.btnLicense->setText(tr("View License"));
-  }
 }
 
 /** Displays the About dialog window **/
@@ -109,14 +74,3 @@ AboutDialog::show()
     QDialog::raise();
   }
 }
-
-/** Resizes the dialog to the given size and sets the minimum and maximum size
- * of the dialog to the given size. */
-void
-AboutDialog::resize(QSize size)
-{
-  setMinimumSize(size);
-  setMaximumSize(size);
-  QWidget::resize(size);
-}
-
