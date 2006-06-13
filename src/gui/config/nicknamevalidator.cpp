@@ -24,6 +24,7 @@
  * \version $Id$
  */
 
+#include <util/string.h>
 #include "nicknamevalidator.h"
 
 /** Set of characters that are valid in a server's nickname. */
@@ -42,15 +43,12 @@ NicknameValidator::NicknameValidator(QObject *parent)
 QValidator::State
 NicknameValidator::validate(QString &input, int &pos) const
 {
-  int length = input.length();
-  
-  /* Make sure the input only contains valid characters. */
-  QString validChars = VALID_NICKNAME_CHARS;  
-  for (int i = 0; i < pos && i < length; i++) {
-    if (validChars.indexOf(input.at(i)) < 0) {
-      return QValidator::Invalid;
-    }
-  }
-  return QValidator::Acceptable;
+  Q_UNUSED(pos);
+
+  /* Make sure the input only contains valid characters. If any characters
+   * were removed, then we know the input contained invalid characters. */
+  QString validString = ensure_valid_chars(input, VALID_NICKNAME_CHARS);
+  return (validString.length() == input.length() ? QValidator::Acceptable
+                                                 : QValidator::Invalid);
 }
 
