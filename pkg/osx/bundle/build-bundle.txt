@@ -12,6 +12,10 @@ Libevent
 
    You will need to be root to `make install`
 
+  NOTE: If you have previously installed a Libevent that was not configured with
+  the options above, you must remove those before building Tor, otherwise Tor
+  will link to the wrong Libevent.
+
 
 Qt
 4. Download and extract the open source version of Qt 4.1 or higher from 
