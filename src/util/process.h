@@ -34,6 +34,7 @@
 #include <windows.h>
 #else
 #include <unistd.h>
+#include <errno.h>
 #endif
 
 

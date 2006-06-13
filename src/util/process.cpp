@@ -48,6 +48,7 @@ bool
 is_process_running(qint64 pid)
 {
 #if defined(Q_OS_WIN)
+  /* Try to open the process to see if it exists */
   HANDLE process = OpenProcess(PROCESS_QUERY_INFORMATION, FALSE, (DWORD)pid);
   if (process == NULL) {
     return false;
@@ -55,7 +56,11 @@ is_process_running(qint64 pid)
   CloseHandle(process);
   return true;
 #else
-  return (getsid((pid_t)pid) != -1);
+  /* Send the "null" signal to check if a process exists */
+  if (kill((pid_t)pid, 0) < 0) {
+    return (errno == ESRCH);
+  }
+  return true;
 #endif
 }
 
