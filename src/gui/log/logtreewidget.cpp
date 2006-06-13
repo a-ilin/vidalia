@@ -88,6 +88,8 @@ LogTreeWidget::showEvent(QShowEvent *event)
   if (!shown) {
     /* Set the default column widths the first time this is shown */
     ((LogHeaderView *)header())->resetColumnWidths();
+    /* Adjust the message column properly */
+    adjustMessageColumn();
     shown = true;
   }
 }
