@@ -760,7 +760,7 @@ fingerprint.</string>
              <property name="minimumSize" >
               <size>
                <width>71</width>
-               <height>27</height>
+               <height>0</height>
               </size>
              </property>
              <property name="maximumSize" >
@@ -817,7 +817,7 @@ fingerprint.</string>
              <property name="minimumSize" >
               <size>
                <width>71</width>
-               <height>27</height>
+               <height>0</height>
               </size>
              </property>
              <property name="maximumSize" >
