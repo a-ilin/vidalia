@@ -23,8 +23,12 @@
  * \file advancedpage.cpp
  * \version $Id$
  */
- 
+
+#include <QFile>
+#include <QFileInfo>
+#include <gui/common/vmessagebox.h>
 #include "advancedpage.h"
+
 
 /** Constructor */
 AdvancedPage::AdvancedPage(QWidget *parent)
@@ -77,11 +81,43 @@ AdvancedPage::load()
 void
 AdvancedPage::browseTorConfig()
 {
-  QString filename = QDir::convertSeparators(
-                       QFileDialog::getOpenFileName(this,
-                         tr("Select Tor Configuration File")));
-  if (!filename.isEmpty()) {
-    ui.lineTorConfig->setText(filename);
+  /* Create a new input dialog, which allows users to create files, too */
+  QFileDialog *dialog = new QFileDialog(this, tr("Select Tor Configuration File"));
+  dialog->setDirectory(QFileInfo(ui.lineTorConfig->text()).absoluteDir());
+  dialog->selectFile(QFileInfo(ui.lineTorConfig->text()).fileName());
+  dialog->setFileMode(QFileDialog::AnyFile);
+  dialog->setReadOnly(false);
+
+  /* Prompt the user to select a file or create a new one */
+  if (!dialog->exec() || dialog->selectedFiles().isEmpty()) {
+    return;
   }
+  QString filename = QDir::convertSeparators(dialog->selectedFiles().at(0));
+ 
+  /* Check if the file exists */
+  QFile torrcFile(filename);
+  if (!QFileInfo(filename).exists()) {
+    /* The given file does not exist. Should we create it? */
+    int response = VMessageBox::question(this,
+                     tr("File Not Found"),
+                     tr("%1 does not exist. Would you like to create it?")
+                                                            .arg(filename),
+                     VMessageBox::Yes, VMessageBox::No);
+    
+    if (response == VMessageBox::No) {
+      /* Don't create it. Just bail. */
+      return;
+    }
+    /* Attempt to create the specified file */
+    if (!torrcFile.open(QIODevice::WriteOnly)) {
+      VMessageBox::warning(this,
+        tr("Failed to Create File"),
+        tr("Unable to create %1 [%2]").arg(filename)
+                                      .arg(torrcFile.errorString()),
+        VMessageBox::Ok);
+      return;
+    }
+  }
+  ui.lineTorConfig->setText(filename);
 }
 
