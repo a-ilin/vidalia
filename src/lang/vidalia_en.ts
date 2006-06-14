@@ -13,14 +13,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>View License</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>OK</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Vidalia</source>
         <translation type="unfinished"></translation>
     </message>
@@ -42,10 +34,6 @@
     </message>
     <message>
         <source>Vidalia Version</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Hide License</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -105,6 +93,22 @@
     </message>
     <message>
         <source>Select Tor Configuration File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File Not Found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 does not exist. Would you like to create it?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to Create File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to create %1 [%2]</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1333,6 +1337,34 @@ Would you like to access an external service to determine your public IP address
         <source>Email address at which you may be reached if there is a
 problem with your server. You might also include your PGP or GPG
 fingerprint.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Bandwidth Rate Limits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Long-term average bandwidth limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Average Rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KB/s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Peak bandwidth rate limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maximum Rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show help topic on bandwidth rate limits</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

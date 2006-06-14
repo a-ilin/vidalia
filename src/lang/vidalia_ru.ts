@@ -1,4 +1,4 @@
-﻿<!DOCTYPE TS><TS>
+<!DOCTYPE TS><TS>
 <context>
     <name></name>
     <message>
@@ -14,11 +14,11 @@
     </message>
     <message>
         <source>View License</source>
-        <translation>Показать лицензию</translation>
+        <translation type="obsolete">Показать лицензию</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation>ОК</translation>
+        <translation type="obsolete">ОК</translation>
     </message>
     <message>
         <source>Vidalia</source>
@@ -46,7 +46,7 @@
     </message>
     <message>
         <source>Hide License</source>
-        <translation>Скрыть лицензию</translation>
+        <translation type="obsolete">Скрыть лицензию</translation>
     </message>
     <message>
         <source>&lt;Not Running&gt;</source>
@@ -106,6 +106,22 @@
     <message>
         <source>Select Tor Configuration File</source>
         <translation>Выберите файл настроек Tor</translation>
+    </message>
+    <message>
+        <source>File Not Found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 does not exist. Would you like to create it?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to Create File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to create %1 [%2]</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1354,6 +1370,34 @@ fingerprint.</source>
 проблем с вашим сервером. Вы можете также указать отпечаток вашего
 PGP или GPG ключа.</translation>
     </message>
+    <message>
+        <source>Bandwidth Rate Limits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Long-term average bandwidth limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Average Rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KB/s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Peak bandwidth rate limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maximum Rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show help topic on bandwidth rate limits</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Stream</name>
@@ -1441,6 +1485,14 @@ PGP или GPG ключа.</translation>
     <message>
         <source>Invalid GUI style specified: </source>
         <translation>Указан неверный стиль интерфейса: </translation>
+    </message>
+    <message>
+        <source>Vidalia is already running</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Another Vidalia process is already running. This Vidalia process will now exit.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
