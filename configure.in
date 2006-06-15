@@ -50,7 +50,11 @@ dnl Build the translations
 AC_MSG_NOTICE([Processing language translations...])
 $LRELEASE $PROFILE
 
+dnl Make sure ${prefix} (which can be contained in $mandir) is evaluted 
+dnl before passing it to qmake
+MANPAGEDIR=`eval echo $mandir`
+
 dnl Run qmake to generate the Makefile
 AC_MSG_NOTICE([Running qmake...])
-$QMAKE -config $BUILDMODE PREFIX=$prefix MANDIR=$mandir $PROFILE
+$QMAKE -config $BUILDMODE PREFIX=$prefix MANDIR=$MANPAGEDIR $PROFILE
 
