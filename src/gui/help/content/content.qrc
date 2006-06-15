@@ -9,6 +9,7 @@
     <file>en/server.html</file>
     <file>en/troubleshooting.html</file>
     <file>en/netview.html</file>
+    <file>en/links.html</file>
     <!-- Simplified Chinese -->
     <file>zh-cn/contents.xml</file>
     <file>zh-cn/index.html</file>
@@ -18,6 +19,7 @@
     <file>zh-cn/server.html</file>
     <file>zh-cn/troubleshooting.html</file>
     <file>zh-cn/netview.html</file>
+    <file>zh-cn/links.html</file>
     <!-- Finnish -->
     <file>fi/contents.xml</file>
     <file>fi/index.html</file>
@@ -27,6 +29,7 @@
     <file>fi/server.html</file>
     <file>fi/troubleshooting.html</file>
     <file>fi/netview.html</file>
+    <file>fi/links.html</file>
     <!-- German -->
     <file>de/contents.xml</file>
     <file>de/index.html</file>
@@ -36,6 +39,7 @@
     <file>de/server.html</file>
     <file>de/troubleshooting.html</file>
     <file>de/netview.html</file>
+    <file>de/links.html</file>
     <!-- Russian -->
     <file>ru/contents.xml</file>
     <file>ru/index.html</file>
@@ -45,6 +49,7 @@
     <file>ru/server.html</file>
     <file>ru/troubleshooting.html</file>
     <file>ru/netview.html</file>
+    <file>ru/links.html</file>
   </qresource>
 </RCC>
 

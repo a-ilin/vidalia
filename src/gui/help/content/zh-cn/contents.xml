@@ -52,5 +52,6 @@
     <Topic id="torexited" name="Tor exited unexpectedly" html="troubleshooting.html" section="torexited"/>
     <Topic id="stop" name="Vidalia Can't Stop Tor" html="troubleshooting.html" section="stop"/>
  </Topic>
+ <Topic id="links" name="Helpful Links" html="links.html"/>
 </Contents>
 
