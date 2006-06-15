@@ -80,6 +80,10 @@ public:
   /** Adjusts the message column, for long messages. */
   void adjustMessageColumn();
 
+public slots:
+  /** Clears all contents on the message log and resets the counter. */
+  void clear();
+
 protected:
   /** Sets the default, initial column header widths. */
   void showEvent(QShowEvent *event);

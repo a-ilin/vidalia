@@ -94,6 +94,18 @@ LogTreeWidget::showEvent(QShowEvent *event)
   }
 }
 
+/** Clears all items from the message log and resets the counter in the status
+ * bar. */
+void
+LogTreeWidget::clear()
+{
+  /* Clear the messages */
+  QTreeWidget::clear();
+  /* This should always be 0, but just in case clear() doesn't really remove
+   * all, we'll get the current count again. */
+  setStatusTip(tr("Messages Shown: %1").arg(itemCount()));
+}
+
 /** Adjusts the message column width to accomodate long messages. */
 void
 LogTreeWidget::adjustMessageColumn()
