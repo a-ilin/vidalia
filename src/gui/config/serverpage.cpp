@@ -46,8 +46,13 @@
 /** Delay between updating our server IP address (in ms). */
 #define AUTO_UPDATE_ADDR_INTERVAL  1000*60*60
 
-/* Help topics */
+/** Help topics */
 #define EXIT_HELP     "server.exitpolicy"
+/** Minimum allowed bandwidth rate */
+#define MIN_RATE      20
+/** Maximum bandwidth rate. This is limited to 2147483646 bytes 
+ * or 2097151 kilobytes. (2147483646/1024) */
+#define MAX_RATE      2097151
 
 
 /** Constructor */
@@ -76,7 +81,11 @@ ServerPage::ServerPage(QWidget *parent)
   connect(ui.btnLowerPriority, SIGNAL(clicked()), this, SLOT(lowerPriority()));
   connect(ui.btnGetAddress, SIGNAL(clicked()), this, SLOT(getServerAddress()));
   connect(ui.btnExitHelp, SIGNAL(clicked()), this, SLOT(exitHelp()));
-  
+  connect(ui.lineAvgRateLimit, SIGNAL(editingFinished()), 
+                         this, SLOT(rateChanged()));
+  connect(ui.lineMaxRateLimit, SIGNAL(editingFinished()), 
+                         this, SLOT(rateChanged()));
+
   /* Set validators for address, mask and various port number fields */
   ui.lineServerNickname->setValidator(new NicknameValidator(this));
   ui.lineServerAddress->setValidator(new DomainValidator(this));
@@ -86,6 +95,8 @@ ServerPage::ServerPage(QWidget *parent)
   ui.lineExitMask->setValidator(new QIntValidator(0, 32, this));
   ui.lineExitFromPort->setValidator(new PortValidator(this));
   ui.lineExitToPort->setValidator(new PortValidator(this));
+  ui.lineAvgRateLimit->setValidator(new QIntValidator(MIN_RATE, MAX_RATE, this));
+  ui.lineMaxRateLimit->setValidator(new QIntValidator(MIN_RATE, MAX_RATE, this));
 }
 
 /** Destructor */
@@ -109,11 +120,23 @@ ServerPage::setAutoUpdateTimer(bool enabled)
 bool
 ServerPage::save(QString &errmsg)
 {
-  if (ui.chkEnableServer->isChecked() &&
-      (ui.lineServerPort->text().isEmpty() ||
-       ui.lineServerNickname->text().isEmpty())) {
-    errmsg = tr("You must specify at least a server nickname and port.");
-    return false;
+  /* Force the bandwidth rate limits to validate */
+  rateChanged();
+  
+  if (ui.chkEnableServer->isChecked()) {
+    /* A server must have an ORPort and a nickname */
+    if (ui.lineServerPort->text().isEmpty() ||
+        ui.lineServerNickname->text().isEmpty()) {
+      errmsg = tr("You must specify at least a server nickname and port.");
+      return false;
+    }
+    /* If the bandwidth rates aren't set, use some defaults before saving */
+    if (ui.lineAvgRateLimit->text().isEmpty()) {
+      ui.lineAvgRateLimit->setText("2048");
+    }
+    if (ui.lineMaxRateLimit->text().isEmpty()) {
+      ui.lineMaxRateLimit->setText("5120");
+    }
   }
   _settings->setServerEnabled(ui.chkEnableServer->isChecked());
   _settings->setDirectoryMirror(ui.chkMirrorDirectory->isChecked());
@@ -124,6 +147,8 @@ ServerPage::save(QString &errmsg)
   _settings->setDirPort(ui.lineDirPort->text().toUInt());
   _settings->setAddress(ui.lineServerAddress->text());
   _settings->setContactInfo(ui.lineServerContact->text());
+  _settings->setBandwidthAvgRate(ui.lineAvgRateLimit->text().toUInt());
+  _settings->setBandwidthBurstRate(ui.lineMaxRateLimit->text().toUInt());
   setAutoUpdateTimer(ui.chkAutoUpdate->isChecked());
 
   /* Save exit polices */
@@ -155,6 +180,8 @@ ServerPage::load()
   ui.lineDirPort->setText(QString::number(_settings->getDirPort()));
   ui.lineServerAddress->setText(_settings->getAddress());
   ui.lineServerContact->setText(_settings->getContactInfo());
+  ui.lineAvgRateLimit->setText(QString::number(_settings->getBandwidthAvgRate()));
+  ui.lineMaxRateLimit->setText(QString::number(_settings->getBandwidthBurstRate()));
   
   /* Load the exit policies into the list */
   ui.lstExitPolicies->clear();
@@ -359,6 +386,31 @@ ServerPage::updateServerIP()
     if (_torControl->isConnected()) {
       _settings->apply();
     }
+  }
+}
+
+/** Called when the user edits the long-term average or maximum bandwidth limit. 
+ * This ensures that the average bandwidth rate is greater than MIN_RATE
+ * (20KB/s) and that the max rate is greater than the average rate. */
+void
+ServerPage::rateChanged()
+{
+  /* Make sure the average rate isn't too low or too high */
+  quint32 avgRate = (quint32)ui.lineAvgRateLimit->text().toUInt();
+  if (avgRate < MIN_RATE) {
+    ui.lineAvgRateLimit->setText(QString::number(MIN_RATE));    
+  }
+  if (avgRate > MAX_RATE) {
+    ui.lineAvgRateLimit->setText(QString::number(MAX_RATE));
+  }
+  /* Ensure the max burst rate is greater than the average rate but less than
+   * the maximum allowed rate. */
+  quint32 burstRate = (quint32)ui.lineMaxRateLimit->text().toUInt();
+  if (avgRate > burstRate) {
+    ui.lineMaxRateLimit->setText(QString::number(burstRate));
+  }
+  if (burstRate > MAX_RATE) {
+    ui.lineMaxRateLimit->setText(QString::number(MAX_RATE));
   }
 }
 

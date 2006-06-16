@@ -91,6 +91,16 @@ public:
   void setExitPolicy(ExitPolicy &policy);
   /** Gets the exit policy for this server. */
   ExitPolicy getExitPolicy();
+  
+  /** Sets the long-term average bandwidth rate (in KB/s) of this server. */
+  void setBandwidthAvgRate(quint32 rate);
+  /** Gets the long-term average bandwidth rate (in KB/s) of this server. */
+  quint32 getBandwidthAvgRate();
+
+  /** Sets the maximum burst rate (in KB/s) of this server. */
+  void setBandwidthBurstRate(quint32 rate);
+  /** Gets the maximum burst rate (in KB/s) of this server. */
+  quint32 getBandwidthBurstRate();
 
   /** Sets whether we automatically update the server address or not. */
   void setAutoUpdateAddress(bool enabled);

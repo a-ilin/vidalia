@@ -66,7 +66,9 @@ private slots:
   void exitHelp();
   /** Called when the user's public IP address needs to be updated. */
   void updateServerIP();
-  
+  /** Called when the user edits the max or average bandwidth limits. */
+  void rateChanged();
+
 private:
   /** Attempts to find the server's public IP address */
   void getServerPublicIP(); 

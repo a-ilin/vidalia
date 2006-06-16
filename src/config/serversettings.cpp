@@ -39,12 +39,14 @@
 #define MAX_NICKNAME_LEN   19
 
 /* Server-related torrc configuration parameters */
-#define SERVER_NICKNAME       "Nickname"
-#define SERVER_ADDRESS        "Address"
-#define SERVER_ORPORT         "ORPort"
-#define SERVER_DIRPORT        "DirPort"
-#define SERVER_CONTACTINFO    "ContactInfo"
-#define SERVER_EXITPOLICY     "ExitPolicy"
+#define SERVER_NICKNAME         "Nickname"
+#define SERVER_ADDRESS          "Address"
+#define SERVER_ORPORT           "ORPort"
+#define SERVER_DIRPORT          "DirPort"
+#define SERVER_CONTACTINFO      "ContactInfo"
+#define SERVER_EXITPOLICY       "ExitPolicy"
+#define SERVER_BANDWIDTH_RATE   "BandwidthRate"
+#define SERVER_BANDWIDTH_BURST  "BandwidthBurst"
 
 /* Server configuration settings */
 #define SETTING_SERVER_ENABLED    "Server/Enabled"
@@ -58,7 +60,8 @@
 #define SETTING_SERVER_ADDRESS    "Server/"SERVER_ADDRESS
 #define SETTING_SERVER_CONTACT    "Server/"SERVER_CONTACTINFO
 #define SETTING_SERVER_EXITPOLICY "Server/"SERVER_EXITPOLICY
-
+#define SETTING_SERVER_BWRATE     "Server/"SERVER_BANDWIDTH_RATE
+#define SETTING_SERVER_BWBURST    "Server/"SERVER_BANDWIDTH_BURST
 /* Default server configuration */
 #define DEFAULT_SERVER_ENABLED    false
 #define DEFAULT_SERVER_CHANGED    false
@@ -70,6 +73,8 @@
 #define DEFAULT_SERVER_CONTACT    "<your@email.com>"
 #define DEFAULT_SERVER_ADDRESS    net_local_address().toString() 
 #define DEFAULT_SERVER_EXITPOLICY ""
+#define DEFAULT_SERVER_BWRATE     2048
+#define DEFAULT_SERVER_BWBURST    5120
 #define DEFAULT_SERVER_AUTOUPDATE_ADDRESS false
 
 
@@ -214,6 +219,14 @@ ServerSettings::confValues()
   conf.insert(SERVER_ADDRESS,      
     QSettings::value(SETTING_SERVER_ADDRESS, DEFAULT_SERVER_ADDRESS).toString());
   
+  /* Server bandwidth settings */
+  conf.insert(SERVER_BANDWIDTH_RATE,
+    QString::number(QSettings::value(SETTING_SERVER_BWRATE, 
+                                     DEFAULT_SERVER_BWRATE).toUInt()) + "KB");
+  conf.insert(SERVER_BANDWIDTH_BURST,
+    QString::number(QSettings::value(SETTING_SERVER_BWBURST, 
+                                     DEFAULT_SERVER_BWBURST).toUInt()) + "KB");
+    
   /* Server Contact Information */
   conf.insert(SERVER_CONTACTINFO, 
     QSettings::value(SETTING_SERVER_CONTACT, DEFAULT_SERVER_CONTACT).toString());
@@ -397,6 +410,34 @@ void
 ServerSettings::setExitPolicy(ExitPolicy &exitPolicy)
 {
   setValue(SETTING_SERVER_EXITPOLICY, exitPolicy.toString());
+}
+
+/** Returns the long-term average bandwidth rate (in KB/s) for this server. */
+quint32
+ServerSettings::getBandwidthAvgRate()
+{
+  return value(SETTING_SERVER_BWRATE, DEFAULT_SERVER_BWRATE).toUInt();
+}
+
+/** Sets the long-term average bandwidth rate (in KB/s) for this server. */
+void
+ServerSettings::setBandwidthAvgRate(quint32 rate)
+{
+  setValue(SETTING_SERVER_BWRATE, rate);
+}
+
+/** Returns the maximum bandwidth burst rate (in KB/s) for this server. */
+quint32
+ServerSettings::getBandwidthBurstRate()
+{
+  return value(SETTING_SERVER_BWBURST, DEFAULT_SERVER_BWBURST).toUInt();
+}
+
+/** Sets the maximum bandwidth burst rate (in KB/s) for this server. */
+void
+ServerSettings::setBandwidthBurstRate(quint32 rate)
+{
+  setValue(SETTING_SERVER_BWBURST, rate);
 }
 
 /** Returns whether we should update the server's IP address automatically. */
