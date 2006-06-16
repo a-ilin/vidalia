@@ -47,7 +47,8 @@
 #define AUTO_UPDATE_ADDR_INTERVAL  1000*60*60
 
 /** Help topics */
-#define EXIT_HELP     "server.exitpolicy"
+#define EXIT_POLICY_HELP      "server.exitpolicy"
+#define BANDWIDTH_HELP        "server.bandwidth"
 /** Minimum allowed bandwidth rate */
 #define MIN_RATE      20
 /** Maximum bandwidth rate. This is limited to 2147483646 bytes 
@@ -80,7 +81,9 @@ ServerPage::ServerPage(QWidget *parent)
   connect(ui.btnRaisePriority, SIGNAL(clicked()), this, SLOT(raisePriority()));
   connect(ui.btnLowerPriority, SIGNAL(clicked()), this, SLOT(lowerPriority()));
   connect(ui.btnGetAddress, SIGNAL(clicked()), this, SLOT(getServerAddress()));
-  connect(ui.btnExitHelp, SIGNAL(clicked()), this, SLOT(exitHelp()));
+  connect(ui.btnRateHelp, SIGNAL(clicked()), this, SLOT(bandwidthHelp()));
+  connect(ui.btnExitHelp, SIGNAL(clicked()), this, SLOT(exitPolicyHelp()));
+  
   connect(ui.lineAvgRateLimit, SIGNAL(editingFinished()), 
                          this, SLOT(rateChanged()));
   connect(ui.lineMaxRateLimit, SIGNAL(editingFinished()), 
@@ -308,9 +311,16 @@ ServerPage::selectedIndex()
 
 /** Shows exit policy related help information */
 void
-ServerPage::exitHelp()
+ServerPage::exitPolicyHelp()
 {
-  Vidalia::help(EXIT_HELP);
+  Vidalia::help(EXIT_POLICY_HELP);
+}
+
+/** Shows the bandwidth rate limiting help information */
+void
+ServerPage::bandwidthHelp()
+{
+  Vidalia::help(BANDWIDTH_HELP);
 }
 
 /** Accesses an external site to try to get the user's public IP address. */

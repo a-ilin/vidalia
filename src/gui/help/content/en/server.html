@@ -84,6 +84,40 @@ can follow these steps to get started:
   </li>
 </ol>
 
+<a name="bandwidth"/>
+<h3>Rate Limiting</h3>
+<p>
+Running a Tor server can consume a large amount of bandwidth; however, Tor
+allows you to limit the amount of bandwidth that you are willing to contribute
+to the Tor network. You can run a server, while still keeping your network
+connection usable for your own use.
+</p>
+<p>
+The <i>average rate</i> is the maximum long-term average bandwidth allowed (in
+kilobytes per second). For example, you might want to choose 2 megabytes per 
+second (2048 KB/s), or 50 kilobytes per second (a medium-speed cable
+connection). Tor requires a minimum of 20 kilobytes per second to run a
+server.
+</p>
+<p>
+The <i>maximum rate</i> is a pool of bytes used to fulfill requests during
+short periods of traffic higher than your specified <i>average rate</i>, but
+still maintains the average over a long period. A low average rate but a high
+maximum rate enforces a long-term average while still allowing more traffic
+during peak times if the average hasn't been reached lately. If your average
+rate is the same as your <i>maximum rate</i>, then Tor will never exceed the
+specified rate. Your <i>maximum rate</i> must always be greater than or equal
+to your <i>average rate</i>.
+</p>
+<p>
+It is important to remember that Tor measures bandwidth in <b>bytes</b>, not
+bits. Also, Tor only looks at incoming bytes instead of outgoing bytes. For
+example, if your server acts as a directory mirror, you may be sending more
+outgoing bytes than incoming. If you find this is the case and is putting too
+much strain on your bandwidth, you should consider unchecking the checkbox
+labeled <i>Mirror the server directory</i>.
+</p>
+
 <a name="exitpolicy"/>
 <h3>Exit Policies</h3>
 <p>

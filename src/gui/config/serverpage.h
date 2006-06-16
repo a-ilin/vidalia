@@ -62,8 +62,10 @@ private slots:
   void raisePriority();
   /** Called when the user clicks the "Lower Priority" button */
   void lowerPriority();
+  /** Called when the user clicks the bandwidth help button */
+  void bandwidthHelp();
   /** Called when the user clicks the exit policy help button */
-  void exitHelp();
+  void exitPolicyHelp();
   /** Called when the user's public IP address needs to be updated. */
   void updateServerIP();
   /** Called when the user edits the max or average bandwidth limits. */

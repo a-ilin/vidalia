@@ -44,6 +44,7 @@
   </Topic>
   <Topic id="server" name="运行Tor服务器" html="server.html">
     <Topic id="basic" name="安装基础" html="server.html" section="basic"/>
+    <Topic id="bandwidth" name="Rate Limiting" html="server.html" section="bandwidth"/>
     <Topic id="exitpolicy" name="退出策略" html="server.html" section="exitpolicy"/>
   </Topic>
   <Topic id="troubleshooting" name="问题多多" html="troubleshooting.html">

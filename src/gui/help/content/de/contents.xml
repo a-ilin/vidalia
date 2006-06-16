@@ -44,6 +44,7 @@
   </Topic>
   <Topic id="server" name="Running a Server" html="server.html">
     <Topic id="basic" name="Basic Setup" html="server.html" section="basic"/>
+    <Topic id="bandwidth" name="Rate Limiting" html="server.html" section="bandwidth"/>
     <Topic id="exitpolicy" name="Exit Policies" html="server.html" section="exitpolicy"/>
   </Topic>
   <Topic id="troubleshooting" name="Troubleshooting" html="troubleshooting.html">
