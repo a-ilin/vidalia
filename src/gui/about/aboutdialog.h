@@ -32,13 +32,13 @@
 #include "ui_aboutdialog.h"
 
 
-class AboutDialog : public QDialog
+class AboutDialog : public QMainWindow
 {
   Q_OBJECT
 
 public:
   /** Default constructor **/
-  AboutDialog(QWidget *parent = 0);  
+  AboutDialog(QWidget *parent = 0, Qt::WFlags flags = 0);
   /** Overriden QWidget.show() **/
   void show();
 

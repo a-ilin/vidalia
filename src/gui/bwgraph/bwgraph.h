@@ -40,13 +40,13 @@
 #define REFRESH_RATE    1000
 
 
-class BandwidthGraph : public QDialog
+class BandwidthGraph : public QMainWindow
 {
   Q_OBJECT
 
 public:
   /** Default constructor */
-  BandwidthGraph(QWidget *parent = 0);
+  BandwidthGraph(QWidget *parent = 0, Qt::WFlags flags = 0);
   /** Default destructor */
   ~BandwidthGraph();
 

@@ -32,8 +32,8 @@
 #define DATETIME_FMT  "MMM dd hh:mm:ss"
 
 /** Default constructor */
-BandwidthGraph::BandwidthGraph(QWidget *parent)
-: QDialog(parent, Qt::Tool)
+BandwidthGraph::BandwidthGraph(QWidget *parent, Qt::WFlags flags)
+  : QMainWindow(parent, flags)
 {
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
@@ -150,9 +150,10 @@ BandwidthGraph::loadSettings()
 void
 BandwidthGraph::reset()
 {
-  /* Reset the data counter clock */
-  ui.lblStartTime->setText(QDateTime::currentDateTime().toString(DATETIME_FMT));
-
+  /* Set to current time */
+  ui.statusbar->showMessage(tr("Since:  ") + 
+			    QDateTime::currentDateTime()
+			    .toString(DATETIME_FMT));
   /* Reset the graph */
   ui.frmGraph->resetGraph();
 }
@@ -248,10 +249,11 @@ BandwidthGraph::show()
 {
   loadSettings();
   if(!this->isVisible()) {
-    QDialog::show();
+    QMainWindow::show();
   } else {
-    QDialog::activateWindow();
-    QDialog::raise();
+    QMainWindow::activateWindow();
+    setWindowState(windowState() & ~Qt::WindowMinimized | Qt::WindowActive);
+    QMainWindow::raise();
   }
 }
 

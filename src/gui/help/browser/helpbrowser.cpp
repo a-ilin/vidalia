@@ -426,6 +426,7 @@ HelpBrowser::show(QString topic)
     QMainWindow::show();
   } else {
     QMainWindow::activateWindow();
+    setWindowState(windowState() & ~Qt::WindowMinimized | Qt::WindowActive);
     QMainWindow::raise();
   }
 

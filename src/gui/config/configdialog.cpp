@@ -113,6 +113,7 @@ ConfigDialog::show()
     QMainWindow::show();
   } else {
     QMainWindow::activateWindow();
+    setWindowState(windowState() & ~Qt::WindowMinimized | Qt::WindowActive);
     QMainWindow::raise();
   }
 }

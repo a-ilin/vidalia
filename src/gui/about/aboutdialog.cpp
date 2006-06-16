@@ -28,8 +28,8 @@
 #include "aboutdialog.h"
 
 /** Default Constructor **/
-AboutDialog::AboutDialog(QWidget *parent)
-: QDialog(parent)
+AboutDialog::AboutDialog(QWidget *parent, Qt::WFlags flags)
+: QMainWindow(parent, flags)
 {
   ui.setupUi(this);
 
@@ -68,9 +68,10 @@ AboutDialog::show()
   }
 
   if (!this->isVisible()) {
-    QDialog::show();
+    QMainWindow::show();
   } else {
-    QDialog::activateWindow();
-    QDialog::raise();
+    QMainWindow::activateWindow();
+    setWindowState(windowState() & ~Qt::WindowMinimized | Qt::WindowActive);
+    QMainWindow::raise();
   }
 }
