@@ -53,7 +53,6 @@ LogHeaderView::resetColumnWidths()
   setStretchLastSection(true);
 }
 
-#include <QtDebug>
 
 /** Resizes the column headers based on the longest message item. */
 void
