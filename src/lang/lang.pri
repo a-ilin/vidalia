@@ -25,11 +25,12 @@ HEADERS += $$PWD/languagesupport.h
 
 SOURCES += $$PWD/languagesupport.cpp
 
-TRANSLATIONS += $$PWD/vidalia_en.ts \
-                $$PWD/vidalia_zh-cn.ts \
+TRANSLATIONS += $$PWD/vidalia_de.ts \
+                $$PWD/vidalia_en.ts \
                 $$PWD/vidalia_fi.ts \
-                $$PWD/vidalia_de.ts \
-                $$PWD/vidalia_ru.ts
+                $$PWD/vidalia_it.ts \
+                $$PWD/vidalia_ru.ts \
+                $$PWD/vidalia_zh-cn.ts
 
 RESOURCES += $$PWD/lang.qrc
 

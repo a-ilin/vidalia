@@ -68,11 +68,12 @@
         <file>icons/node-bw-high.png</file>
     </qresource>
     <qresource prefix="/images">
-        <file>flags/zh-cn.png</file>
+        <file>flags/de.png</file>
         <file>flags/en.png</file>
         <file>flags/fi.png</file>
-        <file>flags/de.png</file>
+        <file>flags/it.png</file>
         <file>flags/ru.png</file>
+        <file>flags/zh-cn.png</file>
     </qresource>
     <qresource prefix="/images">
         <file>map/world-map.png</file>

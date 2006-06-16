@@ -50,6 +50,16 @@
     <file>ru/troubleshooting.html</file>
     <file>ru/netview.html</file>
     <file>ru/links.html</file>
+    <!-- Italian -->
+    <file>it/contents.xml</file>
+    <file>it/index.html</file>
+    <file>it/running.html</file>
+    <file>it/log.html</file>
+    <file>it/config.html</file>
+    <file>it/server.html</file>
+    <file>it/troubleshooting.html</file>
+    <file>it/netview.html</file>
+    <file>it/links.html</file>
   </qresource>
 </RCC>
 
