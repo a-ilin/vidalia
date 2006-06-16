@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>517</width>
-    <height>407</height>
+    <width>442</width>
+    <height>374</height>
    </rect>
   </property>
   <property name="palette" >
@@ -759,13 +759,13 @@ fingerprint.</string>
              </property>
              <property name="minimumSize" >
               <size>
-               <width>71</width>
+               <width>50</width>
                <height>0</height>
               </size>
              </property>
              <property name="maximumSize" >
               <size>
-               <width>71</width>
+               <width>50</width>
                <height>27</height>
               </size>
              </property>
@@ -775,11 +775,11 @@ fingerprint.</string>
              <property name="toolTip" >
               <string>Long-term average bandwidth limit</string>
              </property>
-             <property name="alignment" >
-              <set>Qt::AlignRight</set>
-             </property>
              <property name="maxLength" >
               <number>10</number>
+             </property>
+             <property name="alignment" >
+              <set>Qt::AlignRight</set>
              </property>
             </widget>
            </item>
@@ -819,13 +819,13 @@ fingerprint.</string>
              </property>
              <property name="minimumSize" >
               <size>
-               <width>71</width>
+               <width>50</width>
                <height>0</height>
               </size>
              </property>
              <property name="maximumSize" >
               <size>
-               <width>71</width>
+               <width>50</width>
                <height>27</height>
               </size>
              </property>
@@ -835,11 +835,11 @@ fingerprint.</string>
              <property name="toolTip" >
               <string>Peak bandwidth rate limit</string>
              </property>
-             <property name="alignment" >
-              <set>Qt::AlignRight</set>
-             </property>
              <property name="maxLength" >
               <number>10</number>
+             </property>
+             <property name="alignment" >
+              <set>Qt::AlignRight</set>
              </property>
             </widget>
            </item>
