@@ -1,4 +1,4 @@
-<!DOCTYPE TS><TS>
+﻿<!DOCTYPE TS><TS>
 <context>
     <name></name>
     <message>
@@ -109,19 +109,19 @@
     </message>
     <message>
         <source>File Not Found</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedostoa ei löydy</translation>
     </message>
     <message>
         <source>%1 does not exist. Would you like to create it?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 tiedostoa ei ole olemassa. Haluatko luoda sen?</translation>
     </message>
     <message>
         <source>Failed to Create File</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedoston luominen epäonnistui</translation>
     </message>
     <message>
         <source>Unable to create %1 [%2]</source>
-        <translation type="unfinished"></translation>
+        <translation>Tiedoston %1 luominen epäonnistui [%2]</translation>
     </message>
 </context>
 <context>
@@ -237,7 +237,7 @@
     <name>CircuitItem</name>
     <message>
         <source>&lt;Path Empty&gt;</source>
-        <translation>Sijainti tyhjä</translation>
+        <translation>Tyhjä reitti</translation>
     </message>
 </context>
 <context>
@@ -374,11 +374,11 @@ Olkaapa hyvä ja päivitä uudempaan Tor-ohjelmaan.</translation>
     </message>
     <message>
         <source>Tor Executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-ohjelma</translation>
     </message>
     <message>
         <source>Executables (*.exe)</source>
-        <translation type="unfinished"></translation>
+        <translation>Suoritettavat (*.exe)</translation>
     </message>
 </context>
 <context>
@@ -680,7 +680,7 @@ Olkaapa hyvä ja päivitä uudempaan Tor-ohjelmaan.</translation>
     </message>
     <message>
         <source>Tor Exited</source>
-        <translation>Tor lopetti yllättäen</translation>
+        <translation>Tor pysähtyi yllättäen</translation>
     </message>
     <message>
         <source>Show Log</source>
@@ -766,7 +766,7 @@ Haluaisitteko sulkea kunnollisesti ja antaa käyttäjille aikaa löytää uuden 
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
-        <translation>Vidalia huomasi Tor-ohjelman sammuneen aavistamatta.
+        <translation>Vidalia huomasi Tor-ohjelman pysähtyneen yllättäen.
 
 Olkaapa hyvä ja tarkistakaapa tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen sen sammumista.</translation>
     </message>
@@ -776,7 +776,7 @@ Olkaapa hyvä ja tarkistakaapa tapahtumalokista mitä tapahtui Tor-ohjelmalle en
     </message>
     <message>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia ei onnistunut käynnistämään Tor-ohjelmaa. Tarkista asetuksista, että Tor-ohjelman nimi ja sijainti on kirjoitettu oikein.</translation>
     </message>
 </context>
 <context>
@@ -831,7 +831,7 @@ Olkaapa hyvä ja tarkistakaapa tapahtumalokista mitä tapahtui Tor-ohjelmalle en
     </message>
     <message>
         <source>Cancels changes made to settings</source>
-        <translation>Kumoaa muutokset asetuksiin</translation>
+        <translation>Kumoaa asetuksien muutokset</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -1211,7 +1211,7 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Location:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sijainti:</translation>
     </message>
 </context>
 <context>
@@ -1310,7 +1310,7 @@ problem with your server</source>
     </message>
     <message>
         <source>Exit Policies</source>
-        <translation>Poistumistoimintaperiaatteet</translation>
+        <translation>Poistumisperiaatteet</translation>
     </message>
     <message>
         <source>IP Address:</source>
@@ -1434,33 +1434,33 @@ problem with your server. You might also include your PGP or GPG
 fingerprint.</source>
         <translation>Sähköpostiosoite, johon voidaan ottaa yhteyttä sattuessa virheitä palvelimessanne. Voit lisätä myös PGP- tai GPG-tunnistuksen.</translation>
     </message>
-    <message>
+ <message>
         <source>Bandwidth Rate Limits</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhteysnopeuden rajoitus</translation>
     </message>
     <message>
         <source>Long-term average bandwidth limit</source>
-        <translation type="unfinished"></translation>
+        <translation>Pitkäaikainen keskimäärinen nopeus</translation>
     </message>
     <message>
         <source>Average Rate</source>
-        <translation type="unfinished"></translation>
-    </message>
+        <translation>Keskimääräinen nopeus</translation>
+   </message>
     <message>
         <source>KB/s</source>
-        <translation type="unfinished"></translation>
+        <translation>Kt/s</translation>
     </message>
     <message>
         <source>Peak bandwidth rate limit</source>
-        <translation type="unfinished"></translation>
+        <translation>Suurin sallittu nopeus</translation>
     </message>
     <message>
         <source>Maximum Rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Enimmäisnopeus</translation>
     </message>
     <message>
         <source>Show help topic on bandwidth rate limits</source>
-        <translation type="unfinished"></translation>
+        <translation>Avaa ohjeenaihe yhteysnopeuksien rajoittamisesta</translation>
     </message>
 </context>
 <context>
@@ -1479,7 +1479,7 @@ fingerprint.</source>
     </message>
     <message>
         <source>Open</source>
-        <translation>Aukinainen</translation>
+        <translation>Avoinna</translation>
     </message>
     <message>
         <source>Failed</source>
@@ -1580,11 +1580,11 @@ fingerprint.</source>
     </message>
     <message>
         <source>Vidalia is already running</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia on jo päällä</translation>
     </message>
     <message>
         <source>Another Vidalia process is already running. This Vidalia process will now exit.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia on jo päällä. Tämä Vidalia suljetaan.</translation>
     </message>
 </context>
 </TS>
