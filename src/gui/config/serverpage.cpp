@@ -49,10 +49,10 @@
 /** Help topics */
 #define EXIT_POLICY_HELP      "server.exitpolicy"
 #define BANDWIDTH_HELP        "server.bandwidth"
-/** Minimum allowed bandwidth rate */
+/** Minimum allowed bandwidth rate (20KB) */
 #define MIN_RATE      20
-/** Maximum bandwidth rate. This is limited to 2147483646 bytes 
- * or 2097151 kilobytes. (2147483646/1024) */
+/** Maximum bandwidth rate. This is limited to 2147483646 bytes, 
+ * or 2097151 kilobytes. (2147483646/1024) */ 
 #define MAX_RATE      2097151
 
 
@@ -135,10 +135,10 @@ ServerPage::save(QString &errmsg)
     }
     /* If the bandwidth rates aren't set, use some defaults before saving */
     if (ui.lineAvgRateLimit->text().isEmpty()) {
-      ui.lineAvgRateLimit->setText("2048");
+      ui.lineAvgRateLimit->setText(QString::number(2097152/1024) /* 2MB */);
     }
     if (ui.lineMaxRateLimit->text().isEmpty()) {
-      ui.lineMaxRateLimit->setText("5120");
+      ui.lineMaxRateLimit->setText(QString::number(5242880/1024) /* 5MB */);
     }
   }
   _settings->setServerEnabled(ui.chkEnableServer->isChecked());
@@ -150,8 +150,8 @@ ServerPage::save(QString &errmsg)
   _settings->setDirPort(ui.lineDirPort->text().toUInt());
   _settings->setAddress(ui.lineServerAddress->text());
   _settings->setContactInfo(ui.lineServerContact->text());
-  _settings->setBandwidthAvgRate(ui.lineAvgRateLimit->text().toUInt());
-  _settings->setBandwidthBurstRate(ui.lineMaxRateLimit->text().toUInt());
+  _settings->setBandwidthAvgRate(ui.lineAvgRateLimit->text().toUInt()*1024);
+  _settings->setBandwidthBurstRate(ui.lineMaxRateLimit->text().toUInt()*1024);
   setAutoUpdateTimer(ui.chkAutoUpdate->isChecked());
 
   /* Save exit polices */
@@ -183,8 +183,10 @@ ServerPage::load()
   ui.lineDirPort->setText(QString::number(_settings->getDirPort()));
   ui.lineServerAddress->setText(_settings->getAddress());
   ui.lineServerContact->setText(_settings->getContactInfo());
-  ui.lineAvgRateLimit->setText(QString::number(_settings->getBandwidthAvgRate()));
-  ui.lineMaxRateLimit->setText(QString::number(_settings->getBandwidthBurstRate()));
+  ui.lineAvgRateLimit->setText(
+    QString::number((uint)(_settings->getBandwidthAvgRate()/1024)));
+  ui.lineMaxRateLimit->setText(
+    QString::number((uint)(_settings->getBandwidthBurstRate()/1024)));
   
   /* Load the exit policies into the list */
   ui.lstExitPolicies->clear();
@@ -417,7 +419,7 @@ ServerPage::rateChanged()
    * the maximum allowed rate. */
   quint32 burstRate = (quint32)ui.lineMaxRateLimit->text().toUInt();
   if (avgRate > burstRate) {
-    ui.lineMaxRateLimit->setText(QString::number(burstRate));
+    ui.lineMaxRateLimit->setText(QString::number(avgRate));
   }
   if (burstRate > MAX_RATE) {
     ui.lineMaxRateLimit->setText(QString::number(MAX_RATE));

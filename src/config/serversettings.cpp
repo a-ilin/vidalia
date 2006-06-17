@@ -31,7 +31,6 @@
 #include "serversettings.h"
 #include "torsettings.h"
 
-
 /** Define the set of characters that are valid in a nickname. */
 #define VALID_NICKNAME_CHARS \
   "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
@@ -73,8 +72,8 @@
 #define DEFAULT_SERVER_CONTACT    "<your@email.com>"
 #define DEFAULT_SERVER_ADDRESS    net_local_address().toString() 
 #define DEFAULT_SERVER_EXITPOLICY ""
-#define DEFAULT_SERVER_BWRATE     2048
-#define DEFAULT_SERVER_BWBURST    5120
+#define DEFAULT_SERVER_BWRATE     2097152
+#define DEFAULT_SERVER_BWBURST    5242880
 #define DEFAULT_SERVER_AUTOUPDATE_ADDRESS false
 
 
@@ -222,10 +221,10 @@ ServerSettings::confValues()
   /* Server bandwidth settings */
   conf.insert(SERVER_BANDWIDTH_RATE,
     QString::number(QSettings::value(SETTING_SERVER_BWRATE, 
-                                     DEFAULT_SERVER_BWRATE).toUInt()) + "KB");
+                                     DEFAULT_SERVER_BWRATE).toUInt()) + " bytes");
   conf.insert(SERVER_BANDWIDTH_BURST,
     QString::number(QSettings::value(SETTING_SERVER_BWBURST, 
-                                     DEFAULT_SERVER_BWBURST).toUInt()) + "KB");
+                                     DEFAULT_SERVER_BWBURST).toUInt()) + " bytes");
     
   /* Server Contact Information */
   conf.insert(SERVER_CONTACTINFO, 

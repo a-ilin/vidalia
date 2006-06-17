@@ -97,9 +97,9 @@ public:
   /** Gets the long-term average bandwidth rate (in KB/s) of this server. */
   quint32 getBandwidthAvgRate();
 
-  /** Sets the maximum burst rate (in KB/s) of this server. */
+  /** Sets the maximum burst rate (in B/s) of this server. */
   void setBandwidthBurstRate(quint32 rate);
-  /** Gets the maximum burst rate (in KB/s) of this server. */
+  /** Gets the maximum burst rate (in B/s) of this server. */
   quint32 getBandwidthBurstRate();
 
   /** Sets whether we automatically update the server address or not. */
