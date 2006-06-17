@@ -387,13 +387,13 @@
       </property>
       <property name="minimumSize" >
        <size>
-        <width>311</width>
+        <width>355</width>
         <height>82</height>
        </size>
       </property>
       <property name="maximumSize" >
        <size>
-        <width>311</width>
+        <width>355</width>
         <height>82</height>
        </size>
       </property>
