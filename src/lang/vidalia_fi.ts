@@ -1,4 +1,4 @@
-﻿<!DOCTYPE TS><TS>
+<!DOCTYPE TS><TS>
 <context>
     <name></name>
     <message>
@@ -187,7 +187,7 @@
     </message>
     <message>
         <source>Jan 1 2000</source>
-        <translation>Tammikuu 1 2000</translation>
+        <translation type="obsolete">Tammikuu 1 2000</translation>
     </message>
     <message>
         <source>100</source>
@@ -1434,7 +1434,7 @@ problem with your server. You might also include your PGP or GPG
 fingerprint.</source>
         <translation>Sähköpostiosoite, johon voidaan ottaa yhteyttä sattuessa virheitä palvelimessanne. Voit lisätä myös PGP- tai GPG-tunnistuksen.</translation>
     </message>
- <message>
+    <message>
         <source>Bandwidth Rate Limits</source>
         <translation>Yhteysnopeuden rajoitus</translation>
     </message>
@@ -1445,7 +1445,7 @@ fingerprint.</source>
     <message>
         <source>Average Rate</source>
         <translation>Keskimääräinen nopeus</translation>
-   </message>
+    </message>
     <message>
         <source>KB/s</source>
         <translation>Kt/s</translation>

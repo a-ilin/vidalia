@@ -187,7 +187,7 @@
     </message>
     <message>
         <source>Jan 1 2000</source>
-        <translation>Янв 1 2000</translation>
+        <translation type="obsolete">Янв 1 2000</translation>
     </message>
     <message>
         <source>100</source>

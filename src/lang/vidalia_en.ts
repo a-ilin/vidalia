@@ -174,10 +174,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Jan 1 2000</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>100</source>
         <translation type="unfinished"></translation>
     </message>

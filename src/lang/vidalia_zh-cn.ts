@@ -187,7 +187,7 @@
     </message>
     <message>
         <source>Jan 1 2000</source>
-        <translation>2000年1月1日</translation>
+        <translation type="obsolete">2000年1月1日</translation>
     </message>
     <message>
         <source>100</source>
