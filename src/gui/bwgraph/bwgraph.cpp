@@ -151,7 +151,7 @@ void
 BandwidthGraph::reset()
 {
   /* Set to current time */
-  ui.statusbar->showMessage(tr("Since:  ") + 
+  ui.statusbar->showMessage(tr("Since:") + " " + 
 			    QDateTime::currentDateTime()
 			    .toString(DATETIME_FMT));
   /* Reset the graph */
