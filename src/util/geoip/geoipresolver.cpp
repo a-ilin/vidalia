@@ -26,12 +26,12 @@
 
 #include "geoipresolver.h"
 
-/** Host for the geo ip information. 
- * XXX we really need more than one host here, even with 
-  *    smart caching. */
+/** Host for the geo ip information. This hostname round-robins between
+ * pasiphae.vidalia-project.net, thebe.vidalia-project.net, and
+ * cups.cs.cmu.edu. */ 
 #define GEOIP_HOST    "geoip.vidalia-project.net"
 /** Page that we request the geo ip information from. */
-#define GEOIP_PAGE    "/geoip.pl"
+#define GEOIP_PAGE    "/cgi-bin/geoip"
 
 
 /** Resolves a list of IPs to a geographic location, but only those which are
