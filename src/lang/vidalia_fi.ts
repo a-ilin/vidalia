@@ -823,7 +823,7 @@ Olkaapa hyvä ja tarkistakaapa tapahtumalokista mitä tapahtui Tor-ohjelmalle en
     </message>
     <message>
         <source>Saves the current Message Log settings</source>
-        <translation>Tallentaa nykyiset tapahtumalokin asetukset</translation>
+        <translation>Tallentaa tapahtumalokin asetuksiin tehdyt muutokset</translation>
     </message>
     <message>
         <source>Save Settings</source>
@@ -1075,7 +1075,7 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Text Files (*.txt)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekstitiedostot (*.txt)</translation>
     </message>
 </context>
 <context>
@@ -1294,7 +1294,7 @@ problem with your server</source>
     </message>
     <message>
         <source>If selected, clients will not exit the Tor network through your server</source>
-        <translation>Valittuna, käyttäjät eivät poistu Tor-verkosta palvelimesi kautta</translation>
+        <translation>Valittuna, Tor-verkon käyttäjät eivät poistu Tor-verkosta palvelimesi kautta</translation>
     </message>
     <message>
         <source>Only relay traffic between other Tor servers (middle-man)</source>
@@ -1394,7 +1394,7 @@ problem with your server</source>
     </message>
     <message>
         <source>Show help topic on exit policies</source>
-        <translation>Näytä ohjeenaihe poistumisperiaatteista</translation>
+        <translation>Näytä poistumisperiaatteista ohje</translation>
     </message>
     <message>
         <source>You must specify at least a server nickname and port.</source>
@@ -1464,7 +1464,7 @@ fingerprint.</source>
     </message>
     <message>
         <source>Show help topic on bandwidth rate limits</source>
-        <translation>Avaa ohjeenaihe yhteysnopeuksien rajoittamisesta</translation>
+        <translation>Avaa yhteysnopeuksien rajoittamisesta ohje</translation>
     </message>
 </context>
 <context>
