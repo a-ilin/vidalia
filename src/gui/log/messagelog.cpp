@@ -358,7 +358,15 @@ MessageLog::log(LogEvent::Severity type, QString message)
   if (_filter & (uint)type) {
     /* Add the message to the list and scroll to it if necessary. */
     LogTreeItem *item = ui.lstMessages->log(type, message); 
-
+   
+    /* This is a workaround to force Qt to update the statusbar text (if any
+     * is currently displayed) to reflect the new message added. */
+    QString currStatusTip = ui.statusbar->currentMessage();
+    if (!currStatusTip.isEmpty()) {
+      currStatusTip = ui.lstMessages->statusTip();
+      ui.statusbar->showMessage(currStatusTip);
+    }
+    
     /* If we're saving log messages to a file, go ahead and do that now */
     if (_enableLogging) {
       _logFile << item->toString();
