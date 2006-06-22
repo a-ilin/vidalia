@@ -79,8 +79,13 @@ MainWindow::MainWindow()
 
   /* Create the actions that will go in the tray menu */
   createActions();
+  
+#if defined(Q_WS_MAC)
+  createMenuBar();
+#else
   /* Create the tray menu itself */
-  createMenus(); 
+  createTrayMenu(); 
+#endif 
 
   /* Create a new TorControl object, used to communicate with and manipulate Tor */
   _torControl = Vidalia::torControl(); 
@@ -151,42 +156,33 @@ void
 MainWindow::createActions()
 {
   _startAct = new QAction(QIcon(IMG_START), tr("Start"), this);
-  connect(_startAct, SIGNAL(triggered()),
-      this, SLOT(start()));
+  connect(_startAct, SIGNAL(triggered()), this, SLOT(start()));
   _startAct->setEnabled(true);
   
   _stopAct = new QAction(QIcon(IMG_STOP), tr("Stop"), this);
-  connect(_stopAct, SIGNAL(triggered()),
-      this, SLOT(stop()));
+  connect(_stopAct, SIGNAL(triggered()), this, SLOT(stop()));
   _stopAct->setEnabled(false);
 
   _configAct = new QAction(QIcon(IMG_CONFIG), tr("Configure"), this);
-  connect(_configAct, SIGNAL(triggered()),
-      this, SLOT(showConfig()));
+  connect(_configAct, SIGNAL(triggered()), this, SLOT(showConfig()));
   
   _aboutAct = new QAction(QIcon(IMG_ABOUT), tr("About"), this);
-  connect(_aboutAct, SIGNAL(triggered()),
-      this, SLOT(showAbout()));
+  connect(_aboutAct, SIGNAL(triggered()), this, SLOT(showAbout()));
   
   _exitAct = new QAction(QIcon(IMG_EXIT), tr("Exit"), this);
-  connect(_exitAct, SIGNAL(triggered()),
-      this, SLOT(close()));
+  connect(_exitAct, SIGNAL(triggered()), this, SLOT(close()));
 
   _bandwidthAct = new QAction(QIcon(IMG_BWGRAPH), tr("Bandwidth Graph"), this);
-  connect(_bandwidthAct, SIGNAL(triggered()),
-      this, SLOT(showBandwidthGraph()));
+  connect(_bandwidthAct, SIGNAL(triggered()), this, SLOT(showBandwidthGraph()));
 
   _messageAct = new QAction(QIcon(IMG_MESSAGELOG), tr("Message Log"), this);
-  connect(_messageAct, SIGNAL(triggered()),
-      this, SLOT(showMessageLog()));
+  connect(_messageAct, SIGNAL(triggered()), this, SLOT(showMessageLog()));
 
   _helpAct = new QAction(QIcon(IMG_HELP), tr("Help"), this);
-  connect(_helpAct, SIGNAL(triggered()), 
-      this, SLOT(showHelp()));
+  connect(_helpAct, SIGNAL(triggered()), this, SLOT(showHelp()));
 
   _networkAct = new QAction(QIcon(IMG_NETWORK), tr("View Network"), this);
-  connect(_networkAct, SIGNAL(triggered()),
-      this, SLOT(showNetwork()));
+  connect(_networkAct, SIGNAL(triggered()), this, SLOT(showNetwork()));
 }
 
 /**
@@ -194,7 +190,7 @@ MainWindow::createActions()
  *  which compose the system tray menu.
  */
 void 
-MainWindow::createMenus()
+MainWindow::createTrayMenu()
 {
   /* Tray menu */ 
   _trayMenu = new QMenu(this);
@@ -210,8 +206,6 @@ MainWindow::createMenus()
   _trayMenu->addAction(_aboutAct);
   _trayMenu->addSeparator();
   _trayMenu->addAction(_exitAct);
-
-  createMenuBar();
 }
 
 /** Creates a new menubar with no parent, so Qt will use this as the "default

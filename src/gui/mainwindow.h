@@ -83,10 +83,10 @@ private slots:
   void showNetwork();
   
 private:
-  /** Create the tray popup menu and it's submenus */
-  void createMenus();
   /** Create the actions on the tray menu or menubar */
   void createActions();
+  /** Create the tray popup menu and it's submenus */
+  void createTrayMenu();
   /** Creates a default menubar on Mac */
   void createMenuBar();
   /** Starts a graceful server shutdown */
