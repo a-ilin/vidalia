@@ -997,6 +997,10 @@ interest to Tor developers.</source>
         <source>Vidalia was unable to open the specified log file.</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Text Files (*.txt)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NetViewer</name>

@@ -1073,6 +1073,10 @@ interest to Tor developers.</source>
         <source>Vidalia was unable to open the specified log file.</source>
         <translation>Vidalia ei onnistunut avaamaan kyseistä lokitiedostoa.</translation>
     </message>
+    <message>
+        <source>Text Files (*.txt)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NetViewer</name>

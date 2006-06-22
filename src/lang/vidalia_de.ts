@@ -1039,6 +1039,10 @@ empfangen</translation>
         <source>Vidalia was unable to open the specified log file.</source>
         <translation>Vidalia konnte die angegebene Logdatei nicht öffnen.</translation>
     </message>
+    <message>
+        <source>Text Files (*.txt)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NetViewer</name>
