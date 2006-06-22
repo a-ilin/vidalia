@@ -1,3 +1,26 @@
+0.0.6
+  o Fix the network map to properly remove circuits after they are closed.
+  o Fix our configure script to properly handle the --prefix option (patch by
+    Alexander Wirt).
+  o Check if Vidalia is already running when we start. If Vidalia is already
+    running, then warn and exit in the second instance.
+  o Strip all invalid characters from the server's nickname and make sure the
+    user can't enter any.
+  o Default to the Tor binary located in the user's $PATH, instead of trying
+    to guess directory locations.
+  o Add support for adjusting a server's BandwidthRate and BandwidthBurst
+    values.
+  o Store Vidalia's settings in a file, (rather than in the registry on
+    Windows), so Vidalia can be more portable. Note that settings aren't
+    "imported" from the registry, so 0.0.5 users will have to configure
+    their Vidalia settings again.
+  o Make the bandwidth graph just a normal window instead of a tool window, so
+    it can hide behind other Vidalia windows, if necessary.
+  o Add an Italian translation contributed by Alex Mazzariol.
+  o Add a Russian translation contributed by ygrek.
+  o Add a manpage for Vidalia contributed by Alexander Wirt.
+  
+  
 0.0.5   02-Jun-2006
   o Make the "Always On Top" property of the bandwidth graph optional.
   o Add a new dialog showing a list of routers that the user's Tor currently
