@@ -247,7 +247,7 @@ MessageLog::browse()
   /* Strangely, QFileDialog returns a non seperator converted path. */
   QString filename = QDir::convertSeparators(
                           QFileDialog::getSaveFileName(this,
-                              tr("Select Log File"), "tor.log"));
+                              tr("Select Log File"), "tor-log.txt"));
   if (!filename.isEmpty()) {
     ui.lineFile->setText(filename);
   }
@@ -266,8 +266,8 @@ MessageLog::save(QList<LogTreeItem *> items)
   QString fileName = QFileDialog::getSaveFileName(this,
                           tr("Save Log Messages"),
                           "VidaliaLog-" + 
-                          QDateTime::currentDateTime().toString("MM.dd.yyyy") +
-                          ".txt");
+                          QDateTime::currentDateTime().toString("MM.dd.yyyy")
+                          + ".txt", tr("Text Files (*.txt)"));
   
   /* If the choose to save */
   if (!fileName.isEmpty()) {

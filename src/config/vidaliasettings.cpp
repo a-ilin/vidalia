@@ -70,11 +70,11 @@
 #define DEFAULT_ENABLE_LOG_FILE     false
 
 #if defined(Q_OS_WIN32)
-#define DEFAULT_LOG_FILE       (win32_program_files_folder() + "\\Tor\\tor.log")
+#define DEFAULT_LOG_FILE       (win32_program_files_folder()+"\\Tor\\tor-log.txt")
 #define STARTUP_REG_KEY        "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
 #define VIDALIA_REG_KEY        "Vidalia" 
 #else
-#define DEFAULT_LOG_FILE       (QDir::homePath() + "/.tor/tor.log")
+#define DEFAULT_LOG_FILE       (QDir::homePath() + "/.tor/tor-log.txt")
 #endif
 
 /* Default bandwidth graph settings */
