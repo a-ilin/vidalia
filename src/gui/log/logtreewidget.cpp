@@ -149,7 +149,9 @@ QList<LogTreeItem *>
 LogTreeWidget::allItems()
 {
   /* Find all items */
-  return find("*", false);
+  QList<LogTreeItem *> items = 
+    qlist_cast(findItems("*", Qt::MatchWildcard|Qt::MatchWrap, MessageColumn));
+  return qlist_sort(items);
 }
 
 /** Returns the number of items currently shown. */
