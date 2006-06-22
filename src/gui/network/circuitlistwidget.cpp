@@ -236,8 +236,19 @@ CircuitListWidget::onSelectionChanged(QTreeWidgetItem *cur,
 {
   Q_UNUSED(prev);
 
-  if (cur && !cur->parent()) {
-    Circuit circuit = ((CircuitItem *)cur)->circuit();
+  if (cur) {
+    Circuit circuit;
+    
+    if (!cur->parent()) {
+      /* User selected a CircuitItem, so just grab the Circuit */
+      circuit = ((CircuitItem *)cur)->circuit();
+    } else {
+      /* User selected a StreamItem, so get its parent and then the Circuit */
+      CircuitItem *circItem = (CircuitItem *)cur->parent();
+      circuit = circItem->circuit();
+    }
+
+    /* If this circuit has a path, then emit it so we can highlight it */
     if (circuit.length() > 0) {
       emit circuitSelected(circuit);
     }
