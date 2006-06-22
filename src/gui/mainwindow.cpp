@@ -225,6 +225,12 @@ MainWindow::createMenuBar()
   _networkAct->setShortcut(tr("Ctrl+N"));
   _helpAct->setShortcut(tr("Ctrl+?"));
 
+  /* Force Qt to put merge the Exit, Configure, and About menubar options into
+   * the default menu, even if Vidalia is currently not speaking English. */
+  _exitAct->setText("exit");
+  _configAct->setText("config");
+  _aboutAct->setText("about");
+  
   /* The File, Help, and Configure menus will get merged into the application
    * menu by Qt. */
   QMenuBar *menuBar = new QMenuBar();
