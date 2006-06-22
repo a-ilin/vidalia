@@ -16,6 +16,9 @@
     their Vidalia settings again.
   o Make the bandwidth graph just a normal window instead of a tool window, so
     it can hide behind other Vidalia windows, if necessary.
+  o On OS X, ensure that the About, Configure, and Exit actions get merged
+    into the "Vidalia" menu in the default menubar when Vidalia is running in
+    a non-English language.
   o Add an Italian translation contributed by Alex Mazzariol.
   o Add a Russian translation contributed by ygrek.
   o Add a manpage for Vidalia contributed by Alexander Wirt.
