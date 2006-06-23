@@ -1,4 +1,4 @@
-0.0.6
+0.0.6   23-Jun-2006
   o Fix the network map to properly remove circuits after they are closed.
   o Fix our configure script to properly handle the --prefix option (patch by
     Alexander Wirt).
