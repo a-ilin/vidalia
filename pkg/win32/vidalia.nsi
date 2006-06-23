@@ -8,7 +8,7 @@
 
 ;---------------------------------
 ; Global Definitions
-!define APPVERSION "0.0.6"
+!define APPVERSION "0.0.7"
 !define PRODVERSION "${APPVERSION}.0" ; Product version must be x.x.x.x
 !define APPNAME "Vidalia"
 !define APPEXEC "vidalia.exe"
@@ -88,8 +88,8 @@ Section "${APPNAME} (required)" Vidalia
   
   ; Set output path to the installation directory.
   SetOutPath $INSTDIR    
-  File "..\..\${APPEXEC}"
-  File "..\..\mingwm10.dll"
+  File "..\..\release\${APPEXEC}"
+  File "..\..\release\mingwm10.dll"
   File "..\..\AUTHORS"
   File "..\..\CHANGELOG"
   File "..\..\LICENSE"
