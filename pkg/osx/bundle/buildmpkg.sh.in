@@ -116,7 +116,7 @@ mkdir $PKG_DIR
 echo "** Building Vidalia.pkg **"
 mkdir -p $BUILD_DIR/vidalia_packageroot/Applications/Vidalia.app
 mkdir -p $BUILD_DIR/vidalia_packageroot/Library/Vidalia
-cp -r $VID_DIR/bin/Vidalia.app $BUILD_DIR/vidalia_packageroot/Applications/
+cp -r $VID_DIR/Vidalia.app $BUILD_DIR/vidalia_packageroot/Applications/
 cp $VID_DIR/AUTHORS $VID_DIR/CHANGELOG $VID_DIR/README $BUILD_DIR/vidalia_packageroot/Library/Vidalia
 
 find $BUILD_DIR/vidalia_packageroot \( -type d -or -perm +111 \) -print0 | sudo xargs -0 chmod 775
