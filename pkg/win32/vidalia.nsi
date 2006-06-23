@@ -96,9 +96,6 @@ Section "${APPNAME} (required)" Vidalia
   File "..\..\COPYING"
   File "..\..\README"
 
-  ; Write the installation path into the registry
-  WriteRegStr HKCU SOFTWARE\${APPNAME} "Install_Dir" "$INSTDIR"
-  
   ; Write the uninstall keys for Windows
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APPNAME}" "DisplayName" "${APPNAME} ${APPVERSION}"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APPNAME}" "UninstallString" '"$INSTDIR\uninstall.exe"'
