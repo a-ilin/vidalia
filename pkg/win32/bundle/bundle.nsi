@@ -122,9 +122,6 @@ SectionGroup "!Tor ${TOR_VERSION}" TorGroup
        endiftorrc:
        File /oname=$configfile "tor\${TOR_VERSION}\torrc.sample"
 
-       ; Write the installation path into the registry
-       WriteRegStr HKCU SOFTWARE\Tor "Install_Dir" "$INSTDIR"
-
        ; Write the uninstall keys for Windows
        WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "DisplayName" "${TOR_NAME} ${TOR_VERSION}"
        WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "UninstallString" '"$INSTDIR\Tor\${TOR_UNINST}"'
@@ -184,7 +181,7 @@ SectionGroup "Vidalia ${VIDALIA_VERSION}" VidaliaGroup
       ; Set output path to the installation directory.
       SetOutPath "$INSTDIR\Vidalia"
       File "Vidalia\${VIDALIA_VERSION}\${VIDALIA_EXEC}"
-      FILE "Vidalia\${VIDALIA_VERSION}\${VIDALIA_UNINST}"
+      File "Vidalia\${VIDALIA_VERSION}\${VIDALIA_UNINST}"
       File "Vidalia\${VIDALIA_VERSION}\mingwm10.dll"
       File "Vidalia\${VIDALIA_VERSION}\README"
       File "Vidalia\${VIDALIA_VERSION}\CHANGELOG"
