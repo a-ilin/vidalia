@@ -61,7 +61,7 @@
     </message>
     <message>
         <source>Port that Vidalia uses to communicate with Tor. </source>
-        <translation>Номер порта который Vidalia будет использовать для управления Tor</translation>
+        <translation>Номер порта который Vidalia будет использовать для управления Tor.</translation>
     </message>
     <message>
         <source>9051</source>
@@ -109,19 +109,19 @@
     </message>
     <message>
         <source>File Not Found</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл не найден</translation>
     </message>
     <message>
         <source>%1 does not exist. Would you like to create it?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 не существует. Создать?</translation>
     </message>
     <message>
         <source>Failed to Create File</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось создать файл</translation>
     </message>
     <message>
         <source>Unable to create %1 [%2]</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось создать %1 [%2]</translation>
     </message>
 </context>
 <context>
@@ -1028,10 +1028,6 @@ interest to Tor developers.</source>
         <source>Vidalia was unable to open the specified log file.</source>
         <translation>Vidalia не смогла открыть указанный файл журнала.</translation>
     </message>
-    <message>
-        <source>Text Files (*.txt)</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>NetViewer</name>
@@ -1376,31 +1372,31 @@ PGP или GPG ключа.</translation>
     </message>
     <message>
         <source>Bandwidth Rate Limits</source>
-        <translation type="unfinished"></translation>
+        <translation>Ограничение трафика</translation>
     </message>
     <message>
         <source>Long-term average bandwidth limit</source>
-        <translation type="unfinished"></translation>
+        <translation>Долговременное усреднённое ограничение трафика</translation>
     </message>
     <message>
         <source>Average Rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Среднее значение</translation>
     </message>
     <message>
         <source>KB/s</source>
-        <translation type="unfinished"></translation>
+        <translation>КБ/сек</translation>
     </message>
     <message>
         <source>Peak bandwidth rate limit</source>
-        <translation type="unfinished"></translation>
+        <translation>Ограничение максимального значения трафика</translation>
     </message>
     <message>
         <source>Maximum Rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Максимальное значение</translation>
     </message>
     <message>
         <source>Show help topic on bandwidth rate limits</source>
-        <translation type="unfinished"></translation>
+        <translation>Показать справку по ограничению трафика</translation>
     </message>
 </context>
 <context>
@@ -1492,11 +1488,11 @@ PGP или GPG ключа.</translation>
     </message>
     <message>
         <source>Vidalia is already running</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia уже запущена</translation>
     </message>
     <message>
         <source>Another Vidalia process is already running. This Vidalia process will now exit.</source>
-        <translation type="unfinished"></translation>
+        <translation>Другой процесс Vidalia уже запущен. Текущий процесс сейчас будет завершен. </translation>
     </message>
 </context>
 </TS>
