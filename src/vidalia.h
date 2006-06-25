@@ -41,7 +41,7 @@
 #include <control/torcontrol.h>
 
 /** Vidalia's version string */
-#define VIDALIA_VERSION    "0.0.6"
+#define VIDALIA_VERSION    "0.0.7-svn"
 
 
 class Vidalia : public QApplication
