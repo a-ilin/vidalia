@@ -58,7 +58,7 @@ is_process_running(qint64 pid)
 #else
   /* Send the "null" signal to check if a process exists */
   if (kill((pid_t)pid, 0) < 0) {
-    return (errno == ESRCH);
+    return (errno != ESRCH);
   }
   return true;
 #endif
