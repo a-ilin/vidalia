@@ -384,6 +384,7 @@ MessageLog::customEvent(QEvent *event)
   if (event->type() == CustomEventType::LogEvent) {
     LogEvent *e = (LogEvent *)event;
     log(e->severity(), e->message());
+    e->accept();
   }
 }
 

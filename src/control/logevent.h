@@ -27,15 +27,14 @@
 #ifndef _LOGEVENT_H
 #define _LOGEVENT_H
 
+#include <QCoreApplication>
 #include <QString>
 #include <QEvent>
-#include <QObject>
 
 
-class LogEvent : private QObject, public QEvent
+class LogEvent : public QEvent
 {
-  /* The only reason we inherit QObject is so we can use tr() */
-  Q_OBJECT
+  Q_DECLARE_TR_FUNCTIONS(LogEvent)
 
 public:
   /** Log message severity levels */
@@ -50,7 +49,7 @@ public:
   
   /** Default constructor */
   LogEvent(Severity severity, QString message);
-  
+
   /** Converts the string description of a severity to its enum value */
   static Severity toSeverity(QString strSeverity);
   /** Converts the Severity enum value to a string description */
