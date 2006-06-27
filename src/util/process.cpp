@@ -48,13 +48,26 @@ bool
 is_process_running(qint64 pid)
 {
 #if defined(Q_OS_WIN)
+  BOOL rc;
+  DWORD exitCode;
+  
   /* Try to open the process to see if it exists */
-  HANDLE process = OpenProcess(PROCESS_QUERY_INFORMATION, FALSE, (DWORD)pid);
-  if (process == NULL) {
+  HANDLE hProcess = OpenProcess(PROCESS_QUERY_INFORMATION, FALSE, (DWORD)pid);
+  if (hProcess == NULL) {
     return false;
   }
-  CloseHandle(process);
-  return true;
+  
+  /* It exists, so see if it's still active or if it terminated already */
+  rc = GetExitCodeProcess(hProcess, &exitCode);
+  CloseHandle(hProcess);
+  if (!rc) {
+    /* Error. Assume it doesn't exist (is this a bad assumption?) */
+    return false;
+  }
+  /* If GetExitCodeProcess() returns a non-zero value, and the process is
+   * still running, exitCode should equal STILL_ACTIVE. Otherwise, this means
+   * the process has terminated. */
+  return (exitCode == STILL_ACTIVE);
 #else
   /* Send the "null" signal to check if a process exists */
   if (kill((pid_t)pid, 0) < 0) {
