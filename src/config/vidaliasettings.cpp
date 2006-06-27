@@ -66,7 +66,7 @@
 
 /* Default message log settings */
 #define DEFAULT_MSG_FILTER          (LogEvent::Error|LogEvent::Warn|LogEvent::Notice)
-#define DEFAULT_MAX_MESSAGE         500
+#define DEFAULT_MAX_MESSAGE         250
 #define DEFAULT_ENABLE_LOG_FILE     false
 
 #if defined(Q_OS_WIN32)
