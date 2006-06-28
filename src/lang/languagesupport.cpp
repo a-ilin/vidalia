@@ -40,6 +40,7 @@ LanguageSupport::initialize()
   _languages.insert("en",    "English");
   _languages.insert("de",    "Deutsch");
   _languages.insert("fi",    "suomi");
+  _languages.insert("fr",    "fran\303\247ais");
   _languages.insert("it",    "Italiano");
   _languages.insert("ru",
     QString::fromUtf8("\320\240\320\276\321\201\321\201\320\270\321\217"));

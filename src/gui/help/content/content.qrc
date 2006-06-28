@@ -10,26 +10,6 @@
     <file>en/troubleshooting.html</file>
     <file>en/netview.html</file>
     <file>en/links.html</file>
-    <!-- Simplified Chinese -->
-    <file>zh-cn/contents.xml</file>
-    <file>zh-cn/index.html</file>
-    <file>zh-cn/running.html</file>
-    <file>zh-cn/log.html</file>
-    <file>zh-cn/config.html</file>
-    <file>zh-cn/server.html</file>
-    <file>zh-cn/troubleshooting.html</file>
-    <file>zh-cn/netview.html</file>
-    <file>zh-cn/links.html</file>
-    <!-- Finnish -->
-    <file>fi/contents.xml</file>
-    <file>fi/index.html</file>
-    <file>fi/running.html</file>
-    <file>fi/log.html</file>
-    <file>fi/config.html</file>
-    <file>fi/server.html</file>
-    <file>fi/troubleshooting.html</file>
-    <file>fi/netview.html</file>
-    <file>fi/links.html</file>
     <!-- German -->
     <file>de/contents.xml</file>
     <file>de/index.html</file>
@@ -40,16 +20,26 @@
     <file>de/troubleshooting.html</file>
     <file>de/netview.html</file>
     <file>de/links.html</file>
-    <!-- Russian -->
-    <file>ru/contents.xml</file>
-    <file>ru/index.html</file>
-    <file>ru/running.html</file>
-    <file>ru/log.html</file>
-    <file>ru/config.html</file>
-    <file>ru/server.html</file>
-    <file>ru/troubleshooting.html</file>
-    <file>ru/netview.html</file>
-    <file>ru/links.html</file>
+    <!-- Finnish -->
+    <file>fi/contents.xml</file>
+    <file>fi/index.html</file>
+    <file>fi/running.html</file>
+    <file>fi/log.html</file>
+    <file>fi/config.html</file>
+    <file>fi/server.html</file>
+    <file>fi/troubleshooting.html</file>
+    <file>fi/netview.html</file>
+    <file>fi/links.html</file>
+    <!-- French -->
+    <file>fr/contents.xml</file>
+    <file>fr/index.html</file>
+    <file>fr/running.html</file>
+    <file>fr/log.html</file>
+    <file>fr/config.html</file>
+    <file>fr/server.html</file>
+    <file>fr/troubleshooting.html</file>
+    <file>fr/netview.html</file>
+    <file>fr/links.html</file>
     <!-- Italian -->
     <file>it/contents.xml</file>
     <file>it/index.html</file>
@@ -60,6 +50,26 @@
     <file>it/troubleshooting.html</file>
     <file>it/netview.html</file>
     <file>it/links.html</file>
+    <!-- Russian -->
+    <file>ru/contents.xml</file>
+    <file>ru/index.html</file>
+    <file>ru/running.html</file>
+    <file>ru/log.html</file>
+    <file>ru/config.html</file>
+    <file>ru/server.html</file>
+    <file>ru/troubleshooting.html</file>
+    <file>ru/netview.html</file>
+    <file>ru/links.html</file>
+    <!-- Simplified Chinese -->
+    <file>zh-cn/contents.xml</file>
+    <file>zh-cn/index.html</file>
+    <file>zh-cn/running.html</file>
+    <file>zh-cn/log.html</file>
+    <file>zh-cn/config.html</file>
+    <file>zh-cn/server.html</file>
+    <file>zh-cn/troubleshooting.html</file>
+    <file>zh-cn/netview.html</file>
+    <file>zh-cn/links.html</file>
   </qresource>
 </RCC>
 

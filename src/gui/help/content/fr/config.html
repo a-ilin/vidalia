@@ -1,0 +1,89 @@
+<!--
+  $Id$
+  Vidalia is distributed under the following license:
+
+  Copyright (C) 2006,  Matt Edman, Justin Hipple
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU General Public License
+  as published by the Free Software Foundation; either version 2
+  of the License, or (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  
+  02110-1301, USA.
+-->
+
+<html>
+<body>
+
+<h1>Configuring Vidalia and Tor</h1>
+<hr />
+
+<p>
+Vidalia allows you to configure some of the most commonly modified aspects of
+Vidalia and Tor. It also lets you set up and manage a <a
+href="server.html">Tor server</a> so you can help the Tor network
+grow.
+</p>
+
+<a name="general"/>
+<h3>General Settings</h3>
+<p>
+Settings on the <i>General</i> page are the most commonly modified settings.
+</p>
+<ul>
+  <li><b>Tor Executable</b>: 
+    This is the Tor executable that Vidalia will run when you select
+    <i>Start</i> from the tray menu. If you have multiple versions of Tor installed,
+    you can tell Vidalia which version you would like to run by clicking the
+    <i>Browse</i> button and navigating to the particular Tor installation you
+    want.
+  </li>
+  <li><b>Startup Options</b>:
+    This setting allows you to have Vidalia automatically start Tor when
+    Vidalia starts. You can also configure Vidalia to run when your system
+    starts (<i>Windows only</i>).
+  </li>
+</ul>
+
+<a name="server"/>
+<h3>Server Settings</h3>
+<p>
+<i>
+  See <a href="server.html">this help topic</a> for detailed
+  information about setting up and managing a Tor server.
+</i>
+</p>
+
+<a name="advanced"/>
+<h3>Advanced Settings</h3>
+<p>
+The settings on the <i>Advanced Settings</i> page should generally only be
+modified by more experienced users.
+</p>
+<ul>
+  <li><b>Control Port</b>:
+    The <i>Control Port</i> is the port which Vidalia uses to talk to Tor.
+    This doesn't need to be changed unless you have a conflict with another
+    service on your machine.
+  </li>
+  <li><b>Alternate Tor Configuration File</b>:
+    You can use this option to have Vidalia start Tor using a 
+    specific <i>torrc</i>, Tor's configuration file.
+  </li>
+  <li><b>Permissions</b>:
+    If you set this option, Tor will <i>setuid</i> to this User or
+    <i>setgid</i> to this group when it starts up.
+  </li>
+</ul>
+
+</body>
+</html>
+
