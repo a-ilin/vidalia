@@ -69,7 +69,8 @@ circuits. When the network map first loads, you will probably see a connection
 to geoip.vidalia-project.net, which occurs when Vidalia is looking up
 geographic information for the list of Tor routers. It is important to note
 that this request is done through Tor, so your location is not revealed to the
-GeoIP server.
+GeoIP server. The results of the lookups will be cached locally in order to
+reduce load on Vidalia's GeoIP servers.
 </p>
 
 
