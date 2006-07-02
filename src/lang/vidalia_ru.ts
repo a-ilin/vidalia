@@ -136,7 +136,7 @@
     </message>
     <message>
         <source>Changes to language will only take effect after restarting Vidalia!</source>
-        <translation>Изменения языка вступят в силу только после перезапуска программы</translation>
+        <translation>Изменения языка вступят в силу только после перезапуска программы!</translation>
     </message>
     <message>
         <source>Style</source>
@@ -163,11 +163,11 @@
     </message>
     <message>
         <source>Receive Rate</source>
-        <translation>Входящий трафик</translation>
+        <translation>Трафик Вх</translation>
     </message>
     <message>
         <source>Send Rate</source>
-        <translation>Исходящий трафик</translation>
+        <translation>Трафик Исх</translation>
     </message>
     <message>
         <source>Changes the transparency of the Bandwidth Graph</source>
@@ -183,7 +183,7 @@
     </message>
     <message>
         <source>Since:</source>
-        <translation>С </translation>
+        <translation>Показано от :</translation>
     </message>
     <message>
         <source>Jan 1 2000</source>
@@ -203,7 +203,7 @@
     </message>
     <message>
         <source>Always On Top</source>
-        <translation>Всегда поверх</translation>
+        <translation>Поверх</translation>
     </message>
 </context>
 <context>
@@ -401,7 +401,7 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>%1 KB/s</source>
-        <translation>%1 КБ/сек</translation>
+        <translation>%1 КБ/с</translation>
     </message>
 </context>
 <context>
@@ -887,7 +887,8 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
         <source>Save Selected</source>
-        <translation>Сохранить выделенные</translation>
+        <translation>Сохранить
+выделенные</translation>
     </message>
     <message>
         <source>Save selected messages to a file</source>
@@ -911,7 +912,7 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
         <source>Find all messages containing the search text (Ctrl+F)</source>
-        <translation>НАйти все сообщения с искомым текстом (Ctrl+F)</translation>
+        <translation>Найти все сообщения с искомым текстом (Ctrl+F)</translation>
     </message>
     <message>
         <source>Ctrl+F</source>
@@ -920,13 +921,13 @@ Please check the message log for indicators about what happened to Tor before it
     <message>
         <source>Messages that appear when something has 
 gone very wrong and Tor cannot proceed.</source>
-        <translation>Сообщения которые появляются когда что-то очень неправильно
+        <translation> Сообщения которые появляются когда что-то очень неправильно
 и Tor не может продолжать работу.</translation>
     </message>
     <message>
         <source>Messages that only appear when 
 something has gone wrong with Tor.</source>
-        <translation>Сообщения которые появляются когда
+        <translation> Сообщения которые появляются когда
 что-то не так с Tor.</translation>
     </message>
     <message>
@@ -934,23 +935,23 @@ something has gone wrong with Tor.</source>
 during normal Tor operation and are 
 not considered errors, but you may 
 care about.</source>
-        <translation>Сообщения которые появляются редко
-во время обычного функционирования Tor и
-не считаются ошибками, но может быть
+        <translation> Сообщения которые появляются редко
+ во время обычного функционирования Tor и
+ не считаются ошибками, но может быть
 стоят вашего внимания.</translation>
     </message>
     <message>
         <source>Messages that appear frequently 
 during normal Tor operation.</source>
-        <translation>Сообщения которые появляются часто 
+        <translation> Сообщения которые появляются часто 
 во время обычной работы Tor.</translation>
     </message>
     <message>
         <source>Hyper-verbose messages primarily of 
 interest to Tor developers.</source>
-        <translation>Очень подробные сообщения,
+        <translation> Очень подробные сообщения,
 преимущественно представляют интерес для
-разработчиков Tor</translation>
+разработчиков Tor.</translation>
     </message>
     <message>
         <source>Error Setting Filter</source>
@@ -986,7 +987,7 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Search found 0 matches.</source>
-        <translation>Ничего не найдено</translation>
+        <translation>Ничего не найдено.</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -1081,11 +1082,11 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Zoom in on the network map.</source>
-        <translation>Увеличить изображение карты сети.</translation>
+        <translation>Увеличить изображение карты.</translation>
     </message>
     <message>
         <source>Zoom out on the network map.</source>
-        <translation>Уменьшить изображение карты сети.</translation>
+        <translation>Уменьшить изображение карты.</translation>
     </message>
     <message>
         <source>All subsequent connections will appear to be different than your old connections.</source>
@@ -1150,7 +1151,7 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Location:</source>
-        <translation>Местоназождение:</translation>
+        <translation>Местонахождение:</translation>
     </message>
 </context>
 <context>
@@ -1180,7 +1181,7 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Directory Port:</source>
-        <translation>Порт директории</translation>
+        <translation>Порт директории:</translation>
     </message>
     <message>
         <source>Directory Port Number</source>
@@ -1188,7 +1189,7 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Nickname:</source>
-        <translation>Ник</translation>
+        <translation>Ник:</translation>
     </message>
     <message>
         <source>Name of your server</source>
@@ -1384,7 +1385,7 @@ PGP или GPG ключа.</translation>
     </message>
     <message>
         <source>KB/s</source>
-        <translation>КБ/сек</translation>
+        <translation>КБ/с</translation>
     </message>
     <message>
         <source>Peak bandwidth rate limit</source>
