@@ -1,6 +1,6 @@
 0.0.7   07-Jul-2006 
   o Fix a bug that was causing Vidalia to freeze frequently for some people,
-    particular when running at a verbose log level.
+    particularly when running at a verbose log level.
   o Fix a bug that would cause Windows Vidalias to not want to start after
     Vidalia had been killed via the Task Manager.
   o Add a French translation contributed by Michel Burkhardt.
