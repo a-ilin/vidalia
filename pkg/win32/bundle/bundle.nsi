@@ -15,7 +15,7 @@
 !define TOR_NAME "Tor"
 !define TOR_EXEC "tor.exe"
 !define TOR_UNINST "Uninstall.exe"
-!define TOR_VERSION "0.1.1.21"
+!define TOR_VERSION "0.1.1.22"
 
 !define PRIVOXY_NAME "Privoxy"
 !define PRIVOXY_EXEC "privoxy.exe"
