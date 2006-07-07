@@ -1,3 +1,14 @@
+0.0.7   
+  o Fix a bug that was causing Vidalia to freeze frequently for some,
+    particular when running at a verbose log level.
+  o Fix a bug that would cause Windows Vidalias to not want to start after
+    Vidalia had been killed via the Task Manager.
+  o Add a French translation contributed by Michel Burkhardt.
+  o In the network map, update the displayed uptime by looking at the difference
+    between now and the publication time, and add that difference to the published 
+    uptime.
+
+
 0.0.6   23-Jun-2006
   o Fix the network map to properly remove circuits after they are closed.
   o Fix our configure script to properly handle the --prefix option (patch by
