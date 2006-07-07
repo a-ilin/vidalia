@@ -43,6 +43,19 @@ RouterDescriptorView::formatPublished(QDateTime date)
   return date.toString(DATE_FORMAT) + " GMT";
 }
 
+/** Adjusts the displayed uptime to include time since the router's descriptor
+ * was last published. */
+quint64
+RouterDescriptorView::adjustUptime(quint64 uptime, QDateTime published)
+{
+  QDateTime now = QDateTime::currentDateTime().toUTC();
+  
+  if (now < published) {
+    return uptime;
+  }
+  return (uptime + (now.toTime_t() - published.toTime_t()));
+}
+
 /** Format the uptime for this router in a readable format. */
 QString
 RouterDescriptorView::formatUptime(quint64 seconds)
@@ -110,7 +123,8 @@ RouterDescriptorView::display(QList<RouterDescriptor> rdlist)
       html.append(trow(tcol(b(tr("Bandwidth:")))  + 
                        tcol(formatBandwidth(rd.observedBandwidth()) + " KB/s")));
       html.append(trow(tcol(b(tr("Uptime:")))   + 
-                       tcol(formatUptime(rd.uptime()))));
+                       tcol(formatUptime(
+                              adjustUptime(rd.uptime(), rd.published())))));
     }
     
     /* Date the router was published */

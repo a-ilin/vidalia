@@ -49,6 +49,9 @@ public slots:
   void display(QList<RouterDescriptor> rdlist);
   
 private:
+  /** Adjusts the displayed uptime to include time since the
+   * router's descriptor was last published. */
+  quint64 adjustUptime(quint64 uptime, QDateTime published);
   /** Formats the descriptor's published date. */
   QString formatPublished(QDateTime date);
   /** Formats the router's uptime. */
