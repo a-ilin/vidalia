@@ -50,9 +50,10 @@ BandwidthGraph::BandwidthGraph(QWidget *parent, Qt::WFlags flags)
 
   /* Initialize Sent/Receive data counters */
   reset();
-  
   /* Hide Bandwidth Graph Settings frame */
   showSettingsFrame(false);
+  /* Load the previously saved settings */
+  loadSettings();
 
   /* Turn off opacity group on unsupported platforms */
 #if defined(Q_WS_WIN)
@@ -125,7 +126,8 @@ BandwidthGraph::loadSettings()
 {
   /* Set window opacity slider widget */
   ui.sldrOpacity->setValue(_settings->getBWGraphOpacity());
-  
+  setOpacity(ui.sldrOpacity->value());
+
   /* Set whether the window appears on top. */
   ui.chkAlwaysOnTop->setChecked(_settings->getBWGraphAlwaysOnTop());
   if (_settings->getBWGraphAlwaysOnTop()) {
@@ -177,7 +179,8 @@ BandwidthGraph::saveChanges()
   } else {
     setWindowFlags(windowFlags() & ~Qt::WindowStaysOnTopHint);
   }
-  
+  setOpacity(ui.sldrOpacity->value());
+
   /* Save the line filter values */
   _settings->setBWGraphFilter(BWGRAPH_REC, ui.chkReceiveRate->isChecked());
   _settings->setBWGraphFilter(BWGRAPH_SEND, ui.chkSendRate->isChecked());
@@ -232,9 +235,11 @@ BandwidthGraph::setOpacity(int value)
   /* Opacity only supported by Mac and Win32 */
 #if defined(Q_WS_MAC)
   this->setWindowOpacity(newValue);
+  ui.lblPercentOpacity->setText(QString::number(value));
 #elif defined(Q_WS_WIN)
   if(QSysInfo::WV_2000 <= QSysInfo::WindowsVersion <= QSysInfo::WV_2003) {
     this->setWindowOpacity(newValue);
+    ui.lblPercentOpacity->setText(QString::number(value));
   }
 #else
   Q_UNUSED(newValue);
