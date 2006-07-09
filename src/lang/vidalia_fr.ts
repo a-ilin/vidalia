@@ -93,11 +93,11 @@
     </message>
     <message>
         <source>Vidalia will run with this User&apos;s permissions</source>
-        <translation>Vidalia démarrera avec les permissions de l'utilisateur</translation>
+        <translation>Vidalia démarrera avec les permissions de l&apos;utilisateur</translation>
     </message>
     <message>
         <source>Run as Group:</source>
-        <translation>Démarrer en tant que membre du groupe</translation>
+        <translation>Démarrer en tant que membre du groupe:</translation>
     </message>
     <message>
         <source>Vidalia will run with this Group&apos;s permissions</source>
@@ -113,7 +113,7 @@
     </message>
     <message>
         <source>%1 does not exist. Would you like to create it?</source>
-        <translation>%1 n'existe pas. Voulez-vous le créer ?</translation>
+        <translation>%1 n&apos;existe pas. Voulez-vous le créer ?</translation>
     </message>
     <message>
         <source>Failed to Create File</source>
@@ -132,11 +132,11 @@
     </message>
     <message>
         <source>Choose the language used in Vidalia</source>
-        <translation>Choisir la langue d'utilisation de Vidalia</translation>
+        <translation>Choisir la langue d&apos;utilisation de Vidalia</translation>
     </message>
     <message>
         <source>Changes to language will only take effect after restarting Vidalia!</source>
-        <translation>Les modifications de language ne prendront effet qu'après le redémarrage de Vidalia</translation>
+        <translation>Les modifications de language ne prendront effet qu&apos;après le redémarrage de Vidalia!</translation>
     </message>
     <message>
         <source>Style</source>
@@ -144,7 +144,7 @@
     </message>
     <message>
         <source>Choose Vidalia&apos;s interface style</source>
-        <translation>Choisir le style de l'interface de Vidalia</translation>
+        <translation>Choisir le style de l&apos;interface de Vidalia</translation>
     </message>
 </context>
 <context>
@@ -167,7 +167,7 @@
     </message>
     <message>
         <source>Send Rate</source>
-        <translation>Taux d'envoi</translation>
+        <translation>Taux d&apos;envoi</translation>
     </message>
     <message>
         <source>Changes the transparency of the Bandwidth Graph</source>
@@ -298,7 +298,7 @@
     </message>
     <message>
         <source>Control socket not connected.</source>
-        <translation>Le socket de contrôle n'est pas connecté</translation>
+        <translation>Le socket de contrôle n&apos;est pas connecté.</translation>
     </message>
 </context>
 <context>
@@ -319,11 +319,11 @@ Installez une version plus récente de Tor.</translation>
     </message>
     <message>
         <source>Error sending control command. [%1]</source>
-        <translation>Erreur d'envoi de la commande de contrôle. [%1]</translation>
+        <translation>Erreur d&apos;envoi de la commande de contrôle. [%1]</translation>
     </message>
     <message>
         <source>Socket disconnected while attempting to read a line of data.</source>
-        <translation>Socket déconnecté durant la lecture d'une ligne de données</translation>
+        <translation>Socket déconnecté durant la lecture d&apos;une ligne de données.</translation>
     </message>
     <message>
         <source>Invalid control reply. [%1]</source>
@@ -385,7 +385,7 @@ Installez une version plus récente de Tor.</translation>
     <name>GraphFrame</name>
     <message>
         <source>Recv: </source>
-        <translation>Recpt:</translation>
+        <translation>Rcpt:</translation>
     </message>
     <message>
         <source>Sent: </source>
@@ -432,7 +432,7 @@ Installez une version plus récente de Tor.</translation>
     </message>
     <message>
         <source>Help Topics</source>
-        <translation>Matières d'aide</translation>
+        <translation>Matières d&apos;aide</translation>
     </message>
     <message>
         <source>Search</source>
@@ -460,7 +460,7 @@ Installez une version plus récente de Tor.</translation>
     </message>
     <message>
         <source>Move to next page (Shift+Backspace)</source>
-        <translation>Avancer d'une page (Maj+Retour arrière)</translation>
+        <translation>Avancer d&apos;une page (Maj+Retour arrière)</translation>
     </message>
     <message>
         <source>Shift+Backspace</source>
@@ -496,7 +496,7 @@ Installez une version plus récente de Tor.</translation>
     </message>
     <message>
         <source>Close Vidalia Help</source>
-        <translation>Fermer l'aide Vidalia</translation>
+        <translation>Fermer l&apos;aide Vidalia</translation>
     </message>
     <message>
         <source>Esc</source>
@@ -504,7 +504,7 @@ Installez une version plus récente de Tor.</translation>
     </message>
     <message>
         <source>Error Loading Help Contents: </source>
-        <translation>Erreur de lecture de l'aide: </translation>
+        <translation>Erreur de lecture de l&apos;aide: </translation>
     </message>
     <message>
         <source>Search reached end of document</source>
@@ -532,7 +532,7 @@ Installez une version plus récente de Tor.</translation>
     </message>
     <message>
         <source>Supplied XML file is not a valid Contents document.</source>
-        <translation>Le fichier XML spécifié n'est pas un document valide.</translation>
+        <translation>Le fichier XML spécifié n&apos;est pas un document valide.</translation>
     </message>
     <message>
         <source>Found %1 results</source>
@@ -543,7 +543,7 @@ Installez une version plus récente de Tor.</translation>
     <name>HelpTextBrowser</name>
     <message>
         <source>Error opening help file: </source>
-        <translation>Erreur d'ouverture du fichier d'aide: </translation>
+        <translation>Erreur d&apos;ouverture du fichier d&apos;aide: </translation>
     </message>
 </context>
 <context>
@@ -612,7 +612,7 @@ Installez une version plus récente de Tor.</translation>
     </message>
     <message>
         <source>Bandwidth Graph</source>
-        <translation>Graph débits</translation>
+        <translation>Graphique KB/s</translation>
     </message>
     <message>
         <source>Message Log</source>
@@ -668,7 +668,7 @@ Installez une version plus récente de Tor.</translation>
     </message>
     <message>
         <source>Error Stopping Tor</source>
-        <translation>Erreur d'arrêt Tor</translation>
+        <translation>Erreur d&apos;arrêt Tor</translation>
     </message>
     <message>
         <source>Tor is stopped</source>
@@ -680,11 +680,11 @@ Installez une version plus récente de Tor.</translation>
     </message>
     <message>
         <source>Vidalia was unable to start Tor.</source>
-        <translation>Vidalia n'a pas pu démarrer Tor.</translation>
+        <translation>Vidalia n&apos;a pas pu démarrer Tor.</translation>
     </message>
     <message>
         <source>Vidalia was unable to stop Tor.</source>
-        <translation>Vidalia n'a pas pu arrêter Tor.</translation>
+        <translation>Vidalia n&apos;a pas pu arrêter Tor.</translation>
     </message>
     <message>
         <source>Tor is starting</source>
@@ -700,15 +700,15 @@ Installez une version plus récente de Tor.</translation>
     </message>
     <message>
         <source>Error Shutting Down</source>
-        <translation>Erreur d'arrêt</translation>
+        <translation>Erreur d&apos;arrêt</translation>
     </message>
     <message>
         <source>Do you want to close Tor anyway?</source>
-        <translation>Voulez-vous arrêter Tor quoi qu'il en soit ?</translation>
+        <translation>Voulez-vous arrêter Tor quoi qu&apos;il en soit ?</translation>
     </message>
     <message>
         <source>Tor is stopping</source>
-        <translation>Tor en cours d'arrêt</translation>
+        <translation>Tor en cours d&apos;arrêt</translation>
     </message>
     <message>
         <source>View Network</source>
@@ -720,23 +720,23 @@ Installez une version plus récente de Tor.</translation>
     </message>
     <message>
         <source>Error Applying Server Settings</source>
-        <translation>Erreur en appliquant les options du serveur</translation>
+        <translation>Erreur appliquant les options du serveur</translation>
     </message>
     <message>
         <source>Vidalia was unable to apply your server&apos;s settings.</source>
-        <translation>Vidalia n'a pas pu appliquer les options du serveur.</translation>
+        <translation>Vidalia n&apos;a pas pu appliquer les options du serveur.</translation>
     </message>
     <message>
         <source>You are currently running a Tor server. Terminating your server will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new server?</source>
-        <translation>Tor est actuellement en mode serveur. L'interruption de votre serveur arrêtera les connections ouvertes des autres clients.
+        <translation>Tor est actuellement en mode serveur. L&apos;interruption de votre serveur arrêtera les connections ouvertes des autres clients.
 
 Voulez-vous arrêter convenablement et donner le temps aux clients Tor de trouver un nouveau serveur ?</translation>
     </message>
     <message>
         <source>Vidalia was unable to shutdown Tor gracefully. (</source>
-        <translation>Vidalia n'a pas pu arrêter Tor convenablement. (</translation>
+        <translation>Vidalia n&apos;a pas pu arrêter Tor convenablement. (</translation>
     </message>
     <message>
         <source>Vidalia detected that Tor exited unexpectedly.
@@ -744,11 +744,11 @@ Voulez-vous arrêter convenablement et donner le temps aux clients Tor de trouve
 Please check the message log for indicators about what happened to Tor before it exited.</source>
         <translation>Vidalia a detecté que Tor a arrêté de manière innatendue.
 
-Veuillez consulter l'historique afin de vérifier ce qui est arrivé à Tor avant qu'il se soit arrêté.</translation>
+Veuillez consulter l&apos;historique afin de vérifier ce qui est arrivé à Tor avant qu&apos;il se soit arrêté.</translation>
     </message>
     <message>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
-        <translation>Vidalia n'a pas pu démarrer Tor. Contrôlez vos options et assurez-vous que le nom et le chemin de l'exécutable de Tor sont bien indiqués.</translation>
+        <translation>Vidalia n&apos;a pas pu démarrer Tor. Contrôlez vos options et assurez-vous que le nom et le chemin de l&apos;exécutable de Tor sont bien indiqués.</translation>
     </message>
 </context>
 <context>
@@ -771,7 +771,7 @@ Veuillez consulter l'historique afin de vérifier ce qui est arrivé à Tor avan
     </message>
     <message>
         <source>Log File</source>
-        <translation>Fichier d'historique</translation>
+        <translation>Fichier d&apos;historique</translation>
     </message>
     <message>
         <source>Browse</source>
@@ -779,7 +779,7 @@ Veuillez consulter l'historique afin de vérifier ce qui est arrivé à Tor avan
     </message>
     <message>
         <source>Enable saving of all messages to a file</source>
-        <translation>Activer l'enregistrement de tous les messages dans un fichier</translation>
+        <translation>Activer l&apos;enregistrement de tous les messages dans un fichier</translation>
     </message>
     <message>
         <source>Save Messages to File</source>
@@ -787,15 +787,15 @@ Veuillez consulter l'historique afin de vérifier ce qui est arrivé à Tor avan
     </message>
     <message>
         <source>Log History Size</source>
-        <translation>Taille du fichier d'historique</translation>
+        <translation>Taille du fichier d&apos;historique</translation>
     </message>
     <message>
         <source>Number of messages to keep in log</source>
-        <translation>Nombre de messages à conserver dans l'historique</translation>
+        <translation>Nombre de messages à conserver dans l&apos;historique</translation>
     </message>
     <message>
         <source>Saves the current Message Log settings</source>
-        <translation>Enregistrer les options actuelles de l'historique</translation>
+        <translation>Enregistrer les options actuelles de l&apos;historique</translation>
     </message>
     <message>
         <source>Save Settings</source>
@@ -843,7 +843,7 @@ Veuillez consulter l'historique afin de vérifier ce qui est arrivé à Tor avan
     </message>
     <message>
         <source>History Size...</source>
-        <translation>Taille de l'historique...</translation>
+        <translation>Taille de l&apos;historique...</translation>
     </message>
     <message>
         <source>Set maximum number of messages to display</source>
@@ -855,7 +855,7 @@ Veuillez consulter l'historique afin de vérifier ce qui est arrivé à Tor avan
     </message>
     <message>
         <source>Clear all messages from the Message Log (Ctrl+E)</source>
-        <translation>Effacer tous les messages de l'historique (Ctrl+E)</translation>
+        <translation>Effacer tous les messages de l&apos;historique (Ctrl+E)</translation>
     </message>
     <message>
         <source>Ctrl+E</source>
@@ -875,7 +875,7 @@ Veuillez consulter l'historique afin de vérifier ce qui est arrivé à Tor avan
     </message>
     <message>
         <source>Select All</source>
-        <translation>Sélectionner tout</translation>
+        <translation>Sélect. tout</translation>
     </message>
     <message>
         <source>Select all messages (Ctrl+A)</source>
@@ -887,19 +887,19 @@ Veuillez consulter l'historique afin de vérifier ce qui est arrivé à Tor avan
     </message>
     <message>
         <source>Save All</source>
-        <translation>Enregistrer tous</translation>
+        <translation>Enreg. tous</translation>
     </message>
     <message>
         <source>Save all messages to a file</source>
-        <translation>Enregistrer tous les messages dans un fichier</translation>
+        <translation>Enregistre tous les messages dans un fichier</translation>
     </message>
     <message>
         <source>Save Selected</source>
-        <translation>Enreg sélect</translation>
+        <translation>Enreg. sélect</translation>
     </message>
     <message>
         <source>Save selected messages to a file</source>
-        <translation>Enregistrer la sélection dans un fichier</translation>
+        <translation>Enregistre la sélection dans un fichier</translation>
     </message>
     <message>
         <source>Close</source>
@@ -907,7 +907,7 @@ Veuillez consulter l'historique afin de vérifier ce qui est arrivé à Tor avan
     </message>
     <message>
         <source>Close the Message Log</source>
-        <translation>Ferme l'historique</translation>
+        <translation>Ferme l&apos;historique</translation>
     </message>
     <message>
         <source>Esc</source>
@@ -928,14 +928,14 @@ Veuillez consulter l'historique afin de vérifier ce qui est arrivé à Tor avan
     <message>
         <source>Messages that appear when something has 
 gone very wrong and Tor cannot proceed.</source>
-        <translation>Messages qui apparaissent quand quelque chose a 
-très mal tourné et que Tor ne peut pas procéder.</translation>
+        <translation>Messages qui apparaissent quand quelque chose s&apos;est 
+très mal déroulé et que Tor ne peut pas traiter.</translation>
     </message>
     <message>
         <source>Messages that only appear when 
 something has gone wrong with Tor.</source>
         <translation>Messages qui apparaissent seulement quand quelque
-chose s'est mal passé avec Tor.</translation>
+chose s&apos;est mal passé avec Tor.</translation>
     </message>
     <message>
         <source>Messages that appear infrequently 
@@ -943,19 +943,19 @@ during normal Tor operation and are
 not considered errors, but you may 
 care about.</source>
         <translation>Messages qui apparaissent rarement
-pendant l'exécution normale de Tor et ne sont pas considérés
+pendant l&apos;exécution normale de Tor et ne sont pas considérés
 comme des erreurs, mais auxquels vous voulez prêter attention.</translation>
     </message>
     <message>
         <source>Messages that appear frequently 
 during normal Tor operation.</source>
         <translation>Messages qui apparaissent
-fréquemment pendant l'exécution normale de Tor.</translation>
+fréquemment pendant l&apos;exécution normale de Tor.</translation>
     </message>
     <message>
         <source>Hyper-verbose messages primarily of 
 interest to Tor developers.</source>
-        <translation>Messages détaillés d'intérêt surtout
+        <translation>Messages détaillés d&apos;intérêt surtout
 pour les développeurs de Tor.</translation>
     </message>
     <message>
@@ -964,15 +964,15 @@ pour les développeurs de Tor.</translation>
     </message>
     <message>
         <source>Error Opening Log File</source>
-        <translation>Erreur en ouvrant le fichier d'historique</translation>
+        <translation>Erreur en ouvrant le fichier d&apos;historique</translation>
     </message>
     <message>
         <source>Select Log File</source>
-        <translation>Sélectionner le fichier d'historique</translation>
+        <translation>Sélectionner le fichier d&apos;historique</translation>
     </message>
     <message>
         <source>Save Log Messages</source>
-        <translation>Enregistre l'historique</translation>
+        <translation>Enregistre l&apos;historique</translation>
     </message>
     <message>
         <source>Vidalia</source>
@@ -980,7 +980,7 @@ pour les développeurs de Tor.</translation>
     </message>
     <message>
         <source>Find in Message Log</source>
-        <translation>Cherche dans l'historique</translation>
+        <translation>Cherche dans l&apos;historique</translation>
     </message>
     <message>
         <source>Find:</source>
@@ -1000,7 +1000,7 @@ pour les développeurs de Tor.</translation>
     </message>
     <message>
         <source>Adjust Message Log Settings</source>
-        <translation>Adapter les options de l'historique</translation>
+        <translation>Adapter les options de l&apos;historique</translation>
     </message>
     <message>
         <source>Ctrl+T</source>
@@ -1012,7 +1012,7 @@ pour les développeurs de Tor.</translation>
     </message>
     <message>
         <source>Show the help browser</source>
-        <translation>Parcourir l'aide</translation>
+        <translation>Parcourir l&apos;aide</translation>
     </message>
     <message>
         <source>Ctrl+H</source>
@@ -1020,26 +1020,26 @@ pour les développeurs de Tor.</translation>
     </message>
     <message>
         <source>Vidalia was unable to register for Tor&apos;s log events.</source>
-        <translation>Vidalia n'a pas pu enregistrer les évènements de Tor.</translation>
+        <translation>Vidalia n&apos;a pas pu enregistrer les évènements de Tor.</translation>
     </message>
     <message>
         <source>Cannot write file %1
 
 %2.</source>
-        <translation>Impossible d'écrire dans le fichier %1
+        <translation>Impossible d&apos;écrire dans le fichier %1
         
 %2.</translation>
     </message>
     <message>
         <source>Vidalia was unable to open the specified log file.</source>
-        <translation>Vidalia n'a pas pu ouvrir le fichier historique spécifié.</translation>
+        <translation>Vidalia n&apos;a pas pu ouvrir le fichier historique spécifié.</translation>
     </message>
 </context>
 <context>
     <name>NetViewer</name>
     <message>
         <source>View Tor Network</source>
-        <translation>Voir réseau Tor</translation>
+        <translation>Apperçu réseau Tor</translation>
     </message>
     <message>
         <source>Refresh</source>
@@ -1067,11 +1067,11 @@ pour les développeurs de Tor.</translation>
     </message>
     <message>
         <source>Make new connections appear to be different than your old connections.</source>
-        <translation>Établir de nouvelles connections différentes des précédentes.</translation>
+        <translation>Établi de nouvelles connections différentes des précédentes.</translation>
     </message>
     <message>
         <source>Refresh the list of routers and connections.</source>
-        <translation>Rafraîchir la liste des routeurs et connections.</translation>
+        <translation>Rafraîchi la liste des routeurs et connections.</translation>
     </message>
     <message>
         <source>Show network map help.</source>
@@ -1079,7 +1079,7 @@ pour les développeurs de Tor.</translation>
     </message>
     <message>
         <source>Show the network map help.</source>
-        <translation>Montre l'aide de la carte du réseau</translation>
+        <translation>Montre l&apos;aide de la carte du réseau.</translation>
     </message>
     <message>
         <source>Close the network map.</source>
@@ -1099,7 +1099,7 @@ pour les développeurs de Tor.</translation>
     </message>
     <message>
         <source>Failed to Create New Identity</source>
-        <translation>La création d'une nouvelle identité a échoué</translation>
+        <translation>La création d&apos;une nouvelle identité a échoué</translation>
     </message>
 </context>
 <context>
@@ -1186,11 +1186,11 @@ pour les développeurs de Tor.</translation>
     </message>
     <message>
         <source>Directory Port:</source>
-        <translation>Port de l'annuaire:</translation>
+        <translation>Port de l&apos;annuaire:</translation>
     </message>
     <message>
         <source></source>
-        <translation>Numéro du Port de l'annuaire :</translation>
+        <translation type="unfinished">No. de port de l&apos;annuaire</translation>
     </message>
     <message>
         <source>Nickname:</source>
@@ -1206,7 +1206,7 @@ pour les développeurs de Tor.</translation>
     </message>
     <message>
         <source>Server Port:</source>
-        <translation>Port:</translation>
+        <translation>Port du serveur:</translation>
     </message>
     <message>
         <source>Port on which users and other servers can communicate with your server</source>
@@ -1223,15 +1223,15 @@ avec votre serveur</translation>
     </message>
     <message>
         <source>Enable to mirror the server directory</source>
-        <translation>Cocher pour servir de mirroir à l'annuaire de serveurs</translation>
+        <translation>Cocher pour servir de mirroir à l&apos;annuaire de serveurs</translation>
     </message>
     <message>
         <source>Mirror the Server Directory </source>
-        <translation>Servir de mirroir à l'annuaire de serveurs </translation>
+        <translation>Servir de mirroir à l&apos;annuaire de serveurs </translation>
     </message>
     <message>
         <source>If selected, clients will not exit the Tor network through your server</source>
-        <translation>Si coché, les clients n'utiliseront pas votre serveur pour sortir du réseau Tor.</translation>
+        <translation>Si coché, les clients ne sortiront pas du réseau Tor depuis votre serveur</translation>
     </message>
     <message>
         <source>Only relay traffic between other Tor servers (middle-man)</source>
@@ -1239,11 +1239,11 @@ avec votre serveur</translation>
     </message>
     <message>
         <source>Attempts to determine the correct address for your server</source>
-        <translation>Tente de déterminer l'adresse correcte de votre serveur</translation>
+        <translation>Tente de déterminer l&apos;adresse correcte de votre serveur</translation>
     </message>
     <message>
         <source>Get Address</source>
-        <translation>Chercher l'adresse</translation>
+        <translation>Chercher l&apos;adresse</translation>
     </message>
     <message>
         <source>Nickname and Server Port are required</source>
@@ -1331,7 +1331,7 @@ avec votre serveur</translation>
     </message>
     <message>
         <source>Show help topic on exit policies</source>
-        <translation>Montre l'aide des stratégies de sortie</translation>
+        <translation>Montre l&apos;aide des stratégies de sortie</translation>
     </message>
     <message>
         <source>You must specify at least a server nickname and port.</source>
@@ -1351,7 +1351,7 @@ avec votre serveur</translation>
     </message>
     <message>
         <source>Vidalia was unable to determine your public IP address.</source>
-        <translation>Vidalia n'a pas pu déterminer votre adresse IP publique.</translation>
+        <translation>Vidalia n&apos;a pas pu déterminer votre adresse IP publique.</translation>
     </message>
     <message>
         <source>Vidalia was only able to find a private IP address for your server.
@@ -1374,7 +1374,7 @@ Voulez-vous accéder à un service externe afin de déterminer votre adresse IP 
 problem with your server. You might also include your PGP or GPG
 fingerprint.</source>
         <translation>Adresse email à laquelle vous pouvez être contacté 
-s'il y a un problème avec votre serveur. Vous pourriez également inclure votre fingerprint
+s&apos;il y a un problème avec votre serveur. Vous pourriez également inclure votre fingerprint
 de PGP ou de GPG.</translation>
     </message>
     <message>
@@ -1403,7 +1403,7 @@ de PGP ou de GPG.</translation>
     </message>
     <message>
         <source>Show help topic on bandwidth rate limits</source>
-        <translation>Voir l'aide de limitation de bande passante</translation>
+        <translation>Voir l&apos;aide de limitation de bande passante</translation>
     </message>
 </context>
 <context>
@@ -1445,15 +1445,15 @@ de PGP ou de GPG.</translation>
     <name>TorProcess</name>
     <message>
         <source>&quot;%1&quot; is not an executable.</source>
-        <translation>&quot;%1&quot; n'est pas un exécutable .</translation>
+        <translation>&quot;%1&quot; n&apos;est pas un exécutable .</translation>
     </message>
     <message>
         <source>Process %1 failed to stop. [%2]</source>
-        <translation>Processus %1 ne s'est pas arrêté. [%2]</translation>
+        <translation>Processus %1 ne s&apos;est pas arrêté. [%2]</translation>
     </message>
     <message>
         <source>Failed to start</source>
-        <translation>N'a pas démarré</translation>
+        <translation>N&apos;a pas démarré</translation>
     </message>
     <message>
         <source>Crashed</source>
@@ -1465,7 +1465,7 @@ de PGP ou de GPG.</translation>
     </message>
     <message>
         <source>Write error</source>
-        <translation>Erreur d'écriture</translation>
+        <translation>Erreur d&apos;écriture</translation>
     </message>
     <message>
         <source>Read error</source>
@@ -1508,7 +1508,7 @@ de PGP ou de GPG.</translation>
     </message>
     <message>
         <source>Show Settings</source>
-        <translation>Montre réglages</translation>
+        <translation>Montrer réglages</translation>
     </message>
 </context>
 <context>
@@ -1519,7 +1519,7 @@ de PGP ou de GPG.</translation>
     </message>
     <message>
         <source>Invalid GUI style specified: </source>
-        <translation>Style d'interface spécifié invalide: </translation>
+        <translation>Style d&apos;interface spécifié invalide: </translation>
     </message>
     <message>
         <source>Vidalia is already running</source>
@@ -1527,8 +1527,7 @@ de PGP ou de GPG.</translation>
     </message>
     <message>
         <source>Another Vidalia process is already running. This Vidalia process will now exit.</source>
-        <translation>Un autre processus de Vidalia fonctionne déjà. Ce processus ne se terminera pas.</translation>
+        <translation>Un autre processus de Vidalia fonctionne déjà. Ce processus va s&apos;arrêter maintenant.</translation>
     </message>
 </context>
 </TS>
-
