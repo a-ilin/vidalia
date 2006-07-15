@@ -61,7 +61,7 @@
 #endif
 
 #define DEFAULT_LANGUAGE            LanguageSupport::defaultLanguageCode()
-#define DEFAULT_RUN_TOR_AT_START    false
+#define DEFAULT_RUN_TOR_AT_START    true
 #define DEFAULT_OPACITY             100
 
 /* Default message log settings */
