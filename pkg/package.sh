@@ -46,10 +46,12 @@ case "$1" in
   
   echo "Creating source tarball: $tarball"  
   pushd "../.." 1>/dev/null
-  svn ls -R $srcdir/ | 
-     sed -e "s/^/$srcdir\/&/" | 
-     sed -e "/\/$/d" | 
-     tar -cz -T - -f "$tarball"
+  filelist=`svn ls -R $srcdir/ | 
+              sed -e "s/^/$srcdir\/&/" | 
+              sed -e "/\/$/d" |
+              sed -e "s/\n/ /"`
+  filelist="$srcdir/configure $filelist"
+  tar -czf "$tarball" $filelist
   popd -1 1>/dev/null
   ;;
  
