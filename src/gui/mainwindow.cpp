@@ -181,7 +181,7 @@ MainWindow::createActions()
   _helpAct = new QAction(QIcon(IMG_HELP), tr("Help"), this);
   connect(_helpAct, SIGNAL(triggered()), this, SLOT(showHelp()));
 
-  _networkAct = new QAction(QIcon(IMG_NETWORK), tr("View Network"), this);
+  _networkAct = new QAction(QIcon(IMG_NETWORK), tr("Network Map"), this);
   connect(_networkAct, SIGNAL(triggered()), this, SLOT(showNetwork()));
 }
 
