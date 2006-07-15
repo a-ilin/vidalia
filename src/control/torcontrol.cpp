@@ -99,6 +99,9 @@ TorControl::onStarted()
 void
 TorControl::onStartFailed(QString errmsg)
 {
+  /* If an error occurs we need to clean up the tor process */
+  closeTorProcess();
+
   emit startFailed(errmsg);
 }
 
