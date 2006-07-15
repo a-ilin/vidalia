@@ -712,7 +712,7 @@ Protocol (Version %1 entdeckt). Installiere eine neuere Version von Tor.</transl
     </message>
     <message>
         <source>View Network</source>
-        <translation>Zeige Netzwerk</translation>
+        <translation type="obsolete">Zeige Netzwerk</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
@@ -750,6 +750,10 @@ wurde.
     </message>
     <message>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Network Map</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

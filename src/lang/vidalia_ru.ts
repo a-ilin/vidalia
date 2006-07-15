@@ -704,7 +704,7 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>View Network</source>
-        <translation>Просмотр Сети</translation>
+        <translation type="obsolete">Просмотр Сети</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
@@ -741,6 +741,10 @@ Please check the message log for indicators about what happened to Tor before it
     <message>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
         <translation>Vidalia не смогла запустить Tor. Проверьте настройки и убедитесь что имя и путь к испоняемому файлк Tor указан верно.</translation>
+    </message>
+    <message>
+        <source>Network Map</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1028,6 +1032,10 @@ interest to Tor developers.</source>
     <message>
         <source>Vidalia was unable to open the specified log file.</source>
         <translation>Vidalia не смогла открыть указанный файл журнала.</translation>
+    </message>
+    <message>
+        <source>Text Files (*.txt)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

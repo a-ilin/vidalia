@@ -732,7 +732,7 @@ Olkaapa hyvä ja päivitä uudempaan Tor-ohjelmaan.</translation>
     </message>
     <message>
         <source>View Network</source>
-        <translation>Näytä verkosto</translation>
+        <translation type="obsolete">Näytä verkosto</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
@@ -777,6 +777,10 @@ Olkaapa hyvä ja tarkistakaapa tapahtumalokista mitä tapahtui Tor-ohjelmalle en
     <message>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
         <translation>Vidalia ei onnistunut käynnistämään Tor-ohjelmaa. Tarkista asetuksista, että Tor-ohjelman nimi ja sijainti on kirjoitettu oikein.</translation>
+    </message>
+    <message>
+        <source>Network Map</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

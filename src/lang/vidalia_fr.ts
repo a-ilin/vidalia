@@ -14,11 +14,11 @@
     </message>
     <message>
         <source>View License</source>
-        <translation>Voir license</translation>
+        <translation type="obsolete">Voir license</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation type="obsolete">OK</translation>
     </message>
     <message>
         <source>Vidalia</source>
@@ -46,7 +46,7 @@
     </message>
     <message>
         <source>Hide License</source>
-        <translation>Masquer license</translation>
+        <translation type="obsolete">Masquer license</translation>
     </message>
     <message>
         <source>&lt;Not Running&gt;</source>
@@ -187,7 +187,7 @@
     </message>
     <message>
         <source>Jan 1 2000</source>
-        <translation>1 Janv 2000</translation>
+        <translation type="obsolete">1 Janv 2000</translation>
     </message>
     <message>
         <source>100</source>
@@ -334,7 +334,7 @@ Installez une version plus récente de Tor.</translation>
     <name>GeneralPage</name>
     <message>
         <source>Tor Directory</source>
-        <translation>Annuaire Tor</translation>
+        <translation type="obsolete">Annuaire Tor</translation>
     </message>
     <message>
         <source>Path to Tor&apos;s executable</source>
@@ -680,7 +680,7 @@ Installez une version plus récente de Tor.</translation>
     </message>
     <message>
         <source>Vidalia was unable to start Tor.</source>
-        <translation>Vidalia n&apos;a pas pu démarrer Tor.</translation>
+        <translation type="obsolete">Vidalia n&apos;a pas pu démarrer Tor.</translation>
     </message>
     <message>
         <source>Vidalia was unable to stop Tor.</source>
@@ -712,7 +712,7 @@ Installez une version plus récente de Tor.</translation>
     </message>
     <message>
         <source>View Network</source>
-        <translation>Apperçu du réseau</translation>
+        <translation type="obsolete">Apperçu du réseau</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
@@ -749,6 +749,10 @@ Veuillez consulter l&apos;historique afin de vérifier ce qui est arrivé à Tor
     <message>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
         <translation>Vidalia n&apos;a pas pu démarrer Tor. Contrôlez vos options et assurez-vous que le nom et le chemin de l&apos;exécutable de Tor sont bien indiqués.</translation>
+    </message>
+    <message>
+        <source>Network Map</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1033,6 +1037,10 @@ pour les développeurs de Tor.</translation>
     <message>
         <source>Vidalia was unable to open the specified log file.</source>
         <translation>Vidalia n&apos;a pas pu ouvrir le fichier historique spécifié.</translation>
+    </message>
+    <message>
+        <source>Text Files (*.txt)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1405,6 +1413,10 @@ de PGP ou de GPG.</translation>
         <source>Show help topic on bandwidth rate limits</source>
         <translation>Voir l&apos;aide de limitation de bande passante</translation>
     </message>
+    <message>
+        <source>Directory Port Number</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Stream</name>
@@ -1445,7 +1457,7 @@ de PGP ou de GPG.</translation>
     <name>TorProcess</name>
     <message>
         <source>&quot;%1&quot; is not an executable.</source>
-        <translation>&quot;%1&quot; n&apos;est pas un exécutable .</translation>
+        <translation type="obsolete">&quot;%1&quot; n&apos;est pas un exécutable .</translation>
     </message>
     <message>
         <source>Process %1 failed to stop. [%2]</source>
@@ -1453,27 +1465,27 @@ de PGP ou de GPG.</translation>
     </message>
     <message>
         <source>Failed to start</source>
-        <translation>N&apos;a pas démarré</translation>
+        <translation type="obsolete">N&apos;a pas démarré</translation>
     </message>
     <message>
         <source>Crashed</source>
-        <translation>Endommagé</translation>
+        <translation type="obsolete">Endommagé</translation>
     </message>
     <message>
         <source>Timed out</source>
-        <translation>Temps écoulé</translation>
+        <translation type="obsolete">Temps écoulé</translation>
     </message>
     <message>
         <source>Write error</source>
-        <translation>Erreur d&apos;écriture</translation>
+        <translation type="obsolete">Erreur d&apos;écriture</translation>
     </message>
     <message>
         <source>Read error</source>
-        <translation>Erreur de lecture</translation>
+        <translation type="obsolete">Erreur de lecture</translation>
     </message>
     <message>
         <source>Unknown error</source>
-        <translation>Erreur inconnue</translation>
+        <translation type="obsolete">Erreur inconnue</translation>
     </message>
 </context>
 <context>

@@ -686,10 +686,6 @@ Upgrade to a newer version of Tor.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>View Network</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Ctrl+N</source>
         <translation type="unfinished"></translation>
     </message>
@@ -719,6 +715,10 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Network Map</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
