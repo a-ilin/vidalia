@@ -40,15 +40,24 @@
 /** Default constructor. */
 LogTreeItem::LogTreeItem(LogEvent::Severity type, QString message, 
                          QDateTime timestamp)
+: QTreeWidgetItem()
 {
   /* Set the item's log time */
   setTimestamp(timestamp);
-
   /* Set the item's severity and appropriate color. */
   setSeverity(type);
-
   /* Set the item's message text. */
   setMessage(message);
+
+#if QT_VERSION > 0x040100
+  /* Qt versions newer than 4.1.0 have a quirk in that they make the message
+   * log rows appear very tall. So, make them just a hair taller than the font
+   * height. */
+  int rowHeight = font(COL_MESG).pointSize()+1;
+  setSizeHint(COL_TIME, QSize(sizeHint(COL_TIME).width(), rowHeight));
+  setSizeHint(COL_TYPE, QSize(sizeHint(COL_TYPE).width(), rowHeight));
+  setSizeHint(COL_MESG, QSize(sizeHint(COL_MESG).width(), rowHeight));
+#endif
 }
 
 /** Returns a printable string representing the fields of this item. */
