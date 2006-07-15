@@ -356,7 +356,7 @@
             <string>If selected, clients will not exit the Tor network through your server</string>
            </property>
            <property name="text" >
-            <string>Only relay traffic between other Tor servers (middle-man)</string>
+            <string>Only allow connections to other Tor servers (non-exit node)</string>
            </property>
           </widget>
          </item>
