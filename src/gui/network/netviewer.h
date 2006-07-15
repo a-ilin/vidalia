@@ -63,8 +63,6 @@ protected:
 private slots:
   /** Called when the user selects the "Help" action on the toolbar. */
   void help();
-  /** Called when the user selects the "New Identity" action on the toolbar. */
-  void newNym();
   /** Called when the user selects the "Refresh" action on the toolbar */
   void refresh();
   /** Called when the user selects a circuit on the circuit list */

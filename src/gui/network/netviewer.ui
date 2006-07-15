@@ -501,7 +501,6 @@
    <attribute name="toolBarArea" >
     <number>4</number>
    </attribute>
-   <addaction name="actionNewNym" />
    <addaction name="actionRefresh" />
    <addaction name="separator" />
    <addaction name="actionZoomIn" />
@@ -510,34 +509,6 @@
    <addaction name="actionHelp" />
    <addaction name="actionClose" />
   </widget>
-  <action name="actionNewNym" >
-   <property name="enabled" >
-    <bool>false</bool>
-   </property>
-   <property name="icon" >
-    <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/system-users.png</iconset>
-   </property>
-   <property name="text" >
-    <string>New Identity</string>
-   </property>
-   <property name="statusTip" >
-    <string>Make new connections appear to be different than your old connections.</string>
-   </property>
-   <property name="toolTip" >
-    <string>Make new connections appear to be different than your old connections.</string>
-   </property>
-   <property name="font" >
-    <font>
-     <family>Arial</family>
-     <pointsize>10</pointsize>
-     <weight>50</weight>
-     <italic>false</italic>
-     <bold>false</bold>
-     <underline>false</underline>
-     <strikeout>false</strikeout>
-    </font>
-   </property>
-  </action>
   <action name="actionRefresh" >
    <property name="enabled" >
     <bool>false</bool>

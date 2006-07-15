@@ -79,7 +79,6 @@ NetViewer::NetViewer(QWidget *parent)
 
   /* Connect the necessary slots and signals */
   connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
-  connect(ui.actionNewNym, SIGNAL(triggered()), this, SLOT(newNym()));
   connect(ui.actionRefresh, SIGNAL(triggered()), this, SLOT(refresh()));
   connect(ui.treeRouterList, SIGNAL(routerSelected(RouterDescriptor)),
 	  this, SLOT(routerSelected(RouterDescriptor)));
@@ -90,7 +89,6 @@ NetViewer::NetViewer(QWidget *parent)
 
   /* Respond to changes in the status of the control connection */
   connect(_torControl, SIGNAL(connected(bool)), ui.actionRefresh, SLOT(setEnabled(bool)));
-  connect(_torControl, SIGNAL(connected(bool)), ui.actionNewNym, SLOT(setEnabled(bool)));
   connect(_torControl, SIGNAL(connected()), this, SLOT(gotConnected()));
   connect(_torControl, SIGNAL(disconnected()), this, SLOT(gotDisconnected())); 
 
@@ -217,24 +215,6 @@ void
 NetViewer::help()
 {
   Vidalia::help("netview");
-}
-
-/** Called when the user selects the "New Identity" action from the toolbar. */
-void
-NetViewer::newNym()
-{
-  QString errmsg;
-  if (_torControl->signal(TorSignal::NewNym, &errmsg)) {
-    QMessageBox::information(this, 
-      tr("New Identity"), 
-      tr("All subsequent connections will appear to be different "
-         "than your old connections."),
-      QMessageBox::Ok, QMessageBox::NoButton);
-  } else {
-    QMessageBox::warning(this,
-      tr("Failed to Create New Identity"), errmsg,
-      QMessageBox::Ok, QMessageBox::NoButton);
-  }
 }
 
 /** Loads a list of new descriptors from the given IDs. */

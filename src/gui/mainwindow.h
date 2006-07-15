@@ -69,6 +69,8 @@ private slots:
   void connected();
   /** Called when the control connection fails. */
   void connectFailed(QString errmsg);
+  /** Called when the control socket has been disconnected. */
+  void disconnected();
   /** Called when the user selects "About" from the menu. */
   void showAbout();
   /** Called when the user selects "Message Log" from the menu. */
@@ -81,7 +83,9 @@ private slots:
   void showHelp();
   /** Called when the user selects "View Network" from the menu */
   void showNetwork();
-  
+  /** Called when the user selects the "New Identity" action from the menu. */
+  void newIdentity();
+
 private:
   /** Create the actions on the tray menu or menubar */
   void createActions();
@@ -119,6 +123,7 @@ private:
   QAction* _messageAct;
   QAction* _helpAct;
   QAction* _networkAct;
+  QAction* _newIdentityAct;
 };
 
 #endif

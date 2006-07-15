@@ -41,6 +41,7 @@
 #define IMG_BWGRAPH        ":/images/16x16/utilities-system-monitor.png"
 #define IMG_MESSAGELOG     ":/images/16x16/format-justify-fill.png"
 #define IMG_CONFIG         ":/images/16x16/preferences-system.png"
+#define IMG_IDENTITY       ":/images/16x16/system-users.png"
 #define IMG_HELP           ":/images/16x16/help-browser.png"
 #define IMG_ABOUT          ":/images/16x16/tor-logo.png"
 #define IMG_EXIT           ":/images/16x16/emblem-unreadable.png"
@@ -95,6 +96,7 @@ MainWindow::MainWindow()
   connect(_torControl, SIGNAL(stopped(int, QProcess::ExitStatus)),
                  this,   SLOT(stopped(int, QProcess::ExitStatus)));
   connect(_torControl, SIGNAL(connected()), this, SLOT(connected()));
+  connect(_torControl, SIGNAL(disconnected()), this, SLOT(disconnected()));
   connect(_torControl, SIGNAL(connectFailed(QString)), 
                  this,   SLOT(connectFailed(QString)));
 
@@ -183,6 +185,10 @@ MainWindow::createActions()
 
   _networkAct = new QAction(QIcon(IMG_NETWORK), tr("Network Map"), this);
   connect(_networkAct, SIGNAL(triggered()), this, SLOT(showNetwork()));
+
+  _newIdentityAct = new QAction(QIcon(IMG_IDENTITY), tr("New Identity"), this);
+  _newIdentityAct->setEnabled(false);
+  connect(_newIdentityAct, SIGNAL(triggered()), this, SLOT(newIdentity()));
 }
 
 /**
@@ -201,6 +207,7 @@ MainWindow::createTrayMenu()
   _trayMenu->addAction(_messageAct);
   _trayMenu->addAction(_networkAct);
   _trayMenu->addSeparator();
+  _trayMenu->addAction(_newIdentityAct);
   _trayMenu->addAction(_configAct);
   _trayMenu->addAction(_helpAct);
   _trayMenu->addAction(_aboutAct);
@@ -224,6 +231,7 @@ MainWindow::createMenuBar()
   _messageAct->setShortcut(tr("Ctrl+L"));
   _networkAct->setShortcut(tr("Ctrl+N"));
   _helpAct->setShortcut(tr("Ctrl+?"));
+  _newIdentityAct->setShortcut(tr("Ctrl+I"));
 
   /* Force Qt to put merge the Exit, Configure, and About menubar options into
    * the default menu, even if Vidalia is currently not speaking English. */
@@ -240,7 +248,9 @@ MainWindow::createMenuBar()
   QMenu *torMenu = menuBar->addMenu(tr("Tor"));
   torMenu->addAction(_startAct);
   torMenu->addAction(_stopAct);
-  
+  torMenu->addSeparator();
+  torMenu->addAction(_newIdentityAct);
+
   QMenu *viewMenu = menuBar->addMenu(tr("View"));
   viewMenu->addAction(_bandwidthAct);
   viewMenu->addAction(_messageAct);
@@ -464,7 +474,8 @@ MainWindow::connected()
 
   /* Update our tray status icon */
   _trayIcon->update(IMG_TOR_RUNNING, tr("Tor is running"));
-  
+  _newIdentityAct->setEnabled(true);
+
   /* If the user changed some of the server's settings while Tor wasn't 
    * running, then we better let Tor know about the changes now. */
   if (serverSettings.changedSinceLastApply()) {
@@ -485,6 +496,13 @@ MainWindow::connected()
       }
     }
   }
+}
+
+/** Called when the control socket has been disconnected. */
+void
+MainWindow::disconnected()
+{
+  _newIdentityAct->setEnabled(false);
 }
 
 /** Creates an instance of AboutDialog and shows it. If the About dialog is
@@ -535,5 +553,22 @@ void
 MainWindow::showNetwork()
 {
   _netViewer->show();  
+}
+
+/** Called when the user selects the "New Identity" action from the menu. */
+void
+MainWindow::newIdentity()
+{
+  QString errmsg;
+  if (_torControl->signal(TorSignal::NewNym, &errmsg)) {
+    VMessageBox::information(this,
+      tr("New Identity"),
+      tr("All subsequent connections will appear to be different "
+         "than your old connections."),
+      QMessageBox::Ok);
+  } else {
+    VMessageBox::warning(this,
+      tr("Failed to Create New Identity"), errmsg, VMessageBox::Ok);
+  }
 }
 
