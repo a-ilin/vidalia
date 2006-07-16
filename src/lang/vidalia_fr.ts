@@ -255,7 +255,7 @@
     <name>ConfigDialog</name>
     <message>
         <source>Configure Settings</source>
-        <translation>Options de configuration</translation>
+        <translation type="obsolete">Options de configuration</translation>
     </message>
     <message>
         <source>General</source>
@@ -288,6 +288,10 @@
     <message>
         <source>Help</source>
         <translation>Aide</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Options</translation>
     </message>
 </context>
 <context>
@@ -600,7 +604,7 @@ Installez une version plus récente de Tor.</translation>
     </message>
     <message>
         <source>Configure</source>
-        <translation>Configurer</translation>
+        <translation type="obsolete">Configurer</translation>
     </message>
     <message>
         <source>About</source>
@@ -753,6 +757,26 @@ Veuillez consulter l&apos;historique afin de vérifier ce qui est arrivé à Tor
     <message>
         <source>Network Map</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Options</translation>
+    </message>
+    <message>
+        <source>New Identity</source>
+        <translation type="unfinished">Nouvelle identité</translation>
+    </message>
+    <message>
+        <source>Ctrl+I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All subsequent connections will appear to be different than your old connections.</source>
+        <translation type="unfinished">Toutes les connections suivantes sembleront être différentes des précédentes.</translation>
+    </message>
+    <message>
+        <source>Failed to Create New Identity</source>
+        <translation type="unfinished">La création d&apos;une nouvelle identité a échoué</translation>
     </message>
 </context>
 <context>
@@ -1071,11 +1095,11 @@ pour les développeurs de Tor.</translation>
     </message>
     <message>
         <source>New Identity</source>
-        <translation>Nouvelle identité</translation>
+        <translation type="obsolete">Nouvelle identité</translation>
     </message>
     <message>
         <source>Make new connections appear to be different than your old connections.</source>
-        <translation>Établi de nouvelles connections différentes des précédentes.</translation>
+        <translation type="obsolete">Établi de nouvelles connections différentes des précédentes.</translation>
     </message>
     <message>
         <source>Refresh the list of routers and connections.</source>
@@ -1103,11 +1127,19 @@ pour les développeurs de Tor.</translation>
     </message>
     <message>
         <source>All subsequent connections will appear to be different than your old connections.</source>
-        <translation>Toutes les connections suivantes sembleront être différentes des précédentes.</translation>
+        <translation type="obsolete">Toutes les connections suivantes sembleront être différentes des précédentes.</translation>
     </message>
     <message>
         <source>Failed to Create New Identity</source>
-        <translation>La création d&apos;une nouvelle identité a échoué</translation>
+        <translation type="obsolete">La création d&apos;une nouvelle identité a échoué</translation>
+    </message>
+    <message>
+        <source>Zoom To Fit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zooms to fit all currently displayed circuits.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1243,7 +1275,7 @@ avec votre serveur</translation>
     </message>
     <message>
         <source>Only relay traffic between other Tor servers (middle-man)</source>
-        <translation>Relayer uniquement le trafique entre les autres serveurs Tor (middle-man)</translation>
+        <translation type="obsolete">Relayer uniquement le trafique entre les autres serveurs Tor (middle-man)</translation>
     </message>
     <message>
         <source>Attempts to determine the correct address for your server</source>
@@ -1415,6 +1447,10 @@ de PGP ou de GPG.</translation>
     </message>
     <message>
         <source>Directory Port Number</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only allow connections to other Tor servers (non-exit node)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

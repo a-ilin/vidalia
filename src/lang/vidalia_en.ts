@@ -238,10 +238,6 @@
 <context>
     <name>ConfigDialog</name>
     <message>
-        <source>Configure Settings</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>General</source>
         <translation type="unfinished"></translation>
     </message>
@@ -271,6 +267,10 @@
     </message>
     <message>
         <source>Help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -578,10 +578,6 @@ Upgrade to a newer version of Tor.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Configure</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
@@ -719,6 +715,26 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
         <source>Network Map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New Identity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All subsequent connections will appear to be different than your old connections.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to Create New Identity</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1029,14 +1045,6 @@ interest to Tor developers.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>New Identity</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Make new connections appear to be different than your old connections.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Refresh the list of routers and connections.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1061,11 +1069,11 @@ interest to Tor developers.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>All subsequent connections will appear to be different than your old connections.</source>
+        <source>Zoom To Fit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Failed to Create New Identity</source>
+        <source>Zooms to fit all currently displayed circuits.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1197,10 +1205,6 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>If selected, clients will not exit the Tor network through your server</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Only relay traffic between other Tor servers (middle-man)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -1365,6 +1369,10 @@ fingerprint.</source>
     </message>
     <message>
         <source>Show help topic on bandwidth rate limits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only allow connections to other Tor servers (non-exit node)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

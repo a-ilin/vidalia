@@ -255,7 +255,7 @@
     <name>ConfigDialog</name>
     <message>
         <source>Configure Settings</source>
-        <translation>Configurations Einstellungen</translation>
+        <translation type="obsolete">Configurations Einstellungen</translation>
     </message>
     <message>
         <source>General</source>
@@ -288,6 +288,10 @@
     <message>
         <source>Help</source>
         <translation>Hilfe</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Einstellungen</translation>
     </message>
 </context>
 <context>
@@ -600,7 +604,7 @@ Protocol (Version %1 entdeckt). Installiere eine neuere Version von Tor.</transl
     </message>
     <message>
         <source>Configure</source>
-        <translation>Einstellen</translation>
+        <translation type="obsolete">Einstellen</translation>
     </message>
     <message>
         <source>About</source>
@@ -755,6 +759,27 @@ wurde.
     <message>
         <source>Network Map</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Einstellungen</translation>
+    </message>
+    <message>
+        <source>New Identity</source>
+        <translation type="unfinished">Neue Identität</translation>
+    </message>
+    <message>
+        <source>Ctrl+I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All subsequent connections will appear to be different than your old connections.</source>
+        <translation type="unfinished">Alle folgenden Verbindungen werden anders als alte
+Verbindungen erscheinen.</translation>
+    </message>
+    <message>
+        <source>Failed to Create New Identity</source>
+        <translation type="unfinished">Konnte keine neue Identität erstellen</translation>
     </message>
 </context>
 <context>
@@ -1076,11 +1101,11 @@ empfangen</translation>
     </message>
     <message>
         <source>New Identity</source>
-        <translation>Neue Identität</translation>
+        <translation type="obsolete">Neue Identität</translation>
     </message>
     <message>
         <source>Make new connections appear to be different than your old connections.</source>
-        <translation>Lass neue Verbindungen anders als alte Verbindungen
+        <translation type="obsolete">Lass neue Verbindungen anders als alte Verbindungen
 erscheinen</translation>
     </message>
     <message>
@@ -1109,12 +1134,20 @@ erscheinen</translation>
     </message>
     <message>
         <source>All subsequent connections will appear to be different than your old connections.</source>
-        <translation>Alle folgenden Verbindungen werden anders als alte
+        <translation type="obsolete">Alle folgenden Verbindungen werden anders als alte
 Verbindungen erscheinen.</translation>
     </message>
     <message>
         <source>Failed to Create New Identity</source>
-        <translation>Konnte keine neue Identität erstellen</translation>
+        <translation type="obsolete">Konnte keine neue Identität erstellen</translation>
+    </message>
+    <message>
+        <source>Zoom To Fit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zooms to fit all currently displayed circuits.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1251,7 +1284,7 @@ durch deinen Server zu verbieten.</translation>
     </message>
     <message>
         <source>Only relay traffic between other Tor servers (middle-man)</source>
-        <translation>Leite nur Traffic zwischen anderen Tor Servern weiter
+        <translation type="obsolete">Leite nur Traffic zwischen anderen Tor Servern weiter
 (middle-man)</translation>
     </message>
     <message>
@@ -1425,6 +1458,10 @@ angeben.</translation>
     </message>
     <message>
         <source>Show help topic on bandwidth rate limits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only allow connections to other Tor servers (non-exit node)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

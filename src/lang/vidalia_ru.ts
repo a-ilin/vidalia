@@ -255,7 +255,7 @@
     <name>ConfigDialog</name>
     <message>
         <source>Configure Settings</source>
-        <translation>Настройки</translation>
+        <translation type="obsolete">Настройки</translation>
     </message>
     <message>
         <source>General</source>
@@ -288,6 +288,10 @@
     <message>
         <source>Help</source>
         <translation>Помощь</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Настройки</translation>
     </message>
 </context>
 <context>
@@ -596,7 +600,7 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Configure</source>
-        <translation>Настройки</translation>
+        <translation type="obsolete">Настройки</translation>
     </message>
     <message>
         <source>About</source>
@@ -745,6 +749,26 @@ Please check the message log for indicators about what happened to Tor before it
     <message>
         <source>Network Map</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Настройки</translation>
+    </message>
+    <message>
+        <source>New Identity</source>
+        <translation type="unfinished">Новый Ним</translation>
+    </message>
+    <message>
+        <source>Ctrl+I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All subsequent connections will appear to be different than your old connections.</source>
+        <translation type="unfinished">Все последующие соединения не будут связаны с предыдущими соединениями.</translation>
+    </message>
+    <message>
+        <source>Failed to Create New Identity</source>
+        <translation type="unfinished">Ошибка создания нового Нима</translation>
     </message>
 </context>
 <context>
@@ -1066,11 +1090,11 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>New Identity</source>
-        <translation>Новый Ним</translation>
+        <translation type="obsolete">Новый Ним</translation>
     </message>
     <message>
         <source>Make new connections appear to be different than your old connections.</source>
-        <translation>Новый соединения не будут связаны с предыдущими соединениями.</translation>
+        <translation type="obsolete">Новый соединения не будут связаны с предыдущими соединениями.</translation>
     </message>
     <message>
         <source>Refresh the list of routers and connections.</source>
@@ -1098,11 +1122,19 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>All subsequent connections will appear to be different than your old connections.</source>
-        <translation>Все последующие соединения не будут связаны с предыдущими соединениями.</translation>
+        <translation type="obsolete">Все последующие соединения не будут связаны с предыдущими соединениями.</translation>
     </message>
     <message>
         <source>Failed to Create New Identity</source>
-        <translation>Ошибка создания нового Нима</translation>
+        <translation type="obsolete">Ошибка создания нового Нима</translation>
+    </message>
+    <message>
+        <source>Zoom To Fit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zooms to fit all currently displayed circuits.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1237,7 +1269,7 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Only relay traffic between other Tor servers (middle-man)</source>
-        <translation>Передавать трафик только внутри Сети Tor (middle-man)</translation>
+        <translation type="obsolete">Передавать трафик только внутри Сети Tor (middle-man)</translation>
     </message>
     <message>
         <source>Attempts to determine the correct address for your server</source>
@@ -1406,6 +1438,10 @@ PGP или GPG ключа.</translation>
     <message>
         <source>Show help topic on bandwidth rate limits</source>
         <translation>Показать справку по ограничению трафика</translation>
+    </message>
+    <message>
+        <source>Only allow connections to other Tor servers (non-exit node)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

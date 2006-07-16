@@ -255,7 +255,7 @@
     <name>ConfigDialog</name>
     <message>
         <source>Configure Settings</source>
-        <translation>Muuta asetuksia</translation>
+        <translation type="obsolete">Muuta asetuksia</translation>
     </message>
     <message>
         <source>General</source>
@@ -288,6 +288,10 @@
     <message>
         <source>Help</source>
         <translation>Ohje</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Asetukset</translation>
     </message>
 </context>
 <context>
@@ -604,7 +608,7 @@ Olkaapa hyvä ja päivitä uudempaan Tor-ohjelmaan.</translation>
     </message>
     <message>
         <source>Configure</source>
-        <translation>Asetukset</translation>
+        <translation type="obsolete">Asetukset</translation>
     </message>
     <message>
         <source>About</source>
@@ -781,6 +785,26 @@ Olkaapa hyvä ja tarkistakaapa tapahtumalokista mitä tapahtui Tor-ohjelmalle en
     <message>
         <source>Network Map</source>
         <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Asetukset</translation>
+    </message>
+    <message>
+        <source>New Identity</source>
+        <translation type="unfinished">Uusi identiteetti</translation>
+    </message>
+    <message>
+        <source>Ctrl+I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All subsequent connections will appear to be different than your old connections.</source>
+        <translation type="unfinished">Seuraavat yhteydet tulevat olemaan erilaiset kuin vanhat.</translation>
+    </message>
+    <message>
+        <source>Failed to Create New Identity</source>
+        <translation type="unfinished">Uuden identiteetin luominen epäonnistui</translation>
     </message>
 </context>
 <context>
@@ -1122,11 +1146,11 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>New Identity</source>
-        <translation>Uusi identiteetti</translation>
+        <translation type="obsolete">Uusi identiteetti</translation>
     </message>
     <message>
         <source>Make new connections appear to be different than your old connections.</source>
-        <translation>Tee uusista yhteyksista erilaisia kuin vanhat yhteydet.</translation>
+        <translation type="obsolete">Tee uusista yhteyksista erilaisia kuin vanhat yhteydet.</translation>
     </message>
     <message>
         <source>Refresh the list of routers and connections.</source>
@@ -1154,11 +1178,19 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>All subsequent connections will appear to be different than your old connections.</source>
-        <translation>Seuraavat yhteydet tulevat olemaan erilaiset kuin vanhat.</translation>
+        <translation type="obsolete">Seuraavat yhteydet tulevat olemaan erilaiset kuin vanhat.</translation>
     </message>
     <message>
         <source>Failed to Create New Identity</source>
-        <translation>Uuden identiteetin luominen epäonnistui</translation>
+        <translation type="obsolete">Uuden identiteetin luominen epäonnistui</translation>
+    </message>
+    <message>
+        <source>Zoom To Fit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zooms to fit all currently displayed circuits.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1302,7 +1334,7 @@ problem with your server</source>
     </message>
     <message>
         <source>Only relay traffic between other Tor servers (middle-man)</source>
-        <translation>Välitä tietoa vain Tor-palvelinten välillä (välikäsi)</translation>
+        <translation type="obsolete">Välitä tietoa vain Tor-palvelinten välillä (välikäsi)</translation>
     </message>
     <message>
         <source>Attempts to determine the correct address for your server</source>
@@ -1469,6 +1501,10 @@ fingerprint.</source>
     <message>
         <source>Show help topic on bandwidth rate limits</source>
         <translation>Avaa yhteysnopeuksien rajoittamisesta ohje</translation>
+    </message>
+    <message>
+        <source>Only allow connections to other Tor servers (non-exit node)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

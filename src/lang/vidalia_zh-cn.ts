@@ -255,7 +255,7 @@
     <name>ConfigDialog</name>
     <message>
         <source>Configure Settings</source>
-        <translation>配置设定</translation>
+        <translation type="obsolete">配置设定</translation>
     </message>
     <message>
         <source>General</source>
@@ -575,6 +575,10 @@ Would you like to access an external service to determine your public IP address
         <source>Help</source>
         <translation>帮助</translation>
     </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">设置</translation>
+    </message>
 </context>
 <context>
     <name>ControlConnection</name>
@@ -889,7 +893,7 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Configure</source>
-        <translation>配置</translation>
+        <translation type="obsolete">配置</translation>
     </message>
     <message>
         <source>About</source>
@@ -1133,6 +1137,26 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
         <source>Network Map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">设置</translation>
+    </message>
+    <message>
+        <source>New Identity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All subsequent connections will appear to be different than your old connections.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to Create New Identity</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1506,14 +1530,6 @@ Error: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>New Identity</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <source>Make new connections appear to be different than your old connections.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Refresh the list of routers and connections.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1538,11 +1554,11 @@ Error: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>All subsequent connections will appear to be different than your old connections.</source>
+        <source>Zoom To Fit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Failed to Create New Identity</source>
+        <source>Zooms to fit all currently displayed circuits.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1682,7 +1698,7 @@ Error: </source>
     </message>
     <message>
         <source>Only relay traffic between other Tor servers (middle-man)</source>
-        <translation>只进行其他Tor服务器之间的中继传输(中间人的角色)</translation>
+        <translation type="obsolete">只进行其他Tor服务器之间的中继传输(中间人的角色)</translation>
     </message>
     <message>
         <source>Attempts to determine the correct address for your server</source>
@@ -1866,6 +1882,10 @@ fingerprint.</source>
     </message>
     <message>
         <source>Show help topic on bandwidth rate limits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only allow connections to other Tor servers (non-exit node)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
