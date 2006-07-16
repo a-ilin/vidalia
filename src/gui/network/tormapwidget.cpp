@@ -268,7 +268,7 @@ TorMapWidget::minimumSizeHint() const
 void
 TorMapWidget::zoomToFit()
 {
-  QRect rect = circuitBoundingBox();
+  QRectF rect = circuitBoundingBox();
   
   if (rect.isNull()) {
     /* If there are no circuits, zoom all the way out */
@@ -276,25 +276,25 @@ TorMapWidget::zoomToFit()
     zoom(0.0);
   } else {
     /* Zoom in on the displayed circuits */
-    float zoomLevel = 1.0 - qMin((float)rect.height()/(float)height(),
-                                 (float)rect.width()/(float)width());
+    float zoomLevel = 1.0 - qMin(rect.height()/(float)height(),
+                                 rect.width()/(float)width());
 
-    zoom(rect.center(), zoomLevel);
+    zoom(rect.center().toPoint(), zoomLevel);
   }
 }
 
 /** Computes a bounding box around all currently displayed circuit paths on
  * the map. */
-QRect
+QRectF
 TorMapWidget::circuitBoundingBox()
 {
-  QRect rect;
+  QRectF rect;
 
   /* Compute the union of bounding rectangles for all circuit paths */
   foreach (int circid, _circuits.keys()) {
     QPair<QPainterPath*,bool> *pair = _circuits.value(circid);
     QPainterPath *circuit = pair->first;
-    rect = rect.unite(circuit->boundingRect().toRect());
+    rect = rect.unite(circuit->boundingRect());
   }
   return rect;
 }

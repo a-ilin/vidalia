@@ -78,7 +78,7 @@ private:
   float lerp(float input, float *table);
   /** Computes a bounding box around all currently displayed circuit paths on
    * the map. */
-  QRect circuitBoundingBox();
+  QRectF circuitBoundingBox();
   
   /** Stores map locations for tor routers */
   QHash<QString, QPair<QPointF,bool>* > _routers;
