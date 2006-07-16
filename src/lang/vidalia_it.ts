@@ -132,7 +132,7 @@
     </message>
     <message>
         <source>Choose Vidalia&apos;s interface style</source>
-        <translation>Scegliere lo stile dell'interfaccia di Vidalia</translation>
+        <translation>Scegliere lo stile dell&apos;interfaccia di Vidalia</translation>
     </message>
 </context>
 <context>
@@ -159,7 +159,7 @@
     </message>
     <message>
         <source>Changes the transparency of the Bandwidth Graph</source>
-        <translation>Imposta la trasparenza del grafico dell'ampiezza di banda</translation>
+        <translation>Imposta la trasparenza del grafico dell&apos;ampiezza di banda</translation>
     </message>
     <message>
         <source>Save</source>
@@ -175,7 +175,7 @@
     </message>
     <message>
         <source>Jan 1 2000</source>
-        <translation>Gen 1 2000</translation>
+        <translation type="obsolete">Gen 1 2000</translation>
     </message>
     <message>
         <source>100</source>
@@ -243,7 +243,7 @@
     <name>ConfigDialog</name>
     <message>
         <source>Configure Settings</source>
-        <translation>Impostazioni</translation>
+        <translation type="obsolete">Impostazioni</translation>
     </message>
     <message>
         <source>General</source>
@@ -277,6 +277,10 @@
         <source>Help</source>
         <translation>Aiuto</translation>
     </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Impostazioni</translation>
+    </message>
 </context>
 <context>
     <name>ControlConnection</name>
@@ -307,7 +311,7 @@ Aggiorna la versione di Tor.</translation>
     </message>
     <message>
         <source>Error sending control command. [%1]</source>
-        <translation>Errore nell'invio del comando di controllo. [%1]</translation>
+        <translation>Errore nell&apos;invio del comando di controllo. [%1]</translation>
     </message>
     <message>
         <source>Socket disconnected while attempting to read a line of data.</source>
@@ -480,7 +484,7 @@ Aggiorna la versione di Tor.</translation>
     </message>
     <message>
         <source>Close Vidalia Help</source>
-        <translation>Chiudi l'help di Vidalia</translation>
+        <translation>Chiudi l&apos;help di Vidalia</translation>
     </message>
     <message>
         <source>Esc</source>
@@ -584,7 +588,7 @@ Aggiorna la versione di Tor.</translation>
     </message>
     <message>
         <source>Configure</source>
-        <translation>Configura</translation>
+        <translation type="obsolete">Configura</translation>
     </message>
     <message>
         <source>About</source>
@@ -692,7 +696,7 @@ Aggiorna la versione di Tor.</translation>
     </message>
     <message>
         <source>View Network</source>
-        <translation>Mostra rete</translation>
+        <translation type="obsolete">Mostra rete</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
@@ -728,7 +732,31 @@ Controlla il log dei messaggi per indicazioni su cos&apos;è accaduto a Tor prim
     </message>
     <message>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
-        <translation>Vidalia non è riuscito ad avviare Tor. Controlla le impostazioni per assicurarti di aver specificato nome e posizione corretti per l'eseguibile di Tor.</translation>
+        <translation>Vidalia non è riuscito ad avviare Tor. Controlla le impostazioni per assicurarti di aver specificato nome e posizione corretti per l&apos;eseguibile di Tor.</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Impostazioni</translation>
+    </message>
+    <message>
+        <source>Network Map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New Identity</source>
+        <translation type="unfinished">Nuova identità</translation>
+    </message>
+    <message>
+        <source>Ctrl+I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All subsequent connections will appear to be different than your old connections.</source>
+        <translation type="unfinished">Tutte le nuove connessioni verranno visualizzate in modo diverso dalle vecchie.</translation>
+    </message>
+    <message>
+        <source>Failed to Create New Identity</source>
+        <translation type="unfinished">Impossibile creare una nuova identità</translation>
     </message>
 </context>
 <context>
@@ -1015,6 +1043,10 @@ interesse per gli sviluppatori di Tor.</translation>
         <source>Vidalia was unable to open the specified log file.</source>
         <translation>Vidalia non è riuscito ad aprire il file specificato.</translation>
     </message>
+    <message>
+        <source>Text Files (*.txt)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>NetViewer</name>
@@ -1044,11 +1076,11 @@ interesse per gli sviluppatori di Tor.</translation>
     </message>
     <message>
         <source>New Identity</source>
-        <translation>Nuova identità</translation>
+        <translation type="obsolete">Nuova identità</translation>
     </message>
     <message>
         <source>Make new connections appear to be different than your old connections.</source>
-        <translation>Rendi le nuove connessioni diverse dalle vecchie.</translation>
+        <translation type="obsolete">Rendi le nuove connessioni diverse dalle vecchie.</translation>
     </message>
     <message>
         <source>Refresh the list of routers and connections.</source>
@@ -1076,11 +1108,19 @@ interesse per gli sviluppatori di Tor.</translation>
     </message>
     <message>
         <source>All subsequent connections will appear to be different than your old connections.</source>
-        <translation>Tutte le nuove connessioni verranno visualizzate in modo diverso dalle vecchie.</translation>
+        <translation type="obsolete">Tutte le nuove connessioni verranno visualizzate in modo diverso dalle vecchie.</translation>
     </message>
     <message>
         <source>Failed to Create New Identity</source>
-        <translation>Impossibile creare una nuova identità</translation>
+        <translation type="obsolete">Impossibile creare una nuova identità</translation>
+    </message>
+    <message>
+        <source>Zoom To Fit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zooms to fit all currently displayed circuits.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1215,7 +1255,7 @@ interesse per gli sviluppatori di Tor.</translation>
     </message>
     <message>
         <source>Only relay traffic between other Tor servers (middle-man)</source>
-        <translation>Scambia traffico solo tra altri server Tor (uomo in mezzo)</translation>
+        <translation type="obsolete">Scambia traffico solo tra altri server Tor (uomo in mezzo)</translation>
     </message>
     <message>
         <source>Attempts to determine the correct address for your server</source>
@@ -1339,7 +1379,7 @@ interesse per gli sviluppatori di Tor.</translation>
 Would you like to access an external service to determine your public IP address?</source>
         <translation>Vidalia è riuscito a trovare solo un IP privato per questo server.
 
-Accedere ad un servizio esterno per determinare l'indirizzo IP pubblico?</translation>
+Accedere ad un servizio esterno per determinare l&apos;indirizzo IP pubblico?</translation>
     </message>
     <message>
         <source>When enabled, Vidalia will periodically update your IP address if necessary</source>
@@ -1354,7 +1394,7 @@ Accedere ad un servizio esterno per determinare l'indirizzo IP pubblico?</transl
 problem with your server. You might also include your PGP or GPG
 fingerprint.</source>
         <translation>Indirizzo e-mail al quale raggiungere l&apos;admin se
-si verifica un problema con il server. E' possibile includere anche
+si verifica un problema con il server. E&apos; possibile includere anche
 un fingerprint PGP o GPG.</translation>
     </message>
     <message>
@@ -1384,6 +1424,10 @@ un fingerprint PGP o GPG.</translation>
     <message>
         <source>Show help topic on bandwidth rate limits</source>
         <translation>Mostra l&apos;aiuto per l&apos;impostazione dei limiti di banda</translation>
+    </message>
+    <message>
+        <source>Only allow connections to other Tor servers (non-exit node)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
