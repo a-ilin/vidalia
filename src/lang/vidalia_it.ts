@@ -81,7 +81,7 @@
     </message>
     <message>
         <source>Vidalia will run with this User&apos;s permissions</source>
-        <translation>Vidalia sar&agrave; avviato con i permessi di questo utente</translation>
+        <translation>Vidalia sarà avviato con i permessi di questo utente</translation>
     </message>
     <message>
         <source>Run as Group:</source>
@@ -89,7 +89,7 @@
     </message>
     <message>
         <source>Vidalia will run with this Group&apos;s permissions</source>
-        <translation>Vidalia sar&agrave; avviato con i permessi di questo gruppo</translation>
+        <translation>Vidalia sarà avviato con i permessi di questo gruppo</translation>
     </message>
     <message>
         <source>Select Tor Configuration File</source>
@@ -105,11 +105,11 @@
     </message>
     <message>
         <source>Failed to Create File</source>
-        <translation>Non è possibile creare il file</translation>
+        <translation>Non √® possibile creare il file</translation>
     </message>
     <message>
         <source>Unable to create %1 [%2]</source>
-        <translation>Non è possibile creare %1 [%2]</translation>
+        <translation>Non √® possibile creare %1 [%2]</translation>
     </message>
 </context>
 <context>
@@ -124,7 +124,7 @@
     </message>
     <message>
         <source>Changes to language will only take effect after restarting Vidalia!</source>
-        <translation>Il cambio di lingua avr&agrave; effetto solo al riavvio di Vidalia!</translation>
+        <translation>Il cambio di lingua avrà effetto solo al riavvio di Vidalia!</translation>
     </message>
     <message>
         <source>Style</source>
@@ -151,11 +151,11 @@
     </message>
     <message>
         <source>Receive Rate</source>
-        <translation>Velocit&agrave; di ricezione</translation>
+        <translation>Velocità di ricezione</translation>
     </message>
     <message>
         <source>Send Rate</source>
-        <translation>Velocit&agrave; di invio</translation>
+        <translation>Velocità di invio</translation>
     </message>
     <message>
         <source>Changes the transparency of the Bandwidth Graph</source>
@@ -286,7 +286,7 @@
     </message>
     <message>
         <source>Control socket not connected.</source>
-        <translation>Il socket di controllo non è connesso.</translation>
+        <translation>Il socket di controllo non √® connesso.</translation>
     </message>
 </context>
 <context>
@@ -311,7 +311,7 @@ Aggiorna la versione di Tor.</translation>
     </message>
     <message>
         <source>Socket disconnected while attempting to read a line of data.</source>
-        <translation>Il socket si è disconnesso durante il tentativo di leggere una linea di dati.</translation>
+        <translation>Il socket si √® disconnesso durante il tentativo di leggere una linea di dati.</translation>
     </message>
     <message>
         <source>Invalid control reply. [%1]</source>
@@ -500,7 +500,7 @@ Aggiorna la versione di Tor.</translation>
     </message>
     <message>
         <source>Text not found in document</source>
-        <translation>Il testo non è stato trovato nel documento</translation>
+        <translation>Il testo non √® stato trovato nel documento</translation>
     </message>
     <message>
         <source>Find:</source>
@@ -516,7 +516,7 @@ Aggiorna la versione di Tor.</translation>
     </message>
     <message>
         <source>Supplied XML file is not a valid Contents document.</source>
-        <translation>Il file XML specificato non è un documento valido.</translation>
+        <translation>Il file XML specificato non √® un documento valido.</translation>
     </message>
     <message>
         <source>Found %1 results</source>
@@ -572,7 +572,7 @@ Aggiorna la versione di Tor.</translation>
     <name>MainWindow</name>
     <message>
         <source>Tor is Stopped</source>
-        <translation>Tor &egrave; arrestato.</translation>
+        <translation>Tor è arrestato.</translation>
     </message>
     <message>
         <source>Start</source>
@@ -656,15 +656,15 @@ Aggiorna la versione di Tor.</translation>
     </message>
     <message>
         <source>Tor is stopped</source>
-        <translation>Tor &egrave; arrestato</translation>
+        <translation>Tor è arrestato</translation>
     </message>
     <message>
         <source>Tor Exited</source>
-        <translation>Tor &egrave; chiuso</translation>
+        <translation>Tor è chiuso</translation>
     </message>
     <message>
         <source>Vidalia was unable to stop Tor.</source>
-        <translation>Vidalia non &egrave; riuscito a fermare Tor.</translation>
+        <translation>Vidalia non è riuscito a fermare Tor.</translation>
     </message>
     <message>
         <source>Tor is starting</source>
@@ -672,11 +672,11 @@ Aggiorna la versione di Tor.</translation>
     </message>
     <message>
         <source>Tor is running</source>
-        <translation>Tor &egrave; avviato</translation>
+        <translation>Tor è avviato</translation>
     </message>
     <message>
         <source>Server is Enabled</source>
-        <translation>Il server &egrave; abilitato</translation>
+        <translation>Il server è abilitato</translation>
     </message>
     <message>
         <source>Error Shutting Down</source>
@@ -704,31 +704,31 @@ Aggiorna la versione di Tor.</translation>
     </message>
     <message>
         <source>Vidalia was unable to apply your server&apos;s settings.</source>
-        <translation>Vidalia non &egrave; riuscito ad utilizzare le impostazioni del server.</translation>
+        <translation>Vidalia non è riuscito ad utilizzare le impostazioni del server.</translation>
     </message>
     <message>
         <source>You are currently running a Tor server. Terminating your server will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new server?</source>
-        <translation>Al momento &egrave; avviato un server Tor. La chiusura del server comporta l&apos;interruzione di tutte le connessioni aperte dai client.
+        <translation>Al momento è avviato un server Tor. La chiusura del server comporta l&apos;interruzione di tutte le connessioni aperte dai client.
 
 Si desidera chiudere delicatamente e dare ai client il tempo di trovare un nuovo server?</translation>
     </message>
     <message>
         <source>Vidalia was unable to shutdown Tor gracefully. (</source>
-        <translation>Vidalia non &egrave; riuscito a chiudere delicatamente.</translation>
+        <translation>Vidalia non è riuscito a chiudere delicatamente.</translation>
     </message>
     <message>
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
-        <translation>Vidalia ha rilevato che Tor &egrave; terminato inaspettatamente.
+        <translation>Vidalia ha rilevato che Tor è terminato inaspettatamente.
         
-Controlla il log dei messaggi per indicazioni su cos&apos;&egrave; accaduto a Tor prima che terminasse.</translation>
+Controlla il log dei messaggi per indicazioni su cos&apos;è accaduto a Tor prima che terminasse.</translation>
     </message>
     <message>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
-        <translation>Vidalia non &egrave; riuscito ad avviare Tor. Controlla le impostazioni per assicurarti di aver specificato nome e posizione corretti per l'eseguibile di Tor.</translation>
+        <translation>Vidalia non è riuscito ad avviare Tor. Controlla le impostazioni per assicurarti di aver specificato nome e posizione corretti per l'eseguibile di Tor.</translation>
     </message>
 </context>
 <context>
@@ -909,13 +909,13 @@ Controlla il log dei messaggi per indicazioni su cos&apos;&egrave; accaduto a To
         <source>Messages that appear when something has 
 gone very wrong and Tor cannot proceed.</source>
         <translation>Messaggio che appare quando qualcosa
-di critico &egrave; fallito e Tor non pu&ograve; proseguire.</translation>
+di critico è fallito e Tor non può proseguire.</translation>
     </message>
     <message>
         <source>Messages that only appear when 
 something has gone wrong with Tor.</source>
         <translation>Messaggi che appaiono solo se
-qualcosa &egrave; andato storto con Tor.</translation>
+qualcosa è andato storto con Tor.</translation>
     </message>
     <message>
         <source>Messages that appear infrequently 
@@ -1001,19 +1001,19 @@ interesse per gli sviluppatori di Tor.</translation>
     </message>
     <message>
         <source>Vidalia was unable to register for Tor&apos;s log events.</source>
-        <translation>Vidalia non &egrave; riuscito a registrarsi per gli eventi di log di Tor.</translation>
+        <translation>Vidalia non è riuscito a registrarsi per gli eventi di log di Tor.</translation>
     </message>
     <message>
         <source>Cannot write file %1
 
 %2.</source>
-        <translation>Non &egrave; possibile scrivere il file %1
+        <translation>Non è possibile scrivere il file %1
 
 %2</translation>
     </message>
     <message>
         <source>Vidalia was unable to open the specified log file.</source>
-        <translation>Vidalia non &egrave; riuscito ad aprire il file specificato.</translation>
+        <translation>Vidalia non è riuscito ad aprire il file specificato.</translation>
     </message>
 </context>
 <context>
@@ -1044,7 +1044,7 @@ interesse per gli sviluppatori di Tor.</translation>
     </message>
     <message>
         <source>New Identity</source>
-        <translation>Nuova identit&agrave;</translation>
+        <translation>Nuova identità</translation>
     </message>
     <message>
         <source>Make new connections appear to be different than your old connections.</source>
@@ -1080,7 +1080,7 @@ interesse per gli sviluppatori di Tor.</translation>
     </message>
     <message>
         <source>Failed to Create New Identity</source>
-        <translation>Impossibile creare una nuova identit&agrave;</translation>
+        <translation>Impossibile creare una nuova identità</translation>
     </message>
 </context>
 <context>
@@ -1299,11 +1299,11 @@ interesse per gli sviluppatori di Tor.</translation>
     </message>
     <message>
         <source>Increase the priority of the selected exit policy</source>
-        <translation>Aumenta la priorit&agrave; della policy selezionata</translation>
+        <translation>Aumenta la priorità della policy selezionata</translation>
     </message>
     <message>
         <source>Decrease the priority of the selected exit policy</source>
-        <translation>Abbassa la priorit&agrave; della policy selezionata</translation>
+        <translation>Abbassa la priorità della policy selezionata</translation>
     </message>
     <message>
         <source>Remove the selected exit policy</source>
@@ -1331,19 +1331,19 @@ interesse per gli sviluppatori di Tor.</translation>
     </message>
     <message>
         <source>Vidalia was unable to determine your public IP address.</source>
-        <translation>Vidalia non &egrave; stato in grado di determinare il tuo indirizzo IP pubblico.</translation>
+        <translation>Vidalia non è stato in grado di determinare il tuo indirizzo IP pubblico.</translation>
     </message>
     <message>
         <source>Vidalia was only able to find a private IP address for your server.
 
 Would you like to access an external service to determine your public IP address?</source>
-        <translation>Vidalia &egrave; riuscito a trovare solo un IP privato per questo server.
+        <translation>Vidalia è riuscito a trovare solo un IP privato per questo server.
 
 Accedere ad un servizio esterno per determinare l'indirizzo IP pubblico?</translation>
     </message>
     <message>
         <source>When enabled, Vidalia will periodically update your IP address if necessary</source>
-        <translation>Quando abilitato Vidalia aggiorner&agrave; l&apos;indirizzo IP se necessario</translation>
+        <translation>Quando abilitato Vidalia aggiornerà l&apos;indirizzo IP se necessario</translation>
     </message>
     <message>
         <source>Automatically Update</source>
@@ -1425,7 +1425,7 @@ un fingerprint PGP o GPG.</translation>
     <name>TorProcess</name>
     <message>
         <source>Process %1 failed to stop. [%2]</source>
-        <translation>Il processo %1 non &egrave; riuscito a terminare. [%2]</translation>
+        <translation>Il processo %1 non è riuscito a terminare. [%2]</translation>
     </message>
 </context>
 <context>
@@ -1467,19 +1467,19 @@ un fingerprint PGP o GPG.</translation>
     <name>Vidalia</name>
     <message>
         <source>Invalid language code specified: </source>
-        <translation>Il codice di lingua specificato non &egrave; valido: </translation>
+        <translation>Il codice di lingua specificato non è valido: </translation>
     </message>
     <message>
         <source>Invalid GUI style specified: </source>
-        <translation>Lo stile GUI specificato non &egrave; valido: </translation>
+        <translation>Lo stile GUI specificato non è valido: </translation>
     </message>
     <message>
         <source>Vidalia is already running</source>
-        <translation>Vidalia &egrave; gi&agrave; in esecuzione.</translation>
+        <translation>Vidalia è già in esecuzione.</translation>
     </message>
     <message>
         <source>Another Vidalia process is already running. This Vidalia process will now exit.</source>
-        <translation>Un altro processo di Vidalia &egrave; gi&agrave; in esecuzione. Questo processo sar&agrave; terminato ora.</translation>
+        <translation>Un altro processo di Vidalia è già in esecuzione. Questo processo sarà terminato ora.</translation>
     </message>
 </context>
 </TS>
