@@ -165,7 +165,7 @@ MainWindow::createActions()
   connect(_stopAct, SIGNAL(triggered()), this, SLOT(stop()));
   _stopAct->setEnabled(false);
 
-  _configAct = new QAction(QIcon(IMG_CONFIG), tr("Configure"), this);
+  _configAct = new QAction(QIcon(IMG_CONFIG), tr("Settings"), this);
   connect(_configAct, SIGNAL(triggered()), this, SLOT(showConfig()));
   
   _aboutAct = new QAction(QIcon(IMG_ABOUT), tr("About"), this);

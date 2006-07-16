@@ -292,7 +292,7 @@
    <enum>Qt::NoContextMenu</enum>
   </property>
   <property name="windowTitle" >
-   <string>Configure Settings</string>
+   <string>Settings</string>
   </property>
   <property name="windowIcon" >
    <iconset resource="../res/vidalia_common.qrc" >:/images/16x16/preferences-system.png</iconset>
