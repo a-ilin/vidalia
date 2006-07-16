@@ -64,7 +64,9 @@ public slots:
   void deselectAll();
   /** Clears the known routers and removes all the data from the map */
   void clear();
-
+  /** Zooms to fit all currently displayed circuits on the map. */
+  void zoomToFit();
+  
 protected:
   /** Paints the current circuits and streams on the image. */
   virtual void paintImage(QPainter *painter);
@@ -74,7 +76,10 @@ private:
   QPointF toMapSpace(float latitude, float longitude);
   /** Linearly interpolates using the values in the projection table */
   float lerp(float input, float *table);
-
+  /** Computes a bounding box around all currently displayed circuit paths on
+   * the map. */
+  QRect circuitBoundingBox();
+  
   /** Stores map locations for tor routers */
   QHash<QString, QPair<QPointF,bool>* > _routers;
   /** Stores circuit information */

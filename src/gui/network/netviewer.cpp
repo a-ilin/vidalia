@@ -69,7 +69,8 @@ NetViewer::NetViewer(QWidget *parent)
   /* Connect zoom buttons to ZImageView zoom slots */
   connect(ui.actionZoomIn, SIGNAL(triggered()), _map, SLOT(zoomIn()));
   connect(ui.actionZoomOut, SIGNAL(triggered()), _map, SLOT(zoomOut()));
-  
+  connect(ui.actionZoomToFit, SIGNAL(triggered()), _map, SLOT(zoomToFit()));
+
   /* Create the timer that will be used to update the router list once every
    * hour. We still receive the NEWDESC event to get new descriptors, but this
    * needs to be called to get rid of any descriptors that were removed. */

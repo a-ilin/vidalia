@@ -505,6 +505,7 @@
    <addaction name="separator" />
    <addaction name="actionZoomIn" />
    <addaction name="actionZoomOut" />
+   <addaction name="actionZoomToFit" />
    <addaction name="separator" />
    <addaction name="actionHelp" />
    <addaction name="actionClose" />
@@ -624,6 +625,31 @@
    </property>
    <property name="toolTip" >
     <string>Zoom out on the network map.</string>
+   </property>
+   <property name="font" >
+    <font>
+     <family>Arial</family>
+     <pointsize>10</pointsize>
+     <weight>50</weight>
+     <italic>false</italic>
+     <bold>false</bold>
+     <underline>false</underline>
+     <strikeout>false</strikeout>
+    </font>
+   </property>
+  </action>
+  <action name="actionZoomToFit" >
+   <property name="icon" >
+    <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/zoom-to-fit.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Zoom To Fit</string>
+   </property>
+   <property name="statusTip" >
+    <string>Zooms to fit all currently displayed circuits.</string>
+   </property>
+   <property name="toolTip" >
+    <string>Zooms to fit all currently displayed circuits.</string>
    </property>
    <property name="font" >
     <font>

@@ -48,6 +48,9 @@ public slots:
   void resetZoomPoint();
   /** Sets the current zoom level to the given percent. */
   void zoom(float pct);
+  /** Sets the current zoom level to the given percent and scrolls the window
+   * to place the specified point in the middle. */
+  void zoom(QPoint zoomAt, float pct);
   /** Zooms into the displayed image by 5% */
   void zoomIn();
   /** Zooms away from the displayed image by 5% */

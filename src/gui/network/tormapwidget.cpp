@@ -262,3 +262,40 @@ TorMapWidget::minimumSizeHint() const
   return MIN_SIZE;
 }
 
+/** Zooms to fit all currently displayed circuits on the map. If there are no
+ * circuits on the map, the viewport will be returned to its default position
+ * (zoomed all the way out and centered). */
+void
+TorMapWidget::zoomToFit()
+{
+  QRect rect = circuitBoundingBox();
+  
+  if (rect.isNull()) {
+    /* If there are no circuits, zoom all the way out */
+    resetZoomPoint();
+    zoom(0.0);
+  } else {
+    /* Zoom in on the displayed circuits */
+    float zoomLevel = 1.0 - qMin((float)rect.height()/(float)height(),
+                                 (float)rect.width()/(float)width());
+
+    zoom(rect.center(), zoomLevel);
+  }
+}
+
+/** Computes a bounding box around all currently displayed circuit paths on
+ * the map. */
+QRect
+TorMapWidget::circuitBoundingBox()
+{
+  QRect rect;
+
+  /* Compute the union of bounding rectangles for all circuit paths */
+  foreach (int circid, _circuits.keys()) {
+    QPair<QPainterPath*,bool> *pair = _circuits.value(circid);
+    QPainterPath *circuit = pair->first;
+    rect = rect.unite(circuit->boundingRect().toRect());
+  }
+  return rect;
+}
+

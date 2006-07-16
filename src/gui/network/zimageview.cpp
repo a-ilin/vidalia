@@ -277,6 +277,16 @@ ZImageView::paintEvent(QPaintEvent*)
   drawScaledImage();
 }
 
+/** Sets the current zoom percentage to the given value and scrolls the
+ * viewport to center the given point. */
+void
+ZImageView::zoom(QPoint zoomAt, float pct)
+{
+  _desiredX = zoomAt.x();
+  _desiredY = zoomAt.y();
+  zoom(pct);
+}
+
 /** Sets the current zoom percentage to the given value. */
 void
 ZImageView::zoom(float pct)
