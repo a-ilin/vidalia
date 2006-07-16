@@ -30,6 +30,7 @@
 #include <QObject>
 #include <QTreeWidget>
 #include <QHostAddress>
+#include <QKeyEvent>
 
 #include "routerlistitem.h"
 
@@ -69,6 +70,10 @@ signals:
 private slots:
   /** Called when the user clicks on an item in the list. */
   void onSelectionChanged();
+
+protected:
+  /** Called when the user presses a key while the list has focus. */
+  void keyPressEvent(QKeyEvent *event);
 
 private:
   /** Inserts a new item into the router list, maintaining the current order.*/

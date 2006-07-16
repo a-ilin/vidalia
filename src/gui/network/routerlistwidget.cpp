@@ -88,6 +88,48 @@ RouterListWidget::insertSorted(RouterListItem *item)
   }
 }
 
+/** Called when the user selects a router from the list. This will search the
+ * list for a router whose names starts with the key pressed. */
+void
+RouterListWidget::keyPressEvent(QKeyEvent *event)
+{
+  static QString prevKey;
+  static int prevIndex;
+  
+  QString key = event->text();
+  if (!key.isEmpty() && key.at(0).isLetterOrNumber()) {
+    /* A text key was pressed, so search for routers that begin with that key. */
+    QString key = event->text();
+    QList<QTreeWidgetItem *> list = findItems(QString("^[%1%2].*$")
+                                                  .arg(key.toUpper())
+                                                  .arg(key.toLower()),
+                                               Qt::MatchRegExp|Qt::MatchWrap,
+                                               NameColumn);
+    if (list.size() > 0) {
+      /* A match was found, so deselect any previously selected routers,
+       * select the new match, and make sure it's visible. */
+      deselectAll();
+      if (key.toLower() == prevKey.toLower()) {
+        /* User pressed the same search key twice in a row, so go to the next
+         * result. */
+        prevIndex = (prevIndex + 1) % list.size();
+      } else {
+        /* New search key. Save it and show the first result in the list. */
+        prevKey   = key;
+        prevIndex = 0;
+      }
+      
+      /* Select the item and scroll to it */
+      setItemSelected(list.at(prevIndex), true);
+      scrollToItem(list.at(prevIndex));
+    }
+    event->accept();
+  } else {
+    /* It was something we don't understand, so hand it to the parent class */
+    QTreeWidget::keyPressEvent(event);
+  }
+}
+
 /** Finds the list item for the given descriptor. Returns 0 if not found. */
 RouterListItem*
 RouterListWidget::findItem(RouterDescriptor rd)
