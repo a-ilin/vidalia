@@ -105,11 +105,11 @@
     </message>
     <message>
         <source>Failed to Create File</source>
-        <translation>Non √® possibile creare il file</translation>
+        <translation>Non Ë possibile creare il file</translation>
     </message>
     <message>
         <source>Unable to create %1 [%2]</source>
-        <translation>Non √® possibile creare %1 [%2]</translation>
+        <translation>Non Ë possibile creare %1 [%2]</translation>
     </message>
 </context>
 <context>
@@ -286,7 +286,7 @@
     </message>
     <message>
         <source>Control socket not connected.</source>
-        <translation>Il socket di controllo non √® connesso.</translation>
+        <translation>Il socket di controllo non Ë connesso.</translation>
     </message>
 </context>
 <context>
@@ -311,7 +311,7 @@ Aggiorna la versione di Tor.</translation>
     </message>
     <message>
         <source>Socket disconnected while attempting to read a line of data.</source>
-        <translation>Il socket si √® disconnesso durante il tentativo di leggere una linea di dati.</translation>
+        <translation>Il socket si Ë disconnesso durante il tentativo di leggere una linea di dati.</translation>
     </message>
     <message>
         <source>Invalid control reply. [%1]</source>
@@ -500,7 +500,7 @@ Aggiorna la versione di Tor.</translation>
     </message>
     <message>
         <source>Text not found in document</source>
-        <translation>Il testo non √® stato trovato nel documento</translation>
+        <translation>Il testo non Ë stato trovato nel documento</translation>
     </message>
     <message>
         <source>Find:</source>
@@ -516,7 +516,7 @@ Aggiorna la versione di Tor.</translation>
     </message>
     <message>
         <source>Supplied XML file is not a valid Contents document.</source>
-        <translation>Il file XML specificato non √® un documento valido.</translation>
+        <translation>Il file XML specificato non Ë un documento valido.</translation>
     </message>
     <message>
         <source>Found %1 results</source>
@@ -1440,7 +1440,7 @@ un fingerprint PGP o GPG.</translation>
     </message>
     <message>
         <source>Yes</source>
-        <translation>S&igrave;</translation>
+        <translation>Sì</translation>
     </message>
     <message>
         <source>No</source>
