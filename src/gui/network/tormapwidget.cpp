@@ -43,9 +43,11 @@
 #define MAP_BOTTOM      2
 #define MAP_RIGHT       5
 #define MAP_LEFT        5
+#define MAP_WIDTH       (IMG_WIDTH-MAP_LEFT-MAP_RIGHT)
+#define MAP_HEIGHT      (IMG_HEIGHT-MAP_TOP-MAP_BOTTOM)
 
 /** Map offset from zero longitude */
-#define MAP_ORGIN       -10
+#define MAP_ORIGIN       -10
 
 /** Minimum allowable size for this widget */
 #define MIN_SIZE        QSize(512,256)
@@ -223,10 +225,10 @@ TorMapWidget::paintImage(QPainter *painter)
 QPointF
 TorMapWidget::toMapSpace(float latitude, float longitude)
 {
-  float width = IMG_WIDTH - MAP_LEFT - MAP_RIGHT;
-  float height = IMG_HEIGHT - MAP_TOP - MAP_BOTTOM;
+  float width  = MAP_WIDTH;
+  float height = MAP_HEIGHT;
   float deg = width / 360.0;
-  longitude += MAP_ORGIN;
+  longitude += MAP_ORIGIN;
 
   float lat;
   float lon;
@@ -276,10 +278,10 @@ TorMapWidget::zoomToFit()
     zoom(0.0);
   } else {
     /* Zoom in on the displayed circuits */
-    float zoomLevel = 1.0 - qMin(rect.height()/(float)height(),
-                                 rect.width()/(float)width());
-
-    zoom(rect.center().toPoint(), zoomLevel);
+    float zoomLevel = 1.0 - qMax(rect.height()/float(MAP_HEIGHT),
+                                 rect.width()/float(MAP_WIDTH));
+    
+    zoom(rect.center().toPoint(), zoomLevel+0.1);
   }
 }
 
