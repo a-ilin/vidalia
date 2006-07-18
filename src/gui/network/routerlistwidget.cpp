@@ -93,35 +93,29 @@ RouterListWidget::insertSorted(RouterListItem *item)
 void
 RouterListWidget::keyPressEvent(QKeyEvent *event)
 {
-  static QString prevKey;
-  static int prevIndex;
+  int index;
   
   QString key = event->text();
   if (!key.isEmpty() && key.at(0).isLetterOrNumber()) {
     /* A text key was pressed, so search for routers that begin with that key. */
-    QString key = event->text();
     QList<QTreeWidgetItem *> list = findItems(QString("^[%1%2].*$")
                                                   .arg(key.toUpper())
                                                   .arg(key.toLower()),
                                                Qt::MatchRegExp|Qt::MatchWrap,
                                                NameColumn);
     if (list.size() > 0) {
-      /* A match was found, so deselect any previously selected routers,
-       * select the new match, and make sure it's visible. */
-      deselectAll();
-      if (key.toLower() == prevKey.toLower()) {
-        /* User pressed the same search key twice in a row, so go to the next
-         * result. */
-        prevIndex = (prevIndex + 1) % list.size();
-      } else {
-        /* New search key. Save it and show the first result in the list. */
-        prevKey   = key;
-        prevIndex = 0;
-      }
+      QList<QTreeWidgetItem *> s = selectedItems();
       
+      /* A match was found, so deselect any previously selected routers,
+       * select the new match, and make sure it's visible. If there was
+       * already a router selected that started with the search key, go to the
+       * next match in the list. */
+      deselectAll();
+      index = (!s.size() ? 0 : (list.indexOf(s.at(0)) + 1) % list.size());
+
       /* Select the item and scroll to it */
-      setItemSelected(list.at(prevIndex), true);
-      scrollToItem(list.at(prevIndex));
+      setItemSelected(list.at(index), true);
+      scrollToItem(list.at(index));
     }
     event->accept();
   } else {
