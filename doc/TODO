@@ -20,3 +20,40 @@ Miscellaneous Tasks:
       specific _NET_WM_WINDOW_OPACITY atom needs to be supported by the window manager 
       you are using."
 
+  * Get some help from the Sasha and the CMU folks with doing a real user study and 
+    getting help making our window layouts and text better.
+
+
+Notes from Roger:
+  * When the user finishes typing into the ContactInfo line, or some
+    time around then, it should auto scrub it by replacing @ with " at "
+    and . with " dot " or similar. Perhaps this should even just happen
+    behind the scenes, when it is doing the setconf?
+  
+  * I mentioned today that it would be smart if Vidalia recognized when
+    Tor refuses to write its config file because of permissions, and did
+    something smarter -- like handling the error and remembering the intended
+    changes itself, or like rephrasing the error to give some hints about
+    what's going on.
+
+  * I think we mentioned putting the exit policy into the form on the
+    "configure server" page, since right now I can't imagine they recognize
+    that they have a complex exit policy when in fact the page is blank.
+    You can fetch the exit policy from Tor by asking for "getinfo
+    exit-policy/default". (You can learn if it's available by getinfo
+    info/names, and for Tors where it's not available, it's probably simplest
+    to hard-code the current exit policy inside Vidalia.)
+
+  * When I click 'save' in the server configuration page, and it fails, for
+    example because "Unacceptable option value", the error message doesn't
+    wrap and doesn't have a scrollbar. So I need to make the window bigger
+    to see it all. And I'm guessing in some cases I won't realize there's
+    more to see.
+
+  * On the 'configure server' window, it says "Only relay traffic between
+    other Tor servers (middle-man)". We should move this to the 'Exit 
+    Policies' section.
+
+  * For the configure server window, I'm using 1024x768, and it fills my
+    screen vertically. Will lower resolutions have problems here?
+ 
