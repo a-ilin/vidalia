@@ -66,13 +66,15 @@ ConfigDialog::ConfigDialog(QWidget* parent)
   ui.toolBar->addSeparator();
   connect(grp, SIGNAL(triggered(QAction *)), ui.stackPages, SLOT(showPage(QAction *)));
   
-  /* Create and bind the Save button */  
-  addAction(new QAction(QIcon(IMAGE_SAVE), tr("Save"), ui.toolBar), 
-            SLOT(saveChanges()));
   
   /* Create and bind the Save button */  
   addAction(new QAction(QIcon(IMAGE_HELP), tr("Help"), ui.toolBar),
             SLOT(help()));
+  
+  /* Create and bind the Save button */  
+  addAction(new QAction(QIcon(IMAGE_SAVE), tr("Save"), ui.toolBar), 
+            SLOT(saveChanges()));
+  
   
   /* Create and bind the Cancel button */
   addAction(new QAction(QIcon(IMAGE_CANCEL), tr("Cancel"), ui.toolBar),
