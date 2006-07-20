@@ -55,8 +55,8 @@ LogTreeItem::LogTreeItem(LogEvent::Severity type, QString message,
    * height. */
   int rowHeight = font(COL_MESG).pointSize()+10;
   setSizeHint(COL_TIME, QSize(sizeHint(COL_TIME).width(), rowHeight));
-  setSizeHint(COL_TYPE, QSize(sizeHint(COL_TYPE).width(), rowHeight));
-  setSizeHint(COL_MESG, QSize(sizeHint(COL_MESG).width(), rowHeight));
+  //setSizeHint(COL_TYPE, QSize(sizeHint(COL_TYPE).width(), rowHeight));
+  //setSizeHint(COL_MESG, QSize(sizeHint(COL_MESG).width(), rowHeight));
 #endif
 }
 
