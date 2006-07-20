@@ -53,7 +53,7 @@ LogTreeItem::LogTreeItem(LogEvent::Severity type, QString message,
   /* Qt versions newer than 4.1.0 have a quirk in that they make the message
    * log rows appear very tall. So, make them just a hair taller than the font
    * height. */
-  int rowHeight = font(COL_MESG).pointSize()+1;
+  int rowHeight = font(COL_MESG).pointSize()+10;
   setSizeHint(COL_TIME, QSize(sizeHint(COL_TIME).width(), rowHeight));
   setSizeHint(COL_TYPE, QSize(sizeHint(COL_TYPE).width(), rowHeight));
   setSizeHint(COL_MESG, QSize(sizeHint(COL_MESG).width(), rowHeight));
