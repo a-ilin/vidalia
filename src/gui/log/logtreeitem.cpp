@@ -36,6 +36,15 @@
 #define COL_MESG    LogTreeWidget::MessageColumn
 #define ROLE_TYPE   Qt::UserRole
 
+/** Vertical padding on message log rows. */
+#if defined(Q_WS_MAC)
+/* OS X requires less vertical padding than the rest of the world, for
+ * some unknown reason. */
+#define VERTICAL_PADDING  1
+#else
+#define VERTICAL_PADDING  10
+#endif
+
 
 /** Default constructor. */
 LogTreeItem::LogTreeItem(LogEvent::Severity type, QString message, 
@@ -53,7 +62,7 @@ LogTreeItem::LogTreeItem(LogEvent::Severity type, QString message,
   /* Qt versions newer than 4.1.0 have a quirk in that they make the message
    * log rows appear very tall. So, make them just a hair taller than the font
    * height. */
-  int rowHeight = font(COL_MESG).pointSize()+10;
+  int rowHeight = font(COL_MESG).pointSize()+VERTICAL_PADDING;
   setSizeHint(COL_TIME, QSize(sizeHint(COL_TIME).width(), rowHeight));
 #endif
 }
