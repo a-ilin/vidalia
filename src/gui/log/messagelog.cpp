@@ -392,7 +392,6 @@ MessageLog::customEvent(QEvent *event)
 void
 MessageLog::show()
 {
-  loadSettings();
   if (!this->isVisible()) {
     QMainWindow::show();
   } else {
