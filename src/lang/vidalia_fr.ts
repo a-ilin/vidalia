@@ -97,7 +97,7 @@
     </message>
     <message>
         <source>Run as Group:</source>
-        <translation>Démarrer en tant que membre du groupe:</translation>
+        <translation>Démarrer en tant que membre du groupe</translation>
     </message>
     <message>
         <source>Vidalia will run with this Group&apos;s permissions</source>
@@ -136,7 +136,7 @@
     </message>
     <message>
         <source>Changes to language will only take effect after restarting Vidalia!</source>
-        <translation>Les modifications de language ne prendront effet qu&apos;après le redémarrage de Vidalia!</translation>
+        <translation>Les modifications de language ne prendront effet qu&apos;après le redémarrage de Vidalia</translation>
     </message>
     <message>
         <source>Style</source>
@@ -302,7 +302,7 @@
     </message>
     <message>
         <source>Control socket not connected.</source>
-        <translation>Le socket de contrôle n&apos;est pas connecté.</translation>
+        <translation>Le socket de contrôle n&apos;est pas connecté</translation>
     </message>
 </context>
 <context>
@@ -327,7 +327,7 @@ Installez une version plus récente de Tor.</translation>
     </message>
     <message>
         <source>Socket disconnected while attempting to read a line of data.</source>
-        <translation>Socket déconnecté durant la lecture d&apos;une ligne de données.</translation>
+        <translation>Socket déconnecté durant la lecture d&apos;une ligne de données</translation>
     </message>
     <message>
         <source>Invalid control reply. [%1]</source>
@@ -389,7 +389,7 @@ Installez une version plus récente de Tor.</translation>
     <name>GraphFrame</name>
     <message>
         <source>Recv: </source>
-        <translation>Rcpt:</translation>
+        <translation>Recpt:</translation>
     </message>
     <message>
         <source>Sent: </source>
@@ -616,7 +616,7 @@ Installez une version plus récente de Tor.</translation>
     </message>
     <message>
         <source>Bandwidth Graph</source>
-        <translation>Graphique KB/s</translation>
+        <translation>Graph débits</translation>
     </message>
     <message>
         <source>Message Log</source>
@@ -724,7 +724,7 @@ Installez une version plus récente de Tor.</translation>
     </message>
     <message>
         <source>Error Applying Server Settings</source>
-        <translation>Erreur appliquant les options du serveur</translation>
+        <translation>Erreur en appliquant les options du serveur</translation>
     </message>
     <message>
         <source>Vidalia was unable to apply your server&apos;s settings.</source>
@@ -755,12 +755,12 @@ Veuillez consulter l&apos;historique afin de vérifier ce qui est arrivé à Tor
         <translation>Vidalia n&apos;a pas pu démarrer Tor. Contrôlez vos options et assurez-vous que le nom et le chemin de l&apos;exécutable de Tor sont bien indiqués.</translation>
     </message>
     <message>
-        <source>Network Map</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Settings</source>
         <translation type="unfinished">Options</translation>
+    </message>
+    <message>
+        <source>Network Map</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <source>New Identity</source>
@@ -903,7 +903,7 @@ Veuillez consulter l&apos;historique afin de vérifier ce qui est arrivé à Tor
     </message>
     <message>
         <source>Select All</source>
-        <translation>Sélect. tout</translation>
+        <translation>Sélectionner tout</translation>
     </message>
     <message>
         <source>Select all messages (Ctrl+A)</source>
@@ -915,19 +915,19 @@ Veuillez consulter l&apos;historique afin de vérifier ce qui est arrivé à Tor
     </message>
     <message>
         <source>Save All</source>
-        <translation>Enreg. tous</translation>
+        <translation>Enregistrer tous</translation>
     </message>
     <message>
         <source>Save all messages to a file</source>
-        <translation>Enregistre tous les messages dans un fichier</translation>
+        <translation>Enregistrer tous les messages dans un fichier</translation>
     </message>
     <message>
         <source>Save Selected</source>
-        <translation>Enreg. sélect</translation>
+        <translation>Enreg sélect</translation>
     </message>
     <message>
         <source>Save selected messages to a file</source>
-        <translation>Enregistre la sélection dans un fichier</translation>
+        <translation>Enregistrer la sélection dans un fichier</translation>
     </message>
     <message>
         <source>Close</source>
@@ -956,8 +956,8 @@ Veuillez consulter l&apos;historique afin de vérifier ce qui est arrivé à Tor
     <message>
         <source>Messages that appear when something has 
 gone very wrong and Tor cannot proceed.</source>
-        <translation>Messages qui apparaissent quand quelque chose s&apos;est 
-très mal déroulé et que Tor ne peut pas traiter.</translation>
+        <translation>Messages qui apparaissent quand quelque chose a 
+très mal tourné et que Tor ne peut pas procéder.</translation>
     </message>
     <message>
         <source>Messages that only appear when 
@@ -1071,7 +1071,7 @@ pour les développeurs de Tor.</translation>
     <name>NetViewer</name>
     <message>
         <source>View Tor Network</source>
-        <translation>Apperçu réseau Tor</translation>
+        <translation>Voir réseau Tor</translation>
     </message>
     <message>
         <source>Refresh</source>
@@ -1099,11 +1099,11 @@ pour les développeurs de Tor.</translation>
     </message>
     <message>
         <source>Make new connections appear to be different than your old connections.</source>
-        <translation type="obsolete">Établi de nouvelles connections différentes des précédentes.</translation>
+        <translation type="obsolete">Établir de nouvelles connections différentes des précédentes.</translation>
     </message>
     <message>
         <source>Refresh the list of routers and connections.</source>
-        <translation>Rafraîchi la liste des routeurs et connections.</translation>
+        <translation>Rafraîchir la liste des routeurs et connections.</translation>
     </message>
     <message>
         <source>Show network map help.</source>
@@ -1111,7 +1111,7 @@ pour les développeurs de Tor.</translation>
     </message>
     <message>
         <source>Show the network map help.</source>
-        <translation>Montre l&apos;aide de la carte du réseau.</translation>
+        <translation>Montre l&apos;aide de la carte du réseau</translation>
     </message>
     <message>
         <source>Close the network map.</source>
@@ -1229,10 +1229,6 @@ pour les développeurs de Tor.</translation>
         <translation>Port de l&apos;annuaire:</translation>
     </message>
     <message>
-        <source></source>
-        <translation type="unfinished">No. de port de l&apos;annuaire</translation>
-    </message>
-    <message>
         <source>Nickname:</source>
         <translation>Surnom:</translation>
     </message>
@@ -1246,7 +1242,7 @@ pour les développeurs de Tor.</translation>
     </message>
     <message>
         <source>Server Port:</source>
-        <translation>Port du serveur:</translation>
+        <translation>Port:</translation>
     </message>
     <message>
         <source>Port on which users and other servers can communicate with your server</source>
@@ -1271,7 +1267,7 @@ avec votre serveur</translation>
     </message>
     <message>
         <source>If selected, clients will not exit the Tor network through your server</source>
-        <translation>Si coché, les clients ne sortiront pas du réseau Tor depuis votre serveur</translation>
+        <translation>Si coché, les clients n&apos;utiliseront pas votre serveur pour sortir du réseau Tor.</translation>
     </message>
     <message>
         <source>Only relay traffic between other Tor servers (middle-man)</source>
@@ -1446,11 +1442,11 @@ de PGP ou de GPG.</translation>
         <translation>Voir l&apos;aide de limitation de bande passante</translation>
     </message>
     <message>
-        <source>Directory Port Number</source>
+        <source>Only allow connections to other Tor servers (non-exit node)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Only allow connections to other Tor servers (non-exit node)</source>
+        <source>Directory Port Number</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1556,7 +1552,7 @@ de PGP ou de GPG.</translation>
     </message>
     <message>
         <source>Show Settings</source>
-        <translation>Montrer réglages</translation>
+        <translation>Montre réglages</translation>
     </message>
 </context>
 <context>
@@ -1575,7 +1571,7 @@ de PGP ou de GPG.</translation>
     </message>
     <message>
         <source>Another Vidalia process is already running. This Vidalia process will now exit.</source>
-        <translation>Un autre processus de Vidalia fonctionne déjà. Ce processus va s&apos;arrêter maintenant.</translation>
+        <translation>Un autre processus de Vidalia fonctionne déjà. Ce processus ne se terminera pas.</translation>
     </message>
 </context>
 </TS>
