@@ -10,6 +10,16 @@
     <file>en/troubleshooting.html</file>
     <file>en/netview.html</file>
     <file>en/links.html</file>
+    <!-- Bulgarian -->
+    <file>bg/contents.xml</file>
+    <file>bg/index.html</file>
+    <file>bg/running.html</file>
+    <file>bg/log.html</file>
+    <file>bg/config.html</file>
+    <file>bg/server.html</file>
+    <file>bg/troubleshooting.html</file>
+    <file>bg/netview.html</file>
+    <file>bg/links.html</file>
     <!-- German -->
     <file>de/contents.xml</file>
     <file>de/index.html</file>

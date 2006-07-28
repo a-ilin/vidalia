@@ -69,6 +69,7 @@
         <file>icons/node-bw-high.png</file>
     </qresource>
     <qresource prefix="/images">
+        <file>flags/bg.png</file>
         <file>flags/de.png</file>
         <file>flags/en.png</file>
         <file>flags/fi.png</file>

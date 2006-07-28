@@ -1,5 +1,6 @@
 <RCC>
   <qresource prefix="/lang">
+    <file alias="bg">vidalia_bg.qm</file>
     <file alias="de">vidalia_de.qm</file>
     <file alias="en">vidalia_en.qm</file>
     <file alias="fi">vidalia_fi.qm</file>

@@ -38,6 +38,9 @@ LanguageSupport::initialize()
 {
   _languages.clear();
   _languages.insert("en",    "English");
+  _languages.insert("bg",
+    QString::fromUtf8("\320\221\321\212\320\273\320\263\320"
+                      "\260\321\200\321\201\320\272\320\270"));
   _languages.insert("de",    "Deutsch");
   _languages.insert("fi",    "suomi");
   _languages.insert("fr",    
