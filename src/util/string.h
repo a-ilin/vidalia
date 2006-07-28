@@ -37,6 +37,9 @@ QStringList char_array_to_stringlist(char **arr, int len);
  * string returned. */
 QString ensure_valid_chars(QString str, QString validChars);
 
+/** Scrubs an email address by replacing "@" with " at " and "." with " dot ". */
+QString scrub_email_addr(QString email);
+
 /** Conditionally assigns errmsg to string if str is not null and returns
  * false. */
 bool err(QString *str, QString errmsg);

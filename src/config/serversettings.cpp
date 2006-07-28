@@ -227,8 +227,9 @@ ServerSettings::confValues()
                                      DEFAULT_SERVER_BWBURST).toUInt()) + " bytes");
     
   /* Server Contact Information */
-  conf.insert(SERVER_CONTACTINFO, 
-    QSettings::value(SETTING_SERVER_CONTACT, DEFAULT_SERVER_CONTACT).toString());
+  QString contact = 
+    QSettings::value(SETTING_SERVER_CONTACT, DEFAULT_SERVER_CONTACT).toString();
+  conf.insert(SERVER_CONTACTINFO, scrub_email_addr(contact));
   
   return conf;
 }

@@ -66,3 +66,12 @@ ensure_valid_chars(QString str, QString validChars)
   return out;
 }
 
+/** Scrubs an email address by replacing "@" with " at " and "." with " dot ". */
+QString
+scrub_email_addr(QString email)
+{
+  QString scrubbed = email;
+  scrubbed = scrubbed.replace("@", " at ");
+  scrubbed = scrubbed.replace(".", " dot ");
+  return scrubbed;
+}
