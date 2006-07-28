@@ -29,11 +29,6 @@ Miscellaneous Tasks:
 
 
 Notes from Roger:
-  * When the user finishes typing into the ContactInfo line, or some
-    time around then, it should auto scrub it by replacing @ with " at "
-    and . with " dot " or similar. Perhaps this should even just happen
-    behind the scenes, when it is doing the setconf?
-  
   * I mentioned today that it would be smart if Vidalia recognized when
     Tor refuses to write its config file because of permissions, and did
     something smarter -- like handling the error and remembering the intended
