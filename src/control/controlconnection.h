@@ -61,6 +61,8 @@ public:
   Status status();
   /** Sends a control command to Tor and waits for the response. */
   bool send(ControlCommand cmd, ControlReply &reply, QString *errmsg = 0);
+  /** Sends a control command to Tor and waits for the response. */
+  bool send(ControlCommand cmd, QString *errmsg = 0);
 
 signals:
   /** Emitted when a control connection has been established. */

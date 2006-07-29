@@ -132,6 +132,30 @@ ControlConnection::disconnect()
   _recvMutex.unlock();
 }
 
+bool
+ControlConnection::send(ControlCommand cmd, QString *errmsg)
+{
+  QWaitCondition waitCond;
+  SendWaiter sendWaiter(cmd, &waitCond);
+  
+  /* Make sure we have a valid control socket before trying to send. */
+  if (status() != Connected) {
+    return err(errmsg, tr("Control socket not connected."));
+  }
+ 
+  /* Add a send waiter to the outgoing message queue */
+  _sendMutex.lock();
+  _sendQueue.enqueue(&sendWaiter);
+  waitCond.wait(&_sendMutex);
+  _sendMutex.unlock();
+
+  /* Check if the send failed. */
+  if (sendWaiter.status() == Failed) {
+    return err(errmsg, sendWaiter.errorString());
+  }
+  return true;
+}
+
 /** Sends a control command to Tor and waits for the response.
  * \param cmd The command to send to Tor.
  * \param reply The response from Tor.
@@ -167,7 +191,7 @@ ControlConnection::send(ControlCommand cmd, ControlReply &reply,  QString *errms
     _recvMutex.unlock();
     return err(errmsg, sendWaiter.errorString());
   }
-    
+  
   /* The send was successful, so add a waiter for the response. */
   _recvQueue.enqueue(&recvWaiter);
   waitCond.wait(&_recvMutex);
