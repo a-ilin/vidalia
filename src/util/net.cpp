@@ -24,6 +24,7 @@
  * \version $Id$
  */
 
+#include <QTcpSocket>
 #include <QHostInfo>
 #include <QList>
 #include <QUrl>
@@ -105,5 +106,19 @@ net_get_public_ip(QString &ip)
     }
   }
   return false;
+}
+
+/** Attempts a connection to <b>host</b> on <bport</b>. Returns true if the
+ * connection was successful, or false if the connection attempt failed. */
+bool
+net_test_connect(QHostAddress host, quint16 port, int timeout)
+{
+  QTcpSocket sock;
+  sock.connectToHost(host, port);
+  if (!sock.waitForConnected(timeout)) {
+    return false;
+  }
+  sock.disconnectFromHost();
+  return true;
 }
 
