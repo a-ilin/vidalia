@@ -54,7 +54,9 @@ public:
   bool stop(QString *errmsg = 0);
   /** Detect if the Tor process is running */
   bool isRunning();
-
+  /** Detects if the Tor process is running under Vidalia. */
+  bool isVidaliaRunningTor();
+  
   /** Connect to Tor's control socket */
   void connect();
   /** Disconnect from Tor's control socket */

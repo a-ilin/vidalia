@@ -56,10 +56,12 @@ TorControl::TorControl()
 /** Default destructor */
 TorControl::~TorControl()
 {
+  /* Disconnect the control socket */
   if (isConnected()) {
     disconnect();
   }
-  if (isRunning()) {
+  /* If we started our own Tor, stop it now */
+  if (isVidaliaRunningTor()) {
     stop();
   }
   delete _controlConn;
@@ -155,6 +157,17 @@ TorControl::closeTorProcess()
     delete _torProcess;
     _torProcess = 0;
   }
+}
+
+/** Detects if the Tor process is running under Vidalia. Returns true if
+ * Vidalia owns the Tor process, or false if it was an independent Tor. */
+bool
+TorControl::isVidaliaRunningTor()
+{
+  if (_torProcess) {
+    return (_torProcess->pid() != 0);
+  }
+  return false;
 }
 
 /** Detect if the Tor process is running. */

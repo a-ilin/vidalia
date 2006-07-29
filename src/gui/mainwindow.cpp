@@ -147,7 +147,7 @@ MainWindow::close()
   }
 
   /* Stop the Tor process */
-  if (_torControl->isRunning()) {
+  if (_torControl->isVidaliaRunningTor()) {
     _torControl->stop();
   }
 
