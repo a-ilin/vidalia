@@ -113,7 +113,12 @@ ControlConnection::disconnect()
     return;
   }
   _run = false;
- 
+}
+
+/** Flushes any outstanding waiters in the send or receive queues. */
+void
+ControlConnection::flushQueues()
+{
   /* Flush any outstanding waiters in the send queue */
   _sendMutex.lock();
   while (!_sendQueue.isEmpty()) {
@@ -132,6 +137,7 @@ ControlConnection::disconnect()
   _recvMutex.unlock();
 }
 
+/** Sends a control command to Tor and does not wait for a reply. */
 bool
 ControlConnection::send(ControlCommand cmd, QString *errmsg)
 {
@@ -321,6 +327,9 @@ ControlConnection::run()
       sock->disconnect();
     }
     emit disconnected();
+
+    /* Flush the send and receive queues. */
+    flushQueues();
   }
   setStatus(Disconnected);
   _run = false;

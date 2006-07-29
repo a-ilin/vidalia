@@ -61,7 +61,7 @@ public:
   Status status();
   /** Sends a control command to Tor and waits for the response. */
   bool send(ControlCommand cmd, ControlReply &reply, QString *errmsg = 0);
-  /** Sends a control command to Tor and waits for the response. */
+  /** Sends a control command to Tor and does not wait for the response. */
   bool send(ControlCommand cmd, QString *errmsg = 0);
 
 signals:
@@ -83,6 +83,8 @@ private:
   void processSendQueue(ControlSocket *sock);
   /** Processes any messages waiting on the control socket. */
   void processReceiveQueue(ControlSocket *sock);
+  /** Flushes any outstanding waiters in the send or receive queues. */
+  void flushQueues();
   /** Sets the control connection status */
   void setStatus(Status status);
 
