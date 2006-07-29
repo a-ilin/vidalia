@@ -114,9 +114,12 @@ MainWindow::MainWindow()
                            tr("Tor is Stopped"), _trayMenu);
   _trayIcon->show();
   
-  /* If we're supposed to start Tor when Vidalia starts, then do it now */
-  if (settings.runTorAtStart()) {
+  if (!_torControl->isRunning() && settings.runTorAtStart()) {
+    /* If we're supposed to start Tor when Vidalia starts, then do it now */
     start();
+  } else {
+    /* Tor was already running */
+    this->started();
   }
 }
 
@@ -321,6 +324,7 @@ MainWindow::started()
   _trayIcon->update(IMG_TOR_STARTING, tr("Tor is starting"));
   /* Set menu actions appropriately */
   _stopAct->setEnabled(true);
+  _startAct->setEnabled(false);
   /* Try to connect to Tor's control port */
   _torControl->connect();
 }

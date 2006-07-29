@@ -26,7 +26,7 @@
 
 #include <QHostAddress>
 #include <config/torsettings.h>
-
+#include <util/net.h>
 #include "torcontrol.h"
 
 
@@ -70,21 +70,26 @@ TorControl::~TorControl()
 void
 TorControl::start()
 {
-  TorSettings settings;
-  _torProcess = new TorProcess;
+  if (isRunning()) {
+    emit started();
+  } else {
+    TorSettings settings;
+    _torProcess = new TorProcess;
   
-  /* Plumb the process signals */
-  QObject::connect(_torProcess, SIGNAL(started()),
-                   this, SLOT(onStarted()), Qt::QueuedConnection);
-  QObject::connect(_torProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
-                   this, SLOT(onStopped(int, QProcess::ExitStatus)));
-  QObject::connect(_torProcess, SIGNAL(startFailed(QString)),
-                   this, SLOT(onStartFailed(QString)), Qt::QueuedConnection);
-  QObject::connect(_torProcess, SIGNAL(log(QString, QString)),
-                   this, SLOT(onLogStdout(QString, QString)));
+    /* Plumb the process signals */
+    QObject::connect(_torProcess, SIGNAL(started()),
+                     this, SLOT(onStarted()), Qt::QueuedConnection);
+    QObject::connect(_torProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
+                     this, SLOT(onStopped(int, QProcess::ExitStatus)));
+    QObject::connect(_torProcess, SIGNAL(startFailed(QString)),
+                     this, SLOT(onStartFailed(QString)), Qt::QueuedConnection);
+    QObject::connect(_torProcess, SIGNAL(log(QString, QString)),
+                     this, SLOT(onLogStdout(QString, QString)));
   
-  /* Kick off the Tor process. */
-  _torProcess->start(settings.getExecutable(), settings.getArguments());
+    /* Kick off the Tor process. */
+    _torProcess->start(settings.getExecutable(), 
+                       settings.getArguments());
+  }
 }
 
 /** Emits a signal that the Tor process started */
@@ -109,13 +114,21 @@ TorControl::onStartFailed(QString errmsg)
 bool
 TorControl::stop(QString *errmsg)
 {
-  if (isConnected()) {
-    disconnect();
-  }
+  /* If there is no Tor running, then our job is done */
   if (!isRunning()) {
     return true;
   }
-  return _torProcess->stop(errmsg);
+  /* If we didn't start our own Tor, send it a shutdown signal */
+  if (!_torProcess) {
+    if (!this->signal(TorSignal::Shutdown)) {
+      return false;
+    }
+    emit stopped(0, QProcess::NormalExit);
+    return true;
+  } else {
+    /* We started our own Tor, so stop the process */
+    return _torProcess->stop(errmsg);
+  }
 }
 
 /** Emits a signal that the Tor process stopped */
@@ -150,6 +163,12 @@ TorControl::isRunning()
 {
   if (_torProcess) {
     return (_torProcess->pid() != 0);
+  }
+  
+  TorSettings settings;
+  if (net_test_connect(settings.getControlAddress(),
+                       settings.getControlPort(), 250)) {
+    return true;
   }
   return false;
 }
@@ -319,6 +338,9 @@ TorControl::signal(TorSignal::Signal sig, QString *errmsg)
 {
   ControlCommand cmd("SIGNAL");
   cmd.addArgument(TorSignal::toString(sig));
+  if (sig == TorSignal::Shutdown || sig == TorSignal::Halt) {
+    return _controlConn->send(cmd, errmsg);
+  }
   return send(cmd, errmsg); 
 }
 
