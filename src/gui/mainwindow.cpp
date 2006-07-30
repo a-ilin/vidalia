@@ -114,12 +114,12 @@ MainWindow::MainWindow()
                            tr("Tor is Stopped"), _trayMenu);
   _trayIcon->show();
   
-  if (!_torControl->isRunning() && settings.runTorAtStart()) {
-    /* If we're supposed to start Tor when Vidalia starts, then do it now */
-    start();
-  } else {
+  if (_torControl->isRunning()) {
     /* Tor was already running */
     this->started();
+  } else if (settings.runTorAtStart()) {
+    /* If we're supposed to start Tor when Vidalia starts, then do it now */
+    start();
   }
 }
 
