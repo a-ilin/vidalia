@@ -108,7 +108,7 @@ net_get_public_ip(QString &ip)
   return false;
 }
 
-/** Attempts a connection to <b>host</b> on <bport</b>. Returns true if the
+/** Attempts a connection to <b>host</b> on <b>port</b>. Returns true if the
  * connection was successful, or false if the connection attempt failed. */
 bool
 net_test_connect(QHostAddress host, quint16 port, int timeout)
