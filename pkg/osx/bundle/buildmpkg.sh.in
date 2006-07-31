@@ -71,6 +71,25 @@ then
   exit 1
 fi
 
+# Determine OSX Version and map version to name
+if [ -x /usr/bin/sw_vers ]
+then
+  # This is poor, yet functional.  We don't care about the 3rd number in
+  # the OS version
+  OSVER=`/usr/bin/sw_vers | grep ProductVersion | cut -f2 | cut -d"." -f1,2`
+  case "$OSVER" in
+    "10.5") OS="leopard";;
+    "10.4") OS="tiger";;
+    "10.3") OS="panther";;
+    "10.2") OS="jaguar";;
+    "10.1") OS="puma";;
+    "10.0") OS="cheetah";;
+         *) OS="unknown";;
+  esac
+else
+  OS="unknown"
+fi
+                                  
 # Get the location of Vidalia
 VID_DIR="../../../"
 # Get the location of Tor
@@ -82,7 +101,7 @@ VIDALIAVERSION="@VERSION@"
 # Tor's version string
 TORVERSION=`echo "$TOR_DIR" | sed -e "s/.*\///" | sed -e "s/tor-//"`
 # Name of the output bundle
-BUNDLE="vidalia-bundle-$TORVERSION-$VIDALIAVERSION"
+BUNDLE="vidalia-bundle-$TORVERSION-$VIDALIAVERSION-$OS"
 # Set the location of the temporary files
 BUILD_DIR=/tmp/vidalia-osx-$$
 # Set the location of the .mpkg

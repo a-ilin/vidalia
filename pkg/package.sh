@@ -59,10 +59,9 @@ case "$1" in
 # OS X .dmg
 #
 "osx")
-  dmg=`dirname $(pwd) | sed -e "s/.*\///"`.dmg
   srcdir="../"
   srcfiles="Vidalia.app README AUTHORS LICENSE COPYING CHANGELOG"
-  osx/builddmg.sh "$srcdir" "$srcfiles" "$dmg"
+  osx/builddmg.sh "$srcdir" "$srcfiles"
   ;;
 
 #

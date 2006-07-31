@@ -23,9 +23,9 @@
 #################################################################
 
 # Make sure enough arguments were supplied
-if [ "$#" -ne 3 ]
+if [ "$#" -ne 2 ]
 then
-  echo "Usage: $0 <srcdir> <files to include> <outfile.dmg>"
+  echo "Usage: $0 <srcdir> <files to include>"
   exit 1
 fi
 
@@ -38,20 +38,43 @@ then
 fi
 echo "Source Directory: $srcdir"
 
+# Determine OSX Version and map version to name
+if [ -x /usr/bin/sw_vers ]
+then
+  # This is poor, yet functional.  We don't care about the 3rd number in
+  # the OS version
+  OSVER=`/usr/bin/sw_vers | grep ProductVersion | cut -f2 | cut -d"." -f1,2`
+  case "$OSVER" in
+    "10.5") OS="leopard";;
+    "10.4") OS="tiger";;
+    "10.3") OS="panther";;
+    "10.2") OS="jaguar";;
+    "10.1") OS="puma";;
+    "10.0") OS="cheetah";;
+         *) OS="unknown";;
+  esac
+else
+  OS="unknown"
+fi
+
+# Set the Vidalia version
+VERSION="@VERSION@"
+# Set the name of the output .dmg file
+DMG="vidalia-$VERSION-$OS.dmg"
+
 # Get the rest of the command-line arguments
 filelist=$2
 echo "Files to copy: $filelist"
-dmg=$3
-echo "Destination Disk Image: $dmg"
-volname=`echo "$dmg" | sed -e "s/.*\///" | sed -e "s/.dmg//"`
+echo "Destination Disk Image: $DMGg"
+volname=`echo "$DMG" | sed -e "s/.*\///" | sed -e "s/.dmg//"`
 echo "Volume Name: $volname"
 
 # Create the disk image
-hdiutil create $dmg -size 20m -fs HFS+ -volname "$volname"
+hdiutil create $DMG -size 20m -fs HFS+ -volname "$volname"
 
 # Mount the image and get the device name
 mntdir="dist.mnt"
-hdiutil attach "$dmg" -noautoopen -quiet -mountpoint "$mntdir"
+hdiutil attach "$DMG" -noautoopen -quiet -mountpoint "$mntdir"
 dev_handle=`hdiutil info | grep "$mntdir" | grep "Apple_HFS" | awk '{print $1}'`
 
 # Copy over the specified files into the disk image
@@ -65,7 +88,7 @@ done
 hdiutil detach $dev_handle
 
 # Replace the image with a compressed image
-hdiutil convert $dmg -format UDZO -o $dmg.udzo.dmg
-rm -f $dmg
-mv $dmg.udzo.dmg $dmg
+hdiutil convert $DMG -format UDZO -o $DMG.udzo.dmg
+rm -f $DMG
+mv $DMG.udzo.dmg $DMG
 

@@ -34,16 +34,21 @@ dnl Substitute the version number in places that need it
 AC_SUBST(VERSION, AC_PACKAGE_VERSION)
 DOCS="doc"
 OSXBUNDLE="pkg/osx/bundle"
+OSXDMG="pkg/osx"
 AC_OUTPUT([$DOCS/vidalia.1                    \
+           $OSXDMG/builddmg.sh                \
            $OSXBUNDLE/buildmpkg.sh            \
            $OSXBUNDLE/VidaliaBundleDesc.plist \
            $OSXBUNDLE/VidaliaBundleInfo.plist \
            $OSXBUNDLE/VidaliaDesc.plist       \
            $OSXBUNDLE/VidaliaInfo.plist])
 
-dnl Make the mpkg script executable
+dnl Make the mpkg and dmg scripts executable
 if test x$CHMOD != x; then
-  $CHMOD u+x pkg/osx/bundle/buildmpkg.sh
+  $CHMOD u+x $OSXBUNDLE/buildmpkg.sh
+fi
+if test x$CHMOD != x; then
+  $CHMOD u+x $OSXDMG/builddmg.sh
 fi
 
 dnl Build the translations
