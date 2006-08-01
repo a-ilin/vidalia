@@ -34,6 +34,7 @@
 #define SETTING_CONTROL_ADDR    "Tor/ControlAddr"
 #define SETTING_CONTROL_PORT    "Tor/ControlPort"
 #define SETTING_AUTH_TOKEN      "Tor/AuthToken"
+#define SETTING_USE_SERVICE     "Tor/UseService"
 
 /* On win32, we need to add the .exe onto Tor's filename */
 #if defined(Q_OS_WIN32)
@@ -51,6 +52,7 @@
 #define DEFAULT_TORRC           ""
 #define DEFAULT_USER            ""
 #define DEFAULT_GROUP           ""
+#define DEFAULT_USE_SERVICE     false
 
 /* Arguments we can pass to Tor on the command-line */
 #define TOR_ARG_CONTROL_PORT    "ControlPort"
@@ -257,3 +259,16 @@ TorSettings::setAuthToken(QByteArray token)
   setValue(SETTING_AUTH_TOKEN, token.toBase64());
 }
 
+/** Get whether Tor will run as an NT service */
+bool
+TorSettings::getUseService()
+{
+  return value(SETTING_USE_SERVICE, DEFAULT_USE_SERVICE).toBool();
+}
+
+/** Set whether Tor will run as an NT service */
+void
+TorSettings::setUseService(bool useService)
+{
+  setValue(SETTING_USE_SERVICE, useService);
+}

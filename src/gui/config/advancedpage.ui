@@ -507,14 +507,51 @@
     </widget>
    </item>
    <item>
+    <widget class="QGroupBox" name="grpService" >
+     <property name="minimumSize" >
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="contextMenuPolicy" >
+      <enum>Qt::NoContextMenu</enum>
+     </property>
+     <property name="title" >
+      <string>Service</string>
+     </property>
+     <layout class="QVBoxLayout" >
+      <property name="margin" >
+       <number>9</number>
+      </property>
+      <property name="spacing" >
+       <number>6</number>
+      </property>
+      <item>
+       <widget class="QCheckBox" name="chkUseService" >
+        <property name="contextMenuPolicy" >
+         <enum>Qt::NoContextMenu</enum>
+        </property>
+        <property name="toolTip" >
+         <string>Enable this if you run Tor as an NT service</string>
+        </property>
+        <property name="text" >
+         <string>Enable NT service support</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
     <spacer>
      <property name="orientation" >
       <enum>Qt::Vertical</enum>
      </property>
      <property name="sizeHint" >
       <size>
-       <width>443</width>
-       <height>27</height>
+       <width>489</width>
+       <height>141</height>
       </size>
      </property>
     </spacer>

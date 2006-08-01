@@ -46,6 +46,8 @@ AdvancedPage::AdvancedPage(QWidget *parent)
   /* Hide platform specific features */
 #ifdef Q_WS_WIN
   ui.grpPermissions->setVisible(false);
+#else
+  ui.grpService->setVisible(false);
 #endif
 }
 
@@ -64,6 +66,7 @@ AdvancedPage::save(QString &errmsg)
   _settings->setTorrc(ui.lineTorConfig->text());
   _settings->setUser(ui.lineUser->text());
   _settings->setGroup(ui.lineGroup->text());
+  _settings->setUseService(ui.chkUseService->isChecked());
   return true;
 }
 
@@ -75,6 +78,7 @@ AdvancedPage::load()
   ui.lineTorConfig->setText(_settings->getTorrc());
   ui.lineUser->setText(_settings->getUser());
   ui.lineGroup->setText(_settings->getGroup());
+  ui.chkUseService->setChecked(_settings->getUseService());
 }
 
 /** Open a QFileDialog to browse for Tor config file. */
