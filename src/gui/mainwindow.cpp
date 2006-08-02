@@ -295,9 +295,9 @@ MainWindow::startFailed(QString errmsg)
   
   /* Display an error message and see if the user wants some help */
   int response = VMessageBox::warning(this, tr("Error Starting Tor"),
-                   p(tr("Vidalia was unable to start Tor. Check your settings "
+                   tr("Vidalia was unable to start Tor. Check your settings "
                         "to ensure the correct name and location of your Tor "
-                        "executable is specified.")),
+                        "executable is specified."),
                    VMessageBox::Ok, VMessageBox::ShowSettings, VMessageBox::Help);
 
   if (response == VMessageBox::ShowSettings) {
@@ -366,11 +366,11 @@ MainWindow::initiateServerShutdown()
   
   /* Ask the user if they want to shutdown nicely. */
   int response = VMessageBox::question(this, tr("Server is Enabled"),
-                  p(tr("You are currently running a Tor server. "
+                  tr("You are currently running a Tor server. "
                        "Terminating your server will interrupt any "
                        "open connections from clients.\n\n"
                        "Would you like to shutdown gracefully and "
-                       "give clients time to find a new server?")),
+                       "give clients time to find a new server?"),
                   VMessageBox::Yes, VMessageBox::No);
 
   if (response == VMessageBox::Yes) {
@@ -456,9 +456,9 @@ MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
      * if this turns out to not be the case. */
     if (exitStatus == QProcess::CrashExit || exitCode != 0) {
       int ret = VMessageBox::warning(this, tr("Tor Exited"),
-                  p(tr("Vidalia detected that Tor exited unexpectedly.\n\n"
-                       "Please check the message log for indicators "
-                       "about what happened to Tor before it exited.")),
+                  tr("Vidalia detected that Tor exited unexpectedly.\n\n"
+                     "Please check the message log for indicators "
+                     "about what happened to Tor before it exited."),
                   VMessageBox::Ok, VMessageBox::ShowLog, VMessageBox::Help);
       if (ret == VMessageBox::ShowLog) {
         showMessageLog();  

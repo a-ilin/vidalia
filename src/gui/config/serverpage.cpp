@@ -356,10 +356,10 @@ ServerPage::getServerAddress()
   QHostAddress addr = net_local_address();
   if (net_is_private_address(addr)) {
     int button = VMessageBox::information(this, tr("Get Address"),
-                   p(tr("Vidalia was only able to find a private IP " 
-                        "address for your server.\n\nWould you like to "
-                        "access an external service to determine your public " 
-                        "IP address?")),
+                   tr("Vidalia was only able to find a private IP " 
+                      "address for your server.\n\nWould you like to "
+                      "access an external service to determine your public " 
+                      "IP address?"),
                     VMessageBox::Yes, VMessageBox::No);
     if (button == VMessageBox::Yes) {
       getServerPublicIP();

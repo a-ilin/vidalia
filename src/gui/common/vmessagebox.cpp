@@ -24,6 +24,7 @@
  * \version $Id$
  */
 
+#include <util/html.h>
 #include "vmessagebox.h"
 
 
@@ -104,7 +105,7 @@ int
 VMessageBox::critical(QWidget *parent, QString caption, QString text,
                       int button0, int button1, int button2)
 {
-  int ret = QMessageBox::critical(parent, caption, text,
+  int ret = QMessageBox::critical(parent, caption, p(text),
               VMessageBox::buttonText(button0), 
               VMessageBox::buttonText(button1), 
               VMessageBox::buttonText(button2),
@@ -121,7 +122,7 @@ int
 VMessageBox::question(QWidget *parent, QString caption, QString text,
                       int button0, int button1, int button2)
 {
-  int ret = QMessageBox::question(parent, caption, text,
+  int ret = QMessageBox::question(parent, caption, p(text),
               VMessageBox::buttonText(button0), 
               VMessageBox::buttonText(button1), 
               VMessageBox::buttonText(button2),
@@ -138,7 +139,7 @@ int
 VMessageBox::information(QWidget *parent, QString caption, QString text,
                          int button0, int button1, int button2)
 {
-  int ret = QMessageBox::information(parent, caption, text,
+  int ret = QMessageBox::information(parent, caption, p(text),
               VMessageBox::buttonText(button0), 
               VMessageBox::buttonText(button1), 
               VMessageBox::buttonText(button2),
@@ -155,7 +156,7 @@ int
 VMessageBox::warning(QWidget *parent, QString caption, QString text,
                      int button0, int button1, int button2)
 {
-  int ret = QMessageBox::warning(parent, caption, text,
+  int ret = QMessageBox::warning(parent, caption, p(text),
               VMessageBox::buttonText(button0), 
               VMessageBox::buttonText(button1), 
               VMessageBox::buttonText(button2),
