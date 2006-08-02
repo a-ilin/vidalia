@@ -24,7 +24,7 @@
  * \version $Id$
  */
 
-#include <QMessageBox>
+#include <gui/common/vmessagebox.h>
 #include <vidalia.h>
 
 #include "configdialog.h"
@@ -163,9 +163,9 @@ ConfigDialog::saveChanges()
       ui.stackPages->setCurrentPage(page);
       
       /* Show the user what went wrong */
-      QMessageBox::warning(this, 
+      VMessageBox::warning(this, 
         tr("Error Saving Configuration"), errmsg,
-        QMessageBox::Ok, QMessageBox::NoButton);
+        VMessageBox::Ok);
 
       /* Don't process the rest of the pages */
       return;
