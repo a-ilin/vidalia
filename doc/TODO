@@ -43,12 +43,6 @@ Notes from Roger:
     info/names, and for Tors where it's not available, it's probably simplest
     to hard-code the current exit policy inside Vidalia.)
 
-  * When I click 'save' in the server configuration page, and it fails, for
-    example because "Unacceptable option value", the error message doesn't
-    wrap and doesn't have a scrollbar. So I need to make the window bigger
-    to see it all. And I'm guessing in some cases I won't realize there's
-    more to see.
-
   * On the 'configure server' window, it says "Only relay traffic between
     other Tor servers (middle-man)". We should move this to the 'Exit 
     Policies' section.
