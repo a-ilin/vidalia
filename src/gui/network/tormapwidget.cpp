@@ -27,7 +27,7 @@
 #include <cmath>
 #include "tormapwidget.h"
 
-#define IMG_WORLD_MAP   ":/images/map/world-map.png"
+#define IMG_WORLD_MAP   ":/images/map/world-map.jpg"
 
 /** QPens to use for drawing different map elements */
 #define PEN_ROUTER        QPen(QColor("#ff030d"), 1.0)
@@ -35,11 +35,11 @@
 #define PEN_SELECTED      QPen(Qt::green, 2.0)
 
 /** Size of the map image */
-#define IMG_WIDTH       1000
-#define IMG_HEIGHT      507
+#define IMG_WIDTH       3604
+#define IMG_HEIGHT      1828
 
 /** Border between the edge of the image and the actual map */
-#define MAP_TOP         2
+#define MAP_TOP         0
 #define MAP_BOTTOM      2
 #define MAP_RIGHT       5
 #define MAP_LEFT        5

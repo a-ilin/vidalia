@@ -38,7 +38,7 @@ ZImageView::ZImageView(QWidget *parent)
   /* Initialize members */
   _zoom = 0.0;
   _mouseDown = false;
-  _maxZoomFactor = 8.0;
+  _maxZoomFactor = 1.0;
   _padding = 60;
 
   setCursor(QCursor(Qt::CrossCursor));
@@ -299,14 +299,14 @@ ZImageView::zoom(float pct)
 void
 ZImageView::zoomIn()
 {
-  zoom(_zoom + .05);
+  zoom(_zoom + .1);
 }
 
 /** Zooms away from the image by 5% */
 void
 ZImageView::zoomOut()
 {
-  zoom(_zoom - .05);
+  zoom(_zoom - .1);
 }
 
 /** Responds to the user pressing a mouse button. */

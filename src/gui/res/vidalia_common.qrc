@@ -79,6 +79,6 @@
         <file>flags/zh-cn.png</file>
     </qresource>
     <qresource prefix="/images">
-        <file>map/world-map.png</file>
+        <file>map/world-map.jpg</file>
     </qresource>
 </RCC>
