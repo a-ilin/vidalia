@@ -882,7 +882,7 @@ fingerprint.</string>
               <string/>
              </property>
              <property name="icon" >
-              <iconset resource="..\res\vidalia_common.qrc" >:/images/22x22/help-browser.png</iconset>
+              <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/help-browser.png</iconset>
              </property>
              <property name="iconSize" >
               <size>
@@ -1438,7 +1438,7 @@ fingerprint.</string>
                   <string/>
                  </property>
                  <property name="icon" >
-                  <iconset resource="..\res\vidalia_common.qrc" >:/images/22x22/list-add.png</iconset>
+                  <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/list-add.png</iconset>
                  </property>
                  <property name="iconSize" >
                   <size>
@@ -1460,7 +1460,7 @@ fingerprint.</string>
                   <string/>
                  </property>
                  <property name="icon" >
-                  <iconset resource="..\res\vidalia_common.qrc" >:/images/22x22/go-up.png</iconset>
+                  <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/go-up.png</iconset>
                  </property>
                  <property name="iconSize" >
                   <size>
@@ -1482,7 +1482,7 @@ fingerprint.</string>
                   <string/>
                  </property>
                  <property name="icon" >
-                  <iconset resource="..\res\vidalia_common.qrc" >:/images/22x22/go-down.png</iconset>
+                  <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/go-down.png</iconset>
                  </property>
                  <property name="iconSize" >
                   <size>
@@ -1504,7 +1504,7 @@ fingerprint.</string>
                   <string/>
                  </property>
                  <property name="icon" >
-                  <iconset resource="..\res\vidalia_common.qrc" >:/images/22x22/list-remove.png</iconset>
+                  <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/list-remove.png</iconset>
                  </property>
                  <property name="iconSize" >
                   <size>
@@ -1549,7 +1549,7 @@ fingerprint.</string>
                   <string/>
                  </property>
                  <property name="icon" >
-                  <iconset resource="..\res\vidalia_common.qrc" >:/images/22x22/help-browser.png</iconset>
+                  <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/help-browser.png</iconset>
                  </property>
                  <property name="iconSize" >
                   <size>
