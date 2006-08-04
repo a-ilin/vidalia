@@ -195,6 +195,7 @@ ServerPage::load()
     addPolicyItem(policy);
   }
   
+  ui.frmExitPolicy->setHidden(ui.chkMiddleMan->isChecked());
   ui.frmServer->setVisible(ui.chkEnableServer->isChecked());
 }
 
