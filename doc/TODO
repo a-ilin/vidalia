@@ -43,10 +43,6 @@ Notes from Roger:
     info/names, and for Tors where it's not available, it's probably simplest
     to hard-code the current exit policy inside Vidalia.)
 
-  * On the 'configure server' window, it says "Only relay traffic between
-    other Tor servers (middle-man)". We should move this to the 'Exit 
-    Policies' section.
-
   * For the configure server window, I'm using 1024x768, and it fills my
     screen vertically. Will lower resolutions have problems here?
  
