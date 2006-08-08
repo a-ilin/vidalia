@@ -29,6 +29,10 @@ MOC_DIR = src/gen/moc
 TEMPLATE = app
 CONFIG  += qt thread warn_on
 QT      += network xml
+QTPLUGIN += qjpeg
+
+# This fixes a bug with Qt 4.1.0 not including this in the path
+QMAKE_LFLAGS += -L$$[QT_INSTALL_PLUGINS]/imageformats
 
 isEmpty(PREFIX) {
   PREFIX = /usr/local

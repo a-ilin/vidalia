@@ -27,6 +27,7 @@
  */
 
 #include <QObject>
+#include <QPictureFormatPlugin>
 #include <vidalia.h>
 #include <gui/mainwindow.h>
 #include <gui/common/vmessagebox.h>
@@ -51,6 +52,7 @@ int
 main(int argc, char *argv[])
 {
   Q_INIT_RESOURCE(vidalia_common);
+  Q_IMPORT_PLUGIN(QJpegPlugin);
   QStringList args = char_array_to_stringlist(argv+1, argc-1);
 
   /* Construct the application object. Qt strips any command-line arguments
