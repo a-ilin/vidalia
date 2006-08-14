@@ -38,7 +38,7 @@ ZImageView::ZImageView(QWidget *parent)
   /* Initialize members */
   _zoom = 0.0;
   _mouseDown = false;
-  _maxZoomFactor = 1.0;
+  _maxZoomFactor = 2.0;
   _padding = 60;
 
   setCursor(QCursor(Qt::CrossCursor));
