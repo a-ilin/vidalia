@@ -1,0 +1,108 @@
+<!--
+  $Id$
+  
+  Vidalia is distributed under the following license:
+
+  Copyright (C) 2006,  Matt Edman, Justin Hipple
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU General Public License
+  as published by the Free Software Foundation; either version 2
+  of the License, or (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  
+  02110-1301, USA.
+-->
+
+<html>
+<body>
+
+<h1>Troubleshooting</h1>
+<hr />
+
+Listed below are some of the common problems or questions people have while
+running Tor. If you can't find anything about the particular problem you're
+having, check out our website at <i>www.vidalia-project.net</i> for more
+support and information.
+
+<a name="start"/>
+<h3>I Can't Start Tor</h3>
+<p>
+The most likely reason that Vidalia could not start Tor is because Vidalia is
+looking for your Tor installation in the wrong directory. You can tell Vidalia
+where Tor is located by updating the <i>Tor Directory</i> option in the 
+<a href="config.html#general">general configuration settings</a>.
+</p>
+<p>
+Another possible reason that Tor cannot start is because there is already
+another Tor process running. Check your list of running process and stop the
+previous Tor process, if you find one. Then, try running Tor again.
+</p>
+<p>
+If that did not help, check your <a href="log.html">message
+log</a> to see if Tor printed any information about errors it encountered
+while trying to start.
+</p>
+
+<a name="connect"/>
+<h3>Vidalia Can't Connect to Tor</h3>
+<p>
+Vidalia manages Tor by communicating with it via Tor's <i>control port</i>. 
+</p>
+<p>
+The most common reason that Vidalia cannot connect to Tor is because Tor
+started, but encountered an error and exited immediately. You should
+check your <a href="log.html">message log</a> to see if Tor reported any
+errors while it started.
+</p>
+<p>
+If Tor is listening on a different port than Vidalia expects, Vidalia will
+be unable to connect to Tor. You rarely need to change this setting, but if
+there is another service running on your machine that conflicts with Tor's 
+control port, you will need to specify a different port. You can change this
+setting in Vidalia's <a href="config.html#advanced">advanced configuration
+settings</a>.
+</p>
+
+<a name="torexited"/> 
+<h3>Tor Exited Unexpectedly</h3> 
+<p> 
+If Tor exits immediately after trying to start, you most likely have
+another Tor process already running. Check the <a href="log.html">message log</a> to
+see if any of the last few messages in the list are highlighted in yellow and
+contain a message similar to the following:
+</p>
+<pre>
+connection_create_listener(): Could not bind to 127.0.0.1:9050: Address already in use. 
+Is Tor already running?
+</pre>
+<p>
+If you find an error message like the one above, you will need to stop the other
+Tor process before starting a new one with Vidalia. On Windows, you would need
+to look for <i>tor.exe</i> in your Task Manager. On most other operating systems,
+the <i>ps</i> command can help you find the other Tor process.
+</p>
+<p>
+If Tor had been running successfully for awhile (that is, longer than a few
+seconds), then you should check the <a href="log.html">message log</a> for
+information about any errors Tor experienced before it exited. Such errors
+will be highlighted in either red or yellow.
+</p>
+
+<a name="stop"/>
+<h3>Vidalia Can't Stop Tor</h3>
+<p>
+If Vidalia cannot stop Tor, you should check your <a href="log.html">message
+log</a> to see if Tor reported any errors while trying to exit.
+</p>
+
+</body>
+</html>
+

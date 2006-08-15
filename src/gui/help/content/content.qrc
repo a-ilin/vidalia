@@ -50,6 +50,16 @@
     <file>fr/troubleshooting.html</file>
     <file>fr/netview.html</file>
     <file>fr/links.html</file>
+    <!-- Hungarian -->
+    <file>hu/contents.xml</file>
+    <file>hu/index.html</file>
+    <file>hu/running.html</file>
+    <file>hu/log.html</file>
+    <file>hu/config.html</file>
+    <file>hu/server.html</file>
+    <file>hu/troubleshooting.html</file>
+    <file>hu/netview.html</file>
+    <file>hu/links.html</file>
     <!-- Italian -->
     <file>it/contents.xml</file>
     <file>it/index.html</file>
