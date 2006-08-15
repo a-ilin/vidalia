@@ -60,6 +60,16 @@
     <file>it/troubleshooting.html</file>
     <file>it/netview.html</file>
     <file>it/links.html</file>
+    <!-- Dutch -->
+    <file>nl/contents.xml</file>
+    <file>nl/index.html</file>
+    <file>nl/running.html</file>
+    <file>nl/log.html</file>
+    <file>nl/config.html</file>
+    <file>nl/server.html</file>
+    <file>nl/troubleshooting.html</file>
+    <file>nl/netview.html</file>
+    <file>nl/links.html</file>
     <!-- Russian -->
     <file>ru/contents.xml</file>
     <file>ru/index.html</file>

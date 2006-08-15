@@ -75,6 +75,7 @@
         <file>flags/fi.png</file>
         <file>flags/fr.png</file>
         <file>flags/it.png</file>
+        <file>flags/nl.png</file>
         <file>flags/ru.png</file>
         <file>flags/zh-cn.png</file>
     </qresource>

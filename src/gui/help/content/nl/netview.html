@@ -1,0 +1,193 @@
+<!--
+  $Id$
+  
+  Vidalia is distributed under the following license:
+
+  Copyright (C) 2006,  Matt Edman, Justin Hipple
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU General Public License
+  as published by the Free Software Foundation; either version 2
+  of the License, or (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  
+  02110-1301, USA.
+-->
+
+<html>
+<body>
+
+<h1>Network Viewer</h1>
+<hr />
+
+<p>
+The network viewer lets you see routers in the Tor network and where
+your traffic is going.
+</p>
+
+
+<a name="overview"/>
+<h3>Overview</h3>
+<p>
+When you want to communicate anonymously through Tor (say, connecting to a
+website), Tor creates a tunnel, or <i>circuit</i>, of encrypted connections
+through a series of routers on the network. Your application's traffic is then
+sent as a <i>stream</i> through that circuit. For efficiency, multiple streams
+may share the same circuit.
+</p>
+
+<a name="netmap"/>
+<h3>Network Map</h3>
+<p>
+The network map consists of a map of the world, with red pinpoints indicating
+the geographic location of routers in the Tor network. Green lines are drawn
+between routers to indicate the path of circuits that your Tor client has
+created through the Tor network.
+</p>
+<p>
+You can zoom in on locations in the map by clicking the <b>Zoom In</b> and
+<b>Zoom Out</b> buttons in the toolbar. You can also scroll around on the map
+by clicking on the map and then dragging it in whatever direction you would
+like to move the map.
+</p>
+<p>
+The geographic location of a Tor router is determined by looking up the IP
+address of the router in a GeoIP database, created by MaxMind and located at
+geoip.vidalia-project.net.
+</p>
+<p>
+In the middle of the dialog, below the network map, you will see a list of
+your current circuits, as well as any application traffic currently on those
+circuits. When the network map first loads, you will probably see a connection
+to geoip.vidalia-project.net, which occurs when Vidalia is looking up
+geographic information for the list of Tor routers. It is important to note
+that this request is done through Tor, so your location is not revealed to the
+GeoIP server. The results of the lookups will be cached locally in order to
+reduce load on Vidalia's GeoIP servers.
+</p>
+
+
+<a name="status"/>
+<h3>Router Status</h3>
+<p>
+On the left side of the network view, you will see a list of routers in the
+Tor network. Next to each router is an icon indicating that router's status.
+The following table summarizes the possible router status icons:
+</p>
+<p>
+<table border="1">
+<tr>
+  <td><img src="qrc:/images/icons/node-unresponsive.png"/></td>
+  <td valign="middle">
+    The router is offline or simply not responding.
+  </td>
+</tr>
+<tr>
+  <td><img src="qrc:/images/icons/node-hibernating.png"/></td>
+  <td valign="middle">
+    The router is <i>hibernating</i>, meaning it is online, but has used up as
+    much bandwidth as the operator is willing to allow for a given time
+    period.
+  </td>
+</tr>
+<tr>
+  <td><img src="qrc:/images/icons/node-bw-none.png"/></td>
+  <td valign="middle">
+    The router is online, but has shown only minimal throughput.
+  </td>
+</tr>
+<tr>
+  <td><img src="qrc:/images/icons/node-bw-low.png"/></td>
+  <td valign="middle">
+    The router is online and has shown a throughput &gt;= 20 KB/s.
+  </td>
+</tr>
+<tr>
+  <td><img src="qrc:/images/icons/node-bw-med.png"/></td>
+  <td valign="middle">
+    The router is online and has shown a throughput &gt;= 60 KB/s.
+  </td>
+</tr>
+<tr>
+  <td><img src="qrc:/images/icons/node-bw-high.png"/></td>
+  <td valign="middle">
+    The router is online and has shown a throughput &gt;= 400 KB/s.
+  </td>
+</tr>
+</table>
+</p>
+<p>
+All bandwidth values are estimates based on the minimum of either 
+the maximum bandwidth sustained input or output over any ten second period 
+in the past day.
+</p>
+
+
+<a name="details"/>
+<h3>Router Details</h3>
+<p>
+The router details panel at the right side of the screen gives you details
+about the router or routers currently selected in the 
+<a href="#routerlist">router list</a>. If you have selected a circuit or stream
+in the list of your current circuits and streams, this panel will show you
+details about each router through which your traffic is currently being
+relayed.
+</p>
+<p>
+The fields that you may see in the panel are as follows (<i>Note</i>: not all
+of these fields will always be present):
+</p>
+<p>
+<table>
+<tr>
+  <td><b>Location</b></td>
+  <td>The geographic location of this Tor router.</td>
+</tr>
+<tr>
+  <td><b>IP Address</b></td>
+  <td>IP address at which this Tor router can be reached.</td>
+</tr>
+<tr>
+  <td><b>Platform</b></td>
+  <td>
+    Operating system information and Tor version on which this router is
+    currently running.
+  </td>
+</tr>
+<tr>
+  <td><b>Contact</b></td>
+  <td>
+    Contact information for this router's operator, in case there is a
+    problem with the router.
+  </td>
+</tr>
+<tr>
+  <td><b>Bandwidth</b></td>
+  <td>
+    Estimated maximum amount of bandwidth that the directory servers have 
+    seen this router handle recently.
+  </td>
+</tr>
+<tr>
+  <td><b>Uptime</b></td>
+  <td>
+    Length of time this router has been available, which can be used to help
+    estimate this router's stability.
+  </td>
+</tr>
+<tr>
+  <td><b>Last Updated</b></td>
+  <td>Date this router's information was last updated.</td>
+</tr>
+</table>
+</p>
+</body>
+</html>
+

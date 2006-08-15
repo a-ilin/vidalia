@@ -31,6 +31,7 @@ TRANSLATIONS += $$PWD/vidalia_bg.ts \
                 $$PWD/vidalia_fi.ts \
                 $$PWD/vidalia_fr.ts \
                 $$PWD/vidalia_it.ts \
+                $$PWD/vidalia_nl.ts \
                 $$PWD/vidalia_ru.ts \
                 $$PWD/vidalia_zh-cn.ts
 

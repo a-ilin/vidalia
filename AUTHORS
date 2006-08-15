@@ -21,9 +21,10 @@ Contributors:
   <http://opello.org/> added additional image formats to the .ico files to
   support more Windowses.
 
-  Geoff Goodell <http://afs.eecs.harvard.edu/~goodell/> created the US/UK icon
-  (src/gui/res/flags/en.png) that we use in the Appearance configuration page.
-  He also created the router status icons we used in the network view dialog.
+  Geoff Goodell <http://afs.eecs.harvard.edu/~goodell/> supplied us with
+  nearly all of the flag icons that we use in the Appearance configuration
+  page. He also created the router status icons we use in the network view
+  dialog.
 
   Michael Zuercher and Adam Tomjack of Zuerchertech LLC <http://www.zuerchertech.com>
   gave us the ZImageView class which handles drawing, scrolling and zooming the map 
@@ -35,6 +36,7 @@ Contributors:
 
 Translators:
   kutia0001           Bulgarian
+  Saedian             Dutch
   DJ Hasis            Finnish
   Michel Burkhardt    French
   Christoph Sieghart  German
