@@ -65,13 +65,13 @@
 #define DEFAULT_SERVER_ENABLED    false
 #define DEFAULT_SERVER_CHANGED    false
 #define DEFAULT_SERVER_DIRMIRROR  false
-#define DEFAULT_SERVER_MIDDLEMAN  false
+#define DEFAULT_SERVER_MIDDLEMAN  true
 #define DEFAULT_SERVER_NICKNAME   QHostInfo::localHostName()
 #define DEFAULT_SERVER_ORPORT     9001
 #define DEFAULT_SERVER_DIRPORT    9030
 #define DEFAULT_SERVER_CONTACT    "<your@email.com>"
 #define DEFAULT_SERVER_ADDRESS    net_local_address().toString() 
-#define DEFAULT_SERVER_EXITPOLICY ""
+#define DEFAULT_SERVER_EXITPOLICY ExitPolicy(ExitPolicy::Default).toString()
 #define DEFAULT_SERVER_BWRATE     2097152
 #define DEFAULT_SERVER_BWBURST    5242880
 #define DEFAULT_SERVER_AUTOUPDATE_ADDRESS false

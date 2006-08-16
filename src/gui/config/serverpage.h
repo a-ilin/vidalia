@@ -77,7 +77,7 @@ private:
   /** Returns the index of the selected item in lstExitPolicies */
   int selectedIndex();
   /** Adds a new exit policy to the exit policy list */
-  void addPolicyItem(Policy policy);
+  void addPolicyItem(Policy policy, bool append = true);
   /** Saves the policy specified in item to the exitPolicy */
   void savePolicy(QTreeWidgetItem *item, ExitPolicy &exitPolicy);
   /** Enables or disables the automatic update timer. */

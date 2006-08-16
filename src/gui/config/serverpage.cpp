@@ -239,7 +239,7 @@ ServerPage::addPolicy()
                        QHostAddress(ui.lineExitAddress->text()),
                        ui.lineExitMask->text().toUShort(), 
                        fromPort.toUShort(),
-                       toPort.toUShort()));
+                       toPort.toUShort()), false);
 
   /* Clear input text boxes */
   ui.lineExitAddress->clear();
@@ -250,7 +250,7 @@ ServerPage::addPolicy()
 
 /** Adds a new QTreeWidget item to the exit policy list */
 void
-ServerPage::addPolicyItem(Policy policy)
+ServerPage::addPolicyItem(Policy policy, bool append)
 {
   QTreeWidgetItem *newPolicy = new QTreeWidgetItem();
 
@@ -262,7 +262,11 @@ ServerPage::addPolicyItem(Policy policy)
     newPolicy->setTextAlignment(i, Qt::AlignHCenter);
   }
 
-  ui.lstExitPolicies->addTopLevelItem(newPolicy);
+  if (append) {
+    ui.lstExitPolicies->addTopLevelItem(newPolicy);
+  } else {
+    ui.lstExitPolicies->insertTopLevelItem(0, newPolicy);
+  }
 }
 
 /** Removes selected exit policy from the user's configuration */

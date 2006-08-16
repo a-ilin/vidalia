@@ -39,6 +39,19 @@ ExitPolicy::ExitPolicy(SpecialExitPolicy exitPolicy)
 {
   if (exitPolicy == Middleman) {
     addPolicy(Policy(Policy::RejectAll));
+  } else if (exitPolicy == Default) {
+    addPolicy(Policy("reject *:25"));
+    addPolicy(Policy("reject *:119"));
+    addPolicy(Policy("reject *:135-139"));
+    addPolicy(Policy("reject *:445"));
+    addPolicy(Policy("reject *:465"));
+    addPolicy(Policy("reject *:587"));
+    addPolicy(Policy("reject *:1214"));
+    addPolicy(Policy("reject *:4661-4666"));
+    addPolicy(Policy("reject *:6346-6429"));
+    addPolicy(Policy("reject *:6699"));
+    addPolicy(Policy("reject *:6881-6999"));
+    addPolicy(Policy("accept *:*"));
   }
 }
 

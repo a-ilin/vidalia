@@ -38,6 +38,7 @@ class ExitPolicy
 public:
   /** Special exit policy types. */
   enum SpecialExitPolicy {
+    Default,  /**< Specifies the default exit policy. */
     Middleman /**< Specifies a middleman-only exit policy. */
   };
   
