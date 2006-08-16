@@ -77,7 +77,11 @@ private:
   void createActions();
   /** Loads the saved Bandwidth Graph settings */
   void loadSettings();
- 
+  /** Saves the window size and location. */
+  void saveWindowState();
+  /** Restore the window size and location. */
+  void restoreWindowState();
+
   /** A TorControl object used to talk to Tor. */
   TorControl* _torControl;
   /** A VidaliaSettings object that handles getting/saving settings */

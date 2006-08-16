@@ -106,6 +106,15 @@ public:
   bool getBWGraphAlwaysOnTop();
   /** Sets whether the bandwidth graph is always on top. */
   void setBWGraphAlwaysOnTop(bool alwaysOnTop);
+  
+  /** Gets last saved size of the bandwidth graph window. */
+  QSize getBWGraphSize();
+  /** Saves the size of the bandwidth graph window. */
+  void setBWGraphSize(QSize size);
+  /** Gets last saved position of the bandwidth graph window. */
+  QPoint getBWGraphPosition();
+  /** Saves the position of the bandwidth graph window. */
+  void setBWGraphPosition(QPoint pos);
 };
 
 #endif

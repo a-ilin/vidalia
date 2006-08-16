@@ -52,6 +52,8 @@
 #define SETTING_BWGRAPH_FILTER        "BandwidthGraph/BWLineFilter"
 #define SETTING_BWGRAPH_OPACITY       "BandwidthGraph/Opacity"
 #define SETTING_BWGRAPH_ALWAYS_ON_TOP "BandwidthGraph/AlwaysOnTop"
+#define SETTING_BWGRAPH_SIZE          "BandwidthGraph/Size"
+#define SETTING_BWGRAPH_POSITION      "BandwidthGraph/Position"
 
 /* Default Vidalia Settings */
 #if defined(Q_WS_MAC)
@@ -80,6 +82,8 @@
 /* Default bandwidth graph settings */
 #define DEFAULT_BWGRAPH_FILTER          (BWGRAPH_SEND|BWGRAPH_REC)
 #define DEFAULT_BWGRAPH_ALWAYS_ON_TOP   false
+#define DEFAULT_BWGRAPH_SIZE            QSize()
+#define DEFAULT_BWGRAPH_POSITION        QPoint()
 
 /** The location of Vidalia's settings and configuration file. */
 #define SETTINGS_FILE   (Vidalia::dataDirectory() + "/vidalia.conf")
@@ -283,5 +287,35 @@ void
 VidaliaSettings::setBWGraphAlwaysOnTop(bool alwaysOnTop)
 {
   setValue(SETTING_BWGRAPH_ALWAYS_ON_TOP, alwaysOnTop);
+}
+
+/** Gets the size of the bandwidth graph window. */
+QSize
+VidaliaSettings::getBWGraphSize()
+{
+  return value(SETTING_BWGRAPH_SIZE,
+               DEFAULT_BWGRAPH_SIZE).toSize();
+}
+
+/** Saves the size of the bandwidth graph window. */
+void
+VidaliaSettings::setBWGraphSize(QSize size)
+{
+  setValue(SETTING_BWGRAPH_SIZE, size);
+}
+
+/** Gets the last saved size of the bandwidth graph window. */
+QPoint
+VidaliaSettings::getBWGraphPosition()
+{
+  return value(SETTING_BWGRAPH_POSITION,
+               DEFAULT_BWGRAPH_POSITION).toPoint();
+}
+
+/** Saves the size of the bandwidth graph window. */
+void
+VidaliaSettings::setBWGraphPosition(QPoint pos)
+{
+  setValue(SETTING_BWGRAPH_POSITION, pos);
 }
 

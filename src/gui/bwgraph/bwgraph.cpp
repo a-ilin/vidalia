@@ -65,12 +65,43 @@ BandwidthGraph::BandwidthGraph(QWidget *parent, Qt::WFlags flags)
 #if defined(Q_WS_X11)
   ui.frmOpacity->setVisible(false);
 #endif
+  
+  /* Restore the last size and position of the bandwidth graph window */
+  restoreWindowState();
 }
 
 /** Default destructor */
 BandwidthGraph::~BandwidthGraph()
 {
+  /* Save the last size and position of the bandwidth graph window */
+  saveWindowState();
+
   delete _settings;
+}
+
+/** Restore the window size and location. */
+void
+BandwidthGraph::restoreWindowState()
+{
+  /* Restore the size */
+  QSize size = _settings->getBWGraphSize();
+  if (!size.isEmpty()) {
+    resize(size);
+  }
+  
+  /* Restore the position */
+  QPoint pos = _settings->getBWGraphPosition();
+  if (!pos.isNull()) {
+    move(pos);
+  }
+}
+
+/** Save the window size and location. */
+void
+BandwidthGraph::saveWindowState()
+{
+  _settings->setBWGraphSize(size());
+  _settings->setBWGraphPosition(pos());
 }
 
 /**
