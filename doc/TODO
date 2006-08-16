@@ -35,14 +35,6 @@ Notes from Roger:
     changes itself, or like rephrasing the error to give some hints about
     what's going on.
 
-  * I think we mentioned putting the exit policy into the form on the
-    "configure server" page, since right now I can't imagine they recognize
-    that they have a complex exit policy when in fact the page is blank.
-    You can fetch the exit policy from Tor by asking for "getinfo
-    exit-policy/default". (You can learn if it's available by getinfo
-    info/names, and for Tors where it's not available, it's probably simplest
-    to hard-code the current exit policy inside Vidalia.)
-
   * For the configure server window, I'm using 1024x768, and it fills my
     screen vertically. Will lower resolutions have problems here?
  
