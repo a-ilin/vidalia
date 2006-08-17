@@ -33,12 +33,13 @@
 #include <QTimer>
 #include <control/torcontrol.h>
 #include <util/geoip/geoipresolver.h>
+#include <gui/common/vidaliawindow.h>
 
 #include "tormapwidget.h"
 #include "ui_netviewer.h"
 
 
-class NetViewer : public QMainWindow
+class NetViewer : public VidaliaWindow
 {
   Q_OBJECT
 
@@ -47,8 +48,6 @@ public:
   NetViewer(QWidget* parent = 0);
 
 public slots:
-  /** Overloaded QWidget.show() **/
-  void show();
   /** Loads a list of current circuits and streams. */
   void loadConnections();
   /** Adds a circuit to the list and the map */

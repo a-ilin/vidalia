@@ -40,7 +40,7 @@
  * "very fast", so we shouldn't need to create a global instance of this
  * class.
  */
-class VidaliaSettings : protected QSettings
+class VidaliaSettings : public QSettings
 {
   
 public:

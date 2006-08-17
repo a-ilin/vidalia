@@ -31,13 +31,14 @@
 #include <QResizeEvent>
 #include <control/torcontrol.h>
 #include <config/vidaliasettings.h>
+#include <gui/common/vidaliawindow.h>
 
 #include "logfile.h"
 #include "logtreeitem.h"
 #include "ui_messagelog.h"
 
 
-class MessageLog : public QMainWindow
+class MessageLog : public VidaliaWindow
 {
   Q_OBJECT
 
@@ -50,10 +51,6 @@ public:
 protected:
   /** Called to deliver custom event types */
   void customEvent(QEvent *event);
-
-public slots:
-  /** Overloaded QWidget.show() **/
-  void show();
   
 private slots:
   /** Called when the user triggers the save all action **/

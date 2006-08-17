@@ -31,9 +31,10 @@
 /* Define the format used for displaying the date and time */
 #define DATETIME_FMT  "MMM dd hh:mm:ss"
 
+
 /** Default constructor */
 BandwidthGraph::BandwidthGraph(QWidget *parent, Qt::WFlags flags)
-  : QMainWindow(parent, flags)
+  : VidaliaWindow("BandwidthGraph", parent, flags)
 {
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
@@ -65,43 +66,12 @@ BandwidthGraph::BandwidthGraph(QWidget *parent, Qt::WFlags flags)
 #if defined(Q_WS_X11)
   ui.frmOpacity->setVisible(false);
 #endif
-  
-  /* Restore the last size and position of the bandwidth graph window */
-  restoreWindowState();
 }
 
 /** Default destructor */
 BandwidthGraph::~BandwidthGraph()
 {
-  /* Save the last size and position of the bandwidth graph window */
-  saveWindowState();
-
   delete _settings;
-}
-
-/** Restore the window size and location. */
-void
-BandwidthGraph::restoreWindowState()
-{
-  /* Restore the size */
-  QSize size = _settings->getBWGraphSize();
-  if (!size.isEmpty()) {
-    resize(size);
-  }
-  
-  /* Restore the position */
-  QPoint pos = _settings->getBWGraphPosition();
-  if (!pos.isNull()) {
-    move(pos);
-  }
-}
-
-/** Save the window size and location. */
-void
-BandwidthGraph::saveWindowState()
-{
-  _settings->setBWGraphSize(size());
-  _settings->setBWGraphPosition(pos());
 }
 
 /**
@@ -283,13 +253,9 @@ BandwidthGraph::setOpacity(int value)
 void
 BandwidthGraph::show()
 {
+  /* Load saved settings */
   loadSettings();
-  if(!this->isVisible()) {
-    QMainWindow::show();
-  } else {
-    QMainWindow::activateWindow();
-    setWindowState(windowState() & ~Qt::WindowMinimized | Qt::WindowActive);
-    QMainWindow::raise();
-  }
+  /* Show the window */
+  VidaliaWindow::show();
 }
 

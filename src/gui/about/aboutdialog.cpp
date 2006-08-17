@@ -29,7 +29,7 @@
 
 /** Default Constructor **/
 AboutDialog::AboutDialog(QWidget *parent, Qt::WFlags flags)
-: QMainWindow(parent, flags)
+: VidaliaWindow("AboutDialog", parent, flags)
 {
   ui.setupUi(this);
 
@@ -66,12 +66,6 @@ AboutDialog::show()
   } else {
     ui.lblTorVersion->setText(tr("<Not Running>"));
   }
-
-  if (!this->isVisible()) {
-    QMainWindow::show();
-  } else {
-    QMainWindow::activateWindow();
-    setWindowState(windowState() & ~Qt::WindowMinimized | Qt::WindowActive);
-    QMainWindow::raise();
-  }
+  VidaliaWindow::show();
 }
+

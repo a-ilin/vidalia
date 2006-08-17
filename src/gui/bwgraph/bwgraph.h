@@ -32,6 +32,7 @@
 
 #include <config/vidaliasettings.h>
 #include <control/torcontrol.h>
+#include <gui/common/vidaliawindow.h>
 
 #include "ui_bwgraph.h"
 #include "linetypes.h"
@@ -40,7 +41,7 @@
 #define REFRESH_RATE    1000
 
 
-class BandwidthGraph : public QMainWindow
+class BandwidthGraph : public VidaliaWindow
 {
   Q_OBJECT
 
@@ -77,10 +78,6 @@ private:
   void createActions();
   /** Loads the saved Bandwidth Graph settings */
   void loadSettings();
-  /** Saves the window size and location. */
-  void saveWindowState();
-  /** Restore the window size and location. */
-  void restoreWindowState();
 
   /** A TorControl object used to talk to Tor. */
   TorControl* _torControl;

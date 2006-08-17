@@ -43,7 +43,7 @@
  * \param parent The parent widget of this NetViewer object.\
  */
 NetViewer::NetViewer(QWidget *parent)
-: QMainWindow(parent)
+: VidaliaWindow("NetViewer", parent)
 {
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
@@ -196,19 +196,6 @@ NetViewer::addCircuit(Circuit circuit)
 {
   ui.treeCircuitList->addCircuit(circuit);
   _map->addCircuit(circuit);
-}
-
-/** Overloads the default show() slot. */
-void
-NetViewer::show()
-{
-  if (!this->isVisible()) {
-    QMainWindow::show();
-  } else {
-    activateWindow();
-    setWindowState(windowState() & ~Qt::WindowMinimized | Qt::WindowActive);
-    raise();
-  }
 }
 
 /** Called when the user selects the "Help" action from the toolbar. */

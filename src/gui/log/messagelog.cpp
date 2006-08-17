@@ -44,7 +44,7 @@
  * \param flags Any desired window creation flags. 
  */
 MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
-: QMainWindow(parent, flags)
+: VidaliaWindow("MessageLog", parent, flags)
 {
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
@@ -385,19 +385,6 @@ MessageLog::customEvent(QEvent *event)
     LogEvent *e = (LogEvent *)event;
     log(e->severity(), e->message());
     e->accept();
-  }
-}
-
-/** Overloads the default show() slot. */
-void
-MessageLog::show()
-{
-  if (!this->isVisible()) {
-    QMainWindow::show();
-  } else {
-    activateWindow();
-    setWindowState(windowState() & ~Qt::WindowMinimized | Qt::WindowActive);
-    raise();
   }
 }
 

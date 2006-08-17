@@ -28,11 +28,11 @@
 #define _ABOUTDIALOG_H
 
 #include <control/torcontrol.h>
-
+#include <gui/common/vidaliawindow.h>
 #include "ui_aboutdialog.h"
 
 
-class AboutDialog : public QMainWindow
+class AboutDialog : public VidaliaWindow
 {
   Q_OBJECT
 
@@ -53,3 +53,4 @@ private:
 };
 
 #endif
+

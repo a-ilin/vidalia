@@ -30,6 +30,7 @@
 #include <QMainWindow>
 #include <QFileDialog>
 #include <gui/help/browser/helpbrowser.h>
+#include <gui/common/vidaliawindow.h>
 
 #include "generalpage.h"
 #include "serverpage.h"
@@ -38,7 +39,7 @@
 
 #include "ui_configdialog.h"
 
-class ConfigDialog : public QMainWindow
+class ConfigDialog : public VidaliaWindow
 {
   Q_OBJECT
 

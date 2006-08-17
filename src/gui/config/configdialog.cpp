@@ -42,7 +42,7 @@
 
 /** Constructor */
 ConfigDialog::ConfigDialog(QWidget* parent)
-: QMainWindow(parent)
+: VidaliaWindow("ConfigDialog", parent)
 {
   /* Invoke the Qt Designer generated QObject setup routine */
   ui.setupUi(this);
@@ -110,14 +110,8 @@ ConfigDialog::show()
 {
   /* Load saved settings */
   loadSettings();
-
-  if (!this->isVisible()) {
-    QMainWindow::show();
-  } else {
-    QMainWindow::activateWindow();
-    setWindowState(windowState() & ~Qt::WindowMinimized | Qt::WindowActive);
-    QMainWindow::raise();
-  }
+  /* Show the window */
+  VidaliaWindow::show();
 }
 
 /** Shows the config dialog with focus set to the given page. */

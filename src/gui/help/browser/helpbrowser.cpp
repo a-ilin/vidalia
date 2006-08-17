@@ -50,7 +50,7 @@
 
 /** Constuctor. This will probably do more later */
 HelpBrowser::HelpBrowser(QWidget *parent)
-: QMainWindow(parent)
+ : VidaliaWindow("HelpBrowser", parent)
 {
   VidaliaSettings settings;
 
@@ -421,14 +421,9 @@ HelpBrowser::search()
 void
 HelpBrowser::show(QString topic)
 {
+  
   /* Bring the window to the top */
-  if (!this->isVisible()) {
-    QMainWindow::show();
-  } else {
-    QMainWindow::activateWindow();
-    setWindowState(windowState() & ~Qt::WindowMinimized | Qt::WindowActive);
-    QMainWindow::raise();
-  }
+  VidaliaWindow::show();
 
   /* If a topic was specified, then go ahead and display it. */
   if (!topic.isEmpty()) {

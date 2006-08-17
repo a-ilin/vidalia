@@ -21,7 +21,9 @@
 #  02110-1301, USA.
 #################################################################
 
-HEADERS += $$PWD/vmessagebox.h
+HEADERS +=  $$PWD/vidaliawindow.h \
+            $$PWD/vmessagebox.h
 
-SOURCES += $$PWD/vmessagebox.cpp
+SOURCES +=  $$PWD/vidaliawindow.cpp \
+            $$PWD/vmessagebox.cpp
 

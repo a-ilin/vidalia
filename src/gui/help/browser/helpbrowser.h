@@ -35,10 +35,11 @@
 #include <QTreeWidgetItem>
 #include <QTextBrowser>
 #include <QTextCursor>
+#include <gui/common/vidaliawindow.h>
 
 #include "ui_helpbrowser.h"
 
-class HelpBrowser : public QMainWindow
+class HelpBrowser : public VidaliaWindow
 {
   Q_OBJECT
 
