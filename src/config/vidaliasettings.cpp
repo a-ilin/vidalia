@@ -27,7 +27,6 @@
 #include <QDir>
 #include <QCoreApplication>
 #include <lang/languagesupport.h>
-#include <control/logevent.h>
 #include <vidalia.h>
 
 #include "vidaliasettings.h"
@@ -38,22 +37,10 @@
 #endif
 
 
-/* Vidalia's Settings */
 #define SETTING_LANGUAGE            "LanguageCode"
 #define SETTING_STYLE               "InterfaceStyle"
 #define SETTING_RUN_TOR_AT_START    "RunTorAtStart"
 #define SETTING_DATA_DIRECTORY      "DataDirectory"
-
-#define SETTING_MSG_FILTER          "MessageLog/MessageFilter"
-#define SETTING_MAX_MESSAGE         "MessageLog/MaxMsgCount"
-#define SETTING_ENABLE_LOG_FILE     "MessageLog/EnableLogFile"
-#define SETTING_LOG_FILE            "MessageLog/LogFile"
-
-#define SETTING_BWGRAPH_FILTER        "BandwidthGraph/BWLineFilter"
-#define SETTING_BWGRAPH_OPACITY       "BandwidthGraph/Opacity"
-#define SETTING_BWGRAPH_ALWAYS_ON_TOP "BandwidthGraph/AlwaysOnTop"
-#define SETTING_BWGRAPH_SIZE          "BandwidthGraph/Size"
-#define SETTING_BWGRAPH_POSITION      "BandwidthGraph/Position"
 
 /* Default Vidalia Settings */
 #if defined(Q_WS_MAC)
@@ -66,24 +53,10 @@
 #define DEFAULT_RUN_TOR_AT_START    true
 #define DEFAULT_OPACITY             100
 
-/* Default message log settings */
-#define DEFAULT_MSG_FILTER          (LogEvent::Error|LogEvent::Warn|LogEvent::Notice)
-#define DEFAULT_MAX_MESSAGE         250
-#define DEFAULT_ENABLE_LOG_FILE     false
-
 #if defined(Q_OS_WIN32)
-#define DEFAULT_LOG_FILE       (win32_program_files_folder()+"\\Tor\\tor-log.txt")
 #define STARTUP_REG_KEY        "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
 #define VIDALIA_REG_KEY        "Vidalia" 
-#else
-#define DEFAULT_LOG_FILE       (QDir::homePath() + "/.tor/tor-log.txt")
 #endif
-
-/* Default bandwidth graph settings */
-#define DEFAULT_BWGRAPH_FILTER          (BWGRAPH_SEND|BWGRAPH_REC)
-#define DEFAULT_BWGRAPH_ALWAYS_ON_TOP   false
-#define DEFAULT_BWGRAPH_SIZE            QSize()
-#define DEFAULT_BWGRAPH_POSITION        QPoint()
 
 /** The location of Vidalia's settings and configuration file. */
 #define SETTINGS_FILE   (Vidalia::dataDirectory() + "/vidalia.conf")
@@ -179,113 +152,5 @@ VidaliaSettings::setRunVidaliaOnBoot(bool run)
   Q_UNUSED(run);
   return;
 #endif
-}
-
-/** Returns the current message filter. */
-uint
-VidaliaSettings::getMsgFilter()
-{
-  return value(SETTING_MSG_FILTER, DEFAULT_MSG_FILTER).toUInt(); 
-}
-
-/** Saves the setting for whether or not the given message severity will be
- * displayed. */
-void
-VidaliaSettings::setMsgFilter(LogEvent::Severity severity, bool add)
-{
-  uint filter = getMsgFilter();
-  filter = (add ? (filter | (uint)severity) : (filter & ~((uint)severity)));
-  setValue(SETTING_MSG_FILTER, filter);
-}
-
-/** Set maximum number of messages to display in log. */
-void
-VidaliaSettings::setMaxMsgCount(int max)
-{
-  setValue(SETTING_MAX_MESSAGE, max);
-}
-
-/** Return maximum number of messages to display in log. */
-int
-VidaliaSettings::getMaxMsgCount()
-{
-  return value(SETTING_MAX_MESSAGE, DEFAULT_MAX_MESSAGE).toInt();
-}
-
-/** Returns whether or not to enable automatically saving log messages from
- * the message log to a file on disk. */
-bool
-VidaliaSettings::isLogFileEnabled()
-{
-  return value(SETTING_ENABLE_LOG_FILE, 
-               DEFAULT_ENABLE_LOG_FILE).toBool();
-}
-
-/** Sets whether or not to enable automatically saving log messages from the
- * message log to a file on disk. */
-void
-VidaliaSettings::enableLogFile(bool enable)
-{
-  setValue(SETTING_ENABLE_LOG_FILE, enable);
-}
-
-/** Gets the destination file on disk to which log messages can be saved. */
-QString
-VidaliaSettings::getLogFile()
-{
-  return QDir::convertSeparators(
-                  value(SETTING_LOG_FILE, DEFAULT_LOG_FILE).toString());
-}
-
-/** Sets the destination file on disk to which log messages can be saved. */
-void
-VidaliaSettings::setLogFile(QString file)
-{
-  setValue(SETTING_LOG_FILE, QDir::convertSeparators(file));
-}
-
-/** Returns the bandwidth line filter. */
-uint
-VidaliaSettings::getBWGraphFilter()
-{
-  return value(SETTING_BWGRAPH_FILTER, DEFAULT_BWGRAPH_FILTER).toUInt(); 
-}
-
-/** Saves the setting for whether or not the given line will be graphed */
-void
-VidaliaSettings::setBWGraphFilter(uint line, bool status)
-{
-  uint filter = getBWGraphFilter();
-  filter = (status ? (filter | line) : (filter & ~(line)));
-  setValue(SETTING_BWGRAPH_FILTER, filter);
-}
-
-/** Get the level of opacity for the BandwidthGraph window. */
-int
-VidaliaSettings::getBWGraphOpacity()
-{
-  return value(SETTING_BWGRAPH_OPACITY, DEFAULT_OPACITY).toInt();
-}
-
-/** Set the level of opacity for the BandwidthGraph window. */
-void
-VidaliaSettings::setBWGraphOpacity(int value)
-{
-  setValue(SETTING_BWGRAPH_OPACITY, value);
-}
-
-/** Gets whether the bandwidth graph is always on top when displayed. */
-bool
-VidaliaSettings::getBWGraphAlwaysOnTop()
-{
-  return value(SETTING_BWGRAPH_ALWAYS_ON_TOP,
-               DEFAULT_BWGRAPH_ALWAYS_ON_TOP).toBool();
-}
-
-/** Sets whether the bandwidth graph is always on top when displayed. */
-void
-VidaliaSettings::setBWGraphAlwaysOnTop(bool alwaysOnTop)
-{
-  setValue(SETTING_BWGRAPH_ALWAYS_ON_TOP, alwaysOnTop);
 }
 

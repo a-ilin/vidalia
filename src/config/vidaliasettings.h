@@ -28,9 +28,7 @@
 #define _VIDALIASETTINGS_H
 
 #include <QSettings>
-
 #include <control/logevent.h>
-#include <gui/bwgraph/linetypes.h>
 
 
 /** Handles saving and restoring Vidalia's settings, such as the
@@ -69,43 +67,6 @@ public:
   bool runVidaliaOnBoot();
   /** Set whether to run Vidalia on system boot. */
   void setRunVidaliaOnBoot(bool run);
-
-  /** Get filter used to determine which messages to display is the
-   * messagelog. */
-  uint getMsgFilter();
-  /** Set the filter used to determine which messages to display in the
-   * message log. */
-  void setMsgFilter(LogEvent::Severity severity, bool add);
-
-  /** Get the maximum number of messages to display in log. */
-  int getMaxMsgCount();
-  /** Set the maximum number of messages to display in the message log. */
-  void setMaxMsgCount(int max);
-
-  /* Returns true if log messages are to be written to disk. */
-  bool isLogFileEnabled();
-  /** Enable or disable writing log messages to disk. */
-  void enableLogFile(bool enable);
-  
-  /* Get the destination log file. */
-  QString getLogFile();
-  /** Set the destination log file. */
-  void setLogFile(QString file);
-
-  /* Get the bandwidth graph line filter. */
-  uint getBWGraphFilter();
-  /** Set the bandwidth graph line filter. */
-  void setBWGraphFilter(uint line, bool status);
-
-  /** Set the bandwidth graph opacity setting. */
-  int getBWGraphOpacity();
-  /** Set the bandwidth graph opacity settings. */
-  void setBWGraphOpacity(int value);
-
-  /** Gets whether the bandwidth graph is always on top. */
-  bool getBWGraphAlwaysOnTop();
-  /** Sets whether the bandwidth graph is always on top. */
-  void setBWGraphAlwaysOnTop(bool alwaysOnTop);
 };
 
 #endif

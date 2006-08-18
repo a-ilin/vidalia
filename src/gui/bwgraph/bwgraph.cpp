@@ -28,6 +28,17 @@
 #include <control/bandwidthevent.h>
 #include "bwgraph.h"
 
+#define BWGRAPH_LINE_SEND       (1u<<0)
+#define BWGRAPH_LINE_RECV       (1u<<1)
+#define SETTING_FILTER          "LineFilter"
+#define SETTING_OPACITY         "Opacity"
+#define SETTING_ALWAYS_ON_TOP   "AlwaysOnTop"
+#define DEFAULT_FILTER          (BWGRAPH_LINE_SEND|BWGRAPH_LINE_RECV)
+#define DEFAULT_ALWAYS_ON_TOP   false
+#define DEFAULT_OPACITY         100
+
+#define ADD_TO_FILTER(f,v,b)  (f = ((b) ? ((f) | (v)) : ((f) & ~(v))))
+
 /* Define the format used for displaying the date and time */
 #define DATETIME_FMT  "MMM dd hh:mm:ss"
 
@@ -39,9 +50,6 @@ BandwidthGraph::BandwidthGraph(QWidget *parent, Qt::WFlags flags)
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
 
-  /* Create Bandwidth Graph related QObjects */
-  _settings = new VidaliaSettings();
-  
   /* Bind events to actions */
   createActions();
 
@@ -66,12 +74,6 @@ BandwidthGraph::BandwidthGraph(QWidget *parent, Qt::WFlags flags)
 #if defined(Q_WS_X11)
   ui.frmOpacity->setVisible(false);
 #endif
-}
-
-/** Default destructor */
-BandwidthGraph::~BandwidthGraph()
-{
-  delete _settings;
 }
 
 /**
@@ -126,21 +128,22 @@ void
 BandwidthGraph::loadSettings()
 {
   /* Set window opacity slider widget */
-  ui.sldrOpacity->setValue(_settings->getBWGraphOpacity());
+  ui.sldrOpacity->setValue(getSetting(SETTING_OPACITY, DEFAULT_OPACITY).toInt());
   setOpacity(ui.sldrOpacity->value());
 
   /* Set whether the window appears on top. */
-  ui.chkAlwaysOnTop->setChecked(_settings->getBWGraphAlwaysOnTop());
-  if (_settings->getBWGraphAlwaysOnTop()) {
+  ui.chkAlwaysOnTop->setChecked(getSetting(SETTING_ALWAYS_ON_TOP,
+                                           DEFAULT_ALWAYS_ON_TOP).toBool());
+  if (ui.chkAlwaysOnTop->isChecked()) {
     setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint);
   } else {
     setWindowFlags(windowFlags() & ~Qt::WindowStaysOnTopHint);
   }
 
   /* Set the line filter checkboxes accordingly */
-  uint filter = _settings->getBWGraphFilter();
-  ui.chkReceiveRate->setChecked(filter & BWGRAPH_REC);
-  ui.chkSendRate->setChecked(filter & BWGRAPH_SEND);
+  uint filter = getSetting(SETTING_FILTER, DEFAULT_FILTER).toUInt();
+  ui.chkReceiveRate->setChecked(filter & BWGRAPH_LINE_RECV);
+  ui.chkSendRate->setChecked(filter & BWGRAPH_LINE_SEND);
 
   /* Set graph frame settings */
   ui.frmGraph->setShowCounters(ui.chkReceiveRate->isChecked(),
@@ -171,10 +174,10 @@ BandwidthGraph::saveChanges()
   showSettingsFrame(false);
   
   /* Save the opacity */
-  _settings->setBWGraphOpacity(ui.sldrOpacity->value());
+  saveSetting(SETTING_OPACITY, ui.sldrOpacity->value());
 
   /* Save the Always On Top setting */
-  _settings->setBWGraphAlwaysOnTop(ui.chkAlwaysOnTop->isChecked());
+  saveSetting(SETTING_ALWAYS_ON_TOP, ui.chkAlwaysOnTop->isChecked());
   if (ui.chkAlwaysOnTop->isChecked()) {
     setWindowFlags(windowFlags() | Qt::WindowStaysOnTopHint);
   } else {
@@ -183,8 +186,11 @@ BandwidthGraph::saveChanges()
   setOpacity(ui.sldrOpacity->value());
 
   /* Save the line filter values */
-  _settings->setBWGraphFilter(BWGRAPH_REC, ui.chkReceiveRate->isChecked());
-  _settings->setBWGraphFilter(BWGRAPH_SEND, ui.chkSendRate->isChecked());
+  uint filter = 0;
+  ADD_TO_FILTER(filter, BWGRAPH_LINE_RECV, ui.chkReceiveRate->isChecked());
+  ADD_TO_FILTER(filter, BWGRAPH_LINE_SEND, ui.chkSendRate->isChecked());
+  saveSetting(SETTING_FILTER, filter);
+
 
   /* Update the graph frame settings */
   ui.frmGraph->setShowCounters(ui.chkReceiveRate->isChecked(),

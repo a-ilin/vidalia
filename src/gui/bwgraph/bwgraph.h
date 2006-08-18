@@ -35,7 +35,6 @@
 #include <gui/common/vidaliawindow.h>
 
 #include "ui_bwgraph.h"
-#include "linetypes.h"
 
 /** Redraw graph every 1000ms **/
 #define REFRESH_RATE    1000
@@ -48,8 +47,6 @@ class BandwidthGraph : public VidaliaWindow
 public:
   /** Default constructor */
   BandwidthGraph(QWidget *parent = 0, Qt::WFlags flags = 0);
-  /** Default destructor */
-  ~BandwidthGraph();
 
 public slots:
   /** Overloaded QWidget.show */

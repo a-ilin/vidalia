@@ -48,8 +48,8 @@ VidaliaWindow::~VidaliaWindow()
 void
 VidaliaWindow::saveWindowState()
 {
-  saveWindowProperty("Size", size());
-  saveWindowProperty("Position", pos());
+  saveSetting("Size", size());
+  saveSetting("Position", pos());
 }
 
 /** Restores the last size and location of the window. */
@@ -57,30 +57,30 @@ void
 VidaliaWindow::restoreWindowState()
 {
   /* Restore the window size. */
-  QSize size = getWindowProperty("Size", QSize()).toSize();
+  QSize size = getSetting("Size", QSize()).toSize();
   if (!size.isEmpty()) {
     resize(size);
   }
 
   /* Restore the window position. */
-  QPoint pos = getWindowProperty("Position", QPoint()).toPoint();
+  QPoint pos = getSetting("Position", QPoint()).toPoint();
   if (!pos.isNull()) {
     move(pos);
   }
 }
 
 /** Gets the saved value of a property associated with this window object.
- * If no property value was saved, the default value is returned. */
+ * If no value was saved, the default value is returned. */
 QVariant
-VidaliaWindow::getWindowProperty(QString prop, QVariant defaultValue)
+VidaliaWindow::getSetting(QString setting, QVariant defaultValue)
 {
-  QString key = _name + "/" + prop;
+  QString key = _name + "/" + setting;
   return _settings->value(key, defaultValue);
 }
 
 /** Saves a value associated with a property name for this window object. */
 void
-VidaliaWindow::saveWindowProperty(QString prop, QVariant value)
+VidaliaWindow::saveSetting(QString prop, QVariant value)
 {
   QString key = _name + "/" + prop;
   _settings->setValue(key, value);

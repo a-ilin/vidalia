@@ -24,7 +24,6 @@
 FORMS += $$PWD/bwgraph.ui
 
 HEADERS += $$PWD/bwgraph.h \
-           $$PWD/linetypes.h \
            $$PWD/graphframe.h
 
 SOURCES += $$PWD/bwgraph.cpp \

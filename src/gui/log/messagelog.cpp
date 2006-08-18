@@ -35,6 +35,25 @@
 
 #include "messagelog.h"
 
+/* Message log settings */
+#define SETTING_MSG_FILTER          "MessageFilter"
+#define SETTING_MAX_MSG_COUNT       "MaxMsgCount"
+#define SETTING_ENABLE_LOGFILE      "EnableLogFile"
+#define SETTING_LOGFILE             "LogFile"
+#define DEFAULT_MSG_FILTER \
+  (LogEvent::Error|LogEvent::Warn|LogEvent::Notice)
+#define DEFAULT_MAX_MSG_COUNT       250
+#define DEFAULT_ENABLE_LOGFILE     false
+#if defined(Q_OS_WIN32)
+
+/** Default location of the log file to which log messages will be written. */
+#define DEFAULT_LOGFILE \
+  (win32_program_files_folder()+"\\Tor\\tor-log.txt")
+#else
+#define DEFAULT_LOGFILE       (QDir::homePath() + "/.tor/tor-log.txt")
+#endif
+
+#define ADD_TO_FILTER(f,v,b)  (f = ((b) ? ((f) | (v)) : ((f) & ~(v))))
 
 /** Constructor. The constructor will load the message log's settings from
  * VidaliSettings and register for log events according to the most recently
@@ -51,7 +70,6 @@ MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
 
   /* Create necessary Message Log QObjects */
   _torControl = Vidalia::torControl();
-  _settings = new VidaliaSettings();
  
   /* Bind events to actions */
   createActions();
@@ -67,7 +85,6 @@ MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
  * variables. */
 MessageLog::~MessageLog()
 {
-  delete _settings;
   _logFile.close();
 }
 
@@ -134,17 +151,22 @@ void
 MessageLog::loadSettings()
 {
   /* Set Max Count widget */
-  ui.spnbxMaxCount->setValue(_settings->getMaxMsgCount());
-  ui.lstMessages->setMaximumItemCount(_settings->getMaxMsgCount());
+  uint maxMsgCount = getSetting(SETTING_MAX_MSG_COUNT,
+                                DEFAULT_MAX_MSG_COUNT).toUInt();
+  ui.spnbxMaxCount->setValue(maxMsgCount);
+  ui.lstMessages->setMaximumItemCount(maxMsgCount);
 
   /* Set whether or not logging to file is enabled */
-  _enableLogging = _settings->isLogFileEnabled();
-  rotateLogFile(_settings->getLogFile());
-  ui.lineFile->setText(QDir::convertSeparators(_settings->getLogFile()));
+  _enableLogging = getSetting(SETTING_ENABLE_LOGFILE,
+                              DEFAULT_ENABLE_LOGFILE).toBool();
+  QString logfile = getSetting(SETTING_LOGFILE,
+                               DEFAULT_LOGFILE).toString();
+  ui.lineFile->setText(QDir::convertSeparators(logfile));
+  rotateLogFile(logfile);
   ui.chkEnableLogFile->setChecked(_logFile.isOpen());
 
   /* Set the checkboxes accordingly */
-  _filter = _settings->getMsgFilter();
+  _filter = getSetting(SETTING_MSG_FILTER, DEFAULT_MSG_FILTER).toUInt();
   ui.chkTorErr->setChecked(_filter & LogEvent::Error);
   ui.chkTorWarn->setChecked(_filter & LogEvent::Warn);
   ui.chkTorNote->setChecked(_filter & LogEvent::Notice);
@@ -164,7 +186,7 @@ void
 MessageLog::registerLogEvents()
 {
   QString errmsg;
-  _filter = _settings->getMsgFilter();
+  _filter = getSetting(SETTING_MSG_FILTER, DEFAULT_MSG_FILTER).toUInt();
   if (!_torControl->setLogEvents(_filter, this, &errmsg)) {
     VMessageBox::warning(this, tr("Error Setting Filter"),
       p(tr("Vidalia was unable to register for Tor's log events.")) + p(errmsg),
@@ -202,22 +224,24 @@ MessageLog::saveSettings()
   /* Update the logging status */
   _enableLogging = ui.chkEnableLogFile->isChecked();
   if (rotateLogFile(ui.lineFile->text())) {
-    _settings->setLogFile(ui.lineFile->text());
-    _settings->enableLogFile(_logFile.isOpen());
+    saveSetting(SETTING_LOGFILE, ui.lineFile->text());
+    saveSetting(SETTING_ENABLE_LOGFILE, _logFile.isOpen());
   }
   ui.lineFile->setText(QDir::convertSeparators(ui.lineFile->text()));
   ui.chkEnableLogFile->setChecked(_logFile.isOpen());
 
   /* Update the maximum displayed item count */
-  _settings->setMaxMsgCount(ui.spnbxMaxCount->value());
+  saveSetting(SETTING_MAX_MSG_COUNT, ui.spnbxMaxCount->value());
   ui.lstMessages->setMaximumItemCount(ui.spnbxMaxCount->value());
   
   /* Save message filter and refilter the list */
-  _settings->setMsgFilter(LogEvent::Error, ui.chkTorErr->isChecked());
-  _settings->setMsgFilter(LogEvent::Warn, ui.chkTorWarn->isChecked());
-  _settings->setMsgFilter(LogEvent::Notice, ui.chkTorNote->isChecked());
-  _settings->setMsgFilter(LogEvent::Info, ui.chkTorInfo->isChecked());
-  _settings->setMsgFilter(LogEvent::Debug, ui.chkTorDebug->isChecked());
+  uint filter = 0;
+  ADD_TO_FILTER(filter, LogEvent::Error, ui.chkTorErr->isChecked());
+  ADD_TO_FILTER(filter, LogEvent::Warn, ui.chkTorWarn->isChecked());
+  ADD_TO_FILTER(filter, LogEvent::Notice, ui.chkTorNote->isChecked());
+  ADD_TO_FILTER(filter, LogEvent::Info, ui.chkTorInfo->isChecked());
+  ADD_TO_FILTER(filter, LogEvent::Debug, ui.chkTorDebug->isChecked());
+  saveSetting(SETTING_MSG_FILTER, filter);
   registerLogEvents();
   
   /* Filter the message log */

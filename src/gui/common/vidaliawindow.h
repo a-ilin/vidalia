@@ -50,10 +50,10 @@ public:
   void restoreWindowState();
 
   /** Gets the saved value of a property associated with this window object.
-   * If no property value was saved, the default value is returned. */
-  QVariant getWindowProperty(QString name, QVariant defaultValue);
-  /** Saves a value associated with a property name for this window object. */
-  void saveWindowProperty(QString name, QVariant value);
+   * If no value was saved, the default value is returned. */
+  QVariant getSetting(QString name, QVariant defaultValue);
+  /** Saves a value associated with a setting name for this window object. */
+  void saveSetting(QString name, QVariant value);
 
 public slots:
   /** Overloaded QWidget::close() method. Saves the window state and closes
