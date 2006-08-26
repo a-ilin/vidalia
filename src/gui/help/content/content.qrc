@@ -80,6 +80,16 @@
     <file>nl/troubleshooting.html</file>
     <file>nl/netview.html</file>
     <file>nl/links.html</file>
+    <!-- Polish -->
+    <file>pl/contents.xml</file>
+    <file>pl/index.html</file>
+    <file>pl/running.html</file>
+    <file>pl/log.html</file>
+    <file>pl/config.html</file>
+    <file>pl/server.html</file>
+    <file>pl/troubleshooting.html</file>
+    <file>pl/netview.html</file>
+    <file>pl/links.html</file>
     <!-- Russian -->
     <file>ru/contents.xml</file>
     <file>ru/index.html</file>

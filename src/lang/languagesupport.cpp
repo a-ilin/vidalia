@@ -48,6 +48,7 @@ LanguageSupport::initialize()
   _languages.insert("hu",    "magyar nyelv");
   _languages.insert("it",    "Italiano");
   _languages.insert("nl",    "Nederlands");
+  _languages.insert("pl",    "Polski");
   _languages.insert("ru",
     QString::fromUtf8("\320\240\321\203\321\201\321\201\320\272\320\270\320\271"));
   _languages.insert("zh-cn", 
