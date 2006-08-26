@@ -1,4 +1,4 @@
-<!--
+﻿<!--
   $Id$
   
   Vidalia is distributed under the following license:
@@ -24,44 +24,35 @@
 <html>
 <body>
 
-<h1>Running a Tor Server</h1>
+<h1>Palvelimen käyttö</h1>
 <hr />
 
-The Tor network is made up of volunteers all over the world who donate some of
-their spare bandwidth by running a server. Vidalia helps you do your part by
-making it easy to set up a server of your own.
+Tor-verkosto koostuu vapaaehtoisten jakamasta ylimääräisestä yhteyskaistasta palvelimina (Tor-reitittiminä). Vidalia tarjoaa helpon mahdollisuuden pystyttämään oman palvelimen.
 
 <a name="basic"/>
-<h3>Basic Setup</h3>
+<h3>Yleiset asetukset</h3>
 <p>
-If you decide you want to help the Tor network grow by running a server, you
-can follow these steps to get started:
+Jos on kiinnostusta auttaa Tor-verkoston toimintaa ylläpitämällä omaa palvelinta, niin seuraavilla ohjeilla voi yksinkertaisesti pystyttää oman Tor-palvelimen:
 </p>
 <ol>
   <li>
-    Open the <i>Configuration Dialog</i> by selecting <i>Configure</i> from
-    the tray menu or <i>Preferences</i> from your system menubar on Macintosh
-    systems.
+    Avaa <i>Asetukset-ikkuna</i> valitsemalla <i>Asetukset</i> tehtäväpalkista Vidalian valikosta tai <i>Asetukset</i> järjestelmän valikosta Macintosh-järjestelmissä.
   </li>
-  <li>Select the <i>Server</i> configuration page.</li>
-  <li>Check the box labeled <i>Relay traffic for the Tor network</i>.
-  <li>Enter the following information:
+  <li>Valitse <i>Palvelin</i>-asetussivu.</li>
+  <li>Rastita ruutu <i>Välitä tietoa Tor-verkossa</i>.
+  <li>Aseta seuraavat tiedot:
     <ul>
-      <li><b>Nickname</b>:
-        The name which your server will be known as on the Tor network. An
-        example of a server nickname is "myVidaliaServer".
+      <li><b>Nimi</b>:
+        Nimi, jolla palvelin voidaan tunnistaa Tor-verkossa. Esimerkiksi "MinunVidaliapalvelin".
       </li>
-      <li><b>Contact Info</b>:
-        Your e-mail address. This address will only be used to
-        contact you in case there is an important Tor security update or
-        something goes wrong with your server. You might also include your PGP
-        or GPG key ID and fingerprint.
+      <li><b>Yhteystiedot</b>:
+        Sähköpostiosoitteesi, jolla voidaan ottaa yhteyttä vakavan Tor-tietoturvapäivityksen tai palvelinvian vuoksi. Oman PGP- tai GPG-tunnuksen ja sormenjäljen voi myös sisällyttää.
       </li>
-      <li><b>Server Port</b>:
+      <li><b>Palvelinportti</b>:
         The port on which your server will listen for traffic from clients or
         other Tor servers.
       </li>
-      <li><b>Address</b>:
+      <li><b>Osoite</b>:
         Enter an address at which your computer can be reached by other Tor
         servers on the Internet. If you don't know your public IP address, you
         can click on <i>Get Address</i> and Vidalia will contact an external
@@ -85,19 +76,12 @@ can follow these steps to get started:
 </ol>
 
 <a name="bandwidth"/>
-<h3>Rate Limiting</h3>
+<h3>Nopeuden rajoittaminen</h3>
 <p>
-Running a Tor server can consume a large amount of bandwidth; however, Tor
-allows you to limit the amount of bandwidth that you are willing to contribute
-to the Tor network. You can run a server, while still keeping your network
-connection usable for your own use.
+Tor-palvelimen ylläpito kuluttaa paljon yhteyskaistaa, sitä paitsi Tor sallii rajoittaa kuinka paljon yhteyskaistaa tarjoa Tor-palvelimille. Palvelinta voi pitää päällä, niin että yhteyttä voi myös varmasti käyttää muihinkin tarpeisiin.
 </p>
 <p>
-The <i>average rate</i> is the maximum long-term average bandwidth allowed (in
-kilobytes per second). For example, you might want to choose 2 megabytes per 
-second (2048 KB/s), or 50 kilobytes per second (a medium-speed cable
-connection). Tor requires a minimum of 20 kilobytes per second to run a
-server.
+<i>Keskimääräinen nopeus</i> on enimmäis pitkäaikainen keskimääräinen sallittu nopeus (kilotavua sekunnissa). Esimerkiksi on kannattavaa laittaa 2 megabittiä sekunnissa (2048 kt/s) tai 50 kilotavua sekunnissa (tavanomainen kaapeliyhteyden nopeus). Tor tarvitsee vähintään 20 kilotavua sekunnissa toimiakseen palvelimena.
 </p>
 <p>
 The <i>maximum rate</i> is a pool of bytes used to fulfill requests during
@@ -119,7 +103,7 @@ labeled <i>Mirror the server directory</i>.
 </p>
 
 <a name="exitpolicy"/>
-<h3>Exit Policies</h3>
+<h3>Poistumisperiaatteet</h3>
 <p>
 Exit policies give you a way to specify what sort of traffic you are willing
 to allow exit from your Tor server. Tor uses a default list of exit policies
@@ -143,29 +127,29 @@ considered from first to last, ordering is important. You can use the buttons
 with the Up Arrow and the Down Arrow icons to reorder your list of policies.
 </p>
 
-<h4>Action</h4>
+<h4>Toimenpiteet</h4>
 <p>
 Each line in an exit policy has an action associated with it. The actions are:
 <ul>
-  <li><b>reject</b>: Connections matching this policy will be <i>rejected</i>.</li>
-  <li><b>accept</b>: Connections matching this policy will be <i>accepted</i>.</li>
+  <li><b>hylkää (engl. reject)</b>: Connections matching this policy will be <i>rejected</i>.</li>
+  <li><b>hyväksy (engl. accept)</b>: Connections matching this policy will be <i>accepted</i>.</li>
 </ul>
 </p>
 
-<h4>Address</h4>
+<h4>Osoite</h4>
 <p>
 Addresses in a policy can be either an IP address (e.g., <i>123.45.67.8</i>), 
 an IP address and mask (e.g., <i>123.45.0.0/16</i>), or a "*". If a "*" is 
 specified, it means "match all addresses."
 </p>
 
-<h4>Ports</h4>
+<h4>Portit</h4>
 <p>
 Each policy has a port or a range of ports associated with it. Valid port 
 numbers range from 1 to 65535, or you can specify a "*" to indicate "all ports".
 </p>
 
-<h4>Examples</h4>
+<h4>Esimerkkejä</h4>
 <p>
 Here are a few examples of valid exit policy lines and a description of what
 they do:

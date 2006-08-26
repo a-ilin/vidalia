@@ -1,4 +1,4 @@
-<!--
+﻿<!--
   $Id$
   
   Vidalia is distributed under the following license:
@@ -24,91 +24,75 @@
 <html>
 <body>
 
-<h1>Message Log</h1>
+<h1>Tapahtumaloki</h1>
 <hr />
 
-The message log lets you see status information about a running Tor process.
+Tapahtumaloki tarjoaa lisätietoa käynnissä olevasta Tor-ohjelmasta.
 
 <a name="basic"/>
-Each message has a <i>severity</i> associated with it, ranging from
-<b>Error</b> (most serious) to <b>Debug</b> (most verbose). See the help
-section on <a href="#severities">message severities</a> for more information.
+Jokaisella viestillä on oma <i>tärkeys</i>, vakavasta
+<b>Virheestä</b> <b>Debug-tietoihin</b> (monisanaisin). Tarkempaa tietoa on ohjeenaiheessa <a href="#severities">Viestien tärkeys</a>.
 
 
 <a name="severities"/>
-<h3>Message Severities</h3>
+<h3>Tapahtumatyypit</h3>
 <p>
-A message's severity tells you how important the message is. A higher severity
-message usually indicates that something has gone wrong with Tor. Lower
-severity messages appear frequently during normal Tor operations and usually
-do not need to be logged.
+Viestin tärkeydellä voi tietää kuinka vakava on kyseinen viesti. Lieviä virheitä tulee sattumanvaraisesti normaalin Tor-toiminnan yhteydessä, joita ei tarvitse kirjata.
 </p>
 
 <p>
-The possible message severities, from most severe to least severe, are:
+Mahdolliset tapahtumatyypit, vakavimmista ja lievimpään:
 </p>
 <ul>
   <li>
-    <b>Error</b>: Messages that appear when something has gone very wrong and
-    Tor cannot proceed. These messages will be highlighted in <i>red</i> in the
-    message log.
+    <b>Virhe</b>: Tapahtumat, jotka tapahtuvat kun on jokin mennyt pahasti pieleen eikä Tor pysty jatkaa. Nämä tapahtumat korostetaan <i>punaisella</i> tapahtumalokissa.
   </li>
   <li>
-    <b>Warning</b>: Message that only appear when something has gone wrong
-    with Tor, but are not fatal and Tor will continue running. These messages
-    will be highlighted in <i>yellow</i>.
+    <b>Varoitus</b>: Tapahtumat, jotka tapahtuvat kun on jokin menneen pieleen Tor-ohjelman kanssa, mutta eivät ole vakavia ja Tor voi jatkaa toimintaansa. Nämä tapahtumat korostetaan <i>keltaisella</i>.
   </li>
   <li>
-    <b>Notice</b>: Messages that appear infrequently during normal Tor
-    operation and are not considered errors, but you still may care about.
+    <b>Ilmoitus</b>: Tapahtumat, jotka tapahtuvat sattumanvaraisesti normaalin Tor-toiminnan yhteydessä ja joita ei pidetä virheinä, mutta joita kannattaa tarkkailla.
   </li>
   <li>
-    <b>Info</b>: Messages that appear frequently during normal Tor operation
-    and are not usually of interest to most users.
+    <b>Tiedote</b>: Tapahtumat, jotka tapahtuvat säännöllisesti normaalin Tor-toiminnan yhteydessä ja joista käyttäjien ei tarvitse välittää.
   </li>
   <li>
-    <b>Debug</b>: Extremely verbose messages that are primarily of interest to
-    developers. You should generally not log debug messages unless you know
-    what you are doing.
+    <b>Debug</b>: Erittäin monisanaisia tapahtumia, jotka kiinnostavat erityisesti Tor-ohjelmoijia. Debug-tapahtumia ei kannata kirjata lokiin, jos ei ole erityisen suurta tarvetta sen kaltaiseen.
   </li>
 </ul>
 
 <p>
-Most users should only log <i>Error</i>, <i>Warning</i>, and <i>Notice</i>
-messages.
+Käyttäjien kannattaa yleensä kirjata vain <i>Virhe-</i>, <i>Varoitus-</i>, ja <i>Ilmoitust</i>tapahtumat.
 </p>
 
 <p>
-To select which message severities you would like to see, do the following:
+Valitakseen kuinka tärkeitä viestejä haluaa nähdä, niin tee seuraavanlaisesti:
 <ol>
-  <li>Open the message log from the Vidalia tray menu.</li>
-  <li>Click on <i>Show Settings</i> at the bottom of the message log window.</li>
+  <li>Avaa tapahtumaloki tehtäväpalkin Vidalian valikosta.</li>
+  <li>Klikkaa <i>Näytä asetukset</i> tapahtumaloki-ikkunan alaosasta.</li>
   <li>
-    Check message severities you would like to see from the Message Filter
-    group on the left and uncheck message severities you would like to hide.
+    Rastita tapahtumatyypit Viestiensuodatuksesta vasemmalta, jotka haluat nähdä ja poista rasti niistä joita et halua.
   </li>
-  <li>Click <i>Save Settings</i> to apply your new message filter.</li>
+  <li>Klikkaa <i>Tallenna asetukset</i> hyväksyäksesi muutokset viestien suodatukseen.</li>
 </ol>
 </p>
 
 
 <a name="logfile"/>
-<h3>Logging to a File</h3>
+<h3>Tapahtumien tallennus</h3>
 <p>
-Vidalia can also write log messages to a file, as well as logging them in the
-message log window. To enable logging to a file, follow these steps:
+Vidalialla voi tallentaa tapahtumat erilliselle tiedostolle samanaikaisesti kun se kirjaa ne tapahtumaloki-ikkunaan. Tapahtumien tallentuminen automaattisesti lokiin saadaan:
 </p>
 
 <ol>
-  <li>Open the message log from the Vidalia tray menu.</li>
-  <li>Click on <i>Show Settings</i> at the bottom of the message log window.</li>
-  <li>Check the box labeled <i>Save Messages to File</i>.
+  <li>Avaa tapahtumaloki tehtäväpalkin Vidalian valikosta.</li>
+  <li>Klikkaa <i>Näytä asetukset</i> tapahtumaloki-ikkunan alaosasta.</li>
+  <li>Rastita ruutu <i>Tallenna tapahtumat tiedostoon</i>.
   <li>
-    If you would like to change the file to which messages will be written,
-    either type the path and filename into the text box, or click <i>Browse</i>
-    to navigate to a location for your log file.
+    Tiedosto, johon loki tallennetaan voidaan vaihtaa joko kirjoittamalla sijainti ja tiedostonnimi tekstikehykseen tai klikkaamalla <i>Selaa</i>
+    ja siirtymällä sijaintiin, johon lokitiedoston haluaa.
   </li>
-  <li>Click <i>Save Settings</i> to save your log destination.</li>
+  <li>Klikkaa <i>Tallenna asetukset</i> tallentaakseen loki kohteeseen.</li>
 </ol>
 
 </body>

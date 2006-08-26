@@ -218,7 +218,7 @@
     </message>
     <message>
         <source>Building</source>
-        <translation>Luodaan</translation>
+        <translation>Muodostetaan</translation>
     </message>
     <message>
         <source>Failed</source>
@@ -291,7 +291,7 @@
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Asetukset</translation>
+        <translation>Asetukset</translation>
     </message>
 </context>
 <context>
@@ -358,15 +358,15 @@ Olkaapa hyvä ja päivitä uudempaan Tor-ohjelmaan.</translation>
     </message>
     <message>
         <source>Select to start Vidalia on system boot</source>
-        <translation>Valitse käynnistääkseen Vidalia tietokoneen käynnistyessä</translation>
+        <translation>Valitse käynnistääkseen Vidalia käyttöjärjestelmän käynnistyessä</translation>
     </message>
     <message>
         <source>Run Vidalia on system startup</source>
-        <translation>Käynnistä Vidalia tietokoneen käynnistyessä</translation>
+        <translation>Käynnistä Vidalia käyttöjärjestelmän käynnistyessä</translation>
     </message>
     <message>
         <source>Set to start Tor when you launch Vidalia</source>
-        <translation>Valitse Tor käynnistymään samalla kun Vidalia käynnistyy</translation>
+        <translation>Aseta Tor käynnistymään Vidalian käynnistyessä</translation>
     </message>
     <message>
         <source>Start Tor when Vidalia starts</source>
@@ -544,7 +544,7 @@ Olkaapa hyvä ja päivitä uudempaan Tor-ohjelmaan.</translation>
     </message>
     <message>
         <source>Move to previous page (Backspace)</source>
-        <translation>Siirry edelliselle sivulle (Backspace)</translation>
+        <translation>Siirry edelliselle sivulle (Askelpalautin)</translation>
     </message>
 </context>
 <context>
@@ -562,7 +562,7 @@ Olkaapa hyvä ja päivitä uudempaan Tor-ohjelmaan.</translation>
     </message>
     <message>
         <source>Info</source>
-        <translation>Tiedotus</translation>
+        <translation>Tiedote</translation>
     </message>
     <message>
         <source>Notice</source>
@@ -596,7 +596,7 @@ Olkaapa hyvä ja päivitä uudempaan Tor-ohjelmaan.</translation>
     <name>MainWindow</name>
     <message>
         <source>Tor is Stopped</source>
-        <translation>Tor on pysäytetty</translation>
+        <translation>Tor on pysähtynyt</translation>
     </message>
     <message>
         <source>Start</source>
@@ -676,15 +676,15 @@ Olkaapa hyvä ja päivitä uudempaan Tor-ohjelmaan.</translation>
     </message>
     <message>
         <source>Error Stopping Tor</source>
-        <translation>Virhe Tor-ohjelman pysäyttämisessä</translation>
+        <translation>Virhe Tor-ohjelman pysähtymisessä</translation>
     </message>
     <message>
         <source>Tor is stopped</source>
-        <translation>Tor on pysäytetty</translation>
+        <translation>Tor on pysähtynyt</translation>
     </message>
     <message>
         <source>Tor Exited</source>
-        <translation>Tor pysähtyi yllättäen</translation>
+        <translation>Tor yllättäen pysähtyi</translation>
     </message>
     <message>
         <source>Show Log</source>
@@ -736,7 +736,7 @@ Olkaapa hyvä ja päivitä uudempaan Tor-ohjelmaan.</translation>
     </message>
     <message>
         <source>View Network</source>
-        <translation type="obsolete">Näytä verkosto</translation>
+        <translation>Näytä verkosto</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
@@ -760,7 +760,7 @@ Olkaapa hyvä ja päivitä uudempaan Tor-ohjelmaan.</translation>
 Would you like to shutdown gracefully and give clients time to find a new server?</source>
         <translation>Koneellanne on paraikaa päällä Tor-palvelin. Palvelimen sulkeminen katkaisee avoimet yhteydet käyttäjiltä.
 
-Haluaisitteko sulkea kunnollisesti ja antaa käyttäjille aikaa löytää uuden palvelimen?</translation>
+Haluaisitteko sulkea turvallisesti ja antaen käyttäjille aikaa löytää uuden palvelimen?</translation>
     </message>
     <message>
         <source>Vidalia was unable to shutdown Tor gracefully. </source>
@@ -770,13 +770,13 @@ Haluaisitteko sulkea kunnollisesti ja antaa käyttäjille aikaa löytää uuden 
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
-        <translation>Vidalia huomasi Tor-ohjelman pysähtyneen yllättäen.
+        <translation>Vidalia huomasi Tor-ohjelman yllättäen pysähtyneen.
 
-Olkaapa hyvä ja tarkistakaapa tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen sen sammumista.</translation>
+Ole hyvä ja tarkista tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen pysähtymistä.</translation>
     </message>
     <message>
         <source>Vidalia was unable to shutdown Tor gracefully. (</source>
-        <translation>Vidalia ei onnistunut sulkemaan Tor-ohjelmaa ongelmitta</translation>
+        <translation>Vidalia ei onnistunut sulkemaan Tor-ohjelmaa ongelmitta. (</translation>
     </message>
     <message>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
@@ -784,27 +784,27 @@ Olkaapa hyvä ja tarkistakaapa tapahtumalokista mitä tapahtui Tor-ohjelmalle en
     </message>
     <message>
         <source>Network Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Verkostokartta</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Asetukset</translation>
+        <translation>Asetukset</translation>
     </message>
     <message>
         <source>New Identity</source>
-        <translation type="unfinished">Uusi identiteetti</translation>
+        <translation>Uusi identiteetti</translation>
     </message>
     <message>
         <source>Ctrl+I</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+I</translation>
     </message>
     <message>
         <source>All subsequent connections will appear to be different than your old connections.</source>
-        <translation type="unfinished">Seuraavat yhteydet tulevat olemaan erilaiset kuin vanhat.</translation>
+        <translation>Seuraavat yhteydet tulevat olemaan erilaiset kuin vanhat.</translation>
     </message>
     <message>
         <source>Failed to Create New Identity</source>
-        <translation type="unfinished">Uuden identiteetin luominen epäonnistui</translation>
+        <translation>Uuden identiteetin luominen epäonnistui</translation>
     </message>
 </context>
 <context>
@@ -839,7 +839,7 @@ Olkaapa hyvä ja tarkistakaapa tapahtumalokista mitä tapahtui Tor-ohjelmalle en
     </message>
     <message>
         <source>Save Messages to File</source>
-        <translation>Tallenna tapahtumat tiedostoon.</translation>
+        <translation>Tallenna tapahtumat tiedostoon</translation>
     </message>
     <message>
         <source>Log History Size</source>
@@ -859,7 +859,7 @@ Olkaapa hyvä ja tarkistakaapa tapahtumalokista mitä tapahtui Tor-ohjelmalle en
     </message>
     <message>
         <source>Cancels changes made to settings</source>
-        <translation>Kumoaa asetuksien muutokset</translation>
+        <translation>Kumoaa asetuksiin tehdyt muutokset</translation>
     </message>
     <message>
         <source>Cancel</source>
@@ -883,7 +883,7 @@ Olkaapa hyvä ja tarkistakaapa tapahtumalokista mitä tapahtui Tor-ohjelmalle en
     </message>
     <message>
         <source>Info</source>
-        <translation>Tiedotus</translation>
+        <translation>Tiedote</translation>
     </message>
     <message>
         <source>Debug</source>
@@ -895,7 +895,7 @@ Olkaapa hyvä ja tarkistakaapa tapahtumalokista mitä tapahtui Tor-ohjelmalle en
     </message>
     <message>
         <source>Set message filters</source>
-        <translation>Aseta tapahtumille suodatus</translation>
+        <translation>Suodata tapahtumia</translation>
     </message>
     <message>
         <source>History Size...</source>
@@ -903,7 +903,7 @@ Olkaapa hyvä ja tarkistakaapa tapahtumalokista mitä tapahtui Tor-ohjelmalle en
     </message>
     <message>
         <source>Set maximum number of messages to display</source>
-        <translation>Rajoita näytettävissä olevien tapahtumien määrää</translation>
+        <translation>Määritä suurin näytettävä määrä tapahtumia</translation>
     </message>
     <message>
         <source>Clear</source>
@@ -923,7 +923,7 @@ Olkaapa hyvä ja tarkistakaapa tapahtumalokista mitä tapahtui Tor-ohjelmalle en
     </message>
     <message>
         <source>Copy the selected messages to the clipboard (Ctrl+C)</source>
-        <translation>Kopioi kaikki valitut tapahtumat leikepöydälle (Ctrl+C)</translation>
+        <translation>Kopioi valitut tapahtumat leikepöydälle (Ctrl+C)</translation>
     </message>
     <message>
         <source>Ctrl+C</source>
@@ -988,29 +988,35 @@ Olkaapa hyvä ja tarkistakaapa tapahtumalokista mitä tapahtui Tor-ohjelmalle en
     <message>
         <source>Messages that appear when something has 
 gone very wrong and Tor cannot proceed.</source>
-        <translation>Tapahtumat, jotka tapahtuvat jonkin menneen pahasti pieleen eikä Tor ei pysty jatkamaan.</translation>
+        <translation>Tapahtumat, jotka tapahtuvat kun
+jokin on mennyt pahasti pieleen eikä Tor pysty jatkaa.</translation>
     </message>
     <message>
         <source>Messages that only appear when 
 something has gone wrong with Tor.</source>
-        <translation>Tapahtumat, jotka tapahtuvat jonkin menneen pieleen Tor-ohjelman kanssa.</translation>
+        <translation>Tapahtumat, jotka tapahtuvat kun
+jokin on menneen pieleen Tor-ohjelman kanssa.</translation>
     </message>
     <message>
         <source>Messages that appear infrequently 
 during normal Tor operation and are 
 not considered errors, but you may 
 care about.</source>
-        <translation>Tapahtumat, jotka tapahtuvat aina välillä normaalin Tor-toiminnan yhteydessä ja joita ei pidetä virheinä, mutta voit huolehtia niistä.</translation>
+        <translation>Tapahtumat, jotka tapahtuvat sattumanvaraisesti
+normaalin Tor-toiminnan yhteydessä
+ja joita ei pidetä virheinä, mutta joita kannattaa tarkkailla.</translation>
     </message>
     <message>
         <source>Messages that appear frequently 
 during normal Tor operation.</source>
-        <translation>Tapahtumat, jotka tapahtuvat säännöllisesti normaalin Tor-toiminnan yhteydessä.</translation>
+        <translation>Tapahtumat, jotka tapahtuvat säännöllisesti
+normaalin Tor-toiminnan yhteydessä.</translation>
     </message>
     <message>
         <source>Hyper-verbose messages primarily of 
 interest to Tor developers.</source>
-        <translation>Erittäin monisanaisia tapahtumia, jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
+        <translation>Erittäin monisanaisia tapahtumia,
+jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     </message>
     <message>
         <source>Error Setting Filter</source>
@@ -1026,7 +1032,7 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Save Log Messages</source>
-        <translation>Tallena lokitapahtumat</translation>
+        <translation>Tallenna lokitapahtumat</translation>
     </message>
     <message>
         <source>Vidalia</source>
@@ -1186,11 +1192,11 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Zoom To Fit</source>
-        <translation type="unfinished"></translation>
+        <translation>Sovita</translation>
     </message>
     <message>
         <source>Zooms to fit all currently displayed circuits.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sovittaa näyttämään kaikki näkyvillä olevat yhteydet.</translation>
     </message>
 </context>
 <context>
@@ -1231,7 +1237,7 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Contact:</source>
-        <translation>Yhteyshenkilö:</translation>
+        <translation>Yhteystiedot:</translation>
     </message>
     <message>
         <source>Published:</source>
@@ -1302,7 +1308,7 @@ problem with your server</source>
     </message>
     <message>
         <source>Contact Info:</source>
-        <translation>Yhteyshenkilö:</translation>
+        <translation>Yhteystiedot:</translation>
     </message>
     <message>
         <source>Server Port:</source>
@@ -1334,7 +1340,7 @@ problem with your server</source>
     </message>
     <message>
         <source>Only relay traffic between other Tor servers (middle-man)</source>
-        <translation type="obsolete">Välitä tietoa vain Tor-palvelinten välillä (välikäsi)</translation>
+        <translation>Välitä tietoa vain Tor-palvelinten välillä (välikäsi)</translation>
     </message>
     <message>
         <source>Attempts to determine the correct address for your server</source>
@@ -1472,7 +1478,8 @@ Haluaisitko yrittää ulkoista palvelua saadakseen julkisen IP-osoitteesi?</tran
         <source>Email address at which you may be reached if there is a
 problem with your server. You might also include your PGP or GPG
 fingerprint.</source>
-        <translation>Sähköpostiosoite, johon voidaan ottaa yhteyttä sattuessa virheitä palvelimessanne. Voit lisätä myös PGP- tai GPG-tunnistuksen.</translation>
+        <translation>Sähköpostiosoite, jolla voidaan ottaa yhteyttä ongelmia sattuessa reitittimessä.
+PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     </message>
     <message>
         <source>Bandwidth Rate Limits</source>
@@ -1504,7 +1511,7 @@ fingerprint.</source>
     </message>
     <message>
         <source>Only allow connections to other Tor servers (non-exit node)</source>
-        <translation type="unfinished"></translation>
+        <translation>Salli yhteyksiä vain muihin Tor-palvelimiin (ei poistumisreititin)</translation>
     </message>
 </context>
 <context>

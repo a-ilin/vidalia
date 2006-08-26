@@ -1,4 +1,4 @@
-<!--
+﻿<!--
   $Id$
   
   Vidalia is distributed under the following license:
@@ -24,167 +24,134 @@
 <html>
 <body>
 
-<h1>Network Viewer</h1>
+<h1>Verkostokartta</h1>
 <hr />
 
 <p>
-The network viewer lets you see routers in the Tor network and where
-your traffic is going.
+Verkostokartalla näkee Tor-verkoston reitittimet (palvelimet) ja mihin yhteyksiä käytetään.
 </p>
 
 
 <a name="overview"/>
-<h3>Overview</h3>
+<h3>Yleistä</h3>
 <p>
-When you want to communicate anonymously through Tor (say, connecting to a
-website), Tor creates a tunnel, or <i>circuit</i>, of encrypted connections
-through a series of routers on the network. Your application's traffic is then
-sent as a <i>stream</i> through that circuit. For efficiency, multiple streams
-may share the same circuit.
+Kun halutaan kommunikoida tuntemattomasti Tor-verkon kautta (esim. internetsivulle), niin Tor luo yhteyden <i>(engl. circuit)</i> koostuen erillisistä suojatuista yhteyksistä reititinsarjan kautta verkossa. Ohjelman liikenne kulkee datavirtoina <i>(engl. stream)</i> edellä mainitun yhteystyypin mukaisesti. Tehsotaakseen toimintaa yksittäinen yhteys voi sisältää monia erillisiä datavirtoja.
 </p>
 
 <a name="netmap"/>
-<h3>Network Map</h3>
+<h3>Verkostokartta</h3>
 <p>
-The network map consists of a map of the world, with red pinpoints indicating
-the geographic location of routers in the Tor network. Green lines are drawn
-between routers to indicate the path of circuits that your Tor client has
-created through the Tor network.
+Verkostokartta koostuu maan kartasta ja punaisista pisteistä, joilla ilmaistaan Tor-verkon reitittimien maantieteelliset sijainnit. Reitittimien välille piirretyt vihreät viivat osoittavat yhteyksien oman Tor-ohjelman ja Tor-verkon välisen reitin.
 </p>
 <p>
-You can zoom in on locations in the map by clicking the <b>Zoom In</b> and
-<b>Zoom Out</b> buttons in the toolbar. You can also scroll around on the map
-by clicking on the map and then dragging it in whatever direction you would
-like to move the map.
+Karttaa voi skaalata klikkaamalla <b>Suurenna</b>- ja
+<b>Pienennä</b>nappuloita työkalupalkista. Karttaa voi myös vierittää klikkaamalla sitä ja vetämällä sitä omaan mieluiseen suuntaan.
 </p>
 <p>
-The geographic location of a Tor router is determined by looking up the IP
-address of the router in a GeoIP database, created by MaxMind and located at
-geoip.vidalia-project.net.
+Tor-reitittimen maantieteellinen sijainti selvitetään tarkistamalla IP-osoite GeoIP-tietokannasta, jonka on tehnyt MaxMind ja sijaitsee osoitteessa geoip.vidalia-project.net.
 </p>
 <p>
-In the middle of the dialog, below the network map, you will see a list of
-your current circuits, as well as any application traffic currently on those
-circuits. When the network map first loads, you will probably see a connection
-to geoip.vidalia-project.net, which occurs when Vidalia is looking up
-geographic information for the list of Tor routers. It is important to note
-that this request is done through Tor, so your location is not revealed to the
-GeoIP server. The results of the lookups will be cached locally in order to
-reduce load on Vidalia's GeoIP servers.
+Keskellä ruutua kartan alla on lista käytössä olevista yhteyksistä, kuten myös ohjelmien datavirta yhteyksissä. Kun verkostokartta latautuu, ruudusta näkee yhteyden geoip.vidalia-project.net -osoitteeseen, joka tapahtuu kun Vidalia tarkistaa Tor-reitittimien maantieteellisen sijaintien tietoja. Tärkeää on huomioida, että pyyntö luodaan käyttämällä Tor-verkkoa, joten omaa sijaintia ei ilmoiteta GeoIP-palvelimelle. Pyyntöjen tulokset tallennetaan kiintolevylle välimuistiin säästäkseen liikaa rasittamasta Vidalian GeoIP-palvelimia.
 </p>
 
 
 <a name="status"/>
-<h3>Router Status</h3>
+<h3>Reitittimien tila</h3>
 <p>
-On the left side of the network view, you will see a list of routers in the
-Tor network. Next to each router is an icon indicating that router's status.
-The following table summarizes the possible router status icons:
+Vasemmassa reunassa verkostokartassa on lista Tor-verkon reitittimistä. Jokaisen reitittimen vieressä on kuvake, joka ilmaisee sen reitittimen tilan.
+Seuraavassa taulukossa ilmaistaan mahdolliset reitittimien tilat:
 </p>
 <p>
 <table border="1">
 <tr>
   <td><img src="qrc:/images/icons/node-unresponsive.png"/></td>
   <td valign="middle">
-    The router is offline or simply not responding.
+    Reititin on poispäältä (offline-tilassa) tai ei vastaa.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-hibernating.png"/></td>
   <td valign="middle">
-    The router is <i>hibernating</i>, meaning it is online, but has used up as
-    much bandwidth as the operator is willing to allow for a given time
-    period.
+    Reititin on <i>lepotilassa</i> eli se on päällä (online-tilassa), mutta on käyttänyt yhteyttä niin paljon kuin on tietyn ajan kuluessa sallittu.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-bw-none.png"/></td>
   <td valign="middle">
-    The router is online, but has shown only minimal throughput.
+    Reititin on online-tilassa ja sen kautta kulkee vähän liikennettä.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-bw-low.png"/></td>
   <td valign="middle">
-    The router is online and has shown a throughput &gt;= 20 KB/s.
+    Reititin on online-tilassa ja sen kautta välittyy &gt;= 20 KB/s.
   </td>
 </tr>
 <tr>
-  <td><img src="qrc:/images/icons/node-bw-med.png"/></td>
+  <td><img src="qrc:/images/icons/nad.png"/></td>
   <td valign="middle">
-    The router is online and has shown a throughput &gt;= 60 KB/s.
+    Reititin on online-tilassa ja sen kautta välittyy &gt;= 60 KB/s.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-bw-high.png"/></td>
   <td valign="middle">
-    The router is online and has shown a throughput &gt;= 400 KB/s.
+   Reititin on online-tilassa ja sen kautta välittyy &gt;= 400 KB/s.
   </td>
 </tr>
 </table>
 </p>
 <p>
-All bandwidth values are estimates based on the minimum of either 
-the maximum bandwidth sustained input or output over any ten second period 
-in the past day.
+Kaikki yhteysnopeudet ovat arvioita perustuen vähimmäistietoon verrattuna enimmäisulostuloon tai sisääntuloon yli kymmenen sekunnin aikana päivässä.
 </p>
 
 
 <a name="details"/>
-<h3>Router Details</h3>
+<h3>Reitittimien tiedot</h3>
 <p>
-The router details panel at the right side of the screen gives you details
-about the router or routers currently selected in the 
-<a href="#routerlist">router list</a>. If you have selected a circuit or stream
-in the list of your current circuits and streams, this panel will show you
-details about each router through which your traffic is currently being
-relayed.
+Reititin-tietoruutussa oikealla kerrotaan lisätietoa 
+<a href="#routerlist">reititinlistasta</a> valituista reitittimistä. Jos on yhteys tai datavirta valittu datavirrat-listasta, niin tässä ruudussa näkyy tietoa kaikista reitittimistä joiden kautta liikenne omaan koneen kautta välittyy.
 </p>
 <p>
-The fields that you may see in the panel are as follows (<i>Note</i>: not all
-of these fields will always be present):
+Tiedot, jotka ovat nähtävissä ruudusta ovat samanlaisia kuten seuraavat (<i>Huomio</i>: ei välttämättä kaikki ole seuraavaksi mainituista näkyvillä):
 </p>
 <p>
 <table>
 <tr>
-  <td><b>Location</b></td>
-  <td>The geographic location of this Tor router.</td>
+  <td><b>Sijainti</b></td>
+  <td>Tor-reitittimen maantieteellinen sijainti.</td>
 </tr>
 <tr>
-  <td><b>IP Address</b></td>
-  <td>IP address at which this Tor router can be reached.</td>
+  <td><b>IP-osoite</b></td>
+  <td>IP-osoite, jolla Tor-reititin voidaan tavoittaa.</td>
 </tr>
 <tr>
-  <td><b>Platform</b></td>
+  <td><b>Alusta</b></td>
   <td>
-    Operating system information and Tor version on which this router is
-    currently running.
+Tietoa suoritettavasta käyttöjärjestelmästä ja Tor-ohjelmasta Tor-reitittimellä.
   </td>
 </tr>
 <tr>
-  <td><b>Contact</b></td>
+  <td><b>Yhteystiedot</b></td>
   <td>
-    Contact information for this router's operator, in case there is a
-    problem with the router.
+    Reittimen omistajan yhteystiedot, jolla voidaan ottaa yhteyttä ongelmia sattuessa.
   </td>
 </tr>
 <tr>
-  <td><b>Bandwidth</b></td>
+  <td><b>Yhteys</b></td>
   <td>
-    Estimated maximum amount of bandwidth that the directory servers have 
-    seen this router handle recently.
+    Arvioitu enimmäisnopeus, joka on välittynyt hiljattain reitittimeltä listapalvelimien kautta.
   </td>
 </tr>
 <tr>
-  <td><b>Uptime</b></td>
+  <td><b>Päällä</b></td>
   <td>
-    Length of time this router has been available, which can be used to help
-    estimate this router's stability.
+    Aika, kuinka kauan reititin on ollut päällä ja, josta voi olla apua reitittimen saatavuuden arvioimiseen.
   </td>
 </tr>
 <tr>
-  <td><b>Last Updated</b></td>
-  <td>Date this router's information was last updated.</td>
+  <td><b>Viimeksi päivitetty</b></td>
+  <td>Ajankohta, jolloin viimeksi on reitittimen tiedot päivitetty.</td>
 </tr>
 </table>
 </p>

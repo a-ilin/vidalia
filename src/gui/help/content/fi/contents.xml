@@ -1,4 +1,4 @@
-<!--
+﻿<!--
   $Id$
   
   Vidalia is distributed under the following license:
@@ -21,38 +21,38 @@
   02110-1301, USA.
 -->
 
-<Contents name="Vidalia Help" html="index.html">
-  <Topic id="running" name="Running Tor" html="running.html">
-    <Topic id="starting" name="Starting and Stopping Tor" html="running.html" section="starting"/>
-    <Topic id="monitoring" name="Monitoring Tor's Status" html="running.html" section="monitoring"/>
+<Contents name="Vidalian ohje" html="index.html">
+  <Topic id="running" name="Tor-ohjelman käyttö" html="running.html">
+    <Topic id="starting" name="Käynnistäminen ja pysäyttäminen" html="running.html" section="starting"/>
+    <Topic id="monitoring" name="Tor-ohjelman tilan tarkkaileminen" html="running.html" section="monitoring"/>
   </Topic>
-  <Topic id="log" name="Message Log" html="log.html">
-    <Topic id="basic" name="Basic Information" html="log.html" section="basic"/>
-    <Topic id="severities" name="Message Severities" html="log.html" section="severities"/>
-    <Topic id="logfile" name="Logging to a File" html="log.html" section="tofile"/>
+  <Topic id="log" name="Viestiloki" html="log.html">
+    <Topic id="basic" name="Perustietoa" html="log.html" section="basic"/>
+    <Topic id="severities" name="Viestien tärkeys" html="log.html" section="severities"/>
+    <Topic id="logfile" name="Tapahtumien tallennus" html="log.html" section="tofile"/>
   </Topic>
-  <Topic id="netview" name="Network Viewer" html="netview.html">
-    <Topic id="overview" name="Overview" html="netview.html" section="overview"/>
-    <Topic id="netmap" name="Network Map" html="netview.html" section="netmap"/>
-    <Topic id="status" name="Router Status" html="netview.html" section="status"/>
-    <Topic id="details" name="Router Details" html="netview.html" section="details"/>
+  <Topic id="netview" name="Verkostokartta" html="netview.html">
+    <Topic id="overview" name="Yleistä" html="netview.html" section="overview"/>
+    <Topic id="netmap" name="Verkostokartta" html="netview.html" section="netmap"/>
+    <Topic id="status" name="Reitittimien tila" html="netview.html" section="status"/>
+    <Topic id="details" name="Reitittimien tiedot" html="netview.html" section="details"/>
   </Topic>
-  <Topic id="config" name="Configuring Tor" html="config.html">
-    <Topic id="general" name="General Settings" html="config.html" section="general"/>
-    <Topic id="server" name="Server Settings" html="config.html" section="server"/>
-    <Topic id="advanced" name="Advanced Settings" html="config.html" section="advanced"/>
+  <Topic id="config" name="Tor-ohjelman asetukset" html="config.html">
+    <Topic id="general" name="Yleiset asetukset" html="config.html" section="general"/>
+    <Topic id="server" name="Palvelinasetukset" html="config.html" section="server"/>
+    <Topic id="advanced" name="Lisäasetukset" html="config.html" section="advanced"/>
   </Topic>
-  <Topic id="server" name="Running a Server" html="server.html">
-    <Topic id="basic" name="Basic Setup" html="server.html" section="basic"/>
-    <Topic id="bandwidth" name="Rate Limiting" html="server.html" section="bandwidth"/>
-    <Topic id="exitpolicy" name="Exit Policies" html="server.html" section="exitpolicy"/>
+  <Topic id="server" name="Palvelimen käyttö" html="server.html">
+    <Topic id="basic" name="Perusasennus" html="server.html" section="basic"/>
+    <Topic id="bandwidth" name="Nopeuden rajoittaminen" html="server.html" section="bandwidth"/>
+    <Topic id="exitpolicy" name="Poistumisperiaatteet" html="server.html" section="exitpolicy"/>
   </Topic>
-  <Topic id="troubleshooting" name="Troubleshooting" html="troubleshooting.html">
-    <Topic id="start" name="I Can't Start Tor" html="troubleshooting.html" section="start"/>
-    <Topic id="connect" name="Vidalia Can't Connect to Tor" html="troubleshooting.html" section="connect"/>
-    <Topic id="torexited" name="Tor exited unexpectedly" html="troubleshooting.html" section="torexited"/>
-    <Topic id="stop" name="Vidalia Can't Stop Tor" html="troubleshooting.html" section="stop"/>
+  <Topic id="troubleshooting" name="Vianetsintä" html="troubleshooting.html">
+    <Topic id="start" name="Tor ei käynnisty" html="troubleshooting.html" section="start"/>
+    <Topic id="connect" name="Vidalia ei yhdistä Tor-ohjelmaan" html="troubleshooting.html" section="connect"/>
+    <Topic id="torexited" name="Tor yllättäen lopetti" html="troubleshooting.html" section="torexited"/>
+    <Topic id="stop" name="Tor ei pysähdy" html="troubleshooting.html" section="stop"/>
   </Topic>
-  <Topic id="links" name="Helpful Links" html="links.html"/>
+  <Topic id="links" name="Hyödyllisiä linkkejä" html="links.html"/>
 </Contents>
 
