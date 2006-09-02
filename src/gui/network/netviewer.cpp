@@ -37,6 +37,10 @@
 /** Maximum time to proceess other events while loading the long list of
  * router descriptors. */
 #define MAX_EVENTS_TIMEOUT  25
+/** Number of milliseconds to wait after the arrival of the last descriptor whose
+ * IP needs to be resolved to geographic information, in case more descriptors
+ * arrive. Then we can simply lump the IPs into a single request. */
+#define RESOLVE_QUEUE_DELAY   3000
 
 
 /** Constructor. Loads settings from VidaliaSettings.
@@ -74,9 +78,14 @@ NetViewer::NetViewer(QWidget *parent)
   /* Create the timer that will be used to update the router list once every
    * hour. We still receive the NEWDESC event to get new descriptors, but this
    * needs to be called to get rid of any descriptors that were removed. */
-  _timer = new QTimer(this);
-  _timer->setInterval(60*60*1000);
-  connect(_timer, SIGNAL(timeout()), this, SLOT(refresh()));
+  _refreshTimer.setInterval(60*60*1000);
+  connect(&_refreshTimer, SIGNAL(timeout()), this, SLOT(refresh()));
+  
+  /* Set up the timer used to group together GeoIP requests for new
+   * descriptors arriving within RESOLVE_QUEUE_DELAY milliseconds of each
+   * other. */
+  _resolveQueueTimer.setSingleShot(true);
+  connect(&_resolveQueueTimer, SIGNAL(timeout()), this, SLOT(resolve()));
 
   /* Connect the necessary slots and signals */
   connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
@@ -103,7 +112,7 @@ void
 NetViewer::gotDisconnected()
 {
   clear();
-  _timer->stop();
+  _refreshTimer.stop();
 }
 
 /** Loads data into map, lists and starts timer when we get connected*/
@@ -111,7 +120,7 @@ void
 NetViewer::gotConnected()
 {
   refresh();
-  _timer->start();
+  _refreshTimer.start();
 }
 
 /** Custom event handler. Catches the new descriptor events. */
@@ -209,8 +218,6 @@ NetViewer::help()
 void
 NetViewer::loadDescriptors(QStringList ids)
 {
-  QList<QHostAddress> iplist;
-  
   foreach (QString id, ids) {
     /* Load the router descriptor and add it to the router list. */
     RouterDescriptor rd = _torControl->getRouterDescriptor(id);
@@ -219,8 +226,8 @@ NetViewer::loadDescriptors(QStringList ids)
 
       /* Add this IP to a list whose geographic location we'd like to find. */
       QHostAddress ip(rd.ip());
-      if (!iplist.contains(ip)) {
-        iplist << ip;
+      if (!_resolveQueue.contains(ip)) {
+        _resolveQueue << ip;
       }
     }
 
@@ -232,9 +239,11 @@ NetViewer::loadDescriptors(QStringList ids)
     }
   }
 
-  /* If there are any IPs in the list, then resolve them to locations */
-  if (iplist.size() > 0) {
-    _geoip.resolve(iplist);
+  /* If there are any IPs in the list, then start a timer. We delay resolution
+   * because it's likely that we'll receive new descriptors shortly, so we
+   * might as well lump them into a single request. */
+  if (!_resolveQueue.isEmpty()) {
+    _resolveQueueTimer.start(RESOLVE_QUEUE_DELAY);
   }
 }
 
@@ -272,6 +281,16 @@ NetViewer::routerSelected(RouterDescriptor router)
   ui.textRouterInfo->clear();
   ui.textRouterInfo->display(router);
   _map->selectRouter(router.name());
+}
+
+/** If there are any IPs in the resolve queue, do the request now. */
+void
+NetViewer::resolve()
+{
+  if (!_resolveQueue.isEmpty()) {
+    _geoip.resolve(_resolveQueue);
+    _resolveQueue.clear();
+  }
 }
 
 /** Called when a list of GeoIp information has been resolved. */

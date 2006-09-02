@@ -74,7 +74,9 @@ private slots:
   void gotConnected();
   /** Handles when we get disconnected from Tor network */
   void gotDisconnected();
-
+  /** Resolves IP addresses in the resolve queue to geographic information. */
+  void resolve();
+  
 private:
   /** Loads a list of router descriptors from the list of IDs. */
   void loadDescriptors(QStringList ids);
@@ -82,11 +84,15 @@ private:
   /** TorControl object used to talk to Tor. */
   TorControl* _torControl;
   /** Timer that fires once an hour to update the router list. */
-  QTimer* _timer;
+  QTimer _refreshTimer;
   /** TorMapWidget that displays the map. */
   TorMapWidget* _map;
   /** GeoIpResolver used to geolocate routers by IP address. */
   GeoIpResolver _geoip;
+  /** Queue for IPs pending resolution to geographic information. */
+  QList<QHostAddress> _resolveQueue;
+  /** Timer used to delay GeoIP requests until we've received "a chunk" of them. */
+  QTimer _resolveQueueTimer;
 
   /** Qt Designer generated object **/
   Ui::NetViewer ui;
