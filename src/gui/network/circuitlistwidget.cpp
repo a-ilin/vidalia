@@ -56,18 +56,19 @@ CircuitListWidget::addCircuit(Circuit circuit)
   
   if (!item) {
     /* Add the new circuit */
-    addTopLevelItem(new CircuitItem(circuit));
+    item = new CircuitItem(circuit);
+    addTopLevelItem(item);
   } else {
     /* Circuit already exists, so update its status and path */
     item->update(circuit);
+  }
 
-    /* If the circuit is closed or dead, schedule it for removal */
-    Circuit::Status status = circuit.status();
-    if (status == Circuit::Closed) {
-      scheduleCircuitRemoval(item, CLOSED_CIRCUIT_REMOVE_DELAY);
-    } else if (status == Circuit::Failed) {
-      scheduleCircuitRemoval(item, FAILED_CIRCUIT_REMOVE_DELAY);
-    }
+  /* If the circuit is closed or dead, schedule it for removal */
+  Circuit::Status status = circuit.status();
+  if (status == Circuit::Closed) {
+    scheduleCircuitRemoval(item, CLOSED_CIRCUIT_REMOVE_DELAY);
+  } else if (status == Circuit::Failed) {
+    scheduleCircuitRemoval(item, FAILED_CIRCUIT_REMOVE_DELAY);
   }
 }
 
