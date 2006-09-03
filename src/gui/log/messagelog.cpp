@@ -125,6 +125,11 @@ MessageLog::createActions()
 
   connect(ui.btnBrowse, SIGNAL(clicked()),
       this, SLOT(browse()));
+
+#if defined(Q_WS_MAC)
+  ui.actionHelp->setShortcut(QString("Ctrl+?"));
+  ui.actionClose->setShortcut(QString("Ctrl+W"));
+#endif
 }
 
 /** Set tooltips for Message Filter checkboxes in code because they are long

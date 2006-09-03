@@ -44,6 +44,8 @@
 ConfigDialog::ConfigDialog(QWidget* parent)
 : VidaliaWindow("ConfigDialog", parent)
 {
+  QAction *helpAct, *saveAct, *cancelAct;
+
   /* Invoke the Qt Designer generated QObject setup routine */
   ui.setupUi(this);
 
@@ -67,21 +69,29 @@ ConfigDialog::ConfigDialog(QWidget* parent)
   connect(grp, SIGNAL(triggered(QAction *)), ui.stackPages, SLOT(showPage(QAction *)));
   
   
-  /* Create and bind the Save button */  
-  addAction(new QAction(QIcon(IMAGE_HELP), tr("Help"), ui.toolBar),
-            SLOT(help()));
+  /* Create and bind the Save button */
+  helpAct = new QAction(QIcon(IMAGE_HELP), tr("Help"), ui.toolBar);
+  addAction(helpAct, SLOT(help()));
   
   /* Create and bind the Save button */  
-  addAction(new QAction(QIcon(IMAGE_SAVE), tr("Save"), ui.toolBar), 
-            SLOT(saveChanges()));
-  
+  saveAct = new QAction(QIcon(IMAGE_SAVE), tr("Save"), ui.toolBar);
+  saveAct->setShortcut(QString("Ctrl+S"));
+  addAction(saveAct, SLOT(saveChanges()));
   
   /* Create and bind the Cancel button */
-  addAction(new QAction(QIcon(IMAGE_CANCEL), tr("Cancel"), ui.toolBar),
-            SLOT(cancelChanges()));
-
+  cancelAct = new QAction(QIcon(IMAGE_CANCEL), tr("Cancel"), ui.toolBar);
+  addAction(cancelAct, SLOT(cancelChanges()));
+  
   /* Select the first action */
   grp->actions()[0]->setChecked(true);
+
+#if defined(Q_WS_MAC)
+  helpAct->setShortcut(QString("Ctrl+?"));
+  cancelAct->setShortcut(QString("Ctrl+W"));
+#else
+  helpAct->setShortcut(QString("F1"));
+  cancelAct->setShortcut(QString("Esc"));
+#endif
 }
 
 /** Creates a new action associated with a config page. */

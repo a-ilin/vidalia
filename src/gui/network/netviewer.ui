@@ -678,7 +678,7 @@
     </font>
    </property>
    <property name="shortcut">
-    <string>Del</string>
+    <string>Ctrl+Z</string>
    </property>
   </action>
  </widget>

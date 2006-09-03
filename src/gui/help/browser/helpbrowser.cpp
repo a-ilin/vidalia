@@ -56,6 +56,10 @@ HelpBrowser::HelpBrowser(QWidget *parent)
 
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
+#if defined(Q_WS_MAC)
+  ui.actionHome->setShortcut(QString("Shift+Ctrl+H"));
+  ui.actionClose->setShortcut(QString("Ctrl+W"));
+#endif
 
   /* Hide Search frame */
   ui.frmFind->setHidden(true);

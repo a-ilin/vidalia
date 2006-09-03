@@ -51,6 +51,10 @@ NetViewer::NetViewer(QWidget *parent)
 {
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
+#if defined(Q_WS_MAC)
+  ui.actionHelp->setShortcut(QString("Ctrl+?"));
+  ui.actionClose->setShortcut(QString("Ctrl+W"));
+#endif
 
   /* Get the TorControl object */
   _torControl = Vidalia::torControl();
