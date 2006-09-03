@@ -34,6 +34,8 @@ AboutDialog::AboutDialog(QWidget *parent, Qt::WFlags flags)
   ui.setupUi(this);
 #if defined(Q_WS_MAC)
   setShortcut("Ctrl+W", SLOT(close()));
+#else
+  setShortcut("Esc", SLOT(close()));
 #endif
 
   /* Save the TorControl object to use later */
