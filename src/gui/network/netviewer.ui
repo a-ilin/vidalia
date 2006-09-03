@@ -537,6 +537,9 @@
      <strikeout>false</strikeout>
     </font>
    </property>
+   <property name="shortcut">
+    <string>Ctrl+R</string>
+   </property>
   </action>
   <action name="actionHelp" >
    <property name="icon" >
@@ -561,6 +564,9 @@
      <underline>false</underline>
      <strikeout>false</strikeout>
     </font>
+   </property>
+   <property name="shortcut">
+    <string>F1</string>
    </property>
   </action>
   <action name="actionClose" >
@@ -587,6 +593,9 @@
      <strikeout>false</strikeout>
     </font>
    </property>
+   <property name="shortcut">
+    <string>Esc</string>
+   </property>
   </action>
   <action name="actionZoomIn" >
    <property name="icon" >
@@ -611,6 +620,9 @@
      <underline>false</underline>
      <strikeout>false</strikeout>
     </font>
+   </property>
+   <property name="shortcut">
+    <string>+</string>
    </property>
   </action>
   <action name="actionZoomOut" >
@@ -637,6 +649,9 @@
      <strikeout>false</strikeout>
     </font>
    </property>
+   <property name="shortcut">
+    <string>-</string>
+   </property>
   </action>
   <action name="actionZoomToFit" >
    <property name="icon" >
@@ -661,6 +676,9 @@
      <underline>false</underline>
      <strikeout>false</strikeout>
     </font>
+   </property>
+   <property name="shortcut">
+    <string>Del</string>
    </property>
   </action>
  </widget>
