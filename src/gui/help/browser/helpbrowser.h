@@ -94,8 +94,6 @@ private:
   QString _lastSearch;
   /** Indicates if phrase was previously found on current page */
   bool _foundBefore;
-  /** Language we want our help to be in */
-  QString _language;
 
   /** Qt Designer generated QObject */
   Ui::HelpBrowser ui;

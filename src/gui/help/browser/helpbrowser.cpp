@@ -54,9 +54,6 @@ HelpBrowser::HelpBrowser(QWidget *parent)
 {
   VidaliaSettings settings;
 
-  /* Find out what language we want our help in */
-  _language = Vidalia::language();
-  
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
 
@@ -92,7 +89,7 @@ HelpBrowser::HelpBrowser(QWidget *parent)
   connect(ui.btnSearch, SIGNAL(clicked()), this, SLOT(search()));
   
   /* Load the help topics from XML */
-  loadContentsFromXml(":/help/" + _language + "/contents.xml");
+  loadContentsFromXml(":/help/" + Vidalia::language() + "/contents.xml");
 
   /* Show the first help topic in the tree */
   ui.treeContents->setCurrentItem(ui.treeContents->topLevelItem(0));
@@ -181,7 +178,7 @@ HelpBrowser::isValidTopicElement(const QDomElement &topicElement)
 QString
 HelpBrowser::getResourcePath(const QDomElement &topicElement)
 {
-  QString link = _language + "/" + topicElement.attribute(ATTRIBUTE_TOPIC_HTML);
+  QString link = Vidalia::language() + "/" + topicElement.attribute(ATTRIBUTE_TOPIC_HTML);
   if (topicElement.hasAttribute(ATTRIBUTE_TOPIC_SECTION)) {
     link += "#" + topicElement.attribute(ATTRIBUTE_TOPIC_SECTION);
   }
