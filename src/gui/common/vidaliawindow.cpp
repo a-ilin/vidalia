@@ -26,7 +26,10 @@
 
 #include <QPoint>
 #include <QSize>
+#include <QPalette>
 #include "vidaliawindow.h"
+
+#include <QtDebug>
 
 
 /** Default constructor. */
@@ -35,6 +38,7 @@ VidaliaWindow::VidaliaWindow(QString name, QWidget *parent, Qt::WFlags flags)
 {
   _name     = name;
   _settings = new VidaliaSettings();
+  _previouslyShown = false;
 }
 
 /** Destructor. */
@@ -99,13 +103,17 @@ VidaliaWindow::close()
 void
 VidaliaWindow::show()
 {
-  static bool previouslyShown = false;
-  
   /* If this is the first time this window is shown, restore its window
    * position and size. */
-  if (!previouslyShown) {
+  if (!_previouslyShown) {
+#if defined (Q_WS_MAC)
+    /* Use the standard palette on Mac, overriding whatever was specified in
+     * the .ui file for this dialog. */
+    setPalette(QPalette());
+#endif
+    
     restoreWindowState();
-    previouslyShown = true;
+    _previouslyShown = true;
   }
 
   /* Bring the window to the top, if it's already open. Otherwise, make the

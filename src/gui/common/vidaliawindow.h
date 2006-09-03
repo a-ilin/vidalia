@@ -65,6 +65,7 @@ public slots:
 private:
   QString _name;  /**< Name associated with this window. */
   VidaliaSettings* _settings; /**< Object used to store window properties */
+  bool _previouslyShown; /**< True if show() has been called for this window. */
 };
 
 #endif
