@@ -32,6 +32,9 @@ AboutDialog::AboutDialog(QWidget *parent, Qt::WFlags flags)
 : VidaliaWindow("AboutDialog", parent, flags)
 {
   ui.setupUi(this);
+#if defined(Q_WS_MAC)
+  setShortcut("Ctrl+W", SLOT(close()));
+#endif
 
   /* Save the TorControl object to use later */
   _torControl = Vidalia::torControl();

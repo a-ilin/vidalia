@@ -27,6 +27,8 @@
 #include <QPoint>
 #include <QSize>
 #include <QPalette>
+#include <QShortcut>
+#include <QKeySequence>
 #include "vidaliawindow.h"
 
 #include <QtDebug>
@@ -46,6 +48,14 @@ VidaliaWindow::~VidaliaWindow()
 {
   saveWindowState();
   delete _settings;
+}
+
+/** Associates a shortcut key sequence with a slot. */
+void
+VidaliaWindow::setShortcut(QString shortcut, const char *slot)
+{
+  QShortcut *s = new QShortcut(QKeySequence(shortcut), this, slot, 0);
+  Q_UNUSED(s);
 }
 
 /** Saves the size and location of the window. */
