@@ -256,3 +256,17 @@ CircuitListWidget::onSelectionChanged(QTreeWidgetItem *cur,
   }
 }
 
+/** Returns a list of circuits currently in the widget. */
+QList<Circuit>
+CircuitListWidget::circuits()
+{
+  int numCircs = topLevelItemCount();
+  QList<Circuit> circs;
+  
+  for (int i = 0; i < numCircs; i++) {
+    CircuitItem *circ = (CircuitItem *)topLevelItem(i);
+    circs << circ->circuit();
+  }
+  return circs;
+}
+

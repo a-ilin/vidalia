@@ -313,7 +313,12 @@ NetViewer::resolved(int id, QList<GeoIp> geoips)
     }
   }
 
-  /** Repaint the map */
+  /* Update the circuit lines */
+  foreach (Circuit circuit, ui.treeCircuitList->circuits()) {
+    _map->addCircuit(circuit);
+  }
+  
+  /* Repaint the map */
   _map->update();
 }
 

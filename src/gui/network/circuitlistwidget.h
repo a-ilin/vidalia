@@ -59,6 +59,8 @@ public:
   void removeCircuit(CircuitItem *circuit);
   /** Removes the given stream item. */
   void removeStream(StreamItem *stream);
+  /** Returns a list of circuits currently in the widget. */
+  QList<Circuit> circuits();
 
 signals:
   /** Emitted when a circuit item is selected. */
