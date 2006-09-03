@@ -25,6 +25,7 @@
  */
 
 #include <QFile>
+#include <vidalia.h>
 
 #include "helptextbrowser.h"
 
@@ -41,7 +42,18 @@ HelpTextBrowser::loadResource(int type, const QUrl &name)
 {
   /* If it's an HTML file, we'll handle it ourselves */
   if (type == QTextDocument::HtmlResource) {
-    QFile file(":/help/" + name.path());
+    QString helpPath = ":/help/";
+    
+#if QT_VERSION >= 0x040104
+    /* On Qt 4.1.4 or later, name.path() only includes the filename (not
+     * the language code) for pages accessed by clicking on a link in another
+     * page, so add it now if there isn't a path already. */
+    if (!name.path().contains("/")) {
+      helpPath += Vidalia::language() + "/";
+    } 
+#endif
+    
+    QFile file(helpPath + name.path());
     if (!file.open(QIODevice::ReadOnly)) {
       return tr("Error opening help file: ") + name.path();
     }
