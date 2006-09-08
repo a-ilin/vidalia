@@ -103,7 +103,7 @@ main(int argc, char *argv[])
   int ret = vidalia.exec();
 
   /* Vidalia exited, so cleanup our pidfile and return */
-  QFile::remove(vidalia.pidFile());
+  QFile::remove(pidfile);
   return ret;
 }
 
