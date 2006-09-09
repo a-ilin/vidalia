@@ -123,6 +123,35 @@
         <source>Unable to create %1 [%2]</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable this if you wish to run Tor as a Windows service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run Tor in the background as a Windows service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to remove Tor Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to remove the Tor service.
+You may need to remove it manually.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to install Tor Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to install the Tor service.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppearancePage</name>
@@ -1480,7 +1509,7 @@ Error: </source>
     </message>
     <message>
         <source>Ctrl+H</source>
-        <translation>Ctrl+H</translation>
+        <translation type="obsolete">Ctrl+H</translation>
     </message>
     <message>
         <source>Vidalia was unable to register for Tor&apos;s log events.</source>
@@ -1500,6 +1529,10 @@ Error: </source>
     </message>
     <message>
         <source>Text Files (*.txt)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1559,6 +1592,30 @@ Error: </source>
     </message>
     <message>
         <source>Zooms to fit all currently displayed circuits.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+R</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Esc</source>
+        <translation type="unfinished">Esc</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="unfinished">-</translation>
+    </message>
+    <message>
+        <source>Ctrl+Z</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1957,6 +2014,21 @@ fingerprint.</source>
     <message>
         <source>Unknown error</source>
         <translation type="obsolete">未知的错误</translation>
+    </message>
+</context>
+<context>
+    <name>TorService</name>
+    <message>
+        <source>Services not supported on this platform.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to install the Tor service.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to start Tor service.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

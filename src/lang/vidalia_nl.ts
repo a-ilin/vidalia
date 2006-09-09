@@ -111,6 +111,35 @@
         <source>Unable to create %1 [%2]</source>
         <translation>Niet in staat %1 [%2] aan te maken</translation>
     </message>
+    <message>
+        <source>Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable this if you wish to run Tor as a Windows service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run Tor in the background as a Windows service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to remove Tor Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to remove the Tor service.
+You may need to remove it manually.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to install Tor Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to install the Tor service.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppearancePage</name>
@@ -740,7 +769,7 @@ Bekijk alstublieft het berichten logboek voor meer informatie en mogelijke aanwi
     </message>
     <message>
         <source>Failed to Create New Identity</source>
-        <translation>Cre&euml;ren van Nieuwe Identiteit Mislukt</translation>
+        <translation>Creren van Nieuwe Identiteit Mislukt</translation>
     </message>
 </context>
 <context>
@@ -855,7 +884,7 @@ Bekijk alstublieft het berichten logboek voor meer informatie en mogelijke aanwi
     </message>
     <message>
         <source>Copy</source>
-        <translation>Kopi&euml;ren</translation>
+        <translation>Kopiren</translation>
     </message>
     <message>
         <source>Copy the selected messages to the clipboard (Ctrl+C)</source>
@@ -937,7 +966,7 @@ care about.</source>
         <translation>Berichten die onregelmatig verschijnen 
 gedurende normaal gebruik van Tor en die 
 niet worden beschouwd als fouten, maar waar 
-u mogelijk wel in ge&iuml;nteresseerd bent.</translation>
+u mogelijk wel in genteresseerd bent.</translation>
     </message>
     <message>
         <source>Messages that appear frequently 
@@ -1010,7 +1039,7 @@ ontwikkelaars.</translation>
     </message>
     <message>
         <source>Ctrl+H</source>
-        <translation>Ctrl+H</translation>
+        <translation type="obsolete">Ctrl+H</translation>
     </message>
     <message>
         <source>Vidalia was unable to register for Tor&apos;s log events.</source>
@@ -1031,6 +1060,10 @@ ontwikkelaars.</translation>
     <message>
         <source>Text Files (*.txt)</source>
         <translation>Tekstbestanden (*.txt)</translation>
+    </message>
+    <message>
+        <source>F1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1090,6 +1123,30 @@ ontwikkelaars.</translation>
     <message>
         <source>Zooms to fit all currently displayed circuits.</source>
         <translation>Zoom om alle huidig weergeven circuits passend in beeld te brengen.</translation>
+    </message>
+    <message>
+        <source>Ctrl+R</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Esc</source>
+        <translation type="unfinished">Esc</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="unfinished">-</translation>
+    </message>
+    <message>
+        <source>Ctrl+Z</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1342,7 +1399,7 @@ ontwikkelaars.</translation>
         <source>Vidalia was only able to find a private IP address for your server.
 
 Would you like to access an external service to determine your public IP address?</source>
-        <translation>Vidalia was enkel in staat een priv&eacute; IP adres te vinden voor uw server.
+        <translation>Vidalia was enkel in staat een priv IP adres te vinden voor uw server.
 
 Wilt u een externe service benaderen om uw publieke IP adres te achterhalen?</translation>
     </message>
@@ -1438,6 +1495,21 @@ toevoegen.</translation>
     </message>
 </context>
 <context>
+    <name>TorService</name>
+    <message>
+        <source>Services not supported on this platform.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to install the Tor service.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to start Tor service.</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>VMessageBox</name>
     <message>
         <source>OK</source>
@@ -1488,7 +1560,7 @@ toevoegen.</translation>
     </message>
     <message>
         <source>Another Vidalia process is already running. This Vidalia process will now exit.</source>
-        <translation>Een ander Vidalia proces is reeds actief, dit Vidalia proces zal nu be&euml;indigd worden.</translation>
+        <translation>Een ander Vidalia proces is reeds actief, dit Vidalia proces zal nu beindigd worden.</translation>
     </message>
 </context>
 </TS>

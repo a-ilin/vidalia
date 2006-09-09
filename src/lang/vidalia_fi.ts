@@ -123,6 +123,35 @@
         <source>Unable to create %1 [%2]</source>
         <translation>Tiedoston %1 luominen epäonnistui [%2]</translation>
     </message>
+    <message>
+        <source>Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable this if you wish to run Tor as a Windows service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run Tor in the background as a Windows service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to remove Tor Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to remove the Tor service.
+You may need to remove it manually.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to install Tor Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to install the Tor service.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppearancePage</name>
@@ -736,7 +765,7 @@ Olkaapa hyvä ja päivitä uudempaan Tor-ohjelmaan.</translation>
     </message>
     <message>
         <source>View Network</source>
-        <translation>Näytä verkosto</translation>
+        <translation type="obsolete">Näytä verkosto</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
@@ -1085,7 +1114,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     </message>
     <message>
         <source>Ctrl+H</source>
-        <translation>Ctrl+H</translation>
+        <translation type="obsolete">Ctrl+H</translation>
     </message>
     <message>
         <source>Vidalia was unable to register for Tor&apos;s log events.</source>
@@ -1110,6 +1139,10 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <source>Text Files (*.txt)</source>
         <translation>Tekstitiedostot (*.txt)</translation>
+    </message>
+    <message>
+        <source>F1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1197,6 +1230,30 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <source>Zooms to fit all currently displayed circuits.</source>
         <translation>Sovittaa näyttämään kaikki näkyvillä olevat yhteydet.</translation>
+    </message>
+    <message>
+        <source>Ctrl+R</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Esc</source>
+        <translation type="unfinished">Esc</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="unfinished">-</translation>
+    </message>
+    <message>
+        <source>Ctrl+Z</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1340,7 +1397,7 @@ problem with your server</source>
     </message>
     <message>
         <source>Only relay traffic between other Tor servers (middle-man)</source>
-        <translation>Välitä tietoa vain Tor-palvelinten välillä (välikäsi)</translation>
+        <translation type="obsolete">Välitä tietoa vain Tor-palvelinten välillä (välikäsi)</translation>
     </message>
     <message>
         <source>Attempts to determine the correct address for your server</source>
@@ -1582,6 +1639,21 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     <message>
         <source>Unknown error</source>
         <translation type="obsolete">Tuntematon virhe</translation>
+    </message>
+</context>
+<context>
+    <name>TorService</name>
+    <message>
+        <source>Services not supported on this platform.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to install the Tor service.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to start Tor service.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

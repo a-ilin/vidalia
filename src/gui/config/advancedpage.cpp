@@ -27,6 +27,8 @@
 #include <QFile>
 #include <QFileInfo>
 #include <gui/common/vmessagebox.h>
+#include <control/torservice.h>
+#include <vidalia.h>
 #include "advancedpage.h"
 
 
@@ -46,9 +48,8 @@ AdvancedPage::AdvancedPage(QWidget *parent)
   /* Hide platform specific features */
 #ifdef Q_WS_WIN
   ui.grpPermissions->setVisible(false);
-#else
-  ui.grpService->setVisible(false);
 #endif
+  ui.grpService->setVisible(TorService::isSupported());
 }
 
 /** Destructor */
@@ -66,7 +67,9 @@ AdvancedPage::save(QString &errmsg)
   _settings->setTorrc(ui.lineTorConfig->text());
   _settings->setUser(ui.lineUser->text());
   _settings->setGroup(ui.lineGroup->text());
-  _settings->setUseService(ui.chkUseService->isChecked());
+  
+  /* Install or uninstall the Tor service as necessary */
+  setupService();
   return true;
 }
 
@@ -78,7 +81,66 @@ AdvancedPage::load()
   ui.lineTorConfig->setText(_settings->getTorrc());
   ui.lineUser->setText(_settings->getUser());
   ui.lineGroup->setText(_settings->getGroup());
-  ui.chkUseService->setChecked(_settings->getUseService());
+  ui.chkUseService->setChecked(useService());
+}
+
+/** Returns if service support is enabled and functional */
+bool
+AdvancedPage::useService()
+{
+	bool use = false;
+
+	/* If we think we're supposed to be using a service we'd better make
+		 sure that the service still actually exists since the last time we checked.
+	*/
+  
+	if (_settings->getUseService()) {
+		TorService* s = new TorService(_settings->getExecutable(),
+																	 _settings->getTorrc());
+		use = s->isInstalled();
+		delete s;
+
+		/* No point in trying to use a broken or non-existent service */
+		if (!use) _settings->setUseService(false);
+	}
+	return use;
+}
+
+/** Installs or removes the Tor service as necessary */
+void
+AdvancedPage::setupService()
+{
+	bool checked = ui.chkUseService->isChecked();
+	TorService* s = new TorService(_settings->getExecutable(),
+																 _settings->getTorrc());
+
+	if (!checked && s->isInstalled()) {
+		/* Uninstall if we don't want to use it anymore */
+		Vidalia::torControl()->stop();
+		
+		if (!s->remove()) {
+			VMessageBox::critical(this,
+														tr("Unable to remove Tor Service"),
+														tr("Vidalia was unable to remove the Tor service.\nYou may need to remove it manually."), VMessageBox::Ok, VMessageBox::Cancel);
+		}
+		_settings->setUseService(false);
+
+	} else if (checked && !s->isInstalled()) {
+		/* Install if we want to start using a service */
+		if (!s->install()) {
+			VMessageBox::critical(this,
+														tr("Unable to install Tor Service"),
+														tr("Vidalia was unable to install the Tor service."),
+														VMessageBox::Ok, VMessageBox::Cancel);
+		}
+		_settings->setUseService(s->isInstalled());
+	}
+
+	else {
+		_settings->setUseService(checked);
+	}
+
+	delete s;
 }
 
 /** Open a QFileDialog to browse for Tor config file. */

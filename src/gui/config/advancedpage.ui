@@ -533,10 +533,10 @@
          <enum>Qt::NoContextMenu</enum>
         </property>
         <property name="toolTip" >
-         <string>Enable this if you run Tor as an NT service</string>
+         <string>Enable this if you wish to run Tor as a Windows service</string>
         </property>
         <property name="text" >
-         <string>Enable NT service support</string>
+         <string>Run Tor in the background as a Windows service</string>
         </property>
        </widget>
       </item>

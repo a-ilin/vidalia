@@ -111,6 +111,35 @@
         <source>Unable to create %1 [%2]</source>
         <translation>Невъзможност за създаване на %1 [%2]</translation>
     </message>
+    <message>
+        <source>Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable this if you wish to run Tor as a Windows service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run Tor in the background as a Windows service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to remove Tor Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to remove the Tor service.
+You may need to remove it manually.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to install Tor Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to install the Tor service.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppearancePage</name>
@@ -1009,7 +1038,7 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Ctrl+H</source>
-        <translation>Ctrl+Н</translation>
+        <translation type="obsolete">Ctrl+Н</translation>
     </message>
     <message>
         <source>Vidalia was unable to register for Tor&apos;s log events.</source>
@@ -1030,6 +1059,10 @@ interest to Tor developers.</source>
     <message>
         <source>Text Files (*.txt)</source>
         <translation>Текстови файлове (*.txt) </translation>
+    </message>
+    <message>
+        <source>F1</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1089,6 +1122,30 @@ interest to Tor developers.</source>
     <message>
         <source>Zooms to fit all currently displayed circuits.</source>
         <translation>Нагоди изгледада показва всички вериги.</translation>
+    </message>
+    <message>
+        <source>Ctrl+R</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Esc</source>
+        <translation type="unfinished">Ескейп</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="unfinished">-</translation>
+    </message>
+    <message>
+        <source>Ctrl+Z</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1434,6 +1491,21 @@ fingerprint.</source>
     <message>
         <source>Process %1 failed to stop. [%2]</source>
         <translation>Процес %1 не успя да спре. [%2]</translation>
+    </message>
+</context>
+<context>
+    <name>TorService</name>
+    <message>
+        <source>Services not supported on this platform.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to install the Tor service.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to start Tor service.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

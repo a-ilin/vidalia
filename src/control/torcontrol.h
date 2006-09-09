@@ -33,10 +33,10 @@
 
 #include "controlconnection.h"
 #include "torprocess.h"
+#include "torservice.h"
 #include "torevents.h"
 #include "torsignal.h"
 #include "routerdescriptor.h"
-
 
 class TorControl : public QObject
 {
@@ -135,7 +135,9 @@ private:
   /** Instantiates a connection used to talk to Tor's control port */
   ControlConnection* _controlConn;
   /** Manages and monitors the Tor process */
-  TorProcess *_torProcess;  
+  TorProcess* _torProcess;
+  /** Manages the Tor service, if supported and enabled */
+  TorService* _torService;
   /** Keep track of which events we're interested in */
   TorEvents _torEvents;
 

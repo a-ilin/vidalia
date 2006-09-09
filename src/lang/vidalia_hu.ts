@@ -14,11 +14,11 @@
     </message>
     <message>
         <source>View License</source>
-        <translation>Licence megtekintése</translation>
+        <translation type="obsolete">Licence megtekintése</translation>
     </message>
     <message>
         <source>OK</source>
-        <translation>OK</translation>
+        <translation type="obsolete">OK</translation>
     </message>
     <message>
         <source>Vidalia</source>
@@ -46,7 +46,7 @@
     </message>
     <message>
         <source>Hide License</source>
-        <translation>Licence elrejtése</translation>
+        <translation type="obsolete">Licence elrejtése</translation>
     </message>
     <message>
         <source>&lt;Not Running&gt;</source>
@@ -106,6 +106,51 @@
     <message>
         <source>Select Tor Configuration File</source>
         <translation>Tor konfigurációs fájl kiválasztása</translation>
+    </message>
+    <message>
+        <source>Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable this if you wish to run Tor as a Windows service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run Tor in the background as a Windows service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to remove Tor Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to remove the Tor service.
+You may need to remove it manually.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to install Tor Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to install the Tor service.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>File Not Found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>%1 does not exist. Would you like to create it?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Failed to Create File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to create %1 [%2]</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -171,7 +216,7 @@
     </message>
     <message>
         <source>Jan 1 2000</source>
-        <translation>2000. jan. 1</translation>
+        <translation type="obsolete">2000. jan. 1</translation>
     </message>
     <message>
         <source>100</source>
@@ -239,7 +284,7 @@
     <name>ConfigDialog</name>
     <message>
         <source>Configure Settings</source>
-        <translation>Beállítások módosítása</translation>
+        <translation type="obsolete">Beállítások módosítása</translation>
     </message>
     <message>
         <source>General</source>
@@ -272,6 +317,10 @@
     <message>
         <source>Help</source>
         <translation>Súgó</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Beállítások</translation>
     </message>
 </context>
 <context>
@@ -583,7 +632,7 @@ dokumentum.</translation>
     </message>
     <message>
         <source>Configure</source>
-        <translation>Konfigurálás</translation>
+        <translation type="obsolete">Konfigurálás</translation>
     </message>
     <message>
         <source>About</source>
@@ -691,7 +740,7 @@ dokumentum.</translation>
     </message>
     <message>
         <source>View Network</source>
-        <translation>Hálózat megtekintése</translation>
+        <translation type="obsolete">Hálózat megtekintése</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
@@ -735,6 +784,31 @@ eseményekre utaló jeleket keresve.</translation>
         <translation>A Vidalia nem tudta elindítani a Tor-t. Ellenõrizd
 a beállításaidat, hogy jól van-e megadva a Tor futtatható állományának neve és elérési
 útja.</translation>
+    </message>
+    <message>
+        <source>Settings</source>
+        <translation type="unfinished">Beállítások</translation>
+    </message>
+    <message>
+        <source>Network Map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>New Identity</source>
+        <translation type="unfinished">Új identitás</translation>
+    </message>
+    <message>
+        <source>Ctrl+I</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>All subsequent connections will appear to be different than your old connections.</source>
+        <translation type="unfinished">Minden további kapcsolat a régi kapcsolataidtól
+különbözõként fog szerepelni.</translation>
+    </message>
+    <message>
+        <source>Failed to Create New Identity</source>
+        <translation type="unfinished">Nem sikerült az új identitás létrehozása</translation>
     </message>
 </context>
 <context>
@@ -1003,7 +1077,7 @@ részére.</translation>
     </message>
     <message>
         <source>Ctrl+H</source>
-        <translation>Ctrl+H</translation>
+        <translation type="obsolete">Ctrl+H</translation>
     </message>
     <message>
         <source>Vidalia was unable to register for Tor&apos;s log events.</source>
@@ -1022,6 +1096,14 @@ eseményeit.</translation>
         <source>Vidalia was unable to open the specified log file.</source>
         <translation>A Vidalia nem tudta megnyitni a megadott log
 állományt.</translation>
+    </message>
+    <message>
+        <source>F1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Text Files (*.txt)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1052,11 +1134,11 @@ eseményeit.</translation>
     </message>
     <message>
         <source>New Identity</source>
-        <translation>Új identitás</translation>
+        <translation type="obsolete">Új identitás</translation>
     </message>
     <message>
         <source>Make new connections appear to be different than your old connections.</source>
-        <translation>Az új kapcsolatok tûnjenek a régiektõl
+        <translation type="obsolete">Az új kapcsolatok tûnjenek a régiektõl
 különbözõnek.</translation>
     </message>
     <message>
@@ -1085,12 +1167,44 @@ különbözõnek.</translation>
     </message>
     <message>
         <source>All subsequent connections will appear to be different than your old connections.</source>
-        <translation>Minden további kapcsolat a régi kapcsolataidtól
+        <translation type="obsolete">Minden további kapcsolat a régi kapcsolataidtól
 különbözõként fog szerepelni.</translation>
     </message>
     <message>
         <source>Failed to Create New Identity</source>
-        <translation>Nem sikerült az új identitás létrehozása</translation>
+        <translation type="obsolete">Nem sikerült az új identitás létrehozása</translation>
+    </message>
+    <message>
+        <source>Ctrl+R</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Esc</source>
+        <translation type="unfinished">Esc</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="unfinished">-</translation>
+    </message>
+    <message>
+        <source>Zoom To Fit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Zooms to fit all currently displayed circuits.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+Z</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1228,7 +1342,7 @@ hálózatból a szervereden keresztül</translation>
     </message>
     <message>
         <source>Only relay traffic between other Tor servers (middle-man)</source>
-        <translation>Csak egyéb Tor szerverek közti forgalom közvetítése
+        <translation type="obsolete">Csak egyéb Tor szerverek közti forgalom közvetítése
 (middle-man)</translation>
     </message>
     <message>
@@ -1313,7 +1427,7 @@ hálózatból a szervereden keresztül</translation>
     </message>
     <message>
         <source>Increase the priority of the selected exit policy</source>
-       <translation>A választott kilépési szabály prioiritásának
+        <translation>A választott kilépési szabály prioiritásának
 növelése</translation>
     </message>
     <message>
@@ -1378,6 +1492,38 @@ fingerprint.</source>
 vagy, ha probléma adódna a szervereddel. A PGP vagy GPG ujjlenyomatodat
 szintén csatolhatod.</translation>
     </message>
+    <message>
+        <source>Bandwidth Rate Limits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Long-term average bandwidth limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Average Rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>KB/s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Peak bandwidth rate limit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Maximum Rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Show help topic on bandwidth rate limits</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Only allow connections to other Tor servers (non-exit node)</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Stream</name>
@@ -1419,6 +1565,21 @@ szintén csatolhatod.</translation>
     <message>
         <source>Process %1 failed to stop. [%2]</source>
         <translation>%1 folyamatot nem sikerült leállítani. [%2]</translation>
+    </message>
+</context>
+<context>
+    <name>TorService</name>
+    <message>
+        <source>Services not supported on this platform.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to install the Tor service.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to start Tor service.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

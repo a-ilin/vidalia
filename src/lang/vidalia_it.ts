@@ -111,6 +111,35 @@
         <source>Unable to create %1 [%2]</source>
         <translation>Non Ë possibile creare %1 [%2]</translation>
     </message>
+    <message>
+        <source>Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Enable this if you wish to run Tor as a Windows service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Run Tor in the background as a Windows service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to remove Tor Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to remove the Tor service.
+You may need to remove it manually.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to install Tor Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to install the Tor service.</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>AppearancePage</name>
@@ -1025,7 +1054,7 @@ interesse per gli sviluppatori di Tor.</translation>
     </message>
     <message>
         <source>Ctrl+H</source>
-        <translation>Ctrl+H</translation>
+        <translation type="obsolete">Ctrl+H</translation>
     </message>
     <message>
         <source>Vidalia was unable to register for Tor&apos;s log events.</source>
@@ -1045,6 +1074,10 @@ interesse per gli sviluppatori di Tor.</translation>
     </message>
     <message>
         <source>Text Files (*.txt)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F1</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1120,6 +1153,30 @@ interesse per gli sviluppatori di Tor.</translation>
     </message>
     <message>
         <source>Zooms to fit all currently displayed circuits.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Ctrl+R</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>F1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Esc</source>
+        <translation type="unfinished">Esc</translation>
+    </message>
+    <message>
+        <source>+</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>-</source>
+        <translation type="unfinished">-</translation>
+    </message>
+    <message>
+        <source>Ctrl+Z</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1470,6 +1527,21 @@ un fingerprint PGP o GPG.</translation>
     <message>
         <source>Process %1 failed to stop. [%2]</source>
         <translation>Il processo %1 non è riuscito a terminare. [%2]</translation>
+    </message>
+</context>
+<context>
+    <name>TorService</name>
+    <message>
+        <source>Services not supported on this platform.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to install the Tor service.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Unable to start Tor service.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
