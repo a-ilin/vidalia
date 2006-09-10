@@ -9,6 +9,9 @@ Near-future Goals:
     separate user to run the service as (instead of running it as Local
     System), or we should write a patch for Tor to do it.
   * Create Vidalia packages for Red Hat and Debian
+  * Make our ./configure smart enough to determine if the user has a release
+    or debug version of Qt and link to the correct one, instead of always just
+    assuming the debug library is present.
 
 
 Pie-in-the-sky Goals:
