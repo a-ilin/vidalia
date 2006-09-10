@@ -37,6 +37,9 @@
     TEXT("Provides an anonymous Internet communication system.")
   #define TOR_SERVICE_ACCESS SERVICE_ALL_ACCESS
   #define SERVICE_ERROR 8
+#else
+  typedef void* SC_HANDLE; /** Make SC_HANDLE a void* on non-Windows. */
+  typedef quint64 DWORD; /** DWORD only exists on Windows, so redefine it. */
 #endif
 
 
@@ -85,11 +88,9 @@ private:
   /** Path to the torrc. */
   QString _torrc;
 
-#if defined(Q_OS_WIN32)
   DWORD status(); /** Gets the status of the Tor service. */
   SC_HANDLE _manager; /** Handle to a service manager object. */
   SC_HANDLE _service; /** Handle to the Tor service object. */
-#endif
 };
 
 #endif

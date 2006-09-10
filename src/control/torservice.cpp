@@ -43,6 +43,8 @@ TorService::TorService(const QString &torPath, const QString &torrc,
                        QObject* parent)
   : QObject(parent)
 {
+  Q_UNUSED(torrc);
+
   // FIXME this is hardcoded for now
   _torrc = "\"C:\\Program Files\\Tor\\torrc\"";
   _torPath = "\"" + torPath + "\"";
@@ -225,11 +227,12 @@ TorService::remove()
 #endif
 }
 
-#if defined(Q_OS_WIN32)
+
 /** Gets the status of the Tor service. */
 DWORD
 TorService::status()
 {
+#if defined(Q_OS_WIN32)
   if (!(isSupported() && _manager && _service)) return DWORD(-1);
 
   SERVICE_STATUS s;
@@ -239,6 +242,8 @@ TorService::status()
     stat = s.dwCurrentState;
   } 
   return stat;
+#else
+  return 0;
 #endif
 }
 
