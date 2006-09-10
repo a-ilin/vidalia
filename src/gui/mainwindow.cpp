@@ -209,8 +209,8 @@ MainWindow::createTrayMenu()
   _trayMenu->addAction(_bandwidthAct);
   _trayMenu->addAction(_messageAct);
   _trayMenu->addAction(_networkAct);
-  _trayMenu->addSeparator();
   _trayMenu->addAction(_newIdentityAct);
+  _trayMenu->addSeparator();
   _trayMenu->addAction(_configAct);
   _trayMenu->addAction(_helpAct);
   _trayMenu->addAction(_aboutAct);
