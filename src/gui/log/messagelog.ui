@@ -694,12 +694,13 @@
    </attribute>
    <addaction name="actionSave_All" />
    <addaction name="actionSave_Selected" />
+   <addaction name="separator" />
    <addaction name="actionCopy" />
    <addaction name="actionSelect_All" />
    <addaction name="actionClear" />
    <addaction name="actionFind" />
-   <addaction name="actionSettings" />
    <addaction name="separator" />
+   <addaction name="actionSettings" />
    <addaction name="actionHelp" />
    <addaction name="actionClose" />
   </widget>
