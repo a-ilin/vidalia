@@ -73,19 +73,19 @@ signals:
   void startFailed(QString error);
 
 private:
-	/* Closes the service and the service manager */
-	void close();
-	/* Initializes the service and the service manager */
-	void initialize();
+  /* Closes the service and the service manager */
+  void close();
+  /* Initializes the service and the service manager */
+  void initialize();
+  
+  /* Path to the tor executable. */
+  QString _torPath;
+  /* Path to the torrc */
+  QString _torrc;
 
 #if defined(Q_OS_WIN32)
   /* Gets the status of the Tor service. */
   DWORD status();
-  
-  /* Path to the tor executable. */
-  QString _torPath;
-	/* Path to the torrc */
-	QString _torrc;
   /* Handle to a service manager object. */
   SC_HANDLE _manager;
   /* Handle to the Tor service object. */

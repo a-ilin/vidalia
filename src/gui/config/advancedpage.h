@@ -52,10 +52,10 @@ private slots:
   void browseTorConfig();
   
 private:
-	/** Returns if service support is enabled and functional */
-	bool useService();
-	/** Installs or removes the Tor service as necessary */
-	void setupService();
+  /** Returns if service support is enabled and functional */
+  bool useService();
+  /** Installs or removes the Tor service as necessary */
+  void setupService();
 
   /** A TorSettings object used to save/load settings */
   TorSettings* _settings;
