@@ -21,7 +21,7 @@
 
 /** 
  * \file torservice.h
- * \version $Id:
+ * \version $Id$
  */
 
 #ifndef _TORSERVICE_H
@@ -33,10 +33,12 @@
   #include <windows.h>
   #define TOR_SERVICE_NAME "tor"
   #define TOR_SERVICE_DISP "Tor Win32 Service"
-#define TOR_SERVICE_DESC TEXT("Provides an anonymous Internet communication system.")
+  #define TOR_SERVICE_DESC \
+    TEXT("Provides an anonymous Internet communication system.")
   #define TOR_SERVICE_ACCESS SERVICE_ALL_ACCESS
   #define SERVICE_ERROR 8
 #endif
+
 
 class TorService : public QObject
 {
@@ -51,46 +53,44 @@ public:
   /** Default dtor. */
   ~TorService();
 
-  /* Returns if Tor service is installed. */
+  /** Returns true if the Tor service is installed. */
   bool isInstalled();
-  /* Returns if Tor service is running. */
+  /** Returns true if the Tor service is running. */
   bool isRunning();
-  /* Starts Tor service. Emits started on success. */
+  /** Starts the Tor service. Emits started on success. */
   void start();
-  /* Stops Tor service. Emits finished on success. */
+  /** Stops the Tor service. Emits finished on success. */
   void stop();
-  /* Installs Tor service. */
+  /** Installs the Tor service. */
   bool install();
-  /* Removes Tor service. */
+  /** Removes the Tor service. */
   bool remove();
 
 signals:
-  /* Called when the service gets started */
+  /** Called when the service gets started. */
   void started();
-  /* Called when the service gets stopped */
+  /** Called when the service gets stopped. */
   void finished();
-  /* Called when there is an error in starting the service */
+  /** Called when there is an error in starting the service. */
   void startFailed(QString error);
 
 private:
-  /* Closes the service and the service manager */
+  /** Closes the service and the service manager. */
   void close();
-  /* Initializes the service and the service manager */
+  /** Initializes the service and the service manager. */
   void initialize();
   
-  /* Path to the tor executable. */
+  /** Path to the tor executable. */
   QString _torPath;
-  /* Path to the torrc */
+  /** Path to the torrc. */
   QString _torrc;
 
 #if defined(Q_OS_WIN32)
-  /* Gets the status of the Tor service. */
-  DWORD status();
-  /* Handle to a service manager object. */
-  SC_HANDLE _manager;
-  /* Handle to the Tor service object. */
-  SC_HANDLE _service;
+  DWORD status(); /** Gets the status of the Tor service. */
+  SC_HANDLE _manager; /** Handle to a service manager object. */
+  SC_HANDLE _service; /** Handle to the Tor service object. */
 #endif
 };
 
 #endif
+

@@ -21,12 +21,13 @@
 
 /** 
  * \file torservice.cpp
- * \version $Id:
+ * \version $Id$
  */
 
 #include "torservice.h"
 
-/* Returns if services are supported */
+
+/** Returns true if services are supported. */
 bool
 TorService::isSupported()
 {
@@ -44,7 +45,6 @@ TorService::TorService(const QString &torPath, const QString &torrc,
 {
   // FIXME this is hardcoded for now
   _torrc = "\"C:\\Program Files\\Tor\\torrc\"";
-  //_torrc = "\"" + torrc + "\"";
   _torPath = "\"" + torPath + "\"";
   _manager = NULL;
   _service = NULL;
@@ -58,7 +58,7 @@ TorService::~TorService()
   close();
 }
 
-/* Closes the service and the service manager */
+/** Closes the service and the service manager. */
 void
 TorService::close()
 {
@@ -75,7 +75,7 @@ TorService::close()
 #endif
 }
 
-/* Initializes the service and service manager */
+/** Initializes the service and service manager. */
 void
 TorService::initialize()
 {
@@ -94,14 +94,14 @@ TorService::initialize()
 #endif
 }
 
-/* Returns if Tor service is installed. */
+/** Returns true if the Tor service is installed. */
 bool
 TorService::isInstalled()
 {
   return _service != NULL;
 }
 
-/* Returns if Tor service is running. */
+/** Returns true if the Tor service is running. */
 bool
 TorService::isRunning()
 {
@@ -112,7 +112,7 @@ TorService::isRunning()
 #endif
 }
 
-/* Starts Tor service */
+/** Starts Tor service. */
 void
 TorService::start()
 {
@@ -151,7 +151,7 @@ TorService::start()
 #endif
 }
 
-/* Stops Tor service. */
+/** Stops Tor service. */
 void
 TorService::stop()
 {
@@ -174,7 +174,7 @@ TorService::stop()
 #endif
 }
 
-/* Installs Tor service. */
+/** Installs the Tor service. */
 bool
 TorService::install()
 {
@@ -202,7 +202,7 @@ TorService::install()
 #endif
 }
 
-/* Removes Tor service. */
+/** Removes the Tor service. */
 bool
 TorService::remove()
 {
@@ -226,7 +226,7 @@ TorService::remove()
 }
 
 #if defined(Q_OS_WIN32)
-/* Gets the status of the Tor service. */
+/** Gets the status of the Tor service. */
 DWORD
 TorService::status()
 {
@@ -241,3 +241,4 @@ TorService::status()
   return stat;
 #endif
 }
+
