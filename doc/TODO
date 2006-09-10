@@ -5,6 +5,9 @@ Near-future Goals:
   * Figure out what is causing all of these funky problems with random Windows
     applications. If it turns out to be Qt (which is my current guess), we should 
     try to submit a patch to Trolltech.
+  * When creating the Tor service on Windows, we either should be creating a
+    separate user to run the service as (instead of running it as Local
+    System), or we should write a patch for Tor to do it.
   * Create Vidalia packages for Red Hat and Debian
 
 
