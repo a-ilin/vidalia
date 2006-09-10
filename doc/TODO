@@ -1,11 +1,14 @@
 
 Near-future Goals:
+  * Fix the problems with torrc permissions tha result when we start our own
+    Tor process (this doesn't really apply to Windows).
+  * Figure out what is causing all of these funky problems with random Windows
+    applications. If it turns out to be Qt (which is my current guess), we should 
+    try to submit a patch to Trolltech.
   * Create Vidalia packages for Red Hat and Debian
 
-  
+
 Pie-in-the-sky Goals:
-  * Circuit and stream control. "click-click-click, I want that circuit"
-  
   * Scheduled rate-limiting, so the user can adjust their bandwidth
     limits depending on what time of day it is.
 
@@ -19,12 +22,13 @@ Miscellaneous Tasks:
       Note that under X11 you need to have a composite manager running, and the X11 
       specific _NET_WM_WINDOW_OPACITY atom needs to be supported by the window manager 
       you are using."
-
+  
+  * Think about smarter ways to handle the GeoIP lookups. Our servers get
+    quite a bit of traffic from GeoIP lookups and it would be nice if we could
+    cut this back a bit.
   * Get some help from the Sasha and the CMU folks with doing a real user study and 
     getting help making our window layouts and text better.
-
   * Find something to replace Trac. Perhaps Bugzilla+Mediawiki or MoinMoin.
-
   * I'm told our website looks terrible in IE. We should try to fix this.
 
 
@@ -34,7 +38,7 @@ Notes from Roger:
     something smarter -- like handling the error and remembering the intended
     changes itself, or like rephrasing the error to give some hints about
     what's going on.
-
+  
   * For the configure server window, I'm using 1024x768, and it fills my
     screen vertically. Will lower resolutions have problems here?
  
