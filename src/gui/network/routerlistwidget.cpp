@@ -34,7 +34,7 @@ RouterListWidget::RouterListWidget(QWidget *parent)
 : QTreeWidget(parent)
 {
   /* Create and initialize columns */
-  setHeaderLabels(QStringList() << tr("Status") << tr("Router"));
+  setHeaderLabels(QStringList() << tr("Status") << tr("Server"));
 
   /* Set the column size and sort order for the router list. */
   sortByColumn(NameColumn);

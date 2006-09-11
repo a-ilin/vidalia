@@ -28,9 +28,9 @@
 <hr />
 
 <p>
-The network viewer lets you see routers in the Tor network and where
+The network viewer lets you see servers in the Tor network and where
 your traffic is going.
-</p>
+</p>/
 
 
 <a name="overview"/>
@@ -38,7 +38,7 @@ your traffic is going.
 <p>
 When you want to communicate anonymously through Tor (say, connecting to a
 website), Tor creates a tunnel, or <i>circuit</i>, of encrypted connections
-through a series of routers on the network. Your application's traffic is then
+through a series of servers on the network. Your application's traffic is then
 sent as a <i>stream</i> through that circuit. For efficiency, multiple streams
 may share the same circuit.
 </p>
@@ -47,8 +47,8 @@ may share the same circuit.
 <h3>Network Map</h3>
 <p>
 The network map consists of a map of the world, with red pinpoints indicating
-the geographic location of routers in the Tor network. Green lines are drawn
-between routers to indicate the path of circuits that your Tor client has
+the geographic location of servers in the Tor network. Green lines are drawn
+between servers to indicate the path of circuits that your Tor client has
 created through the Tor network.
 </p>
 <p>
@@ -58,8 +58,8 @@ by clicking on the map and then dragging it in whatever direction you would
 like to move the map.
 </p>
 <p>
-The geographic location of a Tor router is determined by looking up the IP
-address of the router in a GeoIP database, created by MaxMind and located at
+The geographic location of a Tor server is determined by looking up the IP
+address of the server in a GeoIP database, created by MaxMind and located at
 geoip.vidalia-project.net.
 </p>
 <p>
@@ -67,32 +67,32 @@ In the middle of the dialog, below the network map, you will see a list of
 your current circuits, as well as any application traffic currently on those
 circuits. When the network map first loads, you will probably see a connection
 to geoip.vidalia-project.net, which occurs when Vidalia is looking up
-geographic information for the list of Tor routers. It is important to note
+geographic information for the list of Tor servers. It is important to note
 that this request is done through Tor, so your location is not revealed to the
 GeoIP server. The results of the lookups will be cached locally in order to
 reduce load on Vidalia's GeoIP servers.
 </p>
 
 
-<a name="status"/>
-<h3>Router Status</h3>
+<a name="serverlist"/>
+<h3>Server Status</h3>
 <p>
-On the left side of the network view, you will see a list of routers in the
-Tor network. Next to each router is an icon indicating that router's status.
-The following table summarizes the possible router status icons:
+On the left side of the network view, you will see a list of servers in the
+Tor network. Next to each server is an icon indicating that server's status.
+The following table summarizes the possible server status icons:
 </p>
 <p>
 <table border="1">
 <tr>
   <td><img src="qrc:/images/icons/node-unresponsive.png"/></td>
   <td valign="middle">
-    The router is offline or simply not responding.
+    The server is offline or simply not responding.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-hibernating.png"/></td>
   <td valign="middle">
-    The router is <i>hibernating</i>, meaning it is online, but has used up as
+    The server is <i>hibernating</i>, meaning it is online, but has used up as
     much bandwidth as the operator is willing to allow for a given time
     period.
   </td>
@@ -100,25 +100,25 @@ The following table summarizes the possible router status icons:
 <tr>
   <td><img src="qrc:/images/icons/node-bw-none.png"/></td>
   <td valign="middle">
-    The router is online, but has shown only minimal throughput.
+    The server is online, but has shown only minimal throughput.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-bw-low.png"/></td>
   <td valign="middle">
-    The router is online and has shown a throughput &gt;= 20 KB/s.
+    The server is online and has shown a throughput &gt;= 20 KB/s.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-bw-med.png"/></td>
   <td valign="middle">
-    The router is online and has shown a throughput &gt;= 60 KB/s.
+    The server is online and has shown a throughput &gt;= 60 KB/s.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-bw-high.png"/></td>
   <td valign="middle">
-    The router is online and has shown a throughput &gt;= 400 KB/s.
+    The server is online and has shown a throughput &gt;= 400 KB/s.
   </td>
 </tr>
 </table>
@@ -131,13 +131,13 @@ in the past day.
 
 
 <a name="details"/>
-<h3>Router Details</h3>
+<h3>Server Details</h3>
 <p>
-The router details panel at the right side of the screen gives you details
-about the router or routers currently selected in the 
-<a href="#routerlist">router list</a>. If you have selected a circuit or stream
+The server details panel at the right side of the screen gives you details
+about the server or servers currently selected in the 
+<a href="#serverlist">server list</a>. If you have selected a circuit or stream
 in the list of your current circuits and streams, this panel will show you
-details about each router through which your traffic is currently being
+details about each server through which your traffic is currently being
 relayed.
 </p>
 <p>
@@ -148,43 +148,43 @@ of these fields will always be present):
 <table>
 <tr>
   <td><b>Location</b></td>
-  <td>The geographic location of this Tor router.</td>
+  <td>The geographic location of this Tor server.</td>
 </tr>
 <tr>
   <td><b>IP Address</b></td>
-  <td>IP address at which this Tor router can be reached.</td>
+  <td>IP address at which this Tor server can be reached.</td>
 </tr>
 <tr>
   <td><b>Platform</b></td>
   <td>
-    Operating system information and Tor version on which this router is
+    Operating system information and Tor version on which this server is
     currently running.
   </td>
 </tr>
 <tr>
   <td><b>Contact</b></td>
   <td>
-    Contact information for this router's operator, in case there is a
-    problem with the router.
+    Contact information for this server's operator, in case there is a
+    problem with the server.
   </td>
 </tr>
 <tr>
   <td><b>Bandwidth</b></td>
   <td>
     Estimated maximum amount of bandwidth that the directory servers have 
-    seen this router handle recently.
+    seen this server handle recently.
   </td>
 </tr>
 <tr>
   <td><b>Uptime</b></td>
   <td>
-    Length of time this router has been available, which can be used to help
-    estimate this router's stability.
+    Length of time this server has been available, which can be used to help
+    estimate this server's stability.
   </td>
 </tr>
 <tr>
   <td><b>Last Updated</b></td>
-  <td>Date this router's information was last updated.</td>
+  <td>Date this server's information was last updated.</td>
 </tr>
 </table>
 </p>
