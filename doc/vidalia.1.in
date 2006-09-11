@@ -31,7 +31,7 @@ Sets Vidalia's pidfile to \fI<directory/pidfile>\fR
 Sets Vidalia's interface style. [Windows|Motif|CDE|Plastique]
 .TP
 \fB\-lang \fI<langcode>\fR
-Sets Vidalia's language. [de|en|fi|fr|hu|it|nl|pl|ru|zh-cn]
+Sets Vidalia's language. [bg|de|en|fi|fr|hu|it|nl|pl|ru|zh-cn]
 
 .SH SEE ALSO
 .BR tor (1)
