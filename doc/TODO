@@ -11,7 +11,8 @@ Near-future Goals:
   * Create Vidalia packages for Red Hat and Debian
   * Make our ./configure smart enough to determine if the user has a release
     or debug version of Qt and link to the correct one, instead of always just
-    assuming the debug library is present.
+    assuming the debug library is present. It should also determine whether
+    the version of Qt in the user's $PATH is recent enough or not.
 
 
 Pie-in-the-sky Goals:
