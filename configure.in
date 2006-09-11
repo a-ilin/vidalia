@@ -4,13 +4,13 @@ AC_PROG_CXX
 PROFILE="Vidalia.pro"
 
 dnl Find qmake
-AC_PATH_PROG(QMAKE, qmake, qmake)
+AC_PATH_PROG(QMAKE, qmake)
 if test x$QMAKE = x; then
   AC_MSG_ERROR([qmake must be in your path])
 fi
 
 dnl Find lrelease
-AC_PATH_PROG(LRELEASE, lrelease, lrelease)
+AC_PATH_PROG(LRELEASE, lrelease)
 if test x$LRELEASE = x; then
   AC_MSG_ERROR([lrelease must be in your path])
 fi
