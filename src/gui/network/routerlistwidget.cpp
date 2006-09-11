@@ -189,6 +189,9 @@ RouterListWidget::addRouter(RouterDescriptor rd)
 
     /* Add the router item to the list and store its descriptor. */
     insertSorted(new RouterListItem(this, rd));
+  
+    /* Set our status tip to the number of servers in the list */
+    setStatusTip(tr("%1 servers total").arg(topLevelItemCount()));
   }
 }
 
