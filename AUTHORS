@@ -26,13 +26,13 @@ Contributors:
   page. He also created the router status icons we use in the network view
   dialog.
 
-  Michael Zuercher and Adam Tomjack of Zuerchertech LLC <http://www.zuerchertech.com>
-  gave us the ZImageView class which handles drawing, scrolling and zooming the map 
-  image in the Network Viewer.
+  Michael Zuercher and Adam Tomjack of Zuerchertech LLC
+  <http://www.zuerchertech.com> gave us the ZImageView class which handles
+  drawing, scrolling and zooming the map image in the Network Viewer.
 
-  Christoph Sieghart (sigi) <http://www.0x2a.at/blog/> gave us some code that converts
-  world space coordinates (latitude,longitude) into image space coordinates (x,y) which 
-  we used in the Net Viewer.
+  Christoph Sieghart (sigi) <http://www.0x2a.at/blog/> gave us some code that
+  converts world space coordinates (latitude,longitude) into image space
+  coordinates (x,y) which we used in the Net Viewer.
 
 Translators:
   kutia0001           Bulgarian
