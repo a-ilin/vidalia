@@ -58,7 +58,7 @@ AdvancedPage::~AdvancedPage()
   delete _settings;
 }
 
-/* Saves all settings for this page */
+/** Saves all settings for this page. */
 bool
 AdvancedPage::save(QString &errmsg)
 {
@@ -73,7 +73,7 @@ AdvancedPage::save(QString &errmsg)
   return true;
 }
 
-/* Loads previously saved settings */
+/** Loads previously saved settings. */
 void
 AdvancedPage::load()
 {
@@ -84,7 +84,7 @@ AdvancedPage::load()
   ui.chkUseService->setChecked(useService());
 }
 
-/** Returns if service support is enabled and functional */
+/** Returns true if service support is enabled and functional */
 bool
 AdvancedPage::useService()
 {
@@ -106,7 +106,7 @@ AdvancedPage::useService()
   return use;
 }
 
-/** Installs or removes the Tor service as necessary */
+/** Installs or removes the Tor service as necessary. */
 void
 AdvancedPage::setupService()
 {
@@ -121,7 +121,9 @@ AdvancedPage::setupService()
     if (!s->remove()) {
       VMessageBox::critical(this,
                             tr("Unable to remove Tor Service"),
-                            tr("Vidalia was unable to remove the Tor service.\nYou may need to remove it manually."), VMessageBox::Ok, VMessageBox::Cancel);
+                            tr("Vidalia was unable to remove the Tor service.\n\n"
+                               "You may need to remove it manually."), 
+                            VMessageBox::Ok, VMessageBox::Cancel);
     }
     _settings->setUseService(false);
 
@@ -134,9 +136,7 @@ AdvancedPage::setupService()
                             VMessageBox::Ok, VMessageBox::Cancel);
     }
     _settings->setUseService(s->isInstalled());
-  }
-
-  else {
+  } else {
     _settings->setUseService(checked);
   }
 
@@ -147,19 +147,16 @@ AdvancedPage::setupService()
 void
 AdvancedPage::browseTorConfig()
 {
-  /* Create a new input dialog, which allows users to create files, too */
-  QFileDialog *dialog = new QFileDialog(this, tr("Select Tor Configuration File"));
-  dialog->setDirectory(QFileInfo(ui.lineTorConfig->text()).absoluteDir());
-  dialog->selectFile(QFileInfo(ui.lineTorConfig->text()).fileName());
-  dialog->setFileMode(QFileDialog::AnyFile);
-  dialog->setReadOnly(false);
-
   /* Prompt the user to select a file or create a new one */
-  if (!dialog->exec() || dialog->selectedFiles().isEmpty()) {
+  QString filename = QFileDialog::getOpenFileName(this, 
+                       tr("Select Tor Configuration File"),
+                       QFileInfo(ui.lineTorConfig->text()).fileName());
+ 
+  /* Make sure a filename was selected */
+  if (filename.isEmpty()) {
     return;
   }
-  QString filename = QDir::convertSeparators(dialog->selectedFiles().at(0));
- 
+
   /* Check if the file exists */
   QFile torrcFile(filename);
   if (!QFileInfo(filename).exists()) {
