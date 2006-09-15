@@ -27,9 +27,12 @@
 #include <QFile>
 #include <QFileInfo>
 #include <gui/common/vmessagebox.h>
-#include <control/torservice.h>
 #include <vidalia.h>
 #include "advancedpage.h"
+
+#if defined(Q_WS_WIN)
+#include <control/torservice.h>
+#endif
 
 
 /** Constructor */
@@ -46,10 +49,10 @@ AdvancedPage::AdvancedPage(QWidget *parent)
   connect(ui.btnBrowseTorConfig, SIGNAL(clicked()), this, SLOT(browseTorConfig()));
 
   /* Hide platform specific features */
-#ifdef Q_WS_WIN
+#if defined(Q_WS_WIN)
   ui.grpPermissions->setVisible(false);
-#endif
   ui.grpService->setVisible(TorService::isSupported());
+#endif
 }
 
 /** Destructor */
@@ -68,8 +71,11 @@ AdvancedPage::save(QString &errmsg)
   _settings->setUser(ui.lineUser->text());
   _settings->setGroup(ui.lineGroup->text());
   
+#if defined(Q_WS_WIN)
   /* Install or uninstall the Tor service as necessary */
   setupService();
+#endif
+
   return true;
 }
 
@@ -81,9 +87,56 @@ AdvancedPage::load()
   ui.lineTorConfig->setText(_settings->getTorrc());
   ui.lineUser->setText(_settings->getUser());
   ui.lineGroup->setText(_settings->getGroup());
+
+#if defined(Q_WS_WIN)
   ui.chkUseService->setChecked(useService());
+#endif
 }
 
+
+
+/** Open a QFileDialog to browse for Tor config file. */
+void
+AdvancedPage::browseTorConfig()
+{
+  /* Prompt the user to select a file or create a new one */
+  QString filename = QFileDialog::getOpenFileName(this, 
+                       tr("Select Tor Configuration File"),
+                       QFileInfo(ui.lineTorConfig->text()).fileName());
+ 
+  /* Make sure a filename was selected */
+  if (filename.isEmpty()) {
+    return;
+  }
+
+  /* Check if the file exists */
+  QFile torrcFile(filename);
+  if (!QFileInfo(filename).exists()) {
+    /* The given file does not exist. Should we create it? */
+    int response = VMessageBox::question(this,
+                     tr("File Not Found"),
+                     tr("%1 does not exist. Would you like to create it?")
+                                                            .arg(filename),
+                     VMessageBox::Yes, VMessageBox::No);
+    
+    if (response == VMessageBox::No) {
+      /* Don't create it. Just bail. */
+      return;
+    }
+    /* Attempt to create the specified file */
+    if (!torrcFile.open(QIODevice::WriteOnly)) {
+      VMessageBox::warning(this,
+        tr("Failed to Create File"),
+        tr("Unable to create %1 [%2]").arg(filename)
+                                      .arg(torrcFile.errorString()),
+        VMessageBox::Ok);
+      return;
+    }
+  }
+  ui.lineTorConfig->setText(filename);
+}
+
+#if defined(Q_WS_WIN)
 /** Returns true if service support is enabled and functional */
 bool
 AdvancedPage::useService()
@@ -142,45 +195,5 @@ AdvancedPage::setupService()
 
   delete s;
 }
-
-/** Open a QFileDialog to browse for Tor config file. */
-void
-AdvancedPage::browseTorConfig()
-{
-  /* Prompt the user to select a file or create a new one */
-  QString filename = QFileDialog::getOpenFileName(this, 
-                       tr("Select Tor Configuration File"),
-                       QFileInfo(ui.lineTorConfig->text()).fileName());
- 
-  /* Make sure a filename was selected */
-  if (filename.isEmpty()) {
-    return;
-  }
-
-  /* Check if the file exists */
-  QFile torrcFile(filename);
-  if (!QFileInfo(filename).exists()) {
-    /* The given file does not exist. Should we create it? */
-    int response = VMessageBox::question(this,
-                     tr("File Not Found"),
-                     tr("%1 does not exist. Would you like to create it?")
-                                                            .arg(filename),
-                     VMessageBox::Yes, VMessageBox::No);
-    
-    if (response == VMessageBox::No) {
-      /* Don't create it. Just bail. */
-      return;
-    }
-    /* Attempt to create the specified file */
-    if (!torrcFile.open(QIODevice::WriteOnly)) {
-      VMessageBox::warning(this,
-        tr("Failed to Create File"),
-        tr("Unable to create %1 [%2]").arg(filename)
-                                      .arg(torrcFile.errorString()),
-        VMessageBox::Ok);
-      return;
-    }
-  }
-  ui.lineTorConfig->setText(filename);
-}
+#endif
 

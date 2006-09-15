@@ -541,6 +541,9 @@
        </widget>
       </item>
      </layout>
+     <property name="visible" >
+      <bool>false</bool>
+     </property>
     </widget>
    </item>
    <item>

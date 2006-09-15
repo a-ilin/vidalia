@@ -33,6 +33,7 @@
 #include "configpage.h"
 #include "ui_advancedpage.h"
 
+
 class AdvancedPage : public ConfigPage 
 {
   Q_OBJECT
@@ -52,10 +53,12 @@ private slots:
   void browseTorConfig();
   
 private:
+#if defined(Q_WS_WIN)
   /** Returns if service support is enabled and functional */
   bool useService();
   /** Installs or removes the Tor service as necessary */
   void setupService();
+#endif
 
   /** A TorSettings object used to save/load settings */
   TorSettings* _settings;
