@@ -281,7 +281,7 @@ TorMapWidget::zoomToFit()
     float zoomLevel = 1.0 - qMax(rect.height()/float(MAP_HEIGHT),
                                  rect.width()/float(MAP_WIDTH));
     
-    zoom(rect.center().toPoint(), zoomLevel+0.1);
+    zoom(rect.center().toPoint(), zoomLevel+0.2);
   }
 }
 
