@@ -113,11 +113,6 @@ RouterDescriptorView::display(QList<RouterDescriptor> rdlist)
     html.append(trow(tcol(b(tr("IP Address:"))) + tcol(rd.ip())));
     html.append(trow(tcol(b(tr("Platform:")))   + tcol(rd.platform())));
 
-    /* If there is contact information, then show it */
-    if (!rd.contact().isEmpty()) {
-      html.append(trow(tcol(b(tr("Contact:")))    + tcol(escape(rd.contact()))));
-    }
-
     /* If the router is online, then show the uptime and bandwidth stats. */
     if (!rd.offline()) {
       html.append(trow(tcol(b(tr("Bandwidth:")))  + 
