@@ -27,6 +27,7 @@
 #ifndef _ROUTERLISTITEM_H
 #define _ROUTERLISTITEM_H
 
+#include <QCoreApplication>
 #include <QTreeWidgetItem>
 #include <QString>
 #include <control/routerdescriptor.h>
@@ -38,6 +39,8 @@ class RouterListWidget;
 
 class RouterListItem : public QTreeWidgetItem
 {
+  Q_DECLARE_TR_FUNCTIONS(RouterListItem)
+
 public:
   /** Default constructor. */
   RouterListItem(RouterListWidget *list, RouterDescriptor rd);

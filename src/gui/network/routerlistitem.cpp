@@ -86,6 +86,9 @@ RouterListItem::update(RouterDescriptor rd)
   /* Make the new information visible */
   setIcon(STATUS_COLUMN, statusIcon);
   setText(NAME_COLUMN, _rd->name());
+  
+  /* Set the tooltip */
+  setToolTip(STATUS_COLUMN, tr("%1 KB/s").arg(_statusValue/1024));
 }
 
 /** Sets the location information for this item's router descriptor. */
