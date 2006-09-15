@@ -128,16 +128,17 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Vidalia was unable to remove the Tor service.
-You may need to remove it manually.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Unable to install Tor Service</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <source>Vidalia was unable to install the Tor service.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Vidalia was unable to remove the Tor service.
+
+You may need to remove it manually.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1207,6 +1208,13 @@ ontwikkelaars.</translation>
     </message>
 </context>
 <context>
+    <name>RouterListItem</name>
+    <message>
+        <source>%1 KB/s</source>
+        <translation type="unfinished">%1 KB/s</translation>
+    </message>
+</context>
+<context>
     <name>RouterListWidget</name>
     <message>
         <source>Status</source>
@@ -1214,7 +1222,15 @@ ontwikkelaars.</translation>
     </message>
     <message>
         <source>Router</source>
-        <translation>Router</translation>
+        <translation type="obsolete">Router</translation>
+    </message>
+    <message>
+        <source>Server</source>
+        <translation type="unfinished">Server</translation>
+    </message>
+    <message>
+        <source>%1 servers total</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
