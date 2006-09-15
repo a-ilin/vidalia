@@ -31,21 +31,21 @@
     <Topic id="severities" name="Viestien tärkeys" html="log.html" section="severities"/>
     <Topic id="logfile" name="Tapahtumien tallennus" html="log.html" section="tofile"/>
   </Topic>
-  <Topic id="netview" name="Verkostokartta" html="netview.html">
+  <Topic id="netview" name="Verkkokartta" html="netview.html">
     <Topic id="overview" name="Yleistä" html="netview.html" section="overview"/>
-    <Topic id="netmap" name="Verkostokartta" html="netview.html" section="netmap"/>
-    <Topic id="status" name="Reitittimien tila" html="netview.html" section="status"/>
-    <Topic id="details" name="Reitittimien tiedot" html="netview.html" section="details"/>
+    <Topic id="netmap" name="Verkkokartta" html="netview.html" section="netmap"/>
+    <Topic id="status" name="Palvelimien tila" html="netview.html" section="status"/>
+    <Topic id="details" name="Palvelimien tiedot" html="netview.html" section="details"/>
   </Topic>
   <Topic id="config" name="Tor-ohjelman asetukset" html="config.html">
-    <Topic id="general" name="Yleiset asetukset" html="config.html" section="general"/>
+    <Topic id="general" name="Yleiset-asetukset" html="config.html" section="general"/>
     <Topic id="server" name="Palvelinasetukset" html="config.html" section="server"/>
     <Topic id="advanced" name="Lisäasetukset" html="config.html" section="advanced"/>
   </Topic>
   <Topic id="server" name="Palvelimen käyttö" html="server.html">
     <Topic id="basic" name="Perusasennus" html="server.html" section="basic"/>
-    <Topic id="bandwidth" name="Nopeuden rajoittaminen" html="server.html" section="bandwidth"/>
-    <Topic id="exitpolicy" name="Poistumisperiaatteet" html="server.html" section="exitpolicy"/>
+    <Topic id="bandwidth" name="Nopeudenrajoittaminen" html="server.html" section="bandwidth"/>
+    <Topic id="exitpolicy" name="Poistumiskäytännöt" html="server.html" section="exitpolicy"/>
   </Topic>
   <Topic id="troubleshooting" name="Vianetsintä" html="troubleshooting.html">
     <Topic id="start" name="Tor ei käynnisty" html="troubleshooting.html" section="start"/>

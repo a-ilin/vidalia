@@ -125,33 +125,35 @@
     </message>
     <message>
         <source>Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Palvelu</translation>
     </message>
     <message>
         <source>Enable this if you wish to run Tor as a Windows service</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitsemalla tämä, Tor-ohjelmaa suoritetaan Windowssin palveluna</translation>
     </message>
     <message>
         <source>Run Tor in the background as a Windows service</source>
-        <translation type="unfinished"></translation>
+        <translation>Suorita Tor taustalla Windowssin palveluna</translation>
     </message>
     <message>
         <source>Unable to remove Tor Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-palvelun poisto epäonnistui</translation>
     </message>
     <message>
         <source>Unable to install Tor Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-palvelun asennus epäonnistui</translation>
     </message>
     <message>
         <source>Vidalia was unable to install the Tor service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia epäonnistui Tor-palvelun asennuksessa.</translation>
     </message>
     <message>
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia epäonnistui Tor-palvelun poistamisessa.
+
+Tor-palvelu täytyy poistaa käsin.</translation>
     </message>
 </context>
 <context>
@@ -766,7 +768,7 @@ Olkaapa hyvä ja päivitä uudempaan Tor-ohjelmaan.</translation>
     </message>
     <message>
         <source>View Network</source>
-        <translation type="obsolete">Näytä verkosto</translation>
+        <translation type="obsolete">Näytä verkko</translation>
     </message>
     <message>
         <source>Ctrl+N</source>
@@ -814,7 +816,7 @@ Ole hyvä ja tarkista tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen pysä
     </message>
     <message>
         <source>Network Map</source>
-        <translation>Verkostokartta</translation>
+        <translation>Verkkokartta</translation>
     </message>
     <message>
         <source>Settings</source>
@@ -1019,13 +1021,13 @@ Ole hyvä ja tarkista tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen pysä
         <source>Messages that appear when something has 
 gone very wrong and Tor cannot proceed.</source>
         <translation>Tapahtumat, jotka tapahtuvat kun
-jokin on mennyt pahasti pieleen eikä Tor pysty jatkaa.</translation>
+jotain on pahasti mennyt pieleen eikä Tor pysty jatkaa.</translation>
     </message>
     <message>
         <source>Messages that only appear when 
 something has gone wrong with Tor.</source>
         <translation>Tapahtumat, jotka tapahtuvat kun
-jokin on menneen pieleen Tor-ohjelman kanssa.</translation>
+jotain on mennyt pieleen Tor-ohjelman kanssa.</translation>
     </message>
     <message>
         <source>Messages that appear infrequently 
@@ -1143,14 +1145,14 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     </message>
     <message>
         <source>F1</source>
-        <translation type="unfinished"></translation>
+        <translation>F1</translation>
     </message>
 </context>
 <context>
     <name>NetViewer</name>
     <message>
         <source>View Tor Network</source>
-        <translation>Näytä Tor-verkosto</translation>
+        <translation>Näytä Tor-verkko</translation>
     </message>
     <message>
         <source>Status</source>
@@ -1198,23 +1200,23 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     </message>
     <message>
         <source>Show network map help.</source>
-        <translation>Näytä verkostokarttaohje</translation>
+        <translation>Näytä verkkokartan ohje.</translation>
     </message>
     <message>
         <source>Show the network map help.</source>
-        <translation>Näytä verkostokarttaohje</translation>
+        <translation>Näytä verkkokartan ohje.</translation>
     </message>
     <message>
         <source>Close the network map.</source>
-        <translation>Sulje verkostokartta</translation>
+        <translation>Sulje verkkokartta.</translation>
     </message>
     <message>
         <source>Zoom in on the network map.</source>
-        <translation>Lähennä verkostokarttaa</translation>
+        <translation>Lähennä verkkokarttaa.</translation>
     </message>
     <message>
         <source>Zoom out on the network map.</source>
-        <translation>Loitonna verkostokarttaa</translation>
+        <translation>Loitonna verkkokarttaa.</translation>
     </message>
     <message>
         <source>All subsequent connections will appear to be different than your old connections.</source>
@@ -1234,38 +1236,38 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     </message>
     <message>
         <source>Ctrl+R</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
         <source>F1</source>
-        <translation type="unfinished"></translation>
+        <translation>F1</translation>
     </message>
     <message>
         <source>Esc</source>
-        <translation type="unfinished">Esc</translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished">-</translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>Ctrl+Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Z</translation>
     </message>
 </context>
 <context>
     <name>Policy</name>
     <message>
         <source>accept</source>
-        <translation>hyväksy</translation>
+        <translation>salli</translation>
     </message>
     <message>
         <source>reject</source>
-        <translation>hylkää</translation>
+        <translation>estä</translation>
     </message>
 </context>
 <context>
@@ -1322,7 +1324,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <name>RouterListItem</name>
     <message>
         <source>%1 KB/s</source>
-        <translation type="unfinished">%1 Kt/s</translation>
+        <translation>%1 Kt/s</translation>
     </message>
 </context>
 <context>
@@ -1337,11 +1339,11 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     </message>
     <message>
         <source>Server</source>
-        <translation type="unfinished">Palvelin</translation>
+        <translation>Palvelin</translation>
     </message>
     <message>
         <source>%1 servers total</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 palvelinta</translation>
     </message>
 </context>
 <context>
@@ -1429,7 +1431,7 @@ problem with your server</source>
     </message>
     <message>
         <source>Exit Policies</source>
-        <translation>Poistumisperiaatteet</translation>
+        <translation>Poistumiskäytännöt</translation>
     </message>
     <message>
         <source>IP Address:</source>
@@ -1437,7 +1439,7 @@ problem with your server</source>
     </message>
     <message>
         <source>IP address for new exit policy</source>
-        <translation>IP-osoite uudelle poistumisperiaatteelle</translation>
+        <translation>IP-osoite uudelle poistumiskäytännölle</translation>
     </message>
     <message>
         <source>/</source>
@@ -1449,7 +1451,7 @@ problem with your server</source>
     </message>
     <message>
         <source>IP address mask for new exit policy</source>
-        <translation>Verkkopeitteen osoite uusille poistumisperiaatteelle</translation>
+        <translation>Verkkopeitteen osoite uusille poistumiskäytännölle</translation>
     </message>
     <message>
         <source>:</source>
@@ -1461,7 +1463,7 @@ problem with your server</source>
     </message>
     <message>
         <source>Starting port number for new exit policy</source>
-        <translation>Alkamisportti uusille poistumisperiaatteelle</translation>
+        <translation>Alkamisportti uusille poistumiskäytännölle</translation>
     </message>
     <message>
         <source>-</source>
@@ -1469,7 +1471,7 @@ problem with your server</source>
     </message>
     <message>
         <source>Ending port number for new exit policy</source>
-        <translation>Viimeiset portit uusille poistumisperiaatteelle</translation>
+        <translation>Viimeiset portit uusille poistumiskäytännölle</translation>
     </message>
     <message>
         <source>Action:</source>
@@ -1477,7 +1479,7 @@ problem with your server</source>
     </message>
     <message>
         <source>Action for new exit policy</source>
-        <translation>Toiminta uusille poistumisperiaatteelle</translation>
+        <translation>Toiminta uusille poistumiskäytännölle</translation>
     </message>
     <message>
         <source>Action</source>
@@ -1493,23 +1495,23 @@ problem with your server</source>
     </message>
     <message>
         <source>Add the new exit policy</source>
-        <translation>Lisää uusi poistumisperiaate</translation>
+        <translation>Lisää uusi poistumiskäytäntö</translation>
     </message>
     <message>
         <source>Increase the priority of the selected exit policy</source>
-        <translation>Nosta prioriteettia valitusta poistumisperiaatteesta</translation>
+        <translation>Nosta prioriteettia valitusta poistumiskäytännöstä</translation>
     </message>
     <message>
         <source>Decrease the priority of the selected exit policy</source>
-        <translation>Alenna prioriteettia valitusta toimintaperiaatteesta</translation>
+        <translation>Alenna prioriteettia valitusta poistumiskäytännöstä</translation>
     </message>
     <message>
         <source>Remove the selected exit policy</source>
-        <translation>Poista valittu poistumisperiaate</translation>
+        <translation>Poista valittu poistumiskäytäntö</translation>
     </message>
     <message>
         <source>Show help topic on exit policies</source>
-        <translation>Näytä poistumisperiaatteista ohje</translation>
+        <translation>Näytä poistumiskäytännöistä ohje</translation>
     </message>
     <message>
         <source>You must specify at least a server nickname and port.</source>
@@ -1556,11 +1558,11 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     </message>
     <message>
         <source>Bandwidth Rate Limits</source>
-        <translation>Yhteysnopeuden rajoitus</translation>
+        <translation>Nopeudenrajoittaminen</translation>
     </message>
     <message>
         <source>Long-term average bandwidth limit</source>
-        <translation>Pitkäaikainen keskimäärinen nopeus</translation>
+        <translation>Keskimäärinen pitkäaikainen nopeus</translation>
     </message>
     <message>
         <source>Average Rate</source>
@@ -1580,11 +1582,11 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     </message>
     <message>
         <source>Show help topic on bandwidth rate limits</source>
-        <translation>Avaa yhteysnopeuksien rajoittamisesta ohje</translation>
+        <translation>Avaa nopeuksienrajoittamisesta ohje</translation>
     </message>
     <message>
         <source>Only allow connections to other Tor servers (non-exit node)</source>
-        <translation>Salli yhteyksiä vain muihin Tor-palvelimiin (ei poistumisreititin)</translation>
+        <translation>Salli yhteyksiä vain muihin Tor-palvelimiin (välikäsi)</translation>
     </message>
 </context>
 <context>
@@ -1661,15 +1663,15 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     <name>TorService</name>
     <message>
         <source>Services not supported on this platform.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tällä alustalla ei tueta palveluita.</translation>
     </message>
     <message>
         <source>Unable to install the Tor service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-palvelun asennus epäonnistui.</translation>
     </message>
     <message>
         <source>Unable to start Tor service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-palvelun käynnistyminen epäonnistui.</translation>
     </message>
 </context>
 <context>
