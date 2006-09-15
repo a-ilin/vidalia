@@ -36,8 +36,11 @@ RouterListWidget::RouterListWidget(QWidget *parent)
   /* Create and initialize columns */
   setHeaderLabels(QStringList() << tr("Status") << tr("Server"));
 
-  /* Set the column size and sort order for the router list. */
-  sortByColumn(NameColumn);
+  /* Set the column size and sort order for the router list. We call
+   * sortByColumn() twice so that the highest bandwidth servers are at the top
+   * instead of the bottom. */
+  sortByColumn(StatusColumn);
+  sortByColumn(StatusColumn);
 
   /* Find out when the selected item has changed. */
   connect(this, SIGNAL(itemSelectionChanged()), 
