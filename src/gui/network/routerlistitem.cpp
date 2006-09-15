@@ -87,9 +87,15 @@ RouterListItem::update(RouterDescriptor rd)
   setIcon(STATUS_COLUMN, statusIcon);
   setText(NAME_COLUMN, _rd->name());
   
-  /* Set the tooltip */
-  setToolTip(STATUS_COLUMN, tr("%1 KB/s").arg(_statusValue/1024));
+  /* Set the tooltips */
   setToolTip(NAME_COLUMN, QString("%1").arg(_rd->platform()));
+  if (_rd->hibernating()) {
+    setToolTip(STATUS_COLUMN, tr("Hibernating"));
+  } else if (_rd->offline()) {
+    setToolTip(STATUS_COLUMN, tr("Offline"));
+  } else {
+    setToolTip(STATUS_COLUMN, tr("%1 KB/s").arg(_statusValue/1024));
+  }
 }
 
 /** Sets the location information for this item's router descriptor. */
