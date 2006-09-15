@@ -89,6 +89,7 @@ RouterListItem::update(RouterDescriptor rd)
   
   /* Set the tooltip */
   setToolTip(STATUS_COLUMN, tr("%1 KB/s").arg(_statusValue/1024));
+  setToolTip(NAME_COLUMN, QString("%1").arg(_rd->platform()));
 }
 
 /** Sets the location information for this item's router descriptor. */
