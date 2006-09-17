@@ -27,6 +27,7 @@
 #ifndef _ROUTERDESCRIPTOR_H
 #define _ROUTERDESCRIPTOR_H
 
+#include <QCoreApplication>
 #include <QStringList>
 #include <QDateTime>
 #include <QList>
@@ -34,6 +35,8 @@
 
 class RouterDescriptor
 {
+  Q_DECLARE_TR_FUNCTIONS(RouterDescriptor)
+
 public:
   /** Possible router states. */
   enum RouterStatus {

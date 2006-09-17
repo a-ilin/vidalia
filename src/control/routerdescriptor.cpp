@@ -82,10 +82,10 @@ QString
 RouterDescriptor::status()
 {
   if (_status == Online) {
-    return QT_TR_NOOP("Online");
+    return tr("Online");
   } else if (_status == Hibernating) {
-    return QT_TR_NOOP("Hibernating");
+    return tr("Hibernating");
   }
-  return QT_TR_NOOP("Offline");
+  return tr("Offline");
 }
 
