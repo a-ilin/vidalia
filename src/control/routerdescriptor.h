@@ -44,13 +44,9 @@ public:
 
   /** Default constructor. */
   RouterDescriptor() {}
-  /** Constructor. */
-  RouterDescriptor(QString id); 
   /** Constructor. */ 
-  RouterDescriptor(QString id, QStringList descriptor);
+  RouterDescriptor(QStringList descriptor);
   
-  /** Returns the entire, unparsed router descriptor. */
-  QString descriptor() { return _descriptor.join("\n"); }
   /** Returns the router's name. */
   QString name() const { return _name; }
   /** Returns the router's IP address. */
@@ -94,13 +90,14 @@ public:
   QString location() const { return _location; }
   /** Sets geographic location information for this router. */
   void setLocation(QString location) { _location = location; }
-  
+  /** Sets the descriptors status to Offline if <b>offline</b> is true. */
+  void setOffline(bool offline) { _status = (offline ? Offline : Online); }
+
 private:
   /** Parses this router's descriptor for relevant information. */
-  void parseDescriptor();
+  void parseDescriptor(QStringList descriptor);
 
   RouterStatus _status;    /**< Availability status of this router. */
-  QStringList _descriptor; /**< The router descriptor, in all its glory. */
   QString _id;             /**< Router's descriptor ID. */
   QString _name;           /**< The router's name. */
   QString _fingerprint;    /**< Router's fingerprint. */

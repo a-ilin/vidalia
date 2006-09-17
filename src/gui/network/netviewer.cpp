@@ -222,9 +222,11 @@ NetViewer::help()
 void
 NetViewer::loadDescriptors(QStringList ids)
 {
-  foreach (QString id, ids) {
+  /* Get descriptors for all the given IDs */
+  QList<RouterDescriptor> rds = _torControl->getRouterDescriptors(ids);
+  
+  foreach (RouterDescriptor rd, rds) {
     /* Load the router descriptor and add it to the router list. */
-    RouterDescriptor rd = _torControl->getRouterDescriptor(id);
     if (!rd.isEmpty()) {
       ui.treeRouterList->addRouter(rd);
 
@@ -233,13 +235,6 @@ NetViewer::loadDescriptors(QStringList ids)
       if (!_resolveQueue.contains(ip)) {
         _resolveQueue << ip;
       }
-    }
-
-    /* Process pending events for a bit so the GUI remains responsive */
-    Vidalia::processEvents(QEventLoop::AllEvents, MAX_EVENTS_TIMEOUT);
-    /* If the connection broke, then bail */
-    if (!_torControl->isConnected()) {
-      return;
     }
   }
 

@@ -105,6 +105,8 @@ public:
 
   /** Gets a descriptor for the given router ID. */
   RouterDescriptor getRouterDescriptor(QString id, QString *errmsg = 0);
+  /** Gets descriptors for the given list of router IDs. */
+  QList<RouterDescriptor> getRouterDescriptors(QStringList ids, QString *errmsg = 0);
   /** Gets a list of descriptors for all routers Tor knows about. */
   QList<RouterDescriptor> getRouterList(QString *errmsg = 0);
   /** Gets a list of router IDs for all routers Tor knows about. */

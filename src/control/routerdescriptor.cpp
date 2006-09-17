@@ -32,26 +32,16 @@
 /** Constructor. Just assigns the ID and determines whether the router is
  * responsive or not based on the presence of a "!" at the start of the ID.
  * See tor-spec.txt for details. */
-RouterDescriptor::RouterDescriptor(QString id)
+RouterDescriptor::RouterDescriptor(QStringList descriptor)
 {
-  _id = id.mid(id.indexOf("!")+1);
-  _status = (id.startsWith("!") ? Offline : Online);
-}
-
-/** Constructor. Parses the given router descriptor. */
-RouterDescriptor::RouterDescriptor(QString id, QStringList descriptor)
-{
-  _id = id.mid(id.indexOf("!")+1);
-  _descriptor = descriptor;
-  _status = (id.startsWith("!") ? Offline : Online);
-  parseDescriptor();
+  parseDescriptor(descriptor);
 }
 
 /** Parses this router's descriptor for relevant information. */
 void
-RouterDescriptor::parseDescriptor()
+RouterDescriptor::parseDescriptor(QStringList descriptor)
 {
-  foreach (QString line, _descriptor) {
+  foreach (QString line, descriptor) {
     if (line.startsWith("router ")) {
       QStringList parts = line.remove(0,qstrlen("router ")).split(" ");
       _name    = parts.at(0);
@@ -66,8 +56,10 @@ RouterDescriptor::parseDescriptor()
                                "yyyy-MM-dd HH:mm:ss");
     } else if (line.startsWith("opt fingerprint ")) {
       _fingerprint = line.remove(0,qstrlen("opt fingerprint "));
+      _id = _fingerprint.remove(" ");
     } else if (line.startsWith("fingerprint ")) {
       _fingerprint = line.remove(0,qstrlen("fingerprint "));
+      _id = _fingerprint.remove(" ");
     } else if (line.startsWith("uptime ")) {
       _uptime = (quint64)line.remove(0,qstrlen("uptime ")).toULongLong();
     } else if (line.startsWith("bandwidth ")) {

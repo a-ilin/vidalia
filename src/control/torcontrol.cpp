@@ -29,6 +29,7 @@
 #include <util/net.h>
 #include "torcontrol.h"
 
+
 /** Default constructor */
 TorControl::TorControl()
 {
@@ -531,19 +532,59 @@ TorControl::resetConf(QString key, QString *errmsg)
   return resetConf(QStringList() << key, errmsg);
 }
 
-/** Gets the descriptor for the specified ID. If the ID has a "!" before it,
- * indicating that the associated router is unresponsive, it will be stripped
- * first. */
+/** Gets the descriptor for the specified ID. */
 RouterDescriptor
 TorControl::getRouterDescriptor(QString id, QString *errmsg)
 {
-  ControlCommand cmd("GETINFO", "desc/id/" + id.mid(id.indexOf("!")+1));
-  ControlReply reply;
- 
-  if (send(cmd, reply, errmsg)) {
-    return RouterDescriptor(id, reply.getData());
+  QList<RouterDescriptor> rdlist;
+  RouterDescriptor rd;
+  
+  rdlist = getRouterDescriptors(QStringList() << id, errmsg);
+  if (!rdlist.isEmpty()) {
+    rd = (RouterDescriptor)rdlist.takeFirst();
+    return rd;
   }
-  return RouterDescriptor(id);
+  return RouterDescriptor();
+}
+
+/** Gets router descriptors for all IDs in <b>idlist</b>. */
+QList<RouterDescriptor>
+TorControl::getRouterDescriptors(QStringList idlist, QString *errmsg)
+{
+  ControlCommand cmd("GETINFO");
+  ControlReply reply;
+  QHash<QString,bool> offline;
+  QList<RouterDescriptor> rdlist;
+  
+  /* If there are no IDs in the list, then return now. */
+  if (idlist.isEmpty()) {
+    return QList<RouterDescriptor>();
+  }
+  
+  /* Build up the the getinfo arguments fromthe list of IDs */
+  foreach (QString id, idlist) {
+    if (id.startsWith("!")) {
+      /* The ! means this router is offline. Save a list of the offline
+       * routers for easy lookup after we get all descriptors from Tor */
+      id = id.remove("!");
+      offline.insert(id, true);
+    }
+    cmd.addArgument("desc/id/"+ id);
+  }
+  
+  /* Request the list of router descriptors */
+  if (send(cmd, reply, errmsg)) {
+    foreach (ReplyLine line, reply.getLines()) {
+      /* Check if we got a "250 OK" */
+      if (line.getStatus() == "250") {
+        /* Parse the router descriptor data */
+        RouterDescriptor rd(line.getData());
+        rd.setOffline(!offline.isEmpty() && offline.contains(rd.id()));
+        rdlist << rd;
+      }
+    }
+  }
+  return rdlist;
 }
 
 /** Gets a list of RouterDescriptor objects for all routers that Tor currently
@@ -551,14 +592,10 @@ TorControl::getRouterDescriptor(QString id, QString *errmsg)
 QList<RouterDescriptor>
 TorControl::getRouterList(QString *errmsg)
 {
-  QList<RouterDescriptor> descList;
+  /* Get a list of all router IDs Tor currently know about */
   QStringList idList = getRouterIDList(errmsg);
-
-  /* Get the descriptor for each ID and add it to the list */
-  foreach (QString id, idList) {
-    descList << getRouterDescriptor(id, errmsg);
-  }
-  return descList;
+  /* Get descriptors for each of those routers */
+  return getRouterDescriptors(idList, errmsg);
 }
 
 /** Gets a list of router IDs for all routers Tor knows about. */
@@ -582,7 +619,7 @@ TorControl::getRouterIDList(QString *errmsg)
       if (router.startsWith("!") && !id.startsWith("!")) {
         id.prepend("!");
       }
-      /* Get the descriptor for this router ID and add it to the list. */
+      /* Add this router ID to the list. */
       idList << id;
     }
   }
