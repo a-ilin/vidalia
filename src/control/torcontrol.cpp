@@ -268,10 +268,21 @@ void
 TorControl::onDisconnected()
 {
   if (_torProcess) {
+    /* If we're running a Tor process, then start reading logs from stdout
+     * again, in case our control connection just died but Tor is still
+     * running. In this case, there may be relevant information in the logs. */ 
     _torProcess->openStdout();
   }
+
+  /* Let interested parties know we lost our control connection */
   emit disconnected();
   emit connected(false);
+  
+  if (!isVidaliaRunningTor()) {
+    /* If we're not running our own Tor, then we interpret the closing of 
+     * our control connection to mean that Tor stopped. */
+    emit stopped(0, QProcess::NormalExit);
+  }
 }
 
 /** Check if the control socket is connected */
