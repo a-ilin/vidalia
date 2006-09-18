@@ -129,7 +129,6 @@ win32_registry_set_key_value(QString keyLocation, QString keyName, QString keyVa
 void
 win32_registry_remove_key(QString keyLocation, QString keyName)
 {
-  
   HKEY key;
   
   /* Open the key for writing (opens new key if it doesn't exist */
