@@ -1,6 +1,9 @@
 <RCC>
     <qresource prefix="/docs">
         <file>short_license.txt</file>
+        <file>vidalia_license.txt</file>
+        <file>tor_license.txt</file>
+        <file>qt_license.txt</file>
     </qresource>
     <qresource prefix="/images">
         <file>16x16/applications-internet.png</file>
