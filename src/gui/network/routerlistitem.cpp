@@ -67,9 +67,11 @@ RouterListItem::update(RouterDescriptor rd)
   if (_rd->offline()) {
     _statusValue = -1;
     statusIcon = QIcon(IMG_NODE_OFFLINE);
+    setToolTip(STATUS_COLUMN, tr("Offline"));
   } else if (_rd->hibernating()) {
     _statusValue = 0;
     statusIcon = QIcon(IMG_NODE_SLEEPING);
+    setToolTip(STATUS_COLUMN, tr("Hibernating"));
   } else {
     _statusValue = (qint64)_rd->observedBandwidth();
     if (_statusValue >= 400*1024) {
@@ -81,21 +83,13 @@ RouterListItem::update(RouterDescriptor rd)
     } else {
       statusIcon = QIcon(IMG_NODE_NO_BW);
     }
+    setToolTip(STATUS_COLUMN, tr("%1 KB/s").arg(_statusValue/1024));
   }
   
   /* Make the new information visible */
   setIcon(STATUS_COLUMN, statusIcon);
   setText(NAME_COLUMN, _rd->name());
-  
-  /* Set the tooltips */
-  setToolTip(NAME_COLUMN, QString("%1").arg(_rd->platform()));
-  if (_rd->hibernating()) {
-    setToolTip(STATUS_COLUMN, tr("Hibernating"));
-  } else if (_rd->offline()) {
-    setToolTip(STATUS_COLUMN, tr("Offline"));
-  } else {
-    setToolTip(STATUS_COLUMN, tr("%1 KB/s").arg(_statusValue/1024));
-  }
+  setToolTip(NAME_COLUMN, QString(_rd->name() + "\r\n" + _rd->platform()));
 }
 
 /** Sets the location information for this item's router descriptor. */
