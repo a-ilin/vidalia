@@ -36,12 +36,9 @@ SOURCES += $$PWD/net.cpp \
            $$PWD/process.cpp
 
 win32 {
-    HEADERS += $$PWD/registry.h \
-               $$PWD/win32.h
-    SOURCES += $$PWD/registry.cpp \
-               $$PWD/win32.cpp
+    HEADERS += $$PWD/win32.h
+    SOURCES += $$PWD/win32.cpp
 }
 
 include($$PWD/geoip/geoip.pri)
-
 

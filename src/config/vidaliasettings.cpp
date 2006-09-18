@@ -32,7 +32,6 @@
 #include "vidaliasettings.h"
 
 #if defined(Q_WS_WIN)
-#include <util/registry.h>
 #include <util/win32.h>
 #endif
 
@@ -123,7 +122,7 @@ bool
 VidaliaSettings::runVidaliaOnBoot()
 {
 #if defined(Q_WS_WIN)
-  if (!registry_get_key_value(STARTUP_REG_KEY, VIDALIA_REG_KEY).isEmpty()) {
+  if (!win32_registry_get_key_value(STARTUP_REG_KEY, VIDALIA_REG_KEY).isEmpty()) {
     return true;
   } else {
     return false;
@@ -140,12 +139,12 @@ VidaliaSettings::setRunVidaliaOnBoot(bool run)
 {
 #if defined(Q_WS_WIN)
   if (run) {
-    registry_set_key_value(STARTUP_REG_KEY, VIDALIA_REG_KEY,
+    win32_registry_set_key_value(STARTUP_REG_KEY, VIDALIA_REG_KEY,
         QString("\"" +
                 QDir::convertSeparators(QCoreApplication::applicationFilePath())) +
                 "\"");
   } else {
-    registry_remove_key(STARTUP_REG_KEY, VIDALIA_REG_KEY);
+    win32_registry_remove_key(STARTUP_REG_KEY, VIDALIA_REG_KEY);
   }
 #else
   /* Platforms othe rthan windows aren't supported yet */
