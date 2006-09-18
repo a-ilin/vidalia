@@ -575,8 +575,8 @@ TorControl::getRouterDescriptors(QStringList idlist, QString *errmsg)
   /* Request the list of router descriptors */
   if (send(cmd, reply, errmsg)) {
     foreach (ReplyLine line, reply.getLines()) {
-      /* Check if we got a "250 OK" */
-      if (line.getStatus() == "250") {
+      /* Check if we got a "250 OK" and descriptor data. */
+      if (line.getStatus() == "250" && !line.getData().isEmpty()) {
         /* Parse the router descriptor data */
         RouterDescriptor rd(line.getData());
         rd.setOffline(!offline.isEmpty() && offline.contains(rd.id()));
