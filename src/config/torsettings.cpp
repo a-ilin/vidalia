@@ -85,6 +85,8 @@ TorSettings::setExecutable(QString torExecutable)
   setValue(SETTING_TOR_EXECUTABLE, torExecutable);
 }
 
+/** Formats the argument name <b>name</b> with the given value <b>value</b>.
+ * If <b>value</b> contains a space, <b>value</b> will be wrapped in quotes. */
 QString
 TorSettings::formatArgument(QString name, QString value)
 {
