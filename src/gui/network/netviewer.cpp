@@ -235,6 +235,7 @@ NetViewer::loadDescriptors(QStringList ids)
       if (!_resolveQueue.contains(ip)) {
         _resolveQueue << ip;
       }
+      _resolveMap.insertMulti(rd.ip(), rd.id());
     }
   }
 
@@ -263,7 +264,7 @@ NetViewer::circuitSelected(Circuit circuit)
 
   foreach (QString router, circuit.hops()) {
     /* Try to find and select each router in the path */
-    RouterListItem *item = ui.treeRouterList->findRouterItem(router);
+    RouterListItem *item = ui.treeRouterList->findRouterByName(router);
     if (item) {
       routers.append(item->descriptor());
     }
@@ -297,15 +298,26 @@ void
 NetViewer::resolved(int id, QList<GeoIp> geoips)
 {
   Q_UNUSED(id);
-  QList<RouterListItem *> routers;
+  QString ip;
+  RouterListItem *router;
   
   foreach (GeoIp geoip, geoips) {
-    /* Do something with our awesome new information */
-    routers = ui.treeRouterList->findRouterItems(geoip.ip());
-    foreach (RouterListItem *item, routers) {
-      item->setLocation(geoip.toLocation());
-      _map->addRouter(item->name(), geoip.latitude(), geoip.longitude());
+    /* Find all routers that are at this IP address */
+    ip = geoip.ip().toString();
+    QList<QString> ids = _resolveMap.values(ip);
+
+    /* Update their geographic location information with the results of this
+     * GeoIP query. */
+    foreach (QString id, ids) {
+      router = ui.treeRouterList->findRouterById(id);
+      if (router) {
+        /* Save the location information in the descriptor */
+        router->setLocation(geoip.toLocation());
+        /* Plot the router on the map */
+        _map->addRouter(router->name(), geoip.latitude(), geoip.longitude());
+      }
     }
+    _resolveMap.remove(ip);
   }
 
   /* Update the circuit lines */

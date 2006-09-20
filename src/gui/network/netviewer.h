@@ -31,6 +31,7 @@
 #include <QStringList>
 #include <QEvent>
 #include <QTimer>
+#include <QHash>
 #include <control/torcontrol.h>
 #include <util/geoip/geoipresolver.h>
 #include <gui/common/vidaliawindow.h>
@@ -91,9 +92,11 @@ private:
   GeoIpResolver _geoip;
   /** Queue for IPs pending resolution to geographic information. */
   QList<QHostAddress> _resolveQueue;
+  /** Maps pending GeoIP requests to server IDs. */
+  QHash<QString, QString> _resolveMap;
   /** Timer used to delay GeoIP requests until we've received "a chunk" of them. */
   QTimer _resolveQueueTimer;
-
+  
   /** Qt Designer generated object **/
   Ui::NetViewer ui;
 };

@@ -28,6 +28,7 @@
 #define _ROUTERLISTWIDGET_H
 
 #include <QObject>
+#include <QHash>
 #include <QTreeWidget>
 #include <QHostAddress>
 #include <QKeyEvent>
@@ -56,10 +57,13 @@ public:
   
   /** Adds a new descriptor the list. */
   void addRouter(RouterDescriptor rd);
-  /** Finds the list item for the given router name. */
-  RouterListItem* findRouterItem(QString router);
-  /** Finds the list item or items for the given router IP. */
-  QList<RouterListItem *> findRouterItems(QHostAddress ip);
+  /** Finds the list item whose router nickname matches <b>name</b>. If more
+   * than one router exists with given name, the first match will be
+   * returned.  Returns 0 if not found. */
+  RouterListItem* findRouterByName(QString name);
+  /** Finds the list item whose key ID matches <b>id</b>. Returns 0 if not 
+   * found. */
+  RouterListItem* findRouterById(QString id);
   /** Deselects all currently selected routers. */
   void deselectAll();
 
@@ -78,8 +82,9 @@ protected:
 private:
   /** Inserts a new item into the router list, maintaining the current order.*/
   void insertSorted(RouterListItem *item);
-  /** Finds the list item for the given descriptor. */
-  RouterListItem* findItem(RouterDescriptor rd);
+
+  /** Maps a server ID to that server's list item. */
+  QHash<QString,RouterListItem*> _idmap;
 };
 
 #endif

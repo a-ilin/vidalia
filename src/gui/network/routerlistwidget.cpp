@@ -127,29 +127,24 @@ RouterListWidget::keyPressEvent(QKeyEvent *event)
   }
 }
 
-/** Finds the list item for the given descriptor. Returns 0 if not found. */
+/** Finds the list item whose key ID matches <b>id</b>. Returns 0 if not 
+ * found. */
 RouterListItem*
-RouterListWidget::findItem(RouterDescriptor rd)
+RouterListWidget::findRouterById(QString id)
 {
-  QList<QTreeWidgetItem *> list = findItems(rd.name(), 
-                                            Qt::MatchExactly, 
-                                            NameColumn);
-
-  /* Many routers can have the same name, so find a match on the ID. */
-  foreach (QTreeWidgetItem *item, list) {
-    RouterListItem *ri = (RouterListItem *)item;
-    if (ri->id() == rd.id()) {
-      return ri;
-    }
+  if (_idmap.contains(id)) {
+    return _idmap.value(id);
   }
   return 0;
 }
 
-/** Finds the list item for the given router name. Returns 0 if not found.*/
+/** Finds the list item whose router nickname matches <b>name</b>. If more 
+ * than one router exists with given name, the first match will be returned. 
+ * Returns 0 if not found. */
 RouterListItem*
-RouterListWidget::findRouterItem(QString router)
+RouterListWidget::findRouterByName(QString name)
 {
-  QList<QTreeWidgetItem *> list = findItems(router,
+  QList<QTreeWidgetItem *> list = findItems(name,
                                             Qt::MatchExactly,
                                             NameColumn);
   /* It's possible that more than one router could have the same name, but
@@ -161,38 +156,25 @@ RouterListWidget::findRouterItem(QString router)
   return 0;
 }
 
-/** Finds the list item or items for the given router IP. */
-QList<RouterListItem *>
-RouterListWidget::findRouterItems(QHostAddress ip)
-{
-  RouterListItem *item;
-  QList<RouterListItem *> items;
-  
-  int itemCount = topLevelItemCount();
-  for (int i = 0; i < itemCount; i++) {
-    item = (RouterListItem *)topLevelItem(i);
-    if (ip.toString() == item->descriptor().ip()) {
-      items << item;
-    }
-  }
-  return items;
-}
-
 /** Adds a router descriptor to the list. */
 void
 RouterListWidget::addRouter(RouterDescriptor rd)
 {
-  if (!rd.name().isEmpty()) {
-    RouterListItem *item = findItem(rd);
+  QString id = rd.id();
+  if (!id.isEmpty()) {
+    RouterListItem *item = findRouterById(id);
     if (item) {
       /* This is an updated descriptor, so remove the old item and we'll 
        * add a new, updated item. */
       delete takeTopLevelItem(indexOfTopLevelItem(item));
+      _idmap.remove(id);
     }
 
     /* Add the router item to the list and store its descriptor. */
-    insertSorted(new RouterListItem(this, rd));
-  
+    item = new RouterListItem(this, rd);
+    insertSorted(item);
+    _idmap.insert(id, item);
+
     /* Set our status tip to the number of servers in the list */
     setStatusTip(tr("%1 servers total").arg(topLevelItemCount()));
   }
