@@ -77,17 +77,25 @@ TorControl::start()
     emit started();
   } else {
     TorSettings settings;
+    
+    /* Make sure our torrc exists. If it doesn't, touch it. */
+    if (!QFile::exists(settings.getTorrc())) {
+      QFile torrc(settings.getTorrc());
+      torrc.open(QIODevice::WriteOnly);
+      torrc.close();
+    }
 
     if (TorService::isSupported() && settings.getUseService()) {
       _torService = new TorService(settings.getExecutable(),
-																	 settings.getTorrc(), this);
+                                   settings.getTorrc(), this);
 
       QObject::connect(_torService, SIGNAL(started()),
-		       this, SLOT(onStarted()), Qt::QueuedConnection);
+                       this, SLOT(onStarted()), Qt::QueuedConnection);
       QObject::connect(_torService, SIGNAL(finished()),
-		       this, SLOT(onStopped()));
+                       this, SLOT(onStopped()));
       QObject::connect(_torService, SIGNAL(startFailed(QString)),
-		       this, SLOT(onStartFailed(QString)), Qt::QueuedConnection);
+                       this, SLOT(onStartFailed(QString)), 
+                       Qt::QueuedConnection);
 
       _torService->start();
       
@@ -96,17 +104,17 @@ TorControl::start()
   
       /* Plumb the process signals */
       QObject::connect(_torProcess, SIGNAL(started()),
-		       this, SLOT(onStarted()), Qt::QueuedConnection);
+           this, SLOT(onStarted()), Qt::QueuedConnection);
       QObject::connect(_torProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
-		       this, SLOT(onStopped(int, QProcess::ExitStatus)));
+           this, SLOT(onStopped(int, QProcess::ExitStatus)));
       QObject::connect(_torProcess, SIGNAL(startFailed(QString)),
-		       this, SLOT(onStartFailed(QString)), Qt::QueuedConnection);
+           this, SLOT(onStartFailed(QString)), Qt::QueuedConnection);
       QObject::connect(_torProcess, SIGNAL(log(QString, QString)),
-		       this, SLOT(onLogStdout(QString, QString)));
+           this, SLOT(onLogStdout(QString, QString)));
   
       /* Kick off the Tor process. */
       _torProcess->start(settings.getExecutable(), 
-			 settings.getArguments());
+                         settings.getArguments());
     }
   }
 }
