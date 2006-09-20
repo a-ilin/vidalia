@@ -51,8 +51,6 @@ public:
   QString getTorrc();
   /** Sets the torrc to use when starting Tor. */
   void setTorrc(QString torrc);
-  /** Returns true if Tor uses an alternate torrc. */
-  bool usingAlternateTorrc();
   
   /** Get Tor's control interface address. */
   QHostAddress getControlAddress();
@@ -85,19 +83,9 @@ public:
   void setUseService(bool useService);
 
 private:
-  /** Returns a QMap of all currently set command-line arguments. */
-  QMap<QString, QVariant> getArgumentsMap(); 
-  /** Returns true if the given argument is set. */
-  bool hasArgument(QString arg);
-  /** Sets Tor's command-line arguments to the given list. */
-  void setArguments(QMap<QString, QVariant> args);
-  /** Sets a specific command-line argument to the given value. */
-  void setArgument(QString arg, QString value);
-  /** Unsets the given argument, removing it from Tor's command-line. */
-  void unsetArgument(QString arg);
-  /** Returns the value of the given command-line argument, or defaultValue is
-   * no value is set for the argument. */
-  QVariant getArgument(QString arg, QVariant defaultValue);
+  /** Formats the argument name <b>name</b> with the given value <b>value</b>.
+   * If <b>value</b> contains a space, <b>value</b> will be wrapped in quotes. */
+  QString formatArgument(QString name, QString value);
 };
 
 #endif

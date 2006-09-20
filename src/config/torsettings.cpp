@@ -25,16 +25,19 @@
  */
 
 #include <QDir>
+#include <vidalia.h>
 
 #include "torsettings.h"
 
 /* Tor Settings */
 #define SETTING_TOR_EXECUTABLE  "Tor/TorExecutable"
-#define SETTING_TOR_ARGUMENTS   "Tor/Arguments"
+#define SETTING_TORRC           "Tor/Torrc"
 #define SETTING_CONTROL_ADDR    "Tor/ControlAddr"
 #define SETTING_CONTROL_PORT    "Tor/ControlPort"
 #define SETTING_AUTH_TOKEN      "Tor/AuthToken"
 #define SETTING_USE_SERVICE     "Tor/UseService"
+#define SETTING_TOR_USER        "Tor/User"
+#define SETTING_TOR_GROUP       "Tor/Group"
 
 /* On win32, we need to add the .exe onto Tor's filename */
 #if defined(Q_OS_WIN32)
@@ -49,16 +52,16 @@
 #define DEFAULT_CONTROL_ADDR    "127.0.0.1"
 #define DEFAULT_CONTROL_PORT    9051
 #define DEFAULT_AUTH_TOKEN      ""
-#define DEFAULT_TORRC           ""
-#define DEFAULT_USER            ""
-#define DEFAULT_GROUP           ""
+#define DEFAULT_TORRC           (Vidalia::dataDirectory() + "/torrc")
+#define DEFAULT_TOR_USER        ""
+#define DEFAULT_TOR_GROUP       ""
 #define DEFAULT_USE_SERVICE     false
 
 /* Arguments we can pass to Tor on the command-line */
 #define TOR_ARG_CONTROL_PORT    "ControlPort"
 #define TOR_ARG_TORRC           "-f"
-#define TOR_ARG_RUN_AS_USER     "User"
-#define TOR_ARG_RUN_AS_GROUP    "Group"
+#define TOR_ARG_USER            "User"
+#define TOR_ARG_GROUP           "Group"
 
 
 /** Default constructor */
@@ -82,82 +85,52 @@ TorSettings::setExecutable(QString torExecutable)
   setValue(SETTING_TOR_EXECUTABLE, torExecutable);
 }
 
+QString
+TorSettings::formatArgument(QString name, QString value)
+{
+  if (value.indexOf(" ") >= 0) {
+    value = "\"" + value + "\"";
+  }
+  return name + " " + value;
+}
+
 /** Returns a formatted QString of all currently set command-line arguments.
  * If an argument's value contains a space, then it will be wrapped in quotes.
  * */
 QString
 TorSettings::getArguments()
-{ 
-  QMap<QString, QVariant> args = getArgumentsMap();
-  QString fmtArgs, arg;
-  foreach(QString key, args.keys()) {
-    arg = args.value(key).toString();
-    if (arg.indexOf(" ") > 0) {
-      arg = "\"" + arg + "\"";
-    }
-    fmtArgs.append(" " + key + " " + arg);
-  }
-  return fmtArgs;
-}
-
-/** Returns a QMap<arg, value> containing all arguments to be passed to Tor's
-* executable. */
-QMap<QString, QVariant>
-TorSettings::getArgumentsMap()
 {
-  QMap<QString, QVariant> args = value(SETTING_TOR_ARGUMENTS,
-                                       DEFAULT_TOR_ARGUMENTS).toMap();
-  args.insert(TOR_ARG_CONTROL_PORT, QString::number(getControlPort()));
+  QString args;
+
+  /* Add the torrc argument (if specified) */
+  QString torrc = getTorrc();
+  if (!torrc.isEmpty()) {
+    args += formatArgument(TOR_ARG_TORRC, torrc) + " ";
+  }
+  /* Add the ControlPort value */
+  quint16 controlPort = getControlPort();
+  if (controlPort) {
+    args += formatArgument(TOR_ARG_CONTROL_PORT, 
+                           QString::number(controlPort)) + " ";
+  }
+  /* Add the User argument (if specified) */
+  QString user = getUser();
+  if (!user.isEmpty()) {
+    args += formatArgument(TOR_ARG_USER, user) + " ";
+  }
+  /* Add the Group argument (if specified) */
+  QString group = getGroup();
+  if (!group.isEmpty()) {
+    args += formatArgument(TOR_ARG_GROUP, group);
+  }
   return args;
 }
 
-/** Returns true if we have a setting for the given Tor argument. */
-bool
-TorSettings::hasArgument(QString arg)
-{
-  return getArgumentsMap().contains(arg);
-}
-
-/** Set Tor arguments to the supplied arg-value map. */
-void
-TorSettings::setArguments(QMap<QString, QVariant> args)
-{
-  setValue(SETTING_TOR_ARGUMENTS, args);
-}
-
-/** Add an argument to the list of command-line arguments used when starting
-* Tor. */
-void
-TorSettings::setArgument(QString arg, QString value)
-{
-  QMap<QString, QVariant> args = getArgumentsMap();
-  args.insert(arg, value);
-  setArguments(args);
-}
-
-/** Gets the stored value for the specified argument name. If no value is set,
- * then defaultValue is returned. */
-QVariant
-TorSettings::getArgument(QString arg, QVariant defaultValue)
-{
-  return getArgumentsMap().value(arg, defaultValue);
-}
-
-/** Remove a single Tor command-line argument. */
-void
-TorSettings::unsetArgument(QString arg)
-{
-  QMap<QString, QVariant> args = getArgumentsMap();
-  args.remove(arg);
-  setArguments(args);
-}
-
-/** Returns the torrc that will be used when starting Tor. If the default
- * torrc is used, then this method returns an empty string. */
+/** Returns the torrc that will be used when starting Tor. */
 QString
 TorSettings::getTorrc()
 {
-  return getArgument(TOR_ARG_TORRC, DEFAULT_TORRC).toString();
+  return value(SETTING_TORRC, DEFAULT_TORRC).toString();
 }
 
 /** Sets the torrc that will be used when starting Tor.
@@ -166,15 +139,10 @@ TorSettings::getTorrc()
 void
 TorSettings::setTorrc(QString torrc)
 {
-  torrc.isEmpty() ? unsetArgument(TOR_ARG_TORRC)
-                  : setArgument(TOR_ARG_TORRC, torrc);
-}
-
-/** Returns true if Tor is started using an alternate torrc file. */
-bool
-TorSettings::usingAlternateTorrc()
-{
-  return hasArgument(TOR_ARG_TORRC);
+  torrc = torrc.simplified();
+  if (torrc != DEFAULT_TORRC) {
+    setValue(SETTING_TORRC, torrc);
+  }
 }
 
 /** Returns the user used when running Tor. The user is specified as an
@@ -182,7 +150,7 @@ TorSettings::usingAlternateTorrc()
 QString
 TorSettings::getUser()
 {
-  return getArgument(TOR_ARG_RUN_AS_USER, DEFAULT_USER).toString();
+  return value(SETTING_TOR_USER, DEFAULT_TOR_USER).toString();
 }
 
 /** Sets the user used when running Tor. The user is specified as an argument
@@ -190,8 +158,7 @@ TorSettings::getUser()
 void
 TorSettings::setUser(QString user)
 {
-  user.isEmpty() ? unsetArgument(TOR_ARG_RUN_AS_USER)
-                 : setArgument(TOR_ARG_RUN_AS_USER, user);
+  setValue(SETTING_TOR_USER, user);
 }
 
 /** Returns the group used when running Tor. The group is specified as an
@@ -199,7 +166,7 @@ TorSettings::setUser(QString user)
 QString
 TorSettings::getGroup()
 {
-  return getArgument(TOR_ARG_RUN_AS_GROUP, DEFAULT_GROUP).toString();
+  return value(SETTING_TOR_GROUP).toString();
 }
 
 /** Sets the group used when running Tor. The group is specified as an
@@ -207,8 +174,7 @@ TorSettings::getGroup()
 void
 TorSettings::setGroup(QString group)
 {
-  group.isEmpty() ? unsetArgument(TOR_ARG_RUN_AS_GROUP)
-                  : setArgument(TOR_ARG_RUN_AS_GROUP, group);
+  setValue(SETTING_TOR_GROUP, group);
 }
 
 /** Get the address or hostname used to connect to Tor */
@@ -272,3 +238,4 @@ TorSettings::setUseService(bool useService)
 {
   setValue(SETTING_USE_SERVICE, useService);
 }
+

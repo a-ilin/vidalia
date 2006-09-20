@@ -277,7 +277,7 @@ ServerSettings::isServerEnabled()
 {
   TorSettings settings;
   QHash<QString,QString> confValues;
-  if (_torControl->isConnected() && settings.usingAlternateTorrc()) {
+  if (_torControl->isConnected() && !changedSinceLastApply()) {
     confValues.insert(SERVER_ORPORT, "");
     confValues.insert(SERVER_NICKNAME, "");
     if (_torControl->getConf(confValues)) {
