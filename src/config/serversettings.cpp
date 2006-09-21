@@ -143,9 +143,13 @@ bool
 ServerSettings::isEmptyValue(QVariant value)
 {
   switch (value.type()) {
-    case QVariant::String: return (value.toString().isEmpty());
+    case QVariant::String: 
+      return (value.toString().isEmpty());
     case QVariant::UInt:  
-    case QVariant::Int:   return (value.toUInt() == 0);
+    case QVariant::Int:     
+      return (value.toUInt() == 0);
+    case QVariant::Invalid:
+      return true;
     default:  break;
   }
   return false;
