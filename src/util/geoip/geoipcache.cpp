@@ -28,6 +28,7 @@
 #include <QDir>
 #include <QTextStream>
 #include <util/string.h>
+#include <util/file.h>
 #include <vidalia.h>
 
 #include "geoipcache.h"
@@ -55,7 +56,7 @@ bool
 GeoIpCache::saveToDisk(QString *errmsg)
 {
   /* Make sure we have a data directory. */
-  if (!Vidalia::createDataDirectory(errmsg)) {
+  if (!create_path(Vidalia::dataDirectory())) {
     return false;
   }
   

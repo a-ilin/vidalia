@@ -252,21 +252,6 @@ Vidalia::defaultDataDirectory()
 #endif
 }
 
-/** Creates Vidalia's data directory, if it doesn't already exist. */
-bool
-Vidalia::createDataDirectory(QString *errmsg)
-{
-  QDir datadir(dataDirectory());
-  if (!datadir.exists()) {
-    QString path = datadir.absolutePath();
-    if (!datadir.mkpath(path)) {
-      return err(errmsg, 
-                 QString("Could not create data directory: %1").arg(path));
-    }
-  }
-  return true;
-}
-
 /** Returns the location of Vidalia's pid file. */
 QString
 Vidalia::pidFile()

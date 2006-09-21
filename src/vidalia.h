@@ -82,8 +82,6 @@ public:
   static QString dataDirectory();
   /** Returns the default location of Vidalia's data directory. */
   static QString defaultDataDirectory();
-  /** Creates Vidalia's data directory, if it doesn't already exist. */
-  static bool createDataDirectory(QString *errmsg);
   
   /** Returns the location of Vidalia's pid file. */
   static QString pidFile();

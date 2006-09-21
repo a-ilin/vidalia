@@ -26,14 +26,16 @@ HEADERS += $$PWD/net.h \
            $$PWD/string.h \
            $$PWD/torsocket.h \
            $$PWD/html.h \
-           $$PWD/process.h
+           $$PWD/process.h \
+           $$PWD/file.h
            
 SOURCES += $$PWD/net.cpp \
            $$PWD/http.cpp \
            $$PWD/string.cpp \
            $$PWD/torsocket.cpp \
            $$PWD/html.cpp \
-           $$PWD/process.cpp
+           $$PWD/process.cpp \
+           $$PWD/file.cpp
 
 win32 {
     HEADERS += $$PWD/win32.h

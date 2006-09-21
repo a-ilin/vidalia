@@ -27,6 +27,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <gui/common/vmessagebox.h>
+#include <util/file.h>
 #include <vidalia.h>
 #include "advancedpage.h"
 
@@ -124,11 +125,12 @@ AdvancedPage::browseTorConfig()
       return;
     }
     /* Attempt to create the specified file */
-    if (!torrcFile.open(QIODevice::WriteOnly)) {
+    QString errmsg;
+    if (!touch_file(filename, false, &errmsg)) {
       VMessageBox::warning(this,
         tr("Failed to Create File"),
         tr("Unable to create %1 [%2]").arg(filename)
-                                      .arg(torrcFile.errorString()),
+                                      .arg(errmsg),
         VMessageBox::Ok);
       return;
     }
