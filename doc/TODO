@@ -1,6 +1,4 @@
 Things to complete for 0.1.0:
-  * Fix the problems with torrc permissions that result when we start our own
-    Tor process (this doesn't really apply to Windows) (Ticket #108).
   * Figure out what is causing all of these funky problems with random Windows
     applications. If it turns out to be Qt (which is my current guess), we should 
     try to submit a patch to Trolltech (Ticket #101).
