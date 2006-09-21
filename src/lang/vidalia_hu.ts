@@ -69,7 +69,7 @@
     </message>
     <message>
         <source>Alternate Tor Configuration File</source>
-        <translation>Alternatív Tor konfigurációs fájl</translation>
+        <translation type="obsolete">Alternatív Tor konfigurációs fájl</translation>
     </message>
     <message>
         <source>Start Tor with the specified configuration file (torrc)</source>
@@ -151,6 +151,10 @@
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tor Configuration File</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1246,7 +1250,7 @@ különbözõként fog szerepelni.</translation>
     </message>
     <message>
         <source>Contact:</source>
-        <translation>Kapcsolat:</translation>
+        <translation type="obsolete">Kapcsolat:</translation>
     </message>
     <message>
         <source>Bandwidth:</source>
@@ -1270,6 +1274,14 @@ különbözõként fog szerepelni.</translation>
     <message>
         <source>%1 KB/s</source>
         <translation type="unfinished">%1 KB/s</translation>
+    </message>
+    <message>
+        <source>Offline</source>
+        <translation type="unfinished">Kapcsolat nélkül</translation>
+    </message>
+    <message>
+        <source>Hibernating</source>
+        <translation type="unfinished">Hibernált</translation>
     </message>
 </context>
 <context>

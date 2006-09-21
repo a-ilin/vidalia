@@ -69,7 +69,7 @@
     </message>
     <message>
         <source>Alternate Tor Configuration File</source>
-        <translation>Vaihtoehtoinen Tor-asetustiedosto</translation>
+        <translation type="obsolete">Vaihtoehtoinen Tor-asetustiedosto</translation>
     </message>
     <message>
         <source>Start Tor with the specified configuration file (torrc)</source>
@@ -154,6 +154,10 @@ You may need to remove it manually.</source>
         <translation>Vidalia epäonnistui Tor-palvelun poistamisessa.
 
 Tor-palvelu täytyy poistaa käsin.</translation>
+    </message>
+    <message>
+        <source>Tor Configuration File</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1297,7 +1301,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     </message>
     <message>
         <source>Contact:</source>
-        <translation>Yhteystiedot:</translation>
+        <translation type="obsolete">Yhteystiedot:</translation>
     </message>
     <message>
         <source>Published:</source>
@@ -1325,6 +1329,14 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <source>%1 KB/s</source>
         <translation>%1 Kt/s</translation>
+    </message>
+    <message>
+        <source>Offline</source>
+        <translation type="unfinished">Offline</translation>
+    </message>
+    <message>
+        <source>Hibernating</source>
+        <translation type="unfinished">Valmiustilassa</translation>
     </message>
 </context>
 <context>

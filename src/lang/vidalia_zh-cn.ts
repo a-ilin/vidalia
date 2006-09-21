@@ -69,7 +69,7 @@
     </message>
     <message>
         <source>Alternate Tor Configuration File</source>
-        <translation>改变Tor的配置文件</translation>
+        <translation type="obsolete">改变Tor的配置文件</translation>
     </message>
     <message>
         <source>Start Tor with the specified configuration file (torrc)</source>
@@ -151,6 +151,10 @@
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tor Configuration File</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1657,10 +1661,6 @@ Error: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Contact:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Bandwidth:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1682,6 +1682,14 @@ Error: </source>
     <message>
         <source>%1 KB/s</source>
         <translation type="unfinished">%1 KB/s</translation>
+    </message>
+    <message>
+        <source>Offline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hibernating</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

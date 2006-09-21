@@ -57,7 +57,7 @@
     </message>
     <message>
         <source>Alternate Tor Configuration File</source>
-        <translation>Алтернативен Тор конфигурационен файл</translation>
+        <translation type="obsolete">Алтернативен Тор конфигурационен файл</translation>
     </message>
     <message>
         <source>Start Tor with the specified configuration file (torrc)</source>
@@ -139,6 +139,10 @@
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tor Configuration File</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1187,7 +1191,7 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Contact:</source>
-        <translation>Контакт:</translation>
+        <translation type="obsolete">Контакт:</translation>
     </message>
     <message>
         <source>Bandwidth:</source>
@@ -1211,6 +1215,14 @@ interest to Tor developers.</source>
     <message>
         <source>%1 KB/s</source>
         <translation type="unfinished">%1 КБ/с</translation>
+    </message>
+    <message>
+        <source>Offline</source>
+        <translation type="unfinished">Офлайн</translation>
+    </message>
+    <message>
+        <source>Hibernating</source>
+        <translation type="unfinished">Хибернира</translation>
     </message>
 </context>
 <context>

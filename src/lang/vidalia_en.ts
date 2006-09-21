@@ -56,10 +56,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Alternate Tor Configuration File</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Start Tor with the specified configuration file (torrc)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -139,6 +135,10 @@
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Tor Configuration File</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1168,10 +1168,6 @@ interest to Tor developers.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Contact:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <source>Bandwidth:</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1192,6 +1188,14 @@ interest to Tor developers.</source>
     <name>RouterListItem</name>
     <message>
         <source>%1 KB/s</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Offline</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>Hibernating</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
