@@ -98,7 +98,15 @@ VidaliaSettings::setValue(QString key, QVariant val)
 QVariant
 VidaliaSettings::value(QString key)
 {
-  return QSettings::value(key, defaultValue(key));
+  return value(key, defaultValue(key));
+}
+
+/** Returns the value for <b>key</b>. If no value is currently saved, then
+ * <b>defaultValue</b> will be returned. */
+QVariant
+VidaliaSettings::value(QString key, QVariant defaultValue)
+{
+  return QSettings::value(key, defaultValue);
 }
 
 /** Resets all of Vidalia's settings. */

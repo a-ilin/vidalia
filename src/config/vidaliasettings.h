@@ -59,7 +59,10 @@ public:
   /** Returns the value for <b>key</b>. If no value is currently saved, then
    * the default value for <b>key</b> will be returned. */
   QVariant value(QString key);
-
+  /** Returns the value for <b>key</b>. If no value is currently saved, then
+   * <b>defaultValue</b> will be returned. */
+  QVariant value(QString key, QVariant defaultValue);
+  
   /** Gets the currently preferred language code for Vidalia. */
   QString getLanguageCode();
   /** Saves the preferred language code. */
