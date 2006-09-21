@@ -61,20 +61,6 @@
 #define SETTING_SERVER_EXITPOLICY "Server/"SERVER_EXITPOLICY
 #define SETTING_SERVER_BWRATE     "Server/"SERVER_BANDWIDTH_RATE
 #define SETTING_SERVER_BWBURST    "Server/"SERVER_BANDWIDTH_BURST
-/* Default server configuration */
-#define DEFAULT_SERVER_ENABLED    false
-#define DEFAULT_SERVER_CHANGED    false
-#define DEFAULT_SERVER_DIRMIRROR  false
-#define DEFAULT_SERVER_MIDDLEMAN  true
-#define DEFAULT_SERVER_NICKNAME   QHostInfo::localHostName()
-#define DEFAULT_SERVER_ORPORT     9001
-#define DEFAULT_SERVER_DIRPORT    9030
-#define DEFAULT_SERVER_CONTACT    "<your@email.com>"
-#define DEFAULT_SERVER_ADDRESS    net_local_address().toString() 
-#define DEFAULT_SERVER_EXITPOLICY ExitPolicy(ExitPolicy::Default).toString()
-#define DEFAULT_SERVER_BWRATE     2097152
-#define DEFAULT_SERVER_BWBURST    5242880
-#define DEFAULT_SERVER_AUTOUPDATE_ADDRESS false
 
 
 /** Constructor.
@@ -85,6 +71,21 @@ ServerSettings::ServerSettings(TorControl *torControl)
 {
   _torControl = torControl;
   _backupSettings = allSettings();
+
+  setDefault(SETTING_SERVER_ENABLED,    false);
+  setDefault(SETTING_SERVER_CHANGED,    false);
+  setDefault(SETTING_SERVER_DIRMIRROR,  false);
+  setDefault(SETTING_SERVER_MIDDLEMAN,  true);
+  setDefault(SETTING_SERVER_ORPORT,     9001);
+  setDefault(SETTING_SERVER_DIRPORT,    9030);
+  setDefault(SETTING_SERVER_CONTACT,    "<your@email.com>");
+  setDefault(SETTING_SERVER_BWRATE,     2097152);
+  setDefault(SETTING_SERVER_BWBURST,    5242880);
+  setDefault(SETTING_SERVER_NICKNAME,   QHostInfo::localHostName());
+  setDefault(SETTING_SERVER_ADDRESS,    net_local_address().toString());
+  setDefault(SETTING_SERVER_AUTOUPDATE_ADDRESS, false);
+  setDefault(SETTING_SERVER_EXITPOLICY,
+    ExitPolicy(ExitPolicy::Default).toString());
 }
 
 /** Stores a boolean value indicating if the server's configuration has
@@ -94,7 +95,7 @@ ServerSettings::ServerSettings(TorControl *torControl)
 void
 ServerSettings::setChanged(bool changed)
 {
-  VidaliaSettings::setValue(SETTING_SERVER_CHANGED, changed);
+  QSettings::setValue(SETTING_SERVER_CHANGED, changed);
 }
 
 /** Returns a boolean value indicating if the server's configuration has
@@ -103,8 +104,7 @@ ServerSettings::setChanged(bool changed)
 bool
 ServerSettings::changedSinceLastApply()
 {
-  return VidaliaSettings::value(SETTING_SERVER_CHANGED,
-                                DEFAULT_SERVER_CHANGED).toBool();
+  return VidaliaSettings::value(SETTING_SERVER_CHANGED).toBool();
 }
 
 /** Restores the server configuration back to its state after the last call to
@@ -145,8 +145,8 @@ ServerSettings::isEmptyValue(QVariant value)
   switch (value.type()) {
     case QVariant::String: 
       return (value.toString().isEmpty());
-    case QVariant::UInt:  
-    case QVariant::Int:     
+    case QVariant::UInt:
+    case QVariant::Int:
       return (value.toUInt() == 0);
     case QVariant::Invalid:
       return true;
@@ -157,7 +157,7 @@ ServerSettings::isEmptyValue(QVariant value)
 
 /** Returns the stored value for the given key. If no stored value exists for
  * the given key, the specified default value is used. If Vidalia is currently
- * connected to Tor, we will ask Tor what it's value is. Otherwise, we will
+ * connected to Tor, we will ask Tor what its value is. Otherwise, we will
  * retrieve it from Vidalia's stored settings, allowing the configuration
  * information to be edited even if Tor isn't running.
  * \param key Configuration key
@@ -165,7 +165,7 @@ ServerSettings::isEmptyValue(QVariant value)
  * specified key.
  */
 QVariant
-ServerSettings::value(QString key, QVariant defaultValue)
+ServerSettings::value(QString key)
 {
   QVariant value;
   QString confKey, confValue;
@@ -173,12 +173,12 @@ ServerSettings::value(QString key, QVariant defaultValue)
   if (_torControl->isConnected()) {
     if (_torControl->getConf(confKey, confValue)) {
       value.setValue(confValue);
-      value.convert(defaultValue.type());
+      value.convert(defaultValue(key).type());
     }
   } else {
-    value = VidaliaSettings::value(key, defaultValue);
+    value = VidaliaSettings::value(key);
   }
-  return (isEmptyValue(value) ? defaultValue : value);
+  return (isEmptyValue(value) ? defaultValue(key) : value);
 }
 
 /** Saves the given configuration key-value to the application settings file.
@@ -188,8 +188,10 @@ ServerSettings::value(QString key, QVariant defaultValue)
 void
 ServerSettings::setValue(QString key, QVariant value)
 {
-  setChanged(true);
-  VidaliaSettings::setValue(key, value);
+  if (value != VidaliaSettings::value(key)) {
+    setChanged(true);
+    VidaliaSettings::setValue(key, value);
+  }
 }
 
 /** Returns a QHash of Tor-recognizable configuratin keys to their current
@@ -200,39 +202,33 @@ ServerSettings::confValues()
   QHash<QString, QString> conf;
   /* Server Nickname */
   conf.insert(SERVER_NICKNAME,
-    (isServerEnabled() ? VidaliaSettings::value(SETTING_SERVER_NICKNAME, 
-                                                DEFAULT_SERVER_NICKNAME).toString()
+    (isServerEnabled() ? VidaliaSettings::value(SETTING_SERVER_NICKNAME).toString()
                        : ""));
   /* Server ORPort */
   conf.insert(SERVER_ORPORT,
-    (isServerEnabled() ? VidaliaSettings::value(SETTING_SERVER_ORPORT, 
-                                                DEFAULT_SERVER_ORPORT).toString()
+    (isServerEnabled() ? VidaliaSettings::value(SETTING_SERVER_ORPORT).toString()
                        : "0"));
   /* Server DirPort */
   conf.insert(SERVER_DIRPORT, 
-    (isDirectoryMirror() ? VidaliaSettings::value(SETTING_SERVER_DIRPORT, 
-                                                  DEFAULT_SERVER_DIRPORT).toString() 
+    (isDirectoryMirror() ? VidaliaSettings::value(SETTING_SERVER_DIRPORT).toString() 
                          : "0"));
   /* Server Exit Policy */
   conf.insert(SERVER_EXITPOLICY, 
     (isMiddleman() ? ExitPolicy(ExitPolicy::Middleman).toString()
-                   : VidaliaSettings::value(SETTING_SERVER_EXITPOLICY,
-                                            DEFAULT_SERVER_EXITPOLICY).toString()));
+                   : VidaliaSettings::value(SETTING_SERVER_EXITPOLICY).toString()));
   /* Server Address */
   conf.insert(SERVER_ADDRESS,      
-    VidaliaSettings::value(SETTING_SERVER_ADDRESS, DEFAULT_SERVER_ADDRESS).toString());
+    VidaliaSettings::value(SETTING_SERVER_ADDRESS).toString());
   
   /* Server bandwidth settings */
   conf.insert(SERVER_BANDWIDTH_RATE,
-    QString::number(VidaliaSettings::value(SETTING_SERVER_BWRATE, 
-                                           DEFAULT_SERVER_BWRATE).toUInt()) + " bytes");
+    QString::number(VidaliaSettings::value(SETTING_SERVER_BWRATE).toUInt()) + " bytes");
   conf.insert(SERVER_BANDWIDTH_BURST,
-    QString::number(VidaliaSettings::value(SETTING_SERVER_BWBURST, 
-                                           DEFAULT_SERVER_BWBURST).toUInt()) + " bytes");
+    QString::number(VidaliaSettings::value(SETTING_SERVER_BWBURST).toUInt()) + " bytes");
     
   /* Server Contact Information */
   QString contact = 
-    VidaliaSettings::value(SETTING_SERVER_CONTACT, DEFAULT_SERVER_CONTACT).toString();
+    VidaliaSettings::value(SETTING_SERVER_CONTACT).toString();
   conf.insert(SERVER_CONTACTINFO, scrub_email_addr(contact));
   
   return conf;
@@ -289,8 +285,7 @@ ServerSettings::isServerEnabled()
               !confValues.value(SERVER_NICKNAME).isEmpty());
     }
   }
-  return VidaliaSettings::value(SETTING_SERVER_ENABLED,
-                                DEFAULT_SERVER_ENABLED).toBool();
+  return VidaliaSettings::value(SETTING_SERVER_ENABLED).toBool();
 }
 
 /** Sets the server's ORPort. */
@@ -304,8 +299,7 @@ ServerSettings::setORPort(quint16 orPort)
 quint16
 ServerSettings::getORPort()
 {
-  return (quint16)value(SETTING_SERVER_ORPORT, 
-                        DEFAULT_SERVER_ORPORT).toUInt();
+  return (quint16)value(SETTING_SERVER_ORPORT).toUInt();
 }
 
 /** Sets the server's current DirPort. */
@@ -319,8 +313,7 @@ ServerSettings::setDirPort(quint16 dirPort)
 quint16
 ServerSettings::getDirPort()
 {
-  return (quint16)value(SETTING_SERVER_DIRPORT, 
-                        DEFAULT_SERVER_DIRPORT).toUInt();
+  return (quint16)value(SETTING_SERVER_DIRPORT).toUInt();
 }
 
 /** Sets the server's externally-reachable address. */
@@ -334,7 +327,7 @@ ServerSettings::setAddress(QString address)
 QString
 ServerSettings::getAddress()
 {
-  return value(SETTING_SERVER_ADDRESS, DEFAULT_SERVER_ADDRESS).toString();
+  return value(SETTING_SERVER_ADDRESS).toString();
 }
 
 /** Sets the server's nickname. */
@@ -348,8 +341,7 @@ ServerSettings::setNickname(QString nickname)
 QString
 ServerSettings::getNickname()
 {
-  QString nickname = value(SETTING_SERVER_NICKNAME, 
-                           DEFAULT_SERVER_NICKNAME).toString();
+  QString nickname = value(SETTING_SERVER_NICKNAME).toString();
   /* Ensure the nickname contains only valid characters and is not too long. */
   return ensure_valid_chars(nickname, 
                             VALID_NICKNAME_CHARS).left(MAX_NICKNAME_LEN);
@@ -366,15 +358,14 @@ ServerSettings::setContactInfo(QString contact)
 QString
 ServerSettings::getContactInfo()
 {
-  return value(SETTING_SERVER_CONTACT, DEFAULT_SERVER_CONTACT).toString();
+  return value(SETTING_SERVER_CONTACT).toString();
 }
 
 /** Returns whether this server will act as a directory mirror or not. */
 bool
 ServerSettings::isDirectoryMirror()
 {
-  return VidaliaSettings::value(SETTING_SERVER_DIRMIRROR, 
-                                DEFAULT_SERVER_DIRMIRROR).toBool();
+  return VidaliaSettings::value(SETTING_SERVER_DIRMIRROR).toBool();
 }
 
 /** Sets whether this server will act as a directory mirror. */
@@ -390,8 +381,7 @@ ServerSettings::setDirectoryMirror(bool mirror)
 bool
 ServerSettings::isMiddleman()
 {
-  return VidaliaSettings::value(SETTING_SERVER_MIDDLEMAN,
-                                DEFAULT_SERVER_MIDDLEMAN).toBool();
+  return QSettings::value(SETTING_SERVER_MIDDLEMAN).toBool();
 }
 
 /** Sets whether this server will act as a middle-man server. */
@@ -405,8 +395,7 @@ ServerSettings::setMiddleman(bool middleman)
 ExitPolicy
 ServerSettings::getExitPolicy()
 {
-  return ExitPolicy(value(SETTING_SERVER_EXITPOLICY, 
-                          DEFAULT_SERVER_EXITPOLICY).toString());
+  return ExitPolicy(value(SETTING_SERVER_EXITPOLICY).toString());
 }
 
 /** Sets the exit policy for this server. */
@@ -420,7 +409,7 @@ ServerSettings::setExitPolicy(ExitPolicy &exitPolicy)
 quint32
 ServerSettings::getBandwidthAvgRate()
 {
-  return value(SETTING_SERVER_BWRATE, DEFAULT_SERVER_BWRATE).toUInt();
+  return value(SETTING_SERVER_BWRATE).toUInt();
 }
 
 /** Sets the long-term average bandwidth rate (in KB/s) for this server. */
@@ -434,7 +423,7 @@ ServerSettings::setBandwidthAvgRate(quint32 rate)
 quint32
 ServerSettings::getBandwidthBurstRate()
 {
-  return value(SETTING_SERVER_BWBURST, DEFAULT_SERVER_BWBURST).toUInt();
+  return value(SETTING_SERVER_BWBURST).toUInt();
 }
 
 /** Sets the maximum bandwidth burst rate (in KB/s) for this server. */
@@ -448,8 +437,7 @@ ServerSettings::setBandwidthBurstRate(quint32 rate)
 bool
 ServerSettings::getAutoUpdateAddress()
 {
-  return VidaliaSettings::value(SETTING_SERVER_AUTOUPDATE_ADDRESS,
-                                DEFAULT_SERVER_AUTOUPDATE_ADDRESS).toBool();
+  return VidaliaSettings::value(SETTING_SERVER_AUTOUPDATE_ADDRESS).toBool();
 }
 
 /** Sets whether we should update the server's IP address automatically. */

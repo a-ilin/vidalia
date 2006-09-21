@@ -47,16 +47,6 @@
 #define DEFAULT_TOR_EXECUTABLE    "tor"
 #endif
 
-/* Default Tor Settings */
-#define DEFAULT_TOR_ARGUMENTS   QMap<QString,QVariant>()
-#define DEFAULT_CONTROL_ADDR    "127.0.0.1"
-#define DEFAULT_CONTROL_PORT    9051
-#define DEFAULT_AUTH_TOKEN      ""
-#define DEFAULT_TORRC           (Vidalia::dataDirectory() + "/torrc")
-#define DEFAULT_TOR_USER        ""
-#define DEFAULT_TOR_GROUP       ""
-#define DEFAULT_USE_SERVICE     false
-
 /* Arguments we can pass to Tor on the command-line */
 #define TOR_ARG_CONTROL_PORT    "ControlPort"
 #define TOR_ARG_TORRC           "-f"
@@ -67,6 +57,14 @@
 /** Default constructor */
 TorSettings::TorSettings()
 {
+  setDefault(SETTING_TOR_EXECUTABLE, DEFAULT_TOR_EXECUTABLE);
+  setDefault(SETTING_TORRC,         Vidalia::dataDirectory() + "/torrc");
+  setDefault(SETTING_CONTROL_ADDR,  "127.0.0.1");
+  setDefault(SETTING_CONTROL_PORT,  9051);
+  setDefault(SETTING_AUTH_TOKEN,    QByteArray(""));
+  setDefault(SETTING_TOR_USER,      "");
+  setDefault(SETTING_TOR_GROUP,     "");
+  setDefault(SETTING_USE_SERVICE,   false);
 }
 
 /** Returns a fully-qualified path to Tor's executable, including the
@@ -74,8 +72,8 @@ TorSettings::TorSettings()
 QString
 TorSettings::getExecutable()
 {
-  return QDir::convertSeparators(value(SETTING_TOR_EXECUTABLE,
-                                       DEFAULT_TOR_EXECUTABLE).toString());
+  return QDir::convertSeparators(
+            value(SETTING_TOR_EXECUTABLE).toString());
 }
 
 /** Sets the location and name of Tor's executable to the given string. */
@@ -132,7 +130,7 @@ TorSettings::getArguments()
 QString
 TorSettings::getTorrc()
 {
-  return value(SETTING_TORRC, DEFAULT_TORRC).toString();
+  return value(SETTING_TORRC).toString();
 }
 
 /** Sets the torrc that will be used when starting Tor.
@@ -141,10 +139,7 @@ TorSettings::getTorrc()
 void
 TorSettings::setTorrc(QString torrc)
 {
-  torrc = torrc.simplified();
-  if (torrc != DEFAULT_TORRC) {
-    setValue(SETTING_TORRC, torrc);
-  }
+  setValue(SETTING_TORRC, torrc);
 }
 
 /** Returns the user used when running Tor. The user is specified as an
@@ -152,7 +147,7 @@ TorSettings::setTorrc(QString torrc)
 QString
 TorSettings::getUser()
 {
-  return value(SETTING_TOR_USER, DEFAULT_TOR_USER).toString();
+  return value(SETTING_TOR_USER).toString();
 }
 
 /** Sets the user used when running Tor. The user is specified as an argument
@@ -183,8 +178,7 @@ TorSettings::setGroup(QString group)
 QHostAddress
 TorSettings::getControlAddress()
 {
-  QString addr = value(SETTING_CONTROL_ADDR,
-                       DEFAULT_CONTROL_ADDR).toString();
+  QString addr = value(SETTING_CONTROL_ADDR).toString();
   return QHostAddress(addr);
 }
 
@@ -199,8 +193,7 @@ TorSettings::setControlAddress(QHostAddress addr)
 quint16
 TorSettings::getControlPort()
 {
-  return (quint16)value(SETTING_CONTROL_PORT, 
-                        DEFAULT_CONTROL_PORT).toInt();
+  return (quint16)value(SETTING_CONTROL_PORT).toInt();
 }
 
 /** Set the control port used to connect to Tor */
@@ -216,8 +209,8 @@ TorSettings::setControlPort(quint16 port)
 QByteArray
 TorSettings::getAuthToken()
 {
-  return QByteArray::fromBase64(value(SETTING_AUTH_TOKEN,
-                                      QByteArray(DEFAULT_AUTH_TOKEN)).toByteArray());
+  return QByteArray::fromBase64(
+            value(SETTING_AUTH_TOKEN).toByteArray());
 }
 
 /** Set the authentication token sent by the controller to Tor. */
@@ -231,7 +224,7 @@ TorSettings::setAuthToken(QByteArray token)
 bool
 TorSettings::getUseService()
 {
-  return value(SETTING_USE_SERVICE, DEFAULT_USE_SERVICE).toBool();
+  return value(SETTING_USE_SERVICE).toBool();
 }
 
 /** Set whether Tor will run as an NT service */

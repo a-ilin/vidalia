@@ -121,7 +121,7 @@ private:
   /** Returns true if the specified QVariant contains an empty value. */
   bool isEmptyValue(QVariant value);
   /** Retrieves a configuration value. If one isn't found, use a default. */
-  QVariant value(QString key, QVariant defaultValue);
+  QVariant value(QString key);
   /** Stores a configuration key-value. */
   void setValue(QString key, QVariant value);
 

@@ -48,10 +48,6 @@
 #define DEFAULT_STYLE               "plastique"
 #endif
 
-#define DEFAULT_LANGUAGE            LanguageSupport::defaultLanguageCode()
-#define DEFAULT_RUN_TOR_AT_START    true
-#define DEFAULT_OPACITY             100
-
 #if defined(Q_OS_WIN32)
 #define STARTUP_REG_KEY        "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
 #define VIDALIA_REG_KEY        "Vidalia" 
@@ -64,7 +60,45 @@
 /** Default Constructor */
 VidaliaSettings::VidaliaSettings()
 : QSettings(SETTINGS_FILE, QSettings::IniFormat)
-{  
+{
+  setDefault(SETTING_LANGUAGE, LanguageSupport::defaultLanguageCode());
+  setDefault(SETTING_RUN_TOR_AT_START, true);
+  setDefault(SETTING_STYLE, DEFAULT_STYLE);
+}
+
+/** Sets the default value of <b>key</b> to be <b>val</b>. */
+void
+VidaliaSettings::setDefault(QString key, QVariant val)
+{
+  _defaults.insert(key, val);
+}
+
+/** Returns the default value for <b>key</b>. */
+QVariant
+VidaliaSettings::defaultValue(QString key)
+{
+  if (_defaults.contains(key)) {
+    return _defaults.value(key);
+  }
+  return QVariant();
+}
+
+/** Save <b>val</b> to the configuration file for the setting <b>key</b>, if
+ * <b>val</b> is different than <b>key</b>'s current value. */
+void
+VidaliaSettings::setValue(QString key, QVariant val)
+{
+  if (value(key) != val) {
+    QSettings::setValue(key, val);
+  }
+}
+
+/** Returns the value for <b>key</b>. If no value is currently saved, then the
+ * default value for <b>key</b> will be returned. */
+QVariant
+VidaliaSettings::value(QString key)
+{
+  return QSettings::value(key, defaultValue(key));
 }
 
 /** Resets all of Vidalia's settings. */
@@ -79,7 +113,7 @@ VidaliaSettings::reset()
 QString
 VidaliaSettings::getLanguageCode()
 {
-  return value(SETTING_LANGUAGE, DEFAULT_LANGUAGE).toString();
+  return value(SETTING_LANGUAGE).toString();
 }
 
 /** Sets the preferred language code. */
@@ -93,7 +127,7 @@ VidaliaSettings::setLanguageCode(QString languageCode)
 QString
 VidaliaSettings::getInterfaceStyle()
 {
-  return value(SETTING_STYLE, DEFAULT_STYLE).toString();
+  return value(SETTING_STYLE).toString();
 }
 
 /** Sets the interface style key. */
@@ -107,7 +141,7 @@ VidaliaSettings::setInterfaceStyle(QString styleKey)
 bool
 VidaliaSettings::runTorAtStart()
 {
-  return value(SETTING_RUN_TOR_AT_START, DEFAULT_RUN_TOR_AT_START).toBool();
+  return value(SETTING_RUN_TOR_AT_START).toBool();
 }
 
 /** If <b>run</b> is set to true, then Tor will be run when Vidalia starts. */

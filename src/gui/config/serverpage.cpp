@@ -161,11 +161,15 @@ ServerPage::save(QString &errmsg)
   }
   _settings->setExitPolicy(exitPolicy);
   
-  bool success = (_torControl->isConnected() ? _settings->apply(&errmsg) : true);
-  if (!success) {
-    _settings->revert();
+  /* If we're connectd to Tor and we've changed the server settings, attempt
+   * to apply the new settings now. */
+  if (_torControl->isConnected() && _settings->changedSinceLastApply()) {
+    if (!_settings->apply(&errmsg)) {
+      _settings->revert();
+      return false;
+    }
   }
-  return success;
+  return true;
 }
 
 /** Loads previously saved settings */
