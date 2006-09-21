@@ -27,6 +27,7 @@
 #include <QHostAddress>
 #include <config/torsettings.h>
 #include <util/net.h>
+#include <util/file.h>
 #include "torcontrol.h"
 
 
@@ -78,13 +79,10 @@ TorControl::start()
   } else {
     TorSettings settings;
     
-    /* Make sure our torrc exists. If it doesn't, touch it. */
-    if (!QFile::exists(settings.getTorrc())) {
-      QFile torrc(settings.getTorrc());
-      torrc.open(QIODevice::WriteOnly);
-      torrc.close();
-    }
-
+    /* Make sure our torrc and the full path to it exists. If it doesn't,
+     * then touch it. */
+    touch_file(settings.getTorrc(), true);
+    
     if (TorService::isSupported() && settings.getUseService()) {
       _torService = new TorService(settings.getExecutable(),
                                    settings.getTorrc(), this);
