@@ -372,7 +372,7 @@
       <enum>Qt::NoContextMenu</enum>
      </property>
      <property name="title" >
-      <string>Alternate Tor Configuration File</string>
+      <string>Tor Configuration File</string>
      </property>
      <layout class="QHBoxLayout" >
       <property name="margin" >
