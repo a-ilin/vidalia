@@ -225,15 +225,28 @@ BandwidthGraph::cancelChanges()
 void
 BandwidthGraph::showSettingsFrame(bool show)
 {
+  static QSize minSize = minimumSize();
+  
+  QSize newSize = size();
   if (show) {
+    /* Extend the bottom of the bandwidth graph and show the settings */
     ui.frmSettings->setVisible(true);
     ui.btnToggleSettings->setChecked(true);
     ui.btnToggleSettings->setText(tr("Hide Settings"));
+
+    /* 6 = vertical spacing between the settings frame and graph frame */
+    newSize.setHeight(newSize.height() + ui.frmSettings->height() + 6);
   } else {
+    /* Shrink the height of the bandwidth graph and hide the settings */
     ui.frmSettings->setVisible(false);
     ui.btnToggleSettings->setChecked(false);
     ui.btnToggleSettings->setText(tr("Show Settings"));
+    
+    /* 6 = vertical spacing between the settings frame and graph frame */
+    newSize.setHeight(newSize.height() - ui.frmSettings->height() - 6);
+    setMinimumSize(minSize);
   }
+  resize(newSize);
 }
 
 /**
