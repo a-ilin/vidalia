@@ -29,30 +29,31 @@
 
 #include "languagesupport.h"
 
-/** Static list of supported languages and codes. */
-QMap<QString, QString> LanguageSupport::_languages;
 
 /** Initializes the list of available languages. */
-void
-LanguageSupport::initialize()
+QMap<QString, QString>
+LanguageSupport::languages()
 {
-  _languages.clear();
-  _languages.insert("en",    "English");
-  _languages.insert("bg",
-    QString::fromUtf8("\320\221\321\212\320\273\320\263\320"
-                      "\260\321\200\321\201\320\272\320\270"));
-  _languages.insert("de",    "Deutsch");
-  _languages.insert("fi",    "suomi");
-  _languages.insert("fr",    
-    QString::fromUtf8("fran\303\247ais"));
-  _languages.insert("hu",    "magyar nyelv");
-  _languages.insert("it",    "Italiano");
-  _languages.insert("nl",    "Nederlands");
-  _languages.insert("pl",    "Polski");
-  _languages.insert("ru",
-    QString::fromUtf8("\320\240\321\203\321\201\321\201\320\272\320\270\320\271"));
-  _languages.insert("zh-cn", 
-    QString::fromUtf8("\347\256\200\344\275\223\345\255\227"));
+  static QMap<QString, QString> languages;
+  if (languages.isEmpty()) {
+    languages.insert("en",    "English");
+    languages.insert("bg",
+      QString::fromUtf8("\320\221\321\212\320\273\320\263\320"
+                        "\260\321\200\321\201\320\272\320\270"));
+    languages.insert("de",    "Deutsch");
+    languages.insert("fi",    "suomi");
+    languages.insert("fr",    
+      QString::fromUtf8("fran\303\247ais"));
+    languages.insert("hu",    "magyar nyelv");
+    languages.insert("it",    "Italiano");
+    languages.insert("nl",    "Nederlands");
+    languages.insert("pl",    "Polski");
+    languages.insert("ru",
+      QString::fromUtf8("\320\240\321\203\321\201\321\201\320\272\320\270\320\271"));
+    languages.insert("zh-cn", 
+      QString::fromUtf8("\347\256\200\344\275\223\345\255\227"));
+  }
+  return languages;
 }
 
 /** Returns the default language code for the system locale. */
@@ -74,35 +75,28 @@ LanguageSupport::defaultLanguageCode()
 QString
 LanguageSupport::languageCode(QString languageName)
 {
-  return _languages.key(languageName);
+  return languages().key(languageName);
 }
 
 /** Returns a list of all supported language codes. (e.g., "en"). */
 QStringList
 LanguageSupport::languageCodes()
 {
-  return _languages.keys();
+  return languages().keys();
 }
 
 /** Returns the language name for a given language code. */
 QString
 LanguageSupport::languageName(QString languageCode)
 {
-  return _languages.value(languageCode);
+  return languages().value(languageCode);
 }
 
 /** Returns a list of all supported language names (e.g., "English"). */
 QStringList
 LanguageSupport::languageNames()
 {
-  return _languages.values();
-}
-
-/** Returns a list of all supported language codes and names. */
-QMap<QString, QString>
-LanguageSupport::languages()
-{
-  return _languages;
+  return languages().values();
 }
 
 /** Returns true if we understand the given language code. */

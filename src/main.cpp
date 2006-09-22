@@ -53,9 +53,6 @@ main(int argc, char *argv[])
   Q_INIT_RESOURCE(vidalia_common);
   QStringList args = char_array_to_stringlist(argv+1, argc-1);
 
-  /* Initialize Vidalia's supported language translations */
-  LanguageSupport::initialize();
-
   /* Construct the application object. Qt strips any command-line arguments
    * that it recognizes in argv, so we'll pass a stringlist of the original
    * list of command-line arguments too. */

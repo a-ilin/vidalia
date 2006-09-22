@@ -35,8 +35,6 @@
 class LanguageSupport
 {
 public:
-  /** Initializes the list of supported languages. */
-  static void initialize();
   /** Returns the default language code for the system locale. */
   static QString defaultLanguageCode();
   /** Returns the language code for a given language name. */
