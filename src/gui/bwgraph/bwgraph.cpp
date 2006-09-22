@@ -81,10 +81,8 @@ BandwidthGraph::BandwidthGraph(QWidget *parent, Qt::WFlags flags)
 #endif
 }
 
-/**
- Custom event handler. Checks if the event is a bandwidth update event. If it
- is, it will add the data point to the history and updates the graph.
-*/
+/** Custom event handler. Checks if the event is a bandwidth update event. If it
+ * is, it will add the data point to the history and updates the graph. */
 void
 BandwidthGraph::customEvent(QEvent *event)
 {
@@ -94,9 +92,7 @@ BandwidthGraph::customEvent(QEvent *event)
   }
 }
 
-/**
- Binds events to actions
-*/
+/** Binds events to actions. */
 void
 BandwidthGraph::createActions()
 {
@@ -116,9 +112,7 @@ BandwidthGraph::createActions()
       this, SLOT(setOpacity(int)));
 }
 
-/**
- Adds new data to the graph
-*/
+/** Adds new data to the graph. */
 void
 BandwidthGraph::updateGraph(quint64 bytesRead, quint64 bytesWritten)
 {
@@ -126,9 +120,7 @@ BandwidthGraph::updateGraph(quint64 bytesRead, quint64 bytesWritten)
   ui.frmGraph->addPoints(bytesRead/1024.0, bytesWritten/1024.0);
 }
 
-/**
- Loads the saved Bandwidth Graph settings
-*/
+/** Loads the saved Bandwidth Graph settings. */
 void
 BandwidthGraph::loadSettings()
 {
@@ -155,9 +147,7 @@ BandwidthGraph::loadSettings()
                                ui.chkSendRate->isChecked());
 }
 
-/** 
- Resets the log start time
-*/
+/** Resets the log start time. */
 void
 BandwidthGraph::reset()
 {
@@ -169,9 +159,7 @@ BandwidthGraph::reset()
   ui.frmGraph->resetGraph();
 }
 
-/**
- Saves the Bandwidth Graph settings and adjusts the graph if necessary
-*/
+/** Saves the Bandwidth Graph settings and adjusts the graph if necessary. */
 void
 BandwidthGraph::saveChanges()
 {
@@ -206,9 +194,7 @@ BandwidthGraph::saveChanges()
   showNormal();
 }
 
-/** 
- Simply restores the previously saved settings
-*/
+/** Simply restores the previously saved settings. */
 void 
 BandwidthGraph::cancelChanges()
 {
@@ -219,9 +205,7 @@ BandwidthGraph::cancelChanges()
   loadSettings();
 }
 
-/** 
- Toggles the Settings pane on and off, changes toggle button text
-*/
+/** Toggles the Settings pane on and off, changes toggle button text. */
 void
 BandwidthGraph::showSettingsFrame(bool show)
 {
@@ -249,9 +233,7 @@ BandwidthGraph::showSettingsFrame(bool show)
   resize(newSize);
 }
 
-/**
- Sets the opacity of the Bandwidth Graph window
-*/
+/** Sets the opacity of the Bandwidth Graph window. */
 void
 BandwidthGraph::setOpacity(int value)
 {
@@ -271,9 +253,7 @@ BandwidthGraph::setOpacity(int value)
 #endif
 }
 
-/** 
- Overloads the default show() slot so we can set opacity
-*/
+/** Overloads the default show() slot so we can set opacity. */
 void
 BandwidthGraph::show()
 {
