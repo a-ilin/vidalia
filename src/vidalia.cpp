@@ -63,9 +63,6 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
     _settings.reset();
   }
 
-  /** Initialize support for language translations. */
-  LanguageSupport::initialize();
-
   /** Translate the GUI to the appropriate language. */
   setLanguage(_args.value(ARG_LANGUAGE));
 
