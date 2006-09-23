@@ -37,6 +37,8 @@ ZImageView::ZImageView(QWidget *parent)
 {
   /* Initialize members */
   _zoom = 0.0;
+  _desiredX = 0.0;
+  _desiredY = 0.0;
   _mouseDown = false;
   _maxZoomFactor = 2.0;
   _padding = 60;
