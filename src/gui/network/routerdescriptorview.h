@@ -20,7 +20,7 @@
  ****************************************************************/
 
 /** 
- * \file routerdescriptorview.cpp
+ * \file routerdescriptorview.h
  * \version $Id$
  */
 
