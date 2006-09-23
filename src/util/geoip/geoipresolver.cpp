@@ -159,7 +159,7 @@ TorSocket*
 GeoIpResolver::createRequestSocket()
 {
   TorSocket *socket = new TorSocket(QHostAddress::LocalHost, 9050);
-  connect(socket, SIGNAL(connected()), this, SLOT(connected()),
+  connect(socket, SIGNAL(connectedToHost()), this, SLOT(connected()),
           Qt::QueuedConnection);
   connect(socket, SIGNAL(socketError(QString)), 
             this,   SLOT(socketError(QString)),

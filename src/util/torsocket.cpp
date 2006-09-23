@@ -56,6 +56,9 @@ TorSocket::connectToHost(const QString &remoteHost, quint16 remotePort)
   
   /* Wait for the local connection. */
   if (waitForConnected(LOCAL_CONNECT_TIMEOUT)) {
+    /* Signal that we connected to Tor. */
+    emit connectedToTor();
+    
     /* We're connected to the proxy, so send our part of the handshake. */
     QObject::connect(this, SIGNAL(readyRead()),
                      this, SLOT(onHandshakeResponse()));
@@ -120,7 +123,7 @@ TorSocket::onHandshakeResponse()
     if ((uchar)response[0] == (uchar)SOCKS_RESPONSE_VERSION &&
         (uchar)response[1] == (uchar)SOCKS_CONNECT_STATUS_OK) {
       /* Connection status was okay. */
-      emit connected();
+      emit connectedToHost();
     } else {
       /* Remote connection failed, so close the connection to the proxy. */
       disconnectFromHost();

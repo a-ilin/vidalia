@@ -43,8 +43,11 @@ public:
   void connectToHost(const QString &remoteHost, quint16 remotePort);
 
 signals:
-  /** Emitted when a connection has been established to a remote host via Tor. */
-  void connected();
+  /** Emitted when a connection has been established to Tor. */
+  void connectedToTor();
+  /** Emitted when a connection has been established through Tor to the remote
+   * host specified in a prior call to connectToHost(). */
+  void connectedToHost();
   /** Emmitted when a connection error has occurred. */
   void socketError(QString errmsg);
   
