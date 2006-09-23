@@ -51,9 +51,6 @@ public:
   static bool isValidLanguageCode(QString code);
   /** Sets the application's translator to the specified language. */
   static bool translate(QString langCode);
-
-private:
-  static QMap<QString,QString> _languages; /**< List of support languages. */
 };
 
 #endif
