@@ -52,56 +52,56 @@ class GraphFrame : public QFrame
   Q_OBJECT
 
 public:
-  /** Default Constructor **/
+  /** Default Constructor */
   GraphFrame(QWidget *parent = 0);
-  /** Default Destructor **/
+  /** Default Destructor */
   ~GraphFrame();
-  /** Add data points **/
+  /** Add data points. */
   void addPoints(qreal recv, qreal send);
-  /** Clears the graph **/
+  /** Clears the graph. */
   void resetGraph();
-  /** Toggles display of data counters **/
+  /** Toggles display of data counters. */
   void setShowCounters(bool showRecv, bool showSend);
 
 protected:
-  /** Overloaded QWidget::paintEvent() **/
+  /** Overloaded QWidget::paintEvent() */
   void paintEvent(QPaintEvent *event);
 
 private:
-  /** Gets the width of the desktop, the max # of points **/
+  /** Gets the width of the desktop, the max # of points. */
   int getNumPoints();
   
   /** Paints an integral and an outline of that integral for each data set
    * (send and/or receive) that is to be displayed. */
   void paintData();
-  /** Paints the send/receive totals **/
+  /** Paints the send/receive totals. */
   void paintTotals();
-  /** Paints the scale in the graph **/
+  /** Paints the scale in the graph. */
   void paintScale();
-  /** Returns a formatted string representation of total **/
+  /** Returns a formatted string representation of total. */
   QString totalToStr(qreal total);
-  /** Paints a line with the data in list **/
+  /** Paints a line with the data in list. */
   void paintLine(QList<qreal>* list, QColor color, 
                  Qt::PenStyle lineStyle = Qt::SolidLine);
   /** Paints an integral using the supplied data. */
   void paintIntegral(QList<qreal>* list, QColor color, qreal alpha = 1.0);
 
-  /** A QPainter object that handles drawing the various graph elements */
+  /** A QPainter object that handles drawing the various graph elements. */
   QPainter* _painter;
-  /** Holds the received data points **/
+  /** Holds the received data points. */
   QList<qreal> *_recvData;
-  /** Holds the sent data points **/
+  /** Holds the sent data points. */
   QList<qreal> *_sendData;
-  /** The current dimensions of the graph */
+  /** The current dimensions of the graph. */
   QRect _rec;
-  /** The maximum data value plotted **/
+  /** The maximum data value plotted. */
   qreal _maxValue;
-  /** The maximum number of points to store **/
+  /** The maximum number of points to store. */
   int _maxPoints;
-  /** The total data sent/recv **/
+  /** The total data sent/recv. */
   qreal _totalSend;
   qreal _totalRecv;
-  /** Show the respective lines and counters **/
+  /** Show the respective lines and counters. */
   bool _showRecv;
   bool _showSend;
 };

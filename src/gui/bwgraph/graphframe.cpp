@@ -28,6 +28,7 @@
 
 #include "graphframe.h"
 
+
 /** Default contructor */
 GraphFrame::GraphFrame(QWidget *parent)
 : QFrame(parent)
@@ -55,10 +56,8 @@ GraphFrame::~GraphFrame()
   delete _sendData;
 }
 
-/**
- Gets the width of the desktop, which is the maximum 
- number of points we can plot in the graph
-*/
+/** Gets the width of the desktop, which is the maximum number of points 
+ * we can plot in the graph. */
 int
 GraphFrame::getNumPoints()
 {
@@ -67,9 +66,7 @@ GraphFrame::getNumPoints()
   return width;
 }
 
-/**
- Adds new data points to the graph
-*/
+/** Adds new data points to the graph. */
 void
 GraphFrame::addPoints(qreal recv, qreal send)
 {
@@ -94,9 +91,7 @@ GraphFrame::addPoints(qreal recv, qreal send)
   this->update();
 }
 
-/**
- Clears the graph
-*/
+/** Clears the graph. */
 void
 GraphFrame::resetGraph()
 {
@@ -110,9 +105,7 @@ GraphFrame::resetGraph()
   this->update();
 }
 
-/**
- Toggles display of respective graph lines and counters
-*/
+/** Toggles display of respective graph lines and counters. */
 void
 GraphFrame::setShowCounters(bool showRecv, bool showSend)
 {
@@ -121,10 +114,8 @@ GraphFrame::setShowCounters(bool showRecv, bool showSend)
   this->update();
 }
 
-/** 
- Overloads default QWidget::paintEvent
- Draws the actual bandwidth graph 
-*/
+/** Overloads default QWidget::paintEvent. Draws the actual 
+ * bandwidth graph. */
 void
 GraphFrame::paintEvent(QPaintEvent *event)
 {
@@ -216,9 +207,8 @@ GraphFrame::paintIntegral(QList<qreal>* list, QColor color, qreal alpha)
   _painter->setBrush(oldBrush);
 }
 
-/** Iterates the input list and draws a line on the graph
- in the appropriate color
-*/
+/** Iterates the input list and draws a line on the graph in the appropriate
+ * color. */
 void
 GraphFrame::paintLine(QList<qreal>* list, QColor color, Qt::PenStyle lineStyle) 
 {
@@ -252,9 +242,7 @@ GraphFrame::paintLine(QList<qreal>* list, QColor color, Qt::PenStyle lineStyle)
   _painter->setPen(oldPen);
 }
 
-/**
- Paints selected total indicators on the graph
-*/
+/** Paints selected total indicators on the graph. */
 void
 GraphFrame::paintTotals()
 {
@@ -277,10 +265,7 @@ GraphFrame::paintTotals()
   }
 }
 
-/**
- Returns a formatted string 
- with the correct size suffix
-*/
+/** Returns a formatted string with the correct size suffix. */
 QString
 GraphFrame::totalToStr(qreal total)
 {
@@ -297,9 +282,7 @@ GraphFrame::totalToStr(qreal total)
   }
 }
 
-/**
- Paints the scale on the graph
-*/
+/** Paints the scale on the graph. */
 void
 GraphFrame::paintScale()
 {
