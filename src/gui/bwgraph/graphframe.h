@@ -70,8 +70,10 @@ protected:
 private:
   /** Gets the width of the desktop, the max # of points **/
   int getNumPoints();
-  /** Paints appropriate lines on the graph **/
-  void paintLines();
+  
+  /** Paints an integral and an outline of that integral for each data set
+   * (send and/or receive) that is to be displayed. */
+  void paintData();
   /** Paints the send/receive totals **/
   void paintTotals();
   /** Paints the scale in the graph **/
@@ -79,7 +81,10 @@ private:
   /** Returns a formatted string representation of total **/
   QString totalToStr(qreal total);
   /** Paints a line with the data in list **/
-  void paintLine(QList<qreal>* list);
+  void paintLine(QList<qreal>* list, QColor color, 
+                 Qt::PenStyle lineStyle = Qt::SolidLine);
+  /** Paints an integral using the supplied data. */
+  void paintIntegral(QList<qreal>* list, QColor color, qreal alpha = 1.0);
 
   /** A QPainter object that handles drawing the various graph elements */
   QPainter* _painter;

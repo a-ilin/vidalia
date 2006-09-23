@@ -146,10 +146,8 @@ GraphFrame::paintEvent(QPaintEvent *event)
 
   /* Paint the scale */
   paintScale();
-
-  /* Paint the send/receive lines */
-  paintLines();
-
+  /* Plot the send/receive data */
+  paintData();
   /* Paint the send/recv totals */
   paintTotals();
 
@@ -157,31 +155,72 @@ GraphFrame::paintEvent(QPaintEvent *event)
   _painter->end();
 }
 
-/**
- Calls paint function for each line that is supposed to 
- be painted.
-*/
+/** Paints an integral and an outline of that integral for each data set (send
+ * and/or receive) that is to be displayed. The integrals will be drawn first,
+ * followed by the outlines, since we want the area of overlapping integrals
+ * to blend, but not the outlines of those integrals. */
 void
-GraphFrame::paintLines()
+GraphFrame::paintData()
 {
-  /* If show received rate is selected */
+  /* Draw the integrals using an alpha-blending, giving the background
+   * integral a little more weight than the foreground. This could probably be
+   * tweaked more to make overlapping more apparent, including tweaking the 
+   * colors`. */
   if (_showRecv) {
-    _painter->setPen(QPen(RECV_COLOR, 2));
-    paintLine(_recvData);
+    paintIntegral(_recvData, RECV_COLOR, 0.6);
   }
-
+  if (_showSend) {
+    paintIntegral(_sendData, SEND_COLOR, 0.4);
+  }
+  
+  /* Outline the integrals in their appropriate colors. */
+  if (_showRecv) {
+    paintLine(_recvData, RECV_COLOR);
+  }
   /* If show send rate is selected */
   if (_showSend) {
-    _painter->setPen(QPen(SEND_COLOR, 2));
-    paintLine(_sendData);
+    paintLine(_sendData, SEND_COLOR);
   }
+}
+
+/** Plots an integral using the data points in <b>list</b>. The area will be
+ * filled in using <b>color</b> and an alpha-blending level of <b>alpha</b>
+ * (default is opaque). */
+void
+GraphFrame::paintIntegral(QList<qreal>* list, QColor color, qreal alpha)
+{
+  QVector<QPointF> points;
+  int x = _rec.width();
+  int y = _rec.height();
+  qreal scale = (y - (y/10)) / _maxValue;
+  qreal currValue;
+  
+  /* Translate all data points to points on the graph frame */
+  points << QPointF(x, y);
+  for (int i = 0; i < list->size(); i++) {
+    currValue = y - (list->at(i) * scale);
+    if (x - SCROLL_STEP < SCALE_WIDTH) {
+      points << QPointF(SCALE_WIDTH, currValue);
+      break;
+    }
+    points << QPointF(x, currValue);
+    x -= SCROLL_STEP;
+  }
+  points << QPointF(SCALE_WIDTH, y);
+  
+  /* Save the current brush, plot the integral, and restore the old brush */
+  QBrush oldBrush = _painter->brush();
+  color.setAlphaF(alpha);
+  _painter->setBrush(QBrush(color));
+  _painter->drawPolygon(points.data(), points.size());
+  _painter->setBrush(oldBrush);
 }
 
 /** Iterates the input list and draws a line on the graph
  in the appropriate color
 */
 void
-GraphFrame::paintLine(QList<qreal>* list)
+GraphFrame::paintLine(QList<qreal>* list, QColor color, Qt::PenStyle lineStyle) 
 {
   int x = _rec.width() + SCROLL_STEP;
   int y = _rec.height();
@@ -189,7 +228,10 @@ GraphFrame::paintLine(QList<qreal>* list)
   
   qreal prevValue = y - (list->at(0) * scale);
   qreal currValue;
-  
+ 
+  /* Save the current pen, set the new pen and plot the data lines */
+  QPen oldPen = _painter->pen();
+  _painter->setPen(QPen(color, lineStyle));
   for (int i = 0; i < list->size(); ++i) {
     currValue = y - (list->at(i) * scale);
     
@@ -207,6 +249,7 @@ GraphFrame::paintLine(QList<qreal>* list)
     prevValue = currValue;
     x -= SCROLL_STEP;
   }
+  _painter->setPen(oldPen);
 }
 
 /**
