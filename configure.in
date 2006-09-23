@@ -36,6 +36,7 @@ DOCS="doc"
 OSXBUNDLE="pkg/osx/bundle"
 OSXDMG="pkg/osx"
 AC_OUTPUT([$DOCS/vidalia.1                    \
+           $DOCS/Doxyfile                     \
            $OSXDMG/builddmg.sh                \
            $OSXBUNDLE/buildmpkg.sh            \
            $OSXBUNDLE/VidaliaBundleDesc.plist \
