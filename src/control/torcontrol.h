@@ -92,7 +92,7 @@ public:
   bool setConf(QHash<QString,QString> map, QString *errmsg = 0);
   /** Sets a single configuration key to the given value. */
   bool setConf(QString key, QString value, QString *errmsg = 0);
-  /** Gets a set of configuration keyvalues and stores them in \emph map. */
+  /** Gets a set of configuration keyvalues and stores them in <b>map</b>. */
   bool getConf(QHash<QString,QString> &map, QString *errmsg = 0);
   /** Gets a single configuration keyvalue. */
   bool getConf(QString key, QString &value, QString *errmsg = 0);

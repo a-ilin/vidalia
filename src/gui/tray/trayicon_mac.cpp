@@ -20,7 +20,7 @@
  ****************************************************************/
 
 /** 
- * \file trayicon_win.cpp
+ * \file trayicon_mac.cpp
  * \version $Id$
  */
 
