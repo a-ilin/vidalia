@@ -88,7 +88,7 @@ public:
   bool setEvents(QString *errmsg = 0);
   
 
-  /** Sets each configuration key in \emph map to the value associated with its key. */
+  /** Sets each configuration key in <b>map</b> to the value associated with its key. */
   bool setConf(QHash<QString,QString> map, QString *errmsg = 0);
   /** Sets a single configuration key to the given value. */
   bool setConf(QString key, QString value, QString *errmsg = 0);
