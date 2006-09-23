@@ -246,20 +246,28 @@ GraphFrame::paintLine(QList<qreal>* list, QColor color, Qt::PenStyle lineStyle)
 void
 GraphFrame::paintTotals()
 {
-  int x = SCALE_WIDTH + FONT_SIZE;
-  
+  int x = SCALE_WIDTH + FONT_SIZE, y = 0;
+  int rowHeight = FONT_SIZE;
+
+#if !defined(Q_WS_MAC)
+  /* On Mac, we don't need vertical spacing between the text rows. */
+  rowHeight += 5;
+#endif
+
   /* If total received is selected */
   if (_showRecv) {
+    y = rowHeight;
     _painter->setPen(RECV_COLOR);
-    _painter->drawText(x, FONT_SIZE,
+    _painter->drawText(x, y,
         tr("Recv: ") + totalToStr(_totalRecv) + 
         " ("+tr("%1 KB/s").arg(_recvData->first(), 0, 'f', 2)+")");
   }
 
   /* If total sent is selected */
   if (_showSend) {
+    y += rowHeight;
     _painter->setPen(SEND_COLOR);
-    _painter->drawText(x, (2*FONT_SIZE),
+    _painter->drawText(x, y,
         tr("Sent: ") + totalToStr(_totalSend) +
         " ("+tr("%1 KB/s").arg(_sendData->first(), 0, 'f', 2)+")");
   }
