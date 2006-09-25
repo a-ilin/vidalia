@@ -22,6 +22,7 @@
 /**
  * \file geoipcache.cpp
  * \version $Id$
+ * \brief Caches the results of previous GeoIP requests
  */
 
 #include <QFile>

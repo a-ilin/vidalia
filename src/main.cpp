@@ -22,8 +22,7 @@
 /**
  * \file main.cpp
  * \version $Id$
- *
- * Contains the main Vidalia entry point.
+ * \brief Main Vidalia entry point
  */
 
 #include <QObject>

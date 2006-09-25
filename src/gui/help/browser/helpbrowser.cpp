@@ -21,7 +21,8 @@
 
 /** 
  * \file helpbrowser.cpp
- * \version $Id$ 
+ * \version $Id$
+ * \brief Displays a list of help topics and content
  */
 
 #include <QDomDocument>

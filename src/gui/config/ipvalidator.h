@@ -22,6 +22,7 @@
 /** 
  * \file ipvalidator.h
  * \version $Id$
+ * \brief Validates an entered IP address
  */
 
 #ifndef _IPVALIDATOR_H

@@ -22,6 +22,7 @@
 /** 
  * \file circuititem.h
  * \version $Id$
+ * \brief List item representing a Tor circuit and its status
  */
 
 #ifndef _CIRCUITITEM_H

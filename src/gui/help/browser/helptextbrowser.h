@@ -22,6 +22,7 @@
 /** 
  * \file helptextbrowser.h
  * \version $Id$ 
+ * \brief Displays an HTML-based help document
  */
 
 #ifndef _HELPTEXTBROWSER_H

@@ -21,7 +21,8 @@
 
 /** 
  * \file logfile.cpp
- * \version $Id$ 
+ * \version $Id$
+ * \brief Logs messages from Tor to a file
  */
 
 #include <QDir>

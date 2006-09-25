@@ -22,6 +22,7 @@
 /**
  * \file geoiprequest.h
  * \version $Id$
+ * \brief A formatted request for GeoIP information for one or more IPs
  */
 
 #ifndef _GEOIPREQUEST_H

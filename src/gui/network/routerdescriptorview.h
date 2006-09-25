@@ -22,6 +22,7 @@
 /** 
  * \file routerdescriptorview.h
  * \version $Id$
+ * \brief Formats and displays a router descriptor as HTML
  */
 
 #ifndef _ROUTERDESCRIPTORVIEW_H

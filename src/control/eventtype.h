@@ -22,6 +22,7 @@
 /** 
  * \file eventtype.h
  * \version $Id$
+ * \brief Custom events dispatched upon receiving notification from Tor
  */
 
 #ifndef _EVENTTYPE_H

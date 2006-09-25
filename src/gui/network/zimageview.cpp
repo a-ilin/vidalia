@@ -22,6 +22,7 @@
 /** 
  * \file zimageview.cpp
  * \version $Id: netviewer.cpp 699 2006-04-15 03:12:22Z hipplej $
+ * \brief Displays an image and allows zooming and panning
  */
 
 #include <cmath>

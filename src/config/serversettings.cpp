@@ -22,6 +22,7 @@
 /** 
  * \file serversettings.cpp
  * \version $Id$
+ * \brief Settings for running a Tor server
  */
 
 #include <QHostInfo>

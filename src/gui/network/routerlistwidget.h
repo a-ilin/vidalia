@@ -22,6 +22,7 @@
 /** 
  * \file routerlistwidget.h
  * \version $Id$
+ * \brief Displays a list of Tor servers and their status
  */
 
 #ifndef _ROUTERLISTWIDGET_H

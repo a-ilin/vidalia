@@ -22,6 +22,7 @@
 /** 
  * \file torcontrol.h
  * \version $Id$
+ * \brief Object for interacting with the Tor process and control interface
  */
 
 #ifndef _TORCONTROL_H

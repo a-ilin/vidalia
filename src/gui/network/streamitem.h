@@ -22,6 +22,7 @@
 /** 
  * \file streamitem.h
  * \version $Id$
+ * \brief Item representing a stream through Tor and its status
  */
 
 #ifndef _STREAMITEM_H

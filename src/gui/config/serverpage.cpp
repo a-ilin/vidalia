@@ -22,6 +22,7 @@
 /** 
  * \file serverpage.cpp
  * \version $Id$
+ * \brief Tor server configuration options
  */
 
 #include <vidalia.h>

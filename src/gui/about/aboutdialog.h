@@ -22,6 +22,7 @@
 /** 
  * \file aboutdialog.h
  * \version $Id$
+ * \brief Displays information about Vidalia, Tor, and Qt
  */
 
 #ifndef _ABOUTDIALOG_H

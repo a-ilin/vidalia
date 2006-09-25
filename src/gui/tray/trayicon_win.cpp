@@ -42,6 +42,7 @@
 /** 
  * \file trayicon_win.cpp
  * \version $Id$
+ * \brief Tray icon implementation on Win32 
  */
 
 #include <QApplication>

@@ -21,7 +21,8 @@
 
 /** 
  * \file win32.h
- * \version $Id: string.h 700 2006-04-15 17:11:09Z edmanm $ 
+ * \version $Id: string.h 700 2006-04-15 17:11:09Z edmanm $
+ * \brief Win32-specific functions
  */
 
 #ifndef _WIN32_H

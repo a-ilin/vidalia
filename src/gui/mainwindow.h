@@ -22,6 +22,7 @@
 /**
  * \file mainwindow.h
  * \version $Id$
+ * \brief Main (hidden) window. Creates tray menu and child windows
  */
 
 #ifndef _MAINWINDOW_H

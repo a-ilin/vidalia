@@ -22,6 +22,7 @@
 /** 
  * \file logfile.h
  * \version $Id$ 
+ * \brief Logs messages from Tor to a file
  */
 
 #ifndef _LOGFILE_H

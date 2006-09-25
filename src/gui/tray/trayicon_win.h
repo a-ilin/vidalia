@@ -22,6 +22,7 @@
 /** 
  * \file trayicon_win.h
  * \version $Id: mainwindow.cpp 604 2006-04-08 20:36:55Z edmanm $
+ * \brief Tray icon implementation on Win32 
  */
 
 #ifndef _TRAYICON_WIN_H

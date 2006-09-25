@@ -22,6 +22,7 @@
 /** 
  * \file vidaliawindow.cpp
  * \version $Id$
+ * \brief Common superclass for all Vidalia windows
  */
 
 #include <QPoint>

@@ -22,6 +22,7 @@
 /** 
  * \file logtreeitem.h
  * \version $Id: messagelog.cpp 797 2006-05-09 04:42:35Z edmanm $ 
+ * \brief Item representing a single message in the message log
  */
 
 #ifndef _LOGTREEITEM_H

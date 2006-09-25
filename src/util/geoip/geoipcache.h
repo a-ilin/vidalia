@@ -22,6 +22,7 @@
 /**
  * \file geoipcache.h
  * \version $Id$
+ * \brief Caches the results of previous GeoIP requests
  */
 
 #ifndef _GEOIPCACHE_H

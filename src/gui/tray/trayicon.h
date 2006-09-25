@@ -22,6 +22,7 @@
 /** 
  * \file trayicon.h
  * \version $Id$
+ * \brief Places an icon with context menu in the system notification area
  */
 
 #ifndef _TRAYICON_H

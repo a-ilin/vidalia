@@ -22,6 +22,7 @@
 /** 
  * \file replyline.h
  * \version $Id$
+ * \brief Reply from a previous control command sent to Tor
  */
 
 #ifndef _REPLYLINE_H

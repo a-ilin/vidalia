@@ -22,6 +22,7 @@
 /** 
  * \file helpbrowser.h
  * \version $Id$ 
+ * \brief Displays a list of help topics and content
  */
 
 #ifndef _HELPBROWSER_H

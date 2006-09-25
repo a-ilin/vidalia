@@ -22,6 +22,7 @@
 /** 
  * \file tormapwidget.h
  * \version $Id$
+ * \brief Displays Tor servers and circuits on a map of the world
  */
 
 #ifndef _TORMAPWIDGET_H

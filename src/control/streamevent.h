@@ -22,6 +22,7 @@
 /** 
  * \file streamevent.h
  * \version $Id$
+ * \brief Event dispatched when a stream status update is received from Tor
  */
 
 #ifndef _STREAMEVENT_H

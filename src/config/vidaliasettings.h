@@ -22,6 +22,7 @@
 /** 
  * \file vidaliasettings.h
  * \version $Id$
+ * \brief General Vidalia settings, such as language and interface style
  */
 
 #ifndef _VIDALIASETTINGS_H

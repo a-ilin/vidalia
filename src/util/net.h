@@ -22,6 +22,7 @@
 /** 
  * \file net.h
  * \version $Id$
+ * \brief Common network I/O and utility functions
  */
 
 #ifndef _NET_H

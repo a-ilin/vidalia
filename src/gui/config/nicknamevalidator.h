@@ -22,6 +22,7 @@
 /** 
  * \file nicknamevalidator.h
  * \version $Id$
+ * \brief Validates that a server nickname contains only valid characters
  */
 
 #ifndef _NICKNAMEVALIDATOR_H

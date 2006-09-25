@@ -22,6 +22,7 @@
 /** 
  * \file domainvalidator.cpp
  * \version $Id$
+ * \brief Validates that a given domain name is (probably) valid
  */
 
 #include "domainvalidator.h"

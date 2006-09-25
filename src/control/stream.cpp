@@ -22,6 +22,7 @@
 /** 
  * \file stream.cpp
  * \version $Id$
+ * \brief Object representing a Tor stream
  */
 
 #include <QStringList>

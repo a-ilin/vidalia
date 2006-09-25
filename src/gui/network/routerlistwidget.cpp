@@ -22,6 +22,7 @@
 /** 
  * \file routerlistwidget.cpp
  * \version $Id$
+ * \brief Displays a list of Tor servers and their status
  */
 
 #include <QHeaderView>

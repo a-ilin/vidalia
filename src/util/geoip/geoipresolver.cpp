@@ -22,6 +22,7 @@
 /**
  * \file geoipresolver.cpp
  * \version $Id$
+ * \brief Requests GeoIP information and caches the result
  */
 
 #include "geoipresolver.h"

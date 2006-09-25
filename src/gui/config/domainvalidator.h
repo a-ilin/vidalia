@@ -22,6 +22,7 @@
 /** 
  * \file domainvalidator.h
  * \version $Id$
+ * \brief Validates that a given domain name is (probably) valid
  */
 
 #ifndef _DOMAINVALIDATOR_H

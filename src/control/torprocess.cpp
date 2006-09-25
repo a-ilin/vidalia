@@ -22,6 +22,7 @@
 /** 
  * \file torprocess.cpp
  * \version $Id$
+ * \brief Starts and stops a Tor process
  */
 
 #include <QFileInfo>

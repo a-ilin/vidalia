@@ -21,7 +21,8 @@
 
 /** 
  * \file helptextbrowser.cpp
- * \version $Id$ 
+ * \version $Id$
+ * \brief Displays an HTML-based help document
  */
 
 #include <QFile>

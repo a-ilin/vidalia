@@ -22,6 +22,7 @@
 /**
  * \file geoipcacheitem.cpp
  * \version $Id$
+ * \brief Cached result of a single IP-to-geolocation result
  */
 
 #include <QStringList>

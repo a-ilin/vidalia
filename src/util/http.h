@@ -22,6 +22,7 @@
 /** 
  * \file http.h
  * \version $Id$
+ * \brief Simple HTTP GET request object
  */
 
 #ifndef _HTTP_H

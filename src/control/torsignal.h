@@ -22,6 +22,7 @@
 /**
  * \file torsignal.h
  * \version $Id$
+ * \brief Sends a signal to Tor's control interface
  */
 
 #ifndef _TORSIGNAL_H

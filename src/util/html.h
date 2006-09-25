@@ -22,6 +22,7 @@
 /** 
  * \file html.h
  * \version $Id$
+ * \brief HTML formatting functions
  */
 
 #ifndef _HTML_H

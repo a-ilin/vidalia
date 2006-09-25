@@ -22,6 +22,7 @@
 /** 
  * \file logevent.cpp
  * \version $Id$
+ * \brief Event dispatched containing a log message from Tor
  */
 
 #include "eventtype.h"

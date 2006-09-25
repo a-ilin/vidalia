@@ -22,6 +22,7 @@
 /** 
  * \file torservice.cpp
  * \version $Id$
+ * \brief Starts, stops, installs, and uninstalls a Tor service (Win32).
  */
 
 #include "torservice.h"

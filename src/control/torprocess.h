@@ -22,6 +22,7 @@
 /** 
  * \file torprocess.h
  * \version $Id$
+ * \brief Starts and stops a Tor process
  */
 
 #ifndef _TORPROCESS_H

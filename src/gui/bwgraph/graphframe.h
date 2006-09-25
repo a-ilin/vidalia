@@ -22,6 +22,7 @@
 /** 
  * \file graphframe.h
  * \version $Id$
+ * \brief Graphs a series of send and receive data points
  */
 
 #ifndef _GRAPHFRAME_H

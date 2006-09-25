@@ -22,6 +22,7 @@
 /** 
  * \file serversettings.h
  * \version $Id$
+ * \brief Settings for running a Tor server
  */
 
 #ifndef _SERVERSETTINGS_H

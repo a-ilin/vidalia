@@ -22,6 +22,7 @@
 /**
  * \file orconnevent.h
  * \version $Id$
+ * \brief Event dispatched upon receiving an ORCONN update from Tor
  */
 
 #ifndef _ORCONNEVENT_H

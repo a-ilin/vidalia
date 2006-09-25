@@ -22,6 +22,7 @@
 /** 
  * \file vmessagebox.h
  * \version $Id$
+ * \brief Provides a custom Vidalia mesage box
  */
 
 #ifndef _VMESSAGEBOX_H

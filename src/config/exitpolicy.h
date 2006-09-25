@@ -22,6 +22,7 @@
 /** 
  * \file exitpolicy.h
  * \version $Id$
+ * \brief Collection of Policy objects representing an exit policy
  */
 
 #ifndef _EXITPOLICY_H

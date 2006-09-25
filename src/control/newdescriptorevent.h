@@ -22,6 +22,7 @@
 /** 
  * \file newdescriptorevent.h
  * \version $Id$
+ * \brief Event dispatched upon receiving a new descriptor from Tor
  */
 
 #ifndef _NEWDESCRIPTOREVENT_H

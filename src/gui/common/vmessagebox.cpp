@@ -22,6 +22,7 @@
 /** 
  * \file vmessagebox.cpp
  * \version $Id$
+ * \brief Provides a custom Vidalia mesage box
  */
 
 #include <util/html.h>

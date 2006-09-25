@@ -21,7 +21,8 @@
 
 /** 
  * \file messagelog.cpp
- * \version $Id$ 
+ * \version $Id$
+ * \brief Displays log messages and message log settings
  */
 
 #include <QMessageBox>

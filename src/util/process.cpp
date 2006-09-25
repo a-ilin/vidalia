@@ -22,6 +22,7 @@
 /**
  * \file process.cpp
  * \version $Id: process.cpp 995 2006-06-09 12:24:39Z edmanm $
+ * \brief Process information and pidfile functions 
  */
 
 #include <QDir>

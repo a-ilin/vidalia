@@ -22,6 +22,7 @@
 /** 
  * \file controlcommand.h
  * \version $Id$
+ * \brief A command sent to Tor's control interface
  */
 
 #ifndef _CONTROLCOMMAND_H

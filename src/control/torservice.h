@@ -22,6 +22,7 @@
 /** 
  * \file torservice.h
  * \version $Id$
+ * \brief Starts, stops, installs, and uninstalls a Tor service (Win32).
  */
 
 #ifndef _TORSERVICE_H

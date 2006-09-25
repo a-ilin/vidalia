@@ -22,6 +22,7 @@
 /** 
  * \file torsettings.h
  * \version $Id$
+ * \brief Settings used for starting and running Tor
  */
 
 #ifndef _TORSETTINGS_H

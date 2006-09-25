@@ -22,6 +22,7 @@
 /** 
  * \file portvalidator.h
  * \version $Id$
+ * \brief Validates that a number is a valid port number
  */
 
 #ifndef _PORTVALIDATOR_H

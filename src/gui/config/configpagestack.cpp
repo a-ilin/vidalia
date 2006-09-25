@@ -22,6 +22,7 @@
 /** 
  * \file configpagestack.cpp
  * \version $Id$
+ * \brief A collection of configuration pages
  */
 
 #include <QAction>

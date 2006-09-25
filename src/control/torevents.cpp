@@ -22,6 +22,7 @@
 /** 
  * \file torevents.cpp
  * \version $Id$
+ * \brief Parses and dispatches events from Tor
  */
 
 #include <QApplication>

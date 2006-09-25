@@ -22,6 +22,7 @@
 /** 
  * \file string.cpp
  * \version $Id$
+ * \brief Common string manipulation functions
  */
 
 #include "string.h"

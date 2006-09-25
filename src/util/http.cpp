@@ -22,6 +22,7 @@
 /** 
  * \file http.cpp
  * \version $Id$
+ * \brief Simple HTTP GET request object
  */
 
 #include <QCoreApplication>

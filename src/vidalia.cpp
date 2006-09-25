@@ -22,6 +22,7 @@
 /**
  * \file vidalia.cpp
  * \version $Id$
+ * \brief Main Vidalia QApplication object
  */
 
 #include <QDir>

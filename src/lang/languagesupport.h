@@ -22,6 +22,7 @@
 /** 
  * \file languagesupport.h
  * \version $Id$
+ * \brief Contains languages supported by Vidalia
  */
 
 #ifndef _LANGUAGESUPPORT_H

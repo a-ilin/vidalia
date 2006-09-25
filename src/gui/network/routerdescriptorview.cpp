@@ -22,6 +22,7 @@
 /** 
  * \file routerdescriptorview.cpp
  * \version $Id$
+ * \brief Formats and displays a router descriptor as HTML
  */
 
 #include <util/html.h>

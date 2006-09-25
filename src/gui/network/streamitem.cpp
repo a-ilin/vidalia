@@ -22,6 +22,7 @@
 /** 
  * \file streamitem.cpp
  * \version $Id$
+ * \brief Item representing a stream through Tor and its status
  */
 
 #include "streamitem.h"

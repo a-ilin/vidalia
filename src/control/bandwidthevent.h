@@ -22,6 +22,7 @@
 /** 
  * \file bandwidthevent.h
  * \version $Id$
+ * \brief Event dispatched upon receiving a bandwidth update from Tor
  */
 
 #ifndef _BANDWIDTHEVENT_H

@@ -22,6 +22,7 @@
 /**
  * \file geoipresolver.h
  * \version $Id$
+ * \brief Requests GeoIP information and caches the result
  */
 
 #ifndef _GEOIPRESOLVER_H

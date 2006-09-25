@@ -22,6 +22,7 @@
 /** 
  * \file circuitevent.h
  * \version $Id$
+ * \brief Event dispatched containing updated circuit status information
  */
 
 #ifndef _CIRCUITEVENT_H

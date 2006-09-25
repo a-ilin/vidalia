@@ -22,6 +22,7 @@
 /** 
  * \file advancedpage.h
  * \version $Id$
+ * \brief Advanced Tor and Vidalia configuration options
  */
 
 #ifndef _ADVANCEDPAGE_H

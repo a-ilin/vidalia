@@ -22,6 +22,7 @@
 /** 
  * \file circuit.cpp
  * \version $Id$
+ * \brief Object representing a Tor circuit
  */
 
 #include <QStringList>

@@ -22,6 +22,7 @@
 /** 
  * \file bwgraph.cpp
  * \version $Id$
+ * \brief Displays a graph of Tor's bandwidth usage
  */
 
 #include <vidalia.h>

@@ -22,6 +22,7 @@
 /**
  * \file process.h
  * \version $Id$
+ * \brief Process information and pidfile functions
  */
 
 #ifndef _PROCESS_H

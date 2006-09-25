@@ -21,7 +21,8 @@
 
 /** 
  * \file torsocket.cpp
- * \version $Id$ 
+ * \version $Id$
+ * \brief A QTcpSocket that makes requests over Tor
  */
 
 #include <QDataStream>

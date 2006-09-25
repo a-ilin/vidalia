@@ -22,6 +22,7 @@
 /** 
  * \file configdialog.h
  * \version $Id$
+ * \brief Contains a series of Vidalia and Tor configuration pages
  */
 
 #ifndef _CONFIGDIALOG_H

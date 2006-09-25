@@ -22,6 +22,7 @@
 /** 
  * \file stream.h
  * \version $Id$
+ * \brief Object representing a Tor stream
  */
 
 #ifndef _STREAM_H

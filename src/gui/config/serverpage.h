@@ -22,6 +22,7 @@
 /** 
  * \file serverpage.h
  * \version $Id$
+ * \brief Tor server configuration options
  */
 
 #ifndef _SERVERPAGE_H

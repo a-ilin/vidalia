@@ -22,6 +22,7 @@
 /** 
  * \file file.h
  * \version $Id$
+ * \brief Functions and definitions for common file I/O operations
  */
 
 #ifndef _FILE_H

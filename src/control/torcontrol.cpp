@@ -22,6 +22,7 @@
 /** 
  * \file torcontrol.cpp
  * \version $Id$
+ * \brief Object for interacting with the Tor process and control interface
  */
 
 #include <QHostAddress>

@@ -22,6 +22,7 @@
 /** 
  * \file circuititem.cpp
  * \version $Id$
+ * \brief Item representing a Tor circuit and its status
  */
 
 #include "circuitlistwidget.h"

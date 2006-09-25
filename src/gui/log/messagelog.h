@@ -22,6 +22,7 @@
 /** 
  * \file messagelog.h
  * \version $Id$
+ * \brief Displays log messages and message log settings
  */
 
 #ifndef _MESSAGELOG_H

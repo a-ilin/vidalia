@@ -22,7 +22,7 @@
 /** 
  * \file win32.cpp
  * \version $Id: string.h 700 2006-04-15 17:11:09Z edmanm $ 
- * \brief Contains Win32-specific functions.
+ * \brief Win32-specific functions
  */
 
 #include <windows.h>

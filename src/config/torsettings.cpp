@@ -22,6 +22,7 @@
 /** 
  * \file torsettings.cpp
  * \version $Id$
+ * \brief Settings used for starting and running Tor
  */
 
 #include <QDir>

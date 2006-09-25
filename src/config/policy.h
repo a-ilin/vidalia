@@ -22,6 +22,7 @@
 /** 
  * \file policy.h
  * \version $Id$
+ * \brief Exit policy parsing
  */
 
 #ifndef _POLICY_H

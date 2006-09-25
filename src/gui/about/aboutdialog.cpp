@@ -22,6 +22,7 @@
 /** 
  * \file aboutdialog.cpp
  * \version $Id$
+ * \brief Displays information about Vidalia, Tor, and Qt
  */
 
 #include <vidalia.h>

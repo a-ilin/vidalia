@@ -22,7 +22,9 @@
 /** 
  * \file tormapwidget.cpp
  * \version $Id$
+ * \brief Displays Tor servers and circuits on a map of the world
  */
+
 #include <QStringList>
 #include <cmath>
 #include "tormapwidget.h"

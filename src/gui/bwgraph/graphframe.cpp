@@ -22,6 +22,7 @@
 /** 
  * \file graphframe.cpp
  * \version $Id$
+ * \brief Graphs a series of send and receive data points
  */
 
 #include <QtGlobal>

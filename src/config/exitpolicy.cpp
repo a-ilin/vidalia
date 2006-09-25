@@ -22,6 +22,7 @@
 /** 
  * \file exitpolicy.cpp
  * \version $Id$
+ * \brief Collection of Policy objects representing an exit policy 
  */
 
 #include <QStringList>

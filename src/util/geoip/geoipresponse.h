@@ -22,6 +22,7 @@
 /**
  * \file geoipresponse.h
  * \version $Id$
+ * \brief Parses a response to a previous GeoIP request
  */
 
 #ifndef _GEOIPRESPONSE_H

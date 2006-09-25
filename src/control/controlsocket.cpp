@@ -22,6 +22,7 @@
 /** 
  * \file controlsocket.cpp
  * \version $Id: $
+ * \brief Socket used to connect to Tor's control interface
  */
 
 #include <QHostAddress>

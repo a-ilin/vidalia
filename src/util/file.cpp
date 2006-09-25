@@ -22,6 +22,7 @@
 /** 
  * \file file.cpp
  * \version $Id$
+ * \brief Functions and definitions for common file I/O operations
  */
 
 #include <QDir>

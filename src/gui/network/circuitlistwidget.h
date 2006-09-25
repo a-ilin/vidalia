@@ -22,6 +22,7 @@
 /** 
  * \file circuitlistwidget.h
  * \version $Id$
+ * \brief Collection of Tor circuits as CircuitItems
  */
 
 #ifndef _CIRCUITLISTWIDGET_H

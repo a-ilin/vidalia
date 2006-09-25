@@ -22,6 +22,7 @@
 /** 
  * \file torevents.h
  * \version $Id$
+ * \brief Parses and dispatches events from Tor
  */
 
 #ifndef _TOREVENTS_H

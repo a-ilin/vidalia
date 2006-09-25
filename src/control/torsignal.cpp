@@ -22,6 +22,7 @@
 /**
  * \file torsignal.cpp
  * \version $Id$
+ * \brief Sends a signal to Tor's control interface
  */
 
 #include "torsignal.h"

@@ -22,6 +22,7 @@
 /** 
  * \file controlreply.h
  * \version $Id$
+ * \brief A response from Tor's control interface
  */
 
 #ifndef _CONTROLREPLY_H

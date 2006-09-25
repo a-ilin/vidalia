@@ -22,6 +22,7 @@
 /** 
  * \file trayicon.cpp
  * \version $Id$
+ * \brief Places an icon with context menu in the system notification area
  */
 
 #include "trayicon.h"

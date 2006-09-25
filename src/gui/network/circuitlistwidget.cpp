@@ -22,6 +22,7 @@
 /** 
  * \file circuitlistwidget.cpp
  * \version $Id$
+ * \brief Collection of Tor circuits as CircuitItems
  */
 
 #include <QTimer>

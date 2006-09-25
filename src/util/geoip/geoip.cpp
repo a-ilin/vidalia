@@ -22,6 +22,7 @@
 /**
  * \file geoip.cpp
  * \version $Id$
+ * \brief Associates an IP with a geographic location
  */
 
 #include <QStringList>

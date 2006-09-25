@@ -22,6 +22,7 @@
 /** 
  * \file vidaliawindow.h
  * \version $Id$
+ * \brief Common superclass for all Vidalia windows
  */
 
 #ifndef _VIDALIAWINDOW_H

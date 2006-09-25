@@ -22,6 +22,7 @@
 /** 
  * \file mainwindow.cpp
  * \version $Id$
+ * \brief Main (hidden) window. Creates tray menu and child windows
  *
  * Implements the main window. The main window is a hidden window that serves
  * as the parent of the tray icon and popup menu, as well as other application

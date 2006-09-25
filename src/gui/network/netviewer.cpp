@@ -22,6 +22,7 @@
 /** 
  * \file netviewer.cpp
  * \version $Id: netviewer.cpp 699 2006-04-15 03:12:22Z hipplej $
+ * \brief Displays a map of the Tor network and the user's circuits
  */
 
 #include <QMessageBox>

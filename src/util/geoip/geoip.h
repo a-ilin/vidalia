@@ -22,6 +22,7 @@
 /**
  * \file geoip.h
  * \version $Id$
+ * \brief Associates an IP with a geographic location
  */
 
 #ifndef _GEOIP_H

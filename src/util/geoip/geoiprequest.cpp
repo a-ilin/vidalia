@@ -22,6 +22,7 @@
 /**
  * \file geoiprequest.cpp
  * \version $Id$
+ * \brief A formatted request for GeoIP information for one or more IPs
  */
 
 #include "geoiprequest.h"

@@ -22,6 +22,7 @@
 /** 
  * \file languagesupport.cpp
  * \version $Id$
+ * \brief Contains languages supported by Vidalia
  */
 
 #include <QTranslator>

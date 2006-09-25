@@ -19,6 +19,12 @@
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
 
+/**
+ * \file orconnevent.cpp
+ * \version $Id$
+ * \brief Event dispatched upon receiving an ORCONN update from Tor
+ */
+
 #include "orconnevent.h"
 
 #include "eventtype.h"

@@ -21,7 +21,8 @@
 
 /** 
  * \file logheaderview.cpp
- * \version $Id: messagelog.cpp 797 2006-05-09 04:42:35Z edmanm $ 
+ * \version $Id: messagelog.cpp 797 2006-05-09 04:42:35Z edmanm $
+ * \brief Header for the message log QTreeView
  */
 
 #include "logheaderview.h"

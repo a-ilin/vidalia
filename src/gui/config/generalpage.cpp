@@ -22,6 +22,7 @@
 /** 
  * \file generalpage.cpp
  * \version $Id$
+ * \brief General Tor and Vidalia configuration options
  */
 
 #include "generalpage.h"

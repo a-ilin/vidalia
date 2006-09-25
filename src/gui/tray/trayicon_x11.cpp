@@ -39,6 +39,12 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
 
+/**
+ * \file trayicon_x11.cpp
+ * \version $Id$
+ * \brief Tray icon implementation on X11
+ */
+
 #include "trayicon_x11.h"
 
 #include <QApplication>

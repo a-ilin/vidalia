@@ -22,6 +22,7 @@
 /** 
  * \file configdialog.cpp
  * \version $Id$
+ * \brief Contains a series of Vidalia and Tor configuration pages
  */
 
 #include <gui/common/vmessagebox.h>

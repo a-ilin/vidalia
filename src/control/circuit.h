@@ -22,6 +22,7 @@
 /** 
  * \file circuit.h
  * \version $Id$
+ * \brief Object representing a Tor circuit
  */
 
 #ifndef _CIRCUIT_H

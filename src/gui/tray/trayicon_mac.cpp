@@ -22,6 +22,7 @@
 /** 
  * \file trayicon_mac.cpp
  * \version $Id$
+ * \brief Tray icon implementation on OS X (Dock icon)
  */
 
 #include <QApplication>

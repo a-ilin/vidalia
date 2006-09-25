@@ -22,6 +22,7 @@
 /** 
  * \file configpage.h
  * \version $Id$
+ * \brief Pure-virtual class for a configuration page
  */
 
 #ifndef _CONFIGPAGE_H

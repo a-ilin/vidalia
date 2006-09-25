@@ -42,6 +42,7 @@
 /** 
  * \file trayicon_x11.h
  * \version $Id: mainwindow.cpp 604 2006-04-08 20:36:55Z edmanm $
+ * \brief Tray icon implementation on X11
  */
 
 #ifndef _TRAYICON_X11_H

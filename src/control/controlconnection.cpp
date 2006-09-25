@@ -22,6 +22,8 @@
 /** 
  * \file controlconnection.cpp
  * \version $Id$
+ * \brief A connection to Tor's control interface, responsible for sending and
+ * receiving commands and events
  */
 
 #include <QCoreApplication>

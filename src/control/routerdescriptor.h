@@ -22,6 +22,7 @@
 /** 
  * \file routerdescriptor.h
  * \version $Id$
+ * \brief Parses a blob of router descriptor text from Tor
  */
 
 #ifndef _ROUTERDESCRIPTOR_H

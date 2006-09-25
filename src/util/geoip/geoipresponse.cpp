@@ -22,6 +22,7 @@
 /**
  * \file geoipresponse.cpp
  * \version $Id$
+ * \brief Parses a response to a previous GeoIP request
  */
 
 #include <QStringList>

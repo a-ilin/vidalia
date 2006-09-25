@@ -22,6 +22,7 @@
 /** 
  * \file nicknamevalidator.cpp
  * \version $Id$
+ * \brief Validates that a server nickname contains only valid characters
  */
 
 #include <util/string.h>

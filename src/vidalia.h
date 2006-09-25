@@ -22,6 +22,7 @@
 /**
  * \file vidalia.h
  * \version $Id$
+ * \brief Main Vidalia QApplication object
  */
 
 #ifndef _VIDALIA_H

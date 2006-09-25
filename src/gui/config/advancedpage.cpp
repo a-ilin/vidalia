@@ -22,6 +22,7 @@
 /** 
  * \file advancedpage.cpp
  * \version $Id$
+ * \brief Advanced Tor and Vidalia configuration options
  */
 
 #include <QFile>

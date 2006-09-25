@@ -22,6 +22,7 @@
 /** 
  * \file routerdescriptor.cpp
  * \version $Id$
+ * \brief Parses a blob of router descriptor text from Tor
  */
 
 #include <QtGlobal>

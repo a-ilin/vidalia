@@ -22,6 +22,7 @@
 /** 
  * \file policy.cpp
  * \version $Id$
+ * \brief Exit policy parsing
  */
 
 #include <QStringList>

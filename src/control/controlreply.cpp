@@ -22,6 +22,7 @@
 /** 
  * \file controlreply.cpp
  * \version $Id$
+ * \brief A response from Tor's control interface
  */
 
 #include "controlreply.h"

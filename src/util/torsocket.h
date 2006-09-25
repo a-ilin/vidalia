@@ -21,7 +21,8 @@
 
 /** 
  * \file torsocket.h
- * \version $Id$ 
+ * \version $Id$
+ * \brief A QTcpSocket that makes requests over Tor
  */
 
 #ifndef _TORSOCKET_H

@@ -21,7 +21,8 @@
 
 /** 
  * \file string.h
- * \version $Id$ 
+ * \version $Id$
+ * \brief Common string manipulation functions
  */
 
 #ifndef __STRING_H

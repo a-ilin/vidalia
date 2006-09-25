@@ -22,6 +22,7 @@
 /** 
  * \file configpagestack.h
  * \version $Id$
+ * \brief A collection of configuration pages
  */
 
 #ifndef _CONFIGPAGESTACK_H
