@@ -236,7 +236,9 @@ NetViewer::loadDescriptors(QStringList ids)
       if (!_resolveQueue.contains(ip)) {
         _resolveQueue << ip;
       }
-      _resolveMap.insertMulti(rd.ip(), rd.id());
+      if (!_resolveMap.values(rd.ip()).contains(rd.id())) {
+        _resolveMap.insertMulti(rd.ip(), rd.id());
+      }
     }
   }
 
