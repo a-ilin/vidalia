@@ -258,8 +258,10 @@ ControlConnection::processReceiveQueue(ControlSocket *sock)
       } else {
         /* Response to a previous command */
         _recvMutex.lock();
-        waiter = _recvQueue.dequeue();
-        waiter->setResult(Success, reply);
+        if (!_recvQueue.isEmpty()) {
+          waiter = _recvQueue.dequeue();
+          waiter->setResult(Success, reply);
+        }
         _recvMutex.unlock();
       }
     }
