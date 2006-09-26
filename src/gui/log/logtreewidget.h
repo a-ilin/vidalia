@@ -54,21 +54,20 @@ public:
   /** Default constructor. */
   LogTreeWidget(QWidget *parent = 0);
 
-  /** Adds a message log item. */
-  void addItem(LogTreeItem *item);
+  
   /** Returns a list of all currently selected items. */
-  QList<LogTreeItem *> selectedItems();
+  QList<LogTreeItem *> selectedMessages();
   /** Returns a list of all selected items as a formatted string. */
-  QString selectedItemsText();
+  QString selectedMessagesText();
   /** Returns a list of all items in the tree. */
-  QList<LogTreeItem *> allItems();
+  QList<LogTreeItem *> allMessages();
   /** Deselects all currently selected items. */
   void deselectAll();
   
   /** Returns the number of items currently in the tree. */
-  int itemCount();
+  int messageCount();
   /** Sets the maximum number of items in the tree. */
-  void setMaximumItemCount(int max);
+  void setMaximumMessageCount(int max);
   /** Filters the log according to the specified filter. */
   void filter(uint filter);
   
@@ -83,7 +82,7 @@ public:
 
 public slots:
   /** Clears all contents on the message log and resets the counter. */
-  void clear();
+  void clearMessages();
 
 protected:
   /** Sets the default, initial column header widths. */
@@ -94,6 +93,8 @@ private slots:
   void onVerticalScroll(int value);
 
 private:
+  /** Adds a message log item. */
+  void addMessageItem(LogTreeItem *item);
   /** Casts a QList of one pointer type to another. */
   QList<LogTreeItem *> qlist_cast(QList<QTreeWidgetItem *> inlist);
   /** Sortrs a QList of pointers to tree items. */

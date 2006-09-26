@@ -160,7 +160,7 @@ MessageLog::loadSettings()
   uint maxMsgCount = getSetting(SETTING_MAX_MSG_COUNT,
                                 DEFAULT_MAX_MSG_COUNT).toUInt();
   ui.spnbxMaxCount->setValue(maxMsgCount);
-  ui.lstMessages->setMaximumItemCount(maxMsgCount);
+  ui.lstMessages->setMaximumMessageCount(maxMsgCount);
 
   /* Set whether or not logging to file is enabled */
   _enableLogging = getSetting(SETTING_ENABLE_LOGFILE,
@@ -238,7 +238,7 @@ MessageLog::saveSettings()
 
   /* Update the maximum displayed item count */
   saveSetting(SETTING_MAX_MSG_COUNT, ui.spnbxMaxCount->value());
-  ui.lstMessages->setMaximumItemCount(ui.spnbxMaxCount->value());
+  ui.lstMessages->setMaximumMessageCount(ui.spnbxMaxCount->value());
   
   /* Save message filter and refilter the list */
   uint filter = 0;
@@ -327,21 +327,21 @@ MessageLog::save(QList<LogTreeItem *> items)
 void
 MessageLog::saveSelected()
 {
-  save(ui.lstMessages->selectedItems());
+  save(ui.lstMessages->selectedMessages());
 }
 
 /** Saves all shown messages to a file. */
 void
 MessageLog::saveAll()
 {
-  save(ui.lstMessages->allItems());
+  save(ui.lstMessages->allMessages());
 }
 
 /** Copies contents of currently selected messages to the 'clipboard'. */
 void
 MessageLog::copy()
 {
-  QString contents = ui.lstMessages->selectedItemsText();
+  QString contents = ui.lstMessages->selectedMessagesText();
   if (!contents.isEmpty()) {
     /* Clear anything on the clipboard */
     QApplication::clipboard()->clear();

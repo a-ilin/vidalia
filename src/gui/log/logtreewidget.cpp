@@ -98,13 +98,13 @@ LogTreeWidget::showEvent(QShowEvent *event)
 /** Clears all items from the message log and resets the counter in the status
  * bar. */
 void
-LogTreeWidget::clear()
+LogTreeWidget::clearMessages()
 {
   /* Clear the messages */
-  QTreeWidget::clear();
+  clear();
   /* This should always be 0, but just in case clear() doesn't really remove
    * all, we'll get the current count again. */
-  setStatusTip(tr("Messages Shown: %1").arg(itemCount()));
+  setStatusTip(tr("Messages Shown: %1").arg(messageCount()));
 }
 
 /** Adjusts the message column width to accomodate long messages. */
@@ -117,7 +117,7 @@ LogTreeWidget::adjustMessageColumn()
 
 /** Adds a message log item. */
 void
-LogTreeWidget::addItem(LogTreeItem *item)
+LogTreeWidget::addMessageItem(LogTreeItem *item)
 {
   /* Add the new item. */
   addTopLevelItem(item);
@@ -127,19 +127,19 @@ LogTreeWidget::addItem(LogTreeItem *item)
 
 /** Returns a list of all currently selected items. */
 QList<LogTreeItem *>
-LogTreeWidget::selectedItems()
+LogTreeWidget::selectedMessages()
 {
   QList<LogTreeItem *> items = 
-    qlist_cast(QTreeWidget::selectedItems());
+    qlist_cast(selectedItems());
   return qlist_sort(items);
 }
 
 /** Returns a list of all selected items as a formatted string. */
 QString
-LogTreeWidget::selectedItemsText()
+LogTreeWidget::selectedMessagesText()
 {
   QString text;
-  foreach (LogTreeItem *item, selectedItems()) {
+  foreach (LogTreeItem *item, selectedMessages()) {
     text.append(item->toString());
   }
   return text;
@@ -147,7 +147,7 @@ LogTreeWidget::selectedItemsText()
 
 /** Returns a list of all items in the tree. */
 QList<LogTreeItem *>
-LogTreeWidget::allItems()
+LogTreeWidget::allMessages()
 {
   /* Find all items */
   QList<LogTreeItem *> items = 
@@ -157,16 +157,16 @@ LogTreeWidget::allItems()
 
 /** Returns the number of items currently shown. */
 int
-LogTreeWidget::itemCount()
+LogTreeWidget::messageCount()
 {
   return topLevelItemCount();
 }
 
 /** Sets the maximum number of items in the tree. */
 void
-LogTreeWidget::setMaximumItemCount(int max)
+LogTreeWidget::setMaximumMessageCount(int max)
 {
-  while (max < itemCount()) {
+  while (max < messageCount()) {
     /* If the new max is less than the currently displayed number of 
      * items, then we'll get rid of some. */
     delete takeTopLevelItem(0);
@@ -178,7 +178,7 @@ LogTreeWidget::setMaximumItemCount(int max)
 void
 LogTreeWidget::deselectAll()
 {
-  foreach(LogTreeItem *item, selectedItems()) {
+  foreach(LogTreeItem *item, selectedMessages()) {
     setItemSelected(item, false);
   }
 }
@@ -190,18 +190,18 @@ LogTreeWidget::log(LogEvent::Severity type, QString message)
   LogTreeItem *item = new LogTreeItem(type, message);
 
   /* If we need to make room, then make some room */
-  if (itemCount() >= _maxItemCount) {
+  if (messageCount() >= _maxItemCount) {
     delete takeTopLevelItem(0);
   }
   
   /* Add the new message item and scroll to it (if necessary) */
-  addItem(item);
+  addMessageItem(item);
   if (_scrollOnNewItem) {
     scrollToItem(item);
   }
 
   /* Update our tooltip and return the new log item */
-  setStatusTip(tr("Messages Shown: %1").arg(itemCount()));
+  setStatusTip(tr("Messages Shown: %1").arg(messageCount()));
   return item;
 }
 
@@ -210,7 +210,7 @@ void
 LogTreeWidget::filter(uint filter)
 {
   LogTreeItem *item;
-  int index = topLevelItemCount() - 1;
+  int index = messageCount() - 1;
   int itemsShown = 0;
 
   while (index > -1) {
@@ -223,7 +223,7 @@ LogTreeWidget::filter(uint filter)
     index--;
   }
 
-  setStatusTip(tr("Messages Shown: %1").arg(itemCount()));
+  setStatusTip(tr("Messages Shown: %1").arg(messageCount()));
 }
 
 /** Searches the log for entries that contain the given text. */
