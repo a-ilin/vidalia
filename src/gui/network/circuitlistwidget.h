@@ -71,7 +71,7 @@ signals:
 
 public slots:
   /** Clears all circuits and streams from the list. */
-  void clear();
+  void clearCircuits();
 
 private slots:
   /** Removes the circuit with the given ID and any streams on this circuit.*/

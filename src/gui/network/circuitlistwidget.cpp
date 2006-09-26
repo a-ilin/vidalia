@@ -187,7 +187,7 @@ CircuitListWidget::removeStream(StreamItem *stream)
 
 /** Clears all circuits and streams from the list. */
 void
-CircuitListWidget::clear()
+CircuitListWidget::clearCircuits()
 {
   QTreeWidget::clear();
   _circuitRemovalList.clear();

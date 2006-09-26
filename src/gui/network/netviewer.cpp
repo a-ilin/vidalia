@@ -186,7 +186,7 @@ NetViewer::clear()
   _map->update();
   /* Clear the lists of routers, circuits, and streams */
   ui.treeRouterList->clearRouters();
-  ui.treeCircuitList->clear();
+  ui.treeCircuitList->clearCircuits();
   ui.textRouterInfo->clear();
 }
 
