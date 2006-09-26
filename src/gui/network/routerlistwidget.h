@@ -72,6 +72,10 @@ signals:
   /** Called when the user selects a router from the list. */
   void routerSelected(RouterDescriptor rd);
 
+public slots:
+  /** Clears the list of router items. */
+  void clearRouters();
+  
 private slots:
   /** Called when the user clicks on an item in the list. */
   void onSelectionChanged();

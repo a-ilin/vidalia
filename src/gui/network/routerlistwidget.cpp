@@ -58,6 +58,14 @@ RouterListWidget::deselectAll()
   }
 }
 
+/** Clear the list of router items. */
+void
+RouterListWidget::clearRouters()
+{
+  _idmap.clear();
+  QTreeWidget::clear();
+}
+
 /** Inserts a new router list item into the list, in its proper sorted place
  * according to the current sort column. */
 void

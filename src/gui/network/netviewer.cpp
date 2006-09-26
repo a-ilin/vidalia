@@ -178,9 +178,14 @@ NetViewer::refresh()
 void
 NetViewer::clear()
 {
+  /* Clear the resolve queue and map */
+  _resolveMap.clear();
+  _resolveQueue.clear();
+  /* Clear the network map */
   _map->clear();
   _map->update();
-  ui.treeRouterList->clear();
+  /* Clear the lists of routers, circuits, and streams */
+  ui.treeRouterList->clearRouters();
   ui.treeCircuitList->clear();
   ui.textRouterInfo->clear();
 }
