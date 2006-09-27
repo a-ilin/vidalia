@@ -146,14 +146,14 @@ win32_registry_remove_key(QString keyLocation, QString keyName)
 
 /** Returns a list of all currently active processes, including their pid
  * and exe filename. */
-QHash<quint64, QString>
+QHash<qint64, QString>
 win32_process_list()
 {
-  QHash<quint64, QString> procList;
+  QHash<qint64, QString> procList;
   HANDLE hSnapshot;
   PROCESSENTRY32 proc;
   QString exeFile;
-  quint64 pid;
+  qint64 pid;
  
   /* Create a snapshot of all active processes */
   hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
@@ -164,7 +164,7 @@ win32_process_list()
     if (Process32First(hSnapshot, &proc)) {
       do {
         /* Extract the PID and exe filename from the process record */
-        pid = (quint64)proc.th32ProcessID;
+        pid = (qint64)proc.th32ProcessID;
         QT_WA(
           exeFile = QString::fromUtf16((const ushort *)proc.szExeFile);,
           exeFile = QString::fromAscii((const char *)proc.szExeFile);

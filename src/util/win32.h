@@ -50,7 +50,7 @@ void win32_registry_remove_key(QString keyLocation, QString keyName);
 
 /** Returns a list of all currently active processes, including their pid
  * and exe filename. */
-QHash<quint64, QString> win32_process_list();
+QHash<qint64, QString> win32_process_list();
 
 #endif
 

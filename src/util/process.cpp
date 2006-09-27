@@ -51,7 +51,7 @@ bool
 is_process_running(qint64 pid)
 {
 #if defined(Q_OS_WIN)
-  QHash<quint64, QString> procList = win32_process_list();
+  QHash<qint64, QString> procList = win32_process_list();
   if (procList.contains(pid)) {
     /* A process with this ID exists. Check if it's Vidalia. */
     QString exeFile = procList.value(pid);
