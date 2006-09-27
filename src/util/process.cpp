@@ -27,7 +27,9 @@
 
 #include <QDir>
 #include <QFile>
+#include <QFileInfo>
 #include <QTextStream>
+#include <vidalia.h>
 
 #include "string.h"
 #include "process.h"
@@ -49,26 +51,14 @@ bool
 is_process_running(qint64 pid)
 {
 #if defined(Q_OS_WIN)
-  BOOL rc;
-  DWORD exitCode;
-  
-  /* Try to open the process to see if it exists */
-  HANDLE hProcess = OpenProcess(PROCESS_QUERY_INFORMATION, FALSE, (DWORD)pid);
-  if (hProcess == NULL) {
-    return false;
+  QHash<quint64, QString> procList = win32_process_list();
+  if (procList.contains(pid)) {
+    /* A process with this ID exists. Check if it's Vidalia. */
+    QString exeFile = procList.value(pid);
+    QString vidaliaExe = QFileInfo(Vidalia::applicationFilePath()).fileName();
+    return (exeFile.toLower() == vidaliaExe.toLower());
   }
-  
-  /* It exists, so see if it's still active or if it terminated already */
-  rc = GetExitCodeProcess(hProcess, &exitCode);
-  CloseHandle(hProcess);
-  if (!rc) {
-    /* Error. Assume it doesn't exist (is this a bad assumption?) */
-    return false;
-  }
-  /* If GetExitCodeProcess() returns a non-zero value, and the process is
-   * still running, exitCode should equal STILL_ACTIVE. Otherwise, this means
-   * the process has terminated. */
-  return (exitCode == STILL_ACTIVE);
+  return false;
 #else
   /* Send the "null" signal to check if a process exists */
   if (kill((pid_t)pid, 0) < 0) {

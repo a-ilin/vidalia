@@ -25,10 +25,10 @@
  * \brief Win32-specific functions
  */
 
-#include <windows.h>
+#include "win32.h"
+#include <tlhelp32.h>
 #include <shlobj.h>
 #include <QDir>
-#include "win32.h"
 
 
 /** Finds the location of the "special" Windows folder using the given CSIDL
@@ -142,5 +142,40 @@ win32_registry_remove_key(QString keyLocation, QString keyName)
 
   /* Close anything that was opened */
   RegCloseKey(key);
+}
+
+/** Returns a list of all currently active processes, including their pid
+ * and exe filename. */
+QHash<quint64, QString>
+win32_process_list()
+{
+  QHash<quint64, QString> procList;
+  HANDLE hSnapshot;
+  PROCESSENTRY32 proc;
+  QString exeFile;
+  quint64 pid;
+ 
+  /* Create a snapshot of all active processes */
+  hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+  if (hSnapshot != INVALID_HANDLE_VALUE) {
+    proc.dwSize = sizeof(PROCESSENTRY32);
+    
+    /* Iterate through all the processes in the snapshot */
+    if (!Process32First(hSnapshot, &proc)) {
+      return procList;
+    }
+    do {
+      /* Extract the PID and exe filename from the process record */
+      pid = (quint64)proc.th32ProcessID;
+      QT_WA(
+        exeFile = QString::fromUtf16((const ushort *)proc.szExeFile);,
+        exeFile = QString::fromAscii((const char *)proc.szExeFile);
+      )
+      /* Add this process to our list */
+      procList.insert(pid, exeFile);
+    } while (Process32Next(hSnapshot, &proc));
+    CloseHandle(hSnapshot);
+  }
+  return procList;
 }
 

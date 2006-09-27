@@ -28,6 +28,9 @@
 #ifndef _WIN32_H
 #define _WIN32_H
 
+#define WIN32_LEAN_AND_MEAN
+#include <windows.h>
+#include <QHash>
 #include <QString>
 
 /** Retrieves the location of the user's %PROGRAMFILES% folder. */
@@ -44,6 +47,10 @@ void win32_registry_set_key_value(QString keyLocation, QString keyName, QString 
 
 /** Removes the key from the registry if it exists */
 void win32_registry_remove_key(QString keyLocation, QString keyName);
+
+/** Returns a list of all currently active processes, including their pid
+ * and exe filename. */
+QHash<quint64, QString> win32_process_list();
 
 #endif
 
