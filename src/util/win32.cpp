@@ -161,19 +161,18 @@ win32_process_list()
     proc.dwSize = sizeof(PROCESSENTRY32);
     
     /* Iterate through all the processes in the snapshot */
-    if (!Process32First(hSnapshot, &proc)) {
-      return procList;
+    if (Process32First(hSnapshot, &proc)) {
+      do {
+        /* Extract the PID and exe filename from the process record */
+        pid = (quint64)proc.th32ProcessID;
+        QT_WA(
+          exeFile = QString::fromUtf16((const ushort *)proc.szExeFile);,
+          exeFile = QString::fromAscii((const char *)proc.szExeFile);
+        )
+        /* Add this process to our list */
+        procList.insert(pid, exeFile);
+      } while (Process32Next(hSnapshot, &proc));
     }
-    do {
-      /* Extract the PID and exe filename from the process record */
-      pid = (quint64)proc.th32ProcessID;
-      QT_WA(
-        exeFile = QString::fromUtf16((const ushort *)proc.szExeFile);,
-        exeFile = QString::fromAscii((const char *)proc.szExeFile);
-      )
-      /* Add this process to our list */
-      procList.insert(pid, exeFile);
-    } while (Process32Next(hSnapshot, &proc));
     CloseHandle(hSnapshot);
   }
   return procList;
