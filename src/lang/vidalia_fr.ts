@@ -97,7 +97,7 @@
     </message>
     <message>
         <source>Run as Group:</source>
-        <translation>Démarrer en tant que membre du groupe</translation>
+        <translation>Démarrer en tant que groupe :</translation>
     </message>
     <message>
         <source>Vidalia will run with this Group&apos;s permissions</source>
@@ -125,37 +125,39 @@
     </message>
     <message>
         <source>Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Service</translation>
     </message>
     <message>
         <source>Enable this if you wish to run Tor as a Windows service</source>
-        <translation type="unfinished"></translation>
+        <translation>Cocher ici si vous voulez que Tor démarre comme un service Windows</translation>
     </message>
     <message>
         <source>Run Tor in the background as a Windows service</source>
-        <translation type="unfinished"></translation>
+        <translation>Démarre Tor en arrière plan comme un service Windows</translation>
     </message>
     <message>
         <source>Unable to remove Tor Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible d&apos;enlever le service Tor</translation>
     </message>
     <message>
         <source>Unable to install Tor Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible d&apos;installer le service Tor</translation>
     </message>
     <message>
         <source>Vidalia was unable to install the Tor service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia n&apos;a pas pu installer le service Tor.</translation>
     </message>
     <message>
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia n&apos;a pas pu enlever le service Tor.
+
+Vous devrez enlever manuellement le service Tor.</translation>
     </message>
     <message>
         <source>Tor Configuration File</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichier de configuration Tor</translation>
     </message>
 </context>
 <context>
@@ -325,7 +327,7 @@ You may need to remove it manually.</source>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Options</translation>
+        <translation>Paramètres</translation>
     </message>
 </context>
 <context>
@@ -790,27 +792,27 @@ Veuillez consulter l&apos;historique afin de vérifier ce qui est arrivé à Tor
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Options</translation>
+        <translation>Paramètres</translation>
     </message>
     <message>
         <source>Network Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Voir réseau Tor</translation>
     </message>
     <message>
         <source>New Identity</source>
-        <translation type="unfinished">Nouvelle identité</translation>
+        <translation>Nouvelle identité</translation>
     </message>
     <message>
         <source>Ctrl+I</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+I</translation>
     </message>
     <message>
         <source>All subsequent connections will appear to be different than your old connections.</source>
-        <translation type="unfinished">Toutes les connections suivantes sembleront être différentes des précédentes.</translation>
+        <translation>Toutes les connections suivantes sembleront être différentes des précédentes.</translation>
     </message>
     <message>
         <source>Failed to Create New Identity</source>
-        <translation type="unfinished">La création d&apos;une nouvelle identité a échoué</translation>
+        <translation>La création d&apos;une nouvelle identité a échoué</translation>
     </message>
 </context>
 <context>
@@ -1098,11 +1100,11 @@ pour les développeurs de Tor.</translation>
     </message>
     <message>
         <source>Text Files (*.txt)</source>
-        <translation type="unfinished"></translation>
+        <translation>Fichiers texte (*.txt)</translation>
     </message>
     <message>
         <source>F1</source>
-        <translation type="unfinished"></translation>
+        <translation>F1</translation>
     </message>
 </context>
 <context>
@@ -1173,35 +1175,35 @@ pour les développeurs de Tor.</translation>
     </message>
     <message>
         <source>Zoom To Fit</source>
-        <translation type="unfinished"></translation>
+        <translation>Adapter le zoom</translation>
     </message>
     <message>
         <source>Zooms to fit all currently displayed circuits.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom pour adapter tous les circuits actuellement montrés.</translation>
     </message>
     <message>
         <source>Ctrl+R</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
         <source>F1</source>
-        <translation type="unfinished"></translation>
+        <translation>F1</translation>
     </message>
     <message>
         <source>Esc</source>
-        <translation type="unfinished">Esc</translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished">-</translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>Ctrl+Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Z</translation>
     </message>
 </context>
 <context>
@@ -1265,15 +1267,15 @@ pour les développeurs de Tor.</translation>
     <name>RouterListItem</name>
     <message>
         <source>%1 KB/s</source>
-        <translation type="unfinished">%1 KB/s</translation>
+        <translation>%1 KB/s</translation>
     </message>
     <message>
         <source>Offline</source>
-        <translation type="unfinished">Éteint</translation>
+        <translation>Éteint</translation>
     </message>
     <message>
         <source>Hibernating</source>
-        <translation type="unfinished">Hibernation</translation>
+        <translation>Hibernation</translation>
     </message>
 </context>
 <context>
@@ -1288,11 +1290,11 @@ pour les développeurs de Tor.</translation>
     </message>
     <message>
         <source>Server</source>
-        <translation type="unfinished">Serveur</translation>
+        <translation>Serveur</translation>
     </message>
     <message>
         <source>%1 servers total</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 serveurs au total</translation>
     </message>
 </context>
 <context>
@@ -1528,11 +1530,11 @@ de PGP ou de GPG.</translation>
     </message>
     <message>
         <source>Only allow connections to other Tor servers (non-exit node)</source>
-        <translation type="unfinished"></translation>
+        <translation>Autoriser uniquement les connections aux serveurs Tor (pas noeud de sortie)</translation>
     </message>
     <message>
         <source>Directory Port Number</source>
-        <translation type="unfinished"></translation>
+        <translation>No. du port de l&apos;annuaire</translation>
     </message>
 </context>
 <context>
@@ -1609,15 +1611,15 @@ de PGP ou de GPG.</translation>
     <name>TorService</name>
     <message>
         <source>Services not supported on this platform.</source>
-        <translation type="unfinished"></translation>
+        <translation>Les services ne sont pas supportés dans cette plateforme.</translation>
     </message>
     <message>
         <source>Unable to install the Tor service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible d&apos;installer le service Tor.</translation>
     </message>
     <message>
         <source>Unable to start Tor service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible de démarrer le service Tor.</translation>
     </message>
 </context>
 <context>
