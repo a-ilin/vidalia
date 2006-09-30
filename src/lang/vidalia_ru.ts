@@ -125,37 +125,39 @@
     </message>
     <message>
         <source>Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Сервис</translation>
     </message>
     <message>
         <source>Enable this if you wish to run Tor as a Windows service</source>
-        <translation type="unfinished"></translation>
+        <translation>Включите, если хотите запускать Tor как сервис Windows</translation>
     </message>
     <message>
         <source>Run Tor in the background as a Windows service</source>
-        <translation type="unfinished"></translation>
+        <translation>Запускать Tor в фоне как сервис Windows</translation>
     </message>
     <message>
         <source>Unable to remove Tor Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось удалить сервис Tor</translation>
     </message>
     <message>
         <source>Unable to install Tor Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось установить сервис Tor</translation>
     </message>
     <message>
         <source>Vidalia was unable to install the Tor service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia не смогла установить сервис Tor.</translation>
     </message>
     <message>
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia не смогла удалить сервис Tor.
+
+Возможно вам следует удалить его вручную.</translation>
     </message>
     <message>
         <source>Tor Configuration File</source>
-        <translation type="unfinished"></translation>
+        <translation>Файл настроек Tor</translation>
     </message>
 </context>
 <context>
@@ -325,7 +327,7 @@ You may need to remove it manually.</source>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Настройки</translation>
+        <translation>Настройки</translation>
     </message>
 </context>
 <context>
@@ -611,7 +613,7 @@ Upgrade to a newer version of Tor.</source>
     <name>LogTreeWidget</name>
     <message>
         <source>Messages Shown: </source>
-        <translation>Сообющений показано: </translation>
+        <translation>Сообщений показано: </translation>
     </message>
     <message>
         <source>Messages Shown: %1</source>
@@ -762,11 +764,11 @@ Upgrade to a newer version of Tor.</source>
 Would you like to shutdown gracefully and give clients time to find a new server?</source>
         <translation>У вас сейчас работает сервер Tor. Остановка сервера приведёт к обрыву всех открытых клиентских соединений.
 
-Не хотите ли вы остановить сервер gracefully и дать клиентам немного времени чтобы найти другой сервер?</translation>
+Не хотите ли вы аккуратно остановить сервер и дать клиентам немного времени чтобы найти другой сервер?</translation>
     </message>
     <message>
         <source>Vidalia was unable to shutdown Tor gracefully. (</source>
-        <translation>Vidalia не смогла остановить Tor gracefully. (</translation>
+        <translation>Vidalia не смогла аккуратно остановить Tor. (</translation>
     </message>
     <message>
         <source>Vidalia detected that Tor exited unexpectedly.
@@ -778,31 +780,31 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
-        <translation>Vidalia не смогла запустить Tor. Проверьте настройки и убедитесь что имя и путь к испоняемому файлк Tor указан верно.</translation>
+        <translation>Vidalia не смогла запустить Tor. Проверьте настройки и убедитесь что имя и путь к исполняемому файлу Tor указан верно.</translation>
     </message>
     <message>
         <source>Network Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Карта Сети</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Настройки</translation>
+        <translation>Настройки</translation>
     </message>
     <message>
         <source>New Identity</source>
-        <translation type="unfinished">Новый Ним</translation>
+        <translation>Новый Ним</translation>
     </message>
     <message>
         <source>Ctrl+I</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+I</translation>
     </message>
     <message>
         <source>All subsequent connections will appear to be different than your old connections.</source>
-        <translation type="unfinished">Все последующие соединения не будут связаны с предыдущими соединениями.</translation>
+        <translation>Все последующие соединения не будут связаны с предыдущими соединениями.</translation>
     </message>
     <message>
         <source>Failed to Create New Identity</source>
-        <translation type="unfinished">Ошибка создания нового Нима</translation>
+        <translation>Ошибка создания нового Нима</translation>
     </message>
 </context>
 <context>
@@ -949,8 +951,7 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
         <source>Save Selected</source>
-        <translation>Сохранить
-выделенные</translation>
+        <translation>Сохранить выделенные</translation>
     </message>
     <message>
         <source>Save selected messages to a file</source>
@@ -970,7 +971,7 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
         <source>Find</source>
-        <translation>Выход</translation>
+        <translation>Найти</translation>
     </message>
     <message>
         <source>Find all messages containing the search text (Ctrl+F)</source>
@@ -1037,7 +1038,7 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Find in Message Log</source>
-        <translation>Найти в журнале</translation>
+        <translation>Найти в логе</translation>
     </message>
     <message>
         <source>Find:</source>
@@ -1093,11 +1094,11 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Text Files (*.txt)</source>
-        <translation type="unfinished"></translation>
+        <translation>Текстовые файлы (*.txt)</translation>
     </message>
     <message>
         <source>F1</source>
-        <translation type="unfinished"></translation>
+        <translation>F1</translation>
     </message>
 </context>
 <context>
@@ -1168,35 +1169,35 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Zoom To Fit</source>
-        <translation type="unfinished"></translation>
+        <translation>АвтоРазмер</translation>
     </message>
     <message>
         <source>Zooms to fit all currently displayed circuits.</source>
-        <translation type="unfinished"></translation>
+        <translation>Увеличить так чтобы показать все цепочки.</translation>
     </message>
     <message>
         <source>Ctrl+R</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
         <source>F1</source>
-        <translation type="unfinished"></translation>
+        <translation>F1</translation>
     </message>
     <message>
         <source>Esc</source>
-        <translation type="unfinished">Esc</translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished">-</translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>Ctrl+Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Z</translation>
     </message>
 </context>
 <context>
@@ -1245,7 +1246,7 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Uptime:</source>
-        <translation>Uptime:</translation>
+        <translation>Время работы:</translation>
     </message>
     <message>
         <source>Last Updated:</source>
@@ -1260,15 +1261,15 @@ interest to Tor developers.</source>
     <name>RouterListItem</name>
     <message>
         <source>%1 KB/s</source>
-        <translation type="unfinished">%1 КБ/с</translation>
+        <translation>%1 КБ/с</translation>
     </message>
     <message>
         <source>Offline</source>
-        <translation type="unfinished">Отключен</translation>
+        <translation>Отключен</translation>
     </message>
     <message>
         <source>Hibernating</source>
-        <translation type="unfinished">Не активен</translation>
+        <translation>Не активен</translation>
     </message>
 </context>
 <context>
@@ -1283,11 +1284,11 @@ interest to Tor developers.</source>
     </message>
     <message>
         <source>Server</source>
-        <translation type="unfinished">Сервер</translation>
+        <translation>Сервер</translation>
     </message>
     <message>
         <source>%1 servers total</source>
-        <translation type="unfinished"></translation>
+        <translation>Всего %1 сервер(ов)</translation>
     </message>
 </context>
 <context>
@@ -1526,7 +1527,7 @@ PGP или GPG ключа.</translation>
     </message>
     <message>
         <source>Only allow connections to other Tor servers (non-exit node)</source>
-        <translation type="unfinished"></translation>
+        <translation>Разрешить соединения только к другим узлам сети Tor (не выходящий узел)</translation>
     </message>
 </context>
 <context>
@@ -1575,15 +1576,15 @@ PGP или GPG ключа.</translation>
     <name>TorService</name>
     <message>
         <source>Services not supported on this platform.</source>
-        <translation type="unfinished"></translation>
+        <translation>Сервисы не поддерживаются на этой платформе.</translation>
     </message>
     <message>
         <source>Unable to install the Tor service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не могу установить сервис Tor.</translation>
     </message>
     <message>
         <source>Unable to start Tor service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не могу запустить сервис Tor.</translation>
     </message>
 </context>
 <context>
