@@ -232,11 +232,12 @@ ServerSettings::confValues()
     VidaliaSettings::value(SETTING_SERVER_CONTACT).toString().trimmed();
   QString defaultContact =
     VidaliaSettings::defaultValue(SETTING_SERVER_CONTACT).toString();
-  if ((contact != defaultContact) && 
-      (contact != scrub_email_addr(defaultContact))) {
+  if ((contact == defaultContact) ||
+      (contact == scrub_email_addr(defaultContact))) {
     /* Only set the contact info if they put something non-default there */
-    conf.insert(SERVER_CONTACTINFO, scrub_email_addr(contact));
+    contact = "";
   }
+  conf.insert(SERVER_CONTACTINFO, scrub_email_addr(contact));
   return conf;
 }
 
