@@ -57,13 +57,10 @@ ControlSocket::connect(QHostAddress addr, quint16 port, QString *errmsg)
   /* Connect the control socket. */
   connectToHost(addr, port);
   if (!waitForConnected(CONN_TIMEOUT)) {
-    if (errmsg) {
-      *errmsg = tr("Error connecting to %1:%2 [%3]")
+    return err(errmsg, tr("Error connecting to %1:%2 [%3]")
                                             .arg(addr.toString())
                                             .arg(port)
-                                            .arg(errorString());
-    }
-    return false;
+                                            .arg(errorString()));
   }
   
   /* Verify that Tor is speaking a protocol version we understand. */
@@ -71,14 +68,10 @@ ControlSocket::connect(QHostAddress addr, quint16 port, QString *errmsg)
   version = protocolVersion();
   blockSignals(false);
   if (version != Version1) {
-    if (errmsg) {
-      *errmsg =
-        tr("Vidalia only supports Version 1 of Tor's Control Protocol "
-           "(Version %1 detected).\n"
-           "Upgrade to a newer version of Tor.").arg(version);
-    }
     disconnect();
-    return false;
+    return err(errmsg, tr("Vidalia only supports Version 1 of Tor's Control Protocol "
+                          "(Version %1 detected).\n"
+                          "Upgrade to a newer version of Tor.").arg(version));
   }
 
   /* Ok, now we're really connected */
@@ -92,11 +85,8 @@ ControlSocket::disconnect(QString *errmsg)
   disconnectFromHost();
   if (isConnected()) {
     if (!waitForDisconnected(CONN_TIMEOUT)) {
-      if (errmsg) {
-        *errmsg =
-          tr("Error disconnecting socket. [%1]").arg(errorString());
-      }
-      return false;
+      return err(errmsg, tr("Error disconnecting socket. [%1]")
+                                            .arg(errorString()));
     }
   }
   return true;
@@ -188,10 +178,8 @@ ControlSocket::readLine(QString &line, QString *errmsg)
    * essentially makes our socket a blocking socket */
   while (!canReadLine()) {
     if (!isConnected()) {
-      if (errmsg) {
-        *errmsg = tr("Socket disconnected while attempting to read a line of data.");
-      }
-      return false;
+      return err(errmsg, tr("Socket disconnected while attempting "
+                            "to read a line of data."));
     }
     waitForReadyRead(READ_TIMEOUT);
   }
@@ -229,11 +217,7 @@ ControlSocket::readReply(ControlReply &reply, QString *errmsg)
     }
     
     if (line.length() < 4) {
-      if (errmsg) {
-        *errmsg = 
-          tr("Invalid control reply. [%1]").arg(line);
-      }
-      return false;
+      return err(errmsg, tr("Invalid control reply. [%1]").arg(line));
     }
 
     /* Parse the status and message */
