@@ -26,7 +26,7 @@
     <Topic id="starting" name="Käynnistäminen ja pysäyttäminen" html="running.html" section="starting"/>
     <Topic id="monitoring" name="Tor-ohjelman tilan tarkkaileminen" html="running.html" section="monitoring"/>
   </Topic>
-  <Topic id="log" name="Viestiloki" html="log.html">
+  <Topic id="log" name="Tapahtumaloki" html="log.html">
     <Topic id="basic" name="Perustietoa" html="log.html" section="basic"/>
     <Topic id="severities" name="Viestien tärkeys" html="log.html" section="severities"/>
     <Topic id="logfile" name="Tapahtumien tallennus" html="log.html" section="tofile"/>

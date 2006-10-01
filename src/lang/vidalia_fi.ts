@@ -157,7 +157,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     </message>
     <message>
         <source>Tor Configuration File</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-asetustiedosto</translation>
     </message>
 </context>
 <context>
@@ -580,7 +580,7 @@ Olkaapa hyvä ja päivitä uudempaan Tor-ohjelmaan.</translation>
     </message>
     <message>
         <source>Move to previous page (Backspace)</source>
-        <translation>Siirry edelliselle sivulle (Askelpalautin)</translation>
+        <translation>Palaa edelliselle sivulle (Askelpalautin)</translation>
     </message>
 </context>
 <context>
@@ -1332,11 +1332,11 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     </message>
     <message>
         <source>Offline</source>
-        <translation type="unfinished">Offline</translation>
+        <translation>Offline</translation>
     </message>
     <message>
         <source>Hibernating</source>
-        <translation type="unfinished">Valmiustilassa</translation>
+        <translation>Valmiustilassa</translation>
     </message>
 </context>
 <context>
@@ -1535,11 +1535,11 @@ problem with your server</source>
     </message>
     <message>
         <source>accept</source>
-        <translation>hyväksy</translation>
+        <translation>salli</translation>
     </message>
     <message>
         <source>reject</source>
-        <translation>hylkää</translation>
+        <translation>estä</translation>
     </message>
     <message>
         <source>Vidalia was unable to determine your public IP address.</source>
