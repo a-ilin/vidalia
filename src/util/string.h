@@ -45,5 +45,10 @@ QString scrub_email_addr(QString email);
  * false. */
 bool err(QString *str, QString errmsg);
 
+/** Wraps <b>str</b> at <b>width</b> characters wide, using <b>sep</b> as the
+ * word separator (" ", for example), and placing the line ending <b>le</b> at
+ * the end of each line, except the last.*/
+QString string_wrap(QString str, int width, QString sep, QString le);
+
 #endif
 

@@ -76,3 +76,43 @@ scrub_email_addr(QString email)
   scrubbed = scrubbed.replace(".", " dot ");
   return scrubbed;
 }
+
+/** Wraps <b>str</b> at <b>width</b> characters wide, using <b>sep</b> as the
+ * word separator (" ", for example), and placing the line ending <b>le</b> at
+ * the end of each line, except the last. */
+QString
+string_wrap(QString str, int width, QString sep, QString le)
+{
+  QString wrapped;
+  int pos, nextsep, wordlen, n;
+  int seplen = sep.length();
+ 
+  if (str.length() < width) {
+    return str;
+  }
+
+  pos = 0; 
+  n = width;
+  while (pos < str.length()) {
+    /* Get the length of a "word" */
+    nextsep = str.indexOf(sep, pos);
+    if (nextsep < 0) {
+      nextsep = str.length();
+    }
+    wordlen = nextsep-pos;
+
+    /* Check if there is room for the word on this line */
+    if (wordlen > n) {
+      /* Create a new line */
+      wrapped.append(le);
+      n = width;
+    }
+
+    /* Add the word to the current line */
+    wrapped.append(str.mid(pos, wordlen+seplen));
+    n = n - wordlen - seplen;
+    pos += wordlen + seplen;
+  }
+  return wrapped.trimmed();
+}
+

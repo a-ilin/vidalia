@@ -25,6 +25,7 @@
  * \brief Item representing a single message in the message log
  */
 
+#include <util/string.h>
 #include "logtreeitem.h"
 #include "logtreewidget.h"
 
@@ -81,7 +82,9 @@ LogTreeItem::toString()
 void
 LogTreeItem::setTimestamp(QDateTime timestamp)
 {
-  setText(COL_TIME, timestamp.toString(DATETIME_FMT));
+  QString strtime = timestamp.toString(DATETIME_FMT);
+  setText(COL_TIME, strtime);
+  setToolTip(COL_TIME, strtime);
 }
 
 /** Sets the item's severity and the appropriate background color. */
@@ -112,6 +115,7 @@ void
 LogTreeItem::setMessage(QString message)
 {
   setText(COL_MESG, message);
+  setToolTip(COL_MESG, string_wrap(message, 80, " ", "\r\n"));
 }
 
 /** Returns the severity associated with this log item. */
