@@ -30,13 +30,23 @@
 
 #include <QEvent>
 
+
+/** Custom event type identifiers. */
 namespace CustomEventType {
+  /** Bandwidth update event. */
   const int BandwidthEvent = QEvent::User;
+  /** Circuit status event. */
   const int CircuitEvent   = QEvent::User+1;
+  /** Stream status event. */
   const int StreamEvent    = QEvent::User+2;
+  /** Log message event. */
   const int LogEvent       = QEvent::User+3;
+  /** OR connection status event. */
   const int OrConnEvent    = QEvent::User+4;
+  /** New descriptor event. */
   const int NewDescriptorEvent = QEvent::User+5;
+  /** Control command send event. */
+  const int SendCommandEvent   = QEvent::User+6;
 }
 
 #endif

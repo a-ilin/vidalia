@@ -30,6 +30,15 @@
 
 #include "controlsocket.h"
 
+/** Give up after waiting five seconds for the control socket to connect to
+* Tor. This timeout used to be shorter (three seconds), but some Agnitum
+* OutPost users yelled at us wanting a longer timeout, for some reason. */
+#define CONN_TIMEOUT  5000
+
+/** Timeout reads in 250ms. We can set this to a short value because if there
+* isn't any data to read, we want to return anyway. */
+#define READ_TIMEOUT  250
+
 
 /** Default constructor. */
 ControlSocket::ControlSocket()
@@ -58,7 +67,9 @@ ControlSocket::connect(QHostAddress addr, quint16 port, QString *errmsg)
   }
   
   /* Verify that Tor is speaking a protocol version we understand. */
+  blockSignals(true);
   version = protocolVersion();
+  blockSignals(false);
   if (version != Version1) {
     if (errmsg) {
       *errmsg =
@@ -132,7 +143,7 @@ bool
 ControlSocket::sendCommand(ControlCommand cmd, QString *errmsg)
 {
   if (!isConnected()) {
-    return false;
+    return err(errmsg, tr("Control socket is not connected."));
   }
   
   /* Format the control command */
@@ -140,11 +151,8 @@ ControlSocket::sendCommand(ControlCommand cmd, QString *errmsg)
 
   /* Attempt to send the command to Tor */
   if (write(strCmd.toAscii()) != strCmd.length()) {
-    if (errmsg) {
-      *errmsg = 
-        tr("Error sending control command. [%1]").arg(errorString());
-    }
-    return false;
+    return err(errmsg, tr("Error sending control command. [%1]")
+                                            .arg(errorString()));
   }
   flush();
   return true;

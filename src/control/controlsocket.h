@@ -34,15 +34,6 @@
 #include "controlcommand.h"
 #include "controlreply.h"
 
-/** Give up after waiting five seconds for the control socket to connect to
- * Tor. This timeout used to be shorter (three seconds), but some Agnitum
- * OutPost users yelled at us wanting a longer timeout, for some reason. */
-#define CONN_TIMEOUT  5000
-
-/** Timeout reads in 250ms. We can set this to a short value because if there
- * isn't any data to read, we want to return anyway. */
-#define READ_TIMEOUT  250
-
 
 class ControlSocket : public QTcpSocket
 {
@@ -71,7 +62,7 @@ protected:
   bool readLineData(QString &line, QString *errmsg = 0);
   /** Reads a line of data from the socket (blocking) */
   bool readLine(QString &line, QString *errmsg = 0);
-  
+
 private:
   /** Specifies a version of Tor's Control Protocol */
   enum ProtocolVersion {
