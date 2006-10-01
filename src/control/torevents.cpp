@@ -276,9 +276,9 @@ TorEvents::handleLogMessage(ReplyLine line)
   LogEvent::Severity severity = LogEvent::toSeverity(msg.mid(0, i));
   QString logLine = (line.getData().size() > 0 ? line.getData().join("\n") :
                                                  msg.mid(i+1));
-  
+
   /* Post the event to each of the interested targets */
-  dispatch(toTorEvent(severity), new LogEvent(severity, logLine));
+  dispatch(toTorEvent(severity), new LogEvent(severity, logLine.trimmed()));
 }
 
 /** Handle an OR Connection Status event. The syntax is:
