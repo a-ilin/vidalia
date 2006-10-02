@@ -78,7 +78,7 @@ main(int argc, char *argv[])
         QT_TRANSLATE_NOOP("Vidalia", "Vidalia is already running")),
       qApp->translate("Vidalia",
         QT_TRANSLATE_NOOP("Vidalia", 
-          "Another Vidalia process is already running. "
+          "Another Vidalia process is already running. \n\n"
           "This Vidalia process will now exit.")),
       VMessageBox::Ok);   
     return 0;
