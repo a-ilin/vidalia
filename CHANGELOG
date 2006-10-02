@@ -1,3 +1,36 @@
+0.0.8
+  o Vidalia will now attempt to connect to an existing Tor's ControlPort
+    before starting its own Tor process. If it finds a Tor with an open
+    ControlPort, Vidalia will "attach" to that Tor instead of starting a new
+    process.
+  o Vidalia now supports running Tor as an NT service on Windows.
+  o When Vidalia starts its own Tor process, it will now default to starting it 
+    with a "-f ~/.vidalia/torrc", to avoid permissions conflicts when running 
+    Tor as a user that does not have write access to the default torrc. The
+    torrc used when starting Tor is still configurable.
+  o Fix a bug that was causing unexpected behavior with many unrelated Windows
+    applications.
+  o Do a better job of determining if another Vidalia process is running on
+    Windows, to eliminate all the false positives reported.
+  o Major performance improvements related to loading the network map.
+  o Moved the "New Identity" button to the main popup menu for easier
+    access.
+  o Vidalia dialogs remember their last size and location when Vidalia exits 
+    and restore their size and location the next time Vidalia runs.
+  o Vidalia windows now close in response to a Command-W on Mac OS X.
+  o Added a "Zoom To Fit" button to the network map, to zoom in on the active
+    circuits.
+  o Numerous minor aesthetic and usability improvements to many of Vidalia's
+    dialogs.
+  o Fix a bug that was causing signal conflict warnings on Debian.
+  o Fix a crash that would occur when exiting Vidalia after an attempt to
+    start Tor with a non-existent executable.
+  o Add a Bulgarian translation contributed by kutia0001.
+  o Add a Dutch translation contributed by Saedian.
+  o Add a Hungarian translation contributed by Tibor Fekete.
+  o Add a Polish translation contributed by ZeeWolf.
+ 
+
 0.0.7   07-Jul-2006 
   o Fix a bug that was causing Vidalia to freeze frequently for some people,
     particularly when running at a verbose log level.
