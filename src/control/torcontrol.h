@@ -75,8 +75,10 @@ public:
   /** Sends a signal to Tor */
   bool signal(TorSignal::Signal sig, QString *errmsg = 0);
   
-  /** Ask Tor for its version */
-  QString getTorVersion(QString *errmsg = 0);
+  /** Returns Tor's version as a string. */
+  QString getTorVersionString(QString *errmsg = 0);
+  /** Returns Tor's version as a numeric value. */
+  quint32 getTorVersion(QString *errmsg = 0);
 
   /** Sets an event and its handler. If add is true, then the event is added,
    * otherwise it is removed. If set is true, then the given event will be

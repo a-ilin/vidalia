@@ -28,6 +28,7 @@
 #include <vidalia.h>
 #include "aboutdialog.h"
 
+
 /** Default Constructor **/
 AboutDialog::AboutDialog(QWidget *parent, Qt::WFlags flags)
 : VidaliaWindow("AboutDialog", parent, flags)
@@ -68,7 +69,11 @@ AboutDialog::show()
 {
   /* Access the TorControl object to retrieve version */
   if (_torControl->isRunning()) {
-    ui.lblTorVersion->setText(_torControl->getTorVersion());
+    QString version = _torControl->getTorVersionString();
+    if (version.isEmpty()) {
+      version = tr("<Unavailable>");
+    }
+    ui.lblTorVersion->setText(version);
   } else {
     ui.lblTorVersion->setText(tr("<Not Running>"));
   }

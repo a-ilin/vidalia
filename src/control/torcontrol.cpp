@@ -395,15 +395,34 @@ TorControl::signal(TorSignal::Signal sig, QString *errmsg)
   return send(cmd, errmsg); 
 }
 
-/** Ask Tor for its version */
+/** Reeturns Tor's version as a string. */
 QString
-TorControl::getTorVersion(QString *errmsg)
+TorControl::getTorVersionString(QString *errmsg)
 {
   QString ver;
   if (getInfo("version", ver, errmsg)) {
     return ver;
   }
-  return "<Unavailable>";
+  return QString();
+}
+
+/** Returns Tor's version as a numeric value. Note that this discards any
+ * version status flag, such as "-alpha" or "-rc". */
+quint32
+TorControl::getTorVersion(QString *errmsg)
+{
+  quint8 major, minor, micro, patch;
+  quint32 version = 0;
+  
+  QStringList parts = getTorVersionString(errmsg).split(".");
+  if (parts.size() >= 4) {
+    major = (quint8)parts.at(0).toUInt();
+    minor = (quint8)parts.at(1).toUInt();
+    micro = (quint8)parts.at(2).toUInt();
+    patch = (quint8)parts.at(3).toUInt();
+    version = ((major << 24) | (minor << 16) | (micro << 8) | patch);
+  }
+  return version;
 }
 
 /** Sets an event and its handler. If add is true, then the event is added,
