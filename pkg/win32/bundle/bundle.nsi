@@ -147,6 +147,7 @@ SectionGroup "!Tor ${TOR_VERSION}" TorGroup
     SubSection /e "Shortcuts" TorShortcuts
         Section "Start Menu" TorStartMenu
            SectionIn 1
+           SetShellVarContext all ; (Add to "All Users" Start Menu if possible)
            SetOutPath "$INSTDIR\Tor"
            IfFileExists "$SMPROGRAMS\Tor\*.*" "" +2
               RMDir /r "$SMPROGRAMS\Tor"
@@ -214,6 +215,7 @@ SectionGroup "Vidalia ${VIDALIA_VERSION}" VidaliaGroup
     ; Optional section (can be disabled by the user)
     Section "Start Menu Shortcuts" VidaliaShortcuts
       SectionIn 1 2
+      SetShellVarContext all ; (Add to "All Users" Start Menu if possible)
       CreateDirectory "$SMPROGRAMS\Vidalia"
       CreateShortCut "$SMPROGRAMS\Vidalia\Uninstall.lnk" "$INSTDIR\Vidalia\uninstall.exe" "" "$INSTDIR\Vidalia\${VIDALIA_UNINST}" 0
       CreateShortCut "$SMPROGRAMS\Vidalia\Vidalia.lnk" "$INSTDIR\Vidalia\${VIDALIA_EXEC}" "" "$INSTDIR\Vidalia\${VIDALIA_EXEC}" 0
