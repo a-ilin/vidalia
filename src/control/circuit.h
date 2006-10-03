@@ -52,6 +52,8 @@ public:
   Circuit();
   /** Constructor */
   Circuit(quint64 circId, Status status, QString path);
+  /** Constructor */
+  Circuit(quint64 circId, Status status, QStringList hops);
 
   /** Parses the given string (in Tor's control protocol format) */
   static Circuit fromString(QString circuit);

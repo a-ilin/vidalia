@@ -32,7 +32,6 @@
 #include <QPair>
 #include <QPainter>
 #include <QPainterPath>
-#include <control/circuit.h>
 
 #include "zimageview.h"
 
@@ -48,19 +47,19 @@ public:
   ~TorMapWidget();
 
   /** Plots the given router on the map using the given coordinates. */
-  void addRouter(QString name, float latitude, float longitude);
+  void addRouter(QString id, float latitude, float longitude);
   /** Plots the given circuit on the map. */
-  void addCircuit(Circuit circuit);
+  void addCircuit(quint64 circid, QStringList path);
   /** Selects and hightlights a router on the map. */
-  void selectRouter(QString name);
+  void selectRouter(QString id);
   /** Selects and highlights a circuit on the map. */
-  void selectCircuit(Circuit circuit);
+  void selectCircuit(quint64 circid);
   /** Returns the minimum size of the widget */
   QSize minimumSizeHint() const;
 
 public slots:
   /** Removes a circuit from the map. */
-  void removeCircuit(Circuit circuit);
+  void removeCircuit(quint64 circid);
   /** Deselects all the highlighted circuits and routers */
   void deselectAll();
   /** Clears the known routers and removes all the data from the map */
@@ -84,7 +83,7 @@ private:
   /** Stores map locations for tor routers */
   QHash<QString, QPair<QPointF,bool>* > _routers;
   /** Stores circuit information */
-  QHash<int, QPair<QPainterPath *,bool>* > _circuits;
+  QHash<quint64, QPair<QPainterPath *,bool>* > _circuits;
 };
 
 #endif

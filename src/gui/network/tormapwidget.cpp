@@ -89,25 +89,24 @@ TorMapWidget::~TorMapWidget()
 
 /** Adds a router to the map. */
 void
-TorMapWidget::addRouter(QString name, float latitude, float longitude)
+TorMapWidget::addRouter(QString id, float latitude, float longitude)
 {
   QPointF routerCoord = toMapSpace(latitude, longitude);
   
   /* Add data the hash of known routers, and plot the point on the map */
-  _routers.insert(name, new QPair<QPointF,bool>(routerCoord, false));
+  _routers.insert(id, new QPair<QPointF,bool>(routerCoord, false));
 }
 
-/** Adds a circuit to the map using the given ordered list of routers. */
+/** Adds a circuit to the map using the given ordered list of router IDs. */
 void
-TorMapWidget::addCircuit(Circuit circuit)
+TorMapWidget::addCircuit(quint64 circid, QStringList path)
 {
   QPainterPath *circPainterPath = new QPainterPath;
-  QStringList hops = circuit.hops();
   
   /* Build the new circuit */
-  for (int i = 0; i < hops.size()-1; i++) {
-    QString fromNode = hops.at(i);
-    QString toNode = hops.at(i+1);
+  for (int i = 0; i < path.size()-1; i++) {
+    QString fromNode = path.at(i);
+    QString toNode = path.at(i+1);
    
     /* Add the coordinates of the hops to the circuit */
     if (_routers.contains(fromNode) && _routers.contains(toNode)) {
@@ -123,7 +122,6 @@ TorMapWidget::addCircuit(Circuit circuit)
   }
   
   /** Add the data to the hash of known circuits and plot the circuit on the map */
-  int circid = circuit.id();
   if (_circuits.contains(circid)) {
     /* This circuit is being updated, so just update the path, making sure we
      * free the memory allocated to the old one. */
@@ -138,32 +136,31 @@ TorMapWidget::addCircuit(Circuit circuit)
 
 /** Removes a circuit from the map. */
 void
-TorMapWidget::removeCircuit(Circuit circuit)
+TorMapWidget::removeCircuit(quint64 circid)
 {
-  int key = circuit.id();
-  QPair<QPainterPath*,bool> *circ = _circuits.take(key);
+  QPair<QPainterPath*,bool> *circ = _circuits.take(circid);
   QPainterPath *circpath = circ->first;
   if (circpath) {
     delete circpath;
   }
 }
 
-/** Selects and highlights a router on the map. */
+/** Selects and highlights the router on the map. */
 void
-TorMapWidget::selectRouter(QString name)
+TorMapWidget::selectRouter(QString id)
 {
-  if (_routers.contains(name)) {
-    QPair<QPointF, bool> *routerPair = _routers.value(name);
+  if (_routers.contains(id)) {
+    QPair<QPointF, bool> *routerPair = _routers.value(id);
     routerPair->second = true;
   }
   repaint();
 }
 
-/** Selects and highlights a circuit on the map. */
+/** Selects and highlights the circuit with the id <b>circid</b> 
+ * on the map. */
 void
-TorMapWidget::selectCircuit(Circuit circuit)
+TorMapWidget::selectCircuit(quint64 circid)
 {
-  int circid = circuit.id();
   if (_circuits.contains(circid)) {
     QPair<QPainterPath*, bool> *circuitPair = _circuits.value(circid);
     circuitPair->second = true;
@@ -181,7 +178,7 @@ TorMapWidget::deselectAll()
     routerPair->second = false;
   }
   /* Deselect all circuit paths */
-  foreach (int circid, _circuits.keys()) {
+  foreach (quint64 circid, _circuits.keys()) {
     QPair<QPainterPath*,bool> *circuitPair = _circuits.value(circid);
     circuitPair->second = false;
   }
@@ -196,7 +193,7 @@ TorMapWidget::clear()
     delete _routers.take(router);
   }
   /* Clear out all the circuit paths and free their memory */
-  foreach (int circid, _circuits.keys()) {
+  foreach (quint64 circid, _circuits.keys()) {
     QPair<QPainterPath*,bool> *circuitPair = _circuits.take(circid);
     delete circuitPair->first;
     delete circuitPair;
@@ -216,7 +213,7 @@ TorMapWidget::paintImage(QPainter *painter)
     painter->drawPoint(routerPair->first);
   }
   /* Draw the circuit paths */
-  foreach(int circid, _circuits.keys()) {
+  foreach(quint64 circid, _circuits.keys()) {
     QPair<QPainterPath*,bool> *circuitPair = _circuits.value(circid);
     painter->setPen((circuitPair->second ? PEN_SELECTED : PEN_CIRCUIT));
     painter->drawPath(*(circuitPair->first));
@@ -295,7 +292,7 @@ TorMapWidget::circuitBoundingBox()
   QRectF rect;
 
   /* Compute the union of bounding rectangles for all circuit paths */
-  foreach (int circid, _circuits.keys()) {
+  foreach (quint64 circid, _circuits.keys()) {
     QPair<QPainterPath*,bool> *pair = _circuits.value(circid);
     QPainterPath *circuit = pair->first;
     rect = rect.unite(circuit->boundingRect());

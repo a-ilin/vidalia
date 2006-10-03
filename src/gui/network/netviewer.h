@@ -82,6 +82,12 @@ private slots:
 private:
   /** Loads a list of router descriptors from the list of IDs. */
   void loadDescriptors(QStringList ids);
+  /** Convert all hops in <b>circ</b>'s path to server identities.
+  * <b>circ</b>'s status and circuit ID will be preserved. */
+  Circuit circuitPathIDs(Circuit circ);
+  /** Convert all hops in <b>circ</b>'s path to server names. <b>circ</b>'s
+   * status and circuit ID will be preserved. */
+  Circuit circuitPathNames(Circuit circ);
 
   /** TorControl object used to talk to Tor. */
   TorControl* _torControl;

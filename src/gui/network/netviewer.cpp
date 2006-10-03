@@ -99,8 +99,8 @@ NetViewer::NetViewer(QWidget *parent)
 	  this, SLOT(routerSelected(RouterDescriptor)));
   connect(ui.treeCircuitList, SIGNAL(circuitSelected(Circuit)),
           this, SLOT(circuitSelected(Circuit)));
-  connect(ui.treeCircuitList, SIGNAL(circuitRemoved(Circuit)),
-          _map, SLOT(removeCircuit(Circuit)));
+  connect(ui.treeCircuitList, SIGNAL(circuitRemoved(quint64)),
+          _map, SLOT(removeCircuit(quint64)));
 
   /* Respond to changes in the status of the control connection */
   connect(_torControl, SIGNAL(connected(bool)), ui.actionRefresh, SLOT(setEnabled(bool)));
@@ -213,8 +213,13 @@ NetViewer::loadConnections()
 void
 NetViewer::addCircuit(Circuit circuit)
 {
-  ui.treeCircuitList->addCircuit(circuit);
-  _map->addCircuit(circuit);
+  /* Circuits displayed to the user always use nicknames */
+  Circuit circNames = circuitPathNames(circuit);
+  /* Circuits on the map always use keyids */
+  Circuit circIds   = circuitPathIDs(circuit);
+
+  ui.treeCircuitList->addCircuit(circNames);
+  _map->addCircuit(circuit.id(), circIds.hops());
 }
 
 /** Called when the user selects the "Help" action from the toolbar. */
@@ -266,7 +271,7 @@ NetViewer::circuitSelected(Circuit circuit)
   _map->deselectAll();
 
   /* Select the items on the map and in the list */
-  _map->selectCircuit(circuit);
+  _map->selectCircuit(circuit.id());
 
   QList<RouterDescriptor> routers;
 
@@ -330,10 +335,85 @@ NetViewer::resolved(int id, QList<GeoIp> geoips)
 
   /* Update the circuit lines */
   foreach (Circuit circuit, ui.treeCircuitList->circuits()) {
-    _map->addCircuit(circuit);
+    _map->addCircuit(circuit.id(), circuit.hops());
   }
   
   /* Repaint the map */
   _map->update();
+}
+
+/** Convert all hops in <b>circ</b>'s path to server identities. <b>circ</b>'s
+ * status and circuit ID will be preserved. If no ID can be found for a
+ * router name, the name will be left in the circuit's path. */
+Circuit
+NetViewer::circuitPathIDs(Circuit circ)
+{
+  QStringList path = circ.hops();
+  QStringList ids;
+  RouterDescriptor rd;
+  quint32 torVersion;
+
+  torVersion = _torControl->getTorVersion();
+  foreach (QString hop, path) {
+    if (!hop.startsWith("$")) {
+      if (torVersion < 0x00010202) {
+        /* Tor versions earlier than 0.1.2.2 have a bug where they will tell
+         * you a server's nickname in a circuit, even if that server is
+         * non-Named. If we requested the descriptor by name for a non-Named server
+         * from Tor, the user's log could be filled with warnings. So, just
+         * try to look it up from our own router list first. */
+        RouterListItem *item = ui.treeRouterList->findRouterByName(hop);
+        if (item) {
+          rd = item->descriptor();
+        } else {
+          /* We don't know about the router, so try to get it by name even
+           * though Tor will probably yell at us. We can't help it. */
+          rd = _torControl->getDescriptorByName(hop);
+          if (!rd.isEmpty()) {
+            /* Add this router to the list of those we know about */
+            ui.treeRouterList->addRouter(rd);
+          }
+        }
+      } else {
+        /* Ask Tor for the descriptor for the given router name */
+        rd = _torControl->getDescriptorByName(hop);
+      }
+      hop = (rd.isEmpty() ? hop : rd.id());
+    }
+    ids << hop;
+  }
+  return Circuit(circ.id(), circ.status(), ids);
+}
+
+/** Convert all hops in <b>circ</b>'s path to server names. <b>circ</b>'s
+ * status and circuit ID will be preserved. If no name can be found for a
+ * server identity, the ID will be left in the circuit's path. */
+Circuit
+NetViewer::circuitPathNames(Circuit circ)
+{
+  QStringList path = circ.hops();
+  QStringList names;
+  RouterDescriptor rd;
+  
+  foreach (QString hop, path) {
+    if (hop.startsWith("$")) {
+      /* Check if we already have a descriptor for this server identity. */
+      RouterListItem *item =  ui.treeRouterList->findRouterById(hop.mid(1));
+      if (item) {
+        rd = item->descriptor();
+      } else {
+        /* A router with the current hop ID does not exist in our router list,
+         * so ask Tor for its descriptor */
+        rd = _torControl->getDescriptorById(hop);
+        if (!rd.isEmpty()) {
+          /* This is a fine time to add this new router to our list */
+          ui.treeRouterList->addRouter(rd);
+        }
+      }
+      hop = (rd.isEmpty() ? hop : rd.name());
+    }
+    names << hop;
+  }
+  return Circuit(circ.id(), circ.status(), names);
 }
 

@@ -130,7 +130,7 @@ CircuitListWidget::removeCircuit()
     CircuitItem *circuitItem = _circuitRemovalList.takeFirst();
     Circuit circuit = circuitItem->circuit();
     removeCircuit(circuitItem);
-    emit circuitRemoved(circuit);
+    emit circuitRemoved(circuit.id());
   }
 }
 

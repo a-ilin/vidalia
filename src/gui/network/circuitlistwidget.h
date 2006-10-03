@@ -67,7 +67,7 @@ signals:
   /** Emitted when a circuit item is selected. */
   void circuitSelected(Circuit circuit);
   /** Emitted when a circuit is removed from the list. */
-  void circuitRemoved(Circuit circuit);
+  void circuitRemoved(quint64 circid);
 
 public slots:
   /** Clears all circuits and streams from the list. */

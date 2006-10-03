@@ -46,6 +46,14 @@ Circuit::Circuit(quint64 circId, Status status, QString path)
   _path   = path;
 }
 
+/** Constructor */
+Circuit::Circuit(quint64 circId, Status status, QStringList hops)
+{
+  _circId = circId;
+  _status = status;
+  _path   = hops.join(",");
+}
+
 /** Parses the string given in Tor control protocol format for a circuit. The
  * format is:
  * 
