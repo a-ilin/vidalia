@@ -1305,7 +1305,7 @@ pour les développeurs de Tor.</translation>
     </message>
     <message>
         <source>Relay traffic for the Tor network</source>
-        <translation>Relayer le trafique pour le réseau Tor</translation>
+        <translation>Relayer le trafic pour le réseau Tor</translation>
     </message>
     <message>
         <source>Server Configuration</source>
@@ -1358,7 +1358,7 @@ avec votre serveur</translation>
     </message>
     <message>
         <source>Only relay traffic between other Tor servers (middle-man)</source>
-        <translation type="obsolete">Relayer uniquement le trafique entre les autres serveurs Tor (middle-man)</translation>
+        <translation type="obsolete">Relayer uniquement le trafic entre les autres serveurs Tor (middle-man)</translation>
     </message>
     <message>
         <source>Attempts to determine the correct address for your server</source>
