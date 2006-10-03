@@ -35,6 +35,7 @@
  * See tor-spec.txt for details. */
 RouterDescriptor::RouterDescriptor(QStringList descriptor)
 {
+  _status = Online;
   parseDescriptor(descriptor);
 }
 
