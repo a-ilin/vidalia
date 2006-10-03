@@ -82,6 +82,9 @@ private slots:
 private:
   /** Loads a list of router descriptors from the list of IDs. */
   void loadDescriptors(QStringList ids);
+  /** Adds a router to our list of servers and retrieves geographic location
+   * information for the server. */
+  void addRouter(RouterDescriptor rd);
   /** Convert all hops in <b>circ</b>'s path to server identities.
   * <b>circ</b>'s status and circuit ID will be preserved. */
   Circuit circuitPathIDs(Circuit circ);

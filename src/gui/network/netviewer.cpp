@@ -235,27 +235,38 @@ NetViewer::loadDescriptors(QStringList ids)
 {
   /* Get descriptors for all the given IDs */
   QList<RouterDescriptor> rds = _torControl->getDescriptorListById(ids);
-  
+   
   foreach (RouterDescriptor rd, rds) {
     /* Load the router descriptor and add it to the router list. */
     if (!rd.isEmpty()) {
-      ui.treeRouterList->addRouter(rd);
-
-      /* Add this IP to a list whose geographic location we'd like to find. */
-      QHostAddress ip(rd.ip());
-      if (!_resolveQueue.contains(ip)) {
-        _resolveQueue << ip;
-      }
-      if (!_resolveMap.values(rd.ip()).contains(rd.id())) {
-        _resolveMap.insertMulti(rd.ip(), rd.id());
-      }
+      addRouter(rd);
     }
+  }
+}
+
+/** Adds a router to our list of servers and retrieves geographic location
+ * information for the server. */
+void
+NetViewer::addRouter(RouterDescriptor rd)
+{
+  /* Add the descriptor to the list of server */
+  ui.treeRouterList->addRouter(rd);
+
+  /* Add this IP to a list whose geographic location we'd like to find. */
+  QHostAddress ip(rd.ip());
+  if (!_resolveQueue.contains(ip)) {
+    _resolveQueue << ip;
+  }
+  if (!_resolveMap.values(rd.ip()).contains(rd.id())) {
+    _resolveMap.insertMulti(rd.ip(), rd.id());
   }
 
   /* If there are any IPs in the list, then start a timer. We delay resolution
    * because it's likely that we'll receive new descriptors shortly, so we
    * might as well lump them into a single request. */
   if (!_resolveQueue.isEmpty()) {
+    /* Wait RESOLVE_QUEUE_DELAY after the <i>last</i> item inserted into the
+     * queue, before sending the resolve request. */
     _resolveQueueTimer.start(RESOLVE_QUEUE_DELAY);
   }
 }
@@ -371,7 +382,7 @@ NetViewer::circuitPathIDs(Circuit circ)
           rd = _torControl->getDescriptorByName(hop);
           if (!rd.isEmpty()) {
             /* Add this router to the list of those we know about */
-            ui.treeRouterList->addRouter(rd);
+            addRouter(rd);
           }
         }
       } else {
@@ -407,7 +418,7 @@ NetViewer::circuitPathNames(Circuit circ)
         rd = _torControl->getDescriptorById(hop);
         if (!rd.isEmpty()) {
           /* This is a fine time to add this new router to our list */
-          ui.treeRouterList->addRouter(rd);
+          addRouter(rd);
         }
       }
       hop = (rd.isEmpty() ? hop : rd.name());
