@@ -229,7 +229,7 @@ void
 NetViewer::loadDescriptors(QStringList ids)
 {
   /* Get descriptors for all the given IDs */
-  QList<RouterDescriptor> rds = _torControl->getRouterDescriptors(ids);
+  QList<RouterDescriptor> rds = _torControl->getDescriptorListById(ids);
   
   foreach (RouterDescriptor rd, rds) {
     /* Load the router descriptor and add it to the router list. */

@@ -550,14 +550,14 @@ TorControl::resetConf(QString key, QString *errmsg)
   return resetConf(QStringList() << key, errmsg);
 }
 
-/** Gets the descriptor for the specified ID. */
+/** Gets the descriptor for the specified router name. */
 RouterDescriptor
-TorControl::getRouterDescriptor(QString id, QString *errmsg)
+TorControl::getDescriptorByName(QString name, QString *errmsg)
 {
   QList<RouterDescriptor> rdlist;
   RouterDescriptor rd;
   
-  rdlist = getRouterDescriptors(QStringList() << id, errmsg);
+  rdlist = getDescriptorListByName(QStringList() << name, errmsg);
   if (!rdlist.isEmpty()) {
     rd = (RouterDescriptor)rdlist.takeFirst();
     return rd;
@@ -565,9 +565,55 @@ TorControl::getRouterDescriptor(QString id, QString *errmsg)
   return RouterDescriptor();
 }
 
+/** Gets the descriptor for the specified ID. */
+RouterDescriptor
+TorControl::getDescriptorById(QString id, QString *errmsg)
+{
+  QList<RouterDescriptor> rdlist;
+  RouterDescriptor rd;
+  
+  rdlist = getDescriptorListById(QStringList() << id, errmsg);
+  if (!rdlist.isEmpty()) {
+    rd = (RouterDescriptor)rdlist.takeFirst();
+    return rd;
+  }
+  return RouterDescriptor();
+}
+
+/** Gets router descriptors for all names in <b>nameList</b>. */
+QList<RouterDescriptor>
+TorControl::getDescriptorListByName(QStringList nameList, QString *errmsg)
+{
+  ControlCommand cmd("GETINFO");
+  ControlReply reply;
+  QList<RouterDescriptor> rdlist;
+  
+  /* If there are no IDs in the list, then return now. */
+  if (nameList.isEmpty()) {
+    return QList<RouterDescriptor>();
+  }
+  
+  /* Build up the the getinfo arguments from the list of names */
+  foreach (QString name, nameList) {
+    cmd.addArgument("desc/name/"+ name);
+  }
+  
+  /* Request the list of router descriptors */
+  if (send(cmd, reply, errmsg)) {
+    foreach (ReplyLine line, reply.getLines()) {
+      /* Check if we got a "250 OK" and descriptor data. */
+      if (line.getStatus() == "250" && !line.getData().isEmpty()) {
+        /* Parse the router descriptor data */
+        rdlist << RouterDescriptor(line.getData());
+      }
+    }
+  }
+  return rdlist;
+}
+
 /** Gets router descriptors for all IDs in <b>idlist</b>. */
 QList<RouterDescriptor>
-TorControl::getRouterDescriptors(QStringList idlist, QString *errmsg)
+TorControl::getDescriptorListById(QStringList idlist, QString *errmsg)
 {
   ControlCommand cmd("GETINFO");
   ControlReply reply;
@@ -613,7 +659,7 @@ TorControl::getRouterList(QString *errmsg)
   /* Get a list of all router IDs Tor currently know about */
   QStringList idList = getRouterIDList(errmsg);
   /* Get descriptors for each of those routers */
-  return getRouterDescriptors(idList, errmsg);
+  return getDescriptorListById(idList, errmsg);
 }
 
 /** Gets a list of router IDs for all routers Tor knows about. */

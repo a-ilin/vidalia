@@ -104,10 +104,14 @@ public:
   /** Tells Tor to reset a configuration key back to its default value. */
   bool resetConf(QString key, QString *errmsg = 0);
 
+  /** Gets a descriptor for the given router name. */
+  RouterDescriptor getDescriptorByName(QString name, QString *errmsg = 0);
   /** Gets a descriptor for the given router ID. */
-  RouterDescriptor getRouterDescriptor(QString id, QString *errmsg = 0);
+  RouterDescriptor getDescriptorById(QString id, QString *errmsg = 0);
+  /** Gets descriptors for the given list of router names. */
+  QList<RouterDescriptor> getDescriptorListByName(QStringList names, QString *errmsg = 0);
   /** Gets descriptors for the given list of router IDs. */
-  QList<RouterDescriptor> getRouterDescriptors(QStringList ids, QString *errmsg = 0);
+  QList<RouterDescriptor> getDescriptorListById(QStringList ids, QString *errmsg = 0);
   /** Gets a list of descriptors for all routers Tor knows about. */
   QList<RouterDescriptor> getRouterList(QString *errmsg = 0);
   /** Gets a list of router IDs for all routers Tor knows about. */
