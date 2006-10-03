@@ -248,7 +248,10 @@ TorControl::onConnected()
   if (_torProcess) {
     _torProcess->closeStdout();
   }
-  
+  /* The version of Tor isn't going to change while we're connected to it, so
+   * save it for later. */
+  getInfo("version", _torVersion);
+
   /* Let interested parties know that the control socket connected */
   emit connected();
   emit connected(true);
@@ -280,6 +283,8 @@ TorControl::onDisconnected()
      * running. In this case, there may be relevant information in the logs. */ 
     _torProcess->openStdout();
   }
+  /* Tor isn't running, so it has no version */
+  _torVersion = QString();
 
   /* Let interested parties know we lost our control connection */
   emit disconnected();
@@ -397,24 +402,20 @@ TorControl::signal(TorSignal::Signal sig, QString *errmsg)
 
 /** Reeturns Tor's version as a string. */
 QString
-TorControl::getTorVersionString(QString *errmsg)
+TorControl::getTorVersionString()
 {
-  QString ver;
-  if (getInfo("version", ver, errmsg)) {
-    return ver;
-  }
-  return QString();
+  return _torVersion;
 }
 
 /** Returns Tor's version as a numeric value. Note that this discards any
  * version status flag, such as "-alpha" or "-rc". */
 quint32
-TorControl::getTorVersion(QString *errmsg)
+TorControl::getTorVersion()
 {
   quint8 major, minor, micro, patch;
   quint32 version = 0;
   
-  QStringList parts = getTorVersionString(errmsg).split(".");
+  QStringList parts = getTorVersionString().split(".");
   if (parts.size() >= 4) {
     major = (quint8)parts.at(0).toUInt();
     minor = (quint8)parts.at(1).toUInt();

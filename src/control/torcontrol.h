@@ -76,9 +76,9 @@ public:
   bool signal(TorSignal::Signal sig, QString *errmsg = 0);
   
   /** Returns Tor's version as a string. */
-  QString getTorVersionString(QString *errmsg = 0);
+  QString getTorVersionString();
   /** Returns Tor's version as a numeric value. */
-  quint32 getTorVersion(QString *errmsg = 0);
+  quint32 getTorVersion();
 
   /** Sets an event and its handler. If add is true, then the event is added,
    * otherwise it is removed. If set is true, then the given event will be
@@ -149,7 +149,9 @@ private:
   TorService* _torService;
   /** Keep track of which events we're interested in */
   TorEvents _torEvents;
-
+  /** The version of Tor we're currently talking to. */
+  QString _torVersion;
+  
   /** Send a message to Tor and read the response */
   bool send(ControlCommand cmd, ControlReply &reply, QString *errmsg = 0);
   /** Send a message to Tor and discard the response */
