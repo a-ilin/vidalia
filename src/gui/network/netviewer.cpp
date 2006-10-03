@@ -327,7 +327,7 @@ NetViewer::resolved(int id, QList<GeoIp> geoips)
         /* Save the location information in the descriptor */
         router->setLocation(geoip.toLocation());
         /* Plot the router on the map */
-        _map->addRouter(router->name(), geoip.latitude(), geoip.longitude());
+        _map->addRouter(router->id(), geoip.latitude(), geoip.longitude());
       }
     }
     _resolveMap.remove(ip);
@@ -335,7 +335,7 @@ NetViewer::resolved(int id, QList<GeoIp> geoips)
 
   /* Update the circuit lines */
   foreach (Circuit circuit, ui.treeCircuitList->circuits()) {
-    _map->addCircuit(circuit.id(), circuit.hops());
+    _map->addCircuit(circuit.id(), circuitPathIDs(circuit).hops());
   }
   
   /* Repaint the map */
