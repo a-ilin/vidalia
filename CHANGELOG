@@ -1,4 +1,4 @@
-0.0.8
+0.0.8   03-Oct-2006
   o Vidalia will now attempt to connect to an existing Tor's ControlPort
     before starting its own Tor process. If it finds a Tor with an open
     ControlPort, Vidalia will "attach" to that Tor instead of starting a new
@@ -13,6 +13,8 @@
   o Do a better job of determining if another Vidalia process is running on
     Windows, to eliminate all the false positives reported.
   o Major performance improvements related to loading the network map.
+  o Support receiving server identities in circ events, as well as names, so 
+    Vidalia will work with Tor 0.1.2.2-alpha and later.
   o Moved the "New Identity" button to the main popup menu for easier
     access.
   o Vidalia dialogs remember their last size and location when Vidalia exits 
@@ -29,7 +31,8 @@
   o Add a Dutch translation contributed by Saedian.
   o Add a Hungarian translation contributed by Tibor Fekete.
   o Add a Polish translation contributed by ZeeWolf.
- 
+  o Updates to the Finnish, French, and Russian translations.
+
 
 0.0.7   07-Jul-2006 
   o Fix a bug that was causing Vidalia to freeze frequently for some people,
