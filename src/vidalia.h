@@ -106,7 +106,6 @@ private:
   static QMap<QString, QString> _args; /**< List of command-line arguments.  */
   static QString _style;               /**< The current GUI style.           */
   static QString _language;            /**< The current language.            */
-  static VidaliaSettings _settings;    /**< Vidalia's configurable settings. */
 
   static TorControl* _torControl;      /**< Vidalia's main TorControl object.*/
   static HelpBrowser* _help;           /**< Vidalia's configurable settings. */

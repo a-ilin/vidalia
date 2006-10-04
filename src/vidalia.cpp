@@ -45,7 +45,6 @@
 QMap<QString, QString> Vidalia::_args; /**< List of command-line arguments.  */
 QString Vidalia::_style;               /**< The current GUI style.           */
 QString Vidalia::_language;            /**< The current language.            */
-VidaliaSettings Vidalia::_settings;    /**< Vidalia's configurable settings. */
 HelpBrowser*  Vidalia::_help = 0;      /**< Vidalia's help system.           */
 TorControl* Vidalia::_torControl = 0;  /**< Main TorControl object.          */
 
@@ -61,7 +60,7 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
 
   /* Check if we're supposed to reset our config before proceeding. */
   if (_args.contains(ARG_RESET)) {
-    _settings.reset();
+    VidaliaSettings::reset();
   }
 
   /** Translate the GUI to the appropriate language. */
@@ -192,7 +191,8 @@ Vidalia::setLanguage(QString languageCode)
 {
   /* If the language code is empty, use the previously-saved setting */
   if (languageCode.isEmpty()) {
-    languageCode = _settings.getLanguageCode();
+    VidaliaSettings settings;
+    languageCode = settings.getLanguageCode();
   }
   /* Translate into the desired langauge */
   if (LanguageSupport::translate(languageCode)) {
@@ -211,7 +211,8 @@ Vidalia::setStyle(QString styleKey)
 {
   /* If no style was specified, use the previously-saved setting */
   if (styleKey.isEmpty()) {
-    styleKey = _settings.getInterfaceStyle();
+    VidaliaSettings settings;
+    styleKey = settings.getInterfaceStyle();
   }
   /* Apply the specified GUI style */
   if (QApplication::setStyle(styleKey)) {
