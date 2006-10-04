@@ -25,9 +25,12 @@
  * \brief Collection of Tor circuits as CircuitItems
  */
 
+#include <QPoint>
 #include <QTimer>
 
 #include "circuitlistwidget.h"
+
+#define IMG_CLOSE   ":/images/16x16/network-offline.png"
 
 #define CLOSED_CIRCUIT_REMOVE_DELAY     3000
 #define FAILED_CIRCUIT_REMOVE_DELAY     5000
@@ -45,6 +48,47 @@ CircuitListWidget::CircuitListWidget(QWidget *parent)
   /* Find out when a circuit has been selected */
   connect(this, SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)),
           this, SLOT(onSelectionChanged(QTreeWidgetItem*,QTreeWidgetItem*)));
+
+  /* Set up the circuit item context menu */
+  _circuitContextMenu = new QMenu(this);
+  _closeCircuitAct = new QAction(QIcon(IMG_CLOSE), tr("Close Circuit"), this);
+  _circuitContextMenu->addAction(_closeCircuitAct);
+  /* Set up the stream item context menu */
+  _streamContextMenu = new QMenu(this);
+  _closeStreamAct = new QAction(QIcon(IMG_CLOSE), tr("Close Stream"), this);
+  _streamContextMenu->addAction(_closeStreamAct);
+}
+
+/** Called when the user presses and releases a mouse button. If the event
+ * indicates a right-click and a circuit or stream is selected, an appropriate
+ * context menu will be displayed. */
+void
+CircuitListWidget::mouseReleaseEvent(QMouseEvent *e)
+{
+  if (e->button() == Qt::RightButton) {
+    /* Find out which item was right-clicked */
+    QTreeWidgetItem *item = itemAt(e->pos());
+    if (!item) {
+      return;
+    }
+    
+    QPoint pos = e->globalPos();
+    if (!item->parent()) {
+      /* Circuit was right-clicked */
+      quint64 circid = ((CircuitItem *)item)->id();
+      QAction* action = _circuitContextMenu->exec(pos);
+      if (action == _closeCircuitAct) {
+        emit closeCircuit(circid);
+      }
+    } else {
+      /* Stream was right-clicked */
+      quint64 streamid = ((StreamItem *)item)->id();
+      QAction* action = _streamContextMenu->exec(pos);
+      if (action == _closeStreamAct) {
+        emit closeStream(streamid);
+      }
+    }
+  }
 }
 
 /** Adds a circuit to the list. If the circuit already exists in the list, the

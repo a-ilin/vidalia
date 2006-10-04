@@ -68,6 +68,10 @@ private slots:
   void refresh();
   /** Called when the user selects a circuit on the circuit list */
   void circuitSelected(Circuit circuit);
+  /** Called when the user selects a circuit to be closed. */
+  void closeCircuit(quint64 circid);
+  /** Called when the user selects a stream to be closed. */
+  void closeStream(quint64 streamid);
   /** Called when an IP has been resolved to geographic information. */
   void resolved(int id, QList<GeoIp> geoips);
   /** Called when the user selects a router in the list. */

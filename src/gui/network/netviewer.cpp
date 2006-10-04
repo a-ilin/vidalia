@@ -101,6 +101,10 @@ NetViewer::NetViewer(QWidget *parent)
           this, SLOT(circuitSelected(Circuit)));
   connect(ui.treeCircuitList, SIGNAL(circuitRemoved(quint64)),
           _map, SLOT(removeCircuit(quint64)));
+  connect(ui.treeCircuitList, SIGNAL(closeCircuit(quint64)),
+          this, SLOT(closeCircuit(quint64)));
+  connect(ui.treeCircuitList, SIGNAL(closeStream(quint64)),
+          this, SLOT(closeStream(quint64)));
 
   /* Respond to changes in the status of the control connection */
   connect(_torControl, SIGNAL(connected(bool)), ui.actionRefresh, SLOT(setEnabled(bool)));
@@ -220,6 +224,20 @@ NetViewer::addCircuit(Circuit circuit)
 
   ui.treeCircuitList->addCircuit(circNames);
   _map->addCircuit(circuit.id(), circIds.hops());
+}
+
+/** Asks Tor to close the circuit with the id <b>circid</b>. */
+void
+NetViewer::closeCircuit(quint64 circid)
+{
+  _torControl->closeCircuit(circid);
+}
+
+/** Asks Tor to close the stream with the id <b>streamid</b>. */
+void
+NetViewer::closeStream(quint64 streamid)
+{
+  _torControl->closeStream(streamid);
 }
 
 /** Called when the user selects the "Help" action from the toolbar. */

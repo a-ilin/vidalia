@@ -30,6 +30,9 @@
 
 #include <QTreeWidget>
 #include <QList>
+#include <QMenu>
+#include <QAction>
+#include <QMouseEvent>
 
 #include "circuititem.h"
 #include "streamitem.h"
@@ -56,10 +59,6 @@ public:
   /** Adds a stream to the list. If the stream already exists in the list, the
    * status and path will be updated. */
   void addStream(Stream stream);
-  /** Removes the given circuit item and all streams on that circuit. */
-  void removeCircuit(CircuitItem *circuit);
-  /** Removes the given stream item. */
-  void removeStream(StreamItem *stream);
   /** Returns a list of circuits currently in the widget. */
   QList<Circuit> circuits();
 
@@ -68,20 +67,32 @@ signals:
   void circuitSelected(Circuit circuit);
   /** Emitted when a circuit is removed from the list. */
   void circuitRemoved(quint64 circid);
+  /** Emitted when the user selects a circuit to be closed. */
+  void closeCircuit(quint64 circid);
+  /** Emitted when the user selects a stream to be closed. */
+  void closeStream(quint64 streamid);
 
 public slots:
   /** Clears all circuits and streams from the list. */
   void clearCircuits();
 
+protected:
+  /** Called when the user presses and releases a mouse button. */ 
+  virtual void mouseReleaseEvent(QMouseEvent *e);
+
 private slots:
-  /** Removes the circuit with the given ID and any streams on this circuit.*/
+  /** Removes the first circuit scheduled to be removed.*/
   void removeCircuit(); 
-  /** Removes the stream with the given ID. */
+  /** Removes the first stream scheduled to be removed. */
   void removeStream();
   /** Called when the current item selectio has changed. */
   void onSelectionChanged(QTreeWidgetItem *cur, QTreeWidgetItem *prev);
-
+  
 private:
+  /** Removes the given circuit item and all streams on that circuit. */
+  void removeCircuit(CircuitItem *circuit);
+  /** Removes the given stream item. */
+  void removeStream(StreamItem *stream);
   /** Finds the circuit with the given ID. */
   CircuitItem* findCircuitItem(quint64 circid);
   /** Finds the stream with the given ID. */
@@ -90,6 +101,12 @@ private:
   void scheduleCircuitRemoval(CircuitItem *circuit, int delay);
   /** Schedules a stream to be removed after the given timeout. */
   void scheduleStreamRemoval(StreamItem *stream, int delay);
+
+  /* Circuit and stream context menus and items */
+  QMenu* _circuitContextMenu; /**< Context menu for circuit items. */
+  QAction* _closeCircuitAct;  /**< Closes a circuit. */
+  QMenu* _streamContextMenu;  /**< Context menu for stream items. */
+  QAction* _closeStreamAct;   /**< Closes a stream. */
 
   /** List of circuit items to be removed. */
   QList<CircuitItem *> _circuitRemovalList;
