@@ -109,15 +109,15 @@
     </message>
     <message>
         <source>File Not Found</source>
-        <translation type="unfinished"></translation>
+        <translation>Datei nicht gefunden</translation>
     </message>
     <message>
         <source>%1 does not exist. Would you like to create it?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 existiert nicht. Soll es erstellt werden?</translation>
     </message>
     <message>
         <source>Failed to Create File</source>
-        <translation type="unfinished"></translation>
+        <translation>Datei konnte nicht erstellt werden</translation>
     </message>
     <message>
         <source>Unable to create %1 [%2]</source>
@@ -125,37 +125,39 @@
     </message>
     <message>
         <source>Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Dienst</translation>
     </message>
     <message>
         <source>Enable this if you wish to run Tor as a Windows service</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktiviere diese Option, um Tor als Windows-Dienst auszuführen</translation>
     </message>
     <message>
         <source>Run Tor in the background as a Windows service</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor als Windows-Dienst im Hintergrund ausführen</translation>
     </message>
     <message>
         <source>Unable to remove Tor Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-Dienst konnte nicht entfernen werden</translation>
     </message>
     <message>
         <source>Unable to install Tor Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-Dienst konnte nicht installiert werden</translation>
     </message>
     <message>
         <source>Vidalia was unable to install the Tor service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia konnte Tor nicht als Dienst einrichten.</translation>
     </message>
     <message>
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia konnte den Tor-Dienst nicht entfernen.
+
+Du musst ihn manuell entfernen.</translation>
     </message>
     <message>
         <source>Tor Configuration File</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor Konfigurationsdatei</translation>
     </message>
 </context>
 <context>
@@ -237,7 +239,7 @@ You may need to remove it manually.</source>
     </message>
     <message>
         <source>Always On Top</source>
-        <translation type="unfinished"></translation>
+        <translation>Immer im Vordergrund</translation>
     </message>
 </context>
 <context>
@@ -289,7 +291,7 @@ You may need to remove it manually.</source>
     <name>ConfigDialog</name>
     <message>
         <source>Configure Settings</source>
-        <translation type="obsolete">Configurations Einstellungen</translation>
+        <translation type="obsolete">Konfigurations Einstellungen</translation>
     </message>
     <message>
         <source>General</source>
@@ -317,7 +319,7 @@ You may need to remove it manually.</source>
     </message>
     <message>
         <source>Error Saving Configuration</source>
-        <translation>Fehler Logging Kongfiguration</translation>
+        <translation>Fehler beim Speichern der Kongfiguration</translation>
     </message>
     <message>
         <source>Help</source>
@@ -325,18 +327,18 @@ You may need to remove it manually.</source>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Einstellungen</translation>
+        <translation>Einstellungen</translation>
     </message>
 </context>
 <context>
     <name>ControlConnection</name>
     <message>
         <source>The control socket is closing.</source>
-        <translation>Kontrollsocket schließt sich</translation>
+        <translation>Kontrollsocket schließt sich.</translation>
     </message>
     <message>
         <source>Control socket not connected.</source>
-        <translation>Kontrollsocket nicht verbunden</translation>
+        <translation>Kontrollsocket nicht verbunden.</translation>
     </message>
 </context>
 <context>
@@ -412,11 +414,11 @@ Protocol (Version %1 entdeckt). Installiere eine neuere Version von Tor.</transl
     </message>
     <message>
         <source>Tor Executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Pfad zur Tor-Anwendung</translation>
     </message>
     <message>
         <source>Executables (*.exe)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ausführbare Dateien (*.exe)</translation>
     </message>
 </context>
 <context>
@@ -470,7 +472,7 @@ Protocol (Version %1 entdeckt). Installiere eine neuere Version von Tor.</transl
     </message>
     <message>
         <source>Help Topics</source>
-        <translation>Hilfe Gebiete</translation>
+        <translation>Hilfe Themen</translation>
     </message>
     <message>
         <source>Search</source>
@@ -574,7 +576,7 @@ Protocol (Version %1 entdeckt). Installiere eine neuere Version von Tor.</transl
     </message>
     <message>
         <source>Found %1 results</source>
-        <translation>Found %1 results</translation>
+        <translation>%1 Ergebnis(se) gefunden</translation>
     </message>
 </context>
 <context>
@@ -596,19 +598,19 @@ Protocol (Version %1 entdeckt). Installiere eine neuere Version von Tor.</transl
     </message>
     <message>
         <source>Notice</source>
-        <translation>Notice</translation>
+        <translation>Notiz</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Warning</translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Error</translation>
+        <translation>Fehler</translation>
     </message>
     <message>
         <source>Unknown</source>
-        <translation>Unkown</translation>
+        <translation>Unbekannt</translation>
     </message>
 </context>
 <context>
@@ -722,7 +724,7 @@ Protocol (Version %1 entdeckt). Installiere eine neuere Version von Tor.</transl
     </message>
     <message>
         <source>Vidalia was unable to stop Tor.</source>
-        <translation>Vidalia konnte Tor nicht anhlten.</translation>
+        <translation>Vidalia konnte Tor nicht anhalten.</translation>
     </message>
     <message>
         <source>Tor is starting</source>
@@ -762,7 +764,7 @@ Protocol (Version %1 entdeckt). Installiere eine neuere Version von Tor.</transl
     </message>
     <message>
         <source>Vidalia was unable to apply your server&apos;s settings.</source>
-        <translation>Vidalia konnte die Servereinstellungne nicht anwenden.</translation>
+        <translation>Vidalia konnte die Servereinstellungen nicht anwenden.</translation>
     </message>
     <message>
         <source>You are currently running a Tor server. Terminating your server will interrupt any open connections from clients.
@@ -788,23 +790,23 @@ wurde.
     </message>
     <message>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia konnte Tor nicht starten. Überprüfe deine Einstellungen und stelle sicher, dass der Pfad zur Tor-Anwendung korrekt angegeben ist.</translation>
     </message>
     <message>
         <source>Network Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Netzwerk-Karte</translation>
     </message>
     <message>
         <source>Settings</source>
-        <translation type="unfinished">Einstellungen</translation>
+        <translation>Einstellungen</translation>
     </message>
     <message>
         <source>New Identity</source>
-        <translation type="unfinished">Neue Identität</translation>
+        <translation>Neue Identität</translation>
     </message>
     <message>
         <source>Ctrl+I</source>
-        <translation type="unfinished"></translation>
+        <translation>Strg+I</translation>
     </message>
     <message>
         <source>All subsequent connections will appear to be different than your old connections.</source>
@@ -852,7 +854,7 @@ Verbindungen erscheinen.</translation>
     </message>
     <message>
         <source>Log History Size</source>
-        <translation>Logdatei Größe</translation>
+        <translation>Größe der Logdatei</translation>
     </message>
     <message>
         <source>Number of messages to keep in log</source>
@@ -860,7 +862,7 @@ Verbindungen erscheinen.</translation>
     </message>
     <message>
         <source>Saves the current Message Log settings</source>
-        <translation>Speichere die aktuellen Logdatei Einstellungen</translation>
+        <translation>Speichere die aktuellen Logdatei-Einstellungen</translation>
     </message>
     <message>
         <source>Save Settings</source>
@@ -884,11 +886,11 @@ Verbindungen erscheinen.</translation>
     </message>
     <message>
         <source>Warning</source>
-        <translation>Warning</translation>
+        <translation>Warnung</translation>
     </message>
     <message>
         <source>Notice</source>
-        <translation>Notice</translation>
+        <translation>Notiz</translation>
     </message>
     <message>
         <source>Info</source>
@@ -1104,7 +1106,7 @@ empfangen</translation>
     </message>
     <message>
         <source>Text Files (*.txt)</source>
-        <translation type="unfinished"></translation>
+        <translation>Text Dateien (*.txt)</translation>
     </message>
     <message>
         <source>F1</source>
@@ -1189,7 +1191,7 @@ Verbindungen erscheinen.</translation>
     </message>
     <message>
         <source>Ctrl+R</source>
-        <translation type="unfinished"></translation>
+        <translation>Strg+R</translation>
     </message>
     <message>
         <source>F1</source>
@@ -1209,7 +1211,7 @@ Verbindungen erscheinen.</translation>
     </message>
     <message>
         <source>Ctrl+Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Strg+Z</translation>
     </message>
 </context>
 <context>
@@ -1266,7 +1268,7 @@ Verbindungen erscheinen.</translation>
     </message>
     <message>
         <source>Location:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ort:</translation>
     </message>
 </context>
 <context>
@@ -1281,7 +1283,7 @@ Verbindungen erscheinen.</translation>
     </message>
     <message>
         <source>Hibernating</source>
-        <translation type="unfinished">Ruhezustand</translation>
+        <translation>Ruhezustand</translation>
     </message>
 </context>
 <context>
@@ -1390,11 +1392,11 @@ durch deinen Server zu verbieten.</translation>
     </message>
     <message>
         <source>IP Address:</source>
-        <translation>IP Addresse:</translation>
+        <translation>IP Adresse:</translation>
     </message>
     <message>
         <source>IP address for new exit policy</source>
-        <translation>IP Addresse für die neue Exit Strategie</translation>
+        <translation>IP Adresse für die neue Exit Strategie</translation>
     </message>
     <message>
         <source>/</source>
@@ -1502,8 +1504,8 @@ herauszufinden?</translation>
     </message>
     <message>
         <source>When enabled, Vidalia will periodically update your IP address if necessary</source>
-        <translation>Wenn aktiviert versucht Vidalia regelmäßig deine IP
-Addresse auf den neusten Stand zu bringen.</translation>
+        <translation>Wenn aktiviert, versucht Vidalia regelmäßig deine IP
+Adresse auf den neusten Stand zu bringen.</translation>
     </message>
     <message>
         <source>Automatically Update</source>
@@ -1628,11 +1630,11 @@ angeben.</translation>
     </message>
     <message>
         <source>Unable to install the Tor service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-Dienst konnte nicht installiert werden.</translation>
     </message>
     <message>
         <source>Unable to start Tor service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-Dienst konnte nicht gestartet werden.</translation>
     </message>
 </context>
 <context>
@@ -1682,7 +1684,7 @@ angeben.</translation>
     </message>
     <message>
         <source>Vidalia is already running</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia wurde bereits gestartet</translation>
     </message>
     <message>
         <source>Another Vidalia process is already running. This Vidalia process will now exit.</source>
