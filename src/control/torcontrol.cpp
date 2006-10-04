@@ -778,3 +778,12 @@ TorControl::getStreams(QString *errmsg)
   return streams;
 }
 
+/** Closes the stream specified by <b>streamid</b>. */
+bool
+TorControl::closeStream(quint64 streamid, QString *errmsg)
+{
+  ControlCommand cmd("CLOSESTREAM", QString::number(streamid));
+  cmd.addArgument("1"); /* 1 == REASON_MISC (tor-spec.txt) */
+  return send(cmd, errmsg);
+}
+
