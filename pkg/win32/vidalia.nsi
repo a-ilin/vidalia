@@ -3,6 +3,7 @@
 ;
 ;  Copyright (c) 2006, Matt Edman, Justin Hipple           
 ;  See LICENSE for licensing information 
+;  + Russian translation
 ;-------------------------------------------
 !include "MUI.nsh"
 
@@ -20,16 +21,18 @@
 ;--------------------------------
 ; Basic Installer Information
 Name "${APPNAME}"
-Caption "${APPDESCRIPTION} Setup"
+Caption "$(LSetup)"
 BrandingText "${APPDESCRIPTION}"
 OutFile "${INSTALLFILE}"
 CRCCheck on
+
+;--------------------------------
 
 VIAddVersionKey "ProductName" "${APPNAME}"
 VIAddVersionKey "Comments" "${APPDESCRIPTION}"
 VIAddVersionKey "CompanyName" "${AUTHOR}"
 VIAddVersionKey "LegalTrademarks" "${AUTHOR}"
-VIAddVersionKey "LegalCopyright" "© ${AUTHOR}"
+VIAddVersionKey "LegalCopyright" "й ${AUTHOR}"
 VIAddVersionKey "FileVersion" "${APPVERSION}"
 VIAddVersionKey "FileDescription" "${APPDESCRIPTION}"
 VIProductVersion "${PRODVERSION}"
@@ -43,8 +46,10 @@ SetOverWrite ifnewer
 AutoCloseWindow false
 ShowInstDetails show
 SetCompressor /SOLID lzma
+!packhdr header.dat "upx --best header.dat"
 XPStyle on
 
+;!insertmacro MUI_RESERVEFILE_LANGDLL
 
 ;--------------------------------
 ; Install Types
@@ -57,16 +62,17 @@ XPStyle on
 
 ;--------------------------------
 ; MUI Options
-!define MUI_WELCOMEPAGE_TITLE "Welcome to the ${APPNAME} Setup Wizard"
-!define MUI_WELCOMEPAGE_TEXT "This wizard will guide you through the installation of ${APPDESCRIPTION}.\r\n\r\n$_CLICK"
+!define MUI_WELCOMEPAGE_TITLE "$(LWelcomeTitle)"
+!define MUI_WELCOMEPAGE_TEXT "$(LWelcomeText)"
 !define MUI_ABORTWARNING
 !define MUI_ICON "${NSISDIR}\Contrib\Graphics\Icons\win-install.ico"
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\win-uninstall.ico"
 !define MUI_HEADERIMAGE_BITMAP "${NSISDIR}\Contrib\Graphics\Header\win.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_FINISHPAGE_RUN "$INSTDIR\${APPEXEC}"
-!define MUI_FINISHPAGE_RUN_TEXT "Run Vidalia now"
-
+!define MUI_FINISHPAGE_RUN_TEXT "$(LRunNowText)"
+!define MUI_FINISHPAGE_LINK "$(LProjectText)"
+!define MUI_FINISHPAGE_LINK_LOCATION "http://www.vidalia-project.net"
 
 ;--------------------------------
 ; Pages
@@ -79,11 +85,55 @@ XPStyle on
 !insertmacro MUI_UNPAGE_CONFIRM
 !insertmacro MUI_UNPAGE_INSTFILES
 !insertmacro MUI_UNPAGE_FINISH
+
+;--------------------------------
+; Languages
 !insertmacro MUI_LANGUAGE "English"
+!insertmacro MUI_LANGUAGE "Russian"
+
+LangString LSetup ${LANG_ENGLISH} "${APPDESCRIPTION} Setup"
+LangString LSetup ${LANG_RUSSIAN} "Установка ${APPDESCRIPTION}"
+
+LangString LWelcomeTitle ${LANG_ENGLISH} "Welcome to the ${APPNAME} Setup Wizard"
+LangString LWelcomeTitle ${LANG_RUSSIAN} "Вас приветствует мастер установки ${APPNAME}"
+
+LangString LWelcomeText ${LANG_ENGLISH} "This wizard will guide you through the installation of ${APPDESCRIPTION}.\r\n\r\n$_CLICK"
+LangString LWelcomeText ${LANG_RUSSIAN} "Эта программа установит ${APPDESCRIPTION} на Ваш компьютер.\r\n\r\n$_CLICK"
+
+LangString LRunNowText ${LANG_ENGLISH} "Run ${APPNAME} now"
+LangString LRunNowText ${LANG_RUSSIAN} "Запустить ${APPNAME} сейчас"
+
+LangString LAppSec ${LANG_ENGLISH} "${APPNAME} (required)"
+LangString LAppSec ${LANG_RUSSIAN} "${APPNAME} (обязательно)"
+
+LangString LMainMenuSec ${LANG_ENGLISH} "Start Menu Shortcuts"
+LangString LMainMenuSec ${LANG_RUSSIAN} "Ярлыки в Главное меню"
+
+LangString LStartupSec ${LANG_ENGLISH} "Run At Startup"
+LangString LStartupSec ${LANG_RUSSIAN} "Автозапуск"
+
+LangString LAppDesc ${LANG_ENGLISH} "${APPNAME} Executable"
+LangString LAppDesc ${LANG_RUSSIAN} "Исполняемый файл ${APPNAME}"
+
+LangString LMainMenuDesc ${LANG_ENGLISH} "Add Shortcuts to Start Menu"
+LangString LMainMenuDesc ${LANG_RUSSIAN} "Добавить ярлыки в Главное Меню"
+
+LangString LStartupDesc ${LANG_ENGLISH} "Automatically start ${APPNAME} at startup"
+LangString LStartupDesc ${LANG_RUSSIAN} "Автоматически запускать ${APPNAME}  при загрузке системы"
+
+LangString LProjectText ${LANG_ENGLISH} "{APPNAME} project site"
+LangString LProjectText ${LANG_RUSSIAN} "Сайт проекта ${APPNAME}"
+
+;--------------------------------
+; Functions
+
+Function .onInit
+  !insertmacro MUI_LANGDLL_DISPLAY
+FunctionEnd
 
 ;--------------------------------
 ; Required Components
-Section "${APPNAME} (required)" Vidalia
+Section "$(LAppSec)" Vidalia
   SectionIn RO
   
   ; Set output path to the installation directory.
@@ -107,9 +157,8 @@ SectionEnd
 ;--------------------------------
 ; Start Menu Shortcuts
 ; Optional section (can be disabled by the user)
-Section "Start Menu Shortcuts" Shortcuts
+Section "$(LMainMenuSec)" Shortcuts
   SectionIn 1 2
-  SetShellVarContext all
   CreateDirectory "$SMPROGRAMS\${APPNAME}"
   CreateShortCut "$SMPROGRAMS\${APPNAME}\${APPNAME}.lnk" "$INSTDIR\${APPEXEC}" "" "$INSTDIR\${APPEXEC}" 0  
   CreateShortCut "$SMPROGRAMS\${APPNAME}\Uninstall.lnk" "$INSTDIR\uninstall.exe" "" "$INSTDIR\uninstall.exe" 0
@@ -118,7 +167,7 @@ SectionEnd
 
 ;--------------------------------
 ; Run At Startup
-Section "Run At Startup" RunAtStartup
+Section "$(LStartupSec)" RunAtStartup
   SectionIn 1 2
   WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "${APPNAME}" '"$INSTDIR\${APPEXEC}"'
 SectionEnd
@@ -126,7 +175,9 @@ SectionEnd
 
 ;--------------------------------
 ; Uninstaller
-Section "Uninstall"  
+Section "Uninstall"
+  SetShellVarContext all
+
   ; Remove registry keys
   DeleteRegValue HKCU "Software\Microsoft\Windows\CurrentVersion\Run\" "${APPNAME}"
   DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${APPNAME}"
@@ -143,9 +194,10 @@ Section "Uninstall"
   RMDir /r "$INSTDIR"
 SectionEnd
 
-
+;--------------------------------
+; Descriptions
 !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
-  !insertmacro MUI_DESCRIPTION_TEXT ${Vidalia} "${APPNAME} Executable"
-  !insertmacro MUI_DESCRIPTION_TEXT ${Shortcuts} "Add Shortcuts to Start Menu"
-  !insertmacro MUI_DESCRIPTION_TEXT ${RunAtStartup} "Automatically start ${APPNAME} at startup"
+  !insertmacro MUI_DESCRIPTION_TEXT ${Vidalia} "$(LAppDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${Shortcuts} "$(LMainMenuDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${RunAtStartup} "$(LStartupDesc)"
 !insertmacro MUI_FUNCTION_DESCRIPTION_END
