@@ -738,6 +738,18 @@ TorControl::getCircuits(QString *errmsg)
   return circuits;
 }
 
+/** Closes the circuit specified by <b>circid</b>. If <b>ifUnused</b> is
+ * true, then the circuit will not be closed unless it is unused. */
+bool
+TorControl::closeCircuit(quint64 circid, bool ifUnused, QString *errmsg)
+{
+  ControlCommand cmd("CLOSECIRCUIT", QString::number(circid));
+  if (ifUnused) {
+    cmd.addArgument("IfUnused");
+  }
+  return send(cmd, errmsg);
+}
+
 /** Gets a list of current streams. */
 QList<Stream>
 TorControl::getStreams(QString *errmsg)
