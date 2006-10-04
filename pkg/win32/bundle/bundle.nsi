@@ -199,8 +199,14 @@ SectionGroup "Vidalia ${VIDALIA_VERSION}" VidaliaGroup
       Push "\\"
       Call StrRep
       Pop $R0 ; contains the modified version of $INSTDIR
+
+      SetShellVarContext current
+      IfFileExists "$APPDATA\Vidalia" EndIfConf
+        CreateDirectory "$APPDATA\Vidalia"
+      EndIfConf:
       WriteINIStr "$APPDATA\Vidalia\vidalia.conf" Tor TorExecutable "$R0\\Tor\\${TOR_EXEC}"
- 
+      SetShellVarContext all
+
       ; Write the uninstall keys for Windows  
       WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "DisplayName" "${VIDALIA_NAME} ${VIDALIA_VERSION}"
       WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "UninstallString" '"$INSTDIR\Vidalia\${VIDALIA_UNINST}"'
