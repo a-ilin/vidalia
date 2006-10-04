@@ -12,8 +12,6 @@ Things to complete for 0.1.0:
     (Ticket #158)
   * Our GeoIP cache should recognize IP addresses on the same subnet.
     (Ticket #154)
-  * Roger gets run-time warning messages from Qt on his Debian sarge. I also
-    hear Ubuntu people get similar messages. We need to fix all such messages.
   * There is a Flyspray ticket on Tor's bugtracker about not being able to
     config changes when an alternate torrc is specified. Need to be verified
     and/or fixed. (http://bugs.noreply.org/flyspray/?do=details&id=319)
@@ -21,6 +19,8 @@ Things to complete for 0.1.0:
     the dock icon. (Ticket #135)
   * Roger is going to add some additional events that Vidalia should respond
     to, such as "hey, you're a server now!"
+  * Actually do something useful with the AUTHENTICATE command, rather than
+    simply sending an empty one.
 
 
 Features planned for 0.1.x:
