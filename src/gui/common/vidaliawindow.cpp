@@ -117,9 +117,9 @@ VidaliaWindow::show()
   /* If this is the first time this window is shown, restore its window
    * position and size. */
   if (!_previouslyShown) {
-#if defined (Q_WS_MAC)
-    /* Use the standard palette on Mac, overriding whatever was specified in
-     * the .ui file for this dialog. */
+#if !defined (Q_WS_WIN)
+    /* Use the standard palette on non-Windows, overriding whatever was 
+     * specified in the .ui file for this dialog. */
     setPalette(QPalette());
 #endif
     
