@@ -34,7 +34,7 @@ LogEvent::LogEvent(Severity severity, QString message)
 : QEvent((QEvent::Type)CustomEventType::LogEvent)
 {
   _severity = severity;
-  _message  = message;
+  _message  = message.trimmed();
 }
 
 /** Converts a string description of a severity to its enum value */
