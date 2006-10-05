@@ -81,17 +81,17 @@ ConfigDialog::ConfigDialog(QWidget* parent)
   
   /* Create and bind the Cancel button */
   cancelAct = new QAction(QIcon(IMAGE_CANCEL), tr("Cancel"), ui.toolBar);
-  addAction(cancelAct, SLOT(cancelChanges()));
+  addAction(cancelAct, SLOT(close()));
   
   /* Select the first action */
   grp->actions()[0]->setChecked(true);
 
-#if defined(Q_WS_MAC)
-  helpAct->setShortcut(QString("Ctrl+?"));
-  cancelAct->setShortcut(QString("Ctrl+W"));
-#else
+#if defined(Q_WS_WIN)
   helpAct->setShortcut(QString("F1"));
   cancelAct->setShortcut(QString("Esc"));
+#else
+  helpAct->setShortcut(QString("Ctrl+?"));
+  cancelAct->setShortcut(QString("Ctrl+W"));
 #endif
 }
 
@@ -144,15 +144,6 @@ ConfigDialog::loadSettings()
   foreach (ConfigPage *page, ui.stackPages->pages()) {
     page->load();
   }
-}
-
-/** Cancels changes made to settings. */
-void
-ConfigDialog::cancelChanges()
-{
-  /* Reload saved settings and exit */
-  loadSettings();
-  QMainWindow::close();
 }
 
 /** Saves changes made to settings. */

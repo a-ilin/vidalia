@@ -54,6 +54,8 @@ NetViewer::NetViewer(QWidget *parent)
   ui.setupUi(this);
 #if defined(Q_WS_MAC)
   ui.actionHelp->setShortcut(QString("Ctrl+?"));
+#endif
+#if !defined(Q_WS_WIN)
   ui.actionClose->setShortcut(QString("Ctrl+W"));
 #endif
 

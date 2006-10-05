@@ -50,10 +50,10 @@ BandwidthGraph::BandwidthGraph(QWidget *parent, Qt::WFlags flags)
 {
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
-#if defined(Q_WS_MAC)
-  setShortcut("Ctrl+W", SLOT(close()));
-#else
+#if defined(Q_WS_WIN)
   setShortcut("Esc", SLOT(close()));
+#else
+  setShortcut("Ctrl+W", SLOT(close()));
 #endif
 
   /* Bind events to actions */

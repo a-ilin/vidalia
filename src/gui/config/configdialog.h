@@ -63,8 +63,6 @@ public slots:
   void show(Page page);
 
 private slots:
-  /** Called when user clicks "Cancel" */
-  void cancelChanges();
   /** Called when user clicks "Save Settings" */
   void saveChanges();
   /** Called when user clicks "Help" */

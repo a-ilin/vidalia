@@ -59,6 +59,8 @@ HelpBrowser::HelpBrowser(QWidget *parent)
   ui.setupUi(this);
 #if defined(Q_WS_MAC)
   ui.actionHome->setShortcut(QString("Shift+Ctrl+H"));
+#endif
+#if !defined(Q_WS_WIN)
   ui.actionClose->setShortcut(QString("Ctrl+W"));
 #endif
 
