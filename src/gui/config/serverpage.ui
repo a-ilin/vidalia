@@ -277,11 +277,6 @@
     </disabled>
    </palette>
   </property>
-  <property name="font" >
-   <font>
-    <pointsize>10</pointsize>
-   </font>
-  </property>
   <property name="contextMenuPolicy" >
    <enum>Qt::NoContextMenu</enum>
   </property>
@@ -324,7 +319,7 @@
        <number>0</number>
       </property>
       <property name="spacing" >
-       <number>0</number>
+       <number>6</number>
       </property>
       <item>
        <widget class="QTabWidget" name="tabsMenu" >
@@ -387,19 +382,6 @@
             </property>
             <property name="text" >
              <string>Get Address</string>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="0" colspan="8" >
-           <widget class="QLabel" name="lblRequired" >
-            <property name="layoutDirection" >
-             <enum>Qt::LeftToRight</enum>
-            </property>
-            <property name="text" >
-             <string>Nickname and Server Port are required</string>
-            </property>
-            <property name="alignment" >
-             <set>Qt::AlignCenter</set>
             </property>
            </widget>
           </item>
@@ -695,65 +677,143 @@ fingerprint.</string>
          <attribute name="title" >
           <string>Rate Limits</string>
          </attribute>
-         <layout class="QGridLayout" >
+         <layout class="QVBoxLayout" >
           <property name="margin" >
            <number>9</number>
           </property>
           <property name="spacing" >
            <number>6</number>
           </property>
-          <item row="0" column="0" >
-           <widget class="QComboBox" name="cmboRate" >
+          <item>
+           <widget class="QLabel" name="label" >
+            <property name="sizePolicy" >
+             <sizepolicy>
+              <hsizetype>0</hsizetype>
+              <vsizetype>0</vsizetype>
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize" >
+             <size>
+              <width>390</width>
+              <height>41</height>
+             </size>
+            </property>
+            <property name="maximumSize" >
+             <size>
+              <width>390</width>
+              <height>41</height>
+             </size>
+            </property>
             <property name="contextMenuPolicy" >
              <enum>Qt::NoContextMenu</enum>
             </property>
-            <property name="toolTip" >
-             <string>Select the entry that most closely resembles your Internet connection</string>
+            <property name="text" >
+             <string>For Internet connections with fast download speed but slow upload, please list your upload speed here.</string>
             </property>
-            <property name="maxVisibleItems" >
-             <number>10</number>
+            <property name="wordWrap" >
+             <bool>true</bool>
             </property>
-            <property name="sizeAdjustPolicy" >
-             <enum>QComboBox::AdjustToContents</enum>
-            </property>
-            <item>
-             <property name="text" >
-              <string>Dial Up Modem</string>
-             </property>
-            </item>
-            <item>
-             <property name="text" >
-              <string>Cable/DSL 256 Kbps</string>
-             </property>
-            </item>
-            <item>
-             <property name="text" >
-              <string>Cable/DSL 512 Kbps</string>
-             </property>
-            </item>
-            <item>
-             <property name="text" >
-              <string>Cable/DSL 768 Kbps</string>
-             </property>
-            </item>
-            <item>
-             <property name="text" >
-              <string>T1/Cable/DSL 1.5 Mbps</string>
-             </property>
-            </item>
-            <item>
-             <property name="text" >
-              <string>> 1.5 Mbps</string>
-             </property>
-            </item>
-            <item>
-             <property name="text" >
-              <string>Custom</string>
-             </property>
-            </item>
            </widget>
           </item>
-          <item row="1" column="0" colspan="3" >
+          <item>
+           <layout class="QHBoxLayout" >
+            <property name="margin" >
+             <number>0</number>
+            </property>
+            <property name="spacing" >
+             <number>6</number>
+            </property>
+            <item>
+             <widget class="QComboBox" name="cmboRate" >
+              <property name="contextMenuPolicy" >
+               <enum>Qt::NoContextMenu</enum>
+              </property>
+              <property name="toolTip" >
+               <string>Select the entry that most closely resembles your Internet connection</string>
+              </property>
+              <property name="maxVisibleItems" >
+               <number>10</number>
+              </property>
+              <property name="sizeAdjustPolicy" >
+               <enum>QComboBox::AdjustToContents</enum>
+              </property>
+              <item>
+               <property name="text" >
+                <string>Dial Up Modem</string>
+               </property>
+              </item>
+              <item>
+               <property name="text" >
+                <string>Cable/DSL 256 Kbps</string>
+               </property>
+              </item>
+              <item>
+               <property name="text" >
+                <string>Cable/DSL 512 Kbps</string>
+               </property>
+              </item>
+              <item>
+               <property name="text" >
+                <string>Cable/DSL 768 Kbps</string>
+               </property>
+              </item>
+              <item>
+               <property name="text" >
+                <string>T1/Cable/DSL 1.5 Mbps</string>
+               </property>
+              </item>
+              <item>
+               <property name="text" >
+                <string>> 1.5 Mbps</string>
+               </property>
+              </item>
+              <item>
+               <property name="text" >
+                <string>Custom</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnRateHelp" >
+              <property name="contextMenuPolicy" >
+               <enum>Qt::NoContextMenu</enum>
+              </property>
+              <property name="toolTip" >
+               <string>Show help topic on bandwidth rate limits</string>
+              </property>
+              <property name="text" >
+               <string/>
+              </property>
+              <property name="icon" >
+               <iconset resource="..\res\vidalia_common.qrc" >:/images/22x22/help-browser.png</iconset>
+              </property>
+              <property name="iconSize" >
+               <size>
+                <width>22</width>
+                <height>22</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <spacer>
+              <property name="orientation" >
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" >
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+           </layout>
+          </item>
+          <item>
            <widget class="QFrame" name="frmCustomRate" >
             <property name="contextMenuPolicy" >
              <enum>Qt::NoContextMenu</enum>
@@ -907,42 +967,7 @@ fingerprint.</string>
             </layout>
            </widget>
           </item>
-          <item row="0" column="1" >
-           <widget class="QPushButton" name="btnRateHelp" >
-            <property name="contextMenuPolicy" >
-             <enum>Qt::NoContextMenu</enum>
-            </property>
-            <property name="toolTip" >
-             <string>Show help topic on bandwidth rate limits</string>
-            </property>
-            <property name="text" >
-             <string/>
-            </property>
-            <property name="icon" >
-             <iconset resource="..\res\vidalia_common.qrc" >:/images/22x22/help-browser.png</iconset>
-            </property>
-            <property name="iconSize" >
-             <size>
-              <width>22</width>
-              <height>22</height>
-             </size>
-            </property>
-           </widget>
-          </item>
-          <item row="0" column="2" >
-           <spacer>
-            <property name="orientation" >
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" >
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="2" column="0" >
+          <item>
            <spacer>
             <property name="orientation" >
              <enum>Qt::Vertical</enum>
@@ -961,58 +986,14 @@ fingerprint.</string>
          <attribute name="title" >
           <string>Exit Policies</string>
          </attribute>
-         <layout class="QVBoxLayout" >
+         <layout class="QGridLayout" >
           <property name="margin" >
            <number>9</number>
           </property>
           <property name="spacing" >
            <number>6</number>
           </property>
-          <item>
-           <widget class="QLabel" name="label_3" >
-            <property name="sizePolicy" >
-             <sizepolicy>
-              <hsizetype>0</hsizetype>
-              <vsizetype>0</vsizetype>
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize" >
-             <size>
-              <width>501</width>
-              <height>41</height>
-             </size>
-            </property>
-            <property name="maximumSize" >
-             <size>
-              <width>501</width>
-              <height>41</height>
-             </size>
-            </property>
-            <property name="font" >
-             <font>
-              <family>Arial</family>
-              <pointsize>10</pointsize>
-              <weight>50</weight>
-              <italic>false</italic>
-              <bold>false</bold>
-              <underline>false</underline>
-              <strikeout>false</strikeout>
-             </font>
-            </property>
-            <property name="contextMenuPolicy" >
-             <enum>Qt::NoContextMenu</enum>
-            </property>
-            <property name="text" >
-             <string>What Internet resources would you like to let Tor users access from your Tor server?</string>
-            </property>
-            <property name="wordWrap" >
-             <bool>true</bool>
-            </property>
-           </widget>
-          </item>
-          <item>
+          <item row="1" column="0" >
            <widget class="QFrame" name="frmPolicies" >
             <property name="frameShape" >
              <enum>QFrame::NoFrame</enum>
@@ -1035,6 +1016,19 @@ fingerprint.</string>
                <property name="spacing" >
                 <number>6</number>
                </property>
+               <item row="0" column="1" >
+                <widget class="QCheckBox" name="chkIRC" >
+                 <property name="contextMenuPolicy" >
+                  <enum>Qt::NoContextMenu</enum>
+                 </property>
+                 <property name="toolTip" >
+                  <string>Ports 6660 - 6669 and 6697</string>
+                 </property>
+                 <property name="text" >
+                  <string>Internet Relay Chat (IRC)</string>
+                 </property>
+                </widget>
+               </item>
                <item row="2" column="0" >
                 <widget class="QCheckBox" name="chkMail" >
                  <property name="contextMenuPolicy" >
@@ -1048,19 +1042,6 @@ fingerprint.</string>
                  </property>
                 </widget>
                </item>
-               <item row="3" column="0" >
-                <widget class="QCheckBox" name="chkIM" >
-                 <property name="contextMenuPolicy" >
-                  <enum>Qt::NoContextMenu</enum>
-                 </property>
-                 <property name="toolTip" >
-                  <string>Ports 706, 1863, 5050, 5190, 5222, 8300 and 8888</string>
-                 </property>
-                 <property name="text" >
-                  <string>Instant Messaging (IM)</string>
-                 </property>
-                </widget>
-               </item>
                <item row="2" column="1" >
                 <widget class="QCheckBox" name="chkNoExternal" >
                  <property name="contextMenuPolicy" >
@@ -1071,6 +1052,32 @@ fingerprint.</string>
                  </property>
                  <property name="text" >
                   <string>No External Connections</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1" >
+                <widget class="QCheckBox" name="chkMisc" >
+                 <property name="contextMenuPolicy" >
+                  <enum>Qt::NoContextMenu</enum>
+                 </property>
+                 <property name="toolTip" >
+                  <string>Ports unspecified by other checkboxes</string>
+                 </property>
+                 <property name="text" >
+                  <string>Misc Other Services</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0" >
+                <widget class="QCheckBox" name="chkIM" >
+                 <property name="contextMenuPolicy" >
+                  <enum>Qt::NoContextMenu</enum>
+                 </property>
+                 <property name="toolTip" >
+                  <string>Ports 706, 1863, 5050, 5190, 5222, 8300 and 8888</string>
+                 </property>
+                 <property name="text" >
+                  <string>Instant Messaging (IM)</string>
                  </property>
                 </widget>
                </item>
@@ -1100,31 +1107,50 @@ fingerprint.</string>
                  </property>
                 </widget>
                </item>
-               <item row="1" column="1" >
-                <widget class="QCheckBox" name="chkMisc" >
+              </layout>
+             </item>
+             <item>
+              <layout class="QVBoxLayout" >
+               <property name="margin" >
+                <number>0</number>
+               </property>
+               <property name="spacing" >
+                <number>6</number>
+               </property>
+               <item>
+                <widget class="QPushButton" name="btnExitHelp" >
                  <property name="contextMenuPolicy" >
                   <enum>Qt::NoContextMenu</enum>
                  </property>
                  <property name="toolTip" >
-                  <string>Ports unspecified by other checkboxes</string>
+                  <string>Show help topic on exit policies</string>
                  </property>
                  <property name="text" >
-                  <string>Misc Other Services</string>
+                  <string/>
+                 </property>
+                 <property name="icon" >
+                  <iconset resource="..\res\vidalia_common.qrc" >:/images/22x22/help-browser.png</iconset>
+                 </property>
+                 <property name="iconSize" >
+                  <size>
+                   <width>22</width>
+                   <height>22</height>
+                  </size>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="1" >
-                <widget class="QCheckBox" name="chkIRC" >
-                 <property name="contextMenuPolicy" >
-                  <enum>Qt::NoContextMenu</enum>
+               <item>
+                <spacer>
+                 <property name="orientation" >
+                  <enum>Qt::Vertical</enum>
                  </property>
-                 <property name="toolTip" >
-                  <string>Ports 6660 - 6669 and 6697</string>
+                 <property name="sizeHint" >
+                  <size>
+                   <width>20</width>
+                   <height>42</height>
+                  </size>
                  </property>
-                 <property name="text" >
-                  <string>Internet Relay Chat (IRC)</string>
-                 </property>
-                </widget>
+                </spacer>
                </item>
               </layout>
              </item>
@@ -1144,83 +1170,51 @@ fingerprint.</string>
             </layout>
            </widget>
           </item>
-          <item>
-           <layout class="QHBoxLayout" >
-            <property name="margin" >
-             <number>0</number>
+          <item row="0" column="0" >
+           <widget class="QLabel" name="label_3" >
+            <property name="sizePolicy" >
+             <sizepolicy>
+              <hsizetype>0</hsizetype>
+              <vsizetype>0</vsizetype>
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
             </property>
-            <property name="spacing" >
-             <number>6</number>
+            <property name="minimumSize" >
+             <size>
+              <width>300</width>
+              <height>41</height>
+             </size>
             </property>
-            <item>
-             <widget class="QLabel" name="label" >
-              <property name="sizePolicy" >
-               <sizepolicy>
-                <hsizetype>0</hsizetype>
-                <vsizetype>0</vsizetype>
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="minimumSize" >
-               <size>
-                <width>431</width>
-                <height>71</height>
-               </size>
-              </property>
-              <property name="maximumSize" >
-               <size>
-                <width>431</width>
-                <height>71</height>
-               </size>
-              </property>
-              <property name="contextMenuPolicy" >
-               <enum>Qt::NoContextMenu</enum>
-              </property>
-              <property name="text" >
-               <string>Your Tor server won't let Tor users deliver mail directly, or connect to some services that are too high-bandwidth for the current Tor network to handle.</string>
-              </property>
-              <property name="wordWrap" >
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QPushButton" name="btnExitHelp" >
-              <property name="contextMenuPolicy" >
-               <enum>Qt::NoContextMenu</enum>
-              </property>
-              <property name="toolTip" >
-               <string>Show help topic on exit policies.</string>
-              </property>
-              <property name="text" >
-               <string/>
-              </property>
-              <property name="icon" >
-               <iconset resource="..\res\vidalia_common.qrc" >:/images/22x22/help-browser.png</iconset>
-              </property>
-              <property name="iconSize" >
-               <size>
-                <width>22</width>
-                <height>22</height>
-               </size>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer>
-              <property name="orientation" >
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" >
-               <size>
-                <width>40</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-           </layout>
+            <property name="maximumSize" >
+             <size>
+              <width>300</width>
+              <height>41</height>
+             </size>
+            </property>
+            <property name="contextMenuPolicy" >
+             <enum>Qt::NoContextMenu</enum>
+            </property>
+            <property name="text" >
+             <string>What Internet resources should Tor users be able to access from your Tor Relay?</string>
+            </property>
+            <property name="wordWrap" >
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0" >
+           <spacer>
+            <property name="orientation" >
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" >
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
           </item>
          </layout>
         </widget>
@@ -1236,8 +1230,8 @@ fingerprint.</string>
      </property>
      <property name="sizeHint" >
       <size>
-       <width>20</width>
-       <height>40</height>
+       <width>420</width>
+       <height>16</height>
       </size>
      </property>
     </spacer>
