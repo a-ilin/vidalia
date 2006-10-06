@@ -678,9 +678,9 @@ fingerprint.</string>
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="RateLimits" >
+        <widget class="QWidget" name="BandwidthLimits" >
          <attribute name="title" >
-          <string>Rate Limits</string>
+          <string>Bandwidth Limits</string>
          </attribute>
          <layout class="QVBoxLayout" >
           <property name="margin" >
