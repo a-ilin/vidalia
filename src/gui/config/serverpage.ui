@@ -746,11 +746,6 @@ fingerprint.</string>
               </property>
               <item>
                <property name="text" >
-                <string>Dial Up Modem</string>
-               </property>
-              </item>
-              <item>
-               <property name="text" >
                 <string>Cable/DSL 256 Kbps</string>
                </property>
               </item>
