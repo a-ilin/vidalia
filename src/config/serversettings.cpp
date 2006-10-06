@@ -96,7 +96,7 @@ ServerSettings::ServerSettings(TorControl *torControl)
 void
 ServerSettings::setChanged(bool changed)
 {
-  QSettings::setValue(SETTING_SERVER_CHANGED, changed);
+  VidaliaSettings::setValue(SETTING_SERVER_CHANGED, changed);
 }
 
 /** Returns a boolean value indicating if the server's configuration has
@@ -388,7 +388,7 @@ ServerSettings::setDirectoryMirror(bool mirror)
 bool
 ServerSettings::isMiddleman()
 {
-  return QSettings::value(SETTING_SERVER_MIDDLEMAN).toBool();
+  return VidaliaSettings::value(SETTING_SERVER_MIDDLEMAN).toBool();
 }
 
 /** Sets whether this server will act as a middle-man server. */
