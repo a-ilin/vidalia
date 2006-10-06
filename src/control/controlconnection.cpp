@@ -256,6 +256,8 @@ ControlConnection::run()
   _sock = new ControlSocket();
   QObject::connect(_sock, SIGNAL(readyRead()), this, SLOT(onReadyRead()),
                    Qt::DirectConnection);
+  QObject::connect(_sock, SIGNAL(disconnected()), this, SLOT(quit()),
+                   Qt::DirectConnection);
   _sock->installEventFilter(this);
   _connMutex.unlock();
   
