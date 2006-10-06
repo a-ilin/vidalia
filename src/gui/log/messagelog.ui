@@ -279,13 +279,7 @@
   </property>
   <property name="font" >
    <font>
-    <family>Arial</family>
     <pointsize>10</pointsize>
-    <weight>50</weight>
-    <italic>false</italic>
-    <bold>false</bold>
-    <underline>false</underline>
-    <strikeout>false</strikeout>
    </font>
   </property>
   <property name="contextMenuPolicy" >
@@ -713,13 +707,7 @@
    </property>
    <property name="font" >
     <font>
-     <family>Arial</family>
      <pointsize>10</pointsize>
-     <weight>50</weight>
-     <italic>false</italic>
-     <bold>false</bold>
-     <underline>false</underline>
-     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="shortcut" >
@@ -735,13 +723,7 @@
    </property>
    <property name="font" >
     <font>
-     <family>Arial</family>
      <pointsize>10</pointsize>
-     <weight>50</weight>
-     <italic>false</italic>
-     <bold>false</bold>
-     <underline>false</underline>
-     <strikeout>false</strikeout>
     </font>
    </property>
   </action>
@@ -760,13 +742,7 @@
    </property>
    <property name="font" >
     <font>
-     <family>Arial</family>
      <pointsize>10</pointsize>
-     <weight>50</weight>
-     <italic>false</italic>
-     <bold>false</bold>
-     <underline>false</underline>
-     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="shortcut" >
@@ -791,13 +767,7 @@
    </property>
    <property name="font" >
     <font>
-     <family>Arial</family>
      <pointsize>10</pointsize>
-     <weight>50</weight>
-     <italic>false</italic>
-     <bold>false</bold>
-     <underline>false</underline>
-     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="shortcut" >
@@ -819,13 +789,7 @@
    </property>
    <property name="font" >
     <font>
-     <family>Arial</family>
      <pointsize>10</pointsize>
-     <weight>50</weight>
-     <italic>false</italic>
-     <bold>false</bold>
-     <underline>false</underline>
-     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="shortcut" >
@@ -844,13 +808,7 @@
    </property>
    <property name="font" >
     <font>
-     <family>Arial</family>
      <pointsize>10</pointsize>
-     <weight>50</weight>
-     <italic>false</italic>
-     <bold>false</bold>
-     <underline>false</underline>
-     <strikeout>false</strikeout>
     </font>
    </property>
   </action>
@@ -866,13 +824,7 @@
    </property>
    <property name="font" >
     <font>
-     <family>Arial</family>
      <pointsize>10</pointsize>
-     <weight>50</weight>
-     <italic>false</italic>
-     <bold>false</bold>
-     <underline>false</underline>
-     <strikeout>false</strikeout>
     </font>
    </property>
   </action>
@@ -891,13 +843,7 @@
    </property>
    <property name="font" >
     <font>
-     <family>Arial</family>
      <pointsize>10</pointsize>
-     <weight>50</weight>
-     <italic>false</italic>
-     <bold>false</bold>
-     <underline>false</underline>
-     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="shortcut" >
@@ -916,13 +862,7 @@
    </property>
    <property name="font" >
     <font>
-     <family>Arial</family>
      <pointsize>10</pointsize>
-     <weight>50</weight>
-     <italic>false</italic>
-     <bold>false</bold>
-     <underline>false</underline>
-     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="shortcut" >
@@ -941,13 +881,7 @@
    </property>
    <property name="font" >
     <font>
-     <family>Arial</family>
      <pointsize>10</pointsize>
-     <weight>50</weight>
-     <italic>false</italic>
-     <bold>false</bold>
-     <underline>false</underline>
-     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="shortcut" >
@@ -969,13 +903,7 @@
    </property>
    <property name="font" >
     <font>
-     <family>Arial</family>
      <pointsize>10</pointsize>
-     <weight>50</weight>
-     <italic>false</italic>
-     <bold>false</bold>
-     <underline>false</underline>
-     <strikeout>false</strikeout>
     </font>
    </property>
    <property name="shortcut" >
