@@ -37,12 +37,8 @@
 #include "domainvalidator.h"
 #include "nicknamevalidator.h"
 
-/* Default Exit Policy */
-#define DEFAULT_POLICY    Policy(AcceptAll)
-/* Columns of the Exit Policy list */
-#define COL_ACTION    0
-#define COL_ADDRESS   1
-#define COL_PORT      2
+/** The index in the combo box where custom rate limit resides */
+#define CUSTOM_RATE 6
 
 /** Delay between updating our server IP address (in ms). */
 #define AUTO_UPDATE_ADDR_INTERVAL  1000*60*60
@@ -50,8 +46,10 @@
 /** Help topics */
 #define EXIT_POLICY_HELP      "server.exitpolicy"
 #define BANDWIDTH_HELP        "server.bandwidth"
+
 /** Minimum allowed bandwidth rate (20KB) */
 #define MIN_RATE      20
+
 /** Maximum bandwidth rate. This is limited to 2147483646 bytes, 
  * or 2097151 kilobytes. (2147483646/1024) */ 
 #define MAX_RATE      2097151
@@ -77,28 +75,21 @@ ServerPage::ServerPage(QWidget *parent)
           this, SLOT(updateServerIP()));
  
   /* Bind events to actions */
-  connect(ui.btnAddPolicy, SIGNAL(clicked()), this, SLOT(addPolicy()));
-  connect(ui.btnRemovePolicy, SIGNAL(clicked()), this, SLOT(removePolicy()));
-  connect(ui.btnRaisePriority, SIGNAL(clicked()), this, SLOT(raisePriority()));
-  connect(ui.btnLowerPriority, SIGNAL(clicked()), this, SLOT(lowerPriority()));
   connect(ui.btnGetAddress, SIGNAL(clicked()), this, SLOT(getServerAddress()));
   connect(ui.btnRateHelp, SIGNAL(clicked()), this, SLOT(bandwidthHelp()));
   connect(ui.btnExitHelp, SIGNAL(clicked()), this, SLOT(exitPolicyHelp()));
-  
+  connect(ui.cmboRate, SIGNAL(currentIndexChanged(int)),
+					this, SLOT(rateChanged(int)));
   connect(ui.lineAvgRateLimit, SIGNAL(editingFinished()), 
-                         this, SLOT(rateChanged()));
+                         this, SLOT(customRateChanged()));
   connect(ui.lineMaxRateLimit, SIGNAL(editingFinished()), 
-                         this, SLOT(rateChanged()));
+                         this, SLOT(customRateChanged()));
 
   /* Set validators for address, mask and various port number fields */
   ui.lineServerNickname->setValidator(new NicknameValidator(this));
   ui.lineServerAddress->setValidator(new DomainValidator(this));
   ui.lineServerPort->setValidator(new QIntValidator(1, 65535, this));
   ui.lineDirPort->setValidator(new QIntValidator(1, 65535, this));
-  ui.lineExitAddress->setValidator(new IPValidator(this));
-  ui.lineExitMask->setValidator(new QIntValidator(0, 32, this));
-  ui.lineExitFromPort->setValidator(new PortValidator(this));
-  ui.lineExitToPort->setValidator(new PortValidator(this));
   ui.lineAvgRateLimit->setValidator(new QIntValidator(MIN_RATE, MAX_RATE, this));
   ui.lineMaxRateLimit->setValidator(new QIntValidator(MIN_RATE, MAX_RATE, this));
 }
@@ -125,7 +116,7 @@ bool
 ServerPage::save(QString &errmsg)
 {
   /* Force the bandwidth rate limits to validate */
-  rateChanged();
+	customRateChanged();
   
   if (ui.chkEnableServer->isChecked()) {
     /* A server must have an ORPort and a nickname */
@@ -144,7 +135,6 @@ ServerPage::save(QString &errmsg)
   }
   _settings->setServerEnabled(ui.chkEnableServer->isChecked());
   _settings->setDirectoryMirror(ui.chkMirrorDirectory->isChecked());
-  _settings->setMiddleman(ui.chkMiddleMan->isChecked());
   _settings->setAutoUpdateAddress(ui.chkAutoUpdate->isChecked()); 
   _settings->setNickname(ui.lineServerNickname->text());
   _settings->setORPort(ui.lineServerPort->text().toUInt());
@@ -156,13 +146,13 @@ ServerPage::save(QString &errmsg)
   setAutoUpdateTimer(ui.chkAutoUpdate->isChecked());
 
   /* Save exit polices */
-  ExitPolicy exitPolicy;
-  for (int i = 0; i < ui.lstExitPolicies->topLevelItemCount(); ++i) {
-    savePolicy(ui.lstExitPolicies->topLevelItem(i), exitPolicy);
-  }
-  _settings->setExitPolicy(exitPolicy);
+//   ExitPolicy exitPolicy;
+//   for (int i = 0; i < ui.lstExitPolicies->topLevelItemCount(); ++i) {
+//     savePolicy(ui.lstExitPolicies->topLevelItem(i), exitPolicy);
+//   }
+//   _settings->setExitPolicy(exitPolicy);
   
-  /* If we're connectd to Tor and we've changed the server settings, attempt
+  /* If we're connected to Tor and we've changed the server settings, attempt
    * to apply the new settings now. */
   if (_torControl->isConnected() && _settings->changedSinceLastApply()) {
     if (!_settings->apply(&errmsg)) {
@@ -179,7 +169,6 @@ ServerPage::load()
 {
   ui.chkEnableServer->setChecked(_settings->isServerEnabled());
   ui.chkMirrorDirectory->setChecked(_settings->isDirectoryMirror());
-  ui.chkMiddleMan->setChecked(_settings->isMiddleman());
   ui.chkAutoUpdate->setChecked(_settings->getAutoUpdateAddress());
   setAutoUpdateTimer(_settings->getAutoUpdateAddress());
 
@@ -193,133 +182,83 @@ ServerPage::load()
   ui.lineMaxRateLimit->setText(
     QString::number((uint)(_settings->getBandwidthBurstRate()/1024)));
   
-  /* Load the exit policies into the list */
-  ui.lstExitPolicies->clear();
+//   foreach (Policy policy, _settings->getExitPolicy().policyList()) {
+//     addPolicyItem(policy);
+//   }
   
-  foreach (Policy policy, _settings->getExitPolicy().policyList()) {
-    addPolicyItem(policy);
-  }
-  
-  ui.frmExitPolicy->setHidden(ui.chkMiddleMan->isChecked());
+	ui.frmCustomRate->setVisible(ui.cmboRate->currentIndex() == CUSTOM_RATE);
   ui.frmServer->setVisible(ui.chkEnableServer->isChecked());
 }
 
 /** Adds the exit policy contained in item to the exitPolicy */
-void
-ServerPage::savePolicy(QTreeWidgetItem *item, ExitPolicy &exitPolicy)
-{
-  /* Add policy to ServerSettings */
-  exitPolicy.addPolicy(Policy(item->text(COL_ACTION),
-                              item->text(COL_ADDRESS),
-                              item->text(COL_PORT)));
-}
+// void
+// ServerPage::savePolicy(QTreeWidgetItem *item, ExitPolicy &exitPolicy)
+// {
+//   /* Add policy to ServerSettings */
+//   exitPolicy.addPolicy(Policy(item->text(COL_ACTION),
+//                               item->text(COL_ADDRESS),
+//                               item->text(COL_PORT)));
+// }
 
-/** Adds a new exit policy to the user's configuration */
-void
-ServerPage::addPolicy()
-{
-  /* They must enter a valid address */
-  QString address = ui.lineExitAddress->text();
-  if (!address.isEmpty()) {
-    if (((IPValidator *)ui.lineExitAddress->validator())->
-        validate(address) != QValidator::Acceptable) {
-      return;
-    }
-  }
+// /** Adds a new exit policy to the user's configuration */
+// void
+// ServerPage::addPolicy()
+// {
+//   /* They must enter a valid address */
+//   QString address = ui.lineExitAddress->text();
+//   if (!address.isEmpty()) {
+//     if (((IPValidator *)ui.lineExitAddress->validator())->
+//         validate(address) != QValidator::Acceptable) {
+//       return;
+//     }
+//   }
   
-  /* If port range specified, must be valid */
-  QString fromPort = ui.lineExitFromPort->text();
-  QString toPort = ui.lineExitToPort->text();
+//   /* If port range specified, must be valid */
+//   QString fromPort = ui.lineExitFromPort->text();
+//   QString toPort = ui.lineExitToPort->text();
   
-  if (!fromPort.isEmpty() && !toPort.isEmpty() && toPort != fromPort) {
-    if (toPort == "*") toPort = "65535";
-    if (fromPort == "*") fromPort = "1";
-    if (fromPort.toUShort() > toPort.toUShort()) {
-      return;
-    }
-  }
+//   if (!fromPort.isEmpty() && !toPort.isEmpty() && toPort != fromPort) {
+//     if (toPort == "*") toPort = "65535";
+//     if (fromPort == "*") fromPort = "1";
+//     if (fromPort.toUShort() > toPort.toUShort()) {
+//       return;
+//     }
+//   }
   
-  /* Add the policy to the list */
-  addPolicyItem(Policy(Policy::toAction(ui.cmboExitAction->currentText()), 
-                       QHostAddress(ui.lineExitAddress->text()),
-                       ui.lineExitMask->text().toUShort(), 
-                       fromPort.toUShort(),
-                       toPort.toUShort()), false);
+//   /* Add the policy to the list */
+//   addPolicyItem(Policy(Policy::toAction(ui.cmboExitAction->currentText()), 
+//                        QHostAddress(ui.lineExitAddress->text()),
+//                        ui.lineExitMask->text().toUShort(), 
+//                        fromPort.toUShort(),
+//                        toPort.toUShort()), false);
 
-  /* Clear input text boxes */
-  ui.lineExitAddress->clear();
-  ui.lineExitMask->clear();
-  ui.lineExitFromPort->clear();
-  ui.lineExitToPort->clear();
-}
+//   /* Clear input text boxes */
+//   ui.lineExitAddress->clear();
+//   ui.lineExitMask->clear();
+//   ui.lineExitFromPort->clear();
+//   ui.lineExitToPort->clear();
+// }
 
-/** Adds a new QTreeWidget item to the exit policy list */
-void
-ServerPage::addPolicyItem(Policy policy, bool append)
-{
-  QTreeWidgetItem *newPolicy = new QTreeWidgetItem();
+// /** Adds a new QTreeWidget item to the exit policy list */
+// void
+// ServerPage::addPolicyItem(Policy policy, bool append)
+// {
+//   QTreeWidgetItem *newPolicy = new QTreeWidgetItem();
 
-  newPolicy->setText(COL_ACTION,  policy.action());
-  newPolicy->setText(COL_ADDRESS, policy.address());
-  newPolicy->setText(COL_PORT,    policy.ports());
+//   newPolicy->setText(COL_ACTION,  policy.action());
+//   newPolicy->setText(COL_ADDRESS, policy.address());
+//   newPolicy->setText(COL_PORT,    policy.ports());
  
-  for (int i = 0; i < newPolicy->columnCount(); i++) {
-    newPolicy->setTextAlignment(i, Qt::AlignHCenter);
-  }
+//   for (int i = 0; i < newPolicy->columnCount(); i++) {
+//     newPolicy->setTextAlignment(i, Qt::AlignHCenter);
+//   }
 
-  if (append) {
-    ui.lstExitPolicies->addTopLevelItem(newPolicy);
-  } else {
-    ui.lstExitPolicies->insertTopLevelItem(0, newPolicy);
-  }
-}
-
-/** Removes selected exit policy from the user's configuration */
-void
-ServerPage::removePolicy()
-{
-  int index = selectedIndex();
-  
-  if (index > -1) {
-    delete ui.lstExitPolicies->takeTopLevelItem(index);
-  }
-}
-
-/** Raises selected exit policy's priority level */
-void
-ServerPage::raisePriority()
-{
-  int index = selectedIndex();
-  
-  if (index > 0) {
-      ui.lstExitPolicies->insertTopLevelItem(index - 1, 
-                                  ui.lstExitPolicies->takeTopLevelItem(index));
-  }
-}
-
-/** Lowers selected exit policy's priority level */
-void
-ServerPage::lowerPriority()
-{
-  int index = selectedIndex();
-  int lastItem = ui.lstExitPolicies->topLevelItemCount() - 1;
-
-  if (index > -1 && index < lastItem) {
-    ui.lstExitPolicies->insertTopLevelItem(index + 1, 
-                                  ui.lstExitPolicies->takeTopLevelItem(index));
-  }
-}
-
-/** Returns the index of the selected list item, -1 if none selected */
-int
-ServerPage::selectedIndex()
-{
-  if (ui.lstExitPolicies->selectedItems().isEmpty()) return -1;
-  
-  /* This list only contains one element so take it */
-  QTreeWidgetItem *selectedItem = ui.lstExitPolicies->selectedItems()[0];
-  return ui.lstExitPolicies->indexOfTopLevelItem(selectedItem);
-}
+//   if (append) {
+//     ui.lstExitPolicies->addTopLevelItem(newPolicy);
+//   } else {
+//     ui.lstExitPolicies->insertTopLevelItem(0, newPolicy);
+//   }
+// }
 
 /** Shows exit policy related help information */
 void
@@ -411,11 +350,23 @@ ServerPage::updateServerIP()
   }
 }
 
+void
+ServerPage::rateChanged(int index)
+{
+	if (index == 6) {
+		ui.frmCustomRate->setVisible(true);
+	}
+
+	else {
+		ui.frmCustomRate->setVisible(false);
+	}
+}
+
 /** Called when the user edits the long-term average or maximum bandwidth limit. 
  * This ensures that the average bandwidth rate is greater than MIN_RATE
  * (20KB/s) and that the max rate is greater than the average rate. */
 void
-ServerPage::rateChanged()
+ServerPage::customRateChanged()
 {
   /* Make sure the average rate isn't too low or too high */
   quint32 avgRate = (quint32)ui.lineAvgRateLimit->text().toUInt();

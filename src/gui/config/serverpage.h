@@ -55,32 +55,22 @@ public:
 private slots:
   /** Called when the user clicks "Get Address" to guess our local IP */
   void getServerAddress();
-  /** Called when the user clicks the "Add Policy" button */
-  void addPolicy();
-  /** Called when the user clicks the "Remove Policy" button */
-  void removePolicy();
-  /** Called when the user clicks the "Raise Priority" button */
-  void raisePriority();
-  /** Called when the user clicks the "Lower Priority" button */
-  void lowerPriority();
   /** Called when the user clicks the bandwidth help button */
   void bandwidthHelp();
   /** Called when the user clicks the exit policy help button */
   void exitPolicyHelp();
   /** Called when the user's public IP address needs to be updated. */
   void updateServerIP();
+	/** Called when the user selects a new value from the rate cmbo box */
+	void rateChanged(int rate);
   /** Called when the user edits the max or average bandwidth limits. */
-  void rateChanged();
+  void customRateChanged();
 
 private:
   /** Attempts to find the server's public IP address */
   void getServerPublicIP(); 
   /** Returns the index of the selected item in lstExitPolicies */
   int selectedIndex();
-  /** Adds a new exit policy to the exit policy list */
-  void addPolicyItem(Policy policy, bool append = true);
-  /** Saves the policy specified in item to the exitPolicy */
-  void savePolicy(QTreeWidgetItem *item, ExitPolicy &exitPolicy);
   /** Enables or disables the automatic update timer. */
   void setAutoUpdateTimer(bool enabled);
 
