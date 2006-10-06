@@ -146,11 +146,7 @@ TorControl::stop(QString *errmsg)
   }
   /* If we didn't start our own Tor, send it a shutdown signal */
   if (!_torProcess) {
-    if (!this->signal(TorSignal::Shutdown)) {
-      return false;
-    }
-    emit stopped(0, QProcess::NormalExit);
-    return true;
+    return this->signal(TorSignal::Shutdown);
   } else {
     /* We started our own Tor, so stop the process */
     return _torProcess->stop(errmsg);
