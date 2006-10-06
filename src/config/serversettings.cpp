@@ -75,7 +75,7 @@ ServerSettings::ServerSettings(TorControl *torControl)
 
   setDefault(SETTING_SERVER_ENABLED,    false);
   setDefault(SETTING_SERVER_CHANGED,    false);
-  setDefault(SETTING_SERVER_DIRMIRROR,  false);
+  setDefault(SETTING_SERVER_DIRMIRROR,  true);
   setDefault(SETTING_SERVER_MIDDLEMAN,  true);
   setDefault(SETTING_SERVER_ORPORT,     9001);
   setDefault(SETTING_SERVER_DIRPORT,    9030);
