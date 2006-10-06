@@ -76,9 +76,9 @@ QList<StreamItem *>
 CircuitItem::streams()
 {
   QList<StreamItem *> streams;
-  QList<QTreeWidgetItem *> items = this->takeChildren();
-  foreach (QTreeWidgetItem *item, items) {
-    streams << (StreamItem *)item;
+  int n = childCount();
+  for (int i = 0; i < n; i++) {
+    streams << (StreamItem *)child(i);
   }
   return streams;
 }
