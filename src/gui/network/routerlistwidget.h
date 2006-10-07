@@ -28,11 +28,14 @@
 #ifndef _ROUTERLISTWIDGET_H
 #define _ROUTERLISTWIDGET_H
 
-#include <QObject>
 #include <QHash>
+#include <QMenu>
+#include <QObject>
+#include <QAction>
+#include <QKeyEvent>
 #include <QTreeWidget>
 #include <QHostAddress>
-#include <QKeyEvent>
+#include <QMouseEvent>
 
 #include "routerlistitem.h"
 
@@ -69,12 +72,18 @@ public:
   void deselectAll();
 
 signals:
-  /** Called when the user selects a router from the list. */
+  /** Emitted when the user selects a router from the list. */
   void routerSelected(RouterDescriptor rd);
-
+  /** Emitted when the user selects a router to zoom in on. */
+  void zoomToRouter(QString id);
+  
 public slots:
   /** Clears the list of router items. */
   void clearRouters();
+ 
+protected:
+  /** Called when the user presses and releases a moust button. */
+  virtual void mouseReleaseEvent(QMouseEvent *e);
   
 private slots:
   /** Called when the user clicks on an item in the list. */
@@ -90,6 +99,10 @@ private:
 
   /** Maps a server ID to that server's list item. */
   QHash<QString,RouterListItem*> _idmap;
+  
+  /** Router item context menu and items. */
+  QMenu* _routerContextMenu; /**< Context menu for router items. */
+  QAction* _zoomToRouterAct; /**< Zooms in on the selected router. */
 };
 
 #endif

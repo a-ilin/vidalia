@@ -30,6 +30,8 @@
 
 #include "routerlistwidget.h"
 
+#define IMG_ZOOM   ":/images/16x16/zoom.png"
+
 
 RouterListWidget::RouterListWidget(QWidget *parent)
 : QTreeWidget(parent)
@@ -46,6 +48,34 @@ RouterListWidget::RouterListWidget(QWidget *parent)
   /* Find out when the selected item has changed. */
   connect(this, SIGNAL(itemSelectionChanged()), 
           this, SLOT(onSelectionChanged()));
+
+  /* Set up the router item context menu */
+  _routerContextMenu = new QMenu(this);
+  _zoomToRouterAct = new QAction(QIcon(IMG_ZOOM), tr("Zoom to Server"), this);
+  _routerContextMenu->addAction(_zoomToRouterAct);
+}
+
+/** Called when the user presses and releases a mouse button. If the event
+ * indicates a right-click on a router item, a context menu will be displayed
+ * providing a list of actions, including zooming in on the server. */
+void
+RouterListWidget::mouseReleaseEvent(QMouseEvent *e)
+{
+  if (e->button() == Qt::RightButton) {
+    /* Find out which server was right-clicked */
+    RouterListItem *item = (RouterListItem *)itemAt(e->pos());
+    if (!item) {
+      return;
+    }
+
+    /* Display a context menu for this router item */
+    QPoint pos = e->globalPos();
+    QAction *action = _routerContextMenu->exec(pos);
+    if (action == _zoomToRouterAct) {
+      /* Zoom in on this router */
+      emit zoomToRouter(item->id());
+    }
+  }
 }
 
 /** Deselects all currently selected routers. */

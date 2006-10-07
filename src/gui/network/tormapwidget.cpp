@@ -284,6 +284,20 @@ TorMapWidget::zoomToFit()
   }
 }
 
+/** Zooms in on the router with the given <b>id</b>. */
+void
+TorMapWidget::zoomToRouter(QString id)
+{
+  QPair<QPointF,bool> *routerPair;
+  
+  if (_routers.contains(id)) {
+    deselectAll();
+    routerPair = _routers.value(id);
+    routerPair->second = true;  /* Set the router point to "selected" */
+    zoom(routerPair->first.toPoint(), 1.0); 
+  }
+}
+
 /** Computes a bounding box around all currently displayed circuit paths on
  * the map. */
 QRectF

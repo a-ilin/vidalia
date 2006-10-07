@@ -66,11 +66,13 @@ public slots:
   void clear();
   /** Zooms to fit all currently displayed circuits on the map. */
   void zoomToFit();
-  
+  /** Zoom to a particular router on the map. */
+  void zoomToRouter(QString id);
+
 protected:
   /** Paints the current circuits and streams on the image. */
   virtual void paintImage(QPainter *painter);
-  
+
 private:
   /** Converts world space coordinates into map space coordinates */
   QPointF toMapSpace(float latitude, float longitude);

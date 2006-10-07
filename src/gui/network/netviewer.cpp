@@ -98,7 +98,9 @@ NetViewer::NetViewer(QWidget *parent)
   connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
   connect(ui.actionRefresh, SIGNAL(triggered()), this, SLOT(refresh()));
   connect(ui.treeRouterList, SIGNAL(routerSelected(RouterDescriptor)),
-	  this, SLOT(routerSelected(RouterDescriptor)));
+	        this, SLOT(routerSelected(RouterDescriptor)));
+  connect(ui.treeRouterList, SIGNAL(zoomToRouter(QString)),
+          _map, SLOT(zoomToRouter(QString)));
   connect(ui.treeCircuitList, SIGNAL(circuitSelected(Circuit)),
           this, SLOT(circuitSelected(Circuit)));
   connect(ui.treeCircuitList, SIGNAL(circuitRemoved(quint64)),
