@@ -79,7 +79,7 @@ ServerPage::ServerPage(QWidget *parent)
   connect(ui.btnRateHelp, SIGNAL(clicked()), this, SLOT(bandwidthHelp()));
   connect(ui.btnExitHelp, SIGNAL(clicked()), this, SLOT(exitPolicyHelp()));
   connect(ui.cmboRate, SIGNAL(currentIndexChanged(int)),
-					this, SLOT(rateChanged(int)));
+          this, SLOT(rateChanged(int)));
   connect(ui.lineAvgRateLimit, SIGNAL(editingFinished()), 
                          this, SLOT(customRateChanged()));
   connect(ui.lineMaxRateLimit, SIGNAL(editingFinished()), 
@@ -116,7 +116,7 @@ bool
 ServerPage::save(QString &errmsg)
 {
   /* Force the bandwidth rate limits to validate */
-	customRateChanged();
+  customRateChanged();
   
   if (ui.chkEnableServer->isChecked()) {
     /* A server must have an ORPort and a nickname */
@@ -186,7 +186,7 @@ ServerPage::load()
 //     addPolicyItem(policy);
 //   }
   
-	ui.frmCustomRate->setVisible(ui.cmboRate->currentIndex() == CUSTOM_RATE);
+  ui.frmCustomRate->setVisible(ui.cmboRate->currentIndex() == CUSTOM_RATE);
   ui.frmServer->setVisible(ui.chkEnableServer->isChecked());
 }
 
@@ -353,13 +353,13 @@ ServerPage::updateServerIP()
 void
 ServerPage::rateChanged(int index)
 {
-	if (index == 6) {
-		ui.frmCustomRate->setVisible(true);
-	}
+  if (index == 6) {
+    ui.frmCustomRate->setVisible(true);
+  }
 
-	else {
-		ui.frmCustomRate->setVisible(false);
-	}
+  else {
+    ui.frmCustomRate->setVisible(false);
+  }
 }
 
 /** Called when the user edits the long-term average or maximum bandwidth limit. 
