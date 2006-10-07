@@ -82,7 +82,7 @@ ServerSettings::ServerSettings(TorControl *torControl)
   setDefault(SETTING_SERVER_CONTACT,    "<your@email.com>");
   setDefault(SETTING_SERVER_BWRATE,     2097152);
   setDefault(SETTING_SERVER_BWBURST,    5242880);
-  setDefault(SETTING_SERVER_NICKNAME,   QHostInfo::localHostName());
+  setDefault(SETTING_SERVER_NICKNAME,   "Unnamed");
   setDefault(SETTING_SERVER_ADDRESS,    net_local_address().toString());
   setDefault(SETTING_SERVER_AUTOUPDATE_ADDRESS, false);
   setDefault(SETTING_SERVER_EXITPOLICY,
