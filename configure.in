@@ -3,6 +3,8 @@ AC_MSG_NOTICE([Configuring AC_PACKAGE_STRING...])
 AC_PROG_CXX
 PROFILE="Vidalia.pro"
 
+AC_LANG(C++)
+
 # Find Qt or use one specified to ./configure
 AC_ARG_WITH([qt-dir],
   AC_HELP_STRING([--with-qt-dir=/path/to/Qt],
@@ -23,7 +25,6 @@ AC_ARG_WITH([qt-dir],
 AC_MSG_CHECKING([for Qt >= 4.1.0])
 for path in $QTPATHS; do
   # "qmake" is sometimes spelled "qmake-qt4"
-  # QMAKE=""
   if test -x $path/bin/qmake; then
     QMAKE=$path/bin/qmake
   else
@@ -36,7 +37,7 @@ for path in $QTPATHS; do
     QTVERSION=`$QMAKE -query QT_VERSION`
     case $QTVERSION in
       4.1.*)
-        QTDIR=$path
+        QTDIR=`$QMAKE -query QT_INSTALL_PREFIX`
         break
         ;;
       *);;
@@ -45,10 +46,16 @@ for path in $QTPATHS; do
 done
 if test x$QTDIR = x; then
   AC_MSG_RESULT([no])
-  AC_MSG_ERROR([Vidalia requires Qt 4.1.0 or greater.])
+  AC_MSG_ERROR([Vidalia requires Qt 4.1.0 or greater. You may need to install
+  Qt development packages, or you can specify an explicit path using --with-qt-dir])
 else
  AC_MSG_RESULT($QTVERSION)
 fi
+
+# Find out where Qt includes live
+AC_MSG_CHECKING([for Qt includes])
+QTDATA=`$QMAKE -query QT_INSTALL_DATA`
+AC_MSG_RESULT($QTDATA)
 
 # Check for lrelease
 AC_MSG_CHECKING([for lrelease])
@@ -68,6 +75,24 @@ fi
 # Find chmod
 AC_PATH_PROG(CHMOD, chmod, chmod)
 
+# Save some compiler and linker flags, since we might muck with them soon
+saved_CXXFLAGS="$CXXFLAGS"
+saved_LDFLAGS="$LDFLAGS"
+saved_LIBS="$LIBS"
+CXXFLAGS="-I$QTDATA/include -I$QTDATA/include/QtCore -I$QTDATA/include/QtGui"
+
+# On Mac, we need to see if Qt is built as a series of frameworks
+os=`uname -s`
+if test $os = "Darwin"; then
+  AC_MSG_CHECKING([if Qt is built as a framework])
+    LDFLAGS="-F$QTDIR/lib"
+    LIBS="-framework QtCore"
+    AC_TRY_LINK([#include <QtCore>],
+      [int argc; char **argv; QCoreApplication(argc, argv);],
+      [AC_MSG_RESULT(yes); framework="yes"],
+      [AC_MSG_RESULT(no)])
+fi
+
 # Determine whether we should link to the debug versions of Qt or not
 BUILDMODE="debug"
 AC_ARG_ENABLE(debug,
@@ -75,7 +100,26 @@ AC_ARG_ENABLE(debug,
 if test x$enable_debug = xno; then
   BUILDMODE="release"
 fi
+if test $BUILDMODE = "debug"; then
+  # Make sure we really do have qt debug libs
+  AC_MSG_CHECKING([for Qt debug libraries])
+  if test x$framework = x; then
+    LDFLAGS="-L$QTDIR/lib"
+    LIBS="-lQtCore_debug"
+  else
+    LDFLAGS="-L$QTDIR/lib/QtCore.framework"
+    LIBS="$QTDIR/lib/QtCore.framework/QtCore_debug"
+  fi
+  AC_TRY_LINK([#include <QtCore>],
+    [int argc; char **argv; QCoreApplication app(argc, argv);],
+    [AC_MSG_RESULT(yes)],
+    [AC_MSG_RESULT(no);BUILDMODE="release"])
+  
+fi
 AC_MSG_NOTICE([Building in $BUILDMODE mode])
+CXXFLAGS="$saved_CXXFLAGS"
+LDFLAGS="$saved_LDFLAGS"
+LIBS="$saved_LIBS"
 
 # Clean out an existing Makefile
 AC_CHECK_FILE(Makefile, [rm Makefile])
@@ -97,8 +141,6 @@ AC_OUTPUT([$DOCS/vidalia.1                    \
 # Make the mpkg and dmg scripts executable
 if test x$CHMOD != x; then
   $CHMOD u+x $OSXBUNDLE/buildmpkg.sh
-fi
-if test x$CHMOD != x; then
   $CHMOD u+x $OSXDMG/builddmg.sh
 fi
 
