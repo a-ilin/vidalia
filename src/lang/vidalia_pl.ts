@@ -56,10 +56,6 @@
         <translation>9051</translation>
     </message>
     <message>
-        <source>Alternate Tor Configuration File</source>
-        <translation type="obsolete">Alternatywna konfiguracja Tor&apos;a</translation>
-    </message>
-    <message>
         <source>Start Tor with the specified configuration file (torrc)</source>
         <translation>Uruchom Tor&apos;a używając pliku konfiguracyjnego (torrc)</translation>
     </message>
@@ -113,37 +109,39 @@
     </message>
     <message>
         <source>Service</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Usługa</translation>
     </message>
     <message>
         <source>Enable this if you wish to run Tor as a Windows service</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaznacz, jeśli chcesz uruchamiać Tor&apos;a jako usługę</translation>
     </message>
     <message>
         <source>Run Tor in the background as a Windows service</source>
-        <translation type="unfinished"></translation>
+        <translation>Uruchamiaj Tor&apos;a jako usługę Windows</translation>
     </message>
     <message>
         <source>Unable to remove Tor Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Usunięcie usługi Tor&apos;a nie powiodło się</translation>
     </message>
     <message>
         <source>Unable to install Tor Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Instalacja usługi Tor&apos;a nie powiodła się</translation>
     </message>
     <message>
         <source>Vidalia was unable to install the Tor service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia nie mogła zainstalować usługi Tor</translation>
     </message>
     <message>
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia nie mogła usunąć usługi Tor&apos;a.
+
+Musisz usunąć ją ręcznie.</translation>
     </message>
     <message>
         <source>Tor Configuration File</source>
-        <translation type="unfinished"></translation>
+        <translation>Plik konfiguracyjny Tor&apos;a</translation>
     </message>
 </context>
 <context>
@@ -221,7 +219,7 @@ You may need to remove it manually.</source>
     </message>
     <message>
         <source>Always On Top</source>
-        <translation>Zawsze na wierzchu</translation>
+        <translation>Na wierzchu</translation>
     </message>
 </context>
 <context>
@@ -328,7 +326,7 @@ You may need to remove it manually.</source>
     <message>
         <source>Vidalia only supports Version 1 of Tor&apos;s Control Protocol (Version %1 detected).
 Upgrade to a newer version of Tor.</source>
-        <translation>Vidalia obsługuje tylko Wersje 1 Protokołu Kontroli Tor&apos;a (wykryto wersję %1).
+        <translation>Vidalia obsługuje tylko Wersję 1 Protokołu Kontroli Tor&apos;a (wykryto wersję %1).
 Proszę uaktualnić Tor&apos;a do nowszej wersji.</translation>
     </message>
     <message>
@@ -337,7 +335,7 @@ Proszę uaktualnić Tor&apos;a do nowszej wersji.</translation>
     </message>
     <message>
         <source>Error sending control command. [%1]</source>
-        <translation>Błąd przy przy wysyłaniu rozkazy kontrolnego, [%1]</translation>
+        <translation>Błąd przy przy wysyłaniu rozkazu kontrolnego. [%1]</translation>
     </message>
     <message>
         <source>Socket disconnected while attempting to read a line of data.</source>
@@ -813,7 +811,7 @@ Proszę sprawdzić Dziennik Logów, aby zidentyfikować przyczynę.</translation
     </message>
     <message>
         <source>Log History Size</source>
-        <translation>Rozmiar historii logów</translation>
+        <translation>Rozmiar historii</translation>
     </message>
     <message>
         <source>Number of messages to keep in log</source>
@@ -1040,10 +1038,6 @@ dla programistów ekipy Tor&apos;a</translation>
         <translation>Pokazuje przeglądarkę Pomocy</translation>
     </message>
     <message>
-        <source>Ctrl+H</source>
-        <translation type="obsolete">Ctrl+H</translation>
-    </message>
-    <message>
         <source>Vidalia was unable to register for Tor&apos;s log events.</source>
         <translation>Vidalia nie mogła zarejestrować się jako odbiorca logów Tor&apos;a</translation>
     </message>
@@ -1065,7 +1059,7 @@ dla programistów ekipy Tor&apos;a</translation>
     </message>
     <message>
         <source>F1</source>
-        <translation type="unfinished"></translation>
+        <translation>F1</translation>
     </message>
 </context>
 <context>
@@ -1128,27 +1122,27 @@ dla programistów ekipy Tor&apos;a</translation>
     </message>
     <message>
         <source>Ctrl+R</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
         <source>F1</source>
-        <translation type="unfinished"></translation>
+        <translation>F1</translation>
     </message>
     <message>
         <source>Esc</source>
-        <translation type="unfinished">Esc</translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <source>-</source>
-        <translation type="unfinished">-</translation>
+        <translation>-</translation>
     </message>
     <message>
         <source>Ctrl+Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Z</translation>
     </message>
 </context>
 <context>
@@ -1188,10 +1182,6 @@ dla programistów ekipy Tor&apos;a</translation>
         <translation>Platforma:</translation>
     </message>
     <message>
-        <source>Contact:</source>
-        <translation type="obsolete">Kontakt:</translation>
-    </message>
-    <message>
         <source>Bandwidth:</source>
         <translation>Przepustowość:</translation>
     </message>
@@ -1212,15 +1202,15 @@ dla programistów ekipy Tor&apos;a</translation>
     <name>RouterListItem</name>
     <message>
         <source>%1 KB/s</source>
-        <translation type="unfinished">%1 KB/s</translation>
+        <translation>%1 KB/s</translation>
     </message>
     <message>
         <source>Offline</source>
-        <translation type="unfinished">Wyłączony</translation>
+        <translation>Wyłączony</translation>
     </message>
     <message>
         <source>Hibernating</source>
-        <translation type="unfinished">Uśpiony</translation>
+        <translation>Uśpiony</translation>
     </message>
 </context>
 <context>
@@ -1230,16 +1220,12 @@ dla programistów ekipy Tor&apos;a</translation>
         <translation>Status</translation>
     </message>
     <message>
-        <source>Router</source>
-        <translation type="obsolete">Ruter</translation>
-    </message>
-    <message>
         <source>Server</source>
-        <translation type="unfinished">Serwer</translation>
+        <translation>Serwer</translation>
     </message>
     <message>
         <source>%1 servers total</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 wszystkich serwerów</translation>
     </message>
 </context>
 <context>
@@ -1521,15 +1507,15 @@ fingerprint.</source>
     <name>TorService</name>
     <message>
         <source>Services not supported on this platform.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ta platforma nie wspiera Usług.</translation>
     </message>
     <message>
         <source>Unable to install the Tor service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Instalacja usługi Tor&apos;a nie powiodła się.</translation>
     </message>
     <message>
         <source>Unable to start Tor service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uruchamianie usługi Tor&apos;a nie powiodło się.</translation>
     </message>
 </context>
 <context>
