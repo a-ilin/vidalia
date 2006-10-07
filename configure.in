@@ -75,22 +75,28 @@ fi
 # Find chmod
 AC_PATH_PROG(CHMOD, chmod, chmod)
 
-# Save some compiler and linker flags, since we might muck with them soon
+# Save some compiler flags and set the ones we'll need to try some compiling
 saved_CXXFLAGS="$CXXFLAGS"
-saved_LDFLAGS="$LDFLAGS"
-saved_LIBS="$LIBS"
 CXXFLAGS="-I$QTDATA/include -I$QTDATA/include/QtCore -I$QTDATA/include/QtGui"
 
 # On Mac, we need to see if Qt is built as a series of frameworks
 os=`uname -s`
 if test $os = "Darwin"; then
-  AC_MSG_CHECKING([if Qt is built as a framework])
+  AC_CACHE_CHECK([if Qt is built as a framework], ac_cv_qt_is_framework, [
+    saved_LDFLAGS="$LDFLAGS"
+    saved_LIBS="$LIBS"
     LDFLAGS="-F$QTDIR/lib"
     LIBS="-framework QtCore"
     AC_TRY_LINK([#include <QtCore>],
       [int argc; char **argv; QCoreApplication(argc, argv);],
-      [AC_MSG_RESULT(yes); framework="yes"],
-      [AC_MSG_RESULT(no)])
+      [ac_cv_qt_is_framework=yes],
+      [ac_cv_qt_is_framework=no])
+    LDFLAGS="$saved_LDFLAGS"
+    LIBS="$saved_LIBS"
+  ])
+  if test "$ac_cv_qt_is_framework" = yes; then
+    framework=yes
+  fi
 fi
 
 # Determine whether we should link to the debug versions of Qt or not
@@ -102,24 +108,29 @@ if test x$enable_debug = xno; then
 fi
 if test $BUILDMODE = "debug"; then
   # Make sure we really do have qt debug libs
-  AC_MSG_CHECKING([for Qt debug libraries])
-  if test x$framework = x; then
-    LDFLAGS="-L$QTDIR/lib"
-    LIBS="-lQtCore_debug"
-  else
-    LDFLAGS="-L$QTDIR/lib/QtCore.framework"
-    LIBS="$QTDIR/lib/QtCore.framework/QtCore_debug"
+  AC_CACHE_CHECK([for Qt debug libraries], ac_cv_qt_has_debug_libs, [
+    saved_LDFLAGS="$LDFLAGS"
+    saved_LIBS="$LIBS"
+    if test x$framework = x; then
+      LDFLAGS="-L$QTDIR/lib"
+      LIBS="-lQtCore_debug"
+    else
+      LDFLAGS="-L$QTDIR/lib/QtCore.framework"
+      LIBS="$QTDIR/lib/QtCore.framework/QtCore_debug"
+    fi
+    AC_TRY_LINK([#include <QtCore>],
+      [int argc; char **argv; QCoreApplication app(argc, argv);],
+      [ac_cv_qt_has_debug_libs=yes],
+      [ac_cv_qt_has_debug_libs=no])
+    LDFLAGS="$saved_LDFLAGS"
+    LIBS="$saved_LIBS"
+  ])
+  if test "$ac_cv_qt_has_debug_libs" = no; then
+    BUILDMODE="release"
   fi
-  AC_TRY_LINK([#include <QtCore>],
-    [int argc; char **argv; QCoreApplication app(argc, argv);],
-    [AC_MSG_RESULT(yes)],
-    [AC_MSG_RESULT(no);BUILDMODE="release"])
-  
 fi
 AC_MSG_NOTICE([Building in $BUILDMODE mode])
 CXXFLAGS="$saved_CXXFLAGS"
-LDFLAGS="$saved_LDFLAGS"
-LIBS="$saved_LIBS"
 
 # Clean out an existing Makefile
 AC_CHECK_FILE(Makefile, [rm Makefile])
