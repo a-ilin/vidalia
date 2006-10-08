@@ -41,7 +41,10 @@
 /** Number of milliseconds to wait after the arrival of the last descriptor whose
  * IP needs to be resolved to geographic information, in case more descriptors
  * arrive. Then we can simply lump the IPs into a single request. */
-#define RESOLVE_QUEUE_DELAY   3000
+#define MIN_RESOLVE_QUEUE_DELAY   3000
+/** Maximum number of milliseconds to wait after the arrival of the first
+ * IP address into the resolve queue, before we flush the entire queue. */
+#define MAX_RESOLVE_QUEUE_DELAY   10000
 
 
 /** Constructor. Loads settings from VidaliaSettings.
@@ -88,11 +91,13 @@ NetViewer::NetViewer(QWidget *parent)
   _refreshTimer.setInterval(60*60*1000);
   connect(&_refreshTimer, SIGNAL(timeout()), this, SLOT(refresh()));
   
-  /* Set up the timer used to group together GeoIP requests for new
-   * descriptors arriving within RESOLVE_QUEUE_DELAY milliseconds of each
-   * other. */
-  _resolveQueueTimer.setSingleShot(true);
-  connect(&_resolveQueueTimer, SIGNAL(timeout()), this, SLOT(resolve()));
+  /* Set up the timers used to group together GeoIP requests for new
+   * descriptors arriving within MIN_RESOLVE_QUEUE_DELAY milliseconds, but no
+   * more than MAX_RESOLVE_QUEUE_DELAY milliseconds of each other. */
+  _minResolveQueueTimer.setSingleShot(true);
+  connect(&_minResolveQueueTimer, SIGNAL(timeout()), this, SLOT(resolve()));
+  _maxResolveQueueTimer.setSingleShot(true);
+  connect(&_maxResolveQueueTimer, SIGNAL(timeout()), this, SLOT(resolve()));
 
   /* Connect the necessary slots and signals */
   connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
@@ -275,21 +280,32 @@ NetViewer::addRouter(RouterDescriptor rd)
   ui.treeRouterList->addRouter(rd);
 
   /* Add this IP to a list whose geographic location we'd like to find. */
-  QHostAddress ip(rd.ip());
-  if (!_resolveQueue.contains(ip)) {
-    _resolveQueue << ip;
-  }
-  if (!_resolveMap.values(rd.ip()).contains(rd.id())) {
-    _resolveMap.insertMulti(rd.ip(), rd.id());
-  }
+  addToResolveQueue(QHostAddress(rd.ip()), rd.id());
+}
 
-  /* If there are any IPs in the list, then start a timer. We delay resolution
-   * because it's likely that we'll receive new descriptors shortly, so we
-   * might as well lump them into a single request. */
-  if (!_resolveQueue.isEmpty()) {
-    /* Wait RESOLVE_QUEUE_DELAY after the <i>last</i> item inserted into the
+/** Adds an IP address to the resolve queue and updates the queue timers. */
+void
+NetViewer::addToResolveQueue(QHostAddress ip, QString id)
+{
+  QString ipstr = ip.toString();
+  if (!_resolveQueue.contains(ip)) {
+    /* Add the IP to the queue of IPs waiting for geographic information  */
+    _resolveQueue << ip;
+    
+    /* Wait MIN_RESOLVE_QUEUE_DELAY after the last item inserted into the
      * queue, before sending the resolve request. */
-    _resolveQueueTimer.start(RESOLVE_QUEUE_DELAY);
+    _minResolveQueueTimer.start(MIN_RESOLVE_QUEUE_DELAY);
+    
+    /* Do not wait longer than MAX_RESOLVE_QUEUE_DELAY from the time the first
+     * item is inserted into the queue, before flushing and resolving the
+     * queue. */
+    if (_resolveQueue.size() == 1) {
+      _maxResolveQueueTimer.start(MAX_RESOLVE_QUEUE_DELAY);
+    }
+  }
+  if (!_resolveMap.values(ipstr).contains(id)) {
+    /* Remember which server ids belog to which IP addresses */
+    _resolveMap.insertMulti(ipstr, id);
   }
 }
 
@@ -334,8 +350,11 @@ void
 NetViewer::resolve()
 {
   if (!_resolveQueue.isEmpty()) {
+    /* Flush the resolve queue and stop the timers */
     _geoip.resolve(_resolveQueue);
     _resolveQueue.clear();
+    _minResolveQueueTimer.stop();
+    _maxResolveQueueTimer.stop();
   }
 }
 

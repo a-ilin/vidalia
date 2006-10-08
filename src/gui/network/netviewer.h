@@ -84,6 +84,8 @@ private slots:
   void resolve();
   
 private:
+  /** Adds an IP address to the resolve queue and updates the queue timers. */
+  void addToResolveQueue(QHostAddress ip, QString id);
   /** Loads a list of router descriptors from the list of IDs. */
   void loadDescriptors(QStringList ids);
   /** Adds a router to our list of servers and retrieves geographic location
@@ -108,8 +110,13 @@ private:
   QList<QHostAddress> _resolveQueue;
   /** Maps pending GeoIP requests to server IDs. */
   QHash<QString, QString> _resolveMap;
-  /** Timer used to delay GeoIP requests until we've received "a chunk" of them. */
-  QTimer _resolveQueueTimer;
+  /** Timer used to delay GeoIP requests for MIN_RESOLVE_QUEUE_DELAY
+   * milliseconds after we've inserted the last item into the queue. */
+  QTimer _minResolveQueueTimer;
+  /** Timer used to limit the delay of GeoIP requests to
+   * MAX_RESOLVE_QUEUE_DELAY milliseconds after inserting the first item 
+   * into the queue. */
+  QTimer _maxResolveQueueTimer;
   
   /** Qt Designer generated object **/
   Ui::NetViewer ui;

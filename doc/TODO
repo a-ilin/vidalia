@@ -16,10 +16,6 @@ Things to complete for 0.1.0:
     to, such as "hey, you're a server now!"
   * Actually do something useful with the AUTHENTICATE command, rather than
     simply sending an empty one.
-  * Our queue of GeoIP requests should have two timers: one long one starts
-    when the first item is inserted into the queue and one shorter one that is
-    reset every time an item is added to the queue. We would flush the queue
-    whenever the first one expires. (Currently we just do the latter)
   * GeoIP requests should be encrypted so the exit node does not know what is
     being requested and cannot muck with the requests or responses.
   * We should do a "getconf socksport" before setting a connection up through
