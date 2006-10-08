@@ -137,6 +137,8 @@ signals:
   void startFailed(QString errmsg);
   /** Emitted when the Tor process has stopped */
   void stopped(int exitCode, QProcess::ExitStatus exitStatus);
+  /** Emitted when the Tor process has stopped. */
+  void stopped();
   /** Emitted when the controller has connected to Tor */
   void connected();
   /** Emitted when the controller failed to connect to Tor. */
