@@ -1,0 +1,116 @@
+$Id$
+
+0. Introduction.
+
+   Vidalia tracks geographic coordinates of the IP addresses for Tor
+   servers, so it can display them in its Network Map window. This
+   document describes the actual lookup and caching mechanism, and also
+   lays out some of the security questions and future directions.
+
+1. Fetching and caching.
+
+   When we learn one or more new descriptors, we check to see if we have
+   a cached mapping for each IP address to some geographic location. An
+   example mapping is:
+
+       206.124.149.146,Bellevue,WA,US,47.6051,-122.1134
+
+   If we don't have a cached answer, we send an HTTP request to our
+   perl script either on pasiphae or at cmu, asking about one or more
+   IP addresses.
+   [XXX URLs? URL to source code? Who operates them? What is their
+   logging policy? What is the format of the request and response?]
+   [Where does the data for the answers come from?]
+
+   The script returns a line like the one above. We cache it in an
+   unsorted text file called "~/.vidalia/geoip-cache" along with a
+   Unix timestamp:
+   [Is this filename correct on osx/windows too?]
+
+       206.124.149.146,Bellevue,WA,US,47.6051,-122.1134:1159123625
+
+   We load the cache file on startup, discard all entries that are
+   over a month old, and write a new version. After that the cache
+   file is append-only.
+
+   The requests are done over Tor, as ordinary socks requests to the
+   local Tor client. Vidalia assumes that Tor is listening on port 9050.
+
+   [Todo: getconf socksport socksbindaddress and become smarter.]
+
+   Once we queue a request for geographic information, we wait
+   RESOLVE_QUEUE_DELAY (three seconds) before actually launching the
+   connection. That is, we queue requests until 3 seconds go by with no
+   more queuing. This way we lump them together and send one request
+   instead of tons of little ones.
+
+   If we don't get an answer, we don't retry -- if we don't have
+   geographic information for a server, it simply doesn't get mapped.
+
+2. Security and anonymity questions.
+
+   First, can the operator of the above URLs track popularity and
+   spreading of servers? Yes. Does this buy him anything? I'm not sure.
+
+   Second, because no end-to-end encryption/authentication is used, the
+   exit node can discover what is being requested -- and can modify the
+   answers that are sent back. What are the partitioning opportunities
+   in this scenario -- both passive partitioning to discover patterns
+   of behavior based on which descriptors have just been fetched, and
+   active partitioning to mislead the user into believing a given server
+   is at a certain set of coordinates?
+
+   Third, Vidalia 0.0.8 will accept and cache responses to questions
+   that it didn't ask. This probably aids partitioning attacks.
+
+3. Future directions.
+
+3.1. Encryption to/from the coordinate servers.
+
+   It would be smart to encrypt the queries and responses, to at least
+   limit the exposure. This could be done simply by running a Tor server
+   nearby each geoip service, and asking for the address
+
+       geoip.vidalia-project.net.foo.exit:80
+
+   Of course, this approach introduces more points of failure. A more
+   complex scheme would be for Vidalia to check first whether the
+   preferred exit server is running, and modify the address only when
+   it is.
+
+3.2. Tor servers could include geoip data in network statuses.
+
+   Rather than having separate geoip services that Vidalia maintains,
+   we could instead integrate the geoip data into the Tor network
+   status documents. The Tor directory authorities would learn this
+   information and the users would learn it through their ordinary
+   directory downloads.
+
+   This would make life easier for Vidalia, but it would also increase
+   the bandwidth overhead of network-status downloads -- rather than
+   caching the geoip information, users would fetch it at every update.
+
+3.3. Map networks, not individual IP addresses.
+
+   We should stop mapping individual IP addresses. For servers that have
+   dynamic IP addresses, we end up with something like
+
+       68.179.33.128,Toronto,ON,CA,43.6667,-79.4168:1155698575
+       68.179.33.129,Toronto,ON,CA,43.6667,-79.4168:1155696448
+       68.179.33.131,Toronto,ON,CA,43.6667,-79.4168:1157209955
+
+   Instead we should just cache
+
+       68.179.33.0/24,Toronto,ON,CA,43.6667,-79.4168:1155698575
+
+   Maxmind supposedly has a free IP-to-ASN database, but I'm not sure
+   if it includes prefix information. If not, yeah, just matching on
+   /24 might be easiest and sufficient.
+
+3.4. What else is geoip information for?
+
+   What other uses do we have for this information? Is it only useful
+   for drawing maps of the Tor network?
+
+   Once we start letting users control their circuits based on geographic
+   data, the security questions in Section 2 become more challenging.
