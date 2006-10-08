@@ -141,20 +141,22 @@ MainWindow::close()
 {
   static bool delayedShutdownStarted = false;
   
-  /* If we're running a server currently, ask if we want to do a delayed
-   * shutdown. If we do, then close Vidalia only when Tor stops. Otherwise,
-   * kill Tor and bail now. */
-  ServerSettings settings(_torControl);
-  if (_torControl->isConnected() && settings.isServerEnabled() 
-                                 && !delayedShutdownStarted) {
-    if (delayServerShutdown()) {
-      /* Close when Tor stops */
-      connect(_torControl, SIGNAL(stopped()), this, SLOT(close()));
-      delayedShutdownStarted = _torControl->signal(TorSignal::Shutdown);
-      return;
+  if (_torControl->isVidaliaRunningTor()) {
+    /* If we're running a server currently, ask if we want to do a delayed
+     * shutdown. If we do, then close Vidalia only when Tor stops. Otherwise,
+     * kill Tor and bail now. */
+    ServerSettings settings(_torControl);
+    if (_torControl->isConnected() && settings.isServerEnabled() 
+                                   && !delayedShutdownStarted) {
+      if (delayServerShutdown()) {
+        /* Close when Tor stops */
+        connect(_torControl, SIGNAL(stopped()), this, SLOT(close()));
+        delayedShutdownStarted = _torControl->signal(TorSignal::Shutdown);
+        return;
+      }
+      /* Otherwise, just hill Tor now. Really. Die. */ 
+      _torControl->signal(TorSignal::Halt);
     }
-    /* Otherwise, just hill Tor now. Really. Die. */ 
-    _torControl->signal(TorSignal::Halt);
   }
   
   /* Disconnect all of the TorControl object's signals */
