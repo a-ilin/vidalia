@@ -144,22 +144,14 @@ AdvancedPage::browseTorConfig()
 bool
 AdvancedPage::useService()
 {
-  bool use = false;
+  TorService s(_settings->getExecutable(), _settings->getTorrc());
 
-  /* If we think we're supposed to be using a service we'd better make
-     sure that the service still actually exists since the last time we checked.
-  */
-  
-  if (_settings->getUseService()) {
-    TorService* s = new TorService(_settings->getExecutable(),
-                                   _settings->getTorrc());
-    use = s->isInstalled();
-    delete s;
-
-    /* No point in trying to use a broken or non-existent service */
-    if (!use) _settings->setUseService(false);
+  /* If the Tor service was previously installed, or we plan on running
+   * Tor as a service, return true. */
+  if (s.isInstalled() || _settings->getUseService()) {
+    return true;
   }
-  return use;
+  return false;
 }
 
 /** Installs or removes the Tor service as necessary. */
