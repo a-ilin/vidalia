@@ -139,18 +139,26 @@ MainWindow::~MainWindow()
 void
 MainWindow::close()
 {
+  static bool delayedShutdownStarted = false;
+  
+  /* If we're running a server currently, ask if we want to do a delayed
+   * shutdown. If we do, then close Vidalia only when Tor stops. Otherwise,
+   * kill Tor and bail now. */
+  ServerSettings settings(_torControl);
+  if (_torControl->isConnected() && settings.isServerEnabled() 
+                                 && !delayedShutdownStarted) {
+    if (delayServerShutdown()) {
+      /* Close when Tor stops */
+      connect(_torControl, SIGNAL(stopped()), this, SLOT(close()));
+      delayedShutdownStarted = _torControl->signal(TorSignal::Shutdown);
+      return;
+    }
+    /* Otherwise, just hill Tor now. Really. Die. */ 
+    _torControl->signal(TorSignal::Halt);
+  }
+  
   /* Disconnect all of the TorControl object's signals */
   disconnect(_torControl, 0, 0, 0);
-
-  /* Close the control socket */
-  if (_torControl->isConnected()) {
-    _torControl->disconnect();
-  }
-
-  /* Stop the Tor process */
-  if (_torControl->isVidaliaRunningTor()) {
-    _torControl->stop();
-  }
 
   /* And then quit for real */
   QCoreApplication::quit();
@@ -360,11 +368,8 @@ MainWindow::connectFailed(QString errmsg)
  * shutdown was initiated successfully or false if we want to terminate
  * forcefully. */
 bool
-MainWindow::initiateServerShutdown()
+MainWindow::delayServerShutdown()
 {
-  QString errmsg;
-  bool rc = false;
-  
   /* Ask the user if they want to shutdown nicely. */
   int response = VMessageBox::question(this, tr("Server is Enabled"),
                   tr("You are currently running a Tor server. "
@@ -374,53 +379,38 @@ MainWindow::initiateServerShutdown()
                        "give clients time to find a new server?"),
                   VMessageBox::Yes, VMessageBox::No);
 
-  if (response == VMessageBox::Yes) {
-    /* Send a SHUTDOWN signal to Tor */
-    if (_torControl->signal(TorSignal::Shutdown, &errmsg)) {
-      rc = true; /* Shutdown successfully initiated */
-    } else {
-      /* Let the user know that we couldn't shutdown gracefully and we'll
-       * kill Tor forcefully now if they want. */
-      response = VMessageBox::warning(this, tr("Error Shutting Down"),
-                   p(tr("Vidalia was unable to shutdown Tor gracefully. (") 
-                     + errmsg + ")") + 
-                   p(tr("Do you want to close Tor anyway?")),
-                   VMessageBox::Yes, VMessageBox::No);
-
-      if (response == VMessageBox::No) {
-        /* Don't try to terminate Tor anymore. Just leave it running */
-        _trayIcon->update(IMG_TOR_RUNNING, tr("Tor is running"));
-        rc = true;
-      }
-    }
-  }
-  return rc;
+  return (response == VMessageBox::Yes);
 }
 
 /** Disconnects the control socket and stops the Tor process. */
 void 
 MainWindow::stop()
 {
+  static bool delayedShutdownStarted = false;
   ServerSettings server(_torControl);
   QString errmsg;
-
+  bool shutdown;
+  
   /* Indicate that Tor is about to shut down */
   _trayIcon->update(IMG_TOR_STOPPING, tr("Tor is stopping"));
 
   /* If we're running a server, give users the option of terminating
    * gracefully so clients have time to find new servers. */
-  if (server.isServerEnabled()) {
-    if (initiateServerShutdown()) {
-      /* Server shutdown was started successfully. */
-      return;
+  if (server.isServerEnabled() && !delayedShutdownStarted
+                               && delayServerShutdown()) {
+    /* Delayed server shutdown was started successfully. */
+    shutdown = _torControl->signal(TorSignal::Shutdown);
+    delayedShutdownStarted = shutdown;
+  } else {
+    /* Terminate the Tor process immediately */
+    _isIntentionalExit = true;
+    if ((shutdown = _torControl->stop(&errmsg)) == true) {
+      _stopAct->setEnabled(false);
+      delayedShutdownStarted = false;
     }
   }
 
-  /* Terminate the Tor process immediately */
-  _isIntentionalExit = true;
-  if (_torControl->stop(&errmsg)) {
-    _stopAct->setEnabled(false);
-  } else {
+  if (!shutdown) {
     int response = VMessageBox::warning(this, tr("Error Stopping Tor"),
                      p(tr("Vidalia was unable to stop Tor.")) + p(errmsg),
                      VMessageBox::Ok|VMessageBox::Default|VMessageBox::Escape, 

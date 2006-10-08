@@ -94,9 +94,9 @@ private:
   void createTrayMenu();
   /** Creates a default menubar on Mac */
   void createMenuBar();
-  /** Starts a graceful server shutdown */
-  bool initiateServerShutdown();
-
+  /** Starts a graceful, delayed server shutdown */
+  bool delayServerShutdown();
+  
   /* Used to determine if the Tor process exiting was intentional or not */
   bool _isIntentionalExit;
   /** A MessageLog object which handles logging Tor messages */
