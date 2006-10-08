@@ -5,11 +5,6 @@ Things to complete for 0.1.0:
   * When creating the Tor service on Windows, we either should be creating a
     separate user to run the service as (instead of running it as Local
     System), or we should write a patch for Tor to do it (Ticket #16).
-  * Make our ./configure smart enough to determine if the user has a release
-    or debug version of Qt and link to the correct one, instead of always just
-    assuming the debug library is present. It should also determine whether
-    the version of Qt in the user's $PATH is recent enough or not.
-    (Ticket #158)
   * Our GeoIP cache should recognize IP addresses on the same subnet.
     (Ticket #154)
   * There is a Flyspray ticket on Tor's bugtracker about not being able to
@@ -21,6 +16,14 @@ Things to complete for 0.1.0:
     to, such as "hey, you're a server now!"
   * Actually do something useful with the AUTHENTICATE command, rather than
     simply sending an empty one.
+  * Our queue of GeoIP requests should have two timers: one long one starts
+    when the first item is inserted into the queue and one shorter one that is
+    reset every time an item is added to the queue. We would flush the queue
+    whenever the first one expires. (Currently we just do the latter)
+  * GeoIP requests should be encrypted so the exit node does not know what is
+    being requested and cannot muck with the requests or responses.
+  * We should do a "getconf socksport" before setting a connection up through
+    Tor, instead of just picking 9050 and hoping the user didn't change it.
 
 
 Features planned for 0.1.x:
