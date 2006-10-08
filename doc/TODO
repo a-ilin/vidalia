@@ -36,6 +36,9 @@ Features planned for 0.1.x:
     something like a table, populated via "getinfo config/names". (Ticket #76)
   * A web-based interface for viewing the status of Tor from the user's
     browser and possibly configuring Tor, too. (Ticket #42)
+  * A window to which Vidalia can log its own debugging information, which 
+    would be displayed when Vidalia is started with --debug. This wouldn't
+    have to be as fancy as the message log window for Tor messages.
 
 
 Miscellaneous Tasks:
