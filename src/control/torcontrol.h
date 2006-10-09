@@ -31,6 +31,7 @@
 #include <QObject>
 #include <QHash>
 #include <QList>
+#include <QStringList>
 
 #include "controlconnection.h"
 #include "torprocess.h"
@@ -38,6 +39,7 @@
 #include "torevents.h"
 #include "torsignal.h"
 #include "routerdescriptor.h"
+
 
 class TorControl : public QObject
 {
@@ -74,7 +76,20 @@ public:
 
   /** Sends a signal to Tor */
   bool signal(TorSignal::Signal sig, QString *errmsg = 0);
-  
+ 
+  /** Returns an address on which Tor is listening for application
+   * requests. If none are available, a null QHostAddress is returned. */
+  QHostAddress getSocksAddress(QString *errmsg = 0);
+  /** Returns a (possibly empty) list of all currently configured 
+   * SocksListenAddress entries. */
+  QStringList getSocksAddressList(QString *errmsg = 0);
+  /** Returns a valid SOCKS port for Tor, or 0 if Tor is not accepting
+   * application requests. */
+  quint16 getSocksPort(QString *errmsg = 0);
+  /** Returns a list of all currently configured SOCKS ports. If Tor is not
+   * accepting any application connections, an empty list will be returned. */
+  QList<quint16> getSocksPortList(QString *errmsg = 0);
+
   /** Returns Tor's version as a string. */
   QString getTorVersionString();
   /** Returns Tor's version as a numeric value. */
@@ -95,10 +110,15 @@ public:
   bool setConf(QHash<QString,QString> map, QString *errmsg = 0);
   /** Sets a single configuration key to the given value. */
   bool setConf(QString key, QString value, QString *errmsg = 0);
-  /** Gets a set of configuration keyvalues and stores them in <b>map</b>. */
+  /** Gets values for a set of configuration keys, each of which has a single
+   * value. */
   bool getConf(QHash<QString,QString> &map, QString *errmsg = 0);
-  /** Gets a single configuration keyvalue. */
+  /** Gets a set of configuration keyvalues and stores them in <b>map</b>. */
+  bool getConf(QHash<QString,QStringList> &map, QString *errmsg = 0);
+  /** Gets a single configuration value for <b>key</b>. */
   bool getConf(QString key, QString &value, QString *errmsg = 0);
+  /** Gets a list of configuration values for <b>key</b>. */
+  bool getConf(QString key, QStringList &value, QString *errmsg = 0);
   /** Asks Tor to save the current configuration to its torrc */
   bool saveConf(QString *errmsg = 0);
   /** Tells Tor to reset the given configuration keys back to defaults. */

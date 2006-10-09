@@ -398,6 +398,95 @@ TorControl::signal(TorSignal::Signal sig, QString *errmsg)
   return send(cmd, errmsg); 
 }
 
+/** Returns an address on which Tor is listening for application
+ * requests. If none are available, a null QHostAddress is returned. */
+QHostAddress
+TorControl::getSocksAddress(QString *errmsg)
+{
+  QHostAddress socksAddr;
+
+  /* If SocksPort is 0, then Tor is not accepting any application requests. */
+  if (getSocksPort() == 0) {
+    return QHostAddress::Null;
+  }
+  
+  /* Get a list of SocksListenAddress lines and return the first valid IP
+   * address parsed from the list. */
+  QStringList addrList = getSocksAddressList(errmsg);
+  foreach (QString addr, addrList) {
+    addr = addr.mid(0, addr.indexOf(":"));
+    if (socksAddr.setAddress(addr)) {
+      return socksAddr;
+    }
+  }
+  /* Otherwise Tor is listening on its default 127.0.0.1 */
+  return QHostAddress::LocalHost;
+}
+
+/** Returns a (possibly empty) list of all currently configured 
+ * SocksListenAddress entries. */
+QStringList
+TorControl::getSocksAddressList(QString *errmsg)
+{
+  QStringList addrList;
+  if (getConf("SocksListenAddress", addrList, errmsg)) {
+    return addrList;
+  }
+  return QStringList();
+}
+
+/** Returns a valid SOCKS port for Tor, or 0 if Tor is not accepting
+ * application requests. */
+quint16
+TorControl::getSocksPort(QString *errmsg)
+{
+  QList<quint16> portList = getSocksPortList(errmsg);
+  if (portList.size() > 0) {
+    return portList.at(0);
+  }
+  return 0;
+}
+
+/** Returns a list of all currently configured SOCKS ports. If Tor is not
+ * accepting any application connections, an empty list will be returned. */
+QList<quint16>
+TorControl::getSocksPortList(QString *errmsg)
+{
+  bool valid;
+  quint16 port, socksPort;
+  QString portString;
+  QList<quint16> portList;
+ 
+  /* Get the value of the SocksPort configuration variable */ 
+  if (getConf("SocksPort", portString, errmsg)) {
+    socksPort = (quint16)portString.toUInt(&valid);
+    if (valid) {
+      if (socksPort == 0) {
+        /* A SocksPort of 0 means Tor is not accepting any application
+         * connections. */
+        return QList<quint16>();
+      }
+    }
+  }
+  /* Get a list of SOCKS ports from SocksListenAddress entries */
+  QStringList addrList = getSocksAddressList(errmsg);
+  foreach (QString addr, addrList) {
+    if (addr.contains(":")) {
+      portString = addr.mid(addr.indexOf(":")+1);
+      port = (quint16)portString.toUInt(&valid);
+      if (valid) {
+        portList << port;
+      }
+    }
+  }
+  /* If there were no SocksListenAddress entries, or one or more of them did
+   * not specify a port, then add the value of SocksPort, too */
+  if (!portList.size() || (portList.size() != addrList.size())) {
+    portList << socksPort;
+  }
+  return portList;
+}
+
 /** Reeturns Tor's version as a string. */
 QString
 TorControl::getTorVersionString()
@@ -469,8 +558,8 @@ TorControl::setEvents(QString *errmsg)
   return send(cmd, errmsg);
 }
 
-/** Sets each configuration key in \emph map to the value associated with its
- * key. */
+/** Sets each configuration key in <b>map</b> to the value associated 
+ * with its key. */
 bool
 TorControl::setConf(QHash<QString,QString> map, QString *errmsg)
 {
@@ -498,12 +587,33 @@ TorControl::setConf(QString key, QString value, QString *errmsg)
   return setConf(map, errmsg);
 }
 
-/** Gets a set of configuration keyvalues and stores them in \emph map. */
+/** Gets values for a set of configuration keys, each of which has a single
+ * value. */
 bool
 TorControl::getConf(QHash<QString,QString> &map, QString *errmsg)
 {
+  QHash<QString,QStringList> multiMap;
+  foreach (QString key, map.keys()) {
+    multiMap.insert(key, QStringList());
+  }
+  if (getConf(multiMap, errmsg)) {
+    foreach (QString key, multiMap.keys()) {
+      if (map.contains(key)) {
+        map.insert(key, multiMap.value(key).join("\n"));
+      }
+    }
+  }
+  return false;
+}
+
+/** Gets a set of configuration keyvalues and stores them in <b>map</b>. */
+bool
+TorControl::getConf(QHash<QString,QStringList> &map, QString *errmsg)
+{
   ControlCommand cmd("GETCONF");
   ControlReply reply;
+  QStringList confValue;
+  QString confKey;
 
   /* Add the keys as arguments to the GETINFO message */
   foreach (QString key, map.keys()) {
@@ -517,7 +627,15 @@ TorControl::getConf(QHash<QString,QString> &map, QString *errmsg)
       /* Split the "key=val" line and map them */
       QStringList keyval = line.getMessage().split("=");
       if (keyval.size() == 2) {
-        map.insert(keyval.at(0), keyval.at(1));
+        confKey = keyval.at(0);
+       
+        if (map.contains(confKey)) {
+          /* This configuration key has multiple values, so add this one to
+           * the list. */
+          confValue = map.value(confKey);
+        }
+        confValue << keyval.at(1);
+        map.insert(keyval.at(0), confValue);
       }
     }
     return true;
@@ -525,12 +643,24 @@ TorControl::getConf(QHash<QString,QString> &map, QString *errmsg)
   return false;
 }
 
-/** Gets a single configuration keyvalue. */
+/** Gets a single configuration value for <b>key</b>. */
 bool
 TorControl::getConf(QString key, QString &value, QString *errmsg)
 {
-  QHash<QString,QString> map;
-  map.insert(key, "");
+  QStringList confValues;
+  if (getConf(key, confValues, errmsg)) {
+    value = confValues.join("\n");
+    return true;
+  }
+  return false;
+}
+
+/** Gets a list of configuration values for <b>key</b>. */
+bool
+TorControl::getConf(QString key, QStringList &value, QString *errmsg)
+{
+  QHash<QString,QStringList> map;
+  map.insert(key, QStringList());
 
   if (getConf(map, errmsg)) {
     value = map.value(key);
