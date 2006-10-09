@@ -27,7 +27,6 @@
 
 #include "torservice.h"
 
-
 /** Returns true if services are supported. */
 bool
 TorService::isSupported()
@@ -46,8 +45,7 @@ TorService::TorService(const QString &torPath, const QString &torrc,
 {
   Q_UNUSED(torrc);
 
-  // FIXME this is hardcoded for now
-  _torrc = "\"C:\\Program Files\\Tor\\torrc\"";
+  _torrc = "\"" + torrc + "\"";
   _torPath = "\"" + torPath + "\"";
   _manager = NULL;
   _service = NULL;
