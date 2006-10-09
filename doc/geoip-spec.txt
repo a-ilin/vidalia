@@ -15,17 +15,90 @@ $Id$
 
        206.124.149.146,Bellevue,WA,US,47.6051,-122.1134
 
-   If we don't have a cached answer, we send an HTTP request to our
-   perl script either on pasiphae or at cmu, asking about one or more
-   IP addresses.
-   [XXX URLs? URL to source code? Who operates them? What is their
-   logging policy? What is the format of the request and response?]
-   [Where does the data for the answers come from?]
+   If we don't have a cached answer, we send an HTTP request to a
+   perl script located on one of our geographic information servers, 
+   asking about one or more IP addresses. The requests are always
+   sent to
 
-   The script returns a line like the one above. We cache it in an
-   unsorted text file called "~/.vidalia/geoip-cache" along with a
-   Unix timestamp:
-   [Is this filename correct on osx/windows too?]
+       http://geoip.vidalia-project.net/cgi-bin/geoip
+
+   which is currently hardcoded into Vidalia's source code.
+
+   Requests are distributed via DNS round-robin. Currently, we have two 
+   such servers:
+
+         Host             IP Address             Operator
+    --------------------------------------------------------------------
+    pasiphae.cs.rpi.edu  128.213.48.11  Matt Edman
+                                        Rensselaer Polytechnic Institute
+    cups.cs.cmu.edu      128.2.220.167  Sasha Romanosky, Serge Egelman
+                                        Carnegie Mellon University
+
+   [XXX What is their logging policy?] 
+   
+   Each server maintains a GeoLite City database from MaxMind which
+   allows lookup of geographic location information for a given IP
+   address. Database lookups are done using a Perl database API, also
+   provided by MaxMind. More information on the GeoLite City database
+   can be found at http://www.maxmind.com/app/geolitecity.
+  
+   Requests can be formatted as either HTTP GET or POST requests. A GET
+   request for geographic information is applicable for small requests
+   consisting of only a few IP addresses. An example of a GET request 
+   for geographic information for a single IP address (128.213.11.48)
+   is:
+
+       http://geoip.vidalia-project.net/cgi-bin/geoip?ip=128.213.11.48
+
+   which returns the following information:
+      
+      128.213.11.48,Troy,NY,US,42.7495,-73.5951
+   
+   Geographic information is formatted in the body of an HTTP response as
+    
+      IPAddress,City,State,Country,Latitutde,Longitude
+
+   Multiple IP addresses in a single GET request are separated by commas.
+   For example: 
+
+      geoip?ip=128.213.11.48,18.244.0.188,128.2.220.167
+
+   which would return the following information in the body of a standard
+   HTTP response:
+
+      128.213.11.48,Troy,NY,US,42.7495,-73.5951
+      18.244.0.188,Cambridge,MA,US,42.3646,-71.1028
+      128.2.220.167,Pittsburgh,PA,US,40.4439,-79.9562
+
+   Requests can also be formatted as HTTP POST requests, suitable for
+   requesting geographic information for a large number of IP addresses.
+   The request is formatted in a similar manner as for an HTTP GET request,
+   but with the list of IP addresses placed in the body of the request.
+   
+      POST /cgi-bin/geoip HTTP/1.0
+      Host: geoip.vidalia-project.net
+      Content-Length: 42
+
+      ip=128.213.11.48,18.244.0.188,128.2.220.167
+   
+   Vidalia always uses HTTP POST requests to request geographic location
+   information.
+
+   The order of results returned IS NOT guaranteed to be the same as
+   the order of IP addresses given in the original request. If the
+   geographic information database does not contain any information for
+   an IP address given in a request, the string "UNKNOWN" follows that 
+   IP address in the response, separated by a comma 
+   (e.g., "1.2.3.4,UNKNOWN").
+    
+   If no IP addresses are provided in a request, geographic information 
+   for the IP address of the requestor is returned. Vidalia currently 
+   does not use this feature.
+
+   We cache geographic information in an unsorted text file called
+   "~/.vidalia/geoip-cache" (on Windows, the cache file is stored in
+   %APPDATA%\Vidalia\geoip-cache) along with a Unix timestamp, such
+   as:
 
        206.124.149.146,Bellevue,WA,US,47.6051,-122.1134:1159123625
 
@@ -34,15 +107,15 @@ $Id$
    file is append-only.
 
    The requests are done over Tor, as ordinary socks requests to the
-   local Tor client. Vidalia assumes that Tor is listening on port 9050.
+   local Tor client. Vidalia will query the local Tor client for its 
+   socks listening address and port via Tor's controller interface.
 
-   [Todo: getconf socksport socksbindaddress and become smarter.]
-
-   Once we queue a request for geographic information, we wait
-   RESOLVE_QUEUE_DELAY (three seconds) before actually launching the
-   connection. That is, we queue requests until 3 seconds go by with no
-   more queuing. This way we lump them together and send one request
-   instead of tons of little ones.
+   Once Vidalia queues a request for geographic information, we wait
+   MIN_RESOLVE_QUEUE_DELAY (currently three seconds) after the last 
+   queued request, but no longer than MAX_RESOLVE_QUEUE_DELAY 
+   (currently 10 seconds) after the first queued request, before actually 
+   launching the connection. This way we lump them together and send 
+   one larger request instead of several little ones.
 
    If we don't get an answer, we don't retry -- if we don't have
    geographic information for a server, it simply doesn't get mapped.
@@ -103,9 +176,10 @@ $Id$
 
        68.179.33.0/24,Toronto,ON,CA,43.6667,-79.4168:1155698575
 
-   Maxmind supposedly has a free IP-to-ASN database, but I'm not sure
-   if it includes prefix information. If not, yeah, just matching on
-   /24 might be easiest and sufficient.
+   Ideally we would have a database, similar to our current GeoLite City
+   database, that can provide network prefix information given an IP
+   address. In the absence of such a database, simply matching on /24 
+   might be easiest and sufficient.
 
 3.4. What else is geoip information for?
 
@@ -114,3 +188,4 @@ $Id$
 
    Once we start letting users control their circuits based on geographic
    data, the security questions in Section 2 become more challenging.
+
