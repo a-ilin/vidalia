@@ -47,8 +47,12 @@ class GeoIpResolver : public QObject
 
 public:
   /** Default constructor. */
-  GeoIpResolver() {}
-
+  GeoIpResolver() 
+  { _socksAddr = QHostAddress::LocalHost; _socksPort = 9050; }
+  
+  /** Sets the address and port of Tor, through which GeoIP requests will be
+   * made. */
+  void setSocksHost(QHostAddress addr, quint16 port);
   /** Resolves a single IP to a geographic location. */
   int resolve(QHostAddress ip);
   /** Resolves a list of IPs to a geographic location. */
@@ -81,6 +85,10 @@ private:
   GeoIpCache  _cache;
   /**< List of sockets used for requests. */
   QHash<TorSocket *,GeoIpRequest*> _requestList;
+  /** Tor's SocksListenAddress. */
+  QHostAddress _socksAddr;
+  /** Tor's SocksPort. */
+  quint16 _socksPort;
 };
 
 #endif

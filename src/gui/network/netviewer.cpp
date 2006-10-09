@@ -137,6 +137,8 @@ NetViewer::gotDisconnected()
 void
 NetViewer::gotConnected()
 {
+  _geoip.setSocksHost(_torControl->getSocksAddress(),
+                      _torControl->getSocksPort());
   refresh();
   _refreshTimer.start();
 }

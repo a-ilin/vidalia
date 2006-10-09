@@ -18,8 +18,6 @@ Things to complete for 0.1.0:
     simply sending an empty one.
   * GeoIP requests should be encrypted so the exit node does not know what is
     being requested and cannot muck with the requests or responses.
-  * We should do a "getconf socksport" before setting a connection up through
-    Tor, instead of just picking 9050 and hoping the user didn't change it.
 
 
 Features planned for 0.1.x:

@@ -35,6 +35,15 @@
 #define GEOIP_PAGE    "/cgi-bin/geoip"
 
 
+/** Sets the address and port of Tor, through which GeoIP requests will be
+ * made. */
+void
+GeoIpResolver::setSocksHost(QHostAddress addr, quint16 port)
+{
+  _socksAddr = addr;
+  _socksPort = port;
+}
+
 /** Resolves a list of IPs to a geographic location, but only those which are
  * cached. Returns a list of IPs that were not in the cache. */
 QList<QHostAddress>
@@ -159,7 +168,7 @@ GeoIpResolver::createRequest(QList<QHostAddress> ips)
 TorSocket*
 GeoIpResolver::createRequestSocket()
 {
-  TorSocket *socket = new TorSocket(QHostAddress::LocalHost, 9050);
+  TorSocket *socket = new TorSocket(_socksAddr, _socksPort);
   connect(socket, SIGNAL(connectedToHost()), this, SLOT(connected()),
           Qt::QueuedConnection);
   connect(socket, SIGNAL(socketError(QString)), 
