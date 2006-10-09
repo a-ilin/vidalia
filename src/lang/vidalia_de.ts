@@ -69,7 +69,7 @@
     </message>
     <message>
         <source>Alternate Tor Configuration File</source>
-        <translation type="obsolete">Alternative Tor Konfigurationdatei</translation>
+        <translation type="obsolete">Alternative Tor Konfigurationsdatei</translation>
     </message>
     <message>
         <source>Start Tor with the specified configuration file (torrc)</source>
@@ -97,7 +97,7 @@
     </message>
     <message>
         <source>Run as Group:</source>
-        <translation>Als folgende Gruppe ausführen</translation>
+        <translation>Als folgende Gruppe ausführen:</translation>
     </message>
     <message>
         <source>Vidalia will run with this Group&apos;s permissions</source>
@@ -137,7 +137,7 @@
     </message>
     <message>
         <source>Unable to remove Tor Service</source>
-        <translation>Tor-Dienst konnte nicht entfernen werden</translation>
+        <translation>Tor-Dienst konnte nicht entfernt werden</translation>
     </message>
     <message>
         <source>Unable to install Tor Service</source>
@@ -350,8 +350,8 @@ Du musst ihn manuell entfernen.</translation>
     <message>
         <source>Vidalia only supports Version 1 of Tor&apos;s Control Protocol (Version %1 detected).
 Upgrade to a newer version of Tor.</source>
-        <translation>Vidalia unterstützt nur Version 1 des Tor Control
-Protocol (Version %1 entdeckt). Installiere eine neuere Version von Tor.</translation>
+        <translation>Vidalia unterstützt nur Version 1 des Tor Kontroll-Protokolls
+(Version %1 entdeckt). Installiere eine neuere Version von Tor.</translation>
     </message>
     <message>
         <source>Error disconnecting socket. [%1]</source>
@@ -363,7 +363,7 @@ Protocol (Version %1 entdeckt). Installiere eine neuere Version von Tor.</transl
     </message>
     <message>
         <source>Socket disconnected while attempting to read a line of data.</source>
-        <translation>Beim Lesen von Daten wurde der Socket unterbrochen</translation>
+        <translation>Beim Lesen von Daten wurde der Socket unterbrochen.</translation>
     </message>
     <message>
         <source>Invalid control reply. [%1]</source>
@@ -374,7 +374,7 @@ Protocol (Version %1 entdeckt). Installiere eine neuere Version von Tor.</transl
     <name>GeneralPage</name>
     <message>
         <source>Tor Directory</source>
-        <translation type="obsolete">Tor Directory</translation>
+        <translation type="obsolete">Tor Verzeichnis</translation>
     </message>
     <message>
         <source>Path to Tor&apos;s executable</source>
@@ -524,7 +524,7 @@ Protocol (Version %1 entdeckt). Installiere eine neuere Version von Tor.</transl
     </message>
     <message>
         <source>Search for a word or phrase on current page (Ctrl+F)</source>
-        <translation>Suche Wort oder Phrase in aktueller Seite (Strg+F)</translation>
+        <translation>Suche Wort oder Satz in aktueller Seite (Strg+F)</translation>
     </message>
     <message>
         <source>Ctrl+F</source>
@@ -773,7 +773,7 @@ Would you like to shutdown gracefully and give clients time to find a new server
         <translation>Es läuft zur Zeit ein Tor Server. Wird der Server
 beendet, werden alle offenen Verbindungen von Clients unterbrochen. 
         
-Wollen Sie den Server vorsichtig beenden um Clients Zeit zu geben einen neuen Server zu finden?</translation>
+Wollen Sie den Server vorsichtig beenden, um Clients Zeit zu geben einen neuen Server zu finden?</translation>
     </message>
     <message>
         <source>Vidalia was unable to shutdown Tor gracefully. (</source>
@@ -783,7 +783,7 @@ Wollen Sie den Server vorsichtig beenden um Clients Zeit zu geben einen neuen Se
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
-        <translation>Vidalia hat festgestellt das Tor unerwartet beendet 
+        <translation>Vidalia hat festgestellt, das Tor unerwartet beendet 
 wurde.
 
 Überprüfen sie die Nachrichten Logdatei.</translation>
@@ -810,19 +810,19 @@ wurde.
     </message>
     <message>
         <source>All subsequent connections will appear to be different than your old connections.</source>
-        <translation type="unfinished">Alle folgenden Verbindungen werden anders als alte
+        <translation>Alle folgenden Verbindungen werden anders als alte
 Verbindungen erscheinen.</translation>
     </message>
     <message>
         <source>Failed to Create New Identity</source>
-        <translation type="unfinished">Konnte keine neue Identität erstellen</translation>
+        <translation>Konnte keine neue Identität erstellen</translation>
     </message>
 </context>
 <context>
     <name>MessageLog</name>
     <message>
         <source>Message Log</source>
-        <translation>Nachricten Logdatei</translation>
+        <translation>Nachrichten Logdatei</translation>
     </message>
     <message>
         <source>Time</source>
@@ -882,7 +882,7 @@ Verbindungen erscheinen.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Error</translation>
+        <translation>Fehler</translation>
     </message>
     <message>
         <source>Warning</source>
@@ -902,7 +902,7 @@ Verbindungen erscheinen.</translation>
     </message>
     <message>
         <source>Message Filters...</source>
-        <translation>Nachrichten Filter ...</translation>
+        <translation>Nachrichten Filter...</translation>
     </message>
     <message>
         <source>Set message filters</source>
@@ -910,7 +910,7 @@ Verbindungen erscheinen.</translation>
     </message>
     <message>
         <source>History Size...</source>
-        <translation>History Größe...</translation>
+        <translation>Größe des Verlaufs...</translation>
     </message>
     <message>
         <source>Set maximum number of messages to display</source>
@@ -1018,7 +1018,7 @@ aber interessant für den Benutzer sein.</translation>
     <message>
         <source>Messages that appear frequently 
 during normal Tor operation.</source>
-        <translation>Nachrichten dieses Typs tauchen öfters während des
+        <translation>Nachrichten dieses Typs tauchen öfter während des
 normalen Tor Betriebs auf.</translation>
     </message>
     <message>
@@ -1090,7 +1090,7 @@ alle Vorgänge und sind hauptsächlich für Entwickler gedacht.</translation>
     <message>
         <source>Vidalia was unable to register for Tor&apos;s log events.</source>
         <translation>Vidalia konnte keine Logging Nachrichten von Tor
-empfangen</translation>
+empfangen.</translation>
     </message>
     <message>
         <source>Cannot write file %1
@@ -1121,7 +1121,7 @@ empfangen</translation>
     </message>
     <message>
         <source>Refresh</source>
-        <translation>Neu laden</translation>
+        <translation>Aktualisieren</translation>
     </message>
     <message>
         <source>Help</source>
@@ -1145,32 +1145,32 @@ empfangen</translation>
     </message>
     <message>
         <source>Make new connections appear to be different than your old connections.</source>
-        <translation type="obsolete">Lass neue Verbindungen anders als alte Verbindungen
-erscheinen</translation>
+        <translation type="obsolete">Neue Verbindungen anders als alte Verbindungen
+erscheinen lassen.</translation>
     </message>
     <message>
         <source>Refresh the list of routers and connections.</source>
-        <translation>Lade Liste der Router und Verbindungen neu.</translation>
+        <translation>Aktualisiere die Liste der Router und Verbindungen.</translation>
     </message>
     <message>
         <source>Show network map help.</source>
-        <translation>Zeige Hilfe zur Netzwerkmappe</translation>
+        <translation>Zeige Hilfe zur Netzwerkkarte.</translation>
     </message>
     <message>
         <source>Show the network map help.</source>
-        <translation>Zeige Hilfe zur Netzwerkmappe</translation>
+        <translation>Zeige Hilfe zur Netzwerkkarte.</translation>
     </message>
     <message>
         <source>Close the network map.</source>
-        <translation>Schließe Netzwerkmappe</translation>
+        <translation>Schließe Netzwerkkarte</translation>
     </message>
     <message>
         <source>Zoom in on the network map.</source>
-        <translation>Vergrößere Netzwerkmappe</translation>
+        <translation>Vergrößere Netzwerkkarte</translation>
     </message>
     <message>
         <source>Zoom out on the network map.</source>
-        <translation>Verkleinere Netzwerkmappe</translation>
+        <translation>Verkleinere Netzwerkkarte</translation>
     </message>
     <message>
         <source>All subsequent connections will appear to be different than your old connections.</source>
@@ -1183,11 +1183,11 @@ Verbindungen erscheinen.</translation>
     </message>
     <message>
         <source>Zoom To Fit</source>
-        <translation type="unfinished"></translation>
+        <translation>Größe anpassen</translation>
     </message>
     <message>
         <source>Zooms to fit all currently displayed circuits.</source>
-        <translation type="unfinished"></translation>
+        <translation>Passt die Größe an die angezeigten Verbindungen an.</translation>
     </message>
     <message>
         <source>Ctrl+R</source>
@@ -1244,7 +1244,7 @@ Verbindungen erscheinen.</translation>
     <name>RouterDescriptorView</name>
     <message>
         <source>IP Address:</source>
-        <translation>IP Addresse:</translation>
+        <translation>IP Adresse:</translation>
     </message>
     <message>
         <source>Platform:</source>
@@ -1275,11 +1275,11 @@ Verbindungen erscheinen.</translation>
     <name>RouterListItem</name>
     <message>
         <source>%1 KB/s</source>
-        <translation type="unfinished">%1 KB/s</translation>
+        <translation>%1 KB/s</translation>
     </message>
     <message>
         <source>Offline</source>
-        <translation type="unfinished">Offline</translation>
+        <translation>Offline</translation>
     </message>
     <message>
         <source>Hibernating</source>
@@ -1298,22 +1298,22 @@ Verbindungen erscheinen.</translation>
     </message>
     <message>
         <source>Server</source>
-        <translation type="unfinished">Server</translation>
+        <translation>Server</translation>
     </message>
     <message>
         <source>%1 servers total</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Server insgesamt</translation>
     </message>
 </context>
 <context>
     <name>ServerPage</name>
     <message>
         <source>Check to run as a Tor network server</source>
-        <translation>Anhaken um als Tor Netzwerk Server zu agieren</translation>
+        <translation>Anhaken um als Tor Netzwerkserver zu agieren</translation>
     </message>
     <message>
         <source>Relay traffic for the Tor network</source>
-        <translation>Leite Traffic für das Tor Netzwerk weiter</translation>
+        <translation>Leite Verkehr für das Tor Netzwerk weiter</translation>
     </message>
     <message>
         <source>Server Configuration</source>
@@ -1350,7 +1350,7 @@ deinem Server verwenden</translation>
     </message>
     <message>
         <source>Address:</source>
-        <translation>Addresse:</translation>
+        <translation>Adresse:</translation>
     </message>
     <message>
         <source>Domain name or IP address of your server</source>
@@ -1376,15 +1376,15 @@ durch deinen Server zu verbieten.</translation>
     </message>
     <message>
         <source>Attempts to determine the correct address for your server</source>
-        <translation>Versucht die korrekte Server Addresse festzustellen</translation>
+        <translation>Versucht die korrekte Server Adresse festzustellen</translation>
     </message>
     <message>
         <source>Get Address</source>
-        <translation>Addresse</translation>
+        <translation>Adresse</translation>
     </message>
     <message>
         <source>Nickname and Server Port are required</source>
-        <translation>Spitzname und Serve Port müssen angegeben werden</translation>
+        <translation>Spitzname und Server Port müssen angegeben werden</translation>
     </message>
     <message>
         <source>Exit Policies</source>
@@ -1460,7 +1460,7 @@ durch deinen Server zu verbieten.</translation>
     </message>
     <message>
         <source>Decrease the priority of the selected exit policy</source>
-        <translation>Erniedrige die Priorität der neuen Exit Strategie</translation>
+        <translation>Verringere die Priorität der neuen Exit Strategie</translation>
     </message>
     <message>
         <source>Remove the selected exit policy</source>
@@ -1477,7 +1477,7 @@ angeben.</translation>
     </message>
     <message>
         <source>Error</source>
-        <translation>Error</translation>
+        <translation>Fehler</translation>
     </message>
     <message>
         <source>accept</source>
@@ -1515,13 +1515,13 @@ Adresse auf den neusten Stand zu bringen.</translation>
         <source>Email address at which you may be reached if there is a
 problem with your server. You might also include your PGP or GPG
 fingerprint.</source>
-        <translation>Email Addresse unter der du bei Serverproblemen zu
+        <translation>Email Adresse unter der du bei Serverproblemen zu
 erreichen bist. Du kannst auch deinen PGP oder GPG fingerprint
 angeben.</translation>
     </message>
     <message>
         <source>Bandwidth Rate Limits</source>
-        <translation type="unfinished"></translation>
+        <translation>Bandbreitenbegrenzung</translation>
     </message>
     <message>
         <source>Long-term average bandwidth limit</source>
@@ -1529,7 +1529,7 @@ angeben.</translation>
     </message>
     <message>
         <source>Average Rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Durchschnittliche Rate</translation>
     </message>
     <message>
         <source>KB/s</source>
@@ -1541,15 +1541,15 @@ angeben.</translation>
     </message>
     <message>
         <source>Maximum Rate</source>
-        <translation type="unfinished"></translation>
+        <translation>Maximale Rate</translation>
     </message>
     <message>
         <source>Show help topic on bandwidth rate limits</source>
-        <translation type="unfinished"></translation>
+        <translation>Zeige Hilfe zur Bandbreitenbegrenzung</translation>
     </message>
     <message>
         <source>Only allow connections to other Tor servers (non-exit node)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Erlaube nur Verbindungen zu anderen Tor Servern (non-exit node)</translation>
     </message>
 </context>
 <context>
@@ -1688,7 +1688,7 @@ angeben.</translation>
     </message>
     <message>
         <source>Another Vidalia process is already running. This Vidalia process will now exit.</source>
-        <translation type="unfinished"></translation>
+        <translation>Eine andere Vidalia-Instanz läuft bereits. Diese Instanz wird nun beendet.</translation>
     </message>
 </context>
 </TS>
