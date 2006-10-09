@@ -73,8 +73,7 @@ TorSettings::TorSettings()
 QString
 TorSettings::getExecutable()
 {
-  return QDir::convertSeparators(
-            value(SETTING_TOR_EXECUTABLE).toString());
+  return QDir::convertSeparators(value(SETTING_TOR_EXECUTABLE).toString());
 }
 
 /** Sets the location and name of Tor's executable to the given string. */
@@ -131,8 +130,7 @@ TorSettings::getArguments()
 QString
 TorSettings::getTorrc()
 {
-  return QDir::convertSeparators(
-						value(SETTING_TORRC).toString());
+  return QDir::convertSeparators(value(SETTING_TORRC).toString());
 }
 
 /** Sets the torrc that will be used when starting Tor.
