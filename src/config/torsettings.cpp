@@ -131,7 +131,8 @@ TorSettings::getArguments()
 QString
 TorSettings::getTorrc()
 {
-  return value(SETTING_TORRC).toString();
+  return QDir::convertSeparators(
+						value(SETTING_TORRC).toString());
 }
 
 /** Sets the torrc that will be used when starting Tor.
