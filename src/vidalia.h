@@ -44,6 +44,9 @@
 /** Vidalia's version string */
 #define VIDALIA_VERSION    "0.0.9-svn"
 
+/** Pointer to this Vidalia application instance. */
+#define vApp  ((Vidalia *)qApp)
+
 
 class Vidalia : public QApplication
 {
@@ -66,9 +69,7 @@ public:
   static bool setLanguage(QString languageCode = QString());
   /** Sets the current GUI style. */
   static bool setStyle(QString styleKey = QString());
-  /** Shows the specified help topic, or the default if empty. */
-  static void help(QString topic = QString());
-
+  
   /** Returns the current language. */
   static QString language() { return _language; }
   /** Returns the current GUI style. */
@@ -86,7 +87,11 @@ public:
   
   /** Returns the location of Vidalia's pid file. */
   static QString pidFile();
-  
+ 
+public slots:
+  /** Shows the specified help topic, or the default if empty. */
+  static void help(QString topic = QString());
+
 signals:
   /** Signals that the application needs to shutdown now. */
   void shutdown();

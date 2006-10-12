@@ -195,7 +195,7 @@ MainWindow::createActions()
   connect(_messageAct, SIGNAL(triggered()), this, SLOT(showMessageLog()));
 
   _helpAct = new QAction(QIcon(IMG_HELP), tr("Help"), this);
-  connect(_helpAct, SIGNAL(triggered()), this, SLOT(showHelp()));
+  connect(_helpAct, SIGNAL(triggered()), vApp, SLOT(help()));
 
   _networkAct = new QAction(QIcon(IMG_NETWORK), tr("Network Map"), this);
   connect(_networkAct, SIGNAL(triggered()), this, SLOT(showNetwork()));
@@ -534,14 +534,6 @@ MainWindow::showConfig()
 {
   static ConfigDialog* configDialog = new ConfigDialog(this);
   configDialog->show();
-}
-
-/** Shows Help Browser. If the browser is already displayed, the existing
- * instance will be brought to the foreground. */
-void
-MainWindow::showHelp()
-{
-  Vidalia::help(); 
 }
 
 /** Shows the View Network dialog. If the View Network dialog is already

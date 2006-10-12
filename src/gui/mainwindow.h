@@ -80,8 +80,6 @@ private slots:
   void showBandwidthGraph();
   /** Called when the user selects "Configuration" from the menu. */
   void showConfig();
-  /** Called when the user selects "Help" from the menu. */
-  void showHelp();
   /** Called when the user selects "View Network" from the menu */
   void showNetwork();
   /** Called when the user selects the "New Identity" action from the menu. */
