@@ -129,6 +129,9 @@ MainWindow::~MainWindow()
   delete _trayIcon;
   delete _messageLog;
   delete _netViewer;
+  delete _bandwidthGraph;
+  delete _aboutDialog;
+  delete _configDialog;
 }
 
 /** Called when the application is closing, by selecting "Exit" from the tray
