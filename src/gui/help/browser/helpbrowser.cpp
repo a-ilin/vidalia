@@ -423,11 +423,11 @@ HelpBrowser::search()
 
 /** Overrides the default show method */
 void
-HelpBrowser::show(QString topic)
+HelpBrowser::showWindow(QString topic)
 {
   
   /* Bring the window to the top */
-  VidaliaWindow::show();
+  VidaliaWindow::showWindow();
 
   /* If a topic was specified, then go ahead and display it. */
   if (!topic.isEmpty()) {

@@ -65,7 +65,7 @@ AboutDialog::loadLicense()
 
 /** Displays the About dialog window **/
 void
-AboutDialog::show()
+AboutDialog::showWindow()
 {
   /* Access the TorControl object to retrieve version */
   if (_torControl->isRunning()) {
@@ -77,6 +77,6 @@ AboutDialog::show()
   } else {
     ui.lblTorVersion->setText(tr("<Not Running>"));
   }
-  VidaliaWindow::show();
+  VidaliaWindow::showWindow();
 }
 

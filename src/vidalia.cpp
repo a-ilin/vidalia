@@ -227,7 +227,7 @@ Vidalia::setStyle(QString styleKey)
 void
 Vidalia::help(QString topic)
 {
-  _help->show(topic);
+  _help->showWindow(topic);
 }
 
 /** Returns the directory Vidalia uses for its data files. */

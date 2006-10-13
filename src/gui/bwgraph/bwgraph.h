@@ -51,7 +51,7 @@ public:
 
 public slots:
   /** Overloaded QWidget.show */
-  void show();
+  void showWindow();
 
 protected:
   /** Called to deliver a bandwidth update event from Tor. */

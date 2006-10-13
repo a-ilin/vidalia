@@ -57,10 +57,8 @@ public:
   ConfigDialog(QWidget *parent = 0);
 
 public slots:
-  /** Called when this dialog is to be displayed */
-  void show();
   /** Shows the config dialog with focus set to the given page. */
-  void show(Page page);
+  void showWindow(Page page = General);
 
 private slots:
   /** Called when user clicks "Save Settings" */

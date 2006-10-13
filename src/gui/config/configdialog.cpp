@@ -115,23 +115,14 @@ ConfigDialog::addAction(QAction *action, const char *slot)
   connect(action, SIGNAL(triggered()), this, slot);
 }
 
-/** Overloads the default show so we can load settings */
+/** Shows the config dialog with focus set to the given page. */
 void
-ConfigDialog::show()
+ConfigDialog::showWindow(Page page)
 {
   /* Load saved settings */
   loadSettings();
-  /* Show the window */
-  VidaliaWindow::show();
-}
-
-/** Shows the config dialog with focus set to the given page. */
-void
-ConfigDialog::show(Page page)
-{
   /* Show the dialog. */
-  show();
-
+  VidaliaWindow::showWindow();
   /* Set the focus to the specified page. */
   ui.stackPages->setCurrentIndex((int)page);
 }

@@ -79,6 +79,13 @@ MainWindow::MainWindow()
   /* Set Vidalia's application icon */
   setWindowIcon(QIcon(IMG_APP_ICON));
 
+  /* Create all the dialogs of which we only want one instance */
+  _aboutDialog = new AboutDialog();
+  _messageLog = new MessageLog();
+  _bandwidthGraph = new BandwidthGraph();
+  _netViewer = new NetViewer();
+  _configDialog = new ConfigDialog();
+  
   /* Create the actions that will go in the tray menu */
   createActions();
   
@@ -100,15 +107,6 @@ MainWindow::MainWindow()
   connect(_torControl, SIGNAL(disconnected()), this, SLOT(disconnected()));
   connect(_torControl, SIGNAL(connectFailed(QString)), 
                  this,   SLOT(connectFailed(QString)));
-
-  /* Create a new MessageLog object so messages can be logged when not shown */
-  _messageLog = new MessageLog();
-  
-  /* Create a new BandwidthGraph object so we can monitor bandwidth usage */
-  _bandwidthGraph = new BandwidthGraph(this);
-
-  /* Create a new NetViewer object so we can monitor the network */
-  _netViewer = new NetViewer();
 
   /* Put an icon in the system tray to indicate the status of Tor */
   _trayIcon = new TrayIcon(IMG_TOR_STOPPED,
@@ -179,27 +177,32 @@ MainWindow::createActions()
   connect(_stopAct, SIGNAL(triggered()), this, SLOT(stop()));
   _stopAct->setEnabled(false);
 
-  _configAct = new QAction(QIcon(IMG_CONFIG), tr("Settings"), this);
-  connect(_configAct, SIGNAL(triggered()), this, SLOT(showConfig()));
-  
-  _aboutAct = new QAction(QIcon(IMG_ABOUT), tr("About"), this);
-  connect(_aboutAct, SIGNAL(triggered()), this, SLOT(showAbout()));
-  
   _exitAct = new QAction(QIcon(IMG_EXIT), tr("Exit"), this);
   connect(_exitAct, SIGNAL(triggered()), this, SLOT(close()));
 
   _bandwidthAct = new QAction(QIcon(IMG_BWGRAPH), tr("Bandwidth Graph"), this);
-  connect(_bandwidthAct, SIGNAL(triggered()), this, SLOT(showBandwidthGraph()));
+  connect(_bandwidthAct, SIGNAL(triggered()), 
+          _bandwidthGraph, SLOT(showWindow()));
 
   _messageAct = new QAction(QIcon(IMG_MESSAGELOG), tr("Message Log"), this);
-  connect(_messageAct, SIGNAL(triggered()), this, SLOT(showMessageLog()));
+  connect(_messageAct, SIGNAL(triggered()),
+          _messageLog, SLOT(showWindow()));
+
+  _networkAct = new QAction(QIcon(IMG_NETWORK), tr("Network Map"), this);
+  connect(_networkAct, SIGNAL(triggered()), 
+          _netViewer, SLOT(showWindow()));
+  
+  _configAct = new QAction(QIcon(IMG_CONFIG), tr("Settings"), this);
+  connect(_configAct, SIGNAL(triggered()), 
+          _configDialog, SLOT(showWindow()));
+  
+  _aboutAct = new QAction(QIcon(IMG_ABOUT), tr("About"), this);
+  connect(_aboutAct, SIGNAL(triggered()), 
+          _aboutDialog, SLOT(showWindow()));
 
   _helpAct = new QAction(QIcon(IMG_HELP), tr("Help"), this);
   connect(_helpAct, SIGNAL(triggered()), vApp, SLOT(help()));
-
-  _networkAct = new QAction(QIcon(IMG_NETWORK), tr("Network Map"), this);
-  connect(_networkAct, SIGNAL(triggered()), this, SLOT(showNetwork()));
-
+  
   _newIdentityAct = new QAction(QIcon(IMG_IDENTITY), tr("New Identity"), this);
   _newIdentityAct->setEnabled(false);
   connect(_newIdentityAct, SIGNAL(triggered()), this, SLOT(newIdentity()));
@@ -315,7 +318,7 @@ MainWindow::startFailed(QString errmsg)
     /* Show the settings dialog so the user can make sure they're pointing to
      * the correct Tor. */
      ConfigDialog* configDialog = new ConfigDialog(this);
-     configDialog->show(ConfigDialog::General);
+     configDialog->showWindow(ConfigDialog::General);
   } else if (response == VMessageBox::Help) {
     /* Show troubleshooting information about starting Tor */
     Vidalia::help("troubleshooting.start");
@@ -454,7 +457,7 @@ MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
                      "about what happened to Tor before it exited."),
                   VMessageBox::Ok, VMessageBox::ShowLog, VMessageBox::Help);
       if (ret == VMessageBox::ShowLog) {
-        showMessageLog();  
+        _messageLog->showWindow();  
       } else if (ret == VMessageBox::Help) {
         Vidalia::help("troubleshooting.torexited");
       }
@@ -485,11 +488,10 @@ MainWindow::connected()
 
       if (ret == VMessageBox::ShowSettings) {
         /* Show the config dialog with the server page already shown. */
-        ConfigDialog* configDialog = new ConfigDialog(this);
-        configDialog->show(ConfigDialog::Server);
+        _configDialog->showWindow(ConfigDialog::Server);
       } else if (ret == VMessageBox::ShowLog) {
         /* Show the message log. */
-        showMessageLog(); 
+        _messageLog->showWindow(); 
       }
     }
   }
@@ -500,48 +502,6 @@ void
 MainWindow::disconnected()
 {
   _newIdentityAct->setEnabled(false);
-}
-
-/** Creates an instance of AboutDialog and shows it. If the About dialog is
- * already displayed, the existing instance will be brought to the foreground. */
-void 
-MainWindow::showAbout()
-{
-  static AboutDialog* aboutDialog = new AboutDialog(this);
-  aboutDialog->show();
-}
-
-/** Shows Message Log. If the message log is already displayed, the existing
- * instance will be brought to the foreground. */
-void
-MainWindow::showMessageLog()
-{
-  _messageLog->show();
-}
-
-/** Shows Bandwidth Graph. If the bandwidth graph is already displayed, the
- * existing instance will be brought to the foreground. */
-void
-MainWindow::showBandwidthGraph()
-{
-  _bandwidthGraph->show();
-}
-
-/** Shows Configuration dialog. If the config dialog is already displayed, the
- * existing instance will be brought to the foreground. */
-void
-MainWindow::showConfig()
-{
-  static ConfigDialog* configDialog = new ConfigDialog(this);
-  configDialog->show();
-}
-
-/** Shows the View Network dialog. If the View Network dialog is already
- *  displayed, the existing instance will be brought to the foreground. */
-void
-MainWindow::showNetwork()
-{
-  _netViewer->show();  
 }
 
 /** Called when the user selects the "New Identity" action from the menu. */

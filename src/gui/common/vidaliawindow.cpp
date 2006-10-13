@@ -32,8 +32,6 @@
 #include <QKeySequence>
 #include "vidaliawindow.h"
 
-#include <QtDebug>
-
 
 /** Default constructor. */
 VidaliaWindow::VidaliaWindow(QString name, QWidget *parent, Qt::WFlags flags)
@@ -101,40 +99,38 @@ VidaliaWindow::saveSetting(QString prop, QVariant value)
   _settings->setValue(key, value);
 }
 
-/** Overloaded QWidget::close() method. Saves the window state and closes the
- * window. Returns true if the window was closed. */
-bool
-VidaliaWindow::close()
-{
-  saveWindowState();
-  return QMainWindow::close();
-}
-
-/** Overloaded QWidget::show() */
+/** Overloaded QWidget::setVisible(). If this window is already visible and
+ * <b>visible</b> is true, this window will be brought to the top and given 
+ * focus. If <b>visible</b> is false, then the window state will be saved and
+ * this window will be hidden. */
 void
-VidaliaWindow::show()
+VidaliaWindow::setVisible(bool visible)
 {
-  /* If this is the first time this window is shown, restore its window
-   * position and size. */
-  if (!_previouslyShown) {
+  if (visible) {
+    /* If this is the first time this window is shown, restore its window
+     * position and size. */
+    if (!_previouslyShown) {
 #if !defined (Q_WS_WIN)
-    /* Use the standard palette on non-Windows, overriding whatever was 
-     * specified in the .ui file for this dialog. */
-    setPalette(QPalette());
+      /* Use the standard palette on non-Windows, overriding whatever was 
+       * specified in the .ui file for this dialog. */
+      setPalette(QPalette());
 #endif
     
-    restoreWindowState();
-    _previouslyShown = true;
-  }
+      restoreWindowState();
+      _previouslyShown = true;
+    }
 
-  /* Bring the window to the top, if it's already open. Otherwise, make the
-   * window visible. */
-  if (!this->isVisible()) {
-    QMainWindow::show();
+    /* Bring the window to the top, if it's already open. Otherwise, make the
+     * window visible. */
+    if (isVisible()) {
+      activateWindow();
+      setWindowState(windowState() & ~Qt::WindowMinimized | Qt::WindowActive);
+      raise();
+    }
   } else {
-    activateWindow();
-    setWindowState(windowState() & ~Qt::WindowMinimized | Qt::WindowActive);
-    raise();
+    /* Save the last size and position of this window. */
+    saveWindowState();
   }
+  QMainWindow::setVisible(visible);
 }
 

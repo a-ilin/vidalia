@@ -50,7 +50,7 @@ public:
  
 public slots:
   /** Overrides the default QWidget::show() */
-  void show(QString topic = QString());
+  void showWindow(QString topic = QString());
   
 private slots:
   /** Called when the user clicks "Find Next" */

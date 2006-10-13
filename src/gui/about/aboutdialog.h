@@ -40,8 +40,10 @@ class AboutDialog : public VidaliaWindow
 public:
   /** Default constructor **/
   AboutDialog(QWidget *parent = 0, Qt::WFlags flags = 0);
-  /** Overriden QWidget.show() **/
-  void show();
+
+public slots:
+  /** Overriden VidaliaWindow::showWindow() */
+  void showWindow();
 
 private:
   /** Loads the license file */

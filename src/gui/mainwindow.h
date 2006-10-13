@@ -72,16 +72,6 @@ private slots:
   void connectFailed(QString errmsg);
   /** Called when the control socket has been disconnected. */
   void disconnected();
-  /** Called when the user selects "About" from the menu. */
-  void showAbout();
-  /** Called when the user selects "Message Log" from the menu. */
-  void showMessageLog();
-  /** Called when the user selects "Bandwidth Graph" from the menu. */
-  void showBandwidthGraph();
-  /** Called when the user selects "Configuration" from the menu. */
-  void showConfig();
-  /** Called when the user selects "View Network" from the menu */
-  void showNetwork();
   /** Called when the user selects the "New Identity" action from the menu. */
   void newIdentity();
 
@@ -97,14 +87,18 @@ private:
   
   /* Used to determine if the Tor process exiting was intentional or not */
   bool _isIntentionalExit;
+  
+  /** An AboutDialog object, used to display version information. */
+  AboutDialog* _aboutDialog;
   /** A MessageLog object which handles logging Tor messages */
   MessageLog* _messageLog;
   /** A BandwidthGraph object which handles monitoring Tor bandwidth usage */
   BandwidthGraph* _bandwidthGraph;
-  /** A HelpBrowser object which handles displaying help files */
-  HelpBrowser* _helpBrowser;
   /** A NetViewer object which displays the Tor network graphically */
   NetViewer* _netViewer;
+  /** A ConfigDialog object used to configure Tor and Vidalia's settings. */
+  ConfigDialog* _configDialog;
+  
   /** A TorControl object that handles communication with Tor */
   TorControl* _torControl;
   /** Instance of a tray icon that will appear in the system tray */

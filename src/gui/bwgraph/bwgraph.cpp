@@ -256,11 +256,11 @@ BandwidthGraph::setOpacity(int value)
 
 /** Overloads the default show() slot so we can set opacity. */
 void
-BandwidthGraph::show()
+BandwidthGraph::showWindow()
 {
   /* Load saved settings */
   loadSettings();
   /* Show the window */
-  VidaliaWindow::show();
+  VidaliaWindow::showWindow();
 }
 

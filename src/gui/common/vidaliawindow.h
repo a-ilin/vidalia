@@ -59,11 +59,11 @@ public:
   void saveSetting(QString name, QVariant value);
 
 public slots:
-  /** Overloaded QWidget::close() method. Saves the window state and closes
-   * the window. Returns true if the window was closed. */
-  bool close();
-  /** Overloaded QWidget::show(). */
-  void show();
+  /** Shows or hides this window. */
+  virtual void setVisible(bool visible);
+  /** Show this window. This method really just exists for subclasses to 
+   * override, since QMainWindow::show() is non-virtual. */
+  virtual void showWindow() { QMainWindow::show(); }
 
 private:
   QString _name;  /**< Name associated with this window. */
