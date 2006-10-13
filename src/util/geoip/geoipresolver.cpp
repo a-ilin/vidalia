@@ -105,12 +105,26 @@ GeoIpResolver::disconnected()
   /* Check the response code and see what we got */
   if (response.statusCode() == 200) {
     /* We got a 200 OK, so get the Geo IP information and cache the results */
-    int numCached = 0;
+    int numCached = 0, i = 0;
     QList<GeoIp> geoips = response.geoIps();
     foreach (GeoIp geoip, geoips) {
-      if (!_cache.contains(geoip.ip())) {
-        _cache.cache(geoip);
-        numCached++;
+      QHostAddress ip = geoip.ip();
+      
+      if (request->contains(ip)) {
+        /* This is a requested geoip item, so if it wasn't cached, then 
+         * cache it now. */
+        if (!_cache.contains(ip)) {
+          _cache.cache(geoip);
+          numCached++;
+        }
+        i++;
+      } else {
+        /* This item wasn't requested, so remove it. According to the Qt docs,
+         * this is safe to do inside the foreach() loop because, "Qt
+         * automatically takes a copy of the container when it enters a
+         * foreach loop. If you modify the container as you are iterating,
+         * that won't affect the loop." */
+        geoips.removeAt(i);
       }
     }
     /* If new results were cached, save them to disk */

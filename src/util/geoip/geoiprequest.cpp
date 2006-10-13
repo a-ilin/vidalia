@@ -58,6 +58,7 @@ GeoIpRequest::setRequest(QList<QHostAddress> ips)
       _request.append(",");
     }
   }
+  _ips = ips;
 }
 
 /** Formats the request as an HTTP POST request. */
@@ -67,5 +68,12 @@ GeoIpRequest::request()
   /* Create the header and append the request content. */
   QString request = createHeader().toString() + _request;
   return request.toAscii();
+}
+
+/** Returns true if this request contains <b>ip</b>. */
+bool
+GeoIpRequest::contains(QHostAddress ip)
+{
+  return _ips.contains(ip);
 }
 

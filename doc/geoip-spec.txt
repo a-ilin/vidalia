@@ -133,9 +133,6 @@ $Id$
    active partitioning to mislead the user into believing a given server
    is at a certain set of coordinates?
 
-   Third, Vidalia 0.0.8 will accept and cache responses to questions
-   that it didn't ask. This probably aids partitioning attacks.
-
 3. Future directions.
 
 3.1. Encryption to/from the coordinate servers.

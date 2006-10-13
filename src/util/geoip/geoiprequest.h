@@ -47,7 +47,9 @@ public:
   void setPage(QString page) { _page = page; }
   /** Sets the list of IPs whose geo information we want to request. */
   void setRequest(QList<QHostAddress> ips);
-  
+  /** Returns true if this request contains <b>ip</b>. */
+  bool contains(QHostAddress ip);
+
   /** Returns the request's identifier. */
   int id() { return _id; }
   /** Formats the request as an HTTP POST request */
@@ -61,6 +63,7 @@ private:
   QString _host;    /**< Host: field value. */
   QString _page;    /**< Page giving us the geo ip information. */
   QString _request; /**< Formatted Geo IP request string. */
+  QList<QHostAddress> _ips; /**< List of IP addresses in this request. */
 };
 
 #endif
