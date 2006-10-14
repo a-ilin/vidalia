@@ -91,12 +91,8 @@ main(int argc, char *argv[])
    * Setting quitOnLastWindowClosed to false fixes this behavior. */
   Vidalia::setQuitOnLastWindowClosed(false);
 
-  /* Create an instance of the mainwindow and start the application */
+  /* Create an instance of the main window  */
   MainWindow mainWin;
-
-  /* Handle the shutdown signal by closing the mainwindow, which closes
-   * all the necessary child windows. */
-  QObject::connect(&vidalia, SIGNAL(shutdown()), &mainWin, SLOT(close()));
 
   /* Run Vidalia */
   int ret = vidalia.exec();

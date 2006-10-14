@@ -108,6 +108,9 @@ MainWindow::MainWindow()
   connect(_torControl, SIGNAL(connectFailed(QString)), 
                  this,   SLOT(connectFailed(QString)));
 
+  /* Make sure we shut down when the operating system is restarting */
+  connect(vApp, SIGNAL(shutdown()), this, SLOT(shutdown()));
+
   /* Put an icon in the system tray to indicate the status of Tor */
   _trayIcon = new TrayIcon(IMG_TOR_STOPPED,
                            tr("Tor is Stopped"), _trayMenu);
@@ -134,9 +137,26 @@ MainWindow::~MainWindow()
   delete _configDialog;
 }
 
+/** Terminate the Tor process if it is being run under Vidalia, disconnect all
+ * TorControl signals, and exit Vidalia. */
+void
+MainWindow::shutdown()
+{
+  if (_torControl->isVidaliaRunningTor()) {
+    /* Kill our Tor process now */ 
+    _torControl->signal(TorSignal::Halt);
+  }
+
+  /* Disconnect all of the TorControl object's signals */
+  disconnect(_torControl, 0, 0, 0);
+
+  /* And then quit for real */
+  QCoreApplication::quit();
+}
+
 /** Called when the application is closing, by selecting "Exit" from the tray
- * menu. This function disconnects the control socket and ends the Tor
- * process. */
+ * menu. If we're running a Tor server, then ask if we want to kill Tor now,
+ * or do a delayed shutdown. */
 void
 MainWindow::close()
 {
@@ -151,20 +171,14 @@ MainWindow::close()
                                    && !delayedShutdownStarted) {
       if (delayServerShutdown()) {
         /* Close when Tor stops */
-        connect(_torControl, SIGNAL(stopped()), this, SLOT(close()));
+        connect(_torControl, SIGNAL(stopped()), this, SLOT(shutdown()));
         delayedShutdownStarted = _torControl->signal(TorSignal::Shutdown);
         return;
       }
-      /* Otherwise, just hill Tor now. Really. Die. */ 
-      _torControl->signal(TorSignal::Halt);
     }
   }
-  
-  /* Disconnect all of the TorControl object's signals */
-  disconnect(_torControl, 0, 0, 0);
-
-  /* And then quit for real */
-  QCoreApplication::quit();
+  /* Shut down Tor (if necessary) and exit Vidalia */
+  shutdown();
 }
 
 /** Create and bind actions to events. Setup for initial

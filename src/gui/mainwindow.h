@@ -51,10 +51,6 @@ public:
   /** Destructor. */
   ~MainWindow();
 
-public slots:
-  /** Called when the user exits Vidalia. */
-  void close();
-
 private slots:
   /** Called when the user selects "Start" from the menu. */
   void start();
@@ -74,6 +70,11 @@ private slots:
   void disconnected();
   /** Called when the user selects the "New Identity" action from the menu. */
   void newIdentity();
+  /** Called when the user exits Vidalia. */
+  void close();
+  /** Terminate the Tor process if it is being run under Vidalia, disconnect
+   * all TorControl signals, and exit Vidalia. */
+  void shutdown();
 
 private:
   /** Create the actions on the tray menu or menubar */
