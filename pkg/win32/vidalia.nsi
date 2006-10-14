@@ -106,7 +106,7 @@ LangString LRunNowText ${LANG_RUSSIAN} "Запустить ${APPNAME} сейчас"
 LangString LAppSec ${LANG_ENGLISH} "${APPNAME} (required)"
 LangString LAppSec ${LANG_RUSSIAN} "${APPNAME} (обязательно)"
 
-LangString LMainMenuSec ${LANG_ENGLISH} "Start Menu Shortcuts"
+LangString LMainMenuSec ${LANG_ENGLISH} "Add to Start Menu"
 LangString LMainMenuSec ${LANG_RUSSIAN} "Ярлыки в Главное меню"
 
 LangString LStartupSec ${LANG_ENGLISH} "Run At Startup"
@@ -115,7 +115,7 @@ LangString LStartupSec ${LANG_RUSSIAN} "Автозапуск"
 LangString LAppDesc ${LANG_ENGLISH} "${APPNAME} Executable"
 LangString LAppDesc ${LANG_RUSSIAN} "Исполняемый файл ${APPNAME}"
 
-LangString LMainMenuDesc ${LANG_ENGLISH} "Add Shortcuts to Start Menu"
+LangString LMainMenuDesc ${LANG_ENGLISH} "Add ${APPNAME} to your Start Menu"
 LangString LMainMenuDesc ${LANG_RUSSIAN} "Добавить ярлыки в Главное Меню"
 
 LangString LStartupDesc ${LANG_ENGLISH} "Automatically start ${APPNAME} at startup"
@@ -192,6 +192,7 @@ Section "Uninstall"
   ; Remove directories used
   RMDir "$SMPROGRAMS\${APPNAME}"
   RMDir /r "$INSTDIR"
+  RMDir /r "$APPDATA\Vidalia"
 SectionEnd
 
 ;--------------------------------
