@@ -2,7 +2,8 @@
 
 
 1. Create a base directory under which the necessary sources will be extracted
-and place the .nsi file in it. For this example, we will just use C:\bundle\.
+and place vidalia-bundle.nsi and all language-specific .nsh files in it. For 
+this example, we will just use C:\bundle\.
       
        C:\bundle\bundle.nsi
 
@@ -12,8 +13,8 @@ and place the .nsi file in it. For this example, we will just use C:\bundle\.
         C:\bundle\tor\
         C:\bundle\vidalia\
 
-3. Modify the appropriate version values (VIDALIA_VERSION, TOR_VERSION, and
-PRIVOXY_VERSION) at the top of the .nsi file.
+3. Modify the appropriate version values (VIDALIA_APPVERSION, TOR_APPVERSION, and
+PRIVOXY_APPVERSION) at the top of vidalia-bundle.nsi.
 
 4. Create directories for the appropriate versions of each component.
 
@@ -34,8 +35,9 @@ PRIVOXY_VERSION) at the top of the .nsi file.
 may need to grab the torrc.sample file from %APPDATA%\Tor that was created by
 the installer and place it in the directory for the bundle's version of Tor.
 
-8. Run the .nsi script. The bundle will be named according the the versions
-you specified in Step 4 and placed in the base directory created in Step 1.
+8. Run the vidalia-bundle.nsi script. The bundle will be named according the
+the versions you specified in Step 4 and placed in the base directory created
+in Step 1.
 
 --------------------------------------------------------------------------------
 
