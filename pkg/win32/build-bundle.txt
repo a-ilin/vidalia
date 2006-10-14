@@ -5,7 +5,11 @@
 and place vidalia-bundle.nsi and all language-specific .nsh files in it. For 
 this example, we will just use C:\bundle\.
       
-       C:\bundle\bundle.nsi
+       C:\bundle\vidalia-bundle.nsi
+       C:\bundle\vidalia_en.nsh
+       [...]
+       C:\bundle\vidalia_ru.sh
+                 
 
 2. Create directories for each component in the bundle.
 
