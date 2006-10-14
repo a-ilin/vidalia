@@ -138,37 +138,31 @@ SectionGroup "!Tor ${TOR_VERSION}" TorGroup
        File "tor\${TOR_VERSION}\ssleay32.dll"
     SectionEnd
 
-    Section "Documents" TorDocs
+    Section "Documentation" TorDocs
        SectionIn 1 2
        SetOutPath "$INSTDIR\Tor\Documents"
        File "tor\${TOR_VERSION}\Documents\*.*"
     SectionEnd
 
-    SubSection /e "Shortcuts" TorShortcuts
-        Section "Start Menu" TorStartMenu
-           SectionIn 1
-           SetShellVarContext all ; (Add to "All Users" Start Menu if possible)
-           SetOutPath "$INSTDIR\Tor"
-           IfFileExists "$SMPROGRAMS\Tor\*.*" "" +2
-              RMDir /r "$SMPROGRAMS\Tor"
-           CreateDirectory "$SMPROGRAMS\Tor"
-           CreateShortCut "$SMPROGRAMS\Tor\Tor.lnk" "$INSTDIR\Tor\tor.exe"
-           CreateShortCut "$SMPROGRAMS\Tor\Torrc.lnk" "Notepad.exe" "$configdir\torrc"
-           CreateShortCut "$SMPROGRAMS\Tor\Tor Website.lnk" "$INSTDIR\Tor\Tor Website.url"
-           CreateShortCut "$SMPROGRAMS\Tor\Uninstall.lnk" "$INSTDIR\Tor\${TOR_UNINST}"
-           IfFileExists "$INSTDIR\Tor\Documents\*.*" "" endifdocs
-              CreateDirectory "$SMPROGRAMS\Tor\Documents"
-              CreateShortCut "$SMPROGRAMS\Tor\Documents\Tor Documentation.lnk" "$INSTDIR\Tor\Documents"
-              CreateShortCut "$SMPROGRAMS\Tor\Documents\Version Specification.lnk" "$INSTDIR\Tor\Documents\version-spec.txt"
-           endifdocs:
-        SectionEnd
-
-        Section "Desktop" TorDesktop
-           SectionIn 1
-           SetOutPath "$INSTDIR\Tor"
-           CreateShortCut "$DESKTOP\Tor.lnk" "$INSTDIR\Tor\tor.exe"
-        SectionEnd
-    SubSectionEnd
+    Section "Add to Start Menu" TorStartMenu
+      SectionIn 1
+        SetShellVarContext all ; (Add to "All Users" Start Menu if possible)
+        SetOutPath "$INSTDIR\Tor"
+        IfFileExists "$SMPROGRAMS\Tor\*.*" "" +2
+           RMDir /r "$SMPROGRAMS\Tor"
+        
+        CreateDirectory "$SMPROGRAMS\Tor"
+        CreateShortCut "$SMPROGRAMS\Tor\Tor.lnk" "$INSTDIR\Tor\tor.exe"
+        CreateShortCut "$SMPROGRAMS\Tor\Torrc.lnk" "Notepad.exe" "$configdir\torrc"
+        CreateShortCut "$SMPROGRAMS\Tor\Tor Website.lnk" "$INSTDIR\Tor\Tor Website.url"
+        CreateShortCut "$SMPROGRAMS\Tor\Uninstall.lnk" "$INSTDIR\Tor\${TOR_UNINST}"
+        
+        IfFileExists "$INSTDIR\Tor\Documents\*.*" "" endifdocs
+          CreateDirectory "$SMPROGRAMS\Tor\Documents"
+          CreateShortCut "$SMPROGRAMS\Tor\Documents\Tor Documentation.lnk" "$INSTDIR\Tor\Documents"
+          CreateShortCut "$SMPROGRAMS\Tor\Documents\Version Specification.lnk" "$INSTDIR\Tor\Documents\version-spec.txt"
+        endifdocs:
+    SectionEnd
 SectionGroupEnd
 
 
@@ -219,7 +213,7 @@ SectionGroup "Vidalia ${VIDALIA_VERSION}" VidaliaGroup
     ;--------------------------------
     ; Start Menu Shortcuts
     ; Optional section (can be disabled by the user)
-    Section "Start Menu Shortcuts" VidaliaShortcuts
+    Section "Add to Start Menu" VidaliaShortcuts
       SectionIn 1 2
       SetShellVarContext all ; (Add to "All Users" Start Menu if possible)
       CreateDirectory "$SMPROGRAMS\Vidalia"
@@ -319,9 +313,7 @@ FunctionEnd
   !insertmacro MUI_DESCRIPTION_TEXT ${TorGroup} "Install ${TOR_NAME} ${TOR_VERSION}"
   !insertmacro MUI_DESCRIPTION_TEXT ${TorDocs} "Install ${TOR_NAME} documentation"
   !insertmacro MUI_DESCRIPTION_TEXT ${TorOpenSSL} "Install OpenSSL 0.9.7e"
-  !insertmacro MUI_DESCRIPTION_TEXT ${TorShortcuts} "Add ${TOR_NAME} shortcuts to your Start menu"
   !insertmacro MUI_DESCRIPTION_TEXT ${TorStartMenu} "Add ${TOR_NAME} to your Start menu"
-  !insertmacro MUI_DESCRIPTION_TEXT ${TorDesktop} "Add ${TOR_NAME} to your desktop"
 
   !insertmacro MUI_DESCRIPTION_TEXT ${Vidalia} "Install ${VIDALIA_NAME} ${VIDALIA_VERSION}"
   !insertmacro MUI_DESCRIPTION_TEXT ${VidaliaGroup} "Install ${VIDALIA_NAME} ${VIDALIA_VERSION}"
