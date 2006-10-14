@@ -87,9 +87,11 @@ XPStyle         on
 ;--------------------------------
 ; Available languages
 !insertmacro MUI_LANGUAGE "English"
+!insertmacro MUI_LANGUAGE "Finnish"
 !insertmacro MUI_LANGUAGE "German"
 !include "vidalia_en.nsh"
 !include "vidalia_de.nsh"
+!include "vidalia_fi.nsh"
 
 ;--------------------------------
 ; Install types
