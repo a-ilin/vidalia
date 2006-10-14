@@ -91,7 +91,7 @@ else
 fi
                                   
 # Get the location of Vidalia
-VID_DIR="../../../"
+VID_DIR="../../"
 # Get the location of Tor
 TOR_DIR="$1"
 # Get the location of the Privoxy package zip file

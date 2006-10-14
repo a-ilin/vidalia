@@ -4,6 +4,25 @@
 ;; 
 ;; All translations should be derived from this file.
 ;;
+;; To translate this file:
+;;   
+;;    1) Copy this file (vidalia_en.nsh), creating a new file with "en"
+;;       replaced by the two-letter language code of your translated language.
+;;       For example, if you are creating a German translation, your new file
+;;       would be named "vidalia_de.nsh".
+;;
+;;    2) Replace all ${LANG_ENGLISH} tags with whatever language you are
+;;       translating this file into. For example, if you are creating a German
+;;       translation, all ${LANG_ENGLISH} tags would become ${LANG_GERMAN}.
+;;
+;;    3) Translate the quoted strings. You can move string replacement tags
+;;       (e.g., ${BUNDLE_NAME}) around within the quoted strings, but you 
+;;       should not alter the tags themselves.
+;;
+;; Your resulting file should use a non-Unicode character encoding, since NSIS 
+;; does not support Unicode.
+;; 
+
 
 ; Bundle
 LangString BundleSetupCaption         ${LANG_ENGLISH} "${BUNDLE_NAME} setup"

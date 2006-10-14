@@ -76,7 +76,7 @@ case "$1" in
   torpath="$2"
   privoxy="$3"
   
-  pushd "osx/bundle"
+  pushd "osx"
   ./buildmpkg.sh "$torpath" "$privoxy"
   popd
   ;;
