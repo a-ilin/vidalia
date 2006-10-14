@@ -10,7 +10,7 @@ LangString BundleSetupCaption         ${LANG_ENGLISH} "${BUNDLE_NAME} setup"
 LangString BundleWelcomeText          ${LANG_ENGLISH} "This wizard will guide you through the installation of:\r\n\tTor\t${TOR_APPVERSION}\r\n\tVidalia\t${VIDALIA_APPVERSION}\r\n\tPrivoxy\t${PRIVOXY_APPVERSION}\r\n\r\nIf you have previously installed Tor, Vidalia, or Privoxy, please make sure they are not running before continuing this installation.\r\n\r\n$_CLICK"
 LangString BundleWelcomeTitle         ${LANG_ENGLISH} "Welcome to the ${BUNDLE_NAME} Setup Wizard"
 LangString BundleLinkText             ${LANG_ENGLISH} "${TOR_NAME} installation documentation"
-LangString BundleFinishText           ${LANG_ENGLISH} "Installation is complete.\r\nPlease see http://tor.eff.org/docs/tor-doc-win32.html to learn how to  configure your applications to use Tor.\r\n"
+LangString BundleFinishText           ${LANG_ENGLISH} "Installation is complete.\r\nPlease see http://tor.eff.org/docs/tor-doc-win32.html to learn how to configure your applications to use Tor.\r\n"
 LangString BundleRunNow               ${LANG_ENGLISH} "Run installed components now"
 
 
