@@ -1,82 +1,80 @@
 ;---------------------------------
+; $Id: $
+; 
 ; Vidalia/Tor/Privoxy Bundle Installer
 ; See BUNDLE_LICENSE for licensing information
-
-;
+;---------------------------------
 !include "MUI.nsh"
 
+SetCompressor /SOLID lzma
+!packhdr header.dat "upx --best header.dat"
+
 ;---------------------------------
-; Global Definitions
-!define VIDALIA_NAME "Vidalia"
-!define VIDALIA_EXEC "vidalia.exe"
-!define VIDALIA_UNINST "uninstall.exe"
-!define VIDALIA_VERSION "0.0.8"
+; Global definitions
+!define VIDALIA_NAME        "Vidalia"
+!define VIDALIA_EXEC        "vidalia.exe"
+!define VIDALIA_APPVERSION  "0.0.8"
+!define VIDALIA_DESC        "${VIDALIA_NAME} ${VIDALIA_APPVERSION}"
+!define VIDALIA_UNINST      "uninstall.exe"
 
-!define TOR_NAME "Tor"
-!define TOR_EXEC "tor.exe"
-!define TOR_UNINST "Uninstall.exe"
-!define TOR_VERSION "0.1.1.23"
+!define TOR_NAME            "Tor"
+!define TOR_EXEC            "tor.exe"
+!define TOR_APPVERSION      "0.1.1.23"
+!define TOR_DESC            "${TOR_NAME} ${TOR_APPVERSION}"
+!define TOR_UNINST          "Uninstall.exe"
 
-!define PRIVOXY_NAME "Privoxy"
-!define PRIVOXY_EXEC "privoxy.exe"
-!define PRIVOXY_UNINST "privoxy_uninstall.exe"
-!define PRIVOXY_VERSION "3.0.3"
+!define PRIVOXY_NAME        "Privoxy"
+!define PRIVOXY_EXEC        "privoxy.exe"
+!define PRIVOXY_APPVERSION  "3.0.3"
+!define PRIVOXY_DESC        "${PRIVOXY_NAME} ${PRIVOXY_APPVERSION}"
+!define PRIVOXY_UNINST      "privoxy_uninstall.exe"
 
-!define BUNDLE_REVISION "1"
+!define OPENSSL_NAME        "OpenSSL"
+!define OPENSSL_APPVERSION  "0.9.8a"
+!define OPENSSL_DESC        "${OPENSSL_NAME} ${OPENSSL_APPVERSION}"
 
-!define APPNAME "Vidalia Bundle"
-!define APPVERSION "${TOR_VERSION}-${VIDALIA_VERSION}"
-!define PRODVERSION "${VIDALIA_VERSION}.${BUNDLE_REVISION}" ; Product version must be x.x.x.x
-!define APPDESCRIPTION "${APPNAME} ${APPVERSION}"
-!define INSTALLFILE "vidalia-bundle-${APPVERSION}.exe"
-
+!define BUNDLE_NAME         "Vidalia Bundle"
+!define BUNDLE_APPVERSION   "${TOR_APPVERSION}-${VIDALIA_APPVERSION}"
+!define BUNDLE_REVISION     "1"
+!define BUNDLE_PRODVERSION  "${VIDALIA_APPVERSION}.${BUNDLE_REVISION}" ; Product version must be x.x.x.x
+!define BUNDLE_DESC         "${BUNDLE_NAME} ${BUNDLE_APPVERSION}"
+!define INSTALLFILE         "vidalia-bundle-${BUNDLE_APPVERSION}.exe"
 
 ;--------------------------------
-; Basic Installer Information
-Name "Vidalia-Tor-Privoxy Bundle"
-Caption "Vidalia-Tor-Privoxy Bundle"
-BrandingText "${APPDESCRIPTION} (Rev. ${BUNDLE_REVISION})"
-OutFile "${INSTALLFILE}"
-CRCCheck on
+; Installer file details
+VIAddVersionKey "ProductName"     "${BUNDLE_NAME}"
+VIAddVersionKey "Comments"        "${BUNDLE_DESC}"
+VIAddVersionKey "FileVersion"     "${BUNDLE_APPVERSION}"
+VIAddVersionKey "FileDescription" "${BUNDLE_DESC}"
+VIProductVersion "${BUNDLE_PRODVERSION}"
 
-VIAddVersionKey "ProductName" "${APPNAME}"
-VIAddVersionKey "Comments" "${APPDESCRIPTION}"
-VIAddVersionKey "FileVersion" "${APPVERSION}"
-VIAddVersionKey "FileDescription" "${APPDESCRIPTION}"
-VIProductVersion "${PRODVERSION}"
-
-OutFile "${INSTALLFILE}"
-
-InstallDir "$PROGRAMFILES"
-
-SetCompressor /SOLID lzma
-SetOverWrite ifnewer
+;--------------------------------
+; Basic installer information
+Name            "${BUNDLE_NAME}"
+Caption         "$(BundleSetupCaption)"
+BrandingText    "${BUNDLE_DESC} (Rev. ${BUNDLE_REVISION})"
+OutFile         "${INSTALLFILE}"
+InstallDir      "$PROGRAMFILES"
+SetOverWrite    ifnewer
 AutoCloseWindow false
 ShowInstDetails show
-XPStyle on
-
-
-;--------------------------------
-; Install Types
-!ifndef NOINSTTYPES ; only if not defined
-  InstType "Full"
-  InstType "Base"
-  ;InstType /COMPONENTSONLYONCUSTOM
-!endif
-
+CRCCheck        on
+XPStyle         on
 
 ;--------------------------------
 ; MUI Options
-!define MUI_WELCOMEPAGE_TITLE "Welcome to the ${APPNAME} Setup Wizard"
-!define MUI_WELCOMEPAGE_TEXT "This wizard will guide you through the installation of:\r\n\tVidalia\t${VIDALIA_VERSION}\r\n\tTor\t${TOR_VERSION}\r\n\tPrivoxy\t${PRIVOXY_VERSION}\r\n\r\nIf you have previously installed Vidalia, Tor, or Privoxy, please make sure they are not running before continuing this installation.\r\n\r\n$_CLICK"
+!define MUI_WELCOMEPAGE_TITLE "$(BundleWelcomeTitle)"
+!define MUI_WELCOMEPAGE_TEXT  "$(BundleWelcomeText)"
 !define MUI_ABORTWARNING
 !define MUI_ICON "${NSISDIR}\Contrib\Graphics\Icons\win-install.ico"
 !define MUI_HEADERIMAGE_BITMAP "${NSISDIR}\Contrib\Graphics\Header\win.bmp"
 !define MUI_HEADERIMAGE
-!define MUI_FINISHPAGE_TEXT "Installation is complete.\r\n\r\nPlease see http://tor.eff.org/docs/tor-doc-win32.html to learn how to configure your applications to use Tor.\r\n"
+!define MUI_FINISHPAGE_TEXT "$(BundleFinishText)"
 !define MUI_FINISHPAGE_RUN
 !define MUI_FINISHPAGE_RUN_FUNCTION CustomFinishFn
-!define MUI_FINISHPAGE_RUN_TEXT "Run installed components now"
+!define MUI_FINISHPAGE_RUN_TEXT "$(BundleRunNow)"
+!define MUI_FINISHPAGE_LINK "$(BundleLinkText)"
+!define MUI_FINISHPAGE_LINK_LOCATION  "http://tor.eff.org/docs/tor-doc-win32.html"
 
 ;--------------------------------
 ; Pages
@@ -86,44 +84,60 @@ XPStyle on
 !insertmacro MUI_PAGE_INSTFILES
 !insertmacro MUI_PAGE_FINISH
 
+;--------------------------------
+; Available languages
+!include "vidalia_en.nsh"
 !insertmacro MUI_LANGUAGE "English"
+
+;--------------------------------
+; Install types
+!ifndef NOINSTTYPES ; only if not defined
+  InstType "Full"
+  InstType "Base"
+  ;InstType /COMPONENTSONLYONCUSTOM
+!endif
+
+;--------------------------------
+; Functions
+Function .onInit
+  !insertmacro MUI_LANGDLL_DISPLAY
+FunctionEnd
 
 ;--------------------------------
 ; Tor
 Var configdir
 Var configfile
 var bInstallTor
-SectionGroup "!Tor ${TOR_VERSION}" TorGroup
-    Section "Tor" Tor
+SectionGroup "!${TOR_DESC}" TorGroup
+    ;--------------------------------
+    ; Tor application binaries
+    Section "${TOR_NAME}" Tor
     ;Files that have to be installed for tor to run and that the user
     ;cannot choose not to install
        SectionIn 1 2
        SetOutPath "$INSTDIR\Tor"
-       File "tor\${TOR_VERSION}\tor.exe"
-       File "tor\${TOR_VERSION}\tor_resolve.exe"
-       File "tor\${TOR_VERSION}\${TOR_UNINST}"
+       File "tor\${TOR_APPVERSION}\tor.exe"
+       File "tor\${TOR_APPVERSION}\tor_resolve.exe"
+       File "tor\${TOR_APPVERSION}\${TOR_UNINST}"
        WriteIniStr "$INSTDIR\Tor\Tor Website.url" "InternetShortcut" "URL" "http://tor.eff.org"
 
        StrCpy $configfile "torrc"
        StrCpy $configdir $APPDATA\Tor
-    ;   ;If $APPDATA isn't valid here (Early win95 releases with no updated
-    ;   ; shfolder.dll) then we put it in the program directory instead.
-    ;   StrCmp $APPDATA "" "" +2
-    ;      StrCpy $configdir $INSTDIR
        SetOutPath $configdir
+
        ;If there's already a torrc config file, ask if they want to
        ;overwrite it with the new one.
        IfFileExists "$configdir\torrc" "" endiftorrc
-          MessageBox MB_ICONQUESTION|MB_YESNO "You already have a Tor config file.$\r$\nDo you want to overwrite it with the default sample config file?" IDNO yesreplace
+          MessageBox MB_ICONQUESTION|MB_YESNO "$(TorAskOverwriteTorrc)" IDNO yesreplace
           Delete $configdir\torrc
           Goto endiftorrc
          yesreplace:
           StrCpy $configfile "torrc.sample"
        endiftorrc:
-       File /oname=$configfile "tor\${TOR_VERSION}\torrc.sample"
+       File /oname=$configfile "tor\${TOR_APPVERSION}\torrc.sample"
 
        ; Write the uninstall keys for Windows
-       WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "DisplayName" "${TOR_NAME} ${TOR_VERSION}"
+       WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "DisplayName" "${TOR_DESC}"
        WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "UninstallString" '"$INSTDIR\Tor\${TOR_UNINST}"'
        WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "NoModify" 1
        WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "NoRepair" 1
@@ -131,20 +145,26 @@ SectionGroup "!Tor ${TOR_VERSION}" TorGroup
        IntOp $bInstallTor 0 + 1
     SectionEnd
 
-    Section "OpenSSL 0.9.8a" TorOpenSSL
+    ;--------------------------------
+    ; OpenSSL binaries
+    Section "$(TorOpenSSL)" TorOpenSSL
        SectionIn 1 2
        SetOutPath "$INSTDIR\Tor"
-       File "tor\${TOR_VERSION}\libeay32.dll"
-       File "tor\${TOR_VERSION}\ssleay32.dll"
+       File "tor\${TOR_APPVERSION}\libeay32.dll"
+       File "tor\${TOR_APPVERSION}\ssleay32.dll"
     SectionEnd
 
-    Section "Documentation" TorDocs
-       SectionIn 1 2
+    ;--------------------------------
+    ; Tor documentation
+    Section "$(TorDocumentation)" TorDocs
+       SectionIn 1
        SetOutPath "$INSTDIR\Tor\Documents"
-       File "tor\${TOR_VERSION}\Documents\*.*"
+       File "tor\${TOR_APPVERSION}\Documents\*.*"
     SectionEnd
 
-    Section "Add to Start Menu" TorStartMenu
+    ;--------------------------------
+    ; Tor Start menu shortcuts
+    Section "$(TorShortcuts)" TorShortcuts
       SectionIn 1
         SetShellVarContext all ; (Add to "All Users" Start Menu if possible)
         SetOutPath "$INSTDIR\Tor"
@@ -169,20 +189,22 @@ SectionGroupEnd
 ;--------------------------------
 ; Vidalia
 var bInstallVidalia
-SectionGroup "Vidalia ${VIDALIA_VERSION}" VidaliaGroup
-    Section "Vidalia" Vidalia
+SectionGroup "${VIDALIA_DESC}" VidaliaGroup
+    ;--------------------------------
+    ; Vidalia application binaries
+    Section "${VIDALIA_NAME}" Vidalia
       SectionIn 1 2
 
       ; Set output path to the installation directory.
       SetOutPath "$INSTDIR\Vidalia"
-      File "Vidalia\${VIDALIA_VERSION}\${VIDALIA_EXEC}"
-      File "Vidalia\${VIDALIA_VERSION}\${VIDALIA_UNINST}"
-      File "Vidalia\${VIDALIA_VERSION}\mingwm10.dll"
-      File "Vidalia\${VIDALIA_VERSION}\README"
-      File "Vidalia\${VIDALIA_VERSION}\CHANGELOG"
-      File "Vidalia\${VIDALIA_VERSION}\LICENSE"
-      File "Vidalia\${VIDALIA_VERSION}\COPYING"
-      File "Vidalia\${VIDALIA_VERSION}\AUTHORS"
+      File "Vidalia\${VIDALIA_APPVERSION}\${VIDALIA_EXEC}"
+      File "Vidalia\${VIDALIA_APPVERSION}\${VIDALIA_UNINST}"
+      File "Vidalia\${VIDALIA_APPVERSION}\mingwm10.dll"
+      File "Vidalia\${VIDALIA_APPVERSION}\README"
+      File "Vidalia\${VIDALIA_APPVERSION}\CHANGELOG"
+      File "Vidalia\${VIDALIA_APPVERSION}\LICENSE"
+      File "Vidalia\${VIDALIA_APPVERSION}\COPYING"
+      File "Vidalia\${VIDALIA_APPVERSION}\AUTHORS"
       File "BUNDLE_LICENSE"
       
       ; Tor gets installed to $INSTDIR\Tor, so let's remember it
@@ -202,7 +224,7 @@ SectionGroup "Vidalia ${VIDALIA_VERSION}" VidaliaGroup
       SetShellVarContext all
 
       ; Write the uninstall keys for Windows  
-      WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "DisplayName" "${VIDALIA_NAME} ${VIDALIA_VERSION}"
+      WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "DisplayName" "${VIDALIA_DESC}"
       WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "UninstallString" '"$INSTDIR\Vidalia\${VIDALIA_UNINST}"'
       WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "NoModify" 1
       WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "NoRepair" 1
@@ -211,10 +233,9 @@ SectionGroup "Vidalia ${VIDALIA_VERSION}" VidaliaGroup
     SectionEnd
 
     ;--------------------------------
-    ; Start Menu Shortcuts
-    ; Optional section (can be disabled by the user)
-    Section "Add to Start Menu" VidaliaShortcuts
-      SectionIn 1 2
+    ; Vidalia Start menu shortcuts
+    Section "$(VidaliaShortcuts)" VidaliaShortcuts
+      SectionIn 1
       SetShellVarContext all ; (Add to "All Users" Start Menu if possible)
       CreateDirectory "$SMPROGRAMS\Vidalia"
       CreateShortCut "$SMPROGRAMS\Vidalia\Uninstall.lnk" "$INSTDIR\Vidalia\uninstall.exe" "" "$INSTDIR\Vidalia\${VIDALIA_UNINST}" 0
@@ -222,9 +243,9 @@ SectionGroup "Vidalia ${VIDALIA_VERSION}" VidaliaGroup
     SectionEnd
 
     ;--------------------------------
-    ; Run At Startup
-    Section "Run At Startup" VidaliaRunAtStartup
-      SectionIn 1 2
+    ; Run Vidalia at startup
+    Section "$(VidaliaStartup)" VidaliaStartup
+      SectionIn 1
       WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "${VIDALIA_NAME}" '"$INSTDIR\Vidalia\${VIDALIA_EXEC}"'
     SectionEnd    
 SectionGroupEnd
@@ -233,12 +254,14 @@ SectionGroupEnd
 ;--------------------------------
 ; Privoxy
 var bInstallPrivoxy
-SectionGroup "Privoxy ${PRIVOXY_VERSION}" PrivoxyGroup
-    Section "Privoxy" Privoxy
+SectionGroup "${PRIVOXY_DESC}" PrivoxyGroup
+    ;--------------------------------
+    ; Privoxy application binaries
+    Section "${PRIVOXY_NAME}" Privoxy
         SectionIn 1 2
         ; add files / whatever that need to be installed here.
         SetOutPath "$INSTDIR\Privoxy"
-        File /r Privoxy\${PRIVOXY_VERSION}\*.*
+        File /r Privoxy\${PRIVOXY_APPVERSION}\*.*
 
         WriteRegStr HKEY_CLASSES_ROOT "PrivoxyActionFile\shell\open\command" "" 'Notepad.exe "%1"'
         WriteRegStr HKEY_CLASSES_ROOT ".action" "" "PrivoxyActionFile"
@@ -249,7 +272,7 @@ SectionGroup "Privoxy ${PRIVOXY_VERSION}" PrivoxyGroup
         WriteRegStr HKCU SOFTWARE\Privoxy "Install_Dir" "$INSTDIR"
 
         ; Write the uninstall keys for Windows
-        WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Privoxy" "DisplayName" "${PRIVOXY_NAME} ${PRIVOXY_VERSION}"
+        WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Privoxy" "DisplayName" "${PRIVOXY_DESC}"
         WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Privoxy" "UninstallString" '"$INSTDIR\Privoxy\${PRIVOXY_UNINST}"'
         WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Privoxy" "NoModify" 1
         WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Privoxy" "NoRepair" 1
@@ -258,7 +281,9 @@ SectionGroup "Privoxy ${PRIVOXY_VERSION}" PrivoxyGroup
         IntOp $bInstallPrivoxy 0 + 1
     SectionEnd
 
-    Section "Add to Start Menu" PrivoxyStartMenu
+    ;--------------------------------
+    ; Privoxy Start menu shortcuts
+    Section "$(PrivoxyShortcuts)" PrivoxyShortcuts
         SectionIn 1
         SetShellVarContext all ; (Add to "All Users" Start Menu if possible)
         RMDir /r "$SMPROGRAMS\Privoxy"
@@ -283,8 +308,8 @@ SectionGroup "Privoxy ${PRIVOXY_VERSION}" PrivoxyGroup
     SectionEnd
  
     ;--------------------------------
-    ; Run At Startup
-    Section "Run At Startup" PrivoxyRunAtStartup
+    ; Run Privoxy at startup
+    Section "$(PrivoxyStartup)" PrivoxyStartup
       SectionIn 1
       CreateShortCut "$SMSTARTUP\Privoxy.lnk" "$INSTDIR\Privoxy\privoxy.exe" "" "" 0 SW_SHOWMINIMIZED
     SectionEnd     
@@ -309,20 +334,21 @@ Function CustomFinishFn
 FunctionEnd
 
 !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
-  !insertmacro MUI_DESCRIPTION_TEXT ${Tor} "Install ${TOR_NAME} ${TOR_VERSION}"
-  !insertmacro MUI_DESCRIPTION_TEXT ${TorGroup} "Install ${TOR_NAME} ${TOR_VERSION}"
-  !insertmacro MUI_DESCRIPTION_TEXT ${TorDocs} "Install ${TOR_NAME} documentation"
-  !insertmacro MUI_DESCRIPTION_TEXT ${TorOpenSSL} "Install OpenSSL 0.9.7e"
-  !insertmacro MUI_DESCRIPTION_TEXT ${TorStartMenu} "Add ${TOR_NAME} to your Start menu"
+  !insertmacro MUI_DESCRIPTION_TEXT ${Tor} "$(TorAppDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${TorGroup} "$(TorGroupDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${TorOpenSSL} "$(TorOpenSSLDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${TorDocs} "$(TorDocumentationDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${TorShortcuts} "$(TorShortcutsDesc)"
 
-  !insertmacro MUI_DESCRIPTION_TEXT ${Vidalia} "Install ${VIDALIA_NAME} ${VIDALIA_VERSION}"
-  !insertmacro MUI_DESCRIPTION_TEXT ${VidaliaGroup} "Install ${VIDALIA_NAME} ${VIDALIA_VERSION}"
-  !insertmacro MUI_DESCRIPTION_TEXT ${VidaliaShortcuts} "Add ${VIDALIA_NAME} to your Start menu"
-  !insertmacro MUI_DESCRIPTION_TEXT ${VidaliaRunAtStartup} "Run ${VIDALIA_NAME} at startup"
+  !insertmacro MUI_DESCRIPTION_TEXT ${Vidalia} "$(VidaliaAppDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${VidaliaGroup} "$(VidaliaGroupDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${VidaliaStartup} "$(VidaliaStartupDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${VidaliaShortcuts} "$(VidaliaShortcutsDesc)"
 
-  !insertmacro MUI_DESCRIPTION_TEXT ${Privoxy} "Install ${PRIVOXY_NAME} ${PRIVOXY_VERSION}"
-  !insertmacro MUI_DESCRIPTION_TEXT ${PrivoxyGroup} "Install ${PRIVOXY_NAME} ${PRIVOXY_VERSION}"
-  !insertmacro MUI_DESCRIPTION_TEXT ${PrivoxyStartMenu} "Add ${PRIVOXY_NAME} to your Start menu"
+  !insertmacro MUI_DESCRIPTION_TEXT ${Privoxy} "$(PrivoxyAppDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${PrivoxyGroup} "$(PrivoxyGroupDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${PrivoxyStartup} "$(PrivoxyStartupDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${PrivoxyShortcuts} "$(PrivoxyShortcutsDesc)"
 !insertmacro MUI_FUNCTION_DESCRIPTION_END
 
 Function StrRep
