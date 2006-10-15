@@ -121,7 +121,7 @@
     </message>
     <message>
         <source>Unable to create %1 [%2]</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Konnte %1 nicht erstellen [2%]</translation>
     </message>
     <message>
         <source>Service</source>
@@ -1525,7 +1525,7 @@ angeben.</translation>
     </message>
     <message>
         <source>Long-term average bandwidth limit</source>
-        <translation type="unfinished"></translation>
+        <translation>Dauerhafte durchschnittliche Bandbreitenbegrenzung</translation>
     </message>
     <message>
         <source>Average Rate</source>
@@ -1537,7 +1537,7 @@ angeben.</translation>
     </message>
     <message>
         <source>Peak bandwidth rate limit</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Hochlast Bandbreitenbegrenzung</translation>
     </message>
     <message>
         <source>Maximum Rate</source>
@@ -1626,7 +1626,7 @@ angeben.</translation>
     <name>TorService</name>
     <message>
         <source>Services not supported on this platform.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dienste werden auf diesem Betriebssystem nicht unterstützt.</translation>
     </message>
     <message>
         <source>Unable to install the Tor service.</source>
