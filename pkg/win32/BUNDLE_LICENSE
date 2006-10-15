@@ -1,7 +1,7 @@
 =====================================================
-bundle.nsi is distributed under this license
+vidalia-bundle.nsi is distributed under this license
 
-bundle.nsi : Pre-configured Vidalia/Tor/Privoxy bundled installer.
+vidalia-bundle.nsi : Pre-configured Vidalia/Tor/Privoxy bundled installer.
 Copyright (C) 2006  Matt Edman
 
 This program is free software; you can redistribute it and/or modify
