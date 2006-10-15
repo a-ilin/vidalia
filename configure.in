@@ -138,21 +138,20 @@ AC_CHECK_FILE(Makefile, [rm Makefile])
 # Substitute the version number in places that need it
 AC_SUBST(VERSION, AC_PACKAGE_VERSION)
 DOCS="doc"
-OSXBUNDLE="pkg/osx/bundle"
-OSXDMG="pkg/osx"
-AC_OUTPUT([$DOCS/vidalia.1                    \
-           $DOCS/Doxyfile                     \
-           $OSXDMG/builddmg.sh                \
-           $OSXBUNDLE/buildmpkg.sh            \
-           $OSXBUNDLE/VidaliaBundleDesc.plist \
-           $OSXBUNDLE/VidaliaBundleInfo.plist \
-           $OSXBUNDLE/VidaliaDesc.plist       \
-           $OSXBUNDLE/VidaliaInfo.plist])
+OSXPKG="pkg/osx"
+AC_OUTPUT([$DOCS/vidalia.1                 \
+           $DOCS/Doxyfile                  \
+           $OSXPKG/builddmg.sh             \
+           $OSXPKG/buildmpkg.sh            \
+           $OSXPKG/VidaliaBundleDesc.plist \
+           $OSXPKG/VidaliaBundleInfo.plist \
+           $OSXPKG/VidaliaDesc.plist       \
+           $OSXPKG/VidaliaInfo.plist])
 
 # Make the mpkg and dmg scripts executable
 if test x$CHMOD != x; then
-  $CHMOD u+x $OSXBUNDLE/buildmpkg.sh
-  $CHMOD u+x $OSXDMG/builddmg.sh
+  $CHMOD u+x $OSXPKG/buildmpkg.sh
+  $CHMOD u+x $OSXPKG/builddmg.sh
 fi
 
 # Build the translations
