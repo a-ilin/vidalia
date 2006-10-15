@@ -83,9 +83,11 @@ XPStyle           on
 !insertmacro MUI_LANGUAGE "English"
 !insertmacro MUI_LANGUAGE "Finnish"
 !insertmacro MUI_LANGUAGE "German"
+!insertmacro MUI_LANGUAGE "Russian"
 !include "vidalia_en.nsh"
 !include "vidalia_de.nsh"
 !include "vidalia_fi.nsh"
+!include "vidalia_ru.nsh"
 
 ;--------------------------------
 ; Functions
