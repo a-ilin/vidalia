@@ -520,11 +520,11 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
         <source>Find</source>
-        <translation>Gefunden</translation>
+        <translation>Suchen</translation>
     </message>
     <message>
         <source>Search for a word or phrase on current page (Ctrl+F)</source>
-        <translation>Suche Wort oder Satz in aktueller Seite (Strg+F)</translation>
+        <translation>Suche nach einem Wort oder Satz in der aktuellen Seite (Strg+F)</translation>
     </message>
     <message>
         <source>Ctrl+F</source>
