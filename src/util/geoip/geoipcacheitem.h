@@ -47,7 +47,9 @@ public:
   GeoIp geoip() const { return _geoip; }
   /** Returns true if this cache item is expired. */
   bool isExpired() const;
- 
+  /** Returns true if this cache item is empty and invalid. */
+  bool isEmpty() const;
+
   /** Returns a string representing the contents of this cache item, suitable
    * for writing to disk. */
   QString toString() const;

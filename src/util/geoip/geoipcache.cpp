@@ -110,7 +110,7 @@ GeoIpCache::loadFromDisk(QString *errmsg)
     while (!line.isNull()) {
       /* Create a GeoIpCacheItem from the line and save it */
       GeoIpCacheItem item = GeoIpCacheItem::fromString(line);
-      if (!item.isExpired()) {
+      if (!item.isEmpty() && !item.isExpired()) {
         /* Only load non-stale cache items. */
         _cache.insert(item.ip().toIPv4Address(), item);
       }

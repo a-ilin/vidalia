@@ -37,6 +37,14 @@ GeoIpCacheItem::GeoIpCacheItem(GeoIp geoip, QDateTime timestamp)
   _timestamp = timestamp;
 }
 
+/** Returns true if this cache item is empty and invalid. A valid cache item
+ * must have a valid GeoIp object and timestamp. */
+bool
+GeoIpCacheItem::isEmpty() const
+{
+  return (_geoip.isEmpty() || _timestamp.isNull());
+}
+
 /** Returns a string representing the contents of this cache item, suitable
  * for writing to disk. The format is as in the following example:
  *                     <Geo IP Data>:<Timestamp>
@@ -50,16 +58,23 @@ GeoIpCacheItem::toString() const
 /** Returns a GeoIpCacheItem from a string as read from the cache that was
  * written to disk. The format is:
  *                     <Geo IP Data>:<Timestamp>
+ *
+ * If the string cannot be parsed for valid cached GeoIP data, then an empty
+ * GeoIpCacheItem object is returned. The calling method should call isEmpty()
+ * on the returned GeoIpCacheItem object to ensure it got a valid object.
  */
 GeoIpCacheItem
 GeoIpCacheItem::fromString(QString cacheString)
 {
   QDateTime timestamp;
   QStringList cacheData = cacheString.split(":");
-  
-  GeoIp geoip = GeoIp::fromString(cacheData.at(0));
-  timestamp.setTime_t(cacheData.at(1).toUInt());
-  return GeoIpCacheItem(geoip, timestamp);
+ 
+  if (cacheData.size() >= 2) {
+    GeoIp geoip = GeoIp::fromString(cacheData.at(0));
+    timestamp.setTime_t(cacheData.at(1).toUInt());
+    return GeoIpCacheItem(geoip, timestamp);
+  }
+  return GeoIpCacheItem();
 }
 
 /** Returns true if the cache item is too old to be considered valid. */
