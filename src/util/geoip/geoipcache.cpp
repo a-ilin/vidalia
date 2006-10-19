@@ -134,12 +134,8 @@ GeoIpCache::cache(GeoIp geoip)
 GeoIp
 GeoIpCache::geoip(QHostAddress ip)
 {
-  quint32 ipv4 = ip.toIPv4Address();
-  if (_cache.contains(ipv4)) {
-    GeoIpCacheItem cacheItem = _cache.value(ipv4);
-    if (!cacheItem.isExpired()) {
-      return cacheItem.geoip();
-    }
+  if (this->contains(ip)) {
+    return _cache.value(ip.toIPv4Address()).geoip();
   }
   return GeoIp();
 }
