@@ -56,7 +56,7 @@ Jos on kiinnostusta auttaa Tor-verkon toimintaa ylläpitämällä omaa palvelint
       </li>
     </ul>
   <li>
-    Jos haluat välittää listaa verkossa olevista Tor-palvelimista, niin rastita ruutu <i>Välitä listaa Tor-palvelimista</i>.
+    Jos haluat välittää listaa verkossa olevista Tor-palvelimista, niin rastita ruutu <i>Välitä Tor-palvelinlistaa</i>.
      Jos on yhteys on hidas, niin ei välttämättä ole kannatavaa rastittaa. Jos haluaa välittää listaa Tor-palvelimista, niin varmista <i>lista-portin</i> olevan eri kuin <i>palvelinportti</i>.
   </li>
   <li>
@@ -67,26 +67,20 @@ Jos on kiinnostusta auttaa Tor-verkon toimintaa ylläpitämällä omaa palvelint
 <a name="bandwidth"/>
 <h3>Nopeudenrajoittaminen</h3>
 <p>
-Tor-palvelimen ylläpito kuluttaa paljon yhteyskaistaa, sitä paitsi Tor sallii rajoittaa käytettävän yhteyskaistan määrän Tor-palvelimille. Palvelinta voi pitää päällä samalla kun yhteyttä käytetään muihin tarkoituksiin.
+Tor-palvelimen ylläpito kuluttaa paljon yhteyskaistaa, jonka vuoksi Tor sallii käytettävän yhteyskaistanmäärän Tor-palvelimille rajoittamisen. Palvelinta voi pitää päällä samalla kun yhteyttä käytetään muihin tarkoituksiin.
 </p>
 <p>
-<i>Keskimääräinen nopeus</i> on suurin pitkäaikainenkeskimääräinen sallittu nopeus (kilotavua sekunnissa). Esimerkiksi kannattavaa on asettaa 2 megabittiä sekunnissa (2048 kt/s) tai 50 kilotavua sekunnissa (tyypillinen laajakaistayhteyden nopeus). Tor tarvitsee vähintään 20 kilotavua sekunnissa toimiakseen palvelimena.
+<i>Keskimääräinennopeus</i> on suurin pitkäaikainenkeskimääräinen sallittu nopeus (kilotavua sekunnissa). Esimerkiksi kannattavaa on asettaa 2 megabittiä sekunnissa (2048 kt/s) tai 50 kilotavua sekunnissa (tyypillinen laajakaistayhteyden nopeus). Tor tarvitsee vähintään 20 kilotavua sekunnissa toimiakseen palvelimena.
 </p>
 <p>
 The <i>maximum rate</i> is a pool of bytes used to fulfill requests during
 short periods of traffic higher than your specified <i>average rate</i>, but
 still maintains the average over a long period. A low average rate but a high
 maximum rate enforces a long-term average while still allowing more traffic
-during peak times if the average hasn't been reached lately. If your average
-rate is the same as your <i>maximum rate</i>, then Tor will never exceed the
-specified rate. <i>Enimmäisnopeutesi</i> täytyy olla yhtä suuri tai suurempi kuin <i>keskimääräinen nopeus</i>.
+during peak times if the average hasn't been reached lately. Jos kerkimääräinennopeus on sama kuin <i>enimmäisnopeus</i> Tor ei ylitä määriteltyä nopeutta. <i>Enimmäisnopeutesi</i> täytyy olla yhtä suuri tai suurempi kuin <i>keskimääräinen nopeus</i>.
 </p>
 <p>
-Tärkeää on huomioida, että Tor laskee liikkuvan tiedon <b>tavuina</b> eikä bitteinä. Myös, Tor rajottaa vain tulevaa liikennettä lähettävän sijasta. For
-example, if your server acts as a directory mirror, you may be sending more
-outgoing bytes than incoming. If you find this is the case and is putting too
-much strain on your bandwidth, you should consider unchecking the checkbox
-labeled <i>Mirror the server directory</i>.
+Tärkeää on huomioida, että Tor laskee liikkuvan tiedon <b>tavuina</b> eikä bitteinä. Myös, Tor rajottaa vain tulevaa liikennettä lähettävän sijasta. Esimerkiksi, jos oma palvelin välittää listaa Tor-palvelimista silloin lähetetään enemmän tietoa kuin vastaanotetaan. Jos tämä rasittaa liikaa yhteyttä, niin kannattaa poistaa rasti <i>Välitä Tor-palvelinlistaa</i>.
 </p>
 
 <a name="exitpolicy"/>
@@ -96,14 +90,11 @@ Poistumiskäytännöillä määritellään millaista liikennettä sallitaan pois
 </p>
 
 <p>
-Poistumiskäytäntö koostuu nollasta tai useammasta säännöstä, jotka ilmaisevat Tor-verkosta poistuville yhteyksille toimeenpiteen käytännön mukaiselli osoitteille tai porteille. 
+Poistumiskäytännöt koostuvat ei yhdestäkään tai useammasta säännöstä, jotka ilmaisevat Tor-verkosta poistuville yhteyksille toimeenpiteen käytännön mukaisille osoitteille tai porteille. 
 </p>
 
 <p>
-Policies are considered by Tor from first to last and Tor takes the action
-associated with the first match it finds. Any policies you add will be added to
-the beginning of Tor's list of default exit policies. Since policies are
-considered from first to last, ordering is important. Ylös- ja alas-nuolinäppäimmillä voi vaihtaa käytäntöjen järjestystä.
+Käytäntöjä Tor käsittelee ylhäältä alas. Kaikki käytännöt, jotka asetetaan ylös alkuun ovat Tor:in oletus poistumiskäytäntö-listassa. Koska käytäntöjä käsitellään ylhäältä alas, niin listan järjestyksellä on merkistystä. Ylös- ja alas-nuolinäppäimmillä voi vaihtaa käytäntöjen järjestystä.
 </p>
 
 <h4>Toimenpiteet</h4>
