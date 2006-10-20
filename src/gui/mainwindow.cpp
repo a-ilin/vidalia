@@ -413,9 +413,6 @@ MainWindow::stop()
   QString errmsg;
   bool shutdown;
   
-  /* Indicate that Tor is about to shut down */
-  _trayIcon->update(IMG_TOR_STOPPING, tr("Tor is stopping"));
-
   /* If we're running a server, give users the option of terminating
    * gracefully so clients have time to find new servers. */
   if (server.isServerEnabled() && !delayedShutdownStarted
@@ -432,7 +429,11 @@ MainWindow::stop()
     }
   }
 
-  if (!shutdown) {
+  if (shutdown) {
+    /* Indicate that Tor is about to shut down */
+    _trayIcon->update(IMG_TOR_STOPPING, tr("Tor is stopping"));
+  } else {
+    /* We couldn't tell Tor to stop, for some reason. */
     int response = VMessageBox::warning(this, tr("Error Stopping Tor"),
                      p(tr("Vidalia was unable to stop Tor.")) + p(errmsg),
                      VMessageBox::Ok|VMessageBox::Default|VMessageBox::Escape, 
@@ -444,7 +445,6 @@ MainWindow::stop()
     }
     
     /* Tor is still running since stopping failed */
-    _trayIcon->update(IMG_TOR_RUNNING, tr("Tor is running"));
     _isIntentionalExit = false;
   }
 }
