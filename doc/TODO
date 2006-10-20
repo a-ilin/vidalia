@@ -33,8 +33,7 @@ Features planned for 0.1.x:
 
 
 Miscellaneous Tasks:
-  * Create Vidalia packages for Red Hat and Debian.
-  * Package Torbutton or FoxTor with our bundles.
+  * Create a Vidalia package for Debian.
   * Improve window transparency support. In particular, figure out how to do the
     following correctly on X11 (from the Qt docs):
       "This feature is available on Mac OS X, X11 platforms that support the Composite 
