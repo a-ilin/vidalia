@@ -1,4 +1,4 @@
-                Building the Vidalia/Tor/Privoxy Bundle
+         Building the Vidalia/Tor/Privoxy/Torbutton Bundle
 
 
 1. Create a base directory under which the necessary sources will be extracted
@@ -16,28 +16,32 @@ this example, we will just use C:\bundle\.
         C:\bundle\privoxy\
         C:\bundle\tor\
         C:\bundle\vidalia\
+        C:\bundle\torbutton\
 
-3. Modify the appropriate version values (VIDALIA_APPVERSION, TOR_APPVERSION, and
-PRIVOXY_APPVERSION) at the top of vidalia-bundle.nsi.
+3. Modify the appropriate version values (VIDALIA_APPVERSION, TOR_APPVERSION,
+PRIVOXY_APPVERSION, and TORBUTTON_APPVERSION) at the top of vidalia-bundle.nsi.
 
 4. Create directories for the appropriate versions of each component.
 
         C:\bundle\privoxy\3.0.3\
         C:\bundle\tor\0.1.1.20\
         C:\bundle\vidalia\0.0.6\
+        C:\bundle\torbutton\1.0.4-fx+tb\
 
-5. Install Vidalia, Tor, and Privoxy to the directories you created for them.
+5. Install Vidalia, Tor, and Privoxy to the directories you created for them
+in Step 4. Remember that you may need to grab the torrc.sample file from
+%APPDATA%\Tor that was created by Tor's installer and place it in the directory
+for the bundle's version of Tor.
 
-6. Modify Privoxy's config.txt file as follows:
+6. Place the Torbutton Firefox extension (.xpi) in the directory you created
+for it in Step 4.
+
+7. Modify Privoxy's config.txt file as follows:
 
     * Add "forward-socks4a / localhost:9050 ." (without quotes) to the top
     * Comment out "logfile privoxy.log" in Section 1.5
     * Comment out "jarfile jar.log" in Section 1.6
     * Uncomment "log-messages 1" in Section 6 and change the '1' to a '0'
-
-7. Install Tor to the directory you created for its version. Remember that you
-may need to grab the torrc.sample file from %APPDATA%\Tor that was created by
-the installer and place it in the directory for the bundle's version of Tor.
 
 8. Run the vidalia-bundle.nsi script. The bundle will be named according the
 the versions you specified in Step 4 and placed in the base directory created
@@ -45,7 +49,7 @@ in Step 1.
 
 --------------------------------------------------------------------------------
 
-For each additional release of some component of the bundle, follow Steps 4-9.
+For each additional release of some component of the bundle, follow Steps 4-8.
 If the version of some component didn't change, you can skip its step. For
-example, if the version of Privoxy didn't change then you can skip Step 6.
+example, if the version of Privoxy didn't change then you can skip Step 7.
 

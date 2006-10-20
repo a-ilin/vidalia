@@ -48,3 +48,10 @@ LangString PrivoxyShortcutsDesc       ${LANG_FINNISH} "Lis‰‰ ${PRIVOXY_NAME} K‰y
 LangString PrivoxyStartup             ${LANG_FINNISH} "K‰ynnist‰ Windowssin k‰ynnistyess‰"
 LangString PrivoxyStartupDesc         ${LANG_FINNISH} "K‰ynnist‰ automaattisesti ${PRIVOXY_NAME} Windowssin k‰ynnistyess‰."
 
+; Torbutton
+LangString TorbuttonGroupDesc         ${LANG_FINNISH} "Install ${TORBUTTON_DESC}."
+LangString TorbuttonAppDesc           ${LANG_FINNISH} "Install ${TORBUTTON_DESC}."
+LangString TorbuttonAddToFirefox      ${LANG_FINNISH} "Add to Firefox"
+LangString TorbuttonAddToFirefoxDesc  ${LANG_FINNISH} "Add the ${TORBUTTON_DESC} extension to Firefox."
+LangString TorbuttonFirefoxNotFound   ${LANG_FINNISH} "Firefox was not found on your system. Not installing Torbutton."
+

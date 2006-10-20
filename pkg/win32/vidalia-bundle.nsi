@@ -11,6 +11,9 @@ SetCompressor /SOLID lzma
 
 ;---------------------------------
 ; Global definitions
+!define SF_SELECTED   1
+!define SECTION_OFF   0xFFFFFFFE
+
 !define VIDALIA_NAME        "Vidalia"
 !define VIDALIA_EXEC        "vidalia.exe"
 !define VIDALIA_APPVERSION  "0.0.8"
@@ -28,6 +31,10 @@ SetCompressor /SOLID lzma
 !define PRIVOXY_APPVERSION  "3.0.3"
 !define PRIVOXY_DESC        "${PRIVOXY_NAME} ${PRIVOXY_APPVERSION}"
 !define PRIVOXY_UNINST      "privoxy_uninstall.exe"
+
+!define TORBUTTON_NAME      "Torbutton"
+!define TORBUTTON_APPVERSION "1.0.4-fx+tb"
+!define TORBUTTON_DESC      "${TORBUTTON_NAME} ${TORBUTTON_APPVERSION}"
 
 !define OPENSSL_NAME        "OpenSSL"
 !define OPENSSL_APPVERSION  "0.9.8a"
@@ -103,11 +110,7 @@ XPStyle         on
   ;InstType /COMPONENTSONLYONCUSTOM
 !endif
 
-;--------------------------------
-; Functions
-Function .onInit
-  !insertmacro MUI_LANGDLL_DISPLAY
-FunctionEnd
+
 
 ;--------------------------------
 ; Tor
@@ -321,6 +324,50 @@ SectionGroup "${PRIVOXY_DESC}" PrivoxyGroup
     SectionEnd     
 SectionGroupEnd
 
+;--------------------------------
+; Torbutton
+SectionGroup "${TORBUTTON_DESC}" TorbuttonGroup
+  Section "${TORBUTTON_NAME}" Torbutton
+    SectionIn 1 2
+    SetOutPath "$INSTDIR\Torbutton"
+    File torbutton\${TORBUTTON_APPVERSION}\torbutton-${TORBUTTON_APPVERSION}.xpi
+  SectionEnd
+
+  Section "$(TorbuttonAddToFirefox)" TorbuttonAddToFirefox
+    SectionIn 1 2
+    ReadRegStr $1 HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\firefox.exe" "Path"
+    StrCmp $1 "" FirefoxNotFound 0 ; if Path is empty or null, then skip to an error, otherwise proceed
+	  Exec '"$1firefox.exe" -install-global-extension "$INSTDIR\Torbutton\torbutton-${TORBUTTON_APPVERSION}.xpi"'
+  	Goto TorbuttonInstalled
+    FirefoxNotFound:
+	  MessageBox MB_OK|MB_ICONSTOP "$(TorbuttonFirefoxNotFound)"
+    TorbuttonInstalled:
+  SectionEnd
+SectionGroupEnd
+
+;--------------------------------
+; Functions
+Function .onInit
+  !insertmacro MUI_LANGDLL_DISPLAY
+FunctionEnd
+
+Function .onSelChange
+  Push $0
+
+  ; Check if the Torbutton option was unchecked
+  SectionGetFlags ${Torbutton} $0
+  IntOp $0 $0 & ${SF_SELECTED}
+  IntCmp $0 0 0 SelChangeDone SelChangeDone
+
+  ; Uncheck the "Add to Firefox" box
+  SectionGetFlags ${TorbuttonAddToFirefox} $0
+  IntOp $0 $0 & ${SECTION_OFF}
+  SectionSetFlags ${TorbuttonAddToFirefox} $0
+  
+  SelChangeDone:
+  Pop $0
+FunctionEnd
+
 Function CustomFinishFn
     IntCmp $bInstallVidalia 1 run_vidalia check_tor check_tor
     run_vidalia:
@@ -355,6 +402,10 @@ FunctionEnd
   !insertmacro MUI_DESCRIPTION_TEXT ${PrivoxyGroup} "$(PrivoxyGroupDesc)"
   !insertmacro MUI_DESCRIPTION_TEXT ${PrivoxyStartup} "$(PrivoxyStartupDesc)"
   !insertmacro MUI_DESCRIPTION_TEXT ${PrivoxyShortcuts} "$(PrivoxyShortcutsDesc)"
+
+  !insertmacro MUI_DESCRIPTION_TEXT ${Torbutton} "$(TorbuttonAppDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${TorbuttonGroup} "$(TorbuttonGroupDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${TorbuttonAddToFirefox} "$(TorbuttonAddToFirefoxDesc)"
 !insertmacro MUI_FUNCTION_DESCRIPTION_END
 
 Function StrRep

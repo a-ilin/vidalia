@@ -26,10 +26,10 @@
 
 ; Bundle
 LangString BundleSetupCaption         ${LANG_ENGLISH} "${BUNDLE_NAME} setup"
-LangString BundleWelcomeText          ${LANG_ENGLISH} "This wizard will guide you through the installation of:\r\n\tTor\t${TOR_APPVERSION}\r\n\tVidalia\t${VIDALIA_APPVERSION}\r\n\tPrivoxy\t${PRIVOXY_APPVERSION}\r\n\r\nIf you have previously installed Tor, Vidalia, or Privoxy, please make sure they are not running before continuing this installation.\r\n\r\n$_CLICK"
+LangString BundleWelcomeText          ${LANG_ENGLISH} "This wizard will guide you through the installation of Tor, Vidalia, Privoxy, and Torbutton.\r\n\r\nIf you have previously installed Tor, Vidalia, Privoxy, or Firefox, please make sure they are not running before continuing this installation.\r\n\r\n$_CLICK"
 LangString BundleWelcomeTitle         ${LANG_ENGLISH} "Welcome to the ${BUNDLE_NAME} Setup Wizard"
 LangString BundleLinkText             ${LANG_ENGLISH} "${TOR_NAME} installation documentation"
-LangString BundleFinishText           ${LANG_ENGLISH} "Installation is complete.\r\nPlease see http://tor.eff.org/docs/tor-doc-win32.html to learn how to configure your applications to use Tor.\r\n"
+LangString BundleFinishText           ${LANG_ENGLISH} "Installation is complete.\r\nPlease see http://tor.eff.org/docs/tor-doc-win32.html to learn how to configure your applications to use Tor.\r\n\r\nIf you installed Torbutton, you will need to restart Firefox."
 LangString BundleRunNow               ${LANG_ENGLISH} "Run installed components now"
 
 
@@ -66,4 +66,11 @@ LangString PrivoxyShortcuts           ${LANG_ENGLISH} "Add to Start Menu"
 LangString PrivoxyShortcutsDesc       ${LANG_ENGLISH} "Add ${PRIVOXY_NAME} to your Start menu."
 LangString PrivoxyStartup             ${LANG_ENGLISH} "Run At Startup"
 LangString PrivoxyStartupDesc         ${LANG_ENGLISH} "Automatically run ${PRIVOXY_NAME} at startup."
+
+; Torbutton
+LangString TorbuttonGroupDesc         ${LANG_ENGLISH} "Install ${TORBUTTON_DESC}."
+LangString TorbuttonAppDesc           ${LANG_ENGLISH} "Install ${TORBUTTON_DESC}."
+LangString TorbuttonAddToFirefox      ${LANG_ENGLISH} "Add to Firefox"
+LangString TorbuttonAddToFirefoxDesc  ${LANG_ENGLISH} "Add the ${TORBUTTON_DESC} extension to Firefox."
+LangString TorbuttonFirefoxNotFound   ${LANG_ENGLISH} "Firefox was not found on your system. Not installing Torbutton."
 

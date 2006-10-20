@@ -1,4 +1,4 @@
-;; $Id: $
+;; $Id$
 ;; 
 ;; Vidalia installer and bundle Russian translation
 ;; 
@@ -46,4 +46,11 @@ LangString PrivoxyShortcuts           ${LANG_RUSSIAN} "Ярлыки в Главное Меню"
 LangString PrivoxyShortcutsDesc       ${LANG_RUSSIAN} "Добавить ${PRIVOXY_NAME} в Главное Меню."
 LangString PrivoxyStartup             ${LANG_RUSSIAN} "Автозапуск"
 LangString PrivoxyStartupDesc         ${LANG_RUSSIAN} "Автоматически запускать ${PRIVOXY_NAME} при загрузке системы."
+
+; Torbutton
+LangString TorbuttonGroupDesc         ${LANG_RUSSIAN} "Install ${TORBUTTON_DESC}."
+LangString TorbuttonAppDesc           ${LANG_RUSSIAN} "Install ${TORBUTTON_DESC}."
+LangString TorbuttonAddToFirefox      ${LANG_RUSSIAN} "Add to Firefox"
+LangString TorbuttonAddToFirefoxDesc  ${LANG_RUSSIAN} "Add the ${TORBUTTON_DESC} extension to Firefox."
+LangString TorbuttonFirefoxNotFound   ${LANG_RUSSIAN} "Firefox was not found on your system. Not installing Torbutton."
 
