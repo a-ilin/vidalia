@@ -80,8 +80,8 @@ ServerSettings::ServerSettings(TorControl *torControl)
   setDefault(SETTING_SERVER_ORPORT,     9001);
   setDefault(SETTING_SERVER_DIRPORT,    9030);
   setDefault(SETTING_SERVER_CONTACT,    "<your@email.com>");
-  setDefault(SETTING_SERVER_BWRATE,     2097152);
-  setDefault(SETTING_SERVER_BWBURST,    5242880);
+  setDefault(SETTING_SERVER_BWRATE,     3145728);
+  setDefault(SETTING_SERVER_BWBURST,    6291456);
   setDefault(SETTING_SERVER_NICKNAME,   "Unnamed");
   setDefault(SETTING_SERVER_ADDRESS,    net_local_address().toString());
   setDefault(SETTING_SERVER_AUTOUPDATE_ADDRESS, false);
@@ -171,12 +171,13 @@ ServerSettings::value(QString key)
   QVariant value;
   QString confKey, confValue;
   confKey = key.mid(key.indexOf("/")+1);
-  if (_torControl->isConnected()) {
-    if (_torControl->getConf(confKey, confValue)) {
-      value.setValue(confValue);
-      value.convert(defaultValue(key).type());
-    }
+  if (_torControl->isConnected() &&
+      _torControl->getConf(confKey, confValue)) {
+    /* Get the value from Tor */
+    value.setValue(confValue);
+    value.convert(defaultValue(key).type());
   } else {
+    /* Read our saved value from vidalia.conf */
     value = VidaliaSettings::value(key);
   }
   return (isEmptyValue(value) ? defaultValue(key) : value);
