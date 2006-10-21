@@ -49,9 +49,9 @@ LangString PrivoxyStartup             ${LANG_FINNISH} "Käynnistä Windowssin käyn
 LangString PrivoxyStartupDesc         ${LANG_FINNISH} "Käynnistä automaattisesti ${PRIVOXY_NAME} Windowssin käynnistyessä."
 
 ; Torbutton
-LangString TorbuttonGroupDesc         ${LANG_FINNISH} "Install ${TORBUTTON_DESC}."
-LangString TorbuttonAppDesc           ${LANG_FINNISH} "Install ${TORBUTTON_DESC}."
-LangString TorbuttonAddToFirefox      ${LANG_FINNISH} "Add to Firefox"
-LangString TorbuttonAddToFirefoxDesc  ${LANG_FINNISH} "Add the ${TORBUTTON_DESC} extension to Firefox."
-LangString TorbuttonFirefoxNotFound   ${LANG_FINNISH} "Firefox was not found on your system. Not installing Torbutton."
+LangString TorbuttonGroupDesc         ${LANG_FINNISH} "Asenna ${TORBUTTON_DESC}."
+LangString TorbuttonAppDesc           ${LANG_FINNISH} "Asenna ${TORBUTTON_DESC}."
+LangString TorbuttonAddToFirefox      ${LANG_FINNISH} "Lisää Firefoxiin"
+LangString TorbuttonAddToFirefoxDesc  ${LANG_FINNISH} "Lisää ${TORBUTTON_DESC}-lisäosa Firefoxiin."
+LangString TorbuttonFirefoxNotFound   ${LANG_FINNISH} "Firefox-selainta ei löytynyt koneelta. Torbuttonia ei asennettu."
 
