@@ -45,14 +45,14 @@
 #define BANDWIDTH_HELP        "server.bandwidth"
 
 /* These are completely made up values (in bytes/sec). */
-#define CABLE256_AVG_RATE       (256*1024)
-#define CABLE256_MAX_RATE       (512*1024)
-#define CABLE512_AVG_RATE       (512*1024)
-#define CABLE512_MAX_RATE       (1024*1024)
-#define CABLE768_AVG_RATE       (768*1024)
-#define CABLE768_MAX_RATE       (1536*1024)
-#define T1_AVG_RATE             (1536*1024)
-#define T1_MAX_RATE             (3072*1024)
+#define CABLE256_AVG_RATE       (32*1024)
+#define CABLE256_MAX_RATE       (64*1024)
+#define CABLE512_AVG_RATE       (64*1024)
+#define CABLE512_MAX_RATE       (128*1024)
+#define CABLE768_AVG_RATE       (96*1024)
+#define CABLE768_MAX_RATE       (192*1024)
+#define T1_AVG_RATE             (192*1024)
+#define T1_MAX_RATE             (384*1024)
 #define HIGHBW_AVG_RATE         (3072*1024)
 #define HIGHBW_MAX_RATE         (6144*1024)
 
