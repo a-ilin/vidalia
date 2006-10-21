@@ -38,6 +38,7 @@
 #include "configpage.h"
 #include "ui_serverpage.h"
 
+
 class ServerPage : public ConfigPage
 {
   Q_OBJECT
@@ -61,18 +62,33 @@ private slots:
   void exitPolicyHelp();
   /** Called when the user's public IP address needs to be updated. */
   void updateServerIP();
-	/** Called when the user selects a new value from the rate cmbo box */
+	/** Called when the user selects a new value from the rate combo box */
 	void rateChanged(int rate);
   /** Called when the user edits the max or average bandwidth limits. */
   void customRateChanged();
 
 private:
+  /** Index values of rate values in the bandwidth limits dropdown box. */
+  enum BwRateIndex {
+    CableDsl256 = 0, /**< Cable/DSL 256 Kbps */
+    CableDsl512,     /**< Cable/DSL 512 Kbps */
+    CableDsl768,     /**< Cable/DSL 768 Kbps */
+    T1CableDsl1500,  /**< T1/Cable/DSL 1.5 Mbps */
+    GreaterThan1500, /**< > 1.5 Mbps */
+    CustomBwLimits   /**< Custom bandwidth limits */
+  };
+  
   /** Attempts to find the server's public IP address */
   void getServerPublicIP(); 
   /** Returns the index of the selected item in lstExitPolicies */
   int selectedIndex();
   /** Enables or disables the automatic update timer. */
   void setAutoUpdateTimer(bool enabled);
+  
+  /** Saves the server's bandwidth average and burst limits. */
+  void saveBandwidthLimits();
+  /** Loads the server's bandwidth average and burst limits. */
+  void loadBandwidthLimits();
 
   /** A TorControl object used to talk to Tor */
   TorControl* _torControl;

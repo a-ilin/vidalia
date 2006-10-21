@@ -37,9 +37,6 @@
 #include "domainvalidator.h"
 #include "nicknamevalidator.h"
 
-/** The index in the combo box where custom rate limit resides */
-#define CUSTOM_RATE 6
-
 /** Delay between updating our server IP address (in ms). */
 #define AUTO_UPDATE_ADDR_INTERVAL  1000*60*60
 
@@ -47,12 +44,23 @@
 #define EXIT_POLICY_HELP      "server.exitpolicy"
 #define BANDWIDTH_HELP        "server.bandwidth"
 
-/** Minimum allowed bandwidth rate (20KB) */
-#define MIN_RATE      20
+/* These are completely made up values (in bytes/sec). */
+#define CABLE256_AVG_RATE       (256*1024)
+#define CABLE256_MAX_RATE       (512*1024)
+#define CABLE512_AVG_RATE       (512*1024)
+#define CABLE512_MAX_RATE       (1024*1024)
+#define CABLE768_AVG_RATE       (768*1024)
+#define CABLE768_MAX_RATE       (1536*1024)
+#define T1_AVG_RATE             (1536*1024)
+#define T1_MAX_RATE             (3072*1024)
+#define HIGHBW_AVG_RATE         (3072*1024)
+#define HIGHBW_MAX_RATE         (6144*1024)
 
+/** Minimum allowed bandwidth rate (20KB) */
+#define MIN_BANDWIDTH_RATE      20
 /** Maximum bandwidth rate. This is limited to 2147483646 bytes, 
  * or 2097151 kilobytes. (2147483646/1024) */ 
-#define MAX_RATE      2097151
+#define MAX_BANDWIDTH_RATE      2097151
 
 
 /** Constructor */
@@ -90,8 +98,10 @@ ServerPage::ServerPage(QWidget *parent)
   ui.lineServerAddress->setValidator(new DomainValidator(this));
   ui.lineServerPort->setValidator(new QIntValidator(1, 65535, this));
   ui.lineDirPort->setValidator(new QIntValidator(1, 65535, this));
-  ui.lineAvgRateLimit->setValidator(new QIntValidator(MIN_RATE, MAX_RATE, this));
-  ui.lineMaxRateLimit->setValidator(new QIntValidator(MIN_RATE, MAX_RATE, this));
+  ui.lineAvgRateLimit->setValidator(
+    new QIntValidator(MIN_BANDWIDTH_RATE, MAX_BANDWIDTH_RATE, this));
+  ui.lineMaxRateLimit->setValidator(
+    new QIntValidator(MIN_BANDWIDTH_RATE, MAX_BANDWIDTH_RATE, this));
 }
 
 /** Destructor */
@@ -141,8 +151,7 @@ ServerPage::save(QString &errmsg)
   _settings->setDirPort(ui.lineDirPort->text().toUInt());
   _settings->setAddress(ui.lineServerAddress->text());
   _settings->setContactInfo(ui.lineServerContact->text());
-  _settings->setBandwidthAvgRate(ui.lineAvgRateLimit->text().toUInt()*1024);
-  _settings->setBandwidthBurstRate(ui.lineMaxRateLimit->text().toUInt()*1024);
+  saveBandwidthLimits();
   setAutoUpdateTimer(ui.chkAutoUpdate->isChecked());
 
   /* Save exit polices */
@@ -177,16 +186,12 @@ ServerPage::load()
   ui.lineDirPort->setText(QString::number(_settings->getDirPort()));
   ui.lineServerAddress->setText(_settings->getAddress());
   ui.lineServerContact->setText(_settings->getContactInfo());
-  ui.lineAvgRateLimit->setText(
-    QString::number((uint)(_settings->getBandwidthAvgRate()/1024)));
-  ui.lineMaxRateLimit->setText(
-    QString::number((uint)(_settings->getBandwidthBurstRate()/1024)));
-  
+  loadBandwidthLimits();
+
 //   foreach (Policy policy, _settings->getExitPolicy().policyList()) {
 //     addPolicyItem(policy);
 //   }
   
-  ui.frmCustomRate->setVisible(ui.cmboRate->currentIndex() == CUSTOM_RATE);
   ui.frmServer->setVisible(ui.chkEnableServer->isChecked());
 }
 
@@ -350,16 +355,85 @@ ServerPage::updateServerIP()
   }
 }
 
+/** Loads the server's bandwidth average and burst limits. */
+void
+ServerPage::loadBandwidthLimits()
+{
+  quint32 avgRate = _settings->getBandwidthAvgRate();
+  quint32 maxRate = _settings->getBandwidthBurstRate();
+
+  if (avgRate == CABLE256_AVG_RATE && 
+      maxRate == CABLE256_MAX_RATE) {
+    /* Cable/DSL 256 Kbps */
+    ui.cmboRate->setCurrentIndex(CableDsl256); 
+  } else if (avgRate == CABLE512_AVG_RATE && 
+             maxRate == CABLE512_MAX_RATE) {
+    /* Cable/DSL 512 Kbps */
+    ui.cmboRate->setCurrentIndex(CableDsl512);
+  } else if (avgRate == CABLE768_AVG_RATE && 
+             maxRate == CABLE768_MAX_RATE) {
+    /* Cable/DSL 768 Kbps */
+    ui.cmboRate->setCurrentIndex(CableDsl768);
+  } else if (avgRate == T1_AVG_RATE && 
+             maxRate == T1_MAX_RATE) {
+    /* T1/Cable/DSL 1.5 Mbps */
+    ui.cmboRate->setCurrentIndex(T1CableDsl1500);
+  } else if (avgRate == HIGHBW_AVG_RATE && 
+             maxRate == HIGHBW_MAX_RATE) {
+    /* > 1.5 Mbps */
+    ui.cmboRate->setCurrentIndex(GreaterThan1500);
+  } else {
+    /* Custom bandwidth limits */
+    ui.cmboRate->setCurrentIndex(CustomBwLimits);
+  }
+  /* Fill in the custom bandwidth limit boxes */
+  ui.lineAvgRateLimit->setText(QString::number(avgRate/1024));
+  ui.lineMaxRateLimit->setText(QString::number(maxRate/1024));
+}
+
+/** Saves the server's bandwidth average and burst limits. */
+void
+ServerPage::saveBandwidthLimits()
+{
+  quint32 avgRate, maxRate;
+
+  switch (ui.cmboRate->currentIndex()) {
+    case CableDsl256: /* Cable/DSL 256 Kbps */
+      avgRate = CABLE256_AVG_RATE;
+      maxRate = CABLE256_MAX_RATE;
+      break;
+    case CableDsl512: /* Cable/DSL 512 Kbps */
+      avgRate = CABLE512_AVG_RATE;
+      maxRate = CABLE512_MAX_RATE;
+      break;
+    case CableDsl768: /* Cable/DSL 768 Kbps */
+      avgRate = CABLE768_AVG_RATE;
+      maxRate = CABLE768_MAX_RATE;
+      break;
+    case T1CableDsl1500: /* T1/Cable/DSL 1.5 Mbps */
+      avgRate = T1_AVG_RATE;
+      maxRate = T1_MAX_RATE;
+      break;
+    case GreaterThan1500: /* > 1.5 Mbps */
+      avgRate = HIGHBW_AVG_RATE;
+      maxRate = HIGHBW_MAX_RATE;
+      break;
+    default: /* Custom bandwidth limits */
+      avgRate = (quint32)(ui.lineAvgRateLimit->text().toUInt()*1024);
+      maxRate = (quint32)(ui.lineMaxRateLimit->text().toUInt()*1024);
+      break;
+  }
+  _settings->setBandwidthAvgRate(avgRate);
+  _settings->setBandwidthBurstRate(maxRate);
+}
+
+/** Called when the user selects a new value from the rate combo box. */
 void
 ServerPage::rateChanged(int index)
 {
-  if (index == 6) {
-    ui.frmCustomRate->setVisible(true);
-  }
-
-  else {
-    ui.frmCustomRate->setVisible(false);
-  }
+  /* If the "Custom" option is selected, show the custom bandwidth 
+   * limits form. */
+  ui.frmCustomRate->setVisible(index == CustomBwLimits);
 }
 
 /** Called when the user edits the long-term average or maximum bandwidth limit. 
@@ -370,11 +444,11 @@ ServerPage::customRateChanged()
 {
   /* Make sure the average rate isn't too low or too high */
   quint32 avgRate = (quint32)ui.lineAvgRateLimit->text().toUInt();
-  if (avgRate < MIN_RATE) {
-    ui.lineAvgRateLimit->setText(QString::number(MIN_RATE));    
+  if (avgRate < MIN_BANDWIDTH_RATE) {
+    ui.lineAvgRateLimit->setText(QString::number(MIN_BANDWIDTH_RATE));    
   }
-  if (avgRate > MAX_RATE) {
-    ui.lineAvgRateLimit->setText(QString::number(MAX_RATE));
+  if (avgRate > MAX_BANDWIDTH_RATE) {
+    ui.lineAvgRateLimit->setText(QString::number(MAX_BANDWIDTH_RATE));
   }
   /* Ensure the max burst rate is greater than the average rate but less than
    * the maximum allowed rate. */
@@ -382,8 +456,8 @@ ServerPage::customRateChanged()
   if (avgRate > burstRate) {
     ui.lineMaxRateLimit->setText(QString::number(avgRate));
   }
-  if (burstRate > MAX_RATE) {
-    ui.lineMaxRateLimit->setText(QString::number(MAX_RATE));
+  if (burstRate > MAX_BANDWIDTH_RATE) {
+    ui.lineMaxRateLimit->setText(QString::number(MAX_BANDWIDTH_RATE));
   }
 }
 
