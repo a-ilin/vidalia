@@ -1818,7 +1818,7 @@ problem with your server</source>
     <message>
         <location filename="" line="0"/>
         <source>Starting port number for new exit policy</source>
-        <translation>Alkamisportti uusille poistumiskäytännölle</translation>
+        <translation>Ensimmäinen portti uusille poistumiskäytännölle</translation>
     </message>
     <message>
         <location filename="" line="0"/>
@@ -1863,12 +1863,12 @@ problem with your server</source>
     <message>
         <location filename="" line="0"/>
         <source>Increase the priority of the selected exit policy</source>
-        <translation>Nosta prioriteettia valitusta poistumiskäytännöstä</translation>
+        <translation>Nosta valitutun poistumiskäytännön tärkeyttä</translation>
     </message>
     <message>
         <location filename="" line="0"/>
         <source>Decrease the priority of the selected exit policy</source>
-        <translation>Alenna prioriteettia valitusta poistumiskäytännöstä</translation>
+        <translation>Alenna valitutun poistumiskäytännön tärkeyttä</translation>
     </message>
     <message>
         <location filename="" line="0"/>
@@ -1940,7 +1940,7 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     <message>
         <location filename="" line="0"/>
         <source>Long-term average bandwidth limit</source>
-        <translation>Keskimäärinenpitkäaikainennopeus</translation>
+        <translation>Keskimääräinen pitkäaikasnopeus</translation>
     </message>
     <message>
         <location filename="" line="0"/>
