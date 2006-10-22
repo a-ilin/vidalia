@@ -30,6 +30,7 @@
 
 #include <QList>
 #include <QString>
+#include <QStringList>
 #include <QTreeWidget>
 #include <QHeaderView>
 #include <QShowEvent>
@@ -43,7 +44,6 @@ class LogTreeWidget : public QTreeWidget
   Q_OBJECT
 
 public:
-
   /** Log tree column indices. */
   enum LogColumns {
     TimeColumn    = 0, /**< Timestamp column. */
@@ -53,15 +53,12 @@ public:
   
   /** Default constructor. */
   LogTreeWidget(QWidget *parent = 0);
-
   
-  /** Returns a list of all currently selected items. */
-  QList<LogTreeItem *> selectedMessages();
-  /** Returns a list of all selected items as a formatted string. */
-  QString selectedMessagesText();
-  /** Returns a list of all items in the tree. */
-  QList<LogTreeItem *> allMessages();
-  /** Deselects all currently selected items. */
+  /** Returns a list of all currently selected messages. */
+  QStringList selectedMessages();
+  /** Returns a list of all messages in the tree. */
+  QStringList allMessages();
+  /** Deselects all currently selected messages. */
   void deselectAll();
   
   /** Returns the number of items currently in the tree. */

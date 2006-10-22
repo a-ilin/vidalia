@@ -126,33 +126,37 @@ LogTreeWidget::addMessageItem(LogTreeItem *item)
 }
 
 /** Returns a list of all currently selected items. */
-QList<LogTreeItem *>
+QStringList
 LogTreeWidget::selectedMessages()
 {
+  QStringList messages;
+  
+  /* Get all selected log items */
   QList<LogTreeItem *> items = 
     qlist_cast(selectedItems());
-  return qlist_sort(items);
-}
-
-/** Returns a list of all selected items as a formatted string. */
-QString
-LogTreeWidget::selectedMessagesText()
-{
-  QString text;
-  foreach (LogTreeItem *item, selectedMessages()) {
-    text.append(item->toString());
+  
+  /* Format the message items as strings and put them in a list */
+  foreach (LogTreeItem *item, qlist_sort(items)) {
+    messages << item->toString();
   }
-  return text;
+  return messages;
 }
 
 /** Returns a list of all items in the tree. */
-QList<LogTreeItem *>
+QStringList
 LogTreeWidget::allMessages()
 {
+  QStringList messages;
+  
   /* Find all items */
   QList<LogTreeItem *> items = 
     qlist_cast(findItems("*", Qt::MatchWildcard|Qt::MatchWrap, MessageColumn));
-  return qlist_sort(items);
+  
+  /* Format the message items as strings and put them in a list */
+  foreach (LogTreeItem *item, qlist_sort(items)) {
+    messages << item->toString();  
+  }
+  return messages;
 }
 
 /** Returns the number of items currently shown. */
@@ -178,7 +182,7 @@ LogTreeWidget::setMaximumMessageCount(int max)
 void
 LogTreeWidget::deselectAll()
 {
-  foreach(LogTreeItem *item, selectedMessages()) {
+  foreach(QTreeWidgetItem *item, selectedItems()) {
     setItemSelected(item, false);
   }
 }

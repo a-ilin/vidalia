@@ -289,9 +289,9 @@ MessageLog::browse()
  * \param items A list of log message items to save. 
  */
 void
-MessageLog::save(QList<LogTreeItem *> items)
+MessageLog::save(QStringList messages)
 {
-  if (!items.size()) {
+  if (!messages.size()) {
     return;
   }
 
@@ -318,8 +318,8 @@ MessageLog::save(QList<LogTreeItem *> items)
    
     /* Write out the message log to the file */
     QApplication::setOverrideCursor(Qt::WaitCursor);
-    foreach (LogTreeItem *item, items) {
-      logFile << item->toString();
+    foreach (QString msg, messages) {
+      logFile << msg;
     }
     QApplication::restoreOverrideCursor();
   }
@@ -343,7 +343,7 @@ MessageLog::saveAll()
 void
 MessageLog::copy()
 {
-  QString contents = ui.lstMessages->selectedMessagesText();
+  QString contents = ui.lstMessages->selectedMessages().join("");
   if (!contents.isEmpty()) {
     /* Clear anything on the clipboard */
     QApplication::clipboard()->clear();

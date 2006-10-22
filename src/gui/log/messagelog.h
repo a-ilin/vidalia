@@ -29,6 +29,7 @@
 #define _MESSAGELOG_H
 
 #include <QMainWindow>
+#include <QStringList>
 #include <QResizeEvent>
 #include <control/torcontrol.h>
 #include <config/vidaliasettings.h>
@@ -87,7 +88,7 @@ private:
   /** Registers the current message filter with Tor */
   void registerLogEvents();
   /** Saves the given list of items to a file */
-  void save(QList<LogTreeItem *> items);
+  void save(QStringList messages);
   /** Adds the passed message to the message log as the specified type **/
   void log(LogEvent::Severity, QString msg);
   /** Rotates the log file based on the filename and the current logging status. */
