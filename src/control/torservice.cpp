@@ -27,6 +27,11 @@
 
 #include "torservice.h"
 
+/** Returned by TorService::exitCode() when we are unable to determine the
+ * actual exit code of the service (unless, of course, Tor returns -999999). */
+#define UNKNOWN_EXIT_CODE     -999999
+
+
 /** Returns true if services are supported. */
 bool
 TorService::isSupported()
@@ -163,8 +168,45 @@ TorService::stop()
     }
   }
 
-  if (!isRunning()) emit finished();
+  if (!isRunning()) {
+    /* Emit the signal that we stopped and the service's exit code and status. */
+    emit finished(exitCode(), exitStatus());
+  }
 #endif
+}
+
+/** Returns the exit code of the last Tor service that finished. */
+int
+TorService::exitCode()
+{
+  int exitCode = UNKNOWN_EXIT_CODE;
+#if defined(Q_OS_WIN32)
+  if (isSupported() && _manager && _service) {
+    SERVICE_STATUS s;
+
+    if (QueryServiceStatus(_service, &s)) {
+      /* Services return one exit code, but it could be in one of two
+       * variables. Fun. */
+      exitCode = (int)(s.dwWin32ExitCode == ERROR_SERVICE_SPECIFIC_ERROR
+                                              ? s.dwServiceSpecificExitCode
+                                              : s.dwWin32ExitCode);
+    }
+  }
+#endif
+  return exitCode;
+}
+
+/** Returns the exit status of the last Tor service that finished. */
+QProcess::ExitStatus
+TorService::exitStatus()
+{
+  /* NT services don't really have an equivalent to QProcess::CrashExit, so 
+   * this just returns QProcess::NormalExit. Tor _could_ set
+   * dwServiceSpecificExitCode to some magic value when it starts and then
+   * set it to the real exit code when Tor exits. Then we would know if the
+   * service crashed when dwServiceSpecificExitCode is still the magic value.
+   * However, I don't care and it doesn't really matter anyway. */
+  return QProcess::NormalExit;
 }
 
 /** Installs the Tor service. */

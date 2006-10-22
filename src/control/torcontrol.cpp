@@ -57,8 +57,8 @@ TorControl::TorControl()
   _torService = new TorService(this);
   QObject::connect(_torService, SIGNAL(started()),
                    this, SLOT(onStarted()), Qt::QueuedConnection);
-  QObject::connect(_torService, SIGNAL(finished()),
-                   this, SLOT(onStopped()));
+  QObject::connect(_torService, SIGNAL(finished(int, QProcess::ExitStatus)),
+                   this, SLOT(onStopped(int, QProcess::ExitStatus)));
   QObject::connect(_torService, SIGNAL(startFailed(QString)),
                    this, SLOT(onStartFailed(QString)), 
                    Qt::QueuedConnection);

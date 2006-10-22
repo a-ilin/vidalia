@@ -29,6 +29,7 @@
 #define _TORSERVICE_H
 
 #include <QObject>
+#include <QProcess>
 
 #if defined(Q_OS_WIN32)
   #include <windows.h>
@@ -65,6 +66,10 @@ public:
   void start();
   /** Stops the Tor service. Emits finished on success. */
   void stop();
+  /** Returns the exit code of the last Tor service that finished. */
+  int exitCode();
+  /** Returns the exit status of the last Tor service that finished. */
+  QProcess::ExitStatus exitStatus();
   /** Installs the Tor service. */
   bool install(const QString &torPath, const QString &torrc,
                quint16 controlPort);
@@ -75,7 +80,7 @@ signals:
   /** Called when the service gets started. */
   void started();
   /** Called when the service gets stopped. */
-  void finished();
+  void finished(int exitCode, QProcess::ExitStatus);
   /** Called when there is an error in starting the service. */
   void startFailed(QString error);
 
