@@ -55,10 +55,8 @@ private slots:
   
 private:
 #if defined(Q_WS_WIN)
-  /** Returns if service support is enabled and functional */
-  bool useService();
   /** Installs or removes the Tor service as necessary */
-  void setupService();
+  void setupService(bool useService);
 #endif
 
   /** A TorSettings object used to save/load settings */

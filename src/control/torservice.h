@@ -53,7 +53,7 @@ public:
   static bool isSupported();
 
   /** Default ctor. */
-  TorService(const QString &torPath,  const QString &torrc, QObject* parent = 0);
+  TorService(QObject* parent = 0);
   /** Default dtor. */
   ~TorService();
 
@@ -66,7 +66,8 @@ public:
   /** Stops the Tor service. Emits finished on success. */
   void stop();
   /** Installs the Tor service. */
-  bool install();
+  bool install(const QString &torPath, const QString &torrc,
+               quint16 controlPort);
   /** Removes the Tor service. */
   bool remove();
 
@@ -79,17 +80,13 @@ signals:
   void startFailed(QString error);
 
 private:
-  /** Closes the service and the service manager. */
-  void close();
   /** Initializes the service and the service manager. */
   void initialize();
+  /** Closes the service and the service manager. */
+  void close();
+  /** Gets the status of the Tor service. */
+  DWORD status(); 
   
-  /** Path to the tor executable. */
-  QString _torPath;
-  /** Path to the torrc. */
-  QString _torrc;
-
-  DWORD status(); /** Gets the status of the Tor service. */
   SC_HANDLE _manager; /** Handle to a service manager object. */
   SC_HANDLE _service; /** Handle to the Tor service object. */
 };

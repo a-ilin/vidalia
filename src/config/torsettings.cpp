@@ -36,7 +36,6 @@
 #define SETTING_CONTROL_ADDR    "Tor/ControlAddr"
 #define SETTING_CONTROL_PORT    "Tor/ControlPort"
 #define SETTING_AUTH_TOKEN      "Tor/AuthToken"
-#define SETTING_USE_SERVICE     "Tor/UseService"
 #define SETTING_TOR_USER        "Tor/User"
 #define SETTING_TOR_GROUP       "Tor/Group"
 
@@ -65,7 +64,6 @@ TorSettings::TorSettings()
   setDefault(SETTING_AUTH_TOKEN,    QByteArray(""));
   setDefault(SETTING_TOR_USER,      "");
   setDefault(SETTING_TOR_GROUP,     "");
-  setDefault(SETTING_USE_SERVICE,   false);
 }
 
 /** Returns a fully-qualified path to Tor's executable, including the
@@ -218,19 +216,5 @@ void
 TorSettings::setAuthToken(QByteArray token)
 {
   setValue(SETTING_AUTH_TOKEN, token.toBase64());
-}
-
-/** Get whether Tor will run as an NT service */
-bool
-TorSettings::getUseService()
-{
-  return value(SETTING_USE_SERVICE).toBool();
-}
-
-/** Set whether Tor will run as an NT service */
-void
-TorSettings::setUseService(bool useService)
-{
-  setValue(SETTING_USE_SERVICE, useService);
 }
 

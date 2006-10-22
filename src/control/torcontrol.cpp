@@ -41,7 +41,6 @@ TorControl::TorControl()
    * the QProcess code. So, we create a new TorProcess object each time we
    * start Tor and then destroy it when it stops. */
   _torProcess = 0;
-  _torService = 0;
 
   /** Create an instance of a connection to Tor's control interface and give
    * it an object to use to handle asynchronous events. */
@@ -54,6 +53,15 @@ TorControl::TorControl()
                    this, SLOT(onConnectFailed(QString)));
   QObject::connect(_controlConn, SIGNAL(disconnected()),
                    this, SLOT(onDisconnected()));
+
+  _torService = new TorService(this);
+  QObject::connect(_torService, SIGNAL(started()),
+                   this, SLOT(onStarted()), Qt::QueuedConnection);
+  QObject::connect(_torService, SIGNAL(finished()),
+                   this, SLOT(onStopped()));
+  QObject::connect(_torService, SIGNAL(startFailed(QString)),
+                   this, SLOT(onStartFailed(QString)), 
+                   Qt::QueuedConnection);
 }
 
 /** Default destructor */
@@ -84,18 +92,7 @@ TorControl::start()
      * then touch it. */
     touch_file(settings.getTorrc(), true);
     
-    if (TorService::isSupported() && settings.getUseService()) {
-      _torService = new TorService(settings.getExecutable(),
-                                   settings.getTorrc(), this);
-
-      QObject::connect(_torService, SIGNAL(started()),
-                       this, SLOT(onStarted()), Qt::QueuedConnection);
-      QObject::connect(_torService, SIGNAL(finished()),
-                       this, SLOT(onStopped()));
-      QObject::connect(_torService, SIGNAL(startFailed(QString)),
-                       this, SLOT(onStartFailed(QString)), 
-                       Qt::QueuedConnection);
-
+    if (TorService::isSupported() && _torService->isInstalled()) {
       _torService->start();
       
     } else {

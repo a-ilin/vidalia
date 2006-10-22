@@ -75,7 +75,7 @@ AdvancedPage::save(QString &errmsg)
   
 #if defined(Q_WS_WIN)
   /* Install or uninstall the Tor service as necessary */
-  setupService();
+  setupService(ui.chkUseService->isChecked());
 #endif
 
   return true;
@@ -91,7 +91,8 @@ AdvancedPage::load()
   ui.lineGroup->setText(_settings->getGroup());
 
 #if defined(Q_WS_WIN)
-  ui.chkUseService->setChecked(useService());
+  TorService s;
+  ui.chkUseService->setChecked(s.isInstalled());
 #endif
 }
 
@@ -140,55 +141,35 @@ AdvancedPage::browseTorConfig()
 }
 
 #if defined(Q_WS_WIN)
-/** Returns true if service support is enabled and functional */
-bool
-AdvancedPage::useService()
-{
-  TorService s(_settings->getExecutable(), _settings->getTorrc());
-
-  /* If the Tor service was previously installed, or we plan on running
-   * Tor as a service, return true. */
-  if (s.isInstalled() || _settings->getUseService()) {
-    return true;
-  }
-  return false;
-}
-
 /** Installs or removes the Tor service as necessary. */
 void
-AdvancedPage::setupService()
+AdvancedPage::setupService(bool useService)
 {
-  bool checked = ui.chkUseService->isChecked();
-  TorService* s = new TorService(_settings->getExecutable(),
-                                 _settings->getTorrc());
+  TorService service;
+  bool isInstalled = service.isInstalled();
 
-  if (!checked && s->isInstalled()) {
+  if (!useService && isInstalled) {
     /* Uninstall if we don't want to use it anymore */
     Vidalia::torControl()->stop();
     
-    if (!s->remove()) {
+    if (!service.remove()) {
       VMessageBox::critical(this,
                             tr("Unable to remove Tor Service"),
                             tr("Vidalia was unable to remove the Tor service.\n\n"
                                "You may need to remove it manually."), 
                             VMessageBox::Ok, VMessageBox::Cancel);
     }
-    _settings->setUseService(false);
-
-  } else if (checked && !s->isInstalled()) {
+  } else if (useService && !isInstalled) {
     /* Install if we want to start using a service */
-    if (!s->install()) {
+    if (!service.install(_settings->getExecutable(),
+                         _settings->getTorrc(),
+                         _settings->getControlPort())) {
       VMessageBox::critical(this,
                             tr("Unable to install Tor Service"),
                             tr("Vidalia was unable to install the Tor service."),
                             VMessageBox::Ok, VMessageBox::Cancel);
     }
-    _settings->setUseService(s->isInstalled());
-  } else {
-    _settings->setUseService(checked);
   }
-
-  delete s;
 }
 #endif
 

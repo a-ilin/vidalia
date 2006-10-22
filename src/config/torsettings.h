@@ -78,11 +78,6 @@ public:
   /** Set which group will be used to run Tor. */
   void setGroup(QString group);
 
-  /** Get whether Tor is used as an NT service or not */
-  bool getUseService();
-  /** Set whether Tor is used as an NT service */
-  void setUseService(bool useService);
-
 private:
   /** Formats the argument name <b>name</b> with the given value <b>value</b>.
    * If <b>value</b> contains a space, <b>value</b> will be wrapped in quotes. */

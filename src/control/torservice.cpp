@@ -39,14 +39,9 @@ TorService::isSupported()
 }
 
 /** Default ctor. */
-TorService::TorService(const QString &torPath, const QString &torrc,
-                       QObject* parent)
+TorService::TorService(QObject* parent)
   : QObject(parent)
 {
-  Q_UNUSED(torrc);
-
-  _torrc = "\"" + torrc + "\"";
-  _torPath = "\"" + torPath + "\"";
   _manager = NULL;
   _service = NULL;
 
@@ -59,7 +54,6 @@ TorService::~TorService()
   close();
 }
 
-/** Closes the service and the service manager. */
 void
 TorService::close()
 {
@@ -68,7 +62,6 @@ TorService::close()
     CloseServiceHandle(_service);
     _service = NULL;
   }
-
   if (_manager) {
     CloseServiceHandle(_manager);
     _manager = NULL;
@@ -99,7 +92,8 @@ TorService::initialize()
 bool
 TorService::isInstalled()
 {
-  return _service != NULL;
+  initialize();
+  return (_service != NULL);
 }
 
 /** Returns true if the Tor service is running. */
@@ -107,6 +101,7 @@ bool
 TorService::isRunning()
 {
 #if defined(Q_OS_WIN32)
+  initialize();
   return (status() == SERVICE_RUNNING);
 #else
   return false;
@@ -121,13 +116,11 @@ TorService::start()
     emit startFailed(tr("Services not supported on this platform."));
     return;
   }
-
   if (!isInstalled()) {
-    if (!install()) {
-      emit startFailed(tr("Unable to install the Tor service."));
-      return;
-    }
+    emit startFailed(tr("The Tor service is not installed."));
+    return;
   }
+
 #if defined(Q_OS_WIN32)
   /* Make sure we're initialized */
   initialize();
@@ -145,7 +138,6 @@ TorService::start()
 
   if (isRunning()) {
     emit started();
-
   } else {
     emit startFailed(tr("Unable to start Tor service."));
   }
@@ -177,25 +169,28 @@ TorService::stop()
 
 /** Installs the Tor service. */
 bool
-TorService::install()
+TorService::install(const QString &torPath, const QString &torrc,
+                    quint16 controlPort)
 {
 #if defined(Q_OS_WIN32)
   if (!isSupported()) return false;
 
-  /* Make sure we're initialized */
-  initialize();
-
   if (!isInstalled()) {
-    QString command = _torPath + " --nt-service -f " + _torrc;
+    QString command = QString("\"%1\" --nt-service -f \"%2\" ControlPort %3")
+                                                 .arg(torPath)
+                                                 .arg(torrc)
+                                                 .arg(controlPort);
 
     _service = CreateServiceA(_manager, TOR_SERVICE_NAME, TOR_SERVICE_DISP,
                               TOR_SERVICE_ACCESS, SERVICE_WIN32_OWN_PROCESS,
                               SERVICE_AUTO_START, SERVICE_ERROR_IGNORE,
                               command.toAscii().data(), NULL, NULL, NULL, NULL, "");
 
-    SERVICE_DESCRIPTION desc;
-    desc.lpDescription = TOR_SERVICE_DESC;
-    ChangeServiceConfig2(_service, SERVICE_CONFIG_DESCRIPTION, &desc);
+    if (_service != NULL) {
+      SERVICE_DESCRIPTION desc;
+      desc.lpDescription = TOR_SERVICE_DESC;
+      ChangeServiceConfig2(_service, SERVICE_CONFIG_DESCRIPTION, &desc);
+    }
   }
   return isInstalled();
 #else
@@ -219,7 +214,6 @@ TorService::remove()
     /* Release references to manager and service */
     close();
   }
-
   return !isInstalled();
 #else
   return false;
