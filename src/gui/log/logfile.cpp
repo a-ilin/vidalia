@@ -49,10 +49,9 @@ LogFile::~LogFile()
 bool
 LogFile::createPathToFile(QString filename)
 {
-  QString path = filename.left(filename.lastIndexOf(QDir::separator()));
-  QDir dir(path);
+  QDir dir = QFileInfo(filename).absoluteDir();
   if (!dir.exists()) {
-    return dir.mkpath(path);  
+    return dir.mkpath(dir.absolutePath());
   }
   return true;
 }
