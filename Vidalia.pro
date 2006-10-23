@@ -41,6 +41,11 @@ isEmpty(MANDIR) {
   # On non-Mac, make the binary all lowercase
   TARGET = vidalia
 }
+macx {
+  # Set the deployment target so we stop getting linker warnings
+  # not having this set. (target Panther and newer)
+  QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.3
+}
 unix {
   # Setup the `make install` target
   target.path = $${PREFIX}/bin
