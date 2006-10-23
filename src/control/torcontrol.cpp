@@ -147,9 +147,9 @@ TorControl::stop(QString *errmsg)
   if (!isRunning()) {
     return true;
   }
-  /* If we didn't start our own Tor, send it a shutdown signal */
+  /* If we didn't start our own Tor, send it a halt signal */
   if (!_torProcess) {
-    return this->signal(TorSignal::Shutdown);
+    return this->signal(TorSignal::Halt);
   } else {
     /* We started our own Tor, so stop the process */
     return _torProcess->stop(errmsg);
