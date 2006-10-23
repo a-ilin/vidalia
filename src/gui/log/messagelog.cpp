@@ -80,6 +80,10 @@ MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
   
   /* Load the message log's stored settings */
   loadSettings();
+
+  /* Sort in ascending chronological order */ 
+  ui.lstMessages->sortItems(LogTreeWidget::TimeColumn, 
+                            Qt::AscendingOrder);
 }
 
 /** Default Destructor. Simply frees up any memory allocated for member
