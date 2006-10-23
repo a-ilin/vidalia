@@ -144,7 +144,7 @@ MainWindow::shutdown()
 {
   if (_torControl->isVidaliaRunningTor()) {
     /* Kill our Tor process now */ 
-    _torControl->signal(TorSignal::Halt);
+    _torControl->stop();
   }
 
   /* Disconnect all of the TorControl object's signals */
@@ -160,19 +160,18 @@ MainWindow::shutdown()
 void
 MainWindow::close()
 {
-  static bool delayedShutdownStarted = false;
-  
   if (_torControl->isVidaliaRunningTor()) {
     /* If we're running a server currently, ask if we want to do a delayed
      * shutdown. If we do, then close Vidalia only when Tor stops. Otherwise,
      * kill Tor and bail now. */
     ServerSettings settings(_torControl);
     if (_torControl->isConnected() && settings.isServerEnabled() 
-                                   && !delayedShutdownStarted) {
+                                   && !_delayedShutdownStarted) {
       if (delayServerShutdown()) {
         /* Close when Tor stops */
         connect(_torControl, SIGNAL(stopped()), this, SLOT(shutdown()));
-        delayedShutdownStarted = _torControl->signal(TorSignal::Shutdown);
+        _delayedShutdownStarted = _torControl->signal(TorSignal::Shutdown);
+        _trayIcon->update(IMG_TOR_STOPPING, tr("Tor is stopping"));
         return;
       }
     }
@@ -351,6 +350,8 @@ MainWindow::started()
   /* Now that Tor is running, we want to know if it dies when we didn't want
    * it to. */
   _isIntentionalExit = false;
+  /* We haven't started a delayed shutdown yet. */
+  _delayedShutdownStarted = false;
   /* Set correct tray icon and tooltip */
   _trayIcon->update(IMG_TOR_STARTING, tr("Tor is starting"));
   /* Set menu actions appropriately */
@@ -408,24 +409,22 @@ MainWindow::delayServerShutdown()
 void 
 MainWindow::stop()
 {
-  static bool delayedShutdownStarted = false;
   ServerSettings server(_torControl);
   QString errmsg;
   bool shutdown;
   
   /* If we're running a server, give users the option of terminating
    * gracefully so clients have time to find new servers. */
-  if (server.isServerEnabled() && !delayedShutdownStarted
+  if (server.isServerEnabled() && !_delayedShutdownStarted
                                && delayServerShutdown()) {
     /* Delayed server shutdown was started successfully. */
     shutdown = _torControl->signal(TorSignal::Shutdown);
-    delayedShutdownStarted = shutdown;
+    _delayedShutdownStarted = shutdown;
   } else {
     /* Terminate the Tor process immediately */
     _isIntentionalExit = true;
     if ((shutdown = _torControl->stop(&errmsg)) == true) {
       _stopAct->setEnabled(false);
-      delayedShutdownStarted = false;
     }
   }
 
@@ -456,7 +455,6 @@ MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
 {
   /* Set correct tray icon and tooltip */
   _trayIcon->update(IMG_TOR_STOPPED, tr("Tor is stopped"));
-
   /* Set menu actions appropriately */
   _startAct->setEnabled(true);
 

@@ -88,6 +88,8 @@ private:
   
   /* Used to determine if the Tor process exiting was intentional or not */
   bool _isIntentionalExit;
+  /** Tracks whether we started a delayed server shutdown. */
+  bool _delayedShutdownStarted;
   
   /** An AboutDialog object, used to display version information. */
   AboutDialog* _aboutDialog;
