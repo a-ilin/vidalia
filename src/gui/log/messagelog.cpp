@@ -235,6 +235,14 @@ MessageLog::saveSettings()
 {
   /* Update the logging status */
   _enableLogging = ui.chkEnableLogFile->isChecked();
+  if (_enableLogging && ui.lineFile->text().isEmpty()) {
+    /* The user chose to enable logging messages to a file, but didn't specify
+     * a log filename. */
+    VMessageBox::warning(this, tr("Log Filename Required"),
+      p(tr("You must enter a filename to be able to save log "
+           "messages to a file.")), VMessageBox::Ok);
+    return;
+  }
   if (rotateLogFile(ui.lineFile->text())) {
     saveSetting(SETTING_LOGFILE, ui.lineFile->text());
     saveSetting(SETTING_ENABLE_LOGFILE, _logFile.isOpen());
