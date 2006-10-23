@@ -31,18 +31,13 @@
 #include <QObject>
 #include <QProcess>
 
-#if defined(Q_OS_WIN32)
-  #include <windows.h>
-  #define TOR_SERVICE_NAME "tor"
-  #define TOR_SERVICE_DISP "Tor Win32 Service"
-  #define TOR_SERVICE_DESC \
-    TEXT("Provides an anonymous Internet communication system.")
-  #define TOR_SERVICE_ACCESS SERVICE_ALL_ACCESS
-  #define SERVICE_ERROR 8
-#else
-  typedef void* SC_HANDLE; /** Make SC_HANDLE a void* on non-Windows. */
-  typedef quint64 DWORD; /** DWORD only exists on Windows, so redefine it. */
-#endif
+#include <windows.h>
+#define TOR_SERVICE_NAME "tor"
+#define TOR_SERVICE_DISP "Tor Win32 Service"
+#define TOR_SERVICE_DESC \
+  TEXT("Provides an anonymous Internet communication system.")
+#define TOR_SERVICE_ACCESS SERVICE_ALL_ACCESS
+#define SERVICE_ERROR 8
 
 
 class TorService : public QObject

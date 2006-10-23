@@ -36,11 +36,7 @@
 bool
 TorService::isSupported()
 {
-  bool supported = false;
-#if defined(Q_OS_WIN32)
-  supported = (QSysInfo::WindowsVersion & QSysInfo::WV_NT_based);
-#endif
-  return supported;
+  return (QSysInfo::WindowsVersion & QSysInfo::WV_NT_based);
 }
 
 /** Default ctor. */
@@ -62,7 +58,6 @@ TorService::~TorService()
 void
 TorService::close()
 {
-#if defined(Q_OS_WIN32)
   if (_service) {
     CloseServiceHandle(_service);
     _service = NULL;
@@ -71,7 +66,6 @@ TorService::close()
     CloseServiceHandle(_manager);
     _manager = NULL;
   }
-#endif
 }
 
 /** Initializes the service and service manager. */
@@ -79,7 +73,6 @@ void
 TorService::initialize()
 {
   /* If services are supported, initialize the manager and service */
-#if defined(Q_OS_WIN32)
   if (isSupported()) {
     /* Open service manager */
     if (_manager == NULL) {
@@ -90,7 +83,6 @@ TorService::initialize()
     _service = OpenServiceA(_manager, TOR_SERVICE_NAME, TOR_SERVICE_ACCESS);
     }
   }
-#endif
 }
 
 /** Returns true if the Tor service is installed. */
@@ -105,12 +97,8 @@ TorService::isInstalled()
 bool
 TorService::isRunning()
 {
-#if defined(Q_OS_WIN32)
   initialize();
   return (status() == SERVICE_RUNNING);
-#else
-  return false;
-#endif
 }
 
 /** Starts Tor service. */
@@ -126,7 +114,6 @@ TorService::start()
     return;
   }
 
-#if defined(Q_OS_WIN32)
   /* Make sure we're initialized */
   initialize();
 
@@ -146,14 +133,12 @@ TorService::start()
   } else {
     emit startFailed(tr("Unable to start Tor service."));
   }
-#endif
 }
 
 /** Stops Tor service. */
 void
 TorService::stop()
 {
-#if defined(Q_OS_WIN32)
   if (isRunning()) {
     SERVICE_STATUS stat;
     stat.dwCurrentState = SERVICE_RUNNING;
@@ -172,7 +157,6 @@ TorService::stop()
     /* Emit the signal that we stopped and the service's exit code and status. */
     emit finished(exitCode(), exitStatus());
   }
-#endif
 }
 
 /** Returns the exit code of the last Tor service that finished. */
@@ -180,7 +164,7 @@ int
 TorService::exitCode()
 {
   int exitCode = UNKNOWN_EXIT_CODE;
-#if defined(Q_OS_WIN32)
+  
   if (isSupported() && _manager && _service) {
     SERVICE_STATUS s;
 
@@ -192,7 +176,6 @@ TorService::exitCode()
                                               : s.dwWin32ExitCode);
     }
   }
-#endif
   return exitCode;
 }
 
@@ -214,7 +197,6 @@ bool
 TorService::install(const QString &torPath, const QString &torrc,
                     quint16 controlPort)
 {
-#if defined(Q_OS_WIN32)
   if (!isSupported()) return false;
 
   if (!isInstalled()) {
@@ -235,16 +217,12 @@ TorService::install(const QString &torPath, const QString &torrc,
     }
   }
   return isInstalled();
-#else
-  return false;
-#endif
 }
 
 /** Removes the Tor service. */
 bool
 TorService::remove()
 {
-#if defined(Q_OS_WIN32)
   if (!isSupported()) return false;
   if (isInstalled()) {
     /* Stop the service */
@@ -257,9 +235,6 @@ TorService::remove()
     close();
   }
   return !isInstalled();
-#else
-  return false;
-#endif
 }
 
 
@@ -267,7 +242,6 @@ TorService::remove()
 DWORD
 TorService::status()
 {
-#if defined(Q_OS_WIN32)
   if (!(isSupported() && _manager && _service)) return DWORD(-1);
 
   SERVICE_STATUS s;
@@ -277,8 +251,5 @@ TorService::status()
     stat = s.dwCurrentState;
   } 
   return stat;
-#else
-  return 0;
-#endif
 }
 

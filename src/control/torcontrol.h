@@ -35,10 +35,13 @@
 
 #include "controlconnection.h"
 #include "torprocess.h"
-#include "torservice.h"
 #include "torevents.h"
 #include "torsignal.h"
 #include "routerdescriptor.h"
+
+#if defined(Q_OS_WIN32)
+#include "torservice.h"
+#endif
 
 
 class TorControl : public QObject
@@ -173,13 +176,15 @@ private:
   ControlConnection* _controlConn;
   /** Manages and monitors the Tor process */
   TorProcess* _torProcess;
-  /** Manages the Tor service, if supported and enabled */
-  TorService* _torService;
   /** Keep track of which events we're interested in */
   TorEvents _torEvents;
   /** The version of Tor we're currently talking to. */
   QString _torVersion;
-  
+#if defined(Q_OS_WIN32)
+  /** Manages the Tor service, if supported and enabled */
+  TorService* _torService;
+#endif
+
   /** Send a message to Tor and read the response */
   bool send(ControlCommand cmd, ControlReply &reply, QString *errmsg = 0);
   /** Send a message to Tor and discard the response */

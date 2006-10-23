@@ -54,6 +54,7 @@ TorControl::TorControl()
   QObject::connect(_controlConn, SIGNAL(disconnected()),
                    this, SLOT(onDisconnected()));
 
+#if defined(Q_OS_WIN32)
   _torService = new TorService(this);
   QObject::connect(_torService, SIGNAL(started()),
                    this, SLOT(onStarted()), Qt::QueuedConnection);
@@ -62,6 +63,7 @@ TorControl::TorControl()
   QObject::connect(_torService, SIGNAL(startFailed(QString)),
                    this, SLOT(onStartFailed(QString)), 
                    Qt::QueuedConnection);
+#endif
 }
 
 /** Default destructor */
@@ -91,11 +93,13 @@ TorControl::start()
     /* Make sure our torrc and the full path to it exists. If it doesn't,
      * then touch it. */
     touch_file(settings.getTorrc(), true);
-    
+
+#if defined(Q_OS_WIN32)
     if (TorService::isSupported() && _torService->isInstalled()) {
       _torService->start();
       
     } else {
+#endif
       _torProcess = new TorProcess;
   
       /* Plumb the process signals */
@@ -111,7 +115,9 @@ TorControl::start()
       /* Kick off the Tor process. */
       _torProcess->start(settings.getExecutable(), 
                          settings.getArguments());
+#if defined(Q_OS_WIN32)
     }
+#endif
   }
 }
 
