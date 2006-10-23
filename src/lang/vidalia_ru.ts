@@ -16,16 +16,6 @@
         <translation>О программе Vidalia</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>View License</source>
-        <translation type="obsolete">Показать лицензию</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>OK</source>
-        <translation type="obsolete">ОК</translation>
-    </message>
-    <message>
         <location filename="../gui/about/aboutdialog.ui" line="344"/>
         <source>Vidalia</source>
         <translation>Vidalia</translation>
@@ -56,11 +46,6 @@
         <translation>Версия Vidalia</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Hide License</source>
-        <translation type="obsolete">Скрыть лицензию</translation>
-    </message>
-    <message>
         <location filename="../gui/about/aboutdialog.cpp" line="78"/>
         <source>&lt;Not Running&gt;</source>
         <translation>&lt;Не запущен&gt;</translation>
@@ -87,11 +72,6 @@
         <location filename="../gui/config/advancedpage.ui" line="341"/>
         <source>9051</source>
         <translation>9051</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Alternate Tor Configuration File</source>
-        <translation type="obsolete">Изменить файл настроек Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="390"/>
@@ -279,11 +259,6 @@ You may need to remove it manually.</source>
         <translation>Показано от :</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Jan 1 2000</source>
-        <translation type="obsolete">Янв 1 2000</translation>
-    </message>
-    <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="539"/>
         <source>100</source>
         <translation>100</translation>
@@ -371,11 +346,6 @@ You may need to remove it manually.</source>
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Configure Settings</source>
-        <translation type="obsolete">Настройки</translation>
-    </message>
-    <message>
         <location filename="../gui/config/configdialog.cpp" line="56"/>
         <source>General</source>
         <translation>Общие</translation>
@@ -423,16 +393,6 @@ You may need to remove it manually.</source>
 </context>
 <context>
     <name>ControlConnection</name>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>The control socket is closing.</source>
-        <translation type="obsolete">Сокет контроллера закрывается.</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Control socket not connected.</source>
-        <translation type="obsolete">Сокет контроллера не подсоединён.</translation>
-    </message>
     <message>
         <location filename="../control/controlconnection.cpp" line="285"/>
         <source>Control socket is not connected.</source>
@@ -810,11 +770,6 @@ Upgrade to a newer version of Tor.</source>
         <translation>Остановить</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Configure</source>
-        <translation type="obsolete">Настройки</translation>
-    </message>
-    <message>
         <location filename="../gui/mainwindow.cpp" line="215"/>
         <source>About</source>
         <translation>О программе</translation>
@@ -930,24 +885,9 @@ Upgrade to a newer version of Tor.</source>
         <translation>Сервер включён</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Error Shutting Down</source>
-        <translation type="obsolete">Ошибка остановки</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Do you want to close Tor anyway?</source>
-        <translation type="obsolete">Вы уверены, что хотите закрыть Tor?</translation>
-    </message>
-    <message>
         <location filename="../gui/mainwindow.cpp" line="433"/>
         <source>Tor is stopping</source>
         <translation>Tor останавливается</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>View Network</source>
-        <translation type="obsolete">Просмотр Сети</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="265"/>
@@ -972,11 +912,6 @@ Would you like to shutdown gracefully and give clients time to find a new server
         <translation>У вас сейчас работает сервер Tor. Остановка сервера приведёт к обрыву всех открытых клиентских соединений.
 
 Не хотите ли вы аккуратно остановить сервер и дать клиентам немного времени чтобы найти другой сервер?</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Vidalia was unable to shutdown Tor gracefully. (</source>
-        <translation type="obsolete">Vidalia не смогла аккуратно остановить Tor. (</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="472"/>
@@ -1351,11 +1286,6 @@ interest to Tor developers.</source>
         <translation>Открыть помощь</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Ctrl+H</source>
-        <translation type="obsolete">Ctrl+M</translation>
-    </message>
-    <message>
         <location filename="../gui/log/messagelog.cpp" line="204"/>
         <source>Vidalia was unable to register for Tor&apos;s log events.</source>
         <translation>Vidalia не смогла зарегистрироваться для получения сообщений Tor.</translation>
@@ -1428,16 +1358,6 @@ interest to Tor developers.</source>
         <translation>Уменьшить</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>New Identity</source>
-        <translation type="obsolete">Новый Ним</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Make new connections appear to be different than your old connections.</source>
-        <translation type="obsolete">Новый соединения не будут связаны с предыдущими соединениями.</translation>
-    </message>
-    <message>
         <location filename="../gui/network/netviewer.ui" line="521"/>
         <source>Refresh the list of routers and connections.</source>
         <translation>Обновить список роутеров и соединений.</translation>
@@ -1466,16 +1386,6 @@ interest to Tor developers.</source>
         <location filename="../gui/network/netviewer.ui" line="609"/>
         <source>Zoom out on the network map.</source>
         <translation>Уменьшить изображение карты.</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>All subsequent connections will appear to be different than your old connections.</source>
-        <translation type="obsolete">Все последующие соединения не будут связаны с предыдущими соединениями.</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Failed to Create New Identity</source>
-        <translation type="obsolete">Ошибка создания нового Нима</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="625"/>
@@ -1562,11 +1472,6 @@ interest to Tor developers.</source>
         <translation>Платформа:</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Contact:</source>
-        <translation type="obsolete">Контакт:</translation>
-    </message>
-    <message>
         <location filename="../gui/network/routerdescriptorview.cpp" line="119"/>
         <source>Bandwidth:</source>
         <translation>Трафик:</translation>
@@ -1613,11 +1518,6 @@ interest to Tor developers.</source>
         <translation>Статус</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Router</source>
-        <translation type="obsolete">Роутер</translation>
-    </message>
-    <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="40"/>
         <source>Server</source>
         <translation>Сервер</translation>
@@ -1644,11 +1544,6 @@ interest to Tor developers.</source>
         <location filename="../gui/config/serverpage.ui" line="304"/>
         <source>Relay traffic for the Tor network</source>
         <translation>Режим сервера</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Server Configuration</source>
-        <translation type="obsolete">Настройки сервера</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="512"/>
@@ -1706,16 +1601,6 @@ interest to Tor developers.</source>
         <translation>Зеркалить Directory</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>If selected, clients will not exit the Tor network through your server</source>
-        <translation type="obsolete">Включите, чтобы клиенты не могли выходить из сети Tor через ваш сервер</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Only relay traffic between other Tor servers (middle-man)</source>
-        <translation type="obsolete">Передавать трафик только внутри Сети Tor (middle-man)</translation>
-    </message>
-    <message>
         <location filename="../gui/config/serverpage.ui" line="386"/>
         <source>Attempts to determine the correct address for your server</source>
         <translation>Попытаться автоматически определить правильный адрес вашего сервера</translation>
@@ -1726,109 +1611,9 @@ interest to Tor developers.</source>
         <translation>Получить адрес</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Nickname and Server Port are required</source>
-        <translation type="obsolete">Ник и порт сервера обязательны</translation>
-    </message>
-    <message>
         <location filename="../gui/config/serverpage.ui" line="987"/>
         <source>Exit Policies</source>
         <translation>Политики выхода</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>IP Address:</source>
-        <translation type="obsolete">IP адрес:</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>IP address for new exit policy</source>
-        <translation type="obsolete">IP адрес для нового правила</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>/</source>
-        <translation type="obsolete">/</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Mask:</source>
-        <translation type="obsolete">Маска:</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>IP address mask for new exit policy</source>
-        <translation type="obsolete">Маска IP адреса для нового правила</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>:</source>
-        <translation type="obsolete">:</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Ports:</source>
-        <translation type="obsolete">Порты:</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Starting port number for new exit policy</source>
-        <translation type="obsolete">Начальный номер порта для нового правила</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>-</source>
-        <translation type="obsolete">-</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Ending port number for new exit policy</source>
-        <translation type="obsolete">Конечный номер порта для новго правила</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Action:</source>
-        <translation type="obsolete">Действие:</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Action for new exit policy</source>
-        <translation type="obsolete">Действие нового правила</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Action</source>
-        <translation type="obsolete">Действие</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Address</source>
-        <translation type="obsolete">Адрес</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Port</source>
-        <translation type="obsolete">Порт</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Add the new exit policy</source>
-        <translation type="obsolete">Добавить новое правило</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Increase the priority of the selected exit policy</source>
-        <translation type="obsolete">Увеличить приоритет выделенного правила</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Decrease the priority of the selected exit policy</source>
-        <translation type="obsolete">Уменьшить приоритет выделенного правила</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Remove the selected exit policy</source>
-        <translation type="obsolete">Удалить выбранное правило</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1126"/>
@@ -1844,16 +1629,6 @@ interest to Tor developers.</source>
         <location filename="../gui/config/serverpage.cpp" line="298"/>
         <source>Error</source>
         <translation>Ошибка</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>accept</source>
-        <translation type="obsolete">принимать</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>reject</source>
-        <translation type="obsolete">отклонять</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="299"/>
@@ -1889,11 +1664,6 @@ fingerprint.</source>
 PGP или GPG ключа.</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Bandwidth Rate Limits</source>
-        <translation type="obsolete">Ограничение трафика</translation>
-    </message>
-    <message>
         <location filename="../gui/config/serverpage.ui" line="868"/>
         <source>Long-term average bandwidth limit</source>
         <translation>Долговременное усреднённое ограничение трафика</translation>
@@ -1922,11 +1692,6 @@ PGP или GPG ключа.</translation>
         <location filename="../gui/config/serverpage.ui" line="785"/>
         <source>Show help topic on bandwidth rate limits</source>
         <translation>Показать справку по ограничению трафика</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Only allow connections to other Tor servers (non-exit node)</source>
-        <translation type="obsolete">Разрешить соединения только к другим узлам сети Tor (не выходящий узел)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="333"/>
@@ -2113,11 +1878,6 @@ PGP или GPG ключа.</translation>
         <translation>Сервисы не поддерживаются на этой платформе.</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Unable to install the Tor service.</source>
-        <translation type="obsolete">Не могу установить сервис Tor.</translation>
-    </message>
-    <message>
         <location filename="../control/torservice.cpp" line="134"/>
         <source>Unable to start Tor service.</source>
         <translation>Не могу запустить сервис Tor.</translation>
@@ -2187,11 +1947,6 @@ PGP или GPG ключа.</translation>
         <location filename="../main.cpp" line="78"/>
         <source>Vidalia is already running</source>
         <translation>Vidalia уже запущена</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Another Vidalia process is already running. This Vidalia process will now exit.</source>
-        <translation type="obsolete">Другой процесс Vidalia уже запущен. Текущий процесс сейчас будет завершен. </translation>
     </message>
     <message>
         <location filename="../main.cpp" line="82"/>

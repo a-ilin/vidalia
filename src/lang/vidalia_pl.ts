@@ -394,16 +394,6 @@ Musisz usunąć ją ręcznie.</translation>
 <context>
     <name>ControlConnection</name>
     <message>
-        <location filename="" line="7667826"/>
-        <source>The control socket is closing.</source>
-        <translation type="obsolete">Zamykanie gniazda kontrolnego.</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Control socket not connected.</source>
-        <translation type="obsolete">Gniazdo kontrolne nie jest połączone.</translation>
-    </message>
-    <message>
         <location filename="../control/controlconnection.cpp" line="285"/>
         <source>Control socket is not connected.</source>
         <translation type="unfinished"></translation>
@@ -895,16 +885,6 @@ Proszę uaktualnić Tor&apos;a do nowszej wersji.</translation>
         <translation>Serwer uaktywniony</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Error Shutting Down</source>
-        <translation type="obsolete">Błąd zatrzymywania</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Do you want to close Tor anyway?</source>
-        <translation type="obsolete">Czy chcesz zamknąć Tor&apos;a?</translation>
-    </message>
-    <message>
         <location filename="../gui/mainwindow.cpp" line="433"/>
         <source>Tor is stopping</source>
         <translation>Zatrzymywanie Tor&apos;a</translation>
@@ -932,11 +912,6 @@ Would you like to shutdown gracefully and give clients time to find a new server
         <translation>Posiadasz uruchomiony serwer Tor&apos;a. Wyłączenie go spowoduje przerwanie wszelkich połączeń z klientami.
 
 Czy chciałbyś dokonać tego elegancko, dając klientom czas na znalezienie nowego serwera?</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Vidalia was unable to shutdown Tor gracefully. (</source>
-        <translation type="obsolete">Vidalia nie mogła elegancko wyłączyć Tor&apos;a</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="472"/>
@@ -1568,11 +1543,6 @@ dla programistów ekipy Tor&apos;a</translation>
         <translation>Udostępnij moje łącze dla sieci Tor</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Server Configuration</source>
-        <translation type="obsolete">Konfiguracja serwera</translation>
-    </message>
-    <message>
         <location filename="../gui/config/serverpage.ui" line="512"/>
         <source>Directory Port:</source>
         <translation>Port Listy:</translation>
@@ -1628,11 +1598,6 @@ dla programistów ekipy Tor&apos;a</translation>
         <translation>Przechowuj Listę Serwerów </translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>If selected, clients will not exit the Tor network through your server</source>
-        <translation type="obsolete">Jeśli zaznaczone, klienci nie będą korzystać z Twojego serwera jako ostatniego w łańcuchu.</translation>
-    </message>
-    <message>
         <location filename="../gui/config/serverpage.ui" line="386"/>
         <source>Attempts to determine the correct address for your server</source>
         <translation>Próbuje ustalić adres Twojego serwera</translation>
@@ -1643,109 +1608,9 @@ dla programistów ekipy Tor&apos;a</translation>
         <translation>Pobierz adres</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Nickname and Server Port are required</source>
-        <translation type="obsolete">Ksywa i numer portu serwera są konieczne.</translation>
-    </message>
-    <message>
         <location filename="../gui/config/serverpage.ui" line="987"/>
         <source>Exit Policies</source>
         <translation>Polityka połączeń</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>IP Address:</source>
-        <translation type="obsolete">Adres IP:</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>IP address for new exit policy</source>
-        <translation type="obsolete">Adres IP dla nowej reguły</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>/</source>
-        <translation type="obsolete">/</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Mask:</source>
-        <translation type="obsolete">Maska:</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>IP address mask for new exit policy</source>
-        <translation type="obsolete">Maska IP dla nowej reguły</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>:</source>
-        <translation type="obsolete">:</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Ports:</source>
-        <translation type="obsolete">Porty:</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Starting port number for new exit policy</source>
-        <translation type="obsolete">Początkowy numer portu dla reguły</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>-</source>
-        <translation type="obsolete">-</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Ending port number for new exit policy</source>
-        <translation type="obsolete">Końcowy numer portu dla reguły</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Action:</source>
-        <translation type="obsolete">Akcja:</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Action for new exit policy</source>
-        <translation type="obsolete">Akcja dla nowej reguły</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Action</source>
-        <translation type="obsolete">Akcja:</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Address</source>
-        <translation type="obsolete">Adres</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Port</source>
-        <translation type="obsolete">Port</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Add the new exit policy</source>
-        <translation type="obsolete">Dodaje nową regułę</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Increase the priority of the selected exit policy</source>
-        <translation type="obsolete">Zwieksza priorytet wybranej reguły</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Decrease the priority of the selected exit policy</source>
-        <translation type="obsolete">Zmniejsza priorytet wybranej reguły</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Remove the selected exit policy</source>
-        <translation type="obsolete">Usuwa wybraną regułę</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1126"/>
@@ -1761,16 +1626,6 @@ dla programistów ekipy Tor&apos;a</translation>
         <location filename="../gui/config/serverpage.cpp" line="298"/>
         <source>Error</source>
         <translation>Błąd</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>accept</source>
-        <translation type="obsolete">akceptuj</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>reject</source>
-        <translation type="obsolete">odrzuć</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="299"/>
@@ -1804,11 +1659,6 @@ fingerprint.</source>
         <translation>Adres e-mail pod którym jesteś dostępny, gdy wystąpi problem z Twoim serwerem. Możesz również załączyć swoje klucze publiczne PGP lub GPG.</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Bandwidth Rate Limits</source>
-        <translation type="obsolete">Ograniczenia przepustowości</translation>
-    </message>
-    <message>
         <location filename="../gui/config/serverpage.ui" line="868"/>
         <source>Long-term average bandwidth limit</source>
         <translation>Długookresowa średnia przepustowość Twojego łącza</translation>
@@ -1837,11 +1687,6 @@ fingerprint.</source>
         <location filename="../gui/config/serverpage.ui" line="785"/>
         <source>Show help topic on bandwidth rate limits</source>
         <translation>Pokazuje pomoc na temat limitów przepustowości</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Only allow connections to other Tor servers (non-exit node)</source>
-        <translation type="obsolete">Pozwalaj na połączenia tylko do innych serwerów Tor (pośrednik)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="333"/>
@@ -2028,11 +1873,6 @@ fingerprint.</source>
         <translation>Ta platforma nie wspiera Usług.</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Unable to install the Tor service.</source>
-        <translation type="obsolete">Instalacja usługi Tor&apos;a nie powiodła się.</translation>
-    </message>
-    <message>
         <location filename="../control/torservice.cpp" line="134"/>
         <source>Unable to start Tor service.</source>
         <translation>Uruchamianie usługi Tor&apos;a nie powiodło się.</translation>
@@ -2102,11 +1942,6 @@ fingerprint.</source>
         <location filename="../main.cpp" line="78"/>
         <source>Vidalia is already running</source>
         <translation>Vidalia jest już uruchomiona</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Another Vidalia process is already running. This Vidalia process will now exit.</source>
-        <translation type="obsolete">Inna instancja Vidalii jest uruchomiona. Ta instancja zakończy działanie.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="82"/>

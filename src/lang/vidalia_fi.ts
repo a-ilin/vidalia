@@ -16,16 +16,6 @@
         <translation>Tietoja Vidaliasta</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
-        <source>View License</source>
-        <translation type="obsolete">Näytä lisenssi</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>OK</source>
-        <translation type="obsolete">OK</translation>
-    </message>
-    <message>
         <location filename="../gui/about/aboutdialog.ui" line="344"/>
         <source>Vidalia</source>
         <translation>Vidalia</translation>
@@ -56,11 +46,6 @@
         <translation>Vidalia-versio</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
-        <source>Hide License</source>
-        <translation type="obsolete">Piilota lisenssi</translation>
-    </message>
-    <message>
         <location filename="../gui/about/aboutdialog.cpp" line="78"/>
         <source>&lt;Not Running&gt;</source>
         <translation>Ei ole käynnissä</translation>
@@ -87,11 +72,6 @@
         <location filename="../gui/config/advancedpage.ui" line="341"/>
         <source>9051</source>
         <translation>9051</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Alternate Tor Configuration File</source>
-        <translation type="obsolete">Vaihtoehtoinen Tor-asetustiedosto</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="390"/>
@@ -279,11 +259,6 @@ Tor-palvelu täytyy poistaa käsin.</translation>
         <translation>Alkaen:</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
-        <source>Jan 1 2000</source>
-        <translation type="obsolete">Tammikuu 1 2000</translation>
-    </message>
-    <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="539"/>
         <source>100</source>
         <translation>100</translation>
@@ -371,11 +346,6 @@ Tor-palvelu täytyy poistaa käsin.</translation>
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="" line="0"/>
-        <source>Configure Settings</source>
-        <translation type="obsolete">Muuta asetuksia</translation>
-    </message>
-    <message>
         <location filename="../gui/config/configdialog.cpp" line="56"/>
         <source>General</source>
         <translation>Yleiset</translation>
@@ -423,16 +393,6 @@ Tor-palvelu täytyy poistaa käsin.</translation>
 </context>
 <context>
     <name>ControlConnection</name>
-    <message>
-        <location filename="" line="0"/>
-        <source>The control socket is closing.</source>
-        <translation type="obsolete">Ohjausyhteys on päättymässä.</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Control socket not connected.</source>
-        <translation type="obsolete">Ohjausyhtettä ei ole muodostettu.</translation>
-    </message>
     <message>
         <location filename="../control/controlconnection.cpp" line="285"/>
         <source>Control socket is not connected.</source>
@@ -486,11 +446,6 @@ Olkaapa hyvä ja päivitä uudempaan Tor-ohjelmaan.</translation>
 </context>
 <context>
     <name>GeneralPage</name>
-    <message>
-        <location filename="" line="0"/>
-        <source>Tor Directory</source>
-        <translation type="obsolete">Tor-kansio</translation>
-    </message>
     <message>
         <location filename="../gui/config/generalpage.ui" line="334"/>
         <source>Path to Tor&apos;s executable</source>
@@ -626,11 +581,6 @@ Olkaapa hyvä ja päivitä uudempaan Tor-ohjelmaan.</translation>
         <location filename="../gui/help/browser/helpbrowser.ui" line="759"/>
         <source>Back</source>
         <translation>Takaisin</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Move to previous page (Askelpalautin)</source>
-        <translation type="obsolete">Siirry edelliselle sivulle (Backspace)</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="770"/>
@@ -820,11 +770,6 @@ Olkaapa hyvä ja päivitä uudempaan Tor-ohjelmaan.</translation>
         <translation>Pysäytä</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
-        <source>Configure</source>
-        <translation type="obsolete">Asetukset</translation>
-    </message>
-    <message>
         <location filename="../gui/mainwindow.cpp" line="215"/>
         <source>About</source>
         <translation>Tietoa Vidaliasta</translation>
@@ -920,31 +865,6 @@ Olkaapa hyvä ja päivitä uudempaan Tor-ohjelmaan.</translation>
         <translation>Tor yllättäen pysähtyi</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
-        <source>Show Log</source>
-        <translation type="obsolete">Näytä loki</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Close</source>
-        <translation type="obsolete">Sulje</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Vidalia was unable to start Tor.</source>
-        <translation type="obsolete">Vidalia ei onnistunut käynnistämään Tor-ohjelmaa</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>OK</source>
-        <translation type="obsolete">OK</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Retry</source>
-        <translation type="obsolete">Yritä uudelleen</translation>
-    </message>
-    <message>
         <location filename="../gui/mainwindow.cpp" line="437"/>
         <source>Vidalia was unable to stop Tor.</source>
         <translation>Vidalia ei onnistunut pysäyttämään Tor-ohjelmaa</translation>
@@ -965,24 +885,9 @@ Olkaapa hyvä ja päivitä uudempaan Tor-ohjelmaan.</translation>
         <translation>Palvelin on käytössä</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
-        <source>Error Shutting Down</source>
-        <translation type="obsolete">Virhe lopetettaessa</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Do you want to close Tor anyway?</source>
-        <translation type="obsolete">Haluatko kuitenkin sulkea Tor-ohjelman?</translation>
-    </message>
-    <message>
         <location filename="../gui/mainwindow.cpp" line="433"/>
         <source>Tor is stopping</source>
         <translation>Pysäytetään Tor</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>View Network</source>
-        <translation type="obsolete">Näytä verkko</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="265"/>
@@ -1000,11 +905,6 @@ Olkaapa hyvä ja päivitä uudempaan Tor-ohjelmaan.</translation>
         <translation>Vidalia ei onnistunut ottamaan käyttöön palvelimesi asetuksia</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
-        <source>Show Settings</source>
-        <translation type="obsolete">Näytä asetukset</translation>
-    </message>
-    <message>
         <location filename="../gui/mainwindow.cpp" line="402"/>
         <source>You are currently running a Tor server. Terminating your server will interrupt any open connections from clients.
 
@@ -1014,11 +914,6 @@ Would you like to shutdown gracefully and give clients time to find a new server
 Haluaisitteko sulkea turvallisesti ja antaen käyttäjille aikaa löytää uuden palvelimen?</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
-        <source>Vidalia was unable to shutdown Tor gracefully. </source>
-        <translation type="obsolete">Vidalia ei onnistunut sulkemaan Tor-ohjelmaa ongelmitta.</translation>
-    </message>
-    <message>
         <location filename="../gui/mainwindow.cpp" line="472"/>
         <source>Vidalia detected that Tor exited unexpectedly.
 
@@ -1026,11 +921,6 @@ Please check the message log for indicators about what happened to Tor before it
         <translation>Vidalia huomasi Tor-ohjelman yllättäen pysähtyneen.
 
 Ole hyvä ja tarkista tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen pysähtymistä.</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Vidalia was unable to shutdown Tor gracefully. (</source>
-        <translation type="obsolete">Vidalia ei onnistunut sulkemaan Tor-ohjelmaa ilman ongelmia. (</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="330"/>
@@ -1286,11 +1176,6 @@ Ole hyvä ja tarkista tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen pysä
         <translation>Ctrl+F</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
-        <source>Messages Shown: </source>
-        <translation type="obsolete">Tapahtumia näkyvillä: </translation>
-    </message>
-    <message>
         <location filename="../gui/log/messagelog.cpp" line="148"/>
         <source>Messages that appear when something has 
 gone very wrong and Tor cannot proceed.</source>
@@ -1374,17 +1259,6 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
         <translation>Löytyi 0 vastausta.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
-        <source>Messages Shown: %1</source>
-        <translation type="obsolete">Tapahtumia näkyvillä: %1</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>%1 [%2] %3
-</source>
-        <translation type="obsolete">%1 [%2] %3</translation>
-    </message>
-    <message>
         <location filename="../gui/log/messagelog.ui" line="839"/>
         <source>Settings</source>
         <translation>Asetukset</translation>
@@ -1410,11 +1284,6 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
         <translation>Näytä ohje</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
-        <source>Ctrl+H</source>
-        <translation type="obsolete">Ctrl+H</translation>
-    </message>
-    <message>
         <location filename="../gui/log/messagelog.cpp" line="204"/>
         <source>Vidalia was unable to register for Tor&apos;s log events.</source>
         <translation>Vidalia ei onnistunut rekisteröitymään Tor-ohjelman lokitapahtumia varten.</translation>
@@ -1427,11 +1296,6 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
         <translation>Tiedoston %1
 
 %2 kirjoittaminen ei onnistunut.</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Vidalia was unable to open the specified log file for writing.</source>
-        <translation type="obsolete">Vidalia ei onnistunut avaamaan määriteltyä lokitiedostoa kirjoittamiseen.</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="220"/>
@@ -1467,16 +1331,6 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
         <translation>Näytä Tor-verkko</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
-        <source>Status</source>
-        <translation type="obsolete">Tila</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Router</source>
-        <translation type="obsolete">Reititin</translation>
-    </message>
-    <message>
         <location filename="../gui/network/netviewer.ui" line="515"/>
         <source>Refresh</source>
         <translation>Päivitä</translation>
@@ -1500,21 +1354,6 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
         <location filename="../gui/network/netviewer.ui" line="603"/>
         <source>Zoom Out</source>
         <translation>Loitonna</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Move</source>
-        <translation type="obsolete">Siirrä</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>New Identity</source>
-        <translation type="obsolete">Uusi identiteetti</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Make new connections appear to be different than your old connections.</source>
-        <translation type="obsolete">Tee uusista yhteyksista erilaisia kuin vanhat yhteydet.</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="521"/>
@@ -1545,16 +1384,6 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
         <location filename="../gui/network/netviewer.ui" line="609"/>
         <source>Zoom out on the network map.</source>
         <translation>Loitonna verkkokarttaa.</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>All subsequent connections will appear to be different than your old connections.</source>
-        <translation type="obsolete">Seuraavat yhteydet tulevat olemaan erilaiset kuin vanhat.</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Failed to Create New Identity</source>
-        <translation type="obsolete">Uuden identiteetin luominen epäonnistui</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="625"/>
@@ -1641,16 +1470,6 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
         <translation>Alusta:</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
-        <source>Contact:</source>
-        <translation type="obsolete">Yhteystiedot:</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Published:</source>
-        <translation type="obsolete">Julkaistu:</translation>
-    </message>
-    <message>
         <location filename="../gui/network/routerdescriptorview.cpp" line="119"/>
         <source>Bandwidth:</source>
         <translation>Yhteys:</translation>
@@ -1697,11 +1516,6 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
         <translation>Tila</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
-        <source>Router</source>
-        <translation type="obsolete">Reititin</translation>
-    </message>
-    <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="40"/>
         <source>Server</source>
         <translation>Palvelin</translation>
@@ -1730,11 +1544,6 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
         <translation>Välitä tietoa Tor-verkossa</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
-        <source>Server Configuration</source>
-        <translation type="obsolete">Palvelin</translation>
-    </message>
-    <message>
         <location filename="../gui/config/serverpage.ui" line="512"/>
         <source>Directory Port:</source>
         <translation>Lista-portti:</translation>
@@ -1753,12 +1562,6 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
         <location filename="../gui/config/serverpage.ui" line="617"/>
         <source>Name of your server</source>
         <translation>Palvelimesi nimi</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Email address at which you may be reached if there is a
-problem with your server</source>
-        <translation type="obsolete">Sähköpostiosoite, johon voidaan ottaa yhteyttä sattuessa virheitä palvelimessanne</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="480"/>
@@ -1796,16 +1599,6 @@ problem with your server</source>
         <translation>Välitä listaa Tor-palvelimista</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
-        <source>If selected, clients will not exit the Tor network through your server</source>
-        <translation type="obsolete">Valittuna, Tor-verkon käyttäjät eivät poistu Tor-verkosta palvelimesi kautta</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Only relay traffic between other Tor servers (middle-man)</source>
-        <translation type="obsolete">Välitä tietoa vain Tor-palvelinten välillä (välikäsi)</translation>
-    </message>
-    <message>
         <location filename="../gui/config/serverpage.ui" line="386"/>
         <source>Attempts to determine the correct address for your server</source>
         <translation>Yrittää selvittää palvelimesi oikean osoitteen</translation>
@@ -1816,109 +1609,9 @@ problem with your server</source>
         <translation>Nouda osoite</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
-        <source>Nickname and Server Port are required</source>
-        <translation type="obsolete">Nimi ja palvelimen portti tarvitaan</translation>
-    </message>
-    <message>
         <location filename="../gui/config/serverpage.ui" line="987"/>
         <source>Exit Policies</source>
         <translation>Poistumiskäytännöt</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>IP Address:</source>
-        <translation type="obsolete">IP-osoite:</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>IP address for new exit policy</source>
-        <translation type="obsolete">IP-osoite uudelle poistumiskäytännölle</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>/</source>
-        <translation type="obsolete">/</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Mask:</source>
-        <translation type="obsolete">Verkkopeite:</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>IP address mask for new exit policy</source>
-        <translation type="obsolete">Verkkopeitteen osoite uusille poistumiskäytännölle</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>:</source>
-        <translation type="obsolete">:</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Ports:</source>
-        <translation type="obsolete">Portit:</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Starting port number for new exit policy</source>
-        <translation type="obsolete">Ensimmäinen portti uusille poistumiskäytännölle</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>-</source>
-        <translation type="obsolete">-</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Ending port number for new exit policy</source>
-        <translation type="obsolete">Viimeiset portit uusille poistumiskäytännölle</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Action:</source>
-        <translation type="obsolete">Toimenpide:</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Action for new exit policy</source>
-        <translation type="obsolete">Toiminta uusille poistumiskäytännölle</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Action</source>
-        <translation type="obsolete">Toimenpide</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Address</source>
-        <translation type="obsolete">Osoite</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Port</source>
-        <translation type="obsolete">Portti</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Add the new exit policy</source>
-        <translation type="obsolete">Lisää uusi poistumiskäytäntö</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Increase the priority of the selected exit policy</source>
-        <translation type="obsolete">Nosta valitutun poistumiskäytännön tärkeyttä</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Decrease the priority of the selected exit policy</source>
-        <translation type="obsolete">Alenna valitutun poistumiskäytännön tärkeyttä</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Remove the selected exit policy</source>
-        <translation type="obsolete">Poista valittu poistumiskäytäntö</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1126"/>
@@ -1934,16 +1627,6 @@ problem with your server</source>
         <location filename="../gui/config/serverpage.cpp" line="298"/>
         <source>Error</source>
         <translation>Virhe</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>accept</source>
-        <translation type="obsolete">salli</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>reject</source>
-        <translation type="obsolete">estä</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="299"/>
@@ -1978,11 +1661,6 @@ fingerprint.</source>
 PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     </message>
     <message>
-        <location filename="" line="0"/>
-        <source>Bandwidth Rate Limits</source>
-        <translation type="obsolete">Nopeudenrajoittaminen</translation>
-    </message>
-    <message>
         <location filename="../gui/config/serverpage.ui" line="868"/>
         <source>Long-term average bandwidth limit</source>
         <translation>Keskimääräinen pitkäaikasnopeus</translation>
@@ -2011,11 +1689,6 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
         <location filename="../gui/config/serverpage.ui" line="785"/>
         <source>Show help topic on bandwidth rate limits</source>
         <translation>Avaa ohje nopeuksienrajoittamisesta</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Only allow connections to other Tor servers (non-exit node)</source>
-        <translation type="obsolete">Salli yhteyksiä vain muihin Tor-palvelimiin (välikäsi)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="333"/>
@@ -2189,44 +1862,9 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
 <context>
     <name>TorProcess</name>
     <message>
-        <location filename="" line="0"/>
-        <source>&quot;%1&quot; is not an executable.</source>
-        <translation type="obsolete">&quot;%1&quot; ei ole suoritettava.</translation>
-    </message>
-    <message>
         <location filename="../control/torprocess.cpp" line="91"/>
         <source>Process %1 failed to stop. [%2]</source>
         <translation>Prosessi %1 epäonnistui pysähtymästä. [%2]</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Failed to start</source>
-        <translation type="obsolete">Käynnistyminen epäonnistui</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Crashed</source>
-        <translation type="obsolete">Kaatui</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Timed out</source>
-        <translation type="obsolete">Yhteysaika päättyi</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Write error</source>
-        <translation type="obsolete">Kirjoitusvirhe</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Read error</source>
-        <translation type="obsolete">Lukuvirhe</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Unknown error</source>
-        <translation type="obsolete">Tuntematon virhe</translation>
     </message>
 </context>
 <context>
@@ -2235,11 +1873,6 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
         <location filename="../control/torservice.cpp" line="109"/>
         <source>Services not supported on this platform.</source>
         <translation>Tällä alustalla ei tueta palveluita.</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Unable to install the Tor service.</source>
-        <translation type="obsolete">Tor-palvelun asennus epäonnistui.</translation>
     </message>
     <message>
         <location filename="../control/torservice.cpp" line="134"/>
@@ -2311,11 +1944,6 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
         <location filename="../main.cpp" line="78"/>
         <source>Vidalia is already running</source>
         <translation>Vidalia on jo päällä</translation>
-    </message>
-    <message>
-        <location filename="" line="0"/>
-        <source>Another Vidalia process is already running. This Vidalia process will now exit.</source>
-        <translation type="obsolete">Vidalia on jo päällä. Tämä Vidalia suljetaan.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="82"/>

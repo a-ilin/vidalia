@@ -16,16 +16,6 @@
         <translation>关于Vidalia</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>View License</source>
-        <translation type="obsolete">查看许可证</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>OK</source>
-        <translation type="obsolete">OK</translation>
-    </message>
-    <message>
         <location filename="../gui/about/aboutdialog.ui" line="344"/>
         <source>Vidalia</source>
         <translation>Vidalia</translation>
@@ -56,11 +46,6 @@
         <translation>Vidalia版本</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Hide License</source>
-        <translation type="obsolete">隐藏许可证</translation>
-    </message>
-    <message>
         <location filename="../gui/about/aboutdialog.cpp" line="78"/>
         <source>&lt;Not Running&gt;</source>
         <translation>&lt;未运行&gt;</translation>
@@ -87,11 +72,6 @@
         <location filename="../gui/config/advancedpage.ui" line="341"/>
         <source>9051</source>
         <translation>9051</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Alternate Tor Configuration File</source>
-        <translation type="obsolete">改变Tor的配置文件</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="390"/>
@@ -277,11 +257,6 @@ You may need to remove it manually.</source>
         <translation>始于：</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Jan 1 2000</source>
-        <translation type="obsolete">2000年1月1日</translation>
-    </message>
-    <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="539"/>
         <source>100</source>
         <translation>100</translation>
@@ -369,11 +344,6 @@ You may need to remove it manually.</source>
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Configure Settings</source>
-        <translation type="obsolete">配置设定</translation>
-    </message>
-    <message>
         <location filename="../gui/config/configdialog.cpp" line="56"/>
         <source>General</source>
         <translation>一般</translation>
@@ -389,366 +359,9 @@ You may need to remove it manually.</source>
         <translation>高级</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Tor Directory</source>
-        <translation type="obsolete">Tor目录</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Path to Tor&apos;s executable</source>
-        <translation type="obsolete">Tor可执行程序的路径</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Select path to Tor executable</source>
-        <translation type="obsolete">选择Tor可执行程序的路径</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Browse</source>
-        <translation type="obsolete">浏览</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Startup Options</source>
-        <translation type="obsolete">启动可选项</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Select to start Vidalia on system boot</source>
-        <translation type="obsolete">选择系统启动时Vidalia就运行</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Run Vidalia on system startup</source>
-        <translation type="obsolete">系统启动时Vidalia就运行</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Set to start Tor when you launch Vidalia</source>
-        <translation type="obsolete">设为运行Vidalia时启动Tor</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Start Tor when Vidalia starts</source>
-        <translation type="obsolete">运行Vidalia时启动Tor</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Check to run as a Tor network server</source>
-        <translation type="obsolete">若作为Tor网络中的服务器请打勾</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Relay traffic for the Tor network</source>
-        <translation type="obsolete">为Tor网络中继传输</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Server Configuration</source>
-        <translation type="obsolete">服务器配置</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Attempts to determine the correct address for your server</source>
-        <translation type="obsolete">尝试确定您的服务器的地址</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Get Address</source>
-        <translation type="obsolete">获取地址</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Domain name or IP address of your server</source>
-        <translation type="obsolete">您的域名或者IP地址</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>If selected, clients will not exit the Tor network through your server</source>
-        <translation type="obsolete">选中后，客户端不会从您的服务器退出</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Only relay traffic between other Tor servers (middle-man)</source>
-        <translation type="obsolete">只进行其他Tor服务器之间的中继传输(中间人的角色)</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Enable to mirror the server directory</source>
-        <translation type="obsolete">启用服务器目录的镜像</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Mirror the Server Directory </source>
-        <translation type="obsolete">镜像服务器的目录</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Directory Port Number</source>
-        <translation type="obsolete">目录的端口号</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Port on which users and other servers can communicate with your server</source>
-        <translation type="obsolete">用户与其他服务器与您服务器通信的端口</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Email address at which you may be reached if there is a problem with your server</source>
-        <translation type="obsolete">万一您服务器出现问题，可提供的Email联系方式</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Name of your server</source>
-        <translation type="obsolete">您的服务器名</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Exit Policies</source>
-        <translation type="obsolete">退出策略</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Action:</source>
-        <translation type="obsolete">动作：</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Action for new exit policy</source>
-        <translation type="obsolete">新退出策略的动作</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Accept</source>
-        <translation type="obsolete">接受</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Reject</source>
-        <translation type="obsolete">拒绝</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>From:</source>
-        <translation type="obsolete">来自：</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Start port for new exit policy</source>
-        <translation type="obsolete">新退出策略的启动端口</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>To:</source>
-        <translation type="obsolete">前往：</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>End port for new exit policy</source>
-        <translation type="obsolete">新退出策略的结束端口</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Action</source>
-        <translation type="obsolete">动作</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>From</source>
-        <translation type="obsolete">来自</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>To</source>
-        <translation type="obsolete">前往</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Add the new exit policy</source>
-        <translation type="obsolete">添加新的退出策略</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Add</source>
-        <translation type="obsolete">添加</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Increase the priority of the selected exit policy</source>
-        <translation type="obsolete">增加被选退出策略的优先级</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Move Up</source>
-        <translation type="obsolete">上移</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Decrease the priority of the selected exit policy</source>
-        <translation type="obsolete">降低被选退出策略的优先级</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Move Down</source>
-        <translation type="obsolete">下移</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Remove the selected exit policy</source>
-        <translation type="obsolete">删除被选的退出策略</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Remove</source>
-        <translation type="obsolete">删除</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Control Port</source>
-        <translation type="obsolete">控制端口</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Port that Vidalia uses to communicate with Tor. </source>
-        <translation type="obsolete">Vidalia用于跟Tor通讯的端口</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>9051</source>
-        <translation type="obsolete">9051</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Alternate Tor Configuration File</source>
-        <translation type="obsolete">改变Tor的配置文件</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Start Tor with the specified configuration file (torrc)</source>
-        <translation type="obsolete">指定Tor启动时的配置文件(torrc)</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Select path to Tor configuration file</source>
-        <translation type="obsolete">选择Tor配置文件的路径</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Permissions</source>
-        <translation type="obsolete">权限</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Vidalia will run with this User&apos;s permissions</source>
-        <translation type="obsolete">Vidalia将根据用户的权限运行</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Vidalia will run with this Group&apos;s permissions</source>
-        <translation type="obsolete">Vidalia将根据用户的权限运行</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Saves current settings</source>
-        <translation type="obsolete">保存当前设置</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Save Settings</source>
-        <translation type="obsolete">保存设置</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Cancels any changes made to settings</source>
-        <translation type="obsolete">取消对设置的修改</translation>
-    </message>
-    <message>
         <location filename="../gui/config/configdialog.cpp" line="83"/>
         <source>Cancel</source>
         <translation>取消</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Vidalia was only able to find a private IP address for your server.
-Would you like to access an external service to determine your public IP address?</source>
-        <translation type="obsolete">Vidalia只能为您的服务器找到一个私有IP地址，
-您想通过外部服务以确定您的公共IP地址吗？</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Error</source>
-        <translation type="obsolete">出错</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Viadlia was uanble to determine your public IP address.</source>
-        <translation type="obsolete">Viadlia无法确定您的公共IP地址</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Error Saving Server Configuration</source>
-        <translation type="obsolete">保存服务器配置时出错</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Vidalia encountered an error applying your server configuration.</source>
-        <translation type="obsolete">应用您的服务器配置时Vidalia出错</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Select Path to Tor</source>
-        <translation type="obsolete">选择Tor的路径</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Select Tor Configuration File</source>
-        <translation type="obsolete">选择Tor的配置文件</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Address:</source>
-        <translation type="obsolete">地址：</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Nickname and Server Port are required</source>
-        <translation type="obsolete">昵称和服务器端口是必须的</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Directory Port:</source>
-        <translation type="obsolete">目录端口：</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Server Port:</source>
-        <translation type="obsolete">服务器端口：</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Contact Info:</source>
-        <translation type="obsolete">联系信息：</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Nickname:</source>
-        <translation type="obsolete">昵称：</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Run as User:</source>
-        <translation type="obsolete">运行时作为用户：</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Run as Group:</source>
-        <translation type="obsolete">运行时作为组：</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>You must specify at least a server nickname and port.</source>
-        <translation type="obsolete">你必须至少指定一个服务器昵称和端口</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="62"/>
@@ -831,11 +444,6 @@ Upgrade to a newer version of Tor.</source>
 <context>
     <name>GeneralPage</name>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Tor Directory</source>
-        <translation type="obsolete">Tor目录</translation>
-    </message>
-    <message>
         <location filename="../gui/config/generalpage.ui" line="334"/>
         <source>Path to Tor&apos;s executable</source>
         <translation>Tor可执行程序的路径</translation>
@@ -917,11 +525,6 @@ Upgrade to a newer version of Tor.</source>
         <location filename="../gui/bwgraph/graphframe.cpp" line="290"/>
         <source>%1 GB</source>
         <translation>%1 GB</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>%1 kB/s</source>
-        <translation type="obsolete">%1 kB/s</translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/graphframe.cpp" line="311"/>
@@ -1164,11 +767,6 @@ Upgrade to a newer version of Tor.</source>
         <translation>停止</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Configure</source>
-        <translation type="obsolete">配置</translation>
-    </message>
-    <message>
         <location filename="../gui/mainwindow.cpp" line="215"/>
         <source>About</source>
         <translation>关于</translation>
@@ -1244,20 +842,6 @@ Upgrade to a newer version of Tor.</source>
         <translation>启动Tor时出错</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Vidalia was unable to start Tor.
-<byte value="x9"/><byte value="x9"/>
-Error: </source>
-        <translation type="obsolete">Vidalia无法启动Tor。
-<byte value="x9"/><byte value="x9"/>
-出错：</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Tor is started</source>
-        <translation type="obsolete">Tor已启动</translation>
-    </message>
-    <message>
         <location filename="../gui/mainwindow.cpp" line="371"/>
         <source>Error Connecting to Tor</source>
         <translation>连接到Tor时出错</translation>
@@ -1266,15 +850,6 @@ Error: </source>
         <location filename="../gui/mainwindow.cpp" line="436"/>
         <source>Error Stopping Tor</source>
         <translation>停止Tor时出错</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Vidalia was unable to stop Tor.
-
-Error: </source>
-        <translation type="obsolete">Vidalia无法停止Tor。
-<byte value="x9"/><byte value="x9"/>
-出错：</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="457"/>
@@ -1287,86 +862,9 @@ Error: </source>
         <translation>Tor已退出</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Vidalia detected that Tor exited unexpectedly.
-
-Please check the message log for indicators
-about what happened to Tor before it exited.</source>
-        <translation type="obsolete">Vidalia检测到Tor异常退出。
-<byte value="x9"/><byte value="x9"/>
-请检查信息日志，看看Tor退出前有何异常。</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Show Log</source>
-        <translation type="obsolete">显示日志</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Close</source>
-        <translation type="obsolete">关闭</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Authentication Error</source>
-        <translation type="obsolete">验证出错</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Vidalia was unable to authenticate itself to Tor.Check your authentication information and try again.
-
-Error: </source>
-        <translation type="obsolete">Vidalia无法通过Tor的验证，请检查您的验证信息，然后再试试。
-<byte value="x9"/><byte value="x9"/>
-出错：</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Error Setting Events</source>
-        <translation type="obsolete">设置事件时出错</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Vidalia was unable to register for events from Tor. Some features of Vidalia will be unavailable. 
-
-Error: </source>
-        <translation type="obsolete">Vidalia无法由Tor注册事件，Vidalia的部分功能将无法使用。
-<byte value="x9"/><byte value="x9"/>
-出错：</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Vidalia was unable to start Tor.</source>
-        <translation type="obsolete">Vidalia无法启动Tor。</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>OK</source>
-        <translation type="obsolete">OK</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Retry</source>
-        <translation type="obsolete">重试</translation>
-    </message>
-    <message>
         <location filename="../gui/mainwindow.cpp" line="437"/>
         <source>Vidalia was unable to stop Tor.</source>
         <translation>Vidalia无法停止Tor。</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Vidalia was unable to authenticate itself to Tor.
-Check your authentication information and try again.</source>
-        <translation type="obsolete">Vidalia无法通过Tor的验证。
-请检查您的验证信息并重试。</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Vidalia was unable to register for events from Tor.
-Some features of Vidalia will be unavailable.</source>
-        <translation type="obsolete">Vidalia无法注册Tor过来的事件。
-Vidalia的一些功能可能无法使用。</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="356"/>
@@ -1382,33 +880,6 @@ Vidalia的一些功能可能无法使用。</translation>
         <location filename="../gui/mainwindow.cpp" line="397"/>
         <source>Server is Enabled</source>
         <translation>服务器已启用</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>You are currently running a Tor server.
-Terminating your server will interrupt any open connections from clients.
-
-Would you like to shutdown gracefully and give clients time to find a new server?</source>
-        <translation type="obsolete">您现在正在运行一个Tor服务器。
-中止您服务器将中断与其他客户端的连接。
-
-您是否想要礼貌地关闭，以给客户端一点寻找新服务器的时间？</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Error Shutting Down</source>
-        <translation type="obsolete">关闭时出错</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Vidalia was unable to shutdown Tor gracefully.
-</source>
-        <translation type="obsolete">Vidalia无法礼貌地关闭Tor。</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Do you want to close Tor anyway?</source>
-        <translation type="obsolete">您仍然想要关闭Tor吗？</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="433"/>
@@ -1429,11 +900,6 @@ Would you like to shutdown gracefully and give clients time to find a new server
         <location filename="../gui/mainwindow.cpp" line="500"/>
         <source>Vidalia was unable to apply your server&apos;s settings.</source>
         <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Show Settings</source>
-        <translation type="obsolete">显示设置</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="402"/>
@@ -1508,16 +974,6 @@ Please check the message log for indicators about what happened to Tor before it
         <translation>消息</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Toggles display of Message Log settings</source>
-        <translation type="obsolete">消息日志设定的显示切换</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Show Settings</source>
-        <translation type="obsolete">显示设置</translation>
-    </message>
-    <message>
         <location filename="../gui/log/messagelog.ui" line="607"/>
         <source>Log File</source>
         <translation>日志文件</translation>
@@ -1546,21 +1002,6 @@ Please check the message log for indicators about what happened to Tor before it
         <location filename="../gui/log/messagelog.ui" line="588"/>
         <source>Number of messages to keep in log</source>
         <translation>日志中保存的消息数量</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Window Opacity</source>
-        <translation type="obsolete">窗口的不透明度</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>100</source>
-        <translation type="obsolete">100</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Changes the transparency of the Message Log</source>
-        <translation type="obsolete">改变消息日志的透明度</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="430"/>
@@ -1728,11 +1169,6 @@ Please check the message log for indicators about what happened to Tor before it
         <translation>Ctrl+F</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Messages Shown: </source>
-        <translation type="obsolete">显示的消息：</translation>
-    </message>
-    <message>
         <location filename="../gui/log/messagelog.cpp" line="148"/>
         <source>Messages that appear when something has 
 gone very wrong and Tor cannot proceed.</source>
@@ -1771,23 +1207,9 @@ interest to Tor developers.</source>
         <translation>设置过滤器时出错</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Vidalia was unable to register for Tor&apos;s log events.
-
-Error: </source>
-        <translation type="obsolete">Vidalia无法注册Tor的日志消息。
-<byte value="x9"/><byte value="x9"/>
-出错：</translation>
-    </message>
-    <message>
         <location filename="../gui/log/messagelog.cpp" line="219"/>
         <source>Error Opening Log File</source>
         <translation>打开日志文件时出错</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Vidalia was unable to open the specified log file for writing.</source>
-        <translation type="obsolete">Vidalia无法打开要写入的指定日志文件</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="294"/>
@@ -1803,13 +1225,6 @@ Error: </source>
         <location filename="../gui/log/messagelog.cpp" line="323"/>
         <source>Vidalia</source>
         <translation>Vidallia</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Cannot write file %1:
-%2.</source>
-        <translation type="obsolete">无法写入文件 %1：
-%2</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="376"/>
@@ -1830,28 +1245,6 @@ Error: </source>
         <location filename="../gui/log/messagelog.cpp" line="384"/>
         <source>Search found 0 matches.</source>
         <translation>搜索到0个匹配。</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>% Opaque</source>
-        <translation type="obsolete">% 不透明度</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Messages Shown: %1</source>
-        <translation type="obsolete">显示的消息：%1</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>%1 [%2] %3
-</source>
-        <translation type="obsolete">%1 [%2] %3
-</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Hide Settings</source>
-        <translation type="obsolete">隐藏设置</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="839"/>
@@ -1877,11 +1270,6 @@ Error: </source>
         <location filename="../gui/log/messagelog.ui" line="861"/>
         <source>Show the help browser</source>
         <translation>显示帮助浏览器</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Ctrl+H</source>
-        <translation type="obsolete">Ctrl+H</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="204"/>
@@ -2144,11 +1532,6 @@ Error: </source>
         <translation>为Tor网络中继传输</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Server Configuration</source>
-        <translation type="obsolete">服务器配置</translation>
-    </message>
-    <message>
         <location filename="../gui/config/serverpage.ui" line="512"/>
         <source>Directory Port:</source>
         <translation>目录端口：</translation>
@@ -2167,11 +1550,6 @@ Error: </source>
         <location filename="../gui/config/serverpage.ui" line="617"/>
         <source>Name of your server</source>
         <translation>您的服务器名</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Email address at which you may be reached if there is a problem with your server</source>
-        <translation type="obsolete">万一您服务器出现问题，可提供的Email联系方式</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="480"/>
@@ -2209,16 +1587,6 @@ Error: </source>
         <translation>镜像服务器的目录</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>If selected, clients will not exit the Tor network through your server</source>
-        <translation type="obsolete">选中后，客户端不会从您的服务器退出</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Only relay traffic between other Tor servers (middle-man)</source>
-        <translation type="obsolete">只进行其他Tor服务器之间的中继传输(中间人的角色)</translation>
-    </message>
-    <message>
         <location filename="../gui/config/serverpage.ui" line="386"/>
         <source>Attempts to determine the correct address for your server</source>
         <translation>尝试确定您的服务器的地址</translation>
@@ -2229,119 +1597,9 @@ Error: </source>
         <translation>获取地址</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Nickname and Server Port are required</source>
-        <translation type="obsolete">昵称和服务器端口是必须的</translation>
-    </message>
-    <message>
         <location filename="../gui/config/serverpage.ui" line="987"/>
         <source>Exit Policies</source>
         <translation>退出策略</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>IP Address:</source>
-        <translation type="obsolete">IP地址：</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>IP address for new exit policy</source>
-        <translation type="obsolete">新退出策略的IP地址</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>/</source>
-        <translation type="obsolete">/</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Mask:</source>
-        <translation type="obsolete">掩码：</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>IP address mask for new exit policy</source>
-        <translation type="obsolete">新退出策略的IP地址掩码</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>:</source>
-        <translation type="obsolete">：</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Ports:</source>
-        <translation type="obsolete">端口：</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Starting port number for new exit policy</source>
-        <translation type="obsolete">新退出策略的开头端口号</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>-</source>
-        <translation type="obsolete">-</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Ending port number for new exit policy</source>
-        <translation type="obsolete">新退出策略的末尾端口号</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Action:</source>
-        <translation type="obsolete">动作：</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Action for new exit policy</source>
-        <translation type="obsolete">新退出策略的动作</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Accept</source>
-        <translation type="obsolete">接受</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Reject</source>
-        <translation type="obsolete">拒绝</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Action</source>
-        <translation type="obsolete">动作</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Address</source>
-        <translation type="obsolete">地址</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Port</source>
-        <translation type="obsolete">端口</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Add the new exit policy</source>
-        <translation type="obsolete">添加新的退出策略</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Increase the priority of the selected exit policy</source>
-        <translation type="obsolete">增加被选退出策略的优先级</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Decrease the priority of the selected exit policy</source>
-        <translation type="obsolete">降低被选退出策略的优先级</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Remove the selected exit policy</source>
-        <translation type="obsolete">删除被选的退出策略</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1126"/>
@@ -2357,28 +1615,6 @@ Error: </source>
         <location filename="../gui/config/serverpage.cpp" line="298"/>
         <source>Error</source>
         <translation>出错</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Viadlia was uanble to determine your public IP address.</source>
-        <translation type="obsolete">Viadlia无法确定您的公共IP地址</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Vidalia was only able to find a private IP address for your server.
-Would you like to access an external service to determine your public IP address?</source>
-        <translation type="obsolete">Vidalia只能为您的服务器找到一个私有IP地址，
-您想通过外部服务以确定您的公共IP地址吗？</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>accept</source>
-        <translation type="obsolete">接受</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>reject</source>
-        <translation type="obsolete">拒绝</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="299"/>
@@ -2613,44 +1849,9 @@ fingerprint.</source>
 <context>
     <name>TorProcess</name>
     <message>
-        <location filename="" line="7667826"/>
-        <source>&quot;%1&quot; is not an executable.</source>
-        <translation type="obsolete">&quot;%1&quot;不是可执行程序。</translation>
-    </message>
-    <message>
         <location filename="../control/torprocess.cpp" line="91"/>
         <source>Process %1 failed to stop. [%2]</source>
         <translation>进程 %1无法停止，[%2]</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Failed to start</source>
-        <translation type="obsolete">启动失败</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Crashed</source>
-        <translation type="obsolete">崩溃</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Timed out</source>
-        <translation type="obsolete">超时</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Write error</source>
-        <translation type="obsolete">写入出错</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Read error</source>
-        <translation type="obsolete">读取出错</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Unknown error</source>
-        <translation type="obsolete">未知的错误</translation>
     </message>
 </context>
 <context>

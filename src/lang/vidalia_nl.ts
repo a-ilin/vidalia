@@ -74,11 +74,6 @@
         <translation>9051</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Alternate Tor Configuration File</source>
-        <translation type="obsolete">Alternatief Tor Configuratie Bestand</translation>
-    </message>
-    <message>
         <location filename="../gui/config/advancedpage.ui" line="390"/>
         <source>Start Tor with the specified configuration file (torrc)</source>
         <translation>Start Tor met het gespecificeerde configuratie bestand (torrc)</translation>
@@ -396,16 +391,6 @@ You may need to remove it manually.</source>
 </context>
 <context>
     <name>ControlConnection</name>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>The control socket is closing.</source>
-        <translation type="obsolete">De beheer socket wordt gesloten.</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Control socket not connected.</source>
-        <translation type="obsolete">Beheer socket is niet verbonden.</translation>
-    </message>
     <message>
         <location filename="../control/controlconnection.cpp" line="285"/>
         <source>Control socket is not connected.</source>
@@ -898,16 +883,6 @@ Upgrade naar een nieuwere versie van Tor.</translation>
         <translation>Server is Ingeschakeld</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Error Shutting Down</source>
-        <translation type="obsolete">Fout bij Afsluiten</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Do you want to close Tor anyway?</source>
-        <translation type="obsolete">Wilt u toch Tor sluiten?</translation>
-    </message>
-    <message>
         <location filename="../gui/mainwindow.cpp" line="433"/>
         <source>Tor is stopping</source>
         <translation>Tor is aan het stoppen</translation>
@@ -935,11 +910,6 @@ Would you like to shutdown gracefully and give clients time to find a new server
         <translation>U draait op dit moment een Tor server. Het eindigen van de server verstoort alle open verbindingen van clients.
 
 Wilt u op stijlvolle wijze afsluiten en clients de tijd gunnen om een nieuwe server te vinden?</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Vidalia was unable to shutdown Tor gracefully. (</source>
-        <translation type="obsolete">Vidalia was niet in staat om Tor stijlvol af te sluiten. (</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="472"/>
@@ -1314,11 +1284,6 @@ ontwikkelaars.</translation>
         <translation>Toon de help browser</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Ctrl+H</source>
-        <translation type="obsolete">Ctrl+H</translation>
-    </message>
-    <message>
         <location filename="../gui/log/messagelog.cpp" line="204"/>
         <source>Vidalia was unable to register for Tor&apos;s log events.</source>
         <translation>Vidalia was niet in staat zich aan te melden voor Tor&apos;s log meldingen.</translation>
@@ -1505,11 +1470,6 @@ ontwikkelaars.</translation>
         <translation>Platform:</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Contact:</source>
-        <translation type="obsolete">Contact:</translation>
-    </message>
-    <message>
         <location filename="../gui/network/routerdescriptorview.cpp" line="119"/>
         <source>Bandwidth:</source>
         <translation>Bandbreedte:</translation>
@@ -1556,11 +1516,6 @@ ontwikkelaars.</translation>
         <translation>Status</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Router</source>
-        <translation type="obsolete">Router</translation>
-    </message>
-    <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="40"/>
         <source>Server</source>
         <translation type="unfinished">Server</translation>
@@ -1587,11 +1542,6 @@ ontwikkelaars.</translation>
         <location filename="../gui/config/serverpage.ui" line="304"/>
         <source>Relay traffic for the Tor network</source>
         <translation>Verwerk verkeer van het Tor netwerk</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Server Configuration</source>
-        <translation type="obsolete">Server Configuratie</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="512"/>
@@ -1649,11 +1599,6 @@ ontwikkelaars.</translation>
         <translation>Mirror de Server Directory</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>If selected, clients will not exit the Tor network through your server</source>
-        <translation type="obsolete">Indien geselecteerd, zullen clients het Tor netwerk niet verlaten vanuit jouw server</translation>
-    </message>
-    <message>
         <location filename="../gui/config/serverpage.ui" line="386"/>
         <source>Attempts to determine the correct address for your server</source>
         <translation>Probeert het juiste adres van jouw server te bepalen</translation>
@@ -1664,109 +1609,9 @@ ontwikkelaars.</translation>
         <translation>Verkrijg Adres</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Nickname and Server Port are required</source>
-        <translation type="obsolete">Bijnaam en Server Poort zijn vereist</translation>
-    </message>
-    <message>
         <location filename="../gui/config/serverpage.ui" line="987"/>
         <source>Exit Policies</source>
         <translation>Deurbeleid</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>IP Address:</source>
-        <translation type="obsolete">IP Adres:</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>IP address for new exit policy</source>
-        <translation type="obsolete">IP adres voor nieuw deurbeleid</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>/</source>
-        <translation type="obsolete">/</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Mask:</source>
-        <translation type="obsolete">Masker:</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>IP address mask for new exit policy</source>
-        <translation type="obsolete">IP adres masker voor nieuw deurbeleid</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>:</source>
-        <translation type="obsolete">:</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Ports:</source>
-        <translation type="obsolete">Poorten:</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Starting port number for new exit policy</source>
-        <translation type="obsolete">Begin poort nummer voor nieuw deurbeleid</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>-</source>
-        <translation type="obsolete">-</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Ending port number for new exit policy</source>
-        <translation type="obsolete">Laatste poortnummer voor nieuw deurbeleid</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Action:</source>
-        <translation type="obsolete">Actie:</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Action for new exit policy</source>
-        <translation type="obsolete">Actie voor nieuw deurbeleid</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Action</source>
-        <translation type="obsolete">Actie</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Address</source>
-        <translation type="obsolete">Adres</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Port</source>
-        <translation type="obsolete">Poort</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Add the new exit policy</source>
-        <translation type="obsolete">Voeg het nieuwe deurbeleid toe</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Increase the priority of the selected exit policy</source>
-        <translation type="obsolete">Verhoog de prioriteit van het geselecteerde deurbeleid</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Decrease the priority of the selected exit policy</source>
-        <translation type="obsolete">Verlaag de prioriteit van het geselecteerde deurbeleid</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Remove the selected exit policy</source>
-        <translation type="obsolete">Verwijder het geselecteerde deurbeleid</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1126"/>
@@ -1782,16 +1627,6 @@ ontwikkelaars.</translation>
         <location filename="../gui/config/serverpage.cpp" line="298"/>
         <source>Error</source>
         <translation>Fout</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>accept</source>
-        <translation type="obsolete">toestaan</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>reject</source>
-        <translation type="obsolete">weigeren</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="299"/>
@@ -1827,11 +1662,6 @@ een probleem is met uw server. U kunt ook uw PGP of GPG fingerprint
 toevoegen.</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Bandwidth Rate Limits</source>
-        <translation type="obsolete">Bandbreedte Ratio Begrenzing</translation>
-    </message>
-    <message>
         <location filename="../gui/config/serverpage.ui" line="868"/>
         <source>Long-term average bandwidth limit</source>
         <translation>Gemiddelde bandbreedte op de lange termijn</translation>
@@ -1860,11 +1690,6 @@ toevoegen.</translation>
         <location filename="../gui/config/serverpage.ui" line="785"/>
         <source>Show help topic on bandwidth rate limits</source>
         <translation>Toon het helponderwerp over bandbreedte ratio begrenzing</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Only allow connections to other Tor servers (non-exit node)</source>
-        <translation type="obsolete">Sta enkel verbindingen naar andere Tor servers toe (non-exit node)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="333"/>
@@ -2120,11 +1945,6 @@ toevoegen.</translation>
         <location filename="../main.cpp" line="78"/>
         <source>Vidalia is already running</source>
         <translation>Vidalia is reeds actief</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Another Vidalia process is already running. This Vidalia process will now exit.</source>
-        <translation type="obsolete">Een ander Vidalia proces is reeds actief, dit Vidalia proces zal nu beindigd worden.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="82"/>

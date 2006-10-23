@@ -16,16 +16,6 @@
         <translation>A Vidalia-ról</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>View License</source>
-        <translation type="obsolete">Licence megtekintése</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>OK</source>
-        <translation type="obsolete">OK</translation>
-    </message>
-    <message>
         <location filename="../gui/about/aboutdialog.ui" line="344"/>
         <source>Vidalia</source>
         <translation>Vidalia</translation>
@@ -56,11 +46,6 @@
         <translation>Vidalia verzió</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Hide License</source>
-        <translation type="obsolete">Licence elrejtése</translation>
-    </message>
-    <message>
         <location filename="../gui/about/aboutdialog.cpp" line="78"/>
         <source>&lt;Not Running&gt;</source>
         <translation>&lt;Nem fut&gt;</translation>
@@ -87,11 +72,6 @@
         <location filename="../gui/config/advancedpage.ui" line="341"/>
         <source>9051</source>
         <translation>9051</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Alternate Tor Configuration File</source>
-        <translation type="obsolete">Alternatív Tor konfigurációs fájl</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="390"/>
@@ -277,11 +257,6 @@ You may need to remove it manually.</source>
         <translation>Ekkortól:</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Jan 1 2000</source>
-        <translation type="obsolete">2000. jan. 1</translation>
-    </message>
-    <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="539"/>
         <source>100</source>
         <translation>100</translation>
@@ -369,11 +344,6 @@ You may need to remove it manually.</source>
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Configure Settings</source>
-        <translation type="obsolete">Beállítások módosítása</translation>
-    </message>
-    <message>
         <location filename="../gui/config/configdialog.cpp" line="56"/>
         <source>General</source>
         <translation>Általános</translation>
@@ -421,16 +391,6 @@ You may need to remove it manually.</source>
 </context>
 <context>
     <name>ControlConnection</name>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>The control socket is closing.</source>
-        <translation type="obsolete">A kontroll kapcsolat lezárul.</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Control socket not connected.</source>
-        <translation type="obsolete">Nincs Kontroll kapcsolat.</translation>
-    </message>
     <message>
         <location filename="../control/controlconnection.cpp" line="285"/>
         <source>Control socket is not connected.</source>
@@ -811,11 +771,6 @@ dokumentum.</translation>
         <translation>Leállítás</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Configure</source>
-        <translation type="obsolete">Konfigurálás</translation>
-    </message>
-    <message>
         <location filename="../gui/mainwindow.cpp" line="215"/>
         <source>About</source>
         <translation>Névjegy</translation>
@@ -931,24 +886,9 @@ dokumentum.</translation>
         <translation>A szerver bekapcsolva</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Error Shutting Down</source>
-        <translation type="obsolete">Hiba a leállítással</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Do you want to close Tor anyway?</source>
-        <translation type="obsolete">Mindenképp be akarod zárni a Tor-t?</translation>
-    </message>
-    <message>
         <location filename="../gui/mainwindow.cpp" line="433"/>
         <source>Tor is stopping</source>
         <translation>A Tor leáll</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>View Network</source>
-        <translation type="obsolete">Hálózat megtekintése</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="265"/>
@@ -976,11 +916,6 @@ megszûntetése a kliensek minden nyitott kapcsolatát megszakítja.
 
 Szeretnéd elegánsan leállítani a szervert, ezzel idõt adva a klienseknek
 újabb szerverek megtalálására?</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Vidalia was unable to shutdown Tor gracefully. (</source>
-        <translation type="obsolete">A Vidalia nem tudta a Tor-t elegánsan leállítani.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="472"/>
@@ -1359,11 +1294,6 @@ részére.</translation>
         <translation>Súgó böngészõ megjelenítése</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Ctrl+H</source>
-        <translation type="obsolete">Ctrl+H</translation>
-    </message>
-    <message>
         <location filename="../gui/log/messagelog.cpp" line="204"/>
         <source>Vidalia was unable to register for Tor&apos;s log events.</source>
         <translation>A Vidalia nem tudta regisztrálni a Tor log
@@ -1438,17 +1368,6 @@ eseményeit.</translation>
         <translation>Kicsinyítés</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>New Identity</source>
-        <translation type="obsolete">Új identitás</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Make new connections appear to be different than your old connections.</source>
-        <translation type="obsolete">Az új kapcsolatok tûnjenek a régiektõl
-különbözõnek.</translation>
-    </message>
-    <message>
         <location filename="../gui/network/netviewer.ui" line="521"/>
         <source>Refresh the list of routers and connections.</source>
         <translation>A routerek és a kapcsolatok listájának frissítése.</translation>
@@ -1477,17 +1396,6 @@ különbözõnek.</translation>
         <location filename="../gui/network/netviewer.ui" line="609"/>
         <source>Zoom out on the network map.</source>
         <translation>Kicsinyítés a hálózati térképen.</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>All subsequent connections will appear to be different than your old connections.</source>
-        <translation type="obsolete">Minden további kapcsolat a régi kapcsolataidtól
-különbözõként fog szerepelni.</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Failed to Create New Identity</source>
-        <translation type="obsolete">Nem sikerült az új identitás létrehozása</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="529"/>
@@ -1574,11 +1482,6 @@ különbözõként fog szerepelni.</translation>
         <translation>Platform:</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Contact:</source>
-        <translation type="obsolete">Kapcsolat:</translation>
-    </message>
-    <message>
         <location filename="../gui/network/routerdescriptorview.cpp" line="119"/>
         <source>Bandwidth:</source>
         <translation>Sávszélesség:</translation>
@@ -1625,11 +1528,6 @@ különbözõként fog szerepelni.</translation>
         <translation>Állapot</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Router</source>
-        <translation type="obsolete">Router</translation>
-    </message>
-    <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="40"/>
         <source>Server</source>
         <translation type="unfinished">Kiszolgáló</translation>
@@ -1657,11 +1555,6 @@ alkalmazást</translation>
         <location filename="../gui/config/serverpage.ui" line="304"/>
         <source>Relay traffic for the Tor network</source>
         <translation>A Tor hálózat forgalmának közvetítése</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Server Configuration</source>
-        <translation type="obsolete">Szerver konfiguráció</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="512"/>
@@ -1720,18 +1613,6 @@ kommunikál a szervereddel</translation>
         <translation>A szerver címtár tükrözése</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>If selected, clients will not exit the Tor network through your server</source>
-        <translation type="obsolete">Kiválasztása esetén a kliensek nem lépnek ki a Tor
-hálózatból a szervereden keresztül</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Only relay traffic between other Tor servers (middle-man)</source>
-        <translation type="obsolete">Csak egyéb Tor szerverek közti forgalom közvetítése
-(middle-man)</translation>
-    </message>
-    <message>
         <location filename="../gui/config/serverpage.ui" line="386"/>
         <source>Attempts to determine the correct address for your server</source>
         <translation>Kísérletek a szervered korrekt címének meghatározására</translation>
@@ -1742,111 +1623,9 @@ hálózatból a szervereden keresztül</translation>
         <translation>Cím lekérése</translation>
     </message>
     <message>
-        <location filename="" line="7667826"/>
-        <source>Nickname and Server Port are required</source>
-        <translation type="obsolete">Becenév és szerver port megadása szükséges</translation>
-    </message>
-    <message>
         <location filename="../gui/config/serverpage.ui" line="987"/>
         <source>Exit Policies</source>
         <translation>Kilépési szabályok</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>IP Address:</source>
-        <translation type="obsolete">IP cím:</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>IP address for new exit policy</source>
-        <translation type="obsolete">IP cím az új kilépési szabályhoz</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>/</source>
-        <translation type="obsolete">/</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Mask:</source>
-        <translation type="obsolete">Maszk:</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>IP address mask for new exit policy</source>
-        <translation type="obsolete">IP cím maszk az új kilépési szabályhoz</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>:</source>
-        <translation type="obsolete">:</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Ports:</source>
-        <translation type="obsolete">Portok:</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Starting port number for new exit policy</source>
-        <translation type="obsolete">Kezdeti port az új kilépési szabályhoz</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>-</source>
-        <translation type="obsolete">-</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Ending port number for new exit policy</source>
-        <translation type="obsolete">Végsõ port az új kilépési szabályhoz</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Action:</source>
-        <translation type="obsolete">Mûvelet:</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Action for new exit policy</source>
-        <translation type="obsolete">Új kilépési szabályhoz tartozó mûvelet</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Action</source>
-        <translation type="obsolete">Mûvelet</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Address</source>
-        <translation type="obsolete">Cím</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Port</source>
-        <translation type="obsolete">Port</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Add the new exit policy</source>
-        <translation type="obsolete">Új kilépési szabály hozzáadása</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Increase the priority of the selected exit policy</source>
-        <translation type="obsolete">A választott kilépési szabály prioiritásának
-növelése</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Decrease the priority of the selected exit policy</source>
-        <translation type="obsolete">A választott kilépési szabály prioiritásának
-csökkentése</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Remove the selected exit policy</source>
-        <translation type="obsolete">A választott kilépési szabály eltávolítása</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1126"/>
@@ -1863,16 +1642,6 @@ kell adnod.</translation>
         <location filename="../gui/config/serverpage.cpp" line="298"/>
         <source>Error</source>
         <translation>Hiba</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>accept</source>
-        <translation type="obsolete">elfogad</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>reject</source>
-        <translation type="obsolete">visszautasít</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="299"/>
@@ -2195,12 +1964,6 @@ szintén csatolhatod.</translation>
         <location filename="../main.cpp" line="78"/>
         <source>Vidalia is already running</source>
         <translation>A Vidalia már fut</translation>
-    </message>
-    <message>
-        <location filename="" line="7667826"/>
-        <source>Another Vidalia process is already running. This Vidalia process will now exit.</source>
-        <translation type="obsolete">Már fut a Vidalia-nak egy példánya. Ez a Vidalia
-folyamat ezért most befejezõdik.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="82"/>
