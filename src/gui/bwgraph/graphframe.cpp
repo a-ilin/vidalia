@@ -154,32 +154,34 @@ GraphFrame::paintEvent(QPaintEvent *event)
 void
 GraphFrame::paintData()
 {
+  QVector<QPointF> recvPoints, sendPoints;
+  
   /* Draw the integrals using an alpha-blending, giving the background
    * integral a little more weight than the foreground. This could probably be
    * tweaked more to make overlapping more apparent, including tweaking the 
    * colors`. */
   if (_showRecv) {
-    paintIntegral(_recvData, RECV_COLOR, 0.6);
+    recvPoints = pointsFromData(_recvData);
+    paintIntegral(recvPoints, RECV_COLOR, 0.6);
   }
   if (_showSend) {
-    paintIntegral(_sendData, SEND_COLOR, 0.4);
+    sendPoints = pointsFromData(_sendData);
+    paintIntegral(sendPoints, SEND_COLOR, 0.4);
   }
   
   /* Outline the integrals in their appropriate colors. */
   if (_showRecv) {
-    paintLine(_recvData, RECV_COLOR);
+    paintLine(recvPoints, RECV_COLOR);
   }
-  /* If show send rate is selected */
   if (_showSend) {
-    paintLine(_sendData, SEND_COLOR);
+    paintLine(sendPoints, SEND_COLOR);
   }
 }
 
-/** Plots an integral using the data points in <b>list</b>. The area will be
- * filled in using <b>color</b> and an alpha-blending level of <b>alpha</b>
- * (default is opaque). */
-void
-GraphFrame::paintIntegral(QList<qreal>* list, QColor color, qreal alpha)
+/** Returns a list of points on the bandwidth graph based on the supplied set
+ * of send or receive values. */
+QVector<QPointF>
+GraphFrame::pointsFromData(QList<qreal>* list)
 {
   QVector<QPointF> points;
   int x = _rec.width();
@@ -199,7 +201,15 @@ GraphFrame::paintIntegral(QList<qreal>* list, QColor color, qreal alpha)
     x -= SCROLL_STEP;
   }
   points << QPointF(SCALE_WIDTH, y);
-  
+  return points; 
+}
+
+/** Plots an integral using the data points in <b>list</b>. The area will be
+ * filled in using <b>color</b> and an alpha-blending level of <b>alpha</b>
+ * (default is opaque). */
+void
+GraphFrame::paintIntegral(QVector<QPointF> points, QColor color, qreal alpha)
+{
   /* Save the current brush, plot the integral, and restore the old brush */
   QBrush oldBrush = _painter->brush();
   color.setAlphaF(alpha);
@@ -211,35 +221,12 @@ GraphFrame::paintIntegral(QList<qreal>* list, QColor color, qreal alpha)
 /** Iterates the input list and draws a line on the graph in the appropriate
  * color. */
 void
-GraphFrame::paintLine(QList<qreal>* list, QColor color, Qt::PenStyle lineStyle) 
+GraphFrame::paintLine(QVector<QPointF> points, QColor color, Qt::PenStyle lineStyle) 
 {
-  int x = _rec.width() + SCROLL_STEP;
-  int y = _rec.height();
-  qreal scale = (y - (y/10)) / _maxValue;
-  
-  qreal prevValue = y - (list->at(0) * scale);
-  qreal currValue;
- 
-  /* Save the current pen, set the new pen and plot the data lines */
+  /* Save the current brush, plot the line, and restore the old brush */
   QPen oldPen = _painter->pen();
   _painter->setPen(QPen(color, lineStyle));
-  for (int i = 0; i < list->size(); ++i) {
-    currValue = y - (list->at(i) * scale);
-    
-    /* Don't draw past the scale */
-    if (x - SCROLL_STEP < SCALE_WIDTH) {
-      _painter->drawLine(QPointF(x, prevValue),
-                         QPointF(SCALE_WIDTH, currValue));
-      break;
-    }
-     
-    _painter->drawLine(QPointF(x, prevValue),
-                       QPointF(x-SCROLL_STEP, currValue));
-      
-    /* Update for next iteration */
-    prevValue = currValue;
-    x -= SCROLL_STEP;
-  }
+  _painter->drawPolyline(points.data(), points.size());
   _painter->setPen(oldPen);
 }
 

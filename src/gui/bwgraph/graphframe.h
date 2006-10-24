@@ -81,11 +81,14 @@ private:
   void paintScale();
   /** Returns a formatted string representation of total. */
   QString totalToStr(qreal total);
+  /** Returns a list of points on the bandwidth graph based on the supplied set
+   * of send or receive values. */
+  QVector<QPointF> pointsFromData(QList<qreal>* list);
   /** Paints a line with the data in list. */
-  void paintLine(QList<qreal>* list, QColor color, 
+  void paintLine(QVector<QPointF> points, QColor color, 
                  Qt::PenStyle lineStyle = Qt::SolidLine);
   /** Paints an integral using the supplied data. */
-  void paintIntegral(QList<qreal>* list, QColor color, qreal alpha = 1.0);
+  void paintIntegral(QVector<QPointF> points, QColor color, qreal alpha = 1.0);
 
   /** A QPainter object that handles drawing the various graph elements. */
   QPainter* _painter;
