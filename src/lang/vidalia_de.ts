@@ -429,7 +429,7 @@ Upgrade to a newer version of Tor.</source>
         <translation>Fehler beim Senden eines Steuerkommandos. [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="182"/>
+        <locationu filename="../control/controlsocket.cpp" line="182"/>
         <source>Socket disconnected while attempting to read a line of data.</source>
         <translation>Beim Lesen von Daten wurde der Socket unterbrochen.</translation>
     </message>
@@ -441,7 +441,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../control/controlsocket.cpp" line="136"/>
         <source>Control socket is not connected.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Das Kontrollsocket ist nicht verbunden.</translation>
     </message>
 </context>
 <context>
@@ -1271,7 +1271,7 @@ alle Vorgänge und sind hauptsächlich für Entwickler gedacht.</translation>
     <message>
         <location filename="../gui/log/messagelog.ui" line="842"/>
         <source>Adjust Message Log Settings</source>
-        <translation>Ändere Nachrichtenfenster Einstellungen</translation>
+        <translation>Ändere Nachrichtenfenster-Einstellungen</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="850"/>
@@ -1321,12 +1321,12 @@ empfangen.</translation>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="241"/>
         <source>Log Filename Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Logdateiname wird benötigt</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="243"/>
         <source>You must enter a filename to be able to save log messages to a file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie müssen einen Dateinamen angeben, um die Logdaten speichern zu können.</translation>
     </message>
 </context>
 <context>
@@ -1534,7 +1534,7 @@ empfangen.</translation>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="54"/>
         <source>Zoom to Server</source>
-        <translation type="unfinished"></translation>
+        <translation>Den Server heranzommen</translation>
     </message>
 </context>
 <context>
@@ -1711,7 +1711,7 @@ angeben.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="683"/>
         <source>Bandwidth Limits</source>
-        <translation type="unfinished"></translation>
+        <translation>Bandbreitenbegrenzung</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="718"/>
@@ -1781,7 +1781,7 @@ angeben.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1054"/>
         <source>No External Connections</source>
-        <translation type="unfinished"></translation>
+        <translation>Keine externen Verbindungen</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1064"/>
@@ -1791,7 +1791,7 @@ angeben.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1067"/>
         <source>Misc Other Services</source>
-        <translation type="unfinished"></translation>
+        <translation>Verschiedene andere Dienste</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1077"/>
@@ -1811,7 +1811,7 @@ angeben.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1093"/>
         <source>Secure Websites (SSL)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sichere Webseiten (SSL)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1103"/>
@@ -1821,7 +1821,7 @@ angeben.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1106"/>
         <source>Websites</source>
-        <translation type="unfinished"></translation>
+        <translation>Webseiten</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1199"/>
@@ -1895,7 +1895,7 @@ angeben.</translation>
     <message>
         <location filename="../control/torservice.cpp" line="113"/>
         <source>The Tor service is not installed.</source>
-        <translation type="unfinished"></translation>
+        <translation">Der Tor-Dienst ist nicht installiert.</translation>
     </message>
 </context>
 <context>
@@ -1951,7 +1951,7 @@ angeben.</translation>
     <message>
         <location filename="../vidalia.cpp" line="179"/>
         <source>Invalid GUI style specified: </source>
-        <translation>Ungültiges GUI Aussehen angegeben: </translation>
+        <translation>Ungültiges GUI-Aussehen angegeben: </translation>
     </message>
     <message>
         <location filename="../main.cpp" line="78"/>
@@ -1963,7 +1963,9 @@ angeben.</translation>
         <source>Another Vidalia process is already running. 
 
 This Vidalia process will now exit.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ein andere Vidalia-Prozess läuft bereits.
+
+Dieser Vidalia-Prozess wird nun beendet.</translation>
     </message>
 </context>
 </TS>
