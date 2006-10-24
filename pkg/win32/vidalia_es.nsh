@@ -5,7 +5,7 @@
 
 
 ; Bundle
-LangString BundleSetupCaption         ${LANG_SPANISH} "Instalacion de ${BUNDLE_NAME}"
+LangString BundleSetupCaption         ${LANG_SPANISH} "Instalación de ${BUNDLE_NAME}"
 LangString BundleWelcomeText          ${LANG_SPANISH} "Este procedimiento le guiara a través de la instalación de Tor, Vidalia, Privoxy, y Torbutton.\r\n\r\nSi ha instalado previamente Tor, Vidalia, Privoxy, o Firefox, por favor asegúrese que no se estén ejecutando antes de continuar esta instalación.\r\n\r\n$_CLICK"
 LangString BundleWelcomeTitle         ${LANG_SPANISH} "Bienvenido al procedimiento de instalación de ${BUNDLE_NAME}"
 LangString BundleLinkText             ${LANG_SPANISH} "documentación de instalación de ${TOR_NAME}"
@@ -13,8 +13,8 @@ LangString BundleFinishText           ${LANG_SPANISH} "La instalación ha finaliz
 LangString BundleRunNow               ${LANG_SPANISH} "Ejecutar los componentes instalados"
 
 ; Vidalia
-LangString VidaliaGroupDesc           ${LANG_SPANISH} "Instalacion de  ${VIDALIA_DESC}."
-LangString VidaliaSetupCaption        ${LANG_SPANISH} "${VIDALIA_NAME}"
+LangString VidaliaGroupDesc           ${LANG_SPANISH} "Instalar ${VIDALIA_DESC}."
+LangString VidaliaSetupCaption        ${LANG_SPANISH} "Instalación de ${VIDALIA_NAME}"
 LangString VidaliaWelcomeText         ${LANG_SPANISH} "Este procedimiento le guiara a través de la instalación de ${VIDALIA_DESC}.\r\n\r\n$_CLICK"
 LangString VidaliaWelcomeTitle        ${LANG_SPANISH} "Bienvenido al procedimiento de instalación de ${VIDALIA_NAME}"
 LangString VidaliaLinkText            ${LANG_SPANISH} "Pagina de internet de ${VIDALIA_NAME}"
