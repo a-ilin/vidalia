@@ -204,7 +204,7 @@ GraphFrame::pointsFromData(QList<qreal>* list)
   return points; 
 }
 
-/** Plots an integral using the data points in <b>list</b>. The area will be
+/** Plots an integral using the data points in <b>points</b>. The area will be
  * filled in using <b>color</b> and an alpha-blending level of <b>alpha</b>
  * (default is opaque). */
 void

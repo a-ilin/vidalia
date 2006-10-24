@@ -84,7 +84,7 @@ private:
   /** Returns a list of points on the bandwidth graph based on the supplied set
    * of send or receive values. */
   QVector<QPointF> pointsFromData(QList<qreal>* list);
-  /** Paints a line with the data in list. */
+  /** Paints a line with the data in <b>points</b>. */
   void paintLine(QVector<QPointF> points, QColor color, 
                  Qt::PenStyle lineStyle = Qt::SolidLine);
   /** Paints an integral using the supplied data. */
