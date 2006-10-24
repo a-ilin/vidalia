@@ -38,15 +38,6 @@
 #define COL_MESG    LogTreeWidget::MessageColumn
 #define ROLE_TYPE   Qt::UserRole
 
-/** Vertical padding on message log rows. */
-#if defined(Q_WS_MAC)
-/* OS X requires less vertical padding than the rest of the world, for
- * some unknown reason. */
-#define VERTICAL_PADDING  1
-#else
-#define VERTICAL_PADDING  10
-#endif
-
 
 /** Default constructor. */
 LogTreeItem::LogTreeItem(LogEvent::Severity type, QString message, 
