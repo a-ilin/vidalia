@@ -429,7 +429,7 @@ Upgrade to a newer version of Tor.</source>
         <translation>Fehler beim Senden eines Steuerkommandos. [%1]</translation>
     </message>
     <message>
-        <locationu filename="../control/controlsocket.cpp" line="182"/>
+        <location filename="../control/controlsocket.cpp" line="182"/>
         <source>Socket disconnected while attempting to read a line of data.</source>
         <translation>Beim Lesen von Daten wurde der Socket unterbrochen.</translation>
     </message>
