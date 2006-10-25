@@ -1895,7 +1895,7 @@ angeben.</translation>
     <message>
         <location filename="../control/torservice.cpp" line="113"/>
         <source>The Tor service is not installed.</source>
-        <translation">Der Tor-Dienst ist nicht installiert.</translation>
+        <translation>Der Tor-Dienst ist nicht installiert.</translation>
     </message>
 </context>
 <context>
