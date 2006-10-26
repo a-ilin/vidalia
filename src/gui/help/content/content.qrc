@@ -70,6 +70,16 @@
     <file>it/troubleshooting.html</file>
     <file>it/netview.html</file>
     <file>it/links.html</file>
+    <!-- Norwegian Bokmal -->
+    <file>nb/contents.xml</file>
+    <file>nb/index.html</file>
+    <file>nb/running.html</file>
+    <file>nb/log.html</file>
+    <file>nb/config.html</file>
+    <file>nb/server.html</file>
+    <file>nb/troubleshooting.html</file>
+    <file>nb/netview.html</file>
+    <file>nb/links.html</file>
     <!-- Dutch -->
     <file>nl/contents.xml</file>
     <file>nl/index.html</file>

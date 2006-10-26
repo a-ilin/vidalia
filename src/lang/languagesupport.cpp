@@ -47,6 +47,8 @@ LanguageSupport::languages()
       QString::fromUtf8("fran\303\247ais"));
     languages.insert("hu",    "magyar nyelv");
     languages.insert("it",    "Italiano");
+    languages.insert("nb",    
+      QString::fromUtf8("Bokm\303\245l"));
     languages.insert("nl",    "Nederlands");
     languages.insert("pl",    "Polski");
     languages.insert("ru",
