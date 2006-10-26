@@ -4,7 +4,7 @@
     <name></name>
     <message>
       <source>Arial</source>
-      <translation type="unfinished" />
+      <translation>Arial</translation>
     </message>
   </context>
   <context>
@@ -58,7 +58,7 @@
     </message>
     <message>
       <source>9051</source>
-      <translation type="unfinished" />
+      <translation>9051</translation>
     </message>
     <message>
       <source>Start Tor with the specified configuration file (torrc)</source>
@@ -70,7 +70,7 @@
     </message>
     <message>
       <source>Browse</source>
-      <translation type="unfinished" />
+      <translation>Bla</translation>
     </message>
     <message>
       <source>Permissions</source>
@@ -82,15 +82,15 @@
     </message>
     <message>
       <source>Vidalia will run with this User's permissions</source>
-      <translation type="unfinished" />
+      <translation>Vidalia vil kjøre med denne brukerens tillatelser</translation>
     </message>
     <message>
       <source>Run as Group:</source>
-      <translation type="unfinished" />
+      <translation>Kjør under Gruppe:</translation>
     </message>
     <message>
       <source>Vidalia will run with this Group's permissions</source>
-      <translation type="unfinished" />
+      <translation>Vidalia vil kjøre med denne Gruppen's tillatelser</translation>
     </message>
     <message>
       <source>Select Tor Configuration File</source>
@@ -126,40 +126,42 @@
     </message>
     <message>
       <source>Unable to remove Tor Service</source>
-      <translation type="unfinished" />
+      <translation>Kunne ikke fjerne Tor-tjenesten</translation>
     </message>
     <message>
       <source>Unable to install Tor Service</source>
-      <translation type="unfinished" />
+      <translation>Kunne ikke installere Tor-tjenesten</translation>
     </message>
     <message>
       <source>Vidalia was unable to install the Tor service.</source>
-      <translation type="unfinished" />
+      <translation>Vidalia klarte ikke installere Tor-tjenesten</translation>
     </message>
     <message>
       <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
-      <translation type="unfinished" />
+      <translation>Vidalia klarte ikke installere Tor-tjenesten 
+
+Du må kanskje fjerne den manuellt.</translation>
     </message>
     <message>
       <source>Tor Configuration File</source>
-      <translation type="unfinished" />
+      <translation>Tors Konfigurasjonsfil</translation>
     </message>
   </context>
   <context>
     <name>AppearancePage</name>
     <message>
       <source>Language</source>
-      <translation type="unfinished" />
+      <translation>Språk</translation>
     </message>
     <message>
       <source>Choose the language used in Vidalia</source>
-      <translation type="unfinished" />
+      <translation>Velg språket du vil Vidalia skal bruke</translation>
     </message>
     <message>
       <source>Changes to language will only take effect after restarting Vidalia!</source>
-      <translation type="unfinished" />
+      <translation>Endringer av valgt språk trer først i kraft etter du starter Vidalia på ny!</translation>
     </message>
     <message>
       <source>Style</source>
@@ -182,7 +184,7 @@ You may need to remove it manually.</source>
     </message>
     <message>
       <source>Reset</source>
-      <translation type="unfinished" />
+      <translation>Nullstill</translation>
     </message>
     <message>
       <source>Receive Rate</source>
@@ -194,7 +196,7 @@ You may need to remove it manually.</source>
     </message>
     <message>
       <source>Changes the transparency of the Bandwidth Graph</source>
-      <translation type="unfinished" />
+      <translation>Endringer gjennomsiktigheten av Båndbredde-Grafen</translation>
     </message>
     <message>
       <source>Save</source>
@@ -210,11 +212,11 @@ You may need to remove it manually.</source>
     </message>
     <message>
       <source>100</source>
-      <translation type="unfinished" />
+      <translation>100</translation>
     </message>
     <message>
       <source>% Opaque</source>
-      <translation type="unfinished" />
+      <translation>% Ugjennomsiktig</translation>
     </message>
     <message>
       <source>Hide Settings</source>
@@ -271,7 +273,7 @@ You may need to remove it manually.</source>
     </message>
     <message>
       <source>Close Circuit</source>
-      <translation type="unfinished" />
+      <translation>Lukk Krets</translation>
     </message>
     <message>
       <source>Close Stream</source>
@@ -321,66 +323,67 @@ You may need to remove it manually.</source>
     <name>ControlConnection</name>
     <message>
       <source>Control socket is not connected.</source>
-      <translation type="unfinished" />
+      <translation>Kontroll-porten er ikke tilkoblet.</translation>
     </message>
     <message>
       <source>Control socket is not connected</source>
-      <translation type="unfinished" />
+      <translation>Kontroll-porten er ikke tilkoblet.</translation>
     </message>
   </context>
   <context>
     <name>ControlSocket</name>
     <message>
       <source>Error connecting to %1:%2 [%3]</source>
-      <translation type="unfinished" />
+      <translation>Feil ved tilkobling til %1:%2 [%3]</translation>
     </message>
     <message>
       <source>Vidalia only supports Version 1 of Tor's Control Protocol (Version %1 detected).
 Upgrade to a newer version of Tor.</source>
-      <translation type="unfinished" />
+      <translation>Vidalia støtter kun Versjon 1 av Tor's kontroll-port protokoll (Versjon %1 funnet) 
+Oppgrader til en nyere utgave av Tor.</translation>
     </message>
     <message>
       <source>Error disconnecting socket. [%1]</source>
-      <translation type="unfinished" />
+      <translation>Feil ved frakobling av forbindelse [%1]</translation>
     </message>
     <message>
       <source>Error sending control command. [%1]</source>
-      <translation type="unfinished" />
+      <translation>Feil ved sending av kontroll-kommando. [%1]</translation>
     </message>
     <message>
       <source>Socket disconnected while attempting to read a line of data.</source>
-      <translation type="unfinished" />
+      <translation>Forbindelsen ble avbrutt under forsøk på å lese en linje med data.</translation>
     </message>
     <message>
       <source>Invalid control reply. [%1]</source>
-      <translation type="unfinished" />
+      <translation>Ugyldig kontroll-svar: [%1]</translation>
     </message>
     <message>
       <source>Control socket is not connected.</source>
-      <translation type="unfinished" />
+      <translation>Kontroll-porten er ikke tilkoblet.</translation>
     </message>
   </context>
   <context>
     <name>GeneralPage</name>
     <message>
       <source>Path to Tor's executable</source>
-      <translation type="unfinished" />
+      <translation>Sti til Tor's kjørbare programfil</translation>
     </message>
     <message>
       <source>Select path to Tor executable</source>
-      <translation type="unfinished" />
+      <translation>Velg filsti til Tor's programfil</translation>
     </message>
     <message>
       <source>Browse</source>
-      <translation type="unfinished" />
+      <translation>Bla</translation>
     </message>
     <message>
       <source>Startup Options</source>
-      <translation type="unfinished" />
+      <translation>Oppstartsvalg</translation>
     </message>
     <message>
       <source>Select to start Vidalia on system boot</source>
-      <translation type="unfinished" />
+      <translation>Velg for å starte Vidalia ved systemoppstart</translation>
     </message>
     <message>
       <source>Run Vidalia on system startup</source>
@@ -419,19 +422,19 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
       <source>%1 KB</source>
-      <translation type="unfinished" />
+      <translation>%1 KB</translation>
     </message>
     <message>
       <source>%1 MB</source>
-      <translation type="unfinished" />
+      <translation>%1 MB</translation>
     </message>
     <message>
       <source>%1 GB</source>
-      <translation type="unfinished" />
+      <translation>%1 GB</translation>
     </message>
     <message>
       <source>%1 KB/s</source>
-      <translation type="unfinished" />
+      <translation>%1 KB/s</translation>
     </message>
   </context>
   <context>
@@ -450,7 +453,7 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
       <source>Case sensitive</source>
-      <translation type="unfinished" />
+      <translation>Skill mellom store og små bokstaver</translation>
     </message>
     <message>
       <source>Contents</source>
@@ -466,7 +469,7 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
       <source>Found Documents</source>
-      <translation type="unfinished" />
+      <translation>Dokumenter Funnet </translation>
     </message>
     <message>
       <source>Back</source>
@@ -474,35 +477,35 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
       <source>Move to previous page (Backspace)</source>
-      <translation type="unfinished" />
+      <translation>Gå til forrige side (Rettetast)</translation>
     </message>
     <message>
       <source>Backspace</source>
-      <translation type="unfinished" />
+      <translation>Backspace</translation>
     </message>
     <message>
       <source>Forward</source>
-      <translation type="unfinished" />
+      <translation>Fremover</translation>
     </message>
     <message>
       <source>Move to next page (Shift+Backspace)</source>
-      <translation type="unfinished" />
+      <translation>Gå til neste side (Shift+Backspace)</translation>
     </message>
     <message>
       <source>Shift+Backspace</source>
-      <translation type="unfinished" />
+      <translation>operasjon</translation>
     </message>
     <message>
       <source>Home</source>
-      <translation type="unfinished" />
+      <translation>Hjem</translation>
     </message>
     <message>
       <source>Move to the Home page (Ctrl+H)</source>
-      <translation type="unfinished" />
+      <translation>Flytt til Hjem-siden (Ctrl+H)</translation>
     </message>
     <message>
       <source>Ctrl+H</source>
-      <translation type="unfinished" />
+      <translation>Ctrl+H</translation>
     </message>
     <message>
       <source>Find</source>
@@ -511,11 +514,11 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
       <source>Search for a word or phrase on current page (Ctrl+F)</source>
-      <translation type="unfinished" />
+      <translation>Søk etter ord eller streng på denne siden (Ctrl+F)</translation>
     </message>
     <message>
       <source>Ctrl+F</source>
-      <translation type="unfinished" />
+      <translation>Ctrl+F</translation>
     </message>
     <message>
       <source>Close</source>
@@ -527,23 +530,23 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
       <source>Esc</source>
-      <translation type="unfinished" />
+      <translation>Esc</translation>
     </message>
     <message>
       <source>Error Loading Help Contents: </source>
-      <translation type="unfinished" />
+      <translation>Feil ved henging av Hjelp-Innhold </translation>
     </message>
     <message>
       <source>Search reached end of document</source>
-      <translation type="unfinished" />
+      <translation>Søket nådde slutten av dokumentet</translation>
     </message>
     <message>
       <source>Search reached start of document</source>
-      <translation type="unfinished" />
+      <translation>Søket nådde begynnelsen av dokumentet</translation>
     </message>
     <message>
       <source>Text not found in document</source>
-      <translation type="unfinished" />
+      <translation>Fant ikke teksten i dokumentet</translation>
     </message>
     <message>
       <source>Find:</source>
@@ -551,7 +554,7 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
       <source>Whole words only</source>
-      <translation type="unfinished" />
+      <translation>Kun hele ord</translation>
     </message>
     <message>
       <source>Searching for:</source>
@@ -559,7 +562,7 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
       <source>Supplied XML file is not a valid Contents document.</source>
-      <translation type="unfinished" />
+      <translation>Den oppgitte XML-filen er ikke ett dokument med gyldig innhold.</translation>
     </message>
     <message>
       <source>Found %1 results</source>
@@ -577,11 +580,11 @@ Upgrade to a newer version of Tor.</source>
     <name>LogEvent</name>
     <message>
       <source>Debug</source>
-      <translation type="unfinished" />
+      <translation>Avlus</translation>
     </message>
     <message>
       <source>Info</source>
-      <translation type="unfinished" />
+      <translation>Info</translation>
     </message>
     <message>
       <source>Notice</source>
@@ -647,23 +650,23 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
       <source>Ctrl+S</source>
-      <translation type="unfinished" />
+      <translation>Ctrl+S</translation>
     </message>
     <message>
       <source>Ctrl+T</source>
-      <translation type="unfinished" />
+      <translation>Ctrl+T</translation>
     </message>
     <message>
       <source>Ctrl+B</source>
-      <translation type="unfinished" />
+      <translation>Ctrl+B</translation>
     </message>
     <message>
       <source>Ctrl+L</source>
-      <translation type="unfinished" />
+      <translation>Ctrl+L</translation>
     </message>
     <message>
       <source>Ctrl+?</source>
-      <translation type="unfinished" />
+      <translation>Ctrl+?</translation>
     </message>
     <message>
       <source>File</source>
@@ -723,51 +726,55 @@ Upgrade to a newer version of Tor.</source>
     </message>
     <message>
       <source>Ctrl+N</source>
-      <translation type="unfinished" />
+      <translation>Ctrl+N</translation>
     </message>
     <message>
       <source>Error Applying Server Settings</source>
-      <translation type="unfinished" />
+      <translation>Feil ved pålegging av Tjener-Innstillinger</translation>
     </message>
     <message>
       <source>Vidalia was unable to apply your server's settings.</source>
-      <translation type="unfinished" />
+      <translation>Vidalia kunne ikke iverksette dine tjener-innstillinger.</translation>
     </message>
     <message>
       <source>You are currently running a Tor server. Terminating your server will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new server?</source>
-      <translation type="unfinished" />
+      <translation>Du kjører allered en Tor-tjener. Hvis du avslutter din tjener vil det bryte dine åpne forbindelser fra klienter. 
+
+Vil du stenge ned gradvis og gi dine klienter tid til å finne en ny tjener?</translation>
     </message>
     <message>
       <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
-      <translation type="unfinished" />
+      <translation>Vidalia oppdaget at Tor plutselig og uventet avsluttet.
+
+Vennligst sjekk meldings-loggen for indikatorer på hva som skjedde med Tor før programmet avsluttet.</translation>
     </message>
     <message>
       <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
-      <translation type="unfinished" />
+      <translation>Vidalia kunne ikke starte Tor. Sjekk innstillingene dine for å sikre at du har oppgitt Tor-programmets riktige navn og plassering.</translation>
     </message>
     <message>
       <source>Network Map</source>
-      <translation>Nettverks Kart</translation>
+      <translation>Nettverkskart</translation>
     </message>
     <message>
       <source>Settings</source>
-      <translation type="unfinished" />
+      <translation>Innstillinger</translation>
     </message>
     <message>
       <source>New Identity</source>
-      <translation type="unfinished" />
+      <translation>Ny Identitet </translation>
     </message>
     <message>
       <source>Ctrl+I</source>
-      <translation type="unfinished" />
+      <translation>Ctrl+I</translation>
     </message>
     <message>
       <source>All subsequent connections will appear to be different than your old connections.</source>
-      <translation type="unfinished" />
+      <translation>Alle dine forbindelser vil se annerledes ut enn dine nåværende forbindelser.</translation>
     </message>
     <message>
       <source>Failed to Create New Identity</source>
@@ -786,47 +793,47 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
       <source>Type</source>
-      <translation type="unfinished" />
+      <translation>Type</translation>
     </message>
     <message>
       <source>Message</source>
-      <translation type="unfinished" />
+      <translation>Melding</translation>
     </message>
     <message>
       <source>Log File</source>
-      <translation type="unfinished" />
+      <translation>Loggfil</translation>
     </message>
     <message>
       <source>Browse</source>
-      <translation type="unfinished" />
+      <translation>Bla</translation>
     </message>
     <message>
       <source>Enable saving of all messages to a file</source>
-      <translation type="unfinished" />
+      <translation>Skru på lagring av alle meldinger til en fil</translation>
     </message>
     <message>
       <source>Save Messages to File</source>
-      <translation type="unfinished" />
+      <translation>Lagre Meldinger til Fil</translation>
     </message>
     <message>
       <source>Log History Size</source>
-      <translation type="unfinished" />
+      <translation>Loggens Historie-Størrelse</translation>
     </message>
     <message>
       <source>Number of messages to keep in log</source>
-      <translation type="unfinished" />
+      <translation>Antall meldinger som beholdes i loggen</translation>
     </message>
     <message>
       <source>Saves the current Message Log settings</source>
-      <translation type="unfinished" />
+      <translation>Lagr de nåværende innstillingene for Meldingloggen</translation>
     </message>
     <message>
       <source>Save Settings</source>
-      <translation type="unfinished" />
+      <translation>Lagr Inntillinger</translation>
     </message>
     <message>
       <source>Cancels changes made to settings</source>
-      <translation type="unfinished" />
+      <translation>Avbryter endring av innstillingene</translation>
     </message>
     <message>
       <source>Cancel</source>
@@ -850,19 +857,19 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
       <source>Info</source>
-      <translation type="unfinished" />
+      <translation>Info</translation>
     </message>
     <message>
       <source>Debug</source>
-      <translation type="unfinished" />
+      <translation>Avlus</translation>
     </message>
     <message>
       <source>Message Filters...</source>
-      <translation type="unfinished" />
+      <translation>Meldingsfilter</translation>
     </message>
     <message>
       <source>Set message filters</source>
-      <translation type="unfinished" />
+      <translation>Skru på meldingsfiltrering</translation>
     </message>
     <message>
       <source>History Size...</source>
@@ -870,7 +877,7 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
       <source>Set maximum number of messages to display</source>
-      <translation type="unfinished" />
+      <translation>Set maksimum antall meldinger som vises</translation>
     </message>
     <message>
       <source>Clear</source>
@@ -878,11 +885,11 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
       <source>Clear all messages from the Message Log (Ctrl+E)</source>
-      <translation type="unfinished" />
+      <translation>Tøm alle meldinger fra Meldingslogge (Ctrl+E)</translation>
     </message>
     <message>
       <source>Ctrl+E</source>
-      <translation type="unfinished" />
+      <translation>Ctrl+E</translation>
     </message>
     <message>
       <source>Copy</source>
@@ -890,39 +897,39 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
       <source>Copy the selected messages to the clipboard (Ctrl+C)</source>
-      <translation type="unfinished" />
+      <translation>Kopier valgte meldinger til utklippstavlen (Ctrl+C)</translation>
     </message>
     <message>
       <source>Ctrl+C</source>
-      <translation type="unfinished" />
+      <translation>Ctrl+C</translation>
     </message>
     <message>
       <source>Select All</source>
-      <translation type="unfinished" />
+      <translation>Velg alt</translation>
     </message>
     <message>
       <source>Select all messages (Ctrl+A)</source>
-      <translation type="unfinished" />
+      <translation>Velg alle meldinger (Ctrl+A)</translation>
     </message>
     <message>
       <source>Ctrl+A</source>
-      <translation type="unfinished" />
+      <translation>Ctrl+A</translation>
     </message>
     <message>
       <source>Save All</source>
-      <translation type="unfinished" />
+      <translation>Lagr Alt</translation>
     </message>
     <message>
       <source>Save all messages to a file</source>
-      <translation type="unfinished" />
+      <translation>Lagr alle meldinger til en fil</translation>
     </message>
     <message>
       <source>Save Selected</source>
-      <translation type="unfinished" />
+      <translation>Lagr merket</translation>
     </message>
     <message>
       <source>Save selected messages to a file</source>
-      <translation type="unfinished" />
+      <translation>Lagr valgte meldinger i en fil</translation>
     </message>
     <message>
       <source>Close</source>
@@ -934,7 +941,7 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
       <source>Esc</source>
-      <translation type="unfinished" />
+      <translation>Esc</translation>
     </message>
     <message>
       <source>Find</source>
@@ -946,42 +953,42 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
       <source>Ctrl+F</source>
-      <translation type="unfinished" />
+      <translation>Ctrl+F</translation>
     </message>
     <message>
       <source>Messages that appear when something has 
 gone very wrong and Tor cannot proceed.</source>
-      <translation type="unfinished" />
+      <translation>Meldinger som vises om noe har gått veldig galt og Tor ikke kan fortsette.</translation>
     </message>
     <message>
       <source>Messages that only appear when 
 something has gone wrong with Tor.</source>
-      <translation type="unfinished" />
+      <translation>Meldinger som kun vises når noe har gått galt med Tor.</translation>
     </message>
     <message>
       <source>Messages that appear infrequently 
 during normal Tor operation and are 
 not considered errors, but you may 
 care about.</source>
-      <translation type="unfinished" />
+      <translation>Meldinger som sjelden vises ved normal Tor-aktivitet og som ikke regnes som feil men likevel kan være av interesse.</translation>
     </message>
     <message>
       <source>Messages that appear frequently 
 during normal Tor operation.</source>
-      <translation type="unfinished" />
+      <translation>Meldinger som stadig vises ved vanlig Tor-aktivitet.</translation>
     </message>
     <message>
       <source>Hyper-verbose messages primarily of 
 interest to Tor developers.</source>
-      <translation type="unfinished" />
+      <translation>Ekstra-detaljerte meldinger er primært nyttig for Tor-utviklere.</translation>
     </message>
     <message>
       <source>Error Setting Filter</source>
-      <translation type="unfinished" />
+      <translation>Feilet ved setting av Filter</translation>
     </message>
     <message>
       <source>Error Opening Log File</source>
-      <translation type="unfinished" />
+      <translation>Feil ved åpning av Logg-Fil</translation>
     </message>
     <message>
       <source>Select Log File</source>
@@ -989,11 +996,11 @@ interest to Tor developers.</source>
     </message>
     <message>
       <source>Save Log Messages</source>
-      <translation type="unfinished" />
+      <translation>Lagr Logg-meldinger</translation>
     </message>
     <message>
       <source>Vidalia</source>
-      <translation type="unfinished" />
+      <translation>Vidalia</translation>
     </message>
     <message>
       <source>Find in Message Log</source>
@@ -1009,7 +1016,7 @@ interest to Tor developers.</source>
     </message>
     <message>
       <source>Search found 0 matches.</source>
-      <translation type="unfinished" />
+      <translation>Søket ga 0 resultater.</translation>
     </message>
     <message>
       <source>Settings</source>
@@ -1017,11 +1024,11 @@ interest to Tor developers.</source>
     </message>
     <message>
       <source>Adjust Message Log Settings</source>
-      <translation type="unfinished" />
+      <translation>Tilpass Innstillinger for Meldingloggen</translation>
     </message>
     <message>
       <source>Ctrl+T</source>
-      <translation type="unfinished" />
+      <translation>Ctrl+T</translation>
     </message>
     <message>
       <source>Help</source>
@@ -1033,17 +1040,19 @@ interest to Tor developers.</source>
     </message>
     <message>
       <source>Vidalia was unable to register for Tor's log events.</source>
-      <translation type="unfinished" />
+      <translation>Vidalia klarte ikke hente ut Tors logg-hendelser.</translation>
     </message>
     <message>
       <source>Cannot write file %1
 
 %2.</source>
-      <translation type="unfinished" />
+      <translation>Kunne ikke skrive fil %1
+
+%2.</translation>
     </message>
     <message>
       <source>Vidalia was unable to open the specified log file.</source>
-      <translation type="unfinished" />
+      <translation>Vidalia kunne ikke å åpne spesifisert logg-fil.</translation>
     </message>
     <message>
       <source>Text Files (*.txt)</source>
@@ -1051,22 +1060,22 @@ interest to Tor developers.</source>
     </message>
     <message>
       <source>F1</source>
-      <translation type="unfinished" />
+      <translation>F1</translation>
     </message>
     <message>
       <source>Log Filename Required</source>
-      <translation type="unfinished" />
+      <translation>Logg-Filnavn Påkrevd</translation>
     </message>
     <message>
       <source>You must enter a filename to be able to save log messages to a file.</source>
-      <translation type="unfinished" />
+      <translation>Du må oppgi ett filnavn for å kunne lagre meldingsloggen til en fil.</translation>
     </message>
   </context>
   <context>
     <name>NetViewer</name>
     <message>
       <source>View Tor Network</source>
-      <translation type="unfinished" />
+      <translation>Vis Tor-Nettverket</translation>
     </message>
     <message>
       <source>Refresh</source>
@@ -1090,15 +1099,15 @@ interest to Tor developers.</source>
     </message>
     <message>
       <source>Refresh the list of routers and connections.</source>
-      <translation type="unfinished" />
+      <translation>Oppdater listen over routere og forbindelser</translation>
     </message>
     <message>
       <source>Show network map help.</source>
-      <translation type="unfinished" />
+      <translation>Vis hjelpeteksten for nettverkskartet.</translation>
     </message>
     <message>
       <source>Show the network map help.</source>
-      <translation type="unfinished" />
+      <translation>Vis hjelpeteksten for nettverkskartet.</translation>
     </message>
     <message>
       <source>Close the network map.</source>
@@ -1118,31 +1127,31 @@ interest to Tor developers.</source>
     </message>
     <message>
       <source>Zooms to fit all currently displayed circuits.</source>
-      <translation type="unfinished" />
+      <translation>Zoomer slik at det passer alle viste forbindelser.</translation>
     </message>
     <message>
       <source>Ctrl+R</source>
-      <translation type="unfinished" />
+      <translation>Ctrl+R</translation>
     </message>
     <message>
       <source>F1</source>
-      <translation type="unfinished" />
+      <translation>F1</translation>
     </message>
     <message>
       <source>Esc</source>
-      <translation type="unfinished" />
+      <translation>Esc</translation>
     </message>
     <message>
       <source>+</source>
-      <translation type="unfinished" />
+      <translation>+</translation>
     </message>
     <message>
       <source>-</source>
-      <translation type="unfinished" />
+      <translation>-</translation>
     </message>
     <message>
       <source>Ctrl+Z</source>
-      <translation type="unfinished" />
+      <translation>Ctrl+Z</translation>
     </message>
   </context>
   <context>
@@ -1164,7 +1173,7 @@ interest to Tor developers.</source>
     </message>
     <message>
       <source>Hibernating</source>
-      <translation type="unfinished" />
+      <translation>Sover</translation>
     </message>
     <message>
       <source>Offline</source>
@@ -1202,7 +1211,7 @@ interest to Tor developers.</source>
     <name>RouterListItem</name>
     <message>
       <source>%1 KB/s</source>
-      <translation type="unfinished" />
+      <translation>%1 KB/s</translation>
     </message>
     <message>
       <source>Offline</source>
@@ -1210,7 +1219,7 @@ interest to Tor developers.</source>
     </message>
     <message>
       <source>Hibernating</source>
-      <translation type="unfinished" />
+      <translation>Sover</translation>
     </message>
   </context>
   <context>
@@ -1236,11 +1245,11 @@ interest to Tor developers.</source>
     <name>ServerPage</name>
     <message>
       <source>Check to run as a Tor network server</source>
-      <translation type="unfinished" />
+      <translation>Kryss av for å kjøre Tor som en tjener</translation>
     </message>
     <message>
       <source>Relay traffic for the Tor network</source>
-      <translation type="unfinished" />
+      <translation>Videresend trafikk for Tor-nettverket</translation>
     </message>
     <message>
       <source>Directory Port:</source>
@@ -1264,99 +1273,102 @@ interest to Tor developers.</source>
     </message>
     <message>
       <source>Server Port:</source>
-      <translation type="unfinished" />
+      <translation>Tjener Port:</translation>
     </message>
     <message>
       <source>Port on which users and other servers can communicate with your server</source>
-      <translation type="unfinished" />
+      <translation>Porten som brukere og tjenere kan bruke til å kommunisere med din tjener</translation>
     </message>
     <message>
       <source>Address:</source>
-      <translation type="unfinished" />
+      <translation>Adresse:</translation>
     </message>
     <message>
       <source>Domain name or IP address of your server</source>
-      <translation type="unfinished" />
+      <translation>Domenenavn eller IP-adressen til tjeneren din</translation>
     </message>
     <message>
       <source>Enable to mirror the server directory</source>
-      <translation type="unfinished" />
+      <translation>SKru på for å speile tjener-katalogen</translation>
     </message>
     <message>
       <source>Mirror the Server Directory </source>
-      <translation type="unfinished" />
+      <translation>Spil Tjener-katalogen</translation>
     </message>
     <message>
       <source>Attempts to determine the correct address for your server</source>
-      <translation type="unfinished" />
+      <translation>Forsøker å finne ut den riktige adressen for tjeneren din</translation>
     </message>
     <message>
       <source>Get Address</source>
-      <translation type="unfinished" />
+      <translation>Hent Adresse</translation>
     </message>
     <message>
       <source>Exit Policies</source>
-      <translation type="unfinished" />
+      <translation>Utgangs-Politikk</translation>
     </message>
     <message>
       <source>Show help topic on exit policies</source>
-      <translation type="unfinished" />
+      <translation>Vis hjelpeteksten for tillatte utgående forbindelser</translation>
     </message>
     <message>
       <source>You must specify at least a server nickname and port.</source>
-      <translation type="unfinished" />
+      <translation>Du må minimum oppgi tjenerens kallenavn og port</translation>
     </message>
     <message>
       <source>Error</source>
-      <translation type="unfinished" />
+      <translation>Feil</translation>
     </message>
     <message>
       <source>Vidalia was unable to determine your public IP address.</source>
-      <translation type="unfinished" />
+      <translation>
+Vidalia klarte ikke å finne ut hvilken IP-adresse du har.</translation>
     </message>
     <message>
       <source>Vidalia was only able to find a private IP address for your server.
 
 Would you like to access an external service to determine your public IP address?</source>
-      <translation type="unfinished" />
+      <translation>Vidalia klarte bare finne den private IP-adressen til tjeneren din. 
+
+Vil du bruke en ekstern tjeneste for å finne ut din offentlige IP-adresse?</translation>
     </message>
     <message>
       <source>When enabled, Vidalia will periodically update your IP address if necessary</source>
-      <translation type="unfinished" />
+      <translation>Hvis denne funksjonen er skrudd på vil Vidalia periodisk oppdatere IP-adressen din om det er nødvendig</translation>
     </message>
     <message>
       <source>Automatically Update</source>
-      <translation type="unfinished" />
+      <translation>Oppdater Automatisk</translation>
     </message>
     <message>
       <source>Email address at which you may be reached if there is a
 problem with your server. You might also include your PGP or GPG
 fingerprint.</source>
-      <translation type="unfinished" />
+      <translation>E-post adresse hvor det er mulig å få tak i deg hvis tjeneren din sliter. Du kan også inkludere ditt PGP eller GPG fingeravtrykk.</translation>
     </message>
     <message>
       <source>Long-term average bandwidth limit</source>
-      <translation type="unfinished" />
+      <translation>Gjennomsnittlig langvarig båndbredde-begensning</translation>
     </message>
     <message>
       <source>Average Rate</source>
-      <translation type="unfinished" />
+      <translation>Gjennomsnittshastighet</translation>
     </message>
     <message>
       <source>KB/s</source>
-      <translation type="unfinished" />
+      <translation>KB/s</translation>
     </message>
     <message>
       <source>Peak bandwidth rate limit</source>
-      <translation type="unfinished" />
+      <translation>Begrensning for kortvarige bånbredde-topper</translation>
     </message>
     <message>
       <source>Maximum Rate</source>
-      <translation type="unfinished" />
+      <translation>Maksimal Hastighet</translation>
     </message>
     <message>
       <source>Show help topic on bandwidth rate limits</source>
-      <translation type="unfinished" />
+      <translation>Hvis hjelpeteksten for båndbredde-begrensning</translation>
     </message>
     <message>
       <source>Basic Settings</source>
@@ -1368,11 +1380,11 @@ fingerprint.</source>
     </message>
     <message>
       <source>For Internet connections with fast download speed but slow upload, please list your upload speed here.</source>
-      <translation type="unfinished" />
+      <translation>Vennligst oppgi din opplastningshastighet her hvis du har rask nedlastningshastighet med treg opplastningshastighet.</translation>
     </message>
     <message>
       <source>Select the entry that most closely resembles your Internet connection</source>
-      <translation type="unfinished" />
+      <translation>Velg det som best reflekterer Internett-forbindelsen din</translation>
     </message>
     <message>
       <source>Cable/DSL 256 Kbps</source>
@@ -1392,7 +1404,7 @@ fingerprint.</source>
     </message>
     <message>
       <source>> 1.5 Mbps</source>
-      <translation type="unfinished" />
+      <translation>> 1.5 Mbps</translation>
     </message>
     <message>
       <source>Custom</source>
@@ -1400,15 +1412,15 @@ fingerprint.</source>
     </message>
     <message>
       <source>Ports 6660 - 6669 and 6697</source>
-      <translation type="unfinished" />
+      <translation>Port 6660 - 6669 og 6697</translation>
     </message>
     <message>
       <source>Internet Relay Chat (IRC)</source>
-      <translation type="unfinished" />
+      <translation>Internett Relay Chat (IRC)</translation>
     </message>
     <message>
       <source>Ports 110, 143, 993 and 995</source>
-      <translation type="unfinished" />
+      <translation>Port 110, 143, 993 og 995</translation>
     </message>
     <message>
       <source>Retrieve Mail (POP, IMAP)</source>
@@ -1424,7 +1436,7 @@ fingerprint.</source>
     </message>
     <message>
       <source>Ports unspecified by other checkboxes</source>
-      <translation type="unfinished" />
+      <translation>Porter ikke angitt i andre avkryssningsbokser</translation>
     </message>
     <message>
       <source>Misc Other Services</source>
@@ -1432,7 +1444,7 @@ fingerprint.</source>
     </message>
     <message>
       <source>Ports 706, 1863, 5050, 5190, 5222, 8300 and 8888</source>
-      <translation type="unfinished" />
+      <translation>Port 706, 1863, 5050, 5190, 5222, 8300 og 8888</translation>
     </message>
     <message>
       <source>Instant Messaging (IM)</source>
@@ -1440,7 +1452,7 @@ fingerprint.</source>
     </message>
     <message>
       <source>Port 443</source>
-      <translation type="unfinished" />
+      <translation>Port 443</translation>
     </message>
     <message>
       <source>Secure Websites (SSL)</source>
@@ -1448,7 +1460,7 @@ fingerprint.</source>
     </message>
     <message>
       <source>Port 80</source>
-      <translation type="unfinished" />
+      <translation>Port 80</translation>
     </message>
     <message>
       <source>Websites</source>
@@ -1456,7 +1468,7 @@ fingerprint.</source>
     </message>
     <message>
       <source>What Internet resources should Tor users be able to access from your Tor Relay?</source>
-      <translation type="unfinished" />
+      <translation>Hvilke Internett-ressurser skal Tor-brukere kunne nå fra din Tor-tjener?</translation>
     </message>
   </context>
   <context>
@@ -1498,7 +1510,7 @@ fingerprint.</source>
     <name>TorProcess</name>
     <message>
       <source>Process %1 failed to stop. [%2]</source>
-      <translation type="unfinished" />
+      <translation>Prosess %1 nektet å stoppe. [%2]</translation>
     </message>
   </context>
   <context>
@@ -1555,7 +1567,7 @@ fingerprint.</source>
     <name>Vidalia</name>
     <message>
       <source>Invalid language code specified: </source>
-      <translation type="unfinished" />
+      <translation>Ugyldig språk-kode spesifisert: </translation>
     </message>
     <message>
       <source>Invalid GUI style specified: </source>
