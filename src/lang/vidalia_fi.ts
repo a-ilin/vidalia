@@ -53,7 +53,7 @@
     <message>
         <location filename="../gui/about/aboutdialog.cpp" line="74"/>
         <source>&lt;Unavailable&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;Ei ole saatavilla&gt;</translation>
     </message>
 </context>
 <context>
@@ -335,12 +335,12 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="54"/>
         <source>Close Circuit</source>
-        <translation type="unfinished"></translation>
+        <translation>Sulje yhteys</translation>
     </message>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="58"/>
         <source>Close Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Sulje datavirta</translation>
     </message>
 </context>
 <context>
@@ -396,12 +396,12 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../control/controlconnection.cpp" line="285"/>
         <source>Control socket is not connected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjausyhteyttä ei ole muodostettu.</translation>
     </message>
     <message>
         <location filename="../control/controlconnection.cpp" line="232"/>
         <source>Control socket is not connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjausyhteyttä ei ole muodostettu</translation>
     </message>
 </context>
 <context>
@@ -441,7 +441,7 @@ Olkaapa hyvä ja päivitä uudempaan Tor-ohjelmaan.</translation>
     <message>
         <location filename="../control/controlsocket.cpp" line="136"/>
         <source>Control socket is not connected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjausyhteyttä ei ole muodostettu.</translation>
     </message>
 </context>
 <context>
@@ -1315,12 +1315,12 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="241"/>
         <source>Log Filename Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Lokille täytyy määrittää nimi</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="243"/>
         <source>You must enter a filename to be able to save log messages to a file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Lokille täytyy nimi määrittää, jotta voi kirjata lokin tiedostoon.</translation>
     </message>
 </context>
 <context>
@@ -1528,7 +1528,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="54"/>
         <source>Zoom to Server</source>
-        <translation type="unfinished"></translation>
+        <translation>Suurenna palvelimelle</translation>
     </message>
 </context>
 <context>
@@ -1693,7 +1693,7 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="333"/>
         <source>Basic Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Perusasetukset</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="683"/>
@@ -1713,47 +1713,47 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="749"/>
         <source>Cable/DSL 256 Kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaapeli/DSL 256 Kbps</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="754"/>
         <source>Cable/DSL 512 Kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaapeli/DSL 512 Kbps</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="759"/>
         <source>Cable/DSL 768 Kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>Kaapeli/DSL 768 Kbps</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="764"/>
         <source>T1/Cable/DSL 1.5 Mbps</source>
-        <translation type="unfinished"></translation>
+        <translation>T1/Kaapeli/DSL 1.5 Mbps</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="769"/>
         <source>&gt; 1.5 Mbps</source>
-        <translation type="unfinished"></translation>
+        <translation>&gt; 1.5 Mbps</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="774"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Muu</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1025"/>
         <source>Ports 6660 - 6669 and 6697</source>
-        <translation type="unfinished"></translation>
+        <translation>Portit 6660 - 6669 ja 6697</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1028"/>
         <source>Internet Relay Chat (IRC)</source>
-        <translation type="unfinished"></translation>
+        <translation>Internet Relay Chat (IRC)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1038"/>
         <source>Ports 110, 143, 993 and 995</source>
-        <translation type="unfinished"></translation>
+        <translation>Portit 110, 143, 993 ja 995</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1041"/>
@@ -1768,7 +1768,7 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1054"/>
         <source>No External Connections</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei ulkoisia yhteyksiä</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1064"/>
@@ -1783,32 +1783,32 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1077"/>
         <source>Ports 706, 1863, 5050, 5190, 5222, 8300 and 8888</source>
-        <translation type="unfinished"></translation>
+        <translation>Portit 706, 1863, 5050, 5190, 5222, 8300 ja 8888</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1080"/>
         <source>Instant Messaging (IM)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pikaviestintä (IM)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1090"/>
         <source>Port 443</source>
-        <translation type="unfinished"></translation>
+        <translation>Portti 443</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1093"/>
         <source>Secure Websites (SSL)</source>
-        <translation type="unfinished"></translation>
+        <translation>Suojatut sivustot (SSL)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1103"/>
         <source>Port 80</source>
-        <translation type="unfinished"></translation>
+        <translation>Portti 80</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1106"/>
         <source>Websites</source>
-        <translation type="unfinished"></translation>
+        <translation>Internetsivustot</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1199"/>
@@ -1882,7 +1882,7 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     <message>
         <location filename="../control/torservice.cpp" line="113"/>
         <source>The Tor service is not installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-palvelua ei ole asennettu.</translation>
     </message>
 </context>
 <context>
@@ -1950,7 +1950,9 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
         <source>Another Vidalia process is already running. 
 
 This Vidalia process will now exit.</source>
-        <translation type="unfinished"></translation>
+        <translation>Toinen Vidalia on jo päällä. 
+
+Tämä Vidalia suljetaan.</translation>
     </message>
 </context>
 </TS>
