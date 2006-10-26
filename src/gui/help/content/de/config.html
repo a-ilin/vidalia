@@ -36,53 +36,54 @@ dem Tor-Netzwerk zu weiterem Wachtums verhelfen.
 <a name="general"/>
 <h3>Allgemeine Einstellungen</h3>
 <p>
-Settings on the <i>General</i> page are the most commonly modified settings.
+Die Seite <i>Allgemein</i> enth&auml;lt die am meisten gebrauchten Einstellungen.
 </p>
 <ul>
-  <li><b>Tor Executable</b>: 
-    This is the Tor executable that Vidalia will run when you select
-    <i>Start</i> from the tray menu. If you have multiple versions of Tor installed,
-    you can tell Vidalia which version you would like to run by clicking the
-    <i>Browse</i> button and navigating to the particular Tor installation you
-    want.
+  <li><b>Pfad zur Tor-Anwendung</b>: 
+    Dies ist die ausf&uuml;hrbare Tor-Datei, die Vidalia startet, wenn Sie
+    <i>Start</i> aus dem Tray-Men&uuml; ausw&auml;hlen. Falls Sie mehrere
+    Versionen von Tor installiert haben, k&ouml;nnen Sie durch Klicken auf
+    die <i>W&auml;hlen</i> Schaltfl&auml;che die Tor-Version ausw&auml;hlen, die
+    Vidalia benutzen soll.
   </li>
-  <li><b>Startup Options</b>:
-    This setting allows you to have Vidalia automatically start Tor when
-    Vidalia starts. You can also configure Vidalia to run when your system
-    starts (<i>Windows only</i>).
+  <li><b>Start Einstellungen</b>:
+    Durch diese Einstellung wird Tor automatisch zusammen mit Vidalia
+    gestartet. Sie k&ouml;nnen Vidalia auch konfigurieren, dass es beim
+    Systemstart ausge&uuml;hrt wird (<i>nur unter Windows</i>).
   </li>
 </ul>
 
 <a name="server"/>
-<h3>Server Settings</h3>
+<h3>Server Einstellungen</h3>
 <p>
 <i>
-  See <a href="server.html">this help topic</a> for detailed
-  information about setting up and managing a Tor server.
+  Lesen Sie <a href="server.html">diese Hilfeseite</a> f&uuml;r detailierte
+  Informationen zur Installation und zum Betrieb eines Tor-Servers.
 </i>
 </p>
 
 <a name="advanced"/>
-<h3>Advanced Settings</h3>
+<h3>Fortgeschrittene Einstellungen</h3>
 <p>
-The settings on the <i>Advanced Settings</i> page should generally only be
-modified by more experienced users.
+Die Einstellungen auf der Seite <i>Fortgeschritten</i> sollten gew&ouml;hnlich
+nur von erfahrenen Benutzern vorgenommen werden.
 </p>
 <ul>
-  <li><b>Control Port</b>:
-    The <i>Control Port</i> is the port which Vidalia uses to talk to Tor.
-    This doesn't need to be changed unless you have a conflict with another
-    service on your machine.
+  <li><b>Kontroll Port</b>:
+    Den <i>Kontroll Port</i> benutzt Vidalia zur Kommunikation mit Tor.
+    Diese Einstellung braucht nur ver&auml;ndert zu werden, wenn Sie einen
+    Konflikt mit einem anderen Dienst auf Ihrem System haben.
   </li>
-  <li><b>Tor Configuration File</b>:
-    You can use this option to have Vidalia start Tor using a 
-    specific <i>torrc</i>, Tor's configuration file.
+  <li><b>Tor Konfigurationsdatei</b>:
+    Mit dieser Option k&ouml;nnen Sie Vidalia veranlassen, Tor mit einer
+    speziellen Konfiguarionsdatei, <i>torrc</i>, auszuf&uuml;hren.
   </li>
-  <li><b>Permissions</b>:
-    If you enter a value for <b>Run as User</b>, Tor will <i>setuid</i> to this user
-    when it starts.
-    If you enter a value for <b>Run as Group</b>, Tor will <i>setgid</i> to this
-    group when it starts.
+  <li><b>Berechtigungen</b>:
+    Wenn Sie einen Wert f&uuml;r <b>Als folgender Benutzer ausf&uuml;hren</b>
+    angeben, wird Tor mit den Rechten dieses Benutzers ausge&uuml;hrt
+    (<i>setuid</i>).
+    Wenn Sie einen Wert f&uuml;r <b>Als folgende Gruppe ausf&uuml;hren</b>
+    wird Tor mit den Rechten dieser Gruppe ausgef&uuml;hrt (<i>setgid</i>).
   </li>
 </ul>
 
