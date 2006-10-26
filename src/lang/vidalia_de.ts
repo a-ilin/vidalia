@@ -96,7 +96,7 @@
     <message>
         <location filename="../gui/config/advancedpage.ui" line="454"/>
         <source>Run as User:</source>
-        <translation>Als folgender User ausführen:</translation>
+        <translation>Als folgender Benutzer ausführen:</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="467"/>
