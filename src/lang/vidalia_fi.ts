@@ -1698,12 +1698,12 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="683"/>
         <source>Bandwidth Limits</source>
-        <translation type="unfinished"></translation>
+        <translation>Nopeusrajoitukset</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="718"/>
         <source>For Internet connections with fast download speed but slow upload, please list your upload speed here.</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhteydet, joilla on nopea latauskaista mutta hidas lähetys, valitkaa alhaalta listasta.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="739"/>
@@ -1763,7 +1763,7 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1051"/>
         <source>Only internal Tor network traffic is passed</source>
-        <translation type="unfinished"></translation>
+        <translation>Vain Tor-verkon sisäistä liikennettä sallitaan</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1054"/>
@@ -1778,7 +1778,7 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1067"/>
         <source>Misc Other Services</source>
-        <translation type="unfinished"></translation>
+        <translation>Monenlaiset muut palvelut</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1077"/>
