@@ -787,7 +787,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/mainwindow.cpp" line="203"/>
         <source>Message Log</source>
-        <translation>Nachrichten Log</translation>
+        <translation>Nachrichtenprotokoll</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="293"/>
@@ -922,7 +922,7 @@ Please check the message log for indicators about what happened to Tor before it
         <translation>Vidalia hat festgestellt, das Tor unerwartet beendet 
 wurde.
 
-Überprüfen Sie die Nachrichten Logdatei.</translation>
+Überprüfen Sie das Nachrichtenprotokoll.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="330"/>
@@ -966,7 +966,7 @@ Verbindungen erscheinen.</translation>
     <message>
         <location filename="../gui/log/messagelog.ui" line="289"/>
         <source>Message Log</source>
-        <translation>Nachrichten Logdatei</translation>
+        <translation>Nachrichtenprotokoll</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="336"/>
@@ -1016,7 +1016,7 @@ Verbindungen erscheinen.</translation>
     <message>
         <location filename="../gui/log/messagelog.ui" line="430"/>
         <source>Saves the current Message Log settings</source>
-        <translation>Speichere die aktuellen Logdatei-Einstellungen</translation>
+        <translation>Speichert die aktuellen Nachrichtenprotokoll-Einstellungen</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="433"/>
@@ -1091,7 +1091,7 @@ Verbindungen erscheinen.</translation>
     <message>
         <location filename="../gui/log/messagelog.ui" line="741"/>
         <source>Clear all messages from the Message Log (Ctrl+E)</source>
-        <translation>Lösche alle Nachrichten aus der Logdatei (Strg+E)</translation>
+        <translation>Lösche alle Nachrichten aus dem Nachrichtenprotokoll (Strg+E)</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="749"/>
@@ -1157,7 +1157,7 @@ Verbindungen erscheinen.</translation>
     <message>
         <location filename="../gui/log/messagelog.ui" line="880"/>
         <source>Close the Message Log</source>
-        <translation>Schließe Nachrichtenfenster</translation>
+        <translation>Schließe das Nachrichtenprotokoll</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="888"/>
@@ -1246,7 +1246,7 @@ alle Vorgänge und sind hauptsächlich für Tor-Entwickler gedacht.</translation
     <message>
         <location filename="../gui/log/messagelog.cpp" line="376"/>
         <source>Find in Message Log</source>
-        <translation>Suche im Nachrichtenfenster</translation>
+        <translation>Suche im Nachrichtenprotokoll</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="377"/>
@@ -1271,7 +1271,7 @@ alle Vorgänge und sind hauptsächlich für Tor-Entwickler gedacht.</translation
     <message>
         <location filename="../gui/log/messagelog.ui" line="842"/>
         <source>Adjust Message Log Settings</source>
-        <translation>Ändere Nachrichtenfenster-Einstellungen</translation>
+        <translation>Ändere Nachrichtenprotokoll-Einstellungen</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="850"/>
