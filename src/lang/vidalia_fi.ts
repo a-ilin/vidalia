@@ -1708,7 +1708,7 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="739"/>
         <source>Select the entry that most closely resembles your Internet connection</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse vaihtoehto, joka parhaiten kuvaa internetyhteyttäsi</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="749"/>
@@ -1758,7 +1758,7 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1041"/>
         <source>Retrieve Mail (POP, IMAP)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sähköpostin vastaanotto (POP, IMAP)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1051"/>
@@ -1773,7 +1773,7 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1064"/>
         <source>Ports unspecified by other checkboxes</source>
-        <translation type="unfinished"></translation>
+        <translation>Rukseilla määrittämättömät portit</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1067"/>
@@ -1813,7 +1813,7 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1199"/>
         <source>What Internet resources should Tor users be able to access from your Tor Relay?</source>
-        <translation type="unfinished"></translation>
+        <translation>Mitä Internetpalveluita Tor-käyttäjät saavat käyttää Tor-palvelimesi kautta?</translation>
     </message>
 </context>
 <context>
