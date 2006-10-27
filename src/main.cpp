@@ -76,10 +76,19 @@ main(int argc, char *argv[])
     VMessageBox::critical(0, 
       qApp->translate("Vidalia",
         QT_TRANSLATE_NOOP("Vidalia", "Vidalia is already running")),
-      qApp->translate("Vidalia",
+#if defined(Q_OS_WIN32)
+      vApp->translate("Vidalia",
         QT_TRANSLATE_NOOP("Vidalia", 
           "Another Vidalia process is already running. \n\n"
           "This Vidalia process will now exit.")),
+#else
+      vApp->translate("Vidalia",
+        QT_TRANSLATE_NOOP("Vidalia", 
+          "Another Vidalia process is already running. \n\n"
+          "This Vidalia process will now exit. \n\n"
+          "(If there really is not another Vidalia process running, "
+          "you can delete %1 before starting Vidalia again.)")).arg(pidfile),
+#endif
       VMessageBox::Ok);   
     return 0;
   }
