@@ -57,6 +57,8 @@ public:
 
   /** Returns a printable string representation of the item's contents.*/
   QString toString();
+  /** Compare the given LogTreeItem to this object based on timestamp. */
+  virtual bool operator<(const QTreeWidgetItem &other) const;
 };
 
 #endif
