@@ -122,10 +122,3 @@ LogTreeItem::message()
   return text(COL_MESG);
 }
 
-/** Compare the given LogTreeItem to this object based on timestamp. */
-bool
-LogTreeItem::operator<(const QTreeWidgetItem &other) const
-{
-  return (this->timestamp() < ((LogTreeItem *)&other)->timestamp());
-}
-

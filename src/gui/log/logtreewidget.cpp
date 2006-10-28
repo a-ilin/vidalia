@@ -72,9 +72,9 @@ LogTreeWidget::qlist_cast(QList<QTreeWidgetItem *> inlist)
 QList<LogTreeItem *>
 LogTreeWidget::qlist_sort(QList<LogTreeItem *> inlist)
 {
-  QMap<LogTreeItem, LogTreeItem *> outlist;
+  QMultiMap<QDateTime, LogTreeItem *> outlist;
   foreach (LogTreeItem *item, inlist) {
-    outlist.insert(*item, item);
+    outlist.insert(item->timestamp(), item);
   }
   return outlist.values();
 }
