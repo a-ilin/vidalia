@@ -1703,7 +1703,7 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="718"/>
         <source>For Internet connections with fast download speed but slow upload, please list your upload speed here.</source>
-        <translation>Yhteydet, joilla on nopea latauskaista mutta hidas lähetys, valitkaa alhaalta listasta.</translation>
+        <translation>Yhteydet, joilla on nopea latausnopeus mutta hidas lähetys, valitkaa listasta alhaalta lähetysnopeutenne.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="739"/>
@@ -1813,7 +1813,7 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1199"/>
         <source>What Internet resources should Tor users be able to access from your Tor Relay?</source>
-        <translation>Mitä Internetpalveluita Tor-käyttäjät saavat käyttää Tor-palvelimesi kautta?</translation>
+        <translation>Mitä Internetpalveluita annat Tor-käyttäjät käyttää Tor-palvelimesi kautta?</translation>
     </message>
 </context>
 <context>
