@@ -52,7 +52,6 @@ Miscellaneous Tasks:
   * Find something to replace Trac. Perhaps Bugzilla+Mediawiki or MoinMoin.
     Alternatively, it seems Trac 0.10 supports things like spam filtering and
     user accounts via plugins. Perhaps we should look into these.
-  * I'm told our website looks terrible in IE. We should try to fix this.
 
 
 Notes from Roger:
