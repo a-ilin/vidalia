@@ -110,10 +110,10 @@ RouterListItem::operator<(const QTreeWidgetItem &other) const
   if (_list) {
     if (_list->sortColumn() == RouterListWidget::StatusColumn) {
       /* Numeric comparison based on status and/or bandwidth */
-      return (a->_statusValue > b->_statusValue);
+      return (a->_statusValue < b->_statusValue);
     } else if (_list->sortColumn() == RouterListWidget::NameColumn) {
       /* Perform a case-insensitive comparison based on router name */
-      return (a->name().toLower() > b->name().toLower());
+      return (a->name().toLower() < b->name().toLower());
     }
   }
   return QTreeWidgetItem::operator<(other);
