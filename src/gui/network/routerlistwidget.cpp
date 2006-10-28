@@ -40,7 +40,7 @@ RouterListWidget::RouterListWidget(QWidget *parent)
   setHeaderLabels(QStringList() << tr("Status") << tr("Server"));
 
   /* Sort by descending server bandwidth */
-  sortByColumn(StatusColumn, Qt::DescendingOrder);
+  sortItems(StatusColumn, Qt::DescendingOrder);
 
   /* Find out when the selected item has changed. */
   connect(this, SIGNAL(itemSelectionChanged()), 
