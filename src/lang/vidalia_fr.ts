@@ -314,7 +314,7 @@ Vous devrez enlever manuellement le service Tor.</translation>
     <message>
         <location filename="../control/circuit.cpp" line="110"/>
         <source>Open</source>
-        <translation>Ouvrir</translation>
+        <translation>Ouvert</translation>
     </message>
     <message>
         <location filename="../control/circuit.cpp" line="111"/>
