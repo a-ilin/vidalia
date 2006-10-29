@@ -53,7 +53,7 @@
     <message>
         <location filename="../gui/about/aboutdialog.cpp" line="74"/>
         <source>&lt;Unavailable&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;Nicht verfügbar&gt;</translation>
     </message>
 </context>
 <context>
@@ -136,7 +136,7 @@
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="134"/>
         <source>Unable to create %1 [%2]</source>
-        <translation type="unfinished">Konnte %1 nicht erstellen [2%]</translation>
+        <translation>Konnte %1 nicht erstellen [2%]</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="515"/>
@@ -1414,7 +1414,7 @@ empfangen.</translation>
     <message>
         <location filename="../gui/network/netviewer.ui" line="573"/>
         <source>Esc</source>
-        <translation type="unfinished">Esc</translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="595"/>
@@ -1572,7 +1572,7 @@ empfangen.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="480"/>
         <source>Contact Info:</source>
-        <translation>Kontakt Information:</translation>
+        <translation>Kontakt-Information:</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="434"/>
@@ -1593,17 +1593,17 @@ Ihrem Server verwenden</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="577"/>
         <source>Domain name or IP address of your server</source>
-        <translation>Domainname oder IP Adresse Ihres Servers</translation>
+        <translation>Domainname oder IP-Adresse Ihres Servers</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="633"/>
         <source>Enable to mirror the server directory</source>
-        <translation>Auswählen um das Tor Verzeichnis zu spiegeln</translation>
+        <translation>Auswählen um die Server-Liste zu spiegeln</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="636"/>
         <source>Mirror the Server Directory </source>
-        <translation>Das Tor Verzeichnis spiegeln</translation>
+        <translation>Die Server-Liste spiegeln</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="386"/>
@@ -1618,12 +1618,12 @@ Ihrem Server verwenden</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="987"/>
         <source>Exit Policies</source>
-        <translation>Exit Strategie</translation>
+        <translation>Exit-Regeln</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1126"/>
         <source>Show help topic on exit policies</source>
-        <translation>Zeige Hilfe über Exit Strategien</translation>
+        <translation>Zeige Hilfe zu Exit-Regeln</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="135"/>
@@ -1639,7 +1639,7 @@ angeben.</translation>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="299"/>
         <source>Vidalia was unable to determine your public IP address.</source>
-        <translation>Vidalia konnte Ihre öffentliche IP Adresse nicht
+        <translation>Vidalia konnte Ihre öffentliche IP-Adresse nicht
 ermitteln.</translation>
     </message>
     <message>
@@ -1647,17 +1647,17 @@ ermitteln.</translation>
         <source>Vidalia was only able to find a private IP address for your server.
 
 Would you like to access an external service to determine your public IP address?</source>
-        <translation>Vidalia konnte nur eine private IP Adresse für Ihren
+        <translation>Vidalia konnte nur eine private IP-Adresse für Ihren
 Server finden.
 
-Möchten Sie einen externen Dienst benutzen, um Ihre öffentliche IP Adresse
+Möchten Sie einen externen Dienst benutzen, um Ihre öffentliche IP-Adresse
 zu ermitteln?</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="646"/>
         <source>When enabled, Vidalia will periodically update your IP address if necessary</source>
-        <translation>Wenn aktiviert, versucht Vidalia regelmäßig Ihre IP
-Adresse auf den neusten Stand zu bringen.</translation>
+        <translation>Wenn aktiviert, versucht Vidalia regelmäßig Ihre IP-Adresse
+auf den neusten Stand zu bringen.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="649"/>
@@ -1691,7 +1691,7 @@ angeben.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="928"/>
         <source>Peak bandwidth rate limit</source>
-        <translation type="unfinished">Hochlast Bandbreitenbegrenzung</translation>
+        <translation>Hochlast Bandbreitenbegrenzung</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="948"/>
@@ -1706,7 +1706,7 @@ angeben.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="333"/>
         <source>Basic Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Basis Einstellungen</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="683"/>
@@ -1827,7 +1827,7 @@ geben Sie Ihre Uploadgeschwindigkeit bitte hier an.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1199"/>
         <source>What Internet resources should Tor users be able to access from your Tor Relay?</source>
-        <translation type="unfinished"></translation>
+        <translation>Welche Internet-Ressourcen sollen Tor-Nutzer von Ihrem Relay aus erreichen können?</translation>
     </message>
 </context>
 <context>
