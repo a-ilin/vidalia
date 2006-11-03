@@ -53,7 +53,7 @@
     <message>
         <location filename="../gui/about/aboutdialog.cpp" line="74"/>
         <source>&lt;Unavailable&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;Niedostępny&gt;</translation>
     </message>
 </context>
 <context>
@@ -141,7 +141,7 @@
     <message>
         <location filename="../gui/config/advancedpage.ui" line="515"/>
         <source>Service</source>
-        <translation type="unfinished">Usługa</translation>
+        <translation>Usługa</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="530"/>
@@ -335,12 +335,12 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="54"/>
         <source>Close Circuit</source>
-        <translation type="unfinished"></translation>
+        <translation>Zamknij połączenie</translation>
     </message>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="58"/>
         <source>Close Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Zamknij strumień</translation>
     </message>
 </context>
 <context>
@@ -396,12 +396,12 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../control/controlconnection.cpp" line="285"/>
         <source>Control socket is not connected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gniazdo kontrolne nie jest podłączone.</translation>
     </message>
     <message>
         <location filename="../control/controlconnection.cpp" line="232"/>
         <source>Control socket is not connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Gniazdo kontrolne nie jest podłączone</translation>
     </message>
 </context>
 <context>
@@ -441,7 +441,7 @@ Proszę uaktualnić Tor&apos;a do nowszej wersji.</translation>
     <message>
         <location filename="../control/controlsocket.cpp" line="136"/>
         <source>Control socket is not connected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Gniazdo kontrolne nie jest podłączone.</translation>
     </message>
 </context>
 <context>
@@ -1314,12 +1314,12 @@ dla programistów ekipy Tor&apos;a</translation>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="241"/>
         <source>Log Filename Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Wymagana nazwa pliku loga</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="243"/>
         <source>You must enter a filename to be able to save log messages to a file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Musisz wpisać nazwę pliku, aby móc zapisywać wiadomości do pliku.</translation>
     </message>
 </context>
 <context>
@@ -1527,7 +1527,7 @@ dla programistów ekipy Tor&apos;a</translation>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="54"/>
         <source>Zoom to Server</source>
-        <translation type="unfinished"></translation>
+        <translation>Przybliż serwer</translation>
     </message>
 </context>
 <context>
@@ -1691,127 +1691,127 @@ fingerprint.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="333"/>
         <source>Basic Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienia podstawowe</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="683"/>
         <source>Bandwidth Limits</source>
-        <translation type="unfinished"></translation>
+        <translation>Limity przepustowości</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="718"/>
         <source>For Internet connections with fast download speed but slow upload, please list your upload speed here.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dla połączeń o wysokiej prędkości ściągania a niskiej wysyłania, proszę wybrać typ o zbliżonej prędkości wysyłania.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="739"/>
         <source>Select the entry that most closely resembles your Internet connection</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz typ najdokładniej opisujący Twoje połączenie Internetowe</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="749"/>
         <source>Cable/DSL 256 Kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>Cable/DSL 256 Kbps</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="754"/>
         <source>Cable/DSL 512 Kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>Cable/DSL 512 Kbps</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="759"/>
         <source>Cable/DSL 768 Kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>Cable/DSL 768 Kbps</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="764"/>
         <source>T1/Cable/DSL 1.5 Mbps</source>
-        <translation type="unfinished"></translation>
+        <translation>T1/Cable/DSL 1.5 Mbps</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="769"/>
         <source>&gt; 1.5 Mbps</source>
-        <translation type="unfinished"></translation>
+        <translation>&gt; 1.5 Mbps</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="774"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Inny</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1025"/>
         <source>Ports 6660 - 6669 and 6697</source>
-        <translation type="unfinished"></translation>
+        <translation>Porty 6660 - 6669 i 6697</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1028"/>
         <source>Internet Relay Chat (IRC)</source>
-        <translation type="unfinished"></translation>
+        <translation>Usługa IRC</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1038"/>
         <source>Ports 110, 143, 993 and 995</source>
-        <translation type="unfinished"></translation>
+        <translation>Porty 110, 143, 993 i 995</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1041"/>
         <source>Retrieve Mail (POP, IMAP)</source>
-        <translation type="unfinished"></translation>
+        <translation>Odbieranie maili (POP, IMAP)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1051"/>
         <source>Only internal Tor network traffic is passed</source>
-        <translation type="unfinished"></translation>
+        <translation>Przepuszczany jest tylko ruch wewnętrzny sieci Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1054"/>
         <source>No External Connections</source>
-        <translation type="unfinished"></translation>
+        <translation>Bez zewnętrznych połaczeń</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1064"/>
         <source>Ports unspecified by other checkboxes</source>
-        <translation type="unfinished"></translation>
+        <translation>Pozostałe niewymienione porty</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1067"/>
         <source>Misc Other Services</source>
-        <translation type="unfinished"></translation>
+        <translation>Inne usługi</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1077"/>
         <source>Ports 706, 1863, 5050, 5190, 5222, 8300 and 8888</source>
-        <translation type="unfinished"></translation>
+        <translation>Porty 706, 1863, 5050, 5190, 5222, 8300 i 8888</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1080"/>
         <source>Instant Messaging (IM)</source>
-        <translation type="unfinished"></translation>
+        <translation>Komunikatory internetowe</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1090"/>
         <source>Port 443</source>
-        <translation type="unfinished"></translation>
+        <translation>Port 443</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1093"/>
         <source>Secure Websites (SSL)</source>
-        <translation type="unfinished"></translation>
+        <translation>Bezpieczne witryny (SSL)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1103"/>
         <source>Port 80</source>
-        <translation type="unfinished"></translation>
+        <translation>Port 80</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1106"/>
         <source>Websites</source>
-        <translation type="unfinished"></translation>
+        <translation>Strony WWW</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1199"/>
         <source>What Internet resources should Tor users be able to access from your Tor Relay?</source>
-        <translation type="unfinished"></translation>
+        <translation>Z jakich usług internetowych mogą korzystać użytkownicy Tor&apos;a komunikujący się z Twoim serwerem?</translation>
     </message>
 </context>
 <context>
@@ -1880,7 +1880,7 @@ fingerprint.</source>
     <message>
         <location filename="../control/torservice.cpp" line="113"/>
         <source>The Tor service is not installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Usługa Tor&apos;a nie jest zainstalowana.</translation>
     </message>
 </context>
 <context>
@@ -1948,7 +1948,9 @@ fingerprint.</source>
         <source>Another Vidalia process is already running. 
 
 This Vidalia process will now exit.</source>
-        <translation type="unfinished"></translation>
+        <translation>Inna instancja Vidalii jest już uruchomiona.
+
+Ten proces zostanie teraz zakończony.</translation>
     </message>
 </context>
 </TS>
