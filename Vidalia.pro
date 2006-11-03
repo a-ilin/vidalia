@@ -45,6 +45,13 @@ macx {
   # Set the deployment target so we stop getting linker warnings
   # not having this set. (target Panther and newer)
   QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.3
+  
+  !isEmpty(UNIVERSAL_BINARY) {
+    # Build a Universal binary
+    CONFIG += x86 ppc
+    QMAKE_SDK_PATH=/Developer/SDKs/MacOSX10.4u.sdk
+    QMAKE_MAC_SDK=/Developer/SDKs/MacOSX10.4u.sdk
+  }
 }
 unix {
   # Setup the `make install` target

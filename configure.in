@@ -79,9 +79,9 @@ AC_PATH_PROG(CHMOD, chmod, chmod)
 saved_CXXFLAGS="$CXXFLAGS"
 CXXFLAGS="-I$QTDATA/include -I$QTDATA/include/QtCore -I$QTDATA/include/QtGui"
 
-# On Mac, we need to see if Qt is built as a series of frameworks
 os=`uname -s`
 if test $os = "Darwin"; then
+  # On Mac, we need to see if Qt is built as a series of frameworks
   AC_CACHE_CHECK([if Qt is built as a framework], ac_cv_qt_is_framework, [
     saved_LDFLAGS="$LDFLAGS"
     saved_LIBS="$LIBS"
@@ -96,6 +96,17 @@ if test $os = "Darwin"; then
   ])
   if test "$ac_cv_qt_is_framework" = yes; then
     framework=yes
+  fi
+  
+  # Determine whether we are supposed to build a Universal binary
+  AC_ARG_ENABLE(fat_binary,
+    AC_HELP_STRING(--enable-fat-binary, Build a Mac OS X Universal binary))
+  AC_MSG_CHECKING([if we are building a Universal binary])
+  if test x$enable_fat_binary = xyes; then
+    AC_MSG_RESULT(yes)
+    QFLAGS="$QFLAGS UNIVERSAL_BINARY=yes"
+  else
+    AC_MSG_RESULT(no)
   fi
 fi
 
@@ -131,6 +142,7 @@ if test $BUILDMODE = "debug"; then
 fi
 AC_MSG_NOTICE([Building in $BUILDMODE mode])
 CXXFLAGS="$saved_CXXFLAGS"
+QFLAGS="$QFLAGS -config $BUILDMODE"
 
 # Clean out an existing Makefile
 AC_CHECK_FILE(Makefile, [rm Makefile])
@@ -158,11 +170,15 @@ fi
 AC_MSG_NOTICE([Processing language translations...])
 $LRELEASE $PROFILE
 
+# Pass the installation prefix to qmake
+QFLAGS="$QFLAGS PREFIX=$prefix"
+
 # Make sure ${prefix} (which can be contained in $mandir) is evaluted 
 # before passing it to qmake
 MANPAGEDIR=`eval echo $mandir`
+QFLAGS="$QFLAGS MANDIR=$MANPAGEDIR"
 
 # Run qmake to generate the Makefile
 AC_MSG_NOTICE([Running qmake...])
-$QMAKE -config $BUILDMODE PREFIX=$prefix MANDIR=$MANPAGEDIR $PROFILE
+$QMAKE $QFLAGS $PROFILE
 
