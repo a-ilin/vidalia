@@ -57,10 +57,7 @@ Jos on kiinnostusta auttaa Tor-verkon toimintaa ylläpitämällä omaa palvelint
     </ul>
   <li>
     Jos haluat välittää listaa verkossa olevista Tor-palvelimista, niin rastita ruutu <i>Välitä Tor-palvelinlistaa</i>.
-     Jos on yhteys on hidas, niin ei välttämättä ole kannatavaa rastittaa. Jos haluaa välittää listaa Tor-palvelimista, niin varmista <i>lista-portin</i> olevan eri kuin <i>palvelinportti</i>.
-  </li>
-  <li>
-    Tor-verkosta reitittimesi kautta poistuvassa liikenteessä näkyy IP-osoitteesi. Paitsi, jos rastittaa ruudun <i>Salli yhteyksiä vain muihin Tor-palvelimiin</i>, jolloin reititin toimii <i>välikätenä</i> eli <i>poistumattomana</i>reitittimenä. Käyttäjät ja palvelimet voivat ottaa yhteyden palvelimeesi, mutta palvelimesi muodostaa yhteyden vain toisiin Tor-palvelimiin.
+     Jos on yhteys on hidas, niin ei välttämättä ole kannattavaa rastittaa ruutua. Jos haluaa välittää listaa Tor-palvelimista, niin varmista <i>lista-portin</i> olevan eri kuin <i>palvelinportti</i>.
   </li>
 </ol>
 
@@ -70,14 +67,14 @@ Jos on kiinnostusta auttaa Tor-verkon toimintaa ylläpitämällä omaa palvelint
 Tor-palvelimen ylläpito kuluttaa paljon yhteyskaistaa, jonka vuoksi Tor sallii käytettävän yhteyskaistanmäärän Tor-palvelimille rajoittamisen. Palvelinta voi pitää päällä samalla kun yhteyttä käytetään muihin tarkoituksiin.
 </p>
 <p>
-<i>Keskimääräinennopeus</i> on suurin pitkäaikainenkeskimääräinen sallittu nopeus (kilotavua sekunnissa). Esimerkiksi kannattavaa on asettaa 2 megabittiä sekunnissa (2048 kt/s) tai 50 kilotavua sekunnissa (tyypillinen laajakaistayhteyden nopeus). Tor tarvitsee vähintään 20 kilotavua sekunnissa toimiakseen palvelimena.
-</p>
+Valikosta kannattaa valita itselleen parhaiten sopivin nopeus. Oman erikoisnopeuden on mahdollista valita valitsemalla muu.</p><h4>Muut nopeudet</h4>
 <p>
 The <i>maximum rate</i> is a pool of bytes used to fulfill requests during
 short periods of traffic higher than your specified <i>average rate</i>, but
 still maintains the average over a long period. A low average rate but a high
 maximum rate enforces a long-term average while still allowing more traffic
-during peak times if the average hasn't been reached lately. Jos kerkimääräinennopeus on sama kuin <i>enimmäisnopeus</i> Tor ei ylitä määriteltyä nopeutta. <i>Enimmäisnopeutesi</i> täytyy olla yhtä suuri tai suurempi kuin <i>keskimääräinen nopeus</i>.
+during peak times if the average hasn't been reached lately. Jos kerkimääräinennopeus on sama kuin <i>enimmäisnopeus</i> Tor ei ylitä määriteltyä nopeutta. <i>Enimmäisnopeutesi</i> täytyy olla yhtä suuri tai suurempi kuin <i>keskimääräinen nopeus</i>.</p><p><i>Keskimääräinennopeus</i> on suurin pitkäaikainenkeskimääräinen sallittu nopeus (kilotavua sekunnissa). Esimerkiksi kannattavaa on asettaa 2 megabittiä sekunnissa (2048 kt/s) tai 50 kilotavua sekunnissa (tyypillinen laajakaistayhteyden nopeus). Tor tarvitsee vähintään 20 kilotavua sekunnissa toimiakseen palvelimena.
+
 </p>
 <p>
 Tärkeää on huomioida, että Tor laskee liikkuvan tiedon <b>tavuina</b> eikä bitteinä. Myös, Tor rajottaa vain tulevaa liikennettä lähettävän sijasta. Esimerkiksi, jos oma palvelin välittää listaa Tor-palvelimista silloin lähetetään enemmän tietoa kuin vastaanotetaan. Jos tämä rasittaa liikaa yhteyttä, niin kannattaa poistaa rasti <i>Välitä Tor-palvelinlistaa</i>.
@@ -86,54 +83,14 @@ Tärkeää on huomioida, että Tor laskee liikkuvan tiedon <b>tavuina</b> eikä 
 <a name="exitpolicy"/>
 <h3>Poistumiskäytännöt</h3>
 <p>
-Poistumiskäytännöillä määritellään millaista liikennettä sallitaan poistuvan oman Tor-palvelimen kautta. Tor käyttää oletuksena poistumiskäytäntölistaa, joka rajoittaa erilaisten palvelujen käyttöä kuten sähköpostia, estääkseen spammin tekoa, ja oletus tiedostonjakoportteja estääksen hyväksikäyttämästä Tor-verkkoa. <i>Huomaa:</i> Jos toimii <i>välikätenä</i>, niin ei tarvitse huomioida poistumiskäytäntöjä, sillä siinä tapauksessa liikennettä ei poisteta oman palvelimen kautta.
+Poistumiskäytännöillä määritellään millaista liikennettä sallitaan poistuvan oman Tor-palvelimen kautta. Tor käyttää oletuksena poistumiskäytäntölistaa, joka rajoittaa erilaisten palvelujen käyttöä kuten sähköpostia, estääkseen spammin tekoa, ja oletus tiedostonjakoportteja estääksen hyväksikäyttämättä Tor-verkkoa. <i>Huomaa:</i> Jos toimii <i>välikätenä</i>, niin ei tarvitse huomioida poistumiskäytäntöjä, sillä siinä tapauksessa liikennettä ei poisteta oman palvelimen kautta.
 </p>
 
 <p>
-Poistumiskäytännöt koostuvat yhdestä tai useammasta säännöstä, jotka ilmaisevat Tor-verkosta poistuville yhteyksille toimeenpiteen käytännön mukaisille osoitteille tai porteille. 
+Jokainen vaihtoehto ilmaisee tietynlaista palvelua, jota voi sallia Torverkon kautta kulkemaan palvelimesi kautta. Jos poistaa rastin jonkin vierestä, Tor ei salli sen kaltaista liikennettä palvelimesi kautta, ja jos on rastitettu <i>Monenlaiset muut palvelut</i>, Tor sallii muunlaisen liikenenteen poistuvan palvelimesi kautta kuin edellä mainitut vaihtoehdot. 
 </p>
 
-<p>Tor käsittelee 
-Käytäntöjä ylhäältä alaspäin. Kaikki käytännöt, jotka asetetaan ylös alkuun ovat Tor:in oletus poistumiskäytäntö-listassa. Koska käytäntöjä käsitellään ylhäältä alas, niin listan järjestyksellä on merkistystä. Ylös- ja alas-nuolinäppäimmillä voi vaihtaa käytäntöjen järjestystä.
-</p>
-
-<h4>Toimenpiteet</h4>
-<p>
-Jokaisen poistumiskäytännöllä on määritelty toimenpide, joita on:
-<ul>
-  <li><b>estä</b> (engl. reject): Tämän kaltaisten käytäntöjen yhteydet <i>estetään</i>.</li>
-  <li><b>salli</b> (engl. accept): Tämän kaltaisten käytäntöjen yhteydet <i>sallitaan</i>.</li>
-</ul>
-</p>
-
-<h4>Osoite</h4>
-<p>
-Käytännöissä olevat osoitteet voivat olla joko pelkästään IP-osoitteita (esim. 123.45.67.8), IP-osoite sekä verkkopeite (esim. <i>123.45.0.0/16</i>) tai "*". Jos on määritelty "*" tarkoittaen jokaista osoitetta.
-</p>
-
-<h4>Portit</h4>
-<p>
-Jokainen käytäntö määritellään portille tai porteille joita kohtaan se koskee. Hyväksyttävät portit ovat väliltä 1-65535 tai "*"-merkillä voi määrittää kaikki portit.
-</p>
-
-<h4>Esimerkkejä</h4>
-<p>
-Esimerkkejä sopivista poistumiskäytännöistä ja selitys niiden toiminnasta:
-<ul>
-  <li><b>estä 123.45.67.8:*</b> - 
-    Tor <i>estää</i> kaikki yhteydet Tor-käyttäjiltä, jotka haluvat muodostaa yhteyden oman palvelimen kautta mihin tahansa porttiin IP-osoitteessa <i>123.45.67.8</i>.
-  </li>
-  <li><b>salli *:80</b> -
-    Tor <i>sallii</i> yhteydet  Tor-käyttäjiltä, jotka haluvat muodostaa yhteyden palvelimen kautta porttiin 80 mistä tahansa IP-osoitteessa.
-  </li>
-  <li><b>estä *:135-139</b> -
-    Tor <i>estää</i> yhteydet Tor-käyttäjiltä, jotka haluvat muodostaa yhteyden palvelimen porttien 135-139 kautta mistä tahansa IP-osoitteesta.
-  </li>
-  <li><b>estä 128.23.0.0/16:*</b> -
-    Tor <i>estää</i> yhteydet Tor-käyttjiltä, jotka haluvat muodostaa yhteyden palvelimen kautta IP-osoitteista  <i>128.23.0.0</i> - 
-    <i>128.23.255.255</i>.
-  </li>
-</ul>
+<p>Jos ei halua sallia muiden Tor-käytäjien muodostaa yhteyksiä Tor-verkon ulkopuolelle oman palvelimen kautta, niin poista rasti jokaisesta ruudusta. Vaikka rastit on poistettu jokaisesta kohdasta, niin palvelimesi on hyödyllinen Tor-Verkolle. Palvelimesi sallii Tor-käyttäjien myodostaa yhteyksiä Tor-verkkoon ja välittää tietoa Tor-palvelimien välillä.
 </p>
 
 </html>
