@@ -31,8 +31,6 @@
 #include <util/html.h>
 #include <gui/common/vmessagebox.h>
 
-#include <QtDebug>
-
 #include "serverpage.h"
 #include "ipvalidator.h"
 #include "portvalidator.h"
