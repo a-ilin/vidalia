@@ -1552,12 +1552,12 @@ empfangen.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="512"/>
         <source>Directory Port:</source>
-        <translation>Verzeichnis Port:</translation>
+        <translation>Verzeichnis-Port:</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="542"/>
         <source>Directory Port Number</source>
-        <translation>Verzeichnis Port Nummer:</translation>
+        <translation>Verzeichnis-Port-Nummer:</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="412"/>
