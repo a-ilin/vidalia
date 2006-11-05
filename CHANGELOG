@@ -1,3 +1,46 @@
+0.0.9   05-Nov-2006
+  o Added a new, more intuitive interface for setting a server's bandwidth
+    rate and exit policies.
+  o Improved our ./configure script so it will detect old or non-debug
+    versions of Qt and link accordingly.
+  o Added support for more easily building Qt as a Universal binary on OS X.
+  o Added a right-click option to circuits listed in the network map dialog to 
+    close the circuit (Ticket #176).
+  o Added a right-click option to servers listed in the network map dialog to 
+    zoom in on the server on the map (Ticket #176).
+  o Stop using a custom font and just use the platform default on all dialogs.
+  o Add "Close Window" shortcuts for Linux (Ctrl+W).
+  o Fixed a crash bug that would occur when saving messages in the message 
+    log (Ticket #185).
+  o Fixed a bug that would cause messages with the identical timestamps to not
+    get copied to the clipboard (Ticket #190).
+  o Ask if the user wants to delay shutting down their server when Vidalia
+    exits, to give clients time to find new circuits. We previously only did
+    this when the user stopped Tor, but wasn't exiting Vidalia.
+  o If Windows is restarting, then don't ask about delaying a server shut
+    down; just stop Tor and exit immediately so Windows doesn't yell at us.
+  o Detect if Tor was installed as an NT service prior to Vidalia, so we don't
+    accidentally remove it.
+  o Create a new torrc and specify a control port for the Tor NT service, so 
+    it doesn't die when the user tries to start the service and we don't have
+    to tell the user to go add a line to their torrc.
+  o Fixed a bug that caused Vidalia to crash if it tried to read in a bogus
+    geoip-cache file from its data directory (Ticket #184).
+  o Refuse to cache information we did not ask for that we received in response 
+    to a GeoIP request.
+  o Wait no more than ten seconds after queueing a GeoIP request before
+    sending it, so request don't starve if we keep constantly getting new
+    descriptors.
+  o Ask Tor what its SocksPort and SocksAddress is before building our GeoIP
+    request, instead of always assuming Tor is listening on 127.0.0.1:9050.
+  o Explicitly specify the sort order for the message log and server list, so
+    things aren't backwards when linking with Qt 4.2.x.
+  o Add support for translating the Vidalia and Vidalia bundle installers.
+  o Start bundling Torbutton with the Vidalia bundle installer.
+  o Add a Norwegian (Bokmal) translation contributed by xiando.
+  o Updates to the Finnish, French, German, and Polish translations.
+
+
 0.0.8   03-Oct-2006
   o Vidalia will now attempt to connect to an existing Tor's ControlPort
     before starting its own Tor process. If it finds a Tor with an open
