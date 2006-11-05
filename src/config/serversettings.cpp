@@ -53,7 +53,6 @@
 #define SETTING_SERVER_CHANGED    "Server/Changed"
 #define SETTING_SERVER_DIRMIRROR  "Server/DirectoryMirror"
 #define SETTING_SERVER_AUTOUPDATE_ADDRESS "Server/AutoUpdateAddress"
-#define SETTING_SERVER_MIDDLEMAN  "Server/Middleman"
 #define SETTING_SERVER_NICKNAME   "Server/"SERVER_NICKNAME
 #define SETTING_SERVER_ORPORT     "Server/"SERVER_ORPORT
 #define SETTING_SERVER_DIRPORT    "Server/"SERVER_DIRPORT
@@ -76,7 +75,6 @@ ServerSettings::ServerSettings(TorControl *torControl)
   setDefault(SETTING_SERVER_ENABLED,    false);
   setDefault(SETTING_SERVER_CHANGED,    false);
   setDefault(SETTING_SERVER_DIRMIRROR,  true);
-  setDefault(SETTING_SERVER_MIDDLEMAN,  true);
   setDefault(SETTING_SERVER_ORPORT,     9001);
   setDefault(SETTING_SERVER_DIRPORT,    9030);
   setDefault(SETTING_SERVER_CONTACT,    "<your@email.com>");
@@ -216,8 +214,8 @@ ServerSettings::confValues()
                          : "0"));
   /* Server Exit Policy */
   conf.insert(SERVER_EXITPOLICY, 
-    (isMiddleman() ? ExitPolicy(ExitPolicy::Middleman).toString()
-                   : VidaliaSettings::value(SETTING_SERVER_EXITPOLICY).toString()));
+    VidaliaSettings::value(SETTING_SERVER_EXITPOLICY).toString());
+  
   /* Server Address */
   conf.insert(SERVER_ADDRESS,      
     VidaliaSettings::value(SETTING_SERVER_ADDRESS).toString());
@@ -381,22 +379,6 @@ void
 ServerSettings::setDirectoryMirror(bool mirror)
 {
   setValue(SETTING_SERVER_DIRMIRROR, mirror);
-}
-
-/** Returns whether this server is a middle-man server. A middle-man server
- * simply relays traffic between other Tor servers. A middle-man server can
- * also act as an entry node for Tor clients. */
-bool
-ServerSettings::isMiddleman()
-{
-  return VidaliaSettings::value(SETTING_SERVER_MIDDLEMAN).toBool();
-}
-
-/** Sets whether this server will act as a middle-man server. */
-void
-ServerSettings::setMiddleman(bool middleman)
-{
-  setValue(SETTING_SERVER_MIDDLEMAN, middleman);
 }
 
 /** Returns the exit policy for this server. */

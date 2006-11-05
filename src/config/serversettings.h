@@ -82,12 +82,6 @@ public:
   void setDirectoryMirror(bool mirror);
   /** Returns true if the server will mirror the directory. */
   bool isDirectoryMirror();
- 
-  /** Sets whether the server will act as a middleman or not. */
-  void setMiddleman(bool middleman);
-  /** Returns true if the server is a middleman server. */
-  bool isMiddleman();
-
   /** Sets the exit policy for this server. */
   void setExitPolicy(ExitPolicy &policy);
   /** Gets the exit policy for this server. */
