@@ -12,7 +12,7 @@
   o Add "Close Window" shortcuts for Linux (Ctrl+W).
   o Fixed a crash bug that would occur when saving messages in the message 
     log (Ticket #185).
-  o Fixed a bug that would cause messages with the identical timestamps to not
+  o Fixed a bug that would cause messages with identical timestamps to not
     get copied to the clipboard (Ticket #190).
   o Ask if the user wants to delay shutting down their server when Vidalia
     exits, to give clients time to find new circuits. We previously only did
@@ -29,7 +29,7 @@
   o Refuse to cache information we did not ask for that we received in response 
     to a GeoIP request.
   o Wait no more than ten seconds after queueing a GeoIP request before
-    sending it, so request don't starve if we keep constantly getting new
+    sending it, so requests don't starve if we keep constantly getting new
     descriptors.
   o Ask Tor what its SocksPort and SocksAddress is before building our GeoIP
     request, instead of always assuming Tor is listening on 127.0.0.1:9050.
