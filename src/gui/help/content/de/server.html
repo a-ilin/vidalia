@@ -75,20 +75,11 @@ k&ouml;nnen Sie die folgenden Schritte als Startpunkt befolgen:
     </ul>
   <li>
     Wenn Sie die Server-Liste f&uuml;r andere im Netzwerk spiegeln wollen,
-    aktivieren Sie die Box <i>Die Server-Liste spiegeln</i>. Aktivieren Sie
-    diese Box nicht, falls Sie nicht ausreichend Bandbreite zur Verf&uuml;gung
+    aktivieren Sie die Box <i>Die Server-Liste spiegeln</i>. Deaktivieren Sie
+    diese Box, falls Sie nicht ausreichend Bandbreite zur Verf&uuml;gung
     haben. Falls Sie sich entscheiden, die Server-Liste zu spiegeln, stellen
-    Sie sicher, dass der <i>Port</i> sich von dem oben erw&auml;hnten
+    Sie sicher, dass der <i>Verzeichnis-Port</i> sich von dem oben erw&auml;hnten
     <i>Server Port</i> unterscheidet.
-  </li>
-  <li>
-    Verkehr, der das Tor-Netzwerk von Ihrem Router aus verl&auml;sst, scheint
-    von Ihrer IP-Adresse zu kommen. Falls Sie dies nicht wollen, aktivieren
-    Sie die Box <i>Only allow connections to other Tor servers</i>, damit Tor
-    als <i>non-exit</i> Knoten arbeiten kann. Ist diese Box aktiviert,
-    k&ouml;nnen sich andere Client-Programme und Server zu Ihrem Server
-    verbinden, aber Ihr Server stellt nur Verbindungen zu anderen Servern im
-    Tor-Netzwerk her.
   </li>
 </ol>
 
@@ -102,13 +93,11 @@ und gleichzeitig bleibt Ihre Netzwerkverbindung f&uuml;r Ihren eigenen
 Bedarf benutzbar.
 </p>
 <p>
-Die <i>Durchschnittliche Rate</i> gibt die maximale durchschnittliche
-Bandbreite, gemessen &uuml;ber einen langen Zeitraum, an (in
-Kilobyte pro Sekunde). Sie k&ouml;nnen bspw. 2 Megabyte pro Sekunde
-(2048 KB/s) oder 50 Kilobyte pro Sekunde (entspricht einer
-durchschnittlichen Kabel-Internetverbindung) angeben. Tor ben&ouml;tigt
-mindestens 20 Kilobyte pro Sekunde, um als Server betrieben zu werden.
+Sie sollten aus der Auswahlliste die Option w&auml;hlen, die Ihrer
+Internetverbindung am ehesten entspricht. Falls Sie <i>Benutzerdefiniert</i>
+ausw&auml;hlen, k&ouml;nnen Sie die Bandbreitenbegrenzung selbst festlegen.
 </p>
+<h4>Benutzerdefinierte Begrenzung</h4>
 <p>
 The <i>maximum rate</i> is a pool of bytes used to fulfill requests during
 short periods of traffic higher than your specified <i>average rate</i>, but
@@ -118,6 +107,14 @@ during peak times if the average hasn't been reached lately. If your average
 rate is the same as your <i>maximum rate</i>, then Tor will never exceed the
 specified rate. Your <i>maximum rate</i> must always be greater than or equal
 to your <i>average rate</i>.
+</p>
+<p>
+Die <i>Durchschnittliche Rate</i> gibt die maximale durchschnittliche
+Bandbreite, gemessen &uuml;ber einen langen Zeitraum, an (in
+Kilobyte pro Sekunde). Sie k&ouml;nnen bspw. 2 Megabyte pro Sekunde
+(2048 KB/s) oder 50 Kilobyte pro Sekunde (entspricht einer
+durchschnittlichen Kabel-Internetverbindung) angeben. Tor ben&ouml;tigt
+mindestens 20 Kilobyte pro Sekunde, um als Server betrieben zu werden.
 </p>
 <p>
 Beachten Sie, dass Tor die Bandbreite in <b>byte</b> und nicht in bits misst.
@@ -131,82 +128,30 @@ Bandbreite zu sehr beansprucht, sollten Sie erw&auml;gen, die Checkbox
 <a name="exitpolicy"/>
 <h3>Exit-Regeln</h3>
 <p>
-Durch die Exit-Regeln k&ouml;nnen Sie festlegen, welche Art von Verkehr Ihren
-Server verlassen kann. Tor benutzt eine vorkonfigurierte Liste von Exit-Regeln,
+Durch die Exit-Regeln k&ouml;nnen Sie festlegen, welche Art von
+Internet-Ressourcen Tor-Benutzer von Ihrem Server aus erreichen k&ouml;nnen.
+Tor benutzt eine vorkonfigurierte Liste von Exit-Regeln,
 um dem Mi&szlig;brauch des Tor-Netzwerkes durch bestimmte Dienste, bspw.
-Spam oder File Sharing zu reduzieren. <i>Hinweis:</i> Falls Sie als ein
-sogenannter <i>middle-man</i> Server agieren, brauchen Sie sich keine Gedanken
-&uuml;ber Exit-Regeln machen; zu keiner Zeit ist es Verkehr erlaubt, Ihren Server
-zu verlassen.
+Spam oder File Sharing zu reduzieren.
 </p>
 
 <p>
-Eine Exit-Regel besteht aus keiner oder mehr Zeilen. Jeder Zeile gibt eine
-Aktion an, die ausgef&uuml;hrt wird, wenn eine Verbindung ihren Server
-verl&auml;sst und mit der in der Regel festgelegten Adresse oder dem Port
-&uuml;bereinstimmt. 
+Mit den Checkboxen k&ouml;nnen Sie den Zugriff von Tor-Benutzern auf
+Internet-Ressourcen &uuml;ber Ihren Server steuern. Wenn Sie eine
+Checkbox neben einer speziellen Internet-Ressource deaktivieren,
+werden Tor-Benutzer nicht mehr in der Lage sein, diese &uuml;ber Ihren
+Server zu erreichen. Falls Sie die Checkbox <i>Verschiedene andere
+Dienste</i> aktivieren, k&ouml;nnen Tor-Benutzer alle Internet-Ressourcen
+nutzen, die nicht durch vorhandene Regeln beschr&auml;nkt worden sind.
 </p>
 
 <p>
-Regeln werden von Tor der Reihenfolge nach ber&uml;cksichtigt und die erste
-zutreffende wird ausgef&uuml;hrt. Neu hinzugef&uuml;gte Regeln werden am
-Anfang der vorkonfigurierten Liste gesetzt. Da die Regeln von der ersten zur
-letzten bearbeitet, ist die Reihenfolge entscheidend. Mit Hilfe der
-Schaltfl&auml;chen mit dem Hoch-/ Runter-Pfeil k&ouml;nnen Sie die Liste
-ordnen.
+Falls Sie Tor-Benutzern nicht gestatten wollen, Verbindungen zu Punkten
+au&szlig;erhalb des Tor-Netzwerkes von Ihrem Server aus aufzubauen,
+deaktivieren Sie alle Checkboxen. In diesem Fall wird ihr Server weiterhin
+zum Tor-Netzwerk beitragen. Tor-Benutzer k&ouml;nnen sich weiterhin mit dem
+Tor-Netzwerk verbinden und Ihr Server wird Netzwerkverkehr zwischen anderen
+Tor-Servern weiterleiten.
 </p>
-
-<h4>Aktionen</h4>
-<p>
-Jede Zeile einer Exit-Regel ist mit einer der folgenden Aktionen verkn&uuml;pft:
-<ul>
-  <li><b>ablehnen</b>: Verbindungen, die diese Regel betreffen werden <i>abgelehnt</i>.</li>
-  <li><b>annehmen</b>: Verbindungen, die diese Regel betreffen werden <i>angenommen</i>.</li>
-</ul>
-</p>
-
-<h4>Adressen</h4>
-<p>
-Eine Adresse innerhalb einer Regel kann entweder eine IP-Adresse
-(bspw. <i>123.45.67.8</i>), eine IP-Adresse und Maske (bspw. <i>123.45.0.0/16</i>),
-oder ein "*" sein. Wurde ein "*" angegeben, bedeute dies "trifft auf alle Adressen
-zu".
-</p>
-
-<h4>Ports</h4>
-<p>
-Jeder Regel wird ein Port oder eine Spanne von Ports zugeordnet. G&uuml;ltige
-Port-Nummern reichen von 1 bis 65535. Sie k&ouml;nnen auch ein "*" angeben, falls
-Sie alle Ports einschliessen wollen.
-</p>
-
-<h4>Beispiele</h4>
-<p>
-Hier sind Beispiele von g&uuml;ltigen Exit-Regeln und Beschreibungen wof&uuml;r
-sie stehen:
-<ul>
-  <li><b>ablehnen 123.45.67.8:*</b> -
-	 Tor wird alle Verbindungen <i>ablehnen</i>, die von Tor-Clients kommen
-	 und sich von Ihrem Server aus zu jeden Port auf <i>123.45.67.8</i>
-	 verbinden wollen.
-  </li>
-  <li><b>annehmen *:80</b> -
-	 Tor wird alle Verbindungen <i>annehmen</i>, die von Tor-Clients kommen
-	 und sich von Ihrem Server aus zu Port 80 zu jeder IP-Adresse verbinden
-	 wollen.
-  </li>
-  <li><b>ablehen *:135-139</b> -
-	 Tor wird alle Verbindungen <i>ablehnen</i>, die von Tor-Clients kommen
-	 und sich von Ihrem Server aus zu den Ports 135 bis 139 zu jeder IP-Adresse
-	 verbinden wollen.
-  </li>
-  <li><b>ablehnen 128.23.0.0/16:*</b> -
-	 Tor wird alle Verbindungen <i>ablehnen</i>, die von Tor-Clients kommen
-	 und sich zu Ihrem Server aus zur jedem Port und jeder Adresse angefangen
-	 von <i>128.23.0.0</i> bis <i>128.23.255.255</i> verbinden wollen.
-  </li>
-</ul>
-</p>
-
 </html>
 
