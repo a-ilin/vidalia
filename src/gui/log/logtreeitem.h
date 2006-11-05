@@ -48,15 +48,24 @@ public:
   /** Sets the item's message text. */
   void setMessage(QString message);
 
+  /** Returns this message's sequence number. */
+  quint32 id() const { return _seqnum; }
   /** Returns the timestamp for this log message. */
   QDateTime timestamp() const;
   /** Returns the severity associated with this log item. */
-  LogEvent::Severity severity();
+  LogEvent::Severity severity() const;
   /** Returns the message associated with this log item. */
-  QString message();
-
+  QString message() const;
+  
   /** Returns a printable string representation of the item's contents.*/
-  QString toString();
+  QString toString() const;
+  /** Compares <b>other</b> to this log message item based on the current sort
+   * column and order. */
+  virtual bool operator<(const QTreeWidgetItem &other) const;
+
+private:
+  quint32 _seqnum;  /**< Sequence number used to disambiguate messages with
+                         the same timestamp. */
 };
 
 #endif

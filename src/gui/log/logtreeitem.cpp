@@ -26,6 +26,7 @@
  */
 
 #include <util/string.h>
+
 #include "logtreeitem.h"
 #include "logtreewidget.h"
 
@@ -44,6 +45,10 @@ LogTreeItem::LogTreeItem(LogEvent::Severity type, QString message,
                          QDateTime timestamp)
 : QTreeWidgetItem()
 {
+  static quint32 seqnum = 0;
+  
+  /* Set this message's sequence number */
+  _seqnum = seqnum++;
   /* Set the item's log time */
   setTimestamp(timestamp);
   /* Set the item's severity and appropriate color. */
@@ -54,7 +59,7 @@ LogTreeItem::LogTreeItem(LogEvent::Severity type, QString message,
 
 /** Returns a printable string representing the fields of this item. */
 QString
-LogTreeItem::toString()
+LogTreeItem::toString() const
 {
   return QString("%1 [%2] %3\n").arg(text(COL_TIME))
                                 .arg(text(COL_TYPE))
@@ -103,7 +108,7 @@ LogTreeItem::setMessage(QString message)
 
 /** Returns the severity associated with this log item. */
 LogEvent::Severity
-LogTreeItem::severity()
+LogTreeItem::severity() const
 {
   return (LogEvent::Severity)data(COL_TYPE, ROLE_TYPE).toUInt();
 }
@@ -117,8 +122,41 @@ LogTreeItem::timestamp() const
 
 /** Returns the message for this log item. */
 QString
-LogTreeItem::message()
+LogTreeItem::message() const
 {
   return text(COL_MESG);
+}
+
+/** Compares <b>other</b> to this log message item based on the current sort
+ * column. */
+bool
+LogTreeItem::operator<(const QTreeWidgetItem &other) const
+{
+  LogTreeItem *that = (LogTreeItem *)&other;
+  int sortColumn = (treeWidget() ? treeWidget()->sortColumn() : COL_TIME);
+   
+  switch (sortColumn) {
+    case COL_TIME:
+      /* Sort chronologically */
+      return (this->_seqnum < that->_seqnum);
+    case COL_TYPE:
+      /* Sort by severity, then chronologically */
+      if (this->severity() == that->severity()) {
+        return (this->_seqnum < that->_seqnum);
+      }
+      /* The comparison is flipped because higher severities have 
+       * lower numeric values */
+      return (this->severity() > that->severity());
+    default:
+      /* Sort by message, then chronologically */
+      QString thisMessage = this->message().toLower();
+      QString thatMessage = that->message().toLower();
+      
+      if (thisMessage == thatMessage) {
+        return (this->_seqnum < that->_seqnum);
+      }
+      return (thisMessage < thatMessage);
+  }
+  return QTreeWidgetItem::operator<(other);
 }
 
