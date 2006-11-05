@@ -28,8 +28,9 @@
 #ifndef _EXITPOLICY_H
 #define _EXITPOLICY_H
 
-#include <QString>
 #include <QList>
+#include <QString>
+#include <QStringList>
 
 #include "policy.h"
 
@@ -49,7 +50,22 @@ public:
   ExitPolicy(SpecialExitPolicy exitPolicy);
   /** Creates an exit policy from the given comma-delimited list of policies. */
   ExitPolicy(QString exitPolicy);
-
+  
+  /** Adds the ports specified in <b>portList</b> to a list of ports accepted
+   * by this exit policy. Ports may be given either individually or as ranges. */
+  void addAcceptedPorts(QStringList portList);
+  /** Returns true if this exit policy accepts all ports specified in
+   * <b>portList</b>. Ports in <b>portList</b> may be given either individually
+   * or as ranges. */
+  bool acceptsPorts(QStringList portList);
+  /** Adds the ports specified in <b>portList</b> to a list of ports rejected
+   * by this exit policy. Ports may be given either individually or as ranges. */
+  void addRejectedPorts(QStringList portList);
+  /** Returns true if this exit policy rejects all ports specified in
+   * <b>portList</b>. Ports in <b>portList</b> may be given either individually
+   * or as ranges. */
+  bool rejectsPorts(QStringList portList);
+  
   /** Adds a rule to the exit policy. */
   void addPolicy(Policy policy);
   /** Removes a rule from the exit policy. */

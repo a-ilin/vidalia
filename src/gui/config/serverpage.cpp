@@ -31,6 +31,8 @@
 #include <util/html.h>
 #include <gui/common/vmessagebox.h>
 
+#include <QtDebug>
+
 #include "serverpage.h"
 #include "ipvalidator.h"
 #include "portvalidator.h"
@@ -55,12 +57,25 @@
 #define T1_MAX_RATE             (384*1024)
 #define HIGHBW_AVG_RATE         (3072*1024)
 #define HIGHBW_MAX_RATE         (6144*1024)
-
 /** Minimum allowed bandwidth rate (20KB) */
 #define MIN_BANDWIDTH_RATE      20
 /** Maximum bandwidth rate. This is limited to 2147483646 bytes, 
  * or 2097151 kilobytes. (2147483646/1024) */ 
 #define MAX_BANDWIDTH_RATE      2097151
+
+/** Ports represented by the "Websites" checkbox. (80) */
+#define PORTS_HTTP   (QStringList() << "80")
+/** Ports represented by the "Secure Websites" checkbox. (443) */
+#define PORTS_HTTPS  (QStringList() << "443")
+/** Ports represented by the "Retrieve Mail" checkbox. (110,143,993,995) */
+#define PORTS_MAIL   (QStringList() << "110" << "143" << "993" << "995")
+/** Ports represented by the "Instant Messaging" checkbox.
+ * (703,1863,5050,5190,5222,8300,8888) */
+#define PORTS_IM     (QStringList() << "706" << "1863" << "5050" << "5190" \
+                                    << "5222" << "8300" << "8888")
+/** Ports represented by the "Internet Relay Chat" checkbox. 
+ * (6660-6669,6697) */
+#define PORTS_IRC    (QStringList() << "6660-6669" << "6697")
 
 
 /** Constructor */
@@ -152,15 +167,9 @@ ServerPage::save(QString &errmsg)
   _settings->setAddress(ui.lineServerAddress->text());
   _settings->setContactInfo(ui.lineServerContact->text());
   saveBandwidthLimits();
+  saveExitPolicies();
   setAutoUpdateTimer(ui.chkAutoUpdate->isChecked());
 
-  /* Save exit polices */
-//   ExitPolicy exitPolicy;
-//   for (int i = 0; i < ui.lstExitPolicies->topLevelItemCount(); ++i) {
-//     savePolicy(ui.lstExitPolicies->topLevelItem(i), exitPolicy);
-//   }
-//   _settings->setExitPolicy(exitPolicy);
-  
   /* If we're connected to Tor and we've changed the server settings, attempt
    * to apply the new settings now. */
   if (_torControl->isConnected() && _settings->changedSinceLastApply()) {
@@ -187,83 +196,10 @@ ServerPage::load()
   ui.lineServerAddress->setText(_settings->getAddress());
   ui.lineServerContact->setText(_settings->getContactInfo());
   loadBandwidthLimits();
+  loadExitPolicies();
 
-//   foreach (Policy policy, _settings->getExitPolicy().policyList()) {
-//     addPolicyItem(policy);
-//   }
-  
   ui.frmServer->setVisible(ui.chkEnableServer->isChecked());
 }
-
-/** Adds the exit policy contained in item to the exitPolicy */
-// void
-// ServerPage::savePolicy(QTreeWidgetItem *item, ExitPolicy &exitPolicy)
-// {
-//   /* Add policy to ServerSettings */
-//   exitPolicy.addPolicy(Policy(item->text(COL_ACTION),
-//                               item->text(COL_ADDRESS),
-//                               item->text(COL_PORT)));
-// }
-
-// /** Adds a new exit policy to the user's configuration */
-// void
-// ServerPage::addPolicy()
-// {
-//   /* They must enter a valid address */
-//   QString address = ui.lineExitAddress->text();
-//   if (!address.isEmpty()) {
-//     if (((IPValidator *)ui.lineExitAddress->validator())->
-//         validate(address) != QValidator::Acceptable) {
-//       return;
-//     }
-//   }
-  
-//   /* If port range specified, must be valid */
-//   QString fromPort = ui.lineExitFromPort->text();
-//   QString toPort = ui.lineExitToPort->text();
-  
-//   if (!fromPort.isEmpty() && !toPort.isEmpty() && toPort != fromPort) {
-//     if (toPort == "*") toPort = "65535";
-//     if (fromPort == "*") fromPort = "1";
-//     if (fromPort.toUShort() > toPort.toUShort()) {
-//       return;
-//     }
-//   }
-  
-//   /* Add the policy to the list */
-//   addPolicyItem(Policy(Policy::toAction(ui.cmboExitAction->currentText()), 
-//                        QHostAddress(ui.lineExitAddress->text()),
-//                        ui.lineExitMask->text().toUShort(), 
-//                        fromPort.toUShort(),
-//                        toPort.toUShort()), false);
-
-//   /* Clear input text boxes */
-//   ui.lineExitAddress->clear();
-//   ui.lineExitMask->clear();
-//   ui.lineExitFromPort->clear();
-//   ui.lineExitToPort->clear();
-// }
-
-// /** Adds a new QTreeWidget item to the exit policy list */
-// void
-// ServerPage::addPolicyItem(Policy policy, bool append)
-// {
-//   QTreeWidgetItem *newPolicy = new QTreeWidgetItem();
-
-//   newPolicy->setText(COL_ACTION,  policy.action());
-//   newPolicy->setText(COL_ADDRESS, policy.address());
-//   newPolicy->setText(COL_PORT,    policy.ports());
- 
-//   for (int i = 0; i < newPolicy->columnCount(); i++) {
-//     newPolicy->setTextAlignment(i, Qt::AlignHCenter);
-//   }
-
-//   if (append) {
-//     ui.lstExitPolicies->addTopLevelItem(newPolicy);
-//   } else {
-//     ui.lstExitPolicies->insertTopLevelItem(0, newPolicy);
-//   }
-// }
 
 /** Shows exit policy related help information */
 void
@@ -425,6 +361,74 @@ ServerPage::saveBandwidthLimits()
   }
   _settings->setBandwidthAvgRate(avgRate);
   _settings->setBandwidthBurstRate(maxRate);
+}
+
+/** */
+void
+ServerPage::loadExitPolicies()
+{
+  ExitPolicy exitPolicy = _settings->getExitPolicy();
+  
+  if (exitPolicy.contains(Policy(Policy::RejectAll))) {
+    /* If the policy ends with reject *:*, check if the policy explicitly
+     * accepts these ports */
+    ui.chkWebsites->setChecked(exitPolicy.acceptsPorts(PORTS_HTTP));
+    ui.chkSecWebsites->setChecked(exitPolicy.acceptsPorts(PORTS_HTTPS));
+    ui.chkMail->setChecked(exitPolicy.acceptsPorts(PORTS_MAIL));
+    ui.chkIRC->setChecked(exitPolicy.acceptsPorts(PORTS_IRC));
+    ui.chkIM->setChecked(exitPolicy.acceptsPorts(PORTS_IM));
+    ui.chkMisc->setChecked(false);
+  } else {
+    /* If the exit policy ends with accept *:*, check if the policy explicitly
+     * rejects these ports */
+    ui.chkWebsites->setChecked(!exitPolicy.rejectsPorts(PORTS_HTTP));
+    ui.chkSecWebsites->setChecked(!exitPolicy.rejectsPorts(PORTS_HTTPS));
+    ui.chkMail->setChecked(!exitPolicy.rejectsPorts(PORTS_MAIL));
+    ui.chkIRC->setChecked(!exitPolicy.rejectsPorts(PORTS_IRC));
+    ui.chkIM->setChecked(!exitPolicy.rejectsPorts(PORTS_IM));
+    ui.chkMisc->setChecked(true);
+  }
+}
+
+/** */
+void
+ServerPage::saveExitPolicies()
+{
+  ExitPolicy exitPolicy;
+  bool rejectUnchecked = ui.chkMisc->isChecked();
+  
+  /* If misc is checked, then reject unchecked items and leave the default exit
+   * policy alone. Else, accept only checked items and end with reject *:*,
+   * replacing the default exit policy. */
+  if (ui.chkWebsites->isChecked() && !rejectUnchecked) {
+    exitPolicy.addAcceptedPorts(PORTS_HTTP);
+  } else if (!ui.chkWebsites->isChecked() && rejectUnchecked) {
+    exitPolicy.addRejectedPorts(PORTS_HTTP);
+  }
+  if (ui.chkSecWebsites->isChecked() && !rejectUnchecked) {
+    exitPolicy.addAcceptedPorts(PORTS_HTTPS);
+  } else if (!ui.chkSecWebsites->isChecked() && rejectUnchecked) {
+    exitPolicy.addRejectedPorts(PORTS_HTTPS);
+  }
+  if (ui.chkMail->isChecked() && !rejectUnchecked) {
+    exitPolicy.addAcceptedPorts(PORTS_MAIL);
+  } else if (!ui.chkMail->isChecked() && rejectUnchecked) {
+    exitPolicy.addRejectedPorts(PORTS_MAIL);
+  }
+  if (ui.chkIRC->isChecked() && !rejectUnchecked) {
+    exitPolicy.addAcceptedPorts(PORTS_IRC);
+  } else if (!ui.chkIRC->isChecked() && rejectUnchecked) {
+    exitPolicy.addRejectedPorts(PORTS_IRC);
+  }
+  if (ui.chkIM->isChecked() && !rejectUnchecked) {
+    exitPolicy.addAcceptedPorts(PORTS_IM);
+  } else if (!ui.chkIM->isChecked() && rejectUnchecked) {
+    exitPolicy.addRejectedPorts(PORTS_IM);
+  }
+  if (!ui.chkMisc->isChecked()) {
+    exitPolicy.addPolicy(Policy(Policy::RejectAll));
+  }
+  _settings->setExitPolicy(exitPolicy);
 }
 
 /** Called when the user selects a new value from the rate combo box. */

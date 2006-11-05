@@ -89,6 +89,10 @@ private:
   void saveBandwidthLimits();
   /** Loads the server's bandwidth average and burst limits. */
   void loadBandwidthLimits();
+  /** Saves the server's exit policies. */
+  void saveExitPolicies();
+  /** Loads the server's exit policies. */
+  void loadExitPolicies();
 
   /** A TorControl object used to talk to Tor */
   TorControl* _torControl;
