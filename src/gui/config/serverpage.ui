@@ -1387,7 +1387,7 @@ fingerprint.</string>
              <enum>Qt::NoContextMenu</enum>
             </property>
             <property name="text" >
-             <string>What Internet resources should Tor users be able to access from your Tor Relay?</string>
+             <string>What Internet resources should Tor users be able to access from your Tor relay?</string>
             </property>
             <property name="wordWrap" >
              <bool>true</bool>
