@@ -60,23 +60,25 @@ public:
   /** Creates a policy using the specified information. */
   Policy(Action action, QHostAddress addr, uchar mask,
          quint16 fromPort, quint16 toPort = 0);
- 
-  /** Overloads the == operator. */
+
+  /** Returns true if this policy matches <b>policy</b>. */
+  bool matches(const Policy &policy) const;
+  /** Returns true if this policy is identical to <b>policy</b>. */
   bool operator==(const Policy &policy) const;
 
   /** Parses the given policy string. */
   void fromString(QString policy);
   /** Converts this policy to a format Tor understands. */
-  QString toString();
+  QString toString() const;
   /** Converts a string action to an Action enum value. */
   static Action toAction(QString action);
   
   /** Returns the action taken when this policy matches an address. */
-  QString action();
+  QString action() const;
   /** Returns the host address (including mask, if set) for this policy. */
-  QString address();
+  QString address() const;
   /** Returns the port or port range for this policy. */
-  QString ports();
+  QString ports() const;
 
 private:
   Action _action; /**< The action to take for this policy. */

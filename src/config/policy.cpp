@@ -80,20 +80,34 @@ Policy::Policy(Action action, QHostAddress addr, uchar mask,
 {
   _action   = action;
   _address  = addr;
+  _mask     = mask;
   _fromPort = fromPort;
-  _toPort   = toPort;
-  _mask = mask;
+  _toPort   = (toPort >= fromPort ? toPort : fromPort);
 }
 
-/** Overloads the == operator. */
+/** Returns true if this policy is identical to <b>policy</b>. */
 bool
 Policy::operator==(const Policy &policy) const
 {
-  return (this->_action   == policy._action &&
-          this->_address  == policy._address &&
-          this->_mask     == policy._mask &&
-          this->_fromPort == policy._fromPort &&
-          this->_toPort   == policy._toPort);
+  return ((this->_action   == policy._action)    &&
+          (this->_address  == policy._address)   &&
+          (this->_mask     == policy._mask)      &&
+          (this->_fromPort == policy._fromPort)  &&
+          (this->_toPort   == policy._toPort));
+}
+
+/** Returns true if this policy matches <b>policy</b>. For example, if this
+ * policy is "reject *:6660-6669" and <b>policy</b> is "reject *:6662-6664",
+ * this will return true. For strict comparison, use the == operator. */
+bool
+Policy::matches(const Policy &policy) const
+{
+  /* This doesn't take into account addr/mask matches yet */
+  return ((this->_action   == policy._action)    &&
+          (this->_address  == policy._address)   &&
+          (this->_mask     == policy._mask)      &&
+          (this->_fromPort <= policy._fromPort)  &&
+          (this->_toPort   >= policy._toPort));
 }
 
 /** Parses the given exit policy string. */
@@ -111,6 +125,9 @@ Policy::fromString(QString policy)
     /* Parse the address and mask (if specified) */
     QString addr = addrParts.at(0);
     _address.setAddress(addr.mid(0, addr.indexOf("/")));
+    if (_address.isNull()) {
+      _address = QHostAddress::Any;
+    }
     if (addr.contains("/")) {
       _mask = addr.mid(addr.indexOf("/")+1).toUInt();
     }
@@ -121,6 +138,8 @@ Policy::fromString(QString policy)
       _fromPort = ports.mid(0, ports.indexOf("-")).toUInt();
       if (ports.contains("-")) {
         _toPort = ports.mid(ports.indexOf("-")+1).toUInt();
+      } else {
+        _toPort = _fromPort;
       }
     }
   }
@@ -133,7 +152,7 @@ Policy::fromString(QString policy)
  * or "*". If PORT is omitted, that means "*"
  */
 QString
-Policy::toString()
+Policy::toString() const
 {
   QString act = (_action == Accept ? "accept" : "reject");
   return act + " " + address() + ":" + ports();
@@ -154,21 +173,18 @@ Policy::toAction(QString action)
 /** Returns the action associated with this policy. NOTE: This string will be
  * translated to whatever the current language setting is. */
 QString
-Policy::action()
+Policy::action() const
 {
   return (_action == Accept ? tr("accept") : tr("reject"));
 }
 
 /** Returns the address (and mask, if specified) for this policy. */
 QString
-Policy::address()
+Policy::address() const
 {
   QString addrString;
   
   if (_mask) {
-    if (_address.isNull()) {
-      _address = QHostAddress::Any;
-    }
     addrString = _address.toString() + "/" + QString::number(_mask);
   } else if (_address == QHostAddress::Any || _address.isNull()) {
     addrString = "*";
@@ -180,10 +196,10 @@ Policy::address()
 
 /** Returns the port (or port range, if specified) for this policy. */
 QString
-Policy::ports()
+Policy::ports() const
 {
   QString ports = (_fromPort ? QString::number(_fromPort) : "*");
-  if (_fromPort && _toPort) {
+  if (_fromPort && (_toPort > _fromPort)) {
     ports += "-" + QString::number(_toPort);
   }
   return ports;
