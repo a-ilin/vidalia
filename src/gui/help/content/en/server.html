@@ -32,14 +32,14 @@ their spare bandwidth by running a server. Vidalia helps you do your part by
 making it easy to set up a server of your own.
 
 <a name="basic"/>
-<h3>Basic Setup</h3>
+<h3>Basic Settings</h3>
 <p>
 If you decide you want to help the Tor network grow by running a server, you
 can follow these steps to get started:
 </p>
 <ol>
   <li>
-    Open the <i>Configuration Dialog</i> by selecting <i>Configure</i> from
+    Open the <i>Configuration Dialog</i> by selecting <i>Settings</i> from
     the tray menu or <i>Preferences</i> from your system menubar on Macintosh
     systems.
   </li>
@@ -71,23 +71,15 @@ can follow these steps to get started:
     </ul>
   <li>
     If you would like to mirror Tor's directory of servers for others on the
-    network you can check the box labeled <i>Mirror the server directory</i>.
-    If you do not have much bandwidth, leave this box unchecked. If you do
-    decide to mirror the server directory, make sure the <i>Port</i> is
+    network you can check the box labeled <i>Mirror the Server Directory</i>.
+    If you do not have much bandwidth, uncheck this box. If you do
+    decide to mirror the server directory, make sure the <i>Directory Port</i> is
     different than the <i>Server port</i> you entered above.
-  </li>
-  <li>
-    Traffic exiting the Tor network from your router appears to come from your
-    IP address. If you do not want this, then check the box labeled <i>Only
-    allow connections to other Tor servers</i> to act as a <i>non-exit</i>
-    node. With that box checked, clients and other servers are allowed to
-    connect to your server, but your server will only connect to other
-    servers in the Tor network.
   </li>
 </ol>
 
 <a name="bandwidth"/>
-<h3>Rate Limiting</h3>
+<h3>Bandwidth Limits</h3>
 <p>
 Running a Tor server can consume a large amount of bandwidth; however, Tor
 allows you to limit the amount of bandwidth that you are willing to contribute
@@ -95,12 +87,11 @@ to the Tor network. You can run a server, while still keeping your network
 connection usable for your own use.
 </p>
 <p>
-The <i>average rate</i> is the maximum long-term average bandwidth allowed (in
-kilobytes per second). For example, you might want to choose 2 megabytes per 
-second (2048 KB/s), or 50 kilobytes per second (a medium-speed cable
-connection). Tor requires a minimum of 20 kilobytes per second to run a
-server.
+You should select the option in the dropdown box that best matches your
+connection speed. If you select <i>Custom</i>, you will be able to specify
+your own limits.
 </p>
+<h4>Custom Limits</h4>
 <p>
 The <i>maximum rate</i> is a pool of bytes used to fulfill requests during
 short periods of traffic higher than your specified <i>average rate</i>, but
@@ -110,6 +101,13 @@ during peak times if the average hasn't been reached lately. If your average
 rate is the same as your <i>maximum rate</i>, then Tor will never exceed the
 specified rate. Your <i>maximum rate</i> must always be greater than or equal
 to your <i>average rate</i>.
+</p>
+<p>
+The <i>average rate</i> is the maximum long-term average bandwidth allowed (in
+kilobytes per second). For example, you might want to choose 2 megabytes per 
+second (2048 KB/s), or 50 kilobytes per second (a medium-speed cable
+connection). Tor requires a minimum of 20 kilobytes per second to run a
+server.
 </p>
 <p>
 It is important to remember that Tor measures bandwidth in <b>bytes</b>, not
@@ -123,74 +121,26 @@ labeled <i>Mirror the server directory</i>.
 <a name="exitpolicy"/>
 <h3>Exit Policies</h3>
 <p>
-Exit policies give you a way to specify what sort of traffic you are willing
-to allow exit from your Tor server. Tor uses a default list of exit policies
-that restrict services such as mail to prevent spam, or some default file
-sharing ports to reduce abuse of the Tor network. <i>Note:</i> If you are
-a <i>middle-man</i> server, you don't have to worry about exit policies; no
-traffic is allowed to exit from your server at all.
+Exit policies give you a way to specify what kinds of resources on the
+Internet you are willing let other Tor users access from your Tor server. 
+Tor uses a default list of exit policies that restrict some services, 
+such as mail to prevent spam and some default file sharing ports to reduce 
+abuse of the Tor network. 
 </p>
-
 <p>
-An exit policy is made up of zero or more lines, each one representing an
-action to be taken if a connection leaving the Tor network from your
-server matches the address or port specified in the policy. 
+Each of the checkboxes represents a type of resource that you can allow Tor
+users to access through your server. If you uncheck the box next to a
+particular type of resource, Tor users will not be allowed to access that
+resource from your server. If the box labeled <i>Misc Other Services</i> 
+is checked, Tor users will be able to access other services not
+covered by the other checkboxes or Tor's default exit policy.
 </p>
-
 <p>
-Policies are considered by Tor from first to last and Tor takes the action
-associated with the first match it finds. Any policies you add will be added to
-the beginning of Tor's list of default exit policies. Since policies are
-considered from first to last, ordering is important. You can use the buttons
-with the Up Arrow and the Down Arrow icons to reorder your list of policies.
+If you do not want to let other Tor users make connections outside the Tor
+network from your server, you can uncheck all of the checkboxes. Even if you
+uncheck all of the checkboxes, your server is still useful to the Tor network.
+Your server will allow other Tor users to connect to the Tor network and will
+help relay traffic between other Tor servers.
 </p>
-
-<h4>Action</h4>
-<p>
-Each line in an exit policy has an action associated with it. The actions are:
-<ul>
-  <li><b>reject</b>: Connections matching this policy will be <i>rejected</i>.</li>
-  <li><b>accept</b>: Connections matching this policy will be <i>accepted</i>.</li>
-</ul>
-</p>
-
-<h4>Address</h4>
-<p>
-Addresses in a policy can be either an IP address (e.g., <i>123.45.67.8</i>), 
-an IP address and mask (e.g., <i>123.45.0.0/16</i>), or a "*". If a "*" is 
-specified, it means "match all addresses."
-</p>
-
-<h4>Ports</h4>
-<p>
-Each policy has a port or a range of ports associated with it. Valid port 
-numbers range from 1 to 65535, or you can specify a "*" to indicate "all ports".
-</p>
-
-<h4>Examples</h4>
-<p>
-Here are a few examples of valid exit policy lines and a description of what
-they do:
-<ul>
-  <li><b>reject 123.45.67.8:*</b> - 
-    Tor will <i>reject</i> all connections from Tor clients that want to connect 
-    from your server to any port at <i>123.45.67.8</i>.
-  </li>
-  <li><b>accept *:80</b> -
-    Tor will <i>accept</i> connections from Tor clients that want to connect 
-    from your server to port 80 at any IP address.
-  </li>
-  <li><b>reject *:135-139</b> -
-    Tor will <i>reject</i> connections from Tor clients that want to connect 
-    from your server to ports 135 to 139 at any IP address.
-  </li>
-  <li><b>reject 128.23.0.0/16:*</b> -
-    Tor will <i>reject</i> connections from Tor clients that want to connect 
-    from your server to any port at any address from <i>128.23.0.0</i> to 
-    <i>128.23.255.255</i>.
-  </li>
-</ul>
-</p>
-
 </html>
 
