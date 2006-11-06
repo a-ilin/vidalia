@@ -129,6 +129,7 @@ SectionEnd
 ; Optional section (can be disabled by the user)
 Section "$(VidaliaShortcuts)" Shortcuts
   SectionIn 1
+  SetShellVarContext all
   CreateDirectory "$SMPROGRAMS\${VIDALIA_NAME}"
   CreateShortCut  "$SMPROGRAMS\${VIDALIA_NAME}\${VIDALIA_NAME}.lnk" "$INSTDIR\${VIDALIA_EXEC}" "" "$INSTDIR\${VIDALIA_EXEC}" 0  
   CreateShortCut  "$SMPROGRAMS\${VIDALIA_NAME}\Uninstall.lnk" "$INSTDIR\uninstall.exe" "" "$INSTDIR\uninstall.exe" 0
