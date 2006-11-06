@@ -13,7 +13,7 @@ SetCompressor /SOLID lzma
 ; Global definitions
 !define VIDALIA_NAME        "Vidalia"
 !define VIDALIA_EXEC        "vidalia.exe"
-!define VIDALIA_APPVERSION  "0.0.8"
+!define VIDALIA_APPVERSION  "0.0.10"
 !define VIDALIA_PRODVERSION "${VIDALIA_APPVERSION}.0" ; Product version must be x.x.x.x
 !define VIDALIA_AUTHORS     "Matt Edman, Justin Hipple"
 !define VIDALIA_INSTALLFILE "vidalia-${VIDALIA_APPVERSION}.exe"
