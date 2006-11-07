@@ -3,13 +3,12 @@
 ;; Vidalia installer and bundle Russian translation
 ;; 
 
-
 ; Bundle
 LangString BundleSetupCaption         ${LANG_RUSSIAN} "Установка ${BUNDLE_NAME}"
-LangString BundleWelcomeText          ${LANG_RUSSIAN} "Эта программа установит :\r\n\tTor\t${TOR_APPVERSION}\r\n\tVidalia\t${VIDALIA_APPVERSION}\r\n\tPrivoxy\t${PRIVOXY_APPVERSION}\r\n\r\nЕсли вы ранее уже устанавливали Tor, Vidalia, или Privoxy, пожалуйста убедитесь что эти программы остановлены перед продолжением установки.\r\n\r\n$_CLICK"
+LangString BundleWelcomeText          ${LANG_RUSSIAN} "Эта программа установит Tor, Vidalia, Privoxy, и Torbutton.\r\n\r\nЕсли вы ранее уже устанавливали Tor, Vidalia, Privoxy, или Firefox, пожалуйста убедитесь что эти программы остановлены и потом продолжите установку.\r\n\r\n$_CLICK"
 LangString BundleWelcomeTitle         ${LANG_RUSSIAN} "Вас приветствует мастер установки ${BUNDLE_NAME}"
 LangString BundleLinkText             ${LANG_RUSSIAN} "Инструкция по установке ${TOR_NAME}"
-LangString BundleFinishText           ${LANG_RUSSIAN} "Установка завершена.\r\nПожалуйста прочитайте http://tor.eff.org/docs/tor-doc-win32.html чтобы узнать, как настроить другие приложения использовать Tor.\r\n"
+LangString BundleFinishText           ${LANG_RUSSIAN} "Установка завершена.\r\nПожалуйста прочитайте http://tor.eff.org/docs/tor-doc-win32.html чтобы узнать, как настроить другие приложения использовать Tor.\r\n\r\nЕсли вы установили Torbutton, вам придётся перезапустить Firefox."
 LangString BundleRunNow               ${LANG_RUSSIAN} "Запустить установленные компоненты"
 
 
@@ -47,10 +46,11 @@ LangString PrivoxyShortcutsDesc       ${LANG_RUSSIAN} "Добавить ${PRIVOXY_NAME} 
 LangString PrivoxyStartup             ${LANG_RUSSIAN} "Автозапуск"
 LangString PrivoxyStartupDesc         ${LANG_RUSSIAN} "Автоматически запускать ${PRIVOXY_NAME} при загрузке системы."
 
+
 ; Torbutton
-LangString TorbuttonGroupDesc         ${LANG_RUSSIAN} "Install ${TORBUTTON_DESC}."
-LangString TorbuttonAppDesc           ${LANG_RUSSIAN} "Install ${TORBUTTON_DESC}."
-LangString TorbuttonAddToFirefox      ${LANG_RUSSIAN} "Add to Firefox"
-LangString TorbuttonAddToFirefoxDesc  ${LANG_RUSSIAN} "Add the ${TORBUTTON_DESC} extension to Firefox."
-LangString TorbuttonFirefoxNotFound   ${LANG_RUSSIAN} "Firefox was not found on your system. Not installing Torbutton."
+LangString TorbuttonGroupDesc         ${LANG_RUSSIAN} "Установить ${TORBUTTON_DESC}."
+LangString TorbuttonAppDesc           ${LANG_RUSSIAN} "Установить ${TORBUTTON_DESC}."
+LangString TorbuttonAddToFirefox      ${LANG_RUSSIAN} "Добавить в Firefox"
+LangString TorbuttonAddToFirefoxDesc  ${LANG_RUSSIAN} "Добавить расширение ${TORBUTTON_DESC} в Firefox."
+LangString TorbuttonFirefoxNotFound   ${LANG_RUSSIAN} "Не удалось найти Firefox на вашем компьютере. Torbutton не будет установлен."
 
