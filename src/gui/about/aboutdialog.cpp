@@ -25,6 +25,7 @@
  * \brief Displays information about Vidalia, Tor, and Qt
  */
 
+#include <QFile>
 #include <vidalia.h>
 #include "aboutdialog.h"
 
