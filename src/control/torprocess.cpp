@@ -25,8 +25,7 @@
  * \brief Starts and stops a Tor process
  */
 
-#include <QFileInfo>
-#include <QCoreApplication>
+#include <QString>
 
 /* Needed for _PROCESS_INFORMATION so that pid() works on Win32 */
 #if defined (Q_OS_WIN32)
@@ -35,8 +34,6 @@
   
 #include "torprocess.h"
 
-/** Format of log message timestamps Tor prints to stdout */
-#define FMT_TIMESTAMP "MMM dd hh:mm:ss.zzz yyyy"
 
 /** Default constructor */
 TorProcess::TorProcess()
@@ -112,7 +109,6 @@ TorProcess::pid()
 void
 TorProcess::openStdout()
 {
-  _logState = Open;
   setReadChannelMode(QProcess::MergedChannels);
   setReadChannel(QProcess::StandardOutput);
 }
@@ -122,8 +118,10 @@ TorProcess::openStdout()
 void
 TorProcess::closeStdout()
 {
-  _logState = Closing;
-  _logCloseTime = QDateTime::currentDateTime();
+  /* Close the stdout channel */
+  closeReadChannel(QProcess::StandardOutput);
+  /* Read anything left waiting on the buffer */
+  onReadyRead();
 }
 
 /** Called when there is data to be read from stdout */
@@ -131,32 +129,15 @@ void
 TorProcess::onReadyRead()
 {
   int i, j;
+  QString line;
+  
   while (canReadLine()) {
-    /* Pull the waiting data from the buffer. Note that we do this even if the
-     * log event won't be emitted, so that the size of the waiting buffer doesn't 
-     * keep growing. */
-    QString line = readLine();
-    if (_logState == Closed) {
-      continue;
-    }
-    
-    /* If _logState != Closed, then we will parse the log message and emit log() */
-    i = line.indexOf("[");
-    j = line.indexOf("]");
-    if (i > 0 && j > 0) {
-      if (_logState == Closing) {
-        /* Parse the timestamp from this log message */
-        QString msgTime = QString("%1 %2").arg(line.mid(0, i-1))
-                                          .arg(_logCloseTime.date().year());
-          
-        if (_logCloseTime < QDateTime::fromString(msgTime, FMT_TIMESTAMP)) {
-          /* We've read all log messages from stdout since closeStdout() was
-           * called, so go ahead and close stdout for real. */
-          _logState = Closed;
-          closeReadChannel(QProcess::StandardOutput);
-        }
-      }
-      if (_logState != Closed) {
+    line = readLine();
+    if (!line.isEmpty()) {
+      /* Parse the log message and emit log() */
+      i = line.indexOf("[");
+      j = line.indexOf("]");
+      if (i > 0 && j > i && line.length() >= j+2) {
         emit log(line.mid(i+1, j-i-1), line.mid(j+2));
       }
     }

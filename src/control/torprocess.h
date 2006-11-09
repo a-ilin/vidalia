@@ -29,10 +29,6 @@
 #define _TORPROCESS_H
 
 #include <QProcess>
-#include <QFileInfo>
-#include <QVariant>
-#include <QMap>
-#include <QDateTime>
 
 
 class TorProcess : public QProcess
@@ -47,7 +43,6 @@ public:
   void start(QString app, QString args);
   /** Stop the Tor process */
   bool stop(QString *errmsg = 0);
-
 
   /** Return the Tor process's PID (workaround for some Windows funkiness) */
   quint64 pid();
@@ -69,18 +64,6 @@ private slots:
   void onReadyRead();
   /** Called when an error occurs in the process. */
   void onError(QProcess::ProcessError error);
-
-private:
-  /** Status of logging to stdout. */
-  enum LogState {
-    Open,     /**< stdout logs enabled. */
-    Closing,  /**< stdout in the process of closing. */
-    Closed    /**< stdout logs closed. */
-  };
-  /** Current state of logging on stdout. */
-  LogState _logState;
-  /** Timestamp of when stdout logs closed. */
-  QDateTime _logCloseTime;
 };
 
 #endif
