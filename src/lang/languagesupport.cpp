@@ -42,6 +42,8 @@ LanguageSupport::languages()
       QString::fromUtf8("\320\221\321\212\320\273\320\263\320"
                         "\260\321\200\321\201\320\272\320\270"));
     languages.insert("de",    "Deutsch");
+    languages.insert("es",    
+      QString::fromUtf8("espa\303\261ol"));
     languages.insert("fi",    "suomi");
     languages.insert("fr",    
       QString::fromUtf8("fran\303\247ais"));

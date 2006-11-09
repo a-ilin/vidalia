@@ -30,6 +30,16 @@
     <file>de/troubleshooting.html</file>
     <file>de/netview.html</file>
     <file>de/links.html</file>
+    <!-- Spanish -->
+    <file>es/contents.xml</file>
+    <file>es/index.html</file>
+    <file>es/running.html</file>
+    <file>es/log.html</file>
+    <file>es/config.html</file>
+    <file>es/server.html</file>
+    <file>es/troubleshooting.html</file>
+    <file>es/netview.html</file>
+    <file>es/links.html</file>
     <!-- Finnish -->
     <file>fi/contents.xml</file>
     <file>fi/index.html</file>
