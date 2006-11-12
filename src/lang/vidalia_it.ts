@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1">
+<!DOCTYPE TS><TS version="1.1" language="it">
 <context>
     <name></name>
     <message>
@@ -53,7 +53,7 @@
     <message>
         <location filename="../gui/about/aboutdialog.cpp" line="74"/>
         <source>&lt;Unavailable&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;Non Disponibile&gt;</translation>
     </message>
 </context>
 <context>
@@ -141,44 +141,46 @@
     <message>
         <location filename="../gui/config/advancedpage.ui" line="515"/>
         <source>Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Servizio</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="530"/>
         <source>Enable this if you wish to run Tor as a Windows service</source>
-        <translation type="unfinished"></translation>
+        <translation>Abilita questa opzione se vuoi eseguire Tor come servizio di Windows</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="533"/>
         <source>Run Tor in the background as a Windows service</source>
-        <translation type="unfinished"></translation>
+        <translation>Esegui Tor in background</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="157"/>
         <source>Unable to remove Tor Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile rimuovere Tor dalla lista dei servizi di Windows</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="168"/>
         <source>Unable to install Tor Service</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile installare Tor tra i servizi di Windows</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="169"/>
         <source>Vidalia was unable to install the Tor service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia non è stato in grado di inserire Tor tra i servizi di Windows.</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="159"/>
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia non è stato in grado di rimuovere Tor dai servizi di Windows.
+
+Potrebbe essere necessario rimuoverlo manualmente.</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="369"/>
         <source>Tor Configuration File</source>
-        <translation type="unfinished"></translation>
+        <translation>File di configurazione di Tor</translation>
     </message>
 </context>
 <context>
@@ -333,12 +335,12 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="54"/>
         <source>Close Circuit</source>
-        <translation type="unfinished"></translation>
+        <translation>Circuito Chiuso</translation>
     </message>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="58"/>
         <source>Close Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Flusso Chiuso</translation>
     </message>
 </context>
 <context>
@@ -386,7 +388,7 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/config/configdialog.ui" line="289"/>
         <source>Settings</source>
-        <translation type="unfinished">Impostazioni</translation>
+        <translation>Impostazioni</translation>
     </message>
 </context>
 <context>
@@ -394,12 +396,12 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../control/controlconnection.cpp" line="285"/>
         <source>Control socket is not connected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Il socket di controllo non è connesso.</translation>
     </message>
     <message>
         <location filename="../control/controlconnection.cpp" line="232"/>
         <source>Control socket is not connected</source>
-        <translation type="unfinished"></translation>
+        <translation>Il socket di controllo non è connesso</translation>
     </message>
 </context>
 <context>
@@ -439,7 +441,7 @@ Aggiorna la versione di Tor.</translation>
     <message>
         <location filename="../control/controlsocket.cpp" line="136"/>
         <source>Control socket is not connected.</source>
-        <translation type="unfinished"></translation>
+        <translation>Il socket di controllo non è connesso.</translation>
     </message>
 </context>
 <context>
@@ -755,7 +757,7 @@ Aggiorna la versione di Tor.</translation>
     <message>
         <location filename="../gui/mainwindow.cpp" line="116"/>
         <source>Tor is Stopped</source>
-        <translation>Tor è arrestato.</translation>
+        <translation>Tor è fermo</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="188"/>
@@ -928,32 +930,32 @@ Controlla il log dei messaggi per indicazioni su cos&apos;è accaduto a Tor prim
     <message>
         <location filename="../gui/mainwindow.cpp" line="211"/>
         <source>Settings</source>
-        <translation type="unfinished">Impostazioni</translation>
+        <translation>Impostazioni</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="207"/>
         <source>Network Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Mappa della Rete</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="529"/>
         <source>New Identity</source>
-        <translation type="unfinished">Nuova identità</translation>
+        <translation>Nuova identità</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="267"/>
         <source>Ctrl+I</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+I</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="531"/>
         <source>All subsequent connections will appear to be different than your old connections.</source>
-        <translation type="unfinished">Tutte le nuove connessioni verranno visualizzate in modo diverso dalle vecchie.</translation>
+        <translation>Tutte le nuove connessioni verranno visualizzate in modo diverso dalle vecchie.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="535"/>
         <source>Failed to Create New Identity</source>
-        <translation type="unfinished">Impossibile creare una nuova identità</translation>
+        <translation>Impossibile creare una nuova identità</translation>
     </message>
 </context>
 <context>
@@ -1304,22 +1306,22 @@ interesse per gli sviluppatori di Tor.</translation>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="314"/>
         <source>Text Files (*.txt)</source>
-        <translation type="unfinished"></translation>
+        <translation>File di testo (*.txt)</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="869"/>
         <source>F1</source>
-        <translation type="unfinished"></translation>
+        <translation>F1</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="241"/>
         <source>Log Filename Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Nome del File di Log Necessario</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="243"/>
         <source>You must enter a filename to be able to save log messages to a file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Devi inserire un nome per il file di log.</translation>
     </message>
 </context>
 <context>
@@ -1387,42 +1389,42 @@ interesse per gli sviluppatori di Tor.</translation>
     <message>
         <location filename="../gui/network/netviewer.ui" line="625"/>
         <source>Zoom To Fit</source>
-        <translation type="unfinished"></translation>
+        <translation>Adatta lo Zoom</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="631"/>
         <source>Zooms to fit all currently displayed circuits.</source>
-        <translation type="unfinished"></translation>
+        <translation>Adatta lo Zoom per includere tutti i circuiti attualmente visualizzati.</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="529"/>
         <source>Ctrl+R</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="551"/>
         <source>F1</source>
-        <translation type="unfinished"></translation>
+        <translation>F1</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="573"/>
         <source>Esc</source>
-        <translation type="unfinished">Esc</translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="595"/>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="617"/>
         <source>-</source>
-        <translation type="unfinished">-</translation>
+        <translation>-</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="639"/>
         <source>Ctrl+Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Z</translation>
     </message>
 </context>
 <context>
@@ -1494,17 +1496,17 @@ interesse per gli sviluppatori di Tor.</translation>
     <message>
         <location filename="../gui/network/routerlistitem.cpp" line="87"/>
         <source>%1 KB/s</source>
-        <translation type="unfinished">%1 KB/s</translation>
+        <translation>%1 KB/s</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistitem.cpp" line="71"/>
         <source>Offline</source>
-        <translation type="unfinished">Offline</translation>
+        <translation>Offline</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistitem.cpp" line="75"/>
         <source>Hibernating</source>
-        <translation type="unfinished">Ibernazione</translation>
+        <translation>Ibernazione</translation>
     </message>
 </context>
 <context>
@@ -1517,17 +1519,17 @@ interesse per gli sviluppatori di Tor.</translation>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="40"/>
         <source>Server</source>
-        <translation type="unfinished">Server</translation>
+        <translation>Server</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="218"/>
         <source>%1 servers total</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 server in totale</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="54"/>
         <source>Zoom to Server</source>
-        <translation type="unfinished"></translation>
+        <translation>Zooma sul Server</translation>
     </message>
 </context>
 <context>
@@ -1693,127 +1695,127 @@ un fingerprint PGP o GPG.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="333"/>
         <source>Basic Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Impostazioni di Base</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="683"/>
         <source>Bandwidth Limits</source>
-        <translation type="unfinished"></translation>
+        <translation>Limiti di Banda</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="718"/>
         <source>For Internet connections with fast download speed but slow upload, please list your upload speed here.</source>
-        <translation type="unfinished"></translation>
+        <translation>Se hai una connessione ad internet con ampia banda in download ma poca in upload, inserisci la tua velocità di upload qui.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="739"/>
         <source>Select the entry that most closely resembles your Internet connection</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleziona la voce che si avvicina di più alla tua connessione internet</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="749"/>
         <source>Cable/DSL 256 Kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>Cavo/DSL 256 Kbps</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="754"/>
         <source>Cable/DSL 512 Kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>Cavo/DSL 512 Kbps</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="759"/>
         <source>Cable/DSL 768 Kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>Cavo/DSL 768 Kbps</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="764"/>
         <source>T1/Cable/DSL 1.5 Mbps</source>
-        <translation type="unfinished"></translation>
+        <translation>T1/Cavo/DSL 1.5 Mpbs</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="769"/>
         <source>&gt; 1.5 Mbps</source>
-        <translation type="unfinished"></translation>
+        <translation>&gt; 1.5 Mbps</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="774"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>Personalizzata</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1025"/>
         <source>Ports 6660 - 6669 and 6697</source>
-        <translation type="unfinished"></translation>
+        <translation>Porte 6660 - 6660 e 6697</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1028"/>
         <source>Internet Relay Chat (IRC)</source>
-        <translation type="unfinished"></translation>
+        <translation>Internet Relay Chat (IRC)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1038"/>
         <source>Ports 110, 143, 993 and 995</source>
-        <translation type="unfinished"></translation>
+        <translation>Porte 110, 143, 993 e 995</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1041"/>
         <source>Retrieve Mail (POP, IMAP)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ricevi Mail (POP, IMAP)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1051"/>
         <source>Only internal Tor network traffic is passed</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Solo il traffico interno della rete Tor sarà lasciato passare</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1054"/>
         <source>No External Connections</source>
-        <translation type="unfinished"></translation>
+        <translation>Nessuna connessione con l&apos;esterno</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1064"/>
         <source>Ports unspecified by other checkboxes</source>
-        <translation type="unfinished"></translation>
+        <translation>Porte non specificate da altre caselle di selezione</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1067"/>
         <source>Misc Other Services</source>
-        <translation type="unfinished"></translation>
+        <translation>Altri servizi</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1077"/>
         <source>Ports 706, 1863, 5050, 5190, 5222, 8300 and 8888</source>
-        <translation type="unfinished"></translation>
+        <translation>Porte 706, 1863, 5050, 5190, 5222, 8300 e 8888</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1080"/>
         <source>Instant Messaging (IM)</source>
-        <translation type="unfinished"></translation>
+        <translation>Messaggistica Instantaea (IM)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1090"/>
         <source>Port 443</source>
-        <translation type="unfinished"></translation>
+        <translation>Porta 443</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1093"/>
         <source>Secure Websites (SSL)</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Siti Sicuri (SSL)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1103"/>
         <source>Port 80</source>
-        <translation type="unfinished"></translation>
+        <translation>Porta 80</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1106"/>
         <source>Websites</source>
-        <translation type="unfinished"></translation>
+        <translation>Siti Internet</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1199"/>
         <source>What Internet resources should Tor users be able to access from your Tor Relay?</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Quali servizi Internet gli utenti Tor sono abilitati ad accedere dal tuo server?</translation>
     </message>
 </context>
 <context>
@@ -1872,17 +1874,17 @@ un fingerprint PGP o GPG.</translation>
     <message>
         <location filename="../control/torservice.cpp" line="109"/>
         <source>Services not supported on this platform.</source>
-        <translation type="unfinished"></translation>
+        <translation>Servizi non supportati su questa piattaforma.</translation>
     </message>
     <message>
         <location filename="../control/torservice.cpp" line="134"/>
         <source>Unable to start Tor service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossibile lanciare Tor come servizio.</translation>
     </message>
     <message>
         <location filename="../control/torservice.cpp" line="113"/>
         <source>The Tor service is not installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Il servizio Tor non è nell&apos;elenco dei servizi.</translation>
     </message>
 </context>
 <context>
@@ -1943,14 +1945,16 @@ un fingerprint PGP o GPG.</translation>
     <message>
         <location filename="../main.cpp" line="78"/>
         <source>Vidalia is already running</source>
-        <translation>Vidalia è già in esecuzione.</translation>
+        <translation>Vidalia è già in esecuzione</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="82"/>
         <source>Another Vidalia process is already running. 
 
 This Vidalia process will now exit.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia è già in esecuzione.
+
+Questa sessione di vidalia verrà ora chiusa.</translation>
     </message>
 </context>
 </TS>
