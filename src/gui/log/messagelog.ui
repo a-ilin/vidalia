@@ -564,7 +564,7 @@
           <enum>Qt::NoContextMenu</enum>
          </property>
          <property name="title" >
-          <string>Log History Size</string>
+          <string>Message Log History</string>
          </property>
          <layout class="QHBoxLayout" >
           <property name="margin" >
@@ -585,7 +585,7 @@
              <enum>Qt::NoContextMenu</enum>
             </property>
             <property name="toolTip" >
-             <string>Number of messages to keep in log</string>
+             <string>Number of messages to display in the message log window</string>
             </property>
             <property name="maximum" >
              <number>99999</number>
@@ -604,7 +604,7 @@
           <enum>Qt::NoContextMenu</enum>
          </property>
          <property name="title" >
-          <string>Log File</string>
+          <string>Always Save New Log Messages</string>
          </property>
          <layout class="QGridLayout" >
           <property name="margin" >
@@ -642,10 +642,10 @@
              <enum>Qt::NoContextMenu</enum>
             </property>
             <property name="toolTip" >
-             <string>Enable saving of all messages to a file</string>
+             <string>Enable automatically saving all new log messages to a file</string>
             </property>
             <property name="text" >
-             <string>Save Messages to File</string>
+             <string>Automatically save new log messages to a file</string>
             </property>
             <property name="checked" >
              <bool>false</bool>
