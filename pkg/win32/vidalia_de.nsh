@@ -47,9 +47,9 @@ LangString PrivoxyStartup             ${LANG_GERMAN} "Beim Systemstart ausführen
 LangString PrivoxyStartupDesc         ${LANG_GERMAN} "${PRIVOXY_NAME} beim Systemstart automatisch ausführen."
 
 ; Torbutton
-LangString TorbuttonGroupDesc         ${LANG_GERMAN} "Install ${TORBUTTON_DESC}."
-LangString TorbuttonAppDesc           ${LANG_GERMAN} "Install ${TORBUTTON_DESC}."
-LangString TorbuttonAddToFirefox      ${LANG_GERMAN} "Add to Firefox"
-LangString TorbuttonAddToFirefoxDesc  ${LANG_GERMAN} "Add the ${TORBUTTON_DESC} extension to Firefox."
-LangString TorbuttonFirefoxNotFound   ${LANG_GERMAN} "Firefox was not found on your system. Not installing Torbutton."
+LangString TorbuttonGroupDesc         ${LANG_GERMAN} "Installiere ${TORBUTTON_DESC}."
+LangString TorbuttonAppDesc           ${LANG_GERMAN} "Installiere ${TORBUTTON_DESC}."
+LangString TorbuttonAddToFirefox      ${LANG_GERMAN} "Zu Firefox hinzufügen"
+LangString TorbuttonAddToFirefoxDesc  ${LANG_GERMAN} "Die ${TORBUTTON_DESC}-Erweiterung zu Firefox hinzufügen."
+LangString TorbuttonFirefoxNotFound   ${LANG_GERMAN} "Firefox konnte nicht gefunden werden. Torbutton wird nicht installiert."
 
