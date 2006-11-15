@@ -577,7 +577,7 @@
            <widget class="QSpinBox" name="spnbxMaxCount" >
             <property name="minimumSize" >
              <size>
-              <width>100</width>
+              <width>50</width>
               <height>0</height>
              </size>
             </property>
@@ -592,6 +592,30 @@
             </property>
             <property name="minimum" >
              <number>1</number>
+            </property>
+            <property name="alignment" >
+             <set>Qt::AlignRight</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblNickname" >
+            <property name="font" >
+             <font>
+              <pointsize>10</pointsize>
+             </font>
+            </property>
+            <property name="contextMenuPolicy" >
+             <enum>Qt::NoContextMenu</enum>
+            </property>
+            <property name="text" >
+             <string>messages</string>
+            </property>
+            <property name="textFormat" >
+             <enum>Qt::AutoText</enum> 
+            </property>
+            <property name="alignment" >
+             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
             </property>
            </widget>
           </item>
