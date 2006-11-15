@@ -48,7 +48,7 @@
     <message>
         <location filename="../gui/about/aboutdialog.cpp" line="78"/>
         <source>&lt;Not Running&gt;</source>
-        <translation>&lt;Nicht Aktiv&gt;</translation>
+        <translation>&lt;Nicht aktiv&gt;</translation>
     </message>
     <message>
         <location filename="../gui/about/aboutdialog.cpp" line="74"/>
@@ -101,7 +101,7 @@
     <message>
         <location filename="../gui/config/advancedpage.ui" line="467"/>
         <source>Vidalia will run with this User&apos;s permissions</source>
-        <translation>Vidalia wird mit den Berechtigungen des folgenden Users laufen</translation>
+        <translation>Vidalia wird mit den Berechtigungen dieses Nutzers laufen</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="487"/>
@@ -111,7 +111,7 @@
     <message>
         <location filename="../gui/config/advancedpage.ui" line="494"/>
         <source>Vidalia will run with this Group&apos;s permissions</source>
-        <translation>Vidalia wird mit den Berechtigungen der folgenden Gruppe laufen</translation>
+        <translation>Vidalia wird mit den Berechtigungen dieser Gruppe laufen</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="107"/>
@@ -241,7 +241,7 @@ Sie müssen ihn manuell entfernen.</translation>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="566"/>
         <source>Changes the transparency of the Bandwidth Graph</source>
-        <translation>Ändert die Transparenz des Bandbreitengraph</translation>
+        <translation>Ändert die Transparenz des Bandbreitengraphs</translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="637"/>
@@ -872,7 +872,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/mainwindow.cpp" line="356"/>
         <source>Tor is starting</source>
-        <translation>Tor started</translation>
+        <translation>Tor startet</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="491"/>
@@ -1071,7 +1071,7 @@ Verbindungen erscheinen.</translation>
     <message>
         <location filename="../gui/log/messagelog.ui" line="706"/>
         <source>Set message filters</source>
-        <translation>Setze Nachrichten-Filter</translation>
+        <translation>Setze Nachrichtenfilter</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="719"/>
@@ -1542,7 +1542,7 @@ empfangen.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="301"/>
         <source>Check to run as a Tor network server</source>
-        <translation>Anhaken um als Tor Netzwerkserver zu betreiben</translation>
+        <translation>Anhaken um als Tor Netzwerkserver zu laufen</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="304"/>
@@ -1598,12 +1598,12 @@ Ihrem Server verwenden</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="633"/>
         <source>Enable to mirror the server directory</source>
-        <translation>Auswählen um die Server-Liste zu spiegeln</translation>
+        <translation>Auswählen um die Serverliste zu spiegeln</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="636"/>
         <source>Mirror the Server Directory </source>
-        <translation>Die Server-Liste spiegeln</translation>
+        <translation>Die Serverliste spiegeln</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="386"/>
@@ -1656,8 +1656,7 @@ zu ermitteln?</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="646"/>
         <source>When enabled, Vidalia will periodically update your IP address if necessary</source>
-        <translation>Wenn aktiviert, versucht Vidalia regelmäßig Ihre IP-Adresse
-auf den neusten Stand zu bringen.</translation>
+        <translation>Wenn aktiviert, wird Vidalia regelmäßig Ihre IP-Adresse aktualisieren</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="649"/>
@@ -1669,7 +1668,7 @@ auf den neusten Stand zu bringen.</translation>
         <source>Email address at which you may be reached if there is a
 problem with your server. You might also include your PGP or GPG
 fingerprint.</source>
-        <translation>Email Adresse unter der Sie bei Serverproblemen zu
+        <translation>Email-Adresse unter der Sie bei Serverproblemen zu
 erreichen sind. Sie können auch Ihren PGP oder GPG fingerprint
 angeben.</translation>
     </message>
@@ -1686,7 +1685,7 @@ angeben.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="941"/>
         <source>KB/s</source>
-        <translation type="unfinished"></translation>
+        <translation>KB/s</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="928"/>
@@ -1722,7 +1721,7 @@ geben Sie Ihre Uploadgeschwindigkeit bitte hier an.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="739"/>
         <source>Select the entry that most closely resembles your Internet connection</source>
-        <translation>Wählen Sie den Eintrag der Ihrer Internetverbindung entspricht</translation>
+        <translation>Wählen Sie den Eintrag der Ihrer Internetverbindung am ehesten entspricht</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="749"/>
@@ -1747,7 +1746,7 @@ geben Sie Ihre Uploadgeschwindigkeit bitte hier an.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="769"/>
         <source>&gt; 1.5 Mbps</source>
-        <translation type="unfinished"></translation>
+        <translation>&gt; 1.5 Mbps</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="774"/>
@@ -1762,7 +1761,7 @@ geben Sie Ihre Uploadgeschwindigkeit bitte hier an.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1028"/>
         <source>Internet Relay Chat (IRC)</source>
-        <translation type="unfinished"></translation>
+        <translation>Internet Relay Chat (IRC)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1038"/>
@@ -1802,12 +1801,12 @@ geben Sie Ihre Uploadgeschwindigkeit bitte hier an.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1080"/>
         <source>Instant Messaging (IM)</source>
-        <translation type="unfinished"></translation>
+        <translation>Instant Messaging (IM)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1090"/>
         <source>Port 443</source>
-        <translation type="unfinished"></translation>
+        <translation>Port 443</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1093"/>
@@ -1817,7 +1816,7 @@ geben Sie Ihre Uploadgeschwindigkeit bitte hier an.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1103"/>
         <source>Port 80</source>
-        <translation type="unfinished"></translation>
+        <translation>Port 80</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1106"/>
