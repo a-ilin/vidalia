@@ -27,6 +27,7 @@
 
 #include <QTranslator>
 #include <QLocale>
+#include <vidalia.h>
 
 #include "languagesupport.h"
 
@@ -44,6 +45,8 @@ LanguageSupport::languages()
     languages.insert("de",    "Deutsch");
     languages.insert("es",    
       QString::fromUtf8("espa\303\261ol"));
+    languages.insert("fa",
+      QString::fromUtf8("\331\201\330\247\330\261\330\263\333\214"));
     languages.insert("fi",    "suomi");
     languages.insert("fr",    
       QString::fromUtf8("fran\303\247ais"));
@@ -117,8 +120,12 @@ LanguageSupport::translate(QString langCode)
 {
   if (isValidLanguageCode(langCode)) {
     QTranslator *translator = new QTranslator();
-    if (translator->load(QString(":/lang/") + langCode.toLower())) {
+    langCode = langCode.toLower();
+    if (translator->load(QString(":/lang/") + langCode)) {
       QApplication::installTranslator(translator);
+      if (langCode == "fa") {
+        vApp->setLayoutDirection(Qt::RightToLeft);
+      }
       return true;
     }
     delete translator;

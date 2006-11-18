@@ -40,6 +40,16 @@
     <file>es/troubleshooting.html</file>
     <file>es/netview.html</file>
     <file>es/links.html</file>
+    <!-- Farsi -->
+    <file>fa/contents.xml</file>
+    <file>fa/index.html</file>
+    <file>fa/running.html</file>
+    <file>fa/log.html</file>
+    <file>fa/config.html</file>
+    <file>fa/server.html</file>
+    <file>fa/troubleshooting.html</file>
+    <file>fa/netview.html</file>
+    <file>fa/links.html</file>
     <!-- Finnish -->
     <file>fi/contents.xml</file>
     <file>fi/index.html</file>
