@@ -185,7 +185,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="338"/>
         <source>Port that Vidalia uses to communicate with Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Portti, jolla Vidalia käyttää Tor-ohjelmaa.</translation>
     </message>
 </context>
 <context>
