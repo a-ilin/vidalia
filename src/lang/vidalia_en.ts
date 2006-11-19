@@ -64,11 +64,6 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="338"/>
-        <source>Port that Vidalia uses to communicate with Tor. </source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../gui/config/advancedpage.ui" line="341"/>
         <source>9051</source>
         <translation type="unfinished"></translation>
@@ -178,6 +173,11 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="369"/>
         <source>Tor Configuration File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="338"/>
+        <source>Port that Vidalia uses to communicate with Tor.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -752,177 +752,202 @@ Upgrade to a newer version of Tor.</source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="193"/>
+        <location filename="../gui/mainwindow.cpp" line="188"/>
         <source>Start</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="197"/>
+        <location filename="../gui/mainwindow.cpp" line="192"/>
         <source>Stop</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="220"/>
+        <location filename="../gui/mainwindow.cpp" line="215"/>
         <source>About</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="201"/>
+        <location filename="../gui/mainwindow.cpp" line="196"/>
         <source>Exit</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="204"/>
+        <location filename="../gui/mainwindow.cpp" line="199"/>
         <source>Bandwidth Graph</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="208"/>
+        <location filename="../gui/mainwindow.cpp" line="203"/>
         <source>Message Log</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="298"/>
+        <location filename="../gui/mainwindow.cpp" line="293"/>
         <source>Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="266"/>
+        <location filename="../gui/mainwindow.cpp" line="261"/>
         <source>Ctrl+S</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="267"/>
+        <location filename="../gui/mainwindow.cpp" line="262"/>
         <source>Ctrl+T</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="268"/>
+        <location filename="../gui/mainwindow.cpp" line="263"/>
         <source>Ctrl+B</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="269"/>
+        <location filename="../gui/mainwindow.cpp" line="264"/>
         <source>Ctrl+L</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="271"/>
+        <location filename="../gui/mainwindow.cpp" line="266"/>
         <source>Ctrl+?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="283"/>
+        <location filename="../gui/mainwindow.cpp" line="278"/>
         <source>File</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="286"/>
+        <location filename="../gui/mainwindow.cpp" line="281"/>
         <source>Tor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="292"/>
+        <location filename="../gui/mainwindow.cpp" line="287"/>
         <source>View</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="299"/>
+        <location filename="../gui/mainwindow.cpp" line="294"/>
         <source>Vidalia Help</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="332"/>
+        <location filename="../gui/mainwindow.cpp" line="327"/>
         <source>Error Starting Tor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="377"/>
+        <location filename="../gui/mainwindow.cpp" line="371"/>
         <source>Error Connecting to Tor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="443"/>
+        <location filename="../gui/mainwindow.cpp" line="436"/>
         <source>Error Stopping Tor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="477"/>
+        <location filename="../gui/mainwindow.cpp" line="469"/>
         <source>Tor Exited</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="444"/>
+        <location filename="../gui/mainwindow.cpp" line="437"/>
         <source>Vidalia was unable to stop Tor.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="403"/>
+        <location filename="../gui/mainwindow.cpp" line="397"/>
         <source>Server is Enabled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="270"/>
+        <location filename="../gui/mainwindow.cpp" line="265"/>
         <source>Ctrl+N</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="508"/>
+        <location filename="../gui/mainwindow.cpp" line="499"/>
         <source>Error Applying Server Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="509"/>
+        <location filename="../gui/mainwindow.cpp" line="500"/>
         <source>Vidalia was unable to apply your server&apos;s settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="408"/>
+        <location filename="../gui/mainwindow.cpp" line="402"/>
         <source>You are currently running a Tor server. Terminating your server will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new server?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="480"/>
+        <location filename="../gui/mainwindow.cpp" line="472"/>
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="335"/>
+        <location filename="../gui/mainwindow.cpp" line="330"/>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="212"/>
+        <location filename="../gui/mainwindow.cpp" line="207"/>
         <source>Network Map</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="216"/>
+        <location filename="../gui/mainwindow.cpp" line="211"/>
         <source>Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="538"/>
+        <location filename="../gui/mainwindow.cpp" line="529"/>
         <source>New Identity</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="272"/>
+        <location filename="../gui/mainwindow.cpp" line="267"/>
         <source>Ctrl+I</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="540"/>
+        <location filename="../gui/mainwindow.cpp" line="531"/>
         <source>All subsequent connections will appear to be different than your old connections.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="544"/>
+        <location filename="../gui/mainwindow.cpp" line="535"/>
         <source>Failed to Create New Identity</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="116"/>
+        <source>Tor is Stopped</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="433"/>
+        <source>Tor is stopping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="356"/>
+        <source>Tor is starting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="457"/>
+        <source>Tor is stopped</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="491"/>
+        <source>Tor is running</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

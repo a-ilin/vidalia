@@ -66,7 +66,7 @@
     <message>
         <location filename="../gui/config/advancedpage.ui" line="338"/>
         <source>Port that Vidalia uses to communicate with Tor. </source>
-        <translation>Portti, jolla Vidalia käyttää Tor-ohjelmaa</translation>
+        <translation type="obsolete">Portti, jolla Vidalia käyttää Tor-ohjelmaa</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="341"/>
@@ -181,6 +181,11 @@ Tor-palvelu täytyy poistaa käsin.</translation>
         <location filename="../gui/config/advancedpage.ui" line="369"/>
         <source>Tor Configuration File</source>
         <translation>Tor-asetustiedosto</translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="338"/>
+        <source>Port that Vidalia uses to communicate with Tor.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

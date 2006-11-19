@@ -335,7 +335,7 @@
            <enum>Qt::NoContextMenu</enum>
           </property>
           <property name="toolTip" >
-           <string>Port that Vidalia uses to communicate with Tor. </string>
+           <string>Port that Vidalia uses to communicate with Tor.</string>
           </property>
           <property name="text" >
            <string>9051</string>
