@@ -36,6 +36,7 @@
 #include "common/vmessagebox.h"
 #include "mainwindow.h"
 
+
 #define IMG_APP_ICON       ":/images/16x16/tor-logo.png"
 #define IMG_START          ":/images/16x16/tor-on.png"
 #define IMG_STOP           ":/images/16x16/tor-off.png"
@@ -48,25 +49,40 @@
 #define IMG_EXIT           ":/images/16x16/emblem-unreadable.png"
 #define IMG_NETWORK        ":/images/16x16/applications-internet.png"
 
-#if defined(Q_WS_MAC)
-/* On Mac, we go straight to Carbon to load our dock images from .icns files */
-#define IMG_TOR_STOPPED    "tor-off"
-#define IMG_TOR_RUNNING    "tor-on"
-#define IMG_TOR_STARTING   "tor-starting"
-#define IMG_TOR_STOPPING   "tor-stopping"
-#elif defined(Q_WS_X11)
-/* On X11, we just use the .png files */
-#define IMG_TOR_STOPPED    ":/images/22x22/tor-off.png"
-#define IMG_TOR_RUNNING    ":/images/22x22/tor-on.png"
-#define IMG_TOR_STARTING   ":/images/22x22/tor-starting.png"
-#define IMG_TOR_STOPPING   ":/images/22x22/tor-stopping.png"
+/* Decide which of our four sets of tray icons to use. */
+#if defined(USE_QSYSTEMTRAYICON)
+/* QSystemTrayIcon is available */
+#if defined(Q_WS_WIN)
+/* QSystemTrayIcon on Windows wants 16x16 .png files */
+#define IMG_TOR_STOPPED  ":/images/16x16/tor-off.png"
+#define IMG_TOR_RUNNING  ":/images/16x16/tor-on.png"
+#define IMG_TOR_STARTING ":/images/16x16/tor-starting.png"
+#define IMG_TOR_STOPPING ":/images/16x16/tor-stopping.png"
+#endif
 #else
-/* On Win32, we load .ico files so our icons look correct on all Windowses */
+/* No QSystemTrayIcon support */
+#if defined(Q_WS_WIN)
+/* Use the .ico files */
 #include "res/vidalia_win.rc.h"
 #define IMG_TOR_STOPPED    QString::number(IDI_TOR_OFF)
 #define IMG_TOR_RUNNING    QString::number(IDI_TOR_ON)
 #define IMG_TOR_STARTING   QString::number(IDI_TOR_STARTING)
 #define IMG_TOR_STOPPING   QString::number(IDI_TOR_STOPPING)
+#endif
+#endif
+#if defined(Q_WS_MAC)
+/* On Mac, we always go straight to Carbon to load our dock images 
+ * from .icns files */
+#define IMG_TOR_STOPPED    "tor-off"
+#define IMG_TOR_RUNNING    "tor-on"
+#define IMG_TOR_STARTING   "tor-starting"
+#define IMG_TOR_STOPPING   "tor-stopping"
+#elif defined(Q_WS_X11)
+/* On X11, we just use always the 22x22 .png files */
+#define IMG_TOR_STOPPED    ":/images/22x22/tor-off.png"
+#define IMG_TOR_RUNNING    ":/images/22x22/tor-on.png"
+#define IMG_TOR_STARTING   ":/images/22x22/tor-starting.png"
+#define IMG_TOR_STOPPING   ":/images/22x22/tor-stopping.png"
 #endif
 
 
@@ -88,14 +104,10 @@ MainWindow::MainWindow()
   
   /* Create the actions that will go in the tray menu */
   createActions();
+  /* Creates a tray icon with a context menu and adds it to the system's
+   * notification area. */
+  createTrayIcon();
   
-#if defined(Q_WS_MAC)
-  createMenuBar();
-#else
-  /* Create the tray menu itself */
-  createTrayMenu(); 
-#endif 
-
   /* Create a new TorControl object, used to communicate with and manipulate Tor */
   _torControl = Vidalia::torControl(); 
   connect(_torControl, SIGNAL(started()), this, SLOT(started()));
@@ -111,11 +123,6 @@ MainWindow::MainWindow()
   /* Make sure we shut down when the operating system is restarting */
   connect(vApp, SIGNAL(shutdown()), this, SLOT(shutdown()));
 
-  /* Put an icon in the system tray to indicate the status of Tor */
-  _trayIcon = new TrayIcon(IMG_TOR_STOPPED,
-                           tr("Tor is Stopped"), _trayMenu);
-  _trayIcon->show();
-  
   if (_torControl->isRunning()) {
     /* Tor was already running */
     this->started();
@@ -128,8 +135,7 @@ MainWindow::MainWindow()
 /** Destructor. */
 MainWindow::~MainWindow()
 {
-  _trayIcon->hide();
-  delete _trayIcon;
+  _trayIcon.hide();
   delete _messageLog;
   delete _netViewer;
   delete _bandwidthGraph;
@@ -171,7 +177,7 @@ MainWindow::close()
         /* Close when Tor stops */
         connect(_torControl, SIGNAL(stopped()), this, SLOT(shutdown()));
         _delayedShutdownStarted = _torControl->signal(TorSignal::Shutdown);
-        _trayIcon->update(IMG_TOR_STOPPING, tr("Tor is stopping"));
+        updateTrayIcon(IMG_TOR_STOPPING, tr("Tor is stopping"));
         return;
       }
     }
@@ -224,28 +230,46 @@ MainWindow::createActions()
   connect(_newIdentityAct, SIGNAL(triggered()), this, SLOT(newIdentity()));
 }
 
-/**
- * Creates a QMenu object that contains QActions
- *  which compose the system tray menu.
- */
-void 
+/** Creates a tray icon with a context menu and adds it to the system
+ * notification area. On Mac, we also set up an application menubar. */
+void
+MainWindow::createTrayIcon()
+{
+  /* We start with an icon that says Tor is not running */
+  updateTrayIcon(IMG_TOR_STOPPED, tr("Tor is Stopped"));
+  /* Create the default menu bar (Mac) */
+  createMenuBar();
+  /* Create a tray menu and add it to the tray icon */
+  _trayIcon.setContextMenu(createTrayMenu());
+  /* Make the tray icon visible */
+  _trayIcon.show();
+}
+
+/** Creates a QMenu object that contains QActions which compose the system 
+ * tray menu. */
+QMenu* 
 MainWindow::createTrayMenu()
 {
-  /* Tray menu */ 
-  _trayMenu = new QMenu(this);
-  _trayMenu->addAction(_startAct);
-  _trayMenu->addAction(_stopAct);
-  _trayMenu->addSeparator();
-  _trayMenu->addAction(_bandwidthAct);
-  _trayMenu->addAction(_messageAct);
-  _trayMenu->addAction(_networkAct);
-  _trayMenu->addAction(_newIdentityAct);
-  _trayMenu->addSeparator();
-  _trayMenu->addAction(_configAct);
-  _trayMenu->addAction(_helpAct);
-  _trayMenu->addAction(_aboutAct);
-  _trayMenu->addSeparator();
-  _trayMenu->addAction(_exitAct);
+  QMenu *menu = new QMenu(this);
+  menu->addAction(_startAct);
+  menu->addAction(_stopAct);
+  menu->addSeparator();
+  menu->addAction(_bandwidthAct);
+  menu->addAction(_messageAct);
+  menu->addAction(_networkAct);
+  menu->addAction(_newIdentityAct);
+  
+#if !defined(Q_WS_MAC)
+  /* These aren't added to the dock menu on Mac, since they are in the
+   * standard Mac locations in the menu bar. */
+  menu->addSeparator();
+  menu->addAction(_configAct);
+  menu->addAction(_helpAct);
+  menu->addAction(_aboutAct);
+  menu->addSeparator();
+  menu->addAction(_exitAct);
+#endif
+  return menu;
 }
 
 /** Creates a new menubar with no parent, so Qt will use this as the "default
@@ -295,6 +319,20 @@ MainWindow::createMenuBar()
   helpMenu->addAction(_helpAct);
   helpMenu->addAction(_aboutAct);
 #endif
+}
+
+/** Sets the tray icon's image and tooltip. */
+void
+MainWindow::updateTrayIcon(QString iconFile, QString tooltip)
+{
+  /* Set the tray icon's image */
+#if defined(USE_QSYSTEMTRAYICON)
+  _trayIcon.setIcon(QIcon(iconFile));
+#else
+  _trayIcon.setIcon(iconFile);
+#endif
+  /* Set the icon's tooltip */
+  _trayIcon.setToolTip(tooltip);
 }
 
 /** Attempts to start Tor. If Tor fails to start, then startFailed() will be
@@ -353,7 +391,7 @@ MainWindow::started()
   /* We haven't started a delayed shutdown yet. */
   _delayedShutdownStarted = false;
   /* Set correct tray icon and tooltip */
-  _trayIcon->update(IMG_TOR_STARTING, tr("Tor is starting"));
+  updateTrayIcon(IMG_TOR_STARTING, tr("Tor is starting"));
   /* Set menu actions appropriately */
   _stopAct->setEnabled(true);
   _startAct->setEnabled(false);
@@ -430,7 +468,7 @@ MainWindow::stop()
 
   if (shutdown) {
     /* Indicate that Tor is about to shut down */
-    _trayIcon->update(IMG_TOR_STOPPING, tr("Tor is stopping"));
+    updateTrayIcon(IMG_TOR_STOPPING, tr("Tor is stopping"));
   } else {
     /* We couldn't tell Tor to stop, for some reason. */
     int response = VMessageBox::warning(this, tr("Error Stopping Tor"),
@@ -454,7 +492,7 @@ void
 MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
 {
   /* Set correct tray icon and tooltip */
-  _trayIcon->update(IMG_TOR_STOPPED, tr("Tor is stopped"));
+  updateTrayIcon(IMG_TOR_STOPPED, tr("Tor is stopped"));
   /* Set menu actions appropriately */
   _startAct->setEnabled(true);
 
@@ -488,7 +526,7 @@ MainWindow::connected()
   QString errmsg;
 
   /* Update our tray status icon */
-  _trayIcon->update(IMG_TOR_RUNNING, tr("Tor is running"));
+  updateTrayIcon(IMG_TOR_RUNNING, tr("Tor is running"));
   _newIdentityAct->setEnabled(true);
 
   /* If the user changed some of the server's settings while Tor wasn't 
@@ -524,14 +562,28 @@ void
 MainWindow::newIdentity()
 {
   QString errmsg;
+
+  /* Send the NEWNYM signal. If message balloons are supported and the NEWNYM
+   * is successful, we will show the result as a balloon. Otherwise, we'll 
+   * just use a message box. */
   if (_torControl->signal(TorSignal::NewNym, &errmsg)) {
-    VMessageBox::information(this,
-      tr("New Identity"),
-      tr("All subsequent connections will appear to be different "
-         "than your old connections."),
-      QMessageBox::Ok);
+    /* NEWNYM signal was successful */
+    QString title = tr("New Identity");
+    QString message = tr("All subsequent connections will "
+                         "appear to be different than your "
+                         "old connections.");
+#if defined(USE_QSYSTEMTRAYICON)
+    if (QSystemTrayIcon::supportsMessages()) {
+      _trayIcon.showMessage(title, message, QSystemTrayIcon::Information);
+    } else {
+      VMessageBox::information(this, title, message, VMessageBox::Ok);
+    }
+#else
+    VMessageBox::information(this, title, message, VMessageBox::Ok);
+#endif
   } else {
-    VMessageBox::warning(this,
+    /* NEWNYM signal failed */
+    VMessageBox::warning(this, 
       tr("Failed to Create New Identity"), errmsg, VMessageBox::Ok);
   }
 }

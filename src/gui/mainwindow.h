@@ -32,7 +32,20 @@
 
 #include <control/torcontrol.h>
 
+/* QSystemTrayIcon appeared in Qt 4.2, but we need a bugfix to it on Mac 
+ * that won't appear until Qt 4.2.2. */
+#if QT_VERSION >= 0x040200 && !defined(Q_WS_MAC)
+#define USE_QSYSTEMTRAYICON  1
+#else
+#undef USE_QSYSTEMTRAYICON
+#endif
+ 
+#if defined(USE_QSYSTEMTRAYICON)
+#include <QSystemTrayIcon>
+#else
 #include "tray/trayicon.h"
+#endif
+
 #include "about/aboutdialog.h"
 #include "log/messagelog.h"
 #include "bwgraph/bwgraph.h"
@@ -79,13 +92,18 @@ private slots:
 private:
   /** Create the actions on the tray menu or menubar */
   void createActions();
+  /** Creates a tray icon with a context menu and adds it to the system
+   * notification area. On Mac, we also set up an application menubar. */
+  void createTrayIcon();
   /** Create the tray popup menu and it's submenus */
-  void createTrayMenu();
+  QMenu* createTrayMenu();
   /** Creates a default menubar on Mac */
   void createMenuBar();
+  /** Sets the tray icon's image and tooltip. */
+  void updateTrayIcon(QString iconFile, QString tooltip = QString());
   /** Starts a graceful, delayed server shutdown */
   bool delayServerShutdown();
-  
+
   /* Used to determine if the Tor process exiting was intentional or not */
   bool _isIntentionalExit;
   /** Tracks whether we started a delayed server shutdown. */
@@ -104,11 +122,14 @@ private:
   
   /** A TorControl object that handles communication with Tor */
   TorControl* _torControl;
-  /** Instance of a tray icon that will appear in the system tray */
-  TrayIcon* _trayIcon;
 
-  /** Define the popup menus for the system tray icon */
-  QMenu* _trayMenu;
+#if defined(USE_QSYSTEMTRAYICON)
+  QSystemTrayIcon _trayIcon; /**< The Vidalia icon that sits in the tray.
+                                  (post-Qt 4.2) */
+#else
+  TrayIcon _trayIcon; /**< The Vidalia icon that sits in the tray. (pre-Qt 4.2) */
+#endif
+  
   /** Defines the actions for the tray menu */
   QAction* _startAct;
   QAction* _stopAct;

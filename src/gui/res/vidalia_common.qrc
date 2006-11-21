@@ -23,6 +23,8 @@
         <file>16x16/tor-logo.png</file>
         <file>16x16/tor-off.png</file>
         <file>16x16/tor-on.png</file>
+        <file>16x16/tor-starting.png</file>
+        <file>16x16/tor-stopping.png</file>
         <file>16x16/utilities-system-monitor.png</file>
         <file>16x16/zoom.png</file>
     </qresource>
