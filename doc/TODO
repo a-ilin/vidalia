@@ -7,8 +7,6 @@ Things to complete for 0.1.0:
   * There is a Flyspray ticket on Tor's bugtracker about not being able to
     config changes when an alternate torrc is specified. Need to be verified
     and/or fixed. (http://bugs.noreply.org/flyspray/?do=details&id=319)
-  * On OS X, there should be menu options for starting and stopping Tor via
-    the dock icon. (Ticket #135)
   * Roger is going to add some additional events that Vidalia should respond
     to, such as "hey, you're a server now!"
   * Actually do something useful with the AUTHENTICATE command, rather than
