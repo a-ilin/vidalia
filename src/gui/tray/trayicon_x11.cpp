@@ -59,9 +59,19 @@
 #define SYSTEM_TRAY_CANCEL_MESSAGE  2
 
 
-TrayIconImpl::TrayIconImpl(const QString &iconFile, const QString &toolTip)
+/* Default constructor */
+TrayIconImpl::TrayIconImpl()
 {
   setObjectName("trayiconimpl");
+  
+  /* Add this widget to the system notification area */
+  addToTray();
+}
+
+/** Adds this widget to the system notification area. */
+void
+TrayIconImpl::addToTray()
+{
   setMinimumSize(22, 22);
   setMaximumSize(22, 22);
   //setBackgroundRole(QPalette::Base);
@@ -103,15 +113,10 @@ TrayIconImpl::TrayIconImpl(const QString &iconFile, const QString &toolTip)
   long data = 0;
   Atom dockwindow = XInternAtom(dpy, "KWM_DOCKWINDOW", false);
   Atom traywindow = XInternAtom(dpy, "_KDE_NET_WM_SYSTEM_TRAY_WINDOW_FOR", false);
-  XChangeProperty(dpy, winId(), dockwindow, dockwindow, 32, PropModeReplace, (uchar*)&data, 1);
-  XChangeProperty(dpy, winId(), traywindow, XA_WINDOW, 32, PropModeReplace, (uchar*)&data, 1);
- 
-  /* Set the initial icon and tooltip */
-  setIcon(iconFile);
-  setToolTip(toolTip);
-
-  //setAttribute(Qt::WA_NoBackground);
-  //XSetWindowBackgroundPixmap(dpy, trayWin, None);
+  XChangeProperty(dpy, winId(), dockwindow, dockwindow, 32, 
+                  PropModeReplace, (uchar*)&data, 1);
+  XChangeProperty(dpy, winId(), traywindow, XA_WINDOW, 32, 
+                  PropModeReplace, (uchar*)&data, 1);
 }
 
 /** Process events when the mouse enters the icon area. */

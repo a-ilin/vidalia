@@ -27,11 +27,17 @@
 
 #include "trayicon.h"
 
-/** Constructor. */
-TrayIcon::TrayIcon(const QString &iconFile, const QString &toolTip, QMenu *popupMenu)
-: TrayIconImpl(iconFile, toolTip)
+#if defined(Q_WS_MAC)
+/* Exported by Qt, but not declared in the header files. 
+ * See http://doc.trolltech.com/exportedfunctions.html  */
+void qt_mac_set_dock_menu(QMenu *menu);
+#endif
+
+
+/** Default constructor. */
+TrayIcon::TrayIcon()
 {
-  _popupMenu = popupMenu;
+  _contextMenu = 0;
 }
 
 /** Catches and handles mouse-related events. */
@@ -64,8 +70,8 @@ void
 TrayIcon::mouseButtonPress(QMouseEvent *event)
 {
 #if defined(Q_WS_X11)
-  if (_popupMenu) {
-    _popupMenu->popup(event->globalPos());
+  if (_contextMenu) {
+    _contextMenu->popup(event->globalPos());
   }
 #else
   Q_UNUSED(event);
@@ -78,12 +84,12 @@ void
 TrayIcon::mouseButtonRelease(QMouseEvent *event)
 {
 #if defined(Q_WS_WIN)
-  if (_popupMenu) {
+  if (_contextMenu) {
     /* This little activateWindow() dance is necessary to make menu closing
      * work properly on Windows. */
-    _popupMenu->activateWindow();
-    _popupMenu->popup(event->globalPos());
-    _popupMenu->activateWindow();
+    _contextMenu->activateWindow();
+    _contextMenu->popup(event->globalPos());
+    _contextMenu->activateWindow();
   }
 #else
   Q_UNUSED(event);
@@ -135,5 +141,17 @@ void
 TrayIcon::setIcon(const QString &iconFile)
 {
   TrayIconImpl::setIcon(iconFile);
+}
+
+/** Sets the context menu displayed when the tray icon is selected. On Mac,
+ * the context menu is displayed when the dock icon is clicked. */
+void
+TrayIcon::setContextMenu(QMenu *menu)
+{
+#if defined(Q_WS_MAC)
+  qt_mac_set_dock_menu(menu);
+#else
+  _contextMenu = menu;
+#endif
 }
 

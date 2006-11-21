@@ -39,8 +39,8 @@
 class TrayIconImpl : protected QWidget
 {
 protected:
-  /** Constructor */
-  TrayIconImpl(const QString &iconFile, const QString &toolTip);
+  /** Default constructor. */
+  TrayIconImpl();
 
   /** Show the tray icon. */
   void show();

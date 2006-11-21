@@ -48,8 +48,8 @@ class TrayIcon : private TrayIconImpl
   Q_OBJECT
 
 public:
-  /** Constructor */
-  TrayIcon(const QString &iconFile, const QString &toolTip, QMenu *popupMenu = 0);
+  /** Default constructor. */
+  TrayIcon();
 
   /** Show the tray icon. */
   void show();
@@ -61,7 +61,9 @@ public:
   void setToolTip(const QString &toolTip);
   /** Update the tray icon's image. */
   void setIcon(const QString &iconFile);
-
+  /** Sets the context menu displayed when the tray icon is selected. */
+  void setContextMenu(QMenu *contextMenu);
+  
 signals:
   /** Emitted when the user double-clicks on the tray icon. */
   void doubleClicked();
@@ -77,7 +79,7 @@ protected:
   void mouseButtonDblClick(QMouseEvent *event);
 
 private:
-  QMenu* _popupMenu; /**< Menu to display when the tray icon is clicked. */
+  QMenu* _contextMenu; /**< Menu to display when the tray icon is clicked. */
 };
 
 #endif

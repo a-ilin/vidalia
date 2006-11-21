@@ -30,18 +30,12 @@
 #include "trayicon_mac.h"
 
 
-/** Constructor. */
-TrayIconImpl::TrayIconImpl(const QString &iconFile, const QString &toolTip)
+/** Default constructor */
+TrayIconImpl::TrayIconImpl()
 {
   setObjectName("trayiconimpl");
   _imageRef = 0;
   _shown    = false;
-
-  /* Add the tool tip to the structure */
-  setIcon(iconFile);
-
-  /* And give it an icon */
-  setToolTip(toolTip);
 }
 
 /** Destructor */
@@ -134,11 +128,17 @@ TrayIconImpl::createIcon(const QString &iconFile)
   /* Create a CFStringRef that we can use to build the resource URL */
   CFStringRef iconFileRef = CFStringCreateWithCString(NULL, qPrintable(iconFile), 
                                                       kCFStringEncodingASCII);
+  if (!iconFileRef) {
+    return NULL;
+  }
   
   /* Build a URL to the requested .icns in our resource bundle */
   CFURLRef url = CFBundleCopyResourceURL(CFBundleGetMainBundle(), 
                                          iconFileRef, CFSTR("icns"), NULL);
-  
+  if (!url) {
+    return NULL;
+  }
+
   /* Try to find the resource in the bundle */
   if (CFURLGetFSRef(url, &ref)) {
     FSSpec fileSpec;

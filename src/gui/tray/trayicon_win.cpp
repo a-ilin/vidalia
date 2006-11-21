@@ -54,19 +54,13 @@
 UINT    WM_TASKBARCREATED;  /**< Message sent when taskbar is created. */
 
 
-/** Constructor. */
-TrayIconImpl::TrayIconImpl(const QString &iconFile, const QString &toolTip)
+/** Default constructor. */
+TrayIconImpl::TrayIconImpl()
 {
   setObjectName("trayiconimpl");
  
   /* We want to know when Explorer crashes and recreates the taskbar. */
   WM_TASKBARCREATED = RegisterWindowMessage(TEXT("TaskbarCreated"));
-  
-  /* Set the tray icon image */
-  setIcon(iconFile);
-  
-  /* Add the tool tip to the structure */
-  setToolTip(toolTip);
 }
 
 /** Updates the tray icon. */

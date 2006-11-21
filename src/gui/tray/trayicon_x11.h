@@ -57,8 +57,8 @@
 class TrayIconImpl : protected QLabel 
 {
 protected:
-  /** Constructor */
-  TrayIconImpl(const QString &iconFile, const QString &toolTip);
+  /** Default constructor. */
+  TrayIconImpl();
 
   /** Show the tray icon image. */
   void show();
@@ -71,6 +71,10 @@ protected:
 
   /** Process events when the mouse enters the icon area. */
   void enterEvent(QEvent *event);
+
+private:
+  /** Adds this widget to the system notification area. */
+  void addToTray();
 };
 
 #endif
