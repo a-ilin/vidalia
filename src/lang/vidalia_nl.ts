@@ -64,11 +64,6 @@
         <translation>Beheer Poort</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="338"/>
-        <source>Port that Vidalia uses to communicate with Tor. </source>
-        <translation type="obsolete">Poort die door Vidalia wordt gebruikt om te communiceren met Tor. </translation>
-    </message>
-    <message>
         <location filename="../gui/config/advancedpage.ui" line="341"/>
         <source>9051</source>
         <translation>9051</translation>
@@ -758,157 +753,157 @@ Upgrade naar een nieuwere versie van Tor.</translation>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="116"/>
+        <location filename="../gui/mainwindow.cpp" line="239"/>
         <source>Tor is Stopped</source>
         <translation type="unfinished">Tor is Gestopt</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="188"/>
+        <location filename="../gui/mainwindow.cpp" line="194"/>
         <source>Start</source>
         <translation>Start</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="192"/>
+        <location filename="../gui/mainwindow.cpp" line="198"/>
         <source>Stop</source>
         <translation>Stop</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="215"/>
+        <location filename="../gui/mainwindow.cpp" line="221"/>
         <source>About</source>
         <translation>Over</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="196"/>
+        <location filename="../gui/mainwindow.cpp" line="202"/>
         <source>Exit</source>
         <translation>Sluiten</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="199"/>
+        <location filename="../gui/mainwindow.cpp" line="205"/>
         <source>Bandwidth Graph</source>
         <translation>Bandbreedte Grafiek</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="203"/>
+        <location filename="../gui/mainwindow.cpp" line="209"/>
         <source>Message Log</source>
         <translation>Berichten Logboek</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="293"/>
+        <location filename="../gui/mainwindow.cpp" line="317"/>
         <source>Help</source>
         <translation>Help</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="261"/>
+        <location filename="../gui/mainwindow.cpp" line="285"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="262"/>
+        <location filename="../gui/mainwindow.cpp" line="286"/>
         <source>Ctrl+T</source>
         <translation>Ctrl+T</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="263"/>
+        <location filename="../gui/mainwindow.cpp" line="287"/>
         <source>Ctrl+B</source>
         <translation>Ctrl+B</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="264"/>
+        <location filename="../gui/mainwindow.cpp" line="288"/>
         <source>Ctrl+L</source>
         <translation>Ctrl+L</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="266"/>
+        <location filename="../gui/mainwindow.cpp" line="290"/>
         <source>Ctrl+?</source>
         <translation>Ctrl+?</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="278"/>
+        <location filename="../gui/mainwindow.cpp" line="302"/>
         <source>File</source>
         <translation>Bestand</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="281"/>
+        <location filename="../gui/mainwindow.cpp" line="305"/>
         <source>Tor</source>
         <translation>Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="287"/>
+        <location filename="../gui/mainwindow.cpp" line="311"/>
         <source>View</source>
         <translation>Bekijk</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="294"/>
+        <location filename="../gui/mainwindow.cpp" line="318"/>
         <source>Vidalia Help</source>
         <translation>Vidalia Help</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="327"/>
+        <location filename="../gui/mainwindow.cpp" line="365"/>
         <source>Error Starting Tor</source>
         <translation>Fout bij Starten Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="371"/>
+        <location filename="../gui/mainwindow.cpp" line="409"/>
         <source>Error Connecting to Tor</source>
         <translation>Fout bij Verbinden met Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="436"/>
+        <location filename="../gui/mainwindow.cpp" line="474"/>
         <source>Error Stopping Tor</source>
         <translation>Fout bij Stoppen Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="457"/>
+        <location filename="../gui/mainwindow.cpp" line="495"/>
         <source>Tor is stopped</source>
         <translation type="unfinished">Tor is gestopt</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="469"/>
+        <location filename="../gui/mainwindow.cpp" line="507"/>
         <source>Tor Exited</source>
         <translation>Tor is Afgesloten</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="437"/>
+        <location filename="../gui/mainwindow.cpp" line="475"/>
         <source>Vidalia was unable to stop Tor.</source>
         <translation>Vidalia was niet in staat Tor te stoppen.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="356"/>
+        <location filename="../gui/mainwindow.cpp" line="394"/>
         <source>Tor is starting</source>
         <translation type="unfinished">Tor is aan het starten</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="491"/>
+        <location filename="../gui/mainwindow.cpp" line="529"/>
         <source>Tor is running</source>
         <translation type="unfinished">Tor is actief</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="397"/>
+        <location filename="../gui/mainwindow.cpp" line="435"/>
         <source>Server is Enabled</source>
         <translation>Server is Ingeschakeld</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="433"/>
+        <location filename="../gui/mainwindow.cpp" line="471"/>
         <source>Tor is stopping</source>
         <translation type="unfinished">Tor is aan het stoppen</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="265"/>
+        <location filename="../gui/mainwindow.cpp" line="289"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="499"/>
+        <location filename="../gui/mainwindow.cpp" line="537"/>
         <source>Error Applying Server Settings</source>
         <translation>Fout bij Toepassen Server Instellingen</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="500"/>
+        <location filename="../gui/mainwindow.cpp" line="538"/>
         <source>Vidalia was unable to apply your server&apos;s settings.</source>
         <translation>Vidalia was niet in staat de server instellingen toe te passen.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="402"/>
+        <location filename="../gui/mainwindow.cpp" line="440"/>
         <source>You are currently running a Tor server. Terminating your server will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new server?</source>
@@ -917,7 +912,7 @@ Would you like to shutdown gracefully and give clients time to find a new server
 Wilt u op stijlvolle wijze afsluiten en clients de tijd gunnen om een nieuwe server te vinden?</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="472"/>
+        <location filename="../gui/mainwindow.cpp" line="510"/>
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
@@ -926,37 +921,37 @@ Please check the message log for indicators about what happened to Tor before it
 Bekijk alstublieft het berichten logboek voor meer informatie en mogelijke aanwijzingen met betrekking tot de oorzaak.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="330"/>
+        <location filename="../gui/mainwindow.cpp" line="368"/>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
         <translation>Vidalia was niet in staat om Tor te starten. Raadpleeg uw instellingen om te zien of de naam en locatie van uw Tor executable juist is ingesteld.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="207"/>
+        <location filename="../gui/mainwindow.cpp" line="213"/>
         <source>Network Map</source>
         <translation>Netwerk Kaart</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="211"/>
+        <location filename="../gui/mainwindow.cpp" line="217"/>
         <source>Settings</source>
         <translation>Instellingen</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="529"/>
+        <location filename="../gui/mainwindow.cpp" line="571"/>
         <source>New Identity</source>
         <translation>Nieuwe Identiteit</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="267"/>
+        <location filename="../gui/mainwindow.cpp" line="291"/>
         <source>Ctrl+I</source>
         <translation>Ctrl+I</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="531"/>
+        <location filename="../gui/mainwindow.cpp" line="574"/>
         <source>All subsequent connections will appear to be different than your old connections.</source>
         <translation>Alle eerstvolgende verbindingen zullen anders tonen dan uw oude verbindingen.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="535"/>
+        <location filename="../gui/mainwindow.cpp" line="587"/>
         <source>Failed to Create New Identity</source>
         <translation>Creren van Nieuwe Identiteit Mislukt</translation>
     </message>
@@ -984,34 +979,9 @@ Bekijk alstublieft het berichten logboek voor meer informatie en mogelijke aanwi
         <translation>Bericht</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="607"/>
-        <source>Log File</source>
-        <translation type="obsolete">Logboek Bestand</translation>
-    </message>
-    <message>
         <location filename="../gui/log/messagelog.ui" line="646"/>
         <source>Browse</source>
         <translation>Bladeren</translation>
-    </message>
-    <message>
-        <location filename="../gui/log/messagelog.ui" line="645"/>
-        <source>Enable saving of all messages to a file</source>
-        <translation type="obsolete">Inschakelen van het opslaan van alle berichten in een bestand</translation>
-    </message>
-    <message>
-        <location filename="../gui/log/messagelog.ui" line="648"/>
-        <source>Save Messages to File</source>
-        <translation type="obsolete">Sla Berichten op in Bestand</translation>
-    </message>
-    <message>
-        <location filename="../gui/log/messagelog.ui" line="567"/>
-        <source>Log History Size</source>
-        <translation type="obsolete">Grootte van Logboek Geschiedenis</translation>
-    </message>
-    <message>
-        <location filename="../gui/log/messagelog.ui" line="588"/>
-        <source>Number of messages to keep in log</source>
-        <translation type="obsolete">Aantal berichten dat wordt opgeslagen in logboek</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="430"/>
