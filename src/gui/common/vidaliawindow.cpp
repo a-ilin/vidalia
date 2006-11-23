@@ -29,7 +29,9 @@
 #include <QSize>
 #include <QPalette>
 #include <QShortcut>
+#include <QByteArray>
 #include <QKeySequence>
+#include <QDesktopWidget>
 #include "vidaliawindow.h"
 
 
@@ -61,25 +63,37 @@ VidaliaWindow::setShortcut(QString shortcut, const char *slot)
 void
 VidaliaWindow::saveWindowState()
 {
+#if QT_VERSION >= 0x040200
+  saveSetting("Geometry", saveGeometry());
+#else
   saveSetting("Size", size());
   saveSetting("Position", pos());
+#endif
 }
 
 /** Restores the last size and location of the window. */
 void
 VidaliaWindow::restoreWindowState()
 {
+#if QT_VERSION >= 0x040200
+  QByteArray geometry = getSetting("Geometry", QByteArray()).toByteArray();
+  restoreGeometry(geometry);
+#else
+  QRect screen = QDesktopWidget().availableGeometry();
+
   /* Restore the window size. */
   QSize size = getSetting("Size", QSize()).toSize();
   if (!size.isEmpty()) {
+    size = size.boundedTo(screen.size());
     resize(size);
   }
 
   /* Restore the window position. */
   QPoint pos = getSetting("Position", QPoint()).toPoint();
-  if (!pos.isNull()) {
+  if (!pos.isNull() && screen.contains(pos)) {
     move(pos);
   }
+#endif
 }
 
 /** Gets the saved value of a property associated with this window object.
