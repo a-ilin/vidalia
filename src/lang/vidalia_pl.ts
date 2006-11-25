@@ -180,7 +180,7 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="338"/>
         <source>Port that Vidalia uses to communicate with Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Port którego Vidalia używa do komunikacji z Tor&apos;em</translation>
     </message>
 </context>
 <context>
@@ -216,7 +216,7 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="289"/>
         <source>Tor Bandwidth Usage</source>
-        <translation>Użycie łącza</translation>
+        <translation>Użycie Łącza</translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="313"/>
@@ -757,7 +757,7 @@ Proszę uaktualnić Tor&apos;a do nowszej wersji.</translation>
     <message>
         <location filename="../gui/mainwindow.cpp" line="239"/>
         <source>Tor is Stopped</source>
-        <translation type="unfinished">Tor jest zatrzymany</translation>
+        <translation>Tor jest zatrzymany</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="194"/>
@@ -782,7 +782,7 @@ Proszę uaktualnić Tor&apos;a do nowszej wersji.</translation>
     <message>
         <location filename="../gui/mainwindow.cpp" line="205"/>
         <source>Bandwidth Graph</source>
-        <translation>Zużycie łącza</translation>
+        <translation>Zużycie Łącza</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="209"/>
@@ -857,7 +857,7 @@ Proszę uaktualnić Tor&apos;a do nowszej wersji.</translation>
     <message>
         <location filename="../gui/mainwindow.cpp" line="495"/>
         <source>Tor is stopped</source>
-        <translation type="unfinished">Tor jest zatrzymany</translation>
+        <translation>Tor jest zatrzymany</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="507"/>
@@ -872,12 +872,12 @@ Proszę uaktualnić Tor&apos;a do nowszej wersji.</translation>
     <message>
         <location filename="../gui/mainwindow.cpp" line="394"/>
         <source>Tor is starting</source>
-        <translation type="unfinished">Uruchamianie Tor&apos;a</translation>
+        <translation>Uruchamianie Tor&apos;a</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="529"/>
         <source>Tor is running</source>
-        <translation type="unfinished">Tor aktywny</translation>
+        <translation>Tor aktywny</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="435"/>
@@ -887,7 +887,7 @@ Proszę uaktualnić Tor&apos;a do nowszej wersji.</translation>
     <message>
         <location filename="../gui/mainwindow.cpp" line="471"/>
         <source>Tor is stopping</source>
-        <translation type="unfinished">Zatrzymywanie Tor&apos;a</translation>
+        <translation>Zatrzymywanie Tor&apos;a</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="289"/>
@@ -940,7 +940,7 @@ Proszę sprawdzić Dziennik Logów, aby zidentyfikować przyczynę.</translation
     <message>
         <location filename="../gui/mainwindow.cpp" line="571"/>
         <source>New Identity</source>
-        <translation>Nowa tożsamość</translation>
+        <translation>Nowa Tożsamość</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="291"/>
@@ -983,7 +983,7 @@ Proszę sprawdzić Dziennik Logów, aby zidentyfikować przyczynę.</translation
     <message>
         <location filename="../gui/log/messagelog.ui" line="646"/>
         <source>Browse</source>
-        <translation>Przegladaj</translation>
+        <translation>Przeglądaj</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="430"/>
@@ -1299,32 +1299,32 @@ dla programistów ekipy Tor&apos;a</translation>
     <message>
         <location filename="../gui/log/messagelog.ui" line="567"/>
         <source>Message Log History</source>
-        <translation type="unfinished"></translation>
+        <translation>Historia Logów</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="588"/>
         <source>Number of messages to display in the message log window</source>
-        <translation type="unfinished"></translation>
+        <translation>Liczba wiadomości wyświetlanych w oknie logów</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="612"/>
         <source>messages</source>
-        <translation type="unfinished"></translation>
+        <translation>wiadomości</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="631"/>
         <source>Always Save New Log Messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Zawsze zapisuj nowe wiadomości</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="669"/>
         <source>Enable automatically saving all new log messages to a file</source>
-        <translation type="unfinished"></translation>
+        <translation>Włącz automatyczne zapisywanie wszystkich nowych wiadomości d pliku</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="672"/>
         <source>Automatically save new log messages to a file</source>
-        <translation type="unfinished"></translation>
+        <translation>Automatycznie zapisuj wiadomości do pliku</translation>
     </message>
 </context>
 <context>
@@ -1806,7 +1806,7 @@ fingerprint.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1390"/>
         <source>What Internet resources should Tor users be able to access from your Tor relay?</source>
-        <translation type="unfinished"></translation>
+        <translation>Do jakich zasobów Internetu będą mieli dostęp użytkownicy Tor&apos;a korzystający z Twojego serwera?</translation>
     </message>
 </context>
 <context>
@@ -1954,7 +1954,11 @@ Ten proces zostanie teraz zakończony.</translation>
 This Vidalia process will now exit. 
 
 (If there really is not another Vidalia process running, you can delete %1 before starting Vidalia again.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Inna instancja Vidalii jest już uruchomiona.
+
+Ta instancja zakończy swoje działanie.
+
+(Jeśli jesteś pewien, że Vidalia nie jest uruchomiona, możesz usunąć %1 zanim uruchomisz ją ponownie.)</translation>
     </message>
 </context>
 </TS>
