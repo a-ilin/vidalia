@@ -1,9 +1,7 @@
 Things to complete for 0.1.0:
   * When creating the Tor service on Windows, we either should be creating a
     separate user to run the service as (instead of running it as Local
-    System), or we should write a patch for Tor to do it (Ticket #16).
-  * Our GeoIP cache should recognize IP addresses on the same subnet.
-    (Ticket #154)
+    System), or we should write a patch for Tor to do it (Ticket #174).
   * There is a Flyspray ticket on Tor's bugtracker about not being able to
     config changes when an alternate torrc is specified. Need to be verified
     and/or fixed. (http://bugs.noreply.org/flyspray/?do=details&id=319)
@@ -11,9 +9,15 @@ Things to complete for 0.1.0:
     to, such as "hey, you're a server now!"
   * Actually do something useful with the AUTHENTICATE command, rather than
     simply sending an empty one.
+  * Our GeoIP cache should recognize IP addresses on the same subnet.
+    (Ticket #154)
   * GeoIP requests should be compressed and then encrypted so the exit node 
     does not know what is being requested and cannot muck with the requests
     or responses.
+  * Add a checkbox for disabling the alpha-blended integrals on the bandwidth
+    graph; the extra cpu usage makes some people sad.
+  * Add a button to delete the existing pidfile and start anyway when we think 
+    there is already another Vidalia running.
 
 
 Features planned for 0.1.x:
@@ -47,9 +51,6 @@ Miscellaneous Tasks:
     cut this back a bit.
   * Get some help from the Sasha and the CMU folks with doing a real user study and 
     getting help making our window layouts and text better.
-  * Find something to replace Trac. Perhaps Bugzilla+Mediawiki or MoinMoin.
-    Alternatively, it seems Trac 0.10 supports things like spam filtering and
-    user accounts via plugins. Perhaps we should look into these.
 
 
 Notes from Roger:
