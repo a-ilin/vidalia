@@ -13,7 +13,7 @@
     <message>
         <location filename="../gui/about/aboutdialog.ui" line="290"/>
         <source>About Vidalia</source>
-        <translation>关于Vidalia</translation>
+        <translation>关于 Vidalia</translation>
     </message>
     <message>
         <location filename="../gui/about/aboutdialog.ui" line="344"/>
@@ -33,17 +33,17 @@
     <message>
         <location filename="../gui/about/aboutdialog.ui" line="443"/>
         <source>Qt Version</source>
-        <translation>Qt版本</translation>
+        <translation>Qt 版本</translation>
     </message>
     <message>
         <location filename="../gui/about/aboutdialog.ui" line="528"/>
         <source>Tor Version</source>
-        <translation>Tor版本</translation>
+        <translation>Tor 版本</translation>
     </message>
     <message>
         <location filename="../gui/about/aboutdialog.ui" line="359"/>
         <source>Vidalia Version</source>
-        <translation>Vidalia版本</translation>
+        <translation>Vidalia 版本</translation>
     </message>
     <message>
         <location filename="../gui/about/aboutdialog.cpp" line="79"/>
@@ -53,7 +53,7 @@
     <message>
         <location filename="../gui/about/aboutdialog.cpp" line="75"/>
         <source>&lt;Unavailable&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;不可用&gt;</translation>
     </message>
 </context>
 <context>
@@ -71,12 +71,12 @@
     <message>
         <location filename="../gui/config/advancedpage.ui" line="390"/>
         <source>Start Tor with the specified configuration file (torrc)</source>
-        <translation>指定Tor启动时的配置文件(torrc)</translation>
+        <translation>指定 Tor 启动时的配置文件(torrc)</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="409"/>
         <source>Select path to Tor configuration file</source>
-        <translation>选择Tor配置文件的路径</translation>
+        <translation>选择 Tor 配置文件的路径</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="412"/>
@@ -96,7 +96,7 @@
     <message>
         <location filename="../gui/config/advancedpage.ui" line="467"/>
         <source>Vidalia will run with this User&apos;s permissions</source>
-        <translation>Vidalia将根据用户的权限运行</translation>
+        <translation>Vidalia 将根据此用户的权限运行</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="487"/>
@@ -106,79 +106,81 @@
     <message>
         <location filename="../gui/config/advancedpage.ui" line="494"/>
         <source>Vidalia will run with this Group&apos;s permissions</source>
-        <translation>Vidalia将根据用户的权限运行</translation>
+        <translation>Vidalia 将根据该组的权限运行</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="107"/>
         <source>Select Tor Configuration File</source>
-        <translation>选择Tor的配置文件</translation>
+        <translation>选择 Tor 的配置文件</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="120"/>
         <source>File Not Found</source>
-        <translation type="unfinished"></translation>
+        <translation>文件未找到</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="122"/>
         <source>%1 does not exist. Would you like to create it?</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 不存在。你希望现在创建吗？</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="133"/>
         <source>Failed to Create File</source>
-        <translation type="unfinished"></translation>
+        <translation>创建文件失败</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="134"/>
         <source>Unable to create %1 [%2]</source>
-        <translation type="unfinished"></translation>
+        <translation>无法创建 %1 [%2]</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="515"/>
         <source>Service</source>
-        <translation type="unfinished"></translation>
+        <translation>服务</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="530"/>
         <source>Enable this if you wish to run Tor as a Windows service</source>
-        <translation type="unfinished"></translation>
+        <translation>如果你希望 Tor 作为 Windows 的一个服务运行，激活此选项</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="533"/>
         <source>Run Tor in the background as a Windows service</source>
-        <translation type="unfinished"></translation>
+        <translation>在后台作为 Windows 的一个服务运行 Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="157"/>
         <source>Unable to remove Tor Service</source>
-        <translation type="unfinished"></translation>
+        <translation>无法取消 Tor 服务</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="168"/>
         <source>Unable to install Tor Service</source>
-        <translation type="unfinished"></translation>
+        <translation>无法安装 Tor 服务</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="169"/>
         <source>Vidalia was unable to install the Tor service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia 无法安装 Tor 服务。</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="159"/>
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia 无法取消 Tor 服务。
+
+你需要手动取消之。</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="369"/>
         <source>Tor Configuration File</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor 配置文件</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="338"/>
         <source>Port that Vidalia uses to communicate with Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia 用来与 Tor 通信的端口</translation>
     </message>
 </context>
 <context>
@@ -191,12 +193,12 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/config/appearancepage.ui" line="322"/>
         <source>Choose the language used in Vidalia</source>
-        <translation>选择Vidalia使用的语言</translation>
+        <translation>选择 Vidalia 使用的语言</translation>
     </message>
     <message>
         <location filename="../gui/config/appearancepage.ui" line="354"/>
         <source>Changes to language will only take effect after restarting Vidalia!</source>
-        <translation>改变语言后Vidalia重启后才能生效！</translation>
+        <translation>Vidalia 重启后语言的改变才能生效！</translation>
     </message>
     <message>
         <location filename="../gui/config/appearancepage.ui" line="370"/>
@@ -206,7 +208,7 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/config/appearancepage.ui" line="404"/>
         <source>Choose Vidalia&apos;s interface style</source>
-        <translation>选择Vidalia的界面风格</translation>
+        <translation>选择 Vidalia 的界面风格</translation>
     </message>
 </context>
 <context>
@@ -214,7 +216,7 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="289"/>
         <source>Tor Bandwidth Usage</source>
-        <translation>Tor带宽利用</translation>
+        <translation>Tor 带宽使用</translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="313"/>
@@ -264,7 +266,7 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="554"/>
         <source>% Opaque</source>
-        <translation>%不透明</translation>
+        <translation>% 不透明</translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/bwgraph.cpp" line="220"/>
@@ -274,7 +276,7 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="474"/>
         <source>Always On Top</source>
-        <translation type="unfinished"></translation>
+        <translation>总在前端</translation>
     </message>
 </context>
 <context>
@@ -282,32 +284,32 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../control/circuit.cpp" line="109"/>
         <source>New</source>
-        <translation type="unfinished"></translation>
+        <translation>新建</translation>
     </message>
     <message>
         <location filename="../control/circuit.cpp" line="110"/>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>开放</translation>
     </message>
     <message>
         <location filename="../control/circuit.cpp" line="111"/>
         <source>Building</source>
-        <translation type="unfinished"></translation>
+        <translation>建立中</translation>
     </message>
     <message>
         <location filename="../control/circuit.cpp" line="112"/>
         <source>Failed</source>
-        <translation type="unfinished"></translation>
+        <translation>失败</translation>
     </message>
     <message>
         <location filename="../control/circuit.cpp" line="113"/>
         <source>Closed</source>
-        <translation type="unfinished"></translation>
+        <translation>关闭</translation>
     </message>
     <message>
         <location filename="../control/circuit.cpp" line="114"/>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation未知></translation>
     </message>
 </context>
 <context>
@@ -315,7 +317,7 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/network/circuititem.cpp" line="49"/>
         <source>&lt;Path Empty&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;路径空缺&gt;</translation>
     </message>
 </context>
 <context>
@@ -323,22 +325,22 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="46"/>
         <source>Connection</source>
-        <translation type="unfinished"></translation>
+        <translation>连接</translation>
     </message>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="46"/>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation>状态</translation>
     </message>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="54"/>
         <source>Close Circuit</source>
-        <translation type="unfinished"></translation>
+        <translation>关闭连接</translation>
     </message>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="58"/>
         <source>Close Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>关闭串流</translation>
     </message>
 </context>
 <context>
@@ -386,7 +388,7 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/config/configdialog.ui" line="289"/>
         <source>Settings</source>
-        <translation type="unfinished">设置</translation>
+        <translation>设置</translation>
     </message>
 </context>
 <context>
@@ -394,12 +396,12 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../control/controlconnection.cpp" line="285"/>
         <source>Control socket is not connected.</source>
-        <translation type="unfinished"></translation>
+        <translation>控制套接字没有连接。</translation>
     </message>
     <message>
         <location filename="../control/controlconnection.cpp" line="232"/>
         <source>Control socket is not connected</source>
-        <translation type="unfinished"></translation>
+        <translation>控制套接字没有连接</translation>
     </message>
 </context>
 <context>
@@ -407,23 +409,24 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../control/controlsocket.cpp" line="61"/>
         <source>Error connecting to %1:%2 [%3]</source>
-        <translation>连接到%1:%2 [%3]时出错</translation>
+        <translation>连接到 %1:%2 时发生了错误 [%3]</translation>
     </message>
     <message>
         <location filename="../control/controlsocket.cpp" line="74"/>
         <source>Vidalia only supports Version 1 of Tor&apos;s Control Protocol (Version %1 detected).
 Upgrade to a newer version of Tor.</source>
-        <translation>Vidalia只支持版本1的Tor控制协议(已检测出版本%1)，请升级到新版Tor</translation>
+        <translation>Vidalia 仅支持版本 1 的 Tor 控制协议 (检测到版本 %1)。
+请更新 Tor 的版本。</translation>
     </message>
     <message>
         <location filename="../control/controlsocket.cpp" line="89"/>
         <source>Error disconnecting socket. [%1]</source>
-        <translation>与套接字断开时出错，[%1]</translation>
+        <translation>与套接字断开时出错。[%1]</translation>
     </message>
     <message>
         <location filename="../control/controlsocket.cpp" line="145"/>
         <source>Error sending control command. [%1]</source>
-        <translation>发送控制命令时出错，[%1]</translation>
+        <translation>发送控制命令时出错。[%1]</translation>
     </message>
     <message>
         <location filename="../control/controlsocket.cpp" line="182"/>
@@ -433,12 +436,12 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../control/controlsocket.cpp" line="220"/>
         <source>Invalid control reply. [%1]</source>
-        <translation>不规范的控制回复，[%1]</translation>
+        <translation>无效的控制回复。[%1]</translation>
     </message>
     <message>
         <location filename="../control/controlsocket.cpp" line="136"/>
         <source>Control socket is not connected.</source>
-        <translation type="unfinished"></translation>
+        <translation>控制套接字没有连接。</translation>
     </message>
 </context>
 <context>
@@ -446,12 +449,12 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/config/generalpage.ui" line="334"/>
         <source>Path to Tor&apos;s executable</source>
-        <translation>Tor可执行程序的路径</translation>
+        <translation>Tor 可执行程序的路径</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.ui" line="353"/>
         <source>Select path to Tor executable</source>
-        <translation>选择Tor可执行程序的路径</translation>
+        <translation>选择 Tor 可执行程序的路径</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.ui" line="356"/>
@@ -466,37 +469,37 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/config/generalpage.ui" line="390"/>
         <source>Select to start Vidalia on system boot</source>
-        <translation>选择系统启动时Vidalia就运行</translation>
+        <translation>选择系统启动时 Vidalia 就运行</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.ui" line="393"/>
         <source>Run Vidalia on system startup</source>
-        <translation>系统启动时Vidalia就运行</translation>
+        <translation>系统启动时 Vidalia 就运行</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.ui" line="406"/>
         <source>Set to start Tor when you launch Vidalia</source>
-        <translation>设为运行Vidalia时启动Tor</translation>
+        <translation>设为启动 Vidalia 时运行 Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.ui" line="409"/>
         <source>Start Tor when Vidalia starts</source>
-        <translation>运行Vidalia时启动Tor</translation>
+        <translation>启动 Vidalia 时启动 Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.cpp" line="72"/>
         <source>Select Path to Tor</source>
-        <translation>选择Tor的路径</translation>
+        <translation>选择 Tor 的路径</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.ui" line="307"/>
         <source>Tor Executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor 程序</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.cpp" line="63"/>
         <source>Executables (*.exe)</source>
-        <translation type="unfinished"></translation>
+        <translation>程序 (*.exe)</translation>
     </message>
 </context>
 <context>
@@ -537,7 +540,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="303"/>
         <source>Vidalia Help</source>
-        <translation>Vidalia帮助</translation>
+        <translation>Vidalia 帮助</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="449"/>
@@ -582,7 +585,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="762"/>
         <source>Move to previous page (Backspace)</source>
-        <translation>移动到前一页(Backspace)</translation>
+        <translation>移动到前一页 (Backspace)</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="770"/>
@@ -597,7 +600,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="781"/>
         <source>Move to next page (Shift+Backspace)</source>
-        <translation>移动到下一页(Shift+Backspace)</translation>
+        <translation>移动到下一页 (Shift+Backspace)</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="789"/>
@@ -607,12 +610,12 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="797"/>
         <source>Home</source>
-        <translation>首页</translation>
+        <translation>主页</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="800"/>
         <source>Move to the Home page (Ctrl+H)</source>
-        <translation>移动到首页 (Ctrl+H)</translation>
+        <translation>移动主首页 (Ctrl+H)</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="808"/>
@@ -627,7 +630,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="828"/>
         <source>Search for a word or phrase on current page (Ctrl+F)</source>
-        <translation>在当前页查找词语 (Ctrl+F)</translation>
+        <translation>在当前页查找 (Ctrl+F)</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="836"/>
@@ -642,7 +645,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="847"/>
         <source>Close Vidalia Help</source>
-        <translation>关闭Vidalia的帮助</translation>
+        <translation>关闭 Vidalia 帮助</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="855"/>
@@ -687,12 +690,12 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/help/browser/helpbrowser.cpp" line="133"/>
         <source>Supplied XML file is not a valid Contents document.</source>
-        <translation>提供的XML文件的内容不规范</translation>
+        <translation>提供的 XML 文件的内容不规范</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.cpp" line="421"/>
         <source>Found %1 results</source>
-        <translation>查找到%1个结果</translation>
+        <translation>找到 %1 个结果</translation>
     </message>
 </context>
 <context>
@@ -708,32 +711,32 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../control/logevent.cpp" line="68"/>
         <source>Debug</source>
-        <translation type="unfinished">Debug</translation>
+        <translation>调试</translation>
     </message>
     <message>
         <location filename="../control/logevent.cpp" line="69"/>
         <source>Info</source>
-        <translation type="unfinished">信息</translation>
+        <translation>信息</translation>
     </message>
     <message>
         <location filename="../control/logevent.cpp" line="70"/>
         <source>Notice</source>
-        <translation type="unfinished">注意</translation>
+        <translation>注意</translation>
     </message>
     <message>
         <location filename="../control/logevent.cpp" line="71"/>
         <source>Warning</source>
-        <translation type="unfinished">警告</translation>
+        <translation>警告</translation>
     </message>
     <message>
         <location filename="../control/logevent.cpp" line="72"/>
         <source>Error</source>
-        <translation type="unfinished">出错</translation>
+        <translation>错误</translation>
     </message>
     <message>
         <location filename="../control/logevent.cpp" line="73"/>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>未知</translation>
     </message>
 </context>
 <context>
@@ -741,12 +744,12 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/log/logtreewidget.cpp" line="40"/>
         <source>Messages Shown: </source>
-        <translation type="unfinished">显示的消息：</translation>
+        <translation>显示的消息：</translation>
     </message>
     <message>
         <location filename="../gui/log/logtreewidget.cpp" line="230"/>
         <source>Messages Shown: %1</source>
-        <translation type="unfinished">显示的消息：%1</translation>
+        <translation>显示的消息：%1</translation>
     </message>
 </context>
 <context>
@@ -754,7 +757,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/mainwindow.cpp" line="239"/>
         <source>Tor is Stopped</source>
-        <translation type="unfinished">Tor已停止</translation>
+        <translation>Tor 已停止</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="194"/>
@@ -834,47 +837,47 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/mainwindow.cpp" line="318"/>
         <source>Vidalia Help</source>
-        <translation>Vidalia帮助</translation>
+        <translation>Vidalia 帮助</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="365"/>
         <source>Error Starting Tor</source>
-        <translation>启动Tor时出错</translation>
+        <translation>启动 Tor 时出错</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="409"/>
         <source>Error Connecting to Tor</source>
-        <translation>连接到Tor时出错</translation>
+        <translation>连接 Tor 时出错</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="474"/>
         <source>Error Stopping Tor</source>
-        <translation>停止Tor时出错</translation>
+        <translation>停止 Tor 时出错</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="495"/>
         <source>Tor is stopped</source>
-        <translation type="unfinished">Tor已停止</translation>
+        <translation>Tor 已停止</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="507"/>
         <source>Tor Exited</source>
-        <translation>Tor已退出</translation>
+        <translation>Tor 已退出</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="475"/>
         <source>Vidalia was unable to stop Tor.</source>
-        <translation>Vidalia无法停止Tor。</translation>
+        <translation>Vidalia 无法停止 Tor。</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="394"/>
         <source>Tor is starting</source>
-        <translation type="unfinished">Tor正在启动</translation>
+        <translation>Tor 正在启动</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="529"/>
         <source>Tor is running</source>
-        <translation type="unfinished">Tor正在运行</translation>
+        <translation>Tor 正在运行</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="435"/>
@@ -884,71 +887,75 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/mainwindow.cpp" line="471"/>
         <source>Tor is stopping</source>
-        <translation type="unfinished">Tor正在停止</translation>
+        <translation>Tor 正在停止</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="289"/>
         <source>Ctrl+N</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+N</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="537"/>
         <source>Error Applying Server Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>应用服务器设置时出错</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="538"/>
         <source>Vidalia was unable to apply your server&apos;s settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia 无法应用你的服务器设置。</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="440"/>
         <source>You are currently running a Tor server. Terminating your server will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new server?</source>
-        <translation type="unfinished"></translation>
+        <translation>你正在运行 Tor 服务器。终止服务器将影响客户端与你之间存在的连接。
+
+你愿意缓慢地关闭以留时间给客户端寻找新的服务器吗？</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="510"/>
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia 检测到 Tor 异常退出。
+
+请通过消息日志检查 Tor 退出前发生了什么。</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="368"/>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia 无法启动 Tor。请检查你的设置，确保 Tor 程序的名称和位置无误。</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="213"/>
         <source>Network Map</source>
-        <translation type="unfinished"></translation>
+        <translation>网络地图</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="217"/>
         <source>Settings</source>
-        <translation type="unfinished">设置</translation>
+        <translation>设置</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="571"/>
         <source>New Identity</source>
-        <translation type="unfinished"></translation>
+        <translation>新建身份</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="291"/>
         <source>Ctrl+I</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+I</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="574"/>
         <source>All subsequent connections will appear to be different than your old connections.</source>
-        <translation type="unfinished"></translation>
+        <translation>以后所有连接将不同于先前的连接。</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="587"/>
         <source>Failed to Create New Identity</source>
-        <translation type="unfinished"></translation>
+        <translation>新建身份失败</translation>
     </message>
 </context>
 <context>
@@ -1006,7 +1013,7 @@ Please check the message log for indicators about what happened to Tor before it
     <message>
         <location filename="../gui/log/messagelog.ui" line="487"/>
         <source>Error</source>
-        <translation>出错</translation>
+        <translation>错误</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="503"/>
@@ -1026,7 +1033,7 @@ Please check the message log for indicators about what happened to Tor before it
     <message>
         <location filename="../gui/log/messagelog.ui" line="551"/>
         <source>Debug</source>
-        <translation>Debug</translation>
+        <translation>调试</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="727"/>
@@ -1046,7 +1053,7 @@ Please check the message log for indicators about what happened to Tor before it
     <message>
         <location filename="../gui/log/messagelog.ui" line="746"/>
         <source>Set maximum number of messages to display</source>
-        <translation>将显示设置未最大消息数</translation>
+        <translation>设置显示的最多消息个数</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="762"/>
@@ -1136,7 +1143,7 @@ Please check the message log for indicators about what happened to Tor before it
     <message>
         <location filename="../gui/log/messagelog.ui" line="926"/>
         <source>Find all messages containing the search text (Ctrl+F)</source>
-        <translation>从所有消息中查找文字 (Ctrl+F)</translation>
+        <translation>在所有消息中查找 (Ctrl+F)</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="934"/>
@@ -1147,13 +1154,13 @@ Please check the message log for indicators about what happened to Tor before it
         <location filename="../gui/log/messagelog.cpp" line="148"/>
         <source>Messages that appear when something has 
 gone very wrong and Tor cannot proceed.</source>
-        <translation>发生严重错误导致Tor无法继续而显示的消息</translation>
+        <translation>发生严重错误导致 Tor 无法继续而显示的消息。</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="150"/>
         <source>Messages that only appear when 
 something has gone wrong with Tor.</source>
-        <translation>Tor出错时才会显示的消息。</translation>
+        <translation>Tor 出错时才会显示的消息。</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="154"/>
@@ -1161,20 +1168,19 @@ something has gone wrong with Tor.</source>
 during normal Tor operation and are 
 not considered errors, but you may 
 care about.</source>
-        <translation>正常Tor操作过程中较少出现的消息，
-<byte value="x9"/><byte value="x9"/>虽然不是出错消息，但您可能要有所注意。</translation>
+        <translation>Tor 正常操作过程中较少出现的消息，虽然不是出错消息，但您可能要有所注意。</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="156"/>
         <source>Messages that appear frequently 
 during normal Tor operation.</source>
-        <translation>正常Tor操作过程中频繁出现的消息</translation>
+        <translation>Tor 正常操作过程中频繁出现的消息。</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="158"/>
         <source>Hyper-verbose messages primarily of 
 interest to Tor developers.</source>
-        <translation>Tor开发员感兴趣的超级冗长消息</translation>
+        <translation>Tor 开发员感兴趣的超级冗长消息。</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="203"/>
@@ -1219,7 +1225,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="384"/>
         <source>Search found 0 matches.</source>
-        <translation>搜索到0个匹配。</translation>
+        <translation>找到 0 个匹配。</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="863"/>
@@ -1249,71 +1255,71 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="204"/>
         <source>Vidalia was unable to register for Tor&apos;s log events.</source>
-        <translation>Vidalia无法注册Tor的日志事件。</translation>
+        <translation>Vidalia 无法注册 Tor 的日志事件。</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="324"/>
         <source>Cannot write file %1
 
 %2.</source>
-        <translation>无法写入文件%1
-<byte value="x9"/><byte value="x9"/>
+        <translation>无法写入文件 %1
+
 %2。</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="220"/>
         <source>Vidalia was unable to open the specified log file.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia 无法打开日志文件。</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="314"/>
         <source>Text Files (*.txt)</source>
-        <translation type="unfinished"></translation>
+        <translation>文本 (*.txt)</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="893"/>
         <source>F1</source>
-        <translation type="unfinished"></translation>
+        <translation>F1</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="241"/>
         <source>Log Filename Required</source>
-        <translation type="unfinished"></translation>
+        <translation>需要日志文件名</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="243"/>
         <source>You must enter a filename to be able to save log messages to a file.</source>
-        <translation type="unfinished"></translation>
+        <translation>你必须输入一个文件名以保存日志。</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="567"/>
         <source>Message Log History</source>
-        <translation type="unfinished"></translation>
+        <translation>消息日志历史</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="588"/>
         <source>Number of messages to display in the message log window</source>
-        <translation type="unfinished"></translation>
+        <translation>消息日志窗口显示的消息数量</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="612"/>
         <source>messages</source>
-        <translation type="unfinished"></translation>
+        <translation>消息</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="631"/>
         <source>Always Save New Log Messages</source>
-        <translation type="unfinished"></translation>
+        <translation>总是保存新消息日志</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="669"/>
         <source>Enable automatically saving all new log messages to a file</source>
-        <translation type="unfinished"></translation>
+        <translation>允许自动把所有新的消息日志保存到一个文件</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="672"/>
         <source>Automatically save new log messages to a file</source>
-        <translation type="unfinished"></translation>
+        <translation>自动保存新消息日志到一个文件</translation>
     </message>
 </context>
 <context>
@@ -1321,102 +1327,102 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/netviewer.ui" line="297"/>
         <source>View Tor Network</source>
-        <translation type="unfinished"></translation>
+        <translation>查看 Tor 网络</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="515"/>
         <source>Refresh</source>
-        <translation type="unfinished"></translation>
+        <translation>刷新</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="537"/>
         <source>Help</source>
-        <translation type="unfinished">帮助</translation>
+        <translation>帮助</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="559"/>
         <source>Close</source>
-        <translation type="unfinished">关闭</translation>
+        <translation>关闭</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="581"/>
         <source>Zoom In</source>
-        <translation type="unfinished"></translation>
+        <translation>放大</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="603"/>
         <source>Zoom Out</source>
-        <translation type="unfinished"></translation>
+        <translation>缩小</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="521"/>
         <source>Refresh the list of routers and connections.</source>
-        <translation type="unfinished"></translation>
+        <translation>刷新路由器和连接的列表。</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="540"/>
         <source>Show network map help.</source>
-        <translation type="unfinished"></translation>
+        <translation>显示网络地图的帮助。</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="543"/>
         <source>Show the network map help.</source>
-        <translation type="unfinished"></translation>
+        <translation>显示网络地图的帮助。</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="565"/>
         <source>Close the network map.</source>
-        <translation type="unfinished"></translation>
+        <translation>关闭网络地图。</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="587"/>
         <source>Zoom in on the network map.</source>
-        <translation type="unfinished"></translation>
+        <translation>放大网络地图。</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="609"/>
         <source>Zoom out on the network map.</source>
-        <translation type="unfinished"></translation>
+        <translation>缩小网络地图。</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="625"/>
         <source>Zoom To Fit</source>
-        <translation type="unfinished"></translation>
+        <translation>最合适</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="631"/>
         <source>Zooms to fit all currently displayed circuits.</source>
-        <translation type="unfinished"></translation>
+        <translation>将网络地图缩放以适合显示当前所有连接。</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="529"/>
         <source>Ctrl+R</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+R</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="551"/>
         <source>F1</source>
-        <translation type="unfinished"></translation>
+        <translation>F1</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="573"/>
         <source>Esc</source>
-        <translation type="unfinished">Esc</translation>
+        <translation>Esc</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="595"/>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="617"/>
         <source>-</source>
-        <translation type="unfinished">-</translation>
+        <translation>-</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="639"/>
         <source>Ctrl+Z</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+Z</translation>
     </message>
 </context>
 <context>
@@ -1424,12 +1430,12 @@ interest to Tor developers.</source>
     <message>
         <location filename="../config/policy.cpp" line="178"/>
         <source>accept</source>
-        <translation type="unfinished">接受</translation>
+        <translation>接受</translation>
     </message>
     <message>
         <location filename="../config/policy.cpp" line="178"/>
         <source>reject</source>
-        <translation type="unfinished">拒绝</translation>
+        <translation>拒绝</translation>
     </message>
 </context>
 <context>
@@ -1437,17 +1443,17 @@ interest to Tor developers.</source>
     <message>
         <location filename="../control/routerdescriptor.cpp" line="87"/>
         <source>Online</source>
-        <translation type="unfinished"></translation>
+        <translation>在线</translation>
     </message>
     <message>
         <location filename="../control/routerdescriptor.cpp" line="89"/>
         <source>Hibernating</source>
-        <translation type="unfinished"></translation>
+        <translation>休眠</translation>
     </message>
     <message>
         <location filename="../control/routerdescriptor.cpp" line="91"/>
         <source>Offline</source>
-        <translation type="unfinished"></translation>
+        <translation>离线</translation>
     </message>
 </context>
 <context>
@@ -1455,32 +1461,32 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/routerdescriptorview.cpp" line="114"/>
         <source>IP Address:</source>
-        <translation type="unfinished">IP地址：</translation>
+        <translation>IP 地址：</translation>
     </message>
     <message>
         <location filename="../gui/network/routerdescriptorview.cpp" line="115"/>
         <source>Platform:</source>
-        <translation type="unfinished"></translation>
+        <translation>平台：</translation>
     </message>
     <message>
         <location filename="../gui/network/routerdescriptorview.cpp" line="119"/>
         <source>Bandwidth:</source>
-        <translation type="unfinished"></translation>
+        <translation>带宽：</translation>
     </message>
     <message>
         <location filename="../gui/network/routerdescriptorview.cpp" line="121"/>
         <source>Uptime:</source>
-        <translation type="unfinished"></translation>
+        <translation>运行时间：</translation>
     </message>
     <message>
         <location filename="../gui/network/routerdescriptorview.cpp" line="127"/>
         <source>Last Updated:</source>
-        <translation type="unfinished"></translation>
+        <translation>最后更新：</translation>
     </message>
     <message>
         <location filename="../gui/network/routerdescriptorview.cpp" line="110"/>
         <source>Location:</source>
-        <translation type="unfinished"></translation>
+        <translation>地点：</translation>
     </message>
 </context>
 <context>
@@ -1488,17 +1494,17 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/routerlistitem.cpp" line="87"/>
         <source>%1 KB/s</source>
-        <translation type="unfinished">%1 KB/s</translation>
+        <translation>%1 KB/s</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistitem.cpp" line="71"/>
         <source>Offline</source>
-        <translation type="unfinished"></translation>
+        <translation>离线</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistitem.cpp" line="75"/>
         <source>Hibernating</source>
-        <translation type="unfinished"></translation>
+        <translation>休眠</translation>
     </message>
 </context>
 <context>
@@ -1506,22 +1512,22 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="40"/>
         <source>Status</source>
-        <translation type="unfinished"></translation>
+        <translation>状态</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="40"/>
         <source>Server</source>
-        <translation type="unfinished">服务器</translation>
+        <translation>服务器</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="215"/>
         <source>%1 servers total</source>
-        <translation type="unfinished"></translation>
+        <translation>总共 %1 服务器</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="51"/>
         <source>Zoom to Server</source>
-        <translation type="unfinished"></translation>
+        <translation>缩放到服务器</translation>
     </message>
 </context>
 <context>
@@ -1529,12 +1535,12 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="502"/>
         <source>Check to run as a Tor network server</source>
-        <translation>若作为Tor网络中的服务器请打勾</translation>
+        <translation>选中作为 Tor 网络中的服务器运行</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="505"/>
         <source>Relay traffic for the Tor network</source>
-        <translation>为Tor网络中继传输</translation>
+        <translation>为 Tor 网络贡献带宽</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="716"/>
@@ -1554,7 +1560,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="821"/>
         <source>Name of your server</source>
-        <translation>您的服务器名</translation>
+        <translation>服务器的名字</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="684"/>
@@ -1569,7 +1575,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="674"/>
         <source>Port on which users and other servers can communicate with your server</source>
-        <translation>用户与其他服务器与您服务器通信的端口</translation>
+        <translation>用户和其他服务器与你的服务器通信的端口</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="565"/>
@@ -1579,12 +1585,12 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="781"/>
         <source>Domain name or IP address of your server</source>
-        <translation>您的域名或者IP地址</translation>
+        <translation>服务器的域名或者 IP 地址</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="837"/>
         <source>Enable to mirror the server directory</source>
-        <translation>启用服务器目录的镜像</translation>
+        <translation>选中镜像服务器目录</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="840"/>
@@ -1594,7 +1600,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="590"/>
         <source>Attempts to determine the correct address for your server</source>
-        <translation>尝试确定您的服务器的地址</translation>
+        <translation>尝试确定服务器的正确地址</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="593"/>
@@ -1604,103 +1610,104 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1191"/>
         <source>Exit Policies</source>
-        <translation>退出策略</translation>
+        <translation>出口策略</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1317"/>
         <source>Show help topic on exit policies</source>
-        <translation>显示关于退出策略的帮助主题</translation>
+        <translation>显示关于出口策略的帮助主题</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="148"/>
         <source>You must specify at least a server nickname and port.</source>
-        <translation>你必须至少指定一个服务器昵称和端口</translation>
+        <translation>你必须至少指定一个服务器昵称和端口。</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="232"/>
         <source>Error</source>
-        <translation>出错</translation>
+        <translation>错误</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="233"/>
         <source>Vidalia was unable to determine your public IP address.</source>
-        <translation>Vidalia无法确定您的公共IP地址。</translation>
+        <translation>Vidalia 无法确定你的公共 IP 地址。</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="250"/>
         <source>Vidalia was only able to find a private IP address for your server.
 
 Would you like to access an external service to determine your public IP address?</source>
-        <translation>Vidalia只能找到您服务器的一个私有IP地址。
-<byte value="x9"/><byte value="x9"/>
-您想通过外部服务来确定您的公共IP地址吗？</translation>
+        <translation>Vidalia 只能找到服务器的一个私有 IP 地址。
+
+你想通过外部服务来确定公共 IP 地址吗？</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="850"/>
         <source>When enabled, Vidalia will periodically update your IP address if necessary</source>
-        <translation type="unfinished"></translation>
+        <translation>选中后，如有必要，Vidalia 会定时更新你的 IP 地址</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="853"/>
         <source>Automatically Update</source>
-        <translation type="unfinished"></translation>
+        <translation>自动更新</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="806"/>
         <source>Email address at which you may be reached if there is a
 problem with your server. You might also include your PGP or GPG
 fingerprint.</source>
-        <translation type="unfinished">万一您服务器出现问题，可提供的Email联系方式</translation>
+        <translation>如果你的服务器出现问题，他人可以通过这个 Email 联系你。
+你还可以包含你的 PGP 或 GPG 指纹。</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1072"/>
         <source>Long-term average bandwidth limit</source>
-        <translation type="unfinished"></translation>
+        <translation>长期平均带宽限制</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1085"/>
         <source>Average Rate</source>
-        <translation type="unfinished"></translation>
+        <translation>平均速率</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1145"/>
         <source>KB/s</source>
-        <translation type="unfinished"></translation>
+        <translation>KB/s</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1132"/>
         <source>Peak bandwidth rate limit</source>
-        <translation type="unfinished"></translation>
+        <translation>最高带宽速率限制</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1152"/>
         <source>Maximum Rate</source>
-        <translation type="unfinished"></translation>
+        <translation>最高速率</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="989"/>
         <source>Show help topic on bandwidth rate limits</source>
-        <translation type="unfinished"></translation>
+        <translation>显示有关带宽速率限制的帮助主题</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="537"/>
         <source>Basic Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>基本设置</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="887"/>
         <source>Bandwidth Limits</source>
-        <translation type="unfinished"></translation>
+        <translation>带宽限制</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="922"/>
         <source>For Internet connections with fast download speed but slow upload, please list your upload speed here.</source>
-        <translation type="unfinished"></translation>
+        <translation>对于拥有高速下行速率和低速上行速率的 Internet 连接，请在此列出你的上行速率。</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="943"/>
         <source>Select the entry that most closely resembles your Internet connection</source>
-        <translation type="unfinished"></translation>
+        <translation>请选择和你的 Internet 连接最接近的一项</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="953"/>
@@ -1730,72 +1737,72 @@ fingerprint.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="978"/>
         <source>Custom</source>
-        <translation type="unfinished"></translation>
+        <translation>定制</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1229"/>
         <source>Ports 6660 - 6669 and 6697</source>
-        <translation type="unfinished"></translation>
+        <translation>端口 6660 - 6669 和 6697</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1232"/>
         <source>Internet Relay Chat (IRC)</source>
-        <translation type="unfinished"></translation>
+        <translation>在线聊天系统 (IRC)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1242"/>
         <source>Ports 110, 143, 993 and 995</source>
-        <translation type="unfinished"></translation>
+        <translation>端口 110, 143, 993 和 995</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1245"/>
         <source>Retrieve Mail (POP, IMAP)</source>
-        <translation type="unfinished"></translation>
+        <translation>接收邮件 (POP, IMAP)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1255"/>
         <source>Ports unspecified by other checkboxes</source>
-        <translation type="unfinished"></translation>
+        <translation>其他复选框未指定的端口</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1258"/>
         <source>Misc Other Services</source>
-        <translation type="unfinished"></translation>
+        <translation>其他服务</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1268"/>
         <source>Ports 706, 1863, 5050, 5190, 5222, 8300 and 8888</source>
-        <translation type="unfinished"></translation>
+        <translation>端口 706, 1863, 5050, 5190, 5222, 8300 和 8888</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1271"/>
         <source>Instant Messaging (IM)</source>
-        <translation type="unfinished"></translation>
+        <translation>即时通讯 (IM)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1281"/>
         <source>Port 443</source>
-        <translation type="unfinished"></translation>
+        <translation>端口 443</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1284"/>
         <source>Secure Websites (SSL)</source>
-        <translation type="unfinished"></translation>
+        <translation>安全的网站 (SSL)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1294"/>
         <source>Port 80</source>
-        <translation type="unfinished"></translation>
+        <translation>端口 80</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1297"/>
         <source>Websites</source>
-        <translation type="unfinished"></translation>
+        <translation>网站</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1390"/>
         <source>What Internet resources should Tor users be able to access from your Tor relay?</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor 用户可以从你的服务器连接哪些 Internet 资源？</translation>
     </message>
 </context>
 <context>
@@ -1803,42 +1810,42 @@ fingerprint.</source>
     <message>
         <location filename="../control/stream.cpp" line="110"/>
         <source>New</source>
-        <translation type="unfinished"></translation>
+        <translation>新建</translation>
     </message>
     <message>
         <location filename="../control/stream.cpp" line="112"/>
         <source>Resolving</source>
-        <translation type="unfinished"></translation>
+        <translation>解析</translation>
     </message>
     <message>
         <location filename="../control/stream.cpp" line="113"/>
         <source>Connecting</source>
-        <translation type="unfinished"></translation>
+        <translation>连接</translation>
     </message>
     <message>
         <location filename="../control/stream.cpp" line="114"/>
         <source>Open</source>
-        <translation type="unfinished"></translation>
+        <translation>开放</translation>
     </message>
     <message>
         <location filename="../control/stream.cpp" line="115"/>
         <source>Failed</source>
-        <translation type="unfinished"></translation>
+        <translation>失败</translation>
     </message>
     <message>
         <location filename="../control/stream.cpp" line="116"/>
         <source>Closed</source>
-        <translation type="unfinished"></translation>
+        <translation>关闭</translation>
     </message>
     <message>
         <location filename="../control/stream.cpp" line="118"/>
         <source>Unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>未知</translation>
     </message>
     <message>
         <location filename="../control/stream.cpp" line="117"/>
         <source>Retrying</source>
-        <translation type="unfinished"></translation>
+        <translation>重试</translation>
     </message>
 </context>
 <context>
@@ -1846,7 +1853,7 @@ fingerprint.</source>
     <message>
         <location filename="../control/torprocess.cpp" line="88"/>
         <source>Process %1 failed to stop. [%2]</source>
-        <translation>进程 %1无法停止，[%2]</translation>
+        <translation>进程 %1 无法停止。[%2]</translation>
     </message>
 </context>
 <context>
@@ -1854,17 +1861,17 @@ fingerprint.</source>
     <message>
         <location filename="../control/torservice.cpp" line="109"/>
         <source>Services not supported on this platform.</source>
-        <translation type="unfinished"></translation>
+        <translation>该平台不支持服务。</translation>
     </message>
     <message>
         <location filename="../control/torservice.cpp" line="134"/>
         <source>Unable to start Tor service.</source>
-        <translation type="unfinished"></translation>
+        <translation>无法启动 Tor 服务。</translation>
     </message>
     <message>
         <location filename="../control/torservice.cpp" line="113"/>
         <source>The Tor service is not installed.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor 服务没有安装。</translation>
     </message>
 </context>
 <context>
@@ -1872,42 +1879,42 @@ fingerprint.</source>
     <message>
         <location filename="../gui/common/vmessagebox.cpp" line="88"/>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../gui/common/vmessagebox.cpp" line="89"/>
         <source>Cancel</source>
-        <translation type="unfinished">取消</translation>
+        <translation>取消</translation>
     </message>
     <message>
         <location filename="../gui/common/vmessagebox.cpp" line="90"/>
         <source>Yes</source>
-        <translation type="unfinished"></translation>
+        <translation>是</translation>
     </message>
     <message>
         <location filename="../gui/common/vmessagebox.cpp" line="91"/>
         <source>No</source>
-        <translation type="unfinished"></translation>
+        <translation>否</translation>
     </message>
     <message>
         <location filename="../gui/common/vmessagebox.cpp" line="92"/>
         <source>Help</source>
-        <translation type="unfinished">帮助</translation>
+        <translation>帮助</translation>
     </message>
     <message>
         <location filename="../gui/common/vmessagebox.cpp" line="93"/>
         <source>Retry</source>
-        <translation type="unfinished">重试</translation>
+        <translation>重试</translation>
     </message>
     <message>
         <location filename="../gui/common/vmessagebox.cpp" line="94"/>
         <source>Show Log</source>
-        <translation type="unfinished">显示日志</translation>
+        <translation>显示日志</translation>
     </message>
     <message>
         <location filename="../gui/common/vmessagebox.cpp" line="95"/>
         <source>Show Settings</source>
-        <translation type="unfinished">显示设置</translation>
+        <translation>显示设置</translation>
     </message>
 </context>
 <context>
@@ -1925,14 +1932,16 @@ fingerprint.</source>
     <message>
         <location filename="../main.cpp" line="78"/>
         <source>Vidalia is already running</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia 已经运行</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="83"/>
         <source>Another Vidalia process is already running. 
 
 This Vidalia process will now exit.</source>
-        <translation type="unfinished"></translation>
+        <translation>另一个 Vidalia 进程已经运行。
+
+该 Vidalia 进程将退出。</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="90"/>
@@ -1941,7 +1950,11 @@ This Vidalia process will now exit.</source>
 This Vidalia process will now exit. 
 
 (If there really is not another Vidalia process running, you can delete %1 before starting Vidalia again.)</source>
-        <translation type="unfinished"></translation>
+        <translation>另一个 Vidalia 进程已经运行。
+
+该 Vidalia 进程将退出。
+
+(如果确实没有另一个正在运行的 Vidalia 进程，在再次启动 Vidalia 前你可以删除 %1。)</translation>
     </message>
 </context>
 </TS>
