@@ -309,7 +309,7 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../control/circuit.cpp" line="114"/>
         <source>Unknown</source>
-        <translation未知></translation>
+        <translation>未知</translation>
     </message>
 </context>
 <context>
