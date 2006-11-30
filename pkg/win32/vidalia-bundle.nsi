@@ -102,6 +102,7 @@ XPStyle         on
 !insertmacro MUI_LANGUAGE "PortugueseBR"
 !insertmacro MUI_LANGUAGE "Russian"
 !insertmacro MUI_LANGUAGE "Spanish"
+!insertmacro MUI_LANGUAGE "Simplified Chinese"
 !include "vidalia_en.nsh"
 !include "vidalia_de.nsh"
 !include "vidalia_es.nsh"
@@ -111,6 +112,7 @@ XPStyle         on
 !include "vidalia_pl.nsh"
 !include "vidalia_pt-br.nsh"
 !include "vidalia_ru.nsh"
+!include "vidalia_zh-cn.nsh"
 
 ;--------------------------------
 ; Install types
