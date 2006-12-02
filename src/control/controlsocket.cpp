@@ -69,11 +69,17 @@ ControlSocket::connect(QHostAddress addr, quint16 port, QString *errmsg)
   blockSignals(false);
   if (version != Version1) {
     disconnect();
-    return err(errmsg, tr("Vidalia only supports Version 1 of Tor's Control Protocol "
-                          "(Version %1 detected).\n"
-                          "Upgrade to a newer version of Tor.").arg(version));
+    if (version == VersionUnknown) {
+      return err(errmsg, tr("Vidalia was unable to determine Tor's control "
+                            "protocol version. Verify that your control port number "
+                            "is set correctly and you are running a recent "
+                            "version of Tor."));
+    } else {
+      return err(errmsg, tr("Vidalia only supports Version 1 of Tor's control "
+                            "protocol (version %1 detected).\n"
+                            "Upgrade to a newer version of Tor.").arg(version));
+    }
   }
-
   /* Ok, now we're really connected */
   return true;
 }
