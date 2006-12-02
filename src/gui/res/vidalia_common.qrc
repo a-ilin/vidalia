@@ -88,6 +88,7 @@
         <file>flags/nb.png</file>
         <file>flags/nl.png</file>
         <file>flags/pl.png</file>
+        <file>flags/pt.png</file>
         <file>flags/ru.png</file>
         <file>flags/zh-cn.png</file>
     </qresource>

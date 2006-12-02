@@ -120,6 +120,16 @@
     <file>pl/troubleshooting.html</file>
     <file>pl/netview.html</file>
     <file>pl/links.html</file>
+    <!-- Portuguese -->
+    <file>pt/contents.xml</file>
+    <file>pt/index.html</file>
+    <file>pt/running.html</file>
+    <file>pt/log.html</file>
+    <file>pt/config.html</file>
+    <file>pt/server.html</file>
+    <file>pt/troubleshooting.html</file>
+    <file>pt/netview.html</file>
+    <file>pt/links.html</file>
     <!-- Russian -->
     <file>ru/contents.xml</file>
     <file>ru/index.html</file>
