@@ -117,7 +117,7 @@ ControlSocket::protocolVersion()
     return VersionUnknown;
   }
   while (bytesAvailable() < 4) {
-    if (!waitForReadyRead(-1)) {
+    if (!waitForReadyRead(CONN_TIMEOUT)) {
       return VersionUnknown;
     }
   }
