@@ -439,13 +439,14 @@ Vous devrez peut-être enlever manuellement le service Tor.</translation>
     <message>
         <location filename="../control/controlsocket.cpp" line="76"/>
         <source>Vidalia was unable to determine Tor&apos;s control protocol version. Verify that your control port number is set correctly and you are running a recent version of Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia n&apos;a pas pu déterminer la version du protocole de contrôle de Tor. Vérifiez que le numéro du port de contrôle est correctement configuré et que vous utilisez une version récente de Tor. </translation>
     </message>
     <message>
         <location filename="../control/controlsocket.cpp" line="80"/>
         <source>Vidalia only supports Version 1 of Tor&apos;s control protocol (version %1 detected).
 Upgrade to a newer version of Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia accepte uniquement la Version 1 du protocole de contrôle de Tor (version %1 détectée)
+Installez une version plus récente de Tor.</translation>
     </message>
 </context>
 <context>
@@ -521,22 +522,22 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/bwgraph/graphframe.cpp" line="271"/>
         <source>%1 KB</source>
-        <translation>%1 KB</translation>
+        <translation>%1 Ko</translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/graphframe.cpp" line="274"/>
         <source>%1 MB</source>
-        <translation>%1 MB</translation>
+        <translation>%1 Mo</translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/graphframe.cpp" line="277"/>
         <source>%1 GB</source>
-        <translation>%1 GB</translation>
+        <translation>%1 Go</translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/graphframe.cpp" line="298"/>
         <source>%1 KB/s</source>
-        <translation>%1 KB/s</translation>
+        <translation>%1 Ko/s</translation>
     </message>
 </context>
 <context>
@@ -1504,7 +1505,7 @@ les développeurs de Tor.</translation>
     <message>
         <location filename="../gui/network/routerlistitem.cpp" line="87"/>
         <source>%1 KB/s</source>
-        <translation>%1 KB/s</translation>
+        <translation>%1 Ko/s</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistitem.cpp" line="71"/>
@@ -1679,7 +1680,7 @@ votre fingerprint de PGP ou de GPG.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1145"/>
         <source>KB/s</source>
-        <translation>KB/s</translation>
+        <translation>Ko/s</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1132"/>
@@ -1724,27 +1725,27 @@ votre fingerprint de PGP ou de GPG.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="953"/>
         <source>Cable/DSL 256 Kbps</source>
-        <translation>Câble/ADSL 256 Kbps</translation>
+        <translation>Câble/ADSL 256 kbit/s</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="958"/>
         <source>Cable/DSL 512 Kbps</source>
-        <translation>Câble/ADSL 512 Kbps</translation>
+        <translation>Câble/ADSL 512 kbit/s</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="963"/>
         <source>Cable/DSL 768 Kbps</source>
-        <translation>Câble/ADSL 768 Kbps</translation>
+        <translation>Câble/ADSL 768 kbit/s</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="968"/>
         <source>T1/Cable/DSL 1.5 Mbps</source>
-        <translation>T1/Câble/ADSL 1.5 Mbps</translation>
+        <translation>T1/Câble/ADSL 1.5 Mbit/s</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="973"/>
         <source>&gt; 1.5 Mbps</source>
-        <translation>&gt; 1.5 Mbps</translation>
+        <translation>&gt; 1.5 Mbit/s</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="978"/>
