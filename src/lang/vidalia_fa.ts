@@ -1521,7 +1521,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="215"/>
         <source>%1 servers total</source>
-        <translation>درکل 1% سرویس دهنده</translation>
+        <translation>درکل %1 سرویس دهنده</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="51"/>
