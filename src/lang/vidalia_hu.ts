@@ -411,35 +411,39 @@ You may need to remove it manually.</source>
 kapcsolódás közben. [%3]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="74"/>
-        <source>Vidalia only supports Version 1 of Tor&apos;s Control Protocol (Version %1 detected).
-Upgrade to a newer version of Tor.</source>
-        <translation>A Vidalia csak a Tor Kontroll Protokol 1-es
-verzióját támogatja. (%1 verzió érzékelve) Frissíts újabb Tor verzióra.</translation>
-    </message>
-    <message>
-        <location filename="../control/controlsocket.cpp" line="89"/>
+        <location filename="../control/controlsocket.cpp" line="95"/>
         <source>Error disconnecting socket. [%1]</source>
         <translation>A kapcsolat bontása közben hiba lépett fel. [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="145"/>
+        <location filename="../control/controlsocket.cpp" line="151"/>
         <source>Error sending control command. [%1]</source>
         <translation>Hiba történt a kontroll parancs küldésekor. [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="182"/>
+        <location filename="../control/controlsocket.cpp" line="188"/>
         <source>Socket disconnected while attempting to read a line of data.</source>
         <translation>A kapcsolat megszûnt egy adatsor beolvasása közben.</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="220"/>
+        <location filename="../control/controlsocket.cpp" line="226"/>
         <source>Invalid control reply. [%1]</source>
         <translation>Érvénytelen kontroll válasz. [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="136"/>
+        <location filename="../control/controlsocket.cpp" line="142"/>
         <source>Control socket is not connected.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../control/controlsocket.cpp" line="76"/>
+        <source>Vidalia was unable to determine Tor&apos;s control protocol version. Verify that your control port number is set correctly and you are running a recent version of Tor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../control/controlsocket.cpp" line="80"/>
+        <source>Vidalia only supports Version 1 of Tor&apos;s control protocol (version %1 detected).
+Upgrade to a newer version of Tor.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

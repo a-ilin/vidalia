@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1">
 <context>
     <name></name>
@@ -46,12 +46,12 @@
         <translation>Vidalia نسخه</translation>
     </message>
     <message>
-        <location filename="../gui/about/aboutdialog.cpp" line="78"/>
+        <location filename="../gui/about/aboutdialog.cpp" line="79"/>
         <source>&lt;Not Running&gt;</source>
         <translation>&lt;درحال اجرا نمیباشد&gt;</translation>
     </message>
     <message>
-        <location filename="../gui/about/aboutdialog.cpp" line="74"/>
+        <location filename="../gui/about/aboutdialog.cpp" line="75"/>
         <source>&lt;Unavailable&gt;</source>
         <translation>&lt;دسترس ناپذیر&gt;</translation>
     </message>
@@ -62,11 +62,6 @@
         <location filename="../gui/config/advancedpage.ui" line="301"/>
         <source>Control Port</source>
         <translation>درگاه کنترل</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/advancedpage.ui" line="338"/>
-        <source>Port that Vidalia uses to communicate with Tor. </source>
-        <translation>بکار می برد Tor برای تماس با Vidalia درگاهی که</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="341"/>
@@ -179,6 +174,11 @@ You may need to remove it manually.</source>
         <location filename="../gui/config/advancedpage.ui" line="369"/>
         <source>Tor Configuration File</source>
         <translation>Tor پرونده پیکربندی</translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="338"/>
+        <source>Port that Vidalia uses to communicate with Tor.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -410,35 +410,40 @@ You may need to remove it manually.</source>
         <translation>[%3] %2:%1 خطا هنگام اتصال به</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="74"/>
-        <source>Vidalia only supports Version 1 of Tor&apos;s Control Protocol (Version %1 detected).
-Upgrade to a newer version of Tor.</source>
-        <translation>Vidalia تنها نسخه 1 پروتکل کنترل Tor را میپذیرد (نسخه 1% پیدا شد). ارتقا به یک نسخه جدیدتر Tor.</translation>
-    </message>
-    <message>
-        <location filename="../control/controlsocket.cpp" line="89"/>
+        <location filename="../control/controlsocket.cpp" line="95"/>
         <source>Error disconnecting socket. [%1]</source>
         <translation>[%1] .خطا هنگام بستن اتصال سوکت</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="145"/>
+        <location filename="../control/controlsocket.cpp" line="151"/>
         <source>Error sending control command. [%1]</source>
         <translation>[%1] .خطا هنگام فرستادن فرمان کنترل</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="182"/>
+        <location filename="../control/controlsocket.cpp" line="188"/>
         <source>Socket disconnected while attempting to read a line of data.</source>
         <translation>.سوکت هنگام خواندن یک ردیف از داده ها بسته شد</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="220"/>
+        <location filename="../control/controlsocket.cpp" line="226"/>
         <source>Invalid control reply. [%1]</source>
         <translation>[%1] .پاسخ فرمان نادرست میباشد</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="136"/>
+        <location filename="../control/controlsocket.cpp" line="142"/>
         <source>Control socket is not connected.</source>
         <translation>.سوکت کنترل متصل نمی باشد</translation>
+    </message>
+    <message>
+        <location filename="../control/controlsocket.cpp" line="76"/>
+        <source>Vidalia was unable to determine Tor&apos;s control protocol version. Verify that your control port number is set correctly and you are running a recent version of Tor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../control/controlsocket.cpp" line="80"/>
+        <source>Vidalia only supports Version 1 of Tor&apos;s control protocol (version %1 detected).
+Upgrade to a newer version of Tor.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -502,32 +507,32 @@ Upgrade to a newer version of Tor.</source>
 <context>
     <name>GraphFrame</name>
     <message>
-        <location filename="../gui/bwgraph/graphframe.cpp" line="263"/>
+        <location filename="../gui/bwgraph/graphframe.cpp" line="250"/>
         <source>Recv: </source>
         <translation>:دریافت</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/graphframe.cpp" line="272"/>
+        <location filename="../gui/bwgraph/graphframe.cpp" line="259"/>
         <source>Sent: </source>
         <translation>:ارسال</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/graphframe.cpp" line="284"/>
+        <location filename="../gui/bwgraph/graphframe.cpp" line="271"/>
         <source>%1 KB</source>
         <translation>%1 کیلوبایت</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/graphframe.cpp" line="287"/>
+        <location filename="../gui/bwgraph/graphframe.cpp" line="274"/>
         <source>%1 MB</source>
         <translation>%1 مگابایت</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/graphframe.cpp" line="290"/>
+        <location filename="../gui/bwgraph/graphframe.cpp" line="277"/>
         <source>%1 GB</source>
         <translation>%1 گیگا بایت</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/graphframe.cpp" line="311"/>
+        <location filename="../gui/bwgraph/graphframe.cpp" line="298"/>
         <source>%1 KB/s</source>
         <translation>%1 کیلوبایت در ثانیه</translation>
     </message>
@@ -752,201 +757,201 @@ Upgrade to a newer version of Tor.</source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="116"/>
+        <location filename="../gui/mainwindow.cpp" line="239"/>
         <source>Tor is Stopped</source>
         <translation>ایستاده است Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="188"/>
+        <location filename="../gui/mainwindow.cpp" line="194"/>
         <source>Start</source>
         <translation>آغاز</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="192"/>
+        <location filename="../gui/mainwindow.cpp" line="198"/>
         <source>Stop</source>
         <translation>ایست</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="215"/>
+        <location filename="../gui/mainwindow.cpp" line="221"/>
         <source>About</source>
         <translation>درباره</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="196"/>
+        <location filename="../gui/mainwindow.cpp" line="202"/>
         <source>Exit</source>
         <translation>بیرون رفتن</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="199"/>
+        <location filename="../gui/mainwindow.cpp" line="205"/>
         <source>Bandwidth Graph</source>
         <translation>گراف پهنای باند</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="203"/>
+        <location filename="../gui/mainwindow.cpp" line="209"/>
         <source>Message Log</source>
         <translation>ثبت کردن پیام</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="293"/>
+        <location filename="../gui/mainwindow.cpp" line="317"/>
         <source>Help</source>
         <translation>راهنما</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="261"/>
+        <location filename="../gui/mainwindow.cpp" line="285"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="262"/>
+        <location filename="../gui/mainwindow.cpp" line="286"/>
         <source>Ctrl+T</source>
         <translation>Ctrl+T</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="263"/>
+        <location filename="../gui/mainwindow.cpp" line="287"/>
         <source>Ctrl+B</source>
         <translation>Ctrl+B</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="264"/>
+        <location filename="../gui/mainwindow.cpp" line="288"/>
         <source>Ctrl+L</source>
         <translation>Ctrl+L</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="266"/>
+        <location filename="../gui/mainwindow.cpp" line="290"/>
         <source>Ctrl+?</source>
         <translation>Ctrl+?</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="278"/>
+        <location filename="../gui/mainwindow.cpp" line="302"/>
         <source>File</source>
         <translation>پرونده</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="281"/>
+        <location filename="../gui/mainwindow.cpp" line="305"/>
         <source>Tor</source>
         <translation>Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="287"/>
+        <location filename="../gui/mainwindow.cpp" line="311"/>
         <source>View</source>
         <translation>دید</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="294"/>
+        <location filename="../gui/mainwindow.cpp" line="318"/>
         <source>Vidalia Help</source>
         <translation>Vidalia راهنمای</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="327"/>
+        <location filename="../gui/mainwindow.cpp" line="365"/>
         <source>Error Starting Tor</source>
         <translation>Tor خطا در هنگام آغاز</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="371"/>
+        <location filename="../gui/mainwindow.cpp" line="409"/>
         <source>Error Connecting to Tor</source>
         <translation>Tor خطا در هنگام اتصال به</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="436"/>
+        <location filename="../gui/mainwindow.cpp" line="474"/>
         <source>Error Stopping Tor</source>
         <translation>Tor خطا در هنگام ایستاندن</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="457"/>
+        <location filename="../gui/mainwindow.cpp" line="495"/>
         <source>Tor is stopped</source>
         <translation>ایستاده است Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="469"/>
+        <location filename="../gui/mainwindow.cpp" line="507"/>
         <source>Tor Exited</source>
         <translation>بیرون شد Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="437"/>
+        <location filename="../gui/mainwindow.cpp" line="475"/>
         <source>Vidalia was unable to stop Tor.</source>
         <translation>.را بایستاند Tor نتوانست Vidalia</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="356"/>
+        <location filename="../gui/mainwindow.cpp" line="394"/>
         <source>Tor is starting</source>
         <translation>در حال راه افتادن می باشد Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="491"/>
+        <location filename="../gui/mainwindow.cpp" line="529"/>
         <source>Tor is running</source>
         <translation>در حال اجرا می باشد Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="397"/>
+        <location filename="../gui/mainwindow.cpp" line="435"/>
         <source>Server is Enabled</source>
         <translation>سرویس دهنده فعال می باشد</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="433"/>
+        <location filename="../gui/mainwindow.cpp" line="471"/>
         <source>Tor is stopping</source>
         <translation>در حال ایستادن می باشد Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="265"/>
+        <location filename="../gui/mainwindow.cpp" line="289"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="499"/>
+        <location filename="../gui/mainwindow.cpp" line="537"/>
         <source>Error Applying Server Settings</source>
         <translation>خطا در هنگام بکار بردن تنظیمات سرویس دهنده</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="500"/>
+        <location filename="../gui/mainwindow.cpp" line="538"/>
         <source>Vidalia was unable to apply your server&apos;s settings.</source>
         <translation>.نتوانست تنظیمات سرویس دهنده را بکار ببرد Vidalia</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="402"/>
+        <location filename="../gui/mainwindow.cpp" line="440"/>
         <source>You are currently running a Tor server. Terminating your server will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new server?</source>
         <translation>در حالت سرویس دهنده می باشد. ایستاندن سرویس دهنده شما مایه وقفه در اتصال کاربران دیگر خواهد شد. آیا میخواهید به گونه مناسب بایستید و به دیگر کاربران زمان پیدا کردن یک سرویس دهنده جدید را بدهید؟ Tor هم اکنون</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="472"/>
+        <location filename="../gui/mainwindow.cpp" line="510"/>
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
         <translation>.بررسی کنید Tor به گونه غیرمنتظره بیرون شد. خواهشمند است پرونده ثبت پیام را برای بازبینی رویدادهای پیش از بیرون رفتن Tor پی برد که Vidalia</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="330"/>
+        <location filename="../gui/mainwindow.cpp" line="368"/>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
         <translation>.بدرستی مشخص شده اند Tor را راه اندازی کند. تنظیماتتان را چک کنید و اطمینان پیدا کنید که نام و مسیر پرونده اجرایی Tor نتوانست Vidalia</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="207"/>
+        <location filename="../gui/mainwindow.cpp" line="213"/>
         <source>Network Map</source>
         <translation>نقشه شبکه</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="211"/>
+        <location filename="../gui/mainwindow.cpp" line="217"/>
         <source>Settings</source>
         <translation>پارامترها و تنظیمات</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="529"/>
+        <location filename="../gui/mainwindow.cpp" line="571"/>
         <source>New Identity</source>
         <translation>هویت تازه</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="267"/>
+        <location filename="../gui/mainwindow.cpp" line="291"/>
         <source>Ctrl+I</source>
         <translation>Ctrl+I</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="531"/>
+        <location filename="../gui/mainwindow.cpp" line="574"/>
         <source>All subsequent connections will appear to be different than your old connections.</source>
         <translation>.همه اتصال های پسین بنظر متفاوت خواهند آمد نسبت به اتصال های پیشین</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="535"/>
+        <location filename="../gui/mainwindow.cpp" line="587"/>
         <source>Failed to Create New Identity</source>
         <translation>ناکامی در پدید آوردن هویت تازه</translation>
     </message>
@@ -974,34 +979,9 @@ Please check the message log for indicators about what happened to Tor before it
         <translation>پیام</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="607"/>
-        <source>Log File</source>
-        <translation>پرونده ثبت</translation>
-    </message>
-    <message>
-        <location filename="../gui/log/messagelog.ui" line="622"/>
+        <location filename="../gui/log/messagelog.ui" line="646"/>
         <source>Browse</source>
         <translation>گشت و گذار</translation>
-    </message>
-    <message>
-        <location filename="../gui/log/messagelog.ui" line="645"/>
-        <source>Enable saving of all messages to a file</source>
-        <translation>فعال کردن ثبت همه پیام ها در یک پرونده</translation>
-    </message>
-    <message>
-        <location filename="../gui/log/messagelog.ui" line="648"/>
-        <source>Save Messages to File</source>
-        <translation>ثبت کردن پیام ها در یک پرونده</translation>
-    </message>
-    <message>
-        <location filename="../gui/log/messagelog.ui" line="567"/>
-        <source>Log History Size</source>
-        <translation>سایز پرونده ثبت</translation>
-    </message>
-    <message>
-        <location filename="../gui/log/messagelog.ui" line="588"/>
-        <source>Number of messages to keep in log</source>
-        <translation>شمار پیام ها برای نگاه داشتن در پرونده ثبت</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="430"/>
@@ -1054,117 +1034,117 @@ Please check the message log for indicators about what happened to Tor before it
         <translation>اشکال زدایی</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="703"/>
+        <location filename="../gui/log/messagelog.ui" line="727"/>
         <source>Message Filters...</source>
         <translation>...فیلترها</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="706"/>
+        <location filename="../gui/log/messagelog.ui" line="730"/>
         <source>Set message filters</source>
         <translation>تعیین کردن فیلترها</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="719"/>
+        <location filename="../gui/log/messagelog.ui" line="743"/>
         <source>History Size...</source>
         <translation>...سایز تاریخچه</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="722"/>
+        <location filename="../gui/log/messagelog.ui" line="746"/>
         <source>Set maximum number of messages to display</source>
         <translation>بیشترین شمار پیام ها برای نمایش را تعیین کنید</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="738"/>
+        <location filename="../gui/log/messagelog.ui" line="762"/>
         <source>Clear</source>
         <translation>پاک کردن</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="741"/>
+        <location filename="../gui/log/messagelog.ui" line="765"/>
         <source>Clear all messages from the Message Log (Ctrl+E)</source>
         <translation>(Ctrl+E) پاک کردن همه پیام ها از پرونده ثبت پیام</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="749"/>
+        <location filename="../gui/log/messagelog.ui" line="773"/>
         <source>Ctrl+E</source>
         <translation>Ctrl+E</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="763"/>
+        <location filename="../gui/log/messagelog.ui" line="787"/>
         <source>Copy</source>
         <translation>کپی کردن</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="766"/>
+        <location filename="../gui/log/messagelog.ui" line="790"/>
         <source>Copy the selected messages to the clipboard (Ctrl+C)</source>
         <translation>(Ctrl+C) کپی کردن پیام های برگزیده به تخته یادداشت</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="774"/>
+        <location filename="../gui/log/messagelog.ui" line="798"/>
         <source>Ctrl+C</source>
         <translation>Ctrl+C</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="785"/>
+        <location filename="../gui/log/messagelog.ui" line="809"/>
         <source>Select All</source>
         <translation>گزیدن همه</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="788"/>
+        <location filename="../gui/log/messagelog.ui" line="812"/>
         <source>Select all messages (Ctrl+A)</source>
         <translation>(Ctrl+A) گزیدن همه پیام ها</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="796"/>
+        <location filename="../gui/log/messagelog.ui" line="820"/>
         <source>Ctrl+A</source>
         <translation>Ctrl+A</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="804"/>
+        <location filename="../gui/log/messagelog.ui" line="828"/>
         <source>Save All</source>
         <translation>ثبت کردن همه</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="807"/>
+        <location filename="../gui/log/messagelog.ui" line="831"/>
         <source>Save all messages to a file</source>
         <translation>ثبت کردن همه پیام ها در یک پرونده</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="820"/>
+        <location filename="../gui/log/messagelog.ui" line="844"/>
         <source>Save Selected</source>
         <translation>ثبت کردن برگزیده</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="823"/>
+        <location filename="../gui/log/messagelog.ui" line="847"/>
         <source>Save selected messages to a file</source>
         <translation>ثبت کردن پیام های برگزیده در یک پرونده</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="877"/>
+        <location filename="../gui/log/messagelog.ui" line="901"/>
         <source>Close</source>
         <translation>بستن</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="880"/>
+        <location filename="../gui/log/messagelog.ui" line="904"/>
         <source>Close the Message Log</source>
         <translation>بستن ثبت پیام</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="888"/>
+        <location filename="../gui/log/messagelog.ui" line="912"/>
         <source>Esc</source>
         <translation>Esc کلید گریز</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="899"/>
+        <location filename="../gui/log/messagelog.ui" line="923"/>
         <source>Find</source>
         <translation>پیدا کردن</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="902"/>
+        <location filename="../gui/log/messagelog.ui" line="926"/>
         <source>Find all messages containing the search text (Ctrl+F)</source>
         <translation>(Ctrl+F) پیدا کردن همه پیام هایی که این متن را در بردارند</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="910"/>
+        <location filename="../gui/log/messagelog.ui" line="934"/>
         <source>Ctrl+F</source>
         <translation>Ctrl+F</translation>
     </message>
@@ -1246,27 +1226,27 @@ interest to Tor developers.</source>
         <translation>جستجو 0 نتیجه پیداکرد</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="839"/>
+        <location filename="../gui/log/messagelog.ui" line="863"/>
         <source>Settings</source>
         <translation>تنظیمات و پارامترها</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="842"/>
+        <location filename="../gui/log/messagelog.ui" line="866"/>
         <source>Adjust Message Log Settings</source>
         <translation>میزان کردن تنظیمات و پارامترهای ثبت پیام</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="850"/>
+        <location filename="../gui/log/messagelog.ui" line="874"/>
         <source>Ctrl+T</source>
         <translation>Ctrl+T</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="858"/>
+        <location filename="../gui/log/messagelog.ui" line="882"/>
         <source>Help</source>
         <translation>راهنما</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="861"/>
+        <location filename="../gui/log/messagelog.ui" line="885"/>
         <source>Show the help browser</source>
         <translation>گشت وگذار در راهنما</translation>
     </message>
@@ -1296,7 +1276,7 @@ interest to Tor developers.</source>
         <translation>(*.txt) پرونده های متنی</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="869"/>
+        <location filename="../gui/log/messagelog.ui" line="893"/>
         <source>F1</source>
         <translation>F1</translation>
     </message>
@@ -1309,6 +1289,36 @@ interest to Tor developers.</source>
         <location filename="../gui/log/messagelog.cpp" line="243"/>
         <source>You must enter a filename to be able to save log messages to a file.</source>
         <translation>.شما میبایست یک نام پرونده وارد کنید برای اینکه بتوانید پیامهای ثبت را در یک پرونده ذخیره کنید</translation>
+    </message>
+    <message>
+        <location filename="../gui/log/messagelog.ui" line="567"/>
+        <source>Message Log History</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/log/messagelog.ui" line="588"/>
+        <source>Number of messages to display in the message log window</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/log/messagelog.ui" line="612"/>
+        <source>messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/log/messagelog.ui" line="631"/>
+        <source>Always Save New Log Messages</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/log/messagelog.ui" line="669"/>
+        <source>Enable automatically saving all new log messages to a file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/log/messagelog.ui" line="672"/>
+        <source>Automatically save new log messages to a file</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1417,12 +1427,12 @@ interest to Tor developers.</source>
 <context>
     <name>Policy</name>
     <message>
-        <location filename="../config/policy.cpp" line="159"/>
+        <location filename="../config/policy.cpp" line="178"/>
         <source>accept</source>
         <translation>پذیرفتن</translation>
     </message>
     <message>
-        <location filename="../config/policy.cpp" line="159"/>
+        <location filename="../config/policy.cpp" line="178"/>
         <source>reject</source>
         <translation>ردکردن</translation>
     </message>
@@ -1509,12 +1519,12 @@ interest to Tor developers.</source>
         <translation>سرویس دهنده</translation>
     </message>
     <message>
-        <location filename="../gui/network/routerlistwidget.cpp" line="218"/>
+        <location filename="../gui/network/routerlistwidget.cpp" line="215"/>
         <source>%1 servers total</source>
         <translation>درکل 1% سرویس دهنده</translation>
     </message>
     <message>
-        <location filename="../gui/network/routerlistwidget.cpp" line="54"/>
+        <location filename="../gui/network/routerlistwidget.cpp" line="51"/>
         <source>Zoom to Server</source>
         <translation>???</translation>
     </message>
@@ -1522,283 +1532,273 @@ interest to Tor developers.</source>
 <context>
     <name>ServerPage</name>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="301"/>
+        <location filename="../gui/config/serverpage.ui" line="502"/>
         <source>Check to run as a Tor network server</source>
         <translation>بعنوان یک سرویس دهنده شبکه Tor تیک بزنید برای اجراکردن</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="304"/>
+        <location filename="../gui/config/serverpage.ui" line="505"/>
         <source>Relay traffic for the Tor network</source>
         <translation>Tor بازپخش کردن شدآمد برای شبکه</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="512"/>
+        <location filename="../gui/config/serverpage.ui" line="716"/>
         <source>Directory Port:</source>
         <translation>:درگاه فهرست راهنما</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="542"/>
+        <location filename="../gui/config/serverpage.ui" line="746"/>
         <source>Directory Port Number</source>
         <translation>شماره درگاه فهرست راهنما</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="412"/>
+        <location filename="../gui/config/serverpage.ui" line="616"/>
         <source>Nickname:</source>
         <translation>:لقب</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="617"/>
+        <location filename="../gui/config/serverpage.ui" line="821"/>
         <source>Name of your server</source>
         <translation>نام سرویس دهنده شما</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="480"/>
+        <location filename="../gui/config/serverpage.ui" line="684"/>
         <source>Contact Info:</source>
         <translation>:اطلاعات تماس</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="434"/>
+        <location filename="../gui/config/serverpage.ui" line="638"/>
         <source>Server Port:</source>
         <translation>:درگاه سرویس دهنده</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="470"/>
+        <location filename="../gui/config/serverpage.ui" line="674"/>
         <source>Port on which users and other servers can communicate with your server</source>
         <translation>درگاهی که بوسیله آن کاربران و سرویس دهنده های دیگر میتوانند با سرویس دهنده شما گفتگو کنند</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="361"/>
+        <location filename="../gui/config/serverpage.ui" line="565"/>
         <source>Address:</source>
         <translation>:نشانی</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="577"/>
+        <location filename="../gui/config/serverpage.ui" line="781"/>
         <source>Domain name or IP address of your server</source>
         <translation>نام دامنه یا آدرس اینترنتی سرویس دهنده شما</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="633"/>
+        <location filename="../gui/config/serverpage.ui" line="837"/>
         <source>Enable to mirror the server directory</source>
         <translation>تیک زدن برای آینه ای کردن فهرست سرویس دهنده</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="636"/>
+        <location filename="../gui/config/serverpage.ui" line="840"/>
         <source>Mirror the Server Directory </source>
         <translation>آینه ای کردن فهرست سرویس دهنده</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="386"/>
+        <location filename="../gui/config/serverpage.ui" line="590"/>
         <source>Attempts to determine the correct address for your server</source>
         <translation>کوشش برای تعیین کردن نشانی درست سرویس دهنده شما</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="389"/>
+        <location filename="../gui/config/serverpage.ui" line="593"/>
         <source>Get Address</source>
         <translation>بدست آوردن نشانی</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="987"/>
+        <location filename="../gui/config/serverpage.ui" line="1191"/>
         <source>Exit Policies</source>
         <translation>سیاستها و استراتژی خروج</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1126"/>
+        <location filename="../gui/config/serverpage.ui" line="1317"/>
         <source>Show help topic on exit policies</source>
         <translation>نمایش راهنمای سیاستها و استراتژی خروج</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.cpp" line="135"/>
+        <location filename="../gui/config/serverpage.cpp" line="148"/>
         <source>You must specify at least a server nickname and port.</source>
         <translation>.شما می بایست دست کم یک لقب و یک درگاه سرویس دهنده را مشخص کنید</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.cpp" line="298"/>
+        <location filename="../gui/config/serverpage.cpp" line="232"/>
         <source>Error</source>
         <translation>خطا</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.cpp" line="299"/>
+        <location filename="../gui/config/serverpage.cpp" line="233"/>
         <source>Vidalia was unable to determine your public IP address.</source>
         <translation>.نتوانست نشانی اینترنتی همگانی شما را تعیین کند Vidalia</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.cpp" line="316"/>
+        <location filename="../gui/config/serverpage.cpp" line="250"/>
         <source>Vidalia was only able to find a private IP address for your server.
 
 Would you like to access an external service to determine your public IP address?</source>
         <translation>تنها توانست نشانی اینترنتی خصوصی شما را پیدا کند. آیا می خواهید برای تعیین کردن نشانی اینترنتی همگانی خود به یک سرویس بیرونی دستیابی پیداکنید؟ Vidalia</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="646"/>
+        <location filename="../gui/config/serverpage.ui" line="850"/>
         <source>When enabled, Vidalia will periodically update your IP address if necessary</source>
         <translation>نشانی اینترنتی شما را اگر نیاز باشد به گونه دوره ای بروز رسانی خواهد کرد Vidalia ،چنانچه فعال باشد</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="649"/>
+        <location filename="../gui/config/serverpage.ui" line="853"/>
         <source>Automatically Update</source>
         <translation>بروز رسانی کردن بگونه خودکار</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="602"/>
+        <location filename="../gui/config/serverpage.ui" line="806"/>
         <source>Email address at which you may be reached if there is a
 problem with your server. You might also include your PGP or GPG
 fingerprint.</source>
         <translation>.را در پیوست بگذارید GPG یا PGP نشانی پست الکترونیکی که بتوان با شما در صورت بروز مشکل با سرویس دهنده تان تماس گرفت. شما همچنین می توانید اثرانگشت </translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="868"/>
+        <location filename="../gui/config/serverpage.ui" line="1072"/>
         <source>Long-term average bandwidth limit</source>
         <translation>???</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="881"/>
+        <location filename="../gui/config/serverpage.ui" line="1085"/>
         <source>Average Rate</source>
         <translation>نرخ میانگین</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="941"/>
+        <location filename="../gui/config/serverpage.ui" line="1145"/>
         <source>KB/s</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="928"/>
+        <location filename="../gui/config/serverpage.ui" line="1132"/>
         <source>Peak bandwidth rate limit</source>
         <translation>حد نهایی نرخ پهنای باند</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="948"/>
+        <location filename="../gui/config/serverpage.ui" line="1152"/>
         <source>Maximum Rate</source>
         <translation>نرخ ماکسیمم</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="785"/>
+        <location filename="../gui/config/serverpage.ui" line="989"/>
         <source>Show help topic on bandwidth rate limits</source>
         <translation>نمایش راهنمای محدودیت های نرخ پهنای باند</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="333"/>
+        <location filename="../gui/config/serverpage.ui" line="537"/>
         <source>Basic Settings</source>
         <translation>تنظیمات و پارامترهای پایه ای</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="683"/>
+        <location filename="../gui/config/serverpage.ui" line="887"/>
         <source>Bandwidth Limits</source>
         <translation>محدودیت های پهنای باند</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="718"/>
+        <location filename="../gui/config/serverpage.ui" line="922"/>
         <source>For Internet connections with fast download speed but slow upload, please list your upload speed here.</source>
         <translation>.برای اتصال های اینترنت با سرعت بارگیری بالا و بارگذاری کند، خواهشمند است سرعت بارگذاری خود را در اینجا واردکنید</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="739"/>
+        <location filename="../gui/config/serverpage.ui" line="943"/>
         <source>Select the entry that most closely resembles your Internet connection</source>
         <translation>گزیدن وارده ای که بیشتر از همه مانند اتصال اینترنتی شما میباشد</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="749"/>
+        <location filename="../gui/config/serverpage.ui" line="953"/>
         <source>Cable/DSL 256 Kbps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="754"/>
+        <location filename="../gui/config/serverpage.ui" line="958"/>
         <source>Cable/DSL 512 Kbps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="759"/>
+        <location filename="../gui/config/serverpage.ui" line="963"/>
         <source>Cable/DSL 768 Kbps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="764"/>
+        <location filename="../gui/config/serverpage.ui" line="968"/>
         <source>T1/Cable/DSL 1.5 Mbps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="769"/>
+        <location filename="../gui/config/serverpage.ui" line="973"/>
         <source>&gt; 1.5 Mbps</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="774"/>
+        <location filename="../gui/config/serverpage.ui" line="978"/>
         <source>Custom</source>
         <translation>سفارشی</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1025"/>
+        <location filename="../gui/config/serverpage.ui" line="1229"/>
         <source>Ports 6660 - 6669 and 6697</source>
         <translation>درگاه های 6660 - 6669 و 6697</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1028"/>
+        <location filename="../gui/config/serverpage.ui" line="1232"/>
         <source>Internet Relay Chat (IRC)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1038"/>
+        <location filename="../gui/config/serverpage.ui" line="1242"/>
         <source>Ports 110, 143, 993 and 995</source>
         <translation>درگاه های 110، 143، 993 و 995</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1041"/>
+        <location filename="../gui/config/serverpage.ui" line="1245"/>
         <source>Retrieve Mail (POP, IMAP)</source>
         <translation>(POP, IMAP) بازیابی نامه</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1051"/>
-        <source>Only internal Tor network traffic is passed</source>
-        <translation>پذیرفته میشود Tor تنها شدآمد درونی شبکه</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="1054"/>
-        <source>No External Connections</source>
-        <translation>بدون اتصال های بیرونی</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="1064"/>
+        <location filename="../gui/config/serverpage.ui" line="1255"/>
         <source>Ports unspecified by other checkboxes</source>
         <translation>درگاه های مشخص نشده بدست دیگر جعبه های بررسی</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1067"/>
+        <location filename="../gui/config/serverpage.ui" line="1258"/>
         <source>Misc Other Services</source>
         <translation>???</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1077"/>
+        <location filename="../gui/config/serverpage.ui" line="1268"/>
         <source>Ports 706, 1863, 5050, 5190, 5222, 8300 and 8888</source>
         <translation>درگاه های 706، 1863، 5050، 5190، 5222، 8300 و 8888</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1080"/>
+        <location filename="../gui/config/serverpage.ui" line="1271"/>
         <source>Instant Messaging (IM)</source>
         <translation>مسنجر</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1090"/>
+        <location filename="../gui/config/serverpage.ui" line="1281"/>
         <source>Port 443</source>
         <translation>درگاه 443</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1093"/>
+        <location filename="../gui/config/serverpage.ui" line="1284"/>
         <source>Secure Websites (SSL)</source>
         <translation>(SSL) وب گاه های امن</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1103"/>
+        <location filename="../gui/config/serverpage.ui" line="1294"/>
         <source>Port 80</source>
         <translation>درگاه 80</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1106"/>
+        <location filename="../gui/config/serverpage.ui" line="1297"/>
         <source>Websites</source>
         <translation>وب گاه ها</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1199"/>
-        <source>What Internet resources should Tor users be able to access from your Tor Relay?</source>
-        <translation>میتوانند بدست بازپخش شما دسترسی پیدا کنند؟ Tor به  چه منابع اینترنتی کاربران</translation>
+        <location filename="../gui/config/serverpage.ui" line="1390"/>
+        <source>What Internet resources should Tor users be able to access from your Tor relay?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1847,7 +1847,7 @@ fingerprint.</source>
 <context>
     <name>TorProcess</name>
     <message>
-        <location filename="../control/torprocess.cpp" line="91"/>
+        <location filename="../control/torprocess.cpp" line="88"/>
         <source>Process %1 failed to stop. [%2]</source>
         <translation>[%2] .%1 ناکامی در ایستادن فرایند</translation>
     </message>
@@ -1931,11 +1931,20 @@ fingerprint.</source>
         <translation>پیشتر در حال اجرا میباشد Vidalia</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="82"/>
+        <location filename="../main.cpp" line="83"/>
         <source>Another Vidalia process is already running. 
 
 This Vidalia process will now exit.</source>
         <translation>.خارج میشود Vidalia دیگری پیشتر در حال اجرا میباشد. این فرآیند Vidalia فرآیند</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="90"/>
+        <source>Another Vidalia process is already running. 
+
+This Vidalia process will now exit. 
+
+(If there really is not another Vidalia process running, you can delete %1 before starting Vidalia again.)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

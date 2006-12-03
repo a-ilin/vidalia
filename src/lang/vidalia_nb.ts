@@ -412,36 +412,40 @@ Du må kanskje fjerne den manuellt.</translation>
         <translation>Feil ved tilkobling til %1:%2 [%3]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="74"/>
-        <source>Vidalia only supports Version 1 of Tor&apos;s Control Protocol (Version %1 detected).
-Upgrade to a newer version of Tor.</source>
-        <translation>Vidalia støtter kun Versjon 1 av Tor&apos;s kontroll-port protokoll (Versjon %1 funnet) 
-Oppgrader til en nyere utgave av Tor.</translation>
-    </message>
-    <message>
-        <location filename="../control/controlsocket.cpp" line="89"/>
+        <location filename="../control/controlsocket.cpp" line="95"/>
         <source>Error disconnecting socket. [%1]</source>
         <translation>Feil ved frakobling av forbindelse [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="145"/>
+        <location filename="../control/controlsocket.cpp" line="151"/>
         <source>Error sending control command. [%1]</source>
         <translation>Feil ved sending av kontroll-kommando. [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="182"/>
+        <location filename="../control/controlsocket.cpp" line="188"/>
         <source>Socket disconnected while attempting to read a line of data.</source>
         <translation>Forbindelsen ble avbrutt under forsøk på å lese en linje med data.</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="220"/>
+        <location filename="../control/controlsocket.cpp" line="226"/>
         <source>Invalid control reply. [%1]</source>
         <translation>Ugyldig kontroll-svar: [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="136"/>
+        <location filename="../control/controlsocket.cpp" line="142"/>
         <source>Control socket is not connected.</source>
         <translation>Kontroll-porten er ikke tilkoblet.</translation>
+    </message>
+    <message>
+        <location filename="../control/controlsocket.cpp" line="76"/>
+        <source>Vidalia was unable to determine Tor&apos;s control protocol version. Verify that your control port number is set correctly and you are running a recent version of Tor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../control/controlsocket.cpp" line="80"/>
+        <source>Vidalia only supports Version 1 of Tor&apos;s control protocol (version %1 detected).
+Upgrade to a newer version of Tor.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
