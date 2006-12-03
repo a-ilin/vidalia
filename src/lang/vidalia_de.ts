@@ -76,7 +76,7 @@
     <message>
         <location filename="../gui/config/advancedpage.ui" line="409"/>
         <source>Select path to Tor configuration file</source>
-        <translation>Pfad zur Tor Konfigurationsdatei</translation>
+        <translation>Wählen Sie den Pfad zur Tor-Konfigurationsdatei aus</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="412"/>
@@ -111,7 +111,7 @@
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="107"/>
         <source>Select Tor Configuration File</source>
-        <translation>Wähle die Tor Konfigurationsdatei</translation>
+        <translation>Wählen Sie die Tor-Konfigurationsdatei aus</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="120"/>
@@ -175,12 +175,12 @@ Sie müssen ihn manuell entfernen.</translation>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="369"/>
         <source>Tor Configuration File</source>
-        <translation>Tor Konfigurationsdatei</translation>
+        <translation>Tor-Konfigurationsdatei</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="338"/>
         <source>Port that Vidalia uses to communicate with Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Port den Vidalia zur Kommunikation mit Tor benutzt.</translation>
     </message>
 </context>
 <context>
@@ -335,12 +335,12 @@ Sie müssen ihn manuell entfernen.</translation>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="54"/>
         <source>Close Circuit</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanal schließen</translation>
     </message>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="58"/>
         <source>Close Stream</source>
-        <translation type="unfinished"></translation>
+        <translation>Datenstrom schließen</translation>
     </message>
 </context>
 <context>
@@ -378,7 +378,7 @@ Sie müssen ihn manuell entfernen.</translation>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="154"/>
         <source>Error Saving Configuration</source>
-        <translation>Fehler beim Speichern der Kongfiguration</translation>
+        <translation>Fehler beim Speichern der Konfiguration</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="74"/>
@@ -439,13 +439,14 @@ Sie müssen ihn manuell entfernen.</translation>
     <message>
         <location filename="../control/controlsocket.cpp" line="76"/>
         <source>Vidalia was unable to determine Tor&apos;s control protocol version. Verify that your control port number is set correctly and you are running a recent version of Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia konnte die Version von Tors Kontrollprotokoll nicht ermitteln. Überprüfen Sie, ob Ihre Kontrollportnummer korrekt angegeben wurde und ob Sie eine aktuelle Tor-Version benutzen.</translation>
     </message>
     <message>
         <location filename="../control/controlsocket.cpp" line="80"/>
         <source>Vidalia only supports Version 1 of Tor&apos;s control protocol (version %1 detected).
 Upgrade to a newer version of Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia unterstützt nur Version 1 des Tor-Kontrollprotokolls (Version %1 gefunden).
+Aktualisieren Sie ihre Tor-Version.</translation>
     </message>
 </context>
 <context>
@@ -463,7 +464,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/config/generalpage.ui" line="356"/>
         <source>Browse</source>
-        <translation>Wähle</translation>
+        <translation>Öffnen</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.ui" line="375"/>
@@ -493,7 +494,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/config/generalpage.cpp" line="72"/>
         <source>Select Path to Tor</source>
-        <translation>Wähle den Pfad zum Tor-Verzeichnis</translation>
+        <translation>Wählen Sie den Pfad zum Tor-Verzeichnis aus</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.ui" line="307"/>
@@ -715,7 +716,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../control/logevent.cpp" line="68"/>
         <source>Debug</source>
-        <translation>Programmfehler suchen</translation>
+        <translation>Debug</translation>
     </message>
     <message>
         <location filename="../control/logevent.cpp" line="69"/>
@@ -761,7 +762,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/mainwindow.cpp" line="239"/>
         <source>Tor is Stopped</source>
-        <translation type="unfinished">Tor gestoppt</translation>
+        <translation>Tor gestoppt</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="194"/>
@@ -786,7 +787,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/mainwindow.cpp" line="205"/>
         <source>Bandwidth Graph</source>
-        <translation>Bandbreiten Graph</translation>
+        <translation>Bandbreitenkurve</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="209"/>
@@ -861,7 +862,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/mainwindow.cpp" line="495"/>
         <source>Tor is stopped</source>
-        <translation type="unfinished">Tor angehalten</translation>
+        <translation>Tor angehalten</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="507"/>
@@ -876,12 +877,12 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/mainwindow.cpp" line="394"/>
         <source>Tor is starting</source>
-        <translation type="unfinished">Tor startet</translation>
+        <translation>Tor startet</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="529"/>
         <source>Tor is running</source>
-        <translation type="unfinished">Tor läuft</translation>
+        <translation>Tor läuft</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="435"/>
@@ -891,7 +892,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/mainwindow.cpp" line="471"/>
         <source>Tor is stopping</source>
-        <translation type="unfinished">Tor stoppt</translation>
+        <translation>Tor stoppt</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="289"/>
@@ -1005,7 +1006,7 @@ Verbindungen erscheinen.</translation>
     <message>
         <location filename="../gui/log/messagelog.ui" line="449"/>
         <source>Cancels changes made to settings</source>
-        <translation>Verwirf die Änderung der Einstellungen</translation>
+        <translation>Verwirft die Änderung der Einstellungen</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="452"/>
@@ -1015,7 +1016,7 @@ Verbindungen erscheinen.</translation>
     <message>
         <location filename="../gui/log/messagelog.ui" line="466"/>
         <source>Message Filter</source>
-        <translation>Nachrichten Filter</translation>
+        <translation>Nachrichtenfilter</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="487"/>
@@ -1045,7 +1046,7 @@ Verbindungen erscheinen.</translation>
     <message>
         <location filename="../gui/log/messagelog.ui" line="727"/>
         <source>Message Filters...</source>
-        <translation>Nachrichten-Filter...</translation>
+        <translation>Nachrichtenfilter...</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="730"/>
@@ -1085,8 +1086,7 @@ Verbindungen erscheinen.</translation>
     <message>
         <location filename="../gui/log/messagelog.ui" line="790"/>
         <source>Copy the selected messages to the clipboard (Ctrl+C)</source>
-        <translation>Kopiere die ausgewählte Nachricht in die Zwischenablage
-(Strg+C)</translation>
+        <translation>Kopiere die ausgewählte Nachricht in die Zwischenablage (Strg+C)</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="798"/>
@@ -1151,8 +1151,7 @@ Verbindungen erscheinen.</translation>
     <message>
         <location filename="../gui/log/messagelog.ui" line="926"/>
         <source>Find all messages containing the search text (Ctrl+F)</source>
-        <translation>Finde alle Nachrichten die den Suchtext enthalten
-(Strg+F)</translation>
+        <translation>Finde alle Nachrichten die den Suchtext enthalten (Strg+F)</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="934"/>
@@ -1210,7 +1209,7 @@ alle Vorgänge und sind hauptsächlich für Tor-Entwickler gedacht.</translation
     <message>
         <location filename="../gui/log/messagelog.cpp" line="294"/>
         <source>Select Log File</source>
-        <translation>Wähle Logdatei</translation>
+        <translation>Logdatei auswählen</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="311"/>
@@ -1295,7 +1294,7 @@ empfangen.</translation>
     <message>
         <location filename="../gui/log/messagelog.ui" line="893"/>
         <source>F1</source>
-        <translation type="unfinished"></translation>
+        <translation>F1</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="241"/>
@@ -1310,32 +1309,32 @@ empfangen.</translation>
     <message>
         <location filename="../gui/log/messagelog.ui" line="567"/>
         <source>Message Log History</source>
-        <translation type="unfinished"></translation>
+        <translation>Nachrichtenprotokoll-Verlauf</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="588"/>
         <source>Number of messages to display in the message log window</source>
-        <translation type="unfinished"></translation>
+        <translation>Anzahl der Nachrichten, die im Nachrichtenprotokoll-Fenster angezeigt werden</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="612"/>
         <source>messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Nachrichten</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="631"/>
         <source>Always Save New Log Messages</source>
-        <translation type="unfinished"></translation>
+        <translation>Nachrichten immer speichern</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="669"/>
         <source>Enable automatically saving all new log messages to a file</source>
-        <translation type="unfinished"></translation>
+        <translation>Das automatische Speichern aller neuen Nachrichten in eine Datei aktivieren</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="672"/>
         <source>Automatically save new log messages to a file</source>
-        <translation type="unfinished"></translation>
+        <translation>Alle neuen Nachrichten automatisch in einer Datei speichern</translation>
     </message>
 </context>
 <context>
@@ -1418,7 +1417,7 @@ empfangen.</translation>
     <message>
         <location filename="../gui/network/netviewer.ui" line="551"/>
         <source>F1</source>
-        <translation type="unfinished"></translation>
+        <translation>F1</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="573"/>
@@ -1428,12 +1427,12 @@ empfangen.</translation>
     <message>
         <location filename="../gui/network/netviewer.ui" line="595"/>
         <source>+</source>
-        <translation type="unfinished"></translation>
+        <translation>+</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="617"/>
         <source>-</source>
-        <translation type="unfinished">-</translation>
+        <translation>-</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="639"/>
@@ -1477,7 +1476,7 @@ empfangen.</translation>
     <message>
         <location filename="../gui/network/routerdescriptorview.cpp" line="114"/>
         <source>IP Address:</source>
-        <translation>IP Adresse:</translation>
+        <translation>IP-Adresse:</translation>
     </message>
     <message>
         <location filename="../gui/network/routerdescriptorview.cpp" line="115"/>
@@ -1714,7 +1713,7 @@ angeben.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="537"/>
         <source>Basic Settings</source>
-        <translation>Basis Einstellungen</translation>
+        <translation>Allgemeine Einstellungen</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="887"/>
@@ -1825,7 +1824,7 @@ geben Sie Ihre Uploadgeschwindigkeit bitte hier an.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1390"/>
         <source>What Internet resources should Tor users be able to access from your Tor relay?</source>
-        <translation type="unfinished"></translation>
+        <translation>Welche Internet-Ressourcen sollen Tor-Nutzer von Ihrem Server aus erreichen können?</translation>
     </message>
 </context>
 <context>
@@ -1973,7 +1972,11 @@ Dieser Vidalia-Prozess wird nun beendet.</translation>
 This Vidalia process will now exit. 
 
 (If there really is not another Vidalia process running, you can delete %1 before starting Vidalia again.)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ein anderer Vidalia-Prozess läuft bereits.
+
+Dieser Vidalia-Prozess wurd nun beendet.
+
+(Falls wirklich kein anderer Vidalia-Prozess läuft, können Sie %1 löschen, bevor Sie Vidalia neu starten.)</translation>
     </message>
 </context>
 </TS>
