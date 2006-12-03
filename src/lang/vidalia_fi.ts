@@ -439,13 +439,14 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../control/controlsocket.cpp" line="76"/>
         <source>Vidalia was unable to determine Tor&apos;s control protocol version. Verify that your control port number is set correctly and you are running a recent version of Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia ei onnistunut tunnistamaan Tor-ohjelman käyttämän ohjausprotokollan versiota. Tarkista onko ohjausportti asetettu oikein ja, että käytät uutta versiota Tor-ohjelmasta.</translation>
     </message>
     <message>
         <location filename="../control/controlsocket.cpp" line="80"/>
         <source>Vidalia only supports Version 1 of Tor&apos;s control protocol (version %1 detected).
 Upgrade to a newer version of Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia tukee vain 1 versiota Tor-ohjelman ohjausprotokollaa (versio %1 havaittu).
+Päivitä uudempaan versioon Tor-ohjelmasta.</translation>
     </message>
 </context>
 <context>
