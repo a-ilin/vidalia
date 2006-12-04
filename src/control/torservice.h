@@ -39,14 +39,78 @@
 #define TOR_SERVICE_ACCESS SERVICE_ALL_ACCESS
 #define SERVICE_ERROR 8
 
+/* NT service function prototypes. This code is adapted from Tor's
+ * nt_service_load_library() in main.c. See LICENSE for details on
+ * Tor's license. */
+typedef BOOL (WINAPI *ChangeServiceConfig2A_fn)(
+                             SC_HANDLE hService,
+                             DWORD dwInfoLevel,
+                             LPVOID lpInfo);
+typedef BOOL (WINAPI *CloseServiceHandle_fn)(
+                             SC_HANDLE hSCObject);
+typedef BOOL (WINAPI *ControlService_fn)(
+                             SC_HANDLE hService,
+                             DWORD dwControl,
+                             LPSERVICE_STATUS lpServiceStatus);
+typedef SC_HANDLE (WINAPI *CreateServiceA_fn)(
+                             SC_HANDLE hSCManager,
+                             LPCTSTR lpServiceName,
+                             LPCTSTR lpDisplayName,
+                             DWORD dwDesiredAccess,
+                             DWORD dwServiceType,
+                             DWORD dwStartType,
+                             DWORD dwErrorControl,
+                             LPCTSTR lpBinaryPathName,
+                             LPCTSTR lpLoadOrderGroup,
+                             LPDWORD lpdwTagId,
+                             LPCTSTR lpDependencies,
+                             LPCTSTR lpServiceStartName,
+                             LPCTSTR lpPassword);
+typedef BOOL (WINAPI *DeleteService_fn)(
+                             SC_HANDLE hService);
+typedef SC_HANDLE (WINAPI *OpenSCManagerA_fn)(
+                             LPCTSTR lpMachineName,
+                             LPCTSTR lpDatabaseName,
+                             DWORD dwDesiredAccess);
+typedef SC_HANDLE (WINAPI *OpenServiceA_fn)(
+                             SC_HANDLE hSCManager,
+                             LPCTSTR lpServiceName,
+                             DWORD dwDesiredAccess);
+typedef BOOL (WINAPI *QueryServiceStatus_fn)(
+                             SC_HANDLE hService,
+                             LPSERVICE_STATUS lpServiceStatus);
+typedef BOOL (WINAPI *SetServiceStatus_fn)(SERVICE_STATUS_HANDLE,
+                             LPSERVICE_STATUS);
+typedef BOOL (WINAPI *StartServiceA_fn)(
+                             SC_HANDLE hService,
+                             DWORD dwNumServiceArgs,
+                             LPCTSTR* lpServiceArgVectors);
+
+/** Table of NT service related functions. */
+typedef struct ServiceFunctions {
+  bool loaded;
+  ChangeServiceConfig2A_fn ChangeServiceConfig2A;
+  CloseServiceHandle_fn    CloseServiceHandle;
+  ControlService_fn        ControlService;
+  CreateServiceA_fn        CreateServiceA;
+  DeleteService_fn         DeleteService;
+  OpenSCManagerA_fn        OpenSCManagerA;
+  OpenServiceA_fn          OpenServiceA;
+  QueryServiceStatus_fn    QueryServiceStatus;
+  SetServiceStatus_fn      SetServiceStatus;
+  StartServiceA_fn         StartServiceA;
+};
+
 
 class TorService : public QObject
 {
   Q_OBJECT
 
 public:
-  /* Returns if services are supported. */
+  /** Returns if services are supported. */
   static bool isSupported();
+  /** Dynamically loads NT service related functions from advapi32.dll. */
+  static bool loadServiceFunctions();
 
   /** Default ctor. */
   TorService(QObject* parent = 0);
@@ -81,7 +145,7 @@ signals:
 
 private:
   /** Initializes the service and the service manager. */
-  void initialize();
+  bool initialize();
   /** Closes the service and the service manager. */
   void close();
   /** Gets the status of the Tor service. */
@@ -89,6 +153,9 @@ private:
   
   SC_HANDLE _manager; /** Handle to a service manager object. */
   SC_HANDLE _service; /** Handle to the Tor service object. */
+
+  /** List of dynamically loaded NT service functions. */
+  static ServiceFunctions _service_fns;
 };
 
 #endif

@@ -149,6 +149,13 @@ win32_registry_remove_key(QString keyLocation, QString keyName)
 QHash<qint64, QString>
 win32_process_list()
 {
+#if defined(UNICODE)
+/* Force the ascii verisons of these functions, so we can run on Win98. We
+ * don't pass any Unicode strings to these functions anyway. */
+#undef PROCESSENTRY32
+#undef Process32First
+#undef Process32Next
+#endif
   QHash<qint64, QString> procList;
   HANDLE hSnapshot;
   PROCESSENTRY32 proc;

@@ -25,11 +25,19 @@
  * \brief Starts, stops, installs, and uninstalls a Tor service (Win32).
  */
 
+#include <QLibrary>
+
 #include "torservice.h"
 
 /** Returned by TorService::exitCode() when we are unable to determine the
  * actual exit code of the service (unless, of course, Tor returns -999999). */
 #define UNKNOWN_EXIT_CODE     -999999
+
+/** List of dynamically loaded NT service functions. */
+ServiceFunctions TorService::_service_fns = 
+  { false,
+    NULL, NULL, NULL, NULL, NULL,
+    NULL, NULL, NULL, NULL, NULL };
 
 
 /** Returns true if services are supported. */
@@ -37,6 +45,37 @@ bool
 TorService::isSupported()
 {
   return (QSysInfo::WindowsVersion & QSysInfo::WV_NT_based);
+}
+
+/** Dyanmically loads NT service related functions from advapi32.dll. This
+ * function is adapted from Tor's nt_service_load_library() function. See
+ * LICENSE for details on Tor's license. */
+bool
+TorService::loadServiceFunctions()
+{
+#define LOAD_SERVICE_FN(f) do {                                         \
+  void *fn;                                                             \
+  if (!((fn = QLibrary::resolve("advapi32", #f)))) {                    \
+      return false;                                                     \
+    } else {                                                            \
+      _service_fns.f = (f ## _fn) fn;                                   \
+    }                                                                   \
+  } while (0)
+
+  if (!_service_fns.loaded) {
+    LOAD_SERVICE_FN(ChangeServiceConfig2A);
+    LOAD_SERVICE_FN(CloseServiceHandle);
+    LOAD_SERVICE_FN(ControlService);
+    LOAD_SERVICE_FN(CreateServiceA);
+    LOAD_SERVICE_FN(DeleteService);
+    LOAD_SERVICE_FN(OpenSCManagerA);
+    LOAD_SERVICE_FN(OpenServiceA);
+    LOAD_SERVICE_FN(QueryServiceStatus);
+    LOAD_SERVICE_FN(SetServiceStatus);
+    LOAD_SERVICE_FN(StartServiceA);
+    _service_fns.loaded = true;
+  }
+  return true;
 }
 
 /** Default ctor. */
@@ -55,34 +94,45 @@ TorService::~TorService()
   close();
 }
 
+/** Closes the service and the service manager. */
 void
 TorService::close()
 {
-  if (_service) {
-    CloseServiceHandle(_service);
-    _service = NULL;
-  }
-  if (_manager) {
-    CloseServiceHandle(_manager);
-    _manager = NULL;
+  if (loadServiceFunctions()) {
+    if (_service) {
+      _service_fns.CloseServiceHandle(_service);
+      _service = NULL;
+    }
+    if (_manager) {
+      _service_fns.CloseServiceHandle(_manager);
+      _manager = NULL;
+    }
   }
 }
 
 /** Initializes the service and service manager. */
-void
+bool
 TorService::initialize()
 {
   /* If services are supported, initialize the manager and service */
   if (isSupported()) {
+    /* Load NT service related functions */
+    if (!loadServiceFunctions()) {
+      return false;
+    }
     /* Open service manager */
     if (_manager == NULL) {
-    _manager = OpenSCManager(NULL, NULL, SC_MANAGER_ALL_ACCESS);
+      _manager = _service_fns.OpenSCManagerA(NULL, NULL, 
+                                             SC_MANAGER_ALL_ACCESS);
     }
     /* Open tor service */
     if (_service == NULL) {
-    _service = OpenServiceA(_manager, TOR_SERVICE_NAME, TOR_SERVICE_ACCESS);
+      _service = _service_fns.OpenServiceA(_manager, 
+                                           (LPCTSTR)TOR_SERVICE_NAME,
+                                           TOR_SERVICE_ACCESS);
     }
   }
+  return true;
 }
 
 /** Returns true if the Tor service is installed. */
@@ -113,12 +163,14 @@ TorService::start()
     emit startFailed(tr("The Tor service is not installed."));
     return;
   }
-
-  /* Make sure we're initialized */
-  initialize();
+  if (!initialize()) {
+    return;
+  }
 
   /* Starting a service can take up to 30 seconds! */
-  if (!isRunning()) StartService(_service, 0, NULL); 
+  if (!isRunning()) {
+    _service_fns.StartServiceA(_service, 0, NULL);
+  }
   
   int tries = 0;
   while (true) {
@@ -139,10 +191,13 @@ TorService::start()
 void
 TorService::stop()
 {
+  if (!loadServiceFunctions()) {
+    return;
+  }
   if (isRunning()) {
     SERVICE_STATUS stat;
     stat.dwCurrentState = SERVICE_RUNNING;
-    ControlService(_service, SERVICE_CONTROL_STOP, &stat);
+    _service_fns.ControlService(_service, SERVICE_CONTROL_STOP, &stat);
 
     int tries = 0;
     while (true) {
@@ -165,15 +220,16 @@ TorService::exitCode()
 {
   int exitCode = UNKNOWN_EXIT_CODE;
   
-  if (isSupported() && _manager && _service) {
-    SERVICE_STATUS s;
-
-    if (QueryServiceStatus(_service, &s)) {
-      /* Services return one exit code, but it could be in one of two
-       * variables. Fun. */
-      exitCode = (int)(s.dwWin32ExitCode == ERROR_SERVICE_SPECIFIC_ERROR
+  if (loadServiceFunctions()) {
+    if (isSupported() && _manager && _service) {
+      SERVICE_STATUS s;
+      if (_service_fns.QueryServiceStatus(_service, &s)) {
+        /* Services return one exit code, but it could be in one of two
+         * variables. Fun. */
+        exitCode = (int)(s.dwWin32ExitCode == ERROR_SERVICE_SPECIFIC_ERROR
                                               ? s.dwServiceSpecificExitCode
                                               : s.dwWin32ExitCode);
+      }
     }
   }
   return exitCode;
@@ -205,15 +261,18 @@ TorService::install(const QString &torPath, const QString &torrc,
                                                  .arg(torrc)
                                                  .arg(controlPort);
 
-    _service = CreateServiceA(_manager, TOR_SERVICE_NAME, TOR_SERVICE_DISP,
+    _service = _service_fns.CreateServiceA(_manager, 
+                              (LPCTSTR)TOR_SERVICE_NAME, (LPCTSTR)TOR_SERVICE_DISP,
                               TOR_SERVICE_ACCESS, SERVICE_WIN32_OWN_PROCESS,
                               SERVICE_AUTO_START, SERVICE_ERROR_IGNORE,
-                              command.toAscii().data(), NULL, NULL, NULL, NULL, "");
+                              (LPCTSTR)command.toAscii().data(), NULL, NULL, NULL, 
+                              NULL, NULL);
 
     if (_service != NULL) {
       SERVICE_DESCRIPTION desc;
       desc.lpDescription = TOR_SERVICE_DESC;
-      ChangeServiceConfig2(_service, SERVICE_CONFIG_DESCRIPTION, &desc);
+      _service_fns.ChangeServiceConfig2A(_service, 
+                                         SERVICE_CONFIG_DESCRIPTION, &desc);
     }
   }
   return isInstalled();
@@ -223,13 +282,17 @@ TorService::install(const QString &torPath, const QString &torrc,
 bool
 TorService::remove()
 {
+  if (!loadServiceFunctions()) {
+    return false;
+  }
+
   if (!isSupported()) return false;
   if (isInstalled()) {
     /* Stop the service */
     stop();
 
     /* Delete the service */
-    if (!DeleteService(_service)) return false;
+    if (!_service_fns.DeleteService(_service)) return false;
     
     /* Release references to manager and service */
     close();
@@ -247,7 +310,7 @@ TorService::status()
   SERVICE_STATUS s;
   DWORD stat = SERVICE_ERROR;
 
-  if (QueryServiceStatus(_service, &s)) {
+  if (_service_fns.QueryServiceStatus(_service, &s)) {
     stat = s.dwCurrentState;
   } 
   return stat;
