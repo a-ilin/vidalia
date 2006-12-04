@@ -102,7 +102,7 @@ XPStyle         on
 !insertmacro MUI_LANGUAGE "PortugueseBR"
 !insertmacro MUI_LANGUAGE "Russian"
 !insertmacro MUI_LANGUAGE "Spanish"
-!insertmacro MUI_LANGUAGE "Simplified Chinese"
+!insertmacro MUI_LANGUAGE "SimpChinese"
 !include "vidalia_en.nsh"
 !include "vidalia_de.nsh"
 !include "vidalia_es.nsh"
