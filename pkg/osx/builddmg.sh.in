@@ -57,6 +57,8 @@ else
   OS="unknown"
 fi
 
+# Set the location of the temporary files
+BUILD_DIR=/tmp/vidalia-osx-$$
 # Set the Vidalia version
 VERSION="@VERSION@"
 # Set the name of the output .dmg file
@@ -65,30 +67,21 @@ DMG="vidalia-$VERSION-$OS.dmg"
 # Get the rest of the command-line arguments
 filelist=$2
 echo "Files to copy: $filelist"
-echo "Destination Disk Image: $DMGg"
+echo "Destination Disk Image: $DMG"
 volname=`echo "$DMG" | sed -e "s/.*\///" | sed -e "s/.dmg//"`
 echo "Volume Name: $volname"
 
-# Create the disk image
-hdiutil create $DMG -size 20m -fs HFS+ -volname "$volname"
-
-# Mount the image and get the device name
-mntdir="dist.mnt"
-hdiutil attach "$DMG" -noautoopen -quiet -mountpoint "$mntdir"
-dev_handle=`hdiutil info | grep "$mntdir" | grep "Apple_HFS" | awk '{print $1}'`
+# Create the temporary directory
+mkdir $BUILD_DIR || exit 1
 
 # Copy over the specified files into the disk image
 for file in $filelist
 do
-  echo "Copying $srcdir/$file to $mntdir/$file"
-  ditto -rsrc "$srcdir/$file" "$mntdir/$file"
+  echo "Copying $srcdir/$file to $BUILD_DIR/$file"
+  cp -r "$srcdir/$file" "$BUILD_DIR/$file"
 done
 
-# Unmount the volumen
-hdiutil detach $dev_handle
-
-# Replace the image with a compressed image
-hdiutil convert $DMG -format UDZO -o $DMG.udzo.dmg
-rm -f $DMG
-mv $DMG.udzo.dmg $DMG
+# Create the disk image
+hdiutil create -format UDZO -srcfolder "$BUILD_DIR" -volname "$volname" "$DMG"
+rm -rf "$BUILD_DIR"
 
