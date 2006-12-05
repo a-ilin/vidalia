@@ -22,7 +22,7 @@ SetCompressor /SOLID lzma
 
 !define TOR_NAME            "Tor"
 !define TOR_EXEC            "tor.exe"
-!define TOR_APPVERSION      "0.1.2.5"
+!define TOR_APPVERSION      "0.1.2.4-alpha"
 !define TOR_DESC            "${TOR_NAME} ${TOR_APPVERSION}"
 !define TOR_UNINST          "Uninstall.exe"
 
@@ -94,19 +94,25 @@ XPStyle         on
 ;--------------------------------
 ; Available languages
 !insertmacro MUI_LANGUAGE "English"
+!insertmacro MUI_LANGUAGE "Farsi"
 !insertmacro MUI_LANGUAGE "Finnish"
 !insertmacro MUI_LANGUAGE "French"
 !insertmacro MUI_LANGUAGE "German"
 !insertmacro MUI_LANGUAGE "Polish"
+!insertmacro MUI_LANGUAGE "PortugueseBR"
 !insertmacro MUI_LANGUAGE "Russian"
 !insertmacro MUI_LANGUAGE "Spanish"
+!insertmacro MUI_LANGUAGE "SimpChinese"
 !include "vidalia_en.nsh"
 !include "vidalia_de.nsh"
 !include "vidalia_es.nsh"
+!include "vidalia_fa.nsh"
 !include "vidalia_fi.nsh"
 !include "vidalia_fr.nsh"
 !include "vidalia_pl.nsh"
+!include "vidalia_pt-br.nsh"
 !include "vidalia_ru.nsh"
+!include "vidalia_zh-cn.nsh"
 
 ;--------------------------------
 ; Install types
