@@ -125,6 +125,18 @@ NetViewer::NetViewer(QWidget *parent)
              this,   SLOT(resolved(int, QList<GeoIp>)));
 }
 
+/** Display the network map window. If there are geoip requests waiting in the
+ * queue, start the queue timers now. */
+void
+NetViewer::showWindow()
+{
+  if (!_resolveQueue.isEmpty()) {
+    _minResolveQueueTimer.start(MIN_RESOLVE_QUEUE_DELAY);
+    _maxResolveQueueTimer.start(MAX_RESOLVE_QUEUE_DELAY);
+  }
+  VidaliaWindow::showWindow();
+}
+
 /** Clears map, lists and stops timer when we get disconnected */
 void
 NetViewer::gotDisconnected()
@@ -351,7 +363,7 @@ NetViewer::routerSelected(RouterDescriptor router)
 void
 NetViewer::resolve()
 {
-  if (!_resolveQueue.isEmpty()) {
+  if (!_resolveQueue.isEmpty() && isVisible()) {
     /* Flush the resolve queue and stop the timers */
     _geoip.resolve(_resolveQueue);
     _resolveQueue.clear();

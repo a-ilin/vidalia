@@ -50,6 +50,8 @@ public:
   NetViewer(QWidget* parent = 0);
 
 public slots:
+  /** Displays the network map window. */
+  void showWindow();
   /** Loads a list of current circuits and streams. */
   void loadConnections();
   /** Adds a circuit to the list and the map */
