@@ -1,3 +1,28 @@
+0.0.10  ??-Dec-2006
+  o Load NT service functions dynamically so we can run on Windows 95/98/ME
+    again. (Ticket #211)
+  o If the network map window is not visible, queue all GeoIP requests until
+    either the window becomes visible again or the queue contains requests for
+    at least one-quarter of all known servers.
+  o Use QSystemTrayIcon when available (except on Mac). If we are using 
+    QSystemTrayIcon on systems that support balloon messages, use a balloon to 
+    indicate when NEWNYM is successful. We still show a message box when NEWNYM 
+    fails. (Ticket #183)
+  o If we're building with Qt >= 4.2.0, then use its new saveGeometry() and 
+    restoreGeometry() functions to save and restore window size and position. 
+    If we're still using an old Qt, make sure the window fits on screen when
+    we try to restore it. (Ticket #207)
+  o Really close the read channel when we want to stop reading from the Tor
+    process's stdout. This would sometimes cause duplicate messages in the
+    message log if Vidalia was running on a non-English-speaking Windows.
+  o Clarify some labels in the message log settings. (Ticket #203)
+  o Add a Farsi translation.
+  o Add a Spanish translation contributed by desolator.
+  o Add a Portuguese (Brazilian) translation contributed by Mabat Haram.
+  o Add a Simplified Chinese installer translation contributed by omg.
+  o Updates to Finnish, French, German, Italian, Polish, and Russian translations.
+
+
 0.0.9   05-Nov-2006
   o Added a new, more intuitive interface for setting a server's bandwidth
     rate and exit policies.
