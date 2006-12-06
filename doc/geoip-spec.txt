@@ -34,7 +34,7 @@ $Id$
     cups.cs.cmu.edu      128.2.220.167  Sasha Romanosky, Serge Egelman
                                         Carnegie Mellon University
 
-   [XXX What is their logging policy?] 
+   Request logs are not kept on the geographic information servers.
    
    Each server maintains a GeoLite City database from MaxMind which
    allows lookup of geographic location information for a given IP
@@ -115,7 +115,10 @@ $Id$
    queued request, but no longer than MAX_RESOLVE_QUEUE_DELAY 
    (currently 10 seconds) after the first queued request, before actually 
    launching the connection. This way we lump them together and send 
-   one larger request instead of several little ones.
+   one larger request instead of several little ones. If Vidalia's network 
+   map window is not currently visible, the requests are queued until
+   either the queue contains requests for at least 1/4 of all known 
+   servers, or the network map window becomes visible again.
 
    If we don't get an answer, we don't retry -- if we don't have
    geographic information for a server, it simply doesn't get mapped.

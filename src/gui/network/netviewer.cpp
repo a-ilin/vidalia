@@ -363,12 +363,17 @@ NetViewer::routerSelected(RouterDescriptor router)
 void
 NetViewer::resolve()
 {
-  if (!_resolveQueue.isEmpty() && isVisible()) {
-    /* Flush the resolve queue and stop the timers */
-    _geoip.resolve(_resolveQueue);
-    _resolveQueue.clear();
-    _minResolveQueueTimer.stop();
-    _maxResolveQueueTimer.stop();
+  if (!_resolveQueue.isEmpty()) {
+    /* Send the request now if either the network map is visible, or the
+     * request is for more than a quarter of the servers in the list. */
+    if (isVisible() || 
+        (_resolveQueue.size() >= ui.treeRouterList->topLevelItemCount()/4)) {
+      /* Flush the resolve queue and stop the timers */
+      _geoip.resolve(_resolveQueue);
+      _resolveQueue.clear();
+      _minResolveQueueTimer.stop();
+      _maxResolveQueueTimer.stop();
+    }
   }
 }
 
