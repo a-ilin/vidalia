@@ -35,9 +35,6 @@
 #define IMG_ZOOMIN  ":/images/22x22/zoom-in.png"
 #define IMG_ZOOMOUT ":/images/22x22/zoom-out.png"
 
-/** Maximum time to proceess other events while loading the long list of
- * router descriptors. */
-#define MAX_EVENTS_TIMEOUT  25
 /** Number of milliseconds to wait after the arrival of the last descriptor whose
  * IP needs to be resolved to geographic information, in case more descriptors
  * arrive. Then we can simply lump the IPs into a single request. */
@@ -375,10 +372,12 @@ NetViewer::resolve()
       /* Flush the resolve queue and stop the timers */
       _geoip.resolve(_resolveQueue);
       _resolveQueue.clear();
-      _minResolveQueueTimer.stop();
-      _maxResolveQueueTimer.stop();
     }
   }
+  /* Stop the queue timers. Only one should be active since the other is what
+   * called this slot, but calling stop() on a stopped timer does not hurt. */
+  _minResolveQueueTimer.stop();
+  _maxResolveQueueTimer.stop();
 }
 
 /** Called when a list of GeoIp information has been resolved. */
