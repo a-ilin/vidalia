@@ -1368,32 +1368,32 @@ les développeurs de Tor.</translation>
     <message>
         <location filename="../gui/network/netviewer.ui" line="521"/>
         <source>Refresh the list of routers and connections.</source>
-        <translation>Rafraîchir la liste des routeurs et connexions.</translation>
+        <translation type="obsolete">Rafraîchir la liste des routeurs et connexions.</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="540"/>
         <source>Show network map help.</source>
-        <translation>Aide de la carte du réseau.</translation>
+        <translation type="obsolete">Aide de la carte du réseau.</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="543"/>
         <source>Show the network map help.</source>
-        <translation>Montre l&apos;aide de la carte du réseau.</translation>
+        <translation type="obsolete">Montre l&apos;aide de la carte du réseau.</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="565"/>
         <source>Close the network map.</source>
-        <translation>Ferme la carte du réseau.</translation>
+        <translation type="obsolete">Ferme la carte du réseau.</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="587"/>
         <source>Zoom in on the network map.</source>
-        <translation>Rapproche la carte du réseau.</translation>
+        <translation type="obsolete">Rapproche la carte du réseau.</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="609"/>
         <source>Zoom out on the network map.</source>
-        <translation>Éloigne la carte du réseau.</translation>
+        <translation type="obsolete">Éloigne la carte du réseau.</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="625"/>
@@ -1403,7 +1403,7 @@ les développeurs de Tor.</translation>
     <message>
         <location filename="../gui/network/netviewer.ui" line="631"/>
         <source>Zooms to fit all currently displayed circuits.</source>
-        <translation>Adapter le zoom à tous les circuits actuellement montrés.</translation>
+        <translation type="obsolete">Adapter le zoom à tous les circuits actuellement montrés.</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="529"/>
@@ -1434,6 +1434,41 @@ les développeurs de Tor.</translation>
         <location filename="../gui/network/netviewer.ui" line="639"/>
         <source>Ctrl+Z</source>
         <translation>Ctrl+Z</translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="521"/>
+        <source>Refresh the list of routers and connections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="540"/>
+        <source>Show network map help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="543"/>
+        <source>Show the network map help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="565"/>
+        <source>Close the network map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="587"/>
+        <source>Zoom in on the network map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="609"/>
+        <source>Zoom out on the network map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="631"/>
+        <source>Zooms to fit all currently displayed circuits</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1872,17 +1907,17 @@ votre fingerprint de PGP ou de GPG.</translation>
 <context>
     <name>TorService</name>
     <message>
-        <location filename="../control/torservice.cpp" line="109"/>
+        <location filename="../control/torservice.cpp" line="159"/>
         <source>Services not supported on this platform.</source>
         <translation>Ces services ne sont pas supportés sur cette plateforme.</translation>
     </message>
     <message>
-        <location filename="../control/torservice.cpp" line="134"/>
+        <location filename="../control/torservice.cpp" line="186"/>
         <source>Unable to start Tor service.</source>
         <translation>Impossible de démarrer le service Tor.</translation>
     </message>
     <message>
-        <location filename="../control/torservice.cpp" line="113"/>
+        <location filename="../control/torservice.cpp" line="163"/>
         <source>The Tor service is not installed.</source>
         <translation>Le service Tor n&apos;est pas installé.</translation>
     </message>

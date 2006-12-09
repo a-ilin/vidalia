@@ -1372,32 +1372,32 @@ empfangen.</translation>
     <message>
         <location filename="../gui/network/netviewer.ui" line="521"/>
         <source>Refresh the list of routers and connections.</source>
-        <translation>Aktualisiere die Liste der Router und Verbindungen.</translation>
+        <translation type="obsolete">Aktualisiere die Liste der Router und Verbindungen.</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="540"/>
         <source>Show network map help.</source>
-        <translation>Zeige Hilfe zur Netzwerkkarte.</translation>
+        <translation type="obsolete">Zeige Hilfe zur Netzwerkkarte.</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="543"/>
         <source>Show the network map help.</source>
-        <translation>Zeige Hilfe zur Netzwerkkarte.</translation>
+        <translation type="obsolete">Zeige Hilfe zur Netzwerkkarte.</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="565"/>
         <source>Close the network map.</source>
-        <translation>Schließe Netzwerkkarte</translation>
+        <translation type="obsolete">Schließe Netzwerkkarte</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="587"/>
         <source>Zoom in on the network map.</source>
-        <translation>Vergrößere Netzwerkkarte</translation>
+        <translation type="obsolete">Vergrößere Netzwerkkarte</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="609"/>
         <source>Zoom out on the network map.</source>
-        <translation>Verkleinere Netzwerkkarte</translation>
+        <translation type="obsolete">Verkleinere Netzwerkkarte</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="625"/>
@@ -1407,7 +1407,7 @@ empfangen.</translation>
     <message>
         <location filename="../gui/network/netviewer.ui" line="631"/>
         <source>Zooms to fit all currently displayed circuits.</source>
-        <translation>Passt die Größe an die angezeigten Verbindungen an.</translation>
+        <translation type="obsolete">Passt die Größe an die angezeigten Verbindungen an.</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="529"/>
@@ -1438,6 +1438,41 @@ empfangen.</translation>
         <location filename="../gui/network/netviewer.ui" line="639"/>
         <source>Ctrl+Z</source>
         <translation>Strg+Z</translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="521"/>
+        <source>Refresh the list of routers and connections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="540"/>
+        <source>Show network map help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="543"/>
+        <source>Show the network map help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="565"/>
+        <source>Close the network map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="587"/>
+        <source>Zoom in on the network map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="609"/>
+        <source>Zoom out on the network map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="631"/>
+        <source>Zooms to fit all currently displayed circuits</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1881,17 +1916,17 @@ geben Sie Ihre Uploadgeschwindigkeit bitte hier an.</translation>
 <context>
     <name>TorService</name>
     <message>
-        <location filename="../control/torservice.cpp" line="109"/>
+        <location filename="../control/torservice.cpp" line="159"/>
         <source>Services not supported on this platform.</source>
         <translation>Dienste werden auf diesem Betriebssystem nicht unterstützt.</translation>
     </message>
     <message>
-        <location filename="../control/torservice.cpp" line="134"/>
+        <location filename="../control/torservice.cpp" line="186"/>
         <source>Unable to start Tor service.</source>
         <translation>Tor-Dienst konnte nicht gestartet werden.</translation>
     </message>
     <message>
-        <location filename="../control/torservice.cpp" line="113"/>
+        <location filename="../control/torservice.cpp" line="163"/>
         <source>The Tor service is not installed.</source>
         <translation>Der Tor-Dienst ist nicht installiert.</translation>
     </message>

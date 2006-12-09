@@ -1356,32 +1356,32 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/netviewer.ui" line="521"/>
         <source>Refresh the list of routers and connections.</source>
-        <translation>بازآوردن لیست رهیاب ها و اتصال ها</translation>
+        <translation type="obsolete">بازآوردن لیست رهیاب ها و اتصال ها</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="540"/>
         <source>Show network map help.</source>
-        <translation>.نمایش راهنمای نقشه شبکه</translation>
+        <translation type="obsolete">.نمایش راهنمای نقشه شبکه</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="543"/>
         <source>Show the network map help.</source>
-        <translation>.نمایش راهنمای نقشه شبکه</translation>
+        <translation type="obsolete">.نمایش راهنمای نقشه شبکه</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="565"/>
         <source>Close the network map.</source>
-        <translation>.بستن نقشه شبکه</translation>
+        <translation type="obsolete">.بستن نقشه شبکه</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="587"/>
         <source>Zoom in on the network map.</source>
-        <translation>.بزرگ نمایی کردن نقشه شبکه</translation>
+        <translation type="obsolete">.بزرگ نمایی کردن نقشه شبکه</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="609"/>
         <source>Zoom out on the network map.</source>
-        <translation>.کوچک نمایی کردن نقشه شبکه</translation>
+        <translation type="obsolete">.کوچک نمایی کردن نقشه شبکه</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="625"/>
@@ -1391,7 +1391,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/netviewer.ui" line="631"/>
         <source>Zooms to fit all currently displayed circuits.</source>
-        <translation>.سازگارکردن زوم برای همه مدارهای نشان داده شده کنونی</translation>
+        <translation type="obsolete">.سازگارکردن زوم برای همه مدارهای نشان داده شده کنونی</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="529"/>
@@ -1422,6 +1422,41 @@ interest to Tor developers.</source>
         <location filename="../gui/network/netviewer.ui" line="639"/>
         <source>Ctrl+Z</source>
         <translation>Ctrl+Z</translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="521"/>
+        <source>Refresh the list of routers and connections</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="540"/>
+        <source>Show network map help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="543"/>
+        <source>Show the network map help</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="565"/>
+        <source>Close the network map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="587"/>
+        <source>Zoom in on the network map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="609"/>
+        <source>Zoom out on the network map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="631"/>
+        <source>Zooms to fit all currently displayed circuits</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1855,17 +1890,17 @@ fingerprint.</source>
 <context>
     <name>TorService</name>
     <message>
-        <location filename="../control/torservice.cpp" line="109"/>
+        <location filename="../control/torservice.cpp" line="159"/>
         <source>Services not supported on this platform.</source>
         <translation>.سرویس ها در این پلت فرم پشتیبانی نمی شوند</translation>
     </message>
     <message>
-        <location filename="../control/torservice.cpp" line="134"/>
+        <location filename="../control/torservice.cpp" line="186"/>
         <source>Unable to start Tor service.</source>
         <translation>.ناشدنی می باشد Tor آغاز سرویس</translation>
     </message>
     <message>
-        <location filename="../control/torservice.cpp" line="113"/>
+        <location filename="../control/torservice.cpp" line="163"/>
         <source>The Tor service is not installed.</source>
         <translation>.کارگذاری نشده اشت Tor سرویس</translation>
     </message>
