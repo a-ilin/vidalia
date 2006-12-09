@@ -364,6 +364,10 @@ void
 NetViewer::resolve()
 {
   if (!_resolveQueue.isEmpty()) {
+    /* Get geoip information for addresses that are cached. Returns a list of
+     * IP addresses that were not cached. */
+    _resolveQueue = _geoip.resolveFromCache(_resolveQueue);
+    
     /* Send the request now if either the network map is visible, or the
      * request is for more than a quarter of the servers in the list. */
     if (isVisible() || 
