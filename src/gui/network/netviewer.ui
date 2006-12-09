@@ -515,10 +515,10 @@
     <string>Refresh</string>
    </property>
    <property name="statusTip" >
-    <string>Refresh the list of routers and connections.</string>
+    <string>Refresh the list of routers and connections</string>
    </property>
    <property name="toolTip" >
-    <string>Refresh the list of routers and connections.</string>
+    <string>Refresh the list of routers and connections</string>
    </property>
    <property name="font" >
     <font>
@@ -537,10 +537,10 @@
     <string>Help</string>
    </property>
    <property name="statusTip" >
-    <string>Show network map help.</string>
+    <string>Show network map help</string>
    </property>
    <property name="toolTip" >
-    <string>Show the network map help.</string>
+    <string>Show the network map help</string>
    </property>
    <property name="font" >
     <font>
@@ -559,10 +559,10 @@
     <string>Close</string>
    </property>
    <property name="statusTip" >
-    <string>Close the network map.</string>
+    <string>Close the network map</string>
    </property>
    <property name="toolTip" >
-    <string>Close the network map.</string>
+    <string>Close the network map</string>
    </property>
    <property name="font" >
     <font>
@@ -581,10 +581,10 @@
     <string>Zoom In</string>
    </property>
    <property name="statusTip" >
-    <string>Zoom in on the network map.</string>
+    <string>Zoom in on the network map</string>
    </property>
    <property name="toolTip" >
-    <string>Zoom in on the network map.</string>
+    <string>Zoom in on the network map</string>
    </property>
    <property name="font" >
     <font>
@@ -603,10 +603,10 @@
     <string>Zoom Out</string>
    </property>
    <property name="statusTip" >
-    <string>Zoom out on the network map.</string>
+    <string>Zoom out on the network map</string>
    </property>
    <property name="toolTip" >
-    <string>Zoom out on the network map.</string>
+    <string>Zoom out on the network map</string>
    </property>
    <property name="font" >
     <font>
@@ -625,10 +625,10 @@
     <string>Zoom To Fit</string>
    </property>
    <property name="statusTip" >
-    <string>Zooms to fit all currently displayed circuits.</string>
+    <string>Zooms to fit all currently displayed circuits</string>
    </property>
    <property name="toolTip" >
-    <string>Zooms to fit all currently displayed circuits.</string>
+    <string>Zooms to fit all currently displayed circuits</string>
    </property>
    <property name="font" >
     <font>
