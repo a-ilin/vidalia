@@ -47,7 +47,7 @@ RouterDescriptor::parseDescriptor(QStringList descriptor)
     if (line.startsWith("router ")) {
       QStringList parts = line.remove(0,qstrlen("router ")).split(" ");
       _name    = parts.at(0);
-      _ip      = parts.at(1);
+      _ip      = QHostAddress(parts.at(1));
       _orPort  = (quint16)parts.at(2).toUInt();
       _dirPort = (quint16)parts.at(4).toUInt();
     } else if (line.startsWith("platform ")) {

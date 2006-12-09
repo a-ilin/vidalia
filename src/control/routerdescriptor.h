@@ -32,6 +32,7 @@
 #include <QStringList>
 #include <QDateTime>
 #include <QList>
+#include <QHostAddress>
 
 
 class RouterDescriptor
@@ -54,7 +55,7 @@ public:
   /** Returns the router's name. */
   QString name() const { return _name; }
   /** Returns the router's IP address. */
-  QString ip() const { return _ip; }
+  QHostAddress ip() const { return _ip; }
   /** Returns the router's ORPort. */
   quint16 orPort() const { return _orPort; }
   /** Returns the router's DirPort. */
@@ -107,7 +108,7 @@ private:
   QString _fingerprint;    /**< Router's fingerprint. */
   QString _platform;       /**< Platform on which router is running. */
   QString _contact;        /**< Router operator contact information. */
-  QString _ip;             /**< Router's IP address. */
+  QHostAddress _ip;        /**< Router's IP address. */
   quint16 _orPort;         /**< Router's ORPort. */
   quint16 _dirPort;        /**< Router's DirPort. */
   QDateTime _published;    /**< Date router descriptor was published. */

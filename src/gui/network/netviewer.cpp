@@ -291,7 +291,7 @@ NetViewer::addRouter(RouterDescriptor rd)
   ui.treeRouterList->addRouter(rd);
 
   /* Add this IP to a list whose geographic location we'd like to find. */
-  addToResolveQueue(QHostAddress(rd.ip()), rd.id());
+  addToResolveQueue(rd.ip(), rd.id());
 }
 
 /** Adds an IP address to the resolve queue and updates the queue timers. */
