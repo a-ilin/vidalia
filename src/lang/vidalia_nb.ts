@@ -1361,33 +1361,28 @@ interest to Tor developers.</source>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="521"/>
-        <source>Refresh the list of routers and connections.</source>
-        <translation type="obsolete">Oppdater listen over routere og forbindelser</translation>
-    </message>
-    <message>
-        <location filename="../gui/network/netviewer.ui" line="540"/>
-        <source>Show network map help.</source>
-        <translation type="obsolete">Vis hjelpeteksten for nettverkskartet.</translation>
+        <source>Refresh the list of routers and connections</source>
+        <translation>Oppdater listen over routere og forbindelser</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="543"/>
-        <source>Show the network map help.</source>
-        <translation type="obsolete">Vis hjelpeteksten for nettverkskartet.</translation>
+        <source>Show the network map help</source>
+        <translation>Vis hjelpeteksten for nettverkskartet</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="565"/>
-        <source>Close the network map.</source>
-        <translation type="obsolete">Lukk nettverks-kartet</translation>
+        <source>Close the network map</source>
+        <translation>Lukk nettverks-kartet</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="587"/>
-        <source>Zoom in on the network map.</source>
-        <translation type="obsolete">Zoom inn på nettverks-kartet</translation>
+        <source>Zoom in on the network map</source>
+        <translation>Zoom inn på nettverks-kartet</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="609"/>
-        <source>Zoom out on the network map.</source>
-        <translation type="obsolete">Zoom ut på nettverks-kartet</translation>
+        <source>Zoom out on the network map</source>
+        <translation>Zoom ut på nettverks-kartet</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="625"/>
@@ -1396,8 +1391,8 @@ interest to Tor developers.</source>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="631"/>
-        <source>Zooms to fit all currently displayed circuits.</source>
-        <translation type="obsolete">Zoomer slik at det passer alle viste forbindelser.</translation>
+        <source>Zooms to fit all currently displayed circuits</source>
+        <translation>Zoomer slik at det passer alle viste forbindelser</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="529"/>
@@ -1430,38 +1425,8 @@ interest to Tor developers.</source>
         <translation>Ctrl+Z</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="521"/>
-        <source>Refresh the list of routers and connections</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../gui/network/netviewer.ui" line="540"/>
         <source>Show network map help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/network/netviewer.ui" line="543"/>
-        <source>Show the network map help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/network/netviewer.ui" line="565"/>
-        <source>Close the network map</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/network/netviewer.ui" line="587"/>
-        <source>Zoom in on the network map</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/network/netviewer.ui" line="609"/>
-        <source>Zoom out on the network map</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/network/netviewer.ui" line="631"/>
-        <source>Zooms to fit all currently displayed circuits</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
