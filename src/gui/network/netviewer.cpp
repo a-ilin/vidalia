@@ -301,7 +301,12 @@ void
 NetViewer::addToResolveQueue(QHostAddress ip, QString id)
 {
   QString ipstr = ip.toString();
-  if (!_resolveQueue.contains(ip)) {
+  if (!_resolveMap.values(ipstr).contains(id)) {
+    /* Remember which server ids belong to which IP addresses */
+    _resolveMap.insertMulti(ipstr, id);
+  }
+  
+  if (!_resolveQueue.contains(ip) && !_geoip.resolveFromCache(ip)) {
     /* Add the IP to the queue of IPs waiting for geographic information  */
     _resolveQueue << ip;
     
@@ -315,10 +320,6 @@ NetViewer::addToResolveQueue(QHostAddress ip, QString id)
     if (_resolveQueue.size() == 1) {
       _maxResolveQueueTimer.start(MAX_RESOLVE_QUEUE_DELAY);
     }
-  }
-  if (!_resolveMap.values(ipstr).contains(id)) {
-    /* Remember which server ids belog to which IP addresses */
-    _resolveMap.insertMulti(ipstr, id);
   }
 }
 
@@ -363,10 +364,6 @@ void
 NetViewer::resolve()
 {
   if (!_resolveQueue.isEmpty()) {
-    /* Get geoip information for addresses that are cached. Returns a list of
-     * IP addresses that were not cached. */
-    _resolveQueue = _geoip.resolveFromCache(_resolveQueue);
-    
     /* Send the request now if either the network map is visible, or the
      * request is for more than a quarter of the servers in the list. */
     if (isVisible() || 

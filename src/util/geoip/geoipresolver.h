@@ -57,6 +57,8 @@ public:
   int resolve(QHostAddress ip);
   /** Resolves a list of IPs to a geographic location. */
   int resolve(QList<QHostAddress> ips);
+  /** Resolves <b>ip</b> to geographic information only if it is cached. */
+  bool resolveFromCache(QHostAddress ip);
   /** Resolves a list of IPs to a geographic location, but only those which
    * are cached. Returns a list of which IPs were not cached. */
   QList<QHostAddress> resolveFromCache(QList<QHostAddress> ips);

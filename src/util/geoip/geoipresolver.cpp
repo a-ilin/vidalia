@@ -44,6 +44,19 @@ GeoIpResolver::setSocksHost(QHostAddress addr, quint16 port)
   _socksPort = port;
 }
 
+/** Resolves <b>ip</b> to geographic information if it is cached. A resolved()
+ * signal will be emitted and true returned if we have cached geographic
+ * information for <b>ip</b>. Otherwise, this returns false. */
+bool
+GeoIpResolver::resolveFromCache(QHostAddress ip)
+{
+  if (_cache.contains(ip)) {
+    emit resolved(-1, QList<GeoIp>() << _cache.geoip(ip));
+    return true;
+  }
+  return false;
+}
+
 /** Resolves a list of IPs to a geographic location, but only those which are
  * cached. Returns a list of IPs that were not in the cache. */
 QList<QHostAddress>
