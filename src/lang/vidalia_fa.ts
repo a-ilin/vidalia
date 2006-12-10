@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1">
 <context>
     <name></name>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="33"/>
         <source>Arial</source>
-        <translation type="unfinished"></translation>
+        <translation>Arial</translation>
     </message>
 </context>
 <context>
@@ -13,7 +13,7 @@
     <message>
         <location filename="../gui/about/aboutdialog.ui" line="290"/>
         <source>About Vidalia</source>
-        <translation>Vidalia درباره</translation>
+        <translation>درباره Vidalia</translation>
     </message>
     <message>
         <location filename="../gui/about/aboutdialog.ui" line="344"/>
@@ -33,17 +33,17 @@
     <message>
         <location filename="../gui/about/aboutdialog.ui" line="443"/>
         <source>Qt Version</source>
-        <translation>Qt نسخه</translation>
+        <translation>نسخه Qt</translation>
     </message>
     <message>
         <location filename="../gui/about/aboutdialog.ui" line="528"/>
         <source>Tor Version</source>
-        <translation>Tor نسخه</translation>
+        <translation>نسخه Tor</translation>
     </message>
     <message>
         <location filename="../gui/about/aboutdialog.ui" line="359"/>
         <source>Vidalia Version</source>
-        <translation>Vidalia نسخه</translation>
+        <translation>نسخه Vidalia</translation>
     </message>
     <message>
         <location filename="../gui/about/aboutdialog.cpp" line="79"/>
@@ -71,17 +71,17 @@
     <message>
         <location filename="../gui/config/advancedpage.ui" line="390"/>
         <source>Start Tor with the specified configuration file (torrc)</source>
-        <translation>(torrc) با پرونده پیکربندی تعین شده Tor آغاز</translation>
+        <translation>آغاز Tor با پرونده پیکربندی تعیین شده (torrc)</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="409"/>
         <source>Select path to Tor configuration file</source>
-        <translation>Tor گزیدن مسیر پرونده پیکربندی</translation>
+        <translation>گزیدن مسیر پرونده پیکربندی Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="412"/>
         <source>Browse</source>
-        <translation>گشت وگذار</translation>
+        <translation>گشت و گذار</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="431"/>
@@ -91,27 +91,27 @@
     <message>
         <location filename="../gui/config/advancedpage.ui" line="454"/>
         <source>Run as User:</source>
-        <translation>راندن به عنوان  کاربر</translation>
+        <translation>راندن به عنوان کاربر:</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="467"/>
         <source>Vidalia will run with this User&apos;s permissions</source>
-        <translation>با این اجازه های کاربر اجرا خواهد شد Vidalia</translation>
+        <translation>Vidalia با این اجازه های کاربر اجرا خواهد شد</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="487"/>
         <source>Run as Group:</source>
-        <translation>راندن به عنوان گروه</translation>
+        <translation>راندن به عنوان گروه:</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="494"/>
         <source>Vidalia will run with this Group&apos;s permissions</source>
-        <translation>با این اجازه های گروه اجرا خواهد شد Vidalia</translation>
+        <translation>Vidalia با این اجازه های گروه اجرا خواهد شد</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="107"/>
         <source>Select Tor Configuration File</source>
-        <translation>Tor گزیدن پرونده پیکربندی</translation>
+        <translation>گزیدن پرونده پیکربندی Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="120"/>
@@ -131,7 +131,7 @@
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="134"/>
         <source>Unable to create %1 [%2]</source>
-        <translation>ایجاد 1% [2%] ناشدنی میباشد</translation>
+        <translation>ایجاد %1 [%2] ناشدنی میباشد</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="515"/>
@@ -141,44 +141,44 @@
     <message>
         <location filename="../gui/config/advancedpage.ui" line="530"/>
         <source>Enable this if you wish to run Tor as a Windows service</source>
-        <translation>اجرا کنید Windows را بعنوان سرویس Tor اینجا را تیک بزنید اگر میخواهید</translation>
+        <translation>اگر میخواهید Tor را بعنوان سرویس Windows اجرا کنید اینجا را تیک بزنید</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="533"/>
         <source>Run Tor in the background as a Windows service</source>
-        <translation>Windows در زمینه به عنوان سرویس Tor راندن</translation>
+        <translation>راندن Tor در زمینه بعنوان سرویس Windows</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="157"/>
         <source>Unable to remove Tor Service</source>
-        <translation>ناشدنی میباشد Tor پاک کردن سرویس</translation>
+        <translation>پاک کردن سرویس Tor ناشدنی میباشد</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="168"/>
         <source>Unable to install Tor Service</source>
-        <translation>ناشدنی میباشد Tor کار گذاری سرویس</translation>
+        <translation>کارگذاری سرویس Tor ناشدنی میباشد</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="169"/>
         <source>Vidalia was unable to install the Tor service.</source>
-        <translation>را کارگذاری کند Tor نتوانست سرویس Vidalia</translation>
+        <translation>Vidalia نتوانست سرویس Tor را کارگذاری کند.</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="159"/>
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
-        <translation>را پاک کند. شما می بایست آن را به گونه دستی پاک کنید Tor نتوانست سرویس Vidalia</translation>
+        <translation>Vidalia نتوانست سرویس Tor را پاک کند. شما می بایست آن را بگونه دستی پاک کنید.</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="369"/>
         <source>Tor Configuration File</source>
-        <translation>Tor پرونده پیکربندی</translation>
+        <translation>پرونده پیکربندی Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="338"/>
         <source>Port that Vidalia uses to communicate with Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>درگاهی که Vidalia برای تماس با Tor بکار می برد.</translation>
     </message>
 </context>
 <context>
@@ -191,12 +191,12 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/config/appearancepage.ui" line="322"/>
         <source>Choose the language used in Vidalia</source>
-        <translation>Vidalia گزیدن زبان بکاررفته در</translation>
+        <translation>گزیدن زبان بکاررفته در Vidalia</translation>
     </message>
     <message>
         <location filename="../gui/config/appearancepage.ui" line="354"/>
         <source>Changes to language will only take effect after restarting Vidalia!</source>
-        <translation>!رخ خواهد داد Vidalia جابجایی زبان تنها پس از راه اندازی دوباره</translation>
+        <translation>جابجایی زبان تنها پس از راه اندازی دوباره Vidalia رخ خواهد داد!</translation>
     </message>
     <message>
         <location filename="../gui/config/appearancepage.ui" line="370"/>
@@ -206,7 +206,7 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/config/appearancepage.ui" line="404"/>
         <source>Choose Vidalia&apos;s interface style</source>
-        <translation>Vidalia گزیدن سبک نمایش</translation>
+        <translation>گزیدن سبک نمایش Vidalia</translation>
     </message>
 </context>
 <context>
@@ -214,12 +214,12 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="289"/>
         <source>Tor Bandwidth Usage</source>
-        <translation>Tor پهنای باند بکار برده شده بدست</translation>
+        <translation>پهنای باند بکاربرده شده بدست Tor</translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="313"/>
         <source>Show Settings</source>
-        <translation>نمایش  پارامترها و تنظیمات</translation>
+        <translation>نمایش تنظیمات و پارامترها</translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="336"/>
@@ -254,7 +254,7 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/bwgraph/bwgraph.cpp" line="156"/>
         <source>Since:</source>
-        <translation>:از</translation>
+        <translation>از:</translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="539"/>
@@ -264,12 +264,12 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="554"/>
         <source>% Opaque</source>
-        <translation>تار %</translation>
+        <translation>% تار</translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/bwgraph.cpp" line="220"/>
         <source>Hide Settings</source>
-        <translation>پنهان کردن  پارامترها و تنظیمات</translation>
+        <translation>پنهان کردن تنظیمات و پارامترها</translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="474"/>
@@ -287,12 +287,12 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../control/circuit.cpp" line="110"/>
         <source>Open</source>
-        <translation>باز کردن</translation>
+        <translation>بازکردن</translation>
     </message>
     <message>
         <location filename="../control/circuit.cpp" line="111"/>
         <source>Building</source>
-        <translation>در حال ساختن</translation>
+        <translation>درحال ساختن</translation>
     </message>
     <message>
         <location filename="../control/circuit.cpp" line="112"/>
@@ -321,29 +321,24 @@ You may need to remove it manually.</source>
 <context>
     <name>CircuitListWidget</name>
     <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="47"/>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="46"/>
         <source>Connection</source>
         <translation>اتصال</translation>
     </message>
     <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="47"/>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="46"/>
         <source>Status</source>
         <translation>وضعیت</translation>
     </message>
     <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="56"/>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="54"/>
         <source>Close Circuit</source>
         <translation>بستن مدار</translation>
     </message>
     <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="62"/>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="58"/>
         <source>Close Stream</source>
         <translation>بستن جریان</translation>
-    </message>
-    <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="55"/>
-        <source>Zoom to Circuit</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -381,7 +376,7 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="154"/>
         <source>Error Saving Configuration</source>
-        <translation>خطا هنگام ثبت پیکربندی</translation>
+        <translation>خطا در هنگام ثبت پیکربندی</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="74"/>
@@ -391,7 +386,7 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/config/configdialog.ui" line="289"/>
         <source>Settings</source>
-        <translation>پارامترها و تنظیمات</translation>
+        <translation>تنظیمات و پارامترها</translation>
     </message>
 </context>
 <context>
@@ -412,43 +407,38 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../control/controlsocket.cpp" line="61"/>
         <source>Error connecting to %1:%2 [%3]</source>
-        <translation>[%3] %2:%1 خطا هنگام اتصال به</translation>
+        <translation>خطا در هنگام اتصال به %1:%2 [%3]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="95"/>
-        <source>Error disconnecting socket. [%1]</source>
-        <translation>[%1] .خطا هنگام بستن اتصال سوکت</translation>
-    </message>
-    <message>
-        <location filename="../control/controlsocket.cpp" line="151"/>
-        <source>Error sending control command. [%1]</source>
-        <translation>[%1] .خطا هنگام فرستادن فرمان کنترل</translation>
-    </message>
-    <message>
-        <location filename="../control/controlsocket.cpp" line="188"/>
-        <source>Socket disconnected while attempting to read a line of data.</source>
-        <translation>.سوکت هنگام خواندن یک ردیف از داده ها بسته شد</translation>
-    </message>
-    <message>
-        <location filename="../control/controlsocket.cpp" line="226"/>
-        <source>Invalid control reply. [%1]</source>
-        <translation>[%1] .پاسخ فرمان نادرست میباشد</translation>
-    </message>
-    <message>
-        <location filename="../control/controlsocket.cpp" line="142"/>
-        <source>Control socket is not connected.</source>
-        <translation>.سوکت کنترل متصل نمی باشد</translation>
-    </message>
-    <message>
-        <location filename="../control/controlsocket.cpp" line="76"/>
-        <source>Vidalia was unable to determine Tor&apos;s control protocol version. Verify that your control port number is set correctly and you are running a recent version of Tor.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../control/controlsocket.cpp" line="80"/>
-        <source>Vidalia only supports Version 1 of Tor&apos;s control protocol (version %1 detected).
+        <location filename="../control/controlsocket.cpp" line="74"/>
+        <source>Vidalia only supports Version 1 of Tor&apos;s Control Protocol (Version %1 detected).
 Upgrade to a newer version of Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia تنها نسخه 1 پروتکل کنترل Tor را می پذیرد (نسخه %1 پیدا شد). ارتقا به یک نسخه جدیدتر Tor.</translation>
+    </message>
+    <message>
+        <location filename="../control/controlsocket.cpp" line="89"/>
+        <source>Error disconnecting socket. [%1]</source>
+        <translation>خطا هنگام بستن اتصال سوکت. [%1]</translation>
+    </message>
+    <message>
+        <location filename="../control/controlsocket.cpp" line="145"/>
+        <source>Error sending control command. [%1]</source>
+        <translation>خطا هنگام فرستادن فرمان کنترل. [%1]</translation>
+    </message>
+    <message>
+        <location filename="../control/controlsocket.cpp" line="182"/>
+        <source>Socket disconnected while attempting to read a line of data.</source>
+        <translation>سوکت هنگام خواندن یک ردیف از داده ها بسته شد.</translation>
+    </message>
+    <message>
+        <location filename="../control/controlsocket.cpp" line="220"/>
+        <source>Invalid control reply. [%1]</source>
+        <translation>پاسخ فرمان نادرست می باشد. [%1]</translation>
+    </message>
+    <message>
+        <location filename="../control/controlsocket.cpp" line="136"/>
+        <source>Control socket is not connected.</source>
+        <translation>سوکت کنترل متصل نمی باشد.</translation>
     </message>
 </context>
 <context>
@@ -456,17 +446,17 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/config/generalpage.ui" line="334"/>
         <source>Path to Tor&apos;s executable</source>
-        <translation>Tor مسیر پرونده اجرایی</translation>
+        <translation>مسیر پرونده اجرایی Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.ui" line="353"/>
         <source>Select path to Tor executable</source>
-        <translation>Tor گزیدن مسیر پرونده اجرایی</translation>
+        <translation>گزیدن مسیر پرونده اجرایی Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.ui" line="356"/>
         <source>Browse</source>
-        <translation>گشت وگذار</translation>
+        <translation>گشت و گذار</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.ui" line="375"/>
@@ -476,37 +466,37 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/config/generalpage.ui" line="390"/>
         <source>Select to start Vidalia on system boot</source>
-        <translation>در هنگام راه اندازی سیستم Vidalia گزیدن برای راه اندازی کردن</translation>
+        <translation>گزیدن برای راه اندازی کردن Vidalia در هنگام راه اندازی سیستم</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.ui" line="393"/>
         <source>Run Vidalia on system startup</source>
-        <translation>در هنگام راه اندازی سیستم Vidalia اجرا کردن</translation>
+        <translation>اجرا کردن Vidalia در هنگام راه اندازی سیستم</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.ui" line="406"/>
         <source>Set to start Tor when you launch Vidalia</source>
-        <translation>Vidalia در هنگام راه اندازی Tor گزیدن برای آغاز کردن</translation>
+        <translation>گزیدن برای آغاز کردن Tor در هنگام راه انداختن Vidalia</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.ui" line="409"/>
         <source>Start Tor when Vidalia starts</source>
-        <translation>آغاز می شود Vidalia در هنگامی که Tor آغاز کردن</translation>
+        <translation>آغاز کردن Tor هنگامی که Vidalia آغاز می شود</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.cpp" line="72"/>
         <source>Select Path to Tor</source>
-        <translation>Tor گزیدن مسیر</translation>
+        <translation>گزیدن مسیر Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.ui" line="307"/>
         <source>Tor Executable</source>
-        <translation>Tor پرونده اجرایی</translation>
+        <translation>پرونده اجرایی Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.cpp" line="63"/>
         <source>Executables (*.exe)</source>
-        <translation>(*.exe) پرونده های اجرایی</translation>
+        <translation>پرونده های اجرایی (exe.*)</translation>
     </message>
 </context>
 <context>
@@ -514,12 +504,12 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/bwgraph/graphframe.cpp" line="250"/>
         <source>Recv: </source>
-        <translation>:دریافت</translation>
+        <translation>دریافت:</translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/graphframe.cpp" line="259"/>
         <source>Sent: </source>
-        <translation>:ارسال</translation>
+        <translation>ارسال: </translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/graphframe.cpp" line="271"/>
@@ -534,7 +524,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/bwgraph/graphframe.cpp" line="277"/>
         <source>%1 GB</source>
-        <translation>%1 گیگا بایت</translation>
+        <translation>%1 گیگابایت</translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/graphframe.cpp" line="298"/>
@@ -547,17 +537,17 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="303"/>
         <source>Vidalia Help</source>
-        <translation>Vidalia راهنمای</translation>
+        <translation>راهنمای Vidalia</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="449"/>
         <source>Find Previous</source>
-        <translation>پیداکردن پیشین</translation>
+        <translation>پیدا کردن پیشین</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="462"/>
         <source>Find Next</source>
-        <translation>پیداکردن پسین</translation>
+        <translation>پیدا کردن پسین</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="496"/>
@@ -582,7 +572,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="680"/>
         <source>Found Documents</source>
-        <translation>سند های پیداشده</translation>
+        <translation>سندهای پیدا شده</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="759"/>
@@ -592,7 +582,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="762"/>
         <source>Move to previous page (Backspace)</source>
-        <translation>(Backspace) برگه پیشین</translation>
+        <translation>برگه پیشین (Backspace)</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="770"/>
@@ -607,7 +597,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="781"/>
         <source>Move to next page (Shift+Backspace)</source>
-        <translation>(Shift+Backspace) برگه پسین</translation>
+        <translation>برگه پسین (Shift+Backspace)</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="789"/>
@@ -622,7 +612,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="800"/>
         <source>Move to the Home page (Ctrl+H)</source>
-        <translation>(Ctrl+H) رفتن به برگه اصلی</translation>
+        <translation>رفتن به برگه اصلی (Ctrl+H)</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="808"/>
@@ -632,12 +622,12 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="825"/>
         <source>Find</source>
-        <translation>پیداکردن</translation>
+        <translation>پیدا کردن</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="828"/>
         <source>Search for a word or phrase on current page (Ctrl+F)</source>
-        <translation>(Ctrl+F) پیدا کردن یک واژه یا عبارت در این برگه</translation>
+        <translation>پیدا کردن یک واژه یا عبارت در این برگه (Ctrl+F)</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="836"/>
@@ -652,17 +642,17 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="847"/>
         <source>Close Vidalia Help</source>
-        <translation>Vidalia بستن راهنمای</translation>
+        <translation>بستن راهنمای Vidalia</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="855"/>
         <source>Esc</source>
-        <translation>Esc کلید گریز</translation>
+        <translation>کلید گریز Esc</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.cpp" line="121"/>
         <source>Error Loading Help Contents: </source>
-        <translation>:خطا هنگام بارگذاری وخواندن راهنما</translation>
+        <translation>خطا هنگام بارگذاری و خواندن راهنما:</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.cpp" line="372"/>
@@ -682,7 +672,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="427"/>
         <source>Find:</source>
-        <translation>:پیداکردن</translation>
+        <translation>پیداکردن:</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="506"/>
@@ -692,12 +682,12 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="637"/>
         <source>Searching for:</source>
-        <translation>:جستجو برای</translation>
+        <translation>جستجو برای:</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.cpp" line="133"/>
         <source>Supplied XML file is not a valid Contents document.</source>
-        <translation>.مشخص شده معتبر نمیباشد XML محتوای سند</translation>
+        <translation>محتوا سند XML مشخص شده معتبر نمی باشد.</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.cpp" line="421"/>
@@ -710,7 +700,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/help/browser/helptextbrowser.cpp" line="59"/>
         <source>Error opening help file: </source>
-        <translation> :خطا هنگام بازکردن پرونده راهنما</translation>
+        <translation>خطا هنگام باز کردن پرونده راهنما: </translation>
     </message>
 </context>
 <context>
@@ -751,21 +741,16 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/log/logtreewidget.cpp" line="40"/>
         <source>Messages Shown: </source>
-        <translation>:پیامهای نشان داده شده</translation>
+        <translation>پیامهای نشان داده شده:</translation>
     </message>
     <message>
         <location filename="../gui/log/logtreewidget.cpp" line="230"/>
         <source>Messages Shown: %1</source>
-        <translation>%1 :پیامهای نشان داده شده</translation>
+        <translation>پیامهای نشان داده شده: %1</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="239"/>
-        <source>Tor is Stopped</source>
-        <translation>ایستاده است Tor</translation>
-    </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="194"/>
         <source>Start</source>
@@ -844,57 +829,37 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/mainwindow.cpp" line="318"/>
         <source>Vidalia Help</source>
-        <translation>Vidalia راهنمای</translation>
+        <translation>راهنمای Vidalia</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="365"/>
         <source>Error Starting Tor</source>
-        <translation>Tor خطا در هنگام آغاز</translation>
+        <translation>خطا در هنگام آغاز Tor</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="409"/>
         <source>Error Connecting to Tor</source>
-        <translation>Tor خطا در هنگام اتصال به</translation>
+        <translation>خطا در هنگام اتصال به Tor</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="474"/>
         <source>Error Stopping Tor</source>
-        <translation>Tor خطا در هنگام ایستاندن</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="495"/>
-        <source>Tor is stopped</source>
-        <translation>ایستاده است Tor</translation>
+        <translation>خطا در هنگام ایستاندن Tor</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="507"/>
         <source>Tor Exited</source>
-        <translation>بیرون شد Tor</translation>
+        <translation>Tor بیرون شد</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="475"/>
         <source>Vidalia was unable to stop Tor.</source>
-        <translation>.را بایستاند Tor نتوانست Vidalia</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="394"/>
-        <source>Tor is starting</source>
-        <translation>در حال راه افتادن می باشد Tor</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="529"/>
-        <source>Tor is running</source>
-        <translation>در حال اجرا می باشد Tor</translation>
+        <translation>Vidalia نتوانست Tor را بایستاند</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="435"/>
         <source>Server is Enabled</source>
         <translation>سرویس دهنده فعال می باشد</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="471"/>
-        <source>Tor is stopping</source>
-        <translation>در حال ایستادن می باشد Tor</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="289"/>
@@ -904,31 +869,31 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/mainwindow.cpp" line="537"/>
         <source>Error Applying Server Settings</source>
-        <translation>خطا در هنگام بکار بردن تنظیمات سرویس دهنده</translation>
+        <translation>خطا در هنگام بکاربردن تنظیمات سرویس دهنده</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="538"/>
         <source>Vidalia was unable to apply your server&apos;s settings.</source>
-        <translation>.نتوانست تنظیمات سرویس دهنده را بکار ببرد Vidalia</translation>
+        <translation>Vidalia نتوانست تنطیمات سرویس دهنده را بکار ببرد.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="440"/>
         <source>You are currently running a Tor server. Terminating your server will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new server?</source>
-        <translation>در حالت سرویس دهنده می باشد. ایستاندن سرویس دهنده شما مایه وقفه در اتصال کاربران دیگر خواهد شد. آیا میخواهید به گونه مناسب بایستید و به دیگر کاربران زمان پیدا کردن یک سرویس دهنده جدید را بدهید؟ Tor هم اکنون</translation>
+        <translation>هم آکنون Tor در حالت سرویس دهنده می باشد. ایستاندن سرویس دهنده شما مایه وقفه در اتصال کاربران دیگر خواهد شد. آیا میخواهید به گونه مناسب بایستید و به دیگر کاربران زمان پیدا کردن یک سرویس دهنده جدید را بدهید؟</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="510"/>
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
-        <translation>.بررسی کنید Tor به گونه غیرمنتظره بیرون شد. خواهشمند است پرونده ثبت پیام را برای بازبینی رویدادهای پیش از بیرون رفتن Tor پی برد که Vidalia</translation>
+        <translation>Vidalia پی برد که Tor به گونه غیرمنتطره بیرون شد. خواهشمند است پرونده ثبت پیام را برای بازبینی رویدادهای پیش از بیرون رفتن Tor بررسی کنید.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="368"/>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
-        <translation>.بدرستی مشخص شده اند Tor را راه اندازی کند. تنظیماتتان را چک کنید و اطمینان پیدا کنید که نام و مسیر پرونده اجرایی Tor نتوانست Vidalia</translation>
+        <translation>Vidalia نتوانست Tor را راه اندازی کند. تنظیماتتان را چک کنید و اطمینان پیدا کنید که نام و مسیر پرونده اجرایی Tor بدرستی مشخص شده اند.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="213"/>
@@ -938,7 +903,7 @@ Please check the message log for indicators about what happened to Tor before it
     <message>
         <location filename="../gui/mainwindow.cpp" line="217"/>
         <source>Settings</source>
-        <translation>پارامترها و تنظیمات</translation>
+        <translation>تنظیمات و پارامترها</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="571"/>
@@ -953,12 +918,37 @@ Please check the message log for indicators about what happened to Tor before it
     <message>
         <location filename="../gui/mainwindow.cpp" line="574"/>
         <source>All subsequent connections will appear to be different than your old connections.</source>
-        <translation>.همه اتصال های پسین بنظر متفاوت خواهند آمد نسبت به اتصال های پیشین</translation>
+        <translation>همه اتصال های پسین بنظر متفاوت خواهند آمد نسبت به اتصال های پیشین</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="587"/>
         <source>Failed to Create New Identity</source>
         <translation>ناکامی در پدید آوردن هویت تازه</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="239"/>
+        <source>Tor is Stopped</source>
+        <translation>Tor ایستاده است</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="471"/>
+        <source>Tor is stopping</source>
+        <translation>Tor در حال ایستادن می باشد</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="394"/>
+        <source>Tor is starting</source>
+        <translation>Tor در حال راه افتادن می باشد</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="495"/>
+        <source>Tor is stopped</source>
+        <translation>Tor ایستاده است</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="529"/>
+        <source>Tor is running</source>
+        <translation>Tor در حال اجرا می باشد</translation>
     </message>
 </context>
 <context>
@@ -996,7 +986,7 @@ Please check the message log for indicators about what happened to Tor before it
     <message>
         <location filename="../gui/log/messagelog.ui" line="433"/>
         <source>Save Settings</source>
-        <translation>ثبت کردن تنطیمات و پارامترها</translation>
+        <translation>ثبت کردن تنظیمات و پارامترها</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="449"/>
@@ -1041,7 +1031,7 @@ Please check the message log for indicators about what happened to Tor before it
     <message>
         <location filename="../gui/log/messagelog.ui" line="727"/>
         <source>Message Filters...</source>
-        <translation>...فیلترها</translation>
+        <translation>فیلترها...</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="730"/>
@@ -1051,7 +1041,7 @@ Please check the message log for indicators about what happened to Tor before it
     <message>
         <location filename="../gui/log/messagelog.ui" line="743"/>
         <source>History Size...</source>
-        <translation>...سایز تاریخچه</translation>
+        <translation>سایز تاریخچه</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="746"/>
@@ -1066,7 +1056,7 @@ Please check the message log for indicators about what happened to Tor before it
     <message>
         <location filename="../gui/log/messagelog.ui" line="765"/>
         <source>Clear all messages from the Message Log (Ctrl+E)</source>
-        <translation>(Ctrl+E) پاک کردن همه پیام ها از پرونده ثبت پیام</translation>
+        <translation>پاک کردن همه پیام ها از پرونده ثبت پیام (Ctrl+E)</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="773"/>
@@ -1081,7 +1071,7 @@ Please check the message log for indicators about what happened to Tor before it
     <message>
         <location filename="../gui/log/messagelog.ui" line="790"/>
         <source>Copy the selected messages to the clipboard (Ctrl+C)</source>
-        <translation>(Ctrl+C) کپی کردن پیام های برگزیده به تخته یادداشت</translation>
+        <translation>کپی کردن پیام های برگزیده به تخته یادداشت (Ctrl+C)</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="798"/>
@@ -1096,7 +1086,7 @@ Please check the message log for indicators about what happened to Tor before it
     <message>
         <location filename="../gui/log/messagelog.ui" line="812"/>
         <source>Select all messages (Ctrl+A)</source>
-        <translation>(Ctrl+A) گزیدن همه پیام ها</translation>
+        <translation>گزیدن همه پیام ها (Ctrl+A)</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="820"/>
@@ -1136,7 +1126,7 @@ Please check the message log for indicators about what happened to Tor before it
     <message>
         <location filename="../gui/log/messagelog.ui" line="912"/>
         <source>Esc</source>
-        <translation>Esc کلید گریز</translation>
+        <translation>کلید گریز Esc</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="923"/>
@@ -1146,7 +1136,7 @@ Please check the message log for indicators about what happened to Tor before it
     <message>
         <location filename="../gui/log/messagelog.ui" line="926"/>
         <source>Find all messages containing the search text (Ctrl+F)</source>
-        <translation>(Ctrl+F) پیدا کردن همه پیام هایی که این متن را در بردارند</translation>
+        <translation>پیدا کردن همه پیام هایی که این متن را در بر دارند (Ctrl+F)</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="934"/>
@@ -1157,13 +1147,13 @@ Please check the message log for indicators about what happened to Tor before it
         <location filename="../gui/log/messagelog.cpp" line="148"/>
         <source>Messages that appear when something has 
 gone very wrong and Tor cannot proceed.</source>
-        <translation>.نمیتواند پیش برود Tor پیامهایی که پدیدار میشوند هنگامی که چیزی خیلی بد اجرا شد و</translation>
+        <translation>پیامهایی که پدیدار میشوند هنگامی چیزی خیلی بد اجرا شد و Tor نمیتواند پیش برود.</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="150"/>
         <source>Messages that only appear when 
 something has gone wrong with Tor.</source>
-        <translation>.Tor پیامهایی که پدیدار میشوند تنها هنگامی که چیزی بد اجرا شد در</translation>
+        <translation>پیامهایی که پدیدار میشوند تنها هنگامی که چیزی بد اجرا شد در Tor.</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="154"/>
@@ -1171,19 +1161,19 @@ something has gone wrong with Tor.</source>
 during normal Tor operation and are 
 not considered errors, but you may 
 care about.</source>
-        <translation>.و بعنوان خطا درنظرگرفته نمیشوند, ولی به آنها توجه کنید Tor پیام های نادری که پدیدار میشوند هنگام اجرای نرمال</translation>
+        <translation>پیام های نادری که پدیدار میشوند هنگام اجرای نرمال Tor و بعنوان خطا در نظر گرفته نمیشوند، ولی به آنها توجه کنید.</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="156"/>
         <source>Messages that appear frequently 
 during normal Tor operation.</source>
-        <translation>.Tor پیام هایی که بارها پدیدار میشوند هنگام اجرای نرمال</translation>
+        <translation>پیام هایی که بارها پدیدار میشوند هنگام اجرای نرمال Tor.</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="158"/>
         <source>Hyper-verbose messages primarily of 
 interest to Tor developers.</source>
-        <translation>.Tor پیام های پرگو به ویژه مورد توجه برای سازندگان برنامه</translation>
+        <translation>پیام های پرگو به ویژه مورد توجه برای سازندگان برنامه Tor.</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="203"/>
@@ -1203,7 +1193,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="311"/>
         <source>Save Log Messages</source>
-        <translation>بایگانی کردن پیامهای ثبت</translation>
+        <translation>بایگانی کردن پیام های ثبت</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="323"/>
@@ -1213,12 +1203,12 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="376"/>
         <source>Find in Message Log</source>
-        <translation>جستحو کردن در ثبت پیام</translation>
+        <translation>جستجو کردن در ثبت پیام</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="377"/>
         <source>Find:</source>
-        <translation>:پیداکردن</translation>
+        <translation>پیداکردن:</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="383"/>
@@ -1228,7 +1218,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="384"/>
         <source>Search found 0 matches.</source>
-        <translation>جستجو 0 نتیجه پیداکرد</translation>
+        <translation>جستجو 0 نتیجه پیدا کرد</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="863"/>
@@ -1253,32 +1243,29 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/log/messagelog.ui" line="885"/>
         <source>Show the help browser</source>
-        <translation>گشت وگذار در راهنما</translation>
+        <translation>گشت و گذار در راهنما</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="204"/>
         <source>Vidalia was unable to register for Tor&apos;s log events.</source>
-        <translation>.را ثبت کند Tor نتوانست رویدادهای Vidalia</translation>
+        <translation>Vidalia نتوانست رویدادهای Tor را ثبت کند.</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="324"/>
         <source>Cannot write file %1
 
 %2.</source>
-        <translation>.ناشدنی می باشد
-
- %1%2 نوشتن در پرونده
-</translation>
+        <translation>نوشتن در پرونده %2%1 ناشدنی می باشد.</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="220"/>
         <source>Vidalia was unable to open the specified log file.</source>
-        <translation>.نتوانست پرونده ثبت مشخص شده را باز کند Vidalia</translation>
+        <translation>Vidalia نتوانست پرونده مشخص شده را باز کند.</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="314"/>
         <source>Text Files (*.txt)</source>
-        <translation>(*.txt) پرونده های متنی</translation>
+        <translation>پرونده های (*.txt)</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="893"/>
@@ -1293,7 +1280,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="243"/>
         <source>You must enter a filename to be able to save log messages to a file.</source>
-        <translation>.شما میبایست یک نام پرونده وارد کنید برای اینکه بتوانید پیامهای ثبت را در یک پرونده ذخیره کنید</translation>
+        <translation>شما میبایست یک نام پرونده وارد کنید برای اینکه بتوانید پیامهای ثبت را در یک پرونده ذخیره کنید.</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="567"/>
@@ -1308,7 +1295,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/log/messagelog.ui" line="612"/>
         <source>messages</source>
-        <translation type="unfinished"></translation>
+        <translation>پیام ها</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="631"/>
@@ -1331,12 +1318,12 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/netviewer.ui" line="297"/>
         <source>View Tor Network</source>
-        <translation>Tor مشاهده شبکه</translation>
+        <translation>مشاهده شبکه Tor</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="515"/>
         <source>Refresh</source>
-        <translation>بازآوردن</translation>
+        <translation>باز آوردن</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="537"/>
@@ -1361,32 +1348,32 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/netviewer.ui" line="521"/>
         <source>Refresh the list of routers and connections.</source>
-        <translation type="obsolete">بازآوردن لیست رهیاب ها و اتصال ها</translation>
+        <translation>بازآوردن لیست رهیاب ها و اتصال ها.</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="540"/>
         <source>Show network map help.</source>
-        <translation type="obsolete">.نمایش راهنمای نقشه شبکه</translation>
+        <translation>نمایش راهنمای نقشه شبکه.</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="543"/>
         <source>Show the network map help.</source>
-        <translation type="obsolete">.نمایش راهنمای نقشه شبکه</translation>
+        <translation>نمایش راهنمای نقشه شبکه.</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="565"/>
         <source>Close the network map.</source>
-        <translation type="obsolete">.بستن نقشه شبکه</translation>
+        <translation>بستن نقشه شبکه.</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="587"/>
         <source>Zoom in on the network map.</source>
-        <translation type="obsolete">.بزرگ نمایی کردن نقشه شبکه</translation>
+        <translation>بزرگ نمایی کردن در نقشه شبکه.</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="609"/>
         <source>Zoom out on the network map.</source>
-        <translation type="obsolete">.کوچک نمایی کردن نقشه شبکه</translation>
+        <translation>کوچک نمایی کردن نقشه شبکه.</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="625"/>
@@ -1396,7 +1383,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/netviewer.ui" line="631"/>
         <source>Zooms to fit all currently displayed circuits.</source>
-        <translation type="obsolete">.سازگارکردن زوم برای همه مدارهای نشان داده شده کنونی</translation>
+        <translation>سازگار کردن زوم برای همه مدارهای نشان داده شده کنونی.</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="529"/>
@@ -1411,7 +1398,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/netviewer.ui" line="573"/>
         <source>Esc</source>
-        <translation>Esc کلید گریز</translation>
+        <translation>کلید گریز Esc</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="595"/>
@@ -1428,41 +1415,6 @@ interest to Tor developers.</source>
         <source>Ctrl+Z</source>
         <translation>Ctrl+Z</translation>
     </message>
-    <message>
-        <location filename="../gui/network/netviewer.ui" line="521"/>
-        <source>Refresh the list of routers and connections</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/network/netviewer.ui" line="540"/>
-        <source>Show network map help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/network/netviewer.ui" line="543"/>
-        <source>Show the network map help</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/network/netviewer.ui" line="565"/>
-        <source>Close the network map</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/network/netviewer.ui" line="587"/>
-        <source>Zoom in on the network map</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/network/netviewer.ui" line="609"/>
-        <source>Zoom out on the network map</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/network/netviewer.ui" line="631"/>
-        <source>Zooms to fit all currently displayed circuits</source>
-        <translation type="unfinished"></translation>
-    </message>
 </context>
 <context>
     <name>Policy</name>
@@ -1474,7 +1426,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../config/policy.cpp" line="178"/>
         <source>reject</source>
-        <translation>ردکردن</translation>
+        <translation>رد کردن</translation>
     </message>
 </context>
 <context>
@@ -1482,12 +1434,12 @@ interest to Tor developers.</source>
     <message>
         <location filename="../control/routerdescriptor.cpp" line="87"/>
         <source>Online</source>
-        <translation>(برخط (آنلاین</translation>
+        <translation>برخط</translation>
     </message>
     <message>
         <location filename="../control/routerdescriptor.cpp" line="89"/>
         <source>Hibernating</source>
-        <translation>????</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../control/routerdescriptor.cpp" line="91"/>
@@ -1500,32 +1452,32 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/routerdescriptorview.cpp" line="114"/>
         <source>IP Address:</source>
-        <translation>:(IP) نشانی اینترنتی</translation>
+        <translation>نشانی اینترنتی</translation>
     </message>
     <message>
         <location filename="../gui/network/routerdescriptorview.cpp" line="115"/>
         <source>Platform:</source>
-        <translation>:پلت فرم</translation>
+        <translation>پلت فرم:</translation>
     </message>
     <message>
         <location filename="../gui/network/routerdescriptorview.cpp" line="119"/>
         <source>Bandwidth:</source>
-        <translation>:پهنای باند</translation>
+        <translation>پهنای باند:</translation>
     </message>
     <message>
         <location filename="../gui/network/routerdescriptorview.cpp" line="121"/>
         <source>Uptime:</source>
-        <translation>:زمان دایر بودن</translation>
+        <translation>زمان دایر بودن:</translation>
     </message>
     <message>
         <location filename="../gui/network/routerdescriptorview.cpp" line="127"/>
         <source>Last Updated:</source>
-        <translation>:واپسین بروزرسانی</translation>
+        <translation>واپسین بروزرسانی:</translation>
     </message>
     <message>
         <location filename="../gui/network/routerdescriptorview.cpp" line="110"/>
         <source>Location:</source>
-        <translation>:محل</translation>
+        <translation>محل:</translation>
     </message>
 </context>
 <context>
@@ -1533,7 +1485,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/routerlistitem.cpp" line="87"/>
         <source>%1 KB/s</source>
-        <translation>%1 کیلوبایت در ثانیه</translation>
+        <translation>%1 کیلوبایت</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistitem.cpp" line="71"/>
@@ -1543,7 +1495,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/routerlistitem.cpp" line="75"/>
         <source>Hibernating</source>
-        <translation>???</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1561,12 +1513,12 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="215"/>
         <source>%1 servers total</source>
-        <translation>درکل %1 سرویس دهنده</translation>
+        <translation>در کل %1 سرویس دهنده</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="51"/>
         <source>Zoom to Server</source>
-        <translation>???</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1574,17 +1526,17 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="502"/>
         <source>Check to run as a Tor network server</source>
-        <translation>بعنوان یک سرویس دهنده شبکه Tor تیک بزنید برای اجراکردن</translation>
+        <translation>تیک بزنید برای اجرا کردن Tor بعنوان یک سرویس دهنده شبکه</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="505"/>
         <source>Relay traffic for the Tor network</source>
-        <translation>Tor بازپخش کردن شدآمد برای شبکه</translation>
+        <translation>باز پخش کردن شدآمد برای شبکه Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="716"/>
         <source>Directory Port:</source>
-        <translation>:درگاه فهرست راهنما</translation>
+        <translation>درگاه فهرست راهنما:</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="746"/>
@@ -1594,7 +1546,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="616"/>
         <source>Nickname:</source>
-        <translation>:لقب</translation>
+        <translation>لقب:</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="821"/>
@@ -1604,12 +1556,12 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="684"/>
         <source>Contact Info:</source>
-        <translation>:اطلاعات تماس</translation>
+        <translation>اطلاعات تماس:</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="638"/>
         <source>Server Port:</source>
-        <translation>:درگاه سرویس دهنده</translation>
+        <translation>درگاه سرویس دهنده:</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="674"/>
@@ -1619,7 +1571,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="565"/>
         <source>Address:</source>
-        <translation>:نشانی</translation>
+        <translation>نشانی:</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="781"/>
@@ -1649,7 +1601,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1191"/>
         <source>Exit Policies</source>
-        <translation>سیاستها و استراتژی خروج</translation>
+        <translation>سیاست ها و استراتژی خروج</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1317"/>
@@ -1659,7 +1611,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="148"/>
         <source>You must specify at least a server nickname and port.</source>
-        <translation>.شما می بایست دست کم یک لقب و یک درگاه سرویس دهنده را مشخص کنید</translation>
+        <translation>شما می بایست دست کم یک لقب و یک درگاه سرویس دهنده را مشخص کنید.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="232"/>
@@ -1669,36 +1621,36 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="233"/>
         <source>Vidalia was unable to determine your public IP address.</source>
-        <translation>.نتوانست نشانی اینترنتی همگانی شما را تعیین کند Vidalia</translation>
+        <translation>Vidalia نتوانست آدرس اینترنتی همگانی شما را تعیین کند.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="250"/>
         <source>Vidalia was only able to find a private IP address for your server.
 
 Would you like to access an external service to determine your public IP address?</source>
-        <translation>تنها توانست نشانی اینترنتی خصوصی شما را پیدا کند. آیا می خواهید برای تعیین کردن نشانی اینترنتی همگانی خود به یک سرویس بیرونی دستیابی پیداکنید؟ Vidalia</translation>
+        <translation>Vidalia تنها توانست نشانی اینترنتی خصوصی شما را پیدا کند. آیا می خواهید برای تعیین کردن نشانی اینترنتی همگانی خود به یک سرویس بیرونی دستیابی پیداکنید؟</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="850"/>
         <source>When enabled, Vidalia will periodically update your IP address if necessary</source>
-        <translation>نشانی اینترنتی شما را اگر نیاز باشد به گونه دوره ای بروز رسانی خواهد کرد Vidalia ،چنانچه فعال باشد</translation>
+        <translation>چنانچه فعال باشد، Vidalia نشانی اینترنتی شما را اگر نیاز باشد به گونه دوره ای بروز رسانی خواهد کرد</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="853"/>
         <source>Automatically Update</source>
-        <translation>بروز رسانی کردن بگونه خودکار</translation>
+        <translation>بروز رسانی کردن به گونه خودکار</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="806"/>
         <source>Email address at which you may be reached if there is a
 problem with your server. You might also include your PGP or GPG
 fingerprint.</source>
-        <translation>.را در پیوست بگذارید GPG یا PGP نشانی پست الکترونیکی که بتوان با شما در صورت بروز مشکل با سرویس دهنده تان تماس گرفت. شما همچنین می توانید اثرانگشت </translation>
+        <translation>نشانی پست الکترونیکی که بتوان با شما در صورت بروز مشکل با سرویس دهنده تان تماس گرفت. شما همچنین می توانید اثر انگشت PGP یا GPG را در پیوست بگذارید.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1072"/>
         <source>Long-term average bandwidth limit</source>
-        <translation>???</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1085"/>
@@ -1708,7 +1660,7 @@ fingerprint.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1145"/>
         <source>KB/s</source>
-        <translation type="unfinished"></translation>
+        <translation>کیلوبایت در ثانیه</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1132"/>
@@ -1738,7 +1690,7 @@ fingerprint.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="922"/>
         <source>For Internet connections with fast download speed but slow upload, please list your upload speed here.</source>
-        <translation>.برای اتصال های اینترنت با سرعت بارگیری بالا و بارگذاری کند، خواهشمند است سرعت بارگذاری خود را در اینجا واردکنید</translation>
+        <translation>برای اتصال های اینترنت با سرعت بارگیری بالا و بارگذاری کند، خواهشمند است سرعت بارگذاری خود را در اینجا وارد کنید.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="943"/>
@@ -1793,7 +1745,7 @@ fingerprint.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1245"/>
         <source>Retrieve Mail (POP, IMAP)</source>
-        <translation>(POP, IMAP) بازیابی نامه</translation>
+        <translation>بازیابی نامه (POP, IMAP)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1255"/>
@@ -1803,7 +1755,7 @@ fingerprint.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1258"/>
         <source>Misc Other Services</source>
-        <translation>???</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1268"/>
@@ -1823,7 +1775,7 @@ fingerprint.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1284"/>
         <source>Secure Websites (SSL)</source>
-        <translation>(SSL) وب گاه های امن</translation>
+        <translation>وب گاه های امن (SSL)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1294"/>
@@ -1838,7 +1790,7 @@ fingerprint.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1390"/>
         <source>What Internet resources should Tor users be able to access from your Tor relay?</source>
-        <translation type="unfinished"></translation>
+        <translation>به چه منابع اینترنتی کاربران Tor میتوانند بدست بازپخش شما دسترسی پیدا کنند؟</translation>
     </message>
 </context>
 <context>
@@ -1871,7 +1823,7 @@ fingerprint.</source>
     <message>
         <location filename="../control/stream.cpp" line="116"/>
         <source>Closed</source>
-        <translation>بستن</translation>
+        <translation>بسته</translation>
     </message>
     <message>
         <location filename="../control/stream.cpp" line="118"/>
@@ -1889,25 +1841,25 @@ fingerprint.</source>
     <message>
         <location filename="../control/torprocess.cpp" line="88"/>
         <source>Process %1 failed to stop. [%2]</source>
-        <translation>[%2] .%1 ناکامی در ایستادن فرایند</translation>
+        <translation>ناکامی در ایستادن فرایند %1. [%2]</translation>
     </message>
 </context>
 <context>
     <name>TorService</name>
     <message>
-        <location filename="../control/torservice.cpp" line="159"/>
+        <location filename="../control/torservice.cpp" line="109"/>
         <source>Services not supported on this platform.</source>
-        <translation>.سرویس ها در این پلت فرم پشتیبانی نمی شوند</translation>
+        <translation>سرویس ها در این پلت فرم پشتیبانی نمی شوند.</translation>
     </message>
     <message>
-        <location filename="../control/torservice.cpp" line="186"/>
+        <location filename="../control/torservice.cpp" line="134"/>
         <source>Unable to start Tor service.</source>
-        <translation>.ناشدنی می باشد Tor آغاز سرویس</translation>
+        <translation>آغاز سرویس Tor ناشدنی می باشد.</translation>
     </message>
     <message>
-        <location filename="../control/torservice.cpp" line="163"/>
+        <location filename="../control/torservice.cpp" line="113"/>
         <source>The Tor service is not installed.</source>
-        <translation>.کارگذاری نشده اشت Tor سرویس</translation>
+        <translation>سرویس Tor کارگذاری نشده است.</translation>
     </message>
 </context>
 <context>
@@ -1958,24 +1910,24 @@ fingerprint.</source>
     <message>
         <location filename="../vidalia.cpp" line="172"/>
         <source>Invalid language code specified: </source>
-        <translation>:کد زبان مشخص شده نادرست میباشد</translation>
+        <translation>کد زبان مشخص شده نادرست میباشد: </translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="179"/>
         <source>Invalid GUI style specified: </source>
-        <translation>:سبک واسط مشخص شده نامعتبر میباشد</translation>
+        <translation>سبک واسط مشخص شده نامعتبر میباشد: </translation>
     </message>
     <message>
         <location filename="../main.cpp" line="78"/>
         <source>Vidalia is already running</source>
-        <translation>پیشتر در حال اجرا میباشد Vidalia</translation>
+        <translation>Vidalia پیشتر در حال اجرا میباشد</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="83"/>
         <source>Another Vidalia process is already running. 
 
 This Vidalia process will now exit.</source>
-        <translation>.خارج میشود Vidalia دیگری پیشتر در حال اجرا میباشد. این فرآیند Vidalia فرآیند</translation>
+        <translation>فرایند Vidalia دیگری پیشتر در حال اجرا میباشد. این فرایند Vidalia خارج میشود.</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="90"/>
