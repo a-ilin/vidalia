@@ -345,7 +345,7 @@ Sie müssen ihn manuell entfernen.</translation>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="55"/>
         <source>Zoom to Circuit</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanal heranzoomen</translation>
     </message>
 </context>
 <context>
