@@ -107,6 +107,8 @@ NetViewer::NetViewer(QWidget *parent)
           this, SLOT(circuitSelected(Circuit)));
   connect(ui.treeCircuitList, SIGNAL(circuitRemoved(quint64)),
           _map, SLOT(removeCircuit(quint64)));
+  connect(ui.treeCircuitList, SIGNAL(zoomToCircuit(quint64)),
+          _map, SLOT(zoomToCircuit(quint64)));
   connect(ui.treeCircuitList, SIGNAL(closeCircuit(quint64)),
           this, SLOT(closeCircuit(quint64)));
   connect(ui.treeCircuitList, SIGNAL(closeStream(quint64)),

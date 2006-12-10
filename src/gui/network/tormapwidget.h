@@ -68,6 +68,8 @@ public slots:
   void zoomToFit();
   /** Zoom to a particular router on the map. */
   void zoomToRouter(QString id);
+  /** Zoom to the circuit on the map with the given <b>circid</b>. */
+  void zoomToCircuit(quint64 circid);
 
 protected:
   /** Paints the current circuits and streams on the image. */

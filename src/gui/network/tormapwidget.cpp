@@ -284,6 +284,22 @@ TorMapWidget::zoomToFit()
   }
 }
 
+/** Zoom to the circuit on the map with the given <b>circid</b>. */
+void
+TorMapWidget::zoomToCircuit(quint64 circid)
+{
+  if (_circuits.contains(circid)) {
+    QPair<QPainterPath*,bool> *pair = _circuits.value(circid);
+    QRectF rect = ((QPainterPath *)pair->first)->boundingRect();
+    if (!rect.isNull()) {
+      float zoomLevel = 1.0 - qMax(rect.height()/float(MAP_HEIGHT),
+                                   rect.width()/float(MAP_WIDTH));
+
+      zoom(rect.center().toPoint(), zoomLevel+0.2);
+    }
+  }
+}
+
 /** Zooms in on the router with the given <b>id</b>. */
 void
 TorMapWidget::zoomToRouter(QString id)

@@ -71,7 +71,9 @@ signals:
   void closeCircuit(quint64 circid);
   /** Emitted when the user selects a stream to be closed. */
   void closeStream(quint64 streamid);
-
+  /** Emitted when the user selects a circuit to zoom to. */
+  void zoomToCircuit(quint64 circid);
+  
 public slots:
   /** Clears all circuits and streams from the list. */
   void clearCircuits();
@@ -105,6 +107,7 @@ private:
   /* Circuit and stream context menus and items */
   QMenu* _circuitContextMenu; /**< Context menu for circuit items. */
   QAction* _closeCircuitAct;  /**< Closes a circuit. */
+  QAction* _zoomCircuitAct;   /**< Zoom to a circuit. */
   QMenu* _streamContextMenu;  /**< Context menu for stream items. */
   QAction* _closeStreamAct;   /**< Closes a stream. */
 

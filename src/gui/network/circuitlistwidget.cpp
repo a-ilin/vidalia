@@ -31,6 +31,7 @@
 #include "circuitlistwidget.h"
 
 #define IMG_CLOSE   ":/images/16x16/network-offline.png"
+#define IMG_ZOOM    ":/images/16x16/zoom.png"
 
 #define CLOSED_CIRCUIT_REMOVE_DELAY     3000
 #define FAILED_CIRCUIT_REMOVE_DELAY     5000
@@ -51,7 +52,10 @@ CircuitListWidget::CircuitListWidget(QWidget *parent)
 
   /* Set up the circuit item context menu */
   _circuitContextMenu = new QMenu(this);
+  _zoomCircuitAct = new QAction(QIcon(IMG_ZOOM), tr("Zoom to Circuit"), this);
   _closeCircuitAct = new QAction(QIcon(IMG_CLOSE), tr("Close Circuit"), this);
+  _circuitContextMenu->addAction(_zoomCircuitAct);
+  _circuitContextMenu->addSeparator();
   _circuitContextMenu->addAction(_closeCircuitAct);
   /* Set up the stream item context menu */
   _streamContextMenu = new QMenu(this);
@@ -75,10 +79,15 @@ CircuitListWidget::mouseReleaseEvent(QMouseEvent *e)
     QPoint pos = e->globalPos();
     if (!item->parent()) {
       /* Circuit was right-clicked */
-      quint64 circid = ((CircuitItem *)item)->id();
+      Circuit circ   = ((CircuitItem *)item)->circuit();
+      quint64 circid = circ.id();
+      _zoomCircuitAct->setEnabled((circ.status() == Circuit::Built));
+      
       QAction* action = _circuitContextMenu->exec(pos);
       if (action == _closeCircuitAct) {
         emit closeCircuit(circid);
+      } else if (action == _zoomCircuitAct) {
+        emit zoomToCircuit(circid);
       }
     } else {
       /* Stream was right-clicked */
