@@ -345,7 +345,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="55"/>
         <source>Zoom to Circuit</source>
-        <translation type="unfinished"></translation>
+        <translation>Sovita näyttämään yhteys</translation>
     </message>
 </context>
 <context>
@@ -1578,7 +1578,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="51"/>
         <source>Zoom to Server</source>
-        <translation>Suurenna palvelimelle</translation>
+        <translation>Sovita näyttämään palvelin</translation>
     </message>
 </context>
 <context>
