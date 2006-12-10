@@ -323,24 +323,29 @@ Potrebbe essere necessario rimuoverlo manualmente.</translation>
 <context>
     <name>CircuitListWidget</name>
     <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="46"/>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="47"/>
         <source>Connection</source>
         <translation>Connessione</translation>
     </message>
     <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="46"/>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="47"/>
         <source>Status</source>
         <translation>Stato</translation>
     </message>
     <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="54"/>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="56"/>
         <source>Close Circuit</source>
         <translation>Circuito Chiuso</translation>
     </message>
     <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="58"/>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="62"/>
         <source>Close Stream</source>
         <translation>Flusso Chiuso</translation>
+    </message>
+    <message>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="55"/>
+        <source>Zoom to Circuit</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -323,24 +323,29 @@ You may need to remove it manually.</source>
 <context>
     <name>CircuitListWidget</name>
     <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="46"/>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="47"/>
         <source>Connection</source>
         <translation>连接</translation>
     </message>
     <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="46"/>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="47"/>
         <source>Status</source>
         <translation>状态</translation>
     </message>
     <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="54"/>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="56"/>
         <source>Close Circuit</source>
         <translation>关闭连接</translation>
     </message>
     <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="58"/>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="62"/>
         <source>Close Stream</source>
         <translation>关闭串流</translation>
+    </message>
+    <message>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="55"/>
+        <source>Zoom to Circuit</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

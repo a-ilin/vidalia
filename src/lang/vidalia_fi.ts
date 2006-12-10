@@ -323,24 +323,29 @@ Tor-palvelu täytyy poistaa käsin.</translation>
 <context>
     <name>CircuitListWidget</name>
     <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="46"/>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="47"/>
         <source>Connection</source>
         <translation>Yhteys</translation>
     </message>
     <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="46"/>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="47"/>
         <source>Status</source>
         <translation>Tila</translation>
     </message>
     <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="54"/>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="56"/>
         <source>Close Circuit</source>
         <translation>Sulje yhteys</translation>
     </message>
     <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="58"/>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="62"/>
         <source>Close Stream</source>
         <translation>Sulje datavirta</translation>
+    </message>
+    <message>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="55"/>
+        <source>Zoom to Circuit</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
