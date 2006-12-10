@@ -431,7 +431,10 @@ NetViewer::circuitPathIDs(Circuit circ)
 
   torVersion = _torControl->getTorVersion();
   foreach (QString hop, path) {
-    if (!hop.startsWith("$")) {
+    if (hop.startsWith("$")) {
+      /* This hop is already specified as a keyid, so just strip the "$" */
+      hop.remove(0,1);
+    } else {
       if (torVersion < 0x00010202) {
         /* Tor versions earlier than 0.1.2.2 have a bug where they will tell
          * you a server's nickname in a circuit, even if that server is
