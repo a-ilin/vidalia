@@ -321,24 +321,29 @@ You may need to remove it manually.</source>
 <context>
     <name>CircuitListWidget</name>
     <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="46"/>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="47"/>
         <source>Connection</source>
         <translation>اتصال</translation>
     </message>
     <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="46"/>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="47"/>
         <source>Status</source>
         <translation>وضعیت</translation>
     </message>
     <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="54"/>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="56"/>
         <source>Close Circuit</source>
         <translation>بستن مدار</translation>
     </message>
     <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="58"/>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="62"/>
         <source>Close Stream</source>
         <translation>بستن جریان</translation>
+    </message>
+    <message>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="55"/>
+        <source>Zoom to Circuit</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -413,32 +418,43 @@ You may need to remove it manually.</source>
         <location filename="../control/controlsocket.cpp" line="74"/>
         <source>Vidalia only supports Version 1 of Tor&apos;s Control Protocol (Version %1 detected).
 Upgrade to a newer version of Tor.</source>
-        <translation>Vidalia تنها نسخه 1 پروتکل کنترل Tor را می پذیرد (نسخه %1 پیدا شد). ارتقا به یک نسخه جدیدتر Tor.</translation>
+        <translation type="obsolete">Vidalia تنها نسخه 1 پروتکل کنترل Tor را می پذیرد (نسخه %1 پیدا شد). ارتقا به یک نسخه جدیدتر Tor.</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="89"/>
+        <location filename="../control/controlsocket.cpp" line="95"/>
         <source>Error disconnecting socket. [%1]</source>
         <translation>خطا هنگام بستن اتصال سوکت. [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="145"/>
+        <location filename="../control/controlsocket.cpp" line="151"/>
         <source>Error sending control command. [%1]</source>
         <translation>خطا هنگام فرستادن فرمان کنترل. [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="182"/>
+        <location filename="../control/controlsocket.cpp" line="188"/>
         <source>Socket disconnected while attempting to read a line of data.</source>
         <translation>سوکت هنگام خواندن یک ردیف از داده ها بسته شد.</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="220"/>
+        <location filename="../control/controlsocket.cpp" line="226"/>
         <source>Invalid control reply. [%1]</source>
         <translation>پاسخ فرمان نادرست می باشد. [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="136"/>
+        <location filename="../control/controlsocket.cpp" line="142"/>
         <source>Control socket is not connected.</source>
         <translation>سوکت کنترل متصل نمی باشد.</translation>
+    </message>
+    <message>
+        <location filename="../control/controlsocket.cpp" line="76"/>
+        <source>Vidalia was unable to determine Tor&apos;s control protocol version. Verify that your control port number is set correctly and you are running a recent version of Tor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../control/controlsocket.cpp" line="80"/>
+        <source>Vidalia only supports Version 1 of Tor&apos;s control protocol (version %1 detected).
+Upgrade to a newer version of Tor.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1347,33 +1363,33 @@ interest to Tor developers.</source>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="521"/>
-        <source>Refresh the list of routers and connections.</source>
-        <translation>بازآوردن لیست رهیاب ها و اتصال ها.</translation>
+        <source>Refresh the list of routers and connections</source>
+        <translation>بازآوردن لیست رهیاب ها و اتصال ها</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="540"/>
-        <source>Show network map help.</source>
-        <translation>نمایش راهنمای نقشه شبکه.</translation>
+        <source>Show network map help</source>
+        <translation>نمایش راهنمای نقشه شبکه</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="543"/>
-        <source>Show the network map help.</source>
-        <translation>نمایش راهنمای نقشه شبکه.</translation>
+        <source>Show the network map help</source>
+        <translation>نمایش راهنمای نقشه شبکه</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="565"/>
-        <source>Close the network map.</source>
-        <translation>بستن نقشه شبکه.</translation>
+        <source>Close the network map</source>
+        <translation>بستن نقشه شبکه</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="587"/>
-        <source>Zoom in on the network map.</source>
-        <translation>بزرگ نمایی کردن در نقشه شبکه.</translation>
+        <source>Zoom in on the network map</source>
+        <translation>بزرگ نمایی کردن در نقشه شبکه</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="609"/>
-        <source>Zoom out on the network map.</source>
-        <translation>کوچک نمایی کردن نقشه شبکه.</translation>
+        <source>Zoom out on the network map</source>
+        <translation>کوچک نمایی کردن نقشه شبکه</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="625"/>
@@ -1382,8 +1398,8 @@ interest to Tor developers.</source>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="631"/>
-        <source>Zooms to fit all currently displayed circuits.</source>
-        <translation>سازگار کردن زوم برای همه مدارهای نشان داده شده کنونی.</translation>
+        <source>Zooms to fit all currently displayed circuits</source>
+        <translation>سازگار کردن زوم برای همه مدارهای نشان داده شده کنونی</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="529"/>
@@ -1847,17 +1863,17 @@ fingerprint.</source>
 <context>
     <name>TorService</name>
     <message>
-        <location filename="../control/torservice.cpp" line="109"/>
+        <location filename="../control/torservice.cpp" line="159"/>
         <source>Services not supported on this platform.</source>
         <translation>سرویس ها در این پلت فرم پشتیبانی نمی شوند.</translation>
     </message>
     <message>
-        <location filename="../control/torservice.cpp" line="134"/>
+        <location filename="../control/torservice.cpp" line="186"/>
         <source>Unable to start Tor service.</source>
         <translation>آغاز سرویس Tor ناشدنی می باشد.</translation>
     </message>
     <message>
-        <location filename="../control/torservice.cpp" line="113"/>
+        <location filename="../control/torservice.cpp" line="163"/>
         <source>The Tor service is not installed.</source>
         <translation>سرویس Tor کارگذاری نشده است.</translation>
     </message>
