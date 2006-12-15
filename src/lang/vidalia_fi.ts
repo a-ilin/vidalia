@@ -1935,12 +1935,12 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     <message>
         <location filename="../gui/common/vmessagebox.cpp" line="96"/>
         <source>Continue</source>
-        <translation type="unfinished"></translation>
+        <translation>Jatka</translation>
     </message>
     <message>
         <location filename="../gui/common/vmessagebox.cpp" line="97"/>
         <source>Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>Lopeta</translation>
     </message>
 </context>
 <context>
@@ -1965,7 +1965,9 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
         <source>Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.
 
 Would you like to continue starting Vidalia?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia on mahdollisesti jo päällä. Jos Vidalia ei olekaan päällä, niin voit kuitenkin jatkaa.
+
+Haluatko jatkaa Vidalian käynnistämistä?</translation>
     </message>
 </context>
 </TS>
