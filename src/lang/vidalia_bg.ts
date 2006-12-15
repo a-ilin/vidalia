@@ -1931,6 +1931,16 @@ fingerprint.</source>
         <source>Show Settings</source>
         <translation>Покажи опции</translation>
     </message>
+    <message>
+        <location filename="../gui/common/vmessagebox.cpp" line="96"/>
+        <source>Continue</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/common/vmessagebox.cpp" line="97"/>
+        <source>Quit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Vidalia</name>
@@ -1950,19 +1960,10 @@ fingerprint.</source>
         <translation>Видалиа вече работи</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="83"/>
-        <source>Another Vidalia process is already running. 
+        <location filename="../main.cpp" line="84"/>
+        <source>Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.
 
-This Vidalia process will now exit.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="90"/>
-        <source>Another Vidalia process is already running. 
-
-This Vidalia process will now exit. 
-
-(If there really is not another Vidalia process running, you can delete %1 before starting Vidalia again.)</source>
+Would you like to continue starting Vidalia?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

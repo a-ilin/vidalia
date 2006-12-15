@@ -1371,44 +1371,9 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
         <translation>Loitonna</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="521"/>
-        <source>Refresh the list of routers and connections.</source>
-        <translation type="obsolete">Päivitä reititin- ja yhteyslistat</translation>
-    </message>
-    <message>
-        <location filename="../gui/network/netviewer.ui" line="540"/>
-        <source>Show network map help.</source>
-        <translation type="obsolete">Näytä verkkokartan ohje.</translation>
-    </message>
-    <message>
-        <location filename="../gui/network/netviewer.ui" line="543"/>
-        <source>Show the network map help.</source>
-        <translation type="obsolete">Näytä verkkokartan ohje.</translation>
-    </message>
-    <message>
-        <location filename="../gui/network/netviewer.ui" line="565"/>
-        <source>Close the network map.</source>
-        <translation type="obsolete">Sulje verkkokartta.</translation>
-    </message>
-    <message>
-        <location filename="../gui/network/netviewer.ui" line="587"/>
-        <source>Zoom in on the network map.</source>
-        <translation type="obsolete">Lähennä verkkokarttaa.</translation>
-    </message>
-    <message>
-        <location filename="../gui/network/netviewer.ui" line="609"/>
-        <source>Zoom out on the network map.</source>
-        <translation type="obsolete">Loitonna verkkokarttaa.</translation>
-    </message>
-    <message>
         <location filename="../gui/network/netviewer.ui" line="625"/>
         <source>Zoom To Fit</source>
         <translation>Sovita</translation>
-    </message>
-    <message>
-        <location filename="../gui/network/netviewer.ui" line="631"/>
-        <source>Zooms to fit all currently displayed circuits.</source>
-        <translation type="obsolete">Sovittaa näyttämään kaikki näkyvillä olevat yhteydet.</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="529"/>
@@ -1967,6 +1932,16 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
         <source>Show Settings</source>
         <translation>Näytä asetukset</translation>
     </message>
+    <message>
+        <location filename="../gui/common/vmessagebox.cpp" line="96"/>
+        <source>Continue</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/common/vmessagebox.cpp" line="97"/>
+        <source>Quit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Vidalia</name>
@@ -1986,25 +1961,11 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
         <translation>Vidalia on jo päällä</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="83"/>
-        <source>Another Vidalia process is already running. 
+        <location filename="../main.cpp" line="84"/>
+        <source>Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.
 
-This Vidalia process will now exit.</source>
-        <translation>Toinen Vidalia on jo päällä. 
-
-Tämä Vidalia suljetaan.</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="90"/>
-        <source>Another Vidalia process is already running. 
-
-This Vidalia process will now exit. 
-
-(If there really is not another Vidalia process running, you can delete %1 before starting Vidalia again.)</source>
-        <translation>Toinen Vidalia on jo päällä. 
-
-Tämä Vidalia suljetaan.
-(Jos toista Vidaliaa ei ole päällä, voit poistaa %1 ennen Vidalian uudelleen käynnistämistä)</translation>
+Would you like to continue starting Vidalia?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

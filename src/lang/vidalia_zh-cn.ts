@@ -1925,6 +1925,16 @@ fingerprint.</source>
         <source>Show Settings</source>
         <translation>显示设置</translation>
     </message>
+    <message>
+        <location filename="../gui/common/vmessagebox.cpp" line="96"/>
+        <source>Continue</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/common/vmessagebox.cpp" line="97"/>
+        <source>Quit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Vidalia</name>
@@ -1944,26 +1954,11 @@ fingerprint.</source>
         <translation>Vidalia 已经运行</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="83"/>
-        <source>Another Vidalia process is already running. 
+        <location filename="../main.cpp" line="84"/>
+        <source>Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.
 
-This Vidalia process will now exit.</source>
-        <translation>另一个 Vidalia 进程已经运行。
-
-该 Vidalia 进程将退出。</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="90"/>
-        <source>Another Vidalia process is already running. 
-
-This Vidalia process will now exit. 
-
-(If there really is not another Vidalia process running, you can delete %1 before starting Vidalia again.)</source>
-        <translation>另一个 Vidalia 进程已经运行。
-
-该 Vidalia 进程将退出。
-
-(如果确实没有另一个正在运行的 Vidalia 进程，在再次启动 Vidalia 前你可以删除 %1。)</translation>
+Would you like to continue starting Vidalia?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>

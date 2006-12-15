@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1">
 <context>
     <name></name>
@@ -413,12 +413,6 @@ You may need to remove it manually.</source>
         <location filename="../control/controlsocket.cpp" line="61"/>
         <source>Error connecting to %1:%2 [%3]</source>
         <translation>خطا در هنگام اتصال به %1:%2 [%3]</translation>
-    </message>
-    <message>
-        <location filename="../control/controlsocket.cpp" line="74"/>
-        <source>Vidalia only supports Version 1 of Tor&apos;s Control Protocol (Version %1 detected).
-Upgrade to a newer version of Tor.</source>
-        <translation type="obsolete">Vidalia تنها نسخه 1 پروتکل کنترل Tor را می پذیرد (نسخه %1 پیدا شد). ارتقا به یک نسخه جدیدتر Tor.</translation>
     </message>
     <message>
         <location filename="../control/controlsocket.cpp" line="95"/>
@@ -1920,6 +1914,16 @@ fingerprint.</source>
         <source>Show Settings</source>
         <translation>نمایش تنظیمات و پارامترها</translation>
     </message>
+    <message>
+        <location filename="../gui/common/vmessagebox.cpp" line="96"/>
+        <source>Continue</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/common/vmessagebox.cpp" line="97"/>
+        <source>Quit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Vidalia</name>
@@ -1939,19 +1943,10 @@ fingerprint.</source>
         <translation>Vidalia پیشتر در حال اجرا میباشد</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="83"/>
-        <source>Another Vidalia process is already running. 
+        <location filename="../main.cpp" line="84"/>
+        <source>Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.
 
-This Vidalia process will now exit.</source>
-        <translation>فرایند Vidalia دیگری پیشتر در حال اجرا میباشد. این فرایند Vidalia خارج میشود.</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="90"/>
-        <source>Another Vidalia process is already running. 
-
-This Vidalia process will now exit. 
-
-(If there really is not another Vidalia process running, you can delete %1 before starting Vidalia again.)</source>
+Would you like to continue starting Vidalia?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

@@ -1933,6 +1933,16 @@ sua assinatura PGP ou GPG.</translation>
         <source>Show Settings</source>
         <translation>Mostrar as Configurações</translation>
     </message>
+    <message>
+        <location filename="../gui/common/vmessagebox.cpp" line="96"/>
+        <source>Continue</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/common/vmessagebox.cpp" line="97"/>
+        <source>Quit</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Vidalia</name>
@@ -1952,26 +1962,11 @@ sua assinatura PGP ou GPG.</translation>
         <translation>O Vidalia já se encontra em execução</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="83"/>
-        <source>Another Vidalia process is already running. 
+        <location filename="../main.cpp" line="84"/>
+        <source>Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.
 
-This Vidalia process will now exit.</source>
-        <translation>Outro processo do Vidalia já se encontra em execução. 
-
-Este processo do Vidalia será encerrado agora.</translation>
-    </message>
-    <message>
-        <location filename="../main.cpp" line="90"/>
-        <source>Another Vidalia process is already running. 
-
-This Vidalia process will now exit. 
-
-(If there really is not another Vidalia process running, you can delete %1 before starting Vidalia again.)</source>
-        <translation>Outro processo do Vidalia já se encontra em execução. 
-
-Este processo do Vidalia será encerrado agora. 
-
-(Se de fato não há outro processo do Vidalia em execução, você pode excluir %1 antes de iniciar o Vidalia novamente.)</translation>
+Would you like to continue starting Vidalia?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
