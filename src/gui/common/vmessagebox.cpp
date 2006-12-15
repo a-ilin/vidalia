@@ -71,11 +71,11 @@ int
 VMessageBox::selected(int ret, int button0, int button1, int button2)
 {
   if (ret == 0) {
-    return button0;
+    return (button0 & QMessageBox::ButtonMask);
   } else if (ret == 1) {
-    return button1;
+    return (button1 & QMessageBox::ButtonMask);
   }
-  return button2;
+  return (button2 & QMessageBox::ButtonMask);
 }
 
 /** Converts a Button enum value to a translated string. */
