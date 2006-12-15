@@ -345,7 +345,7 @@ Sie müssen ihn manuell entfernen.</translation>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="55"/>
         <source>Zoom to Circuit</source>
-        <translation>Kanal heranzoomen</translation>
+        <translation>Kanal heranzoomenu</translation>
     </message>
 </context>
 <context>
@@ -1946,12 +1946,12 @@ geben Sie Ihre Uploadgeschwindigkeit bitte hier an.</translation>
     <message>
         <location filename="../gui/common/vmessagebox.cpp" line="96"/>
         <source>Continue</source>
-        <translation type="unfinished"></translation>
+        <translation>Fortfahren</translation>
     </message>
     <message>
         <location filename="../gui/common/vmessagebox.cpp" line="97"/>
         <source>Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>Schließen</translation>
     </message>
 </context>
 <context>
@@ -1976,7 +1976,9 @@ geben Sie Ihre Uploadgeschwindigkeit bitte hier an.</translation>
         <source>Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.
 
 Would you like to continue starting Vidalia?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ein anderer Vidalia-Prozess läuft möglicherweise bereits. Falls wirklich kein anderer Vidalia-Prozess läuft, können Sie dennoch fortfahren.
+
+Wollen Sie mit dem Start von Vidalia fortfahren?</translation>
     </message>
 </context>
 </TS>
