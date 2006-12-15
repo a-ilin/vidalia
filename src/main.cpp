@@ -73,24 +73,20 @@ main(int argc, char *argv[])
   if (is_vidalia_running(pidfile)) {
     /* Let the user know another Vidalia is running and we are going to exit
      * now. */
-    VMessageBox::critical(0, 
-      qApp->translate("Vidalia",
-        QT_TRANSLATE_NOOP("Vidalia", "Vidalia is already running")),
-#if defined(Q_OS_WIN32)
-      vApp->translate("Vidalia",
-        QT_TRANSLATE_NOOP("Vidalia", 
-          "Another Vidalia process is already running. \n\n"
-          "This Vidalia process will now exit.")),
-#else
-      vApp->translate("Vidalia",
-        QT_TRANSLATE_NOOP("Vidalia", 
-          "Another Vidalia process is already running. \n\n"
-          "This Vidalia process will now exit. \n\n"
-          "(If there really is not another Vidalia process running, "
-          "you can delete %1 before starting Vidalia again.)")).arg(pidfile),
-#endif
-      VMessageBox::Ok);   
-    return 0;
+    int ret = VMessageBox::critical(0, 
+                vApp->translate("Vidalia",
+                  QT_TRANSLATE_NOOP("Vidalia", "Vidalia is already running")),
+                vApp->translate("Vidalia",
+                  QT_TRANSLATE_NOOP("Vidalia", 
+                    "Another Vidalia process is possibly already running. "
+                    "If there really is not another Vidalia process running, "
+                    "you can choose to continue anyway.\n\n"
+                    "Would you like to continue starting Vidalia?")),
+                VMessageBox::Continue, VMessageBox::Quit|VMessageBox::Default);
+    if (ret != VMessageBox::Continue) {
+      /* Don't start a second instance of Vidalia */
+      return 0;
+    }
   }
   write_pidfile(pidfile);
 

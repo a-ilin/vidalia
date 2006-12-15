@@ -15,8 +15,6 @@ Things to complete for 0.1.0:
     or responses.
   * Add a checkbox for disabling the alpha-blended integrals on the bandwidth
     graph; the extra cpu usage makes some people sad.
-  * Add a button to delete the existing pidfile and start anyway when we think 
-    there is already another Vidalia running.
 
 
 Features planned for 0.1.x:

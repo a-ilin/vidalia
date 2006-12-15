@@ -46,7 +46,9 @@ public:
     Help,
     Retry,
     ShowLog,
-    ShowSettings
+    ShowSettings,
+    Continue,
+    Quit
   };
   
   /** Default constructor. */

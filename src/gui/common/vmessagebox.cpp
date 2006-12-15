@@ -93,6 +93,8 @@ VMessageBox::buttonText(int btn)
     case Retry:   text = tr("Retry"); break;
     case ShowLog: text = tr("Show Log"); break;
     case ShowSettings: text = tr("Show Settings"); break;
+    case Continue: text = tr("Continue"); break;
+    case Quit:     text = tr("Quit"); break;
     default: break;
   }
   return text;
