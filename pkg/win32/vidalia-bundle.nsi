@@ -395,6 +395,7 @@ Function CustomFinishFn
     check_privoxy:
     IntCmp $bInstallPrivoxy 1 run_privoxy done done
     run_privoxy:
+        SetOutPath "$INSTDIR\Privoxy"
         Exec '"$INSTDIR\Privoxy\${PRIVOXY_EXEC}"'
     done:
 FunctionEnd
