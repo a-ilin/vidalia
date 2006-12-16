@@ -5,49 +5,49 @@
 
 
 ; Bundle
-LangString BundleSetupCaption         ${LANG_FARSI} "ุจุฑูพุงÛÛ ${BUNDLE_NAME}"
-LangString BundleWelcomeText          ${LANG_FARSI} "ุงÛู ุฏุณุชÛุงุฑ ุดู…ุง ุฑุง ุฏุฑ ุณุฑุชุงุณุฑ ฺฉุงุฑฺฏุฐุงุฑÛ ุชูุฑุ ูÛุฏุงูÛุงุ ูพุฑÛูุงฺฉุณÛ ู ุฏฺฏู…ู ุชูุฑ ูุฏุงÛุช ู…Û ฺฉูุฏ.\r\n\r\nุงฺฏุฑ ุดู…ุง ูพÛุดุชุฑ ุชูุฑุ ูÛุฏุงูÛุงุ ูพุฑÛูุงฺฉุณÛ Ûุง ูุงÛุฑูุงฺฉุณ ุฑุง ฺฉุงุฑฺฏุฐุงุฑÛ ฺฉุฑุฏู ุงÛุฏุ ุฎูุงูุดู…ูุฏ ุงุณุช ูพÛุด ุงุฒ ุงุฏุงู…ู ุฏุงุฏู ุงÛู ฺฉุงุฑฺฏุฐุงุฑÛ ุงุทู…Ûูุงู ูพÛุฏุง ฺฉูÛุฏ ฺฉู ุขููุง ุฏุฑุญุงู ุงุฌุฑุง ูู…Û ุจุงุดูุฏ.\r\n\r\n$_CLICK"
-LangString BundleWelcomeTitle         ${LANG_FARSI} "ุจู ุฏุณุชÛุงุฑ ุจุฑูพุงÛÛ ${BUNDLE_NAME} ุฎูุด ุขู…ุฏÛุฏ"
-LangString BundleLinkText             ${LANG_FARSI} "ู…ุณุชูุฏุงุช ฺฉุงุฑฺฏุฐุงุฑÛ ${TOR_NAME}"
-LangString BundleFinishText           ${LANG_FARSI} "ฺฉุงุฑฺฏุฐุงุฑÛ ุงูุฌุงู… ุดุฏ.\r\n ุฎูุงูุดู…ูุฏ ุงุณุช ุจุฑุงÛ ุขฺฏุงูÛ Ûุงูุชู ุงุฒ ฺฺฏููฺฏÛ ูพÛฺฉุฑุจูุฏÛ ฺฉุฑุฏู ุจุฑูุงู…ู ูุงÛ ฺฉุงุฑุจุฑุฏÛุชุงู ุจุฑุงÛ ุจฺฉุงุฑุจุฑุฏู ุชูุฑ http://tor.eff.org/docs/tor-doc-win32.html ุฑุง ู…ุดุงูุฏู ฺฉูÛุฏ."
-LangString BundleRunNow               ${LANG_FARSI} "ุงุฌุฑุงฺฉุฑุฏู ู…ูููู ูุงÛ ฺฉุงุฑฺฏุฐุงุฑÛ ุดุฏู"
+LangString BundleSetupCaption         ${LANG_FARSI} "ศั?ว?? ${BUNDLE_NAME}"
+LangString BundleWelcomeText          ${LANG_FARSI} "ว?ๆ ฯำส?วั ิๅว ัว ฯั ำัสวำั ?วั?ะวั? ส่ัฌ ่?ฯวไ?วฌ ?ั?่ว?ำ? ่ ฯ?ๅ็ ส่ั ็ฯว?ส ๅ? ?ๆฯ.\r\n\r\nว?ั ิๅว ??ิสั ส่ัฌ ่?ฯวไ?วฌ ?ั?่ว?ำ? ?ว แว?ัแว?ำ ัว ?วั?ะวั? ?ัฯ็ ว?ฯฌ ฮ่ว็ิๅๆฯ วำส ??ิ วา วฯวๅ็ ฯวฯๆ ว?ๆ ?วั?ะวั? วืๅ?ๆวๆ ??ฯว ?ๆ?ฯ ?็ ยๆ็ว ฯัอวไ วฬัว ๆๅ? ศวิๆฯ.\r\n\r\n$_CLICK"
+LangString BundleWelcomeTitle         ${LANG_FARSI} "ศ็ ฯำส?วั ศั?ว?? ${BUNDLE_NAME} ฮ่ิ ยๅฯ?ฯ"
+LangString BundleLinkText             ${LANG_FARSI} "ๅำสๆฯวส ?วั?ะวั? ${TOR_NAME}"
+LangString BundleFinishText           ${LANG_FARSI} "?วั?ะวั? วๆฬวๅ ิฯ.\r\n ฮ่ว็ิๅๆฯ วำส ศัว? ย?ว็? ?วแสๆ วา ??่ๆ?? ???ัศๆฯ? ?ัฯๆ ศัๆวๅ็ ็ว? ?วัศัฯ?สวๆ ศัว? ศ?วัศัฯๆ ส่ั http://tor.eff.org/docs/tor-doc-win32.html ัว ๅิว็ฯ็ ?ๆ?ฯ."
+LangString BundleRunNow               ${LANG_FARSI} "วฬัว?ัฯๆ ๅ่ไแ็ ็ว? ?วั?ะวั? ิฯ็"
 
 ; Vidalia
-LangString VidaliaGroupDesc           ${LANG_FARSI} "ฺฉุงุฑฺฏุฐุงุฑÛ ${VIDALIA_DESC}."
-LangString VidaliaSetupCaption        ${LANG_FARSI} "ุจุฑูพุงÛÛ ${VIDALIA_NAME}"
-LangString VidaliaWelcomeText         ${LANG_FARSI} "ุงÛู ุฏุณุชÛุงุฑ ุดู…ุง ุฑุง ุฏุฑ ุณุฑุชุงุณุฑ ฺฉุงุฑฺฏุฐุงุฑÛ ${VIDALIA_DESC} ูุฏุงÛุช ู…Û ฺฉูุฏ.\r\n\r\n$_CLICK"
-LangString VidaliaWelcomeTitle        ${LANG_FARSI} "ุจู ุฏุณุชÛุงุฑ ุจุฑูพุงÛÛ ${VIDALIA_NAME} ุฎูุด ุขู…ุฏÛุฏ"
-LangString VidaliaLinkText            ${LANG_FARSI} "ุจุฑฺฏู ุงุตูÛ ${VIDALIA_NAME}"
-LangString VidaliaAppDesc             ${LANG_FARSI} "ฺฉุงุฑฺฏุฐุงุฑÛ ${VIDALIA_DESC}."
-LangString VidaliaStartup             ${LANG_FARSI} "ุงุฌุฑุง ฺฉุฑุฏู ุฏุฑ ุฑุงู ุงูุฏุงุฒÛ"
-LangString VidaliaStartupDesc         ${LANG_FARSI} "ุงุฌุฑุง ฺฉุฑุฏู ${VIDALIA_NAME} ุฏุฑ ุฑุงู ุงูุฏุงุฒÛ ุจุทูุฑ ุฎูุฏฺฉุงุฑ."
-LangString VidaliaShortcuts           ${LANG_FARSI} "ุงูุฒูุฏู ุจู ููุฑุณุช ุขุบุงุฒ"
-LangString VidaliaShortcutsDesc       ${LANG_FARSI} "ุงูุฒูุฏู ${VIDALIA_NAME} ุจู ููุฑุณุช ุขุบุงุฒ."
-LangString VidaliaRunNow              ${LANG_FARSI} "ุงุฌุฑุงฺฉุฑุฏู ${VIDALIA_NAME}"
+LangString VidaliaGroupDesc           ${LANG_FARSI} "?วั?ะวั? ${VIDALIA_DESC}."
+LangString VidaliaSetupCaption        ${LANG_FARSI} "ศั?ว?? ${VIDALIA_NAME}"
+LangString VidaliaWelcomeText         ${LANG_FARSI} "ว?ๆ ฯำส?วั ิๅว ัว ฯั ำัสวำั ?วั?ะวั? ${VIDALIA_DESC} ็ฯว?ส ๅ? ?ๆฯ.\r\n\r\n$_CLICK"
+LangString VidaliaWelcomeTitle        ${LANG_FARSI} "ศ็ ฯำส?วั ศั?ว?? ${VIDALIA_NAME} ฮ่ิ ยๅฯ?ฯ"
+LangString VidaliaLinkText            ${LANG_FARSI} "ศั?็ วีไ? ${VIDALIA_NAME}"
+LangString VidaliaAppDesc             ${LANG_FARSI} "?วั?ะวั? ${VIDALIA_DESC}."
+LangString VidaliaStartup             ${LANG_FARSI} "วฬัว ?ัฯๆ ฯั ัว็ วๆฯวา?"
+LangString VidaliaStartupDesc         ${LANG_FARSI} "วฬัว ?ัฯๆ ${VIDALIA_NAME} ฯั ัว็ วๆฯวา? ศื่ั ฮ่ฯ?วั."
+LangString VidaliaShortcuts           ${LANG_FARSI} "วแา่ฯๆ ศ็ แ็ัำส ยฺวา"
+LangString VidaliaShortcutsDesc       ${LANG_FARSI} "วแา่ฯๆ ${VIDALIA_NAME} ศ็ แ็ัำส ยฺวา."
+LangString VidaliaRunNow              ${LANG_FARSI} "วฬัว?ัฯๆ ${VIDALIA_NAME}"
 
 ; Tor
-LangString TorGroupDesc               ${LANG_FARSI} "ฺฉุงุฑฺฏุฐุงุฑÛ ${TOR_DESC}."
-LangString TorAppDesc                 ${LANG_FARSI} "ฺฉุงุฑฺฏุฐุงุฑÛ ${TOR_DESC}."
-LangString TorAskOverwriteTorrc       ${LANG_FARSI} "ุดู…ุง ูพÛุดุชุฑ ุฏุงุฑุงÛ Ûฺฉ ูพุฑููุฏู ูพÛฺฉุฑุจูุฏÛ ุชูุฑ ู…Û ุจุงุดÛุฏ.$\r$\nุขÛุง ู…Û ุฎูุงูÛุฏ ุขู ุฑุง ุจุง ูพุฑููุฏู ูพÛฺฉุฑุจูุฏÛ ูู…ููู ูพÛุด ฺฏุฒÛุฏู ุฌุงÛ ููุดุช ฺฉูÛุฏุ"
+LangString TorGroupDesc               ${LANG_FARSI} "?วั?ะวั? ${TOR_DESC}."
+LangString TorAppDesc                 ${LANG_FARSI} "?วั?ะวั? ${TOR_DESC}."
+LangString TorAskOverwriteTorrc       ${LANG_FARSI} "ิๅว ??ิสั ฯวัว? ?? ?ั่ๆฯ็ ???ัศๆฯ? ส่ั ๅ? ศวิ?ฯ.$\r$\nย?ว ๅ? ฮ่ว็?ฯ ยๆ ัว ศว ?ั่ๆฯ็ ???ัศๆฯ? ๆๅ่ๆ็ ??ิ ?า?ฯ็ ฬว? ๆ่ิส ?ๆ?ฯฟ"
 LangString TorOpenSSL                 ${LANG_FARSI} "OpenSSL ${OPENSSL_APPVERSION}"
-LangString TorOpenSSLDesc             ${LANG_FARSI} "ฺฉุงุฑฺฏุฐุงุฑÛ ${OPENSSL_DESC}."
-LangString TorDocumentation           ${LANG_FARSI} "ู…ุณุชูุฏุงุช"
-LangString TorDocumentationDesc       ${LANG_FARSI} "ฺฉุงุฑฺฏุฐุงุฑÛ ู…ุณุชูุฏุงุช ${TOR_NAME}."
-LangString TorShortcuts               ${LANG_FARSI} "ุงูุฒูุฏู ุจู ููุฑุณุช ุขุบุงุฒ"
-LangString TorShortcutsDesc           ${LANG_FARSI} "ุงูุฒูุฏู ${TOR_NAME} ุจู ููุฑุณุช ุขุบุงุฒ."
+LangString TorOpenSSLDesc             ${LANG_FARSI} "?วั?ะวั? ${OPENSSL_DESC}."
+LangString TorDocumentation           ${LANG_FARSI} "ๅำสๆฯวส"
+LangString TorDocumentationDesc       ${LANG_FARSI} "?วั?ะวั? ๅำสๆฯวส ${TOR_NAME}."
+LangString TorShortcuts               ${LANG_FARSI} "วแา่ฯๆ ศ็ แ็ัำส ยฺวา"
+LangString TorShortcutsDesc           ${LANG_FARSI} "วแา่ฯๆ ${TOR_NAME} ศ็ แ็ัำส ยฺวา."
 
 ; Privoxy
-LangString PrivoxyGroupDesc           ${LANG_FARSI} "ฺฉุงุฑฺฏุฐุงุฑÛ ${PRIVOXY_DESC}"
-LangString PrivoxyAppDesc             ${LANG_FARSI} "ฺฉุงุฑฺฏุฐุงุฑÛ ${PRIVOXY_DESC}."
-LangString PrivoxyShortcuts           ${LANG_FARSI} "ุงูุฒูุฏู ุจู ููุฑุณุช ุขุบุงุฒ"
-LangString PrivoxyShortcutsDesc       ${LANG_FARSI} "ุงูุฒูุฏู ${PRIVOXY_NAME} ุจู ููุฑุณุช ุขุบุงุฒ."
-LangString PrivoxyStartup             ${LANG_FARSI} "ุงุฌุฑุงฺฉุฑุฏู ุฏุฑ ุฑุงู ุงูุฏุงุฒÛ"
-LangString PrivoxyStartupDesc         ${LANG_FARSI} "ุงุฌุฑุง ฺฉุฑุฏู ${PRIVOXY_NAME} ุฏุฑ ุฑุงู ุงูุฏุงุฒÛ ุจุทูุฑ ุฎูุฏฺฉุงุฑ."
+LangString PrivoxyGroupDesc           ${LANG_FARSI} "?วั?ะวั? ${PRIVOXY_DESC}"
+LangString PrivoxyAppDesc             ${LANG_FARSI} "?วั?ะวั? ${PRIVOXY_DESC}."
+LangString PrivoxyShortcuts           ${LANG_FARSI} "วแา่ฯๆ ศ็ แ็ัำส ยฺวา"
+LangString PrivoxyShortcutsDesc       ${LANG_FARSI} "วแา่ฯๆ ${PRIVOXY_NAME} ศ็ แ็ัำส ยฺวา."
+LangString PrivoxyStartup             ${LANG_FARSI} "วฬัว?ัฯๆ ฯั ัว็ วๆฯวา?"
+LangString PrivoxyStartupDesc         ${LANG_FARSI} "วฬัว ?ัฯๆ ${PRIVOXY_NAME} ฯั ัว็ วๆฯวา? ศื่ั ฮ่ฯ?วั."
 
 ; Torbutton
-LangString TorbuttonGroupDesc         ${LANG_FARSI} "ฺฉุงุฑฺฏุฐุงุฑÛ ${TORBUTTON_DESC}."
-LangString TorbuttonAppDesc           ${LANG_FARSI} "ฺฉุงุฑฺฏุฐุงุฑÛ ${TORBUTTON_DESC}."
-LangString TorbuttonAddToFirefox      ${LANG_FARSI} "ุงูุฒูุฏู ุจู ูุงÛุฑูุงฺฉุณ"
-LangString TorbuttonAddToFirefoxDesc  ${LANG_FARSI} "ุงูุฒูุฏู ูพุณููุฏ ${TORBUTTON_DESC} ุจู ูุงÛุฑูุงฺฉุณ."
-LangString TorbuttonFirefoxNotFound   ${LANG_FARSI} "ูุงÛุฑูุงฺฉุณ ุฏุฑ ุณÛุณุชู… ุดู…ุง ูพÛุฏุง ูุดุฏ. ฺฉุงุฑฺฏุฐุงุฑÛ ูุดุฏู ุฏฺฏู…ู ุชูุฑ."
+LangString TorbuttonGroupDesc         ${LANG_FARSI} "?วั?ะวั? ${TORBUTTON_DESC}."
+LangString TorbuttonAppDesc           ${LANG_FARSI} "?วั?ะวั? ${TORBUTTON_DESC}."
+LangString TorbuttonAddToFirefox      ${LANG_FARSI} "วแา่ฯๆ ศ็ แว?ัแว?ำ"
+LangString TorbuttonAddToFirefoxDesc  ${LANG_FARSI} "วแา่ฯๆ ?ำ่ๆฯ ${TORBUTTON_DESC} ศ็ แว?ัแว?ำ."
+LangString TorbuttonFirefoxNotFound   ${LANG_FARSI} "แว?ัแว?ำ ฯั ำ?ำสๅ ิๅว ??ฯว ๆิฯ. ?วั?ะวั? ๆิฯๆ ฯ?ๅ็ ส่ั."
 
