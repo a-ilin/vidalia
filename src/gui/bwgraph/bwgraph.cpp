@@ -34,9 +34,11 @@
 #define SETTING_FILTER          "LineFilter"
 #define SETTING_OPACITY         "Opacity"
 #define SETTING_ALWAYS_ON_TOP   "AlwaysOnTop"
+#define SETTING_STYLE           "GraphStyle"
 #define DEFAULT_FILTER          (BWGRAPH_LINE_SEND|BWGRAPH_LINE_RECV)
 #define DEFAULT_ALWAYS_ON_TOP   false
 #define DEFAULT_OPACITY         100
+#define DEFAULT_STYLE           GraphFrame::AreaGraph
 
 #define ADD_TO_FILTER(f,v,b)  (f = ((b) ? ((f) | (v)) : ((f) & ~(v))))
 
@@ -143,6 +145,11 @@ BandwidthGraph::loadSettings()
   ui.chkReceiveRate->setChecked(filter & BWGRAPH_LINE_RECV);
   ui.chkSendRate->setChecked(filter & BWGRAPH_LINE_SEND);
 
+  /* Set whether we are plotting bandwidth as area graphs or not */
+  uint graphStyle = getSetting(SETTING_STYLE, DEFAULT_STYLE).toUInt();
+  ui.chkAreaGraph->setChecked(graphStyle == GraphFrame::AreaGraph);
+  ui.frmGraph->setGraphStyle((GraphFrame::GraphStyle)graphStyle);
+
   /* Set graph frame settings */
   ui.frmGraph->setShowCounters(ui.chkReceiveRate->isChecked(),
                                ui.chkSendRate->isChecked());
@@ -167,8 +174,11 @@ BandwidthGraph::saveChanges()
   /* Hide the settings frame and reset toggle button */
   showSettingsFrame(false);
   
-  /* Save the opacity */
+  /* Save the opacity and graph style */
   saveSetting(SETTING_OPACITY, ui.sldrOpacity->value());
+  saveSetting(SETTING_STYLE,   ui.chkAreaGraph->isChecked() 
+                                          ? GraphFrame::AreaGraph
+                                          : GraphFrame::SolidLine);
 
   /* Save the Always On Top setting */
   saveSetting(SETTING_ALWAYS_ON_TOP, ui.chkAlwaysOnTop->isChecked());
@@ -189,7 +199,10 @@ BandwidthGraph::saveChanges()
   /* Update the graph frame settings */
   ui.frmGraph->setShowCounters(ui.chkReceiveRate->isChecked(),
                                ui.chkSendRate->isChecked());
-
+  ui.frmGraph->setGraphStyle(ui.chkAreaGraph->isChecked() ? 
+                                                GraphFrame::AreaGraph
+                                              : GraphFrame::SolidLine);
+  
   /* A change in window flags causes the window to disappear, so make sure
    * it's still visible. */
   showNormal();

@@ -48,21 +48,31 @@
 
 #define FONT_SIZE     11
 
+
 class GraphFrame : public QFrame
 {
   Q_OBJECT
 
 public:
+  /** Bandwidth graph style. */
+  enum GraphStyle {
+    SolidLine = 0,  /**< Plot bandwidth as solid lines. */
+    AreaGraph       /**< Plot bandwidth as alpha blended area graphs. */
+  };
+  
   /** Default Constructor */
   GraphFrame(QWidget *parent = 0);
   /** Default Destructor */
   ~GraphFrame();
+
   /** Add data points. */
   void addPoints(qreal recv, qreal send);
   /** Clears the graph. */
   void resetGraph();
   /** Toggles display of data counters. */
   void setShowCounters(bool showRecv, bool showSend);
+  /** Sets the graph style used to display bandwidth data. */
+  void setGraphStyle(GraphStyle style) { _graphStyle = style; }
 
 protected:
   /** Overloaded QWidget::paintEvent() */
@@ -90,6 +100,8 @@ private:
   /** Paints an integral using the supplied data. */
   void paintIntegral(QVector<QPointF> points, QColor color, qreal alpha = 1.0);
 
+  /** Style with which the bandwidth data will be graphed. */
+  GraphStyle _graphStyle;
   /** A QPainter object that handles drawing the various graph elements. */
   QPainter* _painter;
   /** Holds the received data points. */

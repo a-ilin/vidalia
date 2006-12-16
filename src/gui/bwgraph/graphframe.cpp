@@ -38,6 +38,7 @@ GraphFrame::GraphFrame(QWidget *parent)
   _recvData = new QList<qreal>();
   _sendData = new QList<qreal>();
   _painter = new QPainter();
+  _graphStyle = SolidLine;
   
   /* Initialize graph values */
   _recvData->prepend(0);
@@ -46,7 +47,6 @@ GraphFrame::GraphFrame(QWidget *parent)
   _showRecv = true;
   _showSend = true;
   _maxValue = MIN_SCALE;
-
 }
 
 /** Default destructor */
@@ -155,27 +155,25 @@ void
 GraphFrame::paintData()
 {
   QVector<QPointF> recvPoints, sendPoints;
+
+  /* Convert the bandwidth data points to graph points */
+  recvPoints = pointsFromData(_recvData);
+  sendPoints = pointsFromData(_sendData);
   
-  /* Draw the integrals using an alpha-blending, giving the background
-   * integral a little more weight than the foreground. This could probably be
-   * tweaked more to make overlapping more apparent, including tweaking the 
-   * colors`. */
-  if (_showRecv) {
-    recvPoints = pointsFromData(_recvData);
-    paintIntegral(recvPoints, RECV_COLOR, 0.6);
-  }
-  if (_showSend) {
-    sendPoints = pointsFromData(_sendData);
-    paintIntegral(sendPoints, SEND_COLOR, 0.4);
+  if (_graphStyle == AreaGraph) {
+    /* Plot the bandwidth data as area graphs */
+    if (_showRecv)
+      paintIntegral(recvPoints, RECV_COLOR, 0.6);
+    if (_showSend)
+      paintIntegral(sendPoints, SEND_COLOR, 0.4);
   }
   
-  /* Outline the integrals in their appropriate colors. */
-  if (_showRecv) {
+  /* Plot the bandwidth as solid lines. If the graph style is currently an
+   * area graph, we end up outlining the integrals. */
+  if (_showRecv)
     paintLine(recvPoints, RECV_COLOR);
-  }
-  if (_showSend) {
+  if (_showSend)
     paintLine(sendPoints, SEND_COLOR);
-  }
 }
 
 /** Returns a list of points on the bandwidth graph based on the supplied set
