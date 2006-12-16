@@ -281,7 +281,7 @@ Vous devrez peut-être enlever manuellement le service Tor.</translation>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="672"/>
         <source>Area Graph</source>
-        <translation type="unfinished"></translation>
+        <translation>Graphique en aires</translation>
     </message>
 </context>
 <context>
@@ -1942,12 +1942,12 @@ votre fingerprint de PGP ou de GPG.</translation>
     <message>
         <location filename="../gui/common/vmessagebox.cpp" line="96"/>
         <source>Continue</source>
-        <translation type="unfinished"></translation>
+        <translation>Continuer</translation>
     </message>
     <message>
         <location filename="../gui/common/vmessagebox.cpp" line="97"/>
         <source>Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>Quitter</translation>
     </message>
 </context>
 <context>
@@ -1972,7 +1972,9 @@ votre fingerprint de PGP ou de GPG.</translation>
         <source>Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.
 
 Would you like to continue starting Vidalia?</source>
-        <translation type="unfinished"></translation>
+        <translation>Une autre instance de Vidalia est probablement déjà lancée. Si vraiment il n&apos;y a pas d&apos;autre instance de Vidalia en fonctionnement, vous pouvez choisir de continuer tout de même.
+
+Voulez-vous continuer à démarrer Vidalia ?</translation>
     </message>
 </context>
 </TS>
