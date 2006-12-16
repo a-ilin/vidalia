@@ -214,69 +214,74 @@ Vous devrez peut-être enlever manuellement le service Tor.</translation>
 <context>
     <name>BandwidthGraph</name>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="289"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="490"/>
         <source>Tor Bandwidth Usage</source>
         <translation>Bande passante utilisée par Tor</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="313"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="514"/>
         <source>Show Settings</source>
         <translation>Montrer options</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="336"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="537"/>
         <source>Reset</source>
         <translation>Mise à zéro</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="429"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="630"/>
         <source>Receive Rate</source>
         <translation>Taux de réception</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="453"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="654"/>
         <source>Send Rate</source>
         <translation>Taux d&apos;envoi</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="566"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="764"/>
         <source>Changes the transparency of the Bandwidth Graph</source>
         <translation>Change la transparence du graphique de bande passante</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="637"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="855"/>
         <source>Save</source>
         <translation>Enregistrer</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="644"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="862"/>
         <source>Cancel</source>
         <translation>Annuler</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.cpp" line="156"/>
+        <location filename="../gui/bwgraph/bwgraph.cpp" line="163"/>
         <source>Since:</source>
         <translation>Depuis :</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="539"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="737"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="554"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="752"/>
         <source>% Opaque</source>
         <translation>% Opaque</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.cpp" line="220"/>
+        <location filename="../gui/bwgraph/bwgraph.cpp" line="233"/>
         <source>Hide Settings</source>
         <translation>Masquer options</translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="474"/>
-        <source>Always On Top</source>
+        <source>Always on Top</source>
         <translation>Toujours en avant-plan</translation>
+    </message>
+    <message>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="672"/>
+        <source>Area Graph</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -515,32 +520,32 @@ Installez une version plus récente de Tor.</translation>
 <context>
     <name>GraphFrame</name>
     <message>
-        <location filename="../gui/bwgraph/graphframe.cpp" line="250"/>
+        <location filename="../gui/bwgraph/graphframe.cpp" line="248"/>
         <source>Recv: </source>
         <translation>Recpt :</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/graphframe.cpp" line="259"/>
+        <location filename="../gui/bwgraph/graphframe.cpp" line="257"/>
         <source>Sent: </source>
         <translation>Env :</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/graphframe.cpp" line="271"/>
+        <location filename="../gui/bwgraph/graphframe.cpp" line="269"/>
         <source>%1 KB</source>
         <translation>%1 Ko</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/graphframe.cpp" line="274"/>
+        <location filename="../gui/bwgraph/graphframe.cpp" line="272"/>
         <source>%1 MB</source>
         <translation>%1 Mo</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/graphframe.cpp" line="277"/>
+        <location filename="../gui/bwgraph/graphframe.cpp" line="275"/>
         <source>%1 GB</source>
         <translation>%1 Go</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/graphframe.cpp" line="298"/>
+        <location filename="../gui/bwgraph/graphframe.cpp" line="296"/>
         <source>%1 KB/s</source>
         <translation>%1 Ko/s</translation>
     </message>
