@@ -200,7 +200,7 @@ SectionGroup "!${TOR_DESC}" TorGroup
         
         IfFileExists "$INSTDIR\Tor\Documents\*.*" "" endifdocs
           CreateDirectory "$SMPROGRAMS\Tor\Documents"
-          CreateShortCut "$SMPROGRAMS\Tor\Documents\Tor Manual.lnk" "$INSTDIR\Documents\tor-reference.html"
+          CreateShortCut "$SMPROGRAMS\Tor\Documents\Tor Manual.lnk" "$INSTDIR\Tor\Documents\tor-reference.html"
           CreateShortCut "$SMPROGRAMS\Tor\Documents\Tor Documentation.lnk" "$INSTDIR\Tor\Documents"
           CreateShortCut "$SMPROGRAMS\Tor\Documents\Version Specification.lnk" "$INSTDIR\Tor\Documents\version-spec.txt"
         endifdocs:
