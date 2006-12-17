@@ -45,6 +45,10 @@
 /* Define the format used for displaying the date and time */
 #define DATETIME_FMT  "MMM dd hh:mm:ss"
 
+/* Images used in the graph style drop-down */
+#define IMG_AREA_GRAPH    ":/images/16x16/graph-area.png"
+#define IMG_LINE_GRAPH    ":/images/16x16/graph-line.png"
+
 
 /** Default constructor */
 BandwidthGraph::BandwidthGraph(QWidget *parent, Qt::WFlags flags)
@@ -146,8 +150,11 @@ BandwidthGraph::loadSettings()
   ui.chkSendRate->setChecked(filter & BWGRAPH_LINE_SEND);
 
   /* Set whether we are plotting bandwidth as area graphs or not */
-  uint graphStyle = getSetting(SETTING_STYLE, DEFAULT_STYLE).toUInt();
-  ui.chkAreaGraph->setChecked(graphStyle == GraphFrame::AreaGraph);
+  int graphStyle = getSetting(SETTING_STYLE, DEFAULT_STYLE).toInt();
+  if (graphStyle < 0 || graphStyle >= ui.cmbGraphStyle->count()) {
+    graphStyle = DEFAULT_STYLE;
+  }
+  ui.cmbGraphStyle->setCurrentIndex(graphStyle);
   ui.frmGraph->setGraphStyle((GraphFrame::GraphStyle)graphStyle);
 
   /* Set graph frame settings */
@@ -176,9 +183,7 @@ BandwidthGraph::saveChanges()
   
   /* Save the opacity and graph style */
   saveSetting(SETTING_OPACITY, ui.sldrOpacity->value());
-  saveSetting(SETTING_STYLE,   ui.chkAreaGraph->isChecked() 
-                                          ? GraphFrame::AreaGraph
-                                          : GraphFrame::SolidLine);
+  saveSetting(SETTING_STYLE, ui.cmbGraphStyle->currentIndex());
 
   /* Save the Always On Top setting */
   saveSetting(SETTING_ALWAYS_ON_TOP, ui.chkAlwaysOnTop->isChecked());
@@ -199,9 +204,7 @@ BandwidthGraph::saveChanges()
   /* Update the graph frame settings */
   ui.frmGraph->setShowCounters(ui.chkReceiveRate->isChecked(),
                                ui.chkSendRate->isChecked());
-  ui.frmGraph->setGraphStyle(ui.chkAreaGraph->isChecked() ? 
-                                                GraphFrame::AreaGraph
-                                              : GraphFrame::SolidLine);
+  ui.frmGraph->setGraphStyle((GraphFrame::GraphStyle)ui.cmbGraphStyle->currentIndex());
   
   /* A change in window flags causes the window to disappear, so make sure
    * it's still visible. */

@@ -17,9 +17,11 @@ Contributors:
   the Vidalia-Project website.
 
   Matt Hanson <http://www.zuerchertech.com/> tweaked Corinna's images a bit
-  and created some .icos based off of them. Dan Christensen
-  <http://opello.org/> added additional image formats to the .ico files to
-  support more Windowses.
+  and created some .icos based off of them. 
+  
+  Dan Christensen <http://opello.org/> added additional image formats to 
+  the .ico files to support more Windowses. He also created the graph style
+  icons in the bandwidth graph settings.
 
   Geoff Goodell <http://afs.eecs.harvard.edu/~goodell/> supplied us with
   nearly all of the flag icons that we use in the Appearance configuration
