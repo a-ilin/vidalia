@@ -684,35 +684,127 @@
         </layout>
        </item>
        <item>
-        <widget class="QFrame" name="frmOpacity" >
-         <property name="contextMenuPolicy" >
-          <enum>Qt::NoContextMenu</enum>
+        <layout class="QVBoxLayout" >
+         <property name="margin" >
+          <number>0</number>
          </property>
-         <property name="frameShape" >
-          <enum>QFrame::NoFrame</enum>
+         <property name="spacing" >
+          <number>1</number>
          </property>
-         <property name="frameShadow" >
-          <enum>QFrame::Plain</enum>
-         </property>
-         <layout class="QVBoxLayout" >
-          <property name="margin" >
-           <number>0</number>
-          </property>
-          <property name="spacing" >
-           <number>3</number>
-          </property>
-          <item>
-           <layout class="QHBoxLayout" >
+         <item>
+          <layout class="QHBoxLayout" >
+           <property name="margin" >
+            <number>0</number>
+           </property>
+           <property name="spacing" >
+            <number>6</number>
+           </property>
+           <item>
+            <spacer>
+             <property name="orientation" >
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" >
+              <size>
+               <width>20</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_2" >
+             <property name="font" >
+              <font>
+               <pointsize>10</pointsize>
+              </font>
+             </property>
+             <property name="text" >
+              <string>Style</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QComboBox" name="cmbGraphStyle" >
+             <item>
+              <property name="text" >
+               <string/>
+              </property>
+              <property name="icon" >
+               <iconset resource="../res/vidalia_common.qrc" >:/images/16x16/graph-line.png</iconset>
+              </property>
+             </item>
+             <item>
+              <property name="text" >
+               <string/>
+              </property>
+              <property name="icon" >
+               <iconset resource="../res/vidalia_common.qrc" >:/images/16x16/graph-area.png</iconset>
+              </property>
+             </item>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QFrame" name="frmOpacity" >
+           <property name="contextMenuPolicy" >
+            <enum>Qt::NoContextMenu</enum>
+           </property>
+           <property name="frameShape" >
+            <enum>QFrame::NoFrame</enum>
+           </property>
+           <property name="frameShadow" >
+            <enum>QFrame::Plain</enum>
+           </property>
+           <layout class="QVBoxLayout" >
             <property name="margin" >
              <number>0</number>
             </property>
             <property name="spacing" >
-             <number>6</number>
+             <number>3</number>
             </property>
+            <item>
+             <widget class="QSlider" name="sldrOpacity" >
+              <property name="contextMenuPolicy" >
+               <enum>Qt::NoContextMenu</enum>
+              </property>
+              <property name="toolTip" >
+               <string>Changes the transparency of the Bandwidth Graph</string>
+              </property>
+              <property name="minimum" >
+               <number>30</number>
+              </property>
+              <property name="maximum" >
+               <number>100</number>
+              </property>
+              <property name="value" >
+               <number>100</number>
+              </property>
+              <property name="sliderPosition" >
+               <number>100</number>
+              </property>
+              <property name="tracking" >
+               <bool>false</bool>
+              </property>
+              <property name="orientation" >
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="invertedAppearance" >
+               <bool>false</bool>
+              </property>
+              <property name="tickPosition" >
+               <enum>QSlider::TicksBelow</enum>
+              </property>
+              <property name="tickInterval" >
+               <number>10</number>
+              </property>
+             </widget>
+            </item>
             <item>
              <spacer>
               <property name="orientation" >
-               <enum>Qt::Horizontal</enum>
+               <enum>Qt::Vertical</enum>
               </property>
               <property name="sizeHint" >
                <size>
@@ -723,164 +815,95 @@
              </spacer>
             </item>
             <item>
-             <widget class="QLabel" name="label_2" >
-              <property name="font" >
-               <font>
-                <pointsize>10</pointsize>
-               </font>
+             <layout class="QHBoxLayout" >
+              <property name="margin" >
+               <number>0</number>
               </property>
-              <property name="text" >
-               <string>Style</string>
+              <property name="spacing" >
+               <number>0</number>
               </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QComboBox" name="cmbGraphStyle" >
               <item>
-               <property name="text" >
-                <string/>
-               </property>
-               <property name="icon" >
-                <iconset resource="../res/vidalia_common.qrc" >:/images/16x16/graph-line.png</iconset>
-               </property>
+               <spacer>
+                <property name="orientation" >
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" >
+                 <size>
+                  <width>21</width>
+                 </size>
+                </property>
+               </spacer>
               </item>
               <item>
-               <property name="text" >
-                <string/>
-               </property>
-               <property name="icon" >
-                <iconset resource="../res/vidalia_common.qrc" >:/images/16x16/graph-area.png</iconset>
-               </property>
+               <widget class="QLabel" name="lblPercentOpacity" >
+                <property name="minimumSize" >
+                 <size>
+                  <width>25</width>
+                  <height>0</height>
+                 </size>
+                </property>
+                <property name="font" >
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="contextMenuPolicy" >
+                 <enum>Qt::NoContextMenu</enum>
+                </property>
+                <property name="layoutDirection" >
+                 <enum>Qt::RightToLeft</enum>
+                </property>
+                <property name="text" >
+                 <string>100</string>
+                </property>
+               </widget>
               </item>
-             </widget>
+              <item>
+               <widget class="QLabel" name="label" >
+                <property name="font" >
+                 <font>
+                  <pointsize>10</pointsize>
+                 </font>
+                </property>
+                <property name="contextMenuPolicy" >
+                 <enum>Qt::NoContextMenu</enum>
+                </property>
+                <property name="text" >
+                 <string>% Opaque</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer>
+                <property name="orientation" >
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeHint" >
+                 <size>
+                  <width>21</width>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
             </item>
            </layout>
-          </item>
-          <item>
-           <widget class="QSlider" name="sldrOpacity" >
-            <property name="contextMenuPolicy" >
-             <enum>Qt::NoContextMenu</enum>
-            </property>
-            <property name="toolTip" >
-             <string>Changes the transparency of the Bandwidth Graph</string>
-            </property>
-            <property name="minimum" >
-             <number>30</number>
-            </property>
-            <property name="maximum" >
-             <number>100</number>
-            </property>
-            <property name="value" >
-             <number>100</number>
-            </property>
-            <property name="sliderPosition" >
-             <number>100</number>
-            </property>
-            <property name="tracking" >
-             <bool>false</bool>
-            </property>
-            <property name="orientation" >
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="invertedAppearance" >
-             <bool>false</bool>
-            </property>
-            <property name="tickPosition" >
-             <enum>QSlider::TicksBelow</enum>
-            </property>
-            <property name="tickInterval" >
-             <number>10</number>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer>
-            <property name="orientation" >
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" >
-             <size>
-              <width>20</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <layout class="QHBoxLayout" >
-            <property name="margin" >
-             <number>0</number>
-            </property>
-            <property name="spacing" >
-             <number>0</number>
-            </property>
-            <item>
-             <spacer>
-              <property name="orientation" >
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" >
-               <size>
-                <width>21</width>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
-             <widget class="QLabel" name="lblPercentOpacity" >
-              <property name="minimumSize" >
-               <size>
-                <width>25</width>
-                <height>0</height>
-               </size>
-              </property>
-              <property name="font" >
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="contextMenuPolicy" >
-               <enum>Qt::NoContextMenu</enum>
-              </property>
-              <property name="layoutDirection" >
-               <enum>Qt::RightToLeft</enum>
-              </property>
-              <property name="text" >
-               <string>100</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="label" >
-              <property name="font" >
-               <font>
-                <pointsize>10</pointsize>
-               </font>
-              </property>
-              <property name="contextMenuPolicy" >
-               <enum>Qt::NoContextMenu</enum>
-              </property>
-              <property name="text" >
-               <string>% Opaque</string>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <spacer>
-              <property name="orientation" >
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeHint" >
-               <size>
-                <width>21</width>
-               </size>
-              </property>
-             </spacer>
-            </item>
-           </layout>
-          </item>
-         </layout>
-        </widget>
+          </widget>
+         </item>
+         <item>
+          <spacer>
+           <property name="orientation" >
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" >
+            <size>
+             <width>21</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
        </item>
        <item>
         <spacer>
