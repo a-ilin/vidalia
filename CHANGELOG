@@ -8,11 +8,22 @@
     QSystemTrayIcon on systems that support balloon messages, use a balloon to 
     indicate when NEWNYM is successful. We still show a message box when NEWNYM 
     fails. (Ticket #183)
+  o Add a graph style dropdown box to the bandwidth graph settings, so you can
+    choose between a fancy alpha blended area graph and a faster, simpler line
+    graph.
+  o Add a button to continue starting Vidalia anyway, even if Vidalia thinks
+    there might be another Vidalia process already running. It's possible that a
+    previous Vidalia did not exit cleanly and another process ended up with
+    the old Vidalia's PID.
+  o Add a "Zoom to Circuit" option to the circuit context menu in the network
+    map's list of circuits.
   o Add a context menu to the dock icon on OS X. (Ticket #135)
   o If we're building with Qt >= 4.2.0, then use its new saveGeometry() and 
     restoreGeometry() functions to save and restore window size and position. 
     If we're still using an old Qt, make sure the window fits on screen when
     we try to restore it. (Ticket #207)
+  o Fix a bug in how the server points were keyed on the network map that
+    could cause some circuits to not get drawn. (Ticket #175)
   o Really close the read channel when we want to stop reading from the Tor
     process's stdout. This would sometimes cause duplicate messages in the
     message log if Vidalia was running on a non-English-speaking Windows.
