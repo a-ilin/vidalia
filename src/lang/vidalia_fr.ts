@@ -281,7 +281,7 @@ Vous devrez peut-être enlever manuellement le service Tor.</translation>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="733"/>
         <source>Style</source>
-        <translation type="unfinished">Style</translation>
+        <translation>Style</translation>
     </message>
 </context>
 <context>
