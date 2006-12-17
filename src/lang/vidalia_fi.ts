@@ -239,49 +239,49 @@ Tor-palvelu täytyy poistaa käsin.</translation>
         <translation>Lähetysnopeus</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="764"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="765"/>
         <source>Changes the transparency of the Bandwidth Graph</source>
         <translation>Muuttaa yhteydenkäytön kuvaajan läpinäkyvyyttä</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="855"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="909"/>
         <source>Save</source>
         <translation>Tallenna</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="862"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="916"/>
         <source>Cancel</source>
         <translation>Peruuta</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.cpp" line="163"/>
+        <location filename="../gui/bwgraph/bwgraph.cpp" line="170"/>
         <source>Since:</source>
         <translation>Alkaen:</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="737"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="849"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="752"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="864"/>
         <source>% Opaque</source>
         <translation>% läpinäkyvä</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.cpp" line="233"/>
+        <location filename="../gui/bwgraph/bwgraph.cpp" line="236"/>
         <source>Hide Settings</source>
         <translation>Piilota asetukset</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="474"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="667"/>
         <source>Always on Top</source>
         <translation>Aina päällimmäisenä</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="672"/>
-        <source>Area Graph</source>
-        <translation type="unfinished"></translation>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="733"/>
+        <source>Style</source>
+        <translation type="unfinished">Teema</translation>
     </message>
 </context>
 <context>

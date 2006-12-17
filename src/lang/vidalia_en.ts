@@ -237,48 +237,48 @@ You may need to remove it manually.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="764"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="765"/>
         <source>Changes the transparency of the Bandwidth Graph</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="855"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="909"/>
         <source>Save</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="862"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="916"/>
         <source>Cancel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.cpp" line="163"/>
+        <location filename="../gui/bwgraph/bwgraph.cpp" line="170"/>
         <source>Since:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="737"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="849"/>
         <source>100</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="752"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="864"/>
         <source>% Opaque</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.cpp" line="233"/>
+        <location filename="../gui/bwgraph/bwgraph.cpp" line="236"/>
         <source>Hide Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="672"/>
-        <source>Area Graph</source>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="667"/>
+        <source>Always on Top</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="809"/>
-        <source>Always on Top</source>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="733"/>
+        <source>Style</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

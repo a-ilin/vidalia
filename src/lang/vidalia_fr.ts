@@ -239,49 +239,49 @@ Vous devrez peut-être enlever manuellement le service Tor.</translation>
         <translation>Taux d&apos;envoi</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="764"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="765"/>
         <source>Changes the transparency of the Bandwidth Graph</source>
         <translation>Change la transparence du graphique de bande passante</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="855"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="909"/>
         <source>Save</source>
         <translation>Enregistrer</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="862"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="916"/>
         <source>Cancel</source>
         <translation>Annuler</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.cpp" line="163"/>
+        <location filename="../gui/bwgraph/bwgraph.cpp" line="170"/>
         <source>Since:</source>
         <translation>Depuis :</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="737"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="849"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="752"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="864"/>
         <source>% Opaque</source>
         <translation>% Opaque</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.cpp" line="233"/>
+        <location filename="../gui/bwgraph/bwgraph.cpp" line="236"/>
         <source>Hide Settings</source>
         <translation>Masquer options</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="474"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="667"/>
         <source>Always on Top</source>
         <translation>Toujours en avant-plan</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="672"/>
-        <source>Area Graph</source>
-        <translation>Graphique en aires</translation>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="733"/>
+        <source>Style</source>
+        <translation type="unfinished">Style</translation>
     </message>
 </context>
 <context>
