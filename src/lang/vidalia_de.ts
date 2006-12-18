@@ -61,7 +61,7 @@
     <message>
         <location filename="../gui/config/advancedpage.ui" line="301"/>
         <source>Control Port</source>
-        <translation>Kontroll Port</translation>
+        <translation>Kontroll-Port</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="341"/>
@@ -216,7 +216,7 @@ Sie müssen ihn manuell entfernen.</translation>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="490"/>
         <source>Tor Bandwidth Usage</source>
-        <translation>Tor Bandbreiten Benutzung</translation>
+        <translation>Tor Bandbreitenbenutzung</translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="514"/>
@@ -281,7 +281,7 @@ Sie müssen ihn manuell entfernen.</translation>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="733"/>
         <source>Style</source>
-        <translation type="unfinished">Aussehen</translation>
+        <translation>Aussehen</translation>
     </message>
 </context>
 <context>
@@ -350,7 +350,7 @@ Sie müssen ihn manuell entfernen.</translation>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="55"/>
         <source>Zoom to Circuit</source>
-        <translation>Kanal heranzoomenu</translation>
+        <translation>Kanal heranzoomen</translation>
     </message>
 </context>
 <context>
@@ -424,7 +424,7 @@ Sie müssen ihn manuell entfernen.</translation>
     <message>
         <location filename="../control/controlsocket.cpp" line="95"/>
         <source>Error disconnecting socket. [%1]</source>
-        <translation>Fehler beim Freigeben des Sockets. [%1]</translation>
+        <translation>Fehler beim Trennen des Sockets. [%1]</translation>
     </message>
     <message>
         <location filename="../control/controlsocket.cpp" line="151"/>
@@ -479,7 +479,7 @@ Aktualisieren Sie ihre Tor-Version.</translation>
     <message>
         <location filename="../gui/config/generalpage.ui" line="375"/>
         <source>Startup Options</source>
-        <translation>Start Einstellungen</translation>
+        <translation>Start-Einstellungen</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.ui" line="390"/>
@@ -680,7 +680,7 @@ Aktualisieren Sie ihre Tor-Version.</translation>
     <message>
         <location filename="../gui/help/browser/helpbrowser.cpp" line="374"/>
         <source>Search reached start of document</source>
-        <translation>Suche hat Start des Dokuments erreicht</translation>
+        <translation>Suche hat Anfang des Dokuments erreicht</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.cpp" line="376"/>
@@ -797,7 +797,7 @@ Aktualisieren Sie ihre Tor-Version.</translation>
     <message>
         <location filename="../gui/mainwindow.cpp" line="205"/>
         <source>Bandwidth Graph</source>
-        <translation>Bandbreitenkurve</translation>
+        <translation>Bandbreitengraph</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="209"/>
@@ -934,10 +934,9 @@ Wollen Sie den Server vorsichtig beenden, um Clients Zeit zu geben einen neuen S
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
-        <translation>Vidalia hat festgestellt, das Tor unerwartet beendet 
-wurde.
+        <translation>Vidalia hat festgestellt, das Tor unerwartet beendet wurde.
 
-Überprüfen Sie das Nachrichtenprotokoll.</translation>
+Überprüfen Sie das Nachrichtenprotokoll auf weitere Informationen.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="368"/>
@@ -1126,7 +1125,7 @@ Verbindungen erscheinen.</translation>
     <message>
         <location filename="../gui/log/messagelog.ui" line="831"/>
         <source>Save all messages to a file</source>
-        <translation>Speichere alle Nachrichten in Datei</translation>
+        <translation>Speichere alle Nachrichten in eine Datei</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="844"/>
@@ -1136,7 +1135,7 @@ Verbindungen erscheinen.</translation>
     <message>
         <location filename="../gui/log/messagelog.ui" line="847"/>
         <source>Save selected messages to a file</source>
-        <translation>Speichere markierte Nachrichten in Datei</translation>
+        <translation>Speichere markierte Nachrichten in eine Datei</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="901"/>
@@ -1189,7 +1188,7 @@ during normal Tor operation and are
 not considered errors, but you may 
 care about.</source>
         <translation>Nachrichten dieses Typs erscheinen manchmal
-während des normalen Tor Betriebs. Sie gelten nicht als Fehler, könnten
+während des normalen Tor-Betriebs. Sie gelten nicht als Fehler, könnten
 aber interessant für den Benutzer sein.</translation>
     </message>
     <message>
@@ -1197,7 +1196,7 @@ aber interessant für den Benutzer sein.</translation>
         <source>Messages that appear frequently 
 during normal Tor operation.</source>
         <translation>Nachrichten dieses Typs tauchen öfter während des
-normalen Tor Betriebs auf.</translation>
+normalen Tor-Betriebs auf.</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="158"/>
@@ -1352,7 +1351,7 @@ empfangen.</translation>
     <message>
         <location filename="../gui/network/netviewer.ui" line="297"/>
         <source>View Tor Network</source>
-        <translation>Zeige Tor Netzwerk</translation>
+        <translation>Zeige Tor-Netzwerk</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="515"/>
@@ -1387,27 +1386,27 @@ empfangen.</translation>
     <message>
         <location filename="../gui/network/netviewer.ui" line="540"/>
         <source>Show network map help</source>
-        <translation>Zeige Hilfe zur Netzwerkkarte</translation>
+        <translation>Zeige Hilfe zur Netzwerk-Karte</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="543"/>
         <source>Show the network map help</source>
-        <translation>Zeige Hilfe zur Netzwerkkarte</translation>
+        <translation>Zeige Hilfe zur Netzwerk-Karte</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="565"/>
         <source>Close the network map</source>
-        <translation>Schließe Netzwerkkarte</translation>
+        <translation>Schließe Netzwerk-Karte</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="587"/>
         <source>Zoom in on the network map</source>
-        <translation>Vergrößere Netzwerkkarte</translation>
+        <translation>Vergrößere Netzwerk-Karte</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="609"/>
         <source>Zoom out on the network map</source>
-        <translation>Verkleinere Netzwerkkarte</translation>
+        <translation>Verkleinere Netzwerk-Karte</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="625"/>
@@ -1565,7 +1564,7 @@ empfangen.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="505"/>
         <source>Relay traffic for the Tor network</source>
-        <translation>Leite Verkehr für das Tor Netzwerk weiter</translation>
+        <translation>Leite Verkehr für das Tor-Netzwerk weiter</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="716"/>
@@ -1590,12 +1589,12 @@ empfangen.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="684"/>
         <source>Contact Info:</source>
-        <translation>Kontakt-Information:</translation>
+        <translation>Kontaktinformation:</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="638"/>
         <source>Server Port:</source>
-        <translation>Server Port:</translation>
+        <translation>Server-Port:</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="674"/>
