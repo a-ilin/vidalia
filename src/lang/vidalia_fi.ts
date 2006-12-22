@@ -281,7 +281,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="733"/>
         <source>Style</source>
-        <translation type="unfinished">Teema</translation>
+        <translation>Teema</translation>
     </message>
 </context>
 <context>
