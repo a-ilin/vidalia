@@ -25,11 +25,14 @@
  * \brief Item representing a single router and status in a RouterListWidget
  */
 
+#include <QHeaderView>
+
 #include "routerlistwidget.h"
 #include "routerlistitem.h"
 
-#define STATUS_COLUMN (RouterListWidget::StatusColumn)
-#define NAME_COLUMN   (RouterListWidget::NameColumn)
+#define STATUS_COLUMN   (RouterListWidget::StatusColumn)
+#define COUNTRY_COLUMN  (RouterListWidget::CountryColumn)
+#define NAME_COLUMN     (RouterListWidget::NameColumn)
 
 #define IMG_NODE_OFFLINE    ":/images/icons/node-unresponsive.png"
 #define IMG_NODE_SLEEPING   ":/images/icons/node-hibernating.png"
@@ -37,6 +40,7 @@
 #define IMG_NODE_LOW_BW     ":/images/icons/node-bw-low.png"
 #define IMG_NODE_MED_BW     ":/images/icons/node-bw-med.png"
 #define IMG_NODE_HIGH_BW    ":/images/icons/node-bw-high.png"
+#define IMG_FLAG_UNKNOWN    ":/images/flags/unknown.png"
 
 
 /** Default constructor. */
@@ -45,13 +49,16 @@ RouterListItem::RouterListItem(RouterListWidget *list, RouterDescriptor rd)
 {
   _list = list;
   _rd   = 0;
+  _country = "~"; /* Force items with no country to the bottom */
+  setIcon(COUNTRY_COLUMN, QIcon(IMG_FLAG_UNKNOWN));
   update(rd);
 }
 
 /** Destructor. */
 RouterListItem::~RouterListItem()
 {
-  delete _rd;
+  if (_rd)
+    delete _rd;
 }
 
 /** Updates the router descriptor for this item. */
@@ -95,9 +102,18 @@ RouterListItem::update(RouterDescriptor rd)
 
 /** Sets the location information for this item's router descriptor. */
 void
-RouterListItem::setLocation(QString location)
+RouterListItem::setLocation(GeoIp geoip)
 {
-  _rd->setLocation(location);
+  _country = geoip.country().toLower();
+
+  QPixmap flag(":/images/flags/" + _country + ".png");
+  if (!flag.isNull()) {
+    setIcon(COUNTRY_COLUMN, QIcon(flag));
+  }
+  setToolTip(COUNTRY_COLUMN, geoip.toLocation());
+  
+  if (_rd)
+    _rd->setLocation(geoip.toLocation());
 }
 
 /** Overload the comparison operator. */
@@ -106,14 +122,39 @@ RouterListItem::operator<(const QTreeWidgetItem &other) const
 {
   const RouterListItem *a = this;
   const RouterListItem *b = (RouterListItem *)&other;
-
+ 
   if (_list) {
-    if (_list->sortColumn() == RouterListWidget::StatusColumn) {
-      /* Numeric comparison based on status and/or bandwidth */
-      return (a->_statusValue < b->_statusValue);
-    } else if (_list->sortColumn() == RouterListWidget::NameColumn) {
-      /* Perform a case-insensitive comparison based on router name */
-      return (a->name().toLower() < b->name().toLower());
+    Qt::SortOrder order = _list->header()->sortIndicatorOrder();
+    switch (_list->sortColumn()) {
+      case RouterListWidget::StatusColumn:
+        /* Numeric comparison based on status and/or bandwidth */
+        if (a->_statusValue == b->_statusValue) {
+          if (order == Qt::AscendingOrder)
+            return (a->name().toLower() > b->name().toLower());
+          else
+            return (a->name().toLower() < b->name().toLower());
+        }
+        return (a->_statusValue < b->_statusValue);
+      case RouterListWidget::CountryColumn:
+        /* Compare based on country code */
+        if (a->_country == b->_country) {
+          if (order == Qt::AscendingOrder)
+            return (a->_statusValue > b->_statusValue);
+          else
+            return (a->_statusValue < b->_statusValue);
+        }
+        return (a->_country < b->_country);
+      case RouterListWidget::NameColumn:
+        /* Case-insensitive comparison based on router name */
+        if (a->name().toLower() == b->name().toLower()) {
+          if (order == Qt::AscendingOrder)
+            return (a->_statusValue > b->_statusValue);
+          else
+            return (a->_statusValue < b->_statusValue);
+        }
+        return (a->name().toLower() < b->name().toLower());
+      default:
+        break;
     }
   }
   return QTreeWidgetItem::operator<(other);

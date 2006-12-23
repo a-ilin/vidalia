@@ -37,7 +37,9 @@ RouterListWidget::RouterListWidget(QWidget *parent)
 : QTreeWidget(parent)
 {
   /* Create and initialize columns */
-  setHeaderLabels(QStringList() << tr("Status") << tr("Server"));
+  setHeaderLabels(QStringList() << QString("")
+                                << QString("")
+                                << tr("Server"));
 
   /* Sort by descending server bandwidth */
   sortItems(StatusColumn, Qt::DescendingOrder);
@@ -228,6 +230,6 @@ RouterListWidget::onSelectionChanged()
   if (items.count() > 0) {
       rd = ((RouterListItem *)items[0])->descriptor();
   }
-    emit routerSelected(rd);
+  emit routerSelected(rd);
 }
 

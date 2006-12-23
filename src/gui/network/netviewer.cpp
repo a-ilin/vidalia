@@ -67,8 +67,9 @@ NetViewer::NetViewer(QWidget *parent)
   
   /* Change the column widths of the tree widgets */
   ui.treeRouterList->header()->
-    resizeSection(RouterListWidget::StatusColumn,
-		  RouterListWidget::StatusColumnWidth);
+    resizeSection(RouterListWidget::StatusColumn, 25);
+  ui.treeRouterList->header()->
+    resizeSection(RouterListWidget::CountryColumn, 25);
   ui.treeCircuitList->header()->
     resizeSection(CircuitListWidget::ConnectionColumn,
 		  CircuitListWidget::ConnectionColumnWidth);
@@ -231,7 +232,7 @@ NetViewer::loadConnections()
     ui.treeCircuitList->addStream(stream);
   }
 
-  /** Update the map */
+  /* Update the map */
   _map->update();
 }
 
@@ -398,7 +399,7 @@ NetViewer::resolved(int id, QList<GeoIp> geoips)
       router = ui.treeRouterList->findRouterById(id);
       if (router) {
         /* Save the location information in the descriptor */
-        router->setLocation(geoip.toLocation());
+        router->setLocation(geoip);
         /* Plot the router on the map */
         _map->addRouter(router->id(), geoip.latitude(), geoip.longitude());
       }

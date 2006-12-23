@@ -332,7 +332,7 @@
        </property>
        <property name="minimumSize" >
         <size>
-         <width>150</width>
+         <width>175</width>
          <height>0</height>
         </size>
        </property>
@@ -344,6 +344,9 @@
        </property>
        <property name="sortingEnabled" >
         <bool>true</bool>
+       </property>
+       <property name="indentation" >
+        <number>0</number> 
        </property>
       </widget>
       <widget class="QSplitter" name="splitter3" >

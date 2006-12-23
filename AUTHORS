@@ -25,8 +25,8 @@ Contributors:
 
   Geoff Goodell <http://afs.eecs.harvard.edu/~goodell/> supplied us with
   nearly all of the flag icons that we use in the Appearance configuration
-  page. He also created the router status icons we use in the network view
-  dialog.
+  page and network map. He also created the router status icons we use in 
+  the network map.
 
   Michael Zuercher and Adam Tomjack of Zuerchertech LLC
   <http://www.zuerchertech.com> gave us the ZImageView class which handles

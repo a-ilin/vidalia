@@ -47,13 +47,10 @@ class RouterListWidget : public QTreeWidget
 public:
   /** Columns in the list. */
   enum Columns {
-    StatusColumn = 0,  /**< Status column, indicating bandwidth */
-    NameColumn = 1,    /*< Router's name. */
+    StatusColumn  = 0,  /**< Status column, indicating bandwidth. */
+    CountryColumn = 1,  /**< Router's country flag. */
+    NameColumn    = 2,  /**< Router's name. */
     
-  };
-  /** Column widths. */
-  enum ColumnWidths {
-    StatusColumnWidth = 55 /**< Initial width of the status column. */
   };
 
   /** Default constructor. */
