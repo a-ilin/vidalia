@@ -36,7 +36,7 @@ class GeoIp
 {
 public:
   /** Default constructor */
-  GeoIp() : _latitude(0), _longitude(0) {}
+  GeoIp() : _latitude(0xFFFF), _longitude(0xFFFF) {}
   /** Constructor. */
   GeoIp(QHostAddress ip);
 
