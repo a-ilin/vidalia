@@ -37,6 +37,8 @@ class GeoIp
 public:
   /** Default constructor */
   GeoIp() : _latitude(0), _longitude(0) {}
+  /** Constructor. */
+  GeoIp(QHostAddress ip);
 
   /** Constructor */
   GeoIp(QHostAddress ip, float latitude, float longitude, 
@@ -64,6 +66,9 @@ public:
 
   /** Returns true if the GeoIp object is invalid. */
   bool isEmpty() const;
+  /** Returns true if the GeoIp object is valid, but no location information
+   * is known for the associated IP address. */
+   bool isUnknown() const;
 
 private:
   QHostAddress _ip; /**< IP address for this location. */

@@ -306,11 +306,11 @@ NetViewer::addToResolveQueue(QHostAddress ip, QString id)
     /* Remember which server ids belong to which IP addresses */
     _resolveMap.insertMulti(ipstr, id);
   }
-  
+ 
   if (!_resolveQueue.contains(ip) && !_geoip.resolveFromCache(ip)) {
     /* Add the IP to the queue of IPs waiting for geographic information  */
     _resolveQueue << ip;
-    
+ 
     /* Wait MIN_RESOLVE_QUEUE_DELAY after the last item inserted into the
      * queue, before sending the resolve request. */
     _minResolveQueueTimer.start(MIN_RESOLVE_QUEUE_DELAY);
@@ -392,7 +392,10 @@ NetViewer::resolved(int id, QList<GeoIp> geoips)
     /* Find all routers that are at this IP address */
     ip = geoip.ip().toString();
     QList<QString> ids = _resolveMap.values(ip);
-
+    _resolveMap.remove(ip);
+    if (geoip.isUnknown())
+      continue; /* We don't know where this router is */
+      
     /* Update their geographic location information with the results of this
      * GeoIP query. */
     foreach (QString id, ids) {
@@ -404,7 +407,6 @@ NetViewer::resolved(int id, QList<GeoIp> geoips)
         _map->addRouter(router->id(), geoip.latitude(), geoip.longitude());
       }
     }
-    _resolveMap.remove(ip);
   }
 
   /* Update the circuit lines */

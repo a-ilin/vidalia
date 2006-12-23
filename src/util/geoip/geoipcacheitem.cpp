@@ -77,11 +77,15 @@ GeoIpCacheItem::fromString(QString cacheString)
   return GeoIpCacheItem();
 }
 
-/** Returns true if the cache item is too old to be considered valid. */
+/** Returns true if the cache item is too old to be considered valid. Normal
+ * cached responses are valid for one month. Cached UNKNOWN responses are
+ * considered valid for one week. */
 bool
 GeoIpCacheItem::isExpired() const
 {
-  /* Consider cache entries to be valid for one month. */
+  if (_geoip.isUnknown()) {
+    return (_timestamp.addDays(7) < QDateTime::currentDateTime());
+  }
   return (_timestamp.addMonths(1) < QDateTime::currentDateTime()); 
 }
 
