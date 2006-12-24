@@ -521,8 +521,7 @@ Oppgrader til en nyere utgave av Tor.</translation>
     </message>
     <message>
       <source>Find</source>
-      <translation>Finn 
-</translation>
+      <translation>Finn</translation>
     </message>
     <message>
       <source>Search for a word or phrase on current page (Ctrl+F)</source>
@@ -650,7 +649,7 @@ Oppgrader til en nyere utgave av Tor.</translation>
     </message>
     <message>
       <source>Bandwidth Graph</source>
-      <translation>Båndbredde Graf:</translation>
+      <translation>Båndbredde Graf</translation>
     </message>
     <message>
       <source>Message Log</source>
