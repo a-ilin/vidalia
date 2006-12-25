@@ -122,6 +122,10 @@ Section "${VIDALIA_DESC}" Vidalia
   File "..\..\COPYING"
   File "..\..\README"
 
+  ; Include a prebuilt GeoIP cache
+  SetOutPath "$APPDATA\Vidalia\geoip-cache"
+  File "..\geoip-cache"
+
   ; Write the uninstall keys for Windows
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${VIDALIA_NAME}" "DisplayName" "${VIDALIA_DESC}"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${VIDALIA_NAME}" "UninstallString" '"$INSTDIR\uninstall.exe"'

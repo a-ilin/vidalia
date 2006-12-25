@@ -31,7 +31,10 @@ PRIVOXY_APPVERSION, and TORBUTTON_APPVERSION) at the top of vidalia-bundle.nsi.
 5. Install Vidalia, Tor, and Privoxy to the directories you created for them
 in Step 4. Remember that you may need to grab the torrc.sample file from
 %APPDATA%\Tor that was created by Tor's installer and place it in the directory
-for the bundle's version of Tor.
+for the bundle's version of Tor. You may also need to grab
+%APPDATA%\Vidalia\geoip-cache, or a geoip-cache from Vidalia's source
+repository, and place it in the directory for the bundle's version of
+Vidalia.
 
 6. Place the Torbutton Firefox extension (.xpi) in the directory you created
 for it in Step 4.

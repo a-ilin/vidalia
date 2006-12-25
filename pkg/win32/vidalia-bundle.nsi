@@ -229,6 +229,10 @@ SectionGroup "${VIDALIA_DESC}" VidaliaGroup
       File "Vidalia\${VIDALIA_APPVERSION}\AUTHORS"
       File "BUNDLE_LICENSE"
       
+      ; Include a prebuilt GeoIP cache
+      SetOutPath "$APPDATA\Vidalia"
+      File "Vidalia\${VIDALIA_APPVERSION}\geoip-cache"
+
       ; Tor gets installed to $INSTDIR\Tor, so let's remember it
       ; But first, we have to replace all the '\'s with '\\'s in the $INSTDIR
       ; Does NSIS make this easy by providing the ability to replace substrings? No.
