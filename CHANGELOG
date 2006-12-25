@@ -1,4 +1,4 @@
-0.0.10  ??-Dec-2006
+0.0.10  25-Dec-2006
   o Load NT service functions on demand so we can run on Windows 95/98/ME
     again. (Ticket #211)
   o Add a column to the list of servers in the network map window, with a 
@@ -45,7 +45,8 @@
   o Add a Spanish translation contributed by desolator.
   o Add a Portuguese (Brazilian) translation contributed by Mabat Haram.
   o Add a Simplified Chinese installer translation contributed by omg.
-  o Updates to Finnish, French, German, Italian, Polish, and Russian translations.
+  o Updates to Finnish, French, German, Italian, Norwegian, Polish, 
+    Russian, and Simplified Chinese translations.
 
 
 0.0.9   05-Nov-2006
