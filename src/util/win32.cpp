@@ -161,7 +161,7 @@ win32_process_list()
   PROCESSENTRY32 proc;
   QString exeFile;
   qint64 pid;
- 
+
   /* Create a snapshot of all active processes */
   hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
   if (hSnapshot != INVALID_HANDLE_VALUE) {
@@ -172,10 +172,8 @@ win32_process_list()
       do {
         /* Extract the PID and exe filename from the process record */
         pid = (qint64)proc.th32ProcessID;
-        QT_WA(
-          exeFile = QString::fromUtf16((const ushort *)proc.szExeFile);,
-          exeFile = QString::fromAscii((const char *)proc.szExeFile);
-        )
+        exeFile = QString::fromAscii((const char *)proc.szExeFile);
+        
         /* Add this process to our list */
         procList.insert(pid, exeFile);
       } while (Process32Next(hSnapshot, &proc));
