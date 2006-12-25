@@ -123,7 +123,7 @@ Section "${VIDALIA_DESC}" Vidalia
   File "..\..\README"
 
   ; Include a prebuilt GeoIP cache
-  SetOutPath "$APPDATA\Vidalia\geoip-cache"
+  SetOutPath "$APPDATA\Vidalia"
   File "..\geoip-cache"
 
   ; Write the uninstall keys for Windows
