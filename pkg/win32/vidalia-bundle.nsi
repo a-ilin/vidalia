@@ -16,7 +16,7 @@ SetCompressor /SOLID lzma
 
 !define VIDALIA_NAME        "Vidalia"
 !define VIDALIA_EXEC        "vidalia.exe"
-!define VIDALIA_APPVERSION  "0.0.10"
+!define VIDALIA_APPVERSION  "0.0.11-svn"
 !define VIDALIA_DESC        "${VIDALIA_NAME} ${VIDALIA_APPVERSION}"
 !define VIDALIA_UNINST      "uninstall.exe"
 
