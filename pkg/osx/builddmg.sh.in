@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#  $Id: Vidalia.pro 834 2006-05-14 00:12:18Z edmanm $
+#  $Id$
 # 
 #  Vidalia is distributed under the following license:
 #

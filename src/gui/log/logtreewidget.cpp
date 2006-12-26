@@ -21,7 +21,7 @@
 
 /** 
  * \file logtreewidget.cpp
- * \version $Id: messagelog.cpp 797 2006-05-09 04:42:35Z edmanm $
+ * \version $Id$
  * \brief Contains a collection of log messages as LogTreeItems
  */
 

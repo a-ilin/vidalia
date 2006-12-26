@@ -1,4 +1,4 @@
-;; $Id: $
+;; $Id$
 ;; 
 ;; Vidalia installer and bundle Polish translation
 ;; 

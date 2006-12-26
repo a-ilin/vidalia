@@ -21,7 +21,7 @@
 
 /** 
  * \file controlsocket.h
- * \version $Id: $
+ * \version $Id$
  * \brief Socket used to connect to Tor's control interface
  */
 

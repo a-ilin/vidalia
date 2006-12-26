@@ -21,7 +21,7 @@
 
 /** 
  * \file trayicon_mac.h
- * \version $Id: mainwindow.cpp 604 2006-04-08 20:36:55Z edmanm $
+ * \version $Id$
  * \brief Tray icon implementation on OS X (Dock icon)
  */
 

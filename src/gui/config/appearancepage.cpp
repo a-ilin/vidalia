@@ -21,7 +21,7 @@
 
 /** 
  * \file appearancepage.cpp
- * \version $Id: appearancepage.cpp 530 2006-03-30 19:09:35Z hipplej $
+ * \version $Id$
  * \brief Displays Vidalia language and style settings
  */
 
