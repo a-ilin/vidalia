@@ -92,8 +92,11 @@ TorControl::start()
     
     /* Make sure our torrc and the full path to it exists. If it doesn't,
      * then touch it. */
-    touch_file(settings.getTorrc(), true);
-
+    QString torrc = settings.getTorrc();
+    if (!torrc.isEmpty()) {
+      touch_file(torrc, true);
+    }
+    
 #if defined(Q_OS_WIN32)
     if (TorService::isSupported() && _torService->isInstalled()) {
       _torService->start();
