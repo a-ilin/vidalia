@@ -151,8 +151,10 @@ AC_CHECK_FILE(Makefile, [rm Makefile])
 AC_SUBST(VERSION, AC_PACKAGE_VERSION)
 DOCS="doc"
 OSXPKG="pkg/osx"
+RPMPKG="pkg/rpm"
 AC_OUTPUT([$DOCS/vidalia.1                 \
            $DOCS/Doxyfile                  \
+           $RPMPKG/vidalia.spec            \
            $OSXPKG/builddmg.sh             \
            $OSXPKG/buildmpkg.sh            \
            $OSXPKG/VidaliaBundleDesc.plist \

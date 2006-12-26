@@ -3,11 +3,11 @@
 
 #%package vidalia
 Name		: vidalia
-Version		: 0.0.8
+Version		: @VERSION@
 Release		: 3
 #
 License		: GPL
-Summary		: The Tor-Gui for Linux
+Summary		: A Tor GUI for Linux
 Group		: Applications/Internet
 
 URL		: http://www.vidalia-project.net
@@ -25,7 +25,7 @@ BuildRequires	: qt4
 
 %description
 
-Vidalia is an easy to use Tor-Controller Gui
+Vidalia is an easy-to-use Tor controller GUI
 
 %prep
 rm -rf %{buildroot}
