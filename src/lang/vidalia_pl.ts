@@ -61,7 +61,7 @@
     <message>
         <location filename="../gui/config/advancedpage.ui" line="301"/>
         <source>Control Port</source>
-        <translation>Port kontrolny</translation>
+        <translation>Port sterujący</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="341"/>
@@ -281,7 +281,7 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="733"/>
         <source>Style</source>
-        <translation type="unfinished">Styl</translation>
+        <translation>Styl</translation>
     </message>
 </context>
 <context>
@@ -350,7 +350,7 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="55"/>
         <source>Zoom to Circuit</source>
-        <translation type="unfinished"></translation>
+        <translation>Zbliż połączenie</translation>
     </message>
 </context>
 <context>
@@ -406,12 +406,12 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../control/controlconnection.cpp" line="285"/>
         <source>Control socket is not connected.</source>
-        <translation>Gniazdo kontrolne nie jest podłączone.</translation>
+        <translation>Gniazdo sterujące nie jest podłączone.</translation>
     </message>
     <message>
         <location filename="../control/controlconnection.cpp" line="232"/>
         <source>Control socket is not connected</source>
-        <translation>Gniazdo kontrolne nie jest podłączone</translation>
+        <translation>Gniazdo sterujące nie jest podłączone</translation>
     </message>
 </context>
 <context>
@@ -429,7 +429,7 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../control/controlsocket.cpp" line="151"/>
         <source>Error sending control command. [%1]</source>
-        <translation>Błąd przy przy wysyłaniu rozkazu kontrolnego. [%1]</translation>
+        <translation>Błąd przy przy wysyłaniu polecenia sterującego. [%1]</translation>
     </message>
     <message>
         <location filename="../control/controlsocket.cpp" line="188"/>
@@ -444,18 +444,18 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../control/controlsocket.cpp" line="142"/>
         <source>Control socket is not connected.</source>
-        <translation>Gniazdo kontrolne nie jest podłączone.</translation>
+        <translation>Gniazdo sterujące nie jest podłączone.</translation>
     </message>
     <message>
         <location filename="../control/controlsocket.cpp" line="76"/>
         <source>Vidalia was unable to determine Tor&apos;s control protocol version. Verify that your control port number is set correctly and you are running a recent version of Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia nie mogła ustalić wersji protokołu sterującego Tor&apos;a. Sprawdź, czy numer portu jest ustawiony poprawnie i że posiadasz uruchomioną najnowszą wersję Tor&apos;a.</translation>
     </message>
     <message>
         <location filename="../control/controlsocket.cpp" line="80"/>
         <source>Vidalia only supports Version 1 of Tor&apos;s control protocol (version %1 detected).
 Upgrade to a newer version of Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia obsługuje jedynie Wersję 1 protokołu sterującego (wykryto wersję %1).</translation>
     </message>
 </context>
 <context>
@@ -1937,12 +1937,12 @@ fingerprint.</source>
     <message>
         <location filename="../gui/common/vmessagebox.cpp" line="96"/>
         <source>Continue</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontynuuj</translation>
     </message>
     <message>
         <location filename="../gui/common/vmessagebox.cpp" line="97"/>
         <source>Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>Wyjdź</translation>
     </message>
 </context>
 <context>
@@ -1967,7 +1967,9 @@ fingerprint.</source>
         <source>Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.
 
 Would you like to continue starting Vidalia?</source>
-        <translation type="unfinished"></translation>
+        <translation>Inny proces Vidalii jest prawdopodobnie już uruchomiony. Jeśli jesteś pewien że nie, możesz kontynuować.
+
+Czy chcesz kontynuować uruchamianie Vidalii?</translation>
     </message>
 </context>
 </TS>
