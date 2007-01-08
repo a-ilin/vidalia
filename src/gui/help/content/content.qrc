@@ -150,6 +150,16 @@
     <file>zh-cn/troubleshooting.html</file>
     <file>zh-cn/netview.html</file>
     <file>zh-cn/links.html</file>
+    <!-- Traditional Chinese -->
+    <file>zh-tw/contents.xml</file>
+    <file>zh-tw/index.html</file>
+    <file>zh-tw/running.html</file>
+    <file>zh-tw/log.html</file>
+    <file>zh-tw/config.html</file>
+    <file>zh-tw/server.html</file>
+    <file>zh-tw/troubleshooting.html</file>
+    <file>zh-tw/netview.html</file>
+    <file>zh-tw/links.html</file>
   </qresource>
 </RCC>
 

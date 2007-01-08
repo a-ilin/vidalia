@@ -250,6 +250,7 @@
         <file>flags/ye.png</file>
         <file>flags/za.png</file>
         <file>flags/zh-cn.png</file>
+        <file>flags/zh-tw.png</file>
         <file>flags/zw.png</file>
         <file>flags/unknown.png</file>
     </qresource>

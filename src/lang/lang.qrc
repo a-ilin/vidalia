@@ -15,6 +15,7 @@
     <file alias="pt">vidalia_pt.qm</file>
     <file alias="ru">vidalia_ru.qm</file>
     <file alias="zh-cn">vidalia_zh-cn.qm</file>
+    <file alias="zh-tw">vidalia_zh-tw.qm</file>
   </qresource>
 </RCC>
 
