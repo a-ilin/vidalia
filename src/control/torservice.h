@@ -1,7 +1,7 @@
 /****************************************************************
  *  Vidalia is distributed under the following license:
  *
- *  Copyright (C) 2006,  Matt Edman, Justin Hipple
+ *  Copyright (C) 2006-2007,  Matt Edman, Justin Hipple
  *
  *  This program is free software; you can redistribute it and/or
  *  modify it under the terms of the GNU General Public License
@@ -124,7 +124,7 @@ public:
   /** Starts the Tor service. Emits started on success. */
   void start();
   /** Stops the Tor service. Emits finished on success. */
-  void stop();
+  bool stop();
   /** Returns the exit code of the last Tor service that finished. */
   int exitCode();
   /** Returns the exit status of the last Tor service that finished. */
@@ -144,16 +144,17 @@ signals:
   void startFailed(QString error);
 
 private:
-  /** Initializes the service and the service manager. */
-  bool initialize();
-  /** Closes the service and the service manager. */
-  void close();
+  /** Opens a handle to the Tor service. Returns NULL on error. */
+  SC_HANDLE openService();
+  /** Opens a handle to the service control manager. Returns NULL on error. */
+  static SC_HANDLE openSCM();
+  /** Closes the service <b>handle</b>. */
+  static void closeHandle(SC_HANDLE handle);
   /** Gets the status of the Tor service. */
   DWORD status(); 
-  
-  SC_HANDLE _manager; /** Handle to a service manager object. */
-  SC_HANDLE _service; /** Handle to the Tor service object. */
 
+  /** Handle to the service control manager. */ 
+  SC_HANDLE _scm;
   /** List of dynamically loaded NT service functions. */
   static ServiceFunctions _service_fns;
 };

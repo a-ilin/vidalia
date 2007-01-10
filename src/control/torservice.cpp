@@ -1,7 +1,7 @@
 /****************************************************************
  *  Vidalia is distributed under the following license:
  *
- *  Copyright (C) 2006,  Matt Edman, Justin Hipple
+ *  Copyright (C) 2006-2007,  Matt Edman, Justin Hipple
  *
  *  This program is free software; you can redistribute it and/or
  *  modify it under the terms of the GNU General Public License
@@ -40,6 +40,19 @@ ServiceFunctions TorService::_service_fns =
     NULL, NULL, NULL, NULL, NULL };
 
 
+/** Default ctor. */
+TorService::TorService(QObject *parent)
+  : QObject(parent)
+{
+  _scm = openSCM();
+}
+
+/** Default dtor. */
+TorService::~TorService()
+{
+  closeHandle(_scm);
+}
+
 /** Returns true if services are supported. */
 bool
 TorService::isSupported()
@@ -62,7 +75,9 @@ TorService::loadServiceFunctions()
     }                                                                   \
   } while (0)
 
-  if (!_service_fns.loaded) {
+  if (!isSupported()) {
+    _service_fns.loaded = false;
+  } else if (!_service_fns.loaded) {
     LOAD_SERVICE_FN(ChangeServiceConfig2A);
     LOAD_SERVICE_FN(CloseServiceHandle);
     LOAD_SERVICE_FN(ControlService);
@@ -75,79 +90,55 @@ TorService::loadServiceFunctions()
     LOAD_SERVICE_FN(StartServiceA);
     _service_fns.loaded = true;
   }
-  return true;
+  return _service_fns.loaded;
 }
 
-/** Default ctor. */
-TorService::TorService(QObject* parent)
-  : QObject(parent)
+/** Opens a handle to the Tor service. Returns NULL on error. */
+SC_HANDLE
+TorService::openService()
 {
-  _manager = NULL;
-  _service = NULL;
-
-  initialize();
+  if (!loadServiceFunctions())
+    return NULL;
+  if (!_scm)
+    return NULL;
+  return _service_fns.OpenServiceA(_scm, 
+                                   (LPCTSTR)TOR_SERVICE_NAME, 
+                                   TOR_SERVICE_ACCESS);
 }
 
-/** Default dtor. */
-TorService::~TorService()
+/** Opens a handle to the service control manager. Returns NULL on error. */
+SC_HANDLE
+TorService::openSCM()
 {
-  close();
+  if (!loadServiceFunctions())
+    return NULL;
+  return _service_fns.OpenSCManagerA(NULL, NULL, SC_MANAGER_ALL_ACCESS);
 }
 
-/** Closes the service and the service manager. */
+/** Closes the service <b>handle</b>. */
 void
-TorService::close()
+TorService::closeHandle(SC_HANDLE handle)
 {
-  if (loadServiceFunctions()) {
-    if (_service) {
-      _service_fns.CloseServiceHandle(_service);
-      _service = NULL;
-    }
-    if (_manager) {
-      _service_fns.CloseServiceHandle(_manager);
-      _manager = NULL;
-    }
-  }
-}
-
-/** Initializes the service and service manager. */
-bool
-TorService::initialize()
-{
-  /* If services are supported, initialize the manager and service */
-  if (isSupported()) {
-    /* Load NT service related functions */
-    if (!loadServiceFunctions()) {
-      return false;
-    }
-    /* Open service manager */
-    if (_manager == NULL) {
-      _manager = _service_fns.OpenSCManagerA(NULL, NULL, 
-                                             SC_MANAGER_ALL_ACCESS);
-    }
-    /* Open tor service */
-    if (_service == NULL) {
-      _service = _service_fns.OpenServiceA(_manager, 
-                                           (LPCTSTR)TOR_SERVICE_NAME,
-                                           TOR_SERVICE_ACCESS);
-    }
-  }
-  return true;
+  if (!loadServiceFunctions())
+    return;
+  _service_fns.CloseServiceHandle(handle);
 }
 
 /** Returns true if the Tor service is installed. */
 bool
 TorService::isInstalled()
 {
-  initialize();
-  return (_service != NULL);
+  bool installed;
+  SC_HANDLE service = openService();
+  installed = (service != NULL);
+  closeHandle(service);
+  return installed;
 }
 
 /** Returns true if the Tor service is running. */
 bool
 TorService::isRunning()
 {
-  initialize();
   return (status() == SERVICE_RUNNING);
 }
 
@@ -155,82 +146,80 @@ TorService::isRunning()
 void
 TorService::start()
 {
-  if (!isSupported()) {
-    emit startFailed(tr("Services not supported on this platform."));
-    return;
-  }
-  if (!isInstalled()) {
+  SC_HANDLE service = openService();
+
+  if (!service) {
     emit startFailed(tr("The Tor service is not installed."));
-    return;
-  }
-  if (!initialize()) {
     return;
   }
 
   /* Starting a service can take up to 30 seconds! */
-  if (!isRunning()) {
-    _service_fns.StartServiceA(_service, 0, NULL);
-  }
-  
-  int tries = 0;
-  while (true) {
-    if (isRunning()) break;
-    tries++;
-    Sleep(1000);
-    if (tries > 5) break;
+  if (status() != SERVICE_RUNNING) {
+    int tries = 0;
+    _service_fns.StartServiceA(service, 0, NULL);
+
+    while ((status() != SERVICE_RUNNING) && ++tries <= 5)
+      Sleep(1000);
   }
 
-  if (isRunning()) {
+  if (status() == SERVICE_RUNNING) {
     emit started();
   } else {
     emit startFailed(tr("Unable to start Tor service."));
   }
+  closeHandle(service);
 }
 
 /** Stops Tor service. */
-void
+bool
 TorService::stop()
 {
-  if (!loadServiceFunctions()) {
-    return;
-  }
-  if (isRunning()) {
+  SC_HANDLE service = openService();
+
+  if (!service)
+    return false;
+
+  if (status() != SERVICE_STOPPED) {
     SERVICE_STATUS stat;
     stat.dwCurrentState = SERVICE_RUNNING;
-    _service_fns.ControlService(_service, SERVICE_CONTROL_STOP, &stat);
-
-    int tries = 0;
-    while (true) {
-      if (status() ==  SERVICE_STOPPED) break;
-      tries++;
-      Sleep(1000);
-      if (tries > 5) break;
+    if (_service_fns.ControlService(service, SERVICE_CONTROL_STOP, &stat)) {
+      /* XXX Five seconds isn't long enough to wait when we're stopping a Tor
+       * that is running as a server, but we don't want to block for 30
+       * seconds. It would be nice if we could get an async notification when
+       * the service stops or fails to stop. */
+      int tries = 0;
+      while ((status() != SERVICE_STOPPED) && (++tries <= 5))
+        Sleep(1000);
     }
   }
+  closeHandle(service);
 
-  if (!isRunning()) {
-    /* Emit the signal that we stopped and the service's exit code and status. */
+  /* Find out if the service really stopped and return the result */
+  if (status() == SERVICE_STOPPED) {
     emit finished(exitCode(), exitStatus());
+    return true;
   }
+  return false;
 }
 
 /** Returns the exit code of the last Tor service that finished. */
 int
 TorService::exitCode()
 {
+  SC_HANDLE service;
   int exitCode = UNKNOWN_EXIT_CODE;
   
-  if (loadServiceFunctions()) {
-    if (isSupported() && _manager && _service) {
-      SERVICE_STATUS s;
-      if (_service_fns.QueryServiceStatus(_service, &s)) {
-        /* Services return one exit code, but it could be in one of two
-         * variables. Fun. */
-        exitCode = (int)(s.dwWin32ExitCode == ERROR_SERVICE_SPECIFIC_ERROR
-                                              ? s.dwServiceSpecificExitCode
-                                              : s.dwWin32ExitCode);
-      }
+  service = openService();
+  if (service) {
+    SERVICE_STATUS s;
+    if (_service_fns.QueryServiceStatus(service, &s)) {
+      /* Services return one exit code, but it could be in one of two
+       * variables. Fun. */
+      exitCode = (int)(s.dwWin32ExitCode == ERROR_SERVICE_SPECIFIC_ERROR
+                                            ? s.dwServiceSpecificExitCode
+                                            : s.dwWin32ExitCode);
     }
+    closeHandle(service);
   }
   return exitCode;
 }
@@ -248,71 +237,70 @@ TorService::exitStatus()
   return QProcess::NormalExit;
 }
 
-/** Installs the Tor service. */
+/** Installs the Tor service. Returns true if the service was successfully
+ * installed or already exists. */
 bool
 TorService::install(const QString &torPath, const QString &torrc,
                     quint16 controlPort)
 {
-  if (!isSupported()) return false;
-
-  if (!isInstalled()) {
+  SC_HANDLE service;
+  
+  if (!_scm)
+    return false;
+ 
+  service = openService();
+  if (!service) {
     QString command = QString("\"%1\" --nt-service -f \"%2\" ControlPort %3")
                                                  .arg(torPath)
                                                  .arg(torrc)
                                                  .arg(controlPort);
 
-    _service = _service_fns.CreateServiceA(_manager, 
+    service = _service_fns.CreateServiceA(_scm, 
                               (LPCTSTR)TOR_SERVICE_NAME, (LPCTSTR)TOR_SERVICE_DISP,
                               TOR_SERVICE_ACCESS, SERVICE_WIN32_OWN_PROCESS,
                               SERVICE_AUTO_START, SERVICE_ERROR_IGNORE,
                               (LPCTSTR)command.toAscii().data(), NULL, NULL, NULL, 
                               NULL, NULL);
+    if (!service)
+      return false;
 
-    if (_service != NULL) {
-      SERVICE_DESCRIPTION desc;
-      desc.lpDescription = TOR_SERVICE_DESC;
-      _service_fns.ChangeServiceConfig2A(_service, 
-                                         SERVICE_CONFIG_DESCRIPTION, &desc);
-    }
+    SERVICE_DESCRIPTION desc;
+    desc.lpDescription = TOR_SERVICE_DESC;
+    _service_fns.ChangeServiceConfig2A(service, 
+                                       SERVICE_CONFIG_DESCRIPTION, &desc);
+    closeHandle(service);
   }
-  return isInstalled();
+  return true;
 }
 
-/** Removes the Tor service. */
+/** Removes the Tor service. Returns true if the service was removed
+ * successfully or does not exist. */
 bool
 TorService::remove()
 {
-  if (!loadServiceFunctions()) {
-    return false;
-  }
+  bool removed = true;
+  SC_HANDLE service = openService();
 
-  if (!isSupported()) return false;
-  if (isInstalled()) {
-    /* Stop the service */
+  if (service) {
     stop();
-
-    /* Delete the service */
-    if (!_service_fns.DeleteService(_service)) return false;
-    
-    /* Release references to manager and service */
-    close();
+    removed = _service_fns.DeleteService(service);
+    closeHandle(service);
   }
-  return !isInstalled();
+  return removed;
 }
-
 
 /** Gets the status of the Tor service. */
 DWORD
 TorService::status()
 {
-  if (!(isSupported() && _manager && _service)) return DWORD(-1);
-
+  SC_HANDLE service;
   SERVICE_STATUS s;
   DWORD stat = SERVICE_ERROR;
-
-  if (_service_fns.QueryServiceStatus(_service, &s)) {
+  
+  service = openService();
+  if (service && _service_fns.QueryServiceStatus(service, &s))
     stat = s.dwCurrentState;
-  } 
+  closeHandle(service);
   return stat;
 }
 
