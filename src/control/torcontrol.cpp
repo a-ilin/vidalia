@@ -184,11 +184,6 @@ TorControl::closeTorProcess()
     delete _torProcess;
     _torProcess = 0;
   }
-#if defined(Q_OS_WIN32)
-  if (_torService) {
-    QObject::disconnect(_torService, 0, 0, 0);
-  }
-#endif
 }
 
 /** Detects if the Tor process is running under Vidalia. Returns true if
