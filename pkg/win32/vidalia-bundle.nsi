@@ -230,6 +230,8 @@ SectionGroup "${VIDALIA_DESC}" VidaliaGroup
       File "BUNDLE_LICENSE"
       
       ; Include a prebuilt GeoIP cache
+      SetShellVarContext current
+      CreateDirectory "$APPDATA\Vidalia"
       SetOutPath "$APPDATA\Vidalia"
       File "Vidalia\${VIDALIA_APPVERSION}\geoip-cache"
 
@@ -241,15 +243,11 @@ SectionGroup "${VIDALIA_DESC}" VidaliaGroup
       Push "\\"
       Call StrRep
       Pop $R0 ; contains the modified version of $INSTDIR
-
-      SetShellVarContext current
-      IfFileExists "$APPDATA\Vidalia" EndIfConf
-        CreateDirectory "$APPDATA\Vidalia"
-      EndIfConf:
       WriteINIStr "$APPDATA\Vidalia\vidalia.conf" Tor TorExecutable "$R0\\Tor\\${TOR_EXEC}"
-      SetShellVarContext all
+
 
       ; Write the uninstall keys for Windows  
+      SetShellVarContext all
       WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "DisplayName" "${VIDALIA_DESC}"
       WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "UninstallString" '"$INSTDIR\Vidalia\${VIDALIA_UNINST}"'
       WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "NoModify" 1
