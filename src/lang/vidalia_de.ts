@@ -239,17 +239,17 @@ Sie müssen ihn manuell entfernen.</translation>
         <translation>Senderate</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="765"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="773"/>
         <source>Changes the transparency of the Bandwidth Graph</source>
         <translation>Ändert die Transparenz des Bandbreitengraphs</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="909"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="932"/>
         <source>Save</source>
         <translation>Speichern</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="916"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="939"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
@@ -259,12 +259,12 @@ Sie müssen ihn manuell entfernen.</translation>
         <translation>Seit:</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="849"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="857"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="864"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="872"/>
         <source>% Opaque</source>
         <translation>% undurchsichtig</translation>
     </message>
@@ -279,7 +279,7 @@ Sie müssen ihn manuell entfernen.</translation>
         <translation>Immer im Vordergrund</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="733"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="723"/>
         <source>Style</source>
         <translation>Aussehen</translation>
     </message>
@@ -1354,97 +1354,97 @@ empfangen.</translation>
         <translation>Zeige Tor-Netzwerk</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="515"/>
+        <location filename="../gui/network/netviewer.ui" line="518"/>
         <source>Refresh</source>
         <translation>Aktualisieren</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="537"/>
+        <location filename="../gui/network/netviewer.ui" line="540"/>
         <source>Help</source>
         <translation>Hilfe</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="559"/>
+        <location filename="../gui/network/netviewer.ui" line="562"/>
         <source>Close</source>
         <translation>Schließen</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="581"/>
+        <location filename="../gui/network/netviewer.ui" line="584"/>
         <source>Zoom In</source>
         <translation>Vergrößern</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="603"/>
+        <location filename="../gui/network/netviewer.ui" line="606"/>
         <source>Zoom Out</source>
         <translation>Verkleinern</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="521"/>
+        <location filename="../gui/network/netviewer.ui" line="524"/>
         <source>Refresh the list of routers and connections</source>
         <translation>Aktualisiere die Liste der Router und Verbindungen</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="540"/>
+        <location filename="../gui/network/netviewer.ui" line="543"/>
         <source>Show network map help</source>
         <translation>Zeige Hilfe zur Netzwerk-Karte</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="543"/>
+        <location filename="../gui/network/netviewer.ui" line="546"/>
         <source>Show the network map help</source>
         <translation>Zeige Hilfe zur Netzwerk-Karte</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="565"/>
+        <location filename="../gui/network/netviewer.ui" line="568"/>
         <source>Close the network map</source>
         <translation>Schließe Netzwerk-Karte</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="587"/>
+        <location filename="../gui/network/netviewer.ui" line="590"/>
         <source>Zoom in on the network map</source>
         <translation>Vergrößere Netzwerk-Karte</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="609"/>
+        <location filename="../gui/network/netviewer.ui" line="612"/>
         <source>Zoom out on the network map</source>
         <translation>Verkleinere Netzwerk-Karte</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="625"/>
+        <location filename="../gui/network/netviewer.ui" line="628"/>
         <source>Zoom To Fit</source>
         <translation>Größe anpassen</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="631"/>
+        <location filename="../gui/network/netviewer.ui" line="634"/>
         <source>Zooms to fit all currently displayed circuits</source>
         <translation>Passt die Größe an die angezeigten Verbindungen an</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="529"/>
+        <location filename="../gui/network/netviewer.ui" line="532"/>
         <source>Ctrl+R</source>
         <translation>Strg+R</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="551"/>
+        <location filename="../gui/network/netviewer.ui" line="554"/>
         <source>F1</source>
         <translation>F1</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="573"/>
+        <location filename="../gui/network/netviewer.ui" line="576"/>
         <source>Esc</source>
         <translation>Esc</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="595"/>
+        <location filename="../gui/network/netviewer.ui" line="598"/>
         <source>+</source>
         <translation>+</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="617"/>
+        <location filename="../gui/network/netviewer.ui" line="620"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="639"/>
+        <location filename="../gui/network/netviewer.ui" line="642"/>
         <source>Ctrl+Z</source>
         <translation>Strg+Z</translation>
     </message>
@@ -1516,17 +1516,17 @@ empfangen.</translation>
 <context>
     <name>RouterListItem</name>
     <message>
-        <location filename="../gui/network/routerlistitem.cpp" line="87"/>
+        <location filename="../gui/network/routerlistitem.cpp" line="94"/>
         <source>%1 KB/s</source>
         <translation>%1 KB/s</translation>
     </message>
     <message>
-        <location filename="../gui/network/routerlistitem.cpp" line="71"/>
+        <location filename="../gui/network/routerlistitem.cpp" line="78"/>
         <source>Offline</source>
         <translation>Offline</translation>
     </message>
     <message>
-        <location filename="../gui/network/routerlistitem.cpp" line="75"/>
+        <location filename="../gui/network/routerlistitem.cpp" line="82"/>
         <source>Hibernating</source>
         <translation>Ruhezustand</translation>
     </message>
@@ -1534,22 +1534,17 @@ empfangen.</translation>
 <context>
     <name>RouterListWidget</name>
     <message>
-        <location filename="../gui/network/routerlistwidget.cpp" line="40"/>
-        <source>Status</source>
-        <translation>Status</translation>
-    </message>
-    <message>
-        <location filename="../gui/network/routerlistwidget.cpp" line="40"/>
+        <location filename="../gui/network/routerlistwidget.cpp" line="42"/>
         <source>Server</source>
         <translation>Server</translation>
     </message>
     <message>
-        <location filename="../gui/network/routerlistwidget.cpp" line="215"/>
+        <location filename="../gui/network/routerlistwidget.cpp" line="217"/>
         <source>%1 servers total</source>
         <translation>%1 Server insgesamt</translation>
     </message>
     <message>
-        <location filename="../gui/network/routerlistwidget.cpp" line="51"/>
+        <location filename="../gui/network/routerlistwidget.cpp" line="53"/>
         <source>Zoom to Server</source>
         <translation>Den Server heranzommen</translation>
     </message>
@@ -1890,17 +1885,12 @@ geben Sie Ihre Uploadgeschwindigkeit bitte hier an.</translation>
 <context>
     <name>TorService</name>
     <message>
-        <location filename="../control/torservice.cpp" line="159"/>
-        <source>Services not supported on this platform.</source>
-        <translation>Dienste werden auf diesem Betriebssystem nicht unterstützt.</translation>
-    </message>
-    <message>
-        <location filename="../control/torservice.cpp" line="186"/>
+        <location filename="../control/torservice.cpp" line="168"/>
         <source>Unable to start Tor service.</source>
         <translation>Tor-Dienst konnte nicht gestartet werden.</translation>
     </message>
     <message>
-        <location filename="../control/torservice.cpp" line="163"/>
+        <location filename="../control/torservice.cpp" line="152"/>
         <source>The Tor service is not installed.</source>
         <translation>Der Tor-Dienst ist nicht installiert.</translation>
     </message>

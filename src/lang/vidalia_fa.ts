@@ -237,17 +237,17 @@ You may need to remove it manually.</source>
         <translation>میزان ارسال</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="765"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="773"/>
         <source>Changes the transparency of the Bandwidth Graph</source>
         <translation>شفافیت نمودار پهنای‌باند را تغییر می‌دهد</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="909"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="932"/>
         <source>Save</source>
         <translation>دخیره</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="916"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="939"/>
         <source>Cancel</source>
         <translation>لغو</translation>
     </message>
@@ -257,12 +257,12 @@ You may need to remove it manually.</source>
         <translation>از زمان:</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="849"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="857"/>
         <source>100</source>
         <translation>۱۰۰</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="864"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="872"/>
         <source>% Opaque</source>
         <translation>مات % </translation>
     </message>
@@ -277,7 +277,7 @@ You may need to remove it manually.</source>
         <translation>همیشه بر رو</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="733"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="723"/>
         <source>Style</source>
         <translation>نوع نمودار</translation>
     </message>
@@ -1338,97 +1338,97 @@ interest to Tor developers.</source>
         <translation>مشاهده‌ی شبکه‌ی تر</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="515"/>
+        <location filename="../gui/network/netviewer.ui" line="518"/>
         <source>Refresh</source>
         <translation>بازنمایی</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="537"/>
+        <location filename="../gui/network/netviewer.ui" line="540"/>
         <source>Help</source>
         <translation>راهنما</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="559"/>
+        <location filename="../gui/network/netviewer.ui" line="562"/>
         <source>Close</source>
         <translation>ببند</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="581"/>
+        <location filename="../gui/network/netviewer.ui" line="584"/>
         <source>Zoom In</source>
         <translation>بزرگتر کن</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="603"/>
+        <location filename="../gui/network/netviewer.ui" line="606"/>
         <source>Zoom Out</source>
         <translation>کوچک‌تر کن</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="625"/>
+        <location filename="../gui/network/netviewer.ui" line="628"/>
         <source>Zoom To Fit</source>
         <translation>به اندازه‌ی صفحه‌ی نمایش بزرگ‌کن</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="529"/>
+        <location filename="../gui/network/netviewer.ui" line="532"/>
         <source>Ctrl+R</source>
         <translation>کنترل + R</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="551"/>
+        <location filename="../gui/network/netviewer.ui" line="554"/>
         <source>F1</source>
         <translation>F1</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="573"/>
+        <location filename="../gui/network/netviewer.ui" line="576"/>
         <source>Esc</source>
         <translation>انصراف</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="595"/>
+        <location filename="../gui/network/netviewer.ui" line="598"/>
         <source>+</source>
         <translation>+</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="617"/>
+        <location filename="../gui/network/netviewer.ui" line="620"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="639"/>
+        <location filename="../gui/network/netviewer.ui" line="642"/>
         <source>Ctrl+Z</source>
         <translation>کنترل + Z</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="521"/>
+        <location filename="../gui/network/netviewer.ui" line="524"/>
         <source>Refresh the list of routers and connections</source>
         <translation>لیست مسیریاب‌ها و اتصالات را دوباره نشان بده</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="540"/>
+        <location filename="../gui/network/netviewer.ui" line="543"/>
         <source>Show network map help</source>
         <translation>راهنمای نقشه‌ی شبکه را نشان بده</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="543"/>
+        <location filename="../gui/network/netviewer.ui" line="546"/>
         <source>Show the network map help</source>
         <translation>راهنمای نقشه‌ی شبکه را نشان بده</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="565"/>
+        <location filename="../gui/network/netviewer.ui" line="568"/>
         <source>Close the network map</source>
         <translation>نقشه‌ی شبکه را ببند</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="587"/>
+        <location filename="../gui/network/netviewer.ui" line="590"/>
         <source>Zoom in on the network map</source>
         <translation>نقشه‌ی شبکه را بزرگ کن</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="609"/>
+        <location filename="../gui/network/netviewer.ui" line="612"/>
         <source>Zoom out on the network map</source>
         <translation>نقشه‌ی شبکه را کوچک کن</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="631"/>
+        <location filename="../gui/network/netviewer.ui" line="634"/>
         <source>Zooms to fit all currently displayed circuits</source>
         <translation>بزرگنمایی کافی برای نمایش تمام مدارها نمایش‌داده‌شده فعلی</translation>
     </message>
@@ -1500,17 +1500,17 @@ interest to Tor developers.</source>
 <context>
     <name>RouterListItem</name>
     <message>
-        <location filename="../gui/network/routerlistitem.cpp" line="87"/>
+        <location filename="../gui/network/routerlistitem.cpp" line="94"/>
         <source>%1 KB/s</source>
         <translation>%1 کلیوبایت</translation>
     </message>
     <message>
-        <location filename="../gui/network/routerlistitem.cpp" line="71"/>
+        <location filename="../gui/network/routerlistitem.cpp" line="78"/>
         <source>Offline</source>
         <translation>آفلاین</translation>
     </message>
     <message>
-        <location filename="../gui/network/routerlistitem.cpp" line="75"/>
+        <location filename="../gui/network/routerlistitem.cpp" line="82"/>
         <source>Hibernating</source>
         <translation>به‌خواب رفتن</translation>
     </message>
@@ -1518,22 +1518,17 @@ interest to Tor developers.</source>
 <context>
     <name>RouterListWidget</name>
     <message>
-        <location filename="../gui/network/routerlistwidget.cpp" line="40"/>
-        <source>Status</source>
-        <translation>وضعیت</translation>
-    </message>
-    <message>
-        <location filename="../gui/network/routerlistwidget.cpp" line="40"/>
+        <location filename="../gui/network/routerlistwidget.cpp" line="42"/>
         <source>Server</source>
         <translation>سرور </translation>
     </message>
     <message>
-        <location filename="../gui/network/routerlistwidget.cpp" line="215"/>
+        <location filename="../gui/network/routerlistwidget.cpp" line="217"/>
         <source>%1 servers total</source>
         <translation>مجموعا %1 سرور</translation>
     </message>
     <message>
-        <location filename="../gui/network/routerlistwidget.cpp" line="51"/>
+        <location filename="../gui/network/routerlistwidget.cpp" line="53"/>
         <source>Zoom to Server</source>
         <translation>بزرگ‌کردن سرور</translation>
     </message>
@@ -1866,17 +1861,12 @@ fingerprint.</source>
 <context>
     <name>TorService</name>
     <message>
-        <location filename="../control/torservice.cpp" line="159"/>
-        <source>Services not supported on this platform.</source>
-        <translation>خدماتی که در این پلتفرم پشتیبانی نمی‌شوند.</translation>
-    </message>
-    <message>
-        <location filename="../control/torservice.cpp" line="186"/>
+        <location filename="../control/torservice.cpp" line="168"/>
         <source>Unable to start Tor service.</source>
         <translation>نتوانستم سرویس تُر را راه‌اندازی کنم.</translation>
     </message>
     <message>
-        <location filename="../control/torservice.cpp" line="163"/>
+        <location filename="../control/torservice.cpp" line="152"/>
         <source>The Tor service is not installed.</source>
         <translation>سرویس تُر نصب نشده است</translation>
     </message>

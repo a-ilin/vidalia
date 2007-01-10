@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1">
 <context>
     <name></name>
@@ -146,7 +146,7 @@
     <message>
         <location filename="../gui/config/advancedpage.ui" line="533"/>
         <source>Run Tor in the background as a Windows service</source>
-        <translation>作为 Windows 后台系统服务运行 Tor (可在"服务"中进行设定)</translation>
+        <translation>作为 Windows 后台系统服务运行 Tor (可在&quot;服务&quot;中进行设定)</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="157"/>
@@ -237,17 +237,17 @@ You may need to remove it manually.</source>
         <translation>发送率</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="765"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="773"/>
         <source>Changes the transparency of the Bandwidth Graph</source>
         <translation>请选择带宽显示图形的透明度</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="909"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="932"/>
         <source>Save</source>
         <translation>保存</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="916"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="939"/>
         <source>Cancel</source>
         <translation>取消</translation>
     </message>
@@ -257,12 +257,12 @@ You may need to remove it manually.</source>
         <translation>起始时间:</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="849"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="857"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="864"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="872"/>
         <source>% Opaque</source>
         <translation>% 不透明</translation>
     </message>
@@ -277,7 +277,7 @@ You may need to remove it manually.</source>
         <translation>总在最上</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="733"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="723"/>
         <source>Style</source>
         <translation>风格</translation>
     </message>
@@ -1336,97 +1336,97 @@ interest to Tor developers.</source>
         <translation>查看 Tor 网络</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="515"/>
+        <location filename="../gui/network/netviewer.ui" line="518"/>
         <source>Refresh</source>
         <translation>刷新</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="537"/>
+        <location filename="../gui/network/netviewer.ui" line="540"/>
         <source>Help</source>
         <translation>帮助</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="559"/>
+        <location filename="../gui/network/netviewer.ui" line="562"/>
         <source>Close</source>
         <translation>关闭</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="581"/>
+        <location filename="../gui/network/netviewer.ui" line="584"/>
         <source>Zoom In</source>
         <translation>放大</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="603"/>
+        <location filename="../gui/network/netviewer.ui" line="606"/>
         <source>Zoom Out</source>
         <translation>缩小</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="625"/>
+        <location filename="../gui/network/netviewer.ui" line="628"/>
         <source>Zoom To Fit</source>
         <translation>适合图像</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="529"/>
+        <location filename="../gui/network/netviewer.ui" line="532"/>
         <source>Ctrl+R</source>
         <translation>Ctrl+R</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="551"/>
+        <location filename="../gui/network/netviewer.ui" line="554"/>
         <source>F1</source>
         <translation>F1</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="573"/>
+        <location filename="../gui/network/netviewer.ui" line="576"/>
         <source>Esc</source>
         <translation>Esc</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="595"/>
+        <location filename="../gui/network/netviewer.ui" line="598"/>
         <source>+</source>
         <translation>+</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="617"/>
+        <location filename="../gui/network/netviewer.ui" line="620"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="639"/>
+        <location filename="../gui/network/netviewer.ui" line="642"/>
         <source>Ctrl+Z</source>
         <translation>Ctrl+Z</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="521"/>
+        <location filename="../gui/network/netviewer.ui" line="524"/>
         <source>Refresh the list of routers and connections</source>
         <translation>刷新路由和连接列表</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="540"/>
+        <location filename="../gui/network/netviewer.ui" line="543"/>
         <source>Show network map help</source>
         <translation>显示网络地图帮助</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="543"/>
+        <location filename="../gui/network/netviewer.ui" line="546"/>
         <source>Show the network map help</source>
         <translation>显示关于网络地图的帮助信息</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="565"/>
+        <location filename="../gui/network/netviewer.ui" line="568"/>
         <source>Close the network map</source>
         <translation>关闭网络地图</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="587"/>
+        <location filename="../gui/network/netviewer.ui" line="590"/>
         <source>Zoom in on the network map</source>
         <translation>放大网络地图</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="609"/>
+        <location filename="../gui/network/netviewer.ui" line="612"/>
         <source>Zoom out on the network map</source>
         <translation>缩小网络地图</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="631"/>
+        <location filename="../gui/network/netviewer.ui" line="634"/>
         <source>Zooms to fit all currently displayed circuits</source>
         <translation>缩放网络地图以显示完整回路</translation>
     </message>
@@ -1498,17 +1498,17 @@ interest to Tor developers.</source>
 <context>
     <name>RouterListItem</name>
     <message>
-        <location filename="../gui/network/routerlistitem.cpp" line="87"/>
+        <location filename="../gui/network/routerlistitem.cpp" line="94"/>
         <source>%1 KB/s</source>
         <translation>%1 KB/s</translation>
     </message>
     <message>
-        <location filename="../gui/network/routerlistitem.cpp" line="71"/>
+        <location filename="../gui/network/routerlistitem.cpp" line="78"/>
         <source>Offline</source>
         <translation>脱机</translation>
     </message>
     <message>
-        <location filename="../gui/network/routerlistitem.cpp" line="75"/>
+        <location filename="../gui/network/routerlistitem.cpp" line="82"/>
         <source>Hibernating</source>
         <translation>休眠</translation>
     </message>
@@ -1516,22 +1516,17 @@ interest to Tor developers.</source>
 <context>
     <name>RouterListWidget</name>
     <message>
-        <location filename="../gui/network/routerlistwidget.cpp" line="40"/>
-        <source>Status</source>
-        <translation>状态</translation>
-    </message>
-    <message>
-        <location filename="../gui/network/routerlistwidget.cpp" line="40"/>
+        <location filename="../gui/network/routerlistwidget.cpp" line="42"/>
         <source>Server</source>
         <translation>服务器</translation>
     </message>
     <message>
-        <location filename="../gui/network/routerlistwidget.cpp" line="215"/>
+        <location filename="../gui/network/routerlistwidget.cpp" line="217"/>
         <source>%1 servers total</source>
         <translation>全部 %1 个服务器</translation>
     </message>
     <message>
-        <location filename="../gui/network/routerlistwidget.cpp" line="51"/>
+        <location filename="../gui/network/routerlistwidget.cpp" line="53"/>
         <source>Zoom to Server</source>
         <translation>缩放地图至服务器位置</translation>
     </message>
@@ -1862,17 +1857,12 @@ fingerprint.</source>
 <context>
     <name>TorService</name>
     <message>
-        <location filename="../control/torservice.cpp" line="159"/>
-        <source>Services not supported on this platform.</source>
-        <translation>当前系统平台不支持该服务.</translation>
-    </message>
-    <message>
-        <location filename="../control/torservice.cpp" line="186"/>
+        <location filename="../control/torservice.cpp" line="168"/>
         <source>Unable to start Tor service.</source>
         <translation>无法启动 Tor 服务.</translation>
     </message>
     <message>
-        <location filename="../control/torservice.cpp" line="163"/>
+        <location filename="../control/torservice.cpp" line="152"/>
         <source>The Tor service is not installed.</source>
         <translation>未安装 Tor 服务.</translation>
     </message>
