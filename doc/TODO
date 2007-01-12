@@ -2,7 +2,7 @@ Things to complete for 0.1.0:
   * When creating the Tor service on Windows, we either should be creating a
     separate user to run the service as (instead of running it as Local
     System), or we should write a patch for Tor to do it (Ticket #174).
-  * There is a ticket about not being able to save config changes when an alternate 
+  * There is a ticket about not being able to save config changes when an alternate
     torrc is specified. Needs to be verified and fixed. (Ticket #159)
   * Roger has added some additional events that Vidalia should respond
     to, such as "hey, you're a server now!"
@@ -10,7 +10,7 @@ Things to complete for 0.1.0:
     simply sending an empty one.
   * Our GeoIP cache should recognize IP addresses on the same subnet.
     (Ticket #154)
-  * GeoIP requests should be compressed and then encrypted so the exit node 
+  * GeoIP requests should be compressed and then encrypted so the exit node
     does not know what is being requested and cannot muck with the requests
     or responses.
 
@@ -25,37 +25,46 @@ Features planned for 0.1.x:
     something like a table, populated via "getinfo config/names". (Ticket #76)
   * A web-based interface for viewing the status of Tor from the user's
     browser and possibly configuring Tor, too. (Ticket #42)
-  * A window to which Vidalia can log its own debugging information, which 
+  * A window to which Vidalia can log its own debugging information, which
     would be displayed when Vidalia is started with --debug. This wouldn't
     have to be as fancy as the message log window for Tor messages.
 
 
-Miscellaneous Tasks:
+Packaging:
   * Create a Vidalia package for Debian.
-  * Improve window transparency support. In particular, figure out how to do the
-    following correctly on X11 (from the Qt docs):
-      "This feature is available on Mac OS X, X11 platforms that support the Composite 
-      extension, and Windows 2000 and later.
-
-      Note that under X11 you need to have a composite manager running, and the X11 
-      specific _NET_WM_WINDOW_OPACITY atom needs to be supported by the window manager 
-      you are using."
-  
-  * Think about smarter ways to handle the GeoIP lookups. Our servers get
-    quite a bit of traffic from GeoIP lookups and it would be nice if we could
-    cut this back a bit.
-  * Get some help from the Sasha and the CMU folks with doing a real user study and 
-    getting help making our window layouts and text better.
+  * The general consensus so far has been that Polipo is better/faster than
+    Privoxy, so we should start thinking about moving to Polipo. Ideally,
+    Vidalia will launch Polipo in the background just like it does Tor so
+    the user doesn't have to know that Polipo exists and Windows users don't
+    have another icon cluttering their tray.
 
 
 Localization:
   * Website and wiki. The website shouldn't be too hard since we only have a
-    couple pages, but it doesn't look like Trac lends itself to multiple languages 
+    couple pages, but it doesn't look like Trac lends itself to multiple languages
     on the wiki too easily.
   * OS X installer. Is there a standard way OS X handles installer
     translations? I assume we'd mostly just need to translate our little
     VidaliaBundleWelcome.rtf file and maybe a couple strings in the .plist
     files, but how does the user choose which language they want to see?
+
+
+Miscellaneous Tasks:
+  * Improve window transparency support. In particular, figure out how to do the
+    following correctly on X11 (from the Qt docs):
+      "This feature is available on Mac OS X, X11 platforms that support the Composite
+      extension, and Windows 2000 and later.
+
+      Note that under X11 you need to have a composite manager running, and the X11
+      specific _NET_WM_WINDOW_OPACITY atom needs to be supported by the window manager
+      you are using."
+  * Think about smarter ways to handle the GeoIP lookups. Our servers get
+    quite a bit of traffic from GeoIP lookups and it would be nice if we could
+    cut this back a bit.
+  * Get some help from the Sasha and the CMU folks with doing a real user study and
+    getting help making our window layouts and text better.
+  * Rework src/control/ a bit so it is more modular and can be dropped into
+    any other Qt application that wants to talk to Tor.
 
 
 Notes from Roger:
@@ -64,4 +73,4 @@ Notes from Roger:
     something smarter -- like handling the error and remembering the intended
     changes itself, or like rephrasing the error to give some hints about
     what's going on.
- 
+
