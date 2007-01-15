@@ -1,7 +1,7 @@
 /****************************************************************
  *  Vidalia is distributed under the following license:
  *
- *  Copyright (C) 2006,  Matt Edman, Justin Hipple
+ *  Copyright (C) 2006-2007,  Matt Edman, Justin Hipple
  *
  *  This program is free software; you can redistribute it and/or
  *  modify it under the terms of the GNU General Public License
@@ -25,6 +25,8 @@
  * \brief A formatted request for GeoIP information for one or more IPs
  */
 
+#include <util/zlibbytearray.h>
+
 #include "geoiprequest.h"
 
 
@@ -33,14 +35,19 @@
 QHttpRequestHeader
 GeoIpRequest::createHeader()
 {
-  QHttpRequestHeader header("POST", _page, 1, 0);
-  if (!_host.isEmpty()) {
-    /* If a host was specified, put it in the HTTP header */
+  QHttpRequestHeader header("POST", _page, 1, 1);
+  
+  if (!_host.isEmpty())
     header.setValue("Host", _host);
-  }
-  header.setValue("Connection", "close");
   header.setContentType("application/x-www-form-urlencoded");
   header.setContentLength(_request.length());
+  header.setValue("Connection", "close");
+
+  QString acceptEncodings = "deflate, x-deflate";
+  if (ZlibByteArray::isGzipSupported())
+    acceptEncodings += ", gzip, x-gzip";
+  header.setValue("Accept-Encoding", acceptEncodings);
+  
   return header;
 }
 

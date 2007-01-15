@@ -3,7 +3,7 @@
 #
 #  Vidalia is distributed under the following license:
 #
-#  Copyright (C) 2006,  Matt Edman, Justin Hipple
+#  Copyright (C) 2006-2007,  Matt Edman, Justin Hipple
 #
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License
@@ -27,7 +27,8 @@ HEADERS += $$PWD/net.h \
            $$PWD/torsocket.h \
            $$PWD/html.h \
            $$PWD/process.h \
-           $$PWD/file.h
+           $$PWD/file.h \
+           $$PWD/zlibbytearray.h
            
 SOURCES += $$PWD/net.cpp \
            $$PWD/http.cpp \
@@ -35,7 +36,8 @@ SOURCES += $$PWD/net.cpp \
            $$PWD/torsocket.cpp \
            $$PWD/html.cpp \
            $$PWD/process.cpp \
-           $$PWD/file.cpp
+           $$PWD/file.cpp \
+           $$PWD/zlibbytearray.cpp
 
 win32 {
     HEADERS += $$PWD/win32.h

@@ -1,7 +1,7 @@
 /****************************************************************
  *  Vidalia is distributed under the following license:
  *
- *  Copyright (C) 2006,  Matt Edman, Justin Hipple
+ *  Copyright (C) 2006-2007,  Matt Edman, Justin Hipple
  *
  *  This program is free software; you can redistribute it and/or
  *  modify it under the terms of the GNU General Public License
@@ -26,35 +26,60 @@
  */
 
 #include <QStringList>
+#include <util/zlibbytearray.h>
+
 #include "geoipresponse.h"
 
-#define HTTP_OK   200     /**< HTTP OK status code. */
+/** Status code for a successful HTTP request. */
+#define STATUS_HTTP_OK                 200
+/** Status code for content encoding errors. */
+#define STATUS_CONTENT_ENCODING_ERR    601
 
 
 /** Constructor. Parses the response data for an HTTP header and Geo IP
  * information. */
 GeoIpResponse::GeoIpResponse(QByteArray response)
 {
-  QString data(response);
-
+  QString errmsg;
+  
   /* Parse out the header */
-  int headerPos = data.indexOf("\r\n");
-  _header = QHttpResponseHeader(data.mid(0, headerPos));
- 
+  int headerPos = response.indexOf("\r\n\r\n");
+  _header = QHttpResponseHeader(QString(response.mid(0, headerPos)));
+
   /* Parse out the Geo IP information, if any was included. */
-  if (headerPos > 0 && _header.statusCode() == HTTP_OK) {
-    /* Split the content from the header */
-    QString content = data.mid(headerPos+2);
-    
-    /* Split each response line at the \n */
-    QStringList lines = content.split("\n");
-    foreach (QString line, lines) {
-      /* Parse the Geo IP information */
-      GeoIp geoip = GeoIp::fromString(line);
-      if (!geoip.isEmpty()) {
-        /* Add it to the list of response information */
-        _geoips << geoip;
+  if (headerPos > 0 && _header.statusCode() == STATUS_HTTP_OK) {
+    QByteArray content = response.mid(headerPos+4);
+ 
+    if (_header.hasKey("Content-Encoding")) {
+      ZlibByteArray::CompressionMethod method;
+      QString encoding = _header.value("Content-Encoding");
+      if (encoding == "gzip" || encoding == "x-gzip") {
+        method = ZlibByteArray::Gzip;
+      } else if (encoding == "deflate" || encoding == "x-deflate") {
+        method = ZlibByteArray::Zlib;
+      } else if (encoding == "text/plain") {
+        method = ZlibByteArray::None;
+      } else {
+        _header.setStatusLine(STATUS_CONTENT_ENCODING_ERR,
+          QString("Unknown content encoding '%1'").arg(encoding));
+        return;
       }
+      
+      content = ZlibByteArray::uncompress(content, method, &errmsg);
+      if (content.isEmpty()) {
+        _header.setStatusLine(STATUS_CONTENT_ENCODING_ERR,
+          QString("Content decoding using method '%1' failed: %2")
+                                       .arg(encoding).arg(errmsg));
+        return;
+      }
+    }
+
+    /* Parse the Geo IP information in each line */
+    QStringList lines = QString(content).split("\n");
+    foreach (QString line, lines) {
+      GeoIp geoip = GeoIp::fromString(line);
+      if (!geoip.isEmpty())
+        _geoips << geoip;
     }
   }
 }
