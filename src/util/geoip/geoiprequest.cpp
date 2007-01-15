@@ -43,11 +43,13 @@ GeoIpRequest::createHeader()
   header.setContentLength(_request.length());
   header.setValue("Connection", "close");
 
-  QString acceptEncodings = "deflate, x-deflate";
-  if (ZlibByteArray::isGzipSupported())
-    acceptEncodings += ", gzip, x-gzip";
-  header.setValue("Accept-Encoding", acceptEncodings);
-  
+  if (ZlibByteArray::isZlibAvailable()) {
+    QString acceptEncodings = "deflate, x-deflate";
+    if (ZlibByteArray::isGzipSupported())
+      acceptEncodings += ", gzip, x-gzip";
+    header.setValue("Accept-Encoding", acceptEncodings);
+  }
+
   return header;
 }
 

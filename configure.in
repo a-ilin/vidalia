@@ -22,10 +22,6 @@ AC_ARG_WITH([qt-dir],
     done
   ])
 
-# Make sure we have a zlib.h available
-AC_CHECK_HEADERS(zlib.h, ,
-  AC_MSG_ERROR(zlib.h not found. Vidalia requires zlib to build. You may need to install a zlib development package.))
-
 AC_MSG_CHECKING([for Qt >= 4.1.0])
 for path in $QTPATHS; do
   # "qmake" is sometimes spelled "qmake-qt4"

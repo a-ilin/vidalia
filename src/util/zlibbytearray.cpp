@@ -62,8 +62,8 @@
  */
 
 #include <QString>
-#include <zlib.h>
 
+#include "zlib.h"
 #include "zlibbytearray.h"
 
 
@@ -93,6 +93,29 @@ ZlibByteArray::methodString(CompressionMethod method)
   }
 }
 
+/** Returns true if the Zlib compression library is available and usable. */
+bool
+ZlibByteArray::isZlibAvailable()
+{
+  static int isZlibAvailable = -1;
+  if (isZlibAvailable >= 0)
+    return isZlibAvailable;
+
+  /* From zlib.h:
+   * "The application can compare zlibVersion and ZLIB_VERSION for consistency.
+   * If the first character differs, the library code actually used is
+   * not compatible with the zlib.h header file used by the application." */
+  QString libVersion(zlibVersion());
+  QString headerVersion(ZLIB_VERSION);
+  if (!libVersion.isEmpty() && !headerVersion.isEmpty() &&
+      libVersion.at(0) != headerVersion.at(0))
+    isZlibAvailable = 0;
+  else
+    isZlibAvailable = 1;
+
+  return isZlibAvailable;
+}
+
 /** Returns true iff we support gzip-based compression. Otherwise, we need to
  * use zlib. */
 bool
@@ -102,10 +125,10 @@ ZlibByteArray::isGzipSupported()
   if (isGzipSupported >= 0)
     return isGzipSupported;
 
-  QString zlibVersion = ZLIB_VERSION;
-  if (zlibVersion.startsWith("0.") ||
-      zlibVersion.startsWith("1.0") ||
-      zlibVersion.startsWith("1.1"))
+  QString version(zlibVersion());
+  if (version.startsWith("0.") ||
+      version.startsWith("1.0") ||
+      version.startsWith("1.1"))
     isGzipSupported = 0;
   else
     isGzipSupported = 1;

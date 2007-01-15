@@ -93,6 +93,8 @@ public:
                                const CompressionMethod method = Zlib,
                                QString *errmsg = 0);
 
+  /** Returns true if the Zlib compression library is available and usable. */
+  static bool isZlibAvailable();
   /** Returns true iff we support gzip-based compression. Otherwise, we need to
     * use zlib. */
   static bool isGzipSupported();
