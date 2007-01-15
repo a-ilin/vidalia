@@ -1,7 +1,7 @@
 /****************************************************************
  *  Vidalia is distributed under the following license:
  *
- *  Copyright (C) 2006,  Matt Edman, Justin Hipple
+ *  Copyright (C) 2006-2007,  Matt Edman, Justin Hipple
  *
  *  This program is free software; you can redistribute it and/or
  *  modify it under the terms of the GNU General Public License
@@ -29,7 +29,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QTextStream>
-#include <vidalia.h>
+#include <QApplication>
 
 #include "string.h"
 #include "process.h"
@@ -53,10 +53,10 @@ is_process_running(qint64 pid)
 #if defined(Q_OS_WIN)
   QHash<qint64, QString> procList = win32_process_list();
   if (procList.contains(pid)) {
-    /* A process with this ID exists. Check if it's Vidalia. */
+    /* A process with this ID exists. Check if it's the same as this process. */
     QString exeFile = procList.value(pid);
-    QString vidaliaExe = QFileInfo(Vidalia::applicationFilePath()).fileName();
-    return (exeFile.toLower() == vidaliaExe.toLower());
+    QString thisExe = QFileInfo(QApplication::applicationFilePath()).fileName();
+    return (exeFile.toLower() == thisExe.toLower());
   }
   return false;
 #else
