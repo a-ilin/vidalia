@@ -107,7 +107,7 @@ ZlibByteArray::isZlibAvailable()
    * not compatible with the zlib.h header file used by the application." */
   QString libVersion(zlibVersion());
   QString headerVersion(ZLIB_VERSION);
-  if (!libVersion.isEmpty() && !headerVersion.isEmpty() &&
+  if (libVersion.isEmpty() || headerVersion.isEmpty() ||
       libVersion.at(0) != headerVersion.at(0))
     isZlibAvailable = 0;
   else
