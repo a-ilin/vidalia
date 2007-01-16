@@ -34,6 +34,8 @@
 #define STATUS_HTTP_OK                 200
 /** Status code for content encoding errors. */
 #define STATUS_CONTENT_ENCODING_ERR    601
+/** Status code for transfer encoding errors. */
+#define STATUS_TRANSFER_ENCODING_ERR   602
 
 
 /** Constructor. Parses the response data for an HTTP header and Geo IP
@@ -50,6 +52,22 @@ GeoIpResponse::GeoIpResponse(QByteArray response)
   if (headerPos > 0 && _header.statusCode() == STATUS_HTTP_OK) {
     QByteArray content = response.mid(headerPos+4);
  
+    if (_header.hasKey("Transfer-Encoding")) {
+      QString encoding = _header.value("Transfer-Encoding");
+      if (encoding == "chunked") {
+        content = decodeChunked(content);
+        if (content.isEmpty()) {
+          _header.setStatusLine(STATUS_TRANSFER_ENCODING_ERR,
+            QString("Failed to decode chunked response"));
+          return;
+        }
+      } else {
+        _header.setStatusLine(STATUS_TRANSFER_ENCODING_ERR,
+          QString("Unknown transfer encoding '%1'").arg(encoding));
+        return;
+      }
+    }
+ 
     if (_header.hasKey("Content-Encoding")) {
       ZlibByteArray::CompressionMethod method;
       QString encoding = _header.value("Content-Encoding");
@@ -64,7 +82,7 @@ GeoIpResponse::GeoIpResponse(QByteArray response)
           QString("Unknown content encoding '%1'").arg(encoding));
         return;
       }
-      
+ 
       content = ZlibByteArray::uncompress(content, method, &errmsg);
       if (content.isEmpty()) {
         _header.setStatusLine(STATUS_CONTENT_ENCODING_ERR,
@@ -82,5 +100,38 @@ GeoIpResponse::GeoIpResponse(QByteArray response)
         _geoips << geoip;
     }
   }
+}
+
+/** Decodes a <b>chunked</b> transfer encoding. Returns the unchunked 
+ * result on success, or an empty QByteArray if decoding fails. */
+QByteArray
+GeoIpResponse::decodeChunked(QByteArray chunked)
+{
+  QByteArray unchunked;
+  QString sizeString;
+  int eol, chunkedlen, chunksize, offset = 0;
+  bool ok;
+ 
+  chunkedlen = chunked.length();
+  while (offset < chunkedlen) {
+    eol = chunked.indexOf("\r\n", offset);
+    if (eol < 0)
+      return QByteArray();
+    sizeString = QString::fromAscii(chunked.mid(offset, eol-offset));
+    offset = eol + 2; /* Skip past the CRLF */
+    
+    if (sizeString.indexOf(";") >= 0)
+      sizeString.truncate(sizeString.indexOf(";")); 
+    chunksize = sizeString.toInt(&ok, 16);
+    if (!ok || chunksize > chunkedlen - offset)
+      return QByteArray();
+    if (!chunksize)
+      break; /* Last chunk. Ignore the trailer. */
+    
+    unchunked.append(chunked.mid(offset, chunksize));
+    offset += chunksize;
+    offset += 2; /* CRLF after each chunk */
+  }
+  return unchunked;
 }
 

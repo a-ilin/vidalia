@@ -50,6 +50,10 @@ public:
   QList<GeoIp> geoIps() { return _geoips; }
   
 private:
+  /** Decodes a <b>chunked</b> transfer encoding. Returns the unchunked 
+   * result on success, or an empty QByteArray if decoding fails. */
+  QByteArray decodeChunked(QByteArray chunked);
+  
   QHttpResponseHeader _header; /**< HTTP response header. */
   QList<GeoIp> _geoips;        /**< Geo IP information in this response. */
 };
