@@ -959,5 +959,16 @@
  <resources>
   <include location="../res/vidalia_common.qrc" />
  </resources>
+ <tabstops>
+  <tabstop>btnToggleSettings</tabstop>
+  <tabstop>btnReset</tabstop>
+  <tabstop>chkReceiveRate</tabstop>
+  <tabstop>chkSendRate</tabstop>
+  <tabstop>chkAlwaysOnTop</tabstop>
+  <tabstop>cmbGraphStyle</tabstop>
+  <tabstop>sldrOpacity</tabstop>
+  <tabstop>btnSaveSettings</tabstop>
+  <tabstop>btnCancelSettings</tabstop>
+ </tabstops>
  <connections/>
 </ui>
