@@ -40,7 +40,6 @@ ZImageView::ZImageView(QWidget *parent)
   _zoom = 0.0;
   _desiredX = 0.0;
   _desiredY = 0.0;
-  _mouseDown = false;
   _maxZoomFactor = 2.0;
   _padding = 60;
 
@@ -318,7 +317,6 @@ ZImageView::mousePressEvent(QMouseEvent* e)
 {
   e->accept();
   setCursor(QCursor(Qt::SizeAllCursor));
-  _mouseDown = true;
   _mouseX = e->x();
   _mouseY = e->y();
   resetZoomPoint();
@@ -331,7 +329,6 @@ void ZImageView::mouseReleaseEvent(QMouseEvent* e)
   setCursor(QCursor(Qt::CrossCursor));
   updateViewport();
   resetZoomPoint();
-  _mouseDown = false;
 }
 
 /** Responds to the user moving the mouse. */

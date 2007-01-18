@@ -89,7 +89,6 @@ private:
   float _padding;  /**< Amount of padding to use on the side of the image. */
   float _maxZoomFactor;  /**< Maximum amount to zoom into the image. */
 
-  bool _mouseDown;  /**< Set to true when a mouse button is depressed. */
   int  _mouseX;     /**< The x-coordinate of the current mouse position. */
   int  _mouseY;     /**< The y-coordinate of the current mouse position. */
   
