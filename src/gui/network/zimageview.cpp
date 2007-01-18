@@ -31,6 +31,14 @@
 
 #include "zimageview.h"
 
+#if QT_VERSION >= 0x040200
+#define CURSOR_NORMAL           QCursor(Qt::OpenHandCursor)
+#define CURSOR_MOUSE_PRESS      QCursor(Qt::ClosedHandCursor)
+#else
+#define CURSOR_NORMAL           QCursor(Qt::CrossCursor)
+#define CURSOR_MOUSE_PRESS      QCursor(Qt::SizeAllCursor)
+#endif
+
 
 /** Constructor. */
 ZImageView::ZImageView(QWidget *parent)
@@ -43,7 +51,7 @@ ZImageView::ZImageView(QWidget *parent)
   _maxZoomFactor = 2.0;
   _padding = 60;
 
-  setCursor(QCursor(Qt::CrossCursor));
+  setCursor(CURSOR_NORMAL);
   updateViewport();
   resetZoomPoint();
   repaint();
@@ -316,7 +324,7 @@ void
 ZImageView::mousePressEvent(QMouseEvent* e)
 {
   e->accept();
-  setCursor(QCursor(Qt::SizeAllCursor));
+  setCursor(CURSOR_MOUSE_PRESS);
   _mouseX = e->x();
   _mouseY = e->y();
   resetZoomPoint();
@@ -326,7 +334,7 @@ ZImageView::mousePressEvent(QMouseEvent* e)
 void ZImageView::mouseReleaseEvent(QMouseEvent* e)
 {
   e->accept();
-  setCursor(QCursor(Qt::CrossCursor));
+  setCursor(CURSOR_NORMAL);
   updateViewport();
   resetZoomPoint();
 }
