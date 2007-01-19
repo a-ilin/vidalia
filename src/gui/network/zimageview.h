@@ -29,7 +29,6 @@
 #define ZIMAGEVIEW_H
 
 #include <QImage>
-#include <QFrame>
 #include <QPixmap>
 #include <QWidget>
 
@@ -68,18 +67,13 @@ protected:
   virtual void mouseReleaseEvent(QMouseEvent* e);
   /** Handles the user moving the mouse. */
   virtual void mouseMoveEvent(QMouseEvent* e);
-  /** Handles events where the widget is resized. */
-  virtual void resizeEvent(QResizeEvent* e);
   
   /** Update the viewport.  This will set _view to a region that,
    *  when copied from the image and scaled to the screen size, will
    *  show what is expected.  The _view may be larger in one or more
    *  directions than the image, and you must deal with the 
-   *  non-overlapping regions. 
-   *
-   *  Returns the _zoom==0.0 viewport rect (the max) and the
-   *  _zoom==1.0 viewport rect (the min). */
-  QPair<QRect, QRect> updateViewport(int screendx=0, int screendy=0);
+   *  non-overlapping regions. */
+  void updateViewport(int screendx=0, int screendy=0);
   /** Redraws the scaled image in the viewport. */
   void drawScaledImage();
   

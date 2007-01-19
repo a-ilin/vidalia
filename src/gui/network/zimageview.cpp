@@ -162,7 +162,7 @@ ZImageView::drawScaledImage()
 }
 	
 /** Updates the displayed viewport. */
-QPair<QRect, QRect>
+void
 ZImageView::updateViewport(int screendx, int screendy)
 {
   /* The gist of this is to find the biggest and smallest possible viewports,
@@ -264,9 +264,6 @@ ZImageView::updateViewport(int screendx, int screendy)
   }
 
   _view.translate(int(vdx), int(vdy));
-
-  return QPair<QRect, QRect>(QRect(0, 0, int(newmaxw), int(newmaxh)),
-			     QRect(0, 0, int(newminw), int(newminh)));
 }
 
 /** Resets the zoom point back to the center of the viewport. */
@@ -305,14 +302,14 @@ ZImageView::zoom(float pct)
   repaint();
 }
 
-/** Zooms into the image by 5% */
+/** Zooms into the image by 10% */
 void
 ZImageView::zoomIn()
 {
   zoom(_zoom + .1);
 }
 
-/** Zooms away from the image by 5% */
+/** Zooms away from the image by 10% */
 void
 ZImageView::zoomOut()
 {
@@ -327,7 +324,6 @@ ZImageView::mousePressEvent(QMouseEvent* e)
   setCursor(CURSOR_MOUSE_PRESS);
   _mouseX = e->x();
   _mouseY = e->y();
-  resetZoomPoint();
 }
 
 /** Responds to the user releasing a mouse button. */
@@ -353,12 +349,5 @@ ZImageView::mouseMoveEvent(QMouseEvent* e)
   if (0.001 <= _zoom) {
     repaint();
   }
-}
-
-/** Handles the event indicating the widget has been resized. */
-void
-ZImageView::resizeEvent(QResizeEvent* e)
-{
-  QWidget::resizeEvent(e);
 }
 
