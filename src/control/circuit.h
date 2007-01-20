@@ -72,9 +72,10 @@ public:
   /** Returns the path chosen for this circuit */
   QString path() { return _path; }
   /** Returns the length of the circuit's path. */
-  uint length() { return _path.split(",").size(); }
+  uint length() { return hops().size(); }
   /** Returns a list of hops on the path. */
-  QStringList hops() { return _path.split(","); }
+  QStringList hops() { return _path.isEmpty() ? QStringList() 
+                                              : _path.split(","); }
 
 private:
   quint64 _circId; /**< Circuit ID. */
