@@ -502,16 +502,26 @@ TorControl::getTorVersionString()
 quint32
 TorControl::getTorVersion()
 {
+  static QString versionString;
+  static quint32 version = 0;
   quint8 major, minor, micro, patch;
-  quint32 version = 0;
-  
-  QStringList parts = getTorVersionString().split(".");
+
+  /* Only recompute the version number if the version string changed */
+  if (versionString == _torVersion)
+    return version;
+  versionString = _torVersion;
+
+  /* Split the version string at either "." or "-" characters */
+  QStringList parts = versionString.split(QRegExp("\\.|-"));
   if (parts.size() >= 4) {
     major = (quint8)parts.at(0).toUInt();
     minor = (quint8)parts.at(1).toUInt();
     micro = (quint8)parts.at(2).toUInt();
     patch = (quint8)parts.at(3).toUInt();
     version = ((major << 24) | (minor << 16) | (micro << 8) | patch);
+  } else {
+    /* Couldn't parse the version string */
+    version = 0;
   }
   return version;
 }
