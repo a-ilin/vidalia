@@ -67,7 +67,9 @@ protected:
   virtual void mouseReleaseEvent(QMouseEvent* e);
   /** Handles the user moving the mouse. */
   virtual void mouseMoveEvent(QMouseEvent* e);
-  
+  /** Handles the user double-clicking a mouse button. */
+  virtual void mouseDoubleClickEvent(QMouseEvent *e);
+
   /** Update the viewport.  This will set _view to a region that,
    *  when copied from the image and scaled to the screen size, will
    *  show what is expected.  The _view may be larger in one or more

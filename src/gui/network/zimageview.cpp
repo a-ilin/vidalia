@@ -318,7 +318,7 @@ ZImageView::zoomOut()
 
 /** Responds to the user pressing a mouse button. */
 void
-ZImageView::mousePressEvent(QMouseEvent* e)
+ZImageView::mousePressEvent(QMouseEvent *e)
 {
   e->accept();
   setCursor(CURSOR_MOUSE_PRESS);
@@ -327,7 +327,8 @@ ZImageView::mousePressEvent(QMouseEvent* e)
 }
 
 /** Responds to the user releasing a mouse button. */
-void ZImageView::mouseReleaseEvent(QMouseEvent* e)
+void 
+ZImageView::mouseReleaseEvent(QMouseEvent *e)
 {
   e->accept();
   setCursor(CURSOR_NORMAL);
@@ -335,9 +336,30 @@ void ZImageView::mouseReleaseEvent(QMouseEvent* e)
   resetZoomPoint();
 }
 
+/** Responds to the user double-clicking a mouse button on the image. A left
+ * double-click zooms in on the image and a right double-click zooms out.
+ * Zooming is centered on the location of the double-click. */
+void
+ZImageView::mouseDoubleClickEvent(QMouseEvent *e)
+{
+  e->accept();
+  
+  QPoint center = rect().center(); 
+  int dx = e->x() - center.x();
+  int dy = e->y() - center.y();
+  updateViewport(dx, dy);
+  resetZoomPoint();
+
+  Qt::MouseButton btn = e->button();
+  if (btn == Qt::LeftButton)
+    zoomIn();
+  else if (btn == Qt::RightButton)
+    zoomOut();
+}
+
 /** Responds to the user moving the mouse. */
 void
-ZImageView::mouseMoveEvent(QMouseEvent* e)
+ZImageView::mouseMoveEvent(QMouseEvent *e)
 {
   e->accept();
   int dx = _mouseX - e->x();
