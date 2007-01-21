@@ -1,9 +1,10 @@
 
 Instruction for Building and Installing Vidalia from Source
 
-   1. Make sure you have Qt 4.1 and Tor 0.1.1.13 or later installed.
+   1. Make sure you have Qt >= 4.1 and Tor >= 0.1.1.15 installed.
    
-   2. Run ./configure && make
+   2. Run `./configure && make`. If you checked out Vidalia's source from our
+      Subversion repository, you may need to run `autogen.sh` first.
    
    3. When the previous command finishes, Vidalia's binary will be
       placed in the bin/ directory.
