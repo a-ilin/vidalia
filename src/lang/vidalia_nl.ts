@@ -53,7 +53,7 @@
     <message>
         <location filename="../gui/about/aboutdialog.cpp" line="75"/>
         <source>&lt;Unavailable&gt;</source>
-	<translation>&lt;Niet Beschikbaar&gt;</translation>
+        <translation>&lt;Niet Beschikbaar&gt;</translation>
     </message>
 </context>
 <context>
@@ -449,7 +449,7 @@ Mogelijk kunt u het handmatig verwijderen.</translation>
     <message>
         <location filename="../control/controlsocket.cpp" line="76"/>
         <source>Vidalia was unable to determine Tor&apos;s control protocol version. Verify that your control port number is set correctly and you are running a recent version of Tor.</source>
-	<translation>Vidalia was niet in staat om Tor&apos;s control protocol versie te bepalen. Controleer dat het poort nummer goed is ingesteld en dat u een recente versie van Tor gebruikt.</translation>
+        <translation>Vidalia was niet in staat om Tor&apos;s control protocol versie te bepalen. Controleer dat het poort nummer goed is ingesteld en dat u een recente versie van Tor gebruikt.</translation>
     </message>
     <message>
         <location filename="../control/controlsocket.cpp" line="80"/>
@@ -970,7 +970,7 @@ Bekijk alstublieft het berichten logboek voor meer informatie en mogelijke aanwi
     <message>
         <location filename="../gui/mainwindow.cpp" line="587"/>
         <source>Failed to Create New Identity</source>
-        <translation>Cre&euml;ren van Nieuwe Identiteit Mislukt</translation>
+        <translation>Creren van Nieuwe Identiteit Mislukt</translation>
     </message>
 </context>
 <context>
@@ -1088,12 +1088,12 @@ Bekijk alstublieft het berichten logboek voor meer informatie en mogelijke aanwi
     <message>
         <location filename="../gui/log/messagelog.ui" line="787"/>
         <source>Copy</source>
-        <translation>Kopi&euml;ren</translation>
+        <translation>Kopiren</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="790"/>
         <source>Copy the selected messages to the clipboard (Ctrl+C)</source>
-        <translation>Kopi&euml;er de geselecteerde berichten naar het klembord (Ctrl+C)</translation>
+        <translation>Kopier de geselecteerde berichten naar het klembord (Ctrl+C)</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="798"/>
@@ -1188,7 +1188,7 @@ care about.</source>
         <translation>Berichten die onregelmatig verschijnen 
 gedurende normaal gebruik van Tor en die 
 niet worden beschouwd als fouten, maar waar 
-u mogelijk wel in ge&iuml;nteresseerd bent.</translation>
+u mogelijk wel in genteresseerd bent.</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="156"/>
@@ -1655,7 +1655,7 @@ ontwikkelaars.</translation>
         <source>Vidalia was only able to find a private IP address for your server.
 
 Would you like to access an external service to determine your public IP address?</source>
-        <translation>Vidalia was enkel in staat een priv&eacc; IP adres te vinden voor uw server.
+        <translation>Vidalia was enkel in staat een priv IP adres te vinden voor uw server.
 
 Wilt u een externe service benaderen om uw publieke IP adres te achterhalen?</translation>
     </message>
@@ -1751,7 +1751,7 @@ toevoegen.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="973"/>
         <source>&gt; 1.5 Mbps</source>
-	<translation>&gt; 1.5 Mbps</translation>
+        <translation>&gt; 1.5 Mbps</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="978"/>
@@ -1761,17 +1761,17 @@ toevoegen.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1229"/>
         <source>Ports 6660 - 6669 and 6697</source>
-	<translation>Poorten 6660 - 6669 en 6697</translation>
+        <translation>Poorten 6660 - 6669 en 6697</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1232"/>
         <source>Internet Relay Chat (IRC)</source>
-	<translation>Internet Relay Chat (IRC)</translation>
+        <translation>Internet Relay Chat (IRC)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1242"/>
         <source>Ports 110, 143, 993 and 995</source>
-	<translation>Poorten 110, 143, 993 en 995</translation>
+        <translation>Poorten 110, 143, 993 en 995</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1245"/>
@@ -1791,12 +1791,12 @@ toevoegen.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1268"/>
         <source>Ports 706, 1863, 5050, 5190, 5222, 8300 and 8888</source>
-	<translation>Poorten 706, 1863, 5050, 5190, 5222, 8300 en 8888</translation>
+        <translation>Poorten 706, 1863, 5050, 5190, 5222, 8300 en 8888</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1271"/>
         <source>Instant Messaging (IM)</source>
-	<translation>Instant Messaging (IM)</translation>
+        <translation>Instant Messaging (IM)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1281"/>
@@ -1885,7 +1885,7 @@ toevoegen.</translation>
     <message>
         <location filename="../control/torservice.cpp" line="152"/>
         <source>The Tor service is not installed.</source>
-        <translation>De Tor service is niet ge&iuml;nstalleerd.</translation>
+        <translation>De Tor service is niet genstalleerd.</translation>
     </message>
 </context>
 <context>
