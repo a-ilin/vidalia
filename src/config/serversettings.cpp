@@ -253,7 +253,14 @@ ServerSettings::apply(QString *errmsg)
     rc = _torControl->setConf(confValues(), errmsg);
   } else { 
     QStringList resetKeys;
-    resetKeys << SERVER_ORPORT << SERVER_NICKNAME;
+    resetKeys << SERVER_ORPORT 
+              << SERVER_NICKNAME 
+              << SERVER_DIRPORT
+              << SERVER_ADDRESS
+              << SERVER_CONTACTINFO
+              << SERVER_EXITPOLICY
+              << SERVER_BANDWIDTH_RATE
+              << SERVER_BANDWIDTH_BURST;
     rc = _torControl->resetConf(resetKeys, errmsg);
   }
   if (rc) {
