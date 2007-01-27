@@ -25,12 +25,36 @@
  * Defines resource identifiers for icons used on Win32.
  */
 
+#include <winver.h>
 #include "vidalia_win.rc.h"
+
+1 VERSIONINFO
+FILEVERSION     0,0,11,0
+PRODUCTVERSION  0,0,11,0
+FILEFLAGSMASK   0
+FILEOS          VOS__WINDOWS32
+FILETYPE        VFT_APP
+{
+    BLOCK "StringFileInfo"
+    {
+        BLOCK "040904E4"
+        {
+            VALUE "FileVersion",      "0.0.11-svn"
+            VALUE "ProductVersion",   "0.0.11-svn"
+            VALUE "FileDescription",  "Vidalia"
+            VALUE "InternalName",     "Vidalia"
+            VALUE "ProductName",      "Vidalia"
+            VALUE "OriginalFilename", "vidalia.exe"
+            VALUE "CompanyName",      "vidalia-project.net"
+            VALUE "LegalCopyright",   "Copyright (C) 2007, Matt Edman, Justin Hipple"
+        }
+    }
+}
+
 
 IDI_APP_ICON      ICON    "icons/vidalia.ico"
 IDI_TOR_OFF       ICON    "icons/tor-off.ico"
 IDI_TOR_ON        ICON    "icons/tor-on.ico"
-
-// Change these to the correct icons when they're added
 IDI_TOR_STARTING  ICON    "icons/tor-starting.ico"
 IDI_TOR_STOPPING  ICON    "icons/tor-stopping.ico"
+
