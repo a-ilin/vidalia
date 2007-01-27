@@ -171,15 +171,11 @@ MainWindow::close()
      * shutdown. If we do, then close Vidalia only when Tor stops. Otherwise,
      * kill Tor and bail now. */
     ServerSettings settings(_torControl);
-    if (_torControl->isConnected() && settings.isServerEnabled() 
-                                   && !_delayedShutdownStarted) {
-      if (delayServerShutdown()) {
-        /* Close when Tor stops */
-        connect(_torControl, SIGNAL(stopped()), this, SLOT(shutdown()));
-        _delayedShutdownStarted = _torControl->signal(TorSignal::Shutdown);
-        updateTrayIcon(IMG_TOR_STOPPING, tr("Tor is stopping"));
-        return;
-      }
+    if (_torControl->isConnected() && settings.isServerEnabled()) {
+      connect(_torControl, SIGNAL(stopped()), this, SLOT(shutdown()));
+      if (!stop())
+        disconnect(_torControl, SIGNAL(stopped()), this, SLOT(shutdown()));
+      return;
     }
   }
   /* Shut down Tor (if necessary) and exit Vidalia */
@@ -424,49 +420,45 @@ MainWindow::connectFailed(QString errmsg)
   }
 }
 
-/** Gives users the option of shutting down a server gracefully, giving
- * clients time to find a new circuit. Returns true if the timed server
- * shutdown was initiated successfully or false if we want to terminate
- * forcefully. */
-bool
-MainWindow::delayServerShutdown()
-{
-  /* Ask the user if they want to shutdown nicely. */
-  int response = VMessageBox::question(this, tr("Server is Enabled"),
-                  tr("You are currently running a Tor server. "
-                       "Terminating your server will interrupt any "
-                       "open connections from clients.\n\n"
-                       "Would you like to shutdown gracefully and "
-                       "give clients time to find a new server?"),
-                  VMessageBox::Yes, VMessageBox::No);
-
-  return (response == VMessageBox::Yes);
-}
-
 /** Disconnects the control socket and stops the Tor process. */
-void 
+bool
 MainWindow::stop()
 {
   ServerSettings server(_torControl);
   QString errmsg;
-  bool shutdown;
+  bool rc, delayShutdown = false;
   
   /* If we're running a server, give users the option of terminating
    * gracefully so clients have time to find new servers. */
-  if (server.isServerEnabled() && !_delayedShutdownStarted
-                               && delayServerShutdown()) {
-    /* Delayed server shutdown was started successfully. */
-    shutdown = _torControl->signal(TorSignal::Shutdown);
-    _delayedShutdownStarted = shutdown;
-  } else {
-    /* Terminate the Tor process immediately */
-    _isIntentionalExit = true;
-    if ((shutdown = _torControl->stop(&errmsg)) == true) {
-      _stopAct->setEnabled(false);
-    }
+  if (server.isServerEnabled() && !_delayedShutdownStarted) {
+    /* Ask the user if they want to shutdown nicely. */
+    int response = VMessageBox::question(this, tr("Server is Enabled"),
+                     tr("You are currently running a Tor server. "
+                        "Terminating your server will interrupt any "
+                        "open connections from clients.\n\n"
+                        "Would you like to shutdown gracefully and "
+                        "give clients time to find a new server?"),
+                        VMessageBox::Yes|VMessageBox::Default, 
+                        VMessageBox::No, 
+                        VMessageBox::Cancel|VMessageBox::Escape);
+    if (response == VMessageBox::Yes)
+      delayShutdown = true;
+    else if (response == VMessageBox::Cancel)
+      return false;
   }
 
-  if (shutdown) {
+  if (delayShutdown) {
+    /* Start a delayed shutdown */
+    rc = _torControl->signal(TorSignal::Shutdown, &errmsg);
+    _delayedShutdownStarted = rc;
+  } else {
+    /* We want Tor to stop now, regardless of whether we're a server. */
+    _isIntentionalExit = true;
+    if ((rc = _torControl->stop(&errmsg)) == true)
+      _stopAct->setEnabled(false);
+  }
+  
+  if (rc) {
     /* Indicate that Tor is about to shut down */
     updateTrayIcon(IMG_TOR_STOPPING, tr("Tor is stopping"));
   } else {
@@ -480,10 +472,10 @@ MainWindow::stop()
       /* Show some troubleshooting help */
       Vidalia::help("troubleshooting.stop");
     }
-    
     /* Tor is still running since stopping failed */
     _isIntentionalExit = false;
   }
+  return rc;
 }
 
 /** Slot: Called when the Tor process has exited. It will adjust the tray

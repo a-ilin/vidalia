@@ -72,7 +72,7 @@ private slots:
   /** Called when the Tor process has successfully started. */
   void started();
   /** Called when the user selects "Stop" form the menu. */
-  void stop();
+  bool stop();
   /** Called when the Tor process has exited, either expectedly or not. */
   void stopped(int errorCode, QProcess::ExitStatus exitStatus);
   /** Called when the control socket has connected to Tor. */
@@ -101,14 +101,12 @@ private:
   void createMenuBar();
   /** Sets the tray icon's image and tooltip. */
   void updateTrayIcon(QString iconFile, QString tooltip = QString());
-  /** Starts a graceful, delayed server shutdown */
-  bool delayServerShutdown();
 
   /* Used to determine if the Tor process exiting was intentional or not */
   bool _isIntentionalExit;
   /** Tracks whether we started a delayed server shutdown. */
   bool _delayedShutdownStarted;
-  
+ 
   /** An AboutDialog object, used to display version information. */
   AboutDialog* _aboutDialog;
   /** A MessageLog object which handles logging Tor messages */
