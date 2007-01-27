@@ -124,7 +124,7 @@ if test $BUILDMODE = "debug"; then
     saved_LIBS="$LIBS"
     if test x$framework = x; then
       LDFLAGS="-L$QTDIR/lib"
-      LIBS="-lQtCore_debug"
+      LIBS="-lQtCore_debug -framework AppKit -lz -liconv"
     else
       LDFLAGS="-L$QTDIR/lib/QtCore.framework"
       LIBS="$QTDIR/lib/QtCore.framework/QtCore_debug"
