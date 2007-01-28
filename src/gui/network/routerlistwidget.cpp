@@ -100,6 +100,9 @@ RouterListWidget::clearRouters()
 void
 RouterListWidget::insertSorted(RouterListItem *item)
 {
+  /* Qt >= 4.2 handles the sorting in addTopLevelItem(). We need to do the
+   * sorted inserts ourselves in older Qts. */
+#if QT_VERSION < 0x040200
   Qt::SortOrder order = header()->sortIndicatorOrder();
   int left  = 0;
   int right = topLevelItemCount();
@@ -127,6 +130,9 @@ RouterListWidget::insertSorted(RouterListItem *item)
   } else {
     insertTopLevelItem(left, item);
   }
+#else
+  addTopLevelItem(item);
+#endif
 }
 
 /** Called when the user selects a router from the list. This will search the
