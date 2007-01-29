@@ -111,9 +111,9 @@ $Id$
    socks listening address and port via Tor's controller interface.
 
    Once Vidalia queues a request for geographic information, we wait
-   MIN_RESOLVE_QUEUE_DELAY (currently three seconds) after the last 
+   MIN_RESOLVE_QUEUE_DELAY (currently 10 seconds) after the last 
    queued request, but no longer than MAX_RESOLVE_QUEUE_DELAY 
-   (currently 10 seconds) after the first queued request, before actually 
+   (currently 30 seconds) after the first queued request, before actually 
    launching the connection. This way we lump them together and send 
    one larger request instead of several little ones. If Vidalia's network 
    map window is not currently visible, the requests are queued until

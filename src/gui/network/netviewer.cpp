@@ -38,10 +38,10 @@
 /** Number of milliseconds to wait after the arrival of the last descriptor whose
  * IP needs to be resolved to geographic information, in case more descriptors
  * arrive. Then we can simply lump the IPs into a single request. */
-#define MIN_RESOLVE_QUEUE_DELAY   3000
+#define MIN_RESOLVE_QUEUE_DELAY   (10*1000)
 /** Maximum number of milliseconds to wait after the arrival of the first
  * IP address into the resolve queue, before we flush the entire queue. */
-#define MAX_RESOLVE_QUEUE_DELAY   10000
+#define MAX_RESOLVE_QUEUE_DELAY   (30*1000)
 
 
 /** Constructor. Loads settings from VidaliaSettings.
