@@ -61,6 +61,9 @@
  * \brief Wrapper around QByteArray that adds compression capabilities
  */
 
+#ifndef _ZLIBBYTEARRAY_H
+#define _ZLIBBYTEARRAY_H
+
 #include <QByteArray>
 #include <QString>
 
@@ -105,4 +108,6 @@ private:
   /** Returns a string description of <b>method</b>. */
   static QString methodString(CompressionMethod method);
 };
+
+#endif
 
