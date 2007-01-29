@@ -1,3 +1,33 @@
+0.0.11  xx-xxx-2007
+  o RESETCONF all server-related settings when the be-a-server checkbox gets 
+    unchecked, not just ORPort and Nickname.
+  o Add support for zlib or gzip compressed GeoIP responses. 
+  o Handle chunked transfer encodings properly in GeoIP responses.
+  o Be a little less eager to send GeoIP requests right away. Now we wait 10
+    seconds after adding an address to the queue, or a maximum of 30 seconds,
+    before sending the request.
+  o Respond to double-clicks on the map. Double left-click zooms in towards
+    the mouse pointer and double right-click zooms out.
+  o If Vidalia is built with Qt >= 4.2, use the open and closed hand cursors 
+    in ZImageView when panning the world map.
+  o Add an EU flag for the server list.
+  o Add a "Cancel" button to the message box that asks server operators if
+    they want to delay server shutdown or kill Tor right away. (Ticket #222) 
+  o Add version information to our compiled Win32 vidalia.exe.
+  o Be more tolerant of Win32 people removing the Tor service out from under 
+    Vidalia.
+  o Explicitly specify the tab order in the bandwidth graph.
+  o Fix a bug in parsing Tor's version string when it contains modifiers such
+    as '-alpha'.
+  o Make Circuit::hops() correctly return an empty QStringList for empty paths,
+    instead of a QStringList with one empty QString.
+  o Do a better job of detecting Qt 4.2 debug libs on OS X. There were a few 
+    necessary non-Qt libs missing from LIBS when we did our AC_TRY_LINK.
+  o Add vidalia.spec to our configure.in, so the RPM spec file stays current.
+  o Add a Traditional Chinese installer and GUI translation from Cloud.
+  o Updated Dutch, Farsi, Polish, and Simplified Chinese translations.
+
+
 0.0.10  25-Dec-2006
   o Load NT service functions on demand so we can run on Windows 95/98/ME
     again. (Ticket #211)
