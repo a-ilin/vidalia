@@ -25,7 +25,12 @@
 DIRURL="http://tor.noreply.org/tor/status/all"
 GEOIPURL="http://geoip.vidalia-project.net/cgi-bin/geoip"
 CACHEFILE="geoip-cache"
-timestamp=$(date -u +%s)
+
+if [ "$1" == "-notimestamp" -o "$1" == "--notimestamp" ]; then
+  timestamp=""
+else
+  timestamp=":$(date +%s)"
+fi
 
 # Fetch a list of server IP addresses
 ipaddrs=$(wget -q -O - "$DIRURL" | awk '$1 == "r" { print $7 }' | sort | uniq | tr "\n" ",")
@@ -37,6 +42,6 @@ geoips=$(wget -q -O - --post-data="ip=$ipaddrs" "$GEOIPURL")
 IFS=$'\n'
 rm -f $CACHEFILE
 for geoip in $geoips; do
-  echo "$geoip:$timestamp" >> "$CACHEFILE"
+  echo "$geoip""$timestamp" >> "$CACHEFILE"
 done
 
