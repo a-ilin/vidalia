@@ -97,14 +97,15 @@ $Id$
 
    We cache geographic information in an unsorted text file called
    "~/.vidalia/geoip-cache" (on Windows, the cache file is stored in
-   %APPDATA%\Vidalia\geoip-cache) along with a Unix timestamp, such
-   as:
+   %APPDATA%\Vidalia\geoip-cache) along with an optional Unix 
+   timestamp, such as:
 
        206.124.149.146,Bellevue,WA,US,47.6051,-122.1134:1159123625
 
-   We load the cache file on startup, discard all entries that are
-   over a month old, and write a new version. After that the cache
-   file is append-only.
+   If no timestamp is associated with a particular cache entry, the
+   current date and time will be used. We load the cache file on
+   startup, discard all entries that are over a month old, and write
+   a new version. After that the cache file is append-only.
 
    The requests are done over Tor, as ordinary socks requests to the
    local Tor client. Vidalia will query the local Tor client for its 

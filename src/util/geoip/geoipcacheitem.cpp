@@ -57,8 +57,9 @@ GeoIpCacheItem::toString() const
 
 /** Returns a GeoIpCacheItem from a string as read from the cache that was
  * written to disk. The format is:
- *                     <Geo IP Data>:<Timestamp>
+ *                     <Geo IP Data>[:<Timestamp>]
  *
+ * If no value for Timestamp is given, the current date and time will be used.
  * If the string cannot be parsed for valid cached GeoIP data, then an empty
  * GeoIpCacheItem object is returned. The calling method should call isEmpty()
  * on the returned GeoIpCacheItem object to ensure it got a valid object.
@@ -68,10 +69,13 @@ GeoIpCacheItem::fromString(QString cacheString)
 {
   QDateTime timestamp;
   QStringList cacheData = cacheString.split(":");
- 
-  if (cacheData.size() >= 2) {
+
+  if (cacheData.size() >= 1) {
     GeoIp geoip = GeoIp::fromString(cacheData.at(0));
-    timestamp.setTime_t(cacheData.at(1).toUInt());
+    if (cacheData.size() >= 2)
+      timestamp.setTime_t(cacheData.at(1).toUInt());
+    else
+      timestamp = QDateTime::currentDateTime();
     return GeoIpCacheItem(geoip, timestamp);
   }
   return GeoIpCacheItem();
