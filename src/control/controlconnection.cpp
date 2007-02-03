@@ -318,12 +318,12 @@ void
 ControlConnection::ReceiveWaiter::setResult(bool success, 
                                             ControlReply reply, 
                                             QString errmsg)
-{ 
+{
+  QMutexLocker locker(&_mutex);
   _status = (success ? Success : Failed);
   _reply = reply; 
   _errmsg = errmsg;
   _waitCond.wakeAll();
-
 }
 
 
@@ -334,10 +334,9 @@ ControlConnection::ReceiveWaiter::setResult(bool success,
 void
 ControlConnection::SendWaiter::setResult(bool success, QString errmsg)
 {
-  _mutex.lock();
+  QMutexLocker locker(&_mutex);
   _status = (success ? Success : Failed);
   _errmsg = errmsg;
-  _mutex.unlock();
   _waitCond.wakeAll();
 }
 
