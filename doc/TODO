@@ -1,6 +1,11 @@
 Things to complete for 0.1.0:
   * There is a ticket about not being able to save config changes when an alternate
     torrc is specified. Needs to be verified and fixed. (Ticket #159)
+  * We shoud close any logs that have 'stdout' or 'stderr' as the target after
+    we connect to Tor's control port, but pass command line arguments to Tor
+    to tell it to log to stdout and stderr initially, in case it dies before
+    we can connect to its control port. This way, if Vidalia freezes, Tor
+    won't freeze.
   * Our GeoIP cache should recognize IP addresses on the same subnet.
     (Ticket #154)
 
