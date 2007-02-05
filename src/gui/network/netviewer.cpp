@@ -343,7 +343,7 @@ NetViewer::routerSelected(RouterDescriptor router)
   _map->deselectAll();
   ui.textRouterInfo->clear();
   ui.textRouterInfo->display(router);
-  _map->selectRouter(router.name());
+  _map->selectRouter(router.id());
 }
 
 /** If there are any IPs in the resolve queue, do the request now. */
