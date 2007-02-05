@@ -101,20 +101,21 @@ CircuitListWidget::mouseReleaseEvent(QMouseEvent *e)
 }
 
 /** Adds a circuit to the list. If the circuit already exists in the list, the
- * status and path will be updated. */
+ * status and path will be updated. <b>displayedPath</b> contains a
+ * description of the circuit's path suitable for humans to read. */
 void
-CircuitListWidget::addCircuit(Circuit circuit)
+CircuitListWidget::addCircuit(Circuit circuit, QString displayedPath)
 {
   /* Check to see if the circuit already exists in the tree */
   CircuitItem *item = findCircuitItem(circuit.id());
   
   if (!item) {
     /* Add the new circuit */
-    item = new CircuitItem(circuit);
+    item = new CircuitItem(circuit, displayedPath);
     addTopLevelItem(item);
   } else {
     /* Circuit already exists, so update its status and path */
-    item->update(circuit);
+    item->update(circuit, displayedPath);
   }
 
   /* If the circuit is closed or dead, schedule it for removal */

@@ -55,7 +55,7 @@ public:
 
   /** Adds a circuit to the list. If the circuit already exists in the list,
    * the status and path will be updated. */
-  void addCircuit(Circuit circuit);
+  void addCircuit(Circuit circuit, QString displayedPath);
   /** Adds a stream to the list. If the stream already exists in the list, the
    * status and path will be updated. */
   void addStream(Stream stream);

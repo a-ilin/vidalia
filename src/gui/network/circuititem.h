@@ -42,14 +42,14 @@ class CircuitItem : public QTreeWidgetItem
 
 public:
   /** Default constructor */
-  CircuitItem(Circuit circuit);
+  CircuitItem(Circuit circuit, QString displayedPath);
  
   /** Adds a stream to this circuit item */
   void addStream(StreamItem *stream);
   /** Removes the stream item from the list and frees its memory. */
   void removeStream(StreamItem *stream);
   /** Updates the status of this circuit item using the given circuit. */
-  void update(Circuit circuit);
+  void update(Circuit circuit, QString displayedPath);
   /** Returns the ID for this circuit. */
   quint64 id() { return _circuit.id(); }
   /** Returns the Circuit object for this item. */

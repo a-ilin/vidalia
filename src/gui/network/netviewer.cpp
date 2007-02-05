@@ -245,7 +245,7 @@ NetViewer::addCircuit(Circuit circuit)
   /* Circuits on the map always use keyids */
   Circuit circIds   = circuitPathIDs(circuit);
 
-  ui.treeCircuitList->addCircuit(circNames);
+  ui.treeCircuitList->addCircuit(circuit, circNames.path());
   _map->addCircuit(circuit.id(), circIds.hops());
 }
 
@@ -327,7 +327,9 @@ NetViewer::circuitSelected(Circuit circuit)
 
   foreach (QString router, circuit.hops()) {
     /* Try to find and select each router in the path */
-    RouterListItem *item = ui.treeRouterList->findRouterByName(router);
+    RouterListItem *item = (router.startsWith("$") ? 
+                ui.treeRouterList->findRouterById(router.mid(1))
+              : ui.treeRouterList->findRouterByName(router));
     if (item) {
       routers.append(item->descriptor());
     }

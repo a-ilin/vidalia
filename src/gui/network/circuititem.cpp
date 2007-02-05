@@ -30,27 +30,26 @@
 
 
 /** Constructor */
-CircuitItem::CircuitItem(Circuit circuit)
+CircuitItem::CircuitItem(Circuit circuit, QString displayedPath)
 {
   /* Update the displayed text */
-  update(circuit);
+  update(circuit, displayedPath);
 }
 
 /** Updates the status and path of this circuit item. */
 void
-CircuitItem::update(Circuit circuit)
+CircuitItem::update(Circuit circuit, QString displayedPath)
 {
   /* Save the Circuit object */
   _circuit = circuit;
   
-  /* Get the path, or put in a semi-meaningful value if the path is empty */
-  QString path = circuit.path();
-  if (path.isEmpty()) {
-    path = tr("<Path Empty>");
+  /* Use a semi-meaningful value if the path is empty */
+  if (displayedPath.isEmpty()) {
+    displayedPath = tr("<Path Empty>");
   }
 
   /* Update the column fields */
-  setText(CircuitListWidget::ConnectionColumn, path);
+  setText(CircuitListWidget::ConnectionColumn, displayedPath);
   setText(CircuitListWidget::StatusColumn, circuit.statusString());
 }
 
