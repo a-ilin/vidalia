@@ -36,16 +36,14 @@ StreamItem::StreamItem(Stream stream)
   _id = stream.id();
   
   /* Update the status and target */
-  setText(CircuitListWidget::ConnectionColumn, stream.target());
-  setText(CircuitListWidget::StatusColumn, stream.statusString());
+  update(stream);
 }
 
 /** Updates the status of this stream item. */
 void
 StreamItem::update(Stream stream)
 {
-  /* Only update the status. We leave the target alone so we can still see the
-   * hostname even after the target address has been resolved. */
+  setText(CircuitListWidget::ConnectionColumn, stream.target());
   setText(CircuitListWidget::StatusColumn, stream.statusString());
 }
 
