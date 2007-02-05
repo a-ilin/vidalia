@@ -1,4 +1,5 @@
 0.0.11  xx-xxx-2007
+  o Fix a race condition that could (and did) cause Vidalia to freeze.
   o RESETCONF all server-related settings when the be-a-server checkbox gets 
     unchecked, not just ORPort and Nickname.
   o Add support for zlib or gzip compressed GeoIP responses. 
@@ -6,10 +7,21 @@
   o Be a little less eager to send GeoIP requests right away. Now we wait 10
     seconds after adding an address to the queue, or a maximum of 30 seconds,
     before sending the request.
+  o Tolerate entries in geoip-cache that have no timestamp. If an entry does
+    not have a timestamp, use the current date and time. 
   o Respond to double-clicks on the map. Double left-click zooms in towards
     the mouse pointer and double right-click zooms out.
   o If Vidalia is built with Qt >= 4.2, use the open and closed hand cursors 
     in ZImageView when panning the world map.
+  o Qt >= 4.2 handles the sorting in addTopLevelItem() in the server list. We 
+    still do the sorted inserts ourselves in older Qts. 
+  o Display circuits as a list of server nicknames (like we currently do), but 
+    save the original circuit paths (possibly with key IDs for non-Named
+    servers) so we don't display the wrong server information when the user 
+    selects that circuit.
+  o Fix a bug introduced in 0.0.10 that caused a server's little pinpoint on
+    the map to not be highlighted green when the server is selected in the
+    server list.
   o Add an EU flag for the server list.
   o Add a "Cancel" button to the message box that asks server operators if
     they want to delay server shutdown or kill Tor right away. (Ticket #222) 
@@ -25,7 +37,7 @@
     necessary non-Qt libs missing from LIBS when we did our AC_TRY_LINK.
   o Add vidalia.spec to our configure.in, so the RPM spec file stays current.
   o Add a Traditional Chinese installer and GUI translation from Cloud.
-  o Updated Dutch, Farsi, Polish, and Simplified Chinese translations.
+  o Updated Dutch, Farsi, Polish, Russian, and Simplified Chinese translations.
 
 
 0.0.10  25-Dec-2006
