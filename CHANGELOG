@@ -1,4 +1,4 @@
-0.0.11  xx-xxx-2007
+0.0.11  07-Feb-2007
   o Fix a race condition that could (and did) cause Vidalia to freeze.
   o RESETCONF all server-related settings when the be-a-server checkbox gets 
     unchecked, not just ORPort and Nickname.
@@ -22,6 +22,8 @@
   o Fix a bug introduced in 0.0.10 that caused a server's little pinpoint on
     the map to not be highlighted green when the server is selected in the
     server list.
+  o Update the stream target address on every stream status event, not just
+    NEW stream events.
   o Add an EU flag for the server list.
   o Add a "Cancel" button to the message box that asks server operators if
     they want to delay server shutdown or kill Tor right away. (Ticket #222) 
