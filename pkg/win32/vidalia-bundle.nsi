@@ -16,13 +16,13 @@ SetCompressor /SOLID lzma
 
 !define VIDALIA_NAME        "Vidalia"
 !define VIDALIA_EXEC        "vidalia.exe"
-!define VIDALIA_APPVERSION  "0.0.11-svn"
+!define VIDALIA_APPVERSION  "0.0.11"
 !define VIDALIA_DESC        "${VIDALIA_NAME} ${VIDALIA_APPVERSION}"
 !define VIDALIA_UNINST      "uninstall.exe"
 
 !define TOR_NAME            "Tor"
 !define TOR_EXEC            "tor.exe"
-!define TOR_APPVERSION      "0.1.2.4-alpha"
+!define TOR_APPVERSION      "0.1.2.7-alpha"
 !define TOR_DESC            "${TOR_NAME} ${TOR_APPVERSION}"
 !define TOR_UNINST          "Uninstall.exe"
 
