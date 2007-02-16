@@ -318,7 +318,7 @@ You may need to remove it manually.</source>
 <context>
     <name>CircuitItem</name>
     <message>
-        <location filename="../gui/network/circuititem.cpp" line="49"/>
+        <location filename="../gui/network/circuititem.cpp" line="48"/>
         <source>&lt;Path Empty&gt;</source>
         <translation>&lt;Út üres&gt;</translation>
     </message>
@@ -770,127 +770,127 @@ dokumentum.</translation>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="239"/>
+        <location filename="../gui/mainwindow.cpp" line="235"/>
         <source>Tor is Stopped</source>
         <translation type="unfinished">A Tor le van állítva</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="194"/>
+        <location filename="../gui/mainwindow.cpp" line="190"/>
         <source>Start</source>
         <translation>Elindítás</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="198"/>
+        <location filename="../gui/mainwindow.cpp" line="194"/>
         <source>Stop</source>
         <translation>Leállítás</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="221"/>
+        <location filename="../gui/mainwindow.cpp" line="217"/>
         <source>About</source>
         <translation>Névjegy</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="202"/>
+        <location filename="../gui/mainwindow.cpp" line="198"/>
         <source>Exit</source>
         <translation>Kilépés</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="205"/>
+        <location filename="../gui/mainwindow.cpp" line="201"/>
         <source>Bandwidth Graph</source>
         <translation>Sávszélesség grafikon</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="209"/>
+        <location filename="../gui/mainwindow.cpp" line="205"/>
         <source>Message Log</source>
         <translation>Log üzenetek</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="317"/>
+        <location filename="../gui/mainwindow.cpp" line="313"/>
         <source>Help</source>
         <translation>Súgó</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="285"/>
+        <location filename="../gui/mainwindow.cpp" line="281"/>
         <source>Ctrl+S</source>
         <translation>Ctrl+S</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="286"/>
+        <location filename="../gui/mainwindow.cpp" line="282"/>
         <source>Ctrl+T</source>
         <translation>Ctrl+T</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="287"/>
+        <location filename="../gui/mainwindow.cpp" line="283"/>
         <source>Ctrl+B</source>
         <translation>Ctrl+B</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="288"/>
+        <location filename="../gui/mainwindow.cpp" line="284"/>
         <source>Ctrl+L</source>
         <translation>Ctrl+L</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="290"/>
+        <location filename="../gui/mainwindow.cpp" line="286"/>
         <source>Ctrl+?</source>
         <translation>Ctrl+?</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="302"/>
+        <location filename="../gui/mainwindow.cpp" line="298"/>
         <source>File</source>
         <translation>Fájl</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="305"/>
+        <location filename="../gui/mainwindow.cpp" line="301"/>
         <source>Tor</source>
         <translation>Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="311"/>
+        <location filename="../gui/mainwindow.cpp" line="307"/>
         <source>View</source>
         <translation>Nézet</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="318"/>
+        <location filename="../gui/mainwindow.cpp" line="314"/>
         <source>Vidalia Help</source>
         <translation>Vidalia súgó</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="365"/>
+        <location filename="../gui/mainwindow.cpp" line="361"/>
         <source>Error Starting Tor</source>
         <translation>Hiba a Tor indításával</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="409"/>
+        <location filename="../gui/mainwindow.cpp" line="405"/>
         <source>Error Connecting to Tor</source>
         <translation>Hiba a Tor-hoz kapcsolódással</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="474"/>
+        <location filename="../gui/mainwindow.cpp" line="466"/>
         <source>Error Stopping Tor</source>
         <translation>Hiba a Tor leállításával</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="495"/>
+        <location filename="../gui/mainwindow.cpp" line="487"/>
         <source>Tor is stopped</source>
         <translation type="unfinished">A Tor leállt</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="507"/>
+        <location filename="../gui/mainwindow.cpp" line="499"/>
         <source>Tor Exited</source>
         <translation>A Tor bezáródott</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="475"/>
+        <location filename="../gui/mainwindow.cpp" line="467"/>
         <source>Vidalia was unable to stop Tor.</source>
         <translation>A Vidalia nem tudta leállítani a Tor-t.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="394"/>
+        <location filename="../gui/mainwindow.cpp" line="390"/>
         <source>Tor is starting</source>
         <translation type="unfinished">A Tor elindul</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="529"/>
+        <location filename="../gui/mainwindow.cpp" line="521"/>
         <source>Tor is running</source>
         <translation type="unfinished">A Tor fut</translation>
     </message>
@@ -900,22 +900,22 @@ dokumentum.</translation>
         <translation>A szerver bekapcsolva</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="471"/>
+        <location filename="../gui/mainwindow.cpp" line="463"/>
         <source>Tor is stopping</source>
         <translation type="unfinished">A Tor leáll</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="289"/>
+        <location filename="../gui/mainwindow.cpp" line="285"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="537"/>
+        <location filename="../gui/mainwindow.cpp" line="529"/>
         <source>Error Applying Server Settings</source>
         <translation>Hiba a szerver beállításainak mentésében</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="538"/>
+        <location filename="../gui/mainwindow.cpp" line="530"/>
         <source>Vidalia was unable to apply your server&apos;s settings.</source>
         <translation>A Vidalia nem tudta érvényesíteni a szerver
 beállításait.</translation>
@@ -932,7 +932,7 @@ Szeretnéd elegánsan leállítani a szervert, ezzel idõt adva a klienseknek
 újabb szerverek megtalálására?</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="510"/>
+        <location filename="../gui/mainwindow.cpp" line="502"/>
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
@@ -943,40 +943,40 @@ Légy szíves ellenõrizd a log üzeneteket, a Tor kilépése elõtti
 eseményekre utaló jeleket keresve.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="368"/>
+        <location filename="../gui/mainwindow.cpp" line="364"/>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
         <translation>A Vidalia nem tudta elindítani a Tor-t. Ellenõrizd
 a beállításaidat, hogy jól van-e megadva a Tor futtatható állományának neve és elérési
 útja.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="217"/>
+        <location filename="../gui/mainwindow.cpp" line="213"/>
         <source>Settings</source>
         <translation type="unfinished">Beállítások</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="213"/>
+        <location filename="../gui/mainwindow.cpp" line="209"/>
         <source>Network Map</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="571"/>
+        <location filename="../gui/mainwindow.cpp" line="563"/>
         <source>New Identity</source>
         <translation type="unfinished">Új identitás</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="291"/>
+        <location filename="../gui/mainwindow.cpp" line="287"/>
         <source>Ctrl+I</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="574"/>
+        <location filename="../gui/mainwindow.cpp" line="566"/>
         <source>All subsequent connections will appear to be different than your old connections.</source>
         <translation type="unfinished">Minden további kapcsolat a régi kapcsolataidtól
 különbözõként fog szerepelni.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="587"/>
+        <location filename="../gui/mainwindow.cpp" line="579"/>
         <source>Failed to Create New Identity</source>
         <translation type="unfinished">Nem sikerült az új identitás létrehozása</translation>
     </message>
@@ -1542,18 +1542,18 @@ eseményeit.</translation>
 <context>
     <name>RouterListWidget</name>
     <message>
-        <location filename="../gui/network/routerlistwidget.cpp" line="42"/>
+        <location filename="../gui/network/routerlistwidget.cpp" line="44"/>
         <source>Server</source>
         <translation type="unfinished">Kiszolgáló</translation>
     </message>
     <message>
-        <location filename="../gui/network/routerlistwidget.cpp" line="217"/>
-        <source>%1 servers total</source>
+        <location filename="../gui/network/routerlistwidget.cpp" line="55"/>
+        <source>Zoom to Server</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/network/routerlistwidget.cpp" line="53"/>
-        <source>Zoom to Server</source>
+        <location filename="../gui/network/routerlistwidget.cpp" line="231"/>
+        <source>%1 servers online (%2 total)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
