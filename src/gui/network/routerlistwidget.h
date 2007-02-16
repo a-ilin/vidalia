@@ -100,6 +100,7 @@ private:
   /** Router item context menu and items. */
   QMenu* _routerContextMenu; /**< Context menu for router items. */
   QAction* _zoomToRouterAct; /**< Zooms in on the selected router. */
+  quint32  _onlineRouterCount; /**< Number of online routers. */
 };
 
 #endif

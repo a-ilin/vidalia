@@ -36,6 +36,8 @@
 RouterListWidget::RouterListWidget(QWidget *parent)
 : QTreeWidget(parent)
 {
+  _onlineRouterCount = 0;
+  
   /* Create and initialize columns */
   setHeaderLabels(QStringList() << QString("")
                                 << QString("")
@@ -92,6 +94,7 @@ void
 RouterListWidget::clearRouters()
 {
   _idmap.clear();
+  _onlineRouterCount = 0;
   QTreeWidget::clear();
 }
 
@@ -210,6 +213,8 @@ RouterListWidget::addRouter(RouterDescriptor rd)
     if (item) {
       /* This is an updated descriptor, so remove the old item and we'll 
        * add a new, updated item. */
+      if (item->descriptor().online())
+        _onlineRouterCount--;
       delete takeTopLevelItem(indexOfTopLevelItem(item));
       _idmap.remove(id);
     }
@@ -220,7 +225,11 @@ RouterListWidget::addRouter(RouterDescriptor rd)
     _idmap.insert(id, item);
 
     /* Set our status tip to the number of servers in the list */
-    setStatusTip(tr("%1 servers total").arg(topLevelItemCount()));
+    if (rd.online())
+      _onlineRouterCount++;
+    setStatusTip(tr("%1 servers online (%2 total)")
+                              .arg(_onlineRouterCount)
+                              .arg(topLevelItemCount()));
   }
 }
 
@@ -234,7 +243,7 @@ RouterListWidget::onSelectionChanged()
   QList<QTreeWidgetItem *> items = selectedItems();
 
   if (items.count() > 0) {
-      rd = ((RouterListItem *)items[0])->descriptor();
+    rd = ((RouterListItem *)items[0])->descriptor();
   }
   emit routerSelected(rd);
 }
