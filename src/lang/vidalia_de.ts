@@ -91,7 +91,7 @@
     <message>
         <location filename="../gui/config/advancedpage.ui" line="454"/>
         <source>Run as User:</source>
-        <translation>Als folgender Benutzer ausführen:</translation>
+        <translation>Als folgender Nutzer ausführen:</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="467"/>
@@ -1546,7 +1546,7 @@ empfangen.</translation>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="231"/>
         <source>%1 servers online (%2 total)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Server onlien (%2 insgesamt)</translation>
     </message>
 </context>
 <context>
