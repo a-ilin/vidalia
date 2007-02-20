@@ -27,6 +27,14 @@ Sets Vidalia's datadir to \fI<directory>\fR
 \fB\-pidfile \fI<directory/pidfile>\fR
 Sets Vidalia's pidfile to \fI<directory/pidfile>\fR
 .TP
+\fB\-logfile \fI<file>\fR
+Sets the name and location of Vidalia's log file. If this option is specified
+without a \fIloglevel\fR, the default level of 'notice' will be used.
+.TP
+\fB\-loglevel \fI[debug|info|notice|warn|error]\fR
+Sets the verbosity of Vidalia's logging. If this option is specified without a 
+\fIlogfile\fR, the log messages will be printed to stdout.
+.TP
 \fB\-style \fI<directory>\fR
 Sets Vidalia's interface style. [Windows|Motif|CDE|Plastique]
 .TP
