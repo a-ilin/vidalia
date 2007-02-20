@@ -37,6 +37,7 @@
 #include <QMap>
 #include <QString>
 
+#include <util/log.h>
 #include <gui/help/browser/helpbrowser.h>
 #include <config/vidaliasettings.h>
 #include <control/torcontrol.h>
@@ -46,6 +47,12 @@
 
 /** Pointer to this Vidalia application instance. */
 #define vApp  ((Vidalia *)qApp)
+
+#define vDebug(fmt)   (vApp->log(Log::Debug, (fmt)))
+#define vInfo(fmt)    (vApp->log(Log::Info, (fmt)))
+#define vNotice(fmt)  (vApp->log(Log::Notice, (fmt)))
+#define vWarn(fmt)    (vApp->log(Log::Warn, (fmt)))
+#define vError(fmt)   (vApp->log(Log::Error, (fmt)))
 
 
 class Vidalia : public QApplication
@@ -61,10 +68,12 @@ public:
   /** Return the map of command-line arguments and values. */
   static QMap<QString, QString> arguments() { return _args; }
   /** Validates that all arguments were well-formed. */
-  bool validateArguments(QString &errmsg);
-  /** Prints usage information to the given text stream. */
-  void printUsage(QString errmsg = QString());
-
+  static bool validateArguments(QString &errmsg);
+  /** Displays usage information for command-line args. */
+  static void showUsageMessageBox();
+  /** Returns true if the user wants to see usage information. */
+  static bool showUsage();
+  
   /** Sets the current language. */
   static bool setLanguage(QString languageCode = QString());
   /** Sets the current GUI style. */
@@ -87,7 +96,10 @@ public:
   
   /** Returns the location of Vidalia's pid file. */
   static QString pidFile();
- 
+
+  /** Writes <b>msg</b> with severity <b>level</b> to Vidalia's log. */
+  static Log::LogMessage log(Log::LogLevel level, QString msg);
+
 public slots:
   /** Shows the specified help topic, or the default if empty. */
   static void help(QString topic = QString());
@@ -114,6 +126,8 @@ private:
 
   static TorControl* _torControl;      /**< Vidalia's main TorControl object.*/
   static HelpBrowser* _help;           /**< Vidalia's configurable settings. */
+  
+  static Log _log; /**< Logs debugging messages to file or stdout. */
 };
 
 #endif

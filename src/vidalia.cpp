@@ -30,16 +30,22 @@
 #include <QStyleFactory>
 #include <util/string.h>
 #include <lang/languagesupport.h>
+#include <gui/common/vmessagebox.h>
+#include <util/html.h>
+#include <stdlib.h>
 
 #include "vidalia.h"
 
 /* Available command-line arguments. */
-#define ARG_LANGUAGE   "lang"    /**< Argument specifying language.    */
-#define ARG_GUISTYLE   "style"   /**< Argument specfying GUI style.    */
-#define ARG_RESET      "reset"   /**< Reset Vidalia's saved settings.  */
-#define ARG_HELP       "help"    /**< Display usage informatino.       */
-#define ARG_DATADIR    "datadir" /**< Directory to use for data files. */
-#define ARG_PIDFILE    "pidfile" /**< Location and name of our pidfile.*/
+#define ARG_LANGUAGE   "lang"     /**< Argument specifying language.    */
+#define ARG_GUISTYLE   "style"    /**< Argument specfying GUI style.    */
+#define ARG_RESET      "reset"    /**< Reset Vidalia's saved settings.  */
+#define ARG_HELP       "help"     /**< Display usage informatino.       */
+#define ARG_DATADIR    "datadir"  /**< Directory to use for data files. */
+#define ARG_PIDFILE    "pidfile"  /**< Location and name of our pidfile.*/
+#define ARG_LOGFILE    "logfile"  /**< Location of our logfile.         */
+#define ARG_LOGLEVEL   "loglevel" /**< Log verbosity.                   */
+
 
 /* Static member variables */
 QMap<QString, QString> Vidalia::_args; /**< List of command-line arguments.  */
@@ -47,6 +53,7 @@ QString Vidalia::_style;               /**< The current GUI style.           */
 QString Vidalia::_language;            /**< The current language.            */
 HelpBrowser*  Vidalia::_help = 0;      /**< Vidalia's help system.           */
 TorControl* Vidalia::_torControl = 0;  /**< Main TorControl object.          */
+Log Vidalia::_log;
 
 
 /** Constructor. Parses the command-line arguments, resets Vidalia's
@@ -59,19 +66,30 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
   parseArguments(args);
 
   /* Check if we're supposed to reset our config before proceeding. */
-  if (_args.contains(ARG_RESET)) {
+  if (_args.contains(ARG_RESET))
     VidaliaSettings::reset();
+
+  /* Handle the -loglevel and -logfile options. */
+  if (_args.contains(ARG_LOGFILE))
+    _log.open(_args.value(ARG_LOGFILE));
+  if (_args.contains(ARG_LOGLEVEL)) {
+    _log.setLogLevel(Log::stringToLogLevel(
+                      _args.value(ARG_LOGLEVEL)));
+    if (!_args.contains(ARG_LOGFILE))
+      _log.open(stdout);
   }
+  if (!_args.contains(ARG_LOGLEVEL) && 
+      !_args.contains(ARG_LOGFILE))
+    _log.setLogLevel(Log::Off);
 
-  /** Translate the GUI to the appropriate language. */
+  /* Translate the GUI to the appropriate language. */
   setLanguage(_args.value(ARG_LANGUAGE));
-
-  /** Set the GUI style appropriately. */
+  /* Set the GUI style appropriately. */
   setStyle(_args.value(ARG_GUISTYLE));
 
-  /** Creates a TorControl object, used to talk to Tor. */
+  /* Creates a TorControl object, used to talk to Tor. */
   _torControl = new TorControl();
-  /** Create a help browser object, used to dispaly various help topics. */
+  /* Creates a help browser object, used to display various help topics. */
   _help = new HelpBrowser();
 }
 
@@ -95,31 +113,45 @@ Vidalia::winEventFilter(MSG *msg, long *result)
 }
 #endif
 
-/** Display usage information regarding command-line arguments. */
-void
-Vidalia::printUsage(QString errmsg)
+/** Returns true if the user wants to see usage information. */
+bool
+Vidalia::showUsage()
 {
-  QTextStream out(stdout);
+  return _args.contains(ARG_HELP);
+}
 
-  /* If there was an error message, print it out. */
-  if (!errmsg.isEmpty()) {
-    out << "** " << errmsg << " **" << endl << endl;
-  }
+/** Displays usage information for command-line args. */
+void
+Vidalia::showUsageMessageBox()
+{
+  QString usage;
+  QTextStream out(&usage);
 
-  /* Now print the application usage */
-  out << "Usage: " << endl;
-  out << "\t" << qApp->arguments().at(0) << " [options]"    << endl;
+  out << "Available Options:" << endl;
+  out << "<table>";
+  out << trow(tcol("-"ARG_HELP) + 
+              tcol(tr("Displays this usage message and exits.")));
+  out << trow(tcol("-"ARG_RESET) +
+              tcol(tr("Resets ALL stored Vidalia settings.")));
+  out << trow(tcol("-"ARG_DATADIR" &lt;dir&gt;") +
+              tcol(tr("Sets the directory Vidalia uses for data files.")));
+  out << trow(tcol("-"ARG_PIDFILE" &lt;file&gt;") +
+              tcol(tr("Sets the name and location of Vidalia's pidfile.")));
+  out << trow(tcol("-"ARG_LOGFILE" &lt;file&gt;") +
+              tcol(tr("Sets the name and location of Vidalia's logfile.")));
+  out << trow(tcol("-"ARG_LOGLEVEL" &lt;level&gt;") +
+              tcol(tr("Sets the verbosity of Vidalia's logging.") +
+                   "<br>[" + Log::logLevels().join("|") +"]"));
+  out << trow(tcol("-"ARG_GUISTYLE" &lt;style&gt;") +
+              tcol(tr("Sets Vidalia's interface style.") +
+                   "<br>[" + QStyleFactory::keys().join("|") + "]"));
+  out << trow(tcol("-"ARG_LANGUAGE" &lt;language&gt;") + 
+              tcol(tr("Sets Vidalia's language.") +
+                   "<br>[" + LanguageSupport::languageCodes().join("|") + "]"));
+  out << "</table>";
 
-  /* And available options */
-  out << endl << "Available Options:"                                   << endl;
-  out << "\t-"ARG_HELP"\t\tDisplays this usage message and exits."      << endl;
-  out << "\t-"ARG_RESET"\t\tResets ALL stored Vidalia settings."        << endl;
-  out << "\t-"ARG_DATADIR"\tSets the directory Vidalia uses for data files"<< endl;
-  out << "\t-"ARG_PIDFILE"\tSets the name and location of Vidalia's pidfile"<< endl;
-  out << "\t-"ARG_GUISTYLE"\t\tSets Vidalia's interface style."         << endl;
-  out << "\t\t\t[" << QStyleFactory::keys().join("|") << "]"            << endl;
-  out << "\t-"ARG_LANGUAGE"\t\tSets Vidalia's language."                << endl;
-  out << "\t\t\t[" << LanguageSupport::languageCodes().join("|") << "]" << endl;
+  VMessageBox::information(0, 
+    tr("Vidalia Usage Information"), usage, VMessageBox::Ok);
 }
 
 /** Returns true if the specified argument expects a value. */
@@ -129,7 +161,9 @@ Vidalia::argNeedsValue(QString argName)
   return (argName == ARG_GUISTYLE ||
           argName == ARG_LANGUAGE ||
           argName == ARG_DATADIR  ||
-          argName == ARG_PIDFILE);
+          argName == ARG_PIDFILE  ||
+          argName == ARG_LOGFILE  ||
+          argName == ARG_LOGLEVEL);
 }
 
 /** Parses the list of command-line arguments for their argument names and
@@ -162,10 +196,6 @@ Vidalia::parseArguments(QStringList args)
 bool
 Vidalia::validateArguments(QString &errmsg)
 {
-  /* If they want help, just return false now */
-  if (_args.contains(ARG_HELP)) {
-    return false;
-  }
   /* Check for a language that Vidalia recognizes. */
   if (_args.contains(ARG_LANGUAGE) &&
       !LanguageSupport::isValidLanguageCode(_args.value(ARG_LANGUAGE))) {
@@ -177,6 +207,19 @@ Vidalia::validateArguments(QString &errmsg)
       !QStyleFactory::keys().contains(_args.value(ARG_GUISTYLE),
                                       Qt::CaseInsensitive)) {
     errmsg = tr("Invalid GUI style specified: ") + _args.value(ARG_GUISTYLE);
+    return false;
+  }
+  /* Check for a valid log level */
+  if (_args.contains(ARG_LOGLEVEL) &&
+      !Log::logLevels().contains(_args.value(ARG_LOGLEVEL))) {
+    errmsg = tr("Invalid log level specified: ") + _args.value(ARG_LOGLEVEL);
+    return false;
+  }
+  /* Check for a writable log file */
+  if (_args.contains(ARG_LOGFILE) && !_log.isOpen()) {
+    errmsg = tr("Unable to open log file '%1': %2")
+                           .arg(_args.value(ARG_LOGFILE))
+                           .arg(_log.errorString());
     return false;
   }
   return true;
@@ -259,5 +302,11 @@ Vidalia::pidFile()
     return _args.value(ARG_PIDFILE);
   }
   return QDir::convertSeparators(dataDirectory() + "/vidalia.pid");
+}
+
+Log::LogMessage
+Vidalia::log(Log::LogLevel level, QString msg)
+{
+  return _log.log(level, msg);
 }
 

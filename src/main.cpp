@@ -56,21 +56,29 @@ main(int argc, char *argv[])
    * that it recognizes in argv, so we'll pass a stringlist of the original
    * list of command-line arguments too. */
   Vidalia vidalia(args, argc, argv);
+  vNotice("Vidalia %1 using Qt %2").arg(Vidalia::version())
+                                   .arg(QT_VERSION_STR);
 
-
-#if !defined(Q_OS_WIN32)
-  /* Validate any command-line arguments. Don't bother doing this on Win32
-   * since they can't see the output anyway. */
+  /* Validate any command-line arguments, or show usage message box, if
+   * necessary. */
   QString errmsg;
-  if (!vidalia.validateArguments(errmsg)) {
-    vidalia.printUsage(errmsg);
-    return -1;
+  if (vidalia.showUsage()) {
+    Vidalia::showUsageMessageBox();
+    return 0;
+  } else if (!vidalia.validateArguments(errmsg)) {
+    vError("Unable to apply command-line arguments: %1").arg(errmsg);
+    VMessageBox::critical(0,
+      vApp->translate("Vidalia",
+        QT_TRANSLATE_NOOP("Vidalia", "Invalid Argument")), errmsg,
+      VMessageBox::Ok);
+    return 1;
   }
-#endif
 
   /* Check if Vidalia is already running. */
   QString pidfile = vidalia.pidFile();
   if (is_vidalia_running(pidfile)) {
+    vWarn("Detected another process with pid %1. Is Vidalia already running?")
+                                                               .arg(get_pid());
     /* Let the user know another Vidalia is running and we are going to exit
      * now. */
     int ret = VMessageBox::critical(0, 
@@ -85,7 +93,8 @@ main(int argc, char *argv[])
                 VMessageBox::Continue, VMessageBox::Quit|VMessageBox::Default);
     if (ret != VMessageBox::Continue) {
       /* Don't start a second instance of Vidalia */
-      return 0;
+      vError("Exiting duplicate Vidalia process.");
+      return 1;
     }
   }
   write_pidfile(pidfile);
@@ -104,6 +113,7 @@ main(int argc, char *argv[])
 
   /* Vidalia exited, so cleanup our pidfile and return */
   QFile::remove(pidfile);
+  vNotice("Exiting cleanly (return code %1).").arg(ret);
   return ret;
 }
 
