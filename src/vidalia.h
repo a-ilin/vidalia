@@ -115,6 +115,10 @@ protected:
 #endif
 
 private:
+  /** Catches debugging messages from Qt and sends them to 
+   * Vidalia's logs. */
+  static void qt_msg_handler(QtMsgType type, const char *msg);
+
   /** Parse the list of command-line arguments. */
   void parseArguments(QStringList args);
   /** Returns true if the specified arguments wants a value. */

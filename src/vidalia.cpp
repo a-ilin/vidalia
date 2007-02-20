@@ -55,6 +55,32 @@ HelpBrowser*  Vidalia::_help = 0;      /**< Vidalia's help system.           */
 TorControl* Vidalia::_torControl = 0;  /**< Main TorControl object.          */
 Log Vidalia::_log;
 
+/** Catches debugging messages from Qt and sends them to Vidalia's logs. If Qt
+ * emits a QtFatalMsg, we will write the message to the log and then abort().
+ */
+void
+Vidalia::qt_msg_handler(QtMsgType type, const char *s)
+{
+  QString msg(s);
+  switch (type) {
+    case QtDebugMsg:
+      vDebug("QtDebugMsg: %1").arg(msg);
+      break;
+    case QtWarningMsg:
+      vNotice("QtWarningMsg: %1").arg(msg);
+      break;
+    case QtCriticalMsg:
+      vWarn("QtCriticalMsg: %1").arg(msg);
+      break;
+    case QtFatalMsg:
+      vError("QtFatalMsg: %1").arg(msg);
+      break;
+  }
+  if (type == QtFatalMsg) {
+    vError("Fatal Qt error. Aborting.");
+    abort();
+  }
+}
 
 /** Constructor. Parses the command-line arguments, resets Vidalia's
  * configuration (if requested), and sets up the GUI style and language
@@ -62,6 +88,8 @@ Log Vidalia::_log;
 Vidalia::Vidalia(QStringList args, int &argc, char **argv)
 : QApplication(argc, argv)
 {
+  qInstallMsgHandler(qt_msg_handler);
+
   /* Read in all our command-line arguments. */
   parseArguments(args);
 
