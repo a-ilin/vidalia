@@ -1938,28 +1938,88 @@ fingerprint.</source>
 <context>
     <name>Vidalia</name>
     <message>
-        <location filename="../vidalia.cpp" line="172"/>
+        <location filename="../vidalia.cpp" line="230"/>
         <source>Invalid language code specified: </source>
         <translation>Określono nieprawidłowy kod języka: </translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="179"/>
+        <location filename="../vidalia.cpp" line="237"/>
         <source>Invalid GUI style specified: </source>
         <translation>Wybrano niewłaściwy styl GUI: </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="78"/>
+        <location filename="../main.cpp" line="86"/>
         <source>Vidalia is already running</source>
         <translation>Vidalia jest już uruchomiona</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="84"/>
+        <location filename="../main.cpp" line="92"/>
         <source>Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.
 
 Would you like to continue starting Vidalia?</source>
         <translation>Inny proces Vidalii jest prawdopodobnie już uruchomiony. Jeśli jesteś pewien że nie, możesz kontynuować.
 
 Czy chcesz kontynuować uruchamianie Vidalii?</translation>
+    </message>
+    <message>
+        <location filename="../main.cpp" line="72"/>
+        <source>Invalid Argument</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../vidalia.cpp" line="161"/>
+        <source>Displays this usage message and exits.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../vidalia.cpp" line="163"/>
+        <source>Resets ALL stored Vidalia settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../vidalia.cpp" line="165"/>
+        <source>Sets the directory Vidalia uses for data files.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../vidalia.cpp" line="167"/>
+        <source>Sets the name and location of Vidalia&apos;s pidfile.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../vidalia.cpp" line="169"/>
+        <source>Sets the name and location of Vidalia&apos;s logfile.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../vidalia.cpp" line="172"/>
+        <source>Sets the verbosity of Vidalia&apos;s logging.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../vidalia.cpp" line="175"/>
+        <source>Sets Vidalia&apos;s interface style.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../vidalia.cpp" line="178"/>
+        <source>Sets Vidalia&apos;s language.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../vidalia.cpp" line="182"/>
+        <source>Vidalia Usage Information</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../vidalia.cpp" line="243"/>
+        <source>Invalid log level specified: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../vidalia.cpp" line="249"/>
+        <source>Unable to open log file &apos;%1&apos;: %2</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 </TS>
