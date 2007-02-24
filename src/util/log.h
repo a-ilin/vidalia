@@ -81,7 +81,7 @@ public:
   static LogLevel stringToLogLevel(QString str);
   
   /** Creates a log message with severity <b>level</b> and initial message
-   * contents <b>message<b>. The log message can be appended to until the
+   * contents <b>message</b>. The log message can be appended to until the
    * returned LogMessage's destructor is called, at which point the complete
    * message is written to the log file. */
   LogMessage log(LogLevel level, QString message);
