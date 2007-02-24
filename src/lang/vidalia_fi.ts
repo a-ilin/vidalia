@@ -1543,7 +1543,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="231"/>
         <source>%1 servers online (%2 total)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 palvelinta online-tilassa (%2 kokonaisuudessa)</translation>
     </message>
 </context>
 <context>
@@ -1967,62 +1967,62 @@ Haluatko jatkaa Vidalian käynnistämistä?</translation>
     <message>
         <location filename="../main.cpp" line="72"/>
         <source>Invalid Argument</source>
-        <translation type="unfinished"></translation>
+        <translation>Virheellinen komento</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="161"/>
         <source>Displays this usage message and exits.</source>
-        <translation type="unfinished"></translation>
+        <translation>Näyttää tämän käyttöviestin ja sulkee.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="163"/>
         <source>Resets ALL stored Vidalia settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vaihtaa asetuksit oletusarvoihin.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="165"/>
         <source>Sets the directory Vidalia uses for data files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Asettaa Vidalian käyttämän kansion tieto-kansioksi.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="167"/>
         <source>Sets the name and location of Vidalia&apos;s pidfile.</source>
-        <translation type="unfinished"></translation>
+        <translation>Asettaa Vidalian pid-tiedoston nimen ja sijainnin.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="169"/>
         <source>Sets the name and location of Vidalia&apos;s logfile.</source>
-        <translation type="unfinished"></translation>
+        <translation>Asettaa Vidalian lokitiedoston nimen ja sijainnin.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="172"/>
         <source>Sets the verbosity of Vidalia&apos;s logging.</source>
-        <translation type="unfinished"></translation>
+        <translation>Asettaa Vidalian lokikirjaamisen tason.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="175"/>
         <source>Sets Vidalia&apos;s interface style.</source>
-        <translation type="unfinished"></translation>
+        <translation>Asettaa Vidalian käyttöliittymän tyylin.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="178"/>
         <source>Sets Vidalia&apos;s language.</source>
-        <translation type="unfinished"></translation>
+        <translation>Asettaa Vidalian kielen.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="182"/>
         <source>Vidalia Usage Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalian käyttötiedot</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="243"/>
         <source>Invalid log level specified: </source>
-        <translation type="unfinished"></translation>
+        <translation>Virheellinen lokitaso määritetty: </translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="249"/>
         <source>Unable to open log file &apos;%1&apos;: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Lokitiedoston&apos;%1&apos;: %2 avaaminen epäonnistui</translation>
     </message>
 </context>
 </TS>
