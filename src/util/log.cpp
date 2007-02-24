@@ -96,8 +96,10 @@ Log::open(QString file)
 void
 Log::close()
 {
-  _logFile.flush();
-  _logFile.close();
+  if (_logFile.isOpen()) {
+    _logFile.flush();
+    _logFile.close();
+  }
 }
 
 /** Creates a log message with severity <b>level</b> and initial message
