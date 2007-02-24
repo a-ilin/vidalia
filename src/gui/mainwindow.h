@@ -81,6 +81,9 @@ private slots:
   void connectFailed(QString errmsg);
   /** Called when the control socket has been disconnected. */
   void disconnected();
+  /** Re-enables the 'New Identity' button after a delay from the previous time
+   * 'New Identity' was used. */
+  void enableNewIdentity();
   /** Called when the user selects the "New Identity" action from the menu. */
   void newIdentity();
   /** Called when the user exits Vidalia. */

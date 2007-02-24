@@ -30,6 +30,7 @@
  */
 
 #include <QtGui>
+#include <QTimer>
 #include <vidalia.h>
 #include <util/html.h>
 
@@ -84,6 +85,9 @@
 #define IMG_TOR_STARTING   ":/images/22x22/tor-starting.png"
 #define IMG_TOR_STOPPING   ":/images/22x22/tor-stopping.png"
 #endif
+
+/** Only allow 'New Identity' to be clicked once every 60 seconds. */
+#define MIN_NEWIDENTITY_INTERVAL   (60*1000)
 
 
 /** Default constructor. It installs an icon in the system tray area and
@@ -564,6 +568,12 @@ MainWindow::newIdentity()
     QString message = tr("All subsequent connections will "
                          "appear to be different than your "
                          "old connections.");
+
+    /* Disable the New Identity button for MIN_NEWIDENTITY_INTERVAL */
+    _newIdentityAct->setEnabled(false);
+    QTimer::singleShot(MIN_NEWIDENTITY_INTERVAL, 
+                       this, SLOT(enableNewIdentity()));
+    
 #if defined(USE_QSYSTEMTRAYICON)
     if (QSystemTrayIcon::supportsMessages()) {
       _trayIcon.showMessage(title, message, QSystemTrayIcon::Information);
@@ -578,5 +588,14 @@ MainWindow::newIdentity()
     VMessageBox::warning(this, 
       tr("Failed to Create New Identity"), errmsg, VMessageBox::Ok);
   }
+}
+
+/** Re-enables the 'New Identity' button after a delay from the previous time
+ * 'New Identity' was used. */
+void
+MainWindow::enableNewIdentity()
+{
+  if (_torControl->isConnected())
+    _newIdentityAct->setEnabled(true);
 }
 
