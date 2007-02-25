@@ -1833,7 +1833,7 @@ geben Sie Ihre Uploadgeschwindigkeit bitte hier an.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1224"/>
         <source>Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ihre maximale Bandbreite muss größer oder gleich groß wie ihre durschnittliche Bandbreite sein. Beide Werte müssen mindestens 20 KB/s betragen.</translation>
     </message>
 </context>
 <context>
