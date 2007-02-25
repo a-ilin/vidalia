@@ -1823,7 +1823,7 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1224"/>
         <source>Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s.</source>
-        <translation type="unfinished"></translation>
+        <translation>Enimmäisnopeus pitää olla suurempi tai sama kuin keskimääräinen nopeus. Molempien lukujen pitäisi olla vähintään 20 kt/s.</translation>
     </message>
 </context>
 <context>
