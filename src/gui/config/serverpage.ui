@@ -1104,7 +1104,7 @@ fingerprint.</string>
                       </size>
                      </property>
                      <property name="toolTip" >
-                      <string>Long-term average bandwidth rate</string>
+                      <string>Long-term average bandwidth limit</string>
                      </property>
                      <property name="maxLength" >
                       <number>12</number>
