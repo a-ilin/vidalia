@@ -1994,7 +1994,7 @@ Voulez-vous continuer à démarrer Vidalia ?</translation>
     <message>
         <location filename="../vidalia.cpp" line="167"/>
         <source>Sets the name and location of Vidalia&apos;s pidfile.</source>
-        <translation>Définir le nom et le répertoire du fichier pidfile.</translation>
+        <translation type="unfinished">Définir le nom et le répertoire du fichier d&apos;identification du processus Vidalia .</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="169"/>
