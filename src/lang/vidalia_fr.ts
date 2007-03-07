@@ -1543,7 +1543,7 @@ les développeurs de Tor.</translation>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="231"/>
         <source>%1 servers online (%2 total)</source>
-        <translation type="unfinished"></translation>
+        <translation>% serveurs connectés (%2 au total)</translation>
     </message>
 </context>
 <context>
@@ -1825,7 +1825,7 @@ votre fingerprint de PGP ou de GPG.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1224"/>
         <source>Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s.</source>
-        <translation type="unfinished"></translation>
+        <translation>Votre taux de bande passante maximum doit être supérieur ou égal à votre taux de bande passante moyen. Les deux valeurs doivent être au moins 20 KB/s.</translation>
     </message>
 </context>
 <context>
@@ -1974,62 +1974,62 @@ Voulez-vous continuer à démarrer Vidalia ?</translation>
     <message>
         <location filename="../main.cpp" line="72"/>
         <source>Invalid Argument</source>
-        <translation type="unfinished"></translation>
+        <translation>Argument invalide</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="161"/>
         <source>Displays this usage message and exits.</source>
-        <translation type="unfinished"></translation>
+        <translation>Affiche ce message et quitte.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="163"/>
         <source>Resets ALL stored Vidalia settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Réinitialiser TOUS les paramètres utilisés par Vidalia.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="165"/>
         <source>Sets the directory Vidalia uses for data files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Définir le répertoire utilisé par Vidalia pour les fichiers de données.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="167"/>
         <source>Sets the name and location of Vidalia&apos;s pidfile.</source>
-        <translation type="unfinished"></translation>
+        <translation>Définir le nom et le répertoire du fichier pidfile.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="169"/>
         <source>Sets the name and location of Vidalia&apos;s logfile.</source>
-        <translation type="unfinished"></translation>
+        <translation>Définir le nom et le répertoire du fichier d&apos;historique de Vidalia.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="172"/>
         <source>Sets the verbosity of Vidalia&apos;s logging.</source>
-        <translation type="unfinished"></translation>
+        <translation>Indiquer le degré de verbosité de l&apos;historique de Vidalia.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="175"/>
         <source>Sets Vidalia&apos;s interface style.</source>
-        <translation type="unfinished"></translation>
+        <translation>Choisir le style de l&apos;interface de Vidalia.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="178"/>
         <source>Sets Vidalia&apos;s language.</source>
-        <translation type="unfinished"></translation>
+        <translation>Choisir le langage de Vidalia.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="182"/>
         <source>Vidalia Usage Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Information sur l&apos;utilisation de Vidalia</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="243"/>
         <source>Invalid log level specified: </source>
-        <translation type="unfinished"></translation>
+        <translation>Niveau du fichier d&apos;historique spécifié invalide :</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="249"/>
         <source>Unable to open log file &apos;%1&apos;: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Impossible d&apos;ouvrir le fichier d&apos;historique &apos;%1&apos;: %2</translation>
     </message>
 </context>
 </TS>
