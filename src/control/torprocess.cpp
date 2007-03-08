@@ -26,6 +26,7 @@
  */
 
 #include <QString>
+#include <vidalia.h>
 
 /* Needed for _PROCESS_INFORMATION so that pid() works on Win32 */
 #if defined (Q_OS_WIN32)
@@ -57,10 +58,12 @@ TorProcess::start(QString app, QString args)
    * quoted before being passed to it. */
   app = "\"" + app + "\"";
 #endif
-
+  app = app + " " + args;
+  
   /* Attempt to start Tor with the given command-line arguments */
   setEnvironment(QProcess::systemEnvironment());
-  QProcess::start(app + " " + args, QIODevice::ReadOnly | QIODevice::Text);
+  vNotice("Starting Tor using '%1'").arg(app);
+  QProcess::start(app, QIODevice::ReadOnly | QIODevice::Text);
 }
 
 /** Stops the Tor process */
@@ -73,6 +76,7 @@ TorProcess::stop(QString *errmsg)
     return true;
   }
 
+  vNotice("Stopping the Tor process.");
   /* Tell the process to stop */
 #if defined(Q_OS_WIN32)
   /* Tor on Windows doesn't understand a WM_CLOSE message (which is what 
@@ -83,6 +87,7 @@ TorProcess::stop(QString *errmsg)
 
   /* Wait for it to complete */
   if (!waitForFinished(-1)) {
+    vWarn("Tor failed to stop: %1").arg(errorString());
     if (errmsg) {
       *errmsg = 
         tr("Process %1 failed to stop. [%2]").arg(pid()).arg(errorString());
@@ -151,8 +156,11 @@ void
 TorProcess::onError(QProcess::ProcessError error)
 {
   if (error == QProcess::FailedToStart) {
+    vWarn("The Tor process failed to start: %1").arg(errorString());
     /* Tor didn't start, so let everyone know why. */
     emit startFailed(errorString());
+  } else {
+    vWarn("Tor process error: %1").arg(errorString());
   }
 }
 

@@ -78,14 +78,18 @@ ControlConnection::connect()
   for (int i = 0; i < MAX_CONNECT_ATTEMPTS; i++) {
     /* Check if we're supposed to cancel our attempt to connect */
     if (status() != Connecting) {
+      vNotice("Cancelling attempt to connect to Tor's control port.");
       return false;
     }
     
     /* Try to connect */
     _connMutex.lock();
+    vDebug("Control connection attempt %1 of %2").arg(i+1)
+                                                  .arg(MAX_CONNECT_ATTEMPTS);
     result = _sock->connect(_addr, _port, &errmsg); 
     _connMutex.unlock();
     if (result) {
+      vInfo("Connected to Tor's control port.");
       setStatus(Connected);
       emit connected();
       return true;
@@ -93,6 +97,9 @@ ControlConnection::connect()
     QThread::usleep(CONNECT_RETRY_DELAY);
   }
   setStatus(Disconnected);
+  vWarn("Failed to connect to Tor's control port after %1 attempts: %2")
+                                                      .arg(MAX_CONNECT_ATTEMPTS)
+                                                      .arg(errmsg);
   emit connectFailed(errmsg);
   return false;
 }
@@ -263,8 +270,10 @@ ControlConnection::run()
   
   /* Attempt to connect to Tor */
   if (connect()) {
+    vDebug("Starting control connection event loop.");
     /* Kick off the event loop */
     exec();
+    vDebug("Exited control connection event loop.");
   }
   
   /* Update the connection status */

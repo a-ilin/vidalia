@@ -261,7 +261,9 @@ NetViewer::loadDescriptors(QStringList ids)
 {
   /* Get descriptors for all the given IDs */
   QList<RouterDescriptor> rds = _torControl->getDescriptorListById(ids);
-   
+  
+  vInfo("Loading %1 server descriptors for the network map.")
+                                             .arg(rds.size());
   foreach (RouterDescriptor rd, rds) {
     /* Load the router descriptor and add it to the router list. */
     if (!rd.isEmpty()) {
@@ -356,6 +358,8 @@ NetViewer::resolve()
      * request is for more than a quarter of the servers in the list. */
     if (isVisible() || 
         (_resolveQueue.size() >= ui.treeRouterList->topLevelItemCount()/4)) {
+      vInfo("Sending GeoIP request for %1 IP addresses.")
+                               .arg(_resolveQueue.size());
       /* Flush the resolve queue and stop the timers */
       _geoip.resolve(_resolveQueue);
       _resolveQueue.clear();
@@ -374,7 +378,7 @@ NetViewer::resolved(int id, QList<GeoIp> geoips)
   Q_UNUSED(id);
   QString ip;
   RouterListItem *router;
-  
+ 
   foreach (GeoIp geoip, geoips) {
     /* Find all routers that are at this IP address */
     ip = geoip.ip().toString();

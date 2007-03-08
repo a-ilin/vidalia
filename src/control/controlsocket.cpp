@@ -27,6 +27,7 @@
 
 #include <QHostAddress>
 #include <util/string.h>
+#include <vidalia.h>
 
 #include "controlsocket.h"
 
@@ -55,8 +56,11 @@ ControlSocket::connect(QHostAddress addr, quint16 port, QString *errmsg)
   ProtocolVersion version;
 
   /* Connect the control socket. */
+  vNotice("Connecting to Tor's control port on %1:%2").arg(addr.toString())
+                                                      .arg(port);
   connectToHost(addr, port);
   if (!waitForConnected(CONN_TIMEOUT)) {
+    vWarn("Failed to connect to Tor's control port: %1").arg(errorString());
     return err(errmsg, tr("Error connecting to %1:%2 [%3]")
                                             .arg(addr.toString())
                                             .arg(port)
@@ -69,6 +73,7 @@ ControlSocket::connect(QHostAddress addr, quint16 port, QString *errmsg)
   blockSignals(false);
   if (version != Version1) {
     disconnect();
+    vWarn("Unsupported Tor protocol version '%1'").arg(version);
     if (version == VersionUnknown) {
       return err(errmsg, tr("Vidalia was unable to determine Tor's control "
                             "protocol version. Verify that your control port number "
@@ -91,6 +96,7 @@ ControlSocket::disconnect(QString *errmsg)
   disconnectFromHost();
   if (isConnected()) {
     if (!waitForDisconnected(CONN_TIMEOUT)) {
+      vWarn("Failed to disconnect from Tor: %1").arg(errorString());
       return err(errmsg, tr("Error disconnecting socket. [%1]")
                                             .arg(errorString()));
     }
@@ -118,6 +124,8 @@ ControlSocket::protocolVersion()
   }
   while (bytesAvailable() < 4) {
     if (!waitForReadyRead(-1)) {
+      vWarn("Reading failed while determining control protocol version: %1")
+                                                         .arg(errorString());
       return VersionUnknown;
     }
   }

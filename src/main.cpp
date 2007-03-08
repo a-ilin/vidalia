@@ -113,7 +113,7 @@ main(int argc, char *argv[])
 
   /* Vidalia exited, so cleanup our pidfile and return */
   QFile::remove(pidfile);
-  vNotice("Exiting cleanly (return code %1).").arg(ret);
+  vNotice("Vidalia is exiting cleanly (return code %1).").arg(ret);
   return ret;
 }
 
