@@ -400,7 +400,7 @@ Function CustomFinishFn
     IntCmp $bInstallPrivoxy 1 run_privoxy done done
     run_privoxy:
         SetOutPath "$INSTDIR\Privoxy"
-        Exec '"$INSTDIR\Privoxy\${PRIVOXY_EXEC}"'
+        ExecShell "" '"$INSTDIR\Privoxy\${PRIVOXY_EXEC}"' "" SW_SHOWMINIMIZED
     done:
 FunctionEnd
 
