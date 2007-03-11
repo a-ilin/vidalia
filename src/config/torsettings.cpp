@@ -184,7 +184,7 @@ TorSettings::getControlAddress()
 void
 TorSettings::setControlAddress(QHostAddress addr)
 {
-  setValue(SETTING_CONTROL_PORT, addr.toString());
+  setValue(SETTING_CONTROL_ADDR, addr.toString());
 }
 
 /** Get the control port used to connect to Tor */
