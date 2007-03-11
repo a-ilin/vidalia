@@ -59,112 +59,112 @@
 <context>
     <name>AdvancedPage</name>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="301"/>
+        <location filename="../gui/config/advancedpage.ui" line="502"/>
         <source>Control Port</source>
         <translation>Puerto de Control</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="341"/>
+        <location filename="../gui/config/advancedpage.ui" line="576"/>
         <source>9051</source>
         <translation>9051</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="390"/>
+        <location filename="../gui/config/advancedpage.ui" line="625"/>
         <source>Start Tor with the specified configuration file (torrc)</source>
         <translation>Iniciar Tor con el archivo de configuración especificado (torrc)</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="409"/>
+        <location filename="../gui/config/advancedpage.ui" line="644"/>
         <source>Select path to Tor configuration file</source>
         <translation>Seleccione el ruta del archivo de configuración de Tor</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="412"/>
+        <location filename="../gui/config/advancedpage.ui" line="647"/>
         <source>Browse</source>
         <translation>Navegar</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="431"/>
+        <location filename="../gui/config/advancedpage.ui" line="666"/>
         <source>Permissions</source>
         <translation>Permisos</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="454"/>
+        <location filename="../gui/config/advancedpage.ui" line="689"/>
         <source>Run as User:</source>
         <translation>Ejecutar como Usuario:</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="467"/>
+        <location filename="../gui/config/advancedpage.ui" line="702"/>
         <source>Vidalia will run with this User&apos;s permissions</source>
         <translation>Vidalia se ejecutara con los permisos de este Usuario</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="487"/>
+        <location filename="../gui/config/advancedpage.ui" line="722"/>
         <source>Run as Group:</source>
         <translation>Ejecutar como Grupo:</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="494"/>
+        <location filename="../gui/config/advancedpage.ui" line="729"/>
         <source>Vidalia will run with this Group&apos;s permissions</source>
         <translation>Vidalia se ejecutara con los permisos de este Grupo</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="107"/>
+        <location filename="../gui/config/advancedpage.cpp" line="119"/>
         <source>Select Tor Configuration File</source>
         <translation>Seleccione el Archivo de Configuración de Tor</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="120"/>
+        <location filename="../gui/config/advancedpage.cpp" line="132"/>
         <source>File Not Found</source>
         <translation>Archivo No Encontrado</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="122"/>
+        <location filename="../gui/config/advancedpage.cpp" line="134"/>
         <source>%1 does not exist. Would you like to create it?</source>
         <translation>%1 no existe. Desea crearlo?</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="133"/>
+        <location filename="../gui/config/advancedpage.cpp" line="145"/>
         <source>Failed to Create File</source>
         <translation>Error al Crear Archivo</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="134"/>
+        <location filename="../gui/config/advancedpage.cpp" line="146"/>
         <source>Unable to create %1 [%2]</source>
         <translation>No se pudo crear %1 [%2]</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="515"/>
+        <location filename="../gui/config/advancedpage.ui" line="753"/>
         <source>Service</source>
         <translation>Servicio</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="530"/>
+        <location filename="../gui/config/advancedpage.ui" line="768"/>
         <source>Enable this if you wish to run Tor as a Windows service</source>
         <translation>Habilitar esto si usted desea que Tor se ejecute como un servicio de Windows.</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="533"/>
+        <location filename="../gui/config/advancedpage.ui" line="771"/>
         <source>Run Tor in the background as a Windows service</source>
         <translation>Ejecutar Tor como un servicio de Windows</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="157"/>
+        <location filename="../gui/config/advancedpage.cpp" line="169"/>
         <source>Unable to remove Tor Service</source>
         <translation>No se pudo remover el Servicio Tor</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="168"/>
+        <location filename="../gui/config/advancedpage.cpp" line="180"/>
         <source>Unable to install Tor Service</source>
         <translation>No se pudo instalar el Servicio Tor</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="169"/>
+        <location filename="../gui/config/advancedpage.cpp" line="181"/>
         <source>Vidalia was unable to install the Tor service.</source>
         <translation>Vidalia no pudo instalar el servicio Tor.</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="159"/>
+        <location filename="../gui/config/advancedpage.cpp" line="171"/>
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
@@ -173,13 +173,28 @@ You may need to remove it manually.</source>
 Necesitara removerlo manualmente.</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="369"/>
+        <location filename="../gui/config/advancedpage.ui" line="604"/>
         <source>Tor Configuration File</source>
         <translation>Archivo de Configuración de Tor</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="338"/>
+        <location filename="../gui/config/advancedpage.ui" line="573"/>
         <source>Port that Vidalia uses to communicate with Tor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.cpp" line="80"/>
+        <source>&apos;%1&apos; is not a valid IP address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="542"/>
+        <source>IP address on which Tor is listening for controller connections.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="549"/>
+        <source>:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -404,12 +419,12 @@ Necesitara removerlo manualmente.</translation>
 <context>
     <name>ControlConnection</name>
     <message>
-        <location filename="../control/controlconnection.cpp" line="285"/>
+        <location filename="../control/controlconnection.cpp" line="294"/>
         <source>Control socket is not connected.</source>
         <translation>Conector de Control no está conectado.</translation>
     </message>
     <message>
-        <location filename="../control/controlconnection.cpp" line="232"/>
+        <location filename="../control/controlconnection.cpp" line="239"/>
         <source>Control socket is not connected</source>
         <translation>Conector de Control no está conectado.</translation>
     </message>
@@ -417,42 +432,42 @@ Necesitara removerlo manualmente.</translation>
 <context>
     <name>ControlSocket</name>
     <message>
-        <location filename="../control/controlsocket.cpp" line="61"/>
+        <location filename="../control/controlsocket.cpp" line="65"/>
         <source>Error connecting to %1:%2 [%3]</source>
         <translation>Error connectando a %1:%2 [%3]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="95"/>
+        <location filename="../control/controlsocket.cpp" line="101"/>
         <source>Error disconnecting socket. [%1]</source>
         <translation>Error desconectando conexión. [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="151"/>
+        <location filename="../control/controlsocket.cpp" line="159"/>
         <source>Error sending control command. [%1]</source>
         <translation>Error enviando comando de control. [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="188"/>
+        <location filename="../control/controlsocket.cpp" line="196"/>
         <source>Socket disconnected while attempting to read a line of data.</source>
         <translation>Conexión desconectada mientras se trataba de leer una línea de información.</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="226"/>
+        <location filename="../control/controlsocket.cpp" line="234"/>
         <source>Invalid control reply. [%1]</source>
         <translation>Respuesta de control invalida. [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="142"/>
+        <location filename="../control/controlsocket.cpp" line="150"/>
         <source>Control socket is not connected.</source>
         <translation>Conexión de control no esta conectada.</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="76"/>
+        <location filename="../control/controlsocket.cpp" line="81"/>
         <source>Vidalia was unable to determine Tor&apos;s control protocol version. Verify that your control port number is set correctly and you are running a recent version of Tor.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="80"/>
+        <location filename="../control/controlsocket.cpp" line="85"/>
         <source>Vidalia only supports Version 1 of Tor&apos;s control protocol (version %1 detected).
 Upgrade to a newer version of Tor.</source>
         <translation type="unfinished"></translation>
@@ -1872,7 +1887,7 @@ marca PGP o GPG.</translation>
 <context>
     <name>TorProcess</name>
     <message>
-        <location filename="../control/torprocess.cpp" line="88"/>
+        <location filename="../control/torprocess.cpp" line="93"/>
         <source>Process %1 failed to stop. [%2]</source>
         <translation>Proceso %1 falló en detener. [%2]</translation>
     </message>
@@ -1880,14 +1895,14 @@ marca PGP o GPG.</translation>
 <context>
     <name>TorService</name>
     <message>
-        <location filename="../control/torservice.cpp" line="168"/>
-        <source>Unable to start Tor service.</source>
-        <translation>No se puede iniciar el servicio Tor.</translation>
-    </message>
-    <message>
-        <location filename="../control/torservice.cpp" line="152"/>
+        <location filename="../control/torservice.cpp" line="155"/>
         <source>The Tor service is not installed.</source>
         <translation>El servicio Tor no esta instalado.</translation>
+    </message>
+    <message>
+        <location filename="../control/torservice.cpp" line="173"/>
+        <source>Unable to start the Tor service.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

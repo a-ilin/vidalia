@@ -59,126 +59,141 @@
 <context>
     <name>AdvancedPage</name>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="301"/>
+        <location filename="../gui/config/advancedpage.ui" line="502"/>
         <source>Control Port</source>
         <translation>控制端口</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="341"/>
+        <location filename="../gui/config/advancedpage.ui" line="576"/>
         <source>9051</source>
         <translation>9051</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="390"/>
+        <location filename="../gui/config/advancedpage.ui" line="625"/>
         <source>Start Tor with the specified configuration file (torrc)</source>
         <translation>使用指定的配置文件启动 Tor (torrc)</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="409"/>
+        <location filename="../gui/config/advancedpage.ui" line="644"/>
         <source>Select path to Tor configuration file</source>
         <translation>请选择 Tor 配置文件的路径</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="412"/>
+        <location filename="../gui/config/advancedpage.ui" line="647"/>
         <source>Browse</source>
         <translation>浏览</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="431"/>
+        <location filename="../gui/config/advancedpage.ui" line="666"/>
         <source>Permissions</source>
         <translation>权限</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="454"/>
+        <location filename="../gui/config/advancedpage.ui" line="689"/>
         <source>Run as User:</source>
         <translation>作为以下用户运行:</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="467"/>
+        <location filename="../gui/config/advancedpage.ui" line="702"/>
         <source>Vidalia will run with this User&apos;s permissions</source>
         <translation>Vidalia 将会使用该用户的权限运行</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="487"/>
+        <location filename="../gui/config/advancedpage.ui" line="722"/>
         <source>Run as Group:</source>
         <translation>作为以下用户组运行:</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="494"/>
+        <location filename="../gui/config/advancedpage.ui" line="729"/>
         <source>Vidalia will run with this Group&apos;s permissions</source>
         <translation>Vidalia 将会使用该用户组的权限运行</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="107"/>
+        <location filename="../gui/config/advancedpage.cpp" line="119"/>
         <source>Select Tor Configuration File</source>
         <translation>请选择 Tor 配置文件</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="120"/>
+        <location filename="../gui/config/advancedpage.cpp" line="132"/>
         <source>File Not Found</source>
         <translation>未找到该文件</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="122"/>
+        <location filename="../gui/config/advancedpage.cpp" line="134"/>
         <source>%1 does not exist. Would you like to create it?</source>
         <translation>%1 不存在.请问是否要创建该文件?</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="133"/>
+        <location filename="../gui/config/advancedpage.cpp" line="145"/>
         <source>Failed to Create File</source>
         <translation>创建文件失败</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="134"/>
+        <location filename="../gui/config/advancedpage.cpp" line="146"/>
         <source>Unable to create %1 [%2]</source>
         <translation>无法创建 %1 [%2]</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="515"/>
+        <location filename="../gui/config/advancedpage.ui" line="753"/>
         <source>Service</source>
         <translation>服务</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="530"/>
+        <location filename="../gui/config/advancedpage.ui" line="768"/>
         <source>Enable this if you wish to run Tor as a Windows service</source>
         <translation>如让 Tor 作为 Windows 系统服务运行,请启用该项</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="533"/>
+        <location filename="../gui/config/advancedpage.ui" line="771"/>
         <source>Run Tor in the background as a Windows service</source>
         <translation>作为 Windows 后台系统服务运行 Tor (可在&quot;服务&quot;中进行设定)</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="157"/>
+        <location filename="../gui/config/advancedpage.cpp" line="169"/>
         <source>Unable to remove Tor Service</source>
         <translation>无法移除 Tor 服务</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="168"/>
+        <location filename="../gui/config/advancedpage.cpp" line="180"/>
         <source>Unable to install Tor Service</source>
         <translation>无法安装 Tor 服务</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="169"/>
+        <location filename="../gui/config/advancedpage.cpp" line="181"/>
         <source>Vidalia was unable to install the Tor service.</source>
         <translation>Vidalia 无法安装 Tor 为系统服务.</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="159"/>
+        <location filename="../gui/config/advancedpage.cpp" line="171"/>
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
         <translation>Vidalia 无法移除 Tor 服务.请手动移除(或禁用该服务).</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="369"/>
+        <location filename="../gui/config/advancedpage.ui" line="604"/>
         <source>Tor Configuration File</source>
         <translation>Tor 配置文件</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="338"/>
+        <location filename="../gui/config/advancedpage.ui" line="573"/>
         <source>Port that Vidalia uses to communicate with Tor.</source>
         <translation>请指定 Vidalia 用于和 Tor 进行通讯的端口.</translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.cpp" line="80"/>
+        <source>&apos;%1&apos; is not a valid IP address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="542"/>
+        <source>IP address on which Tor is listening for controller connections.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="549"/>
+        <source>:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -402,12 +417,12 @@ You may need to remove it manually.</source>
 <context>
     <name>ControlConnection</name>
     <message>
-        <location filename="../control/controlconnection.cpp" line="285"/>
+        <location filename="../control/controlconnection.cpp" line="294"/>
         <source>Control socket is not connected.</source>
         <translation>控制接口当前未连接.</translation>
     </message>
     <message>
-        <location filename="../control/controlconnection.cpp" line="232"/>
+        <location filename="../control/controlconnection.cpp" line="239"/>
         <source>Control socket is not connected</source>
         <translation>控制接口未连接</translation>
     </message>
@@ -415,42 +430,42 @@ You may need to remove it manually.</source>
 <context>
     <name>ControlSocket</name>
     <message>
-        <location filename="../control/controlsocket.cpp" line="61"/>
+        <location filename="../control/controlsocket.cpp" line="65"/>
         <source>Error connecting to %1:%2 [%3]</source>
         <translation>连接到 %1:%2 发生错误. [%3]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="95"/>
+        <location filename="../control/controlsocket.cpp" line="101"/>
         <source>Error disconnecting socket. [%1]</source>
         <translation>断开接口连接时发生错误. [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="151"/>
+        <location filename="../control/controlsocket.cpp" line="159"/>
         <source>Error sending control command. [%1]</source>
         <translation>发送控制命令时发生错误. [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="188"/>
+        <location filename="../control/controlsocket.cpp" line="196"/>
         <source>Socket disconnected while attempting to read a line of data.</source>
         <translation>当尝试读取数据时意外断开接口连接.</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="226"/>
+        <location filename="../control/controlsocket.cpp" line="234"/>
         <source>Invalid control reply. [%1]</source>
         <translation>无效控制回应. [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="142"/>
+        <location filename="../control/controlsocket.cpp" line="150"/>
         <source>Control socket is not connected.</source>
         <translation>控制接口当前未连接.</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="76"/>
+        <location filename="../control/controlsocket.cpp" line="81"/>
         <source>Vidalia was unable to determine Tor&apos;s control protocol version. Verify that your control port number is set correctly and you are running a recent version of Tor.</source>
         <translation>Vidalia 无法判定 Tor 的控制协议版本.请检查控制端口设定以及 Tor 版本.</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="80"/>
+        <location filename="../control/controlsocket.cpp" line="85"/>
         <source>Vidalia only supports Version 1 of Tor&apos;s control protocol (version %1 detected).
 Upgrade to a newer version of Tor.</source>
         <translation>Vidalia 仅支持版本 1 的 Tor 控制协议 (检测到版本: %1).请升级到最新版本的 Tor 程序.</translation>
@@ -1854,7 +1869,7 @@ fingerprint.</source>
 <context>
     <name>TorProcess</name>
     <message>
-        <location filename="../control/torprocess.cpp" line="88"/>
+        <location filename="../control/torprocess.cpp" line="93"/>
         <source>Process %1 failed to stop. [%2]</source>
         <translation>进程 %1 停止失败. [%2]</translation>
     </message>
@@ -1862,14 +1877,14 @@ fingerprint.</source>
 <context>
     <name>TorService</name>
     <message>
-        <location filename="../control/torservice.cpp" line="168"/>
-        <source>Unable to start Tor service.</source>
-        <translation>无法启动 Tor 服务.</translation>
-    </message>
-    <message>
-        <location filename="../control/torservice.cpp" line="152"/>
+        <location filename="../control/torservice.cpp" line="155"/>
         <source>The Tor service is not installed.</source>
         <translation>未安装 Tor 服务.</translation>
+    </message>
+    <message>
+        <location filename="../control/torservice.cpp" line="173"/>
+        <source>Unable to start the Tor service.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

@@ -59,126 +59,141 @@
 <context>
     <name>AdvancedPage</name>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="301"/>
+        <location filename="../gui/config/advancedpage.ui" line="502"/>
         <source>Control Port</source>
         <translation>درگاه کنترل</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="341"/>
+        <location filename="../gui/config/advancedpage.ui" line="576"/>
         <source>9051</source>
         <translation>۹۰۵۱</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="390"/>
+        <location filename="../gui/config/advancedpage.ui" line="625"/>
         <source>Start Tor with the specified configuration file (torrc)</source>
         <translation>راه‌اندازی تر با قایل پیکربندی مشخص شده</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="409"/>
+        <location filename="../gui/config/advancedpage.ui" line="644"/>
         <source>Select path to Tor configuration file</source>
         <translation>مسیر فایل پیکربندی تر را انتخاب کن </translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="412"/>
+        <location filename="../gui/config/advancedpage.ui" line="647"/>
         <source>Browse</source>
         <translation>انتخاب فایل</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="431"/>
+        <location filename="../gui/config/advancedpage.ui" line="666"/>
         <source>Permissions</source>
         <translation>سطوح دسترسی</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="454"/>
+        <location filename="../gui/config/advancedpage.ui" line="689"/>
         <source>Run as User:</source>
         <translation>کاربر اجرا کننده</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="467"/>
+        <location filename="../gui/config/advancedpage.ui" line="702"/>
         <source>Vidalia will run with this User&apos;s permissions</source>
         <translation>ویدالیا با سطوح دسترسی این کاربر اجرا خواهد شد</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="487"/>
+        <location filename="../gui/config/advancedpage.ui" line="722"/>
         <source>Run as Group:</source>
         <translation>گروه اجراکننده:</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="494"/>
+        <location filename="../gui/config/advancedpage.ui" line="729"/>
         <source>Vidalia will run with this Group&apos;s permissions</source>
         <translation>ویدالیا با سطوح دسترسی این گروه اجرا خواهد شد</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="107"/>
+        <location filename="../gui/config/advancedpage.cpp" line="119"/>
         <source>Select Tor Configuration File</source>
         <translation>انتخاب فایل پیکربندی </translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="120"/>
+        <location filename="../gui/config/advancedpage.cpp" line="132"/>
         <source>File Not Found</source>
         <translation>فایل مورد نظر پیدا نشد</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="122"/>
+        <location filename="../gui/config/advancedpage.cpp" line="134"/>
         <source>%1 does not exist. Would you like to create it?</source>
         <translation> فایل %1 وجود ندارد. آیا می‌خواهید آن را بسازید؟</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="133"/>
+        <location filename="../gui/config/advancedpage.cpp" line="145"/>
         <source>Failed to Create File</source>
         <translation>ایجاد فایل ناموفق بود</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="134"/>
+        <location filename="../gui/config/advancedpage.cpp" line="146"/>
         <source>Unable to create %1 [%2]</source>
         <translation> [%2] نمی‌توانم %1 را ایجاد کنم   </translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="515"/>
+        <location filename="../gui/config/advancedpage.ui" line="753"/>
         <source>Service</source>
         <translation>سرویس</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="530"/>
+        <location filename="../gui/config/advancedpage.ui" line="768"/>
         <source>Enable this if you wish to run Tor as a Windows service</source>
         <translation>اگر می‌خواهی تر را به عنوان یکی از سرویس‌های ویندوز اجرا کنی، این گزینه را فعال کن.</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="533"/>
+        <location filename="../gui/config/advancedpage.ui" line="771"/>
         <source>Run Tor in the background as a Windows service</source>
         <translation>تر را در پس‌زمینه اجرا کن</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="157"/>
+        <location filename="../gui/config/advancedpage.cpp" line="169"/>
         <source>Unable to remove Tor Service</source>
         <translation>حذف سرویس ممکن نبود</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="168"/>
+        <location filename="../gui/config/advancedpage.cpp" line="180"/>
         <source>Unable to install Tor Service</source>
         <translation>نصب سرویس ممکن نبود</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="169"/>
+        <location filename="../gui/config/advancedpage.cpp" line="181"/>
         <source>Vidalia was unable to install the Tor service.</source>
         <translation>ویدالیا نتوانست سرویس تُر را نصب کند</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="159"/>
+        <location filename="../gui/config/advancedpage.cpp" line="171"/>
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
         <translation>ویدالیا نتوانست سرویس تُر را حذف کند. می‌توانی آن را خودت حذف کنی.</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="369"/>
+        <location filename="../gui/config/advancedpage.ui" line="604"/>
         <source>Tor Configuration File</source>
         <translation>فایل پیکربندی تُر</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="338"/>
+        <location filename="../gui/config/advancedpage.ui" line="573"/>
         <source>Port that Vidalia uses to communicate with Tor.</source>
         <translation>درگاهی که ویدالیا برای ارتباط با تُر استفاده می‌کند</translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.cpp" line="80"/>
+        <source>&apos;%1&apos; is not a valid IP address.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="542"/>
+        <source>IP address on which Tor is listening for controller connections.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="549"/>
+        <source>:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -402,12 +417,12 @@ You may need to remove it manually.</source>
 <context>
     <name>ControlConnection</name>
     <message>
-        <location filename="../control/controlconnection.cpp" line="285"/>
+        <location filename="../control/controlconnection.cpp" line="294"/>
         <source>Control socket is not connected.</source>
         <translation>سوکت کنترل وصل نشده</translation>
     </message>
     <message>
-        <location filename="../control/controlconnection.cpp" line="232"/>
+        <location filename="../control/controlconnection.cpp" line="239"/>
         <source>Control socket is not connected</source>
         <translation>سوکت کنترل وصل نشده</translation>
     </message>
@@ -415,42 +430,42 @@ You may need to remove it manually.</source>
 <context>
     <name>ControlSocket</name>
     <message>
-        <location filename="../control/controlsocket.cpp" line="61"/>
+        <location filename="../control/controlsocket.cpp" line="65"/>
         <source>Error connecting to %1:%2 [%3]</source>
         <translation>%1:%2 [%3] خطا در اتصال به</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="95"/>
+        <location filename="../control/controlsocket.cpp" line="101"/>
         <source>Error disconnecting socket. [%1]</source>
         <translation>خطا در زمان قطع‌کردن سوکت</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="151"/>
+        <location filename="../control/controlsocket.cpp" line="159"/>
         <source>Error sending control command. [%1]</source>
         <translation>خطا در ارسال دستورات کنترل</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="188"/>
+        <location filename="../control/controlsocket.cpp" line="196"/>
         <source>Socket disconnected while attempting to read a line of data.</source>
         <translation>در حین تلاش برای خواندن یک خط از داده‌ها سوکت قطع شد</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="226"/>
+        <location filename="../control/controlsocket.cpp" line="234"/>
         <source>Invalid control reply. [%1]</source>
         <translation>پاسخ کنترلی نامربوط [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="142"/>
+        <location filename="../control/controlsocket.cpp" line="150"/>
         <source>Control socket is not connected.</source>
         <translation>سوکت کنترل وصل نشده</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="76"/>
+        <location filename="../control/controlsocket.cpp" line="81"/>
         <source>Vidalia was unable to determine Tor&apos;s control protocol version. Verify that your control port number is set correctly and you are running a recent version of Tor.</source>
         <translation>ویدالیا نتوانست نسخه‌ی کنترلی تُر را تشخیص دهد. شماره‌ی درگاه کنترلی را بررسی کنید. حتما از نسخه‌های اخیر تُر استفاده کنید.</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="80"/>
+        <location filename="../control/controlsocket.cpp" line="85"/>
         <source>Vidalia only supports Version 1 of Tor&apos;s control protocol (version %1 detected).
 Upgrade to a newer version of Tor.</source>
         <translation>ویدالیا تنها نسخه‌ی ۱ از پروتکل کنترل تُر را پشتیبانی می‌کند (نسخه %1 تشخیص داده شد) نسخه‌ی تُر خود را ارتقا دهید.</translation>
@@ -1858,7 +1873,7 @@ fingerprint.</source>
 <context>
     <name>TorProcess</name>
     <message>
-        <location filename="../control/torprocess.cpp" line="88"/>
+        <location filename="../control/torprocess.cpp" line="93"/>
         <source>Process %1 failed to stop. [%2]</source>
         <translation>فرایند شماره %1 نتوانست متوقف شود. [%2]</translation>
     </message>
@@ -1866,14 +1881,14 @@ fingerprint.</source>
 <context>
     <name>TorService</name>
     <message>
-        <location filename="../control/torservice.cpp" line="168"/>
-        <source>Unable to start Tor service.</source>
-        <translation>نتوانستم سرویس تُر را راه‌اندازی کنم.</translation>
-    </message>
-    <message>
-        <location filename="../control/torservice.cpp" line="152"/>
+        <location filename="../control/torservice.cpp" line="155"/>
         <source>The Tor service is not installed.</source>
         <translation>سرویس تُر نصب نشده است</translation>
+    </message>
+    <message>
+        <location filename="../control/torservice.cpp" line="173"/>
+        <source>Unable to start the Tor service.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
