@@ -27,9 +27,12 @@
 
 #include <QFile>
 #include <QFileInfo>
+#include <QHostAddress>
 #include <gui/common/vmessagebox.h>
 #include <util/file.h>
 #include <vidalia.h>
+
+#include "ipvalidator.h"
 #include "advancedpage.h"
 
 #if defined(Q_WS_WIN)
@@ -46,7 +49,11 @@ AdvancedPage::AdvancedPage(QWidget *parent)
 
   /* Create TorSettings object */
   _settings = new TorSettings();
-
+  
+  /* Set validators for the control port and IP address fields */
+  ui.lineControlAddress->setValidator(new IPValidator(this));
+  ui.lineControlPort->setValidator(new QIntValidator(1, 65535, this));
+  
   /* Bind event to actions */
   connect(ui.btnBrowseTorConfig, SIGNAL(clicked()), this, SLOT(browseTorConfig()));
 
@@ -67,7 +74,13 @@ AdvancedPage::~AdvancedPage()
 bool
 AdvancedPage::save(QString &errmsg)
 {
-  Q_UNUSED(errmsg);
+  QHostAddress controlAddress(ui.lineControlAddress->text());
+  if (controlAddress.isNull()) {
+    errmsg = tr("'%1' is not a valid IP address.")
+               .arg(ui.lineControlAddress->text());
+    return false; 
+  }
+  _settings->setControlAddress(controlAddress);
   _settings->setControlPort(ui.lineControlPort->text().toUShort());
   _settings->setTorrc(ui.lineTorConfig->text());
   _settings->setUser(ui.lineUser->text());
@@ -85,6 +98,7 @@ AdvancedPage::save(QString &errmsg)
 void
 AdvancedPage::load()
 {
+  ui.lineControlAddress->setText(_settings->getControlAddress().toString());
   ui.lineControlPort->setText(QString::number(_settings->getControlPort()));
   ui.lineTorConfig->setText(_settings->getTorrc());
   ui.lineUser->setText(_settings->getUser());
@@ -95,8 +109,6 @@ AdvancedPage::load()
   ui.chkUseService->setChecked(s.isInstalled());
 #endif
 }
-
-
 
 /** Open a QFileDialog to browse for Tor config file. */
 void
