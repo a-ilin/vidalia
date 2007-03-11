@@ -185,17 +185,17 @@ Sie müssen ihn manuell entfernen.</translation>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="80"/>
         <source>&apos;%1&apos; is not a valid IP address.</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%1&apos; ist keine gültige IP-Adresse.</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="542"/>
         <source>IP address on which Tor is listening for controller connections.</source>
-        <translation type="unfinished"></translation>
+        <translation>IP-Adresse auf der Tor nach Kontroller-Verbindungen wartet.</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="549"/>
         <source>:</source>
-        <translation type="unfinished"></translation>
+        <translation>:</translation>
     </message>
 </context>
 <context>
@@ -1912,7 +1912,7 @@ geben Sie Ihre Uploadgeschwindigkeit bitte hier an.</translation>
     <message>
         <location filename="../control/torservice.cpp" line="173"/>
         <source>Unable to start the Tor service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Der Tor-Dienst konnte nicht gestartet werden.</translation>
     </message>
 </context>
 <context>
