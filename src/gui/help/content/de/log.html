@@ -24,91 +24,112 @@
 <html>
 <body>
 
-<h1>Message Log</h1>
+<h1>Nachrichtenprotokoll</h1>
 <hr />
 
-The message log lets you see status information about a running Tor process.
+Das Nachrichtenprotokoll zeigt Statusinformationen zu laufenden Tor-Prozessen an.
 
 <a name="basic"/>
-Each message has a <i>severity</i> associated with it, ranging from
-<b>Error</b> (most serious) to <b>Debug</b> (most verbose). See the help
-section on <a href="#severities">message severities</a> for more information.
+Jede Nachricht wird mit einer <i>Gewichtung</i> dargestellt, beginnend bei
+<b>Fehler</b> (schwerwiegende Fehler) bis <b>Debug</b> (am ausf&uuml;hrlichsten).
+Im Abschnitt <a href="#severities">Gewichtung von Nachrichten</a> finden Sie
+weitere Informationen.
 
 
 <a name="severities"/>
-<h3>Message Severities</h3>
+<h3>Gewichtung von Nachrichten</h3>
 <p>
-A message's severity tells you how important the message is. A higher severity
-message usually indicates that something has gone wrong with Tor. Lower
-severity messages appear frequently during normal Tor operations and usually
-do not need to be logged.
+Die Gewichtung eine Nachricht gibt Auskunft dar&uuml;ber, wie wichtig diese ist.
+Eine h&ouml;her gewichtete Nachricht deutet normalerweise an, dass etwas mit Tor
+schief gegangen ist. Niedrig gewichtete Nachrichten erscheinen &ouml;fter
+w&auml;hrend des Tor-Betriebs und m&uuml;ssen normalerweise nicht aufgezeichnet
+werden.
 </p>
 
 <p>
-The possible message severities, from most severe to least severe, are:
+Die m&ouml;glichen Gewichtungen von Nachrichten, von der schwerwiegendsten zu
+der am wenigsten schwerwiegendsten, sind:
 </p>
 <ul>
   <li>
-    <b>Error</b>: Messages that appear when something has gone very wrong and
-    Tor cannot proceed. These messages will be highlighted in <i>red</i> in the
-    message log.
+    <b>Fehler</b>: Nachrichten, die erscheinen, wenn ein schwerwiegender Fehler
+    aufgetreten ist und Tor nicht weiter ausgef&uuml;hrt werden kann. Diese
+    Nachrichten werden im Nachrichtenprotokoll <i>rot</i> hervor gehoben.
   </li>
   <li>
-    <b>Warning</b>: Message that only appear when something has gone wrong
-    with Tor, but are not fatal and Tor will continue running. These messages
-    will be highlighted in <i>yellow</i>.
+    <b>Warnung</b>: Nachrichten, die nur erscheinen, wenn weniger
+    schwerwiegende Fehler aufgetreten sind und Tor weiterhin ausgef&uuml;hrt
+    werden kann. Diese Nachrichten werden <i>gelb</i> hervor gehoben.
   </li>
   <li>
-    <b>Notice</b>: Messages that appear infrequently during normal Tor
-    operation and are not considered errors, but you still may care about.
+    <b>Notiz</b>: Nachrichten, die unregelm&auml;&szlig;ig w&auml;hrend des
+    Tor-Betriebs auftauchen, aber nicht als Fehler eingestuft sind. Diese
+    k&ouml;nnten f&uuml;r Sie interessante Informationen enthalten.
   </li>
   <li>
-    <b>Info</b>: Messages that appear frequently during normal Tor operation
-    and are not usually of interest to most users.
+    <b>Info</b>: Nachrichten, die regelm&auml;&szlig;ig w&auml;hrend des
+    Tor-Betriebs auftauchen, aber in der Regel f&uuml;r die meisten Nutzer
+    uninteressant sind.
   </li>
   <li>
-    <b>Debug</b>: Extremely verbose messages that are primarily of interest to
-    developers. You should generally not log debug messages unless you know
-    what you are doing.
+    <b>Debug</b>: Sehr ausf&uuml;hrliche Nachrichten, die haupts&auml;chlich
+    f&uuml;r Entwickler von Bedeutung sind. Es empfiehlt sich nur, diese
+    Nachrichten aufzuzeichnen, wenn Sie wissen, was Sie tun.
   </li>
 </ul>
 
 <p>
-Most users should only log <i>Error</i>, <i>Warning</i>, and <i>Notice</i>
-messages.
+F&uuml;r die meisten Nutzer ist es ausreichend, nur Nachrichten der Gewichtung
+<i>Fehler</i>, <i>Warnung</i> und <i>Notiz</i> aufzuzeichnen.
 </p>
 
 <p>
-To select which message severities you would like to see, do the following:
+Um auszuw&auml;hlen, welche Nachrichten-Gewichtung angezeigt werden soll,
+befolgen Sie folgende Schritte:
 <ol>
-  <li>Open the message log from the Vidalia tray menu.</li>
-  <li>Click on <i>Show Settings</i> at the bottom of the message log window.</li>
+  <li>&Ouml;ffnen Sie das Nachrichtenprotokoll aus dem Vidalia Traymen&uuml;.</li>
   <li>
-    Check message severities you would like to see from the Message Filter
-    group on the left and uncheck message severities you would like to hide.
+    Klicken Sie auf die Schaltfl&auml;che <i>Einstellungen</i> im Fenster des
+    Nachrichtenprotokolls.
   </li>
-  <li>Click <i>Save Settings</i> to apply your new message filter.</li>
+  <li>
+    W&auml;hlen Sie unter <i>Nachrichtenfilter</i> die Nachrichten aus, die
+    angezeigt werden sollen und deaktivieren Sie die f&uuml;r Sie
+    uninteressanten Nachrichten.
+  </li>
+  <li>
+    Klicken Sie auf <i>Speichere Einstellungen</i>, um den Vorgang
+    abzuschlie&szlig;en.
+  </li>
 </ol>
 </p>
 
 
 <a name="logfile"/>
-<h3>Logging to a File</h3>
+<h3>Das Nachrichtenprotokoll speichern</h3>
 <p>
-Vidalia can also write log messages to a file, as well as logging them in the
-message log window. To enable logging to a file, follow these steps:
+Vidalia kann die Nachrichten sowohl in Nachrichtenprotokollfenster anzeigen,
+als auch in einer Datei speichern. Um das Speichern in eine Datei zu aktivieren,
+befolgen Sie die folgenden Schritte:
 </p>
 
 <ol>
-  <li>Open the message log from the Vidalia tray menu.</li>
-  <li>Click on <i>Show Settings</i> at the bottom of the message log window.</li>
-  <li>Check the box labeled <i>Save Messages to File</i>.
+  <li>&Ouml;ffnen sie das Nachrichtenprotokoll aus dem Vidalia Traymen&uuml;.</li>
   <li>
-    If you would like to change the file to which messages will be written,
-    either type the path and filename into the text box, or click <i>Browse</i>
-    to navigate to a location for your log file.
+    Klicken Sie auf die Schaltfl&auml;che <i>Einstellungen</i> im Fenster des
+    Nachrichtenprotokolls.
   </li>
-  <li>Click <i>Save Settings</i> to save your log destination.</li>
+  <li>Aktivieren Sie unter <i>Nachrichten immer speichern</i> die Checkbox
+    <i>Alle neuen Nachrichten automatisch in einer Datei speichern</i>.
+  <li>
+    Falls Sie die Nachrichten in eine andere, als die angegebene Datei speichern
+    wollen, geben Sie entweder ein Verzeichnis und einen Dateinamen an, oder
+    klicken Sie auf <i>&Ouml;ffnen</i>, um eine Datei auszuw&auml;hlen.
+  </li>
+  <li>
+    Klicken sie auf <i>Speichere Einstellungen</i>, um den Vorgang
+    abzuschlie&szlig;en.
+  </li>
 </ol>
 
 </body>
