@@ -751,7 +751,7 @@ Aktualisieren Sie ihre Tor-Version.</translation>
     <message>
         <location filename="../control/logevent.cpp" line="70"/>
         <source>Notice</source>
-        <translation>Notiz</translation>
+        <translation>Hinweis</translation>
     </message>
     <message>
         <location filename="../control/logevent.cpp" line="71"/>
@@ -1366,7 +1366,7 @@ empfangen.</translation>
     <message>
         <location filename="../gui/network/netviewer.ui" line="297"/>
         <source>View Tor Network</source>
-        <translation>Zeige Tor-Netzwerk</translation>
+        <translation>Tor-Netzwerk betrachten</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="518"/>
@@ -1520,7 +1520,7 @@ empfangen.</translation>
     <message>
         <location filename="../gui/network/routerdescriptorview.cpp" line="127"/>
         <source>Last Updated:</source>
-        <translation>Letztes Update:</translation>
+        <translation>Zuletzt aktualisiert:</translation>
     </message>
     <message>
         <location filename="../gui/network/routerdescriptorview.cpp" line="110"/>
