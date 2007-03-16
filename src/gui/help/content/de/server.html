@@ -99,14 +99,16 @@ ausw&auml;hlen, k&ouml;nnen Sie die Bandbreitenbegrenzung selbst festlegen.
 </p>
 <h4>Benutzerdefinierte Begrenzung</h4>
 <p>
-The <i>maximum rate</i> is a pool of bytes used to fulfill requests during
-short periods of traffic higher than your specified <i>average rate</i>, but
-still maintains the average over a long period. A low average rate but a high
-maximum rate enforces a long-term average while still allowing more traffic
-during peak times if the average hasn't been reached lately. If your average
-rate is the same as your <i>maximum rate</i>, then Tor will never exceed the
-specified rate. Your <i>maximum rate</i> must always be greater than or equal
-to your <i>average rate</i>.
+Die <i>Maximale Rate</i> ist die Bandbreite die w&auml;hrend kurzer Perioden
+von hohem Datenverkehr zur Verf&uuml;gung steht und &uuml;ber Ihrer
+angegebenen <i>Durchschnittlichen Rate</i> liegt. Dabei wird der langfristige
+Durchschnitt nicht beeintr&auml;chtigt. Eine niedrige Durchschnittliche Rate,
+aber eine hohe Maximale Rate stellt gen&uuml;gend Bandbreite zu Spitzenzeiten zur
+Verf&uuml;gung, sofern der Durchschnitt nicht bereits erreicht wurde.
+Wenn Ihre Durchschnittliche Rate der <i>Maximalen Rate</i> entspricht, wird
+Tor niemals die angegebene Rate &uuml;berschreiten.Ihre <i>Maximale Rate</i>
+muss mindestens gleich gro&szlig; oder gr&ouml;&szlig;er als Ihre
+<i>Durchschnittliche Rate</i> sein.
 </p>
 <p>
 Die <i>Durchschnittliche Rate</i> gibt die maximale durchschnittliche
