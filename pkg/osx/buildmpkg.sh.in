@@ -156,6 +156,8 @@ pushd $TOR_DIR
 make install DESTDIR=$BUILD_DIR/tor_packageroot
 popd
 chmod 755 TorPostFlight
+cp $TOR_DIR/contrib/osx/Tor_Uninstaller.applescript $BUILD_DIR/tor_resources/
+cp $TOR_DIR/contrib/osx/uninstall_tor_bundle.sh  $BUILD_DIR/tor_resources/
 cp TorPostflight $BUILD_DIR/tor_resources/postflight
 
 # Tor's documentation
