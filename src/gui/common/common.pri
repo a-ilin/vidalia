@@ -22,8 +22,10 @@
 #################################################################
 
 HEADERS +=  $$PWD/vidaliawindow.h \
-            $$PWD/vmessagebox.h
+            $$PWD/vmessagebox.h \
+            $$PWD/vclicklabel.h
 
 SOURCES +=  $$PWD/vidaliawindow.cpp \
-            $$PWD/vmessagebox.cpp
+            $$PWD/vmessagebox.cpp \
+            $$PWD/vclicklabel.cpp
 
