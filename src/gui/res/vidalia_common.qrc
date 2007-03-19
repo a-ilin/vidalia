@@ -65,6 +65,13 @@
         <file>32x32/tor-stopping.png</file>
     </qresource>
     <qresource prefix="/images">
+        <file>48x48/applications-internet.png</file>
+        <file>48x48/network-server.png</file>
+        <file>48x48/system-users.png</file>
+        <file>48x48/tor-off.png</file>
+        <file>48x48/tor-on.png</file>
+    </qresource>
+    <qresource prefix="/images">
         <file>128x128/qt-logo.png</file>
         <file>128x128/tor-logo.png</file>
         <file>128x128/tor-on.png</file>
