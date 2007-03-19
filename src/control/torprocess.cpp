@@ -86,7 +86,7 @@ TorProcess::stop(QString *errmsg)
   terminate();
 
   /* Wait for it to complete */
-  if (!waitForFinished(-1)) {
+  if (!waitForFinished(5000)) {
     vWarn("Tor failed to stop: %1").arg(errorString());
     if (errmsg) {
       *errmsg = 
