@@ -41,6 +41,7 @@
 #define SETTING_STYLE               "InterfaceStyle"
 #define SETTING_RUN_TOR_AT_START    "RunTorAtStart"
 #define SETTING_DATA_DIRECTORY      "DataDirectory"
+#define SETTING_SHOW_MAINWINDOW_AT_START  "ShowMainWindowAtStart"
 
 /* Default Vidalia Settings */
 #if defined(Q_WS_MAC)
@@ -65,6 +66,7 @@ VidaliaSettings::VidaliaSettings()
   setDefault(SETTING_LANGUAGE, LanguageSupport::defaultLanguageCode());
   setDefault(SETTING_RUN_TOR_AT_START, true);
   setDefault(SETTING_STYLE, DEFAULT_STYLE);
+  setDefault(SETTING_SHOW_MAINWINDOW_AT_START, true);
 }
 
 /** Sets the default value of <b>key</b> to be <b>val</b>. */
@@ -159,6 +161,22 @@ VidaliaSettings::setRunTorAtStart(bool run)
 {
   setValue(SETTING_RUN_TOR_AT_START, run);
 }
+
+/** Returns true if Vidalia's main window should be visible when the
+ * application starts. */
+bool
+VidaliaSettings::showMainWindowAtStart()
+{
+  return value(SETTING_SHOW_MAINWINDOW_AT_START).toBool();
+}
+
+/** Sets whether to show Vidalia's main window when the application starts. */
+void
+VidaliaSettings::setShowMainWindowAtStart(bool show)
+{
+  setValue(SETTING_SHOW_MAINWINDOW_AT_START, show);
+}
+
 
 /** Returns true if Vidalia is set to run on system boot. */
 bool

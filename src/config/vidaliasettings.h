@@ -79,6 +79,12 @@ public:
   /** Set whether to run Tor when Vidalia starts. */
   void setRunTorAtStart(bool run);
 
+  /** Returns true if Vidalia's main window should be visible when the
+   * application starts. */
+  bool showMainWindowAtStart();
+  /** Sets whether to show Vidalia's main window when the application starts. */
+  void setShowMainWindowAtStart(bool show);
+  
   /** Returns true if Vidalia should start on system boot. */
   bool runVidaliaOnBoot();
   /** Set whether to run Vidalia on system boot. */
