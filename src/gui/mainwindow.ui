@@ -1,0 +1,235 @@
+<ui version="4.0" >
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>560</width>
+    <height>225</height>
+   </rect>
+  </property>
+  <property name="sizePolicy" >
+   <sizepolicy>
+    <hsizetype>0</hsizetype>
+    <vsizetype>0</vsizetype>
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize" >
+   <size>
+    <width>560</width>
+    <height>225</height>
+   </size>
+  </property>
+  <property name="maximumSize" >
+   <size>
+    <width>560</width>
+    <height>225</height>
+   </size>
+  </property>
+  <property name="windowTitle" >
+   <string>Vidalia</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="res/vidalia_common.qrc" >:/images/128x128/tor-logo.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget" >
+   <widget class="QWidget" name="verticalLayout" >
+    <property name="geometry" >
+     <rect>
+      <x>410</x>
+      <y>30</y>
+      <width>141</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <item>
+      <widget class="VClickLabel" name="lblMessageLog" >
+       <property name="text" >
+        <string>Message Log</string>
+       </property>
+       <property name="pixmap" >
+        <pixmap>:/images/16x16/format-justify-fill.png</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="VClickLabel" name="lblBandwidthGraph" >
+       <property name="text" >
+        <string>Bandwidth Graph</string>
+       </property>
+       <property name="pixmap" >
+        <pixmap>:/images/16x16/utilities-system-monitor.png</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_3" >
+       <property name="text" >
+        <string/>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="VClickLabel" name="lblHelpBrowser" >
+       <property name="text" >
+        <string>Help</string>
+       </property>
+       <property name="pixmap" >
+        <pixmap>:/images/16x16/help-browser.png</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="VClickLabel" name="lblAboutVidalia" >
+       <property name="text" >
+        <string>About</string>
+       </property>
+       <property name="pixmap" >
+        <pixmap>:/images/16x16/tor-logo.png</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="VClickLabel" name="lblAboutVidalia" >
+       <property name="text" >
+        <string>Exit</string>
+       </property>
+       <property name="pixmap" >
+        <pixmap>:/images/16x16/emblem-unreadable.png</pixmap>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer>
+       <property name="orientation" >
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" >
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QCheckBox" name="chkShowOnStartup" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>170</y>
+      <width>341</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text" >
+     <string>Show this window on startup</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="grpShortcuts" >
+    <property name="geometry" >
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>381</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="title" >
+     <string>Vidalia Shortcuts</string>
+    </property>
+    <widget class="QWidget" name="gridLayout" >
+     <property name="geometry" >
+      <rect>
+       <x>19</x>
+       <y>29</y>
+       <width>351</width>
+       <height>111</height>
+      </rect>
+     </property>
+     <layout class="QGridLayout" >
+      <property name="margin" >
+       <number>0</number>
+      </property>
+      <property name="spacing" >
+       <number>6</number>
+      </property>
+      <item row="0" column="1" >
+       <widget class="VClickLabel" native="1" name="lblSetupServer" >
+        <property name="text" >
+         <string>Setup a Server</string>
+        </property>
+        <property name="pixmap" >
+         <pixmap>:/images/48x48/network-server.png</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0" >
+       <widget class="VClickLabel" native="1" name="lblStartStopTor" >
+        <property name="text" >
+         <string>Start Tor</string>
+        </property>
+        <property name="pixmap" >
+         <pixmap>:/images/48x48/tor-on.png</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" >
+       <widget class="VClickLabel" native="1" name="lblViewNetwork" >
+        <property name="text" >
+         <string>View the Network</string>
+        </property>
+        <property name="pixmap" >
+         <pixmap>:/images/48x48/applications-internet.png</pixmap>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" >
+       <widget class="VClickLabel" native="1" name="lblNewIdentity" >
+        <property name="text" >
+         <string>Use a New Identity</string>
+        </property>
+        <property name="pixmap" >
+         <pixmap>:/images/48x48/system-users.png</pixmap>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>568</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar" />
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>VClickLabel</class>
+   <extends>QWidget</extends>
+   <header>src/gui/common/vclicklabel.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="res/vidalia_common.qrc" />
+ </resources>
+ <connections/>
+</ui>
