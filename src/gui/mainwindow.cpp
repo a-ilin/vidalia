@@ -95,9 +95,8 @@
 MainWindow::MainWindow()
 {
   VidaliaSettings settings;
-  
-  /* Set Vidalia's application icon */
-  setWindowIcon(QIcon(IMG_APP_ICON));
+
+  ui.setupUi(this);
 
   /* Create all the dialogs of which we only want one instance */
   _aboutDialog = new AboutDialog();
@@ -134,11 +133,19 @@ MainWindow::MainWindow()
     /* If we're supposed to start Tor when Vidalia starts, then do it now */
     start();
   }
+
+  /* Check if we are supposed to show our main window on startup */
+  ui.chkShowOnStartup->setChecked(settings.showMainWindowAtStart());
+  if (ui.chkShowOnStartup->isChecked())
+    this->show();
 }
 
 /** Destructor. */
 MainWindow::~MainWindow()
 {
+  VidaliaSettings settings;
+  settings.setShowMainWindowAtStart(ui.chkShowOnStartup->isChecked());
+
   _trayIcon.hide();
   delete _messageLog;
   delete _netViewer;
@@ -318,6 +325,8 @@ MainWindow::createMenuBar()
   _helpAct->setText(tr("Vidalia Help"));
   helpMenu->addAction(_helpAct);
   helpMenu->addAction(_aboutAct);
+  
+  setMenuBar(menuBar);
 #endif
 }
 

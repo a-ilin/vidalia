@@ -52,6 +52,7 @@
 #include "config/configdialog.h"
 #include "help/browser/helpbrowser.h"
 #include "network/netviewer.h"
+#include "ui_mainwindow.h"
 
 
 class MainWindow : public QMainWindow
@@ -142,6 +143,8 @@ private:
   QAction* _helpAct;
   QAction* _networkAct;
   QAction* _newIdentityAct;
+
+  Ui::MainWindow ui; /**< Qt Designer generated object. */
 };
 
 #endif

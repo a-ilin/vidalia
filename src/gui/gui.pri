@@ -21,6 +21,7 @@
 #  02110-1301, USA.
 #################################################################
 
+FORMS += $$PWD/mainwindow.ui
 HEADERS += $$PWD/mainwindow.h
 SOURCES += $$PWD/mainwindow.cpp 
 
