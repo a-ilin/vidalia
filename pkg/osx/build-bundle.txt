@@ -23,7 +23,7 @@ Qt
    http://www.trolltech.com/developer/downloads/qt/mac
 
 5. Configure Qt with the following:
-   ./configure -static -release -qt-libjpeg
+   ./configure -static -release
 
 6. Build and install Qt as follows:
    make && make install
