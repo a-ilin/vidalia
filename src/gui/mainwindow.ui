@@ -77,6 +77,9 @@
           <property name="text" >
            <string>Setup Relaying</string>
           </property>
+          <property name="statusTip" >
+           <string>Set up a Tor relay and help the network grow</string>
+          </property>
           <property name="pixmap" >
            <pixmap>:/images/48x48/network-server.png</pixmap>
           </property>
@@ -87,8 +90,11 @@
           <property name="text" >
            <string>Start Tor</string>
           </property>
+          <property name="statusTip" >
+           <string>Start Tor</string>
+          </property>
           <property name="pixmap" >
-           <pixmap>:/images/48x48/tor-on.png</pixmap>
+           <pixmap>:/images/48x48/start-tor.png</pixmap>
           </property>
          </widget>
         </item>
@@ -96,6 +102,9 @@
          <widget class="VClickLabel" native="1" name="lblViewNetwork" >
           <property name="text" >
            <string>View the Network</string>
+          </property>
+          <property name="statusTip" >
+           <string>View a map of the Tor network</string>
           </property>
           <property name="pixmap" >
            <pixmap>:/images/48x48/applications-internet.png</pixmap>
@@ -106,6 +115,9 @@
          <widget class="VClickLabel" native="1" name="lblNewIdentity" >
           <property name="text" >
            <string>Use a New Identity</string>
+          </property>
+          <property name="statusTip" >
+           <string>Make subsequent connections appear new</string>
           </property>
           <property name="pixmap" >
            <pixmap>:/images/48x48/system-users.png</pixmap>
@@ -133,6 +145,9 @@
              <property name="text" >
               <string>Bandwidth Graph</string>
              </property>
+             <property name="statusTip" >
+              <string>View Tor's bandwidth usage</string>
+             </property>
              <property name="pixmap" >
               <pixmap>:/images/16x16/utilities-system-monitor.png</pixmap>
              </property>
@@ -143,6 +158,9 @@
              <property name="text" >
               <string>Message Log</string>
              </property>
+             <property name="statusTip" >
+              <string>View Tor's log message history</string>
+             </property>
              <property name="pixmap" >
               <pixmap>:/images/16x16/format-justify-fill.png</pixmap>
              </property>
@@ -152,6 +170,9 @@
             <widget class="VClickLabel" name="lblSettings" >
              <property name="text" >
               <string>Settings</string>
+             </property>
+             <property name="statusTip" >
+              <string>Configure Tor and Vidalia</string>
              </property>
              <property name="pixmap" >
               <pixmap>:/images/16x16/preferences-system.png</pixmap>
@@ -188,6 +209,9 @@
              <property name="text" >
               <string>Help</string>
              </property>
+             <property name="statusTip" >
+              <string>View help documentation</string>
+             </property>
              <property name="pixmap" >
               <pixmap>:/images/16x16/help-browser.png</pixmap>
              </property>
@@ -198,6 +222,9 @@
              <property name="text" >
               <string>About</string>
              </property>
+             <property name="statusTip" >
+              <string>View version and license information</string>
+             </property>
              <property name="pixmap" >
               <pixmap>:/images/16x16/tor-logo.png</pixmap>
              </property>
@@ -207,6 +234,9 @@
             <widget class="VClickLabel" name="lblExit" >
              <property name="text" >
               <string>Exit</string>
+             </property>
+             <property name="statusTip" >
+              <string>Exit Vidalia</string>
              </property>
              <property name="pixmap" >
               <pixmap>:/images/16x16/emblem-unreadable.png</pixmap>
@@ -264,6 +294,9 @@
         <widget class="QPushButton" name="btnHide" >
          <property name="text" >
           <string>Hide</string>
+         </property>
+         <property name="statusTip" >
+          <string>Hide this window</string>
          </property>
         </widget>
        </item>
