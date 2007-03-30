@@ -35,6 +35,7 @@ Features planned for 0.1.x:
 
 Packaging:
   * Create a Vidalia package for Debian.
+  * Make the OSX bundle include Torbutton, too.
   * The general consensus so far has been that Polipo is better/faster than
     Privoxy, so we should start thinking about moving to Polipo. Ideally,
     Vidalia will launch Polipo in the background just like it does Tor so
