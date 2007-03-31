@@ -456,7 +456,7 @@
   <customwidget>
    <class>VClickLabel</class>
    <extends>QWidget</extends>
-   <header>src/gui/common/vclicklabel.h</header>
+   <header>gui/common/vclicklabel.h</header>
   </customwidget>
  </customwidgets>
  <resources>
