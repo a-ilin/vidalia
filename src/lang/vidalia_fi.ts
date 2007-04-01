@@ -185,17 +185,17 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="80"/>
         <source>&apos;%1&apos; is not a valid IP address.</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%1&apos; ei ole kelvollinen IP-osoite.</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="542"/>
         <source>IP address on which Tor is listening for controller connections.</source>
-        <translation type="unfinished"></translation>
+        <translation>IP-osoite, jolla Tor kuuntelee ohjausohjelman yhteyksiä.</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="549"/>
         <source>:</source>
-        <translation type="unfinished"></translation>
+        <translation>:</translation>
     </message>
 </context>
 <context>
@@ -1902,7 +1902,7 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     <message>
         <location filename="../control/torservice.cpp" line="173"/>
         <source>Unable to start the Tor service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-palvelun käynnistäminen epäonnistui.</translation>
     </message>
 </context>
 <context>
