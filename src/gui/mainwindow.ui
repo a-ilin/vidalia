@@ -74,7 +74,10 @@
       <item>
        <widget class="QLabel" name="lblTorStatus" >
         <property name="text" >
-         <string>Tor is not running</string>
+         <string>No, none of the buttons on this dialog do anything yet. Stop yelling at me.</string>
+        </property>
+        <property name="wordWrap" >
+         <bool>true</bool>
         </property>
        </widget>
       </item>
