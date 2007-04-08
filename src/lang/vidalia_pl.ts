@@ -185,17 +185,17 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="80"/>
         <source>&apos;%1&apos; is not a valid IP address.</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%1&apos; nie jest poprawnym adresem IP.</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="542"/>
         <source>IP address on which Tor is listening for controller connections.</source>
-        <translation type="unfinished"></translation>
+        <translation>Adres IP na którym nasłuchuje Tor.</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="549"/>
         <source>:</source>
-        <translation type="unfinished"></translation>
+        <translation>:</translation>
     </message>
 </context>
 <context>
@@ -1556,7 +1556,7 @@ dla programistów ekipy Tor&apos;a</translation>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="231"/>
         <source>%1 servers online (%2 total)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 serwerów aktywnych (%2 wszystkich)</translation>
     </message>
 </context>
 <context>
@@ -1835,7 +1835,7 @@ fingerprint.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1224"/>
         <source>Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s.</source>
-        <translation type="unfinished"></translation>
+        <translation>Twoja maksymalna przepustowość musi być większa lub równa średniej przepustowości. Obie wartości muszą wynosić co najmniej 20 KB/s.</translation>
     </message>
 </context>
 <context>
@@ -1899,7 +1899,7 @@ fingerprint.</source>
     <message>
         <location filename="../control/torservice.cpp" line="173"/>
         <source>Unable to start the Tor service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uruchomienie usługi Tor nie powiodło się.</translation>
     </message>
 </context>
 <context>
@@ -1984,62 +1984,62 @@ Czy chcesz kontynuować uruchamianie Vidalii?</translation>
     <message>
         <location filename="../main.cpp" line="72"/>
         <source>Invalid Argument</source>
-        <translation type="unfinished"></translation>
+        <translation>Błędny parametr.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="161"/>
         <source>Displays this usage message and exits.</source>
-        <translation type="unfinished"></translation>
+        <translation>Wyświetla tę wiadomość i wychodzi.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="163"/>
         <source>Resets ALL stored Vidalia settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Czyści WSZYSTKIE ustawienia Vidalii.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="165"/>
         <source>Sets the directory Vidalia uses for data files.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawia katalog, którego Vidalia używa do zapisu danych.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="167"/>
         <source>Sets the name and location of Vidalia&apos;s pidfile.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawia nazwę i położenie pliku pidfile.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="169"/>
         <source>Sets the name and location of Vidalia&apos;s logfile.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawia nazwę i położenie pliku logów Vidalii.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="172"/>
         <source>Sets the verbosity of Vidalia&apos;s logging.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawia szczegółowość logowania Vidalii.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="175"/>
         <source>Sets Vidalia&apos;s interface style.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawia styl interfejsu Vidalii.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="178"/>
         <source>Sets Vidalia&apos;s language.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawia język Vidalii.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="182"/>
         <source>Vidalia Usage Information</source>
-        <translation type="unfinished"></translation>
+        <translation>Informacja o użytkowaniu Vidalii.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="243"/>
         <source>Invalid log level specified: </source>
-        <translation type="unfinished"></translation>
+        <translation>Nieprawidłowy poziom logowania: </translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="249"/>
         <source>Unable to open log file &apos;%1&apos;: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>Nie udało się otworzyć pliku logu &apos;%1&apos;: %2</translation>
     </message>
 </context>
 </TS>
