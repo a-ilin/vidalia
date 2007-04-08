@@ -66,6 +66,9 @@ public:
   ~MainWindow();
 
 private slots:
+  /** Starts Tor if it is not currently running, or stops Tor if it is already
+   * running. */
+  void toggleTor();
   /** Called when the user selects "Start" from the menu. */
   void start();
   /** Called when the Tor process fails to start. */
@@ -92,8 +95,21 @@ private slots:
   /** Terminate the Tor process if it is being run under Vidalia, disconnect
    * all TorControl signals, and exit Vidalia. */
   void shutdown();
-
+  /** Creates and displays Vidalia's About dialog. */
+  void showAboutDialog();
+  /** Creates and displays the Configuration dialog with the current page set
+   * to <b>page</b>. */
+  void showConfigDialog(ConfigDialog::Page page = ConfigDialog::General);
+  /** Displays the Configuration dialog, set to the Server page. */
+  void showServerConfigDialog();
+  
 private:
+  enum TorStatus {
+    Stopped,  /**< Tor is not running. */
+    Starting, /**< Tor is in the process of starting. */
+    Running,  /**< Tor is currently running. */
+    Stopping  /**< Tor is in the process of shutting down. */
+  };
   /** Create the actions on the tray menu or menubar */
   void createActions();
   /** Creates a tray icon with a context menu and adds it to the system
@@ -103,25 +119,20 @@ private:
   QMenu* createTrayMenu();
   /** Creates a default menubar on Mac */
   void createMenuBar();
-  /** Sets the tray icon's image and tooltip. */
-  void updateTrayIcon(QString iconFile, QString tooltip = QString());
+  
+  /** Updates the UI to reflect Tor's current <b>status</b>. */
+  void updateTorStatus(TorStatus status);
 
   /* Used to determine if the Tor process exiting was intentional or not */
   bool _isIntentionalExit;
   /** Tracks whether we started a delayed server shutdown. */
   bool _delayedShutdownStarted;
- 
-  /** An AboutDialog object, used to display version information. */
-  AboutDialog* _aboutDialog;
   /** A MessageLog object which handles logging Tor messages */
   MessageLog* _messageLog;
   /** A BandwidthGraph object which handles monitoring Tor bandwidth usage */
   BandwidthGraph* _bandwidthGraph;
   /** A NetViewer object which displays the Tor network graphically */
   NetViewer* _netViewer;
-  /** A ConfigDialog object used to configure Tor and Vidalia's settings. */
-  ConfigDialog* _configDialog;
-  
   /** A TorControl object that handles communication with Tor */
   TorControl* _torControl;
 
@@ -133,8 +144,7 @@ private:
 #endif
   
   /** Defines the actions for the tray menu */
-  QAction* _startAct;
-  QAction* _stopAct;
+  QAction* _startStopAct;
   QAction* _configAct;
   QAction* _aboutAct;
   QAction* _exitAct;

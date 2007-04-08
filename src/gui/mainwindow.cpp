@@ -39,8 +39,6 @@
 
 
 #define IMG_APP_ICON       ":/images/16x16/tor-logo.png"
-#define IMG_START          ":/images/16x16/tor-on.png"
-#define IMG_STOP           ":/images/16x16/tor-off.png"
 #define IMG_BWGRAPH        ":/images/16x16/utilities-system-monitor.png"
 #define IMG_MESSAGELOG     ":/images/16x16/format-justify-fill.png"
 #define IMG_CONFIG         ":/images/16x16/preferences-system.png"
@@ -49,6 +47,15 @@
 #define IMG_ABOUT          ":/images/16x16/tor-logo.png"
 #define IMG_EXIT           ":/images/16x16/emblem-unreadable.png"
 #define IMG_NETWORK        ":/images/16x16/applications-internet.png"
+
+#define IMG_START_TOR_16     ":/images/16x16/start-tor.png"
+#define IMG_STOP_TOR_16      ":/images/16x16/stop-tor.png"
+#define IMG_START_TOR_48     ":/images/48x48/start-tor.png"
+#define IMG_STOP_TOR_48      ":/images/48x48/stop-tor.png"
+#define IMG_TOR_STOPPED_48   ":/images/48x48/tor-off.png"
+#define IMG_TOR_RUNNING_48   ":/images/48x48/tor-on.png"
+#define IMG_TOR_STARTING_48  ":/images/48x48/tor-starting.png"
+#define IMG_TOR_STOPPING_48  ":/images/48x48/tor-stopping.png"
 
 /* Decide which of our four sets of tray icons to use. */
 #if defined(USE_QSYSTEMTRAYICON)
@@ -99,17 +106,17 @@ MainWindow::MainWindow()
   ui.setupUi(this);
 
   /* Create all the dialogs of which we only want one instance */
-  _aboutDialog = new AboutDialog();
   _messageLog = new MessageLog();
   _bandwidthGraph = new BandwidthGraph();
   _netViewer = new NetViewer();
-  _configDialog = new ConfigDialog();
   
   /* Create the actions that will go in the tray menu */
   createActions();
   /* Creates a tray icon with a context menu and adds it to the system's
    * notification area. */
   createTrayIcon();
+  /* Start with Tor initially stopped */
+  updateTorStatus(Stopped);
   
   /* Create a new TorControl object, used to communicate with and manipulate Tor */
   _torControl = Vidalia::torControl(); 
@@ -150,8 +157,6 @@ MainWindow::~MainWindow()
   delete _messageLog;
   delete _netViewer;
   delete _bandwidthGraph;
-  delete _aboutDialog;
-  delete _configDialog;
 }
 
 /** Terminate the Tor process if it is being run under Vidalia, disconnect all
@@ -198,13 +203,8 @@ MainWindow::close()
 void 
 MainWindow::createActions()
 {
-  _startAct = new QAction(QIcon(IMG_START), tr("Start"), this);
-  connect(_startAct, SIGNAL(triggered()), this, SLOT(start()));
-  _startAct->setEnabled(true);
-  
-  _stopAct = new QAction(QIcon(IMG_STOP), tr("Stop"), this);
-  connect(_stopAct, SIGNAL(triggered()), this, SLOT(stop()));
-  _stopAct->setEnabled(false);
+  _startStopAct = new QAction(QIcon(IMG_START_TOR_16), tr("Start Tor"), this);
+  connect(_startStopAct, SIGNAL(triggered()), this, SLOT(toggleTor()));
 
   _exitAct = new QAction(QIcon(IMG_EXIT), tr("Exit"), this);
   connect(_exitAct, SIGNAL(triggered()), this, SLOT(close()));
@@ -212,26 +212,31 @@ MainWindow::createActions()
   _bandwidthAct = new QAction(QIcon(IMG_BWGRAPH), tr("Bandwidth Graph"), this);
   connect(_bandwidthAct, SIGNAL(triggered()), 
           _bandwidthGraph, SLOT(showWindow()));
+  connect(ui.lblBandwidthGraph, SIGNAL(clicked()),
+          _bandwidthGraph, SLOT(showWindow()));
 
   _messageAct = new QAction(QIcon(IMG_MESSAGELOG), tr("Message Log"), this);
   connect(_messageAct, SIGNAL(triggered()),
+          _messageLog, SLOT(showWindow()));
+  connect(ui.lblMessageLog, SIGNAL(clicked()),
           _messageLog, SLOT(showWindow()));
 
   _networkAct = new QAction(QIcon(IMG_NETWORK), tr("Network Map"), this);
   connect(_networkAct, SIGNAL(triggered()), 
           _netViewer, SLOT(showWindow()));
-  
+  connect(ui.lblViewNetwork, SIGNAL(clicked()),
+          _netViewer, SLOT(showWindow()));
+
   _configAct = new QAction(QIcon(IMG_CONFIG), tr("Settings"), this);
-  connect(_configAct, SIGNAL(triggered()), 
-          _configDialog, SLOT(showWindow()));
+  connect(_configAct, SIGNAL(triggered()), this, SLOT(showConfigDialog()));
   
   _aboutAct = new QAction(QIcon(IMG_ABOUT), tr("About"), this);
-  connect(_aboutAct, SIGNAL(triggered()), 
-          _aboutDialog, SLOT(showWindow()));
+  connect(_aboutAct, SIGNAL(triggered()), this, SLOT(showAboutDialog()));
 
   _helpAct = new QAction(QIcon(IMG_HELP), tr("Help"), this);
   connect(_helpAct, SIGNAL(triggered()), vApp, SLOT(help()));
-  
+  connect(ui.lblHelpBrowser, SIGNAL(clicked()), vApp, SLOT(help()));
+
   _newIdentityAct = new QAction(QIcon(IMG_IDENTITY), tr("New Identity"), this);
   _newIdentityAct->setEnabled(false);
   connect(_newIdentityAct, SIGNAL(triggered()), this, SLOT(newIdentity()));
@@ -242,8 +247,6 @@ MainWindow::createActions()
 void
 MainWindow::createTrayIcon()
 {
-  /* We start with an icon that says Tor is not running */
-  updateTrayIcon(IMG_TOR_STOPPED, tr("Tor is Stopped"));
   /* Create the default menu bar (Mac) */
   createMenuBar();
   /* Create a tray menu and add it to the tray icon */
@@ -258,8 +261,7 @@ QMenu*
 MainWindow::createTrayMenu()
 {
   QMenu *menu = new QMenu(this);
-  menu->addAction(_startAct);
-  menu->addAction(_stopAct);
+  menu->addAction(_startStopAct);
   menu->addSeparator();
   menu->addAction(_bandwidthAct);
   menu->addAction(_messageAct);
@@ -289,8 +291,7 @@ MainWindow::createMenuBar()
   /* Mac users sure like their shortcuts. Actions NOT mentioned below
    * don't explicitly need shortcuts, since they are merged to the default
    * menubar and get the default shortcuts anyway. */
-  _startAct->setShortcut(tr("Ctrl+S"));
-  _stopAct->setShortcut(tr("Ctrl+T"));
+  _startStopAct->setShortcut(tr("Ctrl+T"));
   _bandwidthAct->setShortcut(tr("Ctrl+B"));
   _messageAct->setShortcut(tr("Ctrl+L"));
   _networkAct->setShortcut(tr("Ctrl+N"));
@@ -310,8 +311,7 @@ MainWindow::createMenuBar()
   fileMenu->addAction(_exitAct);
   
   QMenu *torMenu = menuBar->addMenu(tr("Tor"));
-  torMenu->addAction(_startAct);
-  torMenu->addAction(_stopAct);
+  torMenu->addAction(_startStopAct);
   torMenu->addSeparator();
   torMenu->addAction(_newIdentityAct);
 
@@ -330,18 +330,76 @@ MainWindow::createMenuBar()
 #endif
 }
 
-/** Sets the tray icon's image and tooltip. */
+/** Updates the UI to reflect Tor's current <b>status</b>. */
 void
-MainWindow::updateTrayIcon(QString iconFile, QString tooltip)
+MainWindow::updateTorStatus(TorStatus status)
 {
-  /* Set the tray icon's image */
+  QString statusText, actionText;
+  QString trayIconFile, statusIconFile;
+  
+  if (status == Stopped) {
+      statusText = tr("Tor is not running");
+      actionText = tr("Start Tor");
+      trayIconFile = IMG_TOR_STOPPED;
+      statusIconFile = IMG_TOR_STOPPED_48;
+      _startStopAct->setEnabled(true);
+      _startStopAct->setText(actionText);
+      _startStopAct->setIcon(QIcon(IMG_START_TOR_16));
+      ui.lblStartStopTor->setEnabled(true);
+      ui.lblStartStopTor->setText(actionText);
+      ui.lblStartStopTor->setPixmap(QPixmap(IMG_START_TOR_48));
+      ui.lblStartStopTor->setStatusTip(actionText);
+  } else if (status == Stopping) {
+      statusText = tr("Tor is shutting down");
+      trayIconFile = IMG_TOR_STOPPING;
+      statusIconFile = IMG_TOR_STOPPING_48;
+      ui.lblNewIdentity->setEnabled(false);
+      ui.lblStartStopTor->setStatusTip(statusText);
+  } else if (status == Running) {
+      statusText = tr("Tor is running");
+      actionText = tr("Stop Tor");
+      trayIconFile = IMG_TOR_RUNNING;
+      statusIconFile = IMG_TOR_RUNNING_48;
+      _startStopAct->setEnabled(true);
+      _startStopAct->setText(actionText);
+      _startStopAct->setIcon(QIcon(IMG_STOP_TOR_16));
+      ui.lblStartStopTor->setEnabled(true);
+      ui.lblStartStopTor->setText(actionText);
+      ui.lblStartStopTor->setPixmap(QPixmap(IMG_STOP_TOR_48));
+      ui.lblStartStopTor->setStatusTip(actionText);
+      _newIdentityAct->setEnabled(true);
+      ui.lblNewIdentity->setEnabled(true);
+  } else { /* status == Starting */
+      statusText = tr("Tor is starting up");
+      trayIconFile = IMG_TOR_STARTING;
+      statusIconFile = IMG_TOR_STARTING_48;
+      _startStopAct->setEnabled(false);
+      ui.lblStartStopTor->setEnabled(false);
+      ui.lblStartStopTor->setStatusTip(statusText);
+  }
+
+  /* Update the tray icon */
 #if defined(USE_QSYSTEMTRAYICON)
-  _trayIcon.setIcon(QIcon(iconFile));
+  _trayIcon.setIcon(QIcon(trayIconFile));
 #else
-  _trayIcon.setIcon(iconFile);
+  _trayIcon.setIcon(trayIconFile);
 #endif
-  /* Set the icon's tooltip */
-  _trayIcon.setToolTip(tooltip);
+  _trayIcon.setToolTip(statusText);
+  
+  /* Update the status banner */
+  ui.lblTorStatus->setText(statusText);
+  ui.lblTorStatusImg->setPixmap(QPixmap(statusIconFile));
+}
+
+/** Starts Tor if it is not currently running, or stops Tor if it is already
+ * running. */
+void
+MainWindow::toggleTor()
+{
+  if (_torControl->isRunning())
+    stop();
+  else
+    start();
 }
 
 /** Attempts to start Tor. If Tor fails to start, then startFailed() will be
@@ -356,8 +414,7 @@ MainWindow::start()
   _isIntentionalExit = true;
   /* Kick off the Tor process */
   _torControl->start();
-  /* Don't let the user start Tor twice. That would be silly. */
-  _startAct->setEnabled(false);
+  updateTorStatus(Starting);
 }
 
 /** Called when the Tor process fails to start, for example, because the path
@@ -369,7 +426,9 @@ MainWindow::startFailed(QString errmsg)
    * that Qt gives us in this instance is almost always "Unknown Error". That
    * will make users sad. */
   Q_UNUSED(errmsg);
-  
+ 
+  updateTorStatus(Stopped);
+
   /* Display an error message and see if the user wants some help */
   int response = VMessageBox::warning(this, tr("Error Starting Tor"),
                    tr("Vidalia was unable to start Tor. Check your settings "
@@ -380,13 +439,11 @@ MainWindow::startFailed(QString errmsg)
   if (response == VMessageBox::ShowSettings) {
     /* Show the settings dialog so the user can make sure they're pointing to
      * the correct Tor. */
-     ConfigDialog* configDialog = new ConfigDialog(this);
-     configDialog->showWindow(ConfigDialog::General);
+     showConfigDialog();
   } else if (response == VMessageBox::Help) {
     /* Show troubleshooting information about starting Tor */
     Vidalia::help("troubleshooting.start");
   }
-  _startAct->setEnabled(true);
 }
 
 /** Slot: Called when the Tor process is started. It will connect the control
@@ -399,11 +456,6 @@ MainWindow::started()
   _isIntentionalExit = false;
   /* We haven't started a delayed shutdown yet. */
   _delayedShutdownStarted = false;
-  /* Set correct tray icon and tooltip */
-  updateTrayIcon(IMG_TOR_STARTING, tr("Tor is starting"));
-  /* Set menu actions appropriately */
-  _stopAct->setEnabled(true);
-  _startAct->setEnabled(false);
   /* Try to connect to Tor's control port */
   _torControl->connect();
 }
@@ -425,9 +477,8 @@ MainWindow::connectFailed(QString errmsg)
     _torControl->connect();
   } else {
     /* Show the help browser (if requested) */
-    if (response == VMessageBox::Help) {
+    if (response == VMessageBox::Help)
       Vidalia::help("troubleshooting.connect");
-    }
     /* Since Vidalia can't connect, we can't really do much, so stop Tor. */
     _torControl->stop();
   }
@@ -467,13 +518,12 @@ MainWindow::stop()
   } else {
     /* We want Tor to stop now, regardless of whether we're a server. */
     _isIntentionalExit = true;
-    if ((rc = _torControl->stop(&errmsg)) == true)
-      _stopAct->setEnabled(false);
+    rc = _torControl->stop(&errmsg);
   }
   
   if (rc) {
     /* Indicate that Tor is about to shut down */
-    updateTrayIcon(IMG_TOR_STOPPING, tr("Tor is stopping"));
+    updateTorStatus(Stopping);
   } else {
     /* We couldn't tell Tor to stop, for some reason. */
     int response = VMessageBox::warning(this, tr("Error Stopping Tor"),
@@ -496,15 +546,11 @@ MainWindow::stop()
 void 
 MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
 {
-  /* Set correct tray icon and tooltip */
-  updateTrayIcon(IMG_TOR_STOPPED, tr("Tor is stopped"));
-  /* Set menu actions appropriately */
-  _startAct->setEnabled(true);
+  updateTorStatus(Stopped);
 
   /* If we didn't intentionally close Tor, then check to see if it crashed or
    * if it closed itself and returned an error code. */
   if (!_isIntentionalExit) {
-    _stopAct->setEnabled(false);
     /* A quick overview of Tor's code tells me that if it catches a SIGTERM or
      * SIGINT, Tor will exit(0). We might need to change this warning message
      * if this turns out to not be the case. */
@@ -514,11 +560,10 @@ MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
                      "Please check the message log for indicators "
                      "about what happened to Tor before it exited."),
                   VMessageBox::Ok, VMessageBox::ShowLog, VMessageBox::Help);
-      if (ret == VMessageBox::ShowLog) {
+      if (ret == VMessageBox::ShowLog)
         _messageLog->showWindow();  
-      } else if (ret == VMessageBox::Help) {
+      else if (ret == VMessageBox::Help)
         Vidalia::help("troubleshooting.torexited");
-      }
     }
   }
 }
@@ -531,9 +576,8 @@ MainWindow::connected()
   QString errmsg;
 
   /* Update our tray status icon */
-  updateTrayIcon(IMG_TOR_RUNNING, tr("Tor is running"));
-  _newIdentityAct->setEnabled(true);
-
+  updateTorStatus(Running);
+  
   /* If the user changed some of the server's settings while Tor wasn't 
    * running, then we better let Tor know about the changes now. */
   if (serverSettings.changedSinceLastApply()) {
@@ -546,7 +590,7 @@ MainWindow::connected()
 
       if (ret == VMessageBox::ShowSettings) {
         /* Show the config dialog with the server page already shown. */
-        _configDialog->showWindow(ConfigDialog::Server);
+        showConfigDialog(ConfigDialog::Server);
       } else if (ret == VMessageBox::ShowLog) {
         /* Show the message log. */
         _messageLog->showWindow(); 
@@ -560,6 +604,35 @@ void
 MainWindow::disconnected()
 {
   _newIdentityAct->setEnabled(false);
+  ui.lblNewIdentity->setEnabled(false);
+}
+
+/** Creates and displays Vidalia's About dialog. */
+void
+MainWindow::showAboutDialog()
+{
+  static AboutDialog *aboutDialog = 0;
+  if (!aboutDialog)
+    aboutDialog = new AboutDialog(this);
+  aboutDialog->showWindow();
+}
+
+/** Creates and displays the Configuration dialog with the current page set to
+ * <b>page</b>. */
+void
+MainWindow::showConfigDialog(ConfigDialog::Page page)
+{
+  static ConfigDialog *configDialog = 0;
+  if (!configDialog)
+    configDialog = new ConfigDialog(this);
+  configDialog->showWindow(page);
+}
+
+/** Displays the Configuration dialog, set to the Server page. */
+void
+MainWindow::showServerConfigDialog()
+{
+  showConfigDialog(ConfigDialog::Server);
 }
 
 /** Called when the user selects the "New Identity" action from the menu. */
@@ -580,15 +653,15 @@ MainWindow::newIdentity()
 
     /* Disable the New Identity button for MIN_NEWIDENTITY_INTERVAL */
     _newIdentityAct->setEnabled(false);
+    ui.lblNewIdentity->setEnabled(false);
     QTimer::singleShot(MIN_NEWIDENTITY_INTERVAL, 
                        this, SLOT(enableNewIdentity()));
     
 #if defined(USE_QSYSTEMTRAYICON)
-    if (QSystemTrayIcon::supportsMessages()) {
+    if (QSystemTrayIcon::supportsMessages())
       _trayIcon.showMessage(title, message, QSystemTrayIcon::Information);
-    } else {
+    else
       VMessageBox::information(this, title, message, VMessageBox::Ok);
-    }
 #else
     VMessageBox::information(this, title, message, VMessageBox::Ok);
 #endif
@@ -604,7 +677,9 @@ MainWindow::newIdentity()
 void
 MainWindow::enableNewIdentity()
 {
-  if (_torControl->isConnected())
+  if (_torControl->isConnected()) {
     _newIdentityAct->setEnabled(true);
+    ui.lblNewIdentity->setEnabled(true);
+  }
 }
 

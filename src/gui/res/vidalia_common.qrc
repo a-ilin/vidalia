@@ -21,6 +21,8 @@
         <file>16x16/msg-warn.png</file>
         <file>16x16/network-offline.png</file>
         <file>16x16/preferences-system.png</file>
+        <file>16x16/start-tor.png</file>
+        <file>16x16/stop-tor.png</file>
         <file>16x16/system-users.png</file>
         <file>16x16/tor-logo.png</file>
         <file>16x16/tor-off.png</file>
@@ -72,6 +74,8 @@
         <file>48x48/system-users.png</file>
         <file>48x48/tor-off.png</file>
         <file>48x48/tor-on.png</file>
+        <file>48x48/tor-starting.png</file>
+        <file>48x48/tor-stopping.png</file>
     </qresource>
     <qresource prefix="/images">
         <file>128x128/qt-logo.png</file>
