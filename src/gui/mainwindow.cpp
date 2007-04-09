@@ -35,6 +35,7 @@
 #include <util/html.h>
 
 #include "common/vmessagebox.h"
+#include "common/animatedpixmap.h"
 #include "mainwindow.h"
 
 
@@ -56,6 +57,8 @@
 #define IMG_TOR_RUNNING_48   ":/images/48x48/tor-on.png"
 #define IMG_TOR_STARTING_48  ":/images/48x48/tor-starting.png"
 #define IMG_TOR_STOPPING_48  ":/images/48x48/tor-stopping.png"
+
+#define ANIM_PROCESS_WORKING  ":/images/32x32/process-working.png"
 
 /* Decide which of our four sets of tray icons to use. */
 #if defined(USE_QSYSTEMTRAYICON)
@@ -376,6 +379,7 @@ MainWindow::updateTorStatus(TorStatus status)
       _startStopAct->setEnabled(false);
       ui.lblStartStopTor->setEnabled(false);
       ui.lblStartStopTor->setStatusTip(statusText);
+      ui.lblStartStopTor->setAnimation(QPixmap(ANIM_PROCESS_WORKING));
   }
 
   /* Update the tray icon */
