@@ -970,7 +970,7 @@ Ole hyvä ja tarkista tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen pysä
     <message>
         <location filename="../gui/mainwindow.cpp" line="650"/>
         <source>New Identity</source>
-        <translation>Uusi identiteetti</translation>
+        <translation>Uusi henkilöllisyys</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="299"/>
@@ -985,122 +985,122 @@ Ole hyvä ja tarkista tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen pysä
     <message>
         <location filename="../gui/mainwindow.cpp" line="672"/>
         <source>Failed to Create New Identity</source>
-        <translation>Uuden identiteetin luominen epäonnistui</translation>
+        <translation>Uuden henkilöllisyyden luominen epäonnistui</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="159"/>
         <source>Start Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Käynnistä Tor</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="95"/>
         <source>Tor is not running</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor ei ole käynnissä</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="353"/>
         <source>Tor is shutting down</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-ohjelmaa sammutetaan</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="360"/>
         <source>Stop Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Pysäytä Tor</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="373"/>
         <source>Tor is starting up</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor käynnistyy</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="33"/>
         <source>Vidalia Control Panel</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalian ohjauspaneeli</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="63"/>
         <source>Tor Status</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-ohjelman tila</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="135"/>
         <source>Vidalia Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalian pikatoiminnot</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="169"/>
         <source>Setup Relaying</source>
-        <translation type="unfinished"></translation>
+        <translation>Välityksen asetukset</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="172"/>
         <source>Set up a Tor relay and help the network grow</source>
-        <translation type="unfinished"></translation>
+        <translation>Tee Tor välityspalvelin ja auta verkkoa kasvamaan</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="182"/>
         <source>View the Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä verkko</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="185"/>
         <source>View a map of the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä Tor-verkkokartta</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="198"/>
         <source>Use a New Identity</source>
-        <translation type="unfinished"></translation>
+        <translation>Käytä uutta henkilöllisyyttä</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="201"/>
         <source>Make subsequent connections appear new</source>
-        <translation type="unfinished"></translation>
+        <translation>Tee tulevista yhteyksistä uusia</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="233"/>
         <source>View Tor&apos;s bandwidth usage</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä Tor-ohjelman yhteydenkäyttö</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="246"/>
         <source>View Tor&apos;s log message history</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä Tor-ohjelman tapahtumalokin historia</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="296"/>
         <source>View help documentation</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä Ohjeet</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="309"/>
         <source>Configure Tor and Vidalia</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-ohjelman ja Vidalian asetukset</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="359"/>
         <source>View version and license information</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä versio- ja lisenssitiedot</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="372"/>
         <source>Exit Vidalia</source>
-        <translation type="unfinished"></translation>
+        <translation>Lopeta Vidalia</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="425"/>
         <source>Show this window on startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä tämä ikkuna käynnistettäessä</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="444"/>
         <source>Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>Piilota</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="447"/>
         <source>Hide this window</source>
-        <translation type="unfinished"></translation>
+        <translation>Piilota tämä ikkuna</translation>
     </message>
 </context>
 <context>
