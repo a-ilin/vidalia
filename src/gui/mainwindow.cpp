@@ -150,6 +150,9 @@ MainWindow::MainWindow()
   ui.chkShowOnStartup->setChecked(settings.showMainWindowAtStart());
   if (ui.chkShowOnStartup->isChecked())
     this->show();
+
+  /* Make the tray icon visible */
+  _trayIcon.show();
 }
 
 /** Destructor. */
@@ -260,8 +263,6 @@ MainWindow::createTrayIcon()
   createMenuBar();
   /* Create a tray menu and add it to the tray icon */
   _trayIcon.setContextMenu(createTrayMenu());
-  /* Make the tray icon visible */
-  _trayIcon.show();
 
 #if defined(USE_QSYSTEMTRAYICON)
   connect(&_trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
