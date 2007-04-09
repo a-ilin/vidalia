@@ -104,6 +104,7 @@
 /** Default constructor. It installs an icon in the system tray area and
  * creates the popup menu associated with that icon. */
 MainWindow::MainWindow()
+: VidaliaWindow("MainWindow")
 {
   VidaliaSettings settings;
 

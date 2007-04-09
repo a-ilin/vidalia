@@ -41,7 +41,8 @@
 #undef USE_QSYSTEMTRAYICON
 #include "tray/trayicon.h"
 #endif
- 
+
+#include "common/vidaliawindow.h"
 #include "about/aboutdialog.h"
 #include "log/messagelog.h"
 #include "bwgraph/bwgraph.h"
@@ -51,7 +52,7 @@
 #include "ui_mainwindow.h"
 
 
-class MainWindow : public QMainWindow
+class MainWindow : public VidaliaWindow
 {
   Q_OBJECT
 
