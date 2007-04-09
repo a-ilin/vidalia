@@ -36,16 +36,12 @@
  * that won't appear until Qt 4.2.2. */
 #if QT_VERSION >= 0x040200 && !defined(Q_WS_MAC)
 #define USE_QSYSTEMTRAYICON  1
-#else
-#undef USE_QSYSTEMTRAYICON
-#endif
- 
-#if defined(USE_QSYSTEMTRAYICON)
 #include <QSystemTrayIcon>
 #else
+#undef USE_QSYSTEMTRAYICON
 #include "tray/trayicon.h"
 #endif
-
+ 
 #include "about/aboutdialog.h"
 #include "log/messagelog.h"
 #include "bwgraph/bwgraph.h"
@@ -102,7 +98,12 @@ private slots:
   void showConfigDialog(ConfigDialog::Page page = ConfigDialog::General);
   /** Displays the Configuration dialog, set to the Server page. */
   void showServerConfigDialog();
-  
+
+#if defined(USE_QSYSTEMTRAYICON)
+  /** Displays the main window if <b>reason</b> is DoubleClick. */
+  void trayActivated(QSystemTrayIcon::ActivationReason reason);
+#endif
+
 private:
   enum TorStatus {
     Stopped,  /**< Tor is not running. */
@@ -144,6 +145,7 @@ private:
 #endif
   
   /** Defines the actions for the tray menu */
+  QAction* _controlPanelAct;
   QAction* _startStopAct;
   QAction* _configAct;
   QAction* _aboutAct;

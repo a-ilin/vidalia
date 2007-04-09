@@ -41,6 +41,7 @@
 
 #define IMG_APP_ICON       ":/images/16x16/tor-logo.png"
 #define IMG_BWGRAPH        ":/images/16x16/utilities-system-monitor.png"
+#define IMG_CONTROL_PANEL  ":/images/16x16/preferences-desktop.png"
 #define IMG_MESSAGELOG     ":/images/16x16/format-justify-fill.png"
 #define IMG_CONFIG         ":/images/16x16/preferences-system.png"
 #define IMG_IDENTITY       ":/images/16x16/system-users.png"
@@ -132,7 +133,7 @@ MainWindow::MainWindow()
   connect(_torControl, SIGNAL(disconnected()), this, SLOT(disconnected()));
   connect(_torControl, SIGNAL(connectFailed(QString)), 
                  this,   SLOT(connectFailed(QString)));
-
+ 
   /* Make sure we shut down when the operating system is restarting */
   connect(vApp, SIGNAL(shutdown()), this, SLOT(shutdown()));
 
@@ -230,6 +231,10 @@ MainWindow::createActions()
   connect(ui.lblViewNetwork, SIGNAL(clicked()),
           _netViewer, SLOT(showWindow()));
 
+  _controlPanelAct = new QAction(QIcon(IMG_CONTROL_PANEL), 
+                                 tr("Control Panel"), this);
+  connect(_controlPanelAct, SIGNAL(triggered()), this, SLOT(show()));
+
   _configAct = new QAction(QIcon(IMG_CONFIG), tr("Settings"), this);
   connect(_configAct, SIGNAL(triggered()), this, SLOT(showConfigDialog()));
   
@@ -256,6 +261,13 @@ MainWindow::createTrayIcon()
   _trayIcon.setContextMenu(createTrayMenu());
   /* Make the tray icon visible */
   _trayIcon.show();
+
+#if defined(USE_QSYSTEMTRAYICON)
+  connect(&_trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
+                this, SLOT(trayActivated(QSystemTrayIcon::ActivationReason)));
+#else
+  connect(&_trayIcon, SIGNAL(doubleClicked()), this, SLOT(show()));
+#endif
 }
 
 /** Creates a QMenu object that contains QActions which compose the system 
@@ -266,6 +278,7 @@ MainWindow::createTrayMenu()
   QMenu *menu = new QMenu(this);
   menu->addAction(_startStopAct);
   menu->addSeparator();
+  menu->addAction(_controlPanelAct);
   menu->addAction(_bandwidthAct);
   menu->addAction(_messageAct);
   menu->addAction(_networkAct);
@@ -300,6 +313,7 @@ MainWindow::createMenuBar()
   _networkAct->setShortcut(tr("Ctrl+N"));
   _helpAct->setShortcut(tr("Ctrl+?"));
   _newIdentityAct->setShortcut(tr("Ctrl+I"));
+  _controlPanelAct->setShortcut(tr("Ctrl+P"));
 
   /* Force Qt to put merge the Exit, Configure, and About menubar options into
    * the default menu, even if Vidalia is currently not speaking English. */
@@ -319,6 +333,8 @@ MainWindow::createMenuBar()
   torMenu->addAction(_newIdentityAct);
 
   QMenu *viewMenu = menuBar->addMenu(tr("View"));
+  viewMenu->addAction(_controlPanelAct);
+  viewMenu->addSeparator();
   viewMenu->addAction(_bandwidthAct);
   viewMenu->addAction(_messageAct);
   viewMenu->addAction(_networkAct);
@@ -394,6 +410,16 @@ MainWindow::updateTorStatus(TorStatus status)
   ui.lblTorStatus->setText(statusText);
   ui.lblTorStatusImg->setPixmap(QPixmap(statusIconFile));
 }
+
+#if defined(USE_QSYSTEMTRAYICON)
+/** Displays the main window if <b>reason</b> is DoubleClick. */
+void
+MainWindow::trayActivated(QSystemTrayIcon::ActivationReason reason)
+{
+  if (reason == QSystemTrayIcon::DoubleClick)
+    show();
+}
+#endif
 
 /** Starts Tor if it is not currently running, or stops Tor if it is already
  * running. */

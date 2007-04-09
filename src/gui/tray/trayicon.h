@@ -43,7 +43,7 @@
 #endif
 
 
-class TrayIcon : private TrayIconImpl
+class TrayIcon : public TrayIconImpl
 {
   Q_OBJECT
 
