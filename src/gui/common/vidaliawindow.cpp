@@ -129,8 +129,6 @@ VidaliaWindow::setVisible(bool visible)
        * specified in the .ui file for this dialog. */
       setPalette(QPalette());
 #endif
-    
-      restoreWindowState();
       _previouslyShown = true;
     }
 
@@ -140,6 +138,8 @@ VidaliaWindow::setVisible(bool visible)
       activateWindow();
       setWindowState(windowState() & ~Qt::WindowMinimized | Qt::WindowActive);
       raise();
+    } else {
+      restoreWindowState();
     }
   } else {
     /* Save the last size and position of this window. */
