@@ -13,7 +13,7 @@
     <message>
         <location filename="../gui/about/aboutdialog.ui" line="290"/>
         <source>About Vidalia</source>
-        <translation>O Vidali</translation>
+        <translation>O Vidalii</translation>
     </message>
     <message>
         <location filename="../gui/about/aboutdialog.ui" line="344"/>
@@ -38,12 +38,12 @@
     <message>
         <location filename="../gui/about/aboutdialog.ui" line="528"/>
         <source>Tor Version</source>
-        <translation>Wersja Tor&apos;a</translation>
+        <translation>Wersja Tora</translation>
     </message>
     <message>
         <location filename="../gui/about/aboutdialog.ui" line="359"/>
         <source>Vidalia Version</source>
-        <translation>Wersja Vidali</translation>
+        <translation>Wersja Vidalii</translation>
     </message>
     <message>
         <location filename="../gui/about/aboutdialog.cpp" line="79"/>
@@ -71,12 +71,12 @@
     <message>
         <location filename="../gui/config/advancedpage.ui" line="625"/>
         <source>Start Tor with the specified configuration file (torrc)</source>
-        <translation>Uruchom Tor&apos;a używając pliku konfiguracyjnego (torrc)</translation>
+        <translation>Uruchom Tora używając pliku konfiguracyjnego (torrc)</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="644"/>
         <source>Select path to Tor configuration file</source>
-        <translation>Wybierz ścieżkę pliku konfiguracyjnego Tor&apos;a</translation>
+        <translation>Wybierz ścieżkę pliku konfiguracyjnego Tora</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="647"/>
@@ -111,7 +111,7 @@
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="119"/>
         <source>Select Tor Configuration File</source>
-        <translation>Wybierz plik konfiguracyjny Tor&apos;a</translation>
+        <translation>Wybierz plik konfiguracyjny Tora</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="132"/>
@@ -141,22 +141,22 @@
     <message>
         <location filename="../gui/config/advancedpage.ui" line="768"/>
         <source>Enable this if you wish to run Tor as a Windows service</source>
-        <translation>Zaznacz, jeśli chcesz uruchamiać Tor&apos;a jako usługę</translation>
+        <translation>Zaznacz, jeśli chcesz uruchamiać Tora jako usługę</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="771"/>
         <source>Run Tor in the background as a Windows service</source>
-        <translation>Uruchamiaj Tor&apos;a jako usługę Windows</translation>
+        <translation>Uruchamiaj Tora jako usługę Windows</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="169"/>
         <source>Unable to remove Tor Service</source>
-        <translation>Usunięcie usługi Tor&apos;a nie powiodło się</translation>
+        <translation>Usunięcie usługi Tora nie powiodło się</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="180"/>
         <source>Unable to install Tor Service</source>
-        <translation>Instalacja usługi Tor&apos;a nie powiodła się</translation>
+        <translation>Instalacja usługi Tora nie powiodła się</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="181"/>
@@ -168,19 +168,19 @@
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
-        <translation>Vidalia nie mogła usunąć usługi Tor&apos;a.
+        <translation>Vidalia nie mogła usunąć usługi Tora.
 
 Musisz usunąć ją ręcznie.</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="604"/>
         <source>Tor Configuration File</source>
-        <translation>Plik konfiguracyjny Tor&apos;a</translation>
+        <translation>Plik konfiguracyjny Tora</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="573"/>
         <source>Port that Vidalia uses to communicate with Tor.</source>
-        <translation>Port którego Vidalia używa do komunikacji z Tor&apos;em</translation>
+        <translation>Port którego Vidalia używa do komunikacji z Torem</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="80"/>
@@ -365,7 +365,7 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="55"/>
         <source>Zoom to Circuit</source>
-        <translation>Zbliż połączenie</translation>
+        <translation>Zbliż na połączenie</translation>
     </message>
 </context>
 <context>
@@ -403,7 +403,7 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="154"/>
         <source>Error Saving Configuration</source>
-        <translation>Bład zapisywania konfiguracji</translation>
+        <translation>Błąd zapisywania konfiguracji</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="74"/>
@@ -464,7 +464,7 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../control/controlsocket.cpp" line="81"/>
         <source>Vidalia was unable to determine Tor&apos;s control protocol version. Verify that your control port number is set correctly and you are running a recent version of Tor.</source>
-        <translation>Vidalia nie mogła ustalić wersji protokołu sterującego Tor&apos;a. Sprawdź, czy numer portu jest ustawiony poprawnie i że posiadasz uruchomioną najnowszą wersję Tor&apos;a.</translation>
+        <translation>Vidalia nie mogła ustalić wersji protokołu sterującego Tora. Sprawdź, czy numer portu jest ustawiony poprawnie i że posiadasz uruchomioną najnowszą wersję Tora.</translation>
     </message>
     <message>
         <location filename="../control/controlsocket.cpp" line="85"/>
@@ -483,7 +483,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/config/generalpage.ui" line="353"/>
         <source>Select path to Tor executable</source>
-        <translation>Wybierz ścieżkę do pliku wykonywalnego Tor&apos;a</translation>
+        <translation>Wybierz ścieżkę do pliku wykonywalnego Tora</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.ui" line="356"/>
@@ -508,22 +508,22 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/config/generalpage.ui" line="406"/>
         <source>Set to start Tor when you launch Vidalia</source>
-        <translation>Zaznacz, aby Vidalia sama uruchamiała Tor&apos;a</translation>
+        <translation>Zaznacz, aby Vidalia sama uruchamiała Tora</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.ui" line="409"/>
         <source>Start Tor when Vidalia starts</source>
-        <translation>Włączaj Tor&apos;a gdy Vidalia startuje</translation>
+        <translation>Włączaj Tora gdy Vidalia startuje</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.cpp" line="72"/>
         <source>Select Path to Tor</source>
-        <translation>Wybierz ścieżkę do Tor&apos;a</translation>
+        <translation>Wybierz ścieżkę do Tora</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.ui" line="307"/>
         <source>Tor Executable</source>
-        <translation>Plik wykonywalny Tor&apos;a</translation>
+        <translation>Plik wykonywalny Tora</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.cpp" line="63"/>
@@ -871,17 +871,17 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/mainwindow.cpp" line="434"/>
         <source>Error Starting Tor</source>
-        <translation>Błąd uruchamiania Tor&apos;a</translation>
+        <translation>Błąd uruchamiania Tora</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="471"/>
         <source>Error Connecting to Tor</source>
-        <translation>Błąd podłączenia do Tor&apos;a</translation>
+        <translation>Błąd podłączenia do Tora</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="530"/>
         <source>Error Stopping Tor</source>
-        <translation>Bład zatrzymywania Tor&apos;a</translation>
+        <translation>Bład zatrzymywania Tora</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="491"/>
@@ -896,12 +896,12 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/mainwindow.cpp" line="531"/>
         <source>Vidalia was unable to stop Tor.</source>
-        <translation>Vidalia nie mogła zatrzymać Tor&apos;a</translation>
+        <translation>Vidalia nie mogła zatrzymać Tora</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="394"/>
         <source>Tor is starting</source>
-        <translation type="obsolete">Uruchamianie Tor&apos;a</translation>
+        <translation type="obsolete">Uruchamianie Tora</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="359"/>
@@ -916,7 +916,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/mainwindow.cpp" line="467"/>
         <source>Tor is stopping</source>
-        <translation type="obsolete">Zatrzymywanie Tor&apos;a</translation>
+        <translation type="obsolete">Zatrzymywanie Tora</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="297"/>
@@ -938,7 +938,7 @@ Upgrade to a newer version of Tor.</source>
         <source>You are currently running a Tor server. Terminating your server will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new server?</source>
-        <translation>Posiadasz uruchomiony serwer Tor&apos;a. Wyłączenie go spowoduje przerwanie wszelkich połączeń z klientami.
+        <translation>Posiadasz uruchomiony serwer Tora. Wyłączenie go spowoduje przerwanie wszelkich połączeń z klientami.
 
 Czy chciałbyś dokonać tego elegancko, dając klientom czas na znalezienie nowego serwera?</translation>
     </message>
@@ -947,14 +947,14 @@ Czy chciałbyś dokonać tego elegancko, dając klientom czas na znalezienie now
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
-        <translation>Wykryto niespodziewane zamknięcie Tor&apos;a.
+        <translation>Wykryto niespodziewane zamknięcie Tora.
 
 Proszę sprawdzić Dziennik Logów, aby zidentyfikować przyczynę.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="437"/>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
-        <translation>Vidalia nie mogła uruchomić Tor&apos;a. Proszę sprawdzić ustawienia, aby upewnić się co do ścieżki dostępu do pliku wykonywalnego Tor&apos;a.</translation>
+        <translation>Vidalia nie mogła uruchomić Tora. Proszę sprawdzić ustawienia, aby upewnić się co do ścieżki dostępu do pliku wykonywalnego Tora.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="224"/>
@@ -989,117 +989,117 @@ Proszę sprawdzić Dziennik Logów, aby zidentyfikować przyczynę.</translation
     <message>
         <location filename="../gui/mainwindow.ui" line="159"/>
         <source>Start Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Uruchom Tora</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="95"/>
         <source>Tor is not running</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor nie jest uruchomiony</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="353"/>
         <source>Tor is shutting down</source>
-        <translation type="unfinished"></translation>
+        <translation>Zamykanie Tora</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="360"/>
         <source>Stop Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Zatrzymaj Tora</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="373"/>
         <source>Tor is starting up</source>
-        <translation type="unfinished"></translation>
+        <translation>Uruchamianie Tora</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="33"/>
         <source>Vidalia Control Panel</source>
-        <translation type="unfinished"></translation>
+        <translation>Panel Kontrolny Vidalii</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="63"/>
         <source>Tor Status</source>
-        <translation type="unfinished"></translation>
+        <translation>Status Tora</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="135"/>
         <source>Vidalia Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Skróty Vidalii</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="169"/>
         <source>Setup Relaying</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienia serwera</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="172"/>
         <source>Set up a Tor relay and help the network grow</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustaw serwer i pomóż sieci w ekspansji</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="182"/>
         <source>View the Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaż Sieć</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="185"/>
         <source>View a map of the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaż mapę sieci Tora</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="198"/>
         <source>Use a New Identity</source>
-        <translation type="unfinished"></translation>
+        <translation>Użyj Nowej Tożsamości</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="201"/>
         <source>Make subsequent connections appear new</source>
-        <translation type="unfinished"></translation>
+        <translation>Uczyń kolejne połączenia jako nowe</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="233"/>
         <source>View Tor&apos;s bandwidth usage</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaż wykorzystanie łącza przez Tora</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="246"/>
         <source>View Tor&apos;s log message history</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaż historię logów Tora</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="296"/>
         <source>View help documentation</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaż dokumentację pomocy</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="309"/>
         <source>Configure Tor and Vidalia</source>
-        <translation type="unfinished"></translation>
+        <translation>Konfiguruj Tora i Vidalię</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="359"/>
         <source>View version and license information</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokaż informację o wersji i licencji</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="372"/>
         <source>Exit Vidalia</source>
-        <translation type="unfinished"></translation>
+        <translation>Zamknij Vidalię</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="425"/>
         <source>Show this window on startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Pokazuj to okno na starcie</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="444"/>
         <source>Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukryj</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="447"/>
         <source>Hide this window</source>
-        <translation type="unfinished"></translation>
+        <translation>Ukryj to okno</translation>
     </message>
 </context>
 <context>
@@ -1306,7 +1306,7 @@ poważnych błedów, uniemożliwiających dalszą pracę.</translation>
         <source>Messages that only appear when 
 something has gone wrong with Tor.</source>
         <translation>Wiadomości informujące
-o błędach Tor&apos;a</translation>
+o błędach Tora</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="154"/>
@@ -1322,14 +1322,14 @@ nie będących błędami, lecz mogą one być istotne.</translation>
         <source>Messages that appear frequently 
 during normal Tor operation.</source>
         <translation>Wiadomości dotyczące prawidłowej
-pracy Tor&apos;a.</translation>
+pracy Tora.</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="158"/>
         <source>Hyper-verbose messages primarily of 
 interest to Tor developers.</source>
         <translation>Bardzo szczegółowe informacje,
-dla programistów ekipy Tor&apos;a</translation>
+dla programistów ekipy Tora</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="203"/>
@@ -1404,7 +1404,7 @@ dla programistów ekipy Tor&apos;a</translation>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="204"/>
         <source>Vidalia was unable to register for Tor&apos;s log events.</source>
-        <translation>Vidalia nie mogła zarejestrować się jako odbiorca logów Tor&apos;a</translation>
+        <translation>Vidalia nie mogła zarejestrować się jako odbiorca logów Tora</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="324"/>
@@ -1506,7 +1506,7 @@ dla programistów ekipy Tor&apos;a</translation>
     <message>
         <location filename="../gui/network/netviewer.ui" line="524"/>
         <source>Refresh the list of routers and connections</source>
-        <translation>Odświeża listę ruterów i połaczeń</translation>
+        <translation>Odświeża listę serwerów i połączeń</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="543"/>
@@ -1592,7 +1592,7 @@ dla programistów ekipy Tor&apos;a</translation>
     <message>
         <location filename="../control/routerdescriptor.cpp" line="87"/>
         <source>Online</source>
-        <translation>Działa</translation>
+        <translation>Aktywny</translation>
     </message>
     <message>
         <location filename="../control/routerdescriptor.cpp" line="89"/>
@@ -1945,7 +1945,7 @@ fingerprint.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1450"/>
         <source>What Internet resources should Tor users be able to access from your Tor relay?</source>
-        <translation>Do jakich zasobów Internetu będą mieli dostęp użytkownicy Tor&apos;a korzystający z Twojego serwera?</translation>
+        <translation>Do jakich zasobów Internetu będą mieli dostęp użytkownicy Tora korzystający z Twojego serwera?</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1224"/>
@@ -2009,7 +2009,7 @@ fingerprint.</source>
     <message>
         <location filename="../control/torservice.cpp" line="155"/>
         <source>The Tor service is not installed.</source>
-        <translation>Usługa Tor&apos;a nie jest zainstalowana.</translation>
+        <translation>Usługa Tora nie jest zainstalowana.</translation>
     </message>
     <message>
         <location filename="../control/torservice.cpp" line="173"/>
