@@ -992,117 +992,118 @@ Verbindungen erscheinen.</translation>
     <message>
         <location filename="../gui/mainwindow.ui" line="159"/>
         <source>Start Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor starten</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="95"/>
         <source>Tor is not running</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor läuft nicht</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="353"/>
         <source>Tor is shutting down</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor wird beendet</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="360"/>
         <source>Stop Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor anhalten</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="373"/>
         <source>Tor is starting up</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor startet</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="33"/>
         <source>Vidalia Control Panel</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia Kontroll-Panel</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="63"/>
         <source>Tor Status</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor Status</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="135"/>
         <source>Vidalia Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia Tastenkombinationen</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="169"/>
         <source>Setup Relaying</source>
-        <translation type="unfinished"></translation>
+        <translation>Weiterleitung einrichten</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="172"/>
         <source>Set up a Tor relay and help the network grow</source>
-        <translation type="unfinished"></translation>
+        <translation>Richten Sie eine Tor-Weiterleitung ein und helfen Sie
+dem Netzwerk zu wachsen.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="182"/>
         <source>View the Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Netzwerk betrachten</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="185"/>
         <source>View a map of the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Die Tor-Netzwerkkarte betrachten</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="198"/>
         <source>Use a New Identity</source>
-        <translation type="unfinished"></translation>
+        <translation>Eine neue Identität verwenden</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="201"/>
         <source>Make subsequent connections appear new</source>
-        <translation type="unfinished"></translation>
+        <translation>Spätere Verbindungen als neu erscheinen lassen</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="233"/>
         <source>View Tor&apos;s bandwidth usage</source>
-        <translation type="unfinished"></translation>
+        <translation>Tors Bandbreitennutzung anzeigen</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="246"/>
         <source>View Tor&apos;s log message history</source>
-        <translation type="unfinished"></translation>
+        <translation>Tors Nachrichtenprotokollverlauf anzeigen</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="296"/>
         <source>View help documentation</source>
-        <translation type="unfinished"></translation>
+        <translation>Hilfe anzeigen</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="309"/>
         <source>Configure Tor and Vidalia</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor und Vidalia einrichten</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="359"/>
         <source>View version and license information</source>
-        <translation type="unfinished"></translation>
+        <translation>Version und Lizenzinformationen anzeigen</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="372"/>
         <source>Exit Vidalia</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia beenden</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="425"/>
         <source>Show this window on startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieses Fenster beim Start anzeigen</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="444"/>
         <source>Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>Verstecken</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="447"/>
         <source>Hide this window</source>
-        <translation type="unfinished"></translation>
+        <translation>Dieses Fenster verstecken</translation>
     </message>
 </context>
 <context>
