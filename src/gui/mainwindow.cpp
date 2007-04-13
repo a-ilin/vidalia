@@ -371,11 +371,16 @@ MainWindow::updateTorStatus(TorStatus status)
       ui.lblStartStopTor->setPixmap(QPixmap(IMG_START_TOR_48));
       ui.lblStartStopTor->setStatusTip(actionText);
   } else if (status == Stopping) {
-      statusText = tr("Tor is shutting down");
+      if (_delayedShutdownStarted) {
+        statusText = tr("Your Tor server is shutting down.\r\n" 
+                        "Click 'Stop Tor' again to force Tor to stop now.");
+      } else {
+        statusText = tr("Tor is shutting down");
+      }
       trayIconFile = IMG_TOR_STOPPING;
       statusIconFile = IMG_TOR_STOPPING_48;
       ui.lblNewIdentity->setEnabled(false);
-      ui.lblStartStopTor->setStatusTip(statusText);
+      ui.lblStartStopTor->setStatusTip(tr("Stop Tor Now"));
   } else if (status == Running) {
       statusText = tr("Tor is running");
       actionText = tr("Stop Tor");
