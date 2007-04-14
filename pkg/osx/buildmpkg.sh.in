@@ -173,11 +173,13 @@ cp    $TOR_DIR/AUTHORS $DOC/AUTHORS.txt
 groff $TOR_DIR/doc/tor.1.in -T ps -m man | pstopdf -i -o $DOC/tor-reference.pdf
 groff $TOR_DIR/doc/tor-resolve.1 -T ps -m man | pstopdf -i -o $DOC/tor-resolve.pdf
 mkdir $DOC/Advanced
-cp    $TOR_DIR/doc/tor-spec.txt         \
-      $TOR_DIR/doc/rend-spec.txt        \
-      $TOR_DIR/doc/control-spec.txt     \
-      $TOR_DIR/doc/socks-extensions.txt \
-      $TOR_DIR/doc/version-spec.txt     \
+cp    $TOR_DIR/doc/spec/tor-spec.txt         \
+      $TOR_DIR/doc/spec/rend-spec.txt        \
+      $TOR_DIR/doc/spec/control-spec.txt     \
+      $TOR_DIR/doc/spec/socks-extensions.txt \
+      $TOR_DIR/doc/spec/version-spec.txt     \
+      $TOR_DIR/doc/spec/address-spec.txt     \
+      $TOR_DIR/doc/spec/path-spec.txt        \
       $DOC/Advanced
 cp    $TOR_DIR/doc/HACKING $DOC/Advanced/HACKING.txt
 cp    $TOR_DIR/ChangeLog   $DOC/Advanced/ChangeLog.txt
