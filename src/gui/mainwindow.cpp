@@ -158,9 +158,6 @@ MainWindow::MainWindow()
 /** Destructor. */
 MainWindow::~MainWindow()
 {
-  VidaliaSettings settings;
-  settings.setShowMainWindowAtStart(ui.chkShowOnStartup->isChecked());
-
   _trayIcon.hide();
   delete _messageLog;
   delete _netViewer;
@@ -427,6 +424,14 @@ MainWindow::trayActivated(QSystemTrayIcon::ActivationReason reason)
     show();
 }
 #endif
+
+/** Called when the "show on startup" checkbox is toggled. */
+void
+MainWindow::toggleShowOnStartup(bool checked)
+{
+  VidaliaSettings settings;
+  settings.setShowMainWindowAtStart(checked);
+}
 
 /** Starts Tor if it is not currently running, or stops Tor if it is already
  * running. */

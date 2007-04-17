@@ -99,7 +99,9 @@ private slots:
   void showConfigDialog(ConfigDialog::Page page = ConfigDialog::General);
   /** Displays the Configuration dialog, set to the Server page. */
   void showServerConfigDialog();
-
+  /** Called when the "show on startup" checkbox is toggled. */
+  void toggleShowOnStartup(bool checked);
+  
 #if defined(USE_QSYSTEMTRAYICON)
   /** Displays the main window if <b>reason</b> is DoubleClick. */
   void trayActivated(QSystemTrayIcon::ActivationReason reason);

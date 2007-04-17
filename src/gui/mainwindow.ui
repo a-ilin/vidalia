@@ -843,6 +843,12 @@
    <slot>close()</slot>
   </connection>
   <connection>
+   <sender>chkShowOnStartup</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>toggleShowOnStartup(bool)</slot>
+  </connection>
+  <connection>
    <sender>btnHide</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
