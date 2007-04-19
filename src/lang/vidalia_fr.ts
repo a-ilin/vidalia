@@ -185,17 +185,17 @@ Vous devrez peut-être enlever manuellement le service Tor.</translation>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="80"/>
         <source>&apos;%1&apos; is not a valid IP address.</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%1&apos; n&apos;est pas une adresse IP valide.</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="542"/>
         <source>IP address on which Tor is listening for controller connections.</source>
-        <translation type="unfinished"></translation>
+        <translation>Adresse IP sur laquelle Tor écoute les connexions du contrôleur.</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="549"/>
         <source>:</source>
-        <translation type="unfinished"></translation>
+        <translation>:</translation>
     </message>
 </context>
 <context>
@@ -990,117 +990,117 @@ Veuillez consulter le journal des messages afin de vérifier ce qui est arrivé 
     <message>
         <location filename="../gui/mainwindow.ui" line="159"/>
         <source>Start Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Démarrer Tor</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="95"/>
         <source>Tor is not running</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor n&apos;est pas en fonctionnement</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="353"/>
         <source>Tor is shutting down</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor est en cours d&apos;arrêt</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="360"/>
         <source>Stop Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Arrêter Tor</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="373"/>
         <source>Tor is starting up</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor est en cours de démarrage</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="33"/>
         <source>Vidalia Control Panel</source>
-        <translation type="unfinished"></translation>
+        <translation>Panneau de contrôle de Vidalia</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="63"/>
         <source>Tor Status</source>
-        <translation type="unfinished"></translation>
+        <translation>État du service Tor</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="135"/>
         <source>Vidalia Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>Raccourcis Vidalia</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="169"/>
         <source>Setup Relaying</source>
-        <translation type="unfinished"></translation>
+        <translation>Installer un relais</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="172"/>
         <source>Set up a Tor relay and help the network grow</source>
-        <translation type="unfinished"></translation>
+        <translation>Configurer un relais Tor, contribuant à la croissance du réseau</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="182"/>
         <source>View the Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Voir le réseau</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="185"/>
         <source>View a map of the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Voir la carte du réseau Tor</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="198"/>
         <source>Use a New Identity</source>
-        <translation type="unfinished"></translation>
+        <translation>Utiliser une nouvelle identité</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="201"/>
         <source>Make subsequent connections appear new</source>
-        <translation type="unfinished"></translation>
+        <translation>Faire que les connexions suivantes apparaissent comme de nouvelles connexions</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="233"/>
         <source>View Tor&apos;s bandwidth usage</source>
-        <translation type="unfinished"></translation>
+        <translation>Voir l&apos;utilisation de bande passante de Tor</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="246"/>
         <source>View Tor&apos;s log message history</source>
-        <translation type="unfinished"></translation>
+        <translation>Voir l&apos;historique du journal des messages de Tor</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="296"/>
         <source>View help documentation</source>
-        <translation type="unfinished"></translation>
+        <translation>Voir la documentation d&apos;aide</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="309"/>
         <source>Configure Tor and Vidalia</source>
-        <translation type="unfinished"></translation>
+        <translation>Configurer Tor et Vidalia</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="359"/>
         <source>View version and license information</source>
-        <translation type="unfinished"></translation>
+        <translation>Voir les informations de version et de licence</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="372"/>
         <source>Exit Vidalia</source>
-        <translation type="unfinished"></translation>
+        <translation>Quitter Vidalia</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="425"/>
         <source>Show this window on startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Afficher cette fenêtre au démarrage</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="444"/>
         <source>Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>Cacher</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="447"/>
         <source>Hide this window</source>
-        <translation type="unfinished"></translation>
+        <translation>Cacher cette fenêtre</translation>
     </message>
 </context>
 <context>
@@ -1445,7 +1445,7 @@ les développeurs de Tor.</translation>
     <message>
         <location filename="../gui/log/messagelog.ui" line="567"/>
         <source>Message Log History</source>
-        <translation>Historique du Journal des messages</translation>
+        <translation>Hist. Journal des messages</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="588"/>
@@ -2019,7 +2019,7 @@ votre fingerprint de PGP ou de GPG.</translation>
     <message>
         <location filename="../control/torservice.cpp" line="173"/>
         <source>Unable to start the Tor service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Le service Tor n&apos;a pas pu être démarré.</translation>
     </message>
 </context>
 <context>
@@ -2124,7 +2124,7 @@ Voulez-vous continuer à démarrer Vidalia ?</translation>
     <message>
         <location filename="../vidalia.cpp" line="167"/>
         <source>Sets the name and location of Vidalia&apos;s pidfile.</source>
-        <translation type="unfinished">Définir le nom et le répertoire du fichier d&apos;identification du processus Vidalia .</translation>
+        <translation>Définir le nom et le répertoire du fichier d&apos;identification du processus Vidalia (pidfile).</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="169"/>
