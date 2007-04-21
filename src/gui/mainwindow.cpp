@@ -139,8 +139,11 @@ MainWindow::MainWindow()
   connect(vApp, SIGNAL(shutdown()), this, SLOT(shutdown()));
 
   if (_torControl->isRunning()) {
+    /* Tor may be already running, but we still need to connect to it. So,
+     * update our status now. */ 
+    updateTorStatus(Starting);
     /* Tor was already running */
-    this->started();
+    started();
   } else if (settings.runTorAtStart()) {
     /* If we're supposed to start Tor when Vidalia starts, then do it now */
     start();
