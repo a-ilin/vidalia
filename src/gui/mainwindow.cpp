@@ -148,14 +148,20 @@ MainWindow::MainWindow()
     /* If we're supposed to start Tor when Vidalia starts, then do it now */
     start();
   }
-
-  /* Check if we are supposed to show our main window on startup */
-  ui.chkShowOnStartup->setChecked(settings.showMainWindowAtStart());
-  if (ui.chkShowOnStartup->isChecked())
-    this->show();
-
-  /* Make the tray icon visible */
-  _trayIcon.show();
+  
+  if (isTrayIconSupported()) {
+    /* Make the tray icon visible */
+    _trayIcon.show();
+    /* Check if we are supposed to show our main window on startup */
+    ui.chkShowOnStartup->setChecked(settings.showMainWindowAtStart());
+    if (ui.chkShowOnStartup->isChecked())
+      show();
+  } else {
+    /* Don't let people hide the main window, since that's all they have. */
+    ui.chkShowOnStartup->hide();
+    ui.btnHide->hide();
+    show();
+  }
 }
 
 /** Destructor. */
@@ -165,6 +171,23 @@ MainWindow::~MainWindow()
   delete _messageLog;
   delete _netViewer;
   delete _bandwidthGraph;
+}
+
+/** Returns true if we're running on a platform with tray icon support. */
+bool
+MainWindow::isTrayIconSupported()
+{
+#if defined(Q_WS_WIN) || defined(Q_WS_MAC)
+  /* We always have a tray on Win32 or a dock on OS X */
+  return true;
+#elif defined(USE_QSYSTEMTRAYICON)
+  /* Ask Qt if there is a tray available */
+  return QSystemTrayIcon::isSystemTrayAvailable();  
+#else
+  /* XXX: This is too optimistic, but we need to make our own tray icon
+   * implementation smart enough to detect a system tray on X11. */
+  return true;
+#endif
 }
 
 /** Terminate the Tor process if it is being run under Vidalia, disconnect all

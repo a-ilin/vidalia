@@ -123,7 +123,8 @@ private:
   QMenu* createTrayMenu();
   /** Creates a default menubar on Mac */
   void createMenuBar();
-  
+  /** Returns true if we're running on a platform with tray icon support. */
+  bool isTrayIconSupported();
   /** Updates the UI to reflect Tor's current <b>status</b>. */
   void updateTorStatus(TorStatus status);
 
