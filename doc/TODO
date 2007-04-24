@@ -54,6 +54,9 @@ Localization:
 
 
 Miscellaneous Tasks:
+  * Work on improving the network map with better graphics, server pinpoints
+    that are more visible and clickable, and clickable circuits. Marble might
+    be a good start for some of that.
   * When creating the Tor service on Windows, we either should be creating a
     separate user to run the service as (instead of running it as Local
     System), or we should write a patch for Tor to do it (Ticket #174).
