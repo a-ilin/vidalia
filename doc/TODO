@@ -75,6 +75,8 @@ Miscellaneous Tasks:
     getting help making our window layouts and text better.
   * Rework src/control/ a bit so it is more modular and can be dropped into
     any other Qt application that wants to talk to Tor.
+  * Add a --disable-qsystrayicon autoconf option to build with our own tray
+    icon implementation with Qt 4.2, instead of using QSystemTrayIcon.
 
 
 Notes from Roger:
