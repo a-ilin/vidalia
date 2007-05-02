@@ -33,27 +33,27 @@
     <message>
         <location filename="../gui/about/aboutdialog.ui" line="443"/>
         <source>Qt Version</source>
-        <translation>Versión de Qt</translation>
+        <translation>Versi&oacute;n de Qt</translation>
     </message>
     <message>
         <location filename="../gui/about/aboutdialog.ui" line="528"/>
         <source>Tor Version</source>
-        <translation>Versión de Tor</translation>
+        <translation>Versi&oacute;n de Tor</translation>
     </message>
     <message>
         <location filename="../gui/about/aboutdialog.ui" line="359"/>
         <source>Vidalia Version</source>
-        <translation>Versión de Vidalia</translation>
+        <translation>Versi&oacute;n de Vidalia</translation>
     </message>
     <message>
         <location filename="../gui/about/aboutdialog.cpp" line="79"/>
         <source>&lt;Not Running&gt;</source>
-        <translation>No esta ejecutandose</translation>
+        <translation>&lt;No est&aacute; ejecut&aacute;ndose&gt;</translation>
     </message>
     <message>
         <location filename="../gui/about/aboutdialog.cpp" line="75"/>
         <source>&lt;Unavailable&gt;</source>
-        <translation>No disponible</translation>
+        <translation>&lt;No disponible&gt;</translation>
     </message>
 </context>
 <context>
@@ -71,12 +71,12 @@
     <message>
         <location filename="../gui/config/advancedpage.ui" line="625"/>
         <source>Start Tor with the specified configuration file (torrc)</source>
-        <translation>Iniciar Tor con el archivo de configuración especificado (torrc)</translation>
+        <translation>Iniciar Tor con el archivo de configuraci&oacute;n especificado (torrc)</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="644"/>
         <source>Select path to Tor configuration file</source>
-        <translation>Seleccione el ruta del archivo de configuración de Tor</translation>
+        <translation>Seleccione el ruta del archivo de configuraci&oacute;n de Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="647"/>
@@ -96,7 +96,7 @@
     <message>
         <location filename="../gui/config/advancedpage.ui" line="702"/>
         <source>Vidalia will run with this User&apos;s permissions</source>
-        <translation>Vidalia se ejecutara con los permisos de este Usuario</translation>
+        <translation>Vidalia se ejecutar&aacute; con los permisos de este Usuario</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="722"/>
@@ -106,12 +106,12 @@
     <message>
         <location filename="../gui/config/advancedpage.ui" line="729"/>
         <source>Vidalia will run with this Group&apos;s permissions</source>
-        <translation>Vidalia se ejecutara con los permisos de este Grupo</translation>
+        <translation>Vidalia se ejecutar&aacute; con los permisos de este Grupo</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="119"/>
         <source>Select Tor Configuration File</source>
-        <translation>Seleccione el Archivo de Configuración de Tor</translation>
+        <translation>Seleccione el Archivo de Configuraci&oacute;n de Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="132"/>
@@ -141,7 +141,7 @@
     <message>
         <location filename="../gui/config/advancedpage.ui" line="768"/>
         <source>Enable this if you wish to run Tor as a Windows service</source>
-        <translation>Habilitar esto si usted desea que Tor se ejecute como un servicio de Windows.</translation>
+        <translation>Habilitar &eacute;sto si usted desea que Tor se ejecute como un servicio de Windows.</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="771"/>
@@ -151,7 +151,7 @@
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="169"/>
         <source>Unable to remove Tor Service</source>
-        <translation>No se pudo remover el Servicio Tor</translation>
+        <translation>No se pudo eliminar el Servicio Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="180"/>
@@ -170,32 +170,32 @@
 You may need to remove it manually.</source>
         <translation>Vidalia no pudo remover el servicio Tor.
 <byte value="x9"/>
-Necesitara removerlo manualmente.</translation>
+Necesitara eliminarlo manualmente.</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="604"/>
         <source>Tor Configuration File</source>
-        <translation>Archivo de Configuración de Tor</translation>
+        <translation>Archivo de Configuraci&oacute;n de Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="573"/>
         <source>Port that Vidalia uses to communicate with Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Puerto que Vidalia usa para comunicarse con Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="80"/>
         <source>&apos;%1&apos; is not a valid IP address.</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%1&apos; no es una direcci&oacute;n IP v&aacute;lida.</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="542"/>
         <source>IP address on which Tor is listening for controller connections.</source>
-        <translation type="unfinished"></translation>
+        <translation>Direcci&oacute;n IP que Tor usa para escuchar las conexiones de control</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="549"/>
         <source>:</source>
-        <translation type="unfinished"></translation>
+        <translation>:</translation>
     </message>
 </context>
 <context>
@@ -213,7 +213,7 @@ Necesitara removerlo manualmente.</translation>
     <message>
         <location filename="../gui/config/appearancepage.ui" line="354"/>
         <source>Changes to language will only take effect after restarting Vidalia!</source>
-        <translation>Cambios de lenguaje solo surtiran efecto despues de reiniciar Vidalia!</translation>
+        <translation>Los cambios de lenguaje solo surtir&aacute;n efecto despu&eacute;s de reiniciar Vidalia!</translation>
     </message>
     <message>
         <location filename="../gui/config/appearancepage.ui" line="370"/>
@@ -246,17 +246,17 @@ Necesitara removerlo manualmente.</translation>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="630"/>
         <source>Receive Rate</source>
-        <translation>Taza de Recivo</translation>
+        <translation>Tasa de Recivo</translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="654"/>
         <source>Send Rate</source>
-        <translation>Taza de Envio</translation>
+        <translation>Tasa de Envio</translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="773"/>
         <source>Changes the transparency of the Bandwidth Graph</source>
-        <translation>Cambia la transparencia de la Gráfica de Ancho de Banda</translation>
+        <translation>Cambia la transparencia del Gráfico de Ancho de Banda</translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="932"/>
@@ -296,7 +296,7 @@ Necesitara removerlo manualmente.</translation>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="723"/>
         <source>Style</source>
-        <translation type="unfinished">Estilo</translation>
+        <translation>Estilo</translation>
     </message>
 </context>
 <context>
@@ -319,12 +319,12 @@ Necesitara removerlo manualmente.</translation>
     <message>
         <location filename="../control/circuit.cpp" line="112"/>
         <source>Failed</source>
-        <translation>Falló</translation>
+        <translation>Fall&oacute;</translation>
     </message>
     <message>
         <location filename="../control/circuit.cpp" line="113"/>
         <source>Closed</source>
-        <translation>Cerrar</translation>
+        <translation>Cerrado</translation>
     </message>
     <message>
         <location filename="../control/circuit.cpp" line="114"/>
@@ -337,7 +337,7 @@ Necesitara removerlo manualmente.</translation>
     <message>
         <location filename="../gui/network/circuititem.cpp" line="48"/>
         <source>&lt;Path Empty&gt;</source>
-        <translation>&lt;ruta Vacio&gt;</translation>
+        <translation>&lt;Ruta Vac&iacute;a&gt;</translation>
     </message>
 </context>
 <context>
@@ -345,7 +345,7 @@ Necesitara removerlo manualmente.</translation>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="47"/>
         <source>Connection</source>
-        <translation>Conexión</translation>
+        <translation>Conexi&oacute;n</translation>
     </message>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="47"/>
@@ -360,12 +360,12 @@ Necesitara removerlo manualmente.</translation>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="62"/>
         <source>Close Stream</source>
-        <translation>Cerrar Corriente</translation>
+        <translation>Cerrar Flujo</translation>
     </message>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="55"/>
         <source>Zoom to Circuit</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom sobre el Circuito</translation>
     </message>
 </context>
 <context>
@@ -403,7 +403,7 @@ Necesitara removerlo manualmente.</translation>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="154"/>
         <source>Error Saving Configuration</source>
-        <translation>Error al Guardar Configuración</translation>
+        <translation>Error al Guardar Configuraci&oacute;n</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="74"/>
@@ -421,12 +421,12 @@ Necesitara removerlo manualmente.</translation>
     <message>
         <location filename="../control/controlconnection.cpp" line="294"/>
         <source>Control socket is not connected.</source>
-        <translation>Conector de Control no está conectado.</translation>
+        <translation>Conector de Control no est&aacute; conectado.</translation>
     </message>
     <message>
         <location filename="../control/controlconnection.cpp" line="239"/>
         <source>Control socket is not connected</source>
-        <translation>Conector de Control no está conectado.</translation>
+        <translation>Conector de Control no est&aacute; conectado.</translation>
     </message>
 </context>
 <context>
@@ -439,7 +439,7 @@ Necesitara removerlo manualmente.</translation>
     <message>
         <location filename="../control/controlsocket.cpp" line="101"/>
         <source>Error disconnecting socket. [%1]</source>
-        <translation>Error desconectando conexión. [%1]</translation>
+        <translation>Error desconectando conexi&oacute;n. [%1]</translation>
     </message>
     <message>
         <location filename="../control/controlsocket.cpp" line="159"/>
@@ -449,28 +449,28 @@ Necesitara removerlo manualmente.</translation>
     <message>
         <location filename="../control/controlsocket.cpp" line="196"/>
         <source>Socket disconnected while attempting to read a line of data.</source>
-        <translation>Conexión desconectada mientras se trataba de leer una línea de información.</translation>
+        <translation>Conexi&oacute;n desconectada mientras se trataba de leer una l&iacute;nea de informaci&oacute;n.</translation>
     </message>
     <message>
         <location filename="../control/controlsocket.cpp" line="234"/>
         <source>Invalid control reply. [%1]</source>
-        <translation>Respuesta de control invalida. [%1]</translation>
+        <translation>Respuesta de control inv&aacute;lida. [%1]</translation>
     </message>
     <message>
         <location filename="../control/controlsocket.cpp" line="150"/>
         <source>Control socket is not connected.</source>
-        <translation>Conexión de control no esta conectada.</translation>
+        <translation>Conexi&oacute;n de control no esta conectada.</translation>
     </message>
     <message>
         <location filename="../control/controlsocket.cpp" line="81"/>
         <source>Vidalia was unable to determine Tor&apos;s control protocol version. Verify that your control port number is set correctly and you are running a recent version of Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia no pudo determinar la versi&oacute;n del protocolo usado por Tor. Verifica que el n&uacute;mero de puerto de control est&aacute; indicado correctaamente y que est&aacute;s usando una versi&oacute;n reciente de Tor.</translation>
     </message>
     <message>
         <location filename="../control/controlsocket.cpp" line="85"/>
         <source>Vidalia only supports Version 1 of Tor&apos;s control protocol (version %1 detected).
 Upgrade to a newer version of Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia s&oacute;lo soporta la versi&oacute;n 1 del protocolo Tor (Versi&oacute;n %1 detectada)</translation>
     </message>
 </context>
 <context>
@@ -493,7 +493,7 @@ Upgrade to a newer version of Tor.</source>
     <message>
         <location filename="../gui/config/generalpage.ui" line="375"/>
         <source>Startup Options</source>
-        <translation>Opciones de inicio de sesión</translation>
+        <translation>Opciones de inicio de sesi&oacute;n</translation>
     </message>
     <message>
         <location filename="../gui/config/generalpage.ui" line="390"/>
