@@ -1104,23 +1104,24 @@ Proszę sprawdzić Dziennik Logów, aby zidentyfikować przyczynę.</translation
     <message>
         <location filename="../gui/mainwindow.cpp" line="264"/>
         <source>Control Panel</source>
-        <translation type="unfinished"></translation>
+        <translation>Panel Kontrolny</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="343"/>
         <source>Ctrl+P</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="401"/>
         <source>Your Tor server is shutting down.
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Trwa wyłączanie serwera Tora.
+Kliknij &apos;Zatrzymaj Tora&apos; ponownie aby wymusić zatrzymanie.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="408"/>
         <source>Stop Tor Now</source>
-        <translation type="unfinished"></translation>
+        <translation>Zatrzymaj Tora</translation>
     </message>
 </context>
 <context>
