@@ -57,6 +57,7 @@ XPStyle           on
 !define MUI_WELCOMEPAGE_TITLE "$(VidaliaWelcomeTitle)"
 !define MUI_WELCOMEPAGE_TEXT  "$(VidaliaWelcomeText)"
 !define MUI_ABORTWARNING
+!define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_ICON "${NSISDIR}\Contrib\Graphics\Icons\win-install.ico"
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\win-uninstall.ico"
 !define MUI_HEADERIMAGE_BITMAP "${NSISDIR}\Contrib\Graphics\Header\win.bmp"
