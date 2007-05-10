@@ -1108,23 +1108,25 @@ dem Netzwerk zu wachsen.</translation>
     <message>
         <location filename="../gui/mainwindow.cpp" line="264"/>
         <source>Control Panel</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrollpanel</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="343"/>
         <source>Ctrl+P</source>
-        <translation type="unfinished"></translation>
+        <translation>Strg+P</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="401"/>
         <source>Your Tor server is shutting down.
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ihr Tor Server fährt nun herunter.
+Klicken sie erneut auf &apos;Tor anhalten&apos;, um das Beenden
+von Tor jetzt zu erzwingen.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="408"/>
         <source>Stop Tor Now</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor jetzt anhalten</translation>
     </message>
 </context>
 <context>
