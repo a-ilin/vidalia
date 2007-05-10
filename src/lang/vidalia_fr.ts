@@ -1105,23 +1105,24 @@ Veuillez consulter le journal des messages afin de vérifier ce qui est arrivé 
     <message>
         <location filename="../gui/mainwindow.cpp" line="264"/>
         <source>Control Panel</source>
-        <translation type="unfinished"></translation>
+        <translation>Panneau de contrôle</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="343"/>
         <source>Ctrl+P</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="401"/>
         <source>Your Tor server is shutting down.
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Votre serveur Tor est en cours d&apos;arrêt.
+Cliquez sur &quot;Arrêter Tor&quot; pour obliger Tor à s&apos;arrêter immédiatement.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="408"/>
         <source>Stop Tor Now</source>
-        <translation type="unfinished"></translation>
+        <translation>Arrêter Tor dès maintenant</translation>
     </message>
 </context>
 <context>
