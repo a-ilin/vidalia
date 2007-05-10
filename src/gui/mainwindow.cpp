@@ -160,6 +160,8 @@ MainWindow::MainWindow()
     /* Don't let people hide the main window, since that's all they have. */
     ui.chkShowOnStartup->hide();
     ui.btnHide->hide();
+    setMinimumHeight(height()-ui.btnHide->height());
+    setMaximumHeight(height()-ui.btnHide->height());
     show();
   }
 }
