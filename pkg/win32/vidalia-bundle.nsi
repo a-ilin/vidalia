@@ -18,19 +18,16 @@ SetCompressor /SOLID lzma
 !define VIDALIA_EXEC        "vidalia.exe"
 !define VIDALIA_APPVERSION  "0.0.12-svn"
 !define VIDALIA_DESC        "${VIDALIA_NAME} ${VIDALIA_APPVERSION}"
-!define VIDALIA_UNINST      "uninstall.exe"
 
 !define TOR_NAME            "Tor"
 !define TOR_EXEC            "tor.exe"
 !define TOR_APPVERSION      "0.1.2.7-alpha"
 !define TOR_DESC            "${TOR_NAME} ${TOR_APPVERSION}"
-!define TOR_UNINST          "Uninstall.exe"
 
 !define PRIVOXY_NAME        "Privoxy"
 !define PRIVOXY_EXEC        "privoxy.exe"
 !define PRIVOXY_APPVERSION  "3.0.6"
 !define PRIVOXY_DESC        "${PRIVOXY_NAME} ${PRIVOXY_APPVERSION}"
-!define PRIVOXY_UNINST      "privoxy_uninstall.exe"
 
 !define TORBUTTON_NAME      "Torbutton"
 !define TORBUTTON_APPVERSION "1.0.4-fx+tb"
@@ -46,6 +43,8 @@ SetCompressor /SOLID lzma
 !define BUNDLE_PRODVERSION  "${VIDALIA_APPVERSION}.${BUNDLE_REVISION}" ; Product version must be x.x.x.x
 !define BUNDLE_DESC         "${BUNDLE_NAME} ${BUNDLE_APPVERSION}"
 !define INSTALLFILE         "vidalia-bundle-${BUNDLE_APPVERSION}.exe"
+!define UNINSTALLER         "Uninstall.exe"
+!define SHORTCUTS           "$SMPROGRAMS\${BUNDLE_NAME}"
 
 ;--------------------------------
 ; Installer file details
@@ -61,7 +60,8 @@ Name            "${BUNDLE_NAME}"
 Caption         "$(BundleSetupCaption)"
 BrandingText    "${BUNDLE_DESC} (Rev. ${BUNDLE_REVISION})"
 OutFile         "${INSTALLFILE}"
-InstallDir      "$PROGRAMFILES"
+InstallDir      "$PROGRAMFILES\Vidalia Bundle"
+InstallDirRegKey HKCU "Software" "${BUNDLE_NAME}"
 SetOverWrite    ifnewer
 AutoCloseWindow false
 ShowInstDetails show
@@ -73,7 +73,9 @@ XPStyle         on
 !define MUI_WELCOMEPAGE_TITLE "$(BundleWelcomeTitle)"
 !define MUI_WELCOMEPAGE_TEXT  "$(BundleWelcomeText)"
 !define MUI_ABORTWARNING
+!define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_ICON "${NSISDIR}\Contrib\Graphics\Icons\win-install.ico"
+!define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\win-uninstall.ico"
 !define MUI_HEADERIMAGE_BITMAP "${NSISDIR}\Contrib\Graphics\Header\win.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_FINISHPAGE_TEXT "$(BundleFinishText)"
@@ -90,6 +92,12 @@ XPStyle         on
 !insertmacro MUI_PAGE_DIRECTORY
 !insertmacro MUI_PAGE_INSTFILES
 !insertmacro MUI_PAGE_FINISH
+
+!insertmacro MUI_UNPAGE_WELCOME
+!insertmacro MUI_UNPAGE_COMPONENTS
+!insertmacro MUI_UNPAGE_CONFIRM
+!insertmacro MUI_UNPAGE_INSTFILES
+!insertmacro MUI_UNPAGE_FINISH
 
 ;--------------------------------
 ; Available languages
@@ -141,7 +149,6 @@ SectionGroup "!${TOR_DESC}" TorGroup
        SetOutPath "$INSTDIR\Tor"
        File "tor\${TOR_APPVERSION}\tor.exe"
        File "tor\${TOR_APPVERSION}\tor-resolve.exe"
-       File "tor\${TOR_APPVERSION}\${TOR_UNINST}"
        WriteIniStr "$INSTDIR\Tor\Tor Website.url" "InternetShortcut" "URL" "http://tor.eff.org"
 
        StrCpy $configfile "torrc"
@@ -158,12 +165,12 @@ SectionGroup "!${TOR_DESC}" TorGroup
           StrCpy $configfile "torrc.sample"
        endiftorrc:
        File /oname=$configfile "tor\${TOR_APPVERSION}\torrc.sample"
-
-       ; Write the uninstall keys for Windows
-       WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "DisplayName" "${TOR_DESC}"
-       WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "UninstallString" '"$INSTDIR\Tor\${TOR_UNINST}"'
-       WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "NoModify" 1
-       WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "NoRepair" 1
+       
+        ; Write the uninstall keys for Windows
+        WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "DisplayName" "${TOR_DESC}"
+        WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "UninstallString" '"$INSTDIR\${UNINSTALLER}"'
+        WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "NoModify" 1
+        WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "NoRepair" 1
        
        IntOp $bInstallTor 0 + 1
     SectionEnd
@@ -191,20 +198,20 @@ SectionGroup "!${TOR_DESC}" TorGroup
       SectionIn 1
         SetShellVarContext all ; (Add to "All Users" Start Menu if possible)
         SetOutPath "$INSTDIR\Tor"
-        IfFileExists "$SMPROGRAMS\Tor\*.*" "" +2
-           RMDir /r "$SMPROGRAMS\Tor"
+        IfFileExists "${SHORTCUTS}\Tor\*.*" "" +2
+           RMDir /r "${SHORTCUTS}\Tor"
         
-        CreateDirectory "$SMPROGRAMS\Tor"
-        CreateShortCut "$SMPROGRAMS\Tor\Tor.lnk" "$INSTDIR\Tor\tor.exe"
-        CreateShortCut "$SMPROGRAMS\Tor\Torrc.lnk" "Notepad.exe" "$configdir\torrc"
-        CreateShortCut "$SMPROGRAMS\Tor\Tor Website.lnk" "$INSTDIR\Tor\Tor Website.url"
-        CreateShortCut "$SMPROGRAMS\Tor\Uninstall.lnk" "$INSTDIR\Tor\${TOR_UNINST}"
+        CreateDirectory "${SHORTCUTS}\Tor"
+        CreateShortCut  "${SHORTCUTS}\Tor\Tor.lnk" "$INSTDIR\Tor\tor.exe"
+        CreateShortCut  "${SHORTCUTS}\Tor\Torrc.lnk" "Notepad.exe" "$configdir\torrc"
+        CreateShortCut  "${SHORTCUTS}\Tor\Tor Website.lnk" "$INSTDIR\Tor\Tor Website.url"
+        CreateShortCut "${SHORTCUTS}\Uninstall.lnk" "$INSTDIR\Uninstall.exe" "" "$INSTDIR\${UNINSTALLER}" 0
         
         IfFileExists "$INSTDIR\Tor\Documents\*.*" "" endifdocs
-          CreateDirectory "$SMPROGRAMS\Tor\Documents"
-          CreateShortCut "$SMPROGRAMS\Tor\Documents\Tor Manual.lnk" "$INSTDIR\Tor\Documents\tor-reference.html"
-          CreateShortCut "$SMPROGRAMS\Tor\Documents\Tor Documentation.lnk" "$INSTDIR\Tor\Documents"
-          CreateShortCut "$SMPROGRAMS\Tor\Documents\Tor Specification.lnk" "$INSTDIR\Tor\Documents\tor-spec.txt"
+          CreateDirectory "${SHORTCUTS}\Tor\Documents"
+          CreateShortCut  "${SHORTCUTS}\Tor\Documents\Tor Manual.lnk" "$INSTDIR\Tor\Documents\tor-reference.html"
+          CreateShortCut  "${SHORTCUTS}\Tor\Documents\Tor Documentation.lnk" "$INSTDIR\Tor\Documents"
+          CreateShortCut  "${SHORTCUTS}\Tor\Documents\Tor Specification.lnk" "$INSTDIR\Tor\Documents\tor-spec.txt"
         endifdocs:
     SectionEnd
 SectionGroupEnd
@@ -222,14 +229,13 @@ SectionGroup "${VIDALIA_DESC}" VidaliaGroup
       ; Set output path to the installation directory.
       SetOutPath "$INSTDIR\Vidalia"
       File "Vidalia\${VIDALIA_APPVERSION}\${VIDALIA_EXEC}"
-      File "Vidalia\${VIDALIA_APPVERSION}\${VIDALIA_UNINST}"
       File "Vidalia\${VIDALIA_APPVERSION}\mingwm10.dll"
       File "Vidalia\${VIDALIA_APPVERSION}\README"
       File "Vidalia\${VIDALIA_APPVERSION}\CHANGELOG"
       File "Vidalia\${VIDALIA_APPVERSION}\LICENSE"
       File "Vidalia\${VIDALIA_APPVERSION}\COPYING"
       File "Vidalia\${VIDALIA_APPVERSION}\AUTHORS"
-      File "BUNDLE_LICENSE"
+
       
       ; Include a prebuilt GeoIP cache
       SetShellVarContext current
@@ -247,14 +253,13 @@ SectionGroup "${VIDALIA_DESC}" VidaliaGroup
       Pop $R0 ; contains the modified version of $INSTDIR
       WriteINIStr "$APPDATA\Vidalia\vidalia.conf" Tor TorExecutable "$R0\\Tor\\${TOR_EXEC}"
 
-
       ; Write the uninstall keys for Windows  
       SetShellVarContext all
       WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "DisplayName" "${VIDALIA_DESC}"
-      WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "UninstallString" '"$INSTDIR\Vidalia\${VIDALIA_UNINST}"'
+      WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "UninstallString" '"$INSTDIR\${UNINSTALLER}"'
       WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "NoModify" 1
       WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "NoRepair" 1
-      
+     
       IntOp $bInstallVidalia 0 + 1
     SectionEnd
 
@@ -263,9 +268,11 @@ SectionGroup "${VIDALIA_DESC}" VidaliaGroup
     Section "$(VidaliaShortcuts)" VidaliaShortcuts
       SectionIn 1
       SetShellVarContext all ; (Add to "All Users" Start Menu if possible)
-      CreateDirectory "$SMPROGRAMS\Vidalia"
-      CreateShortCut "$SMPROGRAMS\Vidalia\Uninstall.lnk" "$INSTDIR\Vidalia\uninstall.exe" "" "$INSTDIR\Vidalia\${VIDALIA_UNINST}" 0
-      CreateShortCut "$SMPROGRAMS\Vidalia\Vidalia.lnk" "$INSTDIR\Vidalia\${VIDALIA_EXEC}" "" "$INSTDIR\Vidalia\${VIDALIA_EXEC}" 0
+      CreateShortCut "${SHORTCUTS}\Uninstall.lnk" "$INSTDIR\Uninstall.exe" "" "$INSTDIR\${UNINSTALLER}" 0
+      CreateShortCut "${SHORTCUTS}\Vidalia.lnk" "$INSTDIR\Vidalia\${VIDALIA_EXEC}" "" "$INSTDIR\Vidalia\${VIDALIA_EXEC}" 0
+      
+      WriteIniStr "$INSTDIR\Vidalia\Vidalia Website.url" "InternetShortcut" "URL" "http://www.vidalia-project.net"
+      CreateShortCut "${SHORTCUTS}\Vidalia Website.lnk" "$INSTDIR\Vidalia\Vidalia Website.url"
     SectionEnd
 
     ;--------------------------------
@@ -299,10 +306,9 @@ SectionGroup "${PRIVOXY_DESC}" PrivoxyGroup
 
         ; Write the uninstall keys for Windows
         WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Privoxy" "DisplayName" "${PRIVOXY_DESC}"
-        WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Privoxy" "UninstallString" '"$INSTDIR\Privoxy\${PRIVOXY_UNINST}"'
+        WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Privoxy" "UninstallString" '"$INSTDIR\${UNINSTALLER}"'
         WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Privoxy" "NoModify" 1
         WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Privoxy" "NoRepair" 1
-               
        
         IntOp $bInstallPrivoxy 0 + 1
     SectionEnd
@@ -312,25 +318,28 @@ SectionGroup "${PRIVOXY_DESC}" PrivoxyGroup
     Section "$(PrivoxyShortcuts)" PrivoxyShortcuts
         SectionIn 1
         SetShellVarContext all ; (Add to "All Users" Start Menu if possible)
-        RMDir /r "$SMPROGRAMS\Privoxy"
-        CreateDirectory "$SMPROGRAMS\Privoxy"
-        CreateShortCut "$SMPROGRAMS\Privoxy\Privoxy.lnk" "$INSTDIR\Privoxy\privoxy.exe"
-        WriteINIStr "$SMPROGRAMS\Privoxy\Web-based Configuration.url" "InternetShortcut" "URL" "http://config.privoxy.org/"
-        CreateShortCut "$SMPROGRAMS\Privoxy\Web-based Feedback.lnk" "$INSTDIR\Privoxy\doc\user-manual\contact.html"
-        CreateDirectory "$SMPROGRAMS\Privoxy\Edit Config"
-        CreateShortCut "$SMPROGRAMS\Privoxy\Edit Config\Main Configuration.lnk" "Notepad.exe" '"$INSTDIR\Privoxy\config.txt"'
-        CreateShortCut "$SMPROGRAMS\Privoxy\Edit Config\Default Actions.lnk" "Notepad.exe" '"$INSTDIR\Privoxy\default.action"'
-        CreateShortCut "$SMPROGRAMS\Privoxy\Edit Config\User Actions.lnk" "Notepad.exe" '"$INSTDIR\Privoxy\user.action"'
-        CreateShortCut "$SMPROGRAMS\Privoxy\Edit Config\Filters.lnk" "Notepad.exe" '"$INSTDIR\Privoxy\default.filter"'
-        CreateShortCut "$SMPROGRAMS\Privoxy\Edit Config\Trust list.lnk" "Notepad.exe" '"$INSTDIR\Privoxy\trust.txt"'
-        CreateDirectory "$SMPROGRAMS\Privoxy\Documentation"
-        CreateShortCut "$SMPROGRAMS\Privoxy\Documentation\User Manual.lnk" "$INSTDIR\Privoxy\doc\user-manual\index.html"
-        CreateShortCut "$SMPROGRAMS\Privoxy\Documentation\Frequently Asked Questions.lnk" "$INSTDIR\Privoxy\doc\faq\index.html"
-        CreateShortCut "$SMPROGRAMS\Privoxy\Documentation\Credits.lnk" "Notepad.exe" '"$INSTDIR\Privoxy\AUTHORS.txt"'
-        CreateShortCut "$SMPROGRAMS\Privoxy\Documentation\License.lnk" "Notepad.exe" '"$INSTDIR\Privoxy\LICENSE.txt"'
-        CreateShortCut "$SMPROGRAMS\Privoxy\Documentation\ReadMe file.lnk" "Notepad.exe" '"$INSTDIR\Privoxy\README.txt"'
+        RMDir /r "${SHORTCUTS}\Privoxy"
+        CreateDirectory "${SHORTCUTS}\Privoxy"
+        CreateShortCut "${SHORTCUTS}\Privoxy\Privoxy.lnk" "$INSTDIR\Privoxy\privoxy.exe"
+        CreateShortCut "${SHORTCUTS}\Privoxy\Web-based Feedback.lnk" "$INSTDIR\Privoxy\doc\user-manual\contact.html"
+        WriteINIStr "${SHORTCUTS}\Privoxy\Web-based Configuration.url" "InternetShortcut" "URL" "http://config.privoxy.org/"
+        
+        CreateDirectory "${SHORTCUTS}\Privoxy\Edit Config"
+        CreateShortCut "${SHORTCUTS}\Privoxy\Edit Config\Main Configuration.lnk" "Notepad.exe" '"$INSTDIR\Privoxy\config.txt"'
+        CreateShortCut "${SHORTCUTS}\Privoxy\Edit Config\Default Actions.lnk" "Notepad.exe" '"$INSTDIR\Privoxy\default.action"'
+        CreateShortCut "${SHORTCUTS}\Privoxy\Edit Config\User Actions.lnk" "Notepad.exe" '"$INSTDIR\Privoxy\user.action"'
+        CreateShortCut "${SHORTCUTS}\Privoxy\Edit Config\Filters.lnk" "Notepad.exe" '"$INSTDIR\Privoxy\default.filter"'
+        CreateShortCut "${SHORTCUTS}\Privoxy\Edit Config\Trust list.lnk" "Notepad.exe" '"$INSTDIR\Privoxy\trust.txt"'
+        
+        CreateDirectory "${SHORTCUTS}\Privoxy\Documentation"
+        CreateShortCut "${SHORTCUTS}\Privoxy\Documentation\User Manual.lnk" "$INSTDIR\Privoxy\doc\user-manual\index.html"
+        CreateShortCut "${SHORTCUTS}\Privoxy\Documentation\Frequently Asked Questions.lnk" "$INSTDIR\Privoxy\doc\faq\index.html"
+        CreateShortCut "${SHORTCUTS}\Privoxy\Documentation\Credits.lnk" "Notepad.exe" '"$INSTDIR\Privoxy\AUTHORS.txt"'
+        CreateShortCut "${SHORTCUTS}\Privoxy\Documentation\License.lnk" "Notepad.exe" '"$INSTDIR\Privoxy\LICENSE.txt"'
+        CreateShortCut "${SHORTCUTS}\Privoxy\Documentation\ReadMe file.lnk" "Notepad.exe" '"$INSTDIR\Privoxy\README.txt"'
         WriteINIStr "$SMPROGRAMS\Privoxy\Documentation\Web Site.url" "InternetShortcut" "URL" "http://privoxy.org/"
-        CreateShortCut "$SMPROGRAMS\Privoxy\Privoxy Uninstall.lnk" "$INSTDIR\Privoxy\${PRIVOXY_UNINST}"
+        
+        CreateShortCut "${SHORTCUTS}\Uninstall.lnk" "$INSTDIR\Uninstall.exe" "" "$INSTDIR\${UNINSTALLER}" 0
     SectionEnd
  
     ;--------------------------------
@@ -361,6 +370,13 @@ SectionGroup "${TORBUTTON_DESC}" TorbuttonGroup
     TorbuttonInstalled:
   SectionEnd
 SectionGroupEnd
+
+Section "" end
+  SetOutPath "$INSTDIR"
+  File "BUNDLE_LICENSE"
+  
+  WriteUninstaller "$INSTDIR\${UNINSTALLER}"
+SectionEnd
 
 ;--------------------------------
 ; Functions
@@ -402,6 +418,84 @@ Function CustomFinishFn
         SetOutPath "$INSTDIR\Privoxy"
         ExecShell "" '"$INSTDIR\Privoxy\${PRIVOXY_EXEC}"' "" SW_SHOWMINIMIZED
     done:
+FunctionEnd
+
+;-------------------------
+; Uninstaller
+Section "-Uninstall" Uninstall
+SectionEnd
+   
+Section "un.Tor ${TOR_APPVERSION}" UninstallTor
+  SetShellVarContext current
+  RMDir /r "$APPDATA\Tor"
+  SetShellVarContext all
+  RMDir /r "$INSTDIR\Tor"
+  RMDir /r "$APPDATA\Tor"
+  RMDir /r "${SHORTCUTS}\Tor"
+  DeleteRegKey HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Tor"
+SectionEnd
+
+Section "un.Vidalia ${VIDALIA_APPVERSION}" UninstallVidalia
+  SetShellVarContext current
+  RMDir /r "$APPDATA\Vidalia"
+  SetShellVarContext all
+  RMDir /r "$INSTDIR\Vidalia"
+  RMDir /r "$APPDATA\Vidalia"
+  Delete "${SHORTCUTS}\Vidalia.lnk"
+  Delete "${SHORTCUTS}\Vidalia Website.lnk"
+  DeleteRegKey HKCU "Software\Microsoft\Windows\CurrentVersion\Run\Vidalia"
+  DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia"
+SectionEnd
+
+Section "un.Privoxy ${PRIVOXY_APPVERSION}" UninstallPrivoxy
+  SetShellVarContext all
+  RMDir /r "$INSTDIR\Privoxy"
+  RMDir /r "${SHORTCUTS}\Privoxy"
+  Delete "$SMSTARTUP\Privoxy.lnk"
+  DeleteRegKey HKEY_CLASSES_ROOT ".action"
+  DeleteRegKey HKEY_CLASSES_ROOT "PrivoxyActionFile"
+  DeleteRegKey HKEY_CLASSES_ROOT ".filter"
+  DeleteRegKey HKEY_CLASSES_ROOT "PrivoxyFilterFile"
+  DeleteRegKey HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Privoxy"
+SectionEnd
+
+; XXX: We still need to find a way to actually remove Torbutton from Firefox
+;Section "un.Torbutton ${TORBUTTON_APPVERSION}" UninstallTorbutton
+;  RMDir /r "$INSTDIR\Torbutton"
+;  DeleteRegKey HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Tor"
+;SectionEnd
+
+Function un.onInit
+  !insertmacro MUI_LANGDLL_DISPLAY
+
+  IfFileExists "$INSTDIR\Tor\*.*" CheckVidalia
+    SectionGetFlags ${UninstallTor} $0
+    IntOp $0 $0 & ${SECTION_OFF}
+    SectionSetFlags ${UninstallTor} $0
+
+  CheckVidalia:
+  IfFileExists "$INSTDIR\Vidalia\*.*" CheckPrivoxy
+    SectionGetFlags ${UninstallVidalia} $0
+    IntOp $0 $0 & ${SECTION_OFF}
+    SectionSetFlags ${UninstallVidalia} $0
+
+  CheckPrivoxy:
+  IfFileExists "$INSTDIR\Privoxy\*.*" Done
+    SectionGetFlags ${UninstallPrivoxy} $0
+    IntOp $0 $0 & ${SECTION_OFF}
+    SectionSetFlags ${UninstallPrivoxy} $0
+
+  Done:
+FunctionEnd
+
+Function un.onUninstSuccess
+  SetShellVarContext all
+  IfFileExists "$INSTDIR\Tor\*.*" DontRemoveTheUninstaller
+  IfFileExists "$INSTDIR\Vidalia\*.*" DontRemoveTheUninstaller
+  IfFileExists "$INSTDIR\Privoxy\*.*" DontRemoveTheUninstaller
+  RMDir /r "$INSTDIR"
+  RMDir /r "${SHORTCUTS}"
+  DontRemoveTheUninstaller:
 FunctionEnd
 
 !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
