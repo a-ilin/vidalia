@@ -16,7 +16,7 @@ LangString BundleRunNow               ${LANG_FINNISH} "K‰ynnist‰ asennetut kompo
 
 ; Vidalia
 LangString VidaliaGroupDesc           ${LANG_FINNISH} "Asenna ${VIDALIA_DESC}."
-LangString VidaliaUninstDesc          ${LANG_FINNISH} "Remove ${VIDALIA_DESC}."
+LangString VidaliaUninstDesc          ${LANG_FINNISH} "Poista ${VIDALIA_DESC}."
 LangString VidaliaSetupCaption        ${LANG_FINNISH} "${VIDALIA_NAME} asennus"
 LangString VidaliaWelcomeText         ${LANG_FINNISH} "T‰m‰ velho auttaa asentaakseen koneelle ${VIDALIA_DESC}.\r\n\r\n$_CLICK"
 LangString VidaliaWelcomeTitle        ${LANG_FINNISH} "Tervetuloa ${VIDALIA_NAME}asennukseen"
@@ -31,7 +31,7 @@ LangString VidaliaRunNow              ${LANG_FINNISH} "K‰ynnist‰ ${VIDALIA_NAME}
 
 ; Tor
 LangString TorGroupDesc               ${LANG_FINNISH} "Asenna ${TOR_DESC}."
-LangString TorUninstDesc              ${LANG_FINNISH} "Remove ${TOR_DESC}."
+LangString TorUninstDesc              ${LANG_FINNISH} "Poista ${TOR_DESC}."
 LangString TorAppDesc                 ${LANG_FINNISH} "Asenna ${TOR_DESC}."
 LangString TorAskOverwriteTorrc       ${LANG_FINNISH} "Sinulla on jo ennest‰‰n Tor-asetustiedosto.$\r$\nHaluatko, ett‰ se korvataan oletusesimerkill‰?"
 LangString TorOpenSSL                 ${LANG_FINNISH} "OpenSSL ${OPENSSL_APPVERSION}"
@@ -43,9 +43,9 @@ LangString TorShortcutsDesc           ${LANG_FINNISH} "Lis‰‰ ${TOR_NAME} K‰ynnis
 
 
 ; Privoxy
-LangString PrivoxyGroupDesc           ${LANG_FINNISH} "Install ${PRIVOXY_DESC}."
-LangString PrivoxyUninstDesc          ${LANG_FINNISH} "Remove ${PRIVOXY_DESC}."
-LangString PrivoxyAppDesc             ${LANG_FINNISH} "Install ${PRIVOXY_DESC}."
+LangString PrivoxyGroupDesc           ${LANG_FINNISH} "Asenna ${PRIVOXY_DESC}."
+LangString PrivoxyUninstDesc          ${LANG_FINNISH} "Poista ${PRIVOXY_DESC}."
+LangString PrivoxyAppDesc             ${LANG_FINNISH} "Asenna ${PRIVOXY_DESC}."
 LangString PrivoxyShortcuts           ${LANG_FINNISH} "Lis‰‰ K‰ynnist‰-valikkoon"
 LangString PrivoxyShortcutsDesc       ${LANG_FINNISH} "Lis‰‰ ${PRIVOXY_NAME} K‰ynnist‰-valikkoon."
 LangString PrivoxyStartup             ${LANG_FINNISH} "K‰ynnist‰ Windowssin k‰ynnistyess‰"
@@ -53,7 +53,7 @@ LangString PrivoxyStartupDesc         ${LANG_FINNISH} "K‰ynnist‰ automaattisesti
 
 ; Torbutton
 LangString TorbuttonGroupDesc         ${LANG_FINNISH} "Asenna ${TORBUTTON_DESC}."
-LangString TorbuttonUninstDesc        ${LANG_FINNISH} "Remove ${TORBUTTON_DESC}."
+LangString TorbuttonUninstDesc        ${LANG_FINNISH} "Poista ${TORBUTTON_DESC}."
 LangString TorbuttonAppDesc           ${LANG_FINNISH} "Asenna ${TORBUTTON_DESC}."
 LangString TorbuttonAddToFirefox      ${LANG_FINNISH} "Lis‰‰ Firefoxiin"
 LangString TorbuttonAddToFirefoxDesc  ${LANG_FINNISH} "Lis‰‰ ${TORBUTTON_DESC}-lis‰osa Firefoxiin."
