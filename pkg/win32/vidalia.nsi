@@ -179,6 +179,10 @@ Section "Uninstall"
   RMDir /r "$APPDATA\Vidalia"
 SectionEnd
 
+Function un.onInit
+  !insertmacro MUI_LANGDLL_DISPLAY
+FunctionEnd
+
 ;--------------------------------
 ; Descriptions
 !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
