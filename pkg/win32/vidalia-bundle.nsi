@@ -520,6 +520,13 @@ FunctionEnd
   !insertmacro MUI_DESCRIPTION_TEXT ${TorbuttonAddToFirefox} "$(TorbuttonAddToFirefoxDesc)"
 !insertmacro MUI_FUNCTION_DESCRIPTION_END
 
+!insertmacro MUI_UNFUNCTION_DESCRIPTION_BEGIN
+  !insertmacro MUI_DESCRIPTION_TEXT ${UninstallTor} "$(TorUninstDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${UninstallVidalia} "$(VidaliaUninstDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${UninstallPrivoxy} "$(PrivoxyUninstDesc)"
+!insertmacro MUI_UNFUNCTION_DESCRIPTION_END
+
+
 Function StrRep
  
   ;Written by dirtydingus 2003-02-20 04:30:09 

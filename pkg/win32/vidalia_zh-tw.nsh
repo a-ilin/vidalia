@@ -14,6 +14,7 @@ LangString BundleRunNow               ${LANG_TRADCHINESE} "現在執行已安裝組件"
 
 ; Vidalia
 LangString VidaliaGroupDesc           ${LANG_TRADCHINESE} "安裝 ${VIDALIA_DESC}."
+LangString VidaliaUninstDesc          ${LANG_TRADCHINESE} "Remove ${VIDALIA_DESC}."
 LangString VidaliaSetupCaption        ${LANG_TRADCHINESE} "${VIDALIA_NAME} 安裝嚮導"
 LangString VidaliaWelcomeText         ${LANG_TRADCHINESE} "安裝精靈將會引導您安裝 ${VIDALIA_DESC}.\r\n\r\n$_CLICK"
 LangString VidaliaWelcomeTitle        ${LANG_TRADCHINESE} "歡迎使用 ${VIDALIA_NAME} 安裝精靈"
@@ -27,6 +28,7 @@ LangString VidaliaRunNow              ${LANG_TRADCHINESE} "現在執行 ${VIDALIA_NA
 
 ; Tor
 LangString TorGroupDesc               ${LANG_TRADCHINESE} "安裝 ${TOR_DESC}."
+LangString TorUninstDesc              ${LANG_TRADCHINESE} "Remove ${TOR_DESC}."
 LangString TorAppDesc                 ${LANG_TRADCHINESE} "安裝 ${TOR_DESC}."
 LangString TorAskOverwriteTorrc       ${LANG_TRADCHINESE} "安裝程式檢測到已存在的 Tor 配置檔案.$\r$\n是否要使用默認的配置檔案覆蓋它?"
 LangString TorOpenSSL                 ${LANG_TRADCHINESE} "OpenSSL ${OPENSSL_APPVERSION}"
@@ -37,7 +39,8 @@ LangString TorShortcuts               ${LANG_TRADCHINESE} "添加至開始菜單程式集"
 LangString TorShortcutsDesc           ${LANG_TRADCHINESE} "添加 ${TOR_NAME} 至開始菜單程式集."
 
 ; Privoxy
-LangString PrivoxyGroupDesc           ${LANG_TRADCHINESE} "安裝 ${PRIVOXY_DESC}"
+LangString PrivoxyGroupDesc           ${LANG_TRADCHINESE} "安裝 ${PRIVOXY_DESC}."
+LangString PrivoxyUninstDesc          ${LANG_TRADCHINESE} "Remove ${PRIVOXY_DESC}."
 LangString PrivoxyAppDesc             ${LANG_TRADCHINESE} "安裝 ${PRIVOXY_DESC}."
 LangString PrivoxyShortcuts           ${LANG_TRADCHINESE} "添加至開始菜單程式集"
 LangString PrivoxyShortcutsDesc       ${LANG_TRADCHINESE} "添加 ${PRIVOXY_NAME} 至開始菜單程式集."
@@ -46,6 +49,7 @@ LangString PrivoxyStartupDesc         ${LANG_TRADCHINESE} "自動在系統啟動時執行 
 
 ; Torbutton
 LangString TorbuttonGroupDesc         ${LANG_TRADCHINESE} "安裝 ${TORBUTTON_DESC}."
+LangString TorbuttonUninstDesc        ${LANG_TRADCHINESE} "Remove ${TORBUTTON_DESC}."
 LangString TorbuttonAppDesc           ${LANG_TRADCHINESE} "安裝 ${TORBUTTON_DESC}."
 LangString TorbuttonAddToFirefox      ${LANG_TRADCHINESE} "添加至火狐(Firefox)瀏覽器"
 LangString TorbuttonAddToFirefoxDesc  ${LANG_TRADCHINESE} "添加 ${TORBUTTON_DESC} 擴展至火狐(Firefox)瀏覽器."

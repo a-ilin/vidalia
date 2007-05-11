@@ -34,6 +34,7 @@ LangString BundleRunNow               ${LANG_ENGLISH} "Run installed components 
 
 ; Vidalia
 LangString VidaliaGroupDesc           ${LANG_ENGLISH} "Install ${VIDALIA_DESC}."
+LangString VidaliaUninstDesc          ${LANG_ENGLISH} "Remove ${VIDALIA_DESC}."
 LangString VidaliaSetupCaption        ${LANG_ENGLISH} "${VIDALIA_NAME} setup"
 LangString VidaliaWelcomeText         ${LANG_ENGLISH} "This wizard will guide you through the installation of ${VIDALIA_DESC}.\r\n\r\n$_CLICK"
 LangString VidaliaWelcomeTitle        ${LANG_ENGLISH} "Welcome to the ${VIDALIA_NAME} Setup Wizard"
@@ -47,6 +48,7 @@ LangString VidaliaRunNow              ${LANG_ENGLISH} "Run ${VIDALIA_NAME} now"
 
 ; Tor
 LangString TorGroupDesc               ${LANG_ENGLISH} "Install ${TOR_DESC}."
+LangString TorUninstDesc              ${LANG_ENGLISH} "Remove ${TOR_DESC}."
 LangString TorAppDesc                 ${LANG_ENGLISH} "Install ${TOR_DESC}."
 LangString TorAskOverwriteTorrc       ${LANG_ENGLISH} "You already have a Tor configuration file.$\r$\nDo you want to overwrite it with the default sample configuration file?"
 LangString TorOpenSSL                 ${LANG_ENGLISH} "OpenSSL ${OPENSSL_APPVERSION}"
@@ -57,7 +59,8 @@ LangString TorShortcuts               ${LANG_ENGLISH} "Add to Start Menu"
 LangString TorShortcutsDesc           ${LANG_ENGLISH} "Add ${TOR_NAME} to your Start menu."
 
 ; Privoxy
-LangString PrivoxyGroupDesc           ${LANG_ENGLISH} "Install ${PRIVOXY_DESC}"
+LangString PrivoxyGroupDesc           ${LANG_ENGLISH} "Install ${PRIVOXY_DESC}."
+LangString PrivoxyUninstDesc          ${LANG_ENGLISH} "Remove ${PRIVOXY_DESC}."
 LangString PrivoxyAppDesc             ${LANG_ENGLISH} "Install ${PRIVOXY_DESC}."
 LangString PrivoxyShortcuts           ${LANG_ENGLISH} "Add to Start Menu"
 LangString PrivoxyShortcutsDesc       ${LANG_ENGLISH} "Add ${PRIVOXY_NAME} to your Start menu."
@@ -66,6 +69,7 @@ LangString PrivoxyStartupDesc         ${LANG_ENGLISH} "Automatically run ${PRIVO
 
 ; Torbutton
 LangString TorbuttonGroupDesc         ${LANG_ENGLISH} "Install ${TORBUTTON_DESC}."
+LangString TorbuttonUninstDesc        ${LANG_ENGLISH} "Remove ${TORBUTTON_DESC}."
 LangString TorbuttonAppDesc           ${LANG_ENGLISH} "Install ${TORBUTTON_DESC}."
 LangString TorbuttonAddToFirefox      ${LANG_ENGLISH} "Add to Firefox"
 LangString TorbuttonAddToFirefoxDesc  ${LANG_ENGLISH} "Add the ${TORBUTTON_DESC} extension to Firefox."

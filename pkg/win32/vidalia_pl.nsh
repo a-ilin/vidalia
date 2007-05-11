@@ -14,6 +14,7 @@ LangString BundleRunNow               ${LANG_POLISH} "Uruchom teraz zainstalowan
 
 ; Vidalia
 LangString VidaliaGroupDesc           ${LANG_POLISH} "Instalacja ${VIDALIA_DESC}."
+LangString VidaliaUninstDesc          ${LANG_POLISH} "Remove ${VIDALIA_DESC}."
 LangString VidaliaSetupCaption        ${LANG_POLISH} "Instalator ${VIDALIA_NAME}"
 LangString VidaliaWelcomeText         ${LANG_POLISH} "Kreator przeprowadzi Ciê przez proces instalacji ${VIDALIA_DESC}.\r\n\r\n$_CLICK"
 LangString VidaliaWelcomeTitle        ${LANG_POLISH} "Witaj w Kreatorze Instalacji ${VIDALIA_NAME}"
@@ -27,6 +28,7 @@ LangString VidaliaRunNow              ${LANG_POLISH} "Uruchom teraz ${VIDALIA_NA
 
 ; Tor
 LangString TorGroupDesc               ${LANG_POLISH} "Instalacja ${TOR_DESC}."
+LangString TorUninstDesc              ${LANG_POLISH} "Remove ${TOR_DESC}."
 LangString TorAppDesc                 ${LANG_POLISH} "Instalacja ${TOR_DESC}."
 LangString TorAskOverwriteTorrc       ${LANG_POLISH} "Plik konfiguracji Tora ju¿ istnieje.$\r$\nCzy chcesz go nadpisaæ konfiguracj¹ domyœln¹ ?"
 LangString TorOpenSSL                 ${LANG_POLISH} "OpenSSL ${OPENSSL_APPVERSION}"
@@ -37,7 +39,8 @@ LangString TorShortcuts               ${LANG_POLISH} "Dodaj do Menu Start"
 LangString TorShortcutsDesc           ${LANG_POLISH} "Dodaj ${TOR_NAME} do Twojego menu Start."
 
 ; Privoxy
-LangString PrivoxyGroupDesc           ${LANG_POLISH} "Instalacja ${PRIVOXY_DESC}"
+LangString PrivoxyGroupDesc           ${LANG_POLISH} "Instalacja ${PRIVOXY_DESC}."
+LangString PrivoxyUninstDesc          ${LANG_POLISH} "Remove ${PRIVOXY_DESC}."
 LangString PrivoxyAppDesc             ${LANG_POLISH} "Instalacja ${PRIVOXY_DESC}."
 LangString PrivoxyShortcuts           ${LANG_POLISH} "Dodaj do Menu Start"
 LangString PrivoxyShortcutsDesc       ${LANG_POLISH} "Dodaj ${PRIVOXY_NAME} do Twojego menu Start."
@@ -46,6 +49,7 @@ LangString PrivoxyStartupDesc         ${LANG_POLISH} "Automatycznie uruchamiaj $
 
 ; Torbutton
 LangString TorbuttonGroupDesc         ${LANG_POLISH} "Instalacja ${TORBUTTON_DESC}."
+LangString TorbuttonUninstDesc        ${LANG_POLISH} "Remove ${TORBUTTON_DESC}."
 LangString TorbuttonAppDesc           ${LANG_POLISH} "Instalacja ${TORBUTTON_DESC}."
 LangString TorbuttonAddToFirefox      ${LANG_POLISH} "Dodaj do Firefox'a"
 LangString TorbuttonAddToFirefoxDesc  ${LANG_POLISH} "Dodaj rozszerzenie ${TORBUTTON_DESC} do Firefox'a."

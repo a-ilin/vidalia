@@ -14,6 +14,7 @@ LangString BundleRunNow               ${LANG_SPANISH} "Ejecutar los componentes 
 
 ; Vidalia
 LangString VidaliaGroupDesc           ${LANG_SPANISH} "Instalar ${VIDALIA_DESC}."
+LangString VidaliaUninstDesc          ${LANG_SPANISH} "Remove ${VIDALIA_DESC}."
 LangString VidaliaSetupCaption        ${LANG_SPANISH} "Instalación de ${VIDALIA_NAME}"
 LangString VidaliaWelcomeText         ${LANG_SPANISH} "Este procedimiento le guiara a través de la instalación de ${VIDALIA_DESC}.\r\n\r\n$_CLICK"
 LangString VidaliaWelcomeTitle        ${LANG_SPANISH} "Bienvenido al procedimiento de instalación de ${VIDALIA_NAME}"
@@ -27,6 +28,7 @@ LangString VidaliaRunNow              ${LANG_SPANISH} "Ejecutar ${VIDALIA_NAME}"
 
 ; Tor
 LangString TorGroupDesc               ${LANG_SPANISH} "Instalar ${TOR_DESC}."
+LangString TorUninstDesc              ${LANG_SPANISH} "Remove ${TOR_DESC}."
 LangString TorAppDesc                 ${LANG_SPANISH} "Instalar ${TOR_DESC}."
 LangString TorAskOverwriteTorrc       ${LANG_SPANISH} "Ya tiene un archivo de configuración de Tor.$\r$\n¿Desea sobreescribirlo con el archivo de configuración de muestra predeterminado?"
 LangString TorOpenSSL                 ${LANG_SPANISH} "OpenSSL ${OPENSSL_APPVERSION}"
@@ -37,7 +39,8 @@ LangString TorShortcuts               ${LANG_SPANISH} "Agregar al Menu Inicio"
 LangString TorShortcutsDesc           ${LANG_SPANISH} "Agregar ${TOR_NAME} a su Menu Inicio."
 
 ; Privoxy
-LangString PrivoxyGroupDesc           ${LANG_SPANISH} "Instalar ${PRIVOXY_DESC}"
+LangString PrivoxyGroupDesc           ${LANG_SPANISH} "Instalar ${PRIVOXY_DESC}."
+LangString PrivoxyUninstDesc          ${LANG_SPANISH} "Remove ${PRIVOXY_DESC}."
 LangString PrivoxyAppDesc             ${LANG_SPANISH} "Instalar ${PRIVOXY_DESC}."
 LangString PrivoxyShortcuts           ${LANG_SPANISH} "Añadir al Menu Inicio"
 LangString PrivoxyShortcutsDesc       ${LANG_SPANISH} "Agregar ${PRIVOXY_NAME} a su Menu Inicio."
@@ -46,6 +49,7 @@ LangString PrivoxyStartupDesc         ${LANG_SPANISH} "Automaticamente ejecutar 
 
 ; Torbutton
 LangString TorbuttonGroupDesc         ${LANG_SPANISH} "Instalar ${TORBUTTON_DESC}."
+LangString TorbuttonUninstDesc        ${LANG_SPANISH} "Remove ${TORBUTTON_DESC}."
 LangString TorbuttonAppDesc           ${LANG_SPANISH} "Instalar ${TORBUTTON_DESC}."
 LangString TorbuttonAddToFirefox      ${LANG_SPANISH} "Adgregar a Firefox"
 LangString TorbuttonAddToFirefoxDesc  ${LANG_SPANISH} "Agregar la extensión ${TORBUTTON_DESC} a Firefox."

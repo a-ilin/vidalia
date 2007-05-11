@@ -14,6 +14,7 @@ LangString BundleRunNow               ${LANG_PORTUGUESEBR} "Executar os componen
 
 ; Vidalia
 LangString VidaliaGroupDesc           ${LANG_PORTUGUESEBR} "Instalar ${VIDALIA_DESC}."
+LangString VidaliaUninstDesc          ${LANG_PORTUGUESEBR} "Remove ${VIDALIA_DESC}."
 LangString VidaliaSetupCaption        ${LANG_PORTUGUESEBR} "Instalação do ${VIDALIA_NAME}"
 LangString VidaliaWelcomeText         ${LANG_PORTUGUESEBR} "Este assistente irá guiá-lo através da instalação do ${VIDALIA_DESC}.\r\n\r\n$_CLICK"
 LangString VidaliaWelcomeTitle        ${LANG_PORTUGUESEBR} "Bem vindo ao Assistente de Instalação do ${VIDALIA_NAME}"
@@ -27,6 +28,7 @@ LangString VidaliaRunNow              ${LANG_PORTUGUESEBR} "Executar o ${VIDALIA
 
 ; Tor
 LangString TorGroupDesc               ${LANG_PORTUGUESEBR} "Instalar ${TOR_DESC}."
+LangString TorUninstDesc              ${LANG_PORTUGUESEBR} "Remove ${TOR_DESC}."
 LangString TorAppDesc                 ${LANG_PORTUGUESEBR} "Instalar ${TOR_DESC}."
 LangString TorAskOverwriteTorrc       ${LANG_PORTUGUESEBR} "Você já tem um arquivo de configuração do Tor.$\r$\nVocê deseja substituí-lo com o arquivo de exemplo de configuração padrão?"
 LangString TorOpenSSL                 ${LANG_PORTUGUESEBR} "OpenSSL ${OPENSSL_APPVERSION}"
@@ -37,7 +39,8 @@ LangString TorShortcuts               ${LANG_PORTUGUESEBR} "Adicionar ao Menu In
 LangString TorShortcutsDesc           ${LANG_PORTUGUESEBR} "Adicionar o ${TOR_NAME} ao seu Menu Iniciar."
 
 ; Privoxy
-LangString PrivoxyGroupDesc           ${LANG_PORTUGUESEBR} "Instalar ${PRIVOXY_DESC}"
+LangString PrivoxyGroupDesc           ${LANG_PORTUGUESEBR} "Instalar ${PRIVOXY_DESC}."
+LangString PrivoxyUninstDesc          ${LANG_PORTUGUESEBR} "Remove ${PRIVOXY_DESC}."
 LangString PrivoxyAppDesc             ${LANG_PORTUGUESEBR} "Instalar ${PRIVOXY_DESC}."
 LangString PrivoxyShortcuts           ${LANG_PORTUGUESEBR} "Adicionar ao Menu Iniciar"
 LangString PrivoxyShortcutsDesc       ${LANG_PORTUGUESEBR} "Adicionar o ${PRIVOXY_NAME} ao seu Menu Iniciar."
@@ -46,6 +49,7 @@ LangString PrivoxyStartupDesc         ${LANG_PORTUGUESEBR} "Executar o ${PRIVOXY
 
 ; Torbutton
 LangString TorbuttonGroupDesc         ${LANG_PORTUGUESEBR} "Instalar ${TORBUTTON_DESC}."
+LangString TorbuttonUninstDesc        ${LANG_PORTUGUESEBR} "Remove ${TORBUTTON_DESC}."
 LangString TorbuttonAppDesc           ${LANG_PORTUGUESEBR} "Instalar ${TORBUTTON_DESC}."
 LangString TorbuttonAddToFirefox      ${LANG_PORTUGUESEBR} "Adicionar ao Firefox"
 LangString TorbuttonAddToFirefoxDesc  ${LANG_PORTUGUESEBR} "Adicionar a extensão ${TORBUTTON_DESC} no Firefox."

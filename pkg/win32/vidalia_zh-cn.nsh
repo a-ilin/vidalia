@@ -14,6 +14,7 @@ LangString BundleRunNow               ${LANG_SIMPCHINESE} "现在运行已安装组件"
 
 ; Vidalia
 LangString VidaliaGroupDesc           ${LANG_SIMPCHINESE} "安装 ${VIDALIA_DESC}."
+LangString VidaliaUninstDesc          ${LANG_SIMPCHINESE} "Remove ${VIDALIA_DESC}."
 LangString VidaliaSetupCaption        ${LANG_SIMPCHINESE} "${VIDALIA_NAME} 安装向导"
 LangString VidaliaWelcomeText         ${LANG_SIMPCHINESE} "该向导将会引导您安装 ${VIDALIA_DESC}.\r\n\r\n$_CLICK"
 LangString VidaliaWelcomeTitle        ${LANG_SIMPCHINESE} "欢迎使用 ${VIDALIA_NAME} 安装向导"
@@ -27,6 +28,7 @@ LangString VidaliaRunNow              ${LANG_SIMPCHINESE} "现在运行 ${VIDALIA_NA
 
 ; Tor
 LangString TorGroupDesc               ${LANG_SIMPCHINESE} "安装 ${TOR_DESC}."
+LangString TorUninstDesc              ${LANG_SIMPCHINESE} "Remove ${TOR_DESC}."
 LangString TorAppDesc                 ${LANG_SIMPCHINESE} "安装 ${TOR_DESC}."
 LangString TorAskOverwriteTorrc       ${LANG_SIMPCHINESE} "安装程序检测到已存在的 Tor 配置文件.$\r$\n是否要使用默认的配置文件覆盖它?"
 LangString TorOpenSSL                 ${LANG_SIMPCHINESE} "OpenSSL ${OPENSSL_APPVERSION}"
@@ -37,7 +39,8 @@ LangString TorShortcuts               ${LANG_SIMPCHINESE} "添加至开始菜单程序组"
 LangString TorShortcutsDesc           ${LANG_SIMPCHINESE} "添加 ${TOR_NAME} 至开始菜单程序组."
 
 ; Privoxy
-LangString PrivoxyGroupDesc           ${LANG_SIMPCHINESE} "安装 ${PRIVOXY_DESC}"
+LangString PrivoxyGroupDesc           ${LANG_SIMPCHINESE} "安装 ${PRIVOXY_DESC}."
+LangString PrivoxyUninstDesc          ${LANG_SIMPCHINESE} "Remove ${PRIVOXY_DESC}."
 LangString PrivoxyAppDesc             ${LANG_SIMPCHINESE} "安装 ${PRIVOXY_DESC}."
 LangString PrivoxyShortcuts           ${LANG_SIMPCHINESE} "添加至开始菜单程序组"
 LangString PrivoxyShortcutsDesc       ${LANG_SIMPCHINESE} "添加 ${PRIVOXY_NAME} 至开始菜单程序组."
@@ -46,6 +49,7 @@ LangString PrivoxyStartupDesc         ${LANG_SIMPCHINESE} "自动在系统启动时运行 
 
 ; Torbutton
 LangString TorbuttonGroupDesc         ${LANG_SIMPCHINESE} "安装 ${TORBUTTON_DESC}."
+LangString TorbuttonUninstDesc        ${LANG_SIMPCHINESE} "Remove ${TORBUTTON_DESC}."
 LangString TorbuttonAppDesc           ${LANG_SIMPCHINESE} "安装 ${TORBUTTON_DESC}."
 LangString TorbuttonAddToFirefox      ${LANG_SIMPCHINESE} "添加至火狐(Firefox)浏览器"
 LangString TorbuttonAddToFirefoxDesc  ${LANG_SIMPCHINESE} "添加 ${TORBUTTON_DESC} 扩展至火狐(Firefox)浏览器."

@@ -14,6 +14,7 @@ LangString BundleRunNow               ${LANG_RUSSIAN} "Запустить установленные к
 
 ; Vidalia
 LangString VidaliaGroupDesc           ${LANG_RUSSIAN} "Установить ${VIDALIA_DESC}."
+LangString VidaliaUninstDesc          ${LANG_RUSSIAN} "Remove ${VIDALIA_DESC}."
 LangString VidaliaSetupCaption        ${LANG_RUSSIAN} "Установка ${VIDALIA_NAME}"
 LangString VidaliaWelcomeText         ${LANG_RUSSIAN} "Эта программа установит ${VIDALIA_DESC}.\r\n\r\n$_CLICK"
 LangString VidaliaWelcomeTitle        ${LANG_RUSSIAN} "Вас приветствует мастер установки ${VIDALIA_NAME}"
@@ -28,6 +29,7 @@ LangString VidaliaRunNow              ${LANG_RUSSIAN} "Запустить ${VIDALIA_NAME}
 
 ; Tor
 LangString TorGroupDesc               ${LANG_RUSSIAN} "Установить ${TOR_DESC}."
+LangString TorUninstDesc              ${LANG_RUSSIAN} "Remove ${TOR_DESC}."
 LangString TorAppDesc                 ${LANG_RUSSIAN} "Установить ${TOR_DESC}."
 LangString TorAskOverwriteTorrc       ${LANG_RUSSIAN} "У вас уже есть файл настроек Tor.$\r$\nХотите ли вы перезаписать его файлом из дистрибутива?"
 LangString TorOpenSSL                 ${LANG_RUSSIAN} "OpenSSL ${OPENSSL_APPVERSION}"
@@ -40,6 +42,7 @@ LangString TorShortcutsDesc           ${LANG_RUSSIAN} "Добавить ${TOR_NAME} в Гл
 
 ; Privoxy
 LangString PrivoxyGroupDesc           ${LANG_RUSSIAN} "Установить ${PRIVOXY_DESC}."
+LangString PrivoxyUninstDesc          ${LANG_RUSSIAN} "Remove ${PRIVOXY_DESC}."
 LangString PrivoxyAppDesc             ${LANG_RUSSIAN} "Установить ${PRIVOXY_DESC}."
 LangString PrivoxyShortcuts           ${LANG_RUSSIAN} "Ярлыки в Главное Меню"
 LangString PrivoxyShortcutsDesc       ${LANG_RUSSIAN} "Добавить ${PRIVOXY_NAME} в Главное Меню."
@@ -49,6 +52,7 @@ LangString PrivoxyStartupDesc         ${LANG_RUSSIAN} "Автоматически запускать $
 
 ; Torbutton
 LangString TorbuttonGroupDesc         ${LANG_RUSSIAN} "Установить ${TORBUTTON_DESC}."
+LangString TorbuttonUninstDesc        ${LANG_RUSSIAN} "Remove ${TORBUTTON_DESC}."
 LangString TorbuttonAppDesc           ${LANG_RUSSIAN} "Установить ${TORBUTTON_DESC}."
 LangString TorbuttonAddToFirefox      ${LANG_RUSSIAN} "Добавить в Firefox"
 LangString TorbuttonAddToFirefoxDesc  ${LANG_RUSSIAN} "Добавить расширение ${TORBUTTON_DESC} в Firefox."

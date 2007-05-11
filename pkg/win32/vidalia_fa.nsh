@@ -14,6 +14,7 @@ LangString BundleRunNow               ${LANG_FARSI} "«Ã—«?—œÊ ÂË‰·Á Á«? ?«—?–«—?
 
 ; Vidalia
 LangString VidaliaGroupDesc           ${LANG_FARSI} "?«—?–«—? ${VIDALIA_DESC}."
+LangString VidaliaUninstDesc          ${LANG_FARSI} "Remove ${VIDALIA_DESC}."
 LangString VidaliaSetupCaption        ${LANG_FARSI} "»—?«?? ${VIDALIA_NAME}"
 LangString VidaliaWelcomeText         ${LANG_FARSI} "«?Ê œ” ?«— ‘Â« —« œ— ”— «”— ?«—?–«—? ${VIDALIA_DESC} Áœ«?  Â? ?Êœ.\r\n\r\n$_CLICK"
 LangString VidaliaWelcomeTitle        ${LANG_FARSI} "»Á œ” ?«— »—?«?? ${VIDALIA_NAME} ŒË‘ ¬Âœ?œ"
@@ -27,6 +28,7 @@ LangString VidaliaRunNow              ${LANG_FARSI} "«Ã—«?—œÊ ${VIDALIA_NAME}"
 
 ; Tor
 LangString TorGroupDesc               ${LANG_FARSI} "?«—?–«—? ${TOR_DESC}."
+LangString TorUninstDesc              ${LANG_FARSI} "Remove ${TOR_DESC}."
 LangString TorAppDesc                 ${LANG_FARSI} "?«—?–«—? ${TOR_DESC}."
 LangString TorAskOverwriteTorrc       ${LANG_FARSI} "‘Â« ??‘ — œ«—«? ?? ?—ËÊœÁ ???—»Êœ?  Ë— Â? »«‘?œ.$\r$\n¬?« Â? ŒË«Á?œ ¬Ê —« »« ?—ËÊœÁ ???—»Êœ? ÊÂËÊÁ ??‘ ?“?œÁ Ã«? ÊË‘  ?Ê?œø"
 LangString TorOpenSSL                 ${LANG_FARSI} "OpenSSL ${OPENSSL_APPVERSION}"
@@ -37,7 +39,8 @@ LangString TorShortcuts               ${LANG_FARSI} "«·“ËœÊ »Á ·Á—”  ¬⁄«“"
 LangString TorShortcutsDesc           ${LANG_FARSI} "«·“ËœÊ ${TOR_NAME} »Á ·Á—”  ¬⁄«“."
 
 ; Privoxy
-LangString PrivoxyGroupDesc           ${LANG_FARSI} "?«—?–«—? ${PRIVOXY_DESC}"
+LangString PrivoxyGroupDesc           ${LANG_FARSI} "?«—?–«—? ${PRIVOXY_DESC}."
+LangString PrivoxyUninstDesc          ${LANG_FARSI} "Remove ${PRIVOXY_DESC}."
 LangString PrivoxyAppDesc             ${LANG_FARSI} "?«—?–«—? ${PRIVOXY_DESC}."
 LangString PrivoxyShortcuts           ${LANG_FARSI} "«·“ËœÊ »Á ·Á—”  ¬⁄«“"
 LangString PrivoxyShortcutsDesc       ${LANG_FARSI} "«·“ËœÊ ${PRIVOXY_NAME} »Á ·Á—”  ¬⁄«“."
@@ -46,6 +49,7 @@ LangString PrivoxyStartupDesc         ${LANG_FARSI} "«Ã—« ?—œÊ ${PRIVOXY_NAME} œ
 
 ; Torbutton
 LangString TorbuttonGroupDesc         ${LANG_FARSI} "?«—?–«—? ${TORBUTTON_DESC}."
+LangString TorbuttonUninstDesc        ${LANG_FARSI} "Remove ${TORBUTTON_DESC}."
 LangString TorbuttonAppDesc           ${LANG_FARSI} "?«—?–«—? ${TORBUTTON_DESC}."
 LangString TorbuttonAddToFirefox      ${LANG_FARSI} "«·“ËœÊ »Á ·«?—·«?”"
 LangString TorbuttonAddToFirefoxDesc  ${LANG_FARSI} "«·“ËœÊ ?”ËÊœ ${TORBUTTON_DESC} »Á ·«?—·«?”."
