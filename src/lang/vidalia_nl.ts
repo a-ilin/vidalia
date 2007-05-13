@@ -1105,23 +1105,24 @@ Bekijk alstublieft het berichten logboek voor meer informatie en mogelijke aanwi
     <message>
         <location filename="../gui/mainwindow.cpp" line="264"/>
         <source>Control Panel</source>
-        <translation type="unfinished"></translation>
+        <translation>Control Panel</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="343"/>
         <source>Ctrl+P</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="401"/>
         <source>Your Tor server is shutting down.
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uw Tor server wordt afgesloten.
+Klik nogmaals op &apos;Stop Tor&apos; om Tor per direct te stoppen.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="408"/>
         <source>Stop Tor Now</source>
-        <translation type="unfinished"></translation>
+        <translation>Stop Tor Nu</translation>
     </message>
 </context>
 <context>
