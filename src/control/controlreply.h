@@ -42,16 +42,18 @@ public:
   void appendLine(ReplyLine line);
 
   /** Returns a single line from this reply */
-  ReplyLine getLine(int idx = 0);
+  ReplyLine getLine(int idx = 0) const;
   /** Returns all lines for this reply */
-  QList<ReplyLine> getLines();
+  QList<ReplyLine> getLines() const;
   
   /** Returns the status of the first line in the reply */
-  QString getStatus();
+  QString getStatus() const;
   /** Returns the messasge of the first line in the reply */
-  QString getMessage();
+  QString getMessage() const;
   /** Returns the data for the first line in the reply. */
-  QStringList getData();
+  QStringList getData() const;
+  /** Returns the entire contents of the control reply. */
+  QString toString() const;
 
 private:
   QList<ReplyLine> _lines;

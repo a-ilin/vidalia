@@ -38,25 +38,33 @@ public:
   ReplyLine(QString status, QString message);
   ReplyLine(QString status, QString message, QString data);
 
-  /* Get/set the status for this reply line */
+  /** Set the status code to <b>status</b>. */
   void setStatus(QString status);
-  QString getStatus();
+  /** Returns the status code for this reply line. */
+  QString getStatus() const;
 
-  /** Get/set the message for this reply line */
+  /** Sets the ReplyText message this reply line to <b>msg</b>. */
   void setMessage(QString msg);
-  QString getMessage();
+  /** Returns the ReplyText portion of this reply line. */
+  QString getMessage() const;
 
-  /* append/retrieve the data for this reply line (could be empty) */
+  /** Appends <b>data</b> to this reply line. */
   void appendData(QString data);
-  QStringList getData();
+  /** Returns a QStringList of all data lines for this reply line. */
+  QStringList getData() const;
+  
+  /** Returns the entire contents of this reply line, including the status,
+   * message, and any extra data. */
+  QString toString() const;
 
 private:
-  /* Unescape characters in the supplied string */
-  QString unescape(QString str);
+  /** Unescapes special characters in <b>str</b> and returns the unescaped
+   * result. */
+  static QString unescape(QString str);
   
-  QString _status;
-  QString _message;
-  QStringList _data;
+  QString _status;    /**< Response status code. */
+  QString _message;   /**< ReplyText portion of this reply line. */
+  QStringList _data;  /**< Contents of any DataReplyLines in this line. */
 };
 
 #endif

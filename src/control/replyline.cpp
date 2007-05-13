@@ -55,28 +55,28 @@ ReplyLine::setStatus(QString status)
   _status = status;
 }
 
-/** Get the status code for this reply line. */
+/** Returns the status code for this reply line. */
 QString
-ReplyLine::getStatus()
+ReplyLine::getStatus() const
 {
   return _status;
 }
 
-/** Set the message for this reply line */
+/** Sets the ReplyText message this reply line to <b>msg</b>. */
 void
 ReplyLine::setMessage(QString msg)
 {
   _message = unescape(msg);
 }
 
-/** Get the message for this reply line */
+/** Returns the ReplyText portion of this reply line. */
 QString
-ReplyLine::getMessage()
+ReplyLine::getMessage() const
 {
   return _message;
 }
 
-/** Add some data to this line */
+/** Appends <b>data</b> to this reply line. */
 void
 ReplyLine::appendData(QString data)
 {
@@ -85,12 +85,13 @@ ReplyLine::appendData(QString data)
 
 /** Returns a QStringList of all data lines for this reply line */
 QStringList
-ReplyLine::getData()
+ReplyLine::getData() const
 {
   return _data;
 }
 
-/** Unescapes characters in the given string */
+/** Unescapes special characters in <b>str</b> and returns the unescaped
+ * result. */
 QString
 ReplyLine::unescape(QString str)
 {
@@ -101,5 +102,16 @@ ReplyLine::unescape(QString str)
 
   /* Trim off trailing whitespace (including \r\n) */
   return str.trimmed();
+}
+
+QString
+ReplyLine::toString() const
+{
+  QString str = _status + " " + _message;
+  if (!_data.isEmpty()) {
+    str.append("\n");
+    str.append(_data.join("\n"));
+  }
+  return str;
 }
 

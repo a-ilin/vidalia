@@ -41,36 +41,48 @@ ControlReply::appendLine(ReplyLine line)
 
 /** Returns the requested line from this reply */
 ReplyLine
-ControlReply::getLine(int idx)
+ControlReply::getLine(int idx) const
 {
   return _lines.at(idx);
 }
 
 /** Returns all lines for this reply */
 QList<ReplyLine>
-ControlReply::getLines()
+ControlReply::getLines() const
 {
   return _lines;
 }
 
 /** Returns the status of the first line in the reply */
 QString
-ControlReply::getStatus()
+ControlReply::getStatus() const
 {
   return getLine().getStatus();
 }
 
 /** Returns the message of the first line in the reply */
 QString
-ControlReply::getMessage()
+ControlReply::getMessage() const
 {
   return getLine().getMessage();
 }
 
 /** Returns the data for the first line in the reply. */
 QStringList
-ControlReply::getData()
+ControlReply::getData() const
 {
   return getLine().getData();
+}
+
+/** Returns the entire contents of the control reply. */
+QString
+ControlReply::toString() const
+{
+  QString str;
+  foreach (ReplyLine line, _lines) {
+    str.append(line.toString());
+    str.append("\n");
+  }
+  return str.trimmed();
 }
 
