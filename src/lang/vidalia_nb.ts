@@ -419,12 +419,12 @@ Du må kanskje fjerne den manuellt.</translation>
 <context>
     <name>ControlConnection</name>
     <message>
-        <location filename="../control/controlconnection.cpp" line="294"/>
+        <location filename="../control/controlconnection.cpp" line="310"/>
         <source>Control socket is not connected.</source>
         <translation>Kontroll-porten er ikke tilkoblet.</translation>
     </message>
     <message>
-        <location filename="../control/controlconnection.cpp" line="239"/>
+        <location filename="../control/controlconnection.cpp" line="255"/>
         <source>Control socket is not connected</source>
         <translation>Kontroll-porten er ikke tilkoblet.</translation>
     </message>
@@ -442,17 +442,17 @@ Du må kanskje fjerne den manuellt.</translation>
         <translation>Feil ved frakobling av forbindelse [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="159"/>
+        <location filename="../control/controlsocket.cpp" line="160"/>
         <source>Error sending control command. [%1]</source>
         <translation>Feil ved sending av kontroll-kommando. [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="196"/>
+        <location filename="../control/controlsocket.cpp" line="197"/>
         <source>Socket disconnected while attempting to read a line of data.</source>
         <translation>Forbindelsen ble avbrutt under forsøk på å lese en linje med data.</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="234"/>
+        <location filename="../control/controlsocket.cpp" line="235"/>
         <source>Invalid control reply. [%1]</source>
         <translation>Ugyldig kontroll-svar: [%1]</translation>
     </message>
@@ -777,7 +777,7 @@ Oppgrader til en nyere utgave av Tor.</translation>
         <translation>Meldinger Vist:</translation>
     </message>
     <message>
-        <location filename="../gui/log/logtreewidget.cpp" line="235"/>
+        <location filename="../gui/log/logtreewidget.cpp" line="237"/>
         <source>Messages Shown: %1</source>
         <translation>Meldinger Vist: %1</translation>
     </message>
@@ -1070,23 +1070,24 @@ Vennligst sjekk meldings-loggen for indikatorer på hva som skjedde med Tor før
     <message>
         <location filename="../gui/mainwindow.cpp" line="264"/>
         <source>Control Panel</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrollpanel</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="343"/>
         <source>Ctrl+P</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="401"/>
         <source>Your Tor server is shutting down.
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Din Tor tjener stenges. 
+Trykk Stopp Tor igjen for å tvinge Tor til å avslutte umiddelbart.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="408"/>
         <source>Stop Tor Now</source>
-        <translation type="unfinished"></translation>
+        <translation>Stopp Tor nå</translation>
     </message>
 </context>
 <context>
