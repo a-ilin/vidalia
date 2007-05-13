@@ -46,16 +46,17 @@ TorEvents::add(TorEvent e, QObject *obj)
   }
 }
 
-/** Removes an event and object from the event list */
+/** Removes <b>obj</b> from the list of target objects for event <b>e</b>. */
 void
 TorEvents::remove(TorEvent e, QObject *obj)
 {
-  int i;
-  if ((i = _eventList.values(e).indexOf(obj)) >= 0) {
-    _eventList.values(e).removeAt(i);
-    if (_eventList.values(e).size() == 0) {
-      _eventList.remove(e);
+  QMultiHash<TorEvent,QObject*>::iterator i = _eventList.find(e);
+  while (i != _eventList.end() && i.key() == e) {
+    if (i.value() == obj) {
+      _eventList.erase(i);
+      break;
     }
+    i++;
   }
 }
 

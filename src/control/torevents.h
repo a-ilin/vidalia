@@ -64,7 +64,8 @@ public:
 
   /** Adds an event and interested object to the event list */
   void add(TorEvent event, QObject *obj);
-  /** Removes an event and object from the event list */
+  /** Removes <b>obj</b> from the list of target objects for event 
+   * <b>e</b>. */
   void remove(TorEvent event, QObject *obj);
   /** Returns true if an event has any registered handlers */
   bool contains(TorEvent event);
