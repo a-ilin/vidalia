@@ -140,20 +140,29 @@ ControlConnection::setStatus(Status status)
 bool
 ControlConnection::send(ControlCommand cmd, ControlReply &reply, QString *errmsg)
 {
+  bool result = false;
+  QString errstr;
+
   _recvMutex.lock();
-  if (send(cmd, errmsg)) {
+  if (send(cmd, &errstr)) {
     /* Create and enqueue a new receive waiter */
     ReceiveWaiter *w = new ReceiveWaiter();
     _recvQueue.enqueue(w);
     _recvMutex.unlock();
 
     /* Wait for and get the result, clean up, and return */
-    bool result = w->getResult(&reply, errmsg);
+    result = w->getResult(&reply, &errstr);
+    if (!result)
+      vWarn("Failed to receive control reply: %1").arg(errstr);
     delete w;
-    return result;
+  } else {
+    vWarn("Failed to send control command: %1").arg(errstr);
+    _recvMutex.unlock();
   }
-  _recvMutex.unlock();
-  return false;
+
+  if (!result && errmsg)
+    *errmsg = errstr;
+  return result;
 }
 
 /** Sends a control command to Tor. If the current thread is not the thread
@@ -197,17 +206,22 @@ ControlConnection::onReadyRead()
 {
   QMutexLocker locker(&_connMutex);
   ReceiveWaiter *waiter;
+  QString errmsg;
  
   while (_sock->canReadLine()) {
     ControlReply reply;
-    if (_sock->readReply(reply)) {
+    if (_sock->readReply(reply, &errmsg)) {
       if (reply.getStatus() == "650") {
         /* Asynchronous event message */
+        vDebug("Control Event: %1").arg(reply.toString());
+        
         if (_events) {
           _events->handleEvent(reply);
         }
       } else {
         /* Response to a previous command */
+        vInfo("Control Reply: %1").arg(reply.toString());
+        
         _recvMutex.lock();
         if (!_recvQueue.isEmpty()) {
           waiter = _recvQueue.dequeue();
@@ -215,6 +229,8 @@ ControlConnection::onReadyRead()
         }
         _recvMutex.unlock();
       }
+    } else {
+      vWarn("Unable to read control reply: %1").arg(errmsg);
     }
   }
 }
@@ -328,10 +344,11 @@ ControlConnection::ReceiveWaiter::setResult(bool success,
                                             ControlReply reply, 
                                             QString errmsg)
 {
-  QMutexLocker locker(&_mutex);
+  _mutex.lock();
   _status = (success ? Success : Failed);
   _reply = reply; 
   _errmsg = errmsg;
+  _mutex.unlock();
   _waitCond.wakeAll();
 }
 
@@ -343,9 +360,10 @@ ControlConnection::ReceiveWaiter::setResult(bool success,
 void
 ControlConnection::SendWaiter::setResult(bool success, QString errmsg)
 {
-  QMutexLocker locker(&_mutex);
+  _mutex.lock();
   _status = (success ? Success : Failed);
   _errmsg = errmsg;
+  _mutex.unlock();
   _waitCond.wakeAll();
 }
 
