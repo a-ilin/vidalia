@@ -46,6 +46,13 @@ for it in Step 4.
     * Comment out "jarfile jar.log" in Section 1.6
     * Uncomment "log-messages 1" in Section 6 and change the '1' to a '0'
 
+   Also modify Privoxy's default.action as follows:
+ 
+    * Replace the line that says "-limit-connect \" with "+limit-connect{1-} \"
+
+  A privoxy.config and default.action with the necessary changes are included
+  in Vidalia's pkg/win32/ directory.
+
 8. Run the vidalia-bundle.nsi script. The bundle will be named according the
 the versions you specified in Step 4 and placed in the base directory created
 in Step 1.

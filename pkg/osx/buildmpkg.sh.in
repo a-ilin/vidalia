@@ -210,6 +210,7 @@ find $PKG_DIR/Privoxy.pkg -type d -print0 | xargs -0 chmod u+w
 echo "** Building PrivoxyConf.pkg **"
 mkdir -p $BUILD_DIR/privoxyconf_packageroot/Library/Privoxy
 cp privoxy.config $BUILD_DIR/privoxyconf_packageroot/Library/Privoxy/config
+cp default.action $BUILD_DIR/privoxyconf_packageroot/Library/Privoxy/default.action
 chmod 755 PrivoxyConfPostFlight
 cp PrivoxyConfPostFlight $BUILD_DIR/privoxyconf_resources/postflight
 
