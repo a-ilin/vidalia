@@ -1105,23 +1105,24 @@ Ole hyvä ja tarkista tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen pysä
     <message>
         <location filename="../gui/mainwindow.cpp" line="264"/>
         <source>Control Panel</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjauspaneeli</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="343"/>
         <source>Ctrl+P</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="401"/>
         <source>Your Tor server is shutting down.
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-palvelinta suljetaan.
+Paina &apos;Pysäytä Tor&apos; uudestaan pakottaakseen Tor-ohjelman pysähtyäkseen heti.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="408"/>
         <source>Stop Tor Now</source>
-        <translation type="unfinished"></translation>
+        <translation>Pysäytä Tor nyt</translation>
     </message>
 </context>
 <context>
