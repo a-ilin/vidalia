@@ -419,12 +419,12 @@ Mogelijk kunt u het handmatig verwijderen.</translation>
 <context>
     <name>ControlConnection</name>
     <message>
-        <location filename="../control/controlconnection.cpp" line="294"/>
+        <location filename="../control/controlconnection.cpp" line="310"/>
         <source>Control socket is not connected.</source>
         <translation>Control socket is niet verbonden.</translation>
     </message>
     <message>
-        <location filename="../control/controlconnection.cpp" line="239"/>
+        <location filename="../control/controlconnection.cpp" line="255"/>
         <source>Control socket is not connected</source>
         <translation>Control socket is niet verbonden.</translation>
     </message>
@@ -442,17 +442,17 @@ Mogelijk kunt u het handmatig verwijderen.</translation>
         <translation>Fout bij het verbreken van de verbinding met de socket. [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="159"/>
+        <location filename="../control/controlsocket.cpp" line="160"/>
         <source>Error sending control command. [%1]</source>
         <translation>Fout bij het verzenden van het beheer commando. [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="196"/>
+        <location filename="../control/controlsocket.cpp" line="197"/>
         <source>Socket disconnected while attempting to read a line of data.</source>
         <translation>Socket verbrak de verbinding bij poging tot het lezen van een regel met data.</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="234"/>
+        <location filename="../control/controlsocket.cpp" line="235"/>
         <source>Invalid control reply. [%1]</source>
         <translation>Ongeldig beheer antwoord. [%1]</translation>
     </message>
@@ -777,7 +777,7 @@ Upgrade naar een nieuwere versie van Tor.</translation>
         <translation>Berichten Weergegeven: </translation>
     </message>
     <message>
-        <location filename="../gui/log/logtreewidget.cpp" line="235"/>
+        <location filename="../gui/log/logtreewidget.cpp" line="237"/>
         <source>Messages Shown: %1</source>
         <translation>Berichten Weergegeven: %1</translation>
     </message>
@@ -985,7 +985,7 @@ Bekijk alstublieft het berichten logboek voor meer informatie en mogelijke aanwi
     <message>
         <location filename="../gui/mainwindow.cpp" line="741"/>
         <source>Failed to Create New Identity</source>
-        <translation>Creren van Nieuwe Identiteit Mislukt</translation>
+        <translation>Creëren van Nieuwe Identiteit Mislukt</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="477"/>
@@ -1240,12 +1240,12 @@ Klik nogmaals op &apos;Stop Tor&apos; om Tor per direct te stoppen.</translation
     <message>
         <location filename="../gui/log/messagelog.ui" line="787"/>
         <source>Copy</source>
-        <translation>Kopiren</translation>
+        <translation>Kopiëren</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="790"/>
         <source>Copy the selected messages to the clipboard (Ctrl+C)</source>
-        <translation>Kopier de geselecteerde berichten naar het klembord (Ctrl+C)</translation>
+        <translation>Kopieër de geselecteerde berichten naar het klembord (Ctrl+C)</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="798"/>
@@ -1807,7 +1807,7 @@ ontwikkelaars.</translation>
         <source>Vidalia was only able to find a private IP address for your server.
 
 Would you like to access an external service to determine your public IP address?</source>
-        <translation>Vidalia was enkel in staat een priv IP adres te vinden voor uw server.
+        <translation>Vidalia was enkel in staat een privé IP adres te vinden voor uw server.
 
 Wilt u een externe service benaderen om uw publieke IP adres te achterhalen?</translation>
     </message>
@@ -2037,7 +2037,7 @@ toevoegen.</translation>
     <message>
         <location filename="../control/torservice.cpp" line="155"/>
         <source>The Tor service is not installed.</source>
-        <translation>De Tor service is niet genstalleerd.</translation>
+        <translation>De Tor service is niet geínstalleerd.</translation>
     </message>
     <message>
         <location filename="../control/torservice.cpp" line="173"/>
