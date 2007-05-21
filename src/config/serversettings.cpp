@@ -264,10 +264,8 @@ ServerSettings::apply(QString *errmsg)
     rc = _torControl->resetConf(resetKeys, errmsg);
   }
   if (rc) {
-    if (!_torControl->saveConf(errmsg)) {
-      return false;
-    }
-    setChanged(false);
+    if (_torControl->saveConf(errmsg))
+      setChanged(false);
     _backupSettings = allSettings();
   }
   return rc;

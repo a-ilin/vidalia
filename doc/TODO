@@ -80,11 +80,6 @@ Miscellaneous Tasks:
 
 
 Notes from Roger:
-  * I mentioned today that it would be smart if Vidalia recognized when
-    Tor refuses to write its config file because of permissions, and did
-    something smarter -- like handling the error and remembering the intended
-    changes itself, or like rephrasing the error to give some hints about
-    what's going on.
   * 17:53 < arma> does vidalia have a fascistfirewall button?
     17:53 < edmanm> it does not. should it?
     17:57 < arma> at some point, it should.
