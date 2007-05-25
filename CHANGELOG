@@ -1,3 +1,41 @@
+0.0.12  xx-May-2007
+  o Added a new "Control Panel" main window that appears when Vidalia first
+    starts. This dialog is for people who either aren't trained to look in
+    their system tray area for a Vidalia icon, or those who simply do not have
+    a system tray area.
+  o Added -logfile and -loglevel command-line options that can log useful
+    Vidalia debugging messages to a file or to stdout. Hopefully this will
+    help make tracking down future Vidalia bugs easier.
+  o Add a box to the Advanced settings page to change the IP address on which
+    we will try to connect to Tor's control port, instead of always assuming
+    127.0.0.1. (Ticket #81)
+  o Don't yell at the user if our SAVECONF fails after changing some
+    configuration settings; just remember the intended settings and reapply them
+    next time Tor runs.
+  o Restore a window to its previous state each time it is opened, not just
+    the first time after Vidalia is started.
+  o Only allow the 'New Identity' button to be clicked once every 60 seconds.
+  o Show the number of online servers in the status tip for the server list,
+    as well as the total number of servers. 
+  o Fix a minor bug that's been around since 0.0.1: actually remove objects
+    from the list of targets for an event, instead of from a copy of the list.
+  o Display command-line options information as a message box so even Win32 
+    folks can see it, if they give Vidalia a bogus argument.
+  o Revert back to the single uninstaller strategy on Win32, so don't leave
+    program groups behind after uninstalling the bundle. (Ticket #237)
+  o Start Privoxy minimized if the user selects "Run installed components now"
+    after completing the Win32 installer.
+  o Don't skip past the Win32 installer results immediately, since there could
+    have been errors the user should see.
+  o Include a default.action file for Privoxy in the Win32 and OS X bundles 
+    with the +limit-connect{1-} fix.
+  o Fix the paths to *-spec.txt in the script that builds the OS X bundles.
+  o Include Tor_Uninstaller.applescript and uninstall_tor_bundle.sh in the OS
+    X bundle. (Ticket #230)
+  o Updated Dutch, Finnish, French, German, Norwegian, Polish and Spanish
+    translations.
+ 
+
 0.0.11  07-Feb-2007
   o Fix a race condition that could (and did) cause Vidalia to freeze.
   o RESETCONF all server-related settings when the be-a-server checkbox gets 
