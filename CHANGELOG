@@ -16,7 +16,13 @@
     the first time after Vidalia is started.
   o Only allow the 'New Identity' button to be clicked once every 60 seconds.
   o Show the number of online servers in the status tip for the server list,
-    as well as the total number of servers. 
+    as well as the total number of servers.
+  o Expand filenames that use "~/", "%APPDATA%", or "%PROGRAMFILES%" in either
+    the path to Tor's executable or torrc.
+  o Fix the message log timestamp format to be "MMM dd hh:mm:ss.zzz", instead
+    of "MMM dd hh:mm:ss:zzz".
+  o Don't create the help browser window until we actually need it, so we
+    don't waste memory on a window the user might never use.
   o Fix a minor bug that's been around since 0.0.1: actually remove objects
     from the list of targets for an event, instead of from a copy of the list.
   o Display command-line options information as a message box so even Win32 
