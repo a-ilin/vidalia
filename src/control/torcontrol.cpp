@@ -116,7 +116,7 @@ TorControl::start()
            this, SLOT(onLogStdout(QString, QString)));
   
       /* Kick off the Tor process. */
-      _torProcess->start(settings.getExecutable(), 
+      _torProcess->start(expand_filename(settings.getExecutable()), 
                          settings.getArguments());
 #if defined(Q_OS_WIN32)
     }

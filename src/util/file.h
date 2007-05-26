@@ -40,5 +40,10 @@ bool touch_file(QString filename, bool createdir = false, QString *errmsg = 0);
 /** Creates all directories in <b>path</b>, if they do not exist. */
 bool create_path(QString path);
 
+/** Expands <b>filename</b> if it starts with "~/". On Windows, this will
+ * expand "%APPDATA%" and "%PROGRAMFILES%". If <b>filename</b> does not
+ * start with a shortcut, <b>filename</b> will be returned unmodified. */
+QString expand_filename(QString filename);
+
 #endif
 

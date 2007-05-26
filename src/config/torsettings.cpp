@@ -26,6 +26,7 @@
  */
 
 #include <QDir>
+#include <util/file.h>
 #include <vidalia.h>
 
 #include "torsettings.h"
@@ -103,7 +104,8 @@ TorSettings::getArguments()
   /* Add the torrc argument (if specified) */
   QString torrc = getTorrc();
   if (!torrc.isEmpty()) {
-    args += formatArgument(TOR_ARG_TORRC, torrc) + " ";
+    args += formatArgument(TOR_ARG_TORRC, 
+                           expand_filename(torrc)) + " ";
   }
   /* Add the ControlPort value */
   quint16 controlPort = getControlPort();

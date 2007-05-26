@@ -36,6 +36,10 @@
 bool
 touch_file(QString filename, bool createdir, QString *errmsg)
 {
+  /* Expand the file's path if it starts with a shortcut, like "~/" or
+   * "%APPDATA%" */
+  filename = expand_filename(filename);
+    
   /* If the file's path doesn't exist and we're supposed to create it, do that
    * now. */
   if (createdir && !create_path(QFileInfo(filename).absolutePath())) {
@@ -64,5 +68,26 @@ create_path(QString path)
     }
   }
   return true;
+}
+
+/** Expands <b>filename</b> if it starts with "~/". On Windows, this will
+ * expand "%APPDATA%" and "%PROGRAMFILES%". If <b>filename</b> does not
+ * start with a shortcut, <b>filename</b> will be returned unmodified. */
+QString
+expand_filename(QString filename)
+{
+#if defined(Q_OS_WIN32)
+  if (filename.startsWith("%APPDATA%\\") ||
+      filename.startsWith("%APPDATA%/"))
+    return filename.replace(0, 9, win32_app_data_folder());
+    
+  if (filename.startsWith("%PROGRAMFILES%\\") ||
+      filename.startsWith("%PROGRAMFILES%/"))
+    return filename.replace(0, 14, win32_program_files_folder());
+#else
+  if (filename.startsWith("~/"))
+    return filename.replace(0, 1, QDir::homePath());
+#endif
+  return filename;
 }
 
