@@ -117,14 +117,13 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
 
   /* Creates a TorControl object, used to talk to Tor. */
   _torControl = new TorControl();
-  /* Creates a help browser object, used to display various help topics. */
-  _help = new HelpBrowser();
 }
 
 /** Destructor */
 Vidalia::~Vidalia()
 {
-  delete _help;
+  if (_help)
+    delete _help;
   delete _torControl;
 }
 
@@ -298,6 +297,8 @@ Vidalia::setStyle(QString styleKey)
 void
 Vidalia::help(QString topic)
 {
+  if (!_help)
+    _help = new HelpBrowser();
   _help->showWindow(topic);
 }
 
