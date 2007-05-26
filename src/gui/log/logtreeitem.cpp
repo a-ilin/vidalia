@@ -31,7 +31,7 @@
 #include "logtreewidget.h"
 
 /** Defines the format used for displaying the date and time of a log message.*/
-#define DATETIME_FMT  "MMM dd hh:mm:ss:zzz"
+#define DATETIME_FMT  "MMM dd hh:mm:ss.zzz"
 
 /* Column index values */
 #define COL_TIME    LogTreeWidget::TimeColumn
