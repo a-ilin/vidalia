@@ -29,6 +29,10 @@
 #include <QFile>
 #include "file.h"
 
+#if defined(Q_OS_WIN32)
+#include <util/win32.h>
+#endif
+
 
 /** Create an empty file named <b>filename</b>. if <b>createdir</b> is true,
  * then the full path to <b>filename</b> will be created. Returns true on 
