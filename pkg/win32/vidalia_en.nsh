@@ -26,20 +26,20 @@
 
 ; Bundle
 LangString BundleSetupCaption         ${LANG_ENGLISH} "${BUNDLE_NAME} setup"
-LangString BundleWelcomeText          ${LANG_ENGLISH} "This wizard will guide you through the installation of Tor, Vidalia, Privoxy, and Torbutton.\r\n\r\nIf you have previously installed Tor, Vidalia, Privoxy, or Firefox, please make sure they are not running before continuing this installation.\r\n\r\n$_CLICK"
+LangString BundleWelcomeText          ${LANG_ENGLISH} "This wizard will guide you through the installation of Tor, Vidalia, Privoxy, and Torbutton.\r\n\r\nTor is a system for using the Internet anonymously, helping you anonymize Web browsing and publishing, instant messaging, IRC, and more. Vidalia is a GUI that helps you control, monitor, and configure Tor.\r\n\r\nPrivoxy is a filtering web proxy that protects your privacy and helps remove ads, banners, and popups.\r\n\r\nTorbutton is a Firefox extension that allows you to quickly enable or disable anonymous web browsing.\r\n\r\nIf you have previously installed Tor, Vidalia, Privoxy, or Firefox, please make sure they are not running before continuing this installation.\r\n\r\n$_CLICK"
 LangString BundleWelcomeTitle         ${LANG_ENGLISH} "Welcome to the ${BUNDLE_NAME} Setup Wizard"
 LangString BundleLinkText             ${LANG_ENGLISH} "${TOR_NAME} installation documentation"
 LangString BundleFinishText           ${LANG_ENGLISH} "Installation is complete.\r\nPlease see http://tor.eff.org/docs/tor-doc-win32.html to learn how to configure your applications to use Tor.\r\n\r\nIf you installed Torbutton, you will need to restart Firefox."
 LangString BundleRunNow               ${LANG_ENGLISH} "Run installed components now"
 
 ; Vidalia
-LangString VidaliaGroupDesc           ${LANG_ENGLISH} "Install ${VIDALIA_DESC}."
+LangString VidaliaGroupDesc           ${LANG_ENGLISH} "Vidalia is a GUI that helps you control, monitor, and configure Tor."
 LangString VidaliaUninstDesc          ${LANG_ENGLISH} "Remove ${VIDALIA_DESC}."
 LangString VidaliaSetupCaption        ${LANG_ENGLISH} "${VIDALIA_NAME} setup"
-LangString VidaliaWelcomeText         ${LANG_ENGLISH} "This wizard will guide you through the installation of ${VIDALIA_DESC}.\r\n\r\n$_CLICK"
+LangString VidaliaWelcomeText         ${LANG_ENGLISH} "This wizard will guide you through the installation of Vidalia, a GUI that helps you control, monitor, and configure Tor.\r\n\r\n$_CLICK"
 LangString VidaliaWelcomeTitle        ${LANG_ENGLISH} "Welcome to the ${VIDALIA_NAME} Setup Wizard"
 LangString VidaliaLinkText            ${LANG_ENGLISH} "${VIDALIA_NAME} homepage"
-LangString VidaliaAppDesc             ${LANG_ENGLISH} "Install ${VIDALIA_DESC}."
+LangString VidaliaAppDesc             ${LANG_ENGLISH} "Vidalia is a GUI that helps you control, monitor, and configure Tor."
 LangString VidaliaStartup             ${LANG_ENGLISH} "Run At Startup"
 LangString VidaliaStartupDesc         ${LANG_ENGLISH} "Automatically run ${VIDALIA_NAME} at startup."
 LangString VidaliaShortcuts           ${LANG_ENGLISH} "Add to Start Menu"
@@ -47,7 +47,7 @@ LangString VidaliaShortcutsDesc       ${LANG_ENGLISH} "Add ${VIDALIA_NAME} to yo
 LangString VidaliaRunNow              ${LANG_ENGLISH} "Run ${VIDALIA_NAME} now"
 
 ; Tor
-LangString TorGroupDesc               ${LANG_ENGLISH} "Install ${TOR_DESC}."
+LangString TorGroupDesc               ${LANG_ENGLISH} "Tor is a system for using the Internet anonymously, helping you anonymize Web browsing and publishing, instant messaging, IRC, and more."
 LangString TorUninstDesc              ${LANG_ENGLISH} "Remove ${TOR_DESC}."
 LangString TorAppDesc                 ${LANG_ENGLISH} "Install ${TOR_DESC}."
 LangString TorAskOverwriteTorrc       ${LANG_ENGLISH} "You already have a Tor configuration file.$\r$\nDo you want to overwrite it with the default sample configuration file?"
@@ -59,7 +59,7 @@ LangString TorShortcuts               ${LANG_ENGLISH} "Add to Start Menu"
 LangString TorShortcutsDesc           ${LANG_ENGLISH} "Add ${TOR_NAME} to your Start menu."
 
 ; Privoxy
-LangString PrivoxyGroupDesc           ${LANG_ENGLISH} "Install ${PRIVOXY_DESC}."
+LangString PrivoxyGroupDesc           ${LANG_ENGLISH} "Privoxy is a filtering web proxy that protects your privacy and helps remove ads, banners, and popups."
 LangString PrivoxyUninstDesc          ${LANG_ENGLISH} "Remove ${PRIVOXY_DESC}."
 LangString PrivoxyAppDesc             ${LANG_ENGLISH} "Install ${PRIVOXY_DESC}."
 LangString PrivoxyShortcuts           ${LANG_ENGLISH} "Add to Start Menu"
@@ -68,7 +68,7 @@ LangString PrivoxyStartup             ${LANG_ENGLISH} "Run At Startup"
 LangString PrivoxyStartupDesc         ${LANG_ENGLISH} "Automatically run ${PRIVOXY_NAME} at startup."
 
 ; Torbutton
-LangString TorbuttonGroupDesc         ${LANG_ENGLISH} "Install ${TORBUTTON_DESC}."
+LangString TorbuttonGroupDesc         ${LANG_ENGLISH} "Torbutton is a Firefox extension that allows you to quickly enable or disable anonymous web browsing."
 LangString TorbuttonUninstDesc        ${LANG_ENGLISH} "Remove ${TORBUTTON_DESC}."
 LangString TorbuttonAppDesc           ${LANG_ENGLISH} "Install ${TORBUTTON_DESC}."
 LangString TorbuttonAddToFirefox      ${LANG_ENGLISH} "Add to Firefox"
