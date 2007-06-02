@@ -1,4 +1,4 @@
-0.0.12  xx-May-2007
+0.0.12  01-Jun-2007
   o Added a new "Control Panel" main window that appears when Vidalia first
     starts. This dialog is for people who either aren't trained to look in
     their system tray area for a Vidalia icon, or those who simply do not have
@@ -35,6 +35,8 @@
     have been errors the user should see.
   o Include a default.action file for Privoxy in the Win32 and OS X bundles 
     with the +limit-connect{1-} fix.
+  o Include some more helpful text in the Win32 installer welcome screen and
+    category descriptions.
   o Fix the paths to *-spec.txt in the script that builds the OS X bundles.
   o Include Tor_Uninstaller.applescript and uninstall_tor_bundle.sh in the OS
     X bundle. (Ticket #230)
