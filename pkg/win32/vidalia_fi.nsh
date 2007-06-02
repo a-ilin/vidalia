@@ -6,9 +6,9 @@
 ;;
 
 ; Bundle
-LangString BundleSetupCaption         ${LANG_FINNISH} "${BUNDLE_NAME}asennus"
-LangString BundleWelcomeText          ${LANG_FINNISH} "Tämä velho auttaa asentaakseen koneelle Tor-ohjelman, Vidalian, Privoxyn ja Torbuttonin.\r\n\r\nTor on järjestelmä, jolla voi käyttää Internettiä anonyymisesti tekemällä anonyymiseksi sivujen selailun, pikaviestien käytön,IRCin ja muut. Vidalia on käyttöliittymä ohjatakseen, seuratakseen ja säätääkseen Tor-ohjelman toimintaa.\r\n\r\nPrivoxy suodattava välityspalvelin, joka suojaa yksityisyyttä ja auttaa poistamalla mainoksia, bannereita ja popup-ikkunoita.\r\n\r\nTorbutton on Firefoxille lisäosa, jolla voi ottaa käyttöön tai poistaa käytöstä anonyymisen sivujen selailun.\r\n\r\nIJos koneelle on jo asennettu Tor, Vidalia tai Privoxy kannattaa tarkistaa ettei mikään niistä ole päällä ennen kuin asennusta jatkaa.\r\n\r\n$_CLICK"
-LangString BundleWelcomeTitle         ${LANG_FINNISH} "Tervetuloa ${BUNDLE_NAME}asennukseen"
+LangString BundleSetupCaption         ${LANG_FINNISH} "${BUNDLE_NAME}-asennus"
+LangString BundleWelcomeText          ${LANG_FINNISH} "Tämä velho auttaa asentaakseen koneelle Tor-ohjelman, Vidalian, Privoxyn ja Torbuttonin.\r\n\r\nTor on järjestelmä, jolla voi käyttää Internettiä anonyymisesti tekemällä anonyymiseksi sivujen selailun, pikaviestien käytön,IRCin ja muut. Vidalia on käyttöliittymä ohjatakseen, seuratakseen ja säätääkseen Tor-ohjelman toimintaa.\r\n\r\nPrivoxy suodattava välityspalvelin, joka suojaa yksityisyyttä ja auttaa poistamalla mainoksia, bannereita ja popup-ikkunoita.\r\n\r\nTorbutton on Firefoxille lisäosa, jolla voi ottaa käyttöön tai poistaa käytöstä anonyymisen sivujen selailun.\r\n\r\nJos koneelle on jo asennettu Tor, Vidalia tai Privoxy kannattaa tarkistaa ettei mikään niistä ole päällä ennen kuin asennusta jatkaa.\r\n\r\n$_CLICK"
+LangString BundleWelcomeTitle         ${LANG_FINNISH} "Tervetuloa ${BUNDLE_NAME}-asennukseen"
 LangString BundleLinkText             ${LANG_FINNISH} "${TOR_NAME}asennusohje"
 LangString BundleFinishText           ${LANG_FINNISH} "Asennus on valmis.\r\nOle hyvä ja tutustu http://tor.eff.org/docs/tor-doc-win32.html -ohjesivuun oppiakseen kuinka säätää ohjelmat käyttämään Tor-ohjelmaa.\r\n\r\nJos Torbutton on asennettu, niin Firefox täytyy uudelleen käynnistää."
 LangString BundleRunNow               ${LANG_FINNISH} "Käynnistä asennetut komponentit nyt"
