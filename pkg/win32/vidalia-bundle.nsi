@@ -40,7 +40,7 @@ SetCompressor /SOLID lzma
 !define BUNDLE_NAME         "Vidalia Bundle"
 !define BUNDLE_APPVERSION   "${TOR_APPVERSION}-${VIDALIA_APPVERSION}"
 !define BUNDLE_REVISION     "1"
-!define BUNDLE_PRODVERSION  "${VIDALIA_APPVERSION}.${BUNDLE_REVISION}" ; Product version must be x.x.x.x
+!define BUNDLE_PRODVERSION  "0.0.12.${BUNDLE_REVISION}" ; Product version must be x.x.x.x
 !define BUNDLE_DESC         "${BUNDLE_NAME} ${BUNDLE_APPVERSION}"
 !define INSTALLFILE         "vidalia-bundle-${BUNDLE_APPVERSION}.exe"
 !define UNINSTALLER         "Uninstall.exe"
