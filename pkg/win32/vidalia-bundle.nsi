@@ -160,13 +160,13 @@ SectionGroup "!${TOR_DESC}" TorGroup
        ;If there's already a torrc config file, ask if they want to
        ;overwrite it with the new one.
        IfFileExists "$configdir\torrc" "" endiftorrc
-          MessageBox MB_ICONQUESTION|MB_YESNO "$(TorAskOverwriteTorrc)" IDNO yesreplace
-          Delete $configdir\torrc
-          Goto endiftorrc
-         yesreplace:
-          StrCpy $configfile "torrc.sample"
+         MessageBox MB_ICONQUESTION|MB_YESNO "$(TorAskOverwriteTorrc)" IDNO noreplace
+         Delete $configdir\torrc
+         Goto endiftorrc
+       noreplace:
+         StrCpy $configfile "torrc.sample"
        endiftorrc:
-       File /oname=$configfile "tor\${TOR_APPVERSION}\torrc.sample"
+         File /oname=$configfile "tor\${TOR_APPVERSION}\torrc.sample"
        
         ; Write the uninstall keys for Windows
         WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "DisplayName" "${TOR_DESC}"
