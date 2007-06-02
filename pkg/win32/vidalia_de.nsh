@@ -13,13 +13,13 @@ LangString BundleRunNow               ${LANG_GERMAN} "Installierte Anwendungen j
 
 
 ; Vidalia
-LangString VidaliaGroupDesc           ${LANG_GERMAN} "Installiere ${VIDALIA_DESC}."
+LangString VidaliaGroupDesc           ${LANG_GERMAN} "Vidalia ist eine Oberfläche zur Einrichtung, Steuerung und Überwachung von Tor."
 LangString VidaliaUninstDesc          ${LANG_GERMAN} "Entferne ${VIDALIA_DESC}."
 LangString VidaliaSetupCaption        ${LANG_GERMAN} "${VIDALIA_NAME} Setup"
 LangString VidaliaWelcomeText         ${LANG_GERMAN} "Dieser Assistent führt Sie durch die Installation von ${VIDALIA_DESC}.\r\n\r\n$_CLICK"
 LangString VidaliaWelcomeTitle        ${LANG_GERMAN} "Willkommen beim ${VIDALIA_NAME} Installations-Assistent"
 LangString VidaliaLinkText            ${LANG_GERMAN} "${VIDALIA_NAME} Homepage"
-LangString VidaliaAppDesc             ${LANG_GERMAN} "Installiere ${VIDALIA_DESC}."
+LangString VidaliaAppDesc             ${LANG_GERMAN} "Vidalia ist eine Oberfläche zur Einrichtung, Steuerung und Überwachung von Tor."
 LangString VidaliaStartup             ${LANG_GERMAN} "Beim Systemstart ausführen"
 LangString VidaliaStartupDesc         ${LANG_GERMAN} "${VIDALIA_NAME} beim Systemstart automatisch ausführen."
 LangString VidaliaShortcuts           ${LANG_GERMAN} "Zum Startmenü hinzufügen"
@@ -28,7 +28,7 @@ LangString VidaliaRunNow              ${LANG_GERMAN} "${VIDALIA_NAME} jetzt star
 
 
 ; Tor
-LangString TorGroupDesc               ${LANG_GERMAN} "Installiere ${TOR_DESC}."
+LangString TorGroupDesc               ${LANG_GERMAN} "Tor ist ein System, um das Internet anonym zu nutzen. Es anonymisiert das Browsen, das Veröffentlichen von Inhalten, Instant Messaging, IRC, usw."
 LangString TorUninstDesc              ${LANG_GERMAN} "Entferne ${TOR_DESC}."
 LangString TorAppDesc                 ${LANG_GERMAN} "Installiere ${TOR_DESC}."
 LangString TorAskOverwriteTorrc       ${LANG_GERMAN} "Sie haben bereits eine Tor Konfigurationsdatei.$\r$\nSoll diese mit der allgemeinen Beispiel-Konfigurationsdatei überschrieben werden?"
@@ -41,7 +41,7 @@ LangString TorShortcutsDesc           ${LANG_GERMAN} "${TOR_NAME} zu Ihrem Start
 
 
 ; Privoxy
-LangString PrivoxyGroupDesc           ${LANG_GERMAN} "Installiere ${PRIVOXY_DESC}."
+LangString PrivoxyGroupDesc           ${LANG_GERMAN} "Privoxy ist ein filternder Webproxy, der Ihnen hilft, Ihre Privatphäre zu schützen und Werbung, Banner und Popups entfernt."
 LangString PrivoxyUninstDesc          ${LANG_GERMAN} "Entferne ${PRIVOXY_DESC}."
 LangString PrivoxyAppDesc             ${LANG_GERMAN} "Installiere ${PRIVOXY_DESC}."
 LangString PrivoxyShortcuts           ${LANG_GERMAN} "Zum Startmenü hinzufügen"
@@ -50,7 +50,7 @@ LangString PrivoxyStartup             ${LANG_GERMAN} "Beim Systemstart ausführen
 LangString PrivoxyStartupDesc         ${LANG_GERMAN} "${PRIVOXY_NAME} beim Systemstart automatisch ausführen."
 
 ; Torbutton
-LangString TorbuttonGroupDesc         ${LANG_GERMAN} "Installiere ${TORBUTTON_DESC}."
+LangString TorbuttonGroupDesc         ${LANG_GERMAN} "Torbutton ist eine Erweiterung für Firefox, die das schnelle An- und Ausschalten des anonymes Webbrowsens ermöglicht."
 LangString TorbuttonUninstDesc        ${LANG_GERMAN} "Entferne ${TORBUTTON_DESC}."
 LangString TorbuttonAppDesc           ${LANG_GERMAN} "Installiere ${TORBUTTON_DESC}."
 LangString TorbuttonAddToFirefox      ${LANG_GERMAN} "Zu Firefox hinzufügen"
