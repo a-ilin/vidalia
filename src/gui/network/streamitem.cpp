@@ -44,6 +44,8 @@ void
 StreamItem::update(Stream stream)
 {
   setText(CircuitListWidget::ConnectionColumn, stream.target());
+  setToolTip(CircuitListWidget::ConnectionColumn, stream.target());
   setText(CircuitListWidget::StatusColumn, stream.statusString());
+  setToolTip(CircuitListWidget::StatusColumn, stream.statusString());
 }
 

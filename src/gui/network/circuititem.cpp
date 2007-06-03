@@ -50,7 +50,9 @@ CircuitItem::update(Circuit circuit, QString displayedPath)
 
   /* Update the column fields */
   setText(CircuitListWidget::ConnectionColumn, displayedPath);
+  setToolTip(CircuitListWidget::ConnectionColumn, displayedPath);
   setText(CircuitListWidget::StatusColumn, circuit.statusString());
+  setToolTip(CircuitListWidget::StatusColumn, circuit.statusString());
 }
 
 /** Adds a stream as a child of this circuit. */
