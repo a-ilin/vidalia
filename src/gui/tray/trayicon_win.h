@@ -36,7 +36,7 @@
 #include <QMouseEvent>
 
 
-class TrayIconImpl : protected QWidget
+class TrayIconImpl : public QWidget
 {
 protected:
   /** Default constructor. */

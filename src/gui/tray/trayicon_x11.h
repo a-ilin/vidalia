@@ -54,7 +54,7 @@
 #include <QEvent>
 
 
-class TrayIconImpl : protected QLabel 
+class TrayIconImpl : public QLabel 
 {
 protected:
   /** Default constructor. */

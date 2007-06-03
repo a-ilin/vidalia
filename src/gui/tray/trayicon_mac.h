@@ -34,7 +34,7 @@
 #include <QString>
 
 
-class TrayIconImpl : protected QWidget
+class TrayIconImpl : public QWidget
 {
 protected:
   /** Default Constructor */
