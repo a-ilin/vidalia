@@ -137,8 +137,6 @@ TorEvents::toTorEvent(QString event)
     e = StreamStatus;
   } else if (event == "DEBUG") {
     e = LogDebug;
-  } else if (event == "NOTICE") {
-    e = LogNotice;
   } else if (event == "INFO") {
     e = LogInfo;
   } else if (event == "NOTICE") {
