@@ -33,6 +33,7 @@
 #include <QTimer>
 #include <vidalia.h>
 #include <util/html.h>
+#include <QSysInfo>
 
 #include "common/vmessagebox.h"
 #include "common/animatedpixmap.h"
@@ -726,13 +727,22 @@ MainWindow::newIdentity()
     ui.lblNewIdentity->setEnabled(false);
     QTimer::singleShot(MIN_NEWIDENTITY_INTERVAL, 
                        this, SLOT(enableNewIdentity()));
-    
+
 #if defined(USE_QSYSTEMTRAYICON)
+    /* Check if we support balloon messages. We support balloon messages only
+     * if we are built with Qt >= 4.2, but not if we are running on OS X or
+     * a version of Windows <= Windows 2000. */
+# if defined(Q_WS_WIN)
+    if (QSystemTrayIcon::supportsMessages() &&
+        QSysInfo::WindowsVersion > QSysInfo::WV_2000)
+# else
     if (QSystemTrayIcon::supportsMessages())
+# endif
       _trayIcon.showMessage(title, message, QSystemTrayIcon::Information);
     else
       VMessageBox::information(this, title, message, VMessageBox::Ok);
 #else
+    /* No QSystemTrayIcon. Just show a message box */
     VMessageBox::information(this, title, message, VMessageBox::Ok);
 #endif
   } else {
