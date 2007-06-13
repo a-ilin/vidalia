@@ -61,7 +61,19 @@ TorProcess::start(QString app, QString args)
   app = app + " " + args;
   
   /* Attempt to start Tor with the given command-line arguments */
-  setEnvironment(QProcess::systemEnvironment());
+  QStringList env = QProcess::systemEnvironment();
+#if !defined(Q_OS_WIN32)
+  /* Add "/usr/sbin" to an existing $PATH
+   * XXX What if they have no path? Would always just making one with 
+   *     "/usr/sbin" smart? Should we add anything else? */
+  for (int i = 0; i < env.size(); i++) {
+    QString envVar = env.at(i);
+    if (envVar.startsWith("PATH="))
+      env.replace(i, envVar += ":/usr/sbin");
+  }
+#endif
+  setEnvironment(env);
+
   vNotice("Starting Tor using '%1'").arg(app);
   QProcess::start(app, QIODevice::ReadOnly | QIODevice::Text);
 }
