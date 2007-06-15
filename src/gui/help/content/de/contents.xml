@@ -24,18 +24,18 @@
 <Contents name="Vidalia Hilfe" html="index.html">
   <Topic id="running" name="Tor betreiben" html="running.html">
     <Topic id="starting" name="Tor starten und beenden" html="running.html" section="starting"/>
-    <Topic id="monitoring" name="Tors Status &uuml;berwachen" html="running.html" section="monitoring"/>
+    <Topic id="monitoring" name="Tors Status &#252;berwachen" html="running.html" section="monitoring"/>
   </Topic>
   <Topic id="log" name="Nachrichtenprotokoll" html="log.html">
-    <Topic id="basic" name="Basic Information" html="log.html" section="basic"/>
-    <Topic id="severities" name="Message Severities" html="log.html" section="severities"/>
-    <Topic id="logfile" name="Logging to a File" html="log.html" section="tofile"/>
+    <Topic id="basic" name="Allgemeine Informationen" html="log.html" section="basic"/>
+    <Topic id="severities" name="Gewichtung von Nachrichten" html="log.html" section="severities"/>
+    <Topic id="logfile" name="Das Nachrichtenprotokoll speichern" html="log.html" section="tofile"/>
   </Topic>
-  <Topic id="netview" name="Network Viewer" html="netview.html">
-    <Topic id="overview" name="Overview" html="netview.html" section="overview"/>
-    <Topic id="netmap" name="Network Map" html="netview.html" section="netmap"/>
-    <Topic id="status" name="Server Status" html="netview.html" section="status"/>
-    <Topic id="details" name="Server Details" html="netview.html" section="details"/>
+  <Topic id="netview" name="Netzwerk-Betrachter" html="netview.html">
+    <Topic id="overview" name="&#220;berblick" html="netview.html" section="overview"/>
+    <Topic id="netmap" name="Netzwerk-Karte" html="netview.html" section="netmap"/>
+    <Topic id="status" name="Server-Status" html="netview.html" section="status"/>
+    <Topic id="details" name="Server-Details" html="netview.html" section="details"/>
   </Topic>
   <Topic id="config" name="Konfiguration von Tor" html="config.html">
     <Topic id="general" name="Allgemeine Einstellungen" html="config.html" section="general"/>
@@ -53,6 +53,6 @@
     <Topic id="torexited" name="Tor wurden unerwartet beendet" html="troubleshooting.html" section="torexited"/>
     <Topic id="stop" name="Vidalia kann Tor nicht beenden" html="troubleshooting.html" section="stop"/>
   </Topic>
-  <Topic id="links" name="N&uuml;tzliche Links" html="links.html"/>
+  <Topic id="links" name="N&#252;tzliche Links" html="links.html"/>
 </Contents>
 

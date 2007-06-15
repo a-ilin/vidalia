@@ -1891,28 +1891,28 @@ geben Sie Ihre Uploadgeschwindigkeit bitte hier an.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="953"/>
-        <source>Cable/DSL 256 Kbps</source>
-        <translation>Kabel/DSL 256 Kbps</translation>
+        <source>Cable/DSL 256 kbit/s</source>
+        <translation>Kabel/DSL 256 kbit/s</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="958"/>
-        <source>Cable/DSL 512 Kbps</source>
-        <translation>Kabel/DSL 512 Kbps</translation>
+        <source>Cable/DSL 512 kbit/s</source>
+        <translation>Kabel/DSL 512 kbit/s</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="963"/>
-        <source>Cable/DSL 768 Kbps</source>
-        <translation>Kabel/DSL 768 Kbps</translation>
+        <source>Cable/DSL 768 kbit/s</source>
+        <translation>Kabel/DSL 768 kbit/s</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="968"/>
-        <source>T1/Cable/DSL 1.5 Mbps</source>
-        <translation>T1/Kabel/DSL 1.5 Mbps</translation>
+        <source>T1/Cable/DSL 1.5 Mbit/s</source>
+        <translation>T1/Kabel/DSL 1.5 Mbit/s</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="973"/>
-        <source>&gt; 1.5 Mbps</source>
-        <translation>&gt; 1.5 Mbps</translation>
+        <source>&gt; 1.5 Mbit/s</source>
+        <translation>&gt; 1.5 Mbit/s</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="978"/>
