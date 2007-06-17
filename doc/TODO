@@ -80,6 +80,10 @@ Miscellaneous Tasks:
 
 
 Notes from Roger:
+  * It looks like we need to restart Vidalia to get a new language choice to
+    take effect. This means restarting my Tor, which will break my current
+    Tor activity. I know it's probably a hassle to make it change languages
+    without a restart, but it will make our foreign users a lot happier.
   * 17:53 < arma> does vidalia have a fascistfirewall button?
     17:53 < edmanm> it does not. should it?
     17:57 < arma> at some point, it should.
