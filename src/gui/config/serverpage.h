@@ -54,14 +54,10 @@ public:
   void load();
 
 private slots:
-  /** Called when the user clicks "Get Address" to guess our local IP */
-  void getServerAddress();
   /** Called when the user clicks the bandwidth help button */
   void bandwidthHelp();
   /** Called when the user clicks the exit policy help button */
   void exitPolicyHelp();
-  /** Called when the user's public IP address needs to be updated. */
-  void updateServerIP();
 	/** Called when the user selects a new value from the rate combo box */
 	void rateChanged(int rate);
   /** Called when the user edits the max or average bandwidth limits. */
@@ -78,12 +74,8 @@ private:
     CustomBwLimits   /**< Custom bandwidth limits */
   };
   
-  /** Attempts to find the server's public IP address */
-  void getServerPublicIP(); 
   /** Returns the index of the selected item in lstExitPolicies */
   int selectedIndex();
-  /** Enables or disables the automatic update timer. */
-  void setAutoUpdateTimer(bool enabled);
   
   /** Saves the server's bandwidth average and burst limits. */
   void saveBandwidthLimits();
@@ -99,8 +91,6 @@ private:
   /** A ServerSettings object used to get and set information about how a
    * local Tor server is configured. */
   ServerSettings*  _settings;
-  /** A timer that tells us when it's time to check if our server IP changed.*/
-  QTimer* _autoUpdateTimer;
 
   /** Qt Designer generated object */
   Ui::ServerPage ui;

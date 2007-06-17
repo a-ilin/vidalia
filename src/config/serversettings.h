@@ -68,11 +68,6 @@ public:
   /** Gets the server's nickname. */
   QString getNickname();
   
-  /** Sets the server's external IP address. */
-  void setAddress(QString address);
-  /** Gets the server's external IP address. */
-  QString getAddress();
-
   /** Sets the server operator's contact information. */
   void setContactInfo(QString info);
   /** Gets the server operator's contact information. */
@@ -96,11 +91,6 @@ public:
   void setBandwidthBurstRate(quint32 rate);
   /** Gets the maximum burst rate (in B/s) of this server. */
   quint32 getBandwidthBurstRate();
-
-  /** Sets whether we automatically update the server address or not. */
-  void setAutoUpdateAddress(bool enabled);
-  /** Gets whether we automatically update the server address. */
-  bool getAutoUpdateAddress();
 
 private:
   /** Sets a value indicating that the server settings have changed since

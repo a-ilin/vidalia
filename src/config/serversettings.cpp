@@ -40,7 +40,6 @@
 
 /* Server-related torrc configuration parameters */
 #define SERVER_NICKNAME         "Nickname"
-#define SERVER_ADDRESS          "Address"
 #define SERVER_ORPORT           "ORPort"
 #define SERVER_DIRPORT          "DirPort"
 #define SERVER_CONTACTINFO      "ContactInfo"
@@ -81,8 +80,6 @@ ServerSettings::ServerSettings(TorControl *torControl)
   setDefault(SETTING_SERVER_BWRATE,     3145728);
   setDefault(SETTING_SERVER_BWBURST,    6291456);
   setDefault(SETTING_SERVER_NICKNAME,   "Unnamed");
-  setDefault(SETTING_SERVER_ADDRESS,    net_local_address().toString());
-  setDefault(SETTING_SERVER_AUTOUPDATE_ADDRESS, false);
   setDefault(SETTING_SERVER_EXITPOLICY,
     ExitPolicy(ExitPolicy::Default).toString());
 }
@@ -216,10 +213,6 @@ ServerSettings::confValues()
   conf.insert(SERVER_EXITPOLICY, 
     VidaliaSettings::value(SETTING_SERVER_EXITPOLICY).toString());
   
-  /* Server Address */
-  conf.insert(SERVER_ADDRESS,      
-    VidaliaSettings::value(SETTING_SERVER_ADDRESS).toString());
-  
   /* Server bandwidth settings */
   conf.insert(SERVER_BANDWIDTH_RATE,
     QString::number(VidaliaSettings::value(SETTING_SERVER_BWRATE).toUInt()) + " bytes");
@@ -256,7 +249,6 @@ ServerSettings::apply(QString *errmsg)
     resetKeys << SERVER_ORPORT 
               << SERVER_NICKNAME 
               << SERVER_DIRPORT
-              << SERVER_ADDRESS
               << SERVER_CONTACTINFO
               << SERVER_EXITPOLICY
               << SERVER_BANDWIDTH_RATE
@@ -325,20 +317,6 @@ quint16
 ServerSettings::getDirPort()
 {
   return (quint16)value(SETTING_SERVER_DIRPORT).toUInt();
-}
-
-/** Sets the server's externally-reachable address. */
-void
-ServerSettings::setAddress(QString address)
-{
-  setValue(SETTING_SERVER_ADDRESS, address);
-}
-
-/** Gets the server's externally-reachable IP address or hostname. */
-QString
-ServerSettings::getAddress()
-{
-  return value(SETTING_SERVER_ADDRESS).toString();
 }
 
 /** Sets the server's nickname. */
@@ -426,19 +404,5 @@ void
 ServerSettings::setBandwidthBurstRate(quint32 rate)
 {
   setValue(SETTING_SERVER_BWBURST, rate);
-}
-
-/** Returns whether we should update the server's IP address automatically. */
-bool
-ServerSettings::getAutoUpdateAddress()
-{
-  return VidaliaSettings::value(SETTING_SERVER_AUTOUPDATE_ADDRESS).toBool();
-}
-
-/** Sets whether we should update the server's IP address automatically. */
-void
-ServerSettings::setAutoUpdateAddress(bool enabled)
-{
-  setValue(SETTING_SERVER_AUTOUPDATE_ADDRESS, enabled);
 }
 

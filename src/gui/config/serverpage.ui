@@ -556,45 +556,7 @@
             </property>
            </spacer>
           </item>
-          <item row="4" column="0" >
-           <widget class="QLabel" name="label_4" >
-            <property name="contextMenuPolicy" >
-             <enum>Qt::NoContextMenu</enum>
-            </property>
-            <property name="text" >
-             <string>Address:</string>
-            </property>
-            <property name="alignment" >
-             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-            </property>
-            <property name="margin" >
-             <number>0</number>
-            </property>
-            <property name="indent" >
-             <number>21</number>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="4" >
-           <widget class="QPushButton" name="btnGetAddress" >
-            <property name="minimumSize" >
-             <size>
-              <width>0</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="contextMenuPolicy" >
-             <enum>Qt::NoContextMenu</enum>
-            </property>
-            <property name="toolTip" >
-             <string>Attempts to determine the correct address for your server</string>
-            </property>
-            <property name="text" >
-             <string>Get Address</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="7" colspan="2" >
+          <item row="4" column="7" colspan="2" >
            <spacer>
             <property name="orientation" >
              <enum>Qt::Horizontal</enum>
@@ -688,7 +650,7 @@
             </property>
            </widget>
           </item>
-          <item row="5" column="3" colspan="3" >
+          <item row="4" column="3" colspan="3" >
            <layout class="QHBoxLayout" >
             <property name="margin" >
              <number>0</number>
@@ -749,51 +711,6 @@
             </item>
            </layout>
           </item>
-          <item row="4" column="1" colspan="3" >
-           <widget class="QLineEdit" name="lineServerAddress" >
-            <property name="sizePolicy" >
-             <sizepolicy>
-              <hsizetype>0</hsizetype>
-              <vsizetype>0</vsizetype>
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize" >
-             <size>
-              <width>105</width>
-              <height>0</height>
-             </size>
-            </property>
-            <property name="maximumSize" >
-             <size>
-              <width>105</width>
-              <height>16777215</height>
-             </size>
-            </property>
-            <property name="cursor" >
-             <cursor>4</cursor>
-            </property>
-            <property name="contextMenuPolicy" >
-             <enum>Qt::NoContextMenu</enum>
-            </property>
-            <property name="toolTip" >
-             <string>Domain name or IP address of your server</string>
-            </property>
-            <property name="inputMask" >
-             <string/>
-            </property>
-            <property name="text" >
-             <string/>
-            </property>
-            <property name="maxLength" >
-             <number>255</number>
-            </property>
-            <property name="alignment" >
-             <set>Qt::AlignLeading</set>
-            </property>
-           </widget>
-          </item>
           <item row="2" column="1" colspan="7" >
            <widget class="QLineEdit" name="lineServerContact" >
             <property name="cursor" >
@@ -828,7 +745,7 @@ fingerprint.</string>
             </property>
            </widget>
           </item>
-          <item row="5" column="0" colspan="3" >
+          <item row="4" column="0" colspan="3" >
            <widget class="QCheckBox" name="chkMirrorDirectory" >
             <property name="contextMenuPolicy" >
              <enum>Qt::NoContextMenu</enum>
@@ -838,19 +755,6 @@ fingerprint.</string>
             </property>
             <property name="text" >
              <string>Mirror the Server Directory </string>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="6" colspan="2" >
-           <widget class="QCheckBox" name="chkAutoUpdate" >
-            <property name="contextMenuPolicy" >
-             <enum>Qt::NoContextMenu</enum>
-            </property>
-            <property name="toolTip" >
-             <string>When enabled, Vidalia will periodically update your IP address if necessary</string>
-            </property>
-            <property name="text" >
-             <string>Automatically Update</string>
             </property>
            </widget>
           </item>
@@ -1509,8 +1413,6 @@ fingerprint.</string>
   <tabstop>chkIRC</tabstop>
   <tabstop>chkMisc</tabstop>
   <tabstop>btnExitHelp</tabstop>
-  <tabstop>btnGetAddress</tabstop>
-  <tabstop>chkAutoUpdate</tabstop>
  </tabstops>
  <resources/>
  <connections>

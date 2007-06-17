@@ -89,14 +89,7 @@ ServerPage::ServerPage(QWidget *parent)
   /* Create ServerSettings object */
   _settings = new ServerSettings(_torControl);
 
-  /* Create a timer that we can use to remind ourselves to check if our IP
-   * changed since last time we looked. */
-  _autoUpdateTimer = new QTimer(this);
-  connect(_autoUpdateTimer, SIGNAL(timeout()), 
-          this, SLOT(updateServerIP()));
- 
   /* Bind events to actions */
-  connect(ui.btnGetAddress, SIGNAL(clicked()), this, SLOT(getServerAddress()));
   connect(ui.btnRateHelp, SIGNAL(clicked()), this, SLOT(bandwidthHelp()));
   connect(ui.btnExitHelp, SIGNAL(clicked()), this, SLOT(exitPolicyHelp()));
   connect(ui.cmboRate, SIGNAL(currentIndexChanged(int)),
@@ -108,7 +101,6 @@ ServerPage::ServerPage(QWidget *parent)
 
   /* Set validators for address, mask and various port number fields */
   ui.lineServerNickname->setValidator(new NicknameValidator(this));
-  ui.lineServerAddress->setValidator(new DomainValidator(this));
   ui.lineServerPort->setValidator(new QIntValidator(1, 65535, this));
   ui.lineDirPort->setValidator(new QIntValidator(1, 65535, this));
   ui.lineAvgRateLimit->setValidator(
@@ -121,17 +113,6 @@ ServerPage::ServerPage(QWidget *parent)
 ServerPage::~ServerPage()
 {
   delete _settings;
-}
-
-/** Enables or disables the automatic IP address update timer. */
-void
-ServerPage::setAutoUpdateTimer(bool enabled)
-{
-  if (enabled && _settings->isServerEnabled()) {
-    _autoUpdateTimer->start(AUTO_UPDATE_ADDR_INTERVAL);
-  } else {
-    _autoUpdateTimer->stop();
-  }
 }
 
 /** Saves changes made to settings on the Server settings page. */
@@ -158,15 +139,12 @@ ServerPage::save(QString &errmsg)
   }
   _settings->setServerEnabled(ui.chkEnableServer->isChecked());
   _settings->setDirectoryMirror(ui.chkMirrorDirectory->isChecked());
-  _settings->setAutoUpdateAddress(ui.chkAutoUpdate->isChecked()); 
   _settings->setNickname(ui.lineServerNickname->text());
   _settings->setORPort(ui.lineServerPort->text().toUInt());
   _settings->setDirPort(ui.lineDirPort->text().toUInt());
-  _settings->setAddress(ui.lineServerAddress->text());
   _settings->setContactInfo(ui.lineServerContact->text());
   saveBandwidthLimits();
   saveExitPolicies();
-  setAutoUpdateTimer(ui.chkAutoUpdate->isChecked());
 
   /* If we're connected to Tor and we've changed the server settings, attempt
    * to apply the new settings now. */
@@ -185,13 +163,10 @@ ServerPage::load()
 {
   ui.chkEnableServer->setChecked(_settings->isServerEnabled());
   ui.chkMirrorDirectory->setChecked(_settings->isDirectoryMirror());
-  ui.chkAutoUpdate->setChecked(_settings->getAutoUpdateAddress());
-  setAutoUpdateTimer(_settings->getAutoUpdateAddress());
 
   ui.lineServerNickname->setText(_settings->getNickname());
   ui.lineServerPort->setText(QString::number(_settings->getORPort()));
   ui.lineDirPort->setText(QString::number(_settings->getDirPort()));
-  ui.lineServerAddress->setText(_settings->getAddress());
   ui.lineServerContact->setText(_settings->getContactInfo());
   loadBandwidthLimits();
   loadExitPolicies();
@@ -211,82 +186,6 @@ void
 ServerPage::bandwidthHelp()
 {
   Vidalia::help(BANDWIDTH_HELP);
-}
-
-/** Accesses an external site to try to get the user's public IP address. */
-void
-ServerPage::getServerPublicIP()
-{
-  QString ip;
-  bool success;
-
-  /* This could take a bit, so show the wait cursor. */
-  QApplication::setOverrideCursor(Qt::WaitCursor);
-  success = net_get_public_ip(ip);
-  QApplication::restoreOverrideCursor();
-  
-  /* Handle the result */
-  if (success) {
-    ui.lineServerAddress->setText(ip);
-  } else {
-    VMessageBox::warning(this, tr("Error"),
-      p(tr("Vidalia was unable to determine your public IP address.")),
-      VMessageBox::Ok);
-  }
-}
-
-/** Attempts to determine this machine's IP address. If the local IP address
- * is a private address, then the user is asked whether they would like to
- * access an external site to try to get their public IP. */
-void
-ServerPage::getServerAddress()
-{
-  QHostAddress addr = net_local_address();
-  if (net_is_private_address(addr)) {
-    int button = VMessageBox::information(this, tr("Get Address"),
-                   tr("Vidalia was only able to find a private IP " 
-                      "address for your server.\n\nWould you like to "
-                      "access an external service to determine your public " 
-                      "IP address?"),
-                    VMessageBox::Yes, VMessageBox::No);
-    if (button == VMessageBox::Yes) {
-      getServerPublicIP();
-      return;
-    }
-  } else {
-    ui.lineServerAddress->setText(addr.toString());
-  }
-}
-
-/** Checks to see if this server's public IP had changed. If it has, then
- * update the UI, and Tor (if it's running). */
-void
-ServerPage::updateServerIP()
-{
-  bool changed = false;
-  QString ip;
-  QHostAddress addr = net_local_address();
-  
-  if (net_is_private_address(addr)) {
-    /* Try to get our public IP and see if it changed recently. */
-    if (net_get_public_ip(ip) && ip != _settings->getAddress()) {
-      changed = true;
-    }
-  } else if (addr.toString() != _settings->getAddress()) {
-    ip = addr.toString();
-    changed = true;
-  }
-  
-  if (changed) {
-    /* It changed so update our settings and the UI. */
-    _settings->setAddress(ip);
-    ui.lineServerAddress->setText(ip);
-
-    /* If Tor is running, let it know about the change */
-    if (_torControl->isConnected()) {
-      _settings->apply();
-    }
-  }
 }
 
 /** Loads the server's bandwidth average and burst limits. */
