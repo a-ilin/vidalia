@@ -46,6 +46,8 @@
 #define SERVER_EXITPOLICY       "ExitPolicy"
 #define SERVER_BANDWIDTH_RATE   "BandwidthRate"
 #define SERVER_BANDWIDTH_BURST  "BandwidthBurst"
+#define SERVER_RELAY_BANDWIDTH_RATE   "RelayBandwidthRate"
+#define SERVER_RELAY_BANDWIDTH_BURST  "RelayBandwidthBurst"
 
 /* Server configuration settings */
 #define SETTING_SERVER_ENABLED    "Server/Enabled"
@@ -166,11 +168,19 @@ ServerSettings::value(QString key)
   QVariant value;
   QString confKey, confValue;
   confKey = key.mid(key.indexOf("/")+1);
-  if (_torControl->isConnected() &&
-      _torControl->getConf(confKey, confValue)) {
-    /* Get the value from Tor */
-    value.setValue(confValue);
-    value.convert(defaultValue(key).type());
+  if (_torControl->isConnected()) {
+    quint32 torVersion = _torControl->getTorVersion();
+    if (torVersion >= 0x020001) {
+      if (confKey == SERVER_BANDWIDTH_RATE)
+        confKey = SERVER_RELAY_BANDWIDTH_RATE;
+      else if (confKey == SERVER_BANDWIDTH_BURST)
+        confKey = SERVER_RELAY_BANDWIDTH_BURST;
+    }
+    if (_torControl->getConf(confKey, confValue)) {
+      /* Get the value from Tor */
+      value.setValue(confValue);
+      value.convert(defaultValue(key).type());
+    }
   } else {
     /* Read our saved value from vidalia.conf */
     value = VidaliaSettings::value(key);
@@ -197,6 +207,8 @@ QHash<QString, QString>
 ServerSettings::confValues()
 {
   QHash<QString, QString> conf;
+  quint32 torVersion = _torControl->getTorVersion();
+
   /* Server Nickname */
   conf.insert(SERVER_NICKNAME,
     (isServerEnabled() ? VidaliaSettings::value(SETTING_SERVER_NICKNAME).toString()
@@ -214,9 +226,11 @@ ServerSettings::confValues()
     VidaliaSettings::value(SETTING_SERVER_EXITPOLICY).toString());
   
   /* Server bandwidth settings */
-  conf.insert(SERVER_BANDWIDTH_RATE,
+  conf.insert((torVersion >= 0x020001 ? SERVER_RELAY_BANDWIDTH_RATE 
+                                      : SERVER_BANDWIDTH_RATE),
     QString::number(VidaliaSettings::value(SETTING_SERVER_BWRATE).toUInt()) + " bytes");
-  conf.insert(SERVER_BANDWIDTH_BURST,
+  conf.insert((torVersion >= 0x020001 ? SERVER_RELAY_BANDWIDTH_BURST
+                                      : SERVER_BANDWIDTH_BURST),
     QString::number(VidaliaSettings::value(SETTING_SERVER_BWBURST).toUInt()) + " bytes");
     
   /* Server Contact Information */
@@ -242,17 +256,24 @@ bool
 ServerSettings::apply(QString *errmsg)
 {
   bool rc;
+
   if (isServerEnabled()) {
     rc = _torControl->setConf(confValues(), errmsg);
   } else { 
     QStringList resetKeys;
+    quint32 torVersion = _torControl->getTorVersion();
     resetKeys << SERVER_ORPORT 
               << SERVER_NICKNAME 
               << SERVER_DIRPORT
               << SERVER_CONTACTINFO
-              << SERVER_EXITPOLICY
-              << SERVER_BANDWIDTH_RATE
-              << SERVER_BANDWIDTH_BURST;
+              << SERVER_EXITPOLICY;
+    if (torVersion >= 0x020001) {
+      resetKeys << SERVER_RELAY_BANDWIDTH_RATE
+                << SERVER_RELAY_BANDWIDTH_BURST;
+    } else {
+      resetKeys << SERVER_BANDWIDTH_RATE
+                << SERVER_BANDWIDTH_BURST;
+    }
     rc = _torControl->resetConf(resetKeys, errmsg);
   }
   if (rc) {
