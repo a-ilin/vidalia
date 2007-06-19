@@ -1399,7 +1399,6 @@ fingerprint.</string>
   <tabstop>lineServerNickname</tabstop>
   <tabstop>lineServerContact</tabstop>
   <tabstop>lineServerPort</tabstop>
-  <tabstop>lineServerAddress</tabstop>
   <tabstop>chkMirrorDirectory</tabstop>
   <tabstop>lineDirPort</tabstop>
   <tabstop>cmboRate</tabstop>
