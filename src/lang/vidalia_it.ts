@@ -309,7 +309,7 @@ Potrebbe essere necessario rimuoverlo manualmente.</translation>
     <message>
         <location filename="../control/circuit.cpp" line="110"/>
         <source>Open</source>
-        <translation>Apri</translation>
+        <translation>Aperto</translation>
     </message>
     <message>
         <location filename="../control/circuit.cpp" line="111"/>
