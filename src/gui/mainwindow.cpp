@@ -310,12 +310,12 @@ MainWindow::createTrayMenu()
   menu->addAction(_messageAct);
   menu->addAction(_networkAct);
   menu->addAction(_newIdentityAct);
+  menu->addSeparator();
+  menu->addAction(_controlPanelAct);
   
 #if !defined(Q_WS_MAC)
   /* These aren't added to the dock menu on Mac, since they are in the
    * standard Mac locations in the menu bar. */
-  menu->addSeparator();
-  menu->addAction(_controlPanelAct);
   menu->addAction(_configAct);
   menu->addAction(_helpAct);
   menu->addAction(_aboutAct);
