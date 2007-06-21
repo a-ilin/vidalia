@@ -60,6 +60,10 @@ Miscellaneous Tasks:
   * When creating the Tor service on Windows, we either should be creating a
     separate user to run the service as (instead of running it as Local
     System), or we should write a patch for Tor to do it (Ticket #174).
+  * We should parse the Tor log messages we pipe from stdout and look for
+    errors or warnings, so we can give better error messages (e.g., "Hey, you
+    probably already have a Tor running without a control port open."). Suggested
+    by Karsten Loesing.
   * Improve window transparency support. In particular, figure out how to do the
     following correctly on X11 (from the Qt docs):
       "This feature is available on Mac OS X, X11 platforms that support the Composite
