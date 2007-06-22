@@ -1695,7 +1695,7 @@ les développeurs de Tor.</translation>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="231"/>
         <source>%1 servers online (%2 total)</source>
-        <translation>% serveurs connectés (%2 au total)</translation>
+        <translation>%1 serveurs connectés (%2 au total)</translation>
     </message>
 </context>
 <context>
