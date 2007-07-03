@@ -928,3 +928,34 @@ TorControl::closeStream(quint64 streamid, QString *errmsg)
   return send(cmd, errmsg);
 }
 
+ /** Gets a list of address mappings of the type specified by <b>type</b>
+  * (defaults to <i>AddressMapAll</i>. */
+AddressMap
+TorControl::getAddressMap(AddressMap::AddressMapType type, QString *errmsg)
+{
+  ControlCommand cmd("GETINFO");
+  ControlReply reply;
+  AddressMap addressMap;
+
+  switch (type) {
+    case AddressMap::AddressMapConfig:
+      cmd.addArgument("addr-mappings/config");
+      break;
+    case AddressMap::AddressMapCache:
+      cmd.addArgument("addr-mappings/cache");
+      break;
+    case AddressMap::AddressMapControl:
+      cmd.addArgument("addr-mappings/control");
+      break;
+    default:
+      cmd.addArgument("addr-mappings/all");
+  }
+
+  if (send(cmd, reply, errmsg)) {
+    foreach (QString mapping, reply.getData()) {
+      addressMap.add(mapping);
+    }
+  }
+  return addressMap;
+}
+

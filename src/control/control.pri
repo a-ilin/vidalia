@@ -30,6 +30,7 @@ HEADERS += $$PWD/torcontrol.h \
            $$PWD/replyline.h \
            $$PWD/torevents.h \
            $$PWD/eventtype.h \
+           $$PWD/addressmapevent.h \
            $$PWD/bandwidthevent.h \
            $$PWD/circuitevent.h \
            $$PWD/streamevent.h \
@@ -39,7 +40,8 @@ HEADERS += $$PWD/torcontrol.h \
            $$PWD/newdescriptorevent.h \
            $$PWD/routerdescriptor.h \
            $$PWD/circuit.h \
-           $$PWD/stream.h
+           $$PWD/stream.h \
+           $$PWD/addressmap.h
 
 SOURCES += $$PWD/torcontrol.cpp \
            $$PWD/torprocess.cpp \
@@ -54,7 +56,8 @@ SOURCES += $$PWD/torcontrol.cpp \
            $$PWD/torsignal.cpp \
            $$PWD/routerdescriptor.cpp \
            $$PWD/circuit.cpp \
-           $$PWD/stream.cpp
+           $$PWD/stream.cpp \
+           $$PWD/addressmap.cpp
 
 win32 {
   HEADERS += $$PWD/torservice.h

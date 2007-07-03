@@ -38,6 +38,7 @@
 #include "torevents.h"
 #include "torsignal.h"
 #include "routerdescriptor.h"
+#include "addressmap.h"
 
 #if defined(Q_OS_WIN32)
 #include "torservice.h"
@@ -147,6 +148,12 @@ public:
   /** Gets a list of current streams. */
   QList<Stream> getStreams(QString *errmsg = 0);
   
+  /** Gets a list of address mappings of the type specified by <b>type</b>
+   * (defaults to <i>AddressMapAll</i>. */
+  AddressMap getAddressMap(
+    AddressMap::AddressMapType type = AddressMap::AddressMapAll,
+    QString *errmsg = 0);
+
 public slots:
   /** Closes the circuit specified by <b>circid</b>. If <b>ifUnused</b> is
    * true, then the circuit will not be closed unless it is unused. */
