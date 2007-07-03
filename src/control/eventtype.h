@@ -47,6 +47,8 @@ namespace CustomEventType {
   const int NewDescriptorEvent = QEvent::User+5;
   /** Control command send event. */
   const int SendCommandEvent   = QEvent::User+6;
+  /** New address mapping event. */
+  const int AddressMapEvent = QEvent::User+7;
 }
 
 #endif

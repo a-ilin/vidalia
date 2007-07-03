@@ -39,7 +39,7 @@
 #include "streamevent.h"
 #include "orconnevent.h"
 #include "newdescriptorevent.h"
-
+#include "addressmapevent.h"
 #include "controlreply.h"
 
 
@@ -56,7 +56,8 @@ public:
     CircuitStatus,
     StreamStatus,
     OrConnStatus,
-    NewDescriptor
+    NewDescriptor,
+    AddressMap
   };
  
   /** Default Constructor */
@@ -106,6 +107,8 @@ private:
   void handleOrConnStatus(ReplyLine line);
   /** Handles a new list of descriptors event. */
   void handleNewDescriptor(ReplyLine line);
+  /** Handles a new or updated address map event. */
+  void handleAddressMap(ReplyLine line);
 };
 
 #endif

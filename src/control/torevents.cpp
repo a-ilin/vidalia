@@ -27,9 +27,14 @@
 
 #include <QApplication>
 
+#include <vidalia.h>
+
 #include "circuit.h"
 #include "stream.h"
 #include "torevents.h"
+
+/** Format of expiry times in address map events. */
+#define DATE_FMT "\"yyyy-MM-dd HH:mm:ss\""
 
 
 /** Default constructor */
@@ -102,6 +107,7 @@ TorEvents::toString(TorEvent e)
     case StreamStatus:    event = "STREAM"; break;
     case OrConnStatus:    event = "ORCONN"; break;
     case NewDescriptor:   event = "NEWDESC"; break;
+    case AddressMap:      event = "ADDRMAP"; break;
     default: event = "UNKNOWN"; break;
   }
   return event;
@@ -149,6 +155,8 @@ TorEvents::toTorEvent(QString event)
     e = OrConnStatus;
   } else if (event == "NEWDESC") {
     e = NewDescriptor;
+  } else if (event == "ADDRMAP") {
+    e = AddressMap;
   } else {
     e = Unknown;
   }
@@ -178,6 +186,7 @@ TorEvents::handleEvent(ControlReply reply)
       case StreamStatus:   handleStreamStatus(line); break;
       case OrConnStatus:   handleOrConnStatus(line); break;
       case NewDescriptor:  handleNewDescriptor(line); break;
+      case AddressMap:     handleAddressMap(line); break;
 
       case LogDebug: 
       case LogInfo:
@@ -315,6 +324,26 @@ TorEvents::handleNewDescriptor(ReplyLine line)
   QStringList descList = descs.mid(descs.indexOf(" ")+1).split(" ");
   if (descList.size() > 0) {
     dispatch(NewDescriptor, new NewDescriptorEvent(descList));
+  }
+}
+
+/** Handles a new or updated address mapping event. The format for event
+ * messages of this type is:
+ *
+ *   "650" SP "ADDRMAP" SP Address SP Address SP Expiry
+ *   Expiry = DQUOTE ISOTime DQUOTE / "NEVER"
+ *
+ *   Expiry is expressed as the local time (rather than GMT).
+ */
+void
+TorEvents::handleAddressMap(ReplyLine line)
+{
+  QStringList msg = line.getMessage().split(" ");
+  if (msg.size() >= 4) {
+    QDateTime expires;
+    if (msg.size() >= 5 && msg.at(3) != "NEVER")
+      expires = QDateTime::fromString(msg.at(3) + " " + msg.at(4), DATE_FMT);
+    dispatch(AddressMap, new AddressMapEvent(msg.at(1), msg.at(2), expires));
   }
 }
 
