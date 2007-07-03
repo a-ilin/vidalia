@@ -64,7 +64,8 @@ NetViewer::NetViewer(QWidget *parent)
   _torControl->setEvent(TorEvents::NewDescriptor, this, true);
   _torControl->setEvent(TorEvents::CircuitStatus, this, true);
   _torControl->setEvent(TorEvents::StreamStatus,  this, true);
-  
+  _torControl->setEvent(TorEvents::AddressMap,    this, true);
+
   /* Change the column widths of the tree widgets */
   ui.treeRouterList->header()->
     resizeSection(RouterListWidget::StatusColumn, 25);
@@ -164,19 +165,22 @@ NetViewer::customEvent(QEvent *event)
     /* New router descriptor, so load it and add it to the list */
     NewDescriptorEvent *nde = (NewDescriptorEvent *)event;
     loadDescriptors(nde->descriptorIDs());
-  
   } else if (type == CustomEventType::CircuitEvent) {
     /* New or updated circuit information */
     CircuitEvent *ce = (CircuitEvent *)event;
     addCircuit(ce->circuit());
-  
   } else if (type == CustomEventType::StreamEvent) {
     /* New or updated stream information */
     StreamEvent *se = (StreamEvent *)event;
-    ui.treeCircuitList->addStream(se->stream());
+    addStream(se->stream());
+  } else if (type == CustomEventType::AddressMapEvent) {
+    /* New or updated address mapping. We store the reverse of the new
+     * mapping, so we can go from an IP address back to a hostname. */
+    AddressMapEvent *ae = (AddressMapEvent *)event;
+    _addressMap.add(ae->to(), ae->from(), ae->expires());
   }
 
-  /** Update the map */
+  /* Update the world map */
   _map->update();
 }
 
@@ -192,7 +196,8 @@ NetViewer::refresh()
 
   /* Load router information */
   loadDescriptors(_torControl->getRouterIDList());
-
+  /* Load existing address mappings */
+  loadAddressMap();
   /* Load Circuits and Streams information */
   loadConnections();
 
@@ -210,10 +215,21 @@ NetViewer::clear()
   /* Clear the network map */
   _map->clear();
   _map->update();
+  /* Clear the address map */
+  _addressMap.clear();
   /* Clear the lists of routers, circuits, and streams */
   ui.treeRouterList->clearRouters();
   ui.treeCircuitList->clearCircuits();
   ui.textRouterInfo->clear();
+}
+
+/** Loads a list of all current address mappings. */
+void
+NetViewer::loadAddressMap()
+{
+  /* We store the reverse address mappings, so we can go from a numeric value
+   * back to a likely more meaningful hostname to display for the user. */
+  _addressMap = _torControl->getAddressMap().reverse();
 }
 
 /** Loads a list of all current circuits and streams. */
@@ -228,14 +244,14 @@ NetViewer::loadConnections()
   /* Now load all streams */
   QList<Stream> streams = _torControl->getStreams();
   foreach (Stream stream, streams) {
-    ui.treeCircuitList->addStream(stream);
+    addStream(stream);
   }
 
   /* Update the map */
   _map->update();
 }
 
-/** Adds a circuit to the map and the list */
+/** Adds <b>circuit</b> to the map and the list */
 void
 NetViewer::addCircuit(Circuit circuit)
 {
@@ -246,6 +262,24 @@ NetViewer::addCircuit(Circuit circuit)
 
   ui.treeCircuitList->addCircuit(circuit, circNames.path());
   _map->addCircuit(circuit.id(), circIds.hops());
+}
+
+/** Adds <b>stream</b> to its associated circuit on the list of all circuits. */
+void
+NetViewer::addStream(Stream stream)
+{
+  QString target = stream.targetAddress();
+  QHostAddress addr(target);
+  
+  /* If the stream's target has an IP address instead of a host name,
+   * check our cache for an existing reverse address mapping. */
+  if (!addr.isNull() && _addressMap.isMapped(target)) {
+    /* Replace the IP address in the stream event with the original 
+     * hostname */
+    stream = Stream(stream.id(), stream.status(), stream.circuitId(),
+                    _addressMap.mappedTo(target), stream.targetPort());
+  }
+  ui.treeCircuitList->addStream(stream);
 }
 
 /** Called when the user selects the "Help" action from the toolbar. */

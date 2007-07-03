@@ -54,8 +54,11 @@ public slots:
   void showWindow();
   /** Loads a list of current circuits and streams. */
   void loadConnections();
-  /** Adds a circuit to the list and the map */
+  /** Adds <b>circuit</b> to the list and the map */
   void addCircuit(Circuit circuit);
+  /** Adds <b>stream</b> to the list of circuits, under the appropriate
+   * circuit. */
+  void addStream(Stream stream);
   /** Clears all known information */
   void clear();
 
@@ -86,6 +89,8 @@ private:
   void addToResolveQueue(QHostAddress ip, QString id);
   /** Loads a list of router descriptors from the list of IDs. */
   void loadDescriptors(QStringList ids);
+  /** Loads a list of address mappings from Tor. */
+  void loadAddressMap();
   /** Adds a router to our list of servers and retrieves geographic location
    * information for the server. */
   void addRouter(RouterDescriptor rd);
@@ -108,6 +113,8 @@ private:
   QList<QHostAddress> _resolveQueue;
   /** Maps pending GeoIP requests to server IDs. */
   QHash<QString, QString> _resolveMap;
+  /** Stores a list of address mappings from Tor. */
+  AddressMap _addressMap;
   /** Timer used to delay GeoIP requests for MIN_RESOLVE_QUEUE_DELAY
    * milliseconds after we've inserted the last item into the queue. */
   QTimer _minResolveQueueTimer;
