@@ -36,7 +36,18 @@ Stream::Stream()
   _streamId  = 0;
   _status    = Unknown;
   _circuitId = 0;
-  _target    = QString();
+  _port      = 0;
+}
+
+/** Constructor */
+Stream::Stream(quint64 streamId, Status status, quint64 circuitId, 
+               QString address, quint16 port)
+{
+  _streamId  = streamId;
+  _status    = status;
+  _circuitId = circuitId;
+  _address   = address;
+  _port      = port;
 }
 
 /** Constructor */
@@ -45,7 +56,13 @@ Stream::Stream(quint64 streamId, Status status, quint64 circuitId, QString targe
   _streamId  = streamId;
   _status    = status;
   _circuitId = circuitId;
-  _target    = target;
+  _port      = 0;
+
+  int i = target.indexOf(":");
+  if (i >= 0)
+    _address = target.mid(0, i);
+  if (i + 1 < target.length()) 
+    _port = target.mid(i+1).toUInt();
 }
 
 /** Parses the given string for stream information, given in Tor control
@@ -125,6 +142,6 @@ bool
 Stream::isEmpty()
 {
   return (!_streamId && !_circuitId && 
-          (_status == Unknown) && _target.isEmpty());
+          (_status == Unknown) && _address.isEmpty() && !_port);
 }
 

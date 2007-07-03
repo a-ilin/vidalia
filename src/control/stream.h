@@ -54,6 +54,9 @@ public:
   Stream();
   /** Constructor */
   Stream(quint64 streamId, Status status, quint64 circuitId, QString target);
+  /** Constructor */
+  Stream(quint64 streamId, Status status, quint64 circuitId,
+         QString address, quint16 port);
 
   /** Parses the given string for a stream, in Tor control protocol format. */
   static Stream fromString(QString stream);
@@ -71,14 +74,19 @@ public:
   QString statusString();
   /** Returns the ID of the circuit to which this stream is assigned. */
   quint64 circuitId() { return _circuitId; }
-  /** Returns the target for this stream. */
-  QString target() { return _target; }
-  
+  /** Returns the target address and port for this stream. */
+  QString target() { return (_address + ":" + QString::number(_port)); }
+  /** Returns the target address for this stream. */
+  QString targetAddress() { return _address; }
+  /** Returns the target port for this stream. */
+  quint16 targetPort() { return _port; }
+
 private:
   quint64 _streamId;   /**< Unique ID associated with this stream. */
   Status  _status;     /**< Stream status value. */
   quint64 _circuitId;  /**< ID of the circuit carrying this stream. */
-  QString _target;     /**< Stream target address. */
+  QString _address;    /**< Stream target address. */
+  quint16 _port;       /**< Stream target port. */
 };
 
 #endif
