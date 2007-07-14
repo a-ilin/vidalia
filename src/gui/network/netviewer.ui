@@ -294,7 +294,7 @@
    <enum>Qt::NoContextMenu</enum>
   </property>
   <property name="windowTitle" >
-   <string>View Tor Network</string>
+   <string>Tor Network Map</string>
   </property>
   <property name="windowIcon" >
    <iconset resource="../res/vidalia_common.qrc" >:/images/16x16/applications-internet.png</iconset>
