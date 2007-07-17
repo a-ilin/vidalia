@@ -87,4 +87,21 @@ Notes from Roger:
     17:53 < edmanm> it does not. should it?
     17:57 < arma> at some point, it should.
     17:57 < arma> it could also have a http/https proxy box, at some point.
-
+   
+    On a similar note:
+    22:16 < arma> i am also starting to ponder a new 'settings' window to let
+                  people enable fascistfirewall, to let them opt to become a 
+                  bridge, and to let them opt to use a bridge.
+    22:18 < edmanm> what would we call this new settings page?
+    22:20 < arma> i dunno. "Firewall" is my best thought for now.
+    22:21 < arma> with a line at the top that has a checkmark for setting
+                  fascistfirewall and a textbox to write port numbers;
+    22:21 < arma> and the rest of the page is divided into two
+                  sections, each with a little checkbox at the top and empty 
+                  otherwise,
+    22:21 < arma> and the first checkbox is "I want to sign up to be a bridge"
+    22:22 < arma> and the second checkbox is "I can't get to the Tor network 
+                  directly"
+    22:22 < arma> and when you check them they expand to a bunch of other stuff. 
+                  like the server checkbox does now.
+                                             
