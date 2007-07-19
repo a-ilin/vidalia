@@ -436,6 +436,7 @@ MainWindow::updateTorStatus(TorStatus status)
       trayIconFile = IMG_TOR_STARTING;
       statusIconFile = IMG_TOR_STARTING_48;
       _startStopAct->setEnabled(false);
+      ui.lblStartStopTor->setText(tr("Starting Tor"));
       ui.lblStartStopTor->setEnabled(false);
       ui.lblStartStopTor->setStatusTip(statusText);
       ui.lblStartStopTor->setAnimation(QPixmap(ANIM_PROCESS_WORKING));
