@@ -238,7 +238,7 @@ void
 MainWindow::createActions()
 {
   _startStopAct = new QAction(QIcon(IMG_START_TOR_16), tr("Start Tor"), this);
-  connect(_startStopAct, SIGNAL(triggered()), this, SLOT(toggleTor()));
+  connect(_startStopAct, SIGNAL(triggered()), this, SLOT(start()));
 
   _exitAct = new QAction(QIcon(IMG_EXIT), tr("Exit"), this);
   connect(_exitAct, SIGNAL(triggered()), this, SLOT(close()));
@@ -396,6 +396,11 @@ MainWindow::updateTorStatus(TorStatus status)
       ui.lblStartStopTor->setText(actionText);
       ui.lblStartStopTor->setPixmap(QPixmap(IMG_START_TOR_48));
       ui.lblStartStopTor->setStatusTip(actionText);
+
+      disconnect(_startStopAct, SIGNAL(triggered()), this, SLOT(stop()));
+      disconnect(ui.lblStartStopTor, SIGNAL(clicked()), this, SLOT(stop()));
+      connect(_startStopAct, SIGNAL(triggered()), this, SLOT(start()));
+      connect(ui.lblStartStopTor, SIGNAL(clicked()), this, SLOT(start()));
   } else if (status == Stopping) {
       if (_delayedShutdownStarted) {
         statusText = tr("Your Tor server is shutting down.\r\n" 
@@ -421,6 +426,11 @@ MainWindow::updateTorStatus(TorStatus status)
       ui.lblStartStopTor->setStatusTip(actionText);
       _newIdentityAct->setEnabled(true);
       ui.lblNewIdentity->setEnabled(true);
+      
+      disconnect(_startStopAct, SIGNAL(triggered()), this, SLOT(start()));
+      disconnect(ui.lblStartStopTor, SIGNAL(clicked()), this, SLOT(start()));
+      connect(_startStopAct, SIGNAL(triggered()), this, SLOT(stop()));
+      connect(ui.lblStartStopTor, SIGNAL(clicked()), this, SLOT(stop()));
   } else { /* status == Starting */
       statusText = tr("Tor is starting up");
       trayIconFile = IMG_TOR_STARTING;
@@ -460,17 +470,6 @@ MainWindow::toggleShowOnStartup(bool checked)
 {
   VidaliaSettings settings;
   settings.setShowMainWindowAtStart(checked);
-}
-
-/** Starts Tor if it is not currently running, or stops Tor if it is already
- * running. */
-void
-MainWindow::toggleTor()
-{
-  if (_torControl->isRunning())
-    stop();
-  else
-    start();
 }
 
 /** Attempts to start Tor. If Tor fails to start, then startFailed() will be

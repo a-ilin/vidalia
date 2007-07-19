@@ -63,9 +63,6 @@ public:
   ~MainWindow();
 
 private slots:
-  /** Starts Tor if it is not currently running, or stops Tor if it is already
-   * running. */
-  void toggleTor();
   /** Called when the user selects "Start" from the menu. */
   void start();
   /** Called when the Tor process fails to start. */

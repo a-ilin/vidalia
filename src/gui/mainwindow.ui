@@ -810,7 +810,7 @@
    <sender>lblStartStopTor</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>toggleTor()</slot>
+   <slot>start()</slot>
   </connection>
   <connection>
    <sender>lblNewIdentity</sender>
