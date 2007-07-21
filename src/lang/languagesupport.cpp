@@ -60,6 +60,7 @@ LanguageSupport::languages()
       QString::fromUtf8("Portugu\303\252s"));
     languages.insert("ru",
       QString::fromUtf8("\320\240\321\203\321\201\321\201\320\272\320\270\320\271"));
+    languages.insert("sv",    "svenska");
     languages.insert("zh-cn", 
       QString::fromUtf8("\347\256\200\344\275\223\345\255\227"));
     languages.insert("zh-tw", 
