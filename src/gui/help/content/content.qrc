@@ -10,16 +10,6 @@
     <file>en/troubleshooting.html</file>
     <file>en/netview.html</file>
     <file>en/links.html</file>
-    <!-- Bulgarian -->
-    <file>bg/contents.xml</file>
-    <file>bg/index.html</file>
-    <file>bg/running.html</file>
-    <file>bg/log.html</file>
-    <file>bg/config.html</file>
-    <file>bg/server.html</file>
-    <file>bg/troubleshooting.html</file>
-    <file>bg/netview.html</file>
-    <file>bg/links.html</file>
     <!-- German -->
     <file>de/contents.xml</file>
     <file>de/index.html</file>
@@ -30,26 +20,6 @@
     <file>de/troubleshooting.html</file>
     <file>de/netview.html</file>
     <file>de/links.html</file>
-    <!-- Spanish -->
-    <file>es/contents.xml</file>
-    <file>es/index.html</file>
-    <file>es/running.html</file>
-    <file>es/log.html</file>
-    <file>es/config.html</file>
-    <file>es/server.html</file>
-    <file>es/troubleshooting.html</file>
-    <file>es/netview.html</file>
-    <file>es/links.html</file>
-    <!-- Farsi -->
-    <file>fa/contents.xml</file>
-    <file>fa/index.html</file>
-    <file>fa/running.html</file>
-    <file>fa/log.html</file>
-    <file>fa/config.html</file>
-    <file>fa/server.html</file>
-    <file>fa/troubleshooting.html</file>
-    <file>fa/netview.html</file>
-    <file>fa/links.html</file>
     <!-- Finnish -->
     <file>fi/contents.xml</file>
     <file>fi/index.html</file>
@@ -60,86 +30,6 @@
     <file>fi/troubleshooting.html</file>
     <file>fi/netview.html</file>
     <file>fi/links.html</file>
-    <!-- French -->
-    <file>fr/contents.xml</file>
-    <file>fr/index.html</file>
-    <file>fr/running.html</file>
-    <file>fr/log.html</file>
-    <file>fr/config.html</file>
-    <file>fr/server.html</file>
-    <file>fr/troubleshooting.html</file>
-    <file>fr/netview.html</file>
-    <file>fr/links.html</file>
-    <!-- Hungarian -->
-    <file>hu/contents.xml</file>
-    <file>hu/index.html</file>
-    <file>hu/running.html</file>
-    <file>hu/log.html</file>
-    <file>hu/config.html</file>
-    <file>hu/server.html</file>
-    <file>hu/troubleshooting.html</file>
-    <file>hu/netview.html</file>
-    <file>hu/links.html</file>
-    <!-- Italian -->
-    <file>it/contents.xml</file>
-    <file>it/index.html</file>
-    <file>it/running.html</file>
-    <file>it/log.html</file>
-    <file>it/config.html</file>
-    <file>it/server.html</file>
-    <file>it/troubleshooting.html</file>
-    <file>it/netview.html</file>
-    <file>it/links.html</file>
-    <!-- Norwegian Bokmal -->
-    <file>nb/contents.xml</file>
-    <file>nb/index.html</file>
-    <file>nb/running.html</file>
-    <file>nb/log.html</file>
-    <file>nb/config.html</file>
-    <file>nb/server.html</file>
-    <file>nb/troubleshooting.html</file>
-    <file>nb/netview.html</file>
-    <file>nb/links.html</file>
-    <!-- Dutch -->
-    <file>nl/contents.xml</file>
-    <file>nl/index.html</file>
-    <file>nl/running.html</file>
-    <file>nl/log.html</file>
-    <file>nl/config.html</file>
-    <file>nl/server.html</file>
-    <file>nl/troubleshooting.html</file>
-    <file>nl/netview.html</file>
-    <file>nl/links.html</file>
-    <!-- Polish -->
-    <file>pl/contents.xml</file>
-    <file>pl/index.html</file>
-    <file>pl/running.html</file>
-    <file>pl/log.html</file>
-    <file>pl/config.html</file>
-    <file>pl/server.html</file>
-    <file>pl/troubleshooting.html</file>
-    <file>pl/netview.html</file>
-    <file>pl/links.html</file>
-    <!-- Portuguese -->
-    <file>pt/contents.xml</file>
-    <file>pt/index.html</file>
-    <file>pt/running.html</file>
-    <file>pt/log.html</file>
-    <file>pt/config.html</file>
-    <file>pt/server.html</file>
-    <file>pt/troubleshooting.html</file>
-    <file>pt/netview.html</file>
-    <file>pt/links.html</file>
-    <!-- Russian -->
-    <file>ru/contents.xml</file>
-    <file>ru/index.html</file>
-    <file>ru/running.html</file>
-    <file>ru/log.html</file>
-    <file>ru/config.html</file>
-    <file>ru/server.html</file>
-    <file>ru/troubleshooting.html</file>
-    <file>ru/netview.html</file>
-    <file>ru/links.html</file>
     <!-- Simplified Chinese -->
     <file>zh-cn/contents.xml</file>
     <file>zh-cn/index.html</file>
@@ -150,16 +40,6 @@
     <file>zh-cn/troubleshooting.html</file>
     <file>zh-cn/netview.html</file>
     <file>zh-cn/links.html</file>
-    <!-- Traditional Chinese -->
-    <file>zh-tw/contents.xml</file>
-    <file>zh-tw/index.html</file>
-    <file>zh-tw/running.html</file>
-    <file>zh-tw/log.html</file>
-    <file>zh-tw/config.html</file>
-    <file>zh-tw/server.html</file>
-    <file>zh-tw/troubleshooting.html</file>
-    <file>zh-tw/netview.html</file>
-    <file>zh-tw/links.html</file>
   </qresource>
 </RCC>
 
