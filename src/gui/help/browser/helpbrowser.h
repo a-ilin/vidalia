@@ -65,6 +65,9 @@ private slots:
   void searchItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *prev);
    
 private:
+  /** Returns the language in which help topics should appear, or English
+   * ("en") if no translated help files exist for the current GUI language. */
+  QString language();
   /** Load the contents of the help topics tree from the specified XML file. */
   void loadContentsFromXml(QString xmlFile);
   /** Load the contents of the help topics tree from the given DOM document. */
