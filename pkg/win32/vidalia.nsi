@@ -93,6 +93,7 @@ XPStyle           on
 !insertmacro MUI_LANGUAGE "Russian"
 !insertmacro MUI_LANGUAGE "Spanish"
 !insertmacro MUI_LANGUAGE "SimpChinese"
+!insertmacro MUI_LANGUAGE "Swedish"
 !insertmacro MUI_LANGUAGE "TradChinese"
 !include "vidalia_de.nsh"
 !include "vidalia_en.nsh"
@@ -105,6 +106,7 @@ XPStyle           on
 !include "vidalia_pl.nsh"
 !include "vidalia_pt-br.nsh"
 !include "vidalia_ru.nsh"
+!include "vidalia_sv.nsh"
 !include "vidalia_zh-cn.nsh"
 !include "vidalia_zh-tw.nsh"
 
