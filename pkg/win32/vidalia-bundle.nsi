@@ -312,7 +312,7 @@ SectionGroup "${TOR_DESC}" TorGroup
           StrCpy $configfile "$APPDATA\Vidalia\torrc"
           goto torrc_shortcut
         use_tor_torrc:
-          StrCpy $configfile "$APPDATA\Vidalia\torrc"
+          StrCpy $configfile "$APPDATA\Tor\torrc"
         torrc_shortcut:
           SetShellVarContext all
           CreateShortCut  "${SHORTCUTS}\Tor\Torrc.lnk" "Notepad.exe" $configfile
