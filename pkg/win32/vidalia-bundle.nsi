@@ -140,6 +140,7 @@ XPStyle         on
 
 ;--------------------------------
 ; Vidalia
+Var configfile
 var bInstallVidalia
 SectionGroup "${VIDALIA_DESC}" VidaliaGroup
     ;--------------------------------
@@ -156,13 +157,24 @@ SectionGroup "${VIDALIA_DESC}" VidaliaGroup
       File "Vidalia\${VIDALIA_APPVERSION}\LICENSE"
       File "Vidalia\${VIDALIA_APPVERSION}\COPYING"
       File "Vidalia\${VIDALIA_APPVERSION}\AUTHORS"
-
       
       ; Include a prebuilt GeoIP cache
       SetShellVarContext current
       CreateDirectory "$APPDATA\Vidalia"
       SetOutPath "$APPDATA\Vidalia"
       File "Vidalia\${VIDALIA_APPVERSION}\geoip-cache"
+      
+      ;If there's already a torrc config file, ask if they want to
+      ;overwrite it with the new one.
+      StrCpy $configfile "torrc"
+      IfFileExists "$APPDATA\Vidalia\torrc" "" endiftorrc
+        MessageBox MB_ICONQUESTION|MB_YESNO "$(TorAskOverwriteTorrc)" IDNO noreplace
+        Delete "$APPDATA\Vidalia\torrc"
+        Goto endiftorrc
+      noreplace:
+        StrCpy $configfile "torrc.sample"
+      endiftorrc:
+        File /oname=$configfile "tor\${TOR_APPVERSION}\torrc.sample"
 
       ; Tor gets installed to $INSTDIR\Tor, so let's remember it
       ; But first, we have to replace all the '\'s with '\\'s in the $INSTDIR
@@ -189,6 +201,7 @@ SectionGroup "${VIDALIA_DESC}" VidaliaGroup
     Section "$(VidaliaShortcuts)" VidaliaShortcuts
       SectionIn 1
       SetShellVarContext all ; (Add to "All Users" Start Menu if possible)
+      CreateDirectory "${SHORTCUTS}"
       CreateShortCut "${SHORTCUTS}\Uninstall.lnk" "$INSTDIR\Uninstall.exe" "" "$INSTDIR\${UNINSTALLER}" 0
       CreateShortCut "${SHORTCUTS}\Vidalia.lnk" "$INSTDIR\Vidalia\${VIDALIA_EXEC}" "" "$INSTDIR\Vidalia\${VIDALIA_EXEC}" 0
       
@@ -207,8 +220,6 @@ SectionGroupEnd
 
 ;--------------------------------
 ; Tor
-Var configdir
-Var configfile
 var bInstallTor
 SectionGroup "${TOR_DESC}" TorGroup
     ;--------------------------------
@@ -217,6 +228,7 @@ SectionGroup "${TOR_DESC}" TorGroup
     ;Files that have to be installed for tor to run and that the user
     ;cannot choose not to install
        SectionIn 1 2
+       SetShellVarContext current
        SetOutPath "$INSTDIR\Tor"
        File "tor\${TOR_APPVERSION}\tor.exe"
        File "tor\${TOR_APPVERSION}\tor-resolve.exe"
@@ -229,14 +241,13 @@ SectionGroup "${TOR_DESC}" TorGroup
        IntCmp $0 ${SF_SELECTED} skiptorrc
 
        StrCpy $configfile "torrc"
-       StrCpy $configdir $APPDATA\Tor
-       SetOutPath $configdir
+       SetOutPath "$APPDATA\Tor"
 
-       ;If there's already a torrc config file, ask if they want to
-       ;overwrite it with the new one.
-       IfFileExists "$configdir\torrc" "" endiftorrc
+       ; If there's already a torrc config file, ask if they want to
+       ; overwrite it with the new one.
+       IfFileExists "$APPDATA\Tor\torrc" "" endiftorrc
          MessageBox MB_ICONQUESTION|MB_YESNO "$(TorAskOverwriteTorrc)" IDNO noreplace
-         Delete $configdir\torrc
+         Delete "$APPDATA\Tor\torrc"
          Goto endiftorrc
        noreplace:
          StrCpy $configfile "torrc.sample"
@@ -278,19 +289,33 @@ SectionGroup "${TOR_DESC}" TorGroup
         SetOutPath "$INSTDIR\Tor"
         IfFileExists "${SHORTCUTS}\Tor\*.*" "" +2
            RMDir /r "${SHORTCUTS}\Tor"
-        
+ 
         CreateDirectory "${SHORTCUTS}\Tor"
         CreateShortCut  "${SHORTCUTS}\Tor\Tor.lnk" "$INSTDIR\Tor\tor.exe"
-        CreateShortCut  "${SHORTCUTS}\Tor\Torrc.lnk" "Notepad.exe" "$configdir\torrc"
         CreateShortCut  "${SHORTCUTS}\Tor\Tor Website.lnk" "$INSTDIR\Tor\Tor Website.url"
         CreateShortCut "${SHORTCUTS}\Uninstall.lnk" "$INSTDIR\Uninstall.exe" "" "$INSTDIR\${UNINSTALLER}" 0
-        
+ 
         IfFileExists "$INSTDIR\Tor\Documents\*.*" "" endifdocs
           CreateDirectory "${SHORTCUTS}\Tor\Documents"
           CreateShortCut  "${SHORTCUTS}\Tor\Documents\Tor Manual.lnk" "$INSTDIR\Tor\Documents\tor-reference.html"
           CreateShortCut  "${SHORTCUTS}\Tor\Documents\Tor Documentation.lnk" "$INSTDIR\Tor\Documents"
           CreateShortCut  "${SHORTCUTS}\Tor\Documents\Tor Specification.lnk" "$INSTDIR\Tor\Documents\tor-spec.txt"
         endifdocs:
+        
+        ; If the user is installing Vidalia, then make the shortcut link to
+        ; %APPDATA%\Vidalia\torrc instead of %APPDATA%\Tor\torrc
+        SetShellVarContext current
+        SectionGetFlags ${Vidalia} $0
+        IntOp $0 $0 & ${SF_SELECTED}
+        IntCmp $0 ${SF_SELECTED} use_vidalia_torrc use_tor_torrc
+        use_vidalia_torrc:
+          StrCpy $configfile "$APPDATA\Vidalia\torrc"
+          goto torrc_shortcut
+        use_tor_torrc:
+          StrCpy $configfile "$APPDATA\Vidalia\torrc"
+        torrc_shortcut:
+          SetShellVarContext all
+          CreateShortCut  "${SHORTCUTS}\Tor\Torrc.lnk" "Notepad.exe" $configfile
     SectionEnd
 SectionGroupEnd
 
