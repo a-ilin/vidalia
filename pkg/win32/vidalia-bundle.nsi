@@ -138,91 +138,6 @@ XPStyle         on
   ;InstType /COMPONENTSONLYONCUSTOM
 !endif
 
-
-
-;--------------------------------
-; Tor
-Var configdir
-Var configfile
-var bInstallTor
-SectionGroup "!${TOR_DESC}" TorGroup
-    ;--------------------------------
-    ; Tor application binaries
-    Section "${TOR_NAME}" Tor
-    ;Files that have to be installed for tor to run and that the user
-    ;cannot choose not to install
-       SectionIn 1 2
-       SetOutPath "$INSTDIR\Tor"
-       File "tor\${TOR_APPVERSION}\tor.exe"
-       File "tor\${TOR_APPVERSION}\tor-resolve.exe"
-       WriteIniStr "$INSTDIR\Tor\Tor Website.url" "InternetShortcut" "URL" "http://tor.eff.org"
-
-       StrCpy $configfile "torrc"
-       StrCpy $configdir $APPDATA\Tor
-       SetOutPath $configdir
-
-       ;If there's already a torrc config file, ask if they want to
-       ;overwrite it with the new one.
-       IfFileExists "$configdir\torrc" "" endiftorrc
-         MessageBox MB_ICONQUESTION|MB_YESNO "$(TorAskOverwriteTorrc)" IDNO noreplace
-         Delete $configdir\torrc
-         Goto endiftorrc
-       noreplace:
-         StrCpy $configfile "torrc.sample"
-       endiftorrc:
-         File /oname=$configfile "tor\${TOR_APPVERSION}\torrc.sample"
-       
-        ; Write the uninstall keys for Windows
-        WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "DisplayName" "${TOR_DESC}"
-        WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "UninstallString" '"$INSTDIR\${UNINSTALLER}"'
-        WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "NoModify" 1
-        WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "NoRepair" 1
-       
-       IntOp $bInstallTor 0 + 1
-    SectionEnd
-
-    ;--------------------------------
-    ; OpenSSL binaries
-    Section "$(TorOpenSSL)" TorOpenSSL
-       SectionIn 1 2
-       SetOutPath "$INSTDIR\Tor"
-       File "tor\${TOR_APPVERSION}\libcrypto.a"
-       File "tor\${TOR_APPVERSION}\libssl.a"
-    SectionEnd
-
-    ;--------------------------------
-    ; Tor documentation
-    Section "$(TorDocumentation)" TorDocs
-       SectionIn 1
-       SetOutPath "$INSTDIR\Tor\Documents"
-       File "tor\${TOR_APPVERSION}\Documents\*.*"
-    SectionEnd
-
-    ;--------------------------------
-    ; Tor Start menu shortcuts
-    Section "$(TorShortcuts)" TorShortcuts
-      SectionIn 1
-        SetShellVarContext all ; (Add to "All Users" Start Menu if possible)
-        SetOutPath "$INSTDIR\Tor"
-        IfFileExists "${SHORTCUTS}\Tor\*.*" "" +2
-           RMDir /r "${SHORTCUTS}\Tor"
-        
-        CreateDirectory "${SHORTCUTS}\Tor"
-        CreateShortCut  "${SHORTCUTS}\Tor\Tor.lnk" "$INSTDIR\Tor\tor.exe"
-        CreateShortCut  "${SHORTCUTS}\Tor\Torrc.lnk" "Notepad.exe" "$configdir\torrc"
-        CreateShortCut  "${SHORTCUTS}\Tor\Tor Website.lnk" "$INSTDIR\Tor\Tor Website.url"
-        CreateShortCut "${SHORTCUTS}\Uninstall.lnk" "$INSTDIR\Uninstall.exe" "" "$INSTDIR\${UNINSTALLER}" 0
-        
-        IfFileExists "$INSTDIR\Tor\Documents\*.*" "" endifdocs
-          CreateDirectory "${SHORTCUTS}\Tor\Documents"
-          CreateShortCut  "${SHORTCUTS}\Tor\Documents\Tor Manual.lnk" "$INSTDIR\Tor\Documents\tor-reference.html"
-          CreateShortCut  "${SHORTCUTS}\Tor\Documents\Tor Documentation.lnk" "$INSTDIR\Tor\Documents"
-          CreateShortCut  "${SHORTCUTS}\Tor\Documents\Tor Specification.lnk" "$INSTDIR\Tor\Documents\tor-spec.txt"
-        endifdocs:
-    SectionEnd
-SectionGroupEnd
-
-
 ;--------------------------------
 ; Vidalia
 var bInstallVidalia
@@ -287,6 +202,96 @@ SectionGroup "${VIDALIA_DESC}" VidaliaGroup
       SectionIn 1
       WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "${VIDALIA_NAME}" '"$INSTDIR\Vidalia\${VIDALIA_EXEC}"'
     SectionEnd    
+SectionGroupEnd
+
+
+;--------------------------------
+; Tor
+Var configdir
+Var configfile
+var bInstallTor
+SectionGroup "${TOR_DESC}" TorGroup
+    ;--------------------------------
+    ; Tor application binaries
+    Section "${TOR_NAME}" Tor
+    ;Files that have to be installed for tor to run and that the user
+    ;cannot choose not to install
+       SectionIn 1 2
+       SetOutPath "$INSTDIR\Tor"
+       File "tor\${TOR_APPVERSION}\tor.exe"
+       File "tor\${TOR_APPVERSION}\tor-resolve.exe"
+       WriteIniStr "$INSTDIR\Tor\Tor Website.url" "InternetShortcut" "URL" "http://tor.eff.org"
+
+       ; If the user is also installing Vidalia, then don't confuse them by
+       ; an extra torrc in %APPDATA%\Tor
+       SectionGetFlags ${Vidalia} $0
+       IntOp $0 $0 & ${SF_SELECTED}
+       IntCmp $0 ${SF_SELECTED} skiptorrc
+
+       StrCpy $configfile "torrc"
+       StrCpy $configdir $APPDATA\Tor
+       SetOutPath $configdir
+
+       ;If there's already a torrc config file, ask if they want to
+       ;overwrite it with the new one.
+       IfFileExists "$configdir\torrc" "" endiftorrc
+         MessageBox MB_ICONQUESTION|MB_YESNO "$(TorAskOverwriteTorrc)" IDNO noreplace
+         Delete $configdir\torrc
+         Goto endiftorrc
+       noreplace:
+         StrCpy $configfile "torrc.sample"
+       endiftorrc:
+         File /oname=$configfile "tor\${TOR_APPVERSION}\torrc.sample"
+       
+       skiptorrc:
+        ; Write the uninstall keys for Windows
+        WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "DisplayName" "${TOR_DESC}"
+        WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "UninstallString" '"$INSTDIR\${UNINSTALLER}"'
+        WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "NoModify" 1
+        WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "NoRepair" 1
+       
+       IntOp $bInstallTor 0 + 1
+    SectionEnd
+
+    ;--------------------------------
+    ; OpenSSL binaries
+    Section "$(TorOpenSSL)" TorOpenSSL
+       SectionIn 1 2
+       SetOutPath "$INSTDIR\Tor"
+       File "tor\${TOR_APPVERSION}\libcrypto.a"
+       File "tor\${TOR_APPVERSION}\libssl.a"
+    SectionEnd
+
+    ;--------------------------------
+    ; Tor documentation
+    Section "$(TorDocumentation)" TorDocs
+       SectionIn 1
+       SetOutPath "$INSTDIR\Tor\Documents"
+       File "tor\${TOR_APPVERSION}\Documents\*.*"
+    SectionEnd
+
+    ;--------------------------------
+    ; Tor Start menu shortcuts
+    Section "$(TorShortcuts)" TorShortcuts
+      SectionIn 1
+        SetShellVarContext all ; (Add to "All Users" Start Menu if possible)
+        SetOutPath "$INSTDIR\Tor"
+        IfFileExists "${SHORTCUTS}\Tor\*.*" "" +2
+           RMDir /r "${SHORTCUTS}\Tor"
+        
+        CreateDirectory "${SHORTCUTS}\Tor"
+        CreateShortCut  "${SHORTCUTS}\Tor\Tor.lnk" "$INSTDIR\Tor\tor.exe"
+        CreateShortCut  "${SHORTCUTS}\Tor\Torrc.lnk" "Notepad.exe" "$configdir\torrc"
+        CreateShortCut  "${SHORTCUTS}\Tor\Tor Website.lnk" "$INSTDIR\Tor\Tor Website.url"
+        CreateShortCut "${SHORTCUTS}\Uninstall.lnk" "$INSTDIR\Uninstall.exe" "" "$INSTDIR\${UNINSTALLER}" 0
+        
+        IfFileExists "$INSTDIR\Tor\Documents\*.*" "" endifdocs
+          CreateDirectory "${SHORTCUTS}\Tor\Documents"
+          CreateShortCut  "${SHORTCUTS}\Tor\Documents\Tor Manual.lnk" "$INSTDIR\Tor\Documents\tor-reference.html"
+          CreateShortCut  "${SHORTCUTS}\Tor\Documents\Tor Documentation.lnk" "$INSTDIR\Tor\Documents"
+          CreateShortCut  "${SHORTCUTS}\Tor\Documents\Tor Specification.lnk" "$INSTDIR\Tor\Documents\tor-spec.txt"
+        endifdocs:
+    SectionEnd
 SectionGroupEnd
 
 
