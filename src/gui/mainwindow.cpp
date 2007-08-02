@@ -397,8 +397,10 @@ MainWindow::updateTorStatus(TorStatus status)
       ui.lblStartStopTor->setPixmap(QPixmap(IMG_START_TOR_48));
       ui.lblStartStopTor->setStatusTip(actionText);
 
-      disconnect(_startStopAct, SIGNAL(triggered()), this, SLOT(stop()));
-      disconnect(ui.lblStartStopTor, SIGNAL(clicked()), this, SLOT(stop()));
+      /* XXX: This might need to be smarter if we ever start connecting other
+       * slots to these triggered() and clicked() signals. */
+      disconnect(_startStopAct, SIGNAL(triggered()), this, 0);
+      disconnect(ui.lblStartStopTor, SIGNAL(clicked()), this, 0);
       connect(_startStopAct, SIGNAL(triggered()), this, SLOT(start()));
       connect(ui.lblStartStopTor, SIGNAL(clicked()), this, SLOT(start()));
   } else if (status == Stopping) {
@@ -427,8 +429,10 @@ MainWindow::updateTorStatus(TorStatus status)
       _newIdentityAct->setEnabled(true);
       ui.lblNewIdentity->setEnabled(true);
       
-      disconnect(_startStopAct, SIGNAL(triggered()), this, SLOT(start()));
-      disconnect(ui.lblStartStopTor, SIGNAL(clicked()), this, SLOT(start()));
+      /* XXX: This might need to be smarter if we ever start connecting other
+       * slots to these triggered() and clicked() signals. */
+      disconnect(_startStopAct, SIGNAL(triggered()), this, 0);
+      disconnect(ui.lblStartStopTor, SIGNAL(clicked()), this, 0);
       connect(_startStopAct, SIGNAL(triggered()), this, SLOT(stop()));
       connect(ui.lblStartStopTor, SIGNAL(clicked()), this, SLOT(stop()));
   } else { /* status == Starting */
