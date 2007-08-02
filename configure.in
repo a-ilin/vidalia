@@ -1,4 +1,4 @@
-AC_INIT(vidalia,0.0.13-svn)
+AC_INIT(vidalia,0.0.13)
 AC_MSG_NOTICE([Configuring AC_PACKAGE_STRING...])
 AC_PROG_CXX
 PROFILE="Vidalia.pro"
