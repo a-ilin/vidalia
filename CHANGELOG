@@ -1,3 +1,38 @@
+0.0.13  02-Aug-2007
+  o Remove the control protocol version checking logic, since Tor will now
+    just hang up if the first command received isn't a valid AUTHENTICATE
+    command.
+  o Fix a bug where Vidalia would display an incorrect error message if the
+    user started Vidalia, stopped Tor, ran Tor manually, then clicked 'Start
+    Tor'. (Reported by arma)
+  o Maintain a list of address mappings, so we can try to replace IP addresses
+    in stream targets with host names when displaying them on the network map.
+    (Suggested by phobos)
+  o Stop including help documentation for each language, even if it is
+    untranslated. If there is no translated help documentation for a language,
+    simply load the documentation from the English version.
+  o Use RelayBandwidthBurst and RelayBandwidthRate on Tor >= 0.2.0.1-alpha.
+  o Remove from the server config page the 'Address' text box, the 'Get
+    Address' button, and 'Automatically Update' checkbox. 
+  o Don't do balloon messages on Windows 2000; I'm told it doesn't work even
+    though QSystemTrayIcon::supportsMessages() says it should.
+  o Removed a duplicate check when determining what control event Vidalia
+    received from Tor.
+  o Check /usr/sbin/ for a Tor binary if one isn't found in $PATH.
+  o Fixed compilation on Mac OS X Panther.
+  o Support building with Qt 4.3 in our configure.in (no code changes
+    required).
+  o Change the "Start Tor" control panel button text to "Starting Tor" while
+    Tor is starting.
+  o Added a "Control Panel" item to the OS X dock icon's context menu.
+  o Added tooltips to the circuits and streams listed on the network map.
+  o Stop putting a torrc in %APPDATA%\Tor if the user is also installing Vidalia,
+    since they'll just get confused from having two torrc files.
+  o Added a Swedish GUI and installer translation from Amin Amini.
+  o Added an Italian installer translation from Alex Mazzariol.
+  o Update Finnish, French, German, Italian, Russian, Spanish
+  
+  
 0.0.12  01-Jun-2007
   o Added a new "Control Panel" main window that appears when Vidalia first
     starts. This dialog is for people who either aren't trained to look in
