@@ -62,17 +62,6 @@ protected:
   bool readLineData(QString &line, QString *errmsg = 0);
   /** Reads a line of data from the socket (blocking) */
   bool readLine(QString &line, QString *errmsg = 0);
-
-private:
-  /** Specifies a version of Tor's Control Protocol */
-  enum ProtocolVersion {
-    VersionUnknown = -1,  /**< Unknown version. */
-    Version0 = 0,         /**< Protocol V0 (deprecated) */
-    Version1 = 1          /**< Protocol V1 */
-  };
-  /** Returns the version of Tor's control protocol being spoken on this
-   * socket. */
-  ProtocolVersion protocolVersion();
 };
 
 #endif

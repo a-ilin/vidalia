@@ -53,8 +53,6 @@ ControlSocket::ControlSocket()
 bool
 ControlSocket::connect(QHostAddress addr, quint16 port, QString *errmsg)
 {
-  ProtocolVersion version;
-
   /* Connect the control socket. */
   vNotice("Connecting to Tor's control port on %1:%2").arg(addr.toString())
                                                       .arg(port);
@@ -66,26 +64,6 @@ ControlSocket::connect(QHostAddress addr, quint16 port, QString *errmsg)
                                             .arg(port)
                                             .arg(errorString()));
   }
-  
-  /* Verify that Tor is speaking a protocol version we understand. */
-  blockSignals(true);
-  version = protocolVersion();
-  blockSignals(false);
-  if (version != Version1) {
-    disconnect();
-    vWarn("Unsupported Tor protocol version '%1'").arg(version);
-    if (version == VersionUnknown) {
-      return err(errmsg, tr("Vidalia was unable to determine Tor's control "
-                            "protocol version. Verify that your control port number "
-                            "is set correctly and you are running a recent "
-                            "version of Tor."));
-    } else {
-      return err(errmsg, tr("Vidalia only supports Version 1 of Tor's control "
-                            "protocol (version %1 detected).\n"
-                            "Upgrade to a newer version of Tor.").arg(version));
-    }
-  }
-  /* Ok, now we're really connected */
   return true;
 }
 
@@ -110,30 +88,6 @@ bool
 ControlSocket::isConnected()
 {
   return (isValid() && state() == QAbstractSocket::ConnectedState);
-}
-
-/** Determines which version of Tor's control protocol is being spoken. */
-ControlSocket::ProtocolVersion
-ControlSocket::protocolVersion()
-{
-  QByteArray versionData;
-
-  /* Send a special little bit of data and wait for the response */
-  if (!write("\0\0\r\n", 4)) {
-    return VersionUnknown;
-  }
-  while (bytesAvailable() < 4) {
-    if (!waitForReadyRead(-1)) {
-      vWarn("Reading failed while determining control protocol version: %1")
-                                                         .arg(errorString());
-      return VersionUnknown;
-    }
-  }
-
-  /* If the response starts with a "\0\0", that means it is V0 of the control
-   * protocol. Otherwise, it is V1. */
-  versionData = readAll();
-  return (!qstrlen(versionData.data()) ? Version0 : Version1);
 }
 
 /** Send a control command to Tor on the control socket, conforming to Tor's
