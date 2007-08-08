@@ -397,9 +397,9 @@ SectionGroup "${TORBUTTON_DESC}" TorbuttonGroup
 
   Section "$(TorbuttonAddToFirefox)" TorbuttonAddToFirefox
     SectionIn 1 2
-    ReadRegStr $1 HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\firefox.exe" "Path"
+    ReadRegStr $1 HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\firefox.exe" ""
     StrCmp $1 "" FirefoxNotFound 0 ; if Path is empty or null, then skip to an error, otherwise proceed
-	  Exec '"$1firefox.exe" -install-global-extension "$INSTDIR\Torbutton\torbutton-${TORBUTTON_APPVERSION}.xpi"'
+	  Exec '"$1" -install-global-extension "$INSTDIR\Torbutton\torbutton-${TORBUTTON_APPVERSION}.xpi"'
   	Goto TorbuttonInstalled
     FirefoxNotFound:
 	  MessageBox MB_OK|MB_ICONSTOP "$(TorbuttonFirefoxNotFound)"
