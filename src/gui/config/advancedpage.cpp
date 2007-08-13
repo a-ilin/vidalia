@@ -56,6 +56,8 @@ AdvancedPage::AdvancedPage(QWidget *parent)
   
   /* Bind event to actions */
   connect(ui.btnBrowseTorConfig, SIGNAL(clicked()), this, SLOT(browseTorConfig()));
+  connect(ui.btnBrowseTorDataDirectory, SIGNAL(clicked()),
+          this, SLOT(browseTorDataDirectory()));
 
   /* Hide platform specific features */
 #if defined(Q_WS_WIN)
@@ -83,6 +85,7 @@ AdvancedPage::save(QString &errmsg)
   _settings->setControlAddress(controlAddress);
   _settings->setControlPort(ui.lineControlPort->text().toUShort());
   _settings->setTorrc(ui.lineTorConfig->text());
+  _settings->setDataDirectory(ui.lineTorDataDirectory->text());
   _settings->setUser(ui.lineUser->text());
   _settings->setGroup(ui.lineGroup->text());
   
@@ -101,6 +104,7 @@ AdvancedPage::load()
   ui.lineControlAddress->setText(_settings->getControlAddress().toString());
   ui.lineControlPort->setText(QString::number(_settings->getControlPort()));
   ui.lineTorConfig->setText(_settings->getTorrc());
+  ui.lineTorDataDirectory->setText(_settings->getDataDirectory());
   ui.lineUser->setText(_settings->getUser());
   ui.lineGroup->setText(_settings->getGroup());
 
@@ -150,6 +154,19 @@ AdvancedPage::browseTorConfig()
     }
   }
   ui.lineTorConfig->setText(filename);
+}
+
+/** Opens a QFileDialog for the user to browse to or create a directory for
+ * Tor's DataDirectory. */
+void
+AdvancedPage::browseTorDataDirectory()
+{
+  QString dataDir = QFileDialog::getExistingDirectory(this,
+                      tr("Select a Directory to Use for Tor Data"),
+                      ui.lineTorDataDirectory->text());
+  
+  if (!dataDir.isEmpty()) 
+    ui.lineTorDataDirectory->setText(dataDir);
 }
 
 #if defined(Q_WS_WIN)

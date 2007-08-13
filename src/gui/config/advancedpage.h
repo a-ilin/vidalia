@@ -50,9 +50,13 @@ public:
   void load();
 
 private slots:
-  /** Called when user clicks "Browse" to choose location of Tor config file */
+  /** Called when the user clicks "Browse" to choose location of Tor config 
+   * file */
   void browseTorConfig();
-  
+  /** Called when the user clicks "Browse" to choose the location of Tor's
+   * data directory. */
+  void browseTorDataDirectory();
+
 private:
 #if defined(Q_WS_WIN)
   /** Installs or removes the Tor service as necessary */

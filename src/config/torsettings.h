@@ -44,6 +44,11 @@ public:
   QString getExecutable();
   /** Sets the name and path of Tor's executable. */
   void setExecutable(QString torExecutable);
+ 
+  /** Gets the location of Tor's data directory. */
+  QString getDataDirectory();
+  /** Sets the location to use for Tor's data directory. */
+  void setDataDirectory(QString dataDir);
   
   /** Builds and formats a list of command-line arguments. */
   QString getArguments();

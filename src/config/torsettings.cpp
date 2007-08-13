@@ -39,6 +39,7 @@
 #define SETTING_AUTH_TOKEN      "Tor/AuthToken"
 #define SETTING_TOR_USER        "Tor/User"
 #define SETTING_TOR_GROUP       "Tor/Group"
+#define SETTING_DATA_DIRECTORY  "Tor/DataDirectory"
 
 /* On win32, we need to add the .exe onto Tor's filename */
 #if defined(Q_OS_WIN32)
@@ -53,6 +54,7 @@
 #define TOR_ARG_TORRC           "-f"
 #define TOR_ARG_USER            "User"
 #define TOR_ARG_GROUP           "Group"
+#define TOR_ARG_DATA_DIRECTORY  "DataDirectory"
 
 
 /** Default constructor */
@@ -65,6 +67,21 @@ TorSettings::TorSettings()
   setDefault(SETTING_AUTH_TOKEN,    QByteArray(""));
   setDefault(SETTING_TOR_USER,      "");
   setDefault(SETTING_TOR_GROUP,     "");
+  setDefault(SETTING_DATA_DIRECTORY, "");
+}
+
+/** Gets the location of Tor's data directory. */
+QString
+TorSettings::getDataDirectory()
+{
+  return value(SETTING_DATA_DIRECTORY).toString();  
+}
+
+/** Sets the location to use as Tor's data directory. */
+void
+TorSettings::setDataDirectory(QString dataDirectory)
+{
+  setValue(SETTING_DATA_DIRECTORY, dataDirectory);
 }
 
 /** Returns a fully-qualified path to Tor's executable, including the
@@ -106,6 +123,13 @@ TorSettings::getArguments()
   if (!torrc.isEmpty()) {
     args += formatArgument(TOR_ARG_TORRC, 
                            expand_filename(torrc)) + " ";
+  }
+  /* Specify the location to use for Tor's data directory, if different from
+   * the default. */
+  QString dataDirectory = getDataDirectory();
+  if (!dataDirectory.isEmpty()) {
+    args += formatArgument(TOR_ARG_DATA_DIRECTORY,
+                           expand_filename(dataDirectory)) + " ";
   }
   /* Add the ControlPort value */
   quint16 controlPort = getControlPort();
