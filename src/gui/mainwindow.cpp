@@ -98,8 +98,8 @@
 #define IMG_TOR_STOPPING   ":/images/22x22/tor-stopping.png"
 #endif
 
-/** Only allow 'New Identity' to be clicked once every 60 seconds. */
-#define MIN_NEWIDENTITY_INTERVAL   (60*1000)
+/** Only allow 'New Identity' to be clicked once every 10 seconds. */
+#define MIN_NEWIDENTITY_INTERVAL   (10*1000)
 
 
 /** Default constructor. It installs an icon in the system tray area and
