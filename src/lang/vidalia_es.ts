@@ -309,7 +309,7 @@ Necesitara eliminarlo manualmente.</translation>
     <message>
         <location filename="../control/circuit.cpp" line="110"/>
         <source>Open</source>
-        <translation>Abrir</translation>
+        <translation>Abierto</translation>
     </message>
     <message>
         <location filename="../control/circuit.cpp" line="111"/>
@@ -1029,12 +1029,12 @@ Por favor verifique el registro de mensajes para indicadores de que paso con Tor
     <message>
         <location filename="../gui/mainwindow.ui" line="487"/>
         <source>Setup Relaying</source>
-        <translation>Setup esta comenzando nuevamente</translation>
+        <translation>Ajustar Retransmisiòn</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="490"/>
         <source>Set up a Tor relay and help the network grow</source>
-        <translation>Iniciar una dependencia Tor y ayudar a la red crecer</translation>
+        <translation>Iniciar retransmisión Tor y ayudar a la red crecer</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="500"/>
@@ -1702,12 +1702,12 @@ de los desarrolladores de Tor.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="502"/>
         <source>Check to run as a Tor network server</source>
-        <translation>Verificar a correr como un servidor Tor</translation>
+        <translation>Verificar para correr como un servidor Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="505"/>
         <source>Relay traffic for the Tor network</source>
-        <translation>Depender trafico de la red Tor</translation>
+        <translation>Retransmitir tráfico para la red Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="716"/>
@@ -1757,12 +1757,12 @@ de los desarrolladores de Tor.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="837"/>
         <source>Enable to mirror the server directory</source>
-        <translation>No se pudo copiar el directorio del servidor</translation>
+        <translation>No se pudo reflejar el directorio del servidor</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="840"/>
         <source>Mirror the Server Directory </source>
-        <translation>Copiar el Directorio del Servidor</translation>
+        <translation>Reflejar el Directorio del Servidor</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="590"/>
@@ -1970,7 +1970,7 @@ marca PGP o GPG.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1450"/>
         <source>What Internet resources should Tor users be able to access from your Tor relay?</source>
-        <translation>żQué recursos de Internet deberá los usuarios de Tor accesar desde su dependencia Tor?</translation>
+        <translation>¿Qué recursos de Internet deberá los usuarios de Tor accesar desde su dependencia Tor?</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="1224"/>
