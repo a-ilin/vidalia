@@ -101,6 +101,7 @@ XPStyle         on
 
 ;--------------------------------
 ; Available languages
+!insertmacro MUI_LANGUAGE "Czech"
 !insertmacro MUI_LANGUAGE "Dutch"
 !insertmacro MUI_LANGUAGE "English"
 !insertmacro MUI_LANGUAGE "Farsi"
@@ -115,6 +116,7 @@ XPStyle         on
 !insertmacro MUI_LANGUAGE "SimpChinese"
 !insertmacro MUI_LANGUAGE "Swedish"
 !insertmacro MUI_LANGUAGE "TradChinese"
+!include "vidalia_cs.nsh"
 !include "vidalia_de.nsh"
 !include "vidalia_en.nsh"
 !include "vidalia_es.nsh"
