@@ -29,7 +29,8 @@ HEADERS += $$PWD/net.h \
            $$PWD/process.h \
            $$PWD/file.h \
            $$PWD/zlibbytearray.h \
-           $$PWD/log.h
+           $$PWD/log.h \
+           $$PWD/crypto.h
            
 SOURCES += $$PWD/net.cpp \
            $$PWD/http.cpp \
@@ -39,7 +40,8 @@ SOURCES += $$PWD/net.cpp \
            $$PWD/process.cpp \
            $$PWD/file.cpp \
            $$PWD/zlibbytearray.cpp \
-           $$PWD/log.cpp
+           $$PWD/log.cpp \
+           $$PWD/crypto.cpp
 
 win32 {
     HEADERS += $$PWD/win32.h
