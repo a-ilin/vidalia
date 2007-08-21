@@ -53,3 +53,7 @@ LangString TorbuttonAppDesc           ${LANG_DUTCH} "Installeer ${TORBUTTON_DESC
 LangString TorbuttonAddToFirefox      ${LANG_DUTCH} "Voeg toe aan Firefox"
 LangString TorbuttonAddToFirefoxDesc  ${LANG_DUTCH} "Voeg de ${TORBUTTON_DESC} extensie toe aan Firefox."
 LangString TorbuttonFirefoxNotFound   ${LANG_DUTCH} "Firefox werd niet gevonden op uw systeem. Torbutton wordt niet geïnstalleerd."
+
+; Miscellaneous Strings
+LangString AppData                    ${LANG_DUTCH} "Application Data"
+LangString AppDataUninstDesc          ${LANG_DUTCH} "Remove saved application data and configuration files."

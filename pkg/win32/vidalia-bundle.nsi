@@ -462,28 +462,38 @@ FunctionEnd
 ; Uninstaller
 Section "-Uninstall" Uninstall
 SectionEnd
-   
-Section "un.Tor ${TOR_APPVERSION}" UninstallTor
-  SetShellVarContext current
-  RMDir /r "$APPDATA\Tor"
-  SetShellVarContext all
-  RMDir /r "$INSTDIR\Tor"
-  RMDir /r "$APPDATA\Tor"
-  RMDir /r "${SHORTCUTS}\Tor"
-  DeleteRegKey HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Tor"
-SectionEnd
 
-Section "un.Vidalia ${VIDALIA_APPVERSION}" UninstallVidalia
-  SetShellVarContext current
-  RMDir /r "$APPDATA\Vidalia"
-  SetShellVarContext all
-  RMDir /r "$INSTDIR\Vidalia"
-  RMDir /r "$APPDATA\Vidalia"
-  Delete "${SHORTCUTS}\Vidalia.lnk"
-  Delete "${SHORTCUTS}\Vidalia Website.lnk"
-  DeleteRegKey HKCU "Software\Microsoft\Windows\CurrentVersion\Run\Vidalia"
-  DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia"
-SectionEnd
+SectionGroup "un.Tor ${TOR_APPVERSION}" UninstallTorGroup
+  Section "un.Tor" UninstallTor
+    SetShellVarContext all
+    RMDir /r "$INSTDIR\Tor"
+    RMDir /r "$APPDATA\Tor"
+    RMDir /r "${SHORTCUTS}\Tor"
+    DeleteRegKey HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Tor"
+  SectionEnd
+
+  Section "un.$(AppData)" UninstallTorAppData
+    SetShellVarContext current
+    RMDir /r "$APPDATA\Tor"
+  SectionEnd
+SectionGroupEnd
+
+SectionGroup "un.Vidalia ${VIDALIA_APPVERSION}" UninstallVidaliaGroup
+  Section "un.Vidalia" UninstallVidalia
+    SetShellVarContext all
+    RMDir /r "$INSTDIR\Vidalia"
+    RMDir /r "$APPDATA\Vidalia"
+    Delete "${SHORTCUTS}\Vidalia.lnk"
+    Delete "${SHORTCUTS}\Vidalia Website.lnk"
+    DeleteRegKey HKCU "Software\Microsoft\Windows\CurrentVersion\Run\Vidalia"
+    DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia"
+  SectionEnd
+
+  Section "un.$(AppData)" UninstallVidaliaAppData
+    SetShellVarContext current
+    RMDir /r "$APPDATA\Vidalia"
+  SectionEnd
+SectionGroupEnd
 
 Section "un.Privoxy ${PRIVOXY_APPVERSION}" UninstallPrivoxy
   SetShellVarContext all
@@ -505,17 +515,30 @@ SectionEnd
 
 Function un.onInit
   !insertmacro MUI_LANGDLL_DISPLAY
+  SetShellVarContext current
 
-  IfFileExists "$INSTDIR\Tor\*.*" CheckVidalia
+  IfFileExists "$INSTDIR\Tor\*.*" CheckTorAppData
     SectionGetFlags ${UninstallTor} $0
     IntOp $0 $0 & ${SECTION_OFF}
     SectionSetFlags ${UninstallTor} $0
+  
+  CheckTorAppData:
+  IfFileExists "$APPDATA\Tor\*.*" CheckVidalia
+    SectionGetFlags ${UninstallTorAppData} $0
+    IntOp $0 $0 & ${SECTION_OFF}
+    SectionSetFlags ${UninstallTorAppData} $0
 
   CheckVidalia:
-  IfFileExists "$INSTDIR\Vidalia\*.*" CheckPrivoxy
+  IfFileExists "$INSTDIR\Vidalia\*.*" CheckVidaliaAppData
     SectionGetFlags ${UninstallVidalia} $0
     IntOp $0 $0 & ${SECTION_OFF}
     SectionSetFlags ${UninstallVidalia} $0
+
+  CheckVidaliaAppData:
+  IfFileExists "$APPDATA\Vidalia\*.*" CheckPrivoxy
+    SectionGetFlags ${UninstallVidaliaAppData} $0
+    IntOp $0 $0 & ${SECTION_OFF}
+    SectionSetFlags ${UninstallVidaliaAppData} $0
 
   CheckPrivoxy:
   IfFileExists "$INSTDIR\Privoxy\*.*" Done
@@ -560,7 +583,9 @@ FunctionEnd
 
 !insertmacro MUI_UNFUNCTION_DESCRIPTION_BEGIN
   !insertmacro MUI_DESCRIPTION_TEXT ${UninstallTor} "$(TorUninstDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${UninstallTorAppData} "$(AppDataUninstDesc)"
   !insertmacro MUI_DESCRIPTION_TEXT ${UninstallVidalia} "$(VidaliaUninstDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${UninstallVidaliaAppData} "$(AppDataUninstDesc)"
   !insertmacro MUI_DESCRIPTION_TEXT ${UninstallPrivoxy} "$(PrivoxyUninstDesc)"
 !insertmacro MUI_UNFUNCTION_DESCRIPTION_END
 

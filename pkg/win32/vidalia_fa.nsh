@@ -55,3 +55,6 @@ LangString TorbuttonAddToFirefox      ${LANG_FARSI} "«·“ËœÊ »Á ·«?—·«?”"
 LangString TorbuttonAddToFirefoxDesc  ${LANG_FARSI} "«·“ËœÊ ?”ËÊœ ${TORBUTTON_DESC} »Á ·«?—·«?”."
 LangString TorbuttonFirefoxNotFound   ${LANG_FARSI} "·«?—·«?” œ— ”?” Â ‘Â« ??œ« Ê‘œ. ?«—?–«—? Ê‘œÊ œ?ÂÁ  Ë—."
 
+; Miscellaneous Strings
+LangString AppData                    ${LANG_FARSI} "Application Data"
+LangString AppDataUninstDesc          ${LANG_FARSI} "Remove saved application data and configuration files."

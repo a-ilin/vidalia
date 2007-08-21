@@ -55,3 +55,6 @@ LangString TorbuttonAddToFirefox      ${LANG_PORTUGUESEBR} "Adicionar ao Firefox
 LangString TorbuttonAddToFirefoxDesc  ${LANG_PORTUGUESEBR} "Adicionar a extensão ${TORBUTTON_DESC} no Firefox."
 LangString TorbuttonFirefoxNotFound   ${LANG_PORTUGUESEBR} "O Firefox não foi encontrado no seu sistema. O Torbutton não será instalado."
 
+; Miscellaneous Strings
+LangString AppData                    ${LANG_PORTUGUESEBR} "Application Data"
+LangString AppDataUninstDesc          ${LANG_PORTUGUESEBR} "Remove saved application data and configuration files."

@@ -75,6 +75,7 @@ XPStyle           on
 !insertmacro MUI_PAGE_INSTFILES
 !insertmacro MUI_PAGE_FINISH
 !insertmacro MUI_UNPAGE_WELCOME
+!insertmacro MUI_UNPAGE_COMPONENTS
 !insertmacro MUI_UNPAGE_CONFIRM
 !insertmacro MUI_UNPAGE_INSTFILES
 !insertmacro MUI_UNPAGE_FINISH
@@ -165,9 +166,12 @@ SectionEnd
 
 ;--------------------------------
 ; Uninstaller
-Section "Uninstall"
-  SetShellVarContext all
+Section "-Uninstall" Uninstall
+SectionEnd
 
+Section "un.${VIDALIA_NAME} ${VIDALIA_APPVERSION}" UninstallVidalia
+  SetShellVarContext all
+    
   ; Remove registry keys
   DeleteRegValue HKCU "Software\Microsoft\Windows\CurrentVersion\Run\" "${VIDALIA_NAME}"
   DeleteRegKey   HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${VIDALIA_NAME}"
@@ -175,14 +179,16 @@ Section "Uninstall"
 
   ; Remove files and uninstaller
   Delete $INSTDIR\uninstall.exe
-
+    
   ; Remove shortcuts, if any
   Delete "$SMPROGRAMS\${VIDALIA_NAME}\*.*"
-
+    
   ; Remove directories used
   RMDir "$SMPROGRAMS\${VIDALIA_NAME}"
   RMDir /r "$INSTDIR"
-
+SectionEnd
+  
+Section "un.$(AppData)" UninstallVidaliaAppData
   SetShellVarContext current
   RMDir /r "$APPDATA\Vidalia"
 SectionEnd
@@ -198,4 +204,9 @@ FunctionEnd
   !insertmacro MUI_DESCRIPTION_TEXT ${Shortcuts} "$(VidaliaShortcutsDesc)"
   !insertmacro MUI_DESCRIPTION_TEXT ${RunAtStartup} "$(VidaliaStartupDesc)"
 !insertmacro MUI_FUNCTION_DESCRIPTION_END
+
+!insertmacro MUI_UNFUNCTION_DESCRIPTION_BEGIN
+  !insertmacro MUI_DESCRIPTION_TEXT ${UninstallVidalia} $(VidaliaUninstDesc)
+  !insertmacro MUI_DESCRIPTION_TEXT ${UninstallVidaliaAppData} $(AppDataUninstDesc)
+!insertmacro MUI_UNFUNCTION_DESCRIPTION_END
 

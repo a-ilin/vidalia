@@ -54,3 +54,7 @@ LangString TorbuttonAppDesc           ${LANG_CZECH} "Instalovat ${TORBUTTON_DESC
 LangString TorbuttonAddToFirefox      ${LANG_CZECH} "Vlozit do Firefox"
 LangString TorbuttonAddToFirefoxDesc  ${LANG_CZECH} "Vlozit ${TORBUTTON_DESC} rozsireni Firefox."
 LangString TorbuttonFirefoxNotFound   ${LANG_CZECH} "Firefox nebyl ve vasem systemu nalezen. Torbutton nebude instalovan."
+
+; Miscellaneous Strings
+LangString AppData                    ${LANG_CZECH} "Application Data"
+LangString AppDataUninstDesc          ${LANG_CZECH} "Remove saved application data and configuration files."

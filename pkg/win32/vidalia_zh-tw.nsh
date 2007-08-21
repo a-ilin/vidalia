@@ -55,3 +55,7 @@ LangString TorbuttonAddToFirefox      ${LANG_TRADCHINESE} "添加至火狐(Firefox)瀏
 LangString TorbuttonAddToFirefoxDesc  ${LANG_TRADCHINESE} "添加 ${TORBUTTON_DESC} 擴展至火狐(Firefox)瀏覽器."
 LangString TorbuttonFirefoxNotFound   ${LANG_TRADCHINESE} "安裝程序未檢測到火狐(Firefox)瀏覽器,因此將停止添加 Torbutton 擴展."
 
+; Miscellaneous Strings
+LangString AppData                    ${LANG_TRADCHINESE} "Application Data"
+LangString AppDataUninstDesc          ${LANG_TRADCHINESE} "Remove saved application data and configuration files."
+

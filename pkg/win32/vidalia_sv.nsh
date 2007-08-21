@@ -55,3 +55,6 @@ LangString TorbuttonAddToFirefox      ${LANG_SWEDISH} "Lägg till i Firefox"
 LangString TorbuttonAddToFirefoxDesc  ${LANG_SWEDISH} "Lägg till tillägget ${TORBUTTON_DESC} till Firefox."
 LangString TorbuttonFirefoxNotFound   ${LANG_SWEDISH} "Torbutton kan ej installeras: Firefox hittades ej på din dator."
 
+; Miscellaneous Strings
+LangString AppData                    ${LANG_SWEDISH} "Application Data"
+LangString AppDataUninstDesc          ${LANG_SWEDISH} "Remove saved application data and configuration files."

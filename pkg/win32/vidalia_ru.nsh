@@ -60,3 +60,6 @@ LangString TorbuttonAddToFirefox      ${LANG_RUSSIAN} "Добавить в Firefox"
 LangString TorbuttonAddToFirefoxDesc  ${LANG_RUSSIAN} "Добавить расширение ${TORBUTTON_DESC} в Firefox."
 LangString TorbuttonFirefoxNotFound   ${LANG_RUSSIAN} "Не удалось найти Firefox на вашем компьютере. Torbutton не будет установлен."
 
+; Miscellaneous Strings
+LangString AppData                    ${LANG_RUSSIAN} "Application Data"
+LangString AppDataUninstDesc          ${LANG_RUSSIAN} "Remove saved application data and configuration files."

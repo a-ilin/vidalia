@@ -59,3 +59,6 @@ LangString TorbuttonAddToFirefox      ${LANG_FINNISH} "Lisää Firefoxiin"
 LangString TorbuttonAddToFirefoxDesc  ${LANG_FINNISH} "Lisää ${TORBUTTON_DESC}-lisäosa Firefoxiin."
 LangString TorbuttonFirefoxNotFound   ${LANG_FINNISH} "Firefox-selainta ei löytynyt koneelta. Torbuttonia ei asennettu."
 
+; Miscellaneous Strings
+LangString AppData                    ${LANG_FINNISH} "Application Data"
+LangString AppDataUninstDesc          ${LANG_FINNISH} "Remove saved application data and configuration files."
