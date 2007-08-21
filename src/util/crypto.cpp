@@ -99,7 +99,7 @@ crypto_rand_bytes(int len)
     }
     provider_set = 1;
   }
-  if (!CryptGenRandom(provider, buf.size(), buf.data())) {
+  if (!CryptGenRandom(provider, buf.size(), (BYTE *)buf.data())) {
     qWarning("Can't get entropy from CryptoAPI.");
     return QByteArray();
   }
