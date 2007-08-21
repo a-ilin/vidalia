@@ -158,7 +158,6 @@ TorSettings::getArguments()
     if (useRandomPassword())
       setControlPassword(generateRandomPassword());
     QString password = getControlPassword();
-    vNotice("Control password: %1").arg(password);
     args += formatArgument(TOR_ARG_HASHED_PASSWORD,
                            hashPassword(password)) + " ";
   } else if (authMethod == CookieAuth) {
