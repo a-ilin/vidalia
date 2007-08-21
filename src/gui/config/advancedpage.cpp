@@ -58,6 +58,10 @@ AdvancedPage::AdvancedPage(QWidget *parent)
   connect(ui.btnBrowseTorConfig, SIGNAL(clicked()), this, SLOT(browseTorConfig()));
   connect(ui.btnBrowseTorDataDirectory, SIGNAL(clicked()),
           this, SLOT(browseTorDataDirectory()));
+  connect(ui.cmbAuthMethod, SIGNAL(currentIndexChanged(int)),
+          this, SLOT(authMethodChanged(int)));
+  connect(ui.chkRandomPassword, SIGNAL(toggled(bool)),
+          ui.linePassword, SLOT(setDisabled(bool)));
 
   /* Hide platform specific features */
 #if defined(Q_WS_WIN)
@@ -76,12 +80,25 @@ AdvancedPage::~AdvancedPage()
 bool
 AdvancedPage::save(QString &errmsg)
 {
+  /* Validate the control listener address */
   QHostAddress controlAddress(ui.lineControlAddress->text());
   if (controlAddress.isNull()) {
     errmsg = tr("'%1' is not a valid IP address.")
                .arg(ui.lineControlAddress->text());
     return false; 
   }
+  
+  /* Validate the selected authentication options */
+  TorSettings::AuthenticationMethod authMethod = 
+    indexToAuthMethod(ui.cmbAuthMethod->currentIndex());
+  if (authMethod == TorSettings::PasswordAuth &&
+      ui.linePassword->text().isEmpty() &&
+      !ui.chkRandomPassword->isChecked()) {
+    errmsg = tr("You selected 'Password' authentication, but did not "
+                "specify a password.");
+    return false;
+  }
+
   _settings->setControlAddress(controlAddress);
   _settings->setControlPort(ui.lineControlPort->text().toUShort());
   _settings->setTorrc(ui.lineTorConfig->text());
@@ -89,6 +106,12 @@ AdvancedPage::save(QString &errmsg)
   _settings->setUser(ui.lineUser->text());
   _settings->setGroup(ui.lineGroup->text());
   
+  _settings->setAuthenticationMethod(authMethod);
+  _settings->setUseRandomPassword(ui.chkRandomPassword->isChecked());
+  if (authMethod == TorSettings::PasswordAuth && 
+      !ui.chkRandomPassword->isChecked())
+    _settings->setControlPassword(ui.linePassword->text());
+
 #if defined(Q_WS_WIN)
   /* Install or uninstall the Tor service as necessary */
   setupService(ui.chkUseService->isChecked());
@@ -107,11 +130,53 @@ AdvancedPage::load()
   ui.lineTorDataDirectory->setText(_settings->getDataDirectory());
   ui.lineUser->setText(_settings->getUser());
   ui.lineGroup->setText(_settings->getGroup());
+  
+  ui.cmbAuthMethod->setCurrentIndex(
+    authMethodToIndex(_settings->getAuthenticationMethod()));
+  ui.chkRandomPassword->setChecked(_settings->useRandomPassword());
+  if (!ui.chkRandomPassword->isChecked())
+    ui.linePassword->setText(_settings->getControlPassword());
 
 #if defined(Q_WS_WIN)
   TorService s;
   ui.chkUseService->setChecked(s.isInstalled());
 #endif
+}
+
+/** Called when the user selects a different authentication method from the
+ * combo box. */
+void
+AdvancedPage::authMethodChanged(int index)
+{
+  bool usePassword = (indexToAuthMethod(index) == TorSettings::PasswordAuth);
+  ui.linePassword->setEnabled(usePassword && !ui.chkRandomPassword->isChecked());
+  ui.chkRandomPassword->setEnabled(usePassword);
+}
+
+/** Returns the authentication method for the given <b>index</b>. */
+TorSettings::AuthenticationMethod
+AdvancedPage::indexToAuthMethod(int index)
+{
+  switch (index) {
+    case 0: return TorSettings::NullAuth;
+    case 1: return TorSettings::CookieAuth;
+    case 2: return TorSettings::PasswordAuth;
+    default: break;
+  }
+  return TorSettings::UnknownAuth;
+}
+
+/** Returns the index in the authentication methods combo box for the given
+ * authentication <b>method</b>. */
+int
+AdvancedPage::authMethodToIndex(TorSettings::AuthenticationMethod method)
+{
+  switch (method) {
+    case TorSettings::NullAuth: return 0;
+    case TorSettings::CookieAuth: return 1;
+    default: break;
+  }
+  return 2;
 }
 
 /** Open a QFileDialog to browse for Tor config file. */

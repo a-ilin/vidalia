@@ -509,86 +509,161 @@
        <number>6</number>
       </property>
       <item>
-       <layout class="QHBoxLayout" >
+       <layout class="QGridLayout" >
         <property name="margin" >
          <number>0</number>
         </property>
         <property name="spacing" >
-         <number>6</number>
+         <number>2</number>
         </property>
-        <item>
-         <widget class="QLineEdit" name="lineControlAddress" >
-          <property name="sizePolicy" >
-           <sizepolicy>
-            <hsizetype>1</hsizetype>
-            <vsizetype>0</vsizetype>
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
-          </property>
-          <property name="maxLength" >
-           <number>15</number>
-          </property>
-          <property name="alignment" >
-           <set>Qt::AlignRight</set>
-          </property>
-          <property name="maximumSize" >
-           <size>
-            <width>95</width>
-            <height>16777215</height>
-           </size>
-          </property>
-          <property name="toolTip" >
-           <string>IP address on which Tor is listening for controller connections.</string>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="label" >
+        <item row="0" column="2" >
+         <widget class="QLabel" name="label_7" >
           <property name="text" >
            <string>:</string>
           </property>
+          <property name="alignment" >
+           <set>Qt::AlignCenter</set>
+          </property>
          </widget>
         </item>
-        <item>
-         <widget class="QLineEdit" name="lineControlPort" >
-          <property name="sizePolicy" >
-           <sizepolicy>
-            <hsizetype>0</hsizetype>
-            <vsizetype>0</vsizetype>
-            <horstretch>0</horstretch>
-            <verstretch>0</verstretch>
-           </sizepolicy>
+        <item row="1" column="0" >
+         <widget class="QLabel" name="label_6" >
+          <property name="text" >
+           <string>Authentication:</string>
           </property>
+          <property name="alignment" >
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3" >
+         <widget class="QLineEdit" name="lineControlPort" >
           <property name="maximumSize" >
            <size>
             <width>55</width>
             <height>16777215</height>
            </size>
           </property>
-          <property name="contextMenuPolicy" >
-           <enum>Qt::NoContextMenu</enum>
-          </property>
           <property name="toolTip" >
            <string>Port that Vidalia uses to communicate with Tor.</string>
           </property>
-          <property name="text" >
-           <string>9051</string>
+          <property name="maxLength" >
+           <number>5</number>
           </property>
          </widget>
         </item>
-        <item>
+        <item row="0" column="0" >
+         <widget class="QLabel" name="label_5" >
+          <property name="text" >
+           <string>Address:</string>
+          </property>
+          <property name="alignment" >
+           <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="4" >
          <spacer>
           <property name="orientation" >
            <enum>Qt::Horizontal</enum>
           </property>
           <property name="sizeHint" >
            <size>
-            <width>221</width>
+            <width>40</width>
             <height>20</height>
            </size>
           </property>
          </spacer>
+        </item>
+        <item row="1" column="1" colspan="3" >
+         <layout class="QHBoxLayout" >
+          <property name="margin" >
+           <number>0</number>
+          </property>
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+          <item>
+           <widget class="QComboBox" name="cmbAuthMethod" >
+            <property name="toolTip" >
+             <string>Authentication method to use when connecting to Tor's control port</string>
+            </property>
+            <property name="sizeAdjustPolicy" >
+             <enum>QComboBox::AdjustToContents</enum>
+            </property>
+            <item>
+             <property name="text" >
+              <string>None</string>
+             </property>
+            </item>
+            <item>
+             <property name="text" >
+              <string>Cookie</string>
+             </property>
+            </item>
+            <item>
+             <property name="text" >
+              <string>Password</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="1" >
+         <layout class="QHBoxLayout" >
+          <property name="margin" >
+           <number>0</number>
+          </property>
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+          <item>
+           <widget class="QLineEdit" name="lineControlAddress" >
+            <property name="maximumSize" >
+             <size>
+              <width>75</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="toolTip" >
+             <string>IP address on which Tor is listening for controller connections.</string>
+            </property>
+            <property name="maxLength" >
+             <number>15</number>
+            </property>
+            <property name="alignment" >
+             <set>Qt::AlignRight</set>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="4" >
+         <widget class="QLineEdit" name="linePassword" >
+          <property name="toolTip" >
+           <string>Password to use when authenticating to Tor</string>
+          </property>
+          <property name="echoMode" >
+           <enum>QLineEdit::Password</enum>
+          </property>
+          <property name="enabled" >
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="5" >
+         <widget class="QCheckBox" name="chkRandomPassword" >
+          <property name="toolTip" >
+           <string>Check this box to use a random password each time Tor is started</string>
+          </property>
+          <property name="text" >
+           <string>Randomly Generate</string>
+          </property>
+          <property name="enabled" >
+           <bool>false</bool>
+          </property>
+         </widget>
         </item>
        </layout>
       </item>

@@ -50,6 +50,9 @@ public:
   void load();
 
 private slots:
+  /** Called when the user selects a different authentication method from the
+   * combo box. */
+  void authMethodChanged(int index);
   /** Called when the user clicks "Browse" to choose location of Tor config 
    * file */
   void browseTorConfig();
@@ -58,6 +61,12 @@ private slots:
   void browseTorDataDirectory();
 
 private:
+  /** Returns the authentication method for the given <b>index</b>. */
+  TorSettings::AuthenticationMethod indexToAuthMethod(int index);
+  /** Returns the index in the authentication methods combo box for the given
+   * authentication <b>method</b>. */
+  int authMethodToIndex(TorSettings::AuthenticationMethod method);
+  
 #if defined(Q_WS_WIN)
   /** Installs or removes the Tor service as necessary */
   void setupService(bool useService);
