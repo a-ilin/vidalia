@@ -26,7 +26,9 @@
  */
 
 #include <QDir>
+#include <QProcess>
 #include <util/file.h>
+#include <util/crypto.h>
 #include <vidalia.h>
 
 #include "torsettings.h"
@@ -40,6 +42,9 @@
 #define SETTING_TOR_USER        "Tor/User"
 #define SETTING_TOR_GROUP       "Tor/Group"
 #define SETTING_DATA_DIRECTORY  "Tor/DataDirectory"
+#define SETTING_AUTH_METHOD     "Tor/AuthenticationMethod"
+#define SETTING_CONTROL_PASSWORD    "Tor/ControlPassword"
+#define SETTING_USE_RANDOM_PASSWORD "Tor/UseRandomPassword"
 
 /* On win32, we need to add the .exe onto Tor's filename */
 #if defined(Q_OS_WIN32)
@@ -49,12 +54,20 @@
 #define DEFAULT_TOR_EXECUTABLE    "tor"
 #endif
 
+/** Default to using control cookie authentication */
+#define DEFAULT_AUTH_METHOD     PasswordAuth
+
 /* Arguments we can pass to Tor on the command-line */
 #define TOR_ARG_CONTROL_PORT    "ControlPort"
 #define TOR_ARG_TORRC           "-f"
 #define TOR_ARG_USER            "User"
 #define TOR_ARG_GROUP           "Group"
 #define TOR_ARG_DATA_DIRECTORY  "DataDirectory"
+#define TOR_ARG_HASHED_PASSWORD "HashedControlPassword"
+#define TOR_ARG_COOKIE_AUTH     "CookieAuthentication"
+
+/** Generate random control passwords of 16 characters */
+#define PASSWORD_LEN    16
 
 
 /** Default constructor */
@@ -64,10 +77,12 @@ TorSettings::TorSettings()
   setDefault(SETTING_TORRC,         Vidalia::dataDirectory() + "/torrc");
   setDefault(SETTING_CONTROL_ADDR,  "127.0.0.1");
   setDefault(SETTING_CONTROL_PORT,  9051);
-  setDefault(SETTING_AUTH_TOKEN,    QByteArray(""));
+  setDefault(SETTING_AUTH_METHOD,   toString(DEFAULT_AUTH_METHOD));
   setDefault(SETTING_TOR_USER,      "");
   setDefault(SETTING_TOR_GROUP,     "");
   setDefault(SETTING_DATA_DIRECTORY, "");
+  setDefault(SETTING_CONTROL_PASSWORD, "");
+  setDefault(SETTING_USE_RANDOM_PASSWORD, true);
 }
 
 /** Gets the location of Tor's data directory. */
@@ -136,6 +151,18 @@ TorSettings::getArguments()
   if (controlPort) {
     args += formatArgument(TOR_ARG_CONTROL_PORT, 
                            QString::number(controlPort)) + " ";
+  }
+  /* Add the control port authentication argument */
+  AuthenticationMethod authMethod = getAuthenticationMethod();
+  if (authMethod == PasswordAuth) {
+    if (useRandomPassword())
+      setControlPassword(generateRandomPassword());
+    QString password = getControlPassword();
+    vNotice("Control password: %1").arg(password);
+    args += formatArgument(TOR_ARG_HASHED_PASSWORD,
+                           hashPassword(password)) + " ";
+  } else if (authMethod == CookieAuth) {
+    args += formatArgument(TOR_ARG_COOKIE_AUTH, "1") + " ";
   }
   /* Add the User argument (if specified) */
   QString user = getUser();
@@ -227,20 +254,105 @@ TorSettings::setControlPort(quint16 port)
   setValue(SETTING_CONTROL_PORT, port);
 }
 
-/** Get the authentication token sent by the controller to Tor. For now, this
-* just sends the default (blank) authentication token. It is implemented as a
-* stub here to make it easy to do real authentication in the future. */
-QByteArray
-TorSettings::getAuthToken()
+/** Returns the plaintext (i.e., not hashed) control password used when
+ * authenticating to Tor. */
+QString
+TorSettings::getControlPassword()
 {
-  return QByteArray::fromBase64(
-            value(SETTING_AUTH_TOKEN).toByteArray());
+  return value(SETTING_CONTROL_PASSWORD).toString();
 }
 
-/** Set the authentication token sent by the controller to Tor. */
+/** Sets the control password used when starting Tor with
+ * HashedControlPassword to <b>password</b>. */
 void
-TorSettings::setAuthToken(QByteArray token)
+TorSettings::setControlPassword(QString password)
 {
-  setValue(SETTING_AUTH_TOKEN, token.toBase64());
+  setValue(SETTING_CONTROL_PASSWORD, password);
+}
+
+/** Returns true if a new, random control password is to be used each time Tor
+ * is started. */
+bool
+TorSettings::useRandomPassword()
+{
+  return value(SETTING_USE_RANDOM_PASSWORD).toBool();
+}
+
+/** Sets whether or not to generate and use a random control password each
+ * time Tor is started. */
+void
+TorSettings::setUseRandomPassword(bool useRandomPassword)
+{
+  setValue(SETTING_USE_RANDOM_PASSWORD, useRandomPassword);
+}
+
+/** Returns the current authentication method used when connecting to Tor. */
+TorSettings::AuthenticationMethod
+TorSettings::getAuthenticationMethod()
+{
+  AuthenticationMethod type;
+  QString str = value(SETTING_AUTH_METHOD).toString();
+  if (str == toString(NullAuth))
+    type = NullAuth;
+  else if (str == toString(PasswordAuth))
+    type = PasswordAuth;
+  else if (str == toString(CookieAuth))
+    type = CookieAuth;
+  else
+    type = UnknownAuth;
+  return type;
+}
+
+/** Sets the authentication method used when starting Tor to <b>method</b>. */
+void
+TorSettings::setAuthenticationMethod(AuthenticationMethod method)
+{
+  setValue(SETTING_AUTH_METHOD, toString(method));
+}
+
+/** Returns the string description of the authentication method specified by
+ * <b>method</b>. The authentication method string is stored in Vidalia's
+ * configuration file. */
+QString
+TorSettings::toString(AuthenticationMethod method)
+{
+  switch (method) {
+    case NullAuth:  return "none";
+    case PasswordAuth:  return "password";
+    case CookieAuth:  return "cookie";
+    default: break;
+  }
+  return "unknown";
+}
+
+/** Generates a random control password consisting of PASSWORD_LEN characters. */
+QString
+TorSettings::generateRandomPassword()
+{
+  return crypto_rand_string(PASSWORD_LEN);
+}
+
+/** Returns the hash of <b>password</b> as given by the command "tor
+ * --hash-password foo". */
+QString
+TorSettings::hashPassword(QString password)
+{
+  QProcess tor;
+  QString line;
+ 
+  /* Run Tor, tell it to hash the given password, and then wait for it to
+   * finish. */
+  tor.start(getExecutable(),
+            QStringList() << "--hash-password" << password);
+  if (!tor.waitForStarted() || !tor.waitForFinished())
+    return QString();
+
+  /* The hashed password will (hopefully) be the line that starts with "16:" */
+  while (tor.canReadLine()) {
+    line = tor.readLine();
+    if (line.startsWith("16:"))
+      return line.trimmed();
+  }
+  return QString();
 }
 

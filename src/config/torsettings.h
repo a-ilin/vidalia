@@ -37,6 +37,14 @@
 class TorSettings : private VidaliaSettings
 {
 public:
+  /** Available Tor authentication methods. */
+  enum AuthenticationMethod {
+    NullAuth,      /**< No authentication. */
+    CookieAuth,    /**< Use a "magic" cookie for authentication. */
+    PasswordAuth,  /**< Use a hashed password for authentication. */
+    UnknownAuth    /**< Unknown authentication method. */
+  };
+  
   /** Default constructor. */
   TorSettings();
   
@@ -68,11 +76,25 @@ public:
   /** Set the control port. */
   void setControlPort(quint16 port);
   
-  /** Get Tor's controller authentication information. */
-  QByteArray getAuthToken();
-  /** Set Tor's controller authentication information. */
-  void setAuthToken(QByteArray token);
-  
+  /** Returns the plaintext (i.e., not hashed) control password used when
+   * authenticating to Tor. */
+  QString getControlPassword();
+  /** Sets the control password used when starting Tor with
+   * HashedControlPassword to <b>password</b>. */
+  void setControlPassword(QString password);
+
+ /** Returns true if a new, random control password is to be used each time
+  * Tor is started. */
+  bool useRandomPassword();
+  /** Sets whether or not to generate and use a random control password each
+   * time Tor is started. */
+  void setUseRandomPassword(bool useRandomPassword);
+
+  /** Returns the current authentication method used when connecting to Tor.*/
+  AuthenticationMethod getAuthenticationMethod();
+  /** Sets the authentication method used when starting Tor to <b>method</b>.*/
+  void setAuthenticationMethod(AuthenticationMethod method);
+   
   /** Get which user will be used to run Tor. */
   QString getUser();
   /** Set which user will be used to run Tor. */
@@ -87,6 +109,16 @@ private:
   /** Formats the argument name <b>name</b> with the given value <b>value</b>.
    * If <b>value</b> contains a space, <b>value</b> will be wrapped in quotes. */
   QString formatArgument(QString name, QString value);
+  /** Returns the string description of the authentication method specified by
+   * <b>method</b>. The authentication method string is stored in  Vidalia's
+   * configuration file. */
+  QString toString(AuthenticationMethod type);
+  /** Generates a random control password consisting of PASSWORD_LEN
+   * characters. */
+  QString generateRandomPassword();
+  /** Returns the hash of <b>password</b> as given by the command 
+   * "tor --hash-password foo". */
+  QString hashPassword(QString password);
 };
 
 #endif
