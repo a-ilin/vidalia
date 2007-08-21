@@ -467,7 +467,6 @@ SectionGroup "un.Tor ${TOR_APPVERSION}" UninstallTorGroup
   Section "un.Tor" UninstallTor
     SetShellVarContext all
     RMDir /r "$INSTDIR\Tor"
-    RMDir /r "$APPDATA\Tor"
     RMDir /r "${SHORTCUTS}\Tor"
     DeleteRegKey HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Tor"
   SectionEnd
@@ -482,7 +481,6 @@ SectionGroup "un.Vidalia ${VIDALIA_APPVERSION}" UninstallVidaliaGroup
   Section "un.Vidalia" UninstallVidalia
     SetShellVarContext all
     RMDir /r "$INSTDIR\Vidalia"
-    RMDir /r "$APPDATA\Vidalia"
     Delete "${SHORTCUTS}\Vidalia.lnk"
     Delete "${SHORTCUTS}\Vidalia Website.lnk"
     DeleteRegKey HKCU "Software\Microsoft\Windows\CurrentVersion\Run\Vidalia"
