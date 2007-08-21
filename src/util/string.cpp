@@ -116,3 +116,17 @@ string_wrap(QString str, int width, QString sep, QString le)
   return wrapped.trimmed();
 }
 
+/** Encodes the bytes in <b>buf</b> as an uppercase hexadecimal string and
+ * returns the result. This function is derived from base16_encode() in Tor's
+ * util.c. See LICENSE for details on Tor's license. */
+QString
+base16_encode(const QByteArray buf)
+{
+  QString hex;
+  for (int i = 0; i < buf.size(); i++) {
+    hex += "0123456789ABCDEF"[((quint8)buf[i]) >>  4];
+    hex += "0123456789ABCDEF"[((quint8)buf[i]) & 0xf];
+  }
+  return hex;
+}
+

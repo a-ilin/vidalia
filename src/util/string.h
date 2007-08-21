@@ -50,5 +50,10 @@ bool err(QString *str, QString errmsg);
  * the end of each line, except the last.*/
 QString string_wrap(QString str, int width, QString sep, QString le);
 
+/** Encodes the bytes in <b>buf</b> as an uppercase hexadecimal string and
+ * returns the result. This function is derived from base16_encode() in Tor's
+ * util.c. See LICENSE for details on Tor's license. */
+QString base16_encode(const QByteArray buf);
+
 #endif
 
