@@ -77,8 +77,15 @@ private slots:
   void connected();
   /** Called when the control connection fails. */
   void connectFailed(QString errmsg);
+  /** Called when Vidalia wants to disconnect from a Tor it did not start. */
+  void disconnect();
   /** Called when the control socket has been disconnected. */
   void disconnected();
+  /** Called when Vidalia has successfully authenticated to Tor. */
+  void authenticated();
+  /** Called when Vidalia fails to authenticate to Tor. The failure reason is
+   * specified in <b>errmsg</b>. */
+  void authenticationFailed(QString errmsg);
   /** Re-enables the 'New Identity' button after a delay from the previous time
    * 'New Identity' was used. */
   void enableNewIdentity();
@@ -106,10 +113,17 @@ private slots:
 
 private:
   enum TorStatus {
-    Stopped,  /**< Tor is not running. */
-    Starting, /**< Tor is in the process of starting. */
-    Running,  /**< Tor is currently running. */
-    Stopping  /**< Tor is in the process of shutting down. */
+    Unset,      /**< Tor's status has not yet been set. */
+    Stopping,   /**< Tor is in the process of shutting down. */
+    Stopped,    /**< Tor is not running. */
+    Starting,   /**< Tor is in the process of starting. */
+    Started,    /**< Tor is currently running. */
+    Connecting, /**< Vidalia is connecting to Tor. */
+    Connected,  /**< Vidalia is connected to Tor. */
+    Disconnecting,  /**< Vidalia is disconnecting from Tor. */
+    Disconnected,   /**< Vidalia is disconnected from Tor. */
+    Authenticating, /**< Vidalia is authenticating to Tor. */
+    Authenticated   /**< Vidalia has authenticated to Tor. */
   };
   /** Create the actions on the tray menu or menubar */
   void createActions();
@@ -124,8 +138,19 @@ private:
   bool isTrayIconSupported();
   /** Updates the UI to reflect Tor's current <b>status</b>. */
   void updateTorStatus(TorStatus status);
+  /** Converts a TorStatus enum value to a string for debug logging purposes. */
+  QString toString(TorStatus status);
+  /** Authenticates Vidalia to Tor's control port. */
+  bool authenticate();
+  /** Searches for and attempts to load the control authentication cookie.
+   * This assumes the cookie is named 'control_auth_cookie'. If
+   * <b>cookieDir</b> is empty, this method will search some default locations
+   * depending on the current platform. */
+  QByteArray loadControlCookie(QString cookieDir = QString());
 
-  /* Used to determine if the Tor process exiting was intentional or not */
+  /** The current status of Tor. */
+  TorStatus _status;
+  /** Used to determine if the Tor process exiting was intentional or not */
   bool _isIntentionalExit;
   /** Tracks whether we started a delayed server shutdown. */
   bool _delayedShutdownStarted;
