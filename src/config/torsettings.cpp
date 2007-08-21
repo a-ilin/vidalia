@@ -54,7 +54,7 @@
 #define DEFAULT_TOR_EXECUTABLE    "tor"
 #endif
 
-/** Default to using control cookie authentication */
+/** Default to using hashed password authentication */
 #define DEFAULT_AUTH_METHOD     PasswordAuth
 
 /* Arguments we can pass to Tor on the command-line */
