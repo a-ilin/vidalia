@@ -156,7 +156,8 @@ ControlConnection::send(ControlCommand cmd, ControlReply &reply, QString *errmsg
       vWarn("Failed to receive control reply: %1").arg(errstr);
     delete w;
   } else {
-    vWarn("Failed to send control command: %1").arg(errstr);
+    vWarn("Failed to send control command (%1): %2")
+      .arg(cmd.keyword()).arg(errstr);
     _recvMutex.unlock();
   }
 

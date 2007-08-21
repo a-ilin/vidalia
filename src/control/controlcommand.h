@@ -39,6 +39,9 @@ public:
   ControlCommand(QString keyword, QString arg);
   ControlCommand(QString keyword, QStringList args);
 
+  /** Returns the keyword for this control command. */
+  QString keyword() const { return _keyword; }
+
   /** Set the keyword for this control command */
   void setKeyword(QString keyword);
   
