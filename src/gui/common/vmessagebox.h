@@ -48,7 +48,8 @@ public:
     ShowLog,
     ShowSettings,
     Continue,
-    Quit
+    Quit,
+    Browse
   };
   
   /** Default constructor. */

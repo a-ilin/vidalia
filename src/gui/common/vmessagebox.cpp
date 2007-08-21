@@ -95,6 +95,7 @@ VMessageBox::buttonText(int btn)
     case ShowSettings: text = tr("Show Settings"); break;
     case Continue: text = tr("Continue"); break;
     case Quit:     text = tr("Quit"); break;
+    case Browse:   text = tr("Browse"); break;
     default: break;
   }
   return text;
