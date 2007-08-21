@@ -236,25 +236,8 @@ TorControl::connect()
 void
 TorControl::onConnected()
 {
-  QString errmsg;
- 
-  /* Authenticate and register for any pertinent asynchronous events. */
-  if (!authenticate(&errmsg) || !setEvents(&errmsg)) {
-    emit connectFailed(errmsg);
-    stop();
-    return;
-  }
-  /* The control socket is connected, so we can stop reading from stdout */
-  if (_torProcess) {
-    _torProcess->closeStdout();
-  }
-  /* The version of Tor isn't going to change while we're connected to it, so
-   * save it for later. */
-  getInfo("version", _torVersion);
-
   /* Let interested parties know that the control socket connected */
   emit connected();
-  emit connected(true);
 }
 
 /** Emits a signal that the control connection to Tor failed. */
@@ -268,9 +251,8 @@ TorControl::onConnectFailed(QString errmsg)
 void
 TorControl::disconnect()
 {
-  if (isConnected()) {
+  if (isConnected())
     _controlConn->disconnect();
-  }
 }
 
 /** Emits a signal that the control socket disconnected from Tor */
@@ -288,7 +270,6 @@ TorControl::onDisconnected()
 
   /* Let interested parties know we lost our control connection */
   emit disconnected();
-  emit connected(false);
   
   if (!isVidaliaRunningTor()) {
     /* If we're not running our own Tor, then we interpret the closing of 
@@ -331,17 +312,57 @@ TorControl::send(ControlCommand cmd, QString *errmsg)
   return send(cmd, reply, errmsg);
 }
 
-/** Sends an authentication token to Tor. This must be done before sending 
- * any control commands to Tor. The syntax is:
+/** Sends an authentication cookie to Tor. The syntax is:
  * 
- *   "AUTHENTICATE" [ SP 1*HEXDIG / QuotedString ] CRLF
+ *   "AUTHENTICATE" SP 1*HEXDIG CRLF
  */
 bool
-TorControl::authenticate(QString *errmsg)
+TorControl::authenticate(const QByteArray cookie, QString *errmsg)
 {
-  TorSettings settings;
-  ControlCommand cmd("AUTHENTICATE", QString(settings.getAuthToken()));
-  return send(cmd, errmsg);
+  ControlCommand cmd("AUTHENTICATE", base16_encode(cookie));
+  ControlReply reply;
+  QString str;
+  
+  if (!send(cmd, reply, &str)) {
+    emit authenticationFailed(str);
+    return err(errmsg, str);
+  }
+  onAuthenticated(); 
+  return true;
+}
+
+/** Sends an authentication password to Tor. The syntax is:
+ * 
+ *   "AUTHENTICATE" SP QuotedString CRLF
+ */
+bool
+TorControl::authenticate(const QString password, QString *errmsg)
+{
+  ControlCommand cmd("AUTHENTICATE", QString("\"%1\"").arg(password));
+  ControlReply reply;
+  QString str;
+  
+  if (!send(cmd, reply, &str)) {
+    emit authenticationFailed(str);
+    return err(errmsg, str);
+  }
+  onAuthenticated(); 
+  return true;
+}
+
+/** Called when the controller has successfully authenticated to Tor. */
+void
+TorControl::onAuthenticated()
+{
+  /* The version of Tor isn't going to change while we're connected to it, so
+   * save it for later. */
+  getInfo("version", _torVersion);
+  
+  /* The control socket is connected, so we can stop reading from stdout */
+  if (_torProcess)
+    _torProcess->closeStdout();
+  
+  emit authenticated();
 }
 
 /** Sends a GETINFO message to Tor based on the given map of keyvals. The

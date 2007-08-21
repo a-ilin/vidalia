@@ -70,8 +70,10 @@ public:
   void disconnect();
   /** Check if we're connected to Tor's control socket */
   bool isConnected();
-  /** Sends an authentication token to Tor */
-  bool authenticate(QString *errmsg = 0);
+  /** Sends an authentication cookie to Tor. */
+  bool authenticate(const QByteArray cookie, QString *errmsg = 0);
+  /** Sends an authentication password to Tor. */
+  bool authenticate(const QString password = QString(), QString *errmsg = 0);
 
   /** Sends a GETINFO message to Tor based on the given keys */
   bool getInfo(QHash<QString,QString> &map, QString *errmsg = 0);
@@ -176,8 +178,10 @@ signals:
   void connectFailed(QString errmsg);
   /** Emitted when the controller has disconnected from Tor */
   void disconnected();
-  /** Emitted when the connection status changes. */
-  void connected(bool connected);
+  /** Emitted when the control socket is connected and authenticated. */
+  void authenticated();
+  /** Emitted when Tor rejects our authentication attempt. */
+  void authenticationFailed(QString errmsg);
 
 private:
   /** Instantiates a connection used to talk to Tor's control port */
@@ -209,6 +213,7 @@ private slots:
   void onConnectFailed(QString errmsg);
   void onDisconnected();
   void onLogStdout(QString severity, QString message);
+  void onAuthenticated();
 };
 
 #endif

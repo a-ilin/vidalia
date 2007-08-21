@@ -116,9 +116,8 @@ NetViewer::NetViewer(QWidget *parent)
           _torControl, SLOT(closeStream(quint64)));
 
   /* Respond to changes in the status of the control connection */
-  connect(_torControl, SIGNAL(connected(bool)), ui.actionRefresh, SLOT(setEnabled(bool)));
-  connect(_torControl, SIGNAL(connected()), this, SLOT(gotConnected()));
-  connect(_torControl, SIGNAL(disconnected()), this, SLOT(gotDisconnected())); 
+  connect(_torControl, SIGNAL(authenticated()), this, SLOT(onAuthenticated()));
+  connect(_torControl, SIGNAL(disconnected()), this, SLOT(onDisconnected())); 
 
   /* Connect the slot to find out when geoip information has arrived */
   connect(&_geoip, SIGNAL(resolved(int, QList<GeoIp>)), 
@@ -137,22 +136,24 @@ NetViewer::showWindow()
   VidaliaWindow::showWindow();
 }
 
-/** Clears map, lists and stops timer when we get disconnected */
-void
-NetViewer::gotDisconnected()
-{
-  clear();
-  _refreshTimer.stop();
-}
-
 /** Loads data into map, lists and starts timer when we get connected*/
 void
-NetViewer::gotConnected()
+NetViewer::onAuthenticated()
 {
   _geoip.setSocksHost(_torControl->getSocksAddress(),
                       _torControl->getSocksPort());
   refresh();
   _refreshTimer.start();
+  ui.actionRefresh->setEnabled(true);
+}
+
+/** Clears map, lists and stops timer when we get disconnected */
+void
+NetViewer::onDisconnected()
+{
+  clear();
+  _refreshTimer.stop();
+  ui.actionRefresh->setEnabled(false);
 }
 
 /** Custom event handler. Catches the new descriptor events. */

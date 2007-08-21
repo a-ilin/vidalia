@@ -78,9 +78,9 @@ private slots:
   /** Called when the user selects a router in the list. */
   void routerSelected(RouterDescriptor router);
   /** Handles when we get connected to Tor network */
-  void gotConnected();
+  void onAuthenticated();
   /** Handles when we get disconnected from Tor network */
-  void gotDisconnected();
+  void onDisconnected();
   /** Resolves IP addresses in the resolve queue to geographic information. */
   void resolve();
   
