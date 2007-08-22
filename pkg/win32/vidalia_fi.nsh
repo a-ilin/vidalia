@@ -60,5 +60,5 @@ LangString TorbuttonAddToFirefoxDesc  ${LANG_FINNISH} "Lisää ${TORBUTTON_DESC}-l
 LangString TorbuttonFirefoxNotFound   ${LANG_FINNISH} "Firefox-selainta ei löytynyt koneelta. Torbuttonia ei asennettu."
 
 ; Miscellaneous Strings
-LangString AppData                    ${LANG_FINNISH} "Application Data"
-LangString AppDataUninstDesc          ${LANG_FINNISH} "Remove saved application data and configuration files."
+LangString AppData                    ${LANG_FINNISH} "Ohjelmatiedot"
+LangString AppDataUninstDesc          ${LANG_FINNISH} "Poista tallennetut ohjelmatiedot ja asetustiedostot."
