@@ -622,7 +622,7 @@
            <widget class="QLineEdit" name="lineControlAddress" >
             <property name="maximumSize" >
              <size>
-              <width>75</width>
+              <width>85</width>
               <height>16777215</height>
              </size>
             </property>
