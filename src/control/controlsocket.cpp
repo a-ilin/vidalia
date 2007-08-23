@@ -195,7 +195,11 @@ ControlSocket::readReply(ControlReply &reply, QString *errmsg)
 
     /* If the reply line contains data, then parse out the data up until the
      * trailing CRLF "." CRLF */
-    if (c == QChar('+')) {
+    if (c == QChar('+') &&
+        !line.startsWith("250+PROTOCOLINFO")) {
+        /* XXX The second condition above is a hack to deal with Tor
+         * 0.2.0.5-alpha that gives a malformed PROTOCOLINFO reply. This
+         * should be removed once that version of Tor is sufficiently dead. */
       while (true) {
         if (!readLine(line, errmsg)) {
           return false;
