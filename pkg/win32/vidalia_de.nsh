@@ -58,5 +58,5 @@ LangString TorbuttonAddToFirefoxDesc  ${LANG_GERMAN} "Die ${TORBUTTON_DESC}-Erwe
 LangString TorbuttonFirefoxNotFound   ${LANG_GERMAN} "Firefox konnte nicht gefunden werden. Torbutton wird nicht installiert."
 
 ; Miscellaneous Strings
-LangString AppData                    ${LANG_GERMAN} "Application Data"
-LangString AppDataUninstDesc          ${LANG_GERMAN} "Remove saved application data and configuration files."
+LangString AppData                    ${LANG_GERMAN} "Anwendungsdaten"
+LangString AppDataUninstDesc          ${LANG_GERMAN} "Entferne gespeicherte Anwendungsdaten und Konfigurationsdateien."
