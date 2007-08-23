@@ -816,38 +816,45 @@ MainWindow::authenticationFailed(QString errmsg)
 }
 
 /** Searches for and attempts to load the control authentication cookie. This
- * assumes the cookie is named 'control_auth_cookie'. If <b>cookieDir</b> is
+ * assumes the cookie is named 'control_auth_cookie'. If <b>cookiePath</b> is
  * empty, this method will search some default locations depending on the
- * current platform. */
+ * current platform. <b>cookiePath</b> can point to either a cookie file or a
+ * directory containing the cookie file. */
 QByteArray
-MainWindow::loadControlCookie(QString cookieDir)
+MainWindow::loadControlCookie(QString cookiePath)
 {
   QFile authCookie;
-  QStringList dirList;
+  QStringList pathList;
 
-  if (!cookieDir.isEmpty()) {
-    dirList << cookieDir;
+  if (!cookiePath.isEmpty()) {
+    pathList << cookiePath;
   } else {
     /* Try some default locations */
     TorSettings settings;
     QString dataDir = settings.getDataDirectory();
     if (!dataDir.isEmpty())
-      dirList << dataDir;
+      pathList << dataDir;
       
 #if defined(Q_WS_WIN)
-    dirList << expand_filename("%APPDATA%\\Tor");
+    pathList << expand_filename("%APPDATA%\\Tor");
 #else
-    dirList << expand_filename("~/.tor");
+    pathList << expand_filename("~/.tor");
 #endif
   }
   
   /* Search for the cookie file */
-  foreach (QString dir, dirList) {
-    if (!QFileInfo(dir + "/control_auth_cookie").exists())
+  foreach (QString path, pathList) {
+    QString cookieFile = QFileInfo(path).isFile() ?
+                          path : path + "/control_auth_cookie";
+    if (!QFileInfo(cookieFile).exists())
       continue;
-    authCookie.setFileName(dir + "/control_auth_cookie");
+    
+    authCookie.setFileName(cookieFile);
     if (authCookie.open(QIODevice::ReadOnly))
       return authCookie.readAll();
+    else
+      vWarn("Couldn't open cookie file '%1': %2")
+        .arg(cookieFile).arg(authCookie.errorString());
   }
   return QByteArray();
 }

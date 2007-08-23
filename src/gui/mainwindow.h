@@ -144,9 +144,10 @@ private:
   bool authenticate();
   /** Searches for and attempts to load the control authentication cookie.
    * This assumes the cookie is named 'control_auth_cookie'. If
-   * <b>cookieDir</b> is empty, this method will search some default locations
-   * depending on the current platform. */
-  QByteArray loadControlCookie(QString cookieDir = QString());
+   * <b>cookiePath</b> is empty, this method will search some default locations
+   * depending on the current platform. <b>cookiePath</b> can point to either
+   * a cookie file or a directory containing the cookie file. */
+  QByteArray loadControlCookie(QString cookiePath = QString());
 
   /** The current status of Tor. */
   TorStatus _status;
