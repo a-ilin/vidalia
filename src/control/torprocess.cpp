@@ -27,6 +27,7 @@
 
 #include <QString>
 #include <vidalia.h>
+#include <util/string.h>
 
 /* Needed for _PROCESS_INFORMATION so that pid() works on Win32 */
 #if defined (Q_OS_WIN32)
@@ -46,19 +47,29 @@ TorProcess::TorProcess()
           this,   SLOT(onError(QProcess::ProcessError)));
 }
 
+/** Formats the Tor process arguments for logging. */
+QString
+TorProcess::formatArguments(const QStringList args)
+{
+  QStringList out;
+  foreach (QString arg, args) {
+    out << (arg.contains(" ") || arg.isEmpty() ? string_escape(arg) : arg);
+  }
+  return out.join(" ");
+}
+
 /** Attempts to start the Tor process using the location, executable, and
  * command-line arguments specified in Vidalia's settings. If Tor starts, the
  * signal started() will be emitted. If Tor fails to start,
  * startFailed(errmsg) will be emitted, with an appropriate error message. */
 void
-TorProcess::start(QString app, QString args) 
+TorProcess::start(QString app, QStringList args) 
 {
 #if defined(Q_OS_WIN32)
   /* If we're on Windows, QProcess::start requires that paths with spaces are
    * quoted before being passed to it. */
   app = "\"" + app + "\"";
 #endif
-  app = app + " " + args;
   
   /* Attempt to start Tor with the given command-line arguments */
   QStringList env = QProcess::systemEnvironment();
@@ -74,8 +85,8 @@ TorProcess::start(QString app, QString args)
 #endif
   setEnvironment(env);
 
-  vNotice("Starting Tor using '%1'").arg(app);
-  QProcess::start(app, QIODevice::ReadOnly | QIODevice::Text);
+  vNotice("Starting Tor using '%1 %2'").arg(app).arg(formatArguments(args));
+  QProcess::start(app, args, QIODevice::ReadOnly | QIODevice::Text);
 }
 
 /** Stops the Tor process */

@@ -114,65 +114,57 @@ TorSettings::setExecutable(QString torExecutable)
   setValue(SETTING_TOR_EXECUTABLE, torExecutable);
 }
 
-/** Formats the argument name <b>name</b> with the given value <b>value</b>.
- * If <b>value</b> contains a space, <b>value</b> will be wrapped in quotes. */
-QString
-TorSettings::formatArgument(QString name, QString value)
-{
-  if (value.indexOf(" ") >= 0) {
-    value = "\"" + value + "\"";
-  }
-  return name + " " + value;
-}
-
 /** Returns a formatted QString of all currently set command-line arguments.
  * If an argument's value contains a space, then it will be wrapped in quotes.
  * */
-QString
+QStringList
 TorSettings::getArguments()
 {
-  QString args;
+  QStringList args;
 
   /* Add the torrc argument (if specified) */
   QString torrc = getTorrc();
-  if (!torrc.isEmpty()) {
-    args += formatArgument(TOR_ARG_TORRC, 
-                           expand_filename(torrc)) + " ";
-  }
+  if (!torrc.isEmpty())
+    args << TOR_ARG_TORRC << expand_filename(torrc);
+  
   /* Specify the location to use for Tor's data directory, if different from
    * the default. */
   QString dataDirectory = getDataDirectory();
-  if (!dataDirectory.isEmpty()) {
-    args += formatArgument(TOR_ARG_DATA_DIRECTORY,
-                           expand_filename(dataDirectory)) + " ";
-  }
+  if (!dataDirectory.isEmpty())
+    args << TOR_ARG_DATA_DIRECTORY << expand_filename(dataDirectory);
+  
   /* Add the ControlPort value */
   quint16 controlPort = getControlPort();
-  if (controlPort) {
-    args += formatArgument(TOR_ARG_CONTROL_PORT, 
-                           QString::number(controlPort)) + " ";
-  }
+  if (controlPort)
+    args << TOR_ARG_CONTROL_PORT << QString::number(controlPort);
+
   /* Add the control port authentication argument */
   AuthenticationMethod authMethod = getAuthenticationMethod();
   if (authMethod == PasswordAuth) {
     if (useRandomPassword())
       setControlPassword(generateRandomPassword());
+    
     QString password = getControlPassword();
-    args += formatArgument(TOR_ARG_HASHED_PASSWORD,
-                           hashPassword(password)) + " ";
+    args << TOR_ARG_HASHED_PASSWORD << hashPassword(password);
+    args << TOR_ARG_COOKIE_AUTH << "0";
   } else if (authMethod == CookieAuth) {
-    args += formatArgument(TOR_ARG_COOKIE_AUTH, "1") + " ";
+    args << TOR_ARG_COOKIE_AUTH << "1";
+    args << TOR_ARG_HASHED_PASSWORD << "";
+  } else {
+    args << TOR_ARG_COOKIE_AUTH << "0";
+    args << TOR_ARG_HASHED_PASSWORD << "";
   }
+  
   /* Add the User argument (if specified) */
   QString user = getUser();
-  if (!user.isEmpty()) {
-    args += formatArgument(TOR_ARG_USER, user) + " ";
-  }
+  if (!user.isEmpty())
+    args << TOR_ARG_USER << user;
+    
   /* Add the Group argument (if specified) */
   QString group = getGroup();
-  if (!group.isEmpty()) {
-    args += formatArgument(TOR_ARG_GROUP, group);
-  }
+  if (!group.isEmpty())
+    args << TOR_ARG_GROUP << group;
+  
   return args;
 }
 

@@ -59,7 +59,7 @@ public:
   void setDataDirectory(QString dataDir);
   
   /** Builds and formats a list of command-line arguments. */
-  QString getArguments();
+  QStringList getArguments();
   
   /** Gets the torrc to use when starting Tor. */
   QString getTorrc();
@@ -106,9 +106,6 @@ public:
   void setGroup(QString group);
 
 private:
-  /** Formats the argument name <b>name</b> with the given value <b>value</b>.
-   * If <b>value</b> contains a space, <b>value</b> will be wrapped in quotes. */
-  QString formatArgument(QString name, QString value);
   /** Returns the string description of the authentication method specified by
    * <b>method</b>. The authentication method string is stored in  Vidalia's
    * configuration file. */

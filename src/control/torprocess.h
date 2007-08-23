@@ -40,7 +40,7 @@ public:
   TorProcess();
 
   /** Start the Tor process */
-  void start(QString app, QString args);
+  void start(QString app, QStringList args);
   /** Stop the Tor process */
   bool stop(QString *errmsg = 0);
 
@@ -64,6 +64,10 @@ private slots:
   void onReadyRead();
   /** Called when an error occurs in the process. */
   void onError(QProcess::ProcessError error);
+
+private:
+  /** Formats the Tor process arguments for logging. */
+  QString formatArguments(const QStringList args);
 };
 
 #endif
