@@ -130,3 +130,89 @@ base16_encode(const QByteArray buf)
   return hex;
 }
 
+/** Given a quoted string <b>str</b>, this function returns an unquoted,
+ * unescaped string. <b>str</b> must start and end with an unescaped quote. */
+QString
+string_unescape(const QString str, bool *ok)
+{
+  QString out;
+ 
+  /* The string must start and end with an unescaped dquote */
+  if (str.length() < 2 || !str.startsWith("\"") || !str.endsWith("\"") ||
+      (str.endsWith("\\\"") && !str.endsWith("\\\\\""))) {
+    if (ok)
+      *ok = false;
+    return QString();
+  }
+  for (int i = 1; i < str.length()-1; i++) {
+    if (str[i] == '\\')
+      i++;
+    out.append(str[i]);
+  }
+  if (ok)
+    *ok = true;
+  return out;
+}
+
+/** Parses a series of space-separated key[=value|="value"] tokens from
+ * <b>str</b> and returns the mappings in a QHash. If <b>str</b> was unable
+ * to be parsed, <b>ok</b> is set to false. */
+QHash<QString,QString>
+string_parse_keyvals(const QString str, bool *ok)
+{
+  int i, len;
+  bool tmp_ok;
+  QHash<QString,QString> keyvals;
+  
+  i = 0;
+  len = str.length();
+  while (i < len && str[i].isSpace())
+    i++; /* Skip initial whitespace */
+  while (i < len) {
+    QString key, val;
+    
+    while (i < len && !str[i].isSpace() && str[i] != '=')
+      key.append(str[i++]);
+      
+    if (i < len && str[i] == '=') {
+      if (++i < len && str[i] == '\"') {
+        /* The value is wrapped in quotes */
+        val.append(str[i]);
+        while (++i < len) {
+          val.append(str[i]);
+          if (str[i] == '\\') {
+            if (++i == len)
+              goto error;
+            val.append(str[i]);
+          } else if (str[i] == '\"') {
+            i++;
+            break;
+          } 
+        }
+        val = string_unescape(val, &tmp_ok);
+        if (!tmp_ok)
+          goto error;
+        keyvals.insert(key, val);
+      } else {
+        /* The value was not wrapped in quotes */
+        while (i < len && !str[i].isSpace())
+          val.append(str[i++]);
+        keyvals.insert(key, val);
+      }
+    } else {
+      /* The key had no value */
+      keyvals.insert(key, QString(""));
+    }
+    while (i < len && str[i].isSpace())
+      i++;
+  }
+  if (ok)
+    *ok = true;
+  return keyvals;
+
+error:
+  if (ok)
+    *ok = false;
+  return QHash<QString,QString>();
+}
+

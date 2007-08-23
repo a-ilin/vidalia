@@ -29,6 +29,8 @@
 #define __STRING_H
 
 #include <QStringList>
+#include <QHash>
+
 
 /** Creates a QStringList from the array of C strings. */
 QStringList char_array_to_stringlist(char **arr, int len);
@@ -54,6 +56,15 @@ QString string_wrap(QString str, int width, QString sep, QString le);
  * returns the result. This function is derived from base16_encode() in Tor's
  * util.c. See LICENSE for details on Tor's license. */
 QString base16_encode(const QByteArray buf);
+
+/** Given a quoted string <b>str</b>, this function returns an unquoted,
+ * unescaped string. <b>str</b> must start and end with an unescaped quote. */
+QString string_unescape(const QString str, bool *ok = 0);
+
+/** Parses a series of space-separated key[=value|="value"] tokens from
+ * <b>str</b> and returns the mappings in a QHash. If <b>str</b> was unable
+ * to be parsed, <b>ok</b> is set to false. */
+QHash<QString,QString> string_parse_keyvals(const QString str, bool *ok = 0);
 
 #endif
 
