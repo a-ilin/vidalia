@@ -931,6 +931,20 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>lineControlAddress</tabstop>
+  <tabstop>lineControlPort</tabstop>
+  <tabstop>cmbAuthMethod</tabstop>
+  <tabstop>linePassword</tabstop>
+  <tabstop>chkRandomPassword</tabstop>
+  <tabstop>lineTorConfig</tabstop>
+  <tabstop>btnBrowseTorConfig</tabstop>
+  <tabstop>lineTorDataDirectory</tabstop>
+  <tabstop>btnBrowseTorDataDirectory</tabstop>
+  <tabstop>lineUser</tabstop>
+  <tabstop>lineGroup</tabstop>
+  <tabstop>chkUseService</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
