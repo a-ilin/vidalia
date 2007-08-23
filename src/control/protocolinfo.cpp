@@ -28,7 +28,7 @@
 #include "protocolinfo.h"
 
 
-/** Returns true if this ProtoclInfo object contains no data. */
+/** Returns true if this ProtocolInfo object contains no data. */
 bool
 ProtocolInfo::isEmpty() const
 {

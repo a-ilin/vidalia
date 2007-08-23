@@ -37,7 +37,7 @@ public:
   /** Default constructor. */
   ProtocolInfo() {}
   
-  /** Returns true if this ProtoclInfo object contains no data. */
+  /** Returns true if this ProtocolInfo object contains no data. */
   bool isEmpty() const;
   
   /** Sets the authentication methods Tor currently accepts. <b>methods</b>
