@@ -338,7 +338,8 @@ TorControl::authenticate(const QByteArray cookie, QString *errmsg)
 bool
 TorControl::authenticate(const QString password, QString *errmsg)
 {
-  ControlCommand cmd("AUTHENTICATE", QString("\"%1\"").arg(password));
+  ControlCommand cmd("AUTHENTICATE", QString("%1")
+                                      .arg(string_escape(password)));
   ControlReply reply;
   QString str;
   

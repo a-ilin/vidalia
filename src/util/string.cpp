@@ -130,6 +130,22 @@ base16_encode(const QByteArray buf)
   return hex;
 }
 
+/** Given a string <b>str</b>, this function returns a quoted string with all
+ * '"' and '\' characters escaped with a single '\'. */
+QString
+string_escape(const QString str)
+{
+  QString out;
+  out.append('\"');
+  for (int i = 0; i < str.length(); i++) {
+    if (str[i] == '\"' || str[i] == '\\')
+      out.append('\\');
+    out.append(str[i]);
+  }
+  out.append('\"');
+  return out;
+}
+
 /** Given a quoted string <b>str</b>, this function returns an unquoted,
  * unescaped string. <b>str</b> must start and end with an unescaped quote. */
 QString

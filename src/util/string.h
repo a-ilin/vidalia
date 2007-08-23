@@ -57,6 +57,10 @@ QString string_wrap(QString str, int width, QString sep, QString le);
  * util.c. See LICENSE for details on Tor's license. */
 QString base16_encode(const QByteArray buf);
 
+/** Given a string <b>str</b>, this function returns a quoted string with all
+ * '"' and '\' characters escaped with a single '\'. */
+QString string_escape(const QString str);
+
 /** Given a quoted string <b>str</b>, this function returns an unquoted,
  * unescaped string. <b>str</b> must start and end with an unescaped quote. */
 QString string_unescape(const QString str, bool *ok = 0);
