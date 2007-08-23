@@ -39,6 +39,7 @@
 #include "torsignal.h"
 #include "routerdescriptor.h"
 #include "addressmap.h"
+#include "protocolinfo.h"
 
 #if defined(Q_OS_WIN32)
 #include "torservice.h"
@@ -74,7 +75,10 @@ public:
   bool authenticate(const QByteArray cookie, QString *errmsg = 0);
   /** Sends an authentication password to Tor. */
   bool authenticate(const QString password = QString(), QString *errmsg = 0);
-
+  
+  /** Sends a PROTOCOLINFO command to Tor and parses the response. */
+  ProtocolInfo protocolInfo(QString *errmsg = 0);
+  
   /** Sends a GETINFO message to Tor based on the given keys */
   bool getInfo(QHash<QString,QString> &map, QString *errmsg = 0);
   /** Sends a GETINFO message for a single info value to Tor */

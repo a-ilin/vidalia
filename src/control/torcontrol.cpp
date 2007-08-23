@@ -365,6 +365,50 @@ TorControl::onAuthenticated()
   emit authenticated();
 }
 
+/** Sends a PROTOCOLINFO command to Tor and parses the response. */
+ProtocolInfo
+TorControl::protocolInfo(QString *errmsg)
+{
+  ControlCommand cmd("PROTOCOLINFO", "1");
+  ControlReply reply;
+  ProtocolInfo pi;
+  QString msg, topic;
+  QHash<QString,QString> keyvals;
+  int idx;
+  bool ok;
+
+  if (!send(cmd, reply, errmsg))
+    return ProtocolInfo();
+
+  foreach (ReplyLine line, reply.getLines()) {
+    if (line.getStatus() != "250")
+      continue;
+    
+    msg = line.getMessage().trimmed();
+    idx = msg.indexOf(" ");
+    topic = msg.mid(0, idx).toUpper();
+    
+    if (idx > 0) {
+      keyvals = string_parse_keyvals(msg.mid(idx+1), &ok);
+      if (!ok)
+        continue; /* Ignore malformed lines */
+    } else {
+      keyvals = QHash<QString,QString>();
+    }
+   
+    if (topic == "AUTH") {
+      if (keyvals.contains("METHODS"))
+        pi.setAuthMethods(keyvals.value("METHODS"));
+      if (keyvals.contains("COOKIEFILE"))
+        pi.setCookieAuthFile(keyvals.value("COOKIEFILE"));
+    } else if (topic == "VERSION") {
+      if (keyvals.contains("Tor"))
+        pi.setTorVersion(keyvals.value("Tor"));
+    }
+  }
+  return pi;
+}
+
 /** Sends a GETINFO message to Tor based on the given map of keyvals. The
  * syntax is:
  * 
