@@ -708,13 +708,25 @@ MainWindow::authenticate()
 {
   TorSettings::AuthenticationMethod authMethod;
   TorSettings settings;
-
+  ProtocolInfo pi;
+  
   updateTorStatus(Authenticating);
   
+  pi = _torControl->protocolInfo();
+  if (!pi.isEmpty()) {
+    QStringList authMethods = pi.authMethods();
+    if (authMethods.contains("COOKIE"))
+      settings.setAuthenticationMethod(TorSettings::CookieAuth);
+    else if (authMethods.contains("HASHEDPASSWORD"))
+      settings.setAuthenticationMethod(TorSettings::PasswordAuth);
+    else if (authMethods.contains("NULL"))
+      settings.setAuthenticationMethod(TorSettings::NullAuth);
+  }
+      
   authMethod = settings.getAuthenticationMethod(); 
   if (authMethod == TorSettings::CookieAuth) {
     /* Try to load an auth cookie and send it to Tor */
-    QByteArray cookie = loadControlCookie();
+    QByteArray cookie = loadControlCookie(pi.cookieAuthFile());
     while (cookie.isEmpty()) {
       /* Prompt the user to find their control_auth_cookie */
       int ret = VMessageBox::question(this,
