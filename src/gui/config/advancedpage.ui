@@ -573,7 +573,11 @@
            </widget>
           </item>
           <item>
-           <widget class="QLineEdit" name="linePassword" />
+           <widget class="QLineEdit" name="linePassword" >
+            <property name="echoMode" >
+             <enum>QLineEdit::Password</enum>
+            </property>
+           </widget>
           </item>
           <item>
            <widget class="QCheckBox" name="chkRandomPassword" >
