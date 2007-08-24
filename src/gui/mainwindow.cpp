@@ -383,15 +383,17 @@ MainWindow::createMenuBar()
 #endif
 }
 
-/** Updates the UI to reflect Tor's current <b>status</b>. */
-void
+/** Updates the UI to reflect Tor's current <b>status</b>. Returns the
+ * previously set TorStatus value.*/
+MainWindow::TorStatus
 MainWindow::updateTorStatus(TorStatus status)
 {
   QString statusText, actionText;
   QString trayIconFile, statusIconFile;
-  
+  TorStatus prevStatus = _status;
+ 
   vNotice("Tor status changed from '%1' to '%2'.")
-    .arg(toString(_status)).arg(toString(status));
+    .arg(toString(prevStatus)).arg(toString(status));
   _status = status;
 
   if (status == Stopped) {
@@ -451,11 +453,11 @@ MainWindow::updateTorStatus(TorStatus status)
       ui.lblStartStopTor->setStatusTip(statusText);
       ui.lblStartStopTor->setAnimation(QPixmap(ANIM_PROCESS_WORKING));
   } else if (status == Connecting) {
-      statusText = tr("Vidalia is connecting to Tor.");
+      statusText = tr("Vidalia is connecting to Tor");
   } else if (status == Authenticating) {
-      statusText = tr("Vidalia is authenticating to Tor.");
+      statusText = tr("Vidalia is authenticating to Tor");
   } else if (status == Authenticated) {
-      statusText = tr("Tor is running.");
+      statusText = tr("Tor is running");
       trayIconFile = IMG_TOR_RUNNING;
       statusIconFile = IMG_TOR_RUNNING_48;
   }
@@ -475,6 +477,7 @@ MainWindow::updateTorStatus(TorStatus status)
     _trayIcon.setToolTip(statusText);
     ui.lblTorStatus->setText(statusText);
   }
+  return prevStatus;
 }
 
 #if defined(USE_QSYSTEMTRAYICON)
@@ -500,6 +503,7 @@ MainWindow::toggleShowOnStartup(bool checked)
 void 
 MainWindow::start()
 {
+  updateTorStatus(Starting);
   /* This doesn't get set to false until Tor is actually up and running, so we
    * don't yell at users twice if their Tor doesn't even start, due to the fact
    * that QProcess::stopped() is emitted even if the process didn't even
@@ -507,7 +511,6 @@ MainWindow::start()
   _isIntentionalExit = true;
   /* Kick off the Tor process */
   _torControl->start();
-  updateTorStatus(Starting);
 }
 
 /** Called when the Tor process fails to start, for example, because the path
@@ -551,6 +554,8 @@ MainWindow::started()
   _isIntentionalExit = false;
   /* We haven't started a delayed shutdown yet. */
   _delayedShutdownStarted = false;
+  /* Remember whether we started Tor or not */
+  _isVidaliaRunningTor = _torControl->isVidaliaRunningTor();
   /* Try to connect to Tor's control port */
   _torControl->connect();
 }
@@ -560,6 +565,8 @@ MainWindow::started()
 void
 MainWindow::connectFailed(QString errmsg)
 {
+  updateTorStatus(Disconnected);
+
   /* Ok, ok. It really isn't going to connect. I give up. */
   int response = VMessageBox::warning(this, 
                    tr("Error Connecting to Tor"), p(errmsg),
@@ -585,15 +592,9 @@ MainWindow::stop()
 {
   ServerSettings server(_torControl);
   QString errmsg;
-  bool rc, delayShutdown = false;
-  
-  /* If Vidalia is not running Tor and we were never authenticated, then 
-   * all we can do is simply disconnect the control socket. */
-  if (!_torControl->isVidaliaRunningTor() && _status != Authenticated) {
-    disconnect();
-    return true;
-  }
-  
+  TorStatus prevStatus;
+  bool rc;
+
   /* If we're running a server, give users the option of terminating
    * gracefully so clients have time to find new servers. */
   if (server.isServerEnabled() && !_delayedShutdownStarted) {
@@ -608,25 +609,22 @@ MainWindow::stop()
                         VMessageBox::No, 
                         VMessageBox::Cancel|VMessageBox::Escape);
     if (response == VMessageBox::Yes)
-      delayShutdown = true;
+      _delayedShutdownStarted = true;
     else if (response == VMessageBox::Cancel)
       return false;
   }
-
-  if (delayShutdown) {
+  
+  prevStatus = updateTorStatus(Stopping);  
+  if (_delayedShutdownStarted) {
     /* Start a delayed shutdown */
     rc = _torControl->signal(TorSignal::Shutdown, &errmsg);
-    _delayedShutdownStarted = rc;
   } else {
     /* We want Tor to stop now, regardless of whether we're a server. */
     _isIntentionalExit = true;
     rc = _torControl->stop(&errmsg);
   }
   
-  if (rc) {
-    /* Indicate that Tor is about to shut down */
-    updateTorStatus(Stopping);
-  } else {
+  if (!rc) {
     /* We couldn't tell Tor to stop, for some reason. */
     int response = VMessageBox::warning(this, tr("Error Stopping Tor"),
                      p(tr("Vidalia was unable to stop Tor.")) + p(errmsg),
@@ -639,6 +637,8 @@ MainWindow::stop()
     }
     /* Tor is still running since stopping failed */
     _isIntentionalExit = false;
+    _delayedShutdownStarted = false;
+    updateTorStatus(prevStatus);
   }
   return rc;
 }
@@ -675,8 +675,7 @@ void
 MainWindow::connected()
 {
   updateTorStatus(Connected);
-  if (!authenticate())
-    stop();
+  authenticate();
 }
 
 /** Called when Vidalia wants to disconnect from a Tor it did not start. */
@@ -691,13 +690,17 @@ MainWindow::disconnect()
 void
 MainWindow::disconnected()
 {
-  /*XXX We should warn here if we get disconnected when we didn't intend to */
-  if (_torControl->isVidaliaRunningTor())
-    updateTorStatus(Disconnected);
-  else
+  updateTorStatus(Disconnected);
+  if (!_isVidaliaRunningTor) {
+    /* If we didn't start our own Tor process, interpret losing the control
+     * connection as "Tor is stopped". */
     updateTorStatus(Stopped);
+  }
+  
+  /*XXX We should warn here if we get disconnected when we didn't intend to */
   _newIdentityAct->setEnabled(false);
   ui.lblNewIdentity->setEnabled(false);
+  _isVidaliaRunningTor = false;
 }
 
 /** Attempts to authenticate to Tor's control port, depending on the
@@ -739,13 +742,13 @@ MainWindow::authenticate()
                 VMessageBox::Browse, VMessageBox::Cancel);
       
       if (ret == VMessageBox::Cancel)
-        return false;
+        goto cancel;
       QString cookieDir = QFileDialog::getOpenFileName(this,
                             tr("Tor Data Directory"),
                             settings.getDataDirectory(),
                             tr("Tor Control Cookie (control_auth_cookie)"));
       if (cookieDir.isEmpty())
-        return false;
+        goto cancel;
       cookieDir = QFileInfo(cookieDir).absolutePath();
       cookie = loadControlCookie(cookieDir);
     }
@@ -757,6 +760,13 @@ MainWindow::authenticate()
   }
   /* No authentication. Send an empty password. */
   return _torControl->authenticate(QString(""));
+
+cancel:
+  if (_isVidaliaRunningTor)
+    stop();
+  else
+    disconnect();
+  return false;
 }
 
 /** Called when Vidalia has successfully authenticated to Tor. */
@@ -812,7 +822,11 @@ MainWindow::authenticationFailed(QString errmsg)
     tr("Error Authenticating to Tor"),
     p(tr("Vidalia was unable to authenticate to Tor.")) + p(errmsg),
     VMessageBox::Ok);
-  stop();
+
+  if (_torControl->isRunning() && _isVidaliaRunningTor) 
+    stop();
+  else if (_torControl->isConnected())
+    disconnect();
 }
 
 /** Searches for and attempts to load the control authentication cookie. This

@@ -136,8 +136,9 @@ private:
   void createMenuBar();
   /** Returns true if we're running on a platform with tray icon support. */
   bool isTrayIconSupported();
-  /** Updates the UI to reflect Tor's current <b>status</b>. */
-  void updateTorStatus(TorStatus status);
+  /** Updates the UI to reflect Tor's current <b>status</b>. Returns the
+   * previously set TorStatus value. */
+  TorStatus updateTorStatus(TorStatus status);
   /** Converts a TorStatus enum value to a string for debug logging purposes. */
   QString toString(TorStatus status);
   /** Authenticates Vidalia to Tor's control port. */
@@ -155,6 +156,8 @@ private:
   bool _isIntentionalExit;
   /** Tracks whether we started a delayed server shutdown. */
   bool _delayedShutdownStarted;
+  /** Set to true if Vidalia started its own Tor process. */
+  bool _isVidaliaRunningTor;
   /** A MessageLog object which handles logging Tor messages */
   MessageLog* _messageLog;
   /** A BandwidthGraph object which handles monitoring Tor bandwidth usage */
