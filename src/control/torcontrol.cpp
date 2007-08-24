@@ -165,12 +165,9 @@ TorControl::onStopped(int exitCode, QProcess::ExitStatus exitStatus)
 {
   closeTorProcess();
   
-  if (_controlConn->status() == ControlConnection::Connecting) {
+  if (_controlConn->status() == ControlConnection::Connecting)
     _controlConn->cancelConnect();
-  } else {
-    disconnect();
-  }
-
+  
   emit stopped();
   emit stopped(exitCode, exitStatus);
 }
@@ -270,13 +267,6 @@ TorControl::onDisconnected()
 
   /* Let interested parties know we lost our control connection */
   emit disconnected();
-  
-  if (!isVidaliaRunningTor()) {
-    /* If we're not running our own Tor, then we interpret the closing of 
-     * our control connection to mean that Tor stopped. */
-    emit stopped();
-    emit stopped(0, QProcess::NormalExit);
-  }
 }
 
 /** Check if the control socket is connected */
