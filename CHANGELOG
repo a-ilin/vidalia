@@ -1,3 +1,17 @@
+0.0.14  ??-Aug-2007
+	o Add support for Tor's HashedControlPassword and CookieAuthentication
+	  options. Password authentication is enabled by default.
+  o Add support for Tor's new PROTOCOLINFO control command.
+  o Support running on Windows NT 4.0 again.
+	o Allow the people who think clicking 'New Identity' is the solution to
+  	everything to be disappointed six times per minute, instead of once.
+  o Add the ability to configure Tor's data directory.
+	o Give users the option of not removing %APPDATA%\Tor and %APPDATA%\Vidalia
+  	in the Win32 Vidalia and bundle installers.
+  o Add a Czech GUI and installer translation from el Mar.
+  o Updated Finnish and German translations.
+
+
 0.0.13  02-Aug-2007
   o Remove the control protocol version checking logic, since Tor will now
     just hang up if the first command received isn't a valid AUTHENTICATE
