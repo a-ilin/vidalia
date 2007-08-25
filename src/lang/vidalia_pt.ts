@@ -64,107 +64,102 @@
         <translation>Porta de Controle</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="576"/>
-        <source>9051</source>
-        <translation>9051</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/advancedpage.ui" line="625"/>
+        <location filename="../gui/config/advancedpage.ui" line="714"/>
         <source>Start Tor with the specified configuration file (torrc)</source>
         <translation>Iniciar o Tor com o seguinte arquivo de configuração (torrc)</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="644"/>
+        <location filename="../gui/config/advancedpage.ui" line="733"/>
         <source>Select path to Tor configuration file</source>
         <translation>Selecione o diretório do arquivo de configuração do Tor</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="647"/>
+        <location filename="../gui/config/advancedpage.ui" line="792"/>
         <source>Browse</source>
         <translation>Navegar</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="666"/>
+        <location filename="../gui/config/advancedpage.ui" line="811"/>
         <source>Permissions</source>
         <translation>Permissões</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="689"/>
+        <location filename="../gui/config/advancedpage.ui" line="834"/>
         <source>Run as User:</source>
         <translation>Executar como o Usuário:</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="702"/>
+        <location filename="../gui/config/advancedpage.ui" line="847"/>
         <source>Vidalia will run with this User&apos;s permissions</source>
         <translation>O Vidalia será executado com as permissões deste Usuário</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="722"/>
+        <location filename="../gui/config/advancedpage.ui" line="867"/>
         <source>Run as Group:</source>
         <translation>Executar como o Grupo:</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="729"/>
+        <location filename="../gui/config/advancedpage.ui" line="874"/>
         <source>Vidalia will run with this Group&apos;s permissions</source>
         <translation>O Vidalia será executado com as permissões deste Grupo</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="119"/>
+        <location filename="../gui/config/advancedpage.cpp" line="188"/>
         <source>Select Tor Configuration File</source>
         <translation>Escolha o arquivo de Configuração do Tor</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="132"/>
+        <location filename="../gui/config/advancedpage.cpp" line="201"/>
         <source>File Not Found</source>
         <translation>Arquivo Não Encontrado</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="134"/>
+        <location filename="../gui/config/advancedpage.cpp" line="203"/>
         <source>%1 does not exist. Would you like to create it?</source>
         <translation>%1 não existe. Você gostaria de criá-lo?</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="145"/>
+        <location filename="../gui/config/advancedpage.cpp" line="214"/>
         <source>Failed to Create File</source>
         <translation>Falha ao Criar o Arquivo</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="146"/>
+        <location filename="../gui/config/advancedpage.cpp" line="215"/>
         <source>Unable to create %1 [%2]</source>
         <translation>Não foi possível criar %1 [%2]</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="753"/>
+        <location filename="../gui/config/advancedpage.ui" line="898"/>
         <source>Service</source>
         <translation>Serviço</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="768"/>
+        <location filename="../gui/config/advancedpage.ui" line="913"/>
         <source>Enable this if you wish to run Tor as a Windows service</source>
         <translation>Habilite este se você deseja executar o Tor como um serviço do Windows</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="771"/>
+        <location filename="../gui/config/advancedpage.ui" line="916"/>
         <source>Run Tor in the background as a Windows service</source>
         <translation>Execute o Tor em segundo plano como um serviço do Windows</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="169"/>
+        <location filename="../gui/config/advancedpage.cpp" line="251"/>
         <source>Unable to remove Tor Service</source>
         <translation>Não foi possível remover o Serviço do Tor</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="180"/>
+        <location filename="../gui/config/advancedpage.cpp" line="262"/>
         <source>Unable to install Tor Service</source>
         <translation>Não foi possível instalar o Serviço do Tor</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="181"/>
+        <location filename="../gui/config/advancedpage.cpp" line="263"/>
         <source>Vidalia was unable to install the Tor service.</source>
         <translation>O Vidalia não conseguiu instalar o serviço do Tor.</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="171"/>
+        <location filename="../gui/config/advancedpage.cpp" line="253"/>
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
@@ -173,28 +168,73 @@ You may need to remove it manually.</source>
 Você deverá removê-lo manualmente.</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="604"/>
+        <location filename="../gui/config/advancedpage.ui" line="693"/>
         <source>Tor Configuration File</source>
         <translation>Arquivo de configuração do Tor</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="573"/>
-        <source>Port that Vidalia uses to communicate with Tor.</source>
-        <translation>Porta utilizada pelo Vidalia para comunicar-se com o Tor.</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/advancedpage.cpp" line="80"/>
+        <location filename="../gui/config/advancedpage.cpp" line="87"/>
         <source>&apos;%1&apos; is not a valid IP address.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="542"/>
-        <source>IP address on which Tor is listening for controller connections.</source>
+        <location filename="../gui/config/advancedpage.ui" line="631"/>
+        <source>:</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="549"/>
-        <source>:</source>
+        <location filename="../gui/config/advancedpage.cpp" line="98"/>
+        <source>You selected &apos;Password&apos; authentication, but did not specify a password.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.cpp" line="230"/>
+        <source>Select a Directory to Use for Tor Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="522"/>
+        <source>Authentication:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="532"/>
+        <source>Address:</source>
+        <translation type="unfinished">Endereço:</translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="565"/>
+        <source>Cookie</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="570"/>
+        <source>Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="585"/>
+        <source>Randomly Generate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="749"/>
+        <source>Tor Data Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="770"/>
+        <source>Store Tor data in the following directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="789"/>
+        <source>Select the directory used to store Tor data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="560"/>
+        <source>None</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -419,12 +459,12 @@ Você deverá removê-lo manualmente.</translation>
 <context>
     <name>ControlConnection</name>
     <message>
-        <location filename="../control/controlconnection.cpp" line="294"/>
+        <location filename="../control/controlconnection.cpp" line="311"/>
         <source>Control socket is not connected.</source>
         <translation>O soquete de controle não está conectado.</translation>
     </message>
     <message>
-        <location filename="../control/controlconnection.cpp" line="239"/>
+        <location filename="../control/controlconnection.cpp" line="256"/>
         <source>Control socket is not connected</source>
         <translation>O soquete de controle não está conectado</translation>
     </message>
@@ -432,45 +472,34 @@ Você deverá removê-lo manualmente.</translation>
 <context>
     <name>ControlSocket</name>
     <message>
-        <location filename="../control/controlsocket.cpp" line="65"/>
+        <location filename="../control/controlsocket.cpp" line="63"/>
         <source>Error connecting to %1:%2 [%3]</source>
         <translation>Erro ao conectar a %1:%2 [%3]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="101"/>
+        <location filename="../control/controlsocket.cpp" line="79"/>
         <source>Error disconnecting socket. [%1]</source>
         <translation>Erro ao desconectar o soquete. [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="159"/>
+        <location filename="../control/controlsocket.cpp" line="114"/>
         <source>Error sending control command. [%1]</source>
         <translation>Erro ao enviar um comando de controle. [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="196"/>
+        <location filename="../control/controlsocket.cpp" line="151"/>
         <source>Socket disconnected while attempting to read a line of data.</source>
         <translation>Soquete desconectado enquanto tentava ler uma linha de dados.</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="234"/>
+        <location filename="../control/controlsocket.cpp" line="189"/>
         <source>Invalid control reply. [%1]</source>
         <translation>Resposta de controle Inválida. [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="150"/>
+        <location filename="../control/controlsocket.cpp" line="104"/>
         <source>Control socket is not connected.</source>
         <translation>O soquete de controle não está conectado.</translation>
-    </message>
-    <message>
-        <location filename="../control/controlsocket.cpp" line="81"/>
-        <source>Vidalia was unable to determine Tor&apos;s control protocol version. Verify that your control port number is set correctly and you are running a recent version of Tor.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../control/controlsocket.cpp" line="85"/>
-        <source>Vidalia only supports Version 1 of Tor&apos;s control protocol (version %1 detected).
-Upgrade to a newer version of Tor.</source>
-        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -682,22 +711,22 @@ Upgrade to a newer version of Tor.</source>
         <translation>Esc</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.cpp" line="121"/>
+        <location filename="../gui/help/browser/helpbrowser.cpp" line="133"/>
         <source>Error Loading Help Contents: </source>
         <translation>Erro ao Carregar o Conteúdo da Ajuda: </translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.cpp" line="372"/>
+        <location filename="../gui/help/browser/helpbrowser.cpp" line="384"/>
         <source>Search reached end of document</source>
         <translation>A Busca chegou ao final do documento</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.cpp" line="374"/>
+        <location filename="../gui/help/browser/helpbrowser.cpp" line="386"/>
         <source>Search reached start of document</source>
         <translation>A Busca chegou ao início do documento</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.cpp" line="376"/>
+        <location filename="../gui/help/browser/helpbrowser.cpp" line="388"/>
         <source>Text not found in document</source>
         <translation>Texto não encontrado no documento</translation>
     </message>
@@ -717,12 +746,12 @@ Upgrade to a newer version of Tor.</source>
         <translation>Procurando por:</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.cpp" line="133"/>
+        <location filename="../gui/help/browser/helpbrowser.cpp" line="145"/>
         <source>Supplied XML file is not a valid Contents document.</source>
         <translation>O Arquivo XML de Conteúdo fornecido não é válido.</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.cpp" line="421"/>
+        <location filename="../gui/help/browser/helpbrowser.cpp" line="433"/>
         <source>Found %1 results</source>
         <translation>Encontrado(s) %1 resultado(s)</translation>
     </message>
@@ -776,23 +805,13 @@ Upgrade to a newer version of Tor.</source>
         <translation>Mensagens Mostradas: </translation>
     </message>
     <message>
-        <location filename="../gui/log/logtreewidget.cpp" line="235"/>
+        <location filename="../gui/log/logtreewidget.cpp" line="230"/>
         <source>Messages Shown: %1</source>
         <translation>Mensagens Mostradas: %1</translation>
     </message>
 </context>
 <context>
     <name>MainWindow</name>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="194"/>
-        <source>Start</source>
-        <translation type="obsolete">Iniciar</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="198"/>
-        <source>Stop</source>
-        <translation type="obsolete">Parar</translation>
-    </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="674"/>
         <source>About</source>
@@ -819,97 +838,92 @@ Upgrade to a newer version of Tor.</source>
         <translation>Ajuda</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="285"/>
-        <source>Ctrl+S</source>
-        <translation type="obsolete">Ctrl+S</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="337"/>
+        <location filename="../gui/mainwindow.cpp" line="344"/>
         <source>Ctrl+T</source>
         <translation>Ctrl+T</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="338"/>
+        <location filename="../gui/mainwindow.cpp" line="345"/>
         <source>Ctrl+B</source>
         <translation>Ctrl+B</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="339"/>
+        <location filename="../gui/mainwindow.cpp" line="346"/>
         <source>Ctrl+L</source>
         <translation>Ctrl+L</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="341"/>
+        <location filename="../gui/mainwindow.cpp" line="348"/>
         <source>Ctrl+?</source>
         <translation>Ctrl+?</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="354"/>
+        <location filename="../gui/mainwindow.cpp" line="361"/>
         <source>File</source>
         <translation>Arquivo</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="357"/>
+        <location filename="../gui/mainwindow.cpp" line="364"/>
         <source>Tor</source>
         <translation>Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="362"/>
+        <location filename="../gui/mainwindow.cpp" line="369"/>
         <source>View</source>
         <translation>Visualizar</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="371"/>
+        <location filename="../gui/mainwindow.cpp" line="378"/>
         <source>Vidalia Help</source>
         <translation>Ajuda do Vidalia</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="503"/>
+        <location filename="../gui/mainwindow.cpp" line="524"/>
         <source>Error Starting Tor</source>
         <translation>Erro ao Iniciar o Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="540"/>
+        <location filename="../gui/mainwindow.cpp" line="567"/>
         <source>Error Connecting to Tor</source>
         <translation>Erro ao Conectar ao Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="599"/>
+        <location filename="../gui/mainwindow.cpp" line="624"/>
         <source>Error Stopping Tor</source>
         <translation>Erro ao Parar o Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="628"/>
+        <location filename="../gui/mainwindow.cpp" line="655"/>
         <source>Tor Exited</source>
         <translation>Tor Finalizado</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="600"/>
+        <location filename="../gui/mainwindow.cpp" line="625"/>
         <source>Vidalia was unable to stop Tor.</source>
         <translation>O Vidalia não pôde parar o Tor.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="569"/>
+        <location filename="../gui/mainwindow.cpp" line="597"/>
         <source>Server is Enabled</source>
         <translation>O Servidor está habilitado</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="340"/>
+        <location filename="../gui/mainwindow.cpp" line="347"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="656"/>
+        <location filename="../gui/mainwindow.cpp" line="797"/>
         <source>Error Applying Server Settings</source>
         <translation>Erro ao Aplicar as Configurações ao Servidor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="657"/>
+        <location filename="../gui/mainwindow.cpp" line="798"/>
         <source>Vidalia was unable to apply your server&apos;s settings.</source>
         <translation>O Vidalia foi incapaz de aplicar as configurações do servidor.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="574"/>
+        <location filename="../gui/mainwindow.cpp" line="602"/>
         <source>You are currently running a Tor server. Terminating your server will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new server?</source>
@@ -918,7 +932,7 @@ Would you like to shutdown gracefully and give clients time to find a new server
 Você gostaria de finalizá-lo graciosamente e dar tempo aos clientes para que encontrem outro servidor?</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="631"/>
+        <location filename="../gui/mainwindow.cpp" line="658"/>
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
@@ -927,12 +941,12 @@ Please check the message log for indicators about what happened to Tor before it
 Por favor verifique o log de mensagens por indicações sobre o que ocorreu ao Tor antes da finalização.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="506"/>
+        <location filename="../gui/mainwindow.cpp" line="527"/>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
         <translation>O Vidalia foi incapaz de iniciar o Tor. Verifique suas configurações para garantir o nome e a localização correta do executável do Tor especificado.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="257"/>
+        <location filename="../gui/mainwindow.cpp" line="264"/>
         <source>Network Map</source>
         <translation>Mapa da Rede</translation>
     </message>
@@ -942,47 +956,27 @@ Por favor verifique o log de mensagens por indicações sobre o que ocorreu ao T
         <translation>Configurações</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="719"/>
+        <location filename="../gui/mainwindow.cpp" line="944"/>
         <source>New Identity</source>
         <translation>Nova Identidade</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="342"/>
+        <location filename="../gui/mainwindow.cpp" line="349"/>
         <source>Ctrl+I</source>
         <translation>Ctrl+I</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="722"/>
+        <location filename="../gui/mainwindow.cpp" line="947"/>
         <source>All subsequent connections will appear to be different than your old connections.</source>
         <translation>As novas conexões irão parecer diferentes das conexões antigas.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="741"/>
+        <location filename="../gui/mainwindow.cpp" line="975"/>
         <source>Failed to Create New Identity</source>
         <translation>Falha ao Criar Nova Identidade</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="239"/>
-        <source>Tor is Stopped</source>
-        <translation type="obsolete">O Tor foi parado</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="467"/>
-        <source>Tor is stopping</source>
-        <translation type="obsolete">O Tor está parando</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="394"/>
-        <source>Tor is starting</source>
-        <translation type="obsolete">O Tor está iniciando</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="491"/>
-        <source>Tor is stopped</source>
-        <translation type="obsolete">O Tor parou</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="410"/>
+        <location filename="../gui/mainwindow.cpp" line="430"/>
         <source>Tor is running</source>
         <translation>O Tor está em execução</translation>
     </message>
@@ -997,17 +991,17 @@ Por favor verifique o log de mensagens por indicações sobre o que ocorreu ao T
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="403"/>
+        <location filename="../gui/mainwindow.cpp" line="423"/>
         <source>Tor is shutting down</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="411"/>
+        <location filename="../gui/mainwindow.cpp" line="431"/>
         <source>Stop Tor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="424"/>
+        <location filename="../gui/mainwindow.cpp" line="447"/>
         <source>Tor is starting up</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1102,24 +1096,89 @@ Por favor verifique o log de mensagens por indicações sobre o que ocorreu ao T
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="264"/>
+        <location filename="../gui/mainwindow.cpp" line="271"/>
         <source>Control Panel</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="343"/>
+        <location filename="../gui/mainwindow.cpp" line="350"/>
         <source>Ctrl+P</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="401"/>
-        <source>Your Tor server is shutting down.
+        <location filename="../gui/mainwindow.cpp" line="428"/>
+        <source>Stop Tor Now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="421"/>
+        <source>Your Tor server is shutting down.<byte value="xd"/>
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="408"/>
-        <source>Stop Tor Now</source>
+        <location filename="../gui/mainwindow.cpp" line="451"/>
+        <source>Starting Tor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="731"/>
+        <source>Cookie Authentication Required</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="734"/>
+        <source>Tor requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="736"/>
+        <source>Would you like to browse for the file &apos;control_auth_cookie&apos; yourself?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="742"/>
+        <source>Tor Data Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="744"/>
+        <source>Tor Control Cookie (control_auth_cookie)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="786"/>
+        <source>Error Registering for Events</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="788"/>
+        <source>Vidalia was unable to register for Tor events. Many of Vidalia&apos;s features may be unavailable.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="826"/>
+        <source>Password Authentication Required</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="827"/>
+        <source>Please enter your control password:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="838"/>
+        <source>Error Authenticating to Tor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="840"/>
+        <source>Vidalia was unable to authenticate to Tor. (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="842"/>
+        <source>Please check your control port authentication settings.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1497,11 +1556,6 @@ para os desenvolvedores do Tor.</translation>
 <context>
     <name>NetViewer</name>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="297"/>
-        <source>View Tor Network</source>
-        <translation>Ver a Rede Tor</translation>
-    </message>
-    <message>
         <location filename="../gui/network/netviewer.ui" line="518"/>
         <source>Refresh</source>
         <translation>Atualizar</translation>
@@ -1595,6 +1649,11 @@ para os desenvolvedores do Tor.</translation>
         <location filename="../gui/network/netviewer.ui" line="642"/>
         <source>Ctrl+Z</source>
         <translation>Ctrl+Z</translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="297"/>
+        <source>Tor Network Map</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1710,116 +1769,67 @@ para os desenvolvedores do Tor.</translation>
         <translation>Retransmitir o tráfego recebido pela rede Tor</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="716"/>
+        <location filename="../gui/config/serverpage.ui" line="678"/>
         <source>Directory Port:</source>
         <translation>Porta do Diretório:</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="746"/>
+        <location filename="../gui/config/serverpage.ui" line="708"/>
         <source>Directory Port Number</source>
         <translation>Número da Porta do Diretório</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="616"/>
+        <location filename="../gui/config/serverpage.ui" line="578"/>
         <source>Nickname:</source>
         <translation>Apelido:</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="821"/>
+        <location filename="../gui/config/serverpage.ui" line="738"/>
         <source>Name of your server</source>
         <translation>Nome do seu servidor</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="684"/>
+        <location filename="../gui/config/serverpage.ui" line="646"/>
         <source>Contact Info:</source>
         <translation>Informações de contato:</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="638"/>
+        <location filename="../gui/config/serverpage.ui" line="600"/>
         <source>Server Port:</source>
         <translation>Porta do Servidor:</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="674"/>
+        <location filename="../gui/config/serverpage.ui" line="636"/>
         <source>Port on which users and other servers can communicate with your server</source>
         <translation>Porta na qual os usuários e outros servidores podem se comunicar com o seu servidor</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="565"/>
-        <source>Address:</source>
-        <translation>Endereço:</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="781"/>
-        <source>Domain name or IP address of your server</source>
-        <translation>Nome do Domínio ou Endereço IP do seu servidor</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="837"/>
+        <location filename="../gui/config/serverpage.ui" line="754"/>
         <source>Enable to mirror the server directory</source>
         <translation>Habilitar o espelhamento do diretório de servidores</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="840"/>
+        <location filename="../gui/config/serverpage.ui" line="757"/>
         <source>Mirror the Server Directory </source>
         <translation>Espelhar o Diretório de Servidores </translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="590"/>
-        <source>Attempts to determine the correct address for your server</source>
-        <translation>Tenta determinar qual é o endereço correto do seu servidor</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="593"/>
-        <source>Get Address</source>
-        <translation>Obter o Endereço</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="1251"/>
+        <location filename="../gui/config/serverpage.ui" line="1155"/>
         <source>Exit Policies</source>
         <translation>Polìticas de Saída</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1377"/>
+        <location filename="../gui/config/serverpage.ui" line="1281"/>
         <source>Show help topic on exit policies</source>
         <translation>Mostrar tópicos de ajuda sobre as políticas de saída</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.cpp" line="148"/>
+        <location filename="../gui/config/serverpage.cpp" line="129"/>
         <source>You must specify at least a server nickname and port.</source>
         <translation>Você deve especificar pelo menos um apelido e uma porta para o servidor.</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.cpp" line="232"/>
-        <source>Error</source>
-        <translation>Erro</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.cpp" line="233"/>
-        <source>Vidalia was unable to determine your public IP address.</source>
-        <translation>O Vidalia foi incapaz de determinar o seu endereço IP público.</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.cpp" line="250"/>
-        <source>Vidalia was only able to find a private IP address for your server.
-
-Would you like to access an external service to determine your public IP address?</source>
-        <translation>O Vidalia só foi capaz de encontrar o endereço IP privado do seu servidor.
-
-Você gostaria de acessar um serviço externo para determinar o seu endereço IP público?</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="850"/>
-        <source>When enabled, Vidalia will periodically update your IP address if necessary</source>
-        <translation>Quando habilitado, o Vidalia irá periodicamente atualizar o seu endereço IP caso seja necessário</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="853"/>
-        <source>Automatically Update</source>
-        <translation>Atualização Automática</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="806"/>
+        <location filename="../gui/config/serverpage.ui" line="723"/>
         <source>Email address at which you may be reached if there is a
 problem with your server. You might also include your PGP or GPG
 fingerprint.</source>
@@ -1828,32 +1838,32 @@ algum problema com o seu servidor. Você poderá também incluir
 sua assinatura PGP ou GPG.</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1107"/>
+        <location filename="../gui/config/serverpage.ui" line="1011"/>
         <source>Long-term average bandwidth limit</source>
         <translation>Limite médio de longo prazo de largura de banda</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1078"/>
+        <location filename="../gui/config/serverpage.ui" line="982"/>
         <source>Average Rate</source>
         <translation>Taxa Média</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1195"/>
+        <location filename="../gui/config/serverpage.ui" line="1099"/>
         <source>KB/s</source>
         <translation>KB/s</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1182"/>
+        <location filename="../gui/config/serverpage.ui" line="1086"/>
         <source>Peak bandwidth rate limit</source>
         <translation>Teto máximo da taxa de largura de banda</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1153"/>
+        <location filename="../gui/config/serverpage.ui" line="1057"/>
         <source>Maximum Rate</source>
         <translation>Taxa Máxima</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="989"/>
+        <location filename="../gui/config/serverpage.ui" line="893"/>
         <source>Show help topic on bandwidth rate limits</source>
         <translation>Mostrar o tópico de ajuda sobre os limites de largura de banda</translation>
     </message>
@@ -1863,117 +1873,117 @@ sua assinatura PGP ou GPG.</translation>
         <translation>Configurações Básicas</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="887"/>
+        <location filename="../gui/config/serverpage.ui" line="791"/>
         <source>Bandwidth Limits</source>
         <translation>Limites de Largura de Banda</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="922"/>
+        <location filename="../gui/config/serverpage.ui" line="826"/>
         <source>For Internet connections with fast download speed but slow upload, please list your upload speed here.</source>
         <translation>Para conexões de internet de alta velocidade de download mas baixa de upload, por favor liste sua velocidade de upload aqui.</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="943"/>
+        <location filename="../gui/config/serverpage.ui" line="847"/>
         <source>Select the entry that most closely resembles your Internet connection</source>
         <translation>Selecione a opção que seja mais adequada a sua conexão de Internet</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="953"/>
+        <location filename="../gui/config/serverpage.ui" line="857"/>
         <source>Cable/DSL 256 Kbps</source>
         <translation>Cabo/DSL 256 Kbps</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="958"/>
+        <location filename="../gui/config/serverpage.ui" line="862"/>
         <source>Cable/DSL 512 Kbps</source>
         <translation>Cabo/DSL 512 Kbps</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="963"/>
+        <location filename="../gui/config/serverpage.ui" line="867"/>
         <source>Cable/DSL 768 Kbps</source>
         <translation>Cabo/DSL 768 Kbps</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="968"/>
+        <location filename="../gui/config/serverpage.ui" line="872"/>
         <source>T1/Cable/DSL 1.5 Mbps</source>
         <translation>T1/Cabo/DSL 1.5 Mbps</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="973"/>
+        <location filename="../gui/config/serverpage.ui" line="877"/>
         <source>&gt; 1.5 Mbps</source>
         <translation>&gt; 1.5 Mbps</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="978"/>
+        <location filename="../gui/config/serverpage.ui" line="882"/>
         <source>Custom</source>
         <translation>Personalizada</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1289"/>
+        <location filename="../gui/config/serverpage.ui" line="1193"/>
         <source>Ports 6660 - 6669 and 6697</source>
         <translation>Portas 6660 - 6669 e 6697</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1292"/>
+        <location filename="../gui/config/serverpage.ui" line="1196"/>
         <source>Internet Relay Chat (IRC)</source>
         <translation>Sala de bate-papo (IRC)</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1302"/>
+        <location filename="../gui/config/serverpage.ui" line="1206"/>
         <source>Ports 110, 143, 993 and 995</source>
         <translation>Portas 110, 143, 993 e 995</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1305"/>
+        <location filename="../gui/config/serverpage.ui" line="1209"/>
         <source>Retrieve Mail (POP, IMAP)</source>
         <translation>Recuperar E-mail (POP, IMAP)</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1315"/>
+        <location filename="../gui/config/serverpage.ui" line="1219"/>
         <source>Ports unspecified by other checkboxes</source>
         <translation>Portas não especificadas nas outras opções</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1318"/>
+        <location filename="../gui/config/serverpage.ui" line="1222"/>
         <source>Misc Other Services</source>
         <translation>Misc Outros Serviços</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1328"/>
+        <location filename="../gui/config/serverpage.ui" line="1232"/>
         <source>Ports 706, 1863, 5050, 5190, 5222, 8300 and 8888</source>
         <translation>Portas 706, 1863, 5050, 5190, 5222, 8300 e 8888</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1331"/>
+        <location filename="../gui/config/serverpage.ui" line="1235"/>
         <source>Instant Messaging (IM)</source>
         <translation>Mensageiros Instantâneos (IM)</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1341"/>
+        <location filename="../gui/config/serverpage.ui" line="1245"/>
         <source>Port 443</source>
         <translation>Porta 443</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1344"/>
+        <location filename="../gui/config/serverpage.ui" line="1248"/>
         <source>Secure Websites (SSL)</source>
         <translation>Sítios Web Seguras (SSL)</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1354"/>
+        <location filename="../gui/config/serverpage.ui" line="1258"/>
         <source>Port 80</source>
         <translation>Porta 80</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1357"/>
+        <location filename="../gui/config/serverpage.ui" line="1261"/>
         <source>Websites</source>
         <translation>Sítios Web</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1450"/>
+        <location filename="../gui/config/serverpage.ui" line="1354"/>
         <source>What Internet resources should Tor users be able to access from your Tor relay?</source>
         <translation>Quais recursos de Internet devem estar acessíveis aos usuários do Tor através do seu servidor?</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1224"/>
+        <location filename="../gui/config/serverpage.ui" line="1128"/>
         <source>Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1981,42 +1991,42 @@ sua assinatura PGP ou GPG.</translation>
 <context>
     <name>Stream</name>
     <message>
-        <location filename="../control/stream.cpp" line="110"/>
+        <location filename="../control/stream.cpp" line="127"/>
         <source>New</source>
         <translation>Novo</translation>
     </message>
     <message>
-        <location filename="../control/stream.cpp" line="112"/>
+        <location filename="../control/stream.cpp" line="129"/>
         <source>Resolving</source>
         <translation>Resolvendo</translation>
     </message>
     <message>
-        <location filename="../control/stream.cpp" line="113"/>
+        <location filename="../control/stream.cpp" line="130"/>
         <source>Connecting</source>
         <translation>Conectando</translation>
     </message>
     <message>
-        <location filename="../control/stream.cpp" line="114"/>
+        <location filename="../control/stream.cpp" line="131"/>
         <source>Open</source>
         <translation type="unfinished">Conectado</translation>
     </message>
     <message>
-        <location filename="../control/stream.cpp" line="115"/>
+        <location filename="../control/stream.cpp" line="132"/>
         <source>Failed</source>
         <translation>Falhou</translation>
     </message>
     <message>
-        <location filename="../control/stream.cpp" line="116"/>
+        <location filename="../control/stream.cpp" line="133"/>
         <source>Closed</source>
         <translation type="unfinished">Desconectado</translation>
     </message>
     <message>
-        <location filename="../control/stream.cpp" line="118"/>
+        <location filename="../control/stream.cpp" line="135"/>
         <source>Unknown</source>
         <translation>Desconhecido</translation>
     </message>
     <message>
-        <location filename="../control/stream.cpp" line="117"/>
+        <location filename="../control/stream.cpp" line="134"/>
         <source>Retrying</source>
         <translation>Tentando novamente</translation>
     </message>
@@ -2024,7 +2034,7 @@ sua assinatura PGP ou GPG.</translation>
 <context>
     <name>TorProcess</name>
     <message>
-        <location filename="../control/torprocess.cpp" line="93"/>
+        <location filename="../control/torprocess.cpp" line="116"/>
         <source>Process %1 failed to stop. [%2]</source>
         <translation>O Processo %1 não pôde ser encerrado. [%2]</translation>
     </message>
@@ -2094,16 +2104,21 @@ sua assinatura PGP ou GPG.</translation>
         <source>Quit</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../gui/common/vmessagebox.cpp" line="98"/>
+        <source>Browse</source>
+        <translation type="unfinished">Navegar</translation>
+    </message>
 </context>
 <context>
     <name>Vidalia</name>
     <message>
-        <location filename="../vidalia.cpp" line="230"/>
+        <location filename="../vidalia.cpp" line="229"/>
         <source>Invalid language code specified: </source>
         <translation>O Código de idioma especificado é inválido: </translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="237"/>
+        <location filename="../vidalia.cpp" line="236"/>
         <source>Invalid GUI style specified: </source>
         <translation>O estilo de GUI especificado é inválido: </translation>
     </message>
@@ -2125,57 +2140,57 @@ Would you like to continue starting Vidalia?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="161"/>
+        <location filename="../vidalia.cpp" line="160"/>
         <source>Displays this usage message and exits.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="163"/>
+        <location filename="../vidalia.cpp" line="162"/>
         <source>Resets ALL stored Vidalia settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="165"/>
+        <location filename="../vidalia.cpp" line="164"/>
         <source>Sets the directory Vidalia uses for data files.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="167"/>
+        <location filename="../vidalia.cpp" line="166"/>
         <source>Sets the name and location of Vidalia&apos;s pidfile.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="169"/>
+        <location filename="../vidalia.cpp" line="168"/>
         <source>Sets the name and location of Vidalia&apos;s logfile.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="172"/>
+        <location filename="../vidalia.cpp" line="171"/>
         <source>Sets the verbosity of Vidalia&apos;s logging.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="175"/>
+        <location filename="../vidalia.cpp" line="174"/>
         <source>Sets Vidalia&apos;s interface style.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="178"/>
+        <location filename="../vidalia.cpp" line="177"/>
         <source>Sets Vidalia&apos;s language.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="182"/>
+        <location filename="../vidalia.cpp" line="181"/>
         <source>Vidalia Usage Information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="243"/>
+        <location filename="../vidalia.cpp" line="242"/>
         <source>Invalid log level specified: </source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="249"/>
+        <location filename="../vidalia.cpp" line="248"/>
         <source>Unable to open log file &apos;%1&apos;: %2</source>
         <translation type="unfinished"></translation>
     </message>

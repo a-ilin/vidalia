@@ -64,107 +64,102 @@
         <translation>Kontroll Port</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="576"/>
-        <source>9051</source>
-        <translation>9051</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/advancedpage.ui" line="625"/>
+        <location filename="../gui/config/advancedpage.ui" line="714"/>
         <source>Start Tor with the specified configuration file (torrc)</source>
         <translation>Start Tor med den spesifiserte konfigurasjonsfilen (torrc)</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="644"/>
+        <location filename="../gui/config/advancedpage.ui" line="733"/>
         <source>Select path to Tor configuration file</source>
         <translation>Filsti til Tor sin konfigurasjonsfil</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="647"/>
+        <location filename="../gui/config/advancedpage.ui" line="792"/>
         <source>Browse</source>
         <translation>Bla</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="666"/>
+        <location filename="../gui/config/advancedpage.ui" line="811"/>
         <source>Permissions</source>
         <translation>Tillatelser</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="689"/>
+        <location filename="../gui/config/advancedpage.ui" line="834"/>
         <source>Run as User:</source>
         <translation>Kjør som Bruker:</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="702"/>
+        <location filename="../gui/config/advancedpage.ui" line="847"/>
         <source>Vidalia will run with this User&apos;s permissions</source>
         <translation>Vidalia vil kjøre med denne brukerens tillatelser</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="722"/>
+        <location filename="../gui/config/advancedpage.ui" line="867"/>
         <source>Run as Group:</source>
         <translation>Kjør under Gruppe:</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="729"/>
+        <location filename="../gui/config/advancedpage.ui" line="874"/>
         <source>Vidalia will run with this Group&apos;s permissions</source>
         <translation>Vidalia vil kjøre med denne Gruppen&apos;s tillatelser</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="119"/>
+        <location filename="../gui/config/advancedpage.cpp" line="188"/>
         <source>Select Tor Configuration File</source>
         <translation>Velg Konfigurasjonsfil for Tor</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="132"/>
+        <location filename="../gui/config/advancedpage.cpp" line="201"/>
         <source>File Not Found</source>
         <translation>Finner Ikke Filen</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="134"/>
+        <location filename="../gui/config/advancedpage.cpp" line="203"/>
         <source>%1 does not exist. Would you like to create it?</source>
         <translation>%1 finnes ikke. Vil du lage den?</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="145"/>
+        <location filename="../gui/config/advancedpage.cpp" line="214"/>
         <source>Failed to Create File</source>
         <translation>Klarte ikke Lage FIl</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="146"/>
+        <location filename="../gui/config/advancedpage.cpp" line="215"/>
         <source>Unable to create %1 [%2]</source>
         <translation>Kunne ikke opprette %1 [%2]</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="753"/>
+        <location filename="../gui/config/advancedpage.ui" line="898"/>
         <source>Service</source>
         <translation>Tjeneste</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="768"/>
+        <location filename="../gui/config/advancedpage.ui" line="913"/>
         <source>Enable this if you wish to run Tor as a Windows service</source>
         <translation>Skru dette på om du vil kjøre Tor som en WIndows-tjeneste</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="771"/>
+        <location filename="../gui/config/advancedpage.ui" line="916"/>
         <source>Run Tor in the background as a Windows service</source>
         <translation>Kjør Tor i bakgrunnen som en Windows-tjeneste</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="169"/>
+        <location filename="../gui/config/advancedpage.cpp" line="251"/>
         <source>Unable to remove Tor Service</source>
         <translation>Kunne ikke fjerne Tor-tjenesten</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="180"/>
+        <location filename="../gui/config/advancedpage.cpp" line="262"/>
         <source>Unable to install Tor Service</source>
         <translation>Kunne ikke installere Tor-tjenesten</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="181"/>
+        <location filename="../gui/config/advancedpage.cpp" line="263"/>
         <source>Vidalia was unable to install the Tor service.</source>
         <translation>Vidalia klarte ikke installere Tor-tjenesten</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="171"/>
+        <location filename="../gui/config/advancedpage.cpp" line="253"/>
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
@@ -173,29 +168,74 @@ You may need to remove it manually.</source>
 Du må kanskje fjerne den manuellt.</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="604"/>
+        <location filename="../gui/config/advancedpage.ui" line="693"/>
         <source>Tor Configuration File</source>
         <translation>Tors Konfigurasjonsfil</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="573"/>
-        <source>Port that Vidalia uses to communicate with Tor.</source>
-        <translation>Porten som Vidalia bruker til å kommunisere med Tor.</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/advancedpage.cpp" line="80"/>
+        <location filename="../gui/config/advancedpage.cpp" line="87"/>
         <source>&apos;%1&apos; is not a valid IP address.</source>
         <translation>&apos;%1&apos; er ikke en gyldig IP adresse.</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="542"/>
-        <source>IP address on which Tor is listening for controller connections.</source>
-        <translation>IP adresse som Tor lytter etter kontroller-forbindelser på.</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/advancedpage.ui" line="549"/>
+        <location filename="../gui/config/advancedpage.ui" line="631"/>
         <source>:</source>
         <translation>:</translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.cpp" line="98"/>
+        <source>You selected &apos;Password&apos; authentication, but did not specify a password.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.cpp" line="230"/>
+        <source>Select a Directory to Use for Tor Data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="522"/>
+        <source>Authentication:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="532"/>
+        <source>Address:</source>
+        <translation type="unfinished">Adresse:</translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="565"/>
+        <source>Cookie</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="570"/>
+        <source>Password</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="585"/>
+        <source>Randomly Generate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="749"/>
+        <source>Tor Data Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="770"/>
+        <source>Store Tor data in the following directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="789"/>
+        <source>Select the directory used to store Tor data</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/advancedpage.ui" line="560"/>
+        <source>None</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -419,12 +459,12 @@ Du må kanskje fjerne den manuellt.</translation>
 <context>
     <name>ControlConnection</name>
     <message>
-        <location filename="../control/controlconnection.cpp" line="310"/>
+        <location filename="../control/controlconnection.cpp" line="311"/>
         <source>Control socket is not connected.</source>
         <translation>Kontroll-porten er ikke tilkoblet.</translation>
     </message>
     <message>
-        <location filename="../control/controlconnection.cpp" line="255"/>
+        <location filename="../control/controlconnection.cpp" line="256"/>
         <source>Control socket is not connected</source>
         <translation>Kontroll-porten er ikke tilkoblet.</translation>
     </message>
@@ -432,46 +472,34 @@ Du må kanskje fjerne den manuellt.</translation>
 <context>
     <name>ControlSocket</name>
     <message>
-        <location filename="../control/controlsocket.cpp" line="65"/>
+        <location filename="../control/controlsocket.cpp" line="63"/>
         <source>Error connecting to %1:%2 [%3]</source>
         <translation>Feil ved tilkobling til %1:%2 [%3]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="101"/>
+        <location filename="../control/controlsocket.cpp" line="79"/>
         <source>Error disconnecting socket. [%1]</source>
         <translation>Feil ved frakobling av forbindelse [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="160"/>
+        <location filename="../control/controlsocket.cpp" line="114"/>
         <source>Error sending control command. [%1]</source>
         <translation>Feil ved sending av kontroll-kommando. [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="197"/>
+        <location filename="../control/controlsocket.cpp" line="151"/>
         <source>Socket disconnected while attempting to read a line of data.</source>
         <translation>Forbindelsen ble avbrutt under forsøk på å lese en linje med data.</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="235"/>
+        <location filename="../control/controlsocket.cpp" line="189"/>
         <source>Invalid control reply. [%1]</source>
         <translation>Ugyldig kontroll-svar: [%1]</translation>
     </message>
     <message>
-        <location filename="../control/controlsocket.cpp" line="150"/>
+        <location filename="../control/controlsocket.cpp" line="104"/>
         <source>Control socket is not connected.</source>
         <translation>Kontroll-porten er ikke tilkoblet.</translation>
-    </message>
-    <message>
-        <location filename="../control/controlsocket.cpp" line="81"/>
-        <source>Vidalia was unable to determine Tor&apos;s control protocol version. Verify that your control port number is set correctly and you are running a recent version of Tor.</source>
-        <translation>Vidalia klarte ikke å fastslå Tors kontroll-protokoll versjon. Verifiser at du har angitt riktig kontroll-port og at du bruker en nyere utgave av Tor.</translation>
-    </message>
-    <message>
-        <location filename="../control/controlsocket.cpp" line="85"/>
-        <source>Vidalia only supports Version 1 of Tor&apos;s control protocol (version %1 detected).
-Upgrade to a newer version of Tor.</source>
-        <translation>Vidalia støtter kun Versjon 1 av Tor&apos;s kontrollprotokoll (versjon %1 detektert). 
-Oppgrader til en nyere utgave av Tor.</translation>
     </message>
 </context>
 <context>
@@ -683,22 +711,22 @@ Oppgrader til en nyere utgave av Tor.</translation>
         <translation>Esc</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.cpp" line="121"/>
+        <location filename="../gui/help/browser/helpbrowser.cpp" line="133"/>
         <source>Error Loading Help Contents: </source>
         <translation>Feil ved henging av Hjelp-Innhold </translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.cpp" line="372"/>
+        <location filename="../gui/help/browser/helpbrowser.cpp" line="384"/>
         <source>Search reached end of document</source>
         <translation>Søket nådde slutten av dokumentet</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.cpp" line="374"/>
+        <location filename="../gui/help/browser/helpbrowser.cpp" line="386"/>
         <source>Search reached start of document</source>
         <translation>Søket nådde begynnelsen av dokumentet</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.cpp" line="376"/>
+        <location filename="../gui/help/browser/helpbrowser.cpp" line="388"/>
         <source>Text not found in document</source>
         <translation>Fant ikke teksten i dokumentet</translation>
     </message>
@@ -718,12 +746,12 @@ Oppgrader til en nyere utgave av Tor.</translation>
         <translation>Søker etter:</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.cpp" line="133"/>
+        <location filename="../gui/help/browser/helpbrowser.cpp" line="145"/>
         <source>Supplied XML file is not a valid Contents document.</source>
         <translation>Den oppgitte XML-filen er ikke ett dokument med gyldig innhold.</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.cpp" line="421"/>
+        <location filename="../gui/help/browser/helpbrowser.cpp" line="433"/>
         <source>Found %1 results</source>
         <translation>Fant %1 resultater</translation>
     </message>
@@ -777,7 +805,7 @@ Oppgrader til en nyere utgave av Tor.</translation>
         <translation>Meldinger Vist:</translation>
     </message>
     <message>
-        <location filename="../gui/log/logtreewidget.cpp" line="237"/>
+        <location filename="../gui/log/logtreewidget.cpp" line="230"/>
         <source>Messages Shown: %1</source>
         <translation>Meldinger Vist: %1</translation>
     </message>
@@ -810,97 +838,97 @@ Oppgrader til en nyere utgave av Tor.</translation>
         <translation>Hjelp</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="337"/>
+        <location filename="../gui/mainwindow.cpp" line="344"/>
         <source>Ctrl+T</source>
         <translation>Ctrl+T</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="338"/>
+        <location filename="../gui/mainwindow.cpp" line="345"/>
         <source>Ctrl+B</source>
         <translation>Ctrl+B</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="339"/>
+        <location filename="../gui/mainwindow.cpp" line="346"/>
         <source>Ctrl+L</source>
         <translation>Ctrl+L</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="341"/>
+        <location filename="../gui/mainwindow.cpp" line="348"/>
         <source>Ctrl+?</source>
         <translation>Ctrl+?</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="354"/>
+        <location filename="../gui/mainwindow.cpp" line="361"/>
         <source>File</source>
         <translation>Fil</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="357"/>
+        <location filename="../gui/mainwindow.cpp" line="364"/>
         <source>Tor</source>
         <translation>Tor </translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="362"/>
+        <location filename="../gui/mainwindow.cpp" line="369"/>
         <source>View</source>
         <translation>Vis</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="371"/>
+        <location filename="../gui/mainwindow.cpp" line="378"/>
         <source>Vidalia Help</source>
         <translation>Vidalia Hjelp</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="503"/>
+        <location filename="../gui/mainwindow.cpp" line="524"/>
         <source>Error Starting Tor</source>
         <translation>Feil ved oppstart av Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="540"/>
+        <location filename="../gui/mainwindow.cpp" line="567"/>
         <source>Error Connecting to Tor</source>
         <translation>Feil ved tilknytning til Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="599"/>
+        <location filename="../gui/mainwindow.cpp" line="624"/>
         <source>Error Stopping Tor</source>
         <translation>Feil ved Stopping av Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="628"/>
+        <location filename="../gui/mainwindow.cpp" line="655"/>
         <source>Tor Exited</source>
         <translation>Tor Avsluttet</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="600"/>
+        <location filename="../gui/mainwindow.cpp" line="625"/>
         <source>Vidalia was unable to stop Tor.</source>
         <translation>Vidalia klarte ikke å avslutte Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="410"/>
+        <location filename="../gui/mainwindow.cpp" line="430"/>
         <source>Tor is running</source>
         <translation>Tor kjører</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="569"/>
+        <location filename="../gui/mainwindow.cpp" line="597"/>
         <source>Server is Enabled</source>
         <translation>Tjeneren er tilkoblet</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="340"/>
+        <location filename="../gui/mainwindow.cpp" line="347"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="656"/>
+        <location filename="../gui/mainwindow.cpp" line="797"/>
         <source>Error Applying Server Settings</source>
         <translation>Feil ved pålegging av Tjener-Innstillinger</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="657"/>
+        <location filename="../gui/mainwindow.cpp" line="798"/>
         <source>Vidalia was unable to apply your server&apos;s settings.</source>
         <translation>Vidalia kunne ikke iverksette dine tjener-innstillinger.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="574"/>
+        <location filename="../gui/mainwindow.cpp" line="602"/>
         <source>You are currently running a Tor server. Terminating your server will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new server?</source>
@@ -909,7 +937,7 @@ Would you like to shutdown gracefully and give clients time to find a new server
 Vil du stenge ned gradvis og gi dine klienter tid til å finne en ny tjener?</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="631"/>
+        <location filename="../gui/mainwindow.cpp" line="658"/>
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
@@ -918,12 +946,12 @@ Please check the message log for indicators about what happened to Tor before it
 Vennligst sjekk meldings-loggen for indikatorer på hva som skjedde med Tor før programmet avsluttet.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="506"/>
+        <location filename="../gui/mainwindow.cpp" line="527"/>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
         <translation>Vidalia kunne ikke starte Tor. Sjekk innstillingene dine for å sikre at du har oppgitt Tor-programmets riktige navn og plassering.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="257"/>
+        <location filename="../gui/mainwindow.cpp" line="264"/>
         <source>Network Map</source>
         <translation>Nettverkskart</translation>
     </message>
@@ -933,22 +961,22 @@ Vennligst sjekk meldings-loggen for indikatorer på hva som skjedde med Tor før
         <translation>Innstillinger</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="719"/>
+        <location filename="../gui/mainwindow.cpp" line="944"/>
         <source>New Identity</source>
         <translation>Ny Identitet </translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="342"/>
+        <location filename="../gui/mainwindow.cpp" line="349"/>
         <source>Ctrl+I</source>
         <translation>Ctrl+I</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="722"/>
+        <location filename="../gui/mainwindow.cpp" line="947"/>
         <source>All subsequent connections will appear to be different than your old connections.</source>
         <translation>Alle dine forbindelser vil se annerledes ut enn dine nåværende forbindelser.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="741"/>
+        <location filename="../gui/mainwindow.cpp" line="975"/>
         <source>Failed to Create New Identity</source>
         <translation>Kunne ikke lage Ny Identitet</translation>
     </message>
@@ -963,17 +991,17 @@ Vennligst sjekk meldings-loggen for indikatorer på hva som skjedde med Tor før
         <translation>Tor kjører ikke</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="403"/>
+        <location filename="../gui/mainwindow.cpp" line="423"/>
         <source>Tor is shutting down</source>
         <translation>Tor stenger ned</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="411"/>
+        <location filename="../gui/mainwindow.cpp" line="431"/>
         <source>Stop Tor</source>
         <translation>Stopp Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="424"/>
+        <location filename="../gui/mainwindow.cpp" line="447"/>
         <source>Tor is starting up</source>
         <translation>Tor starter opp</translation>
     </message>
@@ -1068,26 +1096,90 @@ Vennligst sjekk meldings-loggen for indikatorer på hva som skjedde med Tor før
         <translation>Skjul dette vinduet</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="264"/>
+        <location filename="../gui/mainwindow.cpp" line="271"/>
         <source>Control Panel</source>
         <translation>Kontrollpanel</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="343"/>
+        <location filename="../gui/mainwindow.cpp" line="350"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="401"/>
-        <source>Your Tor server is shutting down.
-Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
-        <translation>Din Tor tjener stenges. 
-Trykk Stopp Tor igjen for å tvinge Tor til å avslutte umiddelbart.</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="408"/>
+        <location filename="../gui/mainwindow.cpp" line="428"/>
         <source>Stop Tor Now</source>
         <translation>Stopp Tor nå</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="421"/>
+        <source>Your Tor server is shutting down.<byte value="xd"/>
+Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="451"/>
+        <source>Starting Tor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="731"/>
+        <source>Cookie Authentication Required</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="734"/>
+        <source>Tor requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="736"/>
+        <source>Would you like to browse for the file &apos;control_auth_cookie&apos; yourself?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="742"/>
+        <source>Tor Data Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="744"/>
+        <source>Tor Control Cookie (control_auth_cookie)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="786"/>
+        <source>Error Registering for Events</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="788"/>
+        <source>Vidalia was unable to register for Tor events. Many of Vidalia&apos;s features may be unavailable.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="826"/>
+        <source>Password Authentication Required</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="827"/>
+        <source>Please enter your control password:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="838"/>
+        <source>Error Authenticating to Tor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="840"/>
+        <source>Vidalia was unable to authenticate to Tor. (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="842"/>
+        <source>Please check your control port authentication settings.</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1457,11 +1549,6 @@ interest to Tor developers.</source>
 <context>
     <name>NetViewer</name>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="297"/>
-        <source>View Tor Network</source>
-        <translation>Vis Tor-Nettverket</translation>
-    </message>
-    <message>
         <location filename="../gui/network/netviewer.ui" line="518"/>
         <source>Refresh</source>
         <translation>Oppdater</translation>
@@ -1555,6 +1642,11 @@ interest to Tor developers.</source>
         <location filename="../gui/network/netviewer.ui" line="543"/>
         <source>Show network map help</source>
         <translation>Vis hjelpetekst for nettverks-kartet</translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="297"/>
+        <source>Tor Network Map</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1670,149 +1762,99 @@ interest to Tor developers.</source>
         <translation>Videresend trafikk for Tor-nettverket</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="716"/>
+        <location filename="../gui/config/serverpage.ui" line="678"/>
         <source>Directory Port:</source>
         <translation>Katalog Port:</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="746"/>
+        <location filename="../gui/config/serverpage.ui" line="708"/>
         <source>Directory Port Number</source>
         <translation>Katalog Port Nummer</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="616"/>
+        <location filename="../gui/config/serverpage.ui" line="578"/>
         <source>Nickname:</source>
         <translation>Kallenavn:</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="821"/>
+        <location filename="../gui/config/serverpage.ui" line="738"/>
         <source>Name of your server</source>
         <translation>Navnet på tjeneren din</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="684"/>
+        <location filename="../gui/config/serverpage.ui" line="646"/>
         <source>Contact Info:</source>
         <translation>Kontakt Info:</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="638"/>
+        <location filename="../gui/config/serverpage.ui" line="600"/>
         <source>Server Port:</source>
         <translation>Tjener Port:</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="674"/>
+        <location filename="../gui/config/serverpage.ui" line="636"/>
         <source>Port on which users and other servers can communicate with your server</source>
         <translation>Porten som brukere og tjenere kan bruke til å kommunisere med din tjener</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="565"/>
-        <source>Address:</source>
-        <translation>Adresse:</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="781"/>
-        <source>Domain name or IP address of your server</source>
-        <translation>Domenenavn eller IP-adressen til tjeneren din</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="837"/>
+        <location filename="../gui/config/serverpage.ui" line="754"/>
         <source>Enable to mirror the server directory</source>
         <translation>SKru på for å speile tjener-katalogen</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="840"/>
+        <location filename="../gui/config/serverpage.ui" line="757"/>
         <source>Mirror the Server Directory </source>
         <translation>Spil Tjener-katalogen</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="590"/>
-        <source>Attempts to determine the correct address for your server</source>
-        <translation>Forsøker å finne ut den riktige adressen for tjeneren din</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="593"/>
-        <source>Get Address</source>
-        <translation>Hent Adresse</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="1251"/>
+        <location filename="../gui/config/serverpage.ui" line="1155"/>
         <source>Exit Policies</source>
         <translation>Utgangs-Politikk</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1377"/>
+        <location filename="../gui/config/serverpage.ui" line="1281"/>
         <source>Show help topic on exit policies</source>
         <translation>Vis hjelpeteksten for tillatte utgående forbindelser</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.cpp" line="148"/>
+        <location filename="../gui/config/serverpage.cpp" line="129"/>
         <source>You must specify at least a server nickname and port.</source>
         <translation>Du må minimum oppgi tjenerens kallenavn og port</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.cpp" line="232"/>
-        <source>Error</source>
-        <translation>Feil</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.cpp" line="233"/>
-        <source>Vidalia was unable to determine your public IP address.</source>
-        <translation>
-Vidalia klarte ikke å finne ut hvilken IP-adresse du har.</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.cpp" line="250"/>
-        <source>Vidalia was only able to find a private IP address for your server.
-
-Would you like to access an external service to determine your public IP address?</source>
-        <translation>Vidalia klarte bare finne den private IP-adressen til tjeneren din. 
-
-Vil du bruke en ekstern tjeneste for å finne ut din offentlige IP-adresse?</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="850"/>
-        <source>When enabled, Vidalia will periodically update your IP address if necessary</source>
-        <translation>Hvis denne funksjonen er skrudd på vil Vidalia periodisk oppdatere IP-adressen din om det er nødvendig</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="853"/>
-        <source>Automatically Update</source>
-        <translation>Oppdater Automatisk</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="806"/>
+        <location filename="../gui/config/serverpage.ui" line="723"/>
         <source>Email address at which you may be reached if there is a
 problem with your server. You might also include your PGP or GPG
 fingerprint.</source>
         <translation>E-post adresse hvor det er mulig å få tak i deg hvis tjeneren din sliter. Du kan også inkludere ditt PGP eller GPG fingeravtrykk.</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1107"/>
+        <location filename="../gui/config/serverpage.ui" line="1011"/>
         <source>Long-term average bandwidth limit</source>
         <translation>Gjennomsnittlig langvarig båndbredde-begensning</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1078"/>
+        <location filename="../gui/config/serverpage.ui" line="982"/>
         <source>Average Rate</source>
         <translation>Gjennomsnittshastighet</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1195"/>
+        <location filename="../gui/config/serverpage.ui" line="1099"/>
         <source>KB/s</source>
         <translation>KB/s</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1182"/>
+        <location filename="../gui/config/serverpage.ui" line="1086"/>
         <source>Peak bandwidth rate limit</source>
         <translation>Begrensning for kortvarige bånbredde-topper</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1153"/>
+        <location filename="../gui/config/serverpage.ui" line="1057"/>
         <source>Maximum Rate</source>
         <translation>Maksimal Hastighet</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="989"/>
+        <location filename="../gui/config/serverpage.ui" line="893"/>
         <source>Show help topic on bandwidth rate limits</source>
         <translation>Hvis hjelpeteksten for båndbredde-begrensning</translation>
     </message>
@@ -1822,117 +1864,117 @@ fingerprint.</source>
         <translation>Grunnleggende Innstillinger</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="887"/>
+        <location filename="../gui/config/serverpage.ui" line="791"/>
         <source>Bandwidth Limits</source>
         <translation>Båndbredde Begrensinger</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="922"/>
+        <location filename="../gui/config/serverpage.ui" line="826"/>
         <source>For Internet connections with fast download speed but slow upload, please list your upload speed here.</source>
         <translation>Vennligst oppgi din opplastningshastighet her hvis du har rask nedlastningshastighet med treg opplastningshastighet.</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="943"/>
+        <location filename="../gui/config/serverpage.ui" line="847"/>
         <source>Select the entry that most closely resembles your Internet connection</source>
         <translation>Velg det som best reflekterer Internett-forbindelsen din</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="953"/>
+        <location filename="../gui/config/serverpage.ui" line="857"/>
         <source>Cable/DSL 256 Kbps</source>
         <translation>Kabel/DSL 256 Kbps</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="958"/>
+        <location filename="../gui/config/serverpage.ui" line="862"/>
         <source>Cable/DSL 512 Kbps</source>
         <translation>Kabel/DSL 512 Kbps</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="963"/>
+        <location filename="../gui/config/serverpage.ui" line="867"/>
         <source>Cable/DSL 768 Kbps</source>
         <translation>Kabel/DSL 768 Kbps</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="968"/>
+        <location filename="../gui/config/serverpage.ui" line="872"/>
         <source>T1/Cable/DSL 1.5 Mbps</source>
         <translation>T1/Kabel/DSL 1,5 Mbps</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="973"/>
+        <location filename="../gui/config/serverpage.ui" line="877"/>
         <source>&gt; 1.5 Mbps</source>
         <translation>&gt; 1.5 Mbps</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="978"/>
+        <location filename="../gui/config/serverpage.ui" line="882"/>
         <source>Custom</source>
         <translation>Egendefinert</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1289"/>
+        <location filename="../gui/config/serverpage.ui" line="1193"/>
         <source>Ports 6660 - 6669 and 6697</source>
         <translation>Port 6660 - 6669 og 6697</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1292"/>
+        <location filename="../gui/config/serverpage.ui" line="1196"/>
         <source>Internet Relay Chat (IRC)</source>
         <translation>Internett Relay Chat (IRC)</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1302"/>
+        <location filename="../gui/config/serverpage.ui" line="1206"/>
         <source>Ports 110, 143, 993 and 995</source>
         <translation>Port 110, 143, 993 og 995</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1305"/>
+        <location filename="../gui/config/serverpage.ui" line="1209"/>
         <source>Retrieve Mail (POP, IMAP)</source>
         <translation>Motta E-Post (POP, IMAP)</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1315"/>
+        <location filename="../gui/config/serverpage.ui" line="1219"/>
         <source>Ports unspecified by other checkboxes</source>
         <translation>Porter ikke angitt i andre avkryssningsbokser</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1318"/>
+        <location filename="../gui/config/serverpage.ui" line="1222"/>
         <source>Misc Other Services</source>
         <translation>Diverse Andre Tjenester</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1328"/>
+        <location filename="../gui/config/serverpage.ui" line="1232"/>
         <source>Ports 706, 1863, 5050, 5190, 5222, 8300 and 8888</source>
         <translation>Port 706, 1863, 5050, 5190, 5222, 8300 og 8888</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1331"/>
+        <location filename="../gui/config/serverpage.ui" line="1235"/>
         <source>Instant Messaging (IM)</source>
         <translation>Bruker-Til-Bruker meldinger (IM)</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1341"/>
+        <location filename="../gui/config/serverpage.ui" line="1245"/>
         <source>Port 443</source>
         <translation>Port 443</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1344"/>
+        <location filename="../gui/config/serverpage.ui" line="1248"/>
         <source>Secure Websites (SSL)</source>
         <translation>Sikre Nettsider (SSL)</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1354"/>
+        <location filename="../gui/config/serverpage.ui" line="1258"/>
         <source>Port 80</source>
         <translation>Port 80</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1357"/>
+        <location filename="../gui/config/serverpage.ui" line="1261"/>
         <source>Websites</source>
         <translation>Nettsider</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1450"/>
+        <location filename="../gui/config/serverpage.ui" line="1354"/>
         <source>What Internet resources should Tor users be able to access from your Tor relay?</source>
         <translation>Hvilke Internett-ressursjer skal Tor-brukere få lov å benytte fra din Tor-tjener?</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="1224"/>
+        <location filename="../gui/config/serverpage.ui" line="1128"/>
         <source>Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s.</source>
         <translation>Din maksimale båndbredde-grense må være større enn eller lik din gjennomsnittsgrense. Begge verdiene må være minst 20 KB/s.</translation>
     </message>
@@ -1940,42 +1982,42 @@ fingerprint.</source>
 <context>
     <name>Stream</name>
     <message>
-        <location filename="../control/stream.cpp" line="110"/>
+        <location filename="../control/stream.cpp" line="127"/>
         <source>New</source>
         <translation>Ny</translation>
     </message>
     <message>
-        <location filename="../control/stream.cpp" line="112"/>
+        <location filename="../control/stream.cpp" line="129"/>
         <source>Resolving</source>
         <translation>Slår opp</translation>
     </message>
     <message>
-        <location filename="../control/stream.cpp" line="113"/>
+        <location filename="../control/stream.cpp" line="130"/>
         <source>Connecting</source>
         <translation>Tilknytter</translation>
     </message>
     <message>
-        <location filename="../control/stream.cpp" line="114"/>
+        <location filename="../control/stream.cpp" line="131"/>
         <source>Open</source>
         <translation>Åpen</translation>
     </message>
     <message>
-        <location filename="../control/stream.cpp" line="115"/>
+        <location filename="../control/stream.cpp" line="132"/>
         <source>Failed</source>
         <translation>Feilet</translation>
     </message>
     <message>
-        <location filename="../control/stream.cpp" line="116"/>
+        <location filename="../control/stream.cpp" line="133"/>
         <source>Closed</source>
         <translation>Lukket</translation>
     </message>
     <message>
-        <location filename="../control/stream.cpp" line="118"/>
+        <location filename="../control/stream.cpp" line="135"/>
         <source>Unknown</source>
         <translation>Ukjent</translation>
     </message>
     <message>
-        <location filename="../control/stream.cpp" line="117"/>
+        <location filename="../control/stream.cpp" line="134"/>
         <source>Retrying</source>
         <translation>Prøver igjen</translation>
     </message>
@@ -1983,7 +2025,7 @@ fingerprint.</source>
 <context>
     <name>TorProcess</name>
     <message>
-        <location filename="../control/torprocess.cpp" line="93"/>
+        <location filename="../control/torprocess.cpp" line="116"/>
         <source>Process %1 failed to stop. [%2]</source>
         <translation>Prosess %1 nektet å stoppe. [%2]</translation>
     </message>
@@ -2053,16 +2095,21 @@ fingerprint.</source>
         <source>Quit</source>
         <translation>Avslutt</translation>
     </message>
+    <message>
+        <location filename="../gui/common/vmessagebox.cpp" line="98"/>
+        <source>Browse</source>
+        <translation type="unfinished">Bla</translation>
+    </message>
 </context>
 <context>
     <name>Vidalia</name>
     <message>
-        <location filename="../vidalia.cpp" line="230"/>
+        <location filename="../vidalia.cpp" line="229"/>
         <source>Invalid language code specified: </source>
         <translation>Ugyldig språk-kode spesifisert: </translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="237"/>
+        <location filename="../vidalia.cpp" line="236"/>
         <source>Invalid GUI style specified: </source>
         <translation>Ugyldig GUI-stil spesifisert:</translation>
     </message>
@@ -2086,57 +2133,57 @@ Vil du fortsette og starte Vidalia?</translation>
         <translation>Ugyldig Argument</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="161"/>
+        <location filename="../vidalia.cpp" line="160"/>
         <source>Displays this usage message and exits.</source>
         <translation>Viser denne brukesmeldingen og avslutter.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="163"/>
+        <location filename="../vidalia.cpp" line="162"/>
         <source>Resets ALL stored Vidalia settings.</source>
         <translation>Tilbakestill ALLE *lagrede* innstillinger for Vidalia.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="165"/>
+        <location filename="../vidalia.cpp" line="164"/>
         <source>Sets the directory Vidalia uses for data files.</source>
         <translation>Velger mappen Vidalia bruker for sine datafiler.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="167"/>
+        <location filename="../vidalia.cpp" line="166"/>
         <source>Sets the name and location of Vidalia&apos;s pidfile.</source>
         <translation>Gir navn og plassering av Vidalia sin pid-fil.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="169"/>
+        <location filename="../vidalia.cpp" line="168"/>
         <source>Sets the name and location of Vidalia&apos;s logfile.</source>
         <translation>Gir navn og plassering av Vidalia sin loggfil.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="172"/>
+        <location filename="../vidalia.cpp" line="171"/>
         <source>Sets the verbosity of Vidalia&apos;s logging.</source>
         <translation>Velger mengden informasjon Vidalia logger.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="175"/>
+        <location filename="../vidalia.cpp" line="174"/>
         <source>Sets Vidalia&apos;s interface style.</source>
         <translation>Velger stil for Vidalia sitt brukergrensesnitt.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="178"/>
+        <location filename="../vidalia.cpp" line="177"/>
         <source>Sets Vidalia&apos;s language.</source>
         <translation>Velger Vidalia sitt språk.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="182"/>
+        <location filename="../vidalia.cpp" line="181"/>
         <source>Vidalia Usage Information</source>
         <translation>Vidalia Bruksinformasjon</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="243"/>
+        <location filename="../vidalia.cpp" line="242"/>
         <source>Invalid log level specified: </source>
         <translation>Ugyldig loggnivå valgt: </translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="249"/>
+        <location filename="../vidalia.cpp" line="248"/>
         <source>Unable to open log file &apos;%1&apos;: %2</source>
         <translation>Kunne ikke åpne loggfil &apos;%1&apos;: %2</translation>
     </message>
