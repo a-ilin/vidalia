@@ -29,6 +29,23 @@
 #include <tlhelp32.h>
 #include <shlobj.h>
 #include <QDir>
+#include <QLibrary>
+#include <QtDebug>
+
+#if defined(UNICODE)
+/* Force the ascii verisons of these functions, so we can run on Win98. We
+ * don't pass any Unicode strings to these functions anyway. */
+#undef PROCESSENTRY32
+#undef LPPROCESSENTRY32
+#undef Process32First
+#undef Process32Next
+#endif
+
+/* Load the tool help functions dynamically, since they don't exist on
+ * Windows NT 4.0 */
+typedef HANDLE (WINAPI *CreateToolhelp32Snapshot_fn)(DWORD, DWORD);
+typedef BOOL (WINAPI *Process32First_fn)(HANDLE, LPPROCESSENTRY32);
+typedef BOOL (WINAPI *Process32Next_fn)(HANDLE, LPPROCESSENTRY32);
 
 
 /** Finds the location of the "special" Windows folder using the given CSIDL
@@ -149,26 +166,34 @@ win32_registry_remove_key(QString keyLocation, QString keyName)
 QHash<qint64, QString>
 win32_process_list()
 {
-#if defined(UNICODE)
-/* Force the ascii verisons of these functions, so we can run on Win98. We
- * don't pass any Unicode strings to these functions anyway. */
-#undef PROCESSENTRY32
-#undef Process32First
-#undef Process32Next
-#endif
   QHash<qint64, QString> procList;
+  CreateToolhelp32Snapshot_fn pCreateToolhelp32Snapshot;
+  Process32First_fn pProcess32First;
+  Process32Next_fn pProcess32Next;
   HANDLE hSnapshot;
   PROCESSENTRY32 proc;
   QString exeFile;
   qint64 pid;
 
+  /* Load the tool help functions */
+  pCreateToolhelp32Snapshot =
+    (CreateToolhelp32Snapshot_fn)QLibrary::resolve("kernel32", "CreateToolhelp32Snapshot");
+  pProcess32First = (Process32First_fn)QLibrary::resolve("kernel32", "Process32First");
+  pProcess32Next = (Process32Next_fn)QLibrary::resolve("kernel32", "Process32Next");
+ 
+  if (!pCreateToolhelp32Snapshot || !pProcess32First || !pProcess32Next) {
+    qWarning("Unable to load tool help functions. Running process information "
+             "will be unavailable.");
+    return QHash<qint64, QString>();
+  }
+
   /* Create a snapshot of all active processes */
-  hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+  hSnapshot = pCreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
   if (hSnapshot != INVALID_HANDLE_VALUE) {
     proc.dwSize = sizeof(PROCESSENTRY32);
     
     /* Iterate through all the processes in the snapshot */
-    if (Process32First(hSnapshot, &proc)) {
+    if (pProcess32First(hSnapshot, &proc)) {
       do {
         /* Extract the PID and exe filename from the process record */
         pid = (qint64)proc.th32ProcessID;
@@ -176,7 +201,7 @@ win32_process_list()
         
         /* Add this process to our list */
         procList.insert(pid, exeFile);
-      } while (Process32Next(hSnapshot, &proc));
+      } while (pProcess32Next(hSnapshot, &proc));
     }
     CloseHandle(hSnapshot);
   }
