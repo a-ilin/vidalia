@@ -452,12 +452,7 @@ MainWindow::updateTorStatus(TorStatus status)
       ui.lblStartStopTor->setEnabled(false);
       ui.lblStartStopTor->setStatusTip(statusText);
       ui.lblStartStopTor->setAnimation(QPixmap(ANIM_PROCESS_WORKING));
-  } else if (status == Connecting) {
-      statusText = tr("Vidalia is connecting to Tor");
-  } else if (status == Authenticating) {
-      statusText = tr("Vidalia is authenticating to Tor");
   } else if (status == Authenticated) {
-      statusText = tr("Tor is running");
       trayIconFile = IMG_TOR_RUNNING;
       statusIconFile = IMG_TOR_RUNNING_48;
   }
