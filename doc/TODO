@@ -78,6 +78,8 @@ Miscellaneous Tasks:
     any other Qt application that wants to talk to Tor.
   * Add a --disable-qsystrayicon autoconf option to build with our own tray
     icon implementation with Qt 4.2, instead of using QSystemTrayIcon.
+  * The 'Save' button in the config dialog should be grayed out until the user
+    actually changes some settings.
 
 
 Notes from Roger:
