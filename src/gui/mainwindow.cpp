@@ -747,16 +747,20 @@ MainWindow::authenticate()
       cookieDir = QFileInfo(cookieDir).absolutePath();
       cookie = loadControlCookie(cookieDir);
     }
+    vNotice("Authenticating using 'cookie' authentication.");
     return _torControl->authenticate(cookie);
   } else if (authMethod == TorSettings::PasswordAuth) {
     /* Get the control password and send it to Tor */
+    vNotice("Authenticating using 'hashed password' authentication.");
     QString password = settings.getControlPassword();
     return _torControl->authenticate(password);
   }
   /* No authentication. Send an empty password. */
+  vNotice("Authenticating using 'null' authentication.");
   return _torControl->authenticate(QString(""));
 
 cancel:
+  vWarn("Cancelling control authentication attempt.");
   if (_isVidaliaRunningTor)
     stop();
   else
@@ -813,6 +817,8 @@ MainWindow::authenticationFailed(QString errmsg)
 {
   bool retry = false;
   
+  vWarn("Authentication failed: %1").arg(errmsg);
+
   /* Parsing log messages is evil, but we're left with little option */
   if (errmsg.contains("Password did not match")) {
     /* Bad password, so prompt for a new one. */
@@ -879,16 +885,20 @@ MainWindow::loadControlCookie(QString cookiePath)
   foreach (QString path, pathList) {
     QString cookieFile = QFileInfo(path).isFile() ?
                           path : path + "/control_auth_cookie";
+    vDebug("Checking for authentication cookie in '%1'").arg(cookieFile);
     if (!QFileInfo(cookieFile).exists())
       continue;
     
     authCookie.setFileName(cookieFile);
-    if (authCookie.open(QIODevice::ReadOnly))
+    if (authCookie.open(QIODevice::ReadOnly)) {
+      vInfo("Reading authentication cookie from '%1'").arg(cookieFile);
       return authCookie.readAll();
-    else
+    } else {
       vWarn("Couldn't open cookie file '%1': %2")
         .arg(cookieFile).arg(authCookie.errorString());
+    }
   }
+  vWarn("Couldn't find a readable authentication cookie.");
   return QByteArray();
 }
 
