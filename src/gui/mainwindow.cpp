@@ -816,17 +816,41 @@ MainWindow::authenticated()
 void
 MainWindow::authenticationFailed(QString errmsg)
 {
-  /*XXX This should be smarter. We should parse the error message and give a
-   * more helpful hint about what went wrong. */
-  VMessageBox::warning(this, 
-    tr("Error Authenticating to Tor"),
-    p(tr("Vidalia was unable to authenticate to Tor.")) + p(errmsg),
-    VMessageBox::Ok);
-
+  bool retry = false;
+  
+  /* Parsing log messages is evil, but we're left with little option */
+  if (errmsg.contains("Password did not match")) {
+    /* Bad password, so prompt for a new one. */
+    QString password = QInputDialog::getText(this,
+                         tr("Password Authentication Required"),
+                         tr("Please enter your control password:"),
+                         QLineEdit::Password);
+    if (!password.isEmpty()) {
+      TorSettings settings;
+      settings.setAuthenticationMethod(TorSettings::PasswordAuth);
+      settings.setControlPassword(password);
+      retry = true;
+    }
+  } else {
+    /* Something else went wrong */
+    int ret = VMessageBox::warning(this, 
+                tr("Error Authenticating to Tor"),
+                p(tr("Vidalia was unable to authenticate to Tor. "
+                     "(%1)").arg(errmsg)) + 
+                p(tr("Please check your control port authentication "
+                     "settings.")),
+                VMessageBox::ShowSettings, VMessageBox::Cancel);
+    
+    if (ret == VMessageBox::ShowSettings)
+      showConfigDialog(ConfigDialog::Advanced);
+  }
+  
   if (_torControl->isRunning() && _isVidaliaRunningTor) 
     stop();
   else if (_torControl->isConnected())
     disconnect();
+  if (retry)
+    start();
 }
 
 /** Searches for and attempts to load the control authentication cookie. This
