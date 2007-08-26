@@ -525,7 +525,9 @@ MainWindow::startFailed(QString errmsg)
                    tr("Vidalia was unable to start Tor. Check your settings "
                         "to ensure the correct name and location of your Tor "
                         "executable is specified."),
-                   VMessageBox::Ok, VMessageBox::ShowSettings, VMessageBox::Help);
+                   VMessageBox::ShowSettings|VMessageBox::Default,
+                   VMessageBox::Cancel|VMessageBox::Escape,
+                   VMessageBox::Help);
 
   if (response == VMessageBox::ShowSettings) {
     /* Show the settings dialog so the user can make sure they're pointing to
@@ -656,7 +658,9 @@ MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
                   tr("Vidalia detected that Tor exited unexpectedly.\n\n"
                      "Please check the message log for indicators "
                      "about what happened to Tor before it exited."),
-                  VMessageBox::Ok, VMessageBox::ShowLog, VMessageBox::Help);
+                  VMessageBox::Ok|VMessageBox::Escape, 
+                  VMessageBox::ShowLog|VMessageBox::Default,
+                  VMessageBox::Help);
       if (ret == VMessageBox::ShowLog)
         _messageLog->showWindow();  
       else if (ret == VMessageBox::Help)
@@ -734,7 +738,8 @@ MainWindow::authenticate()
                        "find one."))
                   + p(tr("Would you like to browse for the file "
                          "'control_auth_cookie' yourself?")),
-                VMessageBox::Browse, VMessageBox::Cancel);
+                VMessageBox::Browse|VMessageBox::Default,
+                VMessageBox::Cancel|VMessageBox::Escape);
       
       if (ret == VMessageBox::Cancel)
         goto cancel;
@@ -797,7 +802,9 @@ MainWindow::authenticated()
                   tr("Error Applying Server Settings"),
                   p(tr("Vidalia was unable to apply your server's settings."))
                     + p(errmsg),
-                  VMessageBox::Ok, VMessageBox::ShowSettings, VMessageBox::ShowLog);
+                  VMessageBox::Ok|VMessageBox::Escape, 
+                  VMessageBox::ShowSettings|VMessageBox::Default,
+                  VMessageBox::ShowLog);
 
       if (ret == VMessageBox::ShowSettings) {
         /* Show the config dialog with the server page already shown. */
@@ -840,7 +847,8 @@ MainWindow::authenticationFailed(QString errmsg)
                      "(%1)").arg(errmsg)) + 
                 p(tr("Please check your control port authentication "
                      "settings.")),
-                VMessageBox::ShowSettings, VMessageBox::Cancel);
+                VMessageBox::ShowSettings|VMessageBox::Default,
+                VMessageBox::Cancel|VMessageBox::Escape);
     
     if (ret == VMessageBox::ShowSettings)
       showConfigDialog(ConfigDialog::Advanced);
