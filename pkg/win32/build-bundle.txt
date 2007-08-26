@@ -36,8 +36,8 @@ for the bundle's version of Tor. You may also need to grab
 repository, and place it in the directory for the bundle's version of
 Vidalia.
 
-6. Place the Torbutton Firefox extension (.xpi) in the directory you created
-for it in Step 4.
+6. Place the Torbutton Firefox extension (.xpi) and license file (LICENSE) in
+the directory you created for it in Step 4.
 
 7. Modify Privoxy's config.txt file as follows:
 
