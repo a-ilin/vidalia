@@ -32,6 +32,9 @@
 #include <util/process.h>
 #include <util/string.h>
 
+#if defined(Q_OS_WIN32)
+#include <QSysInfo>
+#endif
 
 /** Returns true if there is already another Vidalia process running. */
 bool
@@ -40,7 +43,17 @@ is_vidalia_running(QString pidfile)
   /* Read the pidfile and find out if that process still exists */
   qint64 pid = read_pidfile(pidfile);
   if (pid > 0) {
+#if defined(Q_OS_WIN32)
+    if (QSysInfo::WindowsVersion == QSysInfo::WV_NT) {
+      /* We currently can't get a list of running processes on Windows NT, so
+       * be pessimistic and assume the existence of a nonzero pidfile means
+       * Vidalia is running. */
+      return true;
+    } else
+      return (is_process_running(pid));
+#else
     return (is_process_running(pid));
+#endif
   }
   return false;
 }
