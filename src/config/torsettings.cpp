@@ -48,10 +48,8 @@
 
 /* On win32, we need to add the .exe onto Tor's filename */
 #if defined(Q_OS_WIN32)
+#include <QFileInfo>
 #include <util/win32.h>
-#define DEFAULT_TOR_EXECUTABLE    (win32_program_files_folder() + "\\Tor\\tor.exe")
-#else
-#define DEFAULT_TOR_EXECUTABLE    "tor"
 #endif
 
 /** Default to using hashed password authentication */
@@ -73,7 +71,16 @@
 /** Default constructor */
 TorSettings::TorSettings()
 {
-  setDefault(SETTING_TOR_EXECUTABLE, DEFAULT_TOR_EXECUTABLE);
+#if defined(Q_OS_WIN32)
+  QString programFiles = win32_program_files_folder();
+  if (QFileInfo(programFiles + "\\Vidalia Bundle\\Tor\\tor.exe").exists())
+    setDefault(SETTING_TOR_EXECUTABLE, programFiles + "\\Vidalia Bundle\\Tor\\tor.exe");
+  else
+    setDefault(SETTING_TOR_EXECUTABLE, programFiles + "\\Tor\\tor.exe");
+#else
+  setDefault(SETTING_TOR_EXECUTABLE, "tor");
+#endif
+
   setDefault(SETTING_TORRC,         Vidalia::dataDirectory() + "/torrc");
   setDefault(SETTING_CONTROL_ADDR,  "127.0.0.1");
   setDefault(SETTING_CONTROL_PORT,  9051);
