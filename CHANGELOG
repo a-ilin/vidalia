@@ -1,8 +1,11 @@
-0.0.14  ??-Aug-2007
+0.0.14  26-Aug-2007
   o Add support for Tor's HashedControlPassword and CookieAuthentication
     options. Password authentication is enabled by default.
   o Add support for Tor's new PROTOCOLINFO control command.
   o Support running on Windows NT 4.0 again.
+  o Check to see if "%PROGRAMFILES%\Vidalia Bundle\Tor\tor.exe" exists when
+    setting the default Tor executable on Win32. If it doesn't, fall back to
+    "%PROGRAMFILES%\Tor\tor.exe". (Ticket #262)
   o Allow the people who think clicking 'New Identity' is the solution to
     everything to be disappointed six times per minute, instead of once.
   o Add the ability to configure Tor's data directory.

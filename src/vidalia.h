@@ -43,7 +43,7 @@
 #include <control/torcontrol.h>
 
 /** Vidalia's version string */
-#define VIDALIA_VERSION    "0.0.14-svn"
+#define VIDALIA_VERSION    "0.0.14"
 
 /** Pointer to this Vidalia application instance. */
 #define vApp  ((Vidalia *)qApp)
