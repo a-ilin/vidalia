@@ -185,57 +185,58 @@ Sie müssen ihn manuell entfernen.</translation>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="98"/>
         <source>You selected &apos;Password&apos; authentication, but did not specify a password.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie haben &apos;Passwort&apos;-Authentifizierung ausgwählt, aber
+kein Passwort angegeben.</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="230"/>
         <source>Select a Directory to Use for Tor Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Wählen Sie ein Verzeichnis zum Speichern der Tordaten aus</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="522"/>
         <source>Authentication:</source>
-        <translation type="unfinished"></translation>
+        <translation>Authentifizierung:</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="532"/>
         <source>Address:</source>
-        <translation type="unfinished">Adresse:</translation>
+        <translation>Adresse:</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="565"/>
         <source>Cookie</source>
-        <translation type="unfinished"></translation>
+        <translation>Cookie</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="570"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Passwort</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="585"/>
         <source>Randomly Generate</source>
-        <translation type="unfinished"></translation>
+        <translation>Zufällige Erzeugung</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="749"/>
         <source>Tor Data Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-Datenverzeichnis</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="770"/>
         <source>Store Tor data in the following directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Speichere die Tordaten in dm folgenden Verzeichnis</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="789"/>
         <source>Select the directory used to store Tor data</source>
-        <translation type="unfinished"></translation>
+        <translation>Wählen Sie das Verzeichnis zum Speichern der Tordaten aus</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="560"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Kein</translation>
     </message>
 </context>
 <context>
@@ -1117,22 +1118,23 @@ dem Netzwerk zu wachsen.</translation>
         <location filename="../gui/mainwindow.cpp" line="421"/>
         <source>Your Tor server is shutting down.<byte value="xd"/>
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ihr Torserver wird nun beendet.<byte value="xd"/>
+Klicken Sie erneut auf &apos;Tor anhalten&apos; um das Beenden von Tor zu erzwingen.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="451"/>
         <source>Starting Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Starte Tor</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="731"/>
         <source>Cookie Authentication Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Cookie-Authentifizierung erforderlich</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="734"/>
         <source>Tor requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one.</source>
-        <translation type="unfinished"></translation>
+        <translationb type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="736"/>
@@ -1142,12 +1144,12 @@ Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
     <message>
         <location filename="../gui/mainwindow.cpp" line="742"/>
         <source>Tor Data Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-Datenverzeichnis</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="744"/>
         <source>Tor Control Cookie (control_auth_cookie)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-Kontrollcookie (control_auth_cookie)</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="786"/>
@@ -1971,27 +1973,27 @@ geben Sie Ihre Uploadgeschwindigkeit bitte hier an.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="857"/>
         <source>Cable/DSL 256 Kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>Kabel/DSL 256 kbit/s</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="862"/>
         <source>Cable/DSL 512 Kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>Kabel/DSL 512 kbit/s</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="867"/>
         <source>Cable/DSL 768 Kbps</source>
-        <translation type="unfinished"></translation>
+        <translation>Kabel/DSL 768 kbit/s</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="872"/>
         <source>T1/Cable/DSL 1.5 Mbps</source>
-        <translation type="unfinished"></translation>
+        <translation>T1/Kabel/DSL 1,5 Mbit/s</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="877"/>
         <source>&gt; 1.5 Mbps</source>
-        <translation type="unfinished"></translation>
+        <translation>&gt; 1,5 Mbit/s</translation>
     </message>
 </context>
 <context>
@@ -2113,7 +2115,7 @@ geben Sie Ihre Uploadgeschwindigkeit bitte hier an.</translation>
     <message>
         <location filename="../gui/common/vmessagebox.cpp" line="98"/>
         <source>Browse</source>
-        <translation type="unfinished">Öffnen</translation>
+        <translation>Öffnen</translation>
     </message>
 </context>
 <context>
