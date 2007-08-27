@@ -883,22 +883,22 @@ Vous devrez peut-être enlever manuellement le service Tor.</translation>
         <translation>Erreur de démarrage Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="567"/>
+        <location filename="../gui/mainwindow.cpp" line="569"/>
         <source>Error Connecting to Tor</source>
         <translation>Erreur de connexion à Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="624"/>
+        <location filename="../gui/mainwindow.cpp" line="626"/>
         <source>Error Stopping Tor</source>
         <translation>Erreur d&apos;arrêt Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="655"/>
+        <location filename="../gui/mainwindow.cpp" line="657"/>
         <source>Tor Exited</source>
         <translation>Tor a été quitté</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="625"/>
+        <location filename="../gui/mainwindow.cpp" line="627"/>
         <source>Vidalia was unable to stop Tor.</source>
         <translation>Vidalia n&apos;a pas pu arrêter Tor.</translation>
     </message>
@@ -908,7 +908,7 @@ Vous devrez peut-être enlever manuellement le service Tor.</translation>
         <translation>Tor est actif</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="597"/>
+        <location filename="../gui/mainwindow.cpp" line="599"/>
         <source>Server is Enabled</source>
         <translation>Le serveur est activé</translation>
     </message>
@@ -918,17 +918,17 @@ Vous devrez peut-être enlever manuellement le service Tor.</translation>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="797"/>
+        <location filename="../gui/mainwindow.cpp" line="802"/>
         <source>Error Applying Server Settings</source>
         <translation>Erreur en appliquant les options du serveur</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="798"/>
+        <location filename="../gui/mainwindow.cpp" line="803"/>
         <source>Vidalia was unable to apply your server&apos;s settings.</source>
         <translation>Vidalia n&apos;a pas pu appliquer les options du serveur.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="602"/>
+        <location filename="../gui/mainwindow.cpp" line="604"/>
         <source>You are currently running a Tor server. Terminating your server will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new server?</source>
@@ -937,7 +937,7 @@ Would you like to shutdown gracefully and give clients time to find a new server
 Voulez-vous arrêter de manière graduelle afin de donner le temps aux clients Tor de trouver un nouveau serveur ?</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="658"/>
+        <location filename="../gui/mainwindow.cpp" line="660"/>
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
@@ -961,7 +961,7 @@ Veuillez consulter le journal des messages afin de vérifier ce qui est arrivé 
         <translation>Voir réseau Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="944"/>
+        <location filename="../gui/mainwindow.cpp" line="952"/>
         <source>New Identity</source>
         <translation>Nouvelle identité</translation>
     </message>
@@ -971,12 +971,12 @@ Veuillez consulter le journal des messages afin de vérifier ce qui est arrivé 
         <translation>Ctrl+I</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="947"/>
+        <location filename="../gui/mainwindow.cpp" line="955"/>
         <source>All subsequent connections will appear to be different than your old connections.</source>
         <translation>Toutes les connexions suivantes sembleront être différentes des précédentes.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="975"/>
+        <location filename="../gui/mainwindow.cpp" line="983"/>
         <source>Failed to Create New Identity</source>
         <translation>La création d&apos;une nouvelle identité a échoué</translation>
     </message>
@@ -1122,63 +1122,63 @@ Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="731"/>
+        <location filename="../gui/mainwindow.cpp" line="735"/>
         <source>Cookie Authentication Required</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="734"/>
+        <location filename="../gui/mainwindow.cpp" line="738"/>
         <source>Tor requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="736"/>
+        <location filename="../gui/mainwindow.cpp" line="740"/>
         <source>Would you like to browse for the file &apos;control_auth_cookie&apos; yourself?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="742"/>
+        <location filename="../gui/mainwindow.cpp" line="747"/>
         <source>Tor Data Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="744"/>
+        <location filename="../gui/mainwindow.cpp" line="749"/>
         <source>Tor Control Cookie (control_auth_cookie)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="786"/>
+        <location filename="../gui/mainwindow.cpp" line="791"/>
         <source>Error Registering for Events</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="788"/>
+        <location filename="../gui/mainwindow.cpp" line="793"/>
         <source>Vidalia was unable to register for Tor events. Many of Vidalia&apos;s features may be unavailable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="826"/>
+        <location filename="../gui/mainwindow.cpp" line="833"/>
         <source>Password Authentication Required</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="827"/>
-        <source>Please enter your control password:</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="838"/>
+        <location filename="../gui/mainwindow.cpp" line="845"/>
         <source>Error Authenticating to Tor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="840"/>
+        <location filename="../gui/mainwindow.cpp" line="847"/>
         <source>Vidalia was unable to authenticate to Tor. (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="842"/>
+        <location filename="../gui/mainwindow.cpp" line="849"/>
         <source>Please check your control port authentication settings.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="834"/>
+        <source>Please enter your control password (not the hash):</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2123,12 +2123,12 @@ votre fingerprint de PGP ou de GPG.</translation>
         <translation>Style d&apos;interface spécifié invalide : </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="86"/>
+        <location filename="../main.cpp" line="99"/>
         <source>Vidalia is already running</source>
         <translation>Vidalia fonctionne déjà</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="92"/>
+        <location filename="../main.cpp" line="105"/>
         <source>Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.
 
 Would you like to continue starting Vidalia?</source>
@@ -2137,7 +2137,7 @@ Would you like to continue starting Vidalia?</source>
 Voulez-vous continuer à démarrer Vidalia ?</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="72"/>
+        <location filename="../main.cpp" line="85"/>
         <source>Invalid Argument</source>
         <translation>Argument invalide</translation>
     </message>

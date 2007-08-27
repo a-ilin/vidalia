@@ -831,7 +831,7 @@ MainWindow::authenticationFailed(QString errmsg)
     /* Bad password, so prompt for a new one. */
     QString password = QInputDialog::getText(this,
                          tr("Password Authentication Required"),
-                         tr("Please enter your control password:"),
+                         tr("Please enter your control password (not the hash):"),
                          QLineEdit::Password);
     if (!password.isEmpty()) {
       TorSettings settings;
