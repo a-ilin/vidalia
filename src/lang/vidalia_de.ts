@@ -1134,7 +1134,7 @@ Klicken Sie erneut auf &apos;Tor anhalten&apos; um das Beenden von Tor zu erzwin
     <message>
         <location filename="../gui/mainwindow.cpp" line="734"/>
         <source>Tor requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one.</source>
-        <translationb type="unfinished"></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="736"/>
