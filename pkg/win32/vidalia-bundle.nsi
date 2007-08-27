@@ -32,12 +32,12 @@ SetCompressor /SOLID lzma
 
 !define VIDALIA_NAME        "Vidalia"
 !define VIDALIA_EXEC        "vidalia.exe"
-!define VIDALIA_APPVERSION  "0.0.14"
+!define VIDALIA_APPVERSION  "0.0.15-svn"
 !define VIDALIA_DESC        "${VIDALIA_NAME} ${VIDALIA_APPVERSION}"
 
 !define TOR_NAME            "Tor"
 !define TOR_EXEC            "tor.exe"
-!define TOR_APPVERSION      "0.2.0.4-alpha"
+!define TOR_APPVERSION      "0.2.0.6-alpha"
 !define TOR_DESC            "${TOR_NAME} ${TOR_APPVERSION}"
 
 !define PRIVOXY_NAME        "Privoxy"
@@ -50,13 +50,13 @@ SetCompressor /SOLID lzma
 !define TORBUTTON_DESC      "${TORBUTTON_NAME} ${TORBUTTON_APPVERSION}"
 
 !define OPENSSL_NAME        "OpenSSL"
-!define OPENSSL_APPVERSION  "0.9.8d"
+!define OPENSSL_APPVERSION  "0.9.8e"
 !define OPENSSL_DESC        "${OPENSSL_NAME} ${OPENSSL_APPVERSION}"
 
 !define BUNDLE_NAME         "Vidalia Bundle"
 !define BUNDLE_APPVERSION   "${TOR_APPVERSION}-${VIDALIA_APPVERSION}"
 !define BUNDLE_REVISION     "1"
-!define BUNDLE_PRODVERSION  "0.0.14.${BUNDLE_REVISION}" ; Product version must be x.x.x.x
+!define BUNDLE_PRODVERSION  "0.0.15.${BUNDLE_REVISION}" ; Product version must be x.x.x.x
 !define BUNDLE_DESC         "${BUNDLE_NAME} ${BUNDLE_APPVERSION}"
 !define INSTALLFILE         "vidalia-bundle-${BUNDLE_APPVERSION}.exe"
 !define UNINSTALLER         "Uninstall.exe"
