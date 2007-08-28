@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="fi">
+<defaultcodec></defaultcodec>
 <context>
     <name></name>
     <message>
@@ -185,57 +186,57 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="98"/>
         <source>You selected &apos;Password&apos; authentication, but did not specify a password.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitsit &apos;Salasana&apos;-kirjautumisen, mutta et määrittänyt salasanaa.</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="230"/>
         <source>Select a Directory to Use for Tor Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse kansio Tor-ohjelman tiedoille</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="522"/>
         <source>Authentication:</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjautuminen:</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="532"/>
         <source>Address:</source>
-        <translation type="unfinished">Osoite:</translation>
+        <translation>Osoite:</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="565"/>
         <source>Cookie</source>
-        <translation type="unfinished"></translation>
+        <translation>Eväste</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="570"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Salasana</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="585"/>
         <source>Randomly Generate</source>
-        <translation type="unfinished"></translation>
+        <translation>Satunnaisesti luo</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="749"/>
         <source>Tor Data Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-ohjelman tiedot-kansio</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="770"/>
         <source>Store Tor data in the following directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Säilytä Tor-ohjelman tiedot seuraavassa kansiossa</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="789"/>
         <source>Select the directory used to store Tor data</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse kansio, jossa Tor-ohjelman tiedot säilytetään</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="560"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Ei mitään</translation>
     </message>
 </context>
 <context>
@@ -1114,37 +1115,37 @@ Ole hyvä ja tarkista tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen pysä
         <location filename="../gui/mainwindow.cpp" line="421"/>
         <source>Your Tor server is shutting down.<byte value="xd"/>
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-palvelintasi suljetaan.Klikkaa &apos;Pysäytä Tor&apos; pakottaakseen Tor-ohjelman sulkeutumaan heti.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="451"/>
         <source>Starting Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-ohjelmaa käynnistetään</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="735"/>
         <source>Cookie Authentication Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Eväste-kirjautumista vaaditaan</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="738"/>
         <source>Tor requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor vaatii Vidalian lähettämään kirjautumisevästeen sisällön, mutta Vidalia ei onnistunut löytämään sillaista.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="740"/>
         <source>Would you like to browse for the file &apos;control_auth_cookie&apos; yourself?</source>
-        <translation type="unfinished"></translation>
+        <translation>Haluatko itse selata &apos;control_auth_cookie&apos;-tiedostoa?</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="747"/>
         <source>Tor Data Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-tietokansio</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="749"/>
         <source>Tor Control Cookie (control_auth_cookie)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-ohjauseväste (control_auth_cookie)</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="791"/>
@@ -1159,27 +1160,32 @@ Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
     <message>
         <location filename="../gui/mainwindow.cpp" line="833"/>
         <source>Password Authentication Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Salasana-kirjautumista vaaditaan</translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="834"/>
+        <source>Please enter your control password:</source>
+        <translation type="obsolete">Ole hyvä ja kirjoita ohjaussalasanasi:</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="845"/>
         <source>Error Authenticating to Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe kirjautuessa Tor-ohjelmaan</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="847"/>
         <source>Vidalia was unable to authenticate to Tor. (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia ei onnistut kirjautumaan Tor-ohjelmaan. (%1)</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="849"/>
         <source>Please check your control port authentication settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ole hyvä ja tarkista ohjausportin kirjautumisasetukset.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="834"/>
         <source>Please enter your control password (not the hash):</source>
-        <translation type="unfinished"></translation>
+        <translation>Ole hyvä ja anna ohjaussalasanasi (ei hashia):</translation>
     </message>
 </context>
 <context>
@@ -1652,7 +1658,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/network/netviewer.ui" line="297"/>
         <source>Tor Network Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-verkkokartta</translation>
     </message>
 </context>
 <context>
@@ -2105,7 +2111,7 @@ PGP- tai GPG-tunnistuksen voi myös lisätä.</translation>
     <message>
         <location filename="../gui/common/vmessagebox.cpp" line="98"/>
         <source>Browse</source>
-        <translation type="unfinished">Selaa</translation>
+        <translation>Selaa</translation>
     </message>
 </context>
 <context>
