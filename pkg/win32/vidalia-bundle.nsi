@@ -46,7 +46,7 @@ SetCompressor /SOLID lzma
 !define PRIVOXY_DESC        "${PRIVOXY_NAME} ${PRIVOXY_APPVERSION}"
 
 !define TORBUTTON_NAME      "Torbutton"
-!define TORBUTTON_APPVERSION "1.0.4-fx+tb"
+!define TORBUTTON_APPVERSION "1.0.4.01-fx+tb"
 !define TORBUTTON_DESC      "${TORBUTTON_NAME} ${TORBUTTON_APPVERSION}"
 
 !define OPENSSL_NAME        "OpenSSL"
