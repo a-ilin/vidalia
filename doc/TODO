@@ -26,6 +26,7 @@ Features planned for 0.1.x:
     something like a table, populated via "getinfo config/names". (Ticket #76)
   * A web-based interface for viewing the status of Tor from the user's
     browser and possibly configuring Tor, too. (Ticket #42)
+  * We should support and use the ControlSocket option whenever possible.
 
 
 Packaging:
