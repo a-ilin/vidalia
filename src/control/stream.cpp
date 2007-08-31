@@ -110,7 +110,9 @@ Stream::toStatus(QString strStatus)
   } else if (strStatus == "CLOSED") {
     status = Closed;
   } else if (strStatus == "DETACHED") {
-    status = Detached;
+    status = Detached; 
+  } else if (strStatus == "REMAP") {
+    status = Remap;
   } else {
     status = Unknown;
   }
@@ -132,6 +134,7 @@ Stream::statusString()
     case Failed:        status = tr("Failed"); break;
     case Closed:        status = tr("Closed"); break;
     case Detached:      status = tr("Retrying"); break;
+    case Remap:         status = tr("Remapped"); break;
     default:            status = tr("Unknown"); break;
   }
   return status;

@@ -47,7 +47,8 @@ public:
     Succeeded,    /**< Stream established */
     Failed,       /**< Stream failed */
     Closed,       /**< Stream closed */
-    Detached      /**< Detached from circuit */
+    Detached,     /**< Detached from circuit */
+    Remap         /**< Address re-mapped to another */
   };
     
   /** Default constructor */
