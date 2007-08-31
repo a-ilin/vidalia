@@ -56,5 +56,5 @@ LangString TorbuttonAddToFirefoxDesc  ${LANG_POLISH} "Dodaj rozszerzenie ${TORBU
 LangString TorbuttonFirefoxNotFound   ${LANG_POLISH} "Firefox nie zosta³ znaleziony w systemie. Torbutton nie zostanie zainstalowany."
 
 ; Miscellaneous Strings
-LangString AppData                    ${LANG_POLISH} "Application Data"
-LangString AppDataUninstDesc          ${LANG_POLISH} "Remove saved application data and configuration files."
+LangString AppData                    ${LANG_POLISH} "Dane Aplikacji"
+LangString AppDataUninstDesc          ${LANG_POLISH} "Usuñ wszystkie dane aplikacji i pliki konfiguracyjne."
