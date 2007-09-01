@@ -1,4 +1,4 @@
-Ôªø<!--
+<!--
   $Id$
   Vidalia is distributed under the following license:
 
@@ -27,7 +27,7 @@
 <hr />
 
 <p>
-Vidalia mahdollistaa yleisten Vidalian ja Tor-ohjelman toimintojen s√§√§telyn. Vidalia mahdollistaa my√∂s oman <a
+Vidalia mahdollistaa yleisten Vidalian ja Tor-ohjelman toimintojen s‰‰telyn. Vidalia mahdollistaa myˆs oman <a
 href="server.html">Tor-palvelimen hallitsemisen</a>, jolla on mahdollista auttaa Tor-verkkoa kasvamaan.
 </p>
 
@@ -38,12 +38,12 @@ Yleiset-asetukset -sivun asetukset ovat yleisimmin muutettuja asetuksia.
 </p>
 <ul>
   <li><b>Tor-ohjelma</b>: 
-    Tor-ohjelma, jonka Vidalia k√§ynnist√§√§ kun valitaan 
-    <i>K√§ynnist√§</i> teht√§v√§palkin Vidalian valikosta. Jos koneella on monta erilaista versiota Tor-ohjelmasta, voi valita mit√§ Vidalia k√§ytt√§√§ klikkaamalla
-    <i>Selaa</i>-painiketta ja siirtym√§ll√§ kyseisen Tor-ohjelman asennuskansioon.
+    Tor-ohjelma, jonka Vidalia k‰ynnist‰‰ kun valitaan 
+    <i>K‰ynnist‰</i> teht‰v‰palkin Vidalian valikosta. Jos koneella on monta erilaista versiota Tor-ohjelmasta, voi valita mit‰ Vidalia k‰ytt‰‰ klikkaamalla
+    <i>Selaa</i>-painiketta ja siirtym‰ll‰ kyseisen Tor-ohjelman asennuskansioon.
   </li>
-  <li><b>K√§ynnistys</b>:
-    T√§m√§ asetus mahdollistaa Vidalian k√§ynnist√§v√§n Tor-ohjelman sen k√§ynnistymisen j√§lkeen. Vidalian voi my√∂s m√§√§ritt√§√§ k√§ynnistym√§√§n k√§ytt√∂j√§rjestelm√§n k√§ynnistymisen yhteydess√§ (<i>Vain Windows</i>).
+  <li><b>K‰ynnistys</b>:
+    T‰m‰ asetus mahdollistaa Vidalian k‰ynnist‰v‰n Tor-ohjelman sen k‰ynnistymisen j‰lkeen. Vidalian voi myˆs m‰‰ritt‰‰ k‰ynnistym‰‰n k‰yttˆj‰rjestelm‰n k‰ynnistymisen yhteydess‰ (<i>Vain Windows</i>).
   </li>
 </ul>
 
@@ -51,27 +51,53 @@ Yleiset-asetukset -sivun asetukset ovat yleisimmin muutettuja asetuksia.
 <h3>Palvelinasetukset</h3>
 <p>
 <i>
-  Katso <a href="server.html">t√§t√§ ohjeenaihetta</a> saadakseen lis√§tietoa palvelimen pystytt√§misest√§ ja k√§ytt√§misest√§.
+  Katso <a href="server.html">t‰t‰ ohjeenaihetta</a> saadakseen lis‰tietoa palvelimen pystytt‰misest‰ ja k‰ytt‰misest‰.
 </i>
 </p>
 
 <a name="advanced"/>
-<h3>Lis√§asetukset</h3>
+<h3>Lis‰asetukset</h3>
 <p>
-<i>Lis√§asetukset</i>-sivun asetuksia yleens√§ muuttaa vain kokeneemmat k√§ytt√§j√§t.
+<i>Lis‰asetukset</i>-sivun asetuksia yleens‰ muuttaa vain kokeneemmat k‰ytt‰j‰t.
 </p>
 <ul>
   <li><b>Ohjausportti</b>:
-    <i>Portti</i>, jolla Vidalia k√§ytt√§√§ Tor-ohjelmaa.
-    T√§t√§ ei tarvitse muuttaa, jos ei ole ristiriitaa oman tietokoneen muun palvelun kanssa.
+    <i>Portti</i>, jolla Vidalia k‰ytt‰‰ Tor-ohjelmaa tai, jolla voi ohjata ja tarkkailla Tor-ohjelmaa toisella tietokoneella.
+    T‰t‰ ei tarvitse muuttaa, jos ei ole ristiriitaa oman tietokoneen muun palvelun kanssa.
+  </li>
+  <li><b>Control Port Authentication</b>:
+    Control port authentication is used to limit the applications on your
+    machine that can connect to and reconfigure your Tor installation. The
+    available authentication methods are:
+    <ul>  
+      <li>
+        <b>None</b> -- No authentication is required. Use of this option is
+        <b>strongly</b> discouraged. Any application or user on your computer
+        can reconfigure your Tor installation.
+      </li>
+      <li> 
+        <b>Password</b> <i>(Default)</i> -- If this method is selected, you
+        can specify a password that Tor will require each time a user or
+        application connects to Tor's control port. If Vidalia starts Tor for
+        you, you can have Vidalia randomly generate a new password each time
+        it starts Tor by checking the <i>Randomly Generate</i> checkbox.
+      </li>
+      <li>
+        <b>Cookie</b> -- If cookie authentication is selected, Tor will
+        write a file (or, <i>cookie</i>) containing random bytes to its data 
+        directory when it starts. Any user or application that tries to
+        connect to Tor's control port must be able to provide the contents of
+        this cookie.
+      </li>
+    </ul>
   </li>
   <li><b>Tor-asetustiedosto</b>:
-   T√§ll√§ saa Vidalian k√§ynnist√§m√§√§n Tor-ohjelman jollakin erikseen m√§√§r√§tyll√§ Tor-asetustiedostolla <i>(torcc)</i>.
+   T‰ll‰ saa Vidalian k‰ynnist‰m‰‰n Tor-ohjelman jollakin erikseen m‰‰r‰tyll‰ Tor-asetustiedostolla <i>(torcc)</i>. Jos kent‰n j‰tt‰‰ tyhj‰ksi Vidalia k‰ytt‰‰ oletusasetustiedostoa.
   </li>
-  <li><b>Oikeudet</b>:
-    Tor-ohjelma voi k√§ytt√§√§ toisella k√§ytt√§j√§tilill√§, jos laittaa arvon Suorita k√§ytt√§j√§n√§, Tor k√§ytt√§√§ <i>setuid</i> t√§ll√§ k√§ytt√§j√§ll√§ k√§ynnistyess√§√§n.
+  <li><b>Oikeudet</b> <i>(Valinnainen, ei ole Windowssissa k‰ytˆss‰):
+    Tor-ohjelma voi k‰ytt‰‰ toisella k‰ytt‰j‰tilill‰, jos laittaa arvon Suorita k‰ytt‰j‰n‰, Tor k‰ytt‰‰ <i>setuid</i> t‰ll‰ k‰ytt‰j‰ll‰ k‰ynnistyess‰‰n.
 
-Tor voi my√∂s k√§ynnisty√§ toisen ryhm√§n oikeuksien mukaisesti, jos laittaa arvon Suorita ryh√§n√§, Tor k√§ytt√§√§ <i>setgid</i> t√§ll√§ ryhm√§ll√§ k√§ynnistyess√§√§n.
+Tor voi myˆs k‰ynnisty‰ toisen ryhm‰n oikeuksien mukaisesti, jos laittaa arvon Suorita ryh‰n‰, Tor k‰ytt‰‰ <i>setgid</i> t‰ll‰ ryhm‰ll‰ k‰ynnistyess‰‰n.
   </li>
 </ul>
 
