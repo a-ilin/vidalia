@@ -5,21 +5,42 @@ PROFILE="Vidalia.pro"
 
 AC_LANG(C++)
 
+# Get the operating system name
+OS=`uname -s`
+
+AC_MSG_CHECKING([for win32])
+case $OS in
+  MINGW*|CYGWIN*) bwin32=yes;;
+  *) bwin32=no;;
+esac
+AC_MSG_RESULT($bwin32)
+
 # Find Qt or use one specified to ./configure
 AC_ARG_WITH([qt-dir],
   AC_HELP_STRING([--with-qt-dir=/path/to/Qt],
                  [Path to Qt 4.1.0 or later.]),
   [QTPATHS="$withval"],
   [ # There can be multiple versions of Qt under these directories
-    QTPATHS="/usr/local/Trolltech /usr/Trolltech /usr"
-    VERLIST=`ls -rm /usr/local/Trolltech/ 2> /dev/null | sed -e s/,//`
-    for ver in $VERLIST; do
-      QTPATHS="$QTPATHS /usr/local/Trolltech/$ver"
-    done
-    VERLIST=`ls -rm /usr/Trolltech/ 2> /dev/null | sed -e s/,//`
-    for ver in $VERLIST; do
-      QTPATHS="$QTPATHS /usr/Trolltech/$ver"
-    done
+    if test x$bwin32 = xyes; then  
+      QTPATHS="C:/Qt"
+      VERLIST=`ls -rm C:/Qt/ 2> /dev/null | sed -e s/,//g`
+      for ver in $VERLIST; do
+        test -d "C:/Qt/$ver" || continue
+        QTPATHS="$QTPATHS C:/Qt/$ver"
+      done
+    else
+      QTPATHS="/usr/local/Trolltech /usr/Trolltech /usr"
+      VERLIST=`ls -rm /usr/local/Trolltech/ 2> /dev/null | sed -e s/,//g`
+      for ver in $VERLIST; do
+        test -d "/usr/local/Trolltech/$ver" || continue
+        QTPATHS="$QTPATHS /usr/local/Trolltech/$ver"
+      done
+      VERLIST=`ls -rm /usr/Trolltech/ 2> /dev/null | sed -e s/,//g`
+      for ver in $VERLIST; do
+        test -d "/usr/Trolltech/$ver" || continue
+        QTPATHS="$QTPATHS /usr/Trolltech/$ver"
+      done
+    fi
   ])
 
 AC_MSG_CHECKING([for Qt >= 4.1.0])
@@ -48,9 +69,16 @@ if test x$QTDIR = x; then
   AC_MSG_RESULT([no])
   AC_MSG_ERROR([Vidalia requires Qt 4.1.0 or greater. You may need to install
   Qt development packages, or you can specify an explicit path using --with-qt-dir])
-else
- AC_MSG_RESULT($QTVERSION)
 fi
+if test x$bwin32 = xyes; then
+  case $QTVERSION in
+    4.1.*|4.2.*)
+      AC_MSG_ERROR([Building Vidalia under MinGW or Cygwin requires Qt >= 4.3.0.])
+      ;;
+    *);;
+  esac
+fi
+AC_MSG_RESULT($QTVERSION)
 
 # Find out where Qt includes live
 AC_MSG_CHECKING([for Qt includes])
@@ -79,8 +107,7 @@ AC_PATH_PROG(CHMOD, chmod, chmod)
 saved_CXXFLAGS="$CXXFLAGS"
 CXXFLAGS="-I$QTDATA/include -I$QTDATA/include/QtCore -I$QTDATA/include/QtGui"
 
-os=`uname -s`
-if test $os = "Darwin"; then
+if test $OS = "Darwin"; then
   # On Mac, we need to see if Qt is built as a series of frameworks
   AC_CACHE_CHECK([if Qt is built as a framework], ac_cv_qt_is_framework, [
     saved_LDFLAGS="$LDFLAGS"
