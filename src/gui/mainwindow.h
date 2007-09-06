@@ -121,10 +121,6 @@ private:
     Stopped,    /**< Tor is not running. */
     Starting,   /**< Tor is in the process of starting. */
     Started,    /**< Tor is currently running. */
-    Connecting, /**< Vidalia is connecting to Tor. */
-    Connected,  /**< Vidalia is connected to Tor. */
-    Disconnecting,  /**< Vidalia is disconnecting from Tor. */
-    Disconnected,   /**< Vidalia is disconnected from Tor. */
     Authenticating, /**< Vidalia is authenticating to Tor. */
     Authenticated   /**< Vidalia has authenticated to Tor. */
   };

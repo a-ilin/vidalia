@@ -570,8 +570,6 @@ MainWindow::started()
 void
 MainWindow::connectFailed(QString errmsg)
 {
-  updateTorStatus(Disconnected);
-
   /* Ok, ok. It really isn't going to connect. I give up. */
   int response = VMessageBox::warning(this, 
                    tr("Error Connecting to Tor"), p(errmsg),
@@ -681,7 +679,6 @@ MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
 void
 MainWindow::connected()
 {
-  updateTorStatus(Connected);
   authenticate();
 }
 
@@ -689,7 +686,6 @@ MainWindow::connected()
 void
 MainWindow::disconnect()
 {
-  updateTorStatus(Disconnecting);
   _torControl->disconnect();
 }
 
@@ -697,7 +693,6 @@ MainWindow::disconnect()
 void
 MainWindow::disconnected()
 {
-  updateTorStatus(Disconnected);
   if (!_isVidaliaRunningTor) {
     /* If we didn't start our own Tor process, interpret losing the control
      * connection as "Tor is stopped". */
@@ -1015,10 +1010,6 @@ MainWindow::toString(TorStatus status)
     case Stopped:   return "Stopped";
     case Starting:  return "Starting";
     case Started:   return "Started";
-    case Connecting:  return "Connecting";
-    case Connected:   return "Connected";
-    case Disconnecting: return "Disconnecting";
-    case Disconnected:  return "Disconnected";
     case Authenticating:  return "Authenticating";
     case Authenticated:   return "Authenticated";
     default: break;
