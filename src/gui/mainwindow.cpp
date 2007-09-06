@@ -425,7 +425,7 @@ MainWindow::updateTorStatus(TorStatus status)
       connect(ui.lblStartStopTor, SIGNAL(clicked()), this, SLOT(start()));
   } else if (status == Stopping) {
       if (_delayedShutdownStarted) {
-        statusText = tr("Your Tor server is shutting down.\r\n" 
+        statusText = tr("Your Tor server is shutting down.\n" 
                         "Click 'Stop Tor' again to force Tor to stop now.");
       } else {
         statusText = tr("Tor is shutting down");
