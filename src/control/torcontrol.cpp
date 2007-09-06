@@ -56,13 +56,11 @@ TorControl::TorControl()
 
 #if defined(Q_OS_WIN32)
   _torService = new TorService(this);
-  QObject::connect(_torService, SIGNAL(started()),
-                   this, SLOT(onStarted()), Qt::QueuedConnection);
+  QObject::connect(_torService, SIGNAL(started()), this, SLOT(onStarted()));
   QObject::connect(_torService, SIGNAL(finished(int, QProcess::ExitStatus)),
                    this, SLOT(onStopped(int, QProcess::ExitStatus)));
   QObject::connect(_torService, SIGNAL(startFailed(QString)),
-                   this, SLOT(onStartFailed(QString)), 
-                   Qt::QueuedConnection);
+                   this, SLOT(onStartFailed(QString))); 
 #endif
 }
 
@@ -107,13 +105,13 @@ TorControl::start()
   
       /* Plumb the process signals */
       QObject::connect(_torProcess, SIGNAL(started()),
-           this, SLOT(onStarted()), Qt::QueuedConnection);
+                       this, SLOT(onStarted()));
       QObject::connect(_torProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
-           this, SLOT(onStopped(int, QProcess::ExitStatus)));
+                       this, SLOT(onStopped(int, QProcess::ExitStatus)));
       QObject::connect(_torProcess, SIGNAL(startFailed(QString)),
-           this, SLOT(onStartFailed(QString)), Qt::QueuedConnection);
+                       this, SLOT(onStartFailed(QString)));
       QObject::connect(_torProcess, SIGNAL(log(QString, QString)),
-           this, SLOT(onLogStdout(QString, QString)));
+                       this, SLOT(onLogStdout(QString, QString)));
   
       /* Kick off the Tor process. */
       _torProcess->start(expand_filename(settings.getExecutable()), 
