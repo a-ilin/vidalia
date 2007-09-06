@@ -26,6 +26,7 @@
  */
 
 #include <QDir>
+#include <QTimer>
 #include <QTextStream>
 #include <QStyleFactory>
 #include <util/string.h>
@@ -125,6 +126,24 @@ Vidalia::~Vidalia()
   if (_help)
     delete _help;
   delete _torControl;
+}
+
+/** Enters the main event loop and waits until exit() is called. The signal
+ * running() will be emitted when the event loop has started. */
+int
+Vidalia::run()
+{
+  QTimer::singleShot(0, vApp, SLOT(onEventLoopStarted()));
+  return vApp->exec();
+}
+
+/** Called when the application's main event loop has started. This method
+ * will emit the running() signal to indicate that the application's event
+ * loop is running. */
+void
+Vidalia::onEventLoopStarted()
+{
+  emit running();
 }
 
 #if defined(Q_OS_WIN)

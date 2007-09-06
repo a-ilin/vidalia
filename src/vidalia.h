@@ -99,12 +99,19 @@ public:
 
   /** Writes <b>msg</b> with severity <b>level</b> to Vidalia's log. */
   static Log::LogMessage log(Log::LogLevel level, QString msg);
-
+ 
+  /** Enters the main event loop and waits until exit() is called. The signal
+   * running() will be emitted when the event loop has started. */
+  static int run();
+  
 public slots:
   /** Shows the specified help topic, or the default if empty. */
   static void help(QString topic = QString());
 
 signals:
+  /** Emitted when the application is running and the main event loop has
+   * started. */ 
+  void running();
   /** Signals that the application needs to shutdown now. */
   void shutdown();
 
@@ -114,6 +121,12 @@ protected:
   bool winEventFilter(MSG *msg, long *result);
 #endif
 
+private slots:
+  /** Called when the application's main event loop has started. This method
+   * will emit the running() signal to indicate that the application's event
+   * loop is running. */
+  void onEventLoopStarted();
+  
 private:
   /** Catches debugging messages from Qt and sends them to 
    * Vidalia's logs. */
