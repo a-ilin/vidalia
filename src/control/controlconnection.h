@@ -33,6 +33,8 @@
 #include <QMutex>
 #include <QQueue>
 #include <QWaitCondition>
+#include <QTimer>
+#include <QHostAddress>
 
 #include "eventtype.h"
 #include "controlsocket.h"
@@ -46,9 +48,11 @@ class ControlConnection : public QThread
 public:
   /** Control connection status */
   enum Status {
-    Disconnected, /**< Control connection disconnected.    */
-    Connecting,   /**< Control connection attempt pending. */
-    Connected     /**< Control connection established.     */
+    Unset,         /**< Control connection status is not yet set. */
+    Disconnected,  /**< Control connection disconnected.     */
+    Disconnecting, /**< Control connection is disconnecting. */
+    Connecting,    /**< Control connection attempt pending.  */
+    Connected      /**< Control connection established.      */
   };
 
   /** Default constructor. */
@@ -82,14 +86,22 @@ protected:
   bool eventFilter(QObject *obj, QEvent *event);
 
 private slots:
+  /** Connects to Tor's control interface. */
+  void connect();
   /** Called when there is data on the control socket. */
   void onReadyRead();
+  /** Called when the control socket is connected. */
+  void onConnected();
+  /** Called when the control socket is disconnected. */
+  void onDisconnected();
+  /** Called when the control socket encounters an error. */
+  void onError(QAbstractSocket::SocketError error);
 
 private:
   /** Sets the control connection status. */
   void setStatus(Status status);
-  /** Connects to Tor's control interface. */
-  bool connect();
+  /** Returns the string description of <b>status</b>. */
+  QString statusString(Status status);
   /** Main thread implementation. */
   void run();
 
@@ -100,6 +112,10 @@ private:
   quint16 _port; /**< Port of Tor's control interface. */
   QMutex _connMutex; /**< Mutex around the control socket. */
   QMutex _recvMutex; /**< Mutex around the queue of ReceiveWaiters. */
+  QMutex _statusMutex; /**< Mutex around the connection status value. */
+  int _connectAttempt; /**< How many times we've tried to connect to Tor while
+                            waiting for Tor to start. */
+  QTimer* _connectTimer; /**< Timer used to delay connect attempts. */
 
   /** Private class used to wait for a response to a control command. */
   class ReceiveWaiter {

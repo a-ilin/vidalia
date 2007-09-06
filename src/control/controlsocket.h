@@ -29,7 +29,6 @@
 #define _CONTROLSOCKET_H
 
 #include <QTcpSocket>
-#include <QHostAddress>
 
 #include "controlcommand.h"
 #include "controlreply.h"
@@ -40,14 +39,9 @@ class ControlSocket : public QTcpSocket
   Q_OBJECT
 
 public:
-  /** Default constructor and destructor */
+  /** Default constructor. */
   ControlSocket();
 
-  /** Connect to Tor on the specified host and port */
-  bool connect(QHostAddress addr, quint16 port, QString *errmsg = 0);
-  /** Disconnect from Tor */
-  bool disconnect(QString *errmsg = 0);
-  
   /** Send a command to Tor */
   bool sendCommand(ControlCommand cmd, QString *errmsg = 0);
   /** Read a response from Tor */
@@ -56,7 +50,10 @@ public:
   /** Returns true if the control socket is connected and ready to send or
    * receive. */
   bool isConnected();
-
+  
+  /** Returns the string description of <b>error</b>. */
+  static QString toString(const QAbstractSocket::SocketError error);
+  
 protected:
   /** Reads line data off the socket in chunks. */
   bool readLineData(QString &line, QString *errmsg = 0);

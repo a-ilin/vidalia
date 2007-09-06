@@ -25,16 +25,10 @@
  * \brief Socket used to connect to Tor's control interface
  */
 
-#include <QHostAddress>
 #include <util/string.h>
 #include <vidalia.h>
 
 #include "controlsocket.h"
-
-/** Give up after waiting five seconds for the control socket to connect to
-* Tor. This timeout used to be shorter (three seconds), but some Agnitum
-* OutPost users yelled at us wanting a longer timeout, for some reason. */
-#define CONN_TIMEOUT  5000
 
 /** Timeout reads in 250ms. We can set this to a short value because if there
 * isn't any data to read, we want to return anyway. */
@@ -44,42 +38,6 @@
 /** Default constructor. */
 ControlSocket::ControlSocket()
 {
-}
-
-/** Connects to Tor's control socket on the specified host and port. If the
- * connection is successful, true is returned. If the connection fails, then
- * this function returns false and sets <b>errmsg</b> appropriately, if not
- * null. */
-bool
-ControlSocket::connect(QHostAddress addr, quint16 port, QString *errmsg)
-{
-  /* Connect the control socket. */
-  vNotice("Connecting to Tor's control port on %1:%2").arg(addr.toString())
-                                                      .arg(port);
-  connectToHost(addr, port);
-  if (!waitForConnected(CONN_TIMEOUT)) {
-    vWarn("Failed to connect to Tor's control port: %1").arg(errorString());
-    return err(errmsg, tr("Error connecting to %1:%2 [%3]")
-                                            .arg(addr.toString())
-                                            .arg(port)
-                                            .arg(errorString()));
-  }
-  return true;
-}
-
-/** Disconnects from Tor's control socket */
-bool
-ControlSocket::disconnect(QString *errmsg)
-{
-  disconnectFromHost();
-  if (isConnected()) {
-    if (!waitForDisconnected(CONN_TIMEOUT)) {
-      vWarn("Failed to disconnect from Tor: %1").arg(errorString());
-      return err(errmsg, tr("Error disconnecting socket. [%1]")
-                                            .arg(errorString()));
-    }
-  }
-  return true;
 }
 
 /** Returns true if the control socket is connected and ready to send or
@@ -213,5 +171,39 @@ ControlSocket::readReply(ControlReply &reply, QString *errmsg)
     reply.appendLine(replyLine);
   } while (c != QChar(' '));
   return true;
+}
+
+/** Returns the string description of <b>error</b>. */
+QString
+ControlSocket::toString(const QAbstractSocket::SocketError error)
+{
+  QString str;
+  switch (error) {
+    case ConnectionRefusedError:
+      str = "Connection refused by peer."; break;
+    case RemoteHostClosedError:
+      str = "Remote host closed the connection."; break;
+    case HostNotFoundError:
+      str = "Host address not found."; break;
+    case SocketAccessError:
+      str = "Insufficient access privileges."; break;
+    case SocketResourceError:
+      str = "Insufficient resources."; break;
+    case SocketTimeoutError:
+      str = "Socket operation timed out."; break;
+    case DatagramTooLargeError:
+      str = "Datagram size exceeded the operating system limit."; break;
+    case NetworkError:
+      str = "Network error occurred."; break;
+    case AddressInUseError:
+      str = "Specified address already in use."; break;
+    case SocketAddressNotAvailableError:
+      str = "Specified address does not belong to the host."; break;
+    case UnsupportedSocketOperationError:
+      str = "The requested operation is not supported."; break;
+    default:
+      str = "An unidentified error occurred."; break;
+  }
+  return str;
 }
 
