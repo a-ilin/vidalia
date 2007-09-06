@@ -76,7 +76,7 @@ QByteArray crypto_rand_bytes(int len);
  * crypto.c. See LICENSE for details on Tor's license. */
 quint32 crypto_rand_quint32(quint32 max);
 /** Generates a pseudorandom string of length <b>len</b> containing printable
- * ASCII characters of length from the range '!' (0x21) to '~' (0x7e). */
+ * ASCII characters from the range '!' (0x21) to '~' (0x7e). */
 QString crypto_rand_string(int len);
 
 #endif
