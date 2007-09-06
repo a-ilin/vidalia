@@ -142,20 +142,10 @@ MainWindow::MainWindow()
   connect(_torControl, SIGNAL(authenticationFailed(QString)),
                  this,   SLOT(authenticationFailed(QString)));
 
-  /* Make sure we shut down when the operating system is restarting */
+  /* Catch signals when the application is running or shutting down */
+  connect(vApp, SIGNAL(running()), this, SLOT(running()));
   connect(vApp, SIGNAL(shutdown()), this, SLOT(shutdown()));
-
-  if (_torControl->isRunning()) {
-    /* Tor may be already running, but we still need to connect to it. So,
-     * update our status now. */ 
-    updateTorStatus(Starting);
-    /* Tor was already running */
-    started();
-  } else if (settings.runTorAtStart()) {
-    /* If we're supposed to start Tor when Vidalia starts, then do it now */
-    start();
-  }
-  
+ 
   if (isTrayIconSupported()) {
     /* Make the tray icon visible */
     _trayIcon.show();
@@ -197,6 +187,24 @@ MainWindow::isTrayIconSupported()
    * implementation smart enough to detect a system tray on X11. */
   return true;
 #endif
+}
+
+/** Called when the application has started and the main event loop is
+ * running. */
+void
+MainWindow::running()
+{
+  VidaliaSettings settings;
+  if (_torControl->isRunning()) {
+    /* Tor may be already running, but we still need to connect to it. So,
+     * update our status now. */ 
+    updateTorStatus(Starting);
+    /* Tor was already running */
+    started();
+  } else if (settings.runTorAtStart()) {
+    /* If we're supposed to start Tor when Vidalia starts, then do it now */
+    start();
+  }
 }
 
 /** Terminate the Tor process if it is being run under Vidalia, disconnect all

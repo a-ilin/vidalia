@@ -93,6 +93,9 @@ private slots:
   void newIdentity();
   /** Called when the user exits Vidalia. */
   void close();
+  /** Called when the application has started and the main event loop is
+   * running. */
+  void running();
   /** Terminate the Tor process if it is being run under Vidalia, disconnect
    * all TorControl signals, and exit Vidalia. */
   void shutdown();
