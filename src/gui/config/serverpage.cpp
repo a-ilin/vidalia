@@ -26,9 +26,6 @@
  */
 
 #include <vidalia.h>
-#include <util/net.h>
-#include <util/http.h>
-#include <util/html.h>
 #include <gui/common/vmessagebox.h>
 
 #include "serverpage.h"

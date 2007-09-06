@@ -30,18 +30,6 @@
 
 #include <QHostAddress>
 
-/** Returns the local machine's IP address. */
-QHostAddress net_local_address();
-
-/** Returns true if the given address is a private IP. */
-bool net_is_private_address(QHostAddress addr);
-
-/** Returns true if the given IP address is a valid IPv4 address. */
-bool net_is_valid_ip(QString ip);
-
-/** Tries to determine this machine's external IP. */
-bool net_get_public_ip(QString &ip);
-
 /** Attempts a connection to <b>host</b> on <b>port</b>. Returns true if the
  * connection was successful, or false if the connection attempt failed. */
 bool net_test_connect(QHostAddress host, quint16 port, int timeout = 250);

@@ -22,7 +22,6 @@
 #################################################################
 
 HEADERS += $$PWD/net.h \
-           $$PWD/http.h \
            $$PWD/string.h \
            $$PWD/torsocket.h \
            $$PWD/html.h \
@@ -33,7 +32,6 @@ HEADERS += $$PWD/net.h \
            $$PWD/crypto.h
            
 SOURCES += $$PWD/net.cpp \
-           $$PWD/http.cpp \
            $$PWD/string.cpp \
            $$PWD/torsocket.cpp \
            $$PWD/html.cpp \
