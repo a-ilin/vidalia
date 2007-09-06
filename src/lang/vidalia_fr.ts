@@ -185,57 +185,57 @@ Vous devrez peut-être enlever manuellement le service Tor.</translation>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="98"/>
         <source>You selected &apos;Password&apos; authentication, but did not specify a password.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vous avez choisi une authentification par mot de passe, mais n&apos;avez pas spécifié de mot de passe.</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="230"/>
         <source>Select a Directory to Use for Tor Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Choisir le répertoire utilisé pour les données de Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="522"/>
         <source>Authentication:</source>
-        <translation type="unfinished"></translation>
+        <translation>Authentification :</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="532"/>
         <source>Address:</source>
-        <translation type="unfinished">Adresse : </translation>
+        <translation>Adresse : </translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="565"/>
         <source>Cookie</source>
-        <translation type="unfinished"></translation>
+        <translation>Cookie</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="570"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Mot de passe</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="585"/>
         <source>Randomly Generate</source>
-        <translation type="unfinished"></translation>
+        <translation>Génère de façon aléatoire</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="749"/>
         <source>Tor Data Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Répertoire des données de Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="770"/>
         <source>Store Tor data in the following directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Stocker les données de Tor dans le répertoire suivant</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="789"/>
         <source>Select the directory used to store Tor data</source>
-        <translation type="unfinished"></translation>
+        <translation>Choisir le répertoire utilisé pour stocker les données de Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="560"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Aucun</translation>
     </message>
 </context>
 <context>
@@ -1114,72 +1114,73 @@ Veuillez consulter le journal des messages afin de vérifier ce qui est arrivé 
         <location filename="../gui/mainwindow.cpp" line="421"/>
         <source>Your Tor server is shutting down.<byte value="xd"/>
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Votre serveur Tor est en cours d&apos;arrêt.
+Cliquez à nouveau sur &quot;Arrêter Tor&quot; pour forcer à un arrêt immédiat.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="451"/>
         <source>Starting Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor en cours de démarrage</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="735"/>
         <source>Cookie Authentication Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Cookie d&apos;authentification requis</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="738"/>
         <source>Tor requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor demande que Vidalia envoie le contenu d&apos;un cookie d&apos;authentification, mais Vidalia n&apos;a pas pu trouver de cookie.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="740"/>
         <source>Would you like to browse for the file &apos;control_auth_cookie&apos; yourself?</source>
-        <translation type="unfinished"></translation>
+        <translation>Voulez-vous effectuer manuellement la recherche du fichier &apos;control_auth_cookie&apos;  ?</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="747"/>
         <source>Tor Data Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Répertoire des données de Tor</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="749"/>
         <source>Tor Control Cookie (control_auth_cookie)</source>
-        <translation type="unfinished"></translation>
+        <translation>Cookie de contrôle de Tor</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="791"/>
         <source>Error Registering for Events</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur lors de l&apos;enregistrement pour les événements</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="793"/>
         <source>Vidalia was unable to register for Tor events. Many of Vidalia&apos;s features may be unavailable.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia n&apos;a pas pu s&apos;enregistrer pour les événements de Tor. Plusieurs fonctions de Vidalia pourraient ne pas être activées.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="833"/>
         <source>Password Authentication Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Mot de passe d&apos;authentification requis</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="845"/>
         <source>Error Authenticating to Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Erreur d&apos;authentification à Tor</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="847"/>
         <source>Vidalia was unable to authenticate to Tor. (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia n&apos;a pas pu s&apos;authentifier à Tor. (%1)</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="849"/>
         <source>Please check your control port authentication settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Veuillez vérifier les paramètres d&apos;authentification de votre port de contrôle.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="834"/>
         <source>Please enter your control password (not the hash):</source>
-        <translation type="unfinished"></translation>
+        <translation>Veuillez indiquer votre mot de passe de contrôle (et non le &apos;hash&apos;) :</translation>
     </message>
 </context>
 <context>
@@ -1652,7 +1653,7 @@ les développeurs de Tor.</translation>
     <message>
         <location filename="../gui/network/netviewer.ui" line="297"/>
         <source>Tor Network Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Carte du réseau Tor</translation>
     </message>
 </context>
 <context>
@@ -2107,7 +2108,7 @@ votre fingerprint de PGP ou de GPG.</translation>
     <message>
         <location filename="../gui/common/vmessagebox.cpp" line="98"/>
         <source>Browse</source>
-        <translation type="unfinished">Parcourir</translation>
+        <translation>Parcourir</translation>
     </message>
 </context>
 <context>
