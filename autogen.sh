@@ -1,4 +1,3 @@
 #!/bin/sh
 aclocal && \
-	autoconf && \
-	./configure
+	autoconf
