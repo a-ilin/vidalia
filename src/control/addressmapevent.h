@@ -42,9 +42,9 @@ public:
   : QEvent((QEvent::Type)CustomEventType::AddressMapEvent)
   { _from = from; _to = to; _expires = expires; }
 
-  /** Returns the number of bytes read in the last second */
+  /** Returns the source address for this address mapping. */
   QString from() const { return _from; }
-  /** Returns the number of bytes written in the last second */
+  /** Returns the target address for this address mapping. */
   QString to() const { return _to; }
   /** Returns the date and time at which this mapping should expire, in local
    * time. */
