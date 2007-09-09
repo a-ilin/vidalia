@@ -45,9 +45,13 @@
 
 /* Default Vidalia Settings */
 #if defined(Q_WS_MAC)
-#define DEFAULT_STYLE               "macintosh (aqua)"
+#  define DEFAULT_STYLE       "macintosh (aqua)"
 #else
-#define DEFAULT_STYLE               "plastique"
+#  if QT_VERSION >= 0x040300
+#    define DEFAULT_STYLE     "cleanlooks"
+#  else
+#    define DEFAULT_STYLE     "plastique"
+#  endif
 #endif
 
 #if defined(Q_OS_WIN32)
