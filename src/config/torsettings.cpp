@@ -96,7 +96,7 @@ TorSettings::TorSettings()
 QString
 TorSettings::getDataDirectory()
 {
-  return value(SETTING_DATA_DIRECTORY).toString();  
+  return QDir::convertSeparators(value(SETTING_DATA_DIRECTORY).toString());
 }
 
 /** Sets the location to use as Tor's data directory. */
