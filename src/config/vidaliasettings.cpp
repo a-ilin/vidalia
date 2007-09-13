@@ -27,6 +27,7 @@
 
 #include <QDir>
 #include <QCoreApplication>
+#include <QStyleFactory>
 #include <lang/languagesupport.h>
 #include <vidalia.h>
 
@@ -43,17 +44,6 @@
 #define SETTING_DATA_DIRECTORY      "DataDirectory"
 #define SETTING_SHOW_MAINWINDOW_AT_START  "ShowMainWindowAtStart"
 
-/* Default Vidalia Settings */
-#if defined(Q_WS_MAC)
-#  define DEFAULT_STYLE       "macintosh (aqua)"
-#else
-#  if QT_VERSION >= 0x040300
-#    define DEFAULT_STYLE     "cleanlooks"
-#  else
-#    define DEFAULT_STYLE     "plastique"
-#  endif
-#endif
-
 #if defined(Q_OS_WIN32)
 #define STARTUP_REG_KEY        "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
 #define VIDALIA_REG_KEY        "Vidalia" 
@@ -67,9 +57,25 @@
 VidaliaSettings::VidaliaSettings()
 : QSettings(SETTINGS_FILE, QSettings::IniFormat)
 {
+#if defined(Q_WS_MAC)
+  setDefault(SETTING_STYLE, "macintosh (aqua)");
+#else
+  static QStringList styles = QStyleFactory::keys();
+#if defined(Q_WS_WIN)
+  if (styles.contains("windowsvista", Qt::CaseInsensitive))
+    setDefault(SETTING_STYLE, "windowsvista");
+  else
+#endif
+  {
+    if (styles.contains("cleanlooks", Qt::CaseInsensitive))
+      setDefault(SETTING_STYLE, "cleanlooks");
+    else
+      setDefault(SETTING_STYLE, "plastique");
+  }
+#endif
+
   setDefault(SETTING_LANGUAGE, LanguageSupport::defaultLanguageCode());
   setDefault(SETTING_RUN_TOR_AT_START, true);
-  setDefault(SETTING_STYLE, DEFAULT_STYLE);
   setDefault(SETTING_SHOW_MAINWINDOW_AT_START, true);
 }
 
