@@ -336,12 +336,20 @@ QString
 TorSettings::hashPassword(QString password)
 {
   QProcess tor;
-  QString line;
- 
+  QString dataDirectory, line;
+  QStringList args;
+
+  /* Tor writes its state file even if all we're doing is --hash-password. So
+   * if the user has configured a non-default data directory, then include
+   * that in the list of command line arguments. */
+  dataDirectory = getDataDirectory();
+  if (!dataDirectory.isEmpty())
+    args << "DataDirectory" << dataDirectory;
+  args << "--hash-password" << password;
+  
   /* Run Tor, tell it to hash the given password, and then wait for it to
    * finish. */
-  tor.start(getExecutable(),
-            QStringList() << "--hash-password" << password);
+  tor.start(getExecutable(), args);
   if (!tor.waitForStarted() || !tor.waitForFinished())
     return QString();
 
