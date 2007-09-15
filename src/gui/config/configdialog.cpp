@@ -30,8 +30,6 @@
 
 #include "configdialog.h"
 
-#define FONT        QFont(tr("Arial"), 10)
-
 /* Images for toolbar icons */
 #define IMAGE_GENERAL       ":/images/22x22/preferences-system.png"
 #define IMAGE_SERVER        ":/images/22x22/network-server.png"
@@ -101,7 +99,6 @@ ConfigDialog::createPageAction(QIcon img, QString text, QActionGroup *group)
 {
   QAction *action = new QAction(img, text, group);
   action->setCheckable(true);
-  action->setFont(FONT);
   return action;
 }
 
@@ -110,7 +107,6 @@ ConfigDialog::createPageAction(QIcon img, QString text, QActionGroup *group)
 void
 ConfigDialog::addAction(QAction *action, const char *slot)
 {
-  action->setFont(FONT);
   ui.toolBar->addAction(action);
   connect(action, SIGNAL(triggered()), this, slot);
 }
