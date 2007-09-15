@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="ru">
+<defaultcodec></defaultcodec>
 <context>
     <name></name>
     <message>
@@ -185,57 +186,57 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="98"/>
         <source>You selected &apos;Password&apos; authentication, but did not specify a password.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы выбрали парольную аутентификацию, но не указали пароль.</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="230"/>
         <source>Select a Directory to Use for Tor Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите каталог для данных Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="522"/>
         <source>Authentication:</source>
-        <translation type="unfinished"></translation>
+        <translation>Аутентификация:</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="532"/>
         <source>Address:</source>
-        <translation type="unfinished">Адрес:</translation>
+        <translation>Адрес:</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="565"/>
         <source>Cookie</source>
-        <translation type="unfinished"></translation>
+        <translation>Cookie</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="570"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Пароль</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="585"/>
         <source>Randomly Generate</source>
-        <translation type="unfinished"></translation>
+        <translation>Сгенерировать случайно</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="749"/>
         <source>Tor Data Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Каталог данных Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="770"/>
         <source>Store Tor data in the following directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Сохранять данные Tor в указанном каталоге</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="789"/>
         <source>Select the directory used to store Tor data</source>
-        <translation type="unfinished"></translation>
+        <translation>Выберите каталог для хранения данных Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="560"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>None</translation>
     </message>
 </context>
 <context>
@@ -1114,72 +1115,73 @@ Please check the message log for indicators about what happened to Tor before it
         <location filename="../gui/mainwindow.cpp" line="421"/>
         <source>Your Tor server is shutting down.<byte value="xd"/>
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ваш сервер Tor завершает работу.
+Кликните &quot;Остановить Tor&quot; ещё раз чтобы завершить Tor немедленно.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="451"/>
         <source>Starting Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Запускается Tor</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="735"/>
         <source>Cookie Authentication Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Требуется cookie аутентификация</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="738"/>
         <source>Tor requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor требует чтобы Vidalia послала содержимое аутентифицирующей cookie, но Vidalia не может найти cookie.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="740"/>
         <source>Would you like to browse for the file &apos;control_auth_cookie&apos; yourself?</source>
-        <translation type="unfinished"></translation>
+        <translation>Хотите ли вы указать местоположение файла &apos;control_auth_cookie&apos;?</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="747"/>
         <source>Tor Data Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Каталог данных Tor</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="749"/>
         <source>Tor Control Cookie (control_auth_cookie)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor Control Cookie (control_auth_cookie)</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="791"/>
         <source>Error Registering for Events</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка регистрации на события</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="793"/>
         <source>Vidalia was unable to register for Tor events. Many of Vidalia&apos;s features may be unavailable.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia не смогла зарегистрироваться на получение событий Tor. Большая часть функционала Vidalia будет недоступна.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="833"/>
         <source>Password Authentication Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Требуется парольная аутентификация</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="845"/>
         <source>Error Authenticating to Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка аутентификации</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="847"/>
         <source>Vidalia was unable to authenticate to Tor. (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia не смогла аутентифицироваться для доступа к Tor. (%1)</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="849"/>
         <source>Please check your control port authentication settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Пожалуйста проверьте настройки аутентификации.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="834"/>
         <source>Please enter your control password (not the hash):</source>
-        <translation type="unfinished"></translation>
+        <translation>Пожалуйста введите ваш пароль (не хэш):</translation>
     </message>
 </context>
 <context>
@@ -1654,7 +1656,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/netviewer.ui" line="297"/>
         <source>Tor Network Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Карта сети Tor</translation>
     </message>
 </context>
 <context>
@@ -2108,7 +2110,7 @@ PGP или GPG ключа.</translation>
     <message>
         <location filename="../gui/common/vmessagebox.cpp" line="98"/>
         <source>Browse</source>
-        <translation type="unfinished">Выбрать</translation>
+        <translation>Выбрать</translation>
     </message>
 </context>
 <context>
