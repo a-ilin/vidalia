@@ -267,6 +267,10 @@ HelpBrowser::currentItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *prev)
 QTreeWidgetItem*
 HelpBrowser::findTopicItem(QTreeWidgetItem *startItem, QString topic)
 {
+  /* If startItem is null, then we don't know where to start searching. */
+  if (!startItem)
+    return 0;
+
   /* Parse the first subtopic in the topic id. */
   QString subtopic = topic.mid(0, topic.indexOf(".")).toLower();
 
