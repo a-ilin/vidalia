@@ -2,7 +2,7 @@
 ;; 
 ;; Vidalia installer and bundle Russian translation
 ;; 
-;; Based on vidalia_en.nsh r1756
+;; Based on vidalia_en.nsh r1926
 ;;
 
 ; Bundle
@@ -62,4 +62,4 @@ LangString TorbuttonFirefoxNotFound   ${LANG_RUSSIAN} "Не удалось найти Firefox 
 
 ; Miscellaneous Strings
 LangString AppData                    ${LANG_RUSSIAN} "Application Data"
-LangString AppDataUninstDesc          ${LANG_RUSSIAN} "Remove saved application data and configuration files."
+LangString AppDataUninstDesc          ${LANG_RUSSIAN} "Удалить данные приложений и файлы настроек."
