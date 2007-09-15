@@ -27,7 +27,6 @@
 
 #include <QPoint>
 #include <QSize>
-#include <QPalette>
 #include <QShortcut>
 #include <QByteArray>
 #include <QKeySequence>
@@ -41,7 +40,6 @@ VidaliaWindow::VidaliaWindow(QString name, QWidget *parent, Qt::WFlags flags)
 {
   _name     = name;
   _settings = new VidaliaSettings();
-  _previouslyShown = false;
 }
 
 /** Destructor. */
@@ -121,17 +119,6 @@ void
 VidaliaWindow::setVisible(bool visible)
 {
   if (visible) {
-    /* If this is the first time this window is shown, restore its window
-     * position and size. */
-    if (!_previouslyShown) {
-#if !defined (Q_WS_WIN)
-      /* Use the standard palette on non-Windows, overriding whatever was 
-       * specified in the .ui file for this dialog. */
-      setPalette(QPalette());
-#endif
-      _previouslyShown = true;
-    }
-
     /* Bring the window to the top, if it's already open. Otherwise, make the
      * window visible. */
     if (isVisible()) {

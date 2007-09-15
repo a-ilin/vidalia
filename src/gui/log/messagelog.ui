@@ -12,271 +12,6 @@
     <height>625</height>
    </rect>
   </property>
-  <property name="palette" >
-   <palette>
-    <active>
-     <color>
-      <red>0</red>
-      <green>0</green>
-      <blue>0</blue>
-     </color>
-     <color>
-      <red>208</red>
-      <green>208</green>
-      <blue>208</blue>
-     </color>
-     <color>
-      <red>255</red>
-      <green>255</green>
-      <blue>255</blue>
-     </color>
-     <color>
-      <red>247</red>
-      <green>247</green>
-      <blue>247</blue>
-     </color>
-     <color>
-      <red>120</red>
-      <green>120</green>
-      <blue>120</blue>
-     </color>
-     <color>
-      <red>160</red>
-      <green>160</green>
-      <blue>160</blue>
-     </color>
-     <color>
-      <red>0</red>
-      <green>0</green>
-      <blue>0</blue>
-     </color>
-     <color>
-      <red>255</red>
-      <green>255</green>
-      <blue>255</blue>
-     </color>
-     <color>
-      <red>0</red>
-      <green>0</green>
-      <blue>0</blue>
-     </color>
-     <color>
-      <red>255</red>
-      <green>255</green>
-      <blue>255</blue>
-     </color>
-     <color>
-      <red>240</red>
-      <green>240</green>
-      <blue>240</blue>
-     </color>
-     <color>
-      <red>0</red>
-      <green>0</green>
-      <blue>0</blue>
-     </color>
-     <color>
-      <red>0</red>
-      <green>0</green>
-      <blue>128</blue>
-     </color>
-     <color>
-      <red>255</red>
-      <green>255</green>
-      <blue>255</blue>
-     </color>
-     <color>
-      <red>0</red>
-      <green>0</green>
-      <blue>255</blue>
-     </color>
-     <color>
-      <red>255</red>
-      <green>0</green>
-      <blue>255</blue>
-     </color>
-     <color>
-      <red>247</red>
-      <green>247</green>
-      <blue>247</blue>
-     </color>
-    </active>
-    <inactive>
-     <color>
-      <red>0</red>
-      <green>0</green>
-      <blue>0</blue>
-     </color>
-     <color>
-      <red>208</red>
-      <green>208</green>
-      <blue>208</blue>
-     </color>
-     <color>
-      <red>255</red>
-      <green>255</green>
-      <blue>255</blue>
-     </color>
-     <color>
-      <red>247</red>
-      <green>247</green>
-      <blue>247</blue>
-     </color>
-     <color>
-      <red>120</red>
-      <green>120</green>
-      <blue>120</blue>
-     </color>
-     <color>
-      <red>160</red>
-      <green>160</green>
-      <blue>160</blue>
-     </color>
-     <color>
-      <red>0</red>
-      <green>0</green>
-      <blue>0</blue>
-     </color>
-     <color>
-      <red>255</red>
-      <green>255</green>
-      <blue>255</blue>
-     </color>
-     <color>
-      <red>0</red>
-      <green>0</green>
-      <blue>0</blue>
-     </color>
-     <color>
-      <red>255</red>
-      <green>255</green>
-      <blue>255</blue>
-     </color>
-     <color>
-      <red>240</red>
-      <green>240</green>
-      <blue>240</blue>
-     </color>
-     <color>
-      <red>0</red>
-      <green>0</green>
-      <blue>0</blue>
-     </color>
-     <color>
-      <red>0</red>
-      <green>0</green>
-      <blue>128</blue>
-     </color>
-     <color>
-      <red>255</red>
-      <green>255</green>
-      <blue>255</blue>
-     </color>
-     <color>
-      <red>0</red>
-      <green>0</green>
-      <blue>255</blue>
-     </color>
-     <color>
-      <red>255</red>
-      <green>0</green>
-      <blue>255</blue>
-     </color>
-     <color>
-      <red>247</red>
-      <green>247</green>
-      <blue>247</blue>
-     </color>
-    </inactive>
-    <disabled>
-     <color>
-      <red>120</red>
-      <green>120</green>
-      <blue>120</blue>
-     </color>
-     <color>
-      <red>208</red>
-      <green>208</green>
-      <blue>208</blue>
-     </color>
-     <color>
-      <red>255</red>
-      <green>255</green>
-      <blue>255</blue>
-     </color>
-     <color>
-      <red>247</red>
-      <green>247</green>
-      <blue>247</blue>
-     </color>
-     <color>
-      <red>120</red>
-      <green>120</green>
-      <blue>120</blue>
-     </color>
-     <color>
-      <red>160</red>
-      <green>160</green>
-      <blue>160</blue>
-     </color>
-     <color>
-      <red>120</red>
-      <green>120</green>
-      <blue>120</blue>
-     </color>
-     <color>
-      <red>255</red>
-      <green>255</green>
-      <blue>255</blue>
-     </color>
-     <color>
-      <red>120</red>
-      <green>120</green>
-      <blue>120</blue>
-     </color>
-     <color>
-      <red>240</red>
-      <green>240</green>
-      <blue>240</blue>
-     </color>
-     <color>
-      <red>240</red>
-      <green>240</green>
-      <blue>240</blue>
-     </color>
-     <color>
-      <red>0</red>
-      <green>0</green>
-      <blue>0</blue>
-     </color>
-     <color>
-      <red>0</red>
-      <green>0</green>
-      <blue>107</blue>
-     </color>
-     <color>
-      <red>255</red>
-      <green>255</green>
-      <blue>255</blue>
-     </color>
-     <color>
-      <red>0</red>
-      <green>0</green>
-      <blue>255</blue>
-     </color>
-     <color>
-      <red>255</red>
-      <green>0</green>
-      <blue>255</blue>
-     </color>
-     <color>
-      <red>247</red>
-      <green>247</green>
-      <blue>247</blue>
-     </color>
-    </disabled>
-   </palette>
-  </property>
   <property name="font" >
    <font>
     <pointsize>10</pointsize>
@@ -298,14 +33,14 @@
    <bool>true</bool>
   </property>
   <widget class="QWidget" name="centralwidget" >
-   <layout class="QVBoxLayout" >
+   <layout class="QGridLayout" >
     <property name="margin" >
      <number>9</number>
     </property>
     <property name="spacing" >
      <number>6</number>
     </property>
-    <item>
+    <item row="0" column="0">
      <widget class="LogTreeWidget" name="lstMessages" >
       <property name="contextMenuPolicy" >
        <enum>Qt::NoContextMenu</enum>
@@ -348,7 +83,7 @@
       </column>
      </widget>
     </item>
-    <item>
+    <item row="1" column="0">
      <widget class="QFrame" name="frmSettings" >
       <property name="enabled" >
        <bool>true</bool>
@@ -599,7 +334,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="lblNickname" >
+           <widget class="QLabel" name="lblMessageCount" >
             <property name="font" >
              <font>
               <pointsize>10</pointsize>
@@ -987,22 +722,6 @@
    <signal>triggered()</signal>
    <receiver>lstMessages</receiver>
    <slot>selectAll()</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>-1</x>
-     <y>-1</y>
-    </hint>
-    <hint type="destinationlabel" >
-     <x>407</x>
-     <y>393</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>actionSettings</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>frmSettings</receiver>
-   <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel" >
      <x>-1</x>
