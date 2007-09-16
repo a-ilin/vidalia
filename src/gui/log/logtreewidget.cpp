@@ -37,8 +37,6 @@ LogTreeWidget::LogTreeWidget(QWidget *parent)
 {
   setHeader(new LogHeaderView(this));
   
-  setStatusTip(tr("Messages Shown: ") + "0");
-
   /* Default to always scrolling to the most recent item added */
   _scrollOnNewItem = true;
   connect(verticalScrollBar(), SIGNAL(valueChanged(int)),
@@ -102,9 +100,6 @@ LogTreeWidget::clearMessages()
 {
   /* Clear the messages */
   clear();
-  /* This should always be 0, but just in case clear() doesn't really remove
-   * all, we'll get the current count again. */
-  setStatusTip(tr("Messages Shown: %1").arg(messageCount()));
 }
 
 /** Adjusts the message column width to accomodate long messages. */
@@ -203,9 +198,6 @@ LogTreeWidget::log(LogEvent::Severity type, QString message)
   if (_scrollOnNewItem) {
     scrollToItem(item);
   }
-
-  /* Update our tooltip and return the new log item */
-  setStatusTip(tr("Messages Shown: %1").arg(messageCount()));
   return item;
 }
 
@@ -226,8 +218,6 @@ LogTreeWidget::filter(uint filter)
     }
     index--;
   }
-
-  setStatusTip(tr("Messages Shown: %1").arg(messageCount()));
 }
 
 /** Searches the log for entries that contain the given text. */
