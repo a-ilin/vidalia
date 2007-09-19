@@ -33,14 +33,14 @@
    <bool>true</bool>
   </property>
   <widget class="QWidget" name="centralwidget" >
-   <layout class="QGridLayout" >
+   <layout class="QVBoxLayout" >
     <property name="margin" >
      <number>9</number>
     </property>
     <property name="spacing" >
      <number>6</number>
     </property>
-    <item row="0" column="0">
+    <item>
      <widget class="LogTreeWidget" name="lstMessages" >
       <property name="contextMenuPolicy" >
        <enum>Qt::NoContextMenu</enum>
@@ -83,7 +83,7 @@
       </column>
      </widget>
     </item>
-    <item row="1" column="0">
+    <item>
      <widget class="QFrame" name="frmSettings" >
       <property name="enabled" >
        <bool>true</bool>
@@ -722,6 +722,22 @@
    <signal>triggered()</signal>
    <receiver>lstMessages</receiver>
    <slot>selectAll()</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>407</x>
+     <y>393</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionSettings</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>frmSettings</receiver>
+   <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel" >
      <x>-1</x>
