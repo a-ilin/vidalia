@@ -58,6 +58,12 @@ Localization:
 
 
 Miscellaneous Tasks:
+  * We should work much harder specifying what Vidalia does. When we add a
+    feature that interacts with Tor, we should specify exactly which control 
+    commands we're sending, where in the UI the values come from, what we ask
+    Tor to populate certain widgets, etc. This has the added benefit of making
+    it easier for other non-developer type folks to write and maintain our help
+    docs.
   * Work on improving the network map with better graphics, server pinpoints
     that are more visible and clickable, and clickable circuits. Marble might
     be a good start for some of that.
