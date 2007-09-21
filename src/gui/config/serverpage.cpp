@@ -34,8 +34,6 @@
 #include "domainvalidator.h"
 #include "nicknamevalidator.h"
 
-/** Delay between updating our server IP address (in ms). */
-#define AUTO_UPDATE_ADDR_INTERVAL  1000*60*60
 
 /** Help topics */
 #define EXIT_POLICY_HELP      "server.exitpolicy"
