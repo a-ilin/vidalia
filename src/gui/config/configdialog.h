@@ -34,11 +34,13 @@
 #include <gui/common/vidaliawindow.h>
 
 #include "generalpage.h"
+#include "firewallpage.h"
 #include "serverpage.h"
 #include "advancedpage.h"
 #include "appearancepage.h"
 
 #include "ui_configdialog.h"
+
 
 class ConfigDialog : public VidaliaWindow
 {
@@ -47,10 +49,11 @@ class ConfigDialog : public VidaliaWindow
 public:
   /** Config dialog pages. */
   enum Page {
-    General    = 0,  /** General configuration page. */
-    Server     = 1,  /** Server configuration page. */
-    Appearance = 2,  /** Appearance configuration page. */
-    Advanced   = 3   /** Advanced configuration page. */
+    General = 0,  /** General configuration page. */
+    Firewall,     /** Firewall configuration page. */
+    Server,       /** Server configuration page. */
+    Appearance,   /** Appearance configuration page. */
+    Advanced      /** Advanced configuration page. */
   };
 
   /** Default Constructor */

@@ -1,0 +1,77 @@
+<ui version="4.0" >
+ <class>FirewallPage</class>
+ <widget class="QWidget" name="FirewallPage" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>438</width>
+    <height>329</height>
+   </rect>
+  </property>
+  <property name="font" >
+   <font>
+    <pointsize>10</pointsize>
+   </font>
+  </property>
+  <property name="contextMenuPolicy" >
+   <enum>Qt::NoContextMenu</enum>
+  </property>
+  <layout class="QVBoxLayout" >
+   <property name="margin" >
+    <number>9</number>
+   </property>
+   <property name="spacing" >
+    <number>6</number>
+   </property>
+   <item>
+    <widget class="QCheckBox" name="chkFascistFirewall" >
+     <property name="contextMenuPolicy" >
+      <enum>Qt::NoContextMenu</enum>
+     </property>
+     <property name="toolTip" >
+      <string>Check to run as a Tor network server</string>
+     </property>
+     <property name="text" >
+      <string>My firewall only lets me connect to certain ports</string>
+     </property>
+     <property name="checked" >
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="chkUseProxy" >
+     <property name="text" >
+      <string>I use a proxy to access the Internet</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QCheckBox" name="chkUseBridge" >
+     <property name="text" >
+      <string>My ISP blocks connections to the Tor network</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <spacer>
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" >
+      <size>
+       <width>420</width>
+       <height>16</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>chkFascistFirewall</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+</ui>
