@@ -196,7 +196,7 @@ kein Passwort angegeben.</translation>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="522"/>
         <source>Authentication:</source>
-        <translation>Authentifizierung:</translation>
+        <translation>Authentifikation:</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="532"/>
@@ -1129,17 +1129,18 @@ Klicken Sie erneut auf &apos;Tor anhalten&apos; um das Beenden von Tor zu erzwin
     <message>
         <location filename="../gui/mainwindow.cpp" line="735"/>
         <source>Cookie Authentication Required</source>
-        <translation>Cookie-Authentifizierung erforderlich</translation>
+        <translation>Cookie-Authentifikation erforderlich</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="738"/>
         <source>Tor requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor versucht über Vidalia ein Cookie zur Authentifikation zu verschicken, aber Vidalia konnte dieses
+nicht finden.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="740"/>
         <source>Would you like to browse for the file &apos;control_auth_cookie&apos; yourself?</source>
-        <translation type="unfinished"></translation>
+        <translation>Wollen Sie selbst nach der Datei &apos;control_auth_cookie&apos; suchen?</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="747"/>
@@ -1154,37 +1155,38 @@ Klicken Sie erneut auf &apos;Tor anhalten&apos; um das Beenden von Tor zu erzwin
     <message>
         <location filename="../gui/mainwindow.cpp" line="791"/>
         <source>Error Registering for Events</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler bei der Registrierung für Ereignisse</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="793"/>
         <source>Vidalia was unable to register for Tor events. Many of Vidalia&apos;s features may be unavailable.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia konnte sich nicht für Tor-Ereignisse registrieren. Viele von Vidalias Funktionen
+könnten nicht verfügbar sein.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="833"/>
         <source>Password Authentication Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Passwort-Authentifikation erforderlich</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="845"/>
         <source>Error Authenticating to Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler bei der Authentifikation zu Tor</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="847"/>
         <source>Vidalia was unable to authenticate to Tor. (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia konnte sich nicht zu Tor authentifizieren. (%1)</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="849"/>
         <source>Please check your control port authentication settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte überprüfen Sie die Authentifikationseinstellungen des Kontroll-Ports.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="834"/>
         <source>Please enter your control password (not the hash):</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte geben Sie Ihr Kontroll-Passwort ein (nicht den Hash-Wert):</translation>
     </message>
 </context>
 <context>
@@ -1658,7 +1660,7 @@ empfangen.</translation>
     <message>
         <location filename="../gui/network/netviewer.ui" line="297"/>
         <source>Tor Network Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-Netzwerk-Karte</translation>
     </message>
 </context>
 <context>
