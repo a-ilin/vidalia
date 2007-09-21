@@ -32,7 +32,7 @@
    <string>Tor Network Map</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="../res/vidalia_common.qrc" >:/images/16x16/applications-internet.png</iconset>
+   <iconset resource="../res/vidalia_common.qrc" >:/images/32x32/applications-internet.png</iconset>
   </property>
   <property name="toolButtonStyle" >
    <enum>Qt::ToolButtonTextUnderIcon</enum>

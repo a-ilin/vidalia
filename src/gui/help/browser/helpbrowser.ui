@@ -38,7 +38,7 @@
    <string>Vidalia Help</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="..\..\res\vidalia_common.qrc" >:/images/16x16/help-browser.png</iconset>
+   <iconset resource="..\..\res\vidalia_common.qrc" >:/images/32x32/help-browser.png</iconset>
   </property>
   <property name="statusTip" >
    <string/>

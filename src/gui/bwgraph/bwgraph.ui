@@ -21,7 +21,7 @@
    <string>Tor Bandwidth Usage</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="../res/vidalia_common.qrc" >:/images/16x16/utilities-system-monitor.png</iconset>
+   <iconset resource="../res/vidalia_common.qrc" >:/images/32x32/utilities-system-monitor.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget" >
    <layout class="QGridLayout" >
