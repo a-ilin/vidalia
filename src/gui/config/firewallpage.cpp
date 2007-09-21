@@ -50,6 +50,7 @@ FirewallPage::~FirewallPage()
 bool
 FirewallPage::save(QString &errmsg)
 {
+  Q_UNUSED(errmsg);
   return true;
 }
 
@@ -57,5 +58,8 @@ FirewallPage::save(QString &errmsg)
 void
 FirewallPage::load()
 {
+  ui.grpFirewallSettings->setVisible(false);
+  ui.grpProxySettings->setVisible(false);
+  ui.grpBridgeSettings->setVisible(false);
 }
 
