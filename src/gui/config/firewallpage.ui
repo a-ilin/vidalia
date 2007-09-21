@@ -159,7 +159,7 @@
        <item row="1" column="1" colspan="3" >
         <widget class="QCheckBox" name="chkProxyUseHttps" >
          <property name="text" >
-          <string>Use HTTPS</string>
+          <string>Use this proxy for HTTPS also</string>
          </property>
         </widget>
        </item>
