@@ -42,7 +42,6 @@
 #include "mainwindow.h"
 
 
-#define IMG_APP_ICON       ":/images/16x16/tor-logo.png"
 #define IMG_BWGRAPH        ":/images/16x16/utilities-system-monitor.png"
 #define IMG_CONTROL_PANEL  ":/images/16x16/preferences-desktop.png"
 #define IMG_MESSAGELOG     ":/images/16x16/format-justify-fill.png"
