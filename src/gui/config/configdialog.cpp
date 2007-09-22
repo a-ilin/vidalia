@@ -32,7 +32,7 @@
 
 /* Images for toolbar icons */
 #define IMAGE_GENERAL       ":/images/22x22/preferences-system.png"
-#define IMAGE_FIREWALL      ":/images/22x22/firewall.png"
+#define IMAGE_NETWORK       ":/images/22x22/network-workgroup.png"
 #define IMAGE_SERVER        ":/images/22x22/network-server.png"
 #define IMAGE_APPEARANCE    ":/images/22x22/preferences-desktop-locale.png"
 #define IMAGE_ADVANCED      ":/images/22x22/emblem-system.png"
@@ -55,8 +55,8 @@ ConfigDialog::ConfigDialog(QWidget* parent)
   ui.stackPages->add(new GeneralPage(ui.stackPages),
                      createPageAction(QIcon(IMAGE_GENERAL), tr("General"), grp));
   
-  ui.stackPages->add(new FirewallPage(ui.stackPages),
-                     createPageAction(QIcon(IMAGE_FIREWALL), tr("Firewall"), grp));
+  ui.stackPages->add(new NetworkPage(ui.stackPages),
+                     createPageAction(QIcon(IMAGE_NETWORK), tr("Network"), grp));
   
   ui.stackPages->add(new ServerPage(ui.stackPages),
                      createPageAction(QIcon(IMAGE_SERVER), tr("Server"), grp));

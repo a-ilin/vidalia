@@ -20,41 +20,46 @@
  ****************************************************************/
 
 /** 
- * \file firewallpage.h
+ * \file networkpage.cpp
  * \version $Id$
- * \brief Firewall configuration options
+ * \brief Network and firewall configuration options
  */
-
-#ifndef _FIREWALLPAGE_H
-#define _FIREWALLPAGE_H
 
 #include <vidalia.h>
 
-#include "configpage.h"
-#include "ui_firewallpage.h"
+#include "networkpage.h"
 
 
-class FirewallPage : public ConfigPage
+/** Constructor */
+NetworkPage::NetworkPage(QWidget *parent)
+: ConfigPage(parent)
 {
-  Q_OBJECT
+  /* Invoke the Qt Designer generated object setup routine */
+  ui.setupUi(this);
+  
+  /* Keep a pointer to the TorControl object used to talk to Tor */
+  _torControl = Vidalia::torControl();
+}
 
-public:
-  /** Default Constructor */
-  FirewallPage(QWidget *parent = 0);
-  /** Default Destructor */
-  ~FirewallPage();
-  /** Saves the changes on this page */
-  bool save(QString &errmsg);
-  /** Loads the settings for this page */
-  void load();
+/** Destructor */
+NetworkPage::~NetworkPage()
+{
+}
 
-private:
-  /** A TorControl object used to talk to Tor */
-  TorControl* _torControl;
+/** Saves changes made to settings on the Firewall settings page. */
+bool
+NetworkPage::save(QString &errmsg)
+{
+  Q_UNUSED(errmsg);
+  return true;
+}
 
-  /** Qt Designer generated object */
-  Ui::FirewallPage ui;
-};
-
-#endif
+/** Loads previously saved settings */
+void
+NetworkPage::load()
+{
+  ui.grpFirewallSettings->setVisible(false);
+  ui.grpProxySettings->setVisible(false);
+  ui.grpBridgeSettings->setVisible(false);
+}
 

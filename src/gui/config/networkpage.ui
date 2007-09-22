@@ -1,6 +1,6 @@
 <ui version="4.0" >
- <class>FirewallPage</class>
- <widget class="QWidget" name="FirewallPage" >
+ <class>NetworkPage</class>
+ <widget class="QWidget" name="NetworkPage" >
   <property name="geometry" >
    <rect>
     <x>0</x>

@@ -34,7 +34,7 @@
 #include <gui/common/vidaliawindow.h>
 
 #include "generalpage.h"
-#include "firewallpage.h"
+#include "networkpage.h"
 #include "serverpage.h"
 #include "advancedpage.h"
 #include "appearancepage.h"
@@ -50,7 +50,7 @@ public:
   /** Config dialog pages. */
   enum Page {
     General = 0,  /** General configuration page. */
-    Firewall,     /** Firewall configuration page. */
+    Network,      /** Network configuration page. */
     Server,       /** Server configuration page. */
     Appearance,   /** Appearance configuration page. */
     Advanced      /** Advanced configuration page. */

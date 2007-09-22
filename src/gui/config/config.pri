@@ -26,7 +26,7 @@ FORMS += $$PWD/configdialog.ui \
          $$PWD/serverpage.ui \
          $$PWD/advancedpage.ui \
          $$PWD/appearancepage.ui \
-         $$PWD/firewallpage.ui
+         $$PWD/networkpage.ui
 
 HEADERS += $$PWD/configdialog.h \
            $$PWD/domainvalidator.h \
@@ -39,7 +39,7 @@ HEADERS += $$PWD/configdialog.h \
            $$PWD/serverpage.h \
            $$PWD/advancedpage.h \
            $$PWD/appearancepage.h \
-           $$PWD/firewallpage.h
+           $$PWD/networkpage.h
 
 SOURCES += $$PWD/configdialog.cpp \
            $$PWD/domainvalidator.cpp \
@@ -51,5 +51,5 @@ SOURCES += $$PWD/configdialog.cpp \
            $$PWD/serverpage.cpp \
            $$PWD/advancedpage.cpp \
            $$PWD/appearancepage.cpp \
-           $$PWD/firewallpage.cpp
+           $$PWD/networkpage.cpp
 
