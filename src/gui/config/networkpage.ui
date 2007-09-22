@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>526</width>
-    <height>535</height>
+    <width>568</width>
+    <height>539</height>
    </rect>
   </property>
   <property name="font" >
@@ -44,130 +44,126 @@
      <property name="minimumSize" >
       <size>
        <width>0</width>
-       <height>131</height>
+       <height>136</height>
+      </size>
+     </property>
+     <property name="maximumSize" >
+      <size>
+       <width>16777215</width>
+       <height>136</height>
       </size>
      </property>
      <property name="title" >
       <string>Proxy Settings</string>
      </property>
-     <widget class="QWidget" name="gridLayout" >
-      <property name="geometry" >
-       <rect>
-        <x>10</x>
-        <y>20</y>
-        <width>481</width>
-        <height>105</height>
-       </rect>
+     <layout class="QGridLayout" >
+      <property name="margin" >
+       <number>9</number>
       </property>
-      <layout class="QGridLayout" >
-       <property name="margin" >
-        <number>0</number>
-       </property>
-       <property name="spacing" >
-        <number>6</number>
-       </property>
-       <item row="2" column="0" >
-        <widget class="QLabel" name="label_3" >
-         <property name="text" >
-          <string>Username:</string>
-         </property>
-         <property name="alignment" >
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1" colspan="3" >
-        <widget class="QCheckBox" name="chkProxyUseHttps" >
-         <property name="text" >
-          <string>Use this proxy for HTTPS also</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="0" >
-        <widget class="QLabel" name="lblHttpProxy" >
-         <property name="text" >
-          <string>HTTP Proxy:</string>
-         </property>
-         <property name="alignment" >
-          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="4" >
-        <spacer>
-         <property name="orientation" >
-          <enum>Qt::Horizontal</enum>
-         </property>
-         <property name="sizeHint" >
-          <size>
-           <width>40</width>
-           <height>20</height>
-          </size>
-         </property>
-        </spacer>
-       </item>
-       <item row="2" column="1" colspan="4" >
-        <layout class="QHBoxLayout" >
-         <property name="margin" >
-          <number>0</number>
-         </property>
-         <property name="spacing" >
-          <number>6</number>
-         </property>
-         <item>
-          <widget class="QLineEdit" name="lineHttpProxyUsername" />
-         </item>
-         <item>
-          <widget class="QLabel" name="label_4" >
-           <property name="text" >
-            <string>Password:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="lineHttpProxyPassword" >
-           <property name="echoMode" >
-            <enum>QLineEdit::Password</enum>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-       <item row="0" column="1" colspan="4" >
-        <layout class="QHBoxLayout" >
-         <property name="margin" >
-          <number>0</number>
-         </property>
-         <property name="spacing" >
-          <number>6</number>
-         </property>
-         <item>
-          <widget class="QLineEdit" name="lineHttpProxyAddress" />
-         </item>
-         <item>
-          <widget class="QLabel" name="label_2" >
-           <property name="text" >
-            <string>Port:</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLineEdit" name="lineHttpProxyPort" >
-           <property name="maximumSize" >
-            <size>
-             <width>75</width>
-             <height>16777215</height>
-            </size>
-           </property>
-           <property name="maxLength" >
-            <number>5</number>
-           </property>
-          </widget>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </widget>
+      <property name="spacing" >
+       <number>6</number>
+      </property>
+      <item row="0" column="0" >
+       <widget class="QLabel" name="lblHttpProxyAddress" >
+        <property name="text" >
+         <string>HTTP Proxy:</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0" >
+       <widget class="QLabel" name="lblHttpProxyUsername" >
+        <property name="text" >
+         <string>Username:</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" colspan="3" >
+       <widget class="QCheckBox" name="chkProxyUseHttps" >
+        <property name="text" >
+         <string>Use this proxy for HTTPS also</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" colspan="4" >
+       <layout class="QHBoxLayout" >
+        <property name="margin" >
+         <number>0</number>
+        </property>
+        <property name="spacing" >
+         <number>6</number>
+        </property>
+        <item>
+         <widget class="QLineEdit" name="lineHttpProxyUsername" />
+        </item>
+        <item>
+         <widget class="QLabel" name="lblHttpProxyPassword" >
+          <property name="text" >
+           <string>Password:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineHttpProxyPassword" >
+          <property name="echoMode" >
+           <enum>QLineEdit::Password</enum>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="0" column="1" colspan="4" >
+       <layout class="QHBoxLayout" >
+        <property name="margin" >
+         <number>0</number>
+        </property>
+        <property name="spacing" >
+         <number>6</number>
+        </property>
+        <item>
+         <widget class="QLineEdit" name="lineHttpProxyAddress" />
+        </item>
+        <item>
+         <widget class="QLabel" name="lblHttpProxyPort" >
+          <property name="text" >
+           <string>Port:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="lineHttpProxyPort" >
+          <property name="maximumSize" >
+           <size>
+            <width>75</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="maxLength" >
+           <number>5</number>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item row="1" column="4" >
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
     </widget>
    </item>
    <item>
@@ -205,49 +201,31 @@
      <property name="title" >
       <string>Firewall Settings</string>
      </property>
-     <widget class="QWidget" name="horizontalLayout" >
-      <property name="geometry" >
-       <rect>
-        <x>10</x>
-        <y>20</y>
-        <width>481</width>
-        <height>41</height>
-       </rect>
+     <layout class="QHBoxLayout" >
+      <property name="margin" >
+       <number>9</number>
       </property>
-      <layout class="QHBoxLayout" >
-       <property name="margin" >
-        <number>0</number>
-       </property>
-       <property name="spacing" >
-        <number>6</number>
-       </property>
-       <item>
-        <widget class="QLabel" name="lblAllowedPorts" >
-         <property name="text" >
-          <string>Allowed Ports:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <widget class="QLineEdit" name="lineAllowedPorts" >
-         <property name="sizePolicy" >
-          <sizepolicy>
-           <hsizetype>7</hsizetype>
-           <vsizetype>0</vsizetype>
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="inputMask" >
-          <string/>
-         </property>
-         <property name="text" >
-          <string>80, 443</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
+      <property name="spacing" >
+       <number>6</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="lblAllowedPorts" >
+        <property name="text" >
+         <string>Allowed Ports:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineAllowedPorts" >
+        <property name="inputMask" >
+         <string/>
+        </property>
+        <property name="text" >
+         <string>80, 443</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
    <item>
@@ -262,7 +240,7 @@
      <property name="sizePolicy" >
       <sizepolicy>
        <hsizetype>5</hsizetype>
-       <vsizetype>7</vsizetype>
+       <vsizetype>5</vsizetype>
        <horstretch>0</horstretch>
        <verstretch>0</verstretch>
       </sizepolicy>
@@ -276,120 +254,110 @@
      <property name="title" >
       <string>Tor Bridge Settings</string>
      </property>
-     <widget class="QWidget" name="verticalLayout" >
-      <property name="geometry" >
-       <rect>
-        <x>10</x>
-        <y>20</y>
-        <width>481</width>
-        <height>171</height>
-       </rect>
+     <layout class="QVBoxLayout" >
+      <property name="margin" >
+       <number>9</number>
       </property>
-      <layout class="QVBoxLayout" >
-       <property name="margin" >
-        <number>0</number>
-       </property>
-       <property name="spacing" >
-        <number>6</number>
-       </property>
-       <item>
-        <widget class="QLabel" name="lblAddBridge" >
-         <property name="sizePolicy" >
-          <sizepolicy>
-           <hsizetype>7</hsizetype>
-           <vsizetype>5</vsizetype>
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text" >
-          <string>Add a Bridge:</string>
-         </property>
-        </widget>
-       </item>
-       <item>
-        <layout class="QHBoxLayout" >
-         <property name="margin" >
-          <number>0</number>
-         </property>
-         <property name="spacing" >
-          <number>6</number>
-         </property>
-         <item>
-          <layout class="QVBoxLayout" >
-           <property name="margin" >
-            <number>0</number>
-           </property>
-           <property name="spacing" >
-            <number>6</number>
-           </property>
-           <item>
-            <widget class="QLineEdit" name="lineBridge" />
-           </item>
-           <item>
-            <widget class="QListWidget" name="listBridges" />
-           </item>
-          </layout>
-         </item>
-         <item>
-          <layout class="QVBoxLayout" >
-           <property name="margin" >
-            <number>0</number>
-           </property>
-           <property name="spacing" >
-            <number>6</number>
-           </property>
-           <item>
-            <widget class="QPushButton" name="btnAddBridge" >
-             <property name="maximumSize" >
-              <size>
-               <width>32</width>
-               <height>32</height>
-              </size>
-             </property>
-             <property name="text" >
-              <string/>
-             </property>
-             <property name="icon" >
-              <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/list-add.png</iconset>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QPushButton" name="btnRemoveBridge" >
-             <property name="maximumSize" >
-              <size>
-               <width>32</width>
-               <height>32</height>
-              </size>
-             </property>
-             <property name="text" >
-              <string/>
-             </property>
-             <property name="icon" >
-              <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/list-remove.png</iconset>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer>
-             <property name="orientation" >
-              <enum>Qt::Vertical</enum>
-             </property>
-             <property name="sizeHint" >
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-          </layout>
-         </item>
-        </layout>
-       </item>
-      </layout>
-     </widget>
+      <property name="spacing" >
+       <number>6</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="lblAddBridge" >
+        <property name="sizePolicy" >
+         <sizepolicy>
+          <hsizetype>7</hsizetype>
+          <vsizetype>5</vsizetype>
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="text" >
+         <string>Add a Bridge:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" >
+        <property name="margin" >
+         <number>0</number>
+        </property>
+        <property name="spacing" >
+         <number>6</number>
+        </property>
+        <item>
+         <layout class="QVBoxLayout" >
+          <property name="margin" >
+           <number>0</number>
+          </property>
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+          <item>
+           <widget class="QLineEdit" name="lineBridge" />
+          </item>
+          <item>
+           <widget class="QListWidget" name="listBridges" />
+          </item>
+         </layout>
+        </item>
+        <item>
+         <layout class="QVBoxLayout" >
+          <property name="margin" >
+           <number>0</number>
+          </property>
+          <property name="spacing" >
+           <number>6</number>
+          </property>
+          <item>
+           <widget class="QPushButton" name="btnAddBridge" >
+            <property name="maximumSize" >
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="text" >
+             <string/>
+            </property>
+            <property name="icon" >
+             <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/list-add.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnRemoveBridge" >
+            <property name="maximumSize" >
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="text" >
+             <string/>
+            </property>
+            <property name="icon" >
+             <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/list-remove.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer>
+            <property name="orientation" >
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" >
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </item>
+     </layout>
     </widget>
    </item>
    <item>
@@ -431,22 +399,6 @@
    </hints>
   </connection>
   <connection>
-   <sender>chkUseProxy</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>grpProxySettings</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>222</x>
-     <y>143</y>
-    </hint>
-    <hint type="destinationlabel" >
-     <x>222</x>
-     <y>216</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>chkUseBridge</sender>
    <signal>toggled(bool)</signal>
    <receiver>grpBridgeSettings</receiver>
@@ -459,6 +411,22 @@
     <hint type="destinationlabel" >
      <x>222</x>
      <y>390</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkUseProxy</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>grpProxySettings</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>222</x>
+     <y>143</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>222</x>
+     <y>216</y>
     </hint>
    </hints>
   </connection>
