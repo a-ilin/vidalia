@@ -34,8 +34,6 @@ LangString TorGroupDesc               ${LANG_ITALIAN} "Tor è un sistema per usar
 LangString TorUninstDesc              ${LANG_ITALIAN} "Disinstalla ${TOR_DESC}."
 LangString TorAppDesc                 ${LANG_ITALIAN} "Installa ${TOR_DESC}."
 LangString TorAskOverwriteTorrc       ${LANG_ITALIAN} "Un file di configurazione Tor è già presente nel sistema.$\r$\nSovrascriverlo con il file di configurazione standard?"
-LangString TorOpenSSL                 ${LANG_ITALIAN} "OpenSSL ${OPENSSL_APPVERSION}"
-LangString TorOpenSSLDesc             ${LANG_ITALIAN} "Installa ${OPENSSL_DESC}."
 LangString TorDocumentation           ${LANG_ITALIAN} "Documentazione"
 LangString TorDocumentationDesc       ${LANG_ITALIAN} "Installa la documentazione di ${TOR_NAME}."
 LangString TorShortcuts               ${LANG_ITALIAN} "Aggiungi al menu Start"

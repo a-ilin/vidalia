@@ -31,8 +31,6 @@ LangString TorGroupDesc               ${LANG_PORTUGUESEBR} "Instalar ${TOR_DESC}
 LangString TorUninstDesc              ${LANG_PORTUGUESEBR} "Remove ${TOR_DESC}."
 LangString TorAppDesc                 ${LANG_PORTUGUESEBR} "Instalar ${TOR_DESC}."
 LangString TorAskOverwriteTorrc       ${LANG_PORTUGUESEBR} "Você já tem um arquivo de configuração do Tor.$\r$\nVocê deseja substituí-lo com o arquivo de exemplo de configuração padrão?"
-LangString TorOpenSSL                 ${LANG_PORTUGUESEBR} "OpenSSL ${OPENSSL_APPVERSION}"
-LangString TorOpenSSLDesc             ${LANG_PORTUGUESEBR} "Instalar ${OPENSSL_DESC}."
 LangString TorDocumentation           ${LANG_PORTUGUESEBR} "Documentação"
 LangString TorDocumentationDesc       ${LANG_PORTUGUESEBR} "Instalar a documentação do ${TOR_NAME}."
 LangString TorShortcuts               ${LANG_PORTUGUESEBR} "Adicionar ao Menu Iniciar"

@@ -31,8 +31,6 @@ LangString TorGroupDesc               ${LANG_SWEDISH} "Tor är ett program för at
 LangString TorUninstDesc              ${LANG_SWEDISH} "Ta bort ${TOR_DESC}."
 LangString TorAppDesc                 ${LANG_SWEDISH} "Installera ${TOR_DESC}."
 LangString TorAskOverwriteTorrc       ${LANG_SWEDISH} "Du har redan en konfigurationsfil för Tor.$\r$\nVill du skriva över den med standardkonfigurationsfilen?"
-LangString TorOpenSSL                 ${LANG_SWEDISH} "OpenSSL ${OPENSSL_APPVERSION}"
-LangString TorOpenSSLDesc             ${LANG_SWEDISH} "Installera ${OPENSSL_DESC}."
 LangString TorDocumentation           ${LANG_SWEDISH} "Dokumentation"
 LangString TorDocumentationDesc       ${LANG_SWEDISH} "Installera dokumentationen för ${TOR_NAME}."
 LangString TorShortcuts               ${LANG_SWEDISH} "Lägg till i startmenyn"

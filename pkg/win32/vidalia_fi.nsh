@@ -34,8 +34,6 @@ LangString TorGroupDesc               ${LANG_FINNISH} "Tor on j‰rjestelm‰, jolla
 LangString TorUninstDesc              ${LANG_FINNISH} "Poista ${TOR_DESC}."
 LangString TorAppDesc                 ${LANG_FINNISH} "Asenna ${TOR_DESC}."
 LangString TorAskOverwriteTorrc       ${LANG_FINNISH} "Sinulla on jo ennest‰‰n Tor-asetustiedosto.$\r$\nHaluatko, ett‰ se korvataan oletusesimerkill‰?"
-LangString TorOpenSSL                 ${LANG_FINNISH} "OpenSSL ${OPENSSL_APPVERSION}"
-LangString TorOpenSSLDesc             ${LANG_FINNISH} "Asenna ${OPENSSL_DESC}."
 LangString TorDocumentation           ${LANG_FINNISH} "Ohje"
 LangString TorDocumentationDesc       ${LANG_FINNISH} "Asenna ${TOR_NAME}-ohje."
 LangString TorShortcuts               ${LANG_FINNISH} "Lis‰‰ K‰ynnist‰-valikkoon"

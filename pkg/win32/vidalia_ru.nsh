@@ -34,8 +34,6 @@ LangString TorGroupDesc               ${LANG_RUSSIAN} "Tor это система анонимног
 LangString TorUninstDesc              ${LANG_RUSSIAN} "Удалить ${TOR_DESC}."
 LangString TorAppDesc                 ${LANG_RUSSIAN} "Установить ${TOR_DESC}."
 LangString TorAskOverwriteTorrc       ${LANG_RUSSIAN} "У вас уже есть файл настроек Tor.$\r$\nХотите ли вы перезаписать его файлом из дистрибутива?"
-LangString TorOpenSSL                 ${LANG_RUSSIAN} "OpenSSL ${OPENSSL_APPVERSION}"
-LangString TorOpenSSLDesc             ${LANG_RUSSIAN} "Установить ${OPENSSL_DESC}."
 LangString TorDocumentation           ${LANG_RUSSIAN} "Документация"
 LangString TorDocumentationDesc       ${LANG_RUSSIAN} "Установить документацию ${TOR_NAME}."
 LangString TorShortcuts               ${LANG_RUSSIAN} "Ярлыки в Главное Меню"

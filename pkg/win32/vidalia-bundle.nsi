@@ -49,10 +49,6 @@ SetCompressor /SOLID lzma
 !define TORBUTTON_APPVERSION "1.0.4.01-fx+tb"
 !define TORBUTTON_DESC      "${TORBUTTON_NAME} ${TORBUTTON_APPVERSION}"
 
-!define OPENSSL_NAME        "OpenSSL"
-!define OPENSSL_APPVERSION  "0.9.8e"
-!define OPENSSL_DESC        "${OPENSSL_NAME} ${OPENSSL_APPVERSION}"
-
 !define BUNDLE_NAME         "Vidalia Bundle"
 !define BUNDLE_APPVERSION   "${TOR_APPVERSION}-${VIDALIA_APPVERSION}"
 !define BUNDLE_REVISION     "1"
@@ -280,15 +276,6 @@ SectionGroup "${TOR_DESC}" TorGroup
         WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "NoRepair" 1
        
        IntOp $bInstallTor 0 + 1
-    SectionEnd
-
-    ;--------------------------------
-    ; OpenSSL binaries
-    Section "$(TorOpenSSL)" TorOpenSSL
-       SectionIn 1 2
-       SetOutPath "$INSTDIR\Tor"
-       File "tor\${TOR_APPVERSION}\libcrypto.a"
-       File "tor\${TOR_APPVERSION}\libssl.a"
     SectionEnd
 
     ;--------------------------------
@@ -575,7 +562,6 @@ FunctionEnd
 !insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
   !insertmacro MUI_DESCRIPTION_TEXT ${Tor} "$(TorAppDesc)"
   !insertmacro MUI_DESCRIPTION_TEXT ${TorGroup} "$(TorGroupDesc)"
-  !insertmacro MUI_DESCRIPTION_TEXT ${TorOpenSSL} "$(TorOpenSSLDesc)"
   !insertmacro MUI_DESCRIPTION_TEXT ${TorDocs} "$(TorDocumentationDesc)"
   !insertmacro MUI_DESCRIPTION_TEXT ${TorShortcuts} "$(TorShortcutsDesc)"
 

@@ -31,8 +31,6 @@ LangString TorGroupDesc               ${LANG_CZECH} "Tor je system pro anonymni 
 LangString TorUninstDesc              ${LANG_CZECH} "Odstranit ${TOR_DESC}."
 LangString TorAppDesc                 ${LANG_CZECH} "Instalovat ${TOR_DESC}."
 LangString TorAskOverwriteTorrc       ${LANG_CZECH} "Byl nalezen puvodni konfiguracni soubor Tor.$\r$\nChcete jej prepsat vychozim konfiguracnim souborem?"
-LangString TorOpenSSL                 ${LANG_CZECH} "OpenSSL ${OPENSSL_APPVERSION}"
-LangString TorOpenSSLDesc             ${LANG_CZECH} "Instalovat ${OPENSSL_DESC}."
 LangString TorDocumentation           ${LANG_CZECH} "Dokumentace"
 LangString TorDocumentationDesc       ${LANG_CZECH} "Instalovat ${TOR_NAME} dokumentaci."
 LangString TorShortcuts               ${LANG_CZECH} "Vlozit do menu Start"
