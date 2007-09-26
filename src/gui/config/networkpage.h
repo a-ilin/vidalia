@@ -20,7 +20,7 @@
  ****************************************************************/
 
 /** 
- * \file neworkpage.h
+ * \file networkpage.h
  * \version $Id$
  * \brief Network and firewall configuration options
  */
