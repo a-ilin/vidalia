@@ -29,6 +29,9 @@ Features planned for 0.1.x:
   * A web-based interface for viewing the status of Tor from the user's
     browser and possibly configuring Tor, too. (Ticket #42)
   * We should support and use the ControlSocket option whenever possible.
+  * No sooner did we add support for 'getinfo addr-mappings' than did
+    'getinfo addr-mappings' become deprecated. We should move to the shiny
+    new 'getinfo address-mappings' instead (cool kids don't abbreviate).
 
 
 Packaging:
