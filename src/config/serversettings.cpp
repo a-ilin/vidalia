@@ -292,12 +292,11 @@ ServerSettings::setServerEnabled(bool enable)
 }
 
 /** Returns true if Tor is currently configured to run as a Tor server. If Tor
- * was started with a specific torrc, we will ask Tor whether that torrc told
- * it to be a server. Otherwise, we use our local settings. */
+ * is running, we will check whether it has an ORPort and Nickname defined.
+ * Otherwise, we will use our saved settings. */
 bool
 ServerSettings::isServerEnabled()
 {
-  TorSettings settings;
   QHash<QString,QString> confValues;
   if (_torControl->isConnected() && !changedSinceLastApply()) {
     confValues.insert(SERVER_ORPORT, "");
