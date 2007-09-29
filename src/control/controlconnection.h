@@ -66,6 +66,8 @@ public:
   void cancelConnect();
   /** Disconnect from Tor's control interface. */
   void disconnect();
+  /** Returns true if the control socket is connected to Tor. */
+  bool isConnected();
   /** Returns the status of the control connection. */
   Status status();
   /** Sends a control command to Tor and waits for the reply. */

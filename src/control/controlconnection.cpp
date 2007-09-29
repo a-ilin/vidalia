@@ -160,6 +160,13 @@ ControlConnection::cancelConnect()
   exit(0);
 }
 
+/** Returns true if the control socket is connected to Tor. */
+bool
+ControlConnection::isConnected()
+{
+  return (status() == Connected);
+}
+
 /** Returns the status of the control connection. */
 ControlConnection::Status
 ControlConnection::status()
