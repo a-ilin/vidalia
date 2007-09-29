@@ -57,7 +57,7 @@ public:
   ~TorControl();
 
   /** Start the Tor process */
-  void start();
+  void start(const QString &tor, const QStringList &args);
   /** Stop the Tor process */
   bool stop(QString *errmsg = 0);
   /** Detect if the Tor process is running */
@@ -66,7 +66,7 @@ public:
   bool isVidaliaRunningTor();
   
   /** Connect to Tor's control socket */
-  void connect();
+  void connect(const QHostAddress &address, quint16 port);
   /** Disconnect from Tor's control socket */
   void disconnect();
   /** Check if we're connected to Tor's control socket */

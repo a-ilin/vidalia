@@ -26,8 +26,6 @@
  */
 
 #include <QHostAddress>
-#include <config/torsettings.h>
-#include <util/net.h>
 #include <util/file.h>
 #include "torcontrol.h"
 
@@ -81,20 +79,11 @@ TorControl::~TorControl()
 /** Start the Tor process. Returns true if the process was successfully
  * started, otherwise returns false. */
 void
-TorControl::start()
+TorControl::start(const QString &tor, const QStringList &args)
 {
   if (isRunning()) {
     emit started();
   } else {
-    TorSettings settings;
-    
-    /* Make sure our torrc and the full path to it exists. If it doesn't,
-     * then touch it. */
-    QString torrc = settings.getTorrc();
-    if (!torrc.isEmpty()) {
-      touch_file(torrc, true);
-    }
-    
 #if defined(Q_OS_WIN32)
     if (TorService::isSupported() && _torService->isInstalled()) {
       _torService->start();
@@ -114,8 +103,7 @@ TorControl::start()
                        this, SLOT(onLogStdout(QString, QString)));
   
       /* Kick off the Tor process. */
-      _torProcess->start(expand_filename(settings.getExecutable()), 
-                         settings.getArguments());
+      _torProcess->start(expand_filename(tor), args);
 #if defined(Q_OS_WIN32)
     }
 #endif
@@ -199,13 +187,7 @@ TorControl::isRunning()
   if (_torProcess) {
     return (_torProcess->pid() != 0);
   }
-  
-  TorSettings settings;
-  if (net_test_connect(settings.getControlAddress(),
-                       settings.getControlPort(), 250)) {
-    return true;
-  }
-  return false;
+  return _controlConn->isConnected();
 }
 
 /** Called when Tor has printed a log message to stdout. */
@@ -219,11 +201,9 @@ TorControl::onLogStdout(QString severity, QString message)
 /** Connect to Tor's control port. The control port to use is determined by
  * Vidalia's configuration file. */
 void
-TorControl::connect()
+TorControl::connect(const QHostAddress &address, quint16 port)
 {
-  TorSettings settings;
-  _controlConn->connect(settings.getControlAddress(),
-                        settings.getControlPort());
+  _controlConn->connect(address, port);
 }
 
 /** Emits a signal that the control socket successfully established a
@@ -271,7 +251,7 @@ TorControl::onDisconnected()
 bool
 TorControl::isConnected()
 {
-  return (_controlConn->status() == ControlConnection::Connected);
+  return _controlConn->isConnected();
 }
 
 /** Send a message to Tor and reads the response. If Vidalia was unable to

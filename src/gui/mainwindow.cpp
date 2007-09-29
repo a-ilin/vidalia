@@ -35,6 +35,7 @@
 #include <util/file.h>
 #include <util/html.h>
 #include <util/string.h>
+#include <util/net.h>
 #include <QSysInfo>
 
 #include "common/vmessagebox.h"
@@ -505,14 +506,29 @@ MainWindow::toggleShowOnStartup(bool checked)
 void 
 MainWindow::start()
 {
+  TorSettings settings;
+
   updateTorStatus(Starting);
+
+  /* Check if Tor is already running separately */
+  if (net_test_connect(settings.getControlAddress(),
+                       settings.getControlPort())) {
+    started();
+    return;
+  }
+
+  /* Make sure the torrc we want to use really exists. */
+  QString torrc = settings.getTorrc();
+  if (!torrc.isEmpty() && !QFileInfo(torrc).exists())
+    touch_file(torrc, true);
+
   /* This doesn't get set to false until Tor is actually up and running, so we
    * don't yell at users twice if their Tor doesn't even start, due to the fact
    * that QProcess::stopped() is emitted even if the process didn't even
    * start. */
   _isIntentionalExit = true;
   /* Kick off the Tor process */
-  _torControl->start();
+  _torControl->start(settings.getExecutable(), settings.getArguments());
 }
 
 /** Called when the Tor process fails to start, for example, because the path
@@ -551,6 +567,8 @@ MainWindow::startFailed(QString errmsg)
 void 
 MainWindow::started()
 {
+  TorSettings settings;
+
   updateTorStatus(Started);
 
   /* Now that Tor is running, we want to know if it dies when we didn't want
@@ -561,7 +579,8 @@ MainWindow::started()
   /* Remember whether we started Tor or not */
   _isVidaliaRunningTor = _torControl->isVidaliaRunningTor();
   /* Try to connect to Tor's control port */
-  _torControl->connect();
+  _torControl->connect(settings.getControlAddress(),
+                       settings.getControlPort());
 }
 
 /** Called when the connection to the control socket fails. The reason will be
@@ -578,7 +597,9 @@ MainWindow::connectFailed(QString errmsg)
 
   if (response == VMessageBox::Retry) {
     /* Let's give it another try. */
-    _torControl->connect();
+    TorSettings settings;
+    _torControl->connect(settings.getControlAddress(),
+                         settings.getControlPort());
   } else {
     /* Show the help browser (if requested) */
     if (response == VMessageBox::Help)
@@ -857,10 +878,11 @@ MainWindow::authenticationFailed(QString errmsg)
       showConfigDialog(ConfigDialog::Advanced);
   }
   
-  if (_torControl->isRunning() && _isVidaliaRunningTor) 
-    stop();
-  else if (_torControl->isConnected())
-    disconnect();
+  if (_torControl->isRunning())
+    if (_isVidaliaRunningTor) 
+      stop();
+    else
+      disconnect();
   if (retry)
     start();
 }
