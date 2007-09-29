@@ -839,6 +839,7 @@ MainWindow::authenticationFailed(QString errmsg)
       TorSettings settings;
       settings.setAuthenticationMethod(TorSettings::PasswordAuth);
       settings.setControlPassword(password);
+      settings.setUseRandomPassword(false);
       retry = true;
     }
   } else {
