@@ -302,7 +302,11 @@
            <widget class="QLineEdit" name="lineBridge" />
           </item>
           <item>
-           <widget class="QListWidget" name="listBridges" />
+           <widget class="QListWidget" name="listBridges" >
+            <property name="selectionMode" >
+             <enum>QAbstractItemView::ExtendedSelection</enum>
+            </property>
+           </widget>
           </item>
          </layout>
         </item>
