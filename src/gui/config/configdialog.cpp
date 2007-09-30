@@ -53,24 +53,30 @@ ConfigDialog::ConfigDialog(QWidget* parent)
   /* Create the config pages and actions */
   QActionGroup *grp = new QActionGroup(this);
   ui.stackPages->add(new GeneralPage(ui.stackPages),
-                     createPageAction(QIcon(IMAGE_GENERAL), tr("General"), grp));
+                     createPageAction(QIcon(IMAGE_GENERAL),
+                                      tr("General"), grp));
   
   ui.stackPages->add(new NetworkPage(ui.stackPages),
-                     createPageAction(QIcon(IMAGE_NETWORK), tr("Network"), grp));
+                     createPageAction(QIcon(IMAGE_NETWORK),
+                                      tr("Network"), grp));
   
   ui.stackPages->add(new ServerPage(ui.stackPages),
-                     createPageAction(QIcon(IMAGE_SERVER), tr("Server"), grp));
+                     createPageAction(QIcon(IMAGE_SERVER),
+                                      tr("Server"), grp));
   
   ui.stackPages->add(new AppearancePage(ui.stackPages),
-                     createPageAction(QIcon(IMAGE_APPEARANCE), tr("Appearance"), grp));
+                     createPageAction(QIcon(IMAGE_APPEARANCE),
+                                      tr("Appearance"), grp));
   
   ui.stackPages->add(new AdvancedPage(ui.stackPages),
-                     createPageAction(QIcon(IMAGE_ADVANCED), tr("Advanced"), grp));
+                     createPageAction(QIcon(IMAGE_ADVANCED),
+                                      tr("Advanced"), grp));
   
   /* Create the toolbar */
   ui.toolBar->addActions(grp->actions());
   ui.toolBar->addSeparator();
-  connect(grp, SIGNAL(triggered(QAction *)), ui.stackPages, SLOT(showPage(QAction *)));
+  connect(grp, SIGNAL(triggered(QAction *)), 
+          ui.stackPages, SLOT(showPage(QAction *)));
   
   
   /* Create and bind the Save button */
