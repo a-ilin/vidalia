@@ -29,6 +29,9 @@
      <property name="text" >
       <string>I use a proxy to access the Internet</string>
      </property>
+     <property name="checked" >
+      <bool>true</bool>
+     </property>
     </widget>
    </item>
    <item>
@@ -178,7 +181,7 @@
       <string>My firewall only lets me connect to certain ports</string>
      </property>
      <property name="checked" >
-      <bool>false</bool>
+      <bool>true</bool>
      </property>
     </widget>
    </item>
@@ -209,14 +212,14 @@
        <number>6</number>
       </property>
       <item>
-       <widget class="QLabel" name="lblAllowedPorts" >
+       <widget class="QLabel" name="lblReachablePorts" >
         <property name="text" >
          <string>Allowed Ports:</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="lineAllowedPorts" >
+       <widget class="QLineEdit" name="lineReachablePorts" >
         <property name="inputMask" >
          <string/>
         </property>
@@ -229,9 +232,12 @@
     </widget>
    </item>
    <item>
-    <widget class="QCheckBox" name="chkUseBridge" >
+    <widget class="QCheckBox" name="chkUseBridges" >
      <property name="text" >
       <string>My ISP blocks connections to the Tor network</string>
+     </property>
+     <property name="checked" >
+      <bool>true</bool>
      </property>
     </widget>
    </item>
@@ -399,22 +405,6 @@
    </hints>
   </connection>
   <connection>
-   <sender>chkUseBridge</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>grpBridgeSettings</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>222</x>
-     <y>305</y>
-    </hint>
-    <hint type="destinationlabel" >
-     <x>222</x>
-     <y>390</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>chkUseProxy</sender>
    <signal>toggled(bool)</signal>
    <receiver>grpProxySettings</receiver>
@@ -427,6 +417,22 @@
     <hint type="destinationlabel" >
      <x>222</x>
      <y>216</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkUseBridges</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>grpBridgeSettings</receiver>
+   <slot>setVisible(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>283</x>
+     <y>302</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>283</x>
+     <y>419</y>
     </hint>
    </hints>
   </connection>
