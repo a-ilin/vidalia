@@ -48,10 +48,13 @@ public:
   /** Loads the settings for this page */
   void load();
 
-private:
-  /** A TorControl object used to talk to Tor */
-  TorControl* _torControl;
+private slots:
+  /** Adds a bridge to the bridge list box. */
+  void addBridge();
+  /** Removes one or more selected bridges from the bridge list box. */
+  void removeBridge();
 
+private:
   /** Qt Designer generated object */
   Ui::NetworkPage ui;
 };
