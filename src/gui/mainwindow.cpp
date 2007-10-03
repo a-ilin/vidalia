@@ -114,10 +114,11 @@ MainWindow::MainWindow()
   ui.setupUi(this);
 
   /* Create all the dialogs of which we only want one instance */
-  _messageLog = new MessageLog();
+  _messageLog     = new MessageLog();
   _bandwidthGraph = new BandwidthGraph();
-  _netViewer = new NetViewer();
-  
+  _netViewer      = new NetViewer();
+  _configDialog   = new ConfigDialog();
+
   /* Create the actions that will go in the tray menu */
   createActions();
   /* Creates a tray icon with a context menu and adds it to the system's
@@ -127,7 +128,7 @@ MainWindow::MainWindow()
   _status = Unset;
   updateTorStatus(Stopped);
   
-  /* Create a new TorControl object, used to communicate with and manipulate Tor */
+  /* Create a new TorControl object, used to communicate with Tor */
   _torControl = Vidalia::torControl(); 
   connect(_torControl, SIGNAL(started()), this, SLOT(started()));
   connect(_torControl, SIGNAL(startFailed(QString)),
@@ -810,33 +811,12 @@ MainWindow::authenticated()
   ui.lblNewIdentity->setEnabled(true);
 
   /* Register for any pertinent asynchronous events. */
-  if (!_torControl->setEvents(&errmsg))
+  if (!_torControl->setEvents(&errmsg)) {
     VMessageBox::warning(this, tr("Error Registering for Events"),
       p(tr("Vidalia was unable to register for Tor events. "
            "Many of Vidalia's features may be unavailable."))
          + p(errmsg),
       VMessageBox::Ok);
-  
-  /* If the user changed some of the server's settings while Tor wasn't 
-   * running, then we better let Tor know about the changes now. */
-  if (serverSettings.changedSinceLastApply()) {
-    if (!serverSettings.apply(&errmsg)) {
-      int ret = VMessageBox::warning(this, 
-                  tr("Error Applying Server Settings"),
-                  p(tr("Vidalia was unable to apply your server's settings."))
-                    + p(errmsg),
-                  VMessageBox::Ok|VMessageBox::Escape, 
-                  VMessageBox::ShowSettings|VMessageBox::Default,
-                  VMessageBox::ShowLog);
-
-      if (ret == VMessageBox::ShowSettings) {
-        /* Show the config dialog with the server page already shown. */
-        showConfigDialog(ConfigDialog::Server);
-      } else if (ret == VMessageBox::ShowLog) {
-        /* Show the message log. */
-        _messageLog->showWindow(); 
-      }
-    }
   }
 }
 
@@ -950,10 +930,7 @@ MainWindow::showAboutDialog()
 void
 MainWindow::showConfigDialog(ConfigDialog::Page page)
 {
-  static ConfigDialog *configDialog = 0;
-  if (!configDialog)
-    configDialog = new ConfigDialog(this);
-  configDialog->showWindow(page);
+  _configDialog->showWindow(page);
 }
 
 /** Displays the Configuration dialog, set to the Server page. */

@@ -52,6 +52,13 @@ public:
   bool save(QString &errmsg);
   /** Loads the settings for this page */
   void load();
+  /** Applies the server configuration settings to Tor. Returns true if the
+   * settings were applied successfully. Otherwise, <b>errmsg</b> is set and
+   * false is returned. */
+  bool apply(QString &errmsg);
+  /** Returns true if the user has changed their server settings since the
+   * last time they were applied to Tor. */
+  bool changedSinceLastApply();
 
 private slots:
   /** Called when the user clicks the bandwidth help button */

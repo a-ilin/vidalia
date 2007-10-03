@@ -73,7 +73,7 @@
 
 /** Constructor */
 ServerPage::ServerPage(QWidget *parent)
-: ConfigPage(parent)
+: ConfigPage(parent, tr("Server"))
 {
   /* Invoke the Qt Designer generated object setup routine */
   ui.setupUi(this);
@@ -143,13 +143,29 @@ ServerPage::save(QString &errmsg)
 
   /* If we're connected to Tor and we've changed the server settings, attempt
    * to apply the new settings now. */
-  if (_torControl->isConnected() && _settings->changedSinceLastApply()) {
-    if (!_settings->apply(&errmsg)) {
+  if (_torControl->isConnected() && changedSinceLastApply())
+    if (!apply(errmsg)) {
       _settings->revert();
       return false;
     }
-  }
   return true;
+}
+
+/** Returns true if the user has changed their server settings since the
+ * last time they were applied to Tor. */
+bool
+ServerPage::changedSinceLastApply()
+{
+  return _settings->changedSinceLastApply();
+}
+
+/** Applies the server configuration settings to Tor. Returns true if the
+ * settings were applied successfully. Otherwise, <b>errmsg</b> is
+ * set and false is returned. */
+bool
+ServerPage::apply(QString &errmsg)
+{
+  return _settings->apply(&errmsg);
 }
 
 /** Loads previously saved settings */

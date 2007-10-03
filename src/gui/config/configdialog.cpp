@@ -26,6 +26,7 @@
  */
 
 #include <gui/common/vmessagebox.h>
+#include <util/html.h>
 #include <vidalia.h>
 
 #include "configdialog.h"
@@ -49,6 +50,9 @@ ConfigDialog::ConfigDialog(QWidget* parent)
 
   /* Invoke the Qt Designer generated QObject setup routine */
   ui.setupUi(this);
+  
+  connect(Vidalia::torControl(), SIGNAL(authenticated()),
+                           this, SLOT(applyChanges()));
 
   /* Create the config pages and actions */
   QActionGroup *grp = new QActionGroup(this);
@@ -158,7 +162,9 @@ ConfigDialog::saveChanges()
       
       /* Show the user what went wrong */
       VMessageBox::warning(this, 
-        tr("Error Saving Configuration"), errmsg,
+        tr("Error Saving Settings"), 
+        p(tr("Vidalia was unable to save your %1 settings.")
+             .arg(page->title())) + p(errmsg),
         VMessageBox::Ok);
 
       /* Don't process the rest of the pages */
@@ -166,6 +172,34 @@ ConfigDialog::saveChanges()
     }
   }
   QMainWindow::close();
+}
+
+/** Called after Vidalia has authenticated to Tor and applies any changes 68
+ * made since the last time they were applied. */
+void
+ConfigDialog::applyChanges()
+{
+  QString errmsg;
+  
+  foreach (ConfigPage *page, ui.stackPages->pages()) {
+    if (!page->changedSinceLastApply())
+      continue;
+    if (!page->apply(errmsg)) {
+      /* Failed to apply the changes to Tor */
+      int ret = VMessageBox::warning(this,
+                  tr("Error Applying Settings"),
+                  p(tr("Vidalia was unable to apply your %1 settings "
+                       "to Tor.").arg(page->title()))
+                    + p(errmsg),
+                  VMessageBox::ShowSettings|VMessageBox::Default,
+                  VMessageBox::Cancel|VMessageBox::Escape);
+      if (ret == VMessageBox::ShowSettings) {
+        showWindow();
+        ui.stackPages->setCurrentPage(page);
+        break;
+      }
+    }
+  }
 }
 
 /** Shows help information about the configuration dialog. */

@@ -163,6 +163,8 @@ private:
   BandwidthGraph* _bandwidthGraph;
   /** A NetViewer object which displays the Tor network graphically */
   NetViewer* _netViewer;
+  /** A ConfigDialog object which lets the user configure Tor and Vidalia */
+  ConfigDialog* _configDialog;
   /** A TorControl object that handles communication with Tor */
   TorControl* _torControl;
 

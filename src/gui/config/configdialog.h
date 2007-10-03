@@ -64,6 +64,9 @@ public slots:
   void showWindow(Page page = General);
 
 private slots:
+  /** Called after Vidalia has authenticated to Tor and applies any changes
+   * made since the last time they were applied. */
+  void applyChanges();
   /** Called when user clicks "Save Settings" */
   void saveChanges();
   /** Called when user clicks "Help" */
@@ -76,7 +79,7 @@ private:
   QAction* createPageAction(QIcon img, QString text, QActionGroup *group);
   /** Adds a new action to the toolbar. */
   void addAction(QAction *action, const char *slot = 0);
-
+  
   /** Qt Designer generated object */
   Ui::ConfigDialog ui;
 };
