@@ -166,7 +166,7 @@ ServerSettings::value(QString key)
   QVariant value;
   QString confKey, confValue;
   confKey = key.mid(key.indexOf("/")+1);
-  if (_torControl->isConnected()) {
+  if (_torControl->isConnected() && !changedSinceLastApply()) {
     quint32 torVersion = _torControl->getTorVersion();
     if (torVersion >= 0x020001) {
       if (confKey == SERVER_BANDWIDTH_RATE)
