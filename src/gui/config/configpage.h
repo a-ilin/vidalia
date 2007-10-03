@@ -35,13 +35,35 @@ class ConfigPage : public QWidget
 {
 public:
   /** Default Constructor */
-  ConfigPage(QWidget *parent = 0) : QWidget(parent) {}
+  ConfigPage(QWidget *parent = 0, const QString title = QString()) 
+   : QWidget(parent), _title(title) {}
+
+  /** Returns the title of this configuration page. */
+  QString title() const { return _title; }
 
   /** Pure virtual method. Subclassed pages load their config settings here. */
   virtual void load() = 0;
   /** Pure virtual method. Subclassed pages save their config settings here
    * and return true if everything was saved successfully. */
   virtual bool save(QString &errmsg) = 0;
+
+  /** Subclassed pages should overload this method to return true if they
+   * contain settings that have been modified since they were last applied to
+   * Tor. The default implementation always returns false. */
+  virtual bool changedSinceLastApply() {
+    return false;
+  }
+  /** Subclassed pages should overload this method to apply any settings to
+   * Tor that have been modified since they were last applied (e.g., the
+   * changes were made while Tor was not running). Returns true if the changes
+   * were applied successfully. */
+  virtual bool apply(QString &errmsg) {
+    Q_UNUSED(errmsg);
+    return true;
+  }
+
+private:
+  QString _title; /**< Title of this configuration page. */
 };
 
 #endif
