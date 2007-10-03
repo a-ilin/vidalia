@@ -31,7 +31,7 @@
 
 /** Default Constructor */
 AppearancePage::AppearancePage(QWidget *parent)
-: ConfigPage(parent)
+: ConfigPage(parent, tr("Appearance"))
 {
   /* Invoke Designer-generated object setup routine */
   ui.setupUi(this);

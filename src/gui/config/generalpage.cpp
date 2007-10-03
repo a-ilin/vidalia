@@ -29,7 +29,7 @@
 
 /** Constructor */
 GeneralPage::GeneralPage(QWidget *parent)
-: ConfigPage(parent)
+: ConfigPage(parent, tr("General"))
 {
   /* Invoke the Qt Designer generated object setup routine */
   ui.setupUi(this);

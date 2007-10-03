@@ -42,7 +42,7 @@
 
 /** Constructor */
 AdvancedPage::AdvancedPage(QWidget *parent)
-: ConfigPage(parent)
+: ConfigPage(parent, tr("Advanced"))
 {
   /* Invoke the Qt Designer generated object setup routine */
   ui.setupUi(this);

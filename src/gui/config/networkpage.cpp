@@ -35,7 +35,7 @@
 
 /** Constructor */
 NetworkPage::NetworkPage(QWidget *parent)
-: ConfigPage(parent)
+: ConfigPage(parent, tr("Network"))
 {
   /* Invoke the Qt Designer generated object setup routine */
   ui.setupUi(this);
