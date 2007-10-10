@@ -38,9 +38,9 @@
 #include <QString>
 
 #include <util/log.h>
-#include <gui/help/browser/helpbrowser.h>
-#include <config/vidaliasettings.h>
-#include <control/torcontrol.h>
+#include <helpbrowser.h>
+#include <vidaliasettings.h>
+#include <torcontrol.h>
 
 /** Vidalia's version string */
 #define VIDALIA_VERSION    "0.0.15-svn"

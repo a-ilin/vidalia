@@ -31,9 +31,9 @@
 #include <QMainWindow>
 #include <QStringList>
 #include <QResizeEvent>
-#include <control/torcontrol.h>
-#include <config/vidaliasettings.h>
-#include <gui/common/vidaliawindow.h>
+#include <torcontrol.h>
+#include <vidaliasettings.h>
+#include <vidaliawindow.h>
 
 #include "logfile.h"
 #include "logtreeitem.h"

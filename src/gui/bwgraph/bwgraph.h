@@ -31,9 +31,9 @@
 #include <QDateTime>
 #include <QEvent>
 
-#include <config/vidaliasettings.h>
-#include <control/torcontrol.h>
-#include <gui/common/vidaliawindow.h>
+#include <vidaliasettings.h>
+#include <torcontrol.h>
+#include <vidaliawindow.h>
 
 #include "ui_bwgraph.h"
 

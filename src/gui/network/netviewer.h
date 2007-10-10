@@ -33,9 +33,9 @@
 #include <QEvent>
 #include <QTimer>
 #include <QHash>
-#include <control/torcontrol.h>
+#include <torcontrol.h>
 #include <util/geoip/geoipresolver.h>
-#include <gui/common/vidaliawindow.h>
+#include <vidaliawindow.h>
 
 #include "tormapwidget.h"
 #include "ui_netviewer.h"
