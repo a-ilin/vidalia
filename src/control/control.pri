@@ -21,6 +21,8 @@
 #  02110-1301, USA.
 #################################################################
 
+INCLUDEPATH += $$PWD
+
 HEADERS += $$PWD/torcontrol.h \
            $$PWD/torprocess.h \
            $$PWD/controlconnection.h \
