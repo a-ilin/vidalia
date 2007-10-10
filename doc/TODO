@@ -108,6 +108,12 @@ Miscellaneous Tasks:
   * If we get rid of Privoxy, it would be good to have a set of tray and dock
     icons for Vidalia that show some sort of activity when the user is
     actively using Tor.
+  * Our configure.in doesn't handle Qt built as a framework on OS X installed
+    from the Trolltech .dmg installers. This should be fixed.
+  * To build Vidalia as a qmake-generated XCode project, one needs to set
+    USE_HEADERMAP=0. We should figure out why this is and either fix it, or
+    find a way to make qmake generate an XCode project with this build setting
+    already set.
 
 
 Notes from Roger:
