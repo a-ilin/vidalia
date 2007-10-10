@@ -30,7 +30,7 @@
 
 #include <QMainWindow>
 
-#include <control/torcontrol.h>
+#include <torcontrol.h>
 
 /* QSystemTrayIcon appeared in Qt 4.2, but we need a bugfix to it on Mac 
  * that won't appear until Qt 4.2.2. */
