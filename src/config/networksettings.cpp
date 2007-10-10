@@ -40,10 +40,9 @@
 
 
 /** Default constructor */
-NetworkSettings::NetworkSettings()
+NetworkSettings::NetworkSettings(TorControl *torControl)
+: AbstractTorSettings("Network", torControl)
 {
-  beginGroup("Network");
-
   setDefault(SETTING_USE_HTTP_PROXY,    false);
   setDefault(SETTING_HTTP_PROXY,        "");
   setDefault(SETTING_HTTP_PROXY_AUTH,   "");
@@ -53,8 +52,37 @@ NetworkSettings::NetworkSettings()
   setDefault(SETTING_USE_BRIDGES,       false);
   setDefault(SETTING_BRIDGE_LIST,       QStringList());
   setDefault(SETTING_FASCIST_FIREWALL,  false);
-  setDefault(SETTING_REACHABLE_ADDRESSES, 
-    QStringList() << "*:80" << "*:443");
+  setDefault(SETTING_REACHABLE_ADDRESSES, QStringList());
+}
+
+/** Applies the current network configuration settings to Tor. If
+ * <b>errmsg</b> is specified and an error occurs while applying the settings,
+ * it will be set to a string describing the error. */
+bool
+NetworkSettings::apply(QString *errmsg)
+{
+  QHash<QString, QString> conf;
+  
+  conf.insert(SETTING_REACHABLE_ADDRESSES,
+    (getFascistFirewall() ? 
+      localValue(SETTING_REACHABLE_ADDRESSES).toStringList().join(",") : ""));
+  
+  conf.insert(SETTING_HTTP_PROXY,
+    (getUseHttpProxy() ? localValue(SETTING_HTTP_PROXY).toString() : ""));
+  conf.insert(SETTING_HTTP_PROXY_AUTH,
+              localValue(SETTING_HTTP_PROXY_AUTH).toString());
+  
+  conf.insert(SETTING_HTTPS_PROXY,
+    (getUseHttpsProxy() ? localValue(SETTING_HTTPS_PROXY).toString() : ""));
+  conf.insert(SETTING_HTTPS_PROXY_AUTH,
+              localValue(SETTING_HTTPS_PROXY_AUTH).toString());
+
+  conf.insert(SETTING_BRIDGE_LIST,
+    (getUseBridges() ?
+      localValue(SETTING_BRIDGE_LIST).toStringList().join(",") : ""));
+  conf.insert("UpdateBridgesFromAuthority", (getUseBridges() ? "1" : "0"));
+
+  return _torControl->setConf(conf, errmsg);
 }
 
 /** Returns true if we need to set ReachableAddresses because we're behind a
@@ -62,7 +90,7 @@ NetworkSettings::NetworkSettings()
 bool
 NetworkSettings::getFascistFirewall()
 {
-  return value(SETTING_FASCIST_FIREWALL).toBool();
+  return localValue(SETTING_FASCIST_FIREWALL).toBool();
 }
 
 /** Sets to <b>fascistFirewall</b> whether Tor should only create outgoing
@@ -111,7 +139,7 @@ NetworkSettings::setReachablePorts(const QList<quint16> &reachablePorts)
 bool
 NetworkSettings::getUseHttpProxy()
 {
-  return value(SETTING_USE_HTTP_PROXY).toBool();
+  return localValue(SETTING_USE_HTTP_PROXY).toBool();
 }
 
 /** Sets to <b>useHttpProxy</b> whether Tor should make all its directory
@@ -162,7 +190,7 @@ NetworkSettings::setHttpProxyAuthenticator(const QString &auth)
 bool
 NetworkSettings::getUseHttpsProxy()
 {
-  return value(SETTING_USE_HTTPS_PROXY).toBool();
+  return localValue(SETTING_USE_HTTPS_PROXY).toBool();
 }
 
 /** Sets to <b>useHttpsProxy</b> whether Tor should make all its OR

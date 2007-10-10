@@ -31,14 +31,19 @@
 #include <QList>
 #include <QStringList>
 
-#include "vidaliasettings.h"
+#include "abstracttorsettings.h"
 
 
-class NetworkSettings : private VidaliaSettings
+class NetworkSettings : public AbstractTorSettings
 {
 public:
   /** Default constructor. */
-  NetworkSettings();
+  NetworkSettings(TorControl *torControl);
+
+  /** Applies the current network configuration settings to Tor. If
+   *  * <b>errmsg</b> is specified and an error occurs while applying the
+   *  settings, it will be set to a string describing the error. */
+  bool apply(QString *errmsg = 0);
 
   /** Returns true if we need to set ReachableAddresses because we're behind a
    * restrictive firewall that limits the ports Tor can connect to. */
