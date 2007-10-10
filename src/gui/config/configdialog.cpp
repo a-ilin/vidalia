@@ -180,7 +180,7 @@ ConfigDialog::saveChanges()
     close();
 }
 
-/** Called after Vidalia has authenticated to Tor and applies any changes 68
+/** Called after Vidalia has authenticated to Tor and applies any changes
  * made since the last time they were applied. */
 void
 ConfigDialog::applyChanges()
