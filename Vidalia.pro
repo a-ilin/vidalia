@@ -58,7 +58,7 @@ unix {
   target.path = $${PREFIX}/bin
   man.files = $$PWD/doc/vidalia.1
   man.path  = $${MANDIR}/man1
- INSTALLS += target man
+  INSTALLS += target man
 }
 win32 {
   # Link against these libraries on Win32
