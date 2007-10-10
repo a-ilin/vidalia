@@ -41,12 +41,22 @@ class NetworkPage : public ConfigPage
 public:
   /** Default Constructor */
   NetworkPage(QWidget *parent = 0);
-  /** Default Destructor */
-  ~NetworkPage();
+  
   /** Saves the changes on this page */
   bool save(QString &errmsg);
   /** Loads the settings for this page */
   void load();
+
+  /** Applies the network configuration settings to Tor. Returns true if the
+   * settings were applied successfully. Otherwise, <b>errmsg</b> is set and
+   * false is return. */
+  bool apply(QString &errmsg);
+  /** Reverts the server configuration settings to their values at the last
+   * time they were successfully applied to Tor. */
+  void revert();
+  /** Returns true if the user has changed their server settings since the
+   * last time they were applied to Tor. */
+  bool changedSinceLastApply();
 
 private slots:
   /** Adds a bridge to the bridge list box. */

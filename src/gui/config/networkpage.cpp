@@ -26,8 +26,8 @@
  */
 
 #include <QIntValidator>
+#include <networksettings.h>
 #include <vidalia.h>
-#include <config/networksettings.h>
 
 #include "networkpage.h"
 #include "domainvalidator.h"
@@ -47,9 +47,29 @@ NetworkPage::NetworkPage(QWidget *parent)
   ui.lineHttpProxyPort->setValidator(new QIntValidator(1, 65535, this));
 }
 
-/** Destructor */
-NetworkPage::~NetworkPage()
+/** Applies the network configuration settings to Tor. Returns true if the   *
+ * settings were applied successfully. Otherwise, <b>errmsg</b> is set and   *
+ * false is return. */
+bool
+NetworkPage::apply(QString &errmsg)
 {
+  return NetworkSettings(Vidalia::torControl()).apply(&errmsg);
+}
+
+/** Returns true if the user has changed their server settings since the   *
+ * last time they were applied to Tor. */
+bool
+NetworkPage::changedSinceLastApply()
+{
+  return NetworkSettings(Vidalia::torControl()).changedSinceLastApply();
+}
+
+/** Reverts the server configuration settings to their values at the last   *
+ * time they were successfully applied to Tor. */
+void
+NetworkPage::revert()
+{
+  NetworkSettings(Vidalia::torControl()).revert();
 }
 
 /** Adds a bridge to the bridge list box. */
@@ -78,7 +98,7 @@ NetworkPage::removeBridge()
 bool
 NetworkPage::save(QString &errmsg)
 {
-  NetworkSettings settings;
+  NetworkSettings settings(Vidalia::torControl());
   QStringList bridgeList;
   QList<quint16> reachablePorts;
   bool ok;
@@ -111,7 +131,8 @@ NetworkPage::save(QString &errmsg)
   
   /* Save the reachable port settings */
   settings.setFascistFirewall(ui.chkFascistFirewall->isChecked());
-  foreach (QString portString, ui.lineReachablePorts->text().split(",")) {
+  foreach (QString portString,
+           ui.lineReachablePorts->text().split(",", QString::SkipEmptyParts)) {
     quint32 port = portString.toUInt(&ok);
     if (!ok || port < 1 || port > 65535) {
       errmsg = tr("'%1' is not a valid port number.").arg(portString);
@@ -126,6 +147,7 @@ NetworkPage::save(QString &errmsg)
   for (int i = 0; i < ui.listBridges->count(); i++)
     bridgeList << ui.listBridges->item(i)->text();
   settings.setBridgeList(bridgeList);
+
   return true;
 }
 
@@ -133,7 +155,7 @@ NetworkPage::save(QString &errmsg)
 void
 NetworkPage::load()
 {
-  NetworkSettings settings;
+  NetworkSettings settings(Vidalia::torControl());
   QStringList reachablePortStrings;
 
   /* Load HTTP/HTTPS proxy settings */
