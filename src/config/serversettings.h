@@ -28,23 +28,17 @@
 #ifndef _SERVERSETTINGS_H
 #define _SERVERSETTINGS_H
 
-#include <control/torcontrol.h>
-
-#include "vidaliasettings.h"
+#include "abstracttorsettings.h"
 #include "exitpolicy.h"
 
 
-class ServerSettings : private VidaliaSettings
+class ServerSettings : public AbstractTorSettings
 {
 
 public:
   /** Constructor */
   ServerSettings(TorControl *torControl);
 
-  /** Reverts all settings changes since the last apply. */
-  void revert();
-  /** Returns true if the settings have changed since the last apply. */
-  bool changedSinceLastApply();
   /** Applies changese to Tor. */
   bool apply(QString *errmsg = 0);
 
@@ -93,27 +87,8 @@ public:
   quint32 getBandwidthBurstRate();
 
 private:
-  /** Sets a value indicating that the server settings have changed since
-   * apply() was last called. */
-  void setChanged(bool changed);
-  
   /** Returns Tor-recognizable configuration keys and current values. */
   QHash<QString,QString> confValues();
-
-  /** Returns all currently stored server settings. */
-  QMap<QString, QVariant> allSettings();
-  
-  /** Returns true if the specified QVariant contains an empty value. */
-  bool isEmptyValue(QVariant value);
-  /** Retrieves a configuration value. If one isn't found, use a default. */
-  QVariant value(QString key);
-  /** Stores a configuration key-value. */
-  void setValue(QString key, QVariant value);
-
-  /** A TorControl object used to talk to Tor. */
-  TorControl* _torControl;
-  /** Values of all stored settings at the last apply() point. */
-  QMap<QString, QVariant> _backupSettings;
 };
 
 #endif
