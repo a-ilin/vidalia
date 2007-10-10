@@ -29,7 +29,8 @@ HEADERS += $$PWD/vsettings.h \
            $$PWD/torsettings.h \
            $$PWD/policy.h \
            $$PWD/exitpolicy.h \
-           $$PWD/networksettings.h
+           $$PWD/networksettings.h \
+           $$PWD/abstracttorsettings.h
            
 SOURCES += $$PWD/vsettings.cpp \
            $$PWD/vidaliasettings.cpp \
@@ -37,5 +38,6 @@ SOURCES += $$PWD/vsettings.cpp \
            $$PWD/torsettings.cpp \
            $$PWD/policy.cpp \
            $$PWD/exitpolicy.cpp \
-           $$PWD/networksettings.cpp
+           $$PWD/networksettings.cpp \
+           $$PWD/abstracttorsettings.cpp
 
