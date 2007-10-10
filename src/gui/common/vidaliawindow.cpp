@@ -39,7 +39,7 @@ VidaliaWindow::VidaliaWindow(QString name, QWidget *parent, Qt::WFlags flags)
  : QMainWindow(parent, flags)
 {
   _name     = name;
-  _settings = new VidaliaSettings();
+  _settings = new VSettings(name);
 }
 
 /** Destructor. */
@@ -99,16 +99,14 @@ VidaliaWindow::restoreWindowState()
 QVariant
 VidaliaWindow::getSetting(QString setting, QVariant defaultValue)
 {
-  QString key = _name + "/" + setting;
-  return _settings->value(key, defaultValue);
+  return _settings->value(setting, defaultValue);
 }
 
 /** Saves a value associated with a property name for this window object. */
 void
 VidaliaWindow::saveSetting(QString prop, QVariant value)
 {
-  QString key = _name + "/" + prop;
-  _settings->setValue(key, value);
+  _settings->setValue(prop, value);
 }
 
 /** Overloaded QWidget::setVisible(). If this window is already visible and

@@ -32,7 +32,7 @@
 #include <QWidget>
 #include <QVariant>
 #include <QMainWindow>
-#include <config/vidaliasettings.h>
+#include <vsettings.h>
 
 
 class VidaliaWindow : public QMainWindow
@@ -67,7 +67,7 @@ public slots:
 
 private:
   QString _name;  /**< Name associated with this window. */
-  VidaliaSettings* _settings; /**< Object used to store window properties */
+  VSettings* _settings; /**< Object used to store window properties */
 };
 
 #endif
