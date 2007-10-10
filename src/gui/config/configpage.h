@@ -47,13 +47,13 @@ public:
    * and return true if everything was saved successfully. */
   virtual bool save(QString &errmsg) = 0;
 
-  /** Subclassed pages should overload this method to return true if they
+  /** Subclassed pages can overload this method to return true if they
    * contain settings that have been modified since they were last applied to
    * Tor. The default implementation always returns false. */
   virtual bool changedSinceLastApply() {
     return false;
   }
-  /** Subclassed pages should overload this method to apply any settings to
+  /** Subclassed pages can overload this method to apply any settings to
    * Tor that have been modified since they were last applied (e.g., the
    * changes were made while Tor was not running). Returns true if the changes
    * were applied successfully. */
@@ -61,6 +61,9 @@ public:
     Q_UNUSED(errmsg);
     return true;
   }
+  /** Subclassed pages can overload this method to revert any cancelled
+   * settings. */
+  virtual void revert() {}
 
 private:
   QString _title; /**< Title of this configuration page. */
