@@ -64,11 +64,17 @@ public slots:
   void showWindow(Page page = General);
 
 private slots:
+  /** Called when user clicks "Save Settings". Saves their settings to
+   * Vidalia's configuration file. */
+  void saveChanges();
   /** Called after Vidalia has authenticated to Tor and applies any changes
    * made since the last time they were applied. */
   void applyChanges();
-  /** Called when user clicks "Save Settings" */
-  void saveChanges();
+  /** Sends Tor a SAVECONF to write its configuration to disk. If the
+   * SAVECONF is successful, then all settings are considered to be
+   * applied. */
+  void saveConf();
+  
   /** Called when user clicks "Help" */
   void help();
 

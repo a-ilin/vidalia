@@ -27,6 +27,8 @@
 
 #include <gui/common/vmessagebox.h>
 #include <util/html.h>
+#include <serversettings.h>
+#include <networksettings.h>
 #include <vidalia.h>
 
 #include "configdialog.h"
@@ -148,7 +150,8 @@ ConfigDialog::loadSettings()
   }
 }
 
-/** Saves changes made to settings. */
+/** Saves changes made to settings. If Tor is running and Vidalia is
+ * connected, we will also attempt to apply the changes to Tor. */
 void
 ConfigDialog::saveChanges()
 {
@@ -171,7 +174,10 @@ ConfigDialog::saveChanges()
       return;
     }
   }
-  QMainWindow::close();
+  if (Vidalia::torControl()->isConnected())
+    applyChanges();
+  else
+    close();
 }
 
 /** Called after Vidalia has authenticated to Tor and applies any changes 68
@@ -180,7 +186,8 @@ void
 ConfigDialog::applyChanges()
 {
   QString errmsg;
-  
+  bool appliedChanges = false;
+
   foreach (ConfigPage *page, ui.stackPages->pages()) {
     if (!page->changedSinceLastApply())
       continue;
@@ -194,11 +201,32 @@ ConfigDialog::applyChanges()
                   VMessageBox::ShowSettings|VMessageBox::Default,
                   VMessageBox::Cancel|VMessageBox::Escape);
       if (ret == VMessageBox::ShowSettings) {
+        /* Show the user the page with the bad settings */
         showWindow();
         ui.stackPages->setCurrentPage(page);
-        break;
+      } else {
+        /* The user clicked 'Cancel', so revert the failed settings */
+        page->revert();
+        close();
       }
+      return;
     }
+    appliedChanges = true;
+  }
+  if (appliedChanges)
+    saveConf();      
+  close();
+}
+
+/** Sends Tor a SAVECONF to write its configuration to disk. If the SAVECONF
+ * is successful, then all settings are considered to be applied. */
+void
+ConfigDialog::saveConf()
+{
+  TorControl *tc = Vidalia::torControl();
+  if (tc->saveConf()) {
+    ServerSettings(tc).setChanged(false);
+    NetworkSettings(tc).setChanged(false);
   }
 }
 
