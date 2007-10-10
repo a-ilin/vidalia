@@ -31,26 +31,25 @@
 #include <util/crypto.h>
 #include <vidalia.h>
 
-#include "torsettings.h"
-
-/* Tor Settings */
-#define SETTING_TOR_EXECUTABLE  "Tor/TorExecutable"
-#define SETTING_TORRC           "Tor/Torrc"
-#define SETTING_CONTROL_ADDR    "Tor/ControlAddr"
-#define SETTING_CONTROL_PORT    "Tor/ControlPort"
-#define SETTING_AUTH_TOKEN      "Tor/AuthToken"
-#define SETTING_TOR_USER        "Tor/User"
-#define SETTING_TOR_GROUP       "Tor/Group"
-#define SETTING_DATA_DIRECTORY  "Tor/DataDirectory"
-#define SETTING_AUTH_METHOD     "Tor/AuthenticationMethod"
-#define SETTING_CONTROL_PASSWORD    "Tor/ControlPassword"
-#define SETTING_USE_RANDOM_PASSWORD "Tor/UseRandomPassword"
-
-/* On win32, we need to add the .exe onto Tor's filename */
 #if defined(Q_OS_WIN32)
 #include <QFileInfo>
 #include <util/win32.h>
 #endif
+
+#include "torsettings.h"
+
+/* Tor Settings */
+#define SETTING_TOR_EXECUTABLE      "TorExecutable"
+#define SETTING_TORRC               "Torrc"
+#define SETTING_CONTROL_ADDR        "ControlAddr"
+#define SETTING_CONTROL_PORT        "ControlPort"
+#define SETTING_AUTH_TOKEN          "AuthToken"
+#define SETTING_TOR_USER            "User"
+#define SETTING_TOR_GROUP           "Group"
+#define SETTING_DATA_DIRECTORY      "DataDirectory"
+#define SETTING_AUTH_METHOD         "AuthenticationMethod"
+#define SETTING_CONTROL_PASSWORD    "ControlPassword"
+#define SETTING_USE_RANDOM_PASSWORD "UseRandomPassword"
 
 /** Default to using hashed password authentication */
 #define DEFAULT_AUTH_METHOD     PasswordAuth
@@ -70,6 +69,7 @@
 
 /** Default constructor */
 TorSettings::TorSettings()
+: VSettings("Tor")
 {
 #if defined(Q_OS_WIN32)
   QString programFiles = win32_program_files_folder();

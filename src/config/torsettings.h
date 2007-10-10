@@ -30,11 +30,12 @@
 
 #include <QHostAddress>
 
-#include "vidaliasettings.h"
+#include "vsettings.h"
+
 
 /** Manages Tor-specific settings, such as location, command-line arguments,
  * and control interface information. */
-class TorSettings : private VidaliaSettings
+class TorSettings : public VSettings
 {
 public:
   /** Available Tor authentication methods. */
