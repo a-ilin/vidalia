@@ -182,6 +182,7 @@ NetworkPage::load()
 
   /* Load bridge settings */
   ui.chkUseBridges->setChecked(settings.getUseBridges());
+  ui.listBridges->clear();
   ui.listBridges->addItems(settings.getBridgeList());
 }
 
