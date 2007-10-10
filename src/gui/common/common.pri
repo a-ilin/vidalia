@@ -21,6 +21,8 @@
 #  02110-1301, USA.
 #################################################################
 
+INCLUDEPATH += $$PWD
+
 HEADERS +=  $$PWD/vidaliawindow.h \
             $$PWD/vmessagebox.h \
             $$PWD/vclicklabel.h \

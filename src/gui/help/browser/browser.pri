@@ -21,6 +21,8 @@
 #  02110-1301, USA.
 #################################################################
 
+INCLUDEPATH += $$PWD
+
 FORMS += $$PWD/helpbrowser.ui
 
 HEADERS += $$PWD/helpbrowser.h \
