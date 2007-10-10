@@ -21,14 +21,18 @@
 #  02110-1301, USA.
 #################################################################
 
-HEADERS += $$PWD/vidaliasettings.h \
+INCLUDEPATH += $$PWD
+
+HEADERS += $$PWD/vsettings.h \
+           $$PWD/vidaliasettings.h \
            $$PWD/serversettings.h \
            $$PWD/torsettings.h \
            $$PWD/policy.h \
            $$PWD/exitpolicy.h \
            $$PWD/networksettings.h
            
-SOURCES += $$PWD/vidaliasettings.cpp \
+SOURCES += $$PWD/vsettings.cpp \
+           $$PWD/vidaliasettings.cpp \
            $$PWD/serversettings.cpp \
            $$PWD/torsettings.cpp \
            $$PWD/policy.cpp \
