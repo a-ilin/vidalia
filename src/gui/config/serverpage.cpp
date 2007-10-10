@@ -140,14 +140,7 @@ ServerPage::save(QString &errmsg)
   _settings->setContactInfo(ui.lineServerContact->text());
   saveBandwidthLimits();
   saveExitPolicies();
-
-  /* If we're connected to Tor and we've changed the server settings, attempt
-   * to apply the new settings now. */
-  if (_torControl->isConnected() && changedSinceLastApply())
-    if (!apply(errmsg)) {
-      _settings->revert();
-      return false;
-    }
+  
   return true;
 }
 
@@ -166,6 +159,14 @@ bool
 ServerPage::apply(QString &errmsg)
 {
   return _settings->apply(&errmsg);
+}
+
+/** Returns true if the user has changed their server settings since the
+ * last time they were applied to Tor. */
+void
+ServerPage::revert()
+{
+  _settings->revert();
 }
 
 /** Loads previously saved settings */

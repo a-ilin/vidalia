@@ -30,10 +30,10 @@
 
 #include <QMessageBox>
 #include <QTimer>
-#include <control/torcontrol.h>
-#include <config/serversettings.h>
-#include <config/exitpolicy.h>
-#include <gui/help/browser/helpbrowser.h>
+#include <torcontrol.h>
+#include <serversettings.h>
+#include <exitpolicy.h>
+#include <helpbrowser.h>
 
 #include "configpage.h"
 #include "ui_serverpage.h"
@@ -52,10 +52,14 @@ public:
   bool save(QString &errmsg);
   /** Loads the settings for this page */
   void load();
+  
   /** Applies the server configuration settings to Tor. Returns true if the
    * settings were applied successfully. Otherwise, <b>errmsg</b> is set and
    * false is returned. */
   bool apply(QString &errmsg);
+  /** Reverts the server configuration settings to their values at the last
+   * time they were successfully applied to Tor. */
+  void revert();
   /** Returns true if the user has changed their server settings since the
    * last time they were applied to Tor. */
   bool changedSinceLastApply();
