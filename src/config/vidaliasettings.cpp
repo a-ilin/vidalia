@@ -37,7 +37,6 @@
 #include <util/win32.h>
 #endif
 
-
 #define SETTING_LANGUAGE            "LanguageCode"
 #define SETTING_STYLE               "InterfaceStyle"
 #define SETTING_RUN_TOR_AT_START    "RunTorAtStart"
@@ -49,13 +48,9 @@
 #define VIDALIA_REG_KEY        "Vidalia" 
 #endif
 
-/** The location of Vidalia's settings and configuration file. */
-#define SETTINGS_FILE   (Vidalia::dataDirectory() + "/vidalia.conf")
-
 
 /** Default Constructor */
 VidaliaSettings::VidaliaSettings()
-: QSettings(SETTINGS_FILE, QSettings::IniFormat)
 {
 #if defined(Q_WS_MAC)
   setDefault(SETTING_STYLE, "macintosh (aqua)");
@@ -77,57 +72,6 @@ VidaliaSettings::VidaliaSettings()
   setDefault(SETTING_LANGUAGE, LanguageSupport::defaultLanguageCode());
   setDefault(SETTING_RUN_TOR_AT_START, true);
   setDefault(SETTING_SHOW_MAINWINDOW_AT_START, true);
-}
-
-/** Sets the default value of <b>key</b> to be <b>val</b>. */
-void
-VidaliaSettings::setDefault(QString key, QVariant val)
-{
-  _defaults.insert(key, val);
-}
-
-/** Returns the default value for <b>key</b>. */
-QVariant
-VidaliaSettings::defaultValue(QString key)
-{
-  if (_defaults.contains(key)) {
-    return _defaults.value(key);
-  }
-  return QVariant();
-}
-
-/** Save <b>val</b> to the configuration file for the setting <b>key</b>, if
- * <b>val</b> is different than <b>key</b>'s current value. */
-void
-VidaliaSettings::setValue(QString key, QVariant val)
-{
-  if (value(key) != val) {
-    QSettings::setValue(key, val);
-  }
-}
-
-/** Returns the value for <b>key</b>. If no value is currently saved, then the
- * default value for <b>key</b> will be returned. */
-QVariant
-VidaliaSettings::value(QString key)
-{
-  return value(key, defaultValue(key));
-}
-
-/** Returns the value for <b>key</b>. If no value is currently saved, then
- * <b>defaultValue</b> will be returned. */
-QVariant
-VidaliaSettings::value(QString key, QVariant defaultValue)
-{
-  return QSettings::value(key, defaultValue);
-}
-
-/** Resets all of Vidalia's settings. */
-void
-VidaliaSettings::reset()
-{
-  QSettings settings(SETTINGS_FILE, QSettings::IniFormat);
-  settings.clear();
 }
 
 /** Gets the currently preferred language code for Vidalia. */

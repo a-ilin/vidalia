@@ -28,9 +28,7 @@
 #ifndef _VIDALIASETTINGS_H
 #define _VIDALIASETTINGS_H
 
-#include <QHash>
-#include <QSettings>
-#include <control/logevent.h>
+#include "vsettings.h"
 
 
 /** Handles saving and restoring Vidalia's settings, such as the
@@ -40,30 +38,13 @@
  * "very fast", so we shouldn't need to create a global instance of this
  * class.
  */
-class VidaliaSettings : public QSettings
+class VidaliaSettings : public VSettings
 {
   
 public:
   /** Default constructor. */
   VidaliaSettings();
 
-  /** Resets all of Vidalia's settings. */
-  static void reset();
-  
-  /** Sets the default value of <b>key</b> to be <b>val</b>. */
-  void setDefault(QString key, QVariant val);
-  /** Returns the default value for <b>key</b>. */
-  QVariant defaultValue(QString key);
-  /** Save <b>val</b> to the configuration file for the setting <b>key</b>, if
-   * <b>val</b> is different than <b>key</b>'s current value. */
-  void setValue(QString key, QVariant val);
-  /** Returns the value for <b>key</b>. If no value is currently saved, then
-   * the default value for <b>key</b> will be returned. */
-  QVariant value(QString key);
-  /** Returns the value for <b>key</b>. If no value is currently saved, then
-   * <b>defaultValue</b> will be returned. */
-  QVariant value(QString key, QVariant defaultValue);
-  
   /** Gets the currently preferred language code for Vidalia. */
   QString getLanguageCode();
   /** Saves the preferred language code. */
@@ -89,9 +70,6 @@ public:
   bool runVidaliaOnBoot();
   /** Set whether to run Vidalia on system boot. */
   void setRunVidaliaOnBoot(bool run);
-
-private:
-  QHash<QString,QVariant> _defaults;
 };
 
 #endif
