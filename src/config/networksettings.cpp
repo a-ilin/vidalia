@@ -37,6 +37,7 @@
 #define SETTING_HTTPS_PROXY_AUTH    "HttpsProxyAuthenticator"
 #define SETTING_USE_BRIDGES         "UseBridges"
 #define SETTING_BRIDGE_LIST         "Bridge"
+#define SETTING_UPDATE_BRIDGES      "UpdateBridgesFromAuthority"
 
 
 /** Default constructor */
@@ -61,7 +62,7 @@ NetworkSettings::NetworkSettings(TorControl *torControl)
 bool
 NetworkSettings::apply(QString *errmsg)
 {
-  QHash<QString, QString> conf;
+  QMultiHash<QString, QString> conf;
   
   conf.insert(SETTING_REACHABLE_ADDRESSES,
     (getFascistFirewall() ? 
@@ -76,11 +77,18 @@ NetworkSettings::apply(QString *errmsg)
     (getUseHttpsProxy() ? localValue(SETTING_HTTPS_PROXY).toString() : ""));
   conf.insert(SETTING_HTTPS_PROXY_AUTH,
               localValue(SETTING_HTTPS_PROXY_AUTH).toString());
-
-  conf.insert(SETTING_BRIDGE_LIST,
-    (getUseBridges() ?
-      localValue(SETTING_BRIDGE_LIST).toStringList().join(",") : ""));
-  conf.insert("UpdateBridgesFromAuthority", (getUseBridges() ? "1" : "0"));
+  
+  if (getUseBridges()) {
+    conf.insert(SETTING_USE_BRIDGES, "1");
+    conf.insert(SETTING_UPDATE_BRIDGES, "1");
+    foreach (QString bridge, localValue(SETTING_BRIDGE_LIST).toStringList()) {
+      conf.insert(SETTING_BRIDGE_LIST, bridge);
+    }
+  } else {
+    conf.insert(SETTING_USE_BRIDGES, "0");
+    conf.insert(SETTING_BRIDGE_LIST, "");
+    conf.insert(SETTING_UPDATE_BRIDGES, "0");
+  }
 
   return _torControl->setConf(conf, errmsg);
 }
