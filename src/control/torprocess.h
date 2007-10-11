@@ -37,7 +37,7 @@ class TorProcess : public QProcess
 
 public:
   /** Default constructor. */
-  TorProcess();
+  TorProcess(QObject *parent = 0);
 
   /** Start the Tor process */
   void start(QString app, QStringList args);

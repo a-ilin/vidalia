@@ -38,7 +38,8 @@
 
 
 /** Default constructor */
-TorProcess::TorProcess()
+TorProcess::TorProcess(QObject *parent)
+: QProcess(parent)
 {
   openStdout();
   connect(this, SIGNAL(readyReadStandardOutput()), 
