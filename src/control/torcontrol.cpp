@@ -583,7 +583,7 @@ TorControl::setConf(QHash<QString,QString> map, QString *errmsg)
   QString arg, value;
   
   /* Add each keyvalue to the argument list */
-  foreach (QString key, map.keys()) {
+  foreach (QString key, map.uniqueKeys()) {
     foreach (QString value, map.values(key)) {
       if (value.length() > 0)
         cmd.addArgument(key + "=" + string_escape(value));
