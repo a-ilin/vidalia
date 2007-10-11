@@ -33,24 +33,26 @@
 /** Default constructor */
 TorControl::TorControl()
 {
-  /* For reasons currently unknown to me, QProcess saves some state
-   * information between executions of a process. Consequently, if we started
-   * Tor, it crashed, and then we tried to restart it, Vidalia would crash in
-   * the QProcess code. So, we create a new TorProcess object each time we
-   * start Tor and then destroy it when it stops. */
-  _torProcess = 0;
-
-  /** Create an instance of a connection to Tor's control interface and give
+  /* Create an instance of a connection to Tor's control interface and give
    * it an object to use to handle asynchronous events. */
   _controlConn = new ControlConnection(&_torEvents);
-
-  /* Plumb the appropriate socket signals */
   QObject::connect(_controlConn, SIGNAL(connected()),
                    this, SLOT(onConnected()));
   QObject::connect(_controlConn, SIGNAL(connectFailed(QString)),
                    this, SLOT(onConnectFailed(QString)));
   QObject::connect(_controlConn, SIGNAL(disconnected()),
                    this, SLOT(onDisconnected()));
+
+  /* Create an object used to start and stop a Tor process. */
+  _torProcess = new TorProcess(this);
+  QObject::connect(_torProcess, SIGNAL(started()),
+                   this, SLOT(onStarted()));
+  QObject::connect(_torProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
+                   this, SLOT(onStopped(int, QProcess::ExitStatus)));
+  QObject::connect(_torProcess, SIGNAL(startFailed(QString)),
+                   this, SLOT(onStartFailed(QString)));
+  QObject::connect(_torProcess, SIGNAL(log(QString, QString)),
+                   this, SLOT(onLogStdout(QString, QString)));
 
 #if defined(Q_OS_WIN32)
   _torService = new TorService(this);
@@ -85,27 +87,15 @@ TorControl::start(const QString &tor, const QStringList &args)
     emit started();
   } else {
 #if defined(Q_OS_WIN32)
-    if (TorService::isSupported() && _torService->isInstalled()) {
+    /* If the Tor service is installed, run that. Otherwise, start a new
+     * Tor process. */
+    if (TorService::isSupported() && _torService->isInstalled())
       _torService->start();
-      
-    } else {
-#endif
-      _torProcess = new TorProcess;
-  
-      /* Plumb the process signals */
-      QObject::connect(_torProcess, SIGNAL(started()),
-                       this, SLOT(onStarted()));
-      QObject::connect(_torProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
-                       this, SLOT(onStopped(int, QProcess::ExitStatus)));
-      QObject::connect(_torProcess, SIGNAL(startFailed(QString)),
-                       this, SLOT(onStartFailed(QString)));
-      QObject::connect(_torProcess, SIGNAL(log(QString, QString)),
-                       this, SLOT(onLogStdout(QString, QString)));
-  
-      /* Kick off the Tor process. */
+    else
       _torProcess->start(expand_filename(tor), args);
-#if defined(Q_OS_WIN32)
-    }
+#else
+    /* Start a new Tor process */
+    _torProcess->start(expand_filename(tor), args);
 #endif
   }
 }
@@ -122,9 +112,6 @@ TorControl::onStarted()
 void
 TorControl::onStartFailed(QString errmsg)
 {
-  /* If an error occurs we need to clean up the tor process */
-  closeTorProcess();
-
   emit startFailed(errmsg);
 }
 
@@ -149,8 +136,6 @@ TorControl::stop(QString *errmsg)
 void
 TorControl::onStopped(int exitCode, QProcess::ExitStatus exitStatus)
 {
-  closeTorProcess();
-  
   if (_controlConn->status() == ControlConnection::Connecting)
     _controlConn->cancelConnect();
   
@@ -158,36 +143,20 @@ TorControl::onStopped(int exitCode, QProcess::ExitStatus exitStatus)
   emit stopped(exitCode, exitStatus);
 }
 
-/** Disconnect signals from _torProcess and clean up after it. */
-void
-TorControl::closeTorProcess()
-{
-  if (_torProcess) {
-    QObject::disconnect(_torProcess, 0, 0, 0);
-    delete _torProcess;
-    _torProcess = 0;
-  }
-}
-
 /** Detects if the Tor process is running under Vidalia. Returns true if
  * Vidalia owns the Tor process, or false if it was an independent Tor. */
 bool
 TorControl::isVidaliaRunningTor()
 {
-  if (_torProcess) {
-    return (_torProcess->pid() != 0);
-  }
-  return false;
+  return (_torProcess->state() != QProcess::NotRunning);
 }
 
 /** Detect if the Tor process is running. */
 bool
 TorControl::isRunning()
 {
-  if (_torProcess) {
-    return (_torProcess->pid() != 0);
-  }
-  return _controlConn->isConnected();
+  return (_torProcess->state() != QProcess::NotRunning
+            || _controlConn->isConnected());
 }
 
 /** Called when Tor has printed a log message to stdout. */
