@@ -382,7 +382,8 @@ ControlConnection::run()
 
   /* If there are any messages waiting for a response, clear them. */
   _recvMutex.lock();
-  foreach (ReceiveWaiter *w, _recvQueue) {
+  while (!_recvQueue.isEmpty()) {
+    ReceiveWaiter *w = _recvQueue.dequeue();
     w->setResult(false, ControlReply(), 
                  tr("Control socket is not connected."));
   }
