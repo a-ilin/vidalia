@@ -584,12 +584,12 @@ TorControl::setConf(QHash<QString,QString> map, QString *errmsg)
   
   /* Add each keyvalue to the argument list */
   foreach (QString key, map.keys()) {
-    arg = key;
-    value = map.value(key);
-    if (value.length() > 0) {
-      arg += "=\"" + value + "\"";
+    foreach (QString value, map.values(key)) {
+      if (value.length() > 0)
+        cmd.addArgument(key + "=" + string_escape(value));
+      else
+        cmd.addArgument(key);
     }
-    cmd.addArgument(arg);
   }
   return send(cmd, errmsg); 
 }
