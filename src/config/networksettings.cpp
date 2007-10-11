@@ -39,6 +39,7 @@
 #define SETTING_BRIDGE_LIST         "Bridge"
 #define SETTING_UPDATE_BRIDGES      "UpdateBridgesFromAuthority"
 #define SETTING_TUNNEL_DIR_CONNS    "TunnelDirConns"
+#define SETTING_PREFER_TUNNELED_DIR_CONNS "PreferTunneledDirConns"
 
 
 /** Default constructor */
@@ -82,6 +83,7 @@ NetworkSettings::apply(QString *errmsg)
   if (getUseBridges()) {
     conf.insert(SETTING_USE_BRIDGES, "1");
     conf.insert(SETTING_TUNNEL_DIR_CONNS, "1");
+    conf.insert(SETTING_PREFER_TUNNELED_DIR_CONNS, "1");
     conf.insert(SETTING_UPDATE_BRIDGES, "1");
     foreach (QString bridge, localValue(SETTING_BRIDGE_LIST).toStringList()) {
       conf.insert(SETTING_BRIDGE_LIST, bridge);
@@ -89,6 +91,7 @@ NetworkSettings::apply(QString *errmsg)
   } else {
     conf.insert(SETTING_USE_BRIDGES, "0");
     conf.insert(SETTING_TUNNEL_DIR_CONNS, "0");
+    conf.insert(SETTING_PREFER_TUNNELED_DIR_CONNS, "0");
     conf.insert(SETTING_BRIDGE_LIST, "");
     conf.insert(SETTING_UPDATE_BRIDGES, "0");
   }
