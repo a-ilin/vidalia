@@ -580,7 +580,6 @@ bool
 TorControl::setConf(QHash<QString,QString> map, QString *errmsg)
 {
   ControlCommand cmd("SETCONF");
-  QString arg, value;
   
   /* Add each keyvalue to the argument list */
   foreach (QString key, map.uniqueKeys()) {
