@@ -85,6 +85,7 @@ NetworkPage::addBridge()
   /* XXX: We should do some verification that the gibberish the user typed in
    * is actually valid. */
   ui.listBridges->addItem(bridge);
+  ui.lineBridge->clear();
 }
 
 /** Removes one or more selected bridges from the bridge list box. */
