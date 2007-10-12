@@ -95,8 +95,9 @@ TorMapWidget::addRouter(QString id, float latitude, float longitude)
   
   /* Add data the hash of known routers, and plot the point on the map */
   if (_routers.contains(id))
-    delete _routers.take(id);
-  _routers.insert(id, new QPair<QPointF,bool>(routerCoord, false));
+    _routers.value(id)->first = routerCoord;
+  else
+    _routers.insert(id, new QPair<QPointF,bool>(routerCoord, false));
 }
 
 /** Adds a circuit to the map using the given ordered list of router IDs. */
