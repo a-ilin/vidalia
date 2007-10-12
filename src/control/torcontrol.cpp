@@ -119,17 +119,12 @@ TorControl::onStartFailed(QString errmsg)
 bool
 TorControl::stop(QString *errmsg)
 {
-  /* If there is no Tor running, then our job is done */
-  if (!isRunning()) {
-    return true;
-  }
-  /* If we didn't start our own Tor, send it a halt signal */
-  if (!_torProcess) {
-    return this->signal(TorSignal::Halt);
-  } else {
-    /* We started our own Tor, so stop the process */
-    return _torProcess->stop(errmsg);
-  }
+  bool rc = false;
+  if (_controlConn->isConnected())
+    rc = signal(TorSignal::Halt, errmsg);
+  if (!rc)
+    rc = _torProcess->stop(errmsg);
+  return rc;
 }
 
 /** Emits a signal that the Tor process stopped */
