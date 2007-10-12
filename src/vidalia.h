@@ -36,6 +36,7 @@
 #include <QApplication>
 #include <QMap>
 #include <QString>
+#include <QKeySequence>
 
 #include <util/log.h>
 #include <helpbrowser.h>
@@ -103,7 +104,12 @@ public:
   /** Enters the main event loop and waits until exit() is called. The signal
    * running() will be emitted when the event loop has started. */
   static int run();
-  
+
+  /** Creates and binds a shortcut such that when <b>key</b> is pressed in
+   * <b>sender</b>'s context, <b>receiver</b>'s <b>slot</b> will be called. */
+  static void createShortcut(const QKeySequence &key, QWidget *sender,
+                             QWidget *receiver, const char *slot);
+
 public slots:
   /** Shows the specified help topic, or the default if empty. */
   static void help(QString topic = QString());

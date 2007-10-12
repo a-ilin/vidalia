@@ -29,9 +29,10 @@
 #include <QTimer>
 #include <QTextStream>
 #include <QStyleFactory>
+#include <QShortcut>
+#include <languagesupport.h>
+#include <vmessagebox.h>
 #include <util/string.h>
-#include <lang/languagesupport.h>
-#include <gui/common/vmessagebox.h>
 #include <util/html.h>
 #include <stdlib.h>
 
@@ -352,9 +353,20 @@ Vidalia::pidFile()
   return QDir::convertSeparators(dataDirectory() + "/vidalia.pid");
 }
 
+/** Writes <b>msg</b> with severity <b>level</b> to Vidalia's log. */
 Log::LogMessage
 Vidalia::log(Log::LogLevel level, QString msg)
 {
   return _log.log(level, msg);
+}
+
+/** Creates and binds a shortcut such that when <b>key</b> is pressed in
+ * <b>sender</b>'s context, <b>receiver</b>'s <b>slot</b> will be called. */
+void
+Vidalia::createShortcut(const QKeySequence &key, QWidget *sender,
+                        QWidget *receiver, const char *slot)
+{
+  QShortcut *s = new QShortcut(key, sender);
+  connect(s, SIGNAL(activated()), receiver, slot);
 }
 
