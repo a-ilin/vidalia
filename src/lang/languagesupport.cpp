@@ -126,7 +126,7 @@ bool
 LanguageSupport::translate(QString langCode)
 {
   if (isValidLanguageCode(langCode)) {
-    QTranslator *translator = new QTranslator();
+    QTranslator *translator = new QTranslator(vApp);
     langCode = langCode.toLower();
     if (translator->load(QString(":/lang/") + langCode)) {
       QApplication::installTranslator(translator);
