@@ -25,12 +25,16 @@
  * \brief Network and firewall configuration options
  */
 
+#include <QMenu>
 #include <QIntValidator>
+#include <QClipboard>
 #include <networksettings.h>
 #include <vidalia.h>
 
 #include "networkpage.h"
 #include "domainvalidator.h"
+
+#define IMG_COPY  ":/images/22x22/edit-copy.png"
 
 
 /** Constructor */
@@ -42,9 +46,19 @@ NetworkPage::NetworkPage(QWidget *parent)
  
   connect(ui.btnAddBridge, SIGNAL(clicked()), this, SLOT(addBridge()));
   connect(ui.btnRemoveBridge, SIGNAL(clicked()), this, SLOT(removeBridge()));
+  connect(ui.btnCopyBridge, SIGNAL(clicked()), 
+          this, SLOT(copySelectedBridgesToClipboard()));
+  connect(ui.listBridges, SIGNAL(customContextMenuRequested(QPoint)),
+          this, SLOT(bridgeContextMenuRequested(QPoint)));
+  connect(ui.listBridges, SIGNAL(itemSelectionChanged()),
+          this, SLOT(bridgeSelectionChanged()));
 
   ui.lineHttpProxyAddress->setValidator(new DomainValidator(this));
   ui.lineHttpProxyPort->setValidator(new QIntValidator(1, 65535, this));
+
+  vApp->createShortcut(QKeySequence(QKeySequence::Copy),
+                       ui.listBridges, this,
+                       SLOT(copySelectedBridgesToClipboard()));
 }
 
 /** Applies the network configuration settings to Tor. Returns true if the   *
@@ -93,6 +107,50 @@ void
 NetworkPage::removeBridge()
 {
   qDeleteAll(ui.listBridges->selectedItems());
+}
+
+/** Copies all selected bridges to the clipboard. */
+void
+NetworkPage::copySelectedBridgesToClipboard()
+{
+  QString contents;
+
+  foreach (QListWidgetItem *item, ui.listBridges->selectedItems()) {
+#if defined(Q_WS_WIN)
+    contents += item->text() + "\r\n";
+#else
+    contents += item->text() + "\n";
+#endif
+  }
+  if (!contents.isEmpty())
+    vApp->clipboard()->setText(contents.trimmed());
+}
+
+/** Called when the user right-clicks on a bridge and displays a context
+ * menu. */
+void
+NetworkPage::bridgeContextMenuRequested(const QPoint &pos)
+{
+  QMenu menu(this);
+  
+  QListWidgetItem *item = ui.listBridges->itemAt(pos);
+  if (!item)
+    return;
+  
+  QAction *copyAction =
+    new QAction(QIcon(IMG_COPY), tr("Copy (Ctrl+C)"), &menu);
+  connect(copyAction, SIGNAL(triggered()),
+          this, SLOT(copySelectedBridgesToClipboard()));
+
+  menu.addAction(copyAction);
+  menu.exec(ui.listBridges->mapToGlobal(pos));
+}
+
+/** Called when the user changes which bridges they have selected. */
+void
+NetworkPage::bridgeSelectionChanged()
+{
+  ui.btnCopyBridge->setEnabled(!ui.listBridges->selectedItems().isEmpty());
 }
 
 /** Saves changes made to settings on the Firewall settings page. */

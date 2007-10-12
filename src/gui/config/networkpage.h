@@ -28,6 +28,7 @@
 #ifndef _NETWORKPAGE_H
 #define _NETWORKPAGE_H
 
+#include <QPoint>
 #include <vidalia.h>
 
 #include "configpage.h"
@@ -63,6 +64,13 @@ private slots:
   void addBridge();
   /** Removes one or more selected bridges from the bridge list box. */
   void removeBridge();
+  /** Copies all selected bridges to the clipboard. */
+  void copySelectedBridgesToClipboard();
+  /** Called when the user right-clicks on a bridge and displays a context
+   * menu. */
+  void bridgeContextMenuRequested(const QPoint &pos);
+  /** Called when the user changes which bridges they have selected. */
+  void bridgeSelectionChanged();
 
 private:
   /** Qt Designer generated object */

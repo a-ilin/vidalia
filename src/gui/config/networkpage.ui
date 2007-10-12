@@ -309,6 +309,9 @@
           </item>
           <item>
            <widget class="QListWidget" name="listBridges" >
+            <property name="contextMenuPolicy" >
+             <enum>Qt::CustomContextMenu</enum>
+            </property>
             <property name="selectionMode" >
              <enum>QAbstractItemView::ExtendedSelection</enum>
             </property>
@@ -348,11 +351,36 @@
               <height>32</height>
              </size>
             </property>
+            <property name="toolTip" >
+             <string>Remove the selected bridges from the list</string>
+            </property>
             <property name="text" >
              <string/>
             </property>
             <property name="icon" >
              <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/list-remove.png</iconset>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnCopyBridge" >
+            <property name="enabled" >
+             <bool>false</bool>
+            </property>
+            <property name="maximumSize" >
+             <size>
+              <width>32</width>
+              <height>32</height>
+             </size>
+            </property>
+            <property name="toolTip" >
+             <string>Copy the selected bridges to the clipboard</string>
+            </property>
+            <property name="text" >
+             <string/>
+            </property>
+            <property name="icon" >
+             <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/edit-copy.png</iconset>
             </property>
            </widget>
           </item>
