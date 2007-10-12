@@ -357,8 +357,6 @@ MessageLog::copy()
 {
   QString contents = ui.lstMessages->selectedMessages().join("");
   if (!contents.isEmpty()) {
-    /* Clear anything on the clipboard */
-    QApplication::clipboard()->clear();
     /* Copy the selected messages to the clipboard */
     QApplication::clipboard()->setText(contents);
   }
