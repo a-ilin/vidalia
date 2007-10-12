@@ -31,6 +31,7 @@
 #include <QByteArray>
 #include <QKeySequence>
 #include <QDesktopWidget>
+#include <vidalia.h>
 #include "vidaliawindow.h"
 
 
@@ -53,8 +54,7 @@ VidaliaWindow::~VidaliaWindow()
 void
 VidaliaWindow::setShortcut(QString shortcut, const char *slot)
 {
-  QShortcut *s = new QShortcut(QKeySequence(shortcut), this, slot, 0);
-  Q_UNUSED(s);
+  vApp->createShortcut(QKeySequence(shortcut), this, this, slot);
 }
 
 /** Saves the size and location of the window. */
