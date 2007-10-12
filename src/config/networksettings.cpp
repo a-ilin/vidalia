@@ -81,21 +81,28 @@ NetworkSettings::apply(QString *errmsg)
               localValue(SETTING_HTTPS_PROXY_AUTH).toString());
   
   if (getUseBridges()) {
-    conf.insert(SETTING_USE_BRIDGES, "1");
     conf.insert(SETTING_TUNNEL_DIR_CONNS, "1");
     conf.insert(SETTING_PREFER_TUNNELED_DIR_CONNS, "1");
-    conf.insert(SETTING_UPDATE_BRIDGES, "1");
-    foreach (QString bridge, localValue(SETTING_BRIDGE_LIST).toStringList()) {
-      conf.insert(SETTING_BRIDGE_LIST, bridge);
-    }
   } else {
-    conf.insert(SETTING_USE_BRIDGES, "0");
     conf.insert(SETTING_TUNNEL_DIR_CONNS, "0");
     conf.insert(SETTING_PREFER_TUNNELED_DIR_CONNS, "0");
-    conf.insert(SETTING_BRIDGE_LIST, "");
-    conf.insert(SETTING_UPDATE_BRIDGES, "0");
   }
-
+  
+  if (_torControl->getTorVersion() >= 0x020003) {
+    /* Do the bridge stuff only on Tor >= 0.2.0.3-alpha */
+    QStringList bridges = localValue(SETTING_BRIDGE_LIST).toStringList();
+    if (getUseBridges() && !bridges.isEmpty()) {
+      conf.insert(SETTING_USE_BRIDGES, "1");
+      conf.insert(SETTING_UPDATE_BRIDGES, "1");
+      foreach (QString bridge, bridges) {
+        conf.insert(SETTING_BRIDGE_LIST, bridge);
+      }
+    } else {
+      conf.insert(SETTING_USE_BRIDGES, "0");
+      conf.insert(SETTING_BRIDGE_LIST, "");
+      conf.insert(SETTING_UPDATE_BRIDGES, "0");
+    }
+  }
   return _torControl->setConf(conf, errmsg);
 }
 
