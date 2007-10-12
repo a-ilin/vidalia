@@ -143,6 +143,7 @@ TorMapWidget::removeCircuit(quint64 circid)
   if (circpath) {
     delete circpath;
   }
+  delete circ;
 }
 
 /** Selects and highlights the router on the map. */
