@@ -28,8 +28,11 @@
 #include <QMenu>
 #include <QIntValidator>
 #include <QClipboard>
+#include <QHostAddress>
 #include <networksettings.h>
+#include <vmessagebox.h>
 #include <vidalia.h>
+#include <util/string.h>
 
 #include "networkpage.h"
 #include "domainvalidator.h"
@@ -86,18 +89,71 @@ NetworkPage::revert()
   NetworkSettings(Vidalia::torControl()).revert();
 }
 
+/** Verifies that <b>bridge</b> is a valid bridge identifier and places a 
+ * normalized identifier in <b>out</b>. The normalized identifier will have
+ * all spaces removed from the fingerprint portion (if any) and all
+ * hexadecimal characters converted to uppercase. Returns true if
+ * <b>bridge</b> is a valid bridge indentifier, false otherwise. */
+bool
+NetworkPage::validateBridge(const QString &bridge, QString *out)
+{
+  QString temp = bridge;
+  if (temp.startsWith("bridge ", Qt::CaseInsensitive))
+    temp = temp.remove(0, 7); /* remove "bridge " */
+
+  QStringList parts = temp.split(" ", QString::SkipEmptyParts);
+  if (parts.isEmpty())
+    return false;
+
+  QString s = parts.at(0);
+  if (s.contains(":")) {
+    if (s.endsWith(":"))
+      return false;
+
+    int index = s.indexOf(":");
+    QString host = s.mid(0, index);
+    QString port = s.mid(index + 1);
+    if (QHostAddress(host).isNull()
+          || QHostAddress(host).protocol() != QAbstractSocket::IPv4Protocol
+          || port.toUInt() < 1 
+          || port.toUInt() > 65535)
+      return false;
+    temp = s;
+    if (parts.size() > 1) {
+      QString fp = static_cast<QStringList>(parts.mid(1)).join("");
+      if (fp.length() != 40 || !string_is_hex(fp))
+        return false;
+      temp += " " + fp.toUpper();
+    }
+  } else {
+    QString fp = parts.join("");
+    if (fp.length() != 40 || !string_is_hex(fp))
+      return false;
+    temp = fp.toUpper();
+  }
+  *out = temp;
+  return true;
+}
+
 /** Adds a bridge to the bridge list box. */
 void
 NetworkPage::addBridge()
 {
-  QString bridge = ui.lineBridge->text().trimmed();
-  if (bridge.isEmpty())
+  QString bridge;
+  QString input = ui.lineBridge->text().trimmed();
+
+  if (input.isEmpty())
     return;
+  if (!validateBridge(input, &bridge)) {
+    VMessageBox::warning(this,
+                  tr("Invalid Bridge"),
+                  tr("The specified bridge identifier is not valid."),
+                  VMessageBox::Ok|VMessageBox::Default);
+    return;
+  }
   if (!ui.listBridges->findItems(bridge, Qt::MatchFixedString).isEmpty())
     return; /* duplicate bridge */
 
-  /* XXX: We should do some verification that the gibberish the user typed in
-   * is actually valid. */
   ui.listBridges->addItem(bridge);
   ui.lineBridge->clear();
 }

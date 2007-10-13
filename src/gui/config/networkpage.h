@@ -73,6 +73,13 @@ private slots:
   void bridgeSelectionChanged();
 
 private:
+  /** Verifies that <b>bridge</b> is a valid bridge identifier and places a 
+   * normalized identifier in <b>out</b>. The normalized identifier will have
+   * all spaces removed from the fingerprint portion (if any) and all
+   * hexadecimal characters converted to uppercase. Returns true if
+   * <b>bridge</b> is a valid bridge indentifier, false otherwise. */
+  bool validateBridge(const QString &bridge, QString *out);
+
   /** Qt Designer generated object */
   Ui::NetworkPage ui;
 };
