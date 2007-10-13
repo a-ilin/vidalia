@@ -232,3 +232,16 @@ error:
   return QHash<QString,QString>();
 }
 
+/** Returns true if <b>str</b> is a valid hexademical string. Returns false
+ * otherwise. */
+bool
+string_is_hex(const QString &str)
+{
+  for (int i = 0; i < str.length(); i++) {
+    char c = str[i].toUpper().toAscii();
+    if ((c < 'A' || c > 'F') && (c < '0' || c > '9'))
+      return false;
+  }
+  return true;
+}
+

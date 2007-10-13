@@ -70,5 +70,9 @@ QString string_unescape(const QString str, bool *ok = 0);
  * to be parsed, <b>ok</b> is set to false. */
 QHash<QString,QString> string_parse_keyvals(const QString str, bool *ok = 0);
 
+/** Returns true if <b>str</b> is a valid hexademical string. Returns false
+ * otherwise. */
+bool string_is_hex(const QString &str);
+
 #endif
 
