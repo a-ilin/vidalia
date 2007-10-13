@@ -27,9 +27,6 @@ SetCompressor /SOLID lzma
 
 ;---------------------------------
 ; Global definitions
-!define SF_SELECTED   1
-!define SECTION_OFF   0xFFFFFFFE
-
 !define VIDALIA_NAME        "Vidalia"
 !define VIDALIA_EXEC        "vidalia.exe"
 !define VIDALIA_APPVERSION  "0.0.15-svn"
