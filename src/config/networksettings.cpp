@@ -55,7 +55,8 @@ NetworkSettings::NetworkSettings(TorControl *torControl)
   setDefault(SETTING_USE_BRIDGES,       false);
   setDefault(SETTING_BRIDGE_LIST,       QStringList());
   setDefault(SETTING_FASCIST_FIREWALL,  false);
-  setDefault(SETTING_REACHABLE_ADDRESSES, QStringList());
+  setDefault(SETTING_REACHABLE_ADDRESSES,
+    QStringList() << "*:80" << "*:443");
 }
 
 /** Applies the current network configuration settings to Tor. If
