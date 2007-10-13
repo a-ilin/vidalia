@@ -55,6 +55,7 @@ NetworkPage::NetworkPage(QWidget *parent)
           this, SLOT(bridgeContextMenuRequested(QPoint)));
   connect(ui.listBridges, SIGNAL(itemSelectionChanged()),
           this, SLOT(bridgeSelectionChanged()));
+  connect(ui.lineBridge, SIGNAL(returnPressed()), this, SLOT(addBridge()));
 
   ui.lineHttpProxyAddress->setValidator(new DomainValidator(this));
   ui.lineHttpProxyPort->setValidator(new QIntValidator(1, 65535, this));
