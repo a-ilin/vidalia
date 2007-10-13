@@ -219,6 +219,21 @@ NetworkPage::save(QString &errmsg)
   QList<quint16> reachablePorts;
   bool ok;
   
+  if (ui.chkUseProxy->isChecked()
+        && (ui.lineHttpProxyAddress->text().isEmpty()
+            || ui.lineHttpProxyPort->text().isEmpty())) {
+    errmsg = tr("You must specify both an IP address or hostname and a "
+                "port number to configure Tor to use a proxy to access "
+                "the Internet.");
+    return false;
+  }
+  if (ui.chkFascistFirewall->isChecked()
+        && ui.lineReachablePorts->text().isEmpty()) {
+    errmsg = tr("You must specify one or more ports to which your "
+                "firewall allows you to connect.");
+    return false;
+  }
+
   /* Save the HTTP/HTTPS proxy settings */
   settings.setUseHttpProxy(ui.chkUseProxy->isChecked());
   settings.setUseHttpsProxy(ui.chkProxyUseHttps->isChecked());
