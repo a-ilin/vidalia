@@ -94,7 +94,7 @@ NetworkPage::revert()
  * normalized identifier in <b>out</b>. The normalized identifier will have
  * all spaces removed from the fingerprint portion (if any) and all
  * hexadecimal characters converted to uppercase. Returns true if
- * <b>bridge</b> is a valid bridge indentifier, false otherwise. */
+ * <b>bridge</b> is a valid bridge identifier, false otherwise. */
 bool
 NetworkPage::validateBridge(const QString &bridge, QString *out)
 {
