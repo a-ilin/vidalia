@@ -204,7 +204,7 @@ QFLAGS="$QFLAGS PREFIX=$prefix"
 
 # Make sure ${prefix} (which can be contained in $mandir) is evaluted 
 # before passing it to qmake
-MANPAGEDIR=`eval echo $mandir`
+MANPAGEDIR=`eval eval echo $mandir`
 QFLAGS="$QFLAGS MANDIR=$MANPAGEDIR"
 
 # Run qmake to generate the Makefile
