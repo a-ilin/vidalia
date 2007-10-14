@@ -118,6 +118,10 @@ public:
   QStringList getBridgeList();
   /** Sets to <b>bridgeList</b> the list of bridge nodes Tor should use. */
   void setBridgeList(const QStringList &bridgeList);
+
+  /** Returns true if Tor is configured to try to tunnel its directory
+   * connections through a one-hop circuit. */
+  bool getTunnelDirConns();
 };
 
 #endif

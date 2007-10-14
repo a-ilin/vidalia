@@ -340,7 +340,8 @@ NetworkPage::load()
   ui.lineReachablePorts->setText(reachablePortStrings.join(","));
 
   /* Load bridge settings */
-  ui.chkUseBridges->setChecked(settings.getUseBridges());
+  ui.chkUseBridges->setChecked(settings.getUseBridges() 
+                                || settings.getTunnelDirConns());
   ui.listBridges->clear();
   ui.listBridges->addItems(settings.getBridgeList());
 }

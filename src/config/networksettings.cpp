@@ -55,6 +55,7 @@ NetworkSettings::NetworkSettings(TorControl *torControl)
   setDefault(SETTING_USE_BRIDGES,       false);
   setDefault(SETTING_BRIDGE_LIST,       QStringList());
   setDefault(SETTING_FASCIST_FIREWALL,  false);
+  setDefault(SETTING_TUNNEL_DIR_CONNS,  false);
   setDefault(SETTING_REACHABLE_ADDRESSES,
     QStringList() << "*:80" << "*:443");
 }
@@ -286,5 +287,13 @@ void
 NetworkSettings::setBridgeList(const QStringList &bridgeList)
 {
   setValue(SETTING_BRIDGE_LIST, bridgeList);
+}
+
+/** Returns true if Tor is configured to try to tunnel its directory
+ * connections through a one-hop circuit. */
+bool
+NetworkSettings::getTunnelDirConns()
+{
+  return value(SETTING_TUNNEL_DIR_CONNS).toBool();
 }
 
