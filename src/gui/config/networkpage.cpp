@@ -56,7 +56,12 @@ NetworkPage::NetworkPage(QWidget *parent)
   connect(ui.listBridges, SIGNAL(itemSelectionChanged()),
           this, SLOT(bridgeSelectionChanged()));
   connect(ui.lineBridge, SIGNAL(returnPressed()), this, SLOT(addBridge()));
-
+  connect(Vidalia::torControl(), SIGNAL(authenticated()),
+          this, SLOT(onAuthenticated()));
+  connect(Vidalia::torControl(), SIGNAL(disconnected()),
+          this, SLOT(onDisconnected()));
+  
+  ui.lblNoBridgeSupport->setVisible(false);
   ui.lineHttpProxyAddress->setValidator(new DomainValidator(this));
   ui.lineHttpProxyPort->setValidator(new QIntValidator(1, 65535, this));
 
@@ -88,6 +93,29 @@ void
 NetworkPage::revert()
 {
   NetworkSettings(Vidalia::torControl()).revert();
+}
+
+/** Called when Vidalia has connected and authenticated to Tor. This will
+ * check Tor's version number and, if it's too old, will disable the bridge
+ * settings UI and show a message indicating the user's Tor is too old. */
+void
+NetworkPage::onAuthenticated()
+{
+  quint32 torVersion = Vidalia::torControl()->getTorVersion();
+  if (torVersion < 0x020003) {
+    ui.grpBridgeSettings->setEnabled(false);
+    ui.lblNoBridgeSupport->setVisible(true);
+  }
+}
+
+/** Called when Vidalia disconnects from Tor. This will reenable the bridge
+ * settings (if they were previously disabled) and hide the warning message
+ * indicating the user's Tor does not support bridges. */
+void
+NetworkPage::onDisconnected()
+{
+  ui.grpBridgeSettings->setEnabled(true);
+  ui.lblNoBridgeSupport->setVisible(false);
 }
 
 /** Verifies that <b>bridge</b> is a valid bridge identifier and places a 

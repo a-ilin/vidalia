@@ -274,6 +274,19 @@
        <number>6</number>
       </property>
       <item>
+       <widget class="QLabel" name="lblNoBridgeSupport" >
+        <property name="text" >
+         <string>The Tor version you are currently running does not support bridges. &lt;br>Tor will still try to encrypt its directory connections.</string>
+        </property>
+        <property name="alignment" >
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="wordWrap" >
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QLabel" name="lblAddBridge" >
         <property name="sizePolicy" >
          <sizepolicy>

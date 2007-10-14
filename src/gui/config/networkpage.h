@@ -71,6 +71,14 @@ private slots:
   void bridgeContextMenuRequested(const QPoint &pos);
   /** Called when the user changes which bridges they have selected. */
   void bridgeSelectionChanged();
+  /** Called when Vidalia has connected and authenticated to Tor. This will
+   * check Tor's version number and, if it's too old, will disable the bridge
+   * settings UI and show a message indicating the user's Tor is too old. */
+  void onAuthenticated();
+  /** Called when Vidalia disconnects from Tor. This will reenable the bridge
+   * settings (if they were previously disabled) and hide the warning message
+   * indicating the user's Tor does not support bridges. */
+  void onDisconnected();
 
 private:
   /** Verifies that <b>bridge</b> is a valid bridge identifier and places a 
