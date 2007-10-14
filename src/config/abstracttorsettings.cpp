@@ -114,7 +114,7 @@ AbstractTorSettings::torValue(const QString &key)
     value.setValue(confValue);
     value.convert(defaultVal.type());
   }
-  return (isEmptyValue(value) ? defaultVal : value);
+  return (isEmptyValue(value) ? localValue(key) : value);
 }
 
 /** If Vidalia is connected to Tor, this returns the value associated with
