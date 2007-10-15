@@ -1184,7 +1184,8 @@ könnten nicht verfügbar sein.</translation>
         <location filename="../gui/mainwindow.cpp" line="427"/>
         <source>Your Tor server is shutting down.
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ihr Tor-Server wird gerade beendet.
+Klicken Sie erneut auf &apos;Tor anhalten&apos; um das Beenden zu erzwingen.</translation>
     </message>
 </context>
 <context>
@@ -1666,12 +1667,12 @@ empfangen.</translation>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="45"/>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Netzwerk</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="178"/>
         <source>Invalid Bridge</source>
-        <translation type="unfinished"></translation>
+        <translation>Ungültige Brücke</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="179"/>
@@ -1681,7 +1682,7 @@ empfangen.</translation>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="226"/>
         <source>Copy (Ctrl+C)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopieren (Strg+C)</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="255"/>
@@ -1696,7 +1697,7 @@ empfangen.</translation>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="297"/>
         <source>&apos;%1&apos; is not a valid port number.</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%1&apos; ist keine gültige Port-Nummer.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="30"/>
@@ -1706,37 +1707,37 @@ empfangen.</translation>
     <message>
         <location filename="../gui/config/networkpage.ui" line="33"/>
         <source>I use a proxy to access the Internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Ich benutze einen Proxy um ins Internet zu gelangen</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="63"/>
         <source>Proxy Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Proxy-Einstellungen</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="75"/>
         <source>HTTP Proxy:</source>
-        <translation type="unfinished"></translation>
+        <translation>HTTP-Proxy:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="85"/>
         <source>Username:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nutzername:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="95"/>
         <source>Use this proxy for HTTPS also</source>
-        <translation type="unfinished"></translation>
+        <translation>Diesen Proxy auch für HTTPS benutzen</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="113"/>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Passwort:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="140"/>
         <source>Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Port:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="181"/>
@@ -1746,22 +1747,22 @@ empfangen.</translation>
     <message>
         <location filename="../gui/config/networkpage.ui" line="184"/>
         <source>My firewall only lets me connect to certain ports</source>
-        <translation type="unfinished"></translation>
+        <translation>Meine Firewall lässt nur Verbindungen zu bestimmten Ports zu</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="208"/>
         <source>Firewall Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Firewall-Einstellungen</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="220"/>
         <source>Allowed Ports:</source>
-        <translation type="unfinished"></translation>
+        <translation>Erlaubte Ports:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="230"/>
         <source>80, 443</source>
-        <translation type="unfinished">80, 443</translation>
+        <translation>80, 443</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="240"/>
