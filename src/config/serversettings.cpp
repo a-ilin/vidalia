@@ -50,6 +50,7 @@
 #define SETTING_BANDWIDTH_BURST "BandwidthBurst"
 #define SETTING_RELAY_BANDWIDTH_RATE   "RelayBandwidthRate"
 #define SETTING_RELAY_BANDWIDTH_BURST  "RelayBandwidthBurst"
+#define SETTING_PUBLISH_DESCRIPTOR     "PublishServerDescriptor"
 
 
 /** Constructor.
@@ -59,14 +60,15 @@
 ServerSettings::ServerSettings(TorControl *torControl)
 : AbstractTorSettings("Server", torControl)
 {
-  setDefault(SETTING_ENABLED,    false);
-  setDefault(SETTING_DIRMIRROR,  true);
-  setDefault(SETTING_ORPORT,     9001);
-  setDefault(SETTING_DIRPORT,    9030);
-  setDefault(SETTING_CONTACT,    "<your@email.com>");
+  setDefault(SETTING_ENABLED,       false);
+  setDefault(SETTING_DIRMIRROR,     true);
+  setDefault(SETTING_ORPORT,        9001);
+  setDefault(SETTING_DIRPORT,       9030);
+  setDefault(SETTING_CONTACT,       "<your@email.com>");
   setDefault(SETTING_BANDWIDTH_RATE,  3145728);
   setDefault(SETTING_BANDWIDTH_BURST, 6291456);
   setDefault(SETTING_NICKNAME,        "Unnamed");
+  setDefault(SETTING_PUBLISH_DESCRIPTOR, true);
   setDefault(SETTING_EXITPOLICY,
     ExitPolicy(ExitPolicy::Default).toString());
 }
@@ -113,6 +115,10 @@ ServerSettings::confValues()
     contact = "";
   }
   conf.insert(SETTING_CONTACT, scrub_email_addr(contact));
+  
+  /* If we're a bridge, don't publish our server descriptor */
+  conf.insert(SETTING_PUBLISH_DESCRIPTOR, (isBridgeEnabled() ? "0" : "1"));
+
   return conf;
 }
 
@@ -156,21 +162,32 @@ ServerSettings::setServerEnabled(bool enable)
 }
 
 /** Returns true if Tor is currently configured to run as a Tor server. If Tor
- * is running, we will check whether it has an ORPort and Nickname defined.
- * Otherwise, we will use our saved settings. */
+ * is running, we will check whether it has an ORPort defined. Otherwise, we
+ * will use our saved settings. */
 bool
 ServerSettings::isServerEnabled()
 {
-  QHash<QString,QString> confValues;
+  QString orPort;
   if (_torControl->isConnected() && !changedSinceLastApply()) {
-    confValues.insert(SETTING_ORPORT, "");
-    confValues.insert(SETTING_NICKNAME, "");
-    if (_torControl->getConf(confValues)) {
-      return (confValues.value(SETTING_ORPORT).toUInt() != 0 &&
-              !confValues.value(SETTING_NICKNAME).isEmpty());
-    }
+    if (_torControl->getConf(SETTING_ORPORT, orPort))
+      return (orPort.toUInt() > 0);
   }
   return localValue(SETTING_ENABLED).toBool();
+}
+
+/** Sets to <b>enabled</b> whether Tor should be a bridge node when acting as
+ * a server. */
+void
+ServerSettings::setBridgeEnabled(bool enabled)
+{
+  setValue(SETTING_PUBLISH_DESCRIPTOR, !enabled);
+}
+
+/** Returns true if Tor is configured to act as a bridge node. */
+bool
+ServerSettings::isBridgeEnabled()
+{
+  return (isServerEnabled() && !value(SETTING_PUBLISH_DESCRIPTOR).toBool());
 }
 
 /** Sets the server's ORPort. */

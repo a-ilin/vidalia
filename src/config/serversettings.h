@@ -46,6 +46,12 @@ public:
   void setServerEnabled(bool enable);
   /** Returns true if Tor is running as a server. */
   bool isServerEnabled();
+  
+  /** Sets to <b>enabled</b> whether Tor should be a bridge node when acting
+   * as a server. */
+  void setBridgeEnabled(bool enable);
+  /** Returns true if Tor is configured to act as a bridge node. */
+  bool isBridgeEnabled();
 
   /** Sets the server's ORPort value. */
   void setORPort(quint16 orPort);
