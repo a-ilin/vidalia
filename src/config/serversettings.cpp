@@ -68,7 +68,7 @@ ServerSettings::ServerSettings(TorControl *torControl)
   setDefault(SETTING_BANDWIDTH_RATE,  3145728);
   setDefault(SETTING_BANDWIDTH_BURST, 6291456);
   setDefault(SETTING_NICKNAME,        "Unnamed");
-  setDefault(SETTING_PUBLISH_DESCRIPTOR, true);
+  setDefault(SETTING_PUBLISH_DESCRIPTOR, "1");
   setDefault(SETTING_EXITPOLICY,
     ExitPolicy(ExitPolicy::Default).toString());
 }
@@ -117,7 +117,8 @@ ServerSettings::confValues()
   conf.insert(SETTING_CONTACT, scrub_email_addr(contact));
   
   /* If we're a bridge, don't publish our server descriptor */
-  conf.insert(SETTING_PUBLISH_DESCRIPTOR, (isBridgeEnabled() ? "0" : "1"));
+  conf.insert(SETTING_PUBLISH_DESCRIPTOR,
+              (isBridgeEnabled() ? "bridge" : "1"));
 
   return conf;
 }
@@ -180,14 +181,15 @@ ServerSettings::isServerEnabled()
 void
 ServerSettings::setBridgeEnabled(bool enabled)
 {
-  setValue(SETTING_PUBLISH_DESCRIPTOR, !enabled);
+  setValue(SETTING_PUBLISH_DESCRIPTOR, enabled ? "bridge" : "1");
 }
 
 /** Returns true if Tor is configured to act as a bridge node. */
 bool
 ServerSettings::isBridgeEnabled()
 {
-  return (isServerEnabled() && !value(SETTING_PUBLISH_DESCRIPTOR).toBool());
+  return (isServerEnabled() && 
+          value(SETTING_PUBLISH_DESCRIPTOR).toString().toLower() == "bridge");
 }
 
 /** Sets the server's ORPort. */
