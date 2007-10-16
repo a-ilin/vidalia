@@ -93,6 +93,12 @@ ServerPage::ServerPage(QWidget *parent)
                          this, SLOT(customRateChanged()));
   connect(ui.lineMaxRateLimit, SIGNAL(editingFinished()), 
                          this, SLOT(customRateChanged()));
+  connect(ui.rdoClientMode, SIGNAL(toggled(bool)),
+                      this, SLOT(serverModeChanged(bool)));
+  connect(ui.rdoServerMode, SIGNAL(toggled(bool)),
+                      this, SLOT(serverModeChanged(bool)));
+  connect(ui.rdoBridgeMode, SIGNAL(toggled(bool)),
+                      this, SLOT(serverModeChanged(bool)));
 
   /* Set validators for address, mask and various port number fields */
   ui.lineServerNickname->setValidator(new NicknameValidator(this));
@@ -110,38 +116,13 @@ ServerPage::~ServerPage()
   delete _settings;
 }
 
-/** Saves changes made to settings on the Server settings page. */
-bool
-ServerPage::save(QString &errmsg)
+/** Called when the user toggles any one of the server mode radio buttons
+ * and hides or displays the server configuration tabs appropriatey. */
+void
+ServerPage::serverModeChanged(bool enabled)
 {
-  /* Force the bandwidth rate limits to validate */
-  customRateChanged();
-  
-  if (ui.chkEnableServer->isChecked()) {
-    /* A server must have an ORPort and a nickname */
-    if (ui.lineServerPort->text().isEmpty() ||
-        ui.lineServerNickname->text().isEmpty()) {
-      errmsg = tr("You must specify at least a server nickname and port.");
-      return false;
-    }
-    /* If the bandwidth rates aren't set, use some defaults before saving */
-    if (ui.lineAvgRateLimit->text().isEmpty()) {
-      ui.lineAvgRateLimit->setText(QString::number(2097152/1024) /* 2MB */);
-    }
-    if (ui.lineMaxRateLimit->text().isEmpty()) {
-      ui.lineMaxRateLimit->setText(QString::number(5242880/1024) /* 5MB */);
-    }
-  }
-  _settings->setServerEnabled(ui.chkEnableServer->isChecked());
-  _settings->setDirectoryMirror(ui.chkMirrorDirectory->isChecked());
-  _settings->setNickname(ui.lineServerNickname->text());
-  _settings->setORPort(ui.lineServerPort->text().toUInt());
-  _settings->setDirPort(ui.lineDirPort->text().toUInt());
-  _settings->setContactInfo(ui.lineServerContact->text());
-  saveBandwidthLimits();
-  saveExitPolicies();
-  
-  return true;
+  enabled = (ui.rdoServerMode->isChecked() || ui.rdoBridgeMode->isChecked());
+  ui.tabsMenu->setVisible(enabled);
 }
 
 /** Returns true if the user has changed their server settings since the
@@ -169,21 +150,68 @@ ServerPage::revert()
   _settings->revert();
 }
 
+/** Saves changes made to settings on the Server settings page. */
+bool
+ServerPage::save(QString &errmsg)
+{
+  /* Force the bandwidth rate limits to validate */
+  customRateChanged();
+  
+  if (ui.rdoServerMode->isChecked() || ui.rdoBridgeMode->isChecked()) {
+    /* A server must have an ORPort and a nickname */
+    if (ui.lineServerPort->text().isEmpty() ||
+        ui.lineServerNickname->text().isEmpty()) {
+      errmsg = tr("You must specify at least a server nickname and port.");
+      return false;
+    }
+    /* If the bandwidth rates aren't set, use some defaults before saving */
+    if (ui.lineAvgRateLimit->text().isEmpty()) {
+      ui.lineAvgRateLimit->setText(QString::number(2097152/1024) /* 2MB */);
+    }
+    if (ui.lineMaxRateLimit->text().isEmpty()) {
+      ui.lineMaxRateLimit->setText(QString::number(5242880/1024) /* 5MB */);
+    }
+  }
+  
+  /* "Server" is enabled whether we're a bridge or normal relay. "Bridge" is
+   * only enabled if we're a bridge (obviously). */
+  _settings->setServerEnabled(ui.rdoServerMode->isChecked()
+                                || ui.rdoBridgeMode->isChecked());
+  _settings->setBridgeEnabled(ui.rdoBridgeMode->isChecked());
+  
+  /* Save the rest of the server settings. */
+  _settings->setDirectoryMirror(ui.chkMirrorDirectory->isChecked());
+  _settings->setNickname(ui.lineServerNickname->text());
+  _settings->setORPort(ui.lineServerPort->text().toUInt());
+  _settings->setDirPort(ui.lineDirPort->text().toUInt());
+  _settings->setContactInfo(ui.lineServerContact->text());
+  saveBandwidthLimits();
+  saveExitPolicies();
+  
+  return true;
+}
+
 /** Loads previously saved settings */
 void
 ServerPage::load()
 {
-  ui.chkEnableServer->setChecked(_settings->isServerEnabled());
-  ui.chkMirrorDirectory->setChecked(_settings->isDirectoryMirror());
+  if (_settings->isBridgeEnabled())
+    ui.rdoBridgeMode->setChecked(true);
+  else if (_settings->isServerEnabled())
+    ui.rdoServerMode->setChecked(true);
+  else
+    ui.rdoClientMode->setChecked(true);
 
   ui.lineServerNickname->setText(_settings->getNickname());
   ui.lineServerPort->setText(QString::number(_settings->getORPort()));
   ui.lineDirPort->setText(QString::number(_settings->getDirPort()));
   ui.lineServerContact->setText(_settings->getContactInfo());
+  ui.chkMirrorDirectory->setChecked(_settings->isDirectoryMirror());
+  
   loadBandwidthLimits();
   loadExitPolicies();
 
-  ui.frmServer->setVisible(ui.chkEnableServer->isChecked());
+  //ui.frmServer->setVisible(ui.chkEnableServer->isChecked());
 }
 
 /** Shows exit policy related help information */

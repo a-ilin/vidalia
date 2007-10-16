@@ -25,18 +25,23 @@
     <number>6</number>
    </property>
    <item>
-    <widget class="QCheckBox" name="chkEnableServer" >
-     <property name="contextMenuPolicy" >
-      <enum>Qt::NoContextMenu</enum>
+    <widget class="QRadioButton" name="rdoClientMode" >
+     <property name="text" >
+      <string>Run Tor as a client only</string>
      </property>
-     <property name="toolTip" >
-      <string>Check to run as a Tor network server</string>
-     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QRadioButton" name="rdoServerMode" >
      <property name="text" >
       <string>Relay traffic for the Tor network</string>
      </property>
-     <property name="checked" >
-      <bool>false</bool>
+    </widget>
+   </item>
+   <item>
+    <widget class="QRadioButton" name="rdoBridgeMode" >
+     <property name="text" >
+      <string>Help censored users reach the Tor network</string>
      </property>
     </widget>
    </item>
@@ -925,7 +930,6 @@ fingerprint.</string>
   </layout>
  </widget>
  <tabstops>
-  <tabstop>chkEnableServer</tabstop>
   <tabstop>tabsMenu</tabstop>
   <tabstop>lineServerNickname</tabstop>
   <tabstop>lineServerContact</tabstop>
@@ -946,22 +950,6 @@ fingerprint.</string>
  </tabstops>
  <resources/>
  <connections>
-  <connection>
-   <sender>chkEnableServer</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>frmServer</receiver>
-   <slot>setVisible(bool)</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>257</x>
-     <y>42</y>
-    </hint>
-    <hint type="destinationlabel" >
-     <x>257</x>
-     <y>308</y>
-    </hint>
-   </hints>
-  </connection>
   <connection>
    <sender>chkMirrorDirectory</sender>
    <signal>toggled(bool)</signal>

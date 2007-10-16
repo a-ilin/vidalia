@@ -65,6 +65,9 @@ public:
   bool changedSinceLastApply();
 
 private slots:
+  /** Called when the user toggles any one of the server mode radio buttons
+   * and hides or displays the server configuration tabs appropriatey. */
+  void serverModeChanged(bool enabled);
   /** Called when the user clicks the bandwidth help button */
   void bandwidthHelp();
   /** Called when the user clicks the exit policy help button */
