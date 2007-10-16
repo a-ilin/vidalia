@@ -66,7 +66,7 @@ public:
 
 private slots:
   /** Called when the user toggles any one of the server mode radio buttons
-   * and hides or displays the server configuration tabs appropriatey. */
+   * and hides or displays the server configuration tabs appropriately. */
   void serverModeChanged(bool enabled);
   /** Called when the user clicks the bandwidth help button */
   void bandwidthHelp();
