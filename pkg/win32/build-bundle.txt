@@ -45,8 +45,8 @@ the directory you created for it in Step 4.
     * Comment out "logfile privoxy.log" in Section 1.5
     * Comment out "jarfile jar.log" in Section 1.6
     * Uncomment "log-messages 1" in Section 6 and change the '1' to a '0'
-    * Modify the values of enable-remote-toggle and enable-remote-http-toggle
-      (Sections 4.3 and 4.4) to be '0'.
+    * Modify the values of enable-remote-toggle, enable-remote-http-toggle,
+      and enable-edit-actions to be '0'. (Sections 4.3, 4.4, and 4.5)
 
    Also modify Privoxy's default.action as follows:
  
