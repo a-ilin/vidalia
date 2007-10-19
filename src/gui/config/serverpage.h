@@ -76,6 +76,13 @@ private slots:
 	void rateChanged(int rate);
   /** Called when the user edits the max or average bandwidth limits. */
   void customRateChanged();
+  /** Called when Vidalia has authenticated to Tor. If the user's Tor is not
+   * recent enough, this disables the bridge server option and displays a
+   * warning if the user had previously configured Tor as a bridge. */
+  void onAuthenticated();
+  /** Called when Vidalia disconnects from Tor. This method reenables the
+   * bridge server option. */
+  void onDisconnected();
 
 private:
   /** Index values of rate values in the bandwidth limits dropdown box. */

@@ -26,8 +26,10 @@
  */
 
 #include <vidalia.h>
-#include <gui/common/vmessagebox.h>
+#include <vmessagebox.h>
+#include <util/html.h>
 
+#include "configdialog.h"
 #include "serverpage.h"
 #include "ipvalidator.h"
 #include "portvalidator.h"
@@ -99,6 +101,10 @@ ServerPage::ServerPage(QWidget *parent)
                       this, SLOT(serverModeChanged(bool)));
   connect(ui.rdoBridgeMode, SIGNAL(toggled(bool)),
                       this, SLOT(serverModeChanged(bool)));
+  connect(Vidalia::torControl(), SIGNAL(authenticated()),
+                           this, SLOT(onAuthenticated()));
+  connect(Vidalia::torControl(), SIGNAL(disconnected()),
+                           this, SLOT(onDisconnected()));
 
   /* Set validators for address, mask and various port number fields */
   ui.lineServerNickname->setValidator(new NicknameValidator(this));
@@ -114,6 +120,42 @@ ServerPage::ServerPage(QWidget *parent)
 ServerPage::~ServerPage()
 {
   delete _settings;
+}
+
+/** Called when Vidalia has authenticated to Tor. If the user's Tor is not
+ * recent enough, this disables the bridge server option and displays a
+ * warning if the user had previously configured Tor as a bridge. */
+void
+ServerPage::onAuthenticated()
+{
+  quint32 torVersion = Vidalia::torControl()->getTorVersion();
+  if (torVersion < 0x020003) {
+    ui.rdoBridgeMode->setEnabled(false);
+    if (ui.rdoBridgeMode->isChecked()) {
+      int ret = VMessageBox::warning(this,
+                  tr("Bridge Support Unavailable"),
+                  p(tr("You have configured Tor to act as a bridge server "
+                       "for censored users, but your version of Tor does not "
+                       "support bridges.")) +
+                  p(tr("Please upgrade your Tor software or configure Tor to "
+                       "act as a normal relay server.")),
+                  VMessageBox::ShowSettings|VMessageBox::Default,
+                  VMessageBox::Cancel);
+      if (ret == VMessageBox::ShowSettings) {
+        ConfigDialog *dialog = dynamic_cast<ConfigDialog *>(window());
+        if (dialog)
+          dialog->showWindow(ConfigDialog::Server);
+      }
+    }
+  }
+}
+
+/** Called when Vidalia disconnects from Tor. This method reenables the bridge
+ * server option. */
+void
+ServerPage::onDisconnected()
+{
+  ui.rdoBridgeMode->setEnabled(true);
 }
 
 /** Called when the user toggles any one of the server mode radio buttons
