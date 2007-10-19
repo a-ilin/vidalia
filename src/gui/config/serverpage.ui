@@ -41,7 +41,7 @@
    <item>
     <widget class="QRadioButton" name="rdoBridgeMode" >
      <property name="text" >
-      <string>Help censored users reach the Tor network</string>
+      <string>Help censored users reach the Tor network (Tor 0.2.0.3-alpha or newer)</string>
      </property>
     </widget>
    </item>
