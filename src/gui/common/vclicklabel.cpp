@@ -26,6 +26,7 @@
  */
 
 #include <QPainter>
+#include <vidalia.h>
 
 #include "vclicklabel.h"
 
@@ -61,10 +62,22 @@ VClickLabel::paintEvent(QPaintEvent *e)
 {
   QPainter p(this);
   QRect rect = this->rect();
-  if (!_pixmap.isNull())
-    p.drawPixmap(0, qMax((rect.height()-_pixmap.height())/2,0), _pixmap);
-  if (!_text.isEmpty())
-    p.drawText(_pixmap.width()+2, (rect.height()+fontInfo().pixelSize())/2, _text);
+
+  if (vApp->isLeftToRight()) {
+    if (!_pixmap.isNull())
+      p.drawPixmap(0, qMax((rect.height()-_pixmap.height())/2, 0), _pixmap);
+    if (!_text.isEmpty())
+      p.drawText(_pixmap.width()+2, (rect.height()+fontInfo().pixelSize())/2, _text);
+  } else {
+    if (!_pixmap.isNull())
+      p.drawPixmap(qMax(rect.right()-_pixmap.width(), 0),
+                   qMax((rect.height()-_pixmap.height())/2, 0), _pixmap);
+    if (!_text.isEmpty()) {
+      int textWidth  = fontMetrics().width(_text);
+      p.drawText(qMax(rect.right()-_pixmap.width()-textWidth-2, 0),
+                 (rect.height()+fontInfo().pixelSize())/2, _text);
+    }
+  }
   e->accept();
 }
 
