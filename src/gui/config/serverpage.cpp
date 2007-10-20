@@ -252,8 +252,6 @@ ServerPage::load()
   
   loadBandwidthLimits();
   loadExitPolicies();
-
-  //ui.frmServer->setVisible(ui.chkEnableServer->isChecked());
 }
 
 /** Shows exit policy related help information */
