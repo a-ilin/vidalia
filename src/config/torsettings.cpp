@@ -92,7 +92,7 @@ TorSettings::TorSettings(TorControl *torControl)
   setDefault(SETTING_USE_RANDOM_PASSWORD, true);
 }
 
-/** Applies any changes to Tor's ccontrol port or authentication settings. */
+/** Applies any changes to Tor's control port or authentication settings. */
 bool
 TorSettings::apply(QString *errmsg)
 {
