@@ -90,7 +90,7 @@ NetworkSettings::apply(QString *errmsg)
     conf.insert(SETTING_PREFER_TUNNELED_DIR_CONNS, "0");
   }
   
-  if (_torControl->getTorVersion() >= 0x020003) {
+  if (torControl()->getTorVersion() >= 0x020003) {
     /* Do the bridge stuff only on Tor >= 0.2.0.3-alpha */
     QStringList bridges = localValue(SETTING_BRIDGE_LIST).toStringList();
     if (getUseBridges() && !bridges.isEmpty()) {
@@ -105,7 +105,7 @@ NetworkSettings::apply(QString *errmsg)
       conf.insert(SETTING_UPDATE_BRIDGES, "0");
     }
   }
-  return _torControl->setConf(conf, errmsg);
+  return torControl()->setConf(conf, errmsg);
 }
 
 /** Returns true if we need to set ReachableAddresses because we're behind a

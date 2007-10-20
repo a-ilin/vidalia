@@ -110,7 +110,7 @@ AbstractTorSettings::torValue(const QString &key)
   QString confValue;
 
   defaultVal = defaultValue(key);
-  if (_torControl->getConf(key, confValue)) {
+  if (_torControl && _torControl->getConf(key, confValue)) {
     value.setValue(confValue);
     value.convert(defaultVal.type());
   }
@@ -123,7 +123,7 @@ AbstractTorSettings::torValue(const QString &key)
 QVariant
 AbstractTorSettings::value(const QString &key)
 {
-  if (_torControl->isConnected() && !changedSinceLastApply())
+  if (_torControl && _torControl->isConnected() && !changedSinceLastApply())
     return torValue(key);
   return localValue(key);
 }

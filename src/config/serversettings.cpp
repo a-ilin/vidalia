@@ -79,7 +79,7 @@ QHash<QString, QString>
 ServerSettings::confValues()
 {
   QHash<QString, QString> conf;
-  quint32 torVersion = _torControl->getTorVersion();
+  quint32 torVersion = torControl()->getTorVersion();
 
   /* Server Nickname */
   conf.insert(SETTING_NICKNAME,
@@ -132,10 +132,10 @@ ServerSettings::apply(QString *errmsg)
   bool rc;
 
   if (isServerEnabled()) {
-    rc = _torControl->setConf(confValues(), errmsg);
+    rc = torControl()->setConf(confValues(), errmsg);
   } else { 
     QStringList resetKeys;
-    quint32 torVersion = _torControl->getTorVersion();
+    quint32 torVersion = torControl()->getTorVersion();
     resetKeys << SETTING_ORPORT 
               << SETTING_NICKNAME 
               << SETTING_DIRPORT
@@ -148,7 +148,7 @@ ServerSettings::apply(QString *errmsg)
       resetKeys << SETTING_BANDWIDTH_RATE
                 << SETTING_BANDWIDTH_BURST;
     }
-    rc = _torControl->resetConf(resetKeys, errmsg);
+    rc = torControl()->resetConf(resetKeys, errmsg);
   }
   return rc;
 }
@@ -169,8 +169,8 @@ bool
 ServerSettings::isServerEnabled()
 {
   QString orPort;
-  if (_torControl->isConnected() && !changedSinceLastApply()) {
-    if (_torControl->getConf(SETTING_ORPORT, orPort))
+  if (torControl()->isConnected() && !changedSinceLastApply()) {
+    if (torControl()->getConf(SETTING_ORPORT, orPort))
       return (orPort.toUInt() > 0);
   }
   return localValue(SETTING_ENABLED).toBool();

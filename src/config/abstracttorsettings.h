@@ -37,7 +37,7 @@ class AbstractTorSettings : public VSettings
 public:
   /** Constructor. All settings will be under the heading <b>group</b> and
    * <b>torControl</b> will be used to <i>getconf</i> values from Tor. */
-  AbstractTorSettings(const QString &group, TorControl *torControl);
+  AbstractTorSettings(const QString &group, TorControl *torControl = 0);
   
   /** Sets a value indicating that the server settings have changed since
    * apply() was last called. */
@@ -72,9 +72,17 @@ protected:
    * an empty string. */
   bool isEmptyValue(const QVariant &value);
 
-  TorControl* _torControl;
+protected:
+  /** Returns the TorControl object used for reading settings from or writing
+   * settings to Tor, if one was specified. Returns 0 if no TorControl object
+   * was given. */
+  TorControl* torControl() { return _torControl; };
 
 private:
+  /** TorControl object used for reading settings from or applying settings to
+   * Tor. */
+  TorControl* _torControl;
+  /** Collection of settings values at the last time apply() was called. */
   QMap<QString, QVariant> _backupSettings;
 };
 
