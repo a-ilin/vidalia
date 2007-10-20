@@ -50,7 +50,7 @@ public:
 
   /** Applies the network configuration settings to Tor. Returns true if the
    * settings were applied successfully. Otherwise, <b>errmsg</b> is set and
-   * false is return. */
+   * false is returned. */
   bool apply(QString &errmsg);
   /** Reverts the server configuration settings to their values at the last
    * time they were successfully applied to Tor. */

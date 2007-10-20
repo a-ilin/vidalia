@@ -72,7 +72,7 @@ NetworkPage::NetworkPage(QWidget *parent)
 
 /** Applies the network configuration settings to Tor. Returns true if the   *
  * settings were applied successfully. Otherwise, <b>errmsg</b> is set and   *
- * false is return. */
+ * false is returned. */
 bool
 NetworkPage::apply(QString &errmsg)
 {
