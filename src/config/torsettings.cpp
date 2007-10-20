@@ -336,18 +336,9 @@ TorSettings::getAuthenticationMethod()
         type = PasswordAuth;
     }
   }
-  if (type == UnknownAuth) {
-    QString str = localValue(SETTING_AUTH_METHOD).toString();
-    if (str == toString(NullAuth))
-      type = NullAuth;
-    else if (str == toString(PasswordAuth))
-      type = PasswordAuth;
-    else if (str == toString(CookieAuth))
-      type = CookieAuth;
-    else
-      type = DEFAULT_AUTH_METHOD;
-  }
-  return type;
+  if (type == UnknownAuth)
+    type = toAuthenticationMethod(localValue(SETTING_AUTH_METHOD).toString());
+  return (type == UnknownAuth ? DEFAULT_AUTH_METHOD : type);
 }
 
 /** Sets the authentication method used when starting Tor to <b>method</b>. */
