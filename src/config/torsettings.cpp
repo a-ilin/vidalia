@@ -1,7 +1,7 @@
 /****************************************************************
  *  Vidalia is distributed under the following license:
  *
- *  Copyright (C) 2006,  Matt Edman, Justin Hipple
+ *  Copyright (C) 2006-2007,  Matt Edman, Justin Hipple
  *
  *  This program is free software; you can redistribute it and/or
  *  modify it under the terms of the GNU General Public License
@@ -68,8 +68,8 @@
 
 
 /** Default constructor */
-TorSettings::TorSettings()
-: VSettings("Tor")
+TorSettings::TorSettings(TorControl *torControl)
+: AbstractTorSettings("Tor", torControl)
 {
 #if defined(Q_OS_WIN32)
   QString programFiles = win32_program_files_folder();
@@ -92,6 +92,36 @@ TorSettings::TorSettings()
   setDefault(SETTING_USE_RANDOM_PASSWORD, true);
 }
 
+/** Applies any changes to Tor's ccontrol port or authentication settings. */
+bool
+TorSettings::apply(QString *errmsg)
+{
+  QHash<QString, QString> conf;
+
+  conf.insert(SETTING_CONTROL_PORT,
+              localValue(SETTING_CONTROL_PORT).toString());
+  
+  AuthenticationMethod authMethod = 
+    toAuthenticationMethod(localValue(SETTING_AUTH_METHOD).toString());
+  switch (authMethod) {
+    case CookieAuth:
+      conf.insert(TOR_ARG_COOKIE_AUTH,    "1");
+      conf.insert(TOR_ARG_HASHED_PASSWORD, "");
+      break;
+    case PasswordAuth:
+      if (useRandomPassword())
+        setControlPassword(generateRandomPassword());
+      conf.insert(TOR_ARG_COOKIE_AUTH,    "0");
+      conf.insert(TOR_ARG_HASHED_PASSWORD,
+                  hashPassword(getControlPassword()));
+      break;
+    default:
+      conf.insert(TOR_ARG_COOKIE_AUTH,    "0");
+      conf.insert(TOR_ARG_HASHED_PASSWORD, "");
+  }
+  return torControl()->setConf(conf, errmsg);
+}
+
 /** Gets the location of Tor's data directory. */
 QString
 TorSettings::getDataDirectory()
@@ -111,7 +141,7 @@ TorSettings::setDataDirectory(QString dataDirectory)
 QString
 TorSettings::getExecutable()
 {
-  return QDir::convertSeparators(value(SETTING_TOR_EXECUTABLE).toString());
+  return QDir::convertSeparators(localValue(SETTING_TOR_EXECUTABLE).toString());
 }
 
 /** Sets the location and name of Tor's executable to the given string. */
@@ -179,7 +209,11 @@ TorSettings::getArguments()
 QString
 TorSettings::getTorrc()
 {
-  return QDir::convertSeparators(value(SETTING_TORRC).toString());
+  QString torrc;
+  TorControl *tc = torControl();
+  if (tc && tc->isConnected() && tc->getInfo("config-file", torrc))
+    return QDir::convertSeparators(torrc);
+  return QDir::convertSeparators(localValue(SETTING_TORRC).toString());
 }
 
 /** Sets the torrc that will be used when starting Tor.
@@ -227,7 +261,7 @@ TorSettings::setGroup(QString group)
 QHostAddress
 TorSettings::getControlAddress()
 {
-  QString addr = value(SETTING_CONTROL_ADDR).toString();
+  QString addr = localValue(SETTING_CONTROL_ADDR).toString();
   return QHostAddress(addr);
 }
 
@@ -257,7 +291,7 @@ TorSettings::setControlPort(quint16 port)
 QString
 TorSettings::getControlPassword()
 {
-  return value(SETTING_CONTROL_PASSWORD).toString();
+  return localValue(SETTING_CONTROL_PASSWORD).toString();
 }
 
 /** Sets the control password used when starting Tor with
@@ -273,7 +307,7 @@ TorSettings::setControlPassword(QString password)
 bool
 TorSettings::useRandomPassword()
 {
-  return value(SETTING_USE_RANDOM_PASSWORD).toBool();
+  return localValue(SETTING_USE_RANDOM_PASSWORD).toBool();
 }
 
 /** Sets whether or not to generate and use a random control password each
@@ -288,16 +322,31 @@ TorSettings::setUseRandomPassword(bool useRandomPassword)
 TorSettings::AuthenticationMethod
 TorSettings::getAuthenticationMethod()
 {
-  AuthenticationMethod type;
-  QString str = value(SETTING_AUTH_METHOD).toString();
-  if (str == toString(NullAuth))
-    type = NullAuth;
-  else if (str == toString(PasswordAuth))
-    type = PasswordAuth;
-  else if (str == toString(CookieAuth))
-    type = CookieAuth;
-  else
-    type = UnknownAuth;
+  AuthenticationMethod type = UnknownAuth;
+  TorControl *tc = torControl();
+
+  if (tc && tc->isConnected()) {
+    QHash<QString,QString> conf;
+    conf.insert(TOR_ARG_COOKIE_AUTH, "");
+    conf.insert(TOR_ARG_HASHED_PASSWORD, "");
+    if (tc->getConf(conf)) {
+      if (conf.value(TOR_ARG_COOKIE_AUTH) == "1")
+        type = CookieAuth;
+      else if (!conf.value(TOR_ARG_HASHED_PASSWORD).isEmpty())
+        type = PasswordAuth;
+    }
+  }
+  if (type == UnknownAuth) {
+    QString str = localValue(SETTING_AUTH_METHOD).toString();
+    if (str == toString(NullAuth))
+      type = NullAuth;
+    else if (str == toString(PasswordAuth))
+      type = PasswordAuth;
+    else if (str == toString(CookieAuth))
+      type = CookieAuth;
+    else
+      type = DEFAULT_AUTH_METHOD;
+  }
   return type;
 }
 
@@ -321,6 +370,21 @@ TorSettings::toString(AuthenticationMethod method)
     default: break;
   }
   return "unknown";
+}
+
+/** Returns the AuthenticationMethod enum value for the string
+ * description of the authentication method given in <b>authMethod</b>. */
+TorSettings::AuthenticationMethod
+TorSettings::toAuthenticationMethod(const QString &authMethod)
+{ 
+  QString str = authMethod.toLower();
+  if (str == toString(NullAuth))
+    return NullAuth;
+  else if (str == toString(PasswordAuth))
+    return PasswordAuth;
+  else if (str == toString(CookieAuth))
+    return CookieAuth;
+  return UnknownAuth;
 }
 
 /** Generates a random control password consisting of PASSWORD_LEN characters. */

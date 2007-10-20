@@ -1,7 +1,7 @@
 /****************************************************************
  *  Vidalia is distributed under the following license:
  *
- *  Copyright (C) 2006,  Matt Edman, Justin Hipple
+ *  Copyright (C) 2006-2007,  Matt Edman, Justin Hipple
  *
  *  This program is free software; you can redistribute it and/or
  *  modify it under the terms of the GNU General Public License
@@ -48,6 +48,17 @@ public:
   bool save(QString &errmsg);
   /** Loads the settings for this page */
   void load();
+ 
+  /** Applies the network configuration settings to Tor. Returns true if the
+   * settings were applied successfully. Otherwise, <b>errmsg</b> is set
+   * and false is returned. */
+  bool apply(QString &errmsg);
+  /** Reverts the Tor configuration settings to their values at the last
+   * time they were successfully applied to Tor. */
+  void revert();
+  /** Returns true if the user has changed their advanced Tor settings since
+   * the last time they were applied to Tor. */
+  bool changedSinceLastApply();
 
 private slots:
   /** Called when the user selects a different authentication method from the

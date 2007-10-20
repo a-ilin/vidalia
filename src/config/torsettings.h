@@ -1,7 +1,7 @@
 /****************************************************************
  *  Vidalia is distributed under the following license:
  *
- *  Copyright (C) 2006,  Matt Edman, Justin Hipple
+ *  Copyright (C) 2006-2007,  Matt Edman, Justin Hipple
  *
  *  This program is free software; you can redistribute it and/or
  *  modify it under the terms of the GNU General Public License
@@ -30,12 +30,12 @@
 
 #include <QHostAddress>
 
-#include "vsettings.h"
+#include "abstracttorsettings.h"
 
 
 /** Manages Tor-specific settings, such as location, command-line arguments,
  * and control interface information. */
-class TorSettings : public VSettings
+class TorSettings : public AbstractTorSettings
 {
 public:
   /** Available Tor authentication methods. */
@@ -47,8 +47,10 @@ public:
   };
   
   /** Default constructor. */
-  TorSettings();
-  
+  TorSettings(TorControl *torControl = 0);
+  /** Applies any changes to Tor's control port or authentication settings. */ 
+  bool apply(QString *errmsg = 0);
+
   /** Gets the name and path of Tor's executable. */
   QString getExecutable();
   /** Sets the name and path of Tor's executable. */
@@ -107,6 +109,9 @@ public:
   void setGroup(QString group);
 
 private:
+  /** Returns the AuthenticationMethod enum value for the string
+   * description of the authentication method given in <b>authMethod</b>. */
+  AuthenticationMethod toAuthenticationMethod(const QString &authMethod);
   /** Returns the string description of the authentication method specified by
    * <b>method</b>. The authentication method string is stored in  Vidalia's
    * configuration file. */
