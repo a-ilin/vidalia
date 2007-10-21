@@ -422,6 +422,26 @@ fingerprint.</string>
             </item>
             <item>
              <widget class="QPushButton" name="btnRateHelp" >
+              <property name="sizePolicy" >
+               <sizepolicy>
+                <hsizetype>1</hsizetype>
+                <vsizetype>1</vsizetype>
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize" >
+               <size>
+                <width>32</width>
+                <height>32</height>
+               </size>
+              </property>
+              <property name="maximumSize" >
+               <size>
+                <width>32</width>
+                <height>32</height>
+               </size>
+              </property>
               <property name="contextMenuPolicy" >
                <enum>Qt::NoContextMenu</enum>
               </property>
@@ -810,6 +830,26 @@ fingerprint.</string>
                </property>
                <item>
                 <widget class="QPushButton" name="btnExitHelp" >
+                 <property name="sizePolicy" >
+                  <sizepolicy>
+                   <hsizetype>1</hsizetype>
+                   <vsizetype>1</vsizetype>
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize" >
+                  <size>
+                   <width>32</width>
+                   <height>32</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize" >
+                  <size>
+                   <width>32</width>
+                   <height>32</height>
+                  </size>
+                 </property>
                  <property name="contextMenuPolicy" >
                   <enum>Qt::NoContextMenu</enum>
                  </property>
