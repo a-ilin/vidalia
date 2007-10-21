@@ -165,6 +165,9 @@ ServerPage::serverModeChanged(bool enabled)
 {
   enabled = (ui.rdoServerMode->isChecked() || ui.rdoBridgeMode->isChecked());
   ui.tabsMenu->setVisible(enabled);
+  
+  /* Disable the Exit Policies tab when bridge server mode is selected */
+  ui.tabsMenu->setTabEnabled(2, !ui.rdoBridgeMode->isChecked());
 }
 
 /** Returns true if the user has changed their server settings since the
