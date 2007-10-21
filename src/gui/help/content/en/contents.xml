@@ -39,6 +39,7 @@
   </Topic>
   <Topic id="config" name="Configuring Tor" html="config.html">
     <Topic id="general" name="General Settings" html="config.html" section="general"/>
+    <Topic id="network" name="Network Settings" html="config.html" section="network"/>
     <Topic id="server" name="Server Settings" html="config.html" section="server"/>
     <Topic id="advanced" name="Advanced Settings" html="config.html" section="advanced"/>
   </Topic>

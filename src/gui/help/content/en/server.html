@@ -44,7 +44,14 @@ can follow these steps to get started:
     systems.
   </li>
   <li>Select the <i>Server</i> configuration page.</li>
-  <li>Check the box labeled <i>Relay traffic for the Tor network</i>.
+  <li>
+    Decide whether you want to run a normal relay server or a <i>bridge</i>
+    server (Tor 0.2.0.3-alpha or newer). Bridge servers help censored Tor users
+    who are blocked from accessing the Tor network directly.
+    Check the box labeled <i>Relay traffic for the Tor network</i> if you want
+    to run a normal relay or <i>Help censored users reach the Tor network</i>
+    if you want to run a bridge server.
+  </li>
   <li>Enter the following information:
     <ul>
       <li><b>Nickname</b>:
@@ -141,6 +148,10 @@ network from your server, you can uncheck all of the checkboxes. Even if you
 uncheck all of the checkboxes, your server is still useful to the Tor network.
 Your server will allow other Tor users to connect to the Tor network and will
 help relay traffic between other Tor servers.
+</p>
+<p>
+If you chose to run a bridge server, the <i>Exit Policies</i> tab will be
+grayed out, since bridge servers do not allow exit connections.
 </p>
 </html>
 
