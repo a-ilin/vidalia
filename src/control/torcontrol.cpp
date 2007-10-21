@@ -393,6 +393,12 @@ TorControl::signal(TorSignal::Signal sig, QString *errmsg)
 {
   ControlCommand cmd("SIGNAL");
   cmd.addArgument(TorSignal::toString(sig));
+
+  if (sig == TorSignal::Shutdown || sig == TorSignal::Halt) {
+    /* Tor closes the connection before giving us a response to any commands
+     * asking it to stop running, so don't try to get a response. */
+    return _controlConn->send(cmd, errmsg);
+  }
   return send(cmd, errmsg); 
 }
 
