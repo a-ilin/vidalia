@@ -913,7 +913,7 @@ Vennligst sjekk meldings-loggen for indikatorer på hva som skjedde med Tor før
     </message>
     <message>
       <source>Would you like to browse for the file 'control_auth_cookie' yourself?</source>
-      <translation type="unfinished" />
+      <translation>Vil du lete etter filen 'control_auth_cookie' på egenhånd?</translation>
     </message>
     <message>
       <source>Tor Data Directory</source>
@@ -1419,15 +1419,15 @@ interest to Tor developers.</source>
     </message>
     <message>
       <source>Check to configure Tor to use bridge servers to access the Tor network</source>
-      <translation type="unfinished" />
+      <translation>Velg for å be Tor bruke bro-tjenere for å få tilgang til Tor-nettverket</translation>
     </message>
     <message>
       <source>My ISP blocks connections to the Tor network</source>
-      <translation type="unfinished" />
+      <translation>Min ISP blokkerer forbindelser til Tor-nettverket</translation>
     </message>
     <message>
       <source>Tor Bridge Settings</source>
-      <translation type="unfinished" />
+      <translation>Tor Bro Innstillinger</translation>
     </message>
     <message>
       <source>The Tor version you are currently running does not support bridges. &lt;br>Tor will still try to encrypt its directory connections.</source>
@@ -1435,7 +1435,7 @@ interest to Tor developers.</source>
     </message>
     <message>
       <source>Add a Bridge:</source>
-      <translation type="unfinished" />
+      <translation>Legg til Bro:</translation>
     </message>
     <message>
       <source>Remove the selected bridges from the list</source>
