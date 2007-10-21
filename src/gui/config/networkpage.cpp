@@ -68,6 +68,14 @@ NetworkPage::NetworkPage(QWidget *parent)
   vApp->createShortcut(QKeySequence(QKeySequence::Copy),
                        ui.listBridges, this,
                        SLOT(copySelectedBridgesToClipboard()));
+
+#if defined(Q_WS_MAC)
+  /* On OS X, the network page looks better without frame titles. Everywhere
+   * else needs titles or else there's a break in the frame border. */
+  ui.grpProxySettings->setTitle("");
+  ui.grpFirewallSettings->setTitle("");
+  ui.grpBridgeSettings->setTitle("");
+#endif
 }
 
 /** Applies the network configuration settings to Tor. Returns true if the   *
