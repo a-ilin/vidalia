@@ -3,7 +3,7 @@
   
   Vidalia is distributed under the following license:
 
-  Copyright (C) 2006,  Matt Edman, Justin Hipple
+  Copyright (C) 2006-2007,  Matt Edman, Justin Hipple
 
   This program is free software; you can redistribute it and/or
   modify it under the terms of the GNU General Public License
@@ -34,16 +34,16 @@
   <Topic id="netview" name="Network Viewer" html="netview.html">
     <Topic id="overview" name="Overview" html="netview.html" section="overview"/>
     <Topic id="netmap" name="Network Map" html="netview.html" section="netmap"/>
-    <Topic id="status" name="Server Status" html="netview.html" section="status"/>
-    <Topic id="details" name="Server Details" html="netview.html" section="details"/>
+    <Topic id="status" name="Relay Status" html="netview.html" section="status"/>
+    <Topic id="details" name="Relay Details" html="netview.html" section="details"/>
   </Topic>
   <Topic id="config" name="Configuring Tor" html="config.html">
     <Topic id="general" name="General Settings" html="config.html" section="general"/>
     <Topic id="network" name="Network Settings" html="config.html" section="network"/>
-    <Topic id="server" name="Server Settings" html="config.html" section="server"/>
+    <Topic id="server" name="Relay Settings" html="config.html" section="server"/>
     <Topic id="advanced" name="Advanced Settings" html="config.html" section="advanced"/>
   </Topic>
-  <Topic id="server" name="Running a Server" html="server.html">
+  <Topic id="server" name="Setting Up a Tor Relay" html="server.html">
     <Topic id="basic" name="Basic Setup" html="server.html" section="basic"/>
     <Topic id="bandwidth" name="Bandwidth Limits" html="server.html" section="bandwidth"/>
     <Topic id="exitpolicy" name="Exit Policies" html="server.html" section="exitpolicy"/>

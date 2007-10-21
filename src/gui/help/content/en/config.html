@@ -29,7 +29,7 @@
 <p>
 Vidalia allows you to configure some of the most commonly modified aspects of
 Vidalia and Tor. It also lets you set up and manage a <a
-href="server.html">Tor server</a> so you can help the Tor network
+href="server.html">Tor relay</a> so you can help the Tor network
 grow.
 </p>
 
@@ -62,7 +62,7 @@ network.
 <ul>
   <li><b>I use a proxy to access the Internet</b>:
     If your Internet connection requires an HTTP proxy, you can configure Tor
-    to send all of its directory requests and Tor server connections through
+    to send all of its directory requests and Tor relay connections through
     your proxy. You must specify at least the hostname or address of your
     proxy, and the port on which your proxy is listening for connections. If
     your proxy requires authentication, you can also enter the
@@ -70,24 +70,24 @@ network.
     Otherwise, you can leave those fields blank.
   </li>
   <li><b>My firewall only lets me connect to certain ports</b>:
-    If you are behind a restrictive firewall that limits the ports you are
-    able to connect to, you can configure Tor to connect directly only to
-    servers listening on the ports allowed by your firewall. Simply enter a
-    list of ports permitted by your firewall, separated by commas. (<i>Example:
-    80,443,8080</i>)
+    If you are behind a restrictive firewall or proxy that limits the ports you
+    are able to connect to, you can configure Tor to connect directly only to
+    relays listening on the ports allowed by your firewall or proxy. Simply
+    enter a list of ports permitted by your firewall or proxy, separated by
+    commas. (<i>Example: 80,443,8080</i>)
   </li>
   <li><b>My ISP blocks connections to the Tor network</b>:
     If your ISP (Internet Service Provider) blocks connections to the Tor
     network, Tor can attempt to avoid being filtered by encrypting its
-    directory connections and connecting to the Tor network through servers
+    directory connections and connecting to the Tor network through relays
     called <i>bridges</i> (Tor 0.2.0.3-alpha or newer only). You can add
-    bridge servers by specifying either their address and port number, or by
+    bridge relays by specifying either their address and port number, or
     their address, port number, and fingerprint.<br>
 
     Below are examples of valid bridge address formats:
     <ul>
       <li>
-        128.31.0.34:8080
+        128.213.48.13:8080
       </li>
       <li>
         128.213.48.13:8080 1054 13B1 DBDA F867 B226 74D2 52DF 3D9F A367 1F73
@@ -96,15 +96,21 @@ network.
         128.213.48.13:8080 105413B1DBDAF867B22674D252DF3D9FA3671F73
       </li>
     </ul>
+    Even if you do not know any bridge relay addresses, checking this checkbox
+    may still be helpful. Tor will encrypt its directory requests, which can
+    defeat blocking mechanisms that try to filter Tor's requests for
+    information about other relays. If connections to normal Tor relays are
+    also blocked, then you will need to learn a bridge relay address somehow
+    and add it here.
   </li>
 </ul>
 
-<a name="server"/>
-<h3>Server Settings</h3>
+<a name="relay"/>
+<h3>Relay Settings</h3>
 <p>
 <i>
-  See <a href="server.html">this help topic</a> for detailed
-  information about setting up and managing a Tor server.
+  See <a href="relay.html">this help topic</a> for detailed
+  information about setting up and managing a Tor relay.
 </i>
 </p>
 
@@ -154,7 +160,7 @@ modified by more experienced users.
   </li>
   <li><b>Tor Data Directory</b> <i>(optional)</i>:
     You can specify the directory in which Tor will store its saved data,
-    such as cached Tor server information, Tor server keys, and configuration
+    such as cached Tor relay information, Tor relay keys, and configuration
     files. If you leave this field blank, Tor will use its own default data
     directory location.
   </li>

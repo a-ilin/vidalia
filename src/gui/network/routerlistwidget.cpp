@@ -41,7 +41,7 @@ RouterListWidget::RouterListWidget(QWidget *parent)
   /* Create and initialize columns */
   setHeaderLabels(QStringList() << QString("")
                                 << QString("")
-                                << tr("Server"));
+                                << tr("Relay"));
 
   /* Sort by descending server bandwidth */
   sortItems(StatusColumn, Qt::DescendingOrder);
@@ -52,7 +52,7 @@ RouterListWidget::RouterListWidget(QWidget *parent)
 
   /* Set up the router item context menu */
   _routerContextMenu = new QMenu(this);
-  _zoomToRouterAct = new QAction(QIcon(IMG_ZOOM), tr("Zoom to Server"), this);
+  _zoomToRouterAct = new QAction(QIcon(IMG_ZOOM), tr("Zoom to Relay"), this);
   _routerContextMenu->addAction(_zoomToRouterAct);
 }
 
@@ -227,7 +227,7 @@ RouterListWidget::addRouter(RouterDescriptor rd)
     /* Set our status tip to the number of servers in the list */
     if (rd.online())
       _onlineRouterCount++;
-    setStatusTip(tr("%1 servers online (%2 total)")
+    setStatusTip(tr("%1 relays online (%2 total)")
                               .arg(_onlineRouterCount)
                               .arg(topLevelItemCount()));
   }

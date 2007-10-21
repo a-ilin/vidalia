@@ -423,7 +423,7 @@ MainWindow::updateTorStatus(TorStatus status)
       connect(ui.lblStartStopTor, SIGNAL(clicked()), this, SLOT(start()));
   } else if (status == Stopping) {
       if (_delayedShutdownStarted) {
-        statusText = tr("Your Tor server is shutting down.\n" 
+        statusText = tr("Your Tor relay is shutting down.\n" 
                         "Click 'Stop Tor' again to force Tor to stop now.");
       } else {
         statusText = tr("Tor is shutting down");
@@ -620,12 +620,12 @@ MainWindow::stop()
    * gracefully so clients have time to find new servers. */
   if (server.isServerEnabled() && !_delayedShutdownStarted) {
     /* Ask the user if they want to shutdown nicely. */
-    int response = VMessageBox::question(this, tr("Server is Enabled"),
-                     tr("You are currently running a Tor server. "
-                        "Terminating your server will interrupt any "
+    int response = VMessageBox::question(this, tr("Relaying is Enabled"),
+                     tr("You are currently running a Tor relay. "
+                        "Terminating your relay will interrupt any "
                         "open connections from clients.\n\n"
                         "Would you like to shutdown gracefully and "
-                        "give clients time to find a new server?"),
+                        "give clients time to find a new relay?"),
                         VMessageBox::Yes|VMessageBox::Default, 
                         VMessageBox::No, 
                         VMessageBox::Cancel|VMessageBox::Escape);

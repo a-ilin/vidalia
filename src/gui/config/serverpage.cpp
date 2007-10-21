@@ -134,11 +134,11 @@ ServerPage::onAuthenticated()
     if (ui.rdoBridgeMode->isChecked()) {
       int ret = VMessageBox::warning(this,
                   tr("Bridge Support Unavailable"),
-                  p(tr("You have configured Tor to act as a bridge server "
+                  p(tr("You have configured Tor to act as a bridge relay "
                        "for censored users, but your version of Tor does not "
                        "support bridges.")) +
                   p(tr("Please upgrade your Tor software or configure Tor to "
-                       "act as a normal relay server.")),
+                       "act as a normal Tor relay.")),
                   VMessageBox::ShowSettings|VMessageBox::Default,
                   VMessageBox::Cancel);
       if (ret == VMessageBox::ShowSettings) {
@@ -206,7 +206,7 @@ ServerPage::save(QString &errmsg)
     /* A server must have an ORPort and a nickname */
     if (ui.lineServerPort->text().isEmpty() ||
         ui.lineServerNickname->text().isEmpty()) {
-      errmsg = tr("You must specify at least a server nickname and port.");
+      errmsg = tr("You must specify at least a relay nickname and port.");
       return false;
     }
     /* If the bandwidth rates aren't set, use some defaults before saving */

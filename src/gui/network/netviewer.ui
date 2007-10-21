@@ -253,10 +253,10 @@
     <string>Refresh</string>
    </property>
    <property name="statusTip" >
-    <string>Refresh the list of routers and connections</string>
+    <string>Refresh the list of Tor relays and connections</string>
    </property>
    <property name="toolTip" >
-    <string>Refresh the list of routers and connections</string>
+    <string>Refresh the list of Tor relays and connections</string>
    </property>
    <property name="font" >
     <font>

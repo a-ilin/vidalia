@@ -133,7 +133,7 @@
              <enum>Qt::NoContextMenu</enum>
             </property>
             <property name="text" >
-             <string>Server Port:</string>
+             <string>Relay Port:</string>
             </property>
             <property name="alignment" >
              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -169,7 +169,7 @@
              <enum>Qt::NoContextMenu</enum>
             </property>
             <property name="toolTip" >
-             <string>Port on which users and other servers can communicate with your server</string>
+             <string>Port on which users and other servers can communicate with your relay</string>
             </property>
            </widget>
           </item>
@@ -257,8 +257,7 @@
             </property>
             <property name="toolTip" >
              <string>Email address at which you may be reached if there is a
-problem with your server. You might also include your PGP or GPG
-fingerprint.</string>
+problem with your relay. You might also include your PGP or GPG fingerprint.</string>
             </property>
            </widget>
           </item>
@@ -287,10 +286,10 @@ fingerprint.</string>
              <enum>Qt::NoContextMenu</enum>
             </property>
             <property name="toolTip" >
-             <string>Enable to mirror the server directory</string>
+             <string>Enable to mirror the Tor relay directory</string>
             </property>
             <property name="text" >
-             <string>Mirror the Server Directory </string>
+             <string>Mirror the Relay Directory </string>
             </property>
            </widget>
           </item>
