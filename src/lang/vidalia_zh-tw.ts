@@ -96,27 +96,27 @@
         <translation>Vidalia 將會使用該用戶群組的權限執行</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="188"/>
+        <location filename="../gui/config/advancedpage.cpp" line="213"/>
         <source>Select Tor Configuration File</source>
         <translation>請選取 Tor 配置檔案</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="201"/>
+        <location filename="../gui/config/advancedpage.cpp" line="226"/>
         <source>File Not Found</source>
         <translation>未找到該檔案</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="203"/>
+        <location filename="../gui/config/advancedpage.cpp" line="228"/>
         <source>%1 does not exist. Would you like to create it?</source>
         <translation>%1 不存在.請問是否要創建該檔案?</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="214"/>
+        <location filename="../gui/config/advancedpage.cpp" line="239"/>
         <source>Failed to Create File</source>
         <translation>創建檔案失敗</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="215"/>
+        <location filename="../gui/config/advancedpage.cpp" line="240"/>
         <source>Unable to create %1 [%2]</source>
         <translation>無法創建 %1 [%2]</translation>
     </message>
@@ -136,22 +136,22 @@
         <translation>作為 Windows 後台系統服務執行 Tor (可在&quot;服務&quot;中進行設定)</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="251"/>
+        <location filename="../gui/config/advancedpage.cpp" line="276"/>
         <source>Unable to remove Tor Service</source>
         <translation>無法移除 Tor 服務</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="262"/>
+        <location filename="../gui/config/advancedpage.cpp" line="287"/>
         <source>Unable to install Tor Service</source>
         <translation>無法安裝 Tor 服務</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="263"/>
+        <location filename="../gui/config/advancedpage.cpp" line="288"/>
         <source>Vidalia was unable to install the Tor service.</source>
         <translation>Vidalia 無法安裝 Tor 為系統服務.</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="253"/>
+        <location filename="../gui/config/advancedpage.cpp" line="278"/>
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
@@ -163,7 +163,7 @@ You may need to remove it manually.</source>
         <translation>Tor 配置檔案</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="87"/>
+        <location filename="../gui/config/advancedpage.cpp" line="112"/>
         <source>&apos;%1&apos; is not a valid IP address.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -173,12 +173,12 @@ You may need to remove it manually.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="98"/>
+        <location filename="../gui/config/advancedpage.cpp" line="123"/>
         <source>You selected &apos;Password&apos; authentication, but did not specify a password.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="230"/>
+        <location filename="../gui/config/advancedpage.cpp" line="255"/>
         <source>Select a Directory to Use for Tor Data</source>
         <translation type="unfinished"></translation>
     </message>
@@ -418,7 +418,7 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="71"/>
         <source>Server</source>
-        <translation>伺服器</translation>
+        <translation type="obsolete">伺服器</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="79"/>
@@ -473,6 +473,11 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="199"/>
         <source>Vidalia was unable to apply your %1 settings to Tor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/configdialog.cpp" line="71"/>
+        <source>Relay</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -820,27 +825,27 @@ You may need to remove it manually.</source>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../gui/mainwindow.ui" line="414"/>
+        <location filename="../gui/mainwindow.ui" line="382"/>
         <source>About</source>
         <translation>關於</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="427"/>
+        <location filename="../gui/mainwindow.ui" line="395"/>
         <source>Exit</source>
         <translation>結束</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="288"/>
+        <location filename="../gui/mainwindow.ui" line="256"/>
         <source>Bandwidth Graph</source>
         <translation>性能圖形</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="301"/>
+        <location filename="../gui/mainwindow.ui" line="269"/>
         <source>Message Log</source>
         <translation>訊息日誌</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="351"/>
+        <location filename="../gui/mainwindow.ui" line="319"/>
         <source>Help</source>
         <translation>幫助</translation>
     </message>
@@ -912,7 +917,7 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/mainwindow.cpp" line="623"/>
         <source>Server is Enabled</source>
-        <translation>伺服器模式被啟用</translation>
+        <translation type="obsolete">伺服器模式被啟用</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="353"/>
@@ -924,7 +929,7 @@ You may need to remove it manually.</source>
         <source>You are currently running a Tor server. Terminating your server will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new server?</source>
-        <translation>當前正在執行為 Tor 伺服器模式.終止伺服器模式將會中斷任何客戶端連接.是否要關閉伺服器?</translation>
+        <translation type="obsolete">當前正在執行為 Tor 伺服器模式.終止伺服器模式將會中斷任何客戶端連接.是否要關閉伺服器?</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="684"/>
@@ -944,7 +949,7 @@ Please check the message log for indicators about what happened to Tor before it
         <translation>網絡地圖</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="364"/>
+        <location filename="../gui/mainwindow.ui" line="332"/>
         <source>Settings</source>
         <translation>設定</translation>
     </message>
@@ -974,12 +979,12 @@ Please check the message log for indicators about what happened to Tor before it
         <translation>Tor 正在執行</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="217"/>
+        <location filename="../gui/mainwindow.ui" line="185"/>
         <source>Start Tor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="130"/>
+        <location filename="../gui/mainwindow.ui" line="122"/>
         <source>Tor is not running</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1009,82 +1014,82 @@ Please check the message log for indicators about what happened to Tor before it
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="193"/>
+        <location filename="../gui/mainwindow.ui" line="170"/>
         <source>Vidalia Shortcuts</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="227"/>
+        <location filename="../gui/mainwindow.ui" line="195"/>
         <source>Setup Relaying</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="230"/>
+        <location filename="../gui/mainwindow.ui" line="198"/>
         <source>Set up a Tor relay and help the network grow</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="240"/>
+        <location filename="../gui/mainwindow.ui" line="208"/>
         <source>View the Network</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="243"/>
+        <location filename="../gui/mainwindow.ui" line="211"/>
         <source>View a map of the Tor network</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="256"/>
+        <location filename="../gui/mainwindow.ui" line="224"/>
         <source>Use a New Identity</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="259"/>
+        <location filename="../gui/mainwindow.ui" line="227"/>
         <source>Make subsequent connections appear new</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="291"/>
+        <location filename="../gui/mainwindow.ui" line="259"/>
         <source>View Tor&apos;s bandwidth usage</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="304"/>
+        <location filename="../gui/mainwindow.ui" line="272"/>
         <source>View Tor&apos;s log message history</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="354"/>
+        <location filename="../gui/mainwindow.ui" line="322"/>
         <source>View help documentation</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="367"/>
+        <location filename="../gui/mainwindow.ui" line="335"/>
         <source>Configure Tor and Vidalia</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="417"/>
+        <location filename="../gui/mainwindow.ui" line="385"/>
         <source>View version and license information</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="430"/>
+        <location filename="../gui/mainwindow.ui" line="398"/>
         <source>Exit Vidalia</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="483"/>
+        <location filename="../gui/mainwindow.ui" line="450"/>
         <source>Show this window on startup</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="502"/>
+        <location filename="../gui/mainwindow.ui" line="469"/>
         <source>Hide</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="505"/>
+        <location filename="../gui/mainwindow.ui" line="472"/>
         <source>Hide this window</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1170,8 +1175,20 @@ Please check the message log for indicators about what happened to Tor before it
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="427"/>
-        <source>Your Tor server is shutting down.
+        <source>Your Tor relay is shutting down.
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="623"/>
+        <source>Relaying is Enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="628"/>
+        <source>You are currently running a Tor relay. Terminating your relay will interrupt any open connections from clients.
+
+Would you like to shutdown gracefully and give clients time to find a new relay?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1602,7 +1619,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/netviewer.ui" line="259"/>
         <source>Refresh the list of routers and connections</source>
-        <translation>刷新路由和連接列表</translation>
+        <translation type="obsolete">刷新路由和連接列表</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="278"/>
@@ -1637,6 +1654,11 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/netviewer.ui" line="32"/>
         <source>Tor Network Map</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="259"/>
+        <source>Refresh the list of Tor relays and connections</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1865,16 +1887,26 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="44"/>
         <source>Server</source>
-        <translation>伺服器</translation>
+        <translation type="obsolete">伺服器</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="55"/>
         <source>Zoom to Server</source>
-        <translation>縮放地圖至伺服器位置</translation>
+        <translation type="obsolete">縮放地圖至伺服器位置</translation>
+    </message>
+    <message>
+        <location filename="../gui/network/routerlistwidget.cpp" line="44"/>
+        <source>Relay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/network/routerlistwidget.cpp" line="55"/>
+        <source>Zoom to Relay</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="231"/>
-        <source>%1 servers online (%2 total)</source>
+        <source>%1 relays online (%2 total)</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1883,234 +1915,290 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="33"/>
         <source>Check to run as a Tor network server</source>
-        <translation>核取該項使 Tor 作為網絡中的伺服器</translation>
+        <translation type="obsolete">核取該項使 Tor 作為網絡中的伺服器</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="36"/>
+        <location filename="../gui/config/serverpage.ui" line="37"/>
         <source>Relay traffic for the Tor network</source>
         <translation>Tor 網絡中繼</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="209"/>
+        <location filename="../gui/config/serverpage.ui" line="214"/>
         <source>Directory Port:</source>
         <translation>目錄埠口:</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="239"/>
+        <location filename="../gui/config/serverpage.ui" line="244"/>
         <source>Directory Port Number</source>
         <translation>請指定目錄埠口</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="109"/>
+        <location filename="../gui/config/serverpage.ui" line="114"/>
         <source>Nickname:</source>
         <translation>名稱:</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="269"/>
+        <location filename="../gui/config/serverpage.ui" line="273"/>
         <source>Name of your server</source>
         <translation>伺服器名稱</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="177"/>
+        <location filename="../gui/config/serverpage.ui" line="182"/>
         <source>Contact Info:</source>
         <translation>訊息:</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="131"/>
         <source>Server Port:</source>
-        <translation>埠口:</translation>
+        <translation type="obsolete">埠口:</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="167"/>
         <source>Port on which users and other servers can communicate with your server</source>
-        <translation>用於用戶和伺服器通訊的埠口</translation>
+        <translation type="obsolete">用於用戶和伺服器通訊的埠口</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="285"/>
         <source>Enable to mirror the server directory</source>
-        <translation>啟用映像伺服器目錄</translation>
+        <translation type="obsolete">啟用映像伺服器目錄</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="288"/>
         <source>Mirror the Server Directory </source>
-        <translation>映像伺服器目錄</translation>
+        <translation type="obsolete">映像伺服器目錄</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="686"/>
+        <location filename="../gui/config/serverpage.ui" line="710"/>
         <source>Exit Policies</source>
         <translation>服務策略</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="812"/>
+        <location filename="../gui/config/serverpage.ui" line="856"/>
         <source>Show help topic on exit policies</source>
         <translation>顯示關於服務策略的相關幫助主題</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="124"/>
         <source>You must specify at least a server nickname and port.</source>
-        <translation>必須指定伺服器名稱和埠口.</translation>
+        <translation type="obsolete">必須指定伺服器名稱和埠口.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="254"/>
         <source>Email address at which you may be reached if there is a
 problem with your server. You might also include your PGP or GPG
 fingerprint.</source>
-        <translation>當伺服器出現問題時的聯絡訊息,同樣可以包含 PGP 或 GPG 簽名訊息.</translation>
+        <translation type="obsolete">當伺服器出現問題時的聯絡訊息,同樣可以包含 PGP 或 GPG 簽名訊息.</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="542"/>
+        <location filename="../gui/config/serverpage.ui" line="566"/>
         <source>Long-term average bandwidth limit</source>
         <translation>長期平均頻寬限制</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="513"/>
+        <location filename="../gui/config/serverpage.ui" line="537"/>
         <source>Average Rate</source>
         <translation>平均速率</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="630"/>
+        <location filename="../gui/config/serverpage.ui" line="654"/>
         <source>KB/s</source>
         <translation>KB/s</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="617"/>
+        <location filename="../gui/config/serverpage.ui" line="641"/>
         <source>Peak bandwidth rate limit</source>
         <translation>峰值頻寬速率限制</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="588"/>
+        <location filename="../gui/config/serverpage.ui" line="612"/>
         <source>Maximum Rate</source>
         <translation>最大速率</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="424"/>
+        <location filename="../gui/config/serverpage.ui" line="448"/>
         <source>Show help topic on bandwidth rate limits</source>
         <translation>顯示關於頻寬速率限制的相關幫助主題</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="68"/>
+        <location filename="../gui/config/serverpage.ui" line="73"/>
         <source>Basic Settings</source>
         <translation>基本設定</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="322"/>
+        <location filename="../gui/config/serverpage.ui" line="326"/>
         <source>Bandwidth Limits</source>
         <translation>頻寬限制</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="357"/>
+        <location filename="../gui/config/serverpage.ui" line="361"/>
         <source>For Internet connections with fast download speed but slow upload, please list your upload speed here.</source>
         <translation>如網路連接的下行速率較大,而上行速度較慢,請選擇適用的網路連接類型(主要適用於 DSL 用戶)</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="378"/>
+        <location filename="../gui/config/serverpage.ui" line="382"/>
         <source>Select the entry that most closely resembles your Internet connection</source>
         <translation>請選取適合或接近的網絡連接類型</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="388"/>
+        <location filename="../gui/config/serverpage.ui" line="392"/>
         <source>Cable/DSL 256 Kbps</source>
         <translation>寬頻/DSL 256 Kbps</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="393"/>
+        <location filename="../gui/config/serverpage.ui" line="397"/>
         <source>Cable/DSL 512 Kbps</source>
         <translation>寬頻/DSL 512 Kbps</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="398"/>
+        <location filename="../gui/config/serverpage.ui" line="402"/>
         <source>Cable/DSL 768 Kbps</source>
         <translation>寬頻/DSL 768 Kbps</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="403"/>
+        <location filename="../gui/config/serverpage.ui" line="407"/>
         <source>T1/Cable/DSL 1.5 Mbps</source>
         <translation>T1/寬頻/DSL 1.5 Mbps</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="408"/>
+        <location filename="../gui/config/serverpage.ui" line="412"/>
         <source>&gt; 1.5 Mbps</source>
         <translation>頻寬大於 1.5 Mbps</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="413"/>
+        <location filename="../gui/config/serverpage.ui" line="417"/>
         <source>Custom</source>
         <translation>定制頻寬</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="724"/>
+        <location filename="../gui/config/serverpage.ui" line="748"/>
         <source>Ports 6660 - 6669 and 6697</source>
         <translation>埠口範圍: 6660-6669 和 6697</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="727"/>
+        <location filename="../gui/config/serverpage.ui" line="751"/>
         <source>Internet Relay Chat (IRC)</source>
         <translation>IRC 聊天服務</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="737"/>
+        <location filename="../gui/config/serverpage.ui" line="761"/>
         <source>Ports 110, 143, 993 and 995</source>
         <translation>埠口範圍: 110,143,993 和 995</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="740"/>
+        <location filename="../gui/config/serverpage.ui" line="764"/>
         <source>Retrieve Mail (POP, IMAP)</source>
         <translation>郵件接收服務(POP,IMAP)</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="750"/>
+        <location filename="../gui/config/serverpage.ui" line="774"/>
         <source>Ports unspecified by other checkboxes</source>
         <translation>除以上指定埠口外的其它所有埠口</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="753"/>
+        <location filename="../gui/config/serverpage.ui" line="777"/>
         <source>Misc Other Services</source>
         <translation>其它服務</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="763"/>
+        <location filename="../gui/config/serverpage.ui" line="787"/>
         <source>Ports 706, 1863, 5050, 5190, 5222, 8300 and 8888</source>
         <translation>埠口範圍: 706,1863,5050,5190,5222,8300 和 8888</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="766"/>
+        <location filename="../gui/config/serverpage.ui" line="790"/>
         <source>Instant Messaging (IM)</source>
         <translation>即時訊息服務(IM)</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="776"/>
+        <location filename="../gui/config/serverpage.ui" line="800"/>
         <source>Port 443</source>
         <translation>埠口: 443</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="779"/>
+        <location filename="../gui/config/serverpage.ui" line="803"/>
         <source>Secure Websites (SSL)</source>
         <translation>加密網站(SSL)</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="789"/>
+        <location filename="../gui/config/serverpage.ui" line="813"/>
         <source>Port 80</source>
         <translation>埠口: 80</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="792"/>
+        <location filename="../gui/config/serverpage.ui" line="816"/>
         <source>Websites</source>
         <translation>普通網站</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="885"/>
+        <location filename="../gui/config/serverpage.ui" line="929"/>
         <source>What Internet resources should Tor users be able to access from your Tor relay?</source>
         <translation>請選擇其他用戶可以通過此中繼伺服器所使用的網路服務.</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="659"/>
+        <location filename="../gui/config/serverpage.ui" line="683"/>
         <source>Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.cpp" line="76"/>
+        <location filename="../gui/config/serverpage.cpp" line="78"/>
         <source>Server</source>
         <translation type="unfinished">伺服器</translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.cpp" line="136"/>
+        <source>Bridge Support Unavailable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.cpp" line="139"/>
+        <source>You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.cpp" line="141"/>
+        <source>Please upgrade your Tor software or configure Tor to act as a normal Tor relay.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.cpp" line="209"/>
+        <source>You must specify at least a relay nickname and port.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.ui" line="30"/>
+        <source>Run Tor as a client only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.ui" line="44"/>
+        <source>Help censored users reach the Tor network (Tor 0.2.0.3-alpha or newer)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.ui" line="136"/>
+        <source>Relay Port:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.ui" line="172"/>
+        <source>Port on which users and other servers can communicate with your relay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.ui" line="259"/>
+        <source>Email address at which you may be reached if there is a
+problem with your relay. You might also include your PGP or GPG fingerprint.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.ui" line="289"/>
+        <source>Enable to mirror the Tor relay directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.ui" line="292"/>
+        <source>Mirror the Relay Directory </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

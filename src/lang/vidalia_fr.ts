@@ -96,27 +96,27 @@
         <translation>Vidalia démarrera avec les droits du groupe</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="188"/>
+        <location filename="../gui/config/advancedpage.cpp" line="213"/>
         <source>Select Tor Configuration File</source>
         <translation>Sélectionner le fichier de configuration Tor</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="201"/>
+        <location filename="../gui/config/advancedpage.cpp" line="226"/>
         <source>File Not Found</source>
         <translation>Fichier non trouvé</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="203"/>
+        <location filename="../gui/config/advancedpage.cpp" line="228"/>
         <source>%1 does not exist. Would you like to create it?</source>
         <translation>%1 n&apos;existe pas. Voulez-vous le créer ?</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="214"/>
+        <location filename="../gui/config/advancedpage.cpp" line="239"/>
         <source>Failed to Create File</source>
         <translation>La création du fichier a échoué</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="215"/>
+        <location filename="../gui/config/advancedpage.cpp" line="240"/>
         <source>Unable to create %1 [%2]</source>
         <translation>Impossible de créer %1 [%2]</translation>
     </message>
@@ -136,22 +136,22 @@
         <translation>Démarre Tor en arrière-plan comme un service Windows</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="251"/>
+        <location filename="../gui/config/advancedpage.cpp" line="276"/>
         <source>Unable to remove Tor Service</source>
         <translation>Impossible d&apos;enlever le service Tor</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="262"/>
+        <location filename="../gui/config/advancedpage.cpp" line="287"/>
         <source>Unable to install Tor Service</source>
         <translation>Impossible d&apos;installer le service Tor</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="263"/>
+        <location filename="../gui/config/advancedpage.cpp" line="288"/>
         <source>Vidalia was unable to install the Tor service.</source>
         <translation>Vidalia n&apos;a pas pu installer le service Tor.</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="253"/>
+        <location filename="../gui/config/advancedpage.cpp" line="278"/>
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
@@ -165,7 +165,7 @@ Vous devrez peut-être enlever manuellement le service Tor.</translation>
         <translation>Fichier de configuration Tor</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="87"/>
+        <location filename="../gui/config/advancedpage.cpp" line="112"/>
         <source>&apos;%1&apos; is not a valid IP address.</source>
         <translation>&apos;%1&apos; n&apos;est pas une adresse IP valide.</translation>
     </message>
@@ -175,12 +175,12 @@ Vous devrez peut-être enlever manuellement le service Tor.</translation>
         <translation>:</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="98"/>
+        <location filename="../gui/config/advancedpage.cpp" line="123"/>
         <source>You selected &apos;Password&apos; authentication, but did not specify a password.</source>
         <translation>Vous avez choisi une authentification par mot de passe, mais n&apos;avez pas spécifié de mot de passe.</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="230"/>
+        <location filename="../gui/config/advancedpage.cpp" line="255"/>
         <source>Select a Directory to Use for Tor Data</source>
         <translation>Choisir le répertoire utilisé pour les données de Tor</translation>
     </message>
@@ -420,7 +420,7 @@ Vous devrez peut-être enlever manuellement le service Tor.</translation>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="71"/>
         <source>Server</source>
-        <translation>Serveur</translation>
+        <translation type="obsolete">Serveur</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="79"/>
@@ -475,6 +475,11 @@ Vous devrez peut-être enlever manuellement le service Tor.</translation>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="199"/>
         <source>Vidalia was unable to apply your %1 settings to Tor.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/configdialog.cpp" line="71"/>
+        <source>Relay</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -822,27 +827,27 @@ Vous devrez peut-être enlever manuellement le service Tor.</translation>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../gui/mainwindow.ui" line="414"/>
+        <location filename="../gui/mainwindow.ui" line="382"/>
         <source>About</source>
         <translation>À propos</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="427"/>
+        <location filename="../gui/mainwindow.ui" line="395"/>
         <source>Exit</source>
         <translation>Quitter</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="288"/>
+        <location filename="../gui/mainwindow.ui" line="256"/>
         <source>Bandwidth Graph</source>
         <translation>Graphe bande passante</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="301"/>
+        <location filename="../gui/mainwindow.ui" line="269"/>
         <source>Message Log</source>
         <translation>Journal des messages</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="351"/>
+        <location filename="../gui/mainwindow.ui" line="319"/>
         <source>Help</source>
         <translation>Aide</translation>
     </message>
@@ -919,7 +924,7 @@ Vous devrez peut-être enlever manuellement le service Tor.</translation>
     <message>
         <location filename="../gui/mainwindow.cpp" line="623"/>
         <source>Server is Enabled</source>
-        <translation>Le serveur est activé</translation>
+        <translation type="obsolete">Le serveur est activé</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="353"/>
@@ -931,7 +936,7 @@ Vous devrez peut-être enlever manuellement le service Tor.</translation>
         <source>You are currently running a Tor server. Terminating your server will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new server?</source>
-        <translation>Tor est actuellement en mode serveur. L&apos;arrêt de votre serveur interrompra les connections ouvertes des autres clients.
+        <translation type="obsolete">Tor est actuellement en mode serveur. L&apos;arrêt de votre serveur interrompra les connections ouvertes des autres clients.
 
 Voulez-vous arrêter de manière graduelle afin de donner le temps aux clients Tor de trouver un nouveau serveur ?</translation>
     </message>
@@ -950,7 +955,7 @@ Veuillez consulter le journal des messages afin de vérifier ce qui est arrivé 
         <translation>Vidalia n&apos;a pas pu démarrer Tor. Contrôlez vos options et assurez-vous que le nom et le chemin de l&apos;exécutable de Tor sont correctement indiqués.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="364"/>
+        <location filename="../gui/mainwindow.ui" line="332"/>
         <source>Settings</source>
         <translation>Paramètres</translation>
     </message>
@@ -980,12 +985,12 @@ Veuillez consulter le journal des messages afin de vérifier ce qui est arrivé 
         <translation>La création d&apos;une nouvelle identité a échoué</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="217"/>
+        <location filename="../gui/mainwindow.ui" line="185"/>
         <source>Start Tor</source>
         <translation>Démarrer Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="130"/>
+        <location filename="../gui/mainwindow.ui" line="122"/>
         <source>Tor is not running</source>
         <translation>Tor n&apos;est pas en fonctionnement</translation>
     </message>
@@ -1015,82 +1020,82 @@ Veuillez consulter le journal des messages afin de vérifier ce qui est arrivé 
         <translation>État du service Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="193"/>
+        <location filename="../gui/mainwindow.ui" line="170"/>
         <source>Vidalia Shortcuts</source>
         <translation>Raccourcis Vidalia</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="227"/>
+        <location filename="../gui/mainwindow.ui" line="195"/>
         <source>Setup Relaying</source>
         <translation>Installer un relais</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="230"/>
+        <location filename="../gui/mainwindow.ui" line="198"/>
         <source>Set up a Tor relay and help the network grow</source>
         <translation>Configurer un relais Tor, contribuant à la croissance du réseau</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="240"/>
+        <location filename="../gui/mainwindow.ui" line="208"/>
         <source>View the Network</source>
         <translation>Voir le réseau</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="243"/>
+        <location filename="../gui/mainwindow.ui" line="211"/>
         <source>View a map of the Tor network</source>
         <translation>Voir la carte du réseau Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="256"/>
+        <location filename="../gui/mainwindow.ui" line="224"/>
         <source>Use a New Identity</source>
         <translation>Utiliser une nouvelle identité</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="259"/>
+        <location filename="../gui/mainwindow.ui" line="227"/>
         <source>Make subsequent connections appear new</source>
         <translation>Faire que les connexions suivantes apparaissent comme de nouvelles connexions</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="291"/>
+        <location filename="../gui/mainwindow.ui" line="259"/>
         <source>View Tor&apos;s bandwidth usage</source>
         <translation>Voir l&apos;utilisation de bande passante de Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="304"/>
+        <location filename="../gui/mainwindow.ui" line="272"/>
         <source>View Tor&apos;s log message history</source>
         <translation>Voir l&apos;historique du journal des messages de Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="354"/>
+        <location filename="../gui/mainwindow.ui" line="322"/>
         <source>View help documentation</source>
         <translation>Voir la documentation d&apos;aide</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="367"/>
+        <location filename="../gui/mainwindow.ui" line="335"/>
         <source>Configure Tor and Vidalia</source>
         <translation>Configurer Tor et Vidalia</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="417"/>
+        <location filename="../gui/mainwindow.ui" line="385"/>
         <source>View version and license information</source>
         <translation>Voir les informations de version et de licence</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="430"/>
+        <location filename="../gui/mainwindow.ui" line="398"/>
         <source>Exit Vidalia</source>
         <translation>Quitter Vidalia</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="483"/>
+        <location filename="../gui/mainwindow.ui" line="450"/>
         <source>Show this window on startup</source>
         <translation>Afficher cette fenêtre au démarrage</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="502"/>
+        <location filename="../gui/mainwindow.ui" line="469"/>
         <source>Hide</source>
         <translation>Cacher</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="505"/>
+        <location filename="../gui/mainwindow.ui" line="472"/>
         <source>Hide this window</source>
         <translation>Cacher cette fenêtre</translation>
     </message>
@@ -1176,8 +1181,20 @@ Veuillez consulter le journal des messages afin de vérifier ce qui est arrivé 
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="427"/>
-        <source>Your Tor server is shutting down.
+        <source>Your Tor relay is shutting down.
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="623"/>
+        <source>Relaying is Enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/mainwindow.cpp" line="628"/>
+        <source>You are currently running a Tor relay. Terminating your relay will interrupt any open connections from clients.
+
+Would you like to shutdown gracefully and give clients time to find a new relay?</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1581,7 +1598,7 @@ les développeurs de Tor.</translation>
     <message>
         <location filename="../gui/network/netviewer.ui" line="259"/>
         <source>Refresh the list of routers and connections</source>
-        <translation>Rafraîchir la liste des routeurs et connexions</translation>
+        <translation type="obsolete">Rafraîchir la liste des routeurs et connexions</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="278"/>
@@ -1652,6 +1669,11 @@ les développeurs de Tor.</translation>
         <location filename="../gui/network/netviewer.ui" line="32"/>
         <source>Tor Network Map</source>
         <translation>Carte du réseau Tor</translation>
+    </message>
+    <message>
+        <location filename="../gui/network/netviewer.ui" line="259"/>
+        <source>Refresh the list of Tor relays and connections</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1879,17 +1901,32 @@ les développeurs de Tor.</translation>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="44"/>
         <source>Server</source>
-        <translation>Serveur</translation>
+        <translation type="obsolete">Serveur</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="55"/>
         <source>Zoom to Server</source>
-        <translation>Adapter le zoom au serveur</translation>
+        <translation type="obsolete">Adapter le zoom au serveur</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="231"/>
         <source>%1 servers online (%2 total)</source>
-        <translation>%1 serveurs connectés (%2 au total)</translation>
+        <translation type="obsolete">%1 serveurs connectés (%2 au total)</translation>
+    </message>
+    <message>
+        <location filename="../gui/network/routerlistwidget.cpp" line="44"/>
+        <source>Relay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/network/routerlistwidget.cpp" line="55"/>
+        <source>Zoom to Relay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/network/routerlistwidget.cpp" line="231"/>
+        <source>%1 relays online (%2 total)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1897,237 +1934,293 @@ les développeurs de Tor.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="33"/>
         <source>Check to run as a Tor network server</source>
-        <translation>Cocher pour héberger un serveur du réseau Tor</translation>
+        <translation type="obsolete">Cocher pour héberger un serveur du réseau Tor</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="36"/>
+        <location filename="../gui/config/serverpage.ui" line="37"/>
         <source>Relay traffic for the Tor network</source>
         <translation>Relayer le trafic pour le réseau Tor</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="209"/>
+        <location filename="../gui/config/serverpage.ui" line="214"/>
         <source>Directory Port:</source>
         <translation>Port de l&apos;annuaire : </translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="109"/>
+        <location filename="../gui/config/serverpage.ui" line="114"/>
         <source>Nickname:</source>
         <translation>Surnom : </translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="269"/>
+        <location filename="../gui/config/serverpage.ui" line="273"/>
         <source>Name of your server</source>
         <translation>Nom de votre serveur</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="177"/>
+        <location filename="../gui/config/serverpage.ui" line="182"/>
         <source>Contact Info:</source>
         <translation>Contact Info : </translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="131"/>
         <source>Server Port:</source>
-        <translation>Port du serveur : </translation>
+        <translation type="obsolete">Port du serveur : </translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="167"/>
         <source>Port on which users and other servers can communicate with your server</source>
-        <translation>Port avec lequel les autres utilisateurs et serveurs
+        <translation type="obsolete">Port avec lequel les autres utilisateurs et serveurs
 communiquent avec votre serveur</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="285"/>
         <source>Enable to mirror the server directory</source>
-        <translation>Cocher pour servir de miroir à l&apos;annuaire de serveurs</translation>
+        <translation type="obsolete">Cocher pour servir de miroir à l&apos;annuaire de serveurs</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="288"/>
         <source>Mirror the Server Directory </source>
-        <translation>Servir de miroir à l&apos;annuaire de serveurs </translation>
+        <translation type="obsolete">Servir de miroir à l&apos;annuaire de serveurs </translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="686"/>
+        <location filename="../gui/config/serverpage.ui" line="710"/>
         <source>Exit Policies</source>
         <translation>Stratégie de sortie</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="812"/>
+        <location filename="../gui/config/serverpage.ui" line="856"/>
         <source>Show help topic on exit policies</source>
         <translation>Montre la rubrique d&apos;aide des stratégies de sortie</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="124"/>
         <source>You must specify at least a server nickname and port.</source>
-        <translation>Vous devez indiquer au moins un surnom et un port de serveur.</translation>
+        <translation type="obsolete">Vous devez indiquer au moins un surnom et un port de serveur.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="254"/>
         <source>Email address at which you may be reached if there is a
 problem with your server. You might also include your PGP or GPG
 fingerprint.</source>
-        <translation>Adresse email à laquelle vous pouvez être contacté 
+        <translation type="obsolete">Adresse email à laquelle vous pouvez être contacté 
 s&apos;il y a un problème avec votre serveur. Vous pouvez également inclure
 votre fingerprint de PGP ou de GPG.</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="542"/>
+        <location filename="../gui/config/serverpage.ui" line="566"/>
         <source>Long-term average bandwidth limit</source>
         <translation>Limite à long terme de la  moyenne de bande passante</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="513"/>
+        <location filename="../gui/config/serverpage.ui" line="537"/>
         <source>Average Rate</source>
         <translation>Taux moyen</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="630"/>
+        <location filename="../gui/config/serverpage.ui" line="654"/>
         <source>KB/s</source>
         <translation>Ko/s</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="617"/>
+        <location filename="../gui/config/serverpage.ui" line="641"/>
         <source>Peak bandwidth rate limit</source>
         <translation>Limite maximale du taux de bande passante</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="588"/>
+        <location filename="../gui/config/serverpage.ui" line="612"/>
         <source>Maximum Rate</source>
         <translation>Taux Maximum</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="424"/>
+        <location filename="../gui/config/serverpage.ui" line="448"/>
         <source>Show help topic on bandwidth rate limits</source>
         <translation>Voir la rubrique d&apos;aide de limitation de bande passante</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="239"/>
+        <location filename="../gui/config/serverpage.ui" line="244"/>
         <source>Directory Port Number</source>
         <translation>N° du port de l&apos;annuaire</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="68"/>
+        <location filename="../gui/config/serverpage.ui" line="73"/>
         <source>Basic Settings</source>
         <translation>Options de base</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="322"/>
+        <location filename="../gui/config/serverpage.ui" line="326"/>
         <source>Bandwidth Limits</source>
         <translation>Limites de bande passante</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="357"/>
+        <location filename="../gui/config/serverpage.ui" line="361"/>
         <source>For Internet connections with fast download speed but slow upload, please list your upload speed here.</source>
         <translation>Pour les connexions Internet qui ont une vitesse de téléchargement élevée en descente mais lente en montée, entrez ici votre vitesse en montée.</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="378"/>
+        <location filename="../gui/config/serverpage.ui" line="382"/>
         <source>Select the entry that most closely resembles your Internet connection</source>
         <translation>Sélectionner dans la liste le type qui se rapproche le plus de votre connexion Internet</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="388"/>
+        <location filename="../gui/config/serverpage.ui" line="392"/>
         <source>Cable/DSL 256 Kbps</source>
         <translation>Câble/ADSL 256 kbit/s</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="393"/>
+        <location filename="../gui/config/serverpage.ui" line="397"/>
         <source>Cable/DSL 512 Kbps</source>
         <translation>Câble/ADSL 512 kbit/s</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="398"/>
+        <location filename="../gui/config/serverpage.ui" line="402"/>
         <source>Cable/DSL 768 Kbps</source>
         <translation>Câble/ADSL 768 kbit/s</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="403"/>
+        <location filename="../gui/config/serverpage.ui" line="407"/>
         <source>T1/Cable/DSL 1.5 Mbps</source>
         <translation>T1/Câble/ADSL 1.5 Mbit/s</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="408"/>
+        <location filename="../gui/config/serverpage.ui" line="412"/>
         <source>&gt; 1.5 Mbps</source>
         <translation>&gt; 1.5 Mbit/s</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="413"/>
+        <location filename="../gui/config/serverpage.ui" line="417"/>
         <source>Custom</source>
         <translation>Autre type </translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="724"/>
+        <location filename="../gui/config/serverpage.ui" line="748"/>
         <source>Ports 6660 - 6669 and 6697</source>
         <translation>Ports 6660 - 6669 et 6697</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="727"/>
+        <location filename="../gui/config/serverpage.ui" line="751"/>
         <source>Internet Relay Chat (IRC)</source>
         <translation>Internet Relay Chat (IRC)</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="737"/>
+        <location filename="../gui/config/serverpage.ui" line="761"/>
         <source>Ports 110, 143, 993 and 995</source>
         <translation>Ports 110, 143, 993 et 995</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="740"/>
+        <location filename="../gui/config/serverpage.ui" line="764"/>
         <source>Retrieve Mail (POP, IMAP)</source>
         <translation>Recevoir le courrier électronique (POP, IMAP)</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="750"/>
+        <location filename="../gui/config/serverpage.ui" line="774"/>
         <source>Ports unspecified by other checkboxes</source>
         <translation>Ports non spécifiés par d&apos;autres choix prédéfinis</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="753"/>
+        <location filename="../gui/config/serverpage.ui" line="777"/>
         <source>Misc Other Services</source>
         <translation>Divers autres services</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="763"/>
+        <location filename="../gui/config/serverpage.ui" line="787"/>
         <source>Ports 706, 1863, 5050, 5190, 5222, 8300 and 8888</source>
         <translation>Ports 706, 1863, 5050, 5190, 5222, 8300 et 8888</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="766"/>
+        <location filename="../gui/config/serverpage.ui" line="790"/>
         <source>Instant Messaging (IM)</source>
         <translation>Messagerie instantanée (IM)</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="776"/>
+        <location filename="../gui/config/serverpage.ui" line="800"/>
         <source>Port 443</source>
         <translation>Port 443</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="779"/>
+        <location filename="../gui/config/serverpage.ui" line="803"/>
         <source>Secure Websites (SSL)</source>
         <translation>Sites Web sécurisés (SSL)</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="789"/>
+        <location filename="../gui/config/serverpage.ui" line="813"/>
         <source>Port 80</source>
         <translation>Port 80</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="792"/>
+        <location filename="../gui/config/serverpage.ui" line="816"/>
         <source>Websites</source>
         <translation>Sites Web</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="885"/>
+        <location filename="../gui/config/serverpage.ui" line="929"/>
         <source>What Internet resources should Tor users be able to access from your Tor relay?</source>
         <translation>À quels types de ressources Internet voulez-vous que les utlisateurs de Tor puissent accéder à partir de votre relais Tor ? </translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="659"/>
+        <location filename="../gui/config/serverpage.ui" line="683"/>
         <source>Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s.</source>
         <translation>Votre taux de bande passante maximum doit être supérieur ou égal à votre taux de bande passante moyen. Les deux valeurs doivent être au moins 20 KB/s.</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.cpp" line="76"/>
+        <location filename="../gui/config/serverpage.cpp" line="78"/>
         <source>Server</source>
         <translation type="unfinished">Serveur</translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.cpp" line="136"/>
+        <source>Bridge Support Unavailable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.cpp" line="139"/>
+        <source>You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.cpp" line="141"/>
+        <source>Please upgrade your Tor software or configure Tor to act as a normal Tor relay.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.cpp" line="209"/>
+        <source>You must specify at least a relay nickname and port.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.ui" line="30"/>
+        <source>Run Tor as a client only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.ui" line="44"/>
+        <source>Help censored users reach the Tor network (Tor 0.2.0.3-alpha or newer)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.ui" line="136"/>
+        <source>Relay Port:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.ui" line="172"/>
+        <source>Port on which users and other servers can communicate with your relay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.ui" line="259"/>
+        <source>Email address at which you may be reached if there is a
+problem with your relay. You might also include your PGP or GPG fingerprint.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.ui" line="289"/>
+        <source>Enable to mirror the Tor relay directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.ui" line="292"/>
+        <source>Mirror the Relay Directory </source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
