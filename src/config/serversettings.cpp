@@ -62,7 +62,11 @@ ServerSettings::ServerSettings(TorControl *torControl)
 {
   setDefault(SETTING_ENABLED,       false);
   setDefault(SETTING_DIRMIRROR,     true);
+#if defined(Q_OS_WIN32)
+  setDefault(SETTING_ORPORT,        443);
+#else
   setDefault(SETTING_ORPORT,        9001);
+#endif
   setDefault(SETTING_DIRPORT,       9030);
   setDefault(SETTING_CONTACT,       "<your@email.com>");
   setDefault(SETTING_BANDWIDTH_RATE,  3145728);
