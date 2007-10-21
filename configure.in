@@ -108,6 +108,9 @@ saved_CXXFLAGS="$CXXFLAGS"
 CXXFLAGS="-I$QTDATA/include -I$QTDATA/include/QtCore -I$QTDATA/include/QtGui"
 
 if test $OS = "Darwin"; then
+  # We want a Makefile, instead of an XCode project
+  QFLAGS="$QFLAGS -makefile -spec macx-g++"
+
   # On Mac, we need to see if Qt is built as a series of frameworks
   AC_CACHE_CHECK([if Qt is built as a framework], ac_cv_qt_is_framework, [
     saved_LDFLAGS="$LDFLAGS"
