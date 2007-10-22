@@ -232,7 +232,7 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="45"/>
         <source>Advanced</source>
-        <translation type="unfinished">Zaawansowane</translation>
+        <translation>Zaawansowane</translation>
     </message>
 </context>
 <context>
@@ -265,7 +265,7 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../gui/config/appearancepage.cpp" line="34"/>
         <source>Appearance</source>
-        <translation type="unfinished">Wygląd</translation>
+        <translation>Wygląd</translation>
     </message>
 </context>
 <context>
@@ -455,32 +455,32 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="67"/>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Sieć</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="168"/>
         <source>Error Saving Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd zapisu ustawień</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="170"/>
         <source>Vidalia was unable to save your %1 settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia nie mogła zapisać ustawień %l.</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="197"/>
         <source>Error Applying Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd aplikowania ustawień</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="199"/>
         <source>Vidalia was unable to apply your %1 settings to Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia nie mogła zastosować Twoich ustawień %l.</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="71"/>
         <source>Relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Przekazywanie połączeń</translation>
     </message>
 </context>
 <context>
@@ -498,7 +498,7 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../control/controlconnection.cpp" line="139"/>
         <source>Vidalia was unable to connect to Tor. (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Viadalia nie mogła się połączyć z Torem. (%1)</translation>
     </message>
 </context>
 <context>
@@ -584,7 +584,7 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../gui/config/generalpage.cpp" line="32"/>
         <source>General</source>
-        <translation type="unfinished">Ogólne</translation>
+        <translation>Główne</translation>
     </message>
 </context>
 <context>
@@ -1027,12 +1027,12 @@ Proszę sprawdzić Dziennik Logów, aby zidentyfikować przyczynę.</translation
     <message>
         <location filename="../gui/mainwindow.ui" line="195"/>
         <source>Setup Relaying</source>
-        <translation>Ustawienia serwera</translation>
+        <translation>Ustawienia węzła</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="198"/>
         <source>Set up a Tor relay and help the network grow</source>
-        <translation>Ustaw serwer i pomóż sieci w ekspansji</translation>
+        <translation>Uruchom węzeł Tora i pomóż sieci w ekspansji</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="208"/>
@@ -1177,25 +1177,28 @@ Proszę sprawdzić Dziennik Logów, aby zidentyfikować przyczynę.</translation
     <message>
         <location filename="../gui/mainwindow.cpp" line="834"/>
         <source>Please enter your control password (not the hash):</source>
-        <translation>PRoszę wpisać hasło sterujące (nie hash):</translation>
+        <translation>Proszę wpisać hasło sterujące (nie hash):</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="427"/>
         <source>Your Tor relay is shutting down.
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Twój węzeł Tora zostaje wyłączony.
+        Kliknij &apos;Zatrzymaj Tora&apos; ponownie, aby zatrzymać.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="623"/>
         <source>Relaying is Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Przekazywanie połączeń Aktywne.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="628"/>
         <source>You are currently running a Tor relay. Terminating your relay will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new relay?</source>
-        <translation type="unfinished"></translation>
+        <translation>Masz uruchomiony węzeł Tora. Zamknięcie go skutkuje przerwaniem wszystkich połączeń od klientów.
+
+Czy chciałbyś ich o tym powiadomić i dać czas na znalezienie nowego węzła ?</translation>
     </message>
 </context>
 <context>
@@ -1672,7 +1675,7 @@ dla programistów ekipy Tora</translation>
     <message>
         <location filename="../gui/network/netviewer.ui" line="259"/>
         <source>Refresh the list of Tor relays and connections</source>
-        <translation type="unfinished"></translation>
+        <translation>Odśwież listę węzłów Tora i połączeń</translation>
     </message>
 </context>
 <context>
@@ -1680,137 +1683,137 @@ dla programistów ekipy Tora</translation>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="45"/>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Sieć</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="178"/>
         <source>Invalid Bridge</source>
-        <translation type="unfinished"></translation>
+        <translation>Niepoprawny Węzeł-Most</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="179"/>
         <source>The specified bridge identifier is not valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Określony identyfikator Węzła-Mostu nie jest poprawny.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="226"/>
         <source>Copy (Ctrl+C)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiuj (Ctrl+C)</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="255"/>
         <source>You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Musisz określić adres IP lub nazwę hosta oraz numer portu, aby Tor mógł używać serwera proxy w dostępie do Internetu.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="261"/>
         <source>You must specify one or more ports to which your firewall allows you to connect.</source>
-        <translation type="unfinished"></translation>
+        <translation>Musisz określić jeden lub kilka portów, na których Twój firewall akceptuje przychodzące połączenia.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="297"/>
         <source>&apos;%1&apos; is not a valid port number.</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%1&apos; nie jest poprawnym numerem portu.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="30"/>
         <source>Check to configure Tor to use a proxy to access the Internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaznacz, aby Tor korzystał z serwera proxy</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="33"/>
         <source>I use a proxy to access the Internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Używam proxy w dostępie do Internetu</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="63"/>
         <source>Proxy Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienia Proxy</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="75"/>
         <source>HTTP Proxy:</source>
-        <translation type="unfinished"></translation>
+        <translation>HTTP Proxy:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="85"/>
         <source>Username:</source>
-        <translation type="unfinished"></translation>
+        <translation>Użytkownik:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="95"/>
         <source>Use this proxy for HTTPS also</source>
-        <translation type="unfinished"></translation>
+        <translation>Użyj tego proxy również dla połączeń HTTPS</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="113"/>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hasło:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="140"/>
         <source>Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Port</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="181"/>
         <source>Check to configure Tor to only connect to servers using ports allowed by your firewall</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaznacz, aby Tor łaczył się do serwerów tylko na portach akceptowanych przez Twój firewall</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="184"/>
         <source>My firewall only lets me connect to certain ports</source>
-        <translation type="unfinished"></translation>
+        <translation>Mój firewall pozwala mi na połączenia tylko na niektórych portach</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="208"/>
         <source>Firewall Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawienia Firewalla</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="220"/>
         <source>Allowed Ports:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dozwolone porty:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="230"/>
         <source>80, 443</source>
-        <translation type="unfinished">80, 443</translation>
+        <translation>80, 443</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="240"/>
         <source>Check to configure Tor to use bridge servers to access the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaznacz, aby Tor używał węzłów-mostów w dostępie do sieci Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="243"/>
         <source>My ISP blocks connections to the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Mój dostawca internetu blokuje połączenia do sieci Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="267"/>
         <source>Tor Bridge Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ustawiania Węzła-Mostu</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="279"/>
         <source>The Tor version you are currently running does not support bridges. &lt;br&gt;Tor will still try to encrypt its directory connections.</source>
-        <translation type="unfinished"></translation>
+        <translation>Twoja wersja Tora nie obsługuje węzłów-mostów. &lt;br&gt; Tor spróbuje szyfrować swoje połączenia.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="300"/>
         <source>Add a Bridge:</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj Węzeł-Most:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="372"/>
         <source>Remove the selected bridges from the list</source>
-        <translation type="unfinished"></translation>
+        <translation>Usuń wybrane węzły-mosty z listy</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="394"/>
         <source>Copy the selected bridges to the clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiuj wybrane węzły-mosty do schowka</translation>
     </message>
 </context>
 <context>
@@ -1915,17 +1918,17 @@ dla programistów ekipy Tora</translation>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="44"/>
         <source>Relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Węzeł</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="55"/>
         <source>Zoom to Relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Zbliż do węzła</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="231"/>
         <source>%1 relays online (%2 total)</source>
-        <translation type="unfinished"></translation>
+        <translation>%l węzłów aktywnych (%2 wszystkich)</translation>
     </message>
 </context>
 <context>
@@ -1948,7 +1951,7 @@ dla programistów ekipy Tora</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="244"/>
         <source>Directory Port Number</source>
-        <translation>Numer portu Listy Serwerów</translation>
+        <translation>Numer portu Katalogu Węzłów</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="114"/>
@@ -2150,7 +2153,7 @@ fingerprint.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="929"/>
         <source>What Internet resources should Tor users be able to access from your Tor relay?</source>
-        <translation>Do jakich zasobów Internetu będą mieli dostęp użytkownicy Tora korzystający z Twojego serwera?</translation>
+        <translation>Do jakich zasobów Internetu będą mieli dostęp użytkownicy Tora korzystający z Twojego węzła?</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="683"/>
@@ -2160,63 +2163,64 @@ fingerprint.</source>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="78"/>
         <source>Server</source>
-        <translation type="unfinished">Serwer</translation>
+        <translation>Serwer</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="136"/>
         <source>Bridge Support Unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation>Wsparcie dla węzłów-mostów niedostępne</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="139"/>
         <source>You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges.</source>
-        <translation type="unfinished"></translation>
+        <translation>Skonfigurowałeś swojego Tora jako węzeł-most dla zablokowanych użytkowników, ale Twoja wersja Tora nie obsługuje tej funkcji.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="141"/>
         <source>Please upgrade your Tor software or configure Tor to act as a normal Tor relay.</source>
-        <translation type="unfinished"></translation>
+        <translation>Uaktualnij Tora bądź skonfiguruj go do pracy jako zwykły węzeł.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="209"/>
         <source>You must specify at least a relay nickname and port.</source>
-        <translation type="unfinished"></translation>
+        <translation>Musisz podać przynajmniej nazwę węzła oraz port.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="30"/>
         <source>Run Tor as a client only</source>
-        <translation type="unfinished"></translation>
+        <translation>Uruchamiaj Tora tylko w funkcji klienta</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="44"/>
         <source>Help censored users reach the Tor network (Tor 0.2.0.3-alpha or newer)</source>
-        <translation type="unfinished"></translation>
+        <translation>Pomaga zablokowanym użytkownikom uzyskać dostęp do sieci Tor (Tor 0.2.0.3-alpha i nowsze)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="136"/>
         <source>Relay Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Port węzła:</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="172"/>
         <source>Port on which users and other servers can communicate with your relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Port na którym użytkownicy i inne serwery komunikują się z Twoim węzłem</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="259"/>
         <source>Email address at which you may be reached if there is a
 problem with your relay. You might also include your PGP or GPG fingerprint.</source>
-        <translation type="unfinished"></translation>
+        <translation>Adres e-mail pod którym będziesz dostępny, gdyby wystąpiły problemy z Twoim węzłem.
+Możesz również załączyć swój klucz PGP lub GPG.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="289"/>
         <source>Enable to mirror the Tor relay directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaznacz aby zachowywac kopię Katalogu Węzłów</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="292"/>
         <source>Mirror the Relay Directory </source>
-        <translation type="unfinished"></translation>
+        <translation>Twórz kopię Katalogu Węzłów</translation>
     </message>
 </context>
 <context>
@@ -2264,7 +2268,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../control/stream.cpp" line="137"/>
         <source>Remapped</source>
-        <translation type="unfinished"></translation>
+        <translation>Przemapowane</translation>
     </message>
 </context>
 <context>
