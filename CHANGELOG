@@ -1,11 +1,13 @@
-0.0.15  xx-Oct-2007
+0.0.15  23-Oct-2007
   o Add a new 'Network' settings page to the config dialog that lets users
     configure an HTTP/HTTPS proxy, specify allowed ports if they are behind a
     restrictive firewall or proxy, and set up bridges and tunneled dir conns.
   o Add a 'Help Censored Users Connect to the Tor Network' option to the
     'Server' settings page to help users set up their Tor as a brigde relay.
-    This option is only available for those running Tor 0.2.0.3-alpha or
+    This option is only available for those running Tor 0.2.0.8-alpha or
     newer.
+  o Stop hardcoding a font size of 10 in many places. This made the fonts on
+    Mac OS X look non-standard and inconsistent.
   o Restructure the code that manages GETCONFing values from Tor and then
     later SETCONFing any changed values to make it easier to add more pages
     like the 'Network' and 'Server' settings pages in the future.
@@ -38,8 +40,8 @@
   o Support changing Tor's control port and authentication settings without
     having to restart Tor for the settings to take effect.
   o Recognize the REMAP stream status in STREAM events.
-  o Allow the control panel window to expand horizontally to fit longer
-    translated text labels.
+  o Allow the control panel window to expand horizontally and vertically to
+    fit longer translated text labels.
   o Make VClickLabel right-to-left aware so the control panel buttons look
     correct when using the Farsi translation.
   o Fix our configure.in to produce a Makefile instead of an Xcode project on
