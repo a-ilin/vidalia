@@ -174,7 +174,7 @@
           <string>Find Previous</string>
          </property>
          <property name="icon" >
-          <iconset resource="..\..\res\vidalia_common.qrc" >:/images/16x16/go-previous.png</iconset>
+          <iconset resource="..\..\res\vidalia_common.qrc">:/images/22x22/go-up.png</iconset>
          </property>
         </widget>
        </item>
@@ -187,7 +187,7 @@
           <string>Find Next</string>
          </property>
          <property name="icon" >
-          <iconset resource="..\..\res\vidalia_common.qrc" >:/images/16x16/go-next.png</iconset>
+          <iconset resource="..\..\res\vidalia_common.qrc">:/images/22x22/go-down.png</iconset>
          </property>
         </widget>
        </item>
