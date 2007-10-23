@@ -112,13 +112,13 @@
              <enum>Qt::AutoText</enum>
             </property>
             <property name="alignment" >
-             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
             <property name="margin" >
-             <number>-1</number>
+             <number>0</number>
             </property>
             <property name="indent" >
-             <number>13</number>
+             <number>0</number>
             </property>
            </widget>
           </item>
@@ -131,13 +131,13 @@
              <string>Relay Port:</string>
             </property>
             <property name="alignment" >
-             <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
             <property name="margin" >
-             <number>-1</number>
+             <number>0</number>
             </property>
             <property name="indent" >
-             <number>7</number>
+             <number>0</number>
             </property>
            </widget>
           </item>
@@ -179,6 +179,9 @@
             <property name="alignment" >
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
+            <property name="indent" >
+             <number>0</number>
+            </property>
            </widget>
           </item>
           <item row="4" column="3" colspan="3" >
@@ -207,6 +210,9 @@
               </property>
               <property name="text" >
                <string>Directory Port:</string>
+              </property>
+              <property name="alignment" >
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
               </property>
              </widget>
             </item>
