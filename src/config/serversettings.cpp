@@ -123,7 +123,7 @@ ServerSettings::confValues()
   
   /* If we're a bridge, don't publish our server descriptor */
   conf.insert(SETTING_PUBLISH_DESCRIPTOR,
-              (torVersion >= 0x020003 && isBridgeEnabled() ? "bridge" : "1"));
+              (torVersion >= 0x020008 && isBridgeEnabled() ? "bridge" : "1"));
 
   return conf;
 }

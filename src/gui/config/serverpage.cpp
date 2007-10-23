@@ -129,7 +129,7 @@ void
 ServerPage::onAuthenticated()
 {
   quint32 torVersion = Vidalia::torControl()->getTorVersion();
-  if (torVersion < 0x020003) {
+  if (torVersion < 0x020008) {
     ui.rdoBridgeMode->setEnabled(false);
     if (ui.rdoBridgeMode->isChecked()) {
       int ret = VMessageBox::warning(this,
