@@ -1,7 +1,4 @@
 <ui version="4.0" >
- <author></author>
- <comment></comment>
- <exportmacro></exportmacro>
  <class>NetViewer</class>
  <widget class="QMainWindow" name="NetViewer" >
   <property name="geometry" >
@@ -9,7 +6,7 @@
     <x>0</x>
     <y>0</y>
     <width>844</width>
-    <height>482</height>
+    <height>596</height>
    </rect>
   </property>
   <property name="sizePolicy" >
@@ -72,18 +69,18 @@
        <property name="statusTip" >
         <string/>
        </property>
+       <property name="indentation" >
+        <number>0</number>
+       </property>
        <property name="sortingEnabled" >
         <bool>true</bool>
-       </property>
-       <property name="indentation" >
-        <number>0</number> 
        </property>
       </widget>
       <widget class="QSplitter" name="splitter3" >
        <property name="sizePolicy" >
         <sizepolicy>
          <hsizetype>5</hsizetype>
-         <vsizetype>7</vsizetype>
+         <vsizetype>5</vsizetype>
          <horstretch>100</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -103,13 +100,13 @@
           <hsizetype>7</hsizetype>
           <vsizetype>7</vsizetype>
           <horstretch>100</horstretch>
-          <verstretch>0</verstretch>
+          <verstretch>100</verstretch>
          </sizepolicy>
         </property>
         <property name="minimumSize" >
          <size>
           <width>400</width>
-          <height>200</height>
+          <height>300</height>
          </size>
         </property>
         <property name="contextMenuPolicy" >
@@ -144,9 +141,9 @@
         <property name="sizePolicy" >
          <sizepolicy>
           <hsizetype>7</hsizetype>
-          <vsizetype>5</vsizetype>
+          <vsizetype>1</vsizetype>
           <horstretch>100</horstretch>
-          <verstretch>100</verstretch>
+          <verstretch>1</verstretch>
          </sizepolicy>
         </property>
         <property name="contextMenuPolicy" >
@@ -162,8 +159,8 @@
          <property name="sizePolicy" >
           <sizepolicy>
            <hsizetype>5</hsizetype>
-           <vsizetype>7</vsizetype>
-           <horstretch>1</horstretch>
+           <vsizetype>5</vsizetype>
+           <horstretch>100</horstretch>
            <verstretch>100</verstretch>
           </sizepolicy>
          </property>
@@ -187,7 +184,7 @@
          <property name="sizePolicy" >
           <sizepolicy>
            <hsizetype>5</hsizetype>
-           <vsizetype>7</vsizetype>
+           <vsizetype>5</vsizetype>
            <horstretch>100</horstretch>
            <verstretch>100</verstretch>
           </sizepolicy>
@@ -205,16 +202,7 @@
     </item>
    </layout>
   </widget>
-  <widget class="QStatusBar" name="statusbar" >
-   <property name="geometry" >
-    <rect>
-     <x>0</x>
-     <y>458</y>
-     <width>844</width>
-     <height>24</height>
-    </rect>
-   </property>
-  </widget>
+  <widget class="QStatusBar" name="statusbar" />
   <widget class="QToolBar" name="toolBar" >
    <property name="contextMenuPolicy" >
     <enum>Qt::NoContextMenu</enum>
@@ -247,13 +235,13 @@
    <property name="text" >
     <string>Refresh</string>
    </property>
-   <property name="statusTip" >
-    <string>Refresh the list of Tor relays and connections</string>
-   </property>
    <property name="toolTip" >
     <string>Refresh the list of Tor relays and connections</string>
    </property>
-   <property name="shortcut">
+   <property name="statusTip" >
+    <string>Refresh the list of Tor relays and connections</string>
+   </property>
+   <property name="shortcut" >
     <string>Ctrl+R</string>
    </property>
   </action>
@@ -264,13 +252,13 @@
    <property name="text" >
     <string>Help</string>
    </property>
-   <property name="statusTip" >
-    <string>Show network map help</string>
-   </property>
    <property name="toolTip" >
     <string>Show the network map help</string>
    </property>
-   <property name="shortcut">
+   <property name="statusTip" >
+    <string>Show network map help</string>
+   </property>
+   <property name="shortcut" >
     <string>F1</string>
    </property>
   </action>
@@ -281,13 +269,13 @@
    <property name="text" >
     <string>Close</string>
    </property>
-   <property name="statusTip" >
-    <string>Close the network map</string>
-   </property>
    <property name="toolTip" >
     <string>Close the network map</string>
    </property>
-   <property name="shortcut">
+   <property name="statusTip" >
+    <string>Close the network map</string>
+   </property>
+   <property name="shortcut" >
     <string>Esc</string>
    </property>
   </action>
@@ -298,13 +286,13 @@
    <property name="text" >
     <string>Zoom In</string>
    </property>
-   <property name="statusTip" >
-    <string>Zoom in on the network map</string>
-   </property>
    <property name="toolTip" >
     <string>Zoom in on the network map</string>
    </property>
-   <property name="shortcut">
+   <property name="statusTip" >
+    <string>Zoom in on the network map</string>
+   </property>
+   <property name="shortcut" >
     <string>+</string>
    </property>
   </action>
@@ -315,13 +303,13 @@
    <property name="text" >
     <string>Zoom Out</string>
    </property>
-   <property name="statusTip" >
-    <string>Zoom out on the network map</string>
-   </property>
    <property name="toolTip" >
     <string>Zoom out on the network map</string>
    </property>
-   <property name="shortcut">
+   <property name="statusTip" >
+    <string>Zoom out on the network map</string>
+   </property>
+   <property name="shortcut" >
     <string>-</string>
    </property>
   </action>
@@ -332,39 +320,32 @@
    <property name="text" >
     <string>Zoom To Fit</string>
    </property>
-   <property name="statusTip" >
-    <string>Zooms to fit all currently displayed circuits</string>
-   </property>
    <property name="toolTip" >
     <string>Zooms to fit all currently displayed circuits</string>
    </property>
-   <property name="shortcut">
+   <property name="statusTip" >
+    <string>Zooms to fit all currently displayed circuits</string>
+   </property>
+   <property name="shortcut" >
     <string>Ctrl+Z</string>
    </property>
   </action>
  </widget>
- <pixmapfunction></pixmapfunction>
  <customwidgets>
   <customwidget>
    <class>RouterDescriptorView</class>
    <extends>QTextEdit</extends>
    <header>gui/network/routerdescriptorview.h</header>
-   <container>0</container>
-   <pixmap></pixmap>
   </customwidget>
   <customwidget>
    <class>RouterListWidget</class>
    <extends>QTreeWidget</extends>
    <header>gui/network/routerlistwidget.h</header>
-   <container>0</container>
-   <pixmap></pixmap>
   </customwidget>
   <customwidget>
    <class>CircuitListWidget</class>
    <extends>QTreeWidget</extends>
    <header>gui/network/circuitlistwidget.h</header>
-   <container>0</container>
-   <pixmap></pixmap>
   </customwidget>
  </customwidgets>
  <resources>
