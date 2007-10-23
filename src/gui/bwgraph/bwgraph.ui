@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>283</width>
-    <height>138</height>
+    <width>379</width>
+    <height>266</height>
    </rect>
   </property>
   <property name="contextMenuPolicy" >
@@ -20,20 +20,8 @@
   </property>
   <widget class="QWidget" name="centralwidget" >
    <layout class="QGridLayout" >
-    <property name="margin" >
-     <number>9</number>
-    </property>
-    <property name="spacing" >
-     <number>6</number>
-    </property>
     <item row="1" column="0" >
      <layout class="QHBoxLayout" >
-      <property name="margin" >
-       <number>0</number>
-      </property>
-      <property name="spacing" >
-       <number>6</number>
-      </property>
       <item>
        <widget class="QPushButton" name="btnToggleSettings" >
         <property name="text" >
@@ -93,9 +81,7 @@
     <item row="2" column="0" >
      <widget class="QFrame" name="frmSettings" >
       <property name="sizePolicy" >
-       <sizepolicy>
-        <hsizetype>0</hsizetype>
-        <vsizetype>0</vsizetype>
+       <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
@@ -122,19 +108,34 @@
        <enum>QFrame::Raised</enum>
       </property>
       <layout class="QHBoxLayout" >
-       <property name="margin" >
-        <number>9</number>
-       </property>
        <property name="spacing" >
-        <number>6</number>
+        <number>0</number>
+       </property>
+       <property name="leftMargin" >
+        <number>5</number>
+       </property>
+       <property name="topMargin" >
+        <number>5</number>
+       </property>
+       <property name="rightMargin" >
+        <number>5</number>
+       </property>
+       <property name="bottomMargin" >
+        <number>5</number>
        </property>
        <item>
         <layout class="QVBoxLayout" >
-         <property name="margin" >
+         <property name="leftMargin" >
           <number>3</number>
          </property>
-         <property name="spacing" >
-          <number>6</number>
+         <property name="topMargin" >
+          <number>3</number>
+         </property>
+         <property name="rightMargin" >
+          <number>3</number>
+         </property>
+         <property name="bottomMargin" >
+          <number>3</number>
          </property>
          <item>
           <widget class="QCheckBox" name="chkReceiveRate" >
@@ -201,20 +202,11 @@
        </item>
        <item>
         <layout class="QVBoxLayout" >
-         <property name="margin" >
-          <number>0</number>
-         </property>
          <property name="spacing" >
           <number>1</number>
          </property>
          <item>
           <layout class="QHBoxLayout" >
-           <property name="margin" >
-            <number>0</number>
-           </property>
-           <property name="spacing" >
-            <number>6</number>
-           </property>
            <item>
             <spacer>
              <property name="orientation" >
@@ -269,11 +261,20 @@
             <enum>QFrame::Plain</enum>
            </property>
            <layout class="QVBoxLayout" >
-            <property name="margin" >
-             <number>0</number>
-            </property>
             <property name="spacing" >
              <number>3</number>
+            </property>
+            <property name="leftMargin" >
+             <number>0</number>
+            </property>
+            <property name="topMargin" >
+             <number>0</number>
+            </property>
+            <property name="rightMargin" >
+             <number>0</number>
+            </property>
+            <property name="bottomMargin" >
+             <number>0</number>
             </property>
             <item>
              <widget class="QSlider" name="sldrOpacity" >
@@ -327,9 +328,6 @@
             </item>
             <item>
              <layout class="QHBoxLayout" >
-              <property name="margin" >
-               <number>0</number>
-              </property>
               <property name="spacing" >
                <number>0</number>
               </property>
@@ -341,6 +339,7 @@
                 <property name="sizeHint" >
                  <size>
                   <width>21</width>
+                  <height>0</height>
                  </size>
                 </property>
                </spacer>
@@ -392,6 +391,7 @@
                 <property name="sizeHint" >
                  <size>
                   <width>21</width>
+                  <height>0</height>
                  </size>
                 </property>
                </spacer>
@@ -431,9 +431,6 @@
        </item>
        <item>
         <layout class="QVBoxLayout" >
-         <property name="margin" >
-          <number>0</number>
-         </property>
          <property name="spacing" >
           <number>1</number>
          </property>
@@ -465,11 +462,9 @@
    <class>GraphFrame</class>
    <extends>QFrame</extends>
    <header>gui/bwgraph/graphframe.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="../res/vidalia_common.qrc" />
- </resources>
  <tabstops>
   <tabstop>btnToggleSettings</tabstop>
   <tabstop>btnReset</tabstop>
@@ -481,5 +476,8 @@
   <tabstop>btnSaveSettings</tabstop>
   <tabstop>btnCancelSettings</tabstop>
  </tabstops>
+ <resources>
+  <include location="../res/vidalia_common.qrc" />
+ </resources>
  <connections/>
 </ui>
