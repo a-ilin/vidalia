@@ -5,28 +5,28 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>445</width>
-    <height>405</height>
+    <width>0</width>
+    <height>0</height>
    </rect>
   </property>
   <property name="sizePolicy" >
    <sizepolicy>
-    <hsizetype>0</hsizetype>
-    <vsizetype>0</vsizetype>
+    <hsizetype>4</hsizetype>
+    <vsizetype>4</vsizetype>
     <horstretch>0</horstretch>
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
   <property name="minimumSize" >
    <size>
-    <width>445</width>
-    <height>405</height>
+    <width>400</width>
+    <height>355</height>
    </size>
   </property>
   <property name="maximumSize" >
    <size>
      <width>16777215</width>
-     <height>405</height>
+     <height>16777215</height>
    </size>
   </property>
   <property name="windowTitle" >
@@ -55,8 +55,8 @@
       </property>
       <property name="minimumSize" >
        <size>
-        <width>400</width>
-        <height>72</height>
+        <width>0</width>
+        <height>0</height>
        </size>
       </property>
       <property name="title" >
@@ -109,8 +109,8 @@
           </property>
           <property name="maximumSize" >
            <size>
-            <width>300</width>
-            <height>50</height>
+            <width>116777215</width>
+            <height>116777215</height>
            </size>
           </property>
           <property name="text" >
@@ -128,8 +128,8 @@
           </property>
           <property name="sizePolicy" >
            <sizepolicy>
-            <hsizetype>4</hsizetype>
-            <vsizetype>4</vsizetype>
+            <hsizetype>1</hsizetype>
+            <vsizetype>1</vsizetype>
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
@@ -157,8 +157,8 @@
       </property>
       <property name="minimumSize" >
        <size>
-        <width>400</width>
-        <height>225</height>
+        <width>0</width>
+        <height>0</height>
        </size>
       </property>
       <property name="title" >
@@ -279,7 +279,7 @@
                 <property name="sizeHint" >
                  <size>
                   <width>20</width>
-                  <height>40</height>
+                  <height>0</height>
                  </size>
                 </property>
                </spacer>
@@ -342,7 +342,7 @@
                 <property name="sizeHint" >
                  <size>
                   <width>20</width>
-                  <height>40</height>
+                  <height>0</height>
                  </size>
                 </property>
                </spacer>
@@ -405,7 +405,7 @@
                 <property name="sizeHint" >
                  <size>
                   <width>20</width>
-                  <height>40</height>
+                  <height>0</height>
                  </size>
                 </property>
                </spacer>
