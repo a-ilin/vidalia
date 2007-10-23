@@ -243,7 +243,9 @@ NetworkPage::bridgeContextMenuRequested(const QPoint &pos)
 void
 NetworkPage::bridgeSelectionChanged()
 {
-  ui.btnCopyBridge->setEnabled(!ui.listBridges->selectedItems().isEmpty());
+  bool enabled = !ui.listBridges->selectedItems().isEmpty();
+  ui.btnCopyBridge->setEnabled(enabled);
+  ui.btnRemoveBridge->setEnabled(enabled);
 }
 
 /** Saves changes made to settings on the Firewall settings page. */
