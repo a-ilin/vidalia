@@ -75,7 +75,10 @@ VidaliaWindow::restoreWindowState()
 {
 #if QT_VERSION >= 0x040200
   QByteArray geometry = getSetting("Geometry", QByteArray()).toByteArray();
-  restoreGeometry(geometry);
+  if (geometry.isEmpty())
+    adjustSize();
+  else
+    restoreGeometry(geometry);
 #else
   QRect screen = QDesktopWidget().availableGeometry();
 
