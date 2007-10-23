@@ -74,7 +74,7 @@
         </property>
        </widget>
       </item>
-      <item row="2" column="0" >
+      <item row="1" column="0" >
        <widget class="QLabel" name="lblHttpProxyUsername" >
         <property name="text" >
          <string>Username:</string>
@@ -84,14 +84,14 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="1" colspan="3" >
+      <item row="2" column="1" colspan="3" >
        <widget class="QCheckBox" name="chkProxyUseHttps" >
         <property name="text" >
          <string>Use this proxy for HTTPS also</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="1" colspan="4" >
+      <item row="1" column="1" colspan="4" >
        <layout class="QHBoxLayout" >
         <property name="margin" >
          <number>0</number>
