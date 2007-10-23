@@ -164,7 +164,7 @@
              <enum>Qt::NoContextMenu</enum>
             </property>
             <property name="toolTip" >
-             <string>Port on which users and other servers can communicate with your relay</string>
+             <string>Port on which users and other relays can communicate with your relay</string>
             </property>
            </widget>
           </item>
@@ -271,7 +271,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
              <enum>Qt::NoContextMenu</enum>
             </property>
             <property name="toolTip" >
-             <string>Name of your server</string>
+             <string>Name of your relay</string>
             </property>
             <property name="text" >
              <string/>

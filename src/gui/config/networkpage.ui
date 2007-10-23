@@ -173,7 +173,7 @@
       <enum>Qt::NoContextMenu</enum>
      </property>
      <property name="toolTip" >
-      <string>Check to configure Tor to only connect to servers using ports allowed by your firewall</string>
+      <string>Check to configure Tor to only connect to relays using ports allowed by your firewall</string>
      </property>
      <property name="text" >
       <string>My firewall only lets me connect to certain ports</string>
@@ -232,7 +232,7 @@
    <item>
     <widget class="QCheckBox" name="chkUseBridges" >
      <property name="toolTip" >
-      <string>Check to configure Tor to use bridge servers to access the Tor network</string>
+      <string>Check to configure Tor to use bridge relays to access the Tor network</string>
      </property>
      <property name="text" >
       <string>My ISP blocks connections to the Tor network</string>
