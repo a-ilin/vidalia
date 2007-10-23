@@ -26,11 +26,6 @@
     <height>0</height>
    </size>
   </property>
-  <property name="font" >
-   <font>
-    <pointsize>10</pointsize>
-   </font>
-  </property>
   <property name="contextMenuPolicy" >
    <enum>Qt::NoContextMenu</enum>
   </property>
@@ -150,11 +145,6 @@
          </item>
          <item>
           <widget class="QLabel" name="label" >
-           <property name="font" >
-            <font>
-             <pointsize>10</pointsize>
-            </font>
-           </property>
            <property name="contextMenuPolicy" >
             <enum>Qt::NoContextMenu</enum>
            </property>
@@ -496,11 +486,6 @@
    <property name="statusTip" >
     <string>Move to previous page (Backspace)</string>
    </property>
-   <property name="font" >
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
    <property name="shortcut" >
     <string>Backspace</string>
    </property>
@@ -515,11 +500,6 @@
    <property name="statusTip" >
     <string>Move to next page (Shift+Backspace)</string>
    </property>
-   <property name="font" >
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
    <property name="shortcut" >
     <string>Shift+Backspace</string>
    </property>
@@ -533,11 +513,6 @@
    </property>
    <property name="statusTip" >
     <string>Move to the Home page (Ctrl+H)</string>
-   </property>
-   <property name="font" >
-    <font>
-     <pointsize>10</pointsize>
-    </font>
    </property>
    <property name="shortcut" >
     <string>Ctrl+H</string>
@@ -562,11 +537,6 @@
    <property name="statusTip" >
     <string>Search for a word or phrase on current page (Ctrl+F)</string>
    </property>
-   <property name="font" >
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
    <property name="shortcut" >
     <string>Ctrl+F</string>
    </property>
@@ -580,11 +550,6 @@
    </property>
    <property name="statusTip" >
     <string>Close Vidalia Help</string>
-   </property>
-   <property name="font" >
-    <font>
-     <pointsize>10</pointsize>
-    </font>
    </property>
    <property name="shortcut" >
     <string>Esc</string>

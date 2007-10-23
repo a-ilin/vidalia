@@ -9,11 +9,6 @@
     <height>138</height>
    </rect>
   </property>
-  <property name="font" >
-   <font>
-    <pointsize>10</pointsize>
-   </font>
-  </property>
   <property name="contextMenuPolicy" >
    <enum>Qt::NoContextMenu</enum>
   </property>
@@ -143,11 +138,6 @@
          </property>
          <item>
           <widget class="QCheckBox" name="chkReceiveRate" >
-           <property name="font" >
-            <font>
-             <pointsize>10</pointsize>
-            </font>
-           </property>
            <property name="contextMenuPolicy" >
             <enum>Qt::NoContextMenu</enum>
            </property>
@@ -167,11 +157,6 @@
          </item>
          <item>
           <widget class="QCheckBox" name="chkSendRate" >
-           <property name="font" >
-            <font>
-             <pointsize>10</pointsize>
-            </font>
-           </property>
            <property name="contextMenuPolicy" >
             <enum>Qt::NoContextMenu</enum>
            </property>
@@ -244,12 +229,7 @@
             </spacer>
            </item>
            <item>
-            <widget class="QLabel" name="label_2" >
-             <property name="font" >
-              <font>
-               <pointsize>10</pointsize>
-              </font>
-             </property>
+            <widget class="QLabel" name="lblGraphStyle" >
              <property name="text" >
               <string>Style</string>
              </property>

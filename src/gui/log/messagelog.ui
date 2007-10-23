@@ -12,11 +12,6 @@
     <height>625</height>
    </rect>
   </property>
-  <property name="font" >
-   <font>
-    <pointsize>10</pointsize>
-   </font>
-  </property>
   <property name="contextMenuPolicy" >
    <enum>Qt::NoContextMenu</enum>
   </property>
@@ -335,11 +330,6 @@
           </item>
           <item>
            <widget class="QLabel" name="lblMessageCount" >
-            <property name="font" >
-             <font>
-              <pointsize>10</pointsize>
-             </font>
-            </property>
             <property name="contextMenuPolicy" >
              <enum>Qt::NoContextMenu</enum>
             </property>
@@ -464,11 +454,6 @@
    <property name="statusTip" >
     <string>Set message filters</string>
    </property>
-   <property name="font" >
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
    <property name="shortcut" >
     <string/>
    </property>
@@ -479,11 +464,6 @@
    </property>
    <property name="statusTip" >
     <string>Set maximum number of messages to display</string>
-   </property>
-   <property name="font" >
-    <font>
-     <pointsize>10</pointsize>
-    </font>
    </property>
   </action>
   <action name="actionClear" >
@@ -498,11 +478,6 @@
    </property>
    <property name="statusTip" >
     <string>Clear all messages from the Message Log (Ctrl+E)</string>
-   </property>
-   <property name="font" >
-    <font>
-     <pointsize>10</pointsize>
-    </font>
    </property>
    <property name="shortcut" >
     <string>Ctrl+E</string>
@@ -524,11 +499,6 @@
    <property name="statusTip" >
     <string>Copy the selected messages to the clipboard (Ctrl+C)</string>
    </property>
-   <property name="font" >
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
    <property name="shortcut" >
     <string>Ctrl+C</string>
    </property>
@@ -546,11 +516,6 @@
    <property name="statusTip" >
     <string>Select all messages (Ctrl+A)</string>
    </property>
-   <property name="font" >
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
    <property name="shortcut" >
     <string>Ctrl+A</string>
    </property>
@@ -565,11 +530,6 @@
    <property name="statusTip" >
     <string>Save all messages to a file</string>
    </property>
-   <property name="font" >
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
   </action>
   <action name="actionSave_Selected" >
    <property name="icon" >
@@ -580,11 +540,6 @@
    </property>
    <property name="statusTip" >
     <string>Save selected messages to a file</string>
-   </property>
-   <property name="font" >
-    <font>
-     <pointsize>10</pointsize>
-    </font>
    </property>
   </action>
   <action name="actionSettings" >
@@ -600,11 +555,6 @@
    <property name="statusTip" >
     <string>Adjust Message Log Settings</string>
    </property>
-   <property name="font" >
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
    <property name="shortcut" >
     <string>Ctrl+T</string>
    </property>
@@ -619,11 +569,6 @@
    <property name="statusTip" >
     <string>Show the help browser</string>
    </property>
-   <property name="font" >
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
    <property name="shortcut" >
     <string>F1</string>
    </property>
@@ -637,11 +582,6 @@
    </property>
    <property name="statusTip" >
     <string>Close the Message Log</string>
-   </property>
-   <property name="font" >
-    <font>
-     <pointsize>10</pointsize>
-    </font>
    </property>
    <property name="shortcut" >
     <string>Esc</string>
@@ -659,11 +599,6 @@
    </property>
    <property name="statusTip" >
     <string>Find all messages containing the search text (Ctrl+F)</string>
-   </property>
-   <property name="font" >
-    <font>
-     <pointsize>10</pointsize>
-    </font>
    </property>
    <property name="shortcut" >
     <string>Ctrl+F</string>

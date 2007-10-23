@@ -20,11 +20,6 @@
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
-  <property name="font" >
-   <font>
-    <pointsize>10</pointsize>
-   </font>
-  </property>
   <property name="contextMenuPolicy" >
    <enum>Qt::NoContextMenu</enum>
   </property>
@@ -258,11 +253,6 @@
    <property name="toolTip" >
     <string>Refresh the list of Tor relays and connections</string>
    </property>
-   <property name="font" >
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
    <property name="shortcut">
     <string>Ctrl+R</string>
    </property>
@@ -279,11 +269,6 @@
    </property>
    <property name="toolTip" >
     <string>Show the network map help</string>
-   </property>
-   <property name="font" >
-    <font>
-     <pointsize>10</pointsize>
-    </font>
    </property>
    <property name="shortcut">
     <string>F1</string>
@@ -302,11 +287,6 @@
    <property name="toolTip" >
     <string>Close the network map</string>
    </property>
-   <property name="font" >
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
    <property name="shortcut">
     <string>Esc</string>
    </property>
@@ -323,11 +303,6 @@
    </property>
    <property name="toolTip" >
     <string>Zoom in on the network map</string>
-   </property>
-   <property name="font" >
-    <font>
-     <pointsize>10</pointsize>
-    </font>
    </property>
    <property name="shortcut">
     <string>+</string>
@@ -346,11 +321,6 @@
    <property name="toolTip" >
     <string>Zoom out on the network map</string>
    </property>
-   <property name="font" >
-    <font>
-     <pointsize>10</pointsize>
-    </font>
-   </property>
    <property name="shortcut">
     <string>-</string>
    </property>
@@ -367,11 +337,6 @@
    </property>
    <property name="toolTip" >
     <string>Zooms to fit all currently displayed circuits</string>
-   </property>
-   <property name="font" >
-    <font>
-     <pointsize>10</pointsize>
-    </font>
    </property>
    <property name="shortcut">
     <string>Ctrl+Z</string>

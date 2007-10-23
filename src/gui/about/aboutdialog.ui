@@ -71,7 +71,6 @@
        <widget class="QLabel" name="lblVidalia" >
         <property name="font" >
          <font>
-          <pointsize>12</pointsize>
           <bold>true</bold>
          </font>
         </property>
@@ -85,11 +84,6 @@
       </item>
       <item>
        <widget class="QLabel" name="lblVidaliaVersion" >
-        <property name="font" >
-         <font>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
         <property name="text" >
          <string>Vidalia Version</string>
         </property>
@@ -155,7 +149,6 @@
        <widget class="QLabel" name="lblQt" >
         <property name="font" >
          <font>
-          <pointsize>12</pointsize>
           <bold>true</bold>
          </font>
         </property>
@@ -169,11 +162,6 @@
       </item>
       <item>
        <widget class="QLabel" name="lblQtVersion" >
-        <property name="font" >
-         <font>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
         <property name="text" >
          <string>Qt Version</string>
         </property>
@@ -239,7 +227,6 @@
        <widget class="QLabel" name="lblTor" >
         <property name="font" >
          <font>
-          <pointsize>12</pointsize>
           <bold>true</bold>
          </font>
         </property>
@@ -253,12 +240,6 @@
       </item>
       <item>
        <widget class="QLabel" name="lblTorVersion" >
-        <property name="font" >
-         <font>
-          <pointsize>10</pointsize>
-          <strikeout>false</strikeout>
-         </font>
-        </property>
         <property name="text" >
          <string>Tor Version</string>
         </property>
