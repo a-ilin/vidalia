@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>438</width>
-    <height>329</height>
+    <width>489</width>
+    <height>351</height>
    </rect>
   </property>
   <property name="contextMenuPolicy" >
@@ -74,55 +74,7 @@
           <property name="spacing" >
            <number>6</number>
           </property>
-          <item row="6" column="3" >
-           <spacer>
-            <property name="orientation" >
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" >
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="4" column="7" colspan="2" >
-           <spacer>
-            <property name="orientation" >
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" >
-             <size>
-              <width>41</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="1" column="0" >
-           <widget class="QLabel" name="lblNickname" >
-            <property name="contextMenuPolicy" >
-             <enum>Qt::NoContextMenu</enum>
-            </property>
-            <property name="text" >
-             <string>Nickname:</string>
-            </property>
-            <property name="textFormat" >
-             <enum>Qt::AutoText</enum>
-            </property>
-            <property name="alignment" >
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-            <property name="margin" >
-             <number>0</number>
-            </property>
-            <property name="indent" >
-             <number>0</number>
-            </property>
-           </widget>
-          </item>
-          <item row="3" column="0" >
+          <item row="2" column="0" >
            <widget class="QLabel" name="lblServerPort" >
             <property name="contextMenuPolicy" >
              <enum>Qt::NoContextMenu</enum>
@@ -141,22 +93,34 @@
             </property>
            </widget>
           </item>
-          <item row="3" column="1" >
-           <widget class="QLineEdit" name="lineServerPort" >
-            <property name="sizePolicy" >
-             <sizepolicy>
-              <hsizetype>0</hsizetype>
-              <vsizetype>0</vsizetype>
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
+          <item row="3" column="0" colspan="3" >
+           <widget class="QCheckBox" name="chkMirrorDirectory" >
+            <property name="contextMenuPolicy" >
+             <enum>Qt::NoContextMenu</enum>
             </property>
-            <property name="maximumSize" >
+            <property name="toolTip" >
+             <string>Enable to mirror the Tor relay directory</string>
+            </property>
+            <property name="text" >
+             <string>Mirror the Relay Directory </string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="6" >
+           <spacer>
+            <property name="orientation" >
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" >
              <size>
-              <width>50</width>
-              <height>16777215</height>
+              <width>40</width>
+              <height>20</height>
              </size>
             </property>
+           </spacer>
+          </item>
+          <item row="1" column="1" colspan="7" >
+           <widget class="QLineEdit" name="lineServerContact" >
             <property name="cursor" >
              <cursor>4</cursor>
             </property>
@@ -164,27 +128,12 @@
              <enum>Qt::NoContextMenu</enum>
             </property>
             <property name="toolTip" >
-             <string>Port on which users and other relays can communicate with your relay</string>
+             <string>Email address at which you may be reached if there is a
+problem with your relay. You might also include your PGP or GPG fingerprint.</string>
             </property>
            </widget>
           </item>
-          <item row="2" column="0" >
-           <widget class="QLabel" name="label_1" >
-            <property name="contextMenuPolicy" >
-             <enum>Qt::NoContextMenu</enum>
-            </property>
-            <property name="text" >
-             <string>Contact Info:</string>
-            </property>
-            <property name="alignment" >
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-            <property name="indent" >
-             <number>0</number>
-            </property>
-           </widget>
-          </item>
-          <item row="4" column="3" colspan="3" >
+          <item row="3" column="3" colspan="3" >
            <layout class="QHBoxLayout" >
             <property name="margin" >
              <number>0</number>
@@ -248,21 +197,69 @@
             </item>
            </layout>
           </item>
-          <item row="2" column="1" colspan="7" >
-           <widget class="QLineEdit" name="lineServerContact" >
-            <property name="cursor" >
-             <cursor>4</cursor>
-            </property>
+          <item row="1" column="0" >
+           <widget class="QLabel" name="label_1" >
             <property name="contextMenuPolicy" >
              <enum>Qt::NoContextMenu</enum>
             </property>
-            <property name="toolTip" >
-             <string>Email address at which you may be reached if there is a
-problem with your relay. You might also include your PGP or GPG fingerprint.</string>
+            <property name="text" >
+             <string>Contact Info:</string>
+            </property>
+            <property name="alignment" >
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="indent" >
+             <number>0</number>
             </property>
            </widget>
           </item>
-          <item row="1" column="1" colspan="7" >
+          <item row="2" column="2" colspan="6" >
+           <spacer>
+            <property name="orientation" >
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" >
+             <size>
+              <width>321</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="8" column="0" >
+           <spacer>
+            <property name="orientation" >
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" >
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="5" column="0" colspan="4" >
+           <widget class="QLabel" name="lblBridgeIdentity" >
+            <property name="text" >
+             <string>Your bridge relay is:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="5" colspan="2" >
+           <spacer>
+            <property name="orientation" >
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" >
+             <size>
+              <width>41</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="0" column="1" colspan="7" >
            <widget class="QLineEdit" name="lineServerNickname" >
             <property name="cursor" >
              <cursor>4</cursor>
@@ -281,44 +278,91 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
             </property>
            </widget>
           </item>
-          <item row="4" column="0" colspan="3" >
-           <widget class="QCheckBox" name="chkMirrorDirectory" >
+          <item row="2" column="1" >
+           <widget class="QLineEdit" name="lineServerPort" >
+            <property name="sizePolicy" >
+             <sizepolicy>
+              <hsizetype>0</hsizetype>
+              <vsizetype>0</vsizetype>
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize" >
+             <size>
+              <width>50</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="cursor" >
+             <cursor>4</cursor>
+            </property>
             <property name="contextMenuPolicy" >
              <enum>Qt::NoContextMenu</enum>
             </property>
             <property name="toolTip" >
-             <string>Enable to mirror the Tor relay directory</string>
-            </property>
-            <property name="text" >
-             <string>Mirror the Relay Directory </string>
+             <string>Port on which users and other relays can communicate with your relay</string>
             </property>
            </widget>
           </item>
-          <item row="4" column="8" >
-           <spacer>
-            <property name="orientation" >
-             <enum>Qt::Horizontal</enum>
+          <item row="0" column="0" >
+           <widget class="QLabel" name="lblNickname" >
+            <property name="contextMenuPolicy" >
+             <enum>Qt::NoContextMenu</enum>
             </property>
-            <property name="sizeHint" >
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
+            <property name="text" >
+             <string>Nickname:</string>
             </property>
-           </spacer>
+            <property name="textFormat" >
+             <enum>Qt::AutoText</enum>
+            </property>
+            <property name="alignment" >
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="margin" >
+             <number>0</number>
+            </property>
+            <property name="indent" >
+             <number>0</number>
+            </property>
+           </widget>
           </item>
-          <item row="3" column="2" colspan="6" >
-           <spacer>
+          <item row="4" column="0" colspan="8" >
+           <widget class="Line" name="lineBridgeSeparator" >
             <property name="orientation" >
              <enum>Qt::Horizontal</enum>
             </property>
-            <property name="sizeHint" >
-             <size>
-              <width>321</width>
-              <height>20</height>
-             </size>
+           </widget>
+          </item>
+          <item row="6" column="0" colspan="8" >
+           <layout class="QHBoxLayout" >
+            <property name="margin" >
+             <number>0</number>
             </property>
-           </spacer>
+            <property name="spacing" >
+             <number>6</number>
+            </property>
+            <item>
+             <widget class="QLineEdit" name="lineBridgeIdentity" >
+              <property name="text" >
+               <string/>
+              </property>
+              <property name="readOnly" >
+               <bool>true</bool>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QToolButton" name="btnCopyBridgeIdentity" >
+              <property name="text" >
+               <string>...</string>
+              </property>
+              <property name="icon" >
+               <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/edit-copy.png</iconset>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
          </layout>
         </widget>
@@ -988,7 +1032,9 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
   <tabstop>chkMisc</tabstop>
   <tabstop>btnExitHelp</tabstop>
  </tabstops>
- <resources/>
+ <resources>
+  <include location="../res/vidalia_common.qrc" />
+ </resources>
  <connections>
   <connection>
    <sender>chkMirrorDirectory</sender>
