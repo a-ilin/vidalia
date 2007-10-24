@@ -60,6 +60,14 @@
       </property>
       <item>
        <widget class="QTabWidget" name="tabsMenu" >
+        <property name="sizePolicy" >
+         <sizepolicy>
+          <hsizetype>7</hsizetype>
+          <vsizetype>7</vsizetype>
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="currentIndex" >
          <number>0</number>
         </property>
@@ -239,13 +247,6 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
             </property>
            </spacer>
           </item>
-          <item row="5" column="0" colspan="4" >
-           <widget class="QLabel" name="lblBridgeIdentity" >
-            <property name="text" >
-             <string>Your bridge relay is:</string>
-            </property>
-           </widget>
-          </item>
           <item row="3" column="5" colspan="2" >
            <spacer>
             <property name="orientation" >
@@ -326,43 +327,6 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
              <number>0</number>
             </property>
            </widget>
-          </item>
-          <item row="4" column="0" colspan="8" >
-           <widget class="Line" name="lineBridgeSeparator" >
-            <property name="orientation" >
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
-          <item row="6" column="0" colspan="8" >
-           <layout class="QHBoxLayout" >
-            <property name="margin" >
-             <number>0</number>
-            </property>
-            <property name="spacing" >
-             <number>6</number>
-            </property>
-            <item>
-             <widget class="QLineEdit" name="lineBridgeIdentity" >
-              <property name="text" >
-               <string/>
-              </property>
-              <property name="readOnly" >
-               <bool>true</bool>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QToolButton" name="btnCopyBridgeIdentity" >
-              <property name="text" >
-               <string>...</string>
-              </property>
-              <property name="icon" >
-               <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/edit-copy.png</iconset>
-              </property>
-             </widget>
-            </item>
-           </layout>
           </item>
          </layout>
         </widget>
@@ -997,6 +961,67 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
       </item>
      </layout>
     </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lblYourBridgeRelayIs" >
+     <property name="cursor" >
+      <cursor>0</cursor>
+     </property>
+     <property name="frameShape" >
+      <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="text" >
+      <string>Your bridge relay is:</string>
+     </property>
+     <property name="textInteractionFlags" >
+      <enum>Qt::TextSelectableByMouse</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" >
+     <property name="margin" >
+      <number>0</number>
+     </property>
+     <property name="spacing" >
+      <number>6</number>
+     </property>
+     <item>
+      <widget class="QLabel" name="lblBridgeIdentity" >
+       <property name="cursor" >
+        <cursor>4</cursor>
+       </property>
+       <property name="toolTip" >
+        <string>This is the identity of your bridge relay that you can give to other people</string>
+       </property>
+       <property name="frameShape" >
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+       <property name="frameShadow" >
+        <enum>QFrame::Sunken</enum>
+       </property>
+       <property name="text" >
+        <string/>
+       </property>
+       <property name="textInteractionFlags" >
+        <enum>Qt::TextSelectableByMouse</enum>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QToolButton" name="btnCopyBridgeIdentity" >
+       <property name="toolTip" >
+        <string>Copy your bridge relay's identity to the clipboard</string>
+       </property>
+       <property name="text" >
+        <string/>
+       </property>
+       <property name="icon" >
+        <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/edit-copy.png</iconset>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
     <spacer>
