@@ -216,6 +216,11 @@ ServerPage::serverModeChanged(bool enabled)
   ui.lblYourBridgeRelayIs->setVisible(bridgeEnabled);
   ui.lblBridgeIdentity->setVisible(bridgeEnabled);
   ui.btnCopyBridgeIdentity->setVisible(bridgeEnabled);
+  
+  /* Bridges must have a dirport set */
+  ui.chkMirrorDirectory->setChecked(
+    ui.chkMirrorDirectory->isChecked() || bridgeEnabled);
+  ui.chkMirrorDirectory->setEnabled(!bridgeEnabled);
 }
 
 /** Returns true if the user has changed their server settings since the
