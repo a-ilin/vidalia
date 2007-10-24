@@ -25,6 +25,7 @@
  * \brief Tor server configuration options
  */
 
+#include <QClipboard>
 #include <vidalia.h>
 #include <vmessagebox.h>
 #include <util/html.h>
@@ -80,17 +81,14 @@ ServerPage::ServerPage(QWidget *parent)
   /* Invoke the Qt Designer generated object setup routine */
   ui.setupUi(this);
   
-  /* Keep a pointer to the TorControl object used to talk to Tor */
-  _torControl = Vidalia::torControl();
-
   /* Create ServerSettings object */
-  _settings = new ServerSettings(_torControl);
+  _settings = new ServerSettings(Vidalia::torControl());
 
   /* Bind events to actions */
   connect(ui.btnRateHelp, SIGNAL(clicked()), this, SLOT(bandwidthHelp()));
   connect(ui.btnExitHelp, SIGNAL(clicked()), this, SLOT(exitPolicyHelp()));
   connect(ui.cmboRate, SIGNAL(currentIndexChanged(int)),
-          this, SLOT(rateChanged(int)));
+                 this, SLOT(rateChanged(int)));
   connect(ui.lineAvgRateLimit, SIGNAL(editingFinished()), 
                          this, SLOT(customRateChanged()));
   connect(ui.lineMaxRateLimit, SIGNAL(editingFinished()), 
@@ -105,6 +103,8 @@ ServerPage::ServerPage(QWidget *parent)
                            this, SLOT(onAuthenticated()));
   connect(Vidalia::torControl(), SIGNAL(disconnected()),
                            this, SLOT(onDisconnected()));
+  connect(ui.btnCopyBridgeIdentity, SIGNAL(clicked()),
+                              this, SLOT(copyBridgeIdentity()));
 
   /* Set validators for address, mask and various port number fields */
   ui.lineServerNickname->setValidator(new NicknameValidator(this));
@@ -158,16 +158,62 @@ ServerPage::onDisconnected()
   ui.rdoBridgeMode->setEnabled(true);
 }
 
+/** Copies the user's bridge relay identity to the clipboard. */
+void
+ServerPage::copyBridgeIdentity()
+{
+  QString bridge = ui.lblBridgeIdentity->text();
+  if (!bridge.isEmpty())
+    vApp->clipboard()->setText(bridge);
+}
+
+/** Loads the user's bridge relay identity into the appropriate widgets. If
+ * the user's bridge is not running, then "Not Running" will be displayed.
+ * Otherwise, either the bridge's "address:port", "fingerprint", or
+ * "address:port fingerprint" will be displayed, depending on whether our
+ * GETCONF and GETINFO commands are successful. */
+void
+ServerPage::loadBridgeIdentity()
+{
+  TorControl *tc = Vidalia::torControl();
+  QString bridge, address, orPort, fingerprint;
+
+  if (tc->isConnected()) {
+    tc->getInfo("address", address);
+    tc->getInfo("fingerprint", fingerprint);
+    tc->getConf("ORPort", orPort);
+  
+    if (!address.isEmpty() && !orPort.isEmpty() && orPort != "0")
+      bridge = address + ":" + orPort + " ";
+    if (!fingerprint.isEmpty())
+      bridge += fingerprint;
+    bridge = bridge.trimmed();
+  }
+
+  ui.lblBridgeIdentity->setText(bridge.isEmpty() ? tr("Not Running") : bridge);
+  ui.btnCopyBridgeIdentity->setEnabled(!bridge.isEmpty());
+}
+
 /** Called when the user toggles any one of the server mode radio buttons
  * and hides or displays the server configuration tabs appropriately. */
 void
 ServerPage::serverModeChanged(bool enabled)
 {
-  enabled = (ui.rdoServerMode->isChecked() || ui.rdoBridgeMode->isChecked());
-  ui.tabsMenu->setVisible(enabled);
+  Q_UNUSED(enabled);
+  bool bridgeEnabled = ui.rdoBridgeMode->isChecked();
   
-  /* Disable the Exit Policies tab when bridge server mode is selected */
-  ui.tabsMenu->setTabEnabled(2, !ui.rdoBridgeMode->isChecked());
+  /* Show the tab menu only if the user is running a normal relay or a bridge
+   * relay. */
+  ui.tabsMenu->setVisible(ui.rdoServerMode->isChecked() || bridgeEnabled);
+  
+  /* Disable the Exit Policies tab when bridge relay mode is selected */
+  ui.tabsMenu->setTabEnabled(2, !bridgeEnabled);
+  
+  /* Display the widgets that show the user their bridge identity if bridge
+   * relay mode is selected. */
+  ui.lblYourBridgeRelayIs->setVisible(bridgeEnabled);
+  ui.lblBridgeIdentity->setVisible(bridgeEnabled);
+  ui.btnCopyBridgeIdentity->setVisible(bridgeEnabled);
 }
 
 /** Returns true if the user has changed their server settings since the
@@ -255,6 +301,7 @@ ServerPage::load()
   
   loadBandwidthLimits();
   loadExitPolicies();
+  loadBridgeIdentity();
 }
 
 /** Shows exit policy related help information */

@@ -83,6 +83,8 @@ private slots:
   /** Called when Vidalia disconnects from Tor. This method reenables the
    * bridge server option. */
   void onDisconnected();
+  /** Copies the user's bridge relay identity to the clipboard. */
+  void copyBridgeIdentity();
 
 private:
   /** Index values of rate values in the bandwidth limits dropdown box. */
@@ -106,9 +108,13 @@ private:
   void saveExitPolicies();
   /** Loads the server's exit policies. */
   void loadExitPolicies();
+  /** Loads the user's bridge relay identity into the appropriate widgets. If
+   *  the user's bridge is not running, then "Not Running" will be
+   *  displayed. Otherwise, either the bridge's "address:port", "fingerprint",
+   *  or "address:port fingerprint" will be displayed, depending on whether
+   *  our GETCONF and GETINFO commands are successful. */
+  void loadBridgeIdentity();
 
-  /** A TorControl object used to talk to Tor */
-  TorControl* _torControl;
   /** A ServerSettings object used to get and set information about how a
    * local Tor server is configured. */
   ServerSettings*  _settings;

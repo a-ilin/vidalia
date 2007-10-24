@@ -1001,7 +1001,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
         <enum>QFrame::Sunken</enum>
        </property>
        <property name="text" >
-        <string/>
+        <string>Not Running</string>
        </property>
        <property name="textInteractionFlags" >
         <enum>Qt::TextSelectableByMouse</enum>
@@ -1010,6 +1010,9 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
      </item>
      <item>
       <widget class="QToolButton" name="btnCopyBridgeIdentity" >
+       <property name="enabled" >
+        <bool>false</bool>
+       </property>
        <property name="toolTip" >
         <string>Copy your bridge relay's identity to the clipboard</string>
        </property>
