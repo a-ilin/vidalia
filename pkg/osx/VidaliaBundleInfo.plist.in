@@ -18,13 +18,13 @@
 			<key>IFPkgFlagPackageLocation</key>
 			<string>Vidalia.pkg</string>
 			<key>IFPkgFlagPackageSelection</key>
-			<string>required</string>
+			<string>selected</string>
 		</dict>
 		<dict>
 			<key>IFPkgFlagPackageLocation</key>
 			<string>Tor.pkg</string>
 			<key>IFPkgFlagPackageSelection</key>
-			<string>required</string>
+			<string>selected</string>
 		</dict>
 		<dict>
 			<key>IFPkgFlagPackageLocation</key>
