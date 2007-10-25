@@ -112,7 +112,10 @@ PKG_DIR="$MPKG_DIR/.contained_packages"
 OUT_DIR="$VID_DIR/pkg"
 # Path to PackageMaker
 PACKAGEMAKER=/Developer/Applications/Utilities/PackageMaker.app/Contents/MacOS/PackageMaker
-
+# Where have we put the xpi and license for Torbutton? Edit this if your
+# torbutton and torbutton license live somewhere else.
+TORBUTTON_PATH=~/tmp/torbutton-1.1.9.1-alpha.xpi
+TORBUTTON_LIC_PATH=~/tmp/LICENSE
 
 umask 022
 echo I might ask you for your password now, so you can sudo.
@@ -120,6 +123,7 @@ sudo rm -rf $BUILD_DIR
 mkdir $BUILD_DIR || exit 1
 for subdir in tor_packageroot         \
               tor_resources           \
+              torbutton_packageroot   \
               privoxyconf_packageroot \
               privoxyconf_resources   \
               vidalia_packageroot     \
@@ -195,6 +199,23 @@ $PACKAGEMAKER -build              \
     -i $TOR_DIR/contrib/osx/TorInfo.plist  \
     -d $TOR_DIR/contrib/osx/TorDesc.plist
 
+##
+# Make Torbutton Installation package
+##
+echo "** Building Torbutton package**"
+mkdir -p $BUILD_DIR/torbutton_packageroot/Library/Torbutton
+cp $TORBUTTON_PATH $BUILD_DIR/torbutton_packageroot/Library/Torbutton/
+cp $TORBUTTON_LIC_PATH $BUILD_DIR/torbutton_packageroot/Library/Torbutton/Torbutton-LICENSE.txt
+
+find $BUILD_DIR/torbutton_packageroot \( -type d -or -perm +111 \) -print0 | sudo xargs -0 chmod 775
+find $BUILD_DIR/torbutton_packageroot -type f \! \( -perm +111 \) -print0 | sudo xargs -0 chmod 664
+find $BUILD_DIR/torbutton_packageroot -print0 | sudo xargs -0 chown root:admin
+
+$PACKAGEMAKER -build  \
+  -p $PKG_DIR/torbutton.pkg \
+  -f $BUILD_DIR/torbutton_packageroot \
+  -i TorbuttonInfo.plist  \
+  -d TorbuttonDesc.plist
 
 ##
 # Unzip the Privoxy.pkg and move it into place
@@ -242,6 +263,7 @@ cp $PRIVOXY_RESDIR/ReadMe.txt   $MPKG_DIR/Privoxy\ ReadMe.txt
 cp $TOR_DIR/LICENSE             $MPKG_DIR/Tor\ License.txt
 cp $VID_DIR/LICENSE             $MPKG_DIR/Vidalia\ License.txt
 cp $VID_DIR/COPYING             $MPKG_DIR/GNU\ GPL.txt
+cp $TORBUTTON_LIC_PATH          $MPKG_DIR/Torbutton-LICENSE.txt
 
 
 ##

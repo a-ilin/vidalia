@@ -4,18 +4,29 @@
 
 TARGET=$2/Library/Tor
 TORDIR=$TARGET/var/lib/tor
-LOGDIR=$TARGET/var/log/tor
+LOGFILE=/var/log/tor.log
+TORBUTTON_VERSION="1.1.9.1-alpha"
+
+# Check defaults for TARGET
+if [ "$TARGET" == "//Library/Tor" ]; then
+	TARGET=/Library/Tor
+fi
 
 # Create the tor directory, if it doesn't exist.
 if [ ! -d $TORDIR ]; then
   mkdir -p $TORDIR
 fi
-if [ ! -d $LOGDIR ]; then
-  mkdir -p $LOGDIR
-fi
+
 # Check its permissions.
 chmod 770 $TORDIR
-chmod 770 $LOGDIR
+
+# Check the logfile and make sure it exists.
+if [ ! -f $LOGFILE ]; then
+    touch $LOGFILE
+    chown $TORUSER $LOGFILE
+    chgrp daemon $LOGFILE
+    chmod 660 $LOGFILE
+fi
 
 # Create the configuration file only if there wan't one already.
 if [ ! -f $TARGET/torrc ]; then
@@ -41,7 +52,6 @@ ln -sf $MAN1/*.1 .
 if [ ! -e /var/log/tor -o -L /var/log/tor ]; then
   cd /var/log
   rm -f tor
-  ln -sf $LOGDIR tor
 fi
 
 if [ -d /Library/StartupItems/Privoxy ]; then
@@ -53,3 +63,18 @@ if [ -d $PACKAGE_PATH/Contents/Resources/documents ];then
    cp -r $PACKAGE_PATH/Contents/Resources/documents $TARGET/documents
 fi
 
+if [ -f /Applications/Firefox.app/Contents/MacOS/firefox ]; then
+  if [ -f /Library/Torbutton/torbutton-$TORBUTTON_VERSION.xpi ]; then
+      /Applications/Firefox.app/Contents/MacOS/firefox -install-global-extension /Library/Torbutton/torbutton-$TORBUTTON_VERSION.xpi
+# The following is a kludge to get around the fact that the installer
+# runs as root.  This means the Torbutton extension will install with
+# root permissions; thereby making uninstalling Torbutton from inside
+# Firefox impossible.  The user will be caught in an endless loop of
+# uninstall -> automatic re-installation of Torbutton.  The OSX
+# installer doesn't tell you the owner of Firefox, therefore we have to
+# parse it.
+      USR=`ls -alrt /Applications/Firefox.app/Contents/MacOS/extensions/ | tail -1 | awk '{print $3}'`
+      GRP=`ls -alrt /Applications/Firefox.app/Contents/MacOS/extensions/ | tail -1 | awk '{print $4}'`
+      chown -R $USR:$GRP /Applications/Firefox.app/Contents/MacOS/extensions/
+  fi
+fi
