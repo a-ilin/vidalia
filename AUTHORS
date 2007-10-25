@@ -3,39 +3,43 @@ Vidalia is developed by:
   Justin Hipple <hipplej@vidalia-project.net>
 
 Contributors: 
-  Corinna Habets <corinna@geekin.de> created the images off which
-  our application icons are based.
-
   Ren Bucholz <http://homes.eff.org/~renbucholz/tor/> created some of the
   onion images off of which Corinna's icons and some of our own images are
   based. 
-
-  The Tango Desktop Project <http://tango-project.org> created many of the
-  icons used in Vidalia. See LICENSE for details.
-
-  Brandon Nase <http://www.students.dsu.edu/naseb/> designed and built 
-  the Vidalia-Project website.
-
-  Matt Hanson <http://www.zuerchertech.com/> tweaked Corinna's images a bit
-  and created some .icos based off of them. 
   
   Dan Christensen <http://opello.org/> added additional image formats to 
   the .ico files to support more Windowses. He also created the graph style
   icons in the bandwidth graph settings.
+
+  The Tango Desktop Project <http://tango-project.org> created many of the
+  icons used in Vidalia. See LICENSE for details.
 
   Geoff Goodell <http://afs.eecs.harvard.edu/~goodell/> supplied us with
   nearly all of the flag icons that we use in the Appearance configuration
   page and network map. He also created the router status icons we use in 
   the network map.
 
-  Michael Zuercher and Adam Tomjack of Zuerchertech LLC
-  <http://www.zuerchertech.com> gave us the ZImageView class which handles
-  drawing, scrolling and zooming the map image in the Network Viewer.
+  Corinna Habets <corinna@geekin.de> created the images off which
+  our application icons are based.
+  
+  Matt Hanson <http://www.zuerchertech.com/> tweaked Corinna's images a bit
+  and created some .icos based off of them. 
+ 
+  Andrew Lewman wrote the original Mac OS X bundle installer off which
+  Vidalia's is based, and also added Torbutton to the bundle.
+
+  Brandon Nase <http://www.students.dsu.edu/naseb/> designed and built 
+  the Vidalia-Project website.
 
   Christoph Sieghart (sigi) <http://www.0x2a.at/blog/> gave us some code that
   converts world space coordinates (latitude,longitude) into image space
   coordinates (x,y) which we used in the Net Viewer.
 
+  Michael Zuercher and Adam Tomjack of Zuerchertech LLC
+  <http://www.zuerchertech.com> gave us the ZImageView class which handles
+  drawing, scrolling and zooming the map image in the Network Viewer.
+
+  
 Translators:
   Bulgarian   kutia0001
   Czech       el Mar <http://airdump.net>

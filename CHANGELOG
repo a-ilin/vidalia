@@ -1,4 +1,4 @@
-0.0.15  23-Oct-2007
+0.0.15  24-Oct-2007
   o Add a new 'Network' settings page to the config dialog that lets users
     configure an HTTP/HTTPS proxy, specify allowed ports if they are behind a
     restrictive firewall or proxy, and set up bridges and tunneled dir conns.
@@ -68,6 +68,8 @@
   o When the user clicks the Help button in the Settings dialog, take them 
     directly to the help topic for whichever settings page they are currently
     viewing.
+  o Added Torbutton 1.1.9.1-alpha to the Mac OS X bundles, thanks to
+    Andrew Lewman.
   o Disable enable-edit-actions, enable-remote-toggle, and
     enable-remote-http-toggle in the bundled Privoxy configuration. Suggested
     by Greg Fleischer.
