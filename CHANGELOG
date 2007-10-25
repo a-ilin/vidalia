@@ -65,6 +65,9 @@
   o Add some information to the help browser about the new network settings
     and bridge relay configuration, as well as the new authentication
     settings in 0.0.14.
+  o When the user clicks the Help button in the Settings dialog, take them 
+    directly to the help topic for whichever settings page they are currently
+    viewing.
   o Disable enable-edit-actions, enable-remote-toggle, and
     enable-remote-http-toggle in the bundled Privoxy configuration. Suggested
     by Greg Fleischer.

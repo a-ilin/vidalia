@@ -230,10 +230,29 @@ ConfigDialog::saveConf()
   }
 }
 
-/** Shows help information about the configuration dialog. */
+/** Shows help information for whichever settings page the user is currently
+ * viewing. */
 void
 ConfigDialog::help()
 {
-  Vidalia::help("config");
+  Page currentPage = static_cast<Page>(ui.stackPages->currentIndex());
+
+  switch (currentPage) {
+    case Network:
+      Vidalia::help("config.network");
+      break;
+    case Server:
+      Vidalia::help("server");
+      break;
+    case Appearance:
+      Vidalia::help("config.appearance");
+      break;
+    case Advanced:
+      Vidalia::help("config.advanced");
+      break;
+    default:
+      Vidalia::help("config.general");
+      break;
+  }
 }
 

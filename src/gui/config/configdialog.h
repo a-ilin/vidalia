@@ -74,8 +74,8 @@ private slots:
    * SAVECONF is successful, then all settings are considered to be
    * applied. */
   void saveConf();
-  
-  /** Called when user clicks "Help" */
+  /** Shows help information for whichever settings page the user is currently
+   * viewing. */
   void help();
 
 private:
