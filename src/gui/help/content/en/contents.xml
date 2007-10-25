@@ -41,6 +41,7 @@
     <Topic id="general" name="General Settings" html="config.html" section="general"/>
     <Topic id="network" name="Network Settings" html="config.html" section="network"/>
     <Topic id="server" name="Relay Settings" html="config.html" section="server"/>
+    <Topic id="appearance" name="Appearance Settings" html="config.html" section="appearance"/>
     <Topic id="advanced" name="Advanced Settings" html="config.html" section="advanced"/>
   </Topic>
   <Topic id="server" name="Setting Up a Tor Relay" html="server.html">
