@@ -13,6 +13,9 @@
     like the 'Network' and 'Server' settings pages in the future.
   o If we prompt the user to enter a control password and they enter one,
     don't keep trying to use our randomly generated password.
+  o Fix a bug in the network map that would cause the user to sometimes be
+    unable to select a circuit or server after clicking and dragging the mouse
+    in one of the lists. (Ticket #269)
   o Stop leaking memory for pretty much every circuit we plotted on the network
     map. Found by Roger Dingledine and his Valgrind.
   o Stop leaking memory if TorMapWidget::addRouter() is called for a router

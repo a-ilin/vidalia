@@ -49,34 +49,32 @@ RouterListWidget::RouterListWidget(QWidget *parent)
   /* Find out when the selected item has changed. */
   connect(this, SIGNAL(itemSelectionChanged()), 
           this, SLOT(onSelectionChanged()));
-
-  /* Set up the router item context menu */
-  _routerContextMenu = new QMenu(this);
-  _zoomToRouterAct = new QAction(QIcon(IMG_ZOOM), tr("Zoom to Relay"), this);
-  _routerContextMenu->addAction(_zoomToRouterAct);
+  connect(this, SIGNAL(customContextMenuRequested(QPoint)),
+          this, SLOT(customContextMenuRequested(QPoint)));
 }
 
-/** Called when the user presses and releases a mouse button. If the event
- * indicates a right-click on a router item, a context menu will be displayed
- * providing a list of actions, including zooming in on the server. */
+/** Called when the user requests a context menu for a router in the list. A
+ * context menu will be displayed providing a list of actions, including
+ * zooming in on the server. */
 void
-RouterListWidget::mouseReleaseEvent(QMouseEvent *e)
+RouterListWidget::customContextMenuRequested(const QPoint &pos)
 {
-  if (e->button() == Qt::RightButton) {
-    /* Find out which server was right-clicked */
-    RouterListItem *item = (RouterListItem *)itemAt(e->pos());
-    if (!item) {
-      return;
-    }
+  QMenu menu(this);
 
-    /* Display a context menu for this router item */
-    QPoint pos = e->globalPos();
-    QAction *action = _routerContextMenu->exec(pos);
-    if (action == _zoomToRouterAct) {
-      /* Zoom in on this router */
-      emit zoomToRouter(item->id());
-    }
-  }
+  /* Find out which (if any) router in the list is selected */
+  RouterListItem *item = dynamic_cast<RouterListItem *>(itemAt(pos));
+  if (!item)
+    return;
+  
+  /* Set up the context menu */
+  QAction *zoomAction =
+    new QAction(QIcon(IMG_ZOOM), tr("Zoom to Relay"), &menu);
+  menu.addAction(zoomAction);
+  
+  /* Display the menu and find out which (if any) action was selected */
+  QAction *action = menu.exec(mapToGlobal(pos));
+  if (action == zoomAction)
+    emit zoomToRouter(item->id());
 }
 
 /** Deselects all currently selected routers. */

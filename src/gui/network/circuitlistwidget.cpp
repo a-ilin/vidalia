@@ -49,54 +49,59 @@ CircuitListWidget::CircuitListWidget(QWidget *parent)
   /* Find out when a circuit has been selected */
   connect(this, SIGNAL(currentItemChanged(QTreeWidgetItem*,QTreeWidgetItem*)),
           this, SLOT(onSelectionChanged(QTreeWidgetItem*,QTreeWidgetItem*)));
-
-  /* Set up the circuit item context menu */
-  _circuitContextMenu = new QMenu(this);
-  _zoomCircuitAct = new QAction(QIcon(IMG_ZOOM), tr("Zoom to Circuit"), this);
-  _closeCircuitAct = new QAction(QIcon(IMG_CLOSE), tr("Close Circuit"), this);
-  _circuitContextMenu->addAction(_zoomCircuitAct);
-  _circuitContextMenu->addSeparator();
-  _circuitContextMenu->addAction(_closeCircuitAct);
-  /* Set up the stream item context menu */
-  _streamContextMenu = new QMenu(this);
-  _closeStreamAct = new QAction(QIcon(IMG_CLOSE), tr("Close Stream"), this);
-  _streamContextMenu->addAction(_closeStreamAct);
+  connect(this, SIGNAL(customContextMenuRequested(QPoint)),
+          this, SLOT(customContextMenuRequested(QPoint)));
 }
 
-/** Called when the user presses and releases a mouse button. If the event
- * indicates a right-click and a circuit or stream is selected, an appropriate
- * context menu will be displayed. */
+/** Called when the user requests a context menu on a circuit or stream in the
+ * list and displays a context menu appropriate for whichever type of item is
+ * currently selected. */
 void
-CircuitListWidget::mouseReleaseEvent(QMouseEvent *e)
+CircuitListWidget::customContextMenuRequested(const QPoint &pos)
 {
-  if (e->button() == Qt::RightButton) {
-    /* Find out which item was right-clicked */
-    QTreeWidgetItem *item = itemAt(e->pos());
-    if (!item) {
-      return;
-    }
+  QMenu menu(this);
+
+  /* Find out which item was right-clicked */
+  QTreeWidgetItem *item = itemAt(pos);
+  if (!item)
+    return;
     
-    QPoint pos = e->globalPos();
-    if (!item->parent()) {
-      /* Circuit was right-clicked */
-      Circuit circ   = ((CircuitItem *)item)->circuit();
-      quint64 circid = circ.id();
-      _zoomCircuitAct->setEnabled((circ.status() == Circuit::Built));
+  if (!item->parent()) {
+    /* A circuit was selected */
+    CircuitItem *circuitItem = dynamic_cast<CircuitItem *>(item);
+    if (!circuitItem)
+      return;
+
+    /* Set up the circuit context menu */
+    QAction *zoomAct  = new QAction(QIcon(IMG_ZOOM),tr("Zoom to Circuit"),this);
+    QAction *closeAct = new QAction(QIcon(IMG_CLOSE), tr("Close Circuit"),this);
+    zoomAct->setEnabled(circuitItem->circuit().status() == Circuit::Built);
+    menu.addAction(zoomAct);
+    menu.addSeparator();
+    menu.addAction(closeAct);
       
-      QAction* action = _circuitContextMenu->exec(pos);
-      if (action == _closeCircuitAct) {
-        emit closeCircuit(circid);
-      } else if (action == _zoomCircuitAct) {
-        emit zoomToCircuit(circid);
-      }
-    } else {
-      /* Stream was right-clicked */
-      quint64 streamid = ((StreamItem *)item)->id();
-      QAction* action = _streamContextMenu->exec(pos);
-      if (action == _closeStreamAct) {
-        emit closeStream(streamid);
-      }
-    }
+    /* Display the context menu and find out which (if any) action was
+     * selected */
+    QAction* action = menu.exec(mapToGlobal(pos));
+    if (action == closeAct)
+      emit closeCircuit(circuitItem->id());
+    else if (action == zoomAct)
+      emit zoomToCircuit(circuitItem->id());
+  } else {
+    /* A stream was selected */
+    StreamItem *streamItem = dynamic_cast<StreamItem *>(item);
+    if (!streamItem)
+      return;
+ 
+    /* Set up the stream context menu */
+    QAction *closeAct = new QAction(QIcon(IMG_ZOOM), tr("Close Stream"), this);
+    menu.addAction(closeAct);
+
+    /* Display the context menu and find out which (if any) action was
+     * selected */
+    QAction* action = menu.exec(mapToGlobal(pos));
+    if (action == closeAct)
+      emit closeStream(streamItem->id());
   }
 }
 

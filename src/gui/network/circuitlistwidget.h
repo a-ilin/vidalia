@@ -77,10 +77,6 @@ public slots:
   /** Clears all circuits and streams from the list. */
   void clearCircuits();
 
-protected:
-  /** Called when the user presses and releases a mouse button. */ 
-  virtual void mouseReleaseEvent(QMouseEvent *e);
-
 private slots:
   /** Removes the first circuit scheduled to be removed.*/
   void removeCircuit(); 
@@ -88,7 +84,11 @@ private slots:
   void removeStream();
   /** Called when the current item selectio has changed. */
   void onSelectionChanged(QTreeWidgetItem *cur, QTreeWidgetItem *prev);
-  
+  /** Called when the user requests a context menu on a circuit or stream in
+   * the list and displays a context menu appropriate for whichever type of
+   * item is currently selected. */
+  void customContextMenuRequested(const QPoint &pos);
+
 private:
   /** Removes the given circuit item and all streams on that circuit. */
   void removeCircuit(CircuitItem *circuit);
@@ -102,13 +102,6 @@ private:
   void scheduleCircuitRemoval(CircuitItem *circuit, int delay);
   /** Schedules a stream to be removed after the given timeout. */
   void scheduleStreamRemoval(StreamItem *stream, int delay);
-
-  /* Circuit and stream context menus and items */
-  QMenu* _circuitContextMenu; /**< Context menu for circuit items. */
-  QAction* _closeCircuitAct;  /**< Closes a circuit. */
-  QAction* _zoomCircuitAct;   /**< Zoom to a circuit. */
-  QMenu* _streamContextMenu;  /**< Context menu for stream items. */
-  QAction* _closeStreamAct;   /**< Closes a stream. */
 
   /** List of circuit items to be removed. */
   QList<CircuitItem *> _circuitRemovalList;

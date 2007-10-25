@@ -78,13 +78,12 @@ public slots:
   /** Clears the list of router items. */
   void clearRouters();
  
-protected:
-  /** Called when the user presses and releases a moust button. */
-  virtual void mouseReleaseEvent(QMouseEvent *e);
-  
 private slots:
   /** Called when the user clicks on an item in the list. */
   void onSelectionChanged();
+  /** Called when the user requests a context menu for some router in the
+   * list. */  
+  void customContextMenuRequested(const QPoint &pos);
 
 protected:
   /** Called when the user presses a key while the list has focus. */
@@ -96,10 +95,6 @@ private:
 
   /** Maps a server ID to that server's list item. */
   QHash<QString,RouterListItem*> _idmap;
-  
-  /** Router item context menu and items. */
-  QMenu* _routerContextMenu; /**< Context menu for router items. */
-  QAction* _zoomToRouterAct; /**< Zooms in on the selected router. */
   quint32  _onlineRouterCount; /**< Number of online routers. */
 };
 
