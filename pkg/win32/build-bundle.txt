@@ -53,7 +53,11 @@ the directory you created for it in Step 4.
     * Replace the line that says "-limit-connect \" with "+limit-connect{1-} \"
 
   A privoxy.config and default.action with the necessary changes are included
-  in Vidalia's pkg/win32/ directory.
+  in Vidalia's pkg/win32/ directory. If you use the privoxy.config from
+  Vidalia's pkg/win32/ directory, you will need to rename the file to
+  config.txt after copying it to Privoxy's directory. Vidalia's default.action
+  file only needs to be copied to Privoxy's directory; you do not need to
+  rename it.
 
 8. Run the vidalia-bundle.nsi script. The bundle will be named according the
 the versions you specified in Step 4 and placed in the base directory created
