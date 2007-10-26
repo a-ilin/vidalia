@@ -29,7 +29,7 @@ SetCompressor /SOLID lzma
 ; Global definitions
 !define VIDALIA_NAME        "Vidalia"
 !define VIDALIA_EXEC        "vidalia.exe"
-!define VIDALIA_APPVERSION  "0.0.15"
+!define VIDALIA_APPVERSION  "0.0.16-svn"
 !define VIDALIA_DESC        "${VIDALIA_NAME} ${VIDALIA_APPVERSION}"
 
 !define TOR_NAME            "Tor"
@@ -49,7 +49,7 @@ SetCompressor /SOLID lzma
 !define BUNDLE_NAME         "Vidalia Bundle"
 !define BUNDLE_APPVERSION   "${TOR_APPVERSION}-${VIDALIA_APPVERSION}"
 !define BUNDLE_REVISION     "1"
-!define BUNDLE_PRODVERSION  "0.0.15.${BUNDLE_REVISION}" ; Product version must be x.x.x.x
+!define BUNDLE_PRODVERSION  "0.0.16.${BUNDLE_REVISION}" ; Product version must be x.x.x.x
 !define BUNDLE_DESC         "${BUNDLE_NAME} ${BUNDLE_APPVERSION}"
 !define INSTALLFILE         "vidalia-bundle-${BUNDLE_APPVERSION}.exe"
 !define UNINSTALLER         "Uninstall.exe"
