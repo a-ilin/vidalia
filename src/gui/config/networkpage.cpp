@@ -100,7 +100,8 @@ NetworkPage::changedSinceLastApply()
 void
 NetworkPage::revert()
 {
-  NetworkSettings(Vidalia::torControl()).revert();
+  NetworkSettings settings(Vidalia::torControl());
+  settings.revert();
 }
 
 /** Called when Vidalia has connected and authenticated to Tor. This will
