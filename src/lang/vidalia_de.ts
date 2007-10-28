@@ -233,7 +233,7 @@ kein Passwort angegeben.</translation>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="45"/>
         <source>Advanced</source>
-        <translation type="unfinished">Fortgeschritten</translation>
+        <translation>Fortgeschritten</translation>
     </message>
 </context>
 <context>
@@ -266,7 +266,7 @@ kein Passwort angegeben.</translation>
     <message>
         <location filename="../gui/config/appearancepage.cpp" line="34"/>
         <source>Appearance</source>
-        <translation type="unfinished">Aussehen</translation>
+        <translation>Aussehen</translation>
     </message>
 </context>
 <context>
@@ -456,32 +456,32 @@ kein Passwort angegeben.</translation>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="67"/>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Netzwerk</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="168"/>
         <source>Error Saving Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler beim Speichern der Einstellungen</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="170"/>
         <source>Vidalia was unable to save your %1 settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia konnte Ihre %1 Einstellungen nicht speichern.</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="197"/>
         <source>Error Applying Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler beim Anwender der Einstellungen</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="199"/>
         <source>Vidalia was unable to apply your %1 settings to Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia konnte ihre %1 Einstellungen nicht an Tor anwenden.</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="71"/>
         <source>Relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Verteiler</translation>
     </message>
 </context>
 <context>
@@ -499,7 +499,7 @@ kein Passwort angegeben.</translation>
     <message>
         <location filename="../control/controlconnection.cpp" line="139"/>
         <source>Vidalia was unable to connect to Tor. (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia konnte sich nicht mit Tor verbinden. (%1)</translation>
     </message>
 </context>
 <context>
@@ -585,7 +585,7 @@ kein Passwort angegeben.</translation>
     <message>
         <location filename="../gui/config/generalpage.cpp" line="32"/>
         <source>General</source>
-        <translation type="unfinished">Allgemein</translation>
+        <translation>Allgemein</translation>
     </message>
 </context>
 <context>
@@ -1195,14 +1195,17 @@ Klicken Sie erneut auf &apos;Tor anhalten&apos; um das Beenden zu erzwingen.</tr
     <message>
         <location filename="../gui/mainwindow.cpp" line="623"/>
         <source>Relaying is Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Verteilung ist aktiviert</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="628"/>
         <source>You are currently running a Tor relay. Terminating your relay will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new relay?</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie betreiben gerade einen Tor-Verteiler. Wenn sie diesen beenden werden alle offenen Verbindungen von
+Clients unterbrochen.
+
+Wollen Sie den Tor-Verteiler langsam beenden, damit die Clients Zeit haben, einen neuen Verteilen zu finden?</translation>
     </message>
 </context>
 <context>
@@ -1681,7 +1684,7 @@ empfangen.</translation>
     <message>
         <location filename="../gui/network/netviewer.ui" line="259"/>
         <source>Refresh the list of Tor relays and connections</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualisiere die Liste der Tor-Verteiler und Verbindungen</translation>
     </message>
 </context>
 <context>
@@ -1699,7 +1702,7 @@ empfangen.</translation>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="179"/>
         <source>The specified bridge identifier is not valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die angegebene Brücke ist nicht gültig.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="226"/>
@@ -1709,12 +1712,13 @@ empfangen.</translation>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="255"/>
         <source>You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie müssen eine IP-Adresse oder einen Hostnamen und eine Portnummer abgeben, damit Tor einen Proxy für die
+Internetverbindung benutzt.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="261"/>
         <source>You must specify one or more ports to which your firewall allows you to connect.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie müssen einen oder mehrere Ports angeben, zu der Ihre Firewall Verbindungen erlaubt.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="297"/>
@@ -1724,7 +1728,7 @@ empfangen.</translation>
     <message>
         <location filename="../gui/config/networkpage.ui" line="30"/>
         <source>Check to configure Tor to use a proxy to access the Internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivieren Sie diese Option, damit Tor einen Proxy für die Internetverbindung benutzt</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="33"/>
@@ -1762,9 +1766,10 @@ empfangen.</translation>
         <translation>Port:</translation>
     </message>
     <message>
-        <location filename="../gui/config/networkpage.ui" line="181"/>
+        <location fnilename="../gui/config/networkpage.ui" line="181"/>
         <source>Check to configure Tor to only connect to servers using ports allowed by your firewall</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivieren Sie diese Option, damit sich Tor zu Servern nur über freigegebene
+Ports Ihrer Firewall verbindet</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="184"/>
@@ -1789,37 +1794,39 @@ empfangen.</translation>
     <message>
         <location filename="../gui/config/networkpage.ui" line="240"/>
         <source>Check to configure Tor to use bridge servers to access the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivieren Sie diese Option, damit Tor sich über Serverbrücken
+mit dem Tor-Netzwerk verbindet</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="243"/>
         <source>My ISP blocks connections to the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Mein Provider blockiert Verbindungen zum Tor-Netzwerk</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="267"/>
         <source>Tor Bridge Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen für Tor-Brücken</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="279"/>
         <source>The Tor version you are currently running does not support bridges. &lt;br&gt;Tor will still try to encrypt its directory connections.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die momentan benutzte Tor-Version unterstützt keine Serverbrücken. &lt;br&gt;Tor wird weiterhin versuchen,
+seine Verzeichnisverbindungen zu verschlüsseln.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="300"/>
         <source>Add a Bridge:</source>
-        <translation type="unfinished"></translation>
+        <translation>Eine Bücke hinzufügen:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="372"/>
         <source>Remove the selected bridges from the list</source>
-        <translation type="unfinished"></translation>
+        <translation>Entferne the gewählte Brücke von der Liste</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="394"/>
         <source>Copy the selected bridges to the clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiere die gewählte Brücke in die Zwischenablage</translation>
     </message>
 </context>
 <context>
@@ -1924,17 +1931,17 @@ empfangen.</translation>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="44"/>
         <source>Relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Verteiler</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="55"/>
         <source>Zoom to Relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Verteiler heran zoomen</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="231"/>
         <source>%1 relays online (%2 total)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 Verteiler online (%2 insgesamt)</translation>
     </message>
 </context>
 <context>
@@ -2174,63 +2181,66 @@ geben Sie Ihre Uploadgeschwindigkeit bitte hier an.</translation>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="78"/>
         <source>Server</source>
-        <translation type="unfinished">Server</translation>
+        <translation>Server</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="136"/>
         <source>Bridge Support Unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation>Brücken-Unterstützung nicht verfügbar</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="139"/>
         <source>You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie haben Tor so konfiguriert, dass es als Brückenverteiler für zensierte Nutzer dient, aber Ihre Tor-Version
+unterstützt Brücken nicht.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="141"/>
         <source>Please upgrade your Tor software or configure Tor to act as a normal Tor relay.</source>
-        <translation type="unfinished"></translation>
+        <translation>Bitte aktualisieren Sie Ihre Tor-Version oder konfigurieren Sie Tor so, dass es als normaler Verteiler
+arbeitet.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="209"/>
         <source>You must specify at least a relay nickname and port.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie müssen mindestend einen Verteiler-Namen und Port angeben.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="30"/>
         <source>Run Tor as a client only</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor nur als Client ausführen</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="44"/>
         <source>Help censored users reach the Tor network (Tor 0.2.0.3-alpha or newer)</source>
-        <translation type="unfinished"></translation>
+        <translation>Zensierten Nutzern helfen, dass Tor-Netzwerk zu nutzen (Tor .2.0.3-alpha oder neuer)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="136"/>
         <source>Relay Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Verteiler-Port:</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="172"/>
         <source>Port on which users and other servers can communicate with your relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Port, den andere Nutzer und Server benutzen, um mit Ihrem Verteiler zu kommunizieren</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="259"/>
         <source>Email address at which you may be reached if there is a
 problem with your relay. You might also include your PGP or GPG fingerprint.</source>
-        <translation type="unfinished"></translation>
+        <translation>Email-Adresse über die Sie erreicht werden können, wenn ein Problem mit Ihrem
+Verteiler besteht. Sie können auch Ihren PGP- oder GPG-Fingerabdruck angeben.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="289"/>
         <source>Enable to mirror the Tor relay directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivieren, um das Tor-Verteiler-Verzeichnis zu spiegeln</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="292"/>
         <source>Mirror the Relay Directory </source>
-        <translation type="unfinished"></translation>
+        <translation>Das Tor-Verteiler-Verzeichnis speigeln</translation>
     </message>
 </context>
 <context>
@@ -2278,7 +2288,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../control/stream.cpp" line="137"/>
         <source>Remapped</source>
-        <translation type="unfinished"></translation>
+        <translation>Umgelenkt</translation>
     </message>
 </context>
 <context>
