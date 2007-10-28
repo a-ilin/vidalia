@@ -39,6 +39,9 @@ LanguageSupport::languages()
   static QMap<QString, QString> languages;
   if (languages.isEmpty()) {
     languages.insert("en",    "English");
+    languages.insert("ar",
+      QString::fromUtf8("\330\247\331\204\330\271\330\261\330"
+                        "\250\331\212\330\251"));
     languages.insert("bg",
       QString::fromUtf8("\320\221\321\212\320\273\320\263\320"
                         "\260\321\200\321\201\320\272\320\270"));
@@ -130,7 +133,7 @@ LanguageSupport::translate(QString langCode)
     langCode = langCode.toLower();
     if (translator->load(QString(":/lang/") + langCode)) {
       QApplication::installTranslator(translator);
-      if (langCode == "fa") {
+      if (langCode == "fa" || langCode == "ar") {
         vApp->setLayoutDirection(Qt::RightToLeft);
       }
       return true;

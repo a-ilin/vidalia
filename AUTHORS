@@ -14,6 +14,9 @@ Contributors:
   The Tango Desktop Project <http://tango-project.org> created many of the
   icons used in Vidalia. See LICENSE for details.
 
+  Ahmad Gharbeia created the flag used for the Arabic language in the
+  Appearance settings dialog.
+
   Geoff Goodell <http://afs.eecs.harvard.edu/~goodell/> supplied us with
   nearly all of the flag icons that we use in the Appearance configuration
   page and network map. He also created the router status icons we use in 
@@ -41,6 +44,7 @@ Contributors:
 
   
 Translators:
+  Arabic      Ahmad Gharbeia
   Bulgarian   kutia0001
   Czech       el Mar <http://airdump.net>
   Dutch       Ater Atrocitas

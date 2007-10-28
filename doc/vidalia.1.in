@@ -13,7 +13,7 @@ Vidalia allows you to start and stop Tor, view the status of Tor at a
 glance, and monitor Tor's bandwidth usage. Vidalia also makes it easy to
 contribute to the Tor network by helping you setup a Tor server, if you wish.
 To find more information about what Tor is and how to use it, see the Tor
-homepage: http://tor.eff.org/index.html.
+homepage: https://www.torproject.org/
 .SH OPTIONS
 \fB\-help\fR
 Displays this usage message and exits.
@@ -39,12 +39,12 @@ Sets the verbosity of Vidalia's logging. If this option is specified without a
 Sets Vidalia's interface style. [Windows|Motif|CDE|Plastique]
 .TP
 \fB\-lang \fI<langcode>\fR
-Sets Vidalia's language. [bg|cs|de|en|es|fa|fi|fr|hu|it|nb|nl|pl|pt|ru|sv|zh-cn|zh-tw]
+Sets Vidalia's language. [ar|bg|cs|de|en|es|fa|fi|fr|hu|it|nb|nl|pl|pt|ru|sv|zh-cn|zh-tw]
 
 .SH SEE ALSO
 .BR tor (1)
 
-.BR http://www.vidalia-project.net
+.BR http://www.vidalia-project.net/
 
 .SH AUTHORS
 Matt Edman <edmanm@vidalia-project.net>

@@ -52,6 +52,9 @@ public:
   void load();
   
 private:
+  /** Returns the flag icon to use for the given <b>languageCode</b>. */
+  QIcon flagForLanguage(const QString &languageCode);
+
   /** A VidaliaSettings object used for saving/loading settings */
   VidaliaSettings* _settings;
 

@@ -41,7 +41,7 @@ AppearancePage::AppearancePage(QWidget *parent)
 
   /* Populate combo boxes */
   foreach (QString code, LanguageSupport::languageCodes()) {
-    ui.cmboLanguage->addItem(QIcon(":/images/flags/" + code + ".png"),
+    ui.cmboLanguage->addItem(flagForLanguage(code),
                              LanguageSupport::languageName(code),
                              code);
   }
@@ -54,6 +54,15 @@ AppearancePage::AppearancePage(QWidget *parent)
 AppearancePage::~AppearancePage()
 {
   delete _settings;
+}
+
+/** Returns the flag icon to use for the given <b>languageCode</b>. */
+QIcon
+AppearancePage::flagForLanguage(const QString &languageCode)
+{
+  if (languageCode == "ar")
+    return QIcon(":/images/flags/ara.png");
+  return QIcon(":/images/flags/" + languageCode + ".png");
 }
 
 /** Saves the changes on this page */
