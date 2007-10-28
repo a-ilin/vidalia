@@ -1,4 +1,6 @@
 #!/bin/sh
+#
+# Copyright (c) 2007 Andrew Lewman
 
 # TorPostflight gets invoked after any install or upgrade.
 
