@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="fi">
+<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -232,7 +233,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="45"/>
         <source>Advanced</source>
-        <translation type="unfinished">Lisäasetukset</translation>
+        <translation>Lisäasetukset</translation>
     </message>
 </context>
 <context>
@@ -265,7 +266,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../gui/config/appearancepage.cpp" line="34"/>
         <source>Appearance</source>
-        <translation type="unfinished">Ulkoasu</translation>
+        <translation>Ulkoasu</translation>
     </message>
 </context>
 <context>
@@ -455,32 +456,32 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="67"/>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Verkko</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="168"/>
         <source>Error Saving Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Vfirhe tallentaessa asetuksia</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="170"/>
         <source>Vidalia was unable to save your %1 settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia ei onnistunut tallentamaan %1 asetuksia.</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="197"/>
         <source>Error Applying Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe otettaessa käyttöön asetuksia</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="199"/>
         <source>Vidalia was unable to apply your %1 settings to Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia ei onnistunut ottamaan käyttöön %1 asetuksia Tor-ohjelmaan.</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="71"/>
         <source>Relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Välitä</translation>
     </message>
 </context>
 <context>
@@ -498,7 +499,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../control/controlconnection.cpp" line="139"/>
         <source>Vidalia was unable to connect to Tor. (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia ei onnistunut ottamaan yhteyttä Tor-ohjelmaan. (%1)</translation>
     </message>
 </context>
 <context>
@@ -1167,7 +1168,7 @@ Ole hyvä ja tarkista tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen pysä
     <message>
         <location filename="../gui/mainwindow.cpp" line="848"/>
         <source>Vidalia was unable to authenticate to Tor. (%1)</source>
-        <translation>Vidalia ei onnistut kirjautumaan Tor-ohjelmaan. (%1)</translation>
+        <translation type="unfinished">Vidalia ei onnistunut kirjautumaan Tor-ohjelmaan. (%1)</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="850"/>
@@ -1673,7 +1674,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/network/netviewer.ui" line="259"/>
         <source>Refresh the list of Tor relays and connections</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivitä Tor-reititin ja -yhteyslista</translation>
     </message>
 </context>
 <context>
@@ -1916,7 +1917,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="44"/>
         <source>Relay</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Välitä</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="55"/>
