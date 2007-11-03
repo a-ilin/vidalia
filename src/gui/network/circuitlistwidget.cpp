@@ -94,7 +94,7 @@ CircuitListWidget::customContextMenuRequested(const QPoint &pos)
       return;
  
     /* Set up the stream context menu */
-    QAction *closeAct = new QAction(QIcon(IMG_ZOOM), tr("Close Stream"), this);
+    QAction *closeAct = new QAction(QIcon(IMG_CLOSE), tr("Close Stream"), this);
     menu.addAction(closeAct);
 
     /* Display the context menu and find out which (if any) action was
