@@ -39,15 +39,13 @@ Privoxy
 
 Tor
 8. Download and extract the latest Tor source from
-   http://tor.eff.org
+   https://www.torproject.org/download
 
    Note the location in which you extract Tor's source, because you will need
    to specify it in Step 8.
    
 9. Configure Tor with the following:
-   ./configure --prefix=/Library/Tor --bindir=/Library/Tor \
-    --sysconfdir=/Library --enable-static --disable-shared
-
+   ./configure --prefix=/Library/Tor --bindir=/Library/Tor --sysconfdir=/Library
 
 Vidalia
 10. Configure Vidalia with the following:
@@ -58,13 +56,16 @@ Vidalia
 
 11. Run `make` to build Vidalia.
 
+12. Download the latest Torbutton and LICENSE file from https://torbutton.torproject.org/dev/.
+Remember where you put this file.
+
    
 Finish
 12. From Vidalia's pkg/ directory in Vidalia's source, run the following:
      ./package.sh osx-bundle <path-to-tor> <privoxy-package.zip>
   
   Example:
-     ./package.sh osx-bundle ~/tor-0.1.1.19-rc ~/privoxyosx_setup_3.0.3.zip
+     ./package.sh osx-bundle ~/tor-0.2.0.11-alpha ~/privoxyosx_setup_3.0.3.zip
 
   The script that builds the .mpkg (pkg/osx/bundle/buildmpkg.sh) gets Tor's
   version number from the directory name, so it should be named appropriately,
