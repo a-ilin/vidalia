@@ -1,7 +1,18 @@
 0.0.16  xx-xxx-200x
+  o Fix compilation on Mac OS X 10.3 (Panther).
   o GETCONF RelayBandwidthRate and RelayBandwidthBurst properly on Tor >=
-  0.2.0.1-alpha. Previously, we were SETCONFing RelayBandwidthFoo when
-  appropriate, but always GETCONFing BandwidthFoo. Fixes Ticket #298.
+    0.2.0.1-alpha. Previously, we were SETCONFing RelayBandwidthFoo when
+    appropriate, but always GETCONFing BandwidthFoo. Fixes Ticket #298.
+  o Fix some dumb logic in determing whether the Windows we're running on
+    supports Window transparency.
+  o Use the correct icon for the "Close Stream" context menu action in the
+    circuit and stream list widget.
+  o Modified the Mac OS X bundle installer to set Vidalia to start
+    automatically on login for the user that installed the bundle.
+  o Added an Arabic translation from Ahmad Gharbeia.
+  o Updated Finnish, German, Simplified Chinese, and Traditional Chinese
+    translations. 
+
 
 0.0.15  24-Oct-2007
   o Add a new 'Network' settings page to the config dialog that lets users
