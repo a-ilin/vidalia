@@ -51,8 +51,8 @@
 #define CABLE768_MAX_RATE       (192*1024)
 #define T1_AVG_RATE             (192*1024)
 #define T1_MAX_RATE             (384*1024)
-#define HIGHBW_AVG_RATE         (3072*1024)
-#define HIGHBW_MAX_RATE         (6144*1024)
+#define HIGHBW_AVG_RATE         (5120*1024)
+#define HIGHBW_MAX_RATE         (10240*1024)
 /** Minimum allowed bandwidth rate (20KB) */
 #define MIN_BANDWIDTH_RATE      20
 /** Maximum bandwidth rate. This is limited to 2147483646 bytes, 
