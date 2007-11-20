@@ -92,6 +92,12 @@ public:
   /** Gets the maximum burst rate (in B/s) of this server. */
   quint32 getBandwidthBurstRate();
 
+protected:
+  /** Virtual method called when we retrieve a server-related setting from Tor.
+   * Currently this just translates BandwidthFoo to RelayBandwidthFoo when
+   * appropriate. */
+  virtual QVariant torValue(const QString &key);
+
 private:
   /** Returns Tor-recognizable configuration keys and current values. */
   QHash<QString,QString> confValues();

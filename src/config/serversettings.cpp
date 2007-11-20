@@ -68,11 +68,13 @@ ServerSettings::ServerSettings(TorControl *torControl)
   setDefault(SETTING_ORPORT,        9001);
 #endif
   setDefault(SETTING_DIRPORT,       9030);
+  setDefault(SETTING_NICKNAME,      "Unnamed");
   setDefault(SETTING_CONTACT,       "<your@email.com>");
-  setDefault(SETTING_BANDWIDTH_RATE,  3145728);
-  setDefault(SETTING_BANDWIDTH_BURST, 6291456);
-  setDefault(SETTING_NICKNAME,        "Unnamed");
-  setDefault(SETTING_PUBLISH_DESCRIPTOR, "1");
+  setDefault(SETTING_BANDWIDTH_RATE,        3145728);
+  setDefault(SETTING_RELAY_BANDWIDTH_RATE,  3145728);
+  setDefault(SETTING_BANDWIDTH_BURST,       6291456);
+  setDefault(SETTING_RELAY_BANDWIDTH_BURST, 6291456);
+  setDefault(SETTING_PUBLISH_DESCRIPTOR,    "1");
   setDefault(SETTING_EXITPOLICY,
     ExitPolicy(ExitPolicy::Default).toString());
 }
@@ -156,6 +158,21 @@ ServerSettings::apply(QString *errmsg)
     rc = torControl()->resetConf(resetKeys, errmsg);
   }
   return rc;
+}
+
+/** Virtual method called when we retrieve a server-related setting from Tor.
+ * Currently this just translates BandwidthFoo to RelayBandwidthFoo when
+ * appropriate. */
+QVariant
+ServerSettings::torValue(const QString &key)
+{
+  if (torControl()->getTorVersion() >= 0x020001) {
+    if (key == SETTING_BANDWIDTH_RATE)
+      return AbstractTorSettings::torValue(SETTING_RELAY_BANDWIDTH_RATE);
+    else if (key == SETTING_BANDWIDTH_BURST)
+      return AbstractTorSettings::torValue(SETTING_RELAY_BANDWIDTH_BURST);
+  }
+  return AbstractTorSettings::torValue(key);
 }
 
 /** Enables or disables running Tor as a server. 

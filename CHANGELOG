@@ -1,3 +1,8 @@
+0.0.16  xx-xxx-200x
+  o GETCONF RelayBandwidthRate and RelayBandwidthBurst properly on Tor >=
+  0.2.0.1-alpha. Previously, we were SETCONFing RelayBandwidthFoo when
+  appropriate, but always GETCONFing BandwidthFoo. Fixes Ticket #298.
+
 0.0.15  24-Oct-2007
   o Add a new 'Network' settings page to the config dialog that lets users
     configure an HTTP/HTTPS proxy, specify allowed ports if they are behind a
