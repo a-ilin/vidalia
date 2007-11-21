@@ -134,7 +134,11 @@ AdvancedPage::save(QString &errmsg)
     QString dataDir = ui.lineTorDataDirectory->text();
     if (dataDir != _settings->getDataDirectory())
       _settings->setDataDirectory(dataDir);
+  } else {
+    _settings->setTorrc(ui.lineTorConfig->text());
+    _settings->setDataDirectory(ui.lineTorDataDirectory->text());
   }
+
   _settings->setControlAddress(controlAddress);
   _settings->setControlPort(ui.lineControlPort->text().toUShort());
   _settings->setUser(ui.lineUser->text());
