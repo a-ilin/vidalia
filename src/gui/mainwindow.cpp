@@ -114,10 +114,10 @@ MainWindow::MainWindow()
   ui.setupUi(this);
 
   /* Create all the dialogs of which we only want one instance */
-  _messageLog     = new MessageLog(this);
-  _bandwidthGraph = new BandwidthGraph(this);
-  _netViewer      = new NetViewer(this);
-  _configDialog   = new ConfigDialog(this);
+  _messageLog     = new MessageLog();
+  _bandwidthGraph = new BandwidthGraph();
+  _netViewer      = new NetViewer();
+  _configDialog   = new ConfigDialog();
 
   /* Create the actions that will go in the tray menu */
   createActions();
@@ -168,6 +168,10 @@ MainWindow::MainWindow()
 MainWindow::~MainWindow()
 {
   _trayIcon.hide();
+  delete _messageLog;
+  delete _bandwidthGraph;
+  delete _netViewer;
+  delete _configDialog;
 }
 
 /** Returns true if we're running on a platform with tray icon support. */

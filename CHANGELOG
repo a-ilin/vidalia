@@ -9,6 +9,9 @@
     supports Window transparency.
   o Use the correct icon for the "Close Stream" context menu action in the
     circuit and stream list widget.
+  o Create the message log, network map, bandwidth graph, and settings dialogs
+    without parents, so they can be independently brought to the foreground on
+    Vista.
   o Update the default bandwidth rate and burst rate to 5MB and 10MB,
     respectively, to match Tor's defaults.
   o Modified the Mac OS X bundle installer to set Vidalia to start
