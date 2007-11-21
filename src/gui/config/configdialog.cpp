@@ -227,6 +227,7 @@ ConfigDialog::saveConf()
   if (tc->saveConf()) {
     ServerSettings(tc).setChanged(false);
     NetworkSettings(tc).setChanged(false);
+    TorSettings(tc).setChanged(false);
   }
 }
 
