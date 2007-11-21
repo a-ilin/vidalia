@@ -74,7 +74,8 @@ TorSettings::TorSettings(TorControl *torControl)
 #if defined(Q_OS_WIN32)
   QString programFiles = win32_program_files_folder();
   if (QFileInfo(programFiles + "\\Vidalia Bundle\\Tor\\tor.exe").exists())
-    setDefault(SETTING_TOR_EXECUTABLE, programFiles + "\\Vidalia Bundle\\Tor\\tor.exe");
+    setDefault(SETTING_TOR_EXECUTABLE,
+               programFiles + "\\Vidalia Bundle\\Tor\\tor.exe");
   else
     setDefault(SETTING_TOR_EXECUTABLE, programFiles + "\\Tor\\tor.exe");
 #else
