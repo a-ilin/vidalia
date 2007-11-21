@@ -14,6 +14,7 @@
     Vista.
   o Update the default bandwidth rate and burst rate to 5MB and 10MB,
     respectively, to match Tor's defaults.
+  o Make the "Use this proxy for HTTPS also" checkbox checked by default.
   o Modified the Mac OS X bundle installer to set Vidalia to start
     automatically on login for the user that installed the bundle.
   o Added an Arabic translation from Ahmad Gharbeia.

@@ -49,7 +49,7 @@ NetworkSettings::NetworkSettings(TorControl *torControl)
   setDefault(SETTING_USE_HTTP_PROXY,    false);
   setDefault(SETTING_HTTP_PROXY,        "");
   setDefault(SETTING_HTTP_PROXY_AUTH,   "");
-  setDefault(SETTING_USE_HTTPS_PROXY,   false);
+  setDefault(SETTING_USE_HTTPS_PROXY,   true);
   setDefault(SETTING_HTTPS_PROXY,       "");
   setDefault(SETTING_HTTPS_PROXY_AUTH,  "");
   setDefault(SETTING_USE_BRIDGES,       false);
