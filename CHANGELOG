@@ -3,6 +3,8 @@
   o GETCONF RelayBandwidthRate and RelayBandwidthBurst properly on Tor >=
     0.2.0.1-alpha. Previously, we were SETCONFing RelayBandwidthFoo when
     appropriate, but always GETCONFing BandwidthFoo. Fixes Ticket #298.
+  o Only remember the torrc and datadir values if Vidalia started Tor, or
+    if the user changed the displayed values.
   o Fix some dumb logic in determing whether the Windows we're running on
     supports Window transparency.
   o Use the correct icon for the "Close Stream" context menu action in the

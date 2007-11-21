@@ -116,25 +116,34 @@ AdvancedPage::save(QString &errmsg)
   /* Validate the selected authentication options */
   TorSettings::AuthenticationMethod authMethod = 
     indexToAuthMethod(ui.cmbAuthMethod->currentIndex());
-  if (authMethod == TorSettings::PasswordAuth &&
-      ui.linePassword->text().isEmpty() &&
-      !ui.chkRandomPassword->isChecked()) {
+  if (authMethod == TorSettings::PasswordAuth
+        && ui.linePassword->text().isEmpty()
+        && !ui.chkRandomPassword->isChecked()) {
     errmsg = tr("You selected 'Password' authentication, but did not "
                 "specify a password.");
     return false;
   }
+ 
+  /* Only remember the torrc and datadir values if Vidalia started Tor, or
+   * if the user changed the displayed values. */
+  if (!Vidalia::torControl()->isVidaliaRunningTor()) {
+    QString torrc = ui.lineTorConfig->text();
+    if (torrc != _settings->getTorrc())
+      _settings->setTorrc(torrc);
 
+    QString dataDir = ui.lineTorDataDirectory->text();
+    if (dataDir != _settings->getDataDirectory())
+      _settings->setDataDirectory(dataDir);
+  }
   _settings->setControlAddress(controlAddress);
   _settings->setControlPort(ui.lineControlPort->text().toUShort());
-  _settings->setTorrc(ui.lineTorConfig->text());
-  _settings->setDataDirectory(ui.lineTorDataDirectory->text());
   _settings->setUser(ui.lineUser->text());
   _settings->setGroup(ui.lineGroup->text());
   
   _settings->setAuthenticationMethod(authMethod);
   _settings->setUseRandomPassword(ui.chkRandomPassword->isChecked());
-  if (authMethod == TorSettings::PasswordAuth && 
-      !ui.chkRandomPassword->isChecked())
+  if (authMethod == TorSettings::PasswordAuth
+        && !ui.chkRandomPassword->isChecked())
     _settings->setControlPassword(ui.linePassword->text());
 
 #if defined(Q_WS_WIN)
