@@ -150,11 +150,13 @@ NetworkSettings::getReachablePorts()
 void
 NetworkSettings::setReachablePorts(const QList<quint16> &reachablePorts)
 {
-  QStringList portList;
-  foreach (quint16 port, reachablePorts) {
-    portList << "*:" + QString::number(port);
+  if (!reachablePorts.isEmpty()) {
+    QStringList portList;
+    foreach (quint16 port, reachablePorts) {
+      portList << "*:" + QString::number(port);
+    }
+    setValue(SETTING_REACHABLE_ADDRESSES, portList);
   }
-  setValue(SETTING_REACHABLE_ADDRESSES, portList);
 }
 
 /** Returns true if Tor should make all its directory requests through a
