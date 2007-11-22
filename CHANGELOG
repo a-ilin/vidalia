@@ -1,19 +1,19 @@
-0.0.16  xx-xxx-200x
+0.0.16  22-Nov-2007
   o Fix compilation on Mac OS X 10.3 (Panther).
   o GETCONF RelayBandwidthRate and RelayBandwidthBurst properly on Tor >=
-    0.2.0.1-alpha. Previously, we were SETCONFing RelayBandwidthFoo when
+    0.2.0.1-alpha. In 0.0.15, we were SETCONFing RelayBandwidthFoo when
     appropriate, but always GETCONFing BandwidthFoo. Fixes Ticket #298.
   o Display the correct default list of allowed ports in the Network settings
     page, and don't try to save an empty list. Noticed by Roger Dingledine.
   o Only remember the torrc and datadir values if Vidalia started Tor, or
     if the user changed the displayed values.
   o Fix some dumb logic in determing whether the Windows we're running on
-    supports Window transparency.
+    supports window transparency.
   o Use the correct icon for the "Close Stream" context menu action in the
     circuit and stream list widget.
   o Create the message log, network map, bandwidth graph, and settings dialogs
     without parents, so they can be independently brought to the foreground on
-    Vista.
+    Windows Vista.
   o Update the default bandwidth rate and burst rate to 5MB and 10MB,
     respectively, to match Tor's defaults.
   o Make the "Use this proxy for HTTPS also" checkbox checked by default.
