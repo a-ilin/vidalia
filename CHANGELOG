@@ -17,6 +17,8 @@
   o Update the default bandwidth rate and burst rate to 5MB and 10MB,
     respectively, to match Tor's defaults.
   o Make the "Use this proxy for HTTPS also" checkbox checked by default.
+  o Disable the labels that display the user's bridge relay information if the
+    user is not running a bridge, instead of just disabling the copy button.
   o Modified the Mac OS X bundle installer to set Vidalia to start
     automatically on login for the user that installed the bundle.
   o Added an Arabic translation from Ahmad Gharbeia.

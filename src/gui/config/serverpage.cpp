@@ -193,6 +193,8 @@ ServerPage::loadBridgeIdentity()
   ui.lblBridgeIdentity->setText(bridge.isEmpty()
                                   ? tr("Your bridge relay is not running.")
                                   : bridge);
+  ui.lblYourBridgeRelayIs->setEnabled(!bridge.isEmpty());
+  ui.lblBridgeIdentity->setEnabled(!bridge.isEmpty());
   ui.btnCopyBridgeIdentity->setEnabled(!bridge.isEmpty());
 }
 
