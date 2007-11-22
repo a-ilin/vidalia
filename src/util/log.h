@@ -122,6 +122,10 @@ public:
     { stream->buf += t; return *this; }
   inline LogMessage arg(const QString &a)
     { stream->buf = stream->buf.arg(a); return *this; }
+  inline LogMessage &operator<<(const QStringList &a)
+    { stream->buf += a.join(","); return *this; }
+  inline LogMessage arg(const QStringList &a)
+    { stream->buf = stream->buf.arg(a.join(",")); return *this; }
   inline LogMessage &operator<<(const QHostAddress &a)
     { stream->buf += a.toString(); return *this; }
   inline LogMessage arg(const QHostAddress &a)
