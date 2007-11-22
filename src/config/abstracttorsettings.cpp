@@ -82,6 +82,8 @@ AbstractTorSettings::isEmptyValue(const QVariant &value)
   switch (value.type()) {
     case QVariant::String: 
       return (value.toString().isEmpty());
+    case QVariant::StringList:
+      return (value.toStringList().isEmpty());
     case QVariant::UInt:
     case QVariant::Int:
       return (value.toUInt() == 0); 
