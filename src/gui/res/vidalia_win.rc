@@ -39,8 +39,8 @@ FILETYPE        VFT_APP
     {
         BLOCK "040904E4"
         {
-            VALUE "FileVersion",      "0.0.16-svn"
-            VALUE "ProductVersion",   "0.0.16-svn"
+            VALUE "FileVersion",      "0.0.16"
+            VALUE "ProductVersion",   "0.0.16"
             VALUE "FileDescription",  "Vidalia"
             VALUE "InternalName",     "Vidalia"
             VALUE "ProductName",      "Vidalia"
