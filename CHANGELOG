@@ -1,3 +1,8 @@
+0.1.0   xx-xxx-200x
+  o Respond to the Delete key in the network map by closing whatever circuits
+    or streams are currently selected. Suggested by Andrew Lewman.
+
+
 0.0.16  22-Nov-2007
   o Fix compilation on Mac OS X 10.3 (Panther).
   o GETCONF RelayBandwidthRate and RelayBandwidthBurst properly on Tor >=

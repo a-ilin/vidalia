@@ -27,6 +27,7 @@
 
 #include <QPoint>
 #include <QTimer>
+#include <vidalia.h>
 
 #include "circuitlistwidget.h"
 
@@ -51,6 +52,11 @@ CircuitListWidget::CircuitListWidget(QWidget *parent)
           this, SLOT(onSelectionChanged(QTreeWidgetItem*,QTreeWidgetItem*)));
   connect(this, SIGNAL(customContextMenuRequested(QPoint)),
           this, SLOT(customContextMenuRequested(QPoint)));
+
+  /* Respond to the Delete key by closing whatever circuits or streams are
+   * selected. */
+  vApp->createShortcut(QKeySequence::Delete, this, this,
+                       SLOT(closeSelectedConnections()));
 }
 
 /** Called when the user requests a context menu on a circuit or stream in the
@@ -73,8 +79,10 @@ CircuitListWidget::customContextMenuRequested(const QPoint &pos)
       return;
 
     /* Set up the circuit context menu */
-    QAction *zoomAct  = new QAction(QIcon(IMG_ZOOM),tr("Zoom to Circuit"),this);
-    QAction *closeAct = new QAction(QIcon(IMG_CLOSE), tr("Close Circuit"),this);
+    QAction *zoomAct  = new QAction(QIcon(IMG_ZOOM),
+                                    tr("Zoom to Circuit"), this);
+    QAction *closeAct = new QAction(QIcon(IMG_CLOSE),
+                                    tr("Close Circuit (Del)"), this);
     zoomAct->setEnabled(circuitItem->circuit().status() == Circuit::Built);
     menu.addAction(zoomAct);
     menu.addSeparator();
@@ -94,7 +102,8 @@ CircuitListWidget::customContextMenuRequested(const QPoint &pos)
       return;
  
     /* Set up the stream context menu */
-    QAction *closeAct = new QAction(QIcon(IMG_CLOSE), tr("Close Stream"), this);
+    QAction *closeAct = new QAction(QIcon(IMG_CLOSE),
+                                    tr("Close Stream (Del)"), this);
     menu.addAction(closeAct);
 
     /* Display the context menu and find out which (if any) action was
@@ -102,6 +111,24 @@ CircuitListWidget::customContextMenuRequested(const QPoint &pos)
     QAction* action = menu.exec(mapToGlobal(pos));
     if (action == closeAct)
       emit closeStream(streamItem->id());
+  }
+}
+
+/** Closes all selected circuits or streams. */
+void
+CircuitListWidget::closeSelectedConnections()
+{
+  QList<QTreeWidgetItem *> items = selectedItems();
+  foreach (QTreeWidgetItem *item, items) {
+    if (!item->parent()) {
+      CircuitItem *circuitItem = dynamic_cast<CircuitItem *>(item);
+      if (circuitItem)
+        emit closeCircuit(circuitItem->id());
+    } else {
+      StreamItem *streamItem = dynamic_cast<StreamItem *>(item);
+      if (streamItem)
+        emit closeStream(streamItem->id());
+    }
   }
 }
 

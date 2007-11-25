@@ -88,6 +88,8 @@ private slots:
    * the list and displays a context menu appropriate for whichever type of
    * item is currently selected. */
   void customContextMenuRequested(const QPoint &pos);
+  /** Closes all selected circuits or streams. */
+  void closeSelectedConnections();
 
 private:
   /** Removes the given circuit item and all streams on that circuit. */
