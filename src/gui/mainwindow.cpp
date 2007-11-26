@@ -465,6 +465,10 @@ MainWindow::updateTorStatus(TorStatus status)
   } else if (status == Authenticated) {
       trayIconFile = IMG_TOR_RUNNING;
       statusIconFile = IMG_TOR_RUNNING_48;
+
+      /* XXX: This function should be called when Tor has actually established
+       * a circuit, not just when we've connected to Tor. */
+      circuitEstablished();
   }
 
   /* Update the tray icon */
@@ -914,6 +918,15 @@ MainWindow::loadControlCookie(QString cookiePath)
   }
   vWarn("Couldn't find a readable authentication cookie.");
   return QByteArray();
+}
+
+/** Called when Tor has successfully established a circuit.
+ * TODO: Actually call this when Tor establishes a circuit, instead of simply
+ * when we've connected to a running Tor. */
+void
+MainWindow::circuitEstablished()
+{
+
 }
 
 /** Creates and displays Vidalia's About dialog. */

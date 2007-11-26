@@ -148,6 +148,8 @@ private:
    * depending on the current platform. <b>cookiePath</b> can point to either
    * a cookie file or a directory containing the cookie file. */
   QByteArray loadControlCookie(QString cookiePath = QString());
+  /** Called when Tor has successfully established a circuit. */
+  void circuitEstablished();
 
   /** The current status of Tor. */
   TorStatus _status;
