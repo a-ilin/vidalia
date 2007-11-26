@@ -43,7 +43,7 @@ char_array_to_stringlist(char **arr, int len)
  * This is a seemingly pointless function, but it saves some messiness in
  * methods whose QString *errmsg parameter is optional. */
 bool
-err(QString *str, QString errmsg)
+err(QString *str, const QString &errmsg)
 {
   if (str) {
     *str = errmsg;
@@ -55,7 +55,7 @@ err(QString *str, QString errmsg)
  * in str but not in validChars, it will be removed and the resulting
  * string returned. */
 QString
-ensure_valid_chars(QString str, QString validChars)
+ensure_valid_chars(const QString &str, const QString &validChars)
 {
   QString out = str;
   for (int i = 0; i < str.length(); i++) {
@@ -69,7 +69,7 @@ ensure_valid_chars(QString str, QString validChars)
 
 /** Scrubs an email address by replacing "@" with " at " and "." with " dot ". */
 QString
-scrub_email_addr(QString email)
+scrub_email_addr(const QString &email)
 {
   QString scrubbed = email;
   scrubbed = scrubbed.replace("@", " at ");
@@ -81,7 +81,8 @@ scrub_email_addr(QString email)
  * word separator (" ", for example), and placing the line ending <b>le</b> at
  * the end of each line, except the last. */
 QString
-string_wrap(QString str, int width, QString sep, QString le)
+string_wrap(const QString &str, int width,
+            const QString &sep, const QString &le)
 {
   QString wrapped;
   int pos, nextsep, wordlen, n;
@@ -120,7 +121,7 @@ string_wrap(QString str, int width, QString sep, QString le)
  * returns the result. This function is derived from base16_encode() in Tor's
  * util.c. See LICENSE for details on Tor's license. */
 QString
-base16_encode(const QByteArray buf)
+base16_encode(const QByteArray &buf)
 {
   QString hex;
   for (int i = 0; i < buf.size(); i++) {
@@ -133,7 +134,7 @@ base16_encode(const QByteArray buf)
 /** Given a string <b>str</b>, this function returns a quoted string with all
  * '"' and '\' characters escaped with a single '\'. */
 QString
-string_escape(const QString str)
+string_escape(const QString &str)
 {
   QString out;
   out.append('\"');
@@ -149,7 +150,7 @@ string_escape(const QString str)
 /** Given a quoted string <b>str</b>, this function returns an unquoted,
  * unescaped string. <b>str</b> must start and end with an unescaped quote. */
 QString
-string_unescape(const QString str, bool *ok)
+string_unescape(const QString &str, bool *ok)
 {
   QString out;
  
@@ -174,7 +175,7 @@ string_unescape(const QString str, bool *ok)
  * <b>str</b> and returns the mappings in a QHash. If <b>str</b> was unable
  * to be parsed, <b>ok</b> is set to false. */
 QHash<QString,QString>
-string_parse_keyvals(const QString str, bool *ok)
+string_parse_keyvals(const QString &str, bool *ok)
 {
   int i, len;
   bool tmp_ok;
