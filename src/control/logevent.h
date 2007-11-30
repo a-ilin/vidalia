@@ -57,9 +57,9 @@ public:
   static QString severityToString(Severity severity);
 
   /** Returns the severity of this log event */
-  Severity severity();  
+  Severity severity() const; 
   /** Returns the message for this log event */
-  QString message();
+  QString message() const;
   
 private:
   Severity _severity;

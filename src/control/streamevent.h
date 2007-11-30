@@ -43,15 +43,15 @@ public:
   { _stream = stream; }
   
   /** Returns the Stream object for this stream event. */
-  Stream stream() { return _stream; }
+  Stream stream() const { return _stream; }
   /** Returns the ID for this stream event. */
-  quint64 id() { return _stream.id(); }
+  quint64 id() const { return _stream.id(); }
   /** Returns the status for this stream event. */
-  Stream::Status status() { return _stream.status(); }
+  Stream::Status status() const { return _stream.status(); }
   /** Returns the ID of the circuit to which this stream is assigned */
-  quint64 circuitId() { return _stream.circuitId(); }
+  quint64 circuitId() const { return _stream.circuitId(); }
   /** Returns the target for this stream event. */
-  QString target() { return _stream.target(); }
+  QString target() const { return _stream.target(); }
   
 private:
   Stream _stream; /**< Stream object for this stream event. */

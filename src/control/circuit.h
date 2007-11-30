@@ -61,21 +61,21 @@ public:
   static Status toStatus(QString strStatus);
   
   /** Returns true if all fields in this Circuit are empty. */
-  bool isEmpty();
+  bool isEmpty() const;
   
   /** Returns the ID for this circuit */
-  quint64 id() { return _circId; }
+  quint64 id() const { return _circId; }
   /** Returns the status of this circuit */
-  Status status() { return _status; }
+  Status status() const { return _status; }
   /** Returns a string representation of the status of this circuit. */
-  QString statusString();
+  QString statusString() const;
   /** Returns the path chosen for this circuit */
-  QString path() { return _path; }
+  QString path() const { return _path; }
   /** Returns the length of the circuit's path. */
-  uint length() { return hops().size(); }
+  uint length() const { return hops().size(); }
   /** Returns a list of hops on the path. */
-  QStringList hops() { return _path.isEmpty() ? QStringList() 
-                                              : _path.split(","); }
+  QStringList hops() const { return _path.isEmpty() ? QStringList() 
+                                                    : _path.split(","); }
 
 private:
   quint64 _circId; /**< Circuit ID. */

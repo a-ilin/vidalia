@@ -65,22 +65,22 @@ public:
   static Status toStatus(QString strStatus);
 
   /** Returns true if the Stream object's fields are all empty. */
-  bool isEmpty();
+  bool isEmpty() const;
   
   /** Returns the ID for this stream. */
-  quint64 id() { return _streamId; }
+  quint64 id() const { return _streamId; }
   /** Returns the status for this stream. */
-  Status status() { return _status; }
+  Status status() const { return _status; }
   /** Returns a string representation of this stream's status. */
-  QString statusString();
+  QString statusString() const;
   /** Returns the ID of the circuit to which this stream is assigned. */
-  quint64 circuitId() { return _circuitId; }
+  quint64 circuitId() const { return _circuitId; }
   /** Returns the target address and port for this stream. */
-  QString target() { return (_address + ":" + QString::number(_port)); }
+  QString target() const { return (_address + ":" + QString::number(_port)); }
   /** Returns the target address for this stream. */
-  QString targetAddress() { return _address; }
+  QString targetAddress() const { return _address; }
   /** Returns the target port for this stream. */
-  quint16 targetPort() { return _port; }
+  quint16 targetPort() const { return _port; }
 
 private:
   quint64 _streamId;   /**< Unique ID associated with this stream. */

@@ -122,7 +122,7 @@ Stream::toStatus(QString strStatus)
 /** Returns a human-understandable string representation of this 
  * stream's status. */
 QString
-Stream::statusString()
+Stream::statusString() const
 {
   QString status;
   switch (_status) {
@@ -142,7 +142,7 @@ Stream::statusString()
 
 /** Returns true if all fields in this Stream object are empty. */
 bool
-Stream::isEmpty()
+Stream::isEmpty() const
 {
   return (!_streamId && !_circuitId && 
           (_status == Unknown) && _address.isEmpty() && !_port);

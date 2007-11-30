@@ -43,13 +43,13 @@ public:
   { _circuit = circuit; }
 
   /** Returns the Circuit object for this event. */
-  Circuit circuit() { return _circuit; }
+  Circuit circuit() const { return _circuit; }
   /** Returns the ID for this circuit event. */
-  quint64 id() { return _circuit.id(); }
+  quint64 id() const { return _circuit.id(); }
   /** Returns the status of this circuit event. */
-  Circuit::Status status() { return _circuit.status(); }
+  Circuit::Status status() const { return _circuit.status(); }
   /** Returns the path chosen for this circuit event.  */
-  QString path() { return _circuit.path(); }
+  QString path() const { return _circuit.path(); }
   
 private:
   /** Circuit object for this event. */

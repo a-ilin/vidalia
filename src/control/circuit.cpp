@@ -102,7 +102,7 @@ Circuit::toStatus(QString strStatus)
 
 /** Returns a string representation of the circuit's status. */
 QString
-Circuit::statusString()
+Circuit::statusString() const
 {
   QString status;
   switch (_status) {
@@ -118,7 +118,7 @@ Circuit::statusString()
 
 /** Returns true if all fields in this Circuit object are empty. */
 bool
-Circuit::isEmpty()
+Circuit::isEmpty() const
 {
   return (!_circId && (_status == Unknown));
 }

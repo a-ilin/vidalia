@@ -77,14 +77,14 @@ LogEvent::severityToString(Severity s)
 
 /** Returns the severity of this log event */
 LogEvent::Severity
-LogEvent::severity()
+LogEvent::severity() const
 {
   return _severity;
 }
 
 /** Returns the message for this log event */
 QString
-LogEvent::message()
+LogEvent::message() const
 {
   return _message;
 }

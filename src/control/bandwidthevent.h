@@ -40,9 +40,9 @@ public:
   { _bytesRead = bytesRead; _bytesWritten = bytesWritten; }
 
   /** Returns the number of bytes read in the last second */
-  quint64 bytesRead() { return _bytesRead; }
+  quint64 bytesRead() const { return _bytesRead; }
   /** Returns the number of bytes written in the last second */
-  quint64 bytesWritten() { return _bytesWritten; }
+  quint64 bytesWritten() const { return _bytesWritten; }
   
 private:
   quint64 _bytesWritten;

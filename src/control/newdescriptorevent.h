@@ -41,7 +41,7 @@ public:
   { _idList = idList; }
   
   /** Returns a list of new server IDs. */
-  QStringList descriptorIDs() { return _idList; }
+  QStringList descriptorIDs() const { return _idList; }
   
 private:
   /** A list of new descriptors available. */
