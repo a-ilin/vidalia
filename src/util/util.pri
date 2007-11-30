@@ -46,5 +46,3 @@ win32 {
     SOURCES += $$PWD/win32.cpp
 }
 
-include($$PWD/geoip/geoip.pri)
-

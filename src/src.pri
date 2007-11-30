@@ -34,4 +34,5 @@ SOURCES += $$PWD/main.cpp \
 include($$PWD/config/config.pri)
 include($$PWD/control/control.pri)
 include($$PWD/util/util.pri)
+include($$PWD/geoip/geoip.pri)
 

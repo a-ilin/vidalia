@@ -21,6 +21,8 @@
 #  02110-1301, USA.
 #################################################################
 
+INCLUDEPATH += $$PWD
+
 HEADERS += $$PWD/geoip.h \
            $$PWD/geoipcache.h \
            $$PWD/geoipcacheitem.h \

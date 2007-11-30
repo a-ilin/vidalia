@@ -34,7 +34,7 @@
 #include <QTimer>
 #include <QHash>
 #include <torcontrol.h>
-#include <util/geoip/geoipresolver.h>
+#include <geoipresolver.h>
 #include <vidaliawindow.h>
 
 #include "tormapwidget.h"

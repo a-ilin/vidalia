@@ -32,7 +32,7 @@
 #include <QTreeWidgetItem>
 #include <QString>
 #include <control/routerdescriptor.h>
-#include <util/geoip/geoip.h>
+#include <geoip.h>
 
 #include "routerlistwidget.h"
 
