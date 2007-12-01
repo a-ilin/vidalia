@@ -52,7 +52,7 @@ signals:
   /** Emitted when a connection has been established through Tor to the remote
    * host specified in a prior call to connectToHost(). */
   void connectedToRemoteHost();
-  /** Emmitted when a connection error has occurred. */
+  /** Emitted when a connection error has occurred. */
   void socketError(QString errmsg);
     
 private slots:

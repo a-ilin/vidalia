@@ -20,7 +20,7 @@
  ****************************************************************/
 
 /** 
- * \file string.h
+ * \file stringutil.h
  * \version $Id$
  * \brief Common string manipulation functions
  */

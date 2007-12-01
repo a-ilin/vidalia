@@ -20,7 +20,7 @@
  ****************************************************************/
 
 /** 
- * \file string.cpp
+ * \file stringutil.cpp
  * \version $Id$
  * \brief Common string manipulation functions
  */
