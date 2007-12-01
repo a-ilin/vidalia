@@ -29,9 +29,8 @@
 #define _TORSSLSOCKET_H
 
 #include <QtGlobal>
-#if QT_VERSION >= 0x040300
-/* XXX: We should do some autoconf magic to define a HAVE_QSSLSOCKET_H
- * appropriately. */
+
+#if QT_VERSION >= 0x040300 && !defined(QT_NO_OPENSSL)
 #include <QSslSocket>
 #include <QHostAddress>
 

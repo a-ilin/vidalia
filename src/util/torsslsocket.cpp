@@ -26,7 +26,8 @@
  */
 
 #include "torsslsocket.h"
-#if QT_VERSION >= 0x040300
+
+#if QT_VERSION >= 0x040300 && !defined(QT_NO_OPENSSL)
 #include <QDataStream>
 #include <QStringList>
 

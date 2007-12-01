@@ -29,6 +29,10 @@
 #include <torsslsocket.h>
 #include "geoipresolver.h"
 
+#if QT_VERSION >= 0x040300 && !defined(QT_NO_OPENSSL)
+#define USE_SSL 1
+#endif
+
 /** Host for the geo ip information. This hostname round-robins between
  * pasiphae.vidalia-project.net, thebe.vidalia-project.net, and
  * cups.cs.cmu.edu. */ 
@@ -209,7 +213,7 @@ GeoIpResolver::resolve(QList<QHostAddress> ips)
   }
 
   /* Create a socket used to request the geo ip information. */
-#if QT_VERSION >= 0x040300
+#if defined(USE_SSL)
   TorSslSocket *socket = new TorSslSocket(_socksAddr, _socksPort);
 #else
   TorSocket *socket = new TorSocket(_socksAddr, _socksPort);
@@ -226,7 +230,7 @@ GeoIpResolver::resolve(QList<QHostAddress> ips)
   _requestList.insert(socket, request);
   
   /* Connect so we can send our request and return the request ID. */
-#if QT_VERSION >= 0x040300
+#if defined(USE_SSL)
   if (TorSslSocket::supportsSsl()) {
     QByteArray caCert(":/geoip/cacert_root.crt");
     socket->addCaCertificate(QSslCertificate(caCert));
