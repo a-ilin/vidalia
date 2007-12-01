@@ -203,7 +203,7 @@ GeoIpResolver::resolve(QList<QHostAddress> ips)
     return -1;
   }
 
-  /* Create a socket used ot request the geo ip information. */
+  /* Create a socket used to request the geo ip information. */
   TorSocket *socket = new TorSocket(_socksAddr, _socksPort);
   connect(socket, SIGNAL(connectedToHost()), this, SLOT(connected()),
           Qt::QueuedConnection);
