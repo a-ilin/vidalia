@@ -26,6 +26,7 @@ INCLUDEPATH += $$PWD
 HEADERS += $$PWD/net.h \
            $$PWD/stringutil.h \
            $$PWD/torsocket.h \
+           $$PWD/torsslsocket.h \
            $$PWD/html.h \
            $$PWD/process.h \
            $$PWD/file.h \
@@ -36,6 +37,7 @@ HEADERS += $$PWD/net.h \
 SOURCES += $$PWD/net.cpp \
            $$PWD/stringutil.cpp \
            $$PWD/torsocket.cpp \
+           $$PWD/torsslsocket.cpp \
            $$PWD/html.cpp \
            $$PWD/process.cpp \
            $$PWD/file.cpp \
