@@ -38,21 +38,23 @@ class TorSocket : public QTcpSocket
   
 public:
   /** Constructor. */
-  TorSocket(QHostAddress socksAddr, quint16 socksPort, QObject *parent = 0);
+  TorSocket(const QHostAddress &socksAddr,
+              quint16 socksPort, QObject *parent = 0);
 
   /** Connects to the specified hostname and port via Tor. */
-  void connectToHost(const QString &remoteHost, quint16 remotePort);
+  void connectToRemoteHost(const QString &remoteHost, quint16 remotePort);
 
 signals:
-  /** Emitted when a connection has been established to Tor. */
-  void connectedToTor();
   /** Emitted when a connection has been established through Tor to the remote
    * host specified in a prior call to connectToHost(). */
-  void connectedToHost();
+  void connectedToRemoteHost();
   /** Emmitted when a connection error has occurred. */
   void socketError(QString errmsg);
   
 private slots:
+  /** Called when the socket is connected to the proxy and sends our
+   * half of a Socks4a handshake. */
+  void connectedToProxy();
   /** Handles the server's response part of a Socks4a handshake. */
   void onHandshakeResponse();
   /** Called when a connection error has occurred. */
@@ -63,7 +65,9 @@ private:
   void sendSocksHandshake(const QString &remoteHost, quint16 remotePort);
   
   QHostAddress _socksAddr; /**< Address of Tor's SOCKS listener. */
+  QString _remoteHost;     /**< Remote hostname. */
   quint16 _socksPort;      /**< Port of Tor's SOCKS listener. */
+  quint16 _remotePort;     /**< Remote host port. */
 };
 
 #endif

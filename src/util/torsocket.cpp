@@ -35,36 +35,30 @@
 #define SOCKS_RESPONSE_LEN        0x08 /**< SOCKS server response length. */
 #define SOCKS_RESPONSE_VERSION    0x00 /**< SOCKS server response version. */
 #define SOCKS_CONNECT_STATUS_OK   0x5A /**< SOCKS server response status. */
-#define LOCAL_CONNECT_TIMEOUT     3000 /**< Time to wait for a connection to
-                                            the local SOCKS proxy. */
+
 
 /** Constructor. */
-TorSocket::TorSocket(QHostAddress socksAddr, quint16 socksPort, QObject *parent)
+TorSocket::TorSocket(const QHostAddress &socksAddr,
+                         quint16 socksPort, QObject *parent)
 : QTcpSocket(parent),
   _socksAddr(socksAddr),
   _socksPort(socksPort)
 {
   QObject::connect(this, SIGNAL(error(QAbstractSocket::SocketError)),
                    this, SLOT(onError(QAbstractSocket::SocketError)));
+  QObject::connect(this, SIGNAL(readyRead()),
+                   this, SLOT(onHandshakeResponse()));
+  QObject::connect(this, SIGNAL(connected()),
+                   this, SLOT(connectedToProxy()));
 }
 
 /** Connects to the specified hostname and port via Tor. */
 void
-TorSocket::connectToHost(const QString &remoteHost, quint16 remotePort)
+TorSocket::connectToRemoteHost(const QString &remoteHost, quint16 remotePort)
 {
-  /* Connect to the local socks proxy. */
+  _remoteHost = remoteHost;
+  _remotePort = remotePort;
   QTcpSocket::connectToHost(_socksAddr, _socksPort);
-  
-  /* Wait for the local connection. */
-  if (waitForConnected(LOCAL_CONNECT_TIMEOUT)) {
-    /* Signal that we connected to Tor. */
-    emit connectedToTor();
-    
-    /* We're connected to the proxy, so send our part of the handshake. */
-    QObject::connect(this, SIGNAL(readyRead()),
-                     this, SLOT(onHandshakeResponse()));
-    sendSocksHandshake(remoteHost, remotePort);
-  }
 }
 
 /** Called when a connection error has occurred. */
@@ -73,6 +67,14 @@ TorSocket::onError(QAbstractSocket::SocketError error)
 {
   Q_UNUSED(error);
   emit socketError(errorString());
+}
+
+/** Called when the socket is connected to the proxy and sends our
+ * half of a Socks4a handshake. */
+void
+TorSocket::connectedToProxy()
+{
+  sendSocksHandshake(_remoteHost, _remotePort);
 }
 
 /** Sends the first part of a Socks4a handshake, using the remote hostname and
@@ -124,7 +126,7 @@ TorSocket::onHandshakeResponse()
     if ((uchar)response[0] == (uchar)SOCKS_RESPONSE_VERSION &&
         (uchar)response[1] == (uchar)SOCKS_CONNECT_STATUS_OK) {
       /* Connection status was okay. */
-      emit connectedToHost();
+      emit connectedToRemoteHost();
     } else {
       /* Remote connection failed, so close the connection to the proxy. */
       disconnectFromHost();
