@@ -33,9 +33,7 @@
 #define USE_SSL 1
 #endif
 
-/** Host for the geo ip information. This hostname round-robins between
- * pasiphae.vidalia-project.net, thebe.vidalia-project.net, and
- * cups.cs.cmu.edu. */ 
+/** Host for the geo ip information. */ 
 #define GEOIP_HOST    "geoip.vidalia-project.net"
 /** The non-encrypted GeoIP service lives on port 80. */
 #define GEOIP_PORT      80
