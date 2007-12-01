@@ -30,7 +30,7 @@
 
 #include <QtGlobal>
 #if QT_VERSION >= 0x040300
-/* XXX: We should do some autoconf magic to and define a HAVE_QSSLSOCKET_H
+/* XXX: We should do some autoconf magic to define a HAVE_QSSLSOCKET_H
  * appropriately. */
 #include <QSslSocket>
 #include <QHostAddress>
