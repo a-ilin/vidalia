@@ -235,7 +235,7 @@ GeoIpResolver::resolve(QList<QHostAddress> ips)
     socket->connectToRemoteHost(GEOIP_HOST, GEOIP_PORT, false);
   }
 #else
-  socket->connectToRemoteHost(GEOIP_HOST, GEOIP_PORt);
+  socket->connectToRemoteHost(GEOIP_HOST, GEOIP_PORT);
 #endif
   return request->id();
 }
