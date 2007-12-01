@@ -30,7 +30,7 @@
 
 #if defined(Q_OS_WIN)
 #include <windows.h>
-#include <util/win32.h>
+#include <win32.h>
 #endif
 
 #include <QApplication>
@@ -38,7 +38,7 @@
 #include <QString>
 #include <QKeySequence>
 
-#include <util/log.h>
+#include <log.h>
 #include <helpbrowser.h>
 #include <vidaliasettings.h>
 #include <torcontrol.h>

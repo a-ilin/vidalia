@@ -25,7 +25,7 @@
  * \brief Item representing a single message in the message log
  */
 
-#include <util/string.h>
+#include <stringutil.h>
 
 #include "logtreeitem.h"
 #include "logtreewidget.h"

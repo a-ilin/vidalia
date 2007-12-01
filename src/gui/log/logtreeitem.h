@@ -31,7 +31,7 @@
 #include <QTreeWidgetItem>
 #include <QDateTime>
 #include <QString>
-#include <control/logevent.h>
+#include <logevent.h>
 
 
 class LogTreeItem : public QTreeWidgetItem

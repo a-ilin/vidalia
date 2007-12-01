@@ -21,8 +21,10 @@
 #  02110-1301, USA.
 #################################################################
 
+INCLUDEPATH += $$PWD
+
 HEADERS += $$PWD/net.h \
-           $$PWD/string.h \
+           $$PWD/stringutil.h \
            $$PWD/torsocket.h \
            $$PWD/html.h \
            $$PWD/process.h \
@@ -32,7 +34,7 @@ HEADERS += $$PWD/net.h \
            $$PWD/crypto.h
            
 SOURCES += $$PWD/net.cpp \
-           $$PWD/string.cpp \
+           $$PWD/stringutil.cpp \
            $$PWD/torsocket.cpp \
            $$PWD/html.cpp \
            $$PWD/process.cpp \
@@ -45,4 +47,5 @@ win32 {
     HEADERS += $$PWD/win32.h
     SOURCES += $$PWD/win32.cpp
 }
+
 

@@ -32,8 +32,8 @@
 #include <QShortcut>
 #include <languagesupport.h>
 #include <vmessagebox.h>
-#include <util/string.h>
-#include <util/html.h>
+#include <stringutil.h>
+#include <html.h>
 #include <stdlib.h>
 
 #include "vidalia.h"

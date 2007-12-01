@@ -25,7 +25,7 @@
  * \brief Validates that a server nickname contains only valid characters
  */
 
-#include <util/string.h>
+#include <stringutil.h>
 #include "nicknamevalidator.h"
 
 /** Set of characters that are valid in a server's nickname. */

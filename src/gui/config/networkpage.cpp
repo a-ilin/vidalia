@@ -32,7 +32,7 @@
 #include <networksettings.h>
 #include <vmessagebox.h>
 #include <vidalia.h>
-#include <util/string.h>
+#include <stringutil.h>
 
 #include "networkpage.h"
 #include "domainvalidator.h"

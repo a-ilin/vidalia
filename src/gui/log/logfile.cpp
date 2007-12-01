@@ -26,7 +26,7 @@
  */
 
 #include <QDir>
-#include <util/string.h>
+#include <stringutil.h>
 
 #include "logfile.h"
 

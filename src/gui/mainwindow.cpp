@@ -34,7 +34,7 @@
 #include <vidalia.h>
 #include <util/file.h>
 #include <util/html.h>
-#include <util/string.h>
+#include <util/stringutil.h>
 #include <util/net.h>
 #include <QSysInfo>
 
