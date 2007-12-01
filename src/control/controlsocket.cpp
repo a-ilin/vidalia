@@ -25,7 +25,7 @@
  * \brief Socket used to connect to Tor's control interface
  */
 
-#include <util/string.h>
+#include <stringutil.h>
 #include <vidalia.h>
 
 #include "controlsocket.h"

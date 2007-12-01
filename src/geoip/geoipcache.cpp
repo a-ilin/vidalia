@@ -28,8 +28,8 @@
 #include <QFile>
 #include <QDir>
 #include <QTextStream>
-#include <util/string.h>
-#include <util/file.h>
+#include <stringutil.h>
+#include <file.h>
 #include <vidalia.h>
 
 #include "geoipcache.h"

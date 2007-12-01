@@ -26,8 +26,8 @@
  */
 
 #include <QHostInfo>
-#include <util/net.h>
-#include <util/string.h>
+#include <net.h>
+#include <stringutil.h>
 
 #include "serversettings.h"
 #include "torsettings.h"

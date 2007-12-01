@@ -26,7 +26,8 @@
  */
 
 #include <QHostAddress>
-#include <util/file.h>
+#include <file.h>
+#include <stringutil.h>
 #include "torcontrol.h"
 
 

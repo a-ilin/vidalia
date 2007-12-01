@@ -31,7 +31,7 @@
 #include <QTextStream>
 #include <QApplication>
 
-#include "string.h"
+#include "stringutil.h"
 #include "process.h"
 
 

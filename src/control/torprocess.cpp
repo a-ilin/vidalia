@@ -27,7 +27,7 @@
 
 #include <QString>
 #include <vidalia.h>
-#include <util/string.h>
+#include <stringutil.h>
 
 /* Needed for _PROCESS_INFORMATION so that pid() works on Win32 */
 #if defined (Q_OS_WIN32)

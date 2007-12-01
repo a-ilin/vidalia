@@ -28,9 +28,9 @@
 #include <QObject>
 #include <vidalia.h>
 #include <gui/mainwindow.h>
-#include <gui/common/vmessagebox.h>
-#include <util/process.h>
-#include <util/string.h>
+#include <vmessagebox.h>
+#include <process.h>
+#include <stringutil.h>
 
 #if defined(Q_OS_WIN32)
 #include <QSysInfo>

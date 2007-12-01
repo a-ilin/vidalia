@@ -27,7 +27,7 @@
  */
 
 #include <QMutexLocker>
-#include <util/string.h>
+#include <stringutil.h>
 #include <vidalia.h>
 
 #include "controlconnection.h"

@@ -29,7 +29,6 @@
 #define _FILE_H
 
 #include <QString>
-#include "string.h"
 
 
 /**  Create an empty file named <b>filename</b>. if <b>createdir</b> is true,

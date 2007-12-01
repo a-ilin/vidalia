@@ -27,6 +27,7 @@
 
 #include <QDir>
 #include <QFile>
+#include "stringutil.h"
 #include "file.h"
 
 #if defined(Q_OS_WIN32)
