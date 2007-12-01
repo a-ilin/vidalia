@@ -26,12 +26,17 @@
  */
 
 #include <torsocket.h>
+#include <torsslsocket.h>
 #include "geoipresolver.h"
 
 /** Host for the geo ip information. This hostname round-robins between
  * pasiphae.vidalia-project.net, thebe.vidalia-project.net, and
  * cups.cs.cmu.edu. */ 
 #define GEOIP_HOST    "geoip.vidalia-project.net"
+/** The non-encrypted GeoIP service lives on port 80. */
+#define GEOIP_PORT      80
+/** The SSL GeoIP service runs on port 1443 (443 was taken). */
+#define GEOIP_SSL_PORT  1443
 /** Page that we request the geo ip information from. */
 #define GEOIP_PAGE    "/cgi-bin/geoip"
 
@@ -204,11 +209,16 @@ GeoIpResolver::resolve(QList<QHostAddress> ips)
   }
 
   /* Create a socket used to request the geo ip information. */
+#if QT_VERSION >= 0x040300
+  TorSslSocket *socket = new TorSslSocket(_socksAddr, _socksPort);
+#else
   TorSocket *socket = new TorSocket(_socksAddr, _socksPort);
-  connect(socket, SIGNAL(connectedToHost()), this, SLOT(connected()),
+#endif
+
+  connect(socket, SIGNAL(connectedToRemoteHost()), this, SLOT(connected()),
           Qt::QueuedConnection);
   connect(socket, SIGNAL(socketError(QString)), 
-            this,   SLOT(socketError(QString)),
+          this,   SLOT(socketError(QString)),
           Qt::QueuedConnection);
   connect(socket, SIGNAL(disconnected()), this, SLOT(disconnected()),
           Qt::QueuedConnection);
@@ -216,7 +226,17 @@ GeoIpResolver::resolve(QList<QHostAddress> ips)
   _requestList.insert(socket, request);
   
   /* Connect so we can send our request and return the request ID. */
-  socket->connectToHost(GEOIP_HOST, 80);
+#if QT_VERSION >= 0x040300
+  if (TorSslSocket::supportsSsl()) {
+    QByteArray caCert(":/geoip/cacert_root.crt");
+    socket->addCaCertificate(QSslCertificate(caCert));
+    socket->connectToRemoteHost(GEOIP_HOST, GEOIP_SSL_PORT, true);
+  } else {
+    socket->connectToRemoteHost(GEOIP_HOST, GEOIP_PORT, false);
+  }
+#else
+  socket->connectToRemoteHost(GEOIP_HOST, GEOIP_PORt);
+#endif
   return request->id();
 }
 

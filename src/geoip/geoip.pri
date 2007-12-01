@@ -23,6 +23,8 @@
 
 INCLUDEPATH += $$PWD
 
+RESOURCES += $$PWD/geoip.qrc
+
 HEADERS += $$PWD/geoip.h \
            $$PWD/geoipcache.h \
            $$PWD/geoipcacheitem.h \
