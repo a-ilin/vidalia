@@ -25,6 +25,7 @@
  * \brief Requests GeoIP information and caches the result
  */
 
+#include <torsocket.h>
 #include "geoipresolver.h"
 
 /** Host for the geo ip information. This hostname round-robins between
@@ -91,7 +92,7 @@ void
 GeoIpResolver::connected()
 {
   /* Find the socket and request for whoever called this slot */ 
-  TorSocket *socket = (TorSocket *)sender();
+  QAbstractSocket *socket = dynamic_cast<QAbstractSocket *>(sender());
   if (!_requestList.contains(socket)) {
     return;
   }
@@ -106,7 +107,7 @@ void
 GeoIpResolver::disconnected()
 {
   /* Find the socket and request for whoever called this slot */ 
-  TorSocket *socket = (TorSocket *)sender();
+  QAbstractSocket *socket = dynamic_cast<QAbstractSocket *>(sender());
   if (!_requestList.contains(socket)) {
     return;
   }
@@ -162,7 +163,7 @@ void
 GeoIpResolver::socketError(QString errorString)
 {
   /* Find the socket and request for whoever called this slot */ 
-  TorSocket *socket = (TorSocket *)sender();
+  QAbstractSocket *socket = dynamic_cast<QAbstractSocket *>(sender());
   if (!_requestList.contains(socket)) {
     return;
   }
@@ -191,21 +192,6 @@ GeoIpResolver::createRequest(QList<QHostAddress> ips)
   return request;
 }
 
-/** Creates a TorSocket used to connect to the Geo IP host. */
-TorSocket*
-GeoIpResolver::createRequestSocket()
-{
-  TorSocket *socket = new TorSocket(_socksAddr, _socksPort);
-  connect(socket, SIGNAL(connectedToHost()), this, SLOT(connected()),
-          Qt::QueuedConnection);
-  connect(socket, SIGNAL(socketError(QString)), 
-            this,   SLOT(socketError(QString)),
-          Qt::QueuedConnection);
-  connect(socket, SIGNAL(disconnected()), this, SLOT(disconnected()),
-          Qt::QueuedConnection);
-  return socket;
-}
-
 /** Resolves a list of IPs to a geographic location. */
 int
 GeoIpResolver::resolve(QList<QHostAddress> ips)
@@ -218,7 +204,14 @@ GeoIpResolver::resolve(QList<QHostAddress> ips)
   }
 
   /* Create a socket used ot request the geo ip information. */
-  TorSocket *socket = createRequestSocket();
+  TorSocket *socket = new TorSocket(_socksAddr, _socksPort);
+  connect(socket, SIGNAL(connectedToHost()), this, SLOT(connected()),
+          Qt::QueuedConnection);
+  connect(socket, SIGNAL(socketError(QString)), 
+            this,   SLOT(socketError(QString)),
+          Qt::QueuedConnection);
+  connect(socket, SIGNAL(disconnected()), this, SLOT(disconnected()),
+          Qt::QueuedConnection);
   GeoIpRequest *request = createRequest(ips);
   _requestList.insert(socket, request);
   

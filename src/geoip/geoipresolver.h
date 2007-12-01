@@ -33,7 +33,6 @@
 #include <QHash>
 #include <QString>
 #include <QHostAddress>
-#include <util/torsocket.h>
 
 #include "geoip.h"
 #include "geoipcache.h"
@@ -80,13 +79,11 @@ private slots:
 private:
   /** Creates an HTTP request for Geo IP information. */
   GeoIpRequest* createRequest(QList<QHostAddress> ips);
-  /** Creates a socket used to request Geo IP information over Tor. */
-  TorSocket* createRequestSocket();
-  
+
   /**< Cached GeoIp objects. */
   GeoIpCache  _cache;
   /**< List of sockets used for requests. */
-  QHash<TorSocket *,GeoIpRequest*> _requestList;
+  QHash<QAbstractSocket *,GeoIpRequest*> _requestList;
   /** Tor's SocksListenAddress. */
   QHostAddress _socksAddr;
   /** Tor's SocksPort. */
