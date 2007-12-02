@@ -2,7 +2,7 @@
 ;; 
 ;; Vidalia installer and bundle Russian translation
 ;; 
-;; Based on vidalia_en.nsh r1926
+;; Based on vidalia_en.nsh r1945
 ;;
 
 ; Bundle
