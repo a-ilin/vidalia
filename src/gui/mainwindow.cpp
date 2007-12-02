@@ -142,6 +142,7 @@ MainWindow::MainWindow()
   connect(_torControl, SIGNAL(authenticated()), this, SLOT(authenticated()));
   connect(_torControl, SIGNAL(authenticationFailed(QString)),
                  this,   SLOT(authenticationFailed(QString)));
+  _torControl->setEvent(TorEvents::ClientStatus, this, true);
 
   /* Catch signals when the application is running or shutting down */
   connect(vApp, SIGNAL(running()), this, SLOT(running()));
@@ -189,6 +190,19 @@ MainWindow::isTrayIconSupported()
    * implementation smart enough to detect a system tray on X11. */
   return true;
 #endif
+}
+
+/** Catches and processes Tor client status events. */
+void
+MainWindow::customEvent(QEvent *event)
+{
+  if (event->type() == CustomEventType::ClientStatusEvent) {
+    ClientStatusEvent *cse = dynamic_cast<ClientStatusEvent *>(event);
+    if (cse && cse->status() == ClientStatusEvent::CircuitEstablished) {
+      circuitEstablished();
+      cse->accept();
+    }
+  }
 }
 
 /** Called when the application has started and the main event loop is
@@ -465,10 +479,6 @@ MainWindow::updateTorStatus(TorStatus status)
   } else if (status == Authenticated) {
       trayIconFile = IMG_TOR_RUNNING;
       statusIconFile = IMG_TOR_RUNNING_48;
-
-      /* XXX: This function should be called when Tor has actually established
-       * a circuit, not just when we've connected to Tor. */
-      circuitEstablished();
   }
 
   /* Update the tray icon */
@@ -823,6 +833,11 @@ MainWindow::authenticated()
          + p(errmsg),
       VMessageBox::Ok);
   }
+  
+  /* Check if Tor has a circuit established */
+  if (_torControl->circuitEstablished())
+    circuitEstablished();
+
 }
 
 /** Called when Vidalia fails to authenticate to Tor. The failure reason is
@@ -920,13 +935,11 @@ MainWindow::loadControlCookie(QString cookiePath)
   return QByteArray();
 }
 
-/** Called when Tor has successfully established a circuit.
- * TODO: Actually call this when Tor establishes a circuit, instead of simply
- * when we've connected to a running Tor. */
+/** Called when Tor has successfully established a circuit. */
 void
 MainWindow::circuitEstablished()
 {
-
+  vNotice("Tor has established a circuit.");
 }
 
 /** Creates and displays Vidalia's About dialog. */

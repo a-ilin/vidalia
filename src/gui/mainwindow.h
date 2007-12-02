@@ -29,8 +29,8 @@
 #define _MAINWINDOW_H
 
 #include <QMainWindow>
-
 #include <torcontrol.h>
+#include <circuitestablishedevent.h>
 
 /* QSystemTrayIcon appeared in Qt 4.2, but we need a bugfix to it on Mac 
  * that won't appear until Qt 4.2.2. */
@@ -61,6 +61,10 @@ public:
   MainWindow();
   /** Destructor. */
   ~MainWindow();
+
+protected:
+  /** Catches and processes Tor client status events. */
+  virtual void customEvent(QEvent *event);
 
 private slots:
   /** Called when the user selects "Start" from the menu. */
