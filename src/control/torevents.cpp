@@ -26,12 +26,17 @@
  */
 
 #include <QApplication>
-
+#include <stringutil.h>
 #include <vidalia.h>
 
 #include "circuit.h"
 #include "stream.h"
 #include "torevents.h"
+#include "unrecognizedserverstatusevent.h"
+#include "unrecognizedclientstatusevent.h"
+#include "unrecognizedgeneralstatusevent.h"
+#include "circuitestablishedevent.h"
+
 
 /** Format of expiry times in address map events. */
 #define DATE_FMT "\"yyyy-MM-dd HH:mm:ss\""
@@ -108,6 +113,9 @@ TorEvents::toString(TorEvent e)
     case OrConnStatus:    event = "ORCONN"; break;
     case NewDescriptor:   event = "NEWDESC"; break;
     case AddressMap:      event = "ADDRMAP"; break;
+    case GeneralStatus:   event = "STATUS_GENERAL"; break;
+    case ClientStatus:    event = "STATUS_CLIENT"; break;
+    case ServerStatus:    event = "STATUS_SERVER"; break;
     default: event = "UNKNOWN"; break;
   }
   return event;
@@ -151,12 +159,18 @@ TorEvents::toTorEvent(QString event)
     e = LogWarn;
   } else if (event == "ERR") {
     e = LogError;
-  } else if (event == "ORCONN") {
-    e = OrConnStatus;
   } else if (event == "NEWDESC") {
     e = NewDescriptor;
   } else if (event == "ADDRMAP") {
     e = AddressMap;
+  } else if (event == "STATUS_GENERAL") {
+    e = GeneralStatus;
+  } else if (event == "STATUS_CLIENT") {
+    e = ClientStatus;
+  } else if (event == "STATUS_SERVER") {
+    e = ServerStatus;
+  } else if (event == "ORCONN") {
+    e = OrConnStatus;
   } else {
     e = Unknown;
   }
@@ -187,6 +201,13 @@ TorEvents::handleEvent(ControlReply reply)
       case OrConnStatus:   handleOrConnStatus(line); break;
       case NewDescriptor:  handleNewDescriptor(line); break;
       case AddressMap:     handleAddressMap(line); break;
+
+      case GeneralStatus:
+        handleStatusEvent(GeneralStatus, line); break;
+      case ClientStatus:
+        handleStatusEvent(ClientStatus, line); break;
+      case ServerStatus:
+        handleStatusEvent(ServerStatus, line); break;
 
       case LogDebug: 
       case LogInfo:
@@ -345,5 +366,92 @@ TorEvents::handleAddressMap(ReplyLine line)
       expires = QDateTime::fromString(msg.at(3) + " " + msg.at(4), DATE_FMT);
     dispatch(AddressMap, new AddressMapEvent(msg.at(1), msg.at(2), expires));
   }
+}
+
+/** Handles a Tor status event. The format for event messages of this type is:
+ *
+ *  "650" SP StatusType SP StatusSeverity SP StatusAction
+ *                                           [SP StatusArguments] CRLF
+ *
+ *  StatusType = "STATUS_GENERAL" / "STATUS_CLIENT" / "STATUS_SERVER"
+ *  StatusSeverity = "NOTICE" / "WARN" / "ERR"
+ *  StatusAction = 1*ALPHA
+ *  StatusArguments = StatusArgument *(SP StatusArgument)
+ *  StatusArgument = StatusKeyword '=' StatusValue
+ *  StatusKeyword = 1*(ALNUM / "_")
+ *  StatusValue = 1*(ALNUM / '_')  / QuotedString
+ */
+void
+TorEvents::handleStatusEvent(TorEvent type, ReplyLine line)
+{
+  QString status;
+  StatusEvent::Severity severity;
+  QHash<QString,QString> args;
+  QString msg = line.getMessage();
+  
+  severity = StatusEvent::severityFromString(msg.section(' ', 1, 1));
+  status   = msg.section(' ', 2, 2);
+  args     = string_parse_keyvals(msg.section(' ', 3));
+  switch (type) {
+    case ClientStatus:
+      dispatchClientStatusEvent(severity, status, args); break;
+    case ServerStatus:
+      dispatchServerStatusEvent(severity, status, args); break;
+    default:
+      dispatchGeneralStatusEvent(severity, status, args);
+  }
+}
+
+/** Parses and posts a Tor client status event. */
+void
+TorEvents::dispatchClientStatusEvent(StatusEvent::Severity severity,
+                                     const QString &action,
+                                     const QHash<QString,QString> &args)
+{
+  ClientStatusEvent *event;
+  ClientStatusEvent::Status status 
+    = ClientStatusEvent::statusFromString(action);
+
+  switch (status) {
+    case ClientStatusEvent::CircuitEstablished:
+      event = new CircuitEstablishedEvent(severity); break;
+    default:
+      event = new UnrecognizedClientStatusEvent(severity, action, args);
+  }
+  dispatch(ClientStatus, event);
+}
+
+/** Parses and posts a Tor server status event. */
+void
+TorEvents::dispatchServerStatusEvent(StatusEvent::Severity severity,
+                                     const QString &action,
+                                     const QHash<QString,QString> &args)
+{
+  ServerStatusEvent *event;
+  ServerStatusEvent::Status status
+    = ServerStatusEvent::statusFromString(action);
+
+  switch (status) {
+    default:
+      event = new UnrecognizedServerStatusEvent(severity, action, args);
+  }
+  dispatch(ServerStatus, event);
+}
+
+/** Parses and posts a general Tor status event. */
+void
+TorEvents::dispatchGeneralStatusEvent(StatusEvent::Severity severity,
+                                      const QString &action,
+                                      const QHash<QString,QString> &args)
+{
+  GeneralStatusEvent *event;
+  GeneralStatusEvent::Status status
+    = GeneralStatusEvent::statusFromString(action);
+
+  switch (status) {
+    default:
+      event = new UnrecognizedGeneralStatusEvent(severity, action, args);
+  }
+  dispatch(GeneralStatus, event);
 }
 

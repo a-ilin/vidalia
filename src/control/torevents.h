@@ -40,6 +40,7 @@
 #include "orconnevent.h"
 #include "newdescriptorevent.h"
 #include "addressmapevent.h"
+#include "statusevent.h"
 #include "controlreply.h"
 
 
@@ -57,7 +58,10 @@ public:
     StreamStatus,
     OrConnStatus,
     NewDescriptor,
-    AddressMap
+    AddressMap,
+    GeneralStatus,
+    ClientStatus,
+    ServerStatus
   };
  
   /** Default Constructor */
@@ -109,6 +113,22 @@ private:
   void handleNewDescriptor(ReplyLine line);
   /** Handles a new or updated address map event. */
   void handleAddressMap(ReplyLine line);
+  /** Handles a Tor status event. */
+  void handleStatusEvent(TorEvent type, ReplyLine line);
+  
+  /** Parses and posts a Tor client status event. */
+  void dispatchClientStatusEvent(StatusEvent::Severity severity,
+                                 const QString &action,
+                                 const QHash<QString,QString> &args);
+  /** Parses and posts a Tor server status event. */
+  void dispatchServerStatusEvent(StatusEvent::Severity severity,
+                                 const QString &action,
+                                 const QHash<QString,QString> &args);
+  /** Parses and posts a general Tor status event. */
+  void dispatchGeneralStatusEvent(StatusEvent::Severity severity,
+                                  const QString &action,
+                                  const QHash<QString,QString> &args);
+
 };
 
 #endif

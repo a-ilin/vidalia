@@ -49,6 +49,12 @@ namespace CustomEventType {
   const int SendCommandEvent   = QEvent::User+6;
   /** New address mapping event. */
   const int AddressMapEvent = QEvent::User+7;
+  /** Tor client status events. */
+  const int ClientStatusEvent = QEvent::User+8;
+  /** Tor server status events. */
+  const int ServerStatusEvent = QEvent::User+9;
+  /** General Tor status events. */
+  const int GeneralStatusEvent = QEvent::User+10;
 }
 
 #endif
