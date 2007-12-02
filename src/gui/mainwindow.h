@@ -126,7 +126,8 @@ private:
     Starting,   /**< Tor is in the process of starting. */
     Started,    /**< Tor is currently running. */
     Authenticating, /**< Vidalia is authenticating to Tor. */
-    Authenticated   /**< Vidalia has authenticated to Tor. */
+    Authenticated,  /**< Vidalia has authenticated to Tor. */
+    CircuitEstablished /**< Tor has built a circuit. */
   };
   /** Create the actions on the tray menu or menubar */
   void createActions();

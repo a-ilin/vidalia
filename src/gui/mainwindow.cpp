@@ -476,7 +476,7 @@ MainWindow::updateTorStatus(TorStatus status)
       ui.lblStartStopTor->setEnabled(false);
       ui.lblStartStopTor->setStatusTip(statusText);
       ui.lblStartStopTor->setAnimation(QPixmap(ANIM_PROCESS_WORKING));
-  } else if (status == Authenticated) {
+  } else if (status == CircuitEstablished) {
       trayIconFile = IMG_TOR_RUNNING;
       statusIconFile = IMG_TOR_RUNNING_48;
   }
@@ -939,7 +939,7 @@ MainWindow::loadControlCookie(QString cookiePath)
 void
 MainWindow::circuitEstablished()
 {
-  vNotice("Tor has established a circuit.");
+  updateTorStatus(CircuitEstablished);
 }
 
 /** Creates and displays Vidalia's About dialog. */
@@ -1038,6 +1038,7 @@ MainWindow::toString(TorStatus status)
     case Started:   return "Started";
     case Authenticating:  return "Authenticating";
     case Authenticated:   return "Authenticated";
+    case CircuitEstablished: return "Circuit Established";
     default: break;
   }
   return "Unknown";
