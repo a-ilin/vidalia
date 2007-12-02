@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="fi">
+<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -402,12 +403,12 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="85"/>
         <source>Close Circuit (Del)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sulje yhteys (Del)</translation>
     </message>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="106"/>
         <source>Close Stream (Del)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sulje datavirta (Del)</translation>
     </message>
 </context>
 <context>
@@ -579,7 +580,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../gui/config/generalpage.cpp" line="32"/>
         <source>General</source>
-        <translation type="unfinished">Yleiset</translation>
+        <translation>Yleiset</translation>
     </message>
 </context>
 <context>
@@ -2080,7 +2081,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="79"/>
         <source>Server</source>
-        <translation type="unfinished">Palvelin</translation>
+        <translation>Palvelin</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="136"/>
