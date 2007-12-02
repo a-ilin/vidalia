@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="ru">
+<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -232,7 +233,7 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="45"/>
         <source>Advanced</source>
-        <translation type="unfinished">Экспертные</translation>
+        <translation>Экспертные</translation>
     </message>
 </context>
 <context>
@@ -265,7 +266,7 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/config/appearancepage.cpp" line="34"/>
         <source>Appearance</source>
-        <translation type="unfinished">Вид</translation>
+        <translation>Вид</translation>
     </message>
 </context>
 <context>
@@ -455,32 +456,32 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="67"/>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Сеть</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="168"/>
         <source>Error Saving Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка сохранения настроек</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="170"/>
         <source>Vidalia was unable to save your %1 settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia не смогла сохранить ваши настройки (%1).</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="197"/>
         <source>Error Applying Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка применения настроек</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="199"/>
         <source>Vidalia was unable to apply your %1 settings to Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia не смогла применить ваши настройки (%1) к Tor.</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="71"/>
         <source>Relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Сервер</translation>
     </message>
 </context>
 <context>
@@ -498,7 +499,7 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../control/controlconnection.cpp" line="139"/>
         <source>Vidalia was unable to connect to Tor. (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia не смогла подсоединиться к Tor. (%1)</translation>
     </message>
 </context>
 <context>
@@ -584,7 +585,7 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/config/generalpage.cpp" line="32"/>
         <source>General</source>
-        <translation type="unfinished">Общие</translation>
+        <translation>Общие</translation>
     </message>
 </context>
 <context>
@@ -1183,19 +1184,22 @@ Please check the message log for indicators about what happened to Tor before it
         <location filename="../gui/mainwindow.cpp" line="427"/>
         <source>Your Tor relay is shutting down.
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ваш сервер Tor завершает работу.
+Нажмите &apos;Остановить Tor&apos; чтобы немедленно завершить Tor.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="623"/>
         <source>Relaying is Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Режим сервера включён</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="628"/>
         <source>You are currently running a Tor relay. Terminating your relay will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new relay?</source>
-        <translation type="unfinished"></translation>
+        <translation>Ваш Tor сейчас работает в режиме сервера. Остановка сервера приведёт к обрыву открытых соединений у клиентов.
+
+Хотите ли вы аккуратно завершить арботу, дав клиентам время на поиск новых серверов?</translation>
     </message>
 </context>
 <context>
@@ -1675,7 +1679,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/netviewer.ui" line="259"/>
         <source>Refresh the list of Tor relays and connections</source>
-        <translation type="unfinished"></translation>
+        <translation>Обновить список серверов и соединений</translation>
     </message>
 </context>
 <context>
@@ -1683,137 +1687,137 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="45"/>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Сеть</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="178"/>
         <source>Invalid Bridge</source>
-        <translation type="unfinished"></translation>
+        <translation>Испорченный bridge</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="179"/>
         <source>The specified bridge identifier is not valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Указанный идентификатор bridge&apos;а не действителен.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="226"/>
         <source>Copy (Ctrl+C)</source>
-        <translation type="unfinished"></translation>
+        <translation>Копировать (Ctrl+C)</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="255"/>
         <source>You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы должны указать и IP адрес (или домен) и порт чтобы настроить Tor использовать пркси для доступа в Интернет.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="261"/>
         <source>You must specify one or more ports to which your firewall allows you to connect.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы должны указать один или более портов к которым не заблокирован доступ брандмауэром.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="297"/>
         <source>&apos;%1&apos; is not a valid port number.</source>
-        <translation type="unfinished"></translation>
+        <translation>Неверный номер порта &apos;%1&apos;.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="30"/>
         <source>Check to configure Tor to use a proxy to access the Internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Включите чтобы указать Tor использовать прокси для доступа в Интернет</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="33"/>
         <source>I use a proxy to access the Internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Я использую прокси для доступа в Интернет</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="63"/>
         <source>Proxy Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройки прокси</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="75"/>
         <source>HTTP Proxy:</source>
-        <translation type="unfinished"></translation>
+        <translation>HTTP прокси:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="85"/>
         <source>Username:</source>
-        <translation type="unfinished"></translation>
+        <translation>Имя пользователя:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="95"/>
         <source>Use this proxy for HTTPS also</source>
-        <translation type="unfinished"></translation>
+        <translation>Использовать этот прокси также для HTTPS</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="113"/>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Пароль:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="140"/>
         <source>Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Порт:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="181"/>
         <source>Check to configure Tor to only connect to servers using ports allowed by your firewall</source>
-        <translation type="unfinished"></translation>
+        <translation>Включите чтобы Tor соединялся с серверами используя порты разрешённые вашим брандмауэром</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="184"/>
         <source>My firewall only lets me connect to certain ports</source>
-        <translation type="unfinished"></translation>
+        <translation>Мой брандмауэр разрешает соединения не ко всем портам</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="208"/>
         <source>Firewall Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройки брандмауэра</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="220"/>
         <source>Allowed Ports:</source>
-        <translation type="unfinished"></translation>
+        <translation>Разрешённые порты:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="230"/>
         <source>80, 443</source>
-        <translation type="unfinished">80, 443</translation>
+        <translation>80, 443</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="240"/>
         <source>Check to configure Tor to use bridge servers to access the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Включите чтобы Tor использовал bridge&apos;ы для доступа к сети Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="243"/>
         <source>My ISP blocks connections to the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Мой интернет-провайдер блокирует доступ к сети Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="267"/>
         <source>Tor Bridge Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Настройки bridge&apos;в</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="279"/>
         <source>The Tor version you are currently running does not support bridges. &lt;br&gt;Tor will still try to encrypt its directory connections.</source>
-        <translation type="unfinished"></translation>
+        <translation>Версия Tor которую вы используетене поддерживает bridge&apos;ы. &lt;br&gt;Тем не менее Tor всё равно будет пытаться шифровать соединения к директориям.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="300"/>
         <source>Add a Bridge:</source>
-        <translation type="unfinished"></translation>
+        <translation>Добавить bridge:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="372"/>
         <source>Remove the selected bridges from the list</source>
-        <translation type="unfinished"></translation>
+        <translation>Удалить выбранные bridge&apos;ы из списка</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="394"/>
         <source>Copy the selected bridges to the clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Скопировать выбранные bridge&apos;ы в буфер обмена</translation>
     </message>
 </context>
 <context>
@@ -1918,17 +1922,17 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="44"/>
         <source>Relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Сервер</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="55"/>
         <source>Zoom to Relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Увеличить с фокусом на сервер</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="231"/>
         <source>%1 relays online (%2 total)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 серверов онлайн (%2 всего)</translation>
     </message>
 </context>
 <context>
@@ -2165,63 +2169,64 @@ PGP или GPG ключа.</translation>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="78"/>
         <source>Server</source>
-        <translation type="unfinished">Сервер</translation>
+        <translation>Сервер</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="136"/>
         <source>Bridge Support Unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation>Поддержка bridge&apos;в недоступна</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="139"/>
         <source>You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы настроили Tor быть bridge&apos;ем для заблокированных пользователей, но ваша версия Tor не поддерживает bridge&apos;ы.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="141"/>
         <source>Please upgrade your Tor software or configure Tor to act as a normal Tor relay.</source>
-        <translation type="unfinished"></translation>
+        <translation>Пожалуйста обновите версию Tor или настройте Tor как обычный сервер.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="209"/>
         <source>You must specify at least a relay nickname and port.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы должны указать как минимум ник сервера и порт.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="30"/>
         <source>Run Tor as a client only</source>
-        <translation type="unfinished"></translation>
+        <translation>Использовать Tor только как клиент</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="44"/>
         <source>Help censored users reach the Tor network (Tor 0.2.0.3-alpha or newer)</source>
-        <translation type="unfinished"></translation>
+        <translation>Помочь заблокированным пользователям получить доступ к сети Tor (требуется Tor 0.2.0.3-alpha или новее)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="136"/>
         <source>Relay Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Порт сервера:</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="172"/>
         <source>Port on which users and other servers can communicate with your relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Порт на котором пользователи и другие серверы смогут общаться с вашим сервером</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="259"/>
         <source>Email address at which you may be reached if there is a
 problem with your relay. You might also include your PGP or GPG fingerprint.</source>
-        <translation type="unfinished"></translation>
+        <translation>email адрес по которому можно с вами связаться если
+возникнет проблема с вашим сервером. Вы можете также указать отпечаток вашего PGP ключа.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="289"/>
         <source>Enable to mirror the Tor relay directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Включите чтобы зеркалировать директорию Tor</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="292"/>
         <source>Mirror the Relay Directory </source>
-        <translation type="unfinished"></translation>
+        <translation>Зеркалировать каталог серверов </translation>
     </message>
 </context>
 <context>
@@ -2269,7 +2274,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../control/stream.cpp" line="137"/>
         <source>Remapped</source>
-        <translation type="unfinished"></translation>
+        <translation>Переназначен</translation>
     </message>
 </context>
 <context>
