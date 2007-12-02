@@ -8,32 +8,32 @@
         <translation>Über Vidalia</translation>
     </message>
     <message>
-        <location filename="../gui/about/aboutdialog.ui" line="79"/>
+        <location filename="../gui/about/aboutdialog.ui" line="78"/>
         <source>Vidalia</source>
         <translation>Vidalia</translation>
     </message>
     <message>
-        <location filename="../gui/about/aboutdialog.ui" line="247"/>
+        <location filename="../gui/about/aboutdialog.ui" line="234"/>
         <source>Tor</source>
         <translation>Tor</translation>
     </message>
     <message>
-        <location filename="../gui/about/aboutdialog.ui" line="163"/>
+        <location filename="../gui/about/aboutdialog.ui" line="156"/>
         <source>Qt</source>
         <translation>Qt</translation>
     </message>
     <message>
-        <location filename="../gui/about/aboutdialog.ui" line="178"/>
+        <location filename="../gui/about/aboutdialog.ui" line="166"/>
         <source>Qt Version</source>
         <translation>Qt Version</translation>
     </message>
     <message>
-        <location filename="../gui/about/aboutdialog.ui" line="263"/>
+        <location filename="../gui/about/aboutdialog.ui" line="244"/>
         <source>Tor Version</source>
         <translation>Tor Version</translation>
     </message>
     <message>
-        <location filename="../gui/about/aboutdialog.ui" line="94"/>
+        <location filename="../gui/about/aboutdialog.ui" line="88"/>
         <source>Vidalia Version</source>
         <translation>Vidalia Version</translation>
     </message>
@@ -51,107 +51,107 @@
 <context>
     <name>AdvancedPage</name>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="33"/>
+        <location filename="../gui/config/advancedpage.ui" line="28"/>
         <source>Control Port</source>
         <translation>Kontroll-Port</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="245"/>
+        <location filename="../gui/config/advancedpage.ui" line="240"/>
         <source>Start Tor with the specified configuration file (torrc)</source>
         <translation>Starte Tor mit der angegebenen Konfigurationsdatei (torrc)</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="264"/>
+        <location filename="../gui/config/advancedpage.ui" line="259"/>
         <source>Select path to Tor configuration file</source>
         <translation>Wählen Sie den Pfad zur Tor-Konfigurationsdatei aus</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="323"/>
+        <location filename="../gui/config/advancedpage.ui" line="318"/>
         <source>Browse</source>
         <translation>Öffnen</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="342"/>
+        <location filename="../gui/config/advancedpage.ui" line="337"/>
         <source>Permissions</source>
         <translation>Berechtigungen</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="365"/>
+        <location filename="../gui/config/advancedpage.ui" line="360"/>
         <source>Run as User:</source>
         <translation>Als folgender Nutzer ausführen:</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="378"/>
+        <location filename="../gui/config/advancedpage.ui" line="373"/>
         <source>Vidalia will run with this User&apos;s permissions</source>
         <translation>Vidalia wird mit den Berechtigungen dieses Nutzers laufen</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="398"/>
+        <location filename="../gui/config/advancedpage.ui" line="393"/>
         <source>Run as Group:</source>
         <translation>Als folgende Gruppe ausführen:</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="405"/>
+        <location filename="../gui/config/advancedpage.ui" line="400"/>
         <source>Vidalia will run with this Group&apos;s permissions</source>
         <translation>Vidalia wird mit den Berechtigungen dieser Gruppe laufen</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="213"/>
+        <location filename="../gui/config/advancedpage.cpp" line="226"/>
         <source>Select Tor Configuration File</source>
         <translation>Wählen Sie die Tor-Konfigurationsdatei aus</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="226"/>
+        <location filename="../gui/config/advancedpage.cpp" line="239"/>
         <source>File Not Found</source>
         <translation>Datei nicht gefunden</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="228"/>
+        <location filename="../gui/config/advancedpage.cpp" line="241"/>
         <source>%1 does not exist. Would you like to create it?</source>
         <translation>%1 existiert nicht. Soll es erstellt werden?</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="239"/>
+        <location filename="../gui/config/advancedpage.cpp" line="252"/>
         <source>Failed to Create File</source>
         <translation>Datei konnte nicht erstellt werden</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="240"/>
+        <location filename="../gui/config/advancedpage.cpp" line="253"/>
         <source>Unable to create %1 [%2]</source>
         <translation>Konnte %1 nicht erstellen [2%]</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="429"/>
+        <location filename="../gui/config/advancedpage.ui" line="424"/>
         <source>Service</source>
         <translation>Dienst</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="444"/>
+        <location filename="../gui/config/advancedpage.ui" line="439"/>
         <source>Enable this if you wish to run Tor as a Windows service</source>
         <translation>Aktivieren Sie diese Option, um Tor als Windows-Dienst auszuführen</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="447"/>
+        <location filename="../gui/config/advancedpage.ui" line="442"/>
         <source>Run Tor in the background as a Windows service</source>
         <translation>Tor als Windows-Dienst im Hintergrund ausführen</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="276"/>
+        <location filename="../gui/config/advancedpage.cpp" line="289"/>
         <source>Unable to remove Tor Service</source>
         <translation>Tor-Dienst konnte nicht entfernt werden</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="287"/>
+        <location filename="../gui/config/advancedpage.cpp" line="300"/>
         <source>Unable to install Tor Service</source>
         <translation>Tor-Dienst konnte nicht installiert werden</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="288"/>
+        <location filename="../gui/config/advancedpage.cpp" line="301"/>
         <source>Vidalia was unable to install the Tor service.</source>
         <translation>Vidalia konnte Tor nicht als Dienst einrichten.</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="278"/>
+        <location filename="../gui/config/advancedpage.cpp" line="291"/>
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
@@ -160,7 +160,7 @@ You may need to remove it manually.</source>
 Sie müssen ihn manuell entfernen.</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="224"/>
+        <location filename="../gui/config/advancedpage.ui" line="219"/>
         <source>Tor Configuration File</source>
         <translation>Tor-Konfigurationsdatei</translation>
     </message>
@@ -170,7 +170,7 @@ Sie müssen ihn manuell entfernen.</translation>
         <translation>&apos;%1&apos; ist keine gültige IP-Adresse.</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="162"/>
+        <location filename="../gui/config/advancedpage.ui" line="157"/>
         <source>:</source>
         <translation>:</translation>
     </message>
@@ -181,52 +181,52 @@ Sie müssen ihn manuell entfernen.</translation>
 kein Passwort angegeben.</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.cpp" line="255"/>
+        <location filename="../gui/config/advancedpage.cpp" line="268"/>
         <source>Select a Directory to Use for Tor Data</source>
         <translation>Wählen Sie ein Verzeichnis zum Speichern der Tordaten aus</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="53"/>
+        <location filename="../gui/config/advancedpage.ui" line="48"/>
         <source>Authentication:</source>
         <translation>Authentifikation:</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="63"/>
+        <location filename="../gui/config/advancedpage.ui" line="58"/>
         <source>Address:</source>
         <translation>Adresse:</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="96"/>
+        <location filename="../gui/config/advancedpage.ui" line="91"/>
         <source>Cookie</source>
         <translation>Cookie</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="101"/>
+        <location filename="../gui/config/advancedpage.ui" line="96"/>
         <source>Password</source>
         <translation>Passwort</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="116"/>
+        <location filename="../gui/config/advancedpage.ui" line="111"/>
         <source>Randomly Generate</source>
         <translation>Zufällige Erzeugung</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="280"/>
+        <location filename="../gui/config/advancedpage.ui" line="275"/>
         <source>Tor Data Directory</source>
         <translation>Tor-Datenverzeichnis</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="301"/>
+        <location filename="../gui/config/advancedpage.ui" line="296"/>
         <source>Store Tor data in the following directory</source>
         <translation>Speichere die Tordaten in dm folgenden Verzeichnis</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="320"/>
+        <location filename="../gui/config/advancedpage.ui" line="315"/>
         <source>Select the directory used to store Tor data</source>
         <translation>Wählen Sie das Verzeichnis zum Speichern der Tordaten aus</translation>
     </message>
     <message>
-        <location filename="../gui/config/advancedpage.ui" line="91"/>
+        <location filename="../gui/config/advancedpage.ui" line="86"/>
         <source>None</source>
         <translation>Kein</translation>
     </message>
@@ -239,27 +239,27 @@ kein Passwort angegeben.</translation>
 <context>
     <name>AppearancePage</name>
     <message>
-        <location filename="../gui/config/appearancepage.ui" line="36"/>
+        <location filename="../gui/config/appearancepage.ui" line="31"/>
         <source>Language</source>
         <translation>Sprache</translation>
     </message>
     <message>
-        <location filename="../gui/config/appearancepage.ui" line="57"/>
+        <location filename="../gui/config/appearancepage.ui" line="52"/>
         <source>Choose the language used in Vidalia</source>
         <translation>Wählen Sie die Sprache für Vidalia aus</translation>
     </message>
     <message>
-        <location filename="../gui/config/appearancepage.ui" line="89"/>
+        <location filename="../gui/config/appearancepage.ui" line="84"/>
         <source>Changes to language will only take effect after restarting Vidalia!</source>
         <translation>Damit die Sprachauswahl gültig wird, muss Vidalia neu gestartet werden.</translation>
     </message>
     <message>
-        <location filename="../gui/config/appearancepage.ui" line="105"/>
+        <location filename="../gui/config/appearancepage.ui" line="100"/>
         <source>Style</source>
         <translation>Aussehen</translation>
     </message>
     <message>
-        <location filename="../gui/config/appearancepage.ui" line="139"/>
+        <location filename="../gui/config/appearancepage.ui" line="134"/>
         <source>Choose Vidalia&apos;s interface style</source>
         <translation>Wählen Sie Vidalias Aussehen</translation>
     </message>
@@ -272,72 +272,72 @@ kein Passwort angegeben.</translation>
 <context>
     <name>BandwidthGraph</name>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="21"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="16"/>
         <source>Tor Bandwidth Usage</source>
         <translation>Tor Bandbreitenbenutzung</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="45"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="40"/>
         <source>Show Settings</source>
         <translation>Zeige Einstellungen</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="68"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="63"/>
         <source>Reset</source>
         <translation>Reset</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="161"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="151"/>
         <source>Receive Rate</source>
         <translation>Empfangsrate</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="185"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="170"/>
         <source>Send Rate</source>
         <translation>Senderate</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="304"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="284"/>
         <source>Changes the transparency of the Bandwidth Graph</source>
         <translation>Ändert die Transparenz des Bandbreitengraphs</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="463"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="443"/>
         <source>Save</source>
         <translation>Speichern</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="470"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="450"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.cpp" line="170"/>
+        <location filename="../gui/bwgraph/bwgraph.cpp" line="171"/>
         <source>Since:</source>
         <translation>Seit:</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="388"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="368"/>
         <source>100</source>
         <translation>100</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="403"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="383"/>
         <source>% Opaque</source>
         <translation>% undurchsichtig</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.cpp" line="236"/>
+        <location filename="../gui/bwgraph/bwgraph.cpp" line="237"/>
         <source>Hide Settings</source>
         <translation>Verstecke Einstellungen</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="198"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="183"/>
         <source>Always on Top</source>
         <translation>Immer im Vordergrund</translation>
     </message>
     <message>
-        <location filename="../gui/bwgraph/bwgraph.ui" line="254"/>
+        <location filename="../gui/bwgraph/bwgraph.ui" line="234"/>
         <source>Style</source>
         <translation>Aussehen</translation>
     </message>
@@ -386,29 +386,29 @@ kein Passwort angegeben.</translation>
 <context>
     <name>CircuitListWidget</name>
     <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="47"/>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="48"/>
         <source>Connection</source>
         <translation>Verbindung</translation>
     </message>
     <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="47"/>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="48"/>
         <source>Status</source>
         <translation>Status</translation>
     </message>
     <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="56"/>
-        <source>Close Circuit</source>
-        <translation>Kanal schließen</translation>
-    </message>
-    <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="62"/>
-        <source>Close Stream</source>
-        <translation>Datenstrom schließen</translation>
-    </message>
-    <message>
-        <location filename="../gui/network/circuitlistwidget.cpp" line="55"/>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="83"/>
         <source>Zoom to Circuit</source>
         <translation>Kanal heranzoomen</translation>
+    </message>
+    <message>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="85"/>
+        <source>Close Circuit (Del)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/network/circuitlistwidget.cpp" line="106"/>
+        <source>Close Stream (Del)</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -417,11 +417,6 @@ kein Passwort angegeben.</translation>
         <location filename="../gui/config/configdialog.cpp" line="63"/>
         <source>General</source>
         <translation>Allgemein</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/configdialog.cpp" line="71"/>
-        <source>Server</source>
-        <translation type="obsolete">Server</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="79"/>
@@ -449,7 +444,7 @@ kein Passwort angegeben.</translation>
         <translation>Hilfe</translation>
     </message>
     <message>
-        <location filename="../gui/config/configdialog.ui" line="24"/>
+        <location filename="../gui/config/configdialog.ui" line="19"/>
         <source>Settings</source>
         <translation>Einstellungen</translation>
     </message>
@@ -528,42 +523,42 @@ kein Passwort angegeben.</translation>
 <context>
     <name>GeneralPage</name>
     <message>
-        <location filename="../gui/config/generalpage.ui" line="69"/>
+        <location filename="../gui/config/generalpage.ui" line="64"/>
         <source>Path to Tor&apos;s executable</source>
         <translation>Pfad zu Tors ausführbarer Datei</translation>
     </message>
     <message>
-        <location filename="../gui/config/generalpage.ui" line="88"/>
+        <location filename="../gui/config/generalpage.ui" line="83"/>
         <source>Select path to Tor executable</source>
         <translation>Wählen Sie den Pfad zu Tors ausführbarer Datei</translation>
     </message>
     <message>
-        <location filename="../gui/config/generalpage.ui" line="91"/>
+        <location filename="../gui/config/generalpage.ui" line="86"/>
         <source>Browse</source>
         <translation>Öffnen</translation>
     </message>
     <message>
-        <location filename="../gui/config/generalpage.ui" line="110"/>
+        <location filename="../gui/config/generalpage.ui" line="105"/>
         <source>Startup Options</source>
         <translation>Start-Einstellungen</translation>
     </message>
     <message>
-        <location filename="../gui/config/generalpage.ui" line="125"/>
+        <location filename="../gui/config/generalpage.ui" line="120"/>
         <source>Select to start Vidalia on system boot</source>
         <translation>Auswählen um Vidalia beim Hochfahren zu starten</translation>
     </message>
     <message>
-        <location filename="../gui/config/generalpage.ui" line="128"/>
+        <location filename="../gui/config/generalpage.ui" line="123"/>
         <source>Run Vidalia on system startup</source>
         <translation>Starte Vidalia beim Hochfahren</translation>
     </message>
     <message>
-        <location filename="../gui/config/generalpage.ui" line="141"/>
+        <location filename="../gui/config/generalpage.ui" line="136"/>
         <source>Set to start Tor when you launch Vidalia</source>
         <translation>Auswählen um Tor zu starten wenn Vidalia gestartet wird</translation>
     </message>
     <message>
-        <location filename="../gui/config/generalpage.ui" line="144"/>
+        <location filename="../gui/config/generalpage.ui" line="139"/>
         <source>Start Tor when Vidalia starts</source>
         <translation>Starte Tor wenn Vidalia gestartet wird</translation>
     </message>
@@ -573,7 +568,7 @@ kein Passwort angegeben.</translation>
         <translation>Wählen Sie den Pfad zum Tor-Verzeichnis aus</translation>
     </message>
     <message>
-        <location filename="../gui/config/generalpage.ui" line="42"/>
+        <location filename="../gui/config/generalpage.ui" line="37"/>
         <source>Tor Executable</source>
         <translation>Pfad zur Tor-Anwendung</translation>
     </message>
@@ -624,117 +619,117 @@ kein Passwort angegeben.</translation>
 <context>
     <name>HelpBrowser</name>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="38"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="33"/>
         <source>Vidalia Help</source>
         <translation>Vidalia Hilfe</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="184"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="174"/>
         <source>Find Previous</source>
         <translation>Finde Vorherige</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="197"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="187"/>
         <source>Find Next</source>
         <translation>Finde Nächste</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="231"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="221"/>
         <source>Case sensitive</source>
         <translation>Groß-/Kleinschreibung beachten</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="270"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="260"/>
         <source>Contents</source>
         <translation>Inhalt</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="315"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="305"/>
         <source>Help Topics</source>
         <translation>Hilfe Themen</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="360"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="350"/>
         <source>Search</source>
         <translation>Suche</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="415"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="405"/>
         <source>Found Documents</source>
         <translation>Gefundene Dokumente</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="494"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="484"/>
         <source>Back</source>
         <translation>Zurück</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="497"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="487"/>
         <source>Move to previous page (Backspace)</source>
         <translation>Eine Seite zurück (Backspace)</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="505"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="490"/>
         <source>Backspace</source>
         <translation>Backspace</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="513"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="498"/>
         <source>Forward</source>
         <translation>Vorwärts</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="516"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="501"/>
         <source>Move to next page (Shift+Backspace)</source>
         <translation>Eine Seite vor (Shift+Backspace)</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="524"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="504"/>
         <source>Shift+Backspace</source>
         <translation>Shift+Backspace</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="532"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="512"/>
         <source>Home</source>
         <translation>Startseite</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="535"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="515"/>
         <source>Move to the Home page (Ctrl+H)</source>
         <translation>Zur Startseite (Strg+H)</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="543"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="518"/>
         <source>Ctrl+H</source>
         <translation>Strg+H</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="560"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="535"/>
         <source>Find</source>
         <translation>Suchen</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="563"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="538"/>
         <source>Search for a word or phrase on current page (Ctrl+F)</source>
         <translation>Suche nach einem Wort oder Satz in der aktuellen Seite (Strg+F)</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="571"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="541"/>
         <source>Ctrl+F</source>
         <translation>Strg+F</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="579"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="549"/>
         <source>Close</source>
         <translation>Schließen</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="582"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="552"/>
         <source>Close Vidalia Help</source>
         <translation>Die Vidalia Hilfe schließen</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="590"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="555"/>
         <source>Esc</source>
         <translation>Esc</translation>
     </message>
@@ -759,17 +754,17 @@ kein Passwort angegeben.</translation>
         <translation>Text nicht gefunden</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="162"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="152"/>
         <source>Find:</source>
         <translation>Finde:</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="241"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="231"/>
         <source>Whole words only</source>
         <translation>Nur ganze Wörter</translation>
     </message>
     <message>
-        <location filename="../gui/help/browser/helpbrowser.ui" line="372"/>
+        <location filename="../gui/help/browser/helpbrowser.ui" line="362"/>
         <source>Searching for:</source>
         <translation>Suche nach:</translation>
     </message>
@@ -828,122 +823,107 @@ kein Passwort angegeben.</translation>
 <context>
     <name>MainWindow</name>
     <message>
-        <location filename="../gui/mainwindow.ui" line="382"/>
+        <location filename="../gui/mainwindow.ui" line="377"/>
         <source>About</source>
         <translation>Über</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="395"/>
+        <location filename="../gui/mainwindow.ui" line="390"/>
         <source>Exit</source>
         <translation>Beenden</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="256"/>
+        <location filename="../gui/mainwindow.ui" line="251"/>
         <source>Bandwidth Graph</source>
         <translation>Bandbreitengraph</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="269"/>
+        <location filename="../gui/mainwindow.ui" line="264"/>
         <source>Message Log</source>
         <translation>Nachrichtenprotokoll</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="319"/>
+        <location filename="../gui/mainwindow.ui" line="314"/>
         <source>Help</source>
         <translation>Hilfe</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="350"/>
+        <location filename="../gui/mainwindow.cpp" line="368"/>
         <source>Ctrl+T</source>
         <translation>Strg+T</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="351"/>
+        <location filename="../gui/mainwindow.cpp" line="369"/>
         <source>Ctrl+B</source>
         <translation>Strg+B</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="352"/>
+        <location filename="../gui/mainwindow.cpp" line="370"/>
         <source>Ctrl+L</source>
         <translation>Strg+L</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="354"/>
+        <location filename="../gui/mainwindow.cpp" line="372"/>
         <source>Ctrl+?</source>
         <translation>Strg+?</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="367"/>
+        <location filename="../gui/mainwindow.cpp" line="385"/>
         <source>File</source>
         <translation>Datei</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="370"/>
+        <location filename="../gui/mainwindow.cpp" line="388"/>
         <source>Tor</source>
         <translation>Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="375"/>
+        <location filename="../gui/mainwindow.cpp" line="393"/>
         <source>View</source>
         <translation>Ansicht</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="384"/>
+        <location filename="../gui/mainwindow.cpp" line="402"/>
         <source>Vidalia Help</source>
         <translation>Vidalia Hilfe</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="545"/>
+        <location filename="../gui/mainwindow.cpp" line="563"/>
         <source>Error Starting Tor</source>
         <translation>Fehler beim Starten von Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="591"/>
+        <location filename="../gui/mainwindow.cpp" line="609"/>
         <source>Error Connecting to Tor</source>
         <translation>Fehler bei der Verbindung zu Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="650"/>
+        <location filename="../gui/mainwindow.cpp" line="668"/>
         <source>Error Stopping Tor</source>
         <translation>Fehler beim Stoppen von Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="681"/>
+        <location filename="../gui/mainwindow.cpp" line="699"/>
         <source>Tor Exited</source>
         <translation>Tor beendet</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="651"/>
+        <location filename="../gui/mainwindow.cpp" line="669"/>
         <source>Vidalia was unable to stop Tor.</source>
         <translation>Vidalia konnte Tor nicht anhalten.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="436"/>
+        <location filename="../gui/mainwindow.cpp" line="479"/>
         <source>Tor is running</source>
         <translation>Tor läuft</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="623"/>
-        <source>Server is Enabled</source>
-        <translation type="obsolete">Server ist eingeschalten</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="353"/>
+        <location filename="../gui/mainwindow.cpp" line="371"/>
         <source>Ctrl+N</source>
         <translation>Strg+N</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="628"/>
-        <source>You are currently running a Tor server. Terminating your server will interrupt any open connections from clients.
-
-Would you like to shutdown gracefully and give clients time to find a new server?</source>
-        <translation type="obsolete">Es läuft zur Zeit ein Tor Server. Wird der Server
-beendet, werden alle offenen Verbindungen von Clients unterbrochen. 
-        
-Wollen Sie den Server vorsichtig beenden, um Clients Zeit zu geben einen neuen Server zu finden?</translation>
-    </message>
-    <message>
-        <location filename="../gui/mainwindow.cpp" line="684"/>
+        <location filename="../gui/mainwindow.cpp" line="702"/>
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
@@ -952,253 +932,253 @@ Please check the message log for indicators about what happened to Tor before it
 Überprüfen Sie das Nachrichtenprotokoll auf weitere Informationen.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="548"/>
+        <location filename="../gui/mainwindow.cpp" line="566"/>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
         <translation>Vidalia konnte Tor nicht starten. Überprüfen Sie Ihre Einstellungen, um sicherzustellen, dass der Pfad zur Tor-Anwendung korrekt angegeben ist.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="270"/>
+        <location filename="../gui/mainwindow.cpp" line="288"/>
         <source>Network Map</source>
         <translation>Netzwerk-Karte</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="332"/>
+        <location filename="../gui/mainwindow.ui" line="327"/>
         <source>Settings</source>
         <translation>Einstellungen</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="951"/>
+        <location filename="../gui/mainwindow.cpp" line="981"/>
         <source>New Identity</source>
         <translation>Neue Identität</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="355"/>
+        <location filename="../gui/mainwindow.cpp" line="373"/>
         <source>Ctrl+I</source>
         <translation>Strg+I</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="954"/>
+        <location filename="../gui/mainwindow.cpp" line="984"/>
         <source>All subsequent connections will appear to be different than your old connections.</source>
         <translation>Alle folgenden Verbindungen werden anders als alte
 Verbindungen erscheinen.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="982"/>
+        <location filename="../gui/mainwindow.cpp" line="1012"/>
         <source>Failed to Create New Identity</source>
         <translation>Konnte keine neue Identität erstellen</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="185"/>
+        <location filename="../gui/mainwindow.ui" line="180"/>
         <source>Start Tor</source>
         <translation>Tor starten</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="122"/>
+        <location filename="../gui/mainwindow.ui" line="117"/>
         <source>Tor is not running</source>
         <translation>Tor läuft nicht</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="429"/>
+        <location filename="../gui/mainwindow.cpp" line="447"/>
         <source>Tor is shutting down</source>
         <translation>Tor wird beendet</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="437"/>
+        <location filename="../gui/mainwindow.cpp" line="454"/>
         <source>Stop Tor</source>
         <translation>Tor anhalten</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="453"/>
+        <location filename="../gui/mainwindow.cpp" line="470"/>
         <source>Tor is starting up</source>
         <translation>Tor startet</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="38"/>
+        <location filename="../gui/mainwindow.ui" line="33"/>
         <source>Vidalia Control Panel</source>
         <translation>Vidalia Kontroll-Panel</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="68"/>
+        <location filename="../gui/mainwindow.ui" line="63"/>
         <source>Tor Status</source>
         <translation>Tor Status</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="170"/>
+        <location filename="../gui/mainwindow.ui" line="165"/>
         <source>Vidalia Shortcuts</source>
         <translation>Vidalia Tastenkombinationen</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="195"/>
+        <location filename="../gui/mainwindow.ui" line="190"/>
         <source>Setup Relaying</source>
         <translation>Weiterleitung einrichten</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="198"/>
+        <location filename="../gui/mainwindow.ui" line="193"/>
         <source>Set up a Tor relay and help the network grow</source>
         <translation>Richten Sie eine Tor-Weiterleitung ein und helfen Sie
 dem Netzwerk zu wachsen.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="208"/>
+        <location filename="../gui/mainwindow.ui" line="203"/>
         <source>View the Network</source>
         <translation>Netzwerk betrachten</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="211"/>
+        <location filename="../gui/mainwindow.ui" line="206"/>
         <source>View a map of the Tor network</source>
         <translation>Die Tor-Netzwerkkarte betrachten</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="224"/>
+        <location filename="../gui/mainwindow.ui" line="219"/>
         <source>Use a New Identity</source>
         <translation>Eine neue Identität verwenden</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="227"/>
+        <location filename="../gui/mainwindow.ui" line="222"/>
         <source>Make subsequent connections appear new</source>
         <translation>Spätere Verbindungen als neu erscheinen lassen</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="259"/>
+        <location filename="../gui/mainwindow.ui" line="254"/>
         <source>View Tor&apos;s bandwidth usage</source>
         <translation>Tors Bandbreitennutzung anzeigen</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="272"/>
+        <location filename="../gui/mainwindow.ui" line="267"/>
         <source>View Tor&apos;s log message history</source>
         <translation>Tors Nachrichtenprotokollverlauf anzeigen</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="322"/>
+        <location filename="../gui/mainwindow.ui" line="317"/>
         <source>View help documentation</source>
         <translation>Hilfe anzeigen</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="335"/>
+        <location filename="../gui/mainwindow.ui" line="330"/>
         <source>Configure Tor and Vidalia</source>
         <translation>Tor und Vidalia einrichten</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="385"/>
+        <location filename="../gui/mainwindow.ui" line="380"/>
         <source>View version and license information</source>
         <translation>Version und Lizenzinformationen anzeigen</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="398"/>
+        <location filename="../gui/mainwindow.ui" line="393"/>
         <source>Exit Vidalia</source>
         <translation>Vidalia beenden</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="450"/>
+        <location filename="../gui/mainwindow.ui" line="445"/>
         <source>Show this window on startup</source>
         <translation>Dieses Fenster beim Start anzeigen</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="469"/>
+        <location filename="../gui/mainwindow.ui" line="464"/>
         <source>Hide</source>
         <translation>Verstecken</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.ui" line="472"/>
+        <location filename="../gui/mainwindow.ui" line="467"/>
         <source>Hide this window</source>
         <translation>Dieses Fenster verstecken</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="277"/>
+        <location filename="../gui/mainwindow.cpp" line="295"/>
         <source>Control Panel</source>
         <translation>Kontrollpanel</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="356"/>
+        <location filename="../gui/mainwindow.cpp" line="374"/>
         <source>Ctrl+P</source>
         <translation>Strg+P</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="434"/>
+        <location filename="../gui/mainwindow.cpp" line="452"/>
         <source>Stop Tor Now</source>
         <translation>Tor jetzt anhalten</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="457"/>
+        <location filename="../gui/mainwindow.cpp" line="474"/>
         <source>Starting Tor</source>
         <translation>Starte Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="756"/>
+        <location filename="../gui/mainwindow.cpp" line="774"/>
         <source>Cookie Authentication Required</source>
         <translation>Cookie-Authentifikation erforderlich</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="759"/>
+        <location filename="../gui/mainwindow.cpp" line="777"/>
         <source>Tor requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one.</source>
         <translation>Tor versucht über Vidalia ein Cookie zur Authentifikation zu verschicken, aber Vidalia konnte dieses
 nicht finden.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="761"/>
+        <location filename="../gui/mainwindow.cpp" line="779"/>
         <source>Would you like to browse for the file &apos;control_auth_cookie&apos; yourself?</source>
         <translation>Wollen Sie selbst nach der Datei &apos;control_auth_cookie&apos; suchen?</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="768"/>
+        <location filename="../gui/mainwindow.cpp" line="786"/>
         <source>Tor Data Directory</source>
         <translation>Tor-Datenverzeichnis</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="770"/>
+        <location filename="../gui/mainwindow.cpp" line="788"/>
         <source>Tor Control Cookie (control_auth_cookie)</source>
         <translation>Tor-Kontrollcookie (control_auth_cookie)</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="812"/>
+        <location filename="../gui/mainwindow.cpp" line="830"/>
         <source>Error Registering for Events</source>
         <translation>Fehler bei der Registrierung für Ereignisse</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="814"/>
+        <location filename="../gui/mainwindow.cpp" line="832"/>
         <source>Vidalia was unable to register for Tor events. Many of Vidalia&apos;s features may be unavailable.</source>
         <translation>Vidalia konnte sich nicht für Tor-Ereignisse registrieren. Viele von Vidalias Funktionen
 könnten nicht verfügbar sein.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="833"/>
+        <location filename="../gui/mainwindow.cpp" line="856"/>
         <source>Password Authentication Required</source>
         <translation>Passwort-Authentifikation erforderlich</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="846"/>
+        <location filename="../gui/mainwindow.cpp" line="869"/>
         <source>Error Authenticating to Tor</source>
         <translation>Fehler bei der Authentifikation zu Tor</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="848"/>
+        <location filename="../gui/mainwindow.cpp" line="871"/>
         <source>Vidalia was unable to authenticate to Tor. (%1)</source>
         <translation>Vidalia konnte sich nicht zu Tor authentifizieren. (%1)</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="850"/>
+        <location filename="../gui/mainwindow.cpp" line="873"/>
         <source>Please check your control port authentication settings.</source>
         <translation>Bitte überprüfen Sie die Authentifikationseinstellungen des Kontroll-Ports.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="834"/>
+        <location filename="../gui/mainwindow.cpp" line="857"/>
         <source>Please enter your control password (not the hash):</source>
         <translation>Bitte geben Sie Ihr Kontroll-Passwort ein (nicht den Hash-Wert):</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="427"/>
+        <location filename="../gui/mainwindow.cpp" line="445"/>
         <source>Your Tor relay is shutting down.
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
         <translation>Ihr Tor-Server wird gerade beendet.
 Klicken Sie erneut auf &apos;Tor anhalten&apos; um das Beenden zu erzwingen.</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="623"/>
+        <location filename="../gui/mainwindow.cpp" line="641"/>
         <source>Relaying is Enabled</source>
         <translation>Verteilung ist aktiviert</translation>
     </message>
     <message>
-        <location filename="../gui/mainwindow.cpp" line="628"/>
+        <location filename="../gui/mainwindow.cpp" line="646"/>
         <source>You are currently running a Tor relay. Terminating your relay will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new relay?</source>
@@ -1211,192 +1191,192 @@ Wollen Sie den Tor-Verteiler langsam beenden, damit die Clients Zeit haben, eine
 <context>
     <name>MessageLog</name>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="24"/>
+        <location filename="../gui/log/messagelog.ui" line="19"/>
         <source>Message Log</source>
         <translation>Nachrichtenprotokoll</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="71"/>
+        <location filename="../gui/log/messagelog.ui" line="66"/>
         <source>Time</source>
         <translation>Zeit</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="76"/>
+        <location filename="../gui/log/messagelog.ui" line="71"/>
         <source>Type</source>
         <translation>Typ</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="81"/>
+        <location filename="../gui/log/messagelog.ui" line="76"/>
         <source>Message</source>
         <translation>Nachricht</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="381"/>
+        <location filename="../gui/log/messagelog.ui" line="371"/>
         <source>Browse</source>
         <translation>Öffnen</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="165"/>
+        <location filename="../gui/log/messagelog.ui" line="160"/>
         <source>Saves the current Message Log settings</source>
         <translation>Speichert die aktuellen Nachrichtenprotokoll-Einstellungen</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="168"/>
+        <location filename="../gui/log/messagelog.ui" line="163"/>
         <source>Save Settings</source>
         <translation>Speichere Einstellungen</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="184"/>
+        <location filename="../gui/log/messagelog.ui" line="179"/>
         <source>Cancels changes made to settings</source>
         <translation>Verwirft die Änderung der Einstellungen</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="187"/>
+        <location filename="../gui/log/messagelog.ui" line="182"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="201"/>
+        <location filename="../gui/log/messagelog.ui" line="196"/>
         <source>Message Filter</source>
         <translation>Nachrichtenfilter</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="222"/>
+        <location filename="../gui/log/messagelog.ui" line="217"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="238"/>
+        <location filename="../gui/log/messagelog.ui" line="233"/>
         <source>Warning</source>
         <translation>Warnung</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="254"/>
+        <location filename="../gui/log/messagelog.ui" line="249"/>
         <source>Notice</source>
         <translation>Notiz</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="270"/>
+        <location filename="../gui/log/messagelog.ui" line="265"/>
         <source>Info</source>
         <translation>Info</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="286"/>
+        <location filename="../gui/log/messagelog.ui" line="281"/>
         <source>Debug</source>
         <translation>Debug</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="462"/>
+        <location filename="../gui/log/messagelog.ui" line="452"/>
         <source>Message Filters...</source>
         <translation>Nachrichtenfilter...</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="465"/>
+        <location filename="../gui/log/messagelog.ui" line="455"/>
         <source>Set message filters</source>
         <translation>Setze Nachrichtenfilter</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="478"/>
+        <location filename="../gui/log/messagelog.ui" line="463"/>
         <source>History Size...</source>
         <translation>Größe des Verlaufs...</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="481"/>
+        <location filename="../gui/log/messagelog.ui" line="466"/>
         <source>Set maximum number of messages to display</source>
         <translation>Maximale Anzahl der angezeigten Nachrichten</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="497"/>
+        <location filename="../gui/log/messagelog.ui" line="477"/>
         <source>Clear</source>
         <translation>Löschen</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="500"/>
+        <location filename="../gui/log/messagelog.ui" line="480"/>
         <source>Clear all messages from the Message Log (Ctrl+E)</source>
         <translation>Lösche alle Nachrichten aus dem Nachrichtenprotokoll (Strg+E)</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="508"/>
+        <location filename="../gui/log/messagelog.ui" line="483"/>
         <source>Ctrl+E</source>
         <translation>Strg+E</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="522"/>
+        <location filename="../gui/log/messagelog.ui" line="497"/>
         <source>Copy</source>
         <translation>Kopieren</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="525"/>
+        <location filename="../gui/log/messagelog.ui" line="500"/>
         <source>Copy the selected messages to the clipboard (Ctrl+C)</source>
         <translation>Kopiere die ausgewählte Nachricht in die Zwischenablage (Strg+C)</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="533"/>
+        <location filename="../gui/log/messagelog.ui" line="503"/>
         <source>Ctrl+C</source>
         <translation>Strg+C</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="544"/>
+        <location filename="../gui/log/messagelog.ui" line="514"/>
         <source>Select All</source>
         <translation>Alles markieren</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="547"/>
+        <location filename="../gui/log/messagelog.ui" line="517"/>
         <source>Select all messages (Ctrl+A)</source>
         <translation>Alle Nachrichten markieren (Strg+A)</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="555"/>
+        <location filename="../gui/log/messagelog.ui" line="520"/>
         <source>Ctrl+A</source>
         <translation>Strg+A</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="563"/>
+        <location filename="../gui/log/messagelog.ui" line="528"/>
         <source>Save All</source>
         <translation>Speichere alles</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="566"/>
+        <location filename="../gui/log/messagelog.ui" line="531"/>
         <source>Save all messages to a file</source>
         <translation>Speichere alle Nachrichten in eine Datei</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="579"/>
+        <location filename="../gui/log/messagelog.ui" line="539"/>
         <source>Save Selected</source>
         <translation>Speichere markierte</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="582"/>
+        <location filename="../gui/log/messagelog.ui" line="542"/>
         <source>Save selected messages to a file</source>
         <translation>Speichere markierte Nachrichten in eine Datei</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="636"/>
+        <location filename="../gui/log/messagelog.ui" line="581"/>
         <source>Close</source>
         <translation>Schließen</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="639"/>
+        <location filename="../gui/log/messagelog.ui" line="584"/>
         <source>Close the Message Log</source>
         <translation>Schließe das Nachrichtenprotokoll</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="647"/>
+        <location filename="../gui/log/messagelog.ui" line="587"/>
         <source>Esc</source>
         <translation>Esc</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="658"/>
+        <location filename="../gui/log/messagelog.ui" line="598"/>
         <source>Find</source>
         <translation>Finde</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="661"/>
+        <location filename="../gui/log/messagelog.ui" line="601"/>
         <source>Find all messages containing the search text (Ctrl+F)</source>
         <translation>Finde alle Nachrichten die den Suchtext enthalten (Strg+F)</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="669"/>
+        <location filename="../gui/log/messagelog.ui" line="604"/>
         <source>Ctrl+F</source>
         <translation>Strg+F</translation>
     </message>
@@ -1484,27 +1464,27 @@ alle Vorgänge und sind hauptsächlich für Tor-Entwickler gedacht.</translation
         <translation>Die Suche hat 0 passende Einträge gefunden.</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="598"/>
+        <location filename="../gui/log/messagelog.ui" line="553"/>
         <source>Settings</source>
         <translation>Einstellungen</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="601"/>
+        <location filename="../gui/log/messagelog.ui" line="556"/>
         <source>Adjust Message Log Settings</source>
         <translation>Ändere Nachrichtenprotokoll-Einstellungen</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="609"/>
+        <location filename="../gui/log/messagelog.ui" line="559"/>
         <source>Ctrl+T</source>
         <translation>Strg+T</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="617"/>
+        <location filename="../gui/log/messagelog.ui" line="567"/>
         <source>Help</source>
         <translation>Hilfe</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="620"/>
+        <location filename="../gui/log/messagelog.ui" line="570"/>
         <source>Show the help browser</source>
         <translation>Zeige Hilfe Browser</translation>
     </message>
@@ -1534,7 +1514,7 @@ empfangen.</translation>
         <translation>Text Dateien (*.txt)</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="628"/>
+        <location filename="../gui/log/messagelog.ui" line="573"/>
         <source>F1</source>
         <translation>F1</translation>
     </message>
@@ -1549,32 +1529,32 @@ empfangen.</translation>
         <translation>Sie müssen einen Dateinamen angeben, um die Logdaten speichern zu können.</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="302"/>
+        <location filename="../gui/log/messagelog.ui" line="297"/>
         <source>Message Log History</source>
         <translation>Nachrichtenprotokoll-Verlauf</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="323"/>
+        <location filename="../gui/log/messagelog.ui" line="318"/>
         <source>Number of messages to display in the message log window</source>
         <translation>Anzahl der Nachrichten, die im Nachrichtenprotokoll-Fenster angezeigt werden</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="347"/>
+        <location filename="../gui/log/messagelog.ui" line="337"/>
         <source>messages</source>
         <translation>Nachrichten</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="366"/>
+        <location filename="../gui/log/messagelog.ui" line="356"/>
         <source>Always Save New Log Messages</source>
         <translation>Nachrichten immer speichern</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="404"/>
+        <location filename="../gui/log/messagelog.ui" line="394"/>
         <source>Enable automatically saving all new log messages to a file</source>
         <translation>Das automatische Speichern aller neuen Nachrichten in eine Datei aktivieren</translation>
     </message>
     <message>
-        <location filename="../gui/log/messagelog.ui" line="407"/>
+        <location filename="../gui/log/messagelog.ui" line="397"/>
         <source>Automatically save new log messages to a file</source>
         <translation>Alle neuen Nachrichten automatisch in einer Datei speichern</translation>
     </message>
@@ -1582,107 +1562,102 @@ empfangen.</translation>
 <context>
     <name>NetViewer</name>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="253"/>
+        <location filename="../gui/network/netviewer.ui" line="236"/>
         <source>Refresh</source>
         <translation>Aktualisieren</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="275"/>
+        <location filename="../gui/network/netviewer.ui" line="253"/>
         <source>Help</source>
         <translation>Hilfe</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="297"/>
+        <location filename="../gui/network/netviewer.ui" line="270"/>
         <source>Close</source>
         <translation>Schließen</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="319"/>
+        <location filename="../gui/network/netviewer.ui" line="287"/>
         <source>Zoom In</source>
         <translation>Vergrößern</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="341"/>
+        <location filename="../gui/network/netviewer.ui" line="304"/>
         <source>Zoom Out</source>
         <translation>Verkleinern</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="259"/>
-        <source>Refresh the list of routers and connections</source>
-        <translation type="obsolete">Aktualisiere die Liste der Router und Verbindungen</translation>
-    </message>
-    <message>
-        <location filename="../gui/network/netviewer.ui" line="278"/>
         <source>Show network map help</source>
         <translation>Zeige Hilfe zur Netzwerk-Karte</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="281"/>
+        <location filename="../gui/network/netviewer.ui" line="256"/>
         <source>Show the network map help</source>
         <translation>Zeige Hilfe zur Netzwerk-Karte</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="303"/>
+        <location filename="../gui/network/netviewer.ui" line="276"/>
         <source>Close the network map</source>
         <translation>Schließe Netzwerk-Karte</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="325"/>
+        <location filename="../gui/network/netviewer.ui" line="293"/>
         <source>Zoom in on the network map</source>
         <translation>Vergrößere Netzwerk-Karte</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="347"/>
+        <location filename="../gui/network/netviewer.ui" line="310"/>
         <source>Zoom out on the network map</source>
         <translation>Verkleinere Netzwerk-Karte</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="363"/>
+        <location filename="../gui/network/netviewer.ui" line="321"/>
         <source>Zoom To Fit</source>
         <translation>Größe anpassen</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="369"/>
+        <location filename="../gui/network/netviewer.ui" line="327"/>
         <source>Zooms to fit all currently displayed circuits</source>
         <translation>Passt die Größe an die angezeigten Verbindungen an</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="267"/>
+        <location filename="../gui/network/netviewer.ui" line="245"/>
         <source>Ctrl+R</source>
         <translation>Strg+R</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="289"/>
+        <location filename="../gui/network/netviewer.ui" line="262"/>
         <source>F1</source>
         <translation>F1</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="311"/>
+        <location filename="../gui/network/netviewer.ui" line="279"/>
         <source>Esc</source>
         <translation>Esc</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="333"/>
+        <location filename="../gui/network/netviewer.ui" line="296"/>
         <source>+</source>
         <translation>+</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="355"/>
+        <location filename="../gui/network/netviewer.ui" line="313"/>
         <source>-</source>
         <translation>-</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="377"/>
+        <location filename="../gui/network/netviewer.ui" line="330"/>
         <source>Ctrl+Z</source>
         <translation>Strg+Z</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="32"/>
+        <location filename="../gui/network/netviewer.ui" line="24"/>
         <source>Tor Network Map</source>
         <translation>Tor-Netzwerk-Karte</translation>
     </message>
     <message>
-        <location filename="../gui/network/netviewer.ui" line="259"/>
+        <location filename="../gui/network/netviewer.ui" line="242"/>
         <source>Refresh the list of Tor relays and connections</source>
         <translation>Aktualisiere die Liste der Tor-Verteiler und Verbindungen</translation>
     </message>
@@ -1695,138 +1670,136 @@ empfangen.</translation>
         <translation>Netzwerk</translation>
     </message>
     <message>
-        <location filename="../gui/config/networkpage.cpp" line="178"/>
+        <location filename="../gui/config/networkpage.cpp" line="187"/>
         <source>Invalid Bridge</source>
         <translation>Ungültige Brücke</translation>
     </message>
     <message>
-        <location filename="../gui/config/networkpage.cpp" line="179"/>
+        <location filename="../gui/config/networkpage.cpp" line="188"/>
         <source>The specified bridge identifier is not valid.</source>
         <translation>Die angegebene Brücke ist nicht gültig.</translation>
     </message>
     <message>
-        <location filename="../gui/config/networkpage.cpp" line="226"/>
+        <location filename="../gui/config/networkpage.cpp" line="235"/>
         <source>Copy (Ctrl+C)</source>
         <translation>Kopieren (Strg+C)</translation>
     </message>
     <message>
-        <location filename="../gui/config/networkpage.cpp" line="255"/>
+        <location filename="../gui/config/networkpage.cpp" line="266"/>
         <source>You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet.</source>
         <translation>Sie müssen eine IP-Adresse oder einen Hostnamen und eine Portnummer abgeben, damit Tor einen Proxy für die
 Internetverbindung benutzt.</translation>
     </message>
     <message>
-        <location filename="../gui/config/networkpage.cpp" line="261"/>
+        <location filename="../gui/config/networkpage.cpp" line="272"/>
         <source>You must specify one or more ports to which your firewall allows you to connect.</source>
         <translation>Sie müssen einen oder mehrere Ports angeben, zu der Ihre Firewall Verbindungen erlaubt.</translation>
     </message>
     <message>
-        <location filename="../gui/config/networkpage.cpp" line="297"/>
+        <location filename="../gui/config/networkpage.cpp" line="308"/>
         <source>&apos;%1&apos; is not a valid port number.</source>
         <translation>&apos;%1&apos; ist keine gültige Port-Nummer.</translation>
     </message>
     <message>
-        <location filename="../gui/config/networkpage.ui" line="30"/>
+        <location filename="../gui/config/networkpage.ui" line="25"/>
         <source>Check to configure Tor to use a proxy to access the Internet</source>
         <translation>Aktivieren Sie diese Option, damit Tor einen Proxy für die Internetverbindung benutzt</translation>
     </message>
     <message>
-        <location filename="../gui/config/networkpage.ui" line="33"/>
+        <location filename="../gui/config/networkpage.ui" line="28"/>
         <source>I use a proxy to access the Internet</source>
         <translation>Ich benutze einen Proxy um ins Internet zu gelangen</translation>
     </message>
     <message>
-        <location filename="../gui/config/networkpage.ui" line="63"/>
+        <location filename="../gui/config/networkpage.ui" line="58"/>
         <source>Proxy Settings</source>
         <translation>Proxy-Einstellungen</translation>
     </message>
     <message>
-        <location filename="../gui/config/networkpage.ui" line="75"/>
+        <location filename="../gui/config/networkpage.ui" line="70"/>
         <source>HTTP Proxy:</source>
         <translation>HTTP-Proxy:</translation>
     </message>
     <message>
-        <location filename="../gui/config/networkpage.ui" line="85"/>
+        <location filename="../gui/config/networkpage.ui" line="80"/>
         <source>Username:</source>
         <translation>Nutzername:</translation>
     </message>
     <message>
-        <location filename="../gui/config/networkpage.ui" line="95"/>
+        <location filename="../gui/config/networkpage.ui" line="90"/>
         <source>Use this proxy for HTTPS also</source>
         <translation>Diesen Proxy auch für HTTPS benutzen</translation>
     </message>
     <message>
-        <location filename="../gui/config/networkpage.ui" line="113"/>
+        <location filename="../gui/config/networkpage.ui" line="108"/>
         <source>Password:</source>
         <translation>Passwort:</translation>
     </message>
     <message>
-        <location filename="../gui/config/networkpage.ui" line="140"/>
+        <location filename="../gui/config/networkpage.ui" line="135"/>
         <source>Port:</source>
         <translation>Port:</translation>
     </message>
     <message>
-        <location fnilename="../gui/config/networkpage.ui" line="181"/>
-        <source>Check to configure Tor to only connect to servers using ports allowed by your firewall</source>
-        <translation>Aktivieren Sie diese Option, damit sich Tor zu Servern nur über freigegebene
-Ports Ihrer Firewall verbindet</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/networkpage.ui" line="184"/>
+        <location filename="../gui/config/networkpage.ui" line="179"/>
         <source>My firewall only lets me connect to certain ports</source>
         <translation>Meine Firewall lässt nur Verbindungen zu bestimmten Ports zu</translation>
     </message>
     <message>
-        <location filename="../gui/config/networkpage.ui" line="208"/>
+        <location filename="../gui/config/networkpage.ui" line="203"/>
         <source>Firewall Settings</source>
         <translation>Firewall-Einstellungen</translation>
     </message>
     <message>
-        <location filename="../gui/config/networkpage.ui" line="220"/>
+        <location filename="../gui/config/networkpage.ui" line="215"/>
         <source>Allowed Ports:</source>
         <translation>Erlaubte Ports:</translation>
     </message>
     <message>
-        <location filename="../gui/config/networkpage.ui" line="230"/>
+        <location filename="../gui/config/networkpage.ui" line="225"/>
         <source>80, 443</source>
         <translation>80, 443</translation>
     </message>
     <message>
-        <location filename="../gui/config/networkpage.ui" line="240"/>
-        <source>Check to configure Tor to use bridge servers to access the Tor network</source>
-        <translation>Aktivieren Sie diese Option, damit Tor sich über Serverbrücken
-mit dem Tor-Netzwerk verbindet</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/networkpage.ui" line="243"/>
+        <location filename="../gui/config/networkpage.ui" line="238"/>
         <source>My ISP blocks connections to the Tor network</source>
         <translation>Mein Provider blockiert Verbindungen zum Tor-Netzwerk</translation>
     </message>
     <message>
-        <location filename="../gui/config/networkpage.ui" line="267"/>
+        <location filename="../gui/config/networkpage.ui" line="262"/>
         <source>Tor Bridge Settings</source>
         <translation>Einstellungen für Tor-Brücken</translation>
     </message>
     <message>
-        <location filename="../gui/config/networkpage.ui" line="279"/>
+        <location filename="../gui/config/networkpage.ui" line="274"/>
         <source>The Tor version you are currently running does not support bridges. &lt;br&gt;Tor will still try to encrypt its directory connections.</source>
         <translation>Die momentan benutzte Tor-Version unterstützt keine Serverbrücken. &lt;br&gt;Tor wird weiterhin versuchen,
 seine Verzeichnisverbindungen zu verschlüsseln.</translation>
     </message>
     <message>
-        <location filename="../gui/config/networkpage.ui" line="300"/>
+        <location filename="../gui/config/networkpage.ui" line="295"/>
         <source>Add a Bridge:</source>
         <translation>Eine Bücke hinzufügen:</translation>
     </message>
     <message>
-        <location filename="../gui/config/networkpage.ui" line="372"/>
+        <location filename="../gui/config/networkpage.ui" line="358"/>
         <source>Remove the selected bridges from the list</source>
         <translation>Entferne the gewählte Brücke von der Liste</translation>
     </message>
     <message>
-        <location filename="../gui/config/networkpage.ui" line="394"/>
+        <location filename="../gui/config/networkpage.ui" line="374"/>
         <source>Copy the selected bridges to the clipboard</source>
         <translation>Kopiere die gewählte Brücke in die Zwischenablage</translation>
+    </message>
+    <message>
+        <location filename="../gui/config/networkpage.ui" line="176"/>
+        <source>Check to configure Tor to only connect to relays using ports allowed by your firewall</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/networkpage.ui" line="235"/>
+        <source>Check to configure Tor to use bridge relays to access the Tor network</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1915,31 +1888,16 @@ seine Verzeichnisverbindungen zu verschlüsseln.</translation>
     <name>RouterListWidget</name>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="44"/>
-        <source>Server</source>
-        <translation type="obsolete">Server</translation>
-    </message>
-    <message>
-        <location filename="../gui/network/routerlistwidget.cpp" line="55"/>
-        <source>Zoom to Server</source>
-        <translation type="obsolete">Den Server heranzommen</translation>
-    </message>
-    <message>
-        <location filename="../gui/network/routerlistwidget.cpp" line="231"/>
-        <source>%1 servers online (%2 total)</source>
-        <translation type="obsolete">%1 Server onlien (%2 insgesamt)</translation>
-    </message>
-    <message>
-        <location filename="../gui/network/routerlistwidget.cpp" line="44"/>
         <source>Relay</source>
         <translation>Verteiler</translation>
     </message>
     <message>
-        <location filename="../gui/network/routerlistwidget.cpp" line="55"/>
+        <location filename="../gui/network/routerlistwidget.cpp" line="71"/>
         <source>Zoom to Relay</source>
         <translation>Verteiler heran zoomen</translation>
     </message>
     <message>
-        <location filename="../gui/network/routerlistwidget.cpp" line="231"/>
+        <location filename="../gui/network/routerlistwidget.cpp" line="229"/>
         <source>%1 relays online (%2 total)</source>
         <translation>%1 Verteiler online (%2 insgesamt)</translation>
     </message>
@@ -1947,239 +1905,193 @@ seine Verzeichnisverbindungen zu verschlüsseln.</translation>
 <context>
     <name>ServerPage</name>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="33"/>
-        <source>Check to run as a Tor network server</source>
-        <translation type="obsolete">Anhaken um als Tor Netzwerkserver zu laufen</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="37"/>
+        <location filename="../gui/config/serverpage.ui" line="32"/>
         <source>Relay traffic for the Tor network</source>
         <translation>Leite Verkehr für das Tor-Netzwerk weiter</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="214"/>
+        <location filename="../gui/config/serverpage.ui" line="169"/>
         <source>Directory Port:</source>
         <translation>Verzeichnis-Port:</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="244"/>
+        <location filename="../gui/config/serverpage.ui" line="202"/>
         <source>Directory Port Number</source>
         <translation>Verzeichnis-Port-Nummer:</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="114"/>
+        <location filename="../gui/config/serverpage.ui" line="315"/>
         <source>Nickname:</source>
         <translation>Spitzname:</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="273"/>
-        <source>Name of your server</source>
-        <translation>Name des Servers</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="182"/>
+        <location filename="../gui/config/serverpage.ui" line="214"/>
         <source>Contact Info:</source>
         <translation>Kontaktinformation:</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="131"/>
-        <source>Server Port:</source>
-        <translation type="obsolete">Server-Port:</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="167"/>
-        <source>Port on which users and other servers can communicate with your server</source>
-        <translation type="obsolete">Port den andere Benutzer und Server zur Kommunikation mit
-Ihrem Server verwenden</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="285"/>
-        <source>Enable to mirror the server directory</source>
-        <translation type="obsolete">Auswählen um die Serverliste zu spiegeln</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="288"/>
-        <source>Mirror the Server Directory </source>
-        <translation type="obsolete">Die Serverliste spiegeln</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="710"/>
+        <location filename="../gui/config/serverpage.ui" line="699"/>
         <source>Exit Policies</source>
         <translation>Exit-Regeln</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="856"/>
+        <location filename="../gui/config/serverpage.ui" line="831"/>
         <source>Show help topic on exit policies</source>
         <translation>Zeige Hilfe zu Exit-Regeln</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.cpp" line="124"/>
-        <source>You must specify at least a server nickname and port.</source>
-        <translation type="obsolete">Sie müssen zumindest einen Server Spitznamen und einen Port
-angeben.</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="254"/>
-        <source>Email address at which you may be reached if there is a
-problem with your server. You might also include your PGP or GPG
-fingerprint.</source>
-        <translation type="obsolete">Email-Adresse unter der Sie bei Serverproblemen zu
-erreichen sind. Sie können auch Ihren PGP oder GPG fingerprint
-angeben.</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="566"/>
+        <location filename="../gui/config/serverpage.ui" line="555"/>
         <source>Long-term average bandwidth limit</source>
         <translation>Dauerhafte durchschnittliche Bandbreitenbegrenzung</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="537"/>
+        <location filename="../gui/config/serverpage.ui" line="526"/>
         <source>Average Rate</source>
         <translation>Durchschnittliche Rate</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="654"/>
+        <location filename="../gui/config/serverpage.ui" line="643"/>
         <source>KB/s</source>
         <translation>KB/s</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="641"/>
+        <location filename="../gui/config/serverpage.ui" line="630"/>
         <source>Peak bandwidth rate limit</source>
         <translation>Hochlast Bandbreitenbegrenzung</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="612"/>
+        <location filename="../gui/config/serverpage.ui" line="601"/>
         <source>Maximum Rate</source>
         <translation>Maximale Rate</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="448"/>
+        <location filename="../gui/config/serverpage.ui" line="437"/>
         <source>Show help topic on bandwidth rate limits</source>
         <translation>Zeige Hilfe zur Bandbreitenbegrenzung</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="73"/>
+        <location filename="../gui/config/serverpage.ui" line="76"/>
         <source>Basic Settings</source>
         <translation>Allgemeine Einstellungen</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="326"/>
+        <location filename="../gui/config/serverpage.ui" line="335"/>
         <source>Bandwidth Limits</source>
         <translation>Bandbreitenbegrenzung</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="361"/>
+        <location filename="../gui/config/serverpage.ui" line="370"/>
         <source>For Internet connections with fast download speed but slow upload, please list your upload speed here.</source>
         <translation>Bei Internetverbindungen mit hoher Downloadgeschwindigkeit aber niedriger Uploadgeschwindigkeit
 geben Sie Ihre Uploadgeschwindigkeit bitte hier an.</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="382"/>
+        <location filename="../gui/config/serverpage.ui" line="391"/>
         <source>Select the entry that most closely resembles your Internet connection</source>
         <translation>Wählen Sie den Eintrag der Ihrer Internetverbindung am ehesten entspricht</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="417"/>
+        <location filename="../gui/config/serverpage.ui" line="426"/>
         <source>Custom</source>
         <translation>Benutzerdefiniert</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="748"/>
+        <location filename="../gui/config/serverpage.ui" line="737"/>
         <source>Ports 6660 - 6669 and 6697</source>
         <translation>Ports 6660 - 6669 und 6697</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="751"/>
+        <location filename="../gui/config/serverpage.ui" line="740"/>
         <source>Internet Relay Chat (IRC)</source>
         <translation>Internet Relay Chat (IRC)</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="761"/>
+        <location filename="../gui/config/serverpage.ui" line="750"/>
         <source>Ports 110, 143, 993 and 995</source>
         <translation>Ports 110, 143, 993 und 995</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="764"/>
+        <location filename="../gui/config/serverpage.ui" line="753"/>
         <source>Retrieve Mail (POP, IMAP)</source>
         <translation>E-Mails abrufen (POP, IMAP)</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="774"/>
+        <location filename="../gui/config/serverpage.ui" line="763"/>
         <source>Ports unspecified by other checkboxes</source>
         <translation>Ports die durch andere Checkboxen nicht belegt wurden</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="777"/>
+        <location filename="../gui/config/serverpage.ui" line="766"/>
         <source>Misc Other Services</source>
         <translation>Verschiedene andere Dienste</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="787"/>
+        <location filename="../gui/config/serverpage.ui" line="776"/>
         <source>Ports 706, 1863, 5050, 5190, 5222, 8300 and 8888</source>
         <translation>Ports 706, 1863, 5050, 5190, 5222, 8300 und 8888</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="790"/>
+        <location filename="../gui/config/serverpage.ui" line="779"/>
         <source>Instant Messaging (IM)</source>
         <translation>Instant Messaging (IM)</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="800"/>
+        <location filename="../gui/config/serverpage.ui" line="789"/>
         <source>Port 443</source>
         <translation>Port 443</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="803"/>
+        <location filename="../gui/config/serverpage.ui" line="792"/>
         <source>Secure Websites (SSL)</source>
         <translation>Sichere Webseiten (SSL)</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="813"/>
+        <location filename="../gui/config/serverpage.ui" line="802"/>
         <source>Port 80</source>
         <translation>Port 80</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="816"/>
+        <location filename="../gui/config/serverpage.ui" line="805"/>
         <source>Websites</source>
         <translation>Webseiten</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="929"/>
+        <location filename="../gui/config/serverpage.ui" line="904"/>
         <source>What Internet resources should Tor users be able to access from your Tor relay?</source>
         <translation>Welche Internet-Ressourcen sollen Tor-Nutzer von Ihrem Server aus erreichen können?</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="683"/>
+        <location filename="../gui/config/serverpage.ui" line="672"/>
         <source>Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s.</source>
         <translation>Ihre maximale Bandbreite muss größer oder gleich groß wie ihre durschnittliche Bandbreite sein. Beide Werte müssen mindestens 20 KB/s betragen.</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="392"/>
+        <location filename="../gui/config/serverpage.ui" line="401"/>
         <source>Cable/DSL 256 Kbps</source>
         <translation>Kabel/DSL 256 kbit/s</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="397"/>
+        <location filename="../gui/config/serverpage.ui" line="406"/>
         <source>Cable/DSL 512 Kbps</source>
         <translation>Kabel/DSL 512 kbit/s</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="402"/>
+        <location filename="../gui/config/serverpage.ui" line="411"/>
         <source>Cable/DSL 768 Kbps</source>
         <translation>Kabel/DSL 768 kbit/s</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="407"/>
+        <location filename="../gui/config/serverpage.ui" line="416"/>
         <source>T1/Cable/DSL 1.5 Mbps</source>
         <translation>T1/Kabel/DSL 1,5 Mbit/s</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="412"/>
+        <location filename="../gui/config/serverpage.ui" line="421"/>
         <source>&gt; 1.5 Mbps</source>
         <translation>&gt; 1,5 Mbit/s</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.cpp" line="78"/>
+        <location filename="../gui/config/serverpage.cpp" line="79"/>
         <source>Server</source>
         <translation>Server</translation>
     </message>
@@ -2201,46 +2113,71 @@ unterstützt Brücken nicht.</translation>
 arbeitet.</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.cpp" line="209"/>
+        <location filename="../gui/config/serverpage.cpp" line="264"/>
         <source>You must specify at least a relay nickname and port.</source>
         <translation>Sie müssen mindestend einen Verteiler-Namen und Port angeben.</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="30"/>
+        <location filename="../gui/config/serverpage.ui" line="25"/>
         <source>Run Tor as a client only</source>
         <translation>Tor nur als Client ausführen</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="44"/>
-        <source>Help censored users reach the Tor network (Tor 0.2.0.3-alpha or newer)</source>
-        <translation>Zensierten Nutzern helfen, dass Tor-Netzwerk zu nutzen (Tor .2.0.3-alpha oder neuer)</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="136"/>
+        <location filename="../gui/config/serverpage.ui" line="91"/>
         <source>Relay Port:</source>
         <translation>Verteiler-Port:</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="172"/>
-        <source>Port on which users and other servers can communicate with your relay</source>
-        <translation>Port, den andere Nutzer und Server benutzen, um mit Ihrem Verteiler zu kommunizieren</translation>
-    </message>
-    <message>
-        <location filename="../gui/config/serverpage.ui" line="259"/>
+        <location filename="../gui/config/serverpage.ui" line="139"/>
         <source>Email address at which you may be reached if there is a
 problem with your relay. You might also include your PGP or GPG fingerprint.</source>
         <translation>Email-Adresse über die Sie erreicht werden können, wenn ein Problem mit Ihrem
 Verteiler besteht. Sie können auch Ihren PGP- oder GPG-Fingerabdruck angeben.</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="289"/>
+        <location filename="../gui/config/serverpage.ui" line="110"/>
         <source>Enable to mirror the Tor relay directory</source>
         <translation>Aktivieren, um das Tor-Verteiler-Verzeichnis zu spiegeln</translation>
     </message>
     <message>
-        <location filename="../gui/config/serverpage.ui" line="292"/>
+        <location filename="../gui/config/serverpage.ui" line="113"/>
         <source>Mirror the Relay Directory </source>
         <translation>Das Tor-Verteiler-Verzeichnis speigeln</translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.cpp" line="195"/>
+        <source>Your bridge relay is not running.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.ui" line="39"/>
+        <source>Help censored users reach the Tor network (Tor 0.2.0.8-alpha or newer)</source>
+        <translation type="unfinished">Zensierten Nutzern helfen, dass Tor-Netzwerk zu nutzen (Tor .2.0.3-alpha oder neuer) {0.2.0.8-?}</translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.ui" line="272"/>
+        <source>Name of your relay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.ui" line="305"/>
+        <source>Port on which users and other relays can communicate with your relay</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.ui" line="940"/>
+        <source>Let others access your bridge by giving them this line:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.ui" line="964"/>
+        <source>This is the identity of your bridge relay that you can give to other people</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../gui/config/serverpage.ui" line="986"/>
+        <source>Copy your bridge relay&apos;s identity to the clipboard</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
