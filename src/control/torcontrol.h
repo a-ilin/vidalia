@@ -78,7 +78,11 @@ public:
   
   /** Sends a PROTOCOLINFO command to Tor and parses the response. */
   ProtocolInfo protocolInfo(QString *errmsg = 0);
-  
+ 
+  /** Returns true if Tor either has an open circuit or (on Tor >= 
+   * 0.2.0.1-alpha) has previously decided it's able to establish a circuit. */
+  bool circuitEstablished();
+
   /** Sends a GETINFO message to Tor based on the given keys */
   bool getInfo(QHash<QString,QString> &map, QString *errmsg = 0);
   /** Sends a GETINFO message for a single info value to Tor */

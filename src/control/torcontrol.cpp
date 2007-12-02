@@ -343,6 +343,29 @@ TorControl::protocolInfo(QString *errmsg)
   return pi;
 }
 
+/** Returns true if Tor either has an open circuit or (on Tor >=
+ * 0.2.0.1-alpha) has previously decided it's able to establish a circuit. */
+bool
+TorControl::circuitEstablished()
+{
+  /* If Tor is recent enough, we can 'getinfo status/circuit-established' to
+   * see if Tor has an open circuit */
+  if (getTorVersion() >= 0x020001) {
+    QString tmp;
+    if (getInfo("status/circuit-established", tmp))
+      return (tmp == "1");
+  }
+
+  /* Either Tor was too old or our getinfo failed, so try to get a list of all
+   * circuits and check their statuses. */
+  QList<Circuit> circs = getCircuits();
+  foreach (Circuit circ, circs) {
+    if (circ.status() == Circuit::Built)
+      return true;
+  }
+  return false;
+}
+
 /** Sends a GETINFO message to Tor based on the given map of keyvals. The
  * syntax is:
  * 
