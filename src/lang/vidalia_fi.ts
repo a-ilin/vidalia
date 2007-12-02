@@ -1658,7 +1658,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="45"/>
         <source>Network</source>
-        <translation type="unfinished">Verkko</translation>
+        <translation>Verkko</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="187"/>
@@ -1673,7 +1673,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="235"/>
         <source>Copy (Ctrl+C)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopioi (Ctrl+C)</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="266"/>
@@ -1708,12 +1708,12 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/config/networkpage.ui" line="70"/>
         <source>HTTP Proxy:</source>
-        <translation type="unfinished"></translation>
+        <translation>HTTP-välityspalvelin:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="80"/>
         <source>Username:</source>
-        <translation type="unfinished"></translation>
+        <translation>Käyttäjä:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="90"/>
@@ -1723,12 +1723,12 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/config/networkpage.ui" line="108"/>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Salasana:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="135"/>
         <source>Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Portti:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="179"/>
@@ -1748,7 +1748,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/config/networkpage.ui" line="225"/>
         <source>80, 443</source>
-        <translation type="unfinished">80, 443</translation>
+        <translation>80, 443</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="238"/>
