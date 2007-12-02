@@ -44,7 +44,15 @@ HEADERS += $$PWD/torcontrol.h \
            $$PWD/circuit.h \
            $$PWD/stream.h \
            $$PWD/addressmap.h \
-           $$PWD/protocolinfo.h
+           $$PWD/protocolinfo.h \
+           $$PWD/statusevent.h \
+           $$PWD/generalstatusevent.h \
+           $$PWD/clientstatusevent.h \
+           $$PWD/serverstatusevent.h \
+           $$PWD/circuitestablishedevent.h \
+           $$PWD/unrecognizedclientstatusevent.h \
+           $$PWD/unrecognizedserverstatusevent.h \
+           $$PWD/unrecognizedgeneralstatusevent.h
 
 SOURCES += $$PWD/torcontrol.cpp \
            $$PWD/torprocess.cpp \
@@ -61,7 +69,11 @@ SOURCES += $$PWD/torcontrol.cpp \
            $$PWD/circuit.cpp \
            $$PWD/stream.cpp \
            $$PWD/addressmap.cpp \
-           $$PWD/protocolinfo.cpp
+           $$PWD/protocolinfo.cpp \
+           $$PWD/statusevent.cpp \
+           $$PWD/generalstatusevent.cpp \
+           $$PWD/clientstatusevent.cpp \
+           $$PWD/serverstatusevent.cpp
 
 win32 {
   HEADERS += $$PWD/torservice.h
