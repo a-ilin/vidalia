@@ -451,7 +451,6 @@ MainWindow::updateTorStatus(TorStatus status)
       
       ui.lblStartStopTor->setStatusTip(tr("Stop Tor Now"));
   } else if (status == Started) {
-      statusText = tr("Tor is running");
       actionText = tr("Stop Tor");
       _startStopAct->setEnabled(true);
       _startStopAct->setText(actionText);
@@ -477,6 +476,7 @@ MainWindow::updateTorStatus(TorStatus status)
       ui.lblStartStopTor->setStatusTip(statusText);
       ui.lblStartStopTor->setAnimation(QPixmap(ANIM_PROCESS_WORKING));
   } else if (status == CircuitEstablished) {
+      statusText = tr("Tor is running");
       trayIconFile = IMG_TOR_RUNNING;
       statusIconFile = IMG_TOR_RUNNING_48;
   }
