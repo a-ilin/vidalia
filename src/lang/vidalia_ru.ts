@@ -1802,7 +1802,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/networkpage.ui" line="279"/>
         <source>The Tor version you are currently running does not support bridges. &lt;br&gt;Tor will still try to encrypt its directory connections.</source>
-        <translation>Версия Tor которую вы используетене поддерживает bridge&apos;ы. &lt;br&gt;Тем не менее Tor всё равно будет пытаться шифровать соединения к директориям.</translation>
+        <translation>Версия Tor которую вы используете не поддерживает bridge&apos;ы. &lt;br&gt;Тем не менее Tor всё равно будет пытаться шифровать соединения к директориям.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="300"/>
