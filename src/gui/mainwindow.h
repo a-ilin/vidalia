@@ -174,6 +174,9 @@ private:
   ConfigDialog* _configDialog;
   /** A TorControl object that handles communication with Tor */
   TorControl* _torControl;
+  /** Remembers the control password between when we start Tor with a hash of
+   * the password and when we need to provide the password itself. */
+  QString _controlPassword;
 
 #if defined(USE_QSYSTEMTRAYICON)
   QSystemTrayIcon _trayIcon; /**< The Vidalia icon that sits in the tray.
@@ -181,7 +184,7 @@ private:
 #else
   TrayIcon _trayIcon; /**< The Vidalia icon that sits in the tray. (pre-Qt 4.2) */
 #endif
-  
+ 
   /** Defines the actions for the tray menu */
   QAction* _controlPanelAct;
   QAction* _startStopAct;

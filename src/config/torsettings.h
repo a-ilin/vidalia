@@ -61,9 +61,6 @@ public:
   /** Sets the location to use for Tor's data directory. */
   void setDataDirectory(QString dataDir);
   
-  /** Builds and formats a list of command-line arguments. */
-  QStringList getArguments();
-  
   /** Gets the torrc to use when starting Tor. */
   QString getTorrc();
   /** Sets the torrc to use when starting Tor. */
@@ -108,6 +105,13 @@ public:
   /** Set which group will be used to run Tor. */
   void setGroup(QString group);
 
+  /** Generates a random control password consisting of PASSWORD_LEN
+   * characters. */
+  static QString randomPassword();
+  /** Returns the hash of <b>password</b> as given by the command 
+   * "tor --hash-password foo". */
+  static QString hashPassword(const QString &password);
+
 private:
   /** Returns the AuthenticationMethod enum value for the string
    * description of the authentication method given in <b>authMethod</b>. */
@@ -116,12 +120,6 @@ private:
    * <b>method</b>. The authentication method string is stored in  Vidalia's
    * configuration file. */
   QString toString(AuthenticationMethod type);
-  /** Generates a random control password consisting of PASSWORD_LEN
-   * characters. */
-  QString generateRandomPassword();
-  /** Returns the hash of <b>password</b> as given by the command 
-   * "tor --hash-password foo". */
-  QString hashPassword(QString password);
 };
 
 #endif

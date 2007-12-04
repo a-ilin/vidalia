@@ -27,13 +27,12 @@
 
 #include <QDir>
 #include <QProcess>
-#include <util/file.h>
-#include <util/crypto.h>
+#include <crypto.h>
 #include <vidalia.h>
 
 #if defined(Q_OS_WIN32)
 #include <QFileInfo>
-#include <util/win32.h>
+#include <win32.h>
 #endif
 
 #include "torsettings.h"
@@ -110,11 +109,11 @@ TorSettings::apply(QString *errmsg)
       conf.insert(TOR_ARG_HASHED_PASSWORD, "");
       break;
     case PasswordAuth:
-      if (useRandomPassword())
-        setControlPassword(generateRandomPassword());
       conf.insert(TOR_ARG_COOKIE_AUTH,    "0");
       conf.insert(TOR_ARG_HASHED_PASSWORD,
-                  hashPassword(getControlPassword()));
+        useRandomPassword() 
+            ? hashPassword(randomPassword())
+            : hashPassword(getControlPassword()));
       break;
     default:
       conf.insert(TOR_ARG_COOKIE_AUTH,    "0");
@@ -150,60 +149,6 @@ void
 TorSettings::setExecutable(QString torExecutable)
 {
   setValue(SETTING_TOR_EXECUTABLE, torExecutable);
-}
-
-/** Returns a formatted QString of all currently set command-line arguments.
- * If an argument's value contains a space, then it will be wrapped in quotes.
- * */
-QStringList
-TorSettings::getArguments()
-{
-  QStringList args;
-
-  /* Add the torrc argument (if specified) */
-  QString torrc = getTorrc();
-  if (!torrc.isEmpty())
-    args << TOR_ARG_TORRC << expand_filename(torrc);
-  
-  /* Specify the location to use for Tor's data directory, if different from
-   * the default. */
-  QString dataDirectory = getDataDirectory();
-  if (!dataDirectory.isEmpty())
-    args << TOR_ARG_DATA_DIRECTORY << expand_filename(dataDirectory);
-  
-  /* Add the ControlPort value */
-  quint16 controlPort = getControlPort();
-  if (controlPort)
-    args << TOR_ARG_CONTROL_PORT << QString::number(controlPort);
-
-  /* Add the control port authentication argument */
-  AuthenticationMethod authMethod = getAuthenticationMethod();
-  if (authMethod == PasswordAuth) {
-    if (useRandomPassword())
-      setControlPassword(generateRandomPassword());
-    
-    QString password = getControlPassword();
-    args << TOR_ARG_HASHED_PASSWORD << hashPassword(password);
-    args << TOR_ARG_COOKIE_AUTH << "0";
-  } else if (authMethod == CookieAuth) {
-    args << TOR_ARG_COOKIE_AUTH << "1";
-    args << TOR_ARG_HASHED_PASSWORD << "";
-  } else {
-    args << TOR_ARG_COOKIE_AUTH << "0";
-    args << TOR_ARG_HASHED_PASSWORD << "";
-  }
-  
-  /* Add the User argument (if specified) */
-  QString user = getUser();
-  if (!user.isEmpty())
-    args << TOR_ARG_USER << user;
-    
-  /* Add the Group argument (if specified) */
-  QString group = getGroup();
-  if (!group.isEmpty())
-    args << TOR_ARG_GROUP << group;
-  
-  return args;
 }
 
 /** Returns the torrc that will be used when starting Tor. */
@@ -381,7 +326,7 @@ TorSettings::toAuthenticationMethod(const QString &authMethod)
 
 /** Generates a random control password consisting of PASSWORD_LEN characters. */
 QString
-TorSettings::generateRandomPassword()
+TorSettings::randomPassword()
 {
   return crypto_rand_string(PASSWORD_LEN);
 }
@@ -389,8 +334,9 @@ TorSettings::generateRandomPassword()
 /** Returns the hash of <b>password</b> as given by the command "tor
  * --hash-password foo". */
 QString
-TorSettings::hashPassword(QString password)
+TorSettings::hashPassword(const QString &password)
 {
+  TorSettings settings;
   QProcess tor;
   QString dataDirectory, line;
   QStringList args;
@@ -398,14 +344,14 @@ TorSettings::hashPassword(QString password)
   /* Tor writes its state file even if all we're doing is --hash-password. So
    * if the user has configured a non-default data directory, then include
    * that in the list of command line arguments. */
-  dataDirectory = getDataDirectory();
+  dataDirectory = settings.getDataDirectory();
   if (!dataDirectory.isEmpty())
     args << "DataDirectory" << dataDirectory;
   args << "--hash-password" << password;
   
   /* Run Tor, tell it to hash the given password, and then wait for it to
    * finish. */
-  tor.start(getExecutable(), args);
+  tor.start(settings.getExecutable(), args);
   if (!tor.waitForStarted() || !tor.waitForFinished())
     return QString();
 

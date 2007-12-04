@@ -32,10 +32,10 @@
 #include <QtGui>
 #include <QTimer>
 #include <vidalia.h>
-#include <util/file.h>
-#include <util/html.h>
-#include <util/stringutil.h>
-#include <util/net.h>
+#include <file.h>
+#include <html.h>
+#include <stringutil.h>
+#include <net.h>
 #include <QSysInfo>
 
 #include "common/vmessagebox.h"
@@ -523,6 +523,7 @@ void
 MainWindow::start()
 {
   TorSettings settings;
+  QStringList args;
 
   updateTorStatus(Starting);
 
@@ -535,8 +536,49 @@ MainWindow::start()
 
   /* Make sure the torrc we want to use really exists. */
   QString torrc = settings.getTorrc();
-  if (!torrc.isEmpty() && !QFileInfo(torrc).exists())
-    touch_file(torrc, true);
+  if (!torrc.isEmpty()) {
+    if (!QFileInfo(torrc).exists())
+      touch_file(torrc, true);
+    args << "-f" << torrc;
+  }
+  
+  /* Specify Tor's data directory, if different from the default */
+  QString dataDirectory = settings.getDataDirectory();
+  if (!dataDirectory.isEmpty())
+    args << "DataDirectory" << expand_filename(dataDirectory);
+  
+  /* Add the intended control port value */
+  quint16 controlPort = settings.getControlPort();
+  if (controlPort)
+    args << "ControlPort" << QString::number(controlPort);
+  
+  /* Add the control port authentication arguments */
+  switch (settings.getAuthenticationMethod()) {
+    case TorSettings::PasswordAuth:
+      if (settings.useRandomPassword())
+        _controlPassword = TorSettings::randomPassword();
+      else
+        _controlPassword = settings.getControlPassword();
+      args << "HashedControlPassword"
+           << TorSettings::hashPassword(_controlPassword)
+           << "CookieAuthentication"  << "0";
+      break;
+    case TorSettings::CookieAuth:
+      args << "CookieAuthentication"  << "1"
+           << "HashedControlPassword" << "";
+      break;
+    default:
+      args << "CookieAuthentication"  << "0"
+           << "HashedControlPassword" << "";
+  }
+  
+  /* Add custom user and group information (if specified) */
+  QString user = settings.getUser();
+  if (!user.isEmpty())
+    args << "User" << user;
+  QString group = settings.getGroup();
+  if (!group.isEmpty())
+    args << "Group" << group;
 
   /* This doesn't get set to false until Tor is actually up and running, so we
    * don't yell at users twice if their Tor doesn't even start, due to the fact
@@ -544,7 +586,7 @@ MainWindow::start()
    * start. */
   _isIntentionalExit = true;
   /* Kick off the Tor process */
-  _torControl->start(settings.getExecutable(), settings.getArguments());
+  _torControl->start(settings.getExecutable(), args);
 }
 
 /** Called when the Tor process fails to start, for example, because the path
@@ -796,8 +838,7 @@ MainWindow::authenticate()
   } else if (authMethod == TorSettings::PasswordAuth) {
     /* Get the control password and send it to Tor */
     vNotice("Authenticating using 'hashed password' authentication.");
-    QString password = settings.getControlPassword();
-    return _torControl->authenticate(password);
+    return _torControl->authenticate(_controlPassword);
   }
   /* No authentication. Send an empty password. */
   vNotice("Authenticating using 'null' authentication.");
@@ -857,6 +898,8 @@ MainWindow::authenticationFailed(QString errmsg)
                          tr("Please enter your control password (not the hash):"),
                          QLineEdit::Password);
     if (!password.isEmpty()) {
+      /* XXX: We should ask the user if they really want to save the password
+       * they just typed in. */
       TorSettings settings;
       settings.setAuthenticationMethod(TorSettings::PasswordAuth);
       settings.setControlPassword(password);
