@@ -58,7 +58,7 @@ AbstractTorSettings::revert()
 /** Returns true if any settings have changed since the last time apply()
  * was called. */
 bool
-AbstractTorSettings::changedSinceLastApply()
+AbstractTorSettings::changedSinceLastApply() const
 {
   return localValue(SETTING_CHANGED).toBool();
 }
@@ -77,7 +77,7 @@ AbstractTorSettings::setChanged(bool changed)
  * the data type. For example, 0 is considered an empty integer and "" is
  * an empty string. */
 bool
-AbstractTorSettings::isEmptyValue(const QVariant &value)
+AbstractTorSettings::isEmptyValue(const QVariant &value) const
 {
   switch (value.type()) {
     case QVariant::String: 
@@ -97,7 +97,7 @@ AbstractTorSettings::isEmptyValue(const QVariant &value)
 /** Returns the value associated with <b>key</b> saved in the local
  * configuration file. */
 QVariant
-AbstractTorSettings::localValue(const QString &key)
+AbstractTorSettings::localValue(const QString &key) const
 {
   return VSettings::value(key);
 }
@@ -105,7 +105,7 @@ AbstractTorSettings::localValue(const QString &key)
 /** Returns the value associated with <b>key</b> by querying TOr via 
  * <i>getconf key</i>. */
 QVariant
-AbstractTorSettings::torValue(const QString &key)
+AbstractTorSettings::torValue(const QString &key) const
 {
   QVariant value;
   QVariant defaultVal;
@@ -123,7 +123,7 @@ AbstractTorSettings::torValue(const QString &key)
  * <b>key</b> by calling torValue(). Otherwise, this calls localValue() to get
  * the locally saved value associated with <b>key</b>. */
 QVariant
-AbstractTorSettings::value(const QString &key)
+AbstractTorSettings::value(const QString &key) const
 {
   if (_torControl && _torControl->isConnected() && !changedSinceLastApply())
     return torValue(key);

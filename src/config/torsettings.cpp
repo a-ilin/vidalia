@@ -124,14 +124,14 @@ TorSettings::apply(QString *errmsg)
 
 /** Gets the location of Tor's data directory. */
 QString
-TorSettings::getDataDirectory()
+TorSettings::getDataDirectory() const
 {
   return QDir::convertSeparators(value(SETTING_DATA_DIRECTORY).toString());
 }
 
 /** Sets the location to use as Tor's data directory. */
 void
-TorSettings::setDataDirectory(QString dataDirectory)
+TorSettings::setDataDirectory(const QString &dataDirectory)
 {
   setValue(SETTING_DATA_DIRECTORY, dataDirectory);
 }
@@ -139,21 +139,21 @@ TorSettings::setDataDirectory(QString dataDirectory)
 /** Returns a fully-qualified path to Tor's executable, including the
  * executable name. */
 QString
-TorSettings::getExecutable()
+TorSettings::getExecutable() const
 {
   return QDir::convertSeparators(localValue(SETTING_TOR_EXECUTABLE).toString());
 }
 
 /** Sets the location and name of Tor's executable to the given string. */
 void
-TorSettings::setExecutable(QString torExecutable)
+TorSettings::setExecutable(const QString &torExecutable)
 {
   setValue(SETTING_TOR_EXECUTABLE, torExecutable);
 }
 
 /** Returns the torrc that will be used when starting Tor. */
 QString
-TorSettings::getTorrc()
+TorSettings::getTorrc() const
 {
   QString torrc;
   TorControl *tc = torControl();
@@ -166,7 +166,7 @@ TorSettings::getTorrc()
  * \param torrc The torrc to use. 
  */
 void
-TorSettings::setTorrc(QString torrc)
+TorSettings::setTorrc(const QString &torrc)
 {
   setValue(SETTING_TORRC, torrc);
 }
@@ -174,7 +174,7 @@ TorSettings::setTorrc(QString torrc)
 /** Returns the user used when running Tor. The user is specified as an
  * argument to Tor, which will setuid to this user. */
 QString
-TorSettings::getUser()
+TorSettings::getUser() const
 {
   return value(SETTING_TOR_USER).toString();
 }
@@ -182,7 +182,7 @@ TorSettings::getUser()
 /** Sets the user used when running Tor. The user is specified as an argument
  * to Tor, which will setuid to this user. */
 void
-TorSettings::setUser(QString user)
+TorSettings::setUser(const QString &user)
 {
   setValue(SETTING_TOR_USER, user);
 }
@@ -190,7 +190,7 @@ TorSettings::setUser(QString user)
 /** Returns the group used when running Tor. The group is specified as an
  * argument to Tor, which will setgid to this group. */
 QString
-TorSettings::getGroup()
+TorSettings::getGroup() const
 {
   return value(SETTING_TOR_GROUP).toString();
 }
@@ -198,14 +198,14 @@ TorSettings::getGroup()
 /** Sets the group used when running Tor. The group is specified as an
  * argument to Tor, which will setgid to this group. */
 void
-TorSettings::setGroup(QString group)
+TorSettings::setGroup(const QString &group)
 {
   setValue(SETTING_TOR_GROUP, group);
 }
 
 /** Get the address or hostname used to connect to Tor */
 QHostAddress
-TorSettings::getControlAddress()
+TorSettings::getControlAddress() const
 {
   QString addr = localValue(SETTING_CONTROL_ADDR).toString();
   return QHostAddress(addr);
@@ -213,14 +213,14 @@ TorSettings::getControlAddress()
 
 /** Set the address or hostname used to connect to Tor */
 void
-TorSettings::setControlAddress(QHostAddress addr)
+TorSettings::setControlAddress(const QHostAddress &addr)
 {
   setValue(SETTING_CONTROL_ADDR, addr.toString());
 }
 
 /** Get the control port used to connect to Tor */
 quint16
-TorSettings::getControlPort()
+TorSettings::getControlPort() const
 {
   return (quint16)value(SETTING_CONTROL_PORT).toInt();
 }
@@ -235,7 +235,7 @@ TorSettings::setControlPort(quint16 port)
 /** Returns the plaintext (i.e., not hashed) control password used when
  * authenticating to Tor. */
 QString
-TorSettings::getControlPassword()
+TorSettings::getControlPassword() const
 {
   return localValue(SETTING_CONTROL_PASSWORD).toString();
 }
@@ -243,7 +243,7 @@ TorSettings::getControlPassword()
 /** Sets the control password used when starting Tor with
  * HashedControlPassword to <b>password</b>. */
 void
-TorSettings::setControlPassword(QString password)
+TorSettings::setControlPassword(const QString &password)
 {
   setValue(SETTING_CONTROL_PASSWORD, password);
 }
@@ -251,7 +251,7 @@ TorSettings::setControlPassword(QString password)
 /** Returns true if a new, random control password is to be used each time Tor
  * is started. */
 bool
-TorSettings::useRandomPassword()
+TorSettings::useRandomPassword() const
 {
   return localValue(SETTING_USE_RANDOM_PASSWORD).toBool();
 }
@@ -266,7 +266,7 @@ TorSettings::setUseRandomPassword(bool useRandomPassword)
 
 /** Returns the current authentication method used when connecting to Tor. */
 TorSettings::AuthenticationMethod
-TorSettings::getAuthenticationMethod()
+TorSettings::getAuthenticationMethod() const
 {
   AuthenticationMethod type = UnknownAuth;
   TorControl *tc = torControl();
@@ -298,7 +298,7 @@ TorSettings::setAuthenticationMethod(AuthenticationMethod method)
  * <b>method</b>. The authentication method string is stored in Vidalia's
  * configuration file. */
 QString
-TorSettings::toString(AuthenticationMethod method)
+TorSettings::toString(AuthenticationMethod method) const
 {
   switch (method) {
     case NullAuth:  return "none";
@@ -312,7 +312,7 @@ TorSettings::toString(AuthenticationMethod method)
 /** Returns the AuthenticationMethod enum value for the string
  * description of the authentication method given in <b>authMethod</b>. */
 TorSettings::AuthenticationMethod
-TorSettings::toAuthenticationMethod(const QString &authMethod)
+TorSettings::toAuthenticationMethod(const QString &authMethod) const
 { 
   QString str = authMethod.toLower();
   if (str == toString(NullAuth))

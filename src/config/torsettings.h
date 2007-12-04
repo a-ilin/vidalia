@@ -52,58 +52,58 @@ public:
   bool apply(QString *errmsg = 0);
 
   /** Gets the name and path of Tor's executable. */
-  QString getExecutable();
+  QString getExecutable() const;
   /** Sets the name and path of Tor's executable. */
-  void setExecutable(QString torExecutable);
+  void setExecutable(const QString &torExecutable);
  
   /** Gets the location of Tor's data directory. */
-  QString getDataDirectory();
+  QString getDataDirectory() const;
   /** Sets the location to use for Tor's data directory. */
-  void setDataDirectory(QString dataDir);
+  void setDataDirectory(const QString &dataDir);
   
   /** Gets the torrc to use when starting Tor. */
-  QString getTorrc();
+  QString getTorrc() const;
   /** Sets the torrc to use when starting Tor. */
-  void setTorrc(QString torrc);
+  void setTorrc(const QString &torrc);
   
   /** Get Tor's control interface address. */
-  QHostAddress getControlAddress();
+  QHostAddress getControlAddress() const;
   /** Set Tor's control interface address. */
-  void setControlAddress(QHostAddress addr);
+  void setControlAddress(const QHostAddress &addr);
   
   /** Get the control port. */
-  quint16 getControlPort();
+  quint16 getControlPort() const;
   /** Set the control port. */
   void setControlPort(quint16 port);
   
   /** Returns the plaintext (i.e., not hashed) control password used when
    * authenticating to Tor. */
-  QString getControlPassword();
+  QString getControlPassword() const;
   /** Sets the control password used when starting Tor with
    * HashedControlPassword to <b>password</b>. */
-  void setControlPassword(QString password);
+  void setControlPassword(const QString &password);
 
  /** Returns true if a new, random control password is to be used each time
   * Tor is started. */
-  bool useRandomPassword();
+  bool useRandomPassword() const;
   /** Sets whether or not to generate and use a random control password each
    * time Tor is started. */
   void setUseRandomPassword(bool useRandomPassword);
 
   /** Returns the current authentication method used when connecting to Tor.*/
-  AuthenticationMethod getAuthenticationMethod();
+  AuthenticationMethod getAuthenticationMethod() const;
   /** Sets the authentication method used when starting Tor to <b>method</b>.*/
   void setAuthenticationMethod(AuthenticationMethod method);
    
   /** Get which user will be used to run Tor. */
-  QString getUser();
+  QString getUser() const;
   /** Set which user will be used to run Tor. */
-  void setUser(QString user);
+  void setUser(const QString &user);
   
   /** Get which group will be used to run Tor. */
-  QString getGroup();
+  QString getGroup() const;
   /** Set which group will be used to run Tor. */
-  void setGroup(QString group);
+  void setGroup(const QString &group);
 
   /** Generates a random control password consisting of PASSWORD_LEN
    * characters. */
@@ -115,11 +115,11 @@ public:
 private:
   /** Returns the AuthenticationMethod enum value for the string
    * description of the authentication method given in <b>authMethod</b>. */
-  AuthenticationMethod toAuthenticationMethod(const QString &authMethod);
+  AuthenticationMethod toAuthenticationMethod(const QString &authMethod) const;
   /** Returns the string description of the authentication method specified by
    * <b>method</b>. The authentication method string is stored in  Vidalia's
    * configuration file. */
-  QString toString(AuthenticationMethod type);
+  QString toString(AuthenticationMethod type) const;
 };
 
 #endif

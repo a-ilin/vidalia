@@ -48,7 +48,7 @@ public:
    * \sa setDefault
    */
   virtual QVariant value(const QString &key,
-                         const QVariant &defaultVal = QVariant());
+                         const QVariant &defaultVal = QVariant()) const;
   /** Sets the value associated with <b>key</b> to <b>val</b>. */
   virtual void setValue(const QString &key, const QVariant &val);
 
@@ -57,10 +57,10 @@ protected:
   void setDefault(const QString &key, const QVariant &val);
   /** Returns the default setting value associated with <b>key</b>. If
    * <b>key</b> has no default value, then an empty QVariant is returned. */
-  QVariant defaultValue(const QString &key);
+  QVariant defaultValue(const QString &key) const;
   /** Returns a map of all currently saved settings at the last apply()
    * point. */
-  QMap<QString, QVariant> allSettings();
+  QMap<QString, QVariant> allSettings() const;
 
 private:
   /** Association of setting key names to default setting values. */

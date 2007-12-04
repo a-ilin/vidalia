@@ -46,7 +46,7 @@ VSettings::VSettings(const QString settingsGroup)
  * \sa setDefault
  */
 QVariant
-VSettings::value(const QString &key, const QVariant &defaultVal)
+VSettings::value(const QString &key, const QVariant &defaultVal) const
 {
   return QSettings::value(key, defaultVal.isNull() ? defaultValue(key)
                                                    : defaultVal);
@@ -72,7 +72,7 @@ VSettings::setDefault(const QString &key, const QVariant &val)
 /** Returns the default setting value associated with <b>key</b>. If
  * <b>key</b> has no default value, then an empty QVariant is returned. */
 QVariant
-VSettings::defaultValue(const QString &key)
+VSettings::defaultValue(const QString &key) const
 {
   if (_defaults.contains(key))
     return _defaults.value(key);
@@ -90,7 +90,7 @@ VSettings::reset()
 
 /** Returns a map of all currently saved settings at the last appyl() point. */
 QMap<QString, QVariant>
-VSettings::allSettings()
+VSettings::allSettings() const
 {
   QMap<QString, QVariant> settings;
   foreach (QString key, allKeys()) {

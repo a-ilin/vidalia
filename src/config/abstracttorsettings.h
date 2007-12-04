@@ -44,7 +44,7 @@ public:
   void setChanged(bool changed);
   /** Returns true if any settings have changed since the last time apply()
    * was called. */
-  virtual bool changedSinceLastApply();
+  virtual bool changedSinceLastApply() const;
   /** Reverts all settings to their values at the last time apply() was
    * called. */
   virtual void revert();
@@ -56,13 +56,13 @@ protected:
   /** If Vidalia is connected to Tor, this returns the value associated with
    * <b>key</b> by calling torValue(). Otherwise, this calls localValue()
    * to get the locally saved value associated with <b>key</b>. */
-  virtual QVariant value(const QString &key);
+  virtual QVariant value(const QString &key) const;
   /** Returns the value associated with <b>key</b> saved in the local
    * configuration file. */
-  virtual QVariant localValue(const QString &key);
+  virtual QVariant localValue(const QString &key) const;
   /** Returns the value associated with <b>key</b> by querying TOr via 
    * <i>getconf key</i>. */
-  virtual QVariant torValue(const QString &key);
+  virtual QVariant torValue(const QString &key) const;
   /** Saves the value <b>val</b> for the setting <b>key</b> to the local
    * settings file. */
   virtual void setValue(const QString &key, const QVariant &value);
@@ -70,13 +70,13 @@ protected:
   /** Returns true if the given QVariant contains an empty value, depending on
    * the data type. For example, 0 is considered an empty integer and "" is
    * an empty string. */
-  bool isEmptyValue(const QVariant &value);
+  bool isEmptyValue(const QVariant &value) const;
 
 protected:
   /** Returns the TorControl object used for reading settings from or writing
    * settings to Tor, if one was specified. Returns 0 if no TorControl object
    * was given. */
-  TorControl* torControl() { return _torControl; };
+  TorControl* torControl() const { return _torControl; };
 
 private:
   /** TorControl object used for reading settings from or applying settings to
