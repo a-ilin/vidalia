@@ -36,7 +36,7 @@
 #include "unrecognizedclientstatusevent.h"
 #include "unrecognizedgeneralstatusevent.h"
 #include "circuitestablishedevent.h"
-
+#include "dangerousversionevent.h"
 
 /** Format of expiry times in address map events. */
 #define DATE_FMT "\"yyyy-MM-dd HH:mm:ss\""
@@ -448,6 +448,13 @@ TorEvents::dispatchGeneralStatusEvent(StatusEvent::Severity severity,
     = GeneralStatusEvent::statusFromString(action);
 
   switch (status) {
+    case GeneralStatusEvent::DangerousTorVersion:
+      /* Dangerous Tor version ("DANGEROUS_VERSION") */
+      event = new DangerousVersionEvent(severity,
+                DangerousVersionEvent::reasonFromString(args.value("REASON")),
+                args.value("CURRENT"),
+                args.value("RECOMMENDED").split(",", QString::SkipEmptyParts));
+      break;
     default:
       event = new UnrecognizedGeneralStatusEvent(severity, action, args);
   }
