@@ -48,6 +48,7 @@
 #define SETTING_EXITPOLICY      "ExitPolicy"
 #define SETTING_BANDWIDTH_RATE  "BandwidthRate"
 #define SETTING_BANDWIDTH_BURST "BandwidthBurst"
+#define SETTING_BRIDGE_RELAY    "BridgeRelay"
 #define SETTING_RELAY_BANDWIDTH_RATE   "RelayBandwidthRate"
 #define SETTING_RELAY_BANDWIDTH_BURST  "RelayBandwidthBurst"
 #define SETTING_PUBLISH_DESCRIPTOR     "PublishServerDescriptor"
@@ -126,7 +127,8 @@ ServerSettings::confValues()
   /* If we're a bridge, don't publish our server descriptor */
   conf.insert(SETTING_PUBLISH_DESCRIPTOR,
               (torVersion >= 0x020008 && isBridgeEnabled() ? "bridge" : "1"));
-
+  if (torVersion >= 0x020013)
+    conf.insert(SETTING_BRIDGE_RELAY, isBridgeEnabled() ? "1" : "0");
   return conf;
 }
 
