@@ -139,10 +139,9 @@ TorEvents::toTorEvent(LogEvent::Severity severity)
 
 /** Converts an event in the string form sent by Tor to its enum value */
 TorEvents::TorEvent
-TorEvents::toTorEvent(QString event)
+TorEvents::toTorEvent(const QString &event)
 {
   TorEvent e;
-  event = event.toUpper();
   if (event == "BW") {
     e = Bandwidth;
   } else if (event == "CIRC") {
@@ -180,7 +179,7 @@ TorEvents::toTorEvent(QString event)
 /** Parse the event type out of a message line and return the corresponding
  * Event enum value */
 TorEvents::TorEvent
-TorEvents::parseEventType(ReplyLine line)
+TorEvents::parseEventType(const ReplyLine &line)
 {
   QString msg = line.getMessage();
   int i = msg.indexOf(" ");
@@ -191,7 +190,7 @@ TorEvents::parseEventType(ReplyLine line)
  * more than one line, so we will iterate through them all and dispatch the
  * necessary events. */
 void
-TorEvents::handleEvent(ControlReply reply)
+TorEvents::handleEvent(const ControlReply &reply)
 {
   foreach(ReplyLine line, reply.getLines()) {
     switch (parseEventType(line)) {
@@ -228,7 +227,7 @@ TorEvents::handleEvent(ControlReply reply)
  *     BytesWritten = 1*DIGIT
  */
 void
-TorEvents::handleBandwidthUpdate(ReplyLine line)
+TorEvents::handleBandwidthUpdate(const ReplyLine &line)
 {
   QStringList msg = line.getMessage().split(" ");
   if (msg.size() >= 3) {
@@ -252,7 +251,7 @@ TorEvents::handleBandwidthUpdate(ReplyLine line)
  *    Path = ServerID *("," ServerID)
  */
 void
-TorEvents::handleCircuitStatus(ReplyLine line)
+TorEvents::handleCircuitStatus(const ReplyLine &line)
 {
   QString msg = line.getMessage().trimmed();
   int i = msg.indexOf(" ") + 1;
@@ -279,7 +278,7 @@ TorEvents::handleCircuitStatus(ReplyLine line)
  *  If the circuit ID is 0, then the stream is unattached.      
  */
 void
-TorEvents::handleStreamStatus(ReplyLine line)
+TorEvents::handleStreamStatus(const ReplyLine &line)
 {
   QString msg = line.getMessage().trimmed();
   int i  = msg.indexOf(" ") + 1;
@@ -298,7 +297,7 @@ TorEvents::handleStreamStatus(ReplyLine line)
  *     Severity = "DEBUG" / "INFO" / "NOTICE" / "WARN"/ "ERR"
  */
 void
-TorEvents::handleLogMessage(ReplyLine line)
+TorEvents::handleLogMessage(const ReplyLine &line)
 {
   QString msg = line.getMessage();
   int i = msg.indexOf(" ");
@@ -324,7 +323,7 @@ TorEvents::handleLogMessage(ReplyLine line)
  *     case we don't know what server it is yet, so we use Address:Port.
  */
 void
-TorEvents::handleOrConnStatus(ReplyLine line)
+TorEvents::handleOrConnStatus(const ReplyLine &line)
 {
   QStringList msg = line.getMessage().split(" ");
   if (msg.size() >= 3) {
@@ -339,7 +338,7 @@ TorEvents::handleOrConnStatus(ReplyLine line)
  *   "650" SP "NEWDESC" 1*(SP ServerID)
  */
 void
-TorEvents::handleNewDescriptor(ReplyLine line)
+TorEvents::handleNewDescriptor(const ReplyLine &line)
 {
   QString descs = line.getMessage();
   QStringList descList = descs.mid(descs.indexOf(" ")+1).split(" ");
@@ -357,7 +356,7 @@ TorEvents::handleNewDescriptor(ReplyLine line)
  *   Expiry is expressed as the local time (rather than GMT).
  */
 void
-TorEvents::handleAddressMap(ReplyLine line)
+TorEvents::handleAddressMap(const ReplyLine &line)
 {
   QStringList msg = line.getMessage().split(" ");
   if (msg.size() >= 4) {
@@ -382,7 +381,7 @@ TorEvents::handleAddressMap(ReplyLine line)
  *  StatusValue = 1*(ALNUM / '_')  / QuotedString
  */
 void
-TorEvents::handleStatusEvent(TorEvent type, ReplyLine line)
+TorEvents::handleStatusEvent(TorEvent type, const ReplyLine &line)
 {
   QString status;
   StatusEvent::Severity severity;

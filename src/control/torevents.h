@@ -78,7 +78,7 @@ public:
   QList<TorEvent> eventList();
 
   /** Parses an event message and emits the proper signal */
-  void handleEvent(ControlReply reply);
+  void handleEvent(const ControlReply &reply);
 
   /** Dispatches a given event to all its handler targets. */
   void dispatch(TorEvent e, QEvent *event);
@@ -95,26 +95,26 @@ private:
   QMultiHash<TorEvent, QObject*> _eventList;
   
   /** Parses the event type from the event message */
-  static TorEvent parseEventType(ReplyLine line);
+  static TorEvent parseEventType(const ReplyLine &line);
   /** Converts a string to an Event */
-  static TorEvent toTorEvent(QString event);
+  static TorEvent toTorEvent(const QString &event);
   
   /** Handle a bandwidth update event */
-  void handleBandwidthUpdate(ReplyLine line);
+  void handleBandwidthUpdate(const ReplyLine &line);
   /** Handle a circuit status event */
-  void handleCircuitStatus(ReplyLine line);
+  void handleCircuitStatus(const ReplyLine &line);
   /** Handle a stream status event */
-  void handleStreamStatus(ReplyLine line);
+  void handleStreamStatus(const ReplyLine &line);
   /** Handle a log message event */
-  void handleLogMessage(ReplyLine line);
+  void handleLogMessage(const ReplyLine &line);
   /** Handle an OR connection status event. */
-  void handleOrConnStatus(ReplyLine line);
+  void handleOrConnStatus(const ReplyLine &line);
   /** Handles a new list of descriptors event. */
-  void handleNewDescriptor(ReplyLine line);
+  void handleNewDescriptor(const ReplyLine &line);
   /** Handles a new or updated address map event. */
-  void handleAddressMap(ReplyLine line);
+  void handleAddressMap(const ReplyLine &line);
   /** Handles a Tor status event. */
-  void handleStatusEvent(TorEvent type, ReplyLine line);
+  void handleStatusEvent(TorEvent type, const ReplyLine &line);
   
   /** Parses and posts a Tor client status event. */
   void dispatchClientStatusEvent(StatusEvent::Severity severity,
