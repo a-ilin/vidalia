@@ -35,8 +35,9 @@ DangerousVersionEvent::reasonFromString(const QString &str)
 {
   if (!str.compare("UNRECOMMENDED", Qt::CaseInsensitive))
     return UnrecommendedVersion;
-  if (!str.compare("OLD", Qt::CaseInsensitive))
-    return OldVersion;
+  if (!str.compare("OLD", Qt::CaseInsensitive)
+        || !str.compare("OBSOLETE", Qt::CaseInsensitive))
+    return ObsoleteVersion;
   if (!str.compare("NEW", Qt::CaseInsensitive))
     return NewVersion;
   return UnrecognizedReason;

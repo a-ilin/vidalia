@@ -217,7 +217,7 @@ MainWindow::customEvent(QEvent *event)
     
     if (gse && gse->status() == GeneralStatusEvent::DangerousTorVersion) {
       DangerousVersionEvent *dve = dynamic_cast<DangerousVersionEvent *>(gse);
-      if (dve && (dve->reason() == DangerousVersionEvent::OldVersion
+      if (dve && (dve->reason() == DangerousVersionEvent::ObsoleteVersion
            || dve->reason() == DangerousVersionEvent::UnrecommendedVersion)) {
         dangerousTorVersion();
       }

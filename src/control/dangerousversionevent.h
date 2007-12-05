@@ -40,8 +40,8 @@ public:
     UnrecognizedReason, 
     NewVersion, /**< The current version is newer than any recommended
                      version. */
-    OldVersion, /**< The current version is older than any recommended 
-                     version. */
+    ObsoleteVersion, /**< The current version is older than any recommended 
+                          version. */
     UnrecommendedVersion /**< The current version of Tor should not be used. */
   };
 
