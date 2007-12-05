@@ -536,6 +536,7 @@ MainWindow::start()
   /* Check if Tor is already running separately */
   if (net_test_connect(settings.getControlAddress(),
                        settings.getControlPort())) {
+    _controlPassword = settings.getControlPassword();
     started();
     return;
   }
