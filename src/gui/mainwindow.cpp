@@ -31,12 +31,14 @@
 
 #include <QtGui>
 #include <QTimer>
+#include <QSysInfo>
 #include <vidalia.h>
 #include <file.h>
 #include <html.h>
 #include <stringutil.h>
 #include <net.h>
-#include <QSysInfo>
+#include <clientstatusevent.h>
+#include <dangerousversionevent.h>
 
 #include "common/vmessagebox.h"
 #include "common/animatedpixmap.h"
@@ -148,7 +150,8 @@ MainWindow::MainWindow()
   connect(_torControl, SIGNAL(authenticated()), this, SLOT(authenticated()));
   connect(_torControl, SIGNAL(authenticationFailed(QString)),
                  this,   SLOT(authenticationFailed(QString)));
-  _torControl->setEvent(TorEvents::ClientStatus, this, true);
+  _torControl->setEvent(TorEvents::ClientStatus,  this, true);
+  _torControl->setEvent(TorEvents::GeneralStatus, this, true);
 
   /* Catch signals when the application is running or shutting down */
   connect(vApp, SIGNAL(running()), this, SLOT(running()));
@@ -204,9 +207,21 @@ MainWindow::customEvent(QEvent *event)
 {
   if (event->type() == CustomEventType::ClientStatusEvent) {
     ClientStatusEvent *cse = dynamic_cast<ClientStatusEvent *>(event);
+
     if (cse && cse->status() == ClientStatusEvent::CircuitEstablished) {
       circuitEstablished();
       cse->accept();
+    }
+  } else if (event->type() == CustomEventType::GeneralStatusEvent) {
+    GeneralStatusEvent *gse = dynamic_cast<GeneralStatusEvent *>(event);
+    
+    if (gse && gse->status() == GeneralStatusEvent::DangerousTorVersion) {
+      DangerousVersionEvent *dve = dynamic_cast<DangerousVersionEvent *>(gse);
+      if (dve && (dve->reason() == DangerousVersionEvent::OldVersion
+           || dve->reason() == DangerousVersionEvent::UnrecommendedVersion)) {
+        dangerousTorVersion();
+      }
+      gse->accept();
     }
   }
 }
@@ -885,7 +900,9 @@ MainWindow::authenticated()
   /* Check if Tor has a circuit established */
   if (_torControl->circuitEstablished())
     circuitEstablished();
-
+  /* Check the status of Tor's version */
+  if (_torControl->getTorVersion() >= 0x020001)
+    checkTorVersion();
 }
 
 /** Called when Vidalia fails to authenticate to Tor. The failure reason is
@@ -990,6 +1007,40 @@ void
 MainWindow::circuitEstablished()
 {
   updateTorStatus(CircuitEstablished);
+}
+
+/** Checks the status of the current version of Tor to see if it's old,
+ * unrecommended, or obsolete. */
+void
+MainWindow::checkTorVersion()
+{
+  QString status;
+  if (_torControl->getInfo("status/version/current", status)) {
+    if (!status.compare("old", Qt::CaseInsensitive)
+          || !status.compare("unrecommended", Qt::CaseInsensitive)
+          || !status.compare("obsolete", Qt::CaseInsensitive)) {
+      dangerousTorVersion();
+    }
+  }
+}
+
+/** Called when Tor thinks its version if old or unrecommended, and displays a
+ * message notifying the user. */
+void
+MainWindow::dangerousTorVersion()
+{
+  static bool alreadyWarned = false;
+
+  if (!alreadyWarned) {
+    VMessageBox::information(this,
+      tr("Tor Update Available"),
+      p(tr("The currently installed version of Tor is out of date or no longer "
+           "recommended. Please visit the Tor website to download the latest "
+           "version."))
+        + p(tr("Tor website: https://www.torproject.org/")),
+      VMessageBox::Ok);
+    alreadyWarned = true;
+  }
 }
 
 /** Creates and displays Vidalia's About dialog. */

@@ -30,7 +30,6 @@
 
 #include <QMainWindow>
 #include <torcontrol.h>
-#include <circuitestablishedevent.h>
 
 /* QSystemTrayIcon appeared in Qt 4.2, but we need a bugfix to it on Mac 
  * that won't appear until Qt 4.2.2. */
@@ -160,6 +159,12 @@ private:
   QByteArray loadControlCookie(QString cookiePath = QString());
   /** Called when Tor has successfully established a circuit. */
   void circuitEstablished();
+  /** Checks the status of the current version of Tor to see if it's old,
+   * unrecommended, or obsolete. */
+  void checkTorVersion();
+  /** Called when Tor thinks its version if old or unrecommended, and displays
+   * a message notifying the user. */
+  void dangerousTorVersion();
 
   /** The current status of Tor. */
   TorStatus _status;
