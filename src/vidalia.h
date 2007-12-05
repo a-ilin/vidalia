@@ -39,7 +39,6 @@
 #include <QKeySequence>
 
 #include <log.h>
-#include <helpbrowser.h>
 #include <vidaliasettings.h>
 #include <torcontrol.h>
 
@@ -110,10 +109,6 @@ public:
   static void createShortcut(const QKeySequence &key, QWidget *sender,
                              QWidget *receiver, const char *slot);
 
-public slots:
-  /** Shows the specified help topic, or the default if empty. */
-  static void help(QString topic = QString());
-
 signals:
   /** Emitted when the application is running and the main event loop has
    * started. */ 
@@ -146,10 +141,7 @@ private:
   static QMap<QString, QString> _args; /**< List of command-line arguments.  */
   static QString _style;               /**< The current GUI style.           */
   static QString _language;            /**< The current language.            */
-
   static TorControl* _torControl;      /**< Vidalia's main TorControl object.*/
-  static HelpBrowser* _help;           /**< Vidalia's configurable settings. */
-  
   static Log _log; /**< Logs debugging messages to file or stdout. */
 };
 

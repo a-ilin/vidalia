@@ -53,7 +53,6 @@
 QMap<QString, QString> Vidalia::_args; /**< List of command-line arguments.  */
 QString Vidalia::_style;               /**< The current GUI style.           */
 QString Vidalia::_language;            /**< The current language.            */
-HelpBrowser*  Vidalia::_help = 0;      /**< Vidalia's help system.           */
 TorControl* Vidalia::_torControl = 0;  /**< Main TorControl object.          */
 Log Vidalia::_log;
 
@@ -124,8 +123,6 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
 /** Destructor */
 Vidalia::~Vidalia()
 {
-  if (_help)
-    delete _help;
   delete _torControl;
 }
 
@@ -310,16 +307,6 @@ Vidalia::setStyle(QString styleKey)
     return true;
   }
   return false;
-}
-
-/** Displays the help page associated with the specified topic. If no topic is
- * specified, then the default help page will be displayed. */
-void
-Vidalia::help(QString topic)
-{
-  if (!_help)
-    _help = new HelpBrowser();
-  _help->showWindow(topic);
 }
 
 /** Returns the directory Vidalia uses for its data files. */

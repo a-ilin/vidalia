@@ -287,7 +287,7 @@ NetViewer::addStream(Stream stream)
 void
 NetViewer::help()
 {
-  Vidalia::help("netview");
+  emit helpRequested("netview");
 }
 
 /** Loads a list of new descriptors from the given IDs. */

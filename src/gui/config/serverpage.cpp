@@ -37,11 +37,6 @@
 #include "domainvalidator.h"
 #include "nicknamevalidator.h"
 
-
-/** Help topics */
-#define EXIT_POLICY_HELP      "server.exitpolicy"
-#define BANDWIDTH_HELP        "server.bandwidth"
-
 /* These are completely made up values (in bytes/sec). */
 #define CABLE256_AVG_RATE       (32*1024)
 #define CABLE256_MAX_RATE       (64*1024)
@@ -317,14 +312,14 @@ ServerPage::load()
 void
 ServerPage::exitPolicyHelp()
 {
-  Vidalia::help(EXIT_POLICY_HELP);
+  emit helpRequested("server.exitpolicy");
 }
 
 /** Shows the bandwidth rate limiting help information */
 void
 ServerPage::bandwidthHelp()
 {
-  Vidalia::help(BANDWIDTH_HELP);
+  emit helpRequested("server.bandwidth");
 }
 
 /** Loads the server's bandwidth average and burst limits. */

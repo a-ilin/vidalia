@@ -434,6 +434,6 @@ MessageLog::customEvent(QEvent *event)
 void
 MessageLog::help()
 {
-  Vidalia::help("log");
+  emit helpRequested("log");
 }
 

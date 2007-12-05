@@ -118,6 +118,12 @@ MainWindow::MainWindow()
   _bandwidthGraph = new BandwidthGraph();
   _netViewer      = new NetViewer();
   _configDialog   = new ConfigDialog();
+  connect(_messageLog, SIGNAL(helpRequested(QString)),
+          this, SLOT(showHelpDialog(QString)));
+  connect(_netViewer, SIGNAL(helpRequested(QString)),
+          this, SLOT(showHelpDialog(QString)));
+  connect(_configDialog, SIGNAL(helpRequested(QString)),
+          this, SLOT(showHelpDialog(QString)));
 
   /* Create the actions that will go in the tray menu */
   createActions();
@@ -302,8 +308,8 @@ MainWindow::createActions()
   connect(_aboutAct, SIGNAL(triggered()), this, SLOT(showAboutDialog()));
 
   _helpAct = new QAction(QIcon(IMG_HELP), tr("Help"), this);
-  connect(_helpAct, SIGNAL(triggered()), vApp, SLOT(help()));
-  connect(ui.lblHelpBrowser, SIGNAL(clicked()), vApp, SLOT(help()));
+  connect(_helpAct, SIGNAL(triggered()), this, SLOT(showHelpDialog()));
+  connect(ui.lblHelpBrowser, SIGNAL(clicked()), this, SLOT(showHelpDialog()));
 
   _newIdentityAct = new QAction(QIcon(IMG_IDENTITY), tr("New Identity"), this);
   _newIdentityAct->setEnabled(false);
@@ -616,7 +622,7 @@ MainWindow::startFailed(QString errmsg)
      showConfigDialog();
   } else if (response == VMessageBox::Help) {
     /* Show troubleshooting information about starting Tor */
-    Vidalia::help("troubleshooting.start");
+    showHelpDialog("troubleshooting.start");
   }
 }
 
@@ -661,7 +667,7 @@ MainWindow::connectFailed(QString errmsg)
   } else {
     /* Show the help browser (if requested) */
     if (response == VMessageBox::Help)
-      Vidalia::help("troubleshooting.connect");
+      showHelpDialog("troubleshooting.connect");
     /* Since Vidalia can't connect, we can't really do much, so stop Tor. */
     _torControl->stop();
   }
@@ -714,7 +720,7 @@ MainWindow::stop()
       
     if (response == VMessageBox::Help) {
       /* Show some troubleshooting help */
-      Vidalia::help("troubleshooting.stop");
+      showHelpDialog("troubleshooting.stop");
     }
     /* Tor is still running since stopping failed */
     _isIntentionalExit = false;
@@ -748,7 +754,7 @@ MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
       if (ret == VMessageBox::ShowLog)
         _messageLog->showWindow();  
       else if (ret == VMessageBox::Help)
-        Vidalia::help("troubleshooting.torexited");
+        showHelpDialog("troubleshooting.torexited");
     }
   }
 }
@@ -993,6 +999,24 @@ MainWindow::showAboutDialog()
   if (!aboutDialog)
     aboutDialog = new AboutDialog(this);
   aboutDialog->showWindow();
+}
+
+/** Displays the help browser and displays the most recently viewed help
+ * topic. */
+void
+MainWindow::showHelpDialog()
+{
+  showHelpDialog(QString());
+}
+
+/**< Shows the help browser and displays the given help <b>topic</b>. */
+void
+MainWindow::showHelpDialog(const QString &topic)
+{
+  static HelpBrowser *helpBrowser = 0;
+  if (!helpBrowser)
+    helpBrowser = new HelpBrowser(this);
+  helpBrowser->showWindow(topic);
 }
 
 /** Creates and displays the Configuration dialog with the current page set to

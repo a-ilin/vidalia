@@ -30,8 +30,7 @@
 
 #include <QMainWindow>
 #include <QFileDialog>
-#include <gui/help/browser/helpbrowser.h>
-#include <gui/common/vidaliawindow.h>
+#include <vidaliawindow.h>
 
 #include "generalpage.h"
 #include "networkpage.h"
@@ -74,8 +73,11 @@ private slots:
    * SAVECONF is successful, then all settings are considered to be
    * applied. */
   void saveConf();
-  /** Shows help information for whichever settings page the user is currently
-   * viewing. */
+  /** Called when a ConfigPage in the dialog requests help on a specific
+   * <b>topic</b>. */
+  void help(const QString &topic);
+  /** Shows general help information for whichever settings page the user is
+   * currently viewing. */
   void help();
 
 private:

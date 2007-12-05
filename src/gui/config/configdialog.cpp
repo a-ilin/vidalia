@@ -77,7 +77,11 @@ ConfigDialog::ConfigDialog(QWidget* parent)
   ui.stackPages->add(new AdvancedPage(ui.stackPages),
                      createPageAction(QIcon(IMAGE_ADVANCED),
                                       tr("Advanced"), grp));
-  
+  foreach (ConfigPage *page, ui.stackPages->pages()) {
+    connect(page, SIGNAL(helpRequested(QString)),
+            this, SLOT(help(QString)));
+  }
+
   /* Create the toolbar */
   ui.toolBar->addActions(grp->actions());
   ui.toolBar->addSeparator();
@@ -237,23 +241,26 @@ void
 ConfigDialog::help()
 {
   Page currentPage = static_cast<Page>(ui.stackPages->currentIndex());
-
+  
   switch (currentPage) {
     case Network:
-      Vidalia::help("config.network");
-      break;
+      help("config.network"); break;
     case Server:
-      Vidalia::help("server");
-      break;
+      help("server"); break;
     case Appearance:
-      Vidalia::help("config.appearance");
-      break;
+      help("config.appearance"); break;
     case Advanced:
-      Vidalia::help("config.advanced");
-      break;
+      help("config.advanced"); break;
     default:
-      Vidalia::help("config.general");
-      break;
+      help("config.general"); break;
   }
+}
+
+/** Called when a ConfigPage in the dialog requests help on a specific
+ * <b>topic</b>. */
+void
+ConfigDialog::help(const QString &topic)
+{
+  emit helpRequested(topic);
 }
 

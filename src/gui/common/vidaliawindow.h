@@ -65,6 +65,11 @@ public slots:
    * override, since QMainWindow::show() is non-virtual. */
   virtual void showWindow() { QMainWindow::show(); }
 
+signals:
+  /** Emitted when a VidaliaWindow requests help information on the specified
+   * <b>topic</b>. */
+  void helpRequested(const QString &topic);
+
 private:
   QString _name;  /**< Name associated with this window. */
   VSettings* _settings; /**< Object used to store window properties */

@@ -67,6 +67,11 @@ protected:
   virtual void customEvent(QEvent *event);
 
 private slots:
+  /** Displays the help browser and displays the most recently viewed help
+   * topic. */
+  void showHelpDialog();
+  /** Called when a child window requests the given help <b>topic</b>. */
+  void showHelpDialog(const QString &topic);
   /** Called when the user selects "Start" from the menu. */
   void start();
   /** Called when the Tor process fails to start. */

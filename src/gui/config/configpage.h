@@ -33,6 +33,8 @@
 
 class ConfigPage : public QWidget
 {
+  Q_OBJECT
+
 public:
   /** Default Constructor */
   ConfigPage(QWidget *parent = 0, const QString title = QString()) 
@@ -64,6 +66,11 @@ public:
   /** Subclassed pages can overload this method to revert any cancelled
    * settings. */
   virtual void revert() {}
+
+signals:
+  /** Signal emitted when a ConfigPage requests help information on a given
+   * <b>topic</b>. */
+  void helpRequested(const QString &topic);
 
 private:
   QString _title; /**< Title of this configuration page. */
