@@ -27,44 +27,50 @@
 <h1>Palvelimen käyttö</h1>
 <hr />
 
-Tor-verkko koostuu vapaaehtoisten jakaamasta yhteyskaistasta palvelimina (Tor-reitittiminä). Vidalia tarjoaa helpon keinon pystyttää oma palvelin.
+Tor-verkko koostuu vapaaehtoisten jakaamasta yhteyskaistasta Tor-reitittiminä (pienenä palvelimena). Vidalia tarjoaa helpon keinon pystyttää oma reititin.
 
 <a name="basic"/>
 <h3>Yleiset-asetukset</h3>
 <p>
-Jos on kiinnostusta auttaa Tor-verkon toimintaa ylläpitämällä omaa palvelinta, niin seuraavilla ohjeilla yksinkertaisesti on mahdollista pystyttää oma Tor-palvelin:
+Jos on kiinnostusta auttaa Tor-verkon toimintaa ylläpitämällä omaa reititintä, niin seuraavilla ohjeilla yksinkertaisesti on mahdollista pystyttää oma Tor-reititin:
 </p>
 <ol>
   <li>
     Avaa <i>Asetukset-ikkuna</i> valitsemalla <i>Asetukset</i> tehtäväpalkista Vidalian valikosta tai <i>Asetukset</i> järjestelmän valikosta Macintosh-järjestelmissä.
   </li>
   <li>Valitse <i>Palvelin</i>-asetussivu.</li>
-  <li>Rastita ruutu <i>Välitä tietoa Tor-verkossa</i>.
+  <li>    Decide whether you want to run a normal Tor relay or a <i>bridge</i>
+    relay (Tor 0.2.0.8-alpha or newer). Bridge relays help censored Tor users
+    who are blocked from accessing the Tor network directly.
+    Check the box labeled <i>Relay traffic for the Tor network</i> if you want
+    to run a normal Tor relay or <i>Help censored users reach the Tor network</i>
+    if you want to run a bridge relay.
+</li>
   <li>Aseta seuraavat tiedot:
     <ul>
       <li><b>Nimi</b>:
-        Nimi, jolla palvelin voidaan tunnistaa Tor-verkossa. Esimerkiksi "MinunVidaliapalvelin".
+        Nimi, jolla palvelin voidaan tunnistaa Tor-verkossa. Esimerkiksi "MinunVidaliareititin".
       </li>
       <li><b>Yhteystiedot</b>:
-        Sähköpostiosoitteesi, jolla voidaan ottaa yhteyttä vakavan Tor-tietoturvapäivityksen tai palvelinvian vuoksi. Oman PGP- tai GPG-tunnuksen ja sormenjäljen voi myös sisällyttää.
+        Sähköpostiosoitteesi, jolla voidaan ottaa yhteyttä vakavan Tor-tietoturvapäivityksen tai reititinvian vuoksi. Oman PGP- tai GPG-tunnuksen ja sormenjäljen voi myös sisällyttää.
       </li>
-      <li><b>Palvelinportti</b>:
-        Portti, jolla palvelimesi vastaanottaa liikennettä käyttäjiltä ja muilta Tor-palvelimilta.
+      <li><b>Reititinportti</b>:
+        Portti, jolla reititin vastaanottaa liikennettä käyttäjiltä ja muilta Tor-reitittimiltä.
       </li>
       <li><b>Osoite</b>:
-        Aseta osoite, jolla muut Tor-palvelimet voivat tavoittaa tietokoneesi Internetin kautta. Jos ei omaa julkista IP-osoitetta tiedä, niin painamalla <i>Nouda osoite</i> Vidalia ottaa yhteyden ulkoiseen sivustoon (esim. <i>http://www.vidalia-project.net/iptest/ip.php</i>) selvittääkseen oman julkisen IP-osoitteen.
+        Aseta osoite, jolla muut Tor-reititin voivat tavoittaa tietokoneesi Internetin kautta. Jos ei omaa julkista IP-osoitetta tiedä, niin painamalla <i>Nouda osoite</i> Vidalia ottaa yhteyden ulkoiseen sivustoon (esim. <i>http://www.vidalia-project.net/iptest/ip.php</i>) selvittääkseen oman julkisen IP-osoitteen.
       </li>
     </ul>
   <li>
-    Jos haluat välittää listaa verkossa olevista Tor-palvelimista, niin rastita ruutu <i>Välitä Tor-palvelinlistaa</i>.
-     Jos on yhteys on hidas, niin ei välttämättä ole kannattavaa rastittaa ruutua. Jos haluaa välittää listaa Tor-palvelimista, niin varmista <i>lista-portin</i> olevan eri kuin <i>palvelinportti</i>.
+    Jos haluat välittää listaa verkossa olevista Tor-reitittimistä, niin rastita ruutu <i>Välitä Tor-reititinlistaa</i>.
+     Jos on yhteys on hidas, niin ei välttämättä ole kannattavaa rastittaa ruutua. Jos haluaa välittää listaa Tor-palvelimista, niin varmista <i>lista-portin</i> olevan eri kuin <i>reititinportti</i>.
   </li>
 </ol>
 
 <a name="bandwidth"/>
 <h3>Nopeudenrajoittaminen</h3>
 <p>
-Tor-palvelimen ylläpito kuluttaa paljon yhteyskaistaa, jonka vuoksi Tor sallii käytettävän yhteyskaistanmäärän Tor-palvelimille rajoittamisen. Palvelinta voi pitää päällä samalla kun yhteyttä käytetään muihin tarkoituksiin.
+Tor-reitittimen ylläpito kuluttaa paljon yhteyskaistaa, jonka vuoksi Tor sallii käytettävän yhteyskaistanmäärän Tor-reitittimille rajoittamisen. Reititintä voi pitää päällä samalla kun yhteyttä käytetään muihin tarkoituksiin.
 </p>
 <p>
 Valikosta kannattaa valita itselleen parhaiten sopivin nopeus. Oman erikoisnopeuden on mahdollista valita valitsemalla muu.</p><h4>Muut nopeudet</h4>
@@ -77,20 +83,20 @@ during peak times if the average hasn't been reached lately. Jos kerkimääräin
 
 </p>
 <p>
-Tärkeää on huomioida, että Tor laskee liikkuvan tiedon <b>tavuina</b> eikä bitteinä. Myös, Tor rajottaa vain tulevaa liikennettä lähettävän sijasta. Esimerkiksi, jos oma palvelin välittää listaa Tor-palvelimista silloin lähetetään enemmän tietoa kuin vastaanotetaan. Jos tämä rasittaa liikaa yhteyttä, niin kannattaa poistaa rasti <i>Välitä Tor-palvelinlistaa</i>.
+Tärkeää on huomioida, että Tor laskee liikkuvan tiedon <b>tavuina</b> eikä bitteinä. Myös, Tor rajottaa vain tulevaa liikennettä lähettävän sijasta. Esimerkiksi, jos oma reititin välittää listaa Tor-reititin silloin lähetetään enemmän tietoa kuin vastaanotetaan. Jos tämä rasittaa liikaa yhteyttä, niin kannattaa poistaa rasti <i>Välitä Tor-reititinlistaa</i>.
 </p>
 
 <a name="exitpolicy"/>
 <h3>Poistumiskäytännöt</h3>
 <p>
-Poistumiskäytännöillä määritellään millaista liikennettä sallitaan poistuvan oman Tor-palvelimen kautta. Tor käyttää oletuksena poistumiskäytäntölistaa, joka rajoittaa erilaisten palvelujen käyttöä kuten sähköpostia, estääkseen spammin tekoa, ja oletus tiedostonjakoportteja estääksen hyväksikäyttämättä Tor-verkkoa. <i>Huomaa:</i> Jos toimii <i>välikätenä</i>, niin ei tarvitse huomioida poistumiskäytäntöjä, sillä siinä tapauksessa liikennettä ei poisteta oman palvelimen kautta.
+Poistumiskäytännöillä määritellään millaista liikennettä sallitaan poistuvan oman Tor-reitittimen kautta. Tor käyttää oletuksena poistumiskäytäntölistaa, joka rajoittaa erilaisten palvelujen käyttöä kuten sähköpostia, estääkseen spammin tekoa, ja oletus tiedostonjakoportteja estääksen hyväksikäyttämättä Tor-verkkoa. <i>Huomaa:</i> Jos toimii <i>välikätenä</i>, niin ei tarvitse huomioida poistumiskäytäntöjä, sillä siinä tapauksessa liikennettä ei poisteta oman reittimen kautta.
 </p>
 
 <p>
-Jokainen vaihtoehto ilmaisee tietynlaista palvelua, jota voi sallia Torverkon kautta kulkemaan palvelimesi kautta. Jos poistaa rastin jonkin vierestä, Tor ei salli sen kaltaista liikennettä palvelimesi kautta, ja jos on rastitettu <i>Monenlaiset muut palvelut</i>, Tor sallii muunlaisen liikenenteen poistuvan palvelimesi kautta kuin edellä mainitut vaihtoehdot. 
+Jokainen vaihtoehto ilmaisee tietynlaista palvelua, jota voi sallia Tor-verkon kautta kulkemaan palvelimesi kautta. Jos poistaa rastin jonkin vierestä, Tor ei salli sen kaltaista liikennettä reitittimesi kautta, ja jos on rastitettu <i>Monenlaiset muut palvelut</i>, Tor sallii muunlaisen liikenenteen poistuvan reitittimesi kautta kuin edellä mainitut vaihtoehdot. 
 </p>
 
-<p>Jos ei halua sallia muiden Tor-käytäjien muodostaa yhteyksiä Tor-verkon ulkopuolelle oman palvelimen kautta, niin poista rasti jokaisesta ruudusta. Vaikka rastit on poistettu jokaisesta kohdasta, niin palvelimesi on hyödyllinen Tor-Verkolle. Palvelimesi sallii Tor-käyttäjien myodostaa yhteyksiä Tor-verkkoon ja välittää tietoa Tor-palvelimien välillä.
+<p>Jos ei halua sallia muiden Tor-käytäjien muodostaa yhteyksiä Tor-verkon ulkopuolelle oman reitittimen kautta, niin poista rasti jokaisesta ruudusta. Vaikka rastit on poistettu jokaisesta kohdasta, niin reitittimesi on hyödyllinen Tor-Verkolle. Palvelimesi sallii Tor-käyttäjien myodostaa yhteyksiä Tor-verkkoon ja välittää tietoa Tor-reitittimien välillä.
 </p>
 
 </html>
