@@ -1032,12 +1032,16 @@ MainWindow::dangerousTorVersion()
   static bool alreadyWarned = false;
 
   if (!alreadyWarned) {
+    QString website = "https://www.torproject.org/";
+#if QT_VERSION >= 0x040200
+    website = QString("<a href=\"%1\">%1</a>").arg(website);
+#endif
+
     VMessageBox::information(this,
       tr("Tor Update Available"),
       p(tr("The currently installed version of Tor is out of date or no longer "
            "recommended. Please visit the Tor website to download the latest "
-           "version."))
-        + p(tr("Tor website: https://www.torproject.org/")),
+           "version.")) + p(tr("Tor website: %1").arg(website)),
       VMessageBox::Ok);
     alreadyWarned = true;
   }
