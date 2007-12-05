@@ -79,8 +79,8 @@ TorControl::~TorControl()
   delete _controlConn;
 }
 
-/** Start the Tor process. Returns true if the process was successfully
- * started, otherwise returns false. */
+/** Start the Tor process using the executable <b>tor</b> and the list of
+ * arguments in <b>args</b>. */
 void
 TorControl::start(const QString &tor, const QStringList &args)
 {

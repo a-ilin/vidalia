@@ -20,7 +20,7 @@
  ****************************************************************/
 
 /** 
- * \file dangerousversionevent.h
+ * \file dangerousversionevent.cpp
  * \version $Id$
  * \brief Event sent when Tor realizes its version is not recommended
  */

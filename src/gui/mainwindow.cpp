@@ -1024,7 +1024,7 @@ MainWindow::checkTorVersion()
   }
 }
 
-/** Called when Tor thinks its version if old or unrecommended, and displays a
+/** Called when Tor thinks its version is old or unrecommended, and displays a
  * message notifying the user. */
 void
 MainWindow::dangerousTorVersion()

@@ -162,7 +162,7 @@ private:
   /** Checks the status of the current version of Tor to see if it's old,
    * unrecommended, or obsolete. */
   void checkTorVersion();
-  /** Called when Tor thinks its version if old or unrecommended, and displays
+  /** Called when Tor thinks its version is old or unrecommended, and displays
    * a message notifying the user. */
   void dangerousTorVersion();
 
