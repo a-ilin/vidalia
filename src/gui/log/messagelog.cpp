@@ -32,7 +32,7 @@
 #include <QClipboard>
 #include <vidalia.h>
 #include <util/html.h>
-#include <gui/common/vmessagebox.h>
+#include <vmessagebox.h>
 
 #include "messagelog.h"
 

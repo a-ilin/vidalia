@@ -37,6 +37,8 @@
  * and control interface information. */
 class TorSettings : public AbstractTorSettings
 {
+  Q_OBJECT
+
 public:
   /** Available Tor authentication methods. */
   enum AuthenticationMethod {

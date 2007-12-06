@@ -33,6 +33,8 @@
 
 class PortValidator : public QIntValidator
 {
+  Q_OBJECT
+
 public:
   /** Constructor. */
   PortValidator(QObject *parent);

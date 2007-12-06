@@ -27,7 +27,7 @@
 
 #include <QObject>
 #include <vidalia.h>
-#include <gui/mainwindow.h>
+#include <mainwindow.h>
 #include <vmessagebox.h>
 #include <process.h>
 #include <stringutil.h>

@@ -32,7 +32,7 @@
 #include <QTextEdit>
 #include <QList>
 
-#include <control/routerdescriptor.h>
+#include <routerdescriptor.h>
 
 
 class RouterDescriptorView : public QTextEdit

@@ -335,17 +335,17 @@
   <customwidget>
    <class>RouterDescriptorView</class>
    <extends>QTextEdit</extends>
-   <header>gui/network/routerdescriptorview.h</header>
+   <header>network/routerdescriptorview.h</header>
   </customwidget>
   <customwidget>
    <class>RouterListWidget</class>
    <extends>QTreeWidget</extends>
-   <header>gui/network/routerlistwidget.h</header>
+   <header>network/routerlistwidget.h</header>
   </customwidget>
   <customwidget>
    <class>CircuitListWidget</class>
    <extends>QTreeWidget</extends>
-   <header>gui/network/circuitlistwidget.h</header>
+   <header>network/circuitlistwidget.h</header>
   </customwidget>
  </customwidgets>
  <resources>

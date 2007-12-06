@@ -40,7 +40,8 @@
  */
 class VidaliaSettings : public VSettings
 {
-  
+  Q_OBJECT
+
 public:
   /** Default constructor. */
   VidaliaSettings();

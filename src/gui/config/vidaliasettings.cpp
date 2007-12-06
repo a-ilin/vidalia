@@ -28,13 +28,13 @@
 #include <QDir>
 #include <QCoreApplication>
 #include <QStyleFactory>
-#include <lang/languagesupport.h>
+#include <languagesupport.h>
 #include <vidalia.h>
 
 #include "vidaliasettings.h"
 
 #if defined(Q_WS_WIN)
-#include <util/win32.h>
+#include <win32.h>
 #endif
 
 #define SETTING_LANGUAGE            "LanguageCode"

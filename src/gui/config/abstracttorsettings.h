@@ -34,6 +34,8 @@
 
 class AbstractTorSettings : public VSettings
 {
+  Q_OBJECT
+
 public:
   /** Constructor. All settings will be under the heading <b>group</b> and
    * <b>torControl</b> will be used to <i>getconf</i> values from Tor. */

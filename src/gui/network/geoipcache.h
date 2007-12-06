@@ -15,51 +15,49 @@
  *
  *  You should have received a copy of the GNU General Public License
  *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 51 Franklin Street, Fifth Floor, 
+ *  Foundation, Inc., 51 Franklin Street, Fifth Floor,
  *  Boston, MA  02110-1301, USA.
  ****************************************************************/
 
-/** 
- * \file appearancepage.h
+/**
+ * \file geoipcache.h
  * \version $Id$
- * \brief Displays Vidalia language and style settings
+ * \brief Caches the results of previous GeoIP requests
  */
 
-#ifndef _APPEARANCEPAGE_H
-#define _APPEARANCEPAGE_H
+#ifndef _GEOIPCACHE_H
+#define _GEOIPCACHE_H
 
-#include <QStyleFactory>
-#include <QLineEdit>
+#include <QString>
+#include <QHash>
+#include <QHostAddress>
 
-#include <vidaliasettings.h>
-#include <languagesupport.h>
+#include "geoipcacheitem.h"
 
-#include "configpage.h"
-#include "ui_appearancepage.h"
 
-class AppearancePage : public ConfigPage
+class GeoIpCache
 {
-  Q_OBJECT
-
 public:
-  /** Default Constructor */
-  AppearancePage(QWidget *parent = 0);
-  /** Default Destructor */
-  ~AppearancePage();
-  /** Saves the changes on this page */
-  bool save(QString &errmsg);
-  /** Loads the settings for this page */
-  void load();
+  /** Default constructor. */
+  GeoIpCache();
+  
+  /** Writes the current cache to disk. */
+  bool saveToDisk(QString *errmsg = 0);
+  /** Reads the cache in from disk. */
+  bool loadFromDisk(QString *errmsg = 0);
+  
+  /** Returns the location currently used for the cache file. */
+  QString cacheFilename();
+  /** Caches the given IP and geographic information to disk. */
+  void cache(GeoIp geoip);
+  /** Returns a GeoIp object for the given IP from cache. */
+  GeoIp geoip(QHostAddress ip);
+  /** Returns true if the given IP address is cached. */
+  bool contains(QHostAddress ip);
   
 private:
-  /** Returns the flag icon to use for the given <b>languageCode</b>. */
-  QIcon flagForLanguage(const QString &languageCode);
-
-  /** A VidaliaSettings object used for saving/loading settings */
-  VidaliaSettings* _settings;
-
-  /** Qt Designer generated object */
-  Ui::AppearancePage ui;
+  QHash<quint32, GeoIpCacheItem> _cache;  /**< List of cached GeoIp objects. */  
 };
 
 #endif
+

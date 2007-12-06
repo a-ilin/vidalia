@@ -30,7 +30,7 @@
 
 
 /** Constructor */
-StreamItem::StreamItem(Stream stream)
+StreamItem::StreamItem(const Stream &stream)
 {
   /* Save the stream's id */
   _id = stream.id();
@@ -41,7 +41,7 @@ StreamItem::StreamItem(Stream stream)
 
 /** Updates the status of this stream item. */
 void
-StreamItem::update(Stream stream)
+StreamItem::update(const Stream &stream)
 {
   setText(CircuitListWidget::ConnectionColumn, stream.target());
   setToolTip(CircuitListWidget::ConnectionColumn, stream.target());

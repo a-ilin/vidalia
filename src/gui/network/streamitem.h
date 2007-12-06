@@ -29,19 +29,19 @@
 #define _STREAMITEM_H
 
 #include <QTreeWidgetItem>
-#include <control/stream.h>
+#include <stream.h>
 
 
 class StreamItem : public QTreeWidgetItem
 {
 public:
   /** Constructor */
-  StreamItem(Stream stream);
+  StreamItem(const Stream &stream);
 
   /** Updates the status of this stream item. */
-  void update(Stream stream);
+  void update(const Stream &stream);
   /** Returns the ID of the stream associated with this tree item. */
-  quint64 id() { return _id; }
+  quint64 id() const { return _id; }
   
 private:
   quint64 _id; /**< ID for this stream. */

@@ -56,6 +56,8 @@
 
 class TrayIconImpl : public QLabel 
 {
+  Q_OBJECT
+
 protected:
   /** Default constructor. */
   TrayIconImpl();

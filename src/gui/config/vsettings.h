@@ -34,6 +34,8 @@
 
 class VSettings : public QSettings
 {
+  Q_OBJECT
+
 public:
   /** Default constructor. The optional parameter <b>group</b> can be used to
    * set a prefix that will be prepended to keys specified to VSettings in

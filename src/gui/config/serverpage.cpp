@@ -28,7 +28,7 @@
 #include <QClipboard>
 #include <vidalia.h>
 #include <vmessagebox.h>
-#include <util/html.h>
+#include <html.h>
 
 #include "configdialog.h"
 #include "serverpage.h"

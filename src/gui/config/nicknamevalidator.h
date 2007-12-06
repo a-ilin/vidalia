@@ -33,6 +33,8 @@
 
 class NicknameValidator : public QValidator
 {
+  Q_OBJECT
+
 public:
   /** Constructor. */
   NicknameValidator(QObject *parent);

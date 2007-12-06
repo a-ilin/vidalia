@@ -61,6 +61,10 @@
         <file>22x22/zoom-in.png</file>
         <file>22x22/zoom-out.png</file>
         <file>22x22/zoom-to-fit.png</file>
+        <file>22x22/tor-off.png</file>
+        <file>22x22/tor-on.png</file>
+        <file>22x22/tor-starting.png</file>
+        <file>22x22/tor-stopping.png</file>
     </qresource>
     <qresource prefix="/images">
         <file>32x32/applications-internet.png</file>
@@ -281,5 +285,8 @@
     </qresource>
     <qresource prefix="/images">
         <file>map/world-map.png</file>
+    </qresource>
+    <qresource prefix="/geoip">
+        <file>cacert_root.crt</file>
     </qresource>
 </RCC>

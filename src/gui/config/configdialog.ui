@@ -349,7 +349,7 @@
   <customwidget>
    <class>ConfigPageStack</class>
    <extends>QStackedPageWidget</extends>
-   <header>gui/config/configpagestack.h</header>
+   <header>config/configpagestack.h</header>
    <container>0</container>
    <pixmap></pixmap>
   </customwidget>

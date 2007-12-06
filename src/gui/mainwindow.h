@@ -41,7 +41,7 @@
 #include "tray/trayicon.h"
 #endif
 
-#include "common/vidaliawindow.h"
+#include "vidaliawindow.h"
 #include "about/aboutdialog.h"
 #include "log/messagelog.h"
 #include "bwgraph/bwgraph.h"

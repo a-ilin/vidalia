@@ -610,7 +610,7 @@
   <customwidget>
    <class>LogTreeWidget</class>
    <extends>QTreeWidget</extends>
-   <header>gui/log/logtreewidget.h</header>
+   <header>log/logtreewidget.h</header>
    <container>0</container>
    <pixmap></pixmap>
   </customwidget>

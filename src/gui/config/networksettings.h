@@ -36,6 +36,8 @@
 
 class NetworkSettings : public AbstractTorSettings
 {
+  Q_OBJECT
+
 public:
   /** Default constructor. */
   NetworkSettings(TorControl *torControl);

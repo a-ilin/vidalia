@@ -464,7 +464,7 @@
   <customwidget>
    <class>GraphFrame</class>
    <extends>QFrame</extends>
-   <header>gui/bwgraph/graphframe.h</header>
+   <header>bwgraph/graphframe.h</header>
   </customwidget>
  </customwidgets>
  <resources>

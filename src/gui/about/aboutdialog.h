@@ -28,8 +28,8 @@
 #ifndef _ABOUTDIALOG_H
 #define _ABOUTDIALOG_H
 
-#include <control/torcontrol.h>
-#include <gui/common/vidaliawindow.h>
+#include <torcontrol.h>
+#include <vidaliawindow.h>
 #include "ui_aboutdialog.h"
 
 

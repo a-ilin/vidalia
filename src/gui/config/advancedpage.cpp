@@ -28,8 +28,8 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QHostAddress>
-#include <gui/common/vmessagebox.h>
-#include <util/file.h>
+#include <vmessagebox.h>
+#include <file.h>
 #include <vidalia.h>
 
 #include "ipvalidator.h"

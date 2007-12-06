@@ -1,9 +1,9 @@
-#################################################################
+#####################################################################
 #  $Id$
-#
+# 
 #  Vidalia is distributed under the following license:
 #
-#  Copyright (C) 2006,  Matt Edman, Justin Hipple
+#  Copyright (C) 2006-2007,  Matt Edman, Justin Hipple
 #
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License
@@ -19,17 +19,26 @@
 #  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  
 #  02110-1301, USA.
-#################################################################
+#####################################################################
 
-INCLUDEPATH += $$PWD
 
-HEADERS +=  $$PWD/vidaliawindow.h \
-            $$PWD/vmessagebox.h \
-            $$PWD/vclicklabel.h \
-            $$PWD/animatedpixmap.h
+project(Vidalia)
+set(VERSION "0.1.0-svn")
 
-SOURCES +=  $$PWD/vidaliawindow.cpp \
-            $$PWD/vmessagebox.cpp \
-            $$PWD/vclicklabel.cpp \
-            $$PWD/animatedpixmap.cpp
+## Specify the minimim required CMake version
+cmake_minimum_required(VERSION 2.4.0)
+
+## Require Qt >= 4.1.0
+set(QT_MIN_VERSION    "4.1.0")
+
+## Specify the Qt libraries used
+include(FindQt4)
+find_package(Qt4 REQUIRED)
+set(QT_USE_QTNETWORK  true)
+set(QT_USE_QTXML      true)
+include(${QT_USE_FILE})
+
+## Add the actual source directories
+add_subdirectory(src)
+add_subdirectory(doc)
 

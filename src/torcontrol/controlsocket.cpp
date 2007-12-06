@@ -26,7 +26,7 @@
  */
 
 #include <stringutil.h>
-#include <vidalia.h>
+//#include <vidalia.h>
 
 #include "controlsocket.h"
 
@@ -64,7 +64,7 @@ ControlSocket::sendCommand(ControlCommand cmd, QString *errmsg)
   
   /* Format the control command */
   QString strCmd = cmd.toString();
-  vInfo("Control Command: %1").arg(strCmd.trimmed());
+//  vInfo("Control Command: %1").arg(strCmd.trimmed());
 
   /* Attempt to send the command to Tor */
   if (write(strCmd.toAscii()) != strCmd.length()) {

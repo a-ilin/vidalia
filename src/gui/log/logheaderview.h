@@ -33,6 +33,8 @@
 
 class LogHeaderView : public QHeaderView
 {
+  Q_OBJECT
+
 public:
   /** Default constructor. */
   LogHeaderView(QWidget *parent);

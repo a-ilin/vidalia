@@ -36,7 +36,7 @@
 #include <QTreeWidgetItem>
 #include <QTextBrowser>
 #include <QTextCursor>
-#include <gui/common/vidaliawindow.h>
+#include <vidaliawindow.h>
 
 #include "ui_helpbrowser.h"
 

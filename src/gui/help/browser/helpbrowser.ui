@@ -561,7 +561,7 @@
   <customwidget>
    <class>HelpTextBrowser</class>
    <extends>QTextBrowser</extends>
-   <header>gui/help/browser/helptextbrowser.h</header>
+   <header>help/browser/helptextbrowser.h</header>
    <container>0</container>
    <pixmap></pixmap>
   </customwidget>

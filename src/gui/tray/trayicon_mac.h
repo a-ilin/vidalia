@@ -36,6 +36,8 @@
 
 class TrayIconImpl : public QWidget
 {
+  Q_OBJECT
+
 protected:
   /** Default Constructor */
   TrayIconImpl();

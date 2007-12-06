@@ -1,8 +1,0 @@
-<RCC>
-    <qresource prefix="/images">
-        <file>22x22/tor-off.png</file>
-        <file>22x22/tor-on.png</file>
-        <file>22x22/tor-starting.png</file>
-        <file>22x22/tor-stopping.png</file> 
-    </qresource>
-</RCC>

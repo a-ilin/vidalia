@@ -428,7 +428,7 @@ NetViewer::resolved(int id, QList<GeoIp> geoips)
       router = ui.treeRouterList->findRouterById(id);
       if (router) {
         /* Save the location information in the descriptor */
-        router->setLocation(geoip);
+        router->setLocation(geoip.city(), geoip.country());
         /* Plot the router on the map */
         _map->addRouter(router->id(), geoip.latitude(), geoip.longitude());
       }

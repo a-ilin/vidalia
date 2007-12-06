@@ -37,6 +37,7 @@
 #include <geoipresolver.h>
 #include <vidaliawindow.h>
 
+#include "geoipresolver.h"
 #include "tormapwidget.h"
 #include "ui_netviewer.h"
 

@@ -40,8 +40,6 @@
 #include <clientstatusevent.h>
 #include <dangerousversionevent.h>
 
-#include "common/vmessagebox.h"
-#include "common/animatedpixmap.h"
 #include "mainwindow.h"
 
 

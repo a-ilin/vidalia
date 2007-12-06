@@ -33,6 +33,8 @@
 
 class DomainValidator : public QRegExpValidator
 {
+  Q_OBJECT
+
 public:
   /** Constructor. */
   DomainValidator(QObject *parent);

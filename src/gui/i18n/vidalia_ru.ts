@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="ru">
-<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -403,12 +402,12 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="85"/>
         <source>Close Circuit (Del)</source>
-        <translation>Разорвать цепочку (Del)</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="106"/>
         <source>Close Stream (Del)</source>
-        <translation>Закрыть поток (Del)</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1788,12 +1787,12 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/networkpage.ui" line="176"/>
         <source>Check to configure Tor to only connect to relays using ports allowed by your firewall</source>
-        <translation>Включите чтобы Tor подсоединялся к серверам используя порты разрешённые вашим брандмауэром</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="235"/>
         <source>Check to configure Tor to use bridge relays to access the Tor network</source>
-        <translation>Включите чтобы Tor использовал bridge-серверы для доступа к сети Tor</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2138,37 +2137,37 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../gui/config/serverpage.cpp" line="195"/>
         <source>Your bridge relay is not running.</source>
-        <translation>Ваш сервер-bridge не запущен.</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="39"/>
         <source>Help censored users reach the Tor network (Tor 0.2.0.8-alpha or newer)</source>
-        <translation>Помочь заблокированным пользователям получить доступ к сети Tor (требуется Tor 0.2.0.8-alpha или новее)</translation>
+        <translation type="unfinished">Помочь заблокированным пользователям получить доступ к сети Tor (требуется Tor 0.2.0.3-alpha или новее) {0.2.0.8-?}</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="272"/>
         <source>Name of your relay</source>
-        <translation>Имя вашего сервера</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="305"/>
         <source>Port on which users and other relays can communicate with your relay</source>
-        <translation>Порт через который пользователи и другие серверы смогут общаться с вашим сервером</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="940"/>
         <source>Let others access your bridge by giving them this line:</source>
-        <translation>Дайте пользователям доступ к вашему bridge-серверу сообщив им эту строку:</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="964"/>
         <source>This is the identity of your bridge relay that you can give to other people</source>
-        <translation>Это идентификатор вашего bridge-сервера которые вы можете показывать другим людям</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="986"/>
         <source>Copy your bridge relay&apos;s identity to the clipboard</source>
-        <translation>Скопировать идентификатор вашего bride-сервера в буфер обмена</translation>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

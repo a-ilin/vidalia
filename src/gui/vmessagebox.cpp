@@ -25,7 +25,7 @@
  * \brief Provides a custom Vidalia mesage box
  */
 
-#include <util/html.h>
+#include <html.h>
 #include "vmessagebox.h"
 
 

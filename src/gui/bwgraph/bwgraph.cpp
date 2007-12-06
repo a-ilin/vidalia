@@ -26,7 +26,7 @@
  */
 
 #include <vidalia.h>
-#include <control/bandwidthevent.h>
+#include <bandwidthevent.h>
 #include "bwgraph.h"
 
 #define BWGRAPH_LINE_SEND       (1u<<0)

@@ -63,7 +63,7 @@ RouterListItem::~RouterListItem()
 
 /** Updates the router descriptor for this item. */
 void
-RouterListItem::update(RouterDescriptor rd)
+RouterListItem::update(const RouterDescriptor &rd)
 {
   QIcon statusIcon;
   if (_rd) {
@@ -102,18 +102,16 @@ RouterListItem::update(RouterDescriptor rd)
 
 /** Sets the location information for this item's router descriptor. */
 void
-RouterListItem::setLocation(GeoIp geoip)
+RouterListItem::setLocation(const QString &city, const QString &country)
 {
-  _country = geoip.country().toLower();
-
-  QPixmap flag(":/images/flags/" + _country + ".png");
+  QPixmap flag(":/images/flags/" + country.toLower() + ".png");
   if (!flag.isNull()) {
     setIcon(COUNTRY_COLUMN, QIcon(flag));
   }
-  setToolTip(COUNTRY_COLUMN, geoip.toLocation());
+  setToolTip(COUNTRY_COLUMN, city + "," + country);
   
   if (_rd)
-    _rd->setLocation(geoip.toLocation());
+    _rd->setLocation(city + "," + country);
 }
 
 /** Overload the comparison operator. */

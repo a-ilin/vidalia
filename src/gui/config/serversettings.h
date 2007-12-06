@@ -34,6 +34,7 @@
 
 class ServerSettings : public AbstractTorSettings
 {
+  Q_OBJECT
 
 public:
   /** Constructor */

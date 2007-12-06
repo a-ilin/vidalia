@@ -25,8 +25,8 @@
  * \brief Contains a series of Vidalia and Tor configuration pages
  */
 
-#include <gui/common/vmessagebox.h>
-#include <util/html.h>
+#include <vmessagebox.h>
+#include <html.h>
 #include <serversettings.h>
 #include <networksettings.h>
 #include <vidalia.h>

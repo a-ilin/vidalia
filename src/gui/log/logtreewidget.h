@@ -34,7 +34,7 @@
 #include <QTreeWidget>
 #include <QHeaderView>
 #include <QShowEvent>
-#include <control/logevent.h>
+#include <logevent.h>
 
 #include "logtreeitem.h"
 

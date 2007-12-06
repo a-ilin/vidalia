@@ -30,8 +30,8 @@
 
 #include <QApplication>
 #include <QTreeWidgetItem>
-#include <control/circuit.h>
-#include <control/stream.h>
+#include <circuit.h>
+#include <stream.h>
 
 #include "streamitem.h"
 
