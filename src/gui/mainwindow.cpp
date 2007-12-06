@@ -39,6 +39,7 @@
 #include <net.h>
 #include <clientstatusevent.h>
 #include <dangerousversionevent.h>
+#include <vmessagebox.h>
 
 #include "mainwindow.h"
 

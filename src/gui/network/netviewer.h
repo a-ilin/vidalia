@@ -34,7 +34,6 @@
 #include <QTimer>
 #include <QHash>
 #include <torcontrol.h>
-#include <geoipresolver.h>
 #include <vidaliawindow.h>
 
 #include "geoipresolver.h"
