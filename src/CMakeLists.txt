@@ -35,5 +35,5 @@ link_directories(
 
 add_subdirectory(torcontrol)
 add_subdirectory(util)
-add_subdirectory(gui)
+add_subdirectory(vidalia)
 
