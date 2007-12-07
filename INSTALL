@@ -1,14 +1,127 @@
 
-Instruction for Building and Installing Vidalia from Source
+         Instruction for Building and Installing Vidalia from Source
 
-   1. Make sure you have CMake, Qt >= 4.1 and Tor >= 0.1.2.18 installed.
-   
-   2. Run `cmake . && make`.
-   
-   3. When the previous command finishes, Vidalia's binary will be
-      placed in the src/vidalia/ directory. On Mac OS X, the resulting binary
-      will be in a Vidalia.app application bundle under src/vidalia/.
-   
-   4. Optionally, you can run make install to install Vidalia into
-      your /usr/local/bin/ directory. 
+
+Before building and running Vidalia, you will need to have the following
+packages installed:
+
+  * Qt >= 4.1           http://trolltech.com/downloads/opensource
+  * Tor >= 0.1.2.18     https://www.torproject.org/download.html
+  * CMake >= 2.4.0      http://www.cmake.org/HTML/Download.html
+
+
+Linux/BSD/Unix
+--------------
+  1. To configure and compile Vidalia, you can run:
+
+                           cmake . && make
+  
+  2. When the previous command finishes, Vidalia's binary will be
+     placed in the src/vidalia/ directory.
+  
+  3. Optionally, you can run `make install` to install Vidalia into
+     your /usr/local/bin/ directory. 
+
+
+Mac OS X
+--------
+CMake on Mac OS X gives you the option of compiling Vidalia from the command
+line using standard Unix Makefiles, or generating an Xcode project if you
+prefer building from an IDE.
+
+  1. To build Vidalia from the command line, you can run:
+
+                           cmake . && make
+
+     Alternatively, you can have CMake generate an Xcode project for Vidalia
+     by running:
+
+                           cmake -G Xcode
+
+  2. If you built from the command line, Vidalia's binary will be in an
+     application bundle located at src/vidalia/Vidalia.app. You can copy
+     Vidalia.app to your Applications folder, if you prefer.
+
+     If you're building from a CMake-generated Xcode project, you can simply
+     click "Build & Go" in Xcode to build and run Vidalia.
+
+
+Windows with MinGW
+-------------------
+  1. Make sure the following directories are in your PATH environment
+  variable:
+      
+      * CMake (e.g., "C:\Program Files\CMake 2.4\bin")
+      * MinGW (e.g., "C:\MinGW\bin")
+      * Qt    (e.g., "C:\Qt\4.3.2\bin")
+
+  2. Configure Vidalia and generate Makefiles by running: 
+    
+                               cmake .
+    
+
+  3. Compile Vidalia by running: 
+                          
+                            mingw32-make
+
+
+If you have Visual Studio installed, CMake might get confused and choose
+"cl.exe" as the C++ compiler. You force CMake to generate MinGW Makefiles by
+specifying the generator in Step 2:
+
+                        cmake -G "MinGW Makefiles" .
+
+If CMake fails to find your Qt installation, you can explicitly tell CMake
+where to find Qt by running:
+
+          cmake -DQT_QMAKE_EXECUTABLE="C:\Qt\4.3.2\bin\qmake.exe" .
+
+You would replace "C:\Qt\4.3.2\bin" in the previous command with the actual
+path to your Qt installation's qmake.exe binary.
+
+
+
+Windows with Visual Studio (untested)
+--------------------------------------
+To build Vidalia on Windows with Visual Studio, you will need to download and
+patch the Qt for Windows source code from Trolltech. You can download the
+original source from Trolltech:
+
+              http://trolltech.com/developer/downloads/qt/windows
+
+You will then need to apply the patches from the qt-win32 open source project
+and recompile Qt:
+
+              http://sourceforge.net/projects/qtwin/
+
+After Qt is finished compiling, you can have CMake generate Visual Studio
+project files for several different version of Visual Studio. To see which
+generators are available, you can run 'cmake --help'.
+
+
+
+Available Configuration Options
+-------------------------------
+
+You can customize your Vidalia build by supplying arguments and values to the
+`cmake` commands above. Each of the configuration options can be specified on
+the command line and follows the format "-D <var>:<type>=<value>
+
+  -DQT_QMAKE_EXECUTABLE=/path/to/qmake    Specifies the location of Qt's
+                                          'qmake' binary.
+
+  -DCMAKE_INSTALL_PREFIX=/usr/local       Specifies the install prefix used
+                                          for `make install`
+
+
+For example, to configure CMake to look for Qt in "/usr/local/Qt-4.3.2/bin",
+you would run:
+
+      cmake -DQT_QMAKE_EXECUTABLE=/usr/local/Qt-4.3.2/bin/qmake .
+
+Don't forget the dot at the end!
+
+CMake also supports other generators besides Makefiles on certain platforms. See 
+'cmake --help' or 'man cmake' (on non-Windows platforms) for more information
+about supported generators and configuration options.
 
