@@ -29,8 +29,8 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/util
 )
 link_directories(
-  ${Vidalia_BINARY_DIR}/torcontrol
-  ${Vidalia_BINARY_DIR}/util
+  ${CMAKE_CURRENT_BINARY_DIR}/torcontrol
+  ${CMAKE_CURRENT_BINARY_DIR}/util
 )
 
 add_subdirectory(torcontrol)

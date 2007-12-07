@@ -205,18 +205,34 @@ qt4_add_resources(vidalia_SRCS
   help/content/content.qrc
 )
 
-## Set the appropriate executable target for the current platform 
+## Set the appropriate executable target for the current platform
 if (APPLE)
+  ## Set the output file name (make it uppercase on OS X)
+  set(vidalia_BIN Vidalia)
+  
   ## Create an OS X application bundle
-  set(MACOSX_BUNDLE_ICON_FILE res/icons/vidalia.icns)
-  set(MACOSX_BUNDLE_SHORT_VERSION  ${VERSION})
-  set(MACOSX_BUNDLE_VERSION        ${VERSION})
-  set(MACOSX_BUNDLE_LONG_VERSION_STRING Version ${VERSION})
+  set(MACOSX_BUNDLE_BUNDLE_NAME           Vidalia)
+  set(MACOSX_BUNDLE_BUNDLE_VERSION        ${VERSION})
+  set(MACOSX_BUNDLE_SHORT_VERSION_STRING  ${VERSION})
+  set(MACOSX_BUNDLE_LONG_VERSION_STRING   "Version ${VERSION}")
+  set(MACOSX_BUNDLE_ICON_FILE             vidalia.icns)
   
   ## Put everything inside the application bundle
   set(CMAKE_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX}/)
-  add_executable(Vidalia ${vidalia_SRCS})
+  add_executable(${vidalia_BIN} MACOSX_BUNDLE ${vidalia_SRCS})
+
+  ## Include the bundle resource files
+  add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
+    COMMAND mkdir 
+      ARGS -p ${CMAKE_CURRENT_BINARY_DIR}/Vidalia.app/Contents/Resources
+    COMMAND cp
+      ARGS ${CMAKE_CURRENT_SOURCE_DIR}/res/icons/*.icns 
+           ${CMAKE_CURRENT_BINARY_DIR}/Vidalia.app/Contents/Resources/
+  )
 else(APPLE)
+  ## Set the output file name
+  set(vidalia_BIN vidalia)
+  
   if (WIN32)
     ## Create a Windows binary
     if (MINGW)
@@ -224,22 +240,22 @@ else(APPLE)
     else (MINGW)
       qt4_add_resources(vidalia_SRCS res/vidalia_win.rc)
     endif(MINGW)
-    add_executable(vidalia WIN32 ${vidalia_SRCS})
+    add_executable(${vidalia_BIN} WIN32 ${vidalia_SRCS})
   else (WIN32)
     ## Non-Windows, non-Mac
-    add_executable(vidalia ${vidalia_SRCS})
+    add_executable(${vidalia_BIN} ${vidalia_SRCS})
   endif(WIN32)
 endif(APPLE)
-add_dependencies(vidalia translations)
+add_dependencies(${vidalia_BIN} translations)
 
 ## Link to the Qt libraries and other libraries built as a part of Vidalia
-target_link_libraries(vidalia
+target_link_libraries(${vidalia_BIN}
   ${QT_LIBRARIES}
   torcontrol
   util
 )
 if (MINGW)
-  target_link_libraries(vidalia
+  target_link_libraries(${vidalia_BIN}
     ole32
     oleaut32
     uuid
@@ -248,5 +264,5 @@ if (MINGW)
 endif(MINGW)
 
 ## Specify the files to be installed
-install(TARGETS vidalia DESTINATION bin)
+install(TARGETS ${vidalia_BIN} DESTINATION bin)
 
