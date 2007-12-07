@@ -29,6 +29,9 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/help/browser
 )
 
+## Process the translation files
+add_subdirectory(i18n)
+
 ## About dialog sources
 set(vidalia_SRCS 
   about/aboutdialog.cpp
@@ -223,6 +226,7 @@ else(APPLE)
     add_executable(vidalia ${vidalia_SRCS})
   endif(WIN32)
 endif(APPLE)
+add_dependencies(vidalia translations)
 
 ## Link to the Qt libraries and other libraries built as a part of Vidalia
 target_link_libraries(vidalia

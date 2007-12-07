@@ -22,24 +22,27 @@
 #####################################################################
 
 
-project(Vidalia)
-set(VERSION "0.1.0-svn")
-
-## Specify the minimim required CMake version
-cmake_minimum_required(VERSION 2.4.0)
-
-## Require Qt >= 4.1.0
-set(QT_MIN_VERSION    "4.1.0")
-
-## Specify the Qt libraries used
-include(FindQt4)
-find_package(Qt4 REQUIRED)
-set(QT_USE_QTNETWORK  true)
-set(QT_USE_QTXML      true)
-include(${QT_USE_FILE})
-include(VidaliaMacros.cmake)
-
-## Add the actual source directories
-add_subdirectory(src)
-add_subdirectory(doc)
+## Vidalia translation files
+qt4_add_translations(vidalia_QMS
+  vidalia_ar.ts
+  vidalia_bg.ts
+  vidalia_cs.ts
+  vidalia_de.ts
+  vidalia_en.ts
+  vidalia_es.ts
+  vidalia_fa.ts
+  vidalia_fi.ts
+  vidalia_fr.ts
+  vidalia_hu.ts
+  vidalia_it.ts
+  vidalia_nb.ts
+  vidalia_nl.ts
+  vidalia_pl.ts
+  vidalia_pt.ts
+  vidalia_ru.ts
+  vidalia_sv.ts
+  vidalia_zh-cn.ts
+  vidalia_zh-tw.ts
+)
+add_custom_target(translations ALL DEPENDS ${vidalia_QMS})
 

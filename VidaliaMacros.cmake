@@ -22,24 +22,28 @@
 #####################################################################
 
 
-project(Vidalia)
-set(VERSION "0.1.0-svn")
+## Search for lrelease
+find_program(lrelease_CMD  NAMES lrelease lrelease-qt4 ${QT_BINARY_DIR})
+if (NOT lrelease_CMD)
+  message(FATAL_ERROR
+    "Vidalia could not find lrelease. Please make sure Qt >= 4.1 is installed."
+  )
+endif(NOT lrelease_CMD)
 
-## Specify the minimim required CMake version
-cmake_minimum_required(VERSION 2.4.0)
 
-## Require Qt >= 4.1.0
-set(QT_MIN_VERSION    "4.1.0")
+## Wraps the supplied .ts files in lrelease commands
+macro(QT4_ADD_TRANSLATIONS outfiles)
+  foreach (it ${ARGN})
+    get_filename_component(it ${it} ABSOLUTE)
+    get_filename_component(outfile ${it} NAME_WE)
 
-## Specify the Qt libraries used
-include(FindQt4)
-find_package(Qt4 REQUIRED)
-set(QT_USE_QTNETWORK  true)
-set(QT_USE_QTXML      true)
-include(${QT_USE_FILE})
-include(VidaliaMacros.cmake)
-
-## Add the actual source directories
-add_subdirectory(src)
-add_subdirectory(doc)
+    set(outfile ${CMAKE_CURRENT_BINARY_DIR}/${outfile}.qm)
+    add_custom_command(OUTPUT ${outfile}
+      COMMAND ${lrelease_CMD}
+      ARGS -compress -silent -nounfinished ${it} -qm ${outfile}
+      MAIN_DEPENDENCY ${it}
+    )
+    set(${outfiles} ${${outfiles}} ${outfile})
+  endforeach(it)
+endmacro(QT4_ADD_TRANSLATIONS)
 
