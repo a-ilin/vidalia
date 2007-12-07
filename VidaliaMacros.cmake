@@ -23,24 +23,24 @@
 
 
 ## Search for lrelease
-find_program(lrelease_CMD NAMES lrelease-qt4 lrelease
+find_program(QT_LRELEASE_EXECUTABLE NAMES lrelease-qt4 lrelease
   PATHS ${QT_BINARY_DIR} NO_DEFAULT_PATH
 )
-if (NOT lrelease_CMD)
+if (NOT QT_LRELEASE_EXECUTABLE)
   message(FATAL_ERROR
     "Vidalia could not find lrelease. Please make sure Qt >= 4.1 is installed."
   )
-endif(NOT lrelease_CMD)
+endif(NOT QT_LRELEASE_EXECUTABLE)
 
 
 ## We need windres.exe when building on MinGW to compile the .rc file
 if (MINGW)
-  find_program(windres_CMD  NAMES windres.exe ${QT_BINARY_DIR})
-  if (NOT windres_CMD)
+  find_program(MINGW_WINDRES_EXECUTABLE  NAMES windres.exe ${QT_BINARY_DIR})
+  if (NOT MINGW_WINDRES_EXECUTABLE)
     message(FATAL_ERR
       "Vidalia could not find windres. Please make sure MinGW is installed."
     )
-  endif(NOT windres_CMD)
+  endif(NOT MINGW_WINDRES_EXECUTABLE)
 endif(MINGW)
 
 
@@ -52,7 +52,7 @@ macro(QT4_ADD_TRANSLATIONS outfiles)
 
     set(outfile ${CMAKE_CURRENT_BINARY_DIR}/${outfile}.qm)
     add_custom_command(OUTPUT ${outfile}
-      COMMAND ${lrelease_CMD}
+      COMMAND ${QT_LRELEASE_EXECUTABLE}
       ARGS -compress -silent -nounfinished ${it} -qm ${outfile}
       MAIN_DEPENDENCY ${it}
     )
@@ -71,7 +71,7 @@ if (MINGW)
       
       set(outfile ${CMAKE_CURRENT_BINARY_DIR}/${outfile}_res.o)
       add_custom_command(OUTPUT ${outfile}
-        COMMAND ${windres_CMD}
+        COMMAND ${MINGW_WINDRES_EXECUTABLE}
         ARGS -i ${it} -o ${outfile} --include-dir=${rc_path}
         MAIN_DEPENDENCY ${it}
       )
