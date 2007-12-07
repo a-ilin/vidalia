@@ -43,3 +43,11 @@ include(VidaliaMacros.cmake)
 add_subdirectory(src)
 add_subdirectory(doc)
 
+## The 'confclean' target removes cached CMake configuration information
+if (WIN32)
+  set(RM_CMD del)
+else (WIN32)
+  set(RM_CMD rm)
+endif(WIN32)
+add_custom_target(confclean ${RM_CMD} CMakeCache.txt)
+
