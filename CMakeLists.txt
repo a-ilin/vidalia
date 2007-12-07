@@ -39,6 +39,9 @@ set(QT_USE_QTXML      true)
 include(${QT_USE_FILE})
 include(VidaliaMacros.cmake)
 
+## Define Vidalia-specific CMake options
+option(OSX_FAT_BINARY "Build Vidalia as a Universal binary." OFF)
+
 ## Add the actual source directories
 add_subdirectory(src)
 add_subdirectory(doc)

@@ -33,6 +33,13 @@ link_directories(
   ${CMAKE_CURRENT_BINARY_DIR}/util
 )
 
+if (APPLE)
+  if (OSX_FAT_BINARY)
+    ## Set the appropriate flags for building a Universal binary
+    set(CMAKE_OSX_ARCHITECTURES ppc i386)
+  endif(OSX_FAT_BINARY)
+endif(APPLE)
+
 add_subdirectory(torcontrol)
 add_subdirectory(util)
 add_subdirectory(vidalia)

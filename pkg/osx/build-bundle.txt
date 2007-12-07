@@ -49,7 +49,7 @@ Tor
 
 Vidalia
 10. Configure Vidalia with the following:
-    ./configure --disable-debug
+      cmake -DOSX_FAT_BINARY=1 . 
 
    The Vidalia binary on OS X links to Qt statically, so you will need to have
    your Qt installation configured appropriately.

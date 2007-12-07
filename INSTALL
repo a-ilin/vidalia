@@ -107,6 +107,8 @@ You can customize your Vidalia build by supplying arguments and values to the
 `cmake` commands above. Each of the configuration options can be specified on
 the command line and follows the format "-D <var>:<type>=<value>
 
+  -DOSX_FAT_BINARY=1                      Build Vidalia as a Universal binary
+
   -DQT_QMAKE_EXECUTABLE=/path/to/qmake    Specifies the location of Qt's
                                           'qmake' binary.
 
