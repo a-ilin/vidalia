@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="fi">
+<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -402,12 +403,12 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="85"/>
         <source>Close Circuit (Del)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sulje yhteys (Del)</translation>
     </message>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="106"/>
         <source>Close Stream (Del)</source>
-        <translation type="unfinished"></translation>
+        <translation>Sulje datavirta (Del)</translation>
     </message>
 </context>
 <context>
@@ -475,7 +476,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="71"/>
         <source>Relay</source>
-        <translation>Välitä</translation>
+        <translation>Reititä</translation>
     </message>
 </context>
 <context>
@@ -579,7 +580,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../gui/config/generalpage.cpp" line="32"/>
         <source>General</source>
-        <translation type="unfinished">Yleiset</translation>
+        <translation>Yleiset</translation>
     </message>
 </context>
 <context>
@@ -1008,12 +1009,12 @@ Ole hyvä ja tarkista tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen pysä
     <message>
         <location filename="../gui/mainwindow.ui" line="190"/>
         <source>Setup Relaying</source>
-        <translation>Välityksen asetukset</translation>
+        <translation>Reitittimenasetukset</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="193"/>
         <source>Set up a Tor relay and help the network grow</source>
-        <translation>Tee Tor välityspalvelin ja auta verkkoa kasvamaan</translation>
+        <translation>Tee Tor-reititin ja auta verkkoa kasvamaan</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="203"/>
@@ -1148,7 +1149,7 @@ Ole hyvä ja tarkista tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen pysä
     <message>
         <location filename="../gui/mainwindow.cpp" line="871"/>
         <source>Vidalia was unable to authenticate to Tor. (%1)</source>
-        <translation type="unfinished">Vidalia ei onnistunut kirjautumaan Tor-ohjelmaan. (%1)</translation>
+        <translation>Vidalia ei onnistunut kirjautumaan Tor-ohjelmaan. (%1)</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="873"/>
@@ -1164,12 +1165,13 @@ Ole hyvä ja tarkista tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen pysä
         <location filename="../gui/mainwindow.cpp" line="445"/>
         <source>Your Tor relay is shutting down.
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-reititin sulkeutuu.
+Klikkaa &apos;Pysäytä Tor&apos; pakottaakseen Tor sulkeutumaan välittömästi.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="641"/>
         <source>Relaying is Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Reitittäminen on käytössä</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="646"/>
@@ -1657,7 +1659,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="45"/>
         <source>Network</source>
-        <translation type="unfinished">Verkko</translation>
+        <translation>Verkko</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="187"/>
@@ -1672,7 +1674,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="235"/>
         <source>Copy (Ctrl+C)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopioi (Ctrl+C)</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="266"/>
@@ -1682,12 +1684,12 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="272"/>
         <source>You must specify one or more ports to which your firewall allows you to connect.</source>
-        <translation type="unfinished"></translation>
+        <translation>Portteja pitää olla määriteltynä vähintään yksi tai useampi, mihin palomuuri antaa yhdistää.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="308"/>
         <source>&apos;%1&apos; is not a valid port number.</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%1&apos; ei ole hyväksyttävä portinnumero.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="25"/>
@@ -1697,62 +1699,62 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/config/networkpage.ui" line="28"/>
         <source>I use a proxy to access the Internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Käytän välityspalvelinta käyttääkseen Internettiä</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="58"/>
         <source>Proxy Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Välityspalvelinasetukset</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="70"/>
         <source>HTTP Proxy:</source>
-        <translation type="unfinished"></translation>
+        <translation>HTTP-välityspalvelin:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="80"/>
         <source>Username:</source>
-        <translation type="unfinished"></translation>
+        <translation>Käyttäjä:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="90"/>
         <source>Use this proxy for HTTPS also</source>
-        <translation type="unfinished"></translation>
+        <translation>Käytä välityspalvelinta myös HTTPS-yhteyksiin</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="108"/>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Salasana:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="135"/>
         <source>Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Portti:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="179"/>
         <source>My firewall only lets me connect to certain ports</source>
-        <translation type="unfinished"></translation>
+        <translation>Palomuuri sallii yhteydet vain tiettyihin portteihin</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="203"/>
         <source>Firewall Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Palomuuriasetukset</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="215"/>
         <source>Allowed Ports:</source>
-        <translation type="unfinished"></translation>
+        <translation>Sallitut portit:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="225"/>
         <source>80, 443</source>
-        <translation type="unfinished">80, 443</translation>
+        <translation>80, 443</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="238"/>
         <source>My ISP blocks connections to the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Operaattorini torjuu yhteydet Tor-verkkoon</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="262"/>
@@ -1877,17 +1879,17 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="44"/>
         <source>Relay</source>
-        <translation type="unfinished">Välitä</translation>
+        <translation>Reititin</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="71"/>
         <source>Zoom to Relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Suurenna reitittimiin</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="229"/>
         <source>%1 relays online (%2 total)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 reititintä päällä (%2 kokonaisuudessa)</translation>
     </message>
 </context>
 <context>
@@ -2080,7 +2082,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="79"/>
         <source>Server</source>
-        <translation type="unfinished">Palvelin</translation>
+        <translation>Palvelin</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="136"/>
@@ -2095,12 +2097,12 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="141"/>
         <source>Please upgrade your Tor software or configure Tor to act as a normal Tor relay.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ole hyvä ja päivitä Tor-ohjelmasi tai säädä Tor toimimaan normaalina Tor-reitittimenä.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="264"/>
         <source>You must specify at least a relay nickname and port.</source>
-        <translation type="unfinished"></translation>
+        <translation>Reitittimen nimi ja portti pitää määrittää.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="25"/>
@@ -2110,7 +2112,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="91"/>
         <source>Relay Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Reititysportti:</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="139"/>
@@ -2121,12 +2123,12 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../gui/config/serverpage.ui" line="110"/>
         <source>Enable to mirror the Tor relay directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Jaa Tor-reititinkansiota</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="113"/>
         <source>Mirror the Relay Directory </source>
-        <translation type="unfinished"></translation>
+        <translation>Jaa reititinkansiota </translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="195"/>
@@ -2141,12 +2143,12 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../gui/config/serverpage.ui" line="272"/>
         <source>Name of your relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Reitittimesi nimi</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="305"/>
         <source>Port on which users and other relays can communicate with your relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Portti, jolla käyttäjät ja muut reitittimet kommunikoivat reitittimesi kanssa</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="940"/>
