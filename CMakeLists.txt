@@ -40,7 +40,9 @@ include(${QT_USE_FILE})
 include(VidaliaMacros.cmake)
 
 ## Define Vidalia-specific CMake options
-option(OSX_FAT_BINARY "Build Vidalia as a Universal binary." OFF)
+if (APPLE)
+  option(OSX_FAT_BINARY "Build Vidalia as a Universal binary." OFF)
+endif(APPLE)
 
 ## Add the actual source directories
 add_subdirectory(src)
