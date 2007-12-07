@@ -23,7 +23,9 @@
 
 
 ## Search for lrelease
-find_program(lrelease_CMD  NAMES lrelease lrelease-qt4 ${QT_BINARY_DIR})
+find_program(lrelease_CMD NAMES lrelease-qt4 lrelease
+  PATHS ${QT_BINARY_DIR} NO_DEFAULT_PATH
+)
 if (NOT lrelease_CMD)
   message(FATAL_ERROR
     "Vidalia could not find lrelease. Please make sure Qt >= 4.1 is installed."
