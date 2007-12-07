@@ -36,7 +36,7 @@
 #include "advancedpage.h"
 
 #if defined(Q_WS_WIN)
-#include <control/torservice.h>
+#include <torservice.h>
 #endif
 
 

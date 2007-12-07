@@ -151,7 +151,7 @@ set(vidalia_SRCS ${vidalia_SRCS} tray/trayicon.cpp)
 qt4_wrap_cpp(vidalia_SRCS tray/trayicon.h)
 if(WIN32)
   set(vidalia_SRCS ${vidalia_SRCS} tray/trayicon_win.cpp)
-  qt4_wrap_cpp(vidlaia_SRCS tray/trayicon_win.h)
+  qt4_wrap_cpp(vidalia_SRCS tray/trayicon_win.h)
 else(WIN32)
   if(APPLE)
     set(vidalia_SRCS ${vidalia_SRCS} tray/trayicon_mac.cpp)
@@ -219,7 +219,11 @@ if (APPLE)
 else(APPLE)
   if (WIN32)
     ## Create a Windows binary
-    qt4_add_resources(vidalia_SRCS res/vidalia_win.rc)
+    if (MINGW)
+      mingw_wrap_rc(vidalia_SRCS res/vidalia_win.rc)
+    else (MINGW)
+      qt4_add_resources(vidalia_SRCS res/vidalia_win.rc)
+    endif(MINGW)
     add_executable(vidalia WIN32 ${vidalia_SRCS})
   else (WIN32)
     ## Non-Windows, non-Mac
@@ -234,6 +238,14 @@ target_link_libraries(vidalia
   torcontrol
   util
 )
+if (MINGW)
+  target_link_libraries(vidalia
+    ole32
+    oleaut32
+    uuid
+    winspool
+  )
+endif(MINGW)
 
 ## Specify the files to be installed
 install(TARGETS vidalia DESTINATION bin)

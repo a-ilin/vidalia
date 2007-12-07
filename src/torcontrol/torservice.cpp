@@ -26,7 +26,6 @@
  */
 
 #include <QLibrary>
-#include <vidalia.h>
 
 #include "torservice.h"
 
@@ -70,7 +69,6 @@ TorService::loadServiceFunctions()
 #define LOAD_SERVICE_FN(f) do {                                         \
   void *fn;                                                             \
   if (!((fn = QLibrary::resolve("advapi32", #f)))) {                    \
-      vWarn("Unable to load NT service function: %1").arg(#f);          \
       return false;                                                     \
     } else {                                                            \
       _service_fns.f = (f ## _fn) fn;                                   \
@@ -151,7 +149,7 @@ TorService::start()
   SC_HANDLE service = openService();
 
   if (!service) {
-    vWarn("Bug: We tried to start the Tor service, but it is not installed.");
+//    vWarn("Bug: We tried to start the Tor service, but it is not installed.");
     emit startFailed(tr("The Tor service is not installed."));
     return;
   }
@@ -159,7 +157,7 @@ TorService::start()
   /* Starting a service can take up to 30 seconds! */
   if (status() != SERVICE_RUNNING) {
     int tries = 0;
-    vNotice("Starting the Tor service.");
+//    vNotice("Starting the Tor service.");
     _service_fns.StartServiceA(service, 0, NULL);
 
     while ((status() != SERVICE_RUNNING) && ++tries <= 5)
@@ -169,7 +167,7 @@ TorService::start()
   if (status() == SERVICE_RUNNING) {
     emit started();
   } else {
-    vWarn("Unable to start the Tor service.");
+//    vWarn("Unable to start the Tor service.");
     emit startFailed(tr("Unable to start the Tor service."));
   }
   closeHandle(service);
@@ -187,7 +185,7 @@ TorService::stop()
   if (status() != SERVICE_STOPPED) {
     SERVICE_STATUS stat;
     stat.dwCurrentState = SERVICE_RUNNING;
-    vNotice("Stopping the Tor service.");
+//    vNotice("Stopping the Tor service.");
     if (_service_fns.ControlService(service, SERVICE_CONTROL_STOP, &stat)) {
       /* XXX Five seconds isn't long enough to wait when we're stopping a Tor
        * that is running as a server, but we don't want to block for 30
@@ -206,7 +204,7 @@ TorService::stop()
     return true;
   }
   /* XXX This needs an actual reason message. */
-  vWarn("Unable to stop the Tor service.");
+//  vWarn("Unable to stop the Tor service.");
   return false;
 }
 
@@ -263,8 +261,8 @@ TorService::install(const QString &torPath, const QString &torrc,
                                                  .arg(torrc)
                                                  .arg(controlPort);
 
-    vNotice("Installing the Tor service using the command line '%1'")
-                                                        .arg(command);
+//    vNotice("Installing the Tor service using the command line '%1'")
+//                                                        .arg(command);
     service = _service_fns.CreateServiceA(_scm, 
                               (LPCTSTR)TOR_SERVICE_NAME, (LPCTSTR)TOR_SERVICE_DISP,
                               TOR_SERVICE_ACCESS, SERVICE_WIN32_OWN_PROCESS,
@@ -273,7 +271,7 @@ TorService::install(const QString &torPath, const QString &torrc,
                               NULL, NULL);
     if (!service) {
       /* XXX This needs an actual reason message. */
-      vWarn("Failed to install the Tor service.");
+//      vWarn("Failed to install the Tor service.");
       return false;
     }
 
@@ -296,13 +294,13 @@ TorService::remove()
 
   if (service) {
     stop();
-    vNotice("Removing the Tor service.");
+//    vNotice("Removing the Tor service.");
     removed = _service_fns.DeleteService(service);
     closeHandle(service);
   }
   if (!removed) {
     /* XXX This needs an actual reason message. */
-    vWarn("Failed to remove the Tor service.");
+//    vWarn("Failed to remove the Tor service.");
   }
   return removed;
 }

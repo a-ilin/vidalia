@@ -31,6 +31,17 @@ if (NOT lrelease_CMD)
 endif(NOT lrelease_CMD)
 
 
+## We need windres.exe when building on MinGW to compile the .rc file
+if (MINGW)
+  find_program(windres_CMD  NAMES windres.exe ${QT_BINARY_DIR})
+  if (NOT windres_CMD)
+    message(FATAL_ERR
+      "Vidalia could not find windres. Please make sure MinGW is installed."
+    )
+  endif(NOT windres_CMD)
+endif(MINGW)
+
+
 ## Wraps the supplied .ts files in lrelease commands
 macro(QT4_ADD_TRANSLATIONS outfiles)
   foreach (it ${ARGN})
@@ -46,4 +57,24 @@ macro(QT4_ADD_TRANSLATIONS outfiles)
     set(${outfiles} ${${outfiles}} ${outfile})
   endforeach(it)
 endmacro(QT4_ADD_TRANSLATIONS)
+
+
+if (MINGW)
+  ## Wraps the supplied .rc files in windres commands
+  macro(MINGW_WRAP_RC outfiles)
+    foreach(it ${ARGN})
+      get_filename_component(it      ${it} ABSOLUTE)
+      get_filename_component(outfile ${it} NAME_WE)
+      get_filename_component(rc_path ${it} PATH)
+      
+      set(outfile ${CMAKE_CURRENT_BINARY_DIR}/${outfile}_res.o)
+      add_custom_command(OUTPUT ${outfile}
+        COMMAND ${windres_CMD}
+        ARGS -i ${it} -o ${outfile} --include-dir=${rc_path}
+        MAIN_DEPENDENCY ${it}
+      )
+      set(${outfiles} ${${outfiles}} ${outfile})
+    endforeach(it)
+  endmacro(MINGW_WRAP_RC)
+endif(MINGW)
 
