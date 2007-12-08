@@ -117,7 +117,7 @@ private slots:
   /** Called when the "show on startup" checkbox is toggled. */
   void toggleShowOnStartup(bool checked);
   
-#if defined(USE_QSYSTEMTRAYICON)
+#if QT_VERSION >= 0x040200 && !defined(Q_WS_MAC)
   /** Displays the main window if <b>reason</b> is DoubleClick. */
   void trayActivated(QSystemTrayIcon::ActivationReason reason);
 #endif
@@ -188,7 +188,7 @@ private:
    * the password and when we need to provide the password itself. */
   QString _controlPassword;
 
-#if defined(USE_QSYSTEMTRAYICON)
+#if QT_VERSION >= 0x040200 && !defined(Q_WS_MAC)
   QSystemTrayIcon _trayIcon; /**< The Vidalia icon that sits in the tray.
                                   (post-Qt 4.2) */
 #else
