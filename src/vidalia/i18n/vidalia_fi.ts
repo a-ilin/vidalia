@@ -1178,7 +1178,8 @@ Klikkaa &apos;Pysäytä Tor&apos; pakottaakseen Tor sulkeutumaan välittömästi
         <source>You are currently running a Tor relay. Terminating your relay will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new relay?</source>
-        <translation type="unfinished"></translation>
+        <translation>Paraikaa on käynnissä Tor-reititin. Sen pysäyttäminen keskeyttää avoimet yhteydet muilta.
+Haluaisitko pysäyttää rauhallisesti ja antaa muiden käyttäjien löytää uusi reititin?</translation>
     </message>
 </context>
 <context>
@@ -2107,7 +2108,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="25"/>
         <source>Run Tor as a client only</source>
-        <translation type="unfinished"></translation>
+        <translation>Käytä Tor-ohjelmaa vain käyttäjänä</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="91"/>
@@ -2118,7 +2119,8 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
         <location filename="../gui/config/serverpage.ui" line="139"/>
         <source>Email address at which you may be reached if there is a
 problem with your relay. You might also include your PGP or GPG fingerprint.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sähköpostiosoite, josta voidaan tavoittaa, jos sattuu
+joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG-tunnistuksen.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="110"/>
@@ -2138,7 +2140,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../gui/config/serverpage.ui" line="39"/>
         <source>Help censored users reach the Tor network (Tor 0.2.0.8-alpha or newer)</source>
-        <translation type="unfinished"></translation>
+        <translation>Auta sensuroituja käyttäjiä pääsemään Tor-verkkoon (Tor 0.2.0.8-alpha tai uudempi)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="272"/>
