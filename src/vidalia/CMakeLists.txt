@@ -28,6 +28,10 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/config
   ${CMAKE_CURRENT_SOURCE_DIR}/help/browser
 )
+configure_file(
+  ${CMAKE_CURRENT_SOURCE_DIR}/res/vidalia_win.rc.in
+  ${CMAKE_CURRENT_SOURCE_DIR}/res/vidalia_win.rc
+)
 
 ## Process the translation files
 add_subdirectory(i18n)

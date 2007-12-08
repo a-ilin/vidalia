@@ -23,7 +23,10 @@
 
 
 project(Vidalia)
-set(VERSION "0.1.0-svn")
+set(VER_MAJOR   "0")
+set(VER_MINOR   "1")
+set(VER_PATCH   "0")
+set(VERSION     "${VER_MAJOR}.${VER_MINOR}.${VER_PATCH}-svn")
 
 ## Specify the minimim required CMake version
 cmake_minimum_required(VERSION 2.4.0)
@@ -47,6 +50,7 @@ endif(APPLE)
 ## Add the actual source directories
 add_subdirectory(src)
 add_subdirectory(doc)
+add_subdirectory(pkg)
 
 ## The 'confclean' target removes cached CMake configuration information
 if (WIN32)
