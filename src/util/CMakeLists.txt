@@ -47,4 +47,5 @@ endif(WIN32)
 
 
 add_library(util STATIC ${util_SRCS})
+target_link_libraries(util ${QT_LIBRARIES})
 

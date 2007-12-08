@@ -40,6 +40,14 @@ if (APPLE)
   endif(OSX_FAT_BINARY)
 endif(APPLE)
 
+## Add some Qt definitions
+if (WIN32)
+  add_definitions(-DQT_THREAD_SUPPORT)
+  if (NOT QT_CONFIG MATCHES "static")
+    add_definitions(-DQT_DLL)
+  endif(NOT QT_CONFIG MATCHES "static")
+endif(WIN32)
+
 add_subdirectory(torcontrol)
 add_subdirectory(util)
 add_subdirectory(vidalia)
