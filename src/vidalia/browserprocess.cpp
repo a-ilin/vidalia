@@ -1,6 +1,9 @@
 /****************************************************************
- *  This file is distributed under the following license:
+ *  This file was originally written by Steven J. Murdoch, and 
+ *  modified by Matt Edman. It is distributed under the following
+ *  license:
  *
+ *  Copyright (C) 2007, Matt Edman
  *  Copyright (C) 2007, Steven J. Murdoch 
  *                      <http://www.cl.cam.ac.uk/users/sjm217/>
  *
@@ -21,29 +24,34 @@
  ****************************************************************/
 
 /**
- ** Test invoking Firefox from Qt
- ** Steven J. Murdoch <http://www.cl.cam.ac.uk/users/sjm217/>
- ** $Id$
- **/
+ * \file browserprocess.cpp
+ * \version $Id: $
+ * \brief Invokes a web browser process (originally by Steven. J. Murdoch)
+ */
 
 #include <QString>
   
 #include "browserprocess.h"
 
+
+/** Default constructor */
 BrowserProcess::BrowserProcess(QObject *parent)
 : QProcess(parent)
 {
   // Call error handling routine on errors
-  QObject::connect(this, SIGNAL(error(QProcess::ProcessError)), this, SLOT(onError(QProcess::ProcessError)));
+  QObject::connect(this, SIGNAL(error(QProcess::ProcessError)),
+                   this, SLOT(onError(QProcess::ProcessError)));
 }
 
+/** Start the specified application. */
 void
-BrowserProcess::start(QString app, QStringList args) 
+BrowserProcess::start(const QString &app, const QStringList &args) 
 {
   // Start the specified application
   QProcess::start(app, args, QIODevice::ReadOnly | QIODevice::Text);
 }
 
+/** Invoked when underlying QProcess fails. */
 void
 BrowserProcess::onError(QProcess::ProcessError error)
 {
@@ -52,3 +60,4 @@ BrowserProcess::onError(QProcess::ProcessError error)
     emit startFailed(errorString());
   }
 }
+

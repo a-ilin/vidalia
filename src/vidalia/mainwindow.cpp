@@ -155,9 +155,9 @@ MainWindow::MainWindow()
   /* Create a new BrowserProcess object, used to start the web browser */
   _browserProcess = new BrowserProcess(this);
   connect(_browserProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
-	         this, SLOT(onBrowserFinished(int, QProcess::ExitStatus)));
+           this, SLOT(onBrowserFinished(int, QProcess::ExitStatus)));
   connect(_browserProcess, SIGNAL(startFailed(QString)),
-	         this, SLOT(onBrowserFailed(QString)));
+           this, SLOT(onBrowserFailed(QString)));
 
   /* Catch signals when the application is running or shutting down */
   connect(vApp, SIGNAL(running()), this, SLOT(running()));
@@ -435,7 +435,7 @@ MainWindow::createMenuBar()
 }
 
 /** Starts the web browser, if appropriately configured */
-void MainWindow::startBrowser(TorStatus status)
+void MainWindow::startBrowser()
 {
   VidaliaSettings settings;
   QString executable = settings.getBrowserExecutable();
@@ -447,6 +447,9 @@ void MainWindow::startBrowser(TorStatus status)
 /** Called when browser has exited */
 void MainWindow::onBrowserFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
+  Q_UNUSED(exitCode)
+  Q_UNUSED(exitStatus)
+
   shutdown();
 }
 
@@ -458,9 +461,9 @@ MainWindow::onBrowserFailed(QString errmsg)
   Q_UNUSED(errmsg);
  
   /* Display an error message and see if the user wants some help */
-  int response = VMessageBox::warning(this, tr("Error starting web browser"),
-				      tr("Vidalia was unable to start the configured web browser"),
-				      VMessageBox::Ok|VMessageBox::Default|VMessageBox::Escape);
+  VMessageBox::warning(this, tr("Error starting web browser"),
+              tr("Vidalia was unable to start the configured web browser"),
+              VMessageBox::Ok|VMessageBox::Default|VMessageBox::Escape);
 }
 
 /** Updates the UI to reflect Tor's current <b>status</b>. Returns the
@@ -1042,7 +1045,7 @@ void
 MainWindow::circuitEstablished()
 {
   updateTorStatus(CircuitEstablished);
-  startBrowser(CircuitEstablished);
+  startBrowser();
 }
 
 /** Checks the status of the current version of Tor to see if it's old,

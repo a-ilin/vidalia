@@ -153,7 +153,7 @@ private:
    * previously set TorStatus value. */
   TorStatus updateTorStatus(TorStatus status);
   /** Starts the web browser, if appropriately configured */
-  void startBrowser(TorStatus status);
+  void startBrowser();
   /** Converts a TorStatus enum value to a string for debug logging purposes. */
   QString toString(TorStatus status);
   /** Authenticates Vidalia to Tor's control port. */

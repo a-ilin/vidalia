@@ -1,6 +1,9 @@
 /****************************************************************
- *  This file is distributed under the following license:
- *
+ *  This file was originally written by Steven J. Murdoch, and 
+ *  modified by Matt Edman. It is distributed under the following
+ *  license:
+ * 
+ *  Copyright (C) 2007, Matt Edman
  *  Copyright (C) 2007, Steven J. Murdoch 
  *                      <http://www.cl.cam.ac.uk/users/sjm217/>
  *
@@ -21,33 +24,34 @@
  ****************************************************************/
 
 /**
- ** Test invoking Firefox from Qt
- ** Steven J. Murdoch <http://www.cl.cam.ac.uk/users/sjm217/>
- ** $Id$
- **/
+ * \file browserprocess.cpp
+ * \version $Id: $ 
+ * \brief Invokes a web browser process (originally by Steven. J. Murdoch)
+ */
 
 #ifndef _BROWSERPROCESS_H
 #define _BROWSERPROCESS_H
 
 #include <QProcess>
 
+
 class BrowserProcess : public QProcess
 {
   Q_OBJECT
 
 public:
-  // Default constructor
+  /** Default constructor */
   BrowserProcess(QObject *parent = 0);
-  // Start the specified application
-  void start(QString app, QStringList args);
+  /** Start the specified application. */
+  void start(const QString &app, const QStringList &args);
 
 private slots:
-  // Invoked when underlying QProcess fails
+  /** Invoked when underlying QProcess fails. */
   void onError(QProcess::ProcessError error);
 
 signals:
-  // Invoked when start() fails
-  void startFailed(QString errorMessage);
+  /** Invoked when start() fails. */
+  void startFailed(const QString &errorMessage);
 };
 
 #endif
