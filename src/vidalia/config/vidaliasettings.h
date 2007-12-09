@@ -71,6 +71,13 @@ public:
   bool runVidaliaOnBoot();
   /** Set whether to run Vidalia on system boot. */
   void setRunVidaliaOnBoot(bool run);
+
+  /** Returns a fully-qualified path to the web browser, including the
+   * executable name. */
+  QString getBrowserExecutable() const;
+  /** Sets the location and name of the web browser executable to the given string.
+   * If set to the empty string, the browser will not be started. */
+  void setBrowserExecutable(const QString &browserExecutable);
 };
 
 #endif

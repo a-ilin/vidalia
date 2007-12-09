@@ -49,6 +49,7 @@
 #include "help/browser/helpbrowser.h"
 #include "network/netviewer.h"
 #include "ui_mainwindow.h"
+#include "browserprocess.h"
 
 
 class MainWindow : public VidaliaWindow
@@ -116,6 +117,10 @@ private slots:
   void showServerConfigDialog();
   /** Called when the "show on startup" checkbox is toggled. */
   void toggleShowOnStartup(bool checked);
+  /** Called when the web browser has stopped */
+  void onBrowserFinished(int exitCode, QProcess::ExitStatus exitStatus);
+  /** Called web the web browser failed to start */
+  void onBrowserFailed(QString errmsg);
   
 #if QT_VERSION >= 0x040200 && !defined(Q_WS_MAC)
   /** Displays the main window if <b>reason</b> is DoubleClick. */
@@ -147,6 +152,8 @@ private:
   /** Updates the UI to reflect Tor's current <b>status</b>. Returns the
    * previously set TorStatus value. */
   TorStatus updateTorStatus(TorStatus status);
+  /** Starts the web browser, if appropriately configured */
+  void startBrowser(TorStatus status);
   /** Converts a TorStatus enum value to a string for debug logging purposes. */
   QString toString(TorStatus status);
   /** Authenticates Vidalia to Tor's control port. */
@@ -184,6 +191,8 @@ private:
   ConfigDialog* _configDialog;
   /** A TorControl object that handles communication with Tor */
   TorControl* _torControl;
+  /** A BrowserProcess object that manages the web browser */
+  BrowserProcess* _browserProcess;
   /** Remembers the control password between when we start Tor with a hash of
    * the password and when we need to provide the password itself. */
   QString _controlPassword;

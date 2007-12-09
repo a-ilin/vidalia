@@ -42,6 +42,7 @@
 #define SETTING_RUN_TOR_AT_START    "RunTorAtStart"
 #define SETTING_DATA_DIRECTORY      "DataDirectory"
 #define SETTING_SHOW_MAINWINDOW_AT_START  "ShowMainWindowAtStart"
+#define SETTING_BROWSER_EXECUTABLE  "BrowserExecutable"
 
 #if defined(Q_OS_WIN32)
 #define STARTUP_REG_KEY        "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
@@ -72,6 +73,7 @@ VidaliaSettings::VidaliaSettings()
   setDefault(SETTING_LANGUAGE, LanguageSupport::defaultLanguageCode());
   setDefault(SETTING_RUN_TOR_AT_START, true);
   setDefault(SETTING_SHOW_MAINWINDOW_AT_START, true);
+  setDefault(SETTING_BROWSER_EXECUTABLE, "");
 }
 
 /** Gets the currently preferred language code for Vidalia. */
@@ -166,5 +168,21 @@ VidaliaSettings::setRunVidaliaOnBoot(bool run)
   Q_UNUSED(run);
   return;
 #endif
+}
+
+/** Returns a fully-qualified path to the web browser, including the
+ * executable name. */
+QString
+VidaliaSettings::getBrowserExecutable() const
+{
+  return QDir::convertSeparators(value(SETTING_BROWSER_EXECUTABLE).toString());
+}
+
+/** Sets the location and name of the web browser executable to the given string.
+ * If set to the empty string, the browser will not be started. */
+void
+VidaliaSettings::setBrowserExecutable(const QString &browserExecutable)
+{
+  setValue(SETTING_BROWSER_EXECUTABLE, browserExecutable);
 }
 

@@ -176,6 +176,7 @@ set(vidalia_SRCS ${vidalia_SRCS}
   vclicklabel.cpp
   vidaliawindow.cpp
   vmessagebox.cpp
+  browserprocess.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
   vidalia.h
@@ -184,6 +185,7 @@ qt4_wrap_cpp(vidalia_SRCS
   vclicklabel.h
   vidaliawindow.h
   vmessagebox.h
+  browserprocess.h
 )
 
 ## Specify all the Qt Designer .ui files

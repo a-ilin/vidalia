@@ -31,6 +31,10 @@ Contributors:
   Andrew Lewman wrote the original Mac OS X bundle installer off which
   Vidalia's is based, and also added Torbutton to the bundle.
 
+  Steven J. Murdoch <http://www.cl.cam.ac.uk/users/sjm217/> wrote the code
+  to launch a web browser when Tor has built a circuit and close Vidalia when
+  the browser has exited.
+
   Brandon Nase <http://www.students.dsu.edu/naseb/> designed and built 
   the Vidalia-Project website.
 
