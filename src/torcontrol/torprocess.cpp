@@ -50,7 +50,7 @@ TorProcess::TorProcess(QObject *parent)
 
 /** Formats the Tor process arguments for logging. */
 QString
-TorProcess::formatArguments(const QStringList args)
+TorProcess::formatArguments(const QStringList &args)
 {
   QStringList out;
   foreach (QString arg, args) {
@@ -64,12 +64,13 @@ TorProcess::formatArguments(const QStringList args)
  * signal started() will be emitted. If Tor fails to start,
  * startFailed(errmsg) will be emitted, with an appropriate error message. */
 void
-TorProcess::start(QString app, QStringList args) 
+TorProcess::start(const QString &app, const QStringList &args) 
 {
+  QString exe = app;
 #if defined(Q_OS_WIN32)
   /* If we're on Windows, QProcess::start requires that paths with spaces are
    * quoted before being passed to it. */
-  app = "\"" + app + "\"";
+  exe = "\"" + exe + "\"";
 #endif
   
   /* Attempt to start Tor with the given command-line arguments */
@@ -87,7 +88,7 @@ TorProcess::start(QString app, QStringList args)
   setEnvironment(env);
 
 //  vNotice("Starting Tor using '%1 %2'").arg(app).arg(formatArguments(args));
-  QProcess::start(app, args, QIODevice::ReadOnly | QIODevice::Text);
+  QProcess::start(exe, args, QIODevice::ReadOnly | QIODevice::Text);
 }
 
 /** Stops the Tor process */

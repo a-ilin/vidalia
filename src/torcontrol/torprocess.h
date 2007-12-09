@@ -40,7 +40,7 @@ public:
   TorProcess(QObject *parent = 0);
 
   /** Start the Tor process */
-  void start(QString app, QStringList args);
+  void start(const QString &app, const QStringList &args);
   /** Stop the Tor process */
   bool stop(QString *errmsg = 0);
 
@@ -54,10 +54,10 @@ public:
 
 signals:
   /** Emitted when Tor prints a log message to the console */
-  void log(QString severity, QString message);
+  void log(const QString &severity, const QString &message);
   /** Emitted when Tor fails to start, perhaps because the path to Tor was
    * bogus. */
-  void startFailed(QString errorMessage);
+  void startFailed(const QString &errorMessage);
   
 private slots:
   /** Called when there is data to be read from stdout */
@@ -67,7 +67,7 @@ private slots:
 
 private:
   /** Formats the Tor process arguments for logging. */
-  QString formatArguments(const QStringList args);
+  QString formatArguments(const QStringList &args);
 };
 
 #endif
