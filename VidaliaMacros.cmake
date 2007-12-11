@@ -38,7 +38,7 @@ if (MINGW)
   find_program(MINGW_WINDRES_EXECUTABLE  NAMES windres.exe ${QT_BINARY_DIR})
   if (NOT MINGW_WINDRES_EXECUTABLE)
     message(FATAL_ERR
-      "Vidalia could not find windres. Please make sure MinGW is installed."
+      "Vidalia could not find windres. Please make sure MinGW is installed and its bin directory is in your PATH environment variable."
     )
   endif(NOT MINGW_WINDRES_EXECUTABLE)
 endif(MINGW)
