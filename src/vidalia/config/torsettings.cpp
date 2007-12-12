@@ -141,7 +141,10 @@ TorSettings::setDataDirectory(const QString &dataDirectory)
 QString
 TorSettings::getExecutable() const
 {
-  return QDir::convertSeparators(localValue(SETTING_TOR_EXECUTABLE).toString());
+  QString tor = localValue(SETTING_TOR_EXECUTABLE).toString();
+  if (tor.isEmpty()) /* Don't let the Tor executable name be empty */
+    tor = defaultValue(SETTING_TOR_EXECUTABLE).toString();
+  return QDir::convertSeparators(tor);
 }
 
 /** Sets the location and name of Tor's executable to the given string. */
