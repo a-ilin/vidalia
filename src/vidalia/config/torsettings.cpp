@@ -97,6 +97,7 @@ bool
 TorSettings::apply(QString *errmsg)
 {
   QHash<QString, QString> conf;
+  QString hashedPassword;
 
   conf.insert(SETTING_CONTROL_PORT,
               localValue(SETTING_CONTROL_PORT).toString());
@@ -109,11 +110,16 @@ TorSettings::apply(QString *errmsg)
       conf.insert(TOR_ARG_HASHED_PASSWORD, "");
       break;
     case PasswordAuth:
+      hashedPassword = useRandomPassword() 
+                          ? hashPassword(randomPassword())
+                          : hashPassword(getControlPassword());
+      if (hashedPassword.isEmpty()) {
+        if (errmsg)
+          *errmsg =  tr("Failed to hash the control password.");
+        return false;
+      }
       conf.insert(TOR_ARG_COOKIE_AUTH,    "0");
-      conf.insert(TOR_ARG_HASHED_PASSWORD,
-        useRandomPassword() 
-            ? hashPassword(randomPassword())
-            : hashPassword(getControlPassword()));
+      conf.insert(TOR_ARG_HASHED_PASSWORD, hashedPassword);
       break;
     default:
       conf.insert(TOR_ARG_COOKIE_AUTH,    "0");
