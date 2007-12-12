@@ -1,7 +1,7 @@
 /****************************************************************
  *  Vidalia is distributed under the following license:
  *
- *  Copyright (C) 2006,  Matt Edman, Justin Hipple
+ *  Copyright (C) 2006-2007,  Matt Edman, Justin Hipple
  *
  *  This program is free software; you can redistribute it and/or
  *  modify it under the terms of the GNU General Public License
@@ -81,8 +81,12 @@ GeneralPage::browseTorPath()
 bool
 GeneralPage::save(QString &errmsg)
 {
-  Q_UNUSED(errmsg);
-  _torSettings->setExecutable(ui.lineTorExecutable->text());
+  QString torExecutable = ui.lineTorExecutable->text();
+  if (torExecutable.isEmpty()) {
+    errmsg = tr("You must specify the name of your Tor executable.");
+    return false;
+  }
+  _torSettings->setExecutable(torExecutable);
   _vidaliaSettings->setRunTorAtStart(ui.chkRunTor->isChecked());
   _vidaliaSettings->setRunVidaliaOnBoot(ui.chkRunWithSys->isChecked());
   return true;
