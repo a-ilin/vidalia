@@ -102,16 +102,17 @@ RouterListItem::update(const RouterDescriptor &rd)
 
 /** Sets the location information for this item's router descriptor. */
 void
-RouterListItem::setLocation(const QString &city, const QString &country)
+RouterListItem::setLocation(const GeoIp &geoip)
 {
-  QPixmap flag(":/images/flags/" + country.toLower() + ".png");
+  QPixmap flag(":/images/flags/" + geoip.country().toLower() + ".png");
   if (!flag.isNull()) {
     setIcon(COUNTRY_COLUMN, QIcon(flag));
   }
-  setToolTip(COUNTRY_COLUMN, city + "," + country);
+  setToolTip(COUNTRY_COLUMN, geoip.toLocation());
   
   if (_rd)
-    _rd->setLocation(city + "," + country);
+    _rd->setLocation(geoip.toLocation());
+  _country = geoip.country();
 }
 
 /** Overload the comparison operator. */

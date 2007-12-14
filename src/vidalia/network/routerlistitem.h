@@ -33,6 +33,7 @@
 #include <QString>
 #include <routerdescriptor.h>
 
+#include "geoip.h"
 #include "routerlistwidget.h"
 
 class RouterListWidget;
@@ -57,7 +58,7 @@ public:
   /** Returns the descriptor for this router. */
   RouterDescriptor descriptor() const { return *_rd; }
   /** Sets the location information for this router item. */
-  void setLocation(const QString &city, const QString& country);
+  void setLocation(const GeoIp &geoip);
 
   /** Overload the comparison operator. */
   virtual bool operator<(const QTreeWidgetItem &other) const;
