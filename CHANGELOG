@@ -1,6 +1,33 @@
 0.1.0   xx-xxx-200x
+  o Migrated to CMake as our build system, instead of the previous mix of
+    autoconf and qmake. See the updated INSTALL file for more information.
+  o Don't try to 'SETCONF HashedControlPassword' if we couldn't hash the
+    control password, otherwise we could end up disabling authentication.
+    (Ticket #305)
+  o If Vidalia is built against Qt >= 4.3 with SSL support, then do our GeoIP
+    lookups over an SSL connection.
+  o Add support for Tor's STATUS_GENERAL, STATUS_CLIENT, and STATUS_SERVER
+    status events.
+  o Listen for the DANGEROUS_VERSION general status event and warn the user
+    if their version of Tor is no longer recommended.
+  o Listen for the CIRCUIT_ESTABLISHED client status event and only turn the
+    yellow onion status icon green after Tor has successfully established a
+    circuit.
+  o If the user's vidalia.conf contains an empty value for their Tor
+    executable, use the default for the user's platform.
+  o If the user is running a bridge relay with Tor 0.2.0.13-alpha or newer,
+    then set 'BridgeRelay 1' when configuring their bridge.
+  o Don't save a randomly generated control password to Vidalia's
+    configuration file. If Vidalia gets disconnected from Tor or crashes, we
+    will no longer be able to reconnect.
+  o Don't let users save an empty string for a Tor executable in the Settings
+    dialog.
+  o Add a 'BrowserExecutable' configuration option to launch a Web browser
+    when Tor has built a circuit, and exit Vidalia when the browser is closed.
+    Patch from Steven J. Murdoch <http://www.cl.cam.ac.uk/users/sjm217/>.
   o Respond to the Delete key in the network map by closing whatever circuits
     or streams are currently selected. Suggested by Andrew Lewman.
+  o Updated Finnish and Russian translations.
 
 
 0.0.16  22-Nov-2007
