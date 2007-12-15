@@ -23,7 +23,7 @@
 
 
 ## Vidalia translation files
-qt4_add_translations(vidalia_QMS
+set(vidalia_TS
   vidalia_ar.ts
   vidalia_bg.ts
   vidalia_cs.ts
@@ -44,5 +44,19 @@ qt4_add_translations(vidalia_QMS
   vidalia_zh-cn.ts
   vidalia_zh-tw.ts
 )
+qt4_add_translations(vidalia_QMS ${vidalia_TS})
+
+## Gather a list of all the files that might contain translated strings
+FILE(GLOB_RECURSE translate_SRCS ${Vidalia_SOURCE_DIR}/src/*.cpp)
+FILE(GLOB_RECURSE translate_HDRS ${Vidalia_SOURCE_DIR}/src/*.h)
+FILE(GLOB_RECURSE translate_UIS  ${Vidalia_SOURCE_DIR}/src/*.ui)
+set(translate_SRCS ${translate_SRCS} ${translate_HDRS} ${translate_UIS})
+
+## Create a target that runs lupdate for all the source and UI files
+add_custom_target(lupdate 
+  COMMAND ${QT_LUPDATE_EXECUTABLE} -noobsolete ${translate_SRCS} -ts ${vidalia_TS}
+)
+
+## Create a target that runs lrelease for all the .ts files
 add_custom_target(translations ALL DEPENDS ${vidalia_QMS})
 

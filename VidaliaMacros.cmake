@@ -33,6 +33,17 @@ if (NOT QT_LRELEASE_EXECUTABLE)
 endif(NOT QT_LRELEASE_EXECUTABLE)
 
 
+## Search for lupdate
+find_program(QT_LUPDATE_EXECUTABLE NAMES lupdate-qt4 lupdate
+  PATHS ${QT_BINARY_DIR} NO_DEFAULT_PATH
+)
+if (NOT QT_LUPDATE_EXECUTABLE)
+  message(FATAL_ERROR
+    "Vidalia could not find lupdate. Please make sure Qt >= 4.1 is installed."
+  )
+endif(NOT QT_LUPDATE_EXECUTABLE)
+
+
 ## We need windres.exe when building on MinGW to compile the .rc file
 if (MINGW)
   find_program(MINGW_WINDRES_EXECUTABLE  NAMES windres.exe ${QT_BINARY_DIR})
