@@ -60,7 +60,7 @@ public:
   };
 
   /** Default constructor. */
-  TrayIcon(QObject *parent = 0);
+  TrayIcon(QWidget *parent = 0);
 
   /** Show the tray icon. */
   void show();

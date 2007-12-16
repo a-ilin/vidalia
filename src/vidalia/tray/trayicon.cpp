@@ -36,7 +36,7 @@ void qt_mac_set_dock_menu(QMenu *menu);
 
 
 /** Default constructor. */
-TrayIcon::TrayIcon(QObject *parent)
+TrayIcon::TrayIcon(QWidget *parent)
   : TrayIconImpl(parent)
 {
   _contextMenu = 0;
@@ -176,7 +176,7 @@ TrayIcon::showBalloonMessage(const QString &title, const QString &message,
 #else
   Q_UNUSED(title)
   Q_UNUSED(message)
-  Q_UNUSED(icon)
+  Q_UNUSED(balloonIcon)
 #endif
 }
 

@@ -60,7 +60,7 @@ class TrayIconImpl : public QLabel
 
 protected:
   /** Default constructor. */
-  TrayIconImpl(QObject *parent = 0);
+  TrayIconImpl(QWidget *parent = 0);
 
   /** Show the tray icon image. */
   void show();

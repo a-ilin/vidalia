@@ -55,7 +55,7 @@ UINT    WM_TASKBARCREATED;  /**< Message sent when taskbar is created. */
 
 
 /** Default constructor. */
-TrayIconImpl::TrayIconImpl(QObject *parent)
+TrayIconImpl::TrayIconImpl(QWidget *parent)
   : QWidget(parent)
 {
   setObjectName("trayiconimpl");

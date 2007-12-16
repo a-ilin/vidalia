@@ -53,6 +53,13 @@ endif(APPLE)
 set(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES} ${QT_INCLUDES})
 if (NOT APPLE)
   check_include_file_cxx("qsystemtrayicon.h" HAVE_QSYSTEMTRAYICON_H)
+  if (HAVE_QSYSTEMTRAYICON_H)
+    option(WITH_QSYSTEMTRAYICON "Use Qt's tray icon implementation." ON)
+    if (NOT WITH_QSYSTEMTRAYICON)
+      ## Disable the use of QSystemTrayIcon
+      set(HAVE_QSYSTEMTRAYICON_H "")
+    endif(NOT WITH_QSYSTEMTRAYICON)
+  endif(HAVE_QSYSTEMTRAYICON_H)
 endif(NOT APPLE)
 
 ## Write out a configuration file
