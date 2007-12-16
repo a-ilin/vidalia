@@ -15,10 +15,6 @@ Things to complete for 0.1.0:
 Features planned for 0.1.x:
   * Our GeoIP cache should recognize IP addresses on the same subnet.
     (Ticket #154)
-  * GeoIP requests should be encrypted so the exit node does not know what is 
-    being requested and cannot muck with the requests or responses.
-  * Roger has added some additional events that Vidalia should respond
-    to, such as "hey, you're a server now!"
   * Scheduled rate-limiting, so the user can adjust their bandwidth
     limits depending on what time of day it is.
   * An interface for letting the user send arbitrary signals to Tor. The phase
@@ -87,18 +83,10 @@ Miscellaneous Tasks:
   * Think about smarter ways to handle the GeoIP lookups. Our servers get
     quite a bit of traffic from GeoIP lookups and it would be nice if we could
     cut this back a bit.
-  * Get some help from the Sasha and the CMU folks with doing a real user study and
-    getting help making our window layouts and text better.
   * Rework src/control/ a bit so it is more modular and can be dropped into
     any other Qt application that wants to talk to Tor.
-  * Add a --disable-qsystrayicon autoconf option to build with our own tray
-    icon implementation with Qt 4.2, instead of using QSystemTrayIcon.
   * The 'Save' button in the config dialog should be grayed out until the user
     actually changes some settings.
-  * We should have a Windows shell script file to build Vidalia, similar to
-    our auto* stuff, except the user doesn't need to install Cygwin, MSYS, or
-    similar. In practice, this really would just run 'qmake' and 'lrelease'
-    for now.
   * We need to come up with a simple set of instructions for Windows users to
     give us helpful information when their Vidalia crashes. The standard Windows
     error messages are not useful, so we need to tell Windows folks how to get
@@ -107,10 +95,6 @@ Miscellaneous Tasks:
   * If we get rid of Privoxy, it would be good to have a set of tray and dock
     icons for Vidalia that show some sort of activity when the user is
     actively using Tor.
-  * To build Vidalia as a qmake-generated XCode project, one needs to set
-    USE_HEADERMAP=0. We should figure out why this is and either fix it, or
-    find a way to make qmake generate an XCode project with this build setting
-    already set.
 
 
 Notes from Roger:
