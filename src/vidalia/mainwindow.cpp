@@ -31,7 +31,6 @@
 
 #include <QtGui>
 #include <QTimer>
-#include <QSysInfo>
 #include <vidalia.h>
 #include <file.h>
 #include <html.h>
@@ -163,7 +162,7 @@ MainWindow::MainWindow()
   connect(vApp, SIGNAL(running()), this, SLOT(running()));
   connect(vApp, SIGNAL(shutdown()), this, SLOT(shutdown()));
  
-  if (isTrayIconSupported()) {
+  if (TrayIcon::isTrayIconSupported()) {
     /* Make the tray icon visible */
     _trayIcon.show();
     /* Check if we are supposed to show our main window on startup */
@@ -188,23 +187,6 @@ MainWindow::~MainWindow()
   delete _bandwidthGraph;
   delete _netViewer;
   delete _configDialog;
-}
-
-/** Returns true if we're running on a platform with tray icon support. */
-bool
-MainWindow::isTrayIconSupported()
-{
-#if defined(Q_WS_WIN) || defined(Q_WS_MAC)
-  /* We always have a tray on Win32 or a dock on OS X */
-  return true;
-#elif defined(USE_QSYSTEMTRAYICON)
-  /* Ask Qt if there is a tray available */
-  return QSystemTrayIcon::isSystemTrayAvailable();  
-#else
-  /* XXX: This is too optimistic, but we need to make our own tray icon
-   * implementation smart enough to detect a system tray on X11. */
-  return true;
-#endif
 }
 
 /** Catches and processes Tor client status events. */
@@ -346,13 +328,7 @@ MainWindow::createTrayIcon()
   createMenuBar();
   /* Create a tray menu and add it to the tray icon */
   _trayIcon.setContextMenu(createTrayMenu());
-
-#if defined(USE_QSYSTEMTRAYICON)
-  connect(&_trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
-                this, SLOT(trayActivated(QSystemTrayIcon::ActivationReason)));
-#else
   connect(&_trayIcon, SIGNAL(doubleClicked()), this, SLOT(show()));
-#endif
 }
 
 /** Creates a QMenu object that contains QActions which compose the system 
@@ -542,11 +518,7 @@ MainWindow::updateTorStatus(TorStatus status)
 
   /* Update the tray icon */
   if (!trayIconFile.isEmpty()) {
-#if defined(USE_QSYSTEMTRAYICON)
-    _trayIcon.setIcon(QIcon(trayIconFile));
-#else
     _trayIcon.setIcon(trayIconFile);
-#endif
   }
   /* Update the status banner on the control panel */
   if (!statusIconFile.isEmpty())
@@ -557,16 +529,6 @@ MainWindow::updateTorStatus(TorStatus status)
   }
   return prevStatus;
 }
-
-#if defined(USE_QSYSTEMTRAYICON)
-/** Displays the main window if <b>reason</b> is DoubleClick. */
-void
-MainWindow::trayActivated(QSystemTrayIcon::ActivationReason reason)
-{
-  if (reason == QSystemTrayIcon::DoubleClick)
-    show();
-}
-#endif
 
 /** Called when the "show on startup" checkbox is toggled. */
 void
@@ -1151,23 +1113,10 @@ MainWindow::newIdentity()
     QTimer::singleShot(MIN_NEWIDENTITY_INTERVAL, 
                        this, SLOT(enableNewIdentity()));
 
-#if defined(USE_QSYSTEMTRAYICON)
-    /* Check if we support balloon messages. We support balloon messages only
-     * if we are built with Qt >= 4.2, but not if we are running on OS X or
-     * a version of Windows <= Windows 2000. */
-# if defined(Q_WS_WIN)
-    if (QSystemTrayIcon::supportsMessages() &&
-        QSysInfo::WindowsVersion > QSysInfo::WV_2000)
-# else
-    if (QSystemTrayIcon::supportsMessages())
-# endif
-      _trayIcon.showMessage(title, message, QSystemTrayIcon::Information);
+    if (TrayIcon::supportsBalloonMessages())
+      _trayIcon.showBalloonMessage(title, message, TrayIcon::Information);
     else
       VMessageBox::information(this, title, message, VMessageBox::Ok);
-#else
-    /* No QSystemTrayIcon. Just show a message box */
-    VMessageBox::information(this, title, message, VMessageBox::Ok);
-#endif
   } else {
     /* NEWNYM signal failed */
     VMessageBox::warning(this, 

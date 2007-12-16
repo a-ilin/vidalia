@@ -31,7 +31,8 @@
 
 
 /** Default constructor */
-TrayIconImpl::TrayIconImpl()
+TrayIconImpl::TrayIconImpl(QObject *parent)
+  : QWidget(parent)
 {
   setObjectName("trayiconimpl");
   _imageRef = 0;

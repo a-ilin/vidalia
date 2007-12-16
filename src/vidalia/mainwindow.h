@@ -31,17 +31,8 @@
 #include <QMainWindow>
 #include <torcontrol.h>
 
-/* QSystemTrayIcon appeared in Qt 4.2, but we need a bugfix to it on Mac 
- * that won't appear until Qt 4.2.2. */
-#if QT_VERSION >= 0x040200 && !defined(Q_WS_MAC)
-#define USE_QSYSTEMTRAYICON  1
-#include <QSystemTrayIcon>
-#else
-#undef USE_QSYSTEMTRAYICON
-#include "tray/trayicon.h"
-#endif
-
 #include "vidaliawindow.h"
+#include "tray/trayicon.h"
 #include "about/aboutdialog.h"
 #include "log/messagelog.h"
 #include "bwgraph/bwgraph.h"
@@ -122,11 +113,6 @@ private slots:
   /** Called web the web browser failed to start */
   void onBrowserFailed(QString errmsg);
   
-#if QT_VERSION >= 0x040200 && !defined(Q_WS_MAC)
-  /** Displays the main window if <b>reason</b> is DoubleClick. */
-  void trayActivated(QSystemTrayIcon::ActivationReason reason);
-#endif
-
 private:
   enum TorStatus {
     Unset,      /**< Tor's status has not yet been set. */
@@ -147,8 +133,6 @@ private:
   QMenu* createTrayMenu();
   /** Creates a default menubar on Mac */
   void createMenuBar();
-  /** Returns true if we're running on a platform with tray icon support. */
-  bool isTrayIconSupported();
   /** Updates the UI to reflect Tor's current <b>status</b>. Returns the
    * previously set TorStatus value. */
   TorStatus updateTorStatus(TorStatus status);
@@ -196,13 +180,8 @@ private:
   /** Remembers the control password between when we start Tor with a hash of
    * the password and when we need to provide the password itself. */
   QString _controlPassword;
-
-#if QT_VERSION >= 0x040200 && !defined(Q_WS_MAC)
-  QSystemTrayIcon _trayIcon; /**< The Vidalia icon that sits in the tray.
-                                  (post-Qt 4.2) */
-#else
-  TrayIcon _trayIcon; /**< The Vidalia icon that sits in the tray. (pre-Qt 4.2) */
-#endif
+  /** The Vidalia icon that sits in the tray. */
+  TrayIcon _trayIcon;
  
   /** Defines the actions for the tray menu */
   QAction* _controlPanelAct;

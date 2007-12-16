@@ -149,22 +149,28 @@ qt4_wrap_cpp(vidalia_SRCS
   network/zimageview.h
 )
 
-## Custom tray icon implementation sources
-## XXX: We should exclude these if QSystemTrayIcon is available
+## Choose the correct tray icon implementation for the current platform
 set(vidalia_SRCS ${vidalia_SRCS} tray/trayicon.cpp)
 qt4_wrap_cpp(vidalia_SRCS tray/trayicon.h)
-if(WIN32)
-  set(vidalia_SRCS ${vidalia_SRCS} tray/trayicon_win.cpp)
-  qt4_wrap_cpp(vidalia_SRCS tray/trayicon_win.h)
-else(WIN32)
-  if(APPLE)
-    set(vidalia_SRCS ${vidalia_SRCS} tray/trayicon_mac.cpp)
-    qt4_wrap_cpp(vidalia_SRCS tray/trayicon_mac.h)
-  else(APPLE)
-    set(vidalia_SRCS ${vidalia_SRCS} tray/trayicon_x11.cpp)
-    qt4_wrap_cpp(vidalia_SRCS tray/trayicon_x11.h)
-  endif(APPLE)
-endif(WIN32)
+if(HAVE_QSYSTEMTRAYICON_H AND NOT APPLE)
+  ## Use Qt's QSystemTrayIcon implementation
+  set(vidalia_SRCS ${vidalia_SRCS} tray/trayicon_qt.cpp)
+  qt4_wrap_cpp(vidalia_SRCS tray/trayicon_qt.h)
+else(HAVE_QSYSTEMTRAYICON_H AND NOT APPLE)
+  ## Use our custom tray icon implementation
+  if(WIN32)
+    set(vidalia_SRCS ${vidalia_SRCS} tray/trayicon_win.cpp)
+    qt4_wrap_cpp(vidalia_SRCS tray/trayicon_win.h)
+  else(WIN32)
+    if(APPLE)
+      set(vidalia_SRCS ${vidalia_SRCS} tray/trayicon_mac.cpp)
+      qt4_wrap_cpp(vidalia_SRCS tray/trayicon_mac.h)
+    else(APPLE)
+      set(vidalia_SRCS ${vidalia_SRCS} tray/trayicon_x11.cpp)
+      qt4_wrap_cpp(vidalia_SRCS tray/trayicon_x11.h)
+    endif(APPLE)
+  endif(WIN32)
+endif(HAVE_QSYSTEMTRAYICON_H AND NOT APPLE)
 
 ## Main Vidalia sources
 set(vidalia_SRCS ${vidalia_SRCS}

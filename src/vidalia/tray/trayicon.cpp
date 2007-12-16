@@ -25,6 +25,7 @@
  * \brief Places an icon with context menu in the system notification area
  */
 
+#include <QSysInfo>
 #include "trayicon.h"
 
 #if defined(Q_WS_MAC)
@@ -35,7 +36,8 @@ void qt_mac_set_dock_menu(QMenu *menu);
 
 
 /** Default constructor. */
-TrayIcon::TrayIcon()
+TrayIcon::TrayIcon(QObject *parent)
+  : TrayIconImpl(parent)
 {
   _contextMenu = 0;
 }
@@ -69,7 +71,7 @@ TrayIcon::event(QEvent *event)
 void
 TrayIcon::mouseButtonPress(QMouseEvent *event)
 {
-#if defined(Q_WS_X11)
+#if defined(Q_WS_X11) && !defined(HAVE_QSYSTEMTRAYICON_H)
   if (_contextMenu) {
     _contextMenu->popup(event->globalPos());
   }
@@ -150,8 +152,66 @@ TrayIcon::setContextMenu(QMenu *menu)
 {
 #if defined(Q_WS_MAC)
   qt_mac_set_dock_menu(menu);
+#elif defined(HAVE_QSYSTEMTRAYICON_H)
+  TrayIconImpl::setContextMenu(menu);
 #else
   _contextMenu = menu;
+#endif
+}
+
+/** Displays a balloon message next to the tray icon. */
+void
+TrayIcon::showBalloonMessage(const QString &title, const QString &message,
+                             BalloonMessageIcon balloonIcon)
+{
+#if defined(HAVE_QSYSTEMTRAYICON_H)
+  QSystemTrayIcon::MessageIcon icon;
+  switch (balloonIcon) {
+    NoIcon:   icon = QSystemTrayIcon::NoIcon; break;
+    Warning:  icon = QSystemTrayIcon::Warning; break;
+    Critical: icon = QSystemTrayIcon::Critical; break;
+    default:  icon = QSystemTrayIcon::Information; break;
+  }
+  TrayIconImpl::showMessage(title, message, icon);
+#else
+  Q_UNUSED(title)
+  Q_UNUSED(message)
+  Q_UNUSED(icon)
+#endif
+}
+
+/** Returns true if the current platform and tray icon implementation supports
+ * tray icons. */
+bool
+TrayIcon::isTrayIconSupported()
+{
+#if defined(Q_WS_WIN) || defined(Q_WS_MAC)
+  /* We always have a tray on Win32 or a dock on OS X */
+  return true;
+#elif defined(HAVE_QSYSTEMTRAYICON_H)
+  /* Ask Qt if there is a tray available */
+  return QSystemTrayIcon::isSystemTrayAvailable();
+#else
+  /* XXX:This is too optimistic, but we need to make our own tray icon
+   * implementation smart enough to detect a system tray on X11. */
+  return true;
+#endif
+}
+
+/** Returns true if the current platform and tray icon implementation supports
+ * tray icon balloon messages. */
+bool
+TrayIcon::supportsBalloonMessages()
+{
+#if defined(HAVE_QSYSTEMTRAYICON_H)
+#if defined(Q_WS_WIN)
+  return (QSystemTrayIcon::supportsMessages()
+            && QSysInfo::WindowsVersion > QSysInfo::WV_2000);
+#else
+  return QSystemTrayIcon::supportsMessages();
+#endif
+#else
+  return false;    
 #endif
 }
 

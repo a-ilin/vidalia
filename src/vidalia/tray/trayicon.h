@@ -32,9 +32,12 @@
 #include <QString>
 #include <QMenu>
 #include <QMouseEvent>
+#include "config.h"
 
 /* Include the correct tray icon implementation */
-#if defined(Q_WS_WIN)
+#if defined(HAVE_QSYSTEMTRAYICON_H)
+#include "trayicon_qt.h"
+#elif defined(Q_WS_WIN)
 #include "trayicon_win.h"
 #elif defined(Q_WS_X11)
 #include "trayicon_x11.h"
@@ -48,8 +51,16 @@ class TrayIcon : public TrayIconImpl
   Q_OBJECT
 
 public:
+  /** Balloon message status icons. */
+  enum BalloonMessageIcon {
+    NoIcon = 0,
+    Information,
+    Warning,
+    Critical
+  };
+
   /** Default constructor. */
-  TrayIcon();
+  TrayIcon(QObject *parent = 0);
 
   /** Show the tray icon. */
   void show();
@@ -63,7 +74,17 @@ public:
   void setIcon(const QString &iconFile);
   /** Sets the context menu displayed when the tray icon is selected. */
   void setContextMenu(QMenu *contextMenu);
-  
+  /** Displays a balloon message next to the tray icon. */
+  void showBalloonMessage(const QString &title, const QString &message,
+                          BalloonMessageIcon icon);
+
+  /** Returns true if the current platform and tray icon implementation
+   * supports tray icons. */
+  static bool isTrayIconSupported();
+  /** Returns true if the current platform and tray icon implementation
+   * supports tray icon balloon messages. */
+  static bool supportsBalloonMessages();
+
 signals:
   /** Emitted when the user double-clicks on the tray icon. */
   void doubleClicked();

@@ -40,7 +40,7 @@ class TrayIconImpl : public QWidget
 
 protected:
   /** Default Constructor */
-  TrayIconImpl();
+  TrayIconImpl(QObject *parent = 0);
   /** Destructor */
   ~TrayIconImpl();
 

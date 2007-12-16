@@ -60,7 +60,8 @@
 
 
 /* Default constructor */
-TrayIconImpl::TrayIconImpl()
+TrayIconImpl::TrayIconImpl(QObject *parent)
+  : QLabel(parent)
 {
   setObjectName("trayiconimpl");
   

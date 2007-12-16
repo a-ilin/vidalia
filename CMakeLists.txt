@@ -41,11 +41,25 @@ set(QT_USE_QTNETWORK  true)
 set(QT_USE_QTXML      true)
 include(${QT_USE_FILE})
 include(VidaliaMacros.cmake)
+include(CheckIncludeFileCXX)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 ## Define Vidalia-specific CMake options
 if (APPLE)
   option(OSX_FAT_BINARY "Build Vidalia as a Universal binary." OFF)
 endif(APPLE)
+
+## Check for QSystemTrayIcon
+set(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES} ${QT_INCLUDES})
+if (NOT APPLE)
+  check_include_file_cxx("qsystemtrayicon.h" HAVE_QSYSTEMTRAYICON_H)
+endif(NOT APPLE)
+
+## Write out a configuration file
+configure_file(
+  ${CMAKE_CURRENT_SOURCE_DIR}/config.h.in
+  ${CMAKE_CURRENT_SOURCE_DIR}/config.h
+)
 
 ## Add the actual source directories
 add_subdirectory(src)
