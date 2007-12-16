@@ -39,6 +39,7 @@
 #include <clientstatusevent.h>
 #include <dangerousversionevent.h>
 #include <vmessagebox.h>
+#include "config.h"
 
 #include "mainwindow.h"
 
@@ -65,18 +66,14 @@
 #define ANIM_PROCESS_WORKING  ":/images/32x32/process-working.png"
 
 /* Decide which of our four sets of tray icons to use. */
-#if defined(USE_QSYSTEMTRAYICON)
-/* QSystemTrayIcon is available */
 #if defined(Q_WS_WIN)
+#if defined(HAVE_QSYSTEMTRAYICON_H)
 /* QSystemTrayIcon on Windows wants 16x16 .png files */
 #define IMG_TOR_STOPPED  ":/images/16x16/tor-off.png"
 #define IMG_TOR_RUNNING  ":/images/16x16/tor-on.png"
 #define IMG_TOR_STARTING ":/images/16x16/tor-starting.png"
 #define IMG_TOR_STOPPING ":/images/16x16/tor-stopping.png"
-#endif
 #else
-/* No QSystemTrayIcon support */
-#if defined(Q_WS_WIN)
 /* Use the .ico files */
 #include "res/vidalia_win.rc.h"
 #define IMG_TOR_STOPPED    QString::number(IDI_TOR_OFF)
@@ -84,15 +81,14 @@
 #define IMG_TOR_STARTING   QString::number(IDI_TOR_STARTING)
 #define IMG_TOR_STOPPING   QString::number(IDI_TOR_STOPPING)
 #endif
-#endif
-#if defined(Q_WS_MAC)
+#elif defined(Q_WS_MAC)
 /* On Mac, we always go straight to Carbon to load our dock images 
  * from .icns files */
 #define IMG_TOR_STOPPED    "tor-off"
 #define IMG_TOR_RUNNING    "tor-on"
 #define IMG_TOR_STARTING   "tor-starting"
 #define IMG_TOR_STOPPING   "tor-stopping"
-#elif defined(Q_WS_X11)
+#else
 /* On X11, we just use always the 22x22 .png files */
 #define IMG_TOR_STOPPED    ":/images/22x22/tor-off.png"
 #define IMG_TOR_RUNNING    ":/images/22x22/tor-on.png"
