@@ -48,11 +48,13 @@
 ConfigDialog::ConfigDialog(QWidget* parent)
 : VidaliaWindow("ConfigDialog", parent)
 {
-  QAction *helpAct, *saveAct, *cancelAct;
-
   /* Invoke the Qt Designer generated QObject setup routine */
   ui.setupUi(this);
-  
+ 
+  /* Connect the button box signals to the appropriate slots */
+  connect(ui.buttonBox, SIGNAL(accepted()), this, SLOT(saveChanges()));
+  connect(ui.buttonBox, SIGNAL(rejected()), this, SLOT(close()));
+  connect(ui.buttonBox, SIGNAL(helpRequested()), this, SLOT(help()));
   connect(Vidalia::torControl(), SIGNAL(authenticated()),
                            this, SLOT(applyChanges()));
 
@@ -88,29 +90,17 @@ ConfigDialog::ConfigDialog(QWidget* parent)
   connect(grp, SIGNAL(triggered(QAction *)), 
           ui.stackPages, SLOT(showPage(QAction *)));
   
-  
-  /* Create and bind the Save button */
-  helpAct = new QAction(QIcon(IMAGE_HELP), tr("Help"), ui.toolBar);
+  /* Create and bind the Help button */
+  QAction *helpAct = new QAction(QIcon(IMAGE_HELP), tr("Help"), ui.toolBar);
   addAction(helpAct, SLOT(help()));
-  
-  /* Create and bind the Save button */  
-  saveAct = new QAction(QIcon(IMAGE_SAVE), tr("Save"), ui.toolBar);
-  saveAct->setShortcut(QString("Ctrl+S"));
-  addAction(saveAct, SLOT(saveChanges()));
-  
-  /* Create and bind the Cancel button */
-  cancelAct = new QAction(QIcon(IMAGE_CANCEL), tr("Cancel"), ui.toolBar);
-  addAction(cancelAct, SLOT(close()));
-  
+
   /* Select the first action */
   grp->actions()[0]->setChecked(true);
 
 #if defined(Q_WS_WIN)
   helpAct->setShortcut(QString("F1"));
-  cancelAct->setShortcut(QString("Esc"));
 #else
   helpAct->setShortcut(QString("Ctrl+?"));
-  cancelAct->setShortcut(QString("Ctrl+W"));
 #endif
 }
 
