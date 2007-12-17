@@ -50,7 +50,6 @@ case "$1" in
               sed -e "s/^/$srcdir\/&/" | 
               sed -e "/\/$/d" |
               sed -e "s/\n/ /"`
-  filelist="$srcdir/configure $filelist"
   tar -czf "$tarball" $filelist
   popd -1 1>/dev/null
   ;;
