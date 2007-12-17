@@ -42,7 +42,6 @@ set(QT_USE_QTXML      true)
 include(${QT_USE_FILE})
 include(VidaliaMacros.cmake)
 include(CheckIncludeFileCXX)
-include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 
 ## Define Vidalia-specific CMake options
 if (APPLE)
@@ -74,8 +73,9 @@ endif(HAVE_QSSLSOCKET_H)
 ## Write out a configuration file
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/config.h.in
-  ${CMAKE_CURRENT_SOURCE_DIR}/config.h
+  ${CMAKE_CURRENT_BINARY_DIR}/config.h
 )
+include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 ## Add the actual source directories
 add_subdirectory(src)
