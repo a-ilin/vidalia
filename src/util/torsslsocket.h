@@ -28,9 +28,6 @@
 #ifndef _TORSSLSOCKET_H
 #define _TORSSLSOCKET_H
 
-#include <QtGlobal>
-
-#if QT_VERSION >= 0x040300 && !defined(QT_NO_OPENSSL)
 #include <QSslSocket>
 #include <QHostAddress>
 
@@ -81,6 +78,5 @@ private:
                                 host should be encrypted. */
 };
 
-#endif
 #endif
 

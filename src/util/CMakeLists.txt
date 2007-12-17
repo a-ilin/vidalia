@@ -31,13 +31,15 @@ set(util_SRCS
   process.cpp
   stringutil.cpp
   torsocket.cpp
-  torsslsocket.cpp
   zlibbytearray.cpp
 )
-qt4_wrap_cpp(util_SRCS
-  torsocket.h
-  torsslsocket.h
-)
+qt4_wrap_cpp(util_SRCS torsocket.h)
+
+
+if(USE_QSSLSOCKET)
+  set(util_SRCS ${util_SRCS} torsslsocket.cpp)
+  qt4_wrap_cpp(util_SRCS torsslsocket.h)
+endif(USE_QSSLSOCKET)
 
 if(WIN32)
   set(util_SRCS ${util_SRCS}

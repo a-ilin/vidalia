@@ -62,6 +62,15 @@ if (NOT APPLE)
   endif(HAVE_QSYSTEMTRAYICON_H)
 endif(NOT APPLE)
 
+## Check for QSslSocket
+check_include_file_cxx("qsslsocket.h" HAVE_QSSLSOCKET_H)
+if(HAVE_QSSLSOCKET_H)
+  check_symbol_exists(QT_NO_OPENSSL "QtGlobal" QT_NO_SSL_SUPPORT)
+  if(NOT QT_NO_SSL_SUPPORT)
+    set(USE_QSSLSOCKET 1)
+  endif(NOT QT_NO_SSL_SUPPORT)
+endif(HAVE_QSSLSOCKET_H)
+
 ## Write out a configuration file
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/config.h.in

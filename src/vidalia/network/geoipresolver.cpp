@@ -26,11 +26,11 @@
  */
 
 #include <torsocket.h>
-#include <torsslsocket.h>
 #include "geoipresolver.h"
+#include "config.h"
 
-#if QT_VERSION >= 0x040300 && !defined(QT_NO_OPENSSL)
-#define USE_SSL 1
+#if defined(USE_QSSLSOCKET)
+#include <torsslsocket.h>
 #endif
 
 /** Host for the geo ip information. */ 
@@ -211,7 +211,7 @@ GeoIpResolver::resolve(QList<QHostAddress> ips)
   }
 
   /* Create a socket used to request the geo ip information. */
-#if defined(USE_SSL)
+#if defined(USE_QSSLSOCKET)
   TorSslSocket *socket = new TorSslSocket(_socksAddr, _socksPort);
 #else
   TorSocket *socket = new TorSocket(_socksAddr, _socksPort);
@@ -228,7 +228,7 @@ GeoIpResolver::resolve(QList<QHostAddress> ips)
   _requestList.insert(socket, request);
   
   /* Connect so we can send our request and return the request ID. */
-#if defined(USE_SSL)
+#if defined(USE_QSSLSOCKET)
   if (TorSslSocket::supportsSsl()) {
     QByteArray caCert(":/geoip/cacert_root.crt");
     socket->addCaCertificate(QSslCertificate(caCert));
