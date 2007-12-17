@@ -61,7 +61,10 @@ macro(QT4_ADD_TRANSLATIONS outfiles)
     get_filename_component(it ${it} ABSOLUTE)
     get_filename_component(outfile ${it} NAME_WE)
 
-    set(outfile ${CMAKE_CURRENT_BINARY_DIR}/${outfile}.qm)
+    ## XXX: Ideally we would output the .qm files to CMAKE_CURRENT_BINARY_DIR,
+    ##      but then RCC can't find them when doing out-of-source builds. Is
+    ##      there an easy fix for this?
+    set(outfile ${CMAKE_CURRENT_SOURCE_DIR}/${outfile}.qm)
     add_custom_command(OUTPUT ${outfile}
       COMMAND ${QT_LRELEASE_EXECUTABLE}
       ARGS -compress -silent -nounfinished ${it} -qm ${outfile}
