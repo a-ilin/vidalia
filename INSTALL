@@ -5,7 +5,7 @@
 Before building and running Vidalia, you will need to have the following
 packages installed:
 
-  * Qt >= 4.1           http://trolltech.com/downloads/opensource
+  * Qt >= 4.2           http://trolltech.com/downloads/opensource
   * Tor >= 0.1.2.18     https://www.torproject.org/download.html
   * CMake >= 2.4.0      http://www.cmake.org/HTML/Download.html
 

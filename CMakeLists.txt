@@ -31,8 +31,8 @@ set(VERSION     "${VER_MAJOR}.${VER_MINOR}.${VER_PATCH}-svn")
 ## Specify the minimim required CMake version
 cmake_minimum_required(VERSION 2.4.0)
 
-## Require Qt >= 4.1.0
-set(QT_MIN_VERSION    "4.1.0")
+## Require Qt >= 4.2.0
+set(QT_MIN_VERSION    "4.2.0")
 
 ## Specify the Qt libraries used
 include(FindQt4)
@@ -42,6 +42,7 @@ set(QT_USE_QTXML      true)
 include(${QT_USE_FILE})
 include(VidaliaMacros.cmake)
 include(CheckIncludeFileCXX)
+include(CPack)
 
 ## Define Vidalia-specific CMake options
 if (APPLE)
