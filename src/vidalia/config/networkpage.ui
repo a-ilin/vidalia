@@ -282,19 +282,44 @@
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="lblAddBridge" >
-        <property name="sizePolicy" >
-         <sizepolicy>
-          <hsizetype>7</hsizetype>
-          <vsizetype>5</vsizetype>
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
+       <layout class="QHBoxLayout" >
+        <property name="margin" >
+         <number>0</number>
         </property>
-        <property name="text" >
-         <string>Add a Bridge:</string>
+        <property name="spacing" >
+         <number>6</number>
         </property>
-       </widget>
+        <item>
+         <widget class="QLabel" name="lblAddBridge" >
+          <property name="text" >
+           <string>Add a Bridge:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer>
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" >
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QLabel" name="lblHelpFindBridges" >
+          <property name="cursor" >
+           <cursor>13</cursor>
+          </property>
+          <property name="text" >
+           <string>&lt;a href="bridges.finding">How do I find a bridge?&lt;/a></string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
       <item>
        <layout class="QHBoxLayout" >

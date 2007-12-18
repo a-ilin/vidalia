@@ -49,6 +49,10 @@
     <Topic id="bandwidth" name="Bandwidth Limits" html="server.html" section="bandwidth"/>
     <Topic id="exitpolicy" name="Exit Policies" html="server.html" section="exitpolicy"/>
   </Topic>
+  <Topic id="bridges" name="Bridge Relays" html="bridges.html">
+    <Topic id="about" name="What are bridge relays?" html="bridges.html" section="about"/>
+    <Topic id="finding" name="How do I find a bridge relay?" html="bridges.html" section="finding"/>
+  </Topic>
   <Topic id="troubleshooting" name="Troubleshooting" html="troubleshooting.html">
     <Topic id="start" name="I Can't Start Tor" html="troubleshooting.html" section="start"/>
     <Topic id="connect" name="Vidalia Can't Connect to Tor" html="troubleshooting.html" section="connect"/>

@@ -79,6 +79,9 @@ private slots:
    * settings (if they were previously disabled) and hide the warning message
    * indicating the user's Tor does not support bridges. */
   void onDisconnected();
+  /** Called when a link in a label is clicked. <b>url</b> is the target of
+   * the clicked link.*/
+  void onLinkActivated(const QString &url);
 
 private:
   /** Verifies that <b>bridge</b> is a valid bridge identifier and places a 

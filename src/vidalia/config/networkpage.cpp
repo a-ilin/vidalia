@@ -60,7 +60,9 @@ NetworkPage::NetworkPage(QWidget *parent)
           this, SLOT(onAuthenticated()));
   connect(Vidalia::torControl(), SIGNAL(disconnected()),
           this, SLOT(onDisconnected()));
-  
+  connect(ui.lblHelpFindBridges, SIGNAL(linkActivated(QString)),
+          this, SLOT(onLinkActivated(QString)));
+          
   ui.lblNoBridgeSupport->setVisible(false);
   ui.lineHttpProxyAddress->setValidator(new DomainValidator(this));
   ui.lineHttpProxyPort->setValidator(new QIntValidator(1, 65535, this));
@@ -125,6 +127,14 @@ NetworkPage::onDisconnected()
 {
   ui.grpBridgeSettings->setEnabled(true);
   ui.lblNoBridgeSupport->setVisible(false);
+}
+
+/** Called when a link in a label is clicked. <b>url</b> is the target of
+ * the clicked link. */
+void
+NetworkPage::onLinkActivated(const QString &url)
+{
+  emit helpRequested(url);
 }
 
 /** Verifies that <b>bridge</b> is a valid bridge identifier and places a 
