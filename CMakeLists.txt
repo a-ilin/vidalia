@@ -67,7 +67,7 @@ check_include_file_cxx("qsslsocket.h" HAVE_QSSLSOCKET_H)
 if(HAVE_QSSLSOCKET_H)
   check_symbol_exists(QT_NO_OPENSSL "QtGlobal" QT_NO_SSL_SUPPORT)
   if(NOT QT_NO_SSL_SUPPORT)
-    set(USE_QSSLSOCKET 1)
+    option(USE_QSSLSOCKET "Use Qt's QSslSocket for GeoIP lookups." ON)
   endif(NOT QT_NO_SSL_SUPPORT)
 endif(HAVE_QSSLSOCKET_H)
 
