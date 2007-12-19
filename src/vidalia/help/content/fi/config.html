@@ -55,6 +55,82 @@ Yleiset-asetukset -sivun asetukset ovat yleisimmin muutettuja asetuksia.
 </i>
 </p>
 
+<a name="network"/>
+<h3>Network Settings</h3>
+<p>
+The <i>Network</i> settings page lets you change how Tor connects to the Tor
+network.
+</p>
+<ul>
+  <li><b>I use a proxy to access the Internet</b>:
+    If your Internet connection requires an HTTP proxy, you can configure Tor
+    to send all of its directory requests and Tor relay connections through
+    your proxy. You must specify at least the hostname or address of your
+    proxy, and the port on which your proxy is listening for connections. If
+    your proxy requires authentication, you can also enter the
+    <i>Username</i> and <i>Password</i> you use to connect to your proxy.
+    Otherwise, you can leave those fields blank.
+  </li>
+  <li><b>My firewall only lets me connect to certain ports</b>:
+    If you are behind a restrictive firewall or proxy that limits the ports you
+    are able to connect to, you can configure Tor to connect directly only to
+    relays listening on the ports allowed by your firewall or proxy. Simply
+    enter a list of ports permitted by your firewall or proxy, separated by
+    commas. (<i>Example: 80,443,8080</i>)
+  </li>
+  <li><b>My ISP blocks connections to the Tor network</b>:
+    If your ISP (Internet Service Provider) blocks connections to the Tor
+    network, Tor can attempt to avoid being filtered by encrypting its
+    directory connections and connecting to the Tor network through relays
+    called <i>bridges</i> (Tor 0.2.0.3-alpha or newer only). You can add
+    bridge relays by specifying either their address and port number, or
+    their address, port number, and fingerprint.<br>
+
+    Below are examples of valid bridge address formats:
+    <ul>
+      <li>
+        128.213.48.13:8080
+      </li>
+      <li>
+        128.213.48.13:8080 1054 13B1 DBDA F867 B226 74D2 52DF 3D9F A367 1F73
+      </li>
+      <li>
+        128.213.48.13:8080 105413B1DBDAF867B22674D252DF3D9FA3671F73
+      </li>
+    </ul>
+    Even if you do not know any bridge relay addresses, checking this checkbox
+    may still be helpful. Tor will encrypt its directory requests, which can
+    defeat blocking mechanisms that try to filter Tor's requests for
+    information about other relays. If connections to normal Tor relays are
+    also blocked, then you will need to learn a bridge relay address somehow
+    and add it here. See the help topic on <a href="bridges.html#finding">finding
+    bridge relays</a> for more information on how to learn new bridge relay
+    addresses and fingerprints.
+  </li>
+</ul>
+
+<a name="appearance"/>
+<h3>Appearance Settings</h3>
+<p>
+The settings on the <i>Appearance</i> page allow you to customize the
+look and feel of Vidalia.
+</p>
+<ul>
+  <li><b>Language</b>:
+    Vidalia's interface has been translated into many languages by helpful
+    volunteers. When Vidalia is first run, it will try to guess which language
+    your computer is currently using. If Vidalia guesses incorrectly, or if
+    you prefer a different language, you can choose another language from the
+    dropdown box. You will need to restart Vidalia after changing the
+    displayed language for the changes to take effect.
+  </li>
+  <li><b>Style</b>:
+    In most cases, Vidalia will default to using your platform's default
+    interface style. If you dislike the default, you can choose whichever
+    interface style you prefer from the dropdown box.
+  </li>
+</ul>
+
 <a name="advanced"/>
 <h3>Lisäasetukset</h3>
 <p>

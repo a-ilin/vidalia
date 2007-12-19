@@ -1,0 +1,72 @@
+<!--
+  $Id: bridges.html 2227 2007-12-18 00:20:52Z edmanm $
+  
+  Vidalia is distributed under the following license:
+
+  Copyright (C) 2007,  Matt Edman, Justin Hipple
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU General Public License
+  as published by the Free Software Foundation; either version 2
+  of the License, or (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  
+  02110-1301, USA.
+-->
+
+<html>
+<body>
+
+<h1>Bridge Relays</h1>
+<hr />
+
+<a name="about"/>
+<h3>What are bridge relays?</h3>
+<p>
+Bridge relays (or <i>bridges</i> for short) are Tor relays that aren't listed
+in the main directory. Since there is no complete public list of them,
+even if your ISP is filtering connections to all the known Tor relays,
+they probably won't be able to block all the bridges.
+</p>
+
+<a name="finding"/>
+<h3>How do I find a bridge relay?</h3>
+<p>
+There are two main ways to learn about a bridge address: 
+<ol>
+  <li>Get some friends to run private bridges for you</li>
+  <li>Use some of the public bridges</li>
+</ol>
+</p>
+
+<p>
+To use private bridges, ask your friends to run Vidalia and Tor in an
+uncensored area of the Internet, and then click on <i>Help censored users</i>
+in Vidalia's <a href="server.html">Relay settings page</a>. Then they should
+privately send you the <i>Bridge address</i> line at the bottom of their
+Relay page.
+</p>
+
+<p>
+You can find public bridge addresses by visiting
+<b>https://bridges.torproject.org</b>.
+The answers you get from that page will change every few days, so check back
+periodically if you need more bridge addresses. Another way to find public
+bridge addresses is to send mail to <b>bridges@torproject.org</b> with the line 
+<b>get bridges</b> by itself in the body of the mail. However, so we can make
+it harder for an attacker to learn lots of bridge addresses, you must send
+this request from a Gmail or Yahoo! account.
+</p>
+
+<p>
+Configuring more than one bridge address will make your Tor connection
+more stable, in case some of the bridges become unreachable.
+</p>
+

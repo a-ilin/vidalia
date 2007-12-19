@@ -47,6 +47,10 @@
     <Topic id="bandwidth" name="Nopeudenrajoittaminen" html="server.html" section="bandwidth"/>
     <Topic id="exitpolicy" name="Poistumiskäytännöt" html="server.html" section="exitpolicy"/>
   </Topic>
+  <Topic id="bridges" name="Bridge Relays" html="bridges.html">
+    <Topic id="about" name="What are bridge relays?" html="bridges.html" section="about"/>
+    <Topic id="finding" name="How do I find a bridge relay?" html="bridges.html" section="finding"/>
+  </Topic>
   <Topic id="troubleshooting" name="Vianetsintä" html="troubleshooting.html">
     <Topic id="start" name="Tor ei käynnisty" html="troubleshooting.html" section="start"/>
     <Topic id="connect" name="Vidalia ei yhdistä Tor-ohjelmaan" html="troubleshooting.html" section="connect"/>
