@@ -57,19 +57,13 @@ Windows with MinGW
 
   2. Configure Vidalia and generate Makefiles by running: 
     
-                               cmake .
+                        cmake -G "MinGW Makefiles" .
     
 
   3. Compile Vidalia by running: 
                           
                             mingw32-make
 
-
-If you have Visual Studio installed, CMake might get confused and choose
-"cl.exe" as the C++ compiler. You force CMake to generate MinGW Makefiles by
-specifying the generator in Step 2:
-
-                        cmake -G "MinGW Makefiles" .
 
 If CMake fails to find your Qt installation, you can explicitly tell CMake
 where to find Qt by running:
@@ -78,7 +72,6 @@ where to find Qt by running:
 
 You would replace "C:\Qt\4.3.2\bin" in the previous command with the actual
 path to your Qt installation's qmake.exe binary.
-
 
 
 Windows with Visual Studio (untested)
