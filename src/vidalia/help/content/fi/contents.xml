@@ -39,7 +39,9 @@
   </Topic>
   <Topic id="config" name="Tor-ohjelman asetukset" html="config.html">
     <Topic id="general" name="Yleiset-asetukset" html="config.html" section="general"/>
+    <Topic id="network" name="Verkkoasetukset" html="config.html" section="network"/>
     <Topic id="server" name="Palvelinasetukset" html="config.html" section="server"/>
+    <Topic id="appearance" name="Ulkoasun asetukset" html="config.html" section="appearance"/>
     <Topic id="advanced" name="Lisäasetukset" html="config.html" section="advanced"/>
   </Topic>
   <Topic id="server" name="Palvelimen käyttö" html="server.html">
