@@ -51,3 +51,7 @@ endif(WIN32)
 add_library(util STATIC ${util_SRCS})
 target_link_libraries(util ${QT_LIBRARIES})
 
+if(USE_QSSLSOCKET)
+  target_link_libraries(util crypto ssl)
+endif(USE_QSSLSOCKET)
+

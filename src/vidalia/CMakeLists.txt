@@ -274,7 +274,11 @@ if (MINGW)
     winspool
   )
 endif(MINGW)
-
+if (APPLE)
+  target_link_libraries(${vidalia_BIN}
+    "-framework AppKit"
+  )
+endif(APPLE)
 ## Specify the files to be installed
 install(TARGETS ${vidalia_BIN} DESTINATION bin)
 
