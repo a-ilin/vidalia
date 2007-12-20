@@ -61,7 +61,7 @@ Yleiset-asetukset -sivun asetukset ovat yleisimmin muutettuja asetuksia.
 <i>Verkko</i>-asetussivulla voi p‰‰tt‰‰ kuinka Tor yhdist‰‰ Tor-verkkoon.
 </p>
 <ul>
-  <li><b>I use a proxy to access the Internet</b>:
+  <li><b>K‰yt‰n v‰lityspalvelinta k‰ytt‰‰kseen Internetti‰</b>:
     If your Internet connection requires an HTTP proxy, you can configure Tor
     to send all of its directory requests and Tor relay connections through
     your proxy. You must specify at least the hostname or address of your
@@ -70,14 +70,14 @@ Yleiset-asetukset -sivun asetukset ovat yleisimmin muutettuja asetuksia.
     <i>Username</i> and <i>Password</i> you use to connect to your proxy.
     Otherwise, you can leave those fields blank.
   </li>
-  <li><b>My firewall only lets me connect to certain ports</b>:
+  <li><b>Palomuuri sallii yhteydet vain tiettyihin portteihin</b>:
     If you are behind a restrictive firewall or proxy that limits the ports you
     are able to connect to, you can configure Tor to connect directly only to
     relays listening on the ports allowed by your firewall or proxy. Simply
     enter a list of ports permitted by your firewall or proxy, separated by
     commas. (<i>Example: 80,443,8080</i>)
   </li>
-  <li><b>My ISP blocks connections to the Tor network</b>:
+  <li><b>Operaattori torjuu yhteydet Tor-verkkoon</b>:
     If your ISP (Internet Service Provider) blocks connections to the Tor
     network, Tor can attempt to avoid being filtered by encrypting its
     directory connections and connecting to the Tor network through relays
@@ -115,17 +115,10 @@ Vidalian ulkon‰kˆ‰ voi muuttaa <i>Ulkoasut</i>-sivulla olevilla asetuksilla.
 </p>
 <ul>
   <li><b>Kieli</b>:
-    Vidalia's interface has been translated into many languages by helpful
-    volunteers. When Vidalia is first run, it will try to guess which language
-    your computer is currently using. If Vidalia guesses incorrectly, or if
-    you prefer a different language, you can choose another language from the
-    dropdown box. You will need to restart Vidalia after changing the
-    displayed language for the changes to take effect.
+    Vidalian k‰yttˆliittym‰ on k‰‰nnetty usealle kielelle avuliaiden vapaaehtoisten avulla. Ensimm‰isell‰ Vidalian k‰ynnistys kerralla Vidalia yritt‰‰ arvata mit‰ kielt‰ tietokone k‰ytt‰‰. Jos Vidalia arvaa v‰‰rin tai haluaa muuten valita toisen, niin kielen voi vaihtaa kehyksest‰. Vidalia pit‰‰ k‰ynnist‰‰ kielen vaihdon j‰lkeen, jotta muutokset p‰‰sev‰t voimaan.
   </li>
   <li><b>Tyyli</b>:
-    In most cases, Vidalia will default to using your platform's default
-    interface style. If you dislike the default, you can choose whichever
-    interface style you prefer from the dropdown box.
+    Monissa tapauksissa Vidalia k‰ytt‰‰ alustan oletusulkoasutyyli‰. Tyylin voi vaihtaa valitsemalla kehyksest‰.
   </li>
 </ul>
 
@@ -139,25 +132,25 @@ Vidalian ulkon‰kˆ‰ voi muuttaa <i>Ulkoasut</i>-sivulla olevilla asetuksilla.
     <i>Portti</i>, jolla Vidalia k‰ytt‰‰ Tor-ohjelmaa tai, jolla voi ohjata ja tarkkailla Tor-ohjelmaa toisella tietokoneella.
     T‰t‰ ei tarvitse muuttaa, jos ei ole ristiriitaa oman tietokoneen muun palvelun kanssa.
   </li>
-  <li><b>Control Port Authentication</b>:
+  <li><b>Ohjausporttiin kirjautuminen</b>:
     Control port authentication is used to limit the applications on your
     machine that can connect to and reconfigure your Tor installation. The
     available authentication methods are:
     <ul>  
       <li>
-        <b>None</b> -- No authentication is required. Use of this option is
+        <b>Ei lainkaan</b> -- No authentication is required. Use of this option is
         <b>strongly</b> discouraged. Any application or user on your computer
         can reconfigure your Tor installation.
       </li>
       <li> 
-        <b>Password</b> <i>(Default)</i> -- If this method is selected, you
+        <b>Salasana</b> <i>(Oletus)</i> -- If this method is selected, you
         can specify a password that Tor will require each time a user or
         application connects to Tor's control port. If Vidalia starts Tor for
         you, you can have Vidalia randomly generate a new password each time
         it starts Tor by checking the <i>Randomly Generate</i> checkbox.
       </li>
       <li>
-        <b>Cookie</b> -- If cookie authentication is selected, Tor will
+        <b>Ev‰ste</b> -- If cookie authentication is selected, Tor will
         write a file (or, <i>cookie</i>) containing random bytes to its data 
         directory when it starts. Any user or application that tries to
         connect to Tor's control port must be able to provide the contents of

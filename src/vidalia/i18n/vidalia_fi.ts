@@ -228,7 +228,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="86"/>
         <source>None</source>
-        <translation>Ei mitään</translation>
+        <translation>Ei lainkaan</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="45"/>
@@ -1755,7 +1755,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/config/networkpage.ui" line="238"/>
         <source>My ISP blocks connections to the Tor network</source>
-        <translation>Operaattorini torjuu yhteydet Tor-verkkoon</translation>
+        <translation>Operaattori torjuu yhteydet Tor-verkkoon</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="262"/>
