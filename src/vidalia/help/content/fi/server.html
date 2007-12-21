@@ -24,15 +24,15 @@
 <html>
 <body>
 
-<h1>Palvelimen käyttö</h1>
+<h1>Reitittimen käyttö</h1>
 <hr />
 
-Tor-verkko koostuu vapaaehtoisten jakaamasta yhteyskaistasta Tor-reitittiminä (pienenä palvelimena). Vidalia tarjoaa helpon keinon pystyttää oma reititin.
+Tor-verkko koostuu vapaaehtoisten jakaamasta yhteyskaistasta Tor-reitittiminä (pieninä palvelimina). Vidalia tarjoaa helpon keinon pystyttää oma reititin.
 
 <a name="basic"/>
 <h3>Yleiset-asetukset</h3>
 <p>
-Jos on kiinnostusta auttaa Tor-verkon toimintaa ylläpitämällä omaa reititintä, niin seuraavilla ohjeilla yksinkertaisesti on mahdollista pystyttää oma Tor-reititin:
+Jos on kiinnostusta auttaa Tor-verkon toimintaa ylläpitämällä omaa reititintä, niin seuraavilla ohjeilla on mahdollista yksinkertaisesti pystyttää oma Tor-reititin:
 </p>
 <ol>
   <li>
@@ -49,7 +49,7 @@ Jos on kiinnostusta auttaa Tor-verkon toimintaa ylläpitämällä omaa reititint
   <li>Aseta seuraavat tiedot:
     <ul>
       <li><b>Nimi</b>:
-        Nimi, jolla palvelin voidaan tunnistaa Tor-verkossa. Esimerkiksi "MinunVidaliareititin".
+        Nimi, jolla reititin voidaan tunnistaa Tor-verkossa. Esimerkiksi "MinunVidaliareititin".
       </li>
       <li><b>Yhteystiedot</b>:
         Sähköpostiosoitteesi, jolla voidaan ottaa yhteyttä vakavan Tor-tietoturvapäivityksen tai reititinvian vuoksi. Oman PGP- tai GPG-tunnuksen ja sormenjäljen voi myös sisällyttää.
@@ -58,45 +58,51 @@ Jos on kiinnostusta auttaa Tor-verkon toimintaa ylläpitämällä omaa reititint
         Portti, jolla reititin vastaanottaa liikennettä käyttäjiltä ja muilta Tor-reitittimiltä.
       </li>
       <li><b>Osoite</b>:
-        Aseta osoite, jolla muut Tor-reititin voivat tavoittaa tietokoneesi Internetin kautta. Jos ei omaa julkista IP-osoitetta tiedä, niin painamalla <i>Nouda osoite</i> Vidalia ottaa yhteyden ulkoiseen sivustoon (esim. <i>http://www.vidalia-project.net/iptest/ip.php</i>) selvittääkseen oman julkisen IP-osoitteen.
+        Aseta osoite, jolla muut Tor-reititin voivat tavoittaa tietokoneesi Internetin kautta. Jos ei omaa julkista IP-osoitetta tiedä, niin painamalla <i>Nouda osoite</i> Vidalia ottaa yhteyden ulkoiseen sivustoon (esim. <i>http://www.vidalia-project.net/iptest/ip.php</i>) selvittääkseen koneen julkisen IP-osoitteen.
       </li>
     </ul>
   <li>
     Jos haluat välittää listaa verkossa olevista Tor-reitittimistä, niin rastita ruutu <i>Välitä Tor-reititinlistaa</i>.
-     Jos on yhteys on hidas, niin ei välttämättä ole kannattavaa rastittaa ruutua. Jos haluaa välittää listaa Tor-palvelimista, niin varmista <i>lista-portin</i> olevan eri kuin <i>reititinportti</i>.
+     Jos yhteys on hidas, niin ei välttämättä ole kannattavaa rastittaa ruutua. Jos haluaa välittää listaa Tor-reitittimistä, niin varmista että <i>lista-portti</i> on eri kuin <i>reititinportti</i>.
   </li>
 </ol>
 
 <a name="bandwidth"/>
 <h3>Nopeudenrajoittaminen</h3>
 <p>
-Tor-reitittimen ylläpito kuluttaa paljon yhteyskaistaa, jonka vuoksi Tor sallii käytettävän yhteyskaistanmäärän Tor-reitittimille rajoittamisen. Reititintä voi pitää päällä samalla kun yhteyttä käytetään muihin tarkoituksiin.
+Tor-reitittimen ylläpito kuluttaa paljon yhteyskaistaa, jonka vuoksi Tor sallii käytettävän yhteyskaistamäärän rajoittamisen Tor-reitittimille. Reititintä voi pitää päällä samalla kun yhteyttä käytetään muihin tarkoituksiin.
 </p>
 <p>
-Valikosta kannattaa valita itselleen parhaiten sopivin nopeus. Oman erikoisnopeuden on mahdollista valita valitsemalla muu.</p><h4>Muut nopeudet</h4>
+Valikosta kannattaa valita itselleen parhaiten sopivin nopeus. Oman erikoisnopeuden on mahdollista valita valitsemalla <i>muu</i>.</p>
+<h4>Muut rajoitukset</h4>
 <p>
 The <i>maximum rate</i> is a pool of bytes used to fulfill requests during
 short periods of traffic higher than your specified <i>average rate</i>, but
 still maintains the average over a long period. A low average rate but a high
 maximum rate enforces a long-term average while still allowing more traffic
-during peak times if the average hasn't been reached lately. Jos kerkimääräinennopeus on sama kuin <i>enimmäisnopeus</i> Tor ei ylitä määriteltyä nopeutta. <i>Enimmäisnopeutesi</i> täytyy olla yhtä suuri tai suurempi kuin <i>keskimääräinen nopeus</i>.</p><p><i>Keskimääräinennopeus</i> on suurin pitkäaikainenkeskimääräinen sallittu nopeus (kilotavua sekunnissa). Esimerkiksi kannattavaa on asettaa 2 megabittiä sekunnissa (2048 kt/s) tai 50 kilotavua sekunnissa (tyypillinen laajakaistayhteyden nopeus). Tor tarvitsee vähintään 20 kilotavua sekunnissa toimiakseen palvelimena.
+during peak times if the average hasn't been reached lately. Jos kerkimääräinennopeus on sama kuin <i>enimmäisnopeus</i> Tor ei ylitä määriteltyä nopeutta. <i>Enimmäisnopeutesi</i> täytyy olla yhtä suuri tai suurempi kuin <i>keskimääräinen nopeus</i>.</p>
+<p><i>Keskimääräinennopeus</i> on suurin pitkäaikainenkeskimääräinen sallittu nopeus (kilotavua sekunnissa). Esimerkiksi on kannattavaa asettaa 2 megabittiä sekunnissa (2048 kt/s) tai 50 kilotavua sekunnissa (tyypillinen laajakaistayhteyden nopeus). Tor tarvitsee vähintään 20 kilotavua sekunnissa toimiakseen reitittimenä.
 
 </p>
 <p>
-Tärkeää on huomioida, että Tor laskee liikkuvan tiedon <b>tavuina</b> eikä bitteinä. Myös, Tor rajottaa vain tulevaa liikennettä lähettävän sijasta. Esimerkiksi, jos oma reititin välittää listaa Tor-reititin silloin lähetetään enemmän tietoa kuin vastaanotetaan. Jos tämä rasittaa liikaa yhteyttä, niin kannattaa poistaa rasti <i>Välitä Tor-reititinlistaa</i>.
+Tärkeää on huomioida, että Tor laskee liikkuvan tiedon <b>tavuina</b> eikä bitteinä. Myös, Tor rajottaa vain tulevaa liikennettä lähettävän sijasta. Esimerkiksi, jos oma reititin välittää listaa Tor-reititin silloin lähettää enemmän tietoa kuin vastaanottaa. Jos tämä rasittaa liikaa yhteyttä, niin kannattaa poistaa rasti <i>Välitä Tor-reititinlistaa</i> kohdasta.
 </p>
 
 <a name="exitpolicy"/>
 <h3>Poistumiskäytännöt</h3>
 <p>
-Poistumiskäytännöillä määritellään millaista liikennettä sallitaan poistuvan oman Tor-reitittimen kautta. Tor käyttää oletuksena poistumiskäytäntölistaa, joka rajoittaa erilaisten palvelujen käyttöä kuten sähköpostia, estääkseen spammin tekoa, ja oletus tiedostonjakoportteja estääksen hyväksikäyttämättä Tor-verkkoa. <i>Huomaa:</i> Jos toimii <i>välikätenä</i>, niin ei tarvitse huomioida poistumiskäytäntöjä, sillä siinä tapauksessa liikennettä ei poisteta oman reittimen kautta.
+Poistumiskäytännöillä määritellään millaista liikennettä sallitaan poistuvan oman Tor-reitittimen kautta. Tor käyttää oletuksena poistumiskäytäntölistaa, joka rajoittaa erilaisten palvelujen käyttöä kuten sähköpostia, estääkseen spammin tekoa ja oletus tiedostonjakoportteja estääksen hyväksikäyttämättä Tor-verkkoa.
 </p>
 
 <p>
-Jokainen vaihtoehto ilmaisee tietynlaista palvelua, jota voi sallia Tor-verkon kautta kulkemaan palvelimesi kautta. Jos poistaa rastin jonkin vierestä, Tor ei salli sen kaltaista liikennettä reitittimesi kautta, ja jos on rastitettu <i>Monenlaiset muut palvelut</i>, Tor sallii muunlaisen liikenenteen poistuvan reitittimesi kautta kuin edellä mainitut vaihtoehdot. 
+Jokainen vaihtoehto ilmaisee tietynlaista palvelua, jota voi sallia Tor-verkon kautta kulkemaan palvelimesi kautta. Jos poistaa rastin jonkin vierestä, Tor ei salli sen kaltaista liikennettä reitittimesi kautta ja jos on rastitettu <i>Monenlaiset muut palvelut</i>, Tor sallii muunlaisen liikenteen poistuvan reitittimesi kautta kuin edellä mainitut vaihtoehdot. 
 </p>
 
-<p>Jos ei halua sallia muiden Tor-käytäjien muodostaa yhteyksiä Tor-verkon ulkopuolelle oman reitittimen kautta, niin poista rasti jokaisesta ruudusta. Vaikka rastit on poistettu jokaisesta kohdasta, niin reitittimesi on hyödyllinen Tor-Verkolle. Palvelimesi sallii Tor-käyttäjien myodostaa yhteyksiä Tor-verkkoon ja välittää tietoa Tor-reitittimien välillä.
+<p>Jos ei halua sallia muiden Tor-käytäjien muodostaa yhteyksiä Tor-verkon ulkopuolelle oman reitittimen kautta, niin poista rasti jokaisesta ruudusta. Vaikka rastit on poistettu jokaisesta kohdasta, niin reitittimesi on hyödyllinen Tor-Verkolle. Reitittimesi sallii Tor-käyttäjien myodostaa yhteyksiä Tor-verkkoon ja välittää tietoa Tor-reitittimien välillä.
+</p>
+<p>
+If you chose to run a bridge relay, the <i>Exit Policies</i> tab will be
+grayed out, since bridge relays do not allow exit connections.
 </p>
 
 </html>

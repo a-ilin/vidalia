@@ -28,123 +28,123 @@
 <hr />
 
 <p>
-Verkkokartalla näkee Tor-verkon palvelimet ja mihin yhteyksiä käytetään.
+Verkkokartalla näkee reitittimet Tor-verkossa ja mihin omat yhteydet kulkeutuvat.
 </p>
 
 
 <a name="overview"/>
 <h3>Yleistä</h3>
 <p>
-Kun halutaan kommunikoida tuntemattomasti Tor-verkon kautta (esim. internetsivulle), niin Tor luo yhteyden <i>(engl. circuit)</i> koostuen erillisistä suojatuista yhteyksistä reititinsarjan kautta verkossa. Ohjelman liikenne kulkee datavirtoina <i>(engl. stream)</i> edellä mainitun yhteystyypin mukaisesti. Tehostaakseen toimintaa yksittäinen yhteys voi sisältää monia erillisiä datavirtoja.
+Kun halutaan kommunikoida tuntemattomasti Tor-verkon kautta (esim. internetsivulle), niin Tor luo yhteyden <i>(engl. circuit)</i> koostuen erillisistä suojatuista yhteyksistä reititinsarjan kautta verkossa. Ohjelman liikenne kulkee datavirtoina <i>(engl. stream)</i> edellä mainitun yhteystyypin mukaisesti. Toiminnan tehostuksena yksittäisessä yhteydessä voi olla useaita datavirtoja.
 </p>
 
 <a name="netmap"/>
 <h3>Verkkokartta</h3>
 <p>
-Verkkokartta koostuu maan kartasta ja punaisista pisteistä, joilla ilmaistaan Tor-verkon palvelimien maantieteelliset sijainnit. Palvelimien välille piirretyt vihreät viivat osoittavat oman Tor-ohjelman ja Tor-verkon välisten yhteyksien reitin.
+Verkkokartta koostuu Maan kartasta ja punaisista pisteistä, joilla ilmaistaan Tor-verkon reitittimien maantieteellisetsijainnit. Reitittimien välille piirretyt vihreät viivat näyttävät oman Tor-ohjelman ja Tor-verkon välissä olevien yhteyksien reitin.
 </p>
 <p>
 Karttaa voi skaalata klikkaamalla <b>Suurenna</b>- ja
-<b>Pienennä</b> -nappuloita työkalupalkista. Karttaa voi myös vierittää klikkaamalla sitä ja vetämällä sitä omaan mieluiseen suuntaan.
+<b>Pienennä</b> -nappuloilla työkalupalkista. Karttaa voi myös vierittää klikkaamalla sitä ja vetämällä sitä omaan halumaan suuntaan.
 </p>
 <p>
-Tor-palvelimien maantieteellinen sijainti selvitetään tarkistamalla IP-osoite GeoIP-tietokannasta, jonka on tehnyt MaxMind ja sijaitsee osoitteessa geoip.vidalia-project.net.
+Tor-reitittimien maantieteellinensijainti selvitetään tarkistamalla IP-osoite GeoIP-tietokannasta, jonka on tehnyt MaxMind ja sijaitsee osoitteessa geoip.vidalia-project.net.
 </p>
 <p>
-Keskellä ruutua kartan alla on lista käytössä olevista yhteyksistä, kuten myös ohjelmien datavirta yhteyksissä. Kun verkkokartta latautuu, ruudusta näkee yhteyden geoip.vidalia-project.net -osoitteeseen, joka tapahtuu kun Vidalia tarkistaa Tor-reitittimien maantieteellisen sijaintien tietoja. Tärkeää on huomioida, että pyyntö luodaan käyttämällä Tor-verkkoa, joten omaa sijaintia ei ilmoiteta GeoIP-palvelimelle. Pyyntöjen tulokset tallennetaan kiintolevylle välimuistiin säästäkseen liikaa rasittamasta Vidalian GeoIP-palvelimia.
+Keskellä ruutua kartan alla on lista käytössä olevista yhteyksistä, kuten myös minkä tahansa ohjelmien datavirta niissä yhteyksissä. Kun verkkokartta latautuu, ruudusta näkee yhteyden geoip.vidalia-project.net -osoitteeseen, joka tapahtuu kun Vidalia tarkistaa Tor-reitittimien maantieteellistensijaintien tietoja. Tärkeää on huomioida, että pyyntö luodaan käyttämällä Tor-verkkoa, joten omaa sijaintia ei ilmoiteta GeoIP-palvelimelle. Pyyntöjen tulokset tallennetaan kiintolevylle välimuistiin säästäkseen rasittamasta liikaa Vidalian GeoIP-reitittimiä.
 </p>
 
 
 <a name="serverlist"/>
-<h3>Palvelimien tila</h3>
+<h3>Reitittimien tila</h3>
 <p>
-Vasemmassa reunassa verkkokartassa on lista Tor-verkon palvelimista. Jokaisen palvelimen vieressä on kuvake, joka ilmaisee sen palvelimen tilan.
-Seuraavassa taulukossa ilmaistaan mahdolliset palvelimien tilat:
+Vasemmassa reunassa verkkokartassa on lista Tor-verkon reitittimistä. Jokaisen reitittimen vieressä on kuvake, joka ilmaisee sen tilan.
+Seuraavassa taulukossa on käytössä olevat reitittimien tilat:
 </p>
 <p>
 <table border="1">
 <tr>
   <td><img src="qrc:/images/icons/node-unresponsive.png"/></td>
   <td valign="middle">
-    Palvelin on poispäältä (offline-tilassa) tai ei vastaa.
+    Reititin on poispäältä (offline-tilassa) tai ei vastaa.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-hibernating.png"/></td>
   <td valign="middle">
-    Palvelin on <i>lepotilassa</i> eli se on päällä (online-tilassa), mutta on käyttänyt yhteyttä niin paljon kuin on tietyn ajan kuluessa sallittu.
+    Reititin on <i>lepotilassa</i> eli se on päällä (online-tilassa), mutta on käyttänyt yhteyttä niin paljon kuin operaattori on sallinnut tietyn ajan kuluessa.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-bw-none.png"/></td>
   <td valign="middle">
-    Palvelin on online-tilassa ja sen kautta kulkee vähän liikennettä.
+    Reititin on online-tilassa ja sen kautta kulkee vähän liikennettä.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-bw-low.png"/></td>
   <td valign="middle">
-    Palvelin on online-tilassa ja sen kautta välittyy &gt;= 20 KB/s.
+    Reititin on online-tilassa ja sen kautta välittyy &gt;= 20 KB/s.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-bw-med.png"/></td>
   <td valign="middle">
-    Palvelin on online-tilassa ja sen kautta välittyy &gt;= 60 KB/s.
+    Reititin on online-tilassa ja sen kautta välittyy &gt;= 60 KB/s.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-bw-high.png"/></td>
   <td valign="middle">
-   Palvelin on online-tilassa ja sen kautta välittyy &gt;= 400 KB/s.
+   Reititin on online-tilassa ja sen kautta välittyy &gt;= 400 KB/s.
   </td>
 </tr>
 </table>
 </p>
 <p>
-Kaikki yhteysnopeudet ovat arvioita perustuen vähimmäistietoon verrattuna enimmäisulostuloon tai sisääntuloon yli kymmenen sekunnin aikana päivässä.
+Kaikki yhteysnopeusarvot ovat arvioita vähimmäis yhteysnopeuksista sisään tai ulos yli kymmenen sekunnin aikana kuluneessa päivässä.
 </p>
 
 
 <a name="details"/>
-<h3>Palvelimien tiedot</h3>
-<p>Palvelin-tietoruutussa oikealla kerrotaan lisätietoa 
-<a href="#serverlist">palvelinlistasta</a> valituista palvelimista. Jos on yhteys tai datavirta valittu datavirrat-listasta, niin tässä ruudussa näkyy tietoa kaikista palvelimista joiden kautta liikenne omaan koneen kautta välittyy.
+<h3>Reitittimien tiedot</h3>
+<p>Reititin-tietoruutussa oikealla kerrotaan lisätietoa 
+<a href="#serverlist">reititinlistasta</a> valitusta reitittimestä tai reitittimistä. Jos yhteys tai datavirta on valittu datavirrat-listasta, niin tässä ruudussa näkyy tietoa kaikista reitittimistä joiden kautta oman koneen liikenne välittyy.
 </p>
 <p>
-Tiedot, jotka ovat nähtävissä ruudusta ovat samanlaisia kuten seuraavat (<i>Huomaa</i>: ei kaikki välttämättä ole seuraavaksi mainituista näkyvillä):
+Tiedot, jotka ovat nähtävissä ruudusta ovat samanlaisia kuten seuraavat (<i>Huomaa</i>: ei kaikki seuraavaksi mainituista ole aina välttämättä näkyvillä):
 </p>
 <p>
 <table>
 <tr>
   <td><b>Sijainti</b></td>
-  <td>Tor-palvelimen maantieteellinen sijainti.</td>
+  <td>Tor-reitittimen maantieteellinensijainti.</td>
 </tr>
 <tr>
   <td><b>IP-osoite</b></td>
-  <td>IP-osoite, jolla Tor-palvelin voidaan tavoittaa.</td>
+  <td>IP-osoite, josta Tor-reititin voidaan tavoittaa.</td>
 </tr>
 <tr>
   <td><b>Alusta</b></td>
   <td>
-Tietoa suoritettavasta käyttöjärjestelmästä ja Tor-ohjelmasta Tor-palvelimella.
+Tietoa sen käyttöjärjestelmästä ja Tor-ohjelmasta sillä Tor-reitittimellä.
   </td>
 </tr>
 <tr>
   <td><b>Yhteys</b></td>
   <td>
-    Arvioitu enimmäisnopeus, joka on välittynyt hiljattain palvelimelta listapalvelimien kautta.
+    Arvioitu enimmäisnopeus, joka on välittynyt hiljattain tältä reitittimeltä listareitittimien kautta.
   </td>
 </tr>
 <tr>
   <td><b>Päällä</b></td>
   <td>
-    Aika, kuinka kauan palvelin on ollut päällä ja, josta voi olla apua reitittimen saatavuuden arvioimiseen.
+    Aika, kuinka kauan reititin on ollut päällä ja, josta voi olla apua arvioidakseen reitittimen vakaus.
   </td>
 </tr>
 <tr>
   <td><b>Viimeksi päivitetty</b></td>
-  <td>Ajankohta, jolloin on viimeksi palvelimen tiedot päivitetty.</td>
+  <td>Ajankohta, jolloin viimeksi on reitittimen tiedot päivitetty.</td>
 </tr>
 </table>
 </p>

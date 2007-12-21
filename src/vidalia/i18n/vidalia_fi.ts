@@ -905,7 +905,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../gui/mainwindow.cpp" line="699"/>
         <source>Tor Exited</source>
-        <translation>Tor yllättäen pysähtyi</translation>
+        <translation>Tor pysähtyi yllättäen</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="669"/>
@@ -927,7 +927,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
-        <translation>Vidalia huomasi Tor-ohjelman yllättäen pysähtyneen.
+        <translation>Vidalia huomasi Tor-ohjelman pysähtyneen yllättäen.
 
 Ole hyvä ja tarkista tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen pysähtymistä.</translation>
     </message>

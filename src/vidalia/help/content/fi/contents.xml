@@ -28,24 +28,24 @@
   </Topic>
   <Topic id="log" name="Tapahtumaloki" html="log.html">
     <Topic id="basic" name="Perustietoa" html="log.html" section="basic"/>
-    <Topic id="severities" name="Viestien tärkeys" html="log.html" section="severities"/>
+    <Topic id="severities" name="Tapahtumien tärkeys" html="log.html" section="severities"/>
     <Topic id="logfile" name="Tapahtumien tallennus" html="log.html" section="tofile"/>
   </Topic>
   <Topic id="netview" name="Verkkokartta" html="netview.html">
     <Topic id="overview" name="Yleistä" html="netview.html" section="overview"/>
     <Topic id="netmap" name="Verkkokartta" html="netview.html" section="netmap"/>
-    <Topic id="status" name="Palvelimien tila" html="netview.html" section="status"/>
-    <Topic id="details" name="Palvelimien tiedot" html="netview.html" section="details"/>
+    <Topic id="status" name="Reitittimien tila" html="netview.html" section="status"/>
+    <Topic id="details" name="Reitittimien tiedot" html="netview.html" section="details"/>
   </Topic>
   <Topic id="config" name="Tor-ohjelman asetukset" html="config.html">
     <Topic id="general" name="Yleiset-asetukset" html="config.html" section="general"/>
     <Topic id="network" name="Verkkoasetukset" html="config.html" section="network"/>
-    <Topic id="server" name="Palvelinasetukset" html="config.html" section="server"/>
+    <Topic id="server" name="Reititinasetukset" html="config.html" section="server"/>
     <Topic id="appearance" name="Ulkoasun asetukset" html="config.html" section="appearance"/>
     <Topic id="advanced" name="Lisäasetukset" html="config.html" section="advanced"/>
   </Topic>
-  <Topic id="server" name="Palvelimen käyttö" html="server.html">
-    <Topic id="basic" name="Perusasennus" html="server.html" section="basic"/>
+  <Topic id="server" name="Reitittimen käyttö" html="server.html">
+    <Topic id="basic" name="Yleiset-asetukset" html="server.html" section="basic"/>
     <Topic id="bandwidth" name="Nopeudenrajoittaminen" html="server.html" section="bandwidth"/>
     <Topic id="exitpolicy" name="Poistumiskäytännöt" html="server.html" section="exitpolicy"/>
   </Topic>
@@ -56,7 +56,7 @@
   <Topic id="troubleshooting" name="Vianetsintä" html="troubleshooting.html">
     <Topic id="start" name="Tor ei käynnisty" html="troubleshooting.html" section="start"/>
     <Topic id="connect" name="Vidalia ei yhdistä Tor-ohjelmaan" html="troubleshooting.html" section="connect"/>
-    <Topic id="torexited" name="Tor yllättäen lopetti" html="troubleshooting.html" section="torexited"/>
+    <Topic id="torexited" name="Tor lopetti yllättäen" html="troubleshooting.html" section="torexited"/>
     <Topic id="stop" name="Tor ei pysähdy" html="troubleshooting.html" section="stop"/>
   </Topic>
   <Topic id="links" name="Hyödyllisiä linkkejä" html="links.html"/>
