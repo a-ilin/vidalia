@@ -208,7 +208,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="111"/>
         <source>Randomly Generate</source>
-        <translation>Satunnaisesti luo</translation>
+        <translation>Luo satunnaisesti</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="275"/>
@@ -1665,12 +1665,12 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="187"/>
         <source>Invalid Bridge</source>
-        <translation type="unfinished"></translation>
+        <translation>Virheellinen silta</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="188"/>
         <source>The specified bridge identifier is not valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Määritelty siltahenkilöllisyys on virheellinen.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="235"/>
@@ -1760,27 +1760,27 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/config/networkpage.ui" line="262"/>
         <source>Tor Bridge Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-sillan asetukset</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="274"/>
         <source>The Tor version you are currently running does not support bridges. &lt;br&gt;Tor will still try to encrypt its directory connections.</source>
-        <translation type="unfinished"></translation>
+        <translation>Käytössä oleva Tor-ohjelma ei tue siltoja. &lt;br&gt;Tor yrittää suojata sen kansioyhteyksiä.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="295"/>
         <source>Add a Bridge:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää silta:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="358"/>
         <source>Remove the selected bridges from the list</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista valitut sillat listalta</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="374"/>
         <source>Copy the selected bridges to the clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopioi valitut sillat leikepöydälle</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="176"/>
@@ -2088,12 +2088,12 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="136"/>
         <source>Bridge Support Unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation>Siltatuki ei ole saatavilla</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="139"/>
         <source>You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-ohjelma on säädetty käyttäytymään siltareitittimenä sensuroiduille käyttäjille, mutta käytössä oleva Tor ei tue siltoja.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="141"/>
@@ -2135,7 +2135,7 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../gui/config/serverpage.cpp" line="195"/>
         <source>Your bridge relay is not running.</source>
-        <translation type="unfinished"></translation>
+        <translation>Siltareititin ei ole päällä.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="39"/>
@@ -2155,17 +2155,17 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../gui/config/serverpage.ui" line="940"/>
         <source>Let others access your bridge by giving them this line:</source>
-        <translation type="unfinished"></translation>
+        <translation>Anna muiden käyttää siltaasi antamalla heille tämä rivi:</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="964"/>
         <source>This is the identity of your bridge relay that you can give to other people</source>
-        <translation type="unfinished"></translation>
+        <translation>Tämä on tämän siltareitittimen henkilöllisyys, jonka voi antaa muille käyttäjille</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="986"/>
         <source>Copy your bridge relay&apos;s identity to the clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopioi siltareitittimen henkilöllisyys leikepöydälle</translation>
     </message>
 </context>
 <context>
