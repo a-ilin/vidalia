@@ -476,7 +476,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="71"/>
         <source>Relay</source>
-        <translation>Reititä</translation>
+        <translation>Reititin</translation>
     </message>
 </context>
 <context>
