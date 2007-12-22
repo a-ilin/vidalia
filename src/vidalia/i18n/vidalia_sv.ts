@@ -183,7 +183,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="268"/>
         <source>Select a Directory to Use for Tor Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj en katalog till använda Tor-data</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="48"/>
@@ -213,17 +213,17 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="275"/>
         <source>Tor Data Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-datakatalog</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="296"/>
         <source>Store Tor data in the following directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Till använda Tor-data i katalogen</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="315"/>
         <source>Select the directory used to store Tor data</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj en katalog till använda Tor-data</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="86"/>
@@ -456,12 +456,12 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="168"/>
         <source>Error Saving Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Det gick ej att sparar inställningar</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="170"/>
         <source>Vidalia was unable to save your %1 settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia kunde inte spara din %1 inställningar.</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="197"/>
@@ -580,7 +580,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../gui/config/generalpage.cpp" line="32"/>
         <source>General</source>
-        <translation type="unfinished">Allmänt</translation>
+        <translation>Allmänt</translation>
     </message>
 </context>
 <context>
@@ -1104,7 +1104,7 @@ Meddelandeloggen har information om vad som hände med Tor innan den avslutades.
     <message>
         <location filename="../gui/mainwindow.cpp" line="774"/>
         <source>Cookie Authentication Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Cookiestyrkning krävs</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="777"/>
@@ -1119,12 +1119,12 @@ Meddelandeloggen har information om vad som hände med Tor innan den avslutades.
     <message>
         <location filename="../gui/mainwindow.cpp" line="786"/>
         <source>Tor Data Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-datakatalog</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="788"/>
         <source>Tor Control Cookie (control_auth_cookie)</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-kontrollcookie (control_auth_cookie)</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="830"/>
@@ -1139,7 +1139,7 @@ Meddelandeloggen har information om vad som hände med Tor innan den avslutades.
     <message>
         <location filename="../gui/mainwindow.cpp" line="856"/>
         <source>Password Authentication Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Läsenordstyrking krävs</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="869"/>
@@ -1663,7 +1663,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="187"/>
         <source>Invalid Bridge</source>
-        <translation type="unfinished"></translation>
+        <translation>Ogiltig brygga</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="188"/>
@@ -1688,7 +1688,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="308"/>
         <source>&apos;%1&apos; is not a valid port number.</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%1&apos; är inte en giltig portnummer.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="25"/>
@@ -1743,7 +1743,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../gui/config/networkpage.ui" line="215"/>
         <source>Allowed Ports:</source>
-        <translation type="unfinished"></translation>
+        <translation>Tillåtna portarna:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="225"/>
@@ -1888,7 +1888,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="229"/>
         <source>%1 relays online (%2 total)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 router uppkopplad (%2 summa)</translation>
     </message>
 </context>
 <context>
@@ -2111,7 +2111,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="91"/>
         <source>Relay Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Routerport:</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="139"/>
@@ -2132,7 +2132,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../gui/config/serverpage.cpp" line="195"/>
         <source>Your bridge relay is not running.</source>
-        <translation type="unfinished"></translation>
+        <translation>Din bryggarouter är ej i gång.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="39"/>
@@ -2142,7 +2142,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../gui/config/serverpage.ui" line="272"/>
         <source>Name of your relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Namn av din router</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="305"/>
