@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1">
+<!DOCTYPE TS><TS version="1.1" language="sv">
+<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -187,22 +188,22 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="48"/>
         <source>Authentication:</source>
-        <translation type="unfinished"></translation>
+        <translation>Styrkning:</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="58"/>
         <source>Address:</source>
-        <translation type="unfinished">Adress:</translation>
+        <translation>Adress:</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="91"/>
         <source>Cookie</source>
-        <translation type="unfinished"></translation>
+        <translation>Cookie</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="96"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Lösenord</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="111"/>
@@ -227,12 +228,12 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="86"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Inget</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="45"/>
         <source>Advanced</source>
-        <translation type="unfinished">Avancerat</translation>
+        <translation>Avancerat</translation>
     </message>
 </context>
 <context>
@@ -265,7 +266,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../gui/config/appearancepage.cpp" line="34"/>
         <source>Appearance</source>
-        <translation type="unfinished">Utseende</translation>
+        <translation>Utseende</translation>
     </message>
 </context>
 <context>
@@ -402,7 +403,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="85"/>
         <source>Close Circuit (Del)</source>
-        <translation type="unfinished"></translation>
+        <translation>Avsluta kretsen (Del)</translation>
     </message>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="106"/>
@@ -450,7 +451,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="67"/>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Nätverk</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="168"/>
@@ -475,7 +476,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="71"/>
         <source>Relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Router</translation>
     </message>
 </context>
 <context>
@@ -1008,12 +1009,12 @@ Meddelandeloggen har information om vad som hände med Tor innan den avslutades.
     <message>
         <location filename="../gui/mainwindow.ui" line="190"/>
         <source>Setup Relaying</source>
-        <translation>Skapa Tor-server</translation>
+        <translation>Skapa Tor-router</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="193"/>
         <source>Set up a Tor relay and help the network grow</source>
-        <translation>Skapa en Tor-server och hjälp nätverket växa</translation>
+        <translation>Skapa en Tor-router och hjälp nätverket växa</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="203"/>
@@ -1098,7 +1099,7 @@ Meddelandeloggen har information om vad som hände med Tor innan den avslutades.
     <message>
         <location filename="../gui/mainwindow.cpp" line="474"/>
         <source>Starting Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Starta Tor</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="774"/>
@@ -1644,7 +1645,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../gui/network/netviewer.ui" line="24"/>
         <source>Tor Network Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-nätverkskartan</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="242"/>
@@ -1657,7 +1658,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="45"/>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Nätverk</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="187"/>
@@ -1672,7 +1673,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="235"/>
         <source>Copy (Ctrl+C)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiera (Ctrl+C)</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="266"/>
@@ -1702,32 +1703,32 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../gui/config/networkpage.ui" line="58"/>
         <source>Proxy Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Proxy-inställningar</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="70"/>
         <source>HTTP Proxy:</source>
-        <translation type="unfinished"></translation>
+        <translation>HTTP-Proxy:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="80"/>
         <source>Username:</source>
-        <translation type="unfinished"></translation>
+        <translation>Användarnamn:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="90"/>
         <source>Use this proxy for HTTPS also</source>
-        <translation type="unfinished"></translation>
+        <translation>Använda det här proxy för åckso HTTPS</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="108"/>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lösenord:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="135"/>
         <source>Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Port:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="179"/>
@@ -1737,7 +1738,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../gui/config/networkpage.ui" line="203"/>
         <source>Firewall Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Brandvägg-inställningar</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="215"/>
@@ -1747,7 +1748,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../gui/config/networkpage.ui" line="225"/>
         <source>80, 443</source>
-        <translation type="unfinished">80, 443</translation>
+        <translation>80, 443</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="238"/>
@@ -1757,7 +1758,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../gui/config/networkpage.ui" line="262"/>
         <source>Tor Bridge Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-Bryggainställningar</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="274"/>
@@ -1767,7 +1768,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../gui/config/networkpage.ui" line="295"/>
         <source>Add a Bridge:</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägga till en brygga:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="358"/>
@@ -1877,12 +1878,12 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="44"/>
         <source>Relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Router</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="71"/>
         <source>Zoom to Relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Zooma in på router</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="229"/>
@@ -1895,7 +1896,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../gui/config/serverpage.ui" line="32"/>
         <source>Relay traffic for the Tor network</source>
-        <translation>Vidarebefordra trafik för Tor-nätverket (kör som Tor-server)</translation>
+        <translation>Vidarebefordra trafik för Tor-nätverket (kör som Tor-router)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="169"/>
@@ -2080,7 +2081,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="79"/>
         <source>Server</source>
-        <translation type="unfinished">Server</translation>
+        <translation>Server</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="136"/>
@@ -2288,7 +2289,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../gui/common/vmessagebox.cpp" line="98"/>
         <source>Browse</source>
-        <translation type="unfinished">Bläddra</translation>
+        <translation>Bläddra</translation>
     </message>
 </context>
 <context>
