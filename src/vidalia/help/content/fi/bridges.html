@@ -1,5 +1,5 @@
 <!--
-  $Id: bridges.html 2227 2007-12-18 00:20:52Z edmanm $
+  $Id: bridges.html 2243 2007-12-22 00:03:40Z edmanm $
   
   Vidalia is distributed under the following license:
 
@@ -24,11 +24,11 @@
 <html>
 <body>
 
-<h1>Bridge Relays</h1>
+<h1>Siltareitittimet</h1>
 <hr />
 
 <a name="about"/>
-<h3>What are bridge relays?</h3>
+<h3>Mitä ovat siltareitittimet?</h3>
 <p>
 Bridge relays (or <i>bridges</i> for short) are Tor relays that aren't listed
 in the main directory. Since there is no complete public list of them,
@@ -37,7 +37,7 @@ they probably won't be able to block all the bridges.
 </p>
 
 <a name="finding"/>
-<h3>How do I find a bridge relay?</h3>
+<h3>Miten löydän siltareitittimen?</h3>
 <p>
 There are two main ways to learn about a bridge address: 
 <ol>
@@ -51,7 +51,9 @@ To use private bridges, ask your friends to run Vidalia and Tor in an
 uncensored area of the Internet, and then click on <i>Help censored users</i>
 in Vidalia's <a href="server.html">Relay settings page</a>. Then they should
 privately send you the <i>Bridge address</i> line at the bottom of their
-Relay page.
+Relay page. Unlike running an exit relay, running a bridge relay just passes
+data to and from the Tor network, so it shouldn't expose the operator to any
+abuse complaints.
 </p>
 
 <p>
