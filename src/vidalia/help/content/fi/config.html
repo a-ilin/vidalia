@@ -77,7 +77,7 @@ Yleiset-asetukset -sivun asetukset ovat yleisimmin muutettuja asetuksia.
     bridge relays by specifying either their address and port number, or
     their address, port number, and fingerprint.<br>
 
-    Below are examples of valid bridge address formats:
+    Esimerkkejä sopivista siltojen osoitteiden kirjoitustyyleistä:
     <ul>
       <li>
         128.213.48.13:8080
@@ -133,41 +133,27 @@ Vidalian ulkonäköä voi muuttaa <i>Ulkoasut</i>-sivulla olevilla asetuksilla.
     Tätä ei tarvitse muuttaa, jos ei ole ristiriitaa oman tietokoneen muun palvelun kanssa.
   </li>
   <li><b>Ohjausporttiin kirjautuminen</b>:
-    Control port authentication is used to limit the applications on your
-    machine that can connect to and reconfigure your Tor installation. The
-    available authentication methods are:
+    Ohjausportin kirjautumisella voidaan rajoittaa ohjelmia ottamasta yhteyttä Tor-ohjelmaan ja muuttamasta sen asetuksia. Käytössä olevat kirjautumistavat:
     <ul>  
       <li>
-        <b>Ei lainkaan</b> -- No authentication is required. Use of this option is
-        <b>strongly</b> discouraged. Any application or user on your computer
-        can reconfigure your Tor installation.
+        <b>Ei lainkaan</b> -- Kirjautumista ei tarvita. Tätä valintaa
+        <b>ehdottomasti</b> ei suosita. Mikä tahansa ohjelma tai käyttäjä koneella voi uudelleen määrittää Tor-ohjelman toiminnan.
       </li>
       <li> 
-        <b>Salasana</b> <i>(Oletus)</i> -- If this method is selected, you
-        can specify a password that Tor will require each time a user or
-        application connects to Tor's control port. If Vidalia starts Tor for
-        you, you can have Vidalia randomly generate a new password each time
-        it starts Tor by checking the <i>Randomly Generate</i> checkbox.
+        <b>Salasana</b> <i>(Oletus)</i> -- Jos tämän tavan valitsee, voi määrittää salasanan jonka Tor tarvitsee aina kun käyttäjä tai ohjelma ottaa yhteyttä Tor-ohjelman ohjausporttiin. Jos Vidalia käynnistää Tor-ohjelman, Vidalia voi luoda joka kerta kun se käynnistää Tor-ohjelman uuden salasanan rastittamalla <i>Luo satunnaisesti</i>-ruutu.
       </li>
       <li>
-        <b>Eväste</b> -- If cookie authentication is selected, Tor will
-        write a file (or, <i>cookie</i>) containing random bytes to its data 
-        directory when it starts. Any user or application that tries to
-        connect to Tor's control port must be able to provide the contents of
-        this cookie.
+        <b>Eväste</b> -- jos evästekirjautuminen on valittuna, Tor kirjoittaa tiedoston (toisin sanoen <i>evästeen</i>) sisältäen satunnaisia tavuja tiedot-kansioon käynnistyessä. Jokaisen käyttäjän tai ohjelman joka yrittää yhdistää Tor-ohjelman ohjausporttiin pitää tarjota tämän evästeen sisällön.
       </li>
     </ul>
   </li>
   <li><b>Tor-asetustiedosto</b> <i>(valinnainen)</i>:
    Tällä saa Vidalian käynnistämään Tor-ohjelman jollakin erikseen määrätyllä Tor-asetustiedostolla <i>(torcc-tiedosto)</i>. Jos kentän jättää tyhjäksi Vidalia käyttää Tor-ohjelman oletusasetustiedostoa.
   </li>
-  <li><b>Tor-ohjelman tiedot-kansio</b> <i>(optional)</i>:
-    You can specify the directory in which Tor will store its saved data,
-    such as cached Tor relay information, Tor relay keys, and configuration
-    files. If you leave this field blank, Tor will use its own default data
-    directory location.
+  <li><b>Tor-ohjelman tiedot-kansio</b> <i>(valinnainen)</i>:
+    Kansio, jossa Tor säilyttää tallentamansa tiedon kuten Tor-reititin tietoja, reititin avaimia ja asetustiedostoja voidaan määrittää. Jos tämän kehyksen jättää tyhjäksi, Tor käyttää omaa oletustietojentallennuskansiota.
   </li>
-  <li><b>Oikeudet</b> <i>(Valinnainen, ei ole käytössä Windowssissa):
+  <li><b>Oikeudet</b> <i>(Valinnainen, ei ole käytössä Windowssissa)</i>:
     Tor-ohjelmaa voi käyttää toisella käyttäjätilillä, jos laittaa arvon Suorita käyttäjänä. Silloin Tor suorittaa <i>setuid</i> tällä käyttäjällä käynnistyessään.
 Tor voi myös käynnistyä toisen ryhmän oikeuksien mukaisesti, jos laittaa arvon Suorita ryhmänä. Silloin Tor suorittaa <i>setgid</i> tällä ryhmällä käynnistyessään.
   </li>
