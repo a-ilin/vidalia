@@ -1680,7 +1680,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="266"/>
         <source>You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet.</source>
-        <translation type="unfinished"></translation>
+        <translation>IP-osoite tai isäntä ja portti pitää määrittää, jotta Tor voi yhdistää välityspalvelimen kautta Internettiin.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="272"/>
@@ -1695,7 +1695,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/config/networkpage.ui" line="25"/>
         <source>Check to configure Tor to use a proxy to access the Internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarkista, onko Tor säädetty käyttämään välityspalvelinta yhdistämään Internettiin</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="28"/>
@@ -1785,12 +1785,12 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../gui/config/networkpage.ui" line="176"/>
         <source>Check to configure Tor to only connect to relays using ports allowed by your firewall</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarkista, onko Tor säädetty yhdistämään vain reitittimiin tiettyjen sallittujen porttien kautta palomuurin läpi</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="235"/>
         <source>Check to configure Tor to use bridge relays to access the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarkista, onko Tor säädetty käyttämään siltareitittimiä käyttääkseen Tor-verkkoa</translation>
     </message>
 </context>
 <context>
