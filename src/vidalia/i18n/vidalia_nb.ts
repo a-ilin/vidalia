@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1">
+<!DOCTYPE TS><TS version="1.1" language="nb">
+<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
         <location filename="../gui/about/aboutdialog.ui" line="25"/>
         <source>About Vidalia</source>
-        <translation>Om Vidalia </translation>
+        <translation>Om Vidalia</translation>
     </message>
     <message>
         <location filename="../gui/about/aboutdialog.ui" line="78"/>
@@ -25,7 +26,7 @@
     <message>
         <location filename="../gui/about/aboutdialog.ui" line="166"/>
         <source>Qt Version</source>
-        <translation>Qt Versjon </translation>
+        <translation>Qt Versjon</translation>
     </message>
     <message>
         <location filename="../gui/about/aboutdialog.ui" line="244"/>
@@ -63,7 +64,7 @@
     <message>
         <location filename="../gui/config/advancedpage.ui" line="259"/>
         <source>Select path to Tor configuration file</source>
-        <translation>Filsti til Tor sin konfigurasjonsfil</translation>
+        <translation>Bane til Tors konfigurasjonsfil</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="318"/>
@@ -113,7 +114,7 @@
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="252"/>
         <source>Failed to Create File</source>
-        <translation>Klarte ikke Lage FIl</translation>
+        <translation>Klarte ikke å lage fil</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="253"/>
@@ -177,27 +178,27 @@ Du må kanskje fjerne den manuellt.</translation>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="123"/>
         <source>You selected &apos;Password&apos; authentication, but did not specify a password.</source>
-        <translation>Du valgte &apos;Passord&apos; autorisering, men du spesifiserte ikke ett passord.</translation>
+        <translation>Du valgte &apos;Passord&apos; autentisering, men du spesifiserte ikke ett passord.</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="268"/>
         <source>Select a Directory to Use for Tor Data</source>
-        <translation>Velg mappen som brukes til Tor&apos;s data</translation>
+        <translation>Velg en mappe for lagring av Tors data</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="48"/>
         <source>Authentication:</source>
-        <translation>Autorisering:</translation>
+        <translation>Autentisering:</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="58"/>
         <source>Address:</source>
-        <translation type="unfinished">Adresse:</translation>
+        <translation>Adresse:</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="91"/>
         <source>Cookie</source>
-        <translation>Kake</translation>
+        <translation>Informasjonskapsel</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="96"/>
@@ -217,12 +218,12 @@ Du må kanskje fjerne den manuellt.</translation>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="296"/>
         <source>Store Tor data in the following directory</source>
-        <translation>Lagr Tor&apos;s data i følgende mappe</translation>
+        <translation>Lagr Tors data i følgende mappe</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="315"/>
         <source>Select the directory used to store Tor data</source>
-        <translation>Velg mappe for lagring av Tor&apos;s data</translation>
+        <translation>Velg mappe for lagring av Tors data</translation>
     </message>
     <message>
         <location filename="../gui/config/advancedpage.ui" line="86"/>
@@ -232,7 +233,7 @@ Du må kanskje fjerne den manuellt.</translation>
     <message>
         <location filename="../gui/config/advancedpage.cpp" line="45"/>
         <source>Advanced</source>
-        <translation type="unfinished">Avansert</translation>
+        <translation>Avansert</translation>
     </message>
 </context>
 <context>
@@ -265,7 +266,7 @@ Du må kanskje fjerne den manuellt.</translation>
     <message>
         <location filename="../gui/config/appearancepage.cpp" line="34"/>
         <source>Appearance</source>
-        <translation type="unfinished">Utseende</translation>
+        <translation>Utseende</translation>
     </message>
 </context>
 <context>
@@ -273,7 +274,7 @@ Du må kanskje fjerne den manuellt.</translation>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="16"/>
         <source>Tor Bandwidth Usage</source>
-        <translation>Tors Båndbredde-Bruk</translation>
+        <translation>Tors Båndbreddebruk</translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="40"/>
@@ -303,7 +304,7 @@ Du må kanskje fjerne den manuellt.</translation>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="443"/>
         <source>Save</source>
-        <translation>Lagr</translation>
+        <translation>Lagre</translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="450"/>
@@ -333,7 +334,7 @@ Du må kanskje fjerne den manuellt.</translation>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="183"/>
         <source>Always on Top</source>
-        <translation>Alltid Øverst</translation>
+        <translation>Alltid øverst</translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/bwgraph.ui" line="234"/>
@@ -351,7 +352,7 @@ Du må kanskje fjerne den manuellt.</translation>
     <message>
         <location filename="../control/circuit.cpp" line="110"/>
         <source>Open</source>
-        <translation>Åpen</translation>
+        <translation>åpen</translation>
     </message>
     <message>
         <location filename="../control/circuit.cpp" line="111"/>
@@ -397,17 +398,17 @@ Du må kanskje fjerne den manuellt.</translation>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="83"/>
         <source>Zoom to Circuit</source>
-        <translation>Zoom til Krets</translation>
+        <translation>Skaler til Krets</translation>
     </message>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="85"/>
         <source>Close Circuit (Del)</source>
-        <translation type="unfinished"></translation>
+        <translation>Lukk krets (Del)</translation>
     </message>
     <message>
         <location filename="../gui/network/circuitlistwidget.cpp" line="106"/>
         <source>Close Stream (Del)</source>
-        <translation type="unfinished"></translation>
+        <translation>Lukk strøm (Del)</translation>
     </message>
 </context>
 <context>
@@ -435,7 +436,7 @@ Du må kanskje fjerne den manuellt.</translation>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="93"/>
         <source>Save</source>
-        <translation>Lagr</translation>
+        <translation>Lagre</translation>
     </message>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="89"/>
@@ -475,7 +476,7 @@ Du må kanskje fjerne den manuellt.</translation>
     <message>
         <location filename="../gui/config/configdialog.cpp" line="71"/>
         <source>Relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Relé</translation>
     </message>
 </context>
 <context>
@@ -579,7 +580,7 @@ Du må kanskje fjerne den manuellt.</translation>
     <message>
         <location filename="../gui/config/generalpage.cpp" line="32"/>
         <source>General</source>
-        <translation type="unfinished">Generell</translation>
+        <translation>Generell</translation>
     </message>
 </context>
 <context>
@@ -587,7 +588,7 @@ Du må kanskje fjerne den manuellt.</translation>
     <message>
         <location filename="../gui/bwgraph/graphframe.cpp" line="248"/>
         <source>Recv: </source>
-        <translation>Mottat:</translation>
+        <translation>Mottatt:</translation>
     </message>
     <message>
         <location filename="../gui/bwgraph/graphframe.cpp" line="257"/>
@@ -655,7 +656,7 @@ Du må kanskje fjerne den manuellt.</translation>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="405"/>
         <source>Found Documents</source>
-        <translation>Dokumenter Funnet </translation>
+        <translation>Dokumenter Funnet</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="484"/>
@@ -665,12 +666,12 @@ Du må kanskje fjerne den manuellt.</translation>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="487"/>
         <source>Move to previous page (Backspace)</source>
-        <translation>Gå til forrige side (Rettetast)</translation>
+        <translation>Gå til forrige side (Slettetast)</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="490"/>
         <source>Backspace</source>
-        <translation>Backspace</translation>
+        <translation>Slettetast</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="498"/>
@@ -680,12 +681,12 @@ Du må kanskje fjerne den manuellt.</translation>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="501"/>
         <source>Move to next page (Shift+Backspace)</source>
-        <translation>Gå til neste side (Shift+Backspace)</translation>
+        <translation>Gå til neste side (Shift+Slettetast)</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="504"/>
         <source>Shift+Backspace</source>
-        <translation>operasjon</translation>
+        <translation>Shift+Slettetast</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.ui" line="512"/>
@@ -735,7 +736,7 @@ Du må kanskje fjerne den manuellt.</translation>
     <message>
         <location filename="../gui/help/browser/helpbrowser.cpp" line="133"/>
         <source>Error Loading Help Contents: </source>
-        <translation>Feil ved henging av Hjelp-Innhold </translation>
+        <translation>Feil ved lasting av Hjelp-Innhold:</translation>
     </message>
     <message>
         <location filename="../gui/help/browser/helpbrowser.cpp" line="388"/>
@@ -791,7 +792,7 @@ Du må kanskje fjerne den manuellt.</translation>
     <message>
         <location filename="../control/logevent.cpp" line="68"/>
         <source>Debug</source>
-        <translation>Avlus</translation>
+        <translation>Feilsøk</translation>
     </message>
     <message>
         <location filename="../control/logevent.cpp" line="69"/>
@@ -874,7 +875,7 @@ Du må kanskje fjerne den manuellt.</translation>
     <message>
         <location filename="../gui/mainwindow.cpp" line="388"/>
         <source>Tor</source>
-        <translation>Tor </translation>
+        <translation>Tor</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="393"/>
@@ -894,7 +895,7 @@ Du må kanskje fjerne den manuellt.</translation>
     <message>
         <location filename="../gui/mainwindow.cpp" line="609"/>
         <source>Error Connecting to Tor</source>
-        <translation>Feil ved tilknytning til Tor</translation>
+        <translation>Feil ved tilkobling til Tor</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="668"/>
@@ -926,9 +927,9 @@ Du må kanskje fjerne den manuellt.</translation>
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
-        <translation>Vidalia oppdaget at Tor plutselig og uventet avsluttet.
+        <translation>Vidalia oppdaget at Tor avsluttet plutselig og uventet.
 
-Vennligst sjekk meldings-loggen for indikatorer på hva som skjedde med Tor før programmet avsluttet.</translation>
+Vennligst sjekk meldingsloggen for indikatorer på hva som skjedde med Tor før programmet avsluttet.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="566"/>
@@ -948,7 +949,7 @@ Vennligst sjekk meldings-loggen for indikatorer på hva som skjedde med Tor før
     <message>
         <location filename="../gui/mainwindow.cpp" line="981"/>
         <source>New Identity</source>
-        <translation>Ny Identitet </translation>
+        <translation>Ny Identitet</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="373"/>
@@ -1003,17 +1004,17 @@ Vennligst sjekk meldings-loggen for indikatorer på hva som skjedde med Tor før
     <message>
         <location filename="../gui/mainwindow.ui" line="165"/>
         <source>Vidalia Shortcuts</source>
-        <translation>Vidalia Snareveier</translation>
+        <translation>Vidalia Snarveier</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="190"/>
         <source>Setup Relaying</source>
-        <translation>Konfigurer Formidling</translation>
+        <translation>Konfigurer videresending (Relé)</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="193"/>
         <source>Set up a Tor relay and help the network grow</source>
-        <translation>Kjør en Tor mellommann og hjelp nettverket vokse</translation>
+        <translation>Sett opp et Tor relé og hjelp nettverket med å vokse.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="203"/>
@@ -1033,7 +1034,7 @@ Vennligst sjekk meldings-loggen for indikatorer på hva som skjedde med Tor før
     <message>
         <location filename="../gui/mainwindow.ui" line="222"/>
         <source>Make subsequent connections appear new</source>
-        <translation>Gjør at pågående forbindelser ser ut som nye</translation>
+        <translation>Gjør at påfølgende forbindelser ser ut som nye</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="254"/>
@@ -1058,7 +1059,7 @@ Vennligst sjekk meldings-loggen for indikatorer på hva som skjedde med Tor før
     <message>
         <location filename="../gui/mainwindow.ui" line="380"/>
         <source>View version and license information</source>
-        <translation>Vis versjon og lisens informasjon</translation>
+        <translation>Vis versjons- og lisensinformasjon</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.ui" line="393"/>
@@ -1103,12 +1104,12 @@ Vennligst sjekk meldings-loggen for indikatorer på hva som skjedde med Tor før
     <message>
         <location filename="../gui/mainwindow.cpp" line="774"/>
         <source>Cookie Authentication Required</source>
-        <translation>Kake Autorisering Påkrevd</translation>
+        <translation>Autentisering ved hjelp av informasjonskapsler påkrevd</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="777"/>
         <source>Tor requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor krever at Vidalia sender en autentiserings-informasjonskapsel, men Vidalia fant ingen.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="779"/>
@@ -1123,37 +1124,37 @@ Vennligst sjekk meldings-loggen for indikatorer på hva som skjedde med Tor før
     <message>
         <location filename="../gui/mainwindow.cpp" line="788"/>
         <source>Tor Control Cookie (control_auth_cookie)</source>
-        <translation>Tor Control Kake (control_auth_cookie)</translation>
+        <translation>Tor Kontroll Informasjonskapsel (control_auth_cookie)</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="830"/>
         <source>Error Registering for Events</source>
-        <translation type="unfinished"></translation>
+        <translation>Feil oppstått ved registrering for hendelser</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="832"/>
         <source>Vidalia was unable to register for Tor events. Many of Vidalia&apos;s features may be unavailable.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia klarte ikke å registrere for Tors hendelser. Mange av Vidalias funksjoner kan være utilgjengelige.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="856"/>
         <source>Password Authentication Required</source>
-        <translation>Passord Autorisering Påkrevet</translation>
+        <translation>Passord Autentisering Pkrevet</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="869"/>
         <source>Error Authenticating to Tor</source>
-        <translation>Feil ved Autorisering til Tor</translation>
+        <translation>Feil ved Autentisering til Tor</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="871"/>
         <source>Vidalia was unable to authenticate to Tor. (%1)</source>
-        <translation>Vidalia kunne ikke autorisere ovenfor Tor. (%1)</translation>
+        <translation>Vidalia kunne ikke autentisere ovenfor Tor. (%1)</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="873"/>
         <source>Please check your control port authentication settings.</source>
-        <translation>Vennligst sjekk innstillingene for autorisering mot kontrollporten</translation>
+        <translation>Vennligst sjekk innstillingene for autentisering mot kontrollporten</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="857"/>
@@ -1164,19 +1165,22 @@ Vennligst sjekk meldings-loggen for indikatorer på hva som skjedde med Tor før
         <location filename="../gui/mainwindow.cpp" line="445"/>
         <source>Your Tor relay is shutting down.
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ditt Tor relé holder på å stoppe.
+Klikk &apos;Stopp Tor&apos; igjen for å tvinge Tor til å stoppe nå.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="641"/>
         <source>Relaying is Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Videresending er aktivert</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="646"/>
         <source>You are currently running a Tor relay. Terminating your relay will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new relay?</source>
-        <translation type="unfinished"></translation>
+        <translation>Du er for øyeblikket et Tor-relé. å stoppe reléet nå vil avbryte alle åpner tilkoblinger fra andre klienter.
+
+ønsker du å stenge elegant og gi klientene tid til å finne et nytt relé?</translation>
     </message>
 </context>
 <context>
@@ -1209,12 +1213,12 @@ Would you like to shutdown gracefully and give clients time to find a new relay?
     <message>
         <location filename="../gui/log/messagelog.ui" line="160"/>
         <source>Saves the current Message Log settings</source>
-        <translation>Lagr de nåværende innstillingene for Meldingloggen</translation>
+        <translation>Lagre de nåværende innstillingene for Meldingloggen</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="163"/>
         <source>Save Settings</source>
-        <translation>Lagr Inntillinger</translation>
+        <translation>Lagre Inntillinger</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="179"/>
@@ -1229,7 +1233,7 @@ Would you like to shutdown gracefully and give clients time to find a new relay?
     <message>
         <location filename="../gui/log/messagelog.ui" line="196"/>
         <source>Message Filter</source>
-        <translation>Meldings FIlter</translation>
+        <translation>Meldingsfilter</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="217"/>
@@ -1254,22 +1258,22 @@ Would you like to shutdown gracefully and give clients time to find a new relay?
     <message>
         <location filename="../gui/log/messagelog.ui" line="281"/>
         <source>Debug</source>
-        <translation>Avlus</translation>
+        <translation>Feilsøk</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="452"/>
         <source>Message Filters...</source>
-        <translation>Meldingsfilter</translation>
+        <translation>Meldingsfiltre...</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="455"/>
         <source>Set message filters</source>
-        <translation>Skru på meldingsfiltrering</translation>
+        <translation>Velg meldingsfiltre</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="463"/>
         <source>History Size...</source>
-        <translation>Historikk Størrelse...</translation>
+        <translation>Historikkstørrelse...</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="466"/>
@@ -1284,7 +1288,7 @@ Would you like to shutdown gracefully and give clients time to find a new relay?
     <message>
         <location filename="../gui/log/messagelog.ui" line="480"/>
         <source>Clear all messages from the Message Log (Ctrl+E)</source>
-        <translation>Tøm alle meldinger fra Meldingslogge (Ctrl+E)</translation>
+        <translation>Tøm alle meldinger fra Meldingsloggen (Ctrl+E)</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="483"/>
@@ -1324,22 +1328,22 @@ Would you like to shutdown gracefully and give clients time to find a new relay?
     <message>
         <location filename="../gui/log/messagelog.ui" line="528"/>
         <source>Save All</source>
-        <translation>Lagr Alt</translation>
+        <translation>Lagre Alt</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="531"/>
         <source>Save all messages to a file</source>
-        <translation>Lagr alle meldinger til en fil</translation>
+        <translation>Lagre alle meldinger til en fil</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="539"/>
         <source>Save Selected</source>
-        <translation>Lagr merket</translation>
+        <translation>Lagre merket</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="542"/>
         <source>Save selected messages to a file</source>
-        <translation>Lagr valgte meldinger i en fil</translation>
+        <translation>Lagre merkede meldinger i en fil</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="581"/>
@@ -1359,7 +1363,7 @@ Would you like to shutdown gracefully and give clients time to find a new relay?
     <message>
         <location filename="../gui/log/messagelog.ui" line="598"/>
         <source>Find</source>
-        <translation>Finn </translation>
+        <translation>Finn</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.ui" line="601"/>
@@ -1373,35 +1377,28 @@ Would you like to shutdown gracefully and give clients time to find a new relay?
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="148"/>
-        <source>Messages that appear when something has 
-gone very wrong and Tor cannot proceed.</source>
+        <source>Messages that appear when something has gone very wrong and Tor cannot proceed.</source>
         <translation>Meldinger som vises om noe har gått veldig galt og Tor ikke kan fortsette.</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="150"/>
-        <source>Messages that only appear when 
-something has gone wrong with Tor.</source>
+        <source>Messages that only appear when something has gone wrong with Tor.</source>
         <translation>Meldinger som kun vises når noe har gått galt med Tor.</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="154"/>
-        <source>Messages that appear infrequently 
-during normal Tor operation and are 
-not considered errors, but you may 
-care about.</source>
+        <source>Messages that appear infrequently during normal Tor operation and are not considered errors, but you may care about.</source>
         <translation>Meldinger som sjelden vises ved normal Tor-aktivitet og som ikke regnes som feil men likevel kan være av interesse.</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="156"/>
-        <source>Messages that appear frequently 
-during normal Tor operation.</source>
+        <source>Messages that appear frequently during normal Tor operation.</source>
         <translation>Meldinger som stadig vises ved vanlig Tor-aktivitet.</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="158"/>
-        <source>Hyper-verbose messages primarily of 
-interest to Tor developers.</source>
-        <translation>Ekstra-detaljerte meldinger er primært nyttig for Tor-utviklere.</translation>
+        <source>Hyper-verbose messages primarily of interest to Tor developers.</source>
+        <translation>Ekstra detaljerte meldinger som primært er nyttig for Tor-utviklere.</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="203"/>
@@ -1421,7 +1418,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="311"/>
         <source>Save Log Messages</source>
-        <translation>Lagr Logg-meldinger</translation>
+        <translation>Lagre Logg-meldinger</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="323"/>
@@ -1431,7 +1428,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="374"/>
         <source>Find in Message Log</source>
-        <translation>Fin i Meldingsloggen</translation>
+        <translation>Finn i Meldingsloggen</translation>
     </message>
     <message>
         <location filename="../gui/log/messagelog.cpp" line="375"/>
@@ -1578,17 +1575,17 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/netviewer.ui" line="276"/>
         <source>Close the network map</source>
-        <translation>Lukk nettverks-kartet</translation>
+        <translation>Lukk nettverkskartet</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="293"/>
         <source>Zoom in on the network map</source>
-        <translation>Zoom inn på nettverks-kartet</translation>
+        <translation>Zoom inn på nettverkskartet</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="310"/>
         <source>Zoom out on the network map</source>
-        <translation>Zoom ut på nettverks-kartet</translation>
+        <translation>Zoom ut på nettverkskartet</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="321"/>
@@ -1633,7 +1630,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/netviewer.ui" line="259"/>
         <source>Show network map help</source>
-        <translation>Vis hjelpetekst for nettverks-kartet</translation>
+        <translation>Vis hjelpetekst for nettverkskartet</translation>
     </message>
     <message>
         <location filename="../gui/network/netviewer.ui" line="24"/>
@@ -1643,7 +1640,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/netviewer.ui" line="242"/>
         <source>Refresh the list of Tor relays and connections</source>
-        <translation type="unfinished"></translation>
+        <translation>Oppfrisk listen over Tor-reléer og tilkoblinger</translation>
     </message>
 </context>
 <context>
@@ -1671,13 +1668,12 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="266"/>
         <source>You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet.</source>
-        <translation>
-</translation>
+        <translation>Du må spesifisere både IP adresse eller vertsnavn og et portnummer for å konfigurere Tor til å bruke en proxy for å koble til Internett.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="272"/>
         <source>You must specify one or more ports to which your firewall allows you to connect.</source>
-        <translation>You must specify one or more ports to which your firewall allows you to connect.</translation>
+        <translation>Du må spesifisere en eller flere porter som din brannmur tillater deg å koble til.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.cpp" line="308"/>
@@ -1702,7 +1698,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/networkpage.ui" line="70"/>
         <source>HTTP Proxy:</source>
-        <translation>HTTP-Proxy:</translation>
+        <translation>HTTP Proxy:</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="80"/>
@@ -1742,7 +1738,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/networkpage.ui" line="225"/>
         <source>80, 443</source>
-        <translation type="unfinished">80, 443</translation>
+        <translation>80, 443</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="238"/>
@@ -1757,7 +1753,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/networkpage.ui" line="274"/>
         <source>The Tor version you are currently running does not support bridges. &lt;br&gt;Tor will still try to encrypt its directory connections.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor versjonen du bruker for øyeblikket støtter ikke broer.&lt;br&gt;Tor vil fremdeles prøve å kryptere sine katalog-tilkoblinger.</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="295"/>
@@ -1767,22 +1763,22 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/networkpage.ui" line="358"/>
         <source>Remove the selected bridges from the list</source>
-        <translation type="unfinished"></translation>
+        <translation>Fjern de merkede broene fra listen</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="374"/>
         <source>Copy the selected bridges to the clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopier de merkede broene til utklippstavlen</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="176"/>
-        <source>Check to configure Tor to only connect to relays using ports allowed by your firewall</source>
-        <translation type="unfinished"></translation>
+        <source>Check to c?nfigure Tor to only connect to relays using ports allowed by your firewall</source>
+        <translation>Velg for at Tor kun skal bruke reléer som bruker porter som tillattes av din brannmur</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="235"/>
         <source>Check to configure Tor to use bridge relays to access the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg for at Tor bro-reléer for å koble til Tor nettverket</translation>
     </message>
 </context>
 <context>
@@ -1795,7 +1791,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../config/policy.cpp" line="178"/>
         <source>reject</source>
-        <translation>nekt</translation>
+        <translation>avslå</translation>
     </message>
 </context>
 <context>
@@ -1808,7 +1804,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../control/routerdescriptor.cpp" line="89"/>
         <source>Hibernating</source>
-        <translation>Sover</translation>
+        <translation>Dvalemodus</translation>
     </message>
     <message>
         <location filename="../control/routerdescriptor.cpp" line="91"/>
@@ -1864,7 +1860,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/routerlistitem.cpp" line="82"/>
         <source>Hibernating</source>
-        <translation>Sover</translation>
+        <translation>Dvalemodus</translation>
     </message>
 </context>
 <context>
@@ -1872,17 +1868,17 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="44"/>
         <source>Relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Relé</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="71"/>
         <source>Zoom to Relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Zoom til relé</translation>
     </message>
     <message>
         <location filename="../gui/network/routerlistwidget.cpp" line="229"/>
         <source>%1 relays online (%2 total)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 reléer online (%2 total)</translation>
     </message>
 </context>
 <context>
@@ -1890,7 +1886,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="32"/>
         <source>Relay traffic for the Tor network</source>
-        <translation>Videresend trafikk for Tor-nettverket</translation>
+        <translation>Videresend trafikk for Tor-nettverket (Relé)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="169"/>
@@ -1915,7 +1911,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="699"/>
         <source>Exit Policies</source>
-        <translation>Utgangs-Politikk</translation>
+        <translation>Utgående trafikk</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="831"/>
@@ -1925,7 +1921,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="555"/>
         <source>Long-term average bandwidth limit</source>
-        <translation>Gjennomsnittlig langvarig båndbredde-begensning</translation>
+        <translation>Gjennomsnittlig langvarig båndbredde-begrensning</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="526"/>
@@ -1940,7 +1936,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="630"/>
         <source>Peak bandwidth rate limit</source>
-        <translation>Begrensning for kortvarige bånbredde-topper</translation>
+        <translation>Begrensning for kortvarige båndbredde-topper</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="601"/>
@@ -1950,7 +1946,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="437"/>
         <source>Show help topic on bandwidth rate limits</source>
-        <translation>Hvis hjelpeteksten for båndbredde-begrensning</translation>
+        <translation>Hvis hjelpeteksten for båndbreddebegrensning</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="76"/>
@@ -1970,12 +1966,12 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="391"/>
         <source>Select the entry that most closely resembles your Internet connection</source>
-        <translation>Velg det som best reflekterer Internett-forbindelsen din</translation>
+        <translation>Velg det som best stemmer overens med Internett-forbindelsen din</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="401"/>
         <source>Cable/DSL 256 Kbps</source>
-        <translation>Kabel/DSL 256 Kbps</translation>
+        <translation>Kabel/DSL 256 K?ps</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="406"/>
@@ -1995,7 +1991,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="421"/>
         <source>&gt; 1.5 Mbps</source>
-        <translation>&gt; 1.5 Mbps</translation>
+        <translation>&gt; 1,5 Mbps</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="426"/>
@@ -2040,7 +2036,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="779"/>
         <source>Instant Messaging (IM)</source>
-        <translation>Bruker-Til-Bruker meldinger (IM)</translation>
+        <translation>Lynmeldinger (IM)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="789"/>
@@ -2065,98 +2061,98 @@ interest to Tor developers.</source>
     <message>
         <location filename="../gui/config/serverpage.ui" line="904"/>
         <source>What Internet resources should Tor users be able to access from your Tor relay?</source>
-        <translation>Hvilke Internett-ressursjer skal Tor-brukere få lov å benytte fra din Tor-tjener?</translation>
+        <translation>Hvilke Internett-ressurser skal Tor-brukere få lov å benytte igjennom ditt Tor-relé?</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="672"/>
-        <source>Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s.</source>
+        <source>Your maximum bandwidth rate must be greater than or equal to your average bandwid?h rate. Both values must be at least 20 KB/s.</source>
         <translation>Din maksimale båndbredde-grense må være større enn eller lik din gjennomsnittsgrense. Begge verdiene må være minst 20 KB/s.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="79"/>
         <source>Server</source>
-        <translation type="unfinished">Tjener</translation>
+        <translation>Tjener</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="136"/>
         <source>Bridge Support Unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation>Bro-støtte mangler</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="139"/>
         <source>You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du har satt opp Tor til å være et bro-relé for sensurerte brukere, men din versjon av Tor støtter ikke broer.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="141"/>
         <source>Please upgrade your Tor software or configure Tor to act as a normal Tor relay.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vennligst oppgrader din Tor programvare eller sett opp Tor som et vanlig relé.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="195"/>
         <source>Your bridge relay is not running.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ditt bro-relé kjører ikke.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.cpp" line="264"/>
         <source>You must specify at least a relay nickname and port.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du må minimum spesifisere et kallenavn og en port.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="25"/>
         <source>Run Tor as a client only</source>
-        <translation type="unfinished"></translation>
+        <translation>Bare kjør Tor som klient</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="39"/>
         <source>Help censored users reach the Tor network (Tor 0.2.0.8-alpha or newer)</source>
-        <translation type="unfinished"></translation>
+        <translation>Hjelp sensurerte brukere å nå Tor nettverket (Tor 0.2.0.8-alpha eller nyere)</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="91"/>
         <source>Relay Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Relé port:</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="110"/>
         <source>Enable to mirror the Tor relay directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Velg for å speile Tors relé-katalog</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="113"/>
         <source>Mirror the Relay Directory </source>
-        <translation type="unfinished"></translation>
+        <translation>Speil relé-katalogen</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="139"/>
         <source>Email address at which you may be reached if there is a
 problem with your relay. You might also include your PGP or GPG fingerprint.</source>
-        <translation type="unfinished"></translation>
+        <translation>E-post adresse du kan kontaktes på ved problemer med ditt relé. Du kan også inkludere ditt PGP eller GPG fingeravtrykk.</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="272"/>
         <source>Name of your relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Kallenavn på ditt relé</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="305"/>
         <source>Port on which users and other relays can communicate with your relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Port som andre brukere og reléer kan kommunisere med ditt relé på</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="940"/>
         <source>Let others access your bridge by giving them this line:</source>
-        <translation type="unfinished"></translation>
+        <translation>La andre bruke din bro ved å gi de denne linjen:</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="964"/>
         <source>This is the identity of your bridge relay that you can give to other people</source>
-        <translation type="unfinished"></translation>
+        <translation>Dette er identiteten til din bro som du kan gi til andre</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="986"/>
         <source>Copy your bridge relay&apos;s identity to the clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopier din bros identitet til utklippstavlen</translation>
     </message>
 </context>
 <context>
@@ -2179,7 +2175,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../control/stream.cpp" line="133"/>
         <source>Open</source>
-        <translation>Åpen</translation>
+        <translation>åpen</translation>
     </message>
     <message>
         <location filename="../control/stream.cpp" line="134"/>
@@ -2204,7 +2200,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../control/stream.cpp" line="137"/>
         <source>Remapped</source>
-        <translation type="unfinished"></translation>
+        <translation>Omfordelt</translation>
     </message>
 </context>
 <context>
@@ -2283,7 +2279,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../gui/common/vmessagebox.cpp" line="98"/>
         <source>Browse</source>
-        <translation type="unfinished">Bla</translation>
+        <translation>Bla</translation>
     </message>
 </context>
 <context>
@@ -2308,7 +2304,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
         <source>Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.
 
 Would you like to continue starting Vidalia?</source>
-        <translation>Vidalia oppdaget en annen Vidalia-prosess og bør derfor ikke startes. Hvis dette er feil kan du likevel starte Vidalia. 
+        <translation>Vidalia oppdaget en annen Vidalia-prosess. Hvis dette er feil kan du likevel starte Vidalia. 
 
 Vil du fortsette og starte Vidalia?</translation>
     </message>
@@ -2320,7 +2316,7 @@ Vil du fortsette og starte Vidalia?</translation>
     <message>
         <location filename="../vidalia.cpp" line="180"/>
         <source>Displays this usage message and exits.</source>
-        <translation>Viser denne brukesmeldingen og avslutter.</translation>
+        <translation>Viser denne meldingen og avslutter.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="182"/>
@@ -2335,27 +2331,27 @@ Vil du fortsette og starte Vidalia?</translation>
     <message>
         <location filename="../vidalia.cpp" line="186"/>
         <source>Sets the name and location of Vidalia&apos;s pidfile.</source>
-        <translation>Gir navn og plassering av Vidalia sin pid-fil.</translation>
+        <translation>Gir navn og plassering av Vidalias pid-fil.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="188"/>
         <source>Sets the name and location of Vidalia&apos;s logfile.</source>
-        <translation>Gir navn og plassering av Vidalia sin loggfil.</translation>
+        <translation>Gir navn og plassering av Vidalias loggfil.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="191"/>
         <source>Sets the verbosity of Vidalia&apos;s logging.</source>
-        <translation>Velger mengden informasjon Vidalia logger.</translation>
+        <translation>Velger hvor detaljert informasjon Vidalia skal logge.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="194"/>
         <source>Sets Vidalia&apos;s interface style.</source>
-        <translation>Velger stil for Vidalia sitt brukergrensesnitt.</translation>
+        <translation>Velger stil for Vidalias brukergrensesnitt.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="197"/>
         <source>Sets Vidalia&apos;s language.</source>
-        <translation>Velger Vidalia sitt språk.</translation>
+        <translation>Velger Vidalias språk.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="201"/>
