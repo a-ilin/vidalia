@@ -40,6 +40,7 @@ set(vidalia_TS
   vidalia_pl.ts
   vidalia_pt.ts
   vidalia_ru.ts
+  vidalia_sq.ts
   vidalia_sv.ts
   vidalia_zh-cn.ts
   vidalia_zh-tw.ts
