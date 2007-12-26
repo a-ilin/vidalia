@@ -494,7 +494,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../control/controlconnection.cpp" line="139"/>
         <source>Vidalia was unable to connect to Tor. (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia kunde inte ansluta till Tor. (%1)</translation>
     </message>
 </context>
 <context>
@@ -1109,12 +1109,12 @@ Meddelandeloggen har information om vad som hände med Tor innan den avslutades.
     <message>
         <location filename="../gui/mainwindow.cpp" line="777"/>
         <source>Tor requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor behöver att Vidalia skickar styrkningcookie, men Vidalia kunde inte hitta det.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="779"/>
         <source>Would you like to browse for the file &apos;control_auth_cookie&apos; yourself?</source>
-        <translation type="unfinished"></translation>
+        <translation>Vill du bläddra det &apos;control_auth_cookie&apos;-fil själv?</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="786"/>
@@ -1144,22 +1144,22 @@ Meddelandeloggen har information om vad som hände med Tor innan den avslutades.
     <message>
         <location filename="../gui/mainwindow.cpp" line="869"/>
         <source>Error Authenticating to Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Det gick ej bestyrka till Tor</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="871"/>
         <source>Vidalia was unable to authenticate to Tor. (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia kunde inte bestyrka till Tor. (%1)</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="873"/>
         <source>Please check your control port authentication settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Varsågod och kolla din kontrollportstyrknings inställningarna.</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="857"/>
         <source>Please enter your control password (not the hash):</source>
-        <translation type="unfinished"></translation>
+        <translation>Varsågod och skriv din kontrolllösenord (inte det hash):</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="445"/>
@@ -1170,7 +1170,7 @@ Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
     <message>
         <location filename="../gui/mainwindow.cpp" line="641"/>
         <source>Relaying is Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Router har aktiverat</translation>
     </message>
     <message>
         <location filename="../gui/mainwindow.cpp" line="646"/>
@@ -1650,7 +1650,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../gui/network/netviewer.ui" line="242"/>
         <source>Refresh the list of Tor relays and connections</source>
-        <translation type="unfinished"></translation>
+        <translation>Uppdatera det list av Tor-router och anslutningar</translation>
     </message>
 </context>
 <context>
@@ -1698,7 +1698,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../gui/config/networkpage.ui" line="28"/>
         <source>I use a proxy to access the Internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Jag använder en proxy till internet</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="58"/>
@@ -1733,7 +1733,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../gui/config/networkpage.ui" line="179"/>
         <source>My firewall only lets me connect to certain ports</source>
-        <translation type="unfinished"></translation>
+        <translation>Min brandvägg gevs mig avsluta bara till säkra portarna</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="203"/>
@@ -1753,7 +1753,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../gui/config/networkpage.ui" line="238"/>
         <source>My ISP blocks connections to the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Min internetleverantör blockerar anslutningar till Tor-nätverket</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="262"/>
@@ -1773,22 +1773,22 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../gui/config/networkpage.ui" line="358"/>
         <source>Remove the selected bridges from the list</source>
-        <translation type="unfinished"></translation>
+        <translation>Tar bort de valda bryggarna från det här lista</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="374"/>
         <source>Copy the selected bridges to the clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiera de valda bryggarna till urklipp</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="176"/>
         <source>Check to configure Tor to only connect to relays using ports allowed by your firewall</source>
-        <translation type="unfinished"></translation>
+        <translation>Kollar till konfigurera så Tor användar bara tillåtna portar av din brandvägg</translation>
     </message>
     <message>
         <location filename="../gui/config/networkpage.ui" line="235"/>
         <source>Check to configure Tor to use bridge relays to access the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Kollar till konfigurera så Tor användar bryggarelay till användar Tor-nätverket</translation>
     </message>
 </context>
 <context>
@@ -2147,22 +2147,22 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../gui/config/serverpage.ui" line="305"/>
         <source>Port on which users and other relays can communicate with your relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Det port med användar och andra router kan kommunicera med dina router</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="940"/>
         <source>Let others access your bridge by giving them this line:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ge andra använda dina brygga genom att ge dem den här linje:</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="964"/>
         <source>This is the identity of your bridge relay that you can give to other people</source>
-        <translation type="unfinished"></translation>
+        <translation>Den här är det identitet om din bryggarouter som du kan ge till andra</translation>
     </message>
     <message>
         <location filename="../gui/config/serverpage.ui" line="986"/>
         <source>Copy your bridge relay&apos;s identity to the clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiera din bryggarouters identitet till urklipp</translation>
     </message>
 </context>
 <context>
