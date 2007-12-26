@@ -51,6 +51,15 @@ ConfigDialog::ConfigDialog(QWidget* parent)
   /* Invoke the Qt Designer generated QObject setup routine */
   ui.setupUi(this);
  
+  /* Override the QDialogButtonBox button text so we can use our own
+   * translations. */
+  QPushButton *button = ui.buttonBox->button(QDialogButtonBox::Ok);
+  if (button)
+    button->setText(tr("OK"));
+  button = ui.buttonBox->button(QDialogButtonBox::Cancel);
+  if (button)
+    button->setText(tr("Cancel"));
+  
   /* Connect the button box signals to the appropriate slots */
   connect(ui.buttonBox, SIGNAL(accepted()), this, SLOT(saveChanges()));
   connect(ui.buttonBox, SIGNAL(rejected()), this, SLOT(close()));
