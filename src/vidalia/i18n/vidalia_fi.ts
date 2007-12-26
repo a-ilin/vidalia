@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="fi">
+<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -475,7 +476,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../config/configdialog.cpp" line="58"/>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -584,7 +585,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../config/generalpage.cpp" line="86"/>
         <source>You must specify the name of your Tor executable.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-ohjelman nimi pitää määrittää.</translation>
     </message>
 </context>
 <context>
@@ -1188,27 +1189,27 @@ Haluaisitko pysäyttää rauhallisesti ja antaa muiden käyttäjien löytää uu
     <message>
         <location filename="../mainwindow.cpp" line="436"/>
         <source>Error starting web browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe internetselainta käynnistettäessä</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="437"/>
         <source>Vidalia was unable to start the configured web browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia ei onnistunut käynnistämään määriteltyä internetselainta</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1038"/>
         <source>Tor Update Available</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-päivitys saatavilla</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1041"/>
         <source>The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version.</source>
-        <translation type="unfinished"></translation>
+        <translation>Asennettu versio Tor-ohjelmasta on vanhentunut tai sitä ei enään suositella. Ole hyvä ja lataa uusin versio Tor-ohjelman kotisivulta.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1041"/>
         <source>Tor website: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-ohjelman kotisivu: %1</translation>
     </message>
 </context>
 <context>
@@ -1824,7 +1825,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../config/networkpage.ui" line="318"/>
         <source>&lt;a href=&quot;bridges.finding&quot;&gt;How do I find a bridge?&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;bridges.finding&quot;&gt;Miten löydän siltareitittimen?&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
