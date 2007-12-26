@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="sv">
+<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -584,7 +585,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../config/generalpage.cpp" line="86"/>
         <source>You must specify the name of your Tor executable.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du måste räkna upp det namn av din Tor körbara.</translation>
     </message>
 </context>
 <context>
@@ -894,7 +895,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../mainwindow.cpp" line="623"/>
         <source>Error Starting Tor</source>
-        <translation>Det gick ej att Starta Tor</translation>
+        <translation>Det gick ej att starta Tor</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="669"/>
@@ -1186,17 +1187,17 @@ Would you like to shutdown gracefully and give clients time to find a new relay?
     <message>
         <location filename="../mainwindow.cpp" line="436"/>
         <source>Error starting web browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Det gick ej att starta webbläsare</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="437"/>
         <source>Vidalia was unable to start the configured web browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia kunde inte starta det konfigurerad webbläsare</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1038"/>
         <source>Tor Update Available</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-uppdater tillgänglig</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1041"/>
@@ -1206,7 +1207,7 @@ Would you like to shutdown gracefully and give clients time to find a new relay?
     <message>
         <location filename="../mainwindow.cpp" line="1041"/>
         <source>Tor website: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-websida: %1</translation>
     </message>
 </context>
 <context>
@@ -1697,7 +1698,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../config/networkpage.cpp" line="198"/>
         <source>The specified bridge identifier is not valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det räknande upp bryggaidentitet är inte giltig.</translation>
     </message>
     <message>
         <location filename="../config/networkpage.cpp" line="245"/>
@@ -1712,7 +1713,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../config/networkpage.cpp" line="282"/>
         <source>You must specify one or more ports to which your firewall allows you to connect.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du måste räknar upp en eller fler portar som din brandvägg tillåttar du anslutnar till.</translation>
     </message>
     <message>
         <location filename="../config/networkpage.cpp" line="318"/>
@@ -1722,7 +1723,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../config/networkpage.ui" line="25"/>
         <source>Check to configure Tor to use a proxy to access the Internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Kollar till konfigurera så Tor användar en proxy till internet</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="28"/>
@@ -1822,7 +1823,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../config/networkpage.ui" line="318"/>
         <source>&lt;a href=&quot;bridges.finding&quot;&gt;How do I find a bridge?&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;bridges.finding&quot;&gt;Vad är en brygga?&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -2120,7 +2121,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../config/serverpage.cpp" line="131"/>
         <source>Bridge Support Unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation>Bryggastöd är inte tillgänglig</translation>
     </message>
     <message>
         <location filename="../config/serverpage.cpp" line="134"/>
@@ -2135,7 +2136,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../config/serverpage.cpp" line="259"/>
         <source>You must specify at least a relay nickname and port.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du måste räkna upp åtminstone en routernamn och port.</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="25"/>
