@@ -149,7 +149,8 @@ ServerSettings::apply(QString *errmsg)
               << SETTING_NICKNAME 
               << SETTING_DIRPORT
               << SETTING_CONTACT
-              << SETTING_EXITPOLICY;
+              << SETTING_EXITPOLICY
+              << SETTING_PUBLISH_DESCRIPTOR;
     if (torVersion >= 0x020001) {
       resetKeys << SETTING_RELAY_BANDWIDTH_RATE
                 << SETTING_RELAY_BANDWIDTH_BURST;
