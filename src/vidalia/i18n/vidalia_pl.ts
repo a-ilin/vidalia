@@ -402,12 +402,12 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../network/circuitlistwidget.cpp" line="85"/>
         <source>Close Circuit (Del)</source>
-        <translation type="unfinished"></translation>
+        <translation>Zamknij połączenie</translation>
     </message>
     <message>
         <location filename="../network/circuitlistwidget.cpp" line="106"/>
         <source>Close Stream (Del)</source>
-        <translation type="unfinished"></translation>
+        <translation>Zamknij strumień (Del)</translation>
     </message>
 </context>
 <context>
@@ -455,7 +455,7 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../config/configdialog.cpp" line="173"/>
         <source>Vidalia was unable to save your %1 settings.</source>
-        <translation>Vidalia nie mogła zapisać ustawień %l.</translation>
+        <translation>Vidalia nie mogła zapisać ustawień %1.</translation>
     </message>
     <message>
         <location filename="../config/configdialog.cpp" line="200"/>
@@ -465,7 +465,7 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../config/configdialog.cpp" line="202"/>
         <source>Vidalia was unable to apply your %1 settings to Tor.</source>
-        <translation>Vidalia nie mogła zastosować Twoich ustawień %l.</translation>
+        <translation>Vidalia nie mogła zastosować Twoich ustawień %1.</translation>
     </message>
     <message>
         <location filename="../config/configdialog.cpp" line="82"/>
@@ -475,7 +475,7 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../config/configdialog.cpp" line="58"/>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -584,7 +584,7 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../config/generalpage.cpp" line="86"/>
         <source>You must specify the name of your Tor executable.</source>
-        <translation type="unfinished"></translation>
+        <translation>Musisz określić nazwę pliku wykonywalnego Tora.</translation>
     </message>
 </context>
 <context>
@@ -1189,27 +1189,27 @@ Czy chciałbyś ich o tym powiadomić i dać czas na znalezienie nowego węzła 
     <message>
         <location filename="../mainwindow.cpp" line="436"/>
         <source>Error starting web browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Błąd przy uruchamianiu przeglądarki internetowej</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="437"/>
         <source>Vidalia was unable to start the configured web browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia nie mogła uruchomić wskazanej przeglądarki internetowej</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1038"/>
         <source>Tor Update Available</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktualizacja Tora jest dostępna</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1041"/>
         <source>The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version.</source>
-        <translation type="unfinished"></translation>
+        <translation>Zainstalowana obecnie wersja Tora jest przestarzała lub nie polecana. Proszę odwiedzić stronę Tora i ściągnąć najnowszą wersję.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1041"/>
         <source>Tor website: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Strona Tora: %1</translation>
     </message>
 </context>
 <context>
@@ -1814,17 +1814,17 @@ dla programistów ekipy Tora</translation>
     <message>
         <location filename="../config/networkpage.ui" line="176"/>
         <source>Check to configure Tor to only connect to relays using ports allowed by your firewall</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaznacz, żeby skonfigurować Tora na połączenia do węzłów poprzez porty przepuszczane przez Twój firewall</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="235"/>
         <source>Check to configure Tor to use bridge relays to access the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaznacz, żeby Tor łączył się z siecią Tor używając węzłów-mostów</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="318"/>
         <source>&lt;a href=&quot;bridges.finding&quot;&gt;How do I find a bridge?&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;bridges.finding&quot;&gt;Jak mam znaleźć węzeł-most?&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -1924,7 +1924,7 @@ dla programistów ekipy Tora</translation>
     <message>
         <location filename="../network/routerlistwidget.cpp" line="229"/>
         <source>%1 relays online (%2 total)</source>
-        <translation>%l węzłów aktywnych (%2 wszystkich)</translation>
+        <translation>%1 węzłów aktywnych (%2 wszystkich)</translation>
     </message>
 </context>
 <context>
@@ -2169,37 +2169,37 @@ Możesz również załączyć swój klucz PGP lub GPG.</translation>
     <message>
         <location filename="../config/serverpage.cpp" line="190"/>
         <source>Your bridge relay is not running.</source>
-        <translation type="unfinished"></translation>
+        <translation>Twój węzeł-most nie jest uruchomiony.</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="39"/>
         <source>Help censored users reach the Tor network (Tor 0.2.0.8-alpha or newer)</source>
-        <translation type="unfinished">Pomaga zablokowanym użytkownikom uzyskać dostęp do sieci Tor (Tor 0.2.0.3-alpha i nowsze) {0.2.0.8-?}</translation>
+        <translation>Pomóż użytkownikom z ograniczeniami uzyskać dostęp do sieci Tor (Tor 0.2.0.8-alpha i nowsze)</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="272"/>
         <source>Name of your relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Nazwa Twojego węzła</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="305"/>
         <source>Port on which users and other relays can communicate with your relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Port na którym użytkownicy i inne węzły komunikują się z Twoim węzłem</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="940"/>
         <source>Let others access your bridge by giving them this line:</source>
-        <translation type="unfinished"></translation>
+        <translation>Pozwalaj innym na dostęp do Twojego mostu poprzez użycie następującej linii: </translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="964"/>
         <source>This is the identity of your bridge relay that you can give to other people</source>
-        <translation type="unfinished"></translation>
+        <translation>To jest tożsamość Twojego węzła-mostu który możesz udostępniać innym</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="986"/>
         <source>Copy your bridge relay&apos;s identity to the clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Skopiuj tożsamość Twojego węzła-mostu do schowka systemowego</translation>
     </message>
 </context>
 <context>
@@ -2276,7 +2276,7 @@ Możesz również załączyć swój klucz PGP lub GPG.</translation>
     <message>
         <location filename="../config/torsettings.cpp" line="118"/>
         <source>Failed to hash the control password.</source>
-        <translation type="unfinished"></translation>
+        <translation>Haszowanie hasła sterującego nie powiodło się.</translation>
     </message>
 </context>
 <context>
