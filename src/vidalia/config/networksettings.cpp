@@ -130,16 +130,18 @@ QList<quint16>
 NetworkSettings::getReachablePorts()
 {
   QList<quint16> reachablePorts;
-  QStringList addressList;
+  QStringList lineList;
   bool ok;
 
-  addressList = value(SETTING_REACHABLE_ADDRESSES).toStringList();
-  foreach(QString address, addressList) {
-    QStringList parts = address.split(":");
-    if (parts.size() >= 2) {
-      quint16 port = parts.at(1).toUInt(&ok);
-      if (ok)
-        reachablePorts << port;
+  lineList = value(SETTING_REACHABLE_ADDRESSES).toStringList();
+  foreach (QString line, lineList) {
+    foreach (QString address, line.split(",", QString::SkipEmptyParts)) {
+      QStringList parts = address.split(":");
+      if (parts.size() >= 2) {
+        quint16 port = parts.at(1).toUInt(&ok);
+        if (ok)
+          reachablePorts << port;
+      }
     }
   }
   return reachablePorts;
