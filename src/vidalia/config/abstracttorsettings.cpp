@@ -107,16 +107,15 @@ AbstractTorSettings::localValue(const QString &key) const
 QVariant
 AbstractTorSettings::torValue(const QString &key) const
 {
-  QVariant value;
   QVariant defaultVal;
-  QString confValue;
+  QVariant confValue;
 
   defaultVal = defaultValue(key);
-  if (_torControl && _torControl->getConf(key, confValue)) {
-    value.setValue(confValue);
-    value.convert(defaultVal.type());
+  if (_torControl) {
+    confValue = _torControl->getConf(key);
+    confValue.convert(defaultVal.type());
   }
-  return (isEmptyValue(value) ? localValue(key) : value);
+  return (isEmptyValue(confValue) ? localValue(key) : confValue);
 }
 
 /** If Vidalia is connected to Tor, this returns the value associated with
