@@ -35,29 +35,31 @@ class ControlCommand
 {
 public:
   ControlCommand();
-  ControlCommand(QString keyword);
-  ControlCommand(QString keyword, QString arg);
-  ControlCommand(QString keyword, QStringList args);
+  ControlCommand(const QString &keyword);
+  ControlCommand(const QString &keyword, const QString &arg);
+  ControlCommand(const QString &keyword, const QStringList &args);
 
   /** Returns the keyword for this control command. */
   QString keyword() const { return _keyword; }
 
   /** Set the keyword for this control command */
-  void setKeyword(QString keyword);
+  void setKeyword(const QString &keyword);
   
   /** Add an argument to this control command */
-  void addArgument(QString arg);
- 
+  void addArgument(const QString &arg);
+  /** Adds all arguments in <b>args</b> to this control command. */
+  void addArguments(const QStringList &args);
+
   /** Append a data line for this control command */
-  void appendData(QString data);
+  void appendData(const QString &data);
 
   /** Format this control command into a format conforming to Tor's v1
    * protocol specification. */
-  QString toString();
+  QString toString() const;
   
 private:
   /** Escape special characters in the supplied string */
-  QString escape(QString str);
+  QString escape(const QString &str) const;
 
   QString _keyword;
   QStringList _arguments;

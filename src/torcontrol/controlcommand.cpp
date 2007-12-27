@@ -34,13 +34,13 @@ ControlCommand::ControlCommand()
 }
 
 /** Creates a command using the specified keyword. */
-ControlCommand::ControlCommand(QString keyword)
+ControlCommand::ControlCommand(const QString &keyword)
 {
   _keyword = keyword;
 }
 
 /** Creates a control command using the specified keyword and argument. */
-ControlCommand::ControlCommand(QString keyword, QString arg)
+ControlCommand::ControlCommand(const QString &keyword, const QString &arg)
 {
   _keyword = keyword;
   addArgument(arg);
@@ -48,7 +48,7 @@ ControlCommand::ControlCommand(QString keyword, QString arg)
 
 /** Creates a control command using the specified keyword and list of
  * arguments. */
-ControlCommand::ControlCommand(QString keyword, QStringList args)
+ControlCommand::ControlCommand(const QString &keyword, const QStringList &args)
 {
   _keyword = keyword;
   _arguments = args;
@@ -56,29 +56,39 @@ ControlCommand::ControlCommand(QString keyword, QStringList args)
 
 /** Sets the keyword for this command. */
 void
-ControlCommand::setKeyword(QString keyword)
+ControlCommand::setKeyword(const QString &keyword)
 {
   _keyword = keyword;
 }
 
 /** Adds an argument to this command's argument list. */
 void
-ControlCommand::addArgument(QString arg)
+ControlCommand::addArgument(const QString &arg)
 {
   _arguments << arg;
 }
 
+/** Adds all arguments in <b>args</b> to this control command. */
+void
+ControlCommand::addArguments(const QStringList &args)
+{
+  foreach (QString arg, args) {
+    addArgument(arg);
+  }
+}
+
 /** Adds data to the end of this command. */
 void
-ControlCommand::appendData(QString data)
+ControlCommand::appendData(const QString &data)
 {
   _data << data;
 }
 
 /** Escapes any special characters in this command. */
 QString
-ControlCommand::escape(QString str)
+ControlCommand::escape(const QString &unescaped) const
 {
+  QString str = unescaped;
   if (str.startsWith(".")) {
     str.prepend(".");
   }
@@ -98,7 +108,7 @@ ControlCommand::escape(QString str)
  *   Arguments = *(SP / VCHAR)
  */
 QString
-ControlCommand::toString()
+ControlCommand::toString() const
 {
   int i;
   QString str;
