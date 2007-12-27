@@ -33,14 +33,15 @@ ReplyLine::ReplyLine()
 }
 
 /** Constructor */
-ReplyLine::ReplyLine(QString status, QString msg)
+ReplyLine::ReplyLine(const QString &status, const QString &msg)
 {
   _status = status;
   setMessage(msg);
 }
 
 /** Constructor */
-ReplyLine::ReplyLine(QString status, QString msg, QString data)
+ReplyLine::ReplyLine(const QString &status, const QString &msg, 
+                     const QString &data)
 {
   _status = status;
   setMessage(msg);
@@ -50,7 +51,7 @@ ReplyLine::ReplyLine(QString status, QString msg, QString data)
 /** Set the status code for this reply line. See Tor Control Protocol V1
  * specification for a description of status codes. */
 void
-ReplyLine::setStatus(QString status)
+ReplyLine::setStatus(const QString &status)
 {
   _status = status;
 }
@@ -64,7 +65,7 @@ ReplyLine::getStatus() const
 
 /** Sets the ReplyText message this reply line to <b>msg</b>. */
 void
-ReplyLine::setMessage(QString msg)
+ReplyLine::setMessage(const QString &msg)
 {
   _message = unescape(msg);
 }
@@ -78,7 +79,7 @@ ReplyLine::getMessage() const
 
 /** Appends <b>data</b> to this reply line. */
 void
-ReplyLine::appendData(QString data)
+ReplyLine::appendData(const QString &data)
 {
   _data << unescape(data);
 }
@@ -93,8 +94,9 @@ ReplyLine::getData() const
 /** Unescapes special characters in <b>str</b> and returns the unescaped
  * result. */
 QString
-ReplyLine::unescape(QString str)
+ReplyLine::unescape(const QString &escaped)
 {
+  QString str = escaped;
   /* If the line starts with a "." and was escaped, then unescape it */
   if (str.startsWith("..")) {
     str.remove(0, 1);

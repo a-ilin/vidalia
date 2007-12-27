@@ -35,24 +35,26 @@ class ReplyLine
 {
 public:
   ReplyLine();
-  ReplyLine(QString status, QString message);
-  ReplyLine(QString status, QString message, QString data);
+  ReplyLine(const QString &status, const QString &message);
+  ReplyLine(const QString &status, const QString &message, const QString &data);
 
   /** Set the status code to <b>status</b>. */
-  void setStatus(QString status);
+  void setStatus(const QString &status);
   /** Returns the status code for this reply line. */
   QString getStatus() const;
 
   /** Sets the ReplyText message this reply line to <b>msg</b>. */
-  void setMessage(QString msg);
+  void setMessage(const QString &msg);
   /** Returns the ReplyText portion of this reply line. */
   QString getMessage() const;
 
   /** Appends <b>data</b> to this reply line. */
-  void appendData(QString data);
+  void appendData(const QString &data);
   /** Returns a QStringList of all data lines for this reply line. */
   QStringList getData() const;
-  
+  /** Returns true if this reply contained a data portion. */ 
+  bool hasData() const { return _data.size() > 0; }
+
   /** Returns the entire contents of this reply line, including the status,
    * message, and any extra data. */
   QString toString() const;
@@ -60,7 +62,7 @@ public:
 private:
   /** Unescapes special characters in <b>str</b> and returns the unescaped
    * result. */
-  static QString unescape(QString str);
+  static QString unescape(const QString &escaped);
   
   QString _status;    /**< Response status code. */
   QString _message;   /**< ReplyText portion of this reply line. */
