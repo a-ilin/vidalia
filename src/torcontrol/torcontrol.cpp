@@ -397,6 +397,52 @@ TorControl::getInfo(QHash<QString,QString> &map, QString *errmsg)
   return false;
 }
 
+/** Sends a GETINFO message to Tor using the given list of <b>keys</b> and
+ * returns a QVariantMap containing the specified keys and their values as
+ * returned  by Tor. Returns a default constructed QVariantMap on failure. */
+QVariantMap
+TorControl::getInfo(const QStringList &keys, QString *errmsg)
+{
+  ControlCommand cmd("GETINFO");
+  ControlReply reply;
+  QVariantMap infoMap;
+
+  cmd.addArguments(keys);
+  if (!send(cmd, reply, errmsg))
+    return QVariantMap();
+
+  foreach (ReplyLine line, reply.getLines()) {
+    QString msg = line.getMessage();
+    int index   = msg.indexOf("=");
+    QString key = msg.mid(0, index);
+    QStringList val;
+   
+    if (index > 0 && index < msg.length()-1)
+      val << msg.mid(index+1);
+    if (line.hasData())
+      val << line.getData();
+
+    if (infoMap.contains(key)) {
+      QStringList values = infoMap.value(key).toStringList();
+      values << val;
+      infoMap.insert(key, values);
+    } else {
+      infoMap.insert(key, val);
+    }
+  }
+  return infoMap;
+}
+
+/** Sends a GETINFO message to Tor with a single <b>key</b> and returns a
+ * QVariant containing the value returned by Tor. Returns a default
+ * constructed QVariant on failure. */
+QVariant
+TorControl::getInfo(const QString &key, QString *errmsg)
+{
+  QVariantMap map = getInfo(QStringList() << key, errmsg);
+  return map.value(key);
+}
+
 /** Overloaded method to send a GETINFO command for a single info value */
 bool
 TorControl::getInfo(QString key, QString &val, QString *errmsg)
@@ -704,6 +750,50 @@ TorControl::getConf(QString key, QStringList &value, QString *errmsg)
     return true;
   }
   return false;
+}
+
+/** Sends a GETICONF message to Tor using the given list of <b>keys</b> and
+ * returns a QVariantMap containing the specified keys and their values as
+ * returned  by Tor. Returns a default constructed QVariantMap on failure. */
+QVariantMap
+TorControl::getConf(const QStringList &keys, QString *errmsg)
+{
+  ControlCommand cmd("GETCONF");
+  ControlReply reply;
+  QVariantMap confMap;
+
+  cmd.addArguments(keys);
+  if (!send(cmd, reply, errmsg))
+    return QVariantMap();
+
+  foreach (ReplyLine line, reply.getLines()) {
+    QString msg = line.getMessage();
+    int index   = msg.indexOf("=");
+    QString key = msg.mid(0, index);
+    QString val;
+   
+    if (index > 0 && index < msg.length()-1)
+      val = msg.mid(index+1);
+
+    if (confMap.contains(key)) {
+      QStringList values = confMap.value(key).toStringList();
+      values << val;
+      confMap.insert(key, values);
+    } else {
+      confMap.insert(key, val);
+    }  
+  }
+  return confMap;
+}
+
+/** Sends a GETCONF message to Tor with a single <b>key</b> and returns a
+ * QVariant containing the value returned by Tor. Returns a default
+ * constructed QVariant on failure. */
+QVariant
+TorControl::getConf(const QString &key, QString *errmsg)
+{
+  QVariantMap map = getConf(QStringList() << key, errmsg);
+  return map.value(key);
 }
 
 /** Asks Tor to save the current configuration to its torrc. */

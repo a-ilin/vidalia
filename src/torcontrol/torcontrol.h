@@ -32,6 +32,7 @@
 #include <QHash>
 #include <QList>
 #include <QStringList>
+#include <QVariant>
 
 #include "controlconnection.h"
 #include "torprocess.h"
@@ -88,6 +89,16 @@ public:
   /** Sends a GETINFO message for a single info value to Tor */
   bool getInfo(QString key, QString &val, QString *errmsg = 0);
 
+  /** Sends a GETINFO message to Tor using the given list of <b>keys</b> and
+   * returns a QVariantMap containing the specified keys and their values as
+   * returned by Tor. Returns a default constructed QVariantMap on failure. */
+  QVariantMap getInfo(const QStringList &keys, QString *errmsg = 0);
+  /** Sends a GETINFO message to Tor with a single <b>key</b> and returns a
+   * QVariant containing the value returned by Tor. Returns a default
+   * constructed QVariant on failure. */
+  QVariant getInfo(const QString &key, QString *errmsg = 0);
+
+
   /** Sends a signal to Tor */
   bool signal(TorSignal::Signal sig, QString *errmsg = 0);
  
@@ -133,6 +144,16 @@ public:
   bool getConf(QString key, QString &value, QString *errmsg = 0);
   /** Gets a list of configuration values for <b>key</b>. */
   bool getConf(QString key, QStringList &value, QString *errmsg = 0);
+
+  /** Sends a GETCONF message to Tor using the given list of <b>keys</b> and
+   * returns a QVariantMap containing the specified keys and their values as
+   * returned by Tor. Returns a default constructed QVariantMap on failure. */
+  QVariantMap getConf(const QStringList &keys, QString *errmsg = 0);
+  /** Sends a GETCONF message to Tor with a single <b>key</b> and returns a
+   * QVariant containing the value returned by Tor. Returns a default
+   * constructed QVariant on failure. */
+  QVariant getConf(const QString &key, QString *errmsg = 0);
+  
   /** Asks Tor to save the current configuration to its torrc */
   bool saveConf(QString *errmsg = 0);
   /** Tells Tor to reset the given configuration keys back to defaults. */
