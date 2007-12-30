@@ -115,7 +115,7 @@ OUT_DIR="$VID_DIR/pkg"
 PACKAGEMAKER=/Developer/Applications/Utilities/PackageMaker.app/Contents/MacOS/PackageMaker
 # Where have we put the xpi and license for Torbutton? Edit this if your
 # torbutton and torbutton license live somewhere else.
-TORBUTTON_PATH=~/tmp/torbutton-1.1.10-alpha.xpi
+TORBUTTON_PATH=~/tmp/torbutton-1.1.12-alpha.xpi
 TORBUTTON_LIC_PATH=~/tmp/LICENSE
 
 umask 022
@@ -140,7 +140,7 @@ mkdir $PKG_DIR
 echo "** Building Vidalia.pkg **"
 mkdir -p $BUILD_DIR/vidalia_packageroot/Applications/Vidalia.app
 mkdir -p $BUILD_DIR/vidalia_packageroot/Library/Vidalia
-cp -r $VID_DIR/Vidalia.app $BUILD_DIR/vidalia_packageroot/Applications/
+cp -R $VID_DIR/src/vidalia/Vidalia.app $BUILD_DIR/vidalia_packageroot/Applications/
 cp $VID_DIR/AUTHORS $VID_DIR/CHANGELOG $VID_DIR/README $BUILD_DIR/vidalia_packageroot/Library/Vidalia
 
 find $BUILD_DIR/vidalia_packageroot \( -type d -or -perm +111 \) -print0 | sudo xargs -0 chmod 775
