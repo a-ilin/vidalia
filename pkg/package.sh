@@ -58,6 +58,7 @@ case "$1" in
 # OS X .dmg
 #
 "osx")
+  cp -R ../src/vidalia/Vidalia.app ../
   srcdir="../"
   srcfiles="Vidalia.app README AUTHORS LICENSE COPYING CHANGELOG"
   osx/builddmg.sh "$srcdir" "$srcfiles"
