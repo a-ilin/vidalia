@@ -178,7 +178,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../config/advancedpage.cpp" line="123"/>
         <source>You selected &apos;Password&apos; authentication, but did not specify a password.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du har valt &apos;Läsenord&apos;-styrkning, men du har inte räknat upp en läsenord.</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.cpp" line="268"/>
@@ -461,12 +461,12 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../config/configdialog.cpp" line="200"/>
         <source>Error Applying Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Det gick ej att tillämpar inställningar</translation>
     </message>
     <message>
         <location filename="../config/configdialog.cpp" line="202"/>
         <source>Vidalia was unable to apply your %1 settings to Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia kunde inte tillämpa din %1 inställningarna till Tor.</translation>
     </message>
     <message>
         <location filename="../config/configdialog.cpp" line="82"/>
@@ -476,7 +476,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../config/configdialog.cpp" line="58"/>
         <source>OK</source>
-        <translation type="unfinished">Okej</translation>
+        <translation>Okej</translation>
     </message>
 </context>
 <context>
@@ -1793,7 +1793,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../config/networkpage.ui" line="274"/>
         <source>The Tor version you are currently running does not support bridges. &lt;br&gt;Tor will still try to encrypt its directory connections.</source>
-        <translation type="unfinished"></translation>
+        <translation>Det Tor du användar nu inte stöder bryggar. &lt;br&gt; Tor ska försäka kryptera dina kataloganstlutningar.</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="295"/>
@@ -2126,12 +2126,12 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../config/serverpage.cpp" line="134"/>
         <source>You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor har konfigurerad att vara en bryggarouter till censurerad användar men din Tor inte stöder bryggar.</translation>
     </message>
     <message>
         <location filename="../config/serverpage.cpp" line="136"/>
         <source>Please upgrade your Tor software or configure Tor to act as a normal Tor relay.</source>
-        <translation type="unfinished"></translation>
+        <translation>Varsågoda och uppdater din Tor eller konfigurerar Tor var en normal Tor-router.</translation>
     </message>
     <message>
         <location filename="../config/serverpage.cpp" line="259"/>
@@ -2141,7 +2141,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../config/serverpage.ui" line="25"/>
         <source>Run Tor as a client only</source>
-        <translation type="unfinished"></translation>
+        <translation>Använda Tor som en bara klient</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="91"/>
@@ -2157,12 +2157,12 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../config/serverpage.ui" line="110"/>
         <source>Enable to mirror the Tor relay directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktivera detta om Tor vidarebefordrar Tor-routerkatalogen</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="113"/>
         <source>Mirror the Relay Directory </source>
-        <translation type="unfinished"></translation>
+        <translation>Vidarebefordra routerkatalogen </translation>
     </message>
     <message>
         <location filename="../config/serverpage.cpp" line="190"/>
@@ -2172,7 +2172,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../config/serverpage.ui" line="39"/>
         <source>Help censored users reach the Tor network (Tor 0.2.0.8-alpha or newer)</source>
-        <translation type="unfinished"></translation>
+        <translation>Hjälpa censurerad användar att använda Tor-nätverk (Tor 0.2.0.8-alpha eller nyar)</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="272"/>
