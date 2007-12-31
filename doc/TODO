@@ -53,6 +53,8 @@ Localization:
     translations? I assume we'd mostly just need to translate our little
     VidaliaBundleWelcome.rtf file and maybe a couple strings in the .plist
     files, but how does the user choose which language they want to see?
+  * A web-based interface for helping translators submit translations of
+    individual strings would be super neat.
 
 
 Miscellaneous Tasks:
