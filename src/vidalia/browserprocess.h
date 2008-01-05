@@ -25,7 +25,7 @@
 
 /**
  * \file browserprocess.cpp
- * \version $Id: $ 
+ * \version $Id$ 
  * \brief Invokes a web browser process (originally by Steven. J. Murdoch)
  */
 

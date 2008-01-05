@@ -1,5 +1,5 @@
 ;--------------------------------------------------------------------
-;  $Id: $
+;  $Id$
 ;
 ;  Vidalia is distributed under the following license:
 ;
