@@ -44,15 +44,15 @@ if (NOT QT_LUPDATE_EXECUTABLE)
 endif(NOT QT_LUPDATE_EXECUTABLE)
 
 
-## We need windres.exe when building on MinGW to compile the .rc file
-if (MINGW)
-  find_program(MINGW_WINDRES_EXECUTABLE  NAMES windres.exe ${QT_BINARY_DIR})
-  if (NOT MINGW_WINDRES_EXECUTABLE)
+## We need windres.exe when building on Win32 to compile the .rc file
+if (WIN32)
+  find_program(WIN32_WINDRES_EXECUTABLE  NAMES windres.exe ${QT_BINARY_DIR})
+  if (NOT WIN32_WINDRES_EXECUTABLE)
     message(FATAL_ERR
-      "Vidalia could not find windres. Please make sure MinGW is installed and its bin directory is in your PATH environment variable."
+      "Vidalia could not find windres. Please make sure Qt is installed and its bin directory is in your PATH environment variable."
     )
-  endif(NOT MINGW_WINDRES_EXECUTABLE)
-endif(MINGW)
+  endif(NOT WIN32_WINDRES_EXECUTABLE)
+endif(WIN32)
 
 
 ## Wraps the supplied .ts files in lrelease commands
@@ -75,9 +75,9 @@ macro(QT4_ADD_TRANSLATIONS outfiles)
 endmacro(QT4_ADD_TRANSLATIONS)
 
 
-if (MINGW)
+if (WIN32)
   ## Wraps the supplied .rc files in windres commands
-  macro(MINGW_WRAP_RC outfiles)
+  macro(WIN32_WRAP_RC outfiles)
     foreach(it ${ARGN})
       get_filename_component(it      ${it} ABSOLUTE)
       get_filename_component(outfile ${it} NAME_WE)
@@ -85,12 +85,12 @@ if (MINGW)
       
       set(outfile ${CMAKE_CURRENT_BINARY_DIR}/${outfile}_res.o)
       add_custom_command(OUTPUT ${outfile}
-        COMMAND ${MINGW_WINDRES_EXECUTABLE}
+        COMMAND ${WIN32_WINDRES_EXECUTABLE}
         ARGS -i ${it} -o ${outfile} --include-dir=${rc_path}
         MAIN_DEPENDENCY ${it}
       )
       set(${outfiles} ${${outfiles}} ${outfile})
     endforeach(it)
-  endmacro(MINGW_WRAP_RC)
-endif(MINGW)
+  endmacro(WIN32_WRAP_RC)
+endif(WIN32)
 

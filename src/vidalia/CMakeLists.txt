@@ -247,11 +247,7 @@ else(APPLE)
   
   if (WIN32)
     ## Create a Windows binary
-    if (MINGW)
-      mingw_wrap_rc(vidalia_SRCS res/vidalia_win.rc)
-    else (MINGW)
-      qt4_add_resources(vidalia_SRCS res/vidalia_win.rc)
-    endif(MINGW)
+    win32_wrap_rc(vidalia_SRCS res/vidalia_win.rc)
     add_executable(${vidalia_BIN} WIN32 ${vidalia_SRCS})
   else (WIN32)
     ## Non-Windows, non-Mac
