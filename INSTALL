@@ -74,22 +74,61 @@ You would replace "C:\Qt\4.3.2\bin" in the previous command with the actual
 path to your Qt installation's qmake.exe binary.
 
 
-Windows with Visual Studio (untested)
---------------------------------------
-To build Vidalia on Windows with Visual Studio, you will need to download and
-patch the Qt for Windows source code from Trolltech. You can download the
-original source from Trolltech:
+Windows with Visual Studio
+--------------------------
+Starting with Qt 4.3.2, the open source editions of Qt/Win include support for
+Visual Studio. Previously, Visual Studio support was limited to commercial 
+editions of Qt unless you patched Qt's source.
 
-              http://trolltech.com/developer/downloads/qt/windows
+To build Vidalia under Visual Studio, you will first need to obtain Qt's 
+source code and compile it with Visual Studio support. To do that, follow these
+steps:
 
-You will then need to apply the patches from the qt-win32 open source project
-and recompile Qt:
+  1. Download Qt's source code from 
 
-              http://sourceforge.net/projects/qtwin/
+      http://trolltech.com/developer/downloads/qt/windows
 
-After Qt is finished compiling, you can have CMake generate Visual Studio
-project files for several different version of Visual Studio. To see which
-generators are available, you can run 'cmake --help'.
+  2. Extract the source to some directory without spaces (e.g., C:\Qt\4.3.3)
+ 
+  3. Open a command prompt and 'cd' to the directory to which you extracted
+     Qt's source code. (e.g., 'cd C:\Qt\4.3.3')
+
+  4. Configure Qt with support for your version of Visual Studio. For example,
+     to configure Qt with support for Visual Studio 2005, you would run:
+
+       configure.exe -debug-and-release -static -fast -platform win32-msvc2005
+
+     See Qt's README file for more available platform options.
+
+  5. Compile Qt by running:  
+     
+                                    nmake.exe
+  
+     (NOTE: This step will take several hours and lots of hard drive space.)
+ 
+Once you have Qt compiled with Visual Studio support, you can use CMake to
+generate a Visual Studio project file by running
+
+                          cmake -G "Visual Studio 8 2005" .
+
+or whatever your particular version of Visual Studio happens to be.
+'cmake --help' lists other available generators.
+
+
+Windows with NMake
+-------------------
+To compile Vidalia from the command line using NMake, you will first need to
+follow the steps under the 'Windows with Visual Studio' section for compiling
+Qt with Visual Studio support.
+
+If you want to build Vidalia from the command line, you can have CMake generate
+NMake makefiles by running:
+
+                     cmake -G "NMake Makefiles" .
+
+You can then compile Vidalia from the command line by simply running:
+
+                               nmake
 
 
 
