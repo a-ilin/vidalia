@@ -87,7 +87,7 @@ typedef BOOL (WINAPI *StartServiceA_fn)(
                              LPCTSTR* lpServiceArgVectors);
 
 /** Table of NT service related functions. */
-typedef struct ServiceFunctions {
+struct ServiceFunctions {
   bool loaded;
   ChangeServiceConfig2A_fn ChangeServiceConfig2A;
   CloseServiceHandle_fn    CloseServiceHandle;
