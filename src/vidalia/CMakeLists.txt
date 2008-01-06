@@ -269,12 +269,19 @@ if (MINGW)
     uuid
     winspool
   )
+else(MINGW)
+  if (WIN32)
+    target_link_libraries(${vidalia_BIN}
+      ${QT_QTMAIN_LIBRARY}
+    )
+  endif(WIN32)
 endif(MINGW)
 if (APPLE)
   target_link_libraries(${vidalia_BIN}
     "-framework AppKit"
   )
 endif(APPLE)
+
 ## Specify the files to be installed
 install(TARGETS ${vidalia_BIN} DESTINATION bin)
 
