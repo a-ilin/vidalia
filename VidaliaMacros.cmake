@@ -83,7 +83,9 @@ if (WIN32)
       get_filename_component(outfile ${it} NAME_WE)
       get_filename_component(rc_path ${it} PATH)
       
-      set(outfile ${CMAKE_CURRENT_BINARY_DIR}/${outfile}_res.o)
+      set(outfile
+        ${CMAKE_CURRENT_BINARY_DIR}/${outfile}_res${CMAKE_CXX_OUTPUT_EXTENSION}
+      )
       add_custom_command(OUTPUT ${outfile}
         COMMAND ${WIN32_WINDRES_EXECUTABLE}
         ARGS -i ${it} -o ${outfile} --include-dir=${rc_path}
