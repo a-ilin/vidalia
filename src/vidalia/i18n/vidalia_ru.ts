@@ -468,14 +468,14 @@ You may need to remove it manually.</source>
         <translation>Vidalia не смогла применить ваши настройки (%1) к Tor.</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="82"/>
-        <source>Relay</source>
-        <translation>Сервер</translation>
-    </message>
-    <message>
         <location filename="../config/configdialog.cpp" line="58"/>
         <source>OK</source>
         <translation type="unfinished">ОК</translation>
+    </message>
+    <message>
+        <location filename="../config/configdialog.cpp" line="82"/>
+        <source>Share</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

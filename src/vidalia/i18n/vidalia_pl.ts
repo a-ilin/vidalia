@@ -468,14 +468,14 @@ Musisz usunąć ją ręcznie.</translation>
         <translation>Vidalia nie mogła zastosować Twoich ustawień %1.</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="82"/>
-        <source>Relay</source>
-        <translation>Przekazywanie połączeń</translation>
-    </message>
-    <message>
         <location filename="../config/configdialog.cpp" line="58"/>
         <source>OK</source>
         <translation>OK</translation>
+    </message>
+    <message>
+        <location filename="../config/configdialog.cpp" line="82"/>
+        <source>Share</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

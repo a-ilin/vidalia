@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="sv">
-<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -469,14 +468,14 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
         <translation>Vidalia kunde inte tillämpa din %1 inställningarna till Tor.</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="82"/>
-        <source>Relay</source>
-        <translation>Router</translation>
-    </message>
-    <message>
         <location filename="../config/configdialog.cpp" line="58"/>
         <source>OK</source>
         <translation>Okej</translation>
+    </message>
+    <message>
+        <location filename="../config/configdialog.cpp" line="82"/>
+        <source>Share</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

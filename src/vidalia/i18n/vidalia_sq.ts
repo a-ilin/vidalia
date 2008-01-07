@@ -468,14 +468,14 @@ Mund tju duhet ta hiqni atë vet.</translation>
         <translation>Vidalia nuk mundi të shpëtojë zgjedhjet tuaja %1 te Tor.</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="82"/>
-        <source>Relay</source>
-        <translation>Urë</translation>
-    </message>
-    <message>
         <location filename="../config/configdialog.cpp" line="58"/>
         <source>OK</source>
         <translation type="unfinished">Ok</translation>
+    </message>
+    <message>
+        <location filename="../config/configdialog.cpp" line="82"/>
+        <source>Share</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

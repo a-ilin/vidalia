@@ -466,14 +466,14 @@ You may need to remove it manually.</source>
         <translation>Vidalia 無法應用你的 %1 設定於 Tor.</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="82"/>
-        <source>Relay</source>
-        <translation>中繼</translation>
-    </message>
-    <message>
         <location filename="../config/configdialog.cpp" line="58"/>
         <source>OK</source>
         <translation type="unfinished">確定</translation>
+    </message>
+    <message>
+        <location filename="../config/configdialog.cpp" line="82"/>
+        <source>Share</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>

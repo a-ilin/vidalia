@@ -448,11 +448,6 @@ You may need to remove it manually.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="82"/>
-        <source>Relay</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../config/configdialog.cpp" line="171"/>
         <source>Error Saving Settings</source>
         <translation type="unfinished"></translation>
@@ -476,6 +471,11 @@ You may need to remove it manually.</source>
         <location filename="../config/configdialog.cpp" line="58"/>
         <source>OK</source>
         <translation type="unfinished">موافق</translation>
+    </message>
+    <message>
+        <location filename="../config/configdialog.cpp" line="82"/>
+        <source>Share</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
