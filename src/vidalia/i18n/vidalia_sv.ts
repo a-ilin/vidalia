@@ -474,7 +474,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     </message>
     <message>
         <location filename="../config/configdialog.cpp" line="82"/>
-        <source>Share</source>
+        <source>Sharing</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

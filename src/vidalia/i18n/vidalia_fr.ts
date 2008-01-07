@@ -474,7 +474,7 @@ Vous devrez peut-être enlever manuellement le service Tor.</translation>
     </message>
     <message>
         <location filename="../config/configdialog.cpp" line="82"/>
-        <source>Share</source>
+        <source>Sharing</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
