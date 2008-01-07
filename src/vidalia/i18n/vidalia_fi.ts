@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="fi">
+<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -475,7 +476,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../config/configdialog.cpp" line="82"/>
         <source>Sharing</source>
-        <translation type="unfinished"></translation>
+        <translation>Jakaminen</translation>
     </message>
 </context>
 <context>
