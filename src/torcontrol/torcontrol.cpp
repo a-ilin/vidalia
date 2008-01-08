@@ -634,9 +634,18 @@ bool
 TorControl::setEvents(QString *errmsg)
 {
   ControlCommand cmd("SETEVENTS"); 
+  quint32 torVersion = getTorVersion();
 
   /* Add each event to the argument list */
   foreach (TorEvents::TorEvent e, _torEvents.eventList()) {
+    if (torVersion < 0x010203
+          && (e == TorEvents::GeneralStatus
+                || e == TorEvents::ClientStatus
+                || e == TorEvents::ServerStatus)) {
+      /* Tor < 0.1.2.3-alpha does not support STATUS_GENERAL, STATUS_CLIENT
+       * and STATUS_SERVER events. */
+        continue;
+    }
     cmd.addArgument(TorEvents::toString(e));
   }
   return send(cmd, errmsg);
