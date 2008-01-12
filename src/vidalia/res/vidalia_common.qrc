@@ -111,7 +111,6 @@
         <file>flags/an.png</file>
         <file>flags/ao.png</file>
         <file>flags/ar.png</file>
-        <file>flags/ara.png</file>
         <file>flags/at.png</file>
         <file>flags/au.png</file>
         <file>flags/aw.png</file>
@@ -156,12 +155,10 @@
         <file>flags/ec.png</file>
         <file>flags/ee.png</file>
         <file>flags/eg.png</file>
-        <file>flags/en.png</file>
         <file>flags/er.png</file>
         <file>flags/es.png</file>
         <file>flags/et.png</file>
         <file>flags/eu.png</file>
-        <file>flags/fa.png</file>
         <file>flags/fi.png</file>
         <file>flags/fj.png</file>
         <file>flags/fo.png</file>
@@ -221,7 +218,6 @@
         <file>flags/my.png</file>
         <file>flags/mz.png</file>
         <file>flags/na.png</file>
-        <file>flags/nb.png</file>
         <file>flags/nc.png</file>
         <file>flags/nf.png</file>
         <file>flags/nl.png</file>
@@ -253,8 +249,6 @@
         <file>flags/sl.png</file>
         <file>flags/sm.png</file>
         <file>flags/so.png</file>
-        <file>flags/sq.png</file>
-        <file>flags/sv.png</file>
         <file>flags/sy.png</file>
         <file>flags/tc.png</file>
         <file>flags/tg.png</file>
@@ -279,8 +273,6 @@
         <file>flags/ws.png</file>
         <file>flags/ye.png</file>
         <file>flags/za.png</file>
-        <file>flags/zh-cn.png</file>
-        <file>flags/zh-tw.png</file>
         <file>flags/zw.png</file>
         <file>flags/unknown.png</file>
     </qresource>
