@@ -39,7 +39,8 @@ Sets the verbosity of Vidalia's logging. If this option is specified without a
 Sets Vidalia's interface style. [Windows|Motif|CDE|Plastique]
 .TP
 \fB\-lang \fI<langcode>\fR
-Sets Vidalia's language. [ar|bg|cs|de|en|es|fa|fi|fr|hu|it|nb|nl|pl|pt|ru|sq|sv|zh-cn|zh-tw]
+Sets Vidalia's language. Run Vidalia with the \fI-help\fR option to see a list
+of available language codes.
 
 .SH SEE ALSO
 .BR tor (1)

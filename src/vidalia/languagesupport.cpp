@@ -55,6 +55,8 @@ LanguageSupport::languages()
     languages.insert("fi",    "suomi");
     languages.insert("fr",    
       QString::fromUtf8("fran\303\247ais"));
+    languages.insert("he",
+      QString::fromUtf8("\327\242\327\221\327\250\327\231\327\252"));
     languages.insert("hu",    "magyar nyelv");
     languages.insert("it",    "Italiano");
     languages.insert("nb",    
@@ -130,7 +132,8 @@ bool
 LanguageSupport::isRightToLeft(const QString &languageCode)
 {
   return (!languageCode.compare("ar", Qt::CaseInsensitive) 
-            || !languageCode.compare("fa", Qt::CaseInsensitive));
+            || !languageCode.compare("fa", Qt::CaseInsensitive)
+            || !languageCode.compare("he", Qt::CaseInsensitive));
 }
 
 /** Sets the application's translator to the specified language. */

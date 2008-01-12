@@ -33,6 +33,7 @@ set(vidalia_TS
   vidalia_fa.ts
   vidalia_fi.ts
   vidalia_fr.ts
+  vidalia_he.ts
   vidalia_hu.ts
   vidalia_it.ts
   vidalia_nb.ts
