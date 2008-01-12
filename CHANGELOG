@@ -1,4 +1,4 @@
-0.1.0   xx-xxx-200x
+0.1.0   xx-xxx-2008
   o Migrated to CMake as our build system, instead of the previous mix of
     autoconf and qmake. See the updated INSTALL file for more information.
   o Don't try to 'SETCONF HashedControlPassword' if we couldn't hash the
@@ -6,6 +6,10 @@
     (Ticket #305)
   o If Vidalia is built against Qt >= 4.3 with SSL support, then do our GeoIP
     lookups over an SSL connection.
+  o Parse ReachableAddresses values properly when there are multiple ports
+    specified on a single line.
+  o RESETCONF the value of PublishServerDescriptor when the user switches from
+    being a relay to acting as only a client.
   o Add support for Tor's STATUS_GENERAL, STATUS_CLIENT, and STATUS_SERVER
     status events.
   o Listen for the DANGEROUS_VERSION general status event and warn the user
@@ -22,12 +26,19 @@
     will no longer be able to reconnect.
   o Don't let users save an empty string for a Tor executable in the Settings
     dialog.
+  o Stop displaying flags next to the language names in the Appearance
+    settings page.
+  o Add a "How do I find a bridge?" link and corresponding help text to the
+    'Network' settings page.
   o Add a 'BrowserExecutable' configuration option to launch a Web browser
     when Tor has built a circuit, and exit Vidalia when the browser is closed.
     Patch from Steven J. Murdoch <http://www.cl.cam.ac.uk/users/sjm217/>.
   o Respond to the Delete key in the network map by closing whatever circuits
     or streams are currently selected. Suggested by Andrew Lewman.
-  o Updated Finnish and Russian translations.
+  o Rename the 'Relay' settings page to the 'Sharing' settings page.
+  o Added an Albanian GUI translation from Frederik Nosi.
+  o Added a Hebrew GUI and Win32 installer translation.
+  o Updated Finnish, Norwegian, Polish, Russian, and Swedish translations.
 
 
 0.0.16  22-Nov-2007
