@@ -92,7 +92,7 @@ LanguageSupport::defaultLanguageCode()
 
 /** Returns the language code for a given language name. */
 QString
-LanguageSupport::languageCode(QString languageName)
+LanguageSupport::languageCode(const QString &languageName)
 {
   return languages().key(languageName);
 }
@@ -106,7 +106,7 @@ LanguageSupport::languageCodes()
 
 /** Returns the language name for a given language code. */
 QString
-LanguageSupport::languageName(QString languageCode)
+LanguageSupport::languageName(const QString &languageCode)
 {
   return languages().value(languageCode);
 }
@@ -120,23 +120,30 @@ LanguageSupport::languageNames()
 
 /** Returns true if we understand the given language code. */
 bool
-LanguageSupport::isValidLanguageCode(QString code)
+LanguageSupport::isValidLanguageCode(const QString &languageCode)
 {
-  return languageCodes().contains(code.toLower());
+  return languageCodes().contains(languageCode);
+}
+
+/** Returns true if <b>languageCode</b> requires a right-to-left layout. */
+bool
+LanguageSupport::isRightToLeft(const QString &languageCode)
+{
+  return (!languageCode.compare("ar", Qt::CaseInsensitive) 
+            || !languageCode.compare("fa", Qt::CaseInsensitive));
 }
 
 /** Sets the application's translator to the specified language. */
 bool
-LanguageSupport::translate(QString langCode)
+LanguageSupport::translate(const QString &languageCode)
 {
-  if (isValidLanguageCode(langCode)) {
+  QString code = languageCode.toLower();
+  if (isValidLanguageCode(code)) {
     QTranslator *translator = new QTranslator(vApp);
-    langCode = langCode.toLower();
-    if (translator->load(QString(":/lang/") + langCode)) {
+    if (translator->load(QString(":/lang/") + code)) {
       QApplication::installTranslator(translator);
-      if (langCode == "fa" || langCode == "ar") {
+      if (isRightToLeft(code))
         vApp->setLayoutDirection(Qt::RightToLeft);
-      }
       return true;
     }
     delete translator;
