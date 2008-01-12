@@ -132,6 +132,7 @@ XPStyle         on
 !include "vidalia_fa.nsh"
 !include "vidalia_fi.nsh"
 !include "vidalia_fr.nsh"
+!include "vidalia_he.nsh"
 !include "vidalia_it.nsh"
 !include "vidalia_nl.nsh"
 !include "vidalia_pl.nsh"
