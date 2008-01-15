@@ -403,12 +403,12 @@ kein Passwort angegeben.</translation>
     <message>
         <location filename="../network/circuitlistwidget.cpp" line="85"/>
         <source>Close Circuit (Del)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kanal schließen (Entf)</translation>
     </message>
     <message>
         <location filename="../network/circuitlistwidget.cpp" line="106"/>
         <source>Close Stream (Del)</source>
-        <translation type="unfinished"></translation>
+        <translation>Datenstrom schließen (Entf)</translation>
     </message>
 </context>
 <context>
@@ -471,7 +471,7 @@ kein Passwort angegeben.</translation>
     <message>
         <location filename="../config/configdialog.cpp" line="58"/>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../config/configdialog.cpp" line="82"/>
@@ -585,7 +585,7 @@ kein Passwort angegeben.</translation>
     <message>
         <location filename="../config/generalpage.cpp" line="86"/>
         <source>You must specify the name of your Tor executable.</source>
-        <translation type="unfinished"></translation>
+        <translation>Sie müssen den Namen von Tors ausführbarer Datei angeben.</translation>
     </message>
 </context>
 <context>
