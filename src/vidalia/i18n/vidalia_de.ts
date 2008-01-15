@@ -1010,7 +1010,7 @@ Verbindungen erscheinen.</translation>
     <message>
         <location filename="../mainwindow.ui" line="165"/>
         <source>Vidalia Shortcuts</source>
-        <translation>Vidalia Tastenkombinationen</translation>
+        <translation>Vidalia Schnellzugriff</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="190"/>
@@ -1195,27 +1195,28 @@ Wollen Sie den Tor-Verteiler langsam beenden, damit die Clients Zeit haben, eine
     <message>
         <location filename="../mainwindow.cpp" line="436"/>
         <source>Error starting web browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler beim Starten des Webbrowsers</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="437"/>
         <source>Vidalia was unable to start the configured web browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia konnte den angegebenen Webbrowser nicht starten</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1038"/>
         <source>Tor Update Available</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-Update verfügbar</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1041"/>
         <source>The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version.</source>
-        <translation type="unfinished"></translation>
+        <translation>Die installierte Tor-Version ist veraltet und wird nicht länger empfohlen.
+Bitte besuchen Sie die Tor-Webseite, um die aktuelle Version herunter zu laden.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1041"/>
         <source>Tor website: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-Webseite: %1</translation>
     </message>
 </context>
 <context>
@@ -2187,7 +2188,7 @@ Verteiler besteht. Sie können auch Ihren PGP- oder GPG-Fingerabdruck angeben.</
     <message>
         <location filename="../config/serverpage.ui" line="39"/>
         <source>Help censored users reach the Tor network (Tor 0.2.0.8-alpha or newer)</source>
-        <translation type="unfinished">Zensierten Nutzern helfen, dass Tor-Netzwerk zu nutzen (Tor .2.0.3-alpha oder neuer) {0.2.0.8-?}</translation>
+        <translation>Nutzern helfen, die einer Internetzensur unterliegen, das Tor-Netzwerk zu nutzen (Tor 0.2.0.8-alpha oder neuer)</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="272"/>
