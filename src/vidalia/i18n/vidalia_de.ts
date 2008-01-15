@@ -228,7 +228,7 @@ kein Passwort angegeben.</translation>
     <message>
         <location filename="../config/advancedpage.ui" line="86"/>
         <source>None</source>
-        <translation>Kein</translation>
+        <translation>Keine</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.cpp" line="45"/>
@@ -1825,17 +1825,19 @@ seine Verzeichnisverbindungen zu verschlüsseln.</translation>
     <message>
         <location filename="../config/networkpage.ui" line="176"/>
         <source>Check to configure Tor to only connect to relays using ports allowed by your firewall</source>
-        <translation type="unfinished"></translation>
+        <translation>Durch das Aktivieren dieser Option, können Sie Tor so einrichten, dass nur freigegebene Ports
+verwendet werden</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="235"/>
         <source>Check to configure Tor to use bridge relays to access the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Durch das Aktivieren dieser Option, können Sie Tor so einrichten, dass die Verbindung zum
+Tor-Netzwerk über Brücken hergestellt wird</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="318"/>
         <source>&lt;a href=&quot;bridges.finding&quot;&gt;How do I find a bridge?&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;bridges.finding&quot;&gt;Wie finde ich eine Tor-Brücke?&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -2178,7 +2180,7 @@ Verteiler besteht. Sie können auch Ihren PGP- oder GPG-Fingerabdruck angeben.</
     <message>
         <location filename="../config/serverpage.ui" line="113"/>
         <source>Mirror the Relay Directory </source>
-        <translation>Das Tor-Verteiler-Verzeichnis speigeln</translation>
+        <translation>Das Tor-Verteiler-Verzeichnis spiegeln</translation>
     </message>
     <message>
         <location filename="../config/serverpage.cpp" line="190"/>
