@@ -167,7 +167,7 @@ ServerSettings::apply(QString *errmsg)
  * Currently this just translates BandwidthFoo to RelayBandwidthFoo when
  * appropriate. */
 QVariant
-ServerSettings::torValue(const QString &key)
+ServerSettings::torValue(const QString &key) const
 {
   if (torControl()->getTorVersion() >= 0x020001) {
     if (key == SETTING_BANDWIDTH_RATE)

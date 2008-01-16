@@ -97,7 +97,7 @@ protected:
   /** Virtual method called when we retrieve a server-related setting from Tor.
    * Currently this just translates BandwidthFoo to RelayBandwidthFoo when
    * appropriate. */
-  virtual QVariant torValue(const QString &key);
+  virtual QVariant torValue(const QString &key) const;
 
 private:
   /** Returns Tor-recognizable configuration keys and current values. */
