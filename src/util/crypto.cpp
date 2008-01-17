@@ -72,9 +72,11 @@
 #endif
 
 
-/** Returns <b>len</b> bytes of pseudorandom data on success, or an empty
- * QByteArray on failure. This function is based on crypto_seed_rng() from
- * Tor's crypto.c. See LICENSE for details on Tor's license. */
+/** Returns up to <b>len</b> bytes of pseudorandom data on success, or an empty
+ * QByteArray on failure. The caller should verify that the returned
+ * QByteArray contains the requested number of bytes. This function is based on
+ * crypto_seed_rng() from Tor's crypto.c. See LICENSE for details on Tor's
+ * license. */
 QByteArray
 crypto_rand_bytes(int len)
 {
@@ -116,7 +118,7 @@ crypto_rand_bytes(int len)
       bytes_read = file.read(buf.data()+total, buf.size()-total);
       if (bytes_read < 0)
         return QByteArray();
-      else if (read == 0) {
+      else if (bytes_read == 0) {
         buf.resize(total);
         return buf;
       }
