@@ -25,7 +25,6 @@
  * \brief A command sent to Tor's control interface
  */
 
-
 #include "controlcommand.h"
 
 /** Default constructor. */

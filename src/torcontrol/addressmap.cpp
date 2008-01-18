@@ -26,8 +26,7 @@
  */
 
 #include <QStringList>
-//#include <vidalia.h>
-
+#include "debug.h"
 #include "addressmap.h"
 
 /** Format of expiry times in address map events. */
@@ -39,11 +38,10 @@
 void
 AddressMap::add(QString from, QString to, QDateTime expires)
 {
-#if 0
-  vInfo("New address mapping: %1 -> %2 (expires %3)")
-    .arg(from).arg(to)
-    .arg(expires.isValid() ? expires.toString(DATE_FMT) : "never");
-#endif
+  log::debug("New address mapping: %1 -> %2 (expires %3)").arg(from)
+                                                          .arg(to)
+                          .arg(expires.isValid() ? expires.toString(DATE_FMT)
+                                                 : "never");
   insert(from, addr_map_entry_t(to, expires));
 }
 

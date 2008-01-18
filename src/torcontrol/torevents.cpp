@@ -27,7 +27,6 @@
 
 #include <QApplication>
 #include <stringutil.h>
-//#include <vidalia.h>
 
 #include "circuit.h"
 #include "stream.h"
