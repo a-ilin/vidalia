@@ -1,5 +1,5 @@
-0.1.0   xx-xxx-2008
-  o Migrated to CMake as our build system, instead of the previous mix of
+0.1.0   xx-Jan-2008
+  o Migrate to CMake as our build system, instead of the previous mix of
     autoconf and qmake. See the updated INSTALL file for more information.
   o Don't try to 'SETCONF HashedControlPassword' if we couldn't hash the
     control password, otherwise we could end up disabling authentication.
@@ -36,8 +36,10 @@
   o Respond to the Delete key in the network map by closing whatever circuits
     or streams are currently selected. Suggested by Andrew Lewman.
   o Rename the 'Relay' settings page to the 'Sharing' settings page.
-  o Added an Albanian GUI translation from Frederik Nosi.
-  o Added a Hebrew GUI and Win32 installer translation.
+  o Add a vidalia.desktop desktop entry file that can be installed with
+    'make install'.
+  o Add an Albanian GUI translation from Frederik Nosi.
+  o Add a Hebrew GUI and Win32 installer translation.
   o Updated Finnish, Norwegian, Polish, Russian, and Swedish translations.
 
 
