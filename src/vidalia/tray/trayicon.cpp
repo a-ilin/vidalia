@@ -167,9 +167,9 @@ TrayIcon::showBalloonMessage(const QString &title, const QString &message,
 #if defined(HAVE_QSYSTEMTRAYICON_H)
   QSystemTrayIcon::MessageIcon icon;
   switch (balloonIcon) {
-    NoIcon:   icon = QSystemTrayIcon::NoIcon; break;
-    Warning:  icon = QSystemTrayIcon::Warning; break;
-    Critical: icon = QSystemTrayIcon::Critical; break;
+    case NoIcon:   icon = QSystemTrayIcon::NoIcon; break;
+    case Warning:  icon = QSystemTrayIcon::Warning; break;
+    case Critical: icon = QSystemTrayIcon::Critical; break;
     default:  icon = QSystemTrayIcon::Information; break;
   }
   TrayIconImpl::showMessage(title, message, icon);

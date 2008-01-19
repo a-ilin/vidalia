@@ -56,7 +56,7 @@
 
 /** Robinson projection table */
 /** Length of the parallel of latitude */
-float  plen[] = {
+static float  plen[] = {
     1.0000, 0.9986, 0.9954, 0.9900,
     0.9822, 0.9730, 0.9600, 0.9427,
     0.9216, 0.8962, 0.8679, 0.8350,
@@ -65,7 +65,7 @@ float  plen[] = {
   };
 
 /** Distance of corresponding parallel from equator */ 
-float  pdfe[] = {
+static float  pdfe[] = {
     0.0000, 0.0620, 0.1240, 0.1860,
     0.2480, 0.3100, 0.3720, 0.4340,
     0.4958, 0.5571, 0.6176, 0.6769,
