@@ -26,6 +26,7 @@
  */
 
 #include <torsocket.h>
+#include <vidalia.h>
 #include "geoipresolver.h"
 #include "config.h"
 
@@ -82,6 +83,7 @@ GeoIpResolver::resolveFromCache(QList<QHostAddress> ips)
 
   /* If any were cached, emit their results now */
   if (cached.size() > 0) {
+    vInfo("Resolved %1 GeoIP entries from cache.").arg(ips.size());
     emit resolved(-1, cached);
   }
   return ips;
@@ -104,7 +106,9 @@ GeoIpResolver::connected()
     return;
   }
   GeoIpRequest *req = (GeoIpRequest *)_requestList.value(socket);
-  
+  vInfo("Connected to the GeoIP host. Sending request for %1 uncached "
+        "GeoIP entries. (request id %2)").arg(req->size()).arg(req->id());
+
   /* Send the request */
   socket->write(req->request());
 }
@@ -145,6 +149,9 @@ GeoIpResolver::disconnected()
          * automatically takes a copy of the container when it enters a
          * foreach loop. If you modify the container as you are iterating,
          * that won't affect the loop." */
+        vWarn("Received a GeoIP entry for IP address %1 that was not included "
+              "in the initial request. (request id %2)").arg(ip)
+                                                        .arg(request->id());
         geoips.removeAt(i);
       }
     }
@@ -153,10 +160,14 @@ GeoIpResolver::disconnected()
       _cache.saveToDisk();
     }
     /* Emit the results */
+    vInfo("Parsed %1 entries from the GeoIP response. (request id %2)")
+                                 .arg(geoips.size()).arg(request->id());
     emit resolved(request->id(), geoips);
   } else {
     /* We failed to get the Geo IP information, so emit resolveFailed and
      * include the HTTP status message. */
+    vWarn("GeoIP resolution failed (request id %1): %2").arg(request->id())
+                                             .arg(response.statusMessage());
     emit resolveFailed(request->id(), response.statusMessage());
   }
   /* Close the socket and clean up */
@@ -182,6 +193,8 @@ GeoIpResolver::socketError(QString errorString)
     GeoIpRequest *request = (GeoIpRequest *)_requestList.take(socket);
     emit resolveFailed(request->id(), errorString);
     socket->abort();
+    vWarn("GeoIP request socket error (request id %1): %2").arg(request->id())
+                                                           .arg(errorString);
     delete socket;
     delete request;
   }
@@ -230,13 +243,19 @@ GeoIpResolver::resolve(QList<QHostAddress> ips)
   /* Connect so we can send our request and return the request ID. */
 #if defined(USE_QSSLSOCKET)
   if (TorSslSocket::supportsSsl()) {
+    vInfo("Opening an SSL connection to the GeoIP host at %1:%2 (request id %3)")
+                          .arg(GEOIP_HOST).arg(GEOIP_SSL_PORT).arg(request->id());
     QByteArray caCert(":/geoip/cacert_root.crt");
     socket->addCaCertificate(QSslCertificate(caCert));
     socket->connectToRemoteHost(GEOIP_HOST, GEOIP_SSL_PORT, true);
   } else {
+    vInfo("Opening an unencrypted connection to the GeoIP host at %1:%2 "
+          "(request id %3)").arg(GEOIP_HOST).arg(GEOIP_PORT).arg(request->id());
     socket->connectToRemoteHost(GEOIP_HOST, GEOIP_PORT, false);
   }
 #else
+  vInfo("Opening an unencrypted connection to the GeoIP host at %1:%2 "
+        "(request id %3)").arg(GEOIP_HOST).arg(GEOIP_PORT).arg(request->id());
   socket->connectToRemoteHost(GEOIP_HOST, GEOIP_PORT);
 #endif
   return request->id();
