@@ -42,22 +42,24 @@ public:
   GeoIpRequest(int id) : _id(id) {}
   
   /** Sets the Host: field in this request's header. */
-  void setHost(QString host) { _host = host; }
+  void setHost(const QString &host) { _host = host; }
   /** Sets the page path in this request's header. */
-  void setPage(QString page) { _page = page; }
+  void setPage(const QString &page) { _page = page; }
   /** Sets the list of IPs whose geo information we want to request. */
-  void setRequest(QList<QHostAddress> ips);
+  void setRequest(const QList<QHostAddress> &ips);
   /** Returns true if this request contains <b>ip</b>. */
-  bool contains(QHostAddress ip);
+  bool contains(const QHostAddress &ip) const;
 
   /** Returns the request's identifier. */
-  int id() { return _id; }
+  int id() const { return _id; }
+  /** Returns the number of IP addresses contained in this request. */
+  int size() const { return _ips.size(); }
   /** Formats the request as an HTTP POST request */
-  QByteArray request();
+  QByteArray request() const;
   
 private:
   /** Creates an HTTP header for this request. */
-  QHttpRequestHeader createHeader();
+  QHttpRequestHeader createHeader() const;
   
   int _id;          /**< Request identifier */
   QString _host;    /**< Host: field value. */

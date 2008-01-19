@@ -33,7 +33,7 @@
 /** Creates an HTTP POST header for this request, based on the 
  * Host, Page, and content-length values. */
 QHttpRequestHeader
-GeoIpRequest::createHeader()
+GeoIpRequest::createHeader() const
 {
   QHttpRequestHeader header("POST", _page, 1, 1);
   
@@ -55,7 +55,7 @@ GeoIpRequest::createHeader()
 
 /** Sets the list of IPs whose geo information we want to request. */
 void
-GeoIpRequest::setRequest(QList<QHostAddress> ips)
+GeoIpRequest::setRequest(const QList<QHostAddress> &ips)
 {
   _request = "ip=";
   int ipcount = ips.size();
@@ -72,7 +72,7 @@ GeoIpRequest::setRequest(QList<QHostAddress> ips)
 
 /** Formats the request as an HTTP POST request. */
 QByteArray
-GeoIpRequest::request()
+GeoIpRequest::request() const
 {
   /* Create the header and append the request content. */
   QString request = createHeader().toString() + _request;
@@ -81,7 +81,7 @@ GeoIpRequest::request()
 
 /** Returns true if this request contains <b>ip</b>. */
 bool
-GeoIpRequest::contains(QHostAddress ip)
+GeoIpRequest::contains(const QHostAddress &ip) const
 {
   return _ips.contains(ip);
 }
