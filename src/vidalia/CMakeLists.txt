@@ -284,4 +284,7 @@ endif(APPLE)
 
 ## Specify the files to be installed
 install(TARGETS ${vidalia_BIN} DESTINATION bin)
+if(NOT WIN32 AND NOT APPLE)
+  install(FILES vidalia.desktop DESTINATION share/applications)
+endif(NOT WIN32 AND NOT APPLE)
 

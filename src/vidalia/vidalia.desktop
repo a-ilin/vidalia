@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Exec=vidalia
+Name=Vidalia
+GenericName=Tor GUI
+Terminal=false
+Categories=Network;Qt
