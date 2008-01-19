@@ -81,26 +81,56 @@ Visual Studio. Previously, Visual Studio support was limited to commercial
 editions of Qt unless you patched Qt's source.
 
 To build Vidalia under Visual Studio, you will first need to obtain Qt's 
-source code and compile it with Visual Studio support. To do that, follow these
-steps:
+source code and compile it with Visual Studio support. The following
+directions show how to compile Qt with Visual Studio 2005 support, but a
+similar process can be followed for other versions of VS. 
 
-  1. Download Qt's source code from 
-
-      http://trolltech.com/developer/downloads/qt/windows
-
-  2. Extract the source to some directory without spaces (e.g., C:\Qt\4.3.3)
+  1. Download and install Visual C++ 2005 Express
  
-  3. Open a command prompt and 'cd' to the directory to which you extracted
-     Qt's source code. (e.g., 'cd C:\Qt\4.3.3')
+       http://www.microsoft.com/express/2005/download/default.aspx
 
-  4. Configure Qt with support for your version of Visual Studio. For example,
+  2. Download and install the Windows Platform SDK and configure Visual C++ with
+     the location of the Platform SDK's executable, include, and library
+     directories.
+
+       http://www.microsoft.com/express/2005/download/default.aspx
+
+     It is important to also install the "Microsoft Web Workshop (IE) SDK", even
+     though that seems irrelevant.
+
+  3. Download the Qt/Windows open source edition source code and extract it to a
+     directory with no spaces (e.g., C:\Qt\4.3.3).
+
+       http://trolltech.com/developer/downloads/qt/windows
+
+  4. Edit the Visual Studio  2005 command prompt environment variables to
+     include the platform SDK files, by opening
+
+       C:\Program Files\Microsoft Visual Studio 8\Common7\Tools\vsvars32.bat
+
+     and adding
+
+       C:\Program Files\Microsoft Platform SDK for Windows Servers 2003\R2\Include
+
+     to the INCLUDE variable and
+
+       C:\Program Files\Microsoft Platform SDK for Windows Servers 2003\R2\Lib
+
+     to the LIB variable. Modify the path to the platform SDK files as
+     appropriate, depending on where you installed Visual Studio and the
+     Platform SDK in Steps 1 and 2.
+
+  5. Open the Visual Studio 2005 Command Prompt and 'cd' to the location of your
+     extracted Qt source code (e.g., C:\Qt\4.3.3).
+
+  6. Configure Qt with support for your version of Visual Studio. For example,
      to configure Qt with support for Visual Studio 2005, you would run:
 
        configure.exe -debug-and-release -static -fast -platform win32-msvc2005
 
      See Qt's README file for more available platform options.
 
-  5. Compile Qt by running:  
+  7. Compile Qt by running:  
      
                                     nmake.exe
   
