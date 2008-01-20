@@ -189,3 +189,25 @@ TorProcess::onError(QProcess::ProcessError error)
   }
 }
 
+/** Returns the version reported by the Tor executable specified in
+ * <b>exe</b>, or a default-constructed QString on failure. */
+QString
+TorProcess::version(const QString &exe)
+{
+  QProcess tor;
+
+  tor.start(exe, QStringList() << "--version");
+  if (!tor.waitForStarted() || !tor.waitForFinished())
+    return QString();
+
+  while (tor.canReadLine()) {
+    QString line = tor.readLine();
+    if (line.startsWith("Tor version", Qt::CaseInsensitive)) {
+      QStringList parts = line.split(" ");
+      if (parts.size() >= 3)
+        return parts.at(2);
+    }
+  }
+  return QString();
+}
+

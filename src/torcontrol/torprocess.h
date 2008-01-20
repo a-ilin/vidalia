@@ -52,6 +52,10 @@ public:
   /** Disable reading log messages from stdout. */
   void closeStdout();
 
+  /** Returns the version reported by the Tor executable specified in
+   * <b>exe</b>, or a default-constructed QString on failure. */
+  static QString version(const QString &exe);
+
 signals:
   /** Emitted when Tor prints a log message to the console */
   void log(const QString &severity, const QString &message);
