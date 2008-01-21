@@ -90,9 +90,6 @@ protected:
   void keyPressEvent(QKeyEvent *event);
 
 private:
-  /** Inserts a new item into the router list, maintaining the current order.*/
-  void insertSorted(RouterListItem *item);
-
   /** Maps a server ID to that server's list item. */
   QHash<QString,RouterListItem*> _idmap;
   quint32  _onlineRouterCount; /**< Number of online routers. */

@@ -96,46 +96,6 @@ RouterListWidget::clearRouters()
   QTreeWidget::clear();
 }
 
-/** Inserts a new router list item into the list, in its proper sorted place
- * according to the current sort column. */
-void
-RouterListWidget::insertSorted(RouterListItem *item)
-{
-  /* Qt >= 4.2 handles the sorting in addTopLevelItem(). We need to do the
-   * sorted inserts ourselves in older Qts. */
-#if QT_VERSION < 0x040200
-  Qt::SortOrder order = header()->sortIndicatorOrder();
-  int left  = 0;
-  int right = topLevelItemCount();
-  int mid;
-
-  while (left < right) {
-    mid = (left + right)/2;
-    if (order == Qt::AscendingOrder) {
-      if (*((RouterListItem *)topLevelItem(mid)) < *item) {
-        left = mid + 1;
-      } else {
-        right = mid;
-      }
-    } else {
-      if (*item < *((RouterListItem *)topLevelItem(mid))) {
-        left = mid+1;
-      } else {
-        right = mid;
-      }
-    }
-  }
- 
-  if (left == topLevelItemCount()) {
-    addTopLevelItem(item);
-  } else {
-    insertTopLevelItem(left, item);
-  }
-#else
-  addTopLevelItem(item);
-#endif
-}
-
 /** Called when the user selects a router from the list. This will search the
  * list for a router whose names starts with the key pressed. */
 void
@@ -219,7 +179,7 @@ RouterListWidget::addRouter(RouterDescriptor rd)
 
     /* Add the router item to the list and store its descriptor. */
     item = new RouterListItem(this, rd);
-    insertSorted(item);
+    addTopLevelItem(item);
     _idmap.insert(id, item);
 
     /* Set our status tip to the number of servers in the list */
