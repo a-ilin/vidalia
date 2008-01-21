@@ -149,8 +149,7 @@ RouterListWidget::findRouterById(QString id)
 RouterListItem*
 RouterListWidget::findRouterByName(QString name)
 {
-  QList<QTreeWidgetItem *> list = findItems(name,
-                                            Qt::MatchExactly,
+  QList<QTreeWidgetItem *> list = findItems(name, Qt::MatchExactly,
                                             NameColumn);
   /* It's possible that more than one router could have the same name, but
    * without a fingerprint on which to match, we just have to pick one. We'll
@@ -166,29 +165,25 @@ void
 RouterListWidget::addRouter(RouterDescriptor rd)
 {
   QString id = rd.id();
-  if (!id.isEmpty()) {
-    RouterListItem *item = findRouterById(id);
-    if (item) {
-      /* This is an updated descriptor, so remove the old item and we'll 
-       * add a new, updated item. */
-      if (item->descriptor().online())
-        _onlineRouterCount--;
-      delete takeTopLevelItem(indexOfTopLevelItem(item));
-      _idmap.remove(id);
-    }
+  if (id.isEmpty())
+    return;
 
-    /* Add the router item to the list and store its descriptor. */
+  RouterListItem *item = findRouterById(id);
+  if (item) {
+    if (item->descriptor().online())
+      _onlineRouterCount--;
+    item->update(rd);
+  } else {
     item = new RouterListItem(this, rd);
     addTopLevelItem(item);
     _idmap.insert(id, item);
-
-    /* Set our status tip to the number of servers in the list */
-    if (rd.online())
-      _onlineRouterCount++;
-    setStatusTip(tr("%1 relays online (%2 total)")
-                              .arg(_onlineRouterCount)
-                              .arg(topLevelItemCount()));
   }
+
+  /* Set our status tip to the number of servers in the list */
+  if (rd.online())
+    _onlineRouterCount++;
+  setStatusTip(tr("%1 relays online (%2 total)").arg(_onlineRouterCount)
+                                                .arg(topLevelItemCount()));
 }
 
 /** Called when the selected items have changed. This emits the 
