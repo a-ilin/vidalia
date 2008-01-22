@@ -15,7 +15,7 @@ $Id$
   Vidalia's repository supports anonymous checkout. You can grab the current
   Vidalia source via:
 
-    svn co svn://svn.vidalia-project.org/vidalia/trunk/ vidalia
+    svn co https://svn.vidalia-project.net/svn/vidalia/trunk/ vidalia
     
 1.2 Directory Layout
 
@@ -42,25 +42,19 @@ $Id$
 
         All Vidalia source code will be contained under this directory.
 
-     ./trunk/src/config:
-
-        Source code pertaining to storing and retrieving Vidalia's
-        configuration and settings information will be stored in this
-        directory.
-
-     ./trunk/src/control:
+     ./trunk/src/torcontrol:
 
         Code in this directory implements Tor's control protocol. It also
         handles things such as starting and stopping Tor and checking the
         status of the Tor process.
 
-     ./trunk/src/gui:
+     ./trunk/src/vidalia:
 
        This directory contains code that implements the GUI components of
        Vidalia. Whenever possible and sane, each component should be placed in
        an appropriately-named subdirectory of ./trunk/src/gui.
 
-    ./trunk/src/gui/res:
+    ./trunk/src/vidalia/res:
 
        All GUI-related resource files, such as images, should go in this
        directory. Images should be placed in sub-directories appropriate for
