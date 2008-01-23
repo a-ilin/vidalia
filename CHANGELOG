@@ -6,6 +6,8 @@
     (Ticket #305)
   o If Vidalia is built against Qt >= 4.3 with SSL support, then do our GeoIP
     lookups over an SSL connection.
+  o Work around a crash bug with a sorted QTreeWidget that occurs with Qt
+    4.3.3, and possibly later versions as well.
   o Parse ReachableAddresses values properly when there are multiple ports
     specified on a single line.
   o RESETCONF the value of PublishServerDescriptor when the user switches from
