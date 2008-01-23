@@ -55,10 +55,10 @@ if (NOT APPLE)
   check_include_file_cxx("qsystemtrayicon.h" HAVE_QSYSTEMTRAYICON_H)
   if (HAVE_QSYSTEMTRAYICON_H)
     option(WITH_QSYSTEMTRAYICON "Use Qt's tray icon implementation." ON)
-    if (NOT WITH_QSYSTEMTRAYICON)
+    if (NOT USE_QSYSTEMTRAYICON)
       ## Disable the use of QSystemTrayIcon
       set(HAVE_QSYSTEMTRAYICON_H "")
-    endif(NOT WITH_QSYSTEMTRAYICON)
+    endif(NOT USE_QSYSTEMTRAYICON)
   endif(HAVE_QSYSTEMTRAYICON_H)
 endif(NOT APPLE)
 
