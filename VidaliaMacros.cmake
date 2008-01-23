@@ -28,7 +28,7 @@ find_program(QT_LRELEASE_EXECUTABLE NAMES lrelease-qt4 lrelease
 )
 if (NOT QT_LRELEASE_EXECUTABLE)
   message(FATAL_ERROR
-    "Vidalia could not find lrelease. Please make sure Qt >= 4.1 is installed."
+    "Vidalia could not find lrelease. Please make sure Qt >= ${QT_MIN_VERSION} is installed."
   )
 endif(NOT QT_LRELEASE_EXECUTABLE)
 
@@ -39,7 +39,7 @@ find_program(QT_LUPDATE_EXECUTABLE NAMES lupdate-qt4 lupdate
 )
 if (NOT QT_LUPDATE_EXECUTABLE)
   message(FATAL_ERROR
-    "Vidalia could not find lupdate. Please make sure Qt >= 4.1 is installed."
+    "Vidalia could not find lupdate. Please make sure Qt >= ${QT_MIN_VERSION} is installed."
   )
 endif(NOT QT_LUPDATE_EXECUTABLE)
 
