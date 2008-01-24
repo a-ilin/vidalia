@@ -67,7 +67,7 @@
 
 /* Decide which of our four sets of tray icons to use. */
 #if defined(Q_WS_WIN)
-#if defined(HAVE_QSYSTEMTRAYICON_H)
+#if defined(USE_QSYSTEMTRAYICON)
 /* QSystemTrayIcon on Windows wants 16x16 .png files */
 #define IMG_TOR_STOPPED  ":/images/16x16/tor-off.png"
 #define IMG_TOR_RUNNING  ":/images/16x16/tor-on.png"

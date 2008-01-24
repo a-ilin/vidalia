@@ -71,7 +71,7 @@ TrayIcon::event(QEvent *event)
 void
 TrayIcon::mouseButtonPress(QMouseEvent *event)
 {
-#if defined(Q_WS_X11) && !defined(HAVE_QSYSTEMTRAYICON_H)
+#if defined(Q_WS_X11) && !defined(USE_QSYSTEMTRAYICON)
   if (_contextMenu) {
     _contextMenu->popup(event->globalPos());
   }
@@ -152,7 +152,7 @@ TrayIcon::setContextMenu(QMenu *menu)
 {
 #if defined(Q_WS_MAC)
   qt_mac_set_dock_menu(menu);
-#elif defined(HAVE_QSYSTEMTRAYICON_H)
+#elif defined(USE_QSYSTEMTRAYICON)
   TrayIconImpl::setContextMenu(menu);
 #else
   _contextMenu = menu;
@@ -164,7 +164,7 @@ void
 TrayIcon::showBalloonMessage(const QString &title, const QString &message,
                              BalloonMessageIcon balloonIcon)
 {
-#if defined(HAVE_QSYSTEMTRAYICON_H)
+#if defined(USE_QSYSTEMTRAYICON)
   QSystemTrayIcon::MessageIcon icon;
   switch (balloonIcon) {
     case NoIcon:   icon = QSystemTrayIcon::NoIcon; break;
@@ -188,7 +188,7 @@ TrayIcon::isTrayIconSupported()
 #if defined(Q_WS_WIN) || defined(Q_WS_MAC)
   /* We always have a tray on Win32 or a dock on OS X */
   return true;
-#elif defined(HAVE_QSYSTEMTRAYICON_H)
+#elif defined(USE_QSYSTEMTRAYICON)
   /* Ask Qt if there is a tray available */
   return QSystemTrayIcon::isSystemTrayAvailable();
 #else
@@ -203,7 +203,7 @@ TrayIcon::isTrayIconSupported()
 bool
 TrayIcon::supportsBalloonMessages()
 {
-#if defined(HAVE_QSYSTEMTRAYICON_H)
+#if defined(USE_QSYSTEMTRAYICON)
 #if defined(Q_WS_WIN)
   return (QSystemTrayIcon::supportsMessages()
             && QSysInfo::WindowsVersion > QSysInfo::WV_2000);

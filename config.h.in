@@ -1,6 +1,8 @@
 
 #cmakedefine HAVE_QSYSTEMTRAYICON_H
 
+#cmakedefine USE_QSYSTEMTRAYICON
+
 #cmakedefine HAVE_QSSLSOCKET_H
 
 #cmakedefine USE_QSSLSOCKET

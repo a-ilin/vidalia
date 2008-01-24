@@ -35,7 +35,7 @@
 #include "config.h"
 
 /* Include the correct tray icon implementation */
-#if defined(HAVE_QSYSTEMTRAYICON_H)
+#if defined(USE_QSYSTEMTRAYICON)
 #include "trayicon_qt.h"
 #elif defined(Q_WS_WIN)
 #include "trayicon_win.h"
