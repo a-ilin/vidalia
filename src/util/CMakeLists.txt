@@ -58,7 +58,7 @@ if(USE_QSSLSOCKET)
     ##      OpenSSL libs on Windows as well, depending on how Qt was built.
     ##      It suffices for the default Qt install on Windows though, until we
     ##      gets some more complex CMake fu in.
-    target_link_libraries(crypto ssl)
+    target_link_libraries(util crypto ssl)
   endif(UNIX)
 endif(USE_QSSLSOCKET)
 
