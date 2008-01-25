@@ -52,6 +52,13 @@ add_library(util STATIC ${util_SRCS})
 target_link_libraries(util ${QT_LIBRARIES})
 
 if(USE_QSSLSOCKET)
-  target_link_libraries(util crypto ssl)
+  target_link_libraries(util)
+  if(UNIX)
+    ## XXX: This is not quite right, since we still may need to link in
+    ##      OpenSSL libs on Windows as well, depending on how Qt was built.
+    ##      It suffices for the default Qt install on Windows though, until we
+    ##      gets some more complex CMake fu in.
+    target_link_libraries(crypto ssl)
+  endif(UNIX)
 endif(USE_QSSLSOCKET)
 

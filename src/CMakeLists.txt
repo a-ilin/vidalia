@@ -40,6 +40,10 @@ if (APPLE)
   endif(OSX_FAT_BINARY)
 endif(APPLE)
 
+if(MSVC)
+  add_definitions(-D_USE_MATH_DEFINES=1)
+endif(MSVC)
+
 ## Add some Qt definitions
 if (WIN32)
   add_definitions(-DQT_THREAD_SUPPORT)

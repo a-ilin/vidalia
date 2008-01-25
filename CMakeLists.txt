@@ -44,6 +44,13 @@ include(VidaliaMacros.cmake)
 include(CheckIncludeFileCXX)
 include(CPack)
 
+if(MSVC_IDE)
+    # Supress regeneration
+    set(CMAKE_SUPPRESS_REGENERATION TRUE)
+    set(LIBRARY_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
+    set(EXECUTABLE_OUTPUT_PATH ${CMAKE_BINARY_DIR}/bin)
+endif(MSVC_IDE)
+  
 ## Define Vidalia-specific CMake options
 if (APPLE)
   option(OSX_FAT_BINARY "Build Vidalia as a Universal binary." OFF)
