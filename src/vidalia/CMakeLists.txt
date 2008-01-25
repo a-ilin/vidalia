@@ -182,7 +182,7 @@ set(vidalia_SRCS ${vidalia_SRCS}
   vclicklabel.cpp
   vidaliawindow.cpp
   vmessagebox.cpp
-  browserprocess.cpp
+  helperprocess.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
   vidalia.h
@@ -191,7 +191,7 @@ qt4_wrap_cpp(vidalia_SRCS
   vclicklabel.h
   vidaliawindow.h
   vmessagebox.h
-  browserprocess.h
+  helperprocess.h
 )
 
 ## Specify all the Qt Designer .ui files
@@ -287,4 +287,5 @@ install(TARGETS ${vidalia_BIN} DESTINATION bin)
 if(NOT WIN32 AND NOT APPLE)
   install(FILES vidalia.desktop DESTINATION share/applications)
 endif(NOT WIN32 AND NOT APPLE)
+
 

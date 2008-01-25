@@ -40,7 +40,7 @@
 #include "help/browser/helpbrowser.h"
 #include "network/netviewer.h"
 #include "ui_mainwindow.h"
-#include "browserprocess.h"
+#include "helperprocess.h"
 
 
 class MainWindow : public VidaliaWindow
@@ -112,6 +112,8 @@ private slots:
   void onBrowserFinished(int exitCode, QProcess::ExitStatus exitStatus);
   /** Called web the web browser failed to start */
   void onBrowserFailed(QString errmsg);
+  /** Called when the proxy server fails to start */
+  void onProxyFailed(QString errmsg);
   
 private:
   enum TorStatus {
@@ -138,6 +140,8 @@ private:
   TorStatus updateTorStatus(TorStatus status);
   /** Starts the web browser, if appropriately configured */
   void startBrowser();
+  /** Starts the proxy server, if appropriately configured */
+  void startProxy();
   /** Converts a TorStatus enum value to a string for debug logging purposes. */
   QString toString(TorStatus status);
   /** Authenticates Vidalia to Tor's control port. */
@@ -175,8 +179,10 @@ private:
   ConfigDialog* _configDialog;
   /** A TorControl object that handles communication with Tor */
   TorControl* _torControl;
-  /** A BrowserProcess object that manages the web browser */
-  BrowserProcess* _browserProcess;
+  /** A HelperProcess object that manages the web browser */
+  HelperProcess* _browserProcess;
+  /** A HelperProcess object that manages the proxy server */
+  HelperProcess* _proxyProcess;
   /** Remembers the control password between when we start Tor with a hash of
    * the password and when we need to provide the password itself. */
   QString _controlPassword;
@@ -199,4 +205,5 @@ private:
 };
 
 #endif
+
 

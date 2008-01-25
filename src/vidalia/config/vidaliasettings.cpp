@@ -43,6 +43,7 @@
 #define SETTING_DATA_DIRECTORY      "DataDirectory"
 #define SETTING_SHOW_MAINWINDOW_AT_START  "ShowMainWindowAtStart"
 #define SETTING_BROWSER_EXECUTABLE  "BrowserExecutable"
+#define SETTING_PROXY_EXECUTABLE  "ProxyExecutable"
 
 #if defined(Q_OS_WIN32)
 #define STARTUP_REG_KEY        "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
@@ -74,6 +75,7 @@ VidaliaSettings::VidaliaSettings()
   setDefault(SETTING_RUN_TOR_AT_START, true);
   setDefault(SETTING_SHOW_MAINWINDOW_AT_START, true);
   setDefault(SETTING_BROWSER_EXECUTABLE, "");
+  setDefault(SETTING_PROXY_EXECUTABLE, "");
 }
 
 /** Gets the currently preferred language code for Vidalia. */
@@ -186,3 +188,18 @@ VidaliaSettings::setBrowserExecutable(const QString &browserExecutable)
   setValue(SETTING_BROWSER_EXECUTABLE, browserExecutable);
 }
 
+/** Returns a fully-qualified path to the proxy server, including the
+ * executable name. */
+QString
+VidaliaSettings::getProxyExecutable() const
+{
+  return QDir::convertSeparators(value(SETTING_PROXY_EXECUTABLE).toString());
+}
+
+/** Sets the location and name of the proxy server executable to the given string.
+ * If set to the empty string, the proxy will not be started. */
+void
+VidaliaSettings::setProxyExecutable(const QString &proxyExecutable)
+{
+  setValue(SETTING_PROXY_EXECUTABLE, proxyExecutable);
+}

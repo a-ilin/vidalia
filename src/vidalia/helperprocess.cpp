@@ -2,7 +2,7 @@
  *  This file was originally written by Steven J. Murdoch, and 
  *  modified by Matt Edman. It is distributed under the following
  *  license:
- * 
+ *
  *  Copyright (C) 2007, Matt Edman
  *  Copyright (C) 2007, Steven J. Murdoch 
  *                      <http://www.cl.cam.ac.uk/users/sjm217/>
@@ -24,34 +24,41 @@
  ****************************************************************/
 
 /**
- * \file browserprocess.cpp
- * \version $Id$ 
+ * \file helperprocess.cpp
+ * \version $Id$
  * \brief Invokes a web browser process (originally by Steven. J. Murdoch)
  */
 
-#ifndef _BROWSERPROCESS_H
-#define _BROWSERPROCESS_H
+#include <QString>
+  
+#include "helperprocess.h"
 
-#include <QProcess>
 
-
-class BrowserProcess : public QProcess
+/** Default constructor */
+HelperProcess::HelperProcess(QObject *parent)
+: QProcess(parent)
 {
-  Q_OBJECT
+  // Call error handling routine on errors
+  QObject::connect(this, SIGNAL(error(QProcess::ProcessError)),
+                   this, SLOT(onError(QProcess::ProcessError)));
+}
 
-public:
-  /** Default constructor */
-  BrowserProcess(QObject *parent = 0);
-  /** Start the specified application. */
-  void start(const QString &app, const QStringList &args);
+/** Start the specified application. */
+void
+HelperProcess::start(const QString &app, const QStringList &args) 
+{
+  // Start the specified application
+  QProcess::start(app, args, QIODevice::ReadOnly | QIODevice::Text);
+}
 
-private slots:
-  /** Invoked when underlying QProcess fails. */
-  void onError(QProcess::ProcessError error);
+/** Invoked when underlying QProcess fails. */
+void
+HelperProcess::onError(QProcess::ProcessError error)
+{
+  // Pass up error messages on startup, but ignore the rest
+  if (error == QProcess::FailedToStart) {
+    emit startFailed(errorString());
+  }
+}
 
-signals:
-  /** Invoked when start() fails. */
-  void startFailed(const QString &errorMessage);
-};
 
-#endif

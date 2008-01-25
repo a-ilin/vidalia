@@ -78,6 +78,14 @@ public:
   /** Sets the location and name of the web browser executable to the given string.
    * If set to the empty string, the browser will not be started. */
   void setBrowserExecutable(const QString &browserExecutable);
+
+  /** Returns a fully-qualified path to the proxy server, including the
+   * executable name. */
+  QString getProxyExecutable() const;
+
+  /** Sets the location and name of the proxy server executable to the given string.
+   * If set to the empty string, the proxy will not be started. */
+  void setProxyExecutable(const QString &proxyExecutable);
 };
 
 #endif

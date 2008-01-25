@@ -147,12 +147,17 @@ MainWindow::MainWindow()
   _torControl->setEvent(TorEvents::ClientStatus,  this, true);
   _torControl->setEvent(TorEvents::GeneralStatus, this, true);
 
-  /* Create a new BrowserProcess object, used to start the web browser */
-  _browserProcess = new BrowserProcess(this);
+  /* Create a new HelperProcess object, used to start the web browser */
+  _browserProcess = new HelperProcess(this);
   connect(_browserProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
            this, SLOT(onBrowserFinished(int, QProcess::ExitStatus)));
   connect(_browserProcess, SIGNAL(startFailed(QString)),
            this, SLOT(onBrowserFailed(QString)));
+
+  /* Create a new HelperProcess object, used to start the proxy server */
+  _proxyProcess = new HelperProcess(this);
+  connect(_proxyProcess, SIGNAL(startFailed(QString)),
+           this, SLOT(onProxyFailed(QString)));
 
   /* Catch signals when the application is running or shutting down */
   connect(vApp, SIGNAL(running()), this, SLOT(running()));
@@ -226,6 +231,9 @@ MainWindow::running()
     /* If we're supposed to start Tor when Vidalia starts, then do it now */
     start();
   }
+
+  /* Start the proxy server, if configured */
+  startProxy();
 }
 
 /** Terminate the Tor process if it is being run under Vidalia, disconnect all
@@ -236,6 +244,12 @@ MainWindow::shutdown()
   if (_torControl->isVidaliaRunningTor()) {
     /* Kill our Tor process now */ 
     _torControl->stop();
+  }
+
+  if (_proxyProcess->state() != QProcess::NotRunning) {
+    /* Close the proxy server (Polipo ignores the WM_CLOSE event sent by
+     * terminate() so we have to kill() it) */
+    _proxyProcess->kill();
   }
 
   /* Disconnect all of the TorControl object's signals */
@@ -435,6 +449,29 @@ MainWindow::onBrowserFailed(QString errmsg)
   /* Display an error message and see if the user wants some help */
   VMessageBox::warning(this, tr("Error starting web browser"),
               tr("Vidalia was unable to start the configured web browser"),
+              VMessageBox::Ok|VMessageBox::Default|VMessageBox::Escape);
+}
+
+/** Starts the proxy server, if appropriately configured */
+void MainWindow::startProxy()
+{
+  VidaliaSettings settings;
+  QString executable = settings.getProxyExecutable();
+  
+  if (!executable.isEmpty())
+    _proxyProcess->start(executable, QStringList());
+}
+
+/** Called when the proxy server fails to start, for example, because
+ * the path specified didn't lead to an executable. */
+void
+MainWindow::onProxyFailed(QString errmsg)
+{
+  Q_UNUSED(errmsg);
+ 
+  /* Display an error message and see if the user wants some help */
+  VMessageBox::warning(this, tr("Error starting proxy server"),
+              tr("Vidalia was unable to start the configured proxy server"),
               VMessageBox::Ok|VMessageBox::Default|VMessageBox::Escape);
 }
 
@@ -1150,4 +1187,5 @@ MainWindow::toString(TorStatus status)
   }
   return "Unknown";
 }
+
 

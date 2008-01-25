@@ -35,6 +35,9 @@
   o Add a 'BrowserExecutable' configuration option to launch a Web browser
     when Tor has built a circuit, and exit Vidalia when the browser is closed.
     Patch from Steven J. Murdoch <http://www.cl.cam.ac.uk/users/sjm217/>.
+  o Add a 'ProxyExecutable' configuration option to launch a proxy application
+    when Vidalia starts, and close it when Vidalia exits.
+    Patch from Steven J. Murdoch <http://www.cl.cam.ac.uk/users/sjm217/>.
   o Respond to the Delete key in the network map by closing whatever circuits
     or streams are currently selected. Suggested by Andrew Lewman.
   o Rename the 'Relay' settings page to the 'Sharing' settings page.
