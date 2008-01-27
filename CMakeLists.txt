@@ -22,11 +22,12 @@
 #####################################################################
 
 
-project(Vidalia)
 set(VER_MAJOR   "0")
 set(VER_MINOR   "1")
 set(VER_PATCH   "0")
 set(VERSION     "${VER_MAJOR}.${VER_MINOR}.${VER_PATCH}-svn")
+message(STATUS  "Configuring Vidalia ${VERSION}")
+project(Vidalia)
 
 ## Specify the minimim required CMake version
 cmake_minimum_required(VERSION 2.4.0)
