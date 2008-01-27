@@ -44,6 +44,7 @@
 #define SETTING_SHOW_MAINWINDOW_AT_START  "ShowMainWindowAtStart"
 #define SETTING_BROWSER_EXECUTABLE  "BrowserExecutable"
 #define SETTING_PROXY_EXECUTABLE  "ProxyExecutable"
+#define SETTING_PROXY_EXECUTABLE_ARGUMENTS  "ProxyExecutableArguments"
 
 #if defined(Q_OS_WIN32)
 #define STARTUP_REG_KEY        "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
@@ -76,6 +77,7 @@ VidaliaSettings::VidaliaSettings()
   setDefault(SETTING_SHOW_MAINWINDOW_AT_START, true);
   setDefault(SETTING_BROWSER_EXECUTABLE, "");
   setDefault(SETTING_PROXY_EXECUTABLE, "");
+  setDefault(SETTING_PROXY_EXECUTABLE_ARGUMENTS, QStringList());
 }
 
 /** Gets the currently preferred language code for Vidalia. */
@@ -196,10 +198,27 @@ VidaliaSettings::getProxyExecutable() const
   return QDir::convertSeparators(value(SETTING_PROXY_EXECUTABLE).toString());
 }
 
-/** Sets the location and name of the proxy server executable to the given string.
- * If set to the empty string, the proxy will not be started. */
+/** Sets the location and name of the proxy server executable to the given
+ * string. If set to the empty string, the proxy will not be started. */
 void
 VidaliaSettings::setProxyExecutable(const QString &proxyExecutable)
 {
   setValue(SETTING_PROXY_EXECUTABLE, proxyExecutable);
 }
+
+/** Returns a list containing additional command line arguments to be passed
+ * to ProxyExecutable */
+QStringList
+VidaliaSettings::getProxyExecutableArguments() const
+{
+  return value(SETTING_PROXY_EXECUTABLE_ARGUMENTS).toStringList();
+}
+
+/** Sets the additional arguments to be passed to Proxy Executable */
+void
+VidaliaSettings::setProxyExecutableArguments(const QStringList
+                                             &proxyExecutableArguments)
+{
+  setValue(SETTING_PROXY_EXECUTABLE_ARGUMENTS, proxyExecutableArguments);
+}
+

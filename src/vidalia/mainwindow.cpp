@@ -459,7 +459,7 @@ void MainWindow::startProxy()
   QString executable = settings.getProxyExecutable();
   
   if (!executable.isEmpty())
-    _proxyProcess->start(executable, QStringList());
+    _proxyProcess->start(executable, settings.getProxyExecutableArguments());
 }
 
 /** Called when the proxy server fails to start, for example, because
