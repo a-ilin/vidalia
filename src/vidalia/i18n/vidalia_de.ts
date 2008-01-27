@@ -482,17 +482,17 @@ kein Passwort angegeben.</translation>
 <context>
     <name>ControlConnection</name>
     <message>
-        <location filename="../../torcontrol/controlconnection.cpp" line="396"/>
+        <location filename="../../torcontrol/controlconnection.cpp" line="390"/>
         <source>Control socket is not connected.</source>
         <translation>Kontrollsocket ist nicht verbunden.</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/controlconnection.cpp" line="333"/>
+        <location filename="../../torcontrol/controlconnection.cpp" line="327"/>
         <source>Control socket is not connected</source>
         <translation>Kontrollsocket ist nicht verbunden</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/controlconnection.cpp" line="145"/>
+        <location filename="../../torcontrol/controlconnection.cpp" line="141"/>
         <source>Vidalia was unable to connect to Tor. (%1)</source>
         <translation>Vidalia konnte sich nicht mit Tor verbinden. (%1)</translation>
     </message>
@@ -853,82 +853,82 @@ kein Passwort angegeben.</translation>
         <translation>Hilfe</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="367"/>
+        <location filename="../mainwindow.cpp" line="381"/>
         <source>Ctrl+T</source>
         <translation>Strg+T</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="368"/>
+        <location filename="../mainwindow.cpp" line="382"/>
         <source>Ctrl+B</source>
         <translation>Strg+B</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="369"/>
+        <location filename="../mainwindow.cpp" line="383"/>
         <source>Ctrl+L</source>
         <translation>Strg+L</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="371"/>
+        <location filename="../mainwindow.cpp" line="385"/>
         <source>Ctrl+?</source>
         <translation>Strg+?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="384"/>
+        <location filename="../mainwindow.cpp" line="398"/>
         <source>File</source>
         <translation>Datei</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="387"/>
+        <location filename="../mainwindow.cpp" line="401"/>
         <source>Tor</source>
         <translation>Tor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="392"/>
+        <location filename="../mainwindow.cpp" line="406"/>
         <source>View</source>
         <translation>Ansicht</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="401"/>
+        <location filename="../mainwindow.cpp" line="415"/>
         <source>Vidalia Help</source>
         <translation>Vidalia Hilfe</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="623"/>
+        <location filename="../mainwindow.cpp" line="660"/>
         <source>Error Starting Tor</source>
         <translation>Fehler beim Starten von Tor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="669"/>
+        <location filename="../mainwindow.cpp" line="706"/>
         <source>Error Connecting to Tor</source>
         <translation>Fehler bei der Verbindung zu Tor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="728"/>
+        <location filename="../mainwindow.cpp" line="765"/>
         <source>Error Stopping Tor</source>
         <translation>Fehler beim Stoppen von Tor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="759"/>
+        <location filename="../mainwindow.cpp" line="796"/>
         <source>Tor Exited</source>
         <translation>Tor beendet</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="729"/>
+        <location filename="../mainwindow.cpp" line="766"/>
         <source>Vidalia was unable to stop Tor.</source>
         <translation>Vidalia konnte Tor nicht anhalten.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="510"/>
+        <location filename="../mainwindow.cpp" line="547"/>
         <source>Tor is running</source>
         <translation>Tor läuft</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="370"/>
+        <location filename="../mainwindow.cpp" line="384"/>
         <source>Ctrl+N</source>
         <translation>Strg+N</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="762"/>
+        <location filename="../mainwindow.cpp" line="799"/>
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
@@ -937,12 +937,12 @@ Please check the message log for indicators about what happened to Tor before it
 Überprüfen Sie das Nachrichtenprotokoll auf weitere Informationen.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="626"/>
+        <location filename="../mainwindow.cpp" line="663"/>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
         <translation>Vidalia konnte Tor nicht starten. Überprüfen Sie Ihre Einstellungen, um sicherzustellen, dass der Pfad zur Tor-Anwendung korrekt angegeben ist.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="293"/>
+        <location filename="../mainwindow.cpp" line="307"/>
         <source>Network Map</source>
         <translation>Netzwerk-Karte</translation>
     </message>
@@ -952,23 +952,23 @@ Please check the message log for indicators about what happened to Tor before it
         <translation>Einstellungen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1101"/>
+        <location filename="../mainwindow.cpp" line="1138"/>
         <source>New Identity</source>
         <translation>Neue Identität</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="372"/>
+        <location filename="../mainwindow.cpp" line="386"/>
         <source>Ctrl+I</source>
         <translation>Strg+I</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1104"/>
+        <location filename="../mainwindow.cpp" line="1141"/>
         <source>All subsequent connections will appear to be different than your old connections.</source>
         <translation>Alle folgenden Verbindungen werden anders als alte
 Verbindungen erscheinen.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1119"/>
+        <location filename="../mainwindow.cpp" line="1156"/>
         <source>Failed to Create New Identity</source>
         <translation>Konnte keine neue Identität erstellen</translation>
     </message>
@@ -983,17 +983,17 @@ Verbindungen erscheinen.</translation>
         <translation>Tor läuft nicht</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="478"/>
+        <location filename="../mainwindow.cpp" line="515"/>
         <source>Tor is shutting down</source>
         <translation>Tor wird beendet</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="485"/>
+        <location filename="../mainwindow.cpp" line="522"/>
         <source>Stop Tor</source>
         <translation>Tor anhalten</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="501"/>
+        <location filename="../mainwindow.cpp" line="538"/>
         <source>Tor is starting up</source>
         <translation>Tor startet</translation>
     </message>
@@ -1089,101 +1089,101 @@ dem Netzwerk zu wachsen.</translation>
         <translation>Dieses Fenster verstecken</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="300"/>
+        <location filename="../mainwindow.cpp" line="314"/>
         <source>Control Panel</source>
         <translation>Kontrollpanel</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="373"/>
+        <location filename="../mainwindow.cpp" line="387"/>
         <source>Ctrl+P</source>
         <translation>Strg+P</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="483"/>
+        <location filename="../mainwindow.cpp" line="520"/>
         <source>Stop Tor Now</source>
         <translation>Tor jetzt anhalten</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="505"/>
+        <location filename="../mainwindow.cpp" line="542"/>
         <source>Starting Tor</source>
         <translation>Starte Tor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="834"/>
+        <location filename="../mainwindow.cpp" line="871"/>
         <source>Cookie Authentication Required</source>
         <translation>Cookie-Authentifikation erforderlich</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="837"/>
+        <location filename="../mainwindow.cpp" line="874"/>
         <source>Tor requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one.</source>
         <translation>Tor versucht über Vidalia ein Cookie zur Authentifikation zu verschicken, aber Vidalia konnte dieses
 nicht finden.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="839"/>
+        <location filename="../mainwindow.cpp" line="876"/>
         <source>Would you like to browse for the file &apos;control_auth_cookie&apos; yourself?</source>
         <translation>Wollen Sie selbst nach der Datei &apos;control_auth_cookie&apos; suchen?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="846"/>
+        <location filename="../mainwindow.cpp" line="883"/>
         <source>Tor Data Directory</source>
         <translation>Tor-Datenverzeichnis</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="848"/>
+        <location filename="../mainwindow.cpp" line="885"/>
         <source>Tor Control Cookie (control_auth_cookie)</source>
         <translation>Tor-Kontrollcookie (control_auth_cookie)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="889"/>
+        <location filename="../mainwindow.cpp" line="926"/>
         <source>Error Registering for Events</source>
         <translation>Fehler bei der Registrierung für Ereignisse</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="891"/>
+        <location filename="../mainwindow.cpp" line="928"/>
         <source>Vidalia was unable to register for Tor events. Many of Vidalia&apos;s features may be unavailable.</source>
         <translation>Vidalia konnte sich nicht für Tor-Ereignisse registrieren. Viele von Vidalias Funktionen
 könnten nicht verfügbar sein.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="917"/>
+        <location filename="../mainwindow.cpp" line="954"/>
         <source>Password Authentication Required</source>
         <translation>Passwort-Authentifikation erforderlich</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="932"/>
+        <location filename="../mainwindow.cpp" line="969"/>
         <source>Error Authenticating to Tor</source>
         <translation>Fehler bei der Authentifikation zu Tor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="934"/>
+        <location filename="../mainwindow.cpp" line="971"/>
         <source>Vidalia was unable to authenticate to Tor. (%1)</source>
         <translation>Vidalia konnte sich nicht zu Tor authentifizieren. (%1)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="936"/>
+        <location filename="../mainwindow.cpp" line="973"/>
         <source>Please check your control port authentication settings.</source>
         <translation>Bitte überprüfen Sie die Authentifikationseinstellungen des Kontroll-Ports.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="918"/>
+        <location filename="../mainwindow.cpp" line="955"/>
         <source>Please enter your control password (not the hash):</source>
         <translation>Bitte geben Sie Ihr Kontroll-Passwort ein (nicht den Hash-Wert):</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="476"/>
+        <location filename="../mainwindow.cpp" line="513"/>
         <source>Your Tor relay is shutting down.
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
         <translation>Ihr Tor-Server wird gerade beendet.
 Klicken Sie erneut auf &apos;Tor anhalten&apos; um das Beenden zu erzwingen.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="701"/>
+        <location filename="../mainwindow.cpp" line="738"/>
         <source>Relaying is Enabled</source>
         <translation>Verteilung ist aktiviert</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="706"/>
+        <location filename="../mainwindow.cpp" line="743"/>
         <source>You are currently running a Tor relay. Terminating your relay will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new relay?</source>
@@ -1193,30 +1193,40 @@ Clients unterbrochen.
 Wollen Sie den Tor-Verteiler langsam beenden, damit die Clients Zeit haben, einen neuen Verteilen zu finden?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="436"/>
+        <location filename="../mainwindow.cpp" line="450"/>
         <source>Error starting web browser</source>
         <translation>Fehler beim Starten des Webbrowsers</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="437"/>
+        <location filename="../mainwindow.cpp" line="451"/>
         <source>Vidalia was unable to start the configured web browser</source>
         <translation>Vidalia konnte den angegebenen Webbrowser nicht starten</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1038"/>
+        <location filename="../mainwindow.cpp" line="1075"/>
         <source>Tor Update Available</source>
         <translation>Tor-Update verfügbar</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1041"/>
+        <location filename="../mainwindow.cpp" line="1078"/>
         <source>The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version.</source>
         <translation>Die installierte Tor-Version ist veraltet und wird nicht länger empfohlen.
 Bitte besuchen Sie die Tor-Webseite, um die aktuelle Version herunter zu laden.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1041"/>
+        <location filename="../mainwindow.cpp" line="1078"/>
         <source>Tor website: %1</source>
         <translation>Tor-Webseite: %1</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="473"/>
+        <source>Error starting proxy server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="474"/>
+        <source>Vidalia was unable to start the configured proxy server</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -1935,7 +1945,7 @@ Tor-Netzwerk über Brücken hergestellt wird</translation>
         <translation>Verteiler heran zoomen</translation>
     </message>
     <message>
-        <location filename="../network/routerlistwidget.cpp" line="229"/>
+        <location filename="../network/routerlistwidget.cpp" line="185"/>
         <source>%1 relays online (%2 total)</source>
         <translation>%1 Verteiler online (%2 insgesamt)</translation>
     </message>
@@ -2277,12 +2287,12 @@ Verteiler besteht. Sie können auch Ihren PGP- oder GPG-Fingerabdruck angeben.</
 <context>
     <name>TorService</name>
     <message>
-        <location filename="../../torcontrol/torservice.cpp" line="153"/>
+        <location filename="../../torcontrol/torservice.cpp" line="154"/>
         <source>The Tor service is not installed.</source>
         <translation>Der Tor-Dienst ist nicht installiert.</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/torservice.cpp" line="171"/>
+        <location filename="../../torcontrol/torservice.cpp" line="172"/>
         <source>Unable to start the Tor service.</source>
         <translation>Der Tor-Dienst konnte nicht gestartet werden.</translation>
     </message>
