@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="ru">
+<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -470,7 +471,7 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../config/configdialog.cpp" line="58"/>
         <source>OK</source>
-        <translation type="unfinished">ОК</translation>
+        <translation>ОК</translation>
     </message>
     <message>
         <location filename="../config/configdialog.cpp" line="82"/>
@@ -584,7 +585,7 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../config/generalpage.cpp" line="86"/>
         <source>You must specify the name of your Tor executable.</source>
-        <translation type="unfinished"></translation>
+        <translation>Вы должны указать имя исполняемого файла Tor.</translation>
     </message>
 </context>
 <context>
@@ -1189,37 +1190,37 @@ Would you like to shutdown gracefully and give clients time to find a new relay?
     <message>
         <location filename="../mainwindow.cpp" line="450"/>
         <source>Error starting web browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка при запуске веб-браузера</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="451"/>
         <source>Vidalia was unable to start the configured web browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia не смогла запустить браузер указанный в настройках</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1075"/>
         <source>Tor Update Available</source>
-        <translation type="unfinished"></translation>
+        <translation>Обновление Tor доступно</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1078"/>
         <source>The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version.</source>
-        <translation type="unfinished"></translation>
+        <translation>Установленная версия Tor устарела или не рекомендуется. Пожалуйста посетите сайт Tor и скачайте новую версию.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1078"/>
         <source>Tor website: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Сайт Tor: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="473"/>
         <source>Error starting proxy server</source>
-        <translation type="unfinished"></translation>
+        <translation>Ошибка при запуске прокси сервера</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="474"/>
         <source>Vidalia was unable to start the configured proxy server</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia не смогла запустить указанный в настройках прокси сервер</translation>
     </message>
 </context>
 <context>
@@ -1837,7 +1838,7 @@ interest to Tor developers.</source>
     <message>
         <location filename="../config/networkpage.ui" line="318"/>
         <source>&lt;a href=&quot;bridges.finding&quot;&gt;How do I find a bridge?&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;bridges.finding&quot;&gt;Как мне найти bridge&apos;ы?&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -2289,7 +2290,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../config/torsettings.cpp" line="118"/>
         <source>Failed to hash the control password.</source>
-        <translation type="unfinished"></translation>
+        <translation>Не удалось хэшировать пароль управления.</translation>
     </message>
 </context>
 <context>
