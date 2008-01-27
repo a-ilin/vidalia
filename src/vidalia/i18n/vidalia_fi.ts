@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="fi">
+<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -1213,12 +1214,12 @@ Haluaisitko pysäyttää rauhallisesti ja antaa muiden käyttäjien löytää uu
     <message>
         <location filename="../mainwindow.cpp" line="473"/>
         <source>Error starting proxy server</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe käynnistettäessä välityspalvelinta</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="474"/>
         <source>Vidalia was unable to start the configured proxy server</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia ei onnistunut käynnistämään määriteltyä välityspalvelinta</translation>
     </message>
 </context>
 <context>

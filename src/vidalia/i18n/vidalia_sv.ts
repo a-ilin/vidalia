@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="sv">
+<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -1211,12 +1212,12 @@ Would you like to shutdown gracefully and give clients time to find a new relay?
     <message>
         <location filename="../mainwindow.cpp" line="473"/>
         <source>Error starting proxy server</source>
-        <translation type="unfinished"></translation>
+        <translation>Det gick ej att starta proxy-tjänst</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="474"/>
         <source>Vidalia was unable to start the configured proxy server</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia kunde inte starta det konfigurerad proxy-tjänst</translation>
     </message>
 </context>
 <context>
