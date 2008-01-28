@@ -1221,12 +1221,12 @@ Bitte besuchen Sie die Tor-Webseite, um die aktuelle Version herunter zu laden.<
     <message>
         <location filename="../mainwindow.cpp" line="473"/>
         <source>Error starting proxy server</source>
-        <translation type="unfinished"></translation>
+        <translation>Fehler beim Start des Proxyservers</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="474"/>
         <source>Vidalia was unable to start the configured proxy server</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia konnte den angegebenen Proxyserver nicht starten</translation>
     </message>
 </context>
 <context>
@@ -2180,7 +2180,7 @@ arbeitet.</translation>
         <source>Email address at which you may be reached if there is a
 problem with your relay. You might also include your PGP or GPG fingerprint.</source>
         <translation>Email-Adresse über die Sie erreicht werden können, wenn ein Problem mit Ihrem
-Verteiler besteht. Sie können auch Ihren PGP- oder GPG-Fingerabdruck angeben.</translation>
+Verteiler besteht. Sie können auch Ihren PGP- oder GPG-Finegerabdruck angeben.</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="110"/>
