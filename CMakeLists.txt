@@ -41,7 +41,7 @@ find_package(Qt4 REQUIRED)
 set(QT_USE_QTNETWORK  true)
 set(QT_USE_QTXML      true)
 include(${QT_USE_FILE})
-include(VidaliaMacros.cmake)
+include(${CMAKE_SOURCE_DIR}/cmake/VidaliaMacros.cmake)
 include(CheckIncludeFileCXX)
 include(CPack)
 
