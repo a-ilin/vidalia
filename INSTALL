@@ -169,13 +169,23 @@ You can customize your Vidalia build by supplying arguments and values to the
 `cmake` commands above. Each of the configuration options can be specified on
 the command line and follows the format "-D <var>:<type>=<value>
 
-  -DOSX_FAT_BINARY=1                      Build Vidalia as a Universal binary
+  -DUSE_QSSLSOCKET=0                      Disable building Vidalia with SSL
+                                          support.
+
+  -DUSE_QSYSTEMTRAYICON=0                 Use Vidalia's internal tray icon
+                                          implementation, instead of using Qt's
+                                          QSslSocket.
+
+  -DOSX_FAT_BINARY=1                      Build Vidalia as a Universal binary.
 
   -DQT_QMAKE_EXECUTABLE=/path/to/qmake    Specifies the location of Qt's
                                           'qmake' binary.
 
+  -DOPENSSL_LIBRARY_DIR=/path/to/openssl  Specifies the location of OpenSSL's
+                                          libraries.
+
   -DCMAKE_INSTALL_PREFIX=/usr/local       Specifies the install prefix used
-                                          for `make install`
+                                          for `make install`.
 
 
 For example, to configure CMake to look for Qt in "/usr/local/Qt-4.3.2/bin",
