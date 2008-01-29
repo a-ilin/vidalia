@@ -67,12 +67,17 @@ endif(NOT APPLE)
 
 ## Check for QSslSocket
 check_include_file_cxx("qsslsocket.h" HAVE_QSSLSOCKET_H)
-if(HAVE_QSSLSOCKET_H)
+if (HAVE_QSSLSOCKET_H)
   check_symbol_exists(QT_NO_OPENSSL "QtGlobal" QT_NO_SSL_SUPPORT)
-  if(NOT QT_NO_SSL_SUPPORT)
+  if (NOT QT_NO_SSL_SUPPORT)
     option(USE_QSSLSOCKET "Use Qt's QSslSocket for GeoIP lookups." ON)
   endif(NOT QT_NO_SSL_SUPPORT)
 endif(HAVE_QSSLSOCKET_H)
+if (USE_QSSLSOCKET)
+  if (MSVC OR UNIX)
+    include(${CMAKE_SOURCE_DIR}/cmake/FindOpenSSL.cmake)
+  endif(MSVC OR UNIX)
+endif(USE_QSSLSOCKET)
 
 ## Write out a configuration file
 configure_file(
@@ -85,12 +90,4 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 add_subdirectory(src)
 add_subdirectory(doc)
 add_subdirectory(pkg)
-
-## The 'confclean' target removes cached CMake configuration information
-if (WIN32)
-  set(RM_CMD del)
-else (WIN32)
-  set(RM_CMD rm)
-endif(WIN32)
-add_custom_target(confclean ${RM_CMD} CMakeCache.txt)
 
