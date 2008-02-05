@@ -279,6 +279,7 @@ endif(MINGW)
 if (APPLE)
   target_link_libraries(${vidalia_BIN}
     "-framework AppKit"
+    iconv
   )
 endif(APPLE)
 
