@@ -33,7 +33,7 @@
 #include <QtDebug>
 
 
-namespace log {
+namespace tc {
 
 class Message {
   struct Stream {

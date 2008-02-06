@@ -38,7 +38,7 @@
 void
 AddressMap::add(QString from, QString to, QDateTime expires)
 {
-  log::debug("New address mapping: %1 -> %2 (expires %3)").arg(from)
+  tc::debug("New address mapping: %1 -> %2 (expires %3)").arg(from)
                                                           .arg(to)
                           .arg(expires.isValid() ? expires.toString(DATE_FMT)
                                                  : "never");

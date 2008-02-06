@@ -87,7 +87,7 @@ TorProcess::start(const QString &app, const QStringList &args)
 #endif
   setEnvironment(env);
 
-  log::debug("Starting Tor using '%1 %2'").arg(app).arg(formatArguments(args));
+  tc::debug("Starting Tor using '%1 %2'").arg(app).arg(formatArguments(args));
   QProcess::start(exe, args, QIODevice::ReadOnly | QIODevice::Text);
 }
 
@@ -101,7 +101,7 @@ TorProcess::stop(QString *errmsg)
     return true;
   }
 
-  log::debug("Stopping the Tor process.");
+  tc::debug("Stopping the Tor process.");
   /* Tell the process to stop */
 #if defined(Q_OS_WIN32)
   /* Tor on Windows doesn't understand a WM_CLOSE message (which is what 
@@ -112,7 +112,7 @@ TorProcess::stop(QString *errmsg)
 
   /* Wait for it to complete */
   if (!waitForFinished(5000)) {
-    log::error("Tor failed to stop: %1").arg(errorString());
+    tc::error("Tor failed to stop: %1").arg(errorString());
     if (errmsg) {
       *errmsg = 
         tr("Process %1 failed to stop. [%2]").arg(pid()).arg(errorString());
@@ -181,11 +181,11 @@ void
 TorProcess::onError(QProcess::ProcessError error)
 {
   if (error == QProcess::FailedToStart) {
-    log::error("The Tor process failed to start: %1").arg(errorString());
+    tc::error("The Tor process failed to start: %1").arg(errorString());
     /* Tor didn't start, so let everyone know why. */
     emit startFailed(errorString());
   } else {
-    log::error("Tor process error: %1").arg(errorString());
+    tc::error("Tor process error: %1").arg(errorString());
   }
 }
 

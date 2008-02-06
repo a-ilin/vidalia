@@ -60,7 +60,7 @@ void
 ControlConnection::connect(QHostAddress addr, quint16 port)
 {
   if (isRunning()) {
-    log::error("Bug: Tried to call ControlConnection::connect() when the "
+    tc::error("Bug: Tried to call ControlConnection::connect() when the "
               "control thread is already running.");
     return;
   }
@@ -83,7 +83,7 @@ void
 ControlConnection::connect()
 {
   _connectAttempt++;
-  log::debug("Connecting to Tor (Attempt %1 of %2)").arg(_connectAttempt)
+  tc::debug("Connecting to Tor (Attempt %1 of %2)").arg(_connectAttempt)
                                                    .arg(MAX_CONNECT_ATTEMPTS);
   
   _connMutex.lock();
@@ -130,13 +130,13 @@ ControlConnection::onError(QAbstractSocket::SocketError error)
      * running, but it doesn't have a ControlPort open yet. */
     if (error == QAbstractSocket::ConnectionRefusedError &&
         _connectAttempt < MAX_CONNECT_ATTEMPTS) {
-      log::debug("Control connection refused. Retrying in %1ms.")
+      tc::debug("Control connection refused. Retrying in %1ms.")
                                        .arg(CONNECT_RETRY_DELAY);
       _connectTimer->start(CONNECT_RETRY_DELAY);
     } else {
       /* Exceeded maximum number of connect attempts. Give up. */
       QString errstr = ControlSocket::toString(error);
-      log::error("Vidalia was unable to connect to Tor: %1").arg(errstr);
+      tc::error("Vidalia was unable to connect to Tor: %1").arg(errstr);
       emit connectFailed(tr("Vidalia was unable to connect to Tor. (%1)")
                                                              .arg(errstr));
       setStatus(Disconnected);
@@ -144,12 +144,12 @@ ControlConnection::onError(QAbstractSocket::SocketError error)
   } else if (error == QAbstractSocket::RemoteHostClosedError) {
     /* Tor closed the connection. This is common when we send a 'shutdown' or
      * 'halt' signal to Tor and doesn't need to be logged as loudly. */
-    log::warn("Tor closed the control connection.");
+    tc::warn("Tor closed the control connection.");
   } else {
     /* Some other error. */
     /*XXX We may want to be emitting these so the GUI thread can learn about
      * them and display an error message. */
-    log::error("Control socket error: %1").arg(ControlSocket::toString(error));
+    tc::error("Control socket error: %1").arg(ControlSocket::toString(error));
   }
 }
 
@@ -157,7 +157,7 @@ ControlConnection::onError(QAbstractSocket::SocketError error)
 void
 ControlConnection::cancelConnect()
 {
-  log::warn("Control connection attempt cancelled.");
+  tc::warn("Control connection attempt cancelled.");
   setStatus(Disconnected);
   exit(0);
 }
@@ -199,7 +199,7 @@ void
 ControlConnection::setStatus(Status status)
 {
   QMutexLocker locker(&_statusMutex);
-  log::debug("Control connection status changed from '%1' to '%2'")
+  tc::debug("Control connection status changed from '%1' to '%2'")
                                        .arg(statusString(_status))
                                        .arg(statusString(status));
   _status = status;
@@ -222,10 +222,10 @@ ControlConnection::send(ControlCommand cmd, ControlReply &reply, QString *errmsg
     /* Wait for and get the result, clean up, and return */
     result = w->getResult(&reply, &errstr);
     if (!result)
-      log::error("Failed to receive control reply: %1").arg(errstr);
+      tc::error("Failed to receive control reply: %1").arg(errstr);
     delete w;
   } else {
-    log::error("Failed to send control command (%1): %2").arg(cmd.keyword())
+    tc::error("Failed to send control command (%1): %2").arg(cmd.keyword())
                                                         .arg(errstr);
     _recvMutex.unlock();
   }
@@ -247,7 +247,7 @@ ControlConnection::send(ControlCommand cmd, QString *errmsg)
   /* Check for a valid and connected socket */
   _connMutex.lock();
   if (!_sock || _status != Connected) {
-    log::warn("Unable to send control command '%1' when socket status is '%2'")
+    tc::warn("Unable to send control command '%1' when socket status is '%2'")
                                               .arg(cmd.keyword()).arg(_status);
     _connMutex.unlock();
     return err(errmsg, tr("Control socket is not connected."));
@@ -285,14 +285,14 @@ ControlConnection::onReadyRead()
     if (_sock->readReply(reply, &errmsg)) {
       if (reply.getStatus() == "650") {
         /* Asynchronous event message */
-        log::debug("Control Event: %1").arg(reply.toString());
+        tc::debug("Control Event: %1").arg(reply.toString());
         
         if (_events) {
           _events->handleEvent(reply);
         }
       } else {
         /* Response to a previous command */
-        log::debug("Control Reply: %1").arg(reply.toString());
+        tc::debug("Control Reply: %1").arg(reply.toString());
         
         _recvMutex.lock();
         if (!_recvQueue.isEmpty()) {
@@ -302,7 +302,7 @@ ControlConnection::onReadyRead()
         _recvMutex.unlock();
       }
     } else {
-      log::error("Unable to read control reply: %1").arg(errmsg);
+      tc::error("Unable to read control reply: %1").arg(errmsg);
     }
   }
 }
@@ -369,9 +369,9 @@ ControlConnection::run()
   
   /* Attempt to connect to Tor */
   connect();
-  log::debug("Starting control connection event loop.");
+  tc::debug("Starting control connection event loop.");
   exec();
-  log::debug("Exited control connection event loop.");
+  tc::debug("Exited control connection event loop.");
 
   /* Clean up the socket */
   _connMutex.lock();
