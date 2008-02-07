@@ -28,6 +28,9 @@
     will no longer be able to reconnect.
   o Don't let users save an empty string for a Tor executable in the Settings
     dialog.
+  o Old Jabber clients apparently use port 5223 for encrypted connections. So,
+    include that port as part of the "Instant Messaging" exit policy checkbox.
+    (Ticket #333)
   o Stop displaying flags next to the language names in the Appearance
     settings page.
   o Add a "How do I find a bridge?" link and corresponding help text to the
