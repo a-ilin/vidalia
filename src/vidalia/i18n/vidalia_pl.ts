@@ -475,7 +475,7 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../config/configdialog.cpp" line="82"/>
         <source>Sharing</source>
-        <translation type="unfinished"></translation>
+        <translation>Współdzielenie</translation>
     </message>
 </context>
 <context>
@@ -1214,12 +1214,12 @@ Czy chciałbyś ich o tym powiadomić i dać czas na znalezienie nowego węzła 
     <message>
         <location filename="../mainwindow.cpp" line="473"/>
         <source>Error starting proxy server</source>
-        <translation type="unfinished"></translation>
+        <translation>Wystąpił błąd przy uruchamianiu serwera proxy</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="474"/>
         <source>Vidalia was unable to start the configured proxy server</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia nie mogła uruchomić wskazanego serwera proxy</translation>
     </message>
 </context>
 <context>
