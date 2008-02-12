@@ -773,7 +773,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
                   <enum>Qt::NoContextMenu</enum>
                  </property>
                  <property name="toolTip" >
-                  <string>Ports 706, 1863, 5050, 5190, 5222, 8300 and 8888</string>
+                  <string>Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 and 8888</string>
                  </property>
                  <property name="text" >
                   <string>Instant Messaging (IM)</string>
