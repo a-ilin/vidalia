@@ -94,8 +94,52 @@ Poistumiskäytännöillä määritellään millaista liikennettä sallitaan pois
 Jokainen vaihtoehto ilmaisee tietynlaista palvelua, jota voi sallia Tor-verkon kautta kulkemaan palvelimesi kautta. Jos poistaa rastin jonkin vierestä, Tor ei salli sen kaltaista liikennettä reitittimesi kautta ja jos on rastitettu <i>Monenlaiset muut palvelut</i>, Tor sallii muunlaisen liikenteen poistuvan reitittimesi kautta kuin edellä mainitut vaihtoehdot. 
 </p>
 
-<p>Jos ei halua sallia muiden Tor-käytäjien muodostaa yhteyksiä Tor-verkon ulkopuolelle oman reitittimen kautta, niin poista rasti jokaisesta ruudusta. Vaikka rastit on poistettu jokaisesta kohdasta, niin reitittimesi on hyödyllinen Tor-Verkolle. Reitittimesi sallii Tor-käyttäjien myodostaa yhteyksiä Tor-verkkoon ja välittää tietoa Tor-reitittimien välillä.
+<p>
+For completeness, the following table lists the specific port numbers
+represented by each of the exit policy checkboxes. <b>Kuvaus</b>-sarake kertoo millaisia palveluita Tor-käyttäjät voivat käyttää reitittimesi kautta, jos sen laatikko on rastitettu.
 </p>
+
+<table border="1">
+<tr>
+  <td><b>Toiminto</b></td>
+  <td><b>Portit</b></td>
+  <td><b>Kuvaus</b></td>
+</tr>
+<tr>
+  <td>Verkkosivustot</td>
+  <td valign="middle">80</td>
+  <td>Normaalien suojaamattomien sivujen selaamista</td>
+</tr>
+<tr>
+  <td>Suojatut sivustot (SSL)</td>
+  <td valign="middle">443</td>
+  <td>Suojattujen sivujen selaamista</td>
+</tr>
+<tr>
+  <td>Sähköpostin vastaanotto (POP, IMAP)</td>
+  <td valign="middle">110, 143, 993, 995</td>
+  <td>Sähköpostiviestien lataamista (lähettämistä ei sallita)</td>
+</tr>
+<tr>
+  <td>Pikaviestintä (IM)</td>
+  <td valign="middle">703, 1863, 5050, 5190, 5222, 5223, 8300, 8888</td>
+  <td>Pikaviestintäohjelmien käyttämistä kuten esim. MSN Messenger, AIM, ICQ ja Jabber</td>
+</tr>
+<tr>
+  <td>Internet Relay Chat (IRC)</td>
+  <td valign="middle">6660-6669, 6697</td>
+  <td>Keskustelemista IRC-käyttäjien ja -palvelimien kanssa</td>
+</tr>
+<tr>
+  <td>Monenlaiset muut palvelut</td>
+  <td valign="middle">*</td>
+  <td>Muut ohjelmat, joita edelliset toiminnot eivät kata</td>
+</tr>
+</table>
+
+<p>Jos ei halua sallia muiden Tor-käytäjien muodostaa yhteyksiä Tor-verkon ulkopuolelle oman reitittimen kautta, niin poista rasti jokaisesta ruudusta. Vaikka rastit on poistettu jokaisesta kohdasta, niin reitittimesi on hyödyllinen Tor-Verkolle. Reitittimesi sallii Tor-käyttäjien muodostaa yhteyksiä Tor-verkkoon ja välittää tietoa Tor-reitittimien välillä.
+</p>
+
 <p>
 Kun käynnistää siltareitittimen, <i>Poistumiskäytännöt</i>-välilehti muuttuu harmaaksi, koska siltareitittimet eivät salli poistumisyhteyksiä.
 </p>

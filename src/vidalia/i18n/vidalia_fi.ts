@@ -451,7 +451,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../config/configdialog.cpp" line="171"/>
         <source>Error Saving Settings</source>
-        <translation>Vfirhe tallentaessa asetuksia</translation>
+        <translation>Virhe tallentaessa asetuksia</translation>
     </message>
     <message>
         <location filename="../config/configdialog.cpp" line="173"/>
@@ -2113,7 +2113,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../config/serverpage.ui" line="805"/>
         <source>Websites</source>
-        <translation>Internetsivustot</translation>
+        <translation>Verkkosivustot</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="904"/>
@@ -2287,7 +2287,7 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/torsettings.cpp" line="118"/>
         <source>Failed to hash the control password.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjaussalasanan hashaus epäonnistui.</translation>
     </message>
 </context>
 <context>
