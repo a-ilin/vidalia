@@ -1,0 +1,78 @@
+<!--
+  $Id$
+
+  Vidalia is distributed under the following license:
+
+  Copyright (C) 2007,  Matt Edman, Justin Hipple
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU General Public License
+  as published by the Free Software Foundation; either version 2
+  of the License, or (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+  02110-1301, USA.
+-->
+
+<!--
+ en: 2243
+-->
+
+<html>
+<body>
+
+<h1>Bridge серверы</h1>
+<hr />
+
+<a name="about"/>
+<h3>Что такое bridge-серверы?</h3>
+<p>
+Bridge-серверы это серверы Tor которые не перечислены в главном каталоге.
+Так как полного публичного списка этих серверов не существует, то
+даже если ваш интернет-провайдер будет фильтровать все соединения к известным
+серверам Tor, он не сможет заблокировать доступ ко всем bridge-серверам.
+</p>
+
+<a name="finding"/>
+<h3>Как мне найти bridge-сервер?</h3>
+<p>
+Существует два основных способа узнать адрес bridge-сервера:
+<ol>
+  <li>Попросить друзей запустить приватный bridge-сервер специально для вас</li>
+  <li>Использовать некоторые из публичных bridge'ей</li>
+</ol>
+</p>
+
+<p>
+Чтобы использовать приватный bridge, попросите ваших друзей запустить Vidalia
+и Tor в свободной от цензуры зоне Интернете и кликнуть
+<i>Помочь заблокированным пользователям</i> на странице
+<a href="server.html">настроек сервера</a> в Vidalia. После этого они должны
+безопасным образом сообщить вам адрес своего bridge'а (указан в самом низу
+страницы настроек сервера). В отличие от обычного сервера bridge передаёт данные
+только в сеть Tor и обратно, поэтому оператор подвергается меньшему риску попасть
+в "чёрный список".
+</p>
+
+<p>
+Адреса публичных bridge-серверов можно узнать посетив
+<b>https://bridges.torproject.org</b>.
+Адреса на этой странице будут меняться каждые несколько дней, так что
+наведывайтесь периодически если вам понадобится больше bridge-адресов. Ещё
+один способ получить адрес bridge'а - отправить письмо на
+<b>bridges@torproject.org</b> с единственной строкой <b>get bridges</b>
+в теле письма. Но, для того чтобы атакующему было сложнее узнать много адресов,
+вы должны использовать почтовыя ящик на Gmail или Yahoo! для таких писем.
+</p>
+
+<p>
+Указав несколько bridge-серверов вы повысите надёжность своего соединения даже
+если некоторые из серверов отключатся.
+</p>

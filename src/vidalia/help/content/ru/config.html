@@ -1,0 +1,203 @@
+<!--
+  $Id$
+  Vidalia is distributed under the following license:
+
+  Copyright (C) 2006,  Matt Edman, Justin Hipple
+
+  This program is free software; you can redistribute it and/or
+  modify it under the terms of the GNU General Public License
+  as published by the Free Software Foundation; either version 2
+  of the License, or (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+  02110-1301, USA.
+-->
+
+<!--
+ en: 2325
+-->
+
+<html>
+<body>
+
+<h1>Настройка Vidalia и Tor</h1>
+<hr />
+
+<p>
+С помощью Vidalia вы можете настроить некоторые из наиболее часто изменяемых
+параметров работы Vidalia и Tor. Также вы сможете запустить и настроить
+<a href="server.html">сервер Tor</a> тем самым увеличивая сеть Tor.
+</p>
+
+<a name="general"/>
+<h3>Общие настройки</h3>
+<p>
+Settings on the <i>General</i> page are the most commonly modified settings.
+</p>
+<ul>
+  <li><b>Tor Executable</b>:
+    This is the Tor executable that Vidalia will run when you select
+    <i>Start</i> from the tray menu. If you have multiple versions of Tor installed,
+    you can tell Vidalia which version you would like to run by clicking the
+    <i>Browse</i> button and navigating to the particular Tor installation you
+    want.
+  </li>
+  <li><b>Startup Options</b>:
+    This setting allows you to have Vidalia automatically start Tor when
+    Vidalia starts. You can also configure Vidalia to run when your system
+    starts (<i>Windows only</i>).
+  </li>
+</ul>
+
+<a name="network"/>
+<h3>Network Settings</h3>
+<p>
+The <i>Network</i> settings page lets you change how Tor connects to the Tor
+network.
+</p>
+<ul>
+  <li><b>I use a proxy to access the Internet</b>:
+    If your Internet connection requires an HTTP proxy, you can configure Tor
+    to send all of its directory requests and Tor relay connections through
+    your proxy. You must specify at least the hostname or address of your
+    proxy, and the port on which your proxy is listening for connections. If
+    your proxy requires authentication, you can also enter the
+    <i>Username</i> and <i>Password</i> you use to connect to your proxy.
+    Otherwise, you can leave those fields blank.
+  </li>
+  <li><b>My firewall only lets me connect to certain ports</b>:
+    If you are behind a restrictive firewall or proxy that limits the ports you
+    are able to connect to, you can configure Tor to connect directly only to
+    relays listening on the ports allowed by your firewall or proxy. Simply
+    enter a list of ports permitted by your firewall or proxy, separated by
+    commas. (<i>Example: 80,443,8080</i>)
+  </li>
+  <li><b>My ISP blocks connections to the Tor network</b>:
+    If your ISP (Internet Service Provider) blocks connections to the Tor
+    network, Tor can attempt to avoid being filtered by encrypting its
+    directory connections and connecting to the Tor network through relays
+    called <i>bridges</i> (Tor 0.2.0.3-alpha or newer only). You can add
+    bridge relays by specifying either their address and port number, or
+    their address, port number, and fingerprint.<br>
+
+    Below are examples of valid bridge address formats:
+    <ul>
+      <li>
+        128.213.48.13:8080
+      </li>
+      <li>
+        128.213.48.13:8080 1054 13B1 DBDA F867 B226 74D2 52DF 3D9F A367 1F73
+      </li>
+      <li>
+        128.213.48.13:8080 105413B1DBDAF867B22674D252DF3D9FA3671F73
+      </li>
+    </ul>
+    Even if you do not know any bridge relay addresses, checking this checkbox
+    may still be helpful. Tor will encrypt its directory requests, which can
+    defeat blocking mechanisms that try to filter Tor's requests for
+    information about other relays. If connections to normal Tor relays are
+    also blocked, then you will need to learn a bridge relay address somehow
+    and add it here. See the help topic on <a href="bridges.html#finding">finding
+    bridge relays</a> for more information on how to learn new bridge relay
+    addresses and fingerprints.
+  </li>
+</ul>
+
+<a name="relay"/>
+<h3>Relay Settings</h3>
+<p>
+<i>
+  See <a href="server.html">this help topic</a> for detailed
+  information about setting up and managing a Tor relay.
+</i>
+</p>
+
+<a name="appearance"/>
+<h3>Appearance Settings</h3>
+<p>
+The settings on the <i>Appearance</i> page allow you to customize the
+look and feel of Vidalia.
+</p>
+<ul>
+  <li><b>Language</b>:
+    Vidalia's interface has been translated into many languages by helpful
+    volunteers. When Vidalia is first run, it will try to guess which language
+    your computer is currently using. If Vidalia guesses incorrectly, or if
+    you prefer a different language, you can choose another language from the
+    dropdown box. You will need to restart Vidalia after changing the
+    displayed language for the changes to take effect.
+  </li>
+  <li><b>Style</b>:
+    In most cases, Vidalia will default to using your platform's default
+    interface style. If you dislike the default, you can choose whichever
+    interface style you prefer from the dropdown box.
+  </li>
+</ul>
+
+<a name="advanced"/>
+<h3>Advanced Settings</h3>
+<p>
+The settings on the <i>Advanced</i> page should generally only be
+modified by more experienced users.
+</p>
+<ul>
+  <li><b>Control Address &amp; Port</b>:
+    The <i>Control Port</i> is the port which Vidalia uses to talk to Tor.
+    This doesn't need to be changed unless you have a conflict with another
+    service on your machine, or if you are using Vidalia to control and
+    monitor a Tor process running on another machine.
+  </li>
+  <li><b>Control Port Authentication</b>:
+    Control port authentication is used to limit the applications on your
+    machine that can connect to and reconfigure your Tor installation. The
+    available authentication methods are:
+    <ul>
+      <li>
+        <b>None</b> -- No authentication is required. Use of this option is
+        <b>strongly</b> discouraged. Any application or user on your computer
+        can reconfigure your Tor installation.
+      </li>
+      <li>
+        <b>Password</b> <i>(Default)</i> -- If this method is selected, you
+        can specify a password that Tor will require each time a user or
+        application connects to Tor's control port. If Vidalia starts Tor for
+        you, you can have Vidalia randomly generate a new password each time
+        it starts Tor by checking the <i>Randomly Generate</i> checkbox.
+      </li>
+      <li>
+        <b>Cookie</b> -- If cookie authentication is selected, Tor will
+        write a file (or, <i>cookie</i>) containing random bytes to its data
+        directory when it starts. Any user or application that tries to
+        connect to Tor's control port must be able to provide the contents of
+        this cookie.
+      </li>
+    </ul>
+  </li>
+  <li><b>Tor Configuration File</b> <i>(optional)</i>:
+    You can use this option to have Vidalia start Tor using a
+    specific <i>torrc</i>, Tor's configuration file. If you leave this field
+    blank, Tor will uses its own default torrc location.
+  </li>
+  <li><b>Tor Data Directory</b> <i>(optional)</i>:
+    You can specify the directory in which Tor will store its saved data,
+    such as cached Tor relay information, Tor relay keys, and configuration
+    files. If you leave this field blank, Tor will use its own default data
+    directory location.
+  </li>
+  <li><b>Permissions</b> <i>(optional, not available on Windows)</i>:
+    If you enter a value for <b>Run as User</b>, Tor will <i>setuid</i> to this user
+    when it starts.
+    If you enter a value for <b>Run as Group</b>, Tor will <i>setgid</i> to this
+    group when it starts.
+  </li>
+</ul>
+
+</body>
+</html>
