@@ -42,6 +42,10 @@
     <file>zh-cn/troubleshooting.html</file>
     <file>zh-cn/netview.html</file>
     <file>zh-cn/links.html</file>
+    <!-- Russian -->
+    <file>ru/contents.xml</file>
+    <file>ru/index.html</file>
+    <file>ru/bridges.html</file>
   </qresource>
 </RCC>
 
