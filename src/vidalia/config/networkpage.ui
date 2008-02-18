@@ -232,7 +232,7 @@
    <item>
     <widget class="QCheckBox" name="chkUseBridges" >
      <property name="toolTip" >
-      <string>Check to configure Tor to use bridge relays to access the Tor network</string>
+      <string>Check to configure Tor to encrypt its directory requests and, optionally, use bridge relays to access the Tor network</string>
      </property>
      <property name="text" >
       <string>My ISP blocks connections to the Tor network</string>
@@ -259,7 +259,7 @@
       </size>
      </property>
      <property name="title" >
-      <string>Tor Bridge Settings</string>
+      <string>Tor Bridge Settings (optional)</string>
      </property>
      <layout class="QVBoxLayout" >
       <property name="margin" >
