@@ -58,9 +58,11 @@ configure_file(
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/win32/vidalia.nsi.in
   ${CMAKE_CURRENT_SOURCE_DIR}/win32/vidalia.nsi
+  @ONLY
 )
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/win32/vidalia-bundle.nsi.in
   ${CMAKE_CURRENT_SOURCE_DIR}/win32/vidalia-bundle.nsi
+  @ONLY
 )
 
