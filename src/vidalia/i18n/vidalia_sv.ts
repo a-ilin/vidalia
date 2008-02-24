@@ -631,12 +631,12 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../help/browser/helpbrowser.ui" line="174"/>
         <source>Find Previous</source>
-        <translation>Hitta föregående</translation>
+        <translation>Sök föregående</translation>
     </message>
     <message>
         <location filename="../help/browser/helpbrowser.ui" line="187"/>
         <source>Find Next</source>
-        <translation>Hitta nästa</translation>
+        <translation>Sök nästa</translation>
     </message>
     <message>
         <location filename="../help/browser/helpbrowser.ui" line="221"/>
@@ -711,7 +711,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../help/browser/helpbrowser.ui" line="535"/>
         <source>Find</source>
-        <translation>Hitta</translation>
+        <translation>Sök</translation>
     </message>
     <message>
         <location filename="../help/browser/helpbrowser.ui" line="538"/>
@@ -761,7 +761,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../help/browser/helpbrowser.ui" line="152"/>
         <source>Find:</source>
-        <translation>Hitta:</translation>
+        <translation>Sök:</translation>
     </message>
     <message>
         <location filename="../help/browser/helpbrowser.ui" line="231"/>
@@ -1478,12 +1478,12 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../log/messagelog.cpp" line="374"/>
         <source>Find in Message Log</source>
-        <translation>Hitta i meddelandeloggen</translation>
+        <translation>Sök i meddelandeloggen</translation>
     </message>
     <message>
         <location filename="../log/messagelog.cpp" line="375"/>
         <source>Find:</source>
-        <translation>Hitta:</translation>
+        <translation>Sök:</translation>
     </message>
     <message>
         <location filename="../log/messagelog.cpp" line="381"/>
@@ -1833,7 +1833,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../config/networkpage.ui" line="318"/>
         <source>&lt;a href=&quot;bridges.finding&quot;&gt;How do I find a bridge?&lt;/a&gt;</source>
-        <translation>&lt;a href=&quot;bridges.finding&quot;&gt;Vad är en brygga?&lt;/a&gt;</translation>
+        <translation>&lt;a href=&quot;bridges.finding&quot;&gt;Hur kan jag hitta en brygga?&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
