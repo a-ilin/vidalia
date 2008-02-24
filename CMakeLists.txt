@@ -4,6 +4,7 @@
 #  Vidalia is distributed under the following license:
 #
 #  Copyright (C) 2006-2007,  Matt Edman, Justin Hipple
+#  Copyright (C) 2008,  Matt Edman
 #
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License
@@ -56,16 +57,8 @@ if (APPLE)
   option(OSX_FAT_BINARY "Build Vidalia as a Universal binary." OFF)
 endif(APPLE)
 
-## Check for QSystemTrayIcon
-set(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES} ${QT_INCLUDES})
-if (NOT APPLE)
-  check_include_file_cxx("qsystemtrayicon.h" HAVE_QSYSTEMTRAYICON_H)
-  if (HAVE_QSYSTEMTRAYICON_H)
-    option(USE_QSYSTEMTRAYICON "Use Qt's tray icon implementation." ON)
-  endif(HAVE_QSYSTEMTRAYICON_H)
-endif(NOT APPLE)
-
 ## Check for QSslSocket
+set(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES} ${QT_INCLUDES})
 check_include_file_cxx("qsslsocket.h" HAVE_QSSLSOCKET_H)
 if (HAVE_QSSLSOCKET_H)
   check_symbol_exists(QT_NO_OPENSSL "QtGlobal" QT_NO_SSL_SUPPORT)

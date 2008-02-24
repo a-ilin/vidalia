@@ -67,20 +67,11 @@
 
 /* Decide which of our four sets of tray icons to use. */
 #if defined(Q_WS_WIN)
-#if defined(USE_QSYSTEMTRAYICON)
 /* QSystemTrayIcon on Windows wants 16x16 .png files */
 #define IMG_TOR_STOPPED  ":/images/16x16/tor-off.png"
 #define IMG_TOR_RUNNING  ":/images/16x16/tor-on.png"
 #define IMG_TOR_STARTING ":/images/16x16/tor-starting.png"
 #define IMG_TOR_STOPPING ":/images/16x16/tor-stopping.png"
-#else
-/* Use the .ico files */
-#include "res/vidalia_win.rc.h"
-#define IMG_TOR_STOPPED    QString::number(IDI_TOR_OFF)
-#define IMG_TOR_RUNNING    QString::number(IDI_TOR_ON)
-#define IMG_TOR_STARTING   QString::number(IDI_TOR_STARTING)
-#define IMG_TOR_STOPPING   QString::number(IDI_TOR_STOPPING)
-#endif
 #elif defined(Q_WS_MAC)
 /* On Mac, we always go straight to Carbon to load our dock images 
  * from .icns files */

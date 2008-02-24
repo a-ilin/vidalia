@@ -35,14 +35,10 @@
 #include "config.h"
 
 /* Include the correct tray icon implementation */
-#if defined(USE_QSYSTEMTRAYICON)
-#include "trayicon_qt.h"
-#elif defined(Q_WS_WIN)
-#include "trayicon_win.h"
-#elif defined(Q_WS_X11)
-#include "trayicon_x11.h"
-#else
+#if defined(Q_WS_MAC)
 #include "trayicon_mac.h"
+#else
+#include "trayicon_qt.h"
 #endif
 
 
@@ -92,15 +88,8 @@ signals:
 protected:
   /** Override's QObject' event() method to catch mouse-related events. */
   bool event(QEvent *);
-  /** Respond to a mouse button being pressed. */ 
-  void mouseButtonPress(QMouseEvent *event);
-  /** Respond to a mouse button being released. */
-  void mouseButtonRelease(QMouseEvent *event);
   /** Respond to a mouse button being double-clicked. */
   void mouseButtonDblClick(QMouseEvent *event);
-
-private:
-  QMenu* _contextMenu; /**< Menu to display when the tray icon is clicked. */
 };
 
 #endif
