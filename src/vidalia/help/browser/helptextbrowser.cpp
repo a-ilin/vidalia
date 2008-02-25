@@ -1,7 +1,8 @@
 /****************************************************************
  *  Vidalia is distributed under the following license:
  *
- *  Copyright (C) 2006,  Matt Edman, Justin Hipple
+ *  Copyright (C) 2006-2007,  Matt Edman, Justin Hipple
+ *  Copyright (C) 2008,  Matt Edman
  *
  *  This program is free software; you can redistribute it and/or
  *  modify it under the terms of the GNU General Public License
@@ -25,6 +26,7 @@
  * \brief Displays an HTML-based help document
  */
 
+#include <QDir>
 #include <QFile>
 #include <vidalia.h>
 
@@ -45,14 +47,14 @@ HelpTextBrowser::loadResource(int type, const QUrl &name)
   if (type == QTextDocument::HtmlResource) {
     QString helpPath = ":/help/";
     
-#if QT_VERSION >= 0x040104
-    /* On Qt 4.1.4 or later, name.path() only includes the filename (not
-     * the language code) for pages accessed by clicking on a link in another
-     * page, so add it now if there isn't a path already. */
+    /* Fall back to English if there is no translation of the specified help
+     * page in the current language. */
     if (!name.path().contains("/")) {
-      helpPath += Vidalia::language() + "/";
-    } 
-#endif
+      QString language = Vidalia::language();
+      if (!QDir(":/help/" + language).exists())
+        language = "en";
+      helpPath += language + "/";
+    }
     
     QFile file(helpPath + name.path());
     if (!file.open(QIODevice::ReadOnly)) {
