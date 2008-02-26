@@ -4,6 +4,7 @@
 #  Vidalia is distributed under the following license:
 #
 #  Copyright (C) 2006-2007,  Matt Edman, Justin Hipple
+#  Copyright (C) 2008,  Matt Edman
 #
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License
@@ -22,47 +23,53 @@
 #####################################################################
 
 
+configure_file(
+  ${CMAKE_CURRENT_SOURCE_DIR}/package.sh
+  ${CMAKE_CURRENT_BINARY_DIR}/package.sh
+  COPYONLY
+)
+
 ## RPM Spec File
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/rpm/vidalia.spec.in
-  ${CMAKE_CURRENT_SOURCE_DIR}/rpm/vidalia.spec
+  ${CMAKE_CURRENT_BINARY_DIR}/rpm/vidalia.spec
 )
 
 ## OS X Packaging Files
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/osx/builddmg.sh.in
-  ${CMAKE_CURRENT_SOURCE_DIR}/osx/builddmg.sh
+  ${CMAKE_CURRENT_BINARY_DIR}/osx/builddmg.sh
 )
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/osx/buildmpkg.sh.in
-  ${CMAKE_CURRENT_SOURCE_DIR}/osx/buildmpkg.sh
+  ${CMAKE_CURRENT_BINARY_DIR}/osx/buildmpkg.sh
 )
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/osx/VidaliaBundleDesc.plist.in
-  ${CMAKE_CURRENT_SOURCE_DIR}/osx/VidaliaBundleDesc.plist
+  ${CMAKE_CURRENT_BINARY_DIR}/osx/VidaliaBundleDesc.plist
 )
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/osx/VidaliaBundleInfo.plist.in
-  ${CMAKE_CURRENT_SOURCE_DIR}/osx/VidaliaBundleInfo.plist
+  ${CMAKE_CURRENT_BINARY_DIR}/osx/VidaliaBundleInfo.plist
 )
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/osx/VidaliaDesc.plist.in
-  ${CMAKE_CURRENT_SOURCE_DIR}/osx/VidaliaDesc.plist
+  ${CMAKE_CURRENT_BINARY_DIR}/osx/VidaliaDesc.plist
 )
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/osx/VidaliaInfo.plist.in
-  ${CMAKE_CURRENT_SOURCE_DIR}/osx/VidaliaInfo.plist
+  ${CMAKE_CURRENT_BINARY_DIR}/osx/VidaliaInfo.plist
 )
 
 ## Windows Packages
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/win32/vidalia.nsi.in
-  ${CMAKE_CURRENT_SOURCE_DIR}/win32/vidalia.nsi
+  ${CMAKE_CURRENT_BINARY_DIR}/win32/vidalia.nsi
   @ONLY
 )
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/win32/vidalia-bundle.nsi.in
-  ${CMAKE_CURRENT_SOURCE_DIR}/win32/vidalia-bundle.nsi
+  ${CMAKE_CURRENT_BINARY_DIR}/win32/vidalia-bundle.nsi
   @ONLY
 )
 
