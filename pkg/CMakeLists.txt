@@ -73,3 +73,13 @@ configure_file(
   @ONLY
 )
 
+file(GLOB vidalia_NSH ${CMAKE_CURRENT_SOURCE_DIR}/win32/*.nsh)
+foreach (it ${vidalia_NSH})
+  get_filename_component(it ${it} NAME)
+  configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/win32/${it}
+    ${CMAKE_CURRENT_BINARY_DIR}/win32/${it} 
+    COPYONLY
+  )
+endforeach(it)
+
