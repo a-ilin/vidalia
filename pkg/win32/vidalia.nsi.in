@@ -143,17 +143,21 @@ Section "${VIDALIA_DESC}" Vidalia
   
   ; Set output path to the installation directory.
   SetOutPath $INSTDIR    
-  File "..\..\release\${VIDALIA_EXEC}"
-  File "..\..\release\mingwm10.dll"
-  File "..\..\AUTHORS"
-  File "..\..\CHANGELOG"
-  File "..\..\LICENSE"
-  File "..\..\COPYING"
-  File "..\..\README"
+  File "..\..\src\vidalia\${VIDALIA_EXEC}"
+  File "..\..\bin\mingwm10.dll"
+  File "..\..\bin\QtCore4.dll"
+  File "..\..\bin\QtGui4.dll"
+  File "..\..\bin\QtNetwork4.dll"
+  File "..\..\bin\QtXml4.dll"
+  File "@Vidalia_SOURCE_DIR@\AUTHORS"
+  File "@Vidalia_SOURCE_DIR@\CHANGELOG"
+  File "@Vidalia_SOURCE_DIR@\LICENSE"
+  File "@Vidalia_SOURCE_DIR@\COPYING"
+  File "@Vidalia_SOURCE_DIR@\README"
 
   ; Include a prebuilt GeoIP cache
   SetOutPath "$APPDATA\Vidalia"
-  File "..\geoip-cache"
+  File "@CMAKE_CURRENT_SOURCE_DIR@\geoip-cache"
 
   ; Write the uninstall keys for Windows
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${VIDALIA_NAME}" "DisplayName" "${VIDALIA_DESC}"
