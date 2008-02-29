@@ -1,34 +1,24 @@
-/****************************************************************
- *  Vidalia is distributed under the following license:
- *
- *  Copyright (C) 2007,  Matt Edman, Justin Hipple
- *
- *  This program is free software; you can redistribute it and/or
- *  modify it under the terms of the GNU General Public License
- *  as published by the Free Software Foundation; either version 2
- *  of the License, or (at your option) any later version.
- *
- *  This program is distributed in the hope that it will be useful,
- *  but WITHOUT ANY WARRANTY; without even the implied warranty of
- *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *  GNU General Public License for more details.
- *
- *  You should have received a copy of the GNU General Public License
- *  along with this program; if not, write to the Free Software
- *  Foundation, Inc., 51 Franklin Street, Fifth Floor, 
- *  Boston, MA  02110-1301, USA.
- ****************************************************************/
+/*
+**  This file is part of Vidalia, and is subject to the license terms in the
+**  LICENSE file, found in the top level directory of this distribution. If you
+**  did not receive the LICENSE file with this file, you may obtain it from the
+**  Vidalia source package distributed by the Vidalia Project at
+**  http://www.vidalia-project.net/. No part of Vidalia, including this file,
+**  may be copied, modified, propagated, or distributed except according to the
+**  terms described in the LICENSE file.
+*/
 
-/** 
- * \file animatedpixmap.h
- * \version $Id$
- */
+/*
+** \file animatedpixmap.h
+** \version $Id$
+*/
 
 #ifndef _ANIMATEDPIXMAP_H
 #define _ANIMATEDPIXMAP_H
 
 #include <QTimer>
 #include <QPixmap>
+
 
 /** Provides an animated pixmap that can be used even if Qt was compiled 
  * without GIF support (which it is, by default) or the system doesn't have a 
