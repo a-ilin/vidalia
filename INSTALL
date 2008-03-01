@@ -16,6 +16,17 @@ Linux/BSD/Unix
 
                            cmake . && make
   
+     [optional] CMake also supports out-of-source builds, so compiled and
+     generated files are kept separate from the source tree. For example, you
+     can create a build directory as follows:
+
+                        mkdir build && cd build
+
+     Instead of the 'cmake .' command listed above, you would configure and
+     compile Vidalia by running:
+
+                           cmake .. && make
+
   2. When the previous command finishes, Vidalia's binary will be
      placed in the src/vidalia/ directory.
   
@@ -159,7 +170,6 @@ NMake makefiles by running:
 You can then compile Vidalia from the command line by simply running:
 
                                nmake
-
 
 
 Available Configuration Options
