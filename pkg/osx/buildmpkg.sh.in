@@ -251,7 +251,9 @@ cp $PRIVOXY_RESDIR/License.html $MPKG_DIR/Privoxy\ License.html
 cp $PRIVOXY_RESDIR/ReadMe.txt   $MPKG_DIR/Privoxy\ ReadMe.txt
 cp $TOR_DIR/LICENSE             $MPKG_DIR/Tor\ License.txt
 cp $VID_DIR/LICENSE             $MPKG_DIR/Vidalia\ License.txt
-cp $VID_DIR/COPYING             $MPKG_DIR/GNU\ GPL.txt
+cp $VID_DIR/LICENSE-GPLV2       $MPKG_DIR/GNU\ GPLv2.txt
+cp $VID_DIR/LICENSE-GPLV3       $MPKG_DIR/GNU\ GPLv3.txt
+cp $VID_DIR/LICENSE-OPENSSL     $MPKG_DIR/OpenSSL\ License.txt
 cp $TORBUTTON_LIC_PATH          $MPKG_DIR/Torbutton-LICENSE.txt
 
 

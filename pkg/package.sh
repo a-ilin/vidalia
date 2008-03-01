@@ -50,7 +50,8 @@ case "$1" in
 "osx")
   cp -R ../src/vidalia/Vidalia.app ../
   srcdir="../"
-  srcfiles="Vidalia.app README AUTHORS LICENSE COPYING CHANGELOG"
+  srcfiles="Vidalia.app README AUTHORS CHANGELOG"
+  srcfiles="$srcfiles LICENSE LICENSE-GPLV2 LICENSE-GPLV3 LICENSE-OPENSSL"
   osx/builddmg.sh "$srcdir" "$srcfiles"
   ;;
 

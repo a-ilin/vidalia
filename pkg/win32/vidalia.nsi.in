@@ -143,7 +143,9 @@ Section "${VIDALIA_DESC}" Vidalia
   File "@Vidalia_SOURCE_DIR@\AUTHORS"
   File "@Vidalia_SOURCE_DIR@\CHANGELOG"
   File "@Vidalia_SOURCE_DIR@\LICENSE"
-  File "@Vidalia_SOURCE_DIR@\COPYING"
+  File "@Vidalia_SOURCE_DIR@\LICENSE-GPLV2"
+  File "@Vidalia_SOURCE_DIR@\LICENSE-GPLV3"
+  File "@Vidalia_SOURCE_DIR@\LICENSE-OPENSSL"
   File "@Vidalia_SOURCE_DIR@\README"
 
   ; Include a prebuilt GeoIP cache
