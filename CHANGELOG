@@ -28,6 +28,9 @@
     will no longer be able to reconnect.
   o Don't let users save an empty string for a Tor executable in the Settings
     dialog.
+  o Apply the changes for settings pages in the same order in which the pages
+    appear in the Settings dialog. The only two pages for which this matters
+    are the 'Network' and 'Sharing' pages. (Ticket #336)
   o Old Jabber clients apparently use port 5223 for encrypted connections. So,
     include that port as part of the "Instant Messaging" exit policy checkbox.
     (Ticket #333)

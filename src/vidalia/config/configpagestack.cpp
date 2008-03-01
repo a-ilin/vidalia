@@ -56,3 +56,15 @@ ConfigPageStack::showPage(QAction *pageAction)
   setCurrentWidget(_pages.value(pageAction));
 }
 
+/** Returns a list of all pages in the stack. The order of the pages in the
+ * returned QList is the same as the order in which the pages were initially
+ * added to the stack. */
+QList<ConfigPage *>
+ConfigPageStack::pages() const
+{
+  QList<ConfigPage *> pages;
+  for (int i = 0; i < count(); i++)
+    pages << dynamic_cast<ConfigPage *>(widget(i));
+  return pages;
+}
+

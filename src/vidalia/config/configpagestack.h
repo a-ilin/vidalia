@@ -37,10 +37,12 @@ public:
   void setCurrentPage(ConfigPage *page);
   /** Sets the current config page index and checks its action. */
   void setCurrentIndex(int index);
-
-  /** Returns a list of all pages in the stack. */
-  QList<ConfigPage*> pages() { return _pages.values(); }
   
+  /** Returns a list of all pages in the stack. The order of the pages in the
+   * returned QList is the same as the order in which the pages were
+   * initially added to the stack. */
+  QList<ConfigPage *> pages() const;
+
 public slots:
   /** Displays the page associated with the activated action. */
   void showPage(QAction *pageAction);
