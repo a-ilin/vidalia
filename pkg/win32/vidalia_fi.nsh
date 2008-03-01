@@ -7,7 +7,7 @@
 
 ; Bundle
 LangString BundleSetupCaption         ${LANG_FINNISH} "${BUNDLE_NAME}n asennus"
-LangString BundleWelcomeText          ${LANG_FINNISH} "Tämä velho auttaa asentaakseen koneelle Tor-ohjelman, Vidalian, Privoxyn ja Torbuttonin.\r\n\r\nTor on järjestelmä, jolla voi käyttää Internettiä anonyymisesti tekemällä anonyymiseksi sivujen selailun, pikaviestien käytön,IRCin ja muut. Vidalia on käyttöliittymä ohjatakseen, seuratakseen ja säätääkseen Tor-ohjelman toimintaa.\r\n\r\nPrivoxy suodattava välityspalvelin, joka suojaa yksityisyyttä ja auttaa poistamalla mainoksia, bannereita ja popup-ikkunoita.\r\n\r\nTorbutton on Firefoxille lisäosa, jolla voi ottaa käyttöön tai poistaa käytöstä anonyymisen sivujen selailun.\r\n\r\nJos koneelle on jo asennettu Tor, Vidalia tai Privoxy kannattaa tarkistaa ettei mikään niistä ole päällä ennen kuin asennusta jatkaa.\r\n\r\n$_CLICK"
+LangString BundleWelcomeText          ${LANG_FINNISH} "Tämä velho auttaa asentaakseen koneelle Tor-ohjelman, Vidalian, Privoxyn ja Torbuttonin.\r\n\r\nTor on järjestelmä, jolla voi käyttää Internettiä tuntemattosti tekemällä anonyymiseksi sivujen selailun, pikaviestien käytön, IRCin käyttö ja muut. Vidalia on käyttöliittymä ohjaamaan, seuraamaan ja säätäämään Tor-ohjelman toimintaa.\r\n\r\nPrivoxy suodattava välityspalvelin, joka suojaa yksityisyyttä ja auttaa poistamalla mainoksia, bannereita ja popup-ikkunoita.\r\n\r\nTorbutton on Mozilla Firefoxille lisäosa, jolla voi ottaa käyttöön tai poistaa käytöstä anonyymisen sivujen selailun.\r\n\r\nJos koneelle on jo asennettu Tor, Vidalia tai Privoxy kannattaa tarkistaa ettei mikään niistä ole päällä ennen kuin asennusta jatkaa.\r\n\r\n$_CLICK"
 LangString BundleWelcomeTitle         ${LANG_FINNISH} "Tervetuloa ${BUNDLE_NAME}n asennukseen"
 LangString BundleLinkText             ${LANG_FINNISH} "${TOR_NAME}asennusohje"
 LangString BundleFinishText           ${LANG_FINNISH} "Asennus on valmis.\r\nOle hyvä ja tutustu http://tor.eff.org/docs/tor-doc-win32.html -ohjesivuun oppiakseen kuinka voi asettaa ohjelmat käyttämään Tor-ohjelmaa.\r\n\r\nJos Torbutton on asennettu, niin Firefox täytyy käynnistää uudelleen."
@@ -30,7 +30,7 @@ LangString VidaliaRunNow              ${LANG_FINNISH} "Käynnistä ${VIDALIA_NAME}
 
 
 ; Tor
-LangString TorGroupDesc               ${LANG_FINNISH} "Tor on järjestelmä, jolla voi käyttää Internettiä tuntemattomasti muuttamalla sivujen selailun, pikaviestien käytön,IRCin ja muut anonyymiseksi."
+LangString TorGroupDesc               ${LANG_FINNISH} "Tor on järjestelmä, jolla voi käyttää Internettiä tuntemattomasti tekemällä anonyymiseksi sivujen selailun, pikaviestien käytön, IRCin käyttö ja muut."
 LangString TorUninstDesc              ${LANG_FINNISH} "Poista ${TOR_DESC}."
 LangString TorAppDesc                 ${LANG_FINNISH} "Asenna ${TOR_DESC}."
 LangString TorAskOverwriteTorrc       ${LANG_FINNISH} "Sinulla on jo ennestään Tor-asetustiedosto.$\r$\nHaluatko, että se korvataan oletusesimerkillä?"
