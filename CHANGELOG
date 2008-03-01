@@ -1,6 +1,9 @@
-0.1.0   xx-Jan-2008
+0.1.0   01-Mar-2008
   o Migrate to CMake as our build system, instead of the previous mix of
     autoconf and qmake. See the updated INSTALL file for more information.
+  o Add an OpenSSL license exception so Vidalia can be linked against OpenSSL
+    and redistributed. Also include the text of the GPLv3, since our license
+    says "GPLv2 or later."
   o Don't try to 'SETCONF HashedControlPassword' if we couldn't hash the
     control password, otherwise we could end up disabling authentication.
     (Ticket #305)
