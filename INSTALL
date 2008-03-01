@@ -182,10 +182,6 @@ the command line and follows the format "-D <var>:<type>=<value>
   -DUSE_QSSLSOCKET=0                      Disable building Vidalia with SSL
                                           support.
 
-  -DUSE_QSYSTEMTRAYICON=0                 Use Vidalia's internal tray icon
-                                          implementation, instead of using Qt's
-                                          QSslSocket.
-
   -DOSX_FAT_BINARY=1                      Build Vidalia as a Universal binary.
 
   -DQT_QMAKE_EXECUTABLE=/path/to/qmake    Specifies the location of Qt's
