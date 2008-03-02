@@ -11,16 +11,6 @@
     <file>en/netview.html</file>
     <file>en/links.html</file>
     <file>en/bridges.html</file>
-    <!-- German -->
-    <file>de/contents.xml</file>
-    <file>de/index.html</file>
-    <file>de/running.html</file>
-    <file>de/log.html</file>
-    <file>de/config.html</file>
-    <file>de/server.html</file>
-    <file>de/troubleshooting.html</file>
-    <file>de/netview.html</file>
-    <file>de/links.html</file>
     <!-- Finnish -->
     <file>fi/contents.xml</file>
     <file>fi/index.html</file>
@@ -32,6 +22,20 @@
     <file>fi/netview.html</file>
     <file>fi/links.html</file>
     <file>fi/bridges.html</file>
+    <!-- German -->
+    <file>de/contents.xml</file>
+    <file>de/index.html</file>
+    <file>de/running.html</file>
+    <file>de/log.html</file>
+    <file>de/config.html</file>
+    <file>de/server.html</file>
+    <file>de/troubleshooting.html</file>
+    <file>de/netview.html</file>
+    <file>de/links.html</file>
+    <!-- Russian -->
+    <file>ru/contents.xml</file>
+    <file>ru/index.html</file>
+    <file>ru/bridges.html</file>
     <!-- Simplified Chinese -->
     <file>zh-cn/contents.xml</file>
     <file>zh-cn/index.html</file>
@@ -42,10 +46,17 @@
     <file>zh-cn/troubleshooting.html</file>
     <file>zh-cn/netview.html</file>
     <file>zh-cn/links.html</file>
-    <!-- Russian -->
-    <file>ru/contents.xml</file>
-    <file>ru/index.html</file>
-    <file>ru/bridges.html</file>
+    <!-- Swedish -->
+    <file>sv/contents.xml</file>
+    <file>sv/index.html</file>
+    <file>sv/running.html</file>
+    <file>sv/log.html</file>
+    <file>sv/config.html</file>
+    <file>sv/server.html</file>
+    <file>sv/troubleshooting.html</file>
+    <file>sv/netview.html</file>
+    <file>sv/links.html</file>
+    <file>sv/bridges.html</file>
   </qresource>
 </RCC>
 

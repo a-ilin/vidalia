@@ -13,125 +13,174 @@
 <html>
 <body>
 
-<h1>Reitittimen käyttö</h1>
+<h1>Setting Up a Tor Relay</h1>
 <hr />
 
-Tor-verkko koostuu vapaaehtoisten jakaamasta yhteyskaistasta Tor-reitittiminä (pieninä palvelimina). Vidalia tarjoaa helpon keinon pystyttää oma reititin.
+The Tor network is made up of volunteers all over the world who donate some of
+their spare bandwidth by running a Tor relay. Vidalia helps you do your part by
+making it easy to set up a relay of your own.
 
 <a name="basic"/>
-<h3>Yleiset-asetukset</h3>
+<h3>Allmänt inställningar</h3>
 <p>
-Jos on kiinnostusta auttaa Tor-verkon toimintaa ylläpitämällä omaa reititintä, niin seuraavilla ohjeilla on mahdollista yksinkertaisesti pystyttää oma Tor-reititin:
+If you decide you want to help the Tor network grow by running a relay, you
+can follow these steps to get started:
 </p>
 <ol>
   <li>
-    Avaa <i>Asetukset-ikkuna</i> valitsemalla <i>Asetukset</i> tehtäväpalkista Vidalian valikosta tai <i>Asetukset</i> järjestelmän valikosta Macintosh-järjestelmissä.
+    Open the <i>Configuration Dialog</i> by selecting <i>Settings</i> from
+    the tray menu or <i>Preferences</i> from your system menubar on Macintosh
+    systems.
   </li>
-  <li>Valitse <i>Reititin</i>-asetussivu.</li>
-  <li>Tor-ohjelmaa voidaan suorittaa joko normaalina reitittimenä tai <i>silta</i>reitittimenä (Tor 0.2.0.8-alpha tai uudempi). Siltareitittimet auttavat sensuroituja Tor-käyttäjiä, jotka eivät pysty suoraan käyttämään Tor-verkkoa.
-    Rasita ruutu <i>Välitä tietoa Tor-verkossa</i>, jos haluat suorittaa normaalia Tor-reitintä tai auttaa <i>Auta sensuroituja käyttäjiä pääsemään Tor-verkkoon</i>, jos haluat suorittaa Tor-reititinsiltaa.
-</li>
-  <li>Aseta seuraavat tiedot:
+  <li>Select the <i>Relay</i> configuration page.</li>
+  <li>
+    Decide whether you want to run a normal Tor relay or a <i>bridge</i>
+    relay (Tor 0.2.0.8-alpha or newer). Bridge relays help censored Tor users
+    who are blocked from accessing the Tor network directly.
+    Check the box labeled <i>Relay traffic for the Tor network</i> if you want
+    to run a normal Tor relay or <i>Help censored users reach the Tor network</i>
+    if you want to run a bridge relay.
+  </li>
+  <li>Enter the following information:
     <ul>
-      <li><b>Nimi</b>:
-        Nimi, jolla reititin voidaan tunnistaa Tor-verkossa. Esimerkiksi "MinunVidaliareititin".
+      <li><b>Nickname</b>:
+        The name which your relay will be known as on the Tor network. An
+        example of a relay nickname is "MyVidaliaRelay".
       </li>
-      <li><b>Yhteystiedot</b>:
-        Sähköpostiosoitteesi, jolla voidaan ottaa yhteyttä vakavan Tor-tietoturvapäivityksen tai reititinvian vuoksi. Oman PGP- tai GPG-tunnuksen ja sormenjäljen voi myös sisällyttää.
+      <li><b>Contact Info</b>:
+        Your e-mail address. This address will only be used to
+        contact you in case there is an important Tor security update or
+        something goes wrong with your relay. You might also include your PGP
+        or GPG key ID and fingerprint.
       </li>
-      <li><b>Reititinportti</b>:
-        Portti, jolla reititin vastaanottaa liikennettä käyttäjiltä ja muilta Tor-reitittimiltä.
-      </li>
-      <li><b>Osoite</b>:
-        Aseta osoite, jolla muut Tor-reititin voivat tavoittaa tietokoneesi Internetin kautta. Jos ei omaa julkista IP-osoitetta tiedä, niin painamalla <i>Nouda osoite</i> Vidalia ottaa yhteyden ulkoiseen sivustoon (esim. <i>http://www.vidalia-project.net/iptest/ip.php</i>) selvittääkseen koneen julkisen IP-osoitteen.
+      <li><b>Relay Port</b>:
+        The port on which your relay will listen for traffic from clients or
+        other Tor relays.
       </li>
     </ul>
   <li>
-    Jos haluat välittää listaa verkossa olevista Tor-reitittimistä, niin rastita ruutu <i>Välitä Tor-reititinlistaa</i>.
-     Jos yhteys on hidas, niin ei välttämättä ole kannattavaa rastittaa ruutua. Jos haluaa välittää listaa Tor-reitittimistä, niin varmista että <i>lista-portti</i> on eri kuin <i>reititinportti</i>.
+    If you would like to mirror Tor's directory of relays for others on the
+    network you can check the box labeled <i>Mirror the Relay Directory</i>.
+    If you do not have much bandwidth, uncheck this box. If you do
+    decide to mirror the relay directory, make sure the <i>Directory Port</i> is
+    different than the <i>Relay port</i> you entered above. Bridge relays
+    <i>must</i> mirror the relay directory.
   </li>
 </ol>
 
 <a name="bandwidth"/>
-<h3>Nopeudenrajoittaminen</h3>
+<h3>Bandbreddsbegränsningar</h3>
 <p>
-Tor-reitittimen ylläpito kuluttaa paljon yhteyskaistaa, jonka vuoksi Tor sallii käytettävän yhteyskaistamäärän rajoittamisen Tor-reitittimille. Reititintä voi pitää päällä samalla kun yhteyttä käytetään muihin tarkoituksiin.
+Running a Tor relay can consume a large amount of bandwidth; however, Tor
+allows you to limit the amount of bandwidth that you are willing to contribute
+to the Tor network. You can run a relay, while still keeping your network
+connection usable for your own use.
 </p>
 <p>
-Valikosta kannattaa valita itselleen parhaiten sopivin nopeus. Oman erikoisnopeuden on mahdollista valita valitsemalla <i>muu</i>.</p>
-<h4>Muut rajoitukset</h4>
+You should select the option in the dropdown box that best matches your
+connection speed. If you select <i>Custom</i>, you will be able to specify
+your own limits.
+</p>
+<h4>Custom Limits</h4>
 <p>
 The <i>maximum rate</i> is a pool of bytes used to fulfill requests during
 short periods of traffic higher than your specified <i>average rate</i>, but
 still maintains the average over a long period. A low average rate but a high
 maximum rate enforces a long-term average while still allowing more traffic
-during peak times if the average hasn't been reached lately. Jos kerkimääräinennopeus on sama kuin <i>enimmäisnopeus</i> Tor ei ylitä määriteltyä nopeutta. <i>Enimmäisnopeutesi</i> täytyy olla yhtä suuri tai suurempi kuin <i>keskimääräinen nopeus</i>.</p>
-<p><i>Keskimääräinennopeus</i> on suurin pitkäaikainenkeskimääräinen sallittu nopeus (kilotavua sekunnissa). Esimerkiksi on kannattavaa asettaa 2 megabittiä sekunnissa (2048 kt/s) tai 50 kilotavua sekunnissa (tyypillinen laajakaistayhteyden nopeus). Tor tarvitsee vähintään 20 kilotavua sekunnissa toimiakseen reitittimenä.
-
+during peak times if the average hasn't been reached lately. If your average
+rate is the same as your <i>maximum rate</i>, then Tor will never exceed the
+specified rate. Your <i>maximum rate</i> must always be greater than or equal
+to your <i>average rate</i>.
 </p>
 <p>
-Tärkeää on huomioida, että Tor laskee liikkuvan tiedon <b>tavuina</b> eikä bitteinä. Myös, Tor rajottaa vain tulevaa liikennettä lähettävän sijasta. Esimerkiksi, jos oma reititin välittää listaa Tor-reititin silloin lähettää enemmän tietoa kuin vastaanottaa. Jos tämä rasittaa liikaa yhteyttä, niin kannattaa poistaa rasti <i>Välitä Tor-reititinlistaa</i> kohdasta.
+The <i>average rate</i> is the maximum long-term average bandwidth allowed (in
+kilobytes per second). For example, you might want to choose 2 megabytes per 
+second (2048 KB/s), or 50 kilobytes per second (a medium-speed cable
+connection). Tor requires a minimum of 20 kilobytes per second to run a
+relay.
+</p>
+<p>
+It is important to remember that Tor measures bandwidth in <b>bytes</b>, not
+bits. Also, Tor only looks at incoming bytes instead of outgoing bytes. For
+example, if your relay acts as a directory mirror, you may be sending more
+outgoing bytes than incoming. If you find this is the case and is putting too
+much strain on your bandwidth, you should consider unchecking the checkbox
+labeled <i>Mirror the relay directory</i>.
 </p>
 
 <a name="exitpolicy"/>
-<h3>Poistumiskäytännöt</h3>
+<h3>Användningspolicyn</h3>
 <p>
-Poistumiskäytännöillä määritellään millaista liikennettä sallitaan poistuvan oman Tor-reitittimen kautta. Tor käyttää oletuksena poistumiskäytäntölistaa, joka rajoittaa erilaisten palvelujen käyttöä kuten sähköpostia, estääkseen spammin tekoa ja oletus tiedostonjakoportteja estääksen hyväksikäyttämättä Tor-verkkoa.
+Exit policies give you a way to specify what kinds of resources on the
+Internet you are willing let other Tor users access from your Tor relay. 
+Tor uses a default list of exit policies that restrict some services, 
+such as mail to prevent spam and some default file sharing ports to reduce 
+abuse of the Tor network. 
 </p>
-
 <p>
-Jokainen vaihtoehto ilmaisee tietynlaista palvelua, jota voi sallia Tor-verkon kautta kulkemaan palvelimesi kautta. Jos poistaa rastin jonkin vierestä, Tor ei salli sen kaltaista liikennettä reitittimesi kautta ja jos on rastitettu <i>Monenlaiset muut palvelut</i>, Tor sallii muunlaisen liikenteen poistuvan reitittimesi kautta kuin edellä mainitut vaihtoehdot. 
+Each of the checkboxes represents a type of resource that you can allow Tor
+users to access through your relay. If you uncheck the box next to a
+particular type of resource, Tor users will not be allowed to access that
+resource from your relay. If the box labeled <i>Misc Other Services</i> 
+is checked, Tor users will be able to access other services not
+covered by the other checkboxes or Tor's default exit policy.
 </p>
 
 <p>
 For completeness, the following table lists the specific port numbers
-represented by each of the exit policy checkboxes. <b>Kuvaus</b>-sarake kertoo millaisia palveluita Tor-käyttäjät voivat käyttää reitittimesi kautta, jos sen laatikko on rastitettu.
+represented by each of the exit policy checkboxes. The <b>Description</b>
+column describes the resources Tor clients will be allowed to access through
+your relay, if the associated box is checked.
 </p>
 
 <table border="1">
 <tr>
-  <td><b>Toiminto</b></td>
-  <td><b>Portit</b></td>
-  <td><b>Kuvaus</b></td>
+  <td><b>Checkbox</b></td>
+  <td><b>Ports</b></td>
+  <td><b>Description</b></td>
 </tr>
 <tr>
-  <td>Verkkosivustot</td>
+  <td>Websites</td>
   <td valign="middle">80</td>
-  <td>Normaalien suojaamattomien sivujen selaamista</td>
+  <td>Normal, unencrypted Web browsing</td>
 </tr>
 <tr>
-  <td>Suojatut sivustot (SSL)</td>
+  <td>Secure Websites (SSL)</td>
   <td valign="middle">443</td>
-  <td>Suojattujen sivujen selaamista</td>
+  <td>Encrypted Web browsing</td>
 </tr>
 <tr>
-  <td>Sähköpostin vastaanotto (POP, IMAP)</td>
+  <td>Retrieve Mail (POP, IMAP)</td>
   <td valign="middle">110, 143, 993, 995</td>
-  <td>Sähköpostiviestien lataamista (lähettämistä ei sallita)</td>
+  <td>Downloading email (does not permit sending email)</td>
 </tr>
 <tr>
-  <td>Pikaviestintä (IM)</td>
+  <td>Instant Messaging (IM)</td>
   <td valign="middle">703, 1863, 5050, 5190, 5222, 5223, 8300, 8888</td>
-  <td>Pikaviestintäohjelmien käyttämistä kuten esim. MSN Messenger, AIM, ICQ ja Jabber</td>
+  <td>Instant messaging applications like MSN Messenger, AIM, ICQ, and Jabber</td>
 </tr>
 <tr>
   <td>Internet Relay Chat (IRC)</td>
   <td valign="middle">6660-6669, 6697</td>
-  <td>Keskustelemista IRC-käyttäjien ja -palvelimien kanssa</td>
+  <td>IRC clients and servers</td>
 </tr>
 <tr>
-  <td>Monenlaiset muut palvelut</td>
+  <td>Misc. Other Services</td>
   <td valign="middle">*</td>
-  <td>Muut ohjelmat, joita edelliset toiminnot eivät kata</td>
+  <td>All other applications that aren't covered by the previous checkboxes</td>
 </tr>
 </table>
 
-<p>Jos ei halua sallia muiden Tor-käytäjien muodostaa yhteyksiä Tor-verkon ulkopuolelle oman reitittimen kautta, niin poista rasti jokaisesta ruudusta. Vaikka rastit on poistettu jokaisesta kohdasta, niin reitittimesi on hyödyllinen Tor-Verkolle. Reitittimesi sallii Tor-käyttäjien muodostaa yhteyksiä Tor-verkkoon ja välittää tietoa Tor-reitittimien välillä.
-</p>
-
 <p>
-Kun käynnistää siltareitittimen, <i>Poistumiskäytännöt</i>-välilehti muuttuu harmaaksi, koska siltareitittimet eivät salli poistumisyhteyksiä.
+If you do not want to let other Tor users make connections outside the Tor
+network from your relay, you can uncheck all of the checkboxes. Even if you
+uncheck all of the checkboxes, your relay is still useful to the Tor network.
+Your relay will allow other Tor users to connect to the Tor network and will
+help relay traffic between other Tor relays.
 </p>
-
+<p>
+If you chose to run a bridge relay, the <i>Exit Policies</i> tab will be
+grayed out, since bridge relays do not allow exit connections.
+</p>
 </html>
 

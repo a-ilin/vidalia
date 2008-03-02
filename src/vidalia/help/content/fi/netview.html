@@ -1,4 +1,4 @@
-<!--
+﻿<!--
 **  $Id$
 ** 
 **  This file is part of Vidalia, and is subject to the license terms in the
@@ -13,127 +13,159 @@
 <html>
 <body>
 
-<h1>Verkkokartta</h1>
+<h1>Network Viewer</h1>
 <hr />
 
 <p>
-Verkkokartalla näkee reitittimet Tor-verkossa ja mihin omat yhteydet kulkeutuvat.
+The network viewer lets you see relays in the Tor network and where
+your traffic is going.
 </p>
 
 
 <a name="overview"/>
-<h3>Yleistä</h3>
+<h3>Overview</h3>
 <p>
-Kun halutaan kommunikoida tuntemattomasti Tor-verkon kautta (esim. internetsivulle), niin Tor luo yhteyden <i>(engl. circuit)</i> koostuen erillisistä suojatuista yhteyksistä reititinsarjan kautta verkossa. Ohjelman liikenne kulkee datavirtoina <i>(engl. stream)</i> edellä mainitun yhteystyypin mukaisesti. Toiminnan tehostuksena yksittäisessä yhteydessä voi olla useaita datavirtoja.
+When you want to communicate anonymously through Tor (say, connecting to a
+website), Tor creates a tunnel, or <i>circuit</i>, of encrypted connections
+through a series of relays on the network. Your application's traffic is then
+sent as a <i>stream</i> through that circuit. For efficiency, multiple streams
+may share the same circuit.
 </p>
 
 <a name="netmap"/>
-<h3>Verkkokartta</h3>
+<h3>Network Map</h3>
 <p>
-Verkkokartta koostuu Maan kartasta ja punaisista pisteistä, joilla ilmaistaan Tor-verkon reitittimien maantieteellisetsijainnit. Reitittimien välille piirretyt vihreät viivat näyttävät oman Tor-ohjelman ja Tor-verkon välissä olevien yhteyksien reitin.
+The network map consists of a map of the world, with red pinpoints indicating
+the geographic location of relays in the Tor network. Green lines are drawn
+between relays to indicate the path of circuits that your Tor client has
+created through the Tor network.
 </p>
 <p>
-Karttaa voi skaalata klikkaamalla <b>Suurenna</b>- ja
-<b>Pienennä</b> -nappuloilla työkalupalkista. Karttaa voi myös vierittää klikkaamalla sitä ja vetämällä sitä omaan halumaan suuntaan.
+You can zoom in on locations in the map by clicking the <b>Zoom In</b> and
+<b>Zoom Out</b> buttons in the toolbar. You can also scroll around on the map
+by clicking on the map and then dragging it in whatever direction you would
+like to move the map.
 </p>
 <p>
-Tor-reitittimien maantieteellinensijainti selvitetään tarkistamalla IP-osoite GeoIP-tietokannasta, jonka on tehnyt MaxMind ja sijaitsee osoitteessa geoip.vidalia-project.net.
+The geographic location of a Tor relay is determined by looking up the IP
+address of the relay in a GeoIP database, created by MaxMind and located at
+geoip.vidalia-project.net.
 </p>
 <p>
-Keskellä ruutua kartan alla on lista käytössä olevista yhteyksistä, kuten myös minkä tahansa ohjelmien datavirta niissä yhteyksissä. Kun verkkokartta latautuu, ruudusta näkee yhteyden geoip.vidalia-project.net -osoitteeseen, joka tapahtuu kun Vidalia tarkistaa Tor-reitittimien maantieteellistensijaintien tietoja. Tärkeää on huomioida, että pyyntö luodaan käyttämällä Tor-verkkoa, joten omaa sijaintia ei ilmoiteta GeoIP-palvelimelle. Pyyntöjen tulokset tallennetaan kiintolevylle välimuistiin säästäkseen rasittamasta liikaa Vidalian GeoIP-reitittimiä.
+In the middle of the dialog, below the network map, you will see a list of
+your current circuits, as well as any application traffic currently on those
+circuits. When the network map first loads, you will probably see a connection
+to geoip.vidalia-project.net, which occurs when Vidalia is looking up
+geographic information for the list of Tor relays. It is important to note
+that this request is done through Tor, so your location is not revealed to the
+GeoIP relay. The results of the lookups will be cached locally in order to
+reduce load on Vidalia's GeoIP relays.
 </p>
 
 
-<a name="serverlist"/>
-<h3>Reitittimien tila</h3>
+<a name="relaylist"/>
+<h3>Relay Status</h3>
 <p>
-Vasemmassa reunassa verkkokartassa on lista Tor-verkon reitittimistä. Jokaisen reitittimen vieressä on kuvake, joka ilmaisee sen tilan.
-Seuraavassa taulukossa on käytössä olevat reitittimien tilat:
+On the left side of the network view, you will see a list of relays in the
+Tor network. Next to each relay is an icon indicating that relay's status.
+The following table summarizes the possible relay status icons:
 </p>
 <p>
 <table border="1">
 <tr>
   <td><img src="qrc:/images/icons/node-unresponsive.png"/></td>
   <td valign="middle">
-    Reititin on poispäältä (offline-tilassa) tai ei vastaa.
+    The relay is offline or simply not responding.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-hibernating.png"/></td>
   <td valign="middle">
-    Reititin on <i>lepotilassa</i> eli se on päällä (online-tilassa), mutta on käyttänyt yhteyttä niin paljon kuin operaattori on sallinnut tietyn ajan kuluessa.
+    The relay is <i>hibernating</i>, meaning it is online, but has used up as
+    much bandwidth as the operator is willing to allow for a given time
+    period.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-bw-none.png"/></td>
   <td valign="middle">
-    Reititin on online-tilassa ja sen kautta kulkee vähän liikennettä.
+    The relay is online, but has shown only minimal throughput.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-bw-low.png"/></td>
   <td valign="middle">
-    Reititin on online-tilassa ja sen kautta välittyy &gt;= 20 KB/s.
+    The relay is online and has shown a throughput &gt;= 20 KB/s.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-bw-med.png"/></td>
   <td valign="middle">
-    Reititin on online-tilassa ja sen kautta välittyy &gt;= 60 KB/s.
+    The relay is online and has shown a throughput &gt;= 60 KB/s.
   </td>
 </tr>
 <tr>
   <td><img src="qrc:/images/icons/node-bw-high.png"/></td>
   <td valign="middle">
-   Reititin on online-tilassa ja sen kautta välittyy &gt;= 400 KB/s.
+    The relay is online and has shown a throughput &gt;= 400 KB/s.
   </td>
 </tr>
 </table>
 </p>
 <p>
-Kaikki yhteysnopeusarvot ovat arvioita vähimmäis yhteysnopeuksista sisään tai ulos yli kymmenen sekunnin aikana kuluneessa päivässä.
+All bandwidth values are estimates based on the minimum of either 
+the maximum bandwidth sustained input or output over any ten second period 
+in the past day.
 </p>
 
 
 <a name="details"/>
-<h3>Reitittimien tiedot</h3>
-<p>Reititin-tietoruutussa oikealla kerrotaan lisätietoa 
-<a href="#serverlist">reititinlistasta</a> valitusta reitittimestä tai reitittimistä. Jos yhteys tai datavirta on valittu datavirrat-listasta, niin tässä ruudussa näkyy tietoa kaikista reitittimistä joiden kautta oman koneen liikenne välittyy.
+<h3>Relay Details</h3>
+<p>
+The relay details panel at the right side of the screen gives you details
+about the relay or relays currently selected in the 
+<a href="#relaylist">relay list</a>. If you have selected a circuit or stream
+in the list of your current circuits and streams, this panel will show you
+details about each relay through which your traffic is currently being sent.
 </p>
 <p>
-Tiedot, jotka ovat nähtävissä ruudusta ovat samanlaisia kuten seuraavat (<i>Huomaa</i>: ei kaikki seuraavaksi mainituista ole aina välttämättä näkyvillä):
+The fields that you may see in the panel are as follows (<i>Note</i>: not all
+of these fields will always be present):
 </p>
 <p>
 <table>
 <tr>
-  <td><b>Sijainti</b></td>
-  <td>Tor-reitittimen maantieteellinensijainti.</td>
+  <td><b>Location</b></td>
+  <td>The geographic location of this Tor relay.</td>
 </tr>
 <tr>
-  <td><b>IP-osoite</b></td>
-  <td>IP-osoite, josta Tor-reititin voidaan tavoittaa.</td>
+  <td><b>IP Address</b></td>
+  <td>IP address at which this Tor relay can be reached.</td>
 </tr>
 <tr>
-  <td><b>Alusta</b></td>
+  <td><b>Platform</b></td>
   <td>
-Tietoa sen käyttöjärjestelmästä ja Tor-ohjelmasta sillä Tor-reitittimellä.
+    Operating system information and Tor version on which this relay is
+    currently running.
   </td>
 </tr>
 <tr>
-  <td><b>Yhteys</b></td>
+  <td><b>Bandwidth</b></td>
   <td>
-    Arvioitu enimmäisnopeus, joka on välittynyt hiljattain tältä reitittimeltä listareitittimien kautta.
+    Estimated maximum amount of bandwidth that the directory relays have 
+    seen this relay handle recently.
   </td>
 </tr>
 <tr>
-  <td><b>Päällä</b></td>
+  <td><b>Uptime</b></td>
   <td>
-    Aika, kuinka kauan reititin on ollut päällä ja, josta voi olla apua arvioidakseen reitittimen vakaus.
+    Length of time this relay has been available, which can be used to help
+    estimate this relay's stability.
   </td>
 </tr>
 <tr>
-  <td><b>Viimeksi päivitetty</b></td>
-  <td>Ajankohta, jolloin viimeksi on reitittimen tiedot päivitetty.</td>
+  <td><b>Last Updated</b></td>
+  <td>Date this relay's information was last updated.</td>
 </tr>
 </table>
 </p>
