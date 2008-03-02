@@ -626,7 +626,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../help/browser/helpbrowser.ui" line="33"/>
         <source>Vidalia Help</source>
-        <translation>Vidalia-hjälp</translation>
+        <translation>Vidalias hjälp</translation>
     </message>
     <message>
         <location filename="../help/browser/helpbrowser.ui" line="174"/>
@@ -731,7 +731,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../help/browser/helpbrowser.ui" line="552"/>
         <source>Close Vidalia Help</source>
-        <translation>Stäng Vidalia-hjälpen</translation>
+        <translation>Stäng Vidalias hjälpen</translation>
     </message>
     <message>
         <location filename="../help/browser/helpbrowser.ui" line="555"/>
