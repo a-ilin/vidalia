@@ -1,0 +1,64 @@
+﻿<!--
+**  $Id: config.html 2379 2008-03-02 02:10:00Z djhasis $
+** 
+**  This file is part of Vidalia, and is subject to the license terms in the
+**  LICENSE file, found in the top level directory of this distribution. If 
+**  you did not receive the LICENSE file with this file, you may obtain it
+**  from the Vidalia source package distributed by the Vidalia Project at
+**  http://www.vidalia-project.net/. No part of Vidalia, including this file,
+**  may be copied, modified, propagated, or distributed except according to
+**  the terms described in the LICENSE file.
+-->
+
+<html>
+<body>
+
+<h1>Configuring Vidalia and Tor</h1>
+<hr />
+
+<p>
+Vidalia allows you to configure some of the most commonly modified aspects of
+Vidalia and Tor. It also lets you set up and manage a <a
+href="server.html">Tor relay</a> so you can help the Tor network
+grow.
+</p>
+
+<a name="general"/>
+<h3>General Settings</h3>
+<p>
+Settings on the <i>General</i> page are the most commonly modified settings.
+</p>
+<ul>
+  <li><b>Tor Executable</b>: 
+    This is the Tor executable that Vidalia will run when you select
+    <i>Start</i> from the tray menu. If you have multiple versions of Tor installed,
+    you can tell Vidalia which version you would like to run by clicking the
+    <i>Browse</i> button and navigating to the particular Tor installation you
+    want.
+  </li>
+  <li><b>Startup Options</b>:
+    This setting allows you to have Vidalia automatically start Tor when
+    Vidalia starts. You can also configure Vidalia to run when your system
+    starts (<i>Windows only</i>).
+  </li>
+</ul>
+
+<a name="network"/>
+<h3>Network Settings</h3>
+<p>
+The <i>Network</i> settings page lets you change how Tor connects to the Tor
+network.
+</p>
+<ul>
+  <li><b>I use a proxy to access the Internet</b>:
+    If your Internet connection requires an HTTP proxy, you can configure Tor
+    to send all of its directory requests and Tor relay connections through
+    your proxy. You must specify at least the hostname or address of your
+    proxy, and the port on which your proxy is listening for connections. If
+    your proxy requires authentication, you can also enter the
+    <i>Username</i> and <i>Password</i> you use to connect to your proxy.
+    Otherwise, you can leave those fields blank.
+  </li>
+  <li><b>My firewall only lets me connect to certain ports</b>:
+    If you are behind a restrictive firewall or proxy that limits the ports you
+    are able to connect t

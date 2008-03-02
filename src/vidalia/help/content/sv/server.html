@@ -1,0 +1,186 @@
+﻿<!--
+**  $Id: server.html 2379 2008-03-02 02:10:00Z djhasis $
+** 
+**  This file is part of Vidalia, and is subject to the license terms in the
+**  LICENSE file, found in the top level directory of this distribution. If 
+**  you did not receive the LICENSE file with this file, you may obtain it
+**  from the Vidalia source package distributed by the Vidalia Project at
+**  http://www.vidalia-project.net/. No part of Vidalia, including this file,
+**  may be copied, modified, propagated, or distributed except according to
+**  the terms described in the LICENSE file.
+-->
+
+<html>
+<body>
+
+<h1>Setting Up a Tor Relay</h1>
+<hr />
+
+The Tor network is made up of volunteers all over the world who donate some of
+their spare bandwidth by running a Tor relay. Vidalia helps you do your part by
+making it easy to set up a relay of your own.
+
+<a name="basic"/>
+<h3>Allmänt inställningar</h3>
+<p>
+If you decide you want to help the Tor network grow by running a relay, you
+can follow these steps to get started:
+</p>
+<ol>
+  <li>
+    Open the <i>Configuration Dialog</i> by selecting <i>Settings</i> from
+    the tray menu or <i>Preferences</i> from your system menubar on Macintosh
+    systems.
+  </li>
+  <li>Select the <i>Relay</i> configuration page.</li>
+  <li>
+    Decide whether you want to run a normal Tor relay or a <i>bridge</i>
+    relay (Tor 0.2.0.8-alpha or newer). Bridge relays help censored Tor users
+    who are blocked from accessing the Tor network directly.
+    Check the box labeled <i>Relay traffic for the Tor network</i> if you want
+    to run a normal Tor relay or <i>Help censored users reach the Tor network</i>
+    if you want to run a bridge relay.
+  </li>
+  <li>Enter the following information:
+    <ul>
+      <li><b>Nickname</b>:
+        The name which your relay will be known as on the Tor network. An
+        example of a relay nickname is "MyVidaliaRelay".
+      </li>
+      <li><b>Contact Info</b>:
+        Your e-mail address. This address will only be used to
+        contact you in case there is an important Tor security update or
+        something goes wrong with your relay. You might also include your PGP
+        or GPG key ID and fingerprint.
+      </li>
+      <li><b>Relay Port</b>:
+        The port on which your relay will listen for traffic from clients or
+        other Tor relays.
+      </li>
+    </ul>
+  <li>
+    If you would like to mirror Tor's directory of relays for others on the
+    network you can check the box labeled <i>Mirror the Relay Directory</i>.
+    If you do not have much bandwidth, uncheck this box. If you do
+    decide to mirror the relay directory, make sure the <i>Directory Port</i> is
+    different than the <i>Relay port</i> you entered above. Bridge relays
+    <i>must</i> mirror the relay directory.
+  </li>
+</ol>
+
+<a name="bandwidth"/>
+<h3>Bandbreddsbegränsningar</h3>
+<p>
+Running a Tor relay can consume a large amount of bandwidth; however, Tor
+allows you to limit the amount of bandwidth that you are willing to contribute
+to the Tor network. You can run a relay, while still keeping your network
+connection usable for your own use.
+</p>
+<p>
+You should select the option in the dropdown box that best matches your
+connection speed. If you select <i>Custom</i>, you will be able to specify
+your own limits.
+</p>
+<h4>Custom Limits</h4>
+<p>
+The <i>maximum rate</i> is a pool of bytes used to fulfill requests during
+short periods of traffic higher than your specified <i>average rate</i>, but
+still maintains the average over a long period. A low average rate but a high
+maximum rate enforces a long-term average while still allowing more traffic
+during peak times if the average hasn't been reached lately. If your average
+rate is the same as your <i>maximum rate</i>, then Tor will never exceed the
+specified rate. Your <i>maximum rate</i> must always be greater than or equal
+to your <i>average rate</i>.
+</p>
+<p>
+The <i>average rate</i> is the maximum long-term average bandwidth allowed (in
+kilobytes per second). For example, you might want to choose 2 megabytes per 
+second (2048 KB/s), or 50 kilobytes per second (a medium-speed cable
+connection). Tor requires a minimum of 20 kilobytes per second to run a
+relay.
+</p>
+<p>
+It is important to remember that Tor measures bandwidth in <b>bytes</b>, not
+bits. Also, Tor only looks at incoming bytes instead of outgoing bytes. For
+example, if your relay acts as a directory mirror, you may be sending more
+outgoing bytes than incoming. If you find this is the case and is putting too
+much strain on your bandwidth, you should consider unchecking the checkbox
+labeled <i>Mirror the relay directory</i>.
+</p>
+
+<a name="exitpolicy"/>
+<h3>Användningspolicyn</h3>
+<p>
+Exit policies give you a way to specify what kinds of resources on the
+Internet you are willing let other Tor users access from your Tor relay. 
+Tor uses a default list of exit policies that restrict some services, 
+such as mail to prevent spam and some default file sharing ports to reduce 
+abuse of the Tor network. 
+</p>
+<p>
+Each of the checkboxes represents a type of resource that you can allow Tor
+users to access through your relay. If you uncheck the box next to a
+particular type of resource, Tor users will not be allowed to access that
+resource from your relay. If the box labeled <i>Misc Other Services</i> 
+is checked, Tor users will be able to access other services not
+covered by the other checkboxes or Tor's default exit policy.
+</p>
+
+<p>
+For completeness, the following table lists the specific port numbers
+represented by each of the exit policy checkboxes. The <b>Description</b>
+column describes the resources Tor clients will be allowed to access through
+your relay, if the associated box is checked.
+</p>
+
+<table border="1">
+<tr>
+  <td><b>Checkbox</b></td>
+  <td><b>Ports</b></td>
+  <td><b>Description</b></td>
+</tr>
+<tr>
+  <td>Websites</td>
+  <td valign="middle">80</td>
+  <td>Normal, unencrypted Web browsing</td>
+</tr>
+<tr>
+  <td>Secure Websites (SSL)</td>
+  <td valign="middle">443</td>
+  <td>Encrypted Web browsing</td>
+</tr>
+<tr>
+  <td>Retrieve Mail (POP, IMAP)</td>
+  <td valign="middle">110, 143, 993, 995</td>
+  <td>Downloading email (does not permit sending email)</td>
+</tr>
+<tr>
+  <td>Instant Messaging (IM)</td>
+  <td valign="middle">703, 1863, 5050, 5190, 5222, 5223, 8300, 8888</td>
+  <td>Instant messaging applications like MSN Messenger, AIM, ICQ, and Jabber</td>
+</tr>
+<tr>
+  <td>Internet Relay Chat (IRC)</td>
+  <td valign="middle">6660-6669, 6697</td>
+  <td>IRC clients and servers</td>
+</tr>
+<tr>
+  <td>Misc. Other Services</td>
+  <td valign="middle">*</td>
+  <td>All other applications that aren't covered by the previous checkboxes</td>
+</tr>
+</table>
+
+<p>
+If you do not want to let other Tor users make connections outside the Tor
+network from your relay, you can uncheck all of the checkboxes. Even if you
+uncheck all of the checkboxes, your relay is still useful to the Tor network.
+Your relay will allow other Tor users to connect to the Tor network and will
+help relay traffic between other Tor relays.
+</p>
+<p>
+If you chose to run a bridge relay, the <i>Exit Policies</i> tab will be
+grayed out, since bridge relays do not allow exit connections.
+</p>
+</html>
+
