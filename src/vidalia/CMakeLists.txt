@@ -18,6 +18,10 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/help/browser
 )
 configure_file(
+  ${CMAKE_CURRENT_SOURCE_DIR}/vidalia.h.in
+  ${CMAKE_CURRENT_SOURCE_DIR}/vidalia.h
+)
+configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/res/vidalia_win.rc.in
   ${CMAKE_CURRENT_SOURCE_DIR}/res/vidalia_win.rc
 )

@@ -1,3 +1,8 @@
+0.1.1   xx-xxx-2008
+  o Use CMake to configure the version number that ends up getting displayed
+    in the About box.
+
+
 0.1.0   01-Mar-2008
   o Migrate to CMake as our build system, instead of the previous mix of
     autoconf and qmake. See the updated INSTALL file for more information.
