@@ -13,51 +13,38 @@
 <html>
 <body>
 
-<h1>Bridge Relays</h1>
+<h1>Siltareitittimet</h1>
 <hr />
 
 <a name="about"/>
-<h3>What are bridge relays?</h3>
+<h3>Mitä ovat siltareitittimet?</h3>
 <p>
-Bridge relays (or <i>bridges</i> for short) are Tor relays that aren't listed
-in the main directory. Since there is no complete public list of them,
-even if your ISP is filtering connections to all the known Tor relays,
-they probably won't be able to block all the bridges.
+Siltareitittimet(tai <i>reitittimet</i> lyhyesti) ovat Tor-reitittimiä, joita ei ole listattuna pääreitittimissä. Koska ei ole täydellistä listaa julkisista silloista, vaikka operaattori suodattaa yhteydet tunnettuihin Tor-reitittimiin, niin ne eivät välttämättä pysty torjumaan kaikkia siltoja.
 </p>
 
 <a name="finding"/>
-<h3>Hur kan jag hitta en brygga?</h3>
+<h3>Miten löydän siltareitittimen?</h3>
 <p>
-There are two main ways to learn about a bridge address: 
+Kaksi tapaa on saada sillan osoite: 
 <ol>
-  <li>Get some friends to run private bridges for you</li>
-  <li>Use some of the public bridges</li>
+  <li>Pyytää ystävää pyörittämään yksityistä siltaa</li>
+  <li>Käyttää jotain julkista siltaa</li>
 </ol>
 </p>
 
 <p>
-To use private bridges, ask your friends to run Vidalia and Tor in an
-uncensored area of the Internet, and then click on <i>Help censored users</i>
-in Vidalia's <a href="server.html">Relay settings page</a>. Then they should
-privately send you the <i>Bridge address</i> line at the bottom of their
-Relay page. Unlike running an exit relay, running a bridge relay just passes
-data to and from the Tor network, so it shouldn't expose the operator to any
-abuse complaints.
+Käyttääkseen yksityisiä siltoja, kysy ystäviäsi käynnistämään Vidalia ja käyttävän Tor-ohjelmaa sensuroimattomalla Internet-alueella. Klikkaa sitten <i>Auta sensuroituja käyttäjiä pääsemään Tor-verkkoon</i>
+Vidalian <a href="server.html">Reititin-asetuksetsivulta</a>. Sitten heidän pitäisi lähettää heidän <i>Siltaosoite</i>-rivi heidän Reitin-sivun alaosasta. Toisin kuin poistumisreititin, siltareititin vain päästää tietoa itsensä kautta Tor-verkkoon ja verkosta, joten se ei mahdollista ylläpitäjää erilaisiin väärinkäyttöihin.
 </p>
 
 <p>
-You can find public bridge addresses by visiting
+Julkisen sillan osoitteen löytää menemällä
 <b>https://bridges.torproject.org</b>.
-The answers you get from that page will change every few days, so check back
-periodically if you need more bridge addresses. Another way to find public
-bridge addresses is to send mail to <b>bridges@torproject.org</b> with the line 
-<b>get bridges</b> by itself in the body of the mail. However, so we can make
-it harder for an attacker to learn lots of bridge addresses, you must send
-this request from a Gmail or Yahoo! account.
+Vastaukset tällä sivulla muuttuvat muutaman päivän välein, joten kannattaa käydä jaksoittain katsomassa jos tarvitsee lisää siltojen osoitteita. Toinen tapa saada julkisen sillan osoitteen on lähettää viesti osoitteeseen <b>bridges@torproject.org</b> rivillä 
+<b>get bridges</b> (saada siltoja) viestiä lähetettäessä. Joten voimme tehdä vaikeaa hakkerille tietää siltojen osoitteita, kannattaa lähettää pyyntö Gmail- tai Yahoo!-tililtä.
 </p>
 
 <p>
-Configuring more than one bridge address will make your Tor connection
-more stable, in case some of the bridges become unreachable.
+Usean sillan osoitteen määrittäminen tekee Tor-yhteyksistä vakaampia, siltä varalta että jokin niistä ei olekaan käytettävissä.
 </p>
 

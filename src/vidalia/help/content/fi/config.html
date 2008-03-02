@@ -13,44 +13,37 @@
 <html>
 <body>
 
-<h1>Configuring Vidalia and Tor</h1>
+<h1>Vidalian ja Tor-ohjelman asetusten muokkaaminen</h1>
 <hr />
 
 <p>
-Vidalia allows you to configure some of the most commonly modified aspects of
-Vidalia and Tor. It also lets you set up and manage a <a
-href="server.html">Tor relay</a> so you can help the Tor network
-grow.
+Vidalia mahdollistaa yleisten Vidalian ja Tor-ohjelman toimintojen säätelyn. Vidalia mahdollistaa myös oman <a
+href="server.html">Tor-reitittimen hallitsemisen</a>, jolla on mahdollista auttaa Tor-verkkoa kasvamaan.
 </p>
 
 <a name="general"/>
-<h3>General Settings</h3>
+<h3>Yleiset-asetukset</h3>
 <p>
-Settings on the <i>General</i> page are the most commonly modified settings.
+Yleiset-asetukset -sivun asetukset ovat yleisimmin muutettuja asetuksia.
 </p>
 <ul>
-  <li><b>Tor Executable</b>: 
-    This is the Tor executable that Vidalia will run when you select
-    <i>Start</i> from the tray menu. If you have multiple versions of Tor installed,
-    you can tell Vidalia which version you would like to run by clicking the
-    <i>Browse</i> button and navigating to the particular Tor installation you
-    want.
+  <li><b>Tor-ohjelma</b>: 
+    Tor-ohjelma, jonka Vidalia käynnistää kun valitaan 
+    <i>Käynnistä</i> tehtäväpalkin Vidalian valikosta. Jos koneella on monta eri versiota Tor-ohjelmasta, voi valita mitä Vidalia käyttää klikkaamalla
+    <i>Selaa</i>-painiketta ja siirtymällä kyseisen Tor-ohjelman asennuskansioon.
   </li>
-  <li><b>Startup Options</b>:
-    This setting allows you to have Vidalia automatically start Tor when
-    Vidalia starts. You can also configure Vidalia to run when your system
-    starts (<i>Windows only</i>).
+  <li><b>Käynnistys</b>:
+    Tällä asetuksella Vidalia käynnistää Tor-ohjelman samalla sen jälkeen kun on itsensä käynnistänyt. Vidalian voi myös määrittää käynnistymään käyttöjärjestelmän käynnistymisen yhteydessä (<i>Vain Windows</i>).
   </li>
 </ul>
 
 <a name="network"/>
-<h3>Network Settings</h3>
+<h3>Verkkoasetukset</h3>
 <p>
-The <i>Network</i> settings page lets you change how Tor connects to the Tor
-network.
+<i>Verkko</i>-asetussivulla voi päättää kuinka Tor yhdistää Tor-verkkoon.
 </p>
 <ul>
-  <li><b>I use a proxy to access the Internet</b>:
+  <li><b>Käytän välityspalvelinta käyttääkseen Internettiä</b>:
     If your Internet connection requires an HTTP proxy, you can configure Tor
     to send all of its directory requests and Tor relay connections through
     your proxy. You must specify at least the hostname or address of your
@@ -59,6 +52,103 @@ network.
     <i>Username</i> and <i>Password</i> you use to connect to your proxy.
     Otherwise, you can leave those fields blank.
   </li>
-  <li><b>My firewall only lets me connect to certain ports</b>:
+  <li><b>Palomuuri sallii yhteydet vain tiettyihin portteihin</b>:
     If you are behind a restrictive firewall or proxy that limits the ports you
-    are able to connect t
+    are able to connect to, you can configure Tor to connect directly only to
+    relays listening on the ports allowed by your firewall or proxy. Simply
+    enter a list of ports permitted by your firewall or proxy, separated by
+    commas. (<i>Example: 80,443,8080</i>)
+  </li>
+  <li><b>Operaattori torjuu yhteydet Tor-verkkoon</b>:
+    If your ISP (Internet Service Provider) blocks connections to the Tor
+    network, Tor can attempt to avoid being filtered by encrypting its
+    directory connections and connecting to the Tor network through relays
+    called <i>bridges</i> (Tor 0.2.0.3-alpha or newer only). You can add
+    bridge relays by specifying either their address and port number, or
+    their address, port number, and fingerprint.<br>
+
+    Esimerkkejä sopivista siltojen osoitteiden kirjoitustyyleistä:
+    <ul>
+      <li>
+        128.213.48.13:8080
+      </li>
+      <li>
+        128.213.48.13:8080 1054 13B1 DBDA F867 B226 74D2 52DF 3D9F A367 1F73
+      </li>
+      <li>
+        128.213.48.13:8080 105413B1DBDAF867B22674D252DF3D9FA3671F73
+      </li>
+    </ul>
+    Even if you do not know any bridge relay addresses, checking this checkbox
+    may still be helpful. Tor will encrypt its directory requests, which can
+    defeat blocking mechanisms that try to filter Tor's requests for
+    information about other relays. If connections to normal Tor relays are
+    also blocked, then you will need to learn a bridge relay address somehow
+    and add it here. See the help topic on <a href="bridges.html#finding">finding
+    bridge relays</a> for more information on how to learn new bridge relay
+    addresses and fingerprints.
+  </li>
+</ul>
+
+<a name="server"/>
+<h3>Reititinasetukset</h3>
+<p>
+<i>
+  Katso <a href="server.html">tätä ohjeenaihetta</a> saadakseen lisätietoa reitittimen pystyttämisestä ja käyttämisestä.
+</i>
+</p>
+
+<a name="appearance"/>
+<h3>Ulkoasun asetukset</h3>
+<p>
+Vidalian ulkonäköä voi muuttaa <i>Ulkoasut</i>-sivulla olevilla asetuksilla.
+</p>
+<ul>
+  <li><b>Kieli</b>:
+    Vidalian käyttöliittymä on käännetty usealle kielelle avuliaiden vapaaehtoisten avulla. Ensimmäisellä Vidalian käynnistys kerralla Vidalia yrittää arvata mitä kieltä tietokone käyttää. Jos Vidalia arvaa väärin tai haluaa muuten valita toisen, niin kielen voi vaihtaa kehyksestä. Vidalia pitää käynnistää kielen vaihdon jälkeen, jotta muutokset pääsevät voimaan.
+  </li>
+  <li><b>Tyyli</b>:
+    Monissa tapauksissa Vidalia käyttää alustan oletusulkoasutyyliä. Tyylin voi vaihtaa valitsemalla kehyksestä.
+  </li>
+</ul>
+
+<a name="advanced"/>
+<h3>Lisäasetukset</h3>
+<p>
+<i>Lisäasetukset</i>-sivun asetuksia yleensä muuttaa vain kokeneet käyttäjät.
+</p>
+<ul>
+  <li><b>Ohjausportti</b>:
+    <i>Portti</i>, jolla Vidalia käyttää Tor-ohjelmaa tai jolla voi ohjata ja tarkkailla Tor-ohjelmaa toisella tietokoneella.
+    Tätä ei tarvitse muuttaa, jos ei ole ristiriitaa oman tietokoneen muun palvelun kanssa.
+  </li>
+  <li><b>Ohjausporttiin kirjautuminen</b>:
+    Ohjausportin kirjautumisella voidaan rajoittaa ohjelmia ottamasta yhteyttä Tor-ohjelmaan ja muuttamasta sen asetuksia. Käytössä olevat kirjautumistavat:
+    <ul>  
+      <li>
+        <b>Ei lainkaan</b> -- Kirjautumista ei tarvita. Tätä valintaa
+        <b>ehdottomasti</b> ei suosita. Mikä tahansa ohjelma tai käyttäjä koneella voi uudelleen määrittää Tor-ohjelman toiminnan.
+      </li>
+      <li> 
+        <b>Salasana</b> <i>(Oletus)</i> -- Jos tämän tavan valitsee, voi määrittää salasanan jonka Tor tarvitsee aina kun käyttäjä tai ohjelma ottaa yhteyttä Tor-ohjelman ohjausporttiin. Jos Vidalia käynnistää Tor-ohjelman, Vidalia voi luoda joka kerta kun se käynnistää Tor-ohjelman uuden salasanan rastittamalla <i>Luo satunnaisesti</i>-ruutu.
+      </li>
+      <li>
+        <b>Eväste</b> -- jos evästekirjautuminen on valittuna, Tor kirjoittaa tiedoston (toisin sanoen <i>evästeen</i>) sisältäen satunnaisia tavuja tiedot-kansioon käynnistyessä. Jokaisen käyttäjän tai ohjelman joka yrittää yhdistää Tor-ohjelman ohjausporttiin pitää tarjota tämän evästeen sisällön.
+      </li>
+    </ul>
+  </li>
+  <li><b>Tor-asetustiedosto</b> <i>(valinnainen)</i>:
+   Tällä saa Vidalian käynnistämään Tor-ohjelman jollakin erikseen määrätyllä Tor-asetustiedostolla <i>(torcc-tiedosto)</i>. Jos kentän jättää tyhjäksi Vidalia käyttää Tor-ohjelman oletusasetustiedostoa.
+  </li>
+  <li><b>Tor-ohjelman tiedot-kansio</b> <i>(valinnainen)</i>:
+    Kansio, jossa Tor säilyttää tallentamansa tiedon kuten Tor-reititin tietoja, reititin avaimia ja asetustiedostoja voidaan määrittää. Jos tämän kehyksen jättää tyhjäksi, Tor käyttää omaa oletustietojentallennuskansiota.
+  </li>
+  <li><b>Oikeudet</b> <i>(Valinnainen, ei ole käytössä Windowssissa)</i>:
+    Tor-ohjelmaa voi käyttää toisella käyttäjätilillä, jos laittaa arvon Suorita käyttäjänä. Silloin Tor suorittaa <i>setuid</i> tällä käyttäjällä käynnistyessään.
+Tor voi myös käynnistyä toisen ryhmän oikeuksien mukaisesti, jos laittaa arvon Suorita ryhmänä. Silloin Tor suorittaa <i>setgid</i> tällä ryhmällä käynnistyessään.
+  </li>
+</ul>
+
+</body>
+</html>
+

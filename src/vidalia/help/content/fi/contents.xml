@@ -10,44 +10,44 @@
 **  the terms described in the LICENSE file.
 -->
 
-<Contents name="Vidalias hjälp" html="index.html">
-  <Topic id="running" name="Running Tor" html="running.html">
-    <Topic id="starting" name="Startat och stoppar Tor" html="running.html" section="starting"/>
-    <Topic id="monitoring" name="Monitoring Tor's Status" html="running.html" section="monitoring"/>
+<Contents name="Vidalian ohje" html="index.html">
+  <Topic id="running" name="Tor-ohjelman käyttö" html="running.html">
+    <Topic id="starting" name="Käynnistäminen ja pysäyttäminen" html="running.html" section="starting"/>
+    <Topic id="monitoring" name="Tor-ohjelman tilan tarkkaileminen" html="running.html" section="monitoring"/>
   </Topic>
-  <Topic id="log" name="Meddelandelogg" html="log.html">
-    <Topic id="basic" name="Basic Information" html="log.html" section="basic"/>
-    <Topic id="severities" name="Message Severities" html="log.html" section="severities"/>
-    <Topic id="logfile" name="Spara loggmeddelanden till en fil" html="log.html" section="tofile"/>
+  <Topic id="log" name="Tapahtumaloki" html="log.html">
+    <Topic id="basic" name="Perustietoa" html="log.html" section="basic"/>
+    <Topic id="severities" name="Tapahtumien tärkeys" html="log.html" section="severities"/>
+    <Topic id="logfile" name="Tapahtumien tallennus" html="log.html" section="tofile"/>
   </Topic>
-  <Topic id="netview" name="Nätverkskarta" html="netview.html">
-    <Topic id="overview" name="Overview" html="netview.html" section="overview"/>
-    <Topic id="netmap" name="Network Map" html="netview.html" section="netmap"/>
-    <Topic id="status" name="Relay Status" html="netview.html" section="status"/>
-    <Topic id="details" name="Relay Details" html="netview.html" section="details"/>
+  <Topic id="netview" name="Verkkokartta" html="netview.html">
+    <Topic id="overview" name="Yleistä" html="netview.html" section="overview"/>
+    <Topic id="netmap" name="Verkkokartta" html="netview.html" section="netmap"/>
+    <Topic id="status" name="Reitittimien tila" html="netview.html" section="status"/>
+    <Topic id="details" name="Reitittimien tiedot" html="netview.html" section="details"/>
   </Topic>
-  <Topic id="config" name="Configuring Tor" html="config.html">
-    <Topic id="general" name="Allmänt-inställningar" html="config.html" section="general"/>
-    <Topic id="network" name="Nätverk-inställningar" html="config.html" section="network"/>
-    <Topic id="server" name="Utdelning-inställningar" html="config.html" section="server"/>
-    <Topic id="appearance" name="Utseende-inställningar" html="config.html" section="appearance"/>
-    <Topic id="advanced" name="Avancerat-inställningar" html="config.html" section="advanced"/>
+  <Topic id="config" name="Tor-ohjelman asetukset" html="config.html">
+    <Topic id="general" name="Yleiset-asetukset" html="config.html" section="general"/>
+    <Topic id="network" name="Verkkoasetukset" html="config.html" section="network"/>
+    <Topic id="server" name="Reititinasetukset" html="config.html" section="server"/>
+    <Topic id="appearance" name="Ulkoasun asetukset" html="config.html" section="appearance"/>
+    <Topic id="advanced" name="Lisäasetukset" html="config.html" section="advanced"/>
   </Topic>
-  <Topic id="server" name="Setting Up a Tor Relay" html="server.html">
-    <Topic id="basic" name="Allmänt inställningar" html="server.html" section="basic"/>
-    <Topic id="bandwidth" name="Bandbreddsbegränsningar" html="server.html" section="bandwidth"/>
-    <Topic id="exitpolicy" name="Användningspolicyn" html="server.html" section="exitpolicy"/>
+  <Topic id="server" name="Reitittimen käyttö" html="server.html">
+    <Topic id="basic" name="Yleiset-asetukset" html="server.html" section="basic"/>
+    <Topic id="bandwidth" name="Nopeudenrajoittaminen" html="server.html" section="bandwidth"/>
+    <Topic id="exitpolicy" name="Poistumiskäytännöt" html="server.html" section="exitpolicy"/>
   </Topic>
-  <Topic id="bridges" name="Bridge Relays" html="bridges.html">
-    <Topic id="about" name="What are bridge relays?" html="bridges.html" section="about"/>
-    <Topic id="finding" name="Hur kan jag hitta en brygga?" html="bridges.html" section="finding"/>
+  <Topic id="bridges" name="Siltareitittimet" html="bridges.html">
+    <Topic id="about" name="Mitä ovat siltareitittimet?" html="bridges.html" section="about"/>
+    <Topic id="finding" name="Miten löydän siltareitittimen?" html="bridges.html" section="finding"/>
   </Topic>
-  <Topic id="troubleshooting" name="Troubleshooting" html="troubleshooting.html">
-    <Topic id="start" name="I Can't Start Tor" html="troubleshooting.html" section="start"/>
-    <Topic id="connect" name="Vidalia Can't Connect to Tor" html="troubleshooting.html" section="connect"/>
-    <Topic id="torexited" name="Tor har oväntat avslutats" html="troubleshooting.html" section="torexited"/>
-    <Topic id="stop" name="Vidalia kan inte stoppa Tor" html="troubleshooting.html" section="stop"/>
+  <Topic id="troubleshooting" name="Vianetsintä" html="troubleshooting.html">
+    <Topic id="start" name="Tor ei käynnisty" html="troubleshooting.html" section="start"/>
+    <Topic id="connect" name="Vidalia ei yhdistä Tor-ohjelmaan" html="troubleshooting.html" section="connect"/>
+    <Topic id="torexited" name="Tor lopetti yllättäen" html="troubleshooting.html" section="torexited"/>
+    <Topic id="stop" name="Tor ei pysähdy" html="troubleshooting.html" section="stop"/>
   </Topic>
-  <Topic id="links" name="Nyttiga länkar" html="links.html"/>
+  <Topic id="links" name="Hyödyllisiä linkkejä" html="links.html"/>
 </Contents>
 
