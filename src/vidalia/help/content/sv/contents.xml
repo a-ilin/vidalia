@@ -12,7 +12,7 @@
 
 <Contents name="Vidalias hjälp" html="index.html">
   <Topic id="running" name="Running Tor" html="running.html">
-    <Topic id="starting" name="Startat och stoppar Tor" html="running.html" section="starting"/>
+    <Topic id="starting" name="Startar och stoppar Tor" html="running.html" section="starting"/>
     <Topic id="monitoring" name="Monitoring Tor's Status" html="running.html" section="monitoring"/>
   </Topic>
   <Topic id="log" name="Meddelandelogg" html="log.html">
@@ -22,8 +22,8 @@
   </Topic>
   <Topic id="netview" name="Nätverkskarta" html="netview.html">
     <Topic id="overview" name="Overview" html="netview.html" section="overview"/>
-    <Topic id="netmap" name="Network Map" html="netview.html" section="netmap"/>
-    <Topic id="status" name="Relay Status" html="netview.html" section="status"/>
+    <Topic id="netmap" name="Nätverkskarta" html="netview.html" section="netmap"/>
+    <Topic id="status" name="Router status" html="netview.html" section="status"/>
     <Topic id="details" name="Relay Details" html="netview.html" section="details"/>
   </Topic>
   <Topic id="config" name="Configuring Tor" html="config.html">
@@ -34,7 +34,7 @@
     <Topic id="advanced" name="Avancerat-inställningar" html="config.html" section="advanced"/>
   </Topic>
   <Topic id="server" name="Setting Up a Tor Relay" html="server.html">
-    <Topic id="basic" name="Allmänt inställningar" html="server.html" section="basic"/>
+    <Topic id="basic" name="Allmänt-inställningar" html="server.html" section="basic"/>
     <Topic id="bandwidth" name="Bandbreddsbegränsningar" html="server.html" section="bandwidth"/>
     <Topic id="exitpolicy" name="Användningspolicyn" html="server.html" section="exitpolicy"/>
   </Topic>
