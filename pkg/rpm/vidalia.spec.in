@@ -10,28 +10,28 @@
 ##  the terms described in the LICENSE file.
 ##
 
-
 #%package vidalia
-Name		: vidalia
-Version		: @VERSION@
-Release		: 3
+Name      : vidalia
+Version   : @VERSION@
+Release   : 1
 #
-License		: GPL
-Summary		: A Tor GUI for Linux
-Group		: Applications/Internet
+License   : GPL
+Summary   : A Tor GUI for Linux
+Group     : Applications/Internet
 
-URL		: http://www.vidalia-project.net
-Vendor		: Matt Edman, Justin Hipple
-Packager	: Oliver Niesner <digi_news@gmx.de> 
+URL       : http://www.vidalia-project.net
+Vendor    : Matt Edman, Justin Hipple
+Packager  : Oliver Niesner <digi_news@gmx.de> 
 
-Source0		: %{name}-%{version}.tar.gz
+Source0   : %{name}-%{version}.tar.gz
 
-#AutoReq     	: No
-#AutoProv	: No
+#AutoReq      : No
+#AutoProv : No
 
-Requires        : tor >= 0.1.1.15
-BuildRequires	: qt4
-#BuildRoot	: /var/tmp/%{name}-buildroot
+Requires      : tor >= 0.1.2.18
+BuildRequires : qt4 >= 4.2
+BuildRequires : cmake >= 2.4
+#BuildRoot  : /var/tmp/%{name}-buildroot
 
 %description
 
@@ -50,10 +50,15 @@ rm -rf %{buildroot}
 # -q      : Run quiety with minimum output
 # -T      : Disable the automatic unpacking of the archives.
 #######################################################################
-%setup 
-%build
-./configure
-make
+%setup
+%build  
+#./configure 
+#make
+
+cmake . && make
+
+
+
 #########################################################
 # Common Red Hat RPM macros (rpm --showrc for more info)
 # {_sourcedir} : /usr/src/redhat/SOURCES
@@ -86,11 +91,39 @@ rm -rf %{buildroot}
 %files
 /usr/local/bin/vidalia 
 /usr/local/man/man1/vidalia.1
+
 #####################################################
 # defattr sets the default attributes for all files
 #####################################################
 %defattr(-, root, root)
 
 %changelog
+* Tue Mar 04 2008 Oliver Niesner <digi_news@gmx.de> 0.1.0-1
+- bump to 0.1.0 and modifications to meet cmake requirements!
+
+* Mon Nov 26 2007 Oliver Niesner <digi_news@gmx.de> 0.0.16-1
+- bump to 0.0.16
+
+* Thu Oct 29 2007 Oliver Niesner <digi_news@gmx.de> 0.0.15-1
+-  bump to 0.0.15
+
+* Thu Aug 30 2007 Oliver Niesner <digi_news@gmx.de> 0.0.14-1
+- bump to 0.0.14
+
+* Thu Aug 07 2007 Oliver Niesner <digi_news@gmx.de> 0.0.13-1
+- bump to 0.0.13
+
+* Thu Jun 05 2007 Oliver Niesner <digi_news@gmx.de> 0.0.12-1
+- bump to 0.0.12
+
+* Thu Feb 08 2007 Oliver Niesner <digi_news@gmx.de> 0.0.11-1
+- bump to 0.0.11 release
+
+* Mon Jan 08 2007 Oliver Niesner <digi_news@gmx.de> 0.0.10-1
+- bump to 0.0.10 release
+
+* Mon Nov 06 2006 Oliver Niesner <digi_news@gmx.de> 0.0.9-1
+- first release build for 0.0.9
+
 * Tue Oct 11 2006 Oliver Niesner <digi_news@gmx.de> 0.0.8-1
 - initial release
