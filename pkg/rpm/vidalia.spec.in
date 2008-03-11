@@ -13,7 +13,7 @@
 #%package vidalia
 Name      : vidalia
 Version   : @VERSION@
-Release   : ------------------------------------------------------> TESTCOMMIT <---------------------------------------
+Release   : 1
 #
 License   : GPL
 Summary   : A Tor GUI for Linux
