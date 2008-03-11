@@ -13,7 +13,7 @@
 #%package vidalia
 Name      : vidalia
 Version   : @VERSION@
-Release   : 1
+Release   :-------------------------------------------------------> TESTCOMMIT <---------------------------------------
 #
 License   : GPL
 Summary   : A Tor GUI for Linux
@@ -98,6 +98,7 @@ rm -rf %{buildroot}
 %defattr(-, root, root)
 
 %changelog
+
 * Tue Mar 04 2008 Oliver Niesner <digi_news@gmx.de> 0.1.0-1
 - bump to 0.1.0 and modifications to meet cmake requirements!
 
