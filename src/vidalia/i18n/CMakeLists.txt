@@ -25,6 +25,7 @@ set(vidalia_TS
   vidalia_he.ts
   vidalia_hu.ts
   vidalia_it.ts
+  vidalia_ja.ts
   vidalia_nb.ts
   vidalia_nl.ts
   vidalia_pl.ts
