@@ -1,6 +1,6 @@
-Vidalia is developed by:
+Vidalia is currently developed by:
   Matt Edman <edmanm@vidalia-project.net>
-  Justin Hipple <hipplej@vidalia-project.net>
+
 
 Contributors: 
   Ren Bucholz <http://homes.eff.org/~renbucholz/tor/> created some of the
@@ -10,12 +10,6 @@ Contributors:
   Dan Christensen <http://opello.org/> added additional image formats to 
   the .ico files to support more Windowses. He also created the graph style
   icons in the bandwidth graph settings.
-
-  The Tango Desktop Project <http://tango-project.org> created many of the
-  icons used in Vidalia. See LICENSE for details.
-
-  Ahmad Gharbeia created the flag used for the Arabic language in the
-  Appearance settings dialog.
 
   Geoff Goodell <http://afs.eecs.harvard.edu/~goodell/> supplied us with
   nearly all of the flag icons that we use in the Appearance configuration
@@ -28,8 +22,14 @@ Contributors:
   Matt Hanson <http://www.zuerchertech.com/> tweaked Corinna's images a bit
   and created some .icos based off of them. 
  
+  Justin Hipple <hipplej@vidalia-project.net> co-founded the Vidalia project
+  and helped with lots of the initial development.
+
   Andrew Lewman wrote the original Mac OS X bundle installer off which
   Vidalia's is based, and also added Torbutton to the bundle.
+
+  This product includes GeoLite data created by MaxMind, available from
+  http://maxmind.com/
 
   Steven J. Murdoch <http://www.cl.cam.ac.uk/users/sjm217/> wrote the code
   to launch a web browser when Tor has built a circuit and close Vidalia when
@@ -41,6 +41,9 @@ Contributors:
   Christoph Sieghart (sigi) <http://www.0x2a.at/blog/> gave us some code that
   converts world space coordinates (latitude,longitude) into image space
   coordinates (x,y) which we used in the Net Viewer.
+
+  The Tango Desktop Project <http://tango-project.org> created many of the
+  icons used in Vidalia. See LICENSE for details.
 
   Michael Zuercher and Adam Tomjack of Zuerchertech LLC
   <http://www.zuerchertech.com> gave us the ZImageView class which handles

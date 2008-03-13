@@ -164,7 +164,7 @@ SectionGroup "${VIDALIA_DESC}" VidaliaGroup
       File "Vidalia\${VIDALIA_APPVERSION}\LICENSE-GPLV2"
       File "Vidalia\${VIDALIA_APPVERSION}\LICENSE-GPLV3"
       File "Vidalia\${VIDALIA_APPVERSION}\LICENSE-OPENSSL"
-      File "Vidalia\${VIDALIA_APPVERSION}\AUTHORS"
+      File "Vidalia\${VIDALIA_APPVERSION}\CREDITS"
       
       ; Include a prebuilt GeoIP cache
       SetShellVarContext current
