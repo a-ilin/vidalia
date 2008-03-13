@@ -350,8 +350,7 @@ NetworkPage::load()
   ui.lineReachablePorts->setText(reachablePortStrings.join(","));
 
   /* Load bridge settings */
-  ui.chkUseBridges->setChecked(settings.getUseBridges() 
-                                || settings.getTunnelDirConns());
+  ui.chkUseBridges->setChecked(settings.getUseBridges()); 
   ui.listBridges->clear();
   ui.listBridges->addItems(settings.getBridgeList());
 }

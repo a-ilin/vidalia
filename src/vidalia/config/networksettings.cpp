@@ -44,7 +44,7 @@ NetworkSettings::NetworkSettings(TorControl *torControl)
   setDefault(SETTING_USE_BRIDGES,       false);
   setDefault(SETTING_BRIDGE_LIST,       QStringList());
   setDefault(SETTING_FASCIST_FIREWALL,  false);
-  setDefault(SETTING_TUNNEL_DIR_CONNS,  false);
+  setDefault(SETTING_TUNNEL_DIR_CONNS,  true);
   setDefault(SETTING_REACHABLE_ADDRESSES,
     QStringList() << "*:80" << "*:443");
 }
@@ -56,7 +56,8 @@ bool
 NetworkSettings::apply(QString *errmsg)
 {
   QMultiHash<QString, QString> conf;
-  
+  quint32 torVersion = torControl()->getTorVersion();
+
   conf.insert(SETTING_REACHABLE_ADDRESSES,
     (getFascistFirewall() ? 
       localValue(SETTING_REACHABLE_ADDRESSES).toStringList().join(",") : ""));
@@ -72,14 +73,18 @@ NetworkSettings::apply(QString *errmsg)
               localValue(SETTING_HTTPS_PROXY_AUTH).toString());
   
   if (getUseBridges()) {
+    /* We want to always enable TunnelDirConns and friends when using
+     * bridge relays. */
     conf.insert(SETTING_TUNNEL_DIR_CONNS, "1");
     conf.insert(SETTING_PREFER_TUNNELED_DIR_CONNS, "1");
-  } else {
+  } else if (torVersion <= 0x020021) {
+    /* TunnelDirConns is enabled by default on Tor >= 0.2.0.22-rc, so don't
+     * disable it if our Tor is recent enough. */
     conf.insert(SETTING_TUNNEL_DIR_CONNS, "0");
     conf.insert(SETTING_PREFER_TUNNELED_DIR_CONNS, "0");
   }
   
-  if (torControl()->getTorVersion() >= 0x020003) {
+  if (torVersion >= 0x020003) {
     /* Do the bridge stuff only on Tor >= 0.2.0.3-alpha */
     QStringList bridges = localValue(SETTING_BRIDGE_LIST).toStringList();
     if (getUseBridges() && !bridges.isEmpty()) {
