@@ -1,6 +1,13 @@
 0.1.1   xx-xxx-2008
   o Use CMake to configure the version number that ends up getting displayed
     in the About box.
+  o TunnelDirConns and PreferTunneledDirConns are now enabled by default as of
+    Tor 0.2.0.22-rc.
+  o Don't check the 'My ISP blocks connections to the Tor network' box simply
+    because TunnelDirConns is enabled. Checking the box still enables
+    encrypted directoyr connections on older Tors.
+  o Add a Japanese GUI translation from Nardog
+  o Updated Finnish and Swedish translations
 
 
 0.1.0   01-Mar-2008
