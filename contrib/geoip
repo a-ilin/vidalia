@@ -1,0 +1,104 @@
+#!/usr/bin/perl -w
+#
+#  Vidalia is distributed under the following license:
+#
+#  Copyright (C) 2006,  Matt Edman, Justin Hipple
+#  Modified slightly by Sasha Romanosky
+#
+#  This program is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU General Public License
+#  as published by the Free Software Foundation; either version 2
+#  of the License, or (at your option) any later version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 
+#  02110-1301, USA.
+#
+#  The GeoIP Perl  Library is licensed under the GPL.  For details
+#  see the COPYING file.
+#################################################################
+
+use strict;
+use Geo::IP;
+
+my $VERSION = "05-06";
+my $GEODATA = "/home/vidalia/geodata/GeoLiteCity-$VERSION.dat";
+my $GI      = Geo::IP->open($GEODATA, GEOIP_STANDARD);
+
+my $uri     = "";
+my %fields  = ();
+my @params  = ();
+
+###############################################################
+print "Content-type: text/plain\n\n";
+
+# Parse the URI parameters
+my $method = $ENV{"REQUEST_METHOD"};
+if ($method eq "POST") {
+  my $query = "";
+  read(STDIN, $query, $ENV{'CONTENT_LENGTH'});
+ 
+  # Request came in the form of a POST
+  @params = split /&/, $query;
+} elsif ($method eq "GET") {
+  # Method is a GET request
+  if ($ENV{"REQUEST_URI"} && $ENV{"REQUEST_URI"} =~/\?/) {
+    ($uri = $ENV{"REQUEST_URI"}) =~ s/.*\?//g;
+  }
+  @params = split /&/, $uri;
+} else {
+  # It wasn't a GET or POST, so we'd better bail.
+  print "Bad Request\n";
+  exit 0;
+}
+
+# Parse the parameters and values
+foreach (@params) {
+  my ($key, $val) = split /=/, $_;
+  $fields{$key} = $val;
+}
+ 
+# first build addr list
+unless ($fields{"ip"}) {           
+    # Get Geo info for requesting host
+    printGeoInfo($ENV{"REMOTE_ADDR"});
+}
+else {
+    # Resolve each IP in the request
+    my @addrs = split /,/, $fields{"ip"};
+    foreach (@addrs) {      
+        my $addr = substr($_, 0, 15); # chop at max length of an IP address
+        if ($addr =~ /\d+\.\d+\.\d+\.\d+/) {   # only select good IPs
+	        printGeoInfo($addr);
+	    }
+        else {
+	        print "Bad IP\n";
+        }
+    }
+}
+
+# print the Geo info
+sub printGeoInfo  {      
+    my $addr = shift;
+    print "$addr,";    
+    my $r = $GI->record_by_addr($addr);
+    if ($r) {
+        print join(",", $r->city,
+            $r->region,     
+            $r->country_code,
+            $r->latitude,
+            $r->longitude);
+    } 
+    else {
+        print "UNKNOWN";                  
+    }
+    print "\n"; 
+}
+
+#QED
