@@ -58,6 +58,9 @@ Localization:
 
 
 Miscellaneous Tasks:
+  * Google's breakpad looks like it may be handy for getting useful stack
+    traces more easily on Windows. We should give it a spin and see if it's
+    worth it. <http://code.google.com/p/google-breakpad/>
   * We should work much harder specifying what Vidalia does. When we add a
     feature that interacts with Tor, we should specify exactly which control 
     commands we're sending, where in the UI the values come from, what we ask
