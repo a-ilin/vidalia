@@ -1,4 +1,4 @@
-0.1.1   xx-xxx-2008
+0.1.1   17-Mar-2008
   o Use CMake to configure the version number that ends up getting displayed
     in the About box.
   o Update the RPM .spec file with the new CMake requirements. Patch from Oliver
