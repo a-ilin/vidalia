@@ -54,7 +54,8 @@ prefer building from an IDE.
      Vidalia.app to your Applications folder, if you prefer.
 
      If you're building from a CMake-generated Xcode project, you can simply
-     click "Build & Go" in Xcode to build and run Vidalia.
+     click "Build & Go" in Xcode to build and run Vidalia. Or, you can run
+     'xcodebuild' if you prefer building from the command line.
 
 
 Windows with MinGW
