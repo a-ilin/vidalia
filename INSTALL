@@ -47,7 +47,7 @@ prefer building from an IDE.
      Alternatively, you can have CMake generate an Xcode project for Vidalia
      by running:
 
-                           cmake -G Xcode
+                           cmake -G Xcode .
 
   2. If you built from the command line, Vidalia's binary will be in an
      application bundle located at src/vidalia/Vidalia.app. You can copy
