@@ -26,14 +26,14 @@
     <Topic id="status" name="Reitittimien tila" html="netview.html" section="status"/>
     <Topic id="details" name="Reitittimien tiedot" html="netview.html" section="details"/>
   </Topic>
-  <Topic id="config" name="Tor-ohjelman asetukset" html="config.html">
+  <Topic id="config" name="Vidalian ja Tor-ohjelman asetukset" html="config.html">
     <Topic id="general" name="Yleiset-asetukset" html="config.html" section="general"/>
     <Topic id="network" name="Verkkoasetukset" html="config.html" section="network"/>
     <Topic id="server" name="Reititinasetukset" html="config.html" section="server"/>
     <Topic id="appearance" name="Ulkoasun asetukset" html="config.html" section="appearance"/>
     <Topic id="advanced" name="Lisäasetukset" html="config.html" section="advanced"/>
   </Topic>
-  <Topic id="server" name="Reitittimen käyttö" html="server.html">
+  <Topic id="server" name="Reitittimen asentaminen" html="server.html">
     <Topic id="basic" name="Yleiset-asetukset" html="server.html" section="basic"/>
     <Topic id="bandwidth" name="Nopeudenrajoittaminen" html="server.html" section="bandwidth"/>
     <Topic id="exitpolicy" name="Poistumiskäytännöt" html="server.html" section="exitpolicy"/>
