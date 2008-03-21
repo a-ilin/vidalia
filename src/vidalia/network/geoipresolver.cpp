@@ -33,6 +33,19 @@
 #define GEOIP_PAGE    "/cgi-bin/geoip"
 
 
+/** Default constructor. */
+GeoIpResolver::GeoIpResolver()
+{
+  _socksAddr = QHostAddress::LocalHost;
+  _socksPort = 9050;
+
+#if defined(USE_QSSLSOCKET)
+  if (! QSslSocket::addDefaultCaCertificates(":/geoip/cacert_root.crt"))
+    vWarn("Failed to add the GeoIP CA certificate to the default CA "
+          "certificate database.");
+#endif
+}
+
 /** Sets the address and port of Tor, through which GeoIP requests will be
  * made. */
 void
@@ -234,8 +247,6 @@ GeoIpResolver::resolve(QList<QHostAddress> ips)
   if (TorSslSocket::supportsSsl()) {
     vInfo("Opening an SSL connection to the GeoIP host at %1:%2 (request id %3)")
                           .arg(GEOIP_HOST).arg(GEOIP_SSL_PORT).arg(request->id());
-    QByteArray caCert(":/geoip/cacert_root.crt");
-    socket->addCaCertificate(QSslCertificate(caCert));
     socket->connectToRemoteHost(GEOIP_HOST, GEOIP_SSL_PORT, true);
   } else {
     vInfo("Opening an unencrypted connection to the GeoIP host at %1:%2 "

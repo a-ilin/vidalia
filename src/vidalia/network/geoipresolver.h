@@ -35,8 +35,7 @@ class GeoIpResolver : public QObject
 
 public:
   /** Default constructor. */
-  GeoIpResolver() 
-  { _socksAddr = QHostAddress::LocalHost; _socksPort = 9050; }
+  GeoIpResolver();
   
   /** Sets the address and port of Tor, through which GeoIP requests will be
    * made. */
