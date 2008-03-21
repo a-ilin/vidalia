@@ -33,7 +33,7 @@
     <Topic id="appearance" name="Utseende-inställningar" html="config.html" section="appearance"/>
     <Topic id="advanced" name="Avancerat-inställningar" html="config.html" section="advanced"/>
   </Topic>
-  <Topic id="server" name="Installerar en Tor-router html="server.html">
+  <Topic id="server" name="Installerar en Tor-router" html="server.html">
     <Topic id="basic" name="Allmänt-inställningar" html="server.html" section="basic"/>
     <Topic id="bandwidth" name="Bandbreddsbegränsningar" html="server.html" section="bandwidth"/>
     <Topic id="exitpolicy" name="Användningspolicyn" html="server.html" section="exitpolicy"/>
