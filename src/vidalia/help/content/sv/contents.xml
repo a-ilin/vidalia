@@ -11,7 +11,7 @@
 -->
 
 <Contents name="Vidalias hjälp" html="index.html">
-  <Topic id="running" name="Användning Tor" html="running.html">
+  <Topic id="running" name="Användning av Tor" html="running.html">
     <Topic id="starting" name="Startar och stoppar Tor" html="running.html" section="starting"/>
     <Topic id="monitoring" name="Övervakar Tors ställning" html="running.html" section="monitoring"/>
   </Topic>
