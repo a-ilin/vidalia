@@ -7,7 +7,7 @@
 TARGET=$2/Library/Tor
 TORDIR=$TARGET/var/lib/tor
 LOGFILE=/var/log/tor.log
-TORBUTTON_VERSION="1.1.10-alpha"
+TORBUTTON_VERSION="1.1.17-alpha"
 
 # Check defaults for TARGET
 if [ "$TARGET" == "//Library/Tor" ]; then
@@ -58,6 +58,11 @@ fi
 
 if [ -d /Library/StartupItems/Privoxy ]; then
   find /Library/StartupItems/Privoxy -print0 | xargs -0 chown root:wheel
+fi
+
+if [ -f $PACKAGE_PATH/Contents/Resources/uninstall_tor_bundle.sh ]; then
+  cp $PACKAGE_PATH/Contents/Resources/uninstall_tor_bundle.sh $TARGET/uninstall_tor_bundle.sh
+  chmod 550 $TARGET/uninstall_tor_bundle.sh
 fi
 
 # Copy Documentation
