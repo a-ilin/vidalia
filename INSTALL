@@ -105,7 +105,7 @@ similar process can be followed for other versions of VS.
      the location of the Platform SDK's executable, include, and library
      directories.
 
-       http://www.microsoft.com/express/2005/download/default.aspx
+       http://msdn2.microsoft.com/en-us/express/aa700755.aspx
 
      It is important to also install the "Microsoft Web Workshop (IE) SDK", even
      though that seems irrelevant.
