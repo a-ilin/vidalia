@@ -3,6 +3,10 @@
     GeoIP server. This caused Vidalia >= 0.1.0 clients built against Qt >=
     4.3.2 to be unable to retrieve updated GeoIP information. (Ticket #349)
   o Fix compilation when UINT_MAX is not defined. (Ticket #350)
+  o Bridges are no longer required to have a DirPort set as of Tor
+    0.2.0.13-alpha, so stop forcing it on for bridges. At some point, we'll
+    likely start forcing DirPort to be disabled for bridges, and on by default
+    but optional for normal relays. (Ticket #337)
   o Update the version of Torbutton included in the OS X bundle to
     1.1.17-alpha, and actually include the bundle's uninstaller script.
   o Updated Finnish and Swedish translations.
