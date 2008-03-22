@@ -15,7 +15,7 @@
 */
 
 #include <winver.h>
-#include "vidalia_win.rc.h"
+
 
 1 VERSIONINFO
 FILEVERSION     @VER_MAJOR@,@VER_MINOR@,@VER_PATCH@,0
@@ -39,11 +39,4 @@ FILETYPE        VFT_APP
         }
     }
 }
-
-
-IDI_APP_ICON      ICON    "icons/vidalia.ico"
-IDI_TOR_OFF       ICON    "icons/tor-off.ico"
-IDI_TOR_ON        ICON    "icons/tor-on.ico"
-IDI_TOR_STARTING  ICON    "icons/tor-starting.ico"
-IDI_TOR_STOPPING  ICON    "icons/tor-stopping.ico"
 
