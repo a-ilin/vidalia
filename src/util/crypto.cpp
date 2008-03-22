@@ -131,7 +131,7 @@ crypto_rand_quint32(quint32 max)
   quint32 cutoff;
   Q_ASSERT(max > 0);
 
-  cutoff = UINT_MAX - (UINT_MAX % max);
+  cutoff = 0xffffffffu - (0xffffffffu % max);
   forever {
     buf = crypto_rand_bytes(sizeof(quint32));
     Q_ASSERT(buf.size() == sizeof(quint32));
