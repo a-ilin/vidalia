@@ -37,7 +37,7 @@ endif(NOT QT_LUPDATE_EXECUTABLE)
 if (WIN32)
   find_program(WIN32_WINDRES_EXECUTABLE  NAMES windres.exe ${QT_BINARY_DIR})
   if (NOT WIN32_WINDRES_EXECUTABLE)
-    message(FATAL_ERR
+    message(FATAL_ERROR
       "Vidalia could not find windres. Please make sure Qt is installed and its bin directory is in your PATH environment variable."
     )
   endif(NOT WIN32_WINDRES_EXECUTABLE)

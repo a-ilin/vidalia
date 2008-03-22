@@ -7,6 +7,8 @@
     0.2.0.13-alpha, so stop forcing it on for bridges. At some point, we'll
     likely start forcing DirPort to be disabled for bridges, and on by default
     but optional for normal relays. (Ticket #337)
+  o Fix a typo in VidaliaMacros.cmake that would allow configuration to
+    continue even if windres.exe couldn't be found.
   o Update the version of Torbutton included in the OS X bundle to
     1.1.17-alpha, and actually include the bundle's uninstaller script.
   o Updated Finnish and Swedish translations.
