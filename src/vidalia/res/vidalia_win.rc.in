@@ -35,7 +35,7 @@ FILETYPE        VFT_APP
             VALUE "ProductName",      "Vidalia"
             VALUE "OriginalFilename", "vidalia.exe"
             VALUE "CompanyName",      "vidalia-project.net"
-            VALUE "LegalCopyright",   "Copyright (C) 2007, Matt Edman, Justin Hipple"
+            VALUE "LegalCopyright",   "Copyright (C) 2007-2008, Matt Edman, Justin Hipple"
         }
     }
 }
