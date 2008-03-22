@@ -131,7 +131,7 @@ ZlibByteArray::isGzipSupported()
  * describing the failure. */
 QByteArray
 ZlibByteArray::compress(const CompressionMethod method,
-                              QString *errmsg) const
+                        QString *errmsg) const
 {
   return compress(QByteArray(data()), method, errmsg);
 }
@@ -141,8 +141,8 @@ ZlibByteArray::compress(const CompressionMethod method,
  * set the optional <b>errmsg</b> to a string describing the failure. */
 QByteArray
 ZlibByteArray::compress(const QByteArray in,
-                              const CompressionMethod method,
-                              QString *errmsg)
+                        const CompressionMethod method,
+                        QString *errmsg)
 {
   QByteArray out;
   QString errorstr;
@@ -238,7 +238,7 @@ err:
  * describing the failure. */
 QByteArray
 ZlibByteArray::uncompress(const CompressionMethod method,
-                                QString *errmsg) const
+                          QString *errmsg) const
 {
   return uncompress(QByteArray(data()), method, errmsg);
 }
@@ -248,8 +248,8 @@ ZlibByteArray::uncompress(const CompressionMethod method,
  * set the optional <b>errmsg</b> to a string describing the failure. */
 QByteArray
 ZlibByteArray::uncompress(const QByteArray in,
-                                const CompressionMethod method,
-                                QString *errmsg)
+                          const CompressionMethod method,
+                          QString *errmsg)
 {
   QByteArray out;
   QString errorstr;
