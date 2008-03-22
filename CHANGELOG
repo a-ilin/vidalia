@@ -2,6 +2,10 @@
   o Correctly load the CA certificate used to verify SSL connections to the
     GeoIP server. This caused Vidalia >= 0.1.0 clients built against Qt >=
     4.3.2 to be unable to retrieve updated GeoIP information. (Ticket #349)
+  o Fix compilation when UINT_MAX is not defined. (Ticket #350)
+  o Update the version of Torbutton included in the OS X bundle to
+    1.1.17-alpha, and actually include the bundle's uninstaller script.
+  o Updated Finnish and Swedish translations.
 
 
 0.1.1   17-Mar-2008
