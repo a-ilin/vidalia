@@ -52,6 +52,27 @@
 
 #include <QString>
 
+#include "config.h"
+#ifdef HAVE_LIMITS_H
+#include <limits.h>
+#elif HAVE_SYS_LIMITS_H
+#include <sys/limits.h>
+#endif
+
+/* The following check for UINT_MAX is derived from Tor's torint.h. See
+ * the top of this file for details on Tor's license. */
+#ifndef UINT_MAX
+#if (SIZEOF_INT == 2)
+#define UINT_MAX 0xffffu
+#elif (SIZEOF_INT == 4)
+#define UINT_MAX 0xffffffffu
+#elif (SIZEOF_INT == 8)
+#define UINT_MAX 0xffffffffffffffffu
+#else
+#error "Your platform uses a sizeof(int) that we don't understand."
+#endif
+#endif
+
 #include "zlib.h"
 #include "zlibbytearray.h"
 

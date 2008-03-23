@@ -31,7 +31,9 @@ set(QT_USE_QTNETWORK  true)
 set(QT_USE_QTXML      true)
 include(${QT_USE_FILE})
 include(${CMAKE_SOURCE_DIR}/cmake/VidaliaMacros.cmake)
+include(CheckIncludeFile)
 include(CheckIncludeFileCXX)
+include(CheckTypeSize)
 include(CPack)
 
 if(MSVC_IDE)
@@ -59,6 +61,13 @@ if (USE_QSSLSOCKET)
     include(${CMAKE_SOURCE_DIR}/cmake/FindOpenSSL.cmake)
   endif(MSVC OR UNIX)
 endif(USE_QSSLSOCKET)
+
+## Check for system header files
+check_include_file("limits.h" HAVE_LIMITS_H)
+check_include_file("sys/limits.h" HAVE_SYS_LIMITS_H)
+
+## Check fo the sizes of various data types
+check_type_size(int SIZEOF_INT)
 
 ## Write out a configuration file
 configure_file(
