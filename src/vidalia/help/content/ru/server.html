@@ -125,6 +125,52 @@ resource from your relay. If the box labeled <i>Misc Other Services</i>
 is checked, Tor users will be able to access other services not
 covered by the other checkboxes or Tor's default exit policy.
 </p>
+
+<p>
+For completeness, the following table lists the specific port numbers
+represented by each of the exit policy checkboxes. The <b>Description</b>
+column describes the resources Tor clients will be allowed to access through
+your relay, if the associated box is checked.
+</p>
+
+<table border="1">
+<tr>
+  <td><b>Checkbox</b></td>
+  <td><b>Ports</b></td>
+  <td><b>Description</b></td>
+</tr>
+<tr>
+  <td>Websites</td>
+  <td valign="middle">80</td>
+  <td>Normal, unencrypted Web browsing</td>
+</tr>
+<tr>
+  <td>Secure Websites (SSL)</td>
+  <td valign="middle">443</td>
+  <td>Encrypted Web browsing</td>
+</tr>
+<tr>
+  <td>Retrieve Mail (POP, IMAP)</td>
+  <td valign="middle">110, 143, 993, 995</td>
+  <td>Downloading email (does not permit sending email)</td>
+</tr>
+<tr>
+  <td>Instant Messaging (IM)</td>
+  <td valign="middle">703, 1863, 5050, 5190, 5222, 5223, 8300, 8888</td>
+  <td>Instant messaging applications like MSN Messenger, AIM, ICQ, and Jabber</td>
+</tr>
+<tr>
+  <td>Internet Relay Chat (IRC)</td>
+  <td valign="middle">6660-6669, 6697</td>
+  <td>IRC clients and servers</td>
+</tr>
+<tr>
+  <td>Misc. Other Services</td>
+  <td valign="middle">*</td>
+  <td>All other applications that aren't covered by the previous checkboxes</td>
+</tr>
+</table>
+
 <p>
 If you do not want to let other Tor users make connections outside the Tor
 network from your relay, you can uncheck all of the checkboxes. Even if you
@@ -134,7 +180,8 @@ help relay traffic between other Tor relays.
 </p>
 <p>
 If you chose to run a bridge relay, the <i>Exit Policies</i> tab will be
-grayed out, since bridge relays do not allow exit connections.
+grayed out, since bridge relays do not allow exit connections. Bridges are
+only used by Tor clients to connect to the Tor network.
 </p>
 
 </body>
