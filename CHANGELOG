@@ -1,4 +1,4 @@
-0.1.2   xx-xxx-2008
+0.1.2   24-Mar-2008
   o Correctly load the CA certificate used to verify SSL connections to the
     GeoIP server. This caused Vidalia >= 0.1.0 clients built against Qt >=
     4.3.2 to be unable to retrieve updated GeoIP information. (Ticket #349)
