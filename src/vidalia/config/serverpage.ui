@@ -1018,8 +1018,8 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
   <tabstop>chkMirrorDirectory</tabstop>
   <tabstop>lineDirPort</tabstop>
   <tabstop>cmboRate</tabstop>
-  <tabstop>lineMaxRateLimit</tabstop>
   <tabstop>lineAvgRateLimit</tabstop>
+  <tabstop>lineMaxRateLimit</tabstop>
   <tabstop>btnRateHelp</tabstop>
   <tabstop>chkWebsites</tabstop>
   <tabstop>chkSecWebsites</tabstop>
