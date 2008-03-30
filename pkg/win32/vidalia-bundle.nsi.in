@@ -24,7 +24,7 @@ SetCompressor /SOLID lzma
 
 !define TOR_NAME            "Tor"
 !define TOR_EXEC            "tor.exe"
-!define TOR_APPVERSION      "0.2.0.12-alpha"
+!define TOR_APPVERSION      "0.2.0.23-rc"
 !define TOR_DESC            "${TOR_NAME} ${TOR_APPVERSION}"
 
 !define PRIVOXY_NAME        "Privoxy"
@@ -33,7 +33,7 @@ SetCompressor /SOLID lzma
 !define PRIVOXY_DESC        "${PRIVOXY_NAME} ${PRIVOXY_APPVERSION}"
 
 !define TORBUTTON_NAME      "Torbutton"
-!define TORBUTTON_APPVERSION "1.1.9.1-alpha"
+!define TORBUTTON_APPVERSION "1.1.17-alpha"
 !define TORBUTTON_DESC      "${TORBUTTON_NAME} ${TORBUTTON_APPVERSION}"
 
 !define BUNDLE_NAME         "Vidalia Bundle"
@@ -399,7 +399,7 @@ SectionGroup "${TORBUTTON_DESC}" TorbuttonGroup
     SectionIn 1 2
     ReadRegStr $1 HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\firefox.exe" ""
     StrCmp $1 "" FirefoxNotFound 0 ; if Path is empty or null, then skip to an error, otherwise proceed
-	  Exec '"$1" -install-global-extension "$INSTDIR\Torbutton\torbutton-${TORBUTTON_APPVERSION}.xpi"'
+	  Exec '"$1" "$INSTDIR\Torbutton\torbutton-${TORBUTTON_APPVERSION}.xpi"'
   	Goto TorbuttonInstalled
     FirefoxNotFound:
 	  MessageBox MB_OK|MB_ICONSTOP "$(TorbuttonFirefoxNotFound)"
