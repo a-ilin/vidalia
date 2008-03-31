@@ -99,6 +99,9 @@ rm -rf %{buildroot}
 
 %changelog
 
+* Mon Mar 31 2008 Oliver Niesner <digi_news@gmx.de> 0.1.2-1
+- bump to 0.1.2
+
 * Tue Mar 04 2008 Oliver Niesner <digi_news@gmx.de> 0.1.0-1
 - bump to 0.1.0 and modifications to meet cmake requirements!
 
