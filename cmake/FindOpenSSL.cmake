@@ -1,5 +1,5 @@
 ##
-##  $Id: CMakeLists.txt 2362 2008-02-29 04:30:11Z edmanm $
+##  $Id$
 ## 
 ##  This file is part of Vidalia, and is subject to the license terms in the
 ##  LICENSE file, found in the top level directory of this distribution. If 
