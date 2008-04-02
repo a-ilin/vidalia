@@ -26,5 +26,9 @@
 
 #cmakedefine SIZEOF_INT @SIZEOF_INT@
 
+#cmakedefine HAVE_MINIUPNPC_H
+
+#cmakedefine USE_MINIUPNPC
+
 #endif
 

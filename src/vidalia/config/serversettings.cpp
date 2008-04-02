@@ -17,10 +17,14 @@
 #include <QHostInfo>
 #include <net.h>
 #include <stringutil.h>
+#include <config.h>
 
 #include "serversettings.h"
 #include "torsettings.h"
+
+#ifdef USE_MINIUPNPC
 #include "upnpcontrol.h"
+#endif
 
 /** Define the set of characters that are valid in a nickname. */
 #define VALID_NICKNAME_CHARS \
@@ -163,8 +167,10 @@ ServerSettings::apply(QString *errmsg)
 void
 ServerSettings::configurePortForwarding()
 {
+#ifdef USE_MINIUPNPC
   UPNPControl *pUNPControl = UPNPControl::Instance();
   pUNPControl->forwardPort(getORPort());
+#endif
 }
 
 /** Virtual method called when we retrieve a server-related setting from Tor.
