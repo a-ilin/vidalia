@@ -33,7 +33,8 @@ Contributors:
 
   Steven J. Murdoch <http://www.cl.cam.ac.uk/users/sjm217/> wrote the code
   to launch a web browser when Tor has built a circuit and close Vidalia when
-  the browser has exited.
+  the browser has exited. He also implemented UPnP support using the MiniUPNPc
+  library.
 
   Brandon Nase <http://www.students.dsu.edu/naseb/> designed and built 
   the Vidalia-Project website.

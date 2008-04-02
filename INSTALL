@@ -206,3 +206,8 @@ CMake also supports other generators besides Makefiles on certain platforms. See
 'cmake --help' or 'man cmake' (on non-Windows platforms) for more information
 about supported generators and configuration options.
 
+Including UPnP support
+----------------------
+
+cmake -G "MSYS Makefiles" -DMINIUPNPC_LIBRARY_DIR="/usr/local/lib" -DMINIUPNPC_INCLUDE_DIR="/usr/local/include" .
+

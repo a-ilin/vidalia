@@ -91,6 +91,9 @@ protected:
 private:
   /** Returns Tor-recognizable configuration keys and current values. */
   QHash<QString,QString> confValues();
+
+  /** Configure UPnP device to forward DirPort and ORPort */
+  void configurePortForwarding();
 };
 
 #endif

@@ -20,6 +20,7 @@
 
 #include "serversettings.h"
 #include "torsettings.h"
+#include "upnpcontrol.h"
 
 /** Define the set of characters that are valid in a nickname. */
 #define VALID_NICKNAME_CHARS \
@@ -130,6 +131,9 @@ ServerSettings::apply(QString *errmsg)
   bool rc;
 
   if (isServerEnabled()) {
+    /* Configure UPnP device to forward DirPort and OrPort */
+    /* TODO: does isServerEnabled() return true when a server is just set up? */
+    configurePortForwarding();
     rc = torControl()->setConf(confValues(), errmsg);
   } else { 
     QStringList resetKeys;
@@ -150,6 +154,17 @@ ServerSettings::apply(QString *errmsg)
     rc = torControl()->resetConf(resetKeys, errmsg);
   }
   return rc;
+}
+
+/* TODO: We should call this periodically, in case the router gets rebooted or forgets its UPnP settings */
+/* TODO: Remove port forwarding when Tor is shutdown or the ORPort changes */
+/* TODO: init_upnp() will block for up to 2 seconds. We should fire off a thread */
+/** Configure UPnP device to forward DirPort and ORPort */
+void
+ServerSettings::configurePortForwarding()
+{
+  UPNPControl *pUNPControl = UPNPControl::Instance();
+  pUNPControl->forwardPort(getORPort());
 }
 
 /** Virtual method called when we retrieve a server-related setting from Tor.

@@ -16,6 +16,7 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${CMAKE_CURRENT_SOURCE_DIR}/config
   ${CMAKE_CURRENT_SOURCE_DIR}/help/browser
+  ${MINIUPNPC_INCLUDE_DIR}
 )
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/res/vidalia_win.rc.in
@@ -61,6 +62,7 @@ set(vidalia_SRCS ${vidalia_SRCS}
   config/portvalidator.cpp
   config/serverpage.cpp
   config/serversettings.cpp
+  config/upnpcontrol.cpp
   config/torsettings.cpp
   config/vidaliasettings.cpp
   config/vsettings.cpp
@@ -80,6 +82,7 @@ qt4_wrap_cpp(vidalia_SRCS
   config/portvalidator.h
   config/serverpage.h
   config/serversettings.h
+  config/upnpcontrol.h
   config/torsettings.h
   config/vidaliasettings.h
   config/vsettings.h
@@ -234,9 +237,16 @@ else(APPLE)
 endif(APPLE)
 add_dependencies(${vidalia_BIN} translations)
 
+## Link in miniupnpc
+find_library(MINIUPNPC
+    NAMES miniupnpc
+    PATHS ${MINIUPNPC_LIBRARY_DIR}
+)
+
 ## Link to the Qt libraries and other libraries built as a part of Vidalia
 target_link_libraries(${vidalia_BIN}
   ${QT_LIBRARIES}
+  ${MINIUPNPC}
   torcontrol
   util
 )
