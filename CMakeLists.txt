@@ -45,6 +45,10 @@ endif(MSVC_IDE)
 ## Define Vidalia-specific CMake options
 if (APPLE)
   option(OSX_FAT_BINARY "Build Vidalia as a Universal binary." OFF)
+  if (OSX_FAT_BINARY)
+    set(CMAKE_OSX_ARCHITECTURES "ppc;i386" 
+        CACHE STRING "OS X build architectures" FORCE)
+  endif(OSX_FAT_BINARY)
 endif(APPLE)
 
 ## Check for QSslSocket
