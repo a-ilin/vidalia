@@ -90,10 +90,17 @@
        <item>
         <layout class="QHBoxLayout" >
          <item>
-          <widget class="QLineEdit" name="lineProxyExecutable" />
+          <widget class="QLineEdit" name="lineProxyExecutable" >
+           <property name="enabled" >
+            <bool>false</bool>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="QPushButton" name="btnBrowseProxyExecutable" >
+           <property name="enabled" >
+            <bool>false</bool>
+           </property>
            <property name="text" >
             <string>Browse</string>
            </property>
@@ -104,7 +111,10 @@
        <item>
         <layout class="QHBoxLayout" >
          <item>
-          <widget class="QLabel" name="lblProxyArguments" >
+          <widget class="QLabel" name="lblProxyExecutableArguments" >
+           <property name="enabled" >
+            <bool>false</bool>
+           </property>
            <property name="text" >
             <string>Command Line Arguments:</string>
            </property>
@@ -113,12 +123,16 @@
         </layout>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineProxyExecutableArguments" />
+        <widget class="QLineEdit" name="lineProxyExecutableArguments" >
+         <property name="enabled" >
+          <bool>false</bool>
+         </property>
+        </widget>
        </item>
        <item>
         <widget class="QCheckBox" name="chkRunProxyAtVidaliaStartup" >
          <property name="text" >
-          <string>Start my proxy application when Vidalia starts</string>
+          <string>Start a proxy application when Vidalia starts</string>
          </property>
         </widget>
        </item>
@@ -143,5 +157,70 @@
  <resources>
   <include location="../res/vidalia_common.qrc" />
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>chkRunProxyAtVidaliaStartup</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>btnBrowseProxyExecutable</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>253</x>
+     <y>310</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>432</x>
+     <y>216</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkRunProxyAtVidaliaStartup</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lineProxyExecutable</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>253</x>
+     <y>310</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>207</x>
+     <y>217</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkRunProxyAtVidaliaStartup</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lineProxyExecutableArguments</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>253</x>
+     <y>310</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>253</x>
+     <y>279</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkRunProxyAtVidaliaStartup</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lblProxyExecutableArguments</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel" >
+     <x>253</x>
+     <y>310</y>
+    </hint>
+    <hint type="destinationlabel" >
+     <x>253</x>
+     <y>248</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
