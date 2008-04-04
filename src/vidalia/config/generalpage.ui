@@ -5,8 +5,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>499</width>
-    <height>312</height>
+    <width>496</width>
+    <height>347</height>
    </rect>
   </property>
   <property name="contextMenuPolicy" >
@@ -80,7 +80,7 @@
      <property name="minimumSize" >
       <size>
        <width>0</width>
-       <height>125</height>
+       <height>167</height>
       </size>
      </property>
      <property name="title" >
@@ -102,14 +102,28 @@
         </layout>
        </item>
        <item>
-        <widget class="QCheckBox" name="chkRunProxyAtTorStartup" >
+        <layout class="QHBoxLayout" >
+         <item>
+          <widget class="QLabel" name="lblProxyArguments" >
+           <property name="text" >
+            <string>Command Line Arguments:</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="lineProxyExecutableArguments" />
+       </item>
+       <item>
+        <widget class="QCheckBox" name="chkRunProxyAtVidaliaStartup" >
          <property name="text" >
-          <string>Start my proxy application when Tor starts</string>
+          <string>Start my proxy application when Vidalia starts</string>
          </property>
         </widget>
        </item>
       </layout>
-    </widget>
+     </widget>
    </item>
    <item>
     <spacer>
