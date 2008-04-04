@@ -34,7 +34,7 @@ GeneralPage::GeneralPage(QWidget *parent)
 
   /* Hide platform specific features */
 #ifndef Q_WS_WIN
-  ui.chkRunWithSys->setVisible(false);
+  ui.chkRunVidaliaAtSystemStartup->setVisible(false);
 #endif
 }
 
@@ -77,8 +77,9 @@ GeneralPage::save(QString &errmsg)
     return false;
   }
   _torSettings->setExecutable(torExecutable);
-  _vidaliaSettings->setRunTorAtStart(ui.chkRunTor->isChecked());
-  _vidaliaSettings->setRunVidaliaOnBoot(ui.chkRunWithSys->isChecked());
+  _vidaliaSettings->setRunTorAtStart(ui.chkRunTorAtVidaliaStartup->isChecked());
+  _vidaliaSettings->setRunVidaliaOnBoot(
+    ui.chkRunVidaliaAtSystemStartup->isChecked());
   return true;
 }
 
@@ -87,7 +88,8 @@ void
 GeneralPage::load()
 {
   ui.lineTorExecutable->setText(_torSettings->getExecutable());
-  ui.chkRunTor->setChecked(_vidaliaSettings->runTorAtStart());
-  ui.chkRunWithSys->setChecked(_vidaliaSettings->runVidaliaOnBoot());
+  ui.chkRunTorAtVidaliaStartup->setChecked(_vidaliaSettings->runTorAtStart());
+  ui.chkRunVidaliaAtSystemStartup->setChecked(
+    _vidaliaSettings->runVidaliaOnBoot());
 }
 

@@ -1,27 +1,40 @@
 <ui version="4.0" >
- <author></author>
- <comment></comment>
- <exportmacro></exportmacro>
  <class>GeneralPage</class>
  <widget class="QWidget" name="GeneralPage" >
   <property name="geometry" >
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>507</width>
-    <height>543</height>
+    <width>499</width>
+    <height>312</height>
    </rect>
   </property>
   <property name="contextMenuPolicy" >
    <enum>Qt::NoContextMenu</enum>
   </property>
   <layout class="QVBoxLayout" >
-   <property name="margin" >
-    <number>9</number>
-   </property>
    <property name="spacing" >
     <number>6</number>
    </property>
+   <property name="leftMargin" >
+    <number>9</number>
+   </property>
+   <property name="topMargin" >
+    <number>9</number>
+   </property>
+   <property name="rightMargin" >
+    <number>9</number>
+   </property>
+   <property name="bottomMargin" >
+    <number>9</number>
+   </property>
+   <item>
+    <widget class="QCheckBox" name="chkRunVidaliaAtSystemStartup" >
+     <property name="text" >
+      <string>Run Vidalia when my system starts</string>
+     </property>
+    </widget>
+   </item>
    <item>
     <widget class="QGroupBox" name="grpTorLocation" >
      <property name="minimumSize" >
@@ -37,110 +50,89 @@
       <string>Tor Executable</string>
      </property>
      <layout class="QHBoxLayout" >
-      <property name="margin" >
-       <number>9</number>
-      </property>
       <property name="spacing" >
        <number>6</number>
       </property>
+      <property name="leftMargin" >
+       <number>9</number>
+      </property>
+      <property name="topMargin" >
+       <number>9</number>
+      </property>
+      <property name="rightMargin" >
+       <number>9</number>
+      </property>
+      <property name="bottomMargin" >
+       <number>9</number>
+      </property>
       <item>
-       <widget class="QLineEdit" name="lineTorExecutable" >
-        <property name="enabled" >
-         <bool>true</bool>
-        </property>
-        <property name="minimumSize" >
-         <size>
-          <width>160</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="cursor" >
-         <cursor>4</cursor>
-        </property>
-        <property name="contextMenuPolicy" >
-         <enum>Qt::NoContextMenu</enum>
-        </property>
-        <property name="toolTip" >
-         <string>Path to Tor's executable</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QPushButton" name="btnBrowseTorExecutable" >
-        <property name="enabled" >
-         <bool>true</bool>
-        </property>
-        <property name="minimumSize" >
-         <size>
-          <width>0</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="contextMenuPolicy" >
-         <enum>Qt::NoContextMenu</enum>
-        </property>
-        <property name="toolTip" >
-         <string>Select path to Tor executable</string>
-        </property>
-        <property name="text" >
-         <string>Browse</string>
-        </property>
-       </widget>
+       <layout class="QVBoxLayout" >
+        <item>
+         <layout class="QHBoxLayout" >
+          <item>
+           <widget class="QLineEdit" name="lineTorExecutable" />
+          </item>
+          <item>
+           <widget class="QPushButton" name="btnBrowseTorExecutable" >
+            <property name="text" >
+             <string>Browse</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="chkRunTorAtVidaliaStartup" >
+          <property name="text" >
+           <string>Start Tor when Vidalia starts</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </item>
      </layout>
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="grpStartup" >
+    <widget class="QGroupBox" name="grpProxyExecutable" >
+     <property name="sizePolicy" >
+      <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
      <property name="minimumSize" >
       <size>
        <width>0</width>
-       <height>0</height>
+       <height>125</height>
       </size>
      </property>
-     <property name="contextMenuPolicy" >
-      <enum>Qt::NoContextMenu</enum>
-     </property>
      <property name="title" >
-      <string>Startup Options</string>
+      <string>Proxy Executable (optional)</string>
      </property>
-     <layout class="QVBoxLayout" >
-      <property name="margin" >
-       <number>9</number>
-      </property>
-      <property name="spacing" >
-       <number>6</number>
-      </property>
-      <item>
-       <widget class="QCheckBox" name="chkRunWithSys" >
-        <property name="contextMenuPolicy" >
-         <enum>Qt::NoContextMenu</enum>
-        </property>
-        <property name="toolTip" >
-         <string>Select to start Vidalia on system boot</string>
-        </property>
-        <property name="text" >
-         <string>Run Vidalia on system startup</string>
-        </property>
-        <property name="checked" >
-         <bool>true</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="chkRunTor" >
-        <property name="contextMenuPolicy" >
-         <enum>Qt::NoContextMenu</enum>
-        </property>
-        <property name="toolTip" >
-         <string>Set to start Tor when you launch Vidalia</string>
-        </property>
-        <property name="text" >
-         <string>Start Tor when Vidalia starts</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+      <layout class="QVBoxLayout" >
+       <item>
+        <layout class="QHBoxLayout" >
+         <item>
+          <widget class="QLineEdit" name="lineProxyExecutable" />
+         </item>
+         <item>
+          <widget class="QPushButton" name="btnBrowseProxyExecutable" >
+           <property name="text" >
+            <string>Browse</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="chkRunProxyAtTorStartup" >
+         <property name="text" >
+          <string>Start my proxy application when Tor starts</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
     </widget>
    </item>
    <item>
@@ -151,14 +143,15 @@
      <property name="sizeHint" >
       <size>
        <width>20</width>
-       <height>309</height>
+       <height>40</height>
       </size>
      </property>
     </spacer>
    </item>
   </layout>
  </widget>
- <pixmapfunction></pixmapfunction>
- <resources/>
+ <resources>
+  <include location="../res/vidalia_common.qrc" />
+ </resources>
  <connections/>
 </ui>
