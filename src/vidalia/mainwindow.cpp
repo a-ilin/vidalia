@@ -213,7 +213,8 @@ MainWindow::running()
   }
 
   /* Start the proxy server, if configured */
-  startProxy();
+  if (settings.runProxyAtStart())
+    startProxy();
 }
 
 /** Terminate the Tor process if it is being run under Vidalia, disconnect all
@@ -437,9 +438,7 @@ void MainWindow::startProxy()
 {
   VidaliaSettings settings;
   QString executable = settings.getProxyExecutable();
-  
-  if (!executable.isEmpty())
-    _proxyProcess->start(executable, settings.getProxyExecutableArguments());
+  _proxyProcess->start(executable, settings.getProxyExecutableArguments());
 }
 
 /** Called when the proxy server fails to start, for example, because
