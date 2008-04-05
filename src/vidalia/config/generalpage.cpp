@@ -14,6 +14,7 @@
 ** \brief General Tor and Vidalia configuration options
 */
 
+#include <stringutil.h>
 #include "generalpage.h"
 
 
@@ -30,7 +31,9 @@ GeneralPage::GeneralPage(QWidget *parent)
   
   /* Bind event to actions */
   connect(ui.btnBrowseTorExecutable, SIGNAL(clicked()), 
-          this, SLOT(browseTorPath()));
+          this, SLOT(browseTorExecutable()));
+  connect(ui.btnBrowseProxyExecutable, SIGNAL(clicked()), 
+          this, SLOT(browseProxyExecutable()));
 
   /* Hide platform specific features */
 #ifndef Q_WS_WIN
@@ -45,9 +48,12 @@ GeneralPage::~GeneralPage()
   delete _torSettings;
 }
 
-/* Open a QFileDialog to browse for Tor executable */
-void
-GeneralPage::browseTorPath()
+/** Displays a file dialog allowing the user to browse for an executable
+ * file. <b>caption</b> will be displayed in the dialog's title bar and
+ * <b>file</b>, if specified, is the default file selected in the dialog.
+ */
+QString
+GeneralPage::browseExecutable(const QString &caption, const QString &file)
 {
 #if defined(Q_OS_WIN32)
   QString filter = tr("Executables (*.exe)");
@@ -55,19 +61,32 @@ GeneralPage::browseTorPath()
   QString filter = "";
 #endif
  
-  /* Prompt the user for an executable file. If we're on windows, filter for
-   * only .exe files. */
-  QString filename = QDir::convertSeparators(
-                          QFileDialog::getOpenFileName(this,
-                              tr("Select Path to Tor"), 
-                              ui.lineTorExecutable->text(),
-                              filter));
-  if (!filename.isEmpty()) {
-    ui.lineTorExecutable->setText(filename);
-  }
+  QString filePath = QFileDialog::getOpenFileName(this, caption, file, filter);
+  return QDir::convertSeparators(filePath);
 }
 
-/* Saves all settings for this page */
+/** Open a QFileDialog to browse for a Tor executable file. */
+void
+GeneralPage::browseTorExecutable()
+{
+  QString filePath = browseExecutable(tr("Select Path to Tor"),
+                                      ui.lineTorExecutable->text());
+  if (! filePath.isEmpty())
+    ui.lineTorExecutable->setText(filePath);
+}
+
+/** Open a QFileDialog to browse for a proxy executable file. */
+void
+GeneralPage::browseProxyExecutable()
+{
+  QString filePath = browseExecutable(tr("Select Proxy Executable"),
+                                      ui.lineProxyExecutable->text());
+
+  if (! filePath.isEmpty())
+    ui.lineProxyExecutable->setText(filePath);
+}
+
+/** Saves all settings for this page */
 bool
 GeneralPage::save(QString &errmsg)
 {
@@ -76,20 +95,41 @@ GeneralPage::save(QString &errmsg)
     errmsg = tr("You must specify the name of your Tor executable.");
     return false;
   }
+  if (ui.chkRunProxyAtVidaliaStartup->isChecked()) {
+    bool ok;
+    QStringList proxyArgs = string_parse_arguments(
+                              ui.lineProxyExecutableArguments->text(), &ok);
+    if (! ok) {
+      errmsg = tr("The proxy arguments specified are not properly formatted.");
+      return false;
+    }
+    _vidaliaSettings->setProxyExecutable(ui.lineProxyExecutable->text());
+    _vidaliaSettings->setProxyExecutableArguments(proxyArgs);
+  }
+  
   _torSettings->setExecutable(torExecutable);
   _vidaliaSettings->setRunTorAtStart(ui.chkRunTorAtVidaliaStartup->isChecked());
   _vidaliaSettings->setRunVidaliaOnBoot(
     ui.chkRunVidaliaAtSystemStartup->isChecked());
+  _vidaliaSettings->setRunProxyAtStart(
+    ui.chkRunProxyAtVidaliaStartup->isChecked());
+
   return true;
 }
 
-/* Loads previously saved settings */
+/** Loads previously saved settings */
 void
 GeneralPage::load()
 {
-  ui.lineTorExecutable->setText(_torSettings->getExecutable());
-  ui.chkRunTorAtVidaliaStartup->setChecked(_vidaliaSettings->runTorAtStart());
   ui.chkRunVidaliaAtSystemStartup->setChecked(
     _vidaliaSettings->runVidaliaOnBoot());
+  
+  ui.lineTorExecutable->setText(_torSettings->getExecutable());
+  ui.chkRunTorAtVidaliaStartup->setChecked(_vidaliaSettings->runTorAtStart());
+
+  ui.lineProxyExecutable->setText(_vidaliaSettings->getProxyExecutable());
+  ui.lineProxyExecutableArguments->setText(
+    string_format_arguments(_vidaliaSettings->getProxyExecutableArguments()));
+  ui.chkRunProxyAtVidaliaStartup->setChecked(_vidaliaSettings->runProxyAtStart());
 }
 

@@ -39,13 +39,21 @@ public:
   void load();
 
 private slots:
-  /** Called when the user clicks "Browse" */
-  void browseTorPath();
+  /** Open a QFileDialog to browse for a Tor executable file. */
+  void browseTorExecutable();
+  /** Open a QFileDialog to browse for a proxy executable file. */
+  void browseProxyExecutable();
   
 private:
-  /* A VidaliaSettings object used for saving/loading vidalia settings */
+  /** Displays a file dialog allowing the user to browse for an executable
+   * file. <b>caption</b> will be displayed in the dialog's title bar and <b>
+   * file</b>, if specified, is the default file selected in the dialog. */
+  QString browseExecutable(const QString &caption,
+                           const QString &file = QString());
+
+  /** A VidaliaSettings object used for saving/loading vidalia settings */
   VidaliaSettings *_vidaliaSettings;
-  /* A TorSettings ovject used for saving/loading tor settings */
+  /** A TorSettings ovject used for saving/loading tor settings */
   TorSettings *_torSettings;
   /** Qt Designer generated object */
   Ui::GeneralPage ui;
