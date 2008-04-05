@@ -60,6 +60,15 @@ QString string_unescape(const QString &str, bool *ok = 0);
  * to be parsed, <b>ok</b> is set to false. */
 QHash<QString,QString> string_parse_keyvals(const QString &str, bool *ok = 0);
 
+/** Parses a series of command line arguments from <b>str</b>. If <b>str</b>
+ * was unable to be parse, <b>ok</b> is set to false. */
+QStringList string_parse_arguments(const QString &str, bool *ok = 0);
+
+/** Formats the list of command line arguments in <b>args</b> as a string.
+ * Arguments that contain ' ', '\', or '"' tokens will be escaped and wrapped
+ * in double quotes. */
+QString string_format_arguments(const QStringList &args);
+
 /** Returns true if <b>str</b> is a valid hexademical string. Returns false
  * otherwise. */
 bool string_is_hex(const QString &str);

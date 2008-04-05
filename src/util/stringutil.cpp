@@ -126,13 +126,13 @@ QString
 string_escape(const QString &str)
 {
   QString out;
-  out.append('\"');
+  out.append("\"");
   for (int i = 0; i < str.length(); i++) {
     if (str[i] == '\"' || str[i] == '\\')
       out.append('\\');
     out.append(str[i]);
   }
-  out.append('\"');
+  out.append("\"");
   return out;
 }
 
@@ -220,6 +220,76 @@ error:
   if (ok)
     *ok = false;
   return QHash<QString,QString>();
+}
+
+/** Parses a series of command line arguments from <b>str</b>. If <b>str</b>
+ * was unable to be parse, <b>ok</b> is set to false. */
+QStringList
+string_parse_arguments(const QString &str, bool *ok)
+{
+  QStringList args;
+  int i, len;
+  bool tmp_ok;
+
+  i = 0;
+  len = str.length();
+  while (i < len && str[i].isSpace())
+    i++; /* Skip initial whitespace */
+  while (i < len) {
+    QString arg;
+    
+    if (str[i] == '\"') {
+      /* The value is wrapped in quotes */
+      arg.append(str[i]);
+      while (++i < len) {
+        arg.append(str[i]);
+        if (str[i] == '\\') {
+          if (++i == len)
+            goto error;
+          arg.append(str[i]);
+        } else if (str[i] == '\"') {
+          i++;
+          break;
+        } 
+      }
+      arg = string_unescape(arg, &tmp_ok);
+      if (!tmp_ok)
+        goto error;
+      args << arg;
+    } else {
+      /* The value was not wrapped in quotes */
+      while (i < len && !str[i].isSpace())
+        arg.append(str[i++]);
+      args << arg;
+    }
+    while (i < len && str[i].isSpace())
+      i++;
+  }
+
+  if (ok)
+    *ok = true;
+  return args;
+
+error:
+  if (ok)
+    *ok = false;
+  return QStringList();
+}
+
+/** Formats the list of command line arguments in <b>args</b> as a string.
+ * Arguments that contain ' ', '\', or '"' tokens will be escaped and
+ * wrapped in double quotes. */
+QString
+string_format_arguments(const QStringList &args)
+{
+  QStringList out;
+  foreach (QString arg, args) {
+    if (arg.contains("\"") || arg.contains("\\") || arg.contains(" "))
+      out << string_escape(arg);
+    else 
+      out << arg;
+  }
+  return out.join(" ");
 }
 
 /** Returns true if <b>str</b> is a valid hexademical string. Returns false
