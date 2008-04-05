@@ -6,7 +6,7 @@
     <x>0</x>
     <y>0</y>
     <width>496</width>
-    <height>347</height>
+    <height>288</height>
    </rect>
   </property>
   <property name="contextMenuPolicy" >
@@ -19,7 +19,7 @@
    <item>
     <widget class="QCheckBox" name="chkRunVidaliaAtSystemStartup" >
      <property name="text" >
-      <string>Run Vidalia when my system starts</string>
+      <string>Start Vidalia when my system starts</string>
      </property>
     </widget>
    </item>
@@ -70,6 +70,16 @@
     </widget>
    </item>
    <item>
+    <widget class="QCheckBox" name="chkRunProxyAtVidaliaStartup" >
+     <property name="text" >
+      <string>Start a proxy application when Vidalia starts</string>
+     </property>
+     <property name="checked" >
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QGroupBox" name="grpProxyExecutable" >
      <property name="sizePolicy" >
       <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
@@ -84,7 +94,7 @@
       </size>
      </property>
      <property name="title" >
-      <string>Proxy Executable (optional)</string>
+      <string>Proxy Executable</string>
      </property>
      <layout class="QVBoxLayout" >
       <item>
@@ -92,14 +102,14 @@
         <item>
          <widget class="QLineEdit" name="lineProxyExecutable" >
           <property name="enabled" >
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
          </widget>
         </item>
         <item>
          <widget class="QPushButton" name="btnBrowseProxyExecutable" >
           <property name="enabled" >
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
           <property name="text" >
            <string>Browse</string>
@@ -113,7 +123,7 @@
         <item>
          <widget class="QLabel" name="lblProxyExecutableArguments" >
           <property name="enabled" >
-           <bool>false</bool>
+           <bool>true</bool>
           </property>
           <property name="text" >
            <string>Command Line Arguments:</string>
@@ -125,14 +135,7 @@
       <item>
        <widget class="QLineEdit" name="lineProxyExecutableArguments" >
         <property name="enabled" >
-         <bool>false</bool>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QCheckBox" name="chkRunProxyAtVidaliaStartup" >
-        <property name="text" >
-         <string>Start a proxy application when Vidalia starts</string>
+         <bool>true</bool>
         </property>
        </widget>
       </item>
@@ -161,64 +164,16 @@
   <connection>
    <sender>chkRunProxyAtVidaliaStartup</sender>
    <signal>toggled(bool)</signal>
-   <receiver>btnBrowseProxyExecutable</receiver>
-   <slot>setEnabled(bool)</slot>
+   <receiver>grpProxyExecutable</receiver>
+   <slot>setVisible(bool)</slot>
    <hints>
     <hint type="sourcelabel" >
-     <x>253</x>
-     <y>310</y>
+     <x>247</x>
+     <y>138</y>
     </hint>
     <hint type="destinationlabel" >
-     <x>432</x>
-     <y>216</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>chkRunProxyAtVidaliaStartup</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>lineProxyExecutable</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>253</x>
-     <y>310</y>
-    </hint>
-    <hint type="destinationlabel" >
-     <x>207</x>
-     <y>217</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>chkRunProxyAtVidaliaStartup</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>lineProxyExecutableArguments</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>253</x>
-     <y>310</y>
-    </hint>
-    <hint type="destinationlabel" >
-     <x>253</x>
-     <y>279</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>chkRunProxyAtVidaliaStartup</sender>
-   <signal>toggled(bool)</signal>
-   <receiver>lblProxyExecutableArguments</receiver>
-   <slot>setEnabled(bool)</slot>
-   <hints>
-    <hint type="sourcelabel" >
-     <x>253</x>
-     <y>310</y>
-    </hint>
-    <hint type="destinationlabel" >
-     <x>253</x>
-     <y>248</y>
+     <x>247</x>
+     <y>208</y>
     </hint>
    </hints>
   </connection>
