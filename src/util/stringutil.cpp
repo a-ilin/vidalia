@@ -223,7 +223,7 @@ error:
 }
 
 /** Parses a series of command line arguments from <b>str</b>. If <b>str</b>
- * was unable to be parse, <b>ok</b> is set to false. */
+ * was unable to be parsed, <b>ok</b> is set to false. */
 QStringList
 string_parse_arguments(const QString &str, bool *ok)
 {

@@ -61,7 +61,7 @@ QString string_unescape(const QString &str, bool *ok = 0);
 QHash<QString,QString> string_parse_keyvals(const QString &str, bool *ok = 0);
 
 /** Parses a series of command line arguments from <b>str</b>. If <b>str</b>
- * was unable to be parse, <b>ok</b> is set to false. */
+ * was unable to be parsed, <b>ok</b> is set to false. */
 QStringList string_parse_arguments(const QString &str, bool *ok = 0);
 
 /** Formats the list of command line arguments in <b>args</b> as a string.
