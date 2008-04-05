@@ -68,10 +68,15 @@ public:
    * string. If set to the empty string, the browser will not be started. */
   void setBrowserExecutable(const QString &browserExecutable);
 
+  /** Returns true if Vidalia should start a proxy application when it
+   * starts. */
+  bool runProxyAtStart();
+  /** Set whether to run a proxy application when Vidalia starts. */
+  void setRunProxyAtStart(bool run);
+
   /** Returns a fully-qualified path to the proxy server, including the
    * executable name. */
   QString getProxyExecutable() const;
-
   /** Sets the location and name of the proxy server executable to the given
    * string. If set to the empty string, the proxy will not be started. */
   void setProxyExecutable(const QString &proxyExecutable);
@@ -79,7 +84,6 @@ public:
   /** Returns a list containing additional command line arguments to be
    * passed to ProxyExecutable */
   QStringList getProxyExecutableArguments() const;
-
   /** Sets the additional arguments to be passed to Proxy Executable */
   void setProxyExecutableArguments(const QStringList &proxyExecutableArguments);
 };

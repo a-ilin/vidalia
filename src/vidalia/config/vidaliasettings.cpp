@@ -32,7 +32,8 @@
 #define SETTING_DATA_DIRECTORY      "DataDirectory"
 #define SETTING_SHOW_MAINWINDOW_AT_START  "ShowMainWindowAtStart"
 #define SETTING_BROWSER_EXECUTABLE  "BrowserExecutable"
-#define SETTING_PROXY_EXECUTABLE  "ProxyExecutable"
+#define SETTING_RUN_PROXY_AT_START  "RunProxyAtStart"
+#define SETTING_PROXY_EXECUTABLE    "ProxyExecutable"
 #define SETTING_PROXY_EXECUTABLE_ARGUMENTS  "ProxyExecutableArguments"
 
 #if defined(Q_OS_WIN32)
@@ -65,6 +66,7 @@ VidaliaSettings::VidaliaSettings()
   setDefault(SETTING_RUN_TOR_AT_START, true);
   setDefault(SETTING_SHOW_MAINWINDOW_AT_START, true);
   setDefault(SETTING_BROWSER_EXECUTABLE, "");
+  setDefault(SETTING_RUN_PROXY_AT_START, false);
   setDefault(SETTING_PROXY_EXECUTABLE, "");
   setDefault(SETTING_PROXY_EXECUTABLE_ARGUMENTS, QStringList());
 }
@@ -177,6 +179,21 @@ void
 VidaliaSettings::setBrowserExecutable(const QString &browserExecutable)
 {
   setValue(SETTING_BROWSER_EXECUTABLE, browserExecutable);
+}
+
+/** Returns true if Vidalia should start a proxy application when it
+ * starts. */
+bool
+VidaliaSettings::runProxyAtStart()
+{
+  return value(SETTING_RUN_PROXY_AT_START).toBool();
+}
+
+/** Set whether to run a proxy application when Vidalia starts. */
+void
+VidaliaSettings::setRunProxyAtStart(bool run)
+{
+  setValue(SETTING_RUN_PROXY_AT_START, run);
 }
 
 /** Returns a fully-qualified path to the proxy server, including the
