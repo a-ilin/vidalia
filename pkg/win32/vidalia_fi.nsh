@@ -7,9 +7,9 @@
 
 ; Bundle
 LangString BundleSetupCaption         ${LANG_FINNISH} "${BUNDLE_NAME}n asennus"
-LangString BundleWelcomeText          ${LANG_FINNISH} "Tämä velho auttaa asentaakseen koneelle Tor-ohjelman, Vidalian, Polipon ja Torbuttonin.\r\n\r\nTor on järjestelmä, jolla voi käyttää Internettiä tuntemattosti tekemällä anonyymiseksi sivujen selailun, pikaviestien käytön, IRCin käyttö ja muut. Vidalia on käyttöliittymä ohjaamaan, seuraamaan ja säätäämään Tor-ohjelman toimintaa.\r\n\r\nPolipo suodattava välityspalvelin, joka suojaa yksityisyyttä ja auttaa poistamalla mainoksia, bannereita ja popup-ikkunoita.\r\n\r\nTorbutton on Mozilla Firefoxille lisäosa, jolla voi ottaa käyttöön tai poistaa käytöstä anonyymisen sivujen selailun.\r\n\r\nJos koneelle on jo asennettu Tor, Vidalia tai Polipo kannattaa tarkistaa ettei mikään niistä ole päällä ennen kuin asennusta jatkaa.\r\n\r\n$_CLICK"
+LangString BundleWelcomeText          ${LANG_FINNISH} "Tämä velho auttaa asentamaan koneelle Tor-ohjelman, Vidalian, Polipon ja Torbuttonin.\r\n\r\nTor on järjestelmä, jolla voi käyttää Internettiä tuntemattosti tekemällä anonyymiseksi sivujen selailun, pikaviestien käytön, IRCin käytön ja myös muiden. Vidalia on käyttöliittymä ohjaamaan, seuraamaan ja säätämään Tor-ohjelman toimintaa.\r\n\r\nPolipo suodattava välityspalvelin, joka suojaa yksityisyyttä, poistaa mainoksia, bannereita ja popup-ikkunoita.\r\n\r\nTorbutton on Mozilla Firefoxille lisäosa, jolla voi ottaa käyttöön tai poistaa käytöstä anonyymisen sivujen selailun.\r\n\r\nJos koneelle on jo asennettu Tor, kannattaa tarkistaa ettei ole päällä Vidalia tai Polipo ennen kuin jatkaa asennusta.\r\n\r\n$_CLICK"
 LangString BundleWelcomeTitle         ${LANG_FINNISH} "Tervetuloa ${BUNDLE_NAME}n asennukseen"
-LangString BundleLinkText             ${LANG_FINNISH} "${TOR_NAME}asennusohje"
+LangString BundleLinkText             ${LANG_FINNISH} "${TOR_NAME}-asennusohje"
 LangString BundleFinishText           ${LANG_FINNISH} "Asennus on valmis.\r\nOle hyvä ja tutustu http://tor.eff.org/docs/tor-doc-win32.html -ohjesivuun oppiakseen kuinka voi asettaa ohjelmat käyttämään Tor-ohjelmaa.\r\n\r\nJos Torbutton on asennettu, niin Firefox täytyy käynnistää uudelleen."
 LangString BundleRunNow               ${LANG_FINNISH} "Käynnistä asennetut komponentit nyt"
 
@@ -41,7 +41,7 @@ LangString TorShortcutsDesc           ${LANG_FINNISH} "Lisää ${TOR_NAME} Käynnis
 
 
 ; Polipo
-LangString PolipoGroupDesc           ${LANG_FINNISH} "Polipo suodattava välityspalvelin, joka suojaa yksityisyyttä ja auttaa poistamalla mainoksia, bannereita ja popup-ikkunoita."
+LangString PolipoGroupDesc           ${LANG_FINNISH} "Polipo on suodattava välityspalvelin, joka suojaa yksityisyyttä ja auttaa poistamaan mainoksia, bannereita ja popup-ikkunoita."
 LangString PolipoUninstDesc          ${LANG_FINNISH} "Poista ${POLIPO_DESC}."
 LangString PolipoAppDesc             ${LANG_FINNISH} "Asenna ${POLIPO_DESC}."
 LangString PolipoShortcuts           ${LANG_FINNISH} "Lisää Käynnistä-valikkoon"
