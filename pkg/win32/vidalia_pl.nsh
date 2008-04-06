@@ -6,7 +6,7 @@
 
 ; Bundle
 LangString BundleSetupCaption         ${LANG_POLISH} "Instalator ${BUNDLE_NAME}"
-LangString BundleWelcomeText          ${LANG_POLISH} "Kreator przeprowadzi Ciê przez proces instalacji aplikacji Tor, Vidalia, Privoxy i Torbutton.\r\n\r\nJeœli instalowa³eœ wczeœniej Tor, Vidalia, Privoxy albo Firefox, upewnij siê, ¿e w tej chwili ¿adne z nich nie jest uruchomione.\r\n\r\n$_CLICK"
+LangString BundleWelcomeText          ${LANG_POLISH} "Kreator przeprowadzi Ciê przez proces instalacji aplikacji Tor, Vidalia, Polipo i Torbutton.\r\n\r\nJeœli instalowa³eœ wczeœniej Tor, Vidalia, Polipo albo Firefox, upewnij siê, ¿e w tej chwili ¿adne z nich nie jest uruchomione.\r\n\r\n$_CLICK"
 LangString BundleWelcomeTitle         ${LANG_POLISH} "Witaj w Kreatorze Instalacji ${BUNDLE_NAME}"
 LangString BundleLinkText             ${LANG_POLISH} "Dokumentacja instalacji ${TOR_NAME}"
 LangString BundleFinishText           ${LANG_POLISH} "Instalacja zakoñczona.\r\nZobacz proszê http://tor.eff.org/docs/tor-doc-win32.html aby dowiedzieæ siê jak skonfigurowaæ Twoje aplikacje do wspó³pracy z Torem.\r\n\r\nJeœli zainstalowa³eœ Torbutton, musisz ponownie uruchomiæ Firefox'a."
@@ -36,14 +36,12 @@ LangString TorDocumentationDesc       ${LANG_POLISH} "Instalacja dokumentacji ${
 LangString TorShortcuts               ${LANG_POLISH} "Dodaj do Menu Start"
 LangString TorShortcutsDesc           ${LANG_POLISH} "Dodaj ${TOR_NAME} do Twojego menu Start."
 
-; Privoxy
-LangString PrivoxyGroupDesc           ${LANG_POLISH} "Instalacja ${PRIVOXY_DESC}."
-LangString PrivoxyUninstDesc          ${LANG_POLISH} "Usuniêcie ${PRIVOXY_DESC}."
-LangString PrivoxyAppDesc             ${LANG_POLISH} "Instalacja ${PRIVOXY_DESC}."
-LangString PrivoxyShortcuts           ${LANG_POLISH} "Dodaj do Menu Start"
-LangString PrivoxyShortcutsDesc       ${LANG_POLISH} "Dodaj ${PRIVOXY_NAME} do Twojego menu Start."
-LangString PrivoxyStartup             ${LANG_POLISH} "Uruchom na starcie"
-LangString PrivoxyStartupDesc         ${LANG_POLISH} "Automatycznie uruchamiaj ${PRIVOXY_NAME} na starcie."
+; Polipo
+LangString PolipoGroupDesc           ${LANG_POLISH} "Instalacja ${POLIPO_DESC}."
+LangString PolipoUninstDesc          ${LANG_POLISH} "Usuniêcie ${POLIPO_DESC}."
+LangString PolipoAppDesc             ${LANG_POLISH} "Instalacja ${POLIPO_DESC}."
+LangString PolipoShortcuts           ${LANG_POLISH} "Dodaj do Menu Start"
+LangString PolipoShortcutsDesc       ${LANG_POLISH} "Dodaj ${POLIPO_NAME} do Twojego menu Start."
 
 ; Torbutton
 LangString TorbuttonGroupDesc         ${LANG_POLISH} "Instalacja ${TORBUTTON_DESC}."

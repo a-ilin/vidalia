@@ -6,7 +6,7 @@
 
 ; Bundle
 LangString BundleSetupCaption         ${LANG_CZECH} "${BUNDLE_NAME} nastaveni"
-LangString BundleWelcomeText          ${LANG_CZECH} "Tento dialog vas provede instalaci a nastavenim Privoxy a Torbutton.\r\n\r\nTor je system pro anonymni pouzivani Internetu, pomaha anonymne serfovat a publikovat na Webu, IM a IRC komunikaci a dalsi. Vidalia je GUI ktere ti pomuze kontrolovat, monitorovat a konfigurovat Tor.\r\n\r\nPrivoxy je filtrovaci web proxy ktera chrani tvoje soukromi a pomaha odstranovat reklamu, banery a pop up okna.\r\n\r\nTorbutton je rozsireni pro Firefox umoznujici rychle zapinani nebo vypinani anonym serfovani.\r\n\r\nIf Tor, Vidalia, Privoxy nebo Firefox bezi, pred zahajenim instalace se ujisti, ze nejsou aktivni.\r\n\r\n$_CLICK"
+LangString BundleWelcomeText          ${LANG_CZECH} "Tento dialog vas provede instalaci a nastavenim Polipo a Torbutton.\r\n\r\nTor je system pro anonymni pouzivani Internetu, pomaha anonymne serfovat a publikovat na Webu, IM a IRC komunikaci a dalsi. Vidalia je GUI ktere ti pomuze kontrolovat, monitorovat a konfigurovat Tor.\r\n\r\nPolipo je filtrovaci web proxy ktera chrani tvoje soukromi a pomaha odstranovat reklamu, banery a pop up okna.\r\n\r\nTorbutton je rozsireni pro Firefox umoznujici rychle zapinani nebo vypinani anonym serfovani.\r\n\r\nIf Tor, Vidalia, Polipo nebo Firefox bezi, pred zahajenim instalace se ujisti, ze nejsou aktivni.\r\n\r\n$_CLICK"
 LangString BundleWelcomeTitle         ${LANG_CZECH} "Vitejte v  ${BUNDLE_NAME} Pruvodce nastavenim"
 LangString BundleLinkText             ${LANG_CZECH} "${TOR_NAME} instalacni dokumentace"
 LangString BundleFinishText           ${LANG_CZECH} "Instalace je kompletni.\r\nPodivejte se na http://tor.eff.org/docs/tor-doc-win32.html jak konfigurovat aplikace pro pouziti s Tor.\r\n\r\nIf Torbutton isntalovan, je potreba restartovat Firefox."
@@ -36,14 +36,12 @@ LangString TorDocumentationDesc       ${LANG_CZECH} "Instalovat ${TOR_NAME} doku
 LangString TorShortcuts               ${LANG_CZECH} "Vlozit do menu Start"
 LangString TorShortcutsDesc           ${LANG_CZECH} "Vlozit ${TOR_NAME} do nabidky Start."
 
-; Privoxy
-LangString PrivoxyGroupDesc           ${LANG_CZECH} "Privoxy je filtrovaci web proxy chranici vase soukromi. Pomaha odstranovat reklamu, banery a  pop up okna."
-LangString PrivoxyUninstDesc          ${LANG_CZECH} "Odstranit ${PRIVOXY_DESC}."
-LangString PrivoxyAppDesc             ${LANG_CZECH} "Instalovat ${PRIVOXY_DESC}."
-LangString PrivoxyShortcuts           ${LANG_CZECH} "Vlozit do nabidky start"
-LangString PrivoxyShortcutsDesc       ${LANG_CZECH} "Vlozit ${PRIVOXY_NAME} do nabidky Start."
-LangString PrivoxyStartup             ${LANG_CZECH} "Spust pri startu"
-LangString PrivoxyStartupDesc         ${LANG_CZECH} "Automaticky spustit ${PRIVOXY_NAME} pri startu."
+; Polipo
+LangString PolipoGroupDesc           ${LANG_CZECH} "Polipo je filtrovaci web proxy chranici vase soukromi. Pomaha odstranovat reklamu, banery a  pop up okna."
+LangString PolipoUninstDesc          ${LANG_CZECH} "Odstranit ${POLIPO_DESC}."
+LangString PolipoAppDesc             ${LANG_CZECH} "Instalovat ${POLIPO_DESC}."
+LangString PolipoShortcuts           ${LANG_CZECH} "Vlozit do nabidky start"
+LangString PolipoShortcutsDesc       ${LANG_CZECH} "Vlozit ${POLIPO_NAME} do nabidky Start."
 
 ; Torbutton
 LangString TorbuttonGroupDesc         ${LANG_CZECH} "Torbutton je rozsireni pro Firefox umoznujici rychle zapnuti nebo vypnuti anonymniho serfovani."

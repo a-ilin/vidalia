@@ -6,7 +6,7 @@
 
 ; Bundle
 LangString BundleSetupCaption         ${LANG_SWEDISH} "Installera ${BUNDLE_NAME}"
-LangString BundleWelcomeText          ${LANG_SWEDISH} "Denna guide tar dig igenom installationen av Tor, Vidalia, Privoxy och Torbutton.\r\n\r\nTor är ett program för att vara anonym på Internet och gör det möjligt att anonymt surfa och publicera information, skicka snabbmeddelanden, använda IRC, och mycket annat. Vidalia är ett användargränssnitt till Tor som gör det enkelt att hantera, övervaka och konfigurera Tor.\r\n\r\nPrivoxy är en filtrerande webbproxy som tar bort reklam, bannrar och pop-ups.\r\n\r\nTorbutton är ett tillägg till Firefox som gör det möjligt att snabbt aktivera eller inaktivera anonym surfning.\r\n\r\nOm du tidigare har installerat Tor, Vidalia, Privoxy eller Firefox, vänligen försäkra dig om att de inte är igång innan du fortsätter installationen.\r\n\r\n$_CLICK"
+LangString BundleWelcomeText          ${LANG_SWEDISH} "Denna guide tar dig igenom installationen av Tor, Vidalia, Polipo och Torbutton.\r\n\r\nTor är ett program för att vara anonym på Internet och gör det möjligt att anonymt surfa och publicera information, skicka snabbmeddelanden, använda IRC, och mycket annat. Vidalia är ett användargränssnitt till Tor som gör det enkelt att hantera, övervaka och konfigurera Tor.\r\n\r\nPolipo är en filtrerande webbproxy som tar bort reklam, bannrar och pop-ups.\r\n\r\nTorbutton är ett tillägg till Firefox som gör det möjligt att snabbt aktivera eller inaktivera anonym surfning.\r\n\r\nOm du tidigare har installerat Tor, Vidalia, Polipo eller Firefox, vänligen försäkra dig om att de inte är igång innan du fortsätter installationen.\r\n\r\n$_CLICK"
 LangString BundleWelcomeTitle         ${LANG_SWEDISH} "Välkommen till installationsguiden för ${BUNDLE_NAME}"
 LangString BundleLinkText             ${LANG_SWEDISH} "Installeringsdokumentation för ${TOR_NAME}"
 LangString BundleFinishText           ${LANG_SWEDISH} "Installationen är klar.\r\nVänligen se http://tor.eff.org/docs/tor-doc-win32.html för information om hur du använder Tor med dina existerande program.\r\n\r\nOm du valde att installera Torbutton, måste du starta om Firefox."
@@ -36,14 +36,12 @@ LangString TorDocumentationDesc       ${LANG_SWEDISH} "Installera dokumentatione
 LangString TorShortcuts               ${LANG_SWEDISH} "Lägg till i startmenyn"
 LangString TorShortcutsDesc           ${LANG_SWEDISH} "Lägg till ${TOR_NAME} i din startmeny."
 
-; Privoxy
-LangString PrivoxyGroupDesc           ${LANG_SWEDISH} "Privoxy är en filtrerande webbproxy som tar bort reklam, bannrar och pop-ups."
-LangString PrivoxyUninstDesc          ${LANG_SWEDISH} "Ta bort ${PRIVOXY_DESC}."
-LangString PrivoxyAppDesc             ${LANG_SWEDISH} "Installera ${PRIVOXY_DESC}."
-LangString PrivoxyShortcuts           ${LANG_SWEDISH} "Lägg till i startmenyn"
-LangString PrivoxyShortcutsDesc       ${LANG_SWEDISH} "Lägg till ${PRIVOXY_NAME} i din startmeny."
-LangString PrivoxyStartup             ${LANG_SWEDISH} "Kör igång vid uppstart"
-LangString PrivoxyStartupDesc         ${LANG_SWEDISH} "Kör automatiskt igång ${PRIVOXY_NAME} vid uppstart."
+; Polipo
+LangString PolipoGroupDesc           ${LANG_SWEDISH} "Polipo är en filtrerande webbproxy som tar bort reklam, bannrar och pop-ups."
+LangString PolipoUninstDesc          ${LANG_SWEDISH} "Ta bort ${POLIPO_DESC}."
+LangString PolipoAppDesc             ${LANG_SWEDISH} "Installera ${POLIPO_DESC}."
+LangString PolipoShortcuts           ${LANG_SWEDISH} "Lägg till i startmenyn"
+LangString PolipoShortcutsDesc       ${LANG_SWEDISH} "Lägg till ${POLIPO_NAME} i din startmeny."
 
 ; Torbutton
 LangString TorbuttonGroupDesc         ${LANG_SWEDISH} "Torbutton är ett tillägg till Firefox som gör det möjligt att snabbt aktivera eller inaktivera anonym surfning."

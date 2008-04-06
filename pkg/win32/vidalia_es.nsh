@@ -6,7 +6,7 @@
 
 ; Bundle
 LangString BundleSetupCaption         ${LANG_SPANISH} "Instalación de ${BUNDLE_NAME}"
-LangString BundleWelcomeText          ${LANG_SPANISH} "Este procedimiento le guiara a través de la instalación de Tor, Vidalia, Privoxy, y Torbutton.\r\n\r\nSi ha instalado previamente Tor, Vidalia, Privoxy, o Firefox, por favor asegúrese que no se estén ejecutando antes de continuar esta instalación.\r\n\r\n$_CLICK"
+LangString BundleWelcomeText          ${LANG_SPANISH} "Este procedimiento le guiara a través de la instalación de Tor, Vidalia, Polipo, y Torbutton.\r\n\r\nSi ha instalado previamente Tor, Vidalia, Polipo, o Firefox, por favor asegúrese que no se estén ejecutando antes de continuar esta instalación.\r\n\r\n$_CLICK"
 LangString BundleWelcomeTitle         ${LANG_SPANISH} "Bienvenido al procedimiento de instalación de ${BUNDLE_NAME}"
 LangString BundleLinkText             ${LANG_SPANISH} "documentación de instalación de ${TOR_NAME}"
 LangString BundleFinishText           ${LANG_SPANISH} "La instalación ha finalizado.\r\nPor favor vea http://tor.eff.org/docs/tor-doc-win32.html para aprender como configurar sus aplicaciones para que usen Tor.\r\n\r\nSi instalo Torbutton, necesitara reiniciar Firefox."
@@ -36,14 +36,12 @@ LangString TorDocumentationDesc       ${LANG_SPANISH} "Instalar la documentación
 LangString TorShortcuts               ${LANG_SPANISH} "Agregar al Menu Inicio"
 LangString TorShortcutsDesc           ${LANG_SPANISH} "Agregar ${TOR_NAME} a su Menu Inicio."
 
-; Privoxy
-LangString PrivoxyGroupDesc           ${LANG_SPANISH} "Instalar ${PRIVOXY_DESC}."
-LangString PrivoxyUninstDesc          ${LANG_SPANISH} "Remove ${PRIVOXY_DESC}."
-LangString PrivoxyAppDesc             ${LANG_SPANISH} "Instalar ${PRIVOXY_DESC}."
-LangString PrivoxyShortcuts           ${LANG_SPANISH} "Añadir al Menu Inicio"
-LangString PrivoxyShortcutsDesc       ${LANG_SPANISH} "Agregar ${PRIVOXY_NAME} a su Menu Inicio."
-LangString PrivoxyStartup             ${LANG_SPANISH} "Ejecutar al iniciar sesión."
-LangString PrivoxyStartupDesc         ${LANG_SPANISH} "Automaticamente ejecutar ${PRIVOXY_NAME} al iniciar sesión."
+; Polipo
+LangString PolipoGroupDesc           ${LANG_SPANISH} "Instalar ${POLIPO_DESC}."
+LangString PolipoUninstDesc          ${LANG_SPANISH} "Remove ${POLIPO_DESC}."
+LangString PolipoAppDesc             ${LANG_SPANISH} "Instalar ${POLIPO_DESC}."
+LangString PolipoShortcuts           ${LANG_SPANISH} "Añadir al Menu Inicio"
+LangString PolipoShortcutsDesc       ${LANG_SPANISH} "Agregar ${POLIPO_NAME} a su Menu Inicio."
 
 ; Torbutton
 LangString TorbuttonGroupDesc         ${LANG_SPANISH} "Instalar ${TORBUTTON_DESC}."
