@@ -25,10 +25,10 @@ Tyypillisin syy, että Vidalia ei onnistu käynnistämään Tor-ohjelmaa johtuu 
 <a href="config.html#general">yleisistä-asetuksista</a>.
 </p>
 <p>
-Seuraava mahdollinen selitys on että Tor on jo päällä. Tarkista päällä olevien ohjelmien listaa ja pysäytä päällä oleva Tor, jos löytyy. Sen jälkeen kannattaa yrittää uudelleen.
+Seuraava mahdollinen selitys on että Tor-ohjelma on jo päällä. Tarkista päällä olevien ohjelmien listaa ja pysäytä päällä oleva Tor-ohjelma, jos löytyy. Sen jälkeen kannattaa yrittää uudelleen.
 </p>
 <p>
-Jos ei tuosta ollut tarpeeksi apua, niin <a href="log.html">tapahtumaloki</a> kannattaa tarkistaa, sillä Tor on voinut kirjata tietoja käynnistymisessä kohdatuista virheistään.
+Jos ei tuosta ollut tarpeeksi apua, niin <a href="log.html">tapahtumaloki</a> kannattaa tarkistaa, sillä Tor-ohjelma on voinut kirjata tietoja käynnistymisessä kohdatuista virheistään.
 </p>
 
 <a name="connect"/>
@@ -37,16 +37,16 @@ Jos ei tuosta ollut tarpeeksi apua, niin <a href="log.html">tapahtumaloki</a> ka
 Vidalia käyttää Tor-ohjelmaa Tor-<i>ohjausportin</i> välityksellä. 
 </p>
 <p>
-Yleisin syy miksi Vidalia ei onnistu yhdistämään Tor-ohjelmaan on, koska Tor on jo päällä ja on kohdannut virheen ja välittömästi lopettanut. Sitten kannattaa tarkistaa <a href="log.html">tapahtumaloki</a>, sillä Tor on voinut kirjata tietoja käynnistymisessä kohdatuista virheistään.
+Yleisin syy miksi Vidalia ei onnistu yhdistämään Tor-ohjelmaan on, koska Tor-ohjelma on jo päällä ja on kohdannut virheen ja välittömästi lopettanut. Sitten kannattaa tarkistaa <a href="log.html">tapahtumaloki</a>, sillä Tor-ohjelma on voinut kirjata tietoja käynnistymisessä kohdatuista virheistään.
 </p>
 <p>
-Jos Tor kuuntelee toista porttia kuin Vidalia kuvittelee, niin Vidalia ei pysty muodostaa yhteyttä Tor-ohjelmaan. Tätä asetusta harvoin tarvitsee muuttaa, mutta jos jokin muu tietokoneella oleva palvelu  tuottaa häiriöitä, niin portti täytyy muuttaa. Sen muuttaminen onnistuu Vidalian  <a href="config.html#advanced">lisäasetuksista</a>.
+Jos Tor-ohjelma kuuntelee toista porttia kuin Vidalia kuvittelee, niin Vidalia ei pysty muodostaa yhteyttä Tor-ohjelmaan. Tätä asetusta harvoin tarvitsee muuttaa, mutta jos jokin muu tietokoneella oleva palvelu  tuottaa häiriöitä, niin portti täytyy muuttaa. Sen muuttaminen onnistuu Vidalian  <a href="config.html#advanced">lisäasetuksista</a>.
 </p>
 
 <a name="torexited"/> 
 <h3>Tor lopetti yllättäen</h3> 
 <p> 
-Jos Tor lopettaa yllättäen, kun sitä yritetään käynnistää, niin kenties Tor on jo päällä. Sitten kannattaa tarkistaa <a href="log.html">tapahtumaloki</a>, jos se sisältää viimeisenä keltaisella korostettuja viestejä ja ovatko ne seuraavan kaltaisia:
+Jos Tor-ohjelma lopettaa yllättäen, kun sitä yritetään käynnistää, niin kenties Tor-ohjelma on jo päällä. Sitten kannattaa tarkistaa <a href="log.html">tapahtumaloki</a>, jos se sisältää viimeisenä keltaisella korostettuja viestejä ja ovatko ne seuraavan kaltaisia:
 </p>
 <pre>
 connection_create_listener(): Could not bind to 127.0.0.1:9050: Address already in use. 
@@ -56,13 +56,13 @@ Is Tor already running?
 Jos tulee yllä mainitun kaltainen viesti, niin kannattaa sulkea muut päällä olevat Tor-ohjelmat ennen kuin yrittää käynnistää uuden Tor-ohjelman Vidalialla. Windowssissa <i>tor.exe</i>-niminen tiedosto pitäisi löytyä Tehtävienhallinnasta (engl. Task Manager). Useimmissa käyttöjärjestelmissä <i>ps</i>-komennolla on mahdollista löytää päällä olevat Tor-ohjelmat.
 </p>
 <p>
-Jos Tor on ollut onnistuneesti käynnissä hetken (pidempään kuin hetken), niin <a href="log.html">tapahtumalokista</a> voi löytyä tietoa, jos tor on kirjannut tietoja kohdatuista virheistään ennen kuin lopetti yllättäen itsensä. Sen kaltaiset virheet ovat korostettu joko punaisella tai keltaisella.
+Jos Tor-ohjelma on ollut onnistuneesti käynnissä hetken (pidempään kuin hetken), niin <a href="log.html">tapahtumalokista</a> voi löytyä tietoa, jos Tor-ohjelma on kirjannut tietoja kohdatuista virheistään ennen kuin lopetti yllättäen itsensä. Sen kaltaiset virheet ovat korostettu joko punaisella tai keltaisella.
 </p>
 
 <a name="stop"/>
 <h3>Tor ei pysähdy</h3>
 <p>
-Jos Vidalia ei onnistu pysäyttämään Tor-ohjelmaa, niin kannattaa tarkistaa <a href="log.html">tapahtumaloki</a>, jos Tor on kirjannut virhetietoja lopettaessaan.
+Jos Vidalia ei onnistu pysäyttämään Tor-ohjelmaa, niin kannattaa tarkistaa <a href="log.html">tapahtumaloki</a>, jos Tor-ohjelma on kirjannut virhetietoja lopettaessaan.
 </p>
 
 </body>

@@ -40,7 +40,7 @@ Yleiset-asetukset -sivun asetukset ovat yleisimmin muutettuja asetuksia.
 <a name="network"/>
 <h3>Verkkoasetukset</h3>
 <p>
-<i>Verkko</i>-asetussivulla voi päättää kuinka Tor yhdistää Tor-verkkoon.
+<i>Verkko</i>-asetussivulla voi päättää kuinka Tor-ohjelma yhdistää Tor-verkkoon.
 </p>
 <ul>
   <li><b>Käytän välityspalvelinta käyttääkseen Internettiä</b>:
@@ -133,19 +133,19 @@ Vidalian ulkonäköä voi muuttaa <i>Ulkoasut</i>-sivulla olevilla asetuksilla.
         <b>Salasana</b> <i>(Oletus)</i> -- Jos tämän tavan valitsee, voi määrittää salasanan jonka Tor tarvitsee aina kun käyttäjä tai ohjelma ottaa yhteyttä Tor-ohjelman ohjausporttiin. Jos Vidalia käynnistää Tor-ohjelman, Vidalia voi luoda joka kerta kun se käynnistää Tor-ohjelman uuden salasanan rastittamalla <i>Luo satunnaisesti</i>-ruutu.
       </li>
       <li>
-        <b>Eväste</b> -- jos evästekirjautuminen on valittuna, Tor kirjoittaa tiedoston (toisin sanoen <i>evästeen</i>) sisältäen satunnaisia tavuja tiedot-kansioon käynnistyessä. Jokaisen käyttäjän tai ohjelman joka yrittää yhdistää Tor-ohjelman ohjausporttiin pitää tarjota tämän evästeen sisällön.
+        <b>Eväste</b> -- jos evästekirjautuminen on valittuna, Tor-ohjelma kirjoittaa tiedoston (toisin sanoen <i>evästeen</i>) sisältäen satunnaisia tavuja tietokansioon käynnistyessä. Jokaisen käyttäjän tai ohjelman joka yrittää yhdistää Tor-ohjelman ohjausporttiin pitää tarjota tämän evästeen sisällön.
       </li>
     </ul>
   </li>
   <li><b>Tor-asetustiedosto</b> <i>(valinnainen)</i>:
    Tällä saa Vidalian käynnistämään Tor-ohjelman jollakin erikseen määrätyllä Tor-asetustiedostolla <i>(torcc-tiedosto)</i>. Jos kentän jättää tyhjäksi Vidalia käyttää Tor-ohjelman oletusasetustiedostoa.
   </li>
-  <li><b>Tor-ohjelman tiedot-kansio</b> <i>(valinnainen)</i>:
-    Kansio, jossa Tor säilyttää tallentamansa tiedon kuten Tor-reititin tietoja, reititin avaimia ja asetustiedostoja voidaan määrittää. Jos tämän kehyksen jättää tyhjäksi, Tor käyttää omaa oletustietojentallennuskansiota.
+  <li><b>Tor-ohjelman tietokansio</b> <i>(valinnainen)</i>:
+    Kansio, jossa Tor säilyttää tallentamansa tiedon kuten Tor-reititin tietoja, reititin avaimia ja asetustiedostoja voidaan määrittää. Jos tämän kehyksen jättää tyhjäksi, Tor-ohjelma käyttää omaa oletustietojen tallennuskansiota.
   </li>
   <li><b>Oikeudet</b> <i>(Valinnainen, ei ole käytössä Windowssissa)</i>:
-    Tor-ohjelmaa voi käyttää toisella käyttäjätilillä, jos laittaa arvon Suorita käyttäjänä. Silloin Tor suorittaa <i>setuid</i> tällä käyttäjällä käynnistyessään.
-Tor voi myös käynnistyä toisen ryhmän oikeuksien mukaisesti, jos laittaa arvon Suorita ryhmänä. Silloin Tor suorittaa <i>setgid</i> tällä ryhmällä käynnistyessään.
+    Tor-ohjelmaa voi käyttää toisella käyttäjätilillä, jos laittaa arvon Suorita käyttäjänä. Silloin Tor-ohjelma suorittaa <i>setuid</i> tällä käyttäjällä käynnistyessään.
+Tor-ohjelma voi myös käynnistyä toisen ryhmän oikeuksien mukaisesti, jos laittaa arvon Suorita ryhmänä. Silloin Tor-ohjelma suorittaa <i>setgid</i> tällä ryhmällä käynnistyessään.
   </li>
 </ul>
 

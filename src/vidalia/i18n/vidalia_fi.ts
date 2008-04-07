@@ -31,7 +31,7 @@
     <message>
         <location filename="../about/aboutdialog.ui" line="244"/>
         <source>Tor Version</source>
-        <translation>Tor-versio</translation>
+        <translation>Tor-ohjelman versio</translation>
     </message>
     <message>
         <location filename="../about/aboutdialog.ui" line="88"/>
@@ -134,7 +134,7 @@
     <message>
         <location filename="../config/advancedpage.ui" line="442"/>
         <source>Run Tor in the background as a Windows service</source>
-        <translation>Suorita Tor taustalla Windowssin palveluna</translation>
+        <translation>Suorita Tor-ohjelmaa taustalla Windowssin palveluna</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.cpp" line="289"/>
@@ -213,7 +213,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../config/advancedpage.ui" line="275"/>
         <source>Tor Data Directory</source>
-        <translation>Tor-ohjelman tiedot-kansio</translation>
+        <translation>Tor-ohjelman tietokansio</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="296"/>
@@ -274,7 +274,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../bwgraph/bwgraph.ui" line="16"/>
         <source>Tor Bandwidth Usage</source>
-        <translation>Tor-yhteydenkäyttö</translation>
+        <translation>Tor-verkon yhteydenkäyttö</translation>
     </message>
     <message>
         <location filename="../bwgraph/bwgraph.ui" line="40"/>
@@ -466,7 +466,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../config/configdialog.cpp" line="202"/>
         <source>Vidalia was unable to apply your %1 settings to Tor.</source>
-        <translation>Vidalia ei onnistunut ottamaan käyttöön %1 asetuksia Tor-ohjelmaan.</translation>
+        <translation>Vidalia ei onnistunut ottamaan käyttöön %1 asetuksia Tor-ohjelman kanssa.</translation>
     </message>
     <message>
         <location filename="../config/configdialog.cpp" line="58"/>
@@ -555,12 +555,12 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../config/generalpage.ui" line="136"/>
         <source>Set to start Tor when you launch Vidalia</source>
-        <translation>Aseta Tor käynnistymään Vidalian käynnistyessä</translation>
+        <translation>Aseta Tor-ohjelma käynnistymään Vidalian käynnistyessä</translation>
     </message>
     <message>
         <location filename="../config/generalpage.ui" line="139"/>
         <source>Start Tor when Vidalia starts</source>
-        <translation>Käynnistä Tor Vidalian käynnistyessä</translation>
+        <translation>Käynnistä Tor-ohjelma Vidalian käynnistyessä</translation>
     </message>
     <message>
         <location filename="../config/generalpage.cpp" line="72"/>
@@ -895,7 +895,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../mainwindow.cpp" line="660"/>
         <source>Error Starting Tor</source>
-        <translation>Virhe Tor-ohjelman käynnistymisessä</translation>
+        <translation>Virhe Tor-ohjelman käynnistämisessä</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="706"/>
@@ -915,7 +915,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../mainwindow.cpp" line="766"/>
         <source>Vidalia was unable to stop Tor.</source>
-        <translation>Vidalia ei onnistunut pysäyttämään Tor-ohjelmaa</translation>
+        <translation>Vidalia ei onnistunut pysäyttämään Tor-ohjelmaa.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="547"/>
@@ -934,12 +934,12 @@ Tor-palvelu täytyy poistaa käsin.</translation>
 Please check the message log for indicators about what happened to Tor before it exited.</source>
         <translation>Vidalia huomasi Tor-ohjelman pysähtyneen yllättäen.
 
-Ole hyvä ja tarkista tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen pysähtymistä.</translation>
+Ole hyvä ja tarkista tapahtumalokista mitä Tor-ohjelmalle tapahtui ennen pysähtymistä.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="663"/>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
-        <translation>Vidalia ei onnistunut käynnistämään Tor-ohjelmaa. Tarkista asetuksista onko Tor-ohjelman nimi ja sijainti oikein kirjoitettu.</translation>
+        <translation>Vidalia ei onnistunut käynnistämään Tor-ohjelmaa. Tarkista asetuksista onko Tor-ohjelman nimi ja sijaint kirjoitettui oikein.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="307"/>
@@ -974,12 +974,12 @@ Ole hyvä ja tarkista tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen pysä
     <message>
         <location filename="../mainwindow.ui" line="180"/>
         <source>Start Tor</source>
-        <translation>Käynnistä Tor</translation>
+        <translation>Käynnistä Tor-ohjelma</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="117"/>
         <source>Tor is not running</source>
-        <translation>Tor ei ole käynnissä</translation>
+        <translation>Tor-ohjelma ei ole käynnissä</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="515"/>
@@ -989,12 +989,12 @@ Ole hyvä ja tarkista tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen pysä
     <message>
         <location filename="../mainwindow.cpp" line="522"/>
         <source>Stop Tor</source>
-        <translation>Pysäytä Tor</translation>
+        <translation>Pysäytä Tor-ohjelma</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="538"/>
         <source>Tor is starting up</source>
-        <translation>Tor käynnistyy</translation>
+        <translation>Tor-ohjelma käynnistyy</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="33"/>
@@ -1019,7 +1019,7 @@ Ole hyvä ja tarkista tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen pysä
     <message>
         <location filename="../mainwindow.ui" line="193"/>
         <source>Set up a Tor relay and help the network grow</source>
-        <translation>Tee Tor-reititin ja auta verkkoa kasvamaan</translation>
+        <translation>Tee Tor-reititin ja auta kasvattamaan verkkoa </translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="203"/>
@@ -1099,7 +1099,7 @@ Ole hyvä ja tarkista tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen pysä
     <message>
         <location filename="../mainwindow.cpp" line="520"/>
         <source>Stop Tor Now</source>
-        <translation>Pysäytä Tor nyt</translation>
+        <translation>Pysäytä Tor-ohjelma nyt</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="542"/>
@@ -1114,7 +1114,7 @@ Ole hyvä ja tarkista tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen pysä
     <message>
         <location filename="../mainwindow.cpp" line="874"/>
         <source>Tor requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one.</source>
-        <translation>Tor vaatii Vidalian lähettämään kirjautumisevästeen sisällön, mutta Vidalia ei onnistunut löytämään sillaista.</translation>
+        <translation>Tor-ohjelma vaatii Vidalian lähettämään kirjautumisevästeen sisällön, mutta Vidalia ei onnistunut löytämään sillaista.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="876"/>
@@ -1170,8 +1170,8 @@ Ole hyvä ja tarkista tapahtumalokista mitä tapahtui Tor-ohjelmalle ennen pysä
         <location filename="../mainwindow.cpp" line="513"/>
         <source>Your Tor relay is shutting down.
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
-        <translation>Tor-reititin sulkeutuu.
-Klikkaa &apos;Pysäytä Tor&apos; pakottaakseen Tor sulkeutumaan välittömästi.</translation>
+        <translation>Tor-reititin sammutetaan.
+Klikkaa &apos;Pysäytä Tor-ohjelma&apos; pakottaakseen Tor-ohjelma sulkeutumaan välittömästi.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="738"/>
@@ -1199,12 +1199,12 @@ Haluaisitko pysäyttää rauhallisesti ja antaa muiden käyttäjien löytää uu
     <message>
         <location filename="../mainwindow.cpp" line="1075"/>
         <source>Tor Update Available</source>
-        <translation>Tor-päivitys saatavilla</translation>
+        <translation>Tor-ohjelmaan on saatavilla päivitys</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1078"/>
         <source>The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version.</source>
-        <translation>Asennettu versio Tor-ohjelmasta on vanhentunut tai sitä ei enään suositella. Ole hyvä ja lataa uusin versio Tor-ohjelman kotisivulta.</translation>
+        <translation>Asennettu versio Tor-ohjelmasta on vanhentunut tai sitä ei suositella enään. Ole hyvä ja lataa uusin versio Tor-ohjelman kotisivulta.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1078"/>
@@ -1419,7 +1419,7 @@ Haluaisitko pysäyttää rauhallisesti ja antaa muiden käyttäjien löytää uu
         <source>Messages that appear when something has 
 gone very wrong and Tor cannot proceed.</source>
         <translation>Tapahtumat, jotka tapahtuvat kun
-jotain on pahasti mennyt pieleen eikä Tor pysty jatkaa.</translation>
+jotain on pahasti mennyt pieleen eikä Tor-ohjelma pysty jatkaa.</translation>
     </message>
     <message>
         <location filename="../log/messagelog.cpp" line="150"/>
@@ -1435,7 +1435,7 @@ during normal Tor operation and are
 not considered errors, but you may 
 care about.</source>
         <translation>Tapahtumat, jotka tapahtuvat sattumanvaraisesti
-normaalin Tor-toiminnan yhteydessä
+normaalin Tor-ohjelman toiminnan yhteydessä
 ja joita ei pidetä virheinä, mutta joita kannattaa tarkkailla.</translation>
     </message>
     <message>
@@ -1443,7 +1443,7 @@ ja joita ei pidetä virheinä, mutta joita kannattaa tarkkailla.</translation>
         <source>Messages that appear frequently 
 during normal Tor operation.</source>
         <translation>Tapahtumat, jotka tapahtuvat säännöllisesti
-normaalin Tor-toiminnan yhteydessä.</translation>
+normaalin Tor-ohjelman toiminnan yhteydessä.</translation>
     </message>
     <message>
         <location filename="../log/messagelog.cpp" line="158"/>
@@ -1525,7 +1525,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../log/messagelog.cpp" line="204"/>
         <source>Vidalia was unable to register for Tor&apos;s log events.</source>
-        <translation>Vidalia ei onnistunut rekisteröitymään Tor-ohjelman lokitapahtumia varten.</translation>
+        <translation>Vidalia ei onnistunut rekisteröimään Tor-ohjelman lokitapahtumia.</translation>
     </message>
     <message>
         <location filename="../log/messagelog.cpp" line="324"/>
@@ -1720,7 +1720,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../config/networkpage.cpp" line="276"/>
         <source>You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet.</source>
-        <translation>IP-osoite tai isäntä ja portti pitää määrittää, jotta Tor voi yhdistää välityspalvelimen kautta Internettiin.</translation>
+        <translation>IP-osoite tai isäntä ja portti pitää määrittää, jotta Tor-ohjelma voi yhdistää välityspalvelimen kautta Internettiin.</translation>
     </message>
     <message>
         <location filename="../config/networkpage.cpp" line="282"/>
@@ -1735,7 +1735,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../config/networkpage.ui" line="25"/>
         <source>Check to configure Tor to use a proxy to access the Internet</source>
-        <translation>Tarkista, onko Tor säädetty käyttämään välityspalvelinta yhdistämään Internettiin</translation>
+        <translation>Tarkista, onko Tor-ohjelma säädetty käyttämään välityspalvelinta yhdistämään Internettiin</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="28"/>
@@ -1825,12 +1825,12 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../config/networkpage.ui" line="176"/>
         <source>Check to configure Tor to only connect to relays using ports allowed by your firewall</source>
-        <translation>Tarkista, onko Tor säädetty yhdistämään vain reitittimiin tiettyjen sallittujen porttien kautta palomuurin läpi</translation>
+        <translation>Tarkista, onko Tor-ohjelma säädetty yhdistämään vain reitittimiin tiettyjen sallittujen porttien kautta palomuurin läpi</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="235"/>
         <source>Check to configure Tor to use bridge relays to access the Tor network</source>
-        <translation>Tarkista, onko Tor säädetty käyttämään siltareitittimiä käyttääkseen Tor-verkkoa</translation>
+        <translation>Tarkista, onko Tor-ohjelma säädetty käyttämään siltareitittimiä käyttääkseen Tor-verkkoa</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="318"/>
@@ -1948,12 +1948,12 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../config/serverpage.ui" line="169"/>
         <source>Directory Port:</source>
-        <translation>Lista-portti:</translation>
+        <translation>Listaportti:</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="202"/>
         <source>Directory Port Number</source>
-        <translation>Listan portin numero</translation>
+        <translation>Listaportin numero</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="315"/>
@@ -2118,7 +2118,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../config/serverpage.ui" line="904"/>
         <source>What Internet resources should Tor users be able to access from your Tor relay?</source>
-        <translation>Mitä Internetpalveluita annat Tor-käyttäjät käyttää Tor-palvelimesi kautta?</translation>
+        <translation>Mitä Internetpalveluita annat Tor-käyttäjät käyttää Tor-reitittimesi kautta?</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="672"/>
@@ -2143,7 +2143,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../config/serverpage.cpp" line="136"/>
         <source>Please upgrade your Tor software or configure Tor to act as a normal Tor relay.</source>
-        <translation>Ole hyvä ja päivitä Tor-ohjelmasi tai säädä Tor toimimaan normaalina Tor-reitittimenä.</translation>
+        <translation>Ole hyvä ja päivitä Tor-ohjelmasi tai säädä Tor-ohjelmasi toimimaan normaalina Tor-reitittimenä.</translation>
     </message>
     <message>
         <location filename="../config/serverpage.cpp" line="259"/>
@@ -2153,12 +2153,12 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../config/serverpage.ui" line="25"/>
         <source>Run Tor as a client only</source>
-        <translation>Käytä Tor-ohjelmaa vain käyttäjänä</translation>
+        <translation>Käytä Tor-ohjelmaa vain asiakasohjelmana</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="91"/>
         <source>Relay Port:</source>
-        <translation>Reititysportti:</translation>
+        <translation>Reititinportti:</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="139"/>
@@ -2387,12 +2387,12 @@ Haluatko jatkaa Vidalian käynnistämistä?</translation>
     <message>
         <location filename="../vidalia.cpp" line="179"/>
         <source>Resets ALL stored Vidalia settings.</source>
-        <translation>Vaihtaa asetuksit oletusarvoihin.</translation>
+        <translation>Palauttaa KAIKKI asetukset oletusarvoiksi.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="181"/>
         <source>Sets the directory Vidalia uses for data files.</source>
-        <translation>Asettaa Vidalian käyttämän kansion tieto-kansioksi.</translation>
+        <translation>Asettaa Vidalian käyttämän kansion tietokansioksi.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="183"/>
