@@ -1,27 +1,27 @@
 <RCC>
   <qresource prefix="/lang">
-    <file alias="ar">vidalia_ar.qm</file>
-    <file alias="bg">vidalia_bg.qm</file>
-    <file alias="cs">vidalia_cs.qm</file>
-    <file alias="de">vidalia_de.qm</file>
-    <file alias="en">vidalia_en.qm</file>
-    <file alias="es">vidalia_es.qm</file>
-    <file alias="fa">vidalia_fa.qm</file>
-    <file alias="fi">vidalia_fi.qm</file>
-    <file alias="fr">vidalia_fr.qm</file>
-    <file alias="he">vidalia_he.qm</file>
-    <file alias="hu">vidalia_hu.qm</file>
-    <file alias="it">vidalia_it.qm</file>
-    <file alias="ja">vidalia_ja.qm</file>
-    <file alias="nb">vidalia_nb.qm</file>
-    <file alias="nl">vidalia_nl.qm</file>
-    <file alias="pl">vidalia_pl.qm</file>
-    <file alias="pt">vidalia_pt.qm</file>
-    <file alias="ru">vidalia_ru.qm</file>
-    <file alias="sq">vidalia_sq.qm</file>
-    <file alias="sv">vidalia_sv.qm</file>
-    <file alias="zh-cn">vidalia_zh-cn.qm</file>
-    <file alias="zh-tw">vidalia_zh-tw.qm</file>
+    <file>vidalia_ar.qm</file>
+    <file>vidalia_bg.qm</file>
+    <file>vidalia_cs.qm</file>
+    <file>vidalia_de.qm</file>
+    <file>vidalia_en.qm</file>
+    <file>vidalia_es.qm</file>
+    <file>vidalia_fa.qm</file>
+    <file>vidalia_fi.qm</file>
+    <file>vidalia_fr.qm</file>
+    <file>vidalia_he.qm</file>
+    <file>vidalia_hu.qm</file>
+    <file>vidalia_it.qm</file>
+    <file>vidalia_ja.qm</file>
+    <file>vidalia_nb.qm</file>
+    <file>vidalia_nl.qm</file>
+    <file>vidalia_pl.qm</file>
+    <file>vidalia_pt.qm</file>
+    <file>vidalia_ru.qm</file>
+    <file>vidalia_sq.qm</file>
+    <file>vidalia_sv.qm</file>
+    <file>vidalia_zh-cn.qm</file>
+    <file>vidalia_zh-tw.qm</file>
   </qresource>
 </RCC>
 
