@@ -137,7 +137,7 @@ ServerSettings::apply(QString *errmsg)
   if (isServerEnabled()) {
     /* Configure UPnP device to forward DirPort and OrPort */
     /* TODO: does isServerEnabled() return true when a server is just set up? */
-    configurePortForwarding();
+    configurePortForwarding(true);
     rc = torControl()->setConf(confValues(), errmsg);
   } else { 
     QStringList resetKeys;
@@ -156,6 +156,7 @@ ServerSettings::apply(QString *errmsg)
                 << SETTING_BANDWIDTH_BURST;
     }
     rc = torControl()->resetConf(resetKeys, errmsg);
+    configurePortForwarding(false);
   }
   return rc;
 }
@@ -165,11 +166,16 @@ ServerSettings::apply(QString *errmsg)
 /* TODO: init_upnp() will block for up to 2 seconds. We should fire off a thread */
 /** Configure UPnP device to forward DirPort and ORPort */
 void
-ServerSettings::configurePortForwarding()
+ServerSettings::configurePortForwarding(boolean enable)
 {
 #ifdef USE_MINIUPNPC
   UPNPControl *pUNPControl = UPNPControl::Instance();
-  pUNPControl->forwardPort(getORPort());
+
+  if (enable) {
+    pUNPControl->forwardPort(getORPort());
+  } else {
+    pUNPControl->disableForwarding();
+  }
 #endif
 }
 

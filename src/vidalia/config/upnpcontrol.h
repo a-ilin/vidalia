@@ -31,6 +31,7 @@ class UPNPControl : public QObject
 public:
   static UPNPControl* Instance();
   int forwardPort(quint16 port);
+  int disableForwarding();
 protected:
   UPNPControl();
 private:
@@ -43,6 +44,9 @@ private:
   void init_upnp();
   void upnp_add_redir (const char * addr, int port);
   void upnp_rem_redir(int port);
+
+  /* Currently forwarded port */
+  quint16 forwardedPort;
 };
 
 #endif 

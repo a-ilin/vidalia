@@ -93,7 +93,7 @@ private:
   QHash<QString,QString> confValues();
 
   /** Configure UPnP device to forward DirPort and ORPort */
-  void configurePortForwarding();
+  void configurePortForwarding(boolean enable);
 };
 
 #endif

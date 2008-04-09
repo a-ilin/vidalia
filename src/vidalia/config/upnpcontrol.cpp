@@ -27,6 +27,7 @@ UPNPControl* UPNPControl::Instance()
 UPNPControl::UPNPControl()
 {
   init_upnp();
+  forwardedPort = 0;
 }
 
 int
@@ -68,8 +69,41 @@ UPNPControl::forwardPort(quint16 port)
   
   // Output the mapping
   printf("(external):%s -> %s:%s\n", sPort, intClient, intPort);
+  fflush(stdout);
+
+  // Save the mapping
+  forwardedPort = port;
+
   return 0;
 }
+
+int
+UPNPControl::disableForwarding()
+{
+  char sPort[6];
+
+  if (0 == forwardedPort)
+    return 0;
+
+  // Convert the port number to a string
+  snprintf(sPort, sizeof(sPort), "%d", forwardedPort);
+
+  int retval = UPNP_DeletePortMapping(urls.controlURL, data.servicetype, sPort, "TCP");
+  if(UPNPCOMMAND_SUCCESS != retval) {
+    printf("DeletePortMapping() failed with code %d\n", retval);
+    return 1;
+  }
+
+  // Output the cancelled mapping
+  printf("(external):%s -> <>\n", sPort);
+  fflush(stdout);
+
+  // Save the mapping
+  forwardedPort = 0;
+
+  return 0;
+}
+
 
 /** Based on http://miniupnp.free.fr/files/download.php?file=xchat-upnp20061022.patch */
 void
@@ -78,52 +112,13 @@ UPNPControl::init_upnp()
   struct UPNPDev * devlist;
   int retval;
 
-  printf("TB : init_upnp()\n");
-
   memset(&urls, 0, sizeof(struct UPNPUrls));
   memset(&data, 0, sizeof(struct IGDdatas));
 
   devlist = upnpDiscover(2000, NULL, NULL);
   retval = UPNP_GetValidIGD(devlist, &urls, &data, lanaddr, sizeof(lanaddr));
-  printf("UPNP: %d", retval);
+  printf("GetValidIGD returned: %d\n", retval);
+  fflush(stdout);
 
   freeUPNPDevlist(devlist);
-}
-
-/** Based on http://miniupnp.free.fr/files/download.php?file=xchat-upnp20061022.patch */
-void
-UPNPControl::upnp_add_redir(const char * addr, int port)
-{
-	char port_str[16];
-	int r;
-	printf("TB : upnp_add_redir (%s, %d)\n", addr, port);
-	if(urls.controlURL[0] == '\0')
-	{
-		printf("TB : the init was not done !\n");
-		fflush(stdout);
-		return;
-	}
-	
-	r = UPNP_AddPortMapping(urls.controlURL, data.servicetype,
-	                        port_str, port_str, addr, 0, "TCP");
-	if(r==0)
-		printf("AddPortMapping(%s, %s, %s) failed\n", port_str, port_str, addr);
-	fflush(stdout);
-}
-
-/** Based on http://miniupnp.free.fr/files/download.php?file=xchat-upnp20061022.patch */
-void
-UPNPControl::upnp_rem_redir(int port)
-{
-	char port_str[16];
-	int t;
-	printf("TB : upnp_rem_redir (%d)\n", port);
-	if(urls.controlURL[0] == '\0')
-	{
-		printf("TB : the init was not done !\n");
-		fflush(stdout);
-		return;
-	}
-	sprintf(port_str, "%d", port);
-	UPNP_DeletePortMapping(urls.controlURL, data.servicetype, port_str, "TCP");
 }
