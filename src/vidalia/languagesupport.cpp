@@ -134,7 +134,7 @@ LanguageSupport::translate(const QString &languageCode)
   QString code = languageCode.toLower();
   if (isValidLanguageCode(code)) {
     QTranslator *translator = new QTranslator(vApp);
-    if (translator->load(QString(":/lang/") + code)) {
+    if (translator->load(QString(":/lang/vidalia_%1.qm").arg(code))) {
       QApplication::installTranslator(translator);
       if (isRightToLeft(code))
         vApp->setLayoutDirection(Qt::RightToLeft);
