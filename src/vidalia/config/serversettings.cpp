@@ -166,7 +166,7 @@ ServerSettings::apply(QString *errmsg)
 /* TODO: init_upnp() will block for up to 2 seconds. We should fire off a thread */
 /** Configure UPnP device to forward DirPort and ORPort */
 void
-ServerSettings::configurePortForwarding(boolean enable)
+ServerSettings::configurePortForwarding(bool enable)
 {
 #ifdef USE_MINIUPNPC
   UPNPControl *pUNPControl = UPNPControl::Instance();
