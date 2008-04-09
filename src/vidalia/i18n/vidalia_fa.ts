@@ -165,72 +165,72 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../config/advancedpage.cpp" line="112"/>
         <source>&apos;%1&apos; is not a valid IP address.</source>
-        <translation type="unfinished"></translation>
+        <translation>آدرس آی پی &apos;%1&apos; معتبر نمیباشد.</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="157"/>
         <source>:</source>
-        <translation type="unfinished"></translation>
+        <translation>:</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.cpp" line="123"/>
         <source>You selected &apos;Password&apos; authentication, but did not specify a password.</source>
-        <translation type="unfinished"></translation>
+        <translation>شما احراز هویت بر اساس اسم رمز را برگزیدید, اما اسم رمز را مشخص نکردید.</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.cpp" line="268"/>
         <source>Select a Directory to Use for Tor Data</source>
-        <translation type="unfinished"></translation>
+        <translation>برگزیدن یک فهرست برای داده های تُر</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="48"/>
         <source>Authentication:</source>
-        <translation type="unfinished"></translation>
+        <translation>احراز هویت:</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="58"/>
         <source>Address:</source>
-        <translation type="unfinished">آدرس:</translation>
+        <translation>آدرس:</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="91"/>
         <source>Cookie</source>
-        <translation type="unfinished"></translation>
+        <translation>کوکی</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="96"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>اسم رمز</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="111"/>
         <source>Randomly Generate</source>
-        <translation type="unfinished"></translation>
+        <translation>تولید کردن به گونه تصادفی</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="275"/>
         <source>Tor Data Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>فهرست داده های تُر</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="296"/>
         <source>Store Tor data in the following directory</source>
-        <translation type="unfinished"></translation>
+        <translation>ذخیره کردن داده های تُر در فهرست ذیل</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="315"/>
         <source>Select the directory used to store Tor data</source>
-        <translation type="unfinished"></translation>
+        <translation>برگزیدن فهرست استفاده شده برای ذخیره داده های تُر</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="86"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>هيچكدام</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.cpp" line="45"/>
         <source>Advanced</source>
-        <translation type="unfinished">پیشرفته</translation>
+        <translation>پیشرفته</translation>
     </message>
 </context>
 <context>
@@ -263,7 +263,7 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../config/appearancepage.cpp" line="34"/>
         <source>Appearance</source>
-        <translation type="unfinished">ظاهر</translation>
+        <translation>ظاهر</translation>
     </message>
 </context>
 <context>
@@ -400,12 +400,12 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../network/circuitlistwidget.cpp" line="85"/>
         <source>Close Circuit (Del)</source>
-        <translation type="unfinished"></translation>
+        <translation>بستن مدار (Del)</translation>
     </message>
     <message>
         <location filename="../network/circuitlistwidget.cpp" line="106"/>
         <source>Close Stream (Del)</source>
-        <translation type="unfinished"></translation>
+        <translation>بستن جریان (Del)</translation>
     </message>
 </context>
 <context>
@@ -443,37 +443,37 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../config/configdialog.cpp" line="78"/>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation>شبکه</translation>
     </message>
     <message>
         <location filename="../config/configdialog.cpp" line="171"/>
         <source>Error Saving Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>خطا در هنگام ذخیره تنظیمات</translation>
     </message>
     <message>
         <location filename="../config/configdialog.cpp" line="173"/>
         <source>Vidalia was unable to save your %1 settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>ویدالیا نتوانست تنظیمات %1 را ذخیره کند.</translation>
     </message>
     <message>
         <location filename="../config/configdialog.cpp" line="200"/>
         <source>Error Applying Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>خطا در هنگام بکار بردن تنظیمات</translation>
     </message>
     <message>
         <location filename="../config/configdialog.cpp" line="202"/>
         <source>Vidalia was unable to apply your %1 settings to Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>ویدالیا نتوانست تنظیمات %1 را به تُر اعمال کند.</translation>
     </message>
     <message>
         <location filename="../config/configdialog.cpp" line="58"/>
         <source>OK</source>
-        <translation type="unfinished">بسیارخوب</translation>
+        <translation>بسیارخوب</translation>
     </message>
     <message>
         <location filename="../config/configdialog.cpp" line="82"/>
         <source>Sharing</source>
-        <translation type="unfinished"></translation>
+        <translation>اشتراک</translation>
     </message>
 </context>
 <context>
@@ -491,7 +491,7 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../../torcontrol/controlconnection.cpp" line="141"/>
         <source>Vidalia was unable to connect to Tor. (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>ویدالیا نتوانست به تُر وصل شود. (%1)</translation>
     </message>
 </context>
 <context>
@@ -577,12 +577,12 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../config/generalpage.cpp" line="32"/>
         <source>General</source>
-        <translation type="unfinished">کلی</translation>
+        <translation>کلی</translation>
     </message>
     <message>
         <location filename="../config/generalpage.cpp" line="86"/>
         <source>You must specify the name of your Tor executable.</source>
-        <translation type="unfinished"></translation>
+        <translation>شما میبایست نام فایل اجرایی تُر را مشخص کنید.</translation>
     </message>
 </context>
 <context>
@@ -969,250 +969,252 @@ Please check the message log for indicators about what happened to Tor before it
     <message>
         <location filename="../mainwindow.ui" line="180"/>
         <source>Start Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>راه اندازی تُر</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="117"/>
         <source>Tor is not running</source>
-        <translation type="unfinished"></translation>
+        <translation>تُر درحال اجرا نمی باشد</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="515"/>
         <source>Tor is shutting down</source>
-        <translation type="unfinished"></translation>
+        <translation>تُر درحال بسته شدن میباشد</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="522"/>
         <source>Stop Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>متوقف کردن تُر</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="538"/>
         <source>Tor is starting up</source>
-        <translation type="unfinished"></translation>
+        <translation>تُر درحال راه اندازی میباشد</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="33"/>
         <source>Vidalia Control Panel</source>
-        <translation type="unfinished"></translation>
+        <translation>تابلوی کنترل ویدالیا</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="63"/>
         <source>Tor Status</source>
-        <translation type="unfinished"></translation>
+        <translation>وضعیت تُر</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="165"/>
         <source>Vidalia Shortcuts</source>
-        <translation type="unfinished"></translation>
+        <translation>میان برهای ویدالیا</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="190"/>
         <source>Setup Relaying</source>
-        <translation type="unfinished"></translation>
+        <translation>برپایی بازپخش</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="193"/>
         <source>Set up a Tor relay and help the network grow</source>
-        <translation type="unfinished"></translation>
+        <translation>برپا کردن یک بازپخش تُر به منظور کمک و همکاری کردن در رشد شبکه</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="203"/>
         <source>View the Network</source>
-        <translation type="unfinished"></translation>
+        <translation>مشاهده شبکه</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="206"/>
         <source>View a map of the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>مشاهده نقشه شبکه تُر</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="219"/>
         <source>Use a New Identity</source>
-        <translation type="unfinished"></translation>
+        <translation>بکاربردن یک هویت جدید</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="222"/>
         <source>Make subsequent connections appear new</source>
-        <translation type="unfinished"></translation>
+        <translation>نمایان کردن اتصال های پسین همچون اتصال های جدید</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="254"/>
         <source>View Tor&apos;s bandwidth usage</source>
-        <translation type="unfinished"></translation>
+        <translation>مشاهده مصرف پهنای باند تُر</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="267"/>
         <source>View Tor&apos;s log message history</source>
-        <translation type="unfinished"></translation>
+        <translation>مشاهده تاریخچه پیام های ثبت تُر
+</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="317"/>
         <source>View help documentation</source>
-        <translation type="unfinished"></translation>
+        <translation>مشاهده اسناد راهنما</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="330"/>
         <source>Configure Tor and Vidalia</source>
-        <translation type="unfinished"></translation>
+        <translation>پیکربندی ویدالیا و تُر</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="380"/>
         <source>View version and license information</source>
-        <translation type="unfinished"></translation>
+        <translation>مشاهده اطلاعات مجوز و نسخه</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="393"/>
         <source>Exit Vidalia</source>
-        <translation type="unfinished"></translation>
+        <translation>برون رفتن از ویدالیا</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="445"/>
         <source>Show this window on startup</source>
-        <translation type="unfinished"></translation>
+        <translation>نمایش این پنجره در هنگام شروع</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="464"/>
         <source>Hide</source>
-        <translation type="unfinished"></translation>
+        <translation>پنهان کردن</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="467"/>
         <source>Hide this window</source>
-        <translation type="unfinished"></translation>
+        <translation>پنهان کردن این پنجره</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="314"/>
         <source>Control Panel</source>
-        <translation type="unfinished"></translation>
+        <translation>تابلوی کنترل</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="387"/>
         <source>Ctrl+P</source>
-        <translation type="unfinished"></translation>
+        <translation>Ctrl+P</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="520"/>
         <source>Stop Tor Now</source>
-        <translation type="unfinished"></translation>
+        <translation>متوقف کردن تُر حالا</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="542"/>
         <source>Starting Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>راه اندازی تُر</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="871"/>
         <source>Cookie Authentication Required</source>
-        <translation type="unfinished"></translation>
+        <translation>نیاز به کوکی احراز هویت</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="874"/>
         <source>Tor requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one.</source>
-        <translation type="unfinished"></translation>
+        <translation>تُر نیاز به ارسال محتوی یک کوکی احرازهویت بوسیله ویدالیا دارد, اما ویدالیا قادر به یافت کوکی نبود.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="876"/>
         <source>Would you like to browse for the file &apos;control_auth_cookie&apos; yourself?</source>
-        <translation type="unfinished"></translation>
+        <translation>آیا می خواهید خودتان انتخاب فایل &apos;control_auth_cookie&apos; را انجام دهید؟</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="883"/>
         <source>Tor Data Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>فهرست داده های تُر</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="885"/>
         <source>Tor Control Cookie (control_auth_cookie)</source>
-        <translation type="unfinished"></translation>
+        <translation>کوکی کنترل تُر (control_auth_cookie)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="926"/>
         <source>Error Registering for Events</source>
-        <translation type="unfinished"></translation>
+        <translation>خطا در هنگام ثبت رویدادها</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="928"/>
         <source>Vidalia was unable to register for Tor events. Many of Vidalia&apos;s features may be unavailable.</source>
-        <translation type="unfinished"></translation>
+        <translation>ویدالیا نتوانست خود را برای رویدادهای تُر ثبت کند. بسیاری از خصوصیات ویدالیا ممکن است که فعال نباشند.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="954"/>
         <source>Password Authentication Required</source>
-        <translation type="unfinished"></translation>
+        <translation>نیاز به احرازهویت بوسیله اسم رمز</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="969"/>
         <source>Error Authenticating to Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>خطای احرازهویت در تُر</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="971"/>
         <source>Vidalia was unable to authenticate to Tor. (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>ویدالیا قادر به احرازهویت در تُر نشد. (%1)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="973"/>
         <source>Please check your control port authentication settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>خواهشمند است پارامترهای احرازهویت درگاه کنترل خود را چک کنید.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="955"/>
         <source>Please enter your control password (not the hash):</source>
-        <translation type="unfinished"></translation>
+        <translation>خواهشمند است اسم رمز کنترل خود را وارد نمایید (و نه درهم) :</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="513"/>
         <source>Your Tor relay is shutting down.
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
-        <translation type="unfinished"></translation>
+        <translation>بازپخش تُر درحال بسته شدن میباشد. دوباره بروی &apos;متوقف کردن تُر&apos; فشار دهید تا تُر وادار به توقف شود.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="738"/>
         <source>Relaying is Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>بازپخش فعال میباشد</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="743"/>
         <source>You are currently running a Tor relay. Terminating your relay will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new relay?</source>
-        <translation type="unfinished"></translation>
+        <translation>شما درحال اجرای یک بازپخش تُر میباشید. متوقف کردن این بازپخش در اتصالات کاربرهای دیگر وقفه ایجاد خواهد کرد. آیا میخواهید توقف را به گونه ای که کاربران زمان پیداکردن بازپخش جدید دیگری را داشته باشند انجام دهید؟ </translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="450"/>
         <source>Error starting web browser</source>
-        <translation type="unfinished"></translation>
+        <translation>خطا در هنگام راه اندازی مرورگر وب</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="451"/>
         <source>Vidalia was unable to start the configured web browser</source>
-        <translation type="unfinished"></translation>
+        <translation>ویدالیا قادر به راه اندازی مرورگر وب پیکربتدی شده نبود</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1075"/>
         <source>Tor Update Available</source>
-        <translation type="unfinished"></translation>
+        <translation>به روز رسانی تُر موجود می باشد</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1078"/>
         <source>The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version.</source>
-        <translation type="unfinished"></translation>
+        <translation>نسخه نصب شده تُر قدیمی است و دیگر توصیه نمیشود. خواهشمند است به سایت تُر رفته و نهایی ترین نسخه آن را بارگذاری کنید.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1078"/>
         <source>Tor website: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>وب سایت تُر: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="473"/>
         <source>Error starting proxy server</source>
-        <translation type="unfinished"></translation>
+        <translation>خطا در هنگام راه اندازی پیشکار
+</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="474"/>
         <source>Vidalia was unable to start the configured proxy server</source>
-        <translation type="unfinished"></translation>
+        <translation>ویدالیا قادر به راه اندازی پیشکار پیکربندی شده نبود</translation>
     </message>
 </context>
 <context>
@@ -1674,12 +1676,12 @@ interest to Tor developers.</source>
     <message>
         <location filename="../network/netviewer.ui" line="24"/>
         <source>Tor Network Map</source>
-        <translation type="unfinished"></translation>
+        <translation>نقشه شبکه تُر</translation>
     </message>
     <message>
         <location filename="../network/netviewer.ui" line="242"/>
         <source>Refresh the list of Tor relays and connections</source>
-        <translation type="unfinished"></translation>
+        <translation>بازآوری لیست بازپخش ها و اتصالات تُر</translation>
     </message>
 </context>
 <context>
@@ -1687,142 +1689,142 @@ interest to Tor developers.</source>
     <message>
         <location filename="../config/networkpage.cpp" line="45"/>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation>شبکه</translation>
     </message>
     <message>
         <location filename="../config/networkpage.cpp" line="197"/>
         <source>Invalid Bridge</source>
-        <translation type="unfinished"></translation>
+        <translation>پل نامعتبر</translation>
     </message>
     <message>
         <location filename="../config/networkpage.cpp" line="198"/>
         <source>The specified bridge identifier is not valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>شناسه پل مشخص شده معتبر نمیباشد.</translation>
     </message>
     <message>
         <location filename="../config/networkpage.cpp" line="245"/>
         <source>Copy (Ctrl+C)</source>
-        <translation type="unfinished"></translation>
+        <translation>کپی کردن (Ctrl+C)</translation>
     </message>
     <message>
         <location filename="../config/networkpage.cpp" line="276"/>
         <source>You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet.</source>
-        <translation type="unfinished"></translation>
+        <translation>شما میبایست یک آدرس آی پی یا یک نام میزبان و یک شماره درگاه برای پیکربندی تُر مشخص کنید جهت استفاده ار یک پیشکار برای دسترسی به اینترنت.</translation>
     </message>
     <message>
         <location filename="../config/networkpage.cpp" line="282"/>
         <source>You must specify one or more ports to which your firewall allows you to connect.</source>
-        <translation type="unfinished"></translation>
+        <translation>شما میبایست یک یا چند درگاه که بارو اجازه دسترسی به آنها را میدهد مشخص کنید.</translation>
     </message>
     <message>
         <location filename="../config/networkpage.cpp" line="318"/>
         <source>&apos;%1&apos; is not a valid port number.</source>
-        <translation type="unfinished"></translation>
+        <translation>شماره درگاه &apos;%1&apos; معتبر نمیباشد.</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="25"/>
         <source>Check to configure Tor to use a proxy to access the Internet</source>
-        <translation type="unfinished"></translation>
+        <translation>بررسی برای پیکربندی تُر جهت استفاده از یک پیشکار برای دسترسی به اینترنت</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="28"/>
         <source>I use a proxy to access the Internet</source>
-        <translation type="unfinished"></translation>
+        <translation>برای دسترسی به اینترنت از یک پیشکار استفاده می کنم</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="58"/>
         <source>Proxy Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>تنظیمات پیشکار</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="70"/>
         <source>HTTP Proxy:</source>
-        <translation type="unfinished"></translation>
+        <translation>پیشکار HTTP:</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="80"/>
         <source>Username:</source>
-        <translation type="unfinished"></translation>
+        <translation>نام کاربری:</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="90"/>
         <source>Use this proxy for HTTPS also</source>
-        <translation type="unfinished"></translation>
+        <translation>استفاده از این پیشکار همچنین برای HTTPS</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="108"/>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>اسم رمز:</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="135"/>
         <source>Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>درگاه:</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="179"/>
         <source>My firewall only lets me connect to certain ports</source>
-        <translation type="unfinished"></translation>
+        <translation>بارو به من تنها اجازه دسترسی به برخی از درگاه ها را میدهد</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="203"/>
         <source>Firewall Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>تنظیمات بارو</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="215"/>
         <source>Allowed Ports:</source>
-        <translation type="unfinished"></translation>
+        <translation>درگاه های مجاز:</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="225"/>
         <source>80, 443</source>
-        <translation type="unfinished">۱۰۰ {80, 443?}</translation>
+        <translation>۱۰۰ {80, 443?}</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="238"/>
         <source>My ISP blocks connections to the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>ارایه کننده خدمات دسترسی به اینترنت اتصالات به شبکه تُر را مسدود می کند</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="262"/>
         <source>Tor Bridge Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>تنظیمات پل تُر</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="274"/>
         <source>The Tor version you are currently running does not support bridges. &lt;br&gt;Tor will still try to encrypt its directory connections.</source>
-        <translation type="unfinished"></translation>
+        <translation>نسخه تُر که شما هم اکنون در حال اجرای آن میباشید پل ها را پشتیبانی نمیکند. &lt;br&gt; تُر بازهم سعی به رمزبندی اتصالات فهرست میکند.</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="295"/>
         <source>Add a Bridge:</source>
-        <translation type="unfinished"></translation>
+        <translation>افزودن یک پل:</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="383"/>
         <source>Remove the selected bridges from the list</source>
-        <translation type="unfinished"></translation>
+        <translation>حذف کردن پل های منتخب از لیست</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="399"/>
         <source>Copy the selected bridges to the clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>کپی کردن پل های منتخب در تخته یادداشت</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="176"/>
         <source>Check to configure Tor to only connect to relays using ports allowed by your firewall</source>
-        <translation type="unfinished"></translation>
+        <translation>بررسی برای پیکربندی تُر جهت متصل شدن به بازپخش هایی که تنها درگاه های مجاز بدست بارو را استفاده میکنند</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="235"/>
         <source>Check to configure Tor to use bridge relays to access the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>بررسی برای پیکربندی تُر جهت استفاده از پل های بازپخش برای دسترسی به شبکه تُر</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="318"/>
         <source>&lt;a href=&quot;bridges.finding&quot;&gt;How do I find a bridge?&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;bridges.finding&quot;&gt;چطور می توانم یک پل را پیدا کنم؟&lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -1912,17 +1914,17 @@ interest to Tor developers.</source>
     <message>
         <location filename="../network/routerlistwidget.cpp" line="44"/>
         <source>Relay</source>
-        <translation type="unfinished"></translation>
+        <translation>بازپخش</translation>
     </message>
     <message>
         <location filename="../network/routerlistwidget.cpp" line="71"/>
         <source>Zoom to Relay</source>
-        <translation type="unfinished"></translation>
+        <translation>بزرگ نمایی بازپخش</translation>
     </message>
     <message>
         <location filename="../network/routerlistwidget.cpp" line="185"/>
         <source>%1 relays online (%2 total)</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 بازپخش برخط (%2 در کل)</translation>
     </message>
 </context>
 <context>
@@ -2110,93 +2112,93 @@ interest to Tor developers.</source>
     <message>
         <location filename="../config/serverpage.ui" line="672"/>
         <source>Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s.</source>
-        <translation type="unfinished"></translation>
+        <translation>بیشترین میزان پهنای باند شما می بایست بزرگتر یا مساوی با میزان پهنای باند متوسط شما باشد. کوچکترین مقدار هردو میبایست 20 کیلوبایت در ثانیه باشد.</translation>
     </message>
     <message>
         <location filename="../config/serverpage.cpp" line="74"/>
         <source>Server</source>
-        <translation type="unfinished"></translation>
+        <translation>کارساز</translation>
     </message>
     <message>
         <location filename="../config/serverpage.cpp" line="131"/>
         <source>Bridge Support Unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation>پشتیبانی پل موجود نیست</translation>
     </message>
     <message>
         <location filename="../config/serverpage.cpp" line="134"/>
         <source>You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges.</source>
-        <translation type="unfinished"></translation>
+        <translation>شما تُر را به گونه ای پیکربندی کردید که مانند یک پل بازپخش برای کاربران سانسورشده کارکند, اما نسخه تُر شما پل ها را پشتیبانی نمی کند.</translation>
     </message>
     <message>
         <location filename="../config/serverpage.cpp" line="136"/>
         <source>Please upgrade your Tor software or configure Tor to act as a normal Tor relay.</source>
-        <translation type="unfinished"></translation>
+        <translation>خواهشمند است نرم افزار تُر را بروزرسانی کنید یا تُر را به گونه ای پیکربندی کنید که مانند یک بازپخش تُر نرمال کارکند.</translation>
     </message>
     <message>
         <location filename="../config/serverpage.cpp" line="259"/>
         <source>You must specify at least a relay nickname and port.</source>
-        <translation type="unfinished"></translation>
+        <translation>شما میبایست دست کم یک لقب بازپخش و درگاه را مشخص کنید.</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="25"/>
         <source>Run Tor as a client only</source>
-        <translation type="unfinished"></translation>
+        <translation>اجرا کردن تُر بعنوان یک کارخواه</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="91"/>
         <source>Relay Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>درگاه بازپخش:</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="139"/>
         <source>Email address at which you may be reached if there is a
 problem with your relay. You might also include your PGP or GPG fingerprint.</source>
-        <translation type="unfinished"></translation>
+        <translation>آدرس ایمیل که در صورت اشکال با بازپخش شما بتوان با شما تماس گرفت. شما همچنین می توانید اثرانگشت PGP یا GPG خود را قرار دهید.</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="110"/>
         <source>Enable to mirror the Tor relay directory</source>
-        <translation type="unfinished"></translation>
+        <translation>آینه ای کردن فهرست بازپخش تُر</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="113"/>
         <source>Mirror the Relay Directory </source>
-        <translation type="unfinished"></translation>
+        <translation>آینه ای کردن فهرست بازپخش</translation>
     </message>
     <message>
         <location filename="../config/serverpage.cpp" line="190"/>
         <source>Your bridge relay is not running.</source>
-        <translation type="unfinished"></translation>
+        <translation>پل بازپخش شما در حال اجرا نمی باشد.</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="39"/>
         <source>Help censored users reach the Tor network (Tor 0.2.0.8-alpha or newer)</source>
-        <translation type="unfinished"></translation>
+        <translation>کمک به کاربران سانسورشده برای دستیابی به شبکه تُر (تُر 0.2.0.8-alpha یا جدیدتر)</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="272"/>
         <source>Name of your relay</source>
-        <translation type="unfinished"></translation>
+        <translation>نام بازپخش شما</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="305"/>
         <source>Port on which users and other relays can communicate with your relay</source>
-        <translation type="unfinished"></translation>
+        <translation>درگاهی که کاربران و بازپخش های دیگر می توانند بوسیله آن با بازپخش شما ارتباط برقرار کنند</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="940"/>
         <source>Let others access your bridge by giving them this line:</source>
-        <translation type="unfinished"></translation>
+        <translation>بگذارید دیگران به پل شما دسترسی پیدا کنند با بیان کردن این خط به آنها:</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="964"/>
         <source>This is the identity of your bridge relay that you can give to other people</source>
-        <translation type="unfinished"></translation>
+        <translation>این هویت پل بازپخش شما می باشد که میتوانید آن را به افراد دیگر بدهید</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="986"/>
         <source>Copy your bridge relay&apos;s identity to the clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>کپی کردن هویت پل بازپخش شما در تخته یادداشت</translation>
     </message>
 </context>
 <context>
@@ -2244,7 +2246,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../../torcontrol/stream.cpp" line="137"/>
         <source>Remapped</source>
-        <translation type="unfinished"></translation>
+        <translation>بازنگاشته</translation>
     </message>
 </context>
 <context>
@@ -2265,7 +2267,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../../torcontrol/torservice.cpp" line="172"/>
         <source>Unable to start the Tor service.</source>
-        <translation type="unfinished"></translation>
+        <translation>ناتوان در راه اندازی سرویس تُر.</translation>
     </message>
 </context>
 <context>
@@ -2273,7 +2275,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../config/torsettings.cpp" line="118"/>
         <source>Failed to hash the control password.</source>
-        <translation type="unfinished"></translation>
+        <translation>شکست در درهم درآوردن اسم رمز کنترل.</translation>
     </message>
 </context>
 <context>
@@ -2331,7 +2333,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../vmessagebox.cpp" line="98"/>
         <source>Browse</source>
-        <translation type="unfinished">انتخاب فایل</translation>
+        <translation>انتخاب فایل</translation>
     </message>
 </context>
 <context>
@@ -2363,62 +2365,62 @@ Would you like to continue starting Vidalia?</source>
     <message>
         <location filename="../main.cpp" line="85"/>
         <source>Invalid Argument</source>
-        <translation type="unfinished"></translation>
+        <translation>نشانوند نامعتبر</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="177"/>
         <source>Displays this usage message and exits.</source>
-        <translation type="unfinished"></translation>
+        <translation>این پیام کاربردی را نمایش می دهد و بیرون میرود.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="179"/>
         <source>Resets ALL stored Vidalia settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>بازنشانی کردن همه تنظیمات ذخیره شده ویدالیا.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="181"/>
         <source>Sets the directory Vidalia uses for data files.</source>
-        <translation type="unfinished"></translation>
+        <translation>گذاردن فهرست مورد استفاده توسط ویدالیا برای فایل های داده.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="183"/>
         <source>Sets the name and location of Vidalia&apos;s pidfile.</source>
-        <translation type="unfinished"></translation>
+        <translation>گذاردن نام و محل فایل شناسه فرآیند ویدالیا.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="185"/>
         <source>Sets the name and location of Vidalia&apos;s logfile.</source>
-        <translation type="unfinished"></translation>
+        <translation>گذاردن نام و محل فایل تاریخچه ثبت ویدالیا.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="188"/>
         <source>Sets the verbosity of Vidalia&apos;s logging.</source>
-        <translation type="unfinished"></translation>
+        <translation>گذاردن درجه پرحرفی ثبت ویدالیا.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="191"/>
         <source>Sets Vidalia&apos;s interface style.</source>
-        <translation type="unfinished"></translation>
+        <translation>گذاردن سبک واسط ویدالیا.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="194"/>
         <source>Sets Vidalia&apos;s language.</source>
-        <translation type="unfinished"></translation>
+        <translation>گذاردن زبان ویدالیا.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="198"/>
         <source>Vidalia Usage Information</source>
-        <translation type="unfinished"></translation>
+        <translation>اطلاعات درمورد استفاده ویدالیا</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="259"/>
         <source>Invalid log level specified: </source>
-        <translation type="unfinished"></translation>
+        <translation>درجه ثبت مشخص شده نامعتبر: </translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="265"/>
         <source>Unable to open log file &apos;%1&apos;: %2</source>
-        <translation type="unfinished"></translation>
+        <translation>ناتوان در بازکردن فایل تاریخچه ثبت  &apos;%1&apos;: %2</translation>
     </message>
 </context>
 </TS>
