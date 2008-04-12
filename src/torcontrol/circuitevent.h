@@ -37,8 +37,10 @@ public:
   quint64 id() const { return _circuit.id(); }
   /** Returns the status of this circuit event. */
   Circuit::Status status() const { return _circuit.status(); }
-  /** Returns the path chosen for this circuit event.  */
-  QString path() const { return _circuit.path(); }
+  /** Returns the names of the routers in the path for this circuit event. */
+  QStringList routerNames() const { return _circuit.routerNames(); }
+  /** Returns the IDs of the routers in the path for this circuit event. */
+  QStringList routerIDs() const { return _circuit.routerIDs(); }
   
 private:
   /** Circuit object for this event. */

@@ -43,10 +43,10 @@ public:
 
   /** Adds a circuit to the list. If the circuit already exists in the list,
    * the status and path will be updated. */
-  void addCircuit(Circuit circuit, QString displayedPath);
+  void addCircuit(const Circuit &circuit);
   /** Adds a stream to the list. If the stream already exists in the list, the
    * status and path will be updated. */
-  void addStream(Stream stream);
+  void addStream(const Stream &stream);
   /** Returns a list of circuits currently in the widget. */
   QList<Circuit> circuits();
 

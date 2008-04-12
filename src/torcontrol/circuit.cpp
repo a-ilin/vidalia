@@ -15,6 +15,7 @@
 */
 
 #include <QStringList>
+#include <QRegExp>
 
 #include "circuit.h"
 
@@ -22,25 +23,9 @@
 /** Default constructor. */
 Circuit::Circuit()
 {
-  _circId = 0;
-  _status = Unknown;
-  _path   = QString();
-}
-
-/** Constructor */
-Circuit::Circuit(quint64 circId, Status status, QString path)
-{
-  _circId = circId;
-  _status = status;
-  _path   = path;
-}
-
-/** Constructor */
-Circuit::Circuit(quint64 circId, Status status, QStringList hops)
-{
-  _circId = circId;
-  _status = status;
-  _path   = hops.join(",");
+  _circId  = 0;
+  _status  = Unknown;
+  _isValid = false;
 }
 
 /** Parses the string given in Tor control protocol format for a circuit. The
@@ -48,45 +33,51 @@ Circuit::Circuit(quint64 circId, Status status, QStringList hops)
  * 
  *      CircuitID SP CircStatus [SP Path]
  *
- * If the status is "LAUNCHED", the Path is empty.
+ * If the status is "LAUNCHED", the Path is empty. Server names in the path
+ * must follow Tor's VERBOSE_NAMES format.
  */
-Circuit
-Circuit::fromString(QString circuit)
+Circuit::Circuit(const QString &circuit)
 {
+  _isValid = false;
+
   QStringList parts = circuit.split(" ");
   if (parts.size() >= 2) {
     /* Get the circuit ID */
-    quint64 circId = (quint64)parts.at(0).toULongLong();
+    _circId = (quint64)parts.at(0).toULongLong();
     /* Get the circuit status value */
-    Circuit::Status status = Circuit::toStatus(parts.at(1));
-    /* Get the circuit path (list of routers) */
-    QString path = (parts.size() > 2 ? parts.at(2) : "");
+    _status = Circuit::toStatus(parts.at(1));
 
-    return Circuit(circId, status, path);
+    /* Get the circuit path (list of routers) */
+    if (parts.size() > 2) {
+      foreach (QString hop, parts.at(2).split(",")) {
+        QStringList parts = hop.split(QRegExp("[=~]"));
+        if (parts.size() != 2)
+          return;
+
+        _ids   << parts.at(0).mid(1);
+        _names << parts.at(1);
+      }
+    }
+
+    _isValid = true;
   }
-  return Circuit();
 }
 
 /** Converts the circuit status string to its proper enum value */
 Circuit::Status
-Circuit::toStatus(QString strStatus)
+Circuit::toStatus(const QString &status)
 {
-  Status status;
-  strStatus = strStatus.toUpper();
-  if (strStatus == "LAUNCHED") {
-    status = Launched;
-  } else if (strStatus == "BUILT") {
-    status = Built;
-  } else if (strStatus == "EXTENDED") {
-    status = Extended;
-  } else if (strStatus == "FAILED") {
-    status = Failed;
-  } else if (strStatus == "CLOSED") {
-    status = Closed;
-  } else {
-    status = Unknown;
-  }
-  return status;
+  if (!status.compare("LAUNCHED", Qt::CaseInsensitive))
+    return Launched;
+  if (!status.compare("BUILT", Qt::CaseInsensitive))
+    return Built;
+  if (!status.compare("EXTENDED", Qt::CaseInsensitive))
+    return Extended;
+  if (!status.compare("FAILED", Qt::CaseInsensitive))
+    return Failed;
+  if (!status.compare("CLOSED", Qt::CaseInsensitive))
+    return Closed;
+  return Unknown;
 }
 
 /** Returns a string representation of the circuit's status. */
@@ -103,12 +94,5 @@ Circuit::statusString() const
     default:          status = tr("Unknown"); break;
   }
   return status;
-}
-
-/** Returns true if all fields in this Circuit object are empty. */
-bool
-Circuit::isEmpty() const
-{
-  return (!_circId && (_status == Unknown));
 }
 

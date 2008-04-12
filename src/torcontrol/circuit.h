@@ -19,7 +19,6 @@
 
 #include <QCoreApplication>
 #include <QStringList>
-#include <QString>
 
 
 class Circuit
@@ -39,18 +38,11 @@ public:
 
   /** Default constructor. */
   Circuit();
-  /** Constructor */
-  Circuit(quint64 circId, Status status, QString path);
-  /** Constructor */
-  Circuit(quint64 circId, Status status, QStringList hops);
-
-  /** Parses the given string (in Tor's control protocol format) */
-  static Circuit fromString(QString circuit);
-  /** Converts a string description of a circuit's status to an enum value */
-  static Status toStatus(QString strStatus);
+  /** Constructor. */  
+  Circuit(const QString &circuit);
   
-  /** Returns true if all fields in this Circuit are empty. */
-  bool isEmpty() const;
+  /** Returns true if this circuit is valid. */
+  bool isValid() const { return _isValid; }
   
   /** Returns the ID for this circuit */
   quint64 id() const { return _circId; }
@@ -58,19 +50,26 @@ public:
   Status status() const { return _status; }
   /** Returns a string representation of the status of this circuit. */
   QString statusString() const;
-  /** Returns the path chosen for this circuit */
-  QString path() const { return _path; }
   /** Returns the length of the circuit's path. */
-  uint length() const { return hops().size(); }
-  /** Returns a list of hops on the path. */
-  QStringList hops() const { return _path.isEmpty() ? QStringList() 
-                                                    : _path.split(","); }
+  uint length() const { return _ids.size(); }
+  /** Returns the circuit's path as an ordered list of router nicknames. */
+  QStringList routerNames() const { return _names; }
+  /** Returns the circuit's path as an ordered list of router fingerprints. */
+  QStringList routerIDs() const { return _ids; }
+
+  /** Converts a string description of a circuit's status to an enum value */
+  static Status toStatus(const QString &strStatus);
 
 private:
   quint64 _circId; /**< Circuit ID. */
   Status _status;  /**< Circuit status. */
-  QString _path;   /**< Circuit path. */
+  QStringList _names;  /**< Nicknames of the routers in the circuit. */
+  QStringList _ids;    /**< IDs of the routers in the circuit. */
+  bool _isValid;
 };
+
+/** A collection of circuits. */
+typedef QList<Circuit> CircuitList;
 
 #endif
 

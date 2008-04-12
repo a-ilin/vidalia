@@ -25,8 +25,6 @@
 RouterListWidget::RouterListWidget(QWidget *parent)
 : QTreeWidget(parent)
 {
-  _onlineRouterCount = 0;
-  
   /* Create and initialize columns */
   setHeaderLabels(QStringList() << QString("")
                                 << QString("")
@@ -81,8 +79,8 @@ void
 RouterListWidget::clearRouters()
 {
   _idmap.clear();
-  _onlineRouterCount = 0;
   QTreeWidget::clear();
+  setStatusTip(tr("%1 relays online").arg(0));
 }
 
 /** Called when the user selects a router from the list. This will search the
@@ -159,8 +157,6 @@ RouterListWidget::addRouter(RouterDescriptor rd)
 
   RouterListItem *item = findRouterById(id);
   if (item) {
-    if (item->descriptor().online())
-      _onlineRouterCount--;
     item->update(rd);
   } else {
     item = new RouterListItem(this, rd);
@@ -169,10 +165,7 @@ RouterListWidget::addRouter(RouterDescriptor rd)
   }
 
   /* Set our status tip to the number of servers in the list */
-  if (rd.online())
-    _onlineRouterCount++;
-  setStatusTip(tr("%1 relays online (%2 total)").arg(_onlineRouterCount)
-                                                .arg(topLevelItemCount()));
+  setStatusTip(tr("%1 relays online").arg(topLevelItemCount()));
 }
 
 /** Called when the selected items have changed. This emits the 

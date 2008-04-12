@@ -280,7 +280,9 @@ TorControl::onAuthenticated()
   /* The version of Tor isn't going to change while we're connected to it, so
    * save it for later. */
   getInfo("version", _torVersion);
-  
+  /* We want to use verbose names in events and GETINFO results. */
+  useFeature("VERBOSE_NAMES");
+
   /* The control socket is connected, so we can stop reading from stdout */
   if (_torProcess)
     _torProcess->closeStdout();
@@ -332,6 +334,16 @@ TorControl::protocolInfo(QString *errmsg)
   return pi;
 }
 
+/** Tells Tor the controller wants to enable <b>feature</b> via the
+ * USEFEATURE control command. Returns true if the given feature was
+ * successfully enabled. */
+bool
+TorControl::useFeature(const QString &feature, QString *errmsg)
+{
+  ControlCommand cmd("USEFEATURE", feature);
+  return send(cmd, errmsg); 
+}
+
 /** Returns true if Tor either has an open circuit or (on Tor >=
  * 0.2.0.1-alpha) has previously decided it's able to establish a circuit. */
 bool
@@ -347,7 +359,7 @@ TorControl::circuitEstablished()
 
   /* Either Tor was too old or our getinfo failed, so try to get a list of all
    * circuits and check their statuses. */
-  QList<Circuit> circs = getCircuits();
+  CircuitList circs = getCircuits();
   foreach (Circuit circ, circs) {
     if (circ.status() == Circuit::Built)
       return true;
@@ -848,144 +860,51 @@ TorControl::resetConf(QString key, QString *errmsg)
   return resetConf(QStringList() << key, errmsg);
 }
 
-/** Gets the descriptor for the specified router name. */
+/** Returns the descriptor for the router whose fingerprint matches
+ * <b>id</b>. If <b>id</b> is invalid or the router's descriptor cannot
+ * be parsed, then an invalid RouterDescriptor is returned. */
 RouterDescriptor
-TorControl::getDescriptorByName(QString name, QString *errmsg)
+TorControl::getRouterDescriptor(const QString &id, QString *errmsg)
 {
-  QList<RouterDescriptor> rdlist;
-  RouterDescriptor rd;
-  
-  rdlist = getDescriptorListByName(QStringList() << name, errmsg);
-  if (!rdlist.isEmpty()) {
-    rd = (RouterDescriptor)rdlist.takeFirst();
-    return rd;
-  }
-  return RouterDescriptor();
+  QStringList descriptor = getInfo("desc/id/" + id, errmsg).toStringList();
+  return RouterDescriptor(descriptor);
 }
 
-/** Gets the descriptor for the specified ID. */
-RouterDescriptor
-TorControl::getDescriptorById(QString id, QString *errmsg)
+/** Returns the status of the router whose fingerprint matches <b>id</b>. If
+ * <b>id</b> is invalid or the router's status cannot be parsed, then an
+ * invalid RouterStatus is returned. */
+RouterStatus
+TorControl::getRouterStatus(const QString &id, QString *errmsg)
 {
-  QList<RouterDescriptor> rdlist;
-  RouterDescriptor rd;
-  
-  rdlist = getDescriptorListById(QStringList() << id, errmsg);
-  if (!rdlist.isEmpty()) {
-    rd = (RouterDescriptor)rdlist.takeFirst();
-    return rd;
-  }
-  return RouterDescriptor();
+  QStringList status = getInfo("ns/id/" + id, errmsg).toStringList();
+  return RouterStatus(status);
 }
 
-/** Gets router descriptors for all names in <b>nameList</b>. */
-QList<RouterDescriptor>
-TorControl::getDescriptorListByName(QStringList nameList, QString *errmsg)
+/** Returns a RouterStatus object for every known router in the network. If
+ * the network status document cannot be parsed, then an empty NetworkStatus
+ * is returned. */
+NetworkStatus
+TorControl::getNetworkStatus(QString *errmsg)
 {
-  ControlCommand cmd("GETINFO");
-  ControlReply reply;
-  QList<RouterDescriptor> rdlist;
+  QStringList networkStatusLines = getInfo("ns/all", errmsg).toStringList();
+  QList<RouterStatus> networkStatus;
+  int len = networkStatusLines.size();
+  int i = 0;
   
-  /* If there are no IDs in the list, then return now. */
-  if (nameList.isEmpty()) {
-    return QList<RouterDescriptor>();
+  while (i < len) {
+    /* Extract the "r", "s", and whatever other status lines */
+    QStringList routerStatusLines;
+    do {
+      routerStatusLines << networkStatusLines.at(i);
+    } while (++i < len && ! networkStatusLines.at(i).startsWith("r "));
+    
+    /* Create a new RouterStatus object and add it to the network status, if
+     * it's valid. */
+    RouterStatus routerStatus(routerStatusLines);
+    if (routerStatus.isValid())
+      networkStatus << routerStatus;
   }
-  
-  /* Build up the the getinfo arguments from the list of names */
-  foreach (QString name, nameList) {
-    cmd.addArgument("desc/name/"+ name);
-  }
-  
-  /* Request the list of router descriptors */
-  if (send(cmd, reply, errmsg)) {
-    foreach (ReplyLine line, reply.getLines()) {
-      /* Check if we got a "250 OK" and descriptor data. */
-      if (line.getStatus() == "250" && !line.getData().isEmpty()) {
-        /* Parse the router descriptor data */
-        rdlist << RouterDescriptor(line.getData());
-      }
-    }
-  }
-  return rdlist;
-}
-
-/** Gets router descriptors for all IDs in <b>idlist</b>. */
-QList<RouterDescriptor>
-TorControl::getDescriptorListById(QStringList idlist, QString *errmsg)
-{
-  ControlCommand cmd("GETINFO");
-  ControlReply reply;
-  QHash<QString,bool> offline;
-  QList<RouterDescriptor> rdlist;
-  
-  /* If there are no IDs in the list, then return now. */
-  if (idlist.isEmpty()) {
-    return QList<RouterDescriptor>();
-  }
-  
-  /* Build up the the getinfo arguments fromthe list of IDs */
-  foreach (QString id, idlist) {
-    if (id.startsWith("!")) {
-      /* The ! means this router is offline. Save a list of the offline
-       * routers for easy lookup after we get all descriptors from Tor */
-      id = id.remove("!");
-      offline.insert(id, true);
-    }
-    cmd.addArgument("desc/id/"+ id);
-  }
-  
-  /* Request the list of router descriptors */
-  if (send(cmd, reply, errmsg)) {
-    foreach (ReplyLine line, reply.getLines()) {
-      /* Check if we got a "250 OK" and descriptor data. */
-      if (line.getStatus() == "250" && !line.getData().isEmpty()) {
-        /* Parse the router descriptor data */
-        RouterDescriptor rd(line.getData());
-        rd.setOffline(!offline.isEmpty() && offline.contains(rd.id()));
-        rdlist << rd;
-      }
-    }
-  }
-  return rdlist;
-}
-
-/** Gets a list of RouterDescriptor objects for all routers that Tor currently
- * knows about. */
-QList<RouterDescriptor>
-TorControl::getRouterList(QString *errmsg)
-{
-  /* Get a list of all router IDs Tor currently know about */
-  QStringList idList = getRouterIDList(errmsg);
-  /* Get descriptors for each of those routers */
-  return getDescriptorListById(idList, errmsg);
-}
-
-/** Gets a list of router IDs for all routers Tor knows about. */
-QStringList
-TorControl::getRouterIDList(QString *errmsg)
-{
-  ControlCommand cmd("GETINFO", "network-status");
-  ControlReply reply;
-  QStringList idList;
-
-  if (send(cmd, reply, errmsg)) {
-    QString routerIDs = reply.getMessage().remove(0,qstrlen("network-status="));
-
-    /* Split the list of router IDs up */
-    QStringList routers = routerIDs.split(" ");
-    foreach (QString router, routers) {
-      /* A router ID may be of the form <name>=$<ID>, $<ID>, or <ID> */
-      QString id = router.mid(router.indexOf("=")+1);
-      id = id.replace("$", "");
-      /* A "!" before <name> or <ID> means "unresponsive" */
-      if (router.startsWith("!") && !id.startsWith("!")) {
-        id.prepend("!");
-      }
-      /* Add this router ID to the list. */
-      idList << id;
-    }
-  }
-  return idList;
+  return networkStatus;
 }
 
 /** Gets a list of current circuits. */
@@ -994,24 +913,16 @@ TorControl::getCircuits(QString *errmsg)
 {
   ControlCommand cmd("GETINFO", "circuit-status");
   ControlReply reply;
-  QList<Circuit> circuits;
-  Circuit c;
+  CircuitList circuits;
   
-  if (send(cmd, reply, errmsg)) {
-    /* Sometimes there is a circuit on the first message line */
-    QString msg = reply.getMessage();
-    c = Circuit::fromString(msg.mid(msg.indexOf("=")+1));
-    if (!c.isEmpty()) {
-      circuits << c;
-    }
+  if (!send(cmd, reply, errmsg))
+    return CircuitList();
 
-    /* The rest of the circuits just come as data, one per line */
-    foreach(QString line, reply.getData()) {
-      c = Circuit::fromString(line);
-      if (!c.isEmpty()) {
-        circuits << Circuit::fromString(line);
-      }
-    }
+  /* The rest of the circuits just come as data, one per line */
+  foreach(QString line, reply.getData()) {
+    Circuit circ(line);
+    if (circ.isValid())
+      circuits << circ;
   }
   return circuits;
 }

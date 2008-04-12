@@ -19,23 +19,24 @@
 
 
 /** Constructor */
-CircuitItem::CircuitItem(Circuit circuit, QString displayedPath)
+CircuitItem::CircuitItem(const Circuit &circuit)
 {
   /* Update the displayed text */
-  update(circuit, displayedPath);
+  update(circuit);
 }
 
 /** Updates the status and path of this circuit item. */
 void
-CircuitItem::update(Circuit circuit, QString displayedPath)
+CircuitItem::update(const Circuit &circuit)
 {
+  QString displayedPath;
+
   /* Save the Circuit object */
   _circuit = circuit;
   
   /* Use a semi-meaningful value if the path is empty */
-  if (displayedPath.isEmpty()) {
-    displayedPath = tr("<Path Empty>");
-  }
+  displayedPath = circuit.length() > 0 ? circuit.routerNames().join(",")
+                                       : tr("<Path Empty>");
 
   /* Update the column fields */
   setText(CircuitListWidget::ConnectionColumn, displayedPath);

@@ -121,22 +121,21 @@ CircuitListWidget::closeSelectedConnections()
   }
 }
 
-/** Adds a circuit to the list. If the circuit already exists in the list, the
- * status and path will be updated. <b>displayedPath</b> contains a
- * description of the circuit's path suitable for humans to read. */
+/** Adds a <b>circuit</b> to the list. If the circuit already exists in the
+ * list, the status and path will be updated. */
 void
-CircuitListWidget::addCircuit(Circuit circuit, QString displayedPath)
+CircuitListWidget::addCircuit(const Circuit &circuit)
 {
   /* Check to see if the circuit already exists in the tree */
   CircuitItem *item = findCircuitItem(circuit.id());
   
   if (!item) {
     /* Add the new circuit */
-    item = new CircuitItem(circuit, displayedPath);
+    item = new CircuitItem(circuit);
     addTopLevelItem(item);
   } else {
     /* Circuit already exists, so update its status and path */
-    item->update(circuit, displayedPath);
+    item->update(circuit);
   }
 
   /* If the circuit is closed or dead, schedule it for removal */
@@ -151,7 +150,7 @@ CircuitListWidget::addCircuit(Circuit circuit, QString displayedPath)
 /** Adds a stream to the list. If the stream already exists in the list, the
  * status and path will be updated. */
 void
-CircuitListWidget::addStream(Stream stream)
+CircuitListWidget::addStream(const Stream &stream)
 {
   /* Check to see if the stream already exists in the tree */
   StreamItem *item = findStreamItem(stream.id());
@@ -326,18 +325,16 @@ CircuitListWidget::onSelectionChanged(QTreeWidgetItem *cur,
     }
 
     /* If this circuit has a path, then emit it so we can highlight it */
-    if (circuit.length() > 0) {
-      emit circuitSelected(circuit);
-    }
+    emit circuitSelected(circuit);
   }
 }
 
 /** Returns a list of circuits currently in the widget. */
-QList<Circuit>
+CircuitList
 CircuitListWidget::circuits()
 {
   int numCircs = topLevelItemCount();
-  QList<Circuit> circs;
+  CircuitList circs;
   
   for (int i = 0; i < numCircs; i++) {
     CircuitItem *circ = (CircuitItem *)topLevelItem(i);

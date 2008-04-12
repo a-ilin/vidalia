@@ -28,6 +28,7 @@
 #include "torevents.h"
 #include "torsignal.h"
 #include "routerdescriptor.h"
+#include "routerstatus.h"
 #include "addressmap.h"
 #include "protocolinfo.h"
 
@@ -155,23 +156,24 @@ public:
   /** Tells Tor to reset a configuration key back to its default value. */
   bool resetConf(QString key, QString *errmsg = 0);
 
-  /** Gets a descriptor for the given router name. */
-  RouterDescriptor getDescriptorByName(QString name, QString *errmsg = 0);
-  /** Gets a descriptor for the given router ID. */
-  RouterDescriptor getDescriptorById(QString id, QString *errmsg = 0);
-  /** Gets descriptors for the given list of router names. */
-  QList<RouterDescriptor> getDescriptorListByName(QStringList names, QString *errmsg = 0);
-  /** Gets descriptors for the given list of router IDs. */
-  QList<RouterDescriptor> getDescriptorListById(QStringList ids, QString *errmsg = 0);
-  /** Gets a list of descriptors for all routers Tor knows about. */
-  QList<RouterDescriptor> getRouterList(QString *errmsg = 0);
-  /** Gets a list of router IDs for all routers Tor knows about. */
-  QStringList getRouterIDList(QString *errmsg = 0);
+  /** Returns the descriptor for the router whose fingerprint matches
+   * <b>id</b>. If <b>id</b> is invalid or the router's descriptor cannot be
+   * parsed, then an invalid RouterDescriptor is returned. */
+  RouterDescriptor getRouterDescriptor(const QString &id, QString *errmsg = 0);
+  /** Returns the status of the router whose fingerprint matches <b>id</b>. If
+   * <b>id</b> is invalid or the router's status cannot be parsed, then an
+   * invalid RouterStatus is returned. */
+  RouterStatus getRouterStatus(const QString &id, QString *errmsg = 0);
+  /** Returns a RouterStatus object for every known router in the network. If
+   * the network status document cannot be parsed, then an empty NetworkStatus
+   * is returned. */
+  NetworkStatus getNetworkStatus(QString *errmsg = 0);
+
 
   /** Gets a list of current circuits. */
-  QList<Circuit> getCircuits(QString *errmsg = 0);
+  CircuitList getCircuits(QString *errmsg = 0);
   /** Gets a list of current streams. */
-  QList<Stream> getStreams(QString *errmsg = 0);
+  StreamList getStreams(QString *errmsg = 0);
   
   /** Gets a list of address mappings of the type specified by <b>type</b>
    * (defaults to <i>AddressMapAll</i>. */
@@ -224,7 +226,11 @@ private:
   bool send(ControlCommand cmd, ControlReply &reply, QString *errmsg = 0);
   /** Send a message to Tor and discard the response */
   bool send(ControlCommand cmd, QString *errmsg = 0);
-  
+  /** Tells Tor the controller wants to enable <b>feature</b> via the
+   * USEFEATURE control command. Returns true if the given feature was
+   * successfully enabled. */
+  bool useFeature(const QString &feature, QString *errmsg = 0);
+
 /* The slots below simply relay signals from the appropriate member objects */
 private slots:
   void onStarted();

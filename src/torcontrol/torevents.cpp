@@ -245,7 +245,9 @@ TorEvents::handleCircuitStatus(const ReplyLine &line)
   int i = msg.indexOf(" ") + 1;
   if (i > 0) {
     /* Post the event to each of the interested targets */
-    dispatch(CircuitStatus, new CircuitEvent(Circuit::fromString(msg.mid(i))));
+    Circuit circ(msg.mid(i));
+    if (circ.isValid())
+      dispatch(CircuitStatus, new CircuitEvent(circ));
   }
 }
 

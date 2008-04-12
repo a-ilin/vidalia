@@ -81,7 +81,6 @@ protected:
 private:
   /** Maps a server ID to that server's list item. */
   QHash<QString,RouterListItem*> _idmap;
-  quint32  _onlineRouterCount; /**< Number of online routers. */
 };
 
 #endif

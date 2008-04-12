@@ -44,10 +44,10 @@ public slots:
   /** Loads a list of current circuits and streams. */
   void loadConnections();
   /** Adds <b>circuit</b> to the list and the map */
-  void addCircuit(Circuit circuit);
+  void addCircuit(const Circuit &circuit);
   /** Adds <b>stream</b> to the list of circuits, under the appropriate
    * circuit. */
-  void addStream(Stream stream);
+  void addStream(const Stream &stream);
   /** Clears all known information */
   void clear();
 
@@ -76,19 +76,18 @@ private slots:
 private:
   /** Adds an IP address to the resolve queue and updates the queue timers. */
   void addToResolveQueue(QHostAddress ip, QString id);
-  /** Loads a list of router descriptors from the list of IDs. */
-  void loadDescriptors(QStringList ids);
+  /** Retrieves a list of all running routers from Tor and their descriptors,
+   * and adds them to the RouterListWidget. */
+  void loadNetworkStatus();
   /** Loads a list of address mappings from Tor. */
   void loadAddressMap();
   /** Adds a router to our list of servers and retrieves geographic location
    * information for the server. */
-  void addRouter(RouterDescriptor rd);
-  /** Convert all hops in <b>circ</b>'s path to server identities.
-  * <b>circ</b>'s status and circuit ID will be preserved. */
-  Circuit circuitPathIDs(Circuit circ);
-  /** Convert all hops in <b>circ</b>'s path to server names. <b>circ</b>'s
-   * status and circuit ID will be preserved. */
-  Circuit circuitPathNames(Circuit circ);
+  void addRouter(const RouterDescriptor &rd);
+  /** Called when a NEWDESC event arrives. Retrieves new router descriptors
+   * for the router identities given in <b>ids</b> and updates the router list
+   * and network map. */
+  void newDescriptors(const QStringList &ids);
 
   /** TorControl object used to talk to Tor. */
   TorControl* _torControl;
