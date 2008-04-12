@@ -26,31 +26,31 @@ grow.
 <a name="general"/>
 <h3>Allmänt-inställningar</h3>
 <p>
-Settings on the <i>General</i> page are the most commonly modified settings.
+Settings on the <i>Allmänt</i> page are the most commonly modified settings.
 </p>
 <ul>
-  <li><b>Tor Executable</b>: 
+  <li><b>Körbar fil för Tor</b>: 
     This is the Tor executable that Vidalia will run when you select
     <i>Start</i> from the tray menu. If you have multiple versions of Tor installed,
     you can tell Vidalia which version you would like to run by clicking the
-    <i>Browse</i> button and navigating to the particular Tor installation you
+    <i>Bläddra</i> button and navigating to the particular Tor installation you
     want.
   </li>
   <li><b>Startup Options</b>:
     This setting allows you to have Vidalia automatically start Tor when
     Vidalia starts. You can also configure Vidalia to run when your system
-    starts (<i>Windows only</i>).
+    starts (<i>Bara Windows</i>).
   </li>
 </ul>
 
 <a name="network"/>
 <h3>Nätverk-inställningar</h3>
 <p>
-The <i>Network</i> settings page lets you change how Tor connects to the Tor
+The <i>Nätverk</i> settings page lets you change how Tor connects to the Tor
 network.
 </p>
 <ul>
-  <li><b>I use a proxy to access the Internet</b>:
+  <li><b>Jag använder en proxy till internet</b>:
     If your Internet connection requires an HTTP proxy, you can configure Tor
     to send all of its directory requests and Tor relay connections through
     your proxy. You must specify at least the hostname or address of your
@@ -59,14 +59,14 @@ network.
     <i>Username</i> and <i>Password</i> you use to connect to your proxy.
     Otherwise, you can leave those fields blank.
   </li>
-  <li><b>My firewall only lets me connect to certain ports</b>:
+  <li><b>Min brandvägg gevs mig avsluta bara till säkra portarna</b>:
     If you are behind a restrictive firewall or proxy that limits the ports you
     are able to connect to, you can configure Tor to connect directly only to
     relays listening on the ports allowed by your firewall or proxy. Simply
     enter a list of ports permitted by your firewall or proxy, separated by
     commas. (<i>Example: 80,443,8080</i>)
   </li>
-  <li><b>My ISP blocks connections to the Tor network</b>:
+  <li><b>Min internetleverantör blockerar anslutningar till Tor-nätverket</b>:
     If your ISP (Internet Service Provider) blocks connections to the Tor
     network, Tor can attempt to avoid being filtered by encrypting its
     directory connections and connecting to the Tor network through relays
@@ -109,11 +109,11 @@ network.
 <a name="appearance"/>
 <h3>Utseende-inställningar</h3>
 <p>
-The settings on the <i>Appearance</i> page allow you to customize the
+The settings on the <i>Utseende</i> page allow you to customize the
 look and feel of Vidalia.
 </p>
 <ul>
-  <li><b>Language</b>:
+  <li><b>Språk</b>:
     Vidalia's interface has been translated into many languages by helpful
     volunteers. When Vidalia is first run, it will try to guess which language
     your computer is currently using. If Vidalia guesses incorrectly, or if
@@ -121,7 +121,7 @@ look and feel of Vidalia.
     dropdown box. You will need to restart Vidalia after changing the
     displayed language for the changes to take effect.
   </li>
-  <li><b>Style</b>:
+  <li><b>Stil</b>:
     In most cases, Vidalia will default to using your platform's default
     interface style. If you dislike the default, you can choose whichever
     interface style you prefer from the dropdown box.
@@ -131,28 +131,28 @@ look and feel of Vidalia.
 <a name="advanced"/>
 <h3>Avancerat-inställningar</h3>
 <p>
-The settings on the <i>Advanced</i> page should generally only be
+The settings on the <i>Avancerat</i> page should generally only be
 modified by more experienced users.
 </p>
 <ul>
-  <li><b>Control Address &amp; Port</b>:
-    The <i>Control Port</i> is the port which Vidalia uses to talk to Tor.
+  <li><b>KontrollAdress Address &amp; port</b>:
+    The <i>Kontrollport</i> is the port which Vidalia uses to talk to Tor.
     This doesn't need to be changed unless you have a conflict with another
     service on your machine, or if you are using Vidalia to control and
     monitor a Tor process running on another machine.
   </li>
-  <li><b>Control Port Authentication</b>:
+  <li><b>Kontrollports styrkning</b>:
     Control port authentication is used to limit the applications on your
     machine that can connect to and reconfigure your Tor installation. The
     available authentication methods are:
     <ul>  
       <li>
-        <b>None</b> -- No authentication is required. Use of this option is
+        <b>Inget</b> -- No authentication is required. Use of this option is
         <b>strongly</b> discouraged. Any application or user on your computer
         can reconfigure your Tor installation.
       </li>
       <li> 
-        <b>Password</b> <i>(Default)</i> -- If this method is selected, you
+        <b>Lösenord</b> <i>(Default)</i> -- If this method is selected, you
         can specify a password that Tor will require each time a user or
         application connects to Tor's control port. If Vidalia starts Tor for
         you, you can have Vidalia randomly generate a new password each time
@@ -167,21 +167,21 @@ modified by more experienced users.
       </li>
     </ul>
   </li>
-  <li><b>Tor Configuration File</b> <i>(optional)</i>:
+  <li><b>Konfigurationsfil för Tor</b> <i>(optional)</i>:
     You can use this option to have Vidalia start Tor using a 
     specific <i>torrc</i>, Tor's configuration file. If you leave this field
     blank, Tor will uses its own default torrc location.
   </li>
-  <li><b>Tor Data Directory</b> <i>(optional)</i>:
+  <li><b>Tor-datakatalog</b> <i>(optional)</i>:
     You can specify the directory in which Tor will store its saved data,
     such as cached Tor relay information, Tor relay keys, and configuration
     files. If you leave this field blank, Tor will use its own default data
     directory location.
   </li>
-  <li><b>Permissions</b> <i>(optional, not available on Windows)</i>:
-    If you enter a value for <b>Run as User</b>, Tor will <i>setuid</i> to this user
+  <li><b>Rättigheter</b> <i>(optional, not available on Windows)</i>:
+    If you enter a value for <b>Kör som användaren</b>, Tor will <i>setuid</i> to this user
     when it starts.
-    If you enter a value for <b>Run as Group</b>, Tor will <i>setgid</i> to this
+    If you enter a value for <b>Kör som gruppen</b>, Tor will <i>setgid</i> to this
     group when it starts.
   </li>
 </ul>
