@@ -1,6 +1,4 @@
-Things to complete for 0.1.0:
-  * Stop using 'getinfo network-status' to get a list of servers. Instead, we
-    should be using 'getinfo ns/all' (Tor >= 0.1.2.3-alpha).
+Things to complete for 0.1.x:
   * There is a ticket about not being able to save config changes when an alternate
     torrc is specified. Needs to be verified and fixed. (Ticket #159)
   * We should close any logs that have 'stdout' or 'stderr' as the target after

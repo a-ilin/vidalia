@@ -1,6 +1,14 @@
 0.1.3   xx-xxx-2008
   o Fix the OSX_FAT_BINARY build option so that it actually does produce a
     Universal binary when enabled. (Ticket #342)
+  o Switch to using 'getinfo ns/all' instead of 'getinfo network-status' to
+    get a list of available relays. 'getinfo network-status' was deprecated
+    long ago.
+  o Only display the running relays in the big list of relays to the left of
+    the network map. Listing a big pile of unavailable relays is not
+    particularly useful, and just clutters up the list.
+  o Add support for the 'usefeature verbose_names' control command that was
+    introduced way back in Tor 0.1.2.2-alpha.
   o Correct the tab order on the custom bandwidth settings tab. (Ticket #351)
  
 
