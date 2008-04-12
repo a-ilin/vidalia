@@ -2229,6 +2229,119 @@ Verteiler besteht. Sie können auch Ihren PGP- oder GPG-Finegerabdruck angeben.<
     </message>
 </context>
 <context>
+    <name>ServicePage</name>
+    <message>
+        <location filename="../config/servicepage.ui" line="31"/>
+        <source>Provided Hidden Services</source>
+        <translation>Versteckte Dienste</translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="56"/>
+        <source>Onion Address</source>
+        <translation>Onion Adresse</translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="61"/>
+        <source>Virtua Port</source>
+        <translation>Virtueller Port</translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="66"/>
+        <source>Target</source>
+        <translation>Ziel</translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="71"/>
+        <source>Directory Path</source>
+        <translation>Verzeichnispfad</translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="76"/>
+        <source>Enabled</source>
+        <translation>Gestartet</translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="84"/>
+        <source>Add new service to list</source>
+        <translation>Füge einen neuen Service hinzu</translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="97"/>
+        <source>Remove selected service from list</source>
+        <translation>Entferne den gewählten Service</translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="110"/>
+        <source>Copy onion address of selected service to clipboard</source>
+        <translation>Kopiere die Onion Adresse in die Zwischenablage</translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="123"/>
+        <source>Browse in local file system and choose directory for selected service</source>
+        <translation>Durchsuchen Sie ihr lokales Dateisystem um ein Verzeichnis auszuwählen</translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="27"/>
+        <source>Services</source>
+        <translation>Dienste</translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="105"/>
+        <source>Error while trying to unpublish all services</source>
+        <translation>Fehler beim Versuch alle Dienste zu stoppen</translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="137"/>
+        <source>Error while trying to publish services</source>
+        <translation>Fehler beim Versuch Dienste zu starten</translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="274"/>
+        <source>Directory not found</source>
+        <translation>Verzeichnis nicht gefunden</translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="330"/>
+        <source>Directory not found</source>
+        <translation>Verzeichnis nicht gefunden</translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="374"/>
+        <source>Created by Tor</source>
+        <translation>Generiert von Tor</translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="400"/>
+        <source>Error</source>
+        <translation>Fehler</translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="400"/>
+        <source>Please select a Service</source>
+        <translation>Bitte einen Dienst wählen</translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="447"/>
+        <source>Select Service Directory</source>
+        <translation>Verzeichnis auswählen</translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="536"/>
+        <source>Virtual Port may only contain valid port numbers</source>
+        <translation>Virtueller Port ist nicht gültig, nur Werte aus dem Bereich</translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="567"/>
+        <source>Target may only contain address:port, address, or port</source>
+        <translation>Ziel darf nur aus Adresse:Port, Adresse oder Port bestehen</translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="587"/>
+        <source>Directory already in use by another service</source>
+        <translation>Verzeichnis bereits von einem anderen Dienst benutzt</translation>
+    </message>    
+</context>
+<context>
     <name>Stream</name>
     <message>
         <location filename="../../torcontrol/stream.cpp" line="129"/>

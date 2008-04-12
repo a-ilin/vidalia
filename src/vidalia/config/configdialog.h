@@ -26,6 +26,7 @@
 #include "serverpage.h"
 #include "advancedpage.h"
 #include "appearancepage.h"
+#include "servicepage.h"
 
 #include "ui_configdialog.h"
 
@@ -41,7 +42,8 @@ public:
     Network,      /** Network configuration page. */
     Server,       /** Server configuration page. */
     Appearance,   /** Appearance configuration page. */
-    Advanced      /** Advanced configuration page. */
+    Advanced,     /** Advanced configuration page. */
+    Service       /** Service Configuration page */
   };
 
   /** Default Constructor */
@@ -76,7 +78,7 @@ private:
   QAction* createPageAction(QIcon img, QString text, QActionGroup *group);
   /** Adds a new action to the toolbar. */
   void addAction(QAction *action, const char *slot = 0);
-  
+
   /** Qt Designer generated object */
   Ui::ConfigDialog ui;
 };

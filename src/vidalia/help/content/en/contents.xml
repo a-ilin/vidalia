@@ -32,6 +32,7 @@
     <Topic id="server" name="Relay Settings" html="config.html" section="server"/>
     <Topic id="appearance" name="Appearance Settings" html="config.html" section="appearance"/>
     <Topic id="advanced" name="Advanced Settings" html="config.html" section="advanced"/>
+    <Topic id="services" name="Hidden Services" html="config.html" section="services"/>
   </Topic>
   <Topic id="server" name="Setting Up a Tor Relay" html="server.html">
     <Topic id="basic" name="Basic Setup" html="server.html" section="basic"/>
@@ -41,6 +42,14 @@
   <Topic id="bridges" name="Bridge Relays" html="bridges.html">
     <Topic id="about" name="What are bridge relays?" html="bridges.html" section="about"/>
     <Topic id="finding" name="How do I find a bridge relay?" html="bridges.html" section="finding"/>
+  </Topic>
+  <Topic id="services" name="Hidden Services" html="services.html">
+    <Topic id="about" name="What is a hidden service?" html="services.html" section="about"/>
+    <Topic id="provide" name="How do I provide a hidden service?" html="services.html" section="provide"/>
+    <Topic id="data" name="What data do I need to provide?" html="services.html" section="data"/>
+    <Topic id="buttons" name="What are the five buttons used for?" html="services.html" section="buttons"/>
+    <Topic id="advanced" name="How can I configure advanced hidden service settings?" html="services.html" section="advanced"/>
+    <Topic id="client" name="How does Vidalia help me to access other hidden services?" html="services.html" section="client"/>
   </Topic>
   <Topic id="troubleshooting" name="Troubleshooting" html="troubleshooting.html">
     <Topic id="start" name="I Can't Start Tor" html="troubleshooting.html" section="start"/>

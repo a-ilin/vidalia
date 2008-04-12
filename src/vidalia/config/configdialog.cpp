@@ -42,7 +42,7 @@
 #define IMAGE_SAVE          ":/images/22x22/media-floppy.png"
 #define IMAGE_CANCEL        ":/images/22x22/emblem-unreadable.png"
 #define IMAGE_HELP          ":/images/22x22/help-browser.png"
-
+#define IMAGE_SERVICE       ":/images/22x22/service.png"
 
 /** Constructor */
 ConfigDialog::ConfigDialog(QWidget* parent)
@@ -88,6 +88,10 @@ ConfigDialog::ConfigDialog(QWidget* parent)
   ui.stackPages->add(new AdvancedPage(ui.stackPages),
                      createPageAction(QIcon(IMAGE_ADVANCED),
                                       tr("Advanced"), grp));
+  
+  ui.stackPages->add(new ServicePage(ui.stackPages),
+                       createPageAction(QIcon(IMAGE_SERVICE),
+                                        tr("Services"), grp));
   foreach (ConfigPage *page, ui.stackPages->pages()) {
     connect(page, SIGNAL(helpRequested(QString)),
             this, SLOT(help(QString)));
@@ -250,6 +254,8 @@ ConfigDialog::help()
       help("config.appearance"); break;
     case Advanced:
       help("config.advanced"); break;
+    case Service:
+      help("config.services"); break;
     default:
       help("config.general"); break;
   }

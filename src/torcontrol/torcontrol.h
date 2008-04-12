@@ -124,6 +124,8 @@ public:
   bool setConf(QHash<QString,QString> map, QString *errmsg = 0);
   /** Sets a single configuration key to the given value. */
   bool setConf(QString key, QString value, QString *errmsg = 0);
+  /** Sets a single configuration string that is formatted <key=escaped value>. */
+  bool setConf(QString keyAndValue, QString *errmsg = 0);
   /** Gets values for a set of configuration keys, each of which has a single
    * value. */
   bool getConf(QHash<QString,QString> &map, QString *errmsg = 0);
@@ -142,6 +144,9 @@ public:
    * QVariant containing the value returned by Tor. Returns a default
    * constructed QVariant on failure. */
   QVariant getConf(const QString &key, QString *errmsg = 0);
+  /** Sends a GETCONF message to Tor with the single key and returns a QString
+   * containing the value returned by Tor */
+  QString getHiddenServiceConf(const QString &key, QString *errmsg = 0);
   
   /** Asks Tor to save the current configuration to its torrc */
   bool saveConf(QString *errmsg = 0);

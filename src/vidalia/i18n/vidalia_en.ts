@@ -2198,6 +2198,119 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     </message>
 </context>
 <context>
+    <name>ServicePage</name>
+    <message>
+        <location filename="../config/servicepage.ui" line="31"/>
+        <source>Provided Hidden Services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="56"/>
+        <source>Onion Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="61"/>
+        <source>Virtua Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="66"/>
+        <source>Target</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="71"/>
+        <source>Directory Path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="76"/>
+        <source>Enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="84"/>
+        <source>Add new service to list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="97"/>
+        <source>Remove selected service from list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="110"/>
+        <source>Copy onion address of selected service to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="123"/>
+        <source>Browse in local file system and choose directory for selected service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="27"/>
+        <source>Services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="105"/>
+        <source>Error while trying to unpublish all services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="137"/>
+        <source>Error while trying to publish services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="274"/>
+        <source>Directory not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="330"/>
+        <source>Directory not found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="374"/>
+        <source>Created by Tor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="400"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="400"/>
+        <source>Please select a Service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="447"/>
+        <source>Select Service Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="536"/>
+        <source>Virtual Port may only contain valid port numbers</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="567"/>
+        <source>Target may only contain address:port, address, or port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="587"/>
+        <source>Directory already in use by another service</source>
+        <translation type="unfinished"></translation>
+    </message>    
+</context>
+<context>
     <name>Stream</name>
     <message>
         <location filename="../../torcontrol/stream.cpp" line="129"/>

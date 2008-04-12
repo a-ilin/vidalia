@@ -61,6 +61,10 @@ set(vidalia_SRCS ${vidalia_SRCS}
   config/portvalidator.cpp
   config/serverpage.cpp
   config/serversettings.cpp
+  config/service.cpp
+  config/servicelist.cpp
+  config/servicepage.cpp
+  config/servicesettings.cpp
   config/torsettings.cpp
   config/vidaliasettings.cpp
   config/vsettings.cpp
@@ -80,6 +84,7 @@ qt4_wrap_cpp(vidalia_SRCS
   config/portvalidator.h
   config/serverpage.h
   config/serversettings.h
+  config/servicepage.h
   config/torsettings.h
   config/vidaliasettings.h
   config/vsettings.h
@@ -192,6 +197,7 @@ qt4_wrap_ui(vidalia_SRCS
   config/generalpage.ui
   config/networkpage.ui
   config/serverpage.ui
+  config/servicepage.ui
   help/browser/helpbrowser.ui
   log/messagelog.ui
   network/netviewer.ui

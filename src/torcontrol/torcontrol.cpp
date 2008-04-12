@@ -668,6 +668,15 @@ TorControl::setConf(QString key, QString value, QString *errmsg)
   return setConf(map, errmsg);
 }
 
+/** Sets a single configuration string that is formatted <key=escaped value>.*/
+bool
+TorControl::setConf(QString keyAndValue, QString *errmsg)
+{
+  QHash<QString,QString> map;
+  map.insert(keyAndValue, "");
+  return setConf(map, errmsg);
+}
+
 /** Gets values for a set of configuration keys, each of which has a single
  * value. */
 bool
@@ -792,6 +801,22 @@ TorControl::getConf(const QString &key, QString *errmsg)
 {
   QVariantMap map = getConf(QStringList() << key, errmsg);
   return map.value(key);
+}
+
+/** Sends a GETCONF message to Tor with the single key and returns a QString
+ * containing the value returned by Tor */
+QString
+TorControl::getHiddenServiceConf(const QString &key, QString *errmsg)
+{
+  ControlCommand cmd("GETCONF");
+  ControlReply reply;
+  QVariantMap confMap;
+
+  cmd.addArgument(key);
+  if (!send(cmd, reply, errmsg))
+    return "";
+
+  return reply.toString();
 }
 
 /** Asks Tor to save the current configuration to its torrc. */

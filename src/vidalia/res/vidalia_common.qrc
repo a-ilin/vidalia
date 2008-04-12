@@ -39,6 +39,7 @@
         <file>22x22/edit-select-all.png</file>
         <file>22x22/emblem-system.png</file>
         <file>22x22/emblem-unreadable.png</file>
+        <file>22x22/folder.png</file>
         <file>22x22/format-justify-fill.png</file>
         <file>22x22/go-down.png</file>
         <file>22x22/go-home.png</file>
@@ -55,6 +56,7 @@
         <file>22x22/preferences-desktop-locale.png</file>
         <file>22x22/preferences-system.png</file>
         <file>22x22/save-all.png</file>
+        <file>22x22/service.png</file>
         <file>22x22/system-search.png</file>
         <file>22x22/utilities-system-monitor.png</file>
         <file>22x22/view-refresh.png</file>
