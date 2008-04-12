@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="fi">
+<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -480,7 +481,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../config/configdialog.cpp" line="94"/>
         <source>Services</source>
-        <translation type="unfinished"></translation>
+        <translation>Palvelut</translation>
     </message>
 </context>
 <context>
@@ -564,7 +565,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../config/generalpage.cpp" line="82"/>
         <source>Select Proxy Executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse välityspalvelinohjelma</translation>
     </message>
     <message>
         <location filename="../config/generalpage.cpp" line="103"/>
@@ -574,17 +575,17 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../config/generalpage.ui" line="22"/>
         <source>Start Vidalia when my system starts</source>
-        <translation type="unfinished"></translation>
+        <translation>Käynnistä Vidalia samalla, kun järjestelmä käynnistyy</translation>
     </message>
     <message>
         <location filename="../config/generalpage.ui" line="75"/>
         <source>Start a proxy application when Vidalia starts</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location filename="../config/generalpage.ui" line="97"/>
         <source>Proxy Executable</source>
-        <translation type="unfinished"></translation>
+        <translation>välityspalvelinohjelma</translation>
     </message>
     <message>
         <location filename="../config/generalpage.ui" line="129"/>
@@ -1839,7 +1840,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../config/networkpage.ui" line="235"/>
         <source>Check to configure Tor to encrypt its directory requests and, optionally, use bridge relays to access the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse suojaamaan Tor-yhteydet kryptaamalla ja valinnaisesti käytä siltareitittimiä päästäkseen Tor-verkkoon</translation>
     </message>
 </context>
 <context>
@@ -1939,7 +1940,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../network/routerlistwidget.cpp" line="168"/>
         <source>%1 relays online</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 reititintä online-tilassa</translation>
     </message>
 </context>
 <context>
@@ -2214,7 +2215,7 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/serverpage.ui" line="776"/>
         <source>Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 and 8888</source>
-        <translation type="unfinished">Portit 706, 1863, 5050, 5190, 5222, 8300 ja 8888 {706, 1863, 5050, 5190, 5222, 5223, 8300 ?}</translation>
+        <translation>Portit 706, 1863, 5050, 5190, 5222, 5223, 8300 ja 8888</translation>
     </message>
 </context>
 <context>
@@ -2222,7 +2223,7 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/servicepage.cpp" line="27"/>
         <source>Services</source>
-        <translation type="unfinished"></translation>
+        <translation>Palvelut</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="105"/>
@@ -2237,17 +2238,17 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/servicepage.cpp" line="586"/>
         <source>Error</source>
-        <translation type="unfinished">Virhe</translation>
+        <translation>Virhe</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="442"/>
         <source>Please select a Service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse palvelu.</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="447"/>
         <source>Select Service Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse palvelukansio</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="536"/>
@@ -2267,7 +2268,7 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/servicepage.ui" line="19"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Lomake</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="31"/>
@@ -2282,12 +2283,12 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/servicepage.ui" line="61"/>
         <source>Virtual Port</source>
-        <translation type="unfinished"></translation>
+        <translation>Virtuaaliportti</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="66"/>
         <source>Target</source>
-        <translation type="unfinished"></translation>
+        <translation>Kohde</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="71"/>
@@ -2297,7 +2298,7 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/servicepage.ui" line="76"/>
         <source>Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Käytössä</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="84"/>
