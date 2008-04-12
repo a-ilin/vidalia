@@ -1805,7 +1805,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../config/networkpage.ui" line="274"/>
         <source>The Tor version you are currently running does not support bridges. &lt;br&gt;Tor will still try to encrypt its directory connections.</source>
-        <translation>Käytössä oleva Tor-ohjelma ei tue siltoja. &lt;br&gt;Tor yrittää suojata sen kansioyhteyksiä.</translation>
+        <translation>Käytössä oleva Tor-ohjelma ei tue siltoja. &lt;br&gt;Tor yrittää suojata kryptaamalla sen kansioyhteykset.</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="295"/>
