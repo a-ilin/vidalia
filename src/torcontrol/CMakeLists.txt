@@ -26,6 +26,7 @@ set(torcontrol_SRCS
   protocolinfo.cpp
   replyline.cpp
   routerdescriptor.cpp
+  routerstatus.cpp
   serverstatusevent.cpp
   statusevent.cpp
   stream.cpp
