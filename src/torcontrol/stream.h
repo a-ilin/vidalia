@@ -20,6 +20,8 @@
 #include <QCoreApplication>
 #include <QString>
 #include <QObject>
+#include <QList>
+
 
 class Stream
 {
@@ -78,6 +80,9 @@ private:
   QString _address;    /**< Stream target address. */
   quint16 _port;       /**< Stream target port. */
 };
+
+/** A collection of Stream objects. */
+typedef QList<Stream> StreamList;
 
 #endif
 
