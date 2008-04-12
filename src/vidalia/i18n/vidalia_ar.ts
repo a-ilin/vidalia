@@ -38,12 +38,12 @@
         <translation>إصدارة Vidalia</translation>
     </message>
     <message>
-        <location filename="../about/aboutdialog.cpp" line="79"/>
+        <location filename="../about/aboutdialog.cpp" line="68"/>
         <source>&lt;Not Running&gt;</source>
         <translation>&gt;غير عامل&lt;</translation>
     </message>
     <message>
-        <location filename="../about/aboutdialog.cpp" line="75"/>
+        <location filename="../about/aboutdialog.cpp" line="64"/>
         <source>&lt;Unavailable&gt;</source>
         <translation>&gt;غير متاح&lt;</translation>
     </message>
@@ -96,27 +96,27 @@
         <translation>ستشتغل ڤيداليا بصلاحيات هذه المجموعة</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="226"/>
+        <location filename="../config/advancedpage.cpp" line="215"/>
         <source>Select Tor Configuration File</source>
         <translation>اختر ملف تضبيطات تور</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="239"/>
+        <location filename="../config/advancedpage.cpp" line="228"/>
         <source>File Not Found</source>
         <translation>الملف غير موجود</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="241"/>
+        <location filename="../config/advancedpage.cpp" line="230"/>
         <source>%1 does not exist. Would you like to create it?</source>
         <translation>%1 غير موجود. أتريد إنشاءه؟</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="252"/>
+        <location filename="../config/advancedpage.cpp" line="241"/>
         <source>Failed to Create File</source>
         <translation>تعذَّر إنشاء الملف</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="253"/>
+        <location filename="../config/advancedpage.cpp" line="242"/>
         <source>Unable to create %1 [%2]</source>
         <translation>تعذَّر إنشاء الملف %1 [%2]</translation>
     </message>
@@ -136,22 +136,22 @@
         <translation>شغِّل تور في الخلفية كخدمة ويندوز</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="289"/>
+        <location filename="../config/advancedpage.cpp" line="278"/>
         <source>Unable to remove Tor Service</source>
         <translation>تعذَّرت إزالة خدمة تور</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="300"/>
+        <location filename="../config/advancedpage.cpp" line="289"/>
         <source>Unable to install Tor Service</source>
         <translation>تعذَّر تثبيت خدمة تور</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="301"/>
+        <location filename="../config/advancedpage.cpp" line="290"/>
         <source>Vidalia was unable to install the Tor service.</source>
         <translation>لم تتمكن ڤيداليا من تثبيت تور كخدمة.</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="291"/>
+        <location filename="../config/advancedpage.cpp" line="280"/>
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
@@ -165,7 +165,7 @@ You may need to remove it manually.</source>
         <translation>ملف تضبيطات تور</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="112"/>
+        <location filename="../config/advancedpage.cpp" line="101"/>
         <source>&apos;%1&apos; is not a valid IP address.</source>
         <translation>&apos;%1&apos; ليس رقم آي​پي صحيح.</translation>
     </message>
@@ -175,17 +175,17 @@ You may need to remove it manually.</source>
         <translation>:</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="45"/>
+        <location filename="../config/advancedpage.cpp" line="34"/>
         <source>Advanced</source>
         <translation type="unfinished">متقدمة</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="123"/>
+        <location filename="../config/advancedpage.cpp" line="112"/>
         <source>You selected &apos;Password&apos; authentication, but did not specify a password.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="268"/>
+        <location filename="../config/advancedpage.cpp" line="257"/>
         <source>Select a Directory to Use for Tor Data</source>
         <translation type="unfinished"></translation>
     </message>
@@ -263,7 +263,7 @@ You may need to remove it manually.</source>
         <translation>اختر طراز واجهة ڤيداليا</translation>
     </message>
     <message>
-        <location filename="../config/appearancepage.cpp" line="34"/>
+        <location filename="../config/appearancepage.cpp" line="23"/>
         <source>Appearance</source>
         <translation type="unfinished">المظهر</translation>
     </message>
@@ -311,7 +311,7 @@ You may need to remove it manually.</source>
         <translation>الغِ</translation>
     </message>
     <message>
-        <location filename="../bwgraph/bwgraph.cpp" line="171"/>
+        <location filename="../bwgraph/bwgraph.cpp" line="160"/>
         <source>Since:</source>
         <translation>منذ:</translation>
     </message>
@@ -326,7 +326,7 @@ You may need to remove it manually.</source>
         <translation>% معتم</translation>
     </message>
     <message>
-        <location filename="../bwgraph/bwgraph.cpp" line="237"/>
+        <location filename="../bwgraph/bwgraph.cpp" line="226"/>
         <source>Hide Settings</source>
         <translation>اخف التضبيطات</translation>
     </message>
@@ -344,32 +344,32 @@ You may need to remove it manually.</source>
 <context>
     <name>Circuit</name>
     <message>
-        <location filename="../../torcontrol/circuit.cpp" line="109"/>
+        <location filename="../../torcontrol/circuit.cpp" line="89"/>
         <source>New</source>
         <translation>جديدة</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/circuit.cpp" line="110"/>
+        <location filename="../../torcontrol/circuit.cpp" line="90"/>
         <source>Open</source>
         <translation>افتح</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/circuit.cpp" line="111"/>
+        <location filename="../../torcontrol/circuit.cpp" line="91"/>
         <source>Building</source>
         <translation>يجري البناء</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/circuit.cpp" line="112"/>
+        <location filename="../../torcontrol/circuit.cpp" line="92"/>
         <source>Failed</source>
         <translation>فشل</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/circuit.cpp" line="113"/>
+        <location filename="../../torcontrol/circuit.cpp" line="93"/>
         <source>Closed</source>
         <translation>أغلقت</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/circuit.cpp" line="114"/>
+        <location filename="../../torcontrol/circuit.cpp" line="94"/>
         <source>Unknown</source>
         <translation>غير معلوم</translation>
     </message>
@@ -377,7 +377,7 @@ You may need to remove it manually.</source>
 <context>
     <name>CircuitItem</name>
     <message>
-        <location filename="../network/circuititem.cpp" line="48"/>
+        <location filename="../network/circuititem.cpp" line="39"/>
         <source>&lt;Path Empty&gt;</source>
         <translation>&gt;مسار خاوٍ&lt;</translation>
     </message>
@@ -385,27 +385,27 @@ You may need to remove it manually.</source>
 <context>
     <name>CircuitListWidget</name>
     <message>
-        <location filename="../network/circuitlistwidget.cpp" line="48"/>
+        <location filename="../network/circuitlistwidget.cpp" line="37"/>
         <source>Connection</source>
         <translation>الاتصال</translation>
     </message>
     <message>
-        <location filename="../network/circuitlistwidget.cpp" line="48"/>
+        <location filename="../network/circuitlistwidget.cpp" line="37"/>
         <source>Status</source>
         <translation>الحالة</translation>
     </message>
     <message>
-        <location filename="../network/circuitlistwidget.cpp" line="83"/>
+        <location filename="../network/circuitlistwidget.cpp" line="72"/>
         <source>Zoom to Circuit</source>
         <translation>قارب إلى الدائرة</translation>
     </message>
     <message>
-        <location filename="../network/circuitlistwidget.cpp" line="85"/>
+        <location filename="../network/circuitlistwidget.cpp" line="74"/>
         <source>Close Circuit (Del)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../network/circuitlistwidget.cpp" line="106"/>
+        <location filename="../network/circuitlistwidget.cpp" line="95"/>
         <source>Close Stream (Del)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -433,7 +433,7 @@ You may need to remove it manually.</source>
         <translation>المظهر</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="103"/>
+        <location filename="../config/configdialog.cpp" line="107"/>
         <source>Help</source>
         <translation>مساعدة</translation>
     </message>
@@ -448,22 +448,22 @@ You may need to remove it manually.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="171"/>
+        <location filename="../config/configdialog.cpp" line="175"/>
         <source>Error Saving Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="173"/>
+        <location filename="../config/configdialog.cpp" line="177"/>
         <source>Vidalia was unable to save your %1 settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="200"/>
+        <location filename="../config/configdialog.cpp" line="204"/>
         <source>Error Applying Settings</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="202"/>
+        <location filename="../config/configdialog.cpp" line="206"/>
         <source>Vidalia was unable to apply your %1 settings to Tor.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -477,21 +477,26 @@ You may need to remove it manually.</source>
         <source>Sharing</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../config/configdialog.cpp" line="94"/>
+        <source>Services</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ControlConnection</name>
     <message>
-        <location filename="../../torcontrol/controlconnection.cpp" line="390"/>
+        <location filename="../../torcontrol/controlconnection.cpp" line="379"/>
         <source>Control socket is not connected.</source>
         <translation>مقبس التحكم غير متصل.</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/controlconnection.cpp" line="327"/>
+        <location filename="../../torcontrol/controlconnection.cpp" line="316"/>
         <source>Control socket is not connected</source>
         <translation>مقبس التحكم غير متصل.</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/controlconnection.cpp" line="141"/>
+        <location filename="../../torcontrol/controlconnection.cpp" line="130"/>
         <source>Vidalia was unable to connect to Tor. (%1)</source>
         <translation type="unfinished"></translation>
     </message>
@@ -499,22 +504,22 @@ You may need to remove it manually.</source>
 <context>
     <name>ControlSocket</name>
     <message>
-        <location filename="../../torcontrol/controlsocket.cpp" line="72"/>
+        <location filename="../../torcontrol/controlsocket.cpp" line="61"/>
         <source>Error sending control command. [%1]</source>
         <translation>عُطل في إرسال أمر تحكم. [%1]</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/controlsocket.cpp" line="109"/>
+        <location filename="../../torcontrol/controlsocket.cpp" line="98"/>
         <source>Socket disconnected while attempting to read a line of data.</source>
         <translation>فُصِل المقبس أثناء محاولة قراءة سطر بيانات.</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/controlsocket.cpp" line="147"/>
+        <location filename="../../torcontrol/controlsocket.cpp" line="136"/>
         <source>Invalid control reply. [%1]</source>
         <translation>رد تحكم غير صحيح. [%1]</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/controlsocket.cpp" line="62"/>
+        <location filename="../../torcontrol/controlsocket.cpp" line="51"/>
         <source>Control socket is not connected.</source>
         <translation>مقبس التحكم غير متصل.</translation>
     </message>
@@ -522,42 +527,12 @@ You may need to remove it manually.</source>
 <context>
     <name>GeneralPage</name>
     <message>
-        <location filename="../config/generalpage.ui" line="64"/>
-        <source>Path to Tor&apos;s executable</source>
-        <translation>مسار تنفيذي تور</translation>
-    </message>
-    <message>
-        <location filename="../config/generalpage.ui" line="83"/>
-        <source>Select path to Tor executable</source>
-        <translation>اختر مسار ملف تور التنفيذي</translation>
-    </message>
-    <message>
-        <location filename="../config/generalpage.ui" line="86"/>
+        <location filename="../config/generalpage.ui" line="115"/>
         <source>Browse</source>
         <translation>تصفّح</translation>
     </message>
     <message>
-        <location filename="../config/generalpage.ui" line="105"/>
-        <source>Startup Options</source>
-        <translation>خيارات البدء</translation>
-    </message>
-    <message>
-        <location filename="../config/generalpage.ui" line="120"/>
-        <source>Select to start Vidalia on system boot</source>
-        <translation>اختر هذا لتشتغل ڤيداليا عند بدء تشغيل النظام</translation>
-    </message>
-    <message>
-        <location filename="../config/generalpage.ui" line="123"/>
-        <source>Run Vidalia on system startup</source>
-        <translation>شغّل ڤيداليا عند بدء النظام</translation>
-    </message>
-    <message>
-        <location filename="../config/generalpage.ui" line="136"/>
-        <source>Set to start Tor when you launch Vidalia</source>
-        <translation>فعل هذا ليشتغل تور عندما تُشَغِّل ڤيداليا</translation>
-    </message>
-    <message>
-        <location filename="../config/generalpage.ui" line="139"/>
+        <location filename="../config/generalpage.ui" line="63"/>
         <source>Start Tor when Vidalia starts</source>
         <translation>شغل تور عندما تشتغل ڤيداليا</translation>
     </message>
@@ -567,55 +542,85 @@ You may need to remove it manually.</source>
         <translation>اختر مسار تور</translation>
     </message>
     <message>
-        <location filename="../config/generalpage.ui" line="37"/>
+        <location filename="../config/generalpage.ui" line="38"/>
         <source>Tor Executable</source>
         <translation>تنفيذي تور</translation>
     </message>
     <message>
-        <location filename="../config/generalpage.cpp" line="63"/>
+        <location filename="../config/generalpage.cpp" line="59"/>
         <source>Executables (*.exe)</source>
         <translation>التنفيذيات (*.exe)</translation>
     </message>
     <message>
-        <location filename="../config/generalpage.cpp" line="32"/>
+        <location filename="../config/generalpage.cpp" line="23"/>
         <source>General</source>
         <translation type="unfinished">عامة</translation>
     </message>
     <message>
-        <location filename="../config/generalpage.cpp" line="86"/>
+        <location filename="../config/generalpage.cpp" line="95"/>
         <source>You must specify the name of your Tor executable.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/generalpage.cpp" line="82"/>
+        <source>Select Proxy Executable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/generalpage.cpp" line="103"/>
+        <source>The proxy arguments specified are not properly formatted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/generalpage.ui" line="22"/>
+        <source>Start Vidalia when my system starts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/generalpage.ui" line="75"/>
+        <source>Start a proxy application when Vidalia starts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/generalpage.ui" line="97"/>
+        <source>Proxy Executable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/generalpage.ui" line="129"/>
+        <source>Command Line Arguments:</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>GraphFrame</name>
     <message>
-        <location filename="../bwgraph/graphframe.cpp" line="248"/>
+        <location filename="../bwgraph/graphframe.cpp" line="237"/>
         <source>Recv: </source>
         <translation>استقبل: </translation>
     </message>
     <message>
-        <location filename="../bwgraph/graphframe.cpp" line="257"/>
+        <location filename="../bwgraph/graphframe.cpp" line="246"/>
         <source>Sent: </source>
         <translation>أرسل: </translation>
     </message>
     <message>
-        <location filename="../bwgraph/graphframe.cpp" line="269"/>
+        <location filename="../bwgraph/graphframe.cpp" line="258"/>
         <source>%1 KB</source>
         <translation>%1 ك.بايت</translation>
     </message>
     <message>
-        <location filename="../bwgraph/graphframe.cpp" line="272"/>
+        <location filename="../bwgraph/graphframe.cpp" line="261"/>
         <source>%1 MB</source>
         <translation>%1 م.بايت</translation>
     </message>
     <message>
-        <location filename="../bwgraph/graphframe.cpp" line="275"/>
+        <location filename="../bwgraph/graphframe.cpp" line="264"/>
         <source>%1 GB</source>
         <translation>%1 ج.بايت</translation>
     </message>
     <message>
-        <location filename="../bwgraph/graphframe.cpp" line="296"/>
+        <location filename="../bwgraph/graphframe.cpp" line="285"/>
         <source>%1 KB/s</source>
         <translation>%1 ك.ب/ث</translation>
     </message>
@@ -738,22 +743,22 @@ You may need to remove it manually.</source>
         <translation>Esc</translation>
     </message>
     <message>
-        <location filename="../help/browser/helpbrowser.cpp" line="133"/>
+        <location filename="../help/browser/helpbrowser.cpp" line="122"/>
         <source>Error Loading Help Contents: </source>
         <translation>عُطل في تحميل محتويات المساعدة: </translation>
     </message>
     <message>
-        <location filename="../help/browser/helpbrowser.cpp" line="388"/>
+        <location filename="../help/browser/helpbrowser.cpp" line="377"/>
         <source>Search reached end of document</source>
         <translation>وصل البحث نهاية الوثيقة</translation>
     </message>
     <message>
-        <location filename="../help/browser/helpbrowser.cpp" line="390"/>
+        <location filename="../help/browser/helpbrowser.cpp" line="379"/>
         <source>Search reached start of document</source>
         <translation>وصل البحث إلى بداية الوثيقة</translation>
     </message>
     <message>
-        <location filename="../help/browser/helpbrowser.cpp" line="392"/>
+        <location filename="../help/browser/helpbrowser.cpp" line="381"/>
         <source>Text not found in document</source>
         <translation>لم يُعثر على النص في الوثيقة</translation>
     </message>
@@ -773,12 +778,12 @@ You may need to remove it manually.</source>
         <translation>يجري البحث عن:</translation>
     </message>
     <message>
-        <location filename="../help/browser/helpbrowser.cpp" line="145"/>
+        <location filename="../help/browser/helpbrowser.cpp" line="134"/>
         <source>Supplied XML file is not a valid Contents document.</source>
         <translation>ملف ليس وثيقة محتويات صحيحة. XML المرفق ليس</translation>
     </message>
     <message>
-        <location filename="../help/browser/helpbrowser.cpp" line="437"/>
+        <location filename="../help/browser/helpbrowser.cpp" line="426"/>
         <source>Found %1 results</source>
         <translation>وجدت %1 نتيجة</translation>
     </message>
@@ -786,7 +791,7 @@ You may need to remove it manually.</source>
 <context>
     <name>HelpTextBrowser</name>
     <message>
-        <location filename="../help/browser/helptextbrowser.cpp" line="59"/>
+        <location filename="../help/browser/helptextbrowser.cpp" line="50"/>
         <source>Error opening help file: </source>
         <translation>عُطل في فتح ملف المساعدة: </translation>
     </message>
@@ -794,32 +799,32 @@ You may need to remove it manually.</source>
 <context>
     <name>LogEvent</name>
     <message>
-        <location filename="../../torcontrol/logevent.cpp" line="68"/>
+        <location filename="../../torcontrol/logevent.cpp" line="57"/>
         <source>Debug</source>
         <translation>تشخيص العلّات</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/logevent.cpp" line="69"/>
+        <location filename="../../torcontrol/logevent.cpp" line="58"/>
         <source>Info</source>
         <translation>بيان</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/logevent.cpp" line="70"/>
+        <location filename="../../torcontrol/logevent.cpp" line="59"/>
         <source>Notice</source>
         <translation>إخطار</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/logevent.cpp" line="71"/>
+        <location filename="../../torcontrol/logevent.cpp" line="60"/>
         <source>Warning</source>
         <translation>تنبيه</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/logevent.cpp" line="72"/>
+        <location filename="../../torcontrol/logevent.cpp" line="61"/>
         <source>Error</source>
         <translation>عطل</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/logevent.cpp" line="73"/>
+        <location filename="../../torcontrol/logevent.cpp" line="62"/>
         <source>Unknown</source>
         <translation>غير معلوم</translation>
     </message>
@@ -852,77 +857,77 @@ You may need to remove it manually.</source>
         <translation>مساعدة</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="381"/>
+        <location filename="../mainwindow.cpp" line="362"/>
         <source>Ctrl+T</source>
         <translation>Ctrl+T</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="382"/>
+        <location filename="../mainwindow.cpp" line="363"/>
         <source>Ctrl+B</source>
         <translation>Ctrl+B</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="383"/>
+        <location filename="../mainwindow.cpp" line="364"/>
         <source>Ctrl+L</source>
         <translation>Ctrl+L</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="385"/>
+        <location filename="../mainwindow.cpp" line="366"/>
         <source>Ctrl+?</source>
         <translation>Ctrl+?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="398"/>
+        <location filename="../mainwindow.cpp" line="379"/>
         <source>File</source>
         <translation>ملف</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="401"/>
+        <location filename="../mainwindow.cpp" line="382"/>
         <source>Tor</source>
         <translation>تور</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="406"/>
+        <location filename="../mainwindow.cpp" line="387"/>
         <source>View</source>
         <translation>عرض</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="415"/>
+        <location filename="../mainwindow.cpp" line="396"/>
         <source>Vidalia Help</source>
         <translation>مساعدة ڤيداليا</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="660"/>
+        <location filename="../mainwindow.cpp" line="639"/>
         <source>Error Starting Tor</source>
         <translation>عُطل في تشغيل تور</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="706"/>
+        <location filename="../mainwindow.cpp" line="685"/>
         <source>Error Connecting to Tor</source>
         <translation>عُطل في الاتصال مع تور</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="765"/>
+        <location filename="../mainwindow.cpp" line="744"/>
         <source>Error Stopping Tor</source>
         <translation>عُطل في إيقاف تور</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="796"/>
+        <location filename="../mainwindow.cpp" line="775"/>
         <source>Tor Exited</source>
         <translation>توقَّف تور</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="766"/>
+        <location filename="../mainwindow.cpp" line="745"/>
         <source>Vidalia was unable to stop Tor.</source>
         <translation>تعذّر على ڤيداليا إيقاف تور.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="384"/>
+        <location filename="../mainwindow.cpp" line="365"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="799"/>
+        <location filename="../mainwindow.cpp" line="778"/>
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
@@ -931,12 +936,12 @@ Please check the message log for indicators about what happened to Tor before it
         افحص سِجِّل الرسائل لمؤشرات عما حدث لتور قبل توقفه.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="663"/>
+        <location filename="../mainwindow.cpp" line="642"/>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
         <translation>تعذَّر على ڤيداليا تشغيل تور. افحص تضبيطاتك للتأكد من صحة تحديد اسم و موضع تنفيذي تور.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="307"/>
+        <location filename="../mainwindow.cpp" line="288"/>
         <source>Network Map</source>
         <translation>خريطة الشبكة</translation>
     </message>
@@ -946,27 +951,27 @@ Please check the message log for indicators about what happened to Tor before it
         <translation>تضبيطات</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1138"/>
+        <location filename="../mainwindow.cpp" line="1117"/>
         <source>New Identity</source>
         <translation>هوية جديدة</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="386"/>
+        <location filename="../mainwindow.cpp" line="367"/>
         <source>Ctrl+I</source>
         <translation>Ctrl+I</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1141"/>
+        <location filename="../mainwindow.cpp" line="1120"/>
         <source>All subsequent connections will appear to be different than your old connections.</source>
         <translation>ستبدو كل الاتصالات اللاحقة مختلفة عن الاتصالات السابقة.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1156"/>
+        <location filename="../mainwindow.cpp" line="1135"/>
         <source>Failed to Create New Identity</source>
         <translation>تعذَّر إنشاء هوية جديدة.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="547"/>
+        <location filename="../mainwindow.cpp" line="526"/>
         <source>Tor is running</source>
         <translation>تور يعمل</translation>
     </message>
@@ -981,17 +986,17 @@ Please check the message log for indicators about what happened to Tor before it
         <translation>تور لا يعمل</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="515"/>
+        <location filename="../mainwindow.cpp" line="494"/>
         <source>Tor is shutting down</source>
         <translation>تور يُغلق</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="522"/>
+        <location filename="../mainwindow.cpp" line="501"/>
         <source>Stop Tor</source>
         <translation>أوقِف تور</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="538"/>
+        <location filename="../mainwindow.cpp" line="517"/>
         <source>Tor is starting up</source>
         <translation>تور يبدأ</translation>
     </message>
@@ -1086,135 +1091,135 @@ Please check the message log for indicators about what happened to Tor before it
         <translation>يخفي هذه النافذة</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="314"/>
+        <location filename="../mainwindow.cpp" line="295"/>
         <source>Control Panel</source>
         <translation>لوحة التحكم</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="387"/>
+        <location filename="../mainwindow.cpp" line="368"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="520"/>
+        <location filename="../mainwindow.cpp" line="499"/>
         <source>Stop Tor Now</source>
         <translation>أوقف تور الآن</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="513"/>
+        <location filename="../mainwindow.cpp" line="492"/>
         <source>Your Tor relay is shutting down.
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="542"/>
+        <location filename="../mainwindow.cpp" line="521"/>
         <source>Starting Tor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="738"/>
+        <location filename="../mainwindow.cpp" line="717"/>
         <source>Relaying is Enabled</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="743"/>
+        <location filename="../mainwindow.cpp" line="722"/>
         <source>You are currently running a Tor relay. Terminating your relay will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new relay?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="871"/>
+        <location filename="../mainwindow.cpp" line="850"/>
         <source>Cookie Authentication Required</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="874"/>
+        <location filename="../mainwindow.cpp" line="853"/>
         <source>Tor requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="876"/>
+        <location filename="../mainwindow.cpp" line="855"/>
         <source>Would you like to browse for the file &apos;control_auth_cookie&apos; yourself?</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="883"/>
+        <location filename="../mainwindow.cpp" line="862"/>
         <source>Tor Data Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="885"/>
+        <location filename="../mainwindow.cpp" line="864"/>
         <source>Tor Control Cookie (control_auth_cookie)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="926"/>
+        <location filename="../mainwindow.cpp" line="905"/>
         <source>Error Registering for Events</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="928"/>
+        <location filename="../mainwindow.cpp" line="907"/>
         <source>Vidalia was unable to register for Tor events. Many of Vidalia&apos;s features may be unavailable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="954"/>
+        <location filename="../mainwindow.cpp" line="933"/>
         <source>Password Authentication Required</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="955"/>
+        <location filename="../mainwindow.cpp" line="934"/>
         <source>Please enter your control password (not the hash):</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="969"/>
+        <location filename="../mainwindow.cpp" line="948"/>
         <source>Error Authenticating to Tor</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="971"/>
+        <location filename="../mainwindow.cpp" line="950"/>
         <source>Vidalia was unable to authenticate to Tor. (%1)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="973"/>
+        <location filename="../mainwindow.cpp" line="952"/>
         <source>Please check your control port authentication settings.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="450"/>
+        <location filename="../mainwindow.cpp" line="431"/>
         <source>Error starting web browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="451"/>
+        <location filename="../mainwindow.cpp" line="432"/>
         <source>Vidalia was unable to start the configured web browser</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1075"/>
+        <location filename="../mainwindow.cpp" line="1054"/>
         <source>Tor Update Available</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1078"/>
+        <location filename="../mainwindow.cpp" line="1057"/>
         <source>The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1078"/>
+        <location filename="../mainwindow.cpp" line="1057"/>
         <source>Tor website: %1</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="473"/>
+        <location filename="../mainwindow.cpp" line="452"/>
         <source>Error starting proxy server</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="474"/>
+        <location filename="../mainwindow.cpp" line="453"/>
         <source>Vidalia was unable to start the configured proxy server</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1412,21 +1417,21 @@ Would you like to shutdown gracefully and give clients time to find a new relay?
         <translation>Ctrl+F</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="148"/>
+        <location filename="../log/messagelog.cpp" line="137"/>
         <source>Messages that appear when something has 
 gone very wrong and Tor cannot proceed.</source>
         <translation>الرسائل التي تظهر عندما يحدث
         عُطل فادح و لا يمكن لتور الاستمرار.</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="150"/>
+        <location filename="../log/messagelog.cpp" line="139"/>
         <source>Messages that only appear when 
 something has gone wrong with Tor.</source>
         <translation>الرسائل التي تظهر فقط عندما
         يحدث عُطل ما في تور.</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="154"/>
+        <location filename="../log/messagelog.cpp" line="143"/>
         <source>Messages that appear infrequently 
 during normal Tor operation and are 
 not considered errors, but you may 
@@ -1436,61 +1441,61 @@ care about.</source>
         لكنك قد تهتم بها.</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="156"/>
+        <location filename="../log/messagelog.cpp" line="145"/>
         <source>Messages that appear frequently 
 during normal Tor operation.</source>
         <translation>الرسائل التي تظهر كثيرا أثناء
         اشتغال تور العادي.</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="158"/>
+        <location filename="../log/messagelog.cpp" line="147"/>
         <source>Hyper-verbose messages primarily of 
 interest to Tor developers.</source>
         <translation>رسائل فائقة التفصيل تهم
         في الأساس مطوري تور.</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="203"/>
+        <location filename="../log/messagelog.cpp" line="192"/>
         <source>Error Setting Filter</source>
         <translation>عُطل في ضبط المرشح</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="219"/>
+        <location filename="../log/messagelog.cpp" line="208"/>
         <source>Error Opening Log File</source>
         <translation>عُطل في فتح ملف السجِّل</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="294"/>
+        <location filename="../log/messagelog.cpp" line="283"/>
         <source>Select Log File</source>
         <translation>اختر ملف السجِّل</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="311"/>
+        <location filename="../log/messagelog.cpp" line="300"/>
         <source>Save Log Messages</source>
         <translation>احفظ رسائل السجِّل</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="323"/>
+        <location filename="../log/messagelog.cpp" line="312"/>
         <source>Vidalia</source>
         <translation>ڤيداليا</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="374"/>
+        <location filename="../log/messagelog.cpp" line="363"/>
         <source>Find in Message Log</source>
         <translation>أوجد في سِجِّل الرسائل</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="375"/>
+        <location filename="../log/messagelog.cpp" line="364"/>
         <source>Find:</source>
         <translation>أوجد:</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="381"/>
+        <location filename="../log/messagelog.cpp" line="370"/>
         <source>Not Found</source>
         <translation>لا يوجد</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="382"/>
+        <location filename="../log/messagelog.cpp" line="371"/>
         <source>Search found 0 matches.</source>
         <translation>وُجدت 0 مطابَقة</translation>
     </message>
@@ -1520,12 +1525,12 @@ interest to Tor developers.</source>
         <translation>أظهر متصفح المساعدة</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="204"/>
+        <location filename="../log/messagelog.cpp" line="193"/>
         <source>Vidalia was unable to register for Tor&apos;s log events.</source>
         <translation>تعذّر على ڤيداليا الاشتراك في سجلات تور.</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="324"/>
+        <location filename="../log/messagelog.cpp" line="313"/>
         <source>Cannot write file %1
 
 %2.</source>
@@ -1534,12 +1539,12 @@ interest to Tor developers.</source>
 %2</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="220"/>
+        <location filename="../log/messagelog.cpp" line="209"/>
         <source>Vidalia was unable to open the specified log file.</source>
         <translation>تعذّر على ڤيداليا فتح ملف السّجل المذكور.</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="314"/>
+        <location filename="../log/messagelog.cpp" line="303"/>
         <source>Text Files (*.txt)</source>
         <translation>ملفات نصية (*.txt)</translation>
     </message>
@@ -1549,12 +1554,12 @@ interest to Tor developers.</source>
         <translation>F1</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="241"/>
+        <location filename="../log/messagelog.cpp" line="230"/>
         <source>Log Filename Required</source>
         <translation>اسم ملف السّجل مطلوب</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="243"/>
+        <location filename="../log/messagelog.cpp" line="232"/>
         <source>You must enter a filename to be able to save log messages to a file.</source>
         <translation>يجب إدخال اسم ملف ليمكن حفظ مدخلات السّجل فيه.</translation>
     </message>
@@ -1695,37 +1700,37 @@ interest to Tor developers.</source>
 <context>
     <name>NetworkPage</name>
     <message>
-        <location filename="../config/networkpage.cpp" line="45"/>
+        <location filename="../config/networkpage.cpp" line="34"/>
         <source>Network</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../config/networkpage.cpp" line="197"/>
+        <location filename="../config/networkpage.cpp" line="186"/>
         <source>Invalid Bridge</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../config/networkpage.cpp" line="198"/>
+        <location filename="../config/networkpage.cpp" line="187"/>
         <source>The specified bridge identifier is not valid.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../config/networkpage.cpp" line="245"/>
+        <location filename="../config/networkpage.cpp" line="234"/>
         <source>Copy (Ctrl+C)</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../config/networkpage.cpp" line="276"/>
+        <location filename="../config/networkpage.cpp" line="265"/>
         <source>You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../config/networkpage.cpp" line="282"/>
+        <location filename="../config/networkpage.cpp" line="271"/>
         <source>You must specify one or more ports to which your firewall allows you to connect.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../config/networkpage.cpp" line="318"/>
+        <location filename="../config/networkpage.cpp" line="307"/>
         <source>&apos;%1&apos; is not a valid port number.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1795,11 +1800,6 @@ interest to Tor developers.</source>
         <translation type="unfinished">80, 443</translation>
     </message>
     <message>
-        <location filename="../config/networkpage.ui" line="235"/>
-        <source>Check to configure Tor to use bridge relays to access the Tor network</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
         <location filename="../config/networkpage.ui" line="238"/>
         <source>My ISP blocks connections to the Tor network</source>
         <translation type="unfinished"></translation>
@@ -1834,16 +1834,21 @@ interest to Tor developers.</source>
         <source>&lt;a href=&quot;bridges.finding&quot;&gt;How do I find a bridge?&lt;/a&gt;</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../config/networkpage.ui" line="235"/>
+        <source>Check to configure Tor to encrypt its directory requests and, optionally, use bridge relays to access the Tor network</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Policy</name>
     <message>
-        <location filename="../config/policy.cpp" line="178"/>
+        <location filename="../config/policy.cpp" line="167"/>
         <source>accept</source>
         <translation>اقبل</translation>
     </message>
     <message>
-        <location filename="../config/policy.cpp" line="178"/>
+        <location filename="../config/policy.cpp" line="167"/>
         <source>reject</source>
         <translation>ارفض</translation>
     </message>
@@ -1851,17 +1856,17 @@ interest to Tor developers.</source>
 <context>
     <name>RouterDescriptor</name>
     <message>
-        <location filename="../../torcontrol/routerdescriptor.cpp" line="87"/>
+        <location filename="../../torcontrol/routerdescriptor.cpp" line="76"/>
         <source>Online</source>
         <translation>واصل</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/routerdescriptor.cpp" line="89"/>
+        <location filename="../../torcontrol/routerdescriptor.cpp" line="78"/>
         <source>Hibernating</source>
         <translation>مُسبِت</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/routerdescriptor.cpp" line="91"/>
+        <location filename="../../torcontrol/routerdescriptor.cpp" line="80"/>
         <source>Offline</source>
         <translation>مفصول</translation>
     </message>
@@ -1869,32 +1874,32 @@ interest to Tor developers.</source>
 <context>
     <name>RouterDescriptorView</name>
     <message>
-        <location filename="../network/routerdescriptorview.cpp" line="114"/>
+        <location filename="../network/routerdescriptorview.cpp" line="103"/>
         <source>IP Address:</source>
         <translation>عنوان IP:</translation>
     </message>
     <message>
-        <location filename="../network/routerdescriptorview.cpp" line="115"/>
+        <location filename="../network/routerdescriptorview.cpp" line="104"/>
         <source>Platform:</source>
         <translation>المنصة:</translation>
     </message>
     <message>
-        <location filename="../network/routerdescriptorview.cpp" line="119"/>
+        <location filename="../network/routerdescriptorview.cpp" line="108"/>
         <source>Bandwidth:</source>
         <translation>عرض النطاق:</translation>
     </message>
     <message>
-        <location filename="../network/routerdescriptorview.cpp" line="121"/>
+        <location filename="../network/routerdescriptorview.cpp" line="110"/>
         <source>Uptime:</source>
         <translation>مدة الاتصال:</translation>
     </message>
     <message>
-        <location filename="../network/routerdescriptorview.cpp" line="127"/>
+        <location filename="../network/routerdescriptorview.cpp" line="116"/>
         <source>Last Updated:</source>
         <translation>آخر تحديث:</translation>
     </message>
     <message>
-        <location filename="../network/routerdescriptorview.cpp" line="110"/>
+        <location filename="../network/routerdescriptorview.cpp" line="99"/>
         <source>Location:</source>
         <translation>الموضع:</translation>
     </message>
@@ -1902,17 +1907,17 @@ interest to Tor developers.</source>
 <context>
     <name>RouterListItem</name>
     <message>
-        <location filename="../network/routerlistitem.cpp" line="94"/>
+        <location filename="../network/routerlistitem.cpp" line="83"/>
         <source>%1 KB/s</source>
         <translation>%1 ك.بايت/ث</translation>
     </message>
     <message>
-        <location filename="../network/routerlistitem.cpp" line="78"/>
+        <location filename="../network/routerlistitem.cpp" line="67"/>
         <source>Offline</source>
         <translation>مفصول</translation>
     </message>
     <message>
-        <location filename="../network/routerlistitem.cpp" line="82"/>
+        <location filename="../network/routerlistitem.cpp" line="71"/>
         <source>Hibernating</source>
         <translation>مُسبِت</translation>
     </message>
@@ -1920,18 +1925,18 @@ interest to Tor developers.</source>
 <context>
     <name>RouterListWidget</name>
     <message>
-        <location filename="../network/routerlistwidget.cpp" line="44"/>
+        <location filename="../network/routerlistwidget.cpp" line="31"/>
         <source>Relay</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../network/routerlistwidget.cpp" line="71"/>
+        <location filename="../network/routerlistwidget.cpp" line="58"/>
         <source>Zoom to Relay</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../network/routerlistwidget.cpp" line="185"/>
-        <source>%1 relays online (%2 total)</source>
+        <location filename="../network/routerlistwidget.cpp" line="168"/>
+        <source>%1 relays online</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2083,11 +2088,6 @@ interest to Tor developers.</source>
         <translation>خدمات أخرى متنوعة</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="776"/>
-        <source>Ports 706, 1863, 5050, 5190, 5222, 8300 and 8888</source>
-        <translation>الموانئ 706 و 1863 و 5050 و 5190 و 5222 و 8300 و 8888</translation>
-    </message>
-    <message>
         <location filename="../config/serverpage.ui" line="779"/>
         <source>Instant Messaging (IM)</source>
         <translation>التراسل الفوري (IM)</translation>
@@ -2123,32 +2123,32 @@ interest to Tor developers.</source>
         <translation>يجب أن يكون أقصى عرض نطاق مساويا أو أكبر من متوسط المنسوب؛ و كلا القيمتين يجب أن تكون 20 ك.بايت/ث على الأقل.</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.cpp" line="74"/>
+        <location filename="../config/serverpage.cpp" line="63"/>
         <source>Server</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../config/serverpage.cpp" line="131"/>
+        <location filename="../config/serverpage.cpp" line="120"/>
         <source>Bridge Support Unavailable</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../config/serverpage.cpp" line="134"/>
+        <location filename="../config/serverpage.cpp" line="123"/>
         <source>You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../config/serverpage.cpp" line="136"/>
+        <location filename="../config/serverpage.cpp" line="125"/>
         <source>Please upgrade your Tor software or configure Tor to act as a normal Tor relay.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../config/serverpage.cpp" line="190"/>
+        <location filename="../config/serverpage.cpp" line="179"/>
         <source>Your bridge relay is not running.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../config/serverpage.cpp" line="259"/>
+        <location filename="../config/serverpage.cpp" line="243"/>
         <source>You must specify at least a relay nickname and port.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2208,51 +2208,159 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
         <source>Copy your bridge relay&apos;s identity to the clipboard</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <location filename="../config/serverpage.ui" line="776"/>
+        <source>Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 and 8888</source>
+        <translation type="unfinished">الموانئ 706 و 1863 و 5050 و 5190 و 5222 و 8300 و 8888 {706, 1863, 5050, 5190, 5222, 5223, 8300 ?}</translation>
+    </message>
+</context>
+<context>
+    <name>ServicePage</name>
+    <message>
+        <location filename="../config/servicepage.cpp" line="27"/>
+        <source>Services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="105"/>
+        <source>Error while trying to unpublish all services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="112"/>
+        <source>Please configure at least a service directory and a virtual       port for each service you want to save. Remove the other ones.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="586"/>
+        <source>Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="442"/>
+        <source>Please select a Service.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="447"/>
+        <source>Select Service Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="536"/>
+        <source>Virtual Port may only contain valid port numbers [1..65535].</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="567"/>
+        <source>Target may only contain address:port, address, or port.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="587"/>
+        <source>Directory already in use by another service.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="19"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="31"/>
+        <source>Provided Hidden Services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="56"/>
+        <source>Onion Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="61"/>
+        <source>Virtual Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="66"/>
+        <source>Target</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="71"/>
+        <source>Directory Path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="76"/>
+        <source>Enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="84"/>
+        <source>Add new service to list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="97"/>
+        <source>Remove selected service from list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="110"/>
+        <source>Copy onion address of selected service to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="123"/>
+        <source>Browse in local file system and choose directory for selected service</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Stream</name>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="129"/>
+        <location filename="../../torcontrol/stream.cpp" line="118"/>
         <source>New</source>
         <translation>جديد</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="131"/>
+        <location filename="../../torcontrol/stream.cpp" line="120"/>
         <source>Resolving</source>
         <translation>يجري البحث</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="132"/>
+        <location filename="../../torcontrol/stream.cpp" line="121"/>
         <source>Connecting</source>
         <translation>يجري الاتصال</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="133"/>
+        <location filename="../../torcontrol/stream.cpp" line="122"/>
         <source>Open</source>
         <translation>مفتوح</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="134"/>
+        <location filename="../../torcontrol/stream.cpp" line="123"/>
         <source>Failed</source>
         <translation>تعذَّر</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="135"/>
+        <location filename="../../torcontrol/stream.cpp" line="124"/>
         <source>Closed</source>
         <translation>مغلق</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="138"/>
+        <location filename="../../torcontrol/stream.cpp" line="127"/>
         <source>Unknown</source>
         <translation>غير معلوم</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="136"/>
+        <location filename="../../torcontrol/stream.cpp" line="125"/>
         <source>Retrying</source>
         <translation>تجري إعادة المحاولة</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="137"/>
+        <location filename="../../torcontrol/stream.cpp" line="126"/>
         <source>Remapped</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2260,7 +2368,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
 <context>
     <name>TorProcess</name>
     <message>
-        <location filename="../../torcontrol/torprocess.cpp" line="118"/>
+        <location filename="../../torcontrol/torprocess.cpp" line="107"/>
         <source>Process %1 failed to stop. [%2]</source>
         <translation>تعذَّر إيقاف الصيرورة %1. [%2]</translation>
     </message>
@@ -2268,12 +2376,12 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
 <context>
     <name>TorService</name>
     <message>
-        <location filename="../../torcontrol/torservice.cpp" line="154"/>
+        <location filename="../../torcontrol/torservice.cpp" line="143"/>
         <source>The Tor service is not installed.</source>
         <translation>خدمة تور غير مثبَّتة.</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/torservice.cpp" line="172"/>
+        <location filename="../../torcontrol/torservice.cpp" line="161"/>
         <source>Unable to start the Tor service.</source>
         <translation>تعذََر تشغيل خدمة تور.</translation>
     </message>
@@ -2281,7 +2389,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
 <context>
     <name>TorSettings</name>
     <message>
-        <location filename="../config/torsettings.cpp" line="118"/>
+        <location filename="../config/torsettings.cpp" line="107"/>
         <source>Failed to hash the control password.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2289,57 +2397,57 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
 <context>
     <name>VMessageBox</name>
     <message>
-        <location filename="../vmessagebox.cpp" line="88"/>
+        <location filename="../vmessagebox.cpp" line="77"/>
         <source>OK</source>
         <translation>موافق</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="89"/>
+        <location filename="../vmessagebox.cpp" line="78"/>
         <source>Cancel</source>
         <translation>الغِ</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="90"/>
+        <location filename="../vmessagebox.cpp" line="79"/>
         <source>Yes</source>
         <translation>نعم</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="91"/>
+        <location filename="../vmessagebox.cpp" line="80"/>
         <source>No</source>
         <translation>لا</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="92"/>
+        <location filename="../vmessagebox.cpp" line="81"/>
         <source>Help</source>
         <translation>مساعدة</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="93"/>
+        <location filename="../vmessagebox.cpp" line="82"/>
         <source>Retry</source>
         <translation>حاول مجددا</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="94"/>
+        <location filename="../vmessagebox.cpp" line="83"/>
         <source>Show Log</source>
         <translation>استعرض السِّجِل</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="95"/>
+        <location filename="../vmessagebox.cpp" line="84"/>
         <source>Show Settings</source>
         <translation>اعرض التضبيطات</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="96"/>
+        <location filename="../vmessagebox.cpp" line="85"/>
         <source>Continue</source>
         <translation>تابع</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="97"/>
+        <location filename="../vmessagebox.cpp" line="86"/>
         <source>Quit</source>
         <translation>أنهِ</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="98"/>
+        <location filename="../vmessagebox.cpp" line="87"/>
         <source>Browse</source>
         <translation type="unfinished">تصفّح</translation>
     </message>
@@ -2347,22 +2455,22 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
 <context>
     <name>Vidalia</name>
     <message>
-        <location filename="../vidalia.cpp" line="246"/>
+        <location filename="../vidalia.cpp" line="235"/>
         <source>Invalid language code specified: </source>
         <translation>حُدِّد مُعَرِّف لغة غير صحيح:</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="253"/>
+        <location filename="../vidalia.cpp" line="242"/>
         <source>Invalid GUI style specified: </source>
         <translation>حُدِّد طراز واجهة رسومية غير صحيح:</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="99"/>
+        <location filename="../main.cpp" line="88"/>
         <source>Vidalia is already running</source>
         <translation>ڤيداليا تعمل بالفعل</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="105"/>
+        <location filename="../main.cpp" line="94"/>
         <source>Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.
 
 Would you like to continue starting Vidalia?</source>
@@ -2371,62 +2479,62 @@ Would you like to continue starting Vidalia?</source>
         أتريد متابعة تشغيل ڤيداليا؟</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="85"/>
+        <location filename="../main.cpp" line="74"/>
         <source>Invalid Argument</source>
         <translation>مُعطى غير صحيح</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="177"/>
+        <location filename="../vidalia.cpp" line="166"/>
         <source>Displays this usage message and exits.</source>
         <translation>يعرض رسالة الاستخدام هذه و ينهي.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="179"/>
+        <location filename="../vidalia.cpp" line="168"/>
         <source>Resets ALL stored Vidalia settings.</source>
         <translation>يصفِّر كل تضبيطات ڤيداليا.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="181"/>
+        <location filename="../vidalia.cpp" line="170"/>
         <source>Sets the directory Vidalia uses for data files.</source>
         <translation>يحدد الدليل الذي تستخدمه ڤيداليا لتخزين ملفات البيانات.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="183"/>
+        <location filename="../vidalia.cpp" line="172"/>
         <source>Sets the name and location of Vidalia&apos;s pidfile.</source>
         <translation>يحدد اسم و موضع ملف pidfile لڤيداليا.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="185"/>
+        <location filename="../vidalia.cpp" line="174"/>
         <source>Sets the name and location of Vidalia&apos;s logfile.</source>
         <translation>يحدد اسم و موضع ملف سِجِّل ڤيداليا.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="188"/>
+        <location filename="../vidalia.cpp" line="177"/>
         <source>Sets the verbosity of Vidalia&apos;s logging.</source>
         <translation>يحدد مدى تفصيل سِجِّل ڤيداليا.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="191"/>
+        <location filename="../vidalia.cpp" line="180"/>
         <source>Sets Vidalia&apos;s interface style.</source>
         <translation>يحدد طراز واجهة ڤيداليا.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="194"/>
+        <location filename="../vidalia.cpp" line="183"/>
         <source>Sets Vidalia&apos;s language.</source>
         <translation>يحدد لغة واجهة ڤيداليا.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="198"/>
+        <location filename="../vidalia.cpp" line="187"/>
         <source>Vidalia Usage Information</source>
         <translation>معلومات استخدام ڤيداليا.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="259"/>
+        <location filename="../vidalia.cpp" line="248"/>
         <source>Invalid log level specified: </source>
         <translation>مستوى تفصيل للسجِّل غير صحيح.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="265"/>
+        <location filename="../vidalia.cpp" line="254"/>
         <source>Unable to open log file &apos;%1&apos;: %2</source>
         <translation>تعذَّر فتح ملف السِّجل &apos;%1&apos;: %2</translation>
     </message>

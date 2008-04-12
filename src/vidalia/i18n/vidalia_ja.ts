@@ -38,12 +38,12 @@
         <translation>Vidalia のバージョン</translation>
     </message>
     <message>
-        <location filename="../about/aboutdialog.cpp" line="79"/>
+        <location filename="../about/aboutdialog.cpp" line="68"/>
         <source>&lt;Not Running&gt;</source>
         <translation>&lt;起動していません&gt;</translation>
     </message>
     <message>
-        <location filename="../about/aboutdialog.cpp" line="75"/>
+        <location filename="../about/aboutdialog.cpp" line="64"/>
         <source>&lt;Unavailable&gt;</source>
         <translation>&lt;利用不可&gt;</translation>
     </message>
@@ -96,27 +96,27 @@
         <translation>Vidalia はこのグループの権限で実行します</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="226"/>
+        <location filename="../config/advancedpage.cpp" line="215"/>
         <source>Select Tor Configuration File</source>
         <translation>Tor の構成ファイルの選択</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="239"/>
+        <location filename="../config/advancedpage.cpp" line="228"/>
         <source>File Not Found</source>
         <translation>ファイルが見つかりません</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="241"/>
+        <location filename="../config/advancedpage.cpp" line="230"/>
         <source>%1 does not exist. Would you like to create it?</source>
         <translation>%1 が存在しません。作成しますか?</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="252"/>
+        <location filename="../config/advancedpage.cpp" line="241"/>
         <source>Failed to Create File</source>
         <translation>ファイルの作成に失敗しました</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="253"/>
+        <location filename="../config/advancedpage.cpp" line="242"/>
         <source>Unable to create %1 [%2]</source>
         <translation>%1 [%2] を作成することができません</translation>
     </message>
@@ -136,22 +136,22 @@
         <translation>Windows サービスとしてバックグラウンドで Tor を起動する</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="289"/>
+        <location filename="../config/advancedpage.cpp" line="278"/>
         <source>Unable to remove Tor Service</source>
         <translation>Tor サービスを削除することができません</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="300"/>
+        <location filename="../config/advancedpage.cpp" line="289"/>
         <source>Unable to install Tor Service</source>
         <translation>Tor サービスをインストールすることができません</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="301"/>
+        <location filename="../config/advancedpage.cpp" line="290"/>
         <source>Vidalia was unable to install the Tor service.</source>
         <translation>Vidalia は Tor サービスをインストールすることができませんでした。</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="291"/>
+        <location filename="../config/advancedpage.cpp" line="280"/>
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
@@ -165,7 +165,7 @@ You may need to remove it manually.</source>
         <translation>Tor の構成ファイル</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="112"/>
+        <location filename="../config/advancedpage.cpp" line="101"/>
         <source>&apos;%1&apos; is not a valid IP address.</source>
         <translation>&apos;%1&apos; は有効な IP アドレスではありません。</translation>
     </message>
@@ -175,12 +175,12 @@ You may need to remove it manually.</source>
         <translation>:</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="123"/>
+        <location filename="../config/advancedpage.cpp" line="112"/>
         <source>You selected &apos;Password&apos; authentication, but did not specify a password.</source>
         <translation>&apos;パスワード&apos; 認証を選択しましたが、パスワードを指定しませんでした。</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="268"/>
+        <location filename="../config/advancedpage.cpp" line="257"/>
         <source>Select a Directory to Use for Tor Data</source>
         <translation>Tor のデータに使用するディレクトリの選択</translation>
     </message>
@@ -230,7 +230,7 @@ You may need to remove it manually.</source>
         <translation>なし</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="45"/>
+        <location filename="../config/advancedpage.cpp" line="34"/>
         <source>Advanced</source>
         <translation>詳細設定</translation>
     </message>
@@ -263,7 +263,7 @@ You may need to remove it manually.</source>
         <translation>Vidalia のインターフェイス スタイルを選択します</translation>
     </message>
     <message>
-        <location filename="../config/appearancepage.cpp" line="34"/>
+        <location filename="../config/appearancepage.cpp" line="23"/>
         <source>Appearance</source>
         <translation>外観</translation>
     </message>
@@ -311,7 +311,7 @@ You may need to remove it manually.</source>
         <translation>キャンセル</translation>
     </message>
     <message>
-        <location filename="../bwgraph/bwgraph.cpp" line="171"/>
+        <location filename="../bwgraph/bwgraph.cpp" line="160"/>
         <source>Since:</source>
         <translation>起点:</translation>
     </message>
@@ -326,7 +326,7 @@ You may need to remove it manually.</source>
         <translation>% 不透過</translation>
     </message>
     <message>
-        <location filename="../bwgraph/bwgraph.cpp" line="237"/>
+        <location filename="../bwgraph/bwgraph.cpp" line="226"/>
         <source>Hide Settings</source>
         <translation>設定を非表示にする</translation>
     </message>
@@ -344,32 +344,32 @@ You may need to remove it manually.</source>
 <context>
     <name>Circuit</name>
     <message>
-        <location filename="../../torcontrol/circuit.cpp" line="109"/>
+        <location filename="../../torcontrol/circuit.cpp" line="89"/>
         <source>New</source>
         <translation>新規</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/circuit.cpp" line="110"/>
+        <location filename="../../torcontrol/circuit.cpp" line="90"/>
         <source>Open</source>
         <translation>オープン</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/circuit.cpp" line="111"/>
+        <location filename="../../torcontrol/circuit.cpp" line="91"/>
         <source>Building</source>
         <translation>構築しています</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/circuit.cpp" line="112"/>
+        <location filename="../../torcontrol/circuit.cpp" line="92"/>
         <source>Failed</source>
         <translation>失敗しました</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/circuit.cpp" line="113"/>
+        <location filename="../../torcontrol/circuit.cpp" line="93"/>
         <source>Closed</source>
         <translation>閉じました</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/circuit.cpp" line="114"/>
+        <location filename="../../torcontrol/circuit.cpp" line="94"/>
         <source>Unknown</source>
         <translation>不明</translation>
     </message>
@@ -377,7 +377,7 @@ You may need to remove it manually.</source>
 <context>
     <name>CircuitItem</name>
     <message>
-        <location filename="../network/circuititem.cpp" line="48"/>
+        <location filename="../network/circuititem.cpp" line="39"/>
         <source>&lt;Path Empty&gt;</source>
         <translation>&lt;パスが空です&gt;</translation>
     </message>
@@ -385,27 +385,27 @@ You may need to remove it manually.</source>
 <context>
     <name>CircuitListWidget</name>
     <message>
-        <location filename="../network/circuitlistwidget.cpp" line="48"/>
+        <location filename="../network/circuitlistwidget.cpp" line="37"/>
         <source>Connection</source>
         <translation>接続</translation>
     </message>
     <message>
-        <location filename="../network/circuitlistwidget.cpp" line="48"/>
+        <location filename="../network/circuitlistwidget.cpp" line="37"/>
         <source>Status</source>
         <translation>状態</translation>
     </message>
     <message>
-        <location filename="../network/circuitlistwidget.cpp" line="83"/>
+        <location filename="../network/circuitlistwidget.cpp" line="72"/>
         <source>Zoom to Circuit</source>
         <translation>回路への拡大と縮小</translation>
     </message>
     <message>
-        <location filename="../network/circuitlistwidget.cpp" line="85"/>
+        <location filename="../network/circuitlistwidget.cpp" line="74"/>
         <source>Close Circuit (Del)</source>
         <translation>回路を閉じる (Del)</translation>
     </message>
     <message>
-        <location filename="../network/circuitlistwidget.cpp" line="106"/>
+        <location filename="../network/circuitlistwidget.cpp" line="95"/>
         <source>Close Stream (Del)</source>
         <translation>ストリームを閉じる (Del)</translation>
     </message>
@@ -433,7 +433,7 @@ You may need to remove it manually.</source>
         <translation>外観</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="103"/>
+        <location filename="../config/configdialog.cpp" line="107"/>
         <source>Help</source>
         <translation>ヘルプ</translation>
     </message>
@@ -448,22 +448,22 @@ You may need to remove it manually.</source>
         <translation>ネットワーク</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="171"/>
+        <location filename="../config/configdialog.cpp" line="175"/>
         <source>Error Saving Settings</source>
         <translation>設定の保存エラー</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="173"/>
+        <location filename="../config/configdialog.cpp" line="177"/>
         <source>Vidalia was unable to save your %1 settings.</source>
         <translation>Vidalia は %1 の設定を保存することができませんでした。</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="200"/>
+        <location filename="../config/configdialog.cpp" line="204"/>
         <source>Error Applying Settings</source>
         <translation>設定の適用エラー</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="202"/>
+        <location filename="../config/configdialog.cpp" line="206"/>
         <source>Vidalia was unable to apply your %1 settings to Tor.</source>
         <translation>Vidalia は Tor へ %1 の設定を適用することができませんでした。</translation>
     </message>
@@ -477,21 +477,26 @@ You may need to remove it manually.</source>
         <source>Sharing</source>
         <translation>共有</translation>
     </message>
+    <message>
+        <location filename="../config/configdialog.cpp" line="94"/>
+        <source>Services</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ControlConnection</name>
     <message>
-        <location filename="../../torcontrol/controlconnection.cpp" line="390"/>
+        <location filename="../../torcontrol/controlconnection.cpp" line="379"/>
         <source>Control socket is not connected.</source>
         <translation>コントロール ソケットは接続されていません。</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/controlconnection.cpp" line="327"/>
+        <location filename="../../torcontrol/controlconnection.cpp" line="316"/>
         <source>Control socket is not connected</source>
         <translation>コントロール ソケットは接続されていません</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/controlconnection.cpp" line="141"/>
+        <location filename="../../torcontrol/controlconnection.cpp" line="130"/>
         <source>Vidalia was unable to connect to Tor. (%1)</source>
         <translation>Vidalia は Tor へ接続することができませんでした。(%1)</translation>
     </message>
@@ -499,22 +504,22 @@ You may need to remove it manually.</source>
 <context>
     <name>ControlSocket</name>
     <message>
-        <location filename="../../torcontrol/controlsocket.cpp" line="72"/>
+        <location filename="../../torcontrol/controlsocket.cpp" line="61"/>
         <source>Error sending control command. [%1]</source>
         <translation>コントロール コマンドの送信エラーです。[%1]</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/controlsocket.cpp" line="109"/>
+        <location filename="../../torcontrol/controlsocket.cpp" line="98"/>
         <source>Socket disconnected while attempting to read a line of data.</source>
         <translation>ソケットがデータの行の読み取りを試みている間に切断されました。</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/controlsocket.cpp" line="147"/>
+        <location filename="../../torcontrol/controlsocket.cpp" line="136"/>
         <source>Invalid control reply. [%1]</source>
         <translation>不正なコントロール返信です。[%1]</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/controlsocket.cpp" line="62"/>
+        <location filename="../../torcontrol/controlsocket.cpp" line="51"/>
         <source>Control socket is not connected.</source>
         <translation>コントロール ソケットは接続されていません。</translation>
     </message>
@@ -522,42 +527,12 @@ You may need to remove it manually.</source>
 <context>
     <name>GeneralPage</name>
     <message>
-        <location filename="../config/generalpage.ui" line="64"/>
-        <source>Path to Tor&apos;s executable</source>
-        <translation>Tor の実行ファイルへのパス</translation>
-    </message>
-    <message>
-        <location filename="../config/generalpage.ui" line="83"/>
-        <source>Select path to Tor executable</source>
-        <translation>Tor の実行ファイルへのパスを選択します</translation>
-    </message>
-    <message>
-        <location filename="../config/generalpage.ui" line="86"/>
+        <location filename="../config/generalpage.ui" line="115"/>
         <source>Browse</source>
         <translation>参照</translation>
     </message>
     <message>
-        <location filename="../config/generalpage.ui" line="105"/>
-        <source>Startup Options</source>
-        <translation>起動のオプション</translation>
-    </message>
-    <message>
-        <location filename="../config/generalpage.ui" line="120"/>
-        <source>Select to start Vidalia on system boot</source>
-        <translation>システムの起動時の Vidalia の起動を選択します</translation>
-    </message>
-    <message>
-        <location filename="../config/generalpage.ui" line="123"/>
-        <source>Run Vidalia on system startup</source>
-        <translation>システムの起動時に Vidalia を起動する</translation>
-    </message>
-    <message>
-        <location filename="../config/generalpage.ui" line="136"/>
-        <source>Set to start Tor when you launch Vidalia</source>
-        <translation>Vidalia を起動するときの Tor の開始を設定します</translation>
-    </message>
-    <message>
-        <location filename="../config/generalpage.ui" line="139"/>
+        <location filename="../config/generalpage.ui" line="63"/>
         <source>Start Tor when Vidalia starts</source>
         <translation>Vidalia の起動時に Tor を開始する</translation>
     </message>
@@ -567,55 +542,85 @@ You may need to remove it manually.</source>
         <translation>Tor へのパスの選択</translation>
     </message>
     <message>
-        <location filename="../config/generalpage.ui" line="37"/>
+        <location filename="../config/generalpage.ui" line="38"/>
         <source>Tor Executable</source>
         <translation>Tor の実行ファイル</translation>
     </message>
     <message>
-        <location filename="../config/generalpage.cpp" line="63"/>
+        <location filename="../config/generalpage.cpp" line="59"/>
         <source>Executables (*.exe)</source>
         <translation>実行ファイル (*.exe)</translation>
     </message>
     <message>
-        <location filename="../config/generalpage.cpp" line="32"/>
+        <location filename="../config/generalpage.cpp" line="23"/>
         <source>General</source>
         <translation>全般</translation>
     </message>
     <message>
-        <location filename="../config/generalpage.cpp" line="86"/>
+        <location filename="../config/generalpage.cpp" line="95"/>
         <source>You must specify the name of your Tor executable.</source>
         <translation>Tor の実行ファイルの名前を指定する必要があります。</translation>
+    </message>
+    <message>
+        <location filename="../config/generalpage.cpp" line="82"/>
+        <source>Select Proxy Executable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/generalpage.cpp" line="103"/>
+        <source>The proxy arguments specified are not properly formatted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/generalpage.ui" line="22"/>
+        <source>Start Vidalia when my system starts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/generalpage.ui" line="75"/>
+        <source>Start a proxy application when Vidalia starts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/generalpage.ui" line="97"/>
+        <source>Proxy Executable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/generalpage.ui" line="129"/>
+        <source>Command Line Arguments:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>GraphFrame</name>
     <message>
-        <location filename="../bwgraph/graphframe.cpp" line="248"/>
+        <location filename="../bwgraph/graphframe.cpp" line="237"/>
         <source>Recv: </source>
         <translation>受信: </translation>
     </message>
     <message>
-        <location filename="../bwgraph/graphframe.cpp" line="257"/>
+        <location filename="../bwgraph/graphframe.cpp" line="246"/>
         <source>Sent: </source>
         <translation>送信: </translation>
     </message>
     <message>
-        <location filename="../bwgraph/graphframe.cpp" line="269"/>
+        <location filename="../bwgraph/graphframe.cpp" line="258"/>
         <source>%1 KB</source>
         <translation>%1 KB</translation>
     </message>
     <message>
-        <location filename="../bwgraph/graphframe.cpp" line="272"/>
+        <location filename="../bwgraph/graphframe.cpp" line="261"/>
         <source>%1 MB</source>
         <translation>%1 MB</translation>
     </message>
     <message>
-        <location filename="../bwgraph/graphframe.cpp" line="275"/>
+        <location filename="../bwgraph/graphframe.cpp" line="264"/>
         <source>%1 GB</source>
         <translation>%1 GB</translation>
     </message>
     <message>
-        <location filename="../bwgraph/graphframe.cpp" line="296"/>
+        <location filename="../bwgraph/graphframe.cpp" line="285"/>
         <source>%1 KB/s</source>
         <translation>%1 KB/s</translation>
     </message>
@@ -738,22 +743,22 @@ You may need to remove it manually.</source>
         <translation>Esc</translation>
     </message>
     <message>
-        <location filename="../help/browser/helpbrowser.cpp" line="133"/>
+        <location filename="../help/browser/helpbrowser.cpp" line="122"/>
         <source>Error Loading Help Contents: </source>
         <translation>ヘルプの目次の読み込みエラー: </translation>
     </message>
     <message>
-        <location filename="../help/browser/helpbrowser.cpp" line="388"/>
+        <location filename="../help/browser/helpbrowser.cpp" line="377"/>
         <source>Search reached end of document</source>
         <translation>検索がドキュメントの最後に達しました</translation>
     </message>
     <message>
-        <location filename="../help/browser/helpbrowser.cpp" line="390"/>
+        <location filename="../help/browser/helpbrowser.cpp" line="379"/>
         <source>Search reached start of document</source>
         <translation>検索がドキュメントの最初に達しました</translation>
     </message>
     <message>
-        <location filename="../help/browser/helpbrowser.cpp" line="392"/>
+        <location filename="../help/browser/helpbrowser.cpp" line="381"/>
         <source>Text not found in document</source>
         <translation>テキストがドキュメントに見つかりません</translation>
     </message>
@@ -773,12 +778,12 @@ You may need to remove it manually.</source>
         <translation>検索する文字列:</translation>
     </message>
     <message>
-        <location filename="../help/browser/helpbrowser.cpp" line="145"/>
+        <location filename="../help/browser/helpbrowser.cpp" line="134"/>
         <source>Supplied XML file is not a valid Contents document.</source>
         <translation>供給された XML ファイルは有効な目次ドキュメントではありません。</translation>
     </message>
     <message>
-        <location filename="../help/browser/helpbrowser.cpp" line="437"/>
+        <location filename="../help/browser/helpbrowser.cpp" line="426"/>
         <source>Found %1 results</source>
         <translation>%1 件の結果を見つけました</translation>
     </message>
@@ -786,7 +791,7 @@ You may need to remove it manually.</source>
 <context>
     <name>HelpTextBrowser</name>
     <message>
-        <location filename="../help/browser/helptextbrowser.cpp" line="59"/>
+        <location filename="../help/browser/helptextbrowser.cpp" line="50"/>
         <source>Error opening help file: </source>
         <translation>ヘルプ ファイルのオープン エラー: </translation>
     </message>
@@ -794,32 +799,32 @@ You may need to remove it manually.</source>
 <context>
     <name>LogEvent</name>
     <message>
-        <location filename="../../torcontrol/logevent.cpp" line="68"/>
+        <location filename="../../torcontrol/logevent.cpp" line="57"/>
         <source>Debug</source>
         <translation>デバッグ</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/logevent.cpp" line="69"/>
+        <location filename="../../torcontrol/logevent.cpp" line="58"/>
         <source>Info</source>
         <translation>情報</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/logevent.cpp" line="70"/>
+        <location filename="../../torcontrol/logevent.cpp" line="59"/>
         <source>Notice</source>
         <translation>通知</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/logevent.cpp" line="71"/>
+        <location filename="../../torcontrol/logevent.cpp" line="60"/>
         <source>Warning</source>
         <translation>警告</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/logevent.cpp" line="72"/>
+        <location filename="../../torcontrol/logevent.cpp" line="61"/>
         <source>Error</source>
         <translation>エラー</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/logevent.cpp" line="73"/>
+        <location filename="../../torcontrol/logevent.cpp" line="62"/>
         <source>Unknown</source>
         <translation>不明</translation>
     </message>
@@ -852,77 +857,77 @@ You may need to remove it manually.</source>
         <translation>ヘルプ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="381"/>
+        <location filename="../mainwindow.cpp" line="362"/>
         <source>Ctrl+T</source>
         <translation>Ctrl+T</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="382"/>
+        <location filename="../mainwindow.cpp" line="363"/>
         <source>Ctrl+B</source>
         <translation>Ctrl+B</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="383"/>
+        <location filename="../mainwindow.cpp" line="364"/>
         <source>Ctrl+L</source>
         <translation>Ctrl+L</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="385"/>
+        <location filename="../mainwindow.cpp" line="366"/>
         <source>Ctrl+?</source>
         <translation>Ctrl+?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="398"/>
+        <location filename="../mainwindow.cpp" line="379"/>
         <source>File</source>
         <translation>ファイル</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="401"/>
+        <location filename="../mainwindow.cpp" line="382"/>
         <source>Tor</source>
         <translation>Tor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="406"/>
+        <location filename="../mainwindow.cpp" line="387"/>
         <source>View</source>
         <translation>表示</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="415"/>
+        <location filename="../mainwindow.cpp" line="396"/>
         <source>Vidalia Help</source>
         <translation>Vidalia のヘルプ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="660"/>
+        <location filename="../mainwindow.cpp" line="639"/>
         <source>Error Starting Tor</source>
         <translation>Tor の開始エラー</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="706"/>
+        <location filename="../mainwindow.cpp" line="685"/>
         <source>Error Connecting to Tor</source>
         <translation>Tor への接続エラー</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="765"/>
+        <location filename="../mainwindow.cpp" line="744"/>
         <source>Error Stopping Tor</source>
         <translation>Tor の停止エラー</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="796"/>
+        <location filename="../mainwindow.cpp" line="775"/>
         <source>Tor Exited</source>
         <translation>Tor が終了されました</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="766"/>
+        <location filename="../mainwindow.cpp" line="745"/>
         <source>Vidalia was unable to stop Tor.</source>
         <translation>Vidalia は Tor を停止することができませんでした。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="384"/>
+        <location filename="../mainwindow.cpp" line="365"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="799"/>
+        <location filename="../mainwindow.cpp" line="778"/>
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
@@ -931,12 +936,12 @@ Please check the message log for indicators about what happened to Tor before it
 終了された前に Tor に何が起こったかについてインジケータのメッセージ ログをチェックしてください。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="663"/>
+        <location filename="../mainwindow.cpp" line="642"/>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
         <translation>Vidalia は Tor を開始することができませんでした。Tor の実行ファイルの正しい名前と場所が指定されていることを確実にするには設定をチェックします。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="307"/>
+        <location filename="../mainwindow.cpp" line="288"/>
         <source>Network Map</source>
         <translation>ネットワーク マップ</translation>
     </message>
@@ -946,27 +951,27 @@ Please check the message log for indicators about what happened to Tor before it
         <translation>設定</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1138"/>
+        <location filename="../mainwindow.cpp" line="1117"/>
         <source>New Identity</source>
         <translation>新しい識別</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="386"/>
+        <location filename="../mainwindow.cpp" line="367"/>
         <source>Ctrl+I</source>
         <translation>Ctrl+I</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1141"/>
+        <location filename="../mainwindow.cpp" line="1120"/>
         <source>All subsequent connections will appear to be different than your old connections.</source>
         <translation>すべて順次接続は古い接続と異なっているようにみえます。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1156"/>
+        <location filename="../mainwindow.cpp" line="1135"/>
         <source>Failed to Create New Identity</source>
         <translation>新しい識別の作成に失敗しました</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="547"/>
+        <location filename="../mainwindow.cpp" line="526"/>
         <source>Tor is running</source>
         <translation>Tor は起動しています</translation>
     </message>
@@ -981,17 +986,17 @@ Please check the message log for indicators about what happened to Tor before it
         <translation>Tor は起動していません</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="515"/>
+        <location filename="../mainwindow.cpp" line="494"/>
         <source>Tor is shutting down</source>
         <translation>Tor はシャットダウンしています</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="522"/>
+        <location filename="../mainwindow.cpp" line="501"/>
         <source>Stop Tor</source>
         <translation>Tor の停止</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="538"/>
+        <location filename="../mainwindow.cpp" line="517"/>
         <source>Tor is starting up</source>
         <translation>Tor は起動しています</translation>
     </message>
@@ -1086,99 +1091,99 @@ Please check the message log for indicators about what happened to Tor before it
         <translation>このウィンドウを非表示にします</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="314"/>
+        <location filename="../mainwindow.cpp" line="295"/>
         <source>Control Panel</source>
         <translation>コントロール パネル</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="387"/>
+        <location filename="../mainwindow.cpp" line="368"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="520"/>
+        <location filename="../mainwindow.cpp" line="499"/>
         <source>Stop Tor Now</source>
         <translation>今すぐ Tor を停止</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="542"/>
+        <location filename="../mainwindow.cpp" line="521"/>
         <source>Starting Tor</source>
         <translation>Tor の開始中</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="871"/>
+        <location filename="../mainwindow.cpp" line="850"/>
         <source>Cookie Authentication Required</source>
         <translation>Cookie 認証が必要です</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="874"/>
+        <location filename="../mainwindow.cpp" line="853"/>
         <source>Tor requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one.</source>
         <translation>Tor は認証 cookie の内容の送信を Vidalia に要求しますが、Vidalia は見つけることができませんでした。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="876"/>
+        <location filename="../mainwindow.cpp" line="855"/>
         <source>Would you like to browse for the file &apos;control_auth_cookie&apos; yourself?</source>
         <translation>ご自身でファイル &apos;control_auth_cookie&apos; を参照しますか?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="883"/>
+        <location filename="../mainwindow.cpp" line="862"/>
         <source>Tor Data Directory</source>
         <translation>Tor のデータ ディレクトリ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="885"/>
+        <location filename="../mainwindow.cpp" line="864"/>
         <source>Tor Control Cookie (control_auth_cookie)</source>
         <translation>Tor のコントロール Cookie (control_auth_cookie)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="926"/>
+        <location filename="../mainwindow.cpp" line="905"/>
         <source>Error Registering for Events</source>
         <translation>イベントの登録エラー</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="928"/>
+        <location filename="../mainwindow.cpp" line="907"/>
         <source>Vidalia was unable to register for Tor events. Many of Vidalia&apos;s features may be unavailable.</source>
         <translation>Vidalia は Tor イベントを登録することができませんでした。多くの Vidalia の機能は利用できない可能性があります。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="954"/>
+        <location filename="../mainwindow.cpp" line="933"/>
         <source>Password Authentication Required</source>
         <translation>パスワード認証が必要です</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="969"/>
+        <location filename="../mainwindow.cpp" line="948"/>
         <source>Error Authenticating to Tor</source>
         <translation>Tor への認証エラー</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="971"/>
+        <location filename="../mainwindow.cpp" line="950"/>
         <source>Vidalia was unable to authenticate to Tor. (%1)</source>
         <translation>Vidalia は Tor へ認証することができませんでした。(%1)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="973"/>
+        <location filename="../mainwindow.cpp" line="952"/>
         <source>Please check your control port authentication settings.</source>
         <translation>コントロール ポートの認証の設定をチェックしてください。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="955"/>
+        <location filename="../mainwindow.cpp" line="934"/>
         <source>Please enter your control password (not the hash):</source>
         <translation>コントロール パスワード (ハッシュではありません) を入力してください:</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="513"/>
+        <location filename="../mainwindow.cpp" line="492"/>
         <source>Your Tor relay is shutting down.
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
         <translation>Tor リレーはシャットダウンしています。
 今すぐ停止するのを Tor に強制するには再び &apos;Tor の停止&apos; をクリックします。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="738"/>
+        <location filename="../mainwindow.cpp" line="717"/>
         <source>Relaying is Enabled</source>
         <translation>リレーは有効です</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="743"/>
+        <location filename="../mainwindow.cpp" line="722"/>
         <source>You are currently running a Tor relay. Terminating your relay will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new relay?</source>
@@ -1186,37 +1191,37 @@ Would you like to shutdown gracefully and give clients time to find a new relay?
 今すぐ終了してクライアントに新しいリレーを見つけさせる時間を与えますか?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="450"/>
+        <location filename="../mainwindow.cpp" line="431"/>
         <source>Error starting web browser</source>
         <translation>ウェブ ブラウザの起動エラー</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="451"/>
+        <location filename="../mainwindow.cpp" line="432"/>
         <source>Vidalia was unable to start the configured web browser</source>
         <translation>Vidalia は構成されたウェブ ブラウザを起動することができませんでした</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1075"/>
+        <location filename="../mainwindow.cpp" line="1054"/>
         <source>Tor Update Available</source>
         <translation>Tor の更新が利用可能です</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1078"/>
+        <location filename="../mainwindow.cpp" line="1057"/>
         <source>The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version.</source>
         <translation>Tor の現在インストールされているバージョンは期限切れであるかもう推奨されない可能性があります。最新のバージョンをダウンロードするには Tor のウェブサイトを訪問してください。</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1078"/>
+        <location filename="../mainwindow.cpp" line="1057"/>
         <source>Tor website: %1</source>
         <translation>Tor のウェブサイト: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="473"/>
+        <location filename="../mainwindow.cpp" line="452"/>
         <source>Error starting proxy server</source>
         <translation>プロキシ サーバーの起動エラー</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="474"/>
+        <location filename="../mainwindow.cpp" line="453"/>
         <source>Vidalia was unable to start the configured proxy server</source>
         <translation>Vidalia は構成されたプロキシ サーバーを起動することができませんでした</translation>
     </message>
@@ -1414,21 +1419,21 @@ Would you like to shutdown gracefully and give clients time to find a new relay?
         <translation>Ctrl+F</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="148"/>
+        <location filename="../log/messagelog.cpp" line="137"/>
         <source>Messages that appear when something has 
 gone very wrong and Tor cannot proceed.</source>
         <translation>何かが非常にうまくいかなくて Tor が
 進行できないときに現れるメッセージです。</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="150"/>
+        <location filename="../log/messagelog.cpp" line="139"/>
         <source>Messages that only appear when 
 something has gone wrong with Tor.</source>
         <translation>何かが Tor でうまくいかないときのみ
 現れるメッセージです。</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="154"/>
+        <location filename="../log/messagelog.cpp" line="143"/>
         <source>Messages that appear infrequently 
 during normal Tor operation and are 
 not considered errors, but you may 
@@ -1438,61 +1443,61 @@ care about.</source>
 注意する可能性があるメッセージです。</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="156"/>
+        <location filename="../log/messagelog.cpp" line="145"/>
         <source>Messages that appear frequently 
 during normal Tor operation.</source>
         <translation>通常の Tor の操作中に
 頻繁に現れるメッセージです。</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="158"/>
+        <location filename="../log/messagelog.cpp" line="147"/>
         <source>Hyper-verbose messages primarily of 
 interest to Tor developers.</source>
         <translation>Tor の開発者の興味が第一の
 超冗長なメッセージです。</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="203"/>
+        <location filename="../log/messagelog.cpp" line="192"/>
         <source>Error Setting Filter</source>
         <translation>フィルタの設定エラー</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="219"/>
+        <location filename="../log/messagelog.cpp" line="208"/>
         <source>Error Opening Log File</source>
         <translation>ログ ファイルのオープン エラー</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="294"/>
+        <location filename="../log/messagelog.cpp" line="283"/>
         <source>Select Log File</source>
         <translation>ログ ファイルの選択</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="311"/>
+        <location filename="../log/messagelog.cpp" line="300"/>
         <source>Save Log Messages</source>
         <translation>ログ メッセージの保存</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="323"/>
+        <location filename="../log/messagelog.cpp" line="312"/>
         <source>Vidalia</source>
         <translation>Vidalia</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="374"/>
+        <location filename="../log/messagelog.cpp" line="363"/>
         <source>Find in Message Log</source>
         <translation>メッセージ ログから検索</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="375"/>
+        <location filename="../log/messagelog.cpp" line="364"/>
         <source>Find:</source>
         <translation>検索:</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="381"/>
+        <location filename="../log/messagelog.cpp" line="370"/>
         <source>Not Found</source>
         <translation>見つかりません</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="382"/>
+        <location filename="../log/messagelog.cpp" line="371"/>
         <source>Search found 0 matches.</source>
         <translation>検索が 0 件の一致を見つけました。</translation>
     </message>
@@ -1522,12 +1527,12 @@ interest to Tor developers.</source>
         <translation>ヘルプ ブラウザを表示します</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="204"/>
+        <location filename="../log/messagelog.cpp" line="193"/>
         <source>Vidalia was unable to register for Tor&apos;s log events.</source>
         <translation>Vidalia は Tor のログ イベントを登録することができませんでした。</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="324"/>
+        <location filename="../log/messagelog.cpp" line="313"/>
         <source>Cannot write file %1
 
 %2.</source>
@@ -1536,12 +1541,12 @@ interest to Tor developers.</source>
 %2。</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="220"/>
+        <location filename="../log/messagelog.cpp" line="209"/>
         <source>Vidalia was unable to open the specified log file.</source>
         <translation>Vidalia は指定されたログ ファイルを開くことができませんでした。</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="314"/>
+        <location filename="../log/messagelog.cpp" line="303"/>
         <source>Text Files (*.txt)</source>
         <translation>テキスト ファイル (*.txt)</translation>
     </message>
@@ -1551,12 +1556,12 @@ interest to Tor developers.</source>
         <translation>F1</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="241"/>
+        <location filename="../log/messagelog.cpp" line="230"/>
         <source>Log Filename Required</source>
         <translation>ログのファイル名が必要です</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="243"/>
+        <location filename="../log/messagelog.cpp" line="232"/>
         <source>You must enter a filename to be able to save log messages to a file.</source>
         <translation>ファイルへログ メッセージを保存することができるファイル名を入力する必要があります。</translation>
     </message>
@@ -1697,37 +1702,37 @@ interest to Tor developers.</source>
 <context>
     <name>NetworkPage</name>
     <message>
-        <location filename="../config/networkpage.cpp" line="45"/>
+        <location filename="../config/networkpage.cpp" line="34"/>
         <source>Network</source>
         <translation>ネットワーク</translation>
     </message>
     <message>
-        <location filename="../config/networkpage.cpp" line="197"/>
+        <location filename="../config/networkpage.cpp" line="186"/>
         <source>Invalid Bridge</source>
         <translation>不正なブリッジ</translation>
     </message>
     <message>
-        <location filename="../config/networkpage.cpp" line="198"/>
+        <location filename="../config/networkpage.cpp" line="187"/>
         <source>The specified bridge identifier is not valid.</source>
         <translation>指定されたブリッジ識別子は有効ではありません。</translation>
     </message>
     <message>
-        <location filename="../config/networkpage.cpp" line="245"/>
+        <location filename="../config/networkpage.cpp" line="234"/>
         <source>Copy (Ctrl+C)</source>
         <translation>コピー (Ctrl+C)</translation>
     </message>
     <message>
-        <location filename="../config/networkpage.cpp" line="276"/>
+        <location filename="../config/networkpage.cpp" line="265"/>
         <source>You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet.</source>
         <translation>インターネットのアクセスにプロキシを使用するには Tor の構成へ IP アドレスまたはホスト名とポート番号を両方指定する必要があります。</translation>
     </message>
     <message>
-        <location filename="../config/networkpage.cpp" line="282"/>
+        <location filename="../config/networkpage.cpp" line="271"/>
         <source>You must specify one or more ports to which your firewall allows you to connect.</source>
         <translation>ファイアウォールが接続を許可する 1 つより多くのポートを指定する必要があります。</translation>
     </message>
     <message>
-        <location filename="../config/networkpage.cpp" line="318"/>
+        <location filename="../config/networkpage.cpp" line="307"/>
         <source>&apos;%1&apos; is not a valid port number.</source>
         <translation>&apos;%1&apos; は有効なポート番号ではありません。</translation>
     </message>
@@ -1827,25 +1832,25 @@ interest to Tor developers.</source>
         <translation>ファイアウォールによって許可されたポートのみ使用してリレーへ接続するには Tor の構成へチェックします</translation>
     </message>
     <message>
-        <location filename="../config/networkpage.ui" line="235"/>
-        <source>Check to configure Tor to use bridge relays to access the Tor network</source>
-        <translation>Tor ネットワークのアクセスにブリッジ リレーを使用するには Tor の構成へチェックします</translation>
-    </message>
-    <message>
         <location filename="../config/networkpage.ui" line="318"/>
         <source>&lt;a href=&quot;bridges.finding&quot;&gt;How do I find a bridge?&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;bridges.finding&quot;&gt;ブリッジを見つけるには?&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <location filename="../config/networkpage.ui" line="235"/>
+        <source>Check to configure Tor to encrypt its directory requests and, optionally, use bridge relays to access the Tor network</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Policy</name>
     <message>
-        <location filename="../config/policy.cpp" line="178"/>
+        <location filename="../config/policy.cpp" line="167"/>
         <source>accept</source>
         <translation>accept</translation>
     </message>
     <message>
-        <location filename="../config/policy.cpp" line="178"/>
+        <location filename="../config/policy.cpp" line="167"/>
         <source>reject</source>
         <translation>reject</translation>
     </message>
@@ -1853,17 +1858,17 @@ interest to Tor developers.</source>
 <context>
     <name>RouterDescriptor</name>
     <message>
-        <location filename="../../torcontrol/routerdescriptor.cpp" line="87"/>
+        <location filename="../../torcontrol/routerdescriptor.cpp" line="76"/>
         <source>Online</source>
         <translation>オンライン</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/routerdescriptor.cpp" line="89"/>
+        <location filename="../../torcontrol/routerdescriptor.cpp" line="78"/>
         <source>Hibernating</source>
         <translation>休止状態</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/routerdescriptor.cpp" line="91"/>
+        <location filename="../../torcontrol/routerdescriptor.cpp" line="80"/>
         <source>Offline</source>
         <translation>オフライン</translation>
     </message>
@@ -1871,32 +1876,32 @@ interest to Tor developers.</source>
 <context>
     <name>RouterDescriptorView</name>
     <message>
-        <location filename="../network/routerdescriptorview.cpp" line="114"/>
+        <location filename="../network/routerdescriptorview.cpp" line="103"/>
         <source>IP Address:</source>
         <translation>IP アドレス:</translation>
     </message>
     <message>
-        <location filename="../network/routerdescriptorview.cpp" line="115"/>
+        <location filename="../network/routerdescriptorview.cpp" line="104"/>
         <source>Platform:</source>
         <translation>プラットフォーム:</translation>
     </message>
     <message>
-        <location filename="../network/routerdescriptorview.cpp" line="119"/>
+        <location filename="../network/routerdescriptorview.cpp" line="108"/>
         <source>Bandwidth:</source>
         <translation>帯域幅:</translation>
     </message>
     <message>
-        <location filename="../network/routerdescriptorview.cpp" line="121"/>
+        <location filename="../network/routerdescriptorview.cpp" line="110"/>
         <source>Uptime:</source>
         <translation>アップ時間:</translation>
     </message>
     <message>
-        <location filename="../network/routerdescriptorview.cpp" line="127"/>
+        <location filename="../network/routerdescriptorview.cpp" line="116"/>
         <source>Last Updated:</source>
         <translation>最終更新:</translation>
     </message>
     <message>
-        <location filename="../network/routerdescriptorview.cpp" line="110"/>
+        <location filename="../network/routerdescriptorview.cpp" line="99"/>
         <source>Location:</source>
         <translation>場所:</translation>
     </message>
@@ -1904,17 +1909,17 @@ interest to Tor developers.</source>
 <context>
     <name>RouterListItem</name>
     <message>
-        <location filename="../network/routerlistitem.cpp" line="94"/>
+        <location filename="../network/routerlistitem.cpp" line="83"/>
         <source>%1 KB/s</source>
         <translation>%1 KB/s</translation>
     </message>
     <message>
-        <location filename="../network/routerlistitem.cpp" line="78"/>
+        <location filename="../network/routerlistitem.cpp" line="67"/>
         <source>Offline</source>
         <translation>オフライン</translation>
     </message>
     <message>
-        <location filename="../network/routerlistitem.cpp" line="82"/>
+        <location filename="../network/routerlistitem.cpp" line="71"/>
         <source>Hibernating</source>
         <translation>休止状態</translation>
     </message>
@@ -1922,19 +1927,19 @@ interest to Tor developers.</source>
 <context>
     <name>RouterListWidget</name>
     <message>
-        <location filename="../network/routerlistwidget.cpp" line="44"/>
+        <location filename="../network/routerlistwidget.cpp" line="31"/>
         <source>Relay</source>
         <translation>リレー</translation>
     </message>
     <message>
-        <location filename="../network/routerlistwidget.cpp" line="71"/>
+        <location filename="../network/routerlistwidget.cpp" line="58"/>
         <source>Zoom to Relay</source>
         <translation>リレーへの拡大と縮小</translation>
     </message>
     <message>
-        <location filename="../network/routerlistwidget.cpp" line="185"/>
-        <source>%1 relays online (%2 total)</source>
-        <translation>%1 個のリレーがオンラインです (全体で %2)</translation>
+        <location filename="../network/routerlistwidget.cpp" line="168"/>
+        <source>%1 relays online</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2085,11 +2090,6 @@ interest to Tor developers.</source>
         <translation>その他のサービス</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="776"/>
-        <source>Ports 706, 1863, 5050, 5190, 5222, 8300 and 8888</source>
-        <translation>ポート 706、1863、5050、5190、5222、8300 および 8888 です</translation>
-    </message>
-    <message>
         <location filename="../config/serverpage.ui" line="779"/>
         <source>Instant Messaging (IM)</source>
         <translation>インスタント メッセージング (IM)</translation>
@@ -2125,27 +2125,27 @@ interest to Tor developers.</source>
         <translation>帯域幅の最大レートは帯域幅の平均レート以上である必要があります。両方の値は少なくとも 20 KB/s である必要があります。</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.cpp" line="74"/>
+        <location filename="../config/serverpage.cpp" line="63"/>
         <source>Server</source>
         <translation>サーバー</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.cpp" line="131"/>
+        <location filename="../config/serverpage.cpp" line="120"/>
         <source>Bridge Support Unavailable</source>
         <translation>ブリッジ サポートが利用できません</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.cpp" line="134"/>
+        <location filename="../config/serverpage.cpp" line="123"/>
         <source>You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges.</source>
         <translation>検閲されたユーザーのブリッジ リレーとなるよう Tor を構成していますが、Tor のバージョンがブリッジをサポートしません。</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.cpp" line="136"/>
+        <location filename="../config/serverpage.cpp" line="125"/>
         <source>Please upgrade your Tor software or configure Tor to act as a normal Tor relay.</source>
         <translation>Tor ソフトウェアをアップグレードするか通常の Tor リレーとなるよう Tor を構成してください。</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.cpp" line="259"/>
+        <location filename="../config/serverpage.cpp" line="243"/>
         <source>You must specify at least a relay nickname and port.</source>
         <translation>少なくともリレーのニックネームとポートを指定する必要があります。</translation>
     </message>
@@ -2177,7 +2177,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
         <translation>リレーのディレクトリをミラーする </translation>
     </message>
     <message>
-        <location filename="../config/serverpage.cpp" line="190"/>
+        <location filename="../config/serverpage.cpp" line="179"/>
         <source>Your bridge relay is not running.</source>
         <translation>ブリッジ リレーは起動されていません。</translation>
     </message>
@@ -2211,51 +2211,159 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
         <source>Copy your bridge relay&apos;s identity to the clipboard</source>
         <translation>クリップボードへブリッジ リレーの識別をコピーします</translation>
     </message>
+    <message>
+        <location filename="../config/serverpage.ui" line="776"/>
+        <source>Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 and 8888</source>
+        <translation type="unfinished">ポート 706、1863、5050、5190、5222、8300 および 8888 です {706, 1863, 5050, 5190, 5222, 5223, 8300 ?}</translation>
+    </message>
+</context>
+<context>
+    <name>ServicePage</name>
+    <message>
+        <location filename="../config/servicepage.cpp" line="27"/>
+        <source>Services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="105"/>
+        <source>Error while trying to unpublish all services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="112"/>
+        <source>Please configure at least a service directory and a virtual       port for each service you want to save. Remove the other ones.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="586"/>
+        <source>Error</source>
+        <translation type="unfinished">エラー</translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="442"/>
+        <source>Please select a Service.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="447"/>
+        <source>Select Service Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="536"/>
+        <source>Virtual Port may only contain valid port numbers [1..65535].</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="567"/>
+        <source>Target may only contain address:port, address, or port.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="587"/>
+        <source>Directory already in use by another service.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="19"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="31"/>
+        <source>Provided Hidden Services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="56"/>
+        <source>Onion Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="61"/>
+        <source>Virtual Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="66"/>
+        <source>Target</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="71"/>
+        <source>Directory Path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="76"/>
+        <source>Enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="84"/>
+        <source>Add new service to list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="97"/>
+        <source>Remove selected service from list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="110"/>
+        <source>Copy onion address of selected service to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="123"/>
+        <source>Browse in local file system and choose directory for selected service</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Stream</name>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="129"/>
+        <location filename="../../torcontrol/stream.cpp" line="118"/>
         <source>New</source>
         <translation>新規</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="131"/>
+        <location filename="../../torcontrol/stream.cpp" line="120"/>
         <source>Resolving</source>
         <translation>解決しています</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="132"/>
+        <location filename="../../torcontrol/stream.cpp" line="121"/>
         <source>Connecting</source>
         <translation>接続しています</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="133"/>
+        <location filename="../../torcontrol/stream.cpp" line="122"/>
         <source>Open</source>
         <translation>オープン</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="134"/>
+        <location filename="../../torcontrol/stream.cpp" line="123"/>
         <source>Failed</source>
         <translation>失敗しました</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="135"/>
+        <location filename="../../torcontrol/stream.cpp" line="124"/>
         <source>Closed</source>
         <translation>閉じました</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="138"/>
+        <location filename="../../torcontrol/stream.cpp" line="127"/>
         <source>Unknown</source>
         <translation>不明</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="136"/>
+        <location filename="../../torcontrol/stream.cpp" line="125"/>
         <source>Retrying</source>
         <translation>再試行しています</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="137"/>
+        <location filename="../../torcontrol/stream.cpp" line="126"/>
         <source>Remapped</source>
         <translation>再マップしました</translation>
     </message>
@@ -2263,7 +2371,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
 <context>
     <name>TorProcess</name>
     <message>
-        <location filename="../../torcontrol/torprocess.cpp" line="118"/>
+        <location filename="../../torcontrol/torprocess.cpp" line="107"/>
         <source>Process %1 failed to stop. [%2]</source>
         <translation>プロセス %1 が停止に失敗しました。[%2]</translation>
     </message>
@@ -2271,12 +2379,12 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
 <context>
     <name>TorService</name>
     <message>
-        <location filename="../../torcontrol/torservice.cpp" line="154"/>
+        <location filename="../../torcontrol/torservice.cpp" line="143"/>
         <source>The Tor service is not installed.</source>
         <translation>Tor サービスはインストールされていません。</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/torservice.cpp" line="172"/>
+        <location filename="../../torcontrol/torservice.cpp" line="161"/>
         <source>Unable to start the Tor service.</source>
         <translation>Tor サービスを開始することができません。</translation>
     </message>
@@ -2284,7 +2392,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
 <context>
     <name>TorSettings</name>
     <message>
-        <location filename="../config/torsettings.cpp" line="118"/>
+        <location filename="../config/torsettings.cpp" line="107"/>
         <source>Failed to hash the control password.</source>
         <translation>コントロール パスワードのハッシュに失敗しました。</translation>
     </message>
@@ -2292,57 +2400,57 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
 <context>
     <name>VMessageBox</name>
     <message>
-        <location filename="../vmessagebox.cpp" line="88"/>
+        <location filename="../vmessagebox.cpp" line="77"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="89"/>
+        <location filename="../vmessagebox.cpp" line="78"/>
         <source>Cancel</source>
         <translation>キャンセル</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="90"/>
+        <location filename="../vmessagebox.cpp" line="79"/>
         <source>Yes</source>
         <translation>はい</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="91"/>
+        <location filename="../vmessagebox.cpp" line="80"/>
         <source>No</source>
         <translation>いいえ</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="92"/>
+        <location filename="../vmessagebox.cpp" line="81"/>
         <source>Help</source>
         <translation>ヘルプ</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="93"/>
+        <location filename="../vmessagebox.cpp" line="82"/>
         <source>Retry</source>
         <translation>再試行</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="94"/>
+        <location filename="../vmessagebox.cpp" line="83"/>
         <source>Show Log</source>
         <translation>ログの表示</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="95"/>
+        <location filename="../vmessagebox.cpp" line="84"/>
         <source>Show Settings</source>
         <translation>設定の表示</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="96"/>
+        <location filename="../vmessagebox.cpp" line="85"/>
         <source>Continue</source>
         <translation>続行</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="97"/>
+        <location filename="../vmessagebox.cpp" line="86"/>
         <source>Quit</source>
         <translation>終了</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="98"/>
+        <location filename="../vmessagebox.cpp" line="87"/>
         <source>Browse</source>
         <translation>参照</translation>
     </message>
@@ -2350,22 +2458,22 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
 <context>
     <name>Vidalia</name>
     <message>
-        <location filename="../vidalia.cpp" line="246"/>
+        <location filename="../vidalia.cpp" line="235"/>
         <source>Invalid language code specified: </source>
         <translation>不正な言語コードが指定されています: </translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="253"/>
+        <location filename="../vidalia.cpp" line="242"/>
         <source>Invalid GUI style specified: </source>
         <translation>不正な GUI スタイルが指定されています: </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="99"/>
+        <location filename="../main.cpp" line="88"/>
         <source>Vidalia is already running</source>
         <translation>Vidalia はすでに起動しています</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="105"/>
+        <location filename="../main.cpp" line="94"/>
         <source>Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.
 
 Would you like to continue starting Vidalia?</source>
@@ -2374,62 +2482,62 @@ Would you like to continue starting Vidalia?</source>
 Vidalia の起動を続行しますか?</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="85"/>
+        <location filename="../main.cpp" line="74"/>
         <source>Invalid Argument</source>
         <translation>不正な引数</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="177"/>
+        <location filename="../vidalia.cpp" line="166"/>
         <source>Displays this usage message and exits.</source>
         <translation>この使用法メッセージを表示して終了します。</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="179"/>
+        <location filename="../vidalia.cpp" line="168"/>
         <source>Resets ALL stored Vidalia settings.</source>
         <translation>すべての格納されている Vidalia の設定をリセットします。</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="181"/>
+        <location filename="../vidalia.cpp" line="170"/>
         <source>Sets the directory Vidalia uses for data files.</source>
         <translation>Vidalia がデータ ファイルに使用するディレクトリを設定します。</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="183"/>
+        <location filename="../vidalia.cpp" line="172"/>
         <source>Sets the name and location of Vidalia&apos;s pidfile.</source>
         <translation>Vidalia の pidfile の名前と場所を設定します。</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="185"/>
+        <location filename="../vidalia.cpp" line="174"/>
         <source>Sets the name and location of Vidalia&apos;s logfile.</source>
         <translation>Vidalia の logfile の名前と場所を設定します。</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="188"/>
+        <location filename="../vidalia.cpp" line="177"/>
         <source>Sets the verbosity of Vidalia&apos;s logging.</source>
         <translation>Vidalia のログの冗長さを設定します。</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="191"/>
+        <location filename="../vidalia.cpp" line="180"/>
         <source>Sets Vidalia&apos;s interface style.</source>
         <translation>Vidalia のインターフェイス スタイルを設定します。</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="194"/>
+        <location filename="../vidalia.cpp" line="183"/>
         <source>Sets Vidalia&apos;s language.</source>
         <translation>Vidalia の言語を設定します。</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="198"/>
+        <location filename="../vidalia.cpp" line="187"/>
         <source>Vidalia Usage Information</source>
         <translation>Vidalia の使用情報</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="259"/>
+        <location filename="../vidalia.cpp" line="248"/>
         <source>Invalid log level specified: </source>
         <translation>不正なログ レベルが指定されています: </translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="265"/>
+        <location filename="../vidalia.cpp" line="254"/>
         <source>Unable to open log file &apos;%1&apos;: %2</source>
         <translation>ログ ファイル &apos;%1&apos; を開くことができません: %2</translation>
     </message>

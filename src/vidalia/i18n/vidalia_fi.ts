@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="fi">
-<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -39,12 +38,12 @@
         <translation>Vidalia-versio</translation>
     </message>
     <message>
-        <location filename="../about/aboutdialog.cpp" line="79"/>
+        <location filename="../about/aboutdialog.cpp" line="68"/>
         <source>&lt;Not Running&gt;</source>
         <translation>Ei ole käynnissä</translation>
     </message>
     <message>
-        <location filename="../about/aboutdialog.cpp" line="75"/>
+        <location filename="../about/aboutdialog.cpp" line="64"/>
         <source>&lt;Unavailable&gt;</source>
         <translation>&lt;Ei ole saatavilla&gt;</translation>
     </message>
@@ -97,27 +96,27 @@
         <translation>Vidalia käynnistyy tämän ryhmän oikeuksilla</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="226"/>
+        <location filename="../config/advancedpage.cpp" line="215"/>
         <source>Select Tor Configuration File</source>
         <translation>Valitse Tor-asetustiedosto</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="239"/>
+        <location filename="../config/advancedpage.cpp" line="228"/>
         <source>File Not Found</source>
         <translation>Tiedostoa ei löydy</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="241"/>
+        <location filename="../config/advancedpage.cpp" line="230"/>
         <source>%1 does not exist. Would you like to create it?</source>
         <translation>%1 tiedostoa ei ole olemassa. Haluatko luoda sen?</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="252"/>
+        <location filename="../config/advancedpage.cpp" line="241"/>
         <source>Failed to Create File</source>
         <translation>Tiedoston luominen epäonnistui</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="253"/>
+        <location filename="../config/advancedpage.cpp" line="242"/>
         <source>Unable to create %1 [%2]</source>
         <translation>Tiedoston %1 luominen epäonnistui [%2]</translation>
     </message>
@@ -137,22 +136,22 @@
         <translation>Suorita Tor-ohjelmaa taustalla Windowssin palveluna</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="289"/>
+        <location filename="../config/advancedpage.cpp" line="278"/>
         <source>Unable to remove Tor Service</source>
         <translation>Tor-palvelun poisto epäonnistui</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="300"/>
+        <location filename="../config/advancedpage.cpp" line="289"/>
         <source>Unable to install Tor Service</source>
         <translation>Tor-palvelun asennus epäonnistui</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="301"/>
+        <location filename="../config/advancedpage.cpp" line="290"/>
         <source>Vidalia was unable to install the Tor service.</source>
         <translation>Vidalia epäonnistui Tor-palvelun asennuksessa.</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="291"/>
+        <location filename="../config/advancedpage.cpp" line="280"/>
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
@@ -166,7 +165,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
         <translation>Tor-asetustiedosto</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="112"/>
+        <location filename="../config/advancedpage.cpp" line="101"/>
         <source>&apos;%1&apos; is not a valid IP address.</source>
         <translation>&apos;%1&apos; ei ole kelvollinen IP-osoite.</translation>
     </message>
@@ -176,12 +175,12 @@ Tor-palvelu täytyy poistaa käsin.</translation>
         <translation>:</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="123"/>
+        <location filename="../config/advancedpage.cpp" line="112"/>
         <source>You selected &apos;Password&apos; authentication, but did not specify a password.</source>
         <translation>Valitsit &apos;Salasana&apos;-kirjautumisen, mutta et määrittänyt salasanaa.</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="268"/>
+        <location filename="../config/advancedpage.cpp" line="257"/>
         <source>Select a Directory to Use for Tor Data</source>
         <translation>Valitse kansio Tor-ohjelman tiedoille</translation>
     </message>
@@ -231,7 +230,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
         <translation>Ei lainkaan</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="45"/>
+        <location filename="../config/advancedpage.cpp" line="34"/>
         <source>Advanced</source>
         <translation>Lisäasetukset</translation>
     </message>
@@ -264,7 +263,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
         <translation>Valitse teema Vidalian käyttöliittymälle</translation>
     </message>
     <message>
-        <location filename="../config/appearancepage.cpp" line="34"/>
+        <location filename="../config/appearancepage.cpp" line="23"/>
         <source>Appearance</source>
         <translation>Ulkoasu</translation>
     </message>
@@ -312,7 +311,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
         <translation>Peruuta</translation>
     </message>
     <message>
-        <location filename="../bwgraph/bwgraph.cpp" line="171"/>
+        <location filename="../bwgraph/bwgraph.cpp" line="160"/>
         <source>Since:</source>
         <translation>Alkaen:</translation>
     </message>
@@ -327,7 +326,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
         <translation>% läpinäkyvä</translation>
     </message>
     <message>
-        <location filename="../bwgraph/bwgraph.cpp" line="237"/>
+        <location filename="../bwgraph/bwgraph.cpp" line="226"/>
         <source>Hide Settings</source>
         <translation>Piilota asetukset</translation>
     </message>
@@ -345,32 +344,32 @@ Tor-palvelu täytyy poistaa käsin.</translation>
 <context>
     <name>Circuit</name>
     <message>
-        <location filename="../../torcontrol/circuit.cpp" line="109"/>
+        <location filename="../../torcontrol/circuit.cpp" line="89"/>
         <source>New</source>
         <translation>Uusi</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/circuit.cpp" line="110"/>
+        <location filename="../../torcontrol/circuit.cpp" line="90"/>
         <source>Open</source>
         <translation>Auki</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/circuit.cpp" line="111"/>
+        <location filename="../../torcontrol/circuit.cpp" line="91"/>
         <source>Building</source>
         <translation>Muodostetaan</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/circuit.cpp" line="112"/>
+        <location filename="../../torcontrol/circuit.cpp" line="92"/>
         <source>Failed</source>
         <translation>Epäonnistui</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/circuit.cpp" line="113"/>
+        <location filename="../../torcontrol/circuit.cpp" line="93"/>
         <source>Closed</source>
         <translation>Suljettu</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/circuit.cpp" line="114"/>
+        <location filename="../../torcontrol/circuit.cpp" line="94"/>
         <source>Unknown</source>
         <translation>Tuntematon</translation>
     </message>
@@ -378,7 +377,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
 <context>
     <name>CircuitItem</name>
     <message>
-        <location filename="../network/circuititem.cpp" line="48"/>
+        <location filename="../network/circuititem.cpp" line="39"/>
         <source>&lt;Path Empty&gt;</source>
         <translation>Tyhjä reitti</translation>
     </message>
@@ -386,27 +385,27 @@ Tor-palvelu täytyy poistaa käsin.</translation>
 <context>
     <name>CircuitListWidget</name>
     <message>
-        <location filename="../network/circuitlistwidget.cpp" line="48"/>
+        <location filename="../network/circuitlistwidget.cpp" line="37"/>
         <source>Connection</source>
         <translation>Yhteys</translation>
     </message>
     <message>
-        <location filename="../network/circuitlistwidget.cpp" line="48"/>
+        <location filename="../network/circuitlistwidget.cpp" line="37"/>
         <source>Status</source>
         <translation>Tila</translation>
     </message>
     <message>
-        <location filename="../network/circuitlistwidget.cpp" line="83"/>
+        <location filename="../network/circuitlistwidget.cpp" line="72"/>
         <source>Zoom to Circuit</source>
         <translation>Sovita näyttämään yhteys</translation>
     </message>
     <message>
-        <location filename="../network/circuitlistwidget.cpp" line="85"/>
+        <location filename="../network/circuitlistwidget.cpp" line="74"/>
         <source>Close Circuit (Del)</source>
         <translation>Sulje yhteys (Del)</translation>
     </message>
     <message>
-        <location filename="../network/circuitlistwidget.cpp" line="106"/>
+        <location filename="../network/circuitlistwidget.cpp" line="95"/>
         <source>Close Stream (Del)</source>
         <translation>Sulje datavirta (Del)</translation>
     </message>
@@ -434,7 +433,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
         <translation>Ulkoasu</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="103"/>
+        <location filename="../config/configdialog.cpp" line="107"/>
         <source>Help</source>
         <translation>Ohje</translation>
     </message>
@@ -449,22 +448,22 @@ Tor-palvelu täytyy poistaa käsin.</translation>
         <translation>Verkko</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="171"/>
+        <location filename="../config/configdialog.cpp" line="175"/>
         <source>Error Saving Settings</source>
         <translation>Virhe tallentaessa asetuksia</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="173"/>
+        <location filename="../config/configdialog.cpp" line="177"/>
         <source>Vidalia was unable to save your %1 settings.</source>
         <translation>Vidalia ei onnistunut tallentamaan %1 asetuksia.</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="200"/>
+        <location filename="../config/configdialog.cpp" line="204"/>
         <source>Error Applying Settings</source>
         <translation>Virhe otettaessa käyttöön asetuksia</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="202"/>
+        <location filename="../config/configdialog.cpp" line="206"/>
         <source>Vidalia was unable to apply your %1 settings to Tor.</source>
         <translation>Vidalia ei onnistunut ottamaan käyttöön %1 asetuksia Tor-ohjelman kanssa.</translation>
     </message>
@@ -478,21 +477,26 @@ Tor-palvelu täytyy poistaa käsin.</translation>
         <source>Sharing</source>
         <translation>Jakaminen</translation>
     </message>
+    <message>
+        <location filename="../config/configdialog.cpp" line="94"/>
+        <source>Services</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>ControlConnection</name>
     <message>
-        <location filename="../../torcontrol/controlconnection.cpp" line="390"/>
+        <location filename="../../torcontrol/controlconnection.cpp" line="379"/>
         <source>Control socket is not connected.</source>
         <translation>Ohjausyhteyttä ei ole muodostettu.</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/controlconnection.cpp" line="327"/>
+        <location filename="../../torcontrol/controlconnection.cpp" line="316"/>
         <source>Control socket is not connected</source>
         <translation>Ohjausyhteyttä ei ole muodostettu</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/controlconnection.cpp" line="141"/>
+        <location filename="../../torcontrol/controlconnection.cpp" line="130"/>
         <source>Vidalia was unable to connect to Tor. (%1)</source>
         <translation>Vidalia ei onnistunut ottamaan yhteyttä Tor-ohjelmaan. (%1)</translation>
     </message>
@@ -500,22 +504,22 @@ Tor-palvelu täytyy poistaa käsin.</translation>
 <context>
     <name>ControlSocket</name>
     <message>
-        <location filename="../../torcontrol/controlsocket.cpp" line="72"/>
+        <location filename="../../torcontrol/controlsocket.cpp" line="61"/>
         <source>Error sending control command. [%1]</source>
         <translation>Virhe lähetettäessä ohjauskomentoa. [%1]</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/controlsocket.cpp" line="109"/>
+        <location filename="../../torcontrol/controlsocket.cpp" line="98"/>
         <source>Socket disconnected while attempting to read a line of data.</source>
         <translation>Yhteys päättyi yrittäessään lukea tietoa.</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/controlsocket.cpp" line="147"/>
+        <location filename="../../torcontrol/controlsocket.cpp" line="136"/>
         <source>Invalid control reply. [%1]</source>
         <translation>Virheellinen ohjausvastaus. [%1]</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/controlsocket.cpp" line="62"/>
+        <location filename="../../torcontrol/controlsocket.cpp" line="51"/>
         <source>Control socket is not connected.</source>
         <translation>Ohjausyhteyttä ei ole muodostettu.</translation>
     </message>
@@ -523,42 +527,12 @@ Tor-palvelu täytyy poistaa käsin.</translation>
 <context>
     <name>GeneralPage</name>
     <message>
-        <location filename="../config/generalpage.ui" line="64"/>
-        <source>Path to Tor&apos;s executable</source>
-        <translation>Tor-ohjelman sijainti</translation>
-    </message>
-    <message>
-        <location filename="../config/generalpage.ui" line="83"/>
-        <source>Select path to Tor executable</source>
-        <translation>Valitse Tor-ohjelman sijainti</translation>
-    </message>
-    <message>
-        <location filename="../config/generalpage.ui" line="86"/>
+        <location filename="../config/generalpage.ui" line="115"/>
         <source>Browse</source>
         <translation>Selaa</translation>
     </message>
     <message>
-        <location filename="../config/generalpage.ui" line="105"/>
-        <source>Startup Options</source>
-        <translation>Käynnistys</translation>
-    </message>
-    <message>
-        <location filename="../config/generalpage.ui" line="120"/>
-        <source>Select to start Vidalia on system boot</source>
-        <translation>Valitse käynnistääkseen Vidalia käyttöjärjestelmän käynnistyessä</translation>
-    </message>
-    <message>
-        <location filename="../config/generalpage.ui" line="123"/>
-        <source>Run Vidalia on system startup</source>
-        <translation>Käynnistä Vidalia käyttöjärjestelmän käynnistyessä</translation>
-    </message>
-    <message>
-        <location filename="../config/generalpage.ui" line="136"/>
-        <source>Set to start Tor when you launch Vidalia</source>
-        <translation>Aseta Tor-ohjelma käynnistymään Vidalian käynnistyessä</translation>
-    </message>
-    <message>
-        <location filename="../config/generalpage.ui" line="139"/>
+        <location filename="../config/generalpage.ui" line="63"/>
         <source>Start Tor when Vidalia starts</source>
         <translation>Käynnistä Tor-ohjelma Vidalian käynnistyessä</translation>
     </message>
@@ -568,55 +542,85 @@ Tor-palvelu täytyy poistaa käsin.</translation>
         <translation>Valitse Tor-ohjelman sijainti</translation>
     </message>
     <message>
-        <location filename="../config/generalpage.ui" line="37"/>
+        <location filename="../config/generalpage.ui" line="38"/>
         <source>Tor Executable</source>
         <translation>Tor-ohjelma</translation>
     </message>
     <message>
-        <location filename="../config/generalpage.cpp" line="63"/>
+        <location filename="../config/generalpage.cpp" line="59"/>
         <source>Executables (*.exe)</source>
         <translation>Suoritettavat (*.exe)</translation>
     </message>
     <message>
-        <location filename="../config/generalpage.cpp" line="32"/>
+        <location filename="../config/generalpage.cpp" line="23"/>
         <source>General</source>
         <translation>Yleiset</translation>
     </message>
     <message>
-        <location filename="../config/generalpage.cpp" line="86"/>
+        <location filename="../config/generalpage.cpp" line="95"/>
         <source>You must specify the name of your Tor executable.</source>
         <translation>Tor-ohjelman nimi pitää määrittää.</translation>
+    </message>
+    <message>
+        <location filename="../config/generalpage.cpp" line="82"/>
+        <source>Select Proxy Executable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/generalpage.cpp" line="103"/>
+        <source>The proxy arguments specified are not properly formatted.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/generalpage.ui" line="22"/>
+        <source>Start Vidalia when my system starts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/generalpage.ui" line="75"/>
+        <source>Start a proxy application when Vidalia starts</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/generalpage.ui" line="97"/>
+        <source>Proxy Executable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/generalpage.ui" line="129"/>
+        <source>Command Line Arguments:</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>GraphFrame</name>
     <message>
-        <location filename="../bwgraph/graphframe.cpp" line="248"/>
+        <location filename="../bwgraph/graphframe.cpp" line="237"/>
         <source>Recv: </source>
         <translation>Lad: </translation>
     </message>
     <message>
-        <location filename="../bwgraph/graphframe.cpp" line="257"/>
+        <location filename="../bwgraph/graphframe.cpp" line="246"/>
         <source>Sent: </source>
         <translation>Läh: </translation>
     </message>
     <message>
-        <location filename="../bwgraph/graphframe.cpp" line="269"/>
+        <location filename="../bwgraph/graphframe.cpp" line="258"/>
         <source>%1 KB</source>
         <translation>%1 Kt</translation>
     </message>
     <message>
-        <location filename="../bwgraph/graphframe.cpp" line="272"/>
+        <location filename="../bwgraph/graphframe.cpp" line="261"/>
         <source>%1 MB</source>
         <translation>%1 Mt</translation>
     </message>
     <message>
-        <location filename="../bwgraph/graphframe.cpp" line="275"/>
+        <location filename="../bwgraph/graphframe.cpp" line="264"/>
         <source>%1 GB</source>
         <translation>%1 Gt</translation>
     </message>
     <message>
-        <location filename="../bwgraph/graphframe.cpp" line="296"/>
+        <location filename="../bwgraph/graphframe.cpp" line="285"/>
         <source>%1 KB/s</source>
         <translation>%1 Kt/s</translation>
     </message>
@@ -734,22 +738,22 @@ Tor-palvelu täytyy poistaa käsin.</translation>
         <translation>Esc</translation>
     </message>
     <message>
-        <location filename="../help/browser/helpbrowser.cpp" line="133"/>
+        <location filename="../help/browser/helpbrowser.cpp" line="122"/>
         <source>Error Loading Help Contents: </source>
         <translation>Virhe ladatessa ohjeen aiheita: </translation>
     </message>
     <message>
-        <location filename="../help/browser/helpbrowser.cpp" line="388"/>
+        <location filename="../help/browser/helpbrowser.cpp" line="377"/>
         <source>Search reached end of document</source>
         <translation>Etsintä saavutti sivun lopun</translation>
     </message>
     <message>
-        <location filename="../help/browser/helpbrowser.cpp" line="390"/>
+        <location filename="../help/browser/helpbrowser.cpp" line="379"/>
         <source>Search reached start of document</source>
         <translation>Etsintä saavutti sivun alun</translation>
     </message>
     <message>
-        <location filename="../help/browser/helpbrowser.cpp" line="392"/>
+        <location filename="../help/browser/helpbrowser.cpp" line="381"/>
         <source>Text not found in document</source>
         <translation>Tekstiä ei löytynyt sivulta</translation>
     </message>
@@ -769,12 +773,12 @@ Tor-palvelu täytyy poistaa käsin.</translation>
         <translation>Etsitään:</translation>
     </message>
     <message>
-        <location filename="../help/browser/helpbrowser.cpp" line="145"/>
+        <location filename="../help/browser/helpbrowser.cpp" line="134"/>
         <source>Supplied XML file is not a valid Contents document.</source>
         <translation>Tarjottu XML-tiedosto ei ole kelvollinen sisällön sivu</translation>
     </message>
     <message>
-        <location filename="../help/browser/helpbrowser.cpp" line="437"/>
+        <location filename="../help/browser/helpbrowser.cpp" line="426"/>
         <source>Found %1 results</source>
         <translation>Löytyi %1 vastausta</translation>
     </message>
@@ -787,7 +791,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
 <context>
     <name>HelpTextBrowser</name>
     <message>
-        <location filename="../help/browser/helptextbrowser.cpp" line="59"/>
+        <location filename="../help/browser/helptextbrowser.cpp" line="50"/>
         <source>Error opening help file: </source>
         <translation>Virhe avatessa ohjetiedostoa: </translation>
     </message>
@@ -795,32 +799,32 @@ Tor-palvelu täytyy poistaa käsin.</translation>
 <context>
     <name>LogEvent</name>
     <message>
-        <location filename="../../torcontrol/logevent.cpp" line="68"/>
+        <location filename="../../torcontrol/logevent.cpp" line="57"/>
         <source>Debug</source>
         <translation>Debug</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/logevent.cpp" line="69"/>
+        <location filename="../../torcontrol/logevent.cpp" line="58"/>
         <source>Info</source>
         <translation>Tiedote</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/logevent.cpp" line="70"/>
+        <location filename="../../torcontrol/logevent.cpp" line="59"/>
         <source>Notice</source>
         <translation>Ilmoitus</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/logevent.cpp" line="71"/>
+        <location filename="../../torcontrol/logevent.cpp" line="60"/>
         <source>Warning</source>
         <translation>Varoitus</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/logevent.cpp" line="72"/>
+        <location filename="../../torcontrol/logevent.cpp" line="61"/>
         <source>Error</source>
         <translation>Virhe</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/logevent.cpp" line="73"/>
+        <location filename="../../torcontrol/logevent.cpp" line="62"/>
         <source>Unknown</source>
         <translation>Tuntematon</translation>
     </message>
@@ -853,82 +857,82 @@ Tor-palvelu täytyy poistaa käsin.</translation>
         <translation>Ohje</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="381"/>
+        <location filename="../mainwindow.cpp" line="362"/>
         <source>Ctrl+T</source>
         <translation>Ctrl+T</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="382"/>
+        <location filename="../mainwindow.cpp" line="363"/>
         <source>Ctrl+B</source>
         <translation>Ctrl+B</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="383"/>
+        <location filename="../mainwindow.cpp" line="364"/>
         <source>Ctrl+L</source>
         <translation>Ctrl+L</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="385"/>
+        <location filename="../mainwindow.cpp" line="366"/>
         <source>Ctrl+?</source>
         <translation>Ctrl+?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="398"/>
+        <location filename="../mainwindow.cpp" line="379"/>
         <source>File</source>
         <translation>Tiedosto</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="401"/>
+        <location filename="../mainwindow.cpp" line="382"/>
         <source>Tor</source>
         <translation>Tor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="406"/>
+        <location filename="../mainwindow.cpp" line="387"/>
         <source>View</source>
         <translation>Näytä</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="415"/>
+        <location filename="../mainwindow.cpp" line="396"/>
         <source>Vidalia Help</source>
         <translation>Vidalian ohje</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="660"/>
+        <location filename="../mainwindow.cpp" line="639"/>
         <source>Error Starting Tor</source>
         <translation>Virhe Tor-ohjelman käynnistämisessä</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="706"/>
+        <location filename="../mainwindow.cpp" line="685"/>
         <source>Error Connecting to Tor</source>
         <translation>Virhe yhdistettäessä Tor-ohjelmaan</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="765"/>
+        <location filename="../mainwindow.cpp" line="744"/>
         <source>Error Stopping Tor</source>
         <translation>Virhe Tor-ohjelman pysähtymisessä</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="796"/>
+        <location filename="../mainwindow.cpp" line="775"/>
         <source>Tor Exited</source>
         <translation>Tor pysähtyi yllättäen</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="766"/>
+        <location filename="../mainwindow.cpp" line="745"/>
         <source>Vidalia was unable to stop Tor.</source>
         <translation>Vidalia ei onnistunut pysäyttämään Tor-ohjelmaa.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="547"/>
+        <location filename="../mainwindow.cpp" line="526"/>
         <source>Tor is running</source>
         <translation>Tor on päällä</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="384"/>
+        <location filename="../mainwindow.cpp" line="365"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="799"/>
+        <location filename="../mainwindow.cpp" line="778"/>
         <source>Vidalia detected that Tor exited unexpectedly.
 
 Please check the message log for indicators about what happened to Tor before it exited.</source>
@@ -937,12 +941,12 @@ Please check the message log for indicators about what happened to Tor before it
 Ole hyvä ja tarkista tapahtumalokista mitä Tor-ohjelmalle tapahtui ennen pysähtymistä.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="663"/>
+        <location filename="../mainwindow.cpp" line="642"/>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
         <translation>Vidalia ei onnistunut käynnistämään Tor-ohjelmaa. Tarkista asetuksista onko Tor-ohjelman nimi ja sijaint kirjoitettui oikein.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="307"/>
+        <location filename="../mainwindow.cpp" line="288"/>
         <source>Network Map</source>
         <translation>Verkkokartta</translation>
     </message>
@@ -952,22 +956,22 @@ Ole hyvä ja tarkista tapahtumalokista mitä Tor-ohjelmalle tapahtui ennen pysä
         <translation>Asetukset</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1138"/>
+        <location filename="../mainwindow.cpp" line="1117"/>
         <source>New Identity</source>
         <translation>Uusi henkilöllisyys</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="386"/>
+        <location filename="../mainwindow.cpp" line="367"/>
         <source>Ctrl+I</source>
         <translation>Ctrl+I</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1141"/>
+        <location filename="../mainwindow.cpp" line="1120"/>
         <source>All subsequent connections will appear to be different than your old connections.</source>
         <translation>Seuraavat yhteydet tulevat olemaan erilaiset kuin vanhat.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1156"/>
+        <location filename="../mainwindow.cpp" line="1135"/>
         <source>Failed to Create New Identity</source>
         <translation>Uuden henkilöllisyyden luominen epäonnistui</translation>
     </message>
@@ -982,17 +986,17 @@ Ole hyvä ja tarkista tapahtumalokista mitä Tor-ohjelmalle tapahtui ennen pysä
         <translation>Tor-ohjelma ei ole käynnissä</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="515"/>
+        <location filename="../mainwindow.cpp" line="494"/>
         <source>Tor is shutting down</source>
         <translation>Tor-ohjelmaa sammutetaan</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="522"/>
+        <location filename="../mainwindow.cpp" line="501"/>
         <source>Stop Tor</source>
         <translation>Pysäytä Tor-ohjelma</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="538"/>
+        <location filename="../mainwindow.cpp" line="517"/>
         <source>Tor is starting up</source>
         <translation>Tor-ohjelma käynnistyy</translation>
     </message>
@@ -1087,99 +1091,99 @@ Ole hyvä ja tarkista tapahtumalokista mitä Tor-ohjelmalle tapahtui ennen pysä
         <translation>Piilota tämä ikkuna</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="314"/>
+        <location filename="../mainwindow.cpp" line="295"/>
         <source>Control Panel</source>
         <translation>Ohjauspaneeli</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="387"/>
+        <location filename="../mainwindow.cpp" line="368"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+P</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="520"/>
+        <location filename="../mainwindow.cpp" line="499"/>
         <source>Stop Tor Now</source>
         <translation>Pysäytä Tor-ohjelma nyt</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="542"/>
+        <location filename="../mainwindow.cpp" line="521"/>
         <source>Starting Tor</source>
         <translation>Tor-ohjelmaa käynnistetään</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="871"/>
+        <location filename="../mainwindow.cpp" line="850"/>
         <source>Cookie Authentication Required</source>
         <translation>Eväste-kirjautumista vaaditaan</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="874"/>
+        <location filename="../mainwindow.cpp" line="853"/>
         <source>Tor requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one.</source>
         <translation>Tor-ohjelma vaatii Vidalian lähettämään kirjautumisevästeen sisällön, mutta Vidalia ei onnistunut löytämään sillaista.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="876"/>
+        <location filename="../mainwindow.cpp" line="855"/>
         <source>Would you like to browse for the file &apos;control_auth_cookie&apos; yourself?</source>
         <translation>Haluatko itse selata &apos;control_auth_cookie&apos;-tiedostoa?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="883"/>
+        <location filename="../mainwindow.cpp" line="862"/>
         <source>Tor Data Directory</source>
         <translation>Tor-tietokansio</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="885"/>
+        <location filename="../mainwindow.cpp" line="864"/>
         <source>Tor Control Cookie (control_auth_cookie)</source>
         <translation>Tor-ohjauseväste (control_auth_cookie)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="926"/>
+        <location filename="../mainwindow.cpp" line="905"/>
         <source>Error Registering for Events</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="928"/>
+        <location filename="../mainwindow.cpp" line="907"/>
         <source>Vidalia was unable to register for Tor events. Many of Vidalia&apos;s features may be unavailable.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="954"/>
+        <location filename="../mainwindow.cpp" line="933"/>
         <source>Password Authentication Required</source>
         <translation>Salasana-kirjautumista vaaditaan</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="969"/>
+        <location filename="../mainwindow.cpp" line="948"/>
         <source>Error Authenticating to Tor</source>
         <translation>Virhe kirjautuessa Tor-ohjelmaan</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="971"/>
+        <location filename="../mainwindow.cpp" line="950"/>
         <source>Vidalia was unable to authenticate to Tor. (%1)</source>
         <translation>Vidalia ei onnistunut kirjautumaan Tor-ohjelmaan. (%1)</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="973"/>
+        <location filename="../mainwindow.cpp" line="952"/>
         <source>Please check your control port authentication settings.</source>
         <translation>Ole hyvä ja tarkista ohjausportin kirjautumisasetukset.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="955"/>
+        <location filename="../mainwindow.cpp" line="934"/>
         <source>Please enter your control password (not the hash):</source>
         <translation>Ole hyvä ja anna ohjaussalasanasi (ei hashia):</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="513"/>
+        <location filename="../mainwindow.cpp" line="492"/>
         <source>Your Tor relay is shutting down.
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
         <translation>Tor-reititin sammutetaan.
 Klikkaa &apos;Pysäytä Tor-ohjelma&apos; pakottaakseen Tor-ohjelma sulkeutumaan välittömästi.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="738"/>
+        <location filename="../mainwindow.cpp" line="717"/>
         <source>Relaying is Enabled</source>
         <translation>Reitittäminen on käytössä</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="743"/>
+        <location filename="../mainwindow.cpp" line="722"/>
         <source>You are currently running a Tor relay. Terminating your relay will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new relay?</source>
@@ -1187,37 +1191,37 @@ Would you like to shutdown gracefully and give clients time to find a new relay?
 Haluaisitko pysäyttää rauhallisesti ja antaa muiden käyttäjien löytää uusi reititin?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="450"/>
+        <location filename="../mainwindow.cpp" line="431"/>
         <source>Error starting web browser</source>
         <translation>Virhe internetselainta käynnistettäessä</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="451"/>
+        <location filename="../mainwindow.cpp" line="432"/>
         <source>Vidalia was unable to start the configured web browser</source>
         <translation>Vidalia ei onnistunut käynnistämään määriteltyä internetselainta</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1075"/>
+        <location filename="../mainwindow.cpp" line="1054"/>
         <source>Tor Update Available</source>
         <translation>Tor-ohjelmaan on saatavilla päivitys</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1078"/>
+        <location filename="../mainwindow.cpp" line="1057"/>
         <source>The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version.</source>
         <translation>Asennettu versio Tor-ohjelmasta on vanhentunut tai sitä ei suositella enään. Ole hyvä ja lataa uusin versio Tor-ohjelman kotisivulta.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1078"/>
+        <location filename="../mainwindow.cpp" line="1057"/>
         <source>Tor website: %1</source>
         <translation>Tor-ohjelman kotisivu: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="473"/>
+        <location filename="../mainwindow.cpp" line="452"/>
         <source>Error starting proxy server</source>
         <translation>Virhe käynnistettäessä välityspalvelinta</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="474"/>
+        <location filename="../mainwindow.cpp" line="453"/>
         <source>Vidalia was unable to start the configured proxy server</source>
         <translation>Vidalia ei onnistunut käynnistämään määriteltyä välityspalvelinta</translation>
     </message>
@@ -1415,21 +1419,21 @@ Haluaisitko pysäyttää rauhallisesti ja antaa muiden käyttäjien löytää uu
         <translation>Ctrl+F</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="148"/>
+        <location filename="../log/messagelog.cpp" line="137"/>
         <source>Messages that appear when something has 
 gone very wrong and Tor cannot proceed.</source>
         <translation>Tapahtumat, jotka tapahtuvat kun
 jotain on pahasti mennyt pieleen eikä Tor-ohjelma pysty jatkaa.</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="150"/>
+        <location filename="../log/messagelog.cpp" line="139"/>
         <source>Messages that only appear when 
 something has gone wrong with Tor.</source>
         <translation>Tapahtumat, jotka tapahtuvat kun
 jotain on mennyt pieleen Tor-ohjelman kanssa.</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="154"/>
+        <location filename="../log/messagelog.cpp" line="143"/>
         <source>Messages that appear infrequently 
 during normal Tor operation and are 
 not considered errors, but you may 
@@ -1439,61 +1443,61 @@ normaalin Tor-ohjelman toiminnan yhteydessä
 ja joita ei pidetä virheinä, mutta joita kannattaa tarkkailla.</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="156"/>
+        <location filename="../log/messagelog.cpp" line="145"/>
         <source>Messages that appear frequently 
 during normal Tor operation.</source>
         <translation>Tapahtumat, jotka tapahtuvat säännöllisesti
 normaalin Tor-ohjelman toiminnan yhteydessä.</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="158"/>
+        <location filename="../log/messagelog.cpp" line="147"/>
         <source>Hyper-verbose messages primarily of 
 interest to Tor developers.</source>
         <translation>Erittäin monisanaisia tapahtumia,
 jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="203"/>
+        <location filename="../log/messagelog.cpp" line="192"/>
         <source>Error Setting Filter</source>
         <translation>Virhe suodatuksen asettamisessa</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="219"/>
+        <location filename="../log/messagelog.cpp" line="208"/>
         <source>Error Opening Log File</source>
         <translation>Virhe lokitiedoston avamisessa</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="294"/>
+        <location filename="../log/messagelog.cpp" line="283"/>
         <source>Select Log File</source>
         <translation>Valitse lokitiedosto</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="311"/>
+        <location filename="../log/messagelog.cpp" line="300"/>
         <source>Save Log Messages</source>
         <translation>Tallenna lokitapahtumat</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="323"/>
+        <location filename="../log/messagelog.cpp" line="312"/>
         <source>Vidalia</source>
         <translation>Vidalia</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="374"/>
+        <location filename="../log/messagelog.cpp" line="363"/>
         <source>Find in Message Log</source>
         <translation>Etsi</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="375"/>
+        <location filename="../log/messagelog.cpp" line="364"/>
         <source>Find:</source>
         <translation>Etsittävä:</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="381"/>
+        <location filename="../log/messagelog.cpp" line="370"/>
         <source>Not Found</source>
         <translation>Ei löytynyt</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="382"/>
+        <location filename="../log/messagelog.cpp" line="371"/>
         <source>Search found 0 matches.</source>
         <translation>Löytyi 0 vastausta.</translation>
     </message>
@@ -1523,12 +1527,12 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
         <translation>Näytä ohje</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="204"/>
+        <location filename="../log/messagelog.cpp" line="193"/>
         <source>Vidalia was unable to register for Tor&apos;s log events.</source>
         <translation>Vidalia ei onnistunut rekisteröimään Tor-ohjelman lokitapahtumia.</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="324"/>
+        <location filename="../log/messagelog.cpp" line="313"/>
         <source>Cannot write file %1
 
 %2.</source>
@@ -1537,12 +1541,12 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
 %2 kirjoittaminen ei onnistunut.</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="220"/>
+        <location filename="../log/messagelog.cpp" line="209"/>
         <source>Vidalia was unable to open the specified log file.</source>
         <translation>Vidalia ei onnistunut avaamaan kyseistä lokitiedostoa.</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="314"/>
+        <location filename="../log/messagelog.cpp" line="303"/>
         <source>Text Files (*.txt)</source>
         <translation>Tekstitiedostot (*.txt)</translation>
     </message>
@@ -1552,12 +1556,12 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
         <translation>F1</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="241"/>
+        <location filename="../log/messagelog.cpp" line="230"/>
         <source>Log Filename Required</source>
         <translation>Lokille täytyy määrittää nimi</translation>
     </message>
     <message>
-        <location filename="../log/messagelog.cpp" line="243"/>
+        <location filename="../log/messagelog.cpp" line="232"/>
         <source>You must enter a filename to be able to save log messages to a file.</source>
         <translation>Lokille täytyy nimi määrittää, jotta voi kirjata lokin tiedostoon.</translation>
     </message>
@@ -1698,37 +1702,37 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
 <context>
     <name>NetworkPage</name>
     <message>
-        <location filename="../config/networkpage.cpp" line="45"/>
+        <location filename="../config/networkpage.cpp" line="34"/>
         <source>Network</source>
         <translation>Verkko</translation>
     </message>
     <message>
-        <location filename="../config/networkpage.cpp" line="197"/>
+        <location filename="../config/networkpage.cpp" line="186"/>
         <source>Invalid Bridge</source>
         <translation>Virheellinen silta</translation>
     </message>
     <message>
-        <location filename="../config/networkpage.cpp" line="198"/>
+        <location filename="../config/networkpage.cpp" line="187"/>
         <source>The specified bridge identifier is not valid.</source>
         <translation>Määritelty siltahenkilöllisyys on virheellinen.</translation>
     </message>
     <message>
-        <location filename="../config/networkpage.cpp" line="245"/>
+        <location filename="../config/networkpage.cpp" line="234"/>
         <source>Copy (Ctrl+C)</source>
         <translation>Kopioi (Ctrl+C)</translation>
     </message>
     <message>
-        <location filename="../config/networkpage.cpp" line="276"/>
+        <location filename="../config/networkpage.cpp" line="265"/>
         <source>You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet.</source>
         <translation>IP-osoite tai isäntä ja portti pitää määrittää, jotta Tor-ohjelma voi yhdistää välityspalvelimen kautta Internettiin.</translation>
     </message>
     <message>
-        <location filename="../config/networkpage.cpp" line="282"/>
+        <location filename="../config/networkpage.cpp" line="271"/>
         <source>You must specify one or more ports to which your firewall allows you to connect.</source>
         <translation>Portteja pitää olla määriteltynä vähintään yksi tai useampi, mihin palomuuri antaa yhdistää.</translation>
     </message>
     <message>
-        <location filename="../config/networkpage.cpp" line="318"/>
+        <location filename="../config/networkpage.cpp" line="307"/>
         <source>&apos;%1&apos; is not a valid port number.</source>
         <translation>&apos;%1&apos; ei ole hyväksyttävä portinnumero.</translation>
     </message>
@@ -1828,25 +1832,25 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
         <translation>Tarkista, onko Tor-ohjelma säädetty yhdistämään vain reitittimiin tiettyjen sallittujen porttien kautta palomuurin läpi</translation>
     </message>
     <message>
-        <location filename="../config/networkpage.ui" line="235"/>
-        <source>Check to configure Tor to use bridge relays to access the Tor network</source>
-        <translation>Tarkista, onko Tor-ohjelma säädetty käyttämään siltareitittimiä käyttääkseen Tor-verkkoa</translation>
-    </message>
-    <message>
         <location filename="../config/networkpage.ui" line="318"/>
         <source>&lt;a href=&quot;bridges.finding&quot;&gt;How do I find a bridge?&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;bridges.finding&quot;&gt;Miten löydän siltareitittimen?&lt;/a&gt;</translation>
+    </message>
+    <message>
+        <location filename="../config/networkpage.ui" line="235"/>
+        <source>Check to configure Tor to encrypt its directory requests and, optionally, use bridge relays to access the Tor network</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Policy</name>
     <message>
-        <location filename="../config/policy.cpp" line="178"/>
+        <location filename="../config/policy.cpp" line="167"/>
         <source>accept</source>
         <translation>salli</translation>
     </message>
     <message>
-        <location filename="../config/policy.cpp" line="178"/>
+        <location filename="../config/policy.cpp" line="167"/>
         <source>reject</source>
         <translation>estä</translation>
     </message>
@@ -1854,17 +1858,17 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
 <context>
     <name>RouterDescriptor</name>
     <message>
-        <location filename="../../torcontrol/routerdescriptor.cpp" line="87"/>
+        <location filename="../../torcontrol/routerdescriptor.cpp" line="76"/>
         <source>Online</source>
         <translation>Päällä</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/routerdescriptor.cpp" line="89"/>
+        <location filename="../../torcontrol/routerdescriptor.cpp" line="78"/>
         <source>Hibernating</source>
         <translation>Valmiustilassa</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/routerdescriptor.cpp" line="91"/>
+        <location filename="../../torcontrol/routerdescriptor.cpp" line="80"/>
         <source>Offline</source>
         <translation>Offline</translation>
     </message>
@@ -1872,32 +1876,32 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
 <context>
     <name>RouterDescriptorView</name>
     <message>
-        <location filename="../network/routerdescriptorview.cpp" line="114"/>
+        <location filename="../network/routerdescriptorview.cpp" line="103"/>
         <source>IP Address:</source>
         <translation>IP-osoite:</translation>
     </message>
     <message>
-        <location filename="../network/routerdescriptorview.cpp" line="115"/>
+        <location filename="../network/routerdescriptorview.cpp" line="104"/>
         <source>Platform:</source>
         <translation>Alusta:</translation>
     </message>
     <message>
-        <location filename="../network/routerdescriptorview.cpp" line="119"/>
+        <location filename="../network/routerdescriptorview.cpp" line="108"/>
         <source>Bandwidth:</source>
         <translation>Yhteys:</translation>
     </message>
     <message>
-        <location filename="../network/routerdescriptorview.cpp" line="121"/>
+        <location filename="../network/routerdescriptorview.cpp" line="110"/>
         <source>Uptime:</source>
         <translation>Päällä:</translation>
     </message>
     <message>
-        <location filename="../network/routerdescriptorview.cpp" line="127"/>
+        <location filename="../network/routerdescriptorview.cpp" line="116"/>
         <source>Last Updated:</source>
         <translation>Viimeksi päivitetty:</translation>
     </message>
     <message>
-        <location filename="../network/routerdescriptorview.cpp" line="110"/>
+        <location filename="../network/routerdescriptorview.cpp" line="99"/>
         <source>Location:</source>
         <translation>Sijainti:</translation>
     </message>
@@ -1905,17 +1909,17 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
 <context>
     <name>RouterListItem</name>
     <message>
-        <location filename="../network/routerlistitem.cpp" line="94"/>
+        <location filename="../network/routerlistitem.cpp" line="83"/>
         <source>%1 KB/s</source>
         <translation>%1 Kt/s</translation>
     </message>
     <message>
-        <location filename="../network/routerlistitem.cpp" line="78"/>
+        <location filename="../network/routerlistitem.cpp" line="67"/>
         <source>Offline</source>
         <translation>Offline</translation>
     </message>
     <message>
-        <location filename="../network/routerlistitem.cpp" line="82"/>
+        <location filename="../network/routerlistitem.cpp" line="71"/>
         <source>Hibernating</source>
         <translation>Valmiustilassa</translation>
     </message>
@@ -1923,19 +1927,19 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
 <context>
     <name>RouterListWidget</name>
     <message>
-        <location filename="../network/routerlistwidget.cpp" line="44"/>
+        <location filename="../network/routerlistwidget.cpp" line="31"/>
         <source>Relay</source>
         <translation>Reititin</translation>
     </message>
     <message>
-        <location filename="../network/routerlistwidget.cpp" line="71"/>
+        <location filename="../network/routerlistwidget.cpp" line="58"/>
         <source>Zoom to Relay</source>
         <translation>Suurenna reitittimiin</translation>
     </message>
     <message>
-        <location filename="../network/routerlistwidget.cpp" line="185"/>
-        <source>%1 relays online (%2 total)</source>
-        <translation>%1 reititintä päällä (%2 kokonaisuudessa)</translation>
+        <location filename="../network/routerlistwidget.cpp" line="168"/>
+        <source>%1 relays online</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2086,11 +2090,6 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
         <translation>Monenlaiset muut palvelut</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="776"/>
-        <source>Ports 706, 1863, 5050, 5190, 5222, 8300 and 8888</source>
-        <translation>Portit 706, 1863, 5050, 5190, 5222, 8300 ja 8888</translation>
-    </message>
-    <message>
         <location filename="../config/serverpage.ui" line="779"/>
         <source>Instant Messaging (IM)</source>
         <translation>Pikaviestintä (IM)</translation>
@@ -2126,27 +2125,27 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
         <translation>Enimmäisnopeus pitää olla suurempi tai sama kuin keskimääräinen nopeus. Molempien lukujen pitäisi olla vähintään 20 kt/s.</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.cpp" line="74"/>
+        <location filename="../config/serverpage.cpp" line="63"/>
         <source>Server</source>
         <translation>Palvelin</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.cpp" line="131"/>
+        <location filename="../config/serverpage.cpp" line="120"/>
         <source>Bridge Support Unavailable</source>
         <translation>Siltatuki ei ole saatavilla</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.cpp" line="134"/>
+        <location filename="../config/serverpage.cpp" line="123"/>
         <source>You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges.</source>
         <translation>Tor-ohjelma on säädetty käyttäytymään siltareitittimenä sensuroiduille käyttäjille, mutta käytössä oleva Tor ei tue siltoja.</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.cpp" line="136"/>
+        <location filename="../config/serverpage.cpp" line="125"/>
         <source>Please upgrade your Tor software or configure Tor to act as a normal Tor relay.</source>
         <translation>Ole hyvä ja päivitä Tor-ohjelmasi tai säädä Tor-ohjelmasi toimimaan normaalina Tor-reitittimenä.</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.cpp" line="259"/>
+        <location filename="../config/serverpage.cpp" line="243"/>
         <source>You must specify at least a relay nickname and port.</source>
         <translation>Reitittimen nimi ja portti pitää määrittää.</translation>
     </message>
@@ -2178,7 +2177,7 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
         <translation>Jaa reititinkansiota </translation>
     </message>
     <message>
-        <location filename="../config/serverpage.cpp" line="190"/>
+        <location filename="../config/serverpage.cpp" line="179"/>
         <source>Your bridge relay is not running.</source>
         <translation>Siltareititin ei ole päällä.</translation>
     </message>
@@ -2212,51 +2211,159 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
         <source>Copy your bridge relay&apos;s identity to the clipboard</source>
         <translation>Kopioi siltareitittimen henkilöllisyys leikepöydälle</translation>
     </message>
+    <message>
+        <location filename="../config/serverpage.ui" line="776"/>
+        <source>Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 and 8888</source>
+        <translation type="unfinished">Portit 706, 1863, 5050, 5190, 5222, 8300 ja 8888 {706, 1863, 5050, 5190, 5222, 5223, 8300 ?}</translation>
+    </message>
+</context>
+<context>
+    <name>ServicePage</name>
+    <message>
+        <location filename="../config/servicepage.cpp" line="27"/>
+        <source>Services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="105"/>
+        <source>Error while trying to unpublish all services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="112"/>
+        <source>Please configure at least a service directory and a virtual       port for each service you want to save. Remove the other ones.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="586"/>
+        <source>Error</source>
+        <translation type="unfinished">Virhe</translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="442"/>
+        <source>Please select a Service.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="447"/>
+        <source>Select Service Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="536"/>
+        <source>Virtual Port may only contain valid port numbers [1..65535].</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="567"/>
+        <source>Target may only contain address:port, address, or port.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="587"/>
+        <source>Directory already in use by another service.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="19"/>
+        <source>Form</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="31"/>
+        <source>Provided Hidden Services</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="56"/>
+        <source>Onion Address</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="61"/>
+        <source>Virtual Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="66"/>
+        <source>Target</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="71"/>
+        <source>Directory Path</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="76"/>
+        <source>Enabled</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="84"/>
+        <source>Add new service to list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="97"/>
+        <source>Remove selected service from list</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="110"/>
+        <source>Copy onion address of selected service to clipboard</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.ui" line="123"/>
+        <source>Browse in local file system and choose directory for selected service</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 <context>
     <name>Stream</name>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="129"/>
+        <location filename="../../torcontrol/stream.cpp" line="118"/>
         <source>New</source>
         <translation>Uusi</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="131"/>
+        <location filename="../../torcontrol/stream.cpp" line="120"/>
         <source>Resolving</source>
         <translation>Selvitetään</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="132"/>
+        <location filename="../../torcontrol/stream.cpp" line="121"/>
         <source>Connecting</source>
         <translation>Yhdistetään</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="133"/>
+        <location filename="../../torcontrol/stream.cpp" line="122"/>
         <source>Open</source>
         <translation>Avoinna</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="134"/>
+        <location filename="../../torcontrol/stream.cpp" line="123"/>
         <source>Failed</source>
         <translation>Epäonnistui</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="135"/>
+        <location filename="../../torcontrol/stream.cpp" line="124"/>
         <source>Closed</source>
         <translation>Suljettu</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="138"/>
+        <location filename="../../torcontrol/stream.cpp" line="127"/>
         <source>Unknown</source>
         <translation>Tuntematon</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="136"/>
+        <location filename="../../torcontrol/stream.cpp" line="125"/>
         <source>Retrying</source>
         <translation>Yritetään uudelleen</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/stream.cpp" line="137"/>
+        <location filename="../../torcontrol/stream.cpp" line="126"/>
         <source>Remapped</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2264,7 +2371,7 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
 <context>
     <name>TorProcess</name>
     <message>
-        <location filename="../../torcontrol/torprocess.cpp" line="118"/>
+        <location filename="../../torcontrol/torprocess.cpp" line="107"/>
         <source>Process %1 failed to stop. [%2]</source>
         <translation>Prosessi %1 epäonnistui pysähtymästä. [%2]</translation>
     </message>
@@ -2272,12 +2379,12 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
 <context>
     <name>TorService</name>
     <message>
-        <location filename="../../torcontrol/torservice.cpp" line="154"/>
+        <location filename="../../torcontrol/torservice.cpp" line="143"/>
         <source>The Tor service is not installed.</source>
         <translation>Tor-palvelua ei ole asennettu.</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/torservice.cpp" line="172"/>
+        <location filename="../../torcontrol/torservice.cpp" line="161"/>
         <source>Unable to start the Tor service.</source>
         <translation>Tor-palvelun käynnistäminen epäonnistui.</translation>
     </message>
@@ -2285,7 +2392,7 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
 <context>
     <name>TorSettings</name>
     <message>
-        <location filename="../config/torsettings.cpp" line="118"/>
+        <location filename="../config/torsettings.cpp" line="107"/>
         <source>Failed to hash the control password.</source>
         <translation>Ohjaussalasanan hashaus epäonnistui.</translation>
     </message>
@@ -2293,57 +2400,57 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
 <context>
     <name>VMessageBox</name>
     <message>
-        <location filename="../vmessagebox.cpp" line="88"/>
+        <location filename="../vmessagebox.cpp" line="77"/>
         <source>OK</source>
         <translation>OK</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="89"/>
+        <location filename="../vmessagebox.cpp" line="78"/>
         <source>Cancel</source>
         <translation>Peruuta</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="90"/>
+        <location filename="../vmessagebox.cpp" line="79"/>
         <source>Yes</source>
         <translation>Kyllä</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="91"/>
+        <location filename="../vmessagebox.cpp" line="80"/>
         <source>No</source>
         <translation>Ei</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="92"/>
+        <location filename="../vmessagebox.cpp" line="81"/>
         <source>Help</source>
         <translation>Ohje</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="93"/>
+        <location filename="../vmessagebox.cpp" line="82"/>
         <source>Retry</source>
         <translation>Yritä uudelleen</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="94"/>
+        <location filename="../vmessagebox.cpp" line="83"/>
         <source>Show Log</source>
         <translation>Näytä loki</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="95"/>
+        <location filename="../vmessagebox.cpp" line="84"/>
         <source>Show Settings</source>
         <translation>Näytä asetukset</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="96"/>
+        <location filename="../vmessagebox.cpp" line="85"/>
         <source>Continue</source>
         <translation>Jatka</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="97"/>
+        <location filename="../vmessagebox.cpp" line="86"/>
         <source>Quit</source>
         <translation>Lopeta</translation>
     </message>
     <message>
-        <location filename="../vmessagebox.cpp" line="98"/>
+        <location filename="../vmessagebox.cpp" line="87"/>
         <source>Browse</source>
         <translation>Selaa</translation>
     </message>
@@ -2351,22 +2458,22 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
 <context>
     <name>Vidalia</name>
     <message>
-        <location filename="../vidalia.cpp" line="246"/>
+        <location filename="../vidalia.cpp" line="235"/>
         <source>Invalid language code specified: </source>
         <translation>Virheellinen kielikoodi valittu: </translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="253"/>
+        <location filename="../vidalia.cpp" line="242"/>
         <source>Invalid GUI style specified: </source>
         <translation>Virheellinen teema valittu: </translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="99"/>
+        <location filename="../main.cpp" line="88"/>
         <source>Vidalia is already running</source>
         <translation>Vidalia on jo päällä</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="105"/>
+        <location filename="../main.cpp" line="94"/>
         <source>Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.
 
 Would you like to continue starting Vidalia?</source>
@@ -2375,62 +2482,62 @@ Would you like to continue starting Vidalia?</source>
 Haluatko jatkaa Vidalian käynnistämistä?</translation>
     </message>
     <message>
-        <location filename="../main.cpp" line="85"/>
+        <location filename="../main.cpp" line="74"/>
         <source>Invalid Argument</source>
         <translation>Virheellinen komento</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="177"/>
+        <location filename="../vidalia.cpp" line="166"/>
         <source>Displays this usage message and exits.</source>
         <translation>Näyttää tämän käyttöviestin ja sulkee.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="179"/>
+        <location filename="../vidalia.cpp" line="168"/>
         <source>Resets ALL stored Vidalia settings.</source>
         <translation>Palauttaa KAIKKI asetukset oletusarvoiksi.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="181"/>
+        <location filename="../vidalia.cpp" line="170"/>
         <source>Sets the directory Vidalia uses for data files.</source>
         <translation>Asettaa Vidalian käyttämän kansion tietokansioksi.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="183"/>
+        <location filename="../vidalia.cpp" line="172"/>
         <source>Sets the name and location of Vidalia&apos;s pidfile.</source>
         <translation>Asettaa Vidalian pid-tiedoston nimen ja sijainnin.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="185"/>
+        <location filename="../vidalia.cpp" line="174"/>
         <source>Sets the name and location of Vidalia&apos;s logfile.</source>
         <translation>Asettaa Vidalian lokitiedoston nimen ja sijainnin.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="188"/>
+        <location filename="../vidalia.cpp" line="177"/>
         <source>Sets the verbosity of Vidalia&apos;s logging.</source>
         <translation>Asettaa Vidalian lokikirjaamisen tason.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="191"/>
+        <location filename="../vidalia.cpp" line="180"/>
         <source>Sets Vidalia&apos;s interface style.</source>
         <translation>Asettaa Vidalian käyttöliittymän tyylin.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="194"/>
+        <location filename="../vidalia.cpp" line="183"/>
         <source>Sets Vidalia&apos;s language.</source>
         <translation>Asettaa Vidalian kielen.</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="198"/>
+        <location filename="../vidalia.cpp" line="187"/>
         <source>Vidalia Usage Information</source>
         <translation>Vidalian käyttötiedot</translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="259"/>
+        <location filename="../vidalia.cpp" line="248"/>
         <source>Invalid log level specified: </source>
         <translation>Virheellinen lokitaso määritetty: </translation>
     </message>
     <message>
-        <location filename="../vidalia.cpp" line="265"/>
+        <location filename="../vidalia.cpp" line="254"/>
         <source>Unable to open log file &apos;%1&apos;: %2</source>
         <translation>Lokitiedoston&apos;%1&apos;: %2 avaaminen epäonnistui</translation>
     </message>
