@@ -44,30 +44,23 @@ Yleiset-asetukset -sivun asetukset ovat yleisimmin muutettuja asetuksia.
 </p>
 <ul>
   <li><b>Käytän välityspalvelinta käyttääkseen Internettiä</b>:
-    If your Internet connection requires an HTTP proxy, you can configure Tor
-    to send all of its directory requests and Tor relay connections through
-    your proxy. You must specify at least the hostname or address of your
-    proxy, and the port on which your proxy is listening for connections. If
-    your proxy requires authentication, you can also enter the
-    <i>Username</i> and <i>Password</i> you use to connect to your proxy.
-    Otherwise, you can leave those fields blank.
+    Jos Internetyhteytesi vaatii toimiakseen HTTP-välityspalvelimen, voi säätää Tor-ohjelman lähettämään yhteyspyyntönsä ja Tor-reititin yhteytensä välityspalvelimen kautta. Toimiakseen täytyy määrittää Vidaliaan välityspalvelimen osoite ja sen portti, jolla sitä käytetään. Jos välityspalvelin tarvitsee toimiakseen kirjautua, voi myös asettaa sen <i>käyttäjänimen</i> ja <i>salasananan</i>.
+    Muuten noi kentät jätetään tyhjäksi.
   </li>
   <li><b>Palomuuri sallii yhteydet vain tiettyihin portteihin</b>:
     If you are behind a restrictive firewall or proxy that limits the ports you
     are able to connect to, you can configure Tor to connect directly only to
     relays listening on the ports allowed by your firewall or proxy. Simply
     enter a list of ports permitted by your firewall or proxy, separated by
-    commas. (<i>Example: 80,443,8080</i>)
+    commas. (<i>Esimerkiksi: 80,443,8080</i>)
   </li>
   <li><b>Operaattori torjuu yhteydet Tor-verkkoon</b>:
     If your ISP (Internet Service Provider) blocks connections to the Tor
     network, Tor can attempt to avoid being filtered by encrypting its
     directory connections and connecting to the Tor network through relays
-    called <i>bridges</i> (Tor 0.2.0.3-alpha or newer only). You can add
-    bridge relays by specifying either their address and port number, or
-    their address, port number, and fingerprint.<br>
+    called <i>siltareititin</i> (vain Tor 0.2.0.3-alpha tai uudempi). Siltareitittimiä voi määrittää joko osoitteella ja portilla tai niiden osoitteella, portilla ja tunnisteella.<br>
 
-    Esimerkkejä sopivista siltojen osoitteiden kirjoitustyyleistä:
+    Esimerkkejä sopivista siltaosoitteiden kirjoitustyyleistä:
     <ul>
       <li>
         128.213.48.13:8080
