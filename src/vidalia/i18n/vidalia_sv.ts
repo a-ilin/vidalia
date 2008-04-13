@@ -251,7 +251,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../config/appearancepage.ui" line="84"/>
         <source>Changes to language will only take effect after restarting Vidalia!</source>
-        <translation>Du måste starta om Vidalia för att ändringar för språk ska gälla!</translation>
+        <translation>Du måste starta Vidalia för att ändringar för språk ska gälla!</translation>
     </message>
     <message>
         <location filename="../config/appearancepage.ui" line="100"/>
@@ -535,7 +535,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../config/generalpage.ui" line="63"/>
         <source>Start Tor when Vidalia starts</source>
-        <translation>Starta Tor när Vidalia körs igång</translation>
+        <translation>Starta Tor när Vidalia startar</translation>
     </message>
     <message>
         <location filename="../config/generalpage.cpp" line="72"/>
@@ -565,7 +565,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../config/generalpage.cpp" line="82"/>
         <source>Select Proxy Executable</source>
-        <translation>Välj Proxy-körbara</translation>
+        <translation>Välj Proxy-körbar</translation>
     </message>
     <message>
         <location filename="../config/generalpage.cpp" line="103"/>
@@ -575,7 +575,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../config/generalpage.ui" line="22"/>
         <source>Start Vidalia when my system starts</source>
-        <translation type="unfinished"></translation>
+        <translation>Starta Vidalia när system startar</translation>
     </message>
     <message>
         <location filename="../config/generalpage.ui" line="75"/>
@@ -585,7 +585,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../config/generalpage.ui" line="97"/>
         <source>Proxy Executable</source>
-        <translation>Proxy-körbara</translation>
+        <translation>Proxy-körbar</translation>
     </message>
     <message>
         <location filename="../config/generalpage.ui" line="129"/>
@@ -1620,7 +1620,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../network/netviewer.ui" line="304"/>
         <source>Zoom Out</source>
-        <translation>Zomma ut</translation>
+        <translation>Zooma ut</translation>
     </message>
     <message>
         <location filename="../network/netviewer.ui" line="321"/>
@@ -1723,12 +1723,12 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../config/networkpage.cpp" line="265"/>
         <source>You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Du måste räkna upp båda IP-adress eller hostname och portnummer till konfigurar Tor att använda proxy till Internet.</translation>
     </message>
     <message>
         <location filename="../config/networkpage.cpp" line="271"/>
         <source>You must specify one or more ports to which your firewall allows you to connect.</source>
-        <translation>Du måste räknar upp en eller fler portar som din brandvägg tillåttar du anslutnar till.</translation>
+        <translation>Du måste räkna upp en eller fler portar som din brandvägg tillåttar du anslutnar till.</translation>
     </message>
     <message>
         <location filename="../config/networkpage.cpp" line="307"/>
@@ -1738,7 +1738,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../config/networkpage.ui" line="25"/>
         <source>Check to configure Tor to use a proxy to access the Internet</source>
-        <translation>Kollar till konfigurera så Tor användar en proxy till internet</translation>
+        <translation>Kollar till konfigurera så Tor användar en proxy till Internet</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="28"/>
@@ -1838,7 +1838,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../config/networkpage.ui" line="235"/>
         <source>Check to configure Tor to encrypt its directory requests and, optionally, use bridge relays to access the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Kollar till konfigurera Tor så det kryptar anslutningar och valfritt använda bryggarouter att användar Tor-nätverk</translation>
     </message>
 </context>
 <context>

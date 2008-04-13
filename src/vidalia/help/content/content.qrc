@@ -23,7 +23,7 @@
     <file>fi/netview.html</file>
     <file>fi/links.html</file>
     <file>fi/bridges.html</file>
-    <file>en/services.html</file>
+    <file>fi/services.html</file>
     <!-- German -->
     <file>de/contents.xml</file>
     <file>de/index.html</file>
@@ -59,7 +59,7 @@
     <file>sv/netview.html</file>
     <file>sv/links.html</file>
     <file>sv/bridges.html</file>
-    <file>en/services.html</file>
+    <file>sv/services.html</file>
   </qresource>
 </RCC>
 
