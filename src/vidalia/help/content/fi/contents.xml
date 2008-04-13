@@ -32,7 +32,7 @@
     <Topic id="server" name="Reititinasetukset" html="config.html" section="server"/>
     <Topic id="appearance" name="Ulkoasun asetukset" html="config.html" section="appearance"/>
     <Topic id="advanced" name="Lisäasetukset" html="config.html" section="advanced"/>
-    <Topic id="services" name="Hidden Services" html="config.html" section="services"/> 
+    <Topic id="services" name="Piilopalvelut" html="config.html" section="services"/> 
   </Topic>
   <Topic id="server" name="Reitittimen asentaminen" html="server.html">
     <Topic id="basic" name="Yleiset-asetukset" html="server.html" section="basic"/>
@@ -43,13 +43,13 @@
     <Topic id="about" name="Mitä ovat siltareitittimet?" html="bridges.html" section="about"/>
     <Topic id="finding" name="Miten löydän siltareitittimen?" html="bridges.html" section="finding"/>
   </Topic>
-  <Topic id="services" name="Hidden Services" html="services.html">
-    <Topic id="about" name="What is a hidden service?" html="services.html" section="about"/>
-    <Topic id="provide" name="How do I provide a hidden service?" html="services.html" section="provide"/>
-    <Topic id="data" name="What data do I need to provide?" html="services.html" section="data"/>
-    <Topic id="buttons" name="What are the five buttons used for?" html="services.html" section="buttons"/>
-    <Topic id="advanced" name="How can I configure advanced hidden service settings?" html="services.html" section="advanced"/>
-    <Topic id="client" name="How does Vidalia help me to access other hidden services?" html="services.html" section="client"/>
+  <Topic id="services" name="Piilopalvelut" html="services.html">
+    <Topic id="about" name="Mikä on piilopalvelu?" html="services.html" section="about"/>
+    <Topic id="provide" name="Miten voin luoda piilopalvelun?" html="services.html" section="provide"/>
+    <Topic id="data" name="Mitä tietoa tarvitsee tarjoa?" html="services.html" section="data"/>
+    <Topic id="buttons" name="Mihin viittä nappulaa käytetään?" html="services.html" section="buttons"/>
+    <Topic id="advanced" name="Miten voin määrittää piilopalveluiden lisäasetuksia?" html="services.html" section="advanced"/>
+    <Topic id="client" name="Miten Vidalia auttaa käyttääkseen muita piilopalveluita?" html="services.html" section="client"/>
   </Topic>
   <Topic id="troubleshooting" name="Vianetsintä" html="troubleshooting.html">
     <Topic id="start" name="Tor ei käynnisty" html="troubleshooting.html" section="start"/>

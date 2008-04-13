@@ -570,7 +570,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../config/generalpage.cpp" line="103"/>
         <source>The proxy arguments specified are not properly formatted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Välityspalvelimen määritetyt arvot ovat virheelliset.</translation>
     </message>
     <message>
         <location filename="../config/generalpage.ui" line="22"/>
@@ -590,7 +590,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../config/generalpage.ui" line="129"/>
         <source>Command Line Arguments:</source>
-        <translation type="unfinished"></translation>
+        <translation>Komentoriviarvot:</translation>
     </message>
 </context>
 <context>
@@ -1735,7 +1735,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../config/networkpage.cpp" line="307"/>
         <source>&apos;%1&apos; is not a valid port number.</source>
-        <translation>&apos;%1&apos; ei ole hyväksyttävä portinnumero.</translation>
+        <translation>&apos;%1&apos; ei ole kelvollinen portinnumero.</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="25"/>
@@ -2228,12 +2228,12 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/servicepage.cpp" line="105"/>
         <source>Error while trying to unpublish all services</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe julkaistujen palveluiden julkaisun poistossa</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="112"/>
         <source>Please configure at least a service directory and a virtual       port for each service you want to save. Remove the other ones.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ole hyvä ja määritä ainakin yksi virtuaalikansio ja virtuaali       portti jokaiselle palvelulle, jonka haluat tallentaa. Muut voi poistaa.</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="586"/>
@@ -2253,17 +2253,17 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/servicepage.cpp" line="536"/>
         <source>Virtual Port may only contain valid port numbers [1..65535].</source>
-        <translation type="unfinished"></translation>
+        <translation>Virtuaaliportti voi sisältää vain kelvollisia porttinumeroita [1..65535].</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="567"/>
         <source>Target may only contain address:port, address, or port.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kohde voi sisältää vain osoite:portti, osoite, tai portti.</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="587"/>
         <source>Directory already in use by another service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Kansio on jonkin toisen palvelun käytössä.</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="19"/>
@@ -2273,12 +2273,12 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/servicepage.ui" line="31"/>
         <source>Provided Hidden Services</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarjotut piilopalvelut</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="56"/>
         <source>Onion Address</source>
-        <translation type="unfinished"></translation>
+        <translation>Onion-osoite</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="61"/>
@@ -2293,7 +2293,7 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/servicepage.ui" line="71"/>
         <source>Directory Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Kansion sijainti</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="76"/>
@@ -2303,22 +2303,22 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/servicepage.ui" line="84"/>
         <source>Add new service to list</source>
-        <translation type="unfinished"></translation>
+        <translation>Lisää uusi palvelu listalle</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="97"/>
         <source>Remove selected service from list</source>
-        <translation type="unfinished"></translation>
+        <translation>Poista valittu palvelu listalta</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="110"/>
         <source>Copy onion address of selected service to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopioi onion-osoite valitusta palvelusta leikepöydälle</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="123"/>
         <source>Browse in local file system and choose directory for selected service</source>
-        <translation type="unfinished"></translation>
+        <translation>Selaa paikallista tiedostojärjestelmää ja valitse kansio valitulle palvelulle</translation>
     </message>
 </context>
 <context>
