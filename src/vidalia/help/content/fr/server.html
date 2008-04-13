@@ -1,0 +1,141 @@
+<!--
+** $Id$
+**
+** This file is part of Vidalia, and is subject to the license terms in the
+** LICENSE file, found in the top level directory of this distribution. If
+** you did not receive the LICENSE file with this file, you may obtain it
+** from the Vidalia source package distributed by the Vidalia Project at
+** http://www.vidalia-project.net/. No part of Vidalia, including this file,
+** may be copied, modified, propagated, or distributed except according to
+** the terms described in the LICENSE file.
+**
+** Ce fichier fait partie de Vidalia et les clauses de la licence définies
+** dans le fichier LICENSE, situé à la racine du dossier de cette
+** distribution, s'y appliquent. Si vous n'avez pas reçu le fichier LICENSE
+** avec ce fichier, vous pouvez l'obtenir avec le paquetage source de Vidalia
+** distribué par Vidalia Project sur http://www.vidalia-project.net/. Aucune
+** partie de Vidalia, y compris ce fichier, ne peut être copiée, modifiée,
+** diffusée ou distribuée sans respecter les clauses définies dans le fichier
+** LICENSE.
+-->
+
+<html>
+<body>
+
+<h1>Installer un relais Tor</h1>
+<hr />
+Le réseau Tor est constitué par des bénévoles du monde entier qui donnent une partie de leur bande passante perdue en installant un relais Tor. Vidalia vous aide à participer au réseau Tor en facilitant l'installation de votre propre relais.
+
+<a name="basic"/>
+<h3>Options de base</h3>
+<p>
+Si vous décidez de participer à la croissance du réseau Tor en installant un relais, vous pouvez suivre la procédure suivante.
+</p>
+<ol>
+<li>
+Ouvrez la <i>fenêtre de configuration</i> en sélectionnant <i>Options</i> dans le menu de la zone de notification ou <i>Préférences</i> dans la barre de menu système pour les systèmes Macintosh.
+</li>
+<li>Sélectionnez la page de configuration <i>Relais</i>.</li>
+<li>
+Précisez si vous souhaitez installer un relais Tor normal ou un relais <i>passerelle</i> (Tor 0.2.0.8-alpha ou plus récent). Une passerelle permet d'aider les utilisateurs de Tor bloqués par la censure et qui ne peuvent pas accéder directement au réseau Tor. Cochez la case <i>Relayer le trafic pour le réseau Tor</i> si vous voulez installer un relais Tor normal ou <i>Aider les utilisateurs censurés à accéder au réseau Tor</i> si vous voulez installer un relais passerelle.
+</li>
+<li>Indiquez les informations suivantes&nbsp;:
+<ul>
+<li><b>Surnom (nickname)</b>&nbsp;:
+Le nom qui permettra à votre relais d'être connu sur le réseau Tor. Il s'agit par exemple de "MonRelaisVidalia".
+</li>
+<li><b>Information de contact</b>&nbsp;:
+Votre adresse électronique. Cette adresse sera utilisée seulement pour vous signaler une mise à jour de sécurité importante ou un problème avec votre relais. Vous pouvez également préciser votre identifiant PGP ou GPG et votre empreinte.
+</li>
+<li><b>Port du relais</b>&nbsp;:
+Le port par lequel votre relais écoutera le trafic de clients ou d'autres relais Tor.
+</li>
+</ul>
+<li>
+Si vous voulez également installer un miroir de l'annuaire Tor des relais, cochez la case <i>Servir de miroir à l'annuaire des relais</i>.
+Si vous disposez d'une bande passante limitée, décochez cette case. Si vous décidez malgré tout d'installer un miroir de l'annuaire, assurez-vous que le <i>port de l'annuaire</i> est différent du <i>port du relais</i> que vous avez indiquez plus haut. Les passerelles <i>doivent</i> avoir un miroir de l'annuaire des relais.
+</li>
+</ol>
+
+<a name="bandwidth"/>
+<h3>Limites de la bande passante</h3>
+<p>
+Un relais Tor peut consommer une grande quantité de bande passante. C'est la raison pour laquelle Tor vous permet de préciser le niveau de bande passante que vous souhaitez accorder au réseau Tor. Cela vous permet de faire fonctionner un relais Tor tout en conservant une connexion suffisante pour votre propre usage.
+</p>
+<p>
+Vous devez sélectionner dans la liste déroulante l'option qui correspond le mieux au débit de votre connexion. Si vous choisissez <i>Personnalisé</i>, vous pourrez paramètrer vous-mêmes les seuils.
+</p>
+<h4>Limites personnalisées</h4>
+<p>
+Le <i>taux maximal</i> correspond au nombre d'octets utilisables pour répondre aux requêtes pendant les courtes périodes où le trafic est supérieur au <i>taux moyen</i> que vous avez spécifié, mais qui permet de respecter la moyenne sur une longue période. Un taux moyen bas et un taux maximal élevé améliorent le niveau de trafic à long terme en autorisant davantage de trafic lors des pics, tant que le taux moyen n'a pas été atteint. Si votre taux moyen est identique à votre <i>taux maximal</i>, alors Tor ne dépassera jamais ce taux. Le <i>taux maximal</i> doit toujours être supérieur ou égal au <i>taux moyen</i>.
+</p>
+<p>
+Le <i>taux moyen</i> correspond à la bande passante moyenne maximale autorisée à long terme (en kilo-octets par seconde). Par exemple, vous pouvez choisir de contribuer au réseau Tor pour 2 méga-octets par seconde (2048 Kio/s) ou 50 kilo-octets par seconde (soit une connexion moyenne par cable). Tor a besoin au minimum de 20 kilo-octets par seconde pour faire fonctionner un relais.
+</p>
+<p>
+Il est important de se rappeler que Tor mesure la bande passante en <b>octets</b> et non en bits. En outre, Tor comptabilise les octets entrants et non les octets sortants. De ce fait, si votre relais est également un miroir de l'annuaire des relais, vous enverrez davantage de données que vous n'en recevrez. Si vous constatez que cela constitue une contrainte trop forte pour votre bande passante, vous devrez réfléchir à décocher la case <i>Servir de miroir à l'annuaire des relais</i>.
+</p>
+
+<a name="exitpolicy"/>
+<h3>Politiques de sortie</h3>
+<p>
+Les politiques de sortie vous permettent de spécifier les ressources Internet auxquelles les utilisateurs du réseau Tor peuvent accèder par le biais de votre relais. Par défaut, Tor utilise une liste de politiques de sortie qui empêche l'utisation de certains services, notamment l'envoi de courriels (afin d'éviter les spams) et certains ports de partage de fichiers (afin de réduire l'usage abusif du réseau Tor).
+</p>
+<p>
+Chaque case représente un type de ressources. Vous pouvez permettre ou refuser aux utilisateurs de Tor de passer par votre relais pour y accéder. Si vous décocher une case, les utilisateurs de Tor ne seront pas autorisés à accéder à la ressource correspondante à travers votre relais. Si la case <i>Autres services</i> est cochée, les utilisateurs de Tor pourront accéder aux services non couverts par les autres cases à cocher ou par la politique de sortie par défaut de Tor.
+</p>
+
+<p>
+Pour information, le tableau suivant liste les numéros de ports des politiques de sortie. La colonne <b>Description</b> signale les ressources auxquelles les clients Tor pourront accéder à travers votre relais, si la case correspondante est coché.
+</p>
+
+<table border="1">
+<tr>
+<td><b>Case à cocher</b></td>
+<td><b>Ports</b></td>
+<td><b>Description</b></td>
+</tr>
+<tr>
+<td>Sites Web</td>
+<td valign="middle">80</td>
+<td>Normal, navigation Web non chiffrée</td>
+</tr>
+<tr>
+<td>Sites Web sécurisés (SSL)</td>
+<td valign="middle">443</td>
+<td>Accès aux sites Web chiffrés</td>
+</tr>
+<tr>
+<td>Téléchargement des courriels (POP, IMAP)</td>
+<td valign="middle">110, 143, 993, 995</td>
+<td>Téléchargement des courriels (ne permet pas d'en envoyer)</td>
+</tr>
+<tr>
+<td>Messagerie instantanée (IM)</td>
+<td valign="middle">703, 1863, 5050, 5190, 5222, 5223, 8300, 8888</td>
+<td>Applications de messageries instantanées telles que Jabber, MSN Messenger, AIM et ICQ</td>
+</tr>
+<tr>
+<td>Chat (IRC)</td>
+<td valign="middle">6660-6669, 6697</td>
+<td>Clients et serveurs IRC</td>
+</tr>
+<tr>
+<td>Autres services</td>
+<td valign="middle">*</td>
+<td>Toutes les autres applications non couvertes par les précédentes cases à cocher</td>
+</tr>
+</table>
+
+<p>
+Si vous ne voulez pas autoriser les utilisateurs de Tor à sortir du réseau par votre relais, vous pouvez décocher toutes les cases. Même dans ce cas, votre relais est utile pour le réseau Tor, car il permet encore aux utilisateurs de s'y connecter. Il permet également de relayer du trafic entre les autres relais Tor.
+</p>
+<p>
+Si vous choisissez d'installer un relais passerelle, l'onglet des <i>Politiques de sortie</i> sera grisé et inacessible, puisque une passerelle n'autorise pas les sorties&nbsp;: elle sert uniquement à se connecter au réseau Tor.
+</p>
+
+</body>
+</html>
+
+
+

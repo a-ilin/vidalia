@@ -1,0 +1,80 @@
+<!--
+** $Id$
+**
+** This file is part of Vidalia, and is subject to the license terms in the
+** LICENSE file, found in the top level directory of this distribution. If
+** you did not receive the LICENSE file with this file, you may obtain it
+** from the Vidalia source package distributed by the Vidalia Project at
+** http://www.vidalia-project.net/. No part of Vidalia, including this file,
+** may be copied, modified, propagated, or distributed except according to
+** the terms described in the LICENSE file.
+**
+** Ce fichier fait partie de Vidalia et les clauses de la licence définies
+** dans le fichier LICENSE, situé à la racine du dossier de cette
+** distribution, s'y appliquent. Si vous n'avez pas reçu le fichier LICENSE
+** avec ce fichier, vous pouvez l'obtenir avec le paquetage source de Vidalia
+** distribué par Vidalia Project sur http://www.vidalia-project.net/. Aucune
+** partie de Vidalia, y compris ce fichier, ne peut être copiée, modifiée,
+** diffusée ou distribuée sans respecter les clauses définies dans le fichier
+** LICENSE.
+-->
+
+<html>
+<body>
+
+<h1>Dysfonctionnements</h1>
+<hr />
+
+Les problèmes listés ci-dessous sont ceux que les utilisateurs rencontrent le plus souvent. Si vous ne trouvez pas la réponse à votre question, alors vous pouvez vérifier sur <a href="http://www.vidalia-project.net">www.vidalia-project.net</a> pour de l'aide et des informations complémentaires.
+
+<a name="start"/>
+<h3>Je ne peux pas démarrer Tor</h3>
+<p>
+Le plus souvent, Vidalia ne parvient pas à démarrer Tor parce qu'il cherche l'installation de Tor dans le mauvais dossier. Vous pouvez indiquer à Vidalia l'emplacement de Tor en mettant à jour l'option <i>Application Tor</i> dans la <a href="config.html#general">fenêtre de configuration générale</a>.
+</p>
+<p>
+Une autre raison du non-démarrage de Tor est qu'une autre instance de Tor est déjà en cours d'exécution. Vérifiez la liste de vos applications et services en cours de fonctionnement et arrêtez le cas échéant l'instance Tor. Ensuite, vous pouvez essayer de lancer Tor à nouveau.
+</p>
+<p>
+Si cette solution ne vous aide pas, consultez votre <a href="log.html">Journal des messages</a> pour vérifier si Tor n'a pas signalé les erreurs qu'il a rencontrées en essayant de démarrer.
+</p>
+
+<a name="connect"/>
+<h3>Vidalia ne parvient pas à se connecter à Tor</h3>
+<p>
+Vidalia gère Tor en communiquant par le biais de son <i>port de contrôle</i>.
+</p>
+<p>
+Le plus souvent, Vidalia ne parvient pas à se connecter à Tor parce que Tor a démarré, mais a rencontré uen erreur et s'est terminé immédiatement. Vous devez consulter le <a href="log.html">Journal des messages</a> pour vérifier si Tor a signalé une erreur lorsqu'il a démarré.
+</p>
+<p>
+Si Tor écoute un port différent de celui qu'utilise Vidalia, alors celui-ci ne peut pas se connecter à celui-là. Il est rarement utile de changer ce paramètre, mais si un service de votre ordinateur entre en conflit avec le port de contrôle de Tor, alors vous devez spécifier un port différent. Vous pouvez changer ce paramètre dans le panneau de <a href="config.html#advanced">configuration avancée</a> de Vidalia.
+</p>
+
+<a name="torexited"/>
+<h3>Tor s'est terminé de manière inattendue</h3>
+<p>
+Si Tor se termine immédiatement après avoir essayé de démarrer, il est très probable qu'une autre instance de Tor fonctionne déjà. Cherchez dans le <a href="log.html">Journal des messages</a> si l'un des derniers messages est surligné en jaune et contient un message tel que&nbsp;:
+</p>
+<pre>
+connection_create_listener(): Could not bind to 127.0.0.1:9050: Address already in use.
+Is Tor already running?
+</pre>
+<p>
+Si vous trouvez un message de ce type, vous devez arrêter l'instance en cours de Tor avant d'en démarrer une nouvelle avec Vidalia. Sur Windows, vous pouvez chercher <i>tor.exe</i> dans le gestionnaire des tâches. Sur la plupart des autres systèmes d'exploitation, la commande <i>ps</i> peut vous aider à trouver l'instance de Tor en cours.
+</p>
+<p>
+Si Tor a fonctionné correctement pendant plus de quelques secondes, alors vous pouvez chercher dans le <a href="log.html">Journal des messages</a> des informations sur les erreurs que Tor a rencontrées avant de se terminer. Ces erreurs sont surlignées en rouge ou en jaune.
+</p>
+
+<a name="stop"/>
+<h3>Vidalia ne parvient pas à arrêter Tor</h3>
+<p>
+Si Vidalia ne peut pas arrêter Tor, vous devez consulter votre <a href="log.html">Journal des messages</a> pour vérifier si Tor a signalé des erreurs en essayant de se terminer.
+</p>
+
+</body>
+</html>
+
+
+

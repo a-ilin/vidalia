@@ -24,6 +24,17 @@
     <file>fi/links.html</file>
     <file>fi/bridges.html</file>
     <file>fi/services.html</file>
+    <!-- French -->
+    <file>fr/contents.xml</file>
+    <file>fr/index.html</file>
+    <file>fr/running.html</file>
+    <file>fr/log.html</file>
+    <file>fr/config.html</file>
+    <file>fr/server.html</file>
+    <file>fr/troubleshooting.html</file>
+    <file>fr/netview.html</file>
+    <file>fr/links.html</file>
+    <file>fr/bridges.html</file>
     <!-- German -->
     <file>de/contents.xml</file>
     <file>de/index.html</file>

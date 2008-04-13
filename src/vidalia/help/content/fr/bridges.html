@@ -1,0 +1,60 @@
+<!--
+** $Id$
+**
+** This file is part of Vidalia, and is subject to the license terms in the
+** LICENSE file, found in the top level directory of this distribution. If
+** you did not receive the LICENSE file with this file, you may obtain it
+** from the Vidalia source package distributed by the Vidalia Project at
+** http://www.vidalia-project.net/. No part of Vidalia, including this file,
+** may be copied, modified, propagated, or distributed except according to
+** the terms described in the LICENSE file.
+**
+** Ce fichier fait partie de Vidalia et les clauses de la licence définies
+** dans le fichier LICENSE, situé à la racine du dossier de cette
+** distribution, s'y appliquent. Si vous n'avez pas reçu le fichier LICENSE
+** avec ce fichier, vous pouvez l'obtenir avec le paquetage source de Vidalia
+** distribué par Vidalia Project sur http://www.vidalia-project.net/. Aucune
+** partie de Vidalia, y compris ce fichier, ne peut être copiée, modifiée,
+** diffusée ou distribuée sans respecter les clauses définies dans le fichier
+** LICENSE.
+-->
+
+<html>
+<body>
+
+<h1>Relais passerelles</h1>
+<hr />
+
+<a name="about"/>
+<h3>Que sont les relais passerelles&nbsp;?</h3>
+<p>
+Certains fournisseurs d'accès à Internet (FAI) tentent d'empêcher les utilisateurs d'accéder au réseau Tor en bloquant les connexions aux relais Tor connus. Les relais passerelles (ou simplement <i>passerelles</i>) sont des relais qui permettent à ces utilisateurs censurés d'accéder au réseau Tor. Contrairement aux autres relais Tor, les passerelles ne sont pas listées dans le même annuaire public que les relais normaux. Comme il n'existe pas de liste publique complète de ces passerelles, même si votre FAI filtre toutes les connexions vers les relais Tor connus, il ne pourra probablement pas bloquer l'ensemble des passerelles.
+</p>
+
+<a name="finding"/>
+<h3>Comment puis-je trouver un relais passerelle&nbsp;?</h3>
+<p>
+Deux moyens principaux permettent de trouver l'adresse d'une passerelle&nbsp;:
+<ol>
+<li>Demander à vos amis d'installer une passerelle privée pour vous</li>
+<li>Utiliser une passerelle publique</li>
+</ol>
+</p>
+
+<p>
+Pour utiliser une passerelle privée, demandez à vos amis de lancer Vidalia et Tor dans une zone non censurée de l'Internet puis de cliquer sur le bouton <i>Aider un utilisateur censuré</i> situé dans la page <a href="server.html">Paramètres du relais</a> de Vidalia. Ensuite, ils doivent vous envoyer l'<i>adresse de la passerelle</i> indiquée en bas de leur page Relais. Contrairement à un relais de sortie, une passerelle transmet uniquement les données depuis et vers le réseau Tor. De ce fait, elle n'expose pas vos amis à une plainte de leur opérateur Internet pour utilisation abusive.
+</p>
+
+<p>
+Vous pouvez trouver des adresses de passerelles publiques en visitant  <b>https://bridges.torproject.org</b>. Ces passerelles changent régulièrement. Vous devez en conséquence vérifier les réponses tous les quelques jours si vous avez besoin de nouvelles adresses passerelles.
+Un autre moyen de trouver des passerelles publiques est d'envoyer un courriel à <b>bridges@torproject.org</b> avec le texte <b>get bridges</b> dans le corps du message. Pour qu'il soit encore plus difficile pour un attaquant de repérer des passerelles, vous devez envoyer la requête depuis une messagerie en ligne telle que GMail ou Yahoo!.
+</p>
+
+<p>
+Configurer plusieurs passerelles rend la connexion Tor plus stable au cas où certaines passerelles deviennent inaccessibles.
+</p>
+
+</body>
+</html>
+
+
