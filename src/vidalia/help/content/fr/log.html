@@ -15,50 +15,80 @@
 
 <h1>Journal des messages</h1>
 <hr />
-Le Journal permet de suivre les informations d'état d'une instance de Tor en cours d'utilisation.
+
+Le Journal permet de suivre les informations d'état d'une instance de Tor en
+cours d'utilisation.
+
 <a name="basic"/>
-Chaque message est associé a un niveau de <i>gravité</i>, depuis
-<b>Erreur</b> (le plus sérieux) jusqu'à <b>Débogage</b> (le plus bavard). Consultez la section suivante sur la <a href="#severities">gravité des messages</a> pour davantage d'informations.
+Chaque message est associé a un niveau de <i>gravité</i>, depuis <b>Erreur</b>
+(le plus sérieux) jusqu'à <b>Débogage</b> (le plus bavard). Consultez la
+section suivante sur la <a href="#severities">gravité des messages</a> pour
+davantage d'informations.
 
 <a name="severities"/>
 <h3>Niveaux de gravité des messages</h3>
 <p>
-Le niveau de gravité permet de connaître l'importance d'un message. Un message de gravité supérieure indique généralement qu'un problème est survenu avec Tor. Les messages de gravité inférieure sont fréquents durant les opérations normales de Tor et il est habituellement inutile de les enregistrer.
+Le niveau de gravité permet de connaître l'importance d'un message. Un message
+de gravité supérieure indique généralement qu'un problème est survenu avec
+Tor. Les messages de gravité inférieure sont fréquents durant les opérations
+normales de Tor et il est habituellement inutile de les enregistrer.
 </p>
 
 <p>
-Les niveaux de gravité sont les suivants, du plus au moins sévère&nbsp;:
+Les niveaux de gravité sont les suivants, du plus au moins sévère:
 </p>
 <ul>
-<li>
-<b>Erreur</b>&nbsp;: Ces messages apparaissent lors des erreurs fatales, lorsque Tor ne peut pas poursuivre. Ces messages sont surlignés en <i>rouge</i> dans le Journal.
-</li>
-<li>
-<b>Avertissement</b>&nbsp;: Ces messages s'affichent lorsque Tor rencontre un problème qui ne l'empèche pas de continuer. Ils sont surlignés en <i>jaune</i>.
-</li>
-<li>
-<b>Signalement</b>&nbsp;: Ces messages apparaissent quelquefois lors des opérations normales de Tor. Ils ne sont pas considérés comme des erreurs, mais vous devez cependant y prêter attention.
-</li>
-<li>
-<b>Information</b>&nbsp;: Ces messages renvoient aux opérations normales de Tor et ne présentent généralement pas d'intérêt pour la plupart des utilisateurs.
-</li>
-<li>
-<b>Débogage</b>&nbsp;: Ces messages extrèmement complets sont avant tout destinés aux développeurs. Vous ne devez généralement pas les afficher, sauf si vous savez exactement ce que vous faîtes.
-</li>
+  <li>
+    <b>Erreur</b>&nbsp;: Ces messages apparaissent lors des erreurs fatales,
+    lorsque Tor ne peut pas poursuivre. Ces messages sont surlignés en
+    <i>rouge</i> dans le Journal.
+  </li>
+  <li>
+    <b>Avertissement</b>&nbsp;: Ces messages s'affichent lorsque Tor rencontre
+    un problème qui ne l'empèche pas de continuer. Ils sont surlignés en
+    <i>jaune</i>.
+  </li>
+  <li>
+    <b>Signalement</b>&nbsp;: Ces messages apparaissent quelquefois lors des
+    opérations normales de Tor. Ils ne sont pas considérés comme des erreurs,
+    mais vous devez cependant y prêter attention.
+  </li>
+  <li>
+    <b>Information</b>&nbsp;: Ces messages renvoient aux opérations normales
+    de Tor et ne présentent généralement pas d'intérêt pour la plupart des
+    utilisateurs.
+  </li>
+  <li>
+    <b>Débogage</b>&nbsp;: Ces messages extrèmement complets sont avant tout
+    destinés aux développeurs. Vous ne devez généralement pas les afficher,
+    sauf si vous savez exactement ce que vous faîtes.
+  </li>
 </ul>
 
 <p>
-La majorité des utilisateurs doivent afficher seulement les messages d'<i>erreur</i>, d'<i>avertissement</i> et de <i>signalement</i>.
+La majorité des utilisateurs doivent afficher seulement les messages
+d'<i>erreur</i>, d'<i>avertissement</i> et de <i>signalement</i>.
 </p>
 
 <p>
-Pour choisir les niveaux de gravité des messages que vous souhaitez afficher, vous devez suivre cette procédure&nbsp;:
+Pour choisir les niveaux de gravité des messages que vous souhaitez afficher,
+vous devez suivre cette procédure&nbsp;:
 <ol>
-<li>Ouvrez le Journal des messages à partir du menu Vidalia situé dans la zone de notification.</li>
-<li>Cliquez <i>Options</i> en haut de la fenêtre du Journal.</li>
-<li>Cochez les niveaux de gravité que vous souhaitez afficher dans la fenêtre du Journal des messages et décochez les autres.
-</li>
-<li>Cliquez <i>Enregistrer les options</i> pour utiliser votre nouveau filtre des messages.</li>
+  <li>
+    Ouvrez le Journal des messages à partir du menu Vidalia situé dans la zone
+    de notification.
+  </li>
+  <li>
+    Cliquez <i>Options</i> en haut de la fenêtre du Journal.
+  </li>
+  <li>
+    Cochez les niveaux de gravité que vous souhaitez afficher dans la fenêtre
+    du Journal des messages et décochez les autres.
+  </li>
+  <li>
+    Cliquez <i>Enregistrer les options</i> pour utiliser votre nouveau filtre
+    des messages.
+  </li>
 </ol>
 </p>
 
@@ -66,22 +96,34 @@ Pour choisir les niveaux de gravité des messages que vous souhaitez afficher, v
 <a name="logfile"/>
 <h3>Enregistrer les messages dans un fichier</h3>
 <p>
-Vidalia peut également enregistrer le Journal des messages dans un fichier en même temps qu'il les affiche dans la fenêtre du Journal. Pour permettre cet enregistrement, suivez ces étapes&nbsp;:
+Vidalia peut également enregistrer le Journal des messages dans un fichier en
+même temps qu'il les affiche dans la fenêtre du Journal. Pour permettre cet
+enregistrement, suivez ces étapes:
 </p>
 
 <ol>
-<li>Ouvrez le Journal des messages à partir du menu Vidalia situé dans la zone de notification.</li>
-<li>Cliquez <i>Options</i> en haut de la fenêtre du Journal.</li>
-<li>Cochez la case intitulé <i>Enregistrer automatiquement les nouveaux messages dans un fichier</i>.
-<li>
-Si vous voulez changer le fichier dans lequel les messages sont enregistrés, entrez le chemin et le nom du fichier dans le champ ou cliquez <i>Parcourir</i>
-pour naviguer jusqu'à votre fichier d'historique.
-</li>
-<li>Cliquez <i>Enregistrer les options</i> pour sauvegarder le chemin du Journal.</li>
+  <li>
+    Ouvrez le Journal des messages à partir du menu Vidalia situé dans la zone
+    de notification.
+  </li>
+  <li>
+    Cliquez <i>Options</i> en haut de la fenêtre du Journal.
+  </li>
+  <li>
+    Cochez la case intitulé <i>Enregistrer automatiquement les nouveaux
+    messages dans un fichier </i>.
+  </li>
+  <li>
+    Si vous voulez changer le fichier dans lequel les messages sont
+    enregistrés, entrez le chemin et le nom du fichier dans le champ ou
+    cliquez <i>Parcourir</i> pour naviguer jusqu'à votre fichier d'historique.
+  </li>
+  <li>
+    Cliquez <i>Enregistrer les options</i> pour sauvegarder le chemin du
+    Journal.
+  </li>
 </ol>
 
 </body>
 </html>
-
-
 

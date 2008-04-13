@@ -17,127 +17,161 @@
 <hr />
 
 <p>
-L'aperçu du réseau Tor permet de connaître les relais du réseau Tor et de suivre ses propres données.
+L'aperçu du réseau Tor permet de connaître les relais du réseau Tor et de
+suivre ses propres données.
 </p>
-
 
 <a name="overview"/>
 <h3>Présentation</h3>
 <p>
-Lorsque vous voulez communiquer anonymement à travers le réseau Tor, par exemple pour vous connecter à un site Web, Tor crée un tunnel (ou un <i>circuit</i>) de connexions chiffrées à travers une série de relais appartenant au réseau Tor. Le trafic de votre application est alors envoyé comme un <i>flux</i> au travers de ce circuit. Pour améliorer l'efficience du réseau Tor, de multiples flux peuvent partager le même circuit.
+Lorsque vous voulez communiquer anonymement à travers le réseau Tor, par
+exemple pour vous connecter à un site Web, Tor crée un tunnel (ou un
+<i>circuit</i>) de connexions chiffrées à travers une série de relais
+appartenant au réseau Tor. Le trafic de votre application est alors envoyé
+comme un <i>flux</i> au travers de ce circuit. Pour améliorer l'efficience du
+réseau Tor, de multiples flux peuvent partager le même circuit.
 </p>
 
 <a name="netmap"/>
 <h3>Carte du réseau</h3>
 <p>
-La carte du réseau est une mappemonde sur laquelle des points rouges indiquent la localisation géographique des relais du réseau Tor. Les lignes vertes tracées entre certains relais correspondent aux circuits que votre client Tor a créé dans le réseau Tor.
+La carte du réseau est une mappemonde sur laquelle des points rouges indiquent
+la localisation géographique des relais du réseau Tor. Les lignes vertes
+tracées entre certains relais correspondent aux circuits que votre client Tor
+a créé dans le réseau Tor.
 </p>
 <p>
-Vous pouvez augmenter ou diminuer l'échelle de la carte en cliquant sur les boutons <b>Rapprocher</b> et <b>Éloigner</b> de la barre d'outils. Vous pouvez également faire défiler la carte en la cliquant et en bougeant la souris dans la direction que vous souhaitez.
+Vous pouvez augmenter ou diminuer l'échelle de la carte en cliquant sur les
+boutons <b>Rapprocher</b> et <b>Éloigner</b> de la barre d'outils. Vous pouvez
+également faire défiler la carte en la cliquant et en bougeant la souris dans
+la direction que vous souhaitez.
 </p>
 <p>
-La localisation géographique d'un relais Tor est déterminée en envoyant son adresse IP dans la base de données GeoIP créée by MaxMind et localisée sur le serveur geoip.vidalia-project.net.
+La localisation géographique d'un relais Tor est déterminée en envoyant son
+adresse IP dans la base de données GeoIP créée by MaxMind et localisée sur le
+serveur geoip.vidalia-project.net.
 </p>
 <p>
-La moitié inférieure de la fenêtre, sous la carte du réseau, présente la liste de vos circuits ainsi que le trafic de toutes les applications qui les utilisent. La première fois que la carte du réseau se charge, vous verrez probablement une connexion au serveur geoip.vidalia-project.net. Cette connexion signifie que Vidalia recherche les informations géographiques pour la liste des relais Tor. Il est important de noter que cette requête s'effectue par le biais de Tor et que votre localisation n'est donc pas révélée au relais GeoIP. Le résultat de cette recherche est mis en cache localement afin de réduire la charge des relais GeoIP de Vidalia.
+La moitié inférieure de la fenêtre, sous la carte du réseau, présente la liste
+de vos circuits ainsi que le trafic de toutes les applications qui les
+utilisent. La première fois que la carte du réseau se charge, vous verrez
+probablement une connexion au serveur geoip.vidalia-project.net. Cette
+connexion signifie que Vidalia recherche les informations géographiques pour
+la liste des relais Tor. Il est important de noter que cette requête
+s'effectue par le biais de Tor et que votre localisation n'est donc pas
+révélée au relais GeoIP. Le résultat de cette recherche est mis en cache
+localement afin de réduire la charge des relais GeoIP de Vidalia.
 </p>
 
 
 <a name="status"/>
 <h3>États des relais</h3>
 <p>
-À gauche de la mappemonde est affichée la liste des relais du réseau Tor. L'état de chaque relais est indiqué par une icône. La table suivante donne le sens des différentes icônes.
+À gauche de la mappemonde est affichée la liste des relais du réseau Tor.
+L'état de chaque relais est indiqué par une icône. La table suivante donne le
+sens des différentes icônes.
 </p>
 <p>
 <table border="1">
 <tr>
-<td><img src="qrc:/images/icons/node-unresponsive.png"/></td>
-<td valign="middle">
-Le relais est hors ligne ou ne répond pas.
-</td>
+  <td><img src="qrc:/images/icons/node-unresponsive.png"/></td>
+  <td valign="middle">
+    Le relais est hors ligne ou ne répond pas.
+  </td>
 </tr>
 <tr>
-<td><img src="qrc:/images/icons/node-hibernating.png"/></td>
-<td valign="middle">
-Le relais est en mode d'<i>hibernation</i>, c'est-à-dire qu'il est en ligne, mais qu'il a déjà utilisé toute la bande passante autorisée par l'opérateur pendant une certaine durée.
-</td>
+  <td><img src="qrc:/images/icons/node-hibernating.png"/></td>
+  <td valign="middle">
+    Le relais est en mode d'<i>hibernation</i>, c'est-à-dire qu'il est en
+    ligne, mais qu'il a déjà utilisé toute la bande passante autorisée par
+    l'opérateur pendant une certaine durée.
+  </td>
 </tr>
 <tr>
-<td><img src="qrc:/images/icons/node-bw-none.png"/></td>
-<td valign="middle">
-Le relais est en ligne, mais il supporte seulement un trafic minimal.
-</td>
+  <td><img src="qrc:/images/icons/node-bw-none.png"/></td>
+  <td valign="middle">
+    Le relais est en ligne, mais il supporte seulement un trafic minimal.
+  </td>
 </tr>
 <tr>
-<td><img src="qrc:/images/icons/node-bw-low.png"/></td>
-<td valign="middle">
-Le relais est en ligne et supporte un trafic &gt;= 20 Ko/s.
-</td>
+  <td><img src="qrc:/images/icons/node-bw-low.png"/></td>
+  <td valign="middle">
+    Le relais est en ligne et supporte un trafic &gt;= 20 Ko/s.
+  </td>
 </tr>
 <tr>
-<td><img src="qrc:/images/icons/node-bw-med.png"/></td>
-<td valign="middle">
-Le relais est en ligne et supporte un trafic &gt;= 60 Ko/s.
-</td>
+  <td><img src="qrc:/images/icons/node-bw-med.png"/></td>
+  <td valign="middle">
+    Le relais est en ligne et supporte un trafic &gt;= 60 Ko/s.
+  </td>
 </tr>
 <tr>
-<td><img src="qrc:/images/icons/node-bw-high.png"/></td>
-<td valign="middle">
-Le relais est en ligne et supporte un trafic &gt;= 400 Ko/s.
-</td>
+  <td><img src="qrc:/images/icons/node-bw-high.png"/></td>
+  <td valign="middle">
+    Le relais est en ligne et supporte un trafic &gt;= 400 Ko/s.
+  </td>
 </tr>
 </table>
 </p>
+
 <p>
-Les valeurs de trafic sont des estimations correspondant au minimum en entrée ou en sortie de la bande passante maximale soutenue durant toutes les périodes de dix secondes du jour précédent.
+Les valeurs de trafic sont des estimations correspondant au minimum en entrée
+ou en sortie de la bande passante maximale soutenue durant toutes les périodes
+de dix secondes du jour précédent.
 </p>
 
 
 <a name="details"/>
 <h3>Détails du relais</h3>
 <p>
-Le panneau des détails du relais situé à la droite de l'écran montre les informations détaillées sur le ou les relais sélectionnés dans la
-<a href="#relaylist">liste des relais</a>. Si vous avez sélectionné un circuit ou un flux dans la liste de vos circuits et flux actuels, ce panneau donne des informations sur tous les relais où est envoyé votre trafic.
+Le panneau des détails du relais situé à la droite de l'écran montre les
+informations détaillées sur le ou les relais sélectionnés dans la <a
+href="#relaylist">liste des relais</a>. Si vous avez sélectionné un circuit ou
+un flux dans la liste de vos circuits et flux actuels, ce panneau donne des
+informations sur tous les relais où est envoyé votre trafic.
 </p>
 <p>
-Les informations affichées dans ce panneau sont les suivantes (<i>Note</i>&nbsp;: certains champs ne sont pas forcément affichés)&nbsp;:
+Les informations affichées dans ce panneau sont les suivantes
+(<i>Note</i>&nbsp;: certains champs ne sont pas forcément affichés)&nbsp;:
 </p>
 <p>
 <table>
 <tr>
-<td><b>Localisation</b></td>
-<td>Localisation géographique de ce relais Tor.</td>
+  <td><b>Localisation</b></td>
+  <td>Localisation géographique de ce relais Tor.</td>
 </tr>
 <tr>
-<td><b>Adresse IP</b></td>
-<td>Adresse IP par laquelle ce relais Tor peut être atteint.</td>
+  <td><b>Adresse IP</b></td>
+  <td>Adresse IP par laquelle ce relais Tor peut être atteint.</td>
 </tr>
 <tr>
-<td><b>Plateforme</b></td>
-<td>
-Informations sur le système d'exploitation et sur la version de Tor utilisés par le relais.
-</td>
+  <td><b>Plateforme</b></td>
+  <td>
+    Informations sur le système d'exploitation et sur la version de Tor
+    utilisés par le relais.
+  </td>
 </tr>
 <tr>
-<td><b>Bande passante</b></td>
-<td>
-Niveau maximal de bande passante que le relais Tor a supporté récemment, estimé par les relais de l'annuaire.
-</td>
+  <td><b>Bande passante</b></td>
+  <td>
+    Niveau maximal de bande passante que le relais Tor a supporté récemment,
+    estimé par les relais de l'annuaire.
+  </td>
 </tr>
 <tr>
 <td><b>Durée de fonctionnement</b></td>
-<td>
-Durée pendant laquelle le relais a été disponible, ce qui est utile pour en évaluer la stabilité.
-</td>
+  <td>
+    Durée pendant laquelle le relais a été disponible, ce qui est utile pour
+    en évaluer la stabilité.
+  </td>
 </tr>
 <tr>
-<td><b>Dernière mise à jour</b></td>
-<td>Date à laquelle les informations sur ce relais ont été mises à jour.</td>
+  <td><b>Dernière mise à jour</b></td>
+  <td>Date à laquelle les informations sur ce relais ont été mises à jour.</td>
 </tr>
 </table>
 </p>
+
 </body>
 </html>
-
-
 

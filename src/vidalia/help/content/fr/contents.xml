@@ -11,42 +11,42 @@
 -->
 
 <Contents name="Vidalia Help" html="index.html">
-	<Topic id="running" name="Utiliser Tor" html="running.html">
-		<Topic id="starting" name="Démarrer et arrêter Tor" html="running.html" section="starting"/>
-		<Topic id="monitoring" name="Surveiller l'état de Tor" html="running.html" section="monitoring"/>
-	</Topic>
-	<Topic id="log" name="Journal des messages" html="log.html">
-		<Topic id="basic" name="Informations de base" html="log.html" section="basic"/>
-		<Topic id="severities" name="Niveaux de gravité des messages" html="log.html" section="severities"/>
-		<Topic id="logfile" name="Enregistrer les messages dans un fichier" html="log.html" section="tofile"/>
-	</Topic>
-	<Topic id="netview" name="Aperçu du réseau Tor" html="netview.html">
-		<Topic id="overview" name="Présentation" html="netview.html" section="overview"/>
-		<Topic id="netmap" name="Carte du réseau" html="netview.html" section="netmap"/>
-		<Topic id="status" name="États des relais" html="netview.html" section="status"/>
-		<Topic id="details" name="Détails du relais" html="netview.html" section="details"/>
-	</Topic>
-	<Topic id="config" name="Configurer Vidalia et Tor" html="config.html">
-		<Topic id="general" name="Options générales" html="config.html" section="general"/>
-		<Topic id="network" name="Options de réseau" html="config.html" section="network"/>
-		<Topic id="server" name="Options du relais" html="config.html" section="server"/>
-		<Topic id="appearance" name="Options de l'interface" html="config.html" section="appearance"/>
-		<Topic id="advanced" name="Options avancées" html="config.html" section="advanced"/>
-	</Topic>
-	<Topic id="server" name="Installer un relais Tor" html="server.html">
-		<Topic id="basic" name="Paramètrage élémentaire" html="server.html" section="basic"/>
-		<Topic id="bandwidth" name="Limites de bande passante" html="server.html" section="bandwidth"/>
-		<Topic id="exitpolicy" name="Politiques de sortie" html="server.html" section="exitpolicy"/>
-	</Topic>
-	<Topic id="bridges" name="Relais passerelles" html="bridges.html">
-		<Topic id="about" name="Que sont les relais passerelles ?" html="bridges.html" section="about"/>
-		<Topic id="finding" name="Comment puis-je trouver un relais passerelle ?" html="bridges.html" section="finding"/>
-	</Topic>
-	<Topic id="troubleshooting" name="Dysfonctionnements" html="troubleshooting.html">
-		<Topic id="start" name="Je ne peux pas démarrer Tor" html="troubleshooting.html" section="start"/>
-		<Topic id="connect" name="Vidalia ne parvient pas à se connect à Tor" html="troubleshooting.html" section="connect"/>
-		<Topic id="torexited" name="Tor s'est terminé de manière inattendue" html="troubleshooting.html" section="torexited"/>
-		<Topic id="stop" name="Vidalia ne parvient pas à arrêter Tor" html="troubleshooting.html" section="stop"/>
-	</Topic>
-	<Topic id="links" name="Liens utiles" html="links.html"/>
+  <Topic id="running" name="Utiliser Tor" html="running.html">
+    <Topic id="starting" name="Démarrer et arrêter Tor" html="running.html" section="starting"/>
+    <Topic id="monitoring" name="Surveiller l'état de Tor" html="running.html" section="monitoring"/>
+  </Topic>
+  <Topic id="log" name="Journal des messages" html="log.html">
+    <Topic id="basic" name="Informations de base" html="log.html" section="basic"/>
+    <Topic id="severities" name="Niveaux de gravité des messages" html="log.html" section="severities"/>
+    <Topic id="logfile" name="Enregistrer les messages dans un fichier" html="log.html" section="tofile"/>
+  </Topic>
+  <Topic id="netview" name="Aperçu du réseau Tor" html="netview.html">
+    <Topic id="overview" name="Présentation" html="netview.html" section="overview"/>
+    <Topic id="netmap" name="Carte du réseau" html="netview.html" section="netmap"/>
+    <Topic id="status" name="États des relais" html="netview.html" section="status"/>
+    <Topic id="details" name="Détails du relais" html="netview.html" section="details"/>
+  </Topic>
+  <Topic id="config" name="Configurer Vidalia et Tor" html="config.html">
+    <Topic id="general" name="Options générales" html="config.html" section="general"/>
+    <Topic id="network" name="Options de réseau" html="config.html" section="network"/>
+    <Topic id="server" name="Options du relais" html="config.html" section="server"/>
+    <Topic id="appearance" name="Options de l'interface" html="config.html" section="appearance"/>
+    <Topic id="advanced" name="Options avancées" html="config.html" section="advanced"/>
+  </Topic>
+  <Topic id="server" name="Installer un relais Tor" html="server.html">
+    <Topic id="basic" name="Paramètrage élémentaire" html="server.html" section="basic"/>
+    <Topic id="bandwidth" name="Limites de bande passante" html="server.html" section="bandwidth"/>
+    <Topic id="exitpolicy" name="Politiques de sortie" html="server.html" section="exitpolicy"/>
+  </Topic>
+  <Topic id="bridges" name="Relais passerelles" html="bridges.html">
+    <Topic id="about" name="Que sont les relais passerelles ?" html="bridges.html" section="about"/>
+    <Topic id="finding" name="Comment puis-je trouver un relais passerelle ?" html="bridges.html" section="finding"/>
+  </Topic>
+  <Topic id="troubleshooting" name="Dysfonctionnements" html="troubleshooting.html">
+    <Topic id="start" name="Je ne peux pas démarrer Tor" html="troubleshooting.html" section="start"/>
+    <Topic id="connect" name="Vidalia ne parvient pas à se connect à Tor" html="troubleshooting.html" section="connect"/>
+    <Topic id="torexited" name="Tor s'est terminé de manière inattendue" html="troubleshooting.html" section="torexited"/>
+    <Topic id="stop" name="Vidalia ne parvient pas à arrêter Tor" html="troubleshooting.html" section="stop"/>
+  </Topic>
+  <Topic id="links" name="Liens utiles" html="links.html"/>
 </Contents>
