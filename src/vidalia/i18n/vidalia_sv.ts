@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="sv">
+<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -480,7 +481,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../config/configdialog.cpp" line="94"/>
         <source>Services</source>
-        <translation type="unfinished"></translation>
+        <translation>Tjänster</translation>
     </message>
 </context>
 <context>
@@ -564,7 +565,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../config/generalpage.cpp" line="82"/>
         <source>Select Proxy Executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj Proxy-körbara</translation>
     </message>
     <message>
         <location filename="../config/generalpage.cpp" line="103"/>
@@ -579,12 +580,12 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../config/generalpage.ui" line="75"/>
         <source>Start a proxy application when Vidalia starts</source>
-        <translation type="unfinished"></translation>
+        <translation>Starta proxy-körbara när Vidalia startar</translation>
     </message>
     <message>
         <location filename="../config/generalpage.ui" line="97"/>
         <source>Proxy Executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Proxy-körbara</translation>
     </message>
     <message>
         <location filename="../config/generalpage.ui" line="129"/>
@@ -1937,7 +1938,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../network/routerlistwidget.cpp" line="168"/>
         <source>%1 relays online</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 router uppkopplad</translation>
     </message>
 </context>
 <context>
@@ -2211,7 +2212,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../config/serverpage.ui" line="776"/>
         <source>Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 and 8888</source>
-        <translation type="unfinished">Portarna 706, 1863, 5050, 5190, 5222, 8300 och 8888 {706, 1863, 5050, 5190, 5222, 5223, 8300 ?}</translation>
+        <translation>Portarna 706, 1863, 5050, 5190, 5222, 5223, 8300 och 8888</translation>
     </message>
 </context>
 <context>
@@ -2219,7 +2220,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../config/servicepage.cpp" line="27"/>
         <source>Services</source>
-        <translation type="unfinished"></translation>
+        <translation>Tjänster</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="105"/>
@@ -2234,17 +2235,17 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../config/servicepage.cpp" line="586"/>
         <source>Error</source>
-        <translation type="unfinished">Fel</translation>
+        <translation>Fel</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="442"/>
         <source>Please select a Service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Varsågod och välj en tjänst.</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="447"/>
         <source>Select Service Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Välj en tjänst-katalog</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="536"/>
@@ -2274,12 +2275,12 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../config/servicepage.ui" line="56"/>
         <source>Onion Address</source>
-        <translation type="unfinished"></translation>
+        <translation>Onion-adress</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="61"/>
         <source>Virtual Port</source>
-        <translation type="unfinished"></translation>
+        <translation>Virtuell port</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="66"/>
@@ -2294,22 +2295,22 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../config/servicepage.ui" line="76"/>
         <source>Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Aktiverad</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="84"/>
         <source>Add new service to list</source>
-        <translation type="unfinished"></translation>
+        <translation>Lägga till tjänst till lista</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="97"/>
         <source>Remove selected service from list</source>
-        <translation type="unfinished"></translation>
+        <translation>Tar bort de valda tjänst från lista</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="110"/>
         <source>Copy onion address of selected service to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Kopiera det vald onion-adress till urklipp</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="123"/>
