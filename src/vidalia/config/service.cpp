@@ -108,7 +108,7 @@ QDataStream&operator>>(QDataStream &in, Service &myObj)
   return in;
 }
 
-/** this method creates a string by concatenating the values of the service */
+/** Creates a string by concatenating the values of the service. */
 QString
 Service::toString()
 {

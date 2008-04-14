@@ -24,7 +24,6 @@ class ServicePage : public ConfigPage
   Q_OBJECT
 
 public:
-
   /** Default Constructor */
   ServicePage(QWidget *parent = 0);
   /** Default Destructor */
@@ -37,36 +36,33 @@ public:
   void initServiceTable(QMap<int, Service>* _services);
 
 private slots:
-
-  /** this method is called whenefer the user clicks on the 'add' Button*/
+  /** Called whenever the user clicks on the 'add' button. */
   void addService();
-  /** this method is called whenefer the user clicks on the 'remove' Button*/
+  /** Called whenever the user clicks on the 'remove' button. */
   void removeService();
-  /** this method is called whenefer the user clicks on the 'copy' Button*/
+  /** Called whenever the user clicks on the 'copy' button. */
   void copyToClipboard();
-  /** this method is called whenefer the user clicks on the 'browse' Button*/
+  /** Called whenever the user clicks on the 'browse' button. */
   void browseDirectory();
-  /** this method is called whenefer the user selects a different service*/
+  /** Called whenever the user selects a different service. */
   void serviceSelectionChanged();
-  /** this method returns a list of services by parsing the configuration
-   *  string given by the tor controller */
+  /** Returns a list of services by parsing the configuration string given
+   * by the Tor controller. */
   QList<Service> extractSingleServices(QString conf);
-  /** this method returns a Service by parsing the configuration string
-   *  of Tor and storing its values into the object */
+  /** Returns a Service by parsing the configuration string from Tor and
+   * storing its values into the Service object. */
   Service generateService(QString serviceString);
-  /** this method starts all services, given in the list, with Tor */
+  /** Starts all services in <b>services</b>, with Tor. */
   void startServicesInTor(QList<Service> services);
-  /** this method checks either a service is published or not */
+  /** Returns true if <b>service</b> is published. */
   bool isServicePublished(Service service, QList<Service> torServices);
-  /** this method checks if either all services have minimal
-   *  configuration or not */
+  /** Returns true if all services have the required minimal configuration. */
   bool checkBeforeSaving(QList<Service> services);
-  /** this method is called when the user finished editing a cell and 
-   * it provides that only valid values are set */
+  /** Called when the user finished editing a cell and checks that only valid
+   * values are set. */
   void valueChanged();
 
 private:
-
   /** A TorControl object used to talk to Tor. */
   TorControl* _torControl;
   /** A TorSettings object used for saving/loading the Tor settings */
