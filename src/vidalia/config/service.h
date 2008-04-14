@@ -57,7 +57,7 @@ public:
   /** Reads service class data in from the QDataStream <b>in</b> and
   populates * the <b>myObj</b> object accordingly. */
   friend QDataStream& operator>>(QDataStream &in, Service &myObj);
-
+  /** this method creates a string by concatenating the values of the service */
   QString toString();
 
 private:

@@ -46,15 +46,15 @@ private slots:
   void copyToClipboard();
   /** this method is called whenefer the user clicks on the 'browse' Button*/
   void browseDirectory();
-  /** this method is called whenefer the selects a different service*/
+  /** this method is called whenefer the user selects a different service*/
   void serviceSelectionChanged();
   /** this method returns a list of services by parsing the configuration
    *  string given by the tor controller */
   QList<Service> extractSingleServices(QString conf);
-  /** this return a Service by parseing the configuration string
-   *  of Tor and storeing its values into the object */
+  /** this method returns a Service by parsing the configuration string
+   *  of Tor and storing its values into the object */
   Service generateService(QString serviceString);
-  /** this method checks either a service is published or not */
+  /** this method starts all services, given in the list, with Tor */
   void startServicesInTor(QList<Service> services);
   /** this method checks either a service is published or not */
   bool isServicePublished(Service service, QList<Service> torServices);
@@ -73,9 +73,9 @@ private:
   TorSettings *_torSettings;
   /** A ServiceSettings object used to load/save the services. */
   ServiceSettings* _serviceSettings;
-  /* A QMap, mapping from QString servicename to the Entity service */
+  /** A QMap, mapping from the row number in the table to the service Entity */
   QMap<int, Service>* _services;
-  /* A QList, consisting of all running services before vidalia starts*/
+  /** A QList, consisting of all running services before vidalia starts */
   QMap<QString, Service>* _torServices;
   /** Qt Designer generated object */
   Ui::ServicePage ui;
