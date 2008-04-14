@@ -130,23 +130,6 @@ RouterListWidget::findRouterById(QString id)
   return 0;
 }
 
-/** Finds the list item whose router nickname matches <b>name</b>. If more 
- * than one router exists with given name, the first match will be returned. 
- * Returns 0 if not found. */
-RouterListItem*
-RouterListWidget::findRouterByName(QString name)
-{
-  QList<QTreeWidgetItem *> list = findItems(name, Qt::MatchExactly,
-                                            NameColumn);
-  /* It's possible that more than one router could have the same name, but
-   * without a fingerprint on which to match, we just have to pick one. We'll
-   * return the first match. */
-  if (list.size() > 0) {
-    return (RouterListItem *)list.at(0);
-  }
-  return 0;
-}
-
 /** Adds a router descriptor to the list. */
 void
 RouterListWidget::addRouter(RouterDescriptor rd)

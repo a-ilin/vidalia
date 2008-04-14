@@ -47,10 +47,6 @@ public:
   
   /** Adds a new descriptor the list. */
   void addRouter(RouterDescriptor rd);
-  /** Finds the list item whose router nickname matches <b>name</b>. If more
-   * than one router exists with given name, the first match will be
-   * returned.  Returns 0 if not found. */
-  RouterListItem* findRouterByName(QString name);
   /** Finds the list item whose key ID matches <b>id</b>. Returns 0 if not 
    * found. */
   RouterListItem* findRouterById(QString id);
