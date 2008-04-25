@@ -1,6 +1,8 @@
 0.1.3   xx-xxx-2008
   o Fix the OSX_FAT_BINARY build option so that it actually does produce a
     Universal binary when enabled. (Ticket #342)
+  o Rename src/util to src/common, since libutil.a was apparently conflicting
+    with libUtil.dylib when compiling Vidalia on OS X Leopard.
   o Switch to using 'getinfo ns/all' instead of 'getinfo network-status' to
     get a list of available relays. 'getinfo network-status' was deprecated
     long ago.
