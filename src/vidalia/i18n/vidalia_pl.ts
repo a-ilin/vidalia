@@ -480,7 +480,7 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../config/configdialog.cpp" line="94"/>
         <source>Services</source>
-        <translation type="unfinished"></translation>
+        <translation>Usługi</translation>
     </message>
 </context>
 <context>
@@ -564,32 +564,32 @@ Musisz usunąć ją ręcznie.</translation>
     <message>
         <location filename="../config/generalpage.cpp" line="82"/>
         <source>Select Proxy Executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz plik wykonywalny Proxy</translation>
     </message>
     <message>
         <location filename="../config/generalpage.cpp" line="103"/>
         <source>The proxy arguments specified are not properly formatted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Argumenty dla proxy nie są w niewłaściwym formacie.</translation>
     </message>
     <message>
         <location filename="../config/generalpage.ui" line="22"/>
         <source>Start Vidalia when my system starts</source>
-        <translation type="unfinished"></translation>
+        <translation>Uruchamiaj Vidalię gdy startuje mój system</translation>
     </message>
     <message>
         <location filename="../config/generalpage.ui" line="75"/>
         <source>Start a proxy application when Vidalia starts</source>
-        <translation type="unfinished"></translation>
+        <translation>Uruchom aplikację proxy gdy Vidalia startuje</translation>
     </message>
     <message>
         <location filename="../config/generalpage.ui" line="97"/>
         <source>Proxy Executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Plik uruchamialny aplikacji Proxy</translation>
     </message>
     <message>
         <location filename="../config/generalpage.ui" line="129"/>
         <source>Command Line Arguments:</source>
-        <translation type="unfinished"></translation>
+        <translation>Argumenty linii poleceń:</translation>
     </message>
 </context>
 <context>
@@ -1839,7 +1839,7 @@ dla programistów ekipy Tora</translation>
     <message>
         <location filename="../config/networkpage.ui" line="235"/>
         <source>Check to configure Tor to encrypt its directory requests and, optionally, use bridge relays to access the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Zaznacz, aby skonfigurować Tora żeby szyfrował swój katalog żądań oraz, opcjonalnie, używał serwerów-mostów w dostępie do sieci Tor</translation>
     </message>
 </context>
 <context>
@@ -1939,7 +1939,7 @@ dla programistów ekipy Tora</translation>
     <message>
         <location filename="../network/routerlistwidget.cpp" line="168"/>
         <source>%1 relays online</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 węzłów aktywnych</translation>
     </message>
 </context>
 <context>
@@ -2214,7 +2214,7 @@ Możesz również załączyć swój klucz PGP lub GPG.</translation>
     <message>
         <location filename="../config/serverpage.ui" line="776"/>
         <source>Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 and 8888</source>
-        <translation type="unfinished">Porty 706, 1863, 5050, 5190, 5222, 8300 i 8888 {706, 1863, 5050, 5190, 5222, 5223, 8300 ?}</translation>
+        <translation>Porty 706, 1863, 5050, 5190, 5222, 8300 i 8888</translation>
     </message>
 </context>
 <context>
@@ -2222,102 +2222,102 @@ Możesz również załączyć swój klucz PGP lub GPG.</translation>
     <message>
         <location filename="../config/servicepage.cpp" line="27"/>
         <source>Services</source>
-        <translation type="unfinished"></translation>
+        <translation>Usługi</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="105"/>
         <source>Error while trying to unpublish all services</source>
-        <translation type="unfinished"></translation>
+        <translation>Wystąpił błąd podczas dezaktywacji wszystkich usług</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="112"/>
         <source>Please configure at least a service directory and a virtual       port for each service you want to save. Remove the other ones.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proszę skonfigurować przynajmniej katalog usług oraz wirtualny port dla każdej z nich. Inne proszę usunąć.</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="586"/>
         <source>Error</source>
-        <translation type="unfinished">Błąd</translation>
+        <translation>Błąd</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="442"/>
         <source>Please select a Service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Proszę wybrać usługę.</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="447"/>
         <source>Select Service Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Wybierz katalog usług</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="536"/>
         <source>Virtual Port may only contain valid port numbers [1..65535].</source>
-        <translation type="unfinished"></translation>
+        <translation>Wirtualny port może zawierać tylko poprawne numery portów [1..65535].</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="567"/>
         <source>Target may only contain address:port, address, or port.</source>
-        <translation type="unfinished"></translation>
+        <translation>Cel może tylko zawierać adres:port, adres lub port.</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="587"/>
         <source>Directory already in use by another service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Katalog jest aktualnie w użyciu przez inną usługę.</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="19"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formularz</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="31"/>
         <source>Provided Hidden Services</source>
-        <translation type="unfinished"></translation>
+        <translation>Dostarczane ukryte usługi</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="56"/>
         <source>Onion Address</source>
-        <translation type="unfinished"></translation>
+        <translation>Adres Onion</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="61"/>
         <source>Virtual Port</source>
-        <translation type="unfinished"></translation>
+        <translation>Port wirtualny</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="66"/>
         <source>Target</source>
-        <translation type="unfinished"></translation>
+        <translation>Cel</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="71"/>
         <source>Directory Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Ścieżka do katalogu</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="76"/>
         <source>Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Włączony</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="84"/>
         <source>Add new service to list</source>
-        <translation type="unfinished"></translation>
+        <translation>Dodaj nową usługę do listy</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="97"/>
         <source>Remove selected service from list</source>
-        <translation type="unfinished"></translation>
+        <translation>Usuń zaznaczoną usługę z listy</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="110"/>
         <source>Copy onion address of selected service to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Skopiuj adres Onion wybranej usługi do schowka</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="123"/>
         <source>Browse in local file system and choose directory for selected service</source>
-        <translation type="unfinished"></translation>
+        <translation>Przeglądaj lokalny system plików i wskaż katalog dla wybranej usługi</translation>
     </message>
 </context>
 <context>
