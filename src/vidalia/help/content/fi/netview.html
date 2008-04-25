@@ -17,30 +17,30 @@
 <hr />
 
 <p>
-Verkkokartalla näkee reitittimet Tor-verkossa ja mihin omat yhteydet kulkeutuvat.
+Verkkokartalla voi nähdä Tor-verkossa olevat reitittimet ja mihin omat yhteydet kulkevat.
 </p>
 
 
 <a name="overview"/>
 <h3>Yleistä</h3>
 <p>
-Kun halutaan kommunikoida tuntemattomasti Tor-verkon kautta (esim. internetsivulle), niin Tor-ohjelma luo yhteyden <i>(engl. circuit)</i> koostuen erillisistä suojatuista yhteyksistä reititinsarjan kautta verkossa. Ohjelman liikenne kulkee datavirtoina <i>(engl. stream)</i> edellä mainitun yhteystyypin mukaisesti. Toiminnan tehostuksena yksittäisessä yhteydessä voi olla useaita datavirtoja.
+Kun halutaan kommunikoida tuntemattomasti Tor-verkon kautta (esim. internetsivulle), niin Tor-ohjelma luo yhteyden <i>(engl. circuit)</i> koostuen erillisistä suojatuista yhteyksistä reititinsarjojen läpi verkossa. Ohjelman liikenne kulkee datavirtoina <i>(engl. stream)</i> edellä mainitun yhteystyypin mukaisesti. Toiminnan tehostuksena yksittäisessä yhteydessä voi olla useaita datavirtoja.
 </p>
 
 <a name="netmap"/>
 <h3>Verkkokartta</h3>
 <p>
-Verkkokartta koostuu Maan kartasta ja punaisista pisteistä, joilla ilmaistaan Tor-verkon reitittimien maantieteellisetsijainnit. Reitittimien välille piirretyt vihreät viivat näyttävät oman Tor-ohjelman ja Tor-verkon välissä olevien yhteyksien reitin.
+Verkkokartta koostuu Maan kartasta ja punaisista pisteistä, joilla ilmaistaan Tor-verkon reitittimien maantieteelliset sijainnit. Reitittimien välille piirretyt vihreät viivat näyttävät oman Tor-ohjelman ja Tor-verkon välissä olevien yhteyksien reitin.
 </p>
 <p>
 Karttaa voi skaalata klikkaamalla <b>Suurenna</b>- ja
-<b>Pienennä</b> -nappuloilla työkalupalkista. Karttaa voi myös vierittää klikkaamalla sitä ja vetämällä sitä omaan halumaan suuntaan.
+<b>Pienennä</b> -nappuloita työkalupalkista. Karttaa voi myös vierittää klikkaamalla sitä tai vetämällä sitä omaan haluttuun suuntaan.
 </p>
 <p>
-Tor-reitittimien maantieteellinensijainti selvitetään tarkistamalla IP-osoite GeoIP-tietokannasta, jonka on tehnyt MaxMind ja sijaitsee osoitteessa geoip.vidalia-project.net.
+Tor-reitittimien maantieteellinen sijainti selvitetään tarkistamalla IP-osoite GeoIP-tietokannasta, jonka on tehnyt MaxMind ja sijaitsee osoitteessa geoip.vidalia-project.net.
 </p>
 <p>
-Keskellä ruutua kartan alla on lista käytössä olevista yhteyksistä, kuten myös minkä tahansa ohjelmien datavirta niissä yhteyksissä. Kun verkkokartta latautuu, ruudusta näkee yhteyden geoip.vidalia-project.net -osoitteeseen, joka tapahtuu kun Vidalia tarkistaa Tor-reitittimien maantieteellistensijaintien tietoja. Tärkeää on huomioida, että pyyntö luodaan käyttämällä Tor-verkkoa, joten omaa sijaintia ei ilmoiteta GeoIP-palvelimelle. Pyyntöjen tulokset tallennetaan kiintolevylle välimuistiin säästäkseen rasittamasta liikaa Vidalian GeoIP-reitittimiä.
+Keskellä ruutua kartan alla on lista käytössä olevista yhteyksistä, kuten myös minkä tahansa ohjelmien datavirta näissä yhteyksissä. Kun verkkokartta latautuu, ruudusta näkee yhteyden geoip.vidalia-project.net -osoitteeseen, joka tapahtuu kun Vidalia tarkistaa Tor-reitittimien maantieteellistensijaintien tietoja. Tärkeää on huomioida, että pyyntö luodaan käyttämällä Tor-verkkoa, joten omaa sijaintia ei ilmoiteta GeoIP-palvelimelle. Pyyntöjen tulokset tallennetaan kiintolevylle välimuistiin säästäkseen rasittamasta Vidalian GeoIP-reitittimiä suuresti.
 </p>
 
 
@@ -107,7 +107,7 @@ Tiedot, jotka ovat nähtävissä ruudusta ovat samanlaisia kuten seuraavat (<i>H
 <table>
 <tr>
   <td><b>Sijainti</b></td>
-  <td>Tor-reitittimen maantieteellinensijainti.</td>
+  <td>Tor-reitittimen maantieteellinen sijainti.</td>
 </tr>
 <tr>
   <td><b>IP-osoite</b></td>
@@ -133,7 +133,7 @@ Tietoa sen käyttöjärjestelmästä ja Tor-ohjelmasta sillä Tor-reitittimellä
 </tr>
 <tr>
   <td><b>Viimeksi päivitetty</b></td>
-  <td>Ajankohta, jolloin viimeksi on reitittimen tiedot päivitetty.</td>
+  <td>Ajankohta, jolloin on viimeksi reitittimen tiedot päivitetty.</td>
 </tr>
 </table>
 </p>
