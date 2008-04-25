@@ -560,7 +560,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../config/generalpage.cpp" line="95"/>
         <source>You must specify the name of your Tor executable.</source>
-        <translation>Du måste räkna upp det namn av din Tor körbara.</translation>
+        <translation>Du måste räkna upp det namn av din Tor körbar.</translation>
     </message>
     <message>
         <location filename="../config/generalpage.cpp" line="82"/>
@@ -580,7 +580,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../config/generalpage.ui" line="75"/>
         <source>Start a proxy application when Vidalia starts</source>
-        <translation>Starta proxy-körbara när Vidalia startar</translation>
+        <translation>Starta proxy-körbar när Vidalia startar</translation>
     </message>
     <message>
         <location filename="../config/generalpage.ui" line="97"/>
@@ -2290,7 +2290,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../config/servicepage.ui" line="71"/>
         <source>Directory Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Katalogens sökväg</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="76"/>
