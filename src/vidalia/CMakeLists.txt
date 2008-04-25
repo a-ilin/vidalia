@@ -253,8 +253,8 @@ add_dependencies(${vidalia_BIN} translations)
 ## Link to the Qt libraries and other libraries built as a part of Vidalia
 target_link_libraries(${vidalia_BIN}
   ${QT_LIBRARIES}
+  common
   torcontrol
-  util
 )
 if (USE_MINIUPNPC)
   target_link_libraries(${vidalia_BIN} ${MINIUPNPC_LIBRARY})

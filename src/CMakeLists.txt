@@ -15,11 +15,11 @@ include_directories(
   ${QT_INCLUDES}
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${CMAKE_CURRENT_SOURCE_DIR}/torcontrol
-  ${CMAKE_CURRENT_SOURCE_DIR}/util
+  ${CMAKE_CURRENT_SOURCE_DIR}/common
 )
 link_directories(
   ${CMAKE_CURRENT_BINARY_DIR}/torcontrol
-  ${CMAKE_CURRENT_BINARY_DIR}/util
+  ${CMAKE_CURRENT_BINARY_DIR}/common
 )
 
 if(MSVC)
@@ -35,6 +35,6 @@ if (WIN32)
 endif(WIN32)
 
 add_subdirectory(torcontrol)
-add_subdirectory(util)
+add_subdirectory(common)
 add_subdirectory(vidalia)
 

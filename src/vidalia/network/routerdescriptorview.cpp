@@ -14,7 +14,7 @@
 ** \brief Formats and displays a router descriptor as HTML
 */
 
-#include <util/html.h>
+#include <html.h>
 #include "routerdescriptorview.h"
 
 #define DATE_FORMAT   "yyyy-MM-dd HH:mm:ss"

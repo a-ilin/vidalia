@@ -20,7 +20,7 @@
 #include <QMessageBox>
 #include <QClipboard>
 #include <vidalia.h>
-#include <util/html.h>
+#include <html.h>
 #include <vmessagebox.h>
 
 #include "messagelog.h"

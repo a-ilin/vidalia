@@ -54,5 +54,5 @@ endif(WIN32)
 
 
 add_library(torcontrol STATIC  ${torcontrol_SRCS})
-target_link_libraries(torcontrol ${QT_LIBRARIES} util)
+target_link_libraries(torcontrol ${QT_LIBRARIES} common)
 

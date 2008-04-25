@@ -11,7 +11,7 @@
 ##
 
 
-set(util_SRCS
+set(common_SRCS
   crypto.cpp
   file.cpp
   html.cpp
@@ -22,25 +22,25 @@ set(util_SRCS
   torsocket.cpp
   zlibbytearray.cpp
 )
-qt4_wrap_cpp(util_SRCS torsocket.h)
+qt4_wrap_cpp(common_SRCS torsocket.h)
 
 
 if(USE_QSSLSOCKET)
-  set(util_SRCS ${util_SRCS} torsslsocket.cpp)
-  qt4_wrap_cpp(util_SRCS torsslsocket.h)
+  set(common_SRCS ${common_SRCS} torsslsocket.cpp)
+  qt4_wrap_cpp(common_SRCS torsslsocket.h)
 endif(USE_QSSLSOCKET)
 
 if(WIN32)
-  set(util_SRCS ${util_SRCS}
+  set(common_SRCS ${common_SRCS}
     win32.cpp
   )
 endif(WIN32)
 
 
-add_library(util STATIC ${util_SRCS})
-target_link_libraries(util ${QT_LIBRARIES})
+add_library(common STATIC ${common_SRCS})
+target_link_libraries(common ${QT_LIBRARIES})
 
 if(USE_QSSLSOCKET AND OPENSSL_LIBRARIES)
-  target_link_libraries(util ${OPENSSL_LIBRARIES})
+  target_link_libraries(common ${OPENSSL_LIBRARIES})
 endif(USE_QSSLSOCKET AND OPENSSL_LIBRARIES)
 

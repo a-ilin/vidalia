@@ -15,7 +15,7 @@
 */
 
 #include <QStringList>
-#include <util/zlibbytearray.h>
+#include <zlibbytearray.h>
 
 #include "geoipresponse.h"
 

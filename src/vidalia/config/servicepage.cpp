@@ -8,7 +8,7 @@
 **  terms described in the LICENSE file.
 */
 
-#include <util/stringutil.h>
+#include <stringutil.h>
 #include <vmessagebox.h>
 #include <qheaderview.h>
 #include <qclipboard.h>
