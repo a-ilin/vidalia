@@ -20,7 +20,7 @@
 #include "file.h"
 
 #if defined(Q_OS_WIN32)
-#include <util/win32.h>
+#include "win32.h"
 #endif
 
 
