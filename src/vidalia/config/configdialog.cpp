@@ -82,8 +82,8 @@ ConfigDialog::ConfigDialog(QWidget* parent)
                                       tr("Sharing"), grp));
 
   ui.stackPages->add(new ServicePage(ui.stackPages),
-                       createPageAction(QIcon(IMAGE_SERVICE),
-                                        tr("Services"), grp));
+                     createPageAction(QIcon(IMAGE_SERVICE),
+                                      tr("Services"), grp));
 
   ui.stackPages->add(new AppearancePage(ui.stackPages),
                      createPageAction(QIcon(IMAGE_APPEARANCE),
