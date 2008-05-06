@@ -80,7 +80,11 @@ ConfigDialog::ConfigDialog(QWidget* parent)
   ui.stackPages->add(new ServerPage(ui.stackPages),
                      createPageAction(QIcon(IMAGE_SERVER),
                                       tr("Sharing"), grp));
-  
+
+  ui.stackPages->add(new ServicePage(ui.stackPages),
+                       createPageAction(QIcon(IMAGE_SERVICE),
+                                        tr("Services"), grp));
+
   ui.stackPages->add(new AppearancePage(ui.stackPages),
                      createPageAction(QIcon(IMAGE_APPEARANCE),
                                       tr("Appearance"), grp));
@@ -88,10 +92,6 @@ ConfigDialog::ConfigDialog(QWidget* parent)
   ui.stackPages->add(new AdvancedPage(ui.stackPages),
                      createPageAction(QIcon(IMAGE_ADVANCED),
                                       tr("Advanced"), grp));
-  
-  ui.stackPages->add(new ServicePage(ui.stackPages),
-                       createPageAction(QIcon(IMAGE_SERVICE),
-                                        tr("Services"), grp));
   foreach (ConfigPage *page, ui.stackPages->pages()) {
     connect(page, SIGNAL(helpRequested(QString)),
             this, SLOT(help(QString)));

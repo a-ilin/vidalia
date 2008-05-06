@@ -47,6 +47,10 @@ ServicePage::ServicePage(QWidget *parent)
   ui.serviceWidget->horizontalHeader()->resizeSection(2, 100);
   ui.serviceWidget->horizontalHeader()->resizeSection(3, 120);
   ui.serviceWidget->horizontalHeader()->resizeSection(4, 60);
+  ui.serviceWidget->horizontalHeader()->setResizeMode(0, QHeaderView::Stretch);
+  ui.serviceWidget->horizontalHeader()->setResizeMode(1, QHeaderView::Stretch);
+  ui.serviceWidget->horizontalHeader()->setResizeMode(2, QHeaderView::Stretch);
+  ui.serviceWidget->horizontalHeader()->setResizeMode(3, QHeaderView::Stretch);
   ui.serviceWidget->verticalHeader()->hide();
 
   connect(ui.addButton, SIGNAL(clicked()), this, SLOT(addService()));
