@@ -80,7 +80,7 @@ ConfigDialog::ConfigDialog(QWidget* parent)
   ui.stackPages->add(new ServerPage(ui.stackPages),
                      createPageAction(QIcon(IMAGE_SERVER),
                                       tr("Sharing"), grp));
-
+  
   ui.stackPages->add(new ServicePage(ui.stackPages),
                      createPageAction(QIcon(IMAGE_SERVICE),
                                       tr("Services"), grp));
