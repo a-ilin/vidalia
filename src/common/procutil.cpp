@@ -9,7 +9,7 @@
 */
 
 /*
-** \file process.cpp
+** \file procutil.cpp
 ** \version $Id$
 ** \brief Process information and pidfile functions 
 */
@@ -21,7 +21,7 @@
 #include <QApplication>
 
 #include "stringutil.h"
-#include "process.h"
+#include "procutil.h"
 
 
 /** Returns the PID of the current process. */

@@ -17,7 +17,7 @@ set(common_SRCS
   html.cpp
   log.cpp
   net.cpp
-  process.cpp
+  procutil.cpp
   stringutil.cpp
   torsocket.cpp
   zlibbytearray.cpp

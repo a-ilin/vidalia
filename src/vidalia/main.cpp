@@ -18,7 +18,7 @@
 #include <vidalia.h>
 #include <mainwindow.h>
 #include <vmessagebox.h>
-#include <process.h>
+#include <procutil.h>
 #include <stringutil.h>
 
 #if defined(Q_OS_WIN32)

@@ -9,13 +9,13 @@
 */
 
 /*
-** \file process.h
+** \file procutil.h
 ** \version $Id$
 ** \brief Process information and pidfile functions
 */
 
-#ifndef _PROCESS_H
-#define _PROCESS_H
+#ifndef _PROCUTIL_H
+#define _PROCUTIL_H
 
 #include <QString>
 
