@@ -301,8 +301,18 @@ NetViewer::addRouter(const RouterDescriptor &rd)
 {
   /* Add the descriptor to the list of server */
   ui.treeRouterList->addRouter(rd);
-  /* Add this IP to a list whose geographic location we'd like to find. */
-  addToResolveQueue(rd.ip(), rd.id());
+
+  /* Add this IP to a list of addresses whose geographic location we'd like to
+   * find, but not for special purpose descriptors (e.g., bridges). This
+   * check is only valid for Tor >= 0.2.0.13-alpha. */
+  if (_torControl->getTorVersion() >= 0x020013) {
+    DescriptorAnnotations annotations =
+      _torControl->getDescriptorAnnotations(rd.id());
+    if (!annotations.contains("purpose"))
+      addToResolveQueue(rd.ip(), rd.id());
+  } else {
+    addToResolveQueue(rd.ip(), rd.id());
+  }
 }
 
 /** Called when a NEWDESC event arrives. Retrieves new router descriptors
