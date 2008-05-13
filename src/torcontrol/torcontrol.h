@@ -37,6 +37,11 @@
 #endif
 
 
+/** DescriptorAnnotations stores a map of annotation keys to (possibly empty)
+ * annotation values. */
+typedef QHash<QString,QString> DescriptorAnnotations;
+
+
 class TorControl : public QObject
 {
   Q_OBJECT
@@ -168,7 +173,12 @@ public:
    * the network status document cannot be parsed, then an empty NetworkStatus
    * is returned. */
   NetworkStatus getNetworkStatus(QString *errmsg = 0);
-
+  /** Returns the annotations for the router whose fingerprint matches
+   * <b>id</b>. If <b>id</b> is invalid or the router's descriptor cannot be
+   * parsed, then an empty DescriptorAnnotations is returned and
+   * <b>errmsg</b> is set if it's not NULL. (Tor >= 0.2.0.13-alpha only) */
+  DescriptorAnnotations getDescriptorAnnotations(const QString &id,
+                                                 QString *errmsg = 0);
 
   /** Gets a list of current circuits. */
   CircuitList getCircuits(QString *errmsg = 0);

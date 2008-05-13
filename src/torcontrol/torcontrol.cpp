@@ -907,6 +907,34 @@ TorControl::getNetworkStatus(QString *errmsg)
   return networkStatus;
 }
 
+/** Returns the annotations for the router whose fingerprint matches
+ * <b>id</b>. If <b>id</b> is invalid or the router's annotations cannot be
+ * parsed, then an empty DescriptorAnnotations is returned and <b>errmsg</b>
+ * is set if it's not NULL. (Tor >= 0.2.0.13-alpha only) */
+DescriptorAnnotations
+TorControl::getDescriptorAnnotations(const QString &id, QString *errmsg)
+{
+  QStringList lines = getInfo("desc-annotations/id/"+id, errmsg).toStringList();
+  DescriptorAnnotations annotations;
+  QString key, value;
+
+  foreach (QString line, lines) {
+    int idx = line.indexOf(" ");
+    
+    /* Extract the annotation key */
+    key = line.mid(0, idx); 
+    if (key.startsWith("@"))
+      key = key.remove(0, 1);
+    
+    /* Extract the annotation value (if present) */
+    if (idx > 0 && idx < line.length()-1)
+      annotations.insert(key, line.mid(idx + 1).trimmed());
+    else
+      annotations.insert(key, QString());
+  }
+  return annotations;
+}
+
 /** Gets a list of current circuits. */
 QList<Circuit>
 TorControl::getCircuits(QString *errmsg)
