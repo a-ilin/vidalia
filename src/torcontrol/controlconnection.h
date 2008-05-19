@@ -50,7 +50,7 @@ public:
   ~ControlConnection();
 
   /** Connect to the specified Tor control interface. */
-  void connect(QHostAddress addr, quint16 port);
+  void connect(const QHostAddress &addr, quint16 port);
   /** Cancels a pending control connection to Tor. */
   void cancelConnect();
   /** Disconnect from Tor's control interface. */
@@ -60,9 +60,9 @@ public:
   /** Returns the status of the control connection. */
   Status status();
   /** Sends a control command to Tor and waits for the reply. */
-  bool send(ControlCommand cmd, ControlReply &reply, QString *errmsg = 0);
+  bool send(const ControlCommand &cmd, ControlReply &reply, QString *errmsg = 0);
   /** Sends a control command to Tor and does not wait for a reply. */
-  bool send(ControlCommand cmd, QString *errmsg = 0);
+  bool send(const ControlCommand &cmd, QString *errmsg = 0);
 
 signals:
   /** Emitted when a control connection has been established. */
@@ -111,8 +111,8 @@ private:
       /** Waits for and gets the reply from a control command. */
       bool getResult(ControlReply *reply, QString *errmsg = 0);
       /** Sets the result and reply from a control command. */
-      void setResult(bool success, ControlReply reply, 
-                     QString errmsg = QString());
+      void setResult(bool success, const ControlReply &reply, 
+                     const QString &errmsg = QString());
     private:
       /** Status of the receive waiter. */
       enum ReceiveStatus { Waiting, Failed, Success } _status;

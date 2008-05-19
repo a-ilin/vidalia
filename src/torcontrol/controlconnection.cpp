@@ -46,7 +46,7 @@ ControlConnection::~ControlConnection()
 
 /** Connect to the specified Tor control interface. */
 void
-ControlConnection::connect(QHostAddress addr, quint16 port)
+ControlConnection::connect(const QHostAddress &addr, quint16 port)
 {
   if (isRunning()) {
     tc::error("Bug: Tried to call ControlConnection::connect() when the "
@@ -196,7 +196,8 @@ ControlConnection::setStatus(Status status)
 
 /** Sends a control command to Tor and waits for the reply. */
 bool
-ControlConnection::send(ControlCommand cmd, ControlReply &reply, QString *errmsg)
+ControlConnection::send(const ControlCommand &cmd,
+                        ControlReply &reply, QString *errmsg)
 {
   ReceiveWaiter w;
   bool result = false;
@@ -227,7 +228,7 @@ ControlConnection::send(ControlCommand cmd, ControlReply &reply, QString *errmsg
 /** Sends a control command to Tor and returns without waiting for the
  * response. */
 bool
-ControlConnection::send(ControlCommand cmd, QString *errmsg)
+ControlConnection::send(const ControlCommand &cmd, QString *errmsg)
 {
   QMutexLocker locker(&_connMutex);
   return _sock->sendCommand(cmd, errmsg);
@@ -342,8 +343,8 @@ ControlConnection::ReceiveWaiter::getResult(ControlReply *reply,
 /** Sets the result and reply from a control command. */
 void 
 ControlConnection::ReceiveWaiter::setResult(bool success, 
-                                            ControlReply reply, 
-                                            QString errmsg)
+                                            const ControlReply &reply, 
+                                            const QString &errmsg)
 {
   _mutex.lock();
   _status = (success ? Success : Failed);
