@@ -72,10 +72,6 @@ signals:
   /** Emitted when a control connection fails. */
   void connectFailed(QString errmsg);
 
-protected:
-  /** Catches events for the control socket. */
-  bool eventFilter(QObject *obj, QEvent *event);
-
 private slots:
   /** Connects to Tor's control interface. */
   void connect();
@@ -102,7 +98,6 @@ private:
   QHostAddress _addr; /**< Address of Tor's control interface. */
   quint16 _port; /**< Port of Tor's control interface. */
   QMutex _connMutex; /**< Mutex around the control socket. */
-  QMutex _recvMutex; /**< Mutex around the queue of ReceiveWaiters. */
   QMutex _statusMutex; /**< Mutex around the connection status value. */
   int _connectAttempt; /**< How many times we've tried to connect to Tor while
                             waiting for Tor to start. */
@@ -127,39 +122,6 @@ private:
       QString _errmsg; /**< Error message if the reply fails. */
   };
   QQueue<ReceiveWaiter *> _recvQueue; /**< Objects waiting for a reply. */
-  
-  /** Object used to wait for the result of a send operation. */
-  class SendWaiter {
-    public:
-      /** Default constructor. */
-      SendWaiter() { _status = Waiting; }
-      /** Sets the result of the send operation. */
-      void setResult(bool success, QString errmsg = QString());
-      /** Waits for and gets the result of the send operation. */
-      bool getResult(QString *errmsg = 0);
-    private:
-      /** Status of the send waiter. */
-      enum SenderStatus { Waiting, Failed, Success } _status;
-      QMutex _mutex; /**< Mutex around the wait condition. */
-      QWaitCondition _waitCond; /**< Waits for the send to complete. */
-      QString _errmsg; /**< Error message if the send fails. */
-  };
-  
-  /** Private event used to push a control command to the socket's thread */
-  class SendCommandEvent : public QEvent {
-    public:
-      /** Constructor. */
-      SendCommandEvent(ControlCommand cmd, SendWaiter *waiter = 0)
-      : QEvent((QEvent::Type)CustomEventType::SendCommandEvent)
-      { _cmd = cmd; _waiter = waiter; }
-      /** Returns the control command to send to Tor. */
-      ControlCommand command() { return _cmd; }
-      /** Returns a waiter (if any) for the result of this send. */
-      SendWaiter* waiter() { return _waiter; }
-    private:
-      ControlCommand _cmd;  /**< Command to send to Tor. */
-      SendWaiter* _waiter; /**< Waiter for the result of this event. */
-  };
 };
 
 #endif
