@@ -40,3 +40,7 @@ FILETYPE        VFT_APP
     }
 }
 
+
+/** Application icon */
+101 ICON DISCARDABLE "icons/vidalia.ico"
+
