@@ -12,7 +12,9 @@
   o Add support for the 'usefeature verbose_names' control command that was
     introduced way back in Tor 0.1.2.2-alpha.
   o Correct the tab order on the custom bandwidth settings tab. (Ticket #351)
- 
+  o Restore the Windows application icon that was inadvertently removed in
+    0.1.2. Reported by dr|z3d. (Ticket #358)
+
 
 0.1.2   24-Mar-2008
   o Correctly load the CA certificate used to verify SSL connections to the
