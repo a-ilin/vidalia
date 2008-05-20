@@ -204,6 +204,10 @@ ControlConnection::send(const ControlCommand &cmd,
   QString errstr;
   
   _connMutex.lock();
+  if (!_sock) {
+    _connMutex.unlock();
+    return err(errmsg, tr("Control socket is not connected."));
+  }
   if (_sock->sendCommand(cmd, &errstr)) {
     /* Create and enqueue a new receive waiter */
     _recvQueue.enqueue(&w);
@@ -231,6 +235,8 @@ bool
 ControlConnection::send(const ControlCommand &cmd, QString *errmsg)
 {
   QMutexLocker locker(&_connMutex);
+  if (!_sock)
+    return err(errmsg, tr("Control socket is not connected.")); 
   return _sock->sendCommand(cmd, errmsg);
 }
 
