@@ -57,10 +57,10 @@ ServicePage::ServicePage(QWidget *parent)
   connect(ui.removeButton, SIGNAL(clicked()), this, SLOT(removeService()));
   connect(ui.copyButton, SIGNAL(clicked()), this, SLOT(copyToClipboard()));
   connect(ui.browseButton, SIGNAL(clicked()), this, SLOT(browseDirectory()));
-  connect(ui.serviceWidget, SIGNAL(itemClicked(QTableWidgetItem*)), this,
-   SLOT(serviceSelectionChanged()));
-  connect(ui.serviceWidget, SIGNAL(itemChanged(QTableWidgetItem*)), this,
-   SLOT(valueChanged()));
+  connect(ui.serviceWidget, SIGNAL(itemClicked(QTableWidgetItem*)),
+          this, SLOT(serviceSelectionChanged()));
+  connect(ui.serviceWidget, SIGNAL(itemChanged(QTableWidgetItem*)),
+          this, SLOT(valueChanged()));
 }
 
 /** Destructor */
@@ -83,39 +83,39 @@ ServicePage::save(QString &errmsg)
     QString directoryPath = ui.serviceWidget->item(index,3)->text();
     bool enabled = _services->value(index).enabled();
     Service temp(address, virtualPort, physicalAddress, directoryPath,
-     enabled);
-    temp.setAdditionalServiceOptions(_services->value(ui.serviceWidget->
-     currentRow()).additionalServiceOptions());
+                 enabled);
+    temp.setAdditionalServiceOptions(
+      _services->value(ui.serviceWidget->currentRow()).additionalServiceOptions());
     serviceList.push_back(temp);
     if(enabled) {
       publishedServices.push_back(temp);
     }
-  index++;
+    index++;
   }
-  bool save;
-  save = checkBeforeSaving(serviceList);
+
+  bool save = checkBeforeSaving(serviceList);
   if(save) {
     ServiceList sList;
     if(serviceList.size() > 0) {
       sList.setServices(serviceList);
     } else {
-        _services = new QMap<int, Service>();
-        sList.setServices(_services->values());
-      }
+      _services = new QMap<int, Service>();
+      sList.setServices(_services->values());
+    }
     _serviceSettings->setServices(sList);
     if(publishedServices.size() > 0) {
       startServicesInTor(publishedServices);
     } else {
-        QString errmsg1 = tr("Error while trying to unpublish all services");
-        QString &errmsg = errmsg1;
-        _serviceSettings->unpublishAllServices(&errmsg);
-      }
+      QString errmsg1 = tr("Error while trying to unpublish all services");
+      QString &errmsg = errmsg1;
+      _serviceSettings->unpublishAllServices(&errmsg);
+    }
     return true;
   } else {
-      errmsg = tr("Please configure at least a service directory and a virtual\
-       port for each service you want to save. Remove the other ones.");
-      return false;
-    }
+    errmsg = tr("Please configure at least a service directory and a virtual "
+                "port for each service you want to save. Remove the other ones.");
+    return false;
+  }
 }
 
 /** this method checks if either all services have minimal
@@ -144,12 +144,12 @@ ServicePage::startServicesInTor(QList<Service> services)
   while(it.hasNext()) {
     Service temp = it.next();
     serviceConfString.append("hiddenservicedir=" +
-     string_escape(temp.serviceDirectory()) + " ");
+                             string_escape(temp.serviceDirectory()) + " ");
     serviceConfString.append("hiddenserviceport=" +
      string_escape(temp.virtualPort() +
      (temp.physicalAddressPort().isEmpty() ? "" : " " +
       temp.physicalAddressPort())));
-    serviceConfString.append(" "+ temp.additionalServiceOptions());
+    serviceConfString.append(" " + temp.additionalServiceOptions());
   }
   _serviceSettings->applyServices(serviceConfString, &errmsg);
 }
@@ -166,8 +166,7 @@ ServicePage::load()
   _torServices = new QMap<QString, Service>();
   QList<Service> torServiceList;
 
-  QString torConfigurationString = _serviceSettings->
-   getHiddenServiceDirectories();
+  QString torConfigurationString = _serviceSettings->getHiddenServiceDirectories();
   torServiceList = extractSingleServices(torConfigurationString);
   QList<Service> completeList = torServiceList;
   // the services stored with vidalia
@@ -219,8 +218,8 @@ ServicePage::generateService(QString s)
   int index = additionalOptions.indexOf("250",1);
   additionalOptions.remove(0, index+4);
   // remove the first appearance of the port
-  int startindex = additionalOptions.indexOf("hiddenserviceport",
-   0, Qt::CaseInsensitive);
+  int startindex = additionalOptions.indexOf("hiddenserviceport", 0,
+                                             Qt::CaseInsensitive);
   int endindex = additionalOptions.indexOf("250", startindex);
   if(endindex != -1) {
     additionalOptions.remove(startindex, (endindex-startindex)+4);
@@ -265,9 +264,9 @@ ServicePage::generateService(QString s)
     if(!strList4.isEmpty()) {
       physAddressPort = strList4.first().trimmed();
     }
-  }  else {
-       QString tempVirtualPort = strList3.first();
-       virtualPort = tempVirtualPort.remove(0, 1);
+  } else {
+    QString tempVirtualPort = strList3.first();
+    virtualPort = tempVirtualPort.remove(0, 1);
   }
   //get .onion address
   QString serviceHostnameDir = serviceDir;
@@ -277,13 +276,13 @@ ServicePage::generateService(QString s)
   if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
     address = "[Directory not found]";
   } else {
-      QTextStream in(&file);
-      QString hostname;
-      while (!in.atEnd()) {
-        hostname.append(in.readLine());
-      }
-      address = hostname;
+    QTextStream in(&file);
+    QString hostname;
+    while (!in.atEnd()) {
+      hostname.append(in.readLine());
     }
+    address = hostname;
+  }
   Service service(address, virtualPort, physAddressPort, serviceDir, true);
   service.setAdditionalServiceOptions(additionalOptions);
   _torServices->insert(serviceDir, service);
@@ -326,22 +325,22 @@ ServicePage::initServiceTable(QMap<int, Service>* _services)
     if(tempService.serviceAddress().length() < 0) {
       addressitem->setText(tempService.serviceAddress());
     } else {
-        QString serviceHostnameDir = tempService.serviceDirectory();
-        serviceHostnameDir.append("/");
-        serviceHostnameDir.append("hostname");
-        QFile file(serviceHostnameDir);
-        if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-          addressitem->setText("[Directory not found]");
-        } else {
-            QTextStream in(&file);
-            QString hostname;
-            while (!in.atEnd()) {
-              hostname.append(in.readLine());
-            }
-            addressitem->setText(hostname);
-            tempService.setServiceAddress(hostname);
-          }
+      QString serviceHostnameDir = tempService.serviceDirectory();
+      serviceHostnameDir.append("/");
+      serviceHostnameDir.append("hostname");
+      QFile file(serviceHostnameDir);
+      if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        addressitem->setText("[Directory not found]");
+      } else {
+        QTextStream in(&file);
+        QString hostname;
+        while (!in.atEnd()) {
+          hostname.append(in.readLine());
+        }
+        addressitem->setText(hostname);
+        tempService.setServiceAddress(hostname);
       }
+    }
     addressitem->setData(32, addressitem->text());
     QTableWidgetItem *serviceDir =
         new QTableWidgetItem(tempService.serviceDirectory(), 0);
@@ -356,8 +355,8 @@ ServicePage::initServiceTable(QMap<int, Service>* _services)
       cboxitem->setCheckState(Qt::Checked);
       serviceDir->setFlags(Qt::ItemIsSelectable);
     } else {
-        cboxitem->setCheckState(Qt::Unchecked);
-      }
+      cboxitem->setCheckState(Qt::Unchecked);
+    }
     cboxitem->setTextAlignment(Qt::AlignCenter);
     ui.serviceWidget->setItem(index, 0, addressitem);
     ui.serviceWidget->setItem(index, 1, virtualportitem);
@@ -402,18 +401,18 @@ ServicePage::removeService()
   int selrow = ui.serviceWidget->currentRow();
   if(selrow < 0 || selrow >= _services->size()) {
     VMessageBox::warning(this, tr("Error"), tr("Please select a Service."),
-     VMessageBox::Ok);
+                         VMessageBox::Ok);
     return;
   } else {
-      ui.serviceWidget->removeRow(selrow);
-      //decrease all other service keys
-      for(int i = 0; i < (rows-selrow-1); i++) {
-        int index = i+selrow;
-        Service s = _services->take(index+1);
-        _services->insert(index, s);
-      }
+    ui.serviceWidget->removeRow(selrow);
+    //decrease all other service keys
+    for(int i = 0; i < (rows-selrow-1); i++) {
+      int index = i+selrow;
+      Service s = _services->take(index+1);
+      _services->insert(index, s);
     }
-    serviceSelectionChanged();
+  }
+  serviceSelectionChanged();
 }
 
 /** this method is called when the user clicks on the "Copy"-Button, it
@@ -424,16 +423,16 @@ ServicePage::copyToClipboard()
   int selrow = ui.serviceWidget->currentRow();
   if(selrow < 0 || selrow >= _services->size()) {
     VMessageBox::warning(this, tr("Error"), tr("Please select a Service."),
-     VMessageBox::Ok);
+                         VMessageBox::Ok);
     return;
   } else {
-      QString onionAddress = ui.serviceWidget->item(selrow,0)->text();
-      QClipboard *clipboard = QApplication::clipboard();
-      QString clipboardText;
-      QTableWidgetItem* selectedItem = ui.serviceWidget->item(selrow,0);
-      clipboardText.append(selectedItem->text());
-      clipboard->setText(clipboardText);
-    }
+    QString onionAddress = ui.serviceWidget->item(selrow,0)->text();
+    QClipboard *clipboard = QApplication::clipboard();
+    QString clipboardText;
+    QTableWidgetItem* selectedItem = ui.serviceWidget->item(selrow,0);
+    clipboardText.append(selectedItem->text());
+    clipboard->setText(clipboardText);
+  }
 }
 
 /** this method is called when the user clicks on the "Brows"-Button it opens
@@ -444,21 +443,23 @@ ServicePage::browseDirectory()
   int selrow = ui.serviceWidget->currentRow();
   if(selrow < 0 || selrow >= _services->size()) {
     VMessageBox::warning(this, tr("Error"), tr("Please select a Service."),
-     VMessageBox::Ok);
+                         VMessageBox::Ok);
     return;
   } else {
-      QString dirname = QFileDialog::getExistingDirectory(this,
-       tr("Select Service Directory"), "",
-        QFileDialog::ShowDirsOnly|QFileDialog::DontResolveSymlinks);
+    QString dirname =
+      QFileDialog::getExistingDirectory(this,
+                                        tr("Select Service Directory"), "",
+                                        QFileDialog::ShowDirsOnly
+                                          | QFileDialog::DontResolveSymlinks);
 
-      if (dirname.isEmpty()) {
-        return;
-      }
-      ui.serviceWidget->item(selrow,3)->setText(dirname);
-      Service s = _services->take(selrow);
-      s.setServiceDirectory(dirname);
-      _services->insert(selrow, s);
+    if (dirname.isEmpty()) {
+      return;
     }
+    ui.serviceWidget->item(selrow,3)->setText(dirname);
+    Service s = _services->take(selrow);
+    s.setServiceDirectory(dirname);
+    _services->insert(selrow, s);
+  }
 }
 
 /** this method is called when the selects an other tablewidgetitem */
@@ -471,11 +472,11 @@ ServicePage::serviceSelectionChanged()
     ui.copyButton->setEnabled(true);
     ui.browseButton->setEnabled(true);
   } else {
-      ui.removeButton->setEnabled(false);
-      ui.copyButton->setEnabled(false);
-      ui.browseButton->setEnabled(false);
-      emptyTable = true;
-    }
+    ui.removeButton->setEnabled(false);
+    ui.copyButton->setEnabled(false);
+    ui.browseButton->setEnabled(false);
+    emptyTable = true;
+  }
   int currentRow = ui.serviceWidget->currentRow();
   if(emptyTable == false) {
     QTableWidgetItem* item = ui.serviceWidget->item(currentRow, 0);
@@ -484,10 +485,10 @@ ServicePage::serviceSelectionChanged()
       ui.copyButton->setEnabled(b);
     }
   }
-  QTableWidgetItem* item = ui.serviceWidget->item(ui.serviceWidget->
-   currentRow(), 3);
+  QTableWidgetItem* item =
+    ui.serviceWidget->item(ui.serviceWidget->currentRow(), 3);
   QString selDir = _services->value(ui.serviceWidget->currentRow()).
-   serviceDirectory();
+                                    serviceDirectory();
   QList<QString> strList =  _torServices->keys();
   if(selDir.length() > 0) {
     QListIterator<QString> it(strList);
@@ -507,9 +508,9 @@ ServicePage::serviceSelectionChanged()
       item->setCheckState(Qt::Unchecked);
       service.setEnabled(false);
     } else {
-        item->setCheckState(Qt::Checked);
-        service.setEnabled(true);
-     }
+      item->setCheckState(Qt::Checked);
+      service.setEnabled(true);
+    }
     _services->insert(currentRow, service);
   }
 }
@@ -559,9 +560,9 @@ ServicePage::valueChanged()
         }
       } else { // either <address> or <port>
         if (text.compare("localhost") != 0 &&
-            ipValidator->validate(text, pos) != QValidator::Acceptable &&
-            domainValidator->validate(text, pos) != QValidator::Acceptable &&
-            portValidator->validate(text, pos) != QValidator::Acceptable) {
+          ipValidator->validate(text, pos) != QValidator::Acceptable &&
+          domainValidator->validate(text, pos) != QValidator::Acceptable &&
+          portValidator->validate(text, pos) != QValidator::Acceptable) {
           goto invalid;
         }
       }
