@@ -16,11 +16,11 @@
 #include "vidaliasettings.h"
 #include "exitpolicy.h"
 
+/* XXX: Domenik: Shouldn't this inherit AbstractTorSettings like the rest of
+ * the settings classes? */
 class ServiceSettings : private VidaliaSettings
 {
-
 public:
-
   /** Constructor */
   ServiceSettings(TorControl *torControl);
   /** Returns the service port for a specififc service*/
@@ -52,7 +52,6 @@ public:
   void unpublishAllServices(QString *errmsg);
 
 private:
-
   /** A TorControl object used to talk to Tor. */
   TorControl* _torControl;
 };
