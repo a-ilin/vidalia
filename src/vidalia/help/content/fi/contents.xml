@@ -47,7 +47,7 @@
     <Topic id="about" name="Mikä on piilopalvelu?" html="services.html" section="about"/>
     <Topic id="provide" name="Miten voin luoda piilopalvelun?" html="services.html" section="provide"/>
     <Topic id="data" name="Mitä tietoa tarvitsee tarjoa?" html="services.html" section="data"/>
-    <Topic id="buttons" name="Mihin viittä nappulaa käytetään?" html="services.html" section="buttons"/>
+    <Topic id="buttons" name="Mihin jokaista nappulaa käytetään?" html="services.html" section="buttons"/>
     <Topic id="advanced" name="Miten voin määrittää piilopalveluiden lisäasetuksia?" html="services.html" section="advanced"/>
     <Topic id="client" name="Miten Vidalia auttaa käyttääkseen muita piilopalveluita?" html="services.html" section="client"/>
   </Topic>
