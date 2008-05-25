@@ -55,7 +55,9 @@ AdvancedPage::AdvancedPage(QWidget *parent)
   /* Hide platform specific features */
 #if defined(Q_WS_WIN)
   ui.grpPermissions->setVisible(false);
+#if 0
   ui.grpService->setVisible(TorService::isSupported());
+#endif
 #endif
 }
 
@@ -139,9 +141,11 @@ AdvancedPage::save(QString &errmsg)
         && !ui.chkRandomPassword->isChecked())
     _settings->setControlPassword(ui.linePassword->text());
 
+#if 0
 #if defined(Q_WS_WIN)
   /* Install or uninstall the Tor service as necessary */
   setupService(ui.chkUseService->isChecked());
+#endif
 #endif
 
   return true;
@@ -164,9 +168,11 @@ AdvancedPage::load()
   if (!ui.chkRandomPassword->isChecked())
     ui.linePassword->setText(_settings->getControlPassword());
 
+#if 0
 #if defined(Q_WS_WIN)
   TorService s;
   ui.chkUseService->setChecked(s.isInstalled());
+#endif
 #endif
 }
 
@@ -261,6 +267,7 @@ AdvancedPage::browseTorDataDirectory()
     ui.lineTorDataDirectory->setText(dataDir);
 }
 
+#if 0
 #if defined(Q_WS_WIN)
 /** Installs or removes the Tor service as necessary. */
 void
@@ -292,5 +299,6 @@ AdvancedPage::setupService(bool useService)
     }
   }
 }
+#endif
 #endif
 

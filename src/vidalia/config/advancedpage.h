@@ -66,10 +66,12 @@ private:
   /** Returns the index in the authentication methods combo box for the given
    * authentication <b>method</b>. */
   int authMethodToIndex(TorSettings::AuthenticationMethod method);
-  
+ 
+#if 0 
 #if defined(Q_WS_WIN)
   /** Installs or removes the Tor service as necessary */
   void setupService(bool useService);
+#endif
 #endif
 
   /** A TorSettings object used to save/load settings */

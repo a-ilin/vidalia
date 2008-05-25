@@ -407,46 +407,6 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="grpService" >
-     <property name="minimumSize" >
-      <size>
-       <width>0</width>
-       <height>0</height>
-      </size>
-     </property>
-     <property name="contextMenuPolicy" >
-      <enum>Qt::NoContextMenu</enum>
-     </property>
-     <property name="visible" >
-      <bool>false</bool>
-     </property>
-     <property name="title" >
-      <string>Service</string>
-     </property>
-     <layout class="QVBoxLayout" >
-      <property name="margin" >
-       <number>9</number>
-      </property>
-      <property name="spacing" >
-       <number>6</number>
-      </property>
-      <item>
-       <widget class="QCheckBox" name="chkUseService" >
-        <property name="contextMenuPolicy" >
-         <enum>Qt::NoContextMenu</enum>
-        </property>
-        <property name="toolTip" >
-         <string>Enable this if you wish to run Tor as a Windows service</string>
-        </property>
-        <property name="text" >
-         <string>Run Tor in the background as a Windows service</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item>
     <spacer>
      <property name="orientation" >
       <enum>Qt::Vertical</enum>
