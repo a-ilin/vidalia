@@ -2101,7 +2101,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../config/serverpage.ui" line="792"/>
         <source>Secure Websites (SSL)</source>
-        <translation>Krypterade webbplatser (SSL)</translation>
+        <translation>Säkra webbplatser (SSL)</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="802"/>
