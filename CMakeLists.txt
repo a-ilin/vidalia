@@ -48,6 +48,8 @@ if (APPLE)
   if (OSX_FAT_BINARY)
     set(CMAKE_OSX_ARCHITECTURES "ppc;i386" 
         CACHE STRING "OS X build architectures" FORCE)
+    set(CMAKE_EXE_LINKER_FLAGS "-mmacosx-version-min=10.4"
+        CACHE STRING "Flags used by the linker." FORCE)
   endif(OSX_FAT_BINARY)
 endif(APPLE)
 
