@@ -433,7 +433,6 @@
   <tabstop>btnBrowseTorDataDirectory</tabstop>
   <tabstop>lineUser</tabstop>
   <tabstop>lineGroup</tabstop>
-  <tabstop>chkUseService</tabstop>
  </tabstops>
  <resources/>
  <connections/>
