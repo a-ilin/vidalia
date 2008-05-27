@@ -141,6 +141,8 @@ ServiceSettings::setEnabled(bool boolean)
 QString
 ServiceSettings::getHiddenServiceDirectories()
 {
+  /*XXX: Domenik: Why does this always try to getconf hiddenserviceoptions
+   * even if the socket is not connected? */
   QString value =  _torControl->getHiddenServiceConf("hiddenserviceoptions");
   return value;
 }
