@@ -33,6 +33,7 @@ ControlConnection::ControlConnection(TorEvents *events)
 {
   _events = events;
   _status = Unset;
+  _sock = 0;
 }
 
 /** Destructor. */
