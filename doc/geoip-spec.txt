@@ -15,24 +15,23 @@ $Id$
 
        206.124.149.146,Bellevue,WA,US,47.6051,-122.1134
 
-   If we don't have a cached answer, we send an HTTP request to a
-   perl script located on one of our geographic information servers, 
-   asking about one or more IP addresses. The requests are always
-   sent to
+   If we don't have a cached answer, we send an HTTP request to a perl
+   script located on our geographic information server, asking about one
+   or more IP addresses. 
+   
+   As of Vidalia 0.1.0, if Vidalia is built against Qt 4.3 or later with
+   OpenSSL support, the requests are done over an SSL connection and sent to
+
+       https://geoip.vidalia-project.net:1443/cgi-bin/geoip
+   
+   The server has a CACert-issued certificate and CACert's root certificate
+   is included in Vidalia's signed packages. Prior to Vidalia 0.1.0, or
+   when Vidalia is built against a Qt without OpenSSL support, requests
+   are unauthenticated and unencrypted. The requests are sent to
 
        http://geoip.vidalia-project.net/cgi-bin/geoip
 
    which is currently hardcoded into Vidalia's source code.
-
-   Requests are distributed via DNS round-robin. Currently, we have two 
-   such servers:
-
-         Host             IP Address             Operator
-    --------------------------------------------------------------------
-    pasiphae.cs.rpi.edu  128.213.48.11  Matt Edman
-                                        Rensselaer Polytechnic Institute
-    cups.cs.cmu.edu      128.2.220.167  Sasha Romanosky, Serge Egelman
-                                        Carnegie Mellon University
 
    Request logs are not kept on the geographic information servers.
    
@@ -129,30 +128,9 @@ $Id$
    First, can the operator of the above URLs track popularity and
    spreading of servers? Yes. Does this buy him anything? I'm not sure.
 
-   Second, because no end-to-end encryption/authentication is used, the
-   exit node can discover what is being requested -- and can modify the
-   answers that are sent back. What are the partitioning opportunities
-   in this scenario -- both passive partitioning to discover patterns
-   of behavior based on which descriptors have just been fetched, and
-   active partitioning to mislead the user into believing a given server
-   is at a certain set of coordinates?
-
 3. Future directions.
 
-3.1. Encryption to/from the coordinate servers.
-
-   It would be smart to encrypt the queries and responses, to at least
-   limit the exposure. This could be done simply by running a Tor server
-   nearby each geoip service, and asking for the address
-
-       geoip.vidalia-project.net.foo.exit:80
-
-   Of course, this approach introduces more points of failure. A more
-   complex scheme would be for Vidalia to check first whether the
-   preferred exit server is running, and modify the address only when
-   it is.
-
-3.2. Tor servers could include geoip data in network statuses.
+3.1. Tor servers could include geoip data in network statuses.
 
    Rather than having separate geoip services that Vidalia maintains,
    we could instead integrate the geoip data into the Tor network
@@ -164,7 +142,7 @@ $Id$
    the bandwidth overhead of network-status downloads -- rather than
    caching the geoip information, users would fetch it at every update.
 
-3.3. Map networks, not individual IP addresses.
+3.2. Map networks, not individual IP addresses.
 
    We should stop mapping individual IP addresses. For servers that have
    dynamic IP addresses, we end up with something like
@@ -182,7 +160,7 @@ $Id$
    address. In the absence of such a database, simply matching on /24 
    might be easiest and sufficient.
 
-3.4. What else is geoip information for?
+3.3. What else is geoip information for?
 
    What other uses do we have for this information? Is it only useful
    for drawing maps of the Tor network?
