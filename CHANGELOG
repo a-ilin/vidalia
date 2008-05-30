@@ -1,3 +1,8 @@
+0.1.4   xx-xxx-2008
+  o Respond to mouse wheel events on the network map by zooming in or out on
+    the map image. Patch from Vern Sun.
+
+
 0.1.3   25-May-2008
   o Added a hidden service configuration UI designed and implemented by
     Domenik Bork.

@@ -362,3 +362,12 @@ ZImageView::mouseMoveEvent(QMouseEvent *e)
   }
 }
 
+void
+ZImageView::wheelEvent(QWheelEvent *e)
+{
+  if (e->delta() > 0) {
+    zoomIn();
+  } else {
+    zoomOut();
+  }
+}
