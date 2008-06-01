@@ -83,6 +83,7 @@
     </qresource>
     <qresource prefix="/images">
         <file>48x48/applications-internet.png</file>
+        <file>48x48/modem.png</file>
         <file>48x48/network-server.png</file>
         <file>48x48/start-tor.png</file>
         <file>48x48/stop-tor.png</file>

@@ -1,0 +1,100 @@
+<ui version="4.0" >
+ <class>UPNPTestDialog</class>
+ <widget class="QDialog" name="UPNPTestDialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>389</width>
+    <height>150</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Testing UPnP Support</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="../res/vidalia_common.qrc" >:/images/48x48/modem.png</iconset>
+  </property>
+  <property name="modal" >
+   <bool>true</bool>
+  </property>
+  <widget class="QDialogButtonBox" name="buttonBox" >
+   <property name="geometry" >
+    <rect>
+     <x>30</x>
+     <y>110</y>
+     <width>341</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="orientation" >
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <property name="standardButtons" >
+    <set>QDialogButtonBox::Close|QDialogButtonBox::Retry</set>
+   </property>
+   <property name="centerButtons" >
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QProgressBar" name="progressBar" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>60</y>
+     <width>351</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="value" >
+    <number>24</number>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblUpnpPixmap" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>51</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string/>
+   </property>
+   <property name="pixmap" >
+    <pixmap resource="../res/vidalia_common.qrc" >:/images/48x48/modem.png</pixmap>
+   </property>
+  </widget>
+  <widget class="Line" name="line" >
+   <property name="geometry" >
+    <rect>
+     <x>20</x>
+     <y>90</y>
+     <width>351</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="orientation" >
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="lblCurrentState" >
+   <property name="geometry" >
+    <rect>
+     <x>80</x>
+     <y>30</y>
+     <width>291</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text" >
+    <string>Testing Universal Plug &amp; Play Support</string>
+   </property>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../res/vidalia_common.qrc" />
+ </resources>
+ <connections />
+</ui>

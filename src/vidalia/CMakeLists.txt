@@ -94,10 +94,12 @@ if (USE_MINIUPNPC)
   set(vidalia_SRCS ${vidalia_SRCS}
     config/upnpcontrol.cpp
     config/upnpcontrolthread.cpp
+    config/upnptestdialog.cpp
   )
   qt4_wrap_cpp(vidalia_SRCS
     config/upnpcontrol.h
     config/upnpcontrolthread.h
+    config/upnptestdialog.h
   )
 endif(USE_MINIUPNPC)
 
@@ -204,6 +206,9 @@ qt4_wrap_ui(vidalia_SRCS
   log/messagelog.ui
   network/netviewer.ui
 )
+if (USE_MINIUPNPC)
+  qt4_wrap_ui(vidalia_SRCS config/upnptestdialog.ui)
+endif(USE_MINIUPNPC)
 
 ## Add the resource files (icons, etc.)
 qt4_add_resources(vidalia_SRCS
