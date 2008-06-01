@@ -93,9 +93,11 @@ if (USE_MINIUPNPC)
   include_directories(${MINIUPNPC_INCLUDE_DIR})
   set(vidalia_SRCS ${vidalia_SRCS}
     config/upnpcontrol.cpp
+    config/upnpcontrolthread.cpp
   )
   qt4_wrap_cpp(vidalia_SRCS
     config/upnpcontrol.h
+    config/upnpcontrolthread.h
   )
 endif(USE_MINIUPNPC)
 
@@ -257,7 +259,7 @@ target_link_libraries(${vidalia_BIN}
   torcontrol
 )
 if (USE_MINIUPNPC)
-  target_link_libraries(${vidalia_BIN} ${MINIUPNPC_LIBRARY})
+  target_link_libraries(${vidalia_BIN} miniupnpc)
 endif(USE_MINIUPNPC)
 
 if (MINGW)

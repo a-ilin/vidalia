@@ -16,109 +16,149 @@
 
 #include "upnpcontrol.h"
 
-UPNPControl* UPNPControl::pInstance = 0;
-UPNPControl* UPNPControl::Instance()
+#include <QMutex>
+#include <QMetaType>
+
+#ifdef Q_OS_WIN32
+#include <winsock2.h>
+#endif
+
+#include "upnpcontrolthread.h"
+
+/** UPNPControl singleton instance. */
+UPNPControl* UPNPControl::_instance = 0;
+
+/** Returns a pointer to this object's singleton instance. */
+UPNPControl* UPNPControl::instance()
 {
-  if (0 == pInstance)
-    pInstance = new UPNPControl;
-  return pInstance;
+  if (0 == _instance)
+    _instance = new UPNPControl;
+  return _instance;
 }
 
+/** Constructor. Initializes and starts a thread in which all blocking UPnP
+ * operations will be performed. */
 UPNPControl::UPNPControl()
 {
-  init_upnp();
-  forwardedPort = 0;
+  _forwardedORPort = 0;
+  _forwardedDirPort = 0;
+  _error = UnknownError;
+  _state = IdleState;
+  
+  qRegisterMetaType<UPNPControl::UPNPError>("UPNPControl::UPNPError");
+  qRegisterMetaType<UPNPControl::UPNPState>("UPNPControl::UPNPState");
+
+  _mutex = new QMutex();
+  _controlThread = new UPNPControlThread(this);
+  _controlThread->start();
 }
 
-int
-UPNPControl::forwardPort(quint16 port)
+/** Destructor. cleanup() should be called before the object is destroyed.
+ * \sa cleanup()
+ */
+UPNPControl::~UPNPControl()
 {
-  int retval;
-  
-  char sPort[6];
-  
-  char intClient[16];
-  char intPort[6];
-
-  // Convert the port number to a string
-  snprintf(sPort, sizeof(sPort), "%d", port);
-
-  // Add the port mapping of external:port -> internal:port
-  retval = UPNP_AddPortMapping(urls.controlURL, data.servicetype,
-			       sPort, sPort, lanaddr, "Tor server", "TCP");
-  if(UPNPCOMMAND_SUCCESS != retval) {
-    printf("AddPortMapping(%s, %s, %s) failed with code %d\n",
-	   sPort, sPort, lanaddr, retval);
-    return 1;
-  }
-  
-  // Check if the port mapping was accepted
-  retval = UPNP_GetSpecificPortMappingEntry(urls.controlURL,
-					    data.servicetype,
-					    sPort, "TCP",
-					    intClient, intPort);
-  if(UPNPCOMMAND_SUCCESS != retval) {
-    printf("GetSpecificPortMappingEntry() failed with code %d\n", retval);
-    return 2;
-  }
-  
-  if(! intClient[0]) {
-    printf("GetSpecificPortMappingEntry failed.\n");
-    return 3;
-  }
-  
-  // Output the mapping
-  printf("(external):%s -> %s:%s\n", sPort, intClient, intPort);
-  fflush(stdout);
-
-  // Save the mapping
-  forwardedPort = port;
-
-  return 0;
+  delete _mutex;
+  delete _controlThread;
 }
 
-int
-UPNPControl::disableForwarding()
-{
-  char sPort[6];
-
-  if (0 == forwardedPort)
-    return 0;
-
-  // Convert the port number to a string
-  snprintf(sPort, sizeof(sPort), "%d", forwardedPort);
-
-  int retval = UPNP_DeletePortMapping(urls.controlURL, data.servicetype, sPort, "TCP");
-  if(UPNPCOMMAND_SUCCESS != retval) {
-    printf("DeletePortMapping() failed with code %d\n", retval);
-    return 1;
-  }
-
-  // Output the cancelled mapping
-  printf("(external):%s -> <>\n", sPort);
-  fflush(stdout);
-
-  // Save the mapping
-  forwardedPort = 0;
-
-  return 0;
-}
-
-
-/** Based on http://miniupnp.free.fr/files/download.php?file=xchat-upnp20061022.patch */
+/** Terminates the UPnP control thread and frees memory allocated to this
+ * object's singleton instance. */
 void
-UPNPControl::init_upnp()
+UPNPControl::cleanup()
 {
-  struct UPNPDev * devlist;
-  int retval;
+  _instance->_controlThread->stop();
+  delete _instance;
+  _instance = 0;
+}  
 
-  memset(&urls, 0, sizeof(struct UPNPUrls));
-  memset(&data, 0, sizeof(struct IGDdatas));
-
-  devlist = upnpDiscover(2000, NULL, NULL);
-  retval = UPNP_GetValidIGD(devlist, &urls, &data, lanaddr, sizeof(lanaddr));
-  printf("GetValidIGD returned: %d\n", retval);
-  fflush(stdout);
-
-  freeUPNPDevlist(devlist);
+/** Sets <b>desiredDirPort</b> and <b>desiredOrPort</b> to the currently
+ * forwarded DirPort and ORPort values. */
+void
+UPNPControl::getDesiredState(quint16 *desiredDirPort, quint16 *desiredOrPort)
+{
+  _mutex->lock();
+  *desiredDirPort = _forwardedDirPort;
+  *desiredOrPort = _forwardedORPort;
+  _mutex->unlock();
 }
+
+/** Sets the desired DirPort and ORPort port mappings to <b>desiredDirPort</b>
+ * and <b>desiredOrPort</b>, respectively. */
+void
+UPNPControl::setDesiredState(quint16 desiredDirPort, quint16 desiredOrPort)
+{
+  _mutex->lock();
+  _forwardedDirPort = desiredDirPort;
+  _forwardedORPort = desiredOrPort;
+  _mutex->unlock();
+  
+  _controlThread->wakeup();
+}
+
+/** Sets the most recent UPnP-related error to <b>error</b> and emits the
+ * error() signal. */
+void
+UPNPControl::setError(UPNPError upnpError)
+{
+  _mutex->lock();
+  _error = upnpError;
+  _mutex->unlock();
+  
+  emit error(upnpError);
+}
+
+/** Sets the current UPnP state to <b>state</b> and emits the stateChanged()
+ * signal. */
+void
+UPNPControl::setState(UPNPState state)
+{
+  _mutex->lock();
+  _state = state;
+  _mutex->unlock();
+
+  emit stateChanged(state);
+}
+
+/** Returns the type of error that occurred last. */
+UPNPControl::UPNPError
+UPNPControl::error() const
+{
+  QMutexLocker locker(_mutex);
+  return _error;
+}
+
+/** Returns a QString describing the type of error that occurred last. */
+QString
+UPNPControl::errorString() const
+{
+  UPNPError error = this->error();
+
+  switch (error) {
+    case Success:
+      return tr("Success");
+    case NoUPNPDevicesFound:
+      return tr("No UPnP-enabled devices found");
+    case NoValidIGDsFound:
+      return tr("No valid UPnP-enabled Internet gateway devices found");
+    case WSAStartupFailed:
+      return tr("WSAStartup failed");
+    case AddPortMappingFailed:
+      return tr("Failed to add a port mapping");
+    case GetPortMappingFailed:
+      return tr("Failed to retrieve a port mapping");
+    case DeletePortMappingFailed:
+      return tr("Failed to remove a port mapping");
+    default:
+      return tr("Unknown error");
+  }
+}
+
+/** Returns the number of milliseconds to wait for devices to respond
+ * when attempting to discover UPnP-enabled IGDs. */
+int
+UPNPControl::discoverTimeout() const
+{
+  return UPNPControlThread::UPNPCONTROL_DISCOVER_TIMEOUT;
+}
+

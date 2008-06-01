@@ -18,35 +18,97 @@
 #define _UPNPCONTROL_H
 
 #include <QObject>
+#include <QMutex>
 
-#define STATICLIB
-#include <miniupnpc/miniwget.h>
-#include <miniupnpc/miniupnpc.h>
-#include <miniupnpc/upnpcommands.h>
+/* Forward declaration to make it build */
+class UPNPControlThread;
+
 
 class UPNPControl : public QObject
 {
   Q_OBJECT
 
 public:
-  static UPNPControl* Instance();
-  int forwardPort(quint16 port);
-  int disableForwarding();
+  /** UPnP-related error values. */
+  enum UPNPError {
+    Success,
+    NoUPNPDevicesFound,
+    NoValidIGDsFound,
+    WSAStartupFailed,
+    AddPortMappingFailed,
+    GetPortMappingFailed,
+    DeletePortMappingFailed,
+    UnknownError
+  };
+  /** UPnP port forwarding state. */
+  enum UPNPState {
+    IdleState,
+    ErrorState, 
+    DiscoverState,
+    UpdatingORPortState,
+    UpdatingDirPortState,
+    ForwardingCompleteState
+  };
+
+  /** Returns a pointer to this object's singleton instance. */
+  static UPNPControl* instance();
+  /** Terminates the UPnP control thread and frees memory allocated to this
+   * object's singleton instance. */
+  static void cleanup();
+  /** Sets <b>desiredDirPort</b> and <b>desiredOrPort</b> to the currently
+   * forwarded DirPort and ORPort values. */
+  void getDesiredState(quint16 *desiredDirPort, quint16 *desiredOrPort);
+  /** Sets the desired DirPort and ORPort port mappings to
+   * <b>desiredDirPort</b> and <b>desiredOrPort</b>, respectively. */
+  void setDesiredState(quint16 desiredDirPort, quint16 desiredOrPort);
+
+  /** Returns the type of error that occurred last. */
+  UPNPError error() const;
+  /** Returns a QString describing the type of error that occurred last. */
+  QString errorString() const;
+
+  /** Returns the number of milliseconds to wait for devices to respond
+   * when attempting to discover UPnP-enabled IGDs. */
+  int discoverTimeout() const;
+
+signals:
+  /** Emitted when the UPnP control thread status changes. */
+  void stateChanged(UPNPControl::UPNPState state);
+  
+  /** Emitted when a UPnP error occurs. */
+  void error(UPNPControl::UPNPError error);
+ 
 protected:
+  /** Constructor. Initializes and starts a thread in which all blocking UPnP
+   * operations will be performed. */
   UPNPControl();
+  /** Destructor. cleanup() should be called before the object is destroyed. */
+  ~UPNPControl();
+
+  /** Sets the most recent UPnP-related error to <b>error</b> and emits the
+   * error() signal.
+   * \sa error
+   */
+  void setError(UPNPError error);
+  
+  /** Sets the current UPnP state to <b>state</b> and emits the stateChanged()
+   * signal.
+   * \sa stateChanged
+   */
+  void setState(UPNPState state);
+
 private:
-  static UPNPControl* pInstance;
+  static UPNPControl* _instance; /**< UPNPControl singleton instance. */
 
-  /** Used by miniupnpc library */
-  struct UPNPUrls urls;
-  struct IGDdatas data;
-  char lanaddr[16];
-  void init_upnp();
-  void upnp_add_redir (const char * addr, int port);
-  void upnp_rem_redir(int port);
+  quint16 _forwardedORPort; /**< Currently forwarded ORPort. */
+  quint16 _forwardedDirPort; /**< Currently forwarded DirPort. */
+  QMutex* _mutex; /**< Mutex around variables shared with UPNPControlThread. */
+  UPNPError _error; /**< Most recent UPNP error. */
+  UPNPState _state; /**< Current UPNP status. */
 
-  /* Currently forwarded port */
-  quint16 forwardedPort;
+  friend class UPNPControlThread;
+  UPNPControlThread* _controlThread; /**< Thread used for UPnP operations. */
 };
 
-#endif 
+#endif
+

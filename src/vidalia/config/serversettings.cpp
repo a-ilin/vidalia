@@ -43,6 +43,7 @@
 #define SETTING_BANDWIDTH_RATE  "BandwidthRate"
 #define SETTING_BANDWIDTH_BURST "BandwidthBurst"
 #define SETTING_BRIDGE_RELAY    "BridgeRelay"
+#define SETTING_ENABLE_UPNP     "EnableUPnP"
 #define SETTING_RELAY_BANDWIDTH_RATE   "RelayBandwidthRate"
 #define SETTING_RELAY_BANDWIDTH_BURST  "RelayBandwidthBurst"
 #define SETTING_PUBLISH_DESCRIPTOR     "PublishServerDescriptor"
@@ -72,6 +73,7 @@ ServerSettings::ServerSettings(TorControl *torControl)
   setDefault(SETTING_PUBLISH_DESCRIPTOR,    "1");
   setDefault(SETTING_EXITPOLICY,
     ExitPolicy(ExitPolicy::Default).toString());
+  setDefault(SETTING_ENABLE_UPNP, false); 
 }
 
 /** Returns a QHash of Tor-recognizable configuratin keys to their current
@@ -134,10 +136,9 @@ ServerSettings::apply(QString *errmsg)
 {
   bool rc;
 
+  configurePortForwarding();
+
   if (isServerEnabled()) {
-    /* Configure UPnP device to forward DirPort and OrPort */
-    /* TODO: does isServerEnabled() return true when a server is just set up? */
-    configurePortForwarding(true);
     rc = torControl()->setConf(confValues(), errmsg);
   } else { 
     QStringList resetKeys;
@@ -156,7 +157,6 @@ ServerSettings::apply(QString *errmsg)
                 << SETTING_BANDWIDTH_BURST;
     }
     rc = torControl()->resetConf(resetKeys, errmsg);
-    configurePortForwarding(false);
   }
   return rc;
 }
@@ -164,18 +164,39 @@ ServerSettings::apply(QString *errmsg)
 /* TODO: We should call this periodically, in case the router gets rebooted or forgets its UPnP settings */
 /* TODO: Remove port forwarding when Tor is shutdown or the ORPort changes */
 /* TODO: init_upnp() will block for up to 2 seconds. We should fire off a thread */
-/** Configure UPnP device to forward DirPort and ORPort */
+
+/** Configure UPnP device to forward DirPort and ORPort. If enable is
+true, will forward ORPort and DirPort; otherwise will remove exising
+port mappings */
 void
-ServerSettings::configurePortForwarding(bool enable)
+ServerSettings::configurePortForwarding()
 {
 #ifdef USE_MINIUPNPC
-  UPNPControl *pUNPControl = UPNPControl::Instance();
+  quint16 ORPort, DirPort;
+  bool enableORPort, enableDirPort;
 
-  if (enable) {
-    pUNPControl->forwardPort(getORPort());
-  } else {
-    pUNPControl->disableForwarding();
-  }
+  // This is how the tickbox should control UPNP
+  if (!isUpnpEnabled())
+    return;
+
+  ORPort = getORPort();
+  if (!isServerEnabled())
+    ORPort = 0;
+
+  DirPort = getDirPort();
+  if (!isServerEnabled() || !isDirectoryMirror())
+    DirPort = 0;
+
+  UPNPControl *control = UPNPControl::instance();
+  control->setDesiredState(DirPort, ORPort);
+#endif
+}
+
+void
+ServerSettings::cleanupPortForwarding()
+{
+#ifdef USE_MINIUPNPC
+  UPNPControl::cleanup();
 #endif
 }
 
@@ -346,5 +367,26 @@ void
 ServerSettings::setBandwidthBurstRate(quint32 rate)
 {
   setValue(SETTING_BANDWIDTH_BURST, rate);
+}
+
+/** Returns true if UPnP support is available and enabled. */
+bool
+ServerSettings::isUpnpEnabled()
+{
+#if defined(USE_MINIUPNPC)
+  return localValue(SETTING_ENABLE_UPNP).toBool();
+#else
+  return false;
+#endif
+}
+
+/** Sets whether Vidalia should try to configure port forwarding using UPnP.
+ * If Vidalia was compiled without UPnP support, this method has no effect. */
+void
+ServerSettings::setUpnpEnabled(bool enabled)
+{
+#if defined(USE_MINIUPNPC)
+  setValue(SETTING_ENABLE_UPNP, enabled);
+#endif
 }
 

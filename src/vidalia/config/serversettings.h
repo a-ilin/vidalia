@@ -82,6 +82,16 @@ public:
   /** Gets the maximum burst rate (in B/s) of this server. */
   quint32 getBandwidthBurstRate();
 
+  /** Configure port forwarding. */
+  void configurePortForwarding();
+
+  void cleanupPortForwarding();
+
+  /** Returns true if UPnP support is enabled. */
+  bool isUpnpEnabled();
+  /** Sets whether Vidalia should try to configure port forwarding using UPnP. */
+  void setUpnpEnabled(bool enabled);
+
 protected:
   /** Virtual method called when we retrieve a server-related setting from Tor.
    * Currently this just translates BandwidthFoo to RelayBandwidthFoo when
@@ -91,9 +101,6 @@ protected:
 private:
   /** Returns Tor-recognizable configuration keys and current values. */
   QHash<QString,QString> confValues();
-
-  /** Configure UPnP device to forward DirPort and ORPort */
-  void configurePortForwarding(bool enable);
 };
 
 #endif
