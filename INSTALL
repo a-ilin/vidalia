@@ -183,6 +183,8 @@ the command line and follows the format "-D <var>:<type>=<value>
   -DUSE_QSSLSOCKET=0                      Disable building Vidalia with SSL
                                           support.
 
+  -DUSE_MINIUPNPC=1                       Build Vidalia with UPnP support.
+
   -DOSX_FAT_BINARY=1                      Build Vidalia as a Universal binary.
 
   -DQT_QMAKE_EXECUTABLE=/path/to/qmake    Specifies the location of Qt's
@@ -205,9 +207,4 @@ Don't forget the dot at the end!
 CMake also supports other generators besides Makefiles on certain platforms. See 
 'cmake --help' or 'man cmake' (on non-Windows platforms) for more information
 about supported generators and configuration options.
-
-Including UPnP support
-----------------------
-
-cmake -G "MSYS Makefiles" -DMINIUPNPC_LIBRARY_DIR="/usr/local/lib" -DMINIUPNPC_INCLUDE_DIR="/usr/local/include" .
 

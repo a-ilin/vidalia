@@ -70,9 +70,6 @@ endif(USE_QSSLSOCKET)
 
 ## UPnP support is currently optional (disabled by default)
 option(USE_MINIUPNPC "Enable UPnP support using the MiniUPnPc library." OFF)
-if (USE_MINIUPNPC)
-  include(${CMAKE_SOURCE_DIR}/cmake/FindMiniUPnPc.cmake)
-endif(USE_MINIUPNPC)
 
 ## Check for system header files
 check_include_file("limits.h" HAVE_LIMITS_H)

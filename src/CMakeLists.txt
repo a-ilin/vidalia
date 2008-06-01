@@ -34,6 +34,12 @@ if (WIN32)
   endif(NOT QT_CONFIG MATCHES "static")
 endif(WIN32)
 
+if (USE_MINIUPNPC)
+  include_directories(${CMAKE_CURRENT_SOURCE_DIR}/miniupnpc)
+  link_directories(${CMAKE_CURRENT_BINARY_DIR}/miniupnpc)
+  add_subdirectory(miniupnpc)
+endif(USE_MINIUPNPC)
+
 add_subdirectory(torcontrol)
 add_subdirectory(common)
 add_subdirectory(vidalia)
