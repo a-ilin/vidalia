@@ -28,10 +28,8 @@
 #include <clientstatusevent.h>
 #include <dangerousversionevent.h>
 #include <vmessagebox.h>
-#include "config.h"
 
 #include "mainwindow.h"
-
 
 #define IMG_BWGRAPH        ":/images/16x16/utilities-system-monitor.png"
 #define IMG_CONTROL_PANEL  ":/images/16x16/preferences-desktop.png"
@@ -142,7 +140,13 @@ MainWindow::MainWindow()
   /* Catch signals when the application is running or shutting down */
   connect(vApp, SIGNAL(running()), this, SLOT(running()));
   connect(vApp, SIGNAL(shutdown()), this, SLOT(shutdown()));
- 
+
+#if defined(USE_MINIUPNPC)
+  /* Catch UPnP-related signals */
+  connect(UPNPControl::instance(), SIGNAL(error(UPNPControl::UPNPError)),
+         this, SLOT(upnpError(UPNPControl::UPNPError)));
+#endif
+
   if (TrayIcon::isTrayIconSupported()) {
     /* Make the tray icon visible */
     _trayIcon.show();
@@ -226,6 +230,10 @@ MainWindow::shutdown()
     /* Kill our Tor process now */ 
     _torControl->stop();
   }
+
+  /* Disable port forwarding */
+  ServerSettings settings(_torControl);
+  settings.cleanupPortForwarding();
 
   if (_proxyProcess->state() != QProcess::NotRunning) {
     /* Close the proxy server (Polipo ignores the WM_CLOSE event sent by
@@ -908,7 +916,10 @@ MainWindow::authenticated()
          + p(errmsg),
       VMessageBox::Ok);
   }
-  
+
+  /* Configure UPnP port forwarding if needed */
+  serverSettings.configurePortForwarding();
+
   /* Check if Tor has a circuit established */
   if (_torControl->circuitEstablished())
     circuitEstablished();
@@ -1167,4 +1178,25 @@ MainWindow::toString(TorStatus status)
   return "Unknown";
 }
 
+#if defined(USE_MINIUPNPC)
+/** Called when a UPnP error occurs. */
+void
+MainWindow::upnpError(UPNPControl::UPNPError error)
+{
+  Q_UNUSED(error);
+
+#if 0
+  /* XXX: Is there a better way to do this? Currently, this could get called
+   * if there is an error when testing UPnP support, and again when attempting
+   * to reset the UPnP state when the test dialog is closed. The user would
+   * not be amused with all the warning dialogs. */
+
+  VMessageBox::warning(this,
+    tr("Port Forwarding Failed"),
+    p(tr("Vidalia was unable to configure automatic port forwarding."))
+      + p(UPNPControl::Instance()->errorString()),
+    VMessageBox::Ok);
+#endif
+}
+#endif
 

@@ -18,6 +18,7 @@
 #include <vidalia.h>
 #include <vmessagebox.h>
 #include <html.h>
+#include <config.h>
 
 #include "configdialog.h"
 #include "serverpage.h"
@@ -25,6 +26,10 @@
 #include "portvalidator.h"
 #include "domainvalidator.h"
 #include "nicknamevalidator.h"
+
+#if defined(USE_MINIUPNPC)
+#include "upnptestdialog.h"
+#endif
 
 /* These are completely made up values (in bytes/sec). */
 #define CABLE256_AVG_RATE       (32*1024)
@@ -98,6 +103,13 @@ ServerPage::ServerPage(QWidget *parent)
     new QIntValidator(MIN_BANDWIDTH_RATE, MAX_BANDWIDTH_RATE, this));
   ui.lineMaxRateLimit->setValidator(
     new QIntValidator(MIN_BANDWIDTH_RATE, MAX_BANDWIDTH_RATE, this));
+
+#if defined(USE_MINIUPNPC)
+  connect(ui.btnTestUpnp, SIGNAL(clicked()), this, SLOT(testUpnp()));
+#else
+  ui.chkEnableUpnp->setVisible(false);
+  ui.btnTestUpnp->setVisible(false);
+#endif
 }
 
 /** Destructor */
@@ -266,7 +278,11 @@ ServerPage::save(QString &errmsg)
   _settings->setContactInfo(ui.lineServerContact->text());
   saveBandwidthLimits();
   saveExitPolicies();
-  
+
+#if defined(USE_MINIUPNPC)
+  _settings->setUpnpEnabled(ui.chkEnableUpnp->isChecked());
+#endif
+
   return true;
 }
 
@@ -290,6 +306,10 @@ ServerPage::load()
   loadBandwidthLimits();
   loadExitPolicies();
   loadBridgeIdentity();
+
+#if defined(USE_MINIUPNPC)
+  ui.chkEnableUpnp->setChecked(_settings->isUpnpEnabled());
+#endif
 }
 
 /** Shows exit policy related help information */
@@ -478,5 +498,17 @@ ServerPage::customRateChanged()
   if (burstRate > MAX_BANDWIDTH_RATE) {
     ui.lineMaxRateLimit->setText(QString::number(MAX_BANDWIDTH_RATE));
   }
+}
+
+/** Tests automatic port forwarding using UPnP. */
+void
+ServerPage::testUpnp()
+{
+#if defined(USE_MINIUPNPC)
+  UPNPTestDialog dlg(ui.lineServerPort->text().toUInt(),
+                     ui.lineDirPort->text().toUInt(), this);
+
+  dlg.exec();
+#endif
 }
 

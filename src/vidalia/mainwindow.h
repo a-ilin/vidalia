@@ -30,7 +30,11 @@
 #include "network/netviewer.h"
 #include "ui_mainwindow.h"
 #include "helperprocess.h"
+#include "config.h"
 
+#if defined(USE_MINIUPNPC)
+#include "config/upnpcontrol.h"
+#endif
 
 class MainWindow : public VidaliaWindow
 {
@@ -103,7 +107,12 @@ private slots:
   void onBrowserFailed(QString errmsg);
   /** Called when the proxy server fails to start */
   void onProxyFailed(QString errmsg);
-  
+
+#if defined(USE_MINIUPNPC)
+  /** Called when a UPnP error occurs. */
+  void upnpError(UPNPControl::UPNPError error);
+#endif
+
 private:
   enum TorStatus {
     Unset,      /**< Tor's status has not yet been set. */

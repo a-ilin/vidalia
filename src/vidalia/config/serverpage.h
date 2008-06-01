@@ -61,8 +61,8 @@ private slots:
   void bandwidthHelp();
   /** Called when the user clicks the exit policy help button */
   void exitPolicyHelp();
-	/** Called when the user selects a new value from the rate combo box */
-	void rateChanged(int rate);
+  /** Called when the user selects a new value from the rate combo box */
+  void rateChanged(int rate);
   /** Called when the user edits the max or average bandwidth limits. */
   void customRateChanged();
   /** Called when Vidalia has authenticated to Tor. If the user's Tor is not
@@ -74,6 +74,8 @@ private slots:
   void onDisconnected();
   /** Copies the user's bridge relay identity to the clipboard. */
   void copyBridgeIdentity();
+  /** Tests automatic port forwarding with UPnP. */
+  void testUpnp();
 
 private:
   /** Index values of rate values in the bandwidth limits dropdown box. */
