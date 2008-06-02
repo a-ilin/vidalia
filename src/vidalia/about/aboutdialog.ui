@@ -25,7 +25,7 @@
    <string>About Vidalia</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="../res/vidalia_common.qrc" >:/images/32x32/tor-logo.png</iconset>
+   <iconset resource="../res/vidalia_common.qrc" >:/images/32x32/help-about.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget" >
    <layout class="QGridLayout" >

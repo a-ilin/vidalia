@@ -380,7 +380,7 @@
                  <string>View version and license information</string>
                 </property>
                 <property name="pixmap" >
-                 <pixmap>:/images/16x16/tor-logo.png</pixmap>
+                 <pixmap>:/images/16x16/help-about.png</pixmap>
                 </property>
                </widget>
               </item>

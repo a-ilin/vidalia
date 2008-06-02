@@ -13,6 +13,7 @@
         <file>16x16/go-previous.png</file>
         <file>16x16/graph-area.png</file>
         <file>16x16/graph-line.png</file>
+        <file>16x16/help-about.png</file>
         <file>16x16/help-browser.png</file>
         <file>16x16/msg-debug.png</file>
         <file>16x16/msg-error.png</file>
@@ -71,6 +72,7 @@
     <qresource prefix="/images">
         <file>32x32/applications-internet.png</file>
         <file>32x32/format-justify-fill.png</file>
+        <file>32x32/help-about.png</file>
         <file>32x32/help-browser.png</file>
         <file>32x32/preferences-system.png</file>
         <file>32x32/process-working.png</file>

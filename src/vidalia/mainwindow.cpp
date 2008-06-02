@@ -37,7 +37,7 @@
 #define IMG_CONFIG         ":/images/16x16/preferences-system.png"
 #define IMG_IDENTITY       ":/images/16x16/system-users.png"
 #define IMG_HELP           ":/images/16x16/help-browser.png"
-#define IMG_ABOUT          ":/images/16x16/tor-logo.png"
+#define IMG_ABOUT          ":/images/16x16/help-about.png"
 #define IMG_EXIT           ":/images/16x16/emblem-unreadable.png"
 #define IMG_NETWORK        ":/images/16x16/applications-internet.png"
 
