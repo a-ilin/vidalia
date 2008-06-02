@@ -23,9 +23,9 @@ class ServiceSettings : private VidaliaSettings
 public:
   /** Constructor */
   ServiceSettings(TorControl *torControl);
-  /** Returns the service port for a specififc service*/
+  /** Returns the service port for a specific service*/
   QString getVirtualPort();
-  /** Set the service port for a specififc service*/
+  /** Set the service port for a specific service*/
   void setVirtualPort(QString servicePort);
   /** Returns the .onion - service address for a specific service */
   QString getServiceAddress();

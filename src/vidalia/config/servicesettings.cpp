@@ -78,7 +78,7 @@ ServiceSettings::getServices()
   return services;
 }
 
-/** Returns the virtual port for a specififc service*/
+/** Returns the virtual port for a specific service*/
 QString
 ServiceSettings::getVirtualPort()
 {
@@ -86,7 +86,7 @@ ServiceSettings::getVirtualPort()
   return port;
 }
 
-/** Set the virtual port for a specififc service*/
+/** Set the virtual port for a specific service*/
 void
 ServiceSettings::setVirtualPort(QString servicePort)
 {
