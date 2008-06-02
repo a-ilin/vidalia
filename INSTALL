@@ -183,7 +183,7 @@ the command line and follows the format "-D <var>:<type>=<value>
   -DUSE_QSSLSOCKET=0                      Disable building Vidalia with SSL
                                           support.
 
-  -DUSE_MINIUPNPC=1                       Build Vidalia with UPnP support.
+  -DUSE_MINIUPNPC=0                       Disable UPnP support in Vidalia.
 
   -DOSX_FAT_BINARY=1                      Build Vidalia as a Universal binary.
 

@@ -68,8 +68,8 @@ if (USE_QSSLSOCKET)
   endif(MSVC OR UNIX)
 endif(USE_QSSLSOCKET)
 
-## UPnP support is currently optional (disabled by default)
-option(USE_MINIUPNPC "Enable UPnP support using the MiniUPnPc library." OFF)
+## UPnP support is currently optional (enabled by default)
+option(USE_MINIUPNPC "Enable UPnP support using the MiniUPnPc library." ON)
 
 ## Check for system header files
 check_include_file("limits.h" HAVE_LIMITS_H)
