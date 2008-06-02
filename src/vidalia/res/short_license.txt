@@ -2,6 +2,10 @@ This product is produced independently from the Tor anonymity
 software and carries no guarantee from The Tor Project about
 quality, suitability or anything else.
 
+The Tor(TM) trademark and Tor Onion Logo are trademarks of
+The Tor Project. More information about the Tor project can be
+found at the Tor website, http://www.torproject.org/
+
 ===================================================================
 Vidalia is distributed under the following license:
  
