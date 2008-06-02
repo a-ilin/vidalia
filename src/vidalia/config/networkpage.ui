@@ -22,7 +22,7 @@
    <item>
     <widget class="QCheckBox" name="chkUseProxy" >
      <property name="toolTip" >
-      <string>Check to configure Tor to use a proxy to access the Internet</string>
+      <string>Check if your local network requires a proxy to access the Internet</string>
      </property>
      <property name="text" >
       <string>I use a proxy to access the Internet</string>
@@ -173,7 +173,7 @@
       <enum>Qt::NoContextMenu</enum>
      </property>
      <property name="toolTip" >
-      <string>Check to configure Tor to only connect to relays using ports allowed by your firewall</string>
+      <string>Check to only connect to relays using ports allowed by your firewall</string>
      </property>
      <property name="text" >
       <string>My firewall only lets me connect to certain ports</string>
@@ -232,7 +232,7 @@
    <item>
     <widget class="QCheckBox" name="chkUseBridges" >
      <property name="toolTip" >
-      <string>Check to configure Tor to encrypt its directory requests and, optionally, use bridge relays to access the Tor network</string>
+      <string>Check to encrypt directory requests and, optionally, use bridge relays to access the Tor network</string>
      </property>
      <property name="text" >
       <string>My ISP blocks connections to the Tor network</string>
@@ -259,7 +259,7 @@
       </size>
      </property>
      <property name="title" >
-      <string>Tor Bridge Settings</string>
+      <string>Bridge Settings</string>
      </property>
      <layout class="QVBoxLayout" >
       <property name="margin" >
@@ -271,7 +271,7 @@
       <item>
        <widget class="QLabel" name="lblNoBridgeSupport" >
         <property name="text" >
-         <string>The Tor version you are currently running does not support bridges. &lt;br>Tor will still try to encrypt its directory connections.</string>
+         <string>The Tor software you are currently running does not support bridges. &lt;br>Your directory connections will still be encrypted.</string>
         </property>
         <property name="alignment" >
          <set>Qt::AlignCenter</set>

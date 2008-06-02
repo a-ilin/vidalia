@@ -275,7 +275,7 @@ MainWindow::close()
 void 
 MainWindow::createActions()
 {
-  _startStopAct = new QAction(QIcon(IMG_START_TOR_16), tr("Start Tor"), this);
+  _startStopAct = new QAction(QIcon(IMG_START_TOR_16), tr("Start"), this);
   connect(_startStopAct, SIGNAL(triggered()), this, SLOT(start()));
 
   _exitAct = new QAction(QIcon(IMG_EXIT), tr("Exit"), this);
@@ -477,7 +477,7 @@ MainWindow::updateTorStatus(TorStatus status)
 
   if (status == Stopped) {
       statusText = tr("Tor is not running");
-      actionText = tr("Start Tor");
+      actionText = tr("Start");
       trayIconFile = IMG_TOR_STOPPED;
       statusIconFile = IMG_TOR_STOPPED_48;
       _startStopAct->setEnabled(true);
@@ -496,17 +496,17 @@ MainWindow::updateTorStatus(TorStatus status)
       connect(ui.lblStartStopTor, SIGNAL(clicked()), this, SLOT(start()));
   } else if (status == Stopping) {
       if (_delayedShutdownStarted) {
-        statusText = tr("Your Tor relay is shutting down.\n" 
-                        "Click 'Stop Tor' again to force Tor to stop now.");
+        statusText = tr("Your relay is shutting down.\n" 
+                        "Click 'Stop' again to stop your relay now.");
       } else {
         statusText = tr("Tor is shutting down");
       }
       trayIconFile = IMG_TOR_STOPPING;
       statusIconFile = IMG_TOR_STOPPING_48;
       
-      ui.lblStartStopTor->setStatusTip(tr("Stop Tor Now"));
+      ui.lblStartStopTor->setStatusTip(tr("Stop Now"));
   } else if (status == Started) {
-      actionText = tr("Stop Tor");
+      actionText = tr("Stop");
       _startStopAct->setEnabled(true);
       _startStopAct->setText(actionText);
       _startStopAct->setIcon(QIcon(IMG_STOP_TOR_16));
@@ -522,16 +522,16 @@ MainWindow::updateTorStatus(TorStatus status)
       connect(_startStopAct, SIGNAL(triggered()), this, SLOT(stop()));
       connect(ui.lblStartStopTor, SIGNAL(clicked()), this, SLOT(stop()));
   } else if (status == Starting)  {
-      statusText = tr("Tor is starting up");
+      statusText = tr("Starting up...");
       trayIconFile = IMG_TOR_STARTING;
       statusIconFile = IMG_TOR_STARTING_48;
       _startStopAct->setEnabled(false);
-      ui.lblStartStopTor->setText(tr("Starting Tor"));
+      ui.lblStartStopTor->setText(tr("Starting"));
       ui.lblStartStopTor->setEnabled(false);
       ui.lblStartStopTor->setStatusTip(statusText);
       ui.lblStartStopTor->setAnimation(QPixmap(ANIM_PROCESS_WORKING));
   } else if (status == CircuitEstablished) {
-      statusText = tr("Tor is running");
+      statusText = tr("Running");
       trayIconFile = IMG_TOR_RUNNING;
       statusIconFile = IMG_TOR_RUNNING_48;
   }
@@ -690,7 +690,7 @@ MainWindow::connectFailed(QString errmsg)
 {
   /* Ok, ok. It really isn't going to connect. I give up. */
   int response = VMessageBox::warning(this, 
-                   tr("Error Connecting to Tor"), p(errmsg),
+                   tr("Connection Error"), p(errmsg),
                    VMessageBox::Ok|VMessageBox::Default|VMessageBox::Escape, 
                    VMessageBox::Retry, VMessageBox::Help);
 
@@ -723,7 +723,7 @@ MainWindow::stop()
   if (server.isServerEnabled() && !_delayedShutdownStarted) {
     /* Ask the user if they want to shutdown nicely. */
     int response = VMessageBox::question(this, tr("Relaying is Enabled"),
-                     tr("You are currently running a Tor relay. "
+                     tr("You are currently running a relay. "
                         "Terminating your relay will interrupt any "
                         "open connections from clients.\n\n"
                         "Would you like to shutdown gracefully and "
@@ -749,8 +749,9 @@ MainWindow::stop()
   
   if (!rc) {
     /* We couldn't tell Tor to stop, for some reason. */
-    int response = VMessageBox::warning(this, tr("Error Stopping Tor"),
-                     p(tr("Vidalia was unable to stop Tor.")) + p(errmsg),
+    int response = VMessageBox::warning(this, tr("Error Shutting Down"),
+                     p(tr("Vidalia was unable to stop the Tor software.")) 
+                       + p(errmsg),
                      VMessageBox::Ok|VMessageBox::Default|VMessageBox::Escape, 
                      VMessageBox::Help);
       
@@ -780,10 +781,11 @@ MainWindow::stopped(int exitCode, QProcess::ExitStatus exitStatus)
      * SIGINT, Tor will exit(0). We might need to change this warning message
      * if this turns out to not be the case. */
     if (exitStatus == QProcess::CrashExit || exitCode != 0) {
-      int ret = VMessageBox::warning(this, tr("Tor Exited"),
-                  tr("Vidalia detected that Tor exited unexpectedly.\n\n"
-                     "Please check the message log for indicators "
-                     "about what happened to Tor before it exited."),
+      int ret = VMessageBox::warning(this, tr("Unexpected Error"),
+                  tr("Vidalia detected that the Tor software exited "
+                     "unexpectedly.\n\n"
+                     "Please check the message log for recent "
+                     "warning or error messages."),
                   VMessageBox::Ok|VMessageBox::Escape, 
                   VMessageBox::ShowLog|VMessageBox::Default,
                   VMessageBox::Help);
@@ -856,9 +858,9 @@ MainWindow::authenticate()
       /* Prompt the user to find their control_auth_cookie */
       int ret = VMessageBox::question(this,
                   tr("Cookie Authentication Required"),
-                  p(tr("Tor requires Vidalia to send the contents of an "
-                       "authentication cookie, but Vidalia was unable to "
-                       "find one."))
+                  p(tr("The Tor software requires Vidalia to send the "
+                       "contents of an authentication cookie, but Vidalia "
+                       "was unable to find one."))
                   + p(tr("Would you like to browse for the file "
                          "'control_auth_cookie' yourself?")),
                 VMessageBox::Browse|VMessageBox::Default,
@@ -867,9 +869,9 @@ MainWindow::authenticate()
       if (ret == VMessageBox::Cancel)
         goto cancel;
       QString cookieDir = QFileDialog::getOpenFileName(this,
-                            tr("Tor Data Directory"),
+                            tr("Data Directory"),
                             settings.getDataDirectory(),
-                            tr("Tor Control Cookie (control_auth_cookie)"));
+                            tr("Control Cookie (control_auth_cookie)"));
       if (cookieDir.isEmpty())
         goto cancel;
       cookieDir = QFileInfo(cookieDir).absolutePath();
@@ -911,7 +913,7 @@ MainWindow::authenticated()
   /* Register for any pertinent asynchronous events. */
   if (!_torControl->setEvents(&errmsg)) {
     VMessageBox::warning(this, tr("Error Registering for Events"),
-      p(tr("Vidalia was unable to register for Tor events. "
+      p(tr("Vidalia was unable to register for some events. "
            "Many of Vidalia's features may be unavailable."))
          + p(errmsg),
       VMessageBox::Ok);
@@ -956,8 +958,8 @@ MainWindow::authenticationFailed(QString errmsg)
   } else {
     /* Something else went wrong */
     int ret = VMessageBox::warning(this, 
-                tr("Error Authenticating to Tor"),
-                p(tr("Vidalia was unable to authenticate to Tor. "
+                tr("Authentication Error"),
+                p(tr("Vidalia was unable to authenticate to the Tor software. "
                      "(%1)").arg(errmsg)) + 
                 p(tr("Please check your control port authentication "
                      "settings.")),

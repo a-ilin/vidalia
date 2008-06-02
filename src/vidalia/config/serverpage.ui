@@ -22,7 +22,7 @@
    <item>
     <widget class="QRadioButton" name="rdoClientMode" >
      <property name="text" >
-      <string>Run Tor as a client only</string>
+      <string>Run as a client only</string>
      </property>
     </widget>
    </item>
@@ -107,7 +107,7 @@
              <enum>Qt::NoContextMenu</enum>
             </property>
             <property name="toolTip" >
-             <string>Enable to mirror the Tor relay directory</string>
+             <string>Enable to mirror the relay directory</string>
             </property>
             <property name="text" >
              <string>Mirror the Relay Directory </string>
@@ -944,7 +944,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
              <enum>Qt::NoContextMenu</enum>
             </property>
             <property name="text" >
-             <string>What Internet resources should Tor users be able to access from your Tor relay?</string>
+             <string>What Internet resources should users be able to access from your relay?</string>
             </property>
             <property name="wordWrap" >
              <bool>true</bool>
