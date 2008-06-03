@@ -33,7 +33,7 @@
    <string>Vidalia Control Panel</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="res/vidalia_common.qrc" >:/images/32x32/tor-logo.png</iconset>
+   <iconset resource="res/vidalia.qrc" >:/images/32x32/tor-logo.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget" >
    <layout class="QVBoxLayout" >
@@ -505,7 +505,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="res/vidalia_common.qrc" />
+  <include location="res/vidalia.qrc" />
  </resources>
  <connections>
   <connection>
