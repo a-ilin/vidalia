@@ -34,9 +34,9 @@
 #include "configdialog.h"
 
 /* Images for toolbar icons */
-#define IMAGE_GENERAL       ":/images/32x32/preferences-other.png"
+#define IMAGE_GENERAL       ":/images/32x32/preferences-system.png"
 #define IMAGE_NETWORK       ":/images/32x32/preferences-system-network.png"
-#define IMAGE_SERVER        ":/images/32x32/network-workgroup.png"
+#define IMAGE_SERVER        ":/images/32x32/preferences-system-network-sharing.png"
 #define IMAGE_APPEARANCE    ":/images/32x32/preferences-desktop-locale.png"
 #define IMAGE_ADVANCED      ":/images/32x32/applications-system.png"
 #define IMAGE_HELP          ":/images/32x32/system-help.png"

@@ -193,7 +193,7 @@
            <string>Set up a relay and help the network grow</string>
           </property>
           <property name="pixmap" >
-           <pixmap>:/images/48x48/network-workgroup.png</pixmap>
+           <pixmap>:/images/48x48/preferences-system-network-sharing.png</pixmap>
           </property>
          </widget>
         </item>
@@ -317,7 +317,7 @@
                  <string>View help documentation</string>
                 </property>
                 <property name="pixmap" >
-                 <pixmap>:/images/16x16/help-browser.png</pixmap>
+                 <pixmap>:/images/16x16/system-help.png</pixmap>
                 </property>
                </widget>
               </item>

@@ -54,7 +54,9 @@
         <file>32x32/network-workgroup.png</file>
         <file>32x32/preferences-desktop-locale.png</file>
         <file>32x32/preferences-other.png</file>
+        <file>32x32/preferences-system.png</file>
         <file>32x32/preferences-system-network.png</file>
+        <file>32x32/preferences-system-network-sharing.png</file>
         <file>32x32/services.png</file>
         <file>32x32/system-help.png</file>
         <file>32x32/tor-logo.png</file>
@@ -76,6 +78,7 @@
         <file>48x48/media-playback-stop.png</file>
         <file>48x48/modem.png</file>
         <file>48x48/network-workgroup.png</file>
+        <file>48x48/preferences-system-network-sharing.png</file>
         <file>48x48/tor-off.png</file>
         <file>48x48/tor-on.png</file>
         <file>48x48/tor-starting.png</file>
