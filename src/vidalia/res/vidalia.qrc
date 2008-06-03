@@ -17,6 +17,7 @@
         <file>16x16/media-playback-stop.png</file>
         <file>16x16/preferences-desktop-notification.png</file>
         <file>16x16/preferences-system.png</file>
+        <file>16x16/system-help.png</file>
         <file>16x16/tor-logo.png</file>
         <file>16x16/tor-off.png</file>
         <file>16x16/tor-on.png</file>
@@ -57,6 +58,7 @@
         <file>32x32/preferences-other.png</file>
         <file>32x32/preferences-system-network.png</file>
         <file>32x32/services.png</file>
+        <file>32x32/system-help.png</file>
         <file>32x32/tor-logo.png</file>
         <file>32x32/tor-off.png</file>
         <file>32x32/tor-on.png</file>

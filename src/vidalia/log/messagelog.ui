@@ -561,7 +561,7 @@
   </action>
   <action name="actionHelp" >
    <property name="icon" >
-    <iconset resource="..\res\vidalia.qrc" >:/images/32x32/help-browser.png</iconset>
+    <iconset resource="..\res\vidalia.qrc" >:/images/32x32/system-help.png</iconset>
    </property>
    <property name="text" >
     <string>Help</string>

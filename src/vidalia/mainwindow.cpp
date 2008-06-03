@@ -36,7 +36,7 @@
 #define IMG_MESSAGELOG     ":/images/16x16/utilities-log-viewer.png"
 #define IMG_CONFIG         ":/images/16x16/preferences-system.png"
 #define IMG_IDENTITY       ":/images/16x16/user-identity.png"
-#define IMG_HELP           ":/images/16x16/help-browser.png"
+#define IMG_HELP           ":/images/16x16/system-help.png"
 #define IMG_ABOUT          ":/images/16x16/help-about.png"
 #define IMG_EXIT           ":/images/16x16/application-exit.png"
 #define IMG_NETWORK        ":/images/16x16/applications-internet.png"

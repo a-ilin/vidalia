@@ -39,7 +39,7 @@
 #define IMAGE_SERVER        ":/images/32x32/network-workgroup.png"
 #define IMAGE_APPEARANCE    ":/images/32x32/preferences-desktop-locale.png"
 #define IMAGE_ADVANCED      ":/images/32x32/applications-system.png"
-#define IMAGE_HELP          ":/images/32x32/help-browser.png"
+#define IMAGE_HELP          ":/images/32x32/system-help.png"
 #define IMAGE_SERVICE       ":/images/32x32/services.png"
 
 /** Constructor */
