@@ -34,15 +34,13 @@
 #include "configdialog.h"
 
 /* Images for toolbar icons */
-#define IMAGE_GENERAL       ":/images/22x22/preferences-system.png"
-#define IMAGE_NETWORK       ":/images/22x22/network-workgroup.png"
-#define IMAGE_SERVER        ":/images/22x22/network-server.png"
-#define IMAGE_APPEARANCE    ":/images/22x22/preferences-desktop-locale.png"
-#define IMAGE_ADVANCED      ":/images/22x22/emblem-system.png"
-#define IMAGE_SAVE          ":/images/22x22/media-floppy.png"
-#define IMAGE_CANCEL        ":/images/22x22/emblem-unreadable.png"
-#define IMAGE_HELP          ":/images/22x22/help-browser.png"
-#define IMAGE_SERVICE       ":/images/22x22/service.png"
+#define IMAGE_GENERAL       ":/images/32x32/preferences-other.png"
+#define IMAGE_NETWORK       ":/images/32x32/preferences-system-network.png"
+#define IMAGE_SERVER        ":/images/32x32/network-workgroup.png"
+#define IMAGE_APPEARANCE    ":/images/32x32/preferences-desktop-locale.png"
+#define IMAGE_ADVANCED      ":/images/32x32/applications-system.png"
+#define IMAGE_HELP          ":/images/32x32/help-browser.png"
+#define IMAGE_SERVICE       ":/images/32x32/services.png"
 
 /** Constructor */
 ConfigDialog::ConfigDialog(QWidget* parent)
@@ -92,6 +90,7 @@ ConfigDialog::ConfigDialog(QWidget* parent)
   ui.stackPages->add(new AdvancedPage(ui.stackPages),
                      createPageAction(QIcon(IMAGE_ADVANCED),
                                       tr("Advanced"), grp));
+
   foreach (ConfigPage *page, ui.stackPages->pages()) {
     connect(page, SIGNAL(helpRequested(QString)),
             this, SLOT(help(QString)));

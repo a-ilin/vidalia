@@ -33,7 +33,7 @@
    <string>Vidalia Help</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="..\..\res\vidalia_common.qrc" >:/images/32x32/help-browser.png</iconset>
+   <iconset resource="..\..\res\vidalia.qrc" >:/images/32x32/help-browser.png</iconset>
   </property>
   <property name="statusTip" >
    <string/>
@@ -127,7 +127,7 @@
             <string/>
            </property>
            <property name="icon" >
-            <iconset resource="..\..\res\vidalia_common.qrc" >:/images/22x22/emblem-unreadable.png</iconset>
+            <iconset resource="..\..\res\vidalia.qrc">:/images/32x32/window-close.png</iconset>
            </property>
            <property name="iconSize" >
             <size>
@@ -174,7 +174,7 @@
           <string>Find Previous</string>
          </property>
          <property name="icon" >
-          <iconset resource="..\..\res\vidalia_common.qrc">:/images/22x22/go-up.png</iconset>
+          <iconset resource="..\..\res\vidalia.qrc">:/images/22x22/go-up-search.png</iconset>
          </property>
         </widget>
        </item>
@@ -187,7 +187,7 @@
           <string>Find Next</string>
          </property>
          <property name="icon" >
-          <iconset resource="..\..\res\vidalia_common.qrc">:/images/22x22/go-down.png</iconset>
+          <iconset resource="..\..\res\vidalia.qrc">:/images/22x22/go-down-search.png</iconset>
          </property>
         </widget>
        </item>
@@ -478,7 +478,7 @@
   </widget>
   <action name="actionBack" >
    <property name="icon" >
-    <iconset resource="..\..\res\vidalia_common.qrc" >:/images/22x22/go-previous.png</iconset>
+    <iconset resource="..\..\res\vidalia.qrc" >:/images/32x32/go-previous.png</iconset>
    </property>
    <property name="text" >
     <string>Back</string>
@@ -492,7 +492,7 @@
   </action>
   <action name="actionForward" >
    <property name="icon" >
-    <iconset resource="..\..\res\vidalia_common.qrc" >:/images/22x22/go-next.png</iconset>
+    <iconset resource="..\..\res\vidalia.qrc" >:/images/32x32/go-next.png</iconset>
    </property>
    <property name="text" >
     <string>Forward</string>
@@ -506,7 +506,7 @@
   </action>
   <action name="actionHome" >
    <property name="icon" >
-    <iconset resource="..\..\res\vidalia_common.qrc" >:/images/22x22/go-home.png</iconset>
+    <iconset resource="..\..\res\vidalia.qrc" >:/images/32x32/go-home.png</iconset>
    </property>
    <property name="text" >
     <string>Home</string>
@@ -520,7 +520,7 @@
   </action>
   <action name="actionFind" >
    <property name="icon" >
-    <iconset resource="..\..\res\vidalia_common.qrc" >:/images/22x22/system-search.png</iconset>
+    <iconset resource="..\..\res\vidalia.qrc" >:/images/32x32/edit-find.png</iconset>
    </property>
    <property name="checkable" >
      <bool>true</bool>
@@ -543,7 +543,7 @@
   </action>
   <action name="actionClose" >
    <property name="icon" >
-    <iconset resource="..\..\res\vidalia_common.qrc" >:/images/22x22/emblem-unreadable.png</iconset>
+    <iconset resource="..\..\res\vidalia.qrc" >:/images/32x32/window-close.png</iconset>
    </property>
    <property name="text" >
     <string>Close</string>
@@ -581,8 +581,7 @@
   <tabstop>treeSearch</tabstop>
  </tabstops>
  <resources>
-  <include location="../../log/res/vidalia_common.qrc" />
-  <include location="../../res/vidalia_common.qrc" />
+  <include location="../../res/vidalia.qrc" />
  </resources>
  <connections>
   <connection>

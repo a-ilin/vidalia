@@ -33,24 +33,24 @@
 
 #define IMG_BWGRAPH        ":/images/16x16/utilities-system-monitor.png"
 #define IMG_CONTROL_PANEL  ":/images/16x16/preferences-desktop.png"
-#define IMG_MESSAGELOG     ":/images/16x16/format-justify-fill.png"
+#define IMG_MESSAGELOG     ":/images/16x16/utilities-log-viewer.png"
 #define IMG_CONFIG         ":/images/16x16/preferences-system.png"
-#define IMG_IDENTITY       ":/images/16x16/system-users.png"
+#define IMG_IDENTITY       ":/images/16x16/user-identity.png"
 #define IMG_HELP           ":/images/16x16/help-browser.png"
 #define IMG_ABOUT          ":/images/16x16/help-about.png"
-#define IMG_EXIT           ":/images/16x16/emblem-unreadable.png"
+#define IMG_EXIT           ":/images/16x16/application-exit.png"
 #define IMG_NETWORK        ":/images/16x16/applications-internet.png"
 
-#define IMG_START_TOR_16     ":/images/16x16/start-tor.png"
-#define IMG_STOP_TOR_16      ":/images/16x16/stop-tor.png"
-#define IMG_START_TOR_48     ":/images/48x48/start-tor.png"
-#define IMG_STOP_TOR_48      ":/images/48x48/stop-tor.png"
+#define IMG_START_TOR_16     ":/images/16x16/media-playback-start.png"
+#define IMG_STOP_TOR_16      ":/images/16x16/media-playback-stop.png"
+#define IMG_START_TOR_48     ":/images/48x48/media-playback-start.png"
+#define IMG_STOP_TOR_48      ":/images/48x48/media-playback-stop.png"
 #define IMG_TOR_STOPPED_48   ":/images/48x48/tor-off.png"
 #define IMG_TOR_RUNNING_48   ":/images/48x48/tor-on.png"
 #define IMG_TOR_STARTING_48  ":/images/48x48/tor-starting.png"
 #define IMG_TOR_STOPPING_48  ":/images/48x48/tor-stopping.png"
 
-#define ANIM_PROCESS_WORKING  ":/images/32x32/process-working.png"
+//#define //ANIM_PROCESS_WORKING  ":/images/32x32/process-working.png"
 
 /* Decide which of our four sets of tray icons to use. */
 #if defined(Q_WS_WIN)
@@ -529,7 +529,7 @@ MainWindow::updateTorStatus(TorStatus status)
       ui.lblStartStopTor->setText(tr("Starting"));
       ui.lblStartStopTor->setEnabled(false);
       ui.lblStartStopTor->setStatusTip(statusText);
-      ui.lblStartStopTor->setAnimation(QPixmap(ANIM_PROCESS_WORKING));
+      //ui.lblStartStopTor->setAnimation(QPixmap(ANIM_PROCESS_WORKING));
   } else if (status == CircuitEstablished) {
       statusText = tr("Running");
       trayIconFile = IMG_TOR_RUNNING;

@@ -24,7 +24,7 @@
    <string>Tor Network Map</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="../res/vidalia_common.qrc" >:/images/32x32/applications-internet.png</iconset>
+   <iconset resource="../res/vidalia.qrc" >:/images/32x32/applications-internet.png</iconset>
   </property>
   <property name="toolButtonStyle" >
    <enum>Qt::ToolButtonTextUnderIcon</enum>
@@ -230,7 +230,7 @@
     <bool>false</bool>
    </property>
    <property name="icon" >
-    <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/view-refresh.png</iconset>
+    <iconset resource="../res/vidalia.qrc" >:/images/32x32/view-refresh.png</iconset>
    </property>
    <property name="text" >
     <string>Refresh</string>
@@ -247,7 +247,7 @@
   </action>
   <action name="actionHelp" >
    <property name="icon" >
-    <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/help-browser.png</iconset>
+    <iconset resource="../res/vidalia.qrc" >:/images/32x32/help-browser.png</iconset>
    </property>
    <property name="text" >
     <string>Help</string>
@@ -264,7 +264,7 @@
   </action>
   <action name="actionClose" >
    <property name="icon" >
-    <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/emblem-unreadable.png</iconset>
+    <iconset resource="../res/vidalia.qrc" >:/images/32x32/window-close.png</iconset>
    </property>
    <property name="text" >
     <string>Close</string>
@@ -281,7 +281,7 @@
   </action>
   <action name="actionZoomIn" >
    <property name="icon" >
-    <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/zoom-in.png</iconset>
+    <iconset resource="../res/vidalia.qrc" >:/images/32x32/zoom-in.png</iconset>
    </property>
    <property name="text" >
     <string>Zoom In</string>
@@ -298,7 +298,7 @@
   </action>
   <action name="actionZoomOut" >
    <property name="icon" >
-    <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/zoom-out.png</iconset>
+    <iconset resource="../res/vidalia.qrc" >:/images/32x32/zoom-out.png</iconset>
    </property>
    <property name="text" >
     <string>Zoom Out</string>
@@ -315,7 +315,7 @@
   </action>
   <action name="actionZoomToFit" >
    <property name="icon" >
-    <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/zoom-to-fit.png</iconset>
+    <iconset resource="../res/vidalia.qrc" >:/images/32x32/zoom-fit-best.png</iconset>
    </property>
    <property name="text" >
     <string>Zoom To Fit</string>
@@ -349,7 +349,7 @@
   </customwidget>
  </customwidgets>
  <resources>
-  <include location="../res/vidalia_common.qrc" />
+  <include location="../res/vidalia.qrc" />
  </resources>
  <connections>
   <connection>

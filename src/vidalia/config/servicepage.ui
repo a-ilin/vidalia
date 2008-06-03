@@ -87,7 +87,7 @@
          <string/>
         </property>
         <property name="icon" >
-         <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/list-add.png</iconset>
+         <iconset resource="../res/vidalia.qrc" >:/images/22x22/list-add.png</iconset>
         </property>
        </widget>
       </item>
@@ -100,7 +100,7 @@
          <string/>
         </property>
         <property name="icon" >
-         <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/list-remove.png</iconset>
+         <iconset resource="../res/vidalia.qrc" >:/images/22x22/list-remove.png</iconset>
         </property>
        </widget>
       </item>
@@ -113,7 +113,7 @@
          <string/>
         </property>
         <property name="icon" >
-         <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/edit-copy.png</iconset>
+         <iconset resource="../res/vidalia.qrc" >:/images/22x22/edit-copy.png</iconset>
         </property>
        </widget>
       </item>
@@ -126,7 +126,7 @@
          <string/>
         </property>
         <property name="icon" >
-         <iconset resource="../res/vidalia_common.qrc" >:/images/22x22/folder.png</iconset>
+         <iconset resource="../res/vidalia.qrc" >:/images/22x22/folder.png</iconset>
         </property>
        </widget>
       </item>

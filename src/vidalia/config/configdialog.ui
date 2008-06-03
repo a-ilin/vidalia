@@ -16,7 +16,7 @@
    <string>Settings</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="../res/vidalia_common.qrc" >:/images/32x32/preferences-system.png</iconset>
+   <iconset resource="../res/vidalia.qrc" >:/images/32x32/preferences-system.png</iconset>
   </property>
   <property name="iconSize" >
    <size>
@@ -543,12 +543,6 @@
    </property>
    <property name="orientation" >
     <enum>Qt::Horizontal</enum>
-   </property>
-   <property name="iconSize" >
-    <size>
-     <width>24</width>
-     <height>24</height>
-    </size>
    </property>
    <attribute name="toolBarArea" >
     <number>4</number>

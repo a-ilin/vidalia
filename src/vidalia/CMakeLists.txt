@@ -212,7 +212,7 @@ endif(USE_MINIUPNPC)
 
 ## Add the resource files (icons, etc.)
 qt4_add_resources(vidalia_SRCS
-  res/vidalia_common.qrc
+  res/vidalia.qrc
   i18n/vidalia_i18n.qrc
   help/content/content.qrc
 )

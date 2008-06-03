@@ -177,7 +177,7 @@
            <string>Start Tor</string>
           </property>
           <property name="statusTip" >
-           <string>Start Tor</string>
+           <string>Start</string>
           </property>
           <property name="pixmap" >
            <pixmap>:/images/48x48/start-tor.png</pixmap>
@@ -190,10 +190,10 @@
            <string>Setup Relaying</string>
           </property>
           <property name="statusTip" >
-           <string>Set up a Tor relay and help the network grow</string>
+           <string>Set up a relay and help the network grow</string>
           </property>
           <property name="pixmap" >
-           <pixmap>:/images/48x48/network-server.png</pixmap>
+           <pixmap>:/images/48x48/network-workgroup.png</pixmap>
           </property>
          </widget>
         </item>
@@ -222,7 +222,7 @@
            <string>Make subsequent connections appear new</string>
           </property>
           <property name="pixmap" >
-           <pixmap>:/images/48x48/system-users.png</pixmap>
+           <pixmap>:/images/48x48/user-identity.png</pixmap>
           </property>
          </widget>
         </item>
@@ -267,7 +267,7 @@
                  <string>View Tor's log message history</string>
                 </property>
                 <property name="pixmap" >
-                 <pixmap>:/images/16x16/format-justify-fill.png</pixmap>
+                 <pixmap>:/images/16x16/utilities-log-viewer.png</pixmap>
                 </property>
                </widget>
               </item>
@@ -327,7 +327,7 @@
                  <string>Settings</string>
                 </property>
                 <property name="statusTip" >
-                 <string>Configure Tor and Vidalia</string>
+                 <string>Configure Vidalia</string>
                 </property>
                 <property name="pixmap" >
                  <pixmap>:/images/16x16/preferences-system.png</pixmap>
@@ -393,7 +393,7 @@
                  <string>Exit Vidalia</string>
                 </property>
                 <property name="pixmap" >
-                 <pixmap>:/images/16x16/emblem-unreadable.png</pixmap>
+                 <pixmap>:/images/16x16/application-exit.png</pixmap>
                 </property>
                </widget>
               </item>

@@ -56,25 +56,6 @@ Exception" from your distribution.
 
 ===================================================================
 
-The following images used in Vidalia were created by 
-The Tango Desktop Project <http://tango-project.org>:
-
-  edit-clear.png       edit-copy.png           edit-select-all.png
-  emblem-system.png    emblem-unreadable.png   format-justify-fill.png
-  go-next.png          go-previous.png         help-browser.png
-  media-floppy.png     network-server.png      preferences-system.png
-  utilities-system-monitor.png                 preferences-desktop-locale.png
-  go-down.png          go-up.png               list-add.png
-  list-remove.png      system-users.png        applications-internet.png
-  view-refresh.png
-
-They are licensed by The Tango Desktop Project under the Creative Commons
-Attribution Share-Alike License which can be found at the following address:
-
-http://creativecommons.org/licenses/by-sa/2.5/legalcode
-
-===================================================================
-
 Vidalia incorporates icons from KDE's Oxygen icon theme. It is
 licensed as follows:
 

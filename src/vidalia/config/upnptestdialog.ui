@@ -13,7 +13,7 @@
    <string>Testing UPnP Support</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="../res/vidalia_common.qrc" >:/images/48x48/modem.png</iconset>
+   <iconset resource="../res/vidalia.qrc" >:/images/48x48/modem.png</iconset>
   </property>
   <property name="modal" >
    <bool>true</bool>
@@ -63,7 +63,7 @@
     <string/>
    </property>
    <property name="pixmap" >
-    <pixmap resource="../res/vidalia_common.qrc" >:/images/48x48/modem.png</pixmap>
+    <pixmap resource="../res/vidalia.qrc" >:/images/48x48/modem.png</pixmap>
    </property>
   </widget>
   <widget class="Line" name="line" >
@@ -94,7 +94,7 @@
   </widget>
  </widget>
  <resources>
-  <include location="../res/vidalia_common.qrc" />
+  <include location="../res/vidalia.qrc" />
  </resources>
  <connections />
 </ui>
