@@ -35,7 +35,7 @@
 #define IMG_CONTROL_PANEL  ":/images/16x16/preferences-desktop.png"
 #define IMG_MESSAGELOG     ":/images/16x16/utilities-log-viewer.png"
 #define IMG_CONFIG         ":/images/16x16/preferences-system.png"
-#define IMG_IDENTITY       ":/images/16x16/user-identity.png"
+#define IMG_IDENTITY       ":/images/16x16/view-media-artist.png"
 #define IMG_HELP           ":/images/16x16/system-help.png"
 #define IMG_ABOUT          ":/images/16x16/help-about.png"
 #define IMG_EXIT           ":/images/16x16/application-exit.png"

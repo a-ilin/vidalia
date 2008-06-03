@@ -22,9 +22,9 @@
         <file>16x16/tor-on.png</file>
         <file>16x16/tor-starting.png</file>
         <file>16x16/tor-stopping.png</file>
-        <file>16x16/user-identity.png</file>
         <file>16x16/utilities-log-viewer.png</file>
         <file>16x16/utilities-system-monitor.png</file>
+        <file>16x16/view-media-artist.png</file>
     </qresource>
     <qresource prefix="/images">
         <file>22x22/folder.png</file>
@@ -83,7 +83,7 @@
         <file>48x48/tor-on.png</file>
         <file>48x48/tor-starting.png</file>
         <file>48x48/tor-stopping.png</file>
-        <file>48x48/user-identity.png</file>
+        <file>48x48/view-media-artist.png</file>
     </qresource>
     <qresource prefix="/images">
         <file>128x128/qt-logo.png</file>

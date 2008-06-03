@@ -222,7 +222,7 @@
            <string>Make subsequent connections appear new</string>
           </property>
           <property name="pixmap" >
-           <pixmap>:/images/48x48/user-identity.png</pixmap>
+           <pixmap>:/images/48x48/view-media-artist.png</pixmap>
           </property>
          </widget>
         </item>
