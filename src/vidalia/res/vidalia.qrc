@@ -12,7 +12,6 @@
         <file>16x16/graph-area.png</file>
         <file>16x16/graph-line.png</file>
         <file>16x16/help-about.png</file>
-        <file>16x16/help-browser.png</file>
         <file>16x16/media-playback-start.png</file>
         <file>16x16/media-playback-stop.png</file>
         <file>16x16/preferences-desktop-notification.png</file>
@@ -52,7 +51,6 @@
         <file>32x32/go-next.png</file>
         <file>32x32/go-previous.png</file>
         <file>32x32/help-about.png</file>
-        <file>32x32/help-browser.png</file>
         <file>32x32/network-workgroup.png</file>
         <file>32x32/preferences-desktop-locale.png</file>
         <file>32x32/preferences-other.png</file>
