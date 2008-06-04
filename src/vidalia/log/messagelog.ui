@@ -19,7 +19,7 @@
    <string>Message Log</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="..\res\vidalia.qrc" >:/images/32x32/utilities-log-viewer.png</iconset>
+   <iconset resource="..\res\vidalia.qrc" >:/images/32x32/format-justify-fill.png</iconset>
   </property>
   <property name="statusTip" >
    <string/>

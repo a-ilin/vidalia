@@ -254,7 +254,7 @@
                  <string>View recent bandwidth usage</string>
                 </property>
                 <property name="pixmap" >
-                 <pixmap>:/images/16x16/utilities-system-monitor.png</pixmap>
+                 <pixmap>:/images/22x22/utilities-system-monitor.png</pixmap>
                 </property>
                </widget>
               </item>
@@ -267,7 +267,7 @@
                  <string>View log message history</string>
                 </property>
                 <property name="pixmap" >
-                 <pixmap>:/images/16x16/utilities-log-viewer.png</pixmap>
+                 <pixmap>:/images/22x22/format-justify-fill.png</pixmap>
                 </property>
                </widget>
               </item>
@@ -317,7 +317,7 @@
                  <string>View help documentation</string>
                 </property>
                 <property name="pixmap" >
-                 <pixmap>:/images/16x16/system-help.png</pixmap>
+                 <pixmap>:/images/22x22/system-help.png</pixmap>
                 </property>
                </widget>
               </item>
@@ -330,7 +330,7 @@
                  <string>Configure Vidalia</string>
                 </property>
                 <property name="pixmap" >
-                 <pixmap>:/images/16x16/preferences-system.png</pixmap>
+                 <pixmap>:/images/22x22/preferences-system.png</pixmap>
                 </property>
                </widget>
               </item>
@@ -380,7 +380,7 @@
                  <string>View version and license information</string>
                 </property>
                 <property name="pixmap" >
-                 <pixmap>:/images/16x16/help-about.png</pixmap>
+                 <pixmap>:/images/22x22/help-about.png</pixmap>
                 </property>
                </widget>
               </item>
@@ -393,7 +393,7 @@
                  <string>Exit Vidalia</string>
                 </property>
                 <property name="pixmap" >
-                 <pixmap>:/images/16x16/application-exit.png</pixmap>
+                 <pixmap>:/images/22x22/application-exit.png</pixmap>
                 </property>
                </widget>
               </item>

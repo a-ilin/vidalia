@@ -33,7 +33,7 @@
 
 #define IMG_BWGRAPH        ":/images/16x16/utilities-system-monitor.png"
 #define IMG_CONTROL_PANEL  ":/images/16x16/system-run.png"
-#define IMG_MESSAGELOG     ":/images/16x16/utilities-log-viewer.png"
+#define IMG_MESSAGELOG     ":/images/16x16/format-justify-fill.png"
 #define IMG_CONFIG         ":/images/16x16/preferences-system.png"
 #define IMG_IDENTITY       ":/images/16x16/view-media-artist.png"
 #define IMG_HELP           ":/images/16x16/system-help.png"

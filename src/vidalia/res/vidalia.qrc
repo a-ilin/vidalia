@@ -28,16 +28,21 @@
         <file>16x16/view-media-artist.png</file>
     </qresource>
     <qresource prefix="/images">
+        <file>22x22/application-exit.png</file>
         <file>22x22/folder.png</file>
+        <file>22x22/format-justify-fill.png</file>
         <file>22x22/go-down-search.png</file>
         <file>22x22/go-up-search.png</file>
+        <file>22x22/help-about.png</file>
         <file>22x22/list-add.png</file>
         <file>22x22/list-remove.png</file>
+        <file>22x22/preferences-system.png</file>
         <file>22x22/system-help.png</file>
         <file>22x22/tor-off.png</file>
         <file>22x22/tor-on.png</file>
         <file>22x22/tor-starting.png</file>
         <file>22x22/tor-stopping.png</file>
+        <file>22x22/utilities-system-monitor.png</file>
     </qresource>
     <qresource prefix="/images">
         <file>32x32/applications-internet.png</file>
@@ -48,6 +53,7 @@
         <file>32x32/edit-copy.png</file>
         <file>32x32/edit-find.png</file>
         <file>32x32/edit-select-all.png</file>
+        <file>32x32/format-justify-fill.png</file>
         <file>32x32/go-home.png</file>
         <file>32x32/go-next.png</file>
         <file>32x32/go-previous.png</file>
