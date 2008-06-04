@@ -15,15 +15,16 @@ add_definitions(-DSTATICLIB -DNDEBUG)
 set(miniupnpc_SRCS
   igd_desc_parse.c
   minisoap.c
-  minissdpc.c
   miniupnpc.c
   miniwget.c
   minixml.c
-  minixmlvalid.c
   upnpcommands.c
   upnperrors.c
   upnpreplyparse.c
 )
+if (NOT WIN32)
+  set(miniupnpc_SRCS ${miniupnpc_SRCS} minissdpc.c)
+endif(NOT WIN32)
 
 add_library(miniupnpc STATIC ${miniupnpc_SRCS})
 
