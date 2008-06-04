@@ -56,16 +56,6 @@
         <translation>פורט שליטה</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.ui" line="240"/>
-        <source>Start Tor with the specified configuration file (torrc)</source>
-        <translation>התחל את Tor עם קובץ ההגדרות (torrc) הנתון</translation>
-    </message>
-    <message>
-        <location filename="../config/advancedpage.ui" line="259"/>
-        <source>Select path to Tor configuration file</source>
-        <translation>בחר נתיב לקובץ ההגדרות של Tor</translation>
-    </message>
-    <message>
         <location filename="../config/advancedpage.ui" line="318"/>
         <source>Browse</source>
         <translation>חפש</translation>
@@ -96,62 +86,47 @@
         <translation>Vidalia יופעל עם הרשאות קבוצה זו</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="215"/>
+        <location filename="../config/advancedpage.cpp" line="221"/>
         <source>Select Tor Configuration File</source>
         <translation>בחר קובץ הגדרות ל-Tor</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="228"/>
+        <location filename="../config/advancedpage.cpp" line="234"/>
         <source>File Not Found</source>
         <translation>קובץ לא נמצא</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="230"/>
+        <location filename="../config/advancedpage.cpp" line="236"/>
         <source>%1 does not exist. Would you like to create it?</source>
         <translation>%1 לא קיים. האם ברצונך ליצור אותו?</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="241"/>
+        <location filename="../config/advancedpage.cpp" line="247"/>
         <source>Failed to Create File</source>
         <translation>כשלון בעת יצירת קובץ</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="242"/>
+        <location filename="../config/advancedpage.cpp" line="248"/>
         <source>Unable to create %1 [%2]</source>
         <translation>לא יכול ליצור %1 (%2)</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.ui" line="424"/>
-        <source>Service</source>
-        <translation>שירות</translation>
-    </message>
-    <message>
-        <location filename="../config/advancedpage.ui" line="439"/>
-        <source>Enable this if you wish to run Tor as a Windows service</source>
-        <translation>הפעל זאת אם ברצונך להפעיל את Tor כשירות חלונות</translation>
-    </message>
-    <message>
-        <location filename="../config/advancedpage.ui" line="442"/>
-        <source>Run Tor in the background as a Windows service</source>
-        <translation>הרץ Tor ברקע כשירות חלונות</translation>
-    </message>
-    <message>
-        <location filename="../config/advancedpage.cpp" line="278"/>
+        <location filename="../config/advancedpage.cpp" line="285"/>
         <source>Unable to remove Tor Service</source>
         <translation>לא יכול להסיר את שירות Tor</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="289"/>
+        <location filename="../config/advancedpage.cpp" line="296"/>
         <source>Unable to install Tor Service</source>
         <translation>לא יכול להתקין את שירות Tor</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="290"/>
+        <location filename="../config/advancedpage.cpp" line="297"/>
         <source>Vidalia was unable to install the Tor service.</source>
         <translation>Vidalia לא הצליח להתקין את שירות Tor.</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="280"/>
+        <location filename="../config/advancedpage.cpp" line="287"/>
         <source>Vidalia was unable to remove the Tor service.
 
 You may need to remove it manually.</source>
@@ -159,12 +134,7 @@ You may need to remove it manually.</source>
 יתכן שיהיה צורך להסירו ידנית.</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.ui" line="219"/>
-        <source>Tor Configuration File</source>
-        <translation>קובץ הגדרות Tor</translation>
-    </message>
-    <message>
-        <location filename="../config/advancedpage.cpp" line="101"/>
+        <location filename="../config/advancedpage.cpp" line="103"/>
         <source>&apos;%1&apos; is not a valid IP address.</source>
         <translation>%1 אינו כתובת IP חוקית.</translation>
     </message>
@@ -174,12 +144,12 @@ You may need to remove it manually.</source>
         <translation>:</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="112"/>
+        <location filename="../config/advancedpage.cpp" line="114"/>
         <source>You selected &apos;Password&apos; authentication, but did not specify a password.</source>
         <translation>בחרת באימות &apos;סיסמה&apos;, אך לא הגדרת סיסמה.</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.cpp" line="257"/>
+        <location filename="../config/advancedpage.cpp" line="263"/>
         <source>Select a Directory to Use for Tor Data</source>
         <translation>בחר ספריה לאחסון המידע של Tor</translation>
     </message>
@@ -209,22 +179,6 @@ You may need to remove it manually.</source>
         <translation>יצר אקראית</translation>
     </message>
     <message>
-        <location filename="../config/advancedpage.ui" line="275"/>
-        <source>Tor Data Directory</source>
-        <translation>ספרית מידע של Tor</translation>
-    </message>
-    <message>
-        <location filename="../config/advancedpage.ui" line="296"/>
-        <source>Store Tor data in the following directory</source>
-        <translation>אחסן את המידע של Tor בספריה הבאה</translation>
-    </message>
-    <message>
-        <location filename="../config/advancedpage.ui" line="315"/>
-        <source>Select the directory used to store Tor data</source>
-        <translation>בחר את הספריה לאחסון המידע של Tor
-</translation>
-    </message>
-    <message>
         <location filename="../config/advancedpage.ui" line="86"/>
         <source>None</source>
         <translation>כלום</translation>
@@ -233,6 +187,36 @@ You may need to remove it manually.</source>
         <location filename="../config/advancedpage.cpp" line="34"/>
         <source>Advanced</source>
         <translation>מתקדם</translation>
+    </message>
+    <message>
+        <location filename="../config/advancedpage.ui" line="219"/>
+        <source>Configuration File</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/advancedpage.ui" line="240"/>
+        <source>Start the Tor software with the specified configuration file (torrc)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/advancedpage.ui" line="259"/>
+        <source>Select path to your configuration file</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/advancedpage.ui" line="275"/>
+        <source>Data Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/advancedpage.ui" line="296"/>
+        <source>Store data for the Tor software in the following directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/advancedpage.ui" line="315"/>
+        <source>Select the directory used to store data for the Tor software</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -413,27 +397,27 @@ You may need to remove it manually.</source>
 <context>
     <name>ConfigDialog</name>
     <message>
-        <location filename="../config/configdialog.cpp" line="74"/>
+        <location filename="../config/configdialog.cpp" line="72"/>
         <source>General</source>
         <translation>כללי</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="90"/>
+        <location filename="../config/configdialog.cpp" line="92"/>
         <source>Advanced</source>
         <translation>מתקדם</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="61"/>
+        <location filename="../config/configdialog.cpp" line="59"/>
         <source>Cancel</source>
         <translation>ביטול</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="86"/>
+        <location filename="../config/configdialog.cpp" line="88"/>
         <source>Appearance</source>
         <translation>מראה</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="107"/>
+        <location filename="../config/configdialog.cpp" line="106"/>
         <source>Help</source>
         <translation>עזרה</translation>
     </message>
@@ -443,42 +427,42 @@ You may need to remove it manually.</source>
         <translation>הגדרות</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="78"/>
+        <location filename="../config/configdialog.cpp" line="76"/>
         <source>Network</source>
         <translation>רשת</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="175"/>
+        <location filename="../config/configdialog.cpp" line="174"/>
         <source>Error Saving Settings</source>
         <translation>תקלה בעת שמירת הגדרות</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="177"/>
+        <location filename="../config/configdialog.cpp" line="176"/>
         <source>Vidalia was unable to save your %1 settings.</source>
         <translation>Vidalia לא הצליח לשמור את השינויים בהגדרות 1%.</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="204"/>
+        <location filename="../config/configdialog.cpp" line="203"/>
         <source>Error Applying Settings</source>
         <translation>תקלה בעת הפעלת שינויים</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="206"/>
+        <location filename="../config/configdialog.cpp" line="205"/>
         <source>Vidalia was unable to apply your %1 settings to Tor.</source>
         <translation>Vidalia לא הצליח להפעיל את השינויים בהגדרות 1%.</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="58"/>
+        <location filename="../config/configdialog.cpp" line="56"/>
         <source>OK</source>
         <translation>אישור</translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="82"/>
+        <location filename="../config/configdialog.cpp" line="80"/>
         <source>Sharing</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../config/configdialog.cpp" line="94"/>
+        <location filename="../config/configdialog.cpp" line="84"/>
         <source>Services</source>
         <translation type="unfinished"></translation>
     </message>
@@ -486,17 +470,12 @@ You may need to remove it manually.</source>
 <context>
     <name>ControlConnection</name>
     <message>
-        <location filename="../../torcontrol/controlconnection.cpp" line="379"/>
+        <location filename="../../torcontrol/controlconnection.cpp" line="319"/>
         <source>Control socket is not connected.</source>
         <translation>סוקט שליטה לא מחובר.</translation>
     </message>
     <message>
-        <location filename="../../torcontrol/controlconnection.cpp" line="316"/>
-        <source>Control socket is not connected</source>
-        <translation>סוקט שליטה לא מחובר</translation>
-    </message>
-    <message>
-        <location filename="../../torcontrol/controlconnection.cpp" line="130"/>
+        <location filename="../../torcontrol/controlconnection.cpp" line="131"/>
         <source>Vidalia was unable to connect to Tor. (%1)</source>
         <translation>Vidalia לא הצליח להתחבר ל-Tor. (%1)</translation>
     </message>
@@ -532,19 +511,9 @@ You may need to remove it manually.</source>
         <translation>חפש</translation>
     </message>
     <message>
-        <location filename="../config/generalpage.ui" line="63"/>
-        <source>Start Tor when Vidalia starts</source>
-        <translation>הפעל את Tor בעת הפעלת Vidalia</translation>
-    </message>
-    <message>
         <location filename="../config/generalpage.cpp" line="72"/>
         <source>Select Path to Tor</source>
         <translation>בחר נתיב ל-Tor</translation>
-    </message>
-    <message>
-        <location filename="../config/generalpage.ui" line="38"/>
-        <source>Tor Executable</source>
-        <translation>קובץ הרצת Tor</translation>
     </message>
     <message>
         <location filename="../config/generalpage.cpp" line="59"/>
@@ -589,6 +558,16 @@ You may need to remove it manually.</source>
     <message>
         <location filename="../config/generalpage.ui" line="129"/>
         <source>Command Line Arguments:</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/generalpage.ui" line="38"/>
+        <source>Executable</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/generalpage.ui" line="63"/>
+        <source>Start the Tor software when Vidalia starts</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -857,91 +836,62 @@ You may need to remove it manually.</source>
         <translation>עזרה</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="362"/>
+        <location filename="../mainwindow.cpp" line="370"/>
         <source>Ctrl+T</source>
         <translation>Ctrl+T</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="363"/>
+        <location filename="../mainwindow.cpp" line="371"/>
         <source>Ctrl+B</source>
         <translation>Ctrl+B</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="364"/>
+        <location filename="../mainwindow.cpp" line="372"/>
         <source>Ctrl+L</source>
         <translation>Ctrl+L</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="366"/>
+        <location filename="../mainwindow.cpp" line="374"/>
         <source>Ctrl+?</source>
         <translation>Ctrl+?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="379"/>
+        <location filename="../mainwindow.cpp" line="387"/>
         <source>File</source>
         <translation>קובץ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="382"/>
+        <location filename="../mainwindow.cpp" line="390"/>
         <source>Tor</source>
         <translation>Tor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="387"/>
+        <location filename="../mainwindow.cpp" line="395"/>
         <source>View</source>
         <translation>תצוגה</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="396"/>
+        <location filename="../mainwindow.cpp" line="404"/>
         <source>Vidalia Help</source>
         <translation>עזרה אודות Vidalia</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="639"/>
+        <location filename="../mainwindow.cpp" line="647"/>
         <source>Error Starting Tor</source>
         <translation>שגיעה בעת התחלת Tor</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="685"/>
-        <source>Error Connecting to Tor</source>
-        <translation>שגיעה בעת התחברות ל-Tor</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="744"/>
-        <source>Error Stopping Tor</source>
-        <translation>שגיעה בעצירת Tor</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="775"/>
-        <source>Tor Exited</source>
-        <translation>Tor עצר</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="745"/>
-        <source>Vidalia was unable to stop Tor.</source>
-        <translation>Vidalia לא הצליח לעצור את Tor.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="365"/>
+        <location filename="../mainwindow.cpp" line="373"/>
         <source>Ctrl+N</source>
         <translation>Ctrl+N</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="778"/>
-        <source>Vidalia detected that Tor exited unexpectedly.
-
-Please check the message log for indicators about what happened to Tor before it exited.</source>
-        <translation>Vidalia גילתה ש-Tor יצא באופן לא צפוי.
-
-אנא בדוק את יומן ההודעות לסימנים לגבי מה שקרה ל-Tor לפני שהוא יצא.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="642"/>
+        <location filename="../mainwindow.cpp" line="650"/>
         <source>Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
         <translation>Vidalia לא הצליח להפעיל את Tor. אנא בדוק את ההגדרות וודא שהשם ומיקום קובץ הרצת Tor הינו נכון.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="288"/>
+        <location filename="../mainwindow.cpp" line="296"/>
         <source>Network Map</source>
         <translation>מפת רשת</translation>
     </message>
@@ -951,34 +901,24 @@ Please check the message log for indicators about what happened to Tor before it
         <translation>הגדרות</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1117"/>
+        <location filename="../mainwindow.cpp" line="1130"/>
         <source>New Identity</source>
         <translation>זהות חדשה</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="367"/>
+        <location filename="../mainwindow.cpp" line="375"/>
         <source>Ctrl+I</source>
         <translation>Ctrl+F</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1120"/>
+        <location filename="../mainwindow.cpp" line="1133"/>
         <source>All subsequent connections will appear to be different than your old connections.</source>
         <translation>כל החיבורים הבאים יראו שונים מהחיבורים הישנים.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1135"/>
+        <location filename="../mainwindow.cpp" line="1148"/>
         <source>Failed to Create New Identity</source>
         <translation>כשלון ביצירת זהות חדשה</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="526"/>
-        <source>Tor is running</source>
-        <translation>Tor רץ</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="180"/>
-        <source>Start Tor</source>
-        <translation>התחל Tor</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="117"/>
@@ -986,29 +926,14 @@ Please check the message log for indicators about what happened to Tor before it
         <translation>Tor אינו רץ</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="494"/>
+        <location filename="../mainwindow.cpp" line="502"/>
         <source>Tor is shutting down</source>
         <translation>Tor בתהליך עצירה</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="501"/>
-        <source>Stop Tor</source>
-        <translation>עצור את Tor</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="517"/>
-        <source>Tor is starting up</source>
-        <translation>Tor מתחיל</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="33"/>
         <source>Vidalia Control Panel</source>
         <translation>לוח הבקרה של Vidalia</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="63"/>
-        <source>Tor Status</source>
-        <translation>מצב Tor</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="165"/>
@@ -1019,11 +944,6 @@ Please check the message log for indicators about what happened to Tor before it
         <location filename="../mainwindow.ui" line="190"/>
         <source>Setup Relaying</source>
         <translation>הגדר מימסור</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="193"/>
-        <source>Set up a Tor relay and help the network grow</source>
-        <translation>הגדר מימסר Tor על מנת לעזור לרשת לגדול</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="203"/>
@@ -1046,24 +966,9 @@ Please check the message log for indicators about what happened to Tor before it
         <translation>גרום לחיבורים הבאים להיראות חדשים</translation>
     </message>
     <message>
-        <location filename="../mainwindow.ui" line="254"/>
-        <source>View Tor&apos;s bandwidth usage</source>
-        <translation>הצג שימוש רוחב-פס של Tor</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="267"/>
-        <source>View Tor&apos;s log message history</source>
-        <translation>הצג את היסטורית יומן ההודעות של Tor</translation>
-    </message>
-    <message>
         <location filename="../mainwindow.ui" line="317"/>
         <source>View help documentation</source>
         <translation>הצג מסמכי עזרה</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.ui" line="330"/>
-        <source>Configure Tor and Vidalia</source>
-        <translation>הגדר את Tor ו-Vidalia</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="380"/>
@@ -1091,139 +996,218 @@ Please check the message log for indicators about what happened to Tor before it
         <translation>הסתר חלון זה</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="295"/>
+        <location filename="../mainwindow.cpp" line="303"/>
         <source>Control Panel</source>
         <translation>לוח בקרה</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="368"/>
+        <location filename="../mainwindow.cpp" line="376"/>
         <source>Ctrl+P</source>
         <translation>Ctrl+F</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="499"/>
-        <source>Stop Tor Now</source>
-        <translation>עצור את Tor כעת</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="521"/>
-        <source>Starting Tor</source>
-        <translation>מתחיל את Tor</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="850"/>
+        <location filename="../mainwindow.cpp" line="860"/>
         <source>Cookie Authentication Required</source>
         <translation>אימות &quot;עוגיה&quot; דרוש</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="853"/>
-        <source>Tor requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one.</source>
-        <translation>Tor דורש מ-Vidalia לשלוח את התוכן של &quot;עוגיית&quot; אימות, אך Vidalia לא מוצאת אחת.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="855"/>
+        <location filename="../mainwindow.cpp" line="865"/>
         <source>Would you like to browse for the file &apos;control_auth_cookie&apos; yourself?</source>
         <translation>האם ברצונך לציין את המיקום של הקובץ &apos;control_auth_cookie&apos; בעצמך?</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="862"/>
-        <source>Tor Data Directory</source>
-        <translation>ספריית המידע של Tor</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="864"/>
-        <source>Tor Control Cookie (control_auth_cookie)</source>
-        <translation>&quot;עוגיית&quot; שליטה של Tor (control_auth_cookie)</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="905"/>
+        <location filename="../mainwindow.cpp" line="915"/>
         <source>Error Registering for Events</source>
         <translation>שגיעה בעת רישום לאירועים</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="907"/>
-        <source>Vidalia was unable to register for Tor events. Many of Vidalia&apos;s features may be unavailable.</source>
-        <translation>Vidalia נכשל להרשם לאירועי Tor. תכונות רבות עלולות להיות לא זמינות.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="933"/>
+        <location filename="../mainwindow.cpp" line="946"/>
         <source>Password Authentication Required</source>
         <translation>אימות סיסמה דרוש</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="948"/>
-        <source>Error Authenticating to Tor</source>
-        <translation>שגיעה בעת אימות מול Tor</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="950"/>
-        <source>Vidalia was unable to authenticate to Tor. (%1)</source>
-        <translation>Vidalia לא הצליח לאמת מול Tor. (%1)</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="952"/>
+        <location filename="../mainwindow.cpp" line="965"/>
         <source>Please check your control port authentication settings.</source>
         <translation>אנא בדוק את הגדרות אימות פורט השליטה שלך.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="934"/>
+        <location filename="../mainwindow.cpp" line="947"/>
         <source>Please enter your control password (not the hash):</source>
         <translation>אנא הכנס את סיסמת השליטה שלך (לא הערבול):</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="492"/>
-        <source>Your Tor relay is shutting down.
-Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
-        <translation>ממסר ה-Tor שלך עוצר.
-לחץ על &apos;עצור את Tor&apos; שוב על מנת להכריח עצירה כעת.</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="717"/>
+        <location filename="../mainwindow.cpp" line="725"/>
         <source>Relaying is Enabled</source>
         <translation>מימסור מופעל</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="722"/>
-        <source>You are currently running a Tor relay. Terminating your relay will interrupt any open connections from clients.
-
-Would you like to shutdown gracefully and give clients time to find a new relay?</source>
-        <translation>אתה מריץ מימסר Tor. כיבוי המימסר יפריע לחיבורים הפתוחים מלקוחות.
-
-האם ברצונך לכבות באופן מבוקר ולתת ללקוחות זמן למצוא מימסר חדש?</translation>
-    </message>
-    <message>
-        <location filename="../mainwindow.cpp" line="431"/>
+        <location filename="../mainwindow.cpp" line="439"/>
         <source>Error starting web browser</source>
         <translation>שגיעה בעת פתיחת דפדפן</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="432"/>
+        <location filename="../mainwindow.cpp" line="440"/>
         <source>Vidalia was unable to start the configured web browser</source>
         <translation>Vidalia נכשל בהפעלת הדפדפן המוגדר</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1054"/>
+        <location filename="../mainwindow.cpp" line="1067"/>
         <source>Tor Update Available</source>
         <translation>עידכון Tor זמין</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1057"/>
+        <location filename="../mainwindow.cpp" line="1070"/>
         <source>The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version.</source>
         <translation>גירסת Tor הנוכחית מיושנת ולא מומלצת יותר לשימוש. אנא בקר באתר Tor על מנת להוריד את הגירסה האחרונה.</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="1057"/>
+        <location filename="../mainwindow.cpp" line="1070"/>
         <source>Tor website: %1</source>
         <translation>אתר Tor: %1</translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="452"/>
+        <location filename="../mainwindow.cpp" line="460"/>
         <source>Error starting proxy server</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../mainwindow.cpp" line="453"/>
+        <location filename="../mainwindow.cpp" line="461"/>
         <source>Vidalia was unable to start the configured proxy server</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="180"/>
+        <source>Start</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="500"/>
+        <source>Your relay is shutting down.
+Click &apos;Stop&apos; again to stop your relay now.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="507"/>
+        <source>Stop Now</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="509"/>
+        <source>Stop</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="525"/>
+        <source>Starting up...</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="529"/>
+        <source>Starting</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="534"/>
+        <source>Running</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="693"/>
+        <source>Connection Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="730"/>
+        <source>You are currently running a relay. Terminating your relay will interrupt any open connections from clients.
+
+Would you like to shutdown gracefully and give clients time to find a new relay?</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="752"/>
+        <source>Error Shutting Down</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="753"/>
+        <source>Vidalia was unable to stop the Tor software.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="784"/>
+        <source>Unexpected Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="788"/>
+        <source>Vidalia detected that the Tor software exited unexpectedly.
+
+Please check the message log for recent warning or error messages.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="863"/>
+        <source>The Tor software requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="872"/>
+        <source>Data Directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="874"/>
+        <source>Control Cookie (control_auth_cookie)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="917"/>
+        <source>Vidalia was unable to register for some events. Many of Vidalia&apos;s features may be unavailable.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="961"/>
+        <source>Authentication Error</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="963"/>
+        <source>Vidalia was unable to authenticate to the Tor software. (%1)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1197"/>
+        <source>Port Forwarding Failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.cpp" line="1198"/>
+        <source>Vidalia was unable to configure automatic port forwarding.</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="63"/>
+        <source>Status</source>
+        <translation type="unfinished">מצב</translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="193"/>
+        <source>Set up a relay and help the network grow</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="254"/>
+        <source>View recent bandwidth usage</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="267"/>
+        <source>View log message history</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../mainwindow.ui" line="330"/>
+        <source>Configure Vidalia</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1732,11 +1716,6 @@ interest to Tor developers.</source>
         <translation>&apos;%1&apos; אינו מספר פורט חוקי.</translation>
     </message>
     <message>
-        <location filename="../config/networkpage.ui" line="25"/>
-        <source>Check to configure Tor to use a proxy to access the Internet</source>
-        <translation>סמן על מנת להגדיר את Tor להשתמש בפרוקסי על מנת לגשת לאינטרנט</translation>
-    </message>
-    <message>
         <location filename="../config/networkpage.ui" line="28"/>
         <source>I use a proxy to access the Internet</source>
         <translation>אני משתמש בשרת פרוקסי על מנת לגשת לאינטרנט</translation>
@@ -1797,16 +1776,6 @@ interest to Tor developers.</source>
         <translation>ספק האינטרנט שלי חוסם חיבורים לרשת Tor</translation>
     </message>
     <message>
-        <location filename="../config/networkpage.ui" line="262"/>
-        <source>Tor Bridge Settings</source>
-        <translation>הגדרות גשר Tor</translation>
-    </message>
-    <message>
-        <location filename="../config/networkpage.ui" line="274"/>
-        <source>The Tor version you are currently running does not support bridges. &lt;br&gt;Tor will still try to encrypt its directory connections.</source>
-        <translation>גרסת Tor שהינך מריץ אינה תומכת בגשרים.&lt;br&gt; Tor ינסה להצפין את חיבורי הספריה.</translation>
-    </message>
-    <message>
         <location filename="../config/networkpage.ui" line="295"/>
         <source>Add a Bridge:</source>
         <translation>הוסף גשר:</translation>
@@ -1822,18 +1791,33 @@ interest to Tor developers.</source>
         <translation>העתק את הגשרים הנבחרים ללוח-העריכה</translation>
     </message>
     <message>
-        <location filename="../config/networkpage.ui" line="176"/>
-        <source>Check to configure Tor to only connect to relays using ports allowed by your firewall</source>
-        <translation>סמן על מנת להגדיר את Tor להתחבר למימסרים אך ורק על ידי פורטים מורשים על ידי חומת האש שלך</translation>
-    </message>
-    <message>
         <location filename="../config/networkpage.ui" line="318"/>
         <source>&lt;a href=&quot;bridges.finding&quot;&gt;How do I find a bridge?&lt;/a&gt;</source>
         <translation>&lt;a href=&quot;bridges.finding&quot;&gt;כיצד אני מוצא גשר?&lt;/a&gt;</translation>
     </message>
     <message>
+        <location filename="../config/networkpage.ui" line="25"/>
+        <source>Check if your local network requires a proxy to access the Internet</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/networkpage.ui" line="176"/>
+        <source>Check to only connect to relays using ports allowed by your firewall</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="../config/networkpage.ui" line="235"/>
-        <source>Check to configure Tor to encrypt its directory requests and, optionally, use bridge relays to access the Tor network</source>
+        <source>Check to encrypt directory requests and, optionally, use bridge relays to access the Tor network</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/networkpage.ui" line="262"/>
+        <source>Bridge Settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/networkpage.ui" line="274"/>
+        <source>The Tor software you are currently running does not support bridges. &lt;br&gt;Your directory connections will still be encrypted.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -1932,7 +1916,7 @@ interest to Tor developers.</source>
         <translation>קרב למימסר</translation>
     </message>
     <message>
-        <location filename="../network/routerlistwidget.cpp" line="168"/>
+        <location filename="../network/routerlistwidget.cpp" line="151"/>
         <source>%1 relays online</source>
         <translation type="unfinished"></translation>
     </message>
@@ -1945,62 +1929,62 @@ interest to Tor developers.</source>
         <translation>העבר מידע עבור רשת Tor</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="169"/>
+        <location filename="../config/serverpage.ui" line="212"/>
         <source>Directory Port:</source>
         <translation>פורט ספרייה:</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="202"/>
+        <location filename="../config/serverpage.ui" line="245"/>
         <source>Directory Port Number</source>
         <translation>מספר פורט ספרייה</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="315"/>
+        <location filename="../config/serverpage.ui" line="358"/>
         <source>Nickname:</source>
         <translation>כינוי:</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="214"/>
+        <location filename="../config/serverpage.ui" line="257"/>
         <source>Contact Info:</source>
         <translation>מידע התקשרות:</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="699"/>
+        <location filename="../config/serverpage.ui" line="742"/>
         <source>Exit Policies</source>
         <translation>מדיניות יציאה</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="831"/>
+        <location filename="../config/serverpage.ui" line="874"/>
         <source>Show help topic on exit policies</source>
         <translation>הצג עזרה בנוגע למדיניות יציאה</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="555"/>
+        <location filename="../config/serverpage.ui" line="598"/>
         <source>Long-term average bandwidth limit</source>
         <translation>הגבלת רוחב-פס ממוצע לטווח ארוך</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="526"/>
+        <location filename="../config/serverpage.ui" line="569"/>
         <source>Average Rate</source>
         <translation>קצב ממוצע</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="643"/>
+        <location filename="../config/serverpage.ui" line="686"/>
         <source>KB/s</source>
         <translation>%1 KB/s</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="630"/>
+        <location filename="../config/serverpage.ui" line="673"/>
         <source>Peak bandwidth rate limit</source>
         <translation>הגבלת רוחב פס מירבי</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="601"/>
+        <location filename="../config/serverpage.ui" line="644"/>
         <source>Maximum Rate</source>
         <translation>קצב מירבי</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="437"/>
+        <location filename="../config/serverpage.ui" line="480"/>
         <source>Show help topic on bandwidth rate limits</source>
         <translation>הצג עזרה בנוגע להגבלת רוחב פס</translation>
     </message>
@@ -2010,144 +1994,134 @@ interest to Tor developers.</source>
         <translation>הגדרות בסיסיות</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="335"/>
+        <location filename="../config/serverpage.ui" line="378"/>
         <source>Bandwidth Limits</source>
         <translation>הגבלות רוחב פס</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="370"/>
+        <location filename="../config/serverpage.ui" line="413"/>
         <source>For Internet connections with fast download speed but slow upload, please list your upload speed here.</source>
         <translation>לחיבורי אינטרנט עם קצב הורדה מהיר אבל קצב העלאה איטי, אנא הכנס את קצב ההעלאה שלך כאן.</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="391"/>
+        <location filename="../config/serverpage.ui" line="434"/>
         <source>Select the entry that most closely resembles your Internet connection</source>
         <translation>בחר את הנתון הדומה ביותר לחיבור האינטרנט שלך</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="401"/>
+        <location filename="../config/serverpage.ui" line="444"/>
         <source>Cable/DSL 256 Kbps</source>
         <translation>כבלים/DSL 256 Kbps</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="406"/>
+        <location filename="../config/serverpage.ui" line="449"/>
         <source>Cable/DSL 512 Kbps</source>
         <translation>כבלים/DSL 512 Kbps</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="411"/>
+        <location filename="../config/serverpage.ui" line="454"/>
         <source>Cable/DSL 768 Kbps</source>
         <translation>כבלים/DSL 768 Kbps</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="416"/>
+        <location filename="../config/serverpage.ui" line="459"/>
         <source>T1/Cable/DSL 1.5 Mbps</source>
         <translation>T1/כבלים/DSL  1.5 Mbps</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="421"/>
+        <location filename="../config/serverpage.ui" line="464"/>
         <source>&gt; 1.5 Mbps</source>
         <translation>יותר מ 1.5 Mbps</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="426"/>
+        <location filename="../config/serverpage.ui" line="469"/>
         <source>Custom</source>
         <translation>נתון אישית</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="737"/>
+        <location filename="../config/serverpage.ui" line="780"/>
         <source>Ports 6660 - 6669 and 6697</source>
         <translation>פורטים 6660-6669 ו 6697</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="740"/>
+        <location filename="../config/serverpage.ui" line="783"/>
         <source>Internet Relay Chat (IRC)</source>
         <translation>Internet Relay Chat (IRC)</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="750"/>
+        <location filename="../config/serverpage.ui" line="793"/>
         <source>Ports 110, 143, 993 and 995</source>
         <translation>פורטים 110, 143, 993 ו 995</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="753"/>
+        <location filename="../config/serverpage.ui" line="796"/>
         <source>Retrieve Mail (POP, IMAP)</source>
         <translation>קבלת דוא&quot;ל (POP, IMAP)</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="763"/>
+        <location filename="../config/serverpage.ui" line="806"/>
         <source>Ports unspecified by other checkboxes</source>
         <translation>פורטים שלא נתונים על ידי תיבות בחירה אחרות</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="766"/>
+        <location filename="../config/serverpage.ui" line="809"/>
         <source>Misc Other Services</source>
         <translation>שירותים נוספים</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="779"/>
+        <location filename="../config/serverpage.ui" line="822"/>
         <source>Instant Messaging (IM)</source>
         <translation>הודעות מיידיות</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="789"/>
+        <location filename="../config/serverpage.ui" line="832"/>
         <source>Port 443</source>
         <translation>פורט 443</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="792"/>
+        <location filename="../config/serverpage.ui" line="835"/>
         <source>Secure Websites (SSL)</source>
         <translation>אתר מאובטח (SSL)</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="802"/>
+        <location filename="../config/serverpage.ui" line="845"/>
         <source>Port 80</source>
         <translation>פורט 80</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="805"/>
+        <location filename="../config/serverpage.ui" line="848"/>
         <source>Websites</source>
         <translation>אתרי רשת</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="904"/>
-        <source>What Internet resources should Tor users be able to access from your Tor relay?</source>
-        <translation>לאילו משאבי רשת יוכלו משתמשי Tor לגשת ממימסר Tor שלך?</translation>
-    </message>
-    <message>
-        <location filename="../config/serverpage.ui" line="672"/>
+        <location filename="../config/serverpage.ui" line="715"/>
         <source>Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s.</source>
         <translation>רוחב הפס המירבי חייב להיות גדול או שווה לרוחב הפס הממוצע. על שני הערכים להיוצ לפחות 20 KB/s.</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.cpp" line="63"/>
+        <location filename="../config/serverpage.cpp" line="68"/>
         <source>Server</source>
         <translation>שרת</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.cpp" line="120"/>
+        <location filename="../config/serverpage.cpp" line="132"/>
         <source>Bridge Support Unavailable</source>
         <translation>תמיכה בגשרים לא זמינה</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.cpp" line="123"/>
+        <location filename="../config/serverpage.cpp" line="135"/>
         <source>You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges.</source>
         <translation>הגדרת את Tor לשמש בגשר למשתמשים מצונזרים, אבל גירסת Tor שלך לא תומכת בגשרים.</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.cpp" line="125"/>
+        <location filename="../config/serverpage.cpp" line="137"/>
         <source>Please upgrade your Tor software or configure Tor to act as a normal Tor relay.</source>
         <translation>אנא עדכן את Tor או הגדרת את Tor לשמש כמימסר Tor רגיל.</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.cpp" line="243"/>
+        <location filename="../config/serverpage.cpp" line="255"/>
         <source>You must specify at least a relay nickname and port.</source>
         <translation>עליך לציין לפחות כינוי ופורט מימסר.</translation>
-    </message>
-    <message>
-        <location filename="../config/serverpage.ui" line="25"/>
-        <source>Run Tor as a client only</source>
-        <translation>הרץ את Tor כלקוח בלבד</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="91"/>
@@ -2155,15 +2129,10 @@ interest to Tor developers.</source>
         <translation>פורט מימסר:</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="139"/>
+        <location filename="../config/serverpage.ui" line="182"/>
         <source>Email address at which you may be reached if there is a
 problem with your relay. You might also include your PGP or GPG fingerprint.</source>
         <translation>כתובת דואר אלקטרוני בא ניתן להשיג אותך אם יש בעיה עם המימסר שלך. ניתן גם לצרף את חתימת ה-PGP או GPG שלך.</translation>
-    </message>
-    <message>
-        <location filename="../config/serverpage.ui" line="110"/>
-        <source>Enable to mirror the Tor relay directory</source>
-        <translation>הפעל על מנת להעתיק את ספריית המימסרים של Tor</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="113"/>
@@ -2171,7 +2140,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
         <translation>העתק את ספריית המימסרים</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.cpp" line="179"/>
+        <location filename="../config/serverpage.cpp" line="191"/>
         <source>Your bridge relay is not running.</source>
         <translation>הגשר שלך לא רץ.</translation>
     </message>
@@ -2181,34 +2150,59 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
         <translation>עזור למשתמשים מצונזרים לגשת לרשת Tor (גרסה 0.2.0.8-alpha ומעלה)</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="272"/>
+        <location filename="../config/serverpage.ui" line="315"/>
         <source>Name of your relay</source>
         <translation>השם של המימשר שלך</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="305"/>
+        <location filename="../config/serverpage.ui" line="348"/>
         <source>Port on which users and other relays can communicate with your relay</source>
         <translation>הפורט שבו משתמשים ומימסרים נוספים יוכלו לתקשר עם המימסר שלך</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="940"/>
+        <location filename="../config/serverpage.ui" line="983"/>
         <source>Let others access your bridge by giving them this line:</source>
         <translation>אפשר לאחרים לגשת לגשר שלך על ידי העברת השורה הבאה:</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="964"/>
+        <location filename="../config/serverpage.ui" line="1007"/>
         <source>This is the identity of your bridge relay that you can give to other people</source>
         <translation>זוהי הזהות של הגשר שלך שניתן להעביר לאחרים</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="986"/>
+        <location filename="../config/serverpage.ui" line="1029"/>
         <source>Copy your bridge relay&apos;s identity to the clipboard</source>
         <translation>העתק את הזהות של הגשר שלך ללוח-העריכה</translation>
     </message>
     <message>
-        <location filename="../config/serverpage.ui" line="776"/>
+        <location filename="../config/serverpage.ui" line="819"/>
         <source>Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 and 8888</source>
         <translation type="unfinished">פורטים 706, 1863, 5050, 5190, 5222, 8300 ו 8888 {706, 1863, 5050, 5190, 5222, 5223, 8300 ?}</translation>
+    </message>
+    <message>
+        <location filename="../config/serverpage.ui" line="25"/>
+        <source>Run as a client only</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/serverpage.ui" line="110"/>
+        <source>Enable to mirror the relay directory</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/serverpage.ui" line="139"/>
+        <source>Attempt to automatically configure port forwarding</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/serverpage.ui" line="154"/>
+        <source>Test</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/serverpage.ui" line="947"/>
+        <source>What Internet resources should users be able to access from your relay?</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
@@ -2219,42 +2213,37 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../config/servicepage.cpp" line="105"/>
+        <location filename="../config/servicepage.cpp" line="109"/>
         <source>Error while trying to unpublish all services</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../config/servicepage.cpp" line="112"/>
-        <source>Please configure at least a service directory and a virtual       port for each service you want to save. Remove the other ones.</source>
-        <translation type="unfinished"></translation>
-    </message>
-    <message>
-        <location filename="../config/servicepage.cpp" line="586"/>
+        <location filename="../config/servicepage.cpp" line="591"/>
         <source>Error</source>
         <translation type="unfinished">שגיעה</translation>
     </message>
     <message>
-        <location filename="../config/servicepage.cpp" line="442"/>
+        <location filename="../config/servicepage.cpp" line="445"/>
         <source>Please select a Service.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../config/servicepage.cpp" line="447"/>
+        <location filename="../config/servicepage.cpp" line="451"/>
         <source>Select Service Directory</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../config/servicepage.cpp" line="536"/>
+        <location filename="../config/servicepage.cpp" line="541"/>
         <source>Virtual Port may only contain valid port numbers [1..65535].</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../config/servicepage.cpp" line="567"/>
+        <location filename="../config/servicepage.cpp" line="572"/>
         <source>Target may only contain address:port, address, or port.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="../config/servicepage.cpp" line="587"/>
+        <location filename="../config/servicepage.cpp" line="592"/>
         <source>Directory already in use by another service.</source>
         <translation type="unfinished"></translation>
     </message>
@@ -2311,6 +2300,11 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../config/servicepage.ui" line="123"/>
         <source>Browse in local file system and choose directory for selected service</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/servicepage.cpp" line="116"/>
+        <source>Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones.</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -2389,6 +2383,82 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
         <location filename="../config/torsettings.cpp" line="107"/>
         <source>Failed to hash the control password.</source>
         <translation>ערבול סיסמת שליטה נכשל.</translation>
+    </message>
+</context>
+<context>
+    <name>UPNPControl</name>
+    <message>
+        <location filename="../config/upnpcontrol.cpp" line="139"/>
+        <source>Success</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/upnpcontrol.cpp" line="141"/>
+        <source>No UPnP-enabled devices found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/upnpcontrol.cpp" line="143"/>
+        <source>No valid UPnP-enabled Internet gateway devices found</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/upnpcontrol.cpp" line="145"/>
+        <source>WSAStartup failed</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/upnpcontrol.cpp" line="147"/>
+        <source>Failed to add a port mapping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/upnpcontrol.cpp" line="149"/>
+        <source>Failed to retrieve a port mapping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/upnpcontrol.cpp" line="151"/>
+        <source>Failed to remove a port mapping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/upnpcontrol.cpp" line="153"/>
+        <source>Unknown error</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>UPNPTestDialog</name>
+    <message>
+        <location filename="../config/upnptestdialog.cpp" line="109"/>
+        <source>Discovering UPnP-enabled devices</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/upnptestdialog.cpp" line="114"/>
+        <source>Updating directory port mapping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/upnptestdialog.cpp" line="119"/>
+        <source>Updating relay port mapping</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/upnptestdialog.cpp" line="124"/>
+        <source>Test completed successfully!</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/upnptestdialog.ui" line="13"/>
+        <source>Testing UPnP Support</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../config/upnptestdialog.ui" line="92"/>
+        <source>Testing Universal Plug &amp; Play Support</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
