@@ -7,7 +7,7 @@
 TARGET=$2/Library/Tor
 TORDIR=$TARGET/var/lib/tor
 LOGFILE=/var/log/tor.log
-TORBUTTON_VERSION="1.1.17-alpha"
+TORBUTTON_VERSION="1.2.0rc"
 
 # Check defaults for TARGET
 if [ "$TARGET" == "//Library/Tor" ]; then
