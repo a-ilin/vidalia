@@ -261,7 +261,7 @@
         </attribute>
         <layout class="QVBoxLayout" >
          <property name="margin" >
-          <number>9</number>
+          <number>6</number>
          </property>
          <property name="spacing" >
           <number>6</number>
@@ -315,7 +315,7 @@
         </attribute>
         <layout class="QGridLayout" >
          <property name="margin" >
-          <number>9</number>
+          <number>6</number>
          </property>
          <property name="spacing" >
           <number>6</number>
