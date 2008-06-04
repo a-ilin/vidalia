@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS><TS version="1.1">
+<!DOCTYPE TS><TS version="1.1" language="es">
+<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -128,7 +129,7 @@
     <message>
         <location filename="../config/advancedpage.ui" line="439"/>
         <source>Enable this if you wish to run Tor as a Windows service</source>
-        <translation>Habilitar ésto si usted desea que Tor se ejecute como un servicio de Windows.</translation>
+        <translation>Habilitar ésto si usted desea que Tor se ejecute como un servicio de Windows</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="442"/>
@@ -177,62 +178,62 @@ Necesitara eliminarlo manualmente.</translation>
     <message>
         <location filename="../config/advancedpage.cpp" line="112"/>
         <source>You selected &apos;Password&apos; authentication, but did not specify a password.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha seleccionado autenticación por &apos;Contraseña&apos;, pero no ha especificado ninguna.</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.cpp" line="257"/>
         <source>Select a Directory to Use for Tor Data</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione un Directorio para Almacenar Datos de Tor</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="48"/>
         <source>Authentication:</source>
-        <translation type="unfinished"></translation>
+        <translation>Autenticación:</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="58"/>
         <source>Address:</source>
-        <translation type="unfinished">Dirección:</translation>
+        <translation>Dirección:</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="91"/>
         <source>Cookie</source>
-        <translation type="unfinished"></translation>
+        <translation>Cookie</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="96"/>
         <source>Password</source>
-        <translation type="unfinished"></translation>
+        <translation>Contraseña</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="111"/>
         <source>Randomly Generate</source>
-        <translation type="unfinished"></translation>
+        <translation>Generar Aleatoriamente</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="275"/>
         <source>Tor Data Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Directorio de Datos de Tor</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="296"/>
         <source>Store Tor data in the following directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Almacenar datos de Tor en el siguiente directorio</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="315"/>
         <source>Select the directory used to store Tor data</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar el directorio usado para almacenar datos de Tor</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="86"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Nada</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.cpp" line="34"/>
         <source>Advanced</source>
-        <translation type="unfinished">Avanzado</translation>
+        <translation>Avanzado</translation>
     </message>
 </context>
 <context>
@@ -265,7 +266,7 @@ Necesitara eliminarlo manualmente.</translation>
     <message>
         <location filename="../config/appearancepage.cpp" line="23"/>
         <source>Appearance</source>
-        <translation type="unfinished">Apariencia</translation>
+        <translation>Apariencia</translation>
     </message>
 </context>
 <context>
@@ -402,12 +403,12 @@ Necesitara eliminarlo manualmente.</translation>
     <message>
         <location filename="../network/circuitlistwidget.cpp" line="74"/>
         <source>Close Circuit (Del)</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerrar Circuito (Del)</translation>
     </message>
     <message>
         <location filename="../network/circuitlistwidget.cpp" line="95"/>
         <source>Close Stream (Del)</source>
-        <translation type="unfinished"></translation>
+        <translation>Cerrar Transmisión (Del)</translation>
     </message>
 </context>
 <context>
@@ -445,42 +446,42 @@ Necesitara eliminarlo manualmente.</translation>
     <message>
         <location filename="../config/configdialog.cpp" line="78"/>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Red</translation>
     </message>
     <message>
         <location filename="../config/configdialog.cpp" line="175"/>
         <source>Error Saving Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al Guardar las Preferencias</translation>
     </message>
     <message>
         <location filename="../config/configdialog.cpp" line="177"/>
         <source>Vidalia was unable to save your %1 settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia no pudo guardar sus preferencias de %1.</translation>
     </message>
     <message>
         <location filename="../config/configdialog.cpp" line="204"/>
         <source>Error Applying Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al Aplicar Preferencias</translation>
     </message>
     <message>
         <location filename="../config/configdialog.cpp" line="206"/>
         <source>Vidalia was unable to apply your %1 settings to Tor.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia no pudo aplicar sus preferencias de %1 a Tor.</translation>
     </message>
     <message>
         <location filename="../config/configdialog.cpp" line="58"/>
         <source>OK</source>
-        <translation type="unfinished">OK</translation>
+        <translation>OK</translation>
     </message>
     <message>
         <location filename="../config/configdialog.cpp" line="82"/>
         <source>Sharing</source>
-        <translation type="unfinished"></translation>
+        <translation>Compartiendo</translation>
     </message>
     <message>
         <location filename="../config/configdialog.cpp" line="94"/>
         <source>Services</source>
-        <translation type="unfinished"></translation>
+        <translation>Servicios</translation>
     </message>
 </context>
 <context>
@@ -493,12 +494,12 @@ Necesitara eliminarlo manualmente.</translation>
     <message>
         <location filename="../../torcontrol/controlconnection.cpp" line="316"/>
         <source>Control socket is not connected</source>
-        <translation>Conector de Control no está conectado.</translation>
+        <translation>Conector de Control no está conectado</translation>
     </message>
     <message>
         <location filename="../../torcontrol/controlconnection.cpp" line="130"/>
         <source>Vidalia was unable to connect to Tor. (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia no pudo conectarse con Tor. (%1)</translation>
     </message>
 </context>
 <context>
@@ -534,7 +535,7 @@ Necesitara eliminarlo manualmente.</translation>
     <message>
         <location filename="../config/generalpage.ui" line="63"/>
         <source>Start Tor when Vidalia starts</source>
-        <translation>Iniciar Tor cuando Vidalia inice</translation>
+        <translation>Iniciar Tor cuando Vidalia inicie</translation>
     </message>
     <message>
         <location filename="../config/generalpage.cpp" line="72"/>
@@ -554,42 +555,42 @@ Necesitara eliminarlo manualmente.</translation>
     <message>
         <location filename="../config/generalpage.cpp" line="23"/>
         <source>General</source>
-        <translation type="unfinished">General</translation>
+        <translation>General</translation>
     </message>
     <message>
         <location filename="../config/generalpage.cpp" line="95"/>
         <source>You must specify the name of your Tor executable.</source>
-        <translation type="unfinished"></translation>
+        <translation>Debe especificar el nombre del ejecutable de Tor.</translation>
     </message>
     <message>
         <location filename="../config/generalpage.cpp" line="82"/>
         <source>Select Proxy Executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccionar el Ejecutable del Proxy</translation>
     </message>
     <message>
         <location filename="../config/generalpage.cpp" line="103"/>
         <source>The proxy arguments specified are not properly formatted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Los argumentos especificados del proxy no están correctamente formados.</translation>
     </message>
     <message>
         <location filename="../config/generalpage.ui" line="22"/>
         <source>Start Vidalia when my system starts</source>
-        <translation type="unfinished"></translation>
+        <translation>Iniciar Vidalia cuando inicie mi sistema</translation>
     </message>
     <message>
         <location filename="../config/generalpage.ui" line="75"/>
         <source>Start a proxy application when Vidalia starts</source>
-        <translation type="unfinished"></translation>
+        <translation>Iniciar una aplicación proxy cuando Vidalia inicie</translation>
     </message>
     <message>
         <location filename="../config/generalpage.ui" line="97"/>
         <source>Proxy Executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruta del ejecutable del Proxy</translation>
     </message>
     <message>
         <location filename="../config/generalpage.ui" line="129"/>
         <source>Command Line Arguments:</source>
-        <translation type="unfinished"></translation>
+        <translation>Argumentos de Linea de Comandos:</translation>
     </message>
 </context>
 <context>
@@ -983,7 +984,7 @@ Por favor verifique el registro de mensajes para indicadores de que paso con Tor
     <message>
         <location filename="../mainwindow.ui" line="117"/>
         <source>Tor is not running</source>
-        <translation>Tor no esta corriendo</translation>
+        <translation>Tor no está ejecutándose</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="494"/>
@@ -1018,7 +1019,7 @@ Por favor verifique el registro de mensajes para indicadores de que paso con Tor
     <message>
         <location filename="../mainwindow.ui" line="190"/>
         <source>Setup Relaying</source>
-        <translation>Ajustar Retransmisiòn</translation>
+        <translation>Ajustar Retransmisión</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="193"/>
@@ -1108,120 +1109,123 @@ Por favor verifique el registro de mensajes para indicadores de que paso con Tor
     <message>
         <location filename="../mainwindow.cpp" line="521"/>
         <source>Starting Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Iniciando Tor</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="850"/>
         <source>Cookie Authentication Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Se Requiere Autenticación via Cookie</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="853"/>
         <source>Tor requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor requiere que Vidalia envíe los contenidos de una cookie de autenticación, pero Vidalia no pudo encontrar ninguna.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="855"/>
         <source>Would you like to browse for the file &apos;control_auth_cookie&apos; yourself?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Le gustaría explorar en busca del archivo &apos;control_auth_cookie&apos; usted mismo?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="862"/>
         <source>Tor Data Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Directorio de Datos de Tor</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="864"/>
         <source>Tor Control Cookie (control_auth_cookie)</source>
-        <translation type="unfinished"></translation>
+        <translation>Cookie de Control de Tor (control_auth_cookie)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="905"/>
         <source>Error Registering for Events</source>
-        <translation type="unfinished"></translation>
+        <translation>Error Registrando Eventos</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="907"/>
         <source>Vidalia was unable to register for Tor events. Many of Vidalia&apos;s features may be unavailable.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia no pudo registrar eventos de Tor. Muchas de las características de Vidalia no podrán estar disponibles.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="933"/>
         <source>Password Authentication Required</source>
-        <translation type="unfinished"></translation>
+        <translation>Se Requiere Autenticación vía Contraseña</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="948"/>
         <source>Error Authenticating to Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al Autenticar contra Tor</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="950"/>
         <source>Vidalia was unable to authenticate to Tor. (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia no pudo autenticarse contra Tor. (%1)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="952"/>
         <source>Please check your control port authentication settings.</source>
-        <translation type="unfinished"></translation>
+        <translation>Por favor, verifique la configuración de autenticación de su puerto de control.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="934"/>
         <source>Please enter your control password (not the hash):</source>
-        <translation type="unfinished"></translation>
+        <translation>Por favor, ingrese su contraseña de control (no el hash):</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="492"/>
         <source>Your Tor relay is shutting down.
 Click &apos;Stop Tor&apos; again to force Tor to stop now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Su retransmisión de Tor se está cerrando.
+Haga click en &apos;Parar Tor&apos; nuevamente para forzar el cierre inmediato.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="717"/>
         <source>Relaying is Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Retransmisión Activada</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="722"/>
         <source>You are currently running a Tor relay. Terminating your relay will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new relay?</source>
-        <translation type="unfinished"></translation>
+        <translation>Está ejecutando Tor como Retransmisión. Cerrando su retransmisión interrumpirá cualquier conexión abierta de los clientes.
+
+¿Quiere iniciar el cierre por las buenas y darle tiempo a los clientes para encontrar otra retransmisión?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="431"/>
         <source>Error starting web browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al iniciar navegador web</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="432"/>
         <source>Vidalia was unable to start the configured web browser</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia no pudo iniciar el navegador web configurado</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1054"/>
         <source>Tor Update Available</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualización de Tor Disponible</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1057"/>
         <source>The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version.</source>
-        <translation type="unfinished"></translation>
+        <translation>La versión actualmente instalada de Tor está desactualizada o no se recomiendo su uso. Por favor, visite el sitio web de Tor y descargue la versión más reciente.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1057"/>
         <source>Tor website: %1</source>
-        <translation type="unfinished"></translation>
+        <translation>Sitio web de Tor: %1</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="452"/>
         <source>Error starting proxy server</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al iniciar el servidor proxy</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="453"/>
         <source>Vidalia was unable to start the configured proxy server</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia no pudo iniciar el servidor proxy configurado</translation>
     </message>
 </context>
 <context>
@@ -1314,7 +1318,7 @@ Would you like to shutdown gracefully and give clients time to find a new relay?
     <message>
         <location filename="../log/messagelog.ui" line="463"/>
         <source>History Size...</source>
-        <translation>Tamańo de Historial...</translation>
+        <translation>Tamaño de Historial...</translation>
     </message>
     <message>
         <location filename="../log/messagelog.ui" line="466"/>
@@ -1536,7 +1540,7 @@ de los desarrolladores de Tor.</translation>
 %2.</source>
         <translation>No pudo escribirse archivo %1
 
-%2</translation>
+%2.</translation>
     </message>
     <message>
         <location filename="../log/messagelog.cpp" line="209"/>
@@ -1586,7 +1590,7 @@ de los desarrolladores de Tor.</translation>
     <message>
         <location filename="../log/messagelog.ui" line="394"/>
         <source>Enable automatically saving all new log messages to a file</source>
-        <translation>Habilitar el guardar automaticamente todos los nuevos mensajes a un archivo</translation>
+        <translation>Habilitar el guardar automáticamente todos los nuevos mensajes a un archivo</translation>
     </message>
     <message>
         <location filename="../log/messagelog.ui" line="397"/>
@@ -1689,12 +1693,12 @@ de los desarrolladores de Tor.</translation>
     <message>
         <location filename="../network/netviewer.ui" line="24"/>
         <source>Tor Network Map</source>
-        <translation type="unfinished"></translation>
+        <translation>Mapa de Red de Tor</translation>
     </message>
     <message>
         <location filename="../network/netviewer.ui" line="242"/>
         <source>Refresh the list of Tor relays and connections</source>
-        <translation type="unfinished"></translation>
+        <translation>Refrescar la lista de retransmisores y conexiones de Tor </translation>
     </message>
 </context>
 <context>
@@ -1702,142 +1706,142 @@ de los desarrolladores de Tor.</translation>
     <message>
         <location filename="../config/networkpage.cpp" line="34"/>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Red</translation>
     </message>
     <message>
         <location filename="../config/networkpage.cpp" line="186"/>
         <source>Invalid Bridge</source>
-        <translation type="unfinished"></translation>
+        <translation>Puente Inválido</translation>
     </message>
     <message>
         <location filename="../config/networkpage.cpp" line="187"/>
         <source>The specified bridge identifier is not valid.</source>
-        <translation type="unfinished"></translation>
+        <translation>El identificador de puente especificado no es válido.</translation>
     </message>
     <message>
         <location filename="../config/networkpage.cpp" line="234"/>
         <source>Copy (Ctrl+C)</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar (Ctrl+C)</translation>
     </message>
     <message>
         <location filename="../config/networkpage.cpp" line="265"/>
         <source>You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet.</source>
-        <translation type="unfinished"></translation>
+        <translation>Debe especificar una dirección IP o nombre del equipo y un número de puerto para configurar Tor para usar un proxy para acceder a Internet.</translation>
     </message>
     <message>
         <location filename="../config/networkpage.cpp" line="271"/>
         <source>You must specify one or more ports to which your firewall allows you to connect.</source>
-        <translation type="unfinished"></translation>
+        <translation>Debe especificar uno o más puertos a los que su cortafuegos le permita conectarse.</translation>
     </message>
     <message>
         <location filename="../config/networkpage.cpp" line="307"/>
         <source>&apos;%1&apos; is not a valid port number.</source>
-        <translation type="unfinished"></translation>
+        <translation>&apos;%1&apos; no es un número de puerto válido.</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="25"/>
         <source>Check to configure Tor to use a proxy to access the Internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Cliquee para configurar Tor a usar un proxy para acceder a Internet</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="28"/>
         <source>I use a proxy to access the Internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Uso un proxy para acceder a Internet</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="58"/>
         <source>Proxy Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de Proxy</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="70"/>
         <source>HTTP Proxy:</source>
-        <translation type="unfinished"></translation>
+        <translation>Proxy HTTP:</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="80"/>
         <source>Username:</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de Usuario:</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="90"/>
         <source>Use this proxy for HTTPS also</source>
-        <translation type="unfinished"></translation>
+        <translation>También usar este proxy para HTTPS</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="108"/>
         <source>Password:</source>
-        <translation type="unfinished"></translation>
+        <translation>Contraseña:</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="135"/>
         <source>Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puerto:</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="179"/>
         <source>My firewall only lets me connect to certain ports</source>
-        <translation type="unfinished"></translation>
+        <translation>Mi cortafuegos sólo me permite conectarme a ciertos puertos</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="203"/>
         <source>Firewall Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración del Cortafuegos</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="215"/>
         <source>Allowed Ports:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puertos Permitidos:</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="225"/>
         <source>80, 443</source>
-        <translation type="unfinished">80, 443</translation>
+        <translation>80, 443</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="238"/>
         <source>My ISP blocks connections to the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Mi ISP bloquea conexiones a la red Tor</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="262"/>
         <source>Tor Bridge Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de Puente Tor</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="274"/>
         <source>The Tor version you are currently running does not support bridges. &lt;br&gt;Tor will still try to encrypt its directory connections.</source>
-        <translation type="unfinished"></translation>
+        <translation>La versión de Tor que está ejecutandose no soporta puentes. &lt;br&gt;Tor aún tratará de cifrar su directorio de conecciones.</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="295"/>
         <source>Add a Bridge:</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar un Puente:</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="383"/>
         <source>Remove the selected bridges from the list</source>
-        <translation type="unfinished"></translation>
+        <translation>Quitar los puentes seleccionados de la lista</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="399"/>
         <source>Copy the selected bridges to the clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar los puentes seleccionados al portapapeles</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="176"/>
         <source>Check to configure Tor to only connect to relays using ports allowed by your firewall</source>
-        <translation type="unfinished"></translation>
+        <translation>Cliquee para configurar Tor a conectarse sólo a retransmisores usando puertos permitidos por su cortafuegos</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="318"/>
         <source>&lt;a href=&quot;bridges.finding&quot;&gt;How do I find a bridge?&lt;/a&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;a href=&quot;bridges.finding&quot;&gt;¿Cómo encuentro un puente?&lt;/a&gt;</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="235"/>
         <source>Check to configure Tor to encrypt its directory requests and, optionally, use bridge relays to access the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Cliquee para configurar Tor a encriptar su solicitud de directorios y, opcionalmente, usar retransmisión de puentes para acceder a la red Tor</translation>
     </message>
 </context>
 <context>
@@ -1927,17 +1931,17 @@ de los desarrolladores de Tor.</translation>
     <message>
         <location filename="../network/routerlistwidget.cpp" line="31"/>
         <source>Relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Retransmisión</translation>
     </message>
     <message>
         <location filename="../network/routerlistwidget.cpp" line="58"/>
         <source>Zoom to Relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Acercar al Retransmisor</translation>
     </message>
     <message>
         <location filename="../network/routerlistwidget.cpp" line="168"/>
         <source>%1 relays online</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 retransmisores en línea</translation>
     </message>
 </context>
 <context>
@@ -1970,12 +1974,12 @@ de los desarrolladores de Tor.</translation>
     <message>
         <location filename="../config/serverpage.ui" line="699"/>
         <source>Exit Policies</source>
-        <translation>Politicas de Salida</translation>
+        <translation>Políticas de Salida</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="831"/>
         <source>Show help topic on exit policies</source>
-        <translation>Mostrar ayuda acerca de las politicas de salida</translation>
+        <translation>Mostrar ayuda acerca de las políticas de salida</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="555"/>
@@ -2020,12 +2024,12 @@ de los desarrolladores de Tor.</translation>
     <message>
         <location filename="../config/serverpage.ui" line="370"/>
         <source>For Internet connections with fast download speed but slow upload, please list your upload speed here.</source>
-        <translation>Para conexiones de internet con velocidades de descarga rapida pero subida lenta, por favor liste su velocidad de subida aquí.</translation>
+        <translation>Para conexiones de internet con velocidades de descarga rápida pero subida lenta, por favor liste su velocidad de subida aquí.</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="391"/>
         <source>Select the entry that most closely resembles your Internet connection</source>
-        <translation>Seleccione la entrada que mas se parece a su conexión de Internet.</translation>
+        <translation>Seleccione la entrada que mas se parece a su conexión de Internet</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="401"/>
@@ -2125,93 +2129,94 @@ de los desarrolladores de Tor.</translation>
     <message>
         <location filename="../config/serverpage.cpp" line="63"/>
         <source>Server</source>
-        <translation type="unfinished">Servidor</translation>
+        <translation>Servidor</translation>
     </message>
     <message>
         <location filename="../config/serverpage.cpp" line="120"/>
         <source>Bridge Support Unavailable</source>
-        <translation type="unfinished"></translation>
+        <translation>Soporte de Puentes no disponible</translation>
     </message>
     <message>
         <location filename="../config/serverpage.cpp" line="123"/>
         <source>You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ha configurado Tor para actuar como retransmisor de puente para usuarios censurados, pero su versión de Tor no soporta puentes.</translation>
     </message>
     <message>
         <location filename="../config/serverpage.cpp" line="125"/>
         <source>Please upgrade your Tor software or configure Tor to act as a normal Tor relay.</source>
-        <translation type="unfinished"></translation>
+        <translation>Por favor, actualice su versión de Tor o configure a Tor para actuar como un retransmisor regular.</translation>
     </message>
     <message>
         <location filename="../config/serverpage.cpp" line="243"/>
         <source>You must specify at least a relay nickname and port.</source>
-        <translation type="unfinished"></translation>
+        <translation>Debe especificar mínimamente el apodo de un retransmisor y puerto.</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="25"/>
         <source>Run Tor as a client only</source>
-        <translation type="unfinished"></translation>
+        <translation>Ejecutar Tor como sólo cliente</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="91"/>
         <source>Relay Port:</source>
-        <translation type="unfinished"></translation>
+        <translation>Puerto de Retransmisión:</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="139"/>
         <source>Email address at which you may be reached if there is a
 problem with your relay. You might also include your PGP or GPG fingerprint.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dirección de correo a la cual podrá ser contactado si existe un
+problema con su retransmisión. Es aconsejable que incluya su huella dactilar PGP o GPG.</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="110"/>
         <source>Enable to mirror the Tor relay directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Habilitar la réplica del directorio de retransmisión de Tor</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="113"/>
         <source>Mirror the Relay Directory </source>
-        <translation type="unfinished"></translation>
+        <translation>Replicar el Directorio de Retransmisión</translation>
     </message>
     <message>
         <location filename="../config/serverpage.cpp" line="179"/>
         <source>Your bridge relay is not running.</source>
-        <translation type="unfinished"></translation>
+        <translation>Su puente no está ejecutándose.</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="39"/>
         <source>Help censored users reach the Tor network (Tor 0.2.0.8-alpha or newer)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ayude usuarios censurados a acceder a la red Tor (Tor 0.2.0.8-alpha o posterior)</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="272"/>
         <source>Name of your relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Nombre de su retransmisor</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="305"/>
         <source>Port on which users and other relays can communicate with your relay</source>
-        <translation type="unfinished"></translation>
+        <translation>Puerto en el que los usuarios y otros retransmisores pueden comunicarse con su retransmisor</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="940"/>
         <source>Let others access your bridge by giving them this line:</source>
-        <translation type="unfinished"></translation>
+        <translation>Permita a otros acceder a su puente al darles esta línea:</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="964"/>
         <source>This is the identity of your bridge relay that you can give to other people</source>
-        <translation type="unfinished"></translation>
+        <translation>Este es el identificador de su puente retransmisor que puede ofrecer a otras personas</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="986"/>
         <source>Copy your bridge relay&apos;s identity to the clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar su identificador de puente retransmisor al portapapeles</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="776"/>
         <source>Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 and 8888</source>
-        <translation type="unfinished">Puertos 706, 1863, 50505, 5190, 5222, 8300 y 8888 {706, 1863, 5050, 5190, 5222, 5223, 8300 ?}</translation>
+        <translation>Puertos 706, 1863, 5050, 5190, 5222, 5223, 8300 y 8888</translation>
     </message>
 </context>
 <context>
@@ -2219,102 +2224,102 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../config/servicepage.cpp" line="27"/>
         <source>Services</source>
-        <translation type="unfinished"></translation>
+        <translation>Servicios</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="105"/>
         <source>Error while trying to unpublish all services</source>
-        <translation type="unfinished"></translation>
+        <translation>Error tratando de quitar la publicación de todos los servicios</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="112"/>
         <source>Please configure at least a service directory and a virtual       port for each service you want to save. Remove the other ones.</source>
-        <translation type="unfinished"></translation>
+        <translation>Por favor, configure al menos un directorio de servicios y un puerto        virtual por cada servicio que quiera almacenar. Remueva los otros.</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="586"/>
         <source>Error</source>
-        <translation type="unfinished">Error</translation>
+        <translation>Error</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="442"/>
         <source>Please select a Service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Por favor, seleccione un Servicio.</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="447"/>
         <source>Select Service Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione Servicio de Directorio</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="536"/>
         <source>Virtual Port may only contain valid port numbers [1..65535].</source>
-        <translation type="unfinished"></translation>
+        <translation>El Puerto Virtual sólo puede contener puertos válidos [1..65535].</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="567"/>
         <source>Target may only contain address:port, address, or port.</source>
-        <translation type="unfinished"></translation>
+        <translation>Destino sólo puede contener dirección:puerto, dirección, o puerto.</translation>
     </message>
     <message>
         <location filename="../config/servicepage.cpp" line="587"/>
         <source>Directory already in use by another service.</source>
-        <translation type="unfinished"></translation>
+        <translation>Directorio ya en uso por otro servicio.</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="19"/>
         <source>Form</source>
-        <translation type="unfinished"></translation>
+        <translation>Formulario</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="31"/>
         <source>Provided Hidden Services</source>
-        <translation type="unfinished"></translation>
+        <translation>Provistos Servicios Ocultos</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="56"/>
         <source>Onion Address</source>
-        <translation type="unfinished"></translation>
+        <translation>Dirección Onion</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="61"/>
         <source>Virtual Port</source>
-        <translation type="unfinished"></translation>
+        <translation>Puerto Virtual</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="66"/>
         <source>Target</source>
-        <translation type="unfinished"></translation>
+        <translation>Destino</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="71"/>
         <source>Directory Path</source>
-        <translation type="unfinished"></translation>
+        <translation>Ruta del Directorio</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="76"/>
         <source>Enabled</source>
-        <translation type="unfinished"></translation>
+        <translation>Habilitado</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="84"/>
         <source>Add new service to list</source>
-        <translation type="unfinished"></translation>
+        <translation>Agregar nuevo servicio a la lista</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="97"/>
         <source>Remove selected service from list</source>
-        <translation type="unfinished"></translation>
+        <translation>Quitar servicio seleccionado de la lista</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="110"/>
         <source>Copy onion address of selected service to clipboard</source>
-        <translation type="unfinished"></translation>
+        <translation>Copiar dirección onion del servicio seleccionado al portapapeles</translation>
     </message>
     <message>
         <location filename="../config/servicepage.ui" line="123"/>
         <source>Browse in local file system and choose directory for selected service</source>
-        <translation type="unfinished"></translation>
+        <translation>Explorar sus archivos y elegir un directorio para servicios seleccionados</translation>
     </message>
 </context>
 <context>
@@ -2362,7 +2367,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../../torcontrol/stream.cpp" line="126"/>
         <source>Remapped</source>
-        <translation type="unfinished"></translation>
+        <translation>Remapeado</translation>
     </message>
 </context>
 <context>
@@ -2391,7 +2396,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../config/torsettings.cpp" line="107"/>
         <source>Failed to hash the control password.</source>
-        <translation type="unfinished"></translation>
+        <translation>Falló al obtener hash de la contraseña de control.</translation>
     </message>
 </context>
 <context>
@@ -2449,7 +2454,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../vmessagebox.cpp" line="87"/>
         <source>Browse</source>
-        <translation type="unfinished">Navegar</translation>
+        <translation>Navegar</translation>
     </message>
 </context>
 <context>
@@ -2467,14 +2472,16 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../main.cpp" line="88"/>
         <source>Vidalia is already running</source>
-        <translation>Vidalia ya está ejecutándose.</translation>
+        <translation>Vidalia ya está ejecutándose</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="94"/>
         <source>Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.
 
 Would you like to continue starting Vidalia?</source>
-        <translation>Otro proceso de Vidalia esta posiblemente ejecutándose. Si realmente no hay otro proceso de Vidalia ejecutándose, puede elegir para continuar de todas maneras.</translation>
+        <translation>Otro proceso de Vidalia esta posiblemente ejecutándose. Si realmente no hay otro proceso de Vidalia ejecutándose, puede elegir continuar de todas maneras.
+
+¿Quiere continuar iniciando Vidalia?</translation>
     </message>
     <message>
         <location filename="../main.cpp" line="74"/>
@@ -2499,7 +2506,7 @@ Would you like to continue starting Vidalia?</source>
     <message>
         <location filename="../vidalia.cpp" line="172"/>
         <source>Sets the name and location of Vidalia&apos;s pidfile.</source>
-        <translation>Ajusta el nombre y la localización del pidfile de Vidalia.</translation>
+        <translation>Ajusta el nombre y la localización del archivo de procesos de Vidalia.</translation>
     </message>
     <message>
         <location filename="../vidalia.cpp" line="174"/>
