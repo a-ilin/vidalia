@@ -82,7 +82,7 @@ XPStyle         on
 !define MUI_FINISHPAGE_RUN_FUNCTION CustomFinishFn
 !define MUI_FINISHPAGE_RUN_TEXT "$(BundleRunNow)"
 !define MUI_FINISHPAGE_LINK "$(BundleLinkText)"
-!define MUI_FINISHPAGE_LINK_LOCATION  "http://www.torproject.org/docs/tor-doc-win32.html"
+!define MUI_FINISHPAGE_LINK_LOCATION  "https://www.torproject.org/docs/tor-doc-win32.html"
 
 ;--------------------------------
 ; Pages
@@ -240,7 +240,7 @@ SectionGroup "${TOR_DESC}" TorGroup
        SetOutPath "$INSTDIR\Tor"
        File "tor\${TOR_APPVERSION}\tor.exe"
        File "tor\${TOR_APPVERSION}\tor-resolve.exe"
-       WriteIniStr "$INSTDIR\Tor\Tor Website.url" "InternetShortcut" "URL" "http://www.torproject.org"
+       WriteIniStr "$INSTDIR\Tor\Tor Website.url" "InternetShortcut" "URL" "https://www.torproject.org"
 
        ; If the user is also installing Vidalia, then don't confuse them by
        ; an extra torrc in %APPDATA%\Tor
