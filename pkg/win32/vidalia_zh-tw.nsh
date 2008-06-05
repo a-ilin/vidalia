@@ -6,7 +6,7 @@
 
 ; Bundle
 LangString BundleSetupCaption         ${LANG_TRADCHINESE} "${BUNDLE_NAME} 安裝精靈"
-LangString BundleWelcomeText          ${LANG_TRADCHINESE} "安裝精靈將會引導您安裝 Tor,Vidalia,Polipo 和 Torbutton.\r\n\r\n如果您曾經安裝過 Tor,Vidalia,Polipo 或 Firefox,請確保在執行此安裝精靈前這些程式未在執行中.\r\n\r\n$_CLICK"
+LangString BundleWelcomeText          ${LANG_TRADCHINESE} "安裝精靈將會引導您安裝 Tor,Vidalia,Privoxy 和 Torbutton.\r\n\r\n如果您曾經安裝過 Tor,Vidalia,Privoxy 或 Firefox,請確保在執行此安裝精靈前這些程式未在執行中.\r\n\r\n$_CLICK"
 LangString BundleWelcomeTitle         ${LANG_TRADCHINESE} "歡迎使用 ${BUNDLE_NAME} 安裝精靈"
 LangString BundleLinkText             ${LANG_TRADCHINESE} "${TOR_NAME} 安裝文檔"
 LangString BundleFinishText           ${LANG_TRADCHINESE} "安裝完成.\r\n請訪問 http://tor.eff.org/docs/tor-doc-win32.html 來獲取關於 Tor 的配置訊息.\r\n\r\n如果選擇了安裝 Torbutton,您需要重新啟動火狐(Firefox)瀏覽器."
@@ -36,12 +36,14 @@ LangString TorDocumentationDesc       ${LANG_TRADCHINESE} "安裝 ${TOR_NAME} 文檔
 LangString TorShortcuts               ${LANG_TRADCHINESE} "添加至開始菜單程式集"
 LangString TorShortcutsDesc           ${LANG_TRADCHINESE} "添加 ${TOR_NAME} 至開始菜單程式集."
 
-; Polipo
-LangString PolipoGroupDesc           ${LANG_TRADCHINESE} "安裝 ${POLIPO_DESC}."
-LangString PolipoUninstDesc          ${LANG_TRADCHINESE} "Remove ${POLIPO_DESC}."
-LangString PolipoAppDesc             ${LANG_TRADCHINESE} "安裝 ${POLIPO_DESC}."
-LangString PolipoShortcuts           ${LANG_TRADCHINESE} "添加至開始菜單程式集"
-LangString PolipoShortcutsDesc       ${LANG_TRADCHINESE} "添加 ${POLIPO_NAME} 至開始菜單程式集."
+; Privoxy
+LangString PrivoxyGroupDesc           ${LANG_TRADCHINESE} "安裝 ${PRIVOXY_DESC}."
+LangString PrivoxyUninstDesc          ${LANG_TRADCHINESE} "Remove ${PRIVOXY_DESC}."
+LangString PrivoxyAppDesc             ${LANG_TRADCHINESE} "安裝 ${PRIVOXY_DESC}."
+LangString PrivoxyShortcuts           ${LANG_TRADCHINESE} "添加至開始菜單程式集"
+LangString PrivoxyShortcutsDesc       ${LANG_TRADCHINESE} "添加 ${PRIVOXY_NAME} 至開始菜單程式集."
+LangString PrivoxyStartup             ${LANG_TRADCHINESE} "在系統啟動時執行"
+LangString PrivoxyStartupDesc         ${LANG_TRADCHINESE} "自動在系統啟動時執行 ${PRIVOXY_NAME}."
 
 ; Torbutton
 LangString TorbuttonGroupDesc         ${LANG_TRADCHINESE} "安裝 ${TORBUTTON_DESC}."

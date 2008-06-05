@@ -7,7 +7,7 @@
 
 ; Bundle
 LangString BundleSetupCaption         ${LANG_RUSSIAN} "Установка ${BUNDLE_NAME}"
-LangString BundleWelcomeText          ${LANG_RUSSIAN} "Эта программа установит Tor, Vidalia, Polipo, и Torbutton.\r\n\r\nTor это система анонимного использования сети Internet, которая поможет анонимизировать Вашу веб-деятельность, системы мгновенного обмена сообщениями, IRC, и многое другое. Vidalia это программа с оконным интерфейсом для настройки, управления и контроля Tor.\r\n\r\nPolipo это фильтрующий веб-прокси который помогает защитить вашу приватность, а также удаляет рекламу, баннеры, и всплывающие сообщения.\r\n\r\nTorbutton это расширение Firefox для быстрого включения/выключения режима анонимного использования браузера.\r\n\r\nЕсли вы ранее уже устанавливали Tor, Vidalia, Polipo, или Firefox, пожалуйста убедитесь что эти программы остановлены и потом продолжите установку.\r\n\r\n$_CLICK"
+LangString BundleWelcomeText          ${LANG_RUSSIAN} "Эта программа установит Tor, Vidalia, Privoxy, и Torbutton.\r\n\r\nTor это система анонимного использования сети Internet, которая поможет анонимизировать Вашу веб-деятельность, системы мгновенного обмена сообщениями, IRC, и многое другое. Vidalia это программа с оконным интерфейсом для настройки, управления и контроля Tor.\r\n\r\nPrivoxy это фильтрующий веб-прокси который помогает защитить вашу приватность, а также удаляет рекламу, баннеры, и всплывающие сообщения.\r\n\r\nTorbutton это расширение Firefox для быстрого включения/выключения режима анонимного использования браузера.\r\n\r\nЕсли вы ранее уже устанавливали Tor, Vidalia, Privoxy, или Firefox, пожалуйста убедитесь что эти программы остановлены и потом продолжите установку.\r\n\r\n$_CLICK"
 LangString BundleWelcomeTitle         ${LANG_RUSSIAN} "Вас приветствует мастер установки ${BUNDLE_NAME}"
 LangString BundleLinkText             ${LANG_RUSSIAN} "Инструкция по установке ${TOR_NAME}"
 LangString BundleFinishText           ${LANG_RUSSIAN} "Установка завершена.\r\nПожалуйста прочитайте http://tor.eff.org/docs/tor-doc-win32.html чтобы узнать, как настроить другие приложения использовать Tor.\r\n\r\nЕсли вы установили Torbutton, вам придётся перезапустить Firefox."
@@ -40,12 +40,14 @@ LangString TorShortcuts               ${LANG_RUSSIAN} "Ярлыки в Главное Меню"
 LangString TorShortcutsDesc           ${LANG_RUSSIAN} "Добавить ${TOR_NAME} в Главное Меню."
 
 
-; Polipo
-LangString PolipoGroupDesc           ${LANG_RUSSIAN} "Polipo это фильтрующий веб-прокси который помогает защитить вашу приватность, а также удаляет рекламу, баннеры, и всплывающие сообщения."
-LangString PolipoUninstDesc          ${LANG_RUSSIAN} "Удалить ${POLIPO_DESC}."
-LangString PolipoAppDesc             ${LANG_RUSSIAN} "Установить ${POLIPO_DESC}."
-LangString PolipoShortcuts           ${LANG_RUSSIAN} "Ярлыки в Главное Меню"
-LangString PolipoShortcutsDesc       ${LANG_RUSSIAN} "Добавить ${POLIPO_NAME} в Главное Меню."
+; Privoxy
+LangString PrivoxyGroupDesc           ${LANG_RUSSIAN} "Privoxy это фильтрующий веб-прокси который помогает защитить вашу приватность, а также удаляет рекламу, баннеры, и всплывающие сообщения."
+LangString PrivoxyUninstDesc          ${LANG_RUSSIAN} "Удалить ${PRIVOXY_DESC}."
+LangString PrivoxyAppDesc             ${LANG_RUSSIAN} "Установить ${PRIVOXY_DESC}."
+LangString PrivoxyShortcuts           ${LANG_RUSSIAN} "Ярлыки в Главное Меню"
+LangString PrivoxyShortcutsDesc       ${LANG_RUSSIAN} "Добавить ${PRIVOXY_NAME} в Главное Меню."
+LangString PrivoxyStartup             ${LANG_RUSSIAN} "Автозапуск"
+LangString PrivoxyStartupDesc         ${LANG_RUSSIAN} "Автоматически запускать ${PRIVOXY_NAME} при загрузке системы."
 
 
 ; Torbutton

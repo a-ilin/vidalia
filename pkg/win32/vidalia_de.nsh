@@ -5,7 +5,7 @@
 
 ; Bundle
 LangString BundleSetupCaption         ${LANG_GERMAN} "${BUNDLE_NAME} Setup"
-LangString BundleWelcomeText          ${LANG_GERMAN} "Dieser Assistent führt Sie durch die Installation von:\r\n\tTor\t${TOR_APPVERSION}\r\n\tVidalia\t${VIDALIA_APPVERSION}\r\n\tPolipo\t${POLIPO_APPVERSION}\r\n\r\nSollten Sie Tor, Vidalia oder Polipo bereits installiert haben, beenden Sie diese Programme bitte bevor Sie fortfahren.\r\n\r\n$_CLICK"
+LangString BundleWelcomeText          ${LANG_GERMAN} "Dieser Assistent führt Sie durch die Installation von:\r\n\tTor\t${TOR_APPVERSION}\r\n\tVidalia\t${VIDALIA_APPVERSION}\r\n\tPrivoxy\t${PRIVOXY_APPVERSION}\r\n\r\nSollten Sie Tor, Vidalia oder Privoxy bereits installiert haben, beenden Sie diese Programme bitte bevor Sie fortfahren.\r\n\r\n$_CLICK"
 LangString BundleWelcomeTitle         ${LANG_GERMAN} "Willkommen beim ${BUNDLE_NAME} Installations-Assistent"
 LangString BundleLinkText             ${LANG_GERMAN} "${TOR_NAME} Installations-Dokumentation"
 LangString BundleFinishText           ${LANG_GERMAN} "Die Installation wird abgeschlossen.\r\nBitte besuchen Sie http://tor.eff.org/docs/tor-doc-win32.html um zu erfahren, wie Sie Ihre Anwendungen zur Benutzung mit Tor einrichten können.\r\n"
@@ -38,12 +38,14 @@ LangString TorShortcuts               ${LANG_GERMAN} "Zum Startmenü hinzufügen"
 LangString TorShortcutsDesc           ${LANG_GERMAN} "${TOR_NAME} zu Ihrem Startmenü hinzufügen."
 
 
-; Polipo
-LangString PolipoGroupDesc           ${LANG_GERMAN} "Polipo ist ein filternder Webproxy, der Ihnen hilft, Ihre Privatphäre zu schützen und Werbung, Banner und Popups entfernt."
-LangString PolipoUninstDesc          ${LANG_GERMAN} "Entferne ${POLIPO_DESC}."
-LangString PolipoAppDesc             ${LANG_GERMAN} "Installiere ${POLIPO_DESC}."
-LangString PolipoShortcuts           ${LANG_GERMAN} "Zum Startmenü hinzufügen"
-LangString PolipoShortcutsDesc       ${LANG_GERMAN} "${POLIPO_NAME} zu Ihrem Startmenü hinzufügen."
+; Privoxy
+LangString PrivoxyGroupDesc           ${LANG_GERMAN} "Privoxy ist ein filternder Webproxy, der Ihnen hilft, Ihre Privatphäre zu schützen und Werbung, Banner und Popups entfernt."
+LangString PrivoxyUninstDesc          ${LANG_GERMAN} "Entferne ${PRIVOXY_DESC}."
+LangString PrivoxyAppDesc             ${LANG_GERMAN} "Installiere ${PRIVOXY_DESC}."
+LangString PrivoxyShortcuts           ${LANG_GERMAN} "Zum Startmenü hinzufügen"
+LangString PrivoxyShortcutsDesc       ${LANG_GERMAN} "${PRIVOXY_NAME} zu Ihrem Startmenü hinzufügen."
+LangString PrivoxyStartup             ${LANG_GERMAN} "Beim Systemstart ausführen"
+LangString PrivoxyStartupDesc         ${LANG_GERMAN} "${PRIVOXY_NAME} beim Systemstart automatisch ausführen."
 
 ; Torbutton
 LangString TorbuttonGroupDesc         ${LANG_GERMAN} "Torbutton ist eine Erweiterung für Firefox, die das schnelle An- und Ausschalten des anonymes Webbrowsens ermöglicht."

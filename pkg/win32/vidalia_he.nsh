@@ -10,7 +10,7 @@
 
 ; Bundle
 LangString BundleSetupCaption         ${LANG_HEBREW} "התקנת ${BUNDLE_NAME}"
-LangString BundleWelcomeText          ${LANG_HEBREW} "אשף זה ינחה אותך בעת התקנת Tor, Vidalia, Polipo ו-Torbutton.\r\n\r\nTor היא מערכת לשימוש אנונימי באינטרנט, לגלישה ופרסום אתרי רשת, תקשרות מסרים מידיים, IRC ועוד. Vidalia היא ממשק גראפי לשליטה, ניטור והגדרת Tor.\r\n\r\nPolipo הוא שרת פרוקסי מסנן המגן על פרטיותך ועוזר להסיר פרסומות וחלונות קופצים.\r\n\r\nTorbutton היא הרחבת Firefox המאפשרת להפעיל ולכבות גלישה אנונימית במהירות.\r\n\r\nאם התקנת Tor, Vidalia, Polipo או Firefox בעבר, אנא ודא שהם לא פעילים לפני המשך ההתקנה.\r\n\r\n$_CLICK"
+LangString BundleWelcomeText          ${LANG_HEBREW} "אשף זה ינחה אותך בעת התקנת Tor, Vidalia, Privoxy ו-Torbutton.\r\n\r\nTor היא מערכת לשימוש אנונימי באינטרנט, לגלישה ופרסום אתרי רשת, תקשרות מסרים מידיים, IRC ועוד. Vidalia היא ממשק גראפי לשליטה, ניטור והגדרת Tor.\r\n\r\nPrivoxy הוא שרת פרוקסי מסנן המגן על פרטיותך ועוזר להסיר פרסומות וחלונות קופצים.\r\n\r\nTorbutton היא הרחבת Firefox המאפשרת להפעיל ולכבות גלישה אנונימית במהירות.\r\n\r\nאם התקנת Tor, Vidalia, Privoxy או Firefox בעבר, אנא ודא שהם לא פעילים לפני המשך ההתקנה.\r\n\r\n$_CLICK"
 LangString BundleWelcomeTitle         ${LANG_HEBREW} "ברוכים הבאים לאשף התקנת ${BUNDLE_NAME}"
 LangString BundleLinkText             ${LANG_HEBREW} "מסמכי התקנה של ${TOR_NAME}"
 LangString BundleFinishText           ${LANG_HEBREW} "ההתקנה הסתיימה.\r\nאנא ראה http://tor.eff.org/docs/tor-doc-win32.html על מנת ללמוד כיצד להגדיר את התוכנות לשימוש ב-Tor.\r\n\r\n אם התקנת Torbutton יש צורך להתחיל מחדש את Firefox."
@@ -40,12 +40,14 @@ LangString TorDocumentationDesc       ${LANG_HEBREW} "התקן מסמכי ${TOR_NAME}."
 LangString TorShortcuts               ${LANG_HEBREW} "הוסף לתפריט התחלה"
 LangString TorShortcutsDesc           ${LANG_HEBREW} "הוסף את ${TOR_NAME} לתפריט התחלה."
 
-; Polipo
-LangString PolipoGroupDesc           ${LANG_HEBREW} "Polipo הינו שרת פרוקסי מסנן המגן על פרטיותך ועוזר בהסרת פרסומות וחלונות קופצים."
-LangString PolipoUninstDesc          ${LANG_HEBREW} "הסר ${POLIPO_DESC}."
-LangString PolipoAppDesc             ${LANG_HEBREW} "התקן ${POLIPO_DESC}."
-LangString PolipoShortcuts           ${LANG_HEBREW} "הוסף לתפריט התחלה"
-LangString PolipoShortcutsDesc       ${LANG_HEBREW} "הוסף את ${POLIPO_NAME} לתפריט התחלה."
+; Privoxy
+LangString PrivoxyGroupDesc           ${LANG_HEBREW} "Privoxy הינו שרת פרוקסי מסנן המגן על פרטיותך ועוזר בהסרת פרסומות וחלונות קופצים."
+LangString PrivoxyUninstDesc          ${LANG_HEBREW} "הסר ${PRIVOXY_DESC}."
+LangString PrivoxyAppDesc             ${LANG_HEBREW} "התקן ${PRIVOXY_DESC}."
+LangString PrivoxyShortcuts           ${LANG_HEBREW} "הוסף לתפריט התחלה"
+LangString PrivoxyShortcutsDesc       ${LANG_HEBREW} "הוסף את ${PRIVOXY_NAME} לתפריט התחלה."
+LangString PrivoxyStartup             ${LANG_HEBREW} "הרץ בעת אתחול"
+LangString PrivoxyStartupDesc         ${LANG_HEBREW} "הרץ ${PRIVOXY_NAME} אוטומטית בעת אתחול."
 
 ; Torbutton
 LangString TorbuttonGroupDesc         ${LANG_HEBREW} "Torbutton הינה הרחבת Firefox המאפשרת הפעלה וכיבוי מהיר של גלישה אנונימית."

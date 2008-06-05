@@ -5,7 +5,7 @@
 
 ; Bundle
 LangString BundleSetupCaption         ${LANG_DUTCH} "${BUNDLE_NAME} setup"
-LangString BundleWelcomeText          ${LANG_DUTCH} "Deze wizard zal u leiden door de installatie van Tor, Vidalia, Polipo, and Torbutton.\r\n\r\nIndien u eerder Tor, Vidalia, Polipo, of Firefox heeft geïnstalleerd, zorg dan dat deze zijn afgesloten voordat u verder gaat met deze installatie.\r\n\r\n$_CLICK"
+LangString BundleWelcomeText          ${LANG_DUTCH} "Deze wizard zal u leiden door de installatie van Tor, Vidalia, Privoxy, and Torbutton.\r\n\r\nIndien u eerder Tor, Vidalia, Privoxy, of Firefox heeft geïnstalleerd, zorg dan dat deze zijn afgesloten voordat u verder gaat met deze installatie.\r\n\r\n$_CLICK"
 LangString BundleWelcomeTitle         ${LANG_DUTCH} "Welkom bij de ${BUNDLE_NAME} Setup Wizard"
 LangString BundleLinkText             ${LANG_DUTCH} "${TOR_NAME} installatie documentatie"
 LangString BundleFinishText           ${LANG_DUTCH} "De installatie is voltooid.\r\nBekijk alstublieft http://tor.eff.org/docs/tor-doc-win32.html voor meer informatie over het configureren van applicaties voor gebruik via Tor.\r\n\r\nIndien u Torbutton heeft geïnstalleerd, dient u Firefox te herstarten."
@@ -35,12 +35,14 @@ LangString TorDocumentationDesc       ${LANG_DUTCH} "Installeer ${TOR_NAME} docu
 LangString TorShortcuts               ${LANG_DUTCH} "Voeg toe aan Start Menu"
 LangString TorShortcutsDesc           ${LANG_DUTCH} "Voeg ${TOR_NAME} toe aan uw Start menu."
 
-; Polipo
-LangString PolipoGroupDesc           ${LANG_DUTCH} "Installeer ${POLIPO_DESC}."
-LangString PolipoUninstDesc          ${LANG_DUTCH} "Verwijder ${POLIPO_DESC}."
-LangString PolipoAppDesc             ${LANG_DUTCH} "Installeer ${POLIPO_DESC}."
-LangString PolipoShortcuts           ${LANG_DUTCH} "Voeg toe aan Start Menu"
-LangString PolipoShortcutsDesc       ${LANG_DUTCH} "Voeg ${POLIPO_NAME} toe aan uw Start menu."
+; Privoxy
+LangString PrivoxyGroupDesc           ${LANG_DUTCH} "Installeer ${PRIVOXY_DESC}."
+LangString PrivoxyUninstDesc          ${LANG_DUTCH} "Verwijder ${PRIVOXY_DESC}."
+LangString PrivoxyAppDesc             ${LANG_DUTCH} "Installeer ${PRIVOXY_DESC}."
+LangString PrivoxyShortcuts           ${LANG_DUTCH} "Voeg toe aan Start Menu"
+LangString PrivoxyShortcutsDesc       ${LANG_DUTCH} "Voeg ${PRIVOXY_NAME} toe aan uw Start menu."
+LangString PrivoxyStartup             ${LANG_DUTCH} "Start automatisch"
+LangString PrivoxyStartupDesc         ${LANG_DUTCH} "Start ${PRIVOXY_NAME} automatisch bij het opstarten van Windows."
 
 ; Torbutton
 LangString TorbuttonGroupDesc         ${LANG_DUTCH} "Installeer ${TORBUTTON_DESC}."

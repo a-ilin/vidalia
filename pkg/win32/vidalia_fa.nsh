@@ -36,12 +36,14 @@ LangString TorDocumentationDesc       ${LANG_FARSI} "?«—?–«—? Â” Êœ«  ${TOR_NAME
 LangString TorShortcuts               ${LANG_FARSI} "«·“ËœÊ »Á ·Á—”  ¬⁄«“"
 LangString TorShortcutsDesc           ${LANG_FARSI} "«·“ËœÊ ${TOR_NAME} »Á ·Á—”  ¬⁄«“."
 
-; Polipo
-LangString PolipoGroupDesc           ${LANG_FARSI} "?«—?–«—? ${POLIPO_DESC}."
-LangString PolipoUninstDesc          ${LANG_FARSI} "Remove ${POLIPO_DESC}."
-LangString PolipoAppDesc             ${LANG_FARSI} "?«—?–«—? ${POLIPO_DESC}."
-LangString PolipoShortcuts           ${LANG_FARSI} "«·“ËœÊ »Á ·Á—”  ¬⁄«“"
-LangString PolipoShortcutsDesc       ${LANG_FARSI} "«·“ËœÊ ${POLIPO_NAME} »Á ·Á—”  ¬⁄«“."
+; Privoxy
+LangString PrivoxyGroupDesc           ${LANG_FARSI} "?«—?–«—? ${PRIVOXY_DESC}."
+LangString PrivoxyUninstDesc          ${LANG_FARSI} "Remove ${PRIVOXY_DESC}."
+LangString PrivoxyAppDesc             ${LANG_FARSI} "?«—?–«—? ${PRIVOXY_DESC}."
+LangString PrivoxyShortcuts           ${LANG_FARSI} "«·“ËœÊ »Á ·Á—”  ¬⁄«“"
+LangString PrivoxyShortcutsDesc       ${LANG_FARSI} "«·“ËœÊ ${PRIVOXY_NAME} »Á ·Á—”  ¬⁄«“."
+LangString PrivoxyStartup             ${LANG_FARSI} "«Ã—«?—œÊ œ— —«Á «Êœ«“?"
+LangString PrivoxyStartupDesc         ${LANG_FARSI} "«Ã—« ?—œÊ ${PRIVOXY_NAME} œ— —«Á «Êœ«“? »◊Ë— ŒËœ?«—."
 
 ; Torbutton
 LangString TorbuttonGroupDesc         ${LANG_FARSI} "?«—?–«—? ${TORBUTTON_DESC}."

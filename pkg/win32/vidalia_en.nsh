@@ -26,7 +26,7 @@
 
 ; Bundle
 LangString BundleSetupCaption         ${LANG_ENGLISH} "${BUNDLE_NAME} setup"
-LangString BundleWelcomeText          ${LANG_ENGLISH} "This wizard will guide you through the installation of Tor, Vidalia, Polipo, and Torbutton.\r\n\r\nTor is a system for using the Internet anonymously, helping you anonymize Web browsing and publishing, instant messaging, IRC, and more. Vidalia is a GUI that helps you control, monitor, and configure Tor.\r\n\r\nPolipo is a caching web proxy that helps make web browsing over Tor more responsive.\r\n\r\nTorbutton is a Firefox extension that allows you to quickly enable or disable anonymous web browsing.\r\n\r\nIf you have previously installed Tor, Vidalia, Polipo, or Firefox, please make sure they are not running before continuing this installation.\r\n\r\n$_CLICK"
+LangString BundleWelcomeText          ${LANG_ENGLISH} "This wizard will guide you through the installation of Tor, Vidalia, Privoxy, and Torbutton.\r\n\r\nTor is a system for using the Internet anonymously, helping you anonymize Web browsing and publishing, instant messaging, IRC, and more. Vidalia is a GUI that helps you control, monitor, and configure Tor.\r\n\r\nPrivoxy is a filtering web proxy that protects your privacy and helps remove ads, banners, and popups.\r\n\r\nTorbutton is a Firefox extension that allows you to quickly enable or disable anonymous web browsing.\r\n\r\nIf you have previously installed Tor, Vidalia, Privoxy, or Firefox, please make sure they are not running before continuing this installation.\r\n\r\n$_CLICK"
 LangString BundleWelcomeTitle         ${LANG_ENGLISH} "Welcome to the ${BUNDLE_NAME} Setup Wizard"
 LangString BundleLinkText             ${LANG_ENGLISH} "${TOR_NAME} installation documentation"
 LangString BundleFinishText           ${LANG_ENGLISH} "Installation is complete.\r\nPlease see http://tor.eff.org/docs/tor-doc-win32.html to learn how to configure your applications to use Tor.\r\n\r\nIf you installed Torbutton, you will need to restart Firefox."
@@ -56,12 +56,14 @@ LangString TorDocumentationDesc       ${LANG_ENGLISH} "Install ${TOR_NAME} docum
 LangString TorShortcuts               ${LANG_ENGLISH} "Add to Start Menu"
 LangString TorShortcutsDesc           ${LANG_ENGLISH} "Add ${TOR_NAME} to your Start menu."
 
-; Polipo
-LangString PolipoGroupDesc           ${LANG_ENGLISH} "Polipo is a caching web proxy that helps make web browsing over Tor more responsive."
-LangString PolipoUninstDesc          ${LANG_ENGLISH} "Remove ${POLIPO_DESC}."
-LangString PolipoAppDesc             ${LANG_ENGLISH} "Install ${POLIPO_DESC}."
-LangString PolipoShortcuts           ${LANG_ENGLISH} "Add to Start Menu"
-LangString PolipoShortcutsDesc       ${LANG_ENGLISH} "Add ${POLIPO_NAME} to your Start menu."
+; Privoxy
+LangString PrivoxyGroupDesc           ${LANG_ENGLISH} "Privoxy is a filtering web proxy that protects your privacy and helps remove ads, banners, and popups."
+LangString PrivoxyUninstDesc          ${LANG_ENGLISH} "Remove ${PRIVOXY_DESC}."
+LangString PrivoxyAppDesc             ${LANG_ENGLISH} "Install ${PRIVOXY_DESC}."
+LangString PrivoxyShortcuts           ${LANG_ENGLISH} "Add to Start Menu"
+LangString PrivoxyShortcutsDesc       ${LANG_ENGLISH} "Add ${PRIVOXY_NAME} to your Start menu."
+LangString PrivoxyStartup             ${LANG_ENGLISH} "Run At Startup"
+LangString PrivoxyStartupDesc         ${LANG_ENGLISH} "Automatically run ${PRIVOXY_NAME} at startup."
 
 ; Torbutton
 LangString TorbuttonGroupDesc         ${LANG_ENGLISH} "Torbutton is a Firefox extension that allows you to quickly enable or disable anonymous web browsing."
