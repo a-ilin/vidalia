@@ -417,7 +417,8 @@ MainWindow::createMenuBar()
 }
 
 /** Starts the web browser and IM client, if appropriately configured */
-void MainWindow::startSubprocesses()
+void
+MainWindow::startSubprocesses()
 {
   VidaliaSettings settings;
   QString executable = settings.getBrowserExecutable();
@@ -433,7 +434,8 @@ void MainWindow::startSubprocesses()
 }
 
 /** Called when browser or IM client have exited */
-void MainWindow::onSubprocessFinished(int exitCode, QProcess::ExitStatus exitStatus)
+void
+MainWindow::onSubprocessFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
   Q_UNUSED(exitCode)
   Q_UNUSED(exitStatus)
@@ -479,7 +481,8 @@ MainWindow::onIMFailed(QString errmsg)
 }
 
 /** Starts the proxy server, if appropriately configured */
-void MainWindow::startProxy()
+void
+MainWindow::startProxy()
 {
   VidaliaSettings settings;
   QString executable = settings.getProxyExecutable();
