@@ -50,6 +50,12 @@ HelperProcess::HelperProcess(QObject *parent)
   // Call error handling routine on errors
   QObject::connect(this, SIGNAL(error(QProcess::ProcessError)),
                    this, SLOT(onError(QProcess::ProcessError)));
+  // Call started handler on successful startup
+  QObject::connect(this, SIGNAL(started()),
+                   this, SLOT(onStart()));
+
+  // Mark as not having started
+  _okStart = false;
 }
 
 /** Start the specified application. */
@@ -70,4 +76,16 @@ HelperProcess::onError(QProcess::ProcessError error)
   }
 }
 
+/** Invoked when underlying QProcess starts. */
+void
+HelperProcess::onStart()
+{
+  _okStart = true;
+}
 
+/** Returns true iff process is not running. */
+bool
+HelperProcess::isDone() const
+{
+  return state() == NotRunning;
+}

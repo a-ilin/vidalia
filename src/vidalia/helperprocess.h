@@ -53,10 +53,18 @@ public:
   HelperProcess(QObject *parent = 0);
   /** Start the specified application. */
   void start(const QString &app, const QStringList &args);
+  /** Returns true iff process is not running. */
+  bool isDone() const;
+
+private:
+  /** True iff the underlying QProcess has sucessfully started */
+  bool _okStart;
 
 private slots:
   /** Invoked when underlying QProcess fails. */
   void onError(QProcess::ProcessError error);
+  /** Invoked when underlying QProcess starts. */
+  void onStart();
 
 signals:
   /** Invoked when start() fails. */

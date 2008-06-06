@@ -128,9 +128,16 @@ MainWindow::MainWindow()
   /* Create a new HelperProcess object, used to start the web browser */
   _browserProcess = new HelperProcess(this);
   connect(_browserProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
-           this, SLOT(onBrowserFinished(int, QProcess::ExitStatus)));
+           this, SLOT(onSubprocessFinished(int, QProcess::ExitStatus)));
   connect(_browserProcess, SIGNAL(startFailed(QString)),
            this, SLOT(onBrowserFailed(QString)));
+
+  /* Create a new HelperProcess object, used to start the web browser */
+  _imProcess = new HelperProcess(this);
+  connect(_imProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
+           this, SLOT(onSubprocessFinished(int, QProcess::ExitStatus)));
+  connect(_imProcess, SIGNAL(startFailed(QString)),
+           this, SLOT(onIMFailed(QString)));
 
   /* Create a new HelperProcess object, used to start the proxy server */
   _proxyProcess = new HelperProcess(this);
@@ -409,26 +416,43 @@ MainWindow::createMenuBar()
 #endif
 }
 
-/** Starts the web browser, if appropriately configured */
-void MainWindow::startBrowser()
+/** Starts the web browser and IM client, if appropriately configured */
+void MainWindow::startSubprocesses()
 {
   VidaliaSettings settings;
   QString executable = settings.getBrowserExecutable();
   
   if (!executable.isEmpty())
     _browserProcess->start(executable, QStringList());
+
+  executable = settings.getIMExecutable();
+
+  if (!executable.isEmpty())
+    _imProcess->start(executable, QStringList());
+  
 }
 
-/** Called when browser has exited */
-void MainWindow::onBrowserFinished(int exitCode, QProcess::ExitStatus exitStatus)
+/** Called when browser or IM client have exited */
+void MainWindow::onSubprocessFinished(int exitCode, QProcess::ExitStatus exitStatus)
 {
   Q_UNUSED(exitCode)
   Q_UNUSED(exitStatus)
 
-  shutdown();
+  /* Get path to browser and IM client */
+  VidaliaSettings settings;
+  QString browserExecutable = settings.getBrowserExecutable();
+  QString imExecutable = settings.getIMExecutable();
+
+  /* A subprocess is finished if it successfully exited or was never asked to start */
+  bool browserDone = browserExecutable.isEmpty() || _browserProcess->isDone();
+  bool imDone = imExecutable.isEmpty() || _imProcess->isDone();
+
+  /* Exit if both subprocesses are finished */
+  if (browserDone && imDone)
+    shutdown();
 }
 
-/** Called when the web browser, for example, because the path
+/** Called when the web browser failed to start, for example, because the path
  * specified to the web browser executable didn't lead to an executable. */
 void
 MainWindow::onBrowserFailed(QString errmsg)
@@ -438,6 +462,19 @@ MainWindow::onBrowserFailed(QString errmsg)
   /* Display an error message and see if the user wants some help */
   VMessageBox::warning(this, tr("Error starting web browser"),
               tr("Vidalia was unable to start the configured web browser"),
+              VMessageBox::Ok|VMessageBox::Default|VMessageBox::Escape);
+}
+
+/** Called when the IM client failed to start, for example, because the path
+ * specified to the IM client executable didn't lead to an executable. */
+void
+MainWindow::onIMFailed(QString errmsg)
+{
+  Q_UNUSED(errmsg);
+ 
+  /* Display an error message and see if the user wants some help */
+  VMessageBox::warning(this, tr("Error starting IM client"),
+              tr("Vidalia was unable to start the configured IM client"),
               VMessageBox::Ok|VMessageBox::Default|VMessageBox::Escape);
 }
 
@@ -1032,7 +1069,7 @@ void
 MainWindow::circuitEstablished()
 {
   updateTorStatus(CircuitEstablished);
-  startBrowser();
+  startSubprocesses();
 }
 
 /** Checks the status of the current version of Tor to see if it's old,

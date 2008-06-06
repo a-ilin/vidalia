@@ -32,6 +32,7 @@
 #define SETTING_DATA_DIRECTORY      "DataDirectory"
 #define SETTING_SHOW_MAINWINDOW_AT_START  "ShowMainWindowAtStart"
 #define SETTING_BROWSER_EXECUTABLE  "BrowserExecutable"
+#define SETTING_IM_EXECUTABLE       "IMExecutable"
 #define SETTING_RUN_PROXY_AT_START  "RunProxyAtStart"
 #define SETTING_PROXY_EXECUTABLE    "ProxyExecutable"
 #define SETTING_PROXY_EXECUTABLE_ARGUMENTS  "ProxyExecutableArguments"
@@ -66,6 +67,7 @@ VidaliaSettings::VidaliaSettings()
   setDefault(SETTING_RUN_TOR_AT_START, true);
   setDefault(SETTING_SHOW_MAINWINDOW_AT_START, true);
   setDefault(SETTING_BROWSER_EXECUTABLE, "");
+  setDefault(SETTING_IM_EXECUTABLE, "");
   setDefault(SETTING_RUN_PROXY_AT_START, false);
   setDefault(SETTING_PROXY_EXECUTABLE, "");
   setDefault(SETTING_PROXY_EXECUTABLE_ARGUMENTS, QStringList());
@@ -179,6 +181,22 @@ void
 VidaliaSettings::setBrowserExecutable(const QString &browserExecutable)
 {
   setValue(SETTING_BROWSER_EXECUTABLE, browserExecutable);
+}
+
+/** Returns a fully-qualified path to the IM client, including the
+ * executable name. */
+QString
+VidaliaSettings::getIMExecutable() const
+{
+  return QDir::convertSeparators(value(SETTING_IM_EXECUTABLE).toString());
+}
+
+/** Sets the location and name of the IM client executable to the given string.
+ * If set to the empty string, the client will not be started. */
+void
+VidaliaSettings::setIMExecutable(const QString &IMExecutable)
+{
+  setValue(SETTING_IM_EXECUTABLE, IMExecutable);
 }
 
 /** Returns true if Vidalia should start a proxy application when it

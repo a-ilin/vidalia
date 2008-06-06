@@ -68,6 +68,13 @@ public:
    * string. If set to the empty string, the browser will not be started. */
   void setBrowserExecutable(const QString &browserExecutable);
 
+  /** Returns a fully-qualified path to the IM client, including the
+   * executable name. */
+  QString getIMExecutable() const;
+  /** Sets the location and name of the IM client executable to the given
+   * string. If set to the empty string, the client will not be started. */
+  void setIMExecutable(const QString &IMExecutable);
+
   /** Returns true if Vidalia should start a proxy application when it
    * starts. */
   bool runProxyAtStart();

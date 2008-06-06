@@ -101,10 +101,12 @@ private slots:
   void showServerConfigDialog();
   /** Called when the "show on startup" checkbox is toggled. */
   void toggleShowOnStartup(bool checked);
-  /** Called when the web browser has stopped */
-  void onBrowserFinished(int exitCode, QProcess::ExitStatus exitStatus);
+  /** Called when the web browser or IM client have stopped */
+  void onSubprocessFinished(int exitCode, QProcess::ExitStatus exitStatus);
   /** Called web the web browser failed to start */
   void onBrowserFailed(QString errmsg);
+  /** Called web the IM client failed to start */
+  void onIMFailed(QString errmsg);
   /** Called when the proxy server fails to start */
   void onProxyFailed(QString errmsg);
 
@@ -137,7 +139,7 @@ private:
    * previously set TorStatus value. */
   TorStatus updateTorStatus(TorStatus status);
   /** Starts the web browser, if appropriately configured */
-  void startBrowser();
+  void startSubprocesses();
   /** Starts the proxy server, if appropriately configured */
   void startProxy();
   /** Converts a TorStatus enum value to a string for debug logging purposes. */
@@ -179,6 +181,8 @@ private:
   TorControl* _torControl;
   /** A HelperProcess object that manages the web browser */
   HelperProcess* _browserProcess;
+  /** A HelperProcess object that manages the IM client */
+  HelperProcess* _imProcess;
   /** A HelperProcess object that manages the proxy server */
   HelperProcess* _proxyProcess;
   /** Remembers the control password between when we start Tor with a hash of
