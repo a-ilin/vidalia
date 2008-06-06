@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="fi">
+<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -192,32 +193,32 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../config/advancedpage.ui" line="219"/>
         <source>Configuration File</source>
-        <translation type="unfinished"></translation>
+        <translation>Asetustiedosto</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="240"/>
         <source>Start the Tor software with the specified configuration file (torrc)</source>
-        <translation type="unfinished"></translation>
+        <translation>Käynnistä Tor-ohjelma määritellyllä asetustiedostolla (torcc)</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="259"/>
         <source>Select path to your configuration file</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse sijainti asetustiedostolle</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="275"/>
         <source>Data Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Tietokansio</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="296"/>
         <source>Store data for the Tor software in the following directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Tallenna Tor-ohjelman tiedot seuraavaan kansioon</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="315"/>
         <source>Select the directory used to store data for the Tor software</source>
-        <translation type="unfinished"></translation>
+        <translation>Valitse kansio, johon Tor-ohjelman tiedot tallennetaan</translation>
     </message>
 </context>
 <context>
@@ -564,12 +565,12 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../config/generalpage.ui" line="38"/>
         <source>Executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Suoritettava</translation>
     </message>
     <message>
         <location filename="../config/generalpage.ui" line="63"/>
         <source>Start the Tor software when Vidalia starts</source>
-        <translation type="unfinished"></translation>
+        <translation>Käynnistä Tor-ohjelma Vidalian käynnistyessä</translation>
     </message>
 </context>
 <context>
@@ -1079,7 +1080,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../mainwindow.ui" line="180"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Käynnistä</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="500"/>
@@ -1090,22 +1091,22 @@ Click &apos;Stop&apos; again to stop your relay now.</source>
     <message>
         <location filename="../mainwindow.cpp" line="507"/>
         <source>Stop Now</source>
-        <translation type="unfinished"></translation>
+        <translation>Pysäytä nyt</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="509"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Pysäytä</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="525"/>
         <source>Starting up...</source>
-        <translation type="unfinished"></translation>
+        <translation>Käynnistetään...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="529"/>
         <source>Starting</source>
-        <translation type="unfinished"></translation>
+        <translation>Käynnistetään</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="534"/>
@@ -1115,7 +1116,7 @@ Click &apos;Stop&apos; again to stop your relay now.</source>
     <message>
         <location filename="../mainwindow.cpp" line="693"/>
         <source>Connection Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhteysvirhe</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="730"/>
@@ -1127,7 +1128,7 @@ Would you like to shutdown gracefully and give clients time to find a new relay?
     <message>
         <location filename="../mainwindow.cpp" line="752"/>
         <source>Error Shutting Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe lopetettaessa</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="753"/>
@@ -1137,7 +1138,7 @@ Would you like to shutdown gracefully and give clients time to find a new relay?
     <message>
         <location filename="../mainwindow.cpp" line="784"/>
         <source>Unexpected Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Odottamaton virhe</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="788"/>
@@ -1154,12 +1155,12 @@ Please check the message log for recent warning or error messages.</source>
     <message>
         <location filename="../mainwindow.cpp" line="872"/>
         <source>Data Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Tietokansio</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="874"/>
         <source>Control Cookie (control_auth_cookie)</source>
-        <translation type="unfinished"></translation>
+        <translation>Ohjauseväste (control_auth_cookie)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="917"/>
@@ -1169,7 +1170,7 @@ Please check the message log for recent warning or error messages.</source>
     <message>
         <location filename="../mainwindow.cpp" line="961"/>
         <source>Authentication Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjautumisvirhe</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="963"/>
@@ -1189,7 +1190,7 @@ Please check the message log for recent warning or error messages.</source>
     <message>
         <location filename="../mainwindow.ui" line="63"/>
         <source>Status</source>
-        <translation type="unfinished">Tila</translation>
+        <translation>Tila</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="193"/>
@@ -1199,12 +1200,12 @@ Please check the message log for recent warning or error messages.</source>
     <message>
         <location filename="../mainwindow.ui" line="254"/>
         <source>View recent bandwidth usage</source>
-        <translation type="unfinished"></translation>
+        <translation>Selaa yhteydenkäyttöä</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="267"/>
         <source>View log message history</source>
-        <translation type="unfinished"></translation>
+        <translation>Selaa tapahtumalokia</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="330"/>
@@ -1820,7 +1821,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../config/networkpage.ui" line="262"/>
         <source>Bridge Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Silta-asetukset</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="274"/>
@@ -2195,7 +2196,7 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/serverpage.ui" line="110"/>
         <source>Enable to mirror the relay directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Jaa reitinkansiota</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="139"/>
@@ -2205,7 +2206,7 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/serverpage.ui" line="154"/>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Kokeile</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="947"/>
@@ -2313,7 +2314,7 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/servicepage.cpp" line="116"/>
         <source>Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones.</source>
-        <translation type="unfinished"></translation>
+        <translation>Ole hyvä ja määritä vähintään palvelun kansio ja virtuaaliportti jokaiselle halumallesi palvelulle, jonka haluat tallentaa. Muut voi poistaa.</translation>
     </message>
 </context>
 <context>
@@ -2398,12 +2399,12 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/upnpcontrol.cpp" line="139"/>
         <source>Success</source>
-        <translation type="unfinished"></translation>
+        <translation>Onnistui</translation>
     </message>
     <message>
         <location filename="../config/upnpcontrol.cpp" line="141"/>
         <source>No UPnP-enabled devices found</source>
-        <translation type="unfinished"></translation>
+        <translation>UPnP-laitteita ei löytynyt</translation>
     </message>
     <message>
         <location filename="../config/upnpcontrol.cpp" line="143"/>
@@ -2433,7 +2434,7 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/upnpcontrol.cpp" line="153"/>
         <source>Unknown error</source>
-        <translation type="unfinished"></translation>
+        <translation>Tuntematon virhe</translation>
     </message>
 </context>
 <context>
@@ -2461,12 +2462,12 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/upnptestdialog.ui" line="13"/>
         <source>Testing UPnP Support</source>
-        <translation type="unfinished"></translation>
+        <translation>Kokeillaan UPnP-tukea</translation>
     </message>
     <message>
         <location filename="../config/upnptestdialog.ui" line="92"/>
         <source>Testing Universal Plug &amp; Play Support</source>
-        <translation type="unfinished"></translation>
+        <translation>Kokeillaan Universal Plug &amp; Play -tukea</translation>
     </message>
 </context>
 <context>
