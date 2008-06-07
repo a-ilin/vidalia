@@ -1086,7 +1086,8 @@ Tor-palvelu täytyy poistaa käsin.</translation>
         <location filename="../mainwindow.cpp" line="500"/>
         <source>Your relay is shutting down.
 Click &apos;Stop&apos; again to stop your relay now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Reititintäsi lopetetaan.
+Klikkaa &apos;Pysäytä&apos; uudestaan pysäyttääkseen reitittimen nyt.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="507"/>
@@ -1133,7 +1134,7 @@ Would you like to shutdown gracefully and give clients time to find a new relay?
     <message>
         <location filename="../mainwindow.cpp" line="753"/>
         <source>Vidalia was unable to stop the Tor software.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia ei onnistunut pysäyttämään Tor-ohjelmaa.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="784"/>
@@ -1145,12 +1146,14 @@ Would you like to shutdown gracefully and give clients time to find a new relay?
         <source>Vidalia detected that the Tor software exited unexpectedly.
 
 Please check the message log for recent warning or error messages.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia havaitsi Tor-ohjelman pysähtyneen yllättäen.
+
+Ole hyvä ja selaa tapahtumalokia varoitus- tai virheilmoitusten vuoksi.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="863"/>
         <source>The Tor software requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-ohjelma vaatii Vidaliaa lähettämään kirjautumisevästeen sisällön, mutta Vidalia ei löytänyt sillaista.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="872"/>
@@ -1175,7 +1178,7 @@ Please check the message log for recent warning or error messages.</source>
     <message>
         <location filename="../mainwindow.cpp" line="963"/>
         <source>Vidalia was unable to authenticate to the Tor software. (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia ei onnistunut kirjautumaan Tor-ohjelmaan. (%1)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1197"/>
@@ -1826,7 +1829,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../config/networkpage.ui" line="274"/>
         <source>The Tor software you are currently running does not support bridges. &lt;br&gt;Your directory connections will still be encrypted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Käytössä oleva Tor-ohjelma ei tue siltoja. &lt;br&gt;Listayhteydet kuitenkin salataan.</translation>
     </message>
 </context>
 <context>
@@ -2206,12 +2209,12 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/serverpage.ui" line="154"/>
         <source>Test</source>
-        <translation>Kokeile</translation>
+        <translation>Testaa</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="947"/>
         <source>What Internet resources should users be able to access from your relay?</source>
-        <translation type="unfinished"></translation>
+        <translation>Mitä Internet-palveuita käyttäjien pitäisi voida käyttää reitittimesi kautta?</translation>
     </message>
 </context>
 <context>
@@ -2457,17 +2460,17 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/upnptestdialog.cpp" line="124"/>
         <source>Test completed successfully!</source>
-        <translation type="unfinished"></translation>
+        <translation>Testi onnistui!</translation>
     </message>
     <message>
         <location filename="../config/upnptestdialog.ui" line="13"/>
         <source>Testing UPnP Support</source>
-        <translation>Kokeillaan UPnP-tukea</translation>
+        <translation>Testataan UPnP-tukea</translation>
     </message>
     <message>
         <location filename="../config/upnptestdialog.ui" line="92"/>
         <source>Testing Universal Plug &amp; Play Support</source>
-        <translation>Kokeillaan Universal Plug &amp; Play -tukea</translation>
+        <translation>Testataan Universal Plug &amp; Play -tukea</translation>
     </message>
 </context>
 <context>
