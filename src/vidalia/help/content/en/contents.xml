@@ -38,6 +38,7 @@
     <Topic id="basic" name="Basic Setup" html="server.html" section="basic"/>
     <Topic id="bandwidth" name="Bandwidth Limits" html="server.html" section="bandwidth"/>
     <Topic id="exitpolicy" name="Exit Policies" html="server.html" section="exitpolicy"/>
+    <Topic id="upnp" name="Port Forwarding" html="server.html" section="upnp"/>
   </Topic>
   <Topic id="bridges" name="Bridge Relays" html="bridges.html">
     <Topic id="about" name="What are bridge relays?" html="bridges.html" section="about"/>
