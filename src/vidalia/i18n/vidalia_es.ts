@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="es">
+<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -192,32 +193,32 @@ Necesitara eliminarlo manualmente.</translation>
     <message>
         <location filename="../config/advancedpage.ui" line="219"/>
         <source>Configuration File</source>
-        <translation type="unfinished"></translation>
+        <translation>Archivo de Configuración</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="240"/>
         <source>Start the Tor software with the specified configuration file (torrc)</source>
-        <translation type="unfinished"></translation>
+        <translation>Iniciar Tor con el archivo de configuración especificado (torrc)</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="259"/>
         <source>Select path to your configuration file</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione la ruta a su archivo de configuración</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="275"/>
         <source>Data Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Directorio de Datos</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="296"/>
         <source>Store data for the Tor software in the following directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Almacenar datos de Tor en el siguiente directorio</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="315"/>
         <source>Select the directory used to store data for the Tor software</source>
-        <translation type="unfinished"></translation>
+        <translation>Seleccione el directorio que se usará para almacenar los datos de Tor</translation>
     </message>
 </context>
 <context>
@@ -245,7 +246,7 @@ Necesitara eliminarlo manualmente.</translation>
     <message>
         <location filename="../config/appearancepage.ui" line="134"/>
         <source>Choose Vidalia&apos;s interface style</source>
-        <translation>Escoja el estilo de interface de Vidalia</translation>
+        <translation>Escoja el estilo de interfase de Vidalia</translation>
     </message>
     <message>
         <location filename="../config/appearancepage.cpp" line="23"/>
@@ -564,12 +565,12 @@ Necesitara eliminarlo manualmente.</translation>
     <message>
         <location filename="../config/generalpage.ui" line="38"/>
         <source>Executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Ejecutable</translation>
     </message>
     <message>
         <location filename="../config/generalpage.ui" line="63"/>
         <source>Start the Tor software when Vidalia starts</source>
-        <translation type="unfinished"></translation>
+        <translation>Arrancar Tor cuando se inicie Vidalia</translation>
     </message>
 </context>
 <context>
@@ -1009,7 +1010,7 @@ Necesitara eliminarlo manualmente.</translation>
     <message>
         <location filename="../mainwindow.cpp" line="860"/>
         <source>Cookie Authentication Required</source>
-        <translation>Se Requiere Autenticación via Cookie</translation>
+        <translation>Se Requiere Autenticación vía Cookie</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="865"/>
@@ -1079,137 +1080,142 @@ Necesitara eliminarlo manualmente.</translation>
     <message>
         <location filename="../mainwindow.ui" line="180"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Iniciar</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="500"/>
         <source>Your relay is shutting down.
 Click &apos;Stop&apos; again to stop your relay now.</source>
-        <translation type="unfinished"></translation>
+        <translation>Su retransmisión se está cerrando.
+Haga click en &apos;Parar&apos; nuevamente para forzar el cierre de la retransmisión.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="507"/>
         <source>Stop Now</source>
-        <translation type="unfinished"></translation>
+        <translation>Parar Ahora</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="509"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Parar</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="525"/>
         <source>Starting up...</source>
-        <translation type="unfinished"></translation>
+        <translation>Iniciando...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="529"/>
         <source>Starting</source>
-        <translation type="unfinished"></translation>
+        <translation>Iniciando</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="534"/>
         <source>Running</source>
-        <translation type="unfinished"></translation>
+        <translation>Ejecutándose</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="693"/>
         <source>Connection Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error de Conexión</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="730"/>
         <source>You are currently running a relay. Terminating your relay will interrupt any open connections from clients.
 
 Would you like to shutdown gracefully and give clients time to find a new relay?</source>
-        <translation type="unfinished"></translation>
+        <translation>Está ejecutando una retransmisión. Cerrar la retransmisión implicará cerrar cualquier conexión abierta de clientes.
+
+¿Quiere cerrar la retransmisión de buena manera dándole a los clientes el tiempo para encontrar un nuevo retransmisor?</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="752"/>
         <source>Error Shutting Down</source>
-        <translation type="unfinished"></translation>
+        <translation>Error al Cerrarse</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="753"/>
         <source>Vidalia was unable to stop the Tor software.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia no pudo iniciar la parada de Tor.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="784"/>
         <source>Unexpected Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error Inesperado</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="788"/>
         <source>Vidalia detected that the Tor software exited unexpectedly.
 
 Please check the message log for recent warning or error messages.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia detecto que Tor se cerró inesperadamente.
+
+Por favor, verifique el archivo de registros por alertas o errores recientes.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="863"/>
         <source>The Tor software requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one.</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor requiere que Vidalia envíe el contenido de una cookie de autenticación, pero Vidalia no pudo encontrar ninguna.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="872"/>
         <source>Data Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Directorio de Datos</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="874"/>
         <source>Control Cookie (control_auth_cookie)</source>
-        <translation type="unfinished"></translation>
+        <translation>Cookie de Control (control_auth_cookie)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="917"/>
         <source>Vidalia was unable to register for some events. Many of Vidalia&apos;s features may be unavailable.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia no pudo registrar algunos eventos. Muchas de las características de Vidalia pueden no estar disponibles.</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="961"/>
         <source>Authentication Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error de Autenticación</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="963"/>
         <source>Vidalia was unable to authenticate to the Tor software. (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia no pudo autenticarse contra Tor. (%1)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1197"/>
         <source>Port Forwarding Failed</source>
-        <translation type="unfinished"></translation>
+        <translation>La Redirección de Puertos Falló</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1198"/>
         <source>Vidalia was unable to configure automatic port forwarding.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia no pudo configurar automáticamente la redirección de puertos.</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="63"/>
         <source>Status</source>
-        <translation type="unfinished">Estado</translation>
+        <translation>Estado</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="193"/>
         <source>Set up a relay and help the network grow</source>
-        <translation type="unfinished"></translation>
+        <translation>Configure una retransmisión y ayude a crecer a la red</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="254"/>
         <source>View recent bandwidth usage</source>
-        <translation type="unfinished"></translation>
+        <translation>Ver el uso reciente de ancho de banda</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="267"/>
         <source>View log message history</source>
-        <translation type="unfinished"></translation>
+        <translation>Visualizar el historial de registros</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="330"/>
         <source>Configure Vidalia</source>
-        <translation type="unfinished"></translation>
+        <translation>Configurar Vidalia</translation>
     </message>
 </context>
 <context>
@@ -1805,27 +1811,27 @@ de los desarrolladores de Tor.</translation>
     <message>
         <location filename="../config/networkpage.ui" line="25"/>
         <source>Check if your local network requires a proxy to access the Internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Active si su red local requiere de un proxy para acceder a Internet</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="176"/>
         <source>Check to only connect to relays using ports allowed by your firewall</source>
-        <translation type="unfinished"></translation>
+        <translation>Active conectarse solamente con retransmisores que usen puertos permitidos por la configuración de su cortafuegos</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="235"/>
         <source>Check to encrypt directory requests and, optionally, use bridge relays to access the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Active el cifrado de peticiones de directorios y, opcionalmente, usar puentes retransmisores para acceder a la red Tor</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="262"/>
         <source>Bridge Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Configuración de Puentes</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="274"/>
         <source>The Tor software you are currently running does not support bridges. &lt;br&gt;Your directory connections will still be encrypted.</source>
-        <translation type="unfinished"></translation>
+        <translation>La versión de Tor que está ejecutándose no soporta puentes. &lt;br&gt; Sus conexiones a directorios serán igualmente cifradas.</translation>
     </message>
 </context>
 <context>
@@ -2190,27 +2196,27 @@ problema con su retransmisión. Es aconsejable que incluya su huella dactilar PG
     <message>
         <location filename="../config/serverpage.ui" line="25"/>
         <source>Run as a client only</source>
-        <translation type="unfinished"></translation>
+        <translation>Ejecutar como sólo cliente</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="110"/>
         <source>Enable to mirror the relay directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Habilitar la réplica del directorio de retransmisores</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="139"/>
         <source>Attempt to automatically configure port forwarding</source>
-        <translation type="unfinished"></translation>
+        <translation>Intentar configurar automáticamente la redirección de puertos</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="154"/>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Prueba</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="947"/>
         <source>What Internet resources should users be able to access from your relay?</source>
-        <translation type="unfinished"></translation>
+        <translation>¿Qué recursos de Internet podrán los usuarios conectados a su retransmisor acceder?</translation>
     </message>
 </context>
 <context>
@@ -2313,7 +2319,7 @@ problema con su retransmisión. Es aconsejable que incluya su huella dactilar PG
     <message>
         <location filename="../config/servicepage.cpp" line="116"/>
         <source>Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones.</source>
-        <translation type="unfinished"></translation>
+        <translation>Por favor, configure mínimamente un servidor de directorios y un puerto virtual por cada servicio que quiera almacenar. Remueva los otros.</translation>
     </message>
 </context>
 <context>
@@ -2398,42 +2404,42 @@ problema con su retransmisión. Es aconsejable que incluya su huella dactilar PG
     <message>
         <location filename="../config/upnpcontrol.cpp" line="139"/>
         <source>Success</source>
-        <translation type="unfinished"></translation>
+        <translation>Exito</translation>
     </message>
     <message>
         <location filename="../config/upnpcontrol.cpp" line="141"/>
         <source>No UPnP-enabled devices found</source>
-        <translation type="unfinished"></translation>
+        <translation>No se encontraron dispositivos UPnP</translation>
     </message>
     <message>
         <location filename="../config/upnpcontrol.cpp" line="143"/>
         <source>No valid UPnP-enabled Internet gateway devices found</source>
-        <translation type="unfinished"></translation>
+        <translation>No se encontraron dispositivos UPnP de puertas de enlace de Internet válidos</translation>
     </message>
     <message>
         <location filename="../config/upnpcontrol.cpp" line="145"/>
         <source>WSAStartup failed</source>
-        <translation type="unfinished"></translation>
+        <translation>WSAStartup falló</translation>
     </message>
     <message>
         <location filename="../config/upnpcontrol.cpp" line="147"/>
         <source>Failed to add a port mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Falló agregar un mapeo de puertos</translation>
     </message>
     <message>
         <location filename="../config/upnpcontrol.cpp" line="149"/>
         <source>Failed to retrieve a port mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Falló el reintento de mapeo de puertos</translation>
     </message>
     <message>
         <location filename="../config/upnpcontrol.cpp" line="151"/>
         <source>Failed to remove a port mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Falló al eliminar el mapeo de puertos</translation>
     </message>
     <message>
         <location filename="../config/upnpcontrol.cpp" line="153"/>
         <source>Unknown error</source>
-        <translation type="unfinished"></translation>
+        <translation>Error desconocido</translation>
     </message>
 </context>
 <context>
@@ -2441,32 +2447,32 @@ problema con su retransmisión. Es aconsejable que incluya su huella dactilar PG
     <message>
         <location filename="../config/upnptestdialog.cpp" line="109"/>
         <source>Discovering UPnP-enabled devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Buscando dispositivos UPnP</translation>
     </message>
     <message>
         <location filename="../config/upnptestdialog.cpp" line="114"/>
         <source>Updating directory port mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizando el directorio de mapeo de puertos</translation>
     </message>
     <message>
         <location filename="../config/upnptestdialog.cpp" line="119"/>
         <source>Updating relay port mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Actualizando el mapeo de puertos del retransmisor</translation>
     </message>
     <message>
         <location filename="../config/upnptestdialog.cpp" line="124"/>
         <source>Test completed successfully!</source>
-        <translation type="unfinished"></translation>
+        <translation>¡La prueba concluyó de manera exitosa!</translation>
     </message>
     <message>
         <location filename="../config/upnptestdialog.ui" line="13"/>
         <source>Testing UPnP Support</source>
-        <translation type="unfinished"></translation>
+        <translation>Probando el Soporte UPnP</translation>
     </message>
     <message>
         <location filename="../config/upnptestdialog.ui" line="92"/>
         <source>Testing Universal Plug &amp; Play Support</source>
-        <translation type="unfinished"></translation>
+        <translation>Probando el Soporte Universal Plug &amp; Play</translation>
     </message>
 </context>
 <context>
