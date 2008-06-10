@@ -76,6 +76,7 @@ ServerPage::ServerPage(QWidget *parent)
   /* Bind events to actions */
   connect(ui.btnRateHelp, SIGNAL(clicked()), this, SLOT(bandwidthHelp()));
   connect(ui.btnExitHelp, SIGNAL(clicked()), this, SLOT(exitPolicyHelp()));
+  connect(ui.btnUpnpHelp, SIGNAL(clicked()), this, SLOT(upnpHelp()));
   connect(ui.cmboRate, SIGNAL(currentIndexChanged(int)),
                  this, SLOT(rateChanged(int)));
   connect(ui.lineAvgRateLimit, SIGNAL(editingFinished()), 
