@@ -507,8 +507,17 @@ ServerPage::testUpnp()
 #if defined(USE_MINIUPNPC)
   UPNPTestDialog dlg(ui.lineServerPort->text().toUInt(),
                      ui.lineDirPort->text().toUInt(), this);
+  
+  connect(&dlg, SIGNAL(help()), this, SLOT(upnpHelp()));
 
   dlg.exec();
 #endif
+}
+
+/** Called when the user clicks the UPnP test dialog's help button. */
+void
+ServerPage::upnpHelp()
+{
+  emit helpRequested("server.upnp");
 }
 

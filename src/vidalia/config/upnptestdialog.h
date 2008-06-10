@@ -35,6 +35,11 @@ public:
    * restored when the test dialog is closed. */
   UPNPTestDialog(quint16 orPort, quint16 dirPort, QWidget *parent = 0);
 
+signals:
+  /** Emitted when the user clicks the 'Help' button requesting the help topic
+   * on port forwarding. */
+  void help();
+
 protected slots:
   /** Shows or hides the dialog based on <b>visible</b>. The UPnP test will be
    * started when the dialog is first shown. */

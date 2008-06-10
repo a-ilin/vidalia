@@ -76,6 +76,8 @@ private slots:
   void copyBridgeIdentity();
   /** Tests automatic port forwarding with UPnP. */
   void testUpnp();
+  /** Called when the user clicks the UPnP test dialog's help button. */
+  void upnpHelp();
 
 private:
   /** Index values of rate values in the bandwidth limits dropdown box. */

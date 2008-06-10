@@ -26,7 +26,8 @@ UPNPTestDialog::UPNPTestDialog(quint16 orPort, quint16 dirPort, QWidget *parent)
   ui.setupUi(this);
   _upnp = UPNPControl::instance();
 
-  ui.buttonBox->setStandardButtons(QDialogButtonBox::Close);
+  ui.buttonBox->setStandardButtons(QDialogButtonBox::Close
+                                     | QDialogButtonBox::Help);
   
   ui.progressBar->setValue(0);
   ui.progressBar->setFormat("");
@@ -73,7 +74,8 @@ void
 UPNPTestDialog::testSuccessful()
 {
   ui.buttonBox->setEnabled(true);
-  ui.buttonBox->setStandardButtons(QDialogButtonBox::Close);
+  ui.buttonBox->setStandardButtons(QDialogButtonBox::Close
+                                     | QDialogButtonBox::Help);
 
   disconnect(UPNPControl::instance(), 0, this, 0);
 }
@@ -85,7 +87,8 @@ UPNPTestDialog::testFailed()
 {
   ui.buttonBox->setEnabled(true);
   ui.buttonBox->setStandardButtons(QDialogButtonBox::Retry
-                                     | QDialogButtonBox::Close);
+                                     | QDialogButtonBox::Close
+                                     | QDialogButtonBox::Help);
   
   disconnect(UPNPControl::instance(), 0, this, 0);
 }
@@ -150,6 +153,11 @@ UPNPTestDialog::clicked(QAbstractButton *button)
       break;
 
     case QDialogButtonBox::Close:
+      done(0);
+      break;
+
+    case QDialogButtonBox::Help:
+      emit help();
       done(0);
       break;
 
