@@ -75,7 +75,7 @@ option(USE_MINIUPNPC "Enable UPnP support using the MiniUPnPc library." ON)
 check_include_file("limits.h" HAVE_LIMITS_H)
 check_include_file("sys/limits.h" HAVE_SYS_LIMITS_H)
 
-## Check fo the sizes of various data types
+## Check for the sizes of various data types
 check_type_size(int SIZEOF_INT)
 
 ## Write out a configuration file
