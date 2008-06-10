@@ -30,6 +30,12 @@ public:
   HelpTextBrowser(QWidget *parent = 0);
   /** Loads a resource into the browser. */
   QVariant loadResource(int type, const QUrl &name);
+
+public slots:
+  /** Called when the displayed document is changed. If <b>url</b> specifies
+   * an external link, then the user will be prompted for whether they want to
+   * open the link in their default browser or not. */
+  virtual void setSource(const QUrl &url);
 };
 
 #endif
