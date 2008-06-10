@@ -132,6 +132,59 @@ Alla olevassa listassa esitetään jokaisen rastitettavan poistumiskäytännön.
 Kun käynnistää siltareitittimen, <i>Poistumiskäytännöt</i>-välilehti muuttuu harmaaksi, koska siltareitittimet eivät salli poistumisyhteyksiä. Siltareitittimiä käytetään vain, että niiden avulla Tor-käyttäjät pääsevät Tor-verkkoon.
 </p>
 
+
+<a name="upnp"/>
+<h3>Port Forwarding</h3>
+<p>
+Many home users connect to the Internet via a <i>router</i>, which allows
+multiple computers on a local network to share the same Internet connection.
+Some users may also be behind a <i>firewall</i> that blocks incoming
+connections to your computer from other computers on the Internet.  If you
+want to run a Tor relay, however, other Tor clients and relays must be able to
+connect to your relay through your home router or firewall. 
+</p>
+
+<p>
+To make your relay publicly accessible, your router or firewall needs to know
+which ports to allow through to your computer by setting up what is known as
+<i>port forwarding</i>. Port forwarding configures your router or firewall to
+"forward" all connections to certain ports on your router or firewall to local
+ports on your computer.
+</p>
+
+<p>
+If you check the box labeled <i>Attempt to automatically configure port
+forwarding</i>, Vidalia will attempt to automatically set up port forwarding
+on your local network connection so that other Tor clients can connect to your
+relay. Not all routers support automatic port forwarding, though. You can use
+the <i>Test</i> button next to the checkbox to find out if Vidalia is able to
+automatically set up port forwarding for you.
+</p>
+
+<p>
+If the <i>Test</i> button finds that Vidalia is unable to set up port
+forwarding for you, you may need to enable this feature on your router or set
+up port forwarding manually. Some network devices have a feature called
+<i>Universal Plug-and-Play</i> (UPnP). If you can access your router's
+administative interface, you should look for an option to enable UPnP. The
+administration interface for most routers can be accessed by opening <a
+href="http://192.168.0.1/">http://192.168.0.1</a> or <a
+href="http://192.168.1.1/">http://192.168.1.1</a> in your Web browser. You
+should consult your router's instruction manual for more information.
+</p>
+
+<p>
+If you need to set up port forwarding manually, the website <a
+href="http://www.portforward.com/english/routers/port_forwarding/routerindex.htm">
+portforward.com</a> has instructions for how to set up port forwarding for
+many types of routers and firewalls. At a minimum, you will need to forward
+your <i>Relay Port</i>, which defaults to port 443 on Windows and 9001 on all
+other operating systems. If you also checked the checkbox labeled <i>Mirror
+the relay directory</i>, then you will also need to forward your <i>Directory
+Port</i>. The <i>Directory Port</i> is set to port 9030 by default on all
+operating systems.
+</p>
+
 </body>
 </html>
 
