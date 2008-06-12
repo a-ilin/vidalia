@@ -271,7 +271,7 @@
       <item>
        <widget class="QLabel" name="lblNoBridgeSupport" >
         <property name="text" >
-         <string>The Tor software you are currently running does not support bridges. &lt;br>Your directory connections will still be encrypted.</string>
+         <string>The Tor software you are currently running does not support bridges. &lt;br>Directory connections will still be encrypted.</string>
         </property>
         <property name="alignment" >
          <set>Qt::AlignCenter</set>

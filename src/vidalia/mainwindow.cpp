@@ -291,7 +291,7 @@ MainWindow::close()
 void 
 MainWindow::createActions()
 {
-  _startStopAct = new QAction(QIcon(IMG_START_TOR_16), tr("Start"), this);
+  _startStopAct = new QAction(QIcon(IMG_START_TOR_16), tr("Start Tor"), this);
   connect(_startStopAct, SIGNAL(triggered()), this, SLOT(start()));
 
   _exitAct = new QAction(QIcon(IMG_EXIT), tr("Exit"), this);
@@ -534,7 +534,7 @@ MainWindow::updateTorStatus(TorStatus status)
 
   if (status == Stopped) {
       statusText = tr("Tor is not running");
-      actionText = tr("Start");
+      actionText = tr("Start Tor");
       trayIconFile = IMG_TOR_STOPPED;
       statusIconFile = IMG_TOR_STOPPED_48;
       _startStopAct->setEnabled(true);
@@ -561,9 +561,9 @@ MainWindow::updateTorStatus(TorStatus status)
       trayIconFile = IMG_TOR_STOPPING;
       statusIconFile = IMG_TOR_STOPPING_48;
       
-      ui.lblStartStopTor->setStatusTip(tr("Stop Now"));
+      ui.lblStartStopTor->setStatusTip(tr("Stop Tor Now"));
   } else if (status == Started) {
-      actionText = tr("Stop");
+      actionText = tr("Stop Tor");
       _startStopAct->setEnabled(true);
       _startStopAct->setText(actionText);
       _startStopAct->setIcon(QIcon(IMG_STOP_TOR_16));
@@ -579,16 +579,16 @@ MainWindow::updateTorStatus(TorStatus status)
       connect(_startStopAct, SIGNAL(triggered()), this, SLOT(stop()));
       connect(ui.lblStartStopTor, SIGNAL(clicked()), this, SLOT(stop()));
   } else if (status == Starting)  {
-      statusText = tr("Starting up...");
+      statusText = tr("Tor is starting up...");
       trayIconFile = IMG_TOR_STARTING;
       statusIconFile = IMG_TOR_STARTING_48;
       _startStopAct->setEnabled(false);
-      ui.lblStartStopTor->setText(tr("Starting"));
+      ui.lblStartStopTor->setText(tr("Starting Tor"));
       ui.lblStartStopTor->setEnabled(false);
       ui.lblStartStopTor->setStatusTip(statusText);
       //ui.lblStartStopTor->setAnimation(QPixmap(ANIM_PROCESS_WORKING));
   } else if (status == CircuitEstablished) {
-      statusText = tr("Running");
+      statusText = tr("Tor is Running");
       trayIconFile = IMG_TOR_RUNNING;
       statusIconFile = IMG_TOR_RUNNING_48;
   }

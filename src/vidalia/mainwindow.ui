@@ -174,10 +174,10 @@
         <item row="0" column="0" colspan="2" >
          <widget class="VClickLabel" native="1" name="lblStartStopTor" >
           <property name="text" >
-           <string>Start</string>
+           <string>Start Tor</string>
           </property>
           <property name="statusTip" >
-           <string>Start</string>
+           <string>Start Tor</string>
           </property>
           <property name="pixmap" >
            <pixmap>:/images/48x48/start-tor.png</pixmap>

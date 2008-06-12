@@ -35,7 +35,7 @@
       <enum>Qt::NoContextMenu</enum>
      </property>
      <property name="title" >
-      <string>Executable</string>
+      <string>Tor Executable</string>
      </property>
      <layout class="QHBoxLayout" >
       <property name="spacing" >
