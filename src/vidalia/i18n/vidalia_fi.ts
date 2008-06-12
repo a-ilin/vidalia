@@ -1215,6 +1215,7 @@ Ole hyvä ja selaa tapahtumalokia varoitus- tai virheilmoitusten vuoksi.</transl
         <source>Configure Vidalia</source>
         <translation type="unfinished"></translation>
     </message>
+
 </context>
 <context>
     <name>MessageLog</name>
@@ -1831,6 +1832,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
         <source>The Tor software you are currently running does not support bridges. &lt;br&gt;Your directory connections will still be encrypted.</source>
         <translation>Käytössä oleva Tor-ohjelma ei tue siltoja. &lt;br&gt;Listayhteydet kuitenkin salataan.</translation>
     </message>
+
 </context>
 <context>
     <name>Policy</name>
@@ -2216,6 +2218,7 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
         <source>What Internet resources should users be able to access from your relay?</source>
         <translation>Mitä Internet-palveuita käyttäjien pitäisi voida käyttää reitittimesi kautta?</translation>
     </message>
+
 </context>
 <context>
     <name>ServicePage</name>
@@ -2474,6 +2477,7 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     </message>
 </context>
 <context>
+
     <name>VMessageBox</name>
     <message>
         <location filename="../vmessagebox.cpp" line="77"/>
