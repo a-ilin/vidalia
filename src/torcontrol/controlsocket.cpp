@@ -15,7 +15,7 @@
 */
 
 #include <stringutil.h>
-#include "debug.h"
+#include "tcglobal.h"
 
 #include "controlsocket.h"
 

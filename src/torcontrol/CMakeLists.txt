@@ -30,6 +30,7 @@ set(torcontrol_SRCS
   serverstatusevent.cpp
   statusevent.cpp
   stream.cpp
+  tcglobal.cpp
   torcontrol.cpp
   torevents.cpp
   torprocess.cpp

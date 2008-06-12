@@ -18,7 +18,7 @@
 #include <QCoreApplication>
 #include <QMutexLocker>
 #include <stringutil.h>
-#include "debug.h"
+#include "tcglobal.h"
 
 #include "controlconnection.h"
 

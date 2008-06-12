@@ -16,7 +16,7 @@
 
 #include <QString>
 #include <stringutil.h>
-#include "debug.h"
+#include "tcglobal.h"
 
 /* Needed for _PROCESS_INFORMATION so that pid() works on Win32 */
 #if defined (Q_OS_WIN32)

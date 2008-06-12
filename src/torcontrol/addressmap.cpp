@@ -15,7 +15,7 @@
 */
 
 #include <QStringList>
-#include "debug.h"
+#include "tcglobal.h"
 #include "addressmap.h"
 
 /** Format of expiry times in address map events. */

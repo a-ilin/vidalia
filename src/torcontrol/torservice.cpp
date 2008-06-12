@@ -16,7 +16,7 @@
 
 #include <QLibrary>
 
-#include "debug.h"
+#include "tcglobal.h"
 #include "torservice.h"
 
 /** Returned by TorService::exitCode() when we are unable to determine the
