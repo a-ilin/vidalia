@@ -181,21 +181,30 @@ MainWindow::~MainWindow()
   delete _configDialog;
 }
 
-/** Catches and processes Tor client status events. */
+/** Catches and processes Tor client and general status events. */
 void
 MainWindow::customEvent(QEvent *event)
 {
   if (event->type() == CustomEventType::ClientStatusEvent) {
     ClientStatusEvent *cse = dynamic_cast<ClientStatusEvent *>(event);
+    if (!cse)
+      return;
 
-    if (cse && cse->status() == ClientStatusEvent::CircuitEstablished) {
+    if (cse->status() == ClientStatusEvent::CircuitEstablished) {
       circuitEstablished();
+      cse->accept();
+    } else if (cse->status() == ClientStatusEvent::BootstrapStatus) {
+      BootstrapStatusEvent *bse = dynamic_cast<BootstrapStatusEvent *>(cse);
+      if (bse)
+        bootstrapStatusChanged(bse);
       cse->accept();
     }
   } else if (event->type() == CustomEventType::GeneralStatusEvent) {
     GeneralStatusEvent *gse = dynamic_cast<GeneralStatusEvent *>(event);
-    
-    if (gse && gse->status() == GeneralStatusEvent::DangerousTorVersion) {
+    if (!gse)
+      return;
+
+    if (gse->status() == GeneralStatusEvent::DangerousTorVersion) {
       DangerousVersionEvent *dve = dynamic_cast<DangerousVersionEvent *>(gse);
       if (dve && (dve->reason() == DangerousVersionEvent::ObsoleteVersion
            || dve->reason() == DangerousVersionEvent::UnrecommendedVersion)) {
@@ -500,6 +509,14 @@ MainWindow::onProxyFailed(QString errmsg)
   VMessageBox::warning(this, tr("Error starting proxy server"),
               tr("Vidalia was unable to start the configured proxy server"),
               VMessageBox::Ok|VMessageBox::Default|VMessageBox::Escape);
+}
+
+/** Called when Tor's bootstrapping status changes. <b>bse</b> represents
+ * Tor's current estimate of its bootstrapping progress. */
+void
+MainWindow::bootstrapStatusChanged(const BootstrapStatusEvent *bse)
+{
+  Q_UNUSED(bse);
 }
 
 /** Updates the UI to reflect Tor's current <b>status</b>. Returns the

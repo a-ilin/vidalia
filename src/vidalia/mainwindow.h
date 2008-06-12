@@ -19,6 +19,7 @@
 
 #include <QMainWindow>
 #include <torcontrol.h>
+#include <bootstrapstatusevent.h>
 
 #include "vidaliawindow.h"
 #include "tray/trayicon.h"
@@ -160,7 +161,10 @@ private:
   /** Called when Tor thinks its version is old or unrecommended, and displays
    * a message notifying the user. */
   void dangerousTorVersion();
-
+  /** Called when Tor's bootstrapping status changes. <b>bse</b> represents
+   * Tor's current estimate of its bootstrapping progress. */
+  void bootstrapStatusChanged(const BootstrapStatusEvent *bse);
+  
   /** The current status of Tor. */
   TorStatus _status;
   /** Used to determine if the Tor process exiting was intentional or not */
