@@ -26,6 +26,7 @@ public:
   /** Tor client status event type. */
   enum Status {
     UnrecognizedStatus,
+    BootstrapStatus,
     CircuitEstablished,
     CircuitNotEstablished,
     NotEnoughDirectoryInfo,

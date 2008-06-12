@@ -55,6 +55,8 @@ fatal(const QString &fmt)
 ConnectionStatusReason
 connectionStatusReason(const QString &str)
 {
+  if (str.isEmpty())
+    return UnrecognizedReason;
   if (!str.compare("MISC", Qt::CaseInsensitive))
     return MiscellaneousReason;
   if (!str.compare("IDENTITY", Qt::CaseInsensitive))

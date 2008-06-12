@@ -117,7 +117,6 @@ private:
   void dispatchGeneralStatusEvent(StatusEvent::Severity severity,
                                   const QString &action,
                                   const QHash<QString,QString> &args);
-
 };
 
 #endif

@@ -13,6 +13,7 @@
 
 set(torcontrol_SRCS 
   addressmap.cpp
+  bootstrapstatusevent.cpp
   circuit.cpp
   clientstatusevent.cpp
   controlcommand.cpp

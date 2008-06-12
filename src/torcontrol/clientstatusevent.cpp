@@ -36,6 +36,8 @@ ClientStatusEvent::statusFromString(const QString &str)
     return UnknownSocksProtocol;
   if (!str.compare("SOCKS_BAD_HOSTNAME", Qt::CaseInsensitive))
     return SocksBadHostname;
+  if (!str.compare("BOOTSTRAP", Qt::CaseInsensitive))
+    return BootstrapStatus;
   return UnrecognizedStatus;
 }
 
