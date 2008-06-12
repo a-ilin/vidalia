@@ -1,0 +1,2675 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff version="1.1" xmlns="urn:oasis:names:tc:xliff:document:1.1">
+  <file original="../../torcontrol/circuit.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="Circuit">
+      <trans-unit id="msg1489">
+        <source xml:space="preserve">New</source>
+        <target xml:space="preserve" state="final">Neu</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">89</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1490">
+        <source xml:space="preserve">Open</source>
+        <target xml:space="preserve" state="final">Öffne</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">90</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1491">
+        <source xml:space="preserve">Building</source>
+        <target xml:space="preserve" state="final">Aufbauen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">91</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1492">
+        <source xml:space="preserve">Failed</source>
+        <target xml:space="preserve" state="final">Fehlgeschlagen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">92</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1493">
+        <source xml:space="preserve">Closed</source>
+        <target xml:space="preserve" state="final">Geschlossen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">93</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1494">
+        <source xml:space="preserve">Unknown</source>
+        <target xml:space="preserve" state="final">Unbekannt</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">94</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../../torcontrol/controlconnection.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="ControlConnection">
+      <trans-unit id="msg1495">
+        <source xml:space="preserve">Vidalia was unable to connect to Tor. (%1)</source>
+        <target xml:space="preserve" state="final">Vidalia konnte sich nicht mit Tor verbinden. (%1)</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">131</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1496">
+        <source xml:space="preserve">Control socket is not connected.</source>
+        <target xml:space="preserve" state="final">Kontrollsocket ist nicht verbunden.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">319</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../../torcontrol/controlsocket.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="ControlSocket">
+      <trans-unit id="msg1497">
+        <source xml:space="preserve">Invalid control reply. [%1]</source>
+        <target xml:space="preserve" state="final">Unbekannte Kontrollantwort. [%1]</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">136</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1498">
+        <source xml:space="preserve">Control socket is not connected.</source>
+        <target xml:space="preserve" state="final">Das Kontrollsocket ist nicht verbunden.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">51</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1499">
+        <source xml:space="preserve">Error sending control command. [%1]</source>
+        <target xml:space="preserve" state="final">Fehler beim Senden eines Steuerkommandos. [%1]</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">61</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1500">
+        <source xml:space="preserve">Socket disconnected while attempting to read a line of data.</source>
+        <target xml:space="preserve" state="final">Beim Lesen von Daten wurde der Socket unterbrochen.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">98</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../../torcontrol/logevent.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="LogEvent">
+      <trans-unit id="msg1501">
+        <source xml:space="preserve">Debug</source>
+        <target xml:space="preserve" state="final">Debug</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">57</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1502">
+        <source xml:space="preserve">Info</source>
+        <target xml:space="preserve" state="final">Info</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">58</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1503">
+        <source xml:space="preserve">Notice</source>
+        <target xml:space="preserve" state="final">Hinweis</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">59</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1504">
+        <source xml:space="preserve">Warning</source>
+        <target xml:space="preserve" state="final">Warnung</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">60</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1505">
+        <source xml:space="preserve">Error</source>
+        <target xml:space="preserve" state="final">Fehler</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">61</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1506">
+        <source xml:space="preserve">Unknown</source>
+        <target xml:space="preserve" state="final">Unbekannt</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">62</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../../torcontrol/routerdescriptor.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="RouterDescriptor">
+      <trans-unit id="msg1507">
+        <source xml:space="preserve">Online</source>
+        <target xml:space="preserve" state="final">Online</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">76</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1508">
+        <source xml:space="preserve">Hibernating</source>
+        <target xml:space="preserve" state="final">Ruhezustand</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">78</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1509">
+        <source xml:space="preserve">Offline</source>
+        <target xml:space="preserve" state="final">Offline</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">80</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../../torcontrol/stream.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="Stream">
+      <trans-unit id="msg1510">
+        <source xml:space="preserve">New</source>
+        <target xml:space="preserve" state="final">Neu</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">118</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1511">
+        <source xml:space="preserve">Resolving</source>
+        <target xml:space="preserve" state="final">Auflösen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">120</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1512">
+        <source xml:space="preserve">Connecting</source>
+        <target xml:space="preserve" state="final">Verbinde</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">121</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1513">
+        <source xml:space="preserve">Open</source>
+        <target xml:space="preserve" state="final">Offen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">122</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1514">
+        <source xml:space="preserve">Failed</source>
+        <target xml:space="preserve" state="final">Fehlgeschlagen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">123</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1515">
+        <source xml:space="preserve">Closed</source>
+        <target xml:space="preserve" state="final">Geschlossen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">124</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1516">
+        <source xml:space="preserve">Retrying</source>
+        <target xml:space="preserve" state="final">Versuche erneut</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">125</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1517">
+        <source xml:space="preserve">Remapped</source>
+        <target xml:space="preserve" state="final">Umgelenkt</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">126</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1518">
+        <source xml:space="preserve">Unknown</source>
+        <target xml:space="preserve" state="final">Unbekannt</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">127</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../../torcontrol/torprocess.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="TorProcess">
+      <trans-unit id="msg1519">
+        <source xml:space="preserve">Process %1 failed to stop. [%2]</source>
+        <target xml:space="preserve" state="final">Prozess %1 wurde nicht gestoppt. [%2]</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">107</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../../torcontrol/torservice.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="TorService">
+      <trans-unit id="msg1520">
+        <source xml:space="preserve">The Tor service is not installed.</source>
+        <target xml:space="preserve" state="final">Der Tor-Dienst ist nicht installiert.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">143</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1521">
+        <source xml:space="preserve">Unable to start the Tor service.</source>
+        <target xml:space="preserve" state="final">Der Tor-Dienst konnte nicht gestartet werden.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">161</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../about/aboutdialog.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="AboutDialog">
+      <trans-unit id="msg1522">
+        <source xml:space="preserve">&lt;Unavailable&gt;</source>
+        <target xml:space="preserve" state="final">&lt;Nicht verfügbar&gt;</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">64</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1523">
+        <source xml:space="preserve">&lt;Not Running&gt;</source>
+        <target xml:space="preserve" state="final">&lt;Nicht aktiv&gt;</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">68</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../about/aboutdialog.ui" datatype="x-trolltech-designer-ui" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="AboutDialog">
+      <trans-unit id="msg1524">
+        <source xml:space="preserve">Qt</source>
+        <target xml:space="preserve" state="final">Qt</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">156</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1525">
+        <source xml:space="preserve">Qt Version</source>
+        <target xml:space="preserve" state="final">Qt Version</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">166</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1526">
+        <source xml:space="preserve">Tor</source>
+        <target xml:space="preserve" state="final">Tor</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">234</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1527">
+        <source xml:space="preserve">Tor Version</source>
+        <target xml:space="preserve" state="final">Tor Version</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">244</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1528">
+        <source xml:space="preserve">About Vidalia</source>
+        <target xml:space="preserve" state="final">Über Vidalia</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">25</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1529">
+        <source xml:space="preserve">Vidalia</source>
+        <target xml:space="preserve" state="final">Vidalia</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">78</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1530">
+        <source xml:space="preserve">Vidalia Version</source>
+        <target xml:space="preserve" state="final">Vidalia Version</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">88</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../bwgraph/bwgraph.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="BandwidthGraph">
+      <trans-unit id="msg1531">
+        <source xml:space="preserve">Since:</source>
+        <target xml:space="preserve" state="final">Seit:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">160</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1532">
+        <source xml:space="preserve">Hide Settings</source>
+        <target xml:space="preserve" state="final">Verstecke Einstellungen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">226</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../bwgraph/bwgraph.ui" datatype="x-trolltech-designer-ui" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="BandwidthGraph">
+      <trans-unit id="msg1533">
+        <source xml:space="preserve">Receive Rate</source>
+        <target xml:space="preserve" state="final">Empfangsrate</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">151</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1534">
+        <source xml:space="preserve">Tor Bandwidth Usage</source>
+        <target xml:space="preserve" state="final">Tor Bandbreitenbenutzung</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">16</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1535">
+        <source xml:space="preserve">Send Rate</source>
+        <target xml:space="preserve" state="final">Senderate</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">170</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1536">
+        <source xml:space="preserve">Always on Top</source>
+        <target xml:space="preserve" state="final">Immer im Vordergrund</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">183</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1537">
+        <source xml:space="preserve">Style</source>
+        <target xml:space="preserve" state="final">Aussehen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">234</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1538">
+        <source xml:space="preserve">Changes the transparency of the Bandwidth Graph</source>
+        <target xml:space="preserve" state="final">Ändert die Transparenz des Bandbreitengraphs</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">284</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1539">
+        <source xml:space="preserve">100</source>
+        <target xml:space="preserve" state="final">100</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">368</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1540">
+        <source xml:space="preserve">% Opaque</source>
+        <target xml:space="preserve" state="final">% undurchsichtig</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">383</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1541">
+        <source xml:space="preserve">Show Settings</source>
+        <target xml:space="preserve" state="final">Zeige Einstellungen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">40</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1542">
+        <source xml:space="preserve">Save</source>
+        <target xml:space="preserve" state="final">Speichern</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">443</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1543">
+        <source xml:space="preserve">Cancel</source>
+        <target xml:space="preserve" state="final">Abbrechen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">450</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1544">
+        <source xml:space="preserve">Reset</source>
+        <target xml:space="preserve" state="final">Reset</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">63</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../bwgraph/graphframe.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="GraphFrame">
+      <trans-unit id="msg1545">
+        <source xml:space="preserve">Recv: </source>
+        <target xml:space="preserve" state="final">Empf: </target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">237</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1546">
+        <source xml:space="preserve">Sent: </source>
+        <target xml:space="preserve" state="final">Gesendet: </target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">246</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1547">
+        <source xml:space="preserve">%1 KB</source>
+        <target xml:space="preserve" state="final">%1 KB</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">258</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1548">
+        <source xml:space="preserve">%1 MB</source>
+        <target xml:space="preserve" state="final">%1 MB</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">261</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1549">
+        <source xml:space="preserve">%1 GB</source>
+        <target xml:space="preserve" state="final">%1 GB</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">264</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1550">
+        <source xml:space="preserve">%1 KB/s</source>
+        <target xml:space="preserve" state="final">%1 KB/s</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">285</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../config/advancedpage.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="AdvancedPage">
+      <trans-unit id="msg1551">
+        <source xml:space="preserve">&apos;%1&apos; is not a valid IP address.</source>
+        <target xml:space="preserve" state="final">&apos;%1&apos; ist keine gültige IP-Adresse.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">103</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1552">
+        <source xml:space="preserve">You selected &apos;Password&apos; authentication, but did not specify a password.</source>
+        <target xml:space="preserve" state="final">Sie haben &apos;Passwort&apos;-Authentifizierung ausgwählt, aber<ph id="ph91" ctype="x-ch-lf">\n</ph>kein Passwort angegeben.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">114</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1553">
+        <source xml:space="preserve">Select Tor Configuration File</source>
+        <target xml:space="preserve" state="final">Wählen Sie die Tor-Konfigurationsdatei aus</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">221</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1554">
+        <source xml:space="preserve">File Not Found</source>
+        <target xml:space="preserve" state="final">Datei nicht gefunden</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">234</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1555">
+        <source xml:space="preserve">%1 does not exist. Would you like to create it?</source>
+        <target xml:space="preserve" state="final">%1 existiert nicht. Soll es erstellt werden?</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">236</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1556">
+        <source xml:space="preserve">Failed to Create File</source>
+        <target xml:space="preserve" state="final">Datei konnte nicht erstellt werden</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">247</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1557">
+        <source xml:space="preserve">Unable to create %1 [%2]</source>
+        <target xml:space="preserve" state="final">Konnte %1 nicht erstellen [2%]</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">248</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1558">
+        <source xml:space="preserve">Select a Directory to Use for Tor Data</source>
+        <target xml:space="preserve" state="final">Wählen Sie ein Verzeichnis zum Speichern der Tordaten aus</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">263</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1559">
+        <source xml:space="preserve">Unable to remove Tor Service</source>
+        <target xml:space="preserve" state="final">Tor-Dienst konnte nicht entfernt werden</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">285</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1560">
+        <source xml:space="preserve">Vidalia was unable to remove the Tor service.<ph id="ph92" ctype="x-ch-lf">\n</ph><ph id="ph93" ctype="x-ch-lf">\n</ph>You may need to remove it manually.</source>
+        <target xml:space="preserve" state="final">Vidalia konnte den Tor-Dienst nicht entfernen.<ph id="ph94" ctype="x-ch-lf">\n</ph><ph id="ph95" ctype="x-ch-lf">\n</ph>Sie müssen ihn manuell entfernen.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">287</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1561">
+        <source xml:space="preserve">Unable to install Tor Service</source>
+        <target xml:space="preserve" state="final">Tor-Dienst konnte nicht installiert werden</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">296</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1562">
+        <source xml:space="preserve">Vidalia was unable to install the Tor service.</source>
+        <target xml:space="preserve" state="final">Vidalia konnte Tor nicht als Dienst einrichten.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">297</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1563">
+        <source xml:space="preserve">Advanced</source>
+        <target xml:space="preserve" state="final">Fortgeschritten</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">34</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../config/advancedpage.ui" datatype="x-trolltech-designer-ui" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="AdvancedPage">
+      <trans-unit id="msg1564">
+        <source xml:space="preserve">Randomly Generate</source>
+        <target xml:space="preserve" state="final">Zufällige Erzeugung</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">111</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1565">
+        <source xml:space="preserve">:</source>
+        <target xml:space="preserve" state="final">:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">157</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1566">
+        <source xml:space="preserve">Configuration File</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">219</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1567">
+        <source xml:space="preserve">Start the Tor software with the specified configuration file (torrc)</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">240</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1568">
+        <source xml:space="preserve">Select path to your configuration file</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">259</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1569">
+        <source xml:space="preserve">Data Directory</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">275</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1570">
+        <source xml:space="preserve">Control Port</source>
+        <target xml:space="preserve" state="final">Kontroll-Port</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">28</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1571">
+        <source xml:space="preserve">Store data for the Tor software in the following directory</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">296</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1572">
+        <source xml:space="preserve">Select the directory used to store data for the Tor software</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">315</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1573">
+        <source xml:space="preserve">Browse</source>
+        <target xml:space="preserve" state="final">Öffnen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">318</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1574">
+        <source xml:space="preserve">Permissions</source>
+        <target xml:space="preserve" state="final">Berechtigungen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">337</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1575">
+        <source xml:space="preserve">Run as User:</source>
+        <target xml:space="preserve" state="final">Als folgender Nutzer ausführen:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">360</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1576">
+        <source xml:space="preserve">Vidalia will run with this User&apos;s permissions</source>
+        <target xml:space="preserve" state="final">Vidalia wird mit den Berechtigungen dieses Nutzers laufen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">373</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1577">
+        <source xml:space="preserve">Run as Group:</source>
+        <target xml:space="preserve" state="final">Als folgende Gruppe ausführen:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">393</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1578">
+        <source xml:space="preserve">Vidalia will run with this Group&apos;s permissions</source>
+        <target xml:space="preserve" state="final">Vidalia wird mit den Berechtigungen dieser Gruppe laufen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">400</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1579">
+        <source xml:space="preserve">Authentication:</source>
+        <target xml:space="preserve" state="final">Authentifikation:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">48</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1580">
+        <source xml:space="preserve">Address:</source>
+        <target xml:space="preserve" state="final">Adresse:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">58</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1581">
+        <source xml:space="preserve">None</source>
+        <target xml:space="preserve" state="final">Keine</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">86</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1582">
+        <source xml:space="preserve">Cookie</source>
+        <target xml:space="preserve" state="final">Cookie</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">91</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1583">
+        <source xml:space="preserve">Password</source>
+        <target xml:space="preserve" state="final">Passwort</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">96</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../config/appearancepage.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="AppearancePage">
+      <trans-unit id="msg1584">
+        <source xml:space="preserve">Appearance</source>
+        <target xml:space="preserve" state="final">Aussehen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">23</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../config/appearancepage.ui" datatype="x-trolltech-designer-ui" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="AppearancePage">
+      <trans-unit id="msg1585">
+        <source xml:space="preserve">Style</source>
+        <target xml:space="preserve" state="final">Aussehen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">100</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1586">
+        <source xml:space="preserve">Choose Vidalia&apos;s interface style</source>
+        <target xml:space="preserve" state="final">Wählen Sie Vidalias Aussehen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">134</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1587">
+        <source xml:space="preserve">Language</source>
+        <target xml:space="preserve" state="final">Sprache</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">31</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1588">
+        <source xml:space="preserve">Choose the language used in Vidalia</source>
+        <target xml:space="preserve" state="final">Wählen Sie die Sprache für Vidalia aus</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">52</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1589">
+        <source xml:space="preserve">Changes to language will only take effect after restarting Vidalia!</source>
+        <target xml:space="preserve" state="final">Damit die Sprachauswahl gültig wird, muss Vidalia neu gestartet werden.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">84</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../config/configdialog.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="ConfigDialog">
+      <trans-unit id="msg1590">
+        <source xml:space="preserve">Help</source>
+        <target xml:space="preserve" state="final">Hilfe</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">106</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1591">
+        <source xml:space="preserve">Error Saving Settings</source>
+        <target xml:space="preserve" state="final">Fehler beim Speichern der Einstellungen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">174</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1592">
+        <source xml:space="preserve">Vidalia was unable to save your %1 settings.</source>
+        <target xml:space="preserve" state="final">Vidalia konnte Ihre %1 Einstellungen nicht speichern.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">176</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1593">
+        <source xml:space="preserve">Error Applying Settings</source>
+        <target xml:space="preserve" state="final">Fehler beim Anwender der Einstellungen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">203</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1594">
+        <source xml:space="preserve">Vidalia was unable to apply your %1 settings to Tor.</source>
+        <target xml:space="preserve" state="final">Vidalia konnte ihre %1 Einstellungen nicht an Tor anwenden.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">205</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1595">
+        <source xml:space="preserve">OK</source>
+        <target xml:space="preserve" state="final">OK</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">56</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1596">
+        <source xml:space="preserve">Cancel</source>
+        <target xml:space="preserve" state="final">Abbrechen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">59</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1597">
+        <source xml:space="preserve">General</source>
+        <target xml:space="preserve" state="final">Allgemein</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">72</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1598">
+        <source xml:space="preserve">Network</source>
+        <target xml:space="preserve" state="final">Netzwerk</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">76</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1599">
+        <source xml:space="preserve">Sharing</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">80</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1600">
+        <source xml:space="preserve">Services</source>
+        <target xml:space="preserve" state="new">Dienste</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">84</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1601">
+        <source xml:space="preserve">Appearance</source>
+        <target xml:space="preserve" state="final">Aussehen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">88</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1602">
+        <source xml:space="preserve">Advanced</source>
+        <target xml:space="preserve" state="final">Fortgeschritten</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">92</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../config/configdialog.ui" datatype="x-trolltech-designer-ui" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="ConfigDialog">
+      <trans-unit id="msg1603">
+        <source xml:space="preserve">Settings</source>
+        <target xml:space="preserve" state="final">Einstellungen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">16</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../config/generalpage.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="GeneralPage">
+      <trans-unit id="msg1604">
+        <source xml:space="preserve">The proxy arguments specified are not properly formatted.</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">103</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1605">
+        <source xml:space="preserve">General</source>
+        <target xml:space="preserve" state="final">Allgemein</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">23</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1606">
+        <source xml:space="preserve">Executables (*.exe)</source>
+        <target xml:space="preserve" state="final">Ausführbare Dateien (*.exe)</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">59</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1607">
+        <source xml:space="preserve">Select Path to Tor</source>
+        <target xml:space="preserve" state="final">Wählen Sie den Pfad zum Tor-Verzeichnis aus</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">72</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1608">
+        <source xml:space="preserve">Select Proxy Executable</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">82</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1609">
+        <source xml:space="preserve">You must specify the name of your Tor executable.</source>
+        <target xml:space="preserve" state="final">Sie müssen den Namen von Tors ausführbarer Datei angeben.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">95</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../config/generalpage.ui" datatype="x-trolltech-designer-ui" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="GeneralPage">
+      <trans-unit id="msg1610">
+        <source xml:space="preserve">Browse</source>
+        <target xml:space="preserve" state="final">Öffnen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">115</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1611">
+        <source xml:space="preserve">Command Line Arguments:</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">129</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1612">
+        <source xml:space="preserve">Start Vidalia when my system starts</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">22</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1613">
+        <source xml:space="preserve">Executable</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">38</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1614">
+        <source xml:space="preserve">Start the Tor software when Vidalia starts</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">63</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1615">
+        <source xml:space="preserve">Start a proxy application when Vidalia starts</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">75</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1616">
+        <source xml:space="preserve">Proxy Executable</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">97</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../config/networkpage.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="NetworkPage">
+      <trans-unit id="msg1617">
+        <source xml:space="preserve">Invalid Bridge</source>
+        <target xml:space="preserve" state="final">Ungültige Brücke</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">186</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1618">
+        <source xml:space="preserve">The specified bridge identifier is not valid.</source>
+        <target xml:space="preserve" state="final">Die angegebene Brücke ist nicht gültig.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">187</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1619">
+        <source xml:space="preserve">Copy (Ctrl+C)</source>
+        <target xml:space="preserve" state="final">Kopieren (Strg+C)</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">234</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1620">
+        <source xml:space="preserve">You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet.</source>
+        <target xml:space="preserve" state="final">Sie müssen eine IP-Adresse oder einen Hostnamen und eine Portnummer abgeben, damit Tor einen Proxy für die<ph id="ph96" ctype="x-ch-lf">\n</ph>Internetverbindung benutzt.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">265</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1621">
+        <source xml:space="preserve">You must specify one or more ports to which your firewall allows you to connect.</source>
+        <target xml:space="preserve" state="final">Sie müssen einen oder mehrere Ports angeben, zu der Ihre Firewall Verbindungen erlaubt.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">271</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1622">
+        <source xml:space="preserve">&apos;%1&apos; is not a valid port number.</source>
+        <target xml:space="preserve" state="final">&apos;%1&apos; ist keine gültige Port-Nummer.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">307</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1623">
+        <source xml:space="preserve">Network</source>
+        <target xml:space="preserve" state="final">Netzwerk</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">34</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../config/networkpage.ui" datatype="x-trolltech-designer-ui" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="NetworkPage">
+      <trans-unit id="msg1624">
+        <source xml:space="preserve">Password:</source>
+        <target xml:space="preserve" state="final">Passwort:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">108</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1625">
+        <source xml:space="preserve">Port:</source>
+        <target xml:space="preserve" state="final">Port:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">135</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1626">
+        <source xml:space="preserve">Check to only connect to relays using ports allowed by your firewall</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">176</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1627">
+        <source xml:space="preserve">My firewall only lets me connect to certain ports</source>
+        <target xml:space="preserve" state="final">Meine Firewall lässt nur Verbindungen zu bestimmten Ports zu</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">179</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1628">
+        <source xml:space="preserve">Firewall Settings</source>
+        <target xml:space="preserve" state="final">Firewall-Einstellungen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">203</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1629">
+        <source xml:space="preserve">Allowed Ports:</source>
+        <target xml:space="preserve" state="final">Erlaubte Ports:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">215</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1630">
+        <source xml:space="preserve">80, 443</source>
+        <target xml:space="preserve" state="final">80, 443</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">225</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1631">
+        <source xml:space="preserve">Check to encrypt directory requests and, optionally, use bridge relays to access the Tor network</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">235</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1632">
+        <source xml:space="preserve">My ISP blocks connections to the Tor network</source>
+        <target xml:space="preserve" state="final">Mein Provider blockiert Verbindungen zum Tor-Netzwerk</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">238</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1633">
+        <source xml:space="preserve">Check if your local network requires a proxy to access the Internet</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">25</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1634">
+        <source xml:space="preserve">Bridge Settings</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">262</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1635">
+        <source xml:space="preserve">The Tor software you are currently running does not support bridges. &lt;br&gt;Your directory connections will still be encrypted.</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">274</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1636">
+        <source xml:space="preserve">I use a proxy to access the Internet</source>
+        <target xml:space="preserve" state="final">Ich benutze einen Proxy um ins Internet zu gelangen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">28</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1637">
+        <source xml:space="preserve">Add a Bridge:</source>
+        <target xml:space="preserve" state="final">Eine Bücke hinzufügen:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">295</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1638">
+        <source xml:space="preserve">&lt;a href=&quot;bridges.finding&quot;&gt;How do I find a bridge?&lt;/a&gt;</source>
+        <target xml:space="preserve" state="final">&lt;a href=&quot;bridges.finding&quot;&gt;Wie finde ich eine Tor-Brücke?&lt;/a&gt;</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">318</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1639">
+        <source xml:space="preserve">Remove the selected bridges from the list</source>
+        <target xml:space="preserve" state="final">Entferne the gewählte Brücke von der Liste</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">383</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1640">
+        <source xml:space="preserve">Copy the selected bridges to the clipboard</source>
+        <target xml:space="preserve" state="final">Kopiere die gewählte Brücke in die Zwischenablage</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">399</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1641">
+        <source xml:space="preserve">Proxy Settings</source>
+        <target xml:space="preserve" state="final">Proxy-Einstellungen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">58</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1642">
+        <source xml:space="preserve">HTTP Proxy:</source>
+        <target xml:space="preserve" state="final">HTTP-Proxy:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">70</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1643">
+        <source xml:space="preserve">Username:</source>
+        <target xml:space="preserve" state="final">Nutzername:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">80</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1644">
+        <source xml:space="preserve">Use this proxy for HTTPS also</source>
+        <target xml:space="preserve" state="final">Diesen Proxy auch für HTTPS benutzen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">90</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../config/policy.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="Policy">
+      <trans-unit id="msg1645">
+        <source xml:space="preserve">reject</source>
+        <target xml:space="preserve" state="final">ablehnen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">167</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1646">
+        <source xml:space="preserve">accept</source>
+        <target xml:space="preserve" state="final">annehmen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">167</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../config/serverpage.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="ServerPage">
+      <trans-unit id="msg1647">
+        <source xml:space="preserve">Bridge Support Unavailable</source>
+        <target xml:space="preserve" state="final">Brücken-Unterstützung nicht verfügbar</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">132</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1648">
+        <source xml:space="preserve">You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges.</source>
+        <target xml:space="preserve" state="final">Sie haben Tor so konfiguriert, dass es als Brückenverteiler für zensierte Nutzer dient, aber Ihre Tor-Version<ph id="ph97" ctype="x-ch-lf">\n</ph>unterstützt Brücken nicht.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">135</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1649">
+        <source xml:space="preserve">Please upgrade your Tor software or configure Tor to act as a normal Tor relay.</source>
+        <target xml:space="preserve" state="final">Bitte aktualisieren Sie Ihre Tor-Version oder konfigurieren Sie Tor so, dass es als normaler Verteiler<ph id="ph98" ctype="x-ch-lf">\n</ph>arbeitet.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">137</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1650">
+        <source xml:space="preserve">Your bridge relay is not running.</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">191</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1651">
+        <source xml:space="preserve">You must specify at least a relay nickname and port.</source>
+        <target xml:space="preserve" state="final">Sie müssen mindestend einen Verteiler-Namen und Port angeben.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">255</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1652">
+        <source xml:space="preserve">Server</source>
+        <target xml:space="preserve" state="final">Server</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">68</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../config/serverpage.ui" datatype="x-trolltech-designer-ui" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="ServerPage">
+      <trans-unit id="msg1653">
+        <source xml:space="preserve">This is the identity of your bridge relay that you can give to other people</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">1007</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1654">
+        <source xml:space="preserve">Copy your bridge relay&apos;s identity to the clipboard</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">1029</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1655">
+        <source xml:space="preserve">Enable to mirror the relay directory</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">110</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1656">
+        <source xml:space="preserve">Mirror the Relay Directory </source>
+        <target xml:space="preserve" state="final">Das Tor-Verteiler-Verzeichnis spiegeln</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">113</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1657">
+        <source xml:space="preserve">Attempt to automatically configure port forwarding</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">139</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1658">
+        <source xml:space="preserve">Test</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">154</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1659">
+        <source xml:space="preserve">Email address at which you may be reached if there is a<ph id="ph99" ctype="x-ch-lf">\n</ph>problem with your relay. You might also include your PGP or GPG fingerprint.</source>
+        <target xml:space="preserve" state="final">Email-Adresse über die Sie erreicht werden können, wenn ein Problem mit Ihrem<ph id="ph100" ctype="x-ch-lf">\n</ph>Verteiler besteht. Sie können auch Ihren PGP- oder GPG-Finegerabdruck angeben.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">182</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1660">
+        <source xml:space="preserve">Directory Port:</source>
+        <target xml:space="preserve" state="final">Verzeichnis-Port:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">212</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1661">
+        <source xml:space="preserve">Directory Port Number</source>
+        <target xml:space="preserve" state="final">Verzeichnis-Port-Nummer:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">245</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1662">
+        <source xml:space="preserve">Run as a client only</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">25</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1663">
+        <source xml:space="preserve">Contact Info:</source>
+        <target xml:space="preserve" state="final">Kontaktinformation:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">257</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1664">
+        <source xml:space="preserve">Name of your relay</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">315</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1665">
+        <source xml:space="preserve">Relay traffic for the Tor network</source>
+        <target xml:space="preserve" state="final">Leite Verkehr für das Tor-Netzwerk weiter</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">32</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1666">
+        <source xml:space="preserve">Port on which users and other relays can communicate with your relay</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">348</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1667">
+        <source xml:space="preserve">Nickname:</source>
+        <target xml:space="preserve" state="final">Spitzname:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">358</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1668">
+        <source xml:space="preserve">Bandwidth Limits</source>
+        <target xml:space="preserve" state="final">Bandbreitenbegrenzung</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">378</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1669">
+        <source xml:space="preserve">Help censored users reach the Tor network (Tor 0.2.0.8-alpha or newer)</source>
+        <target xml:space="preserve" state="final">Nutzern helfen, die einer Internetzensur unterliegen, das Tor-Netzwerk zu nutzen (Tor 0.2.0.8-alpha oder neuer)</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">39</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1670">
+        <source xml:space="preserve">For Internet connections with fast download speed but slow upload, please list your upload speed here.</source>
+        <target xml:space="preserve" state="final">Bei Internetverbindungen mit hoher Downloadgeschwindigkeit aber niedriger Uploadgeschwindigkeit<ph id="ph101" ctype="x-ch-lf">\n</ph>geben Sie Ihre Uploadgeschwindigkeit bitte hier an.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">413</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1671">
+        <source xml:space="preserve">Select the entry that most closely resembles your Internet connection</source>
+        <target xml:space="preserve" state="final">Wählen Sie den Eintrag der Ihrer Internetverbindung am ehesten entspricht</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">434</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1672">
+        <source xml:space="preserve">Cable/DSL 256 Kbps</source>
+        <target xml:space="preserve" state="final">Kabel/DSL 256 kbit/s</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">444</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1673">
+        <source xml:space="preserve">Cable/DSL 512 Kbps</source>
+        <target xml:space="preserve" state="final">Kabel/DSL 512 kbit/s</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">449</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1674">
+        <source xml:space="preserve">Cable/DSL 768 Kbps</source>
+        <target xml:space="preserve" state="final">Kabel/DSL 768 kbit/s</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">454</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1675">
+        <source xml:space="preserve">T1/Cable/DSL 1.5 Mbps</source>
+        <target xml:space="preserve" state="final">T1/Kabel/DSL 1,5 Mbit/s</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">459</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1676">
+        <source xml:space="preserve">&gt; 1.5 Mbps</source>
+        <target xml:space="preserve" state="final">&gt; 1,5 Mbit/s</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">464</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1677">
+        <source xml:space="preserve">Custom</source>
+        <target xml:space="preserve" state="final">Benutzerdefiniert</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">469</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1678">
+        <source xml:space="preserve">Show help topic on bandwidth rate limits</source>
+        <target xml:space="preserve" state="final">Zeige Hilfe zur Bandbreitenbegrenzung</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">480</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1679">
+        <source xml:space="preserve">Average Rate</source>
+        <target xml:space="preserve" state="final">Durchschnittliche Rate</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">569</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1680">
+        <source xml:space="preserve">Long-term average bandwidth limit</source>
+        <target xml:space="preserve" state="final">Dauerhafte durchschnittliche Bandbreitenbegrenzung</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">598</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1681">
+        <source xml:space="preserve">Maximum Rate</source>
+        <target xml:space="preserve" state="final">Maximale Rate</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">644</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1682">
+        <source xml:space="preserve">Peak bandwidth rate limit</source>
+        <target xml:space="preserve" state="final">Hochlast Bandbreitenbegrenzung</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">673</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1683">
+        <source xml:space="preserve">KB/s</source>
+        <target xml:space="preserve" state="final">KB/s</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">686</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1684">
+        <source xml:space="preserve">Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s.</source>
+        <target xml:space="preserve" state="final">Ihre maximale Bandbreite muss größer oder gleich groß wie ihre durschnittliche Bandbreite sein. Beide Werte müssen mindestens 20 KB/s betragen.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">715</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1685">
+        <source xml:space="preserve">Exit Policies</source>
+        <target xml:space="preserve" state="final">Exit-Regeln</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">742</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1686">
+        <source xml:space="preserve">Basic Settings</source>
+        <target xml:space="preserve" state="final">Allgemeine Einstellungen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">76</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1687">
+        <source xml:space="preserve">Ports 6660 - 6669 and 6697</source>
+        <target xml:space="preserve" state="final">Ports 6660 - 6669 und 6697</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">780</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1688">
+        <source xml:space="preserve">Internet Relay Chat (IRC)</source>
+        <target xml:space="preserve" state="final">Internet Relay Chat (IRC)</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">783</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1689">
+        <source xml:space="preserve">Ports 110, 143, 993 and 995</source>
+        <target xml:space="preserve" state="final">Ports 110, 143, 993 und 995</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">793</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1690">
+        <source xml:space="preserve">Retrieve Mail (POP, IMAP)</source>
+        <target xml:space="preserve" state="final">E-Mails abrufen (POP, IMAP)</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">796</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1691">
+        <source xml:space="preserve">Ports unspecified by other checkboxes</source>
+        <target xml:space="preserve" state="final">Ports die durch andere Checkboxen nicht belegt wurden</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">806</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1692">
+        <source xml:space="preserve">Misc Other Services</source>
+        <target xml:space="preserve" state="final">Verschiedene andere Dienste</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">809</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1693">
+        <source xml:space="preserve">Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 and 8888</source>
+        <target xml:space="preserve" state="new">Ports 706, 1863, 5050, 5190, 5222, 8300 und 8888 {706, 1863, 5050, 5190, 5222, 5223, 8300 ?}</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">819</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1694">
+        <source xml:space="preserve">Instant Messaging (IM)</source>
+        <target xml:space="preserve" state="final">Instant Messaging (IM)</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">822</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1695">
+        <source xml:space="preserve">Port 443</source>
+        <target xml:space="preserve" state="final">Port 443</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">832</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1696">
+        <source xml:space="preserve">Secure Websites (SSL)</source>
+        <target xml:space="preserve" state="final">Sichere Webseiten (SSL)</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">835</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1697">
+        <source xml:space="preserve">Port 80</source>
+        <target xml:space="preserve" state="final">Port 80</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">845</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1698">
+        <source xml:space="preserve">Websites</source>
+        <target xml:space="preserve" state="final">Webseiten</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">848</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1699">
+        <source xml:space="preserve">Show help topic on exit policies</source>
+        <target xml:space="preserve" state="final">Zeige Hilfe zu Exit-Regeln</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">874</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1700">
+        <source xml:space="preserve">Relay Port:</source>
+        <target xml:space="preserve" state="final">Verteiler-Port:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">91</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1701">
+        <source xml:space="preserve">What Internet resources should users be able to access from your relay?</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">947</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1702">
+        <source xml:space="preserve">Let others access your bridge by giving them this line:</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">983</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../config/servicepage.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="ServicePage">
+      <trans-unit id="msg1703">
+        <source xml:space="preserve">Error while trying to unpublish all services</source>
+        <target xml:space="preserve" state="final">Fehler beim Versuch alle Dienste zu stoppen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">109</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1704">
+        <source xml:space="preserve">Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones.</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">116</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1705">
+        <source xml:space="preserve">Services</source>
+        <target xml:space="preserve" state="final">Dienste</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">27</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1706">
+        <source xml:space="preserve">Please select a Service.</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">445</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1707">
+        <source xml:space="preserve">Select Service Directory</source>
+        <target xml:space="preserve" state="final">Verzeichnis auswählen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">451</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1708">
+        <source xml:space="preserve">Virtual Port may only contain valid port numbers [1..65535].</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">541</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1709">
+        <source xml:space="preserve">Target may only contain address:port, address, or port.</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">572</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1710">
+        <source xml:space="preserve">Error</source>
+        <target xml:space="preserve" state="final">Fehler</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">591</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1711">
+        <source xml:space="preserve">Directory already in use by another service.</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">592</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../config/servicepage.ui" datatype="x-trolltech-designer-ui" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="ServicePage">
+      <trans-unit id="msg1712">
+        <source xml:space="preserve">Copy onion address of selected service to clipboard</source>
+        <target xml:space="preserve" state="final">Kopiere die Onion Adresse in die Zwischenablage</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">110</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1713">
+        <source xml:space="preserve">Browse in local file system and choose directory for selected service</source>
+        <target xml:space="preserve" state="final">Durchsuchen Sie ihr lokales Dateisystem um ein Verzeichnis auszuwählen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">123</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1714">
+        <source xml:space="preserve">Form</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">19</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1715">
+        <source xml:space="preserve">Provided Hidden Services</source>
+        <target xml:space="preserve" state="final">Versteckte Dienste</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">31</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1716">
+        <source xml:space="preserve">Onion Address</source>
+        <target xml:space="preserve" state="final">Onion Adresse</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">56</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1717">
+        <source xml:space="preserve">Virtual Port</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">61</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1718">
+        <source xml:space="preserve">Target</source>
+        <target xml:space="preserve" state="final">Ziel</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">66</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1719">
+        <source xml:space="preserve">Directory Path</source>
+        <target xml:space="preserve" state="final">Verzeichnispfad</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">71</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1720">
+        <source xml:space="preserve">Enabled</source>
+        <target xml:space="preserve" state="final">Gestartet</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">76</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1721">
+        <source xml:space="preserve">Add new service to list</source>
+        <target xml:space="preserve" state="final">Füge einen neuen Service hinzu</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">84</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1722">
+        <source xml:space="preserve">Remove selected service from list</source>
+        <target xml:space="preserve" state="final">Entferne den gewählten Service</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">97</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../config/torsettings.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="TorSettings">
+      <trans-unit id="msg1723">
+        <source xml:space="preserve">Failed to hash the control password.</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">107</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../config/upnpcontrol.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="UPNPControl">
+      <trans-unit id="msg1724">
+        <source xml:space="preserve">Success</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">139</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1725">
+        <source xml:space="preserve">No UPnP-enabled devices found</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">141</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1726">
+        <source xml:space="preserve">No valid UPnP-enabled Internet gateway devices found</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">143</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1727">
+        <source xml:space="preserve">WSAStartup failed</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">145</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1728">
+        <source xml:space="preserve">Failed to add a port mapping</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">147</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1729">
+        <source xml:space="preserve">Failed to retrieve a port mapping</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">149</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1730">
+        <source xml:space="preserve">Failed to remove a port mapping</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">151</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1731">
+        <source xml:space="preserve">Unknown error</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">153</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../config/upnptestdialog.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="UPNPTestDialog">
+      <trans-unit id="msg1732">
+        <source xml:space="preserve">Discovering UPnP-enabled devices</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">109</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1733">
+        <source xml:space="preserve">Updating directory port mapping</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">114</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1734">
+        <source xml:space="preserve">Updating relay port mapping</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">119</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1735">
+        <source xml:space="preserve">Test completed successfully!</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">124</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../config/upnptestdialog.ui" datatype="x-trolltech-designer-ui" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="UPNPTestDialog">
+      <trans-unit id="msg1736">
+        <source xml:space="preserve">Testing UPnP Support</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">13</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1737">
+        <source xml:space="preserve">Testing Universal Plug &amp; Play Support</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">92</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../help/browser/helpbrowser.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="HelpBrowser">
+      <trans-unit id="msg1738">
+        <source xml:space="preserve">Error Loading Help Contents: </source>
+        <target xml:space="preserve" state="final">Fehler beim Laden der Hilfe: </target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">122</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1739">
+        <source xml:space="preserve">Supplied XML file is not a valid Contents document.</source>
+        <target xml:space="preserve" state="final">Angegebene XML Datei enthält kein gültiges Inhaltsverzeichnis</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">134</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1740">
+        <source xml:space="preserve">Search reached end of document</source>
+        <target xml:space="preserve" state="final">Suche hat Ende des Dokuments erreicht</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">377</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1741">
+        <source xml:space="preserve">Search reached start of document</source>
+        <target xml:space="preserve" state="final">Suche hat Anfang des Dokuments erreicht</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">379</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1742">
+        <source xml:space="preserve">Text not found in document</source>
+        <target xml:space="preserve" state="final">Text nicht gefunden</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">381</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1743">
+        <source xml:space="preserve">Found %1 results</source>
+        <target xml:space="preserve" state="final">%1 Ergebnis(se) gefunden</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">426</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../help/browser/helpbrowser.ui" datatype="x-trolltech-designer-ui" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="HelpBrowser">
+      <trans-unit id="msg1744">
+        <source xml:space="preserve">Find:</source>
+        <target xml:space="preserve" state="final">Finde:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">152</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1745">
+        <source xml:space="preserve">Find Previous</source>
+        <target xml:space="preserve" state="final">Finde Vorherige</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">174</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1746">
+        <source xml:space="preserve">Find Next</source>
+        <target xml:space="preserve" state="final">Finde Nächste</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">187</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1747">
+        <source xml:space="preserve">Case sensitive</source>
+        <target xml:space="preserve" state="final">Groß-/Kleinschreibung beachten</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">221</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1748">
+        <source xml:space="preserve">Whole words only</source>
+        <target xml:space="preserve" state="final">Nur ganze Wörter</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">231</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1749">
+        <source xml:space="preserve">Contents</source>
+        <target xml:space="preserve" state="final">Inhalt</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">260</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1750">
+        <source xml:space="preserve">Help Topics</source>
+        <target xml:space="preserve" state="final">Hilfe Themen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">305</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1751">
+        <source xml:space="preserve">Vidalia Help</source>
+        <target xml:space="preserve" state="final">Vidalia Hilfe</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">33</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1752">
+        <source xml:space="preserve">Search</source>
+        <target xml:space="preserve" state="final">Suche</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">350</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1753">
+        <source xml:space="preserve">Searching for:</source>
+        <target xml:space="preserve" state="final">Suche nach:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">362</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1754">
+        <source xml:space="preserve">Found Documents</source>
+        <target xml:space="preserve" state="final">Gefundene Dokumente</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">405</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1755">
+        <source xml:space="preserve">Back</source>
+        <target xml:space="preserve" state="final">Zurück</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">484</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1756">
+        <source xml:space="preserve">Move to previous page (Backspace)</source>
+        <target xml:space="preserve" state="final">Eine Seite zurück (Backspace)</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">487</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1757">
+        <source xml:space="preserve">Backspace</source>
+        <target xml:space="preserve" state="final">Backspace</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">490</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1758">
+        <source xml:space="preserve">Forward</source>
+        <target xml:space="preserve" state="final">Vorwärts</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">498</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1759">
+        <source xml:space="preserve">Move to next page (Shift+Backspace)</source>
+        <target xml:space="preserve" state="final">Eine Seite vor (Shift+Backspace)</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">501</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1760">
+        <source xml:space="preserve">Shift+Backspace</source>
+        <target xml:space="preserve" state="final">Shift+Backspace</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">504</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1761">
+        <source xml:space="preserve">Home</source>
+        <target xml:space="preserve" state="final">Startseite</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">512</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1762">
+        <source xml:space="preserve">Move to the Home page (Ctrl+H)</source>
+        <target xml:space="preserve" state="final">Zur Startseite (Strg+H)</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">515</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1763">
+        <source xml:space="preserve">Ctrl+H</source>
+        <target xml:space="preserve" state="final">Strg+H</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">518</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1764">
+        <source xml:space="preserve">Find</source>
+        <target xml:space="preserve" state="final">Suchen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">535</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1765">
+        <source xml:space="preserve">Search for a word or phrase on current page (Ctrl+F)</source>
+        <target xml:space="preserve" state="final">Suche nach einem Wort oder Satz in der aktuellen Seite (Strg+F)</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">538</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1766">
+        <source xml:space="preserve">Ctrl+F</source>
+        <target xml:space="preserve" state="final">Strg+F</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">541</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1767">
+        <source xml:space="preserve">Close</source>
+        <target xml:space="preserve" state="final">Schließen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">549</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1768">
+        <source xml:space="preserve">Close Vidalia Help</source>
+        <target xml:space="preserve" state="final">Die Vidalia Hilfe schließen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">552</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1769">
+        <source xml:space="preserve">Esc</source>
+        <target xml:space="preserve" state="final">Esc</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">555</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../help/browser/helptextbrowser.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="HelpTextBrowser">
+      <trans-unit id="msg1770">
+        <source xml:space="preserve">Error opening help file: </source>
+        <target xml:space="preserve" state="final">Fehler beim Öffnen der Hilfe: </target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">50</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../log/messagelog.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="MessageLog">
+      <trans-unit id="msg1771">
+        <source xml:space="preserve">Messages that appear when something has <ph id="ph102" ctype="x-ch-lf">\n</ph>gone very wrong and Tor cannot proceed.</source>
+        <target xml:space="preserve" state="final">Nachrichten dieses Typs erscheinen, wenn <ph id="ph103" ctype="x-ch-lf">\n</ph>schwerwiegende Fehler aufgetreten sind und Tor nicht fortfahren kann.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">137</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1772">
+        <source xml:space="preserve">Messages that only appear when <ph id="ph104" ctype="x-ch-lf">\n</ph>something has gone wrong with Tor.</source>
+        <target xml:space="preserve" state="final">Nachrichten dieses Typs erscheinen nur, wenn<ph id="ph105" ctype="x-ch-lf">\n</ph>Fehler mit Tor aufgetreten sind.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">139</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1773">
+        <source xml:space="preserve">Messages that appear infrequently <ph id="ph106" ctype="x-ch-lf">\n</ph>during normal Tor operation and are <ph id="ph107" ctype="x-ch-lf">\n</ph>not considered errors, but you may <ph id="ph108" ctype="x-ch-lf">\n</ph>care about.</source>
+        <target xml:space="preserve" state="final">Nachrichten dieses Typs erscheinen manchmal<ph id="ph109" ctype="x-ch-lf">\n</ph>während des normalen Tor-Betriebs. Sie gelten nicht als Fehler, könnten<ph id="ph110" ctype="x-ch-lf">\n</ph>aber interessant für den Benutzer sein.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">143</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1774">
+        <source xml:space="preserve">Messages that appear frequently <ph id="ph111" ctype="x-ch-lf">\n</ph>during normal Tor operation.</source>
+        <target xml:space="preserve" state="final">Nachrichten dieses Typs tauchen öfter während des<ph id="ph112" ctype="x-ch-lf">\n</ph>normalen Tor-Betriebs auf.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">145</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1775">
+        <source xml:space="preserve">Hyper-verbose messages primarily of <ph id="ph113" ctype="x-ch-lf">\n</ph>interest to Tor developers.</source>
+        <target xml:space="preserve" state="final">Nachrichten dieses Typs informieren im Detail über<ph id="ph114" ctype="x-ch-lf">\n</ph>alle Vorgänge und sind hauptsächlich für Tor-Entwickler gedacht.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">147</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1776">
+        <source xml:space="preserve">Error Setting Filter</source>
+        <target xml:space="preserve" state="final">Fehler beim Setzen des Filters</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">192</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1777">
+        <source xml:space="preserve">Vidalia was unable to register for Tor&apos;s log events.</source>
+        <target xml:space="preserve" state="final">Vidalia konnte keine Logging Nachrichten von Tor<ph id="ph115" ctype="x-ch-lf">\n</ph>empfangen.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">193</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1778">
+        <source xml:space="preserve">Error Opening Log File</source>
+        <target xml:space="preserve" state="final">Fehler beim Öffnen der Logdatei</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">208</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1779">
+        <source xml:space="preserve">Vidalia was unable to open the specified log file.</source>
+        <target xml:space="preserve" state="final">Vidalia konnte die angegebene Logdatei nicht öffnen.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">209</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1780">
+        <source xml:space="preserve">Log Filename Required</source>
+        <target xml:space="preserve" state="final">Logdateiname wird benötigt</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">230</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1781">
+        <source xml:space="preserve">You must enter a filename to be able to save log messages to a file.</source>
+        <target xml:space="preserve" state="final">Sie müssen einen Dateinamen angeben, um die Logdaten speichern zu können.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">232</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1782">
+        <source xml:space="preserve">Select Log File</source>
+        <target xml:space="preserve" state="final">Logdatei auswählen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">283</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1783">
+        <source xml:space="preserve">Save Log Messages</source>
+        <target xml:space="preserve" state="final">Speichere Logdatei</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">300</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1784">
+        <source xml:space="preserve">Text Files (*.txt)</source>
+        <target xml:space="preserve" state="final">Text Dateien (*.txt)</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">303</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1785">
+        <source xml:space="preserve">Vidalia</source>
+        <target xml:space="preserve" state="final">Vidalia</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">312</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1786">
+        <source xml:space="preserve">Cannot write file %1<ph id="ph116" ctype="x-ch-lf">\n</ph><ph id="ph117" ctype="x-ch-lf">\n</ph>%2.</source>
+        <target xml:space="preserve" state="final">Schreiben in Datei %1 nicht möglich<ph id="ph118" ctype="x-ch-lf">\n</ph>        <ph id="ph119" ctype="x-ch-lf">\n</ph>%2.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">313</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1787">
+        <source xml:space="preserve">Find in Message Log</source>
+        <target xml:space="preserve" state="final">Suche im Nachrichtenprotokoll</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">363</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1788">
+        <source xml:space="preserve">Find:</source>
+        <target xml:space="preserve" state="final">Finde:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">364</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1789">
+        <source xml:space="preserve">Not Found</source>
+        <target xml:space="preserve" state="final">Nicht gefunden</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">370</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1790">
+        <source xml:space="preserve">Search found 0 matches.</source>
+        <target xml:space="preserve" state="final">Die Suche hat 0 passende Einträge gefunden.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">371</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../log/messagelog.ui" datatype="x-trolltech-designer-ui" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="MessageLog">
+      <trans-unit id="msg1791">
+        <source xml:space="preserve">Saves the current Message Log settings</source>
+        <target xml:space="preserve" state="final">Speichert die aktuellen Nachrichtenprotokoll-Einstellungen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">160</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1792">
+        <source xml:space="preserve">Save Settings</source>
+        <target xml:space="preserve" state="final">Speichere Einstellungen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">163</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1793">
+        <source xml:space="preserve">Cancels changes made to settings</source>
+        <target xml:space="preserve" state="final">Verwirft die Änderung der Einstellungen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">179</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1794">
+        <source xml:space="preserve">Cancel</source>
+        <target xml:space="preserve" state="final">Abbrechen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">182</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1795">
+        <source xml:space="preserve">Message Log</source>
+        <target xml:space="preserve" state="final">Nachrichtenprotokoll</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">19</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1796">
+        <source xml:space="preserve">Message Filter</source>
+        <target xml:space="preserve" state="final">Nachrichtenfilter</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">196</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1797">
+        <source xml:space="preserve">Error</source>
+        <target xml:space="preserve" state="final">Fehler</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">217</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1798">
+        <source xml:space="preserve">Warning</source>
+        <target xml:space="preserve" state="final">Warnung</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">233</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1799">
+        <source xml:space="preserve">Notice</source>
+        <target xml:space="preserve" state="final">Notiz</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">249</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1800">
+        <source xml:space="preserve">Info</source>
+        <target xml:space="preserve" state="final">Info</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">265</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1801">
+        <source xml:space="preserve">Debug</source>
+        <target xml:space="preserve" state="final">Debug</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">281</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1802">
+        <source xml:space="preserve">Message Log History</source>
+        <target xml:space="preserve" state="final">Nachrichtenprotokoll-Verlauf</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">297</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1803">
+        <source xml:space="preserve">Number of messages to display in the message log window</source>
+        <target xml:space="preserve" state="final">Anzahl der Nachrichten, die im Nachrichtenprotokoll-Fenster angezeigt werden</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">318</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1804">
+        <source xml:space="preserve">messages</source>
+        <target xml:space="preserve" state="final">Nachrichten</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">337</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1805">
+        <source xml:space="preserve">Always Save New Log Messages</source>
+        <target xml:space="preserve" state="final">Nachrichten immer speichern</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">356</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1806">
+        <source xml:space="preserve">Browse</source>
+        <target xml:space="preserve" state="final">Öffnen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">371</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1807">
+        <source xml:space="preserve">Enable automatically saving all new log messages to a file</source>
+        <target xml:space="preserve" state="final">Das automatische Speichern aller neuen Nachrichten in eine Datei aktivieren</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">394</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1808">
+        <source xml:space="preserve">Automatically save new log messages to a file</source>
+        <target xml:space="preserve" state="final">Alle neuen Nachrichten automatisch in einer Datei speichern</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">397</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1809">
+        <source xml:space="preserve">Message Filters...</source>
+        <target xml:space="preserve" state="final">Nachrichtenfilter...</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">452</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1810">
+        <source xml:space="preserve">Set message filters</source>
+        <target xml:space="preserve" state="final">Setze Nachrichtenfilter</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">455</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1811">
+        <source xml:space="preserve">History Size...</source>
+        <target xml:space="preserve" state="final">Größe des Verlaufs...</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">463</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1812">
+        <source xml:space="preserve">Set maximum number of messages to display</source>
+        <target xml:space="preserve" state="final">Maximale Anzahl der angezeigten Nachrichten</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">466</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1813">
+        <source xml:space="preserve">Clear</source>
+        <target xml:space="preserve" state="final">Löschen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">477</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1814">
+        <source xml:space="preserve">Clear all messages from the Message Log (Ctrl+E)</source>
+        <target xml:space="preserve" state="final">Lösche alle Nachrichten aus dem Nachrichtenprotokoll (Strg+E)</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">480</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1815">
+        <source xml:space="preserve">Ctrl+E</source>
+        <target xml:space="preserve" state="final">Strg+E</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">483</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1816">
+        <source xml:space="preserve">Copy</source>
+        <target xml:space="preserve" state="final">Kopieren</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">497</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1817">
+        <source xml:space="preserve">Copy the selected messages to the clipboard (Ctrl+C)</source>
+        <target xml:space="preserve" state="final">Kopiere die ausgewählte Nachricht in die Zwischenablage (Strg+C)</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">500</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1818">
+        <source xml:space="preserve">Ctrl+C</source>
+        <target xml:space="preserve" state="final">Strg+C</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">503</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1819">
+        <source xml:space="preserve">Select All</source>
+        <target xml:space="preserve" state="final">Alles markieren</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">514</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1820">
+        <source xml:space="preserve">Select all messages (Ctrl+A)</source>
+        <target xml:space="preserve" state="final">Alle Nachrichten markieren (Strg+A)</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">517</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1821">
+        <source xml:space="preserve">Ctrl+A</source>
+        <target xml:space="preserve" state="final">Strg+A</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">520</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1822">
+        <source xml:space="preserve">Save All</source>
+        <target xml:space="preserve" state="final">Speichere alles</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">528</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1823">
+        <source xml:space="preserve">Save all messages to a file</source>
+        <target xml:space="preserve" state="final">Speichere alle Nachrichten in eine Datei</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">531</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1824">
+        <source xml:space="preserve">Save Selected</source>
+        <target xml:space="preserve" state="final">Speichere markierte</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">539</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1825">
+        <source xml:space="preserve">Save selected messages to a file</source>
+        <target xml:space="preserve" state="final">Speichere markierte Nachrichten in eine Datei</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">542</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1826">
+        <source xml:space="preserve">Settings</source>
+        <target xml:space="preserve" state="final">Einstellungen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">553</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1827">
+        <source xml:space="preserve">Adjust Message Log Settings</source>
+        <target xml:space="preserve" state="final">Ändere Nachrichtenprotokoll-Einstellungen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">556</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1828">
+        <source xml:space="preserve">Ctrl+T</source>
+        <target xml:space="preserve" state="final">Strg+T</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">559</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1829">
+        <source xml:space="preserve">Help</source>
+        <target xml:space="preserve" state="final">Hilfe</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">567</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1830">
+        <source xml:space="preserve">Show the help browser</source>
+        <target xml:space="preserve" state="final">Zeige Hilfe Browser</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">570</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1831">
+        <source xml:space="preserve">F1</source>
+        <target xml:space="preserve" state="final">F1</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">573</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1832">
+        <source xml:space="preserve">Close</source>
+        <target xml:space="preserve" state="final">Schließen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">581</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1833">
+        <source xml:space="preserve">Close the Message Log</source>
+        <target xml:space="preserve" state="final">Schließe das Nachrichtenprotokoll</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">584</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1834">
+        <source xml:space="preserve">Esc</source>
+        <target xml:space="preserve" state="final">Esc</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">587</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1835">
+        <source xml:space="preserve">Find</source>
+        <target xml:space="preserve" state="final">Finde</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">598</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1836">
+        <source xml:space="preserve">Find all messages containing the search text (Ctrl+F)</source>
+        <target xml:space="preserve" state="final">Finde alle Nachrichten die den Suchtext enthalten (Strg+F)</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">601</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1837">
+        <source xml:space="preserve">Ctrl+F</source>
+        <target xml:space="preserve" state="final">Strg+F</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">604</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1838">
+        <source xml:space="preserve">Time</source>
+        <target xml:space="preserve" state="final">Zeit</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">66</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1839">
+        <source xml:space="preserve">Type</source>
+        <target xml:space="preserve" state="final">Typ</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">71</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1840">
+        <source xml:space="preserve">Message</source>
+        <target xml:space="preserve" state="final">Nachricht</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">76</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../main.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="Vidalia">
+      <trans-unit id="msg1841">
+        <source xml:space="preserve">Invalid Argument</source>
+        <target xml:space="preserve" state="final">Ungültiges Argument</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">74</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1842">
+        <source xml:space="preserve">Vidalia is already running</source>
+        <target xml:space="preserve" state="final">Vidalia wurde bereits gestartet</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">88</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1843">
+        <source xml:space="preserve">Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.<ph id="ph120" ctype="x-ch-lf">\n</ph><ph id="ph121" ctype="x-ch-lf">\n</ph>Would you like to continue starting Vidalia?</source>
+        <target xml:space="preserve" state="final">Ein anderer Vidalia-Prozess läuft möglicherweise bereits. Falls wirklich kein anderer Vidalia-Prozess läuft, können Sie dennoch fortfahren.<ph id="ph122" ctype="x-ch-lf">\n</ph><ph id="ph123" ctype="x-ch-lf">\n</ph>Wollen Sie mit dem Start von Vidalia fortfahren?</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">94</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../mainwindow.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="MainWindow">
+      <trans-unit id="msg1844">
+        <source xml:space="preserve">Tor Update Available</source>
+        <target xml:space="preserve" state="final">Tor-Update verfügbar</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">1067</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1845">
+        <source xml:space="preserve">Tor website: %1</source>
+        <target xml:space="preserve" state="final">Tor-Webseite: %1</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">1070</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1846">
+        <source xml:space="preserve">The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version.</source>
+        <target xml:space="preserve" state="final">Die installierte Tor-Version ist veraltet und wird nicht länger empfohlen.<ph id="ph124" ctype="x-ch-lf">\n</ph>Bitte besuchen Sie die Tor-Webseite, um die aktuelle Version herunter zu laden.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">1070</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1847">
+        <source xml:space="preserve">New Identity</source>
+        <target xml:space="preserve" state="final">Neue Identität</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">1130</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1848">
+        <source xml:space="preserve">All subsequent connections will appear to be different than your old connections.</source>
+        <target xml:space="preserve" state="final">Alle folgenden Verbindungen werden anders als alte<ph id="ph125" ctype="x-ch-lf">\n</ph>Verbindungen erscheinen.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">1133</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1849">
+        <source xml:space="preserve">Failed to Create New Identity</source>
+        <target xml:space="preserve" state="final">Konnte keine neue Identität erstellen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">1148</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1850">
+        <source xml:space="preserve">Port Forwarding Failed</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">1197</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1851">
+        <source xml:space="preserve">Vidalia was unable to configure automatic port forwarding.</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">1198</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1852">
+        <source xml:space="preserve">Network Map</source>
+        <target xml:space="preserve" state="final">Netzwerk-Karte</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">296</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1853">
+        <source xml:space="preserve">Control Panel</source>
+        <target xml:space="preserve" state="final">Kontrollpanel</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">303</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1854">
+        <source xml:space="preserve">Ctrl+T</source>
+        <target xml:space="preserve" state="final">Strg+T</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">370</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1855">
+        <source xml:space="preserve">Ctrl+B</source>
+        <target xml:space="preserve" state="final">Strg+B</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">371</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1856">
+        <source xml:space="preserve">Ctrl+L</source>
+        <target xml:space="preserve" state="final">Strg+L</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">372</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1857">
+        <source xml:space="preserve">Ctrl+N</source>
+        <target xml:space="preserve" state="final">Strg+N</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">373</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1858">
+        <source xml:space="preserve">Ctrl+?</source>
+        <target xml:space="preserve" state="final">Strg+?</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">374</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1859">
+        <source xml:space="preserve">Ctrl+I</source>
+        <target xml:space="preserve" state="final">Strg+I</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">375</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1860">
+        <source xml:space="preserve">Ctrl+P</source>
+        <target xml:space="preserve" state="final">Strg+P</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">376</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1861">
+        <source xml:space="preserve">File</source>
+        <target xml:space="preserve" state="final">Datei</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">387</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1862">
+        <source xml:space="preserve">Tor</source>
+        <target xml:space="preserve" state="final">Tor</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">390</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1863">
+        <source xml:space="preserve">View</source>
+        <target xml:space="preserve" state="final">Ansicht</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">395</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1864">
+        <source xml:space="preserve">Vidalia Help</source>
+        <target xml:space="preserve" state="final">Vidalia Hilfe</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">404</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1865">
+        <source xml:space="preserve">Error starting web browser</source>
+        <target xml:space="preserve" state="final">Fehler beim Starten des Webbrowsers</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">439</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1866">
+        <source xml:space="preserve">Vidalia was unable to start the configured web browser</source>
+        <target xml:space="preserve" state="final">Vidalia konnte den angegebenen Webbrowser nicht starten</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">440</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1867">
+        <source xml:space="preserve">Error starting proxy server</source>
+        <target xml:space="preserve" state="final">Fehler beim Start des Proxyservers</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">460</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1868">
+        <source xml:space="preserve">Vidalia was unable to start the configured proxy server</source>
+        <target xml:space="preserve" state="final">Vidalia konnte den angegebenen Proxyserver nicht starten</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">461</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1869">
+        <source xml:space="preserve">Your relay is shutting down.<ph id="ph126" ctype="x-ch-lf">\n</ph>Click &apos;Stop&apos; again to stop your relay now.</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">500</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1870">
+        <source xml:space="preserve">Tor is shutting down</source>
+        <target xml:space="preserve" state="final">Tor wird beendet</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">502</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1871">
+        <source xml:space="preserve">Stop Now</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">507</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1872">
+        <source xml:space="preserve">Stop</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">509</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1873">
+        <source xml:space="preserve">Starting up...</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">525</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1874">
+        <source xml:space="preserve">Starting</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">529</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1875">
+        <source xml:space="preserve">Running</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">534</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1876">
+        <source xml:space="preserve">Error Starting Tor</source>
+        <target xml:space="preserve" state="final">Fehler beim Starten von Tor</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">647</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1877">
+        <source xml:space="preserve">Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified.</source>
+        <target xml:space="preserve" state="final">Vidalia konnte Tor nicht starten. Überprüfen Sie Ihre Einstellungen, um sicherzustellen, dass der Pfad zur Tor-Anwendung korrekt angegeben ist.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">650</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1878">
+        <source xml:space="preserve">Connection Error</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">693</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1879">
+        <source xml:space="preserve">Relaying is Enabled</source>
+        <target xml:space="preserve" state="final">Verteilung ist aktiviert</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">725</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1880">
+        <source xml:space="preserve">You are currently running a relay. Terminating your relay will interrupt any open connections from clients.<ph id="ph127" ctype="x-ch-lf">\n</ph><ph id="ph128" ctype="x-ch-lf">\n</ph>Would you like to shutdown gracefully and give clients time to find a new relay?</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">730</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1881">
+        <source xml:space="preserve">Error Shutting Down</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">752</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1882">
+        <source xml:space="preserve">Vidalia was unable to stop the Tor software.</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">753</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1883">
+        <source xml:space="preserve">Unexpected Error</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">784</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1884">
+        <source xml:space="preserve">Vidalia detected that the Tor software exited unexpectedly.<ph id="ph129" ctype="x-ch-lf">\n</ph><ph id="ph130" ctype="x-ch-lf">\n</ph>Please check the message log for recent warning or error messages.</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">788</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1885">
+        <source xml:space="preserve">Cookie Authentication Required</source>
+        <target xml:space="preserve" state="final">Cookie-Authentifikation erforderlich</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">860</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1886">
+        <source xml:space="preserve">The Tor software requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one.</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">863</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1887">
+        <source xml:space="preserve">Would you like to browse for the file &apos;control_auth_cookie&apos; yourself?</source>
+        <target xml:space="preserve" state="final">Wollen Sie selbst nach der Datei &apos;control_auth_cookie&apos; suchen?</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">865</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1888">
+        <source xml:space="preserve">Data Directory</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">872</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1889">
+        <source xml:space="preserve">Control Cookie (control_auth_cookie)</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">874</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1890">
+        <source xml:space="preserve">Error Registering for Events</source>
+        <target xml:space="preserve" state="final">Fehler bei der Registrierung für Ereignisse</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">915</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1891">
+        <source xml:space="preserve">Vidalia was unable to register for some events. Many of Vidalia&apos;s features may be unavailable.</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">917</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1892">
+        <source xml:space="preserve">Password Authentication Required</source>
+        <target xml:space="preserve" state="final">Passwort-Authentifikation erforderlich</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">946</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1893">
+        <source xml:space="preserve">Please enter your control password (not the hash):</source>
+        <target xml:space="preserve" state="final">Bitte geben Sie Ihr Kontroll-Passwort ein (nicht den Hash-Wert):</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">947</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1894">
+        <source xml:space="preserve">Authentication Error</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">961</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1895">
+        <source xml:space="preserve">Vidalia was unable to authenticate to the Tor software. (%1)</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">963</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1896">
+        <source xml:space="preserve">Please check your control port authentication settings.</source>
+        <target xml:space="preserve" state="final">Bitte überprüfen Sie die Authentifikationseinstellungen des Kontroll-Ports.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">965</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../mainwindow.ui" datatype="x-trolltech-designer-ui" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="MainWindow">
+      <trans-unit id="msg1897">
+        <source xml:space="preserve">Tor is not running</source>
+        <target xml:space="preserve" state="final">Tor läuft nicht</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">117</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1898">
+        <source xml:space="preserve">Vidalia Shortcuts</source>
+        <target xml:space="preserve" state="final">Vidalia Schnellzugriff</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">165</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1899">
+        <source xml:space="preserve">Start</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">180</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1900">
+        <source xml:space="preserve">Setup Relaying</source>
+        <target xml:space="preserve" state="final">Weiterleitung einrichten</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">190</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1901">
+        <source xml:space="preserve">Set up a relay and help the network grow</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">193</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1902">
+        <source xml:space="preserve">View the Network</source>
+        <target xml:space="preserve" state="final">Netzwerk betrachten</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">203</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1903">
+        <source xml:space="preserve">View a map of the Tor network</source>
+        <target xml:space="preserve" state="final">Die Tor-Netzwerkkarte betrachten</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">206</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1904">
+        <source xml:space="preserve">Use a New Identity</source>
+        <target xml:space="preserve" state="final">Eine neue Identität verwenden</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">219</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1905">
+        <source xml:space="preserve">Make subsequent connections appear new</source>
+        <target xml:space="preserve" state="final">Spätere Verbindungen als neu erscheinen lassen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">222</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1906">
+        <source xml:space="preserve">Bandwidth Graph</source>
+        <target xml:space="preserve" state="final">Bandbreitengraph</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">251</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1907">
+        <source xml:space="preserve">View recent bandwidth usage</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">254</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1908">
+        <source xml:space="preserve">Message Log</source>
+        <target xml:space="preserve" state="final">Nachrichtenprotokoll</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">264</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1909">
+        <source xml:space="preserve">View log message history</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">267</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1910">
+        <source xml:space="preserve">Help</source>
+        <target xml:space="preserve" state="final">Hilfe</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">314</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1911">
+        <source xml:space="preserve">View help documentation</source>
+        <target xml:space="preserve" state="final">Hilfe anzeigen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">317</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1912">
+        <source xml:space="preserve">Settings</source>
+        <target xml:space="preserve" state="final">Einstellungen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">327</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1913">
+        <source xml:space="preserve">Vidalia Control Panel</source>
+        <target xml:space="preserve" state="final">Vidalia Kontroll-Panel</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">33</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1914">
+        <source xml:space="preserve">Configure Vidalia</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">330</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1915">
+        <source xml:space="preserve">About</source>
+        <target xml:space="preserve" state="final">Über</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">377</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1916">
+        <source xml:space="preserve">View version and license information</source>
+        <target xml:space="preserve" state="final">Version und Lizenzinformationen anzeigen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">380</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1917">
+        <source xml:space="preserve">Exit</source>
+        <target xml:space="preserve" state="final">Beenden</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">390</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1918">
+        <source xml:space="preserve">Exit Vidalia</source>
+        <target xml:space="preserve" state="final">Vidalia beenden</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">393</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1919">
+        <source xml:space="preserve">Show this window on startup</source>
+        <target xml:space="preserve" state="final">Dieses Fenster beim Start anzeigen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">445</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1920">
+        <source xml:space="preserve">Hide</source>
+        <target xml:space="preserve" state="final">Verstecken</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">464</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1921">
+        <source xml:space="preserve">Hide this window</source>
+        <target xml:space="preserve" state="final">Dieses Fenster verstecken</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">467</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1922">
+        <source xml:space="preserve">Status</source>
+        <target xml:space="preserve" state="new">Status</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">63</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../network/circuititem.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="CircuitItem">
+      <trans-unit id="msg1923">
+        <source xml:space="preserve">&lt;Path Empty&gt;</source>
+        <target xml:space="preserve" state="final">&lt;Leerer Pfad&gt;</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">39</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../network/circuitlistwidget.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="CircuitListWidget">
+      <trans-unit id="msg1924">
+        <source xml:space="preserve">Status</source>
+        <target xml:space="preserve" state="final">Status</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">37</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1925">
+        <source xml:space="preserve">Connection</source>
+        <target xml:space="preserve" state="final">Verbindung</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">37</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1926">
+        <source xml:space="preserve">Zoom to Circuit</source>
+        <target xml:space="preserve" state="final">Kanal heranzoomen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">72</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1927">
+        <source xml:space="preserve">Close Circuit (Del)</source>
+        <target xml:space="preserve" state="final">Kanal schließen (Entf)</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">74</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1928">
+        <source xml:space="preserve">Close Stream (Del)</source>
+        <target xml:space="preserve" state="final">Datenstrom schließen (Entf)</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">95</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../network/netviewer.ui" datatype="x-trolltech-designer-ui" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="NetViewer">
+      <trans-unit id="msg1929">
+        <source xml:space="preserve">Refresh</source>
+        <target xml:space="preserve" state="final">Aktualisieren</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">236</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1930">
+        <source xml:space="preserve">Tor Network Map</source>
+        <target xml:space="preserve" state="final">Tor-Netzwerk-Karte</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">24</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1931">
+        <source xml:space="preserve">Refresh the list of Tor relays and connections</source>
+        <target xml:space="preserve" state="final">Aktualisiere die Liste der Tor-Verteiler und Verbindungen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">242</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1932">
+        <source xml:space="preserve">Ctrl+R</source>
+        <target xml:space="preserve" state="final">Strg+R</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">245</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1933">
+        <source xml:space="preserve">Help</source>
+        <target xml:space="preserve" state="final">Hilfe</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">253</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1934">
+        <source xml:space="preserve">Show the network map help</source>
+        <target xml:space="preserve" state="final">Zeige Hilfe zur Netzwerk-Karte</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">256</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1935">
+        <source xml:space="preserve">Show network map help</source>
+        <target xml:space="preserve" state="final">Zeige Hilfe zur Netzwerk-Karte</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">259</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1936">
+        <source xml:space="preserve">F1</source>
+        <target xml:space="preserve" state="final">F1</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">262</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1937">
+        <source xml:space="preserve">Close</source>
+        <target xml:space="preserve" state="final">Schließen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">270</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1938">
+        <source xml:space="preserve">Close the network map</source>
+        <target xml:space="preserve" state="final">Schließe Netzwerk-Karte</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">276</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1939">
+        <source xml:space="preserve">Esc</source>
+        <target xml:space="preserve" state="final">Esc</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">279</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1940">
+        <source xml:space="preserve">Zoom In</source>
+        <target xml:space="preserve" state="final">Vergrößern</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">287</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1941">
+        <source xml:space="preserve">Zoom in on the network map</source>
+        <target xml:space="preserve" state="final">Vergrößere Netzwerk-Karte</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">293</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1942">
+        <source xml:space="preserve">+</source>
+        <target xml:space="preserve" state="final">+</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">296</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1943">
+        <source xml:space="preserve">Zoom Out</source>
+        <target xml:space="preserve" state="final">Verkleinern</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">304</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1944">
+        <source xml:space="preserve">Zoom out on the network map</source>
+        <target xml:space="preserve" state="final">Verkleinere Netzwerk-Karte</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">310</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1945">
+        <source xml:space="preserve">-</source>
+        <target xml:space="preserve" state="final">-</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">313</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1946">
+        <source xml:space="preserve">Zoom To Fit</source>
+        <target xml:space="preserve" state="final">Größe anpassen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">321</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1947">
+        <source xml:space="preserve">Zooms to fit all currently displayed circuits</source>
+        <target xml:space="preserve" state="final">Passt die Größe an die angezeigten Verbindungen an</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">327</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1948">
+        <source xml:space="preserve">Ctrl+Z</source>
+        <target xml:space="preserve" state="final">Strg+Z</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">330</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../network/routerdescriptorview.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="RouterDescriptorView">
+      <trans-unit id="msg1949">
+        <source xml:space="preserve">IP Address:</source>
+        <target xml:space="preserve" state="final">IP-Adresse:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">103</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1950">
+        <source xml:space="preserve">Platform:</source>
+        <target xml:space="preserve" state="final">Plattform:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">104</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1951">
+        <source xml:space="preserve">Bandwidth:</source>
+        <target xml:space="preserve" state="final">Bandbreite:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">108</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1952">
+        <source xml:space="preserve">Uptime:</source>
+        <target xml:space="preserve" state="final">Läuft seit:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">110</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1953">
+        <source xml:space="preserve">Last Updated:</source>
+        <target xml:space="preserve" state="final">Zuletzt aktualisiert:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">116</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1954">
+        <source xml:space="preserve">Location:</source>
+        <target xml:space="preserve" state="final">Ort:</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">99</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../network/routerlistitem.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="RouterListItem">
+      <trans-unit id="msg1955">
+        <source xml:space="preserve">Offline</source>
+        <target xml:space="preserve" state="final">Offline</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">67</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1956">
+        <source xml:space="preserve">Hibernating</source>
+        <target xml:space="preserve" state="final">Ruhezustand</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">71</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1957">
+        <source xml:space="preserve">%1 KB/s</source>
+        <target xml:space="preserve" state="final">%1 KB/s</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">83</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../network/routerlistwidget.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="RouterListWidget">
+      <trans-unit id="msg1958">
+        <source xml:space="preserve">%1 relays online</source>
+        <target xml:space="preserve" state="new"></target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">151</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1959">
+        <source xml:space="preserve">Relay</source>
+        <target xml:space="preserve" state="final">Verteiler</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">31</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1960">
+        <source xml:space="preserve">Zoom to Relay</source>
+        <target xml:space="preserve" state="final">Verteiler heran zoomen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">58</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../vidalia.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="Vidalia">
+      <trans-unit id="msg1961">
+        <source xml:space="preserve">Displays this usage message and exits.</source>
+        <target xml:space="preserve" state="final">Zeigt diese Nachricht an.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">166</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1962">
+        <source xml:space="preserve">Resets ALL stored Vidalia settings.</source>
+        <target xml:space="preserve" state="final">Setzt ALLE gespeicherten Vidalia-Einstellungen zurück.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">168</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1963">
+        <source xml:space="preserve">Sets the directory Vidalia uses for data files.</source>
+        <target xml:space="preserve" state="final">Legt das Vidaliaverzeichnis für die Daten fest.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">170</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1964">
+        <source xml:space="preserve">Sets the name and location of Vidalia&apos;s pidfile.</source>
+        <target xml:space="preserve" state="final">Legt den Namen und Speicherort für Vidalias pidfile fest.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">172</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1965">
+        <source xml:space="preserve">Sets the name and location of Vidalia&apos;s logfile.</source>
+        <target xml:space="preserve" state="final">Legt den Namen und Speicherort für Vidalias Nachrichtendatei fest.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">174</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1966">
+        <source xml:space="preserve">Sets the verbosity of Vidalia&apos;s logging.</source>
+        <target xml:space="preserve" state="final">Legt die Umfang von Vidalias Nachrichtenprotokoll fest.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">177</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1967">
+        <source xml:space="preserve">Sets Vidalia&apos;s interface style.</source>
+        <target xml:space="preserve" state="final">Legt Vidalias Oberflächenstyle fest.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">180</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1968">
+        <source xml:space="preserve">Sets Vidalia&apos;s language.</source>
+        <target xml:space="preserve" state="final">Legt Vidalias Sprache fest.</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">183</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1969">
+        <source xml:space="preserve">Vidalia Usage Information</source>
+        <target xml:space="preserve" state="final">Vidalia Anwendungsinformation</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">187</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1970">
+        <source xml:space="preserve">Invalid language code specified: </source>
+        <target xml:space="preserve" state="final">Ungültiger Ländercode angegeben: </target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">235</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1971">
+        <source xml:space="preserve">Invalid GUI style specified: </source>
+        <target xml:space="preserve" state="final">Ungültiges GUI-Aussehen angegeben: </target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">242</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1972">
+        <source xml:space="preserve">Invalid log level specified: </source>
+        <target xml:space="preserve" state="final">Ungültiges Nachrichtenlevel angegeben: </target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">248</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1973">
+        <source xml:space="preserve">Unable to open log file &apos;%1&apos;: %2</source>
+        <target xml:space="preserve" state="final">Konnte Nachrichtendatei nicht öffnen &apos;%1&apos;: %2</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">254</context></context-group>
+      </trans-unit>
+      </group>
+    </body></file>
+  <file original="../vmessagebox.cpp" datatype="cpp" source-language="en" target-language="de"><body>
+    <group restype="x-gettext-domain" resname="VMessageBox">
+      <trans-unit id="msg1974">
+        <source xml:space="preserve">OK</source>
+        <target xml:space="preserve" state="final">OK</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">77</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1975">
+        <source xml:space="preserve">Cancel</source>
+        <target xml:space="preserve" state="final">Abbrechen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">78</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1976">
+        <source xml:space="preserve">Yes</source>
+        <target xml:space="preserve" state="final">Ja</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">79</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1977">
+        <source xml:space="preserve">No</source>
+        <target xml:space="preserve" state="final">Nein</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">80</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1978">
+        <source xml:space="preserve">Help</source>
+        <target xml:space="preserve" state="final">Hilfe</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">81</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1979">
+        <source xml:space="preserve">Retry</source>
+        <target xml:space="preserve" state="final">Versuche erneut</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">82</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1980">
+        <source xml:space="preserve">Show Log</source>
+        <target xml:space="preserve" state="final">Zeige Logdatei</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">83</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1981">
+        <source xml:space="preserve">Show Settings</source>
+        <target xml:space="preserve" state="final">Zeige Einstellungen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">84</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1982">
+        <source xml:space="preserve">Continue</source>
+        <target xml:space="preserve" state="final">Fortfahren</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">85</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1983">
+        <source xml:space="preserve">Quit</source>
+        <target xml:space="preserve" state="final">Schließen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">86</context></context-group>
+      </trans-unit>
+      <trans-unit id="msg1984">
+        <source xml:space="preserve">Browse</source>
+        <target xml:space="preserve" state="final">Öffnen</target>
+        <context-group name="po-reference" purpose="location"><context context-type="linenumber">87</context></context-group>
+      </trans-unit>
+    </group>
+  </body></file>
+</xliff>
