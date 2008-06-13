@@ -4,6 +4,8 @@
   o Include UPnP support based on the MiniUPnPc library. Also added a UPnP
     test dialog to help users determine if their router or firewall supports
     UPnP. Initial patch for UPnP support from Steven J. Murdoch.
+  o Switch all of Vidalia's icons to the KDE Oxygen theme so that our icon set
+    has a a DFSG-compatible license.
   o Fix a crash bug that occurred when opening the settings dialog when Tor
     was not running. (Ticket #360)
   o Respond to mouse wheel events on the network map by zooming in or out on
