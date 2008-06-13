@@ -3,7 +3,7 @@
     based on new Tor bootstrapping status events.
   o Include UPnP support based on the MiniUPnPc library. Also added a UPnP
     test dialog to help users determine if their router or firewall supports
-    UPnP. Initial patch for UPnP support from Steven J. Murdcoh.
+    UPnP. Initial patch for UPnP support from Steven J. Murdoch.
   o Fix a crash bug that occurred when opening the settings dialog when Tor
     was not running. (Ticket #360)
   o Respond to mouse wheel events on the network map by zooming in or out on
@@ -15,7 +15,7 @@
   o Apply some Tor trademark compliance updates to user-visible strings.
   o Cut down the margin around the table of contents in the help browser. It
     looked goofy with so much empty space. 
-  o Update Finnish, Spanish and Swedish translations
+  o Update Finnish, Spanish, and Swedish translations
 
 
 0.1.3   25-May-2008
