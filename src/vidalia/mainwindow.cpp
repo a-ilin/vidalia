@@ -523,6 +523,7 @@ void
 MainWindow::bootstrapStatusChanged(const BootstrapStatusEvent *bse)
 {
   int percentComplete = STARTUP_PROGRESS_BOOTSTRAPPING + bse->percentComplete();
+  bool warn = (bse->severity() == StatusEvent::SeverityWarn);
 
   QString description;
   switch (bse->status()) {
@@ -557,9 +558,43 @@ MainWindow::bootstrapStatusChanged(const BootstrapStatusEvent *bse)
       break;
     case BootstrapStatusEvent::BootstrappingDone:
       description = tr("Connected to the Tor network!");
+      warn = false; /* probably false anyway */
       break;
     default:
       description = tr("Unrecognized startup status");
+  }
+  if (warn) {
+    QString reason;
+    /* Is it really a good idea to translate these? */
+    switch (bse->reason()) {
+      case tc::MiscellaneousReason:
+        reason = tr("miscellaneous");
+        break;
+      case tc::IdentityMismatch:
+        reason = tr("identity mismatch");
+        break;
+      case tc::ConnectionDone:
+        reason = tr("done");
+        break;
+      case tc::ConnectionRefused:
+        reason = tr("connection refused");
+        break;
+      case tc::ConnectionTimeout:
+        reason = tr("connection timeout");
+        break;
+      case tc::ConnectionIoError:
+        reason = tr("read/write error");
+        break;
+      case tc::NoRouteToHost:
+        reason = tr("no route to host");
+        break;
+      case tc::ResourceLimitReached:
+        reason = tr("insufficient resources");
+        break;
+      default:
+        reason = tr("unknown");
+    }
+    description += tr(" failed (%1)").arg(reason);
   }
   setStartupProgress(percentComplete, description);
 }
