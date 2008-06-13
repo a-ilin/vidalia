@@ -1198,7 +1198,7 @@ Ole hyvä ja selaa tapahtumalokia varoitus- tai virheilmoitusten vuoksi.</transl
     <message>
         <location filename="../mainwindow.ui" line="193"/>
         <source>Set up a relay and help the network grow</source>
-        <translation type="unfinished"></translation>
+        <translation>Laita pystyyn reititin ja auta verkkoa kasvamaan</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="254"/>
@@ -1213,7 +1213,7 @@ Ole hyvä ja selaa tapahtumalokia varoitus- tai virheilmoitusten vuoksi.</transl
     <message>
         <location filename="../mainwindow.ui" line="330"/>
         <source>Configure Vidalia</source>
-        <translation type="unfinished"></translation>
+        <translation>Muuta Vidalian asetuksia</translation>
     </message>
 </context>
 <context>
@@ -1809,17 +1809,17 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../config/networkpage.ui" line="25"/>
         <source>Check if your local network requires a proxy to access the Internet</source>
-        <translation type="unfinished"></translation>
+        <translation>Tarkista, jos paikallinen verkko vaatii välityspalvelimen Internetin pääsyyn</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="176"/>
         <source>Check to only connect to relays using ports allowed by your firewall</source>
-        <translation type="unfinished"></translation>
+        <translation>Rastita yhdistääkseen vain reitittimiin käyttäen palomuurin sallimia portteja</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="235"/>
         <source>Check to encrypt directory requests and, optionally, use bridge relays to access the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Rastita suojatakseen listayhteyspyynnöt ja valinnaisesti käytä siltareitittimiä pääsemään Tor-verkkoon</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="262"/>
@@ -2194,7 +2194,7 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/serverpage.ui" line="25"/>
         <source>Run as a client only</source>
-        <translation type="unfinished"></translation>
+        <translation>Suorita vain asiakasohjelmana</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="110"/>
