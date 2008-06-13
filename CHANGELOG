@@ -1,4 +1,4 @@
-0.1.4   xx-xxx-2008
+0.1.4   13-Jun-2008
   o Add a progress bar and status label for displaying Tor's startup progress
     based on new Tor bootstrapping status events.
   o Include UPnP support based on the MiniUPnPc library. Also added a UPnP
