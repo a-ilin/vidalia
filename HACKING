@@ -12,21 +12,23 @@ $Id$
 
 1.1. Subversion Location
   
-  Vidalia's repository supports anonymous checkout. You can grab the current
-  Vidalia source via:
+  Vidalia's repository supports anonymous checkout. You can grab the most
+  recent revision of Vidalia's source code via:
 
     svn co https://svn.vidalia-project.net/svn/vidalia/trunk/ vidalia
-    
+
 1.2 Directory Layout
 
   The following are the current directories found in Vidalia's SVN repository
   and a general decription of their intended contents:
-  
-     ./releases:
+ 
+  From https://svn.vidalia-project.net/svn/vidalia:
+
+     ./tags:
 
         Snapshots of all Vidalia releases will be contained in a sub-directory
-        of ./releases, named according to the Vidalia version specification.
-        For example, ./releases/0.0.1/ would contain the 0.0.1 release of
+        of ./tags, named according to the Vidalia version specification.
+        For example, ./tags/vidalia-0.0.1/ would contain the 0.0.1 release of
         Vidalia.
   
      ./trunk:
@@ -59,9 +61,9 @@ $Id$
        All GUI-related resource files, such as images, should go in this
        directory. Images should be placed in sub-directories appropriate for
        their image size. For example, 16x16 images would go in
-       ./trunk/src/gui/res/16x16/
+       ./trunk/src/vidalia/res/16x16/
        
-    ./trunk/src/util:
+    ./trunk/src/common:
 
        If a source file doesn't belong in the previous directories, it should
        go here. This directory will containg various utility functions, such
@@ -69,7 +71,7 @@ $Id$
        a particular utility has multiple source files, they should all be
        placed in a subdirectory. For example, if there were several source
        files that implemented various string manipulation functions, they
-       could go in ./trunk/src/util/string.
+       could go in ./trunk/src/common/string.
 
 2. Coding Conventions
   
@@ -84,7 +86,7 @@ $Id$
   
   C++ classes should be divided in to a <classname>.h file, containing the
   class declarations, and a <classname>.cpp file containg the class
-  implementation. Each .cpp file should implement only one class.
+  implementation. Each .cpp file should implement only one public class.
 
   Source files that do not implement a C++ class should be named logically.
   For example, threading code would go in thread.cpp and thread.h.
@@ -144,7 +146,44 @@ $Id$
     private:
       int _myVariable; /**< Description of what _myVariable is */
   };
+ 
+2.1.5. Ordering of Method and Member Variable Declarations
+
+  Class member method and variable declarations should be arranged according
+  to decreasing order of visibility.
+
+  class MyClass : public QObject
+  {
+    Q_OBJECT
+    
+    public:
+      /* Public enums */
+
+      /* Public methods */
   
+    public slots:
+      /* Public slots */
+
+    signals:
+      /* Signals emitted by this class */
+    
+    protected:
+      /* Protected methods */
+
+      /* Protected member variables */
+
+    protected slots:
+      /* Protected slots */
+    
+    private:
+      /* Private methods */
+
+      /* Private member variables */
+    
+    private slots:
+      /* Private slots */
+  };
+
 2.2. Comments
 
   Comments should be standard C style comments. For example:
@@ -168,7 +207,7 @@ $Id$
 
 2.4. Bracing
 
-2.4.1. Functions
+2.4.1. Methods
 
   Opening and closing braces for functions should be placed at column 1. For
   example:
@@ -197,11 +236,30 @@ $Id$
        /* My foo doesn't equal bar */
      }
 
+  Braces may be omitted if there is only one line of code to be executed if
+  the evaluated condition is true. For example, the following is permitted:
+
+    if (foo == bar)
+      return;
+
 2.5. Parentheses
 
-   See the previous code examples to see how parentheses should be used.
+  
+  int value = someObject.someMethod(foo, bar, baz);
 
-2.6. Other
+2.6. Method Arguments
+
+  const-correctness should be enforced whenever possible. Objects passed as
+  arguments to a method should be passed by a const reference, as in the
+  following example:
+
+    void
+    SomeClass::someMethod(const OtherClass &oc)
+    {
+      /* Do something with oc */
+    }
+
+2.7. Other
 
   Source files should end with a single blank line.
 
