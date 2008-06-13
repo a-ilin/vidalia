@@ -594,6 +594,7 @@ MainWindow::updateTorStatus(TorStatus status)
       QObject::disconnect(ui.lblStartStopTor, SIGNAL(clicked()), this, 0);
       connect(_startStopAct, SIGNAL(triggered()), this, SLOT(start()));
       connect(ui.lblStartStopTor, SIGNAL(clicked()), this, SLOT(start()));
+      setStartupProgressVisible(false);
   } else if (status == Stopping) {
       if (_delayedShutdownStarted) {
         statusText = tr("Your relay is shutting down.\n" 
@@ -1174,6 +1175,8 @@ void
 MainWindow::circuitEstablished()
 {
   updateTorStatus(CircuitEstablished);
+  setStartupProgress(ui.progressBar->maximum(),
+                     tr("Connected to the Tor network!"));
   startSubprocesses();
 }
 
