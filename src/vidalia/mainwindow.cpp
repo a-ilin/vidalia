@@ -77,6 +77,12 @@
 /** Only allow 'New Identity' to be clicked once every 10 seconds. */
 #define MIN_NEWIDENTITY_INTERVAL   (10*1000)
 
+/* Startup progress milestones */
+#define STARTUP_PROGRESS_STARTING          0
+#define STARTUP_PROGRESS_CONNECTING       10
+#define STARTUP_PROGRESS_AUTHENTICATING   20
+#define STARTUP_PROGRESS_BOOTSTRAPPING    30
+#define STARTUP_PROGRESS_MAXIMUM          (STARTUP_PROGRESS_BOOTSTRAPPING+100)
 
 /** Default constructor. It installs an icon in the system tray area and
  * creates the popup menu associated with that icon. */
@@ -516,7 +522,44 @@ MainWindow::onProxyFailed(QString errmsg)
 void
 MainWindow::bootstrapStatusChanged(const BootstrapStatusEvent *bse)
 {
-  Q_UNUSED(bse);
+  int percentComplete = STARTUP_PROGRESS_BOOTSTRAPPING + bse->percentComplete();
+
+  QString description;
+  switch (bse->status()) {
+    case BootstrapStatusEvent::ConnectingToDirMirror:
+    case BootstrapStatusEvent::HandshakingWithDirMirror:
+      description = tr("Connecting to a directory mirror");
+      break;
+    case BootstrapStatusEvent::CreatingOneHopCircuit:
+      description = tr("Establishing an encrypted directory connection");
+      break;
+    case BootstrapStatusEvent::RequestingNetworkStatus:
+      description = tr("Retrieving network status");
+      break;
+    case BootstrapStatusEvent::LoadingNetworkStatus:
+      description = tr("Loading network status");
+      break;
+    case BootstrapStatusEvent::LoadingAuthorityCertificates:
+      description = tr("Loading authority certificates");
+      break;
+    case BootstrapStatusEvent::RequestingDescriptors:
+      description = tr("Requesting relay information");
+      break;
+    case BootstrapStatusEvent::LoadingDescriptors:
+      description = tr("Loading relay information");
+      break;
+    case BootstrapStatusEvent::ConnectingToEntryGuard:
+    case BootstrapStatusEvent::HandshakingWithEntryGuard:
+    case BootstrapStatusEvent::EstablishingCircuit:
+      description = tr("Connecting to the Tor network");
+      break;
+    case BootstrapStatusEvent::BootstrappingDone:
+      description = tr("Connected to the Tor network!");
+      break;
+    default:
+      description = tr("Unrecognized startup status");
+  }
+  setStartupProgress(percentComplete, description);
 }
 
 /** Updates the UI to reflect Tor's current <b>status</b>. Returns the
@@ -571,7 +614,7 @@ MainWindow::updateTorStatus(TorStatus status)
       ui.lblStartStopTor->setText(actionText);
       ui.lblStartStopTor->setPixmap(QPixmap(IMG_STOP_TOR_48));
       ui.lblStartStopTor->setStatusTip(actionText);
-      
+            
       /* XXX: This might need to be smarter if we ever start connecting other
        * slots to these triggered() and clicked() signals. */
       QObject::disconnect(_startStopAct, SIGNAL(triggered()), this, 0);
@@ -579,18 +622,21 @@ MainWindow::updateTorStatus(TorStatus status)
       connect(_startStopAct, SIGNAL(triggered()), this, SLOT(stop()));
       connect(ui.lblStartStopTor, SIGNAL(clicked()), this, SLOT(stop()));
   } else if (status == Starting)  {
-      statusText = tr("Tor is starting up...");
+      statusText = tr("Starting the Tor software");
       trayIconFile = IMG_TOR_STARTING;
       statusIconFile = IMG_TOR_STARTING_48;
       _startStopAct->setEnabled(false);
       ui.lblStartStopTor->setText(tr("Starting Tor"));
       ui.lblStartStopTor->setEnabled(false);
       ui.lblStartStopTor->setStatusTip(statusText);
+      setStartupProgressVisible(true);
+      setStartupProgress(STARTUP_PROGRESS_STARTING, statusText);
       //ui.lblStartStopTor->setAnimation(QPixmap(ANIM_PROCESS_WORKING));
   } else if (status == CircuitEstablished) {
       statusText = tr("Tor is Running");
       trayIconFile = IMG_TOR_RUNNING;
       statusIconFile = IMG_TOR_RUNNING_48;
+      QTimer::singleShot(3000, this, SLOT(hideStartupProgress()));
   }
 
   /* Update the tray icon */
@@ -615,6 +661,42 @@ MainWindow::toggleShowOnStartup(bool checked)
   settings.setShowMainWindowAtStart(checked);
 }
 
+/** Sets the visibility of the startup status description and progress bar to
+ * <b>visible</b>. */
+void
+MainWindow::setStartupProgressVisible(bool visible)
+{
+  if (visible) {
+    ui.lblTorStatus->setVisible(false);
+    ui.lblTorStatusImg->setVisible(false);
+    ui.lblStartupProgress->setVisible(true);
+    ui.progressBar->setVisible(true);
+  } else {
+    ui.lblStartupProgress->setVisible(false);
+    ui.progressBar->setVisible(false);
+    ui.lblTorStatus->setVisible(true);
+    ui.lblTorStatusImg->setVisible(true);
+  }
+}
+
+/** Hides the startup status text and progress bar. */
+void
+MainWindow::hideStartupProgress()
+{
+  setStartupProgressVisible(false);
+}
+
+/** Sets the progress bar completion value to <b>progressValue</b> and sets
+ * the status text to <b>description</b>. */
+void
+MainWindow::setStartupProgress(int progressValue,
+                               const QString &description)
+{
+  ui.progressBar->setValue(progressValue);
+  ui.lblStartupProgress->setText(description);
+  _trayIcon.setToolTip(description);
+}
+
 /** Attempts to start Tor. If Tor fails to start, then startFailed() will be
  * called with an error message containing the reason. */
 void 
@@ -624,7 +706,7 @@ MainWindow::start()
   QStringList args;
 
   updateTorStatus(Starting);
-
+  
   /* Check if Tor is already running separately */
   if (net_test_connect(settings.getControlAddress(),
                        settings.getControlPort())) {
@@ -738,6 +820,7 @@ MainWindow::started()
   /* Try to connect to Tor's control port */
   _torControl->connect(settings.getControlAddress(),
                        settings.getControlPort());
+  setStartupProgress(STARTUP_PROGRESS_CONNECTING, tr("Connecting to Tor"));
 }
 
 /** Called when the connection to the control socket fails. The reason will be
@@ -895,7 +978,9 @@ MainWindow::authenticate()
   ProtocolInfo pi;
   
   updateTorStatus(Authenticating);
-  
+  setStartupProgress(STARTUP_PROGRESS_AUTHENTICATING,
+                     tr("Authenticating to Tor"));
+
   authMethod = settings.getAuthenticationMethod(); 
   pi = _torControl->protocolInfo();
   if (!pi.isEmpty()) {

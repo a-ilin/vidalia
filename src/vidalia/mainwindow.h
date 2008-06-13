@@ -110,6 +110,8 @@ private slots:
   void onIMFailed(QString errmsg);
   /** Called when the proxy server fails to start */
   void onProxyFailed(QString errmsg);
+  /** Hides the startup status text and progress bar. */
+  void hideStartupProgress();
 
 #if defined(USE_MINIUPNPC)
   /** Called when a UPnP error occurs. */
@@ -164,7 +166,13 @@ private:
   /** Called when Tor's bootstrapping status changes. <b>bse</b> represents
    * Tor's current estimate of its bootstrapping progress. */
   void bootstrapStatusChanged(const BootstrapStatusEvent *bse);
-  
+  /** Sets the visibility of the startup status description and progress bar
+   * to <b>visible</b>. */
+  void setStartupProgressVisible(bool visible);
+  /** Sets the progress bar completion value to <b>progressValue</b> and sets
+   * the status text to <b>description</b>. */
+  void setStartupProgress(int percentComplete, const QString &description);
+
   /** The current status of Tor. */
   TorStatus _status;
   /** Used to determine if the Tor process exiting was intentional or not */
