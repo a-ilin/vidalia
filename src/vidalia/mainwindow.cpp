@@ -527,9 +527,9 @@ MainWindow::bootstrapStatusChanged(const BootstrapStatusEvent *bse)
   QString description;
   switch (bse->status()) {
     case BootstrapStatusEvent::ConnectingToDirMirror:
-    case BootstrapStatusEvent::HandshakingWithDirMirror:
-      description = tr("Connecting to a directory mirror");
+      description = tr("Connecting to a relay directory");
       break;
+    case BootstrapStatusEvent::HandshakingWithDirMirror:
     case BootstrapStatusEvent::CreatingOneHopCircuit:
       description = tr("Establishing an encrypted directory connection");
       break;
@@ -549,9 +549,11 @@ MainWindow::bootstrapStatusChanged(const BootstrapStatusEvent *bse)
       description = tr("Loading relay information");
       break;
     case BootstrapStatusEvent::ConnectingToEntryGuard:
+      description = tr("Connecting to the Tor network");
+      break;
     case BootstrapStatusEvent::HandshakingWithEntryGuard:
     case BootstrapStatusEvent::EstablishingCircuit:
-      description = tr("Connecting to the Tor network");
+      description = tr("Establishing a Tor circuit");
       break;
     case BootstrapStatusEvent::BootstrappingDone:
       description = tr("Connected to the Tor network!");
