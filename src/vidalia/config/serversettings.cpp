@@ -173,7 +173,6 @@ ServerSettings::configurePortForwarding()
 {
 #ifdef USE_MINIUPNPC
   quint16 ORPort, DirPort;
-  bool enableORPort, enableDirPort;
 
   // This is how the tickbox should control UPNP
   if (!isUpnpEnabled())

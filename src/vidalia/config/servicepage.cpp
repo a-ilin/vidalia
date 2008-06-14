@@ -140,7 +140,7 @@ ServicePage::startServicesInTor(QList<Service> services)
   QString serviceConfString;
   QString errmsg = "Error while trying to publish services.";
   QListIterator<Service> it(services);
-  bool first = true;
+
   while(it.hasNext()) {
     Service temp = it.next();
     serviceConfString.append("hiddenservicedir=" +
@@ -485,8 +485,11 @@ ServicePage::serviceSelectionChanged()
       ui.copyButton->setEnabled(b);
     }
   }
+  
+  /* XXX: Domenik: Why is this here? It isn't used. */
   QTableWidgetItem* item =
     ui.serviceWidget->item(ui.serviceWidget->currentRow(), 3);
+    
   QString selDir = _services->value(ui.serviceWidget->currentRow()).
                                     serviceDirectory();
   QList<QString> strList =  _torServices->keys();
