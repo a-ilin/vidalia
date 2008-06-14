@@ -442,7 +442,20 @@
   </layout>
  </widget>
  <tabstops>
+  <tabstop>chkUseProxy</tabstop>
+  <tabstop>lineHttpProxyAddress</tabstop>
+  <tabstop>lineHttpProxyPort</tabstop>
+  <tabstop>lineHttpProxyUsername</tabstop>
+  <tabstop>lineHttpProxyPassword</tabstop>
+  <tabstop>chkProxyUseHttps</tabstop>
   <tabstop>chkFascistFirewall</tabstop>
+  <tabstop>lineReachablePorts</tabstop>
+  <tabstop>chkUseBridges</tabstop>
+  <tabstop>lineBridge</tabstop>
+  <tabstop>btnAddBridge</tabstop>
+  <tabstop>btnRemoveBridge</tabstop>
+  <tabstop>btnCopyBridge</tabstop>
+  <tabstop>listBridges</tabstop>
  </tabstops>
  <resources>
   <include location="../res/vidalia.qrc" />
