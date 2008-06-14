@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="sv">
+<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -192,7 +193,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../config/advancedpage.ui" line="219"/>
         <source>Configuration File</source>
-        <translation type="unfinished"></translation>
+        <translation>Konfigurationsfil</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="240"/>
@@ -207,7 +208,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../config/advancedpage.ui" line="275"/>
         <source>Data Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Datakatalog</translation>
     </message>
     <message>
         <location filename="../config/advancedpage.ui" line="296"/>
@@ -564,12 +565,12 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../config/generalpage.ui" line="38"/>
         <source>Executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Körbar</translation>
     </message>
     <message>
         <location filename="../config/generalpage.ui" line="63"/>
         <source>Start the Tor software when Vidalia starts</source>
-        <translation type="unfinished"></translation>
+        <translation>Starta Tor-program när Vidalia startar</translation>
     </message>
 </context>
 <context>
@@ -1079,7 +1080,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../mainwindow.ui" line="180"/>
         <source>Start</source>
-        <translation type="unfinished"></translation>
+        <translation>Starta</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="500"/>
@@ -1090,22 +1091,22 @@ Click &apos;Stop&apos; again to stop your relay now.</source>
     <message>
         <location filename="../mainwindow.cpp" line="507"/>
         <source>Stop Now</source>
-        <translation type="unfinished"></translation>
+        <translation>Stopp nu</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="509"/>
         <source>Stop</source>
-        <translation type="unfinished"></translation>
+        <translation>Stoppa</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="525"/>
         <source>Starting up...</source>
-        <translation type="unfinished"></translation>
+        <translation>Startar...</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="529"/>
         <source>Starting</source>
-        <translation type="unfinished"></translation>
+        <translation>Startar</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="534"/>
@@ -1115,7 +1116,7 @@ Click &apos;Stop&apos; again to stop your relay now.</source>
     <message>
         <location filename="../mainwindow.cpp" line="693"/>
         <source>Connection Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Fel med en anslutning</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="730"/>
@@ -1154,12 +1155,12 @@ Please check the message log for recent warning or error messages.</source>
     <message>
         <location filename="../mainwindow.cpp" line="872"/>
         <source>Data Directory</source>
-        <translation type="unfinished"></translation>
+        <translation>Datakatalog</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="874"/>
         <source>Control Cookie (control_auth_cookie)</source>
-        <translation type="unfinished"></translation>
+        <translation>Kontrollcookie (control_auth_cookie)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="917"/>
@@ -1169,7 +1170,7 @@ Please check the message log for recent warning or error messages.</source>
     <message>
         <location filename="../mainwindow.cpp" line="961"/>
         <source>Authentication Error</source>
-        <translation type="unfinished"></translation>
+        <translation>Styrkning fel</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="963"/>
@@ -1189,7 +1190,7 @@ Please check the message log for recent warning or error messages.</source>
     <message>
         <location filename="../mainwindow.ui" line="63"/>
         <source>Status</source>
-        <translation type="unfinished">Status</translation>
+        <translation>Status</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="193"/>
@@ -1199,17 +1200,17 @@ Please check the message log for recent warning or error messages.</source>
     <message>
         <location filename="../mainwindow.ui" line="254"/>
         <source>View recent bandwidth usage</source>
-        <translation type="unfinished"></translation>
+        <translation>Vy nuvarande bandbreddsförbrukning</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="267"/>
         <source>View log message history</source>
-        <translation type="unfinished"></translation>
+        <translation>Vy historik för loggmeddelanden</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="330"/>
         <source>Configure Vidalia</source>
-        <translation type="unfinished"></translation>
+        <translation>Konfigurar Vidalia</translation>
     </message>
 </context>
 <context>
@@ -1820,7 +1821,7 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../config/networkpage.ui" line="262"/>
         <source>Bridge Settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Brygg-inställningar</translation>
     </message>
     <message>
         <location filename="../config/networkpage.ui" line="274"/>
@@ -2204,7 +2205,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../config/serverpage.ui" line="154"/>
         <source>Test</source>
-        <translation type="unfinished"></translation>
+        <translation>Testa</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="947"/>
@@ -2432,7 +2433,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</so
     <message>
         <location filename="../config/upnpcontrol.cpp" line="153"/>
         <source>Unknown error</source>
-        <translation type="unfinished"></translation>
+        <translation>Okänd fel</translation>
     </message>
 </context>
 <context>

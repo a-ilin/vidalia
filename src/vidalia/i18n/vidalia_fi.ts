@@ -1183,12 +1183,12 @@ Ole hyvä ja selaa tapahtumalokia varoitus- tai virheilmoitusten vuoksi.</transl
     <message>
         <location filename="../mainwindow.cpp" line="1197"/>
         <source>Port Forwarding Failed</source>
-        <translation type="unfinished"></translation>
+        <translation>Porttien läpivienti epäonnistui</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1198"/>
         <source>Vidalia was unable to configure automatic port forwarding.</source>
-        <translation type="unfinished"></translation>
+        <translation>Vidalia ei onnistunut määrittelemään automaattista porttien läpivientiä.</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="63"/>
@@ -2204,7 +2204,7 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/serverpage.ui" line="139"/>
         <source>Attempt to automatically configure port forwarding</source>
-        <translation type="unfinished"></translation>
+        <translation>Yritä automaattisesti määritellä porttien läpiviennin</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="154"/>
@@ -2412,27 +2412,27 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/upnpcontrol.cpp" line="143"/>
         <source>No valid UPnP-enabled Internet gateway devices found</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhteensopivia UPnP:tä käyttäviä Internet-yhdyskäytävälaitteita ei löytynyt</translation>
     </message>
     <message>
         <location filename="../config/upnpcontrol.cpp" line="145"/>
         <source>WSAStartup failed</source>
-        <translation type="unfinished"></translation>
+        <translation>WSAStartup epäonnistui</translation>
     </message>
     <message>
         <location filename="../config/upnpcontrol.cpp" line="147"/>
         <source>Failed to add a port mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Portin lisäys epäonnistui</translation>
     </message>
     <message>
         <location filename="../config/upnpcontrol.cpp" line="149"/>
         <source>Failed to retrieve a port mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Porttitietojen saaminen epäonnistui</translation>
     </message>
     <message>
         <location filename="../config/upnpcontrol.cpp" line="151"/>
         <source>Failed to remove a port mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Portin poistaminen käytöstä epäonnistui</translation>
     </message>
     <message>
         <location filename="../config/upnpcontrol.cpp" line="153"/>
@@ -2445,17 +2445,17 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/upnptestdialog.cpp" line="109"/>
         <source>Discovering UPnP-enabled devices</source>
-        <translation type="unfinished"></translation>
+        <translation>Etsitään UPnP-laitteita</translation>
     </message>
     <message>
         <location filename="../config/upnptestdialog.cpp" line="114"/>
         <source>Updating directory port mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivitetään listaporttitietoja</translation>
     </message>
     <message>
         <location filename="../config/upnptestdialog.cpp" line="119"/>
         <source>Updating relay port mapping</source>
-        <translation type="unfinished"></translation>
+        <translation>Päivitetään reititinporttitietoja</translation>
     </message>
     <message>
         <location filename="../config/upnptestdialog.cpp" line="124"/>
