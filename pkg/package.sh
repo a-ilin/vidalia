@@ -51,7 +51,8 @@ case "$1" in
   cp -R ../src/vidalia/Vidalia.app ../
   srcdir="../"
   srcfiles="Vidalia.app README CREDITS CHANGELOG"
-  srcfiles="$srcfiles LICENSE LICENSE-GPLV2 LICENSE-GPLV3 LICENSE-OPENSSL"
+  srcfiles="$srcfiles LICENSE LICENSE-GPLV2 LICENSE-GPLV3"
+  srcfiles="$srcfiles LICENSE-LGPLV3 LICENSE-OPENSSL"
   osx/builddmg.sh "$srcdir" "$srcfiles"
   ;;
 

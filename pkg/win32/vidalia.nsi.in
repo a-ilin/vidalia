@@ -145,6 +145,7 @@ Section "${VIDALIA_DESC}" Vidalia
   File "@Vidalia_SOURCE_DIR@\LICENSE"
   File "@Vidalia_SOURCE_DIR@\LICENSE-GPLV2"
   File "@Vidalia_SOURCE_DIR@\LICENSE-GPLV3"
+  File "@Vidalia_SOURCE_DIR@\LICENSE-LGPLV3"
   File "@Vidalia_SOURCE_DIR@\LICENSE-OPENSSL"
   File "@Vidalia_SOURCE_DIR@\README"
 

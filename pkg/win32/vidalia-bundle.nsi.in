@@ -163,6 +163,7 @@ SectionGroup "${VIDALIA_DESC}" VidaliaGroup
       File "Vidalia\${VIDALIA_APPVERSION}\LICENSE"
       File "Vidalia\${VIDALIA_APPVERSION}\LICENSE-GPLV2"
       File "Vidalia\${VIDALIA_APPVERSION}\LICENSE-GPLV3"
+      File "Vidalia\${VIDALIA_APPVERSION}\LICENSE-LGPLV3"
       File "Vidalia\${VIDALIA_APPVERSION}\LICENSE-OPENSSL"
       File "Vidalia\${VIDALIA_APPVERSION}\CREDITS"
       
