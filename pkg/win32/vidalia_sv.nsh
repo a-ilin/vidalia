@@ -56,4 +56,4 @@ LangString TorbuttonFirefoxNotFound   ${LANG_SWEDISH} "Torbutton kan ej installe
 ; Miscellaneous Strings
 LangString AppData                    ${LANG_SWEDISH} "Application Data"
 LangString AppDataUninstDesc          ${LANG_SWEDISH} "Remove saved application data and configuration files."
-LangString LanguageCode               ${LANG_SWEDISH} "svn"
+LangString LanguageCode               ${LANG_SWEDISH} "sv"

@@ -56,3 +56,4 @@ LangString TorbuttonFirefoxNotFound   ${LANG_DUTCH} "Firefox werd niet gevonden 
 LangString AppData                    ${LANG_DUTCH} "Application Data"
 LangString AppDataUninstDesc          ${LANG_DUTCH} "Remove saved application data and configuration files."
 LangString LanguageCode               ${LANG_DUTCH} "nl"
+
