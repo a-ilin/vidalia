@@ -82,7 +82,9 @@
 #define STARTUP_PROGRESS_CONNECTING       10
 #define STARTUP_PROGRESS_AUTHENTICATING   20
 #define STARTUP_PROGRESS_BOOTSTRAPPING    30
+#define STARTUP_PROGRESS_CIRCUITBUILD     75
 #define STARTUP_PROGRESS_MAXIMUM          (STARTUP_PROGRESS_BOOTSTRAPPING+100)
+
 
 /** Default constructor. It installs an icon in the system tray area and
  * creates the popup menu associated with that icon. */
@@ -1085,6 +1087,13 @@ MainWindow::authenticated()
   QString errmsg;
 
   updateTorStatus(Authenticated);
+  
+  /* If Tor doesn't have bootstrapping events, then update the current
+   * status string and bump the progress bar along a bit. */
+  if (_torControl->getTorVersion() < 0x020101) {
+    setStartupProgress(STARTUP_PROGRESS_CIRCUITBUILD,
+                       tr("Connecting to the Tor network"));
+  }
   
   /* Let people click on their beloved "New Identity" button */
   _newIdentityAct->setEnabled(true);
