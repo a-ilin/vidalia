@@ -57,16 +57,16 @@ RouterDescriptorView::formatUptime(quint64 seconds)
   int days  = (seconds / 86400);
 
   if (days) {
-    uptime += QString("%1 days ").arg(days);
+    uptime += tr("%1 days ").arg(days);
   }
   if (hours) {
-    uptime += QString("%1 hours ").arg(hours);
+    uptime += tr("%1 hours ").arg(hours);
   }
   if (mins) {
-    uptime += QString("%1 mins ").arg(mins);
+    uptime += tr("%1 mins ").arg(mins);
   }
   if (secs) {
-    uptime += QString("%1 secs").arg(secs);
+    uptime += tr("%1 secs").arg(secs);
   }
   return uptime;
 }
