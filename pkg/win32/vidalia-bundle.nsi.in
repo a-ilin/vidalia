@@ -194,6 +194,7 @@ SectionGroup "${VIDALIA_DESC}" VidaliaGroup
       Call StrRep
       Pop $R0 ; contains the modified version of $INSTDIR
       WriteINIStr "$APPDATA\Vidalia\vidalia.conf" Tor TorExecutable "$R0\\Tor\\${TOR_EXEC}"
+      WriteINIStr "$APPDATA\Vidalia\vidalia.conf" General LanguageCode "$(LanguageCode)"
 
       ; Write the uninstall keys for Windows  
       SetShellVarContext all

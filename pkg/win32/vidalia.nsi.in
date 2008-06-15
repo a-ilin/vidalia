@@ -152,6 +152,9 @@ Section "${VIDALIA_DESC}" Vidalia
   ; Include a prebuilt GeoIP cache
   SetOutPath "$APPDATA\Vidalia"
   File "@CMAKE_CURRENT_SOURCE_DIR@\geoip-cache"
+  
+  ; Save the chosen language code
+  WriteINIStr "$APPDATA\Vidalia\vidalia.conf" General LanguageCode "$(LanguageCode)"
 
   ; Write the uninstall keys for Windows
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\${VIDALIA_NAME}" "DisplayName" "${VIDALIA_DESC}"

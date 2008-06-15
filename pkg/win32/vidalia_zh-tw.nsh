@@ -56,4 +56,5 @@ LangString TorbuttonFirefoxNotFound   ${LANG_TRADCHINESE} "安裝程序未檢測到火狐(
 ; Miscellaneous Strings
 LangString AppData                    ${LANG_TRADCHINESE} "Application Data"
 LangString AppDataUninstDesc          ${LANG_TRADCHINESE} "Remove saved application data and configuration files."
+LangString LanguageCode               ${LANG_TRADCHINESE} "zh-tw"
 

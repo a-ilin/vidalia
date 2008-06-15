@@ -56,3 +56,4 @@ LangString TorbuttonFirefoxNotFound   ${LANG_FARSI} "·«?—·«?” œ— ”?” Â ‘Â« ??œ« 
 ; Miscellaneous Strings
 LangString AppData                    ${LANG_FARSI} "Application Data"
 LangString AppDataUninstDesc          ${LANG_FARSI} "Remove saved application data and configuration files."
+LangString LanguageCode               ${LANG_FARSI} "fa"

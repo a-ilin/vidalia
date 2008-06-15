@@ -76,4 +76,4 @@ LangString TorbuttonFirefoxNotFound   ${LANG_ENGLISH} "Firefox was not found on 
 ; Miscellaneous Strings
 LangString AppData                    ${LANG_ENGLISH} "Application Data"
 LangString AppDataUninstDesc          ${LANG_ENGLISH} "Remove saved application data and configuration files."
-
+LangString LanguageCode               ${LANG_ENGLISH} "en"

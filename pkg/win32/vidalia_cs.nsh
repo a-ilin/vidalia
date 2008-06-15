@@ -56,3 +56,4 @@ LangString TorbuttonFirefoxNotFound   ${LANG_CZECH} "Firefox nebyl ve vasem syst
 ; Miscellaneous Strings
 LangString AppData                    ${LANG_CZECH} "Application Data"
 LangString AppDataUninstDesc          ${LANG_CZECH} "Remove saved application data and configuration files."
+LangString LanguageCode               ${LANG_CZECH} "cz"

@@ -60,4 +60,4 @@ LangString TorbuttonFirefoxNotFound   ${LANG_HEBREW} "Firefox לא נמצא במערכת. לא
 ; Miscellaneous Strings
 LangString AppData                    ${LANG_HEBREW} "מידע תוכנה"
 LangString AppDataUninstDesc          ${LANG_HEBREW} "הסר מידע תוכנה שמור וקבצי הגדרה."
-
+LangString LanguageCode               ${LANG_HEBREW} "he"

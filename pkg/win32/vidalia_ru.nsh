@@ -61,3 +61,4 @@ LangString TorbuttonFirefoxNotFound   ${LANG_RUSSIAN} "Не удалось найти Firefox 
 ; Miscellaneous Strings
 LangString AppData                    ${LANG_RUSSIAN} "Application Data"
 LangString AppDataUninstDesc          ${LANG_RUSSIAN} "Удалить данные приложений и файлы настроек."
+LangString LanguageCode               ${LANG_RUSSIAN} "ru"

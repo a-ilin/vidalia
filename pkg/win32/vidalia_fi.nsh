@@ -60,3 +60,4 @@ LangString TorbuttonFirefoxNotFound   ${LANG_FINNISH} "Mozilla Firefox-selainta 
 ; Miscellaneous Strings
 LangString AppData                    ${LANG_FINNISH} "Ohjelmatiedot"
 LangString AppDataUninstDesc          ${LANG_FINNISH} "Poista tallennetut ohjelmatiedot ja asetustiedostot."
+LangString LanguageCode               ${LANG_FINNISH} "fi"
