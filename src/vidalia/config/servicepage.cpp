@@ -486,10 +486,6 @@ ServicePage::serviceSelectionChanged()
     }
   }
   
-  /* XXX: Domenik: Why is this here? It isn't used. */
-  QTableWidgetItem* item =
-    ui.serviceWidget->item(ui.serviceWidget->currentRow(), 3);
-    
   QString selDir = _services->value(ui.serviceWidget->currentRow()).
                                     serviceDirectory();
   QList<QString> strList =  _torServices->keys();
