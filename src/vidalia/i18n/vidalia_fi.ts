@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="fi">
+<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -217,7 +218,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../config/advancedpage.ui" line="219"/>
         <source>Tor Configuration File</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-asetustiedosto</translation>
     </message>
 </context>
 <context>
@@ -554,7 +555,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../config/generalpage.ui" line="97"/>
         <source>Proxy Executable</source>
-        <translation>välityspalvelinohjelma</translation>
+        <translation>Välityspalvelinohjelma</translation>
     </message>
     <message>
         <location filename="../config/generalpage.ui" line="129"/>
@@ -569,7 +570,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../config/generalpage.ui" line="38"/>
         <source>Tor Executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-ohjelma</translation>
     </message>
 </context>
 <context>
@@ -778,7 +779,7 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../help/browser/helptextbrowser.cpp" line="72"/>
         <source>Opening External Link</source>
-        <translation type="unfinished"></translation>
+        <translation>Avataan ulkoista linkkiä</translation>
     </message>
     <message>
         <location filename="../help/browser/helptextbrowser.cpp" line="76"/>
@@ -788,12 +789,12 @@ Tor-palvelu täytyy poistaa käsin.</translation>
     <message>
         <location filename="../help/browser/helptextbrowser.cpp" line="78"/>
         <source>Do you want Vidalia to open the link in your Web browser?</source>
-        <translation type="unfinished"></translation>
+        <translation>Haluatko Vidalian avaavan linkin Internetselaimessasi?</translation>
     </message>
     <message>
         <location filename="../help/browser/helptextbrowser.cpp" line="88"/>
         <source>Unable to Open Link</source>
-        <translation type="unfinished"></translation>
+        <translation>Linkin avaaminen epäonnistui</translation>
     </message>
     <message>
         <location filename="../help/browser/helptextbrowser.cpp" line="90"/>
@@ -1212,12 +1213,12 @@ Ole hyvä ja selaa tapahtumalokia varoitus- tai virheilmoitusten vuoksi.</transl
     <message>
         <location filename="../mainwindow.ui" line="241"/>
         <source>Start Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Käynnistä Tor</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="495"/>
         <source>Error starting IM client</source>
-        <translation type="unfinished"></translation>
+        <translation>Virhe käynnistäessä keskusteluohjelmaa</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="496"/>
@@ -1242,7 +1243,7 @@ Ole hyvä ja selaa tapahtumalokia varoitus- tai virheilmoitusten vuoksi.</transl
     <message>
         <location filename="../mainwindow.cpp" line="543"/>
         <source>Loading network status</source>
-        <translation type="unfinished"></translation>
+        <translation>Ladataan verkon tilaa</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="546"/>
@@ -1262,7 +1263,7 @@ Ole hyvä ja selaa tapahtumalokia varoitus- tai virheilmoitusten vuoksi.</transl
     <message>
         <location filename="../mainwindow.cpp" line="1095"/>
         <source>Connecting to the Tor network</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhdistetään Tor-verkkoon</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="559"/>
@@ -1292,7 +1293,7 @@ Ole hyvä ja selaa tapahtumalokia varoitus- tai virheilmoitusten vuoksi.</transl
     <message>
         <location filename="../mainwindow.cpp" line="579"/>
         <source>done</source>
-        <translation type="unfinished"></translation>
+        <translation>valmis</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="582"/>
@@ -1322,47 +1323,47 @@ Ole hyvä ja selaa tapahtumalokia varoitus- tai virheilmoitusten vuoksi.</transl
     <message>
         <location filename="../mainwindow.cpp" line="597"/>
         <source>unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>tuntematon</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="599"/>
         <source> failed (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>epäonnistui (%1)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="647"/>
         <source>Stop Tor Now</source>
-        <translation type="unfinished"></translation>
+        <translation>Pysäytä Tor nyt</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="649"/>
         <source>Stop Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Pysäytä Tor</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="665"/>
         <source>Starting the Tor software</source>
-        <translation type="unfinished"></translation>
+        <translation>Käynnistetään Tor-ohjelmaa</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="83"/>
         <source>Starting Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Käynnistetään Tor-ohjelmaa</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="676"/>
         <source>Tor is Running</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor on käynnissä</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="863"/>
         <source>Connecting to Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Yhdistetään Tor-ohjelmaan</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1022"/>
         <source>Authenticating to Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Kirjaudutaan Tor-ohjelmaan</translation>
     </message>
 </context>
 <context>
@@ -1978,7 +1979,7 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../config/networkpage.ui" line="274"/>
         <source>The Tor software you are currently running does not support bridges. &lt;br&gt;Directory connections will still be encrypted.</source>
-        <translation type="unfinished"></translation>
+        <translation>Käytössä oleva Tor-ohjelma ei tue siltoja. &lt;br&gt;Listayhteydet kuitenkin suojataan.</translation>
     </message>
 </context>
 <context>
@@ -2047,22 +2048,22 @@ jotka kiinnostavat erityisesti Tor-ohjelmoijia.</translation>
     <message>
         <location filename="../network/routerdescriptorview.cpp" line="60"/>
         <source>%1 days </source>
-        <translation type="unfinished"></translation>
+        <translation>%1 päivää</translation>
     </message>
     <message>
         <location filename="../network/routerdescriptorview.cpp" line="63"/>
         <source>%1 hours </source>
-        <translation type="unfinished"></translation>
+        <translation>%1 tuntia</translation>
     </message>
     <message>
         <location filename="../network/routerdescriptorview.cpp" line="66"/>
         <source>%1 mins </source>
-        <translation type="unfinished"></translation>
+        <translation>%1 minuuttia</translation>
     </message>
     <message>
         <location filename="../network/routerdescriptorview.cpp" line="69"/>
         <source>%1 secs</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 sekuntia</translation>
     </message>
 </context>
 <context>
@@ -2378,7 +2379,7 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/serverpage.ui" line="154"/>
         <source>Test</source>
-        <translation>Testaa</translation>
+        <translation>Kokeile</translation>
     </message>
     <message>
         <location filename="../config/serverpage.ui" line="969"/>
@@ -2388,7 +2389,7 @@ joitakin ongelmia reitittimen kanssa. Voi myös sisällyttää oman PGP- tai GPG
     <message>
         <location filename="../config/serverpage.ui" line="164"/>
         <source>Show help topic on port forwarding</source>
-        <translation type="unfinished"></translation>
+        <translation>Näytä ohjeenaihe porttien läpiviennistä</translation>
     </message>
 </context>
 <context>

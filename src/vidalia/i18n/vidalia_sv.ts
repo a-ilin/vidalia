@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS><TS version="1.1" language="sv">
+<defaultcodec></defaultcodec>
 <context>
     <name>AboutDialog</name>
     <message>
@@ -217,7 +218,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../config/advancedpage.ui" line="219"/>
         <source>Tor Configuration File</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-konfigurationsfil</translation>
     </message>
 </context>
 <context>
@@ -569,7 +570,7 @@ Du kanske måste ta bort tjänsten manuellt.</translation>
     <message>
         <location filename="../config/generalpage.ui" line="38"/>
         <source>Tor Executable</source>
-        <translation type="unfinished"></translation>
+        <translation>Tor-körbar</translation>
     </message>
 </context>
 <context>
@@ -1209,7 +1210,7 @@ Please check the message log for recent warning or error messages.</source>
     <message>
         <location filename="../mainwindow.ui" line="241"/>
         <source>Start Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Starta Tor</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="495"/>
@@ -1289,7 +1290,7 @@ Please check the message log for recent warning or error messages.</source>
     <message>
         <location filename="../mainwindow.cpp" line="579"/>
         <source>done</source>
-        <translation type="unfinished"></translation>
+        <translation>redo</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="582"/>
@@ -1319,32 +1320,32 @@ Please check the message log for recent warning or error messages.</source>
     <message>
         <location filename="../mainwindow.cpp" line="597"/>
         <source>unknown</source>
-        <translation type="unfinished"></translation>
+        <translation>Okänd</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="599"/>
         <source> failed (%1)</source>
-        <translation type="unfinished"></translation>
+        <translation>Misslyckad (%1)</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="647"/>
         <source>Stop Tor Now</source>
-        <translation type="unfinished"></translation>
+        <translation>Stoppa Tor nu</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="649"/>
         <source>Stop Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Stoppa Tor</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="665"/>
         <source>Starting the Tor software</source>
-        <translation type="unfinished"></translation>
+        <translation>Startar Tor-program</translation>
     </message>
     <message>
         <location filename="../mainwindow.ui" line="83"/>
         <source>Starting Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Startar Tor</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="676"/>
@@ -1354,7 +1355,7 @@ Please check the message log for recent warning or error messages.</source>
     <message>
         <location filename="../mainwindow.cpp" line="863"/>
         <source>Connecting to Tor</source>
-        <translation type="unfinished"></translation>
+        <translation>Ansluter till Tor</translation>
     </message>
     <message>
         <location filename="../mainwindow.cpp" line="1022"/>
@@ -2044,22 +2045,22 @@ huvudsakligen är intressanta för Tor-utvecklarna.</translation>
     <message>
         <location filename="../network/routerdescriptorview.cpp" line="60"/>
         <source>%1 days </source>
-        <translation type="unfinished"></translation>
+        <translation>%1 dagar</translation>
     </message>
     <message>
         <location filename="../network/routerdescriptorview.cpp" line="63"/>
         <source>%1 hours </source>
-        <translation type="unfinished"></translation>
+        <translation>%1 timmar</translation>
     </message>
     <message>
         <location filename="../network/routerdescriptorview.cpp" line="66"/>
         <source>%1 mins </source>
-        <translation type="unfinished"></translation>
+        <translation>%1 minuter</translation>
     </message>
     <message>
         <location filename="../network/routerdescriptorview.cpp" line="69"/>
         <source>%1 secs</source>
-        <translation type="unfinished"></translation>
+        <translation>%1 sekunder</translation>
     </message>
 </context>
 <context>
