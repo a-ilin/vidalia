@@ -24,7 +24,7 @@ SetCompressor /SOLID lzma
 
 !define TOR_NAME            "Tor"
 !define TOR_EXEC            "tor.exe"
-!define TOR_APPVERSION      "0.2.0.23-rc"
+!define TOR_APPVERSION      "0.2.0.28-rc"
 !define TOR_DESC            "${TOR_NAME} ${TOR_APPVERSION}"
 
 !define PRIVOXY_NAME        "Privoxy"
