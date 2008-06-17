@@ -2,7 +2,7 @@
 #
 
 locales="ar bg cs de es fa fi fr he hu it ja nb nl pl pt ru sq sv tr zh_cn zh_tw"
-poDir="po"
+poDir="pootle"
 outDir="ts"
 
 for ts in $locales
