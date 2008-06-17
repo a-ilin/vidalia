@@ -40,6 +40,7 @@ if (USE_MINIUPNPC)
   add_subdirectory(miniupnpc)
 endif(USE_MINIUPNPC)
 
+add_subdirectory(tools)
 add_subdirectory(torcontrol)
 add_subdirectory(common)
 add_subdirectory(vidalia)

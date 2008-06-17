@@ -49,6 +49,7 @@ set(translate_SRCS ${translate_SRCS} ${translate_HDRS} ${translate_UIS})
 add_custom_target(lupdate 
   COMMAND ${QT_LUPDATE_EXECUTABLE} -noobsolete ${translate_SRCS} -ts ${vidalia_TS}
 )
+add_dependencies(lupdate ts2po)
 
 ## Create a target that runs lrelease for all the .ts files
 add_custom_target(translations ALL DEPENDS ${vidalia_QMS})
