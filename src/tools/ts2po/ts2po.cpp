@@ -81,8 +81,11 @@ convert_context(const QDomElement &context, QString *po, QString *errorMessage)
   while (!msg.isNull()) {
     /* Extract the <source> tags */
     source = msg.firstChildElement(TS_ELEMENT_SOURCE);
-    if (source.isNull())
-      continue; /* Empty source string. Ignore. */
+    if (source.isNull()) {
+      *errorMessage = QString("message element with no source string "
+                              "(line %1)").arg(msg.lineNumber());
+      return -1;
+    }
     msgid = source.text();
     msgid.replace("\r", "");
     msgid.replace("\n", "\"\n\"");
