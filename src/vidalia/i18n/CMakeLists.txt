@@ -53,4 +53,5 @@ add_dependencies(lupdate ts2po)
 
 ## Create a target that runs lrelease for all the .ts files
 add_custom_target(translations ALL DEPENDS ${vidalia_QMS})
+add_dependencies(translations po2ts)
 

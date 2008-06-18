@@ -10,6 +10,14 @@
 ##  the terms described in the LICENSE file.
 ##
 
-add_subdirectory(ts2po)
-add_subdirectory(po2ts)
+## po2ts source files
+set(po2ts_SRCS
+  po2ts.cpp
+)
+
+## Create the po2ts executable
+add_executable(po2ts ${po2ts_SRCS})
+
+## Link the executable with the appropriate Qt libraries
+target_link_libraries(po2ts ${QT_LIBRARIES})
 

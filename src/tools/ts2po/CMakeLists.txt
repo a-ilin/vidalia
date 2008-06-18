@@ -13,7 +13,8 @@
 ## Define this version of ts2po
 set(VERSION "0.1")
 
-##
+## Include the source and binary directories so it can find out configured
+## header file
 include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${CMAKE_CURRENT_BINARY_DIR}
