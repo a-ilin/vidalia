@@ -706,14 +706,18 @@ MainWindow::toggleShowOnStartup(bool checked)
 void
 MainWindow::setStartupProgressVisible(bool visible)
 {
+  /* XXX: We force a repaint() to make sure the progress bar and onion status
+   * icon don't overlap briefly. This is pretty hacktastic. */
   if (visible) {
     ui.lblTorStatus->setVisible(false);
     ui.lblTorStatusImg->setVisible(false);
+    repaint(ui.grpStatus->rect());
     ui.lblStartupProgress->setVisible(true);
     ui.progressBar->setVisible(true);
   } else {
     ui.lblStartupProgress->setVisible(false);
     ui.progressBar->setVisible(false);
+    repaint(ui.grpStatus->rect());
     ui.lblTorStatus->setVisible(true);
     ui.lblTorStatusImg->setVisible(true);
   }
