@@ -1,0 +1,2166 @@
+#,fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Vidalia\n"
+"Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
+"POT-Creation-Date: 2008-06-19 02:15+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: translations@vidalia-project.net\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Vidalia ts2po 0.1\n"
+
+#: AboutDialog#1
+msgid "About Vidalia"
+msgstr "À propos de Vidalia"
+
+#: AboutDialog#2
+msgid "Vidalia"
+msgstr "Vidalia"
+
+#: AboutDialog#3
+msgid "Tor"
+msgstr "Tor"
+
+#: AboutDialog#4
+msgid "Qt"
+msgstr "Qt"
+
+#: AboutDialog#5
+msgid "Qt Version"
+msgstr "Version Qt"
+
+#: AboutDialog#6
+msgid "Tor Version"
+msgstr "Version Tor"
+
+#: AboutDialog#7
+msgid "Vidalia Version"
+msgstr "Version Vidalia"
+
+#: AboutDialog#8
+msgid "<Not Running>"
+msgstr "<Arrêté>"
+
+#: AboutDialog#9
+msgid "<Unavailable>"
+msgstr "<Indisponible>"
+
+#: AdvancedPage#1
+msgid "Control Port"
+msgstr "Port de contrôle"
+
+#: AdvancedPage#2
+msgid "Browse"
+msgstr "Parcourir"
+
+#: AdvancedPage#3
+msgid "Permissions"
+msgstr "Autorisations"
+
+#: AdvancedPage#4
+msgid "Run as User:"
+msgstr "Exécuter en tant qu'utilisateur :"
+
+#: AdvancedPage#5
+msgid "Vidalia will run with this User's permissions"
+msgstr "Vidalia démarrera avec les droits de l'utilisateur"
+
+#: AdvancedPage#6
+msgid "Run as Group:"
+msgstr "Démarrer en tant que groupe :"
+
+#: AdvancedPage#7
+msgid "Vidalia will run with this Group's permissions"
+msgstr "Vidalia démarrera avec les droits du groupe"
+
+#: AdvancedPage#8
+msgid "Select Tor Configuration File"
+msgstr "Sélectionner le fichier de configuration Tor"
+
+#: AdvancedPage#9
+msgid "File Not Found"
+msgstr "Fichier non trouvé"
+
+#: AdvancedPage#10
+msgid "%1 does not exist. Would you like to create it?"
+msgstr "%1 n'existe pas. Voulez-vous le créer ?"
+
+#: AdvancedPage#11
+msgid "Failed to Create File"
+msgstr "La création du fichier a échoué"
+
+#: AdvancedPage#12
+msgid "Unable to create %1 [%2]"
+msgstr "Impossible de créer %1 [%2]"
+
+#: AdvancedPage#13
+msgid "Unable to remove Tor Service"
+msgstr "Impossible d'enlever le service Tor"
+
+#: AdvancedPage#14
+msgid "Unable to install Tor Service"
+msgstr "Impossible d'installer le service Tor"
+
+#: AdvancedPage#15
+msgid "Vidalia was unable to install the Tor service."
+msgstr "Vidalia n'a pas pu installer le service Tor."
+
+#: AdvancedPage#16
+msgid "Vidalia was unable to remove the Tor service."
+""
+"You may need to remove it manually."
+msgstr "Vidalia n'a pas pu enlever le service Tor."
+""
+"Vous devrez peut-être enlever manuellement le service Tor."
+
+#: AdvancedPage#17
+msgid "'%1' is not a valid IP address."
+msgstr "'%1' n'est pas une adresse IP valide."
+
+#: AdvancedPage#18
+msgid ":"
+msgstr ":"
+
+#: AdvancedPage#19
+msgid "You selected 'Password' authentication, but did not specify a password."
+msgstr "Vous avez choisi une authentification par mot de passe, mais n'avez pas spécifié de mot de passe."
+
+#: AdvancedPage#20
+msgid "Select a Directory to Use for Tor Data"
+msgstr "Choisir le dossier utilisé pour enregistrer les données de Tor"
+
+#: AdvancedPage#21
+msgid "Authentication:"
+msgstr "Authentification :"
+
+#: AdvancedPage#22
+msgid "Address:"
+msgstr "Adresse : "
+
+#: AdvancedPage#23
+msgid "Cookie"
+msgstr "Témoin (cookie)"
+
+#: AdvancedPage#24
+msgid "Password"
+msgstr "Mot de passe"
+
+#: AdvancedPage#25
+msgid "Randomly Generate"
+msgstr "défini aléatoirement"
+
+#: AdvancedPage#26
+msgid "None"
+msgstr "Aucun"
+
+#: AdvancedPage#27
+msgid "Advanced"
+msgstr "Avancé"
+
+#: AdvancedPage#28
+msgid "Start the Tor software with the specified configuration file (torrc)"
+msgstr ""
+
+#: AdvancedPage#29
+msgid "Select path to your configuration file"
+msgstr ""
+
+#: AdvancedPage#30
+msgid "Data Directory"
+msgstr ""
+
+#: AdvancedPage#31
+msgid "Store data for the Tor software in the following directory"
+msgstr ""
+
+#: AdvancedPage#32
+msgid "Select the directory used to store data for the Tor software"
+msgstr ""
+
+#: AdvancedPage#33
+msgid "Tor Configuration File"
+msgstr ""
+
+#: AppearancePage#1
+msgid "Language"
+msgstr "Langue"
+
+#: AppearancePage#2
+msgid "Choose the language used in Vidalia"
+msgstr "Choisir la langue utilisée par Vidalia"
+
+#: AppearancePage#3
+msgid "Changes to language will only take effect after restarting Vidalia!"
+msgstr "Le changement de la langue ne prendra effet qu'au redémarrage de Vidalia !"
+
+#: AppearancePage#4
+msgid "Style"
+msgstr "Style"
+
+#: AppearancePage#5
+msgid "Choose Vidalia's interface style"
+msgstr "Choisir le style de l'interface de Vidalia"
+
+#: AppearancePage#6
+msgid "Appearance"
+msgstr "Interface"
+
+#: BandwidthGraph#1
+msgid "Tor Bandwidth Usage"
+msgstr "Bande passante utilisée par Tor"
+
+#: BandwidthGraph#2
+msgid "Show Settings"
+msgstr "Montrer options"
+
+#: BandwidthGraph#3
+msgid "Reset"
+msgstr "Mettre à zéro"
+
+#: BandwidthGraph#4
+msgid "Receive Rate"
+msgstr "Taux de réception"
+
+#: BandwidthGraph#5
+msgid "Send Rate"
+msgstr "Taux d'envoi"
+
+#: BandwidthGraph#6
+msgid "Changes the transparency of the Bandwidth Graph"
+msgstr "Changer le niveau de transparence du graphe de la bande passante"
+
+#: BandwidthGraph#7
+msgid "Save"
+msgstr "Enregistrer"
+
+#: BandwidthGraph#8
+msgid "Cancel"
+msgstr "Annuler"
+
+#: BandwidthGraph#9
+msgid "Since:"
+msgstr "Depuis :"
+
+#: BandwidthGraph#10
+msgid "100"
+msgstr "100"
+
+#: BandwidthGraph#11
+msgid "% Opaque"
+msgstr "% d'opacité"
+
+#: BandwidthGraph#12
+msgid "Hide Settings"
+msgstr "Masquer options"
+
+#: BandwidthGraph#13
+msgid "Always on Top"
+msgstr "Toujours en avant-plan"
+
+#: BandwidthGraph#14
+msgid "Style"
+msgstr "Style"
+
+#: Circuit#1
+msgid "New"
+msgstr "Nouveau"
+
+#: Circuit#2
+msgid "Open"
+msgstr "Ouvert"
+
+#: Circuit#3
+msgid "Building"
+msgstr "En construction"
+
+#: Circuit#4
+msgid "Failed"
+msgstr "Échec"
+
+#: Circuit#5
+msgid "Closed"
+msgstr "Fermé"
+
+#: Circuit#6
+msgid "Unknown"
+msgstr "Inconnu"
+
+#: CircuitItem#1
+msgid "<Path Empty>"
+msgstr "<Chemin vide>"
+
+#: CircuitListWidget#1
+msgid "Connection"
+msgstr "Connexion"
+
+#: CircuitListWidget#2
+msgid "Status"
+msgstr "État"
+
+#: CircuitListWidget#3
+msgid "Zoom to Circuit"
+msgstr "Zoomer sur le circuit"
+
+#: CircuitListWidget#4
+msgid "Close Circuit (Del)"
+msgstr "Fermer le circuit (suppr)"
+
+#: CircuitListWidget#5
+msgid "Close Stream (Del)"
+msgstr "Arrêter le flux (Suppr)"
+
+#: ConfigDialog#1
+msgid "General"
+msgstr "Général"
+
+#: ConfigDialog#2
+msgid "Advanced"
+msgstr "Avancé"
+
+#: ConfigDialog#3
+msgid "Cancel"
+msgstr "Annuler"
+
+#: ConfigDialog#4
+msgid "Appearance"
+msgstr "Interface"
+
+#: ConfigDialog#5
+msgid "Help"
+msgstr "Aide"
+
+#: ConfigDialog#6
+msgid "Settings"
+msgstr "Options"
+
+#: ConfigDialog#7
+msgid "Network"
+msgstr "Réseau"
+
+#: ConfigDialog#8
+msgid "Error Saving Settings"
+msgstr "Erreur lors de l'enregistrement des paramètres"
+
+#: ConfigDialog#9
+msgid "Vidalia was unable to save your %1 settings."
+msgstr "Vidalia n'a pas réussi à sauvegarder vos paramètress de %1."
+
+#: ConfigDialog#10
+msgid "Error Applying Settings"
+msgstr "Erreur lors de l'application des paramètress"
+
+#: ConfigDialog#11
+msgid "Vidalia was unable to apply your %1 settings to Tor."
+msgstr "Vidalia n'est pas parvenu à appliquer vos paramètress  de %1 pour Tor."
+
+#: ConfigDialog#12
+msgid "OK"
+msgstr "OK"
+
+#: ConfigDialog#13
+msgid "Sharing"
+msgstr "Partage"
+
+#: ConfigDialog#14
+msgid "Services"
+msgstr ""
+
+#: ControlConnection#1
+msgid "Control socket is not connected."
+msgstr "Le socket de contrôle n'est pas connecté."
+
+#: ControlConnection#2
+msgid "Vidalia was unable to connect to Tor. (%1)"
+msgstr "Vidalia ne peut pas se connecter à Tor. (%1)"
+
+#: ControlSocket#1
+msgid "Error sending control command. [%1]"
+msgstr "Erreur lors de l'envoi de la commande de contrôle. [%1]"
+
+#: ControlSocket#2
+msgid "Socket disconnected while attempting to read a line of data."
+msgstr "Socket déconnecté durant la lecture d'une ligne de données."
+
+#: ControlSocket#3
+msgid "Invalid control reply. [%1]"
+msgstr "Réponse invalide à la commande de contrôle. [%1]"
+
+#: ControlSocket#4
+msgid "Control socket is not connected."
+msgstr "Le socket de contrôle n'est pas connecté."
+
+#: GeneralPage#1
+msgid "Browse"
+msgstr "Parcourir"
+
+#: GeneralPage#2
+msgid "Select Path to Tor"
+msgstr "Sélectionner le chemin de Tor"
+
+#: GeneralPage#3
+msgid "Executables (*.exe)"
+msgstr "Exécutables (*.exe)"
+
+#: GeneralPage#4
+msgid "General"
+msgstr "Général"
+
+#: GeneralPage#5
+msgid "You must specify the name of your Tor executable."
+msgstr "Vous devez indiquer le nom de votre exécutable Tor."
+
+#: GeneralPage#6
+msgid "Select Proxy Executable"
+msgstr ""
+
+#: GeneralPage#7
+msgid "The proxy arguments specified are not properly formatted."
+msgstr ""
+
+#: GeneralPage#8
+msgid "Start Vidalia when my system starts"
+msgstr ""
+
+#: GeneralPage#9
+msgid "Start the Tor software when Vidalia starts"
+msgstr ""
+
+#: GeneralPage#10
+msgid "Start a proxy application when Vidalia starts"
+msgstr ""
+
+#: GeneralPage#11
+msgid "Proxy Executable"
+msgstr ""
+
+#: GeneralPage#12
+msgid "Command Line Arguments:"
+msgstr ""
+
+#: GeneralPage#13
+msgid "Tor Executable"
+msgstr ""
+
+#: GraphFrame#1
+msgid "Recv: "
+msgstr "Recpt : "
+
+#: GraphFrame#2
+msgid "Sent: "
+msgstr "Envoi : "
+
+#: GraphFrame#3
+msgid "%1 KB"
+msgstr "%1 Kio"
+
+#: GraphFrame#4
+msgid "%1 MB"
+msgstr "%1 Mio"
+
+#: GraphFrame#5
+msgid "%1 GB"
+msgstr "%1 Gio"
+
+#: GraphFrame#6
+msgid "%1 KB/s"
+msgstr "%1 Kio/s"
+
+#: HelpBrowser#1
+msgid "Vidalia Help"
+msgstr "Aide de Vidalia"
+
+#: HelpBrowser#2
+msgid "Find Previous"
+msgstr "Trouver le précédent"
+
+#: HelpBrowser#3
+msgid "Find Next"
+msgstr "Trouver le suivant"
+
+#: HelpBrowser#4
+msgid "Case sensitive"
+msgstr "Respecter la casse"
+
+#: HelpBrowser#5
+msgid "Contents"
+msgstr "Table des matières"
+
+#: HelpBrowser#6
+msgid "Help Topics"
+msgstr "Rubriques d'aide"
+
+#: HelpBrowser#7
+msgid "Search"
+msgstr "Chercher"
+
+#: HelpBrowser#8
+msgid "Found Documents"
+msgstr "Documents trouvés"
+
+#: HelpBrowser#9
+msgid "Back"
+msgstr "Retour"
+
+#: HelpBrowser#10
+msgid "Move to previous page (Backspace)"
+msgstr "Page précédente (Retour arrière)"
+
+#: HelpBrowser#11
+msgid "Backspace"
+msgstr "Retour arrière"
+
+#: HelpBrowser#12
+msgid "Forward"
+msgstr "Avancer"
+
+#: HelpBrowser#13
+msgid "Move to next page (Shift+Backspace)"
+msgstr "Avancer d'une page (Maj+Retour arrière)"
+
+#: HelpBrowser#14
+msgid "Shift+Backspace"
+msgstr "Maj+Retour arrière"
+
+#: HelpBrowser#15
+msgid "Home"
+msgstr "Page d'accueil"
+
+#: HelpBrowser#16
+msgid "Move to the Home page (Ctrl+H)"
+msgstr "Aller à la page d'accueil Ctrl+H)"
+
+#: HelpBrowser#17
+msgid "Ctrl+H"
+msgstr "Ctrl+H"
+
+#: HelpBrowser#18
+msgid "Find"
+msgstr "Chercher"
+
+#: HelpBrowser#19
+msgid "Search for a word or phrase on current page (Ctrl+F)"
+msgstr "Chercher un mot ou une phrase dans cette page (Ctrl+F)"
+
+#: HelpBrowser#20
+msgid "Ctrl+F"
+msgstr "Ctrl+F"
+
+#: HelpBrowser#21
+msgid "Close"
+msgstr "Fermer"
+
+#: HelpBrowser#22
+msgid "Close Vidalia Help"
+msgstr "Fermer l'aide de Vidalia"
+
+#: HelpBrowser#23
+msgid "Esc"
+msgstr "Échap"
+
+#: HelpBrowser#24
+msgid "Error Loading Help Contents: "
+msgstr "Erreur de lecture de l'aide :"
+
+#: HelpBrowser#25
+msgid "Search reached end of document"
+msgstr "La recherche a atteint la fin du document"
+
+#: HelpBrowser#26
+msgid "Search reached start of document"
+msgstr "La recherche a atteint le début du document"
+
+#: HelpBrowser#27
+msgid "Text not found in document"
+msgstr "Texte non trouvé dans le document"
+
+#: HelpBrowser#28
+msgid "Find:"
+msgstr "Chercher :"
+
+#: HelpBrowser#29
+msgid "Whole words only"
+msgstr "Mots entiers seulement"
+
+#: HelpBrowser#30
+msgid "Searching for:"
+msgstr "Rechercher :"
+
+#: HelpBrowser#31
+msgid "Supplied XML file is not a valid Contents document."
+msgstr "Le fichier XML spécifié n'est pas un document valide."
+
+#: HelpBrowser#32
+msgid "Found %1 results"
+msgstr "%1 résultats trouvés"
+
+#: HelpTextBrowser#1
+msgid "Error opening help file: "
+msgstr "Erreur d'ouverture du fichier d'aide :"
+
+#: HelpTextBrowser#2
+msgid "Opening External Link"
+msgstr ""
+
+#: HelpTextBrowser#3
+msgid "Vidalia can open the link you selected in your default Web browser. If your browser is not currently configured to use Tor then the request will not be anonymous."
+msgstr ""
+
+#: HelpTextBrowser#4
+msgid "Do you want Vidalia to open the link in your Web browser?"
+msgstr ""
+
+#: HelpTextBrowser#5
+msgid "Unable to Open Link"
+msgstr ""
+
+#: HelpTextBrowser#6
+msgid "Vidalia was unable to open the selected link in your Web browser. You can still copy the URL and paste it into your browser."
+msgstr ""
+
+#: LogEvent#1
+msgid "Debug"
+msgstr "Débogage"
+
+#: LogEvent#2
+msgid "Info"
+msgstr "Information"
+
+#: LogEvent#3
+msgid "Notice"
+msgstr "Signalement"
+
+#: LogEvent#4
+msgid "Warning"
+msgstr "Avertissement"
+
+#: LogEvent#5
+msgid "Error"
+msgstr "Erreur"
+
+#: LogEvent#6
+msgid "Unknown"
+msgstr "Inconnu"
+
+#: MainWindow#1
+msgid "About"
+msgstr "À propos"
+
+#: MainWindow#2
+msgid "Exit"
+msgstr "Quitter"
+
+#: MainWindow#3
+msgid "Bandwidth Graph"
+msgstr "Graphe de la bande passante"
+
+#: MainWindow#4
+msgid "Message Log"
+msgstr "Journal des messages"
+
+#: MainWindow#5
+msgid "Help"
+msgstr "Aide"
+
+#: MainWindow#6
+msgid "Ctrl+T"
+msgstr "Ctrl+T"
+
+#: MainWindow#7
+msgid "Ctrl+B"
+msgstr "Ctrl+B"
+
+#: MainWindow#8
+msgid "Ctrl+L"
+msgstr "Ctrl+L"
+
+#: MainWindow#9
+msgid "Ctrl+?"
+msgstr "Ctrl+?"
+
+#: MainWindow#10
+msgid "File"
+msgstr "Fichier"
+
+#: MainWindow#11
+msgid "Tor"
+msgstr "Tor"
+
+#: MainWindow#12
+msgid "View"
+msgstr "Aperçu"
+
+#: MainWindow#13
+msgid "Vidalia Help"
+msgstr "Aide de Vidalia"
+
+#: MainWindow#14
+msgid "Error Starting Tor"
+msgstr "Erreur lors du démarrage de Tor"
+
+#: MainWindow#15
+msgid "Ctrl+N"
+msgstr "Ctrl+N"
+
+#: MainWindow#16
+msgid "Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified."
+msgstr "Vidalia n'est pas parvenu à démarrer Tor. Contrôlez vos options et assurez-vous que le nom et le chemin de l'exécutable de Tor sont correctement indiqués."
+
+#: MainWindow#17
+msgid "Settings"
+msgstr "Paramètres"
+
+#: MainWindow#18
+msgid "Network Map"
+msgstr "Carte du réseau"
+
+#: MainWindow#19
+msgid "New Identity"
+msgstr "Nouvelle identité"
+
+#: MainWindow#20
+msgid "Ctrl+I"
+msgstr "Ctrl+I"
+
+#: MainWindow#21
+msgid "All subsequent connections will appear to be different than your old connections."
+msgstr "Toutes les connexions suivantes sembleront être différentes des précédentes."
+
+#: MainWindow#22
+msgid "Failed to Create New Identity"
+msgstr "La création d'une nouvelle identité a échoué"
+
+#: MainWindow#23
+msgid "Tor is not running"
+msgstr "Tor est arrêté"
+
+#: MainWindow#24
+msgid "Tor is shutting down"
+msgstr "Tor est en cours d'arrêt"
+
+#: MainWindow#25
+msgid "Vidalia Control Panel"
+msgstr "Panneau de contrôle de Vidalia"
+
+#: MainWindow#26
+msgid "Vidalia Shortcuts"
+msgstr "Raccourcis Vidalia"
+
+#: MainWindow#27
+msgid "Setup Relaying"
+msgstr "Installer un relais"
+
+#: MainWindow#28
+msgid "View the Network"
+msgstr "Voir le réseau Tor"
+
+#: MainWindow#29
+msgid "View a map of the Tor network"
+msgstr "Voir la carte du réseau Tor"
+
+#: MainWindow#30
+msgid "Use a New Identity"
+msgstr "Utiliser une nouvelle identité"
+
+#: MainWindow#31
+msgid "Make subsequent connections appear new"
+msgstr "Faire que les connexions suivantes apparaissent comme de nouvelles connexions"
+
+#: MainWindow#32
+msgid "View help documentation"
+msgstr "Voir la documentation d'aide"
+
+#: MainWindow#33
+msgid "View version and license information"
+msgstr "Voir les informations de version et de licence"
+
+#: MainWindow#34
+msgid "Exit Vidalia"
+msgstr "Quitter Vidalia"
+
+#: MainWindow#35
+msgid "Show this window on startup"
+msgstr "Afficher cette fenêtre au démarrage"
+
+#: MainWindow#36
+msgid "Hide"
+msgstr "Cacher"
+
+#: MainWindow#37
+msgid "Hide this window"
+msgstr "Cacher cette fenêtre"
+
+#: MainWindow#38
+msgid "Control Panel"
+msgstr "Panneau de contrôle"
+
+#: MainWindow#39
+msgid "Ctrl+P"
+msgstr "Ctrl+P"
+
+#: MainWindow#40
+msgid "Cookie Authentication Required"
+msgstr "Cookie d'authentification requis"
+
+#: MainWindow#41
+msgid "Would you like to browse for the file 'control_auth_cookie' yourself?"
+msgstr "Voulez-vous effectuer manuellement la recherche du fichier 'control_auth_cookie' ?"
+
+#: MainWindow#42
+msgid "Error Registering for Events"
+msgstr "Erreur lors de l'enregistrement pour les événements"
+
+#: MainWindow#43
+msgid "Password Authentication Required"
+msgstr "Mot de passe d'authentification requis"
+
+#: MainWindow#44
+msgid "Please check your control port authentication settings."
+msgstr "Veuillez vérifier les paramètress d'authentification de votre port de contrôle."
+
+#: MainWindow#45
+msgid "Please enter your control password (not the hash):"
+msgstr "Veuillez indiquer votre mot de passe de contrôle (et non le 'hash') :"
+
+#: MainWindow#46
+msgid "Relaying is Enabled"
+msgstr "Le relais est activé"
+
+#: MainWindow#47
+msgid "Error starting web browser"
+msgstr "Erreur lors du démarrage du navigateur Web"
+
+#: MainWindow#48
+msgid "Vidalia was unable to start the configured web browser"
+msgstr "Vidalia n'est pas parvenu à démarrer le navigateur Web configuré"
+
+#: MainWindow#49
+msgid "Tor Update Available"
+msgstr "Une mise à jour de Tor est disponible"
+
+#: MainWindow#50
+msgid "The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version."
+msgstr "La version actuellement installée de Tor est obsolète et n'est plus recommandée. Merci de visiter le site Web de Tor pour télécharger la dernière version."
+
+#: MainWindow#51
+msgid "Tor website: %1"
+msgstr "Site Web de Tor : %1"
+
+#: MainWindow#52
+msgid "Error starting proxy server"
+msgstr "Erreur lors du démarrage du serveur mandataire (proxy)"
+
+#: MainWindow#53
+msgid "Vidalia was unable to start the configured proxy server"
+msgstr "VIdalia n'est pas parvenu à démarrer le serveur mandataire (proxy) configuré"
+
+#: MainWindow#54
+msgid "Your relay is shutting down."
+"Click 'Stop' again to stop your relay now."
+msgstr ""
+
+#: MainWindow#55
+msgid "Connection Error"
+msgstr ""
+
+#: MainWindow#56
+msgid "You are currently running a relay. Terminating your relay will interrupt any open connections from clients."
+""
+"Would you like to shutdown gracefully and give clients time to find a new relay?"
+msgstr ""
+
+#: MainWindow#57
+msgid "Error Shutting Down"
+msgstr ""
+
+#: MainWindow#58
+msgid "Vidalia was unable to stop the Tor software."
+msgstr ""
+
+#: MainWindow#59
+msgid "Unexpected Error"
+msgstr ""
+
+#: MainWindow#60
+msgid "Vidalia detected that the Tor software exited unexpectedly."
+""
+"Please check the message log for recent warning or error messages."
+msgstr ""
+
+#: MainWindow#61
+msgid "The Tor software requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one."
+msgstr ""
+
+#: MainWindow#62
+msgid "Data Directory"
+msgstr ""
+
+#: MainWindow#63
+msgid "Control Cookie (control_auth_cookie)"
+msgstr ""
+
+#: MainWindow#64
+msgid "Vidalia was unable to register for some events. Many of Vidalia's features may be unavailable."
+msgstr ""
+
+#: MainWindow#65
+msgid "Authentication Error"
+msgstr ""
+
+#: MainWindow#66
+msgid "Vidalia was unable to authenticate to the Tor software. (%1)"
+msgstr ""
+
+#: MainWindow#67
+msgid "Port Forwarding Failed"
+msgstr ""
+
+#: MainWindow#68
+msgid "Vidalia was unable to configure automatic port forwarding."
+msgstr ""
+
+#: MainWindow#69
+msgid "Status"
+msgstr "État"
+
+#: MainWindow#70
+msgid "Set up a relay and help the network grow"
+msgstr ""
+
+#: MainWindow#71
+msgid "View recent bandwidth usage"
+msgstr ""
+
+#: MainWindow#72
+msgid "View log message history"
+msgstr ""
+
+#: MainWindow#73
+msgid "Configure Vidalia"
+msgstr ""
+
+#: MainWindow#74
+msgid "Start Tor"
+msgstr ""
+
+#: MainWindow#75
+msgid "Error starting IM client"
+msgstr ""
+
+#: MainWindow#76
+msgid "Vidalia was unable to start the configured IM client"
+msgstr ""
+
+#: MainWindow#77
+msgid "Connecting to a relay directory"
+msgstr ""
+
+#: MainWindow#78
+msgid "Establishing an encrypted directory connection"
+msgstr ""
+
+#: MainWindow#79
+msgid "Retrieving network status"
+msgstr ""
+
+#: MainWindow#80
+msgid "Loading network status"
+msgstr ""
+
+#: MainWindow#81
+msgid "Loading authority certificates"
+msgstr ""
+
+#: MainWindow#82
+msgid "Requesting relay information"
+msgstr ""
+
+#: MainWindow#83
+msgid "Loading relay information"
+msgstr ""
+
+#: MainWindow#84
+msgid "Connecting to the Tor network"
+msgstr ""
+
+#: MainWindow#85
+msgid "Establishing a Tor circuit"
+msgstr ""
+
+#: MainWindow#86
+msgid "Connected to the Tor network!"
+msgstr ""
+
+#: MainWindow#87
+msgid "Unrecognized startup status"
+msgstr ""
+
+#: MainWindow#88
+msgid "miscellaneous"
+msgstr ""
+
+#: MainWindow#89
+msgid "identity mismatch"
+msgstr ""
+
+#: MainWindow#90
+msgid "done"
+msgstr ""
+
+#: MainWindow#91
+msgid "connection refused"
+msgstr ""
+
+#: MainWindow#92
+msgid "connection timeout"
+msgstr ""
+
+#: MainWindow#93
+msgid "read/write error"
+msgstr ""
+
+#: MainWindow#94
+msgid "no route to host"
+msgstr ""
+
+#: MainWindow#95
+msgid "insufficient resources"
+msgstr ""
+
+#: MainWindow#96
+msgid "unknown"
+msgstr ""
+
+#: MainWindow#97
+msgid " failed (%1)"
+msgstr ""
+
+#: MainWindow#98
+msgid "Stop Tor Now"
+msgstr ""
+
+#: MainWindow#99
+msgid "Stop Tor"
+msgstr ""
+
+#: MainWindow#100
+msgid "Starting the Tor software"
+msgstr ""
+
+#: MainWindow#101
+msgid "Starting Tor"
+msgstr ""
+
+#: MainWindow#102
+msgid "Tor is Running"
+msgstr ""
+
+#: MainWindow#103
+msgid "Connecting to Tor"
+msgstr ""
+
+#: MainWindow#104
+msgid "Authenticating to Tor"
+msgstr ""
+
+#: MessageLog#1
+msgid "Message Log"
+msgstr "Journal des messages"
+
+#: MessageLog#2
+msgid "Time"
+msgstr "Heure"
+
+#: MessageLog#3
+msgid "Type"
+msgstr "Type"
+
+#: MessageLog#4
+msgid "Message"
+msgstr "Message"
+
+#: MessageLog#5
+msgid "Browse"
+msgstr "Parcourir"
+
+#: MessageLog#6
+msgid "Saves the current Message Log settings"
+msgstr "Enregistrer les options actuelles du Journal des messages"
+
+#: MessageLog#7
+msgid "Save Settings"
+msgstr "Enregistrer les options"
+
+#: MessageLog#8
+msgid "Cancels changes made to settings"
+msgstr "Annuler les modifications"
+
+#: MessageLog#9
+msgid "Cancel"
+msgstr "Annuler"
+
+#: MessageLog#10
+msgid "Message Filter"
+msgstr "Filtrage des messages"
+
+#: MessageLog#11
+msgid "Error"
+msgstr "Erreur"
+
+#: MessageLog#12
+msgid "Warning"
+msgstr "Avertissement"
+
+#: MessageLog#13
+msgid "Notice"
+msgstr "Signalement"
+
+#: MessageLog#14
+msgid "Info"
+msgstr "Information"
+
+#: MessageLog#15
+msgid "Debug"
+msgstr "Débogage"
+
+#: MessageLog#16
+msgid "Message Filters..."
+msgstr "Filtres des messages..."
+
+#: MessageLog#17
+msgid "Set message filters"
+msgstr "Définir les filtres des messages"
+
+#: MessageLog#18
+msgid "History Size..."
+msgstr "Taille de l'historique..."
+
+#: MessageLog#19
+msgid "Set maximum number of messages to display"
+msgstr "Définir le nombre maximal de messages à afficher"
+
+#: MessageLog#20
+msgid "Clear"
+msgstr "Effacer"
+
+#: MessageLog#21
+msgid "Clear all messages from the Message Log (Ctrl+E)"
+msgstr "Effacer tout l'historique du Journal des messages Ctrl+E)"
+
+#: MessageLog#22
+msgid "Ctrl+E"
+msgstr "Ctrl+E"
+
+#: MessageLog#23
+msgid "Copy"
+msgstr "Copier"
+
+#: MessageLog#24
+msgid "Copy the selected messages to the clipboard (Ctrl+C)"
+msgstr "Copier les messages sélectionnés dans le presse-papier (Ctrl+C)"
+
+#: MessageLog#25
+msgid "Ctrl+C"
+msgstr "Ctrl+C"
+
+#: MessageLog#26
+msgid "Select All"
+msgstr "Sélectionner tout"
+
+#: MessageLog#27
+msgid "Select all messages (Ctrl+A)"
+msgstr "Sélectionner tous les messages (Ctrl+A)"
+
+#: MessageLog#28
+msgid "Ctrl+A"
+msgstr "Ctrl+A"
+
+#: MessageLog#29
+msgid "Save All"
+msgstr "Enregistrer tout"
+
+#: MessageLog#30
+msgid "Save all messages to a file"
+msgstr "Enregistrer tous les messages dans un fichier"
+
+#: MessageLog#31
+msgid "Save Selected"
+msgstr "Enregistrer la sélection"
+
+#: MessageLog#32
+msgid "Save selected messages to a file"
+msgstr "Enregistrer les messages sélectionnés dans un fichier"
+
+#: MessageLog#33
+msgid "Close"
+msgstr "Fermer"
+
+#: MessageLog#34
+msgid "Close the Message Log"
+msgstr "Fermer le Journal des messages"
+
+#: MessageLog#35
+msgid "Esc"
+msgstr "Échap"
+
+#: MessageLog#36
+msgid "Find"
+msgstr "Chercher"
+
+#: MessageLog#37
+msgid "Find all messages containing the search text (Ctrl+F)"
+msgstr "Trouver les messages contenant ce texte (Ctrl+F)"
+
+#: MessageLog#38
+msgid "Ctrl+F"
+msgstr "Ctrl+F"
+
+#: MessageLog#39
+msgid "Error Setting Filter"
+msgstr "Erreur lors de l'application d'un filtre"
+
+#: MessageLog#40
+msgid "Error Opening Log File"
+msgstr "Erreur lors de l'ouverture du fichier du Journal"
+
+#: MessageLog#41
+msgid "Select Log File"
+msgstr "Sélectionner le fichier du Journal"
+
+#: MessageLog#42
+msgid "Save Log Messages"
+msgstr "Enregistrer le Journal des messages"
+
+#: MessageLog#43
+msgid "Vidalia"
+msgstr "Vidalia"
+
+#: MessageLog#44
+msgid "Find in Message Log"
+msgstr "Chercher dans le Journal des messages"
+
+#: MessageLog#45
+msgid "Find:"
+msgstr "Chercher :"
+
+#: MessageLog#46
+msgid "Not Found"
+msgstr "Non trouvé"
+
+#: MessageLog#47
+msgid "Search found 0 matches."
+msgstr "La recherche n'a trouvé aucun résultat."
+
+#: MessageLog#48
+msgid "Settings"
+msgstr "Options"
+
+#: MessageLog#49
+msgid "Adjust Message Log Settings"
+msgstr "Ajuster les options du Journal des messages"
+
+#: MessageLog#50
+msgid "Ctrl+T"
+msgstr "Ctrl+T"
+
+#: MessageLog#51
+msgid "Help"
+msgstr "Aide"
+
+#: MessageLog#52
+msgid "Show the help browser"
+msgstr "Parcourir l'aide"
+
+#: MessageLog#53
+msgid "Vidalia was unable to register for Tor's log events."
+msgstr "Vidalia n'a pas pu s'enregistrer pour recevoir les événements de Tor."
+
+#: MessageLog#54
+msgid "Cannot write file %1"
+""
+"%2."
+msgstr "Impossible d'écrire dans le fichier %1"
+""
+"%2."
+
+#: MessageLog#55
+msgid "Vidalia was unable to open the specified log file."
+msgstr "Vidalia n'a pas pu ouvrir le fichier du Journal spécifié."
+
+#: MessageLog#56
+msgid "Text Files (*.txt)"
+msgstr "Fichiers texte (*.txt)"
+
+#: MessageLog#57
+msgid "F1"
+msgstr "F1"
+
+#: MessageLog#58
+msgid "Log Filename Required"
+msgstr "Le nom de fichier du Journal des messages est requis"
+
+#: MessageLog#59
+msgid "You must enter a filename to be able to save log messages to a file."
+msgstr "Vous devez entrer un nom de fichier pour pouvoir enregistrer les messages dans un fichier."
+
+#: MessageLog#60
+msgid "Message Log History"
+msgstr "Historique du Journal"
+
+#: MessageLog#61
+msgid "Number of messages to display in the message log window"
+msgstr "Nombre de messages à afficher dans la fenêtre du Journal des messages"
+
+#: MessageLog#62
+msgid "messages"
+msgstr "messages"
+
+#: MessageLog#63
+msgid "Always Save New Log Messages"
+msgstr "Toujours enregistrer les nouveaux messages du Journal"
+
+#: MessageLog#64
+msgid "Enable automatically saving all new log messages to a file"
+msgstr "Activer l'enregistrement automatique de tous les messages du Journal"
+
+#: MessageLog#65
+msgid "Automatically save new log messages to a file"
+msgstr "Enregistrer les nouveaux messages dans un fichier"
+
+#: MessageLog#66
+msgid "Messages that appear when something has "
+"gone very wrong and Tor cannot proceed."
+msgstr ""
+
+#: MessageLog#67
+msgid "Messages that only appear when "
+"something has gone wrong with Tor."
+msgstr ""
+
+#: MessageLog#68
+msgid "Messages that appear infrequently "
+"during normal Tor operation and are "
+"not considered errors, but you may "
+"care about."
+msgstr ""
+
+#: MessageLog#69
+msgid "Messages that appear frequently "
+"during normal Tor operation."
+msgstr ""
+
+#: MessageLog#70
+msgid "Hyper-verbose messages primarily of "
+"interest to Tor developers."
+msgstr ""
+
+#: NetViewer#1
+msgid "Refresh"
+msgstr "Rafraîchir"
+
+#: NetViewer#2
+msgid "Help"
+msgstr "Aide"
+
+#: NetViewer#3
+msgid "Close"
+msgstr "Fermer"
+
+#: NetViewer#4
+msgid "Zoom In"
+msgstr "Rapprocher"
+
+#: NetViewer#5
+msgid "Zoom Out"
+msgstr "Éloigner"
+
+#: NetViewer#6
+msgid "Show network map help"
+msgstr "Aide de la carte du réseau"
+
+#: NetViewer#7
+msgid "Show the network map help"
+msgstr "Montrer l'aide de la carte du réseau"
+
+#: NetViewer#8
+msgid "Close the network map"
+msgstr "Fermer la carte du réseau"
+
+#: NetViewer#9
+msgid "Zoom in on the network map"
+msgstr "Agrandir l'échelle de la carte du réseau"
+
+#: NetViewer#10
+msgid "Zoom out on the network map"
+msgstr "Réduire l'échelle de la carte du réseau"
+
+#: NetViewer#11
+msgid "Zoom To Fit"
+msgstr "Adapter le zoom"
+
+#: NetViewer#12
+msgid "Zooms to fit all currently displayed circuits"
+msgstr "Adapter le zoom à l'ensemble des circuits actuellement affichés"
+
+#: NetViewer#13
+msgid "Ctrl+R"
+msgstr "Ctrl+R"
+
+#: NetViewer#14
+msgid "F1"
+msgstr "F1"
+
+#: NetViewer#15
+msgid "Esc"
+msgstr "Échap"
+
+#: NetViewer#16
+msgid "+"
+msgstr "+"
+
+#: NetViewer#17
+msgid "-"
+msgstr "-"
+
+#: NetViewer#18
+msgid "Ctrl+Z"
+msgstr "Ctrl+Z"
+
+#: NetViewer#19
+msgid "Tor Network Map"
+msgstr "Carte du réseau Tor"
+
+#: NetViewer#20
+msgid "Refresh the list of Tor relays and connections"
+msgstr "Rafraîchir la liste des relais Tor et des connexions"
+
+#: NetworkPage#1
+msgid "Network"
+msgstr "Réseau"
+
+#: NetworkPage#2
+msgid "Invalid Bridge"
+msgstr "Passerelle invalide"
+
+#: NetworkPage#3
+msgid "The specified bridge identifier is not valid."
+msgstr "L'identifiant de passerelle spécifié est invalide."
+
+#: NetworkPage#4
+msgid "Copy (Ctrl+C)"
+msgstr "Copier (Ctrl+C)"
+
+#: NetworkPage#5
+msgid "You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet."
+msgstr "Vous devez spécifier à la fois une adresse IP ou un nom d'hôte et un numéro de port  pour que Tor puisse utiliser le serveur mandataire (proxy) et accéder à l'Internet."
+
+#: NetworkPage#6
+msgid "You must specify one or more ports to which your firewall allows you to connect."
+msgstr "Vous devez indiquer le ou les ports utilisés par votre parefeu pour vous autoriser à vous connecter."
+
+#: NetworkPage#7
+msgid "'%1' is not a valid port number."
+msgstr "'%1' n'est pas un numéro de port valide."
+
+#: NetworkPage#8
+msgid "I use a proxy to access the Internet"
+msgstr "J'utilise un serveur mandataire (proxy) pour accéder à Internet"
+
+#: NetworkPage#9
+msgid "Proxy Settings"
+msgstr "Paramètres du serveur mandataire (proxy)"
+
+#: NetworkPage#10
+msgid "HTTP Proxy:"
+msgstr "Mandataire HTTP :"
+
+#: NetworkPage#11
+msgid "Username:"
+msgstr "Nom d'utilisateur :"
+
+#: NetworkPage#12
+msgid "Use this proxy for HTTPS also"
+msgstr "Utiliser aussi ce mandataire pour HTTPS"
+
+#: NetworkPage#13
+msgid "Password:"
+msgstr "Mot de passe :"
+
+#: NetworkPage#14
+msgid "Port:"
+msgstr "Port :"
+
+#: NetworkPage#15
+msgid "My firewall only lets me connect to certain ports"
+msgstr "Mon parefeu me laisse me connecter seulement à certains ports"
+
+#: NetworkPage#16
+msgid "Firewall Settings"
+msgstr "Paramètres du parefeu"
+
+#: NetworkPage#17
+msgid "Allowed Ports:"
+msgstr "Ports autorisés :"
+
+#: NetworkPage#18
+msgid "80, 443"
+msgstr "80, 443"
+
+#: NetworkPage#19
+msgid "My ISP blocks connections to the Tor network"
+msgstr "Mon fournisseur d'accès à Internet bloque les connexions au réseau Tor"
+
+#: NetworkPage#20
+msgid "Add a Bridge:"
+msgstr "Ajouter une passerelle :"
+
+#: NetworkPage#21
+msgid "Remove the selected bridges from the list"
+msgstr "Supprimer de la liste les passerelles sélectionnées"
+
+#: NetworkPage#22
+msgid "Copy the selected bridges to the clipboard"
+msgstr "Copier les passerelles sélectionnées dans e presse-papier"
+
+#: NetworkPage#23
+msgid "<a href="bridges.finding">How do I find a bridge?</a>"
+msgstr "<a href="bridges.finding">Comment puis-je trouver un relais passerelle ?</a>"
+
+#: NetworkPage#24
+msgid "Check if your local network requires a proxy to access the Internet"
+msgstr ""
+
+#: NetworkPage#25
+msgid "Check to only connect to relays using ports allowed by your firewall"
+msgstr ""
+
+#: NetworkPage#26
+msgid "Check to encrypt directory requests and, optionally, use bridge relays to access the Tor network"
+msgstr ""
+
+#: NetworkPage#27
+msgid "Bridge Settings"
+msgstr ""
+
+#: NetworkPage#28
+msgid "The Tor software you are currently running does not support bridges. <br>Directory connections will still be encrypted."
+msgstr ""
+
+#: Policy#1
+msgid "accept"
+msgstr "accepter"
+
+#: Policy#2
+msgid "reject"
+msgstr "rejeter"
+
+#: RouterDescriptor#1
+msgid "Online"
+msgstr "En ligne"
+
+#: RouterDescriptor#2
+msgid "Hibernating"
+msgstr "Hibernation"
+
+#: RouterDescriptor#3
+msgid "Offline"
+msgstr "Hors ligne"
+
+#: RouterDescriptorView#1
+msgid "IP Address:"
+msgstr "Adresse IP : "
+
+#: RouterDescriptorView#2
+msgid "Platform:"
+msgstr "Plateforme : "
+
+#: RouterDescriptorView#3
+msgid "Bandwidth:"
+msgstr "Bande passante : "
+
+#: RouterDescriptorView#4
+msgid "Uptime:"
+msgstr "Durée de fonctionnement : "
+
+#: RouterDescriptorView#5
+msgid "Last Updated:"
+msgstr "Dernière mise à jour : "
+
+#: RouterDescriptorView#6
+msgid "Location:"
+msgstr "Localisation : "
+
+#: RouterDescriptorView#7
+msgid "%1 days "
+msgstr ""
+
+#: RouterDescriptorView#8
+msgid "%1 hours "
+msgstr ""
+
+#: RouterDescriptorView#9
+msgid "%1 mins "
+msgstr ""
+
+#: RouterDescriptorView#10
+msgid "%1 secs"
+msgstr ""
+
+#: RouterListItem#1
+msgid "%1 KB/s"
+msgstr "%1 Kio/s"
+
+#: RouterListItem#2
+msgid "Offline"
+msgstr "Hors ligne"
+
+#: RouterListItem#3
+msgid "Hibernating"
+msgstr "Hibernation"
+
+#: RouterListWidget#1
+msgid "Relay"
+msgstr "Relais"
+
+#: RouterListWidget#2
+msgid "Zoom to Relay"
+msgstr "Zoomer sur le relais"
+
+#: RouterListWidget#3
+msgid "%1 relays online"
+msgstr ""
+
+#: ServerPage#1
+msgid "Relay traffic for the Tor network"
+msgstr "Relayer le trafic pour le réseau Tor"
+
+#: ServerPage#2
+msgid "Directory Port:"
+msgstr "Port de l'annuaire : "
+
+#: ServerPage#3
+msgid "Nickname:"
+msgstr "Surnom : "
+
+#: ServerPage#4
+msgid "Contact Info:"
+msgstr "Info. de contact :"
+
+#: ServerPage#5
+msgid "Exit Policies"
+msgstr "Politiques de sortie"
+
+#: ServerPage#6
+msgid "Show help topic on exit policies"
+msgstr "Afficher la rubrique d'aide des politiques de sortie"
+
+#: ServerPage#7
+msgid "Long-term average bandwidth limit"
+msgstr "Limite à long terme du taux moyen de la bande passante"
+
+#: ServerPage#8
+msgid "Average Rate"
+msgstr "Taux moyen"
+
+#: ServerPage#9
+msgid "KB/s"
+msgstr "Kio/s"
+
+#: ServerPage#10
+msgid "Peak bandwidth rate limit"
+msgstr "Pic maximal du taux de bande passante"
+
+#: ServerPage#11
+msgid "Maximum Rate"
+msgstr "Taux maximal"
+
+#: ServerPage#12
+msgid "Show help topic on bandwidth rate limits"
+msgstr "Afficher la rubrique d'aide sur la limitation de la bande passante"
+
+#: ServerPage#13
+msgid "Directory Port Number"
+msgstr "Numéro du port de l'annuaire"
+
+#: ServerPage#14
+msgid "Basic Settings"
+msgstr "Options de base"
+
+#: ServerPage#15
+msgid "Bandwidth Limits"
+msgstr "Limites de la bande passante"
+
+#: ServerPage#16
+msgid "For Internet connections with fast download speed but slow upload, please list your upload speed here."
+msgstr "Merci d'indiquer votre vitesse en montée si votre connexion a une vitesse élevée en descente mais lente en montée."
+
+#: ServerPage#17
+msgid "Select the entry that most closely resembles your Internet connection"
+msgstr "Sélectionner dans la liste déroulante l'entrée qui se rapproche le plus de votre connexion Internet"
+
+#: ServerPage#18
+msgid "Cable/DSL 256 Kbps"
+msgstr "Câble/ADSL 256 kbit/s"
+
+#: ServerPage#19
+msgid "Cable/DSL 512 Kbps"
+msgstr "Câble/ADSL 512 kbit/s"
+
+#: ServerPage#20
+msgid "Cable/DSL 768 Kbps"
+msgstr "Câble/ADSL 768 kbit/s"
+
+#: ServerPage#21
+msgid "T1/Cable/DSL 1.5 Mbps"
+msgstr "T1/Câble/ADSL 1.5 Mbit/s"
+
+#: ServerPage#22
+msgid "> 1.5 Mbps"
+msgstr "> 1.5 Mbit/s"
+
+#: ServerPage#23
+msgid "Custom"
+msgstr "Personnalisé"
+
+#: ServerPage#24
+msgid "Ports 6660 - 6669 and 6697"
+msgstr "Ports 6660 - 6669 et 6697"
+
+#: ServerPage#25
+msgid "Internet Relay Chat (IRC)"
+msgstr "Chat (IRC)"
+
+#: ServerPage#26
+msgid "Ports 110, 143, 993 and 995"
+msgstr "Ports 110, 143, 993 et 995"
+
+#: ServerPage#27
+msgid "Retrieve Mail (POP, IMAP)"
+msgstr "Téléchargement des courriels (POP, IMAP)"
+
+#: ServerPage#28
+msgid "Ports unspecified by other checkboxes"
+msgstr "Ports non spécifiés par d'autres choix prédéfinis"
+
+#: ServerPage#29
+msgid "Misc Other Services"
+msgstr "Autres services"
+
+#: ServerPage#30
+msgid "Instant Messaging (IM)"
+msgstr "Messagerie instantanée (IM)"
+
+#: ServerPage#31
+msgid "Port 443"
+msgstr "Port 443"
+
+#: ServerPage#32
+msgid "Secure Websites (SSL)"
+msgstr "Sites Web sécurisés (SSL)"
+
+#: ServerPage#33
+msgid "Port 80"
+msgstr "Port 80"
+
+#: ServerPage#34
+msgid "Websites"
+msgstr "Sites Web"
+
+#: ServerPage#35
+msgid "Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s."
+msgstr "Votre taux de bande passante maximal doit être supérieur ou égal à votre taux de bande passante moyen. Les deux valeurs doivent être supérieur ou égal à 20 Kio/s."
+
+#: ServerPage#36
+msgid "Server"
+msgstr "Serveur"
+
+#: ServerPage#37
+msgid "Bridge Support Unavailable"
+msgstr "Le support pour la passerelle est indisponible"
+
+#: ServerPage#38
+msgid "You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges."
+msgstr "Vous avez configuré Tor en tant que relais passerelle pour les utilisateurs censurés, mais la version de Tor que vous utilisez ne supporte pas les passerelles."
+
+#: ServerPage#39
+msgid "Please upgrade your Tor software or configure Tor to act as a normal Tor relay."
+msgstr "Merci de mettre à jour Tor ou de configurer votre version actuelle pour agir en tant que relais Tor normal."
+
+#: ServerPage#40
+msgid "You must specify at least a relay nickname and port."
+msgstr "Vous devez spécifier au moins un surnom de relais et un port."
+
+#: ServerPage#41
+msgid "Relay Port:"
+msgstr "Port relais :"
+
+#: ServerPage#42
+msgid "Email address at which you may be reached if there is a"
+"problem with your relay. You might also include your PGP or GPG fingerprint."
+msgstr "Adresse électronique à laquelle vous pouvez être contacté"
+"en cas de problème avec votre relais. Vous pouvez également"
+"indiquer votre identifiant PGP ou GPG."
+
+#: ServerPage#43
+msgid "Mirror the Relay Directory "
+msgstr "Servir de miroir à l'annuaire des relais"
+
+#: ServerPage#44
+msgid "Your bridge relay is not running."
+msgstr "Votre relais passerelle n'est pas actif."
+
+#: ServerPage#45
+msgid "Help censored users reach the Tor network (Tor 0.2.0.8-alpha or newer)"
+msgstr "Aider les utilisateurs censurés à accéder au réseau Tor (Tor 0.2.0.8-alpha ou plus récent)"
+
+#: ServerPage#46
+msgid "Name of your relay"
+msgstr "Nom de votre relais"
+
+#: ServerPage#47
+msgid "Port on which users and other relays can communicate with your relay"
+msgstr "Port par lequel les utilisateurs et les autres relais peuvent communiquer avec votre relais"
+
+#: ServerPage#48
+msgid "Let others access your bridge by giving them this line:"
+msgstr "Permettre aux utilisateurs d'accéder à votre passerelle en leur donnant cette ligne :"
+
+#: ServerPage#49
+msgid "This is the identity of your bridge relay that you can give to other people"
+msgstr "Il s'agit de l'identité de votre passerelle ; vous pouvez la communiquer aux personnes que vous souhaitez"
+
+#: ServerPage#50
+msgid "Copy your bridge relay's identity to the clipboard"
+msgstr "Copier l'identité de votre passerelle dans le presse-papier"
+
+#: ServerPage#51
+msgid "Run as a client only"
+msgstr ""
+
+#: ServerPage#52
+msgid "Enable to mirror the relay directory"
+msgstr ""
+
+#: ServerPage#53
+msgid "Attempt to automatically configure port forwarding"
+msgstr ""
+
+#: ServerPage#54
+msgid "Test"
+msgstr ""
+
+#: ServerPage#55
+msgid "Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 and 8888"
+msgstr "Ports 706, 1863, 5050, 5190, 5222, 8300 et 8888 {706, 1863, 5050, 5190, 5222, 5223, 8300 ?}"
+
+#: ServerPage#56
+msgid "What Internet resources should users be able to access from your relay?"
+msgstr ""
+
+#: ServerPage#57
+msgid "Show help topic on port forwarding"
+msgstr ""
+
+#: ServicePage#1
+msgid "Services"
+msgstr ""
+
+#: ServicePage#2
+msgid "Error while trying to unpublish all services"
+msgstr ""
+
+#: ServicePage#3
+msgid "Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones."
+msgstr ""
+
+#: ServicePage#4
+msgid "Error"
+msgstr "Erreur"
+
+#: ServicePage#5
+msgid "Please select a Service."
+msgstr ""
+
+#: ServicePage#6
+msgid "Select Service Directory"
+msgstr ""
+
+#: ServicePage#7
+msgid "Virtual Port may only contain valid port numbers [1..65535]."
+msgstr ""
+
+#: ServicePage#8
+msgid "Target may only contain address:port, address, or port."
+msgstr ""
+
+#: ServicePage#9
+msgid "Directory already in use by another service."
+msgstr ""
+
+#: ServicePage#10
+msgid "Form"
+msgstr ""
+
+#: ServicePage#11
+msgid "Provided Hidden Services"
+msgstr ""
+
+#: ServicePage#12
+msgid "Onion Address"
+msgstr ""
+
+#: ServicePage#13
+msgid "Virtual Port"
+msgstr ""
+
+#: ServicePage#14
+msgid "Target"
+msgstr ""
+
+#: ServicePage#15
+msgid "Directory Path"
+msgstr ""
+
+#: ServicePage#16
+msgid "Enabled"
+msgstr ""
+
+#: ServicePage#17
+msgid "Add new service to list"
+msgstr ""
+
+#: ServicePage#18
+msgid "Remove selected service from list"
+msgstr ""
+
+#: ServicePage#19
+msgid "Copy onion address of selected service to clipboard"
+msgstr ""
+
+#: ServicePage#20
+msgid "Browse in local file system and choose directory for selected service"
+msgstr ""
+
+#: Stream#1
+msgid "New"
+msgstr "Nouveau"
+
+#: Stream#2
+msgid "Resolving"
+msgstr "Résolution"
+
+#: Stream#3
+msgid "Connecting"
+msgstr "Connexion"
+
+#: Stream#4
+msgid "Open"
+msgstr "Ouvert"
+
+#: Stream#5
+msgid "Failed"
+msgstr "Échec"
+
+#: Stream#6
+msgid "Closed"
+msgstr "Fermé"
+
+#: Stream#7
+msgid "Unknown"
+msgstr "Inconnu"
+
+#: Stream#8
+msgid "Retrying"
+msgstr "Réessai"
+
+#: Stream#9
+msgid "Remapped"
+msgstr "'Remappé'"
+
+#: TorProcess#1
+msgid "Process %1 failed to stop. [%2]"
+msgstr "Le processus %1 ne s'est pas arrêté. [%2]"
+
+#: TorService#1
+msgid "The Tor service is not installed."
+msgstr "Le service Tor n'est pas installé."
+
+#: TorService#2
+msgid "Unable to start the Tor service."
+msgstr "Le service Tor n'a pas pu être démarré."
+
+#: TorSettings#1
+msgid "Failed to hash the control password."
+msgstr "Échec lors du hashage du mot de passe de contrôle."
+
+#: UPNPControl#1
+msgid "Success"
+msgstr ""
+
+#: UPNPControl#2
+msgid "No UPnP-enabled devices found"
+msgstr ""
+
+#: UPNPControl#3
+msgid "No valid UPnP-enabled Internet gateway devices found"
+msgstr ""
+
+#: UPNPControl#4
+msgid "WSAStartup failed"
+msgstr ""
+
+#: UPNPControl#5
+msgid "Failed to add a port mapping"
+msgstr ""
+
+#: UPNPControl#6
+msgid "Failed to retrieve a port mapping"
+msgstr ""
+
+#: UPNPControl#7
+msgid "Failed to remove a port mapping"
+msgstr ""
+
+#: UPNPControl#8
+msgid "Unknown error"
+msgstr ""
+
+#: UPNPTestDialog#1
+msgid "Discovering UPnP-enabled devices"
+msgstr ""
+
+#: UPNPTestDialog#2
+msgid "Updating directory port mapping"
+msgstr ""
+
+#: UPNPTestDialog#3
+msgid "Updating relay port mapping"
+msgstr ""
+
+#: UPNPTestDialog#4
+msgid "Test completed successfully!"
+msgstr ""
+
+#: UPNPTestDialog#5
+msgid "Testing UPnP Support"
+msgstr ""
+
+#: UPNPTestDialog#6
+msgid "Testing Universal Plug & Play Support"
+msgstr ""
+
+#: VMessageBox#1
+msgid "OK"
+msgstr "OK"
+
+#: VMessageBox#2
+msgid "Cancel"
+msgstr "Annuler"
+
+#: VMessageBox#3
+msgid "Yes"
+msgstr "Oui"
+
+#: VMessageBox#4
+msgid "No"
+msgstr "Non"
+
+#: VMessageBox#5
+msgid "Help"
+msgstr "Aide"
+
+#: VMessageBox#6
+msgid "Retry"
+msgstr "Réessayer"
+
+#: VMessageBox#7
+msgid "Show Log"
+msgstr "Voir le Journal"
+
+#: VMessageBox#8
+msgid "Show Settings"
+msgstr "Afficher les options"
+
+#: VMessageBox#9
+msgid "Continue"
+msgstr "Continuer"
+
+#: VMessageBox#10
+msgid "Quit"
+msgstr "Quitter"
+
+#: VMessageBox#11
+msgid "Browse"
+msgstr "Parcourir"
+
+#: Vidalia#1
+msgid "Invalid language code specified: "
+msgstr "Code de langue spécifié invalide : "
+
+#: Vidalia#2
+msgid "Invalid GUI style specified: "
+msgstr "Style d'interface spécifié invalide : "
+
+#: Vidalia#3
+msgid "Vidalia is already running"
+msgstr "Vidalia fonctionne déjà "
+
+#: Vidalia#4
+msgid "Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway."
+""
+"Would you like to continue starting Vidalia?"
+msgstr "Une autre instance de Vidalia est probablement déjà lancée. Si vous êtes sûr qu'aucune autre instance de Vidalia n'est en cours de fonctionnement, vous pouvez choisir de continuer tout de même."
+""
+"Voulez-vous continuer le démarrage de Vidalia ?"
+
+#: Vidalia#5
+msgid "Invalid Argument"
+msgstr "Argument invalide"
+
+#: Vidalia#6
+msgid "Displays this usage message and exits."
+msgstr "Affiche ce message et quitte."
+
+#: Vidalia#7
+msgid "Resets ALL stored Vidalia settings."
+msgstr "Réinitialiser TOUS les paramètres utilisés par Vidalia."
+
+#: Vidalia#8
+msgid "Sets the directory Vidalia uses for data files."
+msgstr "Définir le dossier que Vidalia utiliser pour enregistrer les fichiers de données."
+
+#: Vidalia#9
+msgid "Sets the name and location of Vidalia's pidfile."
+msgstr "Définir le nom et le chemin du fichier d'identification du processus Vidalia (pidfile)."
+
+#: Vidalia#10
+msgid "Sets the name and location of Vidalia's logfile."
+msgstr "Définir le nom et le chemin du fichier du Journal des messages de Vidalia."
+
+#: Vidalia#11
+msgid "Sets the verbosity of Vidalia's logging."
+msgstr "Indiquer le degré de verbosité du Journal des messages de Vidalia."
+
+#: Vidalia#12
+msgid "Sets Vidalia's interface style."
+msgstr "Choisir le style de l'interface de Vidalia."
+
+#: Vidalia#13
+msgid "Sets Vidalia's language."
+msgstr "Choisir la langue de Vidalia."
+
+#: Vidalia#14
+msgid "Vidalia Usage Information"
+msgstr "Information sur l'usage de Vidalia"
+
+#: Vidalia#15
+msgid "Invalid log level specified: "
+msgstr "Niveau de gravité des messages invalide :"
+
+#: Vidalia#16
+msgid "Unable to open log file '%1': %2"
+msgstr "Impossible d'ouvrir le fichier du Journal des messages '%1': %2"
+

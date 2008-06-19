@@ -1,0 +1,2158 @@
+#,fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Vidalia\n"
+"Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
+"POT-Creation-Date: 2008-06-19 02:15+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: translations@vidalia-project.net\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Vidalia ts2po 0.1\n"
+
+#: AboutDialog#1
+msgid "About Vidalia"
+msgstr "关于 Vidalia"
+
+#: AboutDialog#2
+msgid "Vidalia"
+msgstr "Vidalia"
+
+#: AboutDialog#3
+msgid "Tor"
+msgstr "Tor"
+
+#: AboutDialog#4
+msgid "Qt"
+msgstr "Qt"
+
+#: AboutDialog#5
+msgid "Qt Version"
+msgstr "Qt 版本"
+
+#: AboutDialog#6
+msgid "Tor Version"
+msgstr "Tor 版本"
+
+#: AboutDialog#7
+msgid "Vidalia Version"
+msgstr "Vidalia 版本"
+
+#: AboutDialog#8
+msgid "<Not Running>"
+msgstr "<未运行>"
+
+#: AboutDialog#9
+msgid "<Unavailable>"
+msgstr "<不可用>"
+
+#: AdvancedPage#1
+msgid "Control Port"
+msgstr "控制端口"
+
+#: AdvancedPage#2
+msgid "Browse"
+msgstr "浏览"
+
+#: AdvancedPage#3
+msgid "Permissions"
+msgstr "权限"
+
+#: AdvancedPage#4
+msgid "Run as User:"
+msgstr "作为以下用户运行:"
+
+#: AdvancedPage#5
+msgid "Vidalia will run with this User's permissions"
+msgstr "Vidalia 将会使用该用户的权限运行"
+
+#: AdvancedPage#6
+msgid "Run as Group:"
+msgstr "作为以下用户组运行:"
+
+#: AdvancedPage#7
+msgid "Vidalia will run with this Group's permissions"
+msgstr "Vidalia 将会使用该用户组的权限运行"
+
+#: AdvancedPage#8
+msgid "Select Tor Configuration File"
+msgstr "请选择 Tor 配置文件"
+
+#: AdvancedPage#9
+msgid "File Not Found"
+msgstr "未找到该文件"
+
+#: AdvancedPage#10
+msgid "%1 does not exist. Would you like to create it?"
+msgstr "%1 不存在.请问是否要创建该文件?"
+
+#: AdvancedPage#11
+msgid "Failed to Create File"
+msgstr "创建文件失败"
+
+#: AdvancedPage#12
+msgid "Unable to create %1 [%2]"
+msgstr "无法创建 %1 [%2]"
+
+#: AdvancedPage#13
+msgid "Unable to remove Tor Service"
+msgstr "无法移除 Tor 服务"
+
+#: AdvancedPage#14
+msgid "Unable to install Tor Service"
+msgstr "无法安装 Tor 服务"
+
+#: AdvancedPage#15
+msgid "Vidalia was unable to install the Tor service."
+msgstr "Vidalia 无法安装 Tor 为系统服务."
+
+#: AdvancedPage#16
+msgid "Vidalia was unable to remove the Tor service."
+""
+"You may need to remove it manually."
+msgstr "Vidalia 无法移除 Tor 服务.请手动移除(或禁用该服务)."
+
+#: AdvancedPage#17
+msgid "'%1' is not a valid IP address."
+msgstr "'%1' 并非有效 IP 地址."
+
+#: AdvancedPage#18
+msgid ":"
+msgstr ":"
+
+#: AdvancedPage#19
+msgid "You selected 'Password' authentication, but did not specify a password."
+msgstr "你选择了 '密码' 验证方式,而你并未指定密码."
+
+#: AdvancedPage#20
+msgid "Select a Directory to Use for Tor Data"
+msgstr "请选择一个用于保存 Tor 数据的文件夹"
+
+#: AdvancedPage#21
+msgid "Authentication:"
+msgstr "验证:"
+
+#: AdvancedPage#22
+msgid "Address:"
+msgstr "地址:"
+
+#: AdvancedPage#23
+msgid "Cookie"
+msgstr "Cookie"
+
+#: AdvancedPage#24
+msgid "Password"
+msgstr "密码"
+
+#: AdvancedPage#25
+msgid "Randomly Generate"
+msgstr "随机生成"
+
+#: AdvancedPage#26
+msgid "None"
+msgstr "无"
+
+#: AdvancedPage#27
+msgid "Advanced"
+msgstr "高级"
+
+#: AdvancedPage#28
+msgid "Start the Tor software with the specified configuration file (torrc)"
+msgstr ""
+
+#: AdvancedPage#29
+msgid "Select path to your configuration file"
+msgstr ""
+
+#: AdvancedPage#30
+msgid "Data Directory"
+msgstr ""
+
+#: AdvancedPage#31
+msgid "Store data for the Tor software in the following directory"
+msgstr ""
+
+#: AdvancedPage#32
+msgid "Select the directory used to store data for the Tor software"
+msgstr ""
+
+#: AdvancedPage#33
+msgid "Tor Configuration File"
+msgstr ""
+
+#: AppearancePage#1
+msgid "Language"
+msgstr "语言"
+
+#: AppearancePage#2
+msgid "Choose the language used in Vidalia"
+msgstr "请选择用于 Vidalia 界面显示的语言"
+
+#: AppearancePage#3
+msgid "Changes to language will only take effect after restarting Vidalia!"
+msgstr "注意:界面语言的变更需要重新启动 Vidalia 程序!"
+
+#: AppearancePage#4
+msgid "Style"
+msgstr "风格"
+
+#: AppearancePage#5
+msgid "Choose Vidalia's interface style"
+msgstr "请选择 Vidalia 的界面风格"
+
+#: AppearancePage#6
+msgid "Appearance"
+msgstr "外观"
+
+#: BandwidthGraph#1
+msgid "Tor Bandwidth Usage"
+msgstr "Tor 带宽使用"
+
+#: BandwidthGraph#2
+msgid "Show Settings"
+msgstr "显示设定"
+
+#: BandwidthGraph#3
+msgid "Reset"
+msgstr "复位设定"
+
+#: BandwidthGraph#4
+msgid "Receive Rate"
+msgstr "接收率"
+
+#: BandwidthGraph#5
+msgid "Send Rate"
+msgstr "发送率"
+
+#: BandwidthGraph#6
+msgid "Changes the transparency of the Bandwidth Graph"
+msgstr "请选择带宽显示图形的透明度"
+
+#: BandwidthGraph#7
+msgid "Save"
+msgstr "保存"
+
+#: BandwidthGraph#8
+msgid "Cancel"
+msgstr "取消"
+
+#: BandwidthGraph#9
+msgid "Since:"
+msgstr "起始时间:"
+
+#: BandwidthGraph#10
+msgid "100"
+msgstr "100"
+
+#: BandwidthGraph#11
+msgid "% Opaque"
+msgstr "% 不透明"
+
+#: BandwidthGraph#12
+msgid "Hide Settings"
+msgstr "隐藏设定"
+
+#: BandwidthGraph#13
+msgid "Always on Top"
+msgstr "总在最上"
+
+#: BandwidthGraph#14
+msgid "Style"
+msgstr "风格"
+
+#: Circuit#1
+msgid "New"
+msgstr "新建"
+
+#: Circuit#2
+msgid "Open"
+msgstr "打开"
+
+#: Circuit#3
+msgid "Building"
+msgstr "正在建立"
+
+#: Circuit#4
+msgid "Failed"
+msgstr "失败"
+
+#: Circuit#5
+msgid "Closed"
+msgstr "已关闭"
+
+#: Circuit#6
+msgid "Unknown"
+msgstr "未知"
+
+#: CircuitItem#1
+msgid "<Path Empty>"
+msgstr "<空路径>"
+
+#: CircuitListWidget#1
+msgid "Connection"
+msgstr "连接"
+
+#: CircuitListWidget#2
+msgid "Status"
+msgstr "状态"
+
+#: CircuitListWidget#3
+msgid "Zoom to Circuit"
+msgstr "缩放至回路"
+
+#: CircuitListWidget#4
+msgid "Close Circuit (Del)"
+msgstr ""
+
+#: CircuitListWidget#5
+msgid "Close Stream (Del)"
+msgstr ""
+
+#: ConfigDialog#1
+msgid "General"
+msgstr "常规"
+
+#: ConfigDialog#2
+msgid "Advanced"
+msgstr "高级"
+
+#: ConfigDialog#3
+msgid "Cancel"
+msgstr "取消"
+
+#: ConfigDialog#4
+msgid "Appearance"
+msgstr "外观"
+
+#: ConfigDialog#5
+msgid "Help"
+msgstr "帮助"
+
+#: ConfigDialog#6
+msgid "Settings"
+msgstr "设定"
+
+#: ConfigDialog#7
+msgid "Network"
+msgstr "网络"
+
+#: ConfigDialog#8
+msgid "Error Saving Settings"
+msgstr "保存设定时发生错误"
+
+#: ConfigDialog#9
+msgid "Vidalia was unable to save your %1 settings."
+msgstr "Vidalia 无法保存你的 %1 设定."
+
+#: ConfigDialog#10
+msgid "Error Applying Settings"
+msgstr "应用设定时发生错误"
+
+#: ConfigDialog#11
+msgid "Vidalia was unable to apply your %1 settings to Tor."
+msgstr "Vidalia 无法应用你的 %1 设定于 Tor."
+
+#: ConfigDialog#12
+msgid "OK"
+msgstr "确定"
+
+#: ConfigDialog#13
+msgid "Sharing"
+msgstr ""
+
+#: ConfigDialog#14
+msgid "Services"
+msgstr ""
+
+#: ControlConnection#1
+msgid "Control socket is not connected."
+msgstr "控制接口当前未连接."
+
+#: ControlConnection#2
+msgid "Vidalia was unable to connect to Tor. (%1)"
+msgstr "Vidalia 无法连接至 Tor. (%1)"
+
+#: ControlSocket#1
+msgid "Error sending control command. [%1]"
+msgstr "发送控制命令时发生错误. [%1]"
+
+#: ControlSocket#2
+msgid "Socket disconnected while attempting to read a line of data."
+msgstr "当尝试读取数据时意外断开接口连接."
+
+#: ControlSocket#3
+msgid "Invalid control reply. [%1]"
+msgstr "无效控制回应. [%1]"
+
+#: ControlSocket#4
+msgid "Control socket is not connected."
+msgstr "控制接口当前未连接."
+
+#: GeneralPage#1
+msgid "Browse"
+msgstr "浏览"
+
+#: GeneralPage#2
+msgid "Select Path to Tor"
+msgstr "请选择 Tor 的路径"
+
+#: GeneralPage#3
+msgid "Executables (*.exe)"
+msgstr "应用程序 (*.exe)"
+
+#: GeneralPage#4
+msgid "General"
+msgstr "常规"
+
+#: GeneralPage#5
+msgid "You must specify the name of your Tor executable."
+msgstr ""
+
+#: GeneralPage#6
+msgid "Select Proxy Executable"
+msgstr ""
+
+#: GeneralPage#7
+msgid "The proxy arguments specified are not properly formatted."
+msgstr ""
+
+#: GeneralPage#8
+msgid "Start Vidalia when my system starts"
+msgstr ""
+
+#: GeneralPage#9
+msgid "Start a proxy application when Vidalia starts"
+msgstr ""
+
+#: GeneralPage#10
+msgid "Proxy Executable"
+msgstr ""
+
+#: GeneralPage#11
+msgid "Command Line Arguments:"
+msgstr ""
+
+#: GeneralPage#12
+msgid "Start the Tor software when Vidalia starts"
+msgstr ""
+
+#: GeneralPage#13
+msgid "Tor Executable"
+msgstr ""
+
+#: GraphFrame#1
+msgid "Recv: "
+msgstr "已接收: "
+
+#: GraphFrame#2
+msgid "Sent: "
+msgstr "已发送: "
+
+#: GraphFrame#3
+msgid "%1 KB"
+msgstr "%1 KB"
+
+#: GraphFrame#4
+msgid "%1 MB"
+msgstr "%1 MB"
+
+#: GraphFrame#5
+msgid "%1 GB"
+msgstr "%1 GB"
+
+#: GraphFrame#6
+msgid "%1 KB/s"
+msgstr "%1 KB/s"
+
+#: HelpBrowser#1
+msgid "Vidalia Help"
+msgstr "Vidalia 帮助"
+
+#: HelpBrowser#2
+msgid "Find Previous"
+msgstr "查找上一个"
+
+#: HelpBrowser#3
+msgid "Find Next"
+msgstr "查找下一个"
+
+#: HelpBrowser#4
+msgid "Case sensitive"
+msgstr "区分大小写"
+
+#: HelpBrowser#5
+msgid "Contents"
+msgstr "目录"
+
+#: HelpBrowser#6
+msgid "Help Topics"
+msgstr "帮助主题"
+
+#: HelpBrowser#7
+msgid "Search"
+msgstr "搜索"
+
+#: HelpBrowser#8
+msgid "Found Documents"
+msgstr "搜索结果"
+
+#: HelpBrowser#9
+msgid "Back"
+msgstr "返回"
+
+#: HelpBrowser#10
+msgid "Move to previous page (Backspace)"
+msgstr "移动至上一页(Backspace)"
+
+#: HelpBrowser#11
+msgid "Backspace"
+msgstr "Backspace"
+
+#: HelpBrowser#12
+msgid "Forward"
+msgstr "前进"
+
+#: HelpBrowser#13
+msgid "Move to next page (Shift+Backspace)"
+msgstr "移动至下一页(Shift+Backspace)"
+
+#: HelpBrowser#14
+msgid "Shift+Backspace"
+msgstr "Shift+Backspace"
+
+#: HelpBrowser#15
+msgid "Home"
+msgstr "主页"
+
+#: HelpBrowser#16
+msgid "Move to the Home page (Ctrl+H)"
+msgstr "移动至主页(Ctrl+H)"
+
+#: HelpBrowser#17
+msgid "Ctrl+H"
+msgstr "Ctrl+H"
+
+#: HelpBrowser#18
+msgid "Find"
+msgstr "查找"
+
+#: HelpBrowser#19
+msgid "Search for a word or phrase on current page (Ctrl+F)"
+msgstr "在当前页搜索关键词或语句(Ctrl+F)"
+
+#: HelpBrowser#20
+msgid "Ctrl+F"
+msgstr "Ctrl+F"
+
+#: HelpBrowser#21
+msgid "Close"
+msgstr "关闭"
+
+#: HelpBrowser#22
+msgid "Close Vidalia Help"
+msgstr "关闭 Vidalia 帮助"
+
+#: HelpBrowser#23
+msgid "Esc"
+msgstr "Esc"
+
+#: HelpBrowser#24
+msgid "Error Loading Help Contents: "
+msgstr "读取帮助出错: "
+
+#: HelpBrowser#25
+msgid "Search reached end of document"
+msgstr "搜索已到达文档底部"
+
+#: HelpBrowser#26
+msgid "Search reached start of document"
+msgstr "搜索已到达文档顶部"
+
+#: HelpBrowser#27
+msgid "Text not found in document"
+msgstr "搜索内容未找到"
+
+#: HelpBrowser#28
+msgid "Find:"
+msgstr "查找:"
+
+#: HelpBrowser#29
+msgid "Whole words only"
+msgstr "匹配全部"
+
+#: HelpBrowser#30
+msgid "Searching for:"
+msgstr "搜索:"
+
+#: HelpBrowser#31
+msgid "Supplied XML file is not a valid Contents document."
+msgstr "所提供的 XML 文档并非有效的目录文档."
+
+#: HelpBrowser#32
+msgid "Found %1 results"
+msgstr "发现 %1 个结果"
+
+#: HelpTextBrowser#1
+msgid "Error opening help file: "
+msgstr "打开帮助文件时发生错误:"
+
+#: HelpTextBrowser#2
+msgid "Opening External Link"
+msgstr ""
+
+#: HelpTextBrowser#3
+msgid "Vidalia can open the link you selected in your default Web browser. If your browser is not currently configured to use Tor then the request will not be anonymous."
+msgstr ""
+
+#: HelpTextBrowser#4
+msgid "Do you want Vidalia to open the link in your Web browser?"
+msgstr ""
+
+#: HelpTextBrowser#5
+msgid "Unable to Open Link"
+msgstr ""
+
+#: HelpTextBrowser#6
+msgid "Vidalia was unable to open the selected link in your Web browser. You can still copy the URL and paste it into your browser."
+msgstr ""
+
+#: LogEvent#1
+msgid "Debug"
+msgstr "调试"
+
+#: LogEvent#2
+msgid "Info"
+msgstr "信息"
+
+#: LogEvent#3
+msgid "Notice"
+msgstr "注意"
+
+#: LogEvent#4
+msgid "Warning"
+msgstr "警告"
+
+#: LogEvent#5
+msgid "Error"
+msgstr "错误"
+
+#: LogEvent#6
+msgid "Unknown"
+msgstr "未知"
+
+#: MainWindow#1
+msgid "About"
+msgstr "关于"
+
+#: MainWindow#2
+msgid "Exit"
+msgstr "退出"
+
+#: MainWindow#3
+msgid "Bandwidth Graph"
+msgstr "性能图形"
+
+#: MainWindow#4
+msgid "Message Log"
+msgstr "消息日志"
+
+#: MainWindow#5
+msgid "Help"
+msgstr "帮助"
+
+#: MainWindow#6
+msgid "Ctrl+T"
+msgstr "Ctrl+T"
+
+#: MainWindow#7
+msgid "Ctrl+B"
+msgstr "Ctrl+B"
+
+#: MainWindow#8
+msgid "Ctrl+L"
+msgstr "Ctrl+L"
+
+#: MainWindow#9
+msgid "Ctrl+?"
+msgstr "Ctrl+?"
+
+#: MainWindow#10
+msgid "File"
+msgstr "文件"
+
+#: MainWindow#11
+msgid "Tor"
+msgstr "Tor"
+
+#: MainWindow#12
+msgid "View"
+msgstr "查看"
+
+#: MainWindow#13
+msgid "Vidalia Help"
+msgstr "Vidalia 帮助"
+
+#: MainWindow#14
+msgid "Error Starting Tor"
+msgstr "启动 Tor 时发生错误"
+
+#: MainWindow#15
+msgid "Ctrl+N"
+msgstr "Ctrl+N"
+
+#: MainWindow#16
+msgid "Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified."
+msgstr "Vidalia 无法启动 Tor.请检查 Tor 可执行程序的路径以及设定是否正确."
+
+#: MainWindow#17
+msgid "Network Map"
+msgstr "网络地图"
+
+#: MainWindow#18
+msgid "Settings"
+msgstr "设定"
+
+#: MainWindow#19
+msgid "New Identity"
+msgstr "更换身份"
+
+#: MainWindow#20
+msgid "Ctrl+I"
+msgstr "Ctrl+I"
+
+#: MainWindow#21
+msgid "All subsequent connections will appear to be different than your old connections."
+msgstr "所有新建连接将会不同于之前的连接."
+
+#: MainWindow#22
+msgid "Failed to Create New Identity"
+msgstr "创建新身份失败"
+
+#: MainWindow#23
+msgid "Tor is not running"
+msgstr "Tor 未运行"
+
+#: MainWindow#24
+msgid "Tor is shutting down"
+msgstr "正在关闭 Tor"
+
+#: MainWindow#25
+msgid "Vidalia Control Panel"
+msgstr "Vidalia 控制面板"
+
+#: MainWindow#26
+msgid "Vidalia Shortcuts"
+msgstr "Vidalia 快捷方式"
+
+#: MainWindow#27
+msgid "Setup Relaying"
+msgstr "设置中继服务器"
+
+#: MainWindow#28
+msgid "View the Network"
+msgstr "查看网络地图"
+
+#: MainWindow#29
+msgid "View a map of the Tor network"
+msgstr "查看 Tor 网络的分布图"
+
+#: MainWindow#30
+msgid "Use a New Identity"
+msgstr "更换身份"
+
+#: MainWindow#31
+msgid "Make subsequent connections appear new"
+msgstr "创建一个新的网络连接"
+
+#: MainWindow#32
+msgid "View help documentation"
+msgstr "查看帮助文档"
+
+#: MainWindow#33
+msgid "View version and license information"
+msgstr "查看版本和授权信息"
+
+#: MainWindow#34
+msgid "Exit Vidalia"
+msgstr "退出 Vidalia"
+
+#: MainWindow#35
+msgid "Show this window on startup"
+msgstr "启动时显示此窗口"
+
+#: MainWindow#36
+msgid "Hide"
+msgstr "隐藏"
+
+#: MainWindow#37
+msgid "Hide this window"
+msgstr "隐藏此窗口"
+
+#: MainWindow#38
+msgid "Control Panel"
+msgstr "控制面板"
+
+#: MainWindow#39
+msgid "Ctrl+P"
+msgstr "Ctrl+P"
+
+#: MainWindow#40
+msgid "Cookie Authentication Required"
+msgstr "需要 Cookie 验证"
+
+#: MainWindow#41
+msgid "Would you like to browse for the file 'control_auth_cookie' yourself?"
+msgstr "你要自己浏览 'control_auth_cookie' 文件吗?"
+
+#: MainWindow#42
+msgid "Error Registering for Events"
+msgstr "事件记录错误"
+
+#: MainWindow#43
+msgid "Password Authentication Required"
+msgstr "需要密码验证"
+
+#: MainWindow#44
+msgid "Please check your control port authentication settings."
+msgstr "请检查控制端口验证设定."
+
+#: MainWindow#45
+msgid "Please enter your control password (not the hash):"
+msgstr "请输入你的控制密码(并非 Hash 数值):"
+
+#: MainWindow#46
+msgid "Relaying is Enabled"
+msgstr "中继功能已启用"
+
+#: MainWindow#47
+msgid "Error starting web browser"
+msgstr ""
+
+#: MainWindow#48
+msgid "Vidalia was unable to start the configured web browser"
+msgstr ""
+
+#: MainWindow#49
+msgid "Tor Update Available"
+msgstr ""
+
+#: MainWindow#50
+msgid "The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version."
+msgstr ""
+
+#: MainWindow#51
+msgid "Tor website: %1"
+msgstr ""
+
+#: MainWindow#52
+msgid "Error starting proxy server"
+msgstr ""
+
+#: MainWindow#53
+msgid "Vidalia was unable to start the configured proxy server"
+msgstr ""
+
+#: MainWindow#54
+msgid "Your relay is shutting down."
+"Click 'Stop' again to stop your relay now."
+msgstr ""
+
+#: MainWindow#55
+msgid "Connection Error"
+msgstr ""
+
+#: MainWindow#56
+msgid "You are currently running a relay. Terminating your relay will interrupt any open connections from clients."
+""
+"Would you like to shutdown gracefully and give clients time to find a new relay?"
+msgstr ""
+
+#: MainWindow#57
+msgid "Error Shutting Down"
+msgstr ""
+
+#: MainWindow#58
+msgid "Vidalia was unable to stop the Tor software."
+msgstr ""
+
+#: MainWindow#59
+msgid "Unexpected Error"
+msgstr ""
+
+#: MainWindow#60
+msgid "Vidalia detected that the Tor software exited unexpectedly."
+""
+"Please check the message log for recent warning or error messages."
+msgstr ""
+
+#: MainWindow#61
+msgid "The Tor software requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one."
+msgstr ""
+
+#: MainWindow#62
+msgid "Data Directory"
+msgstr ""
+
+#: MainWindow#63
+msgid "Control Cookie (control_auth_cookie)"
+msgstr ""
+
+#: MainWindow#64
+msgid "Vidalia was unable to register for some events. Many of Vidalia's features may be unavailable."
+msgstr ""
+
+#: MainWindow#65
+msgid "Authentication Error"
+msgstr ""
+
+#: MainWindow#66
+msgid "Vidalia was unable to authenticate to the Tor software. (%1)"
+msgstr ""
+
+#: MainWindow#67
+msgid "Port Forwarding Failed"
+msgstr ""
+
+#: MainWindow#68
+msgid "Vidalia was unable to configure automatic port forwarding."
+msgstr ""
+
+#: MainWindow#69
+msgid "Status"
+msgstr "状态"
+
+#: MainWindow#70
+msgid "Set up a relay and help the network grow"
+msgstr ""
+
+#: MainWindow#71
+msgid "View recent bandwidth usage"
+msgstr ""
+
+#: MainWindow#72
+msgid "View log message history"
+msgstr ""
+
+#: MainWindow#73
+msgid "Configure Vidalia"
+msgstr ""
+
+#: MainWindow#74
+msgid "Start Tor"
+msgstr ""
+
+#: MainWindow#75
+msgid "Error starting IM client"
+msgstr ""
+
+#: MainWindow#76
+msgid "Vidalia was unable to start the configured IM client"
+msgstr ""
+
+#: MainWindow#77
+msgid "Connecting to a relay directory"
+msgstr ""
+
+#: MainWindow#78
+msgid "Establishing an encrypted directory connection"
+msgstr ""
+
+#: MainWindow#79
+msgid "Retrieving network status"
+msgstr ""
+
+#: MainWindow#80
+msgid "Loading network status"
+msgstr ""
+
+#: MainWindow#81
+msgid "Loading authority certificates"
+msgstr ""
+
+#: MainWindow#82
+msgid "Requesting relay information"
+msgstr ""
+
+#: MainWindow#83
+msgid "Loading relay information"
+msgstr ""
+
+#: MainWindow#84
+msgid "Connecting to the Tor network"
+msgstr ""
+
+#: MainWindow#85
+msgid "Establishing a Tor circuit"
+msgstr ""
+
+#: MainWindow#86
+msgid "Connected to the Tor network!"
+msgstr ""
+
+#: MainWindow#87
+msgid "Unrecognized startup status"
+msgstr ""
+
+#: MainWindow#88
+msgid "miscellaneous"
+msgstr ""
+
+#: MainWindow#89
+msgid "identity mismatch"
+msgstr ""
+
+#: MainWindow#90
+msgid "done"
+msgstr ""
+
+#: MainWindow#91
+msgid "connection refused"
+msgstr ""
+
+#: MainWindow#92
+msgid "connection timeout"
+msgstr ""
+
+#: MainWindow#93
+msgid "read/write error"
+msgstr ""
+
+#: MainWindow#94
+msgid "no route to host"
+msgstr ""
+
+#: MainWindow#95
+msgid "insufficient resources"
+msgstr ""
+
+#: MainWindow#96
+msgid "unknown"
+msgstr ""
+
+#: MainWindow#97
+msgid " failed (%1)"
+msgstr ""
+
+#: MainWindow#98
+msgid "Stop Tor Now"
+msgstr ""
+
+#: MainWindow#99
+msgid "Stop Tor"
+msgstr ""
+
+#: MainWindow#100
+msgid "Starting the Tor software"
+msgstr ""
+
+#: MainWindow#101
+msgid "Starting Tor"
+msgstr ""
+
+#: MainWindow#102
+msgid "Tor is Running"
+msgstr ""
+
+#: MainWindow#103
+msgid "Connecting to Tor"
+msgstr ""
+
+#: MainWindow#104
+msgid "Authenticating to Tor"
+msgstr ""
+
+#: MessageLog#1
+msgid "Message Log"
+msgstr "消息日志"
+
+#: MessageLog#2
+msgid "Time"
+msgstr "时间"
+
+#: MessageLog#3
+msgid "Type"
+msgstr "类型"
+
+#: MessageLog#4
+msgid "Message"
+msgstr "内容"
+
+#: MessageLog#5
+msgid "Browse"
+msgstr "浏览"
+
+#: MessageLog#6
+msgid "Saves the current Message Log settings"
+msgstr "保存当前消息日志设定"
+
+#: MessageLog#7
+msgid "Save Settings"
+msgstr "保存设定"
+
+#: MessageLog#8
+msgid "Cancels changes made to settings"
+msgstr "放弃保存已更改的设定"
+
+#: MessageLog#9
+msgid "Cancel"
+msgstr "取消"
+
+#: MessageLog#10
+msgid "Message Filter"
+msgstr "消息过滤"
+
+#: MessageLog#11
+msgid "Error"
+msgstr "错误"
+
+#: MessageLog#12
+msgid "Warning"
+msgstr "警告"
+
+#: MessageLog#13
+msgid "Notice"
+msgstr "注意"
+
+#: MessageLog#14
+msgid "Info"
+msgstr "信息"
+
+#: MessageLog#15
+msgid "Debug"
+msgstr "调试"
+
+#: MessageLog#16
+msgid "Message Filters..."
+msgstr "消息过滤..."
+
+#: MessageLog#17
+msgid "Set message filters"
+msgstr "设定消息过滤条件"
+
+#: MessageLog#18
+msgid "History Size..."
+msgstr "日志大小..."
+
+#: MessageLog#19
+msgid "Set maximum number of messages to display"
+msgstr "设定消息最大显示的条数"
+
+#: MessageLog#20
+msgid "Clear"
+msgstr "清空"
+
+#: MessageLog#21
+msgid "Clear all messages from the Message Log (Ctrl+E)"
+msgstr "清空消息日志中的全部内容(Ctrl+E)"
+
+#: MessageLog#22
+msgid "Ctrl+E"
+msgstr "Ctrl+E"
+
+#: MessageLog#23
+msgid "Copy"
+msgstr "复制"
+
+#: MessageLog#24
+msgid "Copy the selected messages to the clipboard (Ctrl+C)"
+msgstr "复制选中消息至剪贴板(Ctrl+C)"
+
+#: MessageLog#25
+msgid "Ctrl+C"
+msgstr "Ctrl+C"
+
+#: MessageLog#26
+msgid "Select All"
+msgstr "选择全部"
+
+#: MessageLog#27
+msgid "Select all messages (Ctrl+A)"
+msgstr "选择全部消息(Ctrl+A)"
+
+#: MessageLog#28
+msgid "Ctrl+A"
+msgstr "Ctrl+A"
+
+#: MessageLog#29
+msgid "Save All"
+msgstr "保存全部"
+
+#: MessageLog#30
+msgid "Save all messages to a file"
+msgstr "保存全部消息至文件"
+
+#: MessageLog#31
+msgid "Save Selected"
+msgstr "保存所选"
+
+#: MessageLog#32
+msgid "Save selected messages to a file"
+msgstr "保存所选消息至文件"
+
+#: MessageLog#33
+msgid "Close"
+msgstr "关闭"
+
+#: MessageLog#34
+msgid "Close the Message Log"
+msgstr "关闭消息日志"
+
+#: MessageLog#35
+msgid "Esc"
+msgstr "Esc"
+
+#: MessageLog#36
+msgid "Find"
+msgstr "查找"
+
+#: MessageLog#37
+msgid "Find all messages containing the search text (Ctrl+F)"
+msgstr "从消息中查找文字(Ctrl+F)"
+
+#: MessageLog#38
+msgid "Ctrl+F"
+msgstr "Ctrl+F"
+
+#: MessageLog#39
+msgid "Messages that appear when something has "
+"gone very wrong and Tor cannot proceed."
+msgstr "Tor 发生严重错误或无法继续运行的时候所显示的信息."
+
+#: MessageLog#40
+msgid "Messages that only appear when "
+"something has gone wrong with Tor."
+msgstr "Tor 发生错误时所显示的信息."
+
+#: MessageLog#41
+msgid "Messages that appear infrequently "
+"during normal Tor operation and are "
+"not considered errors, but you may "
+"care about."
+msgstr "Tor 在正常运行时所显示的信息,该信息可能并非错误,有时可忽略."
+
+#: MessageLog#42
+msgid "Messages that appear frequently "
+"during normal Tor operation."
+msgstr "Tor 在正常运行时所显示的信息."
+
+#: MessageLog#43
+msgid "Hyper-verbose messages primarily of "
+"interest to Tor developers."
+msgstr "调试信息,适用于 Tor 开发者."
+
+#: MessageLog#44
+msgid "Error Setting Filter"
+msgstr "设定过滤条件时发生错误"
+
+#: MessageLog#45
+msgid "Error Opening Log File"
+msgstr "打开日志文件时发生错误"
+
+#: MessageLog#46
+msgid "Select Log File"
+msgstr "请选择日志文件"
+
+#: MessageLog#47
+msgid "Save Log Messages"
+msgstr "保存日志内容"
+
+#: MessageLog#48
+msgid "Vidalia"
+msgstr "Vidalia"
+
+#: MessageLog#49
+msgid "Find in Message Log"
+msgstr "查找于消息日志"
+
+#: MessageLog#50
+msgid "Find:"
+msgstr "查找:"
+
+#: MessageLog#51
+msgid "Not Found"
+msgstr "未找到"
+
+#: MessageLog#52
+msgid "Search found 0 matches."
+msgstr "找到 0 个匹配结果."
+
+#: MessageLog#53
+msgid "Settings"
+msgstr "设定"
+
+#: MessageLog#54
+msgid "Adjust Message Log Settings"
+msgstr "调整消息日志设定"
+
+#: MessageLog#55
+msgid "Ctrl+T"
+msgstr "Ctrl+T"
+
+#: MessageLog#56
+msgid "Help"
+msgstr "帮助"
+
+#: MessageLog#57
+msgid "Show the help browser"
+msgstr "显示帮助浏览器"
+
+#: MessageLog#58
+msgid "Vidalia was unable to register for Tor's log events."
+msgstr "Vidalia 无法注册 Tor 日志事件."
+
+#: MessageLog#59
+msgid "Cannot write file %1"
+""
+"%2."
+msgstr "无法写入文件 %1 %2."
+
+#: MessageLog#60
+msgid "Vidalia was unable to open the specified log file."
+msgstr "Vidalia 无法打开指定的日志文件."
+
+#: MessageLog#61
+msgid "Text Files (*.txt)"
+msgstr "文本文件 (*.txt)"
+
+#: MessageLog#62
+msgid "F1"
+msgstr "F1"
+
+#: MessageLog#63
+msgid "Log Filename Required"
+msgstr "必须指定日志文件名"
+
+#: MessageLog#64
+msgid "You must enter a filename to be able to save log messages to a file."
+msgstr "必须指定保存消息文件的文件名."
+
+#: MessageLog#65
+msgid "Message Log History"
+msgstr "日志历史记录"
+
+#: MessageLog#66
+msgid "Number of messages to display in the message log window"
+msgstr "在日志窗口显示的消息条数"
+
+#: MessageLog#67
+msgid "messages"
+msgstr "消息"
+
+#: MessageLog#68
+msgid "Always Save New Log Messages"
+msgstr "总是保存新消息"
+
+#: MessageLog#69
+msgid "Enable automatically saving all new log messages to a file"
+msgstr "启用自动保存消息内容至文件"
+
+#: MessageLog#70
+msgid "Automatically save new log messages to a file"
+msgstr "自动保存新的消息内容至文件"
+
+#: NetViewer#1
+msgid "Refresh"
+msgstr "刷新"
+
+#: NetViewer#2
+msgid "Help"
+msgstr "帮助"
+
+#: NetViewer#3
+msgid "Close"
+msgstr "关闭"
+
+#: NetViewer#4
+msgid "Zoom In"
+msgstr "放大"
+
+#: NetViewer#5
+msgid "Zoom Out"
+msgstr "缩小"
+
+#: NetViewer#6
+msgid "Zoom To Fit"
+msgstr "适合图像"
+
+#: NetViewer#7
+msgid "Ctrl+R"
+msgstr "Ctrl+R"
+
+#: NetViewer#8
+msgid "F1"
+msgstr "F1"
+
+#: NetViewer#9
+msgid "Esc"
+msgstr "Esc"
+
+#: NetViewer#10
+msgid "+"
+msgstr "+"
+
+#: NetViewer#11
+msgid "-"
+msgstr "-"
+
+#: NetViewer#12
+msgid "Ctrl+Z"
+msgstr "Ctrl+Z"
+
+#: NetViewer#13
+msgid "Show network map help"
+msgstr "显示网络地图帮助"
+
+#: NetViewer#14
+msgid "Show the network map help"
+msgstr "显示关于网络地图的帮助信息"
+
+#: NetViewer#15
+msgid "Close the network map"
+msgstr "关闭网络地图"
+
+#: NetViewer#16
+msgid "Zoom in on the network map"
+msgstr "放大网络地图"
+
+#: NetViewer#17
+msgid "Zoom out on the network map"
+msgstr "缩小网络地图"
+
+#: NetViewer#18
+msgid "Zooms to fit all currently displayed circuits"
+msgstr "缩放网络地图以显示完整回路"
+
+#: NetViewer#19
+msgid "Tor Network Map"
+msgstr "Tor 网络地图"
+
+#: NetViewer#20
+msgid "Refresh the list of Tor relays and connections"
+msgstr "刷新 Tor 中继服务器和连接信息"
+
+#: NetworkPage#1
+msgid "Network"
+msgstr "网络"
+
+#: NetworkPage#2
+msgid "Invalid Bridge"
+msgstr "无效网桥"
+
+#: NetworkPage#3
+msgid "The specified bridge identifier is not valid."
+msgstr "指定网桥识别无效"
+
+#: NetworkPage#4
+msgid "Copy (Ctrl+C)"
+msgstr "复制(Ctrl+C)"
+
+#: NetworkPage#5
+msgid "You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet."
+msgstr "你必须指定 Tor 用于访问网络的 IP 地址或主机名,以及端口."
+
+#: NetworkPage#6
+msgid "You must specify one or more ports to which your firewall allows you to connect."
+msgstr "你必须指定一个或多个端口用于连接防火墙."
+
+#: NetworkPage#7
+msgid "'%1' is not a valid port number."
+msgstr "'%1' 不是一个有效的端口."
+
+#: NetworkPage#8
+msgid "I use a proxy to access the Internet"
+msgstr "我使用代理服务器连接到网络"
+
+#: NetworkPage#9
+msgid "Proxy Settings"
+msgstr "代理设定"
+
+#: NetworkPage#10
+msgid "HTTP Proxy:"
+msgstr "HTTP 代理:"
+
+#: NetworkPage#11
+msgid "Username:"
+msgstr "用户名"
+
+#: NetworkPage#12
+msgid "Use this proxy for HTTPS also"
+msgstr "将此代理同样应用于 HTTPS"
+
+#: NetworkPage#13
+msgid "Password:"
+msgstr "密码:"
+
+#: NetworkPage#14
+msgid "Port:"
+msgstr "端口:"
+
+#: NetworkPage#15
+msgid "My firewall only lets me connect to certain ports"
+msgstr "我的防火墙只允许我连接到指定端口"
+
+#: NetworkPage#16
+msgid "Firewall Settings"
+msgstr "防火墙设定"
+
+#: NetworkPage#17
+msgid "Allowed Ports:"
+msgstr "允许端口:"
+
+#: NetworkPage#18
+msgid "80, 443"
+msgstr "80, 443"
+
+#: NetworkPage#19
+msgid "My ISP blocks connections to the Tor network"
+msgstr "我的 ISP 阻挡了对 Tor 网络的连接"
+
+#: NetworkPage#20
+msgid "Add a Bridge:"
+msgstr "添加一个网桥:"
+
+#: NetworkPage#21
+msgid "Remove the selected bridges from the list"
+msgstr "从列表中移除选中的网桥"
+
+#: NetworkPage#22
+msgid "Copy the selected bridges to the clipboard"
+msgstr "复制选中的网桥至剪贴板"
+
+#: NetworkPage#23
+msgid "<a href="bridges.finding">How do I find a bridge?</a>"
+msgstr ""
+
+#: NetworkPage#24
+msgid "Check if your local network requires a proxy to access the Internet"
+msgstr ""
+
+#: NetworkPage#25
+msgid "Check to only connect to relays using ports allowed by your firewall"
+msgstr ""
+
+#: NetworkPage#26
+msgid "Check to encrypt directory requests and, optionally, use bridge relays to access the Tor network"
+msgstr ""
+
+#: NetworkPage#27
+msgid "Bridge Settings"
+msgstr ""
+
+#: NetworkPage#28
+msgid "The Tor software you are currently running does not support bridges. <br>Directory connections will still be encrypted."
+msgstr ""
+
+#: Policy#1
+msgid "accept"
+msgstr "接受"
+
+#: Policy#2
+msgid "reject"
+msgstr "拒绝"
+
+#: RouterDescriptor#1
+msgid "Online"
+msgstr "联机"
+
+#: RouterDescriptor#2
+msgid "Hibernating"
+msgstr "休眠"
+
+#: RouterDescriptor#3
+msgid "Offline"
+msgstr "脱机"
+
+#: RouterDescriptorView#1
+msgid "IP Address:"
+msgstr "IP 地址:"
+
+#: RouterDescriptorView#2
+msgid "Platform:"
+msgstr "系统平台:"
+
+#: RouterDescriptorView#3
+msgid "Bandwidth:"
+msgstr "带宽:"
+
+#: RouterDescriptorView#4
+msgid "Uptime:"
+msgstr "运行时间"
+
+#: RouterDescriptorView#5
+msgid "Last Updated:"
+msgstr "最后更新:"
+
+#: RouterDescriptorView#6
+msgid "Location:"
+msgstr "地理位置"
+
+#: RouterDescriptorView#7
+msgid "%1 days "
+msgstr ""
+
+#: RouterDescriptorView#8
+msgid "%1 hours "
+msgstr ""
+
+#: RouterDescriptorView#9
+msgid "%1 mins "
+msgstr ""
+
+#: RouterDescriptorView#10
+msgid "%1 secs"
+msgstr ""
+
+#: RouterListItem#1
+msgid "%1 KB/s"
+msgstr "%1 KB/s"
+
+#: RouterListItem#2
+msgid "Offline"
+msgstr "脱机"
+
+#: RouterListItem#3
+msgid "Hibernating"
+msgstr "休眠"
+
+#: RouterListWidget#1
+msgid "Relay"
+msgstr "中继"
+
+#: RouterListWidget#2
+msgid "Zoom to Relay"
+msgstr "移动至中继"
+
+#: RouterListWidget#3
+msgid "%1 relays online"
+msgstr ""
+
+#: ServerPage#1
+msgid "Relay traffic for the Tor network"
+msgstr "Tor 网络中继"
+
+#: ServerPage#2
+msgid "Directory Port:"
+msgstr "目录端口:"
+
+#: ServerPage#3
+msgid "Directory Port Number"
+msgstr "请指定目录端口"
+
+#: ServerPage#4
+msgid "Nickname:"
+msgstr "名称:"
+
+#: ServerPage#5
+msgid "Contact Info:"
+msgstr "信息:"
+
+#: ServerPage#6
+msgid "Exit Policies"
+msgstr "服务策略"
+
+#: ServerPage#7
+msgid "Show help topic on exit policies"
+msgstr "显示关于服务策略的相关帮助主题"
+
+#: ServerPage#8
+msgid "Long-term average bandwidth limit"
+msgstr "长期平均带宽限制"
+
+#: ServerPage#9
+msgid "Average Rate"
+msgstr "平均速率"
+
+#: ServerPage#10
+msgid "KB/s"
+msgstr "KB/s"
+
+#: ServerPage#11
+msgid "Peak bandwidth rate limit"
+msgstr "峰值带宽速率限制"
+
+#: ServerPage#12
+msgid "Maximum Rate"
+msgstr "最大速率"
+
+#: ServerPage#13
+msgid "Show help topic on bandwidth rate limits"
+msgstr "显示关于带宽速率限制的相关帮助主题"
+
+#: ServerPage#14
+msgid "Basic Settings"
+msgstr "基本设定"
+
+#: ServerPage#15
+msgid "Bandwidth Limits"
+msgstr "带宽限制"
+
+#: ServerPage#16
+msgid "For Internet connections with fast download speed but slow upload, please list your upload speed here."
+msgstr "如网络连接的下行速率较大,而上行速度较慢,请选择适用的网络连接类型(主要适用于 DSL 用户)"
+
+#: ServerPage#17
+msgid "Select the entry that most closely resembles your Internet connection"
+msgstr "请选择适合或接近的网络连接类型"
+
+#: ServerPage#18
+msgid "Cable/DSL 256 Kbps"
+msgstr "宽带/DSL 256 Kbps"
+
+#: ServerPage#19
+msgid "Cable/DSL 512 Kbps"
+msgstr "宽带/DSL 512 Kbps"
+
+#: ServerPage#20
+msgid "Cable/DSL 768 Kbps"
+msgstr "宽带/DSL 768 Kbps"
+
+#: ServerPage#21
+msgid "T1/Cable/DSL 1.5 Mbps"
+msgstr "T1/宽带/DSL 1.5 Mbps"
+
+#: ServerPage#22
+msgid "> 1.5 Mbps"
+msgstr "带宽大于 1.5 Mbps"
+
+#: ServerPage#23
+msgid "Custom"
+msgstr "自定义"
+
+#: ServerPage#24
+msgid "Ports 6660 - 6669 and 6697"
+msgstr "端口范围: 6660-6669 和 6697"
+
+#: ServerPage#25
+msgid "Internet Relay Chat (IRC)"
+msgstr "IRC 聊天服务"
+
+#: ServerPage#26
+msgid "Ports 110, 143, 993 and 995"
+msgstr "端口范围: 110,143,993 和 995"
+
+#: ServerPage#27
+msgid "Retrieve Mail (POP, IMAP)"
+msgstr "邮件接收服务(POP,IMAP)"
+
+#: ServerPage#28
+msgid "Ports unspecified by other checkboxes"
+msgstr "除以上指定端口外的其它所有端口"
+
+#: ServerPage#29
+msgid "Misc Other Services"
+msgstr "其它服务"
+
+#: ServerPage#30
+msgid "Instant Messaging (IM)"
+msgstr "即时通讯服务(IM)"
+
+#: ServerPage#31
+msgid "Port 443"
+msgstr "端口: 443"
+
+#: ServerPage#32
+msgid "Secure Websites (SSL)"
+msgstr "加密网站(SSL)"
+
+#: ServerPage#33
+msgid "Port 80"
+msgstr "端口: 80"
+
+#: ServerPage#34
+msgid "Websites"
+msgstr "普通网站"
+
+#: ServerPage#35
+msgid "Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s."
+msgstr "你的最大带宽速率必须大于或等于你的平均带宽速率.两个数值必须至少 20KB/s"
+
+#: ServerPage#36
+msgid "Server"
+msgstr "服务器"
+
+#: ServerPage#37
+msgid "Bridge Support Unavailable"
+msgstr "网桥功能不可用"
+
+#: ServerPage#38
+msgid "You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges."
+msgstr "你已将 Tor 设定为网桥中继服务器,然而你的 Tor 版本并不支持此功能."
+
+#: ServerPage#39
+msgid "Please upgrade your Tor software or configure Tor to act as a normal Tor relay."
+msgstr "请升级你的 Tor 软件或者将 Tor 设定为普通中继服务器."
+
+#: ServerPage#40
+msgid "You must specify at least a relay nickname and port."
+msgstr "你必须指定至少一个中继名称和端口."
+
+#: ServerPage#41
+msgid "Relay Port:"
+msgstr "中继端口:"
+
+#: ServerPage#42
+msgid "Email address at which you may be reached if there is a"
+"problem with your relay. You might also include your PGP or GPG fingerprint."
+msgstr "电子信箱地址,用于你的中继服务器出现故障时的联络.你可以包含 PGP 或 GPG 指纹信息."
+
+#: ServerPage#43
+msgid "Mirror the Relay Directory "
+msgstr "中继服务器目录镜像"
+
+#: ServerPage#44
+msgid "Your bridge relay is not running."
+msgstr ""
+
+#: ServerPage#45
+msgid "Help censored users reach the Tor network (Tor 0.2.0.8-alpha or newer)"
+msgstr "帮助用户访问 Tor 网络(限于 Tor 0.2.0.3-alpha 或更高版本) {0.2.0.8-?}"
+
+#: ServerPage#46
+msgid "Name of your relay"
+msgstr ""
+
+#: ServerPage#47
+msgid "Port on which users and other relays can communicate with your relay"
+msgstr ""
+
+#: ServerPage#48
+msgid "Let others access your bridge by giving them this line:"
+msgstr ""
+
+#: ServerPage#49
+msgid "This is the identity of your bridge relay that you can give to other people"
+msgstr ""
+
+#: ServerPage#50
+msgid "Copy your bridge relay's identity to the clipboard"
+msgstr ""
+
+#: ServerPage#51
+msgid "Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 and 8888"
+msgstr "端口范围: 706,1863,5050,5190,5222,8300 和 8888 {706, 1863, 5050, 5190, 5222, 5223, 8300 ?}"
+
+#: ServerPage#52
+msgid "Run as a client only"
+msgstr ""
+
+#: ServerPage#53
+msgid "Enable to mirror the relay directory"
+msgstr ""
+
+#: ServerPage#54
+msgid "Attempt to automatically configure port forwarding"
+msgstr ""
+
+#: ServerPage#55
+msgid "Test"
+msgstr ""
+
+#: ServerPage#56
+msgid "What Internet resources should users be able to access from your relay?"
+msgstr ""
+
+#: ServerPage#57
+msgid "Show help topic on port forwarding"
+msgstr ""
+
+#: ServicePage#1
+msgid "Services"
+msgstr ""
+
+#: ServicePage#2
+msgid "Error while trying to unpublish all services"
+msgstr ""
+
+#: ServicePage#3
+msgid "Error"
+msgstr "错误"
+
+#: ServicePage#4
+msgid "Please select a Service."
+msgstr ""
+
+#: ServicePage#5
+msgid "Select Service Directory"
+msgstr ""
+
+#: ServicePage#6
+msgid "Virtual Port may only contain valid port numbers [1..65535]."
+msgstr ""
+
+#: ServicePage#7
+msgid "Target may only contain address:port, address, or port."
+msgstr ""
+
+#: ServicePage#8
+msgid "Directory already in use by another service."
+msgstr ""
+
+#: ServicePage#9
+msgid "Form"
+msgstr ""
+
+#: ServicePage#10
+msgid "Provided Hidden Services"
+msgstr ""
+
+#: ServicePage#11
+msgid "Onion Address"
+msgstr ""
+
+#: ServicePage#12
+msgid "Virtual Port"
+msgstr ""
+
+#: ServicePage#13
+msgid "Target"
+msgstr ""
+
+#: ServicePage#14
+msgid "Directory Path"
+msgstr ""
+
+#: ServicePage#15
+msgid "Enabled"
+msgstr ""
+
+#: ServicePage#16
+msgid "Add new service to list"
+msgstr ""
+
+#: ServicePage#17
+msgid "Remove selected service from list"
+msgstr ""
+
+#: ServicePage#18
+msgid "Copy onion address of selected service to clipboard"
+msgstr ""
+
+#: ServicePage#19
+msgid "Browse in local file system and choose directory for selected service"
+msgstr ""
+
+#: ServicePage#20
+msgid "Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones."
+msgstr ""
+
+#: Stream#1
+msgid "New"
+msgstr "新建"
+
+#: Stream#2
+msgid "Resolving"
+msgstr "正在解析"
+
+#: Stream#3
+msgid "Connecting"
+msgstr "正在连接"
+
+#: Stream#4
+msgid "Open"
+msgstr "打开"
+
+#: Stream#5
+msgid "Failed"
+msgstr "失败"
+
+#: Stream#6
+msgid "Closed"
+msgstr "关闭"
+
+#: Stream#7
+msgid "Unknown"
+msgstr "未知"
+
+#: Stream#8
+msgid "Retrying"
+msgstr "正在重试"
+
+#: Stream#9
+msgid "Remapped"
+msgstr "重新映射"
+
+#: TorProcess#1
+msgid "Process %1 failed to stop. [%2]"
+msgstr "进程 %1 停止失败. [%2]"
+
+#: TorService#1
+msgid "The Tor service is not installed."
+msgstr "未安装 Tor 服务."
+
+#: TorService#2
+msgid "Unable to start the Tor service."
+msgstr "无法启动 Tor 服务."
+
+#: TorSettings#1
+msgid "Failed to hash the control password."
+msgstr ""
+
+#: UPNPControl#1
+msgid "Success"
+msgstr ""
+
+#: UPNPControl#2
+msgid "No UPnP-enabled devices found"
+msgstr ""
+
+#: UPNPControl#3
+msgid "No valid UPnP-enabled Internet gateway devices found"
+msgstr ""
+
+#: UPNPControl#4
+msgid "WSAStartup failed"
+msgstr ""
+
+#: UPNPControl#5
+msgid "Failed to add a port mapping"
+msgstr ""
+
+#: UPNPControl#6
+msgid "Failed to retrieve a port mapping"
+msgstr ""
+
+#: UPNPControl#7
+msgid "Failed to remove a port mapping"
+msgstr ""
+
+#: UPNPControl#8
+msgid "Unknown error"
+msgstr ""
+
+#: UPNPTestDialog#1
+msgid "Discovering UPnP-enabled devices"
+msgstr ""
+
+#: UPNPTestDialog#2
+msgid "Updating directory port mapping"
+msgstr ""
+
+#: UPNPTestDialog#3
+msgid "Updating relay port mapping"
+msgstr ""
+
+#: UPNPTestDialog#4
+msgid "Test completed successfully!"
+msgstr ""
+
+#: UPNPTestDialog#5
+msgid "Testing UPnP Support"
+msgstr ""
+
+#: UPNPTestDialog#6
+msgid "Testing Universal Plug & Play Support"
+msgstr ""
+
+#: VMessageBox#1
+msgid "OK"
+msgstr "确定"
+
+#: VMessageBox#2
+msgid "Cancel"
+msgstr "取消"
+
+#: VMessageBox#3
+msgid "Yes"
+msgstr "是"
+
+#: VMessageBox#4
+msgid "No"
+msgstr "否"
+
+#: VMessageBox#5
+msgid "Help"
+msgstr "帮助"
+
+#: VMessageBox#6
+msgid "Retry"
+msgstr "重试"
+
+#: VMessageBox#7
+msgid "Show Log"
+msgstr "显示日志"
+
+#: VMessageBox#8
+msgid "Show Settings"
+msgstr "显示设定"
+
+#: VMessageBox#9
+msgid "Continue"
+msgstr "继续"
+
+#: VMessageBox#10
+msgid "Quit"
+msgstr "退出"
+
+#: VMessageBox#11
+msgid "Browse"
+msgstr "浏览"
+
+#: Vidalia#1
+msgid "Invalid language code specified: "
+msgstr "指定语言代码无效: "
+
+#: Vidalia#2
+msgid "Invalid GUI style specified: "
+msgstr "指定界面风格无效: "
+
+#: Vidalia#3
+msgid "Vidalia is already running"
+msgstr "Vidalia 已经运行"
+
+#: Vidalia#4
+msgid "Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway."
+""
+"Would you like to continue starting Vidalia?"
+msgstr "另一个 Vidalia 进程已经运行.如果确定无其它 Vidalia 进程正在运行,可以选择继续.确定要继续运行 Vidalia 吗?"
+
+#: Vidalia#5
+msgid "Invalid Argument"
+msgstr "无效参数"
+
+#: Vidalia#6
+msgid "Displays this usage message and exits."
+msgstr "显示使用信息和退出"
+
+#: Vidalia#7
+msgid "Resets ALL stored Vidalia settings."
+msgstr "复位所有储存的 Vidalia 设定."
+
+#: Vidalia#8
+msgid "Sets the directory Vidalia uses for data files."
+msgstr "设定 Vidalia 数据保存位置."
+
+#: Vidalia#9
+msgid "Sets the name and location of Vidalia's pidfile."
+msgstr "设定 Vidalia 进程文件的名称和保存位置."
+
+#: Vidalia#10
+msgid "Sets the name and location of Vidalia's logfile."
+msgstr "设定 Vidalia 日志文件的名称和保存位置"
+
+#: Vidalia#11
+msgid "Sets the verbosity of Vidalia's logging."
+msgstr "设定 Vidalia 的日志冗余."
+
+#: Vidalia#12
+msgid "Sets Vidalia's interface style."
+msgstr "设定 Vidalia 的界面样式."
+
+#: Vidalia#13
+msgid "Sets Vidalia's language."
+msgstr "设定 Vidalia 的界面语言."
+
+#: Vidalia#14
+msgid "Vidalia Usage Information"
+msgstr "Vidalia 使用信息"
+
+#: Vidalia#15
+msgid "Invalid log level specified: "
+msgstr "指定日志级别无效:"
+
+#: Vidalia#16
+msgid "Unable to open log file '%1': %2"
+msgstr "无法打开日志文件 '%1': %2"
+
