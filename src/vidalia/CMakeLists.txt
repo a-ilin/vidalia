@@ -21,6 +21,10 @@ configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/res/vidalia_win.rc.in
   ${CMAKE_CURRENT_SOURCE_DIR}/res/vidalia_win.rc
 )
+configure_file(
+  ${CMAKE_CURRENT_SOURCE_DIR}/i18n/vidalia_i18n.qrc
+  ${CMAKE_CURRENT_BINARY_DIR}/i18n/vidalia_i18n.qrc
+)
 
 ## Process the translation files
 add_subdirectory(i18n)
@@ -213,8 +217,8 @@ endif(USE_MINIUPNPC)
 ## Add the resource files (icons, etc.)
 qt4_add_resources(vidalia_SRCS
   res/vidalia.qrc
-  i18n/vidalia_i18n.qrc
   help/content/content.qrc
+  ${CMAKE_CURRENT_BINARY_DIR}/i18n/vidalia_i18n.qrc
 )
 
 ## Set the appropriate executable target for the current platform
@@ -254,7 +258,7 @@ else(APPLE)
     add_executable(${vidalia_BIN} ${vidalia_SRCS})
   endif(WIN32)
 endif(APPLE)
-add_dependencies(${vidalia_BIN} translations)
+add_dependencies(${vidalia_BIN} i18n)
 
 
 ## Link to the Qt libraries and other libraries built as a part of Vidalia

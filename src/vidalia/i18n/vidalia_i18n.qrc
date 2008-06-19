@@ -4,7 +4,6 @@
     <file>vidalia_bg.qm</file>
     <file>vidalia_cs.qm</file>
     <file>vidalia_de.qm</file>
-    <file>vidalia_en.qm</file>
     <file>vidalia_es.qm</file>
     <file>vidalia_fa.qm</file>
     <file>vidalia_fi.qm</file>
@@ -21,8 +20,8 @@
     <file>vidalia_sq.qm</file>
     <file>vidalia_sv.qm</file>
     <file>vidalia_tr.qm</file>
-    <file>vidalia_zh-cn.qm</file>
-    <file>vidalia_zh-tw.qm</file>
+    <file>vidalia_zh_CN.qm</file>
+    <file>vidalia_zh_TW.qm</file>
   </qresource>
 </RCC>
 

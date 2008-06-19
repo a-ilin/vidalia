@@ -10,6 +10,18 @@
 ##  the terms described in the LICENSE file.
 ##
 
+## Tool used to convert Qt's .ts files to GNU gettext .po format
+set(VIDALIA_TS2PO_EXECUTABLE ${Vidalia_BINARY_DIR}/src/tools/ts2po/ts2po)
+if (WIN32)
+  set(VIDALIA_TS2PO_EXECUTABLE ${VIDALIA_TS2PO_EXECUTABLE}.exe)
+endif(WIN32)
+
+## Tool used to convert GNU gettext .po files to Qt's .ts format
+set(VIDALIA_PO2TS_EXECUTABLE ${Vidalia_BINARY_DIR}/src/tools/po2ts/po2ts)
+if (WIN32)
+  set(VIDALIA_PO2TS_EXECUTABLE ${VIDALIA_PO2TS_EXECUTABLE}.exe)
+endif(WIN32)
+    
 
 ## Search for lrelease
 find_program(QT_LRELEASE_EXECUTABLE NAMES lrelease-qt4 lrelease
@@ -43,25 +55,62 @@ if (WIN32)
   endif(NOT WIN32_WINDRES_EXECUTABLE)
 endif(WIN32)
 
-
-## Wraps the supplied .ts files in lrelease commands
-macro(QT4_ADD_TRANSLATIONS outfiles)
+## Adds custom commands to the specified target that will update each of the
+## supplied .po files 
+macro(VIDALIA_UPDATE_PO TARGET)
+  ## Gather a list of all the files that might contain translated strings
+  FILE(GLOB_RECURSE translate_SRCS ${Vidalia_SOURCE_DIR}/*.cpp)
+  FILE(GLOB_RECURSE translate_HDRS ${Vidalia_SOURCE_DIR}/*.h)
+  FILE(GLOB_RECURSE translate_UIS  ${Vidalia_SOURCE_DIR}/*.ui)
+  set(translate_SRCS ${translate_SRCS} ${translate_HDRS} ${translate_UIS})
+ 
   foreach (it ${ARGN})
-    get_filename_component(it ${it} ABSOLUTE)
+    get_filename_component(po ${it} ABSOLUTE)
+    get_filename_component(podir ${it} PATH)
     get_filename_component(outfile ${it} NAME_WE)
 
-    ## XXX: Ideally we would output the .qm files to CMAKE_CURRENT_BINARY_DIR,
-    ##      but then RCC can't find them when doing out-of-source builds. Is
-    ##      there an easy fix for this?
-    set(outfile ${CMAKE_CURRENT_SOURCE_DIR}/${outfile}.qm)
-    add_custom_command(OUTPUT ${outfile}
-      COMMAND ${QT_LRELEASE_EXECUTABLE}
-      ARGS -compress -silent -nounfinished ${it} -qm ${outfile}
-      MAIN_DEPENDENCY ${it}
+    set(ts ${CMAKE_CURRENT_BINARY_DIR}/${outfile}.ts)
+    add_custom_command(TARGET ${TARGET}
+      # Convert the current .po files to .ts
+      COMMAND ${VIDALIA_PO2TS_EXECUTABLE}
+      ARGS -q -i ${po} -o ${ts}
+      # Update the .ts files
+      COMMAND ${QT_LUPDATE_EXECUTABLE}
+      ARGS -silent -noobsolete ${translate_SRCS} -ts ${ts}
+      # Convert the updated .ts files back to .po
+      COMMAND ${VIDALIA_TS2PO_EXECUTABLE}
+      ARGS -q -i ${ts} -o ${po}
+      DEPENDS ${VIDALIA_TS2PO_EXECUTABLE} ${VIDALIA_PO2TS_EXECUTABLE}
+      COMMENT "Updating translation ${it}"
     )
-    set(${outfiles} ${${outfiles}} ${outfile})
   endforeach(it)
-endmacro(QT4_ADD_TRANSLATIONS)
+  add_dependencies(${TARGET} ts2po)
+  add_dependencies(${TARGET} po2ts)
+endmacro(VIDALIA_UPDATE_PO)
+
+
+## Wraps the supplied .po files with commands to convert them to Qt's .qm
+## format
+macro(VIDALIA_ADD_PO outfiles)
+  foreach (it ${ARGN})
+    get_filename_component(po ${it} ABSOLUTE)
+    get_filename_component(outfile ${it} NAME_WE)
+    
+    ## Create the .po -> .ts conversion step
+    set(ts ${CMAKE_CURRENT_BINARY_DIR}/${outfile}.ts)
+    set(qm ${CMAKE_CURRENT_BINARY_DIR}/${outfile}.qm)
+    add_custom_command(OUTPUT ${qm}
+      COMMAND ${VIDALIA_PO2TS_EXECUTABLE}
+      ARGS -q -i ${po} -o ${ts}
+      COMMAND ${QT_LRELEASE_EXECUTABLE}
+      ARGS -compress -silent -nounfinished ${ts} -qm ${qm}
+      MAIN_DEPENDENCY ${po}
+      DEPENDS ${VIDALIA_PO2TS_EXECUTABLE}
+      COMMENT "Generating ${outfile}.qm"
+    )
+    set(${outfiles} ${${outfiles}} ${qm})
+  endforeach(it)
+endmacro(VIDALIA_ADD_PO)
 
 
 if (WIN32)

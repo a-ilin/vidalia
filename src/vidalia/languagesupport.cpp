@@ -61,9 +61,9 @@ LanguageSupport::languages()
     languages.insert("sq",    "Shqip");
     languages.insert("sv",    "svenska");
     languages.insert("tr",    QString::fromUtf8("T\303\274rk\303\247e"));
-    languages.insert("zh-cn", 
+    languages.insert("zh_CN", 
       QString::fromUtf8("\347\256\200\344\275\223\345\255\227"));
-    languages.insert("zh-tw", 
+    languages.insert("zh_TW", 
       QString::fromUtf8("\347\260\241\351\253\224\345\255\227"));
   }
   return languages;
@@ -73,14 +73,13 @@ LanguageSupport::languages()
 QString
 LanguageSupport::defaultLanguageCode()
 {
-  QString localeName = QLocale::system().name();
-  QString language   = localeName.mid(0, localeName.indexOf("_"));
-  if (language == "zh") {
-    language += "-" + localeName.mid(localeName.indexOf("_")+1).toLower();
-  }
-  if (!isValidLanguageCode(language)) {
+  QString language = QLocale::system().name();
+
+  if (language != "zh_CN" && language != "zh_TW")
+    language = language.mid(0, language.indexOf("_"));
+  if (!isValidLanguageCode(language))
     language = "en";
-  }
+  
   return language;
 }
 
@@ -132,17 +131,19 @@ LanguageSupport::isRightToLeft(const QString &languageCode)
 bool
 LanguageSupport::translate(const QString &languageCode)
 {
-  QString code = languageCode.toLower();
-  if (isValidLanguageCode(code)) {
-    QTranslator *translator = new QTranslator(vApp);
-    if (translator->load(QString(":/lang/vidalia_%1.qm").arg(code))) {
-      QApplication::installTranslator(translator);
-      if (isRightToLeft(code))
-        vApp->setLayoutDirection(Qt::RightToLeft);
-      return true;
-    }
-    delete translator;
+  if (!isValidLanguageCode(languageCode))
+    return false;
+  if (languageCode == "en")
+    return true;
+
+  QTranslator *translator = new QTranslator(vApp);
+  if (translator->load(QString(":/lang/vidalia_%1.qm").arg(languageCode))) {
+    QApplication::installTranslator(translator);
+    if (isRightToLeft(languageCode))
+      vApp->setLayoutDirection(Qt::RightToLeft);
+    return true;
   }
+  delete translator;
   return false;
 }
 

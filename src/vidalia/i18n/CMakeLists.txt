@@ -12,46 +12,36 @@
 
 
 ## Vidalia translation files
-set(vidalia_TS
-  vidalia_ar.ts
-  vidalia_bg.ts
-  vidalia_cs.ts
-  vidalia_de.ts
-  vidalia_en.ts
-  vidalia_es.ts
-  vidalia_fa.ts
-  vidalia_fi.ts
-  vidalia_fr.ts
-  vidalia_he.ts
-  vidalia_hu.ts
-  vidalia_it.ts
-  vidalia_ja.ts
-  vidalia_nb.ts
-  vidalia_nl.ts
-  vidalia_pl.ts
-  vidalia_pt.ts
-  vidalia_ru.ts
-  vidalia_sq.ts
-  vidalia_sv.ts
-  vidalia_tr.ts
-  vidalia_zh-cn.ts
-  vidalia_zh-tw.ts
+set(vidalia_PO
+  ar/vidalia_ar.po
+  bg/vidalia_bg.po
+  cs/vidalia_cs.po
+  de/vidalia_de.po
+  es/vidalia_es.po
+  fa/vidalia_fa.po
+  fi/vidalia_fi.po
+  fr/vidalia_fr.po
+  he/vidalia_he.po
+  hu/vidalia_hu.po
+  it/vidalia_it.po
+  ja/vidalia_ja.po
+  nb/vidalia_nb.po
+  nl/vidalia_nl.po
+  pl/vidalia_pl.po
+  pt/vidalia_pt.po
+  ru/vidalia_ru.po
+  sq/vidalia_sq.po
+  sv/vidalia_sv.po
+  tr/vidalia_tr.po
+  zh_CN/vidalia_zh_CN.po
+  zh_TW/vidalia_zh_TW.po
 )
-qt4_add_translations(vidalia_QMS ${vidalia_TS})
+vidalia_add_po(vidalia_QMS ${vidalia_PO})
 
-## Gather a list of all the files that might contain translated strings
-FILE(GLOB_RECURSE translate_SRCS ${Vidalia_SOURCE_DIR}/src/*.cpp)
-FILE(GLOB_RECURSE translate_HDRS ${Vidalia_SOURCE_DIR}/src/*.h)
-FILE(GLOB_RECURSE translate_UIS  ${Vidalia_SOURCE_DIR}/src/*.ui)
-set(translate_SRCS ${translate_SRCS} ${translate_HDRS} ${translate_UIS})
+## Create a target that converts all .po files to Qt .qm files
+add_custom_target(i18n ALL DEPENDS ${vidalia_QMS})
 
 ## Create a target that runs lupdate for all the source and UI files
-add_custom_target(lupdate 
-  COMMAND ${QT_LUPDATE_EXECUTABLE} -noobsolete ${translate_SRCS} -ts ${vidalia_TS}
-)
-add_dependencies(lupdate ts2po)
-
-## Create a target that runs lrelease for all the .ts files
-add_custom_target(translations ALL DEPENDS ${vidalia_QMS})
-add_dependencies(translations po2ts)
+add_custom_target(i18n-update)
+vidalia_update_po(i18n-update ${vidalia_PO})
 
