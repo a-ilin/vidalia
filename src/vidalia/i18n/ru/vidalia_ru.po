@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
-"POT-Creation-Date: 2008-06-19 02:15+0000\n"
+"POT-Creation-Date: 2008-06-19 23:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: translations@vidalia-project.net\n"
@@ -1534,8 +1534,8 @@ msgid "Copy the selected bridges to the clipboard"
 msgstr "Скопировать выбранные bridge'ы в буфер обмена"
 
 #: NetworkPage#23
-msgid "<a href="bridges.finding">How do I find a bridge?</a>"
-msgstr "<a href="bridges.finding">Как мне найти bridge'ы?</a>"
+msgid "<a href=\"bridges.finding\">How do I find a bridge?</a>"
+msgstr "<a href=\"bridges.finding\">Как мне найти bridge'ы?</a>"
 
 #: NetworkPage#24
 msgid "Check if your local network requires a proxy to access the Internet"
@@ -2119,7 +2119,7 @@ msgstr "Vidalia уже запущена"
 msgid "Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway."
 ""
 "Would you like to continue starting Vidalia?"
-msgstr "Похоже другой процесс Vidalia уже запущен. Если вы очно уверены что это не так, вы можете продолжить с этим запуском."
+msgstr "Похоже другой процесс Vidalia уже запущен. Если вы чно уверены что это не так, вы можете продолжить с этим запуском."
 ""
 "Вы хотите продолжить запуск Vidalia?"
 

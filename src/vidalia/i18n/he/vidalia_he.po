@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
-"POT-Creation-Date: 2008-06-19 02:15+0000\n"
+"POT-Creation-Date: 2008-06-19 23:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: translations@vidalia-project.net\n"
@@ -802,7 +802,7 @@ msgstr "Ctrl+F"
 
 #: MainWindow#40
 msgid "Cookie Authentication Required"
-msgstr "אימות "עוגיה" דרוש"
+msgstr "אימות \"עוגיה\" דרוש"
 
 #: MainWindow#41
 msgid "Would you like to browse for the file 'control_auth_cookie' yourself?"
@@ -1525,8 +1525,8 @@ msgid "Copy the selected bridges to the clipboard"
 msgstr "העתק את הגשרים הנבחרים ללוח-העריכה"
 
 #: NetworkPage#23
-msgid "<a href="bridges.finding">How do I find a bridge?</a>"
-msgstr "<a href="bridges.finding">כיצד אני מוצא גשר?</a>"
+msgid "<a href=\"bridges.finding\">How do I find a bridge?</a>"
+msgstr "<a href=\"bridges.finding\">כיצד אני מוצא גשר?</a>"
 
 #: NetworkPage#24
 msgid "Check if your local network requires a proxy to access the Internet"
@@ -1738,7 +1738,7 @@ msgstr "פורטים 110, 143, 993 ו 995"
 
 #: ServerPage#27
 msgid "Retrieve Mail (POP, IMAP)"
-msgstr "קבלת דוא"ל (POP, IMAP)"
+msgstr "קבלת דוא\"ל (POP, IMAP)"
 
 #: ServerPage#28
 msgid "Ports unspecified by other checkboxes"

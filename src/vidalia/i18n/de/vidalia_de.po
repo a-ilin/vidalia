@@ -1,16 +1,17 @@
+#,fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
-"POT-Creation-Date: 2008-06-19 02:15+0000\n"
-"PO-Revision-Date: 2008-06-19 14:44+0000\n"
-"Last-Translator: Karsten Loesing <karsten.loesing@gmx.net>\n"
+"POT-Creation-Date: 2008-06-19 23:25+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 1.1.0\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Vidalia ts2po 0.1\n"
 
 #: AboutDialog#1
 msgid "About Vidalia"
@@ -364,9 +365,7 @@ msgstr "Vidalia konnte ihre %1 Einstellungen nicht an Tor anwenden."
 msgid "OK"
 msgstr "OK"
 
-# This is hard to translate without any context. I'm not even sure if this is a good translation. It's rather "participation".
 #: ConfigDialog#13
-#, fuzzy
 msgid "Sharing"
 msgstr "Beteiligung"
 
@@ -903,7 +902,7 @@ msgstr ""
 
 #: MainWindow#62
 msgid "Data Directory"
-msgstr ""
+msgstr "Datenverzeichnis"
 
 #: MainWindow#63
 msgid "Control Cookie (control_auth_cookie)"
@@ -1541,27 +1540,27 @@ msgid "Copy the selected bridges to the clipboard"
 msgstr "Kopiere die gewählte Brücke in die Zwischenablage"
 
 #: NetworkPage#23
-msgid "<a href="">How do I find a bridge?</a>"
-msgstr "<a href=\"bridges.finding\">Wie finde ich eine Tor-Brücke?</a>"
-
-#: NetworkPage#24
 msgid "Check if your local network requires a proxy to access the Internet"
 msgstr ""
 
-#: NetworkPage#25
+#: NetworkPage#24
 msgid "Check to only connect to relays using ports allowed by your firewall"
 msgstr ""
 
-#: NetworkPage#26
+#: NetworkPage#25
 msgid "Check to encrypt directory requests and, optionally, use bridge relays to access the Tor network"
 msgstr ""
 
-#: NetworkPage#27
+#: NetworkPage#26
 msgid "Bridge Settings"
 msgstr ""
 
-#: NetworkPage#28
+#: NetworkPage#27
 msgid "The Tor software you are currently running does not support bridges. <br>Directory connections will still be encrypted."
+msgstr ""
+
+#: NetworkPage#28
+msgid "<a href=\"bridges.finding\">How do I find a bridge?</a>"
 msgstr ""
 
 #: Policy#1
@@ -2180,3 +2179,4 @@ msgstr "Ungültiges Nachrichtenlevel angegeben: "
 #: Vidalia#16
 msgid "Unable to open log file '%1': %2"
 msgstr "Konnte Nachrichtendatei nicht öffnen '%1': %2"
+

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
-"POT-Creation-Date: 2008-06-19 02:15+0000\n"
+"POT-Creation-Date: 2008-06-19 23:26+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: translations@vidalia-project.net\n"
@@ -1534,7 +1534,7 @@ msgid "Copy the selected bridges to the clipboard"
 msgstr ""
 
 #: NetworkPage#23
-msgid "<a href="bridges.finding">How do I find a bridge?</a>"
+msgid "<a href=\"bridges.finding\">How do I find a bridge?</a>"
 msgstr ""
 
 #: NetworkPage#24
