@@ -88,12 +88,14 @@ convert_context(const QDomElement &context, QString *po, QString *errorMessage)
     }
     msgid = source.text();
     msgid.replace("\r", "");
+    msgid.replace("\"", "\\\"");
     msgid.replace("\n", "\"\n\"");
 
     /* Extract the <translation> tags */
     translation = msg.firstChildElement(TS_ELEMENT_TRANSLATION);
     msgstr = translation.text();
     msgstr.replace("\r", "");
+    msgstr.replace("\"", "\\\"");
     msgstr.replace("\n", "\"\n\"");
   
     /* Format the .po entry for this string */

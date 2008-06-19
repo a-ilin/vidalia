@@ -106,6 +106,7 @@ parse_message_string(const QString &msg)
     out = out.remove(0, 1);
   if (out.endsWith("\""))
     out.chop(1);
+  out.replace("\\\"", "\"");
   return out;
 }
 
