@@ -150,32 +150,56 @@ ts2po(const QDomDocument *ts, QString *po, QString *errorMessage)
   return n_strings;
 }
 
+/** Display application usage and exit. */
+void
+print_usage_and_exit()
+{
+  QTextStream error(stderr);
+  error << "usage: ts2po [-q] -i <infile.ts> -o <outfile.po>\n";
+  error << "  -q (optional)   Quiet mode (errors are still displayed)\n";
+  error << "  -i <infile.ts>  Input .ts file\n";
+  error << "  -o <outfile.po> Output .po file\n";
+  error.flush();
+  exit(1);
+}
+
 int
 main(int argc, char *argv[])
 {
   QTextStream error(stderr);
   QString errorMessage;
-
+  char *infile, *outfile;
+  bool quiet = false;
+  
   /* Check for the correct number of input parameters. */
-  if (argc != 3) {
-    error << "usage: ts2po <infile.ts> <outfile.po>\n";
-    return 1;
+  if (argc < 5 || argc > 6)
+    print_usage_and_exit();
+  for (int i = 1; i < argc; i++) {
+    QString arg(argv[i]);
+    if (!arg.compare("-q", Qt::CaseInsensitive))
+      quiet = true;
+    else if (!arg.compare("-i", Qt::CaseInsensitive) && ++i < argc)
+      infile = argv[i];
+    else if (!arg.compare("-o", Qt::CaseInsensitive) && ++i < argc)
+      outfile = argv[i];
+    else
+      print_usage_and_exit(); 
   }
 
   /* Read and parse the input .ts file. */
   QDomDocument ts;
-  QFile tsFile(argv[1]);
+  QFile tsFile(infile);
   if (!ts.setContent(&tsFile, true, &errorMessage)) {
-    error << QString("Unable to parse '%1': %2\n").arg(argv[1])
+    error << QString("Unable to parse '%1': %2\n").arg(infile)
                                                   .arg(errorMessage);
     return 1;
   }
   
   /* Try to open the output .po file for writing. */
-  QFile poFile(argv[2]);
+  QFile poFile(outfile);
   if (!poFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
     error << QString("Unable to open '%1' for writing: %2\n")
-                                                   .arg(argv[2])
+                                                   .arg(outfile)
                                                    .arg(tsFile.errorString());
     return 2;
   }
@@ -184,8 +208,8 @@ main(int argc, char *argv[])
   QString po;
   int n_strings = ts2po(&ts, &po, &errorMessage);
   if (n_strings < 0) {
-    error << QString("Unable to convert '%1' to '%2': %3\n").arg(argv[1])
-                                                            .arg(argv[2])
+    error << QString("Unable to convert '%1' to '%2': %3\n").arg(infile)
+                                                            .arg(outfile)
                                                             .arg(errorMessage);
     return 3;
   }
@@ -195,11 +219,13 @@ main(int argc, char *argv[])
   out.setCodec("UTF-8");
   out << po;
   poFile.close();
-  
-  QTextStream(stdout) << QString("Converted %1 strings from %2 to %3.\n")
-                                                          .arg(n_strings)
-                                                          .arg(argv[1])
-                                                          .arg(argv[2]);
+ 
+  if (!quiet) {
+    QTextStream(stdout) << QString("Converted %1 strings from %2 to %3.\n")
+                                                            .arg(n_strings)
+                                                            .arg(infile)
+                                                            .arg(outfile);
+  }
   return 0;
 }
 

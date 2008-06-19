@@ -188,22 +188,46 @@ po2ts(QTextStream *po, QDomDocument *ts, QString *errorMessage)
   return n_strings;
 }
 
+/** Display application usage and exit. */
+void
+print_usage_and_exit()
+{
+  QTextStream error(stderr);
+  error << "usage: po2ts [-q] -i <infile.po> -o <outfile.ts>\n";
+  error << "  -q (optional)   Quiet mode (errors are still displayed)\n";
+  error << "  -i <infile.po>  Input .po file\n";
+  error << "  -o <outfile.ts> Output .ts file\n";
+  error.flush();
+  exit(1);
+}
+
 int
 main(int argc, char *argv[])
 {
   QTextStream error(stderr);
   QString errorMessage;
+  char *infile, *outfile;
+  bool quiet = false;
 
   /* Check for the correct number of input parameters. */
-  if (argc != 3) {
-    error << "usage: po2ts <infile.po> <outfile.ts>\n";
-    return 1;
+  if (argc < 5 || argc > 6)
+    print_usage_and_exit();
+  for (int i = 1; i < argc; i++) {
+    QString arg(argv[i]);
+    if (!arg.compare("-q", Qt::CaseInsensitive))
+      quiet = true;
+    else if (!arg.compare("-i", Qt::CaseInsensitive) && ++i < argc)
+      infile = argv[i];
+    else if (!arg.compare("-o", Qt::CaseInsensitive) && ++i < argc)
+      outfile = argv[i];
+    else
+      print_usage_and_exit(); 
   }
 
   /* Open the input PO file for reading. */
-  QFile poFile(argv[1]);
+  QFile poFile(infile);
   if (!poFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
-    error << QString("Unable to open '%1' for reading: %2\n").arg(argv[1])
+    error << QString("Unable to open '%1' for reading: %2\n").arg(infile)
                                                 .arg(poFile.errorString());
     return 2;
   }
@@ -212,15 +236,15 @@ main(int argc, char *argv[])
   QTextStream po(&poFile);
   int n_strings = po2ts(&po, &ts, &errorMessage);
   if (n_strings < 0) {
-    error << QString("Unable to convert '%1': %2\n").arg(argv[1])
+    error << QString("Unable to convert '%1': %2\n").arg(infile)
                                                     .arg(errorMessage);
     return 3;
   }
 
   /* Open the TS file for writing. */
-  QFile tsFile(argv[2]);
+  QFile tsFile(outfile);
   if (!tsFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
-    error << QString("Unable to open '%1' for writing: %2\n").arg(argv[2])
+    error << QString("Unable to open '%1' for writing: %2\n").arg(outfile)
                                                 .arg(tsFile.errorString());
     return 4;
   }
@@ -229,11 +253,13 @@ main(int argc, char *argv[])
   QTextStream out(&tsFile);
   out.setCodec("UTF-8");
   out << ts.toString(4);
- 
-  QTextStream(stdout) << QString("Converted %1 strings from %2 to %3.\n")
-                                                          .arg(n_strings)
-                                                          .arg(argv[1])
-                                                          .arg(argv[2]);
+
+  if (!quiet) {
+    QTextStream(stdout) << QString("Converted %1 strings from %2 to %3.\n")
+                                                            .arg(n_strings)
+                                                            .arg(infile)
+                                                            .arg(outfile);
+  }
   return 0;
 }
 
