@@ -35,7 +35,7 @@ LanguageSupport::languages()
       QString::fromUtf8("\320\221\321\212\320\273\320\263\320"
                         "\260\321\200\321\201\320\272\320\270"));
     languages.insert("cs",    
-      QString::fromUtf8("\304\215esky"));
+      QString::fromUtf8("\304\215e\305\241tina"));
     languages.insert("de",    "Deutsch");
     languages.insert("es",    
       QString::fromUtf8("espa\303\261ol"));
