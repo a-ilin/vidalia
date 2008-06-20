@@ -525,7 +525,8 @@ void
 MainWindow::bootstrapStatusChanged(const BootstrapStatusEvent *bse)
 {
   int percentComplete = STARTUP_PROGRESS_BOOTSTRAPPING + bse->percentComplete();
-  bool warn = (bse->severity() == StatusEvent::SeverityWarn);
+  bool warn = (bse->severity() == StatusEvent::SeverityWarn && 
+               bse->recommendedAction() != BootstrapStatusEvent::RecommendIgnore);
 
   QString description;
   switch (bse->status()) {

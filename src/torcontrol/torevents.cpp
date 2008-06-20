@@ -412,7 +412,9 @@ TorEvents::dispatchClientStatusEvent(StatusEvent::Severity severity,
                     args.value("PROGRESS").toInt(),
                     args.value("SUMMARY"),
                     args.value("WARNING"),
-                    tc::connectionStatusReason(args.value("REASON")));
+                    tc::connectionStatusReason(args.value("REASON")),
+                    BootstrapStatusEvent::actionFromString(
+                      args.value("RECOMMENDATION")));
       break;
 
     default:

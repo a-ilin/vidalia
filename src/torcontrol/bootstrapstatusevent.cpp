@@ -23,7 +23,8 @@ BootstrapStatusEvent::BootstrapStatusEvent(StatusEvent::Severity severity,
                                            int percentComplete,
                                            const QString &description,
                                            const QString &warning,
-                                           tc::ConnectionStatusReason reason)
+                                           tc::ConnectionStatusReason reason,
+                                           RecommendAction action)
   : ClientStatusEvent(severity, ClientStatusEvent::BootstrapStatus)
 {
   _status = status;
@@ -31,6 +32,7 @@ BootstrapStatusEvent::BootstrapStatusEvent(StatusEvent::Severity severity,
   _description = description;
   _warning = warning;
   _reason = reason;
+  _action = action;
 }
 
 /** Converts a string TAG value to a BootstrapStatus enum value. */
@@ -62,5 +64,15 @@ BootstrapStatusEvent::statusFromString(const QString &str)
   if (!str.compare("DONE", Qt::CaseInsensitive))
     return BootstrappingDone;
   return UnrecognizedStatus;
+}
+
+BootstrapStatusEvent::RecommendAction
+BootstrapStatusEvent::actionFromString(const QString &str)
+{
+  if (!str.compare("WARN", Qt::CaseInsensitive))
+    return RecommendWarn;
+  if (!str.compare("IGNORE", Qt::CaseInsensitive))
+    return RecommendIgnore;
+  return UnrecognizedAction;
 }
 
