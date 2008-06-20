@@ -163,11 +163,11 @@ msgstr "Avancé"
 
 #: AdvancedPage#28
 msgid "Start the Tor software with the specified configuration file (torrc)"
-msgstr ""
+msgstr "Lance le logiciel Tor avec le fichier de configuration spécifié (torrc)"
 
 #: AdvancedPage#29
 msgid "Select path to your configuration file"
-msgstr ""
+msgstr "Choisissez le chemin de votre fichier de configuration"
 
 #: AdvancedPage#30
 msgid "Data Directory"
@@ -183,7 +183,7 @@ msgstr ""
 
 #: AdvancedPage#33
 msgid "Tor Configuration File"
-msgstr ""
+msgstr "Fichier de configaration de Tor"
 
 #: AppearancePage#1
 msgid "Language"
@@ -423,27 +423,27 @@ msgstr ""
 
 #: GeneralPage#8
 msgid "Start Vidalia when my system starts"
-msgstr ""
+msgstr "Lancer Vidalia au démarrage du système"
 
 #: GeneralPage#9
 msgid "Start the Tor software when Vidalia starts"
-msgstr ""
+msgstr "Lancer le logiciel Tor au démarrage du système"
 
 #: GeneralPage#10
 msgid "Start a proxy application when Vidalia starts"
-msgstr ""
+msgstr "Lancer un proxy au démarrage du système"
 
 #: GeneralPage#11
 msgid "Proxy Executable"
-msgstr ""
+msgstr "Exécutable Proxy"
 
 #: GeneralPage#12
 msgid "Command Line Arguments:"
-msgstr ""
+msgstr "Ligen de commande:"
 
 #: GeneralPage#13
 msgid "Tor Executable"
-msgstr ""
+msgstr "Exécutable Tor"
 
 #: GraphFrame#1
 msgid "Recv: "
@@ -603,7 +603,7 @@ msgstr "Erreur d'ouverture du fichier d'aide :"
 
 #: HelpTextBrowser#2
 msgid "Opening External Link"
-msgstr ""
+msgstr "Ouvrir un lien externe"
 
 #: HelpTextBrowser#3
 msgid "Vidalia can open the link you selected in your default Web browser. If your browser is not currently configured to use Tor then the request will not be anonymous."
@@ -864,7 +864,7 @@ msgstr ""
 
 #: MainWindow#55
 msgid "Connection Error"
-msgstr ""
+msgstr "Erreur de Connexion"
 
 #: MainWindow#56
 msgid "You are currently running a relay. Terminating your relay will interrupt any open connections from clients."
@@ -874,15 +874,15 @@ msgstr ""
 
 #: MainWindow#57
 msgid "Error Shutting Down"
-msgstr ""
+msgstr "Erreur lors de l'arrêt"
 
 #: MainWindow#58
 msgid "Vidalia was unable to stop the Tor software."
-msgstr ""
+msgstr "Vidalia n'a pas pu arrêter le logiciel Tor."
 
 #: MainWindow#59
 msgid "Unexpected Error"
-msgstr ""
+msgstr "Erreur inattendue"
 
 #: MainWindow#60
 msgid "Vidalia detected that the Tor software exited unexpectedly."
@@ -895,12 +895,13 @@ msgid "The Tor software requires Vidalia to send the contents of an authenticati
 msgstr ""
 
 #: MainWindow#62
+#: AdvancedPage#30
 msgid "Data Directory"
-msgstr ""
+msgstr "Repertoire de Données"
 
 #: MainWindow#63
 msgid "Control Cookie (control_auth_cookie)"
-msgstr ""
+msgstr "Cookie de Contrôle (control_auth_cookie)"
 
 #: MainWindow#64
 msgid "Vidalia was unable to register for some events. Many of Vidalia's features may be unavailable."
@@ -908,7 +909,7 @@ msgstr ""
 
 #: MainWindow#65
 msgid "Authentication Error"
-msgstr ""
+msgstr "Erreur d'authentification"
 
 #: MainWindow#66
 msgid "Vidalia was unable to authenticate to the Tor software. (%1)"
@@ -916,7 +917,7 @@ msgstr ""
 
 #: MainWindow#67
 msgid "Port Forwarding Failed"
-msgstr ""
+msgstr "Erreur de Transfert de Port"
 
 #: MainWindow#68
 msgid "Vidalia was unable to configure automatic port forwarding."
@@ -928,23 +929,23 @@ msgstr "État"
 
 #: MainWindow#70
 msgid "Set up a relay and help the network grow"
-msgstr ""
+msgstr "Parametrez un relay et aidez le réseau a grandir."
 
 #: MainWindow#71
 msgid "View recent bandwidth usage"
-msgstr ""
+msgstr "Voir la bande passante utilisée"
 
 #: MainWindow#72
 msgid "View log message history"
-msgstr ""
+msgstr "Voir l'historique des messages"
 
 #: MainWindow#73
 msgid "Configure Vidalia"
-msgstr ""
+msgstr "Configurer Vidalia"
 
 #: MainWindow#74
 msgid "Start Tor"
-msgstr ""
+msgstr "Lancer Tor"
 
 #: MainWindow#75
 msgid "Error starting IM client"
@@ -956,7 +957,7 @@ msgstr ""
 
 #: MainWindow#77
 msgid "Connecting to a relay directory"
-msgstr ""
+msgstr "Connexion à un annuaire de relais"
 
 #: MainWindow#78
 msgid "Establishing an encrypted directory connection"
@@ -964,15 +965,15 @@ msgstr ""
 
 #: MainWindow#79
 msgid "Retrieving network status"
-msgstr ""
+msgstr "Recherche de l'état du réseau"
 
 #: MainWindow#80
 msgid "Loading network status"
-msgstr ""
+msgstr "Chargement de l'état du réseau"
 
 #: MainWindow#81
 msgid "Loading authority certificates"
-msgstr ""
+msgstr "Chargement des certificats des authorités"
 
 #: MainWindow#82
 msgid "Requesting relay information"
@@ -984,7 +985,7 @@ msgstr ""
 
 #: MainWindow#84
 msgid "Connecting to the Tor network"
-msgstr ""
+msgstr "Connexion au réseau Tor"
 
 #: MainWindow#85
 msgid "Establishing a Tor circuit"
@@ -1012,11 +1013,11 @@ msgstr ""
 
 #: MainWindow#91
 msgid "connection refused"
-msgstr ""
+msgstr "connexion refused"
 
 #: MainWindow#92
 msgid "connection timeout"
-msgstr ""
+msgstr "temps de connexion expiré"
 
 #: MainWindow#93
 msgid "read/write error"
@@ -1040,31 +1041,31 @@ msgstr ""
 
 #: MainWindow#98
 msgid "Stop Tor Now"
-msgstr ""
+msgstr "Arrêter Tor Immédiatement"
 
 #: MainWindow#99
 msgid "Stop Tor"
-msgstr ""
+msgstr "Arrêter Tor"
 
 #: MainWindow#100
 msgid "Starting the Tor software"
-msgstr ""
+msgstr "Lancement de Tor"
 
 #: MainWindow#101
 msgid "Starting Tor"
-msgstr ""
+msgstr "Lancement de Tor"
 
 #: MainWindow#102
 msgid "Tor is Running"
-msgstr ""
+msgstr "Tor Fonctionne"
 
 #: MainWindow#103
 msgid "Connecting to Tor"
-msgstr ""
+msgstr "Connexion à Tor"
 
 #: MainWindow#104
 msgid "Authenticating to Tor"
-msgstr ""
+msgstr "Authentification à Tor"
 
 #: MessageLog#1
 msgid "Message Log"
@@ -1543,7 +1544,7 @@ msgstr ""
 
 #: NetworkPage#27
 msgid "Bridge Settings"
-msgstr ""
+msgstr "Paramètres de Passerelle"
 
 #: NetworkPage#28
 msgid "The Tor software you are currently running does not support bridges. <br>Directory connections will still be encrypted."
@@ -1595,19 +1596,19 @@ msgstr "Localisation : "
 
 #: RouterDescriptorView#7
 msgid "%1 days "
-msgstr ""
+msgstr "%1 jours"
 
 #: RouterDescriptorView#8
 msgid "%1 hours "
-msgstr ""
+msgstr "%1 heures"
 
 #: RouterDescriptorView#9
 msgid "%1 mins "
-msgstr ""
+msgstr "%1 mins "
 
 #: RouterDescriptorView#10
 msgid "%1 secs"
-msgstr ""
+msgstr "%1 secs"
 
 #: RouterListItem#1
 msgid "%1 KB/s"
@@ -1631,7 +1632,7 @@ msgstr "Zoomer sur le relais"
 
 #: RouterListWidget#3
 msgid "%1 relays online"
-msgstr ""
+msgstr "%1 relais en ligne"
 
 #: ServerPage#1
 msgid "Relay traffic for the Tor network"
@@ -1838,7 +1839,7 @@ msgstr "Copier l'identité de votre passerelle dans le presse-papier"
 
 #: ServerPage#51
 msgid "Run as a client only"
-msgstr ""
+msgstr "Lancer uniquement comme client"
 
 #: ServerPage#52
 msgid "Enable to mirror the relay directory"
@@ -1850,7 +1851,7 @@ msgstr ""
 
 #: ServerPage#54
 msgid "Test"
-msgstr ""
+msgstr "Test"
 
 #: ServerPage#55
 msgid "Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 and 8888"
@@ -1866,7 +1867,7 @@ msgstr ""
 
 #: ServicePage#1
 msgid "Services"
-msgstr ""
+msgstr "Services"
 
 #: ServicePage#2
 msgid "Error while trying to unpublish all services"
@@ -2002,7 +2003,7 @@ msgstr ""
 
 #: UPNPControl#2
 msgid "No UPnP-enabled devices found"
-msgstr ""
+msgstr "Aucun périphérique UPnP trouvé"
 
 #: UPNPControl#3
 msgid "No valid UPnP-enabled Internet gateway devices found"
@@ -2026,11 +2027,11 @@ msgstr ""
 
 #: UPNPControl#8
 msgid "Unknown error"
-msgstr ""
+msgstr "Erreur inconnue"
 
 #: UPNPTestDialog#1
 msgid "Discovering UPnP-enabled devices"
-msgstr ""
+msgstr "Recherche des périphériques  UPnP"
 
 #: UPNPTestDialog#2
 msgid "Updating directory port mapping"
@@ -2042,7 +2043,7 @@ msgstr ""
 
 #: UPNPTestDialog#4
 msgid "Test completed successfully!"
-msgstr ""
+msgstr "Test terminé avec succès !"
 
 #: UPNPTestDialog#5
 msgid "Testing UPnP Support"
@@ -2163,4 +2164,3 @@ msgstr "Niveau de gravité des messages invalide :"
 #: Vidalia#16
 msgid "Unable to open log file '%1': %2"
 msgstr "Impossible d'ouvrir le fichier du Journal des messages '%1': %2"
-
