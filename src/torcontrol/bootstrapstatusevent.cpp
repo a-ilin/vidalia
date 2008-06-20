@@ -24,7 +24,7 @@ BootstrapStatusEvent::BootstrapStatusEvent(StatusEvent::Severity severity,
                                            const QString &description,
                                            const QString &warning,
                                            tc::ConnectionStatusReason reason,
-                                           RecommendAction action)
+                                           Recommendation action)
   : ClientStatusEvent(severity, ClientStatusEvent::BootstrapStatus)
 {
   _status = status;
@@ -66,13 +66,13 @@ BootstrapStatusEvent::statusFromString(const QString &str)
   return UnrecognizedStatus;
 }
 
-BootstrapStatusEvent::RecommendAction
+BootstrapStatusEvent::Recommendation
 BootstrapStatusEvent::actionFromString(const QString &str)
 {
   if (!str.compare("WARN", Qt::CaseInsensitive))
     return RecommendWarn;
   if (!str.compare("IGNORE", Qt::CaseInsensitive))
     return RecommendIgnore;
-  return UnrecognizedAction;
+  return UnrecognizedRecommendation;
 }
 

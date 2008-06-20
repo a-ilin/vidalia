@@ -45,8 +45,8 @@ public:
   };
   /** Actions the Tor software might recommend controllers take in response to
    * a bootstrap status problem event. */
-  enum RecommendAction {
-    UnrecognizedAction,
+  enum Recommendation {
+    UnrecognizedRecommendation,
     RecommendIgnore,
     RecommendWarn
   };
@@ -57,7 +57,7 @@ public:
                        const QString &description,
                        const QString &warning = QString(),
                        tc::ConnectionStatusReason reason = tc::UnrecognizedReason,
-                       RecommendAction action = UnrecognizedAction);
+                       Recommendation action = UnrecognizedRecommendation);
 
   /** Returns the BootstrapStatus enum value indicated by this bootstrap
    * status event. */
@@ -83,13 +83,13 @@ public:
 
   /** Returns the action that the Tor software recommended be taken in
    * response to this bootstrap status event. */ 
-  RecommendAction recommendedAction() const { return _action; }
+  Recommendation recommendedAction() const { return _action; }
 
   /** Converts a string TAG value to a BootstrapStatus enum value. */
   static BootstrapStatus statusFromString(const QString &tag);
   /** Converts a string RECOMMENDATION value to a RecommendAction enum
    * value. */
-  static RecommendAction actionFromString(const QString &str);
+  static Recommendation actionFromString(const QString &str);
 
 private:
   /** Current bootstrapping status value.
@@ -119,11 +119,11 @@ private:
    */
   tc::ConnectionStatusReason _reason;
 
-  /** RecommendAction enum value describing Tor's suggested response to this
+  /** Recommendation enum value describing Tor's suggested response to this
    * bootstrap status event.
    * \sa recommendedAction
    */
-  RecommendAction _action;
+  Recommendation _action;
 };
 
 #endif
