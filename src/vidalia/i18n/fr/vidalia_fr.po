@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-06-19 23:25+0000\n"
-"PO-Revision-Date: 2008-06-21 10:28+0100\n"
+"PO-Revision-Date: 2008-06-21 18:28+0100\n"
 "Last-Translator: mfr <mfr (ä] misericordia.be>\n"
 "Language-Team: translations@vidalia-project.net <translations@vidalia-"
 "project.net>\n"
@@ -175,11 +175,12 @@ msgstr "Repertoire de Données"
 
 #: AdvancedPage#31
 msgid "Store data for the Tor software in the following directory"
-msgstr ""
+msgstr "Sauver les données du logiciel Tor dans le répertoire suivant"
 
 #: AdvancedPage#32
 msgid "Select the directory used to store data for the Tor software"
 msgstr ""
+"Selectionnez le répertoire utilisé pour sauver les données du logiciel Tor"
 
 #: AdvancedPage#33
 msgid "Tor Configuration File"
@@ -608,6 +609,9 @@ msgstr "Ouvrir un lien externe"
 #: HelpTextBrowser#3
 msgid "Vidalia can open the link you selected in your default Web browser. If your browser is not currently configured to use Tor then the request will not be anonymous."
 msgstr ""
+"Vidalia peut ouvrir le lien que vous avez sélectionné dans votre navigateur "
+"par défaut. Si votre navigateur n'est pas actuellement configuré pour Tor, "
+"votre requête ne sera pas anonyme."
 
 #: HelpTextBrowser#4
 msgid "Do you want Vidalia to open the link in your Web browser?"
@@ -876,6 +880,9 @@ msgid "You are currently running a relay. Terminating your relay will interrupt 
 ""
 "Would you like to shutdown gracefully and give clients time to find a new relay?"
 msgstr ""
+"Vous opérez actuellement un relais. Terminer ce relais va interrompre toutes "
+"les connexions des clients. Voulez vous arrêter celui-ci avec un délai de "
+"grâce pour donner au clients le temps de trouver un nouveau relais ?"
 
 #: MainWindow#57
 msgid "Error Shutting Down"
@@ -894,10 +901,14 @@ msgid "Vidalia detected that the Tor software exited unexpectedly."
 ""
 "Please check the message log for recent warning or error messages."
 msgstr ""
+"Vidalia a détecté que Tor s'est terminé de manière inattendue.Merci de "
+"regarder dans l'historique des messages les alertes et les erreurs récentes."
 
 #: MainWindow#61
 msgid "The Tor software requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one."
 msgstr ""
+"Le logiciel Tor demande que Vidalia envoie le contenu d'un cookie "
+"d'authentification, mais Vidalia n'a pas pu le trouver."
 
 #: MainWindow#62
 msgid "Data Directory"
@@ -910,6 +921,8 @@ msgstr "Cookie de Contrôle (control_auth_cookie)"
 #: MainWindow#64
 msgid "Vidalia was unable to register for some events. Many of Vidalia's features may be unavailable."
 msgstr ""
+"Vidalia n'a pas pu enregistrer certains évènements. Plusieurs "
+"fonctionnalités de Vidalia peuvent être indisponibles."
 
 #: MainWindow#65
 msgid "Authentication Error"
@@ -917,7 +930,7 @@ msgstr "Erreur d'authentification"
 
 #: MainWindow#66
 msgid "Vidalia was unable to authenticate to the Tor software. (%1)"
-msgstr ""
+msgstr "Vidalia n'a pu s'authentifier au logiciel Tor. (%1)"
 
 #: MainWindow#67
 msgid "Port Forwarding Failed"
@@ -925,7 +938,7 @@ msgstr "Erreur de Transfert de Port"
 
 #: MainWindow#68
 msgid "Vidalia was unable to configure automatic port forwarding."
-msgstr ""
+msgstr "Vidalia n'a pas pu configurer automatiquement le transfert de ports."
 
 #: MainWindow#69
 msgid "Status"
@@ -965,7 +978,7 @@ msgstr "Connexion à un annuaire de relais"
 
 #: MainWindow#78
 msgid "Establishing an encrypted directory connection"
-msgstr ""
+msgstr "Etablissement d'une connexion annuaire cryptée"
 
 #: MainWindow#79
 msgid "Retrieving network status"
@@ -1025,19 +1038,19 @@ msgstr "temps de connexion expiré"
 
 #: MainWindow#93
 msgid "read/write error"
-msgstr ""
+msgstr "erreur de lecture/écriture"
 
 #: MainWindow#94
 msgid "no route to host"
-msgstr ""
+msgstr "pas de route vers l'hôte"
 
 #: MainWindow#95
 msgid "insufficient resources"
-msgstr ""
+msgstr "ressources insuffisantes"
 
 #: MainWindow#96
 msgid "unknown"
-msgstr ""
+msgstr "inconnu"
 
 #: MainWindow#97
 msgid " failed (%1)"
@@ -1882,7 +1895,7 @@ msgstr "Services"
 
 #: ServicePage#2
 msgid "Error while trying to unpublish all services"
-msgstr ""
+msgstr "Erreur lors de la dépublication de tous les services"
 
 #: ServicePage#3
 msgid "Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones."
@@ -1898,11 +1911,13 @@ msgstr "Merci de choisir un Service."
 
 #: ServicePage#6
 msgid "Select Service Directory"
-msgstr ""
+msgstr "Sélectionnez le répertoire de Service"
 
 #: ServicePage#7
 msgid "Virtual Port may only contain valid port numbers [1..65535]."
 msgstr ""
+"Les ports virtuels peuvent uniquement contenir des numéros de ports valides "
+"[1..65535]"
 
 #: ServicePage#8
 msgid "Target may only contain address:port, address, or port."
@@ -2020,7 +2035,7 @@ msgstr "Aucun périphérique UPnP trouvé"
 
 #: UPNPControl#3
 msgid "No valid UPnP-enabled Internet gateway devices found"
-msgstr ""
+msgstr "Aucun périphérique de passerelle Internet UPnP n'a été trouvé"
 
 #: UPNPControl#4
 msgid "WSAStartup failed"
@@ -2028,15 +2043,15 @@ msgstr ""
 
 #: UPNPControl#5
 msgid "Failed to add a port mapping"
-msgstr ""
+msgstr "Echec lors de l'ajout d'un transfert de port"
 
 #: UPNPControl#6
 msgid "Failed to retrieve a port mapping"
-msgstr ""
+msgstr "Echec lors de la recherche d'un transfert de port"
 
 #: UPNPControl#7
 msgid "Failed to remove a port mapping"
-msgstr ""
+msgstr "Echec lors de la suppression d'un transfert de port"
 
 #: UPNPControl#8
 msgid "Unknown error"
@@ -2048,11 +2063,11 @@ msgstr "Recherche des périphériques  UPnP"
 
 #: UPNPTestDialog#2
 msgid "Updating directory port mapping"
-msgstr ""
+msgstr "Mise à jour du transfert du port Annuaire"
 
 #: UPNPTestDialog#3
 msgid "Updating relay port mapping"
-msgstr ""
+msgstr "Mise à jour du transfert du port Relais"
 
 #: UPNPTestDialog#4
 msgid "Test completed successfully!"
