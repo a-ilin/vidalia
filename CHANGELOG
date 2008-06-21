@@ -1,3 +1,19 @@
+0.1.5   21-Jun-2008
+  o Add support for Tor 0.2.0.2-alpha's new 'status/bootstrap-phase' getinfo
+    option. Call it to update the progress bar to Tor's current bootstrapping
+    progress immediately after connecting to Tor.
+  o Force a repaint() to try to ensure the progress bar and onion status icon
+    don't overlap briefly when starting Tor.
+  o Tweak the resize policy for the control panel so the vertical size is
+    fixed at minimal and sufficient, and the horizontal size is adjustable but
+    obeys the minimum size hint. (Ticket #363)
+  o Default to the language chosen by the user during install (Windows-only)
+    rather than the system language. (Ticket #246)
+  o Include the text of the LGPLv3 in the binary packages.
+  o Updated Finnish, French, German, Japanese, Spanish, and Swedish
+    translations.
+
+
 0.1.4   13-Jun-2008
   o Add a progress bar and status label for displaying Tor's startup progress
     based on new Tor bootstrapping status events.
