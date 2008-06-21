@@ -66,9 +66,21 @@ namespace tc {
     NoRouteToHost,
     ResourceLimitReached
   };
-  
+  /** Severity values used in log message and status events. */
+  enum Severity {
+    UnrecognizedSeverity, /**< An unrecognized severity value. */
+    SeverityDebug,  /**< Hyper-verbose events used for debugging. */
+    SeverityInfo,   /**< Verbose events that can occur frequently. */
+    SeverityNotice, /**< A not-so-bad event. */
+    SeverityWarn,   /**< An important, but non-fatal event. */
+    SeverityError   /**< A critical event. */
+  };
+
+  /** Converts <b>str</b> to a Severity enum value. */
+  Severity toSeverity(const QString &str);
+
   /** Converts <b>str</b> to a ConnectionStatusReason enum value. */
-  ConnectionStatusReason connectionStatusReason(const QString &str);
+  ConnectionStatusReason toConnectionStatusReason(const QString &str);
 
   /** Creates a new message using <b>fmt</b> and a severity level of
    * QtDebugMsg. */

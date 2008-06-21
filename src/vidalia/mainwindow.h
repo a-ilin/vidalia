@@ -165,7 +165,7 @@ private:
   void dangerousTorVersion();
   /** Called when Tor's bootstrapping status changes. <b>bse</b> represents
    * Tor's current estimate of its bootstrapping progress. */
-  void bootstrapStatusChanged(const BootstrapStatusEvent *bse);
+  void bootstrapStatusChanged(const BootstrapStatus &bs);
   /** Sets the visibility of the startup status description and progress bar
    * to <b>visible</b>. */
   void setStartupProgressVisible(bool visible);

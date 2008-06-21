@@ -36,7 +36,7 @@ public:
   };
 
   /** Constructor */
-  GeneralStatusEvent(StatusEvent::Severity severity, Status status)
+  GeneralStatusEvent(tc::Severity severity, Status status)
     : StatusEvent((QEvent::Type)CustomEventType::ServerStatusEvent, severity),
       _status(status) {}
 

@@ -201,10 +201,10 @@ MainWindow::customEvent(QEvent *event)
     if (cse->status() == ClientStatusEvent::CircuitEstablished) {
       circuitEstablished();
       cse->accept();
-    } else if (cse->status() == ClientStatusEvent::BootstrapStatus) {
+    } else if (cse->status() == ClientStatusEvent::Bootstrap) {
       BootstrapStatusEvent *bse = dynamic_cast<BootstrapStatusEvent *>(cse);
       if (bse)
-        bootstrapStatusChanged(bse);
+        bootstrapStatusChanged(bse->status());
       cse->accept();
     }
   } else if (event->type() == CustomEventType::GeneralStatusEvent) {
@@ -522,44 +522,44 @@ MainWindow::onProxyFailed(QString errmsg)
 /** Called when Tor's bootstrapping status changes. <b>bse</b> represents
  * Tor's current estimate of its bootstrapping progress. */
 void
-MainWindow::bootstrapStatusChanged(const BootstrapStatusEvent *bse)
+MainWindow::bootstrapStatusChanged(const BootstrapStatus &bs)
 {
-  int percentComplete = STARTUP_PROGRESS_BOOTSTRAPPING + bse->percentComplete();
-  bool warn = (bse->severity() == StatusEvent::SeverityWarn && 
-               bse->recommendedAction() != BootstrapStatusEvent::RecommendIgnore);
+  int percentComplete = STARTUP_PROGRESS_BOOTSTRAPPING + bs.percentComplete();
+  bool warn = (bs.severity() == tc::SeverityWarn && 
+               bs.recommendedAction() != BootstrapStatus::RecommendIgnore);
 
   QString description;
-  switch (bse->status()) {
-    case BootstrapStatusEvent::ConnectingToDirMirror:
+  switch (bs.status()) {
+    case BootstrapStatus::ConnectingToDirMirror:
       description = tr("Connecting to a relay directory");
       break;
-    case BootstrapStatusEvent::HandshakingWithDirMirror:
-    case BootstrapStatusEvent::CreatingOneHopCircuit:
+    case BootstrapStatus::HandshakingWithDirMirror:
+    case BootstrapStatus::CreatingOneHopCircuit:
       description = tr("Establishing an encrypted directory connection");
       break;
-    case BootstrapStatusEvent::RequestingNetworkStatus:
+    case BootstrapStatus::RequestingNetworkStatus:
       description = tr("Retrieving network status");
       break;
-    case BootstrapStatusEvent::LoadingNetworkStatus:
+    case BootstrapStatus::LoadingNetworkStatus:
       description = tr("Loading network status");
       break;
-    case BootstrapStatusEvent::LoadingAuthorityCertificates:
+    case BootstrapStatus::LoadingAuthorityCertificates:
       description = tr("Loading authority certificates");
       break;
-    case BootstrapStatusEvent::RequestingDescriptors:
+    case BootstrapStatus::RequestingDescriptors:
       description = tr("Requesting relay information");
       break;
-    case BootstrapStatusEvent::LoadingDescriptors:
+    case BootstrapStatus::LoadingDescriptors:
       description = tr("Loading relay information");
       break;
-    case BootstrapStatusEvent::ConnectingToEntryGuard:
+    case BootstrapStatus::ConnectingToEntryGuard:
       description = tr("Connecting to the Tor network");
       break;
-    case BootstrapStatusEvent::HandshakingWithEntryGuard:
-    case BootstrapStatusEvent::EstablishingCircuit:
+    case BootstrapStatus::HandshakingWithEntryGuard:
+    case BootstrapStatus::EstablishingCircuit:
       description = tr("Establishing a Tor circuit");
       break;
-    case BootstrapStatusEvent::BootstrappingDone:
+    case BootstrapStatus::BootstrappingDone:
       description = tr("Connected to the Tor network!");
       warn = false; /* probably false anyway */
       break;
@@ -569,7 +569,7 @@ MainWindow::bootstrapStatusChanged(const BootstrapStatusEvent *bse)
   if (warn) {
     QString reason;
     /* Is it really a good idea to translate these? */
-    switch (bse->reason()) {
+    switch (bs.reason()) {
       case tc::MiscellaneousReason:
         reason = tr("miscellaneous");
         break;
@@ -1122,6 +1122,11 @@ MainWindow::authenticated()
   /* Check the status of Tor's version */
   if (_torControl->getTorVersion() >= 0x020001)
     checkTorVersion();
+  if (_torControl->getTorVersion() >= 0x020102) {
+    BootstrapStatus status = _torControl->bootstrapStatus();
+    if (status.isValid())
+      bootstrapStatusChanged(status);
+  }
 }
 
 /** Called when Vidalia fails to authenticate to Tor. The failure reason is

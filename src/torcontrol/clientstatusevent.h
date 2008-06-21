@@ -26,7 +26,7 @@ public:
   /** Tor client status event type. */
   enum Status {
     UnrecognizedStatus,
-    BootstrapStatus,
+    Bootstrap,
     CircuitEstablished,
     CircuitNotEstablished,
     NotEnoughDirectoryInfo,
@@ -37,7 +37,7 @@ public:
   };
   
   /** Constructor. */
-  ClientStatusEvent(StatusEvent::Severity severity, Status status)
+  ClientStatusEvent(tc::Severity severity, Status status)
     : StatusEvent((QEvent::Type)CustomEventType::ClientStatusEvent, severity),
        _status(status) {}
 

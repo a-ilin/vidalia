@@ -27,7 +27,7 @@ public:
   /** Constructor. <b>statusString</b> is the unrecognized general status
    * string and <b>args</b> is the (possibly empty) list of status event
    * arguments. */
-  UnrecognizedGeneralStatusEvent(StatusEvent::Severity severity,
+  UnrecognizedGeneralStatusEvent(tc::Severity severity,
                                 const QString &statusString,
                                 const QHash<QString,QString> &args)
     : GeneralStatusEvent(severity, GeneralStatusEvent::UnrecognizedStatus),

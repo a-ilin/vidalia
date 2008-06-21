@@ -13,7 +13,7 @@
 
 set(torcontrol_SRCS 
   addressmap.cpp
-  bootstrapstatusevent.cpp
+  bootstrapstatus.cpp
   circuit.cpp
   clientstatusevent.cpp
   controlcommand.cpp
@@ -29,7 +29,6 @@ set(torcontrol_SRCS
   routerdescriptor.cpp
   routerstatus.cpp
   serverstatusevent.cpp
-  statusevent.cpp
   stream.cpp
   tcglobal.cpp
   torcontrol.cpp

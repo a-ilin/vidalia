@@ -344,6 +344,25 @@ TorControl::useFeature(const QString &feature, QString *errmsg)
   return send(cmd, errmsg); 
 }
 
+BootstrapStatus
+TorControl::bootstrapStatus(QString *errmsg)
+{
+  QString str = getInfo("status/bootstrap-phase").toString();
+  if (!str.isEmpty()) {
+    tc::Severity severity = tc::toSeverity(str.section(' ', 1, 1));
+    QHash<QString,QString> args = string_parse_keyvals(str);
+    return BootstrapStatus(severity,
+              BootstrapStatus::statusFromString(args.value("TAG")),
+              args.value("PROGRESS").toInt(),
+              args.value("SUMMARY"),
+              args.value("WARNING"),
+              tc::toConnectionStatusReason(args.value("REASON")),
+              BootstrapStatus::actionFromString(
+                args.value("RECOMMENDATION")));
+  }
+  return BootstrapStatus();
+}
+
 /** Returns true if Tor either has an open circuit or (on Tor >=
  * 0.2.0.1-alpha) has previously decided it's able to establish a circuit. */
 bool

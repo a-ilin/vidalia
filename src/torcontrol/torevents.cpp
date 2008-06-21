@@ -375,11 +375,11 @@ void
 TorEvents::handleStatusEvent(TorEvent type, const ReplyLine &line)
 {
   QString status;
-  StatusEvent::Severity severity;
+  tc::Severity severity;
   QHash<QString,QString> args;
   QString msg = line.getMessage();
   
-  severity = StatusEvent::severityFromString(msg.section(' ', 1, 1));
+  severity = tc::toSeverity(msg.section(' ', 1, 1));
   status   = msg.section(' ', 2, 2);
   args     = string_parse_keyvals(msg.section(' ', 3));
   switch (type) {
@@ -394,7 +394,7 @@ TorEvents::handleStatusEvent(TorEvent type, const ReplyLine &line)
 
 /** Parses and posts a Tor client status event. */
 void
-TorEvents::dispatchClientStatusEvent(StatusEvent::Severity severity,
+TorEvents::dispatchClientStatusEvent(tc::Severity severity,
                                      const QString &action,
                                      const QHash<QString,QString> &args)
 {
@@ -406,15 +406,16 @@ TorEvents::dispatchClientStatusEvent(StatusEvent::Severity severity,
     case ClientStatusEvent::CircuitEstablished:
       event = new CircuitEstablishedEvent(severity); break;
     
-    case ClientStatusEvent::BootstrapStatus:
-      event = new BootstrapStatusEvent(severity,
-                    BootstrapStatusEvent::statusFromString(args.value("TAG")),
+    case ClientStatusEvent::Bootstrap:
+      event = new BootstrapStatusEvent(BootstrapStatus(severity,
+                    BootstrapStatus::statusFromString(args.value("TAG")),
                     args.value("PROGRESS").toInt(),
                     args.value("SUMMARY"),
                     args.value("WARNING"),
-                    tc::connectionStatusReason(args.value("REASON")),
-                    BootstrapStatusEvent::actionFromString(
-                      args.value("RECOMMENDATION")));
+                    tc::toConnectionStatusReason(args.value("REASON")),
+                    BootstrapStatus::actionFromString(
+                      args.value("RECOMMENDATION"))));
+
       break;
 
     default:
@@ -425,7 +426,7 @@ TorEvents::dispatchClientStatusEvent(StatusEvent::Severity severity,
 
 /** Parses and posts a Tor server status event. */
 void
-TorEvents::dispatchServerStatusEvent(StatusEvent::Severity severity,
+TorEvents::dispatchServerStatusEvent(tc::Severity severity,
                                      const QString &action,
                                      const QHash<QString,QString> &args)
 {
@@ -442,7 +443,7 @@ TorEvents::dispatchServerStatusEvent(StatusEvent::Severity severity,
 
 /** Parses and posts a general Tor status event. */
 void
-TorEvents::dispatchGeneralStatusEvent(StatusEvent::Severity severity,
+TorEvents::dispatchGeneralStatusEvent(tc::Severity severity,
                                       const QString &action,
                                       const QHash<QString,QString> &args)
 {

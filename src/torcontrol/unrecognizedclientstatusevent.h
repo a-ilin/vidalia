@@ -27,7 +27,7 @@ public:
   /** Constructor. <b>statusString</b> is the unrecognized client status value
    * string and <b>args</b> is the (possibly empty) list of status event
    * arguments. */
-  UnrecognizedClientStatusEvent(StatusEvent::Severity severity,
+  UnrecognizedClientStatusEvent(tc::Severity severity,
                                 const QString &statusString,
                                 const QHash<QString,QString> &args)
     : ClientStatusEvent(severity, ClientStatusEvent::UnrecognizedStatus),

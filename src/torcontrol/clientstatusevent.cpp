@@ -37,7 +37,7 @@ ClientStatusEvent::statusFromString(const QString &str)
   if (!str.compare("SOCKS_BAD_HOSTNAME", Qt::CaseInsensitive))
     return SocksBadHostname;
   if (!str.compare("BOOTSTRAP", Qt::CaseInsensitive))
-    return BootstrapStatus;
+    return Bootstrap;
   return UnrecognizedStatus;
 }
 

@@ -24,7 +24,7 @@ class CircuitEstablishedEvent : public ClientStatusEvent
 {
 public:
   /** Constructor. */
-  CircuitEstablishedEvent(StatusEvent::Severity severity)
+  CircuitEstablishedEvent(tc::Severity severity)
     : ClientStatusEvent(severity, ClientStatusEvent::CircuitEstablished) {}
 };
 

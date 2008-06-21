@@ -29,6 +29,7 @@
 #include "torsignal.h"
 #include "routerdescriptor.h"
 #include "routerstatus.h"
+#include "bootstrapstatus.h"
 #include "addressmap.h"
 #include "protocolinfo.h"
 
@@ -74,7 +75,10 @@ public:
   
   /** Sends a PROTOCOLINFO command to Tor and parses the response. */
   ProtocolInfo protocolInfo(QString *errmsg = 0);
- 
+
+  /** Returns the Tor software's current bootstrap phase and status. */
+  BootstrapStatus bootstrapStatus(QString *errmsg = 0);
+
   /** Returns true if Tor either has an open circuit or (on Tor >= 
    * 0.2.0.1-alpha) has previously decided it's able to establish a circuit. */
   bool circuitEstablished();

@@ -40,7 +40,7 @@ public:
   };
 
   /** Constructor */
-  ServerStatusEvent(StatusEvent::Severity severity, Status status)
+  ServerStatusEvent(tc::Severity severity, Status status)
     : StatusEvent((QEvent::Type)CustomEventType::ServerStatusEvent, severity),
       _status(status) {}
 

@@ -35,7 +35,7 @@ public:
   };
 
   /** Constructor. */
-  DangerousVersionEvent(StatusEvent::Severity severity, Reason reason,
+  DangerousVersionEvent(tc::Severity severity, Reason reason,
                         const QString &currentVersion,
                         const QStringList &recommendedVersions)
     : GeneralStatusEvent(severity, GeneralStatusEvent::DangerousTorVersion),

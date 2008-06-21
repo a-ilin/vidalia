@@ -20,31 +20,24 @@
 #include <QEvent>
 #include <QString>
 #include "eventtype.h"
+#include "tcglobal.h"
 
 
 class StatusEvent : public QEvent
 {
 public:
-  /** Satus event severity values. */
-  enum Severity {
-    SeverityUnknown,  /**< An unrecognized status event severity. */
-    SeverityNotice,   /**< A not-so-bad status event. */
-    SeverityWarn,     /**< An important, but non-fatal status event. */
-    SeverityError     /**< A critical status event. */
-  };
-  
   /** Constructor */
-  StatusEvent(QEvent::Type type, Severity severity)
+  StatusEvent(QEvent::Type type, tc::Severity severity)
     : QEvent(type), _severity(severity) {}
 
   /** Returns the severity of this status event. */
-  Severity severity() const { return _severity; }
+  tc::Severity severity() const { return _severity; }
   /** Returns a StatusEvent::Severity enum value for the severity represented
    * by <b>str</b>. */ 
-  static Severity severityFromString(const QString &str);
+  static tc::Severity severityFromString(const QString &str);
 
 private:
-  Severity _severity; /**< Severity of this status event. */
+  tc::Severity _severity; /**< Severity of this status event. */
 };
 
 #endif

@@ -106,15 +106,15 @@ private:
   void handleStatusEvent(TorEvent type, const ReplyLine &line);
   
   /** Parses and posts a Tor client status event. */
-  void dispatchClientStatusEvent(StatusEvent::Severity severity,
+  void dispatchClientStatusEvent(tc::Severity severity,
                                  const QString &action,
                                  const QHash<QString,QString> &args);
   /** Parses and posts a Tor server status event. */
-  void dispatchServerStatusEvent(StatusEvent::Severity severity,
+  void dispatchServerStatusEvent(tc::Severity severity,
                                  const QString &action,
                                  const QHash<QString,QString> &args);
   /** Parses and posts a general Tor status event. */
-  void dispatchGeneralStatusEvent(StatusEvent::Severity severity,
+  void dispatchGeneralStatusEvent(tc::Severity severity,
                                   const QString &action,
                                   const QHash<QString,QString> &args);
 };

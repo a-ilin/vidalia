@@ -53,7 +53,7 @@ fatal(const QString &fmt)
 
 /** Converts <b>str</b> to a ConnectionStatusReason enum value. */
 ConnectionStatusReason
-connectionStatusReason(const QString &str)
+toConnectionStatusReason(const QString &str)
 {
   if (str.isEmpty())
     return UnrecognizedReason;
@@ -76,6 +76,23 @@ connectionStatusReason(const QString &str)
   if (!str.compare("IOERROR", Qt::CaseInsensitive))
     return ConnectionIoError;
   return UnrecognizedReason;
+}
+
+/** DOCDOC */
+Severity
+toSeverity(const QString &str)
+{
+  if (!str.compare("DEBUG", Qt::CaseInsensitive))
+    return SeverityDebug;
+  if (!str.compare("INFO", Qt::CaseInsensitive))
+    return SeverityInfo;
+  if (!str.compare("NOTICE", Qt::CaseInsensitive))
+    return SeverityNotice;
+  if (!str.compare("WARN", Qt::CaseInsensitive))
+    return SeverityWarn;
+  if (!str.compare("ERR", Qt::CaseInsensitive))
+    return SeverityError;
+  return UnrecognizedSeverity;
 }
 
 }
