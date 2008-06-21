@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-06-19 23:25+0000\n"
-"PO-Revision-Date: 2008-06-21 07:28+0000\n"
-"Last-Translator: Mfr <mfr@misericordia.be>\n"
+"PO-Revision-Date: 2008-06-21 10:28+0100\n"
+"Last-Translator: mfr <mfr (ä] misericordia.be>\n"
 "Language-Team: translations@vidalia-project.net <translations@vidalia-"
 "project.net>\n"
 "MIME-Version: 1.0\n"
@@ -415,11 +415,11 @@ msgstr "Vous devez indiquer le nom de votre exécutable Tor."
 
 #: GeneralPage#6
 msgid "Select Proxy Executable"
-msgstr ""
+msgstr "Selectionnez le fichier exécutable du proxy"
 
 #: GeneralPage#7
 msgid "The proxy arguments specified are not properly formatted."
-msgstr ""
+msgstr "Les paramètres du proxy ne sont pas correctement formatés."
 
 #: GeneralPage#8
 msgid "Start Vidalia when my system starts"
@@ -611,7 +611,7 @@ msgstr ""
 
 #: HelpTextBrowser#4
 msgid "Do you want Vidalia to open the link in your Web browser?"
-msgstr ""
+msgstr "Voulez vous que Vidalia ouvre le lien dans votre navigateur ?"
 
 #: HelpTextBrowser#5
 msgid "Unable to Open Link"
@@ -620,6 +620,8 @@ msgstr "Impossible d'ouvrir le lien"
 #: HelpTextBrowser#6
 msgid "Vidalia was unable to open the selected link in your Web browser. You can still copy the URL and paste it into your browser."
 msgstr ""
+"Vidalia a été incapable d'ouvrir le lien selectionné dans votre navigateur. "
+"Vous pouvez tout de même copier l'URL et la coller dans votre navigateur."
 
 #: LogEvent#1
 msgid "Debug"
@@ -862,6 +864,8 @@ msgstr ""
 msgid "Your relay is shutting down."
 "Click 'Stop' again to stop your relay now."
 msgstr ""
+"Voutre relay s'arrête. Cliquer à nouvzau sur 'Stop' pour arrêter votre "
+"relais immédiatement."
 
 #: MainWindow#55
 msgid "Connection Error"
@@ -953,7 +957,7 @@ msgstr "Erreur au lancement du client MI"
 
 #: MainWindow#76
 msgid "Vidalia was unable to start the configured IM client"
-msgstr ""
+msgstr "Vidalia n'a pas pu lancer le client de MI configuré"
 
 #: MainWindow#77
 msgid "Connecting to a relay directory"
@@ -977,11 +981,11 @@ msgstr "Chargement des certificats des authorités"
 
 #: MainWindow#82
 msgid "Requesting relay information"
-msgstr ""
+msgstr "Demande d'informations sur le relais"
 
 #: MainWindow#83
 msgid "Loading relay information"
-msgstr ""
+msgstr "Chargement des informations sur le relais"
 
 #: MainWindow#84
 msgid "Connecting to the Tor network"
@@ -989,15 +993,15 @@ msgstr "Connexion au réseau Tor"
 
 #: MainWindow#85
 msgid "Establishing a Tor circuit"
-msgstr ""
+msgstr "Etablissement d'un circuit Tor"
 
 #: MainWindow#86
 msgid "Connected to the Tor network!"
-msgstr ""
+msgstr "Connecté au réseau Tor !"
 
 #: MainWindow#87
 msgid "Unrecognized startup status"
-msgstr ""
+msgstr "Etat de lancement inconnu"
 
 #: MainWindow#88
 msgid "miscellaneous"
@@ -1848,11 +1852,11 @@ msgstr "Lancer uniquement comme client"
 
 #: ServerPage#52
 msgid "Enable to mirror the relay directory"
-msgstr ""
+msgstr "Activer le mirroir de l'annuaire des relais"
 
 #: ServerPage#53
 msgid "Attempt to automatically configure port forwarding"
-msgstr ""
+msgstr "Essai de configuration automatique du transfert de ports"
 
 #: ServerPage#54
 msgid "Test"
@@ -1865,10 +1869,12 @@ msgstr "Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 et 8888"
 #: ServerPage#56
 msgid "What Internet resources should users be able to access from your relay?"
 msgstr ""
+"Quelles sont les ressources d'Internet auquelles peuvent avoir accès les "
+"utilisateurs par votre relais ?"
 
 #: ServerPage#57
 msgid "Show help topic on port forwarding"
-msgstr ""
+msgstr "Voir la rubrique d'aide sur le transfert de port"
 
 #: ServicePage#1
 msgid "Services"
@@ -1888,7 +1894,7 @@ msgstr "Erreur"
 
 #: ServicePage#5
 msgid "Please select a Service."
-msgstr ""
+msgstr "Merci de choisir un Service."
 
 #: ServicePage#6
 msgid "Select Service Directory"
@@ -1900,11 +1906,11 @@ msgstr ""
 
 #: ServicePage#8
 msgid "Target may only contain address:port, address, or port."
-msgstr ""
+msgstr "Destination doit uniquement contenir addresse:port, addresse, or port."
 
 #: ServicePage#9
 msgid "Directory already in use by another service."
-msgstr ""
+msgstr "Répertoire déjà utilisé par un autre service"
 
 #: ServicePage#10
 msgid "Form"
@@ -1912,7 +1918,7 @@ msgstr ""
 
 #: ServicePage#11
 msgid "Provided Hidden Services"
-msgstr ""
+msgstr "Services Cachés hébergés"
 
 #: ServicePage#12
 msgid "Onion Address"
@@ -1928,11 +1934,11 @@ msgstr "Destination"
 
 #: ServicePage#15
 msgid "Directory Path"
-msgstr ""
+msgstr "Chemin de Répertoire"
 
 #: ServicePage#16
 msgid "Enabled"
-msgstr ""
+msgstr "Activé"
 
 #: ServicePage#17
 msgid "Add new service to list"
@@ -1949,6 +1955,8 @@ msgstr "Copier l'adresse onion du service selectionné dans le presse-papiers."
 #: ServicePage#20
 msgid "Browse in local file system and choose directory for selected service"
 msgstr ""
+"Parcourez le systeme de fichiers et choisissez le répertoire du service "
+"selectionné"
 
 #: Stream#1
 msgid "New"
