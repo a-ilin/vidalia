@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-06-19 23:25+0000\n"
-"PO-Revision-Date: 2008-06-21 18:28+0100\n"
-"Last-Translator: mfr <mfr (ä] misericordia.be>\n"
+"PO-Revision-Date: 2008-06-21 17:53+0000\n"
+"Last-Translator: Mfr <mfr@misericordia.be>\n"
 "Language-Team: translations@vidalia-project.net <translations@vidalia-"
 "project.net>\n"
 "MIME-Version: 1.0\n"
@@ -368,7 +368,7 @@ msgstr "Partage"
 
 #: ConfigDialog#14
 msgid "Services"
-msgstr ""
+msgstr "Services"
 
 #: ControlConnection#1
 msgid "Control socket is not connected."
@@ -1018,15 +1018,15 @@ msgstr "Etat de lancement inconnu"
 
 #: MainWindow#88
 msgid "miscellaneous"
-msgstr ""
+msgstr "divers"
 
 #: MainWindow#89
 msgid "identity mismatch"
-msgstr ""
+msgstr "identité incorrecte"
 
 #: MainWindow#90
 msgid "done"
-msgstr ""
+msgstr "fait"
 
 #: MainWindow#91
 msgid "connection refused"
@@ -1054,7 +1054,7 @@ msgstr "inconnu"
 
 #: MainWindow#97
 msgid " failed (%1)"
-msgstr ""
+msgstr " échec (%1)"
 
 #: MainWindow#98
 msgid "Stop Tor Now"
@@ -1352,11 +1352,14 @@ msgstr "Enregistrer les nouveaux messages dans un fichier"
 msgid "Messages that appear when something has "
 "gone very wrong and Tor cannot proceed."
 msgstr ""
+"Messages qui apparaissent quand un problème très grave est arrivé et que Tor "
+"ne peut continuer."
 
 #: MessageLog#67
 msgid "Messages that only appear when "
 "something has gone wrong with Tor."
 msgstr ""
+"Messages qui apparaissent uniquement quand un problème est arrivé dans Tor."
 
 #: MessageLog#68
 msgid "Messages that appear infrequently "
@@ -1364,16 +1367,18 @@ msgid "Messages that appear infrequently "
 "not considered errors, but you may "
 "care about."
 msgstr ""
+"Messages qui apparaissent rarement durant le fonctionnement de Tor et qui ne "
+"sont pas des erreurs, mais auquels vous devez faire attention."
 
 #: MessageLog#69
 msgid "Messages that appear frequently "
 "during normal Tor operation."
-msgstr ""
+msgstr "Messages qui apparaissent fréquemment durant le fonctionnement de Tor."
 
 #: MessageLog#70
 msgid "Hyper-verbose messages primarily of "
 "interest to Tor developers."
-msgstr ""
+msgstr "Messages hyper nombreux principalement pour les développeurs Tor."
 
 #: NetViewer#1
 msgid "Refresh"
@@ -1550,14 +1555,20 @@ msgstr "<a href=\"bridges.finding\">Comment puis-je trouver un relais passerelle
 #: NetworkPage#24
 msgid "Check if your local network requires a proxy to access the Internet"
 msgstr ""
+"Cochez si votre réseau local a besoin d'un proxy mandataire pour accéder à "
+"Internet"
 
 #: NetworkPage#25
 msgid "Check to only connect to relays using ports allowed by your firewall"
 msgstr ""
+"Cochez pour se connecter uniquement au relais en utilisant les ports "
+"autorisés par votre parefeu."
 
 #: NetworkPage#26
 msgid "Check to encrypt directory requests and, optionally, use bridge relays to access the Tor network"
 msgstr ""
+"Cochez pour crypter les demandes d'annuaire et, facultativement, utilisez "
+"les relais passerelles pour accéder au réseau Tor."
 
 #: NetworkPage#27
 msgid "Bridge Settings"
@@ -1566,6 +1577,8 @@ msgstr "Paramètres de Passerelle"
 #: NetworkPage#28
 msgid "The Tor software you are currently running does not support bridges. <br>Directory connections will still be encrypted."
 msgstr ""
+"Le logiciel Tor que vous utilisez actuellement ne supporte pas les "
+"passerelles. <br> Les connexions Annuaire seront cryptées."
 
 #: Policy#1
 msgid "accept"
@@ -1900,6 +1913,8 @@ msgstr "Erreur lors de la dépublication de tous les services"
 #: ServicePage#3
 msgid "Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones."
 msgstr ""
+"Merci de configurer au moins un repertoire et un port virtuel pour chacun "
+"des services que vous voulez sauver. Supprimez les autres."
 
 #: ServicePage#4
 msgid "Error"
@@ -1929,7 +1944,7 @@ msgstr "Répertoire déjà utilisé par un autre service"
 
 #: ServicePage#10
 msgid "Form"
-msgstr ""
+msgstr "Formulaire"
 
 #: ServicePage#11
 msgid "Provided Hidden Services"
@@ -2027,7 +2042,7 @@ msgstr "Échec lors du hashage du mot de passe de contrôle."
 
 #: UPNPControl#1
 msgid "Success"
-msgstr ""
+msgstr "Succès"
 
 #: UPNPControl#2
 msgid "No UPnP-enabled devices found"
@@ -2039,7 +2054,7 @@ msgstr "Aucun périphérique de passerelle Internet UPnP n'a été trouvé"
 
 #: UPNPControl#4
 msgid "WSAStartup failed"
-msgstr ""
+msgstr "Echec du lancement de WSA"
 
 #: UPNPControl#5
 msgid "Failed to add a port mapping"
@@ -2075,11 +2090,11 @@ msgstr "Test terminé avec succès !"
 
 #: UPNPTestDialog#5
 msgid "Testing UPnP Support"
-msgstr ""
+msgstr "Test du support UPnP"
 
 #: UPNPTestDialog#6
 msgid "Testing Universal Plug & Play Support"
-msgstr ""
+msgstr "Teste le support du Plug & Play Universel"
 
 #: VMessageBox#1
 msgid "OK"
