@@ -9,9 +9,9 @@
 */
 
 /* 
-** \file bootstrapstatusevent.cpp
-** \version $Id: bootstrapstatusevent.cpp 2772 2008-06-20 23:36:05Z edmanm $
-** \brief  sent by Tor when its bootstrapping status changes
+** \file bootstrapstatus.cpp
+** \version $Id$
+** \brief  Describes the Tor software's current bootstrapping status
 */
 
 #include "bootstrapstatus.h"

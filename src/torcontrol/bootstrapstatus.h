@@ -10,7 +10,7 @@
 
 /* 
 ** \file bootstrapstatus.h
-** \version $Id: bootstrapstatusevent.h 2772 2008-06-20 23:36:05Z edmanm $
+** \version $Id$
 ** \brief Describes the Tor software's current bootstrap status
 */
 
