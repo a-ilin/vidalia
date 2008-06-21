@@ -1,17 +1,17 @@
-#,fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-06-19 23:25+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
-"Language-Team: translations@vidalia-project.net\n"
+"PO-Revision-Date: 2008-06-21 07:28+0000\n"
+"Last-Translator: Mfr <mfr@misericordia.be>\n"
+"Language-Team: translations@vidalia-project.net <translations@vidalia-"
+"project.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Vidalia ts2po 0.1\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Pootle 1.1.0\n"
 
 #: AboutDialog#1
 msgid "About Vidalia"
@@ -171,7 +171,7 @@ msgstr "Choisissez le chemin de votre fichier de configuration"
 
 #: AdvancedPage#30
 msgid "Data Directory"
-msgstr ""
+msgstr "Repertoire de Données"
 
 #: AdvancedPage#31
 msgid "Store data for the Tor software in the following directory"
@@ -455,19 +455,19 @@ msgstr "Envoi : "
 
 #: GraphFrame#3
 msgid "%1 KB"
-msgstr "%1 Kio"
+msgstr "%1 KB"
 
 #: GraphFrame#4
 msgid "%1 MB"
-msgstr "%1 Mio"
+msgstr "%1 MB"
 
 #: GraphFrame#5
 msgid "%1 GB"
-msgstr "%1 Gio"
+msgstr "%1 GB"
 
 #: GraphFrame#6
 msgid "%1 KB/s"
-msgstr "%1 Kio/s"
+msgstr "%1 KB/s"
 
 #: HelpBrowser#1
 msgid "Vidalia Help"
@@ -615,7 +615,7 @@ msgstr ""
 
 #: HelpTextBrowser#5
 msgid "Unable to Open Link"
-msgstr ""
+msgstr "Impossible d'ouvrir le lien"
 
 #: HelpTextBrowser#6
 msgid "Vidalia was unable to open the selected link in your Web browser. You can still copy the URL and paste it into your browser."
@@ -855,7 +855,8 @@ msgstr "Erreur lors du démarrage du serveur mandataire (proxy)"
 
 #: MainWindow#53
 msgid "Vidalia was unable to start the configured proxy server"
-msgstr "VIdalia n'est pas parvenu à démarrer le serveur mandataire (proxy) configuré"
+msgstr ""
+"Vidalia n'est pas parvenu à démarrer le serveur mandataire (proxy) configuré"
 
 #: MainWindow#54
 msgid "Your relay is shutting down."
@@ -878,7 +879,7 @@ msgstr "Erreur lors de l'arrêt"
 
 #: MainWindow#58
 msgid "Vidalia was unable to stop the Tor software."
-msgstr "Vidalia n'a pas pu arrêter le logiciel Tor."
+msgstr "Vidalia n'a pu arrêter le logiciel Tor."
 
 #: MainWindow#59
 msgid "Unexpected Error"
@@ -895,9 +896,8 @@ msgid "The Tor software requires Vidalia to send the contents of an authenticati
 msgstr ""
 
 #: MainWindow#62
-#: AdvancedPage#30
 msgid "Data Directory"
-msgstr "Repertoire de Données"
+msgstr "Répertoire de Données"
 
 #: MainWindow#63
 msgid "Control Cookie (control_auth_cookie)"
@@ -929,7 +929,7 @@ msgstr "État"
 
 #: MainWindow#70
 msgid "Set up a relay and help the network grow"
-msgstr "Parametrez un relay et aidez le réseau a grandir."
+msgstr "Paramétrez un relay et aidez le réseau à grandir."
 
 #: MainWindow#71
 msgid "View recent bandwidth usage"
@@ -949,7 +949,7 @@ msgstr "Lancer Tor"
 
 #: MainWindow#75
 msgid "Error starting IM client"
-msgstr ""
+msgstr "Erreur au lancement du client MI"
 
 #: MainWindow#76
 msgid "Vidalia was unable to start the configured IM client"
@@ -1013,7 +1013,7 @@ msgstr ""
 
 #: MainWindow#91
 msgid "connection refused"
-msgstr "connexion refused"
+msgstr "connexion refusée"
 
 #: MainWindow#92
 msgid "connection timeout"
@@ -1049,7 +1049,7 @@ msgstr "Arrêter Tor"
 
 #: MainWindow#100
 msgid "Starting the Tor software"
-msgstr "Lancement de Tor"
+msgstr "Lancement du logiciel Tor"
 
 #: MainWindow#101
 msgid "Starting Tor"
@@ -1225,7 +1225,7 @@ msgstr "Erreur lors de l'application d'un filtre"
 
 #: MessageLog#40
 msgid "Error Opening Log File"
-msgstr "Erreur lors de l'ouverture du fichier du Journal"
+msgstr "Erreur à l'ouverture du fichier du Journal"
 
 #: MessageLog#41
 msgid "Select Log File"
@@ -1668,19 +1668,19 @@ msgstr "Taux moyen"
 
 #: ServerPage#9
 msgid "KB/s"
-msgstr "Kio/s"
+msgstr "KB/s"
 
 #: ServerPage#10
 msgid "Peak bandwidth rate limit"
-msgstr "Pic maximal du taux de bande passante"
+msgstr "Pic maximal de la bande passante"
 
 #: ServerPage#11
 msgid "Maximum Rate"
-msgstr "Taux maximal"
+msgstr "Débit maximal"
 
 #: ServerPage#12
 msgid "Show help topic on bandwidth rate limits"
-msgstr "Afficher la rubrique d'aide sur la limitation de la bande passante"
+msgstr "Afficher la rubrique d'aide sur les limitations de la bande passante"
 
 #: ServerPage#13
 msgid "Directory Port Number"
@@ -1696,7 +1696,9 @@ msgstr "Limites de la bande passante"
 
 #: ServerPage#16
 msgid "For Internet connections with fast download speed but slow upload, please list your upload speed here."
-msgstr "Merci d'indiquer votre vitesse en montée si votre connexion a une vitesse élevée en descente mais lente en montée."
+msgstr ""
+"Merci d'indiquer votre vitesse en remontée si votre connexion a une vitesse "
+"élevée en téléchargement mais lente en remontée."
 
 #: ServerPage#17
 msgid "Select the entry that most closely resembles your Internet connection"
@@ -1772,7 +1774,10 @@ msgstr "Sites Web"
 
 #: ServerPage#35
 msgid "Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s."
-msgstr "Votre taux de bande passante maximal doit être supérieur ou égal à votre taux de bande passante moyen. Les deux valeurs doivent être supérieur ou égal à 20 Kio/s."
+msgstr ""
+"Votre bande passante maximale doit être supérieure ou égal à votre bande "
+"passante moyene. Les deux valeurs doivent être supérieures ou égales à 20 "
+"KB/s."
 
 #: ServerPage#36
 msgid "Server"
@@ -1792,7 +1797,7 @@ msgstr "Merci de mettre à jour Tor ou de configurer votre version actuelle pour
 
 #: ServerPage#40
 msgid "You must specify at least a relay nickname and port."
-msgstr "Vous devez spécifier au moins un surnom de relais et un port."
+msgstr "Vous devez spécifier au moins un nom de relais et un port."
 
 #: ServerPage#41
 msgid "Relay Port:"
@@ -1855,7 +1860,7 @@ msgstr "Test"
 
 #: ServerPage#55
 msgid "Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 and 8888"
-msgstr "Ports 706, 1863, 5050, 5190, 5222, 8300 et 8888 {706, 1863, 5050, 5190, 5222, 5223, 8300 ?}"
+msgstr "Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 et 8888"
 
 #: ServerPage#56
 msgid "What Internet resources should users be able to access from your relay?"
@@ -1911,15 +1916,15 @@ msgstr ""
 
 #: ServicePage#12
 msgid "Onion Address"
-msgstr ""
+msgstr "Adresse Onion"
 
 #: ServicePage#13
 msgid "Virtual Port"
-msgstr ""
+msgstr "Port Virtuel"
 
 #: ServicePage#14
 msgid "Target"
-msgstr ""
+msgstr "Destination"
 
 #: ServicePage#15
 msgid "Directory Path"
@@ -1931,15 +1936,15 @@ msgstr ""
 
 #: ServicePage#17
 msgid "Add new service to list"
-msgstr ""
+msgstr "Ajouter un nouveau service à la liste"
 
 #: ServicePage#18
 msgid "Remove selected service from list"
-msgstr ""
+msgstr "Supprimer le service selectionné de la liste"
 
 #: ServicePage#19
 msgid "Copy onion address of selected service to clipboard"
-msgstr ""
+msgstr "Copier l'adresse onion du service selectionné dans le presse-papiers."
 
 #: ServicePage#20
 msgid "Browse in local file system and choose directory for selected service"
@@ -1991,7 +1996,7 @@ msgstr "Le service Tor n'est pas installé."
 
 #: TorService#2
 msgid "Unable to start the Tor service."
-msgstr "Le service Tor n'a pas pu être démarré."
+msgstr "Le service Tor n'a pu être démarré."
 
 #: TorSettings#1
 msgid "Failed to hash the control password."
@@ -2083,7 +2088,7 @@ msgstr "Voir le Journal"
 
 #: VMessageBox#8
 msgid "Show Settings"
-msgstr "Afficher les options"
+msgstr "Montrer options"
 
 #: VMessageBox#9
 msgid "Continue"
@@ -2107,7 +2112,7 @@ msgstr "Style d'interface spécifié invalide : "
 
 #: Vidalia#3
 msgid "Vidalia is already running"
-msgstr "Vidalia fonctionne déjà "
+msgstr "Vidalia est déjà en fonctionnement"
 
 #: Vidalia#4
 msgid "Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway."
