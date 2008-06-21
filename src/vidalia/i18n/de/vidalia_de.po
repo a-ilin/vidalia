@@ -1,17 +1,16 @@
-#,fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-06-19 23:25+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2008-06-21 00:19+0000\n"
+"Last-Translator: Karsten Loesing <karsten.loesing@gmx.net>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Vidalia ts2po 0.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 1.1.0\n"
 
 #: AboutDialog#1
 msgid "About Vidalia"
@@ -443,11 +442,11 @@ msgstr "Kommandozeilenargumente:"
 
 #: GeneralPage#12
 msgid "Start the Tor software when Vidalia starts"
-msgstr ""
+msgstr "Starte die Tor-Anwendung wenn Vidalia startet"
 
 #: GeneralPage#13
 msgid "Tor Executable"
-msgstr ""
+msgstr "Tor-Anwendungsdatei"
 
 #: GraphFrame#1
 msgid "Recv: "
@@ -607,23 +606,28 @@ msgstr "Fehler beim Öffnen der Hilfe: "
 
 #: HelpTextBrowser#2
 msgid "Opening External Link"
-msgstr ""
+msgstr "Öffne externen Link"
 
 #: HelpTextBrowser#3
 msgid "Vidalia can open the link you selected in your default Web browser. If your browser is not currently configured to use Tor then the request will not be anonymous."
 msgstr ""
+"Vidalia kann den gewählten Link in deinem Default-Webbrowser öffnen. Wenn "
+"der Browser jedoch nicht für die Nutzung von Tor konfiguriert ist, wird die "
+"Anfrage nicht anonym sein."
 
 #: HelpTextBrowser#4
 msgid "Do you want Vidalia to open the link in your Web browser?"
-msgstr ""
+msgstr "Soll Vidalia den Link im Webbrowser öffnen?"
 
 #: HelpTextBrowser#5
 msgid "Unable to Open Link"
-msgstr ""
+msgstr "Fehler beim Öffnen des Links"
 
 #: HelpTextBrowser#6
 msgid "Vidalia was unable to open the selected link in your Web browser. You can still copy the URL and paste it into your browser."
 msgstr ""
+"Vidalia konnte den gewählten Link nicht im Webbrowser öffnen. Du kannst aber "
+"die URL kopieren und sie in deinem Browser einfügen."
 
 #: LogEvent#1
 msgid "Debug"
@@ -867,66 +871,84 @@ msgstr "Vidalia konnte den angegebenen Proxyserver nicht starten"
 msgid "Your relay is shutting down."
 "Click 'Stop' again to stop your relay now."
 msgstr ""
+"Dein Relay fährt herunter. Klicke 'Stopp' ein weiteres Mal, um den Relay "
+"jetzt zu stoppen."
 
 #: MainWindow#55
 msgid "Connection Error"
-msgstr ""
+msgstr "Verbindungsfehler"
 
 #: MainWindow#56
 msgid "You are currently running a relay. Terminating your relay will interrupt any open connections from clients."
 ""
 "Would you like to shutdown gracefully and give clients time to find a new relay?"
 msgstr ""
+"Du betreibst zur Zeit einen Relay. Das Beenden deines Relays wird alle "
+"offenen Verbindungen von Benutzern unterbrechen. Möchtest du das "
+"Herunterfahren sanft durchführen und Benutzern die Gelegenheit geben einen "
+"neuen Relay zu finden?"
 
 #: MainWindow#57
 msgid "Error Shutting Down"
-msgstr ""
+msgstr "Fehler beim Herunterfahren"
 
 #: MainWindow#58
 msgid "Vidalia was unable to stop the Tor software."
-msgstr ""
+msgstr "Vidalia konnte die Tor-Software nicht stoppen."
 
 #: MainWindow#59
 msgid "Unexpected Error"
-msgstr ""
+msgstr "Unerwarteter Fehler"
 
 #: MainWindow#60
 msgid "Vidalia detected that the Tor software exited unexpectedly."
 ""
 "Please check the message log for recent warning or error messages."
 msgstr ""
+"Vidalia hat beobachtet, dass die Tor-Software unerwartet beendet wurde. "
+"Überprüfe bitte das Nachrichtenprotokoll auf kürzlich erfolgte Warnungen "
+"oder Fehlernachrichten."
 
 #: MainWindow#61
 msgid "The Tor software requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one."
 msgstr ""
+"Die Tor-Software fordert Vidalia dazu auf den Inhalt eines "
+"Authentifizierungskennworts zu schicken, aber Vidalia konnte kein solches "
+"finden."
 
 #: MainWindow#62
+#: AdvancedPage#30
 msgid "Data Directory"
 msgstr "Datenverzeichnis"
 
+# what is the dev-style annotation doing there? "(control_auth_cookie)"
 #: MainWindow#63
 msgid "Control Cookie (control_auth_cookie)"
-msgstr ""
+msgstr "Authentifizierungskennwort (control_auth_cookie)"
 
 #: MainWindow#64
 msgid "Vidalia was unable to register for some events. Many of Vidalia's features may be unavailable."
 msgstr ""
+"Vidalia konnte sich für einige Ereignisse nicht registrieren. Einige von "
+"Vidalias Funktionen könnten nicht verfügbar sein."
 
 #: MainWindow#65
 msgid "Authentication Error"
-msgstr ""
+msgstr "Authentifizierungsfehler"
 
 #: MainWindow#66
 msgid "Vidalia was unable to authenticate to the Tor software. (%1)"
 msgstr ""
+"Vidalia konnte keine Authentifizierung gegenüber der Tor-Software "
+"durchführen. (%1)"
 
 #: MainWindow#67
 msgid "Port Forwarding Failed"
-msgstr ""
+msgstr "Port-Weiterleitung fehlgeschlagen"
 
 #: MainWindow#68
 msgid "Vidalia was unable to configure automatic port forwarding."
-msgstr ""
+msgstr "Vidalia konnte die automatische Port-Weiterleitung nicht einrichten."
 
 #: MainWindow#69
 msgid "Status"
@@ -934,91 +956,91 @@ msgstr "Status"
 
 #: MainWindow#70
 msgid "Set up a relay and help the network grow"
-msgstr ""
+msgstr "Richte ein Relay ein und hilf dem Netzwerk zu wachsen"
 
 #: MainWindow#71
 msgid "View recent bandwidth usage"
-msgstr ""
+msgstr "Betrachte kürzlich genutzte Bandbreite"
 
 #: MainWindow#72
 msgid "View log message history"
-msgstr ""
+msgstr "Betrachte Nachrichtenprotokoll"
 
 #: MainWindow#73
 msgid "Configure Vidalia"
-msgstr ""
+msgstr "Konfiguriere Vidalia"
 
 #: MainWindow#74
 msgid "Start Tor"
-msgstr ""
+msgstr "Starte Tor"
 
 #: MainWindow#75
 msgid "Error starting IM client"
-msgstr ""
+msgstr "Fehler beim Starten des IM-Clients"
 
 #: MainWindow#76
 msgid "Vidalia was unable to start the configured IM client"
-msgstr ""
+msgstr "Vidalia konnte den konfigurierten IM-Client nicht starten"
 
 #: MainWindow#77
 msgid "Connecting to a relay directory"
-msgstr ""
+msgstr "Verbinde zu einem Relay-Verzeichnis"
 
 #: MainWindow#78
 msgid "Establishing an encrypted directory connection"
-msgstr ""
+msgstr "Stelle eine verschlüsselte Verbindung zu einem Verzeichnis her"
 
 #: MainWindow#79
 msgid "Retrieving network status"
-msgstr ""
+msgstr "Erfrage Netzwerkstatusdatei"
 
 #: MainWindow#80
 msgid "Loading network status"
-msgstr ""
+msgstr "Lade Netzwerkstatusdatei"
 
 #: MainWindow#81
 msgid "Loading authority certificates"
-msgstr ""
+msgstr "Lade Zertifikate der zentralen Verzeichnisse"
 
 #: MainWindow#82
 msgid "Requesting relay information"
-msgstr ""
+msgstr "Fordere Relay-Informationen an"
 
 #: MainWindow#83
 msgid "Loading relay information"
-msgstr ""
+msgstr "Lade Relay-Informationen"
 
 #: MainWindow#84
 msgid "Connecting to the Tor network"
-msgstr ""
+msgstr "Verbinde zum Tor-Netzwerk"
 
 #: MainWindow#85
 msgid "Establishing a Tor circuit"
-msgstr ""
+msgstr "Erstelle einen Tor-Circuit"
 
 #: MainWindow#86
 msgid "Connected to the Tor network!"
-msgstr ""
+msgstr "Verbindung zum Tor-Netzwerk hergestellt!"
 
 #: MainWindow#87
 msgid "Unrecognized startup status"
-msgstr ""
+msgstr "Nicht erkannter Startzustand"
 
 #: MainWindow#88
 msgid "miscellaneous"
-msgstr ""
+msgstr "Verschiedenes"
 
 #: MainWindow#89
 msgid "identity mismatch"
-msgstr ""
+msgstr "Nichtübereinstimmung der Identitäten"
 
 #: MainWindow#90
 msgid "done"
-msgstr ""
+msgstr "abgeschlossen"
 
 #: MainWindow#91
 msgid "connection refused"
-msgstr ""
+msgstr "Verbindung verweigert"
 
 #: MainWindow#92
 msgid "connection timeout"
@@ -2179,4 +2201,3 @@ msgstr "Ungültiges Nachrichtenlevel angegeben: "
 #: Vidalia#16
 msgid "Unable to open log file '%1': %2"
 msgstr "Konnte Nachrichtendatei nicht öffnen '%1': %2"
-
