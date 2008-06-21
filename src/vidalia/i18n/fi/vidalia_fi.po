@@ -1,17 +1,16 @@
-#,fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-06-19 23:25+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2008-06-21 17:00+0000\n"
+"Last-Translator: Harri Vähätalo <harri@svahatalo.fi>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Vidalia ts2po 0.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 1.1.0\n"
 
 #: AboutDialog#1
 msgid "About Vidalia"
@@ -427,7 +426,7 @@ msgstr "Käynnistä Vidalia samalla, kun järjestelmä käynnistyy"
 
 #: GeneralPage#9
 msgid "Start a proxy application when Vidalia starts"
-msgstr ""
+msgstr "Käynnistä välityspalvelin-ohjelma Vidalian käynnistyessä"
 
 #: GeneralPage#10
 msgid "Proxy Executable"
@@ -608,6 +607,9 @@ msgstr "Avataan ulkoista linkkiä"
 #: HelpTextBrowser#3
 msgid "Vidalia can open the link you selected in your default Web browser. If your browser is not currently configured to use Tor then the request will not be anonymous."
 msgstr ""
+"Vidalia voi avata valitun linkin oletus Internetselaimessa. Jos selainta ei "
+"ole määritelty käyttämään Tor-verkkoa, niin sivulla oleminen ei ole "
+"anonyymistä."
 
 #: HelpTextBrowser#4
 msgid "Do you want Vidalia to open the link in your Web browser?"
@@ -620,6 +622,8 @@ msgstr "Linkin avaaminen epäonnistui"
 #: HelpTextBrowser#6
 msgid "Vidalia was unable to open the selected link in your Web browser. You can still copy the URL and paste it into your browser."
 msgstr ""
+"Vidalia ei onnistunut avaamaan valittua linkkiä Internetselaimessa. Linkin "
+"voi kuitenkin kopioida ja liittää selaimen osoiteriville."
 
 #: LogEvent#1
 msgid "Debug"
@@ -872,6 +876,9 @@ msgid "You are currently running a relay. Terminating your relay will interrupt 
 ""
 "Would you like to shutdown gracefully and give clients time to find a new relay?"
 msgstr ""
+"Tietokone suorittaa tällä hetkellä reititintä. Reitittimen pysäyttäminen "
+"keskeyttää avoimet yhteydet muihin käyttäjiin. Haluaisitko sulkea sulavammin "
+"antaen samalla käyttäjille aikaa löytää uuden reitittimen?"
 
 #: MainWindow#57
 msgid "Error Shutting Down"
@@ -955,19 +962,19 @@ msgstr "Virhe käynnistäessä keskusteluohjelmaa"
 
 #: MainWindow#76
 msgid "Vidalia was unable to start the configured IM client"
-msgstr ""
+msgstr "Vidalia ei onnistunut käynnistämään määriteltyä keskusteluohjelmaa"
 
 #: MainWindow#77
 msgid "Connecting to a relay directory"
-msgstr ""
+msgstr "Yhdistetään reititinlistaan"
 
 #: MainWindow#78
 msgid "Establishing an encrypted directory connection"
-msgstr ""
+msgstr "Muodostetaan suojattu listayhteys"
 
 #: MainWindow#79
 msgid "Retrieving network status"
-msgstr ""
+msgstr "Selvitetään verkon tilaa"
 
 #: MainWindow#80
 msgid "Loading network status"
@@ -975,15 +982,15 @@ msgstr "Ladataan verkon tilaa"
 
 #: MainWindow#81
 msgid "Loading authority certificates"
-msgstr ""
+msgstr "Ladataan sertifikaattioikeuksia"
 
 #: MainWindow#82
 msgid "Requesting relay information"
-msgstr ""
+msgstr "Selvitetään reititintietoja"
 
 #: MainWindow#83
 msgid "Loading relay information"
-msgstr ""
+msgstr "Ladataan reititintietoja"
 
 #: MainWindow#84
 msgid "Connecting to the Tor network"
@@ -991,23 +998,23 @@ msgstr "Yhdistetään Tor-verkkoon"
 
 #: MainWindow#85
 msgid "Establishing a Tor circuit"
-msgstr ""
+msgstr "Muodostetaan Tor-datavirta"
 
 #: MainWindow#86
 msgid "Connected to the Tor network!"
-msgstr ""
+msgstr "Yhdistetty Tor-verkkoon"
 
 #: MainWindow#87
 msgid "Unrecognized startup status"
-msgstr ""
+msgstr "Tunnistamaton käynnistystila"
 
 #: MainWindow#88
 msgid "miscellaneous"
-msgstr ""
+msgstr "sekalaiset"
 
 #: MainWindow#89
 msgid "identity mismatch"
-msgstr ""
+msgstr "identiteetti yhteensopimattomuus"
 
 #: MainWindow#90
 msgid "done"
@@ -1015,23 +1022,23 @@ msgstr "valmis"
 
 #: MainWindow#91
 msgid "connection refused"
-msgstr ""
+msgstr "yhteys hylätty"
 
 #: MainWindow#92
 msgid "connection timeout"
-msgstr ""
+msgstr "yhteyden aikakatkaisu"
 
 #: MainWindow#93
 msgid "read/write error"
-msgstr ""
+msgstr "luku-/kirjoitus- virhe"
 
 #: MainWindow#94
 msgid "no route to host"
-msgstr ""
+msgstr "ei reittiä palvelimelle"
 
 #: MainWindow#95
 msgid "insufficient resources"
-msgstr ""
+msgstr "puutteelliset resurssit"
 
 #: MainWindow#96
 msgid "unknown"
@@ -2171,4 +2178,3 @@ msgstr "Virheellinen lokitaso määritetty: "
 #: Vidalia#16
 msgid "Unable to open log file '%1': %2"
 msgstr "Lokitiedoston'%1': %2 avaaminen epäonnistui"
-
