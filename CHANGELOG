@@ -2,6 +2,10 @@
   o Add support for Tor 0.2.0.2-alpha's new 'status/bootstrap-phase' getinfo
     option. Call it to update the progress bar to Tor's current bootstrapping
     progress immediately after connecting to Tor.
+  o Convert to using GNU gettext .po files for our translations, rather than
+    Qt's .ts format. The .po files are converted to .ts (and then to .qm) at
+    build time. We switched to .po files so we can point pootle
+    (https://translation.torproject.org) directly at Vidalia's svn repository.
   o Force a repaint() to try to ensure the progress bar and onion status icon
     don't overlap briefly when starting Tor.
   o Tweak the resize policy for the control panel so the vertical size is
