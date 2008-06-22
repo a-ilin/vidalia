@@ -1,3 +1,7 @@
+0.1.6   xx-xxx-2008
+  o Fix compilation of the ts2po and po2ts conversion tools on OS X Panther.
+
+
 0.1.5   21-Jun-2008
   o Add support for Tor 0.2.1.2-alpha's new 'status/bootstrap-phase' getinfo
     option. Call it to update the progress bar to Tor's current bootstrapping
