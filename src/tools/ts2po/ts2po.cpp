@@ -223,10 +223,10 @@ main(int argc, char *argv[])
   poFile.close();
  
   if (!quiet) {
-    QTextStream(stdout) << QString("Converted %1 strings from %2 to %3.\n")
-                                                            .arg(n_strings)
-                                                            .arg(infile)
-                                                            .arg(outfile);
+    QTextStream results(stdout);
+    results << QString("Converted %1 strings from %2 to %3.\n").arg(n_strings)
+                                                               .arg(infile)
+                                                               .arg(outfile);
   }
   return 0;
 }
