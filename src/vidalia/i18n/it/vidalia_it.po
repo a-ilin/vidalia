@@ -1,17 +1,16 @@
-#,fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-06-19 23:26+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2008-06-25 07:43+0000\n"
+"Last-Translator: Jan Reister <jan.reister@unimi.it>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Vidalia ts2po 0.1\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 1.1.0\n"
 
 #: AboutDialog#1
 msgid "About Vidalia"
@@ -163,19 +162,19 @@ msgstr "Avanzato"
 
 #: AdvancedPage#28
 msgid "Start the Tor software with the specified configuration file (torrc)"
-msgstr ""
+msgstr "Avvia Tor con il file di configurazione (torrc) specificato"
 
 #: AdvancedPage#29
 msgid "Select path to your configuration file"
-msgstr ""
+msgstr "Seleziona il percorso del tuo file di configurazione"
 
 #: AdvancedPage#30
 msgid "Data Directory"
-msgstr ""
+msgstr "Directory dai dati"
 
 #: AdvancedPage#31
 msgid "Store data for the Tor software in the following directory"
-msgstr ""
+msgstr "Conserva i dati di Tor nella seguente directory"
 
 #: AdvancedPage#32
 msgid "Select the directory used to store data for the Tor software"
@@ -2168,4 +2167,3 @@ msgstr "Livello di log specificato non valido: "
 #: Vidalia#16
 msgid "Unable to open log file '%1': %2"
 msgstr "Non è stato possibile aprire il file '%1' di log: "
-
