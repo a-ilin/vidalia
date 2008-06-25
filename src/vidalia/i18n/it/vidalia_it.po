@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-06-19 23:26+0000\n"
-"PO-Revision-Date: 2008-06-25 07:43+0000\n"
+"PO-Revision-Date: 2008-06-25 08:17+0000\n"
 "Last-Translator: Jan Reister <jan.reister@unimi.it>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -90,11 +90,11 @@ msgstr "%1 non esiste. Crearlo?"
 
 #: AdvancedPage#11
 msgid "Failed to Create File"
-msgstr "Non Ë possibile creare il file"
+msgstr "Non &egrave; possibile creare il file"
 
 #: AdvancedPage#12
 msgid "Unable to create %1 [%2]"
-msgstr "Non Ë possibile creare %1 [%2]"
+msgstr "Non &egrave; possibile creare %1 [%2]"
 
 #: AdvancedPage#13
 msgid "Unable to remove Tor Service"
@@ -178,11 +178,11 @@ msgstr "Conserva i dati di Tor nella seguente directory"
 
 #: AdvancedPage#32
 msgid "Select the directory used to store data for the Tor software"
-msgstr ""
+msgstr "Seleziona la directory per conservare i dati di Tor"
 
 #: AdvancedPage#33
 msgid "Tor Configuration File"
-msgstr ""
+msgstr "File di configurazione di Tor"
 
 #: AppearancePage#1
 msgid "Language"
@@ -306,11 +306,11 @@ msgstr "Dettagli del circuito"
 
 #: CircuitListWidget#4
 msgid "Close Circuit (Del)"
-msgstr ""
+msgstr "Chiudi circuito (Canc)"
 
 #: CircuitListWidget#5
 msgid "Close Stream (Del)"
-msgstr ""
+msgstr "Chiudi flusso (Canc)"
 
 #: ConfigDialog#1
 msgid "General"
@@ -338,23 +338,23 @@ msgstr "Impostazioni"
 
 #: ConfigDialog#7
 msgid "Network"
-msgstr ""
+msgstr "Rete"
 
 #: ConfigDialog#8
 msgid "Error Saving Settings"
-msgstr ""
+msgstr "Errore nel salvare le impostazioni"
 
 #: ConfigDialog#9
 msgid "Vidalia was unable to save your %1 settings."
-msgstr ""
+msgstr "Vidalia non &egrave; riuscito a salvare la tua impostazione %1"
 
 #: ConfigDialog#10
 msgid "Error Applying Settings"
-msgstr ""
+msgstr "Errore nell'applicare le impostazioni"
 
 #: ConfigDialog#11
 msgid "Vidalia was unable to apply your %1 settings to Tor."
-msgstr ""
+msgstr "Vidalia non &egrave; riuscito ad applicare la tua impostazione %1 a Tor"
 
 #: ConfigDialog#12
 msgid "OK"
@@ -362,11 +362,11 @@ msgstr "OK"
 
 #: ConfigDialog#13
 msgid "Sharing"
-msgstr ""
+msgstr "Condivisione"
 
 #: ConfigDialog#14
 msgid "Services"
-msgstr ""
+msgstr "Servizi"
 
 #: ControlConnection#1
 msgid "Control socket is not connected."
@@ -374,7 +374,7 @@ msgstr "Il socket di controllo non è connesso."
 
 #: ControlConnection#2
 msgid "Vidalia was unable to connect to Tor. (%1)"
-msgstr ""
+msgstr "Vidalia non &egrave; riuscito a collegarsi a Tor. (%1)"
 
 #: ControlSocket#1
 msgid "Error sending control command. [%1]"
@@ -382,7 +382,9 @@ msgstr "Errore nell'invio del comando di controllo. [%1]"
 
 #: ControlSocket#2
 msgid "Socket disconnected while attempting to read a line of data."
-msgstr "Il socket si Ë disconnesso durante il tentativo di leggere una linea di dati."
+msgstr ""
+"Il socket si &egrave; disconnesso durante il tentativo di leggere una riga "
+"di dati."
 
 #: ControlSocket#3
 msgid "Invalid control reply. [%1]"
@@ -410,39 +412,40 @@ msgstr "Generale"
 
 #: GeneralPage#5
 msgid "You must specify the name of your Tor executable."
-msgstr ""
+msgstr "Devi indicare il nome dell'eseguibile di Tor"
 
 #: GeneralPage#6
 msgid "Select Proxy Executable"
-msgstr ""
+msgstr "Seleziona l'eseguibile del proxy"
 
 #: GeneralPage#7
 msgid "The proxy arguments specified are not properly formatted."
 msgstr ""
+"Le impostazioni del proxy che hai fornito non sono formattate correttamente"
 
 #: GeneralPage#8
 msgid "Start Vidalia when my system starts"
-msgstr ""
+msgstr "Avvia Vidalia all'avvio del sistema"
 
 #: GeneralPage#9
 msgid "Start a proxy application when Vidalia starts"
-msgstr ""
+msgstr "Avvia un proxy quando Vidalia viene avviato"
 
 #: GeneralPage#10
 msgid "Proxy Executable"
-msgstr ""
+msgstr "Eseguibile del proxy"
 
 #: GeneralPage#11
 msgid "Command Line Arguments:"
-msgstr ""
+msgstr "Argomenti per la linea di comando"
 
 #: GeneralPage#12
 msgid "Start the Tor software when Vidalia starts"
-msgstr ""
+msgstr "Avvia Tor quando Vidalia viene avviato"
 
 #: GeneralPage#13
 msgid "Tor Executable"
-msgstr ""
+msgstr "Eseguibile di Tor"
 
 #: GraphFrame#1
 msgid "Recv: "
@@ -574,7 +577,7 @@ msgstr "La ricerca ha raggiunto l'inizio del documento"
 
 #: HelpBrowser#27
 msgid "Text not found in document"
-msgstr "Il testo non Ë stato trovato nel documento"
+msgstr "Il testo non &egrave; stato trovato nel documento"
 
 #: HelpBrowser#28
 msgid "Find:"
@@ -602,23 +605,28 @@ msgstr "Errore nell'apertura del file: "
 
 #: HelpTextBrowser#2
 msgid "Opening External Link"
-msgstr ""
+msgstr "Apertura di un collegamento esterno"
 
 #: HelpTextBrowser#3
 msgid "Vidalia can open the link you selected in your default Web browser. If your browser is not currently configured to use Tor then the request will not be anonymous."
 msgstr ""
+"Vidalia pu&ograve; aprire il collegamento che hai scelto dentro il tuo "
+"browser web predefinito. Se il tuo browser non &egrave; configurato per "
+"usare Tor, la richiesta non sar&agrave; anonima."
 
 #: HelpTextBrowser#4
 msgid "Do you want Vidalia to open the link in your Web browser?"
-msgstr ""
+msgstr "Vuoi che Vidalia apra il collegamento nel tuo browser web?"
 
 #: HelpTextBrowser#5
 msgid "Unable to Open Link"
-msgstr ""
+msgstr "Impossibile aprire il collegamento"
 
 #: HelpTextBrowser#6
 msgid "Vidalia was unable to open the selected link in your Web browser. You can still copy the URL and paste it into your browser."
 msgstr ""
+"Vidalia non &egrave; riuscito ad aprire il collegamento nel tuo browser web. "
+"Puoi sempre copiare l'indirizzo e incollarlo nel tuo browser."
 
 #: LogEvent#1
 msgid "Debug"
@@ -826,35 +834,38 @@ msgstr "Inserire la password di controllo (non l'hash):"
 
 #: MainWindow#46
 msgid "Relaying is Enabled"
-msgstr ""
+msgstr "Il relaying &egrave; attivato"
 
 #: MainWindow#47
 msgid "Error starting web browser"
-msgstr ""
+msgstr "Errore nell'avvio del browser web"
 
 #: MainWindow#48
 msgid "Vidalia was unable to start the configured web browser"
-msgstr ""
+msgstr "Vidalia non &egrave; riuscito ad avviare il browser web impostato"
 
 #: MainWindow#49
 msgid "Tor Update Available"
-msgstr ""
+msgstr "&Egrave; disponibile un aggiornamento di Tor"
 
 #: MainWindow#50
 msgid "The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version."
 msgstr ""
+"L'installazione corrente di Tor $egrave; obsoleta o non &egrave; pi&ugrave; "
+"raccomandata. Per favore visita il sito di Tor per scaricare l'ultima "
+"versione."
 
 #: MainWindow#51
 msgid "Tor website: %1"
-msgstr ""
+msgstr "Sito Tor: %1"
 
 #: MainWindow#52
 msgid "Error starting proxy server"
-msgstr ""
+msgstr "Errore nell'avvio del proxy server"
 
 #: MainWindow#53
 msgid "Vidalia was unable to start the configured proxy server"
-msgstr ""
+msgstr "Vidalia non &egrave; riuscito ad avviare il proxy server configurato"
 
 #: MainWindow#54
 msgid "Your relay is shutting down."
