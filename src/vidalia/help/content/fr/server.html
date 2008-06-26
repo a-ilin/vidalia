@@ -83,24 +83,24 @@ votre propre usage.
 <p>
 Vous devez sélectionner dans la liste déroulante l'option qui correspond le
 mieux au débit de votre connexion. Si vous choisissez <i>Personnalisé</i>,
-vous pourrez paramètrer vous-mêmes les seuils.
+vous pourrez paramétrer vous-mêmes les seuils.
 </p>
 
 <h4>Limites personnalisées</h4>
 <p>
-Le <i>taux maximal</i> correspond au nombre d'octets utilisables pour répondre
+Le <i>débit maximal</i> correspond au nombre d'octets utilisables pour répondre
 aux requêtes pendant les courtes périodes où le trafic est supérieur au
-<i>taux moyen</i> que vous avez spécifié, mais qui permet de respecter la
-moyenne sur une longue période. Un taux moyen bas et un taux maximal élevé
+<i>débit moyen</i> que vous avez spécifié, mais qui permet de respecter la
+moyenne sur une longue période. Un débit moyen bas et un débit maximal élevé
 améliorent le niveau de trafic à long terme en autorisant davantage de trafic
-lors des pics, tant que le taux moyen n'a pas été atteint. Si votre taux moyen
-est identique à votre <i>taux maximal</i>, alors Tor ne dépassera jamais ce
-taux. Le <i>taux maximal</i> doit toujours être supérieur ou égal au <i>taux
+lors des pics, tant que le débit moyen n'a pas été atteint. Si votre débit moyen
+est identique à votre <i>débit maximal</i>, alors Tor ne dépassera jamais ce
+débit. Le <i>débit maximal</i> doit toujours être supérieur ou égal au <i>débit
 moyen</i>.
 </p>
 
 <p>
-Le <i>taux moyen</i> correspond à la bande passante moyenne maximale autorisée
+Le <i>débit moyen</i> correspond à la bande passante moyenne maximale autorisée
 à long terme (en kilo-octets par seconde). Par exemple, vous pouvez choisir de
 contribuer au réseau Tor pour 2 méga-octets par seconde (2048 Kio/s) ou 50
 kilo-octets par seconde (soit une connexion moyenne par cable). Tor a besoin
@@ -113,7 +113,7 @@ Il est important de se rappeler que Tor mesure la bande passante en
 et non les octets sortants. De ce fait, si votre relais est également un
 miroir de l'annuaire des relais, vous enverrez davantage de données que vous
 n'en recevrez. Si vous constatez que cela constitue une contrainte trop forte
-pour votre bande passante, vous devrez réfléchir à décocher la case <i>Servir
+pour votre bande passante, vous devrez penser à décocher la case <i>Servir
 de miroir à l'annuaire des relais</i>.
 </p>
 
@@ -121,7 +121,7 @@ de miroir à l'annuaire des relais</i>.
 <h3>Politiques de sortie</h3>
 <p>
 Les politiques de sortie vous permettent de spécifier les ressources Internet
-auxquelles les utilisateurs du réseau Tor peuvent accèder par le biais de
+auxquelles les utilisateurs du réseau Tor peuvent accéder par le biais de
 votre relais. Par défaut, Tor utilise une liste de politiques de sortie qui
 empêche l'utisation de certains services, notamment l'envoi de courriels (afin
 d'éviter les spams) et certains ports de partage de fichiers (afin de réduire
@@ -152,14 +152,14 @@ est coché.
   <td><b>Description</b></td>
 </tr>
 <tr>
-  <td>Sites Web</td>
+  <td>Sites web</td>
   <td valign="middle">80</td>
-  <td>Normal, navigation Web non chiffrée</td>
+  <td>Normal, navigation web non chiffrée</td>
 </tr>
 <tr>
-  <td>Sites Web sécurisés (SSL)</td>
+  <td>Sites web sécurisés (SSL)</td>
   <td valign="middle">443</td>
-  <td>Accès aux sites Web chiffrés</td>
+  <td>Accès aux sites web sécurisés</td>
 </tr>
 <tr>
   <td>Téléchargement des courriels (POP, IMAP)</td>
@@ -202,6 +202,56 @@ Si vous choisissez d'installer un relais passerelle, l'onglet des
 <i>Politiques de sortie</i> sera grisé et inacessible, puisque une passerelle
 n'autorise pas les sorties&nbsp;: elle sert uniquement à se connecter au
 réseau Tor.
+</p>
+
+<a name="upnp"/>
+<h3>Transfert de Ports</h3>
+<p>
+De nombreux utilisateurs se connectent à Internet par un <i>routeur</i>, qui permet
+plusieurs ordinateurs sur un réseau local de partager la même connexion Internet.
+Certains utilisateurs peuvent également être derrière un <i>pare-feu</i> qui bloque les connexions à votre ordinateur à partir d'autres ordinateurs d'Internet. Si vous
+voulez, toutefois, opérer un relais Tor, d'autres clients et relais Tor doivent être en mesure de
+se connecter à votre relais à travers votre routeur ou votre pare-feu.
+</p>
+
+<p>
+Pour rendre votre relais publiquement accessible, votre routeur ou pare-feu doit savoir
+quels ports autoriser pour votre ordinateur, la mise en place est connu sous le nom de
+<i> transfert de ports </i>. Le transfert de ports configure votre routeur ou pare-feu pour
+"rediriger" toutes les connexions de certains ports de votre routeur ou pare-feu locaux
+vers les ports ouverts correspondants de votre ordinateur.
+</p>
+
+<p>
+Si vous cochez la case <i>Tenter de configurer automatiquement le transfert de ports</ i>, Vidalia tentera de mettre en place automatiquement le transfert de port
+sur votre connexion réseau pour que les autres Tor clients puissent se connecter à votre
+relais. Mais, tous les routeurs ne supportent pas le transfert automatique de ports. 
+Vous pouvez utiliser le bouton<i>Test</i> à côté de la case à cocher pour savoir si Vidalia est en mesure de
+mettre en place automatiquement le transfert de port pour vous.
+</p>
+
+<p>
+Si le <i>Test</i> estime que Vidalia n'est pas en mesure de mettre en place le transfert de port pour vous,  vous pouvez activer cette fonctionalité sur votre routeur ou paramétrer la redirection de port
+ manuellement. Certains périphériques réseau ont une fonction appelée
+<i>Universal Plug-and-Play</i> (UPnP). Si vous pouvez accéder à votre routeur
+interface d'administration, vous devriez chercher à activer une option UPnP. Le
+interface d'administration de la plupart des routeurs peut être accessible en ouvrant
+<a
+href="http://192.168.0.1/">http://192.168.0.1</a> ou <a
+href="http://192.168.1.1/">http://192.168.1.1</a> dans votre navigateur. Vous
+devriez consulter le manuel d'instruction de votre routeur pour de plus amples informations.
+</p>
+
+<p>
+Si vous devez configurer manuellement le transfert de port, le site <a
+href = "http://www.portforward.com/english/routers/port_forwarding/routerindex.htm">
+portforward.com </a> contient des instructions sur la manière de mettre en place la redirection de port pour
+de nombreux types de routeurs et pare-feu. Au minimum, vous aurez besoin de transférer
+<i>votre Port Relais</i>, qui par défaut est le port 443 sur Windows et 9001 sur tous les
+autres systèmes d'exploitation. Si vous avez aussi coché la case 
+<i>Servir de miroir à l'annuaire des relais</i>, vous devrez également trasferrer votre <i>
+Port Annuaire</ i>. Le <i> Port Annuaire</ i> est le port 9030 par défaut sur tous les
+les systèmes d'exploitation.
 </p>
 
 </body>
