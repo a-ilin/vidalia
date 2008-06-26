@@ -3,10 +3,9 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-06-19 23:25+0000\n"
-"PO-Revision-Date: 2008-06-21 17:53+0000\n"
-"Last-Translator: Mfr <mfr@misericordia.be>\n"
-"Language-Team: translations@vidalia-project.net <translations@vidalia-"
-"project.net>\n"
+"PO-Revision-Date: 2008-06-26 08:24+0100\n"
+"Last-Translator: mfr <mfr (ä] misericordia.be>\n"
+"Language-Team: translations@vidalia-project.net <translations@vidalia-project.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -110,12 +109,8 @@ msgid "Vidalia was unable to install the Tor service."
 msgstr "Vidalia n'a pas pu installer le service Tor."
 
 #: AdvancedPage#16
-msgid "Vidalia was unable to remove the Tor service."
-""
-"You may need to remove it manually."
-msgstr "Vidalia n'a pas pu enlever le service Tor."
-""
-"Vous devrez peut-être enlever manuellement le service Tor."
+msgid "Vidalia was unable to remove the Tor service.You may need to remove it manually."
+msgstr "Vidalia n'a pas pu enlever le service Tor.Vous devrez peut-être enlever manuellement le service Tor."
 
 #: AdvancedPage#17
 msgid "'%1' is not a valid IP address."
@@ -179,8 +174,7 @@ msgstr "Sauver les données du logiciel Tor dans le répertoire suivant"
 
 #: AdvancedPage#32
 msgid "Select the directory used to store data for the Tor software"
-msgstr ""
-"Selectionnez le répertoire utilisé pour sauver les données du logiciel Tor"
+msgstr "Selectionnez le répertoire utilisé pour sauver les données du logiciel Tor"
 
 #: AdvancedPage#33
 msgid "Tor Configuration File"
@@ -608,10 +602,7 @@ msgstr "Ouvrir un lien externe"
 
 #: HelpTextBrowser#3
 msgid "Vidalia can open the link you selected in your default Web browser. If your browser is not currently configured to use Tor then the request will not be anonymous."
-msgstr ""
-"Vidalia peut ouvrir le lien que vous avez sélectionné dans votre navigateur "
-"par défaut. Si votre navigateur n'est pas actuellement configuré pour Tor, "
-"votre requête ne sera pas anonyme."
+msgstr "Vidalia peut ouvrir le lien que vous avez sélectionné dans votre navigateur par défaut. Si votre navigateur n'est pas actuellement configuré pour Tor, votre requête ne sera pas anonyme."
 
 #: HelpTextBrowser#4
 msgid "Do you want Vidalia to open the link in your Web browser?"
@@ -623,9 +614,7 @@ msgstr "Impossible d'ouvrir le lien"
 
 #: HelpTextBrowser#6
 msgid "Vidalia was unable to open the selected link in your Web browser. You can still copy the URL and paste it into your browser."
-msgstr ""
-"Vidalia a été incapable d'ouvrir le lien selectionné dans votre navigateur. "
-"Vous pouvez tout de même copier l'URL et la coller dans votre navigateur."
+msgstr "Vidalia a été incapable d'ouvrir le lien selectionné dans votre navigateur. Vous pouvez tout de même copier l'URL et la coller dans votre navigateur."
 
 #: LogEvent#1
 msgid "Debug"
@@ -861,28 +850,19 @@ msgstr "Erreur lors du démarrage du serveur mandataire (proxy)"
 
 #: MainWindow#53
 msgid "Vidalia was unable to start the configured proxy server"
-msgstr ""
-"Vidalia n'est pas parvenu à démarrer le serveur mandataire (proxy) configuré"
+msgstr "Vidalia n'est pas parvenu à démarrer le serveur mandataire (proxy) configuré"
 
 #: MainWindow#54
-msgid "Your relay is shutting down."
-"Click 'Stop' again to stop your relay now."
-msgstr ""
-"Voutre relay s'arrête. Cliquer à nouvzau sur 'Stop' pour arrêter votre "
-"relais immédiatement."
+msgid "Your relay is shutting down.Click 'Stop' again to stop your relay now."
+msgstr "Voutre relay s'arrête. Cliquer à nouvzau sur 'Stop' pour arrêter votre relais immédiatement."
 
 #: MainWindow#55
 msgid "Connection Error"
 msgstr "Erreur de Connexion"
 
 #: MainWindow#56
-msgid "You are currently running a relay. Terminating your relay will interrupt any open connections from clients."
-""
-"Would you like to shutdown gracefully and give clients time to find a new relay?"
-msgstr ""
-"Vous opérez actuellement un relais. Terminer ce relais va interrompre toutes "
-"les connexions des clients. Voulez vous arrêter celui-ci avec un délai de "
-"grâce pour donner au clients le temps de trouver un nouveau relais ?"
+msgid "You are currently running a relay. Terminating your relay will interrupt any open connections from clients.Would you like to shutdown gracefully and give clients time to find a new relay?"
+msgstr "Vous opérez actuellement un relais. Terminer ce relais va interrompre toutes les connexions des clients. Voulez vous arrêter celui-ci avec un délai de grâce pour donner au clients le temps de trouver un nouveau relais ?"
 
 #: MainWindow#57
 msgid "Error Shutting Down"
@@ -897,18 +877,12 @@ msgid "Unexpected Error"
 msgstr "Erreur inattendue"
 
 #: MainWindow#60
-msgid "Vidalia detected that the Tor software exited unexpectedly."
-""
-"Please check the message log for recent warning or error messages."
-msgstr ""
-"Vidalia a détecté que Tor s'est terminé de manière inattendue.Merci de "
-"regarder dans l'historique des messages les alertes et les erreurs récentes."
+msgid "Vidalia detected that the Tor software exited unexpectedly.Please check the message log for recent warning or error messages."
+msgstr "Vidalia a détecté que Tor s'est terminé de manière inattendue.Merci de regarder dans l'historique des messages les alertes et les erreurs récentes."
 
 #: MainWindow#61
 msgid "The Tor software requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one."
-msgstr ""
-"Le logiciel Tor demande que Vidalia envoie le contenu d'un cookie "
-"d'authentification, mais Vidalia n'a pas pu le trouver."
+msgstr "Le logiciel Tor demande que Vidalia envoie le contenu d'un cookie d'authentification, mais Vidalia n'a pas pu le trouver."
 
 #: MainWindow#62
 msgid "Data Directory"
@@ -920,9 +894,7 @@ msgstr "Cookie de Contrôle (control_auth_cookie)"
 
 #: MainWindow#64
 msgid "Vidalia was unable to register for some events. Many of Vidalia's features may be unavailable."
-msgstr ""
-"Vidalia n'a pas pu enregistrer certains évènements. Plusieurs "
-"fonctionnalités de Vidalia peuvent être indisponibles."
+msgstr "Vidalia n'a pas pu enregistrer certains évènements. Plusieurs fonctionnalités de Vidalia peuvent être indisponibles."
 
 #: MainWindow#65
 msgid "Authentication Error"
@@ -1297,12 +1269,8 @@ msgid "Vidalia was unable to register for Tor's log events."
 msgstr "Vidalia n'a pas pu s'enregistrer pour recevoir les événements de Tor."
 
 #: MessageLog#54
-msgid "Cannot write file %1"
-""
-"%2."
-msgstr "Impossible d'écrire dans le fichier %1"
-""
-"%2."
+msgid "Cannot write file %1%2."
+msgstr "Impossible d'écrire dans le fichier %1%2."
 
 #: MessageLog#55
 msgid "Vidalia was unable to open the specified log file."
@@ -1349,35 +1317,23 @@ msgid "Automatically save new log messages to a file"
 msgstr "Enregistrer les nouveaux messages dans un fichier"
 
 #: MessageLog#66
-msgid "Messages that appear when something has "
-"gone very wrong and Tor cannot proceed."
-msgstr ""
-"Messages qui apparaissent quand un problème très grave est arrivé et que Tor "
-"ne peut continuer."
+msgid "Messages that appear when something has gone very wrong and Tor cannot proceed."
+msgstr "Messages qui apparaissent quand un problème très grave est arrivé et que Tor ne peut continuer."
 
 #: MessageLog#67
-msgid "Messages that only appear when "
-"something has gone wrong with Tor."
-msgstr ""
-"Messages qui apparaissent uniquement quand un problème est arrivé dans Tor."
+msgid "Messages that only appear when something has gone wrong with Tor."
+msgstr "Messages qui apparaissent uniquement quand un problème est arrivé dans Tor."
 
 #: MessageLog#68
-msgid "Messages that appear infrequently "
-"during normal Tor operation and are "
-"not considered errors, but you may "
-"care about."
-msgstr ""
-"Messages qui apparaissent rarement durant le fonctionnement de Tor et qui ne "
-"sont pas des erreurs, mais auquels vous devez faire attention."
+msgid "Messages that appear infrequently during normal Tor operation and are not considered errors, but you may care about."
+msgstr "Messages qui apparaissent rarement durant le fonctionnement de Tor et qui ne sont pas des erreurs, mais auquels vous devez faire attention."
 
 #: MessageLog#69
-msgid "Messages that appear frequently "
-"during normal Tor operation."
+msgid "Messages that appear frequently during normal Tor operation."
 msgstr "Messages qui apparaissent fréquemment durant le fonctionnement de Tor."
 
 #: MessageLog#70
-msgid "Hyper-verbose messages primarily of "
-"interest to Tor developers."
+msgid "Hyper-verbose messages primarily of interest to Tor developers."
 msgstr "Messages hyper nombreux principalement pour les développeurs Tor."
 
 #: NetViewer#1
@@ -1554,21 +1510,15 @@ msgstr "<a href=\"bridges.finding\">Comment puis-je trouver un relais passerelle
 
 #: NetworkPage#24
 msgid "Check if your local network requires a proxy to access the Internet"
-msgstr ""
-"Cochez si votre réseau local a besoin d'un proxy mandataire pour accéder à "
-"Internet"
+msgstr "Cochez si votre réseau local a besoin d'un proxy mandataire pour accéder à Internet"
 
 #: NetworkPage#25
 msgid "Check to only connect to relays using ports allowed by your firewall"
-msgstr ""
-"Cochez pour se connecter uniquement au relais en utilisant les ports "
-"autorisés par votre parefeu."
+msgstr "Cochez pour se connecter uniquement au relais en utilisant les ports autorisés par votre parefeu."
 
 #: NetworkPage#26
 msgid "Check to encrypt directory requests and, optionally, use bridge relays to access the Tor network"
-msgstr ""
-"Cochez pour crypter les demandes d'annuaire et, facultativement, utilisez "
-"les relais passerelles pour accéder au réseau Tor."
+msgstr "Cochez pour crypter les demandes d'annuaire et, facultativement, utilisez les relais passerelles pour accéder au réseau Tor."
 
 #: NetworkPage#27
 msgid "Bridge Settings"
@@ -1576,9 +1526,7 @@ msgstr "Paramètres de Passerelle"
 
 #: NetworkPage#28
 msgid "The Tor software you are currently running does not support bridges. <br>Directory connections will still be encrypted."
-msgstr ""
-"Le logiciel Tor que vous utilisez actuellement ne supporte pas les "
-"passerelles. <br> Les connexions Annuaire seront cryptées."
+msgstr "Le logiciel Tor que vous utilisez actuellement ne supporte pas les passerelles. <br> Les connexions Annuaire seront cryptées."
 
 #: Policy#1
 msgid "accept"
@@ -1726,9 +1674,7 @@ msgstr "Limites de la bande passante"
 
 #: ServerPage#16
 msgid "For Internet connections with fast download speed but slow upload, please list your upload speed here."
-msgstr ""
-"Merci d'indiquer votre vitesse en remontée si votre connexion a une vitesse "
-"élevée en téléchargement mais lente en remontée."
+msgstr "Merci d'indiquer votre vitesse en remontée si votre connexion a une vitesse élevée en téléchargement mais lente en remontée."
 
 #: ServerPage#17
 msgid "Select the entry that most closely resembles your Internet connection"
@@ -1804,10 +1750,7 @@ msgstr "Sites Web"
 
 #: ServerPage#35
 msgid "Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s."
-msgstr ""
-"Votre bande passante maximale doit être supérieure ou égal à votre bande "
-"passante moyene. Les deux valeurs doivent être supérieures ou égales à 20 "
-"KB/s."
+msgstr "Votre bande passante maximale doit être supérieure ou égal à votre bande passante moyene. Les deux valeurs doivent être supérieures ou égales à 20 KB/s."
 
 #: ServerPage#36
 msgid "Server"
@@ -1834,11 +1777,8 @@ msgid "Relay Port:"
 msgstr "Port relais :"
 
 #: ServerPage#42
-msgid "Email address at which you may be reached if there is a"
-"problem with your relay. You might also include your PGP or GPG fingerprint."
-msgstr "Adresse électronique à laquelle vous pouvez être contacté"
-"en cas de problème avec votre relais. Vous pouvez également"
-"indiquer votre identifiant PGP ou GPG."
+msgid "Email address at which you may be reached if there is aproblem with your relay. You might also include your PGP or GPG fingerprint."
+msgstr "Adresse électronique à laquelle vous pouvez être contactéen cas de problème avec votre relais. Vous pouvez égalementindiquer votre identifiant PGP ou GPG."
 
 #: ServerPage#43
 msgid "Mirror the Relay Directory "
@@ -1882,7 +1822,7 @@ msgstr "Activer le mirroir de l'annuaire des relais"
 
 #: ServerPage#53
 msgid "Attempt to automatically configure port forwarding"
-msgstr "Essai de configuration automatique du transfert de ports"
+msgstr "Tenter de configurer automatiquement le transfert de ports"
 
 #: ServerPage#54
 msgid "Test"
@@ -1894,9 +1834,7 @@ msgstr "Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 et 8888"
 
 #: ServerPage#56
 msgid "What Internet resources should users be able to access from your relay?"
-msgstr ""
-"Quelles sont les ressources d'Internet auquelles peuvent avoir accès les "
-"utilisateurs par votre relais ?"
+msgstr "Quelles sont les ressources d'Internet auquelles peuvent avoir accès les utilisateurs par votre relais ?"
 
 #: ServerPage#57
 msgid "Show help topic on port forwarding"
@@ -1912,9 +1850,7 @@ msgstr "Erreur lors de la dépublication de tous les services"
 
 #: ServicePage#3
 msgid "Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones."
-msgstr ""
-"Merci de configurer au moins un repertoire et un port virtuel pour chacun "
-"des services que vous voulez sauver. Supprimez les autres."
+msgstr "Merci de configurer au moins un repertoire et un port virtuel pour chacun des services que vous voulez sauver. Supprimez les autres."
 
 #: ServicePage#4
 msgid "Error"
@@ -1930,9 +1866,7 @@ msgstr "Sélectionnez le répertoire de Service"
 
 #: ServicePage#7
 msgid "Virtual Port may only contain valid port numbers [1..65535]."
-msgstr ""
-"Les ports virtuels peuvent uniquement contenir des numéros de ports valides "
-"[1..65535]"
+msgstr "Les ports virtuels peuvent uniquement contenir des numéros de ports valides [1..65535]"
 
 #: ServicePage#8
 msgid "Target may only contain address:port, address, or port."
@@ -1984,9 +1918,7 @@ msgstr "Copier l'adresse onion du service selectionné dans le presse-papiers."
 
 #: ServicePage#20
 msgid "Browse in local file system and choose directory for selected service"
-msgstr ""
-"Parcourez le systeme de fichiers et choisissez le répertoire du service "
-"selectionné"
+msgstr "Parcourez le systeme de fichiers et choisissez le répertoire du service selectionné"
 
 #: Stream#1
 msgid "New"
@@ -2153,12 +2085,8 @@ msgid "Vidalia is already running"
 msgstr "Vidalia est déjà en fonctionnement"
 
 #: Vidalia#4
-msgid "Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway."
-""
-"Would you like to continue starting Vidalia?"
-msgstr "Une autre instance de Vidalia est probablement déjà lancée. Si vous êtes sûr qu'aucune autre instance de Vidalia n'est en cours de fonctionnement, vous pouvez choisir de continuer tout de même."
-""
-"Voulez-vous continuer le démarrage de Vidalia ?"
+msgid "Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.Would you like to continue starting Vidalia?"
+msgstr "Une autre instance de Vidalia est probablement déjà lancée. Si vous êtes sûr qu'aucune autre instance de Vidalia n'est en cours de fonctionnement, vous pouvez choisir de continuer tout de même.Voulez-vous continuer le démarrage de Vidalia ?"
 
 #: Vidalia#5
 msgid "Invalid Argument"
@@ -2207,3 +2135,4 @@ msgstr "Niveau de gravité des messages invalide :"
 #: Vidalia#16
 msgid "Unable to open log file '%1': %2"
 msgstr "Impossible d'ouvrir le fichier du Journal des messages '%1': %2"
+
