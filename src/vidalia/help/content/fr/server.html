@@ -207,51 +207,59 @@ réseau Tor.
 <a name="upnp"/>
 <h3>Transfert de Ports</h3>
 <p>
-De nombreux utilisateurs se connectent à Internet par un <i>routeur</i>, qui permet
-plusieurs ordinateurs sur un réseau local de partager la même connexion Internet.
-Certains utilisateurs peuvent également être derrière un <i>pare-feu</i> qui bloque les connexions à votre ordinateur à partir d'autres ordinateurs d'Internet. Si vous
-voulez, toutefois, opérer un relais Tor, d'autres clients et relais Tor doivent être en mesure de
-se connecter à votre relais à travers votre routeur ou votre pare-feu.
+De nombreux utilisateurs se connectent à Internet par un <i>routeur</i>, qui
+permet plusieurs ordinateurs sur un réseau local de partager la même connexion
+Internet.  Certains utilisateurs peuvent également être derrière un
+<i>pare-feu</i> qui bloque les connexions à votre ordinateur à partir d'autres
+ordinateurs d'Internet. Si vous voulez, toutefois, opérer un relais Tor,
+d'autres clients et relais Tor doivent être en mesure de se connecter à votre
+relais à travers votre routeur ou votre pare-feu.
 </p>
 
 <p>
-Pour rendre votre relais publiquement accessible, votre routeur ou pare-feu doit savoir
-quels ports autoriser pour votre ordinateur, la mise en place est connu sous le nom de
-<i> transfert de ports </i>. Le transfert de ports configure votre routeur ou pare-feu pour
-"rediriger" toutes les connexions de certains ports de votre routeur ou pare-feu locaux
-vers les ports ouverts correspondants de votre ordinateur.
+Pour rendre votre relais publiquement accessible, votre routeur ou pare-feu
+doit savoir quels ports autoriser pour votre ordinateur, la mise en place est
+connu sous le nom de <i> transfert de ports </i>. Le transfert de ports
+configure votre routeur ou pare-feu pour "rediriger" toutes les connexions de
+certains ports de votre routeur ou pare-feu locaux vers les ports ouverts
+correspondants de votre ordinateur.
 </p>
 
 <p>
-Si vous cochez la case <i>Tenter de configurer automatiquement le transfert de ports</ i>, Vidalia tentera de mettre en place automatiquement le transfert de port
-sur votre connexion réseau pour que les autres Tor clients puissent se connecter à votre
-relais. Mais, tous les routeurs ne supportent pas le transfert automatique de ports. 
-Vous pouvez utiliser le bouton<i>Test</i> à côté de la case à cocher pour savoir si Vidalia est en mesure de
-mettre en place automatiquement le transfert de port pour vous.
+Si vous cochez la case <i>Tenter de configurer automatiquement le transfert de
+ports</ i>, Vidalia tentera de mettre en place automatiquement le transfert de
+port sur votre connexion réseau pour que les autres Tor clients puissent se
+connecter à votre relais. Mais, tous les routeurs ne supportent pas le
+transfert automatique de ports.  Vous pouvez utiliser le bouton<i>Test</i> à
+côté de la case à cocher pour savoir si Vidalia est en mesure de mettre en
+place automatiquement le transfert de port pour vous.
 </p>
 
 <p>
-Si le <i>Test</i> estime que Vidalia n'est pas en mesure de mettre en place le transfert de port pour vous,  vous pouvez activer cette fonctionalité sur votre routeur ou paramétrer la redirection de port
- manuellement. Certains périphériques réseau ont une fonction appelée
-<i>Universal Plug-and-Play</i> (UPnP). Si vous pouvez accéder à votre routeur
-interface d'administration, vous devriez chercher à activer une option UPnP. Le
-interface d'administration de la plupart des routeurs peut être accessible en ouvrant
-<a
+Si le <i>Test</i> estime que Vidalia n'est pas en mesure de mettre en place le
+transfert de port pour vous,  vous pouvez activer cette fonctionalité sur
+votre routeur ou paramétrer la redirection de port manuellement. Certains
+périphériques réseau ont une fonction appelée <i>Universal Plug-and-Play</i>
+(UPnP). Si vous pouvez accéder à votre routeur interface d'administration,
+vous devriez chercher à activer une option UPnP. Le interface d'administration
+de la plupart des routeurs peut être accessible en ouvrant <a
 href="http://192.168.0.1/">http://192.168.0.1</a> ou <a
 href="http://192.168.1.1/">http://192.168.1.1</a> dans votre navigateur. Vous
-devriez consulter le manuel d'instruction de votre routeur pour de plus amples informations.
+devriez consulter le manuel d'instruction de votre routeur pour de plus amples
+informations.
 </p>
 
 <p>
-Si vous devez configurer manuellement le transfert de port, le site <a
-href = "http://www.portforward.com/english/routers/port_forwarding/routerindex.htm">
-portforward.com </a> contient des instructions sur la manière de mettre en place la redirection de port pour
-de nombreux types de routeurs et pare-feu. Au minimum, vous aurez besoin de transférer
-<i>votre Port Relais</i>, qui par défaut est le port 443 sur Windows et 9001 sur tous les
-autres systèmes d'exploitation. Si vous avez aussi coché la case 
-<i>Servir de miroir à l'annuaire des relais</i>, vous devrez également trasferrer votre <i>
-Port Annuaire</ i>. Le <i> Port Annuaire</ i> est le port 9030 par défaut sur tous les
-les systèmes d'exploitation.
+Si vous devez configurer manuellement le transfert de port, le site <a href =
+"http://www.portforward.com/english/routers/port_forwarding/routerindex.htm">
+portforward.com </a> contient des instructions sur la manière de mettre en
+place la redirection de port pour de nombreux types de routeurs et pare-feu.
+Au minimum, vous aurez besoin de transférer <i>votre Port Relais</i>, qui par
+défaut est le port 443 sur Windows et 9001 sur tous les autres systèmes
+d'exploitation. Si vous avez aussi coché la case <i>Servir de miroir à
+l'annuaire des relais</i>, vous devrez également trasferrer votre <i> Port
+Annuaire</ i>. Le <i> Port Annuaire</ i> est le port 9030 par défaut sur tous
+les les systèmes d'exploitation.
 </p>
 
 </body>
