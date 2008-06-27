@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-06-19 23:25+0000\n"
-"PO-Revision-Date: 2008-06-21 17:00+0000\n"
+"PO-Revision-Date: 2008-06-27 19:20+0000\n"
 "Last-Translator: Harri Vähätalo <harri@svahatalo.fi>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -1897,7 +1897,7 @@ msgstr "Valitse palvelu."
 
 #: ServicePage#5
 msgid "Select Service Directory"
-msgstr "Valitse palvelukansio"
+msgstr "Valitse palvelun kansio"
 
 #: ServicePage#6
 msgid "Virtual Port may only contain valid port numbers [1..65535]."
