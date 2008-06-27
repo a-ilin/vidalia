@@ -38,7 +38,7 @@
     <Topic id="basic" name="Yleiset-asetukset" html="server.html" section="basic"/>
     <Topic id="bandwidth" name="Nopeudenrajoittaminen" html="server.html" section="bandwidth"/>
     <Topic id="exitpolicy" name="Poistumiskäytännöt" html="server.html" section="exitpolicy"/>
-    <Topic id="upnp" name="Port Forwarding" html="server.html" section="upnp"/>
+    <Topic id="upnp" name="Porttien läpivienti" html="server.html" section="upnp"/>
   </Topic>
   <Topic id="bridges" name="Siltareitittimet" html="bridges.html">
     <Topic id="about" name="Mitä ovat siltareitittimet?" html="bridges.html" section="about"/>
