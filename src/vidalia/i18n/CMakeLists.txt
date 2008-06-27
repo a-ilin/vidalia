@@ -29,6 +29,7 @@ set(vidalia_PO
   nl/vidalia_nl.po
   pl/vidalia_pl.po
   pt/vidalia_pt.po
+  ro/vidalia_ro.po
   ru/vidalia_ru.po
   sq/vidalia_sq.po
   sv/vidalia_sv.po
