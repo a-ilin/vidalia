@@ -19,7 +19,7 @@
 
 namespace tc {
 
-/** Creates a new message using <b>fmt</b> and a severity level of
+/* Creates a new message using <b>fmt</b> and a severity level of
  * QtDebugMsg. */
 DebugMessage
 debug(const QString &fmt)
@@ -27,7 +27,7 @@ debug(const QString &fmt)
   return DebugMessage(QtDebugMsg, fmt);
 }
 
-/** Creates a new message using <b>fmt</b> and a severity level of
+/* Creates a new message using <b>fmt</b> and a severity level of
  * QtWarningMsg. */
 DebugMessage
 warn(const QString &fmt)
@@ -35,7 +35,7 @@ warn(const QString &fmt)
   return DebugMessage(QtWarningMsg, fmt);
 }
 
-/** Creates a new message using <b>fmt</b> and a severity level of
+/* Creates a new message using <b>fmt</b> and a severity level of
  * QtCriticalMsg. */
 DebugMessage
 error(const QString &fmt)
@@ -43,7 +43,7 @@ error(const QString &fmt)
   return DebugMessage(QtCriticalMsg, fmt);
 }
 
-/** Creates a new message using <b>fmt</b> and a severity level of
+/* Creates a new message using <b>fmt</b> and a severity level of
  * QtFatalMsg. */
 DebugMessage
 fatal(const QString &fmt)
@@ -51,7 +51,7 @@ fatal(const QString &fmt)
   return DebugMessage(QtFatalMsg, fmt);
 }
 
-/** Converts <b>str</b> to a ConnectionStatusReason enum value. */
+/* Converts <b>str</b> to a ConnectionStatusReason enum value. */
 ConnectionStatusReason
 toConnectionStatusReason(const QString &str)
 {
@@ -78,7 +78,7 @@ toConnectionStatusReason(const QString &str)
   return UnrecognizedReason;
 }
 
-/** DOCDOC */
+/* Converts <b>str</b> to a Severity enum value. */
 Severity
 toSeverity(const QString &str)
 {
