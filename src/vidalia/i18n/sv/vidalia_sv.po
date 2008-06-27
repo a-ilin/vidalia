@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-06-19 23:26+0000\n"
-"PO-Revision-Date: 2008-06-21 18:32+0000\n"
+"PO-Revision-Date: 2008-06-27 19:00+0000\n"
 "Last-Translator: Harri Vähätalo <harri@svahatalo.fi>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -162,11 +162,11 @@ msgstr "Avancerat"
 
 #: AdvancedPage#28
 msgid "Start the Tor software with the specified configuration file (torrc)"
-msgstr ""
+msgstr "Starta Tor-program med följande konfigurationsfil (torrc)"
 
 #: AdvancedPage#29
 msgid "Select path to your configuration file"
-msgstr ""
+msgstr "Välj sökväg till din konfigurationsfil"
 
 #: AdvancedPage#30
 msgid "Data Directory"
@@ -174,11 +174,11 @@ msgstr "Datakatalog"
 
 #: AdvancedPage#31
 msgid "Store data for the Tor software in the following directory"
-msgstr ""
+msgstr "Till använda Tor-programs data i följande katalogen"
 
 #: AdvancedPage#32
 msgid "Select the directory used to store data for the Tor software"
-msgstr ""
+msgstr "Välj en katalog till använda Tor-programs data"
 
 #: AdvancedPage#33
 msgid "Tor Configuration File"
@@ -614,7 +614,7 @@ msgstr "Vill du att Vidalia ska öppna den här linken i din webbläsare?"
 
 #: HelpTextBrowser#5
 msgid "Unable to Open Link"
-msgstr ""
+msgstr "Kunde ej öppna linken"
 
 #: HelpTextBrowser#6
 msgid "Vidalia was unable to open the selected link in your Web browser. You can still copy the URL and paste it into your browser."
@@ -873,11 +873,11 @@ msgstr ""
 
 #: MainWindow#57
 msgid "Error Shutting Down"
-msgstr ""
+msgstr "Kunde ej avsluta"
 
 #: MainWindow#58
 msgid "Vidalia was unable to stop the Tor software."
-msgstr ""
+msgstr "Vidalia kunde ej stoppa Tor-program"
 
 #: MainWindow#59
 msgid "Unexpected Error"
@@ -911,7 +911,7 @@ msgstr "Styrkning fel"
 
 #: MainWindow#66
 msgid "Vidalia was unable to authenticate to the Tor software. (%1)"
-msgstr ""
+msgstr "Vidalia kunde ej styrka till Tor-program. (%1)"
 
 #: MainWindow#67
 msgid "Port Forwarding Failed"
@@ -967,7 +967,7 @@ msgstr ""
 
 #: MainWindow#80
 msgid "Loading network status"
-msgstr ""
+msgstr "Laddar nätvek status"
 
 #: MainWindow#81
 msgid "Loading authority certificates"
@@ -979,11 +979,11 @@ msgstr ""
 
 #: MainWindow#83
 msgid "Loading relay information"
-msgstr ""
+msgstr "Laddar router information"
 
 #: MainWindow#84
 msgid "Connecting to the Tor network"
-msgstr ""
+msgstr "Anslutar till Tor-nätverk"
 
 #: MainWindow#85
 msgid "Establishing a Tor circuit"
@@ -991,7 +991,7 @@ msgstr ""
 
 #: MainWindow#86
 msgid "Connected to the Tor network!"
-msgstr ""
+msgstr "Anslutade till Tor-nätverk!"
 
 #: MainWindow#87
 msgid "Unrecognized startup status"
@@ -1031,11 +1031,11 @@ msgstr ""
 
 #: MainWindow#96
 msgid "unknown"
-msgstr "Okänd"
+msgstr "okänd"
 
 #: MainWindow#97
 msgid " failed (%1)"
-msgstr "Misslyckad (%1)"
+msgstr "misslyckad (%1)"
 
 #: MainWindow#98
 msgid "Stop Tor Now"
@@ -1055,7 +1055,7 @@ msgstr "Startar Tor"
 
 #: MainWindow#102
 msgid "Tor is Running"
-msgstr ""
+msgstr "Tor körs nu"
 
 #: MainWindow#103
 msgid "Connecting to Tor"
@@ -1862,6 +1862,7 @@ msgstr "Testa"
 #: ServerPage#56
 msgid "What Internet resources should users be able to access from your relay?"
 msgstr ""
+"Vilka resurser på Internet ska användare kunna komma åt genom din router?"
 
 #: ServerPage#57
 msgid "Show help topic on port forwarding"
