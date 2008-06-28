@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-06-19 23:25+0000\n"
-"PO-Revision-Date: 2008-06-21 00:19+0000\n"
+"PO-Revision-Date: 2008-06-28 21:47+0000\n"
 "Last-Translator: Karsten Loesing <karsten.loesing@gmx.net>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -1044,55 +1044,55 @@ msgstr "Verbindung verweigert"
 
 #: MainWindow#92
 msgid "connection timeout"
-msgstr ""
+msgstr "Verbindungszeitüberschreitung"
 
 #: MainWindow#93
 msgid "read/write error"
-msgstr ""
+msgstr "Lese-/Schreibfehler"
 
 #: MainWindow#94
 msgid "no route to host"
-msgstr ""
+msgstr "Kein Pfad zum Rechner"
 
 #: MainWindow#95
 msgid "insufficient resources"
-msgstr ""
+msgstr "Unzureichende Ressourcen"
 
 #: MainWindow#96
 msgid "unknown"
-msgstr ""
+msgstr "unbekannt"
 
 #: MainWindow#97
 msgid " failed (%1)"
-msgstr ""
+msgstr "fehlgeschlagen (%1)"
 
 #: MainWindow#98
 msgid "Stop Tor Now"
-msgstr ""
+msgstr "Stoppe Tor jetzt"
 
 #: MainWindow#99
 msgid "Stop Tor"
-msgstr ""
+msgstr "Stoppe Tor"
 
 #: MainWindow#100
 msgid "Starting the Tor software"
-msgstr ""
+msgstr "Starte die Tor-Software"
 
 #: MainWindow#101
 msgid "Starting Tor"
-msgstr ""
+msgstr "Starte Tor"
 
 #: MainWindow#102
 msgid "Tor is Running"
-msgstr ""
+msgstr "Tor läuft"
 
 #: MainWindow#103
 msgid "Connecting to Tor"
-msgstr ""
+msgstr "Verbinde zu Tor"
 
 #: MainWindow#104
 msgid "Authenticating to Tor"
-msgstr ""
+msgstr "Authentifiziere bei Tor"
 
 #: MessageLog#1
 msgid "Message Log"
@@ -1564,26 +1564,34 @@ msgstr "Kopiere die gewählte Brücke in die Zwischenablage"
 #: NetworkPage#23
 msgid "Check if your local network requires a proxy to access the Internet"
 msgstr ""
+"Überprüfe, ob dein lokales Netzwerk einen Proxy für den Internetzugriff "
+"benötigt"
 
 #: NetworkPage#24
 msgid "Check to only connect to relays using ports allowed by your firewall"
 msgstr ""
+"Überprüfe, ob nur bestimmte Ports zur Verbindung zu Relays von deiner "
+"Firewall zugelassen werden"
 
 #: NetworkPage#25
 msgid "Check to encrypt directory requests and, optionally, use bridge relays to access the Tor network"
 msgstr ""
+"Überprüfe, ob Anfragen an das Verzeichnis verschlüsselt und (optional) Tor-"
+"Brücken zum Zugriff auf das Tor-Netzwerk verwendet werden"
 
 #: NetworkPage#26
 msgid "Bridge Settings"
-msgstr ""
+msgstr "Tor-Brücken-Einstellungen"
 
 #: NetworkPage#27
 msgid "The Tor software you are currently running does not support bridges. <br>Directory connections will still be encrypted."
 msgstr ""
+"Die Tor-Software, die du gerade benutzt, unterstützt keine Tor-"
+"Brücken.<br>Verzeichnisverbindungen werden trotzdem verschlüsselt."
 
 #: NetworkPage#28
 msgid "<a href=\"bridges.finding\">How do I find a bridge?</a>"
-msgstr ""
+msgstr "<a href=\"bridges.finding\">Wie finde ich eine Tor-Brücke?</a>"
 
 #: Policy#1
 msgid "accept"
@@ -1631,19 +1639,19 @@ msgstr "Ort:"
 
 #: RouterDescriptorView#7
 msgid "%1 days "
-msgstr ""
+msgstr "%1 Tage "
 
 #: RouterDescriptorView#8
 msgid "%1 hours "
-msgstr ""
+msgstr "%1 Stunden "
 
 #: RouterDescriptorView#9
 msgid "%1 mins "
-msgstr ""
+msgstr "%1 Minuten "
 
 #: RouterDescriptorView#10
 msgid "%1 secs"
-msgstr ""
+msgstr "%1 Sekunden "
 
 #: RouterListItem#1
 msgid "%1 KB/s"
@@ -1667,7 +1675,7 @@ msgstr "Verteiler heran zoomen"
 
 #: RouterListWidget#3
 msgid "%1 relays online"
-msgstr ""
+msgstr "%1 Relays online"
 
 #: ServerPage#1
 msgid "Relay traffic for the Tor network"
@@ -1848,7 +1856,7 @@ msgstr "Das Tor-Verteiler-Verzeichnis spiegeln"
 
 #: ServerPage#44
 msgid "Your bridge relay is not running."
-msgstr ""
+msgstr "Deine Tor-Brücke läuft nicht."
 
 #: ServerPage#45
 msgid "Help censored users reach the Tor network (Tor 0.2.0.8-alpha or newer)"
@@ -1856,23 +1864,27 @@ msgstr "Nutzern helfen, die einer Internetzensur unterliegen, das Tor-Netzwerk z
 
 #: ServerPage#46
 msgid "Name of your relay"
-msgstr ""
+msgstr "Name deines Relays"
 
 #: ServerPage#47
 msgid "Port on which users and other relays can communicate with your relay"
 msgstr ""
+"Port, auf dem andere Benutzer und Relays deinen Relay kontaktieren können"
 
 #: ServerPage#48
 msgid "Let others access your bridge by giving them this line:"
 msgstr ""
+"Lasse andere Benutzer auf deine Tor-Brücke zugreifen, indem du ihnen diese "
+"Zeile gibst:"
 
 #: ServerPage#49
 msgid "This is the identity of your bridge relay that you can give to other people"
 msgstr ""
+"Dies ist die Identität deiner Tor-Brücke, die du anderen Leute geben kannst"
 
 #: ServerPage#50
 msgid "Copy your bridge relay's identity to the clipboard"
-msgstr ""
+msgstr "Kopiere die Identität deiner Tor-Brücke in die Zwischenablage"
 
 #: ServerPage#51
 msgid "Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 and 8888"
@@ -1880,27 +1892,29 @@ msgstr "Ports 706, 1863, 5050, 5190, 5222, 8300 und 8888 {706, 1863, 5050, 5190,
 
 #: ServerPage#52
 msgid "Run as a client only"
-msgstr ""
+msgstr "Benutze Tor nur als Client"
 
 #: ServerPage#53
 msgid "Enable to mirror the relay directory"
-msgstr ""
+msgstr "Aktiviere das Spiegeln des Relay-Verzeichnisses"
 
 #: ServerPage#54
 msgid "Attempt to automatically configure port forwarding"
-msgstr ""
+msgstr "Versuche automatisch die Port-Weiterleitung zu konfigurieren"
 
 #: ServerPage#55
 msgid "Test"
-msgstr ""
+msgstr "Test"
 
 #: ServerPage#56
 msgid "What Internet resources should users be able to access from your relay?"
 msgstr ""
+"Welche Internetressourcen sollen Benutzer von deinem Relay aus zugreifen "
+"dürfen?"
 
 #: ServerPage#57
 msgid "Show help topic on port forwarding"
-msgstr ""
+msgstr "Zeige Hilfe zu Port-Weiterleitung"
 
 #: ServicePage#1
 msgid "Provided Hidden Services"
@@ -1956,31 +1970,35 @@ msgstr "Verzeichnis auswählen"
 
 #: ServicePage#14
 msgid "Please select a Service."
-msgstr ""
+msgstr "Bitte wähle einen Dienst aus."
 
 #: ServicePage#15
 msgid "Virtual Port may only contain valid port numbers [1..65535]."
-msgstr ""
+msgstr "Der virtuelle Port darf nur gültige Port-Nummern enthalten [1..65535]."
 
 #: ServicePage#16
 msgid "Target may only contain address:port, address, or port."
 msgstr ""
+"Das Ziel darf nur Einträge der Form Adresse:Port, Adresse oder Port "
+"enthalten."
 
 #: ServicePage#17
 msgid "Directory already in use by another service."
-msgstr ""
+msgstr "Das Verzeichnis wird bereits von einem anderen Dienst benutzt."
 
 #: ServicePage#18
 msgid "Form"
-msgstr ""
+msgstr "Formular"
 
 #: ServicePage#19
 msgid "Virtual Port"
-msgstr ""
+msgstr "Virtueller Port"
 
 #: ServicePage#20
 msgid "Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones."
 msgstr ""
+"Bitte konfiguriere wenigstens ein Verzeichnis und einen virtuellen Port für "
+"jeden Dienst, den du speichern möchtest. Entferne die übrigen."
 
 #: Stream#1
 msgid "New"
