@@ -56,6 +56,8 @@ LanguageSupport::languages()
     languages.insert("pl",    "Polski");
     languages.insert("pt",    
       QString::fromUtf8("Portugu\303\252s"));
+    languages.insert("ro",
+      QString::fromUtf8("rom\303\242n\304\203"));
     languages.insert("ru",
       QString::fromUtf8("\320\240\321\203\321\201\321\201\320\272\320\270\320\271"));
     languages.insert("sq",    "Shqip");
