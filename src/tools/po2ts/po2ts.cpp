@@ -12,7 +12,7 @@
 #include <QFile>
 #include <QDomDocument>
 #include <QTextStream>
-
+#include <QTextCodec>
 
 #define TS_DOCTYPE                    "TS"
 #define TS_ELEMENT_ROOT               "TS"
@@ -194,10 +194,12 @@ void
 print_usage_and_exit()
 {
   QTextStream error(stderr);
-  error << "usage: po2ts [-q] -i <infile.po> -o <outfile.ts>\n";
+  error << "usage: po2ts [-q] -i <infile.po> -o <outfile.ts> "
+           "[-c <encoding>]\n";
   error << "  -q (optional)   Quiet mode (errors are still displayed)\n";
   error << "  -i <infile.po>  Input .po file\n";
   error << "  -o <outfile.ts> Output .ts file\n";
+  error << "  -c <encoding>   Text encoding (default: utf-8)\n";
   error.flush();
   exit(1);
 }
@@ -208,10 +210,11 @@ main(int argc, char *argv[])
   QTextStream error(stderr);
   QString errorMessage;
   char *infile, *outfile;
+  QTextCodec *codec = QTextCodec::codecForName("utf-8");
   bool quiet = false;
 
   /* Check for the correct number of input parameters. */
-  if (argc < 5 || argc > 6)
+  if (argc < 5 || argc > 8)
     print_usage_and_exit();
   for (int i = 1; i < argc; i++) {
     QString arg(argv[i]);
@@ -221,7 +224,13 @@ main(int argc, char *argv[])
       infile = argv[i];
     else if (!arg.compare("-o", Qt::CaseInsensitive) && ++i < argc)
       outfile = argv[i];
-    else
+    else if (!arg.compare("-c", Qt::CaseInsensitive) && ++i < argc) {
+      codec = QTextCodec::codecForName(argv[i]);
+      if (!codec) {
+        error << "Invalid text encoding specified\n";
+        return 1;
+      }
+    } else
       print_usage_and_exit(); 
   }
 
@@ -235,6 +244,7 @@ main(int argc, char *argv[])
 
   QDomDocument ts;
   QTextStream po(&poFile);
+  po.setCodec(codec);
   int n_strings = po2ts(&po, &ts, &errorMessage);
   if (n_strings < 0) {
     error << QString("Unable to convert '%1': %2\n").arg(infile)
@@ -252,7 +262,9 @@ main(int argc, char *argv[])
 
   /* Write the .ts output. */
   QTextStream out(&tsFile);
-  out.setCodec("UTF-8");
+  out.setCodec(codec);
+  out << QString("<?xml version=\"1.0\" encoding=\"%1\"?>\n")
+                                                  .arg(QString(codec->name()));
   out << ts.toString(4);
 
   if (!quiet) {
