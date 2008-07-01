@@ -11,6 +11,7 @@
 #include <QFile>
 #include <QDomDocument>
 #include <QTextStream>
+#include <QTextCodec>
 #include <QDateTime>
 
 #include "ts2po_config.h"
@@ -31,9 +32,10 @@ create_po_timestamp()
   return now.toString("yyyy-MM-dd hh:mm+0000");
 }
 
-/** Return a header to be placed at the top of the .po file. */
+/** Return a header to be placed at the top of the .po file. The header will
+ * include <b>encoding</b> in the Content-Type header line. */
 QString
-create_po_header()
+create_po_header(const QString &encoding)
 {
   QString header;
   QString tstamp = create_po_timestamp();
@@ -48,7 +50,8 @@ create_po_header()
   header.append("\"Last-Translator: \\n\"\n");
   header.append("\"Language-Team: "TS2PO_LANGUAGE_TEAM"\\n\"\n");
   header.append("\"MIME-Version: 1.0\\n\"\n");
-  header.append("\"Content-Type: text/plain; charset=UTF-8\\n\"\n");
+  header.append("\"Content-Type: text/plain; ");
+  header.append(QString("charset=%1\\n\"\n").arg(encoding));
   header.append("\"Content-Transfer-Encoding: 8bit\\n\"\n");
   header.append("\"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\\n\"\n");
   header.append("\"X-Generator: Vidalia ts2po "TS2PO_VERSION"\\n\"\n");
@@ -111,10 +114,12 @@ convert_context(const QDomElement &context, QString *po, QString *errorMessage)
 }
 
 /** Convert the TS-formatted document in <b>ts</b> to a PO-formatted document.
- * The output will be written to <b>po</b>. Returns the number of strings
+ * The output will be written to <b>po</b>, including a file header that
+ * specifies <b>encoding</b> as the character set. Returns the number of strings
  * converted on success, or -1 on error and <b>errorMessage</b> will be set. */
 int
-ts2po(const QDomDocument *ts, QString *po, QString *errorMessage)
+ts2po(const QDomDocument *ts, QString *po, const QString &encoding,
+      QString *errorMessage)
 {
   int n_strings = 0;
   QString context;
@@ -129,7 +134,7 @@ ts2po(const QDomDocument *ts, QString *po, QString *errorMessage)
     return -1;
 
   /* Start with the PO header */
-  *po = create_po_header();
+  *po = create_po_header(encoding);
 
   /* Iterate through all of the translation contexts and build up the PO file
    * output. */
@@ -157,10 +162,12 @@ void
 print_usage_and_exit()
 {
   QTextStream error(stderr);
-  error << "usage: ts2po [-q] -i <infile.ts> -o <outfile.po>\n";
+  error << "usage: ts2po [-q] -i <infile.ts> -o <outfile.po> "
+           "[-c <encoding>]\n";
   error << "  -q (optional)   Quiet mode (errors are still displayed)\n";
   error << "  -i <infile.ts>  Input .ts file\n";
   error << "  -o <outfile.po> Output .po file\n";
+  error << "  -c <encoding>   Text encoding (default: utf-8)\n";
   error.flush();
   exit(1);
 }
@@ -171,10 +178,11 @@ main(int argc, char *argv[])
   QTextStream error(stderr);
   QString errorMessage;
   char *infile, *outfile;
+  QTextCodec *codec = QTextCodec::codecForName("utf-8");
   bool quiet = false;
   
   /* Check for the correct number of input parameters. */
-  if (argc < 5 || argc > 6)
+  if (argc < 5 || argc > 8)
     print_usage_and_exit();
   for (int i = 1; i < argc; i++) {
     QString arg(argv[i]);
@@ -184,10 +192,16 @@ main(int argc, char *argv[])
       infile = argv[i];
     else if (!arg.compare("-o", Qt::CaseInsensitive) && ++i < argc)
       outfile = argv[i];
-    else
+    else if (!arg.compare("-c", Qt::CaseInsensitive) && ++i < argc) {
+      codec = QTextCodec::codecForName(argv[i]);
+      if (!codec) {
+        error << "Invalid text encoding specified.\n";
+        return 1;
+      }
+    } else
       print_usage_and_exit(); 
   }
-
+ 
   /* Read and parse the input .ts file. */
   QDomDocument ts;
   QFile tsFile(infile);
@@ -208,7 +222,7 @@ main(int argc, char *argv[])
  
   /* Convert the input .ts file to a .po formatted file. */
   QString po;
-  int n_strings = ts2po(&ts, &po, &errorMessage);
+  int n_strings = ts2po(&ts, &po, QString(codec->name()), &errorMessage);
   if (n_strings < 0) {
     error << QString("Unable to convert '%1' to '%2': %3\n").arg(infile)
                                                             .arg(outfile)
@@ -218,7 +232,7 @@ main(int argc, char *argv[])
 
   /* Write the .po output. */
   QTextStream out(&poFile);
-  out.setCodec("UTF-8");
+  out.setCodec(codec);
   out << po;
   poFile.close();
  
