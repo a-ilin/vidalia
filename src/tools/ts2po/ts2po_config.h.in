@@ -8,8 +8,8 @@
 **  terms described in the LICENSE file.
 */
 
-#ifndef _CONFIG_H
-#define _CONFIG_H
+#ifndef _TS2PO_CONFIG_H
+#define _TS2PO_CONFIG_H
 
 #define TS2PO_VERSION "@VERSION@"
 
