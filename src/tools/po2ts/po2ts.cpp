@@ -84,13 +84,13 @@ new_ts_document()
 }
 
 /** Parse the context name from <b>str</b>, where the context name is of the
- * form ContextName#Number. This is the format used by translate-toolkit. */
+ * form DQUOTE ContextName DQUOTE. */
 QString
-parse_context_name(const QString &str)
+parse_message_context(const QString &str)
 {
-  if (str.contains("#"))
-    return str.section("#", 0, 0);
-  return QString();
+  QString out = str.trimmed();
+  out = out.replace("\"", "");
+  return out;
 }
 
 /** Parse the PO-formatted message string from <b>msg</b>. If <b>msg</b> is a
@@ -125,7 +125,8 @@ read_next_line(QTextStream *stream)
 int
 po2ts(QTextStream *po, QDomDocument *ts, QString *errorMessage)
 {
-  QString line, context, msgid, msgstr;
+  QString line;
+  QString msgctxt, msgid, msgstr;
   QHash<QString,QDomElement> contextElements;
   QDomElement contextElement, msgElement, transElement;
   int n_strings = 0;
@@ -137,16 +138,14 @@ po2ts(QTextStream *po, QDomDocument *ts, QString *errorMessage)
   *ts = new_ts_document();
 
   while (!po->atEnd()) {
-    /* Parse the context name and ignore other "#" lines. */
-    if (!line.startsWith("#: ")) {
+    /* Find the start of the next translation */
+    while (!line.startsWith("msgctxt"))
       line = read_next_line(po);
-      continue;
-    }
-    context = parse_context_name(line.section(" ", 1));
-    while (line.startsWith("#"))
-      line = read_next_line(po);
+    msgctxt = line.section(" ", 1);
+    msgctxt = parse_message_context(msgctxt);
 
     /* Parse the (possibly multiline) message source string */
+    line = read_next_line(po);
     if (!line.startsWith("msgid ")) {
       *errorMessage = "expected 'msgid' line";
       return -1;
@@ -175,12 +174,12 @@ po2ts(QTextStream *po, QDomDocument *ts, QString *errorMessage)
     msgstr = parse_message_string(msgstr);
 
     /* Add the message and translation to the .ts document */
-    if (contextElements.contains(context)) {
-      contextElement = contextElements.value(context);
+    if (contextElements.contains(msgctxt)) {
+      contextElement = contextElements.value(msgctxt);
     } else {
-      contextElement = new_context_element(ts, context);
+      contextElement = new_context_element(ts, msgctxt);
       ts->documentElement().appendChild(contextElement);
-      contextElements.insert(context, contextElement);
+      contextElements.insert(msgctxt, contextElement);
     }
     contextElement.appendChild(new_message_element(ts, msgid, msgstr)); 
     
