@@ -93,6 +93,16 @@ parse_message_context(const QString &str)
   return out;
 }
 
+/** Parse the context name from <b>str</b>, where <b>str</b> is of the
+ * form ContextName#Number. This is the format used by translate-toolkit. */
+QString
+parse_message_context_lame(const QString &str)
+{
+  if (str.contains("#"))
+    return str.section("#", 0, 0);
+  return QString();
+}
+
 /** Parse the PO-formatted message string from <b>msg</b>. If <b>msg</b> is a
  * multiline string, the extra double quotes will be replaced with newlines
  * appropriately. */
@@ -118,6 +128,21 @@ read_next_line(QTextStream *stream)
   return stream->readLine().append("\n");
 }
 
+/** Skip past the header portion of the PO file and any leading whitespace. 
+ * The next line read from <b>po</b> will be the first non-header line in the
+ * document. */
+void
+skip_po_header(QTextStream *po)
+{
+  QString line;
+  /* Skip any leading whitespace before the header */
+  po->skipWhiteSpace();
+  /* Read to the first empty line */
+  line = po->readLine();
+  while (!po->atEnd() && !line.isEmpty())
+    line = po->readLine();
+}
+
 /** Convert <b>po</b> from the PO format to a TS-formatted XML document.
  * <b>ts</b> will be set to the resulting TS document. Return the number of
  * converted strings on success, or -1 on error and <b>errorMessage</b> will
@@ -136,16 +161,29 @@ po2ts(QTextStream *po, QDomDocument *ts, QString *errorMessage)
   Q_ASSERT(errorMessage);
 
   *ts = new_ts_document();
-
+  
+  skip_po_header(po);
+  line = read_next_line(po);
   while (!po->atEnd()) {
-    /* Find the start of the next translation */
-    while (!line.startsWith("msgctxt"))
+    /* Ignore all "#" lines except "#:" */
+    while (line.startsWith("#")) {
+      if (line.startsWith("#:")) {
+        /* Context was specified with the stupid overloaded "#:" syntax.*/
+        msgctxt = line.section(" ", 1);
+        msgctxt = parse_message_context_lame(msgctxt);
+      }
       line = read_next_line(po);
-    msgctxt = line.section(" ", 1);
-    msgctxt = parse_message_context(msgctxt);
+    }
 
+    /* A context specified on a "msgctxt" line takes precedence over a context
+     * specified using the overload "#:" notation. */
+    if (line.startsWith("msgctxt ")) {    
+      msgctxt = line.section(" ", 1);
+      msgctxt = parse_message_context(msgctxt);
+      line = read_next_line(po);
+    }
+    
     /* Parse the (possibly multiline) message source string */
-    line = read_next_line(po);
     if (!line.startsWith("msgid ")) {
       *errorMessage = "expected 'msgid' line";
       return -1;
