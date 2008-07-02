@@ -2,113 +2,138 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
-"POT-Creation-Date: 2008-06-19 23:26+0000\n"
-"PO-Revision-Date: 2008-06-27 19:00+0000\n"
-"Last-Translator: Harri Vähätalo <harri@svahatalo.fi>\n"
+"POT-Creation-Date: 2008-07-02 05:29+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 1.1.0\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Vidalia ts2po 0.2\n"
 
-#: AboutDialog#1
+#: aboutdialog.ui:25
+msgctxt "AboutDialog"
 msgid "About Vidalia"
 msgstr "Om Vidalia"
 
-#: AboutDialog#2
+#: aboutdialog.ui:78
+msgctxt "AboutDialog"
 msgid "Vidalia"
 msgstr "Vidalia"
 
-#: AboutDialog#3
+#: aboutdialog.ui:234
+msgctxt "AboutDialog"
 msgid "Tor"
 msgstr "Tor"
 
-#: AboutDialog#4
+#: aboutdialog.ui:156
+msgctxt "AboutDialog"
 msgid "Qt"
 msgstr "Qt"
 
-#: AboutDialog#5
+#: aboutdialog.ui:166
+msgctxt "AboutDialog"
 msgid "Qt Version"
 msgstr "Qt-version"
 
-#: AboutDialog#6
+#: aboutdialog.ui:244
+msgctxt "AboutDialog"
 msgid "Tor Version"
 msgstr "Tor-version"
 
-#: AboutDialog#7
+#: aboutdialog.ui:88
+msgctxt "AboutDialog"
 msgid "Vidalia Version"
 msgstr "Vidalia-version"
 
-#: AboutDialog#8
+#: aboutdialog.cpp:68
+msgctxt "AboutDialog"
 msgid "<Not Running>"
 msgstr "<Körs ej>"
 
-#: AboutDialog#9
+#: aboutdialog.cpp:64
+msgctxt "AboutDialog"
 msgid "<Unavailable>"
 msgstr "<Ej tillgänglig>"
 
-#: AdvancedPage#1
+#: advancedpage.ui:28
+msgctxt "AdvancedPage"
 msgid "Control Port"
 msgstr "Kontrollport"
 
-#: AdvancedPage#2
+#: advancedpage.ui:318
+msgctxt "AdvancedPage"
 msgid "Browse"
 msgstr "Bläddra"
 
-#: AdvancedPage#3
+#: advancedpage.ui:337
+msgctxt "AdvancedPage"
 msgid "Permissions"
 msgstr "Rättigheter"
 
-#: AdvancedPage#4
+#: advancedpage.ui:360
+msgctxt "AdvancedPage"
 msgid "Run as User:"
 msgstr "Kör som användaren:"
 
-#: AdvancedPage#5
+#: advancedpage.ui:373
+msgctxt "AdvancedPage"
 msgid "Vidalia will run with this User's permissions"
 msgstr "Vidalia kommer att köras med följande användares rättigheter"
 
-#: AdvancedPage#6
+#: advancedpage.ui:393
+msgctxt "AdvancedPage"
 msgid "Run as Group:"
 msgstr "Kör som gruppen:"
 
-#: AdvancedPage#7
+#: advancedpage.ui:400
+msgctxt "AdvancedPage"
 msgid "Vidalia will run with this Group's permissions"
 msgstr "Vidalia kommer att köras med följande grupps rättigheter"
 
-#: AdvancedPage#8
+#: advancedpage.cpp:221
+msgctxt "AdvancedPage"
 msgid "Select Tor Configuration File"
 msgstr "Välj konfigurationsfil för Tor"
 
-#: AdvancedPage#9
+#: advancedpage.cpp:234
+msgctxt "AdvancedPage"
 msgid "File Not Found"
 msgstr "Filen hittades ej"
 
-#: AdvancedPage#10
+#: advancedpage.cpp:236
+msgctxt "AdvancedPage"
 msgid "%1 does not exist. Would you like to create it?"
 msgstr "%1 existerar ej. Vill du skapa den?"
 
-#: AdvancedPage#11
+#: advancedpage.cpp:247
+msgctxt "AdvancedPage"
 msgid "Failed to Create File"
 msgstr "Det gick ej att skapa filen"
 
-#: AdvancedPage#12
+#: advancedpage.cpp:248
+msgctxt "AdvancedPage"
 msgid "Unable to create %1 [%2]"
 msgstr "Det gick ej att skapa %1 [%2]"
 
-#: AdvancedPage#13
+#: advancedpage.cpp:285
+msgctxt "AdvancedPage"
 msgid "Unable to remove Tor Service"
 msgstr "Det gick ej att ta bort Windows-tjänsten för Tor"
 
-#: AdvancedPage#14
+#: advancedpage.cpp:296
+msgctxt "AdvancedPage"
 msgid "Unable to install Tor Service"
 msgstr "Det gick ej att installera Windows-tjänsten för Tor"
 
-#: AdvancedPage#15
+#: advancedpage.cpp:297
+msgctxt "AdvancedPage"
 msgid "Vidalia was unable to install the Tor service."
 msgstr "Vidalia kunde inte installera Windows-tjänsten för Tor."
 
-#: AdvancedPage#16
+#: advancedpage.cpp:287
+msgctxt "AdvancedPage"
 msgid "Vidalia was unable to remove the Tor service."
 ""
 "You may need to remove it manually."
@@ -116,1121 +141,1398 @@ msgstr "Vidalia kunde inte ta bort Windows-tjänsten för Tor."
 ""
 "Du kanske måste ta bort tjänsten manuellt."
 
-#: AdvancedPage#17
+#: advancedpage.cpp:103
+msgctxt "AdvancedPage"
 msgid "'%1' is not a valid IP address."
 msgstr "'%1' är ej en giltig IP-adress."
 
-#: AdvancedPage#18
+#: advancedpage.ui:157
+msgctxt "AdvancedPage"
 msgid ":"
 msgstr ":"
 
-#: AdvancedPage#19
+#: advancedpage.cpp:114
+msgctxt "AdvancedPage"
 msgid "You selected 'Password' authentication, but did not specify a password."
 msgstr "Du har valt 'Läsenord'-styrkning, men du har inte räknat upp en läsenord."
 
-#: AdvancedPage#20
+#: advancedpage.cpp:263
+msgctxt "AdvancedPage"
 msgid "Select a Directory to Use for Tor Data"
 msgstr "Välj en katalog till använda Tor-data"
 
-#: AdvancedPage#21
+#: advancedpage.ui:48
+msgctxt "AdvancedPage"
 msgid "Authentication:"
 msgstr "Styrkning:"
 
-#: AdvancedPage#22
+#: advancedpage.ui:58
+msgctxt "AdvancedPage"
 msgid "Address:"
 msgstr "Adress:"
 
-#: AdvancedPage#23
+#: advancedpage.ui:91
+msgctxt "AdvancedPage"
 msgid "Cookie"
 msgstr "Cookie"
 
-#: AdvancedPage#24
+#: advancedpage.ui:96
+msgctxt "AdvancedPage"
 msgid "Password"
 msgstr "Lösenord"
 
-#: AdvancedPage#25
+#: advancedpage.ui:111
+msgctxt "AdvancedPage"
 msgid "Randomly Generate"
 msgstr ""
 
-#: AdvancedPage#26
+#: advancedpage.ui:86
+msgctxt "AdvancedPage"
 msgid "None"
 msgstr "Inget"
 
-#: AdvancedPage#27
+#: advancedpage.cpp:34
+msgctxt "AdvancedPage"
 msgid "Advanced"
 msgstr "Avancerat"
 
-#: AdvancedPage#28
+#: advancedpage.ui:240
+msgctxt "AdvancedPage"
 msgid "Start the Tor software with the specified configuration file (torrc)"
 msgstr "Starta Tor-program med följande konfigurationsfil (torrc)"
 
-#: AdvancedPage#29
+#: advancedpage.ui:259
+msgctxt "AdvancedPage"
 msgid "Select path to your configuration file"
 msgstr "Välj sökväg till din konfigurationsfil"
 
-#: AdvancedPage#30
+#: advancedpage.ui:275
+msgctxt "AdvancedPage"
 msgid "Data Directory"
 msgstr "Datakatalog"
 
-#: AdvancedPage#31
+#: advancedpage.ui:296
+msgctxt "AdvancedPage"
 msgid "Store data for the Tor software in the following directory"
 msgstr "Till använda Tor-programs data i följande katalogen"
 
-#: AdvancedPage#32
+#: advancedpage.ui:315
+msgctxt "AdvancedPage"
 msgid "Select the directory used to store data for the Tor software"
 msgstr "Välj en katalog till använda Tor-programs data"
 
-#: AdvancedPage#33
+#: advancedpage.ui:219
+msgctxt "AdvancedPage"
 msgid "Tor Configuration File"
 msgstr "Tor-konfigurationsfil"
 
-#: AppearancePage#1
+#: appearancepage.ui:31
+msgctxt "AppearancePage"
 msgid "Language"
 msgstr "Språk"
 
-#: AppearancePage#2
+#: appearancepage.ui:52
+msgctxt "AppearancePage"
 msgid "Choose the language used in Vidalia"
 msgstr "Välj det språk som Vidalia ska använda"
 
-#: AppearancePage#3
+#: appearancepage.ui:84
+msgctxt "AppearancePage"
 msgid "Changes to language will only take effect after restarting Vidalia!"
 msgstr "Du måste starta Vidalia för att ändringar för språk ska gälla!"
 
-#: AppearancePage#4
+#: appearancepage.ui:100
+msgctxt "AppearancePage"
 msgid "Style"
 msgstr "Stil"
 
-#: AppearancePage#5
+#: appearancepage.ui:134
+msgctxt "AppearancePage"
 msgid "Choose Vidalia's interface style"
 msgstr "Välj den stil som Vidalia ska använda"
 
-#: AppearancePage#6
+#: appearancepage.cpp:23
+msgctxt "AppearancePage"
 msgid "Appearance"
 msgstr "Utseende"
 
-#: BandwidthGraph#1
+#: bwgraph.ui:16
+msgctxt "BandwidthGraph"
 msgid "Tor Bandwidth Usage"
 msgstr "Tors bandbreddsförbrukning"
 
-#: BandwidthGraph#2
+#: bwgraph.ui:40
+msgctxt "BandwidthGraph"
 msgid "Show Settings"
 msgstr "Visa inställningar"
 
-#: BandwidthGraph#3
+#: bwgraph.ui:63
+msgctxt "BandwidthGraph"
 msgid "Reset"
 msgstr "Nollställ"
 
-#: BandwidthGraph#4
+#: bwgraph.ui:151
+msgctxt "BandwidthGraph"
 msgid "Receive Rate"
 msgstr "Mottagningshastighet"
 
-#: BandwidthGraph#5
+#: bwgraph.ui:170
+msgctxt "BandwidthGraph"
 msgid "Send Rate"
 msgstr "Sändningshastighet"
 
-#: BandwidthGraph#6
+#: bwgraph.ui:284
+msgctxt "BandwidthGraph"
 msgid "Changes the transparency of the Bandwidth Graph"
 msgstr "Ändrar genomskinligheten för bandbreddsdiagrammet"
 
-#: BandwidthGraph#7
+#: bwgraph.ui:443
+msgctxt "BandwidthGraph"
 msgid "Save"
 msgstr "Spara"
 
-#: BandwidthGraph#8
+#: bwgraph.ui:450
+msgctxt "BandwidthGraph"
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: BandwidthGraph#9
+#: bwgraph.cpp:160
+msgctxt "BandwidthGraph"
 msgid "Since:"
 msgstr "Sedan:"
 
-#: BandwidthGraph#10
+#: bwgraph.ui:368
+msgctxt "BandwidthGraph"
 msgid "100"
 msgstr "100"
 
-#: BandwidthGraph#11
+#: bwgraph.ui:383
+msgctxt "BandwidthGraph"
 msgid "% Opaque"
 msgstr "% ogenomskinlighet"
 
-#: BandwidthGraph#12
+#: bwgraph.cpp:226
+msgctxt "BandwidthGraph"
 msgid "Hide Settings"
 msgstr "Dölj inställningar"
 
-#: BandwidthGraph#13
+#: bwgraph.ui:183
+msgctxt "BandwidthGraph"
 msgid "Always on Top"
 msgstr "Alltid överst"
 
-#: BandwidthGraph#14
+#: bwgraph.ui:234
+msgctxt "BandwidthGraph"
 msgid "Style"
 msgstr "Stil"
 
-#: Circuit#1
+#: circuit.cpp:89
+msgctxt "Circuit"
 msgid "New"
 msgstr "Ny"
 
-#: Circuit#2
+#: circuit.cpp:90
+msgctxt "Circuit"
 msgid "Open"
 msgstr "Öppen"
 
-#: Circuit#3
+#: circuit.cpp:91
+msgctxt "Circuit"
 msgid "Building"
 msgstr "Skapar"
 
-#: Circuit#4
+#: circuit.cpp:92
+msgctxt "Circuit"
 msgid "Failed"
 msgstr "Misslyckad"
 
-#: Circuit#5
+#: circuit.cpp:93
+msgctxt "Circuit"
 msgid "Closed"
 msgstr "Stängd"
 
-#: Circuit#6
+#: circuit.cpp:94
+msgctxt "Circuit"
 msgid "Unknown"
 msgstr "Okänd"
 
-#: CircuitItem#1
+#: circuititem.cpp:39
+msgctxt "CircuitItem"
 msgid "<Path Empty>"
 msgstr "<Sökväg tom>"
 
-#: CircuitListWidget#1
+#: circuitlistwidget.cpp:37
+msgctxt "CircuitListWidget"
 msgid "Connection"
 msgstr "Anslutning"
 
-#: CircuitListWidget#2
+#: circuitlistwidget.cpp:37
+msgctxt "CircuitListWidget"
 msgid "Status"
 msgstr "Status"
 
-#: CircuitListWidget#3
+#: circuitlistwidget.cpp:72
+msgctxt "CircuitListWidget"
 msgid "Zoom to Circuit"
 msgstr "Zooma in på kretsen"
 
-#: CircuitListWidget#4
+#: circuitlistwidget.cpp:74
+msgctxt "CircuitListWidget"
 msgid "Close Circuit (Del)"
 msgstr "Avsluta kretsen (Del)"
 
-#: CircuitListWidget#5
+#: circuitlistwidget.cpp:95
+msgctxt "CircuitListWidget"
 msgid "Close Stream (Del)"
 msgstr ""
 
-#: ConfigDialog#1
+#: configdialog.cpp:72
+msgctxt "ConfigDialog"
 msgid "General"
 msgstr "Allmänt"
 
-#: ConfigDialog#2
+#: configdialog.cpp:92
+msgctxt "ConfigDialog"
 msgid "Advanced"
 msgstr "Avancerat"
 
-#: ConfigDialog#3
+#: configdialog.cpp:59
+msgctxt "ConfigDialog"
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: ConfigDialog#4
+#: configdialog.cpp:88
+msgctxt "ConfigDialog"
 msgid "Appearance"
 msgstr "Utseende"
 
-#: ConfigDialog#5
+#: configdialog.cpp:106
+msgctxt "ConfigDialog"
 msgid "Help"
 msgstr "Hjälp"
 
-#: ConfigDialog#6
+#: configdialog.ui:16
+msgctxt "ConfigDialog"
 msgid "Settings"
 msgstr "Inställningar"
 
-#: ConfigDialog#7
+#: configdialog.cpp:76
+msgctxt "ConfigDialog"
 msgid "Network"
 msgstr "Nätverk"
 
-#: ConfigDialog#8
+#: configdialog.cpp:174
+msgctxt "ConfigDialog"
 msgid "Error Saving Settings"
 msgstr "Det gick ej att sparar inställningar"
 
-#: ConfigDialog#9
+#: configdialog.cpp:176
+msgctxt "ConfigDialog"
 msgid "Vidalia was unable to save your %1 settings."
 msgstr "Vidalia kunde inte spara din %1 inställningar."
 
-#: ConfigDialog#10
+#: configdialog.cpp:203
+msgctxt "ConfigDialog"
 msgid "Error Applying Settings"
 msgstr "Det gick ej att tillämpar inställningar"
 
-#: ConfigDialog#11
+#: configdialog.cpp:205
+msgctxt "ConfigDialog"
 msgid "Vidalia was unable to apply your %1 settings to Tor."
 msgstr "Vidalia kunde inte tillämpa din %1 inställningarna till Tor."
 
-#: ConfigDialog#12
+#: configdialog.cpp:56
+msgctxt "ConfigDialog"
 msgid "OK"
 msgstr "Okej"
 
-#: ConfigDialog#13
+#: configdialog.cpp:80
+msgctxt "ConfigDialog"
 msgid "Sharing"
 msgstr "Utdelning"
 
-#: ConfigDialog#14
+#: configdialog.cpp:84
+msgctxt "ConfigDialog"
 msgid "Services"
 msgstr "Tjänster"
 
-#: ControlConnection#1
+#: controlconnection.cpp:319
+msgctxt "ControlConnection"
 msgid "Control socket is not connected."
 msgstr "Kontrollsockeln är inte ansluten."
 
-#: ControlConnection#2
+#: controlconnection.cpp:131
+msgctxt "ControlConnection"
 msgid "Vidalia was unable to connect to Tor. (%1)"
 msgstr "Vidalia kunde inte ansluta till Tor. (%1)"
 
-#: ControlSocket#1
+#: controlsocket.cpp:61
+msgctxt "ControlSocket"
 msgid "Error sending control command. [%1]"
 msgstr "Det gick ej att skicka kontrollkommandot. [%1]"
 
-#: ControlSocket#2
+#: controlsocket.cpp:98
+msgctxt "ControlSocket"
 msgid "Socket disconnected while attempting to read a line of data."
 msgstr "Sockeln kopplades ifrån när data skulle läsas."
 
-#: ControlSocket#3
+#: controlsocket.cpp:136
+msgctxt "ControlSocket"
 msgid "Invalid control reply. [%1]"
 msgstr "Ogitligt kontrollsvar. [%1]"
 
-#: ControlSocket#4
+#: controlsocket.cpp:51
+msgctxt "ControlSocket"
 msgid "Control socket is not connected."
 msgstr "Kontrollsockeln är ej ansluten."
 
-#: GeneralPage#1
+#: generalpage.ui:115
+msgctxt "GeneralPage"
 msgid "Browse"
 msgstr "Bläddra"
 
-#: GeneralPage#2
+#: generalpage.cpp:72
+msgctxt "GeneralPage"
 msgid "Select Path to Tor"
 msgstr "Välj sökväg till Tor"
 
-#: GeneralPage#3
+#: generalpage.cpp:59
+msgctxt "GeneralPage"
 msgid "Executables (*.exe)"
 msgstr "Körbara filer (*.exe)"
 
-#: GeneralPage#4
+#: generalpage.cpp:23
+msgctxt "GeneralPage"
 msgid "General"
 msgstr "Allmänt"
 
-#: GeneralPage#5
+#: generalpage.cpp:95
+msgctxt "GeneralPage"
 msgid "You must specify the name of your Tor executable."
 msgstr "Du måste räkna upp det namn av din Tor körbar."
 
-#: GeneralPage#6
+#: generalpage.cpp:82
+msgctxt "GeneralPage"
 msgid "Select Proxy Executable"
 msgstr "Välj Proxy-körbar"
 
-#: GeneralPage#7
+#: generalpage.cpp:103
+msgctxt "GeneralPage"
 msgid "The proxy arguments specified are not properly formatted."
 msgstr ""
 
-#: GeneralPage#8
+#: generalpage.ui:22
+msgctxt "GeneralPage"
 msgid "Start Vidalia when my system starts"
 msgstr "Starta Vidalia när system startar"
 
-#: GeneralPage#9
+#: generalpage.ui:75
+msgctxt "GeneralPage"
 msgid "Start a proxy application when Vidalia starts"
 msgstr "Starta proxy-körbar när Vidalia startar"
 
-#: GeneralPage#10
+#: generalpage.ui:97
+msgctxt "GeneralPage"
 msgid "Proxy Executable"
 msgstr "Proxy-körbar"
 
-#: GeneralPage#11
+#: generalpage.ui:129
+msgctxt "GeneralPage"
 msgid "Command Line Arguments:"
 msgstr ""
 
-#: GeneralPage#12
+#: generalpage.ui:63
+msgctxt "GeneralPage"
 msgid "Start the Tor software when Vidalia starts"
 msgstr "Starta Tor-program när Vidalia startar"
 
-#: GeneralPage#13
+#: generalpage.ui:38
+msgctxt "GeneralPage"
 msgid "Tor Executable"
 msgstr "Tor-körbar"
 
-#: GraphFrame#1
+#: graphframe.cpp:237
+msgctxt "GraphFrame"
 msgid "Recv: "
 msgstr "Mott:"
 
-#: GraphFrame#2
+#: graphframe.cpp:246
+msgctxt "GraphFrame"
 msgid "Sent: "
 msgstr "Skick:"
 
-#: GraphFrame#3
+#: graphframe.cpp:258
+msgctxt "GraphFrame"
 msgid "%1 KB"
 msgstr "%1 KB"
 
-#: GraphFrame#4
+#: graphframe.cpp:261
+msgctxt "GraphFrame"
 msgid "%1 MB"
 msgstr "%1 MB"
 
-#: GraphFrame#5
+#: graphframe.cpp:264
+msgctxt "GraphFrame"
 msgid "%1 GB"
 msgstr "%1 GB"
 
-#: GraphFrame#6
+#: graphframe.cpp:285
+msgctxt "GraphFrame"
 msgid "%1 KB/s"
 msgstr "%1 KB/s"
 
-#: HelpBrowser#1
+#: helpbrowser.ui:33
+msgctxt "HelpBrowser"
 msgid "Vidalia Help"
 msgstr "Vidalias hjälp"
 
-#: HelpBrowser#2
+#: helpbrowser.ui:174
+msgctxt "HelpBrowser"
 msgid "Find Previous"
 msgstr "Sök föregående"
 
-#: HelpBrowser#3
+#: helpbrowser.ui:187
+msgctxt "HelpBrowser"
 msgid "Find Next"
 msgstr "Sök nästa"
 
-#: HelpBrowser#4
+#: helpbrowser.ui:221
+msgctxt "HelpBrowser"
 msgid "Case sensitive"
 msgstr "Skiftlägeskänsligt"
 
-#: HelpBrowser#5
+#: helpbrowser.ui:260
+msgctxt "HelpBrowser"
 msgid "Contents"
 msgstr "Innehåll"
 
-#: HelpBrowser#6
+#: helpbrowser.ui:305
+msgctxt "HelpBrowser"
 msgid "Help Topics"
 msgstr "Hjälpavsnitt"
 
-#: HelpBrowser#7
+#: helpbrowser.ui:350
+msgctxt "HelpBrowser"
 msgid "Search"
 msgstr "Sök"
 
-#: HelpBrowser#8
+#: helpbrowser.ui:405
+msgctxt "HelpBrowser"
 msgid "Found Documents"
 msgstr "Funna dokument"
 
-#: HelpBrowser#9
+#: helpbrowser.ui:484
+msgctxt "HelpBrowser"
 msgid "Back"
 msgstr "Tillbaka"
 
-#: HelpBrowser#10
+#: helpbrowser.ui:487
+msgctxt "HelpBrowser"
 msgid "Move to previous page (Backspace)"
 msgstr "Gå till föregående sida (Bakslag)"
 
-#: HelpBrowser#11
+#: helpbrowser.ui:490
+msgctxt "HelpBrowser"
 msgid "Backspace"
 msgstr "Bakslag"
 
-#: HelpBrowser#12
+#: helpbrowser.ui:498
+msgctxt "HelpBrowser"
 msgid "Forward"
 msgstr "Framåt"
 
-#: HelpBrowser#13
+#: helpbrowser.ui:501
+msgctxt "HelpBrowser"
 msgid "Move to next page (Shift+Backspace)"
 msgstr "Gå till nästa sida (Skift+Bakslag)"
 
-#: HelpBrowser#14
+#: helpbrowser.ui:504
+msgctxt "HelpBrowser"
 msgid "Shift+Backspace"
 msgstr "Skift+Bakslag"
 
-#: HelpBrowser#15
+#: helpbrowser.ui:512
+msgctxt "HelpBrowser"
 msgid "Home"
 msgstr "Hem"
 
-#: HelpBrowser#16
+#: helpbrowser.ui:515
+msgctxt "HelpBrowser"
 msgid "Move to the Home page (Ctrl+H)"
 msgstr "Gå till hemsidan (Ctrl+H)"
 
-#: HelpBrowser#17
+#: helpbrowser.ui:518
+msgctxt "HelpBrowser"
 msgid "Ctrl+H"
 msgstr "Ctrl+H"
 
-#: HelpBrowser#18
+#: helpbrowser.ui:535
+msgctxt "HelpBrowser"
 msgid "Find"
 msgstr "Sök"
 
-#: HelpBrowser#19
+#: helpbrowser.ui:538
+msgctxt "HelpBrowser"
 msgid "Search for a word or phrase on current page (Ctrl+F)"
 msgstr "Sök efter ett ord eller en fras på denna sida (Ctrl+F)"
 
-#: HelpBrowser#20
+#: helpbrowser.ui:541
+msgctxt "HelpBrowser"
 msgid "Ctrl+F"
 msgstr "Ctrl+F"
 
-#: HelpBrowser#21
+#: helpbrowser.ui:549
+msgctxt "HelpBrowser"
 msgid "Close"
 msgstr "Stäng"
 
-#: HelpBrowser#22
+#: helpbrowser.ui:552
+msgctxt "HelpBrowser"
 msgid "Close Vidalia Help"
 msgstr "Stäng Vidalias hjälpen"
 
-#: HelpBrowser#23
+#: helpbrowser.ui:555
+msgctxt "HelpBrowser"
 msgid "Esc"
 msgstr "Esc"
 
-#: HelpBrowser#24
+#: helpbrowser.cpp:122
+msgctxt "HelpBrowser"
 msgid "Error Loading Help Contents: "
 msgstr "Det gick ej att ladda hjälpinnehållet:"
 
-#: HelpBrowser#25
+#: helpbrowser.cpp:377
+msgctxt "HelpBrowser"
 msgid "Search reached end of document"
 msgstr "Sökningen har nått slutet av dokumentet"
 
-#: HelpBrowser#26
+#: helpbrowser.cpp:379
+msgctxt "HelpBrowser"
 msgid "Search reached start of document"
 msgstr "Sökningen har nått början av dokumentet"
 
-#: HelpBrowser#27
+#: helpbrowser.cpp:381
+msgctxt "HelpBrowser"
 msgid "Text not found in document"
 msgstr "Texten hittades ej i dokumentet"
 
-#: HelpBrowser#28
+#: helpbrowser.ui:152
+msgctxt "HelpBrowser"
 msgid "Find:"
 msgstr "Sök:"
 
-#: HelpBrowser#29
+#: helpbrowser.ui:231
+msgctxt "HelpBrowser"
 msgid "Whole words only"
 msgstr "Endast hela ord"
 
-#: HelpBrowser#30
+#: helpbrowser.ui:362
+msgctxt "HelpBrowser"
 msgid "Searching for:"
 msgstr "Söker efter:"
 
-#: HelpBrowser#31
+#: helpbrowser.cpp:134
+msgctxt "HelpBrowser"
 msgid "Supplied XML file is not a valid Contents document."
 msgstr "Den tillhandhållna XML-filen är inte ett giltigt dokument."
 
-#: HelpBrowser#32
+#: helpbrowser.cpp:426
+msgctxt "HelpBrowser"
 msgid "Found %1 results"
 msgstr "Hittade %1 träffar"
 
-#: HelpTextBrowser#1
+#: helptextbrowser.cpp:54
+msgctxt "HelpTextBrowser"
 msgid "Error opening help file: "
 msgstr "Det gick ej att öppna hjälpfilen:"
 
-#: HelpTextBrowser#2
+#: helptextbrowser.cpp:72
+msgctxt "HelpTextBrowser"
 msgid "Opening External Link"
 msgstr ""
 
-#: HelpTextBrowser#3
+#: helptextbrowser.cpp:76
+msgctxt "HelpTextBrowser"
 msgid "Vidalia can open the link you selected in your default Web browser. If your browser is not currently configured to use Tor then the request will not be anonymous."
 msgstr ""
 
-#: HelpTextBrowser#4
+#: helptextbrowser.cpp:78
+msgctxt "HelpTextBrowser"
 msgid "Do you want Vidalia to open the link in your Web browser?"
 msgstr "Vill du att Vidalia ska öppna den här linken i din webbläsare?"
 
-#: HelpTextBrowser#5
+#: helptextbrowser.cpp:88
+msgctxt "HelpTextBrowser"
 msgid "Unable to Open Link"
 msgstr "Kunde ej öppna linken"
 
-#: HelpTextBrowser#6
+#: helptextbrowser.cpp:90
+msgctxt "HelpTextBrowser"
 msgid "Vidalia was unable to open the selected link in your Web browser. You can still copy the URL and paste it into your browser."
 msgstr ""
 
-#: LogEvent#1
+#: logevent.cpp:57
+msgctxt "LogEvent"
 msgid "Debug"
 msgstr "Avlusa"
 
-#: LogEvent#2
+#: logevent.cpp:58
+msgctxt "LogEvent"
 msgid "Info"
 msgstr "Info"
 
-#: LogEvent#3
+#: logevent.cpp:59
+msgctxt "LogEvent"
 msgid "Notice"
 msgstr "Meddelande"
 
-#: LogEvent#4
+#: logevent.cpp:60
+msgctxt "LogEvent"
 msgid "Warning"
 msgstr "Varning"
 
-#: LogEvent#5
+#: logevent.cpp:61
+msgctxt "LogEvent"
 msgid "Error"
 msgstr "Fel"
 
-#: LogEvent#6
+#: logevent.cpp:62
+msgctxt "LogEvent"
 msgid "Unknown"
 msgstr "Okänd"
 
-#: MainWindow#1
+#: mainwindow.ui:430
+msgctxt "MainWindow"
 msgid "About"
 msgstr "Om"
 
-#: MainWindow#2
+#: mainwindow.ui:443
+msgctxt "MainWindow"
 msgid "Exit"
 msgstr "Avsluta"
 
-#: MainWindow#3
+#: mainwindow.ui:304
+msgctxt "MainWindow"
 msgid "Bandwidth Graph"
 msgstr "Bandbreddsdiagram"
 
-#: MainWindow#4
+#: mainwindow.ui:317
+msgctxt "MainWindow"
 msgid "Message Log"
 msgstr "Meddelandelogg"
 
-#: MainWindow#5
+#: mainwindow.ui:367
+msgctxt "MainWindow"
 msgid "Help"
 msgstr "Hjälp"
 
-#: MainWindow#6
+#: mainwindow.cpp:394
+msgctxt "MainWindow"
 msgid "Ctrl+T"
 msgstr "Ctrl+T"
 
-#: MainWindow#7
+#: mainwindow.cpp:395
+msgctxt "MainWindow"
 msgid "Ctrl+B"
 msgstr "Ctrl+B"
 
-#: MainWindow#8
+#: mainwindow.cpp:396
+msgctxt "MainWindow"
 msgid "Ctrl+L"
 msgstr "Ctrl+L"
 
-#: MainWindow#9
+#: mainwindow.cpp:398
+msgctxt "MainWindow"
 msgid "Ctrl+?"
 msgstr "Ctrl+?"
 
-#: MainWindow#10
+#: mainwindow.cpp:411
+msgctxt "MainWindow"
 msgid "File"
 msgstr "Arkiv"
 
-#: MainWindow#11
+#: mainwindow.cpp:414
+msgctxt "MainWindow"
 msgid "Tor"
 msgstr "Tor"
 
-#: MainWindow#12
+#: mainwindow.cpp:419
+msgctxt "MainWindow"
 msgid "View"
 msgstr "Vy"
 
-#: MainWindow#13
+#: mainwindow.cpp:428
+msgctxt "MainWindow"
 msgid "Vidalia Help"
 msgstr "Vidalia-hjälp"
 
-#: MainWindow#14
+#: mainwindow.cpp:831
+msgctxt "MainWindow"
 msgid "Error Starting Tor"
 msgstr "Det gick ej att starta Tor"
 
-#: MainWindow#15
+#: mainwindow.cpp:397
+msgctxt "MainWindow"
 msgid "Ctrl+N"
 msgstr "Ctrl+N"
 
-#: MainWindow#16
+#: mainwindow.cpp:834
+msgctxt "MainWindow"
 msgid "Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified."
 msgstr "Vidalia kunde ej starta Tor. Kontrollera dina inställningar: stämmer namnet och sökvägen för Tors exekverbara fil?"
 
-#: MainWindow#17
+#: mainwindow.cpp:320
+msgctxt "MainWindow"
 msgid "Network Map"
 msgstr "Nätverkskarta"
 
-#: MainWindow#18
+#: mainwindow.ui:380
+msgctxt "MainWindow"
 msgid "Settings"
 msgstr "Inställningar"
 
-#: MainWindow#19
+#: mainwindow.cpp:1331
+msgctxt "MainWindow"
 msgid "New Identity"
 msgstr "Ny identitet"
 
-#: MainWindow#20
+#: mainwindow.cpp:399
+msgctxt "MainWindow"
 msgid "Ctrl+I"
 msgstr "Ctrl+I"
 
-#: MainWindow#21
+#: mainwindow.cpp:1334
+msgctxt "MainWindow"
 msgid "All subsequent connections will appear to be different than your old connections."
 msgstr "Efterföljande anslutningar kommer att framstå som olika från dina gamla anslutningar."
 
-#: MainWindow#22
+#: mainwindow.cpp:1349
+msgctxt "MainWindow"
 msgid "Failed to Create New Identity"
 msgstr "Kunde ej skapa ny identitet"
 
-#: MainWindow#23
+#: mainwindow.ui:168
+msgctxt "MainWindow"
 msgid "Tor is not running"
 msgstr "Tor är ej i gång"
 
-#: MainWindow#24
+#: mainwindow.cpp:643
+msgctxt "MainWindow"
 msgid "Tor is shutting down"
 msgstr "Tor avslutas"
 
-#: MainWindow#25
+#: mainwindow.ui:19
+msgctxt "MainWindow"
 msgid "Vidalia Control Panel"
 msgstr "Kontrollpanel för Vidalia"
 
-#: MainWindow#26
+#: mainwindow.ui:218
+msgctxt "MainWindow"
 msgid "Vidalia Shortcuts"
 msgstr "Genvägar för Vidalia"
 
-#: MainWindow#27
+#: mainwindow.ui:243
+msgctxt "MainWindow"
 msgid "Setup Relaying"
 msgstr "Skapa Tor-router"
 
-#: MainWindow#28
+#: mainwindow.ui:256
+msgctxt "MainWindow"
 msgid "View the Network"
 msgstr "Se nätverket"
 
-#: MainWindow#29
+#: mainwindow.ui:259
+msgctxt "MainWindow"
 msgid "View a map of the Tor network"
 msgstr "Se en karta över Tor-nätverket"
 
-#: MainWindow#30
+#: mainwindow.ui:272
+msgctxt "MainWindow"
 msgid "Use a New Identity"
 msgstr "Använd en ny identitet"
 
-#: MainWindow#31
+#: mainwindow.ui:275
+msgctxt "MainWindow"
 msgid "Make subsequent connections appear new"
 msgstr "Få efterföljande anslutningar att framstå som olika från mina gamla anslutningar"
 
-#: MainWindow#32
+#: mainwindow.ui:370
+msgctxt "MainWindow"
 msgid "View help documentation"
 msgstr "Se hjälpdokumentationen"
 
-#: MainWindow#33
+#: mainwindow.ui:433
+msgctxt "MainWindow"
 msgid "View version and license information"
 msgstr "Se versions- och licensinformation för Tor"
 
-#: MainWindow#34
+#: mainwindow.ui:446
+msgctxt "MainWindow"
 msgid "Exit Vidalia"
 msgstr "Avsluta Vidalia"
 
-#: MainWindow#35
+#: mainwindow.ui:498
+msgctxt "MainWindow"
 msgid "Show this window on startup"
 msgstr "Visa detta fönster vid uppstart"
 
-#: MainWindow#36
+#: mainwindow.ui:517
+msgctxt "MainWindow"
 msgid "Hide"
 msgstr "Dölj"
 
-#: MainWindow#37
+#: mainwindow.ui:520
+msgctxt "MainWindow"
 msgid "Hide this window"
 msgstr "Dölj detta fönster"
 
-#: MainWindow#38
+#: mainwindow.cpp:327
+msgctxt "MainWindow"
 msgid "Control Panel"
 msgstr "Kontrollpanelen"
 
-#: MainWindow#39
+#: mainwindow.cpp:400
+msgctxt "MainWindow"
 msgid "Ctrl+P"
 msgstr "Ctrl+P"
 
-#: MainWindow#40
+#: mainwindow.cpp:1047
+msgctxt "MainWindow"
 msgid "Cookie Authentication Required"
 msgstr "Cookiestyrkning krävs"
 
-#: MainWindow#41
+#: mainwindow.cpp:1052
+msgctxt "MainWindow"
 msgid "Would you like to browse for the file 'control_auth_cookie' yourself?"
 msgstr "Vill du bläddra det 'control_auth_cookie'-fil själv?"
 
-#: MainWindow#42
+#: mainwindow.cpp:1109
+msgctxt "MainWindow"
 msgid "Error Registering for Events"
 msgstr ""
 
-#: MainWindow#43
+#: mainwindow.cpp:1145
+msgctxt "MainWindow"
 msgid "Password Authentication Required"
 msgstr "Läsenordstyrking krävs"
 
-#: MainWindow#44
+#: mainwindow.cpp:1164
+msgctxt "MainWindow"
 msgid "Please check your control port authentication settings."
 msgstr "Varsågod och kolla din kontrollportstyrknings inställningarna."
 
-#: MainWindow#45
+#: mainwindow.cpp:1146
+msgctxt "MainWindow"
 msgid "Please enter your control password (not the hash):"
 msgstr "Varsågod och skriv din kontrolllösenord (inte det hash):"
 
-#: MainWindow#46
+#: mainwindow.cpp:910
+msgctxt "MainWindow"
 msgid "Relaying is Enabled"
 msgstr "Router har aktiverat"
 
-#: MainWindow#47
+#: mainwindow.cpp:482
+msgctxt "MainWindow"
 msgid "Error starting web browser"
 msgstr "Det gick ej att starta webbläsare"
 
-#: MainWindow#48
+#: mainwindow.cpp:483
+msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured web browser"
 msgstr "Vidalia kunde inte starta det konfigurerad webbläsare"
 
-#: MainWindow#49
+#: mainwindow.cpp:1268
+msgctxt "MainWindow"
 msgid "Tor Update Available"
 msgstr "Tor-uppdater tillgänglig"
 
-#: MainWindow#50
+#: mainwindow.cpp:1271
+msgctxt "MainWindow"
 msgid "The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version."
 msgstr ""
 
-#: MainWindow#51
+#: mainwindow.cpp:1271
+msgctxt "MainWindow"
 msgid "Tor website: %1"
 msgstr "Tor-websida: %1"
 
-#: MainWindow#52
+#: mainwindow.cpp:517
+msgctxt "MainWindow"
 msgid "Error starting proxy server"
 msgstr "Det gick ej att starta proxy-tjänst"
 
-#: MainWindow#53
+#: mainwindow.cpp:518
+msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured proxy server"
 msgstr "Vidalia kunde inte starta det konfigurerad proxy-tjänst"
 
-#: MainWindow#54
+#: mainwindow.cpp:641
+msgctxt "MainWindow"
 msgid "Your relay is shutting down."
 "Click 'Stop' again to stop your relay now."
 msgstr ""
 
-#: MainWindow#55
+#: mainwindow.cpp:878
+msgctxt "MainWindow"
 msgid "Connection Error"
 msgstr "Fel med en anslutning"
 
-#: MainWindow#56
+#: mainwindow.cpp:915
+msgctxt "MainWindow"
 msgid "You are currently running a relay. Terminating your relay will interrupt any open connections from clients."
 ""
 "Would you like to shutdown gracefully and give clients time to find a new relay?"
 msgstr ""
 
-#: MainWindow#57
+#: mainwindow.cpp:937
+msgctxt "MainWindow"
 msgid "Error Shutting Down"
 msgstr "Kunde ej avsluta"
 
-#: MainWindow#58
+#: mainwindow.cpp:938
+msgctxt "MainWindow"
 msgid "Vidalia was unable to stop the Tor software."
 msgstr "Vidalia kunde ej stoppa Tor-program"
 
-#: MainWindow#59
+#: mainwindow.cpp:969
+msgctxt "MainWindow"
 msgid "Unexpected Error"
 msgstr ""
 
-#: MainWindow#60
+#: mainwindow.cpp:973
+msgctxt "MainWindow"
 msgid "Vidalia detected that the Tor software exited unexpectedly."
 ""
 "Please check the message log for recent warning or error messages."
 msgstr ""
 
-#: MainWindow#61
+#: mainwindow.cpp:1050
+msgctxt "MainWindow"
 msgid "The Tor software requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one."
 msgstr ""
 
-#: MainWindow#62
+#: mainwindow.cpp:1059
+msgctxt "MainWindow"
 msgid "Data Directory"
 msgstr "Datakatalog"
 
-#: MainWindow#63
+#: mainwindow.cpp:1061
+msgctxt "MainWindow"
 msgid "Control Cookie (control_auth_cookie)"
 msgstr "Kontrollcookie (control_auth_cookie)"
 
-#: MainWindow#64
+#: mainwindow.cpp:1111
+msgctxt "MainWindow"
 msgid "Vidalia was unable to register for some events. Many of Vidalia's features may be unavailable."
 msgstr ""
 
-#: MainWindow#65
+#: mainwindow.cpp:1160
+msgctxt "MainWindow"
 msgid "Authentication Error"
 msgstr "Styrkning fel"
 
-#: MainWindow#66
+#: mainwindow.cpp:1162
+msgctxt "MainWindow"
 msgid "Vidalia was unable to authenticate to the Tor software. (%1)"
 msgstr "Vidalia kunde ej styrka till Tor-program. (%1)"
 
-#: MainWindow#67
+#: mainwindow.cpp:1398
+msgctxt "MainWindow"
 msgid "Port Forwarding Failed"
 msgstr ""
 
-#: MainWindow#68
+#: mainwindow.cpp:1399
+msgctxt "MainWindow"
 msgid "Vidalia was unable to configure automatic port forwarding."
 msgstr ""
 
-#: MainWindow#69
+#: mainwindow.ui:49
+msgctxt "MainWindow"
 msgid "Status"
 msgstr "Status"
 
-#: MainWindow#70
+#: mainwindow.ui:246
+msgctxt "MainWindow"
 msgid "Set up a relay and help the network grow"
 msgstr ""
 
-#: MainWindow#71
+#: mainwindow.ui:307
+msgctxt "MainWindow"
 msgid "View recent bandwidth usage"
 msgstr "Vy nuvarande bandbreddsförbrukning"
 
-#: MainWindow#72
+#: mainwindow.ui:320
+msgctxt "MainWindow"
 msgid "View log message history"
 msgstr "Vy historik för loggmeddelanden"
 
-#: MainWindow#73
+#: mainwindow.ui:383
+msgctxt "MainWindow"
 msgid "Configure Vidalia"
 msgstr "Konfigurar Vidalia"
 
-#: MainWindow#74
+#: mainwindow.ui:233
+msgctxt "MainWindow"
 msgid "Start Tor"
 msgstr "Starta Tor"
 
-#: MainWindow#75
+#: mainwindow.cpp:495
+msgctxt "MainWindow"
 msgid "Error starting IM client"
 msgstr ""
 
-#: MainWindow#76
+#: mainwindow.cpp:496
+msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured IM client"
 msgstr ""
 
-#: MainWindow#77
+#: mainwindow.cpp:534
+msgctxt "MainWindow"
 msgid "Connecting to a relay directory"
 msgstr ""
 
-#: MainWindow#78
+#: mainwindow.cpp:538
+msgctxt "MainWindow"
 msgid "Establishing an encrypted directory connection"
 msgstr ""
 
-#: MainWindow#79
+#: mainwindow.cpp:541
+msgctxt "MainWindow"
 msgid "Retrieving network status"
 msgstr ""
 
-#: MainWindow#80
+#: mainwindow.cpp:544
+msgctxt "MainWindow"
 msgid "Loading network status"
 msgstr "Laddar nätvek status"
 
-#: MainWindow#81
+#: mainwindow.cpp:547
+msgctxt "MainWindow"
 msgid "Loading authority certificates"
 msgstr ""
 
-#: MainWindow#82
+#: mainwindow.cpp:550
+msgctxt "MainWindow"
 msgid "Requesting relay information"
 msgstr ""
 
-#: MainWindow#83
+#: mainwindow.cpp:553
+msgctxt "MainWindow"
 msgid "Loading relay information"
 msgstr "Laddar router information"
 
-#: MainWindow#84
+#: mainwindow.cpp:1100
+msgctxt "MainWindow"
 msgid "Connecting to the Tor network"
 msgstr "Anslutar till Tor-nätverk"
 
-#: MainWindow#85
+#: mainwindow.cpp:560
+msgctxt "MainWindow"
 msgid "Establishing a Tor circuit"
 msgstr ""
 
-#: MainWindow#86
+#: mainwindow.cpp:1235
+msgctxt "MainWindow"
 msgid "Connected to the Tor network!"
 msgstr "Anslutade till Tor-nätverk!"
 
-#: MainWindow#87
+#: mainwindow.cpp:567
+msgctxt "MainWindow"
 msgid "Unrecognized startup status"
 msgstr ""
 
-#: MainWindow#88
+#: mainwindow.cpp:574
+msgctxt "MainWindow"
 msgid "miscellaneous"
 msgstr ""
 
-#: MainWindow#89
+#: mainwindow.cpp:577
+msgctxt "MainWindow"
 msgid "identity mismatch"
 msgstr ""
 
-#: MainWindow#90
+#: mainwindow.cpp:580
+msgctxt "MainWindow"
 msgid "done"
 msgstr "redo"
 
-#: MainWindow#91
+#: mainwindow.cpp:583
+msgctxt "MainWindow"
 msgid "connection refused"
 msgstr ""
 
-#: MainWindow#92
+#: mainwindow.cpp:586
+msgctxt "MainWindow"
 msgid "connection timeout"
 msgstr ""
 
-#: MainWindow#93
+#: mainwindow.cpp:589
+msgctxt "MainWindow"
 msgid "read/write error"
 msgstr ""
 
-#: MainWindow#94
+#: mainwindow.cpp:592
+msgctxt "MainWindow"
 msgid "no route to host"
 msgstr ""
 
-#: MainWindow#95
+#: mainwindow.cpp:595
+msgctxt "MainWindow"
 msgid "insufficient resources"
 msgstr ""
 
-#: MainWindow#96
+#: mainwindow.cpp:598
+msgctxt "MainWindow"
 msgid "unknown"
 msgstr "okänd"
 
-#: MainWindow#97
+#: mainwindow.cpp:600
+msgctxt "MainWindow"
 msgid " failed (%1)"
 msgstr "misslyckad (%1)"
 
-#: MainWindow#98
+#: mainwindow.cpp:648
+msgctxt "MainWindow"
 msgid "Stop Tor Now"
 msgstr "Stoppa Tor nu"
 
-#: MainWindow#99
+#: mainwindow.cpp:650
+msgctxt "MainWindow"
 msgid "Stop Tor"
 msgstr "Stoppa Tor"
 
-#: MainWindow#100
+#: mainwindow.cpp:666
+msgctxt "MainWindow"
 msgid "Starting the Tor software"
 msgstr "Startar Tor-program"
 
-#: MainWindow#101
+#: mainwindow.ui:75
+msgctxt "MainWindow"
 msgid "Starting Tor"
 msgstr "Startar Tor"
 
-#: MainWindow#102
+#: mainwindow.cpp:677
+msgctxt "MainWindow"
 msgid "Tor is Running"
 msgstr "Tor körs nu"
 
-#: MainWindow#103
+#: mainwindow.cpp:868
+msgctxt "MainWindow"
 msgid "Connecting to Tor"
 msgstr "Ansluter till Tor"
 
-#: MainWindow#104
+#: mainwindow.cpp:1027
+msgctxt "MainWindow"
 msgid "Authenticating to Tor"
 msgstr ""
 
-#: MessageLog#1
+#: messagelog.ui:19
+msgctxt "MessageLog"
 msgid "Message Log"
 msgstr "Meddelandelogg"
 
-#: MessageLog#2
+#: messagelog.ui:66
+msgctxt "MessageLog"
 msgid "Time"
 msgstr "Tid"
 
-#: MessageLog#3
+#: messagelog.ui:71
+msgctxt "MessageLog"
 msgid "Type"
 msgstr "Typ"
 
-#: MessageLog#4
+#: messagelog.ui:76
+msgctxt "MessageLog"
 msgid "Message"
 msgstr "Meddelande"
 
-#: MessageLog#5
+#: messagelog.ui:371
+msgctxt "MessageLog"
 msgid "Browse"
 msgstr "Bläddra"
 
-#: MessageLog#6
+#: messagelog.ui:160
+msgctxt "MessageLog"
 msgid "Saves the current Message Log settings"
 msgstr "Sparar inställningarna gjorda för meddelandeloggen"
 
-#: MessageLog#7
+#: messagelog.ui:163
+msgctxt "MessageLog"
 msgid "Save Settings"
 msgstr "Spara inställningar"
 
-#: MessageLog#8
+#: messagelog.ui:179
+msgctxt "MessageLog"
 msgid "Cancels changes made to settings"
 msgstr "Avbryter ändringar gjorda för meddelandeloggen"
 
-#: MessageLog#9
+#: messagelog.ui:182
+msgctxt "MessageLog"
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: MessageLog#10
+#: messagelog.ui:196
+msgctxt "MessageLog"
 msgid "Message Filter"
 msgstr "Filter för meddelanden"
 
-#: MessageLog#11
+#: messagelog.ui:217
+msgctxt "MessageLog"
 msgid "Error"
 msgstr "Fel"
 
-#: MessageLog#12
+#: messagelog.ui:233
+msgctxt "MessageLog"
 msgid "Warning"
 msgstr "Varning"
 
-#: MessageLog#13
+#: messagelog.ui:249
+msgctxt "MessageLog"
 msgid "Notice"
 msgstr "Underrättelser"
 
-#: MessageLog#14
+#: messagelog.ui:265
+msgctxt "MessageLog"
 msgid "Info"
 msgstr "Info"
 
-#: MessageLog#15
+#: messagelog.ui:281
+msgctxt "MessageLog"
 msgid "Debug"
 msgstr "Avlusa"
 
-#: MessageLog#16
+#: messagelog.ui:452
+msgctxt "MessageLog"
 msgid "Message Filters..."
 msgstr "Filter för meddelanden..."
 
-#: MessageLog#17
+#: messagelog.ui:455
+msgctxt "MessageLog"
 msgid "Set message filters"
 msgstr "Välj filter för meddelanden"
 
-#: MessageLog#18
+#: messagelog.ui:463
+msgctxt "MessageLog"
 msgid "History Size..."
 msgstr "Storlek på historiken..."
 
-#: MessageLog#19
+#: messagelog.ui:466
+msgctxt "MessageLog"
 msgid "Set maximum number of messages to display"
 msgstr "Välj maximalt antal meddelanden som ska visas"
 
-#: MessageLog#20
+#: messagelog.ui:477
+msgctxt "MessageLog"
 msgid "Clear"
 msgstr "Rensa"
 
-#: MessageLog#21
+#: messagelog.ui:480
+msgctxt "MessageLog"
 msgid "Clear all messages from the Message Log (Ctrl+E)"
 msgstr "Rena alla meddelanden i loggen (Ctrl+E)"
 
-#: MessageLog#22
+#: messagelog.ui:483
+msgctxt "MessageLog"
 msgid "Ctrl+E"
 msgstr "Ctrl+E"
 
-#: MessageLog#23
+#: messagelog.ui:497
+msgctxt "MessageLog"
 msgid "Copy"
 msgstr "Kopiera"
 
-#: MessageLog#24
+#: messagelog.ui:500
+msgctxt "MessageLog"
 msgid "Copy the selected messages to the clipboard (Ctrl+C)"
 msgstr "Kopiera de valda meddelandena till urklipp (Ctrl+C)"
 
-#: MessageLog#25
+#: messagelog.ui:503
+msgctxt "MessageLog"
 msgid "Ctrl+C"
 msgstr "Ctrl+C"
 
-#: MessageLog#26
+#: messagelog.ui:514
+msgctxt "MessageLog"
 msgid "Select All"
 msgstr "Välj alla"
 
-#: MessageLog#27
+#: messagelog.ui:517
+msgctxt "MessageLog"
 msgid "Select all messages (Ctrl+A)"
 msgstr "Välj alla meddelanden (Ctrl+A)"
 
-#: MessageLog#28
+#: messagelog.ui:520
+msgctxt "MessageLog"
 msgid "Ctrl+A"
 msgstr "Ctrl+A"
 
-#: MessageLog#29
+#: messagelog.ui:528
+msgctxt "MessageLog"
 msgid "Save All"
 msgstr "Spara alla"
 
-#: MessageLog#30
+#: messagelog.ui:531
+msgctxt "MessageLog"
 msgid "Save all messages to a file"
 msgstr "Spara alla meddelanden till en fil"
 
-#: MessageLog#31
+#: messagelog.ui:539
+msgctxt "MessageLog"
 msgid "Save Selected"
 msgstr "Spara valda"
 
-#: MessageLog#32
+#: messagelog.ui:542
+msgctxt "MessageLog"
 msgid "Save selected messages to a file"
 msgstr "Spara valda meddelanden till en fil"
 
-#: MessageLog#33
+#: messagelog.ui:581
+msgctxt "MessageLog"
 msgid "Close"
 msgstr "Stäng"
 
-#: MessageLog#34
+#: messagelog.ui:584
+msgctxt "MessageLog"
 msgid "Close the Message Log"
 msgstr "Stäng meddelandeloggen"
 
-#: MessageLog#35
+#: messagelog.ui:587
+msgctxt "MessageLog"
 msgid "Esc"
 msgstr "Esc"
 
-#: MessageLog#36
+#: messagelog.ui:598
+msgctxt "MessageLog"
 msgid "Find"
 msgstr "Sök"
 
-#: MessageLog#37
+#: messagelog.ui:601
+msgctxt "MessageLog"
 msgid "Find all messages containing the search text (Ctrl+F)"
 msgstr "Hitta alla meddelanden som innehåller söktexten (Ctrl+F)"
 
-#: MessageLog#38
+#: messagelog.ui:604
+msgctxt "MessageLog"
 msgid "Ctrl+F"
 msgstr "Ctrl+F"
 
-#: MessageLog#39
+#: messagelog.cpp:137
+msgctxt "MessageLog"
 msgid "Messages that appear when something has "
 "gone very wrong and Tor cannot proceed."
 msgstr "Meddelanden som förekommer när "
 "ett mycket allvarligt fel har uppstått"
 "och Tor ej kan fortsätta köras."
 
-#: MessageLog#40
+#: messagelog.cpp:139
+msgctxt "MessageLog"
 msgid "Messages that only appear when "
 "something has gone wrong with Tor."
 msgstr "Meddelanden som endast förekommer när"
 "någonting är fel med Tor."
 
-#: MessageLog#41
+#: messagelog.cpp:143
+msgctxt "MessageLog"
 msgid "Messages that appear infrequently "
 "during normal Tor operation and are "
 "not considered errors, but you may "
@@ -1238,79 +1540,97 @@ msgid "Messages that appear infrequently "
 msgstr "Meddelanden som förekommer mindre ofta när Tor normalt körs. "
 "Uppstår ej i samband med fel men kan vara bra att känna till."
 
-#: MessageLog#42
+#: messagelog.cpp:145
+msgctxt "MessageLog"
 msgid "Messages that appear frequently "
 "during normal Tor operation."
 msgstr "Meddelanden som ofta förekommer "
 "när Tor normalt körs."
 
-#: MessageLog#43
+#: messagelog.cpp:147
+msgctxt "MessageLog"
 msgid "Hyper-verbose messages primarily of "
 "interest to Tor developers."
 msgstr "Detaljrika avlusningsmeddelanden som "
 "huvudsakligen är intressanta för Tor-utvecklarna."
 
-#: MessageLog#44
+#: messagelog.cpp:192
+msgctxt "MessageLog"
 msgid "Error Setting Filter"
 msgstr "Det gick ej att tillämpa filterinställningar"
 
-#: MessageLog#45
+#: messagelog.cpp:208
+msgctxt "MessageLog"
 msgid "Error Opening Log File"
 msgstr "Det gick ej att öppna loggfilen"
 
-#: MessageLog#46
+#: messagelog.cpp:283
+msgctxt "MessageLog"
 msgid "Select Log File"
 msgstr "Välj loggfil"
 
-#: MessageLog#47
+#: messagelog.cpp:300
+msgctxt "MessageLog"
 msgid "Save Log Messages"
 msgstr "Spara Loggmeddelanden"
 
-#: MessageLog#48
+#: messagelog.cpp:312
+msgctxt "MessageLog"
 msgid "Vidalia"
 msgstr "Vidalia"
 
-#: MessageLog#49
+#: messagelog.cpp:363
+msgctxt "MessageLog"
 msgid "Find in Message Log"
 msgstr "Sök i meddelandeloggen"
 
-#: MessageLog#50
+#: messagelog.cpp:364
+msgctxt "MessageLog"
 msgid "Find:"
 msgstr "Sök:"
 
-#: MessageLog#51
+#: messagelog.cpp:370
+msgctxt "MessageLog"
 msgid "Not Found"
 msgstr "Hittades ej"
 
-#: MessageLog#52
+#: messagelog.cpp:371
+msgctxt "MessageLog"
 msgid "Search found 0 matches."
 msgstr "Sökningen hittade 0 resultat."
 
-#: MessageLog#53
+#: messagelog.ui:553
+msgctxt "MessageLog"
 msgid "Settings"
 msgstr "Inställningar"
 
-#: MessageLog#54
+#: messagelog.ui:556
+msgctxt "MessageLog"
 msgid "Adjust Message Log Settings"
 msgstr "Anpassa inställningarna för meddelandeloggen"
 
-#: MessageLog#55
+#: messagelog.ui:559
+msgctxt "MessageLog"
 msgid "Ctrl+T"
 msgstr "Ctrl+T"
 
-#: MessageLog#56
+#: messagelog.ui:567
+msgctxt "MessageLog"
 msgid "Help"
 msgstr "Hjälp"
 
-#: MessageLog#57
+#: messagelog.ui:570
+msgctxt "MessageLog"
 msgid "Show the help browser"
 msgstr "Visa hjälpen"
 
-#: MessageLog#58
+#: messagelog.cpp:193
+msgctxt "MessageLog"
 msgid "Vidalia was unable to register for Tor's log events."
 msgstr "Vidalia kunde ej registrera sig för Tors loggmeddelanden."
 
-#: MessageLog#59
+#: messagelog.cpp:313
+msgctxt "MessageLog"
 msgid "Cannot write file %1"
 ""
 "%2."
@@ -1318,801 +1638,1000 @@ msgstr "Kan ej spara filen %1"
 ""
 "%2."
 
-#: MessageLog#60
+#: messagelog.cpp:209
+msgctxt "MessageLog"
 msgid "Vidalia was unable to open the specified log file."
 msgstr "Vidalia kunde ej öppna den angivna loggfilen."
 
-#: MessageLog#61
+#: messagelog.cpp:303
+msgctxt "MessageLog"
 msgid "Text Files (*.txt)"
 msgstr "Textfiler (*.txt)"
 
-#: MessageLog#62
+#: messagelog.ui:573
+msgctxt "MessageLog"
 msgid "F1"
 msgstr "F1"
 
-#: MessageLog#63
+#: messagelog.cpp:230
+msgctxt "MessageLog"
 msgid "Log Filename Required"
 msgstr "Namn för loggfilen krävs"
 
-#: MessageLog#64
+#: messagelog.cpp:232
+msgctxt "MessageLog"
 msgid "You must enter a filename to be able to save log messages to a file."
 msgstr "Vänligen skriv in ett filnamn för att spara loggmeddelanden till en fil."
 
-#: MessageLog#65
+#: messagelog.ui:297
+msgctxt "MessageLog"
 msgid "Message Log History"
 msgstr "Historik för loggmeddelanden"
 
-#: MessageLog#66
+#: messagelog.ui:318
+msgctxt "MessageLog"
 msgid "Number of messages to display in the message log window"
 msgstr "Antal meddelanden att visa i fönstret för loggmeddelanden"
 
-#: MessageLog#67
+#: messagelog.ui:337
+msgctxt "MessageLog"
 msgid "messages"
 msgstr "meddelanden"
 
-#: MessageLog#68
+#: messagelog.ui:356
+msgctxt "MessageLog"
 msgid "Always Save New Log Messages"
 msgstr "Spara alltid nya loggmeddelanden"
 
-#: MessageLog#69
+#: messagelog.ui:394
+msgctxt "MessageLog"
 msgid "Enable automatically saving all new log messages to a file"
 msgstr "Aktivera att alla nya loggmeddelanden sparas till en fil"
 
-#: MessageLog#70
+#: messagelog.ui:397
+msgctxt "MessageLog"
 msgid "Automatically save new log messages to a file"
 msgstr "Spara automatiskt nya loggmeddelanden till filen"
 
-#: NetViewer#1
+#: netviewer.ui:236
+msgctxt "NetViewer"
 msgid "Refresh"
 msgstr "Uppdatera"
 
-#: NetViewer#2
+#: netviewer.ui:253
+msgctxt "NetViewer"
 msgid "Help"
 msgstr "Hjälp"
 
-#: NetViewer#3
+#: netviewer.ui:270
+msgctxt "NetViewer"
 msgid "Close"
 msgstr "Stäng"
 
-#: NetViewer#4
+#: netviewer.ui:287
+msgctxt "NetViewer"
 msgid "Zoom In"
 msgstr "Zooma in"
 
-#: NetViewer#5
+#: netviewer.ui:304
+msgctxt "NetViewer"
 msgid "Zoom Out"
 msgstr "Zooma ut"
 
-#: NetViewer#6
+#: netviewer.ui:321
+msgctxt "NetViewer"
 msgid "Zoom To Fit"
 msgstr "Zooma för att anpassa"
 
-#: NetViewer#7
+#: netviewer.ui:245
+msgctxt "NetViewer"
 msgid "Ctrl+R"
 msgstr "Ctrl+R"
 
-#: NetViewer#8
+#: netviewer.ui:262
+msgctxt "NetViewer"
 msgid "F1"
 msgstr "F1"
 
-#: NetViewer#9
+#: netviewer.ui:279
+msgctxt "NetViewer"
 msgid "Esc"
 msgstr "Esc"
 
-#: NetViewer#10
+#: netviewer.ui:296
+msgctxt "NetViewer"
 msgid "+"
 msgstr "+"
 
-#: NetViewer#11
+#: netviewer.ui:313
+msgctxt "NetViewer"
 msgid "-"
 msgstr "-"
 
-#: NetViewer#12
+#: netviewer.ui:330
+msgctxt "NetViewer"
 msgid "Ctrl+Z"
 msgstr "Ctrl+Z"
 
-#: NetViewer#13
+#: netviewer.ui:259
+msgctxt "NetViewer"
 msgid "Show network map help"
 msgstr "Visa hjälpen för nätverkskartan"
 
-#: NetViewer#14
+#: netviewer.ui:256
+msgctxt "NetViewer"
 msgid "Show the network map help"
 msgstr "Visa hjälpen för nätverkskartan"
 
-#: NetViewer#15
+#: netviewer.ui:276
+msgctxt "NetViewer"
 msgid "Close the network map"
 msgstr "Stäng nätverkskartan"
 
-#: NetViewer#16
+#: netviewer.ui:293
+msgctxt "NetViewer"
 msgid "Zoom in on the network map"
 msgstr "Zoomar in på nätverkskartan"
 
-#: NetViewer#17
+#: netviewer.ui:310
+msgctxt "NetViewer"
 msgid "Zoom out on the network map"
 msgstr "Zoomar ut från nätverkskartan"
 
-#: NetViewer#18
+#: netviewer.ui:327
+msgctxt "NetViewer"
 msgid "Zooms to fit all currently displayed circuits"
 msgstr "Zoomar för att visa alla aktuella kretsar på kartan"
 
-#: NetViewer#19
+#: netviewer.ui:24
+msgctxt "NetViewer"
 msgid "Tor Network Map"
 msgstr "Tor-nätverkskartan"
 
-#: NetViewer#20
+#: netviewer.ui:242
+msgctxt "NetViewer"
 msgid "Refresh the list of Tor relays and connections"
 msgstr "Uppdatera det list av Tor-router och anslutningar"
 
-#: NetworkPage#1
+#: networkpage.cpp:34
+msgctxt "NetworkPage"
 msgid "Network"
 msgstr "Nätverk"
 
-#: NetworkPage#2
+#: networkpage.cpp:186
+msgctxt "NetworkPage"
 msgid "Invalid Bridge"
 msgstr "Ogiltig brygga"
 
-#: NetworkPage#3
+#: networkpage.cpp:187
+msgctxt "NetworkPage"
 msgid "The specified bridge identifier is not valid."
 msgstr "Det räknande upp bryggaidentitet är inte giltig."
 
-#: NetworkPage#4
+#: networkpage.cpp:234
+msgctxt "NetworkPage"
 msgid "Copy (Ctrl+C)"
 msgstr "Kopiera (Ctrl+C)"
 
-#: NetworkPage#5
+#: networkpage.cpp:265
+msgctxt "NetworkPage"
 msgid "You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet."
 msgstr "Du måste räkna upp båda IP-adress eller hostname och portnummer till konfigurar Tor att använda proxy till Internet."
 
-#: NetworkPage#6
+#: networkpage.cpp:271
+msgctxt "NetworkPage"
 msgid "You must specify one or more ports to which your firewall allows you to connect."
 msgstr "Du måste räkna upp en eller fler portar som din brandvägg tillåttar du anslutnar till."
 
-#: NetworkPage#7
+#: networkpage.cpp:307
+msgctxt "NetworkPage"
 msgid "'%1' is not a valid port number."
 msgstr "'%1' är inte en giltig portnummer."
 
-#: NetworkPage#8
+#: networkpage.ui:28
+msgctxt "NetworkPage"
 msgid "I use a proxy to access the Internet"
 msgstr "Jag använder en proxy till internet"
 
-#: NetworkPage#9
+#: networkpage.ui:58
+msgctxt "NetworkPage"
 msgid "Proxy Settings"
 msgstr "Proxy-inställningar"
 
-#: NetworkPage#10
+#: networkpage.ui:70
+msgctxt "NetworkPage"
 msgid "HTTP Proxy:"
 msgstr "HTTP-Proxy:"
 
-#: NetworkPage#11
+#: networkpage.ui:80
+msgctxt "NetworkPage"
 msgid "Username:"
 msgstr "Användarnamn:"
 
-#: NetworkPage#12
+#: networkpage.ui:90
+msgctxt "NetworkPage"
 msgid "Use this proxy for HTTPS also"
 msgstr "Använda det här proxy för åckso HTTPS"
 
-#: NetworkPage#13
+#: networkpage.ui:108
+msgctxt "NetworkPage"
 msgid "Password:"
 msgstr "Lösenord:"
 
-#: NetworkPage#14
+#: networkpage.ui:135
+msgctxt "NetworkPage"
 msgid "Port:"
 msgstr "Port:"
 
-#: NetworkPage#15
+#: networkpage.ui:179
+msgctxt "NetworkPage"
 msgid "My firewall only lets me connect to certain ports"
 msgstr "Min brandvägg gevs mig avsluta bara till säkra portarna"
 
-#: NetworkPage#16
+#: networkpage.ui:203
+msgctxt "NetworkPage"
 msgid "Firewall Settings"
 msgstr "Brandvägg-inställningar"
 
-#: NetworkPage#17
+#: networkpage.ui:215
+msgctxt "NetworkPage"
 msgid "Allowed Ports:"
 msgstr "Tillåtna portarna:"
 
-#: NetworkPage#18
+#: networkpage.ui:225
+msgctxt "NetworkPage"
 msgid "80, 443"
 msgstr "80, 443"
 
-#: NetworkPage#19
+#: networkpage.ui:238
+msgctxt "NetworkPage"
 msgid "My ISP blocks connections to the Tor network"
 msgstr "Min internetleverantör blockerar anslutningar till Tor-nätverket"
 
-#: NetworkPage#20
+#: networkpage.ui:295
+msgctxt "NetworkPage"
 msgid "Add a Bridge:"
 msgstr "Lägga till en brygga:"
 
-#: NetworkPage#21
+#: networkpage.ui:383
+msgctxt "NetworkPage"
 msgid "Remove the selected bridges from the list"
 msgstr "Tar bort de valda bryggarna från det här lista"
 
-#: NetworkPage#22
+#: networkpage.ui:399
+msgctxt "NetworkPage"
 msgid "Copy the selected bridges to the clipboard"
 msgstr "Kopiera de valda bryggarna till urklipp"
 
-#: NetworkPage#23
+#: networkpage.ui:318
+msgctxt "NetworkPage"
 msgid "<a href=\"bridges.finding\">How do I find a bridge?</a>"
 msgstr "<a href=\"bridges.finding\">Hur kan jag hitta en brygga?</a>"
 
-#: NetworkPage#24
+#: networkpage.ui:25
+msgctxt "NetworkPage"
 msgid "Check if your local network requires a proxy to access the Internet"
 msgstr ""
 
-#: NetworkPage#25
+#: networkpage.ui:176
+msgctxt "NetworkPage"
 msgid "Check to only connect to relays using ports allowed by your firewall"
 msgstr ""
 
-#: NetworkPage#26
+#: networkpage.ui:235
+msgctxt "NetworkPage"
 msgid "Check to encrypt directory requests and, optionally, use bridge relays to access the Tor network"
 msgstr ""
 
-#: NetworkPage#27
+#: networkpage.ui:262
+msgctxt "NetworkPage"
 msgid "Bridge Settings"
 msgstr "Brygg-inställningar"
 
-#: NetworkPage#28
+#: networkpage.ui:274
+msgctxt "NetworkPage"
 msgid "The Tor software you are currently running does not support bridges. <br>Directory connections will still be encrypted."
 msgstr ""
 
-#: Policy#1
+#: policy.cpp:167
+msgctxt "Policy"
 msgid "accept"
 msgstr "acceptera"
 
-#: Policy#2
+#: policy.cpp:167
+msgctxt "Policy"
 msgid "reject"
 msgstr "avslå"
 
-#: RouterDescriptor#1
+#: routerdescriptor.cpp:76
+msgctxt "RouterDescriptor"
 msgid "Online"
 msgstr "Uppkopplad"
 
-#: RouterDescriptor#2
+#: routerdescriptor.cpp:78
+msgctxt "RouterDescriptor"
 msgid "Hibernating"
 msgstr "I viloläge"
 
-#: RouterDescriptor#3
+#: routerdescriptor.cpp:80
+msgctxt "RouterDescriptor"
 msgid "Offline"
 msgstr "Nerkopplad"
 
-#: RouterDescriptorView#1
+#: routerdescriptorview.cpp:103
+msgctxt "RouterDescriptorView"
 msgid "IP Address:"
 msgstr "IP-adress:"
 
-#: RouterDescriptorView#2
+#: routerdescriptorview.cpp:104
+msgctxt "RouterDescriptorView"
 msgid "Platform:"
 msgstr "Plattform:"
 
-#: RouterDescriptorView#3
+#: routerdescriptorview.cpp:108
+msgctxt "RouterDescriptorView"
 msgid "Bandwidth:"
 msgstr "Bandbredd:"
 
-#: RouterDescriptorView#4
+#: routerdescriptorview.cpp:110
+msgctxt "RouterDescriptorView"
 msgid "Uptime:"
 msgstr "Uptid:"
 
-#: RouterDescriptorView#5
+#: routerdescriptorview.cpp:116
+msgctxt "RouterDescriptorView"
 msgid "Last Updated:"
 msgstr "Senast uppdaterad:"
 
-#: RouterDescriptorView#6
+#: routerdescriptorview.cpp:99
+msgctxt "RouterDescriptorView"
 msgid "Location:"
 msgstr "Plats:"
 
-#: RouterDescriptorView#7
+#: routerdescriptorview.cpp:60
+msgctxt "RouterDescriptorView"
 msgid "%1 days "
 msgstr "%1 dagar"
 
-#: RouterDescriptorView#8
+#: routerdescriptorview.cpp:63
+msgctxt "RouterDescriptorView"
 msgid "%1 hours "
 msgstr "%1 timmar"
 
-#: RouterDescriptorView#9
+#: routerdescriptorview.cpp:66
+msgctxt "RouterDescriptorView"
 msgid "%1 mins "
 msgstr "%1 minuter"
 
-#: RouterDescriptorView#10
+#: routerdescriptorview.cpp:69
+msgctxt "RouterDescriptorView"
 msgid "%1 secs"
 msgstr "%1 sekunder"
 
-#: RouterListItem#1
+#: routerlistitem.cpp:83
+msgctxt "RouterListItem"
 msgid "%1 KB/s"
 msgstr "%1 KB/s"
 
-#: RouterListItem#2
+#: routerlistitem.cpp:67
+msgctxt "RouterListItem"
 msgid "Offline"
 msgstr "Nerkopplad"
 
-#: RouterListItem#3
+#: routerlistitem.cpp:71
+msgctxt "RouterListItem"
 msgid "Hibernating"
 msgstr "I viloläge"
 
-#: RouterListWidget#1
+#: routerlistwidget.cpp:31
+msgctxt "RouterListWidget"
 msgid "Relay"
 msgstr "Router"
 
-#: RouterListWidget#2
+#: routerlistwidget.cpp:58
+msgctxt "RouterListWidget"
 msgid "Zoom to Relay"
 msgstr "Zooma in på router"
 
-#: RouterListWidget#3
+#: routerlistwidget.cpp:151
+msgctxt "RouterListWidget"
 msgid "%1 relays online"
 msgstr "%1 router uppkopplad"
 
-#: ServerPage#1
+#: serverpage.ui:32
+msgctxt "ServerPage"
 msgid "Relay traffic for the Tor network"
 msgstr "Vidarebefordra trafik för Tor-nätverket (kör som Tor-router)"
 
-#: ServerPage#2
+#: serverpage.ui:234
+msgctxt "ServerPage"
 msgid "Directory Port:"
 msgstr "Katalogport:"
 
-#: ServerPage#3
+#: serverpage.ui:267
+msgctxt "ServerPage"
 msgid "Directory Port Number"
 msgstr "Portnummer för katalog"
 
-#: ServerPage#4
+#: serverpage.ui:380
+msgctxt "ServerPage"
 msgid "Nickname:"
 msgstr "Namn:"
 
-#: ServerPage#5
+#: serverpage.ui:279
+msgctxt "ServerPage"
 msgid "Contact Info:"
 msgstr "Kontaktinfo:"
 
-#: ServerPage#6
+#: serverpage.ui:764
+msgctxt "ServerPage"
 msgid "Exit Policies"
 msgstr "Användningspolicyn"
 
-#: ServerPage#7
+#: serverpage.ui:896
+msgctxt "ServerPage"
 msgid "Show help topic on exit policies"
 msgstr "Visa hjälpavsnitt om användningspolicyn"
 
-#: ServerPage#8
+#: serverpage.ui:620
+msgctxt "ServerPage"
 msgid "Long-term average bandwidth limit"
 msgstr "Genomsnittlig begränsning av bandbreddshastighet"
 
-#: ServerPage#9
+#: serverpage.ui:591
+msgctxt "ServerPage"
 msgid "Average Rate"
 msgstr "Snitthastighet"
 
-#: ServerPage#10
+#: serverpage.ui:708
+msgctxt "ServerPage"
 msgid "KB/s"
 msgstr "KB/s"
 
-#: ServerPage#11
+#: serverpage.ui:695
+msgctxt "ServerPage"
 msgid "Peak bandwidth rate limit"
 msgstr "Maximumhastighet för begränsning av bandbredd"
 
-#: ServerPage#12
+#: serverpage.ui:666
+msgctxt "ServerPage"
 msgid "Maximum Rate"
 msgstr "Maxhastighet"
 
-#: ServerPage#13
+#: serverpage.ui:502
+msgctxt "ServerPage"
 msgid "Show help topic on bandwidth rate limits"
 msgstr "Visa hjälpavsnittet om begränsningar på bandbreddshastigheter"
 
-#: ServerPage#14
+#: serverpage.ui:76
+msgctxt "ServerPage"
 msgid "Basic Settings"
 msgstr "Allmänt"
 
-#: ServerPage#15
+#: serverpage.ui:400
+msgctxt "ServerPage"
 msgid "Bandwidth Limits"
 msgstr "Bandbreddsbegränsningar"
 
-#: ServerPage#16
+#: serverpage.ui:435
+msgctxt "ServerPage"
 msgid "For Internet connections with fast download speed but slow upload, please list your upload speed here."
 msgstr "Om din Internetanslutning har snabb nerladdningshastighet men långsam uppladdningshastighet, vänligen välj uppladningshastighet här."
 
-#: ServerPage#17
+#: serverpage.ui:456
+msgctxt "ServerPage"
 msgid "Select the entry that most closely resembles your Internet connection"
 msgstr "Välj det alternativ som bäst överensstämmer med din Internetanslutning"
 
-#: ServerPage#18
+#: serverpage.ui:466
+msgctxt "ServerPage"
 msgid "Cable/DSL 256 Kbps"
 msgstr "Kabel/DSL 256 Kbps"
 
-#: ServerPage#19
+#: serverpage.ui:471
+msgctxt "ServerPage"
 msgid "Cable/DSL 512 Kbps"
 msgstr "Kabel/DSL 512 Kbps"
 
-#: ServerPage#20
+#: serverpage.ui:476
+msgctxt "ServerPage"
 msgid "Cable/DSL 768 Kbps"
 msgstr "Kabel/DSL 768 Kbps"
 
-#: ServerPage#21
+#: serverpage.ui:481
+msgctxt "ServerPage"
 msgid "T1/Cable/DSL 1.5 Mbps"
 msgstr "T1/Kabel/DSL 1.5 Mbps"
 
-#: ServerPage#22
+#: serverpage.ui:486
+msgctxt "ServerPage"
 msgid "> 1.5 Mbps"
 msgstr "> 1.5 Mbps"
 
-#: ServerPage#23
+#: serverpage.ui:491
+msgctxt "ServerPage"
 msgid "Custom"
 msgstr "Annat"
 
-#: ServerPage#24
+#: serverpage.ui:802
+msgctxt "ServerPage"
 msgid "Ports 6660 - 6669 and 6697"
 msgstr "Portarna 6660 - 6669 och 6697"
 
-#: ServerPage#25
+#: serverpage.ui:805
+msgctxt "ServerPage"
 msgid "Internet Relay Chat (IRC)"
 msgstr "Internet Relay Chat (IRC)"
 
-#: ServerPage#26
+#: serverpage.ui:815
+msgctxt "ServerPage"
 msgid "Ports 110, 143, 993 and 995"
 msgstr "Portarna 110, 143, 993 och 995"
 
-#: ServerPage#27
+#: serverpage.ui:818
+msgctxt "ServerPage"
 msgid "Retrieve Mail (POP, IMAP)"
 msgstr "Hämta e-post (POP, IMAP)"
 
-#: ServerPage#28
+#: serverpage.ui:828
+msgctxt "ServerPage"
 msgid "Ports unspecified by other checkboxes"
 msgstr "Portar som inte täcks av de andra alternativen"
 
-#: ServerPage#29
+#: serverpage.ui:831
+msgctxt "ServerPage"
 msgid "Misc Other Services"
 msgstr "Andra övriga tjänster"
 
-#: ServerPage#30
+#: serverpage.ui:844
+msgctxt "ServerPage"
 msgid "Instant Messaging (IM)"
 msgstr "Snabbmeddelanden"
 
-#: ServerPage#31
+#: serverpage.ui:854
+msgctxt "ServerPage"
 msgid "Port 443"
 msgstr "Port 443"
 
-#: ServerPage#32
+#: serverpage.ui:857
+msgctxt "ServerPage"
 msgid "Secure Websites (SSL)"
 msgstr "Säkra webbplatser (SSL)"
 
-#: ServerPage#33
+#: serverpage.ui:867
+msgctxt "ServerPage"
 msgid "Port 80"
 msgstr "Port 80"
 
-#: ServerPage#34
+#: serverpage.ui:870
+msgctxt "ServerPage"
 msgid "Websites"
 msgstr "Webbplatser"
 
-#: ServerPage#35
+#: serverpage.ui:737
+msgctxt "ServerPage"
 msgid "Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s."
 msgstr "Maxvärdet för bandbreddshastigheten måste vara högre eller lika med snittvärdet för bandbreddhastigheten. Båda värdena måste vara minst 20 KB/s."
 
-#: ServerPage#36
+#: serverpage.cpp:68
+msgctxt "ServerPage"
 msgid "Server"
 msgstr "Server"
 
-#: ServerPage#37
+#: serverpage.cpp:133
+msgctxt "ServerPage"
 msgid "Bridge Support Unavailable"
 msgstr "Bryggastöd är inte tillgänglig"
 
-#: ServerPage#38
+#: serverpage.cpp:136
+msgctxt "ServerPage"
 msgid "You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges."
 msgstr "Tor har konfigurerad att vara en bryggarouter till censurerad användar men din Tor inte stöder bryggar."
 
-#: ServerPage#39
+#: serverpage.cpp:138
+msgctxt "ServerPage"
 msgid "Please upgrade your Tor software or configure Tor to act as a normal Tor relay."
 msgstr "Varsågoda och uppdater din Tor eller konfigurerar Tor var en normal Tor-router."
 
-#: ServerPage#40
+#: serverpage.cpp:256
+msgctxt "ServerPage"
 msgid "You must specify at least a relay nickname and port."
 msgstr "Du måste räkna upp åtminstone en routernamn och port."
 
-#: ServerPage#41
+#: serverpage.ui:91
+msgctxt "ServerPage"
 msgid "Relay Port:"
 msgstr "Routerport:"
 
-#: ServerPage#42
+#: serverpage.ui:204
+msgctxt "ServerPage"
 msgid "Email address at which you may be reached if there is a"
 "problem with your relay. You might also include your PGP or GPG fingerprint."
 msgstr ""
 
-#: ServerPage#43
+#: serverpage.ui:113
+msgctxt "ServerPage"
 msgid "Mirror the Relay Directory "
 msgstr "Vidarebefordra routerkatalogen "
 
-#: ServerPage#44
+#: serverpage.cpp:192
+msgctxt "ServerPage"
 msgid "Your bridge relay is not running."
 msgstr "Din bryggarouter är ej i gång."
 
-#: ServerPage#45
+#: serverpage.ui:39
+msgctxt "ServerPage"
 msgid "Help censored users reach the Tor network (Tor 0.2.0.8-alpha or newer)"
 msgstr "Hjälpa censurerad användar att använda Tor-nätverk (Tor 0.2.0.8-alpha eller nyar)"
 
-#: ServerPage#46
+#: serverpage.ui:337
+msgctxt "ServerPage"
 msgid "Name of your relay"
 msgstr "Namn av din router"
 
-#: ServerPage#47
+#: serverpage.ui:370
+msgctxt "ServerPage"
 msgid "Port on which users and other relays can communicate with your relay"
 msgstr "Det port med användar och andra router kan kommunicera med dina router"
 
-#: ServerPage#48
+#: serverpage.ui:1005
+msgctxt "ServerPage"
 msgid "Let others access your bridge by giving them this line:"
 msgstr "Ge andra använda dina brygga genom att ge dem den här linje:"
 
-#: ServerPage#49
+#: serverpage.ui:1029
+msgctxt "ServerPage"
 msgid "This is the identity of your bridge relay that you can give to other people"
 msgstr "Den här är det identitet om din bryggarouter som du kan ge till andra"
 
-#: ServerPage#50
+#: serverpage.ui:1051
+msgctxt "ServerPage"
 msgid "Copy your bridge relay's identity to the clipboard"
 msgstr "Kopiera din bryggarouters identitet till urklipp"
 
-#: ServerPage#51
+#: serverpage.ui:841
+msgctxt "ServerPage"
 msgid "Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 and 8888"
 msgstr "Portarna 706, 1863, 5050, 5190, 5222, 5223, 8300 och 8888"
 
-#: ServerPage#52
+#: serverpage.ui:25
+msgctxt "ServerPage"
 msgid "Run as a client only"
 msgstr ""
 
-#: ServerPage#53
+#: serverpage.ui:110
+msgctxt "ServerPage"
 msgid "Enable to mirror the relay directory"
 msgstr ""
 
-#: ServerPage#54
+#: serverpage.ui:139
+msgctxt "ServerPage"
 msgid "Attempt to automatically configure port forwarding"
 msgstr ""
 
-#: ServerPage#55
+#: serverpage.ui:154
+msgctxt "ServerPage"
 msgid "Test"
 msgstr "Testa"
 
-#: ServerPage#56
+#: serverpage.ui:969
+msgctxt "ServerPage"
 msgid "What Internet resources should users be able to access from your relay?"
 msgstr ""
 "Vilka resurser på Internet ska användare kunna komma åt genom din router?"
 
-#: ServerPage#57
+#: serverpage.ui:164
+msgctxt "ServerPage"
 msgid "Show help topic on port forwarding"
 msgstr ""
 
-#: ServicePage#1
+#: servicepage.cpp:27
+msgctxt "ServicePage"
 msgid "Services"
 msgstr "Tjänster"
 
-#: ServicePage#2
+#: servicepage.cpp:109
+msgctxt "ServicePage"
 msgid "Error while trying to unpublish all services"
 msgstr ""
 
-#: ServicePage#3
+#: servicepage.cpp:590
+msgctxt "ServicePage"
 msgid "Error"
 msgstr "Fel"
 
-#: ServicePage#4
+#: servicepage.cpp:445
+msgctxt "ServicePage"
 msgid "Please select a Service."
 msgstr "Varsågod och välj en tjänst."
 
-#: ServicePage#5
+#: servicepage.cpp:451
+msgctxt "ServicePage"
 msgid "Select Service Directory"
 msgstr "Välj en tjänst-katalog"
 
-#: ServicePage#6
+#: servicepage.cpp:540
+msgctxt "ServicePage"
 msgid "Virtual Port may only contain valid port numbers [1..65535]."
 msgstr ""
 
-#: ServicePage#7
+#: servicepage.cpp:571
+msgctxt "ServicePage"
 msgid "Target may only contain address:port, address, or port."
 msgstr ""
 
-#: ServicePage#8
+#: servicepage.cpp:591
+msgctxt "ServicePage"
 msgid "Directory already in use by another service."
 msgstr ""
 
-#: ServicePage#9
+#: servicepage.ui:19
+msgctxt "ServicePage"
 msgid "Form"
 msgstr ""
 
-#: ServicePage#10
+#: servicepage.ui:31
+msgctxt "ServicePage"
 msgid "Provided Hidden Services"
 msgstr ""
 
-#: ServicePage#11
+#: servicepage.ui:56
+msgctxt "ServicePage"
 msgid "Onion Address"
 msgstr "Onion-adress"
 
-#: ServicePage#12
+#: servicepage.ui:61
+msgctxt "ServicePage"
 msgid "Virtual Port"
 msgstr "Virtuell port"
 
-#: ServicePage#13
+#: servicepage.ui:66
+msgctxt "ServicePage"
 msgid "Target"
 msgstr ""
 
-#: ServicePage#14
+#: servicepage.ui:71
+msgctxt "ServicePage"
 msgid "Directory Path"
 msgstr "Katalogens sökväg"
 
-#: ServicePage#15
+#: servicepage.ui:76
+msgctxt "ServicePage"
 msgid "Enabled"
 msgstr "Aktiverad"
 
-#: ServicePage#16
+#: servicepage.ui:84
+msgctxt "ServicePage"
 msgid "Add new service to list"
 msgstr "Lägga till tjänst till lista"
 
-#: ServicePage#17
+#: servicepage.ui:97
+msgctxt "ServicePage"
 msgid "Remove selected service from list"
 msgstr "Tar bort de valda tjänst från lista"
 
-#: ServicePage#18
+#: servicepage.ui:110
+msgctxt "ServicePage"
 msgid "Copy onion address of selected service to clipboard"
 msgstr "Kopiera det vald onion-adress till urklipp"
 
-#: ServicePage#19
+#: servicepage.ui:123
+msgctxt "ServicePage"
 msgid "Browse in local file system and choose directory for selected service"
 msgstr ""
 
-#: ServicePage#20
+#: servicepage.cpp:116
+msgctxt "ServicePage"
 msgid "Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones."
 msgstr ""
 
-#: Stream#1
+#: stream.cpp:118
+msgctxt "Stream"
 msgid "New"
 msgstr "Ny"
 
-#: Stream#2
+#: stream.cpp:120
+msgctxt "Stream"
 msgid "Resolving"
 msgstr "Resolverar"
 
-#: Stream#3
+#: stream.cpp:121
+msgctxt "Stream"
 msgid "Connecting"
 msgstr "Ansluter"
 
-#: Stream#4
+#: stream.cpp:122
+msgctxt "Stream"
 msgid "Open"
 msgstr "Öppen"
 
-#: Stream#5
+#: stream.cpp:123
+msgctxt "Stream"
 msgid "Failed"
 msgstr "Misslyckad"
 
-#: Stream#6
+#: stream.cpp:124
+msgctxt "Stream"
 msgid "Closed"
 msgstr "Stängd"
 
-#: Stream#7
+#: stream.cpp:127
+msgctxt "Stream"
 msgid "Unknown"
 msgstr "Okänd"
 
-#: Stream#8
+#: stream.cpp:125
+msgctxt "Stream"
 msgid "Retrying"
 msgstr "Försöker igen"
 
-#: Stream#9
+#: stream.cpp:126
+msgctxt "Stream"
 msgid "Remapped"
 msgstr ""
 
-#: TorProcess#1
+#: torprocess.cpp:107
+msgctxt "TorProcess"
 msgid "Process %1 failed to stop. [%2]"
 msgstr "Processen %1 kunde ej stoppas. [%2]"
 
-#: TorService#1
+#: torservice.cpp:143
+msgctxt "TorService"
 msgid "The Tor service is not installed."
 msgstr "Tor-tjänsten är inte installerad."
 
-#: TorService#2
+#: torservice.cpp:161
+msgctxt "TorService"
 msgid "Unable to start the Tor service."
 msgstr "Kunde ej starta Tor-tjänsten."
 
-#: TorSettings#1
+#: torsettings.cpp:107
+msgctxt "TorSettings"
 msgid "Failed to hash the control password."
 msgstr ""
 
-#: UPNPControl#1
+#: upnpcontrol.cpp:139
+msgctxt "UPNPControl"
 msgid "Success"
 msgstr ""
 
-#: UPNPControl#2
+#: upnpcontrol.cpp:141
+msgctxt "UPNPControl"
 msgid "No UPnP-enabled devices found"
 msgstr ""
 
-#: UPNPControl#3
+#: upnpcontrol.cpp:143
+msgctxt "UPNPControl"
 msgid "No valid UPnP-enabled Internet gateway devices found"
 msgstr ""
 
-#: UPNPControl#4
+#: upnpcontrol.cpp:145
+msgctxt "UPNPControl"
 msgid "WSAStartup failed"
 msgstr ""
 
-#: UPNPControl#5
+#: upnpcontrol.cpp:147
+msgctxt "UPNPControl"
 msgid "Failed to add a port mapping"
 msgstr ""
 
-#: UPNPControl#6
+#: upnpcontrol.cpp:149
+msgctxt "UPNPControl"
 msgid "Failed to retrieve a port mapping"
 msgstr ""
 
-#: UPNPControl#7
+#: upnpcontrol.cpp:151
+msgctxt "UPNPControl"
 msgid "Failed to remove a port mapping"
 msgstr ""
 
-#: UPNPControl#8
+#: upnpcontrol.cpp:153
+msgctxt "UPNPControl"
 msgid "Unknown error"
 msgstr "Okänd fel"
 
-#: UPNPTestDialog#1
+#: upnptestdialog.cpp:112
+msgctxt "UPNPTestDialog"
 msgid "Discovering UPnP-enabled devices"
 msgstr ""
 
-#: UPNPTestDialog#2
+#: upnptestdialog.cpp:117
+msgctxt "UPNPTestDialog"
 msgid "Updating directory port mapping"
 msgstr ""
 
-#: UPNPTestDialog#3
+#: upnptestdialog.cpp:122
+msgctxt "UPNPTestDialog"
 msgid "Updating relay port mapping"
 msgstr ""
 
-#: UPNPTestDialog#4
+#: upnptestdialog.cpp:127
+msgctxt "UPNPTestDialog"
 msgid "Test completed successfully!"
 msgstr ""
 
-#: UPNPTestDialog#5
+#: upnptestdialog.ui:13
+msgctxt "UPNPTestDialog"
 msgid "Testing UPnP Support"
 msgstr ""
 
-#: UPNPTestDialog#6
+#: upnptestdialog.ui:92
+msgctxt "UPNPTestDialog"
 msgid "Testing Universal Plug & Play Support"
 msgstr ""
 
-#: VMessageBox#1
+#: vmessagebox.cpp:77
+msgctxt "VMessageBox"
 msgid "OK"
 msgstr "Okej"
 
-#: VMessageBox#2
+#: vmessagebox.cpp:78
+msgctxt "VMessageBox"
 msgid "Cancel"
 msgstr "Avbryt"
 
-#: VMessageBox#3
+#: vmessagebox.cpp:79
+msgctxt "VMessageBox"
 msgid "Yes"
 msgstr "Ja"
 
-#: VMessageBox#4
+#: vmessagebox.cpp:80
+msgctxt "VMessageBox"
 msgid "No"
 msgstr "Nej"
 
-#: VMessageBox#5
+#: vmessagebox.cpp:81
+msgctxt "VMessageBox"
 msgid "Help"
 msgstr "Hjälp"
 
-#: VMessageBox#6
+#: vmessagebox.cpp:82
+msgctxt "VMessageBox"
 msgid "Retry"
 msgstr "Försök igen"
 
-#: VMessageBox#7
+#: vmessagebox.cpp:83
+msgctxt "VMessageBox"
 msgid "Show Log"
 msgstr "Visa loggen"
 
-#: VMessageBox#8
+#: vmessagebox.cpp:84
+msgctxt "VMessageBox"
 msgid "Show Settings"
 msgstr "Visa inställningar"
 
-#: VMessageBox#9
+#: vmessagebox.cpp:85
+msgctxt "VMessageBox"
 msgid "Continue"
 msgstr "Fortsätt"
 
-#: VMessageBox#10
+#: vmessagebox.cpp:86
+msgctxt "VMessageBox"
 msgid "Quit"
 msgstr "Avsluta"
 
-#: VMessageBox#11
+#: vmessagebox.cpp:87
+msgctxt "VMessageBox"
 msgid "Browse"
 msgstr "Bläddra"
 
-#: Vidalia#1
+#: vidalia.cpp:235
+msgctxt "Vidalia"
 msgid "Invalid language code specified: "
 msgstr "Ogiltig språkkod har angetts:"
 
-#: Vidalia#2
+#: vidalia.cpp:242
+msgctxt "Vidalia"
 msgid "Invalid GUI style specified: "
 msgstr "Ogiltig stil för användargränssnittet har angetts:"
 
-#: Vidalia#3
+#: main.cpp:88
+msgctxt "Vidalia"
 msgid "Vidalia is already running"
 msgstr "Vidalia är redan igång"
 
-#: Vidalia#4
+#: main.cpp:94
+msgctxt "Vidalia"
 msgid "Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway."
 ""
 "Would you like to continue starting Vidalia?"
@@ -2120,50 +2639,63 @@ msgstr "Vidalia tycks redan vara igång. Om detta inte stämmer, så kan du väl
 ""
 "Vill du fortsätta att starta Vidalia?"
 
-#: Vidalia#5
+#: main.cpp:74
+msgctxt "Vidalia"
 msgid "Invalid Argument"
 msgstr "Ogiltigt argument"
 
-#: Vidalia#6
+#: vidalia.cpp:166
+msgctxt "Vidalia"
 msgid "Displays this usage message and exits."
 msgstr "Visar detta användningsmeddelanden och avslutar."
 
-#: Vidalia#7
+#: vidalia.cpp:168
+msgctxt "Vidalia"
 msgid "Resets ALL stored Vidalia settings."
 msgstr "Nollställer ALLA sparade inställningar för Vidalia."
 
-#: Vidalia#8
+#: vidalia.cpp:170
+msgctxt "Vidalia"
 msgid "Sets the directory Vidalia uses for data files."
 msgstr "Ställer in katalogen som Vidalia använder för datafiler."
 
-#: Vidalia#9
+#: vidalia.cpp:172
+msgctxt "Vidalia"
 msgid "Sets the name and location of Vidalia's pidfile."
 msgstr "Ställer in namnet och platsen för Vidalias pidfil."
 
-#: Vidalia#10
+#: vidalia.cpp:174
+msgctxt "Vidalia"
 msgid "Sets the name and location of Vidalia's logfile."
 msgstr "Ställer in namnet och platsen för Vidalias loggfil."
 
-#: Vidalia#11
+#: vidalia.cpp:177
+msgctxt "Vidalia"
 msgid "Sets the verbosity of Vidalia's logging."
 msgstr "Ställer in detaljrikedomen för Vidalias loggmeddelanden."
 
-#: Vidalia#12
+#: vidalia.cpp:180
+msgctxt "Vidalia"
 msgid "Sets Vidalia's interface style."
 msgstr "Ställer in utseende för Vidalia."
 
-#: Vidalia#13
+#: vidalia.cpp:183
+msgctxt "Vidalia"
 msgid "Sets Vidalia's language."
 msgstr "Ställer in språket för Vidalias."
 
-#: Vidalia#14
+#: vidalia.cpp:187
+msgctxt "Vidalia"
 msgid "Vidalia Usage Information"
 msgstr "Användningsinformation om Vidalia "
 
-#: Vidalia#15
+#: vidalia.cpp:248
+msgctxt "Vidalia"
 msgid "Invalid log level specified: "
 msgstr "Ogiltig loggnivå har angetts:"
 
-#: Vidalia#16
+#: vidalia.cpp:254
+msgctxt "Vidalia"
 msgid "Unable to open log file '%1': %2"
 msgstr "Kunde ej öppna loggfilen '%1': %2"
+
