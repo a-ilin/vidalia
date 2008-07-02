@@ -349,7 +349,7 @@ TorControl::bootstrapStatus(QString *errmsg)
 {
   QString str = getInfo("status/bootstrap-phase").toString();
   if (!str.isEmpty()) {
-    tc::Severity severity = tc::toSeverity(str.section(' ', 1, 1));
+    tc::Severity severity = tc::toSeverity(str.section(' ', 0, 0));
     QHash<QString,QString> args = string_parse_keyvals(str);
     return BootstrapStatus(severity,
               BootstrapStatus::statusFromString(args.value("TAG")),
