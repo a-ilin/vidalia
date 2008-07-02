@@ -2753,4 +2753,3 @@ msgstr "Nivelul specificat este invalid: "
 msgctxt "Vidalia"
 msgid "Unable to open log file '%1': %2"
 msgstr "Nu s-a putut deschide jurnalul '%1': %2"
-
