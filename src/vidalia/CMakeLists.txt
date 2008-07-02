@@ -271,20 +271,12 @@ if (USE_MINIUPNPC)
   target_link_libraries(${vidalia_BIN} miniupnpc)
 endif(USE_MINIUPNPC)
 
-if (MINGW)
+if (WIN32)
   target_link_libraries(${vidalia_BIN}
-    ole32
-    oleaut32
-    uuid
-    winspool
+    ${QT_QTMAIN_LIBRARY}
   )
-else(MINGW)
-  if (WIN32)
-    target_link_libraries(${vidalia_BIN}
-      ${QT_QTMAIN_LIBRARY}
-    )
-  endif(WIN32)
-endif(MINGW)
+endif(WIN32)
+
 if (APPLE)
   target_link_libraries(${vidalia_BIN}
     "-framework AppKit"
