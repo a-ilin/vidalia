@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
-"POT-Creation-Date: 2008-07-02 05:29+0000\n"
+"POT-Creation-Date: 2008-06-19 02:15+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: translations@vidalia-project.net\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "X-Generator: Vidalia ts2po 0.2\n"
 
-#: aboutdialog.ui:25
+#: AboutDialog#1
 msgctxt "AboutDialog"
 msgid "About Vidalia"
 msgstr " درباره‌ی ویدالیا"
@@ -27,37 +27,37 @@ msgctxt "AboutDialog"
 msgid "Tor"
 msgstr "(Tor) تُر"
 
-#: aboutdialog.ui:156
+#: AboutDialog#4
 msgctxt "AboutDialog"
 msgid "Qt"
 msgstr "کیوتی (Qt)"
 
-#: aboutdialog.ui:166
+#: AboutDialog#5
 msgctxt "AboutDialog"
 msgid "Qt Version"
 msgstr "نسخه‌ی کیوتی"
 
-#: aboutdialog.ui:244
+#: AboutDialog#6
 msgctxt "AboutDialog"
 msgid "Tor Version"
 msgstr "نسخه‌ی تر"
 
-#: aboutdialog.ui:88
+#: AboutDialog#7
 msgctxt "AboutDialog"
 msgid "Vidalia Version"
 msgstr "نسخه‌ی ویدالیا"
 
-#: aboutdialog.cpp:68
+#: AboutDialog#8
 msgctxt "AboutDialog"
 msgid "<Not Running>"
 msgstr "<در حال اجرا نیست>"
 
-#: aboutdialog.cpp:64
+#: AboutDialog#9
 msgctxt "AboutDialog"
 msgid "<Unavailable>"
 msgstr "<در دسترس نیست>"
 
-#: advancedpage.ui:28
+#: AdvancedPage#1
 msgctxt "AdvancedPage"
 msgid "Control Port"
 msgstr "درگاه کنترل"
@@ -67,124 +67,124 @@ msgctxt "AdvancedPage"
 msgid "Browse"
 msgstr "انتخاب فایل"
 
-#: advancedpage.ui:337
+#: AdvancedPage#3
 msgctxt "AdvancedPage"
 msgid "Permissions"
 msgstr "سطوح دسترسی"
 
-#: advancedpage.ui:360
+#: AdvancedPage#4
 msgctxt "AdvancedPage"
 msgid "Run as User:"
 msgstr "کاربر اجرا کننده"
 
-#: advancedpage.ui:373
+#: AdvancedPage#5
 msgctxt "AdvancedPage"
 msgid "Vidalia will run with this User's permissions"
 msgstr "ویدالیا با سطوح دسترسی این کاربر اجرا خواهد شد"
 
-#: advancedpage.ui:393
+#: AdvancedPage#6
 msgctxt "AdvancedPage"
 msgid "Run as Group:"
 msgstr "گروه اجراکننده:"
 
-#: advancedpage.ui:400
+#: AdvancedPage#7
 msgctxt "AdvancedPage"
 msgid "Vidalia will run with this Group's permissions"
 msgstr "ویدالیا با سطوح دسترسی این گروه اجرا خواهد شد"
 
-#: advancedpage.cpp:221
+#: AdvancedPage#8
 msgctxt "AdvancedPage"
 msgid "Select Tor Configuration File"
 msgstr "انتخاب فایل پیکربندی "
 
-#: advancedpage.cpp:234
+#: AdvancedPage#9
 msgctxt "AdvancedPage"
 msgid "File Not Found"
 msgstr "فایل مورد نظر پیدا نشد"
 
-#: advancedpage.cpp:236
+#: AdvancedPage#10
 msgctxt "AdvancedPage"
 msgid "%1 does not exist. Would you like to create it?"
 msgstr " فایل %1 وجود ندارد. آیا می‌خواهید آن را بسازید؟"
 
-#: advancedpage.cpp:247
+#: AdvancedPage#11
 msgctxt "AdvancedPage"
 msgid "Failed to Create File"
 msgstr "ایجاد فایل ناموفق بود"
 
-#: advancedpage.cpp:248
+#: AdvancedPage#12
 msgctxt "AdvancedPage"
 msgid "Unable to create %1 [%2]"
 msgstr " [%2] نمی‌توانم %1 را ایجاد کنم   "
 
-#: advancedpage.cpp:285
+#: AdvancedPage#13
 msgctxt "AdvancedPage"
 msgid "Unable to remove Tor Service"
 msgstr "حذف سرویس ممکن نبود"
 
-#: advancedpage.cpp:296
+#: AdvancedPage#14
 msgctxt "AdvancedPage"
 msgid "Unable to install Tor Service"
 msgstr "نصب سرویس ممکن نبود"
 
-#: advancedpage.cpp:297
+#: AdvancedPage#15
 msgctxt "AdvancedPage"
 msgid "Vidalia was unable to install the Tor service."
 msgstr "ویدالیا نتوانست سرویس تُر را نصب کند"
 
-#: advancedpage.cpp:287
+#: AdvancedPage#16
 msgctxt "AdvancedPage"
 msgid "Vidalia was unable to remove the Tor service."
 ""
 "You may need to remove it manually."
 msgstr "ویدالیا نتوانست سرویس تُر را حذف کند. می‌توانی آن را خودت حذف کنی."
 
-#: advancedpage.cpp:103
+#: AdvancedPage#17
 msgctxt "AdvancedPage"
 msgid "'%1' is not a valid IP address."
 msgstr "آدرس آی پی '%1' معتبر نمیباشد."
 
-#: advancedpage.ui:157
+#: AdvancedPage#18
 msgctxt "AdvancedPage"
 msgid ":"
 msgstr ":"
 
-#: advancedpage.cpp:114
+#: AdvancedPage#19
 msgctxt "AdvancedPage"
 msgid "You selected 'Password' authentication, but did not specify a password."
 msgstr "شما احراز هویت بر اساس اسم رمز را برگزیدید, اما اسم رمز را مشخص نکردید."
 
-#: advancedpage.cpp:263
+#: AdvancedPage#20
 msgctxt "AdvancedPage"
 msgid "Select a Directory to Use for Tor Data"
 msgstr "برگزیدن یک فهرست برای داده های تُر"
 
-#: advancedpage.ui:48
+#: AdvancedPage#21
 msgctxt "AdvancedPage"
 msgid "Authentication:"
 msgstr "احراز هویت:"
 
-#: advancedpage.ui:58
+#: AdvancedPage#22
 msgctxt "AdvancedPage"
 msgid "Address:"
 msgstr "آدرس:"
 
-#: advancedpage.ui:91
+#: AdvancedPage#23
 msgctxt "AdvancedPage"
 msgid "Cookie"
 msgstr "کوکی"
 
-#: advancedpage.ui:96
+#: AdvancedPage#24
 msgctxt "AdvancedPage"
 msgid "Password"
 msgstr "اسم رمز"
 
-#: advancedpage.ui:111
+#: AdvancedPage#25
 msgctxt "AdvancedPage"
 msgid "Randomly Generate"
 msgstr "تولید کردن به گونه تصادفی"
 
-#: advancedpage.ui:86
+#: AdvancedPage#26
 msgctxt "AdvancedPage"
 msgid "None"
 msgstr "هيچكدام"
@@ -194,47 +194,47 @@ msgctxt "AdvancedPage"
 msgid "Advanced"
 msgstr "پیشرفته"
 
-#: advancedpage.ui:240
+#: AdvancedPage#28
 msgctxt "AdvancedPage"
 msgid "Start the Tor software with the specified configuration file (torrc)"
-msgstr ""
+msgstr "راه اندازی نرم افزار تُر با فایل پیکربندی مشخص شده (torrc)"
 
-#: advancedpage.ui:259
+#: AdvancedPage#29
 msgctxt "AdvancedPage"
 msgid "Select path to your configuration file"
-msgstr ""
+msgstr "مسیر فایل پیکربندی تان را انتخاب کنید"
 
 #: advancedpage.ui:275
 msgctxt "AdvancedPage"
 msgid "Data Directory"
 msgstr ""
 
-#: advancedpage.ui:296
+#: AdvancedPage#31
 msgctxt "AdvancedPage"
 msgid "Store data for the Tor software in the following directory"
-msgstr ""
+msgstr "ذخیره کردن داده ها برای نرم افزار تُر در فهرست ذیل"
 
-#: advancedpage.ui:315
+#: AdvancedPage#32
 msgctxt "AdvancedPage"
 msgid "Select the directory used to store data for the Tor software"
-msgstr ""
+msgstr "انتخاب کردن فهرست جهت ذخیره داده ها برای نرم افزار تُر"
 
-#: advancedpage.ui:219
+#: AdvancedPage#33
 msgctxt "AdvancedPage"
 msgid "Tor Configuration File"
-msgstr ""
+msgstr "فایل پیکربندی تُر"
 
-#: appearancepage.ui:31
+#: AppearancePage#1
 msgctxt "AppearancePage"
 msgid "Language"
 msgstr "زبان"
 
-#: appearancepage.ui:52
+#: AppearancePage#2
 msgctxt "AppearancePage"
 msgid "Choose the language used in Vidalia"
 msgstr "زبان ویدالیا را انتخاب کن"
 
-#: appearancepage.ui:84
+#: AppearancePage#3
 msgctxt "AppearancePage"
 msgid "Changes to language will only take effect after restarting Vidalia!"
 msgstr "تغییر زبان تنها پس از راه‌اندازی مجدد ویدالیا اعمال خواهد شد"
@@ -244,7 +244,7 @@ msgctxt "AppearancePage"
 msgid "Style"
 msgstr "سبک نمایش"
 
-#: appearancepage.ui:134
+#: AppearancePage#5
 msgctxt "AppearancePage"
 msgid "Choose Vidalia's interface style"
 msgstr "نوع واسط کاربر ویدالیا را انتخاب کن"
@@ -254,7 +254,7 @@ msgctxt "AppearancePage"
 msgid "Appearance"
 msgstr "ظاهر"
 
-#: bwgraph.ui:16
+#: BandwidthGraph#1
 msgctxt "BandwidthGraph"
 msgid "Tor Bandwidth Usage"
 msgstr "مصرف پهنای‌باند"
@@ -264,27 +264,27 @@ msgctxt "BandwidthGraph"
 msgid "Show Settings"
 msgstr "نمایش تنظیمات"
 
-#: bwgraph.ui:63
+#: BandwidthGraph#3
 msgctxt "BandwidthGraph"
 msgid "Reset"
 msgstr "بازتنظیم"
 
-#: bwgraph.ui:151
+#: BandwidthGraph#4
 msgctxt "BandwidthGraph"
 msgid "Receive Rate"
 msgstr "میزان دریافت"
 
-#: bwgraph.ui:170
+#: BandwidthGraph#5
 msgctxt "BandwidthGraph"
 msgid "Send Rate"
 msgstr "میزان ارسال"
 
-#: bwgraph.ui:284
+#: BandwidthGraph#6
 msgctxt "BandwidthGraph"
 msgid "Changes the transparency of the Bandwidth Graph"
 msgstr "شفافیت نمودار پهنای‌باند را تغییر می‌دهد"
 
-#: bwgraph.ui:443
+#: BandwidthGraph#7
 msgctxt "BandwidthGraph"
 msgid "Save"
 msgstr "دخیره"
@@ -294,32 +294,32 @@ msgctxt "BandwidthGraph"
 msgid "Cancel"
 msgstr "لغو"
 
-#: bwgraph.cpp:160
+#: BandwidthGraph#9
 msgctxt "BandwidthGraph"
 msgid "Since:"
 msgstr "از زمان:"
 
-#: bwgraph.ui:368
+#: BandwidthGraph#10
 msgctxt "BandwidthGraph"
 msgid "100"
 msgstr "۱۰۰"
 
-#: bwgraph.ui:383
+#: BandwidthGraph#11
 msgctxt "BandwidthGraph"
 msgid "% Opaque"
 msgstr "مات % "
 
-#: bwgraph.cpp:226
+#: BandwidthGraph#12
 msgctxt "BandwidthGraph"
 msgid "Hide Settings"
 msgstr "تنظیمات را مخفی کن"
 
-#: bwgraph.ui:183
+#: BandwidthGraph#13
 msgctxt "BandwidthGraph"
 msgid "Always on Top"
 msgstr "همیشه بر رو"
 
-#: bwgraph.ui:234
+#: BandwidthGraph#14
 msgctxt "BandwidthGraph"
 msgid "Style"
 msgstr "نوع نمودار"
@@ -334,7 +334,7 @@ msgctxt "Circuit"
 msgid "Open"
 msgstr "باز کن"
 
-#: circuit.cpp:91
+#: Circuit#3
 msgctxt "Circuit"
 msgid "Building"
 msgstr "درحال ساختن"
@@ -354,12 +354,12 @@ msgctxt "Circuit"
 msgid "Unknown"
 msgstr "ناشناخته"
 
-#: circuititem.cpp:39
+#: CircuitItem#1
 msgctxt "CircuitItem"
 msgid "<Path Empty>"
 msgstr "<مسیر خالی>"
 
-#: circuitlistwidget.cpp:37
+#: CircuitListWidget#1
 msgctxt "CircuitListWidget"
 msgid "Connection"
 msgstr "اتصال"
@@ -369,17 +369,17 @@ msgctxt "CircuitListWidget"
 msgid "Status"
 msgstr "وضعیت"
 
-#: circuitlistwidget.cpp:72
+#: CircuitListWidget#3
 msgctxt "CircuitListWidget"
 msgid "Zoom to Circuit"
 msgstr "بزرگنمایی روی جریان"
 
-#: circuitlistwidget.cpp:74
+#: CircuitListWidget#4
 msgctxt "CircuitListWidget"
 msgid "Close Circuit (Del)"
 msgstr "بستن مدار (Del)"
 
-#: circuitlistwidget.cpp:95
+#: CircuitListWidget#5
 msgctxt "CircuitListWidget"
 msgid "Close Stream (Del)"
 msgstr "بستن جریان (Del)"
@@ -389,7 +389,7 @@ msgctxt "ConfigDialog"
 msgid "General"
 msgstr "کلی"
 
-#: configdialog.cpp:92
+#: ConfigDialog#2
 msgctxt "ConfigDialog"
 msgid "Advanced"
 msgstr "پیشرفته"
@@ -399,7 +399,7 @@ msgctxt "ConfigDialog"
 msgid "Cancel"
 msgstr "لغو"
 
-#: configdialog.cpp:88
+#: ConfigDialog#4
 msgctxt "ConfigDialog"
 msgid "Appearance"
 msgstr "ظاهر"
@@ -419,22 +419,22 @@ msgctxt "ConfigDialog"
 msgid "Network"
 msgstr "شبکه"
 
-#: configdialog.cpp:174
+#: ConfigDialog#8
 msgctxt "ConfigDialog"
 msgid "Error Saving Settings"
 msgstr "خطا در هنگام ذخیره تنظیمات"
 
-#: configdialog.cpp:176
+#: ConfigDialog#9
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to save your %1 settings."
 msgstr "ویدالیا نتوانست تنظیمات %1 را ذخیره کند."
 
-#: configdialog.cpp:203
+#: ConfigDialog#10
 msgctxt "ConfigDialog"
 msgid "Error Applying Settings"
 msgstr "خطا در هنگام بکار بردن تنظیمات"
 
-#: configdialog.cpp:205
+#: ConfigDialog#11
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to apply your %1 settings to Tor."
 msgstr "ویدالیا نتوانست تنظیمات %1 را به تُر اعمال کند."
@@ -444,7 +444,7 @@ msgctxt "ConfigDialog"
 msgid "OK"
 msgstr "بسیارخوب"
 
-#: configdialog.cpp:80
+#: ConfigDialog#13
 msgctxt "ConfigDialog"
 msgid "Sharing"
 msgstr "اشتراک"
@@ -459,27 +459,27 @@ msgctxt "ControlConnection"
 msgid "Control socket is not connected."
 msgstr "سوکت کنترل وصل نشده"
 
-#: controlconnection.cpp:131
+#: ControlConnection#2
 msgctxt "ControlConnection"
 msgid "Vidalia was unable to connect to Tor. (%1)"
 msgstr "ویدالیا نتوانست به تُر وصل شود. (%1)"
 
-#: controlsocket.cpp:61
+#: ControlSocket#1
 msgctxt "ControlSocket"
 msgid "Error sending control command. [%1]"
 msgstr "خطا در ارسال دستورات کنترل"
 
-#: controlsocket.cpp:98
+#: ControlSocket#2
 msgctxt "ControlSocket"
 msgid "Socket disconnected while attempting to read a line of data."
 msgstr "در حین تلاش برای خواندن یک خط از داده‌ها سوکت قطع شد"
 
-#: controlsocket.cpp:136
+#: ControlSocket#3
 msgctxt "ControlSocket"
 msgid "Invalid control reply. [%1]"
 msgstr "پاسخ کنترلی نامربوط [%1]"
 
-#: controlsocket.cpp:51
+#: ControlSocket#4
 msgctxt "ControlSocket"
 msgid "Control socket is not connected."
 msgstr "سوکت کنترل وصل نشده"
@@ -489,87 +489,87 @@ msgctxt "GeneralPage"
 msgid "Browse"
 msgstr "انتخاب فایل"
 
-#: generalpage.cpp:72
+#: GeneralPage#2
 msgctxt "GeneralPage"
 msgid "Select Path to Tor"
 msgstr "مسیر تُر را انتخاب کن"
 
-#: generalpage.cpp:59
+#: GeneralPage#3
 msgctxt "GeneralPage"
 msgid "Executables (*.exe)"
 msgstr "فایل اجرایی (.exe) "
 
-#: generalpage.cpp:23
+#: GeneralPage#4
 msgctxt "GeneralPage"
 msgid "General"
 msgstr "کلی"
 
-#: generalpage.cpp:95
+#: GeneralPage#5
 msgctxt "GeneralPage"
 msgid "You must specify the name of your Tor executable."
 msgstr "شما میبایست نام فایل اجرایی تُر را مشخص کنید."
 
-#: generalpage.cpp:82
+#: GeneralPage#6
 msgctxt "GeneralPage"
 msgid "Select Proxy Executable"
-msgstr ""
+msgstr "انتخاب فایل اجرایی پیشکار"
 
-#: generalpage.cpp:103
+#: GeneralPage#7
 msgctxt "GeneralPage"
 msgid "The proxy arguments specified are not properly formatted."
-msgstr ""
+msgstr "نشاوند های پیشکار مشخص شده بخوبی فرمت و قالب بندی نشده اند."
 
-#: generalpage.ui:22
+#: GeneralPage#8
 msgctxt "GeneralPage"
 msgid "Start Vidalia when my system starts"
-msgstr ""
+msgstr "آغاز ویدالیا هنگام راه اندازی سیستم"
 
-#: generalpage.ui:75
+#: GeneralPage#9
 msgctxt "GeneralPage"
 msgid "Start a proxy application when Vidalia starts"
-msgstr ""
+msgstr "آغاز یک برنامه پیشکار هنگام راه اندازی ویدالیا"
 
-#: generalpage.ui:97
+#: GeneralPage#10
 msgctxt "GeneralPage"
 msgid "Proxy Executable"
-msgstr ""
+msgstr "فایل اجرایی پیشکار"
 
-#: generalpage.ui:129
+#: GeneralPage#11
 msgctxt "GeneralPage"
 msgid "Command Line Arguments:"
-msgstr ""
+msgstr "نشانوند های خط فرمان:"
 
-#: generalpage.ui:63
+#: GeneralPage#12
 msgctxt "GeneralPage"
 msgid "Start the Tor software when Vidalia starts"
-msgstr ""
+msgstr "آغاز نرم افزار تُر هنگام راه اندازی ویدالیا"
 
-#: generalpage.ui:38
+#: GeneralPage#13
 msgctxt "GeneralPage"
 msgid "Tor Executable"
-msgstr ""
+msgstr "فایل اجرایی تُر"
 
-#: graphframe.cpp:237
+#: GraphFrame#1
 msgctxt "GraphFrame"
 msgid "Recv: "
 msgstr "دریافت شده: "
 
-#: graphframe.cpp:246
+#: GraphFrame#2
 msgctxt "GraphFrame"
 msgid "Sent: "
 msgstr "ارسال شده: "
 
-#: graphframe.cpp:258
+#: GraphFrame#3
 msgctxt "GraphFrame"
 msgid "%1 KB"
 msgstr "%1 کیلو بایت"
 
-#: graphframe.cpp:261
+#: GraphFrame#4
 msgctxt "GraphFrame"
 msgid "%1 MB"
 msgstr "%1 مگا‌بایت"
 
-#: graphframe.cpp:264
+#: GraphFrame#5
 msgctxt "GraphFrame"
 msgid "%1 GB"
 msgstr "%1 گیگا‌بایت"
@@ -584,82 +584,82 @@ msgctxt "HelpBrowser"
 msgid "Vidalia Help"
 msgstr "راهنمای ویدالیا"
 
-#: helpbrowser.ui:174
+#: HelpBrowser#2
 msgctxt "HelpBrowser"
 msgid "Find Previous"
 msgstr "فبلی را بیاب"
 
-#: helpbrowser.ui:187
+#: HelpBrowser#3
 msgctxt "HelpBrowser"
 msgid "Find Next"
 msgstr "بعدی را بیاب"
 
-#: helpbrowser.ui:221
+#: HelpBrowser#4
 msgctxt "HelpBrowser"
 msgid "Case sensitive"
 msgstr "حساسیت به بزرگی و کوچکی حروف"
 
-#: helpbrowser.ui:260
+#: HelpBrowser#5
 msgctxt "HelpBrowser"
 msgid "Contents"
 msgstr "فهرست مطالب"
 
-#: helpbrowser.ui:305
+#: HelpBrowser#6
 msgctxt "HelpBrowser"
 msgid "Help Topics"
 msgstr "سرفصل‌های راهنما"
 
-#: helpbrowser.ui:350
+#: HelpBrowser#7
 msgctxt "HelpBrowser"
 msgid "Search"
 msgstr "جستجو"
 
-#: helpbrowser.ui:405
+#: HelpBrowser#8
 msgctxt "HelpBrowser"
 msgid "Found Documents"
 msgstr "اسناد پیدا شده"
 
-#: helpbrowser.ui:484
+#: HelpBrowser#9
 msgctxt "HelpBrowser"
 msgid "Back"
 msgstr "قبلی"
 
-#: helpbrowser.ui:487
+#: HelpBrowser#10
 msgctxt "HelpBrowser"
 msgid "Move to previous page (Backspace)"
 msgstr "حرکت به صفحه‌ قبلی (بک‌سپیس) "
 
-#: helpbrowser.ui:490
+#: HelpBrowser#11
 msgctxt "HelpBrowser"
 msgid "Backspace"
 msgstr "بک‌سپیس"
 
-#: helpbrowser.ui:498
+#: HelpBrowser#12
 msgctxt "HelpBrowser"
 msgid "Forward"
 msgstr "جلو"
 
-#: helpbrowser.ui:501
+#: HelpBrowser#13
 msgctxt "HelpBrowser"
 msgid "Move to next page (Shift+Backspace)"
 msgstr "حرکت به صفحه‌ی بعدی (شیفت+بک‌سپیس) "
 
-#: helpbrowser.ui:504
+#: HelpBrowser#14
 msgctxt "HelpBrowser"
 msgid "Shift+Backspace"
 msgstr "شیفت+بک‌سپیس"
 
-#: helpbrowser.ui:512
+#: HelpBrowser#15
 msgctxt "HelpBrowser"
 msgid "Home"
 msgstr "خانه"
 
-#: helpbrowser.ui:515
+#: HelpBrowser#16
 msgctxt "HelpBrowser"
 msgid "Move to the Home page (Ctrl+H)"
 msgstr "به خانه برو (کنترل+H) "
 
-#: helpbrowser.ui:518
+#: HelpBrowser#17
 msgctxt "HelpBrowser"
 msgid "Ctrl+H"
 msgstr "کنترل + H"
@@ -669,7 +669,7 @@ msgctxt "HelpBrowser"
 msgid "Find"
 msgstr "بیاب"
 
-#: helpbrowser.ui:538
+#: HelpBrowser#19
 msgctxt "HelpBrowser"
 msgid "Search for a word or phrase on current page (Ctrl+F)"
 msgstr "جستجو برای کلمه یا عبارتی در صفحه‌ی فعلی (کنترل + F) "
@@ -684,7 +684,7 @@ msgctxt "HelpBrowser"
 msgid "Close"
 msgstr "ببند"
 
-#: helpbrowser.ui:552
+#: HelpBrowser#22
 msgctxt "HelpBrowser"
 msgid "Close Vidalia Help"
 msgstr "راهنمای ویدالیا را ببند"
@@ -694,22 +694,22 @@ msgctxt "HelpBrowser"
 msgid "Esc"
 msgstr "انصراف"
 
-#: helpbrowser.cpp:122
+#: HelpBrowser#24
 msgctxt "HelpBrowser"
 msgid "Error Loading Help Contents: "
 msgstr "خطا در بارگذاری محتویات راهنما:"
 
-#: helpbrowser.cpp:377
+#: HelpBrowser#25
 msgctxt "HelpBrowser"
 msgid "Search reached end of document"
 msgstr "جستجو به انتهای مطالب رسید"
 
-#: helpbrowser.cpp:379
+#: HelpBrowser#26
 msgctxt "HelpBrowser"
 msgid "Search reached start of document"
 msgstr "حستجو به ابتدای مطالب رسید"
 
-#: helpbrowser.cpp:381
+#: HelpBrowser#27
 msgctxt "HelpBrowser"
 msgid "Text not found in document"
 msgstr "متن مورد نظر پیدا نشد"
@@ -719,55 +719,60 @@ msgctxt "HelpBrowser"
 msgid "Find:"
 msgstr "پیدا کن"
 
-#: helpbrowser.ui:231
+#: HelpBrowser#29
 msgctxt "HelpBrowser"
 msgid "Whole words only"
 msgstr "حستجو برای کلمات کامل"
 
-#: helpbrowser.ui:362
+#: HelpBrowser#30
 msgctxt "HelpBrowser"
 msgid "Searching for:"
 msgstr "در حال جستجو برای: "
 
-#: helpbrowser.cpp:134
+#: HelpBrowser#31
 msgctxt "HelpBrowser"
 msgid "Supplied XML file is not a valid Contents document."
 msgstr "فایل اکس‌ام‌ال داده شده یک سند قابل پردازش نیست."
 
-#: helpbrowser.cpp:426
+#: HelpBrowser#32
 msgctxt "HelpBrowser"
 msgid "Found %1 results"
 msgstr "%1 نتیجه پیدا شد"
 
-#: helptextbrowser.cpp:54
+#: HelpTextBrowser#1
 msgctxt "HelpTextBrowser"
 msgid "Error opening help file: "
 msgstr "باز کردن فایل راهنما با خطا مواجه شد"
 
-#: helptextbrowser.cpp:72
+#: HelpTextBrowser#2
 msgctxt "HelpTextBrowser"
 msgid "Opening External Link"
-msgstr ""
+msgstr "بازکردن پیوند بیرونی"
 
-#: helptextbrowser.cpp:76
+#: HelpTextBrowser#3
 msgctxt "HelpTextBrowser"
 msgid "Vidalia can open the link you selected in your default Web browser. If your browser is not currently configured to use Tor then the request will not be anonymous."
 msgstr ""
+"ویدالیا می تواند پیوندی را که انتخاب کردید در مرور گر یش‌گزیده تان بازکند. "
+"اگر مرورگرتان برای استفاده از تُر پیکربندی نشده درخواستتان بی نام نخواهد "
+"بود."
 
-#: helptextbrowser.cpp:78
+#: HelpTextBrowser#4
 msgctxt "HelpTextBrowser"
 msgid "Do you want Vidalia to open the link in your Web browser?"
-msgstr ""
+msgstr "آیا می خواهید ویدالیا پیوند در مرورگر وب تان را باز کند؟"
 
-#: helptextbrowser.cpp:88
+#: HelpTextBrowser#5
 msgctxt "HelpTextBrowser"
 msgid "Unable to Open Link"
-msgstr ""
+msgstr "ناتوان در بازکردن پیوند"
 
-#: helptextbrowser.cpp:90
+#: HelpTextBrowser#6
 msgctxt "HelpTextBrowser"
 msgid "Vidalia was unable to open the selected link in your Web browser. You can still copy the URL and paste it into your browser."
 msgstr ""
+"ویدالیا نتوانست پیوند انتخاب شده در مرورگر وب تان را بازکند. شما می توانید "
+"نشانی وب را کپی کرده و آن را در مرورگرتان بچسبانید."
 
 #: logevent.cpp:57
 msgctxt "LogEvent"
@@ -799,17 +804,17 @@ msgctxt "LogEvent"
 msgid "Unknown"
 msgstr "نامعلوم"
 
-#: mainwindow.ui:430
+#: MainWindow#1
 msgctxt "MainWindow"
 msgid "About"
 msgstr "درباره‌ی"
 
-#: mainwindow.ui:443
+#: MainWindow#2
 msgctxt "MainWindow"
 msgid "Exit"
 msgstr "خروج"
 
-#: mainwindow.ui:304
+#: MainWindow#3
 msgctxt "MainWindow"
 msgid "Bandwidth Graph"
 msgstr "نمودار پهنای‌باند"
@@ -829,57 +834,57 @@ msgctxt "MainWindow"
 msgid "Ctrl+T"
 msgstr "کنترل + T"
 
-#: mainwindow.cpp:395
+#: MainWindow#7
 msgctxt "MainWindow"
 msgid "Ctrl+B"
 msgstr "کنترل + B"
 
-#: mainwindow.cpp:396
+#: MainWindow#8
 msgctxt "MainWindow"
 msgid "Ctrl+L"
 msgstr "کنترل + L"
 
-#: mainwindow.cpp:398
+#: MainWindow#9
 msgctxt "MainWindow"
 msgid "Ctrl+?"
 msgstr "کنترل + ?"
 
-#: mainwindow.cpp:411
+#: MainWindow#10
 msgctxt "MainWindow"
 msgid "File"
 msgstr "فایل"
 
-#: mainwindow.cpp:414
+#: MainWindow#11
 msgctxt "MainWindow"
 msgid "Tor"
 msgstr "تُر"
 
-#: mainwindow.cpp:419
+#: MainWindow#12
 msgctxt "MainWindow"
 msgid "View"
 msgstr "نمایش"
 
-#: mainwindow.cpp:428
+#: MainWindow#13
 msgctxt "MainWindow"
 msgid "Vidalia Help"
 msgstr "راهنمای ویدالیا"
 
-#: mainwindow.cpp:831
+#: MainWindow#14
 msgctxt "MainWindow"
 msgid "Error Starting Tor"
 msgstr "خطا در راه‌اندازی تُر"
 
-#: mainwindow.cpp:397
+#: MainWindow#15
 msgctxt "MainWindow"
 msgid "Ctrl+N"
 msgstr "کنترل + N"
 
-#: mainwindow.cpp:834
+#: MainWindow#16
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified."
 msgstr "ویدالیا نتوانست تُر را راه‌اندازی کند. تنظیمات خود را دوباره بررسی کنید تا مطمئن شوید مسیر فایل اجرایی تر را درست مشخص کرده‌اید."
 
-#: mainwindow.cpp:320
+#: MainWindow#17
 msgctxt "MainWindow"
 msgid "Network Map"
 msgstr "نقشه‌ی شبکه"
@@ -889,458 +894,469 @@ msgctxt "MainWindow"
 msgid "Settings"
 msgstr "تنظیمات"
 
-#: mainwindow.cpp:1331
+#: MainWindow#19
 msgctxt "MainWindow"
 msgid "New Identity"
 msgstr "هویت جدید"
 
-#: mainwindow.cpp:399
+#: MainWindow#20
 msgctxt "MainWindow"
 msgid "Ctrl+I"
 msgstr "کنترل + I"
 
-#: mainwindow.cpp:1334
+#: MainWindow#21
 msgctxt "MainWindow"
 msgid "All subsequent connections will appear to be different than your old connections."
 msgstr "تمام اتصالات بعدی به صورت متفاوت از اتصالات قبلی نمایش داده خواهند شد."
 
-#: mainwindow.cpp:1349
+#: MainWindow#22
 msgctxt "MainWindow"
 msgid "Failed to Create New Identity"
 msgstr "ایجاد هویت جدید به شکست انجامید"
 
-#: mainwindow.ui:168
+#: MainWindow#23
 msgctxt "MainWindow"
 msgid "Tor is not running"
 msgstr "تُر درحال اجرا نمی باشد"
 
-#: mainwindow.cpp:643
+#: MainWindow#24
 msgctxt "MainWindow"
 msgid "Tor is shutting down"
 msgstr "تُر درحال بسته شدن میباشد"
 
-#: mainwindow.ui:19
+#: MainWindow#25
 msgctxt "MainWindow"
 msgid "Vidalia Control Panel"
 msgstr "تابلوی کنترل ویدالیا"
 
-#: mainwindow.ui:218
+#: MainWindow#26
 msgctxt "MainWindow"
 msgid "Vidalia Shortcuts"
 msgstr "میان برهای ویدالیا"
 
-#: mainwindow.ui:243
+#: MainWindow#27
 msgctxt "MainWindow"
 msgid "Setup Relaying"
 msgstr "برپای بازپخش"
 
-#: mainwindow.ui:256
+#: MainWindow#28
 msgctxt "MainWindow"
 msgid "View the Network"
 msgstr "مشاهده شبکه"
 
-#: mainwindow.ui:259
+#: MainWindow#29
 msgctxt "MainWindow"
 msgid "View a map of the Tor network"
 msgstr "مشاهده نقشه شبکه تُر"
 
-#: mainwindow.ui:272
+#: MainWindow#30
 msgctxt "MainWindow"
 msgid "Use a New Identity"
 msgstr "بکاربردن یک هویت جدید"
 
-#: mainwindow.ui:275
+#: MainWindow#31
 msgctxt "MainWindow"
 msgid "Make subsequent connections appear new"
 msgstr "نمایان کردن اتصال های پسین همچون اتصال های جدید"
 
-#: mainwindow.ui:370
+#: MainWindow#32
 msgctxt "MainWindow"
 msgid "View help documentation"
 msgstr "مشاهده اسناد راهنما"
 
-#: mainwindow.ui:433
+#: MainWindow#33
 msgctxt "MainWindow"
 msgid "View version and license information"
 msgstr "مشاهده اطلاعات مجوز و نسخه"
 
-#: mainwindow.ui:446
+#: MainWindow#34
 msgctxt "MainWindow"
 msgid "Exit Vidalia"
 msgstr "برون رفتن از ویدالیا"
 
-#: mainwindow.ui:498
+#: MainWindow#35
 msgctxt "MainWindow"
 msgid "Show this window on startup"
 msgstr "نمایش این پنجره در هنگام شروع"
 
-#: mainwindow.ui:517
+#: MainWindow#36
 msgctxt "MainWindow"
 msgid "Hide"
 msgstr "پنهان کردن"
 
-#: mainwindow.ui:520
+#: MainWindow#37
 msgctxt "MainWindow"
 msgid "Hide this window"
 msgstr "پنهان کردن این پنجره"
 
-#: mainwindow.cpp:327
+#: MainWindow#38
 msgctxt "MainWindow"
 msgid "Control Panel"
 msgstr "تابلوی کنترل"
 
-#: mainwindow.cpp:400
+#: MainWindow#39
 msgctxt "MainWindow"
 msgid "Ctrl+P"
 msgstr "Ctrl+P"
 
-#: mainwindow.cpp:1047
+#: MainWindow#40
 msgctxt "MainWindow"
 msgid "Cookie Authentication Required"
 msgstr "نیاز به کوکی احراز هویت"
 
-#: mainwindow.cpp:1052
+#: MainWindow#41
 msgctxt "MainWindow"
 msgid "Would you like to browse for the file 'control_auth_cookie' yourself?"
 msgstr "آیا می خواهید خودتان انتخاب فایل 'control_auth_cookie' را انجام دهید؟"
 
-#: mainwindow.cpp:1109
+#: MainWindow#42
 msgctxt "MainWindow"
 msgid "Error Registering for Events"
 msgstr "خطا در هنگام ثبت رویدادها"
 
-#: mainwindow.cpp:1145
+#: MainWindow#43
 msgctxt "MainWindow"
 msgid "Password Authentication Required"
 msgstr "نیاز به احرازهویت بوسیله اسم رمز"
 
-#: mainwindow.cpp:1164
+#: MainWindow#44
 msgctxt "MainWindow"
 msgid "Please check your control port authentication settings."
 msgstr "خواهشمند است پارامترهای احرازهویت درگاه کنترل خود را چک کنید."
 
-#: mainwindow.cpp:1146
+#: MainWindow#45
 msgctxt "MainWindow"
 msgid "Please enter your control password (not the hash):"
 msgstr "خواهشمند است اسم رمز کنترل خود را وارد نمایید (و نه درهم) :"
 
-#: mainwindow.cpp:910
+#: MainWindow#46
 msgctxt "MainWindow"
 msgid "Relaying is Enabled"
 msgstr "بازپخش فعال میباشد"
 
-#: mainwindow.cpp:482
+#: MainWindow#47
 msgctxt "MainWindow"
 msgid "Error starting web browser"
 msgstr "خطا در هنگام راه اندازی مرورگر وب"
 
-#: mainwindow.cpp:483
+#: MainWindow#48
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured web browser"
 msgstr "ویدالیا قادر به راه اندازی مرورگر وب پیکربتدی شده نبود"
 
-#: mainwindow.cpp:1268
+#: MainWindow#49
 msgctxt "MainWindow"
 msgid "Tor Update Available"
 msgstr "به روز رسانی تُر موجود می باشد"
 
-#: mainwindow.cpp:1271
+#: MainWindow#50
 msgctxt "MainWindow"
 msgid "The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version."
 msgstr "نسخه نصب شده تُر قدیمی است و دیگر توصیه نمیشود. خواهشمند است به سایت تُر رفته و نهایی ترین نسخه آن را بارگذاری کنید."
 
-#: mainwindow.cpp:1271
+#: MainWindow#51
 msgctxt "MainWindow"
 msgid "Tor website: %1"
 msgstr "وب سایت تُر: %1"
 
-#: mainwindow.cpp:517
+#: MainWindow#52
 msgctxt "MainWindow"
 msgid "Error starting proxy server"
 msgstr "خطا در هنگام راه اندازی پیشکار"
 ""
 
-#: mainwindow.cpp:518
+#: MainWindow#53
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured proxy server"
 msgstr "ویدالیا قادر به راه اندازی پیشکار پیکربندی شده نبود"
 
-#: mainwindow.cpp:641
+#: MainWindow#54
 msgctxt "MainWindow"
 msgid "Your relay is shutting down."
 "Click 'Stop' again to stop your relay now."
 msgstr ""
+"بازپخش شما در حال بسته شدن می باشد. بروی 'ایست' جهت متوقف کردن بازپخش کلیک "
+"کنید."
 
-#: mainwindow.cpp:878
+#: MainWindow#55
 msgctxt "MainWindow"
 msgid "Connection Error"
-msgstr ""
+msgstr "خطای اتصال"
 
-#: mainwindow.cpp:915
+#: MainWindow#56
 msgctxt "MainWindow"
 msgid "You are currently running a relay. Terminating your relay will interrupt any open connections from clients."
 ""
 "Would you like to shutdown gracefully and give clients time to find a new relay?"
 msgstr ""
+"شما هم اکنون در حال اجرای یک بازپخش هستید. متوقف کردن بازپخش شما موجب وقفه "
+"در اتصال های کاربران دیگر می شود. آیا مایل به متوقف کردن به گونه ای که به "
+"دیگر کاربران زمان پیداکردن یک بازپخش جدید را بدهید می باشید؟"
 
-#: mainwindow.cpp:937
+#: MainWindow#57
 msgctxt "MainWindow"
 msgid "Error Shutting Down"
-msgstr ""
+msgstr "خطا بسته شدن"
 
-#: mainwindow.cpp:938
+#: MainWindow#58
 msgctxt "MainWindow"
 msgid "Vidalia was unable to stop the Tor software."
-msgstr ""
+msgstr "ویدالیا نتوانست نرم افزار تُر را متوقف کند."
 
-#: mainwindow.cpp:969
+#: MainWindow#59
 msgctxt "MainWindow"
 msgid "Unexpected Error"
-msgstr ""
+msgstr "خطای غیرمنتظره"
 
-#: mainwindow.cpp:973
+#: MainWindow#60
 msgctxt "MainWindow"
 msgid "Vidalia detected that the Tor software exited unexpectedly."
 ""
 "Please check the message log for recent warning or error messages."
 msgstr ""
+"ویدالیا متوجه شد که برنامه تُر بطور غیرمنتظره خارج شد. خواهشمند است گزارش "
+"پیام ها را برای آخرین پیام های خطا و هشدار چک کنید."
 
-#: mainwindow.cpp:1050
+#: MainWindow#61
 msgctxt "MainWindow"
 msgid "The Tor software requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one."
 msgstr ""
+"نرم افزار تُر نیاز به ارسال محتویات یک کوکی احراز هویت بوسیله ویدالیا دارد "
+"اما ویدالیا نتوانست آن را پیدا کند."
 
-#: mainwindow.cpp:1059
+#: MainWindow#62
 msgctxt "MainWindow"
 msgid "Data Directory"
-msgstr ""
+msgstr "فهرست داده ها"
 
-#: mainwindow.cpp:1061
+#: MainWindow#63
 msgctxt "MainWindow"
 msgid "Control Cookie (control_auth_cookie)"
-msgstr ""
+msgstr "کوکی کنترل (control_auth_cookie)"
 
-#: mainwindow.cpp:1111
+#: MainWindow#64
 msgctxt "MainWindow"
 msgid "Vidalia was unable to register for some events. Many of Vidalia's features may be unavailable."
 msgstr ""
+"ویدالیا نتوانست خود را برای برخی از رویدادها ثبت کند. بسیاری از خصوصیات "
+"ویدالیا ممکن است که فعال نباشند."
 
-#: mainwindow.cpp:1160
+#: MainWindow#65
 msgctxt "MainWindow"
 msgid "Authentication Error"
-msgstr ""
+msgstr "خطای احرازهویت"
 
-#: mainwindow.cpp:1162
+#: MainWindow#66
 msgctxt "MainWindow"
 msgid "Vidalia was unable to authenticate to the Tor software. (%1)"
-msgstr ""
+msgstr "ویدالیا قادر به احرازهویت درنرم افزار تُر نشد. (%1)"
 
-#: mainwindow.cpp:1398
+#: MainWindow#67
 msgctxt "MainWindow"
 msgid "Port Forwarding Failed"
-msgstr ""
+msgstr "ارسال درگاه شکست خورد"
 
-#: mainwindow.cpp:1399
+#: MainWindow#68
 msgctxt "MainWindow"
 msgid "Vidalia was unable to configure automatic port forwarding."
-msgstr ""
+msgstr "ویدالیا نتوانست ارسال درگاه خودکار را پیکربندی کند."
 
-#: mainwindow.ui:49
+#: MainWindow#69
 msgctxt "MainWindow"
 msgid "Status"
 msgstr "وضعیت"
 
-#: mainwindow.ui:246
+#: MainWindow#70
 msgctxt "MainWindow"
 msgid "Set up a relay and help the network grow"
-msgstr ""
+msgstr "برپا کردن یک بازپخش به منظور کمک و همکاری کردن در رشد شبکه"
 
-#: mainwindow.ui:307
+#: MainWindow#71
 msgctxt "MainWindow"
 msgid "View recent bandwidth usage"
-msgstr ""
+msgstr "مشاهده مصرف پهنای‌باند"
 
-#: mainwindow.ui:320
+#: MainWindow#72
 msgctxt "MainWindow"
 msgid "View log message history"
-msgstr ""
+msgstr "مشاهده تاریخچه پیام های ثبت"
 
-#: mainwindow.ui:383
+#: MainWindow#73
 msgctxt "MainWindow"
 msgid "Configure Vidalia"
-msgstr ""
+msgstr "پیکربندی ویدالیا"
 
-#: mainwindow.ui:233
+#: MainWindow#74
 msgctxt "MainWindow"
 msgid "Start Tor"
-msgstr ""
+msgstr "راه اندازی تُر"
 
-#: mainwindow.cpp:495
+#: MainWindow#75
 msgctxt "MainWindow"
 msgid "Error starting IM client"
-msgstr ""
+msgstr "خطای راه اندازی کاربر IM"
 
-#: mainwindow.cpp:496
+#: MainWindow#76
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured IM client"
-msgstr ""
+msgstr "ویدالیا نتوانست کاربر IM پیکربندی شده را راه اندازی کند"
 
-#: mainwindow.cpp:534
+#: MainWindow#77
 msgctxt "MainWindow"
 msgid "Connecting to a relay directory"
-msgstr ""
+msgstr "اتصال به یک فهرست بازپخش"
 
-#: mainwindow.cpp:538
+#: MainWindow#78
 msgctxt "MainWindow"
 msgid "Establishing an encrypted directory connection"
-msgstr ""
+msgstr "برپایی یک اتصال فهرست رمزبندی شده"
 
-#: mainwindow.cpp:541
+#: MainWindow#79
 msgctxt "MainWindow"
 msgid "Retrieving network status"
-msgstr ""
+msgstr "دریافت وضعیت شبکه"
 
-#: mainwindow.cpp:544
+#: MainWindow#80
 msgctxt "MainWindow"
 msgid "Loading network status"
-msgstr ""
+msgstr "بارگذاری وضعیت شبکه"
 
-#: mainwindow.cpp:547
+#: MainWindow#81
 msgctxt "MainWindow"
 msgid "Loading authority certificates"
-msgstr ""
+msgstr "بارگذاری مجوزها"
 
-#: mainwindow.cpp:550
+#: MainWindow#82
 msgctxt "MainWindow"
 msgid "Requesting relay information"
-msgstr ""
+msgstr "درخواست اطلاعات بازپخش"
 
-#: mainwindow.cpp:553
+#: MainWindow#83
 msgctxt "MainWindow"
 msgid "Loading relay information"
-msgstr ""
+msgstr "بارگذاری اطلاعات بازپخش"
 
-#: mainwindow.cpp:1100
+#: MainWindow#84
 msgctxt "MainWindow"
 msgid "Connecting to the Tor network"
-msgstr ""
+msgstr "اتصال به شبکه تُر"
 
-#: mainwindow.cpp:560
+#: MainWindow#85
 msgctxt "MainWindow"
 msgid "Establishing a Tor circuit"
-msgstr ""
+msgstr "برپایی یک جریان تُر"
 
-#: mainwindow.cpp:1235
+#: MainWindow#86
 msgctxt "MainWindow"
 msgid "Connected to the Tor network!"
-msgstr ""
+msgstr "وصل شده به شبکه تُر"
 
-#: mainwindow.cpp:567
+#: MainWindow#87
 msgctxt "MainWindow"
 msgid "Unrecognized startup status"
-msgstr ""
+msgstr "وضعیت آغاز نامشخص"
 
-#: mainwindow.cpp:574
+#: MainWindow#88
 msgctxt "MainWindow"
 msgid "miscellaneous"
-msgstr ""
+msgstr "گوناگون"
 
-#: mainwindow.cpp:577
+#: MainWindow#89
 msgctxt "MainWindow"
 msgid "identity mismatch"
-msgstr ""
+msgstr "خطای هویت"
 
-#: mainwindow.cpp:580
+#: MainWindow#90
 msgctxt "MainWindow"
 msgid "done"
-msgstr ""
+msgstr "انجام شده"
 
-#: mainwindow.cpp:583
+#: MainWindow#91
 msgctxt "MainWindow"
 msgid "connection refused"
-msgstr ""
+msgstr "اتصال ردشد"
 
-#: mainwindow.cpp:586
+#: MainWindow#92
 msgctxt "MainWindow"
 msgid "connection timeout"
-msgstr ""
+msgstr "اتمام وقت اتصال"
 
-#: mainwindow.cpp:589
+#: MainWindow#93
 msgctxt "MainWindow"
 msgid "read/write error"
-msgstr ""
+msgstr "خطای خواندن/نوشتن"
 
-#: mainwindow.cpp:592
+#: MainWindow#94
 msgctxt "MainWindow"
 msgid "no route to host"
-msgstr ""
+msgstr "نبود مسیر به میزبان"
 
-#: mainwindow.cpp:595
+#: MainWindow#95
 msgctxt "MainWindow"
 msgid "insufficient resources"
-msgstr ""
+msgstr "منابع ناکافی"
 
-#: mainwindow.cpp:598
+#: MainWindow#96
 msgctxt "MainWindow"
 msgid "unknown"
-msgstr ""
+msgstr "ناشناخته"
 
-#: mainwindow.cpp:600
+#: MainWindow#97
 msgctxt "MainWindow"
 msgid " failed (%1)"
-msgstr ""
+msgstr "ناموفق (%1)"
 
-#: mainwindow.cpp:648
+#: MainWindow#98
 msgctxt "MainWindow"
 msgid "Stop Tor Now"
-msgstr ""
+msgstr "متوقف کردن تُر حالا"
 
-#: mainwindow.cpp:650
+#: MainWindow#99
 msgctxt "MainWindow"
 msgid "Stop Tor"
-msgstr ""
+msgstr "متوقف کردن تُر"
 
-#: mainwindow.cpp:666
+#: MainWindow#100
 msgctxt "MainWindow"
 msgid "Starting the Tor software"
-msgstr ""
+msgstr "راه اندازی نرم افزار تُر"
 
-#: mainwindow.ui:75
+#: MainWindow#101
 msgctxt "MainWindow"
 msgid "Starting Tor"
-msgstr ""
+msgstr "راه اندازی تُر"
 
-#: mainwindow.cpp:677
+#: MainWindow#102
 msgctxt "MainWindow"
 msgid "Tor is Running"
-msgstr ""
+msgstr "تُر درحال اجرا است"
 
-#: mainwindow.cpp:868
+#: MainWindow#103
 msgctxt "MainWindow"
 msgid "Connecting to Tor"
-msgstr ""
+msgstr "اتصال به تُر"
 
-#: mainwindow.cpp:1027
+#: MainWindow#104
 msgctxt "MainWindow"
 msgid "Authenticating to Tor"
-msgstr ""
+msgstr "احرازهویت در تُر"
 
-#: messagelog.ui:19
+#: MessageLog#1
 msgctxt "MessageLog"
 msgid "Message Log"
 msgstr "گزارش پیام‌ها"
 
-#: messagelog.ui:66
+#: MessageLog#2
 msgctxt "MessageLog"
 msgid "Time"
 msgstr "زمان"
 
-#: messagelog.ui:71
+#: MessageLog#3
 msgctxt "MessageLog"
 msgid "Type"
 msgstr "نوع"
 
-#: messagelog.ui:76
+#: MessageLog#4
 msgctxt "MessageLog"
 msgid "Message"
 msgstr "پیام"
@@ -1350,17 +1366,17 @@ msgctxt "MessageLog"
 msgid "Browse"
 msgstr "انتخاب فایل"
 
-#: messagelog.ui:160
+#: MessageLog#6
 msgctxt "MessageLog"
 msgid "Saves the current Message Log settings"
 msgstr "تنظیمات فعلی گزارش پیام را ذخیره می‌کند"
 
-#: messagelog.ui:163
+#: MessageLog#7
 msgctxt "MessageLog"
 msgid "Save Settings"
 msgstr "ذخیره‌ی تنظیمات"
 
-#: messagelog.ui:179
+#: MessageLog#8
 msgctxt "MessageLog"
 msgid "Cancels changes made to settings"
 msgstr "تغییرات تنظیمات را لغو می‌کند"
@@ -1370,7 +1386,7 @@ msgctxt "MessageLog"
 msgid "Cancel"
 msgstr "لغو کن"
 
-#: messagelog.ui:196
+#: MessageLog#10
 msgctxt "MessageLog"
 msgid "Message Filter"
 msgstr "فیلتر پیام‌ها"
@@ -1380,107 +1396,107 @@ msgctxt "MessageLog"
 msgid "Error"
 msgstr "خطا"
 
-#: messagelog.ui:233
+#: MessageLog#12
 msgctxt "MessageLog"
 msgid "Warning"
 msgstr "هشدار"
 
-#: messagelog.ui:249
+#: MessageLog#13
 msgctxt "MessageLog"
 msgid "Notice"
 msgstr "توجه"
 
-#: messagelog.ui:265
+#: MessageLog#14
 msgctxt "MessageLog"
 msgid "Info"
 msgstr "اطلاع"
 
-#: messagelog.ui:281
+#: MessageLog#15
 msgctxt "MessageLog"
 msgid "Debug"
 msgstr "اشکال‌یابی"
 
-#: messagelog.ui:452
+#: MessageLog#16
 msgctxt "MessageLog"
 msgid "Message Filters..."
 msgstr "فیلترهای پیام ... "
 
-#: messagelog.ui:455
+#: MessageLog#17
 msgctxt "MessageLog"
 msgid "Set message filters"
 msgstr "تنظیم فیلترهای پیام"
 
-#: messagelog.ui:463
+#: MessageLog#18
 msgctxt "MessageLog"
 msgid "History Size..."
 msgstr "اندازه‌ی تاریخچه ..."
 
-#: messagelog.ui:466
+#: MessageLog#19
 msgctxt "MessageLog"
 msgid "Set maximum number of messages to display"
 msgstr "تعیین حداکثر تعداد پیام‌های قابل نمایش"
 
-#: messagelog.ui:477
+#: MessageLog#20
 msgctxt "MessageLog"
 msgid "Clear"
 msgstr "پاک کن"
 
-#: messagelog.ui:480
+#: MessageLog#21
 msgctxt "MessageLog"
 msgid "Clear all messages from the Message Log (Ctrl+E)"
 msgstr "تمام پیام‌های گزارش را پاک کن (کنترل + E)"
 
-#: messagelog.ui:483
+#: MessageLog#22
 msgctxt "MessageLog"
 msgid "Ctrl+E"
 msgstr "کنترل + E"
 
-#: messagelog.ui:497
+#: MessageLog#23
 msgctxt "MessageLog"
 msgid "Copy"
 msgstr "کپی کن"
 
-#: messagelog.ui:500
+#: MessageLog#24
 msgctxt "MessageLog"
 msgid "Copy the selected messages to the clipboard (Ctrl+C)"
 msgstr "پیام‌های انتخاب شده را به دفترچه یادداشت رایانه کپی کن"
 
-#: messagelog.ui:503
+#: MessageLog#25
 msgctxt "MessageLog"
 msgid "Ctrl+C"
 msgstr "کنترل + E"
 
-#: messagelog.ui:514
+#: MessageLog#26
 msgctxt "MessageLog"
 msgid "Select All"
 msgstr "همه را انتخاب کن"
 
-#: messagelog.ui:517
+#: MessageLog#27
 msgctxt "MessageLog"
 msgid "Select all messages (Ctrl+A)"
 msgstr "تمام پیام‌ها را انتخاب کن (کنترل + E)"
 
-#: messagelog.ui:520
+#: MessageLog#28
 msgctxt "MessageLog"
 msgid "Ctrl+A"
 msgstr "کنترل + A"
 
-#: messagelog.ui:528
+#: MessageLog#29
 msgctxt "MessageLog"
 msgid "Save All"
 msgstr "همه را ذخیره کن"
 
-#: messagelog.ui:531
+#: MessageLog#30
 msgctxt "MessageLog"
 msgid "Save all messages to a file"
 msgstr "تمام پیام‌ها را در یک فایل ذخیره کن"
 
-#: messagelog.ui:539
+#: MessageLog#31
 msgctxt "MessageLog"
 msgid "Save Selected"
 msgstr "انتخاب شده‌ها را ذخیره کن"
 
-#: messagelog.ui:542
+#: MessageLog#32
 msgctxt "MessageLog"
 msgid "Save selected messages to a file"
 msgstr "پیام‌های انتخاب شده را در یک فایل ذخیره کن"
@@ -1490,7 +1506,7 @@ msgctxt "MessageLog"
 msgid "Close"
 msgstr "ببند"
 
-#: messagelog.ui:584
+#: MessageLog#34
 msgctxt "MessageLog"
 msgid "Close the Message Log"
 msgstr "گزارش پیام را ببند"
@@ -1500,34 +1516,34 @@ msgctxt "MessageLog"
 msgid "Esc"
 msgstr "انصراف"
 
-#: messagelog.ui:598
+#: MessageLog#36
 msgctxt "MessageLog"
 msgid "Find"
 msgstr "پیدا کن"
 
-#: messagelog.ui:601
+#: MessageLog#37
 msgctxt "MessageLog"
 msgid "Find all messages containing the search text (Ctrl+F)"
 msgstr "تمام پیام‌های حاوی متن جستجو را پیدا کن (کنترل + F)"
 
-#: messagelog.ui:604
+#: MessageLog#38
 msgctxt "MessageLog"
 msgid "Ctrl+F"
 msgstr "کنترل + F"
 
-#: messagelog.cpp:137
+#: MessageLog#39
 msgctxt "MessageLog"
 msgid "Messages that appear when something has "
 "gone very wrong and Tor cannot proceed."
 msgstr "پیام‌هایی که وقتی اتفاق خیلی بدی رخ می‌دهد و تُر دیگر نمی‌تواند به کار ادامه دهد، نمایش داده می‌شوند"
 
-#: messagelog.cpp:139
+#: MessageLog#40
 msgctxt "MessageLog"
 msgid "Messages that only appear when "
 "something has gone wrong with Tor."
 msgstr "پیام‌هایی که تنها وقتی اتفاق بدی در مورد تُر رخ می‌دهد نمایش داده می‌شوند."
 
-#: messagelog.cpp:143
+#: MessageLog#41
 msgctxt "MessageLog"
 msgid "Messages that appear infrequently "
 "during normal Tor operation and are "
@@ -1535,74 +1551,74 @@ msgid "Messages that appear infrequently "
 "care about."
 msgstr "پیام‌هایی که گاه‌ و بی‌گاه در زمان فعالیت عدای تُر نمایش داده می‌شوند و خطا محسوب نمی‌شوند، اما ممکن است برای شما قابل توجه باشند."
 
-#: messagelog.cpp:145
+#: MessageLog#42
 msgctxt "MessageLog"
 msgid "Messages that appear frequently "
 "during normal Tor operation."
 msgstr "پیام‌هایی که در حین فعالیت عادی تُر نمایش داده می‌شوند"
 
-#: messagelog.cpp:147
+#: MessageLog#43
 msgctxt "MessageLog"
 msgid "Hyper-verbose messages primarily of "
 "interest to Tor developers."
 msgstr "پیام‌ای بسیار پرحرف که عمدتا تنها برای توسعه‌دهندگان تر حالب توجه هستند"
 
-#: messagelog.cpp:192
+#: MessageLog#44
 msgctxt "MessageLog"
 msgid "Error Setting Filter"
 msgstr "خطا در تنظیم فیلتر"
 
-#: messagelog.cpp:208
+#: MessageLog#45
 msgctxt "MessageLog"
 msgid "Error Opening Log File"
 msgstr "خطا در بازکردن فایل گزارش"
 
-#: messagelog.cpp:283
+#: MessageLog#46
 msgctxt "MessageLog"
 msgid "Select Log File"
 msgstr "فایل گزارش را انتخاب کن"
 
-#: messagelog.cpp:300
+#: MessageLog#47
 msgctxt "MessageLog"
 msgid "Save Log Messages"
 msgstr "پیام‌های گزارش را ذخیره کن"
 
-#: messagelog.cpp:312
+#: MessageLog#48
 msgctxt "MessageLog"
 msgid "Vidalia"
 msgstr "ویدالیا"
 
-#: messagelog.cpp:363
+#: MessageLog#49
 msgctxt "MessageLog"
 msgid "Find in Message Log"
 msgstr "جستجو در گزارش پیام‌ها"
 
-#: messagelog.cpp:364
+#: MessageLog#50
 msgctxt "MessageLog"
 msgid "Find:"
 msgstr "پیدا کن"
 
-#: messagelog.cpp:370
+#: MessageLog#51
 msgctxt "MessageLog"
 msgid "Not Found"
 msgstr "پیدا نشد"
 
-#: messagelog.cpp:371
+#: MessageLog#52
 msgctxt "MessageLog"
 msgid "Search found 0 matches."
 msgstr "جستجو نتیجه‌ای در‌بر نداشت"
 
-#: messagelog.ui:553
+#: MessageLog#53
 msgctxt "MessageLog"
 msgid "Settings"
 msgstr "تنظیمات"
 
-#: messagelog.ui:556
+#: MessageLog#54
 msgctxt "MessageLog"
 msgid "Adjust Message Log Settings"
 msgstr "تنظیمات گزارش پیام‌ها را تنظیم کن"
 
-#: messagelog.ui:559
+#: MessageLog#55
 msgctxt "MessageLog"
 msgid "Ctrl+T"
 msgstr "کنترل + T"
@@ -1612,17 +1628,17 @@ msgctxt "MessageLog"
 msgid "Help"
 msgstr "راهنما"
 
-#: messagelog.ui:570
+#: MessageLog#57
 msgctxt "MessageLog"
 msgid "Show the help browser"
 msgstr "مرورگر راهنما را نمایش بده"
 
-#: messagelog.cpp:193
+#: MessageLog#58
 msgctxt "MessageLog"
 msgid "Vidalia was unable to register for Tor's log events."
 msgstr "ویدالیا نتوانست برای دریافت گزارشات تُر ثبت‌نام کند"
 
-#: messagelog.cpp:313
+#: MessageLog#59
 msgctxt "MessageLog"
 msgid "Cannot write file %1"
 ""
@@ -1631,12 +1647,12 @@ msgstr "نمی‌تواند در فایل %1 بنویسد"
 ""
 "%2."
 
-#: messagelog.cpp:209
+#: MessageLog#60
 msgctxt "MessageLog"
 msgid "Vidalia was unable to open the specified log file."
 msgstr "ویدالیا نتوانست فایل مشخص شده را باز کند"
 
-#: messagelog.cpp:303
+#: MessageLog#61
 msgctxt "MessageLog"
 msgid "Text Files (*.txt)"
 msgstr "فایل‌های متنی"
@@ -1646,47 +1662,47 @@ msgctxt "MessageLog"
 msgid "F1"
 msgstr "F1"
 
-#: messagelog.cpp:230
+#: MessageLog#63
 msgctxt "MessageLog"
 msgid "Log Filename Required"
 msgstr "نام فایل گزارش الزامی است"
 
-#: messagelog.cpp:232
+#: MessageLog#64
 msgctxt "MessageLog"
 msgid "You must enter a filename to be able to save log messages to a file."
 msgstr " برای دخیره‌ی گزارش پیام‌ها باید نام یک فایل را مشخص کنید "
 
-#: messagelog.ui:297
+#: MessageLog#65
 msgctxt "MessageLog"
 msgid "Message Log History"
 msgstr "تاریخچه‌ی گزارش پیام‌ها"
 
-#: messagelog.ui:318
+#: MessageLog#66
 msgctxt "MessageLog"
 msgid "Number of messages to display in the message log window"
 msgstr "تعداد پیام‌هایی که در پنچره‌ی گزارش پیام نمایش داده می‌شوند."
 
-#: messagelog.ui:337
+#: MessageLog#67
 msgctxt "MessageLog"
 msgid "messages"
 msgstr "پیام‌ها"
 
-#: messagelog.ui:356
+#: MessageLog#68
 msgctxt "MessageLog"
 msgid "Always Save New Log Messages"
 msgstr "همیشه پیام‌های جدید را ذخیره کن"
 
-#: messagelog.ui:394
+#: MessageLog#69
 msgctxt "MessageLog"
 msgid "Enable automatically saving all new log messages to a file"
 msgstr "ذخیره‌ی خودکار تمام گزارش‌های پیام را در یک فایل قعال کن"
 
-#: messagelog.ui:397
+#: MessageLog#70
 msgctxt "MessageLog"
 msgid "Automatically save new log messages to a file"
 msgstr "به صورت خودکار کزارش پیام‌ها را در یک فایل ذخیره کن"
 
-#: netviewer.ui:236
+#: NetViewer#1
 msgctxt "NetViewer"
 msgid "Refresh"
 msgstr "بازنمایی"
@@ -1696,202 +1712,202 @@ msgctxt "NetViewer"
 msgid "Help"
 msgstr "راهنما"
 
-#: netviewer.ui:270
+#: NetViewer#3
 msgctxt "NetViewer"
 msgid "Close"
 msgstr "ببند"
 
-#: netviewer.ui:287
+#: NetViewer#4
 msgctxt "NetViewer"
 msgid "Zoom In"
 msgstr "بزرگتر کن"
 
-#: netviewer.ui:304
+#: NetViewer#5
 msgctxt "NetViewer"
 msgid "Zoom Out"
 msgstr "کوچک‌تر کن"
 
-#: netviewer.ui:321
+#: NetViewer#6
 msgctxt "NetViewer"
 msgid "Zoom To Fit"
 msgstr "به اندازه‌ی صفحه‌ی نمایش بزرگ‌کن"
 
-#: netviewer.ui:245
+#: NetViewer#7
 msgctxt "NetViewer"
 msgid "Ctrl+R"
 msgstr "کنترل + R"
 
-#: netviewer.ui:262
+#: NetViewer#8
 msgctxt "NetViewer"
 msgid "F1"
 msgstr "F1"
 
-#: netviewer.ui:279
+#: NetViewer#9
 msgctxt "NetViewer"
 msgid "Esc"
 msgstr "انصراف"
 
-#: netviewer.ui:296
+#: NetViewer#10
 msgctxt "NetViewer"
 msgid "+"
 msgstr "+"
 
-#: netviewer.ui:313
+#: NetViewer#11
 msgctxt "NetViewer"
 msgid "-"
 msgstr "-"
 
-#: netviewer.ui:330
+#: NetViewer#12
 msgctxt "NetViewer"
 msgid "Ctrl+Z"
 msgstr "کنترل + Z"
 
-#: netviewer.ui:259
+#: NetViewer#13
 msgctxt "NetViewer"
 msgid "Show network map help"
 msgstr "راهنمای نقشه‌ی شبکه را نشان بده"
 
-#: netviewer.ui:256
+#: NetViewer#14
 msgctxt "NetViewer"
 msgid "Show the network map help"
 msgstr "راهنمای نقشه‌ی شبکه را نشان بده"
 
-#: netviewer.ui:276
+#: NetViewer#15
 msgctxt "NetViewer"
 msgid "Close the network map"
 msgstr "نقشه‌ی شبکه را ببند"
 
-#: netviewer.ui:293
+#: NetViewer#16
 msgctxt "NetViewer"
 msgid "Zoom in on the network map"
 msgstr "نقشه‌ی شبکه را بزرگ کن"
 
-#: netviewer.ui:310
+#: NetViewer#17
 msgctxt "NetViewer"
 msgid "Zoom out on the network map"
 msgstr "نقشه‌ی شبکه را کوچک کن"
 
-#: netviewer.ui:327
+#: NetViewer#18
 msgctxt "NetViewer"
 msgid "Zooms to fit all currently displayed circuits"
 msgstr "بزرگنمایی کافی برای نمایش تمام مدارها نمایش‌داده‌شده فعلی"
 
-#: netviewer.ui:24
+#: NetViewer#19
 msgctxt "NetViewer"
 msgid "Tor Network Map"
 msgstr "نقشه شبکه تُر"
 
-#: netviewer.ui:242
+#: NetViewer#20
 msgctxt "NetViewer"
 msgid "Refresh the list of Tor relays and connections"
 msgstr "بازآوری لیست بازپخش ها و اتصالات تُر"
 
-#: networkpage.cpp:34
+#: NetworkPage#1
 msgctxt "NetworkPage"
 msgid "Network"
 msgstr "شبکه"
 
-#: networkpage.cpp:186
+#: NetworkPage#2
 msgctxt "NetworkPage"
 msgid "Invalid Bridge"
 msgstr "پل نامعتبر"
 
-#: networkpage.cpp:187
+#: NetworkPage#3
 msgctxt "NetworkPage"
 msgid "The specified bridge identifier is not valid."
 msgstr "شناسه پل مشخص شده معتبر نمیباشد."
 
-#: networkpage.cpp:234
+#: NetworkPage#4
 msgctxt "NetworkPage"
 msgid "Copy (Ctrl+C)"
 msgstr "کپی کردن (Ctrl+C)"
 
-#: networkpage.cpp:265
+#: NetworkPage#5
 msgctxt "NetworkPage"
 msgid "You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet."
 msgstr "شما میبایست یک آدرس آی پی یا یک نام میزبان و یک شماره درگاه برای پیکربندی تُر مشخص کنید جهت استفاده ار یک پیشکار برای دسترسی به اینترنت."
 
-#: networkpage.cpp:271
+#: NetworkPage#6
 msgctxt "NetworkPage"
 msgid "You must specify one or more ports to which your firewall allows you to connect."
 msgstr "شما میبایست یک یا چند درگاه که بارو اجازه دسترسی به آنها را میدهد مشخص کنید."
 
-#: networkpage.cpp:307
+#: NetworkPage#7
 msgctxt "NetworkPage"
 msgid "'%1' is not a valid port number."
 msgstr "شماره درگاه '%1' معتبر نمیباشد."
 
-#: networkpage.ui:28
+#: NetworkPage#8
 msgctxt "NetworkPage"
 msgid "I use a proxy to access the Internet"
 msgstr "برای دسترسی به اینترنت از یک پیشکار استفاده می کنم"
 
-#: networkpage.ui:58
+#: NetworkPage#9
 msgctxt "NetworkPage"
 msgid "Proxy Settings"
 msgstr "تنظیمات پیشکار"
 
-#: networkpage.ui:70
+#: NetworkPage#10
 msgctxt "NetworkPage"
 msgid "HTTP Proxy:"
 msgstr "پیشکار HTTP:"
 
-#: networkpage.ui:80
+#: NetworkPage#11
 msgctxt "NetworkPage"
 msgid "Username:"
 msgstr "نام کاربری:"
 
-#: networkpage.ui:90
+#: NetworkPage#12
 msgctxt "NetworkPage"
 msgid "Use this proxy for HTTPS also"
 msgstr "استفاده از این پیشکار همچنین برای HTTPS"
 
-#: networkpage.ui:108
+#: NetworkPage#13
 msgctxt "NetworkPage"
 msgid "Password:"
 msgstr "اسم رمز:"
 
-#: networkpage.ui:135
+#: NetworkPage#14
 msgctxt "NetworkPage"
 msgid "Port:"
 msgstr "درگاه:"
 
-#: networkpage.ui:179
+#: NetworkPage#15
 msgctxt "NetworkPage"
 msgid "My firewall only lets me connect to certain ports"
 msgstr "بارو به من تنها اجازه دسترسی به برخی از درگاه ها را میدهد"
 
-#: networkpage.ui:203
+#: NetworkPage#16
 msgctxt "NetworkPage"
 msgid "Firewall Settings"
 msgstr "تنظیمات بارو"
 
-#: networkpage.ui:215
+#: NetworkPage#17
 msgctxt "NetworkPage"
 msgid "Allowed Ports:"
 msgstr "درگاه های مجاز:"
 
-#: networkpage.ui:225
+#: NetworkPage#18
 msgctxt "NetworkPage"
 msgid "80, 443"
 msgstr "۱۰۰ {80, 443?}"
 
-#: networkpage.ui:238
+#: NetworkPage#19
 msgctxt "NetworkPage"
 msgid "My ISP blocks connections to the Tor network"
 msgstr "ارایه کننده خدمات دسترسی به اینترنت اتصالات به شبکه تُر را مسدود می کند"
 
-#: networkpage.ui:295
+#: NetworkPage#20
 msgctxt "NetworkPage"
 msgid "Add a Bridge:"
 msgstr "افزودن یک پل:"
 
-#: networkpage.ui:383
+#: NetworkPage#21
 msgctxt "NetworkPage"
 msgid "Remove the selected bridges from the list"
 msgstr "حذف کردن پل های منتخب از لیست"
 
-#: networkpage.ui:399
+#: NetworkPage#22
 msgctxt "NetworkPage"
 msgid "Copy the selected bridges to the clipboard"
 msgstr "کپی کردن پل های منتخب در تخته یادداشت"
@@ -1901,42 +1917,49 @@ msgctxt "NetworkPage"
 msgid "<a href=\"bridges.finding\">How do I find a bridge?</a>"
 msgstr "<a href=\"bridges.finding\">چطور می توانم یک پل را پیدا کنم؟</a>"
 
-#: networkpage.ui:25
+#: NetworkPage#24
 msgctxt "NetworkPage"
 msgid "Check if your local network requires a proxy to access the Internet"
 msgstr ""
+"نشان بگذارید اگر شبکه محلی شما نیاز به یک پیشکار برای دسترسی به اینترنت دارد"
 
-#: networkpage.ui:176
+#: NetworkPage#25
 msgctxt "NetworkPage"
 msgid "Check to only connect to relays using ports allowed by your firewall"
 msgstr ""
+"نشان بگذارید جهت متصل شدن به بازپخش هایی که تنها درگاه های مجاز بدست بارو را "
+"استفاده میکنند"
 
-#: networkpage.ui:235
+#: NetworkPage#26
 msgctxt "NetworkPage"
 msgid "Check to encrypt directory requests and, optionally, use bridge relays to access the Tor network"
 msgstr ""
+"نشان بگذارید برای رمزبندی درخواست های فهرست و, اختیاری, از پلهای بازپخش برای "
+"دسترسی به شبکه تُر استفاده کنید"
 
-#: networkpage.ui:262
+#: NetworkPage#27
 msgctxt "NetworkPage"
 msgid "Bridge Settings"
-msgstr ""
+msgstr "تنظیمات پل"
 
-#: networkpage.ui:274
+#: NetworkPage#28
 msgctxt "NetworkPage"
 msgid "The Tor software you are currently running does not support bridges. <br>Directory connections will still be encrypted."
 msgstr ""
+"نرم افزار تُر که شما هم اکنون در حال اجرای آن هستید پل ها را پشتیبانی نمی "
+"کند. <br> رمزبندی اتصال های فهرست ادامه خواهد یافت."
 
-#: policy.cpp:167
+#: Policy#1
 msgctxt "Policy"
 msgid "accept"
 msgstr "قبول"
 
-#: policy.cpp:167
+#: Policy#2
 msgctxt "Policy"
 msgid "reject"
 msgstr "رد"
 
-#: routerdescriptor.cpp:76
+#: RouterDescriptor#1
 msgctxt "RouterDescriptor"
 msgid "Online"
 msgstr "آنلاین"
@@ -1951,678 +1974,632 @@ msgctxt "RouterDescriptor"
 msgid "Offline"
 msgstr "آفلاین"
 
-#: routerdescriptorview.cpp:103
+#: RouterDescriptorView#1
 msgctxt "RouterDescriptorView"
 msgid "IP Address:"
 msgstr "آدرس آی‌پی"
 
-#: routerdescriptorview.cpp:104
+#: RouterDescriptorView#2
 msgctxt "RouterDescriptorView"
 msgid "Platform:"
 msgstr "پلتفرم"
 
-#: routerdescriptorview.cpp:108
+#: RouterDescriptorView#3
 msgctxt "RouterDescriptorView"
 msgid "Bandwidth:"
 msgstr "پهنای باند"
 
-#: routerdescriptorview.cpp:110
+#: RouterDescriptorView#4
 msgctxt "RouterDescriptorView"
 msgid "Uptime:"
 msgstr "رمان فعالیت بدون‌وقفه"
 
-#: routerdescriptorview.cpp:116
+#: RouterDescriptorView#5
 msgctxt "RouterDescriptorView"
 msgid "Last Updated:"
 msgstr "آخرین به‌روزرسانی: "
 
-#: routerdescriptorview.cpp:99
+#: RouterDescriptorView#6
 msgctxt "RouterDescriptorView"
 msgid "Location:"
 msgstr "موقعیت: "
 
-#: routerdescriptorview.cpp:60
+#: RouterDescriptorView#7
 msgctxt "RouterDescriptorView"
 msgid "%1 days "
-msgstr ""
+msgstr "%1 روز"
 
-#: routerdescriptorview.cpp:63
+#: RouterDescriptorView#8
 msgctxt "RouterDescriptorView"
 msgid "%1 hours "
-msgstr ""
+msgstr "%1 ساعت"
 
-#: routerdescriptorview.cpp:66
+#: RouterDescriptorView#9
 msgctxt "RouterDescriptorView"
 msgid "%1 mins "
-msgstr ""
+msgstr "%1 دقیقه"
 
-#: routerdescriptorview.cpp:69
+#: RouterDescriptorView#10
 msgctxt "RouterDescriptorView"
 msgid "%1 secs"
-msgstr ""
+msgstr "%1 ثانيه"
 
-#: routerlistitem.cpp:83
+#: RouterListItem#1
 msgctxt "RouterListItem"
 msgid "%1 KB/s"
 msgstr "%1 کلیوبایت"
 
-#: routerlistitem.cpp:67
+#: RouterListItem#2
 msgctxt "RouterListItem"
 msgid "Offline"
 msgstr "آفلاین"
 
-#: routerlistitem.cpp:71
+#: RouterListItem#3
 msgctxt "RouterListItem"
 msgid "Hibernating"
 msgstr "به‌خواب رفتن"
 
-#: routerlistwidget.cpp:31
+#: RouterListWidget#1
 msgctxt "RouterListWidget"
 msgid "Relay"
 msgstr "بازپخش"
 
-#: routerlistwidget.cpp:58
+#: RouterListWidget#2
 msgctxt "RouterListWidget"
 msgid "Zoom to Relay"
 msgstr "بزرگ نمایی بازپخش"
 
-#: routerlistwidget.cpp:151
+#: RouterListWidget#3
 msgctxt "RouterListWidget"
 msgid "%1 relays online"
-msgstr ""
+msgstr "%1 بازپخش های آنلاین"
 
-#: serverpage.ui:32
+#: ServerPage#1
 msgctxt "ServerPage"
 msgid "Relay traffic for the Tor network"
 msgstr "ترافیک بازپخش‌ شده برای شبکه‌ی تُر"
 
-#: serverpage.ui:234
+#: ServerPage#2
 msgctxt "ServerPage"
 msgid "Directory Port:"
 msgstr "درگاه دارکتوری"
 
-#: serverpage.ui:267
+#: ServerPage#3
 msgctxt "ServerPage"
 msgid "Directory Port Number"
 msgstr "شماره‌ی درگاه دایرکتوری"
 
-#: serverpage.ui:380
+#: ServerPage#4
 msgctxt "ServerPage"
 msgid "Nickname:"
 msgstr "لقب:"
 
-#: serverpage.ui:279
+#: ServerPage#5
 msgctxt "ServerPage"
 msgid "Contact Info:"
 msgstr "مشخصات تماس:"
 
-#: serverpage.ui:764
+#: ServerPage#6
 msgctxt "ServerPage"
 msgid "Exit Policies"
 msgstr "سیاست‌های خروج"
 
-#: serverpage.ui:896
+#: ServerPage#7
 msgctxt "ServerPage"
 msgid "Show help topic on exit policies"
 msgstr "موضوع راهنما در مورد سیاست‌های خروج را نمایش بده"
 
-#: serverpage.ui:620
+#: ServerPage#8
 msgctxt "ServerPage"
 msgid "Long-term average bandwidth limit"
 msgstr "محدوده‌ی میانگین بلندمدت پهنای‌باند"
 
-#: serverpage.ui:591
+#: ServerPage#9
 msgctxt "ServerPage"
 msgid "Average Rate"
 msgstr "ترخ متوسط"
 
-#: serverpage.ui:708
+#: ServerPage#10
 msgctxt "ServerPage"
 msgid "KB/s"
 msgstr "کیلوبایت بر ثانیه"
 
-#: serverpage.ui:695
+#: ServerPage#11
 msgctxt "ServerPage"
 msgid "Peak bandwidth rate limit"
 msgstr "محدودیت در حداکثر پیک پهنای باند"
 
-#: serverpage.ui:666
+#: ServerPage#12
 msgctxt "ServerPage"
 msgid "Maximum Rate"
 msgstr "نرخ حداکثر"
 
-#: serverpage.ui:502
+#: ServerPage#13
 msgctxt "ServerPage"
 msgid "Show help topic on bandwidth rate limits"
 msgstr "نمایش موضوعات راهنما در مورد محدودیت‌های پهنای باند"
 
-#: serverpage.ui:76
+#: ServerPage#14
 msgctxt "ServerPage"
 msgid "Basic Settings"
 msgstr "تنظیمات اولیه"
 
-#: serverpage.ui:400
+#: ServerPage#15
 msgctxt "ServerPage"
 msgid "Bandwidth Limits"
 msgstr "محدودیت‌های پهنای باند"
 
-#: serverpage.ui:435
+#: ServerPage#16
 msgctxt "ServerPage"
 msgid "For Internet connections with fast download speed but slow upload, please list your upload speed here."
 msgstr "برای ارتباطات اینترنتی با نرخ بارگیری (دانلود) سریع ولی نرخ بارگذاری (آپلود) کند، لطفا سرعت بارگذاری خود را اینجا مشخص کنید."
 
-#: serverpage.ui:456
+#: ServerPage#17
 msgctxt "ServerPage"
 msgid "Select the entry that most closely resembles your Internet connection"
 msgstr "گزینه‌ای را که از همه بیشتر به نوع ارتباط اینترنت شما شبیه است انتخاب کنید"
 
-#: serverpage.ui:466
+#: ServerPage#18
 msgctxt "ServerPage"
 msgid "Cable/DSL 256 Kbps"
 msgstr "کابل یا DSL ۲۵۶ کیلوبیت بر ثانیه"
 
-#: serverpage.ui:471
+#: ServerPage#19
 msgctxt "ServerPage"
 msgid "Cable/DSL 512 Kbps"
 msgstr "کابل یا DSL ۵۱۲ کیلوبیت بر ثانیه"
 
-#: serverpage.ui:476
+#: ServerPage#20
 msgctxt "ServerPage"
 msgid "Cable/DSL 768 Kbps"
 msgstr "کابل یا DSL ۷۶۸ کیلوبیت بر ثانیه"
 
-#: serverpage.ui:481
+#: ServerPage#21
 msgctxt "ServerPage"
 msgid "T1/Cable/DSL 1.5 Mbps"
 msgstr "T1 یا کابل یا DSL ۱.۵ مگابیت بر ثانیه"
 
-#: serverpage.ui:486
+#: ServerPage#22
 msgctxt "ServerPage"
 msgid "> 1.5 Mbps"
 msgstr " بیش از ۱.۵ مگابیت بر ثانیه"
 
-#: serverpage.ui:491
+#: ServerPage#23
 msgctxt "ServerPage"
 msgid "Custom"
 msgstr "خودت تغیین کن"
 
-#: serverpage.ui:802
+#: ServerPage#24
 msgctxt "ServerPage"
 msgid "Ports 6660 - 6669 and 6697"
 msgstr "درگاه‌های ۶۶۶۰ تا ۶۶۶۹ و ۶۶۹۷"
 
-#: serverpage.ui:805
+#: ServerPage#25
 msgctxt "ServerPage"
 msgid "Internet Relay Chat (IRC)"
 msgstr "چت بازپخش اینترنتی (IRC)"
 
-#: serverpage.ui:815
+#: ServerPage#26
 msgctxt "ServerPage"
 msgid "Ports 110, 143, 993 and 995"
 msgstr "درگاه‌های ۱۱۰، ۱۴۳، ۹۹۳ و ۹۹۵"
 
-#: serverpage.ui:818
+#: ServerPage#27
 msgctxt "ServerPage"
 msgid "Retrieve Mail (POP, IMAP)"
 msgstr "دریافت ایمیل (POP , IMAP)"
 
-#: serverpage.ui:828
+#: ServerPage#28
 msgctxt "ServerPage"
 msgid "Ports unspecified by other checkboxes"
 msgstr "درگاه‌هایی که توسط دیگر گزینه‌ها انتخاب نشده‌اند"
 
-#: serverpage.ui:831
+#: ServerPage#29
 msgctxt "ServerPage"
 msgid "Misc Other Services"
 msgstr "سروریس‌های دیگر"
 
-#: serverpage.ui:844
+#: ServerPage#30
 msgctxt "ServerPage"
 msgid "Instant Messaging (IM)"
 msgstr "پیام‌ کوتاه (IM)"
 
-#: serverpage.ui:854
+#: ServerPage#31
 msgctxt "ServerPage"
 msgid "Port 443"
 msgstr "درگاه ۴۴۳"
 
-#: serverpage.ui:857
+#: ServerPage#32
 msgctxt "ServerPage"
 msgid "Secure Websites (SSL)"
 msgstr "وبسایت‌های امن (SSL)"
 
-#: serverpage.ui:867
+#: ServerPage#33
 msgctxt "ServerPage"
 msgid "Port 80"
 msgstr "درگاه ۸۰"
 
-#: serverpage.ui:870
+#: ServerPage#34
 msgctxt "ServerPage"
 msgid "Websites"
 msgstr "وبسایت‌ها"
 
-#: serverpage.ui:737
+#: ServerPage#35
 msgctxt "ServerPage"
 msgid "Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s."
 msgstr "بیشترین میزان پهنای باند شما می بایست بزرگتر یا مساوی با میزان پهنای باند متوسط شما باشد. کوچکترین مقدار هردو میبایست 20 کیلوبایت در ثانیه باشد."
 
-#: serverpage.cpp:68
+#: ServerPage#36
 msgctxt "ServerPage"
 msgid "Server"
 msgstr "کارساز"
 
-#: serverpage.cpp:133
+#: ServerPage#37
 msgctxt "ServerPage"
 msgid "Bridge Support Unavailable"
 msgstr "پشتیبانی پل موجود نیست"
 
-#: serverpage.cpp:136
+#: ServerPage#38
 msgctxt "ServerPage"
 msgid "You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges."
 msgstr "شما تُر را به گونه ای پیکربندی کردید که مانند یک پل بازپخش برای کاربران سانسورشده کارکند, اما نسخه تُر شما پل ها را پشتیبانی نمی کند."
 
-#: serverpage.cpp:138
+#: ServerPage#39
 msgctxt "ServerPage"
 msgid "Please upgrade your Tor software or configure Tor to act as a normal Tor relay."
 msgstr "خواهشمند است نرم افزار تُر را بروزرسانی کنید یا تُر را به گونه ای پیکربندی کنید که مانند یک بازپخش تُر نرمال کارکند."
 
-#: serverpage.cpp:256
+#: ServerPage#40
 msgctxt "ServerPage"
 msgid "You must specify at least a relay nickname and port."
 msgstr "شما میبایست دست کم یک لقب بازپخش و درگاه را مشخص کنید."
 
-#: serverpage.ui:91
+#: ServerPage#41
 msgctxt "ServerPage"
 msgid "Relay Port:"
 msgstr "درگاه بازپخش:"
 
-#: serverpage.ui:204
+#: ServerPage#42
 msgctxt "ServerPage"
 msgid "Email address at which you may be reached if there is a"
 "problem with your relay. You might also include your PGP or GPG fingerprint."
 msgstr "آدرس ایمیل که در صورت اشکال با بازپخش شما بتوان با شما تماس گرفت. شما همچنین می توانید اثرانگشت PGP یا GPG خود را قرار دهید."
 
-#: serverpage.ui:113
+#: ServerPage#43
 msgctxt "ServerPage"
 msgid "Mirror the Relay Directory "
 msgstr "آینه ای کردن فهرست بازپخش"
 
-#: serverpage.cpp:192
+#: ServerPage#44
 msgctxt "ServerPage"
 msgid "Your bridge relay is not running."
 msgstr "پل بازپخش شما در حال اجرا نمی باشد."
 
-#: serverpage.ui:39
+#: ServerPage#45
 msgctxt "ServerPage"
 msgid "Help censored users reach the Tor network (Tor 0.2.0.8-alpha or newer)"
 msgstr "کمک به کاربران سانسورشده برای دستیابی به شبکه تُر (تُر 0.2.0.8-alpha یا جدیدتر)"
 
-#: serverpage.ui:337
+#: ServerPage#46
 msgctxt "ServerPage"
 msgid "Name of your relay"
 msgstr "نام بازپخش شما"
 
-#: serverpage.ui:370
+#: ServerPage#47
 msgctxt "ServerPage"
 msgid "Port on which users and other relays can communicate with your relay"
 msgstr "درگاهی که کاربران و بازپخش های دیگر می توانند بوسیله آن با بازپخش شما ارتباط برقرار کنند"
 
-#: serverpage.ui:1005
+#: ServerPage#48
 msgctxt "ServerPage"
 msgid "Let others access your bridge by giving them this line:"
 msgstr "بگذارید دیگران به پل شما دسترسی پیدا کنند با بیان کردن این خط به آنها:"
 
-#: serverpage.ui:1029
+#: ServerPage#49
 msgctxt "ServerPage"
 msgid "This is the identity of your bridge relay that you can give to other people"
 msgstr "این هویت پل بازپخش شما می باشد که میتوانید آن را به افراد دیگر بدهید"
 
-#: serverpage.ui:1051
+#: ServerPage#50
 msgctxt "ServerPage"
 msgid "Copy your bridge relay's identity to the clipboard"
 msgstr "کپی کردن هویت پل بازپخش شما در تخته یادداشت"
 
-#: serverpage.ui:841
+#: ServerPage#51
 msgctxt "ServerPage"
 msgid "Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 and 8888"
 msgstr "درگاه‌های ۷۰۶، ۱۸۶۳، ۵۰۵۰، ۵۲۲۲، ۸۳۰۰ و ۸۸۸۸ {706, 1863, 5050, 5190, 5222, 5223, 8300 ?} {8888?}"
 
-#: serverpage.ui:25
+#: ServerPage#52
 msgctxt "ServerPage"
 msgid "Run as a client only"
-msgstr ""
+msgstr "اجراکردن تنها مانند یک کاربر"
 
-#: serverpage.ui:110
+#: ServerPage#53
 msgctxt "ServerPage"
 msgid "Enable to mirror the relay directory"
-msgstr ""
+msgstr "آینه ای کردن فهرست بازپخش"
 
-#: serverpage.ui:139
+#: ServerPage#54
 msgctxt "ServerPage"
 msgid "Attempt to automatically configure port forwarding"
-msgstr ""
+msgstr "تلاش برای پیکربندی خودکار ارسال درگاه"
 
-#: serverpage.ui:154
+#: ServerPage#55
 msgctxt "ServerPage"
 msgid "Test"
-msgstr ""
+msgstr "تست"
 
-#: serverpage.ui:969
+#: ServerPage#56
 msgctxt "ServerPage"
 msgid "What Internet resources should users be able to access from your relay?"
-msgstr ""
+msgstr "به چه منابع اینترنتی کاربران قادر به دسترسی خواهند بود از بازپخش شما؟"
 
-#: serverpage.ui:164
+#: ServerPage#57
 msgctxt "ServerPage"
 msgid "Show help topic on port forwarding"
-msgstr ""
+msgstr "نمایش سرفصل کمک برای ارسال درگاه"
 
-#: servicepage.cpp:27
+#: ServicePage#1
 msgctxt "ServicePage"
 msgid "Services"
-msgstr ""
+msgstr "سرویس ها"
 
-#: servicepage.cpp:109
+#: ServicePage#2
 msgctxt "ServicePage"
 msgid "Error while trying to unpublish all services"
-msgstr ""
+msgstr "خطا هنگام غیر منتشر کردن همه سرویس ها"
 
-#: servicepage.cpp:590
+#: ServicePage#3
 msgctxt "ServicePage"
 msgid "Error"
 msgstr "خطا"
 
-#: servicepage.cpp:445
+#: ServicePage#4
 msgctxt "ServicePage"
 msgid "Please select a Service."
-msgstr ""
+msgstr "خواهشمند است یک سرویس انتخاب کنید."
 
-#: servicepage.cpp:451
+#: ServicePage#5
 msgctxt "ServicePage"
 msgid "Select Service Directory"
-msgstr ""
+msgstr "انتخاب فهرست سرویس"
 
-#: servicepage.cpp:540
+#: ServicePage#6
 msgctxt "ServicePage"
 msgid "Virtual Port may only contain valid port numbers [1..65535]."
 msgstr ""
+"درگاه های مجازی تنها می توانند شامل شماره درگاه های معتبر باشند [1..65535]."
 
-#: servicepage.cpp:571
+#: ServicePage#7
 msgctxt "ServicePage"
 msgid "Target may only contain address:port, address, or port."
-msgstr ""
+msgstr "هدف تنها می تواند شامل آدرس:درگاه, آدرس, یا درگاه باشد."
 
-#: servicepage.cpp:591
+#: ServicePage#8
 msgctxt "ServicePage"
 msgid "Directory already in use by another service."
-msgstr ""
+msgstr "فهرست در استفاده یک سرویس دیگر است."
 
-#: servicepage.ui:19
+#: ServicePage#9
 msgctxt "ServicePage"
 msgid "Form"
-msgstr ""
+msgstr "فرم"
 
-#: servicepage.ui:31
+#: ServicePage#10
 msgctxt "ServicePage"
 msgid "Provided Hidden Services"
-msgstr ""
+msgstr "سرویس های پنهان فراهم شده"
 
-#: servicepage.ui:56
+#: ServicePage#11
 msgctxt "ServicePage"
 msgid "Onion Address"
-msgstr ""
+msgstr "آدرس پیاز"
 
-#: servicepage.ui:61
+#: ServicePage#12
 msgctxt "ServicePage"
 msgid "Virtual Port"
-msgstr ""
+msgstr "درگاه مجازی"
 
-#: servicepage.ui:66
+#: ServicePage#13
 msgctxt "ServicePage"
 msgid "Target"
-msgstr ""
+msgstr "هدف"
 
-#: servicepage.ui:71
 msgctxt "ServicePage"
 msgid "Directory Path"
-msgstr ""
+msgstr "مسیر فهرست"
 
-#: servicepage.ui:76
 msgctxt "ServicePage"
 msgid "Enabled"
-msgstr ""
+msgstr "فعال"
 
-#: servicepage.ui:84
 msgctxt "ServicePage"
 msgid "Add new service to list"
-msgstr ""
+msgstr "افزودن سرویس جدید به لیست"
 
-#: servicepage.ui:97
 msgctxt "ServicePage"
 msgid "Remove selected service from list"
-msgstr ""
+msgstr "برداشتن سرویس انتخاب شده از لیست"
 
-#: servicepage.ui:110
 msgctxt "ServicePage"
 msgid "Copy onion address of selected service to clipboard"
-msgstr ""
+msgstr "کپی کردن آدرس پیاز سرویس انتخاب شده در تخته یادداشت"
 
-#: servicepage.ui:123
 msgctxt "ServicePage"
 msgid "Browse in local file system and choose directory for selected service"
-msgstr ""
+msgstr "مرور در سیستم فایل و برگزیدن فهرست برای سرویس انتخاب شده"
 
-#: servicepage.cpp:116
 msgctxt "ServicePage"
 msgid "Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones."
 msgstr ""
+"خواهشمند است حداقل یک سرویس فهرست و یک درگاه مجازی برای هریک از سرویس هایی "
+"که مایل به ذخیره آن هستید پیکربندی کنید. بقیه ها را خذف کن."
 
-#: stream.cpp:118
 msgctxt "Stream"
 msgid "New"
 msgstr "جدید"
 
-#: stream.cpp:120
 msgctxt "Stream"
 msgid "Resolving"
 msgstr "ترجمه"
 
-#: stream.cpp:121
 msgctxt "Stream"
 msgid "Connecting"
 msgstr "اتصال"
 
-#: stream.cpp:122
 msgctxt "Stream"
 msgid "Open"
 msgstr "باز"
 
-#: stream.cpp:123
 msgctxt "Stream"
 msgid "Failed"
 msgstr "ناموفق"
 
-#: stream.cpp:124
 msgctxt "Stream"
 msgid "Closed"
 msgstr "بسته"
 
-#: stream.cpp:127
 msgctxt "Stream"
 msgid "Unknown"
 msgstr "نامعلوم"
 
-#: stream.cpp:125
 msgctxt "Stream"
 msgid "Retrying"
 msgstr "تلاش مجدد"
 
-#: stream.cpp:126
 msgctxt "Stream"
 msgid "Remapped"
 msgstr "بازنگاشته"
 
-#: torprocess.cpp:107
 msgctxt "TorProcess"
 msgid "Process %1 failed to stop. [%2]"
 msgstr "فرایند شماره %1 نتوانست متوقف شود. [%2]"
 
-#: torservice.cpp:143
 msgctxt "TorService"
 msgid "The Tor service is not installed."
 msgstr "سرویس تُر نصب نشده است"
 
-#: torservice.cpp:161
 msgctxt "TorService"
 msgid "Unable to start the Tor service."
 msgstr "ناتوان در راه اندازی سرویس تُر."
 
-#: torsettings.cpp:107
 msgctxt "TorSettings"
 msgid "Failed to hash the control password."
 msgstr "شکست در درهم درآوردن اسم رمز کنترل."
 
-#: upnpcontrol.cpp:139
 msgctxt "UPNPControl"
 msgid "Success"
-msgstr ""
+msgstr "موفقیت"
 
-#: upnpcontrol.cpp:141
 msgctxt "UPNPControl"
 msgid "No UPnP-enabled devices found"
-msgstr ""
+msgstr "هیچ دستگاه UPnP پیدا نشد"
 
-#: upnpcontrol.cpp:143
 msgctxt "UPNPControl"
 msgid "No valid UPnP-enabled Internet gateway devices found"
-msgstr ""
+msgstr "هیچ دستگاه دروازه اینترنت معتبر UPnP پیدا نشد"
 
-#: upnpcontrol.cpp:145
 msgctxt "UPNPControl"
 msgid "WSAStartup failed"
-msgstr ""
+msgstr "WSAStartup موفق نشد"
 
-#: upnpcontrol.cpp:147
 msgctxt "UPNPControl"
 msgid "Failed to add a port mapping"
-msgstr ""
+msgstr "ناموفق در افزودن یک نگاشت درگاه"
 
-#: upnpcontrol.cpp:149
 msgctxt "UPNPControl"
 msgid "Failed to retrieve a port mapping"
-msgstr ""
+msgstr "ناموفق در بازیافتن یک نگاشت درگاه"
 
-#: upnpcontrol.cpp:151
 msgctxt "UPNPControl"
 msgid "Failed to remove a port mapping"
-msgstr ""
+msgstr "ناموفق در برداشتن یک نگاشت درگاه"
 
-#: upnpcontrol.cpp:153
 msgctxt "UPNPControl"
 msgid "Unknown error"
-msgstr ""
+msgstr "خطای ناشناخته"
 
-#: upnptestdialog.cpp:112
 msgctxt "UPNPTestDialog"
 msgid "Discovering UPnP-enabled devices"
-msgstr ""
+msgstr "پیداکردن دستگاه های UPnP"
 
-#: upnptestdialog.cpp:117
 msgctxt "UPNPTestDialog"
 msgid "Updating directory port mapping"
-msgstr ""
+msgstr "بروز رسانی نگاشت درگاه فهرست"
 
-#: upnptestdialog.cpp:122
 msgctxt "UPNPTestDialog"
 msgid "Updating relay port mapping"
-msgstr ""
+msgstr "بروزرسانی نگاشت درگاه بازپخش"
 
-#: upnptestdialog.cpp:127
 msgctxt "UPNPTestDialog"
 msgid "Test completed successfully!"
-msgstr ""
+msgstr "تست با موفقیت تمام شد!"
 
-#: upnptestdialog.ui:13
 msgctxt "UPNPTestDialog"
 msgid "Testing UPnP Support"
-msgstr ""
+msgstr "تست پشتیبانی UPnP"
 
-#: upnptestdialog.ui:92
 msgctxt "UPNPTestDialog"
 msgid "Testing Universal Plug & Play Support"
-msgstr ""
+msgstr "تست پشتیبانی Universal Plug & Play"
 
-#: vmessagebox.cpp:77
 msgctxt "VMessageBox"
 msgid "OK"
 msgstr "بسیارخوب"
 
-#: vmessagebox.cpp:78
 msgctxt "VMessageBox"
 msgid "Cancel"
 msgstr "لغو"
 
-#: vmessagebox.cpp:79
 msgctxt "VMessageBox"
 msgid "Yes"
 msgstr "بله"
 
-#: vmessagebox.cpp:80
 msgctxt "VMessageBox"
 msgid "No"
 msgstr "خیر"
 
-#: vmessagebox.cpp:81
 msgctxt "VMessageBox"
 msgid "Help"
 msgstr "راهنما"
 
-#: vmessagebox.cpp:82
 msgctxt "VMessageBox"
 msgid "Retry"
 msgstr "تلاش مجدد"
 
-#: vmessagebox.cpp:83
 msgctxt "VMessageBox"
 msgid "Show Log"
 msgstr "نمایش گزارش"
 
-#: vmessagebox.cpp:84
 msgctxt "VMessageBox"
 msgid "Show Settings"
 msgstr "نمایش تنظیمات"
 
-#: vmessagebox.cpp:85
 msgctxt "VMessageBox"
 msgid "Continue"
 msgstr "ادامه"
 
-#: vmessagebox.cpp:86
 msgctxt "VMessageBox"
 msgid "Quit"
 msgstr "خروج"
 
-#: vmessagebox.cpp:87
 msgctxt "VMessageBox"
 msgid "Browse"
 msgstr "انتخاب فایل"
 
-#: vidalia.cpp:235
 msgctxt "Vidalia"
 msgid "Invalid language code specified: "
 msgstr "کد زبان مشخص شده نامربوط است"
 
-#: vidalia.cpp:242
 msgctxt "Vidalia"
 msgid "Invalid GUI style specified: "
 msgstr "نوع واسط گرافیکی مشخص شده نامربوط است"
 
-#: main.cpp:88
 msgctxt "Vidalia"
 msgid "Vidalia is already running"
 msgstr "ویدالیا در حال اجرا است"
 
-#: main.cpp:94
 msgctxt "Vidalia"
 msgid "Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway."
 ""
@@ -2631,63 +2608,54 @@ msgstr "احتمالا یک ویدالیای دیگر در حال اجرا اس�
 ""
 "آیا مایل به ادامه شروع ویدالیا هستید؟"
 
-#: main.cpp:74
 msgctxt "Vidalia"
 msgid "Invalid Argument"
 msgstr "نشانوند نامعتبر"
 
-#: vidalia.cpp:166
 msgctxt "Vidalia"
 msgid "Displays this usage message and exits."
 msgstr "این پیام کاربردی را نمایش می دهد و بیرون میرود."
 
-#: vidalia.cpp:168
 msgctxt "Vidalia"
 msgid "Resets ALL stored Vidalia settings."
 msgstr "بازنشانی کردن همه تنظیمات ذخیره شده ویدالیا."
 
-#: vidalia.cpp:170
 msgctxt "Vidalia"
 msgid "Sets the directory Vidalia uses for data files."
 msgstr "گذاردن فهرست مورد استفاده توسط ویدالیا برای فایل های داده."
 
-#: vidalia.cpp:172
 msgctxt "Vidalia"
 msgid "Sets the name and location of Vidalia's pidfile."
 msgstr "گذاردن نام و محل فایل شناسه فرآیند ویدالیا."
 
-#: vidalia.cpp:174
 msgctxt "Vidalia"
 msgid "Sets the name and location of Vidalia's logfile."
 msgstr "گذاردن نام و محل فایل تاریخچه ثبت ویدالیا."
 
-#: vidalia.cpp:177
 msgctxt "Vidalia"
 msgid "Sets the verbosity of Vidalia's logging."
 msgstr "گذاردن درجه پرحرفی ثبت ویدالیا."
 
-#: vidalia.cpp:180
 msgctxt "Vidalia"
 msgid "Sets Vidalia's interface style."
 msgstr "گذاردن سبک واسط ویدالیا."
 
-#: vidalia.cpp:183
 msgctxt "Vidalia"
 msgid "Sets Vidalia's language."
 msgstr "گذاردن زبان ویدالیا."
 
-#: vidalia.cpp:187
 msgctxt "Vidalia"
 msgid "Vidalia Usage Information"
 msgstr "اطلاعات درمورد استفاده ویدالیا"
 
-#: vidalia.cpp:248
 msgctxt "Vidalia"
 msgid "Invalid log level specified: "
 msgstr "درجه ثبت مشخص شده نامعتبر: "
 
-#: vidalia.cpp:254
 msgctxt "Vidalia"
 msgid "Unable to open log file '%1': %2"
 msgstr "ناتوان در بازکردن فایل تاریخچه ثبت  '%1': %2"
 
+#: NetworkPage#23
+msgid "<a href="">How do I find a bridge?</a>"
+msgstr "<a href="">چطور می توانم یک پل را پیدا کنم؟</a>"
