@@ -9,6 +9,7 @@
 */
 
 #include <QFile>
+#include <QFileInfo>
 #include <QDomDocument>
 #include <QTextStream>
 #include <QTextCodec>
@@ -22,6 +23,9 @@
 #define TS_ELEMENT_MESSAGE            "message"
 #define TS_ELEMENT_SOURCE             "source"
 #define TS_ELEMENT_TRANSLATION        "translation"
+#define TS_ELEMENT_LOCATION           "location"
+#define TS_ATTR_FILENAME              "filename"
+#define TS_ATTR_LINE                  "line"
 
 
 /** Return the current time (in UTC) in the format YYYY-MM-DD HH:MM+0000. */
@@ -40,7 +44,6 @@ create_po_header(const QString &encoding)
   QString header;
   QString tstamp = create_po_timestamp();
 
-  header.append("#,fuzzy\n");
   header.append("msgid \"\"\n");
   header.append("msgstr \"\"\n");
   header.append("\"Project-Id-Version: "TS2PO_PROJECT_ID"\\n\"\n");
@@ -60,13 +63,23 @@ create_po_header(const QString &encoding)
   return header;
 }
 
+/** Parse the filename from the relative or absolute path given in
+ * <b>filePath</b>. */
+QString
+parse_filename(const QString &filePath)
+{
+  QFileInfo file(filePath);
+  return file.fileName();
+}
+
 /** Convert the messages in <b>context</b> to PO format. The output will be
  * appended to <b>po</b>. Returns the number of source messages converted on
  * success, or -1 on error and <b>errorMessage</b> will be set. */
 int
 convert_context(const QDomElement &context, QString *po, QString *errorMessage)
 {
-  QString msgid, msgstr;
+  QString msgctxt, msgid, msgstr;
+  QString filename, line;
   QDomElement location, source, translation;
   int n = 0;
 
@@ -79,6 +92,7 @@ convert_context(const QDomElement &context, QString *po, QString *errorMessage)
                                                  .arg(context.lineNumber());
     return -1;
   }
+  msgctxt = name.text();
 
   QDomElement msg = context.firstChildElement(TS_ELEMENT_MESSAGE);
   while (!msg.isNull()) {
@@ -101,14 +115,22 @@ convert_context(const QDomElement &context, QString *po, QString *errorMessage)
     msgstr.replace("\"", "\\\"");
     msgstr.replace("\n", "\"\n\"");
   
+    /* Try to extract the <location> tags (optional) */
+    location = msg.firstChildElement(TS_ELEMENT_LOCATION);
+    filename = parse_filename(location.attribute(TS_ATTR_FILENAME));
+    line = location.attribute(TS_ATTR_LINE);
+
     /* Format the .po entry for this string */
-    (*po).append(QString("#: %1#%2\n").arg(name.text()).arg(++n));
+    if (!filename.isEmpty() && !line.isEmpty())
+      (*po).append(QString("#: %1:%2\n").arg(filename).arg(line));
+    (*po).append(QString("msgctxt \"%1\"\n").arg(msgctxt));
     (*po).append(QString("msgid \"%1\"\n").arg(msgid));
     (*po).append(QString("msgstr \"%1\"\n").arg(msgstr));
     (*po).append("\n");
   
     /* Find the next source message in the current context */
     msg = msg.nextSiblingElement(TS_ELEMENT_MESSAGE);
+    n++;
   }
   return n;
 }

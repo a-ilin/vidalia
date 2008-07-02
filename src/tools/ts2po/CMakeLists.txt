@@ -11,7 +11,7 @@
 ##
 
 ## Define this version of ts2po
-set(VERSION "0.1")
+set(VERSION "0.2")
 
 ## Include the source and binary directories so it can find out configured
 ## header file
