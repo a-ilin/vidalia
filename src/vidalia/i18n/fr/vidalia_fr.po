@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-07-02 05:29+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2008-07-03 19:53+0100\n"
+"Last-Translator: mfr <mfr (ä] misericordia.be>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Vidalia ts2po 0.2\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Pootle 1.1.0\n"
 
 #: aboutdialog.ui:25
 msgctxt "AboutDialog"
@@ -200,7 +200,7 @@ msgstr "Choisissez le chemin de votre fichier de configuration"
 #: advancedpage.ui:275
 msgctxt "AdvancedPage"
 msgid "Data Directory"
-msgstr "Repertoire de Données"
+msgstr "Dossier de données"
 
 #: advancedpage.ui:296
 msgctxt "AdvancedPage"
@@ -215,14 +215,12 @@ msgstr "Selectionnez le répertoire utilisé pour sauver les données du logicie
 #: advancedpage.ui:219
 msgctxt "AdvancedPage"
 msgid "Tor Configuration File"
-msgstr "Fichier de configaration de Tor"
+msgstr "Fichier de configuration de Tor"
 
 #: advancedpage.cpp:287
 msgctxt "AdvancedPage"
-msgid "Vidalia was unable to remove the Tor service."
-""
-"You may need to remove it manually."
-msgstr ""
+msgid "Vidalia was unable to remove the Tor service.You may need to remove it manually."
+msgstr "Vidalia a été incapable de supprimer le service Tor. Vous pouvez avoir besoin de le supprimer manuellement."
 
 #: appearancepage.ui:31
 msgctxt "AppearancePage"
@@ -267,7 +265,7 @@ msgstr "Montrer options"
 #: bwgraph.ui:63
 msgctxt "BandwidthGraph"
 msgid "Reset"
-msgstr "Mettre à zéro"
+msgstr "Remettre à zéro"
 
 #: bwgraph.ui:151
 msgctxt "BandwidthGraph"
@@ -412,7 +410,7 @@ msgstr "Aide"
 #: configdialog.ui:16
 msgctxt "ConfigDialog"
 msgid "Settings"
-msgstr "Options"
+msgstr "Paramètres"
 
 #: configdialog.cpp:76
 msgctxt "ConfigDialog"
@@ -542,7 +540,7 @@ msgstr "Exécutable Proxy"
 #: generalpage.ui:129
 msgctxt "GeneralPage"
 msgid "Command Line Arguments:"
-msgstr "Ligen de commande:"
+msgstr "Ligne de commande:"
 
 #: generalpage.ui:38
 msgctxt "GeneralPage"
@@ -1292,7 +1290,7 @@ msgstr "Lancement de Tor"
 #: mainwindow.cpp:677
 msgctxt "MainWindow"
 msgid "Tor is Running"
-msgstr "Tor Fonctionne"
+msgstr "Tor est actif"
 
 #: mainwindow.cpp:868
 msgctxt "MainWindow"
@@ -1306,23 +1304,18 @@ msgstr "Authentification à Tor"
 
 #: mainwindow.cpp:641
 msgctxt "MainWindow"
-msgid "Your relay is shutting down."
-"Click 'Stop' again to stop your relay now."
-msgstr ""
+msgid "Your relay is shutting down.Click 'Stop' again to stop your relay now."
+msgstr "Votre relais s'arrête. Cliquez 'Arrêter' à nouveau pour arrêter votre relais immédiatement."
 
 #: mainwindow.cpp:915
 msgctxt "MainWindow"
-msgid "You are currently running a relay. Terminating your relay will interrupt any open connections from clients."
-""
-"Would you like to shutdown gracefully and give clients time to find a new relay?"
-msgstr ""
+msgid "You are currently running a relay. Terminating your relay will interrupt any open connections from clients.Would you like to shutdown gracefully and give clients time to find a new relay?"
+msgstr "Vous opérez actuellement un relais. Arrêter votre relais va interrompre toutes les connexions ouvertes de vos clients. Voulez vous arrêter en douceurn en laissant aux clients le temps de trouver un nouveau relais ?"
 
 #: mainwindow.cpp:973
 msgctxt "MainWindow"
-msgid "Vidalia detected that the Tor software exited unexpectedly."
-""
-"Please check the message log for recent warning or error messages."
-msgstr ""
+msgid "Vidalia detected that the Tor software exited unexpectedly.Please check the message log for recent warning or error messages."
+msgstr "Vidalia a détecté que Tor s'est terminé de manière inattendue.Merci de regarder dans l'historique des messages les alertes et les erreurs récentes."
 
 #: messagelog.ui:19
 msgctxt "MessageLog"
@@ -1646,42 +1639,33 @@ msgstr "Enregistrer les nouveaux messages dans un fichier"
 
 #: messagelog.cpp:137
 msgctxt "MessageLog"
-msgid "Messages that appear when something has "
-"gone very wrong and Tor cannot proceed."
-msgstr ""
+msgid "Messages that appear when something has gone very wrong and Tor cannot proceed."
+msgstr "Messages qui apparaissent quand un problème très grave est arrivé et que Tor ne peut continuer."
 
 #: messagelog.cpp:139
 msgctxt "MessageLog"
-msgid "Messages that only appear when "
-"something has gone wrong with Tor."
-msgstr ""
+msgid "Messages that only appear when something has gone wrong with Tor."
+msgstr "Messages qui apparaissent uniquement quand quelque chose de mauvais est arrivé avec Tor."
 
 #: messagelog.cpp:143
 msgctxt "MessageLog"
-msgid "Messages that appear infrequently "
-"during normal Tor operation and are "
-"not considered errors, but you may "
-"care about."
-msgstr ""
+msgid "Messages that appear infrequently during normal Tor operation and are not considered errors, but you may care about."
+msgstr "Messages qui apparaissent rarement durant le fonctionnement de Tor et qui ne sont pas des erreurs, mais auxquels vous devez porter attention."
 
 #: messagelog.cpp:145
 msgctxt "MessageLog"
-msgid "Messages that appear frequently "
-"during normal Tor operation."
-msgstr ""
+msgid "Messages that appear frequently during normal Tor operation."
+msgstr "Messages qui apparaissent fréquemment durant le fonctionnement de Tor."
 
 #: messagelog.cpp:147
 msgctxt "MessageLog"
-msgid "Hyper-verbose messages primarily of "
-"interest to Tor developers."
-msgstr ""
+msgid "Hyper-verbose messages primarily of interest to Tor developers."
+msgstr "Messages hyper nombreux principalement pour les développeurs Tor."
 
 #: messagelog.cpp:313
 msgctxt "MessageLog"
-msgid "Cannot write file %1"
-""
-"%2."
-msgstr ""
+msgid "Cannot write file %1%2."
+msgstr "Impossible d'écrire le fichier %1%2."
 
 #: netviewer.ui:236
 msgctxt "NetViewer"
@@ -2001,7 +1985,7 @@ msgstr "%1 secs"
 #: routerlistitem.cpp:83
 msgctxt "RouterListItem"
 msgid "%1 KB/s"
-msgstr "%1 Kio/s"
+msgstr "%1 KB/s"
 
 #: routerlistitem.cpp:67
 msgctxt "RouterListItem"
@@ -2281,12 +2265,12 @@ msgstr "Lancer uniquement comme client"
 #: serverpage.ui:110
 msgctxt "ServerPage"
 msgid "Enable to mirror the relay directory"
-msgstr "Activer le mirroir de l'annuaire des relais"
+msgstr "Activer le miroir de l'annuaire des relais"
 
 #: serverpage.ui:139
 msgctxt "ServerPage"
 msgid "Attempt to automatically configure port forwarding"
-msgstr "Tenter de configurer automatiquement le transfert de ports"
+msgstr "Essayer de configurer automatiquement le transfert de ports"
 
 #: serverpage.ui:154
 msgctxt "ServerPage"
@@ -2310,9 +2294,8 @@ msgstr "Voir la rubrique d'aide sur le transfert de port"
 
 #: serverpage.ui:204
 msgctxt "ServerPage"
-msgid "Email address at which you may be reached if there is a"
-"problem with your relay. You might also include your PGP or GPG fingerprint."
-msgstr ""
+msgid "Email address at which you may be reached if there is aproblem with your relay. You might also include your PGP or GPG fingerprint."
+msgstr "Adresse électronique à laquelle vous pouvez être contacté en cas de problème avec votre relais. Vous pouvez également indiquer votre identifiant PGP ou GPG."
 
 #: servicepage.cpp:27
 msgctxt "ServicePage"
@@ -2387,7 +2370,7 @@ msgstr "Destination"
 #: servicepage.ui:71
 msgctxt "ServicePage"
 msgid "Directory Path"
-msgstr "Chemin de Répertoire"
+msgstr "Chemin du dossier"
 
 #: servicepage.ui:76
 msgctxt "ServicePage"
@@ -2412,7 +2395,7 @@ msgstr "Copier l'adresse onion du service selectionné dans le presse-papiers."
 #: servicepage.ui:123
 msgctxt "ServicePage"
 msgid "Browse in local file system and choose directory for selected service"
-msgstr "Parcourez le systeme de fichiers et choisissez le répertoire du service selectionné"
+msgstr "Parcourez le système de fichiers et choisissez le dossier du service sélectionné"
 
 #: stream.cpp:118
 msgctxt "Stream"
@@ -2681,8 +2664,6 @@ msgstr "Impossible d'ouvrir le fichier du Journal des messages '%1': %2"
 
 #: main.cpp:94
 msgctxt "Vidalia"
-msgid "Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway."
-""
-"Would you like to continue starting Vidalia?"
-msgstr ""
+msgid "Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.Would you like to continue starting Vidalia?"
+msgstr "Une autre instance de Vidalia est probablement déjà lancée. Si il n'y a réellement aucune autre instance de Vidalia 'est en cours de fonctionnement, vous pouvez choisir de continuer tout de même.Voulez-vous continuer le démarrage de Vidalia ?"
 
