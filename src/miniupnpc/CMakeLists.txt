@@ -1,5 +1,5 @@
 ##
-##  $Id: $
+##  $Id$
 ## 
 ##  This file is part of Vidalia, and is subject to the license terms in the
 ##  LICENSE file, found in the top level directory of this distribution. If 
@@ -27,4 +27,7 @@ if (NOT WIN32)
 endif(NOT WIN32)
 
 add_library(miniupnpc STATIC ${miniupnpc_SRCS})
+if (WIN32)
+  target_link_libraries(miniupnpc ws2_32)
+endif(WIN32)
 
