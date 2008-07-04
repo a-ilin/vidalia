@@ -42,3 +42,8 @@ add_executable(ts2po ${ts2po_SRCS})
 ## Link the executable with the appropriate Qt libraries
 target_link_libraries(ts2po ${QT_LIBRARIES})
 
+## Remember the location of ts2po so we can use it in custom commands
+get_target_property(TS2PO_EXECUTABLE ts2po LOCATION)
+set(VIDALIA_TS2PO_EXECUTABLE ${TS2PO_EXECUTABLE}
+    CACHE STRING "Location of Vidalia's ts2po converter." FORCE)
+

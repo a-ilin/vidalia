@@ -10,18 +10,6 @@
 ##  the terms described in the LICENSE file.
 ##
 
-## Tool used to convert Qt's .ts files to GNU gettext .po format
-set(VIDALIA_TS2PO_EXECUTABLE ${Vidalia_BINARY_DIR}/src/tools/ts2po/ts2po)
-if (WIN32)
-  set(VIDALIA_TS2PO_EXECUTABLE ${VIDALIA_TS2PO_EXECUTABLE}.exe)
-endif(WIN32)
-
-## Tool used to convert GNU gettext .po files to Qt's .ts format
-set(VIDALIA_PO2TS_EXECUTABLE ${Vidalia_BINARY_DIR}/src/tools/po2ts/po2ts)
-if (WIN32)
-  set(VIDALIA_PO2TS_EXECUTABLE ${VIDALIA_PO2TS_EXECUTABLE}.exe)
-endif(WIN32)
-    
 
 ## Search for lrelease
 find_program(QT_LRELEASE_EXECUTABLE NAMES lrelease-qt4 lrelease

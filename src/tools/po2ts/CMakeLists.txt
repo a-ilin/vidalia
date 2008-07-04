@@ -21,3 +21,8 @@ add_executable(po2ts ${po2ts_SRCS})
 ## Link the executable with the appropriate Qt libraries
 target_link_libraries(po2ts ${QT_LIBRARIES})
 
+## Remember the location of po2ts so we can use it in custom commands
+get_target_property(PO2TS_EXECUTABLE po2ts LOCATION)
+set(VIDALIA_PO2TS_EXECUTABLE ${PO2TS_EXECUTABLE}
+    CACHE STRING "Location of Vidalia's po2ts converter." FORCE)
+

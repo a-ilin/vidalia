@@ -40,9 +40,11 @@ set(vidalia_PO
 vidalia_add_po(vidalia_QMS ${vidalia_PO})
 
 ## Create a target that converts all .po files to Qt .qm files
-add_custom_target(i18n ALL DEPENDS ${vidalia_QMS})
+add_custom_target(i18n DEPENDS ${vidalia_QMS})
+add_dependencies(i18n po2ts)
 
 ## Create a target that runs lupdate for all the source and UI files
 add_custom_target(i18n-update)
+add_dependencies(i18n-update po2ts ts2po)
 vidalia_update_po(i18n-update ${vidalia_PO})
 
