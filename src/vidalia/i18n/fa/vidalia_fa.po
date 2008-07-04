@@ -1525,8 +1525,8 @@ msgid "Copy the selected bridges to the clipboard"
 msgstr "کپی کردن پل های منتخب در تخته یادداشت"
 
 #: NetworkPage#23
-msgid "<a href="bridges.finding">How do I find a bridge?</a>"
-msgstr "<a href="bridges.finding">چطور می توانم یک پل را پیدا کنم؟</a>"
+msgid "<a href=\"bridges.finding\">How do I find a bridge?</a>"
+msgstr "<a href=\"bridges.finding\">چطور می توانم یک پل را پیدا کنم؟</a>"
 
 #: NetworkPage#24
 msgid "Check if your local network requires a proxy to access the Internet"
