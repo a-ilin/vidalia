@@ -28,6 +28,7 @@
 #include "eventtype.h"
 #include "controlsocket.h"
 #include "torevents.h"
+#include "sendcommandevent.h"
 
 
 class ControlConnection : public QThread
@@ -98,6 +99,7 @@ private:
   QHostAddress _addr; /**< Address of Tor's control interface. */
   quint16 _port; /**< Port of Tor's control interface. */
   QMutex _connMutex; /**< Mutex around the control socket. */
+  QMutex _recvMutex; /**< Mutex around the queue of ReceiveWaiters. */
   QMutex _statusMutex; /**< Mutex around the connection status value. */
   int _connectAttempt; /**< How many times we've tried to connect to Tor while
                             waiting for Tor to start. */
@@ -122,6 +124,7 @@ private:
       QString _errmsg; /**< Error message if the reply fails. */
   };
   QQueue<ReceiveWaiter *> _recvQueue; /**< Objects waiting for a reply. */
+  SendCommandEvent::SendWaiter* _sendWaiter;
 };
 
 #endif

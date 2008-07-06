@@ -28,6 +28,7 @@ set(torcontrol_SRCS
   replyline.cpp
   routerdescriptor.cpp
   routerstatus.cpp
+  sendcommandevent.cpp
   serverstatusevent.cpp
   stream.cpp
   tcglobal.cpp

@@ -44,6 +44,9 @@ public:
   static QString toString(const QAbstractSocket::SocketError error);
   
 protected:
+  /** Processes custom events sent to this object (e.g. SendCommandEvents)
+   * from other threads. */
+  void customEvent(QEvent *event);
   /** Reads line data off the socket in chunks. */
   bool readLineData(QString &line, QString *errmsg = 0);
   /** Reads a line of data from the socket (blocking) */

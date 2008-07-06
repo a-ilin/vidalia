@@ -34,6 +34,7 @@ ControlConnection::ControlConnection(TorEvents *events)
   _events = events;
   _status = Unset;
   _sock = 0;
+  _sendWaiter = new SendCommandEvent::SendWaiter();
 }
 
 /** Destructor. */
@@ -41,8 +42,10 @@ ControlConnection::~ControlConnection()
 {
   /* Exit the event loop */
   exit();
-  /* Wait for the thread to finish. */
+  /* Wait for the thread to finish */
   wait();
+  /* Clean up after the send waiter */
+  delete _sendWaiter;
 }
 
 /** Connect to the specified Tor control interface. */
@@ -200,45 +203,47 @@ bool
 ControlConnection::send(const ControlCommand &cmd,
                         ControlReply &reply, QString *errmsg)
 {
-  ReceiveWaiter w;
   bool result = false;
   QString errstr;
-  
-  _connMutex.lock();
-  if (!_sock) {
-    _connMutex.unlock();
-    return err(errmsg, tr("Control socket is not connected."));
-  }
-  if (_sock->sendCommand(cmd, &errstr)) {
+
+  _recvMutex.lock();
+  if (send(cmd, &errstr)) {
     /* Create and enqueue a new receive waiter */
-    _recvQueue.enqueue(&w);
-    _connMutex.unlock();
+    ReceiveWaiter *w = new ReceiveWaiter();
+    _recvQueue.enqueue(w);
+    _recvMutex.unlock();
+
+    /* Wait for and get the result, clean up, and return */
+    result = w->getResult(&reply, &errstr);
+    if (!result)
+      tc::error("Failed to receive control reply: %1").arg(errstr);
+    delete w;
   } else {
-    _connMutex.unlock();
     tc::error("Failed to send control command (%1): %2").arg(cmd.keyword())
                                                         .arg(errstr);
-    return err(errmsg, errstr);
+    _recvMutex.unlock();
   }
 
-  /* Wait for and get the result, clean up, and return */
-  result = w.getResult(&reply, &errstr);
-  if (!result) {
-    tc::error("Failed to receive control reply: %1").arg(errstr);
-    if (errmsg)
-      *errmsg = errstr;
-  }
+  if (!result && errmsg)
+    *errmsg = errstr;
   return result;
 }
 
-/** Sends a control command to Tor and returns without waiting for the
- * response. */
+/** Sends a control command to Tor and returns true if the command was sent
+ * successfully. Otherwise, returns false and <b>*errmsg</b> (if supplied)
+ * will be set. */
 bool
 ControlConnection::send(const ControlCommand &cmd, QString *errmsg)
 {
-  QMutexLocker locker(&_connMutex);
-  if (!_sock)
+  _connMutex.lock();
+  if (!_sock || !_sock->isConnected()) {
+    _connMutex.unlock();
     return err(errmsg, tr("Control socket is not connected.")); 
-  return _sock->sendCommand(cmd, errmsg);
+  }
+  QCoreApplication::postEvent(_sock, new SendCommandEvent(cmd, _sendWaiter));
+  _connMutex.unlock();
+  
+  return _sendWaiter->getResult(errmsg);
 }
 
 /** Called when there is data on the control socket. */
@@ -263,10 +268,12 @@ ControlConnection::onReadyRead()
         /* Response to a previous command */
         tc::debug("Control Reply: %1").arg(reply.toString());
         
+        _recvMutex.lock();
         if (!_recvQueue.isEmpty()) {
           waiter = _recvQueue.dequeue();
           waiter->setResult(true, reply);
         }
+        _recvMutex.unlock();
       }
     } else {
       tc::error("Unable to read control reply: %1").arg(errmsg);
@@ -311,14 +318,19 @@ ControlConnection::run()
   delete _sock;
   delete _connectTimer;
   _sock = 0;
+  _connMutex.unlock();
 
   /* If there are any messages waiting for a response, clear them. */
+  if (_sendWaiter->status() == SendCommandEvent::SendWaiter::Waiting)
+    _sendWaiter->setResult(false, tr("Control socket is not connected."));
+
+  _recvMutex.lock();
   while (!_recvQueue.isEmpty()) {
     ReceiveWaiter *w = _recvQueue.dequeue();
     w->setResult(false, ControlReply(), 
                  tr("Control socket is not connected."));
   }
-  _connMutex.unlock();
+  _recvMutex.unlock();
 }
 
 

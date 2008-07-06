@@ -18,6 +18,7 @@
 #include "tcglobal.h"
 
 #include "controlsocket.h"
+#include "sendcommandevent.h"
 
 /** Timeout reads in 250ms. We can set this to a short value because if there
 * isn't any data to read, we want to return anyway. */
@@ -37,6 +38,24 @@ ControlSocket::isConnected()
   return (isValid() && state() == QAbstractSocket::ConnectedState);
 }
 
+/** Processes custom events sent to this object (e.g. SendCommandEvents) from
+ * other threads. */
+void
+ControlSocket::customEvent(QEvent *event)
+{
+  if (event->type() == CustomEventType::SendCommandEvent) {
+    SendCommandEvent *sce = dynamic_cast<SendCommandEvent *>(event);
+    if (! sce)
+      return;
+
+    QString errmsg;
+    bool result = sendCommand(sce->command(), &errmsg);
+    if (sce->waiter())
+      sce->waiter()->setResult(result, errmsg);
+    sce->accept();
+  }
+}
+
 /** Send a control command to Tor on the control socket, conforming to Tor's
  * Control Protocol V1:
  *
@@ -46,7 +65,7 @@ ControlSocket::isConnected()
  */
 bool
 ControlSocket::sendCommand(ControlCommand cmd, QString *errmsg)
-{
+{  
   if (!isConnected()) {
     return err(errmsg, tr("Control socket is not connected."));
   }
@@ -125,7 +144,8 @@ ControlSocket::readReply(ControlReply &reply, QString *errmsg)
     return false;
   }
 
-  /* The implementation below is (loosely) based on the Java control library from Tor */
+  /* The implementation below is (loosely) based on the Java control library
+   * from Tor */
   do {
     /* Read a line of the response */
     if (!readLine(line, errmsg)) {
