@@ -1,5 +1,23 @@
 0.1.6   xx-xxx-2008
+  o Fix po2ts so that it uses the same encoding to read in a .po file that it
+    uses to write out the .ts file. This resulted in garbled characters when
+    viewing some translations on apparently all platforms except OS X.
+  o Use the correct field when trying to parse the severity value from the
+    'getinfo status/bootstrap-phase' response. 
   o Fix compilation of the ts2po and po2ts conversion tools on OS X Panther.
+  o Tweak the ts2po and po2ts dependencies so Vidalia can be built with Xcode
+    on OS X again.
+  o Update ts2po to use 'msgctxt' in .po files for specifying message
+    context, rather than overloading the "#:" line.
+  o Update po2ts to tolerate using either 'msgctxt' or an overload "#:" line
+    for specifying message context.
+  o If we're building with CMake 2.6, then force CMake 2.4 compatibility for
+    linker search path behavior. Fixes a CMake warning when building with
+    CMake 2.6. (Ticket #374)
+  o Explicitly link in ws2_32 when building with UPnP support on Windows.
+    (Ticket #374 as well)
+  o Add a Romanian GUI and installer translation.
+  o Updated Farsi, Finnish, French, German, and Swedish translations.
 
 
 0.1.5   21-Jun-2008
