@@ -14,7 +14,7 @@ LangString BundleRunNow               ${LANG_FRENCH} "Démarrer les composants in
 
 ; Vidalia
 LangString VidaliaGroupDesc           ${LANG_FRENCH} "Installer ${VIDALIA_DESC}."
-LangString VidaliaUninstDesc          ${LANG_FRENCH} "Remove ${VIDALIA_DESC}."
+LangString VidaliaUninstDesc          ${LANG_FRENCH} "Supprimer ${VIDALIA_DESC}."
 LangString VidaliaSetupCaption        ${LANG_FRENCH} "Mise à jour de ${VIDALIA_NAME}"
 LangString VidaliaWelcomeText         ${LANG_FRENCH} "Cet assistant vous guidera pendant l'installation de ${VIDALIA_DESC}.\r\n\r\n$_CLICK"
 LangString VidaliaWelcomeTitle        ${LANG_FRENCH} "Bienvenue dans l'Assistant d'installation de ${VIDALIA_NAME}"
@@ -28,7 +28,7 @@ LangString VidaliaRunNow              ${LANG_FRENCH} "Démarrer ${VIDALIA_NAME} m
 
 ; Tor
 LangString TorGroupDesc               ${LANG_FRENCH} "Installer ${TOR_DESC}."
-LangString TorUninstDesc              ${LANG_FRENCH} "Remove ${TOR_DESC}."
+LangString TorUninstDesc              ${LANG_FRENCH} "Supprimer ${TOR_DESC}."
 LangString TorAppDesc                 ${LANG_FRENCH} "Installer ${TOR_DESC}."
 LangString TorAskOverwriteTorrc       ${LANG_FRENCH} "Vous avez déjà un fichier de configuration de Tor.$\r$\nVoulez-vous le remplacer par le fichier de configuration par défaut ?"
 LangString TorDocumentation           ${LANG_FRENCH} "Documentation"
@@ -38,7 +38,7 @@ LangString TorShortcutsDesc           ${LANG_FRENCH} "Ajouter ${TOR_NAME} à votr
 
 ; Privoxy
 LangString PrivoxyGroupDesc           ${LANG_FRENCH} "Installer ${PRIVOXY_DESC}."
-LangString PrivoxyUninstDesc          ${LANG_FRENCH} "Remove ${PRIVOXY_DESC}."
+LangString PrivoxyUninstDesc          ${LANG_FRENCH} "Supprimer ${PRIVOXY_DESC}."
 LangString PrivoxyAppDesc             ${LANG_FRENCH} "Installer ${PRIVOXY_DESC}."
 LangString PrivoxyShortcuts           ${LANG_FRENCH} "Ajouter au Menu Démarrer"
 LangString PrivoxyShortcutsDesc       ${LANG_FRENCH} "Ajouter ${PRIVOXY_NAME} à votre Menu Démarrer."
@@ -47,13 +47,13 @@ LangString PrivoxyStartupDesc         ${LANG_FRENCH} "Lancer automatiquement ${P
 
 ; Torbutton
 LangString TorbuttonGroupDesc         ${LANG_FRENCH} "Installer ${TORBUTTON_DESC}."
-LangString TorbuttonUninstDesc        ${LANG_FRENCH} "Remove ${TORBUTTON_DESC}."
+LangString TorbuttonUninstDesc        ${LANG_FRENCH} "Supprimer ${TORBUTTON_DESC}."
 LangString TorbuttonAppDesc           ${LANG_FRENCH} "Installer ${TORBUTTON_DESC}."
 LangString TorbuttonAddToFirefox      ${LANG_FRENCH} "Ajouter à Firefox"
 LangString TorbuttonAddToFirefoxDesc  ${LANG_FRENCH} "Ajouter l'extension ${TORBUTTON_DESC} à Firefox."
 LangString TorbuttonFirefoxNotFound   ${LANG_FRENCH} "Firefox n'a pas été trouvé sur votre système. Torbutton ne sera pas installé."
 
 ; Miscellaneous Strings
-LangString AppData                    ${LANG_FRENCH} "Application Data"
-LangString AppDataUninstDesc          ${LANG_FRENCH} "Remove saved application data and configuration files."
+LangString AppData                    ${LANG_FRENCH} "Données de l'Application"
+LangString AppDataUninstDesc          ${LANG_FRENCH} "Supprimer les fichiers de configuration et les données de l'application."
 LangString LanguageCode               ${LANG_FRENCH} "fr"
