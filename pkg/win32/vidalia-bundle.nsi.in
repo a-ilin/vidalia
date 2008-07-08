@@ -24,7 +24,7 @@ SetCompressor /SOLID lzma
 
 !define TOR_NAME            "Tor"
 !define TOR_EXEC            "tor.exe"
-!define TOR_APPVERSION      "0.2.0.28-rc"
+!define TOR_APPVERSION      "0.2.0.29-rc"
 !define TOR_DESC            "${TOR_NAME} ${TOR_APPVERSION}"
 
 !define PRIVOXY_NAME        "Privoxy"
@@ -33,7 +33,7 @@ SetCompressor /SOLID lzma
 !define PRIVOXY_DESC        "${PRIVOXY_NAME} ${PRIVOXY_APPVERSION}"
 
 !define TORBUTTON_NAME      "Torbutton"
-!define TORBUTTON_APPVERSION "1.2.0rc2"
+!define TORBUTTON_APPVERSION "1.2.0rc5"
 !define TORBUTTON_DESC      "${TORBUTTON_NAME} ${TORBUTTON_APPVERSION}"
 
 !define BUNDLE_NAME         "Vidalia Bundle"
