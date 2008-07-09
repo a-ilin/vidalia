@@ -1,4 +1,6 @@
-0.1.6   xx-xxx-2008
+0.1.6   08-Jul-2008
+  o Fix a bug in our control socket communication introduced in 0.1.3 that
+    could cause excessive CPU usage or crashing on some platforms.
   o Fix po2ts so that it uses the same encoding to read in a .po file that it
     uses to write out the .ts file. This resulted in garbled characters when
     viewing some translations on apparently all platforms except OS X.
