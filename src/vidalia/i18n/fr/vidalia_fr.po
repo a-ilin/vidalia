@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-07-02 05:29+0000\n"
-"PO-Revision-Date: 2008-07-03 19:53+0100\n"
+"PO-Revision-Date: 2008-07-10 09:13+0100\n"
 "Last-Translator: mfr <mfr (ä] misericordia.be>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -490,7 +490,7 @@ msgstr "Parcourir"
 #: generalpage.cpp:72
 msgctxt "GeneralPage"
 msgid "Select Path to Tor"
-msgstr "Sélectionner le chemin de Tor"
+msgstr "Choisir le chemin de Tor"
 
 #: generalpage.cpp:59
 msgctxt "GeneralPage"
@@ -560,22 +560,22 @@ msgstr "Envoi : "
 #: graphframe.cpp:258
 msgctxt "GraphFrame"
 msgid "%1 KB"
-msgstr "%1 KB"
+msgstr "%1 Ko"
 
 #: graphframe.cpp:261
 msgctxt "GraphFrame"
 msgid "%1 MB"
-msgstr "%1 MB"
+msgstr "%1 Mo"
 
 #: graphframe.cpp:264
 msgctxt "GraphFrame"
 msgid "%1 GB"
-msgstr "%1 GB"
+msgstr "%1 Go"
 
 #: graphframe.cpp:285
 msgctxt "GraphFrame"
 msgid "%1 KB/s"
-msgstr "%1 KB/s"
+msgstr "%1 Ko/s"
 
 #: helpbrowser.ui:33
 msgctxt "HelpBrowser"
@@ -795,7 +795,7 @@ msgstr "Erreur"
 #: logevent.cpp:62
 msgctxt "LogEvent"
 msgid "Unknown"
-msgstr "Inconnu"
+msgstr "Inconnue"
 
 #: mainwindow.ui:430
 msgctxt "MainWindow"
@@ -950,7 +950,7 @@ msgstr "Utiliser une nouvelle identité"
 #: mainwindow.ui:275
 msgctxt "MainWindow"
 msgid "Make subsequent connections appear new"
-msgstr "Faire que les connexions suivantes apparaissent comme de nouvelles connexions"
+msgstr "Faire apparaître les connexions suivantes comme nouvelles"
 
 #: mainwindow.ui:370
 msgctxt "MainWindow"
@@ -1875,7 +1875,7 @@ msgstr "Supprimer de la liste les passerelles sélectionnées"
 #: networkpage.ui:399
 msgctxt "NetworkPage"
 msgid "Copy the selected bridges to the clipboard"
-msgstr "Copier les passerelles sélectionnées dans e presse-papier"
+msgstr "Copier les passerelles sélectionnées dans le presse-papier"
 
 #: networkpage.ui:318
 msgctxt "NetworkPage"
@@ -1985,7 +1985,7 @@ msgstr "%1 secs"
 #: routerlistitem.cpp:83
 msgctxt "RouterListItem"
 msgid "%1 KB/s"
-msgstr "%1 KB/s"
+msgstr "%1 Ko/s"
 
 #: routerlistitem.cpp:67
 msgctxt "RouterListItem"
@@ -2055,7 +2055,7 @@ msgstr "Taux moyen"
 #: serverpage.ui:708
 msgctxt "ServerPage"
 msgid "KB/s"
-msgstr "KB/s"
+msgstr "Ko/s"
 
 #: serverpage.ui:695
 msgctxt "ServerPage"
@@ -2310,7 +2310,7 @@ msgstr "Erreur lors de la dépublication de tous les services"
 #: servicepage.cpp:116
 msgctxt "ServicePage"
 msgid "Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones."
-msgstr "Merci de configurer au moins un repertoire et un port virtuel pour chacun des services que vous voulez sauver. Supprimez les autres."
+msgstr "Merci de configurer au moins un répertoire et un port virtuel pour chacun des services que vous voulez sauver. Supprimez les autres."
 
 #: servicepage.cpp:590
 msgctxt "ServicePage"
