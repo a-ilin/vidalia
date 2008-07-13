@@ -10,9 +10,15 @@
 ##  the terms described in the LICENSE file.
 ##
 
-add_subdirectory(osx)
-add_subdirectory(rpm)
-add_subdirectory(win32)
+if (APPLE)
+  add_subdirectory(osx)
+endif(APPLE)
+if (UNIX)
+  add_subdirectory(rpm)
+endif(UNIX)
+if (WIN32)
+  add_subdirectory(win32)
+endif(WIN32)
 
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/package.sh
