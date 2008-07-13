@@ -117,12 +117,12 @@ XPStyle           on
 !include "vidalia_it.nsh"
 !include "vidalia_nl.nsh"
 !include "vidalia_pl.nsh"
-!include "vidalia_pt-br.nsh"
+!include "vidalia_pt_BR.nsh"
 !include "vidalia_ro.nsh"
 !include "vidalia_ru.nsh"
 !include "vidalia_sv.nsh"
-!include "vidalia_zh-cn.nsh"
-!include "vidalia_zh-tw.nsh"
+!include "vidalia_zh_CN.nsh"
+!include "vidalia_zh_TW.nsh"
 
 ;--------------------------------
 ; Functions
