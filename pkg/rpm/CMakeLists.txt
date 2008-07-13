@@ -10,12 +10,8 @@
 ##  the terms described in the LICENSE file.
 ##
 
-add_subdirectory(osx)
-add_subdirectory(rpm)
-add_subdirectory(win32)
-
+## RPM Spec File
 configure_file(
-  ${CMAKE_CURRENT_SOURCE_DIR}/package.sh
-  ${CMAKE_CURRENT_BINARY_DIR}/package.sh
-  COPYONLY
+  ${CMAKE_CURRENT_SOURCE_DIR}/vidalia.spec.in
+  ${CMAKE_CURRENT_BINARY_DIR}/vidalia.spec
 )
