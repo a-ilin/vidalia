@@ -103,9 +103,9 @@ XPStyle           on
 !insertmacro MUI_LANGUAGE "Romanian"
 !insertmacro MUI_LANGUAGE "Russian"
 !insertmacro MUI_LANGUAGE "Spanish"
-!insertmacro MUI_LANGUAGE "SimpChinese"
+#!insertmacro MUI_LANGUAGE "SimpChinese"
 !insertmacro MUI_LANGUAGE "Swedish"
-!insertmacro MUI_LANGUAGE "TradChinese"
+#!insertmacro MUI_LANGUAGE "TradChinese"
 !include "vidalia_cs.nsh"
 !include "vidalia_de.nsh"
 !include "vidalia_en.nsh"
@@ -121,8 +121,8 @@ XPStyle           on
 !include "vidalia_ro.nsh"
 !include "vidalia_ru.nsh"
 !include "vidalia_sv.nsh"
-!include "vidalia_zh_CN.nsh"
-!include "vidalia_zh_TW.nsh"
+#!include "vidalia_zh_CN.nsh"
+#!include "vidalia_zh_TW.nsh"
 
 ;--------------------------------
 ; Functions
