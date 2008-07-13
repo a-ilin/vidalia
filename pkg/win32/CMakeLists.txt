@@ -23,23 +23,40 @@ configure_file(
 )
 
 ## Convert the .po files to NSIS .nsh files at build time
-vidalia_add_nsh(vidalia_NSH   en/vidalia_en.po        ENGLISH)
-vidalia_add_nsh(vidalia_NSH   cs/vidalia_cs.po        CZECH)
-vidalia_add_nsh(vidalia_NSH   de/vidalia_de.po        GERMAN)
-vidalia_add_nsh(vidalia_NSH   es/vidalia_es.po        SPANISH)
-vidalia_add_nsh(vidalia_NSH   fa/vidalia_fa.po        FARSI)
-vidalia_add_nsh(vidalia_NSH   fi/vidalia_fi.po        FINNISH)
-vidalia_add_nsh(vidalia_NSH   fr/vidalia_fr.po        FRENCH)
-vidalia_add_nsh(vidalia_NSH   he/vidalia_he.po        HEBREW)
-vidalia_add_nsh(vidalia_NSH   it/vidalia_it.po        ITALIAN)
-vidalia_add_nsh(vidalia_NSH   nl/vidalia_nl.po        DUTCH)
-vidalia_add_nsh(vidalia_NSH   pl/vidalia_pl.po        POLISH)
-vidalia_add_nsh(vidalia_NSH   pt_BR/vidalia_pt_BR.po  PORTUGUESEBR)
-vidalia_add_nsh(vidalia_NSH   ro/vidalia_ro.po        ROMANIAN)
-vidalia_add_nsh(vidalia_NSH   ru/vidalia_ru.po        RUSSIAN)
-vidalia_add_nsh(vidalia_NSH   sv/vidalia_sv.po        SWEDISH)
-vidalia_add_nsh(vidalia_NSH   zh_CN/vidalia_zh_CN.po  SIMPCHINESE)
-vidalia_add_nsh(vidalia_NSH   zh_TW/vidalia_ZH_TW.po  TRADCHINESE)
+vidalia_add_nsh(vidalia_NSH
+  cs/vidalia_cs.po  CZECH     ISO-8859-2)
+vidalia_add_nsh(vidalia_NSH
+  de/vidalia_de.po  GERMAN    ISO-8859-1)
+vidalia_add_nsh(vidalia_NSH
+  en/vidalia_en.po  ENGLISH   ISO-8859-1)
+vidalia_add_nsh(vidalia_NSH
+  es/vidalia_es.po  SPANISH   ISO-8859-1)
+vidalia_add_nsh(vidalia_NSH
+  fa/vidalia_fa.po  FARSI     ISO-8859-6)
+vidalia_add_nsh(vidalia_NSH
+  fi/vidalia_fi.po  FINNISH   ISO-8859-1)
+vidalia_add_nsh(vidalia_NSH
+  fr/vidalia_fr.po  FRENCH    ISO-8859-1)
+vidalia_add_nsh(vidalia_NSH
+  he/vidalia_he.po  HEBREW    ISO-8859-8)
+vidalia_add_nsh(vidalia_NSH
+  it/vidalia_it.po  ITALIAN   ISO-8859-1)
+vidalia_add_nsh(vidalia_NSH
+  nl/vidalia_nl.po  DUTCH     ISO-8859-1)
+vidalia_add_nsh(vidalia_NSH
+  pl/vidalia_pl.po  POLISH    ISO-8859-2)
+vidalia_add_nsh(vidalia_NSH
+  ro/vidalia_ro.po  ROMANIAN  ISO-8859-2)
+vidalia_add_nsh(vidalia_NSH
+  ru/vidalia_ru.po  RUSSIAN   KOI8-R)
+vidalia_add_nsh(vidalia_NSH
+  sv/vidalia_sv.po  SWEDISH   ISO-8859-1)
+vidalia_add_nsh(vidalia_NSH
+  pt_BR/vidalia_pt_BR.po  PORTUGUESEBR  ISO-8859-1)
+vidalia_add_nsh(vidalia_NSH
+  zh_CN/vidalia_zh_CN.po  SIMPCHINESE   GB18030)
+vidalia_add_nsh(vidalia_NSH
+  zh_TW/vidalia_ZH_TW.po  TRADCHINESE   GB18030)
 
 add_custom_target(i18n-win32-installer DEPENDS ${vidalia_NSH})
 add_dependencies(i18n i18n-win32-installer)
