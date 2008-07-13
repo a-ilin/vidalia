@@ -58,5 +58,4 @@ vidalia_add_nsh(vidalia_NSH
 #vidalia_add_nsh(vidalia_NSH
 #  zh_TW/vidalia_ZH_TW.po  TRADCHINESE   GB18030)
 
-add_custom_target(i18n-win32-installer DEPENDS ${vidalia_NSH})
-add_dependencies(i18n i18n-win32-installer)
+add_custom_target(i18n-win32-installer ALL DEPENDS ${vidalia_NSH})
