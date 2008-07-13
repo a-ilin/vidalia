@@ -101,6 +101,27 @@ macro(VIDALIA_ADD_PO outfiles)
 endmacro(VIDALIA_ADD_PO)
 
 
+## Wraps the input .po file specified by PO in a custom command to convert it
+## NSIS's language table format in a .nsh file. The language table is
+## specified by NSIS_LANGUAGE. The absolute path to the .nsh file will be
+## added to OUTFILES.
+macro(VIDALIA_ADD_NSH OUTFILES PO NSIS_LANGUAGE)
+  get_filename_component(po ${PO} ABSOLUTE)
+  get_filename_component(outfile ${PO} NAME_WE)
+
+  ## Create the .po -> .nsh conversion step
+  set(nsh ${CMAKE_CURRENT_BINARY_DIR}/${outfile}.nsh)
+  add_custom_command(OUTPUT ${nsh}
+    COMMAND ${VIDALIA_PO2NSH_EXECUTABLE}
+    ARGS -q -i ${po} -o ${nsh} -l ${NSIS_LANGUAGE}
+    MAIN_DEPENDENCY ${po}
+    DEPENDS ${VIDALIA_PO2NSH_EXECUTABLE}
+    COMMENT "Generating ${outfile}.nsh"
+  )
+  set(${OUTFILES} ${${OUTFILES}} ${nsh})
+endmacro(VIDALIA_ADD_NSH)
+
+
 if (WIN32)
   ## Wraps the supplied .rc files in windres commands
   macro(WIN32_WRAP_RC outfiles)
