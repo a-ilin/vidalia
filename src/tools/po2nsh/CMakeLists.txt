@@ -10,7 +10,14 @@
 ##  the terms described in the LICENSE file.
 ##
 
-add_subdirectory(ts2po)
-add_subdirectory(po2ts)
-add_subdirectory(po2nsh)
+## po2nsh source files
+set(po2nsh_SRCS
+  po2nsh.cpp
+)
+
+## Create the po2nsh executable
+add_executable(po2nsh ${po2nsh_SRCS})
+
+## Link the executable with the appropriate Qt libraries
+target_link_libraries(po2nsh ${QT_LIBRARIES} common)
 
