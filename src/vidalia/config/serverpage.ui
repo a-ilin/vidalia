@@ -974,6 +974,16 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
            </widget>
           </item>
           <item row="2" column="0" >
+           <widget class="QLabel" name="label_4" >
+            <property name="text" >
+             <string>Tor will still block some outgoing mail and file sharing applications by default to reduce spam and other abuse.</string>
+            </property>
+            <property name="wordWrap" >
+             <bool>true</bool>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0" >
            <spacer>
             <property name="orientation" >
              <enum>Qt::Vertical</enum>
