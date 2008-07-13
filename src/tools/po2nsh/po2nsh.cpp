@@ -64,57 +64,16 @@ read_next_line(QTextStream *stream)
 /** Skip past the header portion of the PO file and any leading whitespace. 
  * The next line read from <b>po</b> will be the first non-header line in the
  * document. */
-QHash<QString,QString>
-parse_po_header(QTextStream *po)
+void
+skip_po_header(QTextStream *po)
 {
-  QString line, key, value;
-  QHash<QString,QString> header;
-  
+  QString line;
   /* Skip any leading whitespace before the header */
   po->skipWhiteSpace();
   /* Read to the first empty line */
   line = po->readLine();
-  while (!line.isEmpty() && !po->atEnd()) {
-    if (line.contains(":")) {
-      line.replace("\\n", "");
-      if (line.startsWith("\""))
-        line = line.remove(0, 1);
-      if (line.endsWith("\""))
-        line.chop(1);
-      
-      key   = line.section(":", 0,  0).trimmed();
-      value = line.section(":", 1, -1).trimmed();
-      header.insert(key, value);
-    }
+  while (!po->atEnd() && !line.isEmpty())
     line = po->readLine();
-  }
-  return header;
-}
-
-/** Parse the Content-Type header line for a <i>charset=ENCODING</i>
- * specifier. If found, return a QTextCodec created using the given ENCODING.
- * If the Content-Type header specified an invalid encoding, then return a
- * NULL QTextCodec. If there was either no Content-Type header, or it did not
- * specify a charset, then return an ISO-8859-1 QTextCodec. */
-QTextCodec*
-parse_charset(const QHash<QString,QString> &header)
-{
-  QString line, charset;
-  QHash<QString,QString> content_type;
-  QTextCodec *codec;
-  bool ok;
-  
-  if (!header.contains("Content-Type"))
-    return QTextCodec::codecForName("ISO-8859-1");
-  line = header.value("Content-Type");
-  line = line.replace(";", " ");
-  
-  content_type = string_parse_keyvals(line, &ok);
-  if (!ok)
-    return 0;
-  if (!content_type.contains("charset"))
-    return QTextCodec::codecForName("ISO-8859-1");
-  return QTextCodec::codecForName(qPrintable(content_type.value("charset")));
 }
 
 /** Convert <b>po</b> from the PO format to a NSIS-formatted .nsh document.
@@ -122,7 +81,7 @@ parse_charset(const QHash<QString,QString> &header)
  * converted strings on success, or -1 on error and <b>errorMessage</b> will
  * be set. */
 int
-po2nsh(QTextStream *po, QTextStream *nsh, const QString &language,
+po2nsh(QTextStream *po, QString *nsh, const QString &language,
       QString *errorMessage)
 {
   QString line;
@@ -134,17 +93,8 @@ po2nsh(QTextStream *po, QTextStream *nsh, const QString &language,
   Q_ASSERT(po);
   Q_ASSERT(nsh);
   Q_ASSERT(errorMessage);
-
-  /* Parse the text encoding from the header */
-  header = parse_po_header(po);
-  codec  = parse_charset(header);
-  if (!codec) {
-    *errorMessage = "Unable to parse valid text encoding.";
-    return -1;
-  }
-  po->setCodec(codec);
-  nsh->setCodec(codec);
   
+  skip_po_header(po);
   line = read_next_line(po);
   while (!po->atEnd()) {
     /* Ignore all "#" lines except "#:" */
@@ -194,13 +144,14 @@ po2nsh(QTextStream *po, QTextStream *nsh, const QString &language,
     msgstr = parse_message_string(msgstr);
 
     /* Add the message translation to the .nsh document */
-    *nsh << QString("LangString ") << msgctxt
-         << QString(" ${LANG_%1} ").arg(language);
+    nsh->append(QString("LangString "));
+    nsh->append(msgctxt);
+    nsh->append(QString(" ${LANG_%1} ").arg(language));
     if (msgstr.isEmpty())
-      *nsh << "\"" << msgid << "\"";
+      nsh->append("\"" + msgid + "\"");
     else
-      *nsh << "\"" << msgstr << "\"";
-    *nsh << "\n";
+      nsh->append("\"" + msgstr + "\"");
+    nsh->append("\n");
 
     n_strings++;
   }
@@ -213,11 +164,13 @@ print_usage_and_exit()
 {
   QTextStream error(stderr);
   error << "usage: po2nsh [-q] -i <infile.po> -o <outfile.nsh> "
-           "-l <language>\n";
-  error << "  -q (optional)    Quiet mode (errors are still displayed)\n";
-  error << "  -i <infile.po>   Input .po file\n";
-  error << "  -o <outfile.nsh> Output .nsh file\n";
-  error << "  -l <language>    NSIS language table name\n";
+           "-l <language> [-f <from-encoding>] [-t <to-encoding>]\n";
+  error << "  -q (optional)      Quiet mode (errors are still displayed)\n";
+  error << "  -i <infile.po>     Input .po file\n";
+  error << "  -o <outfile.nsh>   Output .nsh file\n";
+  error << "  -l <language>      NSIS language table name\n";
+  error << "  -f <from-encoding> .po file encoding (default: utf-8)\n";
+  error << "  -t <to-encoding>   .nsh file encoding (default: iso-8859-1)\n";
   error.flush();
   exit(1);
 }
@@ -226,13 +179,14 @@ int
 main(int argc, char *argv[])
 {
   QTextStream error(stderr);
-  QString nshString, language;
-  QString errorMessage;
+  QString language, errorMessage;
   char *infile, *outfile;
   bool quiet = false;
-
+  QTextCodec *from_codec = QTextCodec::codecForName("utf-8");
+  QTextCodec *to_codec   = QTextCodec::codecForName("iso-8859-1");
+  
   /* Check for the correct number of input parameters. */
-  if (argc < 7 || argc > 8)
+  if (argc < 7 || argc > 12)
     print_usage_and_exit();
   for (int i = 1; i < argc; i++) {
     QString arg(argv[i]);
@@ -244,7 +198,19 @@ main(int argc, char *argv[])
       outfile = argv[i];
     else if (!arg.compare("-l", Qt::CaseInsensitive) && ++i < argc)
       language = QString(argv[i]).toUpper();
-    else
+    else if (!arg.compare("-f", Qt::CaseInsensitive) && ++i < argc) {
+      from_codec = QTextCodec::codecForName(argv[i]);
+      if (!from_codec) {
+        error << "Invalid input encoding: " << argv[i] << "\n";
+        return 1;
+      }
+    } else if (!arg.compare("-t", Qt::CaseInsensitive) && ++i < argc) {
+      to_codec = QTextCodec::codecForName(argv[i]);
+      if (!to_codec) {
+        error << "Invalid output encoding: " << argv[i] << "\n";
+        return 1;
+      }
+    } else
       print_usage_and_exit(); 
   }
 
@@ -256,8 +222,9 @@ main(int argc, char *argv[])
     return 2;
   }
 
+  QString nsh;
   QTextStream po(&poFile);
-  QTextStream nsh(&nshString);
+  po.setCodec(from_codec);
   int n_strings = po2nsh(&po, &nsh, language, &errorMessage);
   if (n_strings < 0) {
     error << QString("Unable to convert '%1': %2\n").arg(infile)
@@ -275,8 +242,8 @@ main(int argc, char *argv[])
 
   /* Finally write the .nsh output. */
   QTextStream out(&nshFile);
-  out.setCodec(nsh.codec());
-  out << nshString;
+  out.setCodec(to_codec);
+  out << nsh;
 
   if (!quiet) {
     QTextStream results(stdout);
