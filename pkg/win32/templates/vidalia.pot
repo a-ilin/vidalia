@@ -28,7 +28,7 @@ msgid "${TOR_NAME} installation documentation"
 msgstr ""
 
 msgctxt "BundleFinishText"
-msgid "Installation is complete.\nPlease see http://tor.eff.org/docs/tor-doc-win32.html to learn how to configure your applications to use Tor.\n\nIf you installed Torbutton, you will need to restart Firefox."
+msgid "Installation is complete.\nPlease see https://www.torproject.org/docs/tor-doc-windows to learn how to configure your applications to use Tor.\n\nIf you installed Torbutton, you will need to restart Firefox."
 msgstr ""
 
 msgctxt "BundleRunNow"
