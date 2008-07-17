@@ -13,4 +13,5 @@
 add_subdirectory(ts2po)
 add_subdirectory(po2ts)
 add_subdirectory(po2nsh)
+add_subdirectory(nsh2po EXCLUDE_FROM_ALL)
 
