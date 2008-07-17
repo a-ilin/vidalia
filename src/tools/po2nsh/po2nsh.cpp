@@ -12,6 +12,7 @@
 #include <QFile>
 #include <QTextStream>
 #include <QTextCodec>
+#include <stdlib.h>
 #include <stringutil.h>
 
 

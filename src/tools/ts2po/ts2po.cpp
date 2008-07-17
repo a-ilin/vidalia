@@ -14,6 +14,7 @@
 #include <QTextStream>
 #include <QTextCodec>
 #include <QDateTime>
+#include <stdlib.h>
 
 #include "ts2po_config.h"
 

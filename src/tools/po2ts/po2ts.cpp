@@ -13,6 +13,7 @@
 #include <QDomDocument>
 #include <QTextStream>
 #include <QTextCodec>
+#include <stdlib.h>
 
 #define TS_DOCTYPE                    "TS"
 #define TS_ELEMENT_ROOT               "TS"
