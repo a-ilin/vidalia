@@ -218,7 +218,7 @@ nsh2po(QTextStream *nsh, const QString &charset,
 
   /* Format the PO file based on the template. */
   n_strings = 0;  
-  foreach (msgctxt, pot) {
+  foreach (QString msgctxt, pot.keys()) {
     msgid = pot.value(msgctxt);
     if (langStrings.contains(msgctxt)) {
       msgstr = langStrings.value(msgctxt);
