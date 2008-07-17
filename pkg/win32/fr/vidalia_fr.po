@@ -1,214 +1,182 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Vidalia Windows Installers\n"
+"Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
-"POT-Creation-Date: 2008-07-12 05:29+0000\n"
-"PO-Revision-Date: 2008-07-12 05:29+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"POT-Creation-Date: 2008-07-17 02:16+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
-
-msgctxt "BundleSetupCaption"
-msgid "${BUNDLE_NAME} setup"
-msgstr ""
-
-msgctxt "BundleWelcomeText"
-msgid ""
-"This wizard will guide you through the installation of Tor, Vidalia, "
-"Privoxy, and Torbutton.\n"
-"\n"
-"Tor is a system for using the Internet anonymously, helping you anonymize "
-"Web browsing and publishing, instant messaging, IRC, and more. Vidalia is a "
-"GUI that helps you control, monitor, and configure Tor.\n"
-"\n"
-"Privoxy is a filtering web proxy that protects your privacy and helps remove "
-"ads, banners, and popups.\n"
-"\n"
-"Torbutton is a Firefox extension that allows you to quickly enable or "
-"disable anonymous web browsing.\n"
-"\n"
-"If you have previously installed Tor, Vidalia, Privoxy, or Firefox, please "
-"make sure they are not running before continuing this installation.\n"
-"\n"
-"$_CLICK"
-msgstr ""
-
-msgctxt "BundleWelcomeTitle"
-msgid "Welcome to the ${BUNDLE_NAME} Setup Wizard"
-msgstr ""
-
-msgctxt "BundleLinkText"
-msgid "${TOR_NAME} installation documentation"
-msgstr ""
-
-msgctxt "BundleFinishText"
-msgid ""
-"Installation is complete.\n"
-"Please see http://tor.eff.org/docs/tor-doc-win32.html to learn how to "
-"configure your applications to use Tor.\n"
-"\n"
-"If you installed Torbutton, you will need to restart Firefox."
-msgstr ""
-
-msgctxt "BundleRunNow"
-msgid "Run installed components now"
-msgstr ""
-
-msgctxt "VidaliaGroupDesc"
-msgid "Vidalia is a GUI that helps you control, monitor, and configure Tor."
-msgstr ""
-
-msgctxt "VidaliaUninstDesc"
-msgid "Remove ${VIDALIA_DESC}."
-msgstr ""
-
-msgctxt "VidaliaSetupCaption"
-msgid "${VIDALIA_NAME} setup"
-msgstr ""
-
-msgctxt "VidaliaWelcomeText"
-msgid ""
-"This wizard will guide you through the installation of Vidalia, a GUI that "
-"helps you control, monitor, and configure Tor.\n"
-"\n"
-"$_CLICK"
-msgstr ""
-
-msgctxt "VidaliaWelcomeTitle"
-msgid "Welcome to the ${VIDALIA_NAME} Setup Wizard"
-msgstr ""
-
-msgctxt "VidaliaLinkText"
-msgid "${VIDALIA_NAME} homepage"
-msgstr ""
-
-msgctxt "VidaliaAppDesc"
-msgid "Vidalia is a GUI that helps you control, monitor, and configure Tor."
-msgstr ""
-
-msgctxt "VidaliaStartup"
-msgid "Run At Startup"
-msgstr ""
-
-msgctxt "VidaliaStartupDesc"
-msgid "Automatically run ${VIDALIA_NAME} at startup."
-msgstr ""
-
-msgctxt "VidaliaShortcuts"
-msgid "Add to Start Menu"
-msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Vidalia nsh2po 0.1\n"
 
 msgctxt "VidaliaShortcutsDesc"
 msgid "Add ${VIDALIA_NAME} to your Start menu."
-msgstr ""
+msgstr "Ajouter ${VIDALIA_NAME} à votre Menu Démarrer."
 
-msgctxt "VidaliaRunNow"
-msgid "Run ${VIDALIA_NAME}"
-msgstr ""
-
-msgctxt "TorGroupDesc"
-msgid ""
-"Tor is a system for using the Internet anonymously, helping you anonymize "
-"Web browsing and publishing, instant messaging, IRC, and more."
-msgstr ""
-
-msgctxt "TorUninstDesc"
-msgid "Remove ${TOR_DESC}."
-msgstr ""
-
-msgctxt "TorAppDesc"
-msgid "Install ${TOR_DESC}."
-msgstr ""
-
-msgctxt "TorAskOverwriteTorrc"
-msgid ""
-"You already have a Tor configuration file.\n"
-"Do you want to overwrite it with the default sample configuration file?"
-msgstr ""
-
-msgctxt "TorDocumentation"
-msgid "Documentation"
-msgstr ""
-
-msgctxt "TorDocumentationDesc"
-msgid "Install ${TOR_NAME} documentation."
-msgstr ""
-
-msgctxt "TorShortcuts"
-msgid "Add to Start Menu"
-msgstr ""
-
-msgctxt "TorShortcutsDesc"
-msgid "Add ${TOR_NAME} to your Start menu."
-msgstr ""
-
-msgctxt "PrivoxyGroupDesc"
-msgid ""
-"Privoxy is a filtering web proxy that protects your privacy and helps remove "
-"ads, banners, and popups."
-msgstr ""
-
-msgctxt "PrivoxyUninstDesc"
-msgid "Remove ${PRIVOXY_DESC}."
-msgstr ""
-
-msgctxt "PrivoxyAppDesc"
-msgid "Install ${PRIVOXY_DESC}."
-msgstr ""
-
-msgctxt "PrivoxyShortcuts"
-msgid "Add to Start Menu"
-msgstr ""
-
-msgctxt "PrivoxyShortcutsDesc"
-msgid "Add ${PRIVOXY_NAME} to your Start menu."
-msgstr ""
+msgctxt "BundleWelcomeTitle"
+msgid "Welcome to the ${BUNDLE_NAME} Setup Wizard"
+msgstr "Bienvenue dans l'Assistant d'installation de ${BUNDLE_NAME}"
 
 msgctxt "PrivoxyStartup"
 msgid "Run At Startup"
-msgstr ""
-
-msgctxt "PrivoxyStartupDesc"
-msgid "Automatically run ${PRIVOXY_NAME} at startup."
-msgstr ""
-
-msgctxt "TorbuttonGroupDesc"
-msgid ""
-"Torbutton is a Firefox extension that allows you to quickly enable or "
-"disable anonymous web browsing."
-msgstr ""
-
-msgctxt "TorbuttonUninstDesc"
-msgid "Remove ${TORBUTTON_DESC}."
-msgstr ""
-
-msgctxt "TorbuttonAppDesc"
-msgid "Install ${TORBUTTON_DESC}."
-msgstr ""
-
-msgctxt "TorbuttonAddToFirefox"
-msgid "Add to Firefox"
-msgstr ""
-
-msgctxt "TorbuttonAddToFirefoxDesc"
-msgid "Add the ${TORBUTTON_DESC} extension to Firefox."
-msgstr ""
-
-msgctxt "TorbuttonFirefoxNotFound"
-msgid "Firefox was not found on your system. Not installing Torbutton."
-msgstr ""
-
-msgctxt "AppData"
-msgid "Application Data"
-msgstr ""
-
-msgctxt "AppDataUninstDesc"
-msgid "Remove saved application data and configuration files."
-msgstr ""
+msgstr "Lancer au démarrage"
 
 msgctxt "LanguageCode"
 msgid "en"
-msgstr ""
+msgstr "fr"
+
+msgctxt "BundleSetupCaption"
+msgid "${BUNDLE_NAME} setup"
+msgstr "Mise à jour de ${BUNDLE_NAME}"
+
+msgctxt "VidaliaAppDesc"
+msgid "Vidalia is a GUI that helps you control, monitor, and configure Tor."
+msgstr "Installer ${VIDALIA_DESC}."
+
+msgctxt "VidaliaGroupDesc"
+msgid "Vidalia is a GUI that helps you control, monitor, and configure Tor."
+msgstr "Installer ${VIDALIA_DESC}."
+
+msgctxt "BundleFinishText"
+msgid "Installation is complete.\nPlease see http://tor.eff.org/docs/tor-doc-win32.html to learn how to configure your applications to use Tor.\n\nIf you installed Torbutton, you will need to restart Firefox."
+msgstr "L'installation est terminée.\nConsultez la page http://tor.eff.org/docs/tor-doc-win32.html pour apprendre comment configurer vos applications avec Tor.\n\nSi vous venez d'installer Torbutton, vous devrez redémarrer Firefox."
+
+msgctxt "BundleWelcomeText"
+msgid "This wizard will guide you through the installation of Tor, Vidalia, Privoxy, and Torbutton.\n\nTor is a system for using the Internet anonymously, helping you anonymize Web browsing and publishing, instant messaging, IRC, and more. Vidalia is a GUI that helps you control, monitor, and configure Tor.\n\nPrivoxy is a filtering web proxy that protects your privacy and helps remove ads, banners, and popups.\n\nTorbutton is a Firefox extension that allows you to quickly enable or disable anonymous web browsing.\n\nIf you have previously installed Tor, Vidalia, Privoxy, or Firefox, please make sure they are not running before continuing this installation.\n\n$_CLICK"
+msgstr "Cet assistant vous guidera pendant l'installation de Tor, Vidalia, Privoxy, et de Torbutton.\n\nSi vous avez déjà installé Tor, Vidalia, Privoxy, ou Firefox, assurez-vous qu'ils ne sont pas démarrés avant de poursuivre l'installation.\n\n$_CLICK"
+
+msgctxt "PrivoxyShortcutsDesc"
+msgid "Add ${PRIVOXY_NAME} to your Start menu."
+msgstr "Ajouter ${PRIVOXY_NAME} à votre Menu Démarrer."
+
+msgctxt "VidaliaWelcomeText"
+msgid "This wizard will guide you through the installation of Vidalia, a GUI that helps you control, monitor, and configure Tor.\n\n$_CLICK"
+msgstr "Cet assistant vous guidera pendant l'installation de ${VIDALIA_DESC}.\n\n$_CLICK"
+
+msgctxt "TorGroupDesc"
+msgid "Tor is a system for using the Internet anonymously, helping you anonymize Web browsing and publishing, instant messaging, IRC, and more."
+msgstr "Installer ${TOR_DESC}."
+
+msgctxt "VidaliaWelcomeTitle"
+msgid "Welcome to the ${VIDALIA_NAME} Setup Wizard"
+msgstr "Bienvenue dans l'Assistant d'installation de ${VIDALIA_NAME}"
+
+msgctxt "TorbuttonAddToFirefoxDesc"
+msgid "Add the ${TORBUTTON_DESC} extension to Firefox."
+msgstr "Ajouter l'extension ${TORBUTTON_DESC} à Firefox."
+
+msgctxt "TorUninstDesc"
+msgid "Remove ${TOR_DESC}."
+msgstr "Supprimer ${TOR_DESC}."
+
+msgctxt "TorbuttonFirefoxNotFound"
+msgid "Firefox was not found on your system. Not installing Torbutton."
+msgstr "Firefox n'a pas été trouvé sur votre système. Torbutton ne sera pas installé."
+
+msgctxt "VidaliaLinkText"
+msgid "${VIDALIA_NAME} homepage"
+msgstr "Site Web de ${VIDALIA_NAME}"
+
+msgctxt "PrivoxyAppDesc"
+msgid "Install ${PRIVOXY_DESC}."
+msgstr "Installer ${PRIVOXY_DESC}."
+
+msgctxt "AppData"
+msgid "Application Data"
+msgstr "Données de l'Application"
+
+msgctxt "PrivoxyShortcuts"
+msgid "Add to Start Menu"
+msgstr "Ajouter au Menu Démarrer"
+
+msgctxt "BundleLinkText"
+msgid "${TOR_NAME} installation documentation"
+msgstr "Documentation de l'installation de ${TOR_NAME}"
+
+msgctxt "TorbuttonAddToFirefox"
+msgid "Add to Firefox"
+msgstr "Ajouter à Firefox"
+
+msgctxt "TorAppDesc"
+msgid "Install ${TOR_DESC}."
+msgstr "Installer ${TOR_DESC}."
+
+msgctxt "BundleRunNow"
+msgid "Run installed components now"
+msgstr "Démarrer les composants installés maintenant"
+
+msgctxt "VidaliaSetupCaption"
+msgid "${VIDALIA_NAME} setup"
+msgstr "Mise à jour de ${VIDALIA_NAME}"
+
+msgctxt "VidaliaStartupDesc"
+msgid "Automatically run ${VIDALIA_NAME} at startup."
+msgstr "Lancer automatiquement ${VIDALIA_NAME} au démarrage."
+
+msgctxt "TorDocumentation"
+msgid "Documentation"
+msgstr "Documentation"
+
+msgctxt "VidaliaUninstDesc"
+msgid "Remove ${VIDALIA_DESC}."
+msgstr "Supprimer ${VIDALIA_DESC}."
+
+msgctxt "PrivoxyUninstDesc"
+msgid "Remove ${PRIVOXY_DESC}."
+msgstr "Supprimer ${PRIVOXY_DESC}."
+
+msgctxt "TorShortcuts"
+msgid "Add to Start Menu"
+msgstr "Ajouter au Menu Démarrer"
+
+msgctxt "TorAskOverwriteTorrc"
+msgid "You already have a Tor configuration file.\nDo you want to overwrite it with the default sample configuration file?"
+msgstr "Vous avez déjà un fichier de configuration de Tor.\nVoulez-vous le remplacer par le fichier de configuration par défaut ?"
+
+msgctxt "VidaliaRunNow"
+msgid "Run ${VIDALIA_NAME}"
+msgstr "Démarrer ${VIDALIA_NAME} maintenant"
+
+msgctxt "PrivoxyStartupDesc"
+msgid "Automatically run ${PRIVOXY_NAME} at startup."
+msgstr "Lancer automatiquement ${PRIVOXY_NAME} au démarrage."
+
+msgctxt "VidaliaShortcuts"
+msgid "Add to Start Menu"
+msgstr "Ajouter au Menu Démarrer"
+
+msgctxt "TorDocumentationDesc"
+msgid "Install ${TOR_NAME} documentation."
+msgstr "Installer la documentation de ${TOR_NAME}."
+
+msgctxt "AppDataUninstDesc"
+msgid "Remove saved application data and configuration files."
+msgstr "Supprimer les fichiers de configuration et les données de l'application."
+
+msgctxt "TorShortcutsDesc"
+msgid "Add ${TOR_NAME} to your Start menu."
+msgstr "Ajouter ${TOR_NAME} à votre Menu Démarrer."
+
+msgctxt "TorbuttonGroupDesc"
+msgid "Torbutton is a Firefox extension that allows you to quickly enable or disable anonymous web browsing."
+msgstr "Installer ${TORBUTTON_DESC}."
+
+msgctxt "TorbuttonAppDesc"
+msgid "Install ${TORBUTTON_DESC}."
+msgstr "Installer ${TORBUTTON_DESC}."
+
+msgctxt "TorbuttonUninstDesc"
+msgid "Remove ${TORBUTTON_DESC}."
+msgstr "Supprimer ${TORBUTTON_DESC}."
+
+msgctxt "PrivoxyGroupDesc"
+msgid "Privoxy is a filtering web proxy that protects your privacy and helps remove ads, banners, and popups."
+msgstr "Installer ${PRIVOXY_DESC}."
+
+msgctxt "VidaliaStartup"
+msgid "Run At Startup"
+msgstr "Lancer au démarrage"
+
