@@ -45,8 +45,8 @@ msgstr ""
 "Tor."
 
 msgctxt "BundleFinishText"
-msgid "Installation is complete.\nPlease see http://tor.eff.org/docs/tor-doc-win32.html to learn how to configure your applications to use Tor.\n\nIf you installed Torbutton, you will need to restart Firefox."
-msgstr "L'installation est terminée.\nConsultez la page http://tor.eff.org/docs/tor-doc-win32.html pour apprendre comment configurer vos applications avec Tor.\n\nSi vous venez d'installer Torbutton, vous devrez redémarrer Firefox."
+msgid "Installation is complete.\nPlease see https://www.torproject.org/docs/tor-doc-windows to learn how to configure your applications to use Tor.\n\nIf you installed Torbutton, you will need to restart Firefox."
+msgstr "L'installation est terminée.\nConsultez la page https://www.torproject.org/docs/tor-doc-windows pour apprendre comment configurer vos applications avec Tor.\n\nSi vous venez d'installer Torbutton, vous devrez redémarrer Firefox."
 
 # GUI traduit en logiciel pour plus de clarté
 msgctxt "BundleWelcomeText"

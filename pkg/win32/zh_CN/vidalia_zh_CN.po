@@ -42,7 +42,7 @@ msgstr "安装 ${VIDALIA_DESC}."
 
 msgctxt "BundleFinishText"
 msgid "Installation is complete.\nPlease see https://www.torproject.org/docs/tor-doc-windows to learn how to configure your applications to use Tor.\n\nIf you installed Torbutton, you will need to restart Firefox."
-msgstr "安装完成.\n请访问 http://tor.eff.org/docs/tor-doc-win32.html 来获取关于 Tor 的配置信息.\n\n如果选择了安装 Torbutton,您需要重新启动火狐(Firefox)浏览器."
+msgstr "安装完成.\n请访问 https://www.torproject.org/docs/tor-doc-windows 来获取关于 Tor 的配置信息.\n\n如果选择了安装 Torbutton,您需要重新启动火狐(Firefox)浏览器."
 
 msgctxt "BundleWelcomeText"
 msgid "This wizard will guide you through the installation of Tor, Vidalia, Privoxy, and Torbutton.\n\nTor is a system for using the Internet anonymously, helping you anonymize Web browsing and publishing, instant messaging, IRC, and more. Vidalia is a GUI that helps you control, monitor, and configure Tor.\n\nPrivoxy is a filtering web proxy that protects your privacy and helps remove ads, banners, and popups.\n\nTorbutton is a Firefox extension that allows you to quickly enable or disable anonymous web browsing.\n\nIf you have previously installed Tor, Vidalia, Privoxy, or Firefox, please make sure they are not running before continuing this installation.\n\n$_CLICK"
