@@ -52,7 +52,7 @@ vidalia_add_nsh(vidalia_NSH
 vidalia_add_nsh(vidalia_NSH
   sv/vidalia_sv.po  SWEDISH   ISO-8859-1)
 vidalia_add_nsh(vidalia_NSH
-  pt_BR/vidalia_pt_BR.po  PORTUGUESEBR  ISO-8859-1)
+  pt/vidalia_pt_BR.po  PORTUGUESEBR  ISO-8859-1)
 #vidalia_add_nsh(vidalia_NSH
 #  zh_CN/vidalia_zh_CN.po  SIMPCHINESE   GB18030)
 #vidalia_add_nsh(vidalia_NSH
