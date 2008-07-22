@@ -46,13 +46,13 @@ vidalia_add_nsh(vidalia_NSH
 vidalia_add_nsh(vidalia_NSH
   pl/vidalia_pl.po  POLISH    ISO-8859-2)
 vidalia_add_nsh(vidalia_NSH
+  pt/vidalia_pt.po  PORTUGUESE  ISO-8859-1)
+vidalia_add_nsh(vidalia_NSH
   ro/vidalia_ro.po  ROMANIAN  ISO-8859-2)
 vidalia_add_nsh(vidalia_NSH
   ru/vidalia_ru.po  RUSSIAN   KOI8-R)
 vidalia_add_nsh(vidalia_NSH
   sv/vidalia_sv.po  SWEDISH   ISO-8859-1)
-vidalia_add_nsh(vidalia_NSH
-  pt/vidalia_pt_BR.po  PORTUGUESEBR  ISO-8859-1)
 #vidalia_add_nsh(vidalia_NSH
 #  zh_CN/vidalia_zh_CN.po  SIMPCHINESE   GB18030)
 #vidalia_add_nsh(vidalia_NSH
