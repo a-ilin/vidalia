@@ -139,6 +139,7 @@ MainWindow::MainWindow()
            this, SLOT(onSubprocessFinished(int, QProcess::ExitStatus)));
   connect(_browserProcess, SIGNAL(startFailed(QString)),
            this, SLOT(onBrowserFailed(QString)));
+  _browserProcess->setEnvironment(QProcess::systemEnvironment() << "TZ=UTC");
 
   /* Create a new HelperProcess object, used to start the web browser */
   _imProcess = new HelperProcess(this);
