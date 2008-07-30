@@ -78,7 +78,7 @@ cmake . && make
 %install
 rm -rf $RPM_BUILD_ROOT
 mkdir -p $RPM_BUILD_ROOT/usr/local/bin
-mkdir -p $RPM_BUILD_ROOT/usr/local/man/man1
+mkdir -p $RPM_BUILD_ROOT/usr/local/share/man/man1
 #install -s -m 755 eject $RPM_BUILD_ROOT/usr/bin/eject
 #install -m 644 eject.1 $RPM_BUILD_ROOT/usr/man/man1/eject.1
 
@@ -90,7 +90,7 @@ rm -rf %{buildroot}
 
 %files
 /usr/local/bin/vidalia 
-/usr/local/man/man1/vidalia.1
+/usr/local/share/man/man1/vidalia.1
 
 #####################################################
 # defattr sets the default attributes for all files
@@ -98,6 +98,9 @@ rm -rf %{buildroot}
 %defattr(-, root, root)
 
 %changelog
+* Wed Jul 30 2008  Oliver Niesner <digi_news@gmx.de> 0.1.6-1
+- bump to 0.1.6 
+- fix man path 
 
 * Mon Mar 31 2008 Oliver Niesner <digi_news@gmx.de> 0.1.2-1
 - bump to 0.1.2
