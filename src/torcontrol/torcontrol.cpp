@@ -603,7 +603,7 @@ TorControl::getTorVersion()
   versionString = _torVersion;
 
   /* Split the version string at either "." or "-" characters */
-  QStringList parts = versionString.split(QRegExp("\\.|-"));
+  QStringList parts = versionString.split(QRegExp("\\.|-|\\ "));
   if (parts.size() >= 4) {
     major = (quint8)parts.at(0).toUInt();
     minor = (quint8)parts.at(1).toUInt();
