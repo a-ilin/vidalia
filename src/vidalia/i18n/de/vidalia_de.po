@@ -2543,17 +2543,17 @@ msgstr ""
 #: upnpcontrol.cpp:139
 msgctxt "UPNPControl"
 msgid "Success"
-msgstr ""
+msgstr "Erfolgreich"
 
 #: upnpcontrol.cpp:141
 msgctxt "UPNPControl"
 msgid "No UPnP-enabled devices found"
-msgstr ""
+msgstr "Keine aktiven UPnP-Geräte gefunden"
 
 #: upnpcontrol.cpp:143
 msgctxt "UPNPControl"
 msgid "No valid UPnP-enabled Internet gateway devices found"
-msgstr ""
+msgstr "Keine gültigen UPnP-Internet-Gateway-Geräte gefunden"
 
 #: upnpcontrol.cpp:145
 msgctxt "UPNPControl"
@@ -2563,22 +2563,22 @@ msgstr ""
 #: upnpcontrol.cpp:147
 msgctxt "UPNPControl"
 msgid "Failed to add a port mapping"
-msgstr ""
+msgstr "Hinzufügen der Port-Zuordnung fehlgeschlagen"
 
 #: upnpcontrol.cpp:149
 msgctxt "UPNPControl"
 msgid "Failed to retrieve a port mapping"
-msgstr ""
+msgstr "Konnte keine Port-Zuordnung empfangen"
 
 #: upnpcontrol.cpp:151
 msgctxt "UPNPControl"
 msgid "Failed to remove a port mapping"
-msgstr ""
+msgstr "Entfernen der Port-Zuordnung fehlgeschlagen"
 
 #: upnpcontrol.cpp:153
 msgctxt "UPNPControl"
 msgid "Unknown error"
-msgstr ""
+msgstr "Unbekannter Fehler"
 
 #: upnptestdialog.cpp:112
 msgctxt "UPNPTestDialog"
@@ -2598,12 +2598,12 @@ msgstr ""
 #: upnptestdialog.cpp:127
 msgctxt "UPNPTestDialog"
 msgid "Test completed successfully!"
-msgstr ""
+msgstr "Test erfolgreich abgeschlossen!"
 
 #: upnptestdialog.ui:13
 msgctxt "UPNPTestDialog"
 msgid "Testing UPnP Support"
-msgstr ""
+msgstr "Test UPnP-Unterstützung"
 
 #: upnptestdialog.ui:92
 msgctxt "UPNPTestDialog"
