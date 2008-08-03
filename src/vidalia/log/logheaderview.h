@@ -30,8 +30,6 @@ public:
 
   /** Resets all column widths back to their defaults. */
   void resetColumnWidths();
-  /** Resizes the column headers based on the longest message item. */
-  void resize(int hint);
 };
 
 #endif

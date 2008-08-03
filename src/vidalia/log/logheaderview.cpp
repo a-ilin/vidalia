@@ -44,18 +44,3 @@ LogHeaderView::resetColumnWidths()
 }
 
 
-/** Resizes the column headers based on the longest message item. */
-void
-LogHeaderView::resize(int hint)
-{
-  int size = sectionSize(COL_MESG);
-  if (hint > size) {
-    /* The message is wider than the window, so expand the column */
-    setStretchLastSection(false);
-    resizeSection(COL_MESG, hint);
-  } else if (hint < size) {
-    /* The message is short, so just stretch the last column to the end */
-    setStretchLastSection(true);
-  }
-}
-

@@ -80,8 +80,6 @@ LogTreeWidget::showEvent(QShowEvent *event)
   if (!shown) {
     /* Set the default column widths the first time this is shown */
     ((LogHeaderView *)header())->resetColumnWidths();
-    /* Adjust the message column properly */
-    adjustMessageColumn();
     shown = true;
   }
 }
@@ -93,24 +91,6 @@ LogTreeWidget::clearMessages()
 {
   /* Clear the messages */
   clear();
-}
-
-/** Adjusts the message column width to accomodate long messages. */
-void
-LogTreeWidget::adjustMessageColumn()
-{
-  /* Adjust the message column, based on the longest item. */
-  ((LogHeaderView *)header())->resize(sizeHintForColumn(MessageColumn));
-}
-
-/** Adds a message log item. */
-void
-LogTreeWidget::addMessageItem(LogTreeItem *item)
-{
-  /* Add the new item. */
-  addTopLevelItem(item);
-  /* Adjust the column headers to accomodate a long message, if necesssary */
-  adjustMessageColumn();
 }
 
 /** Returns a list of all currently selected items. */
@@ -191,8 +171,8 @@ LogTreeWidget::log(LogEvent::Severity type, QString message)
    *       to force the result to be sorted immediately. Otherwise, the new
    *       message is not sorted until the message log has focus again.
    */
-  setSortingEnabled(false); 
-  addMessageItem(item);
+  setSortingEnabled(false);
+  addTopLevelItem(item);
   setSortingEnabled(true);
 
   if (_scrollOnNewItem) {

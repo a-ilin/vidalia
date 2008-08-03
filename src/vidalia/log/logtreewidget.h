@@ -63,9 +63,6 @@ public:
   /** Searches the log for entries that contain the given text. */
   QList<LogTreeItem *> find(QString text, bool highlight = true);
 
-  /** Adjusts the message column, for long messages. */
-  void adjustMessageColumn();
-
 public slots:
   /** Clears all contents on the message log and resets the counter. */
   void clearMessages();
@@ -79,8 +76,6 @@ private slots:
   void verticalSliderReleased();
 
 private:
-  /** Adds a message log item. */
-  void addMessageItem(LogTreeItem *item);
   /** Casts a QList of one pointer type to another. */
   QList<LogTreeItem *> qlist_cast(QList<QTreeWidgetItem *> inlist);
   /** Sortrs a QList of pointers to tree items. */

@@ -82,16 +82,6 @@ MessageLog::~MessageLog()
   _logFile.close();
 }
 
-/** Responds to the user resizing the message log. */
-void
-MessageLog::resizeEvent(QResizeEvent *event)
-{
-  Q_UNUSED(event);
-
-  /* Let the message list know that it may need to add a scrollbar */
-  ui.lstMessages->adjustMessageColumn();
-}
-
 /** Binds events (signals) to actions (slots). */
 void
 MessageLog::createActions()
