@@ -47,4 +47,5 @@ add_dependencies(i18n po2ts)
 add_custom_target(i18n-update)
 add_dependencies(i18n-update po2ts ts2po)
 vidalia_update_po(i18n-update ${vidalia_PO})
+vidalia_update_po(i18n-update templates/vidalia.pot)
 
