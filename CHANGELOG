@@ -1,3 +1,28 @@
+0.1.7   xx-Aug-2008
+  o Handle spaces in the Tor version number we get from 'getinfo version'
+    since Tor has included svn revision numbers in its response (e.g.
+    "0.2.0.30 (r12345)") for a while now.
+  o Include stdlib.h in the format conversion tools. Fixes the build on some
+    platforms.
+  o Rework the message log scrollbar logic so it's consistent again on
+    Qt 4.4.0. (Ticket #369)
+  o Remove the horizontal scroll bar behavior in the message log. It was
+    really annoying and unnecessary since long messages have tooltips anyway.
+  o Add "TZ=UTC" to the BrowserExecutable's environment variables when launched
+    via Vidalia.
+  o Rename the 'pt_BR' Windows installer translation to just 'pt' since there
+    is apparently nothing 'BR'-specific about it. (Ticket #394)
+  o Update Tor's URL in the Windows installer and translations.
+  o Add an nsh2po tool (not built by default) that can be used to extract
+    LangString entries from an NSIS file and generate a .po file. This was
+    used to help push our installer translations into Pootle.
+  o Add a po2nsh tool to convert the Windows installer .po files to NSIS .nsh
+    files at build time. 
+  o Tell CMake to skip the pkg/ subdirectories that aren't likely to be needed
+    on the current build platform.
+  o Updated Czech, French, and German translations.
+
+
 0.1.6   08-Jul-2008
   o Fix a bug in our control socket communication introduced in 0.1.3 that
     could cause excessive CPU usage or crashing on some platforms.
