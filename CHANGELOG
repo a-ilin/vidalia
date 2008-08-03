@@ -1,4 +1,4 @@
-0.1.7   xx-Aug-2008
+0.1.7   02-Aug-2008
   o Handle spaces in the Tor version number we get from 'getinfo version'
     since Tor has included svn revision numbers in its response (e.g.
     "0.2.0.30 (r12345)") for a while now.
