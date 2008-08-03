@@ -28,8 +28,9 @@ LogTreeWidget::LogTreeWidget(QWidget *parent)
   
   /* Default to always scrolling to the most recent item added */
   _scrollOnNewItem = true;
-  connect(verticalScrollBar(), SIGNAL(valueChanged(int)),
-          this, SLOT(onVerticalScroll(int)));
+  setVerticalScrollMode(QAbstractItemView::ScrollPerItem);
+  connect(verticalScrollBar(), SIGNAL(sliderReleased()),
+          this, SLOT(verticalSliderReleased()));
 }
 
 /** Called when the user moves the vertical scrollbar. If the user has the
@@ -37,10 +38,13 @@ LogTreeWidget::LogTreeWidget(QWidget *parent)
  * items when added. Otherwise, leave the scrollbar alone since they are
  * probably looking at something in their history. */
 void
-LogTreeWidget::onVerticalScroll(int value)
+LogTreeWidget::verticalSliderReleased()
 {
-  QScrollBar *scrollbar = verticalScrollBar();
-  _scrollOnNewItem = (value >= (scrollbar->maximum()-scrollbar->singleStep()));
+  QScrollBar *scrollBar = verticalScrollBar();
+  if (header()->sortIndicatorOrder() == Qt::AscendingOrder)
+    _scrollOnNewItem = (scrollBar->value() == scrollBar->maximum());
+  else
+    _scrollOnNewItem = (scrollBar->value() == scrollBar->minimum());
 }
 
 /** Cast a QList of QTreeWidgetItem pointers to a list of LogTreeWidget
@@ -182,11 +186,23 @@ LogTreeWidget::log(LogEvent::Severity type, QString message)
     delete takeTopLevelItem(0);
   }
   
-  /* Add the new message item and scroll to it (if necessary) */
+  /* Add the new message item and scroll to it (if necessary) 
+   * NOTE: We disable sorting, add the new item, and then re-enable sorting
+   *       to force the result to be sorted immediately. Otherwise, the new
+   *       message is not sorted until the message log has focus again.
+   */
+  setSortingEnabled(false); 
   addMessageItem(item);
+  setSortingEnabled(true);
+
   if (_scrollOnNewItem) {
-    scrollToItem(item);
+    QScrollBar *scrollBar = verticalScrollBar();
+    if (header()->sortIndicatorOrder() == Qt::AscendingOrder)
+      scrollBar->setValue(scrollBar->maximum());
+    else
+      scrollBar->setValue(scrollBar->minimum());
   }
+
   return item;
 }
 

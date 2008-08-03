@@ -76,7 +76,7 @@ protected:
 
 private slots:
   /** Called when the user moves the vertical scroll bar. */
-  void onVerticalScroll(int value);
+  void verticalSliderReleased();
 
 private:
   /** Adds a message log item. */
