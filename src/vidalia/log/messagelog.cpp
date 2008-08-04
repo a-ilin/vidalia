@@ -32,8 +32,8 @@
 #define SETTING_LOGFILE             "LogFile"
 #define DEFAULT_MSG_FILTER \
   (LogEvent::Error|LogEvent::Warn|LogEvent::Notice)
-#define DEFAULT_MAX_MSG_COUNT       250
-#define DEFAULT_ENABLE_LOGFILE     false
+#define DEFAULT_MAX_MSG_COUNT       50
+#define DEFAULT_ENABLE_LOGFILE      false
 #if defined(Q_OS_WIN32)
 
 /** Default location of the log file to which log messages will be written. */
