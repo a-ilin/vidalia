@@ -25,7 +25,10 @@ LogTreeWidget::LogTreeWidget(QWidget *parent)
 : QTreeWidget(parent)
 {
   setHeader(new LogHeaderView(this));
-  
+
+  /* Explicitly default to sorting messages chronologically */
+  sortItems(LogTreeWidget::TimeColumn, Qt::AscendingOrder);
+
   /* Default to always scrolling to the most recent item added */
   _scrollOnNewItem = true;
   setVerticalScrollMode(QAbstractItemView::ScrollPerItem);
@@ -115,14 +118,10 @@ QStringList
 LogTreeWidget::allMessages()
 {
   QStringList messages;
-  
-  /* Find all items */
-  QList<LogTreeItem *> items = 
-    qlist_cast(findItems("*", Qt::MatchWildcard|Qt::MatchWrap, MessageColumn));
-  
+
   /* Format the message items as strings and put them in a list */
-  foreach (LogTreeItem *item, qlist_sort(items)) {
-    messages << item->toString();  
+  foreach (LogTreeItem *item, _itemHistory) {
+    messages << item->toString();
   }
   return messages;
 }
@@ -138,10 +137,12 @@ LogTreeWidget::messageCount()
 void
 LogTreeWidget::setMaximumMessageCount(int max)
 {
-  while (max < messageCount()) {
+  while (max < messageCount() && _itemHistory.size() > 0) {
     /* If the new max is less than the currently displayed number of 
      * items, then we'll get rid of some. */
-    delete takeTopLevelItem(0);
+    int index = indexOfTopLevelItem(_itemHistory.takeFirst());
+    if (index != -1)
+      delete takeTopLevelItem(index);
   }
   _maxItemCount = max;
 }
@@ -159,49 +160,80 @@ LogTreeWidget::deselectAll()
 LogTreeItem*
 LogTreeWidget::log(LogEvent::Severity type, QString message)
 {
+  int oldScrollValue;
+  QScrollBar *scrollBar = verticalScrollBar();
   LogTreeItem *item = new LogTreeItem(type, message);
 
+  /* Remember the current scrollbar position */
+  oldScrollValue = scrollBar->value();
+
   /* If we need to make room, then make some room */
-  if (messageCount() >= _maxItemCount) {
-    delete takeTopLevelItem(0);
+  if (messageCount() >= _maxItemCount && _itemHistory.size()) {
+    int index = indexOfTopLevelItem(_itemHistory.takeFirst());
+    if (index != -1)
+      delete takeTopLevelItem(index);
   }
-  
-  /* Add the new message item and scroll to it (if necessary) 
+
+  /* Add the new message item.
    * NOTE: We disable sorting, add the new item, and then re-enable sorting
    *       to force the result to be sorted immediately. Otherwise, the new
-   *       message is not sorted until the message log has focus again.
+   *       message is not sorted until the message log has focus again. This
+   *       is totally lame.
    */
   setSortingEnabled(false);
-  addTopLevelItem(item);
+  addLogTreeItem(item);
   setSortingEnabled(true);
 
-  if (_scrollOnNewItem) {
-    QScrollBar *scrollBar = verticalScrollBar();
+  /* The intended vertical scrolling behavior is as follows:
+   *
+   *   1) If the message log is sorted in chronological order, and the user
+   *      previously had the vertical scroll bar at its maximum position, then
+   *      reposition the vertical scroll bar to the new maximum value.
+   *
+   *   2) If the message log is sorted in reverse chronological order, and the
+   *      user previously had the vertical scroll bar at its minimum position,
+   *      then reposition the vertical scroll bar to the new minimum value
+   *      (which is always just 0 anyway).
+   *
+   *   3) If the message log is sorted by severity level or lexicographically
+   *      by log message, or if the user manually repositioned the scroll bar,
+   *      then leave the vertical scroll bar at its previous position.
+   */
+  if (_scrollOnNewItem && sortColumn() == LogTreeWidget::TimeColumn) {
     if (header()->sortIndicatorOrder() == Qt::AscendingOrder)
       scrollBar->setValue(scrollBar->maximum());
     else
       scrollBar->setValue(scrollBar->minimum());
+  } else {
+    scrollBar->setValue(oldScrollValue);
   }
 
   return item;
+}
+
+/** Adds <b>item</b> as a top-level item in the tree. */
+void
+LogTreeWidget::addLogTreeItem(LogTreeItem *item)
+{
+  addTopLevelItem(item);
+  _itemHistory.append(item);
 }
 
 /** Filters the message log based on the given filter. */
 void
 LogTreeWidget::filter(uint filter)
 {
-  LogTreeItem *item;
-  int index = messageCount() - 1;
   int itemsShown = 0;
-
-  while (index > -1) {
-    item = (LogTreeItem *)topLevelItem(index);
+  for (int i = _itemHistory.size()-1; i >= 0; i--) {
+    LogTreeItem *item = _itemHistory.at(i);
     if ((itemsShown < _maxItemCount) && (filter & item->severity())) {
       itemsShown++;
     } else {
-      delete takeTopLevelItem(index);
+      int itemIndex = indexOfTopLevelItem(item);
+      if (itemIndex != -1)
+        delete takeTopLevelItem(itemIndex);
+      _itemHistory.removeAt(i);
     }
-    index--;
   }
 }
 
@@ -224,4 +256,3 @@ LogTreeWidget::find(QString text, bool highlight)
   /* Return the results, sorted by timestamp */
   return qlist_sort(items);
 }
-

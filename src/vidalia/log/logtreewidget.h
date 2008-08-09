@@ -76,11 +76,15 @@ private slots:
   void verticalSliderReleased();
 
 private:
+  /** Adds <b>item</b> as a top-level item in the tree. */
+  void addLogTreeItem(LogTreeItem *item);
   /** Casts a QList of one pointer type to another. */
   QList<LogTreeItem *> qlist_cast(QList<QTreeWidgetItem *> inlist);
   /** Sortrs a QList of pointers to tree items. */
   QList<LogTreeItem *> qlist_sort(QList<LogTreeItem *> inlist);
 
+  /**< List of pointers to all log message items currently in the tree. */
+  QList<LogTreeItem *> _itemHistory;
   int _maxItemCount; /**< Maximum number of items in the tree. */
   bool _scrollOnNewItem; /**< Set to true if we are to scroll to the new item
                                after adding a message to the log. */
