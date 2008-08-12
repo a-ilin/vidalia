@@ -1,0 +1,113 @@
+$Id$
+                
+                  Building a Windows Vidalia Installer
+
+0. Introduction
+
+This document describes the procedure for building an executable Windows
+installer for Vidalia. For information on building a Windows bundle installer,
+please see Vidalia's pkg/win32/build-bundle.txt.
+
+Before building the Vidalia installer for the first time, you will need to
+download and install a recent version of NSIS (Nullsoft Scriptable Install
+System). NSIS can be downloaded from the following website:
+
+    http://nsis.sourceforge.net/Download 
+
+You will also need all of the prerequisites necessary for building Vidalia,
+such as Qt and CMake. These requirements are detailed in the INSTALL file, in
+the root of Vidalia's source tree.
+
+To sign the resulting installer suitable for distribution, you will need to 
+install GnuPG or PGP. GnuPG can be downloaded here:
+
+  http://www.gnupg.org/download/index.html
+
+
+1. Compiling the Installer
+
+The following steps describe the process used to create Vidalia's "release"
+executable installers.
+
+
+1.1. Compile a 'release' Version of Vidalia
+
+  First, extract Vidalia's source to a directory, or fetch the latest
+  revision from our Subversion repository.
+
+    http://trac.vidalia-project.net/wiki/GettingTheCode
+
+  In the root of Vidalia's source tree, create a build directory:
+
+    mkdir build
+    cd build
+  
+  Configure Vidalia as follows:
+
+    cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=minsizerel ..
+
+  Finally, compile Vidalia by running:
+  
+    make
+
+
+1.2. Collect Required Dependencies 
+
+  Create a "bin" directory by running the following command from your build
+  directory:
+
+    mkdir bin
+
+
+  Copy the following Qt .dll files from your Qt installation into your "bin"
+  directory:
+
+    copy $QTDIR\QtCore4.dll bin\
+    copy $QTDIR\QtGui4.dll bin\
+    copy $QTDIR\QtNetwork4.dll bin\
+    copy $QTDIR\QtXml4.dll bin\
+  
+  where "$QTDIR" is the path to your Qt installation.
+
+
+  Copy the MinGW .dll file into your "bin" directory:
+
+    copy $MINGWDIR\bin\mingwm10.dll bin\
+
+  where "$MINGWDIR" is the path to your MinGW installation.
+
+
+  Copy the Vidalia executable into your "bin" directory:
+
+    copy src\vidalia\vidalia.exe bin\
+
+
+1.3. Create the Executable Installer
+
+  Open Windows Explorer and navigate to
+ 
+    $BUILDIR\pkg\win32
+  
+  where "$BUILDIR" is replaced by the path to the build directory you created
+  in Step 1.1.2 above.
+
+  Locate the file "vidalia.nsi" and right-click on it. From the context menu,
+  select "Compile NSIS Script". You will see an NSIS window appear and display
+  some progress information while it compiles the installer. When it completes,
+  you will have a complete Vidalia installation executable located in:
+
+    $BUILDIR\pkg\win32\vidalia-$VERSION.exe
+
+  where "$VERSION" is the version of Vidalia for which the installer was built.
+
+
+1.4. Sign the Package (optional, recommended)
+
+  From the root of Vidalia's source tree, run the following commands:
+
+    cd pkg\win32
+    gpg -ba vidalia-$VERSION.exe
+
+  where "$VERSION" is replaced by the version of Vidalia for which you just
+  built a Windows installer.
+
