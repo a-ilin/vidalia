@@ -143,6 +143,7 @@ Section "${VIDALIA_DESC}" Vidalia
   File "..\..\bin\QtGui4.dll"
   File "..\..\bin\QtNetwork4.dll"
   File "..\..\bin\QtXml4.dll"
+  File "..\..\bin\ssleay32.dll"
   File "@Vidalia_SOURCE_DIR@\CREDITS"
   File "@Vidalia_SOURCE_DIR@\CHANGELOG"
   File "@Vidalia_SOURCE_DIR@\LICENSE"

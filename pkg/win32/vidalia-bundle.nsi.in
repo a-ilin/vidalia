@@ -161,6 +161,7 @@ SectionGroup "${VIDALIA_DESC}" VidaliaGroup
       File "Vidalia\${VIDALIA_APPVERSION}\QtGui4.dll"
       File "Vidalia\${VIDALIA_APPVERSION}\QtNetwork4.dll"
       File "Vidalia\${VIDALIA_APPVERSION}\QtXml4.dll"
+      File "Vidalia\${VIDALIA_APPVERSION}\ssleay32.dll"
       File "Vidalia\${VIDALIA_APPVERSION}\README"
       File "Vidalia\${VIDALIA_APPVERSION}\CHANGELOG"
       File "Vidalia\${VIDALIA_APPVERSION}\LICENSE"
