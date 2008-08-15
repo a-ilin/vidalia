@@ -52,11 +52,17 @@ ConfigDialog::ConfigDialog(QWidget* parent)
   /* Override the QDialogButtonBox button text so we can use our own
    * translations. */
   QPushButton *button = ui.buttonBox->button(QDialogButtonBox::Ok);
-  if (button)
+  if (button) {
     button->setText(tr("OK"));
+    Vidalia::createShortcut(QKeySequence(Qt::Key_Return), 
+                            this, button, SLOT(click()));
+  }
   button = ui.buttonBox->button(QDialogButtonBox::Cancel);
-  if (button)
+  if (button) {
     button->setText(tr("Cancel"));
+    Vidalia::createShortcut(QKeySequence(Qt::Key_Escape),
+                            this, button, SLOT(click()));
+  }
   
   /* Connect the button box signals to the appropriate slots */
   connect(ui.buttonBox, SIGNAL(accepted()), this, SLOT(saveChanges()));
