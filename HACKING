@@ -184,6 +184,30 @@ $Id$
       /* Private slots */
   };
 
+2.1.6. Widget Names
+
+  Every widget declared in a Qt Designer .ui file must have a short three or 
+  four letter prefix that describes the widget's type.
+
+       Widget Type           Prefix         Example
+       ------------------------------------------------------------
+       QCheckBox             chk            chkEnableFoo
+       QComboBox             cmbo           cmbo
+       QFrame                frm            frmMain
+       QGroupBox             grp            grpAdvanced
+       QLabel                lbl            lblHeader
+       QLineEdit             line           lineAddress
+       QListView             lst            lstMessages
+       QProgressBar          pbar           pbarDownload
+       QPushButton           btn            btnClose
+       QRadioButton          rdo            rdoSomeOption
+       QSpinBox              spn            spnDial
+       QTableView            tbl            tblSpreadsheet
+       QTabWidget            tab            tabServerOptions
+       QToolButton           btn            btnExit
+       QTreeView             tree           treeFolders
+
+
 2.2. Comments
 
   Comments should be standard C style comments. For example:
