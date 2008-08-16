@@ -192,7 +192,7 @@ $Id$
        Widget Type           Prefix         Example
        ------------------------------------------------------------
        QCheckBox             chk            chkEnableFoo
-       QComboBox             cmbo           cmbo
+       QComboBox             cmbo           cmboNames
        QFrame                frm            frmMain
        QGroupBox             grp            grpAdvanced
        QLabel                lbl            lblHeader
