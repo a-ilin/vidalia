@@ -1,10 +1,29 @@
-0.1.8   xx-xxx-2008
+0.1.8   xx-Aug-2008
+  o Make the position of the y-axis on the bandwidth graph variable based on 
+    the width of the axis labels. This works better for languages like Farsi 
+    where "KB/s" somehow becomes 19 characters. (Ticket #373)
+  o Support alphanumeric circuit and stream IDs, rather than assuming IDs will
+    always be numeric. Current Tors only use numeric circuit and stream IDs, 
+    but they may some day. (Ticket #400)
+  o Include ssleay32.dll in the Windows packages so Vidalia won't crash when
+    it finds an incompatible version of ssleay32.dll in the user's $PATH. 
+    (Ticket #401)
+  o If the message log is sorted by severity or lexiographically, or if the 
+    user manually repositioned the vertical scroll bar, then retain the scroll 
+    bar's previous position after adding a new message to the log.
   o Reduce the default number of messages to retain in the message log to 50
     messages. Most people never look at the window and the extra 200 messages
     just needlessly eat memory.
   o Restore the "zoom" and "close" icons in the router and circuit list
     context menus. They were lost in the move to the Oxygen icon theme in
     0.1.4.
+  o Make both the 'Ctrl+W' and 'Esc' shortcuts for closing any Vidalia window.
+    Previously, it was just 'Esc' on Windows and 'Ctrl+W' on all other 
+    platforms.
+  o Make pressing "Return" mean the same thing as clicking 'OK' in the 
+    config dialog, and make pressing 'Esc' mean the same thing as clicking 
+    'Cancel'. (Ticket #327)
+  o Fix the icon used for the help browser's window icon.
 
 
 0.1.7   02-Aug-2008
