@@ -340,9 +340,17 @@ Vidalia::log(Log::LogLevel level, QString msg)
  * <b>sender</b>'s context, <b>receiver</b>'s <b>slot</b> will be called. */
 void
 Vidalia::createShortcut(const QKeySequence &key, QWidget *sender,
-                        QWidget *receiver, const char *slot)
+                        QObject *receiver, const char *slot)
 {
   QShortcut *s = new QShortcut(key, sender);
   connect(s, SIGNAL(activated()), receiver, slot);
 }
 
+/** Creates and binds a shortcut such that when <b>key</b> is pressed in
+ * <b>sender</b>'s context, <b>receiver</b>'s <b>slot</b> will be called. */
+void
+Vidalia::createShortcut(const QString &key, QWidget *sender,
+                        QObject *receiver, const char *slot)
+{
+  createShortcut(QKeySequence(key), sender, receiver, slot);
+}

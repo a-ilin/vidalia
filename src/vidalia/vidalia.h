@@ -95,7 +95,12 @@ public:
   /** Creates and binds a shortcut such that when <b>key</b> is pressed in
    * <b>sender</b>'s context, <b>receiver</b>'s <b>slot</b> will be called. */
   static void createShortcut(const QKeySequence &key, QWidget *sender,
-                             QWidget *receiver, const char *slot);
+                             QObject *receiver, const char *slot);
+
+  /** Creates and binds a shortcut such that when <b>key</b> is pressed in
+   * <b>sender</b>'s context, <b>receiver</b>'s <b>slot</b> will be called. */
+  static void createShortcut(const QString &key, QWidget *sender,
+                             QObject *receiver, const char *slot);
 
 signals:
   /** Emitted when the application is running and the main event loop has
