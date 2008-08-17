@@ -64,7 +64,7 @@ CircuitItem::removeStream(StreamItem *stream)
 
 /** Returns a list of all stream items on this circuit. */
 QList<StreamItem *>
-CircuitItem::streams()
+CircuitItem::streams() const
 {
   QList<StreamItem *> streams;
   int n = childCount();

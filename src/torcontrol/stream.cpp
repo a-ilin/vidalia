@@ -15,22 +15,22 @@
 */
 
 #include <QStringList>
- 
+
+#include "circuit.h" 
 #include "stream.h"
 
 
 /** Default constructor. */
 Stream::Stream()
 {
-  _streamId  = 0;
   _status    = Unknown;
-  _circuitId = 0;
   _port      = 0;
 }
 
 /** Constructor */
-Stream::Stream(quint64 streamId, Status status, quint64 circuitId, 
-               QString address, quint16 port)
+Stream::Stream(const StreamId &streamId, Status status,
+               const CircuitId &circuitId, const QString &address,
+               quint16 port)
 {
   _streamId  = streamId;
   _status    = status;
@@ -40,7 +40,8 @@ Stream::Stream(quint64 streamId, Status status, quint64 circuitId,
 }
 
 /** Constructor */
-Stream::Stream(quint64 streamId, Status status, quint64 circuitId, QString target)
+Stream::Stream(const StreamId &streamId, Status status,
+               const CircuitId &circuitId, const QString &target)
 {
   _streamId  = streamId;
   _status    = status;
@@ -60,16 +61,16 @@ Stream::Stream(quint64 streamId, Status status, quint64 circuitId, QString targe
  *     StreamID SP StreamStatus SP CircID SP Target
  */
 Stream
-Stream::fromString(QString stream)
+Stream::fromString(const QString &stream)
 {
-  QStringList parts = stream.split(" ");
+  QStringList parts = stream.split(" ", QString::SkipEmptyParts);
   if (parts.size() >= 4) { 
     /* Get the stream ID */
-    quint64 streamId = (quint64)parts.at(0).toULongLong();
+    StreamId streamId = parts.at(0);
     /* Get the stream status value */
     Stream::Status status = Stream::toStatus(parts.at(1));
     /* Get the ID of the circuit on which this stream travels */
-    quint64 circId = (quint64)parts.at(2).toULongLong();
+    CircuitId circId = parts.at(2);
     /* Get the target address for this stream */
     QString target = parts.at(3);
     
@@ -78,34 +79,46 @@ Stream::fromString(QString stream)
   return Stream();
 }
 
+/** Returns true iff <b>streamId</b> consists of only between 1 and 16
+ * (inclusive) ASCII-encoded letters and numbers. */
+bool
+Stream::isValidStreamId(const StreamId &streamId)
+{
+  int length = streamId.length();
+  if (length < 1 || length > 16)
+    return false;
+
+  for (int i = 0; i < length; i++) {
+    char c = streamId[i].toAscii();
+    if (c < '0' && c > '9' && c < 'A' && c > 'Z' && c < 'a' && c > 'z')
+      return false;
+  }
+  return true;
+}
+
 /** Converts a string description of a stream's status to its enum value */
 Stream::Status
-Stream::toStatus(QString strStatus)
+Stream::toStatus(const QString &strStatus)
 {
-  Status status;
-  strStatus = strStatus.toUpper();
-  if (strStatus == "NEW") {
-    status = New;
-  } else if (strStatus == "NEWRESOLVE") {
-    status = NewResolve;
-  } else if (strStatus == "SENTCONNECT") {
-    status = SentConnect;
-  } else if (strStatus == "SENTRESOLVE") {
-    status = SentResolve;
-  } else if (strStatus == "SUCCEEDED") {
-    status = Succeeded;
-  } else if (strStatus == "FAILED") {
-    status = Failed;
-  } else if (strStatus == "CLOSED") {
-    status = Closed;
-  } else if (strStatus == "DETACHED") {
-    status = Detached; 
-  } else if (strStatus == "REMAP") {
-    status = Remap;
-  } else {
-    status = Unknown;
-  }
-  return status;
+  if (!strStatus.compare("NEW", Qt::CaseInsensitive))
+    return New;
+  if (!strStatus.compare("NEWRESOLVE", Qt::CaseInsensitive))
+    return NewResolve;
+  if (!strStatus.compare("SENTCONNECT", Qt::CaseInsensitive))
+    return SentConnect;
+  if (!strStatus.compare("SENTRESOLVE", Qt::CaseInsensitive))
+    return SentResolve;
+  if (!strStatus.compare("SUCCEEDED", Qt::CaseInsensitive))
+    return Succeeded;
+  if (!strStatus.compare("FAILED", Qt::CaseInsensitive))
+    return Failed;
+  if (!strStatus.compare("CLOSED", Qt::CaseInsensitive))
+    return Closed;
+  if (!strStatus.compare("DETACHED", Qt::CaseInsensitive))
+    return Detached;
+  if (!strStatus.compare("REMAP", Qt::CaseInsensitive))
+    return Remap;
+  return Unknown;
 }
 
 /** Returns a human-understandable string representation of this 
@@ -129,11 +142,13 @@ Stream::statusString() const
   return status;
 }
 
-/** Returns true if all fields in this Stream object are empty. */
+/** Returns true if all fields in this Stream object are valid. */
 bool
-Stream::isEmpty() const
+Stream::isValid() const
 {
-  return (!_streamId && !_circuitId && 
-          (_status == Unknown) && _address.isEmpty() && !_port);
+  return (isValidStreamId(_streamId)
+            && Circuit::isValidCircuitId(_circuitId)
+            && (_status != Unknown) 
+            && !_address.isEmpty());
 }
 

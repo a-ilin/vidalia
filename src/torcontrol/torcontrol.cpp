@@ -974,12 +974,12 @@ TorControl::getCircuits(QString *errmsg)
   return circuits;
 }
 
-/** Closes the circuit specified by <b>circid</b>. If <b>ifUnused</b> is
+/** Closes the circuit specified by <b>circId</b>. If <b>ifUnused</b> is
  * true, then the circuit will not be closed unless it is unused. */
 bool
-TorControl::closeCircuit(quint64 circid, bool ifUnused, QString *errmsg)
+TorControl::closeCircuit(const CircuitId &circId, bool ifUnused, QString *errmsg)
 {
-  ControlCommand cmd("CLOSECIRCUIT", QString::number(circid));
+  ControlCommand cmd("CLOSECIRCUIT", circId);
   if (ifUnused) {
     cmd.addArgument("IfUnused");
   }
@@ -999,26 +999,24 @@ TorControl::getStreams(QString *errmsg)
     /* Sometimes there is a stream on the first message line */
     QString msg = reply.getMessage();
     s = Stream::fromString(msg.mid(msg.indexOf("=")+1));
-    if (!s.isEmpty()) {
+    if (s.isValid())
       streams << s;
-    }
     
-    /* The rest of the streams jsut come as data, one per line */
+    /* The rest of the streams just come as data, one per line */
     foreach (QString line, reply.getData()) {
       s = Stream::fromString(line);
-      if (!s.isEmpty()) {
+      if (s.isValid())
         streams << s;
-      }
     }
   }
   return streams;
 }
 
-/** Closes the stream specified by <b>streamid</b>. */
+/** Closes the stream specified by <b>streamId</b>. */
 bool
-TorControl::closeStream(quint64 streamid, QString *errmsg)
+TorControl::closeStream(const StreamId &streamId, QString *errmsg)
 {
-  ControlCommand cmd("CLOSESTREAM", QString::number(streamid));
+  ControlCommand cmd("CLOSESTREAM", streamId);
   cmd.addArgument("1"); /* 1 == REASON_MISC (tor-spec.txt) */
   return send(cmd, errmsg);
 }

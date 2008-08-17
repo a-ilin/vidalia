@@ -95,14 +95,14 @@ NetViewer::NetViewer(QWidget *parent)
           _map, SLOT(zoomToRouter(QString)));
   connect(ui.treeCircuitList, SIGNAL(circuitSelected(Circuit)),
           this, SLOT(circuitSelected(Circuit)));
-  connect(ui.treeCircuitList, SIGNAL(circuitRemoved(quint64)),
-          _map, SLOT(removeCircuit(quint64)));
-  connect(ui.treeCircuitList, SIGNAL(zoomToCircuit(quint64)),
-          _map, SLOT(zoomToCircuit(quint64)));
-  connect(ui.treeCircuitList, SIGNAL(closeCircuit(quint64)),
-          _torControl, SLOT(closeCircuit(quint64)));
-  connect(ui.treeCircuitList, SIGNAL(closeStream(quint64)),
-          _torControl, SLOT(closeStream(quint64)));
+  connect(ui.treeCircuitList, SIGNAL(circuitRemoved(CircuitId)),
+          _map, SLOT(removeCircuit(CircuitId)));
+  connect(ui.treeCircuitList, SIGNAL(zoomToCircuit(CircuitId)),
+          _map, SLOT(zoomToCircuit(CircuitId)));
+  connect(ui.treeCircuitList, SIGNAL(closeCircuit(CircuitId)),
+          _torControl, SLOT(closeCircuit(CircuitId)));
+  connect(ui.treeCircuitList, SIGNAL(closeStream(StreamId)),
+          _torControl, SLOT(closeStream(StreamId)));
 
   /* Respond to changes in the status of the control connection */
   connect(_torControl, SIGNAL(authenticated()), this, SLOT(onAuthenticated()));
@@ -330,7 +330,7 @@ NetViewer::newDescriptors(const QStringList &ids)
 
 /** Adds an IP address to the resolve queue and updates the queue timers. */
 void
-NetViewer::addToResolveQueue(QHostAddress ip, QString id)
+NetViewer::addToResolveQueue(const QHostAddress &ip, const QString &id)
 {
   QString ipstr = ip.toString();
   if (!_resolveMap.values(ipstr).contains(id)) {
@@ -358,7 +358,7 @@ NetViewer::addToResolveQueue(QHostAddress ip, QString id)
 /** Called when the user selects a circuit from the circuit and streams
  * list. */
 void
-NetViewer::circuitSelected(Circuit circuit)
+NetViewer::circuitSelected(const Circuit &circuit)
 {
   /* Clear any selected items. */
   ui.treeRouterList->deselectAll();
@@ -382,7 +382,7 @@ NetViewer::circuitSelected(Circuit circuit)
 
 /** Called when the user selects a router from the router list. */
 void
-NetViewer::routerSelected(RouterDescriptor router)
+NetViewer::routerSelected(const RouterDescriptor &router)
 {
   _map->deselectAll();
   ui.textRouterInfo->clear();
@@ -414,7 +414,7 @@ NetViewer::resolve()
 
 /** Called when a list of GeoIp information has been resolved. */
 void
-NetViewer::resolved(int id, QList<GeoIp> geoips)
+NetViewer::resolved(int id, const QList<GeoIp> &geoips)
 {
   Q_UNUSED(id);
   QString ip;

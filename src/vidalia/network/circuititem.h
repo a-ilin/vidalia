@@ -40,11 +40,11 @@ public:
   /** Updates the status of this circuit item using the given circuit. */
   void update(const Circuit &circuit);
   /** Returns the ID for this circuit. */
-  quint64 id() { return _circuit.id(); }
+  CircuitId id() const { return _circuit.id(); }
   /** Returns the Circuit object for this item. */
-  Circuit circuit() { return _circuit; }
+  Circuit circuit() const { return _circuit; }
   /** Returns a list of all stream items on this circuit. */
-  QList<StreamItem *> streams();
+  QList<StreamItem *> streams() const;
   
 private:
   Circuit _circuit; /**< Circuit associated with this item. */

@@ -17,13 +17,13 @@
 #include <QStringList>
 #include <QRegExp>
 
+#include "tcglobal.h"
 #include "circuit.h"
 
 
 /** Default constructor. */
 Circuit::Circuit()
 {
-  _circId  = 0;
   _status  = Unknown;
   _isValid = false;
 }
@@ -38,12 +38,13 @@ Circuit::Circuit()
  */
 Circuit::Circuit(const QString &circuit)
 {
-  _isValid = false;
-
-  QStringList parts = circuit.split(" ");
+  QStringList parts = circuit.split(" ", QString::SkipEmptyParts);
   if (parts.size() >= 2) {
     /* Get the circuit ID */
-    _circId = (quint64)parts.at(0).toULongLong();
+    _circId = parts.at(0);
+    if (! isValidCircuitId(_circId))
+      goto err;
+
     /* Get the circuit status value */
     _status = Circuit::toStatus(parts.at(1));
 
@@ -52,7 +53,7 @@ Circuit::Circuit(const QString &circuit)
       foreach (QString hop, parts.at(2).split(",")) {
         QStringList parts = hop.split(QRegExp("[=~]"));
         if (parts.size() != 2)
-          return;
+          goto err;
 
         _ids   << parts.at(0).mid(1);
         _names << parts.at(1);
@@ -61,6 +62,28 @@ Circuit::Circuit(const QString &circuit)
 
     _isValid = true;
   }
+  return;
+  
+err:
+  tc::warn("Improperly formatted circuit: '%1'").arg(circuit);
+  _isValid = false;
+}
+
+/** Returns true iff <b>circId</b> consists of only between 1 and 16
+ * (inclusive) ASCII-encoded letters and numbers. */
+bool
+Circuit::isValidCircuitId(const CircuitId &circId)
+{
+  int length = circId.length();
+  if (length < 1 || length > 16)
+    return false;
+
+  for (int i = 0; i < length; i++) {
+    char c = circId[i].toAscii();
+    if (c < '0' && c > '9' && c < 'A' && c > 'Z' && c < 'a' && c > 'z')
+      return false;
+  }
+  return true;
 }
 
 /** Converts the circuit status string to its proper enum value */

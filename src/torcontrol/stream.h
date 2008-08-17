@@ -22,6 +22,11 @@
 #include <QObject>
 #include <QList>
 
+#include "circuit.h"
+
+/** Stream IDs contains 1-16 alphanumeric ASCII characters. */
+typedef QString StreamId;
+
 
 class Stream
 {
@@ -45,27 +50,28 @@ public:
   /** Default constructor */
   Stream();
   /** Constructor */
-  Stream(quint64 streamId, Status status, quint64 circuitId, QString target);
+  Stream(const StreamId &streamId, Status status, const CircuitId &circuitId,
+         const QString &target);
   /** Constructor */
-  Stream(quint64 streamId, Status status, quint64 circuitId,
-         QString address, quint16 port);
+  Stream(const StreamId &streamId, Status status, const CircuitId &circuitId,
+         const QString &address, quint16 port);
 
   /** Parses the given string for a stream, in Tor control protocol format. */
-  static Stream fromString(QString stream);
+  static Stream fromString(const QString &stream);
   /** Converts a string description of a stream's status to its enum value */
-  static Status toStatus(QString strStatus);
+  static Status toStatus(const QString &strStatus);
 
-  /** Returns true if the Stream object's fields are all empty. */
-  bool isEmpty() const;
+  /** Returns true iff the Stream object's fields are all valid. */
+  bool isValid() const;
   
   /** Returns the ID for this stream. */
-  quint64 id() const { return _streamId; }
+  StreamId id() const { return _streamId; }
   /** Returns the status for this stream. */
   Status status() const { return _status; }
   /** Returns a string representation of this stream's status. */
   QString statusString() const;
   /** Returns the ID of the circuit to which this stream is assigned. */
-  quint64 circuitId() const { return _circuitId; }
+  CircuitId circuitId() const { return _circuitId; }
   /** Returns the target address and port for this stream. */
   QString target() const { return (_address + ":" + QString::number(_port)); }
   /** Returns the target address for this stream. */
@@ -73,11 +79,15 @@ public:
   /** Returns the target port for this stream. */
   quint16 targetPort() const { return _port; }
 
+  /** Returns true iff <b>streamId</b> consists of only between 1 and 16
+   * (inclusive) ASCII-encoded letters and numbers. */
+   static bool isValidStreamId(const StreamId &streamId);
+
 private:
-  quint64 _streamId;   /**< Unique ID associated with this stream. */
-  Status  _status;     /**< Stream status value. */
-  quint64 _circuitId;  /**< ID of the circuit carrying this stream. */
+  StreamId _streamId;   /**< Unique ID associated with this stream. */
+  CircuitId _circuitId; /**< ID of the circuit carrying this stream. */
   QString _address;    /**< Stream target address. */
+  Status  _status;     /**< Stream status value. */
   quint16 _port;       /**< Stream target port. */
 };
 

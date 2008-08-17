@@ -34,11 +34,11 @@ public:
   /** Returns the Stream object for this stream event. */
   Stream stream() const { return _stream; }
   /** Returns the ID for this stream event. */
-  quint64 id() const { return _stream.id(); }
+  StreamId id() const { return _stream.id(); }
   /** Returns the status for this stream event. */
   Stream::Status status() const { return _stream.status(); }
   /** Returns the ID of the circuit to which this stream is assigned */
-  quint64 circuitId() const { return _stream.circuitId(); }
+  CircuitId circuitId() const { return _stream.circuitId(); }
   /** Returns the target for this stream event. */
   QString target() const { return _stream.target(); }
   

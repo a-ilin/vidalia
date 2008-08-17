@@ -271,7 +271,7 @@ CircuitListWidget::clearCircuits()
 /** Finds the circuit with the given ID and returns a pointer to that
  * circuit's item in the list. */
 CircuitItem*
-CircuitListWidget::findCircuitItem(quint64 circid)
+CircuitListWidget::findCircuitItem(const CircuitId &circid)
 {
   int numCircs = topLevelItemCount();
   for (int i = 0; i < numCircs; i++) {
@@ -286,7 +286,7 @@ CircuitListWidget::findCircuitItem(quint64 circid)
 /** Finds the stream with the given ID and returns a pointer to that stream's
  * item in the list. */
 StreamItem*
-CircuitListWidget::findStreamItem(quint64 streamid)
+CircuitListWidget::findStreamItem(const StreamId &streamid)
 {
   int numCircs = topLevelItemCount();
   int numStreams;

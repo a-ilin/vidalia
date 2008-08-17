@@ -30,10 +30,10 @@ public:
   /** Updates the status of this stream item. */
   void update(const Stream &stream);
   /** Returns the ID of the stream associated with this tree item. */
-  quint64 id() const { return _id; }
+  StreamId id() const { return _id; }
   
 private:
-  quint64 _id; /**< ID for this stream. */
+  StreamId _id; /**< ID for this stream. */
 };
 
 #endif

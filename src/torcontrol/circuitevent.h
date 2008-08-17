@@ -18,6 +18,7 @@
 #define _CIRCUITEVENT_H
 
 #include <QEvent>
+#include <QString>
 
 #include "eventtype.h"
 #include "circuit.h"
@@ -34,7 +35,7 @@ public:
   /** Returns the Circuit object for this event. */
   Circuit circuit() const { return _circuit; }
   /** Returns the ID for this circuit event. */
-  quint64 id() const { return _circuit.id(); }
+  CircuitId id() const { return _circuit.id(); }
   /** Returns the status of this circuit event. */
   Circuit::Status status() const { return _circuit.status(); }
   /** Returns the names of the routers in the path for this circuit event. */

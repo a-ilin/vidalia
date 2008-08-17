@@ -54,13 +54,13 @@ signals:
   /** Emitted when a circuit item is selected. */
   void circuitSelected(Circuit circuit);
   /** Emitted when a circuit is removed from the list. */
-  void circuitRemoved(quint64 circid);
+  void circuitRemoved(CircuitId circid);
   /** Emitted when the user selects a circuit to be closed. */
-  void closeCircuit(quint64 circid);
+  void closeCircuit(CircuitId circid);
   /** Emitted when the user selects a stream to be closed. */
-  void closeStream(quint64 streamid);
+  void closeStream(StreamId streamid);
   /** Emitted when the user selects a circuit to zoom to. */
-  void zoomToCircuit(quint64 circid);
+  void zoomToCircuit(CircuitId circid);
   
 public slots:
   /** Clears all circuits and streams from the list. */
@@ -86,9 +86,9 @@ private:
   /** Removes the given stream item. */
   void removeStream(StreamItem *stream);
   /** Finds the circuit with the given ID. */
-  CircuitItem* findCircuitItem(quint64 circid);
+  CircuitItem* findCircuitItem(const CircuitId &circid);
   /** Finds the stream with the given ID. */
-  StreamItem* findStreamItem(quint64 streamid);
+  StreamItem* findStreamItem(const StreamId &streamid);
   /** Schedules the given circuit item to be removed after the given timeout. */
   void scheduleCircuitRemoval(CircuitItem *circuit, int delay);
   /** Schedules a stream to be removed after the given timeout. */

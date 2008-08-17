@@ -20,6 +20,9 @@
 #include <QCoreApplication>
 #include <QStringList>
 
+/** Circuit IDs contains 1-16 alphanumeric ASCII characters. */
+typedef QString CircuitId;
+
 
 class Circuit
 {
@@ -39,13 +42,13 @@ public:
   /** Default constructor. */
   Circuit();
   /** Constructor. */  
-  Circuit(const QString &circuit);
+  Circuit(const CircuitId &circuit);
   
   /** Returns true if this circuit is valid. */
   bool isValid() const { return _isValid; }
   
   /** Returns the ID for this circuit */
-  quint64 id() const { return _circId; }
+  CircuitId id() const { return _circId; }
   /** Returns the status of this circuit */
   Status status() const { return _status; }
   /** Returns a string representation of the status of this circuit. */
@@ -60,8 +63,12 @@ public:
   /** Converts a string description of a circuit's status to an enum value */
   static Status toStatus(const QString &strStatus);
 
+  /** Returns true iff <b>circId</b> consists of only between 1 and 16
+   * (inclusive) ASCII-encoded letters and numbers. */
+  static bool isValidCircuitId(const CircuitId &circId);
+
 private:
-  quint64 _circId; /**< Circuit ID. */
+  CircuitId _circId; /**< Circuit ID. */
   Status _status;  /**< Circuit status. */
   QStringList _names;  /**< Nicknames of the routers in the circuit. */
   QStringList _ids;    /**< IDs of the routers in the circuit. */

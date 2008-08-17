@@ -196,11 +196,12 @@ public:
     QString *errmsg = 0);
 
 public slots:
-  /** Closes the circuit specified by <b>circid</b>. If <b>ifUnused</b> is
+  /** Closes the circuit specified by <b>circId</b>. If <b>ifUnused</b> is
    * true, then the circuit will not be closed unless it is unused. */
-  bool closeCircuit(quint64 circid, bool ifUnused = false, QString *errmsg = 0);
-  /** Closes the stream specified by <b>streamid</b>. */
-  bool closeStream(quint64 streamid, QString *errmsg = 0);
+  bool closeCircuit(const CircuitId &circId, bool ifUnused = false,
+                    QString *errmsg = 0);
+  /** Closes the stream specified by <b>streamId</b>. */
+  bool closeStream(const StreamId &streamId, QString *errmsg = 0);
 
 signals:
   /** Emitted when the Tor process has started */

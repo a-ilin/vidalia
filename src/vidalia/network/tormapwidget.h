@@ -21,6 +21,8 @@
 #include <QPair>
 #include <QPainter>
 #include <QPainterPath>
+#include <circuit.h>
+#include <stream.h>
 
 #include "zimageview.h"
 
@@ -36,19 +38,19 @@ public:
   ~TorMapWidget();
 
   /** Plots the given router on the map using the given coordinates. */
-  void addRouter(QString id, float latitude, float longitude);
+  void addRouter(const QString &id, float latitude, float longitude);
   /** Plots the given circuit on the map. */
-  void addCircuit(quint64 circid, QStringList path);
+  void addCircuit(const CircuitId &circid, const QStringList &path);
   /** Selects and hightlights a router on the map. */
-  void selectRouter(QString id);
+  void selectRouter(const QString &id);
   /** Selects and highlights a circuit on the map. */
-  void selectCircuit(quint64 circid);
+  void selectCircuit(const CircuitId &circid);
   /** Returns the minimum size of the widget */
   QSize minimumSizeHint() const;
 
 public slots:
   /** Removes a circuit from the map. */
-  void removeCircuit(quint64 circid);
+  void removeCircuit(const CircuitId &circid);
   /** Deselects all the highlighted circuits and routers */
   void deselectAll();
   /** Clears the known routers and removes all the data from the map */
@@ -56,9 +58,9 @@ public slots:
   /** Zooms to fit all currently displayed circuits on the map. */
   void zoomToFit();
   /** Zoom to a particular router on the map. */
-  void zoomToRouter(QString id);
+  void zoomToRouter(const QString &id);
   /** Zoom to the circuit on the map with the given <b>circid</b>. */
-  void zoomToCircuit(quint64 circid);
+  void zoomToCircuit(const CircuitId &circid);
 
 protected:
   /** Paints the current circuits and streams on the image. */
@@ -76,7 +78,7 @@ private:
   /** Stores map locations for tor routers */
   QHash<QString, QPair<QPointF,bool>* > _routers;
   /** Stores circuit information */
-  QHash<quint64, QPair<QPainterPath *,bool>* > _circuits;
+  QHash<CircuitId, QPair<QPainterPath *,bool>* > _circuits;
 };
 
 #endif

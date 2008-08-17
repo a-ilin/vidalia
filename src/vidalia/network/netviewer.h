@@ -61,11 +61,11 @@ private slots:
   /** Called when the user selects the "Refresh" action on the toolbar */
   void refresh();
   /** Called when the user selects a circuit on the circuit list */
-  void circuitSelected(Circuit circuit);
+  void circuitSelected(const Circuit &circuit);
   /** Called when an IP has been resolved to geographic information. */
-  void resolved(int id, QList<GeoIp> geoips);
+  void resolved(int id, const QList<GeoIp> &geoips);
   /** Called when the user selects a router in the list. */
-  void routerSelected(RouterDescriptor router);
+  void routerSelected(const RouterDescriptor &router);
   /** Handles when we get connected to Tor network */
   void onAuthenticated();
   /** Handles when we get disconnected from Tor network */
@@ -75,7 +75,7 @@ private slots:
   
 private:
   /** Adds an IP address to the resolve queue and updates the queue timers. */
-  void addToResolveQueue(QHostAddress ip, QString id);
+  void addToResolveQueue(const QHostAddress &ip, const QString &id);
   /** Retrieves a list of all running routers from Tor and their descriptors,
    * and adds them to the RouterListWidget. */
   void loadNetworkStatus();
