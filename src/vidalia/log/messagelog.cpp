@@ -113,9 +113,8 @@ MessageLog::createActions()
 #if defined(Q_WS_MAC)
   ui.actionHelp->setShortcut(QString("Ctrl+?"));
 #endif
-#if !defined(Q_WS_WIN)
-  ui.actionClose->setShortcut(QString("Ctrl+W"));
-#endif
+  ui.actionClose->setShortcut(QString("Esc"));
+  Vidalia::createShortcut("Ctrl+W", this, ui.actionClose, SLOT(trigger()));
 }
 
 /** Set tooltips for Message Filter checkboxes in code because they are long

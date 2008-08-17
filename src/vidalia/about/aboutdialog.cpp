@@ -24,11 +24,10 @@ AboutDialog::AboutDialog(QWidget *parent, Qt::WFlags flags)
 : VidaliaWindow("AboutDialog", parent, flags)
 {
   ui.setupUi(this);
-#if defined(Q_WS_WIN)
+
+  /* Pressing 'Esc' or 'Ctrl+W' will close the window */
   setShortcut("Esc", SLOT(close()));
-#else
   setShortcut("Ctrl+W", SLOT(close()));
-#endif
 
   /* Save the TorControl object to use later */
   _torControl = Vidalia::torControl();

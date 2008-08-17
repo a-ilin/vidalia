@@ -95,6 +95,10 @@ MainWindow::MainWindow()
 
   ui.setupUi(this);
 
+  /* Pressing 'Esc' or 'Ctrl+W' will close the window */
+  Vidalia::createShortcut("Ctrl+W", this, ui.btnHide, SLOT(click()));
+  Vidalia::createShortcut("Esc", this, ui.btnHide, SLOT(click()));
+
   /* Create all the dialogs of which we only want one instance */
   _messageLog     = new MessageLog();
   _bandwidthGraph = new BandwidthGraph();

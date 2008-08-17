@@ -44,9 +44,10 @@ NetViewer::NetViewer(QWidget *parent)
 #if defined(Q_WS_MAC)
   ui.actionHelp->setShortcut(QString("Ctrl+?"));
 #endif
-#if !defined(Q_WS_WIN)
-  ui.actionClose->setShortcut(QString("Ctrl+W"));
-#endif
+
+  /* Pressing 'Esc' or 'Ctrl+W' will close the window */
+  ui.actionClose->setShortcut(QString("Esc"));
+  Vidalia::createShortcut("Ctrl+W", this, ui.actionClose, SLOT(trigger()));
 
   /* Get the TorControl object */
   _torControl = Vidalia::torControl();

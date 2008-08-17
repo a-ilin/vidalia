@@ -60,8 +60,8 @@ ConfigDialog::ConfigDialog(QWidget* parent)
   button = ui.buttonBox->button(QDialogButtonBox::Cancel);
   if (button) {
     button->setText(tr("Cancel"));
-    Vidalia::createShortcut(QKeySequence(Qt::Key_Escape),
-                            this, button, SLOT(click()));
+    Vidalia::createShortcut("Esc", this, button, SLOT(click()));
+    Vidalia::createShortcut("Ctrl+W", this, button, SLOT(click()));
   }
   
   /* Connect the button box signals to the appropriate slots */
