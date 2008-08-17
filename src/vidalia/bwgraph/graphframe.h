@@ -25,8 +25,7 @@
 #include <QList>
 
 #define HOR_SPC       2   /** Space between data points */
-#define SCALE_WIDTH   75  /** Width of the scale */
-#define MIN_SCALE     10  /** 10 kB/s is the minimum scale */  
+#define MIN_SCALE     10  /** 10 kB/s is the minimum scale */
 #define SCROLL_STEP   4   /** Horizontal change on graph update */
 
 #define BACK_COLOR    Qt::black
@@ -68,9 +67,11 @@ protected:
   void paintEvent(QPaintEvent *event);
 
 private:
+  /** Returns the width in pixels of <b>label</b> using the current painter's
+   * font. */
+  int labelWidth(const QString &label);
   /** Gets the width of the desktop, the max # of points. */
   int getNumPoints();
-  
   /** Paints an integral and an outline of that integral for each data set
    * (send and/or receive) that is to be displayed. */
   void paintData();
@@ -109,6 +110,9 @@ private:
   /** Show the respective lines and counters. */
   bool _showRecv;
   bool _showSend;
+  /** Width (in pixels) of the scale marker area on the left side of the
+   * graph. */
+  int _scaleWidth;
 };
 
 #endif

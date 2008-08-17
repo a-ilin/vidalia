@@ -36,6 +36,7 @@ GraphFrame::GraphFrame(QWidget *parent)
   _showRecv = true;
   _showSend = true;
   _maxValue = MIN_SCALE;
+  _scaleWidth = 0;
 }
 
 /** Default destructor */
@@ -180,14 +181,14 @@ GraphFrame::pointsFromData(QList<qreal>* list)
   points << QPointF(x, y);
   for (int i = 0; i < list->size(); i++) {
     currValue = y - (list->at(i) * scale);
-    if (x - SCROLL_STEP < SCALE_WIDTH) {
-      points << QPointF(SCALE_WIDTH, currValue);
+    if (x - SCROLL_STEP < _scaleWidth) {
+      points << QPointF(_scaleWidth, currValue);
       break;
     }
     points << QPointF(x, currValue);
     x -= SCROLL_STEP;
   }
-  points << QPointF(SCALE_WIDTH, y);
+  points << QPointF(_scaleWidth, y);
   return points; 
 }
 
@@ -221,7 +222,7 @@ GraphFrame::paintLine(QVector<QPointF> points, QColor color, Qt::PenStyle lineSt
 void
 GraphFrame::paintTotals()
 {
-  int x = SCALE_WIDTH + FONT_SIZE, y = 0;
+  int x = _scaleWidth + FONT_SIZE, y = 0;
   int rowHeight = FONT_SIZE;
 
 #if !defined(Q_WS_MAC)
@@ -265,30 +266,56 @@ GraphFrame::totalToStr(qreal total)
   }
 }
 
+/** Returns the width in pixels of <b>label</b> using the current painter's
+ * font. */
+int
+GraphFrame::labelWidth(const QString &label)
+{
+  int width = 0;
+  QFontMetrics fm = fontMetrics();
+
+  for (int i = 0; i < label.length(); i++)
+    width += fm.charWidth(label, i);
+  return width;
+}
+
 /** Paints the scale on the graph. */
 void
 GraphFrame::paintScale()
 {
-  qreal markStep = _maxValue * .25;
+  QString label[4];
+  int width[4];
   int top = _rec.y();
   int bottom = _rec.height();
-  qreal paintStep = (bottom - (bottom/10)) / 4;
-  
-  /* Draw the other marks in their correctly scaled locations */
-  qreal scale;
+  int scaleWidth = 0;
   qreal pos;
-  for (int i = 1; i < 5; i++) {
-    pos = bottom - (i * paintStep);
-    scale = i * markStep;
+  qreal markStep = _maxValue * .25;
+  qreal paintStep = (bottom - (bottom/8)) / 4;
+
+  /* Compute each of the y-axis labels */
+  for (int i = 0; i < 4; i++) {
+    pos = bottom - ((i+1) * paintStep);
+    label[i] = tr("%1 KB/s").arg(markStep*(i+1), 0, 'f', 2);
+    width[i] = labelWidth(label[i]);
+    scaleWidth = qMax(scaleWidth, 2+width[i]);
+  }
+
+  /* Include a 5px margin between the y-axis and its labels */
+  _scaleWidth = scaleWidth + 5;
+
+  /* Draw the y-axis labels and horizontal marks in their correctly scaled
+   * locations */
+  for (int i = 0; i < 4; i++) {
+    pos = bottom - ((i+1) * paintStep);
     _painter->setPen(SCALE_COLOR);
-    _painter->drawText(QPointF(5, pos+FONT_SIZE), 
-                       tr("%1 KB/s").arg(scale, 0, 'f', 2));
+    _painter->drawText(QPoint(_scaleWidth-width[i]-5, pos), label[i]);
+
     _painter->setPen(GRID_COLOR);
-    _painter->drawLine(QPointF(SCALE_WIDTH, pos), 
+    _painter->drawLine(QPointF(_scaleWidth, pos),
                        QPointF(_rec.width(), pos));
   }
-  
-  /* Draw vertical separator */
-  _painter->drawLine(SCALE_WIDTH, top, SCALE_WIDTH, bottom);
+
+  /* Draw the y-axis */
+  _painter->drawLine(_scaleWidth, top, _scaleWidth, bottom);
 }
 
