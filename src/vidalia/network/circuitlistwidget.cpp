@@ -20,8 +20,8 @@
 
 #include "circuitlistwidget.h"
 
-#define IMG_CLOSE   ":/images/16x16/network-offline.png"
-#define IMG_ZOOM    ":/images/16x16/zoom.png"
+#define IMG_CLOSE   ":/images/22x22/edit-delete.png"
+#define IMG_ZOOM    ":/images/22x22/page-zoom.png"
 
 #define CLOSED_CIRCUIT_REMOVE_DELAY     3000
 #define FAILED_CIRCUIT_REMOVE_DELAY     5000

@@ -19,7 +19,7 @@
 
 #include "routerlistwidget.h"
 
-#define IMG_ZOOM   ":/images/16x16/zoom.png"
+#define IMG_ZOOM   ":/images/22x22/page-zoom.png"
 
 
 RouterListWidget::RouterListWidget(QWidget *parent)

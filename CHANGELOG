@@ -2,6 +2,9 @@
   o Reduce the default number of messages to retain in the message log to 50
     messages. Most people never look at the window and the extra 200 messages
     just needlessly eat memory.
+  o Restore the "zoom" and "close" icons in the router and circuit list
+    context menus. They were lost in the move to the Oxygen icon theme in
+    0.1.4.
 
 
 0.1.7   02-Aug-2008
