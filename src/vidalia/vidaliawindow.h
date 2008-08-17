@@ -30,12 +30,13 @@ class VidaliaWindow : public QMainWindow
 
 public:
   /** Default constructor. */
-  VidaliaWindow(QString name, QWidget *parent = 0, Qt::WFlags flags = 0);
+  VidaliaWindow(const QString &name, QWidget *parent = 0,
+                Qt::WFlags flags = 0);
   /** Destructor. */
   ~VidaliaWindow();
   
   /** Associates a shortcut key sequence with a slot. */
-  void setShortcut(QString shortcut, const char *slot);
+  void setShortcut(const QString &shortcut, const char *slot);
   /** Saves the size and location of the window. */
   void saveWindowState();
   /** Restores the last size and location of the window. */

@@ -25,12 +25,13 @@
 
 
 /** Default constructor. */
-VidaliaWindow::VidaliaWindow(QString name, QWidget *parent, Qt::WFlags flags)
+VidaliaWindow::VidaliaWindow(const QString &name, QWidget *parent,
+                            Qt::WFlags flags)
  : QMainWindow(parent, flags)
 {
   _name     = name;
   _settings = new VSettings(name);
-}
+} 
 
 /** Destructor. */
 VidaliaWindow::~VidaliaWindow()
@@ -41,7 +42,7 @@ VidaliaWindow::~VidaliaWindow()
 
 /** Associates a shortcut key sequence with a slot. */
 void
-VidaliaWindow::setShortcut(QString shortcut, const char *slot)
+VidaliaWindow::setShortcut(const QString &shortcut, const char *slot)
 {
   vApp->createShortcut(QKeySequence(shortcut), this, this, slot);
 }
