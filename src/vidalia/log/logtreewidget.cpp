@@ -18,6 +18,7 @@
 
 #include "logtreewidget.h"
 #include "logheaderview.h"
+#include "logmessagecolumndelegate.h"
 
 
 /** Default constructor. */
@@ -25,6 +26,13 @@ LogTreeWidget::LogTreeWidget(QWidget *parent)
 : QTreeWidget(parent)
 {
   setHeader(new LogHeaderView(this));
+
+  /* Tor's log messages are always in English, so stop Qt from futzing with
+   * the message text if we're currently using a non-English RTL layout. */
+  if (layoutDirection() == Qt::RightToLeft) {
+    setItemDelegateForColumn(LogTreeWidget::MessageColumn,
+                             new LogMessageColumnDelegate(this));
+  }
 
   /* Explicitly default to sorting messages chronologically */
   sortItems(LogTreeWidget::TimeColumn, Qt::AscendingOrder);
