@@ -374,7 +374,7 @@ ServicePage::addService()
 {
   int rows = ui.serviceWidget->rowCount();
   ui.serviceWidget->insertRow(rows);
-  QTableWidgetItem *address = new QTableWidgetItem("[Created by Tor]");
+  QTableWidgetItem *address = new QTableWidgetItem("["+tr("Created by Tor")+"]");
   address->setFlags(Qt::ItemIsSelectable);
   QTableWidgetItem *dummy = new QTableWidgetItem();
   QTableWidgetItem *dummy2 = new QTableWidgetItem();
