@@ -308,7 +308,7 @@ GraphFrame::paintScale()
   for (int i = 0; i < 4; i++) {
     pos = bottom - ((i+1) * paintStep);
     _painter->setPen(SCALE_COLOR);
-    _painter->drawText(QPoint(_scaleWidth-width[i]-5, pos), label[i]);
+    _painter->drawText(QPointF(_scaleWidth-width[i]-5, pos), label[i]);
 
     _painter->setPen(GRID_COLOR);
     _painter->drawLine(QPointF(_scaleWidth, pos),
