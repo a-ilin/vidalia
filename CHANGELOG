@@ -1,4 +1,4 @@
-0.1.8   xx-Aug-2008
+0.1.8   17-Aug-2008
   o Make the position of the y-axis on the bandwidth graph variable based on 
     the width of the axis labels. This works better for languages like Farsi 
     where "KB/s" somehow becomes 19 characters. (Ticket #373)
@@ -11,6 +11,10 @@
   o If the message log is sorted by severity or lexiographically, or if the 
     user manually repositioned the vertical scroll bar, then retain the scroll 
     bar's previous position after adding a new message to the log.
+  o If the current message log layout is right-to-left (e.g. if the user's
+    translation is Farsi), then use a custom item delegate for the log message
+    column whose sole purpose is to keep Qt from screwing with the message  
+    text. (Ticket #396)
   o Reduce the default number of messages to retain in the message log to 50
     messages. Most people never look at the window and the extra 200 messages
     just needlessly eat memory.

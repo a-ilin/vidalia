@@ -121,6 +121,7 @@ qt4_wrap_cpp(vidalia_SRCS
 set(vidalia_SRCS ${vidalia_SRCS}
   log/logfile.cpp
   log/logheaderview.cpp
+  log/logmessagecolumndelegate.cpp
   log/logtreeitem.cpp
   log/logtreewidget.cpp
   log/messagelog.cpp
