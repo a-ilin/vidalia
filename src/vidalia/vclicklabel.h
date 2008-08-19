@@ -22,8 +22,6 @@
 #include <QMouseEvent>
 #include <QSize>
 
-#include "animatedpixmap.h"
-
 
 class VClickLabel : public QWidget
 {
@@ -42,8 +40,6 @@ public:
   void setText(const QString &text);
   /** Sets the widget's image to <b>img</b>. */
   void setPixmap(const QPixmap &img);
-  /** Sets the widget's image to the animated image file <b>animFile</b>. */
-  void setAnimation(const QPixmap &animPixmap);
 
 signals:
   /** Emitted when the widget is left-clicked. */
@@ -55,14 +51,9 @@ protected:
   /** Overloaded mouse event to catch left mouse button clicks. */
   virtual void mouseReleaseEvent(QMouseEvent *e);
 
-private slots:
-  /** Responds to a frame change on the animation. */
-  void animationFrameChanged(int frameNumber);
-
 private:
   QString _text;    /**< Text label to display in the widget. */
   QPixmap _pixmap;  /**< Image to display in the widget. */
-  AnimatedPixmap _anim; /**< Animated pixmap to display. */
 };
 
 #endif

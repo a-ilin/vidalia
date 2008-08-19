@@ -25,8 +25,6 @@ VClickLabel::VClickLabel(QWidget *parent)
  : QWidget(parent)
 {
   setCursor(Qt::PointingHandCursor);
-  connect(&_anim, SIGNAL(frameChanged(int)), 
-             this, SLOT(animationFrameChanged(int)));
 }
 
 /** Returns the current size hint for this widget's current contents. */
@@ -70,23 +68,6 @@ VClickLabel::paintEvent(QPaintEvent *e)
   e->accept();
 }
 
-/** Sets the widget's image to the animated image file <b>animFile</b>. */
-void
-VClickLabel::setAnimation(const QPixmap &animPixmap)
-{
-  _anim.setPixmap(animPixmap);
-  _anim.start();
-}
-
-/** Responds to a frame change on the animation. */
-void
-VClickLabel::animationFrameChanged(int frameNumber)
-{
-  Q_UNUSED(frameNumber);
-  _pixmap = _anim.currentFrame();
-  update();
-}
-
 /** Overloaded mouse event to catch left mouse button clicks. */
 void
 VClickLabel::mouseReleaseEvent(QMouseEvent *e)
@@ -109,7 +90,6 @@ VClickLabel::setText(const QString &text)
 void
 VClickLabel::setPixmap(const QPixmap &pixmap)
 {
-  _anim.stop();
   _pixmap = pixmap;
   update();
 }

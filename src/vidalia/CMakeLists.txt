@@ -177,7 +177,6 @@ endif(APPLE)
 set(vidalia_SRCS ${vidalia_SRCS}
   main.cpp
   vidalia.cpp
-  animatedpixmap.cpp
   languagesupport.cpp
   mainwindow.cpp
   vclicklabel.cpp
@@ -187,7 +186,6 @@ set(vidalia_SRCS ${vidalia_SRCS}
 )
 qt4_wrap_cpp(vidalia_SRCS
   vidalia.h
-  animatedpixmap.h
   mainwindow.h
   vclicklabel.h
   vidaliawindow.h
