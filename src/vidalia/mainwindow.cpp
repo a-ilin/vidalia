@@ -675,12 +675,11 @@ MainWindow::updateTorStatus(TorStatus status)
       ui.lblStartStopTor->setStatusTip(statusText);
       setStartupProgressVisible(true);
       setStartupProgress(STARTUP_PROGRESS_STARTING, statusText);
-      //ui.lblStartStopTor->setAnimation(QPixmap(ANIM_PROCESS_WORKING));
   } else if (status == CircuitEstablished) {
-      statusText = tr("Tor is Running");
+      statusText = tr("Connected to the Tor network!");
       trayIconFile = IMG_TOR_RUNNING;
       statusIconFile = IMG_TOR_RUNNING_48;
-      QTimer::singleShot(3000, this, SLOT(hideStartupProgress()));
+      setStartupProgressVisible(false);
   }
 
   /* Update the tray icon */
@@ -725,13 +724,6 @@ MainWindow::setStartupProgressVisible(bool visible)
     ui.lblTorStatus->setVisible(true);
     ui.lblTorStatusImg->setVisible(true);
   }
-}
-
-/** Hides the startup status text and progress bar. */
-void
-MainWindow::hideStartupProgress()
-{
-  setStartupProgressVisible(false);
 }
 
 /** Sets the progress bar completion value to <b>progressValue</b> and sets

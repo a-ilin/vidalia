@@ -110,8 +110,6 @@ private slots:
   void onIMFailed(QString errmsg);
   /** Called when the proxy server fails to start */
   void onProxyFailed(QString errmsg);
-  /** Hides the startup status text and progress bar. */
-  void hideStartupProgress();
 
 #if defined(USE_MINIUPNPC)
   /** Called when a UPnP error occurs. */
