@@ -16,6 +16,7 @@
 
 #include <QTranslator>
 #include <QLocale>
+#include <QLibraryInfo>
 #include <vidalia.h>
 
 #include "languagesupport.h"
@@ -138,14 +139,25 @@ LanguageSupport::translate(const QString &languageCode)
   if (languageCode == "en")
     return true;
 
-  QTranslator *translator = new QTranslator(vApp);
-  if (translator->load(QString(":/lang/vidalia_%1.qm").arg(languageCode))) {
-    QApplication::installTranslator(translator);
-    if (isRightToLeft(languageCode))
-      vApp->setLayoutDirection(Qt::RightToLeft);
+  /* Attempt to load the translations for Qt's internal widgets from their
+   * installed Qt directory. */
+  QTranslator *systemQtTranslator = new QTranslator(vApp);
+  Q_CHECK_PTR(systemQtTranslator);
+
+  QString qtDir = QLibraryInfo::location(QLibraryInfo::TranslationsPath);
+  if (systemQtTranslator->load(qtDir + "/qt_" + languageCode + ".qm"))
+    QApplication::installTranslator(systemQtTranslator);
+  else
+    delete systemQtTranslator;
+
+  /* Install a translator for Vidalia's UI widgets */
+  QTranslator *vidaliaTranslator = new QTranslator(vApp);
+  Q_CHECK_PTR(vidaliaTranslator);
+
+  if (vidaliaTranslator->load(":/lang/vidalia_" + languageCode + ".qm")) {
+    QApplication::installTranslator(vidaliaTranslator);
     return true;
   }
-  delete translator;
+  delete vidaliaTranslator;
   return false;
 }
-
