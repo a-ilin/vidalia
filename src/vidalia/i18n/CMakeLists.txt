@@ -42,14 +42,26 @@ vidalia_add_po(vidalia_QMS ${vidalia_PO})
 ## Qt translation files
 set(qt_PO
   ar/qt_ar.po
+  bg/qt_bg.po
+  cs/qt_cs.po
   de/qt_de.po
   es/qt_es.po
+  fa/qt_fa.po
+  fi/qt_fi.po
   fr/qt_fr.po
+  he/qt_he.po
+  hu/qt_hu.po
+  it/qt_it.po
   ja/qt_ja.po
+  nb/qt_nb.po
+  nl/qt_nl.po
   pl/qt_pl.po
   pt/qt_pt.po
+  ro/qt_ro.po
   ru/qt_ru.po
+  sq/qt_sq.po
   sv/qt_sv.po
+  tr/qt_tr.po
   zh_CN/qt_zh_CN.po
   zh_TW/qt_zh_TW.po
 )

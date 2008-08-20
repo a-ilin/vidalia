@@ -26,14 +26,26 @@
   </qresource>
   <qresource prefix="/lang">
     <file>qt_ar.qm</file>
+    <file>qt_bg.qm</file>
+    <file>qt_cs.qm</file>
     <file>qt_de.qm</file>
     <file>qt_es.qm</file>
+    <file>qt_fa.qm</file>
+    <file>qt_fi.qm</file>
     <file>qt_fr.qm</file>
+    <file>qt_he.qm</file>
+    <file>qt_hu.qm</file>
+    <file>qt_it.qm</file>
     <file>qt_ja.qm</file>
+    <file>qt_nb.qm</file>
+    <file>qt_nl.qm</file>
     <file>qt_pl.qm</file>
     <file>qt_pt.qm</file>
+    <file>qt_ro.qm</file>
     <file>qt_ru.qm</file>
+    <file>qt_sq.qm</file>
     <file>qt_sv.qm</file>
+    <file>qt_tr.qm</file>
     <file>qt_zh_CN.qm</file>
     <file>qt_zh_TW.qm</file>
   </qresource>
