@@ -39,11 +39,27 @@ set(vidalia_PO
 )
 vidalia_add_po(vidalia_QMS ${vidalia_PO})
 
+## Qt translation files
+set(qt_PO
+  ar/qt_ar.po
+  de/qt_de.po
+  es/qt_es.po
+  fr/qt_fr.po
+  ja/qt_ja.po
+  pl/qt_pl.po
+  pt/qt_pt.po
+  ru/qt_ru.po
+  sv/qt_sv.po
+  zh_CN/qt_zh_CN.po
+  zh_TW/qt_zh_TW.po
+)
+vidalia_add_po(qt_QMS ${qt_PO})
+
 ## Create a target that converts all .po files to Qt .qm files
-add_custom_target(i18n DEPENDS ${vidalia_QMS})
+add_custom_target(i18n DEPENDS ${vidalia_QMS} ${qt_QMS})
 add_dependencies(i18n po2ts)
 
-## Create a target that runs lupdate for all the source and UI files
+## Create a target that runs lupdate for all Vidalia source and UI files
 add_custom_target(i18n-update)
 add_dependencies(i18n-update po2ts ts2po)
 vidalia_update_po(i18n-update ${vidalia_PO})

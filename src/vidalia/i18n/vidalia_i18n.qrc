@@ -24,5 +24,18 @@
     <file>vidalia_zh_CN.qm</file>
     <file>vidalia_zh_TW.qm</file>
   </qresource>
+  <qresource prefix="/lang">
+    <file>qt_ar.qm</file>
+    <file>qt_de.qm</file>
+    <file>qt_es.qm</file>
+    <file>qt_fr.qm</file>
+    <file>qt_ja.qm</file>
+    <file>qt_pl.qm</file>
+    <file>qt_pt.qm</file>
+    <file>qt_ru.qm</file>
+    <file>qt_sv.qm</file>
+    <file>qt_zh_CN.qm</file>
+    <file>qt_zh_TW.qm</file>
+  </qresource>
 </RCC>
 

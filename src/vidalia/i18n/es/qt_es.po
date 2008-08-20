@@ -1,0 +1,447 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Vidalia\n"
+"Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
+"POT-Creation-Date: 2008-08-20 04:58+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
+"Language-Team: translations@vidalia-project.net\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Vidalia ts2po 0.2\n"
+
+#: qaccessibleobject.cpp:348
+msgctxt "QApplication"
+msgid "Activate"
+msgstr "Activar"
+
+#: qmessagebox.h:319
+msgctxt "QApplication"
+msgid "Executable '%1' requires Qt %2, found Qt %3."
+msgstr "El ejecutable «%1» requiere Qt %2 (se encontró Qt %3)."
+
+#: qmessagebox.h:321
+msgctxt "QApplication"
+msgid "Incompatible Qt Library Error"
+msgstr "Error: biblioteca Qt incompatible"
+
+#: qapplication.cpp:2095
+msgctxt "QApplication"
+msgid "QT_LAYOUT_DIRECTION"
+msgstr "LTR"
+
+#: qaccessibleobject.cpp:350
+msgctxt "QApplication"
+msgid "Activates the program's main window"
+msgstr "Activa la ventana principal del programa"
+
+#: qmessagebox.cpp:2104
+msgctxt "QDialogButtonBox"
+msgid "OK"
+msgstr "Aceptar"
+
+#: qdialogbuttonbox.cpp:528
+msgctxt "QDialogButtonBox"
+msgid "Save"
+msgstr "Guardar"
+
+#: qdialogbuttonbox.cpp:531
+msgctxt "QDialogButtonBox"
+msgid "Open"
+msgstr "Abrir"
+
+#: qdialogbuttonbox.cpp:534
+msgctxt "QDialogButtonBox"
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: qdialogbuttonbox.cpp:537
+msgctxt "QDialogButtonBox"
+msgid "Close"
+msgstr "Cerrar"
+
+#: qdialogbuttonbox.cpp:540
+msgctxt "QDialogButtonBox"
+msgid "Apply"
+msgstr "Aplicar"
+
+#: qdialogbuttonbox.cpp:543
+msgctxt "QDialogButtonBox"
+msgid "Reset"
+msgstr "Reinicializar"
+
+#: qdialogbuttonbox.cpp:546
+msgctxt "QDialogButtonBox"
+msgid "Help"
+msgstr "Ayuda"
+
+#: qdialogbuttonbox.cpp:550
+msgctxt "QDialogButtonBox"
+msgid "Don't Save"
+msgstr "No guardar"
+
+#: qdialogbuttonbox.cpp:554
+msgctxt "QDialogButtonBox"
+msgid "Discard"
+msgstr "Descartar"
+
+#: qdialogbuttonbox.cpp:557
+msgctxt "QDialogButtonBox"
+msgid "&Yes"
+msgstr "&Sí"
+
+#: qdialogbuttonbox.cpp:560
+msgctxt "QDialogButtonBox"
+msgid "Yes to &All"
+msgstr "Sí a &todo"
+
+#: qdialogbuttonbox.cpp:563
+msgctxt "QDialogButtonBox"
+msgid "&No"
+msgstr "&No"
+
+#: qdialogbuttonbox.cpp:566
+msgctxt "QDialogButtonBox"
+msgid "N&o to All"
+msgstr "N&o a todo"
+
+#: qdialogbuttonbox.cpp:569
+msgctxt "QDialogButtonBox"
+msgid "Save All"
+msgstr "Guardar todo"
+
+#: qdialogbuttonbox.cpp:572
+msgctxt "QDialogButtonBox"
+msgid "Abort"
+msgstr "Interrumpir"
+
+#: qdialogbuttonbox.cpp:575
+msgctxt "QDialogButtonBox"
+msgid "Retry"
+msgstr "Reintentar"
+
+#: qdialogbuttonbox.cpp:578
+msgctxt "QDialogButtonBox"
+msgid "Ignore"
+msgstr "Ignorar"
+
+#: qdialogbuttonbox.cpp:581
+msgctxt "QDialogButtonBox"
+msgid "Restore Defaults"
+msgstr "Restaurar los valores predeterminados"
+
+#: qdialogbuttonbox.cpp:552
+msgctxt "QDialogButtonBox"
+msgid "Close without Saving"
+msgstr "Cerrar sin guardar"
+
+#: qdialogbuttonbox.cpp:525
+msgctxt "QDialogButtonBox"
+msgid "&OK"
+msgstr "&Aceptar"
+
+#: qdirmodel.cpp:425
+msgctxt "QDirModel"
+msgid "Name"
+msgstr "Nombre"
+
+#: qdirmodel.cpp:426
+msgctxt "QDirModel"
+msgid "Size"
+msgstr "Tamaño"
+
+msgctxt "QDirModel"
+msgid "Kind"
+msgstr "Clase"
+
+#: qdirmodel.cpp:431
+msgctxt "QDirModel"
+msgid "Type"
+msgstr "Tipo"
+
+#: qdirmodel.cpp:437
+msgctxt "QDirModel"
+msgid "Date Modified"
+msgstr "Última modificación"
+
+#: qdirmodel.cpp:429
+msgctxt "QDirModel"
+msgid "Kind"
+msgstr "Clase"
+
+#: qfiledialog_win.cpp:126
+msgctxt "QFileDialog"
+msgid "All Files (*)"
+msgstr "Todos los ficheros (*)"
+
+#: qfiledialog.cpp:893
+msgctxt "QFileDialog"
+msgid "Directories"
+msgstr "Directorios"
+
+#: qfiledialog.cpp:2432
+msgctxt "QFileDialog"
+msgid "&Open"
+msgstr "&Abrir"
+
+#: qfiledialog.cpp:931
+msgctxt "QFileDialog"
+msgid "&Save"
+msgstr "&Guardar"
+
+#: qfiledialog.cpp:435
+msgctxt "QFileDialog"
+msgid "Open"
+msgstr "Abrir"
+
+#: qfiledialog.cpp:1682
+msgctxt "QFileDialog"
+msgid "%1 already exists."
+"Do you want to replace it?"
+msgstr "El fichero %1 ya existe."
+"¿Desea reemplazarlo?"
+
+#: qfiledialog.cpp:1702
+msgctxt "QFileDialog"
+msgid "%1"
+"File not found."
+"Please verify the correct file name was given."
+msgstr "%1"
+"Fichero no encontrado."
+"Verifique que el nombre del fichero es correcto."
+
+#: qdirmodel.cpp:835
+msgctxt "QFileDialog"
+msgid "My Computer"
+msgstr "Mi equipo"
+
+#: qfiledialog.cpp:462
+msgctxt "QFileDialog"
+msgid "&Rename"
+msgstr "Cambia&r de nombre"
+
+#: qfiledialog.cpp:463
+msgctxt "QFileDialog"
+msgid "&Delete"
+msgstr "&Borrar"
+
+#: qfiledialog.cpp:464
+msgctxt "QFileDialog"
+msgid "Show &hidden files"
+msgstr "Mostrar los fic&heros ocultos"
+
+#: ui_qfiledialog.h:264
+msgctxt "QFileDialog"
+msgid "Back"
+msgstr "Anterior (histórico)"
+
+#: ui_qfiledialog.h:274
+msgctxt "QFileDialog"
+msgid "Parent Directory"
+msgstr "Directorio superior"
+
+#: ui_qfiledialog.h:284
+msgctxt "QFileDialog"
+msgid "List View"
+msgstr "Vista de lista"
+
+#: ui_qfiledialog.h:289
+msgctxt "QFileDialog"
+msgid "Detail View"
+msgstr "Vista detallada"
+
+#: ui_qfiledialog.h:292
+msgctxt "QFileDialog"
+msgid "Files of type:"
+msgstr "Ficheros de tipo:"
+
+#: qfiledialog.cpp:895
+msgctxt "QFileDialog"
+msgid "Directory:"
+msgstr "Directorio:"
+
+msgctxt "QFileDialog"
+msgid ""
+"File not found."
+"Please verify the correct file name was given"
+msgstr ""
+"Fichero no encontrado. "
+"Compruebe que el nombre del fichero es correcto"
+
+#: qfiledialog.cpp:2500
+msgctxt "QFileDialog"
+msgid "%1"
+"Directory not found."
+"Please verify the correct directory name was given."
+msgstr "%1"
+"Directorio no encontrado."
+"Verique que el nombre del directorio es correcto."
+
+#: qfiledialog.cpp:2296
+msgctxt "QFileDialog"
+msgid "'%1' is write protected."
+"Do you want to delete it anyway?"
+msgstr "«%1» está protegido contra escritura. "
+"¿Desea borrarlo de todas formas?"
+
+#: qfiledialog.cpp:2301
+msgctxt "QFileDialog"
+msgid "Are sure you want to delete '%1'?"
+msgstr "¿Seguro que desea borrar «%1»?"
+
+#: qfiledialog.cpp:2314
+msgctxt "QFileDialog"
+msgid "Could not delete directory."
+msgstr "No fue posible borrar el directorio."
+
+#: qfiledialog_win.cpp:128
+msgctxt "QFileDialog"
+msgid "All Files (*.*)"
+msgstr "Todos los ficheros (*.*)"
+
+#: qfiledialog.cpp:437
+msgctxt "QFileDialog"
+msgid "Save As"
+msgstr "Guardar como"
+
+#: qfileiconprovider.cpp:379
+msgctxt "QFileDialog"
+msgid "Drive"
+msgstr "Unidad"
+
+#: qfileiconprovider.cpp:383
+msgctxt "QFileDialog"
+msgid "File"
+msgstr "Fichero"
+
+#: qfileiconprovider.cpp:412
+msgctxt "QFileDialog"
+msgid "Unknown"
+msgstr "Desconocido"
+
+#: qfiledialog.cpp:439
+msgctxt "QFileDialog"
+msgid "Find Directory"
+msgstr "Buscar en el directorio"
+
+#: qfiledialog.cpp:458
+msgctxt "QFileDialog"
+msgid "Show "
+msgstr "Mostrar "
+
+#: ui_qfiledialog.h:269
+msgctxt "QFileDialog"
+msgid "Forward"
+msgstr "Siguiente (histórico)"
+
+#: qfiledialog.cpp:2152
+msgctxt "QFileDialog"
+msgid "New Folder"
+msgstr "Nueva carpeta"
+
+#: qfiledialog.cpp:465
+msgctxt "QFileDialog"
+msgid "&New Folder"
+msgstr "&Nueva carpeta"
+
+#: qfiledialog.cpp:929
+msgctxt "QFileDialog"
+msgid "&Choose"
+msgstr "&Seleccionar"
+
+#: qsidebar.cpp:388
+msgctxt "QFileDialog"
+msgid "Remove"
+msgstr "Eliminar"
+
+#: qfiledialog.cpp:898
+msgctxt "QFileDialog"
+msgid "File &name:"
+msgstr "&Nombre de fichero:"
+
+#: ui_qfiledialog.h:261
+msgctxt "QFileDialog"
+msgid "Look in:"
+msgstr "Ver en:"
+
+#: ui_qfiledialog.h:279
+msgctxt "QFileDialog"
+msgid "Create New Folder"
+msgstr "Crear una nueva carpeta"
+
+#: qfilesystemmodel.cpp:679
+msgctxt "QFileSystemModel"
+msgid "%1 TB"
+msgstr "%1 TiB"
+
+#: qfilesystemmodel.cpp:681
+msgctxt "QFileSystemModel"
+msgid "%1 GB"
+msgstr "%1 GiB"
+
+#: qfilesystemmodel.cpp:683
+msgctxt "QFileSystemModel"
+msgid "%1 MB"
+msgstr "%1 MiB"
+
+#: qfilesystemmodel.cpp:685
+msgctxt "QFileSystemModel"
+msgid "%1 KB"
+msgstr "%1 KiB"
+
+#: qfilesystemmodel.cpp:686
+msgctxt "QFileSystemModel"
+msgid "%1 bytes"
+msgstr "%1 bytes"
+
+#: qfilesystemmodel.cpp:763
+msgctxt "QFileSystemModel"
+msgid "Invalid filename"
+msgstr "Nombre de fichero no válido"
+
+#: qfilesystemmodel.cpp:765
+msgctxt "QFileSystemModel"
+msgid "<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer characters or no punctuations marks."
+msgstr "<b>No se puede utilizar el nombre «%1».</b><p>Intente usar otro nombre con menos caracteres o sin signos de puntuación."
+
+#: qfilesystemmodel.cpp:834
+msgctxt "QFileSystemModel"
+msgid "Name"
+msgstr "Nombre"
+
+#: qfilesystemmodel.cpp:836
+msgctxt "QFileSystemModel"
+msgid "Size"
+msgstr "Tamaño"
+
+#: qfilesystemmodel.cpp:840
+msgctxt "QFileSystemModel"
+msgid "Kind"
+msgstr "Clase"
+
+msgctxt "QFileSystemModel"
+msgid "Type"
+msgstr "Tipo"
+
+#: qfilesystemmodel.cpp:849
+msgctxt "QFileSystemModel"
+msgid "Date Modified"
+msgstr "Última modificación"
+
+#: qfilesystemmodel_p.h:198
+msgctxt "QFileSystemModel"
+msgid "My Computer"
+msgstr "Mi equipo"
+
+#: qfilesystemmodel_p.h:200
+msgctxt "QFileSystemModel"
+msgid "Computer"
+msgstr "Equipo"
+
+#: qfilesystemmodel.cpp:842
+msgctxt "QFileSystemModel"
+msgid "Type"
+msgstr "Tipo"
+
