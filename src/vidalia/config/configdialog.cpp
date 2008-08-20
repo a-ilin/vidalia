@@ -53,13 +53,11 @@ ConfigDialog::ConfigDialog(QWidget* parent)
    * translations. */
   QPushButton *button = ui.buttonBox->button(QDialogButtonBox::Ok);
   if (button) {
-    button->setText(tr("OK"));
     Vidalia::createShortcut(QKeySequence(Qt::Key_Return), 
                             this, button, SLOT(click()));
   }
   button = ui.buttonBox->button(QDialogButtonBox::Cancel);
   if (button) {
-    button->setText(tr("Cancel"));
     Vidalia::createShortcut("Esc", this, button, SLOT(click()));
     Vidalia::createShortcut("Ctrl+W", this, button, SLOT(click()));
   }
