@@ -150,6 +150,16 @@ LanguageSupport::translate(const QString &languageCode)
   else
     delete systemQtTranslator;
 
+  /* Install the translator for Qt's internal widgets that is shipped with
+   * Vidalia. */
+  QTranslator *qtTranslator = new QTranslator(vApp);
+  Q_CHECK_PTR(qtTranslator);
+
+  if (qtTranslator->load(":/lang/qt_" + languageCode + ".qm"))
+    QApplication::installTranslator(qtTranslator);
+  else 
+    delete qtTranslator;
+
   /* Install a translator for Vidalia's UI widgets */
   QTranslator *vidaliaTranslator = new QTranslator(vApp);
   Q_CHECK_PTR(vidaliaTranslator);
