@@ -121,15 +121,6 @@ LanguageSupport::isValidLanguageCode(const QString &languageCode)
   return languageCodes().contains(languageCode);
 }
 
-/** Returns true if <b>languageCode</b> requires a right-to-left layout. */
-bool
-LanguageSupport::isRightToLeft(const QString &languageCode)
-{
-  return (!languageCode.compare("ar", Qt::CaseInsensitive) 
-            || !languageCode.compare("fa", Qt::CaseInsensitive)
-            || !languageCode.compare("he", Qt::CaseInsensitive));
-}
-
 /** Sets the application's translator to the specified language. */
 bool
 LanguageSupport::translate(const QString &languageCode)

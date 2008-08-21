@@ -39,8 +39,6 @@ public:
   static QMap<QString, QString> languages();
   /** Returns true if we understand the given language code. */
   static bool isValidLanguageCode(const QString &languageCode);
-  /** Returns true if <b>languageCode</b> requires a right-to-left layout. */
-  static bool isRightToLeft(const QString &languageCode);
   /** Sets the application's translator to the specified language. */
   static bool translate(const QString &languageCode);
 };
