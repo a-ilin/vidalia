@@ -51,15 +51,15 @@
     <file>ru/index.html</file>
     <file>ru/bridges.html</file>
     <!-- Simplified Chinese -->
-    <file>zh-cn/contents.xml</file>
-    <file>zh-cn/index.html</file>
-    <file>zh-cn/running.html</file>
-    <file>zh-cn/log.html</file>
-    <file>zh-cn/config.html</file>
-    <file>zh-cn/server.html</file>
-    <file>zh-cn/troubleshooting.html</file>
-    <file>zh-cn/netview.html</file>
-    <file>zh-cn/links.html</file>
+    <file>zh_CN/contents.xml</file>
+    <file>zh_CN/index.html</file>
+    <file>zh_CN/running.html</file>
+    <file>zh_CN/log.html</file>
+    <file>zh_CN/config.html</file>
+    <file>zh_CN/server.html</file>
+    <file>zh_CN/troubleshooting.html</file>
+    <file>zh_CN/netview.html</file>
+    <file>zh_CN/links.html</file>
     <!-- Swedish -->
     <file>sv/contents.xml</file>
     <file>sv/index.html</file>
