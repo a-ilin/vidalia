@@ -143,7 +143,7 @@ MainWindow::MainWindow()
            this, SLOT(onBrowserFailed(QString)));
   _browserProcess->setEnvironment(QProcess::systemEnvironment() << "TZ=UTC");
 
-  /* Create a new HelperProcess object, used to start the web browser */
+  /* Create a new HelperProcess object, used to start the IM client */
   _imProcess = new HelperProcess(this);
   connect(_imProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
            this, SLOT(onSubprocessFinished(int, QProcess::ExitStatus)));
