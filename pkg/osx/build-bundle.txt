@@ -18,12 +18,14 @@ Libevent
 
 
 Qt
-4. Download and extract the open source version of Qt 4.1 or higher from 
+4. Download and extract the open source version of Qt 4.2 or higher from 
    Trolltech at the following address:
    http://www.trolltech.com/developer/downloads/qt/mac
 
-5. Configure Qt with the following:
-   ./configure -static -release
+5. Configure Qt with the following (OS X 10.4 or later):
+  export MACOSX_DEPLOYENT_TARGET=10.4
+   ./configure -static -release -universal -fast -no-qt3support \
+     -nomake demos -nomake examples -sdk /Developer/SDKs/MacOSX10.4u.sdk/
 
 6. Build and install Qt as follows:
    make && make install
