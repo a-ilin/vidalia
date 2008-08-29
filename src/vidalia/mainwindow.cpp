@@ -410,7 +410,7 @@ MainWindow::createMenuBar()
   
   /* The File, Help, and Configure menus will get merged into the application
    * menu by Qt. */
-  QMenuBar *menuBar = new QMenuBar();
+  QMenuBar *menuBar = new QMenuBar(0);
   QMenu *fileMenu = menuBar->addMenu(tr("File"));
   fileMenu->addAction(_exitAct);
   
@@ -431,8 +431,6 @@ MainWindow::createMenuBar()
   _helpAct->setText(tr("Vidalia Help"));
   helpMenu->addAction(_helpAct);
   helpMenu->addAction(_aboutAct);
-  
-  setMenuBar(menuBar);
 #endif
 }
 
