@@ -302,47 +302,62 @@ MainWindow::close()
 void 
 MainWindow::createActions()
 {
-  _startStopAct = new QAction(QIcon(IMG_START_TOR_16), tr("Start Tor"), this);
+  _startStopAct = new QAction(tr("Start Tor"), this);
   connect(_startStopAct, SIGNAL(triggered()), this, SLOT(start()));
 
-  _exitAct = new QAction(QIcon(IMG_EXIT), tr("Exit"), this);
+  _exitAct = new QAction(tr("Exit"), this);
   connect(_exitAct, SIGNAL(triggered()), this, SLOT(close()));
 
-  _bandwidthAct = new QAction(QIcon(IMG_BWGRAPH), tr("Bandwidth Graph"), this);
+  _bandwidthAct = new QAction(tr("Bandwidth Graph"), this);
   connect(_bandwidthAct, SIGNAL(triggered()), 
           _bandwidthGraph, SLOT(showWindow()));
   connect(ui.lblBandwidthGraph, SIGNAL(clicked()),
           _bandwidthGraph, SLOT(showWindow()));
 
-  _messageAct = new QAction(QIcon(IMG_MESSAGELOG), tr("Message Log"), this);
+  _messageAct = new QAction(tr("Message Log"), this);
   connect(_messageAct, SIGNAL(triggered()),
           _messageLog, SLOT(showWindow()));
   connect(ui.lblMessageLog, SIGNAL(clicked()),
           _messageLog, SLOT(showWindow()));
 
-  _networkAct = new QAction(QIcon(IMG_NETWORK), tr("Network Map"), this);
+  _networkAct = new QAction(tr("Network Map"), this);
   connect(_networkAct, SIGNAL(triggered()), 
           _netViewer, SLOT(showWindow()));
   connect(ui.lblViewNetwork, SIGNAL(clicked()),
           _netViewer, SLOT(showWindow()));
 
-  _controlPanelAct = new QAction(QIcon(IMG_CONTROL_PANEL), 
-                                 tr("Control Panel"), this);
+  _controlPanelAct = new QAction(tr("Control Panel"), this);
   connect(_controlPanelAct, SIGNAL(triggered()), this, SLOT(show()));
 
-  _configAct = new QAction(QIcon(IMG_CONFIG), tr("Settings"), this);
+  _configAct = new QAction(tr("Settings"), this);
   connect(_configAct, SIGNAL(triggered()), this, SLOT(showConfigDialog()));
   
-  _aboutAct = new QAction(QIcon(IMG_ABOUT), tr("About"), this);
+  _aboutAct = new QAction(tr("About"), this);
   connect(_aboutAct, SIGNAL(triggered()), this, SLOT(showAboutDialog()));
 
-  _helpAct = new QAction(QIcon(IMG_HELP), tr("Help"), this);
+  _helpAct = new QAction(tr("Help"), this);
   connect(_helpAct, SIGNAL(triggered()), this, SLOT(showHelpDialog()));
   connect(ui.lblHelpBrowser, SIGNAL(clicked()), this, SLOT(showHelpDialog()));
 
-  _newIdentityAct = new QAction(QIcon(IMG_IDENTITY), tr("New Identity"), this);
+  _newIdentityAct = new QAction(tr("New Identity"), this);
   _newIdentityAct->setEnabled(false);
   connect(_newIdentityAct, SIGNAL(triggered()), this, SLOT(newIdentity()));
+
+#if !defined(Q_WS_MAC)
+  /* Don't give the menu items icons on OS X, since they end up in the
+   * application menu bar. Menu bar items on OS X typically do not have
+   * icons. */
+  _startStopAct->setIcon(QIcon(IMG_START_TOR_16));
+  _exitAct->setIcon(QIcon(IMG_EXIT));
+  _bandwidthAct->setIcon(QIcon(IMG_BWGRAPH));
+  _messageAct->setIcon(QIcon(IMG_MESSAGELOG));
+  _networkAct->setIcon(QIcon(IMG_NETWORK));
+  _controlPanelAct->setIcon(QIcon(IMG_CONTROL_PANEL));
+  _configAct->setIcon(QIcon(IMG_CONFIG));
+  _aboutAct->setIcon(QIcon(IMG_ABOUT));
+  _helpAct->setIcon(QIcon(IMG_HELP));
+  _newIdentityAct->setIcon(QIcon(IMG_IDENTITY));
+#endif
 }
 
 /** Creates a tray icon with a context menu and adds it to the system
