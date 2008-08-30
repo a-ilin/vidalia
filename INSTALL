@@ -12,23 +12,15 @@ packages installed:
 
 Linux/BSD/Unix
 --------------
-  1. To configure and compile Vidalia, you can run:
+  1. To configure and compile Vidalia, you can run the following sequence of
+     commands:
 
-                           cmake . && make
-  
-     [optional] CMake also supports out-of-source builds, so compiled and
-     generated files are kept separate from the source tree. For example, you
-     can create a build directory as follows:
-
-                        mkdir build && cd build
-
-     Instead of the 'cmake .' command listed above, you would configure and
-     compile Vidalia by running:
-
-                           cmake .. && make
+       mkdir build && cd build
+       cmake ..
+       make
 
   2. When the previous command finishes, Vidalia's binary will be
-     placed in the src/vidalia/ directory.
+     placed in the build/src/vidalia/ directory.
   
   3. Optionally, you can run `make install` to install Vidalia into
      your /usr/local/bin/ directory. 
@@ -42,15 +34,18 @@ prefer building from an IDE.
 
   1. To build Vidalia from the command line, you can run:
 
-                           cmake . && make
+        mkdir build && cd build
+        cmake ..
+        make
 
      Alternatively, you can have CMake generate an Xcode project for Vidalia
      by running:
 
-                           cmake -G Xcode .
+        mkdir xcode && cd xcode
+        cmake -G Xcode ..
 
   2. If you built from the command line, Vidalia's binary will be in an
-     application bundle located at src/vidalia/Vidalia.app. You can copy
+     application bundle located at build/src/vidalia/Vidalia.app. You can copy
      Vidalia.app to your Applications folder, if you prefer.
 
      If you're building from a CMake-generated Xcode project, you can simply
@@ -63,24 +58,24 @@ Windows with MinGW
   1. Make sure the following directories are in your PATH environment
   variable:
       
-      * CMake (e.g., "C:\Program Files\CMake 2.4\bin")
-      * MinGW (e.g., "C:\MinGW\bin")
-      * Qt    (e.g., "C:\Qt\4.3.2\bin")
+        * CMake (e.g., "C:\Program Files\CMake 2.4\bin")
+        * MinGW (e.g., "C:\MinGW\bin")
+        * Qt    (e.g., "C:\Qt\4.3.2\bin")
 
   2. Configure Vidalia and generate Makefiles by running: 
-    
-                        cmake -G "MinGW Makefiles" .
-    
+
+        mkdir build && cd build
+        cmake -G "MinGW Makefiles" ..
 
   3. Compile Vidalia by running: 
                           
-                            mingw32-make
+        mingw32-make
 
 
 If CMake fails to find your Qt installation, you can explicitly tell CMake
-where to find Qt by running:
+where to find Qt as in the following example:
 
-          cmake -DQT_QMAKE_EXECUTABLE="C:\Qt\4.3.2\bin\qmake.exe" .
+        cmake -DQT_QMAKE_EXECUTABLE="C:\Qt\4.3.2\bin\qmake.exe" ..
 
 You would replace "C:\Qt\4.3.2\bin" in the previous command with the actual
 path to your Qt installation's qmake.exe binary.
@@ -132,26 +127,27 @@ similar process can be followed for other versions of VS.
      appropriate, depending on where you installed Visual Studio and the
      Platform SDK in Steps 1 and 2.
 
-  5. Open the Visual Studio 2005 Command Prompt and 'cd' to the location of your
-     extracted Qt source code (e.g., C:\Qt\4.3.3).
+  5. Open the Visual Studio 2005 Command Prompt and 'cd' to the location of 
+     your extracted Qt source code (e.g., C:\Qt\4.3.3).
 
   6. Configure Qt with support for your version of Visual Studio. For example,
      to configure Qt with support for Visual Studio 2005, you would run:
 
-       configure.exe -debug-and-release -static -fast -platform win32-msvc2005
+      configure.exe -debug-and-release -static -fast -platform win32-msvc2005
 
      See Qt's README file for more available platform options.
 
   7. Compile Qt by running:  
      
-                                    nmake.exe
+        nmake.exe
   
      (NOTE: This step will take several hours and lots of hard drive space.)
  
 Once you have Qt compiled with Visual Studio support, you can use CMake to
 generate a Visual Studio project file by running
 
-                          cmake -G "Visual Studio 8 2005" .
+        mkdir build && cd build
+        cmake -G "Visual Studio 8 2005" ..
 
 or whatever your particular version of Visual Studio happens to be.
 'cmake --help' lists other available generators.
@@ -163,14 +159,15 @@ To compile Vidalia from the command line using NMake, you will first need to
 follow the steps under the 'Windows with Visual Studio' section for compiling
 Qt with Visual Studio support.
 
-If you want to build Vidalia from the command line, you can have CMake generate
-NMake makefiles by running:
+If you want to build Vidalia from the command line, you can have CMake 
+generate NMake makefiles by running:
 
-                     cmake -G "NMake Makefiles" .
+        mkdir build && cd build
+        cmake -G "NMake Makefiles" ..
 
 You can then compile Vidalia from the command line by simply running:
 
-                               nmake
+        nmake
 
 
 Available Configuration Options
@@ -196,15 +193,16 @@ the command line and follows the format "-D <var>:<type>=<value>
   -DCMAKE_INSTALL_PREFIX=/usr/local       Specifies the install prefix used
                                           for `make install`.
 
+  -DCMAKE_BUILD_TYPE=<buildtype>          Available build types include:
+                                            "release", "debug", "minsizerel"
 
 For example, to configure CMake to look for Qt in "/usr/local/Qt-4.3.2/bin",
 you would run:
 
-      cmake -DQT_QMAKE_EXECUTABLE=/usr/local/Qt-4.3.2/bin/qmake .
+      cmake -DQT_QMAKE_EXECUTABLE=/usr/local/Qt-4.3.2/bin/qmake ..
 
-Don't forget the dot at the end!
+Don't forget the dot(s) at the end!
 
-CMake also supports other generators besides Makefiles on certain platforms. See 
-'cmake --help' or 'man cmake' (on non-Windows platforms) for more information
-about supported generators and configuration options.
-
+CMake also supports other generators besides Makefiles on certain platforms. 
+See  'cmake --help' or 'man cmake' (on non-Windows platforms) for more 
+information about supported generators and configuration options.
