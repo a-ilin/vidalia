@@ -35,17 +35,17 @@ then
   # the OS version
   OSVER=`/usr/bin/sw_vers | grep ProductVersion | cut -f2 | cut -d"." -f1,2`
   case "$OSVER" in
-    "10.6") OS="snowleopard";;
-    "10.5") OS="leopard";;
-    "10.4") OS="tiger";;
-    "10.3") OS="panther";;
-    "10.2") OS="jaguar";;
-    "10.1") OS="puma";;
-    "10.0") OS="cheetah";;
-         *) OS="unknown";;
+    "10.6") ARCH="universal";;
+    "10.5") ARCH="universal";;
+    "10.4") ARCH="universal";;
+    "10.3") ARCH="ppc";;
+    "10.2") ARCH="ppc";;
+    "10.1") ARCH="ppc";;
+    "10.0") ARCH="ppc";;
+         *) ARCH="unknown";;
   esac
 else
-  OS="unknown"
+  ARCH="unknown"
 fi
 
 # Set the location of the temporary files
@@ -53,7 +53,7 @@ BUILD_DIR=/tmp/vidalia-osx-$$
 # Set the Vidalia version
 VERSION="@VERSION@"
 # Set the name of the output .dmg file
-DMG="vidalia-$VERSION-$OS.dmg"
+DMG="vidalia-$VERSION-$ARCH.dmg"
 
 # Get the rest of the command-line arguments
 filelist=$2
