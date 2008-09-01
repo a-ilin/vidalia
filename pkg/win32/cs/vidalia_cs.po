@@ -162,10 +162,10 @@ msgstr "Instalovat ${TOR_DESC}."
 
 msgctxt "TorAskOverwriteTorrc"
 msgid ""
-"You already have a Tor configuration file.$\r$\n"
+"You already have a Tor configuration file.$\n$\n"
 "Do you want to overwrite it with the default sample configuration file?"
 msgstr ""
-"Vy již máte Tor konfigurační soubor.$\r$\n"
+"Vy již máte Tor konfigurační soubor.$\n$\n"
 "Chcete jej přepsat defaultním ukázkovým konfiguračním souborem?"
 
 msgctxt "TorDocumentation"

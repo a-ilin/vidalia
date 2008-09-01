@@ -139,8 +139,8 @@ msgid "Add to Start Menu"
 msgstr "Adauga în Start Menu"
 
 msgctxt "TorAskOverwriteTorrc"
-msgid "You already have a Tor configuration file.\nDo you want to overwrite it with the default sample configuration file?"
-msgstr "Ai deja un fisier de configurare pentru Tor.\nVrei sa îl rescri cu un fisier implicit de configurare?"
+msgid "You already have a Tor configuration file.$\n$\nDo you want to overwrite it with the default sample configuration file?"
+msgstr "Ai deja un fisier de configurare pentru Tor.$\n$\nVrei sa îl rescri cu un fisier implicit de configurare?"
 
 msgctxt "VidaliaRunNow"
 msgid "Run ${VIDALIA_NAME}"

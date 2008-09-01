@@ -141,8 +141,8 @@ msgid "Add to Start Menu"
 msgstr "添加至開始菜單程式集"
 
 msgctxt "TorAskOverwriteTorrc"
-msgid "You already have a Tor configuration file.\nDo you want to overwrite it with the default sample configuration file?"
-msgstr "安裝程式檢測到已存在的 Tor 配置檔案.\n是否要使用默認的配置檔案覆蓋它?"
+msgid "You already have a Tor configuration file.$\n$\nDo you want to overwrite it with the default sample configuration file?"
+msgstr "安裝程式檢測到已存在的 Tor 配置檔案.$\n$\n是否要使用默認的配置檔案覆蓋它?"
 
 msgctxt "VidaliaRunNow"
 msgid "Run ${VIDALIA_NAME}"

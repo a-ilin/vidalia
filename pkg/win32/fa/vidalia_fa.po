@@ -159,8 +159,8 @@ msgstr "افزودن به فهرست آغاز"
 
 #, fuzzy
 msgctxt "TorAskOverwriteTorrc"
-msgid "You already have a Tor configuration file.\nDo you want to overwrite it with the default sample configuration file?"
-msgstr "شما ??شتر دارا? ?? ?رونده ???ربند? تور م? باش?د.\nآ?ا م? خواه?د آن را با ?رونده ???ربند? نمونه ??ش ?ز?ده جا? نوشت ?ن?د؟"
+msgid "You already have a Tor configuration file.$\n$\nDo you want to overwrite it with the default sample configuration file?"
+msgstr "شما ??شتر دارا? ?? ?رونده ???ربند? تور م? باش?د.$\n$\nآ?ا م? خواه?د آن را با ?رونده ???ربند? نمونه ??ش ?ز?ده جا? نوشت ?ن?د؟"
 
 #, fuzzy
 msgctxt "VidaliaRunNow"
