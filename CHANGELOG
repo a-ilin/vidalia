@@ -1,3 +1,22 @@
+0.1.9   xx-Sep-2008
+  o Create the control panel's menubar as a parentless QMenuBar, so it is 
+    visible even if the control panel is not the topmost window. (Ticket #286)
+  o Make the Tor status label and Vidalia tray icon tooltip display the same
+    text after a circuit is established. (Ticket #390)
+  o Correct the location of the simplified Chinese help files so they will
+    actually load again.
+  o Try to load a translation for the current language from Qt's translations
+    directory, so we can get Qt's internal widgets (e.g. QDialogButtonBox)
+    translated. (Ticket #375)
+  o Use "$\r$\n" in the MessageBox strings in the Windows installer 
+    translations, so the newlines appear properly. (Ticket #411)
+  o Use the architecture name (e.g. "universal" or "ppc") rather than the 
+    OS X version name (e.g. "tiger" or "panther") when naming OS X packages.
+  o Update the INSTALL file to recommend out-of-source builds.
+  o Stop building the nsh2po and po2nsh conversion tools on non-Windows 
+    platforms.
+
+
 0.1.8   17-Aug-2008
   o Make the position of the y-axis on the bandwidth graph variable based on 
     the width of the axis labels. This works better for languages like Farsi 
