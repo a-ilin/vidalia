@@ -51,6 +51,7 @@ parse_message_string(const QString &msg)
     out.chop(1);
   out.replace("\\\"", "\"");
   out.replace("\\n", "\\r\\n");
+  out.replace("$\\r\\n", "$\\r$\\n");
   return out;
 }
 
