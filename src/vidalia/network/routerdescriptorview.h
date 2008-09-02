@@ -20,6 +20,7 @@
 #include <QObject>
 #include <QTextEdit>
 #include <QList>
+#include <QContextMenuEvent>
 
 #include <routerdescriptor.h>
 
@@ -37,7 +38,14 @@ public slots:
   void display(RouterDescriptor rd);
   /** Shows all router descriptors in the given list. */
   void display(QList<RouterDescriptor> rdlist);
-  
+  /** Copies any selected text to the clipboard. */
+  void copySelectedText();
+
+protected:
+  /** Displays a context menu for the user when they right-click on the
+   * widget. */
+  virtual void contextMenuEvent(QContextMenuEvent *event);
+
 private:
   /** Adjusts the displayed uptime to include time since the
    * router's descriptor was last published. */

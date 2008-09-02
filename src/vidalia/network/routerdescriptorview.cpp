@@ -14,16 +14,56 @@
 ** \brief Formats and displays a router descriptor as HTML
 */
 
+#include <QMenu>
+#include <QIcon>
+#include <QTextCursor>
+#include <QClipboard>
+#include <QShortcut>
+#include <QTextDocumentFragment>
 #include <html.h>
+#include <vidalia.h>
 #include "routerdescriptorview.h"
 
 #define DATE_FORMAT   "yyyy-MM-dd HH:mm:ss"
+#define IMG_COPY      ":/images/22x22/edit-copy.png"
 
 
 /** Default constructor. */
 RouterDescriptorView::RouterDescriptorView(QWidget *parent)
 : QTextEdit(parent)
 {
+  /* Steal QTextEdit's default "Copy" shortcut, since we want to do some
+   * tweaking of the selected text before putting it on the clipboard. */
+  QShortcut *shortcut = new QShortcut(QKeySequence::Copy, this,
+                                      SLOT(copySelectedText()));
+}
+
+/** Displays a context menu for the user when they right-click on the
+ * widget. */
+void
+RouterDescriptorView::contextMenuEvent(QContextMenuEvent *event)
+{
+  QMenu *menu = new QMenu();
+
+  QAction *copyAction = new QAction(QIcon(IMG_COPY), tr("Copy"), menu);
+  copyAction->setShortcut(QKeySequence::Copy);
+  connect(copyAction, SIGNAL(triggered()), this, SLOT(copySelectedText()));
+
+  if (textCursor().selectedText().isEmpty())
+    copyAction->setEnabled(false);
+
+  menu->addAction(copyAction);
+  menu->exec(event->globalPos());
+  delete menu;
+}
+
+/** Copies any selected text to the clipboard. */
+void
+RouterDescriptorView::copySelectedText()
+{ 
+  QString selectedText = textCursor().selection().toPlainText();
+  selectedText.replace(":\n", ": ");
+  vApp->clipboard()->setText(selectedText);
 }
 
 /** Format the date the descriptor was published. */
