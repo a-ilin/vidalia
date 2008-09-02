@@ -22,17 +22,35 @@ if (USE_QSSLSOCKET)
   endif(NOT OPENSSL_BINARY_DIR)
 endif(USE_QSSLSOCKET)
 
+## Only configure the bundle installer if paths to Tor, Privoxy, and
+## Torbutton are specified 
+set(CONFIGURE_BUNDLE_NSI TRUE)
+if (NOT TOR_PACKAGE_DIR)
+  set(CONFIGURE_BUNDLE_NSI FALSE)
+endif(NOT TOR_PACKAGE_DIR)
+if (NOT PRIVOXY_PACKAGE_DIR)
+  set(CONFIGURE_BUNDLE_NSI FALSE)
+endif(NOT PRIVOXY_PACKAGE_DIR)
+if (NOT TORBUTTON_PACKAGE_DIR)
+  set(CONFIGURE_BUNDLE_NSI FALSE)
+endif(NOT TORBUTTON_PACKAGE_DIR)
+
 ## Windows Packages
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/vidalia.nsi.in
   ${CMAKE_CURRENT_BINARY_DIR}/vidalia.nsi
   @ONLY
 )
-configure_file(
-  ${CMAKE_CURRENT_SOURCE_DIR}/vidalia-bundle.nsi.in
-  ${CMAKE_CURRENT_BINARY_DIR}/vidalia-bundle.nsi
-  @ONLY
-)
+
+if (CONFIGURE_BUNDLE_NSI) 
+  configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/vidalia-bundle.nsi.in
+    ${CMAKE_CURRENT_BINARY_DIR}/vidalia-bundle.nsi
+    @ONLY
+  )
+else(CONFIGURE_BUNDLE_NSI)
+  message(STATUS "Skipping vidalia-bundle.nsi.in")
+endif(CONFIGURE_BUNDLE_NSI)
 
 ## Convert the .po files to NSIS .nsh files at build time
 vidalia_add_nsh(vidalia_NSH

@@ -24,7 +24,7 @@ SetCompressor /SOLID lzma
 
 !define TOR_NAME            "Tor"
 !define TOR_EXEC            "tor.exe"
-!define TOR_APPVERSION      "0.2.0.30"
+!define TOR_APPVERSION      "0.2.1.5"
 !define TOR_DESC            "${TOR_NAME} ${TOR_APPVERSION}"
 
 !define PRIVOXY_NAME        "Privoxy"
@@ -33,7 +33,7 @@ SetCompressor /SOLID lzma
 !define PRIVOXY_DESC        "${PRIVOXY_NAME} ${PRIVOXY_APPVERSION}"
 
 !define TORBUTTON_NAME      "Torbutton"
-!define TORBUTTON_APPVERSION "1.2.0-fx"
+!define TORBUTTON_APPVERSION "1.2.0"
 !define TORBUTTON_DESC      "${TORBUTTON_NAME} ${TORBUTTON_APPVERSION}"
 
 !define BUNDLE_NAME         "Vidalia Bundle"
@@ -155,27 +155,27 @@ SectionGroup "${VIDALIA_DESC}" VidaliaGroup
 
       ; Set output path to the installation directory.
       SetOutPath "$INSTDIR\Vidalia"
-      File "Vidalia\${VIDALIA_APPVERSION}\${VIDALIA_EXEC}"
-      File "Vidalia\${VIDALIA_APPVERSION}\mingwm10.dll"
-      File "Vidalia\${VIDALIA_APPVERSION}\QtCore4.dll"
-      File "Vidalia\${VIDALIA_APPVERSION}\QtGui4.dll"
-      File "Vidalia\${VIDALIA_APPVERSION}\QtNetwork4.dll"
-      File "Vidalia\${VIDALIA_APPVERSION}\QtXml4.dll"
-      File "Vidalia\${VIDALIA_APPVERSION}\ssleay32.dll"
-      File "Vidalia\${VIDALIA_APPVERSION}\README"
-      File "Vidalia\${VIDALIA_APPVERSION}\CHANGELOG"
-      File "Vidalia\${VIDALIA_APPVERSION}\LICENSE"
-      File "Vidalia\${VIDALIA_APPVERSION}\LICENSE-GPLV2"
-      File "Vidalia\${VIDALIA_APPVERSION}\LICENSE-GPLV3"
-      File "Vidalia\${VIDALIA_APPVERSION}\LICENSE-LGPLV3"
-      File "Vidalia\${VIDALIA_APPVERSION}\LICENSE-OPENSSL"
-      File "Vidalia\${VIDALIA_APPVERSION}\CREDITS"
+      File "@Vidalia_BINARY_DIR@\src\vidalia\${VIDALIA_EXEC}"
+      File "@QT_BINARY_DIR@\QtCore4.dll"
+      File "@QT_BINARY_DIR@\QtGui4.dll"
+      File "@QT_BINARY_DIR@\QtNetwork4.dll"
+      File "@QT_BINARY_DIR@\QtXml4.dll"
+      File "@MINGW_BINARY_DIR@\mingwm10.dll"
+      File "@OPENSSL_BINARY_DIR@\ssleay32.dll"
+      File "@Vidalia_SOURCE_DIR@\README"
+      File "@Vidalia_SOURCE_DIR@\CHANGELOG"
+      File "@Vidalia_SOURCE_DIR@\LICENSE"
+      File "@Vidalia_SOURCE_DIR@\LICENSE-GPLV2"
+      File "@Vidalia_SOURCE_DIR@\LICENSE-GPLV3"
+      File "@Vidalia_SOURCE_DIR@\LICENSE-LGPLV3"
+      File "@Vidalia_SOURCE_DIR@\LICENSE-OPENSSL"
+      File "@Vidalia_SOURCE_DIR@\CREDITS"
       
       ; Include a prebuilt GeoIP cache
       SetShellVarContext current
       CreateDirectory "$APPDATA\Vidalia"
       SetOutPath "$APPDATA\Vidalia"
-      File "Vidalia\${VIDALIA_APPVERSION}\geoip-cache"
+      File "@Vidalia_SOURCE_DIR@\pkg\geoip-cache"
       
       ;If there's already a torrc config file, ask if they want to
       ;overwrite it with the new one.
@@ -187,7 +187,7 @@ SectionGroup "${VIDALIA_DESC}" VidaliaGroup
       noreplace:
         StrCpy $configfile "torrc.sample"
       endiftorrc:
-        File /oname=$configfile "tor\${TOR_APPVERSION}\torrc.sample"
+        File /oname=$configfile "@TOR_PACKAGE_DIR@\torrc.sample"
 
       ; Tor gets installed to $INSTDIR\Tor, so let's remember it
       ; But first, we have to replace all the '\'s with '\\'s in the $INSTDIR
@@ -244,8 +244,8 @@ SectionGroup "${TOR_DESC}" TorGroup
        SectionIn 1 2
        SetShellVarContext current
        SetOutPath "$INSTDIR\Tor"
-       File "tor\${TOR_APPVERSION}\tor.exe"
-       File "tor\${TOR_APPVERSION}\tor-resolve.exe"
+       File "@TOR_PACKAGE_DIR@\tor.exe"
+       File "@TOR_PACKAGE_DIR@\tor-resolve.exe"
        WriteIniStr "$INSTDIR\Tor\Tor Website.url" "InternetShortcut" "URL" "https://www.torproject.org"
 
        ; If the user is also installing Vidalia, then don't confuse them by
@@ -266,7 +266,7 @@ SectionGroup "${TOR_DESC}" TorGroup
        noreplace:
          StrCpy $configfile "torrc.sample"
        endiftorrc:
-         File /oname=$configfile "tor\${TOR_APPVERSION}\torrc.sample"
+         File /oname=$configfile "@TOR_PACKAGE_DIR@\torrc.sample"
        
        skiptorrc:
         ; Write the uninstall keys for Windows
@@ -283,7 +283,7 @@ SectionGroup "${TOR_DESC}" TorGroup
     Section "$(TorDocumentation)" TorDocs
        SectionIn 1
        SetOutPath "$INSTDIR\Tor\Documents"
-       File "tor\${TOR_APPVERSION}\Documents\*.*"
+       File "@TOR_PACKAGE_DIR@\Documents\*.*"
     SectionEnd
 
     ;--------------------------------
@@ -335,7 +335,7 @@ SectionGroup "${PRIVOXY_DESC}" PrivoxyGroup
         SectionIn 1 2
         ; add files / whatever that need to be installed here.
         SetOutPath "$INSTDIR\Privoxy"
-        File /r Privoxy\${PRIVOXY_APPVERSION}\*.*
+        File /r @PRIVOXY_PACKAGE_DIR@\*.*
 
         WriteRegStr HKEY_CLASSES_ROOT "PrivoxyActionFile\shell\open\command" "" 'Notepad.exe "%1"'
         WriteRegStr HKEY_CLASSES_ROOT ".action" "" "PrivoxyActionFile"
@@ -397,8 +397,8 @@ SectionGroup "${TORBUTTON_DESC}" TorbuttonGroup
   Section "${TORBUTTON_NAME}" Torbutton
     SectionIn 1 2
     SetOutPath "$INSTDIR\Torbutton"
-    File torbutton\${TORBUTTON_APPVERSION}\LICENSE
-    File torbutton\${TORBUTTON_APPVERSION}\torbutton-${TORBUTTON_APPVERSION}.xpi
+    File @TORBUTTON_PACKAGE_DIR@\LICENSE
+    File @TORBUTTON_PACKAGE_DIR@\torbutton-${TORBUTTON_APPVERSION}.xpi
   SectionEnd
 
   Section "$(TorbuttonAddToFirefox)" TorbuttonAddToFirefox
