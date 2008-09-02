@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-07-02 05:29+0000\n"
-"PO-Revision-Date: 2008-07-02 17:01+0000\n"
+"PO-Revision-Date: 2008-09-02 15:53+0000\n"
 "Last-Translator: Harri Vähätalo <harri@svahatalo.fi>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -934,7 +934,7 @@ msgstr "Vidalian pikatoiminnot"
 #: mainwindow.ui:243
 msgctxt "MainWindow"
 msgid "Setup Relaying"
-msgstr "Reitittimenasetukset"
+msgstr "Reitittimen asetukset"
 
 #: mainwindow.ui:256
 msgctxt "MainWindow"
