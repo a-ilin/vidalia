@@ -1,6 +1,8 @@
-0.1.9   xx-Sep-2008
+0.1.9   02-Sep-2008
   o Create the control panel's menubar as a parentless QMenuBar, so it is 
     visible even if the control panel is not the topmost window. (Ticket #286)
+  o Add a context menu with a "copy" option to RouterDescriptorView? so 
+    users can copy some text to the clipboard. (Ticket #291)
   o Make the Tor status label and Vidalia tray icon tooltip display the same
     text after a circuit is established. (Ticket #390)
   o Correct the location of the simplified Chinese help files so they will
@@ -10,6 +12,16 @@
     translated. (Ticket #375)
   o Use "$\r$\n" in the MessageBox strings in the Windows installer 
     translations, so the newlines appear properly. (Ticket #411)
+  o Grab the Qt .dlls included in the Vidalia installer directly from the
+    configured Qt binary directory (as specified by ${QT_BINARY_DIR}).
+  o Add OPENSSL_BINARY_DIR and MINGW_BINARY_DIR cmake options that can be
+    used to specify where the Windows installer NSIS scripts should look
+    for those dlls, rather than requiring them to all be in a "bin" directory
+    under ${Vidalia_BINARY_DIR}.
+  o Make the location of the Tor, Privoxy, and Torbutton package files into
+    configurable CMake options so the bundle can be built without having to
+    shimmy all these files into some specific directory hierarchy. Makes the
+    bundle a bit less annoying to build.
   o Use the architecture name (e.g. "universal" or "ppc") rather than the 
     OS X version name (e.g. "tiger" or "panther") when naming OS X packages.
   o Update the INSTALL file to recommend out-of-source builds.
