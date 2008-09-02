@@ -10,6 +10,18 @@
 ##  the terms described in the LICENSE file.
 ##
 
+if (MINGW)
+  if (NOT MINGW_BINARY_DIR)
+    set(MINGW_BINARY_DIR ${Vidalia_BINARY_DIR}/bin)
+  endif(NOT MINGW_BINARY_DIR)
+endif(MINGW)
+
+if (USE_QSSLSOCKET)
+  if (NOT OPENSSL_BINARY_DIR)
+    set(OPENSSL_BINARY_DIR ${Vidalia_BINARY_DIR}/bin)
+  endif(NOT OPENSSL_BINARY_DIR)
+endif(USE_QSSLSOCKET)
+
 ## Windows Packages
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/vidalia.nsi.in
