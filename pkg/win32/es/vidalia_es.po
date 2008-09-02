@@ -42,7 +42,7 @@ msgstr ""
 "Si ha instalado previamente Tor, Vidalia, Privoxy, o Firefox, por favor "
 "asegúrese que no se estén ejecutando antes de continuar esta instalación.\r\n"
 "\r\n"
-"$_CLIC"
+"$_CLICK"
 
 msgctxt "BundleWelcomeTitle"
 msgid "Welcome to the ${BUNDLE_NAME} Setup Wizard"
