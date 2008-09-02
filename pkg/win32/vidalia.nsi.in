@@ -136,14 +136,14 @@ Section "${VIDALIA_DESC}" Vidalia
   SectionIn RO
   
   ; Set output path to the installation directory.
-  SetOutPath $INSTDIR    
-  File "..\..\src\vidalia\${VIDALIA_EXEC}"
+  SetOutPath $INSTDIR
+  File "@Vidalia_BINARY_DIR@\src\vidalia\${VIDALIA_EXEC}"
   File "..\..\bin\mingwm10.dll"
-  File "..\..\bin\QtCore4.dll"
-  File "..\..\bin\QtGui4.dll"
-  File "..\..\bin\QtNetwork4.dll"
-  File "..\..\bin\QtXml4.dll"
   File "..\..\bin\ssleay32.dll"
+  File "@QT_BINARY_DIR@\QtCore4.dll"
+  File "@QT_BINARY_DIR@\QtGui4.dll"
+  File "@QT_BINARY_DIR@\QtNetwork4.dll"
+  File "@QT_BINARY_DIR@\QtXml4.dll"
   File "@Vidalia_SOURCE_DIR@\CREDITS"
   File "@Vidalia_SOURCE_DIR@\CHANGELOG"
   File "@Vidalia_SOURCE_DIR@\LICENSE"
@@ -155,7 +155,7 @@ Section "${VIDALIA_DESC}" Vidalia
 
   ; Include a prebuilt GeoIP cache
   SetOutPath "$APPDATA\Vidalia"
-  File "@CMAKE_CURRENT_SOURCE_DIR@\geoip-cache"
+  File "@Vidalia_SOURCE_DIR@\pkg\geoip-cache"
   
   ; Save the chosen language code
   WriteINIStr "$APPDATA\Vidalia\vidalia.conf" General LanguageCode "$(LanguageCode)"
