@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-07-02 05:29+0000\n"
-"PO-Revision-Date: 2008-09-02 15:53+0000\n"
+"PO-Revision-Date: 2008-09-03 13:51+0000\n"
 "Last-Translator: Harri Vähätalo <harri@svahatalo.fi>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -239,7 +239,9 @@ msgstr "Valitse kieli, jolla Vidalia käytetään"
 #: appearancepage.ui:84
 msgctxt "AppearancePage"
 msgid "Changes to language will only take effect after restarting Vidalia!"
-msgstr "Kielimuutokset tulevat voimaan vasta Vidalian uudelleen käynnistämisen jälkeen!"
+msgstr ""
+"Muutokset kieliasetuksiin astuvat voimaan vasta Vidalian uudelleen "
+"käynnistämisen jälkeen!"
 
 #: appearancepage.ui:100
 msgctxt "AppearancePage"
@@ -1330,7 +1332,7 @@ msgid "Vidalia detected that the Tor software exited unexpectedly."
 ""
 "Please check the message log for recent warning or error messages."
 msgstr ""
-"idalia havaitsi Tor-ohjelman pysähtyneen yllättäen. Ole hyvä ja selaa "
+"Vidalia havaitsi Tor-ohjelman pysähtyneen yllättäen. Ole hyvä ja selaa "
 "tapahtumalokia varoitus- tai virheilmoitusten vuoksi."
 
 #: messagelog.ui:19
