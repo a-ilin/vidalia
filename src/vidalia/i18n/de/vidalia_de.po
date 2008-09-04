@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-07-02 05:29+0000\n"
-"PO-Revision-Date: 2008-09-04 20:20+0000\n"
+"PO-Revision-Date: 2008-09-04 20:23+0000\n"
 "Last-Translator: alpha <alpha@mailinator.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -489,7 +489,7 @@ msgstr "Unbekannte Kontrollantwort. [%1]"
 #: controlsocket.cpp:51
 msgctxt "ControlSocket"
 msgid "Control socket is not connected."
-msgstr "Der Kontrollsocket ist nicht verbunden."
+msgstr "Kontrollsocket ist nicht verbunden."
 
 #: generalpage.ui:115
 msgctxt "GeneralPage"
@@ -1419,7 +1419,7 @@ msgstr "Warnung"
 #: messagelog.ui:249
 msgctxt "MessageLog"
 msgid "Notice"
-msgstr "Notiz"
+msgstr "Hinweis"
 
 #: messagelog.ui:265
 msgctxt "MessageLog"
@@ -1534,7 +1534,7 @@ msgstr "Esc"
 #: messagelog.ui:598
 msgctxt "MessageLog"
 msgid "Find"
-msgstr "Finde"
+msgstr "Suchen"
 
 #: messagelog.ui:601
 msgctxt "MessageLog"
@@ -2506,7 +2506,7 @@ msgstr "Verbinde"
 #: stream.cpp:122
 msgctxt "Stream"
 msgid "Open"
-msgstr "Offen"
+msgstr "Öffne"
 
 #: stream.cpp:123
 msgctxt "Stream"
