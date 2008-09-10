@@ -335,7 +335,9 @@ SectionGroup "${PRIVOXY_DESC}" PrivoxyGroup
         SectionIn 1 2
         ; add files / whatever that need to be installed here.
         SetOutPath "$INSTDIR\Privoxy"
-        File /r @PRIVOXY_PACKAGE_DIR@\*.*
+        File /r /x @PRIVOXY_PACKAGE_DIR@\config.txt @PRIVOXY_PACKAGE_DIR@\*.*
+        File /nonfatal /oname=config.original @PRIVOXY_PACKAGE_DIR@\config.txt
+        File /oname=config.txt @Vidalia_SOURCE_DIR@\pkg\win32\privoxy.config
 
         WriteRegStr HKEY_CLASSES_ROOT "PrivoxyActionFile\shell\open\command" "" 'Notepad.exe "%1"'
         WriteRegStr HKEY_CLASSES_ROOT ".action" "" "PrivoxyActionFile"
