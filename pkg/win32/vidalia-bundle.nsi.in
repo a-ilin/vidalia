@@ -87,6 +87,7 @@ XPStyle         on
 ;--------------------------------
 ; Pages
 !insertmacro MUI_PAGE_WELCOME
+Page custom FirefoxWarningPage
 !insertmacro MUI_PAGE_COMPONENTS
 !insertmacro MUI_PAGE_DIRECTORY
 !insertmacro MUI_PAGE_INSTFILES
@@ -424,6 +425,7 @@ SectionEnd
 ; Functions
 Function .onInit
   !insertmacro MUI_LANGDLL_DISPLAY
+  !insertmacro MUI_INSTALLOPTIONS_EXTRACT_AS "@Vidalia_SOURCE_DIR@\pkg\win32\firefox-warning.ini" "firefox-warning.ini"
 
   ReadRegStr $1 HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\firefox.exe" ""
   StrCmp $1 "" FirefoxNotFound FirefoxFound
@@ -456,6 +458,17 @@ Function .onSelChange
   
   SelChangeDone:
   Pop $0
+FunctionEnd
+
+Function FirefoxWarningPage
+  ReadRegStr $1 HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\firefox.exe" ""
+  StrCmp $1 "" FirefoxNotFound FirefoxFound
+
+  FirefoxNotFound:
+    !insertmacro MUI_HEADER_TEXT "Firefox is not installed" "We recommend that you install Firefox before continuing, for best safety." 
+    !insertmacro MUI_INSTALLOPTIONS_DISPLAY "firefox-warning.ini"
+
+  FirefoxFound:
 FunctionEnd
 
 Function CustomFinishFn
