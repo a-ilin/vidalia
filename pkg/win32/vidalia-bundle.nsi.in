@@ -424,6 +424,21 @@ SectionEnd
 ; Functions
 Function .onInit
   !insertmacro MUI_LANGDLL_DISPLAY
+
+  ReadRegStr $1 HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\firefox.exe" ""
+  StrCmp $1 "" FirefoxNotFound FirefoxFound
+
+  FirefoxNotFound:
+    ; Uncheck the Torbutton options
+    SectionGetFlags ${Torbutton} $0
+    IntOp $0 $0 & ${SECTION_OFF}
+    SectionSetFlags ${Torbutton} $0
+
+    SectionGetFlags ${TorbuttonAddToFirefox} $0
+    IntOp $0 $0 & ${SECTION_OFF}
+    SectionSetFlags ${TorbuttonAddToFirefox} $0
+ 
+  FirefoxFound:
 FunctionEnd
 
 Function .onSelChange
