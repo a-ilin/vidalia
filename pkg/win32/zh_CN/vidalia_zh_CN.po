@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
-"POT-Creation-Date: 2008-07-17 02:33+0000\n"
+"POT-Creation-Date: 2008-07-12 05:29+0000\n"
 "PO-Revision-Date: 2008-07-22 17:25+0000\n"
 "Last-Translator: Matt <edmanm@vidalia-project.net>\n"
 "Language-Team: translations@vidalia-project.net\n"
@@ -12,175 +12,236 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 1.1.0\n"
 
-msgctxt "VidaliaShortcutsDesc"
-msgid "Add ${VIDALIA_NAME} to your Start menu."
-msgstr "添加 ${VIDALIA_NAME} 至开始菜单程序组."
+msgctxt "BundleSetupCaption"
+msgid "${BUNDLE_NAME} setup"
+msgstr "${BUNDLE_NAME} 安装向导"
+
+msgctxt "BundleWelcomeText"
+msgid ""
+"This wizard will guide you through the installation of Tor, Vidalia, "
+"Privoxy, and Torbutton.\n"
+"\n"
+"Tor is a system for using the Internet anonymously, helping you anonymize "
+"Web browsing and publishing, instant messaging, IRC, and more. Vidalia is a "
+"GUI that helps you control, monitor, and configure Tor.\n"
+"\n"
+"Privoxy is a filtering web proxy that protects your privacy and helps remove "
+"ads, banners, and popups.\n"
+"\n"
+"Torbutton is a Firefox extension that allows you to quickly enable or "
+"disable anonymous web browsing.\n"
+"\n"
+"If you have previously installed Tor, Vidalia, Privoxy, or Firefox, please "
+"make sure they are not running before continuing this installation.\n"
+"\n"
+"$_CLICK"
+msgstr ""
+"该向导将会引导您安装 Tor,Vidalia,Privoxy 和 Torbutton.\n"
+"\n"
+"如果您曾经安装过 Tor,Vidalia,Privoxy 或 Firefox,请确保在运行此安装向导前这些"
+"程序未在运行.\n"
+"\n"
+"$_CLICK"
 
 msgctxt "BundleWelcomeTitle"
 msgid "Welcome to the ${BUNDLE_NAME} Setup Wizard"
 msgstr "欢迎使用 ${BUNDLE_NAME} 安装向导"
 
-msgctxt "PrivoxyStartup"
-msgid "Run At Startup"
-msgstr "在系统启动时运行"
+msgctxt "BundleLinkText"
+msgid "${TOR_NAME} installation documentation"
+msgstr "${TOR_NAME} 安装文档"
 
-msgctxt "LanguageCode"
-msgid "en"
-msgstr "zh-cn"
+msgctxt "BundleFinishText"
+msgid ""
+"Installation is complete.\n"
+"Please see https://www.torproject.org/docs/tor-doc-windows to learn how to "
+"configure your applications to use Tor.\n"
+"\n"
+"If you installed Torbutton, you will need to restart Firefox."
+msgstr ""
+"安装完成.\n"
+"请访问 https://www.torproject.org/docs/tor-doc-windows 来获取关于 Tor 的配置"
+"信息.\n"
+"\n"
+"如果选择了安装 Torbutton,您需要重新启动火狐(Firefox)浏览器."
 
-msgctxt "BundleSetupCaption"
-msgid "${BUNDLE_NAME} setup"
-msgstr "${BUNDLE_NAME} 安装向导"
-
-#, fuzzy
-msgctxt "VidaliaAppDesc"
-msgid "Vidalia is a GUI that helps you control, monitor, and configure Tor."
-msgstr "安装 ${VIDALIA_DESC}."
+msgctxt "BundleRunNow"
+msgid "Run installed components now"
+msgstr "现在运行已安装组件"
 
 #, fuzzy
 msgctxt "VidaliaGroupDesc"
 msgid "Vidalia is a GUI that helps you control, monitor, and configure Tor."
 msgstr "安装 ${VIDALIA_DESC}."
 
-msgctxt "BundleFinishText"
-msgid "Installation is complete.\nPlease see https://www.torproject.org/docs/tor-doc-windows to learn how to configure your applications to use Tor.\n\nIf you installed Torbutton, you will need to restart Firefox."
-msgstr "安装完成.\n请访问 https://www.torproject.org/docs/tor-doc-windows 来获取关于 Tor 的配置信息.\n\n如果选择了安装 Torbutton,您需要重新启动火狐(Firefox)浏览器."
-
-msgctxt "BundleWelcomeText"
-msgid "This wizard will guide you through the installation of Tor, Vidalia, Privoxy, and Torbutton.\n\nTor is a system for using the Internet anonymously, helping you anonymize Web browsing and publishing, instant messaging, IRC, and more. Vidalia is a GUI that helps you control, monitor, and configure Tor.\n\nPrivoxy is a filtering web proxy that protects your privacy and helps remove ads, banners, and popups.\n\nTorbutton is a Firefox extension that allows you to quickly enable or disable anonymous web browsing.\n\nIf you have previously installed Tor, Vidalia, Privoxy, or Firefox, please make sure they are not running before continuing this installation.\n\n$_CLICK"
-msgstr "该向导将会引导您安装 Tor,Vidalia,Privoxy 和 Torbutton.\n\n如果您曾经安装过 Tor,Vidalia,Privoxy 或 Firefox,请确保在运行此安装向导前这些程序未在运行.\n\n$_CLICK"
-
-msgctxt "PrivoxyShortcutsDesc"
-msgid "Add ${PRIVOXY_NAME} to your Start menu."
-msgstr "添加 ${PRIVOXY_NAME} 至开始菜单程序组."
-
-msgctxt "VidaliaWelcomeText"
-msgid "This wizard will guide you through the installation of Vidalia, a GUI that helps you control, monitor, and configure Tor.\n\n$_CLICK"
-msgstr "该向导将会引导您安装 ${VIDALIA_DESC}.\n\n$_CLICK"
-
-#, fuzzy
-msgctxt "TorGroupDesc"
-msgid "Tor is a system for using the Internet anonymously, helping you anonymize Web browsing and publishing, instant messaging, IRC, and more."
-msgstr "安装 ${TOR_DESC}."
-
-msgctxt "VidaliaWelcomeTitle"
-msgid "Welcome to the ${VIDALIA_NAME} Setup Wizard"
-msgstr "欢迎使用 ${VIDALIA_NAME} 安装向导"
-
-msgctxt "TorbuttonAddToFirefoxDesc"
-msgid "Add the ${TORBUTTON_DESC} extension to Firefox."
-msgstr "添加 ${TORBUTTON_DESC} 扩展至火狐(Firefox)浏览器."
-
-msgctxt "TorUninstDesc"
-msgid "Remove ${TOR_DESC}."
-msgstr "Remove ${TOR_DESC}."
-
-msgctxt "TorbuttonFirefoxNotFound"
-msgid "Firefox was not found on your system. Not installing Torbutton."
-msgstr "安装程序未检测到火狐(Firefox)浏览器,因此将停止添加 Torbutton 扩展."
-
-msgctxt "VidaliaLinkText"
-msgid "${VIDALIA_NAME} homepage"
-msgstr "${VIDALIA_NAME} 主页快捷方式"
-
-msgctxt "PrivoxyAppDesc"
-msgid "Install ${PRIVOXY_DESC}."
-msgstr "安装 ${PRIVOXY_DESC}."
-
-msgctxt "AppData"
-msgid "Application Data"
-msgstr "Application Data"
-
-msgctxt "PrivoxyShortcuts"
-msgid "Add to Start Menu"
-msgstr "添加至开始菜单程序组"
-
-msgctxt "BundleLinkText"
-msgid "${TOR_NAME} installation documentation"
-msgstr "${TOR_NAME} 安装文档"
-
-msgctxt "TorbuttonAddToFirefox"
-msgid "Add to Firefox"
-msgstr "添加至火狐(Firefox)浏览器"
-
-msgctxt "TorAppDesc"
-msgid "Install ${TOR_DESC}."
-msgstr "安装 ${TOR_DESC}."
-
-msgctxt "BundleRunNow"
-msgid "Run installed components now"
-msgstr "现在运行已安装组件"
+msgctxt "VidaliaUninstDesc"
+msgid "Remove ${VIDALIA_DESC}."
+msgstr "Remove ${VIDALIA_DESC}."
 
 msgctxt "VidaliaSetupCaption"
 msgid "${VIDALIA_NAME} setup"
 msgstr "${VIDALIA_NAME} 安装向导"
 
+msgctxt "VidaliaWelcomeText"
+msgid ""
+"This wizard will guide you through the installation of Vidalia, a GUI that "
+"helps you control, monitor, and configure Tor.\n"
+"\n"
+"$_CLICK"
+msgstr ""
+"该向导将会引导您安装 ${VIDALIA_DESC}.\n"
+"\n"
+"$_CLICK"
+
+msgctxt "VidaliaWelcomeTitle"
+msgid "Welcome to the ${VIDALIA_NAME} Setup Wizard"
+msgstr "欢迎使用 ${VIDALIA_NAME} 安装向导"
+
+msgctxt "VidaliaLinkText"
+msgid "${VIDALIA_NAME} homepage"
+msgstr "${VIDALIA_NAME} 主页快捷方式"
+
+#, fuzzy
+msgctxt "VidaliaAppDesc"
+msgid "Vidalia is a GUI that helps you control, monitor, and configure Tor."
+msgstr "安装 ${VIDALIA_DESC}."
+
+msgctxt "VidaliaStartup"
+msgid "Run At Startup"
+msgstr "在系统启动时运行"
+
 msgctxt "VidaliaStartupDesc"
 msgid "Automatically run ${VIDALIA_NAME} at startup."
 msgstr "自动在系统启动时运行 ${VIDALIA_NAME}."
-
-msgctxt "TorDocumentation"
-msgid "Documentation"
-msgstr "文档"
-
-msgctxt "VidaliaUninstDesc"
-msgid "Remove ${VIDALIA_DESC}."
-msgstr "Remove ${VIDALIA_DESC}."
-
-msgctxt "PrivoxyUninstDesc"
-msgid "Remove ${PRIVOXY_DESC}."
-msgstr "Remove ${PRIVOXY_DESC}."
-
-msgctxt "TorShortcuts"
-msgid "Add to Start Menu"
-msgstr "添加至开始菜单程序组"
-
-msgctxt "TorAskOverwriteTorrc"
-msgid "You already have a Tor configuration file.$\n$\nDo you want to overwrite it with the default sample configuration file?"
-msgstr "安装程序检测到已存在的 Tor 配置文件.$\n$\n是否要使用默认的配置文件覆盖它?"
-
-msgctxt "VidaliaRunNow"
-msgid "Run ${VIDALIA_NAME}"
-msgstr "现在运行 ${VIDALIA_NAME}"
-
-msgctxt "PrivoxyStartupDesc"
-msgid "Automatically run ${PRIVOXY_NAME} at startup."
-msgstr "自动在系统启动时运行 ${PRIVOXY_NAME}."
 
 msgctxt "VidaliaShortcuts"
 msgid "Add to Start Menu"
 msgstr "添加至开始菜单程序组"
 
+msgctxt "VidaliaShortcutsDesc"
+msgid "Add ${VIDALIA_NAME} to your Start menu."
+msgstr "添加 ${VIDALIA_NAME} 至开始菜单程序组."
+
+msgctxt "VidaliaRunNow"
+msgid "Run ${VIDALIA_NAME}"
+msgstr "现在运行 ${VIDALIA_NAME}"
+
+#, fuzzy
+msgctxt "TorGroupDesc"
+msgid ""
+"Tor is a system for using the Internet anonymously, helping you anonymize "
+"Web browsing and publishing, instant messaging, IRC, and more."
+msgstr "安装 ${TOR_DESC}."
+
+msgctxt "TorUninstDesc"
+msgid "Remove ${TOR_DESC}."
+msgstr "Remove ${TOR_DESC}."
+
+msgctxt "TorAppDesc"
+msgid "Install ${TOR_DESC}."
+msgstr "安装 ${TOR_DESC}."
+
+msgctxt "TorAskOverwriteTorrc"
+msgid ""
+"You already have a Tor configuration file.$\n"
+"$\n"
+"Do you want to overwrite it with the default sample configuration file?"
+msgstr ""
+"安装程序检测到已存在的 Tor 配置文件.$\n"
+"$\n"
+"是否要使用默认的配置文件覆盖它?"
+
+msgctxt "TorDocumentation"
+msgid "Documentation"
+msgstr "文档"
+
 msgctxt "TorDocumentationDesc"
 msgid "Install ${TOR_NAME} documentation."
 msgstr "安装 ${TOR_NAME} 文档."
 
-msgctxt "AppDataUninstDesc"
-msgid "Remove saved application data and configuration files."
-msgstr "Remove saved application data and configuration files."
+msgctxt "TorShortcuts"
+msgid "Add to Start Menu"
+msgstr "添加至开始菜单程序组"
 
 msgctxt "TorShortcutsDesc"
 msgid "Add ${TOR_NAME} to your Start menu."
 msgstr "添加 ${TOR_NAME} 至开始菜单程序组."
 
 #, fuzzy
-msgctxt "TorbuttonGroupDesc"
-msgid "Torbutton is a Firefox extension that allows you to quickly enable or disable anonymous web browsing."
-msgstr "安装 ${TORBUTTON_DESC}."
+msgctxt "PrivoxyGroupDesc"
+msgid ""
+"Privoxy is a filtering web proxy that protects your privacy and helps remove "
+"ads, banners, and popups."
+msgstr "安装 ${PRIVOXY_DESC}."
 
-msgctxt "TorbuttonAppDesc"
-msgid "Install ${TORBUTTON_DESC}."
+msgctxt "PrivoxyUninstDesc"
+msgid "Remove ${PRIVOXY_DESC}."
+msgstr "Remove ${PRIVOXY_DESC}."
+
+msgctxt "PrivoxyAppDesc"
+msgid "Install ${PRIVOXY_DESC}."
+msgstr "安装 ${PRIVOXY_DESC}."
+
+msgctxt "PrivoxyShortcuts"
+msgid "Add to Start Menu"
+msgstr "添加至开始菜单程序组"
+
+msgctxt "PrivoxyShortcutsDesc"
+msgid "Add ${PRIVOXY_NAME} to your Start menu."
+msgstr "添加 ${PRIVOXY_NAME} 至开始菜单程序组."
+
+msgctxt "PrivoxyStartup"
+msgid "Run At Startup"
+msgstr "在系统启动时运行"
+
+msgctxt "PrivoxyStartupDesc"
+msgid "Automatically run ${PRIVOXY_NAME} at startup."
+msgstr "自动在系统启动时运行 ${PRIVOXY_NAME}."
+
+#, fuzzy
+msgctxt "TorbuttonGroupDesc"
+msgid ""
+"Torbutton is a Firefox extension that allows you to quickly enable or "
+"disable anonymous web browsing."
 msgstr "安装 ${TORBUTTON_DESC}."
 
 msgctxt "TorbuttonUninstDesc"
 msgid "Remove ${TORBUTTON_DESC}."
 msgstr "Remove ${TORBUTTON_DESC}."
 
-#, fuzzy
-msgctxt "PrivoxyGroupDesc"
-msgid "Privoxy is a filtering web proxy that protects your privacy and helps remove ads, banners, and popups."
-msgstr "安装 ${PRIVOXY_DESC}."
+msgctxt "TorbuttonAppDesc"
+msgid "Install ${TORBUTTON_DESC}."
+msgstr "安装 ${TORBUTTON_DESC}."
 
-msgctxt "VidaliaStartup"
-msgid "Run At Startup"
-msgstr "在系统启动时运行"
+msgctxt "TorbuttonAddToFirefox"
+msgid "Add to Firefox"
+msgstr "添加至火狐(Firefox)浏览器"
+
+msgctxt "TorbuttonAddToFirefoxDesc"
+msgid "Add the ${TORBUTTON_DESC} extension to Firefox."
+msgstr "添加 ${TORBUTTON_DESC} 扩展至火狐(Firefox)浏览器."
+
+msgctxt "TorbuttonFirefoxNotFound"
+msgid "Firefox was not found on your system. Not installing Torbutton."
+msgstr "安装程序未检测到火狐(Firefox)浏览器,因此将停止添加 Torbutton 扩展."
+
+msgctxt "AppData"
+msgid "Application Data"
+msgstr "Application Data"
+
+msgctxt "AppDataUninstDesc"
+msgid "Remove saved application data and configuration files."
+msgstr "Remove saved application data and configuration files."
+
+msgctxt "LanguageCode"
+msgid "en"
+msgstr "zh-cn"
+
+msgctxt "FirefoxWarningPageTitle"
+msgid "Firefox is not installed"
+msgstr ""
+
+msgctxt "FirefoxWarningPageSubtitle"
+msgid ""
+"We recommend that you install Firefox before continuing, for best safety."
+msgstr ""

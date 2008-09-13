@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
-"POT-Creation-Date: 2008-07-17 02:33+0000\n"
+"POT-Creation-Date: 2008-07-12 05:29+0000\n"
 "PO-Revision-Date: 2008-07-17 03:19+0000\n"
 "Last-Translator: Matt <edmanm@vidalia-project.net>\n"
 "Language-Team: translations@vidalia-project.net\n"
@@ -12,9 +12,40 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Pootle 1.1.0\n"
 
-msgctxt "VidaliaShortcutsDesc"
-msgid "Add ${VIDALIA_NAME} to your Start menu."
-msgstr "افزودن ${VIDALIA_NAME} به فهرست آغاز."
+#, fuzzy
+msgctxt "BundleSetupCaption"
+msgid "${BUNDLE_NAME} setup"
+msgstr "بر?ا?? ${BUNDLE_NAME}"
+
+#, fuzzy
+msgctxt "BundleWelcomeText"
+msgid ""
+"This wizard will guide you through the installation of Tor, Vidalia, "
+"Privoxy, and Torbutton.\n"
+"\n"
+"Tor is a system for using the Internet anonymously, helping you anonymize "
+"Web browsing and publishing, instant messaging, IRC, and more. Vidalia is a "
+"GUI that helps you control, monitor, and configure Tor.\n"
+"\n"
+"Privoxy is a filtering web proxy that protects your privacy and helps remove "
+"ads, banners, and popups.\n"
+"\n"
+"Torbutton is a Firefox extension that allows you to quickly enable or "
+"disable anonymous web browsing.\n"
+"\n"
+"If you have previously installed Tor, Vidalia, Privoxy, or Firefox, please "
+"make sure they are not running before continuing this installation.\n"
+"\n"
+"$_CLICK"
+msgstr ""
+"ا?ن دست?ار شما را در سرتاسر ?ار?ذار? تور، و?دال?ا، ?ر?وا?س? و د?مه تور هدا?ت "
+"م? ?ند.\n"
+"\n"
+"ا?ر شما ??شتر تور، و?دال?ا، ?ر?وا?س? ?ا فا?رفا?س را ?ار?ذار? ?رده ا?د، "
+"خواهشمند است ??ش از ادامه دادن ا?ن ?ار?ذار? اطم?نان ??دا ?ن?د ?ه آنها درحال "
+"اجرا نم? باشند.\n"
+"\n"
+"$_CLICK"
 
 #, fuzzy
 msgctxt "BundleWelcomeTitle"
@@ -22,109 +53,23 @@ msgid "Welcome to the ${BUNDLE_NAME} Setup Wizard"
 msgstr "به دست?ار بر?ا?? ${BUNDLE_NAME} خوش آمد?د"
 
 #, fuzzy
-msgctxt "PrivoxyStartup"
-msgid "Run At Startup"
-msgstr "اجرا?ردن در راه انداز?"
-
-msgctxt "LanguageCode"
-msgid "en"
-msgstr "fa"
-
-#, fuzzy
-msgctxt "BundleSetupCaption"
-msgid "${BUNDLE_NAME} setup"
-msgstr "بر?ا?? ${BUNDLE_NAME}"
-
-#, fuzzy
-msgctxt "VidaliaAppDesc"
-msgid "Vidalia is a GUI that helps you control, monitor, and configure Tor."
-msgstr "?ار?ذار? ${VIDALIA_DESC}."
-
-#, fuzzy
-msgctxt "VidaliaGroupDesc"
-msgid "Vidalia is a GUI that helps you control, monitor, and configure Tor."
-msgstr "?ار?ذار? ${VIDALIA_DESC}."
-
-#, fuzzy
-msgctxt "BundleFinishText"
-msgid "Installation is complete.\nPlease see https://www.torproject.org/docs/tor-doc-windows to learn how to configure your applications to use Tor.\n\nIf you installed Torbutton, you will need to restart Firefox."
-msgstr ""
-"?ار?ذار? انجام شد.\n"
-" خواهشمند است برا? آ?اه? ?افتن از ??ون?? ???ربند? ?ردن برنامه ها? ?اربرد?تان "
-"برا? ب?اربردن تور https://www.torproject.org/docs/tor-doc-windows را مشاهده "
-"?ن?د."
-
-#, fuzzy
-msgctxt "BundleWelcomeText"
-msgid "This wizard will guide you through the installation of Tor, Vidalia, Privoxy, and Torbutton.\n\nTor is a system for using the Internet anonymously, helping you anonymize Web browsing and publishing, instant messaging, IRC, and more. Vidalia is a GUI that helps you control, monitor, and configure Tor.\n\nPrivoxy is a filtering web proxy that protects your privacy and helps remove ads, banners, and popups.\n\nTorbutton is a Firefox extension that allows you to quickly enable or disable anonymous web browsing.\n\nIf you have previously installed Tor, Vidalia, Privoxy, or Firefox, please make sure they are not running before continuing this installation.\n\n$_CLICK"
-msgstr "ا?ن دست?ار شما را در سرتاسر ?ار?ذار? تور، و?دال?ا، ?ر?وا?س? و د?مه تور هدا?ت م? ?ند.\n\nا?ر شما ??شتر تور، و?دال?ا، ?ر?وا?س? ?ا فا?رفا?س را ?ار?ذار? ?رده ا?د، خواهشمند است ??ش از ادامه دادن ا?ن ?ار?ذار? اطم?نان ??دا ?ن?د ?ه آنها درحال اجرا نم? باشند.\n\n$_CLICK"
-
-msgctxt "PrivoxyShortcutsDesc"
-msgid "Add ${PRIVOXY_NAME} to your Start menu."
-msgstr "افزودن ${PRIVOXY_NAME} به فهرست آغاز."
-
-#, fuzzy
-msgctxt "VidaliaWelcomeText"
-msgid "This wizard will guide you through the installation of Vidalia, a GUI that helps you control, monitor, and configure Tor.\n\n$_CLICK"
-msgstr "ا?ن دست?ار شما را در سرتاسر ?ار?ذار? ${VIDALIA_DESC} هدا?ت م? ?ند.\n\n$_CLICK"
-
-#, fuzzy
-msgctxt "TorGroupDesc"
-msgid "Tor is a system for using the Internet anonymously, helping you anonymize Web browsing and publishing, instant messaging, IRC, and more."
-msgstr "?ار?ذار? ${TOR_DESC}."
-
-#, fuzzy
-msgctxt "VidaliaWelcomeTitle"
-msgid "Welcome to the ${VIDALIA_NAME} Setup Wizard"
-msgstr "به دست?ار بر?ا?? ${VIDALIA_NAME} خوش آمد?د"
-
-#, fuzzy
-msgctxt "TorbuttonAddToFirefoxDesc"
-msgid "Add the ${TORBUTTON_DESC} extension to Firefox."
-msgstr "افزودن ?سوند ${TORBUTTON_DESC} به فا?رفا?س."
-
-#, fuzzy
-msgctxt "TorUninstDesc"
-msgid "Remove ${TOR_DESC}."
-msgstr ""
-
-#, fuzzy
-msgctxt "TorbuttonFirefoxNotFound"
-msgid "Firefox was not found on your system. Not installing Torbutton."
-msgstr "فا?رفا?س در س?ستم شما ??دا نشد. ?ار?ذار? نشدن د?مه تور."
-
-#, fuzzy
-msgctxt "VidaliaLinkText"
-msgid "${VIDALIA_NAME} homepage"
-msgstr "بر?ه اصل? ${VIDALIA_NAME}"
-
-#, fuzzy
-msgctxt "PrivoxyAppDesc"
-msgid "Install ${PRIVOXY_DESC}."
-msgstr "?ار?ذار? ${PRIVOXY_DESC}."
-
-msgctxt "AppData"
-msgid "Application Data"
-msgstr ""
-
-msgctxt "PrivoxyShortcuts"
-msgid "Add to Start Menu"
-msgstr "افزودن به فهرست آغاز"
-
-#, fuzzy
 msgctxt "BundleLinkText"
 msgid "${TOR_NAME} installation documentation"
 msgstr "مستندات ?ار?ذار? ${TOR_NAME}"
 
 #, fuzzy
-msgctxt "TorbuttonAddToFirefox"
-msgid "Add to Firefox"
-msgstr "افزودن به فا?رفا?س"
-
-#, fuzzy
-msgctxt "TorAppDesc"
-msgid "Install ${TOR_DESC}."
-msgstr "?ار?ذار? ${TOR_DESC}."
+msgctxt "BundleFinishText"
+msgid ""
+"Installation is complete.\n"
+"Please see https://www.torproject.org/docs/tor-doc-windows to learn how to "
+"configure your applications to use Tor.\n"
+"\n"
+"If you installed Torbutton, you will need to restart Firefox."
+msgstr ""
+"?ار?ذار? انجام شد.\n"
+" خواهشمند است برا? آ?اه? ?افتن از ??ون?? ???ربند? ?ردن برنامه ها? ?اربرد?تان "
+"برا? ب?اربردن تور https://www.torproject.org/docs/tor-doc-windows را مشاهده ?"
+"ن?د."
 
 #, fuzzy
 msgctxt "BundleRunNow"
@@ -132,35 +77,63 @@ msgid "Run installed components now"
 msgstr "اجرا?ردن مولفه ها? ?ار?ذار? شده"
 
 #, fuzzy
+msgctxt "VidaliaGroupDesc"
+msgid "Vidalia is a GUI that helps you control, monitor, and configure Tor."
+msgstr "?ار?ذار? ${VIDALIA_DESC}."
+
+msgctxt "VidaliaUninstDesc"
+msgid "Remove ${VIDALIA_DESC}."
+msgstr ""
+
+#, fuzzy
 msgctxt "VidaliaSetupCaption"
 msgid "${VIDALIA_NAME} setup"
 msgstr "بر?ا?? ${VIDALIA_NAME}"
+
+#, fuzzy
+msgctxt "VidaliaWelcomeText"
+msgid ""
+"This wizard will guide you through the installation of Vidalia, a GUI that "
+"helps you control, monitor, and configure Tor.\n"
+"\n"
+"$_CLICK"
+msgstr ""
+"ا?ن دست?ار شما را در سرتاسر ?ار?ذار? ${VIDALIA_DESC} هدا?ت م? ?ند.\n"
+"\n"
+"$_CLICK"
+
+#, fuzzy
+msgctxt "VidaliaWelcomeTitle"
+msgid "Welcome to the ${VIDALIA_NAME} Setup Wizard"
+msgstr "به دست?ار بر?ا?? ${VIDALIA_NAME} خوش آمد?د"
+
+#, fuzzy
+msgctxt "VidaliaLinkText"
+msgid "${VIDALIA_NAME} homepage"
+msgstr "بر?ه اصل? ${VIDALIA_NAME}"
+
+#, fuzzy
+msgctxt "VidaliaAppDesc"
+msgid "Vidalia is a GUI that helps you control, monitor, and configure Tor."
+msgstr "?ار?ذار? ${VIDALIA_DESC}."
+
+#, fuzzy
+msgctxt "VidaliaStartup"
+msgid "Run At Startup"
+msgstr "اجرا ?ردن در راه انداز?"
 
 #, fuzzy
 msgctxt "VidaliaStartupDesc"
 msgid "Automatically run ${VIDALIA_NAME} at startup."
 msgstr "اجرا ?ردن ${VIDALIA_NAME} در راه انداز? بطور خود?ار."
 
-msgctxt "TorDocumentation"
-msgid "Documentation"
-msgstr "مستندات"
-
-msgctxt "VidaliaUninstDesc"
-msgid "Remove ${VIDALIA_DESC}."
-msgstr ""
-
-msgctxt "PrivoxyUninstDesc"
-msgid "Remove ${PRIVOXY_DESC}."
-msgstr ""
-
-msgctxt "TorShortcuts"
+msgctxt "VidaliaShortcuts"
 msgid "Add to Start Menu"
 msgstr "افزودن به فهرست آغاز"
 
-#, fuzzy
-msgctxt "TorAskOverwriteTorrc"
-msgid "You already have a Tor configuration file.$\n$\nDo you want to overwrite it with the default sample configuration file?"
-msgstr "شما ??شتر دارا? ?? ?رونده ???ربند? تور م? باش?د.$\n$\nآ?ا م? خواه?د آن را با ?رونده ???ربند? نمونه ??ش ?ز?ده جا? نوشت ?ن?د؟"
+msgctxt "VidaliaShortcutsDesc"
+msgid "Add ${VIDALIA_NAME} to your Start menu."
+msgstr "افزودن ${VIDALIA_NAME} به فهرست آغاز."
 
 #, fuzzy
 msgctxt "VidaliaRunNow"
@@ -168,35 +141,88 @@ msgid "Run ${VIDALIA_NAME}"
 msgstr "اجرا?ردن ${VIDALIA_NAME}"
 
 #, fuzzy
-msgctxt "PrivoxyStartupDesc"
-msgid "Automatically run ${PRIVOXY_NAME} at startup."
-msgstr "اجرا ?ردن ${PRIVOXY_NAME} در راه انداز? بطور خود?ار."
+msgctxt "TorGroupDesc"
+msgid ""
+"Tor is a system for using the Internet anonymously, helping you anonymize "
+"Web browsing and publishing, instant messaging, IRC, and more."
+msgstr "?ار?ذار? ${TOR_DESC}."
 
-msgctxt "VidaliaShortcuts"
-msgid "Add to Start Menu"
-msgstr "افزودن به فهرست آغاز"
+msgctxt "TorUninstDesc"
+msgid "Remove ${TOR_DESC}."
+msgstr ""
+
+#, fuzzy
+msgctxt "TorAppDesc"
+msgid "Install ${TOR_DESC}."
+msgstr "?ار?ذار? ${TOR_DESC}."
+
+#, fuzzy
+msgctxt "TorAskOverwriteTorrc"
+msgid ""
+"You already have a Tor configuration file.$\n"
+"$\n"
+"Do you want to overwrite it with the default sample configuration file?"
+msgstr ""
+"شما ??شتر دارا? ?? ?رونده ???ربند? تور م? باش?د.$\n"
+"$\n"
+"آ?ا م? خواه?د آن را با ?رونده ???ربند? نمونه ??ش ?ز?ده جا? نوشت ?ن?د؟"
+
+msgctxt "TorDocumentation"
+msgid "Documentation"
+msgstr "مستندات"
 
 #, fuzzy
 msgctxt "TorDocumentationDesc"
 msgid "Install ${TOR_NAME} documentation."
 msgstr "?ار?ذار? مستندات ${TOR_NAME}."
 
-msgctxt "AppDataUninstDesc"
-msgid "Remove saved application data and configuration files."
-msgstr ""
+msgctxt "TorShortcuts"
+msgid "Add to Start Menu"
+msgstr "افزودن به فهرست آغاز"
 
 msgctxt "TorShortcutsDesc"
 msgid "Add ${TOR_NAME} to your Start menu."
 msgstr "افزودن ${TOR_NAME} به فهرست آغاز."
 
 #, fuzzy
-msgctxt "TorbuttonGroupDesc"
-msgid "Torbutton is a Firefox extension that allows you to quickly enable or disable anonymous web browsing."
-msgstr "?ار?ذار? ${TORBUTTON_DESC}."
+msgctxt "PrivoxyGroupDesc"
+msgid ""
+"Privoxy is a filtering web proxy that protects your privacy and helps remove "
+"ads, banners, and popups."
+msgstr "?ار?ذار? ${PRIVOXY_DESC}."
+
+msgctxt "PrivoxyUninstDesc"
+msgid "Remove ${PRIVOXY_DESC}."
+msgstr ""
 
 #, fuzzy
-msgctxt "TorbuttonAppDesc"
-msgid "Install ${TORBUTTON_DESC}."
+msgctxt "PrivoxyAppDesc"
+msgid "Install ${PRIVOXY_DESC}."
+msgstr "?ار?ذار? ${PRIVOXY_DESC}."
+
+msgctxt "PrivoxyShortcuts"
+msgid "Add to Start Menu"
+msgstr "افزودن به فهرست آغاز"
+
+msgctxt "PrivoxyShortcutsDesc"
+msgid "Add ${PRIVOXY_NAME} to your Start menu."
+msgstr "افزودن ${PRIVOXY_NAME} به فهرست آغاز."
+
+#, fuzzy
+msgctxt "PrivoxyStartup"
+msgid "Run At Startup"
+msgstr "اجرا?ردن در راه انداز?"
+
+#, fuzzy
+msgctxt "PrivoxyStartupDesc"
+msgid "Automatically run ${PRIVOXY_NAME} at startup."
+msgstr "اجرا ?ردن ${PRIVOXY_NAME} در راه انداز? بطور خود?ار."
+
+#, fuzzy
+msgctxt "TorbuttonGroupDesc"
+msgid ""
+"Torbutton is a Firefox extension that allows you to quickly enable or "
+"disable anonymous web browsing."
 msgstr "?ار?ذار? ${TORBUTTON_DESC}."
 
 msgctxt "TorbuttonUninstDesc"
@@ -204,11 +230,42 @@ msgid "Remove ${TORBUTTON_DESC}."
 msgstr ""
 
 #, fuzzy
-msgctxt "PrivoxyGroupDesc"
-msgid "Privoxy is a filtering web proxy that protects your privacy and helps remove ads, banners, and popups."
-msgstr "?ار?ذار? ${PRIVOXY_DESC}."
+msgctxt "TorbuttonAppDesc"
+msgid "Install ${TORBUTTON_DESC}."
+msgstr "?ار?ذار? ${TORBUTTON_DESC}."
 
 #, fuzzy
-msgctxt "VidaliaStartup"
-msgid "Run At Startup"
-msgstr "اجرا ?ردن در راه انداز?"
+msgctxt "TorbuttonAddToFirefox"
+msgid "Add to Firefox"
+msgstr "افزودن به فا?رفا?س"
+
+#, fuzzy
+msgctxt "TorbuttonAddToFirefoxDesc"
+msgid "Add the ${TORBUTTON_DESC} extension to Firefox."
+msgstr "افزودن ?سوند ${TORBUTTON_DESC} به فا?رفا?س."
+
+#, fuzzy
+msgctxt "TorbuttonFirefoxNotFound"
+msgid "Firefox was not found on your system. Not installing Torbutton."
+msgstr "فا?رفا?س در س?ستم شما ??دا نشد. ?ار?ذار? نشدن د?مه تور."
+
+msgctxt "AppData"
+msgid "Application Data"
+msgstr ""
+
+msgctxt "AppDataUninstDesc"
+msgid "Remove saved application data and configuration files."
+msgstr ""
+
+msgctxt "LanguageCode"
+msgid "en"
+msgstr "fa"
+
+msgctxt "FirefoxWarningPageTitle"
+msgid "Firefox is not installed"
+msgstr ""
+
+msgctxt "FirefoxWarningPageSubtitle"
+msgid ""
+"We recommend that you install Firefox before continuing, for best safety."
+msgstr ""
