@@ -465,7 +465,7 @@ Function FirefoxWarningPage
   StrCmp $1 "" FirefoxNotFound FirefoxFound
 
   FirefoxNotFound:
-    !insertmacro MUI_HEADER_TEXT "Firefox is not installed" "We recommend that you install Firefox before continuing, for best safety." 
+    !insertmacro MUI_HEADER_TEXT "$(FirefoxWarningPageTitle)" "$(FirefoxWarningPageSubtitle)" 
     !insertmacro MUI_INSTALLOPTIONS_DISPLAY "firefox-warning.ini"
 
   FirefoxFound:
