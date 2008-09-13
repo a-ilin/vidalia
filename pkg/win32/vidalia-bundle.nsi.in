@@ -465,6 +465,9 @@ Function FirefoxWarningPage
   StrCmp $1 "" FirefoxNotFound FirefoxFound
 
   FirefoxNotFound:
+    !insertmacro MUI_INSTALLOPTIONS_WRITE "firefox-warning.ini" "Settings" "Title" "$(FirefoxWarningPageTitle)"
+    !insertmacro MUI_INSTALLOPTIONS_WRITE "firefox-warning.ini" "Field 1" "Text" "$(FirefoxWarningPageUpperText)"
+    !insertmacro MUI_INSTALLOPTIONS_WRITE "firefox-warning.ini" "Field 3" "Text" "$(FirefoxWarningPageLowerText)"
     !insertmacro MUI_HEADER_TEXT "$(FirefoxWarningPageTitle)" "$(FirefoxWarningPageSubtitle)" 
     !insertmacro MUI_INSTALLOPTIONS_DISPLAY "firefox-warning.ini"
 
