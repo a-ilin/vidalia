@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-08-20 03:25+0000\n"
-"PO-Revision-Date: 2008-08-22 14:11+0000\n"
+"PO-Revision-Date: 2008-09-13 19:34+0000\n"
 "Last-Translator: Harri Vähätalo <harri@svahatalo.fi>\n"
 "Language-Team: none\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr "Aktivoi"
 #: qmessagebox.h:319
 msgctxt "QApplication"
 msgid "Executable '%1' requires Qt %2, found Qt %3."
-msgstr ""
+msgstr "Sovellus '%1' vaatii Qt %3, löytyi Qt %3."
 
 #: qmessagebox.h:321
 msgctxt "QApplication"
@@ -30,7 +30,7 @@ msgstr "Yhteensopimaton Qt-kirjasto virhe"
 #: qapplication.cpp:2095
 msgctxt "QApplication"
 msgid "QT_LAYOUT_DIRECTION"
-msgstr ""
+msgstr "QT_LAYOUT_DIRECTION"
 
 #: qaccessibleobject.cpp:350
 msgctxt "QApplication"
@@ -195,12 +195,14 @@ msgstr "Avaa"
 #: qfiledialog.cpp:1670
 msgctxt "QFileDialog"
 msgid "%1 already exists.Do you want to replace it?"
-msgstr ""
+msgstr "%1 on jo olemassa. Haluatko korvata sen?"
 
 #: qfiledialog.cpp:1690
 msgctxt "QFileDialog"
 msgid "%1File not found.Please verify the correct file name was given."
 msgstr ""
+"%1Tiedostoa ei löytynyt.Ole hyvä ja tarkista tuliko kirjoitettua oikea "
+"tiedoston nimi."
 
 #: qdirmodel.cpp:833
 msgctxt "QFileDialog"
@@ -220,7 +222,7 @@ msgstr "&Poista"
 #: qfiledialog.cpp:464
 msgctxt "QFileDialog"
 msgid "Show &hidden files"
-msgstr ""
+msgstr "Näytä &piilotetut tiedostot"
 
 #: ui_qfiledialog.h:264
 msgctxt "QFileDialog"
@@ -235,12 +237,12 @@ msgstr ""
 #: ui_qfiledialog.h:284
 msgctxt "QFileDialog"
 msgid "List View"
-msgstr ""
+msgstr "Luottelo-näkymä"
 
 #: ui_qfiledialog.h:289
 msgctxt "QFileDialog"
 msgid "Detail View"
-msgstr ""
+msgstr "Tiedot-näkymä"
 
 #: ui_qfiledialog.h:292
 msgctxt "QFileDialog"
@@ -257,11 +259,13 @@ msgctxt "QFileDialog"
 msgid ""
 "%1Directory not found.Please verify the correct directory name was given."
 msgstr ""
+"%1Kansiota ei löytynyt.Ole hyvä ja tarkista tuliko oikein kirjoitettua "
+"kansion nimi."
 
 #: qfiledialog.cpp:2281
 msgctxt "QFileDialog"
 msgid "'%1' is write protected.Do you want to delete it anyway?"
-msgstr ""
+msgstr "'%1' on kirjoitussuojattu.Oletko varma, että haluat poistaa sen?"
 
 #: qfiledialog.cpp:2286
 msgctxt "QFileDialog"
@@ -359,6 +363,8 @@ msgid ""
 "<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer "
 "characters or no punctuations marks."
 msgstr ""
+"<b>Nimeä \"%1\" ei voida käyttää.</b><p>Koita käyttää toista nimeä, vähemmän "
+"merkkejä tai ei erikoisia merkkejä."
 
 #: qfilesystemmodel.cpp:832
 msgctxt "QFileSystemModel"
