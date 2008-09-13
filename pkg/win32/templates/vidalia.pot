@@ -179,3 +179,10 @@ msgctxt "LanguageCode"
 msgid "en"
 msgstr ""
 
+msgctxt "FirefoxWarningPageTitle"
+msgid "Firefox is not installed"
+msgstr ""
+
+msgctxt "FirefoxWarningPageSubtitle"
+msgid "We recommend that you install Firefox before continuing, for best safety."
+msgstr ""
