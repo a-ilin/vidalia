@@ -13,24 +13,21 @@
 ##############################################################################
 
 # Make sure enough arguments were supplied
-if [ "$#" -ne 2 ]
-then
-  echo "Usage: $0 <srcdir> <files to include>"
+if [ "$#" -eq 0 ]; then
+  echo "Usage: $0 <srcdir> <files to include> <vidalia or bundle> <tor-version>"
   exit 1
 fi
 
 # Make sure the source directory exists
 srcdir=$1
-if [ ! -d "$srcdir" ]
-then
+if [ ! -d "$srcdir" ]; then
   echo "Specified source directory doesn't exit: $srcdir"
   exit 1
 fi
 echo "Source Directory: $srcdir"
 
 # Determine OSX Version and map version to name
-if [ -x /usr/bin/sw_vers ]
-then
+if [ -x /usr/bin/sw_vers ]; then
   # This is poor, yet functional.  We don't care about the 3rd number in
   # the OS version
   OSVER=`/usr/bin/sw_vers | grep ProductVersion | cut -f2 | cut -d"." -f1,2`
@@ -52,8 +49,14 @@ fi
 BUILD_DIR=/tmp/vidalia-osx-$$
 # Set the Vidalia version
 VERSION="@VERSION@"
+# Set the Tor version
+TORVERSION="$4"
 # Set the name of the output .dmg file
-DMG="vidalia-$VERSION-$ARCH.dmg"
+if [ $3 = "bundle" ]; then
+  DMG="vidalia-bundle-$TORVERSION-$VERSION-$ARCH.dmg"
+else
+  DMG="vidalia-$VERSION-$ARCH.dmg"
+fi
 
 # Get the rest of the command-line arguments
 filelist=$2

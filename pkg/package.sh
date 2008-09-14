@@ -68,6 +68,7 @@ case "$1" in
   torpath="$2"
   polipopath="$3"
   torbuttonpath="$4"
+  torversion=`echo "$torpath" | sed -e "s/.*\///" | sed -e "s/tor-//"`
   
   mkdir ../LEGAL
   cp -R ../README ../src/vidalia/Vidalia.app ../
@@ -80,7 +81,7 @@ case "$1" in
   cp $torbuttonpath/torbutton-1.2.0-fx.xpi ../Vidalia.app/
   srcdir="../"
   srcfiles="Vidalia.app README LEGAL"
-  osx/builddmg.sh "$srcdir" "$srcfiles"
+  osx/builddmg.sh "$srcdir" "$srcfiles" "bundle" "$torversion"
   ;;
   
 #
