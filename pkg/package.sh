@@ -57,20 +57,29 @@ case "$1" in
   ;;
 
 #
-# OS X .mpkg (Bundle)
+# OS X (Bundle)
 #
 "osx-bundle")
-  if [ $# -ne 3 ]
+  if [ $# -ne 4 ]
   then
-    echo "Usage: $0 osx-bundle <path-to-tor> <privoxy-pkg.zip>"
+    echo "Usage: $0 osx-bundle <path-to-tor> <path-to-polipo> <path-to-torbutton>"
     exit 1
   fi
   torpath="$2"
-  privoxy="$3"
+  polipopath="$3"
+  torbuttonpath="$4"
   
-  pushd "osx"
-  ./buildmpkg.sh "$torpath" "$privoxy"
-  popd
+  cp -R ../src/vidalia/Vidalia.app ../
+  cp ../README ../CREDITS ../CHANGELOG ../LICENSE ../LICENSE-GPLV2 ../LICENSE-GPLV3 ../Vidalia.app/
+  cp ../LICENSE-LGPLV3 ../LICENSE-OPENSSL ../Vidalia.app/
+  cp $torpath/src/or/tor $torpath/src/tools/tor-checkkey $torpath/src/tools/tor-gencert $torpath/src/tools/tor-resolve ../Vidalia.app/
+  cp $torpath/src/config/geoip $torpath/src/config/torrc.sample ../Vidalia.app/
+  cp $polipopath/polipo $polipopath/contrib/tor-polipo.conf ../Vidalia.app/
+  cp $torbuttonpath/torbutton-1.2.0-fx.xpi ../Vidalia.app/
+  srcdir="../"
+  srcfiles="Vidalia.app"
+  osx/builddmg.sh "$srcdir" "$srcfiles"
+
   ;;
   
 #
