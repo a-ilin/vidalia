@@ -69,17 +69,18 @@ case "$1" in
   polipopath="$3"
   torbuttonpath="$4"
   
-  cp -R ../src/vidalia/Vidalia.app ../
-  cp ../README ../CREDITS ../CHANGELOG ../LICENSE ../LICENSE-GPLV2 ../LICENSE-GPLV3 ../Vidalia.app/
-  cp ../LICENSE-LGPLV3 ../LICENSE-OPENSSL ../Vidalia.app/
+  mkdir ../LEGAL
+  cp -R ../README ../src/vidalia/Vidalia.app ../
+  cp ../CREDITS ../CHANGELOG ../Vidalia.app/
+  cp ../LICENSE ../LICENSE-GPLV2 ../LICENSE-GPLV3 ../LICENSE-LGPLV3 ../LICENSE-OPENSSL ../LEGAL/
+  cp -R ../LEGAL ../Vidalia.app/
   cp $torpath/src/or/tor $torpath/src/tools/tor-checkkey $torpath/src/tools/tor-gencert $torpath/src/tools/tor-resolve ../Vidalia.app/
   cp $torpath/src/config/geoip $torpath/src/config/torrc.sample ../Vidalia.app/
   cp $polipopath/polipo $polipopath/contrib/tor-polipo.conf ../Vidalia.app/
   cp $torbuttonpath/torbutton-1.2.0-fx.xpi ../Vidalia.app/
   srcdir="../"
-  srcfiles="Vidalia.app"
+  srcfiles="Vidalia.app README LEGAL"
   osx/builddmg.sh "$srcdir" "$srcfiles"
-
   ;;
   
 #
