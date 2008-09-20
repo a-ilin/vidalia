@@ -30,6 +30,7 @@
     </qresource>
     <qresource prefix="/images">
         <file>22x22/application-exit.png</file>
+        <file>22x22/dialog-password.png</file>
         <file>22x22/edit-copy.png</file>
         <file>22x22/edit-delete.png</file>
         <file>22x22/folder.png</file>
@@ -85,6 +86,7 @@
     </qresource>
     <qresource prefix="/images">
         <file>48x48/applications-internet.png</file>
+        <file>48x48/dialog-password.png</file>
         <file>48x48/media-playback-start.png</file>
         <file>48x48/media-playback-stop.png</file>
         <file>48x48/modem.png</file>
