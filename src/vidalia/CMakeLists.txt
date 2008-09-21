@@ -183,6 +183,7 @@ set(vidalia_SRCS ${vidalia_SRCS}
   vidaliawindow.cpp
   vmessagebox.cpp
   helperprocess.cpp
+  controlpasswordinputdialog.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
   vidalia.h
@@ -191,10 +192,12 @@ qt4_wrap_cpp(vidalia_SRCS
   vidaliawindow.h
   vmessagebox.h
   helperprocess.h
+  controlpasswordinputdialog.h
 )
 
 ## Specify all the Qt Designer .ui files
 qt4_wrap_ui(vidalia_SRCS
+  controlpasswordinputdialog.ui
   mainwindow.ui
   about/aboutdialog.ui
   bwgraph/bwgraph.ui
