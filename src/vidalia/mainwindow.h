@@ -198,6 +198,9 @@ private:
   /** Remembers the control password between when we start Tor with a hash of
    * the password and when we need to provide the password itself. */
   QString _controlPassword;
+  /** Set to true if we should use the control password saved in TorSettings
+   * when authenticating to Tor. */
+  bool _useSavedPassword;
   /** The Vidalia icon that sits in the tray. */
   TrayIcon _trayIcon;
  

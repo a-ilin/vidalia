@@ -30,6 +30,7 @@
 #include <vmessagebox.h>
 
 #include "mainwindow.h"
+#include "controlpasswordinputdialog.h"
 
 #define IMG_BWGRAPH        ":/images/16x16/utilities-system-monitor.png"
 #define IMG_CONTROL_PANEL  ":/images/16x16/system-run.png"
@@ -759,11 +760,10 @@ MainWindow::start()
   QStringList args;
 
   updateTorStatus(Starting);
-  
+
   /* Check if Tor is already running separately */
   if (net_test_connect(settings.getControlAddress(),
                        settings.getControlPort())) {
-    _controlPassword = settings.getControlPassword();
     started();
     return;
   }
@@ -775,7 +775,7 @@ MainWindow::start()
       touch_file(torrc, true);
     args << "-f" << torrc;
   }
-  
+
   /* Specify Tor's data directory, if different from the default */
   QString dataDirectory = settings.getDataDirectory();
   if (!dataDirectory.isEmpty())
@@ -789,10 +789,13 @@ MainWindow::start()
   /* Add the control port authentication arguments */
   switch (settings.getAuthenticationMethod()) {
     case TorSettings::PasswordAuth:
-      if (settings.useRandomPassword())
+      if (settings.useRandomPassword()) {
         _controlPassword = TorSettings::randomPassword();
-      else
+        _useSavedPassword = false;
+      } else {
         _controlPassword = settings.getControlPassword();
+        _useSavedPassword = true;
+      }
       args << "HashedControlPassword"
            << TorSettings::hashPassword(_controlPassword)
            << "CookieAuthentication"  << "0";
@@ -805,7 +808,7 @@ MainWindow::start()
       args << "CookieAuthentication"  << "0"
            << "HashedControlPassword" << "";
   }
-  
+
   /* Add custom user and group information (if specified) */
   QString user = settings.getUser();
   if (!user.isEmpty())
@@ -1077,6 +1080,10 @@ MainWindow::authenticate()
   } else if (authMethod == TorSettings::PasswordAuth) {
     /* Get the control password and send it to Tor */
     vNotice("Authenticating using 'hashed password' authentication.");
+    if (_useSavedPassword) {
+      TorSettings settings;
+      _controlPassword = settings.getControlPassword();
+    }
     return _torControl->authenticate(_controlPassword);
   }
   /* No authentication. Send an empty password. */
@@ -1148,19 +1155,25 @@ MainWindow::authenticationFailed(QString errmsg)
 
   /* Parsing log messages is evil, but we're left with little option */
   if (errmsg.contains("Password did not match")) {
-    /* Bad password, so prompt for a new one. */
-    QString password = QInputDialog::getText(this,
-                         tr("Password Authentication Required"),
-                         tr("Please enter your control password (not the hash):"),
-                         QLineEdit::Password);
-    if (!password.isEmpty()) {
-      /* XXX: We should ask the user if they really want to save the password
-       * they just typed in. */
-      TorSettings settings;
-      settings.setAuthenticationMethod(TorSettings::PasswordAuth);
-      settings.setControlPassword(password);
-      settings.setUseRandomPassword(false);
+    ControlPasswordInputDialog dlg;
+
+    int ret = dlg.exec();
+    if (ret == QDialogButtonBox::Ok) {
+      if (dlg.isSavePasswordChecked()) {
+        TorSettings settings;
+        settings.setAuthenticationMethod(TorSettings::PasswordAuth);
+        settings.setUseRandomPassword(false);
+        settings.setControlPassword(dlg.password());
+        _useSavedPassword = true;
+      } else {
+        _controlPassword = dlg.password();
+        _useSavedPassword = false;
+      }
       retry = true;
+    } else if (ret == QDialogButtonBox::Reset) {
+      /* TODO: Try to kill the existing Tor and restart it with a password
+       * we actually know.
+       */
     }
   } else {
     /* Something else went wrong */
