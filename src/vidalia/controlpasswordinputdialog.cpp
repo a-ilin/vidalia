@@ -41,6 +41,19 @@ ControlPasswordInputDialog::ControlPasswordInputDialog(QWidget *parent)
   passwordEdited(QString());
 }
 
+void
+ControlPasswordInputDialog::setResetEnabled(bool enabled)
+{
+  if (enabled) {
+    ui.buttonBox->setStandardButtons(ui.buttonBox->standardButtons()
+                                      | QDialogButtonBox::Reset);
+  } else {
+    ui.buttonBox->setStandardButtons(ui.buttonBox->standardButtons()
+                                      & ~QDialogButtonBox::Reset);
+    
+  }
+}
+
 QString
 ControlPasswordInputDialog::password() const
 {

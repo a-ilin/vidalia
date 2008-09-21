@@ -8,6 +8,13 @@
 **  terms described in the LICENSE file.
 */
 
+/*
+** \file controlpasswordinputdialog.h
+** \version $Id$
+** \brief Prompts the user to enter their control port password, and gives
+** them the option to save or attempt to reset it.
+*/
+
 #include <QDialog>
 #include <QString>
 
@@ -32,6 +39,11 @@ public:
    * time the dialog was dismissed.
    */
   bool isSavePasswordChecked() const;
+
+  /** If <b>enabled</b> is true, then the "Reset" button will be visible on
+   * the password input dialog. Otherwise, the "Reset" button will be hidden.
+   */
+  void setResetEnabled(bool enabled);
 
 protected slots:
   /** Called when one of the QDialogButtonBox's buttons is clicked. The dialog
