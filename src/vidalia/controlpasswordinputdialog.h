@@ -15,6 +15,9 @@
 ** them the option to save or attempt to reset it.
 */
 
+#ifndef _CONTROLPASSWORDINPUTDIALOG_H
+#define _CONTROLPASSWORDINPUTDIALOG_H
+
 #include <QDialog>
 #include <QString>
 
@@ -61,4 +64,6 @@ protected slots:
 private:
     Ui::ControlPasswordInputDialog ui; /**< Qt Designer generated object. */
 };
+
+#endif
 
