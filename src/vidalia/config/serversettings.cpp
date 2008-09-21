@@ -65,7 +65,7 @@ ServerSettings::ServerSettings(TorControl *torControl)
 #endif
   setDefault(SETTING_DIRPORT,       9030);
   setDefault(SETTING_NICKNAME,      "Unnamed");
-  setDefault(SETTING_CONTACT,       "<your@email.com>");
+  setDefault(SETTING_CONTACT,       "<you@example.com>");
   setDefault(SETTING_BANDWIDTH_RATE,        5242880);
   setDefault(SETTING_RELAY_BANDWIDTH_RATE,  5242880);
   setDefault(SETTING_BANDWIDTH_BURST,       10485760);
