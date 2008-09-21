@@ -42,5 +42,14 @@ bool write_pidfile(QString pidfile, QString *errmsg = 0);
  * exist, -1 is returned. */
 qint64 read_pidfile(QString pidfile, QString *errmsg = 0);
 
+/** Return a list of all currently running PIDs and their associated process
+ * names. */
+QHash<qint64, QString> process_list();
+
+/** Attempt to kill process <b>pid</b>. Return true if the specified process
+ * was successfully terminated. Otherwise, return false and set <b>errmsg</b>
+ * to a string description of the failure. */
+bool process_kill(qint64 pid, QString *errmsg = 0);
+
 #endif
 

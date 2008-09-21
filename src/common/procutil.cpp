@@ -104,3 +104,23 @@ read_pidfile(QString pidFileName, QString *errmsg)
   return pid;
 }
 
+QHash<qint64, QString>
+process_list()
+{
+#if defined(Q_OS_WIN32)
+  return win32_process_list();
+#else
+  return QHash<qint64, QString>();
+#endif
+}
+
+bool
+process_kill(qint64 pid, QString *errmsg)
+{
+#if defined(Q_OS_WIN32)
+  return false;
+#else
+  return false;
+#endif
+}
+
