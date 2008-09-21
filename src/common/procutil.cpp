@@ -115,10 +115,18 @@ process_list()
 }
 
 bool
-process_kill(qint64 pid, QString *errmsg)
+process_kill(qint64 pid)
 {
 #if defined(Q_OS_WIN32)
-  return false;
+  HANDLE hProcess = OpenProcess(PROCESS_TERMINATE, FALSE,
+                                static_cast<DWORD>(pid));
+  if (hProcess == NULL)
+    return false;
+
+  BOOL ret = TerminateProcess(hProcess, 0);
+  CloseHandle(hProcess);
+
+  return (ret != FALSE);
 #else
   return false;
 #endif

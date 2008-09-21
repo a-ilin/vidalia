@@ -1161,7 +1161,7 @@ MainWindow::authenticationFailed(QString errmsg)
 
 #if defined(Q_OS_WIN32)
     QHash<qint64, QString> procs = process_list();
-    foreach (qint64 pid, procs) {
+    foreach (qint64 pid, procs.keys()) {
       if (! procs.value(pid).compare("tor.exe", Qt::CaseInsensitive)) {
         torPid = pid;
         break;
@@ -1186,9 +1186,13 @@ MainWindow::authenticationFailed(QString errmsg)
       }
       retry = true;
     } else if (ret == QDialogButtonBox::Reset) {
-      QString processError;
-      if (! process_kill(torPid, &processError)) {
-        /* TODO: Display a helpful error message. */
+      if (! process_kill(torPid)) {
+        VMessageBox::warning(this,
+          tr("Password Reset Failed"),
+          p(tr("Vidalia tried to reset Tor's control password, but was not "
+               "able to restart the Tor software. Please check your Task "
+               "Manager to ensure there are no other Tor processes running.")),
+               VMessageBox::Ok|VMessageBox::Default);
       } else {
         retry = true;
       }

@@ -47,9 +47,8 @@ qint64 read_pidfile(QString pidfile, QString *errmsg = 0);
 QHash<qint64, QString> process_list();
 
 /** Attempt to kill process <b>pid</b>. Return true if the specified process
- * was successfully terminated. Otherwise, return false and set <b>errmsg</b>
- * to a string description of the failure. */
-bool process_kill(qint64 pid, QString *errmsg = 0);
+ * was successfully terminated. Otherwise, return false. */
+bool process_kill(qint64 pid);
 
 #endif
 
