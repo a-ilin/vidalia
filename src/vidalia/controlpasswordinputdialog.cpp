@@ -23,6 +23,7 @@ ControlPasswordInputDialog::ControlPasswordInputDialog(QWidget *parent)
 {
   ui.setupUi(this);
   setSizeGripEnabled(false);
+  setAttribute(Qt::WA_DeleteOnClose, false);
 
   ui.buttonBox->setStandardButtons(QDialogButtonBox::Ok
                                      | QDialogButtonBox::Cancel
