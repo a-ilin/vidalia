@@ -15,6 +15,8 @@
 ** them the option to save or attempt to reset it.
 */
 
+#include <QPushButton>
+
 #include "controlpasswordinputdialog.h"
 
 
@@ -29,6 +31,14 @@ ControlPasswordInputDialog::ControlPasswordInputDialog(QWidget *parent)
                                      | QDialogButtonBox::Cancel
                                      | QDialogButtonBox::Reset
                                      | QDialogButtonBox::Help);
+
+  connect(ui.buttonBox, SIGNAL(clicked(QAbstractButton*)),
+          this, SLOT(clicked(QAbstractButton*)));
+  connect(ui.linePassword, SIGNAL(textEdited(QString)),
+          this, SLOT(passwordEdited(QString)));
+
+  /* The dialog starts with an empty password field */
+  passwordEdited(QString());
 }
 
 QString
@@ -41,5 +51,33 @@ bool
 ControlPasswordInputDialog::isSavePasswordChecked() const
 {
   return ui.chkSavePassword->isChecked();
+}
+
+void
+ControlPasswordInputDialog::passwordEdited(const QString &text)
+{
+  QPushButton *okButton = ui.buttonBox->button(QDialogButtonBox::Ok);
+  if (okButton)
+    okButton->setEnabled(! text.isEmpty());
+}
+
+void
+ControlPasswordInputDialog::clicked(QAbstractButton *button)
+{
+  QDialogButtonBox::StandardButton btn = ui.buttonBox->standardButton(button);
+  switch (btn) {
+    case QDialogButtonBox::Ok:
+    case QDialogButtonBox::Reset:
+    case QDialogButtonBox::Cancel:
+      done(btn);
+      break;
+
+    case QDialogButtonBox::Help:
+      /* TODO: Display some help relevant to control passwords. */
+      break;
+
+    default:
+      break;
+  }
 }
 

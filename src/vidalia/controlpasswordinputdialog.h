@@ -33,6 +33,19 @@ public:
    */
   bool isSavePasswordChecked() const;
 
+protected slots:
+  /** Called when one of the QDialogButtonBox's buttons is clicked. The dialog
+   * is closed if <b>button</b> is the "Ok", "Cancel", or "Reset" button, and
+   * the clicked button's QDialogButtonBox::StandardButton enum value is
+   * returned as the dialog's result code.
+   */
+  void clicked(QAbstractButton *button);
+
+  /** Called when the user changes the password QLineEdit. If the password is
+   * empty, then the "Ok" button will be disabled. Otherwise, it is enabled.
+   */
+  void passwordEdited(const QString &text);
+
 private:
     Ui::ControlPasswordInputDialog ui; /**< Qt Designer generated object. */
 };
