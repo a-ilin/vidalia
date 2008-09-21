@@ -28,6 +28,7 @@
 #include <clientstatusevent.h>
 #include <dangerousversionevent.h>
 #include <vmessagebox.h>
+#include <procutil.h>
 
 #include "mainwindow.h"
 #include "controlpasswordinputdialog.h"
@@ -1156,6 +1157,20 @@ MainWindow::authenticationFailed(QString errmsg)
   /* Parsing log messages is evil, but we're left with little option */
   if (errmsg.contains("Password did not match")) {
     ControlPasswordInputDialog dlg;
+    qint64 torPid = 0;
+
+#if defined(Q_OS_WIN32)
+    QHash<qint64, QString> procs = process_list();
+    foreach (qint64 pid, procs) {
+      if (! procs.value(pid).compare("tor.exe", Qt::CaseInsensitive)) {
+        torPid = pid;
+        break;
+      }
+    }
+    dlg.setResetEnabled(torPid > 0);
+#else
+    dlg.setResetEnabled(false);
+#endif
 
     int ret = dlg.exec();
     if (ret == QDialogButtonBox::Ok) {
@@ -1171,9 +1186,12 @@ MainWindow::authenticationFailed(QString errmsg)
       }
       retry = true;
     } else if (ret == QDialogButtonBox::Reset) {
-      /* TODO: Try to kill the existing Tor and restart it with a password
-       * we actually know.
-       */
+      QString processError;
+      if (! process_kill(torPid, &processError)) {
+        /* TODO: Display a helpful error message. */
+      } else {
+        retry = true;
+      }
     }
   } else {
     /* Something else went wrong */
