@@ -1321,10 +1321,8 @@ MainWindow::dangerousTorVersion()
 void
 MainWindow::showAboutDialog()
 {
-  static AboutDialog *aboutDialog = 0;
-  if (!aboutDialog)
-    aboutDialog = new AboutDialog(this);
-  aboutDialog->showWindow();
+  AboutDialog dlg(this);
+  dlg.exec();
 }
 
 /** Displays the help browser and displays the most recently viewed help
