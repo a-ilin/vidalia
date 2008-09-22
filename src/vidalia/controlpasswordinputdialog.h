@@ -61,6 +61,10 @@ protected slots:
    */
   void passwordEdited(const QString &text);
 
+protected:
+  /** Adjusts the size of the input dialog when it is displayed. */
+  virtual void setVisible(bool visible);
+
 private:
     Ui::ControlPasswordInputDialog ui; /**< Qt Designer generated object. */
 };

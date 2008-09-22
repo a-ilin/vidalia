@@ -94,3 +94,11 @@ ControlPasswordInputDialog::clicked(QAbstractButton *button)
   }
 }
 
+void
+ControlPasswordInputDialog::setVisible(bool visible)
+{
+  if (visible)
+    adjustSize();
+  QDialog::setVisible(visible);
+}
+
