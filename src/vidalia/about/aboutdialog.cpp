@@ -15,22 +15,18 @@
 */
 
 #include <QFile>
+#include <QDialog>
 #include <vidalia.h>
+
 #include "aboutdialog.h"
+#include "licensedialog.h"
 
 
-/** Default Constructor **/
-AboutDialog::AboutDialog(QWidget *parent, Qt::WFlags flags)
-: VidaliaWindow("AboutDialog", parent, flags)
+/** Default Constructor. */
+AboutDialog::AboutDialog(QWidget *parent, Qt::WindowFlags flags)
+: QDialog(parent, Qt::CustomizeWindowHint | Qt::WindowSystemMenuHint)
 {
   ui.setupUi(this);
-
-  /* Pressing 'Esc' or 'Ctrl+W' will close the window */
-  setShortcut("Esc", SLOT(close()));
-  setShortcut("Ctrl+W", SLOT(close()));
-
-  /* Save the TorControl object to use later */
-  _torControl = Vidalia::torControl();
 
   /* Get Vidalia's version number */
   ui.lblVidaliaVersion->setText(Vidalia::version());
@@ -38,34 +34,30 @@ AboutDialog::AboutDialog(QWidget *parent, Qt::WFlags flags)
   /* Get Qt's version number */
   ui.lblQtVersion->setText(QT_VERSION_STR);
 
-  /* Load the brief licensing information and hide it initally */
-  loadLicense();
-}
-
-/** Loads the license information */
-void
-AboutDialog::loadLicense()
-{
-  QFile licenseFile(":/docs/short_license.txt");
-  licenseFile.open(QFile::ReadOnly);
-  ui.txtLicense->setPlainText(licenseFile.readAll());
-  licenseFile.close();
+  /* Display the license information dialog when the "License" button 
+   * is clicked. */
+  connect(ui.btnShowLicense, SIGNAL(clicked()),
+          new LicenseDialog(this), SLOT(exec()));
 }
 
 /** Displays the About dialog window **/
 void
-AboutDialog::showWindow()
+AboutDialog::setVisible(bool visible)
 {
-  /* Access the TorControl object to retrieve version */
-  if (_torControl->isRunning()) {
-    QString version = _torControl->getTorVersionString();
-    if (version.isEmpty()) {
-      version = tr("<Unavailable>");
+  if (visible) {
+    /* Access the TorControl object to retrieve version */
+    TorControl *tc = Vidalia::torControl();
+    if (tc->isRunning()) {
+      QString version = tc->getTorVersionString();
+      if (version.isEmpty()) {
+        version = tr("Unavailable");
+      }
+      ui.lblTorVersion->setText(version);
+    } else {
+      ui.lblTorVersion->setText(tr("Not Running"));
     }
-    ui.lblTorVersion->setText(version);
-  } else {
-    ui.lblTorVersion->setText(tr("<Not Running>"));
   }
-  VidaliaWindow::showWindow();
+  adjustSize();
+  QDialog::setVisible(visible);
 }
 

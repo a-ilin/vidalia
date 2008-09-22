@@ -32,9 +32,11 @@ add_subdirectory(i18n)
 ## About dialog sources
 set(vidalia_SRCS 
   about/aboutdialog.cpp
+  about/licensedialog.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
   about/aboutdialog.h
+  about/licensedialog.h
 )
 
 ## Bandwidth graph sources
@@ -200,6 +202,7 @@ qt4_wrap_ui(vidalia_SRCS
   controlpasswordinputdialog.ui
   mainwindow.ui
   about/aboutdialog.ui
+  about/licensedialog.ui
   bwgraph/bwgraph.ui
   config/advancedpage.ui
   config/appearancepage.ui

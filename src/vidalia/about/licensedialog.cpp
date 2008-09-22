@@ -9,31 +9,33 @@
 */
 
 /*
-** \file aboutdialog.h
+** \file licensedialog.cpp
 ** \version $Id$
-** \brief Displays information about Vidalia, Tor, and Qt
+** \brief Displays HTML-formatted license information for Vidalia and related
+** software.
 */
 
-#ifndef _ABOUTDIALOG_H
-#define _ABOUTDIALOG_H
+#include <QFile>
+#include <QString>
 
 #include "licensedialog.h"
-#include "ui_aboutdialog.h"
 
 
-class AboutDialog : public QDialog
+LicenseDialog::LicenseDialog(QWidget *parent)
+  : QDialog(parent)
 {
-  Q_OBJECT
+  ui.setupUi(this);
 
-public:
-  /** Default constructor */
-  AboutDialog(QWidget *parent = 0, Qt::WindowFlags flags = 0);
+  ui.txtLicense->setHtml(loadHtml(":/docs/license.html"));
+  ui.txtCredits->setHtml(loadHtml(":/docs/credits.html"));
+}
 
-  virtual void setVisible(bool visible);
-
-private:
-  Ui::AboutDialog ui; /**< Qt Designer generated QObject **/
-};
-
-#endif
+QString
+LicenseDialog::loadHtml(const QString &source) const
+{
+  QFile file(source);
+  if (! file.open(QIODevice::ReadOnly | QIODevice::Text))
+    return QString();
+  return QString(file.readAll());
+}
 

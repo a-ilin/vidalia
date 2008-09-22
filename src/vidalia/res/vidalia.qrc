@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/docs">
-        <file>short_license.txt</file>
+        <file>credits.html</file>
+        <file>license.html</file>
     </qresource>
     <qresource prefix="/images">
         <file>16x16/application-exit.png</file>
@@ -99,9 +100,7 @@
         <file>48x48/view-media-artist.png</file>
     </qresource>
     <qresource prefix="/images">
-        <file>128x128/qt-logo.png</file>
-        <file>128x128/tor-logo.png</file>
-        <file>128x128/tor-on.png</file>
+        <file>128x128/vidalia-logo.png</file>
     </qresource>
     <qresource prefix="/images">
         <file>icons/node-unresponsive.png</file>
