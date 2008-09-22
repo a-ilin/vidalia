@@ -98,7 +98,7 @@ void
 ControlPasswordInputDialog::setVisible(bool visible)
 {
   if (visible)
-    adjustSize();
+    resize(minimumSizeHint());
   QDialog::setVisible(visible);
 }
 
