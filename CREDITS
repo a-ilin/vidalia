@@ -45,9 +45,6 @@ Contributors:
   converts world space coordinates (latitude,longitude) into image space
   coordinates (x,y) which we used in the Net Viewer.
 
-  The Tango Desktop Project <http://tango-project.org> created many of the
-  icons used in Vidalia. See LICENSE for details.
-
   Michael Zuercher and Adam Tomjack of Zuerchertech LLC
   <http://www.zuerchertech.com> gave us the ZImageView class which handles
   drawing, scrolling and zooming the map image in the Network Viewer.
