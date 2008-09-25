@@ -1157,6 +1157,9 @@ MainWindow::authenticationFailed(QString errmsg)
   /* Parsing log messages is evil, but we're left with little option */
   if (errmsg.contains("Password did not match")) {
     ControlPasswordInputDialog dlg;
+    connect(&dlg, SIGNAL(helpRequested(QString)),
+            this, SLOT(showHelpDialog(QString)));
+
     qint64 torPid = 0;
 
 #if defined(Q_OS_WIN32)

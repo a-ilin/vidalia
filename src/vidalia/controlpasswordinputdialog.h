@@ -48,6 +48,11 @@ public:
    */
   void setResetEnabled(bool enabled);
 
+signals:
+  /** Emitted when the user clicks on the "Help" dialog button.
+   */
+  void helpRequested(const QString &topic);
+
 protected slots:
   /** Called when one of the QDialogButtonBox's buttons is clicked. The dialog
    * is closed if <b>button</b> is the "Ok", "Cancel", or "Reset" button, and

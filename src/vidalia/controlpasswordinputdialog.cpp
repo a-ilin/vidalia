@@ -86,7 +86,7 @@ ControlPasswordInputDialog::clicked(QAbstractButton *button)
       break;
 
     case QDialogButtonBox::Help:
-      /* TODO: Display some help relevant to control passwords. */
+      emit helpRequested("troubleshooting.password");
       break;
 
     default:
