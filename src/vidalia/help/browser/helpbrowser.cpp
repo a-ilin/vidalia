@@ -200,9 +200,13 @@ HelpBrowser::createTopicTreeItem(const QDomElement &topicElement,
                                  QTreeWidgetItem *parent)
 {
   QTreeWidgetItem *topic = new QTreeWidgetItem(parent);
-  topic->setText(0, topicElement.attribute(ATTRIBUTE_TOPIC_NAME));
+  QString label = topicElement.attribute(ATTRIBUTE_TOPIC_NAME);
+
+  topic->setText(0, label);
+  topic->setToolTip(0, label);
   topic->setData(0, ROLE_TOPIC_ID, topicElement.attribute(ATTRIBUTE_TOPIC_ID));
   topic->setData(0, ROLE_TOPIC_QRC_PATH, getResourcePath(topicElement));
+
   return topic;
 }
 
