@@ -60,6 +60,58 @@ setting in Vidalia's <a href="config.html#advanced">advanced configuration
 settings</a>.
 </p>
 
+<a name="password"/>
+<h3>Why is Vidalia asking me for a "control password"?</h3>
+<p>
+Vidalia interacts with the Tor software via Tor's "control port". The control
+port lets Vidalia receive status updates from Tor, request a new identity,
+configure Tor's settings, etc. Each time Vidalia starts Tor, Vidalia
+sets a random password for Tor's control port to prevent other applications
+from also connecting to the control port and potentially compromising your
+anonymity.
+</p>
+
+<p>
+Usually this process of generating and setting a random control password
+happens in the background. There are two common situations, though, where
+Vidalia may prompt you for a password:
+</p>
+
+<ul>
+  <li>
+    <p>Vidalia crashed, but left Tor running with the last known random
+    password. After you restart Vidalia, it generates a new random password,
+    but Vidalia can't talk to Tor, because the random passwords are
+    different.</p>
+    
+    <p>If the dialog that prompts you for a control password has a <i>Reset</i>
+    button, you can click the button and Vidalia will restart Tor with a new
+    random control password.
+    </p>
+    
+    <p>If you do not see a <i>Reset</i> button, or if Vidalia is unable to
+    restart Tor for you, you can still fix the problem manually. Simply
+    go into your process or task manager, and terminate the Tor process. Then
+    use Vidalia to restart Tor and all will work again.</p>
+  </li>
+
+  <li>
+    <p>You had previously set Tor to run as a service. When Tor is set to run
+    as a service, it starts up when the system boots. If you configured Tor to
+    start as a service through Vidalia, a random password was set and saved in
+    Tor. When you reboot, Tor starts up and uses the random password it saved.
+    You login and start up Vidalia. Vidalia attempts to talk to the already
+    running Tor. Vidalia generates a random password, but it is different than
+    the saved password in the Tor service.</p>
+  
+    <p>You need to reconfigure Tor to not be a service. See the Tor wiki page on
+    running <a
+    href="https://wiki.torproject.org/noreply/TheOnionRouter/TorFAQ#WinNTService">
+    Tor as a service</a> for more information on how to remove the Tor service.</p>
+  </li>
+</ul>
+
+
 <a name="torexited"/> 
 <h3>Tor Exited Unexpectedly</h3> 
 <p> 

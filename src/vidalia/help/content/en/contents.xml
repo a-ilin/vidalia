@@ -55,6 +55,9 @@
   <Topic id="troubleshooting" name="Troubleshooting" html="troubleshooting.html">
     <Topic id="start" name="I Can't Start Tor" html="troubleshooting.html" section="start"/>
     <Topic id="connect" name="Vidalia Can't Connect to Tor" html="troubleshooting.html" section="connect"/>
+    <Topic id="password"
+           name="Why is Vidalia asking me for a &quot;control password&quot;?"
+           html="troubleshooting.html" section="password"/>
     <Topic id="torexited" name="Tor exited unexpectedly" html="troubleshooting.html" section="torexited"/>
     <Topic id="stop" name="Vidalia Can't Stop Tor" html="troubleshooting.html" section="stop"/>
   </Topic>
