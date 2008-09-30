@@ -14,6 +14,7 @@
 ** \brief General Tor and Vidalia configuration options
 */
 
+#include <QDateTime>
 #include <stringutil.h>
 #include "generalpage.h"
 
@@ -34,12 +35,14 @@ GeneralPage::GeneralPage(QWidget *parent)
           this, SLOT(browseTorExecutable()));
   connect(ui.btnBrowseProxyExecutable, SIGNAL(clicked()), 
           this, SLOT(browseProxyExecutable()));
+  connect(ui.btnUpdateNow, SIGNAL(clicked()),
+          this, SLOT(checkForUpdates()));
 
   /* Hide platform specific features */
 #ifndef Q_WS_WIN
   ui.chkRunVidaliaAtSystemStartup->setVisible(false);
   ui.lineHorizontalSeparator->setVisible(false);
-  ui.grpSoftwareUpdates->setVisible(false);
+  //ui.grpSoftwareUpdates->setVisible(false);
 #endif
 }
 
@@ -115,7 +118,8 @@ GeneralPage::save(QString &errmsg)
     ui.chkRunVidaliaAtSystemStartup->isChecked());
   _vidaliaSettings->setRunProxyAtStart(
     ui.chkRunProxyAtTorStartup->isChecked());
-
+  _vidaliaSettings->setAutoUpdateEnabled(
+    ui.chkAutoUpdates->isChecked());
   return true;
 }
 
@@ -133,5 +137,13 @@ GeneralPage::load()
   ui.lineProxyExecutableArguments->setText(
     string_format_arguments(_vidaliaSettings->getProxyExecutableArguments()));
   ui.chkRunProxyAtTorStartup->setChecked(_vidaliaSettings->runProxyAtStart());
+  ui.chkAutoUpdates->setChecked(_vidaliaSettings->isAutoUpdateEnabled());
 }
+
+void
+GeneralPage::checkForUpdates()
+{
+  _vidaliaSettings->setLastCheckedForUpdates(QDateTime::currentDateTime());
+}
+
 
