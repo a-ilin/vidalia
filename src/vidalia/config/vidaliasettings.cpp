@@ -73,7 +73,11 @@ VidaliaSettings::VidaliaSettings()
   setDefault(SETTING_RUN_PROXY_AT_START, false);
   setDefault(SETTING_PROXY_EXECUTABLE, "");
   setDefault(SETTING_PROXY_EXECUTABLE_ARGUMENTS, QStringList());
+#if defined(Q_WS_WIN)
   setDefault(SETTING_CHECK_FOR_UPDATES, true);
+#else
+  setDefault(SETTING_CHECK_FOR_UPDATES, false);
+#endif
   setDefault(SETTING_LAST_UPDATE_CHECK, QDateTime());
 }
 
