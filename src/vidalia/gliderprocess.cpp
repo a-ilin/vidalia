@@ -16,6 +16,12 @@ GliderProcess::GliderProcess(QObject *parent)
 {  
 }
 
+void
+GliderProcess::checkForUpdates(const QString &gliderExecutable)
+{
+  start(gliderExecutable);
+}
+
 int
 GliderProcess::checkForUpdatesInterval()
 {

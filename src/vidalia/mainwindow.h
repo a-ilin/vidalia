@@ -210,6 +210,8 @@ private:
   TrayIcon _trayIcon;
   /** Timer used to remind us to check for software updates. */
   QTimer _updateTimer;
+  /** The Glider process used to check for and download updates. */
+  GliderProcess _gliderProcess;
 
   /** Defines the actions for the tray menu */
   QAction* _controlPanelAct;

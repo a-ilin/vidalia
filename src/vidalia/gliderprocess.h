@@ -24,6 +24,11 @@ public:
    */
   GliderProcess(QObject *parent = 0);
 
+  /** Begin a check for software updates using the Glider binary specified
+   * by <b>gliderExecutable</b>.
+   */
+  void checkForUpdates(const QString &gliderExecutable);
+
   /** Return the time at which we should next check for available updates, 
    * given the last we checked was at <b>lastCheckedAt</b>.
    */
