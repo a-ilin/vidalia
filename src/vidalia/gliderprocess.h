@@ -12,6 +12,7 @@
 #define _GLIDERPROCESS_H
 
 #include <QProcess>
+#include <QDateTime>
 
 
 class GliderProcess : public QProcess
@@ -19,7 +20,24 @@ class GliderProcess : public QProcess
   Q_OBJECT
 
 public:
+  /** Default constructor.
+   */
   GliderProcess(QObject *parent = 0);
+
+  /** Return the time at which we should next check for available updates, 
+   * given the last we checked was at <b>lastCheckedAt</b>.
+   */
+  static QDateTime nextCheckForUpdates(const QDateTime &lastCheckedAt);
+
+  /** Return true if we should check for available software udpates, given
+   * the last time we checked was at <b>lastCheckedAt</b>. The returned
+   * QDateTime will be in UTC.
+   */
+  static bool shouldCheckForUpdates(const QDateTime &lastCheckedAt);
+
+  /** Returns the preferred interval (in seconds) between executions of the
+   * Glider process to check for available software updates. */
+  static int checkForUpdatesInterval();
 };
 
 #endif

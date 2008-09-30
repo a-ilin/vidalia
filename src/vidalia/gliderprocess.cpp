@@ -16,3 +16,24 @@ GliderProcess::GliderProcess(QObject *parent)
 {  
 }
 
+int
+GliderProcess::checkForUpdatesInterval()
+{
+  /* XXX: Check once a day. I totally made this up. We want to do something
+   * smarter here. */
+  return 24*60*60;
+}
+
+QDateTime
+GliderProcess::nextCheckForUpdates(const QDateTime &lastCheckedAt)
+{
+  return lastCheckedAt.toUTC().addSecs(checkForUpdatesInterval());
+}
+
+bool
+GliderProcess::shouldCheckForUpdates(const QDateTime &lastCheckedAt)
+{
+  QDateTime nextCheck = nextCheckForUpdates(lastCheckedAt);
+  return (nextCheck >= QDateTime::currentDateTime().toUTC());
+}
+
