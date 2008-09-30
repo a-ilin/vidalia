@@ -42,7 +42,7 @@ GeneralPage::GeneralPage(QWidget *parent)
 #ifndef Q_WS_WIN
   ui.chkRunVidaliaAtSystemStartup->setVisible(false);
   ui.lineHorizontalSeparator->setVisible(false);
-  //ui.grpSoftwareUpdates->setVisible(false);
+  ui.grpSoftwareUpdates->setVisible(false);
 #endif
 }
 
