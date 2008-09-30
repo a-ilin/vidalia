@@ -18,6 +18,7 @@
 #define _MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QTimer>
 #include <torcontrol.h>
 #include <bootstrapstatusevent.h>
 
@@ -32,6 +33,7 @@
 #include "ui_mainwindow.h"
 #include "helperprocess.h"
 #include "config.h"
+#include "gliderprocess.h"
 
 #if defined(USE_MINIUPNPC)
 #include "config/upnpcontrol.h"
@@ -110,6 +112,9 @@ private slots:
   void onIMFailed(QString errmsg);
   /** Called when the proxy server fails to start */
   void onProxyFailed(QString errmsg);
+  /** Called when the update interval timer expires, notifying Vidalia that
+   * we should check for updates again. */
+  void checkForUpdates();
 
 #if defined(USE_MINIUPNPC)
   /** Called when a UPnP error occurs. */
@@ -203,7 +208,9 @@ private:
   bool _useSavedPassword;
   /** The Vidalia icon that sits in the tray. */
   TrayIcon _trayIcon;
- 
+  /** Timer used to remind us to check for software updates. */
+  QTimer _updateTimer;
+
   /** Defines the actions for the tray menu */
   QAction* _controlPanelAct;
   QAction* _startStopAct;

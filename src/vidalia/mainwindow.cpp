@@ -161,6 +161,9 @@ MainWindow::MainWindow()
   connect(vApp, SIGNAL(running()), this, SLOT(running()));
   connect(vApp, SIGNAL(shutdown()), this, SLOT(shutdown()));
 
+  /* Create a timer used to remind us to check for software updates */
+  connect(&_updateTimer, SIGNAL(timeout()), this, SLOT(checkForUpdates()));
+
 #if defined(USE_MINIUPNPC)
   /* Catch UPnP-related signals */
   connect(UPNPControl::instance(), SIGNAL(error(UPNPControl::UPNPError)),
@@ -248,6 +251,19 @@ MainWindow::running()
   /* Start the proxy server, if configured */
   if (settings.runProxyAtStart())
     startProxy();
+
+  if (settings.isAutoUpdateEnabled()) {
+    QDateTime lastCheckedAt = settings.lastCheckedForUpdates();
+    if (GliderProcess::shouldCheckForUpdates(lastCheckedAt)) {
+      /* Initiate a background check for updates */
+      checkForUpdates();
+    } else {
+      /* Schedule the next time to check for updates */
+      QDateTime nextCheckAt = GliderProcess::nextCheckForUpdates(lastCheckedAt);
+      QDateTime now = QDateTime::currentDateTime().toUTC();
+      _updateTimer.start((nextCheckAt.toTime_t() - now.toTime_t()) * 1000);
+    }
+  }
 }
 
 /** Terminate the Tor process if it is being run under Vidalia, disconnect all
@@ -1446,4 +1462,19 @@ MainWindow::upnpError(UPNPControl::UPNPError error)
 #endif
 }
 #endif
+
+void
+MainWindow::checkForUpdates()
+{
+  /* TODO: Initiate a check for available software updates. This check will
+   *       be done in the background, notifying the user only if there are
+   *       updates to be installed.
+   */
+
+  VidaliaSettings settings;
+  settings.setLastCheckedForUpdates(QDateTime::currentDateTime().toUTC());
+
+  /* Restart the "Check for Updates" timer */
+  _updateTimer.start(GliderProcess::checkForUpdatesInterval() * 1000);
+}
 
