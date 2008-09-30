@@ -38,6 +38,8 @@ GeneralPage::GeneralPage(QWidget *parent)
   /* Hide platform specific features */
 #ifndef Q_WS_WIN
   ui.chkRunVidaliaAtSystemStartup->setVisible(false);
+  ui.lineHorizontalSeparator->setVisible(false);
+  ui.grpSoftwareUpdates->setVisible(false);
 #endif
 }
 
@@ -95,7 +97,7 @@ GeneralPage::save(QString &errmsg)
     errmsg = tr("You must specify the name of your Tor executable.");
     return false;
   }
-  if (ui.chkRunProxyAtVidaliaStartup->isChecked()) {
+  if (ui.chkRunProxyAtTorStartup->isChecked()) {
     bool ok;
     QStringList proxyArgs = string_parse_arguments(
                               ui.lineProxyExecutableArguments->text(), &ok);
@@ -112,7 +114,7 @@ GeneralPage::save(QString &errmsg)
   _vidaliaSettings->setRunVidaliaOnBoot(
     ui.chkRunVidaliaAtSystemStartup->isChecked());
   _vidaliaSettings->setRunProxyAtStart(
-    ui.chkRunProxyAtVidaliaStartup->isChecked());
+    ui.chkRunProxyAtTorStartup->isChecked());
 
   return true;
 }
@@ -130,6 +132,6 @@ GeneralPage::load()
   ui.lineProxyExecutable->setText(_vidaliaSettings->getProxyExecutable());
   ui.lineProxyExecutableArguments->setText(
     string_format_arguments(_vidaliaSettings->getProxyExecutableArguments()));
-  ui.chkRunProxyAtVidaliaStartup->setChecked(_vidaliaSettings->runProxyAtStart());
+  ui.chkRunProxyAtTorStartup->setChecked(_vidaliaSettings->runProxyAtStart());
 }
 
