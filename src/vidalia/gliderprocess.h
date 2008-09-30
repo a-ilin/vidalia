@@ -13,6 +13,7 @@
 
 #include <QProcess>
 #include <QDateTime>
+#include <QStringList>
 
 
 class GliderProcess : public QProcess
@@ -25,9 +26,11 @@ public:
   GliderProcess(QObject *parent = 0);
 
   /** Begin a check for software updates using the Glider binary specified
-   * by <b>gliderExecutable</b>.
+   * by <b>gliderExecutable</b>. The arguments in <b>args</b> will be given
+   * to Glider on the command line.
    */
-  void checkForUpdates(const QString &gliderExecutable);
+  void checkForUpdates(const QString &gliderExecutable,
+                       const QStringList &args);
 
   /** Return the time at which we should next check for available updates, 
    * given the last we checked was at <b>lastCheckedAt</b>.

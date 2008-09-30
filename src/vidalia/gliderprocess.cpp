@@ -17,9 +17,10 @@ GliderProcess::GliderProcess(QObject *parent)
 }
 
 void
-GliderProcess::checkForUpdates(const QString &gliderExecutable)
+GliderProcess::checkForUpdates(const QString &gliderExecutable,
+                               const QStringList &args)
 {
-  start(gliderExecutable);
+  start(gliderExecutable, args);
 }
 
 int

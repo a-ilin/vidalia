@@ -1470,7 +1470,8 @@ MainWindow::checkForUpdates()
    * be done in the background, notifying the user only if there are
    * updates to be installed.
    */
-  _gliderProcess.checkForUpdates("takemeforarideonyourmagicglider.exe");
+  _gliderProcess.checkForUpdates("takemeforarideonyourmagicglider.exe",
+                                 QStringList() << "plztohasnewtor");
 
   /* XXX: The stuff below should be moved to another method that gets called
    *      when the glider check is complete.
