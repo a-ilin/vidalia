@@ -143,7 +143,13 @@ GeneralPage::load()
 void
 GeneralPage::checkForUpdates()
 {
-  _vidaliaSettings->setLastCheckedForUpdates(QDateTime::currentDateTime());
+  /* TODO: Check for software updates. Ideally this will have a foreground
+   *       window that tells the user "Hey, your stuff is current!" or not.
+   */
+
+  /* Remember the last time we checked for updates */
+  QDateTime lastCheckedAt = QDateTime::currentDateTime().toUTC();
+  _vidaliaSettings->setLastCheckedForUpdates(lastCheckedAt);
 }
 
 
