@@ -36,6 +36,8 @@
 #define SETTING_RUN_PROXY_AT_START  "RunProxyAtStart"
 #define SETTING_PROXY_EXECUTABLE    "ProxyExecutable"
 #define SETTING_PROXY_EXECUTABLE_ARGUMENTS  "ProxyExecutableArguments"
+#define SETTING_CHECK_FOR_UPDATES   "CheckForUpdates"
+#define SETTING_LAST_UPDATE_CHECK   "LastUpdateCheck"
 
 #if defined(Q_OS_WIN32)
 #define STARTUP_REG_KEY        "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
@@ -71,6 +73,8 @@ VidaliaSettings::VidaliaSettings()
   setDefault(SETTING_RUN_PROXY_AT_START, false);
   setDefault(SETTING_PROXY_EXECUTABLE, "");
   setDefault(SETTING_PROXY_EXECUTABLE_ARGUMENTS, QStringList());
+  setDefault(SETTING_CHECK_FOR_UPDATES, true);
+  setDefault(SETTING_LAST_UPDATE_CHECK, QDateTime());
 }
 
 /** Gets the currently preferred language code for Vidalia. */
@@ -244,5 +248,29 @@ VidaliaSettings::setProxyExecutableArguments(const QStringList
                                              &proxyExecutableArguments)
 {
   setValue(SETTING_PROXY_EXECUTABLE_ARGUMENTS, proxyExecutableArguments);
+}
+
+bool
+VidaliaSettings::isAutoUpdateEnabled() const
+{
+  return value(SETTING_CHECK_FOR_UPDATES).toBool();
+}
+
+void
+VidaliaSettings::setAutoUpdateEnabled(bool enabled)
+{
+  setValue(SETTING_CHECK_FOR_UPDATES, enabled);
+}
+
+QDateTime
+VidaliaSettings::lastCheckedForUpdates() const
+{
+  return value(SETTING_LAST_UPDATE_CHECK).toDateTime();
+}
+
+void
+VidaliaSettings::setLastCheckedForUpdates(const QDateTime &checkedAt)
+{
+  setValue(SETTING_LAST_UPDATE_CHECK, checkedAt);
 }
 
