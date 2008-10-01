@@ -8,12 +8,18 @@
 **  terms described in the LICENSE file.
 */
 
+#include <QtDebug>
+
 #include "gliderprocess.h"
 
 
 GliderProcess::GliderProcess(QObject *parent)
   : QProcess(parent)
 {  
+  connect(this, SIGNAL(readyReadStandardError()),
+          this, SLOT(readStandardError()));
+  connect(this, SIGNAL(readyReadStandardOutput()),
+          this, SLOT(readStandardOutput()));
 }
 
 void
@@ -21,6 +27,30 @@ GliderProcess::checkForUpdates(const QString &gliderExecutable,
                                const QStringList &args)
 {
   start(gliderExecutable, args);
+}
+
+void
+GliderProcess::readStandardError()
+{
+  QString line;
+
+  setReadChannel(QProcess::StandardError);
+  while (canReadLine()) {
+    line = readLine();
+    qDebug() << QString("updater (stderr): %1").arg(line);
+  }  
+}
+
+void
+GliderProcess::readStandardOutput()
+{
+  QString line;
+
+  setReadChannel(QProcess::StandardOutput);
+  while (canReadLine()) {
+    line = readLine();
+    qDebug() << QString("updater (stdout): %1").arg(line);
+  }
 }
 
 int

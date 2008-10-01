@@ -46,6 +46,17 @@ public:
   /** Returns the preferred interval (in seconds) between executions of the
    * Glider process to check for available software updates. */
   static int checkForUpdatesInterval();
+
+protected slots:
+  /** Called when there is data to be read from the update process's stdout.
+   * Reads and parses all available data.
+   */
+  void readStandardOutput();
+
+  /** Called when there is data to be read from the update process's stderr.
+   * Reads and parses all available data.
+   */
+  void readStandardError();
 };
 
 #endif
