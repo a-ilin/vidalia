@@ -1,3 +1,6 @@
+0.2.0   xx-xxx-2008
+
+
 0.1.9   02-Sep-2008
   o Create the control panel's menubar as a parentless QMenuBar, so it is 
     visible even if the control panel is not the topmost window. (Ticket #286)
