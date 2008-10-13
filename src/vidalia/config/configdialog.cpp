@@ -165,6 +165,7 @@ ConfigDialog::retranslateUi()
   foreach (QAction *action, ui.toolBar->actions()) {
     action->setText(tr(qPrintable(action->data().toString()), "ConfigDialog"));
   }
+  ui.buttonBox->setStandardButtons(ui.buttonBox->standardButtons());
 }
 
 /** Loads the saved ConfigDialog settings. */
