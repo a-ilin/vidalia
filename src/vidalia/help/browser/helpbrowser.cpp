@@ -102,6 +102,7 @@ HelpBrowser::retranslateUi()
   ui.treeContents->clear();
   loadContentsFromXml(":/help/" + language() + "/contents.xml");
   ui.treeContents->setItemExpanded(ui.treeContents->topLevelItem(0), true);
+  ui.txtBrowser->setSource(ui.txtBrowser->source());
 }
 
 /** Returns the language in which help topics should appear, or English
