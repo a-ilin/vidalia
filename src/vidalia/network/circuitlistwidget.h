@@ -49,6 +49,8 @@ public:
   void addStream(const Stream &stream);
   /** Returns a list of circuits currently in the widget. */
   QList<Circuit> circuits();
+  /** Called when the user changes the UI translation. */
+  void retranslateUi();
 
 signals:
   /** Emitted when a circuit item is selected. */

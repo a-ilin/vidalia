@@ -52,6 +52,8 @@ public:
   RouterListItem* findRouterById(QString id);
   /** Deselects all currently selected routers. */
   void deselectAll();
+  /** Called when the user changes the UI translation. */
+  void retranslateUi();
 
 signals:
   /** Emitted when the user selects a router from the list. */

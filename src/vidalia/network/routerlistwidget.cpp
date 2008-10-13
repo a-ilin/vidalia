@@ -40,6 +40,15 @@ RouterListWidget::RouterListWidget(QWidget *parent)
           this, SLOT(customContextMenuRequested(QPoint)));
 }
 
+/** Called when the user changes the UI translation. */
+void
+RouterListWidget::retranslateUi()
+{
+  setHeaderLabels(QStringList() << QString("")
+                                << QString("")
+                                << tr("Relay"));
+}
+
 /** Called when the user requests a context menu for a router in the list. A
  * context menu will be displayed providing a list of actions, including
  * zooming in on the server. */

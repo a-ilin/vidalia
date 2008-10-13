@@ -119,6 +119,26 @@ void
 NetViewer::retranslateUi()
 {
   ui.retranslateUi(this);
+  ui.treeRouterList->retranslateUi();
+  ui.treeCircuitList->retranslateUi();
+
+  if (ui.treeRouterList->selectedItems().size()) {
+    QList<RouterDescriptor> routers;
+    foreach (QTreeWidgetItem *item, ui.treeRouterList->selectedItems()) {
+      routers << dynamic_cast<RouterListItem *>(item)->descriptor();
+    }
+    ui.textRouterInfo->display(routers);
+  } else if (ui.treeCircuitList->selectedItems().size()) {
+    QList<RouterDescriptor> routers;
+    QTreeWidgetItem *item = ui.treeCircuitList->selectedItems()[0];
+    Circuit circuit = dynamic_cast<CircuitItem*>(item)->circuit();
+    foreach (QString id, circuit.routerIDs()) {
+      RouterListItem *item = ui.treeRouterList->findRouterById(id);
+      if (item)
+        routers.append(item->descriptor());
+    }
+    ui.textRouterInfo->display(routers);
+  }
 }
 
 /** Display the network map window. If there are geoip requests waiting in the

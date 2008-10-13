@@ -48,6 +48,21 @@ CircuitListWidget::CircuitListWidget(QWidget *parent)
                        SLOT(closeSelectedConnections()));
 }
 
+/** Called when the user changes the UI translation. */
+void
+CircuitListWidget::retranslateUi()
+{
+  setHeaderLabels(QStringList() << tr("Connection") << tr("Status"));
+  for (int i = 0; i < topLevelItemCount(); i++) {
+    CircuitItem *circuitItem = dynamic_cast<CircuitItem *>(topLevelItem(i));
+    circuitItem->update(circuitItem->circuit());
+
+    foreach (StreamItem *streamItem, circuitItem->streams()) {
+      streamItem->update(streamItem->stream());
+    }
+  }
+}
+
 /** Called when the user requests a context menu on a circuit or stream in the
  * list and displays a context menu appropriate for whichever type of item is
  * currently selected. */

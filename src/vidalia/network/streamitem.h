@@ -27,13 +27,14 @@ public:
   /** Constructor */
   StreamItem(const Stream &stream);
 
+  Stream stream() const { return _stream; }
   /** Updates the status of this stream item. */
   void update(const Stream &stream);
   /** Returns the ID of the stream associated with this tree item. */
-  StreamId id() const { return _id; }
+  StreamId id() const { return _stream.id(); }
   
 private:
-  StreamId _id; /**< ID for this stream. */
+  Stream _stream;
 };
 
 #endif
