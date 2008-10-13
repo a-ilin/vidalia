@@ -1,14 +1,11 @@
 <ui version="4.0" >
- <author></author>
- <comment></comment>
- <exportmacro></exportmacro>
  <class>AppearancePage</class>
  <widget class="QWidget" name="AppearancePage" >
   <property name="geometry" >
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>494</width>
+    <width>500</width>
     <height>395</height>
    </rect>
   </property>
@@ -16,12 +13,6 @@
    <enum>Qt::NoContextMenu</enum>
   </property>
   <layout class="QVBoxLayout" >
-   <property name="margin" >
-    <number>9</number>
-   </property>
-   <property name="spacing" >
-    <number>6</number>
-   </property>
    <item>
     <widget class="QGroupBox" name="grpLanguage" >
      <property name="contextMenuPolicy" >
@@ -31,13 +22,7 @@
       <string>Language</string>
      </property>
      <layout class="QGridLayout" >
-      <property name="margin" >
-       <number>9</number>
-      </property>
-      <property name="spacing" >
-       <number>6</number>
-      </property>
-      <item row="1" column="0" >
+      <item row="0" column="0" >
        <widget class="QComboBox" name="cmboLanguage" >
         <property name="minimumSize" >
          <size>
@@ -62,28 +47,18 @@
         </property>
        </widget>
       </item>
-      <item row="1" column="1" >
+      <item row="0" column="1" >
        <spacer>
         <property name="orientation" >
          <enum>Qt::Horizontal</enum>
         </property>
-        <property name="sizeHint" >
+        <property name="sizeHint" stdset="0" >
          <size>
           <width>300</width>
           <height>16</height>
          </size>
         </property>
        </spacer>
-      </item>
-      <item row="0" column="0" colspan="2" >
-       <widget class="QLabel" name="label" >
-        <property name="contextMenuPolicy" >
-         <enum>Qt::NoContextMenu</enum>
-        </property>
-        <property name="text" >
-         <string>Changes to language will only take effect after restarting Vidalia!</string>
-        </property>
-       </widget>
       </item>
      </layout>
     </widget>
@@ -100,18 +75,12 @@
       <string>Style</string>
      </property>
      <layout class="QGridLayout" >
-      <property name="margin" >
-       <number>9</number>
-      </property>
-      <property name="spacing" >
-       <number>6</number>
-      </property>
       <item row="0" column="1" >
        <spacer>
         <property name="orientation" >
          <enum>Qt::Horizontal</enum>
         </property>
-        <property name="sizeHint" >
+        <property name="sizeHint" stdset="0" >
          <size>
           <width>40</width>
           <height>20</height>
@@ -146,7 +115,7 @@
      <property name="orientation" >
       <enum>Qt::Vertical</enum>
      </property>
-     <property name="sizeHint" >
+     <property name="sizeHint" stdset="0" >
       <size>
        <width>476</width>
        <height>161</height>
@@ -156,7 +125,6 @@
    </item>
   </layout>
  </widget>
- <pixmapfunction></pixmapfunction>
  <resources/>
  <connections/>
 </ui>
