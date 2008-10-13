@@ -378,6 +378,7 @@ Vidalia::retranslateUi(const QString &languageCode)
   if (! LanguageSupport::isValidLanguageCode(languageCode))
     return false;
   if (! languageCode.compare("en", Qt::CaseInsensitive)) {
+    _language = languageCode;
     removeAllTranslators();
     return true;
   }
