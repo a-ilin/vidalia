@@ -19,6 +19,8 @@
 #include <QTextStream>
 #include <QStyleFactory>
 #include <QShortcut>
+#include <QTranslator>
+#include <QLibraryInfo>
 #include <languagesupport.h>
 #include <vmessagebox.h>
 #include <stringutil.h>
@@ -44,6 +46,7 @@ QString Vidalia::_style;               /**< The current GUI style.           */
 QString Vidalia::_language;            /**< The current language.            */
 TorControl* Vidalia::_torControl = 0;  /**< Main TorControl object.          */
 Log Vidalia::_log;
+QList<QTranslator *> Vidalia::_translators;
 
 /** Catches debugging messages from Qt and sends them to Vidalia's logs. If Qt
  * emits a QtFatalMsg, we will write the message to the log and then abort().
@@ -271,7 +274,7 @@ Vidalia::setLanguage(QString languageCode)
     languageCode = settings.getLanguageCode();
   }
   /* Translate into the desired langauge */
-  if (LanguageSupport::translate(languageCode)) {
+  if (retranslateUi(languageCode)) {
     _language = languageCode;
     return true;
   }
@@ -354,3 +357,64 @@ Vidalia::createShortcut(const QString &key, QWidget *sender,
 {
   createShortcut(QKeySequence(key), sender, receiver, slot);
 }
+
+void
+Vidalia::removeAllTranslators()
+{
+  foreach (QTranslator *translator, _translators) {
+    QApplication::removeTranslator(translator);
+    delete translator;
+  }
+  _translators.clear();
+}
+
+bool
+Vidalia::retranslateUi(const QString &languageCode)
+{
+  QTranslator *systemQtTranslator = 0;
+  QTranslator *vidaliaQtTranslator = 0;
+  QTranslator *vidaliaTranslator = 0;
+
+  if (! LanguageSupport::isValidLanguageCode(languageCode))
+    return false;
+  if (! languageCode.compare("en", Qt::CaseInsensitive)) {
+    removeAllTranslators();
+    return true;
+  }
+
+  systemQtTranslator = new QTranslator(vApp);
+  Q_CHECK_PTR(systemQtTranslator);
+  QString qtDir = QLibraryInfo::location(QLibraryInfo::TranslationsPath);
+  systemQtTranslator->load(qtDir + "/qt_" + languageCode + ".qm");
+
+
+  vidaliaQtTranslator = new QTranslator(vApp);
+  Q_CHECK_PTR(vidaliaQtTranslator);
+  vidaliaQtTranslator->load(":/lang/qt_" + languageCode + ".qm");
+
+  vidaliaTranslator = new QTranslator(vApp);
+  Q_CHECK_PTR(vidaliaTranslator);
+  if (! vidaliaTranslator->load(":/lang/vidalia_" + languageCode + ".qm"))
+    goto err;
+
+  removeAllTranslators();
+  _language = languageCode;
+  QApplication::installTranslator(systemQtTranslator);
+  QApplication::installTranslator(vidaliaQtTranslator);
+  QApplication::installTranslator(vidaliaTranslator);
+  _translators << systemQtTranslator
+               << vidaliaQtTranslator
+               << vidaliaTranslator;
+  return true;
+
+err:
+  if (systemQtTranslator)
+    delete systemQtTranslator;
+  if (vidaliaQtTranslator)
+    delete vidaliaQtTranslator;
+  if (vidaliaTranslator)
+    delete vidaliaTranslator;
+  delete vidaliaTranslator;
+  return false;
+}
+

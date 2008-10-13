@@ -40,7 +40,11 @@ public:
 public slots:
   /** Overrides the default QWidget::show() */
   void showWindow(QString topic = QString());
-  
+
+protected:
+  /** Called when the user changes the UI translation. */
+  virtual void retranslateUi();
+
 private slots:
   /** Called when the user clicks "Find Next" */
   void findNext();

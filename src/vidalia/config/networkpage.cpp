@@ -31,7 +31,7 @@
 
 /** Constructor */
 NetworkPage::NetworkPage(QWidget *parent)
-: ConfigPage(parent, tr("Network"))
+: ConfigPage(parent, "Network")
 {
   /* Invoke the Qt Designer generated object setup routine */
   ui.setupUi(this);
@@ -67,6 +67,13 @@ NetworkPage::NetworkPage(QWidget *parent)
   ui.grpFirewallSettings->setTitle("");
   ui.grpBridgeSettings->setTitle("");
 #endif
+}
+
+/** Called when the user changes the UI translation. */
+void
+NetworkPage::retranslateUi()
+{
+  ui.retranslateUi(this);
 }
 
 /** Applies the network configuration settings to Tor. Returns true if the   *

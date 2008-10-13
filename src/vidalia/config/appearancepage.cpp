@@ -15,12 +15,13 @@
 */
 
 #include <vidalia.h>
+#include <vmessagebox.h>
 #include "appearancepage.h"
 
 
 /** Default Constructor */
 AppearancePage::AppearancePage(QWidget *parent)
-: ConfigPage(parent, tr("Appearance"))
+  : ConfigPage(parent, "Appearance")
 {
   /* Invoke Designer-generated object setup routine */
   ui.setupUi(this);
@@ -44,19 +45,34 @@ AppearancePage::~AppearancePage()
   delete _settings;
 }
 
+/** Called when the user changes the UI translation. */
+void
+AppearancePage::retranslateUi()
+{
+  ui.retranslateUi(this);
+}
+
 /** Saves the changes on this page */
 bool
 AppearancePage::save(QString &errmsg)
 {
-  Q_UNUSED(errmsg);
+  QString prevLanguage = _settings->getLanguageCode();
   QString languageCode =
     LanguageSupport::languageCode(ui.cmboLanguage->currentText());
-  
-  _settings->setLanguageCode(languageCode);
-  _settings->setInterfaceStyle(ui.cmboStyle->currentText());
- 
-  /* Set to new style */
+
+  /* Set the new language */
+  if (prevLanguage != languageCode) {
+    if (! Vidalia::retranslateUi(languageCode)) {
+      errmsg = tr("Vidalia was unable to load the selected "
+                  "language translation.");
+      return false;
+    }
+    _settings->setLanguageCode(languageCode);
+  }
+
+  /* Set the new style */
   Vidalia::setStyle(ui.cmboStyle->currentText());
+  _settings->setInterfaceStyle(ui.cmboStyle->currentText());
   return true;
 }
   

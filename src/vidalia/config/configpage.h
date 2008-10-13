@@ -55,6 +55,8 @@ public:
   /** Subclassed pages can overload this method to revert any cancelled
    * settings. */
   virtual void revert() {}
+  
+  virtual void retranslateUi() {}
 
 signals:
   /** Signal emitted when a ConfigPage requests help information on a given

@@ -14,9 +14,7 @@
 ** \brief Contains languages supported by Vidalia
 */
 
-#include <QTranslator>
 #include <QLocale>
-#include <QLibraryInfo>
 #include <vidalia.h>
 
 #include "languagesupport.h"
@@ -121,44 +119,3 @@ LanguageSupport::isValidLanguageCode(const QString &languageCode)
   return languageCodes().contains(languageCode);
 }
 
-/** Sets the application's translator to the specified language. */
-bool
-LanguageSupport::translate(const QString &languageCode)
-{
-  if (!isValidLanguageCode(languageCode))
-    return false;
-  if (languageCode == "en")
-    return true;
-
-  /* Attempt to load the translations for Qt's internal widgets from their
-   * installed Qt directory. */
-  QTranslator *systemQtTranslator = new QTranslator(vApp);
-  Q_CHECK_PTR(systemQtTranslator);
-
-  QString qtDir = QLibraryInfo::location(QLibraryInfo::TranslationsPath);
-  if (systemQtTranslator->load(qtDir + "/qt_" + languageCode + ".qm"))
-    QApplication::installTranslator(systemQtTranslator);
-  else
-    delete systemQtTranslator;
-
-  /* Install the translator for Qt's internal widgets that is shipped with
-   * Vidalia. */
-  QTranslator *qtTranslator = new QTranslator(vApp);
-  Q_CHECK_PTR(qtTranslator);
-
-  if (qtTranslator->load(":/lang/qt_" + languageCode + ".qm"))
-    QApplication::installTranslator(qtTranslator);
-  else 
-    delete qtTranslator;
-
-  /* Install a translator for Vidalia's UI widgets */
-  QTranslator *vidaliaTranslator = new QTranslator(vApp);
-  Q_CHECK_PTR(vidaliaTranslator);
-
-  if (vidaliaTranslator->load(":/lang/vidalia_" + languageCode + ".qm")) {
-    QApplication::installTranslator(vidaliaTranslator);
-    return true;
-  }
-  delete vidaliaTranslator;
-  return false;
-}

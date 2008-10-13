@@ -126,3 +126,25 @@ VidaliaWindow::setVisible(bool visible)
   QMainWindow::setVisible(visible);
 }
 
+/** Reimplement the windows' changeEvent() method to check if the event
+ * is a QEvent::LanguageChange event. If so, call retranslateUi(), which
+ * subclasses of VidaliaWindow can reimplement to update their UI. */
+void
+VidaliaWindow::changeEvent(QEvent *e)
+{
+  if (e->type() == QEvent::LanguageChange) {
+    retranslateUi();
+    e->accept();
+    return;
+  }
+  QMainWindow::changeEvent(e);
+}
+
+/** Called when the user wants to change the currently visible language.
+ * Subclasses can reimplement this to update their UI. */
+void
+VidaliaWindow::retranslateUi()
+{
+  /* The default retranslateUi() implementation does nothing */
+}
+

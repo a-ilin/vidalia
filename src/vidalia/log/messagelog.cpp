@@ -136,6 +136,14 @@ MessageLog::setToolTips()
                                 "interest to Tor developers.")); 
 }
 
+/** Called when the user changes the UI translation. */
+void
+MessageLog::retranslateUi()
+{
+  ui.retranslateUi(this);
+  setToolTips();
+}
+
 /** Loads the saved Message Log settings */
 void
 MessageLog::loadSettings()

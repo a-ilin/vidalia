@@ -104,6 +104,7 @@ MainWindow::MainWindow()
   _bandwidthGraph = new BandwidthGraph();
   _netViewer      = new NetViewer();
   _configDialog   = new ConfigDialog();
+  _menuBar        = 0;
   connect(_messageLog, SIGNAL(helpRequested(QString)),
           this, SLOT(showHelpDialog(QString)));
   connect(_netViewer, SIGNAL(helpRequested(QString)),
@@ -195,6 +196,28 @@ MainWindow::~MainWindow()
   delete _bandwidthGraph;
   delete _netViewer;
   delete _configDialog;
+}
+
+void
+MainWindow::retranslateUi()
+{
+  ui.retranslateUi(this);
+  updateTorStatus(_status);
+
+  _bandwidthAct->setText(tr("Bandwidth Graph"));
+  _messageAct->setText(tr("Message Log"));
+  _networkAct->setText(tr("Network Map"));
+  _controlPanelAct->setText(tr("Control Panel"));
+  _helpAct->setText(tr("Help"));
+  _newIdentityAct->setText(tr("New Identity"));
+
+#if !defined(Q_WS_MAC)
+  _aboutAct->setText(tr("About"));
+  _configAct->setText(tr("Settings"));
+  _exitAct->setText(tr("Exit"));
+#else
+  createMenuBar();
+#endif
 }
 
 /** Catches and processes Tor client and general status events. */
@@ -437,30 +460,35 @@ MainWindow::createMenuBar()
 
   /* Force Qt to put merge the Exit, Configure, and About menubar options into
    * the default menu, even if Vidalia is currently not speaking English. */
-  _exitAct->setText("exit");
   _configAct->setText("config");
+  _configAct->setMenuRole(QAction::PreferencesRole);
   _aboutAct->setText("about");
-  
+  _aboutAct->setMenuRole(QAction::AboutRole);
+  _exitAct->setText("quit");
+  _exitAct->setMenuRole(QAction::QuitRole);
+
   /* The File, Help, and Configure menus will get merged into the application
    * menu by Qt. */
-  QMenuBar *menuBar = new QMenuBar(0);
-  QMenu *fileMenu = menuBar->addMenu(tr("File"));
+  if (_menuBar)
+    delete _menuBar;
+  _menuBar = new QMenuBar(0);
+  QMenu *fileMenu = _menuBar->addMenu("File");
   fileMenu->addAction(_exitAct);
-  
-  QMenu *torMenu = menuBar->addMenu(tr("Tor"));
+  fileMenu->addAction(_configAct);
+
+  QMenu *torMenu = _menuBar->addMenu(tr("Tor"));
   torMenu->addAction(_startStopAct);
   torMenu->addSeparator();
   torMenu->addAction(_newIdentityAct);
 
-  QMenu *viewMenu = menuBar->addMenu(tr("View"));
+  QMenu *viewMenu = _menuBar->addMenu(tr("View"));
   viewMenu->addAction(_controlPanelAct);
   viewMenu->addSeparator();
   viewMenu->addAction(_bandwidthAct);
   viewMenu->addAction(_messageAct);
   viewMenu->addAction(_networkAct);
-  viewMenu->addAction(_configAct);
   
-  QMenu *helpMenu = menuBar->addMenu(tr("Help"));
+  QMenu *helpMenu = _menuBar->addMenu(tr("Help"));
   _helpAct->setText(tr("Vidalia Help"));
   helpMenu->addAction(_helpAct);
   helpMenu->addAction(_aboutAct);
@@ -481,7 +509,6 @@ MainWindow::startSubprocesses()
 
   if (!executable.isEmpty())
     _imProcess->start(executable, QStringList());
-  
 }
 
 /** Called when browser or IM client have exited */

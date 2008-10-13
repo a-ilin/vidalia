@@ -52,6 +52,8 @@ public:
 protected:
   /** Catches and processes Tor client status events. */
   virtual void customEvent(QEvent *event);
+  /** Called when the user changes the UI translation. */
+  virtual void retranslateUi();
 
 private slots:
   /** Displays the help browser and displays the most recently viewed help
@@ -212,6 +214,8 @@ private:
   QTimer _updateTimer;
   /** The Glider process used to check for and download updates. */
   GliderProcess _gliderProcess;
+  /** The menubar (Mac OS X only). */
+  QMenuBar *_menuBar;
 
   /** Defines the actions for the tray menu */
   QAction* _controlPanelAct;

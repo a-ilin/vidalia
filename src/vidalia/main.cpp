@@ -25,6 +25,7 @@
 #include <QSysInfo>
 #endif
 
+
 /** Returns true if there is already another Vidalia process running. */
 bool
 is_vidalia_running(QString pidfile)

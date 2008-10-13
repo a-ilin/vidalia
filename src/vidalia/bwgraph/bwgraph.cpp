@@ -77,6 +77,13 @@ BandwidthGraph::BandwidthGraph(QWidget *parent, Qt::WFlags flags)
 #endif
 }
 
+/** Called when the user changes the UI translation. */
+void
+BandwidthGraph::retranslateUi()
+{
+  ui.retranslateUi(this);
+}
+
 /** Custom event handler. Checks if the event is a bandwidth update event. If it
  * is, it will add the data point to the history and updates the graph. */
 void

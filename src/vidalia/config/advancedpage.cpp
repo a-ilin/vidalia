@@ -31,7 +31,7 @@
 
 /** Constructor */
 AdvancedPage::AdvancedPage(QWidget *parent)
-: ConfigPage(parent, tr("Advanced"))
+: ConfigPage(parent, "Advanced")
 {
   /* Invoke the Qt Designer generated object setup routine */
   ui.setupUi(this);
@@ -65,6 +65,13 @@ AdvancedPage::AdvancedPage(QWidget *parent)
 AdvancedPage::~AdvancedPage()
 {
   delete _settings;
+}
+
+/** Called when the user changes the UI translation. */
+void
+AdvancedPage::retranslateUi()
+{
+  ui.retranslateUi(this);
 }
 
 /** Applies the network configuration settings to Tor. Returns true if the

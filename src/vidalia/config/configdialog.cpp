@@ -42,6 +42,7 @@
 #define IMAGE_HELP          ":/images/32x32/system-help.png"
 #define IMAGE_SERVICE       ":/images/32x32/services.png"
 
+
 /** Constructor */
 ConfigDialog::ConfigDialog(QWidget* parent)
 : VidaliaWindow("ConfigDialog", parent)
@@ -73,27 +74,27 @@ ConfigDialog::ConfigDialog(QWidget* parent)
   QActionGroup *grp = new QActionGroup(this);
   ui.stackPages->add(new GeneralPage(ui.stackPages),
                      createPageAction(QIcon(IMAGE_GENERAL),
-                                      tr("General"), grp));
-  
+                                      tr("General"), "General", grp));
+
   ui.stackPages->add(new NetworkPage(ui.stackPages),
                      createPageAction(QIcon(IMAGE_NETWORK),
-                                      tr("Network"), grp));
-  
+                                      tr("Network"), "Network", grp));
+
   ui.stackPages->add(new ServerPage(ui.stackPages),
                      createPageAction(QIcon(IMAGE_SERVER),
-                                      tr("Sharing"), grp));
-  
+                                      tr("Sharing"), "Sharing", grp));
+
   ui.stackPages->add(new ServicePage(ui.stackPages),
                      createPageAction(QIcon(IMAGE_SERVICE),
-                                      tr("Services"), grp));
+                                      tr("Services"), "Services", grp));
 
   ui.stackPages->add(new AppearancePage(ui.stackPages),
                      createPageAction(QIcon(IMAGE_APPEARANCE),
-                                      tr("Appearance"), grp));
-  
+                                      tr("Appearance"), "Appearance", grp));
+
   ui.stackPages->add(new AdvancedPage(ui.stackPages),
                      createPageAction(QIcon(IMAGE_ADVANCED),
-                                      tr("Advanced"), grp));
+                                      tr("Advanced"), "Advanced", grp));
 
   foreach (ConfigPage *page, ui.stackPages->pages()) {
     connect(page, SIGNAL(helpRequested(QString)),
@@ -108,6 +109,7 @@ ConfigDialog::ConfigDialog(QWidget* parent)
   
   /* Create and bind the Help button */
   QAction *helpAct = new QAction(QIcon(IMAGE_HELP), tr("Help"), ui.toolBar);
+  helpAct->setData("Help");
   addAction(helpAct, SLOT(help()));
 
   /* Select the first action */
@@ -122,9 +124,11 @@ ConfigDialog::ConfigDialog(QWidget* parent)
 
 /** Creates a new action associated with a config page. */
 QAction*
-ConfigDialog::createPageAction(QIcon img, QString text, QActionGroup *group)
+ConfigDialog::createPageAction(const QIcon &img, const QString &text, 
+                               const QString &data, QActionGroup *group)
 {
   QAction *action = new QAction(img, text, group);
+  action->setData(data);
   action->setCheckable(true);
   return action;
 }
@@ -148,6 +152,19 @@ ConfigDialog::showWindow(Page page)
   VidaliaWindow::showWindow();
   /* Set the focus to the specified page. */
   ui.stackPages->setCurrentIndex((int)page);
+}
+
+/** Called when the user changes the UI translation. */
+void
+ConfigDialog::retranslateUi()
+{
+  ui.retranslateUi(this);
+  foreach (ConfigPage *page, ui.stackPages->pages()) {
+    page->retranslateUi();
+  }
+  foreach (QAction *action, ui.toolBar->actions()) {
+    action->setText(tr(qPrintable(action->data().toString()), "ConfigDialog"));
+  }
 }
 
 /** Loads the saved ConfigDialog settings. */
@@ -177,7 +194,7 @@ ConfigDialog::saveChanges()
       VMessageBox::warning(this, 
         tr("Error Saving Settings"), 
         p(tr("Vidalia was unable to save your %1 settings.")
-             .arg(page->title())) + p(errmsg),
+             .arg(tr(qPrintable(page->title()), "ConfigDialog"))) + p(errmsg),
         VMessageBox::Ok);
 
       /* Don't process the rest of the pages */

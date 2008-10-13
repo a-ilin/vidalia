@@ -24,6 +24,7 @@
 
 #include <QApplication>
 #include <QMap>
+#include <QList>
 #include <QString>
 #include <QKeySequence>
 
@@ -102,6 +103,14 @@ public:
   static void createShortcut(const QString &key, QWidget *sender,
                              QObject *receiver, const char *slot);
 
+  /** Loads and installs all available translators for the specified
+   * <b>languageCode</b>. All currently installed QTranslator objects will be
+   * removed. Returns true if at least Vidalia's language file can be loaded
+   * for the given language. Otherwise, returns false and no change is made
+   * to the current translators.
+   */
+  static bool retranslateUi(const QString &languageCode);
+
 signals:
   /** Emitted when the application is running and the main event loop has
    * started. */ 
@@ -114,6 +123,9 @@ protected:
   /** Filters Windows events, looking for events of interest */
   bool winEventFilter(MSG *msg, long *result);
 #endif
+
+  /** Removes all currently installed QTranslators. */
+  static void removeAllTranslators();
 
 private slots:
   /** Called when the application's main event loop has started. This method
@@ -136,6 +148,7 @@ private:
   static QString _language;            /**< The current language.            */
   static TorControl* _torControl;      /**< Vidalia's main TorControl object.*/
   static Log _log; /**< Logs debugging messages to file or stdout. */
+  static QList<QTranslator *> _translators; /**< List of installed translators. */
 };
 
 #endif

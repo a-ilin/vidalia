@@ -94,6 +94,16 @@ HelpBrowser::HelpBrowser(QWidget *parent)
   ui.treeContents->setItemExpanded(ui.treeContents->topLevelItem(0), true);
 }
 
+/** Called when the user changes the UI translation. */
+void
+HelpBrowser::retranslateUi()
+{
+  ui.retranslateUi(this);
+  ui.treeContents->clear();
+  loadContentsFromXml(":/help/" + language() + "/contents.xml");
+  ui.treeContents->setItemExpanded(ui.treeContents->topLevelItem(0), true);
+}
+
 /** Returns the language in which help topics should appear, or English
  * ("en") if no translated help files exist for the current GUI language. */
 QString
@@ -286,7 +296,7 @@ HelpBrowser::findTopicItem(QTreeWidgetItem *startItem, QString topic)
   return 0;
 }
 
-/** Shows the help browser. If a sepcified topic was given, the search for
+/** Shows the help browser. If a sepcified topic was given, then search for
  * that topic's ID (e.g., "log.basic") and display the appropriate page. */
 void
 HelpBrowser::showTopic(QString topic)
@@ -294,13 +304,15 @@ HelpBrowser::showTopic(QString topic)
   /* Search for the topic in the contents tree */
   QTreeWidgetItem *item =
     findTopicItem(ui.treeContents->topLevelItem(0), topic);
-  
+  QTreeWidgetItem *selected = 0;
+
   if (item) {
     /* Item was found, so show its location in the hierarchy and select its
      * tree item. */
-    QTreeWidgetItem* selected = ui.treeContents->selectedItems()[0];
-    if (selected) {
-      ui.treeContents->setItemSelected(selected, false);
+    if (ui.treeContents->selectedItems().size()) {
+      selected = ui.treeContents->selectedItems()[0];
+      if (selected)
+        ui.treeContents->setItemSelected(selected, false);
     }
     ui.treeContents->setItemExpanded(ui.treeContents->topLevelItem(0), true);
     ui.treeContents->setItemSelected(item, true);

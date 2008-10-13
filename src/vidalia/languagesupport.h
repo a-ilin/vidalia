@@ -17,7 +17,6 @@
 #ifndef _LANGUAGESUPPORT_H
 #define _LANGUAGESUPPORT_H
 
-#include <QApplication>
 #include <QStringList>
 #include <QMap>
 
@@ -39,8 +38,6 @@ public:
   static QMap<QString, QString> languages();
   /** Returns true if we understand the given language code. */
   static bool isValidLanguageCode(const QString &languageCode);
-  /** Sets the application's translator to the specified language. */
-  static bool translate(const QString &languageCode);
 };
 
 #endif

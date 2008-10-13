@@ -24,7 +24,7 @@
 
 /** Constructor */
 ServicePage::ServicePage(QWidget *parent)
-: ConfigPage(parent, tr("Services"))
+: ConfigPage(parent, "Services")
 {
   /* Invoke the Qt Designer generated object setup routine */
   ui.setupUi(this);
@@ -67,6 +67,13 @@ ServicePage::ServicePage(QWidget *parent)
 ServicePage::~ServicePage()
 {
   delete _serviceSettings;
+}
+
+/** Called when the user changes the UI translation. */
+void
+ServicePage::retranslateUi()
+{
+  ui.retranslateUi(this);
 }
 
 /** Saves changes made to settings on the Server settings page. */

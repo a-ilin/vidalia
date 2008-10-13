@@ -34,6 +34,8 @@ public:
   void load();
   /** Initialize the service table */
   void initServiceTable(QMap<int, Service>* _services);
+  /** Called when the user changes the UI translation. */
+  virtual void retranslateUi();
 
 private slots:
   /** Called whenever the user clicks on the 'add' button. */

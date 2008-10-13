@@ -54,6 +54,8 @@ public slots:
 protected:
   /** Called to deliver a NEWDESC event from Tor. */
   void customEvent(QEvent *event);
+  /** Called when the user changes the UI translation. */
+  void retranslateUi();
 
 private slots:
   /** Called when the user selects the "Help" action on the toolbar. */

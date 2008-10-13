@@ -21,7 +21,7 @@
 
 /** Constructor */
 GeneralPage::GeneralPage(QWidget *parent)
-: ConfigPage(parent, tr("General"))
+: ConfigPage(parent, "General")
 {
   /* Invoke the Qt Designer generated object setup routine */
   ui.setupUi(this);
@@ -51,6 +51,13 @@ GeneralPage::~GeneralPage()
 {
   delete _vidaliaSettings;
   delete _torSettings;
+}
+
+/** Called when the user changes the UI translation. */
+void
+GeneralPage::retranslateUi()
+{
+  ui.retranslateUi(this);
 }
 
 /** Displays a file dialog allowing the user to browse for an executable

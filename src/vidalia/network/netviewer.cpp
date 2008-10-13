@@ -114,6 +114,13 @@ NetViewer::NetViewer(QWidget *parent)
              this,   SLOT(resolved(int, QList<GeoIp>)));
 }
 
+/** Called when the user changes the UI translation. */
+void
+NetViewer::retranslateUi()
+{
+  ui.retranslateUi(this);
+}
+
 /** Display the network map window. If there are geoip requests waiting in the
  * queue, start the queue timers now. */
 void

@@ -48,6 +48,8 @@ public:
   /** Returns true if the user has changed their advanced Tor settings since
    * the last time they were applied to Tor. */
   bool changedSinceLastApply();
+  /** Called when the user changes the UI translation. */
+  virtual void retranslateUi();
 
 private slots:
   /** Called when the user selects a different authentication method from the

@@ -52,6 +52,8 @@ public:
   /** Returns true if the user has changed their server settings since the
    * last time they were applied to Tor. */
   bool changedSinceLastApply();
+  /** Called when the user changes the UI translation. */
+  virtual void retranslateUi();
 
 private slots:
   /** Called when the user toggles any one of the server mode radio buttons

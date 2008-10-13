@@ -53,6 +53,10 @@ public slots:
   /** Shows the config dialog with focus set to the given page. */
   void showWindow(Page page = General);
 
+protected:
+  /** Called when the user changes the UI translation. */
+  virtual void retranslateUi();
+
 private slots:
   /** Called when user clicks "Save Settings". Saves their settings to
    * Vidalia's configuration file. */
@@ -75,7 +79,8 @@ private:
   /** Loads the current configuration settings */
   void loadSettings();
   /** Creates a new action for a config page. */
-  QAction* createPageAction(QIcon img, QString text, QActionGroup *group);
+  QAction* createPageAction(const QIcon &img, const QString &text,
+                            const QString &data, QActionGroup *group);
   /** Adds a new action to the toolbar. */
   void addAction(QAction *action, const char *slot = 0);
 

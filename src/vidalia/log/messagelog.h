@@ -42,7 +42,9 @@ public:
 protected:
   /** Called to deliver custom event types */
   void customEvent(QEvent *event);
-  
+  /** Called when the user changes the UI translation. */
+  virtual void retranslateUi();
+
 private slots:
   /** Called when the user triggers the save all action **/
   void saveAll();

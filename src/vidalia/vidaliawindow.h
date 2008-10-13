@@ -48,6 +48,14 @@ public:
   /** Saves a value associated with a setting name for this window object. */
   void saveSetting(QString name, QVariant value);
 
+protected:
+  /** Reimplement the windows' changeEvent() method to check if the event
+   * is a QEvent::LanguageChange event. If so, call retranslateUi(), which
+   * subclasses of VidaliaWindow can reimplement to update their UI. */
+  virtual void changeEvent(QEvent *e);
+  /** Called when the user wants to change the currently visible language. */
+  virtual void retranslateUi();
+
 public slots:
   /** Shows or hides this window. */
   virtual void setVisible(bool visible);

@@ -39,7 +39,9 @@ public:
   bool save(QString &errmsg);
   /** Loads the settings for this page */
   void load();
-  
+  /** Called when the user changes the UI translation. */
+  virtual void retranslateUi();
+
 private:
   /** A VidaliaSettings object used for saving/loading settings */
   VidaliaSettings* _settings;

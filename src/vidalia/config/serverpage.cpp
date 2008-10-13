@@ -65,7 +65,7 @@
 
 /** Constructor */
 ServerPage::ServerPage(QWidget *parent)
-: ConfigPage(parent, tr("Server"))
+: ConfigPage(parent, "Server")
 {
   /* Invoke the Qt Designer generated object setup routine */
   ui.setupUi(this);
@@ -117,6 +117,13 @@ ServerPage::ServerPage(QWidget *parent)
 ServerPage::~ServerPage()
 {
   delete _settings;
+}
+
+/** Called when the user changes the UI translation. */
+void
+ServerPage::retranslateUi()
+{
+  ui.retranslateUi(this);
 }
 
 /** Called when Vidalia has authenticated to Tor. If the user's Tor is not

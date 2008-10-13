@@ -45,7 +45,9 @@ public slots:
 protected:
   /** Called to deliver a bandwidth update event from Tor. */
   void customEvent(QEvent *event);
-  
+  /** Called when the user changes the UI translation. */
+  virtual void retranslateUi();
+
 private slots:
   /** Adds new data to the graph */
   void updateGraph(quint64 bytesRead, quint64 bytesWritten);

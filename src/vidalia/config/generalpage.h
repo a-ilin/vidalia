@@ -37,6 +37,8 @@ public:
   bool save(QString &errmsg);
   /** Loads the settings for this page */
   void load();
+  /** Called when the user changes the UI translation. */
+  virtual void retranslateUi();
 
 private slots:
   /** Open a QFileDialog to browse for a Tor executable file. */
