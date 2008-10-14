@@ -186,7 +186,6 @@ set(vidalia_SRCS ${vidalia_SRCS}
   vmessagebox.cpp
   helperprocess.cpp
   controlpasswordinputdialog.cpp
-  updateprocess.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
   vidalia.h
@@ -195,7 +194,6 @@ qt4_wrap_cpp(vidalia_SRCS
   vidaliawindow.h
   vmessagebox.h
   helperprocess.h
-  updateprocess.h
   controlpasswordinputdialog.h
 )
 

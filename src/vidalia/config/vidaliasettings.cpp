@@ -254,27 +254,3 @@ VidaliaSettings::setProxyExecutableArguments(const QStringList
   setValue(SETTING_PROXY_EXECUTABLE_ARGUMENTS, proxyExecutableArguments);
 }
 
-bool
-VidaliaSettings::isAutoUpdateEnabled() const
-{
-  return value(SETTING_CHECK_FOR_UPDATES).toBool();
-}
-
-void
-VidaliaSettings::setAutoUpdateEnabled(bool enabled)
-{
-  setValue(SETTING_CHECK_FOR_UPDATES, enabled);
-}
-
-QDateTime
-VidaliaSettings::lastCheckedForUpdates() const
-{
-  return value(SETTING_LAST_UPDATE_CHECK).toDateTime();
-}
-
-void
-VidaliaSettings::setLastCheckedForUpdates(const QDateTime &checkedAt)
-{
-  setValue(SETTING_LAST_UPDATE_CHECK, checkedAt);
-}
-

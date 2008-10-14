@@ -35,15 +35,6 @@ GeneralPage::GeneralPage(QWidget *parent)
           this, SLOT(browseTorExecutable()));
   connect(ui.btnBrowseProxyExecutable, SIGNAL(clicked()), 
           this, SLOT(browseProxyExecutable()));
-  connect(ui.btnUpdateNow, SIGNAL(clicked()),
-          this, SLOT(checkForUpdates()));
-
-  /* Hide platform specific features */
-#ifndef Q_WS_WIN
-  ui.chkRunVidaliaAtSystemStartup->setVisible(false);
-  ui.lineHorizontalSeparator->setVisible(false);
-  ui.grpSoftwareUpdates->setVisible(false);
-#endif
 }
 
 /** Destructor */
@@ -125,8 +116,6 @@ GeneralPage::save(QString &errmsg)
     ui.chkRunVidaliaAtSystemStartup->isChecked());
   _vidaliaSettings->setRunProxyAtStart(
     ui.chkRunProxyAtTorStartup->isChecked());
-  _vidaliaSettings->setAutoUpdateEnabled(
-    ui.chkAutoUpdates->isChecked());
   return true;
 }
 
@@ -144,19 +133,5 @@ GeneralPage::load()
   ui.lineProxyExecutableArguments->setText(
     string_format_arguments(_vidaliaSettings->getProxyExecutableArguments()));
   ui.chkRunProxyAtTorStartup->setChecked(_vidaliaSettings->runProxyAtStart());
-  ui.chkAutoUpdates->setChecked(_vidaliaSettings->isAutoUpdateEnabled());
 }
-
-void
-GeneralPage::checkForUpdates()
-{
-  /* TODO: Check for software updates. Ideally this will have a foreground
-   *       window that tells the user "Hey, your stuff is current!" or not.
-   */
-
-  /* Remember the last time we checked for updates */
-  QDateTime lastCheckedAt = QDateTime::currentDateTime().toUTC();
-  _vidaliaSettings->setLastCheckedForUpdates(lastCheckedAt);
-}
-
 

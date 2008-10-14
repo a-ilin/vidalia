@@ -45,8 +45,6 @@ private slots:
   void browseTorExecutable();
   /** Open a QFileDialog to browse for a proxy executable file. */
   void browseProxyExecutable();
-  /** Initiate an immediate check for software updates. */
-  void checkForUpdates();
 
 private:
   /** Displays a file dialog allowing the user to browse for an executable

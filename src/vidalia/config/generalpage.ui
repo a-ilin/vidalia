@@ -149,55 +149,6 @@
     </widget>
    </item>
    <item>
-    <widget class="QGroupBox" name="grpSoftwareUpdates" >
-     <property name="title" >
-      <string>Software Updates</string>
-     </property>
-     <layout class="QHBoxLayout" name="horizontalLayout" >
-      <item>
-       <widget class="QCheckBox" name="chkAutoUpdates" >
-        <property name="text" >
-         <string>Check for new software updates automatically</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer_2" >
-        <property name="orientation" >
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0" >
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <spacer name="horizontalSpacer" >
-        <property name="orientation" >
-         <enum>Qt::Horizontal</enum>
-        </property>
-        <property name="sizeHint" stdset="0" >
-         <size>
-          <width>40</width>
-          <height>20</height>
-         </size>
-        </property>
-       </spacer>
-      </item>
-      <item>
-       <widget class="QPushButton" name="btnUpdateNow" >
-        <property name="text" >
-         <string>Check Now</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item>
     <spacer name="verticalSpacer" >
      <property name="orientation" >
       <enum>Qt::Vertical</enum>

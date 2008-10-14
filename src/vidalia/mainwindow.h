@@ -33,7 +33,6 @@
 #include "ui_mainwindow.h"
 #include "helperprocess.h"
 #include "config.h"
-#include "updateprocess.h"
 
 #if defined(USE_MINIUPNPC)
 #include "config/upnpcontrol.h"
@@ -114,9 +113,6 @@ private slots:
   void onIMFailed(QString errmsg);
   /** Called when the proxy server fails to start */
   void onProxyFailed(QString errmsg);
-  /** Called when the update interval timer expires, notifying Vidalia that
-   * we should check for updates again. */
-  void checkForUpdates();
 
 #if defined(USE_MINIUPNPC)
   /** Called when a UPnP error occurs. */
@@ -210,10 +206,6 @@ private:
   bool _useSavedPassword;
   /** The Vidalia icon that sits in the tray. */
   TrayIcon _trayIcon;
-  /** Timer used to remind us to check for software updates. */
-  QTimer _updateTimer;
-  /** The auto-update process used to check for and download updates. */
-  UpdateProcess _updateProcess;
   /** The menubar (Mac OS X only). */
   QMenuBar *_menuBar;
 
