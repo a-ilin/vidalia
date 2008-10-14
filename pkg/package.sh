@@ -78,7 +78,7 @@ case "$1" in
   cp $torpath/src/or/tor $torpath/src/tools/tor-checkkey $torpath/src/tools/tor-gencert $torpath/src/tools/tor-resolve ../Vidalia.app/
   cp $torpath/src/config/geoip $torpath/src/config/torrc.sample ../Vidalia.app/
   cp $polipopath/polipo $polipopath/contrib/tor-polipo.conf ../Vidalia.app/
-  cp $torbuttonpath/torbutton-1.2.0-fx.xpi ../Vidalia.app/
+  cp $torbuttonpath ../Vidalia.app/
   srcdir="../"
   srcfiles="Vidalia.app README LEGAL"
   osx/builddmg.sh "$srcdir" "$srcfiles" "bundle" "$torversion"
