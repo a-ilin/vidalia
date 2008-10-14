@@ -277,12 +277,12 @@ MainWindow::running()
 
   if (settings.isAutoUpdateEnabled()) {
     QDateTime lastCheckedAt = settings.lastCheckedForUpdates();
-    if (GliderProcess::shouldCheckForUpdates(lastCheckedAt)) {
+    if (UpdateProcess::shouldCheckForUpdates(lastCheckedAt)) {
       /* Initiate a background check for updates */
       checkForUpdates();
     } else {
       /* Schedule the next time to check for updates */
-      QDateTime nextCheckAt = GliderProcess::nextCheckForUpdates(lastCheckedAt);
+      QDateTime nextCheckAt = UpdateProcess::nextCheckForUpdates(lastCheckedAt);
       QDateTime now = QDateTime::currentDateTime().toUTC();
       _updateTimer.start((nextCheckAt.toTime_t() - now.toTime_t()) * 1000);
     }
@@ -1497,7 +1497,7 @@ MainWindow::checkForUpdates()
    * be done in the background, notifying the user only if there are
    * updates to be installed.
    */
-  _gliderProcess.checkForUpdates("takemeforarideonyourmagicglider.exe",
+  _updateProcess.checkForUpdates("takemeforarideonyourmagicglider.exe",
                                  QStringList() << "plztohasnewtor");
 
   /* XXX: The stuff below should be moved to another method that gets called
@@ -1507,6 +1507,6 @@ MainWindow::checkForUpdates()
   settings.setLastCheckedForUpdates(QDateTime::currentDateTime().toUTC());
 
   /* Restart the "Check for Updates" timer */
-  _updateTimer.start(GliderProcess::checkForUpdatesInterval() * 1000);
+  _updateTimer.start(UpdateProcess::checkForUpdatesInterval() * 1000);
 }
 

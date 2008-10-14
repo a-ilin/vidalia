@@ -33,7 +33,7 @@
 #include "ui_mainwindow.h"
 #include "helperprocess.h"
 #include "config.h"
-#include "gliderprocess.h"
+#include "updateprocess.h"
 
 #if defined(USE_MINIUPNPC)
 #include "config/upnpcontrol.h"
@@ -212,8 +212,8 @@ private:
   TrayIcon _trayIcon;
   /** Timer used to remind us to check for software updates. */
   QTimer _updateTimer;
-  /** The Glider process used to check for and download updates. */
-  GliderProcess _gliderProcess;
+  /** The auto-update process used to check for and download updates. */
+  UpdateProcess _updateProcess;
   /** The menubar (Mac OS X only). */
   QMenuBar *_menuBar;
 

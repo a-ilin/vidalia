@@ -8,28 +8,28 @@
 **  terms described in the LICENSE file.
 */
 
-#ifndef _GLIDERPROCESS_H
-#define _GLIDERPROCESS_H
+#ifndef _UPDATEPROCESS_H
+#define _UPDATEPROCESS_H
 
 #include <QProcess>
 #include <QDateTime>
 #include <QStringList>
 
 
-class GliderProcess : public QProcess
+class UpdateProcess : public QProcess
 {
   Q_OBJECT
 
 public:
   /** Default constructor.
    */
-  GliderProcess(QObject *parent = 0);
+  UpdateProcess(QObject *parent = 0);
 
-  /** Begin a check for software updates using the Glider binary specified
-   * by <b>gliderExecutable</b>. The arguments in <b>args</b> will be given
-   * to Glider on the command line.
+  /** Begin a check for software updates using the updater binary specified
+   * by <b>updaterExecutable</b>. The arguments in <b>args</b> will be given
+   * to the auto-update binary on the command line.
    */
-  void checkForUpdates(const QString &gliderExecutable,
+  void checkForUpdates(const QString &updaterExecutable,
                        const QStringList &args);
 
   /** Return the time at which we should next check for available updates, 

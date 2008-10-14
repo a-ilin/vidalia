@@ -10,10 +10,10 @@
 
 #include <QtDebug>
 
-#include "gliderprocess.h"
+#include "updateprocess.h"
 
 
-GliderProcess::GliderProcess(QObject *parent)
+UpdateProcess::UpdateProcess(QObject *parent)
   : QProcess(parent)
 {  
   connect(this, SIGNAL(readyReadStandardError()),
@@ -23,14 +23,14 @@ GliderProcess::GliderProcess(QObject *parent)
 }
 
 void
-GliderProcess::checkForUpdates(const QString &gliderExecutable,
+UpdateProcess::checkForUpdates(const QString &updaterExecutable,
                                const QStringList &args)
 {
-  start(gliderExecutable, args);
+  start(updaterExecutable, args);
 }
 
 void
-GliderProcess::readStandardError()
+UpdateProcess::readStandardError()
 {
   QString line;
 
@@ -42,7 +42,7 @@ GliderProcess::readStandardError()
 }
 
 void
-GliderProcess::readStandardOutput()
+UpdateProcess::readStandardOutput()
 {
   QString line;
 
@@ -54,7 +54,7 @@ GliderProcess::readStandardOutput()
 }
 
 int
-GliderProcess::checkForUpdatesInterval()
+UpdateProcess::checkForUpdatesInterval()
 {
   /* XXX: Check once a day. I totally made this up. We want to do something
    * smarter here. */
@@ -62,13 +62,13 @@ GliderProcess::checkForUpdatesInterval()
 }
 
 QDateTime
-GliderProcess::nextCheckForUpdates(const QDateTime &lastCheckedAt)
+UpdateProcess::nextCheckForUpdates(const QDateTime &lastCheckedAt)
 {
   return lastCheckedAt.toUTC().addSecs(checkForUpdatesInterval());
 }
 
 bool
-GliderProcess::shouldCheckForUpdates(const QDateTime &lastCheckedAt)
+UpdateProcess::shouldCheckForUpdates(const QDateTime &lastCheckedAt)
 {
   QDateTime nextCheck = nextCheckForUpdates(lastCheckedAt);
   return (nextCheck >= QDateTime::currentDateTime().toUTC());
