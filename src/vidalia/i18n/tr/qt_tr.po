@@ -3,19 +3,19 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-08-20 03:25+0000\n"
-"PO-Revision-Date: 2008-08-20 03:25+0000\n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2008-10-17 00:01+0000\n"
+"Last-Translator: Omer Ishakoglu <omerishakoglu@gmail.com>\n"
 "Language-Team: none\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Vidalia ts2po 0.2\n"
+"X-Generator: Pootle 1.1.0\n"
 
 #: qaccessibleobject.cpp:348
 msgctxt "QApplication"
 msgid "Activate"
-msgstr ""
+msgstr "Etkinleştir"
 
 #: qmessagebox.h:319
 msgctxt "QApplication"
@@ -35,52 +35,52 @@ msgstr ""
 #: qaccessibleobject.cpp:350
 msgctxt "QApplication"
 msgid "Activates the program's main window"
-msgstr ""
+msgstr "Ana pencereyi gösterir"
 
 #: qmessagebox.cpp:2104
 msgctxt "QDialogButtonBox"
 msgid "OK"
-msgstr ""
+msgstr "Tamam"
 
 #: qdialogbuttonbox.cpp:528
 msgctxt "QDialogButtonBox"
 msgid "Save"
-msgstr ""
+msgstr "Kaydet"
 
 #: qdialogbuttonbox.cpp:531
 msgctxt "QDialogButtonBox"
 msgid "Open"
-msgstr ""
+msgstr "Aç"
 
 #: qdialogbuttonbox.cpp:534
 msgctxt "QDialogButtonBox"
 msgid "Cancel"
-msgstr ""
+msgstr "İptal"
 
 #: qdialogbuttonbox.cpp:537
 msgctxt "QDialogButtonBox"
 msgid "Close"
-msgstr ""
+msgstr "Kapat"
 
 #: qdialogbuttonbox.cpp:540
 msgctxt "QDialogButtonBox"
 msgid "Apply"
-msgstr ""
+msgstr "Uygula"
 
 #: qdialogbuttonbox.cpp:543
 msgctxt "QDialogButtonBox"
 msgid "Reset"
-msgstr ""
+msgstr "Sıfırla"
 
 #: qdialogbuttonbox.cpp:546
 msgctxt "QDialogButtonBox"
 msgid "Help"
-msgstr ""
+msgstr "Yardım"
 
 #: qdialogbuttonbox.cpp:550
 msgctxt "QDialogButtonBox"
 msgid "Don't Save"
-msgstr ""
+msgstr "Kaydetme"
 
 #: qdialogbuttonbox.cpp:554
 msgctxt "QDialogButtonBox"
@@ -90,67 +90,67 @@ msgstr ""
 #: qdialogbuttonbox.cpp:557
 msgctxt "QDialogButtonBox"
 msgid "&Yes"
-msgstr ""
+msgstr "Evet"
 
 #: qdialogbuttonbox.cpp:560
 msgctxt "QDialogButtonBox"
 msgid "Yes to &All"
-msgstr ""
+msgstr "Tümüne evet"
 
 #: qdialogbuttonbox.cpp:563
 msgctxt "QDialogButtonBox"
 msgid "&No"
-msgstr ""
+msgstr "Hayır"
 
 #: qdialogbuttonbox.cpp:566
 msgctxt "QDialogButtonBox"
 msgid "N&o to All"
-msgstr ""
+msgstr "Tümüne hayır"
 
 #: qdialogbuttonbox.cpp:569
 msgctxt "QDialogButtonBox"
 msgid "Save All"
-msgstr ""
+msgstr "Hepsini kaydet"
 
 #: qdialogbuttonbox.cpp:572
 msgctxt "QDialogButtonBox"
 msgid "Abort"
-msgstr ""
+msgstr "Durdur"
 
 #: qdialogbuttonbox.cpp:575
 msgctxt "QDialogButtonBox"
 msgid "Retry"
-msgstr ""
+msgstr "Yeniden Dene"
 
 #: qdialogbuttonbox.cpp:578
 msgctxt "QDialogButtonBox"
 msgid "Ignore"
-msgstr ""
+msgstr "Yoksay"
 
 #: qdialogbuttonbox.cpp:581
 msgctxt "QDialogButtonBox"
 msgid "Restore Defaults"
-msgstr ""
+msgstr "Varsayılanı ayarla"
 
 #: qdialogbuttonbox.cpp:552
 msgctxt "QDialogButtonBox"
 msgid "Close without Saving"
-msgstr ""
+msgstr "Kaydetmeden kapat"
 
 #: qdialogbuttonbox.cpp:525
 msgctxt "QDialogButtonBox"
 msgid "&OK"
-msgstr ""
+msgstr "Tamam"
 
 #: qdirmodel.cpp:423
 msgctxt "QDirModel"
 msgid "Name"
-msgstr ""
+msgstr "İsim"
 
 #: qdirmodel.cpp:424
 msgctxt "QDirModel"
 msgid "Size"
-msgstr ""
+msgstr "Boyut"
 
 #: qdirmodel.cpp:427
 msgctxt "QDirModel"
@@ -160,198 +160,199 @@ msgstr ""
 #: qdirmodel.cpp:429
 msgctxt "QDirModel"
 msgid "Type"
-msgstr ""
+msgstr "Tür"
 
 #: qdirmodel.cpp:435
 msgctxt "QDirModel"
 msgid "Date Modified"
-msgstr ""
+msgstr "Son Değiştirilme Tarihi"
 
 #: qfiledialog_win.cpp:126
 msgctxt "QFileDialog"
 msgid "All Files (*)"
-msgstr ""
+msgstr "Tüm Dosyalar"
 
 #: qfiledialog.cpp:881
 msgctxt "QFileDialog"
 msgid "Directories"
-msgstr ""
+msgstr "Klasörler"
 
 #: qfiledialog.cpp:2408
 msgctxt "QFileDialog"
 msgid "&Open"
-msgstr ""
+msgstr "Aç"
 
 #: qfiledialog.cpp:919
 msgctxt "QFileDialog"
 msgid "&Save"
-msgstr ""
+msgstr "Kaydet"
 
 #: qfiledialog.cpp:435
 msgctxt "QFileDialog"
 msgid "Open"
-msgstr ""
+msgstr "Aç"
 
 #: qfiledialog.cpp:1670
 msgctxt "QFileDialog"
 msgid "%1 already exists.Do you want to replace it?"
-msgstr ""
+msgstr "Belirtilen dosya zaten var. Değiştirmek ister misiniz?"
 
 #: qfiledialog.cpp:1690
 msgctxt "QFileDialog"
 msgid "%1File not found.Please verify the correct file name was given."
-msgstr ""
+msgstr "Dosya bulunamadı. Lütfen dosya adından emin olup tekrar deneyin."
 
 #: qdirmodel.cpp:833
 msgctxt "QFileDialog"
 msgid "My Computer"
-msgstr ""
+msgstr "Bilgisayarım"
 
 #: qfiledialog.cpp:462
 msgctxt "QFileDialog"
 msgid "&Rename"
-msgstr ""
+msgstr "Yeniden adlandır"
 
 #: qfiledialog.cpp:463
 msgctxt "QFileDialog"
 msgid "&Delete"
-msgstr ""
+msgstr "Sil"
 
 #: qfiledialog.cpp:464
 msgctxt "QFileDialog"
 msgid "Show &hidden files"
-msgstr ""
+msgstr "Gizli dosyaları göster"
 
 #: ui_qfiledialog.h:264
 msgctxt "QFileDialog"
 msgid "Back"
-msgstr ""
+msgstr "Geri"
 
 #: ui_qfiledialog.h:274
 msgctxt "QFileDialog"
 msgid "Parent Directory"
-msgstr ""
+msgstr "Ana Dizin"
 
 #: ui_qfiledialog.h:284
 msgctxt "QFileDialog"
 msgid "List View"
-msgstr ""
+msgstr "Listele"
 
+# Normally it's "ayrıntılı görünüm" but windows translates it in this way.
 #: ui_qfiledialog.h:289
 msgctxt "QFileDialog"
 msgid "Detail View"
-msgstr ""
+msgstr "Ayrıntılar"
 
 #: ui_qfiledialog.h:292
 msgctxt "QFileDialog"
 msgid "Files of type:"
-msgstr ""
+msgstr "Dosya türü"
 
 #: qfiledialog.cpp:883
 msgctxt "QFileDialog"
 msgid "Directory:"
-msgstr ""
+msgstr "Dizin"
 
 #: qfiledialog.cpp:2476
 msgctxt "QFileDialog"
 msgid ""
 "%1Directory not found.Please verify the correct directory name was given."
-msgstr ""
+msgstr "Dizin bulunamadı. Lütfen dizin adından emin olarak tekrar deneyiniz."
 
 #: qfiledialog.cpp:2281
 msgctxt "QFileDialog"
 msgid "'%1' is write protected.Do you want to delete it anyway?"
-msgstr ""
+msgstr "salt okunur. Yine de silmek ister misiniz?"
 
 #: qfiledialog.cpp:2286
 msgctxt "QFileDialog"
 msgid "Are sure you want to delete '%1'?"
-msgstr ""
+msgstr "silmek istediğinizden emin misiniz?"
 
 #: qfiledialog.cpp:2299
 msgctxt "QFileDialog"
 msgid "Could not delete directory."
-msgstr ""
+msgstr "Dizin silinemiyor."
 
 #: qfiledialog_win.cpp:128
 msgctxt "QFileDialog"
 msgid "All Files (*.*)"
-msgstr ""
+msgstr "Tüm dosyalar"
 
 #: qfiledialog.cpp:437
 msgctxt "QFileDialog"
 msgid "Save As"
-msgstr ""
+msgstr "Farklı Kaydet"
 
 #: qfileiconprovider.cpp:379
 msgctxt "QFileDialog"
 msgid "Drive"
-msgstr ""
+msgstr "Sürücü"
 
 #: qfileiconprovider.cpp:383
 msgctxt "QFileDialog"
 msgid "File"
-msgstr ""
+msgstr "Dosya"
 
 #: qfileiconprovider.cpp:412
 msgctxt "QFileDialog"
 msgid "Unknown"
-msgstr ""
+msgstr "Bilinmiyor"
 
 #: qfiledialog.cpp:439
 msgctxt "QFileDialog"
 msgid "Find Directory"
-msgstr ""
+msgstr "Dizini bul"
 
 #: qfiledialog.cpp:458
 msgctxt "QFileDialog"
 msgid "Show "
-msgstr ""
+msgstr "Göster"
 
 #: ui_qfiledialog.h:269
 msgctxt "QFileDialog"
 msgid "Forward"
-msgstr ""
+msgstr "İleri"
 
 #: qfiledialog.cpp:2137
 msgctxt "QFileDialog"
 msgid "New Folder"
-msgstr ""
+msgstr "Yeni klasör"
 
 #: qfiledialog.cpp:465
 msgctxt "QFileDialog"
 msgid "&New Folder"
-msgstr ""
+msgstr "Yeni klasör"
 
 #: qfiledialog.cpp:917
 msgctxt "QFileDialog"
 msgid "&Choose"
-msgstr ""
+msgstr "seç"
 
 #: qsidebar.cpp:388
 msgctxt "QFileDialog"
 msgid "Remove"
-msgstr ""
+msgstr "kaldır"
 
 #: qfiledialog.cpp:886
 msgctxt "QFileDialog"
 msgid "File &name:"
-msgstr ""
+msgstr "Dosya &isim"
 
 #: ui_qfiledialog.h:261
 msgctxt "QFileDialog"
 msgid "Look in:"
-msgstr ""
+msgstr "Gözat:"
 
 #: ui_qfiledialog.h:279
 msgctxt "QFileDialog"
 msgid "Create New Folder"
-msgstr ""
+msgstr "Yeni klasör yarat"
 
 #: qfilesystemmodel.cpp:761
 msgctxt "QFileSystemModel"
 msgid "Invalid filename"
-msgstr ""
+msgstr "Geçersiz dosya adı"
 
 #: qfilesystemmodel.cpp:763
 msgctxt "QFileSystemModel"
@@ -359,16 +360,18 @@ msgid ""
 "<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer "
 "characters or no punctuations marks."
 msgstr ""
+"\"%1\" ismi kullanılarmıyor. Lütfen başka bir ismi biraz daha karakterle ve "
+"yazım işareti kullanmadan deneyiniz."
 
 #: qfilesystemmodel.cpp:832
 msgctxt "QFileSystemModel"
 msgid "Name"
-msgstr ""
+msgstr "İsim"
 
 #: qfilesystemmodel.cpp:834
 msgctxt "QFileSystemModel"
 msgid "Size"
-msgstr ""
+msgstr "Boyut"
 
 #: qfilesystemmodel.cpp:838
 msgctxt "QFileSystemModel"
@@ -378,44 +381,44 @@ msgstr ""
 #: qfilesystemmodel.cpp:840
 msgctxt "QFileSystemModel"
 msgid "Type"
-msgstr ""
+msgstr "Tür"
 
 #: qfilesystemmodel.cpp:847
 msgctxt "QFileSystemModel"
 msgid "Date Modified"
-msgstr ""
+msgstr "Son Değiştirilme Tarihi"
 
 #: qfilesystemmodel_p.h:198
 msgctxt "QFileSystemModel"
 msgid "My Computer"
-msgstr ""
+msgstr "Bilgisayarım"
 
 #: qfilesystemmodel_p.h:200
 msgctxt "QFileSystemModel"
 msgid "Computer"
-msgstr ""
+msgstr "Bilgisayar"
 
 #: qfilesystemmodel.cpp:677
 msgctxt "QFileSystemModel"
 msgid "%1 TB"
-msgstr ""
+msgstr "TB"
 
 #: qfilesystemmodel.cpp:679
 msgctxt "QFileSystemModel"
 msgid "%1 GB"
-msgstr ""
+msgstr "GB"
 
 #: qfilesystemmodel.cpp:681
 msgctxt "QFileSystemModel"
 msgid "%1 MB"
-msgstr ""
+msgstr "MB"
 
 #: qfilesystemmodel.cpp:683
 msgctxt "QFileSystemModel"
 msgid "%1 KB"
-msgstr ""
+msgstr "KB"
 
 #: qfilesystemmodel.cpp:684
 msgctxt "QFileSystemModel"
 msgid "%1 bytes"
-msgstr ""
+msgstr "bayts"
