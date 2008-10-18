@@ -71,9 +71,9 @@ ServiceSettings::getServices()
     if(enabledS.compare("x1") == 0) {
       enabled = true;
     }
-    Service s(address, virtualPort, physAddrPort, serviceDir, enabled);
-    s.setAdditionalServiceOptions(additionalData);
-    services.addService(s);
+    Service service(address, virtualPort, physAddrPort, serviceDir, enabled);
+    service.setAdditionalServiceOptions(additionalData);
+    services.addService(service);
   }
   return services;
 }
