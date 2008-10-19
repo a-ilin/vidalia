@@ -24,10 +24,6 @@
 #include <QMessageBox>
 #include <vidalia.h>
 
-#ifdef Q_OS_WIN32
-#include <winsock2.h>
-#endif
-
 #include "upnpcontrol.h"
 
 #define UPNPCONTROL_REINIT_MSEC 300000 // 5 minutes
