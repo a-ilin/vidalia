@@ -274,19 +274,19 @@ UPNPControlThread::initializeUPNP()
 UPNPControl::UPNPError
 UPNPControlThread::forwardPort(quint16 port)
 {
+  QString sPort;
   int retval;
-
-  char sPort[6];
 
   char intClient[16];
   char intPort[6];
 
   // Convert the port number to a string
-  snprintf(sPort, sizeof(sPort), "%d", port);
+  sPort = QString::number(port);
 
   // Add the port mapping of external:port -> internal:port
   retval = UPNP_AddPortMapping(urls.controlURL, data.servicetype,
-                               sPort, sPort, lanaddr, "Tor relay", "TCP");
+                               qPrintable(sPort), qPrintable(sPort), lanaddr,
+                               "Tor relay", "TCP");
   if(UPNPCOMMAND_SUCCESS != retval) {
     vWarn("AddPortMapping(%1, %2, %3) failed with code %4")
             .arg(sPort).arg(sPort).arg(lanaddr).arg(retval);
@@ -295,7 +295,8 @@ UPNPControlThread::forwardPort(quint16 port)
 
   // Check if the port mapping was accepted
   retval = UPNP_GetSpecificPortMappingEntry(urls.controlURL, data.servicetype,
-                                            sPort, "TCP", intClient, intPort);
+                                            qPrintable(sPort), "TCP",
+                                            intClient, intPort);
   if(UPNPCOMMAND_SUCCESS != retval) {
     vWarn("GetSpecificPortMappingEntry() failed with code %1").arg(retval);
     return UPNPControl::GetPortMappingFailed;
@@ -317,14 +318,11 @@ UPNPControlThread::forwardPort(quint16 port)
 UPNPControl::UPNPError
 UPNPControlThread::disablePort(quint16 port)
 {
-  char sPort[6];
-
-  // Convert the port number to a string
-  snprintf(sPort, sizeof(sPort), "%d", port);
+  QString sPort = QString::number(port);
 
   // Remove the mapping
   int retval = UPNP_DeletePortMapping(urls.controlURL, data.servicetype,
-                                      sPort, "TCP");
+                                      qPrintable(sPort), "TCP");
   if(UPNPCOMMAND_SUCCESS != retval) {
     vWarn("DeletePortMapping() failed with code %1").arg(retval);
     return UPNPControl::DeletePortMappingFailed;
