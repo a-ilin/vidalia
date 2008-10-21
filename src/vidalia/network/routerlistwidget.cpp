@@ -15,11 +15,13 @@
 */
 
 #include <QHeaderView>
+#include <QClipboard>
 #include <vidalia.h>
 
 #include "routerlistwidget.h"
 
 #define IMG_ZOOM   ":/images/22x22/page-zoom.png"
+#define IMG_COPY   ":/images/22x22/edit-copy.png"
 
 
 RouterListWidget::RouterListWidget(QWidget *parent)
@@ -53,24 +55,84 @@ RouterListWidget::retranslateUi()
  * context menu will be displayed providing a list of actions, including
  * zooming in on the server. */
 void
-RouterListWidget::customContextMenuRequested(const QPoint &pos)
+RouterListWidget::contextMenuEvent(QContextMenuEvent *event)
 {
-  QMenu menu(this);
+  QAction *action;
+  QMenu *menu, *copyMenu;
+  QList<QTreeWidgetItem *> selected;
 
-  /* Find out which (if any) router in the list is selected */
-  RouterListItem *item = dynamic_cast<RouterListItem *>(itemAt(pos));
-  if (!item)
+  selected = selectedItems();
+  if (! selected.size())
     return;
-  
-  /* Set up the context menu */
-  QAction *zoomAction =
-    new QAction(QIcon(IMG_ZOOM), tr("Zoom to Relay"), &menu);
-  menu.addAction(zoomAction);
-  
-  /* Display the menu and find out which (if any) action was selected */
-  QAction *action = menu.exec(mapToGlobal(pos));
-  if (action == zoomAction)
-    emit zoomToRouter(item->id());
+
+  menu = new QMenu();
+  copyMenu = menu->addMenu(QIcon(IMG_COPY), tr("Copy"));
+  action = copyMenu->addAction(tr("Nickname"));
+  connect(action, SIGNAL(triggered()), this, SLOT(copySelectedNicknames()));
+
+  action = copyMenu->addAction(tr("Fingerprint"));
+  connect(action, SIGNAL(triggered()), this, SLOT(copySelectedFingerprints()));
+
+  action = menu->addAction(QIcon(IMG_ZOOM), tr("Zoom to Relay"));
+  if (selected.size() > 1)
+    action->setEnabled(false);
+  else
+    connect(action, SIGNAL(triggered()), this, SLOT(zoomToSelectedRelay()));
+
+  menu->exec(event->globalPos());
+  delete menu;
+}
+
+/** Copies the nicknames for all currently selected relays to the clipboard.
+ * Nicknames are formatted as a comma-delimited list, suitable for doing
+ * dumb things with your torrc. */
+void
+RouterListWidget::copySelectedNicknames()
+{
+  QString text;
+
+  foreach (QTreeWidgetItem *item, selectedItems()) {
+    RouterListItem *relay = dynamic_cast<RouterListItem *>(item);
+    if (relay)
+      text.append(relay->name() + ",");
+  }
+  if (text.length()) {
+    text.remove(text.length()-1, 1);
+    vApp->clipboard()->setText(text);
+  }
+}
+
+/** Copies the fingerprints for all currently selected relays to the
+ * clipboard. Fingerprints are formatted as a comma-delimited list, suitable
+ * for doing dumb things with your torrc. */
+void
+RouterListWidget::copySelectedFingerprints()
+{
+  QString text;
+
+  foreach (QTreeWidgetItem *item, selectedItems()) {
+    RouterListItem *relay = dynamic_cast<RouterListItem *>(item);
+    if (relay)
+      text.append("$" + relay->id() + ",");
+  }
+  if (text.length()) {
+    text.remove(text.length()-1, 1);
+    vApp->clipboard()->setText(text);
+  }
+}
+
+/** Emits a zoomToRouter() signal containing the fingerprint of the
+ * currently selected relay. */
+void
+RouterListWidget::zoomToSelectedRelay()
+{
+  QList<QTreeWidgetItem *> selected = selectedItems();
+  if (selected.size() != 1)
+    return;
+
+  RouterListItem *relay = dynamic_cast<RouterListItem *>(selected[0]);
+  if (relay)
+    emit zoomToRouter(relay->id());
 }
 
 /** Deselects all currently selected routers. */
@@ -166,12 +228,14 @@ RouterListWidget::addRouter(RouterDescriptor rd)
 void
 RouterListWidget::onSelectionChanged()
 {
-  RouterDescriptor rd;
-  QList<QTreeWidgetItem *> items = selectedItems();
+  QList<RouterDescriptor> descriptors;
 
-  if (items.count() > 0) {
-    rd = ((RouterListItem *)items[0])->descriptor();
+  foreach (QTreeWidgetItem *item, selectedItems()) {
+    RouterListItem *relay = dynamic_cast<RouterListItem *>(item);
+    if (relay)
+      descriptors << relay->descriptor();
   }
-  emit routerSelected(rd);
+  if (descriptors.count() > 0)
+    emit routerSelected(descriptors);
 }
 

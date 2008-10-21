@@ -90,8 +90,8 @@ NetViewer::NetViewer(QWidget *parent)
   /* Connect the necessary slots and signals */
   connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
   connect(ui.actionRefresh, SIGNAL(triggered()), this, SLOT(refresh()));
-  connect(ui.treeRouterList, SIGNAL(routerSelected(RouterDescriptor)),
-	        this, SLOT(routerSelected(RouterDescriptor)));
+  connect(ui.treeRouterList, SIGNAL(routerSelected(QList<RouterDescriptor>)),
+	        this, SLOT(routerSelected(QList<RouterDescriptor>)));
   connect(ui.treeRouterList, SIGNAL(zoomToRouter(QString)),
           _map, SLOT(zoomToRouter(QString)));
   connect(ui.treeCircuitList, SIGNAL(circuitSelected(Circuit)),
@@ -408,14 +408,20 @@ NetViewer::circuitSelected(const Circuit &circuit)
   ui.textRouterInfo->display(routers);
 }
 
-/** Called when the user selects a router from the router list. */
+/** Called when the user selects one or more routers from the router list. */
 void
-NetViewer::routerSelected(const RouterDescriptor &router)
+NetViewer::routerSelected(const QList<RouterDescriptor> &routers)
 {
   _map->deselectAll();
   ui.textRouterInfo->clear();
-  ui.textRouterInfo->display(router);
-  _map->selectRouter(router.id());
+  ui.textRouterInfo->display(routers);
+
+  /* XXX: Ideally we would also be able to select multiple pinpoints on the
+   *      map. But our current map sucks and you can't even tell when one is
+   *      selected anyway. Worry about this when we actually get to Marble.
+   */
+  if (routers.size() == 1)
+    _map->selectRouter(routers[0].id());
 }
 
 /** If there are any IPs in the resolve queue, do the request now. */
