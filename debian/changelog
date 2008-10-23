@@ -1,0 +1,26 @@
+vidalia (0.1.9-2) unstable; urgency=low
+
+  * Moved Pre-depens with debconf to Depends
+
+ -- Ulises Vitulli <uvitulli@fi.uba.ar>  Sun, 28 Sep 2008 20:04:44 +0200
+
+vidalia (0.1.9-1) unstable; urgency=low
+
+  [ Vern Sun ]
+  * Initial release (Closes: #405431).
+
+  [ Ulises Vitulli ]
+  * Added README.Debian and FAQ.txt.
+  * Added menu and .desktop files.
+  * Added vidalia.xpm icon (provided by upstream).
+  * Debconf translations:
+    - Spanish.
+    - Catalan.
+    - Russian.
+    - Finnish.
+    - Italian.
+    - French.
+    - German.
+    - Portuguese.
+
+ -- Ulises Vitulli <uvitulli@fi.uba.ar>  Sat, 20 Sep 2008 05:45:56 -0300

@@ -1,0 +1,20 @@
+Source: vidalia
+Section: net
+Priority: extra
+Maintainer: Vern Sun <s5unty@gmail.com>
+Uploaders: Ulises Vitulli <uvitulli@fi.uba.ar>
+Build-Depends: debhelper (>= 5), autotools-dev, libqt4-dev (>= 4.1.0), po-debconf (>= 1.0), cmake (>= 2.4.8), libssl-dev (>= 0.9.8g)
+Standards-Version: 3.8.0
+Homepage: http://www.vidalia-project.net
+
+Package: vidalia
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, debconf (>=1.5.11) | debconf-2.0
+Recommends: tor
+Suggests: iceweasel-torbutton
+Description: controller GUI for the Tor software
+ Vidalia allows you to start and stop Tor, view the status of Tor at a glance,
+ and monitor Tor's bandwidth usage. Vidalia also makes it easy to contribute to
+ the Tor network by helping you setup a Tor server, if you wish. To find more
+ information about what Tor is and how to use it, see the Tor homepage:
+ https://www.torproject.org/

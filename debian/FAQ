@@ -1,0 +1,116 @@
+Frequently Asked Questions
+==========================
+
+   1. General
+         1. What is Vidalia?
+         2. Does Vidalia run on my operating system?
+         3. How can I find out when new Vidalia releases are available?
+         4. Where can I get additional support for Vidalia?
+   2. Running
+         1. I installed Vidalia/Tor/Privoxy. Now what?
+         2. Can I run Vidalia from a USB drive?
+         3. Can Vidalia "attach" to an existing Tor process?
+         4. Why do I see connections to geoip.vidalia-project.net in my network map?
+         5. Can I run a relay without worrying about abuse complaints?
+   3. Common problems
+         1. When I try to start Tor I get an error message in Vidalia's message log ...
+
+
+1.General
+=========
+
+1.1 What is Vidalia?
+--------------------
+
+Vidalia is a GUI for Tor, making it easy for you to run, monitor, and configure your installation of Tor. It lets you start and stop Tor, as well as letting you know when things go wrong. Vidalia also lets you see how much bandwidth Tor is using and can even help you set up your own Tor server.
+
+
+1.2 Does Vidalia run on my operating system?
+-------------------------------------------
+
+Vidalia is a cross-platform GUI built using the Qt GUI toolkit. Vidalia should run on any platform supported by Qt, which includes (but is not necessarily limited to):
+
+    * Windows 95/98/Me, NT4, 2000, XP, and Vista
+    * Mac OS X Panther (10.3), Tiger (10.4), and Leopard (10.5)
+    * Linux or other Unix variants running the X Window system. 
+
+
+1.3 How can I find out when new Vidalia releases are available?
+---------------------------------------------------------------
+
+Vidalia is still under active development and we tend to put out a new release approximately every 1-2 months. You can subscribe to our Trac RSS feed to learn when we have put out a new release. We also announce new releases on our homepage and on our download page.
+
+
+1.4 Where can I get additional support for Vidalia?
+---------------------------------------------------
+
+First, read through this FAQ and also search the documentation on our wiki. If you prefer IRC, you can find us in #vidalia on irc.oftc.net. Otherwise, we have a vidalia-users mailing list set up for Vidalia users to help out and answer each others' questions.
+
+
+2 Running
+=========
+
+2.1 I installed Vidalia/Tor/Privoxy. Now what?
+----------------------------------------------
+
+Now you need to configure your applications to send their traffic through Tor. Scott Squires has created an extension for Firefox called Torbutton that lets you easily toggle your browser's use of Tor. You might also check out FoxTor for a similar Firefox extension.
+
+See the Torify How-To for information on configuring several other applications to use Tor. The Tor documentation for Windows, Mac OS X, or Linux/BSD/Unix might be useful for you, as well.
+
+
+2.2 Can I run Vidalia from a USB drive?
+---------------------------------------
+
+Yes! You can run Vidalia from a USB drive, perhaps for a portable Tor/Vidalia/Polipo or Tor/Vidalia/Privoxy combination, by using Vidalia's -datadir command-line argument. The -datadir argument tells Vidalia where you would like it to store all of its configuration and application data. For example, you might have a batch file on your USB drive that starts Vidalia as follows:
+
+vidalia -datadir "."
+
+The above line would tell Vidalia to use the current working directory as its data directory. You can also configure Vidalia to look for a Tor executable and configuration file (torrc) on your USB drive using Vidalia's Settings dialog or editing Vidalia's configuration file (vidalia.conf).
+
+If you want to run the Windows version of Vidalia from a USB drive, you may also need to copy mingwm10.dll from a Vidalia or MinGW package onto your USB drive in the same directory as vidalia.exe.
+
+
+2.3 Can Vidalia "attach" to an existing Tor process?
+----------------------------------------------------
+
+Yes. Before Vidalia starts its own Tor process, it always first checks to see if it can connect to the control port of an existing Tor process. All you need to do is enable a control port on the Tor you already have running, and Vidalia will connect to it instead of starting its own Tor process. You first need to open your `torrc` in a text editor. Then, add the following line on a line by itself anywhere in your torrc:
+
+  ControlPort 9051
+
+You will also likely want to set a password for your control port to limit what applications are allowed to connect to it. To do so, you first need to open up a terminal or command prompt and run the following command (you may need to cd to the location of your Tor executable):
+
+#  tor --hash-password mypassword
+
+Replace "mypassword" with whatever password you would like to use for your control port. The last line of output from the above command will contain a string that starts with "16:" and is followed by a long string letters and numbers. This string is a hash of the password you supplied as an argument to the --hash-password command above. Copy this entire string, and then add a HashedControlPassword line to your torrc similar to the following:
+
+  "HashedControlPassword 16:816172DEB125A9CA603A6A8A5C16D0642DA4556E4EC417E6B9AAC9AF0D"
+
+Save your torrc changes and either restart or "HUP" your Tor process to reload your configuration. Then you can click 'Start Tor' in Vidalia, which will connect to your Tor process and then prompt you to enter your original control password ("mypassword" in the example above).
+
+
+
+2.4 Why do I see connections to geoip.vidalia-project.net in my network map?
+----------------------------------------------------------------------------
+
+Vidalia 0.0.5 added a network map feature that lets you see where in the world your traffic is going. To be able to map Tor relay IP addresses to approximate geographic locations, we use the GeoLite City database from MaxMind. Unfortunately, the database is around 24MB and shipping it alongside the Vidalia binary would be unreasonable. Consequently, we host the database on our servers and created a small perl script interface to it, allowing Vidalia clients to query the database via standard HTTP GET or POST requests.
+
+All communication between Vidalia and our servers is done over Tor, so our servers do not know who is making the requests. Additionally, no identifying information is included in the requests. Of course, you can verify this by looking at the source code, such as geoipresolver.cpp and torsocket.cpp. We also have a specification for the format of our geographic information requests and responses.
+
+
+2.5 Can I run a relay without worrying about abuse complaints?
+--------------------------------------------------------------
+
+Tor relay operators can specify which services and/or ports clients are allowed to access from their relay. From Vidalia's Exit Policies tab, you can select what services you want to allow clients to access from your relay. Vidalia's help documentation explains what each exit policy option means. By default, Tor relays allow access to many popular services, but restricts some (such as port 25) due to the potential for abuse. Tor's FAQ has more information for relay operators on how to avoid abuse complaints.
+
+Rather than running a normal, public Tor relay, you might also consider running a bridge relay. Some Internet Service Providers (ISPs) attempt to prevent users from accessing the Tor network by blocking connections to known Tor relays. Bridge relays (or bridges for short) are relays that help these censored users access the Tor network. Unlike other Tor relays, bridges are not listed in the same public directories as normal relays. Since there is no complete public list of them, even if your ISP is filtering connections to all the known Tor relays, they probably won't be able to block all the bridges.
+
+
+3 Common problems
+=================
+
+3.1 When I try to start Tor I get an error message in Vidalia's message log that says, "Failed to parse/validate config: Failed to bind one of the listener ports." What's that mean?
+-----------------------
+
+This error message typically means you already have a Tor process running that does not have an open control port. When Vidalia tried to start its own Tor process, Vidalia's Tor process conflicted with your existing Tor process. On Windows, you can look in your Task Manager for a process called tor.exe, select it, and then click "End Process" to terminate your Tor process. On most other operating systems, the ps and kill commands can help you find and terminate your existing Tor process. Then you can simply click 'Start Tor' in Vidalia, and Vidalia will start a new Tor process with the necessary arguments that allow Vidalia to communicate with and control Tor.
+
+If you would like Vidalia to connect to your existing Tor instead of starting a new Tor process, see the FAQ entry above on configuring a control port and password for your existing Tor process. 

@@ -1,0 +1,52 @@
+# Translation of vidalia debconf templates to French
+# Copyright (C) 2008 Christian Perrier <bubulle@debian.org>
+# This file is distributed under the same license as the vidalia package.
+#
+# Christian Perrier <bubulle@debian.org>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: fr\n"
+"Report-Msgid-Bugs-To: vidalia@packages.debian.org\n"
+"POT-Creation-Date: 2008-09-18 15:32-0300\n"
+"PO-Revision-Date: 2008-09-19 07:18+0200\n"
+"Last-Translator: Christian Perrier <bubulle@debian.org>\n"
+"Language-Team: French <debian-l10n-french@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid "Do you want to stop the existing Tor process and let Vidalia start Tor?"
+msgstr ""
+"Faut-il interrompre le processus Tor en cours et laisser Vidalia démarrer "
+"Tor ?"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"It looks like there is a Tor process already running. If you want to start "
+"Tor using Vidalia, you might have to stop the existing Tor process. "
+"Otherwise you will have to enable 'ControlPort' option into Tor as explained "
+"in the documentation  carried with this package ('/usr/share/doc/vidalia/"
+"README.Debian')."
+msgstr ""
+"Un processus Tor semble être en cours d'exécution. Si vous souhaitez lancer "
+"Tor avec Vidalia, il peut être nécessaire d'interrompre ce processus. Dans "
+"le cas contraire, vous devrez activer l'option « ControlPort » de Tor, selon "
+"les instructions fournies avec ce paquet dans le fichier usr/share/doc/"
+"vidalia/README.Debian."
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"Note that if you choose to let Vidalia start Tor, you will have to manually "
+"disable  Tor starting automatically on every reboot (See 'README.Debian')."
+msgstr ""
+"Veuillez noter que si vous choisissez de lancer Tor avec Vidalia, il sera "
+"nécessaire de désactiver le lancement automatique de Tor au démarrage du "
+"système (comme expliqué dans le fichier README.Debian)."

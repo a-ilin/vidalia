@@ -1,0 +1,48 @@
+# Copyright (C) 2008 UlisesVitulli
+# This file is distributed under the same license as the Vidalia package.
+# Ulises Vitulli <uvitulli@fi.uba.ar>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1.9-1\n"
+"Report-Msgid-Bugs-To: vidalia@packages.debian.org\n"
+"POT-Creation-Date: 2008-09-18 00:31-0300\n"
+"PO-Revision-Date: 2008-09-17 16:17-0300\n"
+"Last-Translator: Ulises Vitulli <uvitulli@fi.uba.ar>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"Do you want to stop the existing Tor process and let Vidalia start Tor?"
+msgstr ""
+"Voleu parar l'actual execució de Tor i permetre que Vidalia engegue Tor?"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"It looks like there is a Tor process already running. If you want to start "
+"Tor using Vidalia, you might have to stop the existing Tor process. "
+"Otherwise you will have to enable 'ControlPort' option into Tor as explained "
+"in the documentation  carried with this package ('/usr/share/doc/vidalia/"
+"README.Debian')."
+msgstr ""
+"Pareix que encara està en marxa el Tor. Si voleu engegar Tor  amb el Vidalia,"
+"hauríeu de detindre el procés de Tor què està en execució.Si no, haureu "
+"d'engegar l'opció «ControlPort» a Tor,tal com s'explica a la documentació que "
+"suministra aquest paquet(/usr/share/doc/vidalia/README.Debian)"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"Note that if you choose to let Vidalia start Tor, you will have to manually "
+"disable  Tor starting automatically on every reboot (See 'README.Debian')."
+msgstr ""
+"Adoneu-vos que si trieu que Vidalia engegue Tor, haureu de deshabilitar de forma "
+"manual l'engegat de Tor automàtic a cada reinici (Vegeu «README.Debian»)."

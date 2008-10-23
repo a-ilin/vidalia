@@ -1,0 +1,47 @@
+# Copyright (C) 2008 Vincenzo Campanella
+# This file is distributed under the same license as the Vidalia package.
+# Vincenzo Campanella <vinz65@gmail.com>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1.9-1\n"
+"Report-Msgid-Bugs-To: vidalia@packages.debian.org\n"
+"POT-Creation-Date: 2008-09-18 15:32-0300\n"
+"PO-Revision-Date: 2008-09-17 16:17-0300\n"
+"Last-Translator: Vincenzo Campanella <vinz65@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid "Do you want to stop the existing Tor process and let Vidalia start Tor?"
+msgstr "Vuoi arrestare il processo di Tor esistente e che Vidalia avvii Tor?"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"It looks like there is a Tor process already running. If you want to start "
+"Tor using Vidalia, you might have to stop the existing Tor process. "
+"Otherwise you will have to enable 'ControlPort' option into Tor as explained "
+"in the documentation  carried with this package ('/usr/share/doc/vidalia/"
+"README.Debian')."
+msgstr ""
+"Sembra che ci sia già un processo di Tor in esecuzione. Se vuoi avviare Tor "
+"utilizzando Vidalia, dovresti arrestare il processo di Tor in esecuzione. In "
+"caso contrario dovrai abilitare l'opzione 'ControlPort' in Tor come "
+"illustrato nella documentazione allegata a questo pacchetto ('usr/share/doc/"
+"vidalia/README.Debian')."
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"Note that if you choose to let Vidalia start Tor, you will have to manually "
+"disable  Tor starting automatically on every reboot (See 'README.Debian')."
+msgstr ""
+"Nota che se scegli che Vidalia avvii Tor, dovrai disabilitare manualmente "
+"l'esecuzione automatica di Tor ad ogni riavvio (vedi 'README.Debian')."

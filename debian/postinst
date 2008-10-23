@@ -1,0 +1,7 @@
+#!/bin/sh -e
+#DEBHELPER#
+
+. /usr/share/debconf/confmodule
+
+db_stop
+exit 0

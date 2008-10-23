@@ -1,0 +1,3 @@
+version=3
+
+http://vidalia-project.net:8001/vidalia/vidalia-(.*)\.tar\.gz

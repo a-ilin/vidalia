@@ -1,0 +1,51 @@
+# translation of vidalia debconf to Portuguese
+# Copyright (C) 2008 Américo Monteiro
+# This file is distributed under the same license as the vidalia package.
+#
+# Américo Monteiro <a_monteiro@netcabo.pt>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: vidalia 0.1.9-1\n"
+"Report-Msgid-Bugs-To: vidalia@packages.debian.org\n"
+"POT-Creation-Date: 2008-09-18 15:32-0300\n"
+"PO-Revision-Date: 2008-09-19 21:35+0100\n"
+"Last-Translator: Américo Monteiro <a_monteiro@netcabo.pt>\n"
+"Language-Team: Portuguese <traduz@debianpt.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid "Do you want to stop the existing Tor process and let Vidalia start Tor?"
+msgstr ""
+"Deseja parar o processo Tor existente e deixar o Vidalia iniciar o Tor?"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"It looks like there is a Tor process already running. If you want to start "
+"Tor using Vidalia, you might have to stop the existing Tor process. "
+"Otherwise you will have to enable 'ControlPort' option into Tor as explained "
+"in the documentation  carried with this package ('/usr/share/doc/vidalia/"
+"README.Debian')."
+msgstr ""
+"Parece que já existe um processo Tor a correr. Se você deseja iniciar o Tor "
+"usando o Vidalia, você poderá ter que parar o processo Tor existente. Caso "
+"contrário você terá que activar a opção 'ControlPort' no Tor como está "
+"explicado na documentação que acompanha este pacote ('/usr/share/doc/vidalia/"
+"README.Debian')."
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"Note that if you choose to let Vidalia start Tor, you will have to manually "
+"disable  Tor starting automatically on every reboot (See 'README.Debian')."
+msgstr ""
+"Note que se você deseja que o Vidalia inicie o Tor, você terá que desactivar "
+"manualmente o arranque automático do Tor a cada arranque da máquina (veja "
+"'README.Debian')."

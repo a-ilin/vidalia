@@ -1,0 +1,6 @@
+?package(vidalia):needs="X11"\
+	hints="Vidalia,Tor,Routing,Network Routing,Anonymous,Kde4,Onion"\
+	section="Applications/System/Security"\
+	title="Vidalia-Tor Onion Routing GUI"\
+	command="/usr/bin/vidalia"\
+	icon="/usr/share/pixmaps/vidalia.xpm"
