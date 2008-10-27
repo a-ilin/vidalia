@@ -62,7 +62,7 @@ case "$1" in
 "osx-bundle")
   if [ $# -ne 4 ]
   then
-    echo "Usage: $0 osx-bundle <path-to-tor> <path-to-polipo> <path-to-torbutton>"
+    echo "Usage: $0 osx-bundle <path-to-tor> <path-to-polipo> <path-to-torbutton-file>"
     exit 1
   fi
   torpath="$2"
