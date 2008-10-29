@@ -1,3 +1,9 @@
+vidalia (0.1.9-3) unstable; urgency=low
+
+  * Fixing missing copyright holders.
+
+ -- Ulises Vitulli <uvitulli@fi.uba.ar>  Mon, 27 Oct 2008 12:20:26 -0200
+
 vidalia (0.1.9-2) unstable; urgency=low
 
   * Moved Pre-depens with debconf to Depends
