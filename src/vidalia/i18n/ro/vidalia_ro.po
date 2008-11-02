@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-07-02 05:29+0000\n"
-"PO-Revision-Date: 2008-11-01 10:32+0000\n"
+"PO-Revision-Date: 2008-11-02 23:32+0000\n"
 "Last-Translator: Tiberiu Cristea <zugurudumba@gmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -200,7 +200,8 @@ msgstr "Avansat"
 #: advancedpage.ui:240
 msgctxt "AdvancedPage"
 msgid "Start the Tor software with the specified configuration file (torrc)"
-msgstr "Porneşte Tor cu fişierul de configurare specificat (torrc)"
+msgstr ""
+"Tor foloseşte acest fişier de configurare (torrc) atunci când este lansat"
 
 #: advancedpage.ui:259
 msgctxt "AdvancedPage"
@@ -215,12 +216,12 @@ msgstr "Directorul de date"
 #: advancedpage.ui:296
 msgctxt "AdvancedPage"
 msgid "Store data for the Tor software in the following directory"
-msgstr "Stochează datele Tor în următorul director"
+msgstr "Datele Tor sunt stocate în acest director"
 
 #: advancedpage.ui:315
 msgctxt "AdvancedPage"
 msgid "Select the directory used to store data for the Tor software"
-msgstr "Alege directorul Tor de stocare a datelor"
+msgstr "Alegeţi directorul de stocare a datelor Tor"
 
 #: advancedpage.ui:219
 msgctxt "AdvancedPage"
@@ -590,12 +591,12 @@ msgstr "Documentaţie Vidalia"
 #: helpbrowser.ui:174
 msgctxt "HelpBrowser"
 msgid "Find Previous"
-msgstr "Găseşte înapoi"
+msgstr "Căutare înapoi"
 
 #: helpbrowser.ui:187
 msgctxt "HelpBrowser"
 msgid "Find Next"
-msgstr "Găseşte înainte"
+msgstr "Căutare înainte"
 
 #: helpbrowser.ui:221
 msgctxt "HelpBrowser"
@@ -610,12 +611,12 @@ msgstr "Cuprins"
 #: helpbrowser.ui:305
 msgctxt "HelpBrowser"
 msgid "Help Topics"
-msgstr "Ajutor"
+msgstr "Categorii"
 
 #: helpbrowser.ui:350
 msgctxt "HelpBrowser"
 msgid "Search"
-msgstr "Caută"
+msgstr "Căutare"
 
 #: helpbrowser.ui:405
 msgctxt "HelpBrowser"
@@ -690,7 +691,7 @@ msgstr "Închide"
 #: helpbrowser.ui:552
 msgctxt "HelpBrowser"
 msgid "Close Vidalia Help"
-msgstr "Închide centrul de ajutor Vidalia"
+msgstr "Închide centrul de asistenţă Vidalia"
 
 #: helpbrowser.ui:555
 msgctxt "HelpBrowser"
@@ -735,7 +736,7 @@ msgstr "Se caută:"
 #: helpbrowser.cpp:134
 msgctxt "HelpBrowser"
 msgid "Supplied XML file is not a valid Contents document."
-msgstr "Fişierul XML furnizat nu este un fişier de cuprins valid."
+msgstr "Fişierul furnizat nu este un fişier valid XML de cuprins."
 
 #: helpbrowser.cpp:426
 msgctxt "HelpBrowser"
@@ -745,26 +746,26 @@ msgstr "S-au găsit %1 rezultate"
 #: helptextbrowser.cpp:54
 msgctxt "HelpTextBrowser"
 msgid "Error opening help file: "
-msgstr "Eroare la deschiderea fişierului cu documentaţia ajutătoare: "
+msgstr "Eroare la deschiderea fişierului documentaţie: "
 
 #: helptextbrowser.cpp:72
 msgctxt "HelpTextBrowser"
 msgid "Opening External Link"
-msgstr "Deschide legătură externă"
+msgstr "Se deschide legătură externă"
 
 #: helptextbrowser.cpp:76
 msgctxt "HelpTextBrowser"
 msgid "Vidalia can open the link you selected in your default Web browser. If your browser is not currently configured to use Tor then the request will not be anonymous."
 msgstr ""
-"Vidalia poate deschide în navigatorul dumneavoastră web implicit legătura pe "
-"care aţi ales-o. Dacă navigatorul dumneavoastră nu este configurat pentru a "
-"folosi Tor, atunci cererea nu va fi anonimă."
+"Vidalia poate deschide legătura pe care aţi ales-o cu navigatorul "
+"dumneavoastră web implicit. Dacă navigatorul dumneavoastră nu este "
+"configurat pentru a folosi Tor, atunci cererea nu va fi anonimă."
 
 #: helptextbrowser.cpp:78
 msgctxt "HelpTextBrowser"
 msgid "Do you want Vidalia to open the link in your Web browser?"
 msgstr ""
-"Doriţi ca Vidalia să deschidă legătura în navigatorul dumneavoastră web?"
+"Doriţi ca Vidalia să deschidă legătura cu navigatorul dumneavoastră web?"
 
 #: helptextbrowser.cpp:88
 msgctxt "HelpTextBrowser"
@@ -913,7 +914,7 @@ msgstr "Ctrl+I"
 #: mainwindow.cpp:1334
 msgctxt "MainWindow"
 msgid "All subsequent connections will appear to be different than your old connections."
-msgstr "Toate noile conexiuni vor apare ca fiind diferite faţă de cele vechi."
+msgstr "Toate conexiunile noi vor apare ca fiind diferite faţă de cele vechi."
 
 #: mainwindow.cpp:1349
 msgctxt "MainWindow"
@@ -1060,12 +1061,12 @@ msgctxt "MainWindow"
 msgid "The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version."
 msgstr ""
 "Versiunea curentă Tor este depăşită şi nu mai este recomandată. Vizitaţi "
-"saitul Tor pentru a descărca cea mai recentă versiune."
+"site-ul Tor pentru a descărca cea mai recentă versiune."
 
 #: mainwindow.cpp:1271
 msgctxt "MainWindow"
 msgid "Tor website: %1"
-msgstr "Saitul Tor: %1"
+msgstr "Site-ul Tor: %1"
 
 #: mainwindow.cpp:517
 msgctxt "MainWindow"
@@ -1114,7 +1115,7 @@ msgstr "Vidalia nu a putut opri Tor."
 #: mainwindow.cpp:969
 msgctxt "MainWindow"
 msgid "Unexpected Error"
-msgstr "Eroare neaşteptată"
+msgstr "Eroare inopinată"
 
 #: mainwindow.cpp:973
 msgctxt "MainWindow"
@@ -1213,7 +1214,7 @@ msgstr ""
 #: mainwindow.cpp:534
 msgctxt "MainWindow"
 msgid "Connecting to a relay directory"
-msgstr "Se conectează la un director relay"
+msgstr "Conectare la un director relay"
 
 #: mainwindow.cpp:538
 msgctxt "MainWindow"
@@ -1248,7 +1249,7 @@ msgstr "Se încarcă informaţiile despre relay"
 #: mainwindow.cpp:1100
 msgctxt "MainWindow"
 msgid "Connecting to the Tor network"
-msgstr "Se conectează la reţeaua Tor"
+msgstr "Conctare la reţeaua Tor"
 
 #: mainwindow.cpp:560
 msgctxt "MainWindow"
@@ -1328,7 +1329,7 @@ msgstr "Opriţi Tor"
 #: mainwindow.cpp:666
 msgctxt "MainWindow"
 msgid "Starting the Tor software"
-msgstr "Porniţi Tor"
+msgstr "Se lansează Tor"
 
 #: mainwindow.ui:75
 msgctxt "MainWindow"
@@ -1343,12 +1344,12 @@ msgstr "Tor rulează"
 #: mainwindow.cpp:868
 msgctxt "MainWindow"
 msgid "Connecting to Tor"
-msgstr "Se conectează la Tor"
+msgstr "Conectare la Tor"
 
 #: mainwindow.cpp:1027
 msgctxt "MainWindow"
 msgid "Authenticating to Tor"
-msgstr "Se autentifică faţă de Tor"
+msgstr "Autentificare faţă de Tor"
 
 #: messagelog.ui:19
 msgctxt "MessageLog"
@@ -1408,7 +1409,7 @@ msgstr "Eroare"
 #: messagelog.ui:233
 msgctxt "MessageLog"
 msgid "Warning"
-msgstr "Atenţie"
+msgstr "Atenţionare"
 
 #: messagelog.ui:249
 msgctxt "MessageLog"
@@ -1823,12 +1824,12 @@ msgstr "Reţea"
 #: networkpage.cpp:186
 msgctxt "NetworkPage"
 msgid "Invalid Bridge"
-msgstr "Pod invalid"
+msgstr "Bridge invalid"
 
 #: networkpage.cpp:187
 msgctxt "NetworkPage"
 msgid "The specified bridge identifier is not valid."
-msgstr "Identificatorul specificat al podului nu este valid."
+msgstr "Identificatorul specificat al bridge-ului nu este valid."
 
 #: networkpage.cpp:234
 msgctxt "NetworkPage"
@@ -1952,8 +1953,8 @@ msgstr ""
 msgctxt "NetworkPage"
 msgid "Check to encrypt directory requests and, optionally, use bridge relays to access the Tor network"
 msgstr ""
-"Bifează pentru a cripta cererile către director şi, opţional, a folosi "
-"relay-uri pod pentru a accesa reţeaua Tor."
+"Bifează pentru a cripta cererile către director şi, opţional, pentru a "
+"folosi bridge relay-uri pentru a accesa reţeaua Tor."
 
 #: networkpage.ui:262
 msgctxt "NetworkPage"
@@ -1964,7 +1965,7 @@ msgstr "Setări bridge relay"
 msgctxt "NetworkPage"
 msgid "The Tor software you are currently running does not support bridges. <br>Directory connections will still be encrypted."
 msgstr ""
-"Versiunea Tor pe care o folosiţi nu are suport pentru poduri. "
+"Versiunea Tor pe care o folosiţi nu are suport pentru bridge-uri. "
 "<br>Conexiunile către director vor fi, totuşi, criptate."
 
 #: policy.cpp:167
@@ -2157,8 +2158,7 @@ msgstr ""
 #: serverpage.ui:456
 msgctxt "ServerPage"
 msgid "Select the entry that most closely resembles your Internet connection"
-msgstr ""
-"Alegeţi conexiunea cea mai similară cu conexiunea dumneavoastră la internet"
+msgstr "Alegeţi o conexiune similară cu conexiunea dumneavoastră la internet"
 
 #: serverpage.ui:466
 msgctxt "ServerPage"
@@ -2233,7 +2233,7 @@ msgstr "Portul 443"
 #: serverpage.ui:857
 msgctxt "ServerPage"
 msgid "Secure Websites (SSL)"
-msgstr "Saituri sigure (SSL)"
+msgstr "Site-uri sigure (SSL)"
 
 #: serverpage.ui:867
 msgctxt "ServerPage"
@@ -2243,7 +2243,7 @@ msgstr "Portul 80"
 #: serverpage.ui:870
 msgctxt "ServerPage"
 msgid "Websites"
-msgstr "Saituri"
+msgstr "Site-uri"
 
 #: serverpage.ui:737
 msgctxt "ServerPage"
@@ -2260,14 +2260,15 @@ msgstr "Server"
 #: serverpage.cpp:133
 msgctxt "ServerPage"
 msgid "Bridge Support Unavailable"
-msgstr "Suport pentru poduri indisponibil"
+msgstr "Suport pentru bridge relay-uri este indisponibil"
 
 #: serverpage.cpp:136
 msgctxt "ServerPage"
 msgid "You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges."
 msgstr ""
-"Aţi configurat Tor să se comporte ca un pod pentru utilizatorii cenzuraţi, "
-"însă versiunea dumneavoastră de Tor nu oferă suport pentru poduri."
+"Aţi configurat Tor să se comporte ca un bridge relay pentru utilizatorii "
+"cenzuraţi, însă versiunea dumneavoastră de Tor nu oferă suport pentru astfel "
+"de relay-uri."
 
 #: serverpage.cpp:138
 msgctxt "ServerPage"
@@ -2296,12 +2297,12 @@ msgstr ""
 #: serverpage.ui:113
 msgctxt "ServerPage"
 msgid "Mirror the Relay Directory "
-msgstr "Sait alternativ pentru directorul relay "
+msgstr "Site alternativ pentru directorul relay "
 
 #: serverpage.cpp:192
 msgctxt "ServerPage"
 msgid "Your bridge relay is not running."
-msgstr "Text indisponibil, bridge relay-ul dumneavoastră nu rulează."
+msgstr "Bridge relay-ul dumneavoastră este oprit."
 
 #: serverpage.ui:39
 msgctxt "ServerPage"
@@ -2374,7 +2375,7 @@ msgstr "Alegeţi resursele internet accesibile prin relay-ul dumneavoastră:"
 #: serverpage.ui:164
 msgctxt "ServerPage"
 msgid "Show help topic on port forwarding"
-msgstr "Documentaţie despre port forwarding"
+msgstr "Asistenţă pentru port forwarding"
 
 #: servicepage.ui:31
 msgctxt "ServicePage"
@@ -2431,7 +2432,7 @@ msgstr "Servicii"
 #: servicepage.cpp:109
 msgctxt "ServicePage"
 msgid "Error while trying to unpublish all services"
-msgstr "Eroare la încercarea de a şterge serviciile"
+msgstr "Eroare la încercarea de a şterge toate serviciile"
 
 #: servicepage.cpp:590
 msgctxt "ServicePage"
@@ -2441,7 +2442,7 @@ msgstr "Eroare"
 #: servicepage.cpp:451
 msgctxt "ServicePage"
 msgid "Select Service Directory"
-msgstr "Alege directorul de servicii"
+msgstr "Alegere director de servicii"
 
 #: servicepage.cpp:445
 msgctxt "ServicePage"
@@ -2489,7 +2490,7 @@ msgstr "Nou"
 #: stream.cpp:120
 msgctxt "Stream"
 msgid "Resolving"
-msgstr "Resolving"
+msgstr "Se caută"
 
 #: stream.cpp:121
 msgctxt "Stream"
@@ -2569,7 +2570,7 @@ msgstr "Pornirea WSA a eşuat"
 #: upnpcontrol.cpp:147
 msgctxt "UPNPControl"
 msgid "Failed to add a port mapping"
-msgstr "Maparea unui port a eşuat"
+msgstr "Eroare la maparea portului"
 
 #: upnpcontrol.cpp:149
 msgctxt "UPNPControl"
@@ -2639,7 +2640,7 @@ msgstr "Nu"
 #: vmessagebox.cpp:81
 msgctxt "VMessageBox"
 msgid "Help"
-msgstr "Ajutor"
+msgstr "Asistenţă"
 
 #: vmessagebox.cpp:82
 msgctxt "VMessageBox"
