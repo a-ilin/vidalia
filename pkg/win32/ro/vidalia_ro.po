@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-07-12 05:29+0000\n"
-"PO-Revision-Date: 2008-11-01 11:19+0000\n"
+"PO-Revision-Date: 2008-11-02 22:56+0000\n"
 "Last-Translator: Tiberiu Cristea <zugurudumba@gmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -117,10 +117,9 @@ msgctxt "VidaliaWelcomeTitle"
 msgid "Welcome to the ${VIDALIA_NAME} Setup Wizard"
 msgstr "Bine aţi venit la instalarea ${VIDALIA_NAME}"
 
-#, fuzzy
 msgctxt "VidaliaLinkText"
 msgid "${VIDALIA_NAME} homepage"
-msgstr "Pagina ${VIDALIA_NAME}"
+msgstr "Site-ul oficial ${VIDALIA_NAME}"
 
 msgctxt "VidaliaAppDesc"
 msgid "Vidalia is a GUI that helps you control, monitor, and configure Tor."
@@ -132,7 +131,6 @@ msgctxt "VidaliaStartup"
 msgid "Run At Startup"
 msgstr "Porneşte odată cu sistemul de operare"
 
-#, fuzzy
 msgctxt "VidaliaStartupDesc"
 msgid "Automatically run ${VIDALIA_NAME} at startup."
 msgstr "Rulează automat ${VIDALIA_NAME} la pornire."
@@ -220,10 +218,9 @@ msgctxt "PrivoxyStartup"
 msgid "Run At Startup"
 msgstr "Porneşte odată cu sistemul de operare"
 
-#, fuzzy
 msgctxt "PrivoxyStartupDesc"
 msgid "Automatically run ${PRIVOXY_NAME} at startup."
-msgstr "Rulează automat ${PRIVOXY_NAME} la pornire."
+msgstr "Rulează ${PRIVOXY_NAME} la pornire."
 
 msgctxt "TorbuttonGroupDesc"
 msgid ""
@@ -241,12 +238,10 @@ msgctxt "TorbuttonAppDesc"
 msgid "Install ${TORBUTTON_DESC}."
 msgstr "Instalează ${TORBUTTON_DESC}."
 
-#, fuzzy
 msgctxt "TorbuttonAddToFirefox"
 msgid "Add to Firefox"
 msgstr "Adaugă la Firefox"
 
-#, fuzzy
 msgctxt "TorbuttonAddToFirefoxDesc"
 msgid "Add the ${TORBUTTON_DESC} extension to Firefox."
 msgstr "Adaugă suplimentul ${TORBUTTON_DESC} la Firefox."
@@ -257,14 +252,13 @@ msgstr ""
 "Firefox nu a fost găsit pe sistemul dumneavoastră. Torbutton nu va fi "
 "instalat."
 
-#, fuzzy
 msgctxt "AppData"
 msgid "Application Data"
-msgstr "Application Data"
+msgstr "Date aplicaţie"
 
 msgctxt "AppDataUninstDesc"
 msgid "Remove saved application data and configuration files."
-msgstr "Înlătură datele salvate şi fişierele de configurare ale aplicaţiei."
+msgstr "Înlătură datele salvate şi fişierele de configurare a aplicaţiei."
 
 msgctxt "LanguageCode"
 msgid "en"
@@ -293,8 +287,8 @@ msgid ""
 msgstr ""
 "Navigatorul Mozilla Firefox nu este instalat pe computerul dumneavoastră.\n"
 "Tor va funcţiona cu alte navigatoare, precum Internet Explorer, dar\n"
-"este mai uşor de folosit cu Firefox, care face o treabă mai bună la\n"
-"protejarea anonimităţii dumneavoastră.\n"
+"este mai uşor de folosit cu Firefox, care protejează mai bine\n"
+"anonimitatea dumneavoastră.\n"
 "\n"
 "Dacă doriţi să instalaţi Firefox, apăsaţi Revocare, apoi vizitaţi\n"
 " pagina oficială a Firefox, la"
