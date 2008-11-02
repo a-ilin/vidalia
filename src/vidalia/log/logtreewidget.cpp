@@ -101,6 +101,7 @@ void
 LogTreeWidget::clearMessages()
 {
   /* Clear the messages */
+  _itemHistory.clear();
   clear();
 }
 

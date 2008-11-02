@@ -703,7 +703,7 @@
    <sender>actionClear</sender>
    <signal>triggered()</signal>
    <receiver>lstMessages</receiver>
-   <slot>clear()</slot>
+   <slot>clearMessages()</slot>
   </connection>
   <connection>
    <sender>chkEnableLogFile</sender>
