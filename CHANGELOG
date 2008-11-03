@@ -1,4 +1,14 @@
 0.2.0   xx-xxx-2008
+  o Support changing UI languages without having to restart Vidalia.
+  o Add tooltips to tree items in the help browser's table of contents. Some 
+    of the help topic labels are a bit long.
+  o Switch to a simpler About dialog and move the license information to a
+    separate HTML-formatted display.
+  o Include new Vidalia graphics in the Windows Vidalia and bundle installers.
+    The graphics were created by dr|z3d.
+  o Support building with Visual Studio again.
+  o Add a Debian package structure from dererk.
+  o Updated Czech, Polish, Romanian and Turkish transations.
 
 
 0.1.10  02-Nov-2008
