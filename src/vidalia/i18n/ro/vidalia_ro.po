@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-07-02 05:29+0000\n"
-"PO-Revision-Date: 2008-11-02 23:32+0000\n"
+"PO-Revision-Date: 2008-11-03 12:35+0000\n"
 "Last-Translator: Tiberiu Cristea <zugurudumba@gmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -185,7 +185,7 @@ msgstr "Parolă:"
 #: advancedpage.ui:111
 msgctxt "AdvancedPage"
 msgid "Randomly Generate"
-msgstr "Generează arbitrar"
+msgstr "Generează aleator"
 
 #: advancedpage.ui:86
 msgctxt "AdvancedPage"
@@ -231,7 +231,7 @@ msgstr "Fişierul de configurare Tor"
 #: appearancepage.ui:31
 msgctxt "AppearancePage"
 msgid "Language"
-msgstr "Limba"
+msgstr "Limbă"
 
 #: appearancepage.ui:52
 msgctxt "AppearancePage"
@@ -551,7 +551,7 @@ msgstr "Porneşte Tor odată cu Vidalia"
 #: generalpage.ui:38
 msgctxt "GeneralPage"
 msgid "Tor Executable"
-msgstr "Fişierul executabil al Tor"
+msgstr "Fişierul executabil Tor"
 
 #: graphframe.cpp:237
 msgctxt "GraphFrame"
@@ -616,7 +616,7 @@ msgstr "Categorii"
 #: helpbrowser.ui:350
 msgctxt "HelpBrowser"
 msgid "Search"
-msgstr "Căutare"
+msgstr "Caută"
 
 #: helpbrowser.ui:405
 msgctxt "HelpBrowser"
@@ -731,7 +731,7 @@ msgstr "Numai cuvinte întregi"
 #: helpbrowser.ui:362
 msgctxt "HelpBrowser"
 msgid "Searching for:"
-msgstr "Se caută:"
+msgstr "Introduceţi un termen sau mai mulţi:"
 
 #: helpbrowser.cpp:134
 msgctxt "HelpBrowser"
@@ -832,7 +832,7 @@ msgstr "Jurnal"
 #: mainwindow.ui:367
 msgctxt "MainWindow"
 msgid "Help"
-msgstr "Ajutor"
+msgstr "Asistenţă"
 
 #: mainwindow.cpp:394
 msgctxt "MainWindow"
@@ -1873,7 +1873,7 @@ msgstr "Proxy HTTP:"
 #: networkpage.ui:80
 msgctxt "NetworkPage"
 msgid "Username:"
-msgstr "Nume de utilizator:"
+msgstr "Nume utilizator:"
 
 #: networkpage.ui:90
 msgctxt "NetworkPage"
@@ -1939,21 +1939,21 @@ msgstr "<a href=\"bridges.finding\">Cum găsesc un bridge relay?</a>"
 msgctxt "NetworkPage"
 msgid "Check if your local network requires a proxy to access the Internet"
 msgstr ""
-"Bifează pentru a verifica dacă reţeaua locală necesită un proxy pentru a "
+"Bifaţi aici dacă reţeaua dumneavoastră locală necesită un proxy pentru a "
 "accesa internetul"
 
 #: networkpage.ui:176
 msgctxt "NetworkPage"
 msgid "Check to only connect to relays using ports allowed by your firewall"
 msgstr ""
-"Bifează pentru a folosi numai conexiuni către relay-uri ce folosesc porturi "
-"permise de firewall-ul meu"
+"Bifaţi aici pentru a folosi numai conexiuni către relay-uri ce folosesc "
+"porturi permise de firewall-ul dumneavoastră"
 
 #: networkpage.ui:235
 msgctxt "NetworkPage"
 msgid "Check to encrypt directory requests and, optionally, use bridge relays to access the Tor network"
 msgstr ""
-"Bifează pentru a cripta cererile către director şi, opţional, pentru a "
+"Bifaţi aici pentru a cripta cererile către director şi, opţional, pentru a "
 "folosi bridge relay-uri pentru a accesa reţeaua Tor."
 
 #: networkpage.ui:262
