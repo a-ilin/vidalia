@@ -1,6 +1,19 @@
 0.2.0   xx-xxx-2008
 
 
+0.1.10  02-Nov-2008
+  o Add a prettier dialog for prompting people for their control port password
+    that also includes a checkbox for whether the user wants Vidalia to remember
+    the entered password, a Help button, and a Reset button (Windows only).
+  o Fix a crash bug that occurred when the user clicks 'Clear' in the message
+    log toolbar followed by 'Save All'. (Ticket #434)
+  o Uncheck the Torbutton options by default in the Windows bundle installer
+    if Firefox is not installed. (Ticket #421)
+  o Add an Windows bundle installer page that warns the user that they should
+    install Firefox, if it looks like they haven't already done so. (Ticket
+    #421)
+
+
 0.1.9   02-Sep-2008
   o Create the control panel's menubar as a parentless QMenuBar, so it is 
     visible even if the control panel is not the topmost window. (Ticket #286)
