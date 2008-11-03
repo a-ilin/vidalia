@@ -67,6 +67,9 @@ Windows with MinGW
         mkdir build && cd build
         cmake -G "MinGW Makefiles" ..
 
+     There should be no spaces in the path to your build directory. Otherwise,
+     Vidalia will fail to build.
+
   3. Compile Vidalia by running: 
                           
         mingw32-make
