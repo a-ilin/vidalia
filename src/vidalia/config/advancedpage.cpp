@@ -54,7 +54,6 @@ AdvancedPage::AdvancedPage(QWidget *parent)
 
   /* Hide platform specific features */
 #if defined(Q_WS_WIN)
-  ui.grpPermissions->setVisible(false);
 #if 0
   ui.grpService->setVisible(TorService::isSupported());
 #endif
@@ -139,9 +138,7 @@ AdvancedPage::save(QString &errmsg)
 
   _settings->setControlAddress(controlAddress);
   _settings->setControlPort(ui.lineControlPort->text().toUShort());
-  _settings->setUser(ui.lineUser->text());
-  _settings->setGroup(ui.lineGroup->text());
-  
+
   _settings->setAuthenticationMethod(authMethod);
   _settings->setUseRandomPassword(ui.chkRandomPassword->isChecked());
   if (authMethod == TorSettings::PasswordAuth
@@ -166,9 +163,7 @@ AdvancedPage::load()
   ui.lineControlPort->setText(QString::number(_settings->getControlPort()));
   ui.lineTorConfig->setText(_settings->getTorrc());
   ui.lineTorDataDirectory->setText(_settings->getDataDirectory());
-  ui.lineUser->setText(_settings->getUser());
-  ui.lineGroup->setText(_settings->getGroup());
-  
+
   ui.cmbAuthMethod->setCurrentIndex(
     authMethodToIndex(_settings->getAuthenticationMethod()));
   ui.chkRandomPassword->setChecked(_settings->useRandomPassword());

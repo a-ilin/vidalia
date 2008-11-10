@@ -837,14 +837,6 @@ MainWindow::start()
            << "HashedControlPassword" << "";
   }
 
-  /* Add custom user and group information (if specified) */
-  QString user = settings.getUser();
-  if (!user.isEmpty())
-    args << "User" << user;
-  QString group = settings.getGroup();
-  if (!group.isEmpty())
-    args << "Group" << group;
-
   /* This doesn't get set to false until Tor is actually up and running, so we
    * don't yell at users twice if their Tor doesn't even start, due to the fact
    * that QProcess::stopped() is emitted even if the process didn't even

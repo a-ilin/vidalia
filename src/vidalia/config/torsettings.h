@@ -85,16 +85,6 @@ public:
   AuthenticationMethod getAuthenticationMethod() const;
   /** Sets the authentication method used when starting Tor to <b>method</b>.*/
   void setAuthenticationMethod(AuthenticationMethod method);
-   
-  /** Get which user will be used to run Tor. */
-  QString getUser() const;
-  /** Set which user will be used to run Tor. */
-  void setUser(const QString &user);
-  
-  /** Get which group will be used to run Tor. */
-  QString getGroup() const;
-  /** Set which group will be used to run Tor. */
-  void setGroup(const QString &group);
 
   /** Generates a random control password consisting of PASSWORD_LEN
    * characters. */

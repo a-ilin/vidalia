@@ -1,5 +1,7 @@
 0.2.0   xx-xxx-2008
   o Support changing UI languages without having to restart Vidalia.
+  o Remove support for configuring Tor's User and Group options in the
+    Advanced settings page.
   o Add tooltips to tree items in the help browser's table of contents. Some 
     of the help topic labels are a bit long.
   o Switch to a simpler About dialog and move the license information to a

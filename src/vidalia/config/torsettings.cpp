@@ -45,8 +45,6 @@
 /* Arguments we can pass to Tor on the command-line */
 #define TOR_ARG_CONTROL_PORT    "ControlPort"
 #define TOR_ARG_TORRC           "-f"
-#define TOR_ARG_USER            "User"
-#define TOR_ARG_GROUP           "Group"
 #define TOR_ARG_DATA_DIRECTORY  "DataDirectory"
 #define TOR_ARG_HASHED_PASSWORD "HashedControlPassword"
 #define TOR_ARG_COOKIE_AUTH     "CookieAuthentication"
@@ -74,8 +72,6 @@ TorSettings::TorSettings(TorControl *torControl)
   setDefault(SETTING_CONTROL_ADDR,  "127.0.0.1");
   setDefault(SETTING_CONTROL_PORT,  9051);
   setDefault(SETTING_AUTH_METHOD,   toString(DEFAULT_AUTH_METHOD));
-  setDefault(SETTING_TOR_USER,      "");
-  setDefault(SETTING_TOR_GROUP,     "");
   setDefault(SETTING_DATA_DIRECTORY, "");
   setDefault(SETTING_CONTROL_PASSWORD, "");
   setDefault(SETTING_USE_RANDOM_PASSWORD, true);
@@ -167,38 +163,6 @@ void
 TorSettings::setTorrc(const QString &torrc)
 {
   setValue(SETTING_TORRC, torrc);
-}
-
-/** Returns the user used when running Tor. The user is specified as an
- * argument to Tor, which will setuid to this user. */
-QString
-TorSettings::getUser() const
-{
-  return value(SETTING_TOR_USER).toString();
-}
-
-/** Sets the user used when running Tor. The user is specified as an argument
- * to Tor, which will setuid to this user. */
-void
-TorSettings::setUser(const QString &user)
-{
-  setValue(SETTING_TOR_USER, user);
-}
-
-/** Returns the group used when running Tor. The group is specified as an
- * argument to Tor, which will setgid to this group. */
-QString
-TorSettings::getGroup() const
-{
-  return value(SETTING_TOR_GROUP).toString();
-}
-
-/** Sets the group used when running Tor. The group is specified as an
- * argument to Tor, which will setgid to this group. */
-void
-TorSettings::setGroup(const QString &group)
-{
-  setValue(SETTING_TOR_GROUP, group);
 }
 
 /** Get the address or hostname used to connect to Tor */
