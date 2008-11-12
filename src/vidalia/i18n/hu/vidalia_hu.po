@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-07-02 05:29+0000\n"
-"PO-Revision-Date: 2008-11-03 11:35+0000\n"
-"Last-Translator: John Dissident <arrakistor.test1@gmail.com>\n"
+"PO-Revision-Date: 2008-11-12 19:48+0000\n"
+"Last-Translator: kabbe agoston <kabbe@pofa.be>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -118,7 +118,7 @@ msgstr "Jelenleg a TOR szolgáltatás nem elindítható"
 #: advancedpage.cpp:297
 msgctxt "AdvancedPage"
 msgid "Vidalia was unable to install the Tor service."
-msgstr "Nem sikerült a TOR szolgáltatás telepítése"
+msgstr "A TOR szolgáltatás telepítése sikertelen."
 
 #: advancedpage.cpp:234
 msgctxt "AdvancedPage"
@@ -133,7 +133,7 @@ msgstr "%1 nem létezik. Kívánja létrehozni?"
 #: advancedpage.cpp:247
 msgctxt "AdvancedPage"
 msgid "Failed to Create File"
-msgstr "Nem sikerült a fájl létrehozása"
+msgstr "Fájl létrehozása sikertelen"
 
 #: advancedpage.cpp:248
 msgctxt "AdvancedPage"
@@ -440,7 +440,7 @@ msgstr "Hiba adatmentés közben"
 #: configdialog.cpp:176
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to save your %1 settings."
-msgstr "Nem sikerült a %1 beállítást elmenteni"
+msgstr "A %1 beállítás mentése sikertelen."
 
 #: configdialog.cpp:203
 msgctxt "ConfigDialog"
@@ -450,7 +450,7 @@ msgstr "Hiba lealkalmazás közben"
 #: configdialog.cpp:205
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to apply your %1 settings to Tor."
-msgstr "Nem sikerült a %1 TOR beállítást lealkalmazni."
+msgstr "A %1 TOR beállítás lealkalmazása sikertelen."
 
 #: configdialog.cpp:56
 msgctxt "ConfigDialog"
@@ -934,7 +934,7 @@ msgstr ""
 #: mainwindow.cpp:1349
 msgctxt "MainWindow"
 msgid "Failed to Create New Identity"
-msgstr "Nem sikerült az új identitás létrehozása"
+msgstr "Új identitás létrehozása sikertelen"
 
 #: mainwindow.ui:168
 msgctxt "MainWindow"
@@ -1065,7 +1065,7 @@ msgstr "Hiba a böngészõ indításakor"
 #: mainwindow.cpp:483
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured web browser"
-msgstr "Nem sikerült a konfigurált böngészõ indítása"
+msgstr "A beállított böngészõ indítása sikertelen"
 
 #: mainwindow.cpp:1268
 msgctxt "MainWindow"
@@ -1092,7 +1092,7 @@ msgstr "Hiba a proxy kiszolgáló indításakor"
 #: mainwindow.cpp:518
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured proxy server"
-msgstr "Nem sikerült a konfigurált proxy kiszolgáló indítása"
+msgstr "A beállított proxy kiszolgáló indítása sikertelen"
 
 #: mainwindow.cpp:641
 msgctxt "MainWindow"
@@ -1125,7 +1125,7 @@ msgstr "Hiba a lekapcsoláskor"
 #: mainwindow.cpp:938
 msgctxt "MainWindow"
 msgid "Vidalia was unable to stop the Tor software."
-msgstr "Nem sikerült a TOR leállítása"
+msgstr "A TOR leállítása sikertelen."
 
 #: mainwindow.cpp:969
 msgctxt "MainWindow"
@@ -1171,17 +1171,17 @@ msgstr "Ellenõrzési hiba"
 #: mainwindow.cpp:1162
 msgctxt "MainWindow"
 msgid "Vidalia was unable to authenticate to the Tor software. (%1)"
-msgstr "Nem sikerült a TOR ellenõrzött beléptetése. (%1)"
+msgstr "TOR ellenõrzött beléptetése sikertelen. (%1)"
 
 #: mainwindow.cpp:1398
 msgctxt "MainWindow"
 msgid "Port Forwarding Failed"
-msgstr "A Port továbbítása nem sikerült"
+msgstr "Port továbbítás sikertelen"
 
 #: mainwindow.cpp:1399
 msgctxt "MainWindow"
 msgid "Vidalia was unable to configure automatic port forwarding."
-msgstr "Nem sikerült az automata Port továbbítás beállítása."
+msgstr "Automata Port továbbítás beállítása sikertelen."
 
 #: mainwindow.ui:49
 msgctxt "MainWindow"
@@ -1221,7 +1221,7 @@ msgstr "Hiba az IM (azonnali üzenetküldõ) program indításakor"
 #: mainwindow.cpp:496
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured IM client"
-msgstr "Nem sikerült a konfigurált IM (azonnali üzenetküldõ) program indítása"
+msgstr "A beállított IM program indítása sikertelen"
 
 #: mainwindow.cpp:534
 msgctxt "MainWindow"
@@ -2540,7 +2540,7 @@ msgstr "Újratérképezve"
 #: torprocess.cpp:107
 msgctxt "TorProcess"
 msgid "Process %1 failed to stop. [%2]"
-msgstr "%1 folyamatot nem sikerült leállítani. [%2]"
+msgstr "%1 folyamat leállítása sikertelen. [%2]"
 
 #: torservice.cpp:143
 msgctxt "TorService"
@@ -2550,12 +2550,12 @@ msgstr "A TOR szolgáltatás nincs telepítve."
 #: torservice.cpp:161
 msgctxt "TorService"
 msgid "Unable to start the Tor service."
-msgstr "Nem sikerült a TOR szolgáltatást elindítani."
+msgstr "TOR szolgáltatás indítása sikertelen."
 
 #: torsettings.cpp:107
 msgctxt "TorSettings"
 msgid "Failed to hash the control password."
-msgstr "Nem sikerült a kontroll jelszó ellenõrzõ-végösszegét létrehozni."
+msgstr "Kontroll jelszó ellenõrzõ-végösszegének  létrehozása sikertelen."
 
 #: upnpcontrol.cpp:139
 msgctxt "UPNPControl"
@@ -2764,4 +2764,4 @@ msgstr "Érvénytelen naplózási szint:"
 #: vidalia.cpp:254
 msgctxt "Vidalia"
 msgid "Unable to open log file '%1': %2"
-msgstr "Nem sikerült a '%1' naplót megnyitni: %2"
+msgstr "A '%1' napló megnyitása sikertelen: %2"
