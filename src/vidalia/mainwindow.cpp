@@ -825,16 +825,13 @@ MainWindow::start()
         _useSavedPassword = true;
       }
       args << "HashedControlPassword"
-           << TorSettings::hashPassword(_controlPassword)
-           << "CookieAuthentication"  << "0";
+           << TorSettings::hashPassword(_controlPassword);
       break;
     case TorSettings::CookieAuth:
-      args << "CookieAuthentication"  << "1"
-           << "HashedControlPassword" << "";
+      args << "CookieAuthentication"  << "1";
       break;
     default:
-      args << "CookieAuthentication"  << "0"
-           << "HashedControlPassword" << "";
+      args << "CookieAuthentication"  << "0";
   }
 
   /* This doesn't get set to false until Tor is actually up and running, so we
