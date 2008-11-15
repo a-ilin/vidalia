@@ -347,8 +347,6 @@
   <tabstop>btnBrowseTorConfig</tabstop>
   <tabstop>lineTorDataDirectory</tabstop>
   <tabstop>btnBrowseTorDataDirectory</tabstop>
-  <tabstop>lineUser</tabstop>
-  <tabstop>lineGroup</tabstop>
  </tabstops>
  <resources/>
  <connections/>
