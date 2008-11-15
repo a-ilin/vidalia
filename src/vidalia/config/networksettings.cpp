@@ -61,17 +61,21 @@ NetworkSettings::apply(QString *errmsg)
   conf.insert(SETTING_REACHABLE_ADDRESSES,
     (getFascistFirewall() ? 
       localValue(SETTING_REACHABLE_ADDRESSES).toStringList().join(",") : ""));
-  
-  conf.insert(SETTING_HTTP_PROXY,
-    (getUseHttpProxy() ? localValue(SETTING_HTTP_PROXY).toString() : ""));
+
+  if (getUseHttpProxy())
+    conf.insert(SETTING_HTTP_PROXY, localValue(SETTING_HTTP_PROXY).toString());
+  else
+    conf.insert(SETTING_HTTP_PROXY,  "");
   conf.insert(SETTING_HTTP_PROXY_AUTH,
               localValue(SETTING_HTTP_PROXY_AUTH).toString());
-  
-  conf.insert(SETTING_HTTPS_PROXY,
-    (getUseHttpsProxy() ? localValue(SETTING_HTTPS_PROXY).toString() : ""));
+
+  if (getUseHttpProxy() && getUseHttpsProxy())
+    conf.insert(SETTING_HTTPS_PROXY, localValue(SETTING_HTTPS_PROXY).toString());
+  else
+    conf.insert(SETTING_HTTPS_PROXY, "");
   conf.insert(SETTING_HTTPS_PROXY_AUTH,
               localValue(SETTING_HTTPS_PROXY_AUTH).toString());
-  
+
   if (getUseBridges()) {
     /* We want to always enable TunnelDirConns and friends when using
      * bridge relays. */
@@ -83,7 +87,7 @@ NetworkSettings::apply(QString *errmsg)
     conf.insert(SETTING_TUNNEL_DIR_CONNS, "0");
     conf.insert(SETTING_PREFER_TUNNELED_DIR_CONNS, "0");
   }
-  
+
   if (torVersion >= 0x020003) {
     /* Do the bridge stuff only on Tor >= 0.2.0.3-alpha */
     QStringList bridges = localValue(SETTING_BRIDGE_LIST).toStringList();
