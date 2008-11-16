@@ -41,7 +41,12 @@ configure_file(
   ${CMAKE_CURRENT_BINARY_DIR}/vidalia.nsi
   @ONLY
 )
-
+configure_file(
+  ${CMAKE_CURRENT_SOURCE_DIR}/vidalia.wxs.in
+  ${CMAKE_CURRENT_BINARY_DIR}/vidalia.wxs
+  @ONLY
+)
+  
 if (CONFIGURE_BUNDLE_NSI) 
   configure_file(
     ${CMAKE_CURRENT_SOURCE_DIR}/vidalia-bundle.nsi.in

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="Windows-1252" ?>
+<!-- 
+  $Id$
+
+  This file is part of Vidalia, and is subject to the license terms in the
+  LICENSE file, found in the top level directory of this distribution. If 
+  you did not receive the LICENSE file with this file, you may obtain it
+  from the Vidalia source package distributed by the Vidalia Project at
+  http://www.vidalia-project.net/. No part of Vidalia, including this file,
+  may be copied, modified, propagated, or distributed except according to
+  the terms described in the LICENSE file.
+
+  Compile with: 
+    candle.exe vidalia.wxs
+    light.exe -out vidalia.msi -ext C:\Path\to\Wix\bin\WixUIExtension.dll
+ -->
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <Product Name="Vidalia @VERSION@" Id="B3C22D59-D907-4559-9569-92AAA34DB6F0"
+           Language="1033" Codepage="1252"
+           Version="@VER_MAJOR@.@VER_MINOR@.@VER_PATCH@" 
+           Manufacturer="vidalia-project.net"
+           UpgradeCode="B7FBFE11-D7CA-4895-A1FB-1D7E065E4D04">
+    
+    <Package Id="*" Keywords="Installer"
+             Description="Vidalia @VERSION@ Installer"
+             Manufacturer="vidalia-project.net"
+             InstallerVersion="100" Compressed="yes"
+             Languages="1033"  SummaryCodepage="1252" />
+
+    <Media Id="1" Cabinet="Vidalia.cab" CompressionLevel="high"
+           EmbedCab="yes" DiskPrompt="CD-ROM #1" />
+    <Property Id="DiskPrompt" Value="Vidalia @VERSION@ Installation [1]" />
+
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder" Name="ProgramFilesDir">
+        <Directory Id="INSTALLDIR" Name="Vidalia">
+
+          <!-- Main Vidalia application files -->
+          <Component Id="VidaliaExecutable" Guid="*">
+            <File Id="VidaliaExe" DiskId="1"
+                  Name="vidalia.exe" Source="@Vidalia_BINARY_DIR@\src\vidalia\vidalia.exe" />
+          </Component>
+
+          <!-- Vidalia-related documents -->
+          <Component Id="VidaliaDocuments" Guid="6A51C86C-A7D4-407f-9B84-7ADCE016E939">
+            <File Id="VidaliaReadme" DiskId="1"
+                  Name="README" Source="@Vidalia_SOURCE_DIR@\README" />
+            <File Id="VidaliaCredits" DiskId="1"
+                  Name="CREDITS" Source="@Vidalia_SOURCE_DIR@\CREDITS" />
+            <File Id="VidaliaChangeLog" DiskId="1"
+                  Name="CHANGELOG" Source="@Vidalia_SOURCE_DIR@\CHANGELOG" />
+            <File Id="VidaliaLicense" DiskId="1"
+                  Name="LICENSE" Source="@Vidalia_SOURCE_DIR@\LICENSE" />
+            <File Id="VidaliaLicenseGplV2" DiskId="1"
+                  Name="LICENSE-GPLV2" Source="@Vidalia_SOURCE_DIR@\LICENSE-GPLV2" />
+            <File Id="VidaliaLicenseGplV3" DiskId="1"
+                  Name="LICENSE-GPLV3" Source="@Vidalia_SOURCE_DIR@\LICENSE-GPLV3" />
+            <File Id="VidaliaLicenseOpenSSL" DiskId="1"
+                  Name="LICENSE-OPENSSL" Source="@Vidalia_SOURCE_DIR@\LICENSE-OPENSSL" />
+          </Component>
+
+          <!-- Qt-related library files -->
+          <Component Id="QtLibrary" Guid="00F354CB-B313-4100-8900-11293A66B385">
+            <File Id="QtCore4Dll" DiskId="1"
+                  Name="QtCore4.dll" Source="@QT_BINARY_DIR@\QtCore4.dll" />
+            <File Id="QtGui4Dll" DiskId="1"
+                  Name="QtGui4.dll" Source="@QT_BINARY_DIR@\QtGui4.dll" />
+            <File Id="QtNetwork4Dll" DiskId="1"
+                  Name="QtNetwork4.dll" Source="@QT_BINARY_DIR@\QtNetwork4.dll" />
+            <File Id="QtXml4Dll" DiskId="1"
+                  Name="QtXml4.dll" Source="@QT_BINARY_DIR@\QtXml4.dll" />
+          </Component>
+
+          <!-- MinGW-related library files -->
+          <Component Id="MinGWLibrary" Guid="2287E844-F9CD-4129-8BD0-50D071698194">
+            <File Id="MinGWDll" DiskId="1"
+                  Name="mingwm10.dll" Source="@MINGW_BINARY_DIR@\mingwm10.dll" />
+          </Component>
+
+          <!-- OpenSSL-related library files -->
+          <Component Id="OpenSSLLibrary" Guid="C3EDC2EC-D0B1-452a-83A6-85B0BC94735B">
+            <File Id="ssleay32dll" DiskId="1"
+                  Name="ssleay32.dll" Source="@OPENSSL_BINARY_DIR@\ssleay32.dll" />
+          </Component>
+        </Directory>
+      </Directory>
+    </Directory>
+
+    <Feature Id="Complete" Title="Vidalia"
+             Level="1" Display="expand" ConfigurableDirectory="INSTALLDIR"
+             Description="Vidalia is application that helps you control, monitor, and configure the Tor software.">
+      <Feature Id="MainApplication" Title="Vidalia @VERSION@"
+               AllowAdvertise="no" Absent="disallow" Level="1"
+               Description="Main application">
+        <ComponentRef Id="VidaliaExecutable" />
+        <ComponentRef Id="VidaliaDocuments" />
+        <ComponentRef Id="QtLibrary" />
+        <ComponentRef Id="MinGWLibrary"/>
+        <ComponentRef Id="OpenSSLLibrary" />
+      </Feature>
+    </Feature>
+
+    <UIRef Id="WixUI_Mondo" />
+  </Product>
+</Wix>
