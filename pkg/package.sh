@@ -48,11 +48,13 @@ case "$1" in
 # OS X .dmg
 #
 "osx")
-  cp -R ../src/vidalia/Vidalia.app ../
+  mkdir ../LEGAL
+  cp -R ../README ../src/vidalia/Vidalia.app ../
+  cp ../CREDITS ../CHANGELOG ../Vidalia.app/
+  cp ../LICENSE ../LICENSE-GPLV2 ../LICENSE-GPLV3 ../LICENSE-LGPLV3 ../LICENSE-OPENSSL ../LEGAL/
+  cp -R ../LEGAL ../Vidalia.app/
   srcdir="../"
-  srcfiles="Vidalia.app README CREDITS CHANGELOG"
-  srcfiles="$srcfiles LICENSE LICENSE-GPLV2 LICENSE-GPLV3"
-  srcfiles="$srcfiles LICENSE-LGPLV3 LICENSE-OPENSSL"
+  srcfiles="Vidalia.app README LEGAL"
   osx/builddmg.sh "$srcdir" "$srcfiles"
   ;;
 
