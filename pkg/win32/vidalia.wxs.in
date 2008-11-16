@@ -95,7 +95,7 @@
                       Name="Vidalia" Target="[INSTALLDIR]vidalia.exe"
                       Directory="ShortcutFolder" WorkingDirectory="INSTALLDIR"
                       Icon="vidalia.ico" IconIndex="0" />
-            <RemoveFolder Id="RemoveShorcutFolder" On="uninstall" />
+            <RemoveFolder Id="RemoveShortcutFolder" On="uninstall" />
           </Component>
         </Directory>
       </Directory>
