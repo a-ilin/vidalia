@@ -12,7 +12,7 @@
 
   Compile with: 
     candle.exe vidalia.wxs
-    light.exe -out vidalia.msi -ext C:\Path\to\Wix\bin\WixUIExtension.dll
+    light.exe vidalia.wixobj -out vidalia.msi -ext C:\Path\to\Wix\bin\WixUIExtension.dll
  -->
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
   <Product Name="Vidalia @VERSION@" Id="B3C22D59-D907-4559-9569-92AAA34DB6F0"
@@ -84,8 +84,36 @@
           </Component>
         </Directory>
       </Directory>
+
+      <Directory Id="ProgramMenuFolder" Name="Programs">
+        <Directory Id="ShortcutFolder" Name="Vidalia">
+          <Component Id="AddVidaliaToStartMenu" Guid="0F2CEE2C-8730-432e-8A8F-E49AF78AF28C">
+            <RegistryKey Root="HKCU" Key="Software\Vidalia" Action="createAndRemoveOnUninstall">
+              <RegistryValue Name="StartMenuShortcut" Value="1" Type="integer" KeyPath="yes" />
+            </RegistryKey>
+            <Shortcut Id="VidaliaStartMenuShortcut"
+                      Name="Vidalia" Target="[INSTALLDIR]vidalia.exe"
+                      Directory="ShortcutFolder" WorkingDirectory="INSTALLDIR"
+                      Icon="vidalia.ico" IconIndex="0" />
+            <RemoveFolder Id="RemoveShorcutFolder" On="uninstall" />
+          </Component>
+        </Directory>
+      </Directory>
+
+      <Directory Id="DesktopFolder" Name="Desktop">
+        <Component Id="AddVidaliaToDesktop" Guid="A7688EE5-4EDE-4429-A2D9-C8B9BD85AB5A">
+          <RegistryKey Root="HKCU" Key="Software\Vidalia" Action="createAndRemoveOnUninstall">
+            <RegistryValue Name="DesktopShortcut" Value="1" Type="integer" KeyPath="yes" />
+          </RegistryKey>
+          <Shortcut Id="VidaliaDesktopShortcut"
+                    Name="Vidalia" Target="[INSTALLDIR]vidalia.exe"
+                    Directory="DesktopFolder" WorkingDirectory="INSTALLDIR"
+                    Icon="vidalia.ico" IconIndex="0" />
+        </Component>
+      </Directory>
     </Directory>
 
+    <!-- Build up the feature hierarchy -->
     <Feature Id="Complete" Title="Vidalia"
              Level="1" Display="expand" ConfigurableDirectory="INSTALLDIR"
              Description="Vidalia is application that helps you control, monitor, and configure the Tor software.">
@@ -95,11 +123,27 @@
         <ComponentRef Id="VidaliaExecutable" />
         <ComponentRef Id="VidaliaDocuments" />
         <ComponentRef Id="QtLibrary" />
-        <ComponentRef Id="MinGWLibrary"/>
+        <ComponentRef Id="MinGWLibrary" />
         <ComponentRef Id="OpenSSLLibrary" />
+      </Feature>
+      <Feature Id="Shortcuts" Title="Shortcuts"
+               AllowAdvertise="no" Absent="allow" Level="1"
+               Description="Add a shortcut to Vidalia to your Start menu or Desktop.">
+        <Feature Id="StartMenuShortcuts" Title="Add to Start menu"
+                 AllowAdvertise="no" Absent="allow" Level="1"
+                 Description="Add Vidalia to your Start menu">
+          <ComponentRef Id="AddVidaliaToStartMenu" />
+        </Feature>
+        <Feature Id="DesktopShortcuts" Title="Add to Desktop"
+                 AllowAdvertise="no" Absent="allow" Level="1"
+                 Description="Add Vidalia to your Desktop">
+          <ComponentRef Id="AddVidaliaToDesktop" />
+        </Feature>
       </Feature>
     </Feature>
 
+    <!-- Set the UI options -->
     <UIRef Id="WixUI_Mondo" />
+    <Icon Id="vidalia.ico" SourceFile="@Vidalia_SOURCE_DIR@\src\vidalia\res\icons\vidalia.ico" />
   </Product>
 </Wix>
