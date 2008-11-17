@@ -55,6 +55,8 @@
                   Name="LICENSE-GPLV2" Source="@Vidalia_SOURCE_DIR@\LICENSE-GPLV2" />
             <File Id="VidaliaLicenseGplV3" DiskId="1"
                   Name="LICENSE-GPLV3" Source="@Vidalia_SOURCE_DIR@\LICENSE-GPLV3" />
+            <File Id="VidaliaLicenseLgplV3" DiskId="1"
+                  Name="LICENSE-LGPLV3" Source="@Vidalia_SOURCE_DIR@\LICENSE-LGPLV3" />
             <File Id="VidaliaLicenseOpenSSL" DiskId="1"
                   Name="LICENSE-OPENSSL" Source="@Vidalia_SOURCE_DIR@\LICENSE-OPENSSL" />
           </Component>
