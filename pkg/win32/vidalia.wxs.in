@@ -113,6 +113,14 @@
                     Icon="vidalia.ico" IconIndex="0" />
         </Component>
       </Directory>
+
+      <Component Id="AddToStartupItems" Guid="E7BC3F3C-86BA-4a08-966C-F3F8D8CB3AF4">
+        <RegistryKey Root="HKCU"
+                     Key="Software\Microsoft\Windows\CurrentVersion\Run"
+                     Action="createAndRemoveOnUninstall">
+          <RegistryValue Name="Vidalia" Value='"[INSTALLDIR]vidalia.exe"' Type="string" />
+        </RegistryKey>
+      </Component>
     </Directory>
 
     <!-- Build up the feature hierarchy -->
@@ -141,11 +149,20 @@
                  Description="Add Vidalia to your Desktop">
           <ComponentRef Id="AddVidaliaToDesktop" />
         </Feature>
+        <Feature Id="RunAtStartup" Title="Run at Startup"
+                 AllowAdvertise="no" Absent="allow" Level="1"
+                 Description="Run Vidalia automatically when your system starts">
+          <ComponentRef Id="AddToStartupItems" />
+        </Feature>
       </Feature>
     </Feature>
 
     <!-- Set the UI options -->
     <UIRef Id="WixUI_Mondo" />
     <Icon Id="vidalia.ico" SourceFile="@Vidalia_SOURCE_DIR@\src\vidalia\res\icons\vidalia.ico" />
+    <!--
+    <WixVariable Id="WixUIBannerBmp" Value="@Vidalia_SOURCE_DIR@\pkg\win32\msi-header.bmp" />
+    <WixVariable Id="WixUIDialogBmp" Value="@Vidalia_SOURCE_DIR@\pkg\win32\msi-welcome.bmp" />
+    -->
   </Product>
 </Wix>
