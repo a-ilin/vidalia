@@ -73,6 +73,8 @@ case "$1" in
   
   mkdir ../LEGAL
   cp -R ../README ../src/vidalia/Vidalia.app ../
+  cp osx/background.png ../.background/
+  cp osx/bundle-ds_store ../.DS_Store
   cp ../CREDITS ../CHANGELOG ../Vidalia.app/
   cp ../LICENSE ../LICENSE-GPLV2 ../LICENSE-GPLV3 ../LICENSE-LGPLV3 ../LICENSE-OPENSSL ../LEGAL/
   cp -R ../LEGAL ../Vidalia.app/
@@ -81,7 +83,7 @@ case "$1" in
   cp $polipopath/polipo $polipopath/contrib/tor-polipo.conf ../Vidalia.app/
   cp $torbuttonpath ../Vidalia.app/
   srcdir="../"
-  srcfiles="Vidalia.app README LEGAL"
+  srcfiles="Vidalia.app README LEGAL .background .DS_Store"
   osx/builddmg.sh "$srcdir" "$srcfiles" "bundle" "$torversion"
   ;;
   
