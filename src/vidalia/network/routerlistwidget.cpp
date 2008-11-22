@@ -38,8 +38,6 @@ RouterListWidget::RouterListWidget(QWidget *parent)
   /* Find out when the selected item has changed. */
   connect(this, SIGNAL(itemSelectionChanged()), 
           this, SLOT(onSelectionChanged()));
-  connect(this, SIGNAL(customContextMenuRequested(QPoint)),
-          this, SLOT(customContextMenuRequested(QPoint)));
 }
 
 /** Called when the user changes the UI translation. */
