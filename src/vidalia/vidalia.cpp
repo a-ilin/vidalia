@@ -317,6 +317,8 @@ Vidalia::defaultDataDirectory()
 {
 #if defined(Q_OS_WIN32)
   return (win32_app_data_folder() + "\\Vidalia");
+#elif defined(Q_OS_MAC)
+  return (QDir::homePath() + "/Library/Vidalia");
 #else
   return (QDir::homePath() + "/.vidalia");
 #endif
