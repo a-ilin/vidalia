@@ -74,8 +74,9 @@ do
   echo "Copying $srcdir/$file to $BUILD_DIR/$file"
   cp -r "$srcdir/$file" "$BUILD_DIR/$file"
 done
+ln -s /Applications $BUILD_DIR/Applications
 
 # Create the disk image
-hdiutil create -format UDZO -srcfolder "$BUILD_DIR" -volname "$volname" "$DMG"
+hdiutil create -format UDZO -imagekey zlib-level=9 -srcfolder "$BUILD_DIR" -volname "$volname" "$DMG"
 rm -rf "$BUILD_DIR"
 
