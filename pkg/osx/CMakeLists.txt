@@ -15,23 +15,3 @@ configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/builddmg.sh.in
   ${CMAKE_CURRENT_BINARY_DIR}/builddmg.sh
 )
-configure_file(
-  ${CMAKE_CURRENT_SOURCE_DIR}/buildmpkg.sh.in
-  ${CMAKE_CURRENT_BINARY_DIR}/buildmpkg.sh
-)
-configure_file(
-  ${CMAKE_CURRENT_SOURCE_DIR}/VidaliaBundleDesc.plist.in
-  ${CMAKE_CURRENT_BINARY_DIR}/VidaliaBundleDesc.plist
-)
-configure_file(
-  ${CMAKE_CURRENT_SOURCE_DIR}/VidaliaBundleInfo.plist.in
-  ${CMAKE_CURRENT_BINARY_DIR}/VidaliaBundleInfo.plist
-)
-configure_file(
-  ${CMAKE_CURRENT_SOURCE_DIR}/VidaliaDesc.plist.in
-  ${CMAKE_CURRENT_BINARY_DIR}/VidaliaDesc.plist
-)
-configure_file(
-  ${CMAKE_CURRENT_SOURCE_DIR}/VidaliaInfo.plist.in
-  ${CMAKE_CURRENT_BINARY_DIR}/VidaliaInfo.plist
-)
