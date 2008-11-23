@@ -237,7 +237,9 @@ if (APPLE)
   set(MACOSX_BUNDLE_SHORT_VERSION_STRING  ${VERSION})
   set(MACOSX_BUNDLE_LONG_VERSION_STRING   "Version ${VERSION}")
   set(MACOSX_BUNDLE_ICON_FILE             vidalia.icns)
-  
+  set(MACOSX_BUNDLE_GUI_IDENTIFIER        "net.vidalia-project")
+  set(MACOSX_BUNDLE_INFO_STRING           "Vidalia ${VERSION}")
+
   ## Put everything inside the application bundle
   set(CMAKE_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX}/)
   add_executable(${vidalia_BIN} MACOSX_BUNDLE ${vidalia_SRCS})
