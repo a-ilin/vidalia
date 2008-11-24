@@ -1,4 +1,4 @@
-           Building the Vidalia/Tor/Privoxy OS X Bundle
+           Building the Vidalia/Tor/Polipo OS X Bundle
 
 Libevent
 1. Download and extract the latest libevent source from
@@ -22,6 +22,9 @@ Qt
    Trolltech at the following address:
    http://www.trolltech.com/developer/downloads/qt/mac
 
+  Alternatively, download the open source Qt dmg and install.  You can now skip 5
+and 6.
+
 5. Configure Qt with the following (OS X 10.4 or later):
   export MACOSX_DEPLOYENT_TARGET=10.4
    ./configure -static -release -universal -fast -no-qt3support \
@@ -32,8 +35,15 @@ Qt
  
  
 Polipo
-7. Download the OS X Polipo source with tor modifications from 
-  http://interloper.org/tmp/polipo/polipo-1.0.4-with-tor-mods.tgz
+7. Download the OS X Polipo source from:
+http://www.pps.jussieu.fr/~jch/software/files/polipo/.
+
+7a. Download the Tor modifications to Polipo from:
+https://svn.torproject.org/svn/tor/trunk/contrib/polipo/.  
+
+Alternatively, download a tarball with the Polipo source and Tor
+modifications together from:
+http://interloper.org/tmp/polipo/polipo-1.0.4-with-tor-mods.tgz
 
 8. Follow the directions to build polipo at
   https://www.torproject.org/svn/trunk/contrib/polipo/README
@@ -43,10 +53,10 @@ Tor
    https://www.torproject.org/download
 
    Note the location in which you extract Tor's source, because you will need
-   to specify it in Step 8.
+   to specify it in Step 14.
    
 10. Configure Tor with the following:
-   ./configure --prefix=/Library/Tor --bindir=/Library/Tor --sysconfdir=/Library
+   ./configure --prefix=/Applications/Vidalia.app --bindir=/Applications/Vidalia.app --sysconfdir=/Applications/Vidalia.app
 
 Vidalia
 11. Configure Vidalia with the following:
@@ -63,10 +73,10 @@ Remember where you put this file.
    
 Finish
 14. From Vidalia's pkg/ directory in Vidalia's source, run the following:
-     ./package.sh osx-bundle <path-to-tor> <path-to-polipo> <path-to-torbutton>
+     ./package.sh osx-bundle <path-to-tor> <path-to-polipo> <path-to-torbutton-file>
   
   Example:
-     ./package.sh osx-bundle ~/tor-0.2.0.11-alpha ~/tmp/polipo-1.0.4/ ~/tmp/
+     ./package.sh osx-bundle ~/tor-0.2.1.7-alpha ~/tmp/polipo-1.0.4 ~/tmp/torbutton-1.2.0-fx
 
   The script that builds the .dmg (pkg/osx/bundle/builddmg.sh) gets Tor's
   version number from the directory name, so it should be named appropriately,
