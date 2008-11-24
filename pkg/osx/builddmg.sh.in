@@ -14,7 +14,7 @@
 
 # Make sure enough arguments were supplied
 if [ "$#" -eq 0 ]; then
-  echo "Usage: $0 <srcdir> <files to include> <vidalia or bundle> <tor-version>"
+  echo "This is normally called by package.sh in the pkg dir."
   exit 1
 fi
 
