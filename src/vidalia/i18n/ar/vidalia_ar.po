@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
-"POT-Creation-Date: 2008-07-02 05:29+0000\n"
+"POT-Creation-Date: 2008-11-24 15:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: translations@vidalia-project.net\n"
@@ -12,50 +12,60 @@ msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "X-Generator: Vidalia ts2po 0.2\n"
 
-#: aboutdialog.ui:25
+#: aboutdialog.ui:16
 msgctxt "AboutDialog"
 msgid "About Vidalia"
 msgstr "عن ڤيداليا"
 
-#: aboutdialog.ui:78
+#: aboutdialog.ui:53
 msgctxt "AboutDialog"
 msgid "Vidalia"
 msgstr "Vidalia"
 
-#: aboutdialog.ui:234
+#: aboutdialog.ui:69
 msgctxt "AboutDialog"
 msgid "Tor"
 msgstr "Tor"
 
-#: aboutdialog.ui:156
+#: aboutdialog.ui:88
 msgctxt "AboutDialog"
 msgid "Qt"
 msgstr "Qt"
 
-#: aboutdialog.ui:166
+#: aboutdialog.cpp:53
 msgctxt "AboutDialog"
-msgid "Qt Version"
-msgstr "إصدارة Qt"
+msgid "Unavailable"
+msgstr ""
 
-#: aboutdialog.ui:244
+#: aboutdialog.cpp:57
 msgctxt "AboutDialog"
-msgid "Tor Version"
-msgstr "إصدارة Tor"
+msgid "Not Running"
+msgstr ""
 
-#: aboutdialog.ui:88
+#: aboutdialog.ui:81
 msgctxt "AboutDialog"
-msgid "Vidalia Version"
-msgstr "إصدارة Vidalia"
+msgid "0.2.0"
+msgstr "0.2.0"
 
-#: aboutdialog.cpp:68
+#: aboutdialog.ui:106
 msgctxt "AboutDialog"
-msgid "<Not Running>"
-msgstr ">غير عامل<"
+msgid "0.2.0.31-alpha-dev (r123456)"
+msgstr ""
 
-#: aboutdialog.cpp:64
+#: aboutdialog.ui:131
 msgctxt "AboutDialog"
-msgid "<Unavailable>"
-msgstr ">غير متاح<"
+msgid "4.4.2"
+msgstr "4.4.2"
+
+#: aboutdialog.ui:107
+msgctxt "AboutDialog"
+msgid "License"
+msgstr ""
+
+#: aboutdialog.ui:163
+msgctxt "AboutDialog"
+msgid "version"
+msgstr ""
 
 #: advancedpage.ui:28
 msgctxt "AdvancedPage"
@@ -67,72 +77,47 @@ msgctxt "AdvancedPage"
 msgid "Browse"
 msgstr "تصفّح"
 
-#: advancedpage.ui:337
-msgctxt "AdvancedPage"
-msgid "Permissions"
-msgstr "الصلاحيات"
-
-#: advancedpage.ui:360
-msgctxt "AdvancedPage"
-msgid "Run as User:"
-msgstr "شغِّل في سياق المستخدم:"
-
-#: advancedpage.ui:373
-msgctxt "AdvancedPage"
-msgid "Vidalia will run with this User's permissions"
-msgstr "ستشتغل ڤيداليا بصلاحيات هذا المستخدم"
-
-#: advancedpage.ui:393
-msgctxt "AdvancedPage"
-msgid "Run as Group:"
-msgstr "شغِّل في سياق المجموعة:"
-
-#: advancedpage.ui:400
-msgctxt "AdvancedPage"
-msgid "Vidalia will run with this Group's permissions"
-msgstr "ستشتغل ڤيداليا بصلاحيات هذه المجموعة"
-
-#: advancedpage.cpp:221
+#: advancedpage.cpp:223
 msgctxt "AdvancedPage"
 msgid "Select Tor Configuration File"
 msgstr "اختر ملف تضبيطات تور"
 
-#: advancedpage.cpp:234
+#: advancedpage.cpp:236
 msgctxt "AdvancedPage"
 msgid "File Not Found"
 msgstr "الملف غير موجود"
 
-#: advancedpage.cpp:236
+#: advancedpage.cpp:238
 msgctxt "AdvancedPage"
 msgid "%1 does not exist. Would you like to create it?"
 msgstr "%1 غير موجود. أتريد إنشاءه؟"
 
-#: advancedpage.cpp:247
+#: advancedpage.cpp:249
 msgctxt "AdvancedPage"
 msgid "Failed to Create File"
 msgstr "تعذَّر إنشاء الملف"
 
-#: advancedpage.cpp:248
+#: advancedpage.cpp:250
 msgctxt "AdvancedPage"
 msgid "Unable to create %1 [%2]"
 msgstr "تعذَّر إنشاء الملف %1 [%2]"
 
-#: advancedpage.cpp:285
+#: advancedpage.cpp:287
 msgctxt "AdvancedPage"
 msgid "Unable to remove Tor Service"
 msgstr "تعذَّرت إزالة خدمة تور"
 
-#: advancedpage.cpp:296
+#: advancedpage.cpp:298
 msgctxt "AdvancedPage"
 msgid "Unable to install Tor Service"
 msgstr "تعذَّر تثبيت خدمة تور"
 
-#: advancedpage.cpp:297
+#: advancedpage.cpp:299
 msgctxt "AdvancedPage"
 msgid "Vidalia was unable to install the Tor service."
 msgstr "لم تتمكن ڤيداليا من تثبيت تور كخدمة."
 
-#: advancedpage.cpp:287
+#: advancedpage.cpp:289
 msgctxt "AdvancedPage"
 msgid "Vidalia was unable to remove the Tor service."
 ""
@@ -141,7 +126,7 @@ msgstr "لم تتمكن ڤيداليا من إزالة خدمة تور."
 "        "
 "        قد تضطر إلى إزالتها يدويا."
 
-#: advancedpage.cpp:103
+#: advancedpage.cpp:109
 msgctxt "AdvancedPage"
 msgid "'%1' is not a valid IP address."
 msgstr "'%1' ليس رقم آي​پي صحيح."
@@ -151,17 +136,12 @@ msgctxt "AdvancedPage"
 msgid ":"
 msgstr ":"
 
-#: advancedpage.cpp:34
-msgctxt "AdvancedPage"
-msgid "Advanced"
-msgstr "متقدمة"
-
-#: advancedpage.cpp:114
+#: advancedpage.cpp:120
 msgctxt "AdvancedPage"
 msgid "You selected 'Password' authentication, but did not specify a password."
 msgstr ""
 
-#: advancedpage.cpp:263
+#: advancedpage.cpp:265
 msgctxt "AdvancedPage"
 msgid "Select a Directory to Use for Tor Data"
 msgstr ""
@@ -226,35 +206,30 @@ msgctxt "AdvancedPage"
 msgid "Tor Configuration File"
 msgstr ""
 
-#: appearancepage.ui:31
+#: appearancepage.ui:22
 msgctxt "AppearancePage"
 msgid "Language"
 msgstr "اللغة"
 
-#: appearancepage.ui:52
+#: appearancepage.ui:37
 msgctxt "AppearancePage"
 msgid "Choose the language used in Vidalia"
 msgstr "اختر لغة واجهة ڤيداليا"
 
-#: appearancepage.ui:84
-msgctxt "AppearancePage"
-msgid "Changes to language will only take effect after restarting Vidalia!"
-msgstr "تغيير اللغة لن يسري إلا بعد إعادة تشغيل ڤيداليا."
-
-#: appearancepage.ui:100
+#: appearancepage.ui:75
 msgctxt "AppearancePage"
 msgid "Style"
 msgstr "طراز"
 
-#: appearancepage.ui:134
+#: appearancepage.ui:103
 msgctxt "AppearancePage"
 msgid "Choose Vidalia's interface style"
 msgstr "اختر طراز واجهة ڤيداليا"
 
-#: appearancepage.cpp:23
+#: appearancepage.cpp:67
 msgctxt "AppearancePage"
-msgid "Appearance"
-msgstr "المظهر"
+msgid "Vidalia was unable to load the selected language translation."
+msgstr ""
 
 #: bwgraph.ui:16
 msgctxt "BandwidthGraph"
@@ -296,7 +271,7 @@ msgctxt "BandwidthGraph"
 msgid "Cancel"
 msgstr "الغِ"
 
-#: bwgraph.cpp:160
+#: bwgraph.cpp:166
 msgctxt "BandwidthGraph"
 msgid "Since:"
 msgstr "منذ:"
@@ -311,7 +286,7 @@ msgctxt "BandwidthGraph"
 msgid "% Opaque"
 msgstr "% معتم"
 
-#: bwgraph.cpp:226
+#: bwgraph.cpp:232
 msgctxt "BandwidthGraph"
 msgid "Hide Settings"
 msgstr "اخف التضبيطات"
@@ -326,32 +301,32 @@ msgctxt "BandwidthGraph"
 msgid "Style"
 msgstr "طراز"
 
-#: circuit.cpp:89
+#: circuit.cpp:112
 msgctxt "Circuit"
 msgid "New"
 msgstr "جديدة"
 
-#: circuit.cpp:90
+#: circuit.cpp:113
 msgctxt "Circuit"
 msgid "Open"
 msgstr "افتح"
 
-#: circuit.cpp:91
+#: circuit.cpp:114
 msgctxt "Circuit"
 msgid "Building"
 msgstr "يجري البناء"
 
-#: circuit.cpp:92
+#: circuit.cpp:115
 msgctxt "Circuit"
 msgid "Failed"
 msgstr "فشل"
 
-#: circuit.cpp:93
+#: circuit.cpp:116
 msgctxt "Circuit"
 msgid "Closed"
 msgstr "أغلقت"
 
-#: circuit.cpp:94
+#: circuit.cpp:117
 msgctxt "Circuit"
 msgid "Unknown"
 msgstr "غير معلوم"
@@ -361,52 +336,47 @@ msgctxt "CircuitItem"
 msgid "<Path Empty>"
 msgstr ">مسار خاوٍ<"
 
-#: circuitlistwidget.cpp:37
+#: circuitlistwidget.cpp:55
 msgctxt "CircuitListWidget"
 msgid "Connection"
 msgstr "الاتصال"
 
-#: circuitlistwidget.cpp:37
+#: circuitlistwidget.cpp:55
 msgctxt "CircuitListWidget"
 msgid "Status"
 msgstr "الحالة"
 
-#: circuitlistwidget.cpp:72
+#: circuitlistwidget.cpp:87
 msgctxt "CircuitListWidget"
 msgid "Zoom to Circuit"
 msgstr "قارب إلى الدائرة"
 
-#: circuitlistwidget.cpp:74
+#: circuitlistwidget.cpp:89
 msgctxt "CircuitListWidget"
 msgid "Close Circuit (Del)"
 msgstr ""
 
-#: circuitlistwidget.cpp:95
+#: circuitlistwidget.cpp:110
 msgctxt "CircuitListWidget"
 msgid "Close Stream (Del)"
 msgstr ""
 
-#: configdialog.cpp:72
+#: configdialog.cpp:77
 msgctxt "ConfigDialog"
 msgid "General"
 msgstr "عامة"
 
-#: configdialog.cpp:92
+#: configdialog.cpp:97
 msgctxt "ConfigDialog"
 msgid "Advanced"
 msgstr "متقدمة"
 
-#: configdialog.cpp:59
-msgctxt "ConfigDialog"
-msgid "Cancel"
-msgstr "الغِ"
-
-#: configdialog.cpp:88
+#: configdialog.cpp:93
 msgctxt "ConfigDialog"
 msgid "Appearance"
 msgstr "المظهر"
 
-#: configdialog.cpp:106
+#: configdialog.cpp:111
 msgctxt "ConfigDialog"
 msgid "Help"
 msgstr "مساعدة"
@@ -416,167 +386,172 @@ msgctxt "ConfigDialog"
 msgid "Settings"
 msgstr "تضبيطات"
 
-#: configdialog.cpp:76
+#: configdialog.cpp:81
 msgctxt "ConfigDialog"
 msgid "Network"
 msgstr ""
 
-#: configdialog.cpp:174
+#: configdialog.cpp:196
 msgctxt "ConfigDialog"
 msgid "Error Saving Settings"
 msgstr ""
 
-#: configdialog.cpp:176
+#: configdialog.cpp:198
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to save your %1 settings."
 msgstr ""
 
-#: configdialog.cpp:203
+#: configdialog.cpp:225
 msgctxt "ConfigDialog"
 msgid "Error Applying Settings"
 msgstr ""
 
-#: configdialog.cpp:205
+#: configdialog.cpp:227
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to apply your %1 settings to Tor."
 msgstr ""
 
-#: configdialog.cpp:56
-msgctxt "ConfigDialog"
-msgid "OK"
-msgstr "موافق"
-
-#: configdialog.cpp:80
+#: configdialog.cpp:85
 msgctxt "ConfigDialog"
 msgid "Sharing"
 msgstr ""
 
-#: configdialog.cpp:84
+#: configdialog.cpp:89
 msgctxt "ConfigDialog"
 msgid "Services"
 msgstr ""
 
-#: controlconnection.cpp:319
+#: controlconnection.cpp:331
 msgctxt "ControlConnection"
 msgid "Control socket is not connected."
 msgstr "مقبس التحكم غير متصل."
 
-#: controlconnection.cpp:131
+#: controlconnection.cpp:134
 msgctxt "ControlConnection"
 msgid "Vidalia was unable to connect to Tor. (%1)"
 msgstr ""
 
-#: controlsocket.cpp:61
+#: controlpasswordinputdialog.ui:28
+msgctxt "ControlPasswordInputDialog"
+msgid "Password Required"
+msgstr ""
+
+#: controlpasswordinputdialog.ui:80
+msgctxt "ControlPasswordInputDialog"
+msgid "Vidalia has connected to a running Tor process that requires a password. Please enter your control password: "
+msgstr ""
+
+#: controlpasswordinputdialog.ui:99
+msgctxt "ControlPasswordInputDialog"
+msgid "Remember my password"
+msgstr ""
+
+#: controlsocket.cpp:80
 msgctxt "ControlSocket"
 msgid "Error sending control command. [%1]"
 msgstr "عُطل في إرسال أمر تحكم. [%1]"
 
-#: controlsocket.cpp:98
+#: controlsocket.cpp:117
 msgctxt "ControlSocket"
 msgid "Socket disconnected while attempting to read a line of data."
 msgstr "فُصِل المقبس أثناء محاولة قراءة سطر بيانات."
 
-#: controlsocket.cpp:136
+#: controlsocket.cpp:156
 msgctxt "ControlSocket"
 msgid "Invalid control reply. [%1]"
 msgstr "رد تحكم غير صحيح. [%1]"
 
-#: controlsocket.cpp:51
+#: controlsocket.cpp:70
 msgctxt "ControlSocket"
 msgid "Control socket is not connected."
 msgstr "مقبس التحكم غير متصل."
 
-#: generalpage.ui:115
+#: generalpage.ui:121
 msgctxt "GeneralPage"
 msgid "Browse"
 msgstr "تصفّح"
 
-#: generalpage.cpp:72
+#: generalpage.cpp:75
 msgctxt "GeneralPage"
 msgid "Select Path to Tor"
 msgstr "اختر مسار تور"
 
-#: generalpage.cpp:59
+#: generalpage.cpp:62
 msgctxt "GeneralPage"
 msgid "Executables (*.exe)"
 msgstr "التنفيذيات (*.exe)"
 
-#: generalpage.cpp:23
-msgctxt "GeneralPage"
-msgid "General"
-msgstr "عامة"
-
-#: generalpage.cpp:95
+#: generalpage.cpp:98
 msgctxt "GeneralPage"
 msgid "You must specify the name of your Tor executable."
 msgstr ""
 
-#: generalpage.cpp:82
+#: generalpage.cpp:85
 msgctxt "GeneralPage"
 msgid "Select Proxy Executable"
 msgstr ""
 
-#: generalpage.cpp:103
+#: generalpage.cpp:106
 msgctxt "GeneralPage"
 msgid "The proxy arguments specified are not properly formatted."
 msgstr ""
 
-#: generalpage.ui:22
+#: generalpage.ui:28
 msgctxt "GeneralPage"
 msgid "Start Vidalia when my system starts"
 msgstr ""
 
-#: generalpage.ui:75
-msgctxt "GeneralPage"
-msgid "Start a proxy application when Vidalia starts"
-msgstr ""
-
-#: generalpage.ui:97
-msgctxt "GeneralPage"
-msgid "Proxy Executable"
-msgstr ""
-
-#: generalpage.ui:129
-msgctxt "GeneralPage"
-msgid "Command Line Arguments:"
-msgstr ""
-
-#: generalpage.ui:63
+#: generalpage.ui:57
 msgctxt "GeneralPage"
 msgid "Start the Tor software when Vidalia starts"
 msgstr ""
 
-#: generalpage.ui:38
+#: generalpage.ui:51
 msgctxt "GeneralPage"
-msgid "Tor Executable"
+msgid "Tor"
 msgstr ""
 
-#: graphframe.cpp:237
+#: generalpage.ui:93
+msgctxt "GeneralPage"
+msgid "Proxy Application (optional)"
+msgstr ""
+
+#: generalpage.ui:99
+msgctxt "GeneralPage"
+msgid "Start a proxy application when Tor starts"
+msgstr ""
+
+#: generalpage.ui:135
+msgctxt "GeneralPage"
+msgid "Proxy Application Arguments:"
+msgstr ""
+
+#: graphframe.cpp:238
 msgctxt "GraphFrame"
 msgid "Recv: "
 msgstr "استقبل: "
 
-#: graphframe.cpp:246
+#: graphframe.cpp:247
 msgctxt "GraphFrame"
 msgid "Sent: "
 msgstr "أرسل: "
 
-#: graphframe.cpp:258
+#: graphframe.cpp:259
 msgctxt "GraphFrame"
 msgid "%1 KB"
 msgstr "%1 ك.بايت"
 
-#: graphframe.cpp:261
+#: graphframe.cpp:262
 msgctxt "GraphFrame"
 msgid "%1 MB"
 msgstr "%1 م.بايت"
 
-#: graphframe.cpp:264
+#: graphframe.cpp:265
 msgctxt "GraphFrame"
 msgid "%1 GB"
 msgstr "%1 ج.بايت"
 
-#: graphframe.cpp:285
+#: graphframe.cpp:298
 msgctxt "GraphFrame"
 msgid "%1 KB/s"
 msgstr "%1 ك.ب/ث"
@@ -696,22 +671,22 @@ msgctxt "HelpBrowser"
 msgid "Esc"
 msgstr "Esc"
 
-#: helpbrowser.cpp:122
+#: helpbrowser.cpp:135
 msgctxt "HelpBrowser"
 msgid "Error Loading Help Contents: "
 msgstr "عُطل في تحميل محتويات المساعدة: "
 
-#: helpbrowser.cpp:377
+#: helpbrowser.cpp:396
 msgctxt "HelpBrowser"
 msgid "Search reached end of document"
 msgstr "وصل البحث نهاية الوثيقة"
 
-#: helpbrowser.cpp:379
+#: helpbrowser.cpp:398
 msgctxt "HelpBrowser"
 msgid "Search reached start of document"
 msgstr "وصل البحث إلى بداية الوثيقة"
 
-#: helpbrowser.cpp:381
+#: helpbrowser.cpp:400
 msgctxt "HelpBrowser"
 msgid "Text not found in document"
 msgstr "لم يُعثر على النص في الوثيقة"
@@ -731,12 +706,12 @@ msgctxt "HelpBrowser"
 msgid "Searching for:"
 msgstr "يجري البحث عن:"
 
-#: helpbrowser.cpp:134
+#: helpbrowser.cpp:147
 msgctxt "HelpBrowser"
 msgid "Supplied XML file is not a valid Contents document."
 msgstr "ملف ليس وثيقة محتويات صحيحة. XML المرفق ليس"
 
-#: helpbrowser.cpp:426
+#: helpbrowser.cpp:445
 msgctxt "HelpBrowser"
 msgid "Found %1 results"
 msgstr "وجدت %1 نتيجة"
@@ -769,6 +744,21 @@ msgstr ""
 #: helptextbrowser.cpp:90
 msgctxt "HelpTextBrowser"
 msgid "Vidalia was unable to open the selected link in your Web browser. You can still copy the URL and paste it into your browser."
+msgstr ""
+
+#: licensedialog.ui:13
+msgctxt "LicenseDialog"
+msgid "License Information"
+msgstr ""
+
+#: licensedialog.ui:43
+msgctxt "LicenseDialog"
+msgid "License"
+msgstr ""
+
+#: licensedialog.ui:76
+msgctxt "LicenseDialog"
+msgid "Credits"
 msgstr ""
 
 #: logevent.cpp:57
@@ -826,62 +816,57 @@ msgctxt "MainWindow"
 msgid "Help"
 msgstr "مساعدة"
 
-#: mainwindow.cpp:394
+#: mainwindow.cpp:437
 msgctxt "MainWindow"
 msgid "Ctrl+T"
 msgstr "Ctrl+T"
 
-#: mainwindow.cpp:395
+#: mainwindow.cpp:438
 msgctxt "MainWindow"
 msgid "Ctrl+B"
 msgstr "Ctrl+B"
 
-#: mainwindow.cpp:396
+#: mainwindow.cpp:439
 msgctxt "MainWindow"
 msgid "Ctrl+L"
 msgstr "Ctrl+L"
 
-#: mainwindow.cpp:398
+#: mainwindow.cpp:441
 msgctxt "MainWindow"
 msgid "Ctrl+?"
 msgstr "Ctrl+?"
 
-#: mainwindow.cpp:411
-msgctxt "MainWindow"
-msgid "File"
-msgstr "ملف"
-
-#: mainwindow.cpp:414
+#: mainwindow.cpp:463
 msgctxt "MainWindow"
 msgid "Tor"
 msgstr "تور"
 
-#: mainwindow.cpp:419
+#: mainwindow.cpp:468
 msgctxt "MainWindow"
 msgid "View"
 msgstr "عرض"
 
-#: mainwindow.cpp:428
+#: mainwindow.cpp:476
 msgctxt "MainWindow"
 msgid "Vidalia Help"
 msgstr "مساعدة ڤيداليا"
 
-#: mainwindow.cpp:831
+#: mainwindow.cpp:859
 msgctxt "MainWindow"
 msgid "Error Starting Tor"
 msgstr "عُطل في تشغيل تور"
 
-#: mainwindow.cpp:397
+#: mainwindow.cpp:440
 msgctxt "MainWindow"
 msgid "Ctrl+N"
 msgstr "Ctrl+N"
 
-#: mainwindow.cpp:834
+#: mainwindow.cpp:862
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified."
 msgstr "تعذَّر على ڤيداليا تشغيل تور. افحص تضبيطاتك للتأكد من صحة تحديد اسم و موضع تنفيذي تور."
 
-#: mainwindow.cpp:320
+#: mainwindow.cpp:348
 msgctxt "MainWindow"
 msgid "Network Map"
 msgstr "خريطة الشبكة"
@@ -891,22 +876,22 @@ msgctxt "MainWindow"
 msgid "Settings"
 msgstr "تضبيطات"
 
-#: mainwindow.cpp:1331
+#: mainwindow.cpp:1391
 msgctxt "MainWindow"
 msgid "New Identity"
 msgstr "هوية جديدة"
 
-#: mainwindow.cpp:399
+#: mainwindow.cpp:442
 msgctxt "MainWindow"
 msgid "Ctrl+I"
 msgstr "Ctrl+I"
 
-#: mainwindow.cpp:1334
+#: mainwindow.cpp:1394
 msgctxt "MainWindow"
 msgid "All subsequent connections will appear to be different than your old connections."
 msgstr "ستبدو كل الاتصالات اللاحقة مختلفة عن الاتصالات السابقة."
 
-#: mainwindow.cpp:1349
+#: mainwindow.cpp:1409
 msgctxt "MainWindow"
 msgid "Failed to Create New Identity"
 msgstr "تعذَّر إنشاء هوية جديدة."
@@ -916,7 +901,7 @@ msgctxt "MainWindow"
 msgid "Tor is not running"
 msgstr "تور لا يعمل"
 
-#: mainwindow.cpp:643
+#: mainwindow.cpp:688
 msgctxt "MainWindow"
 msgid "Tor is shutting down"
 msgstr "تور يُغلق"
@@ -986,162 +971,152 @@ msgctxt "MainWindow"
 msgid "Hide this window"
 msgstr "يخفي هذه النافذة"
 
-#: mainwindow.cpp:327
+#: mainwindow.cpp:354
 msgctxt "MainWindow"
 msgid "Control Panel"
 msgstr "لوحة التحكم"
 
-#: mainwindow.cpp:400
+#: mainwindow.cpp:443
 msgctxt "MainWindow"
 msgid "Ctrl+P"
 msgstr "Ctrl+P"
 
-#: mainwindow.cpp:910
+#: mainwindow.cpp:938
 msgctxt "MainWindow"
 msgid "Relaying is Enabled"
 msgstr ""
 
-#: mainwindow.cpp:1047
+#: mainwindow.cpp:1075
 msgctxt "MainWindow"
 msgid "Cookie Authentication Required"
 msgstr ""
 
-#: mainwindow.cpp:1052
+#: mainwindow.cpp:1080
 msgctxt "MainWindow"
 msgid "Would you like to browse for the file 'control_auth_cookie' yourself?"
 msgstr ""
 
-#: mainwindow.cpp:1109
+#: mainwindow.cpp:1141
 msgctxt "MainWindow"
 msgid "Error Registering for Events"
 msgstr ""
 
-#: mainwindow.cpp:1145
-msgctxt "MainWindow"
-msgid "Password Authentication Required"
-msgstr ""
-
-#: mainwindow.cpp:1146
-msgctxt "MainWindow"
-msgid "Please enter your control password (not the hash):"
-msgstr ""
-
-#: mainwindow.cpp:1164
+#: mainwindow.cpp:1226
 msgctxt "MainWindow"
 msgid "Please check your control port authentication settings."
 msgstr ""
 
-#: mainwindow.cpp:482
+#: mainwindow.cpp:527
 msgctxt "MainWindow"
 msgid "Error starting web browser"
 msgstr ""
 
-#: mainwindow.cpp:483
+#: mainwindow.cpp:528
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured web browser"
 msgstr ""
 
-#: mainwindow.cpp:1268
+#: mainwindow.cpp:1330
 msgctxt "MainWindow"
 msgid "Tor Update Available"
 msgstr ""
 
-#: mainwindow.cpp:1271
+#: mainwindow.cpp:1333
 msgctxt "MainWindow"
 msgid "The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version."
 msgstr ""
 
-#: mainwindow.cpp:1271
+#: mainwindow.cpp:1333
 msgctxt "MainWindow"
 msgid "Tor website: %1"
 msgstr ""
 
-#: mainwindow.cpp:517
+#: mainwindow.cpp:562
 msgctxt "MainWindow"
 msgid "Error starting proxy server"
 msgstr ""
 
-#: mainwindow.cpp:518
+#: mainwindow.cpp:563
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured proxy server"
 msgstr ""
 
-#: mainwindow.cpp:641
+#: mainwindow.cpp:686
 msgctxt "MainWindow"
 msgid "Your relay is shutting down."
 "Click 'Stop' again to stop your relay now."
 msgstr ""
 
-#: mainwindow.cpp:878
+#: mainwindow.cpp:906
 msgctxt "MainWindow"
 msgid "Connection Error"
 msgstr ""
 
-#: mainwindow.cpp:915
+#: mainwindow.cpp:943
 msgctxt "MainWindow"
 msgid "You are currently running a relay. Terminating your relay will interrupt any open connections from clients."
 ""
 "Would you like to shutdown gracefully and give clients time to find a new relay?"
 msgstr ""
 
-#: mainwindow.cpp:937
+#: mainwindow.cpp:965
 msgctxt "MainWindow"
 msgid "Error Shutting Down"
 msgstr ""
 
-#: mainwindow.cpp:938
+#: mainwindow.cpp:966
 msgctxt "MainWindow"
 msgid "Vidalia was unable to stop the Tor software."
 msgstr ""
 
-#: mainwindow.cpp:969
+#: mainwindow.cpp:997
 msgctxt "MainWindow"
 msgid "Unexpected Error"
 msgstr ""
 
-#: mainwindow.cpp:973
+#: mainwindow.cpp:1001
 msgctxt "MainWindow"
 msgid "Vidalia detected that the Tor software exited unexpectedly."
 ""
 "Please check the message log for recent warning or error messages."
 msgstr ""
 
-#: mainwindow.cpp:1050
+#: mainwindow.cpp:1078
 msgctxt "MainWindow"
 msgid "The Tor software requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one."
 msgstr ""
 
-#: mainwindow.cpp:1059
+#: mainwindow.cpp:1087
 msgctxt "MainWindow"
 msgid "Data Directory"
 msgstr ""
 
-#: mainwindow.cpp:1061
+#: mainwindow.cpp:1089
 msgctxt "MainWindow"
 msgid "Control Cookie (control_auth_cookie)"
 msgstr ""
 
-#: mainwindow.cpp:1111
+#: mainwindow.cpp:1143
 msgctxt "MainWindow"
 msgid "Vidalia was unable to register for some events. Many of Vidalia's features may be unavailable."
 msgstr ""
 
-#: mainwindow.cpp:1160
+#: mainwindow.cpp:1222
 msgctxt "MainWindow"
 msgid "Authentication Error"
 msgstr ""
 
-#: mainwindow.cpp:1162
+#: mainwindow.cpp:1224
 msgctxt "MainWindow"
 msgid "Vidalia was unable to authenticate to the Tor software. (%1)"
 msgstr ""
 
-#: mainwindow.cpp:1398
+#: mainwindow.cpp:1458
 msgctxt "MainWindow"
 msgid "Port Forwarding Failed"
 msgstr ""
 
-#: mainwindow.cpp:1399
+#: mainwindow.cpp:1459
 msgctxt "MainWindow"
 msgid "Vidalia was unable to configure automatic port forwarding."
 msgstr ""
@@ -1176,132 +1151,132 @@ msgctxt "MainWindow"
 msgid "Start Tor"
 msgstr ""
 
-#: mainwindow.cpp:495
+#: mainwindow.cpp:540
 msgctxt "MainWindow"
 msgid "Error starting IM client"
 msgstr ""
 
-#: mainwindow.cpp:496
+#: mainwindow.cpp:541
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured IM client"
 msgstr ""
 
-#: mainwindow.cpp:534
+#: mainwindow.cpp:579
 msgctxt "MainWindow"
 msgid "Connecting to a relay directory"
 msgstr ""
 
-#: mainwindow.cpp:538
+#: mainwindow.cpp:583
 msgctxt "MainWindow"
 msgid "Establishing an encrypted directory connection"
 msgstr ""
 
-#: mainwindow.cpp:541
+#: mainwindow.cpp:586
 msgctxt "MainWindow"
 msgid "Retrieving network status"
 msgstr ""
 
-#: mainwindow.cpp:544
+#: mainwindow.cpp:589
 msgctxt "MainWindow"
 msgid "Loading network status"
 msgstr ""
 
-#: mainwindow.cpp:547
+#: mainwindow.cpp:592
 msgctxt "MainWindow"
 msgid "Loading authority certificates"
 msgstr ""
 
-#: mainwindow.cpp:550
+#: mainwindow.cpp:595
 msgctxt "MainWindow"
 msgid "Requesting relay information"
 msgstr ""
 
-#: mainwindow.cpp:553
+#: mainwindow.cpp:598
 msgctxt "MainWindow"
 msgid "Loading relay information"
 msgstr ""
 
-#: mainwindow.cpp:1100
+#: mainwindow.cpp:1132
 msgctxt "MainWindow"
 msgid "Connecting to the Tor network"
 msgstr ""
 
-#: mainwindow.cpp:560
+#: mainwindow.cpp:605
 msgctxt "MainWindow"
 msgid "Establishing a Tor circuit"
 msgstr ""
 
-#: mainwindow.cpp:1235
+#: mainwindow.cpp:1297
 msgctxt "MainWindow"
 msgid "Connected to the Tor network!"
 msgstr ""
 
-#: mainwindow.cpp:567
+#: mainwindow.cpp:612
 msgctxt "MainWindow"
 msgid "Unrecognized startup status"
 msgstr ""
 
-#: mainwindow.cpp:574
+#: mainwindow.cpp:619
 msgctxt "MainWindow"
 msgid "miscellaneous"
 msgstr ""
 
-#: mainwindow.cpp:577
+#: mainwindow.cpp:622
 msgctxt "MainWindow"
 msgid "identity mismatch"
 msgstr ""
 
-#: mainwindow.cpp:580
+#: mainwindow.cpp:625
 msgctxt "MainWindow"
 msgid "done"
 msgstr ""
 
-#: mainwindow.cpp:583
+#: mainwindow.cpp:628
 msgctxt "MainWindow"
 msgid "connection refused"
 msgstr ""
 
-#: mainwindow.cpp:586
+#: mainwindow.cpp:631
 msgctxt "MainWindow"
 msgid "connection timeout"
 msgstr ""
 
-#: mainwindow.cpp:589
+#: mainwindow.cpp:634
 msgctxt "MainWindow"
 msgid "read/write error"
 msgstr ""
 
-#: mainwindow.cpp:592
+#: mainwindow.cpp:637
 msgctxt "MainWindow"
 msgid "no route to host"
 msgstr ""
 
-#: mainwindow.cpp:595
+#: mainwindow.cpp:640
 msgctxt "MainWindow"
 msgid "insufficient resources"
 msgstr ""
 
-#: mainwindow.cpp:598
+#: mainwindow.cpp:643
 msgctxt "MainWindow"
 msgid "unknown"
 msgstr ""
 
-#: mainwindow.cpp:600
+#: mainwindow.cpp:645
 msgctxt "MainWindow"
 msgid " failed (%1)"
 msgstr ""
 
-#: mainwindow.cpp:648
+#: mainwindow.cpp:693
 msgctxt "MainWindow"
 msgid "Stop Tor Now"
 msgstr ""
 
-#: mainwindow.cpp:650
+#: mainwindow.cpp:695
 msgctxt "MainWindow"
 msgid "Stop Tor"
 msgstr ""
 
-#: mainwindow.cpp:666
+#: mainwindow.cpp:711
 msgctxt "MainWindow"
 msgid "Starting the Tor software"
 msgstr ""
@@ -1311,19 +1286,24 @@ msgctxt "MainWindow"
 msgid "Starting Tor"
 msgstr ""
 
-#: mainwindow.cpp:677
-msgctxt "MainWindow"
-msgid "Tor is Running"
-msgstr ""
-
-#: mainwindow.cpp:868
+#: mainwindow.cpp:896
 msgctxt "MainWindow"
 msgid "Connecting to Tor"
 msgstr ""
 
-#: mainwindow.cpp:1027
+#: mainwindow.cpp:1055
 msgctxt "MainWindow"
 msgid "Authenticating to Tor"
+msgstr ""
+
+#: mainwindow.cpp:1210
+msgctxt "MainWindow"
+msgid "Password Reset Failed"
+msgstr ""
+
+#: mainwindow.cpp:1213
+msgctxt "MainWindow"
+msgid "Vidalia tried to reset Tor's control password, but was not able to restart the Tor software. Please check your Task Manager to ensure there are no other Tor processes running."
 msgstr ""
 
 #: messagelog.ui:19
@@ -1516,21 +1496,21 @@ msgctxt "MessageLog"
 msgid "Ctrl+F"
 msgstr "Ctrl+F"
 
-#: messagelog.cpp:137
+#: messagelog.cpp:126
 msgctxt "MessageLog"
 msgid "Messages that appear when something has "
 "gone very wrong and Tor cannot proceed."
 msgstr "الرسائل التي تظهر عندما يحدث"
 "        عُطل فادح و لا يمكن لتور الاستمرار."
 
-#: messagelog.cpp:139
+#: messagelog.cpp:128
 msgctxt "MessageLog"
 msgid "Messages that only appear when "
 "something has gone wrong with Tor."
 msgstr "الرسائل التي تظهر فقط عندما"
 "        يحدث عُطل ما في تور."
 
-#: messagelog.cpp:143
+#: messagelog.cpp:132
 msgctxt "MessageLog"
 msgid "Messages that appear infrequently "
 "during normal Tor operation and are "
@@ -1540,61 +1520,61 @@ msgstr "الرسائل التي تظهر أحيانا أثناء"
 "        اشتغال تور العادي و لا تُعَدُّ أخطاء"
 "        لكنك قد تهتم بها."
 
-#: messagelog.cpp:145
+#: messagelog.cpp:134
 msgctxt "MessageLog"
 msgid "Messages that appear frequently "
 "during normal Tor operation."
 msgstr "الرسائل التي تظهر كثيرا أثناء"
 "        اشتغال تور العادي."
 
-#: messagelog.cpp:147
+#: messagelog.cpp:136
 msgctxt "MessageLog"
 msgid "Hyper-verbose messages primarily of "
 "interest to Tor developers."
 msgstr "رسائل فائقة التفصيل تهم"
 "        في الأساس مطوري تور."
 
-#: messagelog.cpp:192
+#: messagelog.cpp:189
 msgctxt "MessageLog"
 msgid "Error Setting Filter"
 msgstr "عُطل في ضبط المرشح"
 
-#: messagelog.cpp:208
+#: messagelog.cpp:205
 msgctxt "MessageLog"
 msgid "Error Opening Log File"
 msgstr "عُطل في فتح ملف السجِّل"
 
-#: messagelog.cpp:283
+#: messagelog.cpp:280
 msgctxt "MessageLog"
 msgid "Select Log File"
 msgstr "اختر ملف السجِّل"
 
-#: messagelog.cpp:300
+#: messagelog.cpp:297
 msgctxt "MessageLog"
 msgid "Save Log Messages"
 msgstr "احفظ رسائل السجِّل"
 
-#: messagelog.cpp:312
+#: messagelog.cpp:309
 msgctxt "MessageLog"
 msgid "Vidalia"
 msgstr "ڤيداليا"
 
-#: messagelog.cpp:363
+#: messagelog.cpp:360
 msgctxt "MessageLog"
 msgid "Find in Message Log"
 msgstr "أوجد في سِجِّل الرسائل"
 
-#: messagelog.cpp:364
+#: messagelog.cpp:361
 msgctxt "MessageLog"
 msgid "Find:"
 msgstr "أوجد:"
 
-#: messagelog.cpp:370
+#: messagelog.cpp:367
 msgctxt "MessageLog"
 msgid "Not Found"
 msgstr "لا يوجد"
 
-#: messagelog.cpp:371
+#: messagelog.cpp:368
 msgctxt "MessageLog"
 msgid "Search found 0 matches."
 msgstr "وُجدت 0 مطابَقة"
@@ -1624,12 +1604,12 @@ msgctxt "MessageLog"
 msgid "Show the help browser"
 msgstr "أظهر متصفح المساعدة"
 
-#: messagelog.cpp:193
+#: messagelog.cpp:190
 msgctxt "MessageLog"
 msgid "Vidalia was unable to register for Tor's log events."
 msgstr "تعذّر على ڤيداليا الاشتراك في سجلات تور."
 
-#: messagelog.cpp:313
+#: messagelog.cpp:310
 msgctxt "MessageLog"
 msgid "Cannot write file %1"
 ""
@@ -1638,12 +1618,12 @@ msgstr "تعذّرن كتابة الملف %1"
 "        "
 "%2"
 
-#: messagelog.cpp:209
+#: messagelog.cpp:206
 msgctxt "MessageLog"
 msgid "Vidalia was unable to open the specified log file."
 msgstr "تعذّر على ڤيداليا فتح ملف السّجل المذكور."
 
-#: messagelog.cpp:303
+#: messagelog.cpp:300
 msgctxt "MessageLog"
 msgid "Text Files (*.txt)"
 msgstr "ملفات نصية (*.txt)"
@@ -1653,12 +1633,12 @@ msgctxt "MessageLog"
 msgid "F1"
 msgstr "F1"
 
-#: messagelog.cpp:230
+#: messagelog.cpp:227
 msgctxt "MessageLog"
 msgid "Log Filename Required"
 msgstr "اسم ملف السّجل مطلوب"
 
-#: messagelog.cpp:232
+#: messagelog.cpp:229
 msgctxt "MessageLog"
 msgid "You must enter a filename to be able to save log messages to a file."
 msgstr "يجب إدخال اسم ملف ليمكن حفظ مدخلات السّجل فيه."
@@ -1693,92 +1673,92 @@ msgctxt "MessageLog"
 msgid "Automatically save new log messages to a file"
 msgstr "يحفظ رسائل السجِّل الجديدة في ملف أوتوماتيا"
 
-#: netviewer.ui:236
+#: netviewer.ui:239
 msgctxt "NetViewer"
 msgid "Refresh"
 msgstr "حدِّث"
 
-#: netviewer.ui:253
+#: netviewer.ui:256
 msgctxt "NetViewer"
 msgid "Help"
 msgstr "مساعدة"
 
-#: netviewer.ui:270
+#: netviewer.ui:273
 msgctxt "NetViewer"
 msgid "Close"
 msgstr "أغلق"
 
-#: netviewer.ui:287
+#: netviewer.ui:290
 msgctxt "NetViewer"
 msgid "Zoom In"
 msgstr "قرّب"
 
-#: netviewer.ui:304
+#: netviewer.ui:307
 msgctxt "NetViewer"
 msgid "Zoom Out"
 msgstr "بعّد"
 
-#: netviewer.ui:321
+#: netviewer.ui:324
 msgctxt "NetViewer"
 msgid "Zoom To Fit"
 msgstr "املأ المنظور"
 
-#: netviewer.ui:245
+#: netviewer.ui:248
 msgctxt "NetViewer"
 msgid "Ctrl+R"
 msgstr "Ctrl+R"
 
-#: netviewer.ui:262
+#: netviewer.ui:265
 msgctxt "NetViewer"
 msgid "F1"
 msgstr "F1"
 
-#: netviewer.ui:279
+#: netviewer.ui:282
 msgctxt "NetViewer"
 msgid "Esc"
 msgstr "Esc"
 
-#: netviewer.ui:296
+#: netviewer.ui:299
 msgctxt "NetViewer"
 msgid "+"
 msgstr "+"
 
-#: netviewer.ui:313
+#: netviewer.ui:316
 msgctxt "NetViewer"
 msgid "-"
 msgstr "-"
 
-#: netviewer.ui:330
+#: netviewer.ui:333
 msgctxt "NetViewer"
 msgid "Ctrl+Z"
 msgstr "Ctrl+Z"
 
-#: netviewer.ui:259
+#: netviewer.ui:262
 msgctxt "NetViewer"
 msgid "Show network map help"
 msgstr "أظهر المساعدة لخريطة الشبكة"
 
-#: netviewer.ui:256
+#: netviewer.ui:259
 msgctxt "NetViewer"
 msgid "Show the network map help"
 msgstr "يظهر المساعدة الخاصة بخريطة الشبكة"
 
-#: netviewer.ui:276
+#: netviewer.ui:279
 msgctxt "NetViewer"
 msgid "Close the network map"
 msgstr "أغلق خريطة الشبكة"
 
-#: netviewer.ui:293
+#: netviewer.ui:296
 msgctxt "NetViewer"
 msgid "Zoom in on the network map"
 msgstr "يقرِّب منظور خريطة الشبكة"
 
-#: netviewer.ui:310
+#: netviewer.ui:313
 msgctxt "NetViewer"
 msgid "Zoom out on the network map"
 msgstr "يبعّد منظور خريطة الشبكة"
 
-#: netviewer.ui:327
+#: netviewer.ui:330
 msgctxt "NetViewer"
 msgid "Zooms to fit all currently displayed circuits"
 msgstr "يملأ المنظور بكل الدوائر الظاهرة حاليا"
@@ -1788,42 +1768,37 @@ msgctxt "NetViewer"
 msgid "Tor Network Map"
 msgstr ""
 
-#: netviewer.ui:242
+#: netviewer.ui:245
 msgctxt "NetViewer"
 msgid "Refresh the list of Tor relays and connections"
 msgstr ""
 
-#: networkpage.cpp:34
-msgctxt "NetworkPage"
-msgid "Network"
-msgstr ""
-
-#: networkpage.cpp:186
+#: networkpage.cpp:193
 msgctxt "NetworkPage"
 msgid "Invalid Bridge"
 msgstr ""
 
-#: networkpage.cpp:187
+#: networkpage.cpp:194
 msgctxt "NetworkPage"
 msgid "The specified bridge identifier is not valid."
 msgstr ""
 
-#: networkpage.cpp:234
+#: networkpage.cpp:241
 msgctxt "NetworkPage"
 msgid "Copy (Ctrl+C)"
 msgstr ""
 
-#: networkpage.cpp:265
+#: networkpage.cpp:272
 msgctxt "NetworkPage"
 msgid "You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet."
 msgstr ""
 
-#: networkpage.cpp:271
+#: networkpage.cpp:278
 msgctxt "NetworkPage"
 msgid "You must specify one or more ports to which your firewall allows you to connect."
 msgstr ""
 
-#: networkpage.cpp:307
+#: networkpage.cpp:314
 msgctxt "NetworkPage"
 msgid "'%1' is not a valid port number."
 msgstr ""
@@ -1958,55 +1933,60 @@ msgctxt "RouterDescriptor"
 msgid "Offline"
 msgstr "مفصول"
 
-#: routerdescriptorview.cpp:103
+#: routerdescriptorview.cpp:143
 msgctxt "RouterDescriptorView"
 msgid "IP Address:"
 msgstr "عنوان IP:"
 
-#: routerdescriptorview.cpp:104
+#: routerdescriptorview.cpp:144
 msgctxt "RouterDescriptorView"
 msgid "Platform:"
 msgstr "المنصة:"
 
-#: routerdescriptorview.cpp:108
+#: routerdescriptorview.cpp:148
 msgctxt "RouterDescriptorView"
 msgid "Bandwidth:"
 msgstr "عرض النطاق:"
 
-#: routerdescriptorview.cpp:110
+#: routerdescriptorview.cpp:150
 msgctxt "RouterDescriptorView"
 msgid "Uptime:"
 msgstr "مدة الاتصال:"
 
-#: routerdescriptorview.cpp:116
+#: routerdescriptorview.cpp:156
 msgctxt "RouterDescriptorView"
 msgid "Last Updated:"
 msgstr "آخر تحديث:"
 
-#: routerdescriptorview.cpp:99
+#: routerdescriptorview.cpp:139
 msgctxt "RouterDescriptorView"
 msgid "Location:"
 msgstr "الموضع:"
 
-#: routerdescriptorview.cpp:60
+#: routerdescriptorview.cpp:100
 msgctxt "RouterDescriptorView"
 msgid "%1 days "
 msgstr ""
 
-#: routerdescriptorview.cpp:63
+#: routerdescriptorview.cpp:103
 msgctxt "RouterDescriptorView"
 msgid "%1 hours "
 msgstr ""
 
-#: routerdescriptorview.cpp:66
+#: routerdescriptorview.cpp:106
 msgctxt "RouterDescriptorView"
 msgid "%1 mins "
 msgstr ""
 
-#: routerdescriptorview.cpp:69
+#: routerdescriptorview.cpp:109
 msgctxt "RouterDescriptorView"
 msgid "%1 secs"
 msgstr ""
+
+#: routerdescriptorview.cpp:48
+msgctxt "RouterDescriptorView"
+msgid "Copy"
+msgstr "انسخ"
 
 #: routerlistitem.cpp:83
 msgctxt "RouterListItem"
@@ -2023,19 +2003,34 @@ msgctxt "RouterListItem"
 msgid "Hibernating"
 msgstr "مُسبِت"
 
-#: routerlistwidget.cpp:31
+#: routerlistwidget.cpp:49
 msgctxt "RouterListWidget"
 msgid "Relay"
 msgstr ""
 
-#: routerlistwidget.cpp:58
+#: routerlistwidget.cpp:74
 msgctxt "RouterListWidget"
 msgid "Zoom to Relay"
 msgstr ""
 
-#: routerlistwidget.cpp:151
+#: routerlistwidget.cpp:220
 msgctxt "RouterListWidget"
 msgid "%1 relays online"
+msgstr ""
+
+#: routerlistwidget.cpp:67
+msgctxt "RouterListWidget"
+msgid "Copy"
+msgstr "انسخ"
+
+#: routerlistwidget.cpp:68
+msgctxt "RouterListWidget"
+msgid "Nickname"
+msgstr ""
+
+#: routerlistwidget.cpp:71
+msgctxt "RouterListWidget"
+msgid "Fingerprint"
 msgstr ""
 
 #: serverpage.ui:32
@@ -2213,32 +2208,27 @@ msgctxt "ServerPage"
 msgid "Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s."
 msgstr "يجب أن يكون أقصى عرض نطاق مساويا أو أكبر من متوسط المنسوب؛ و كلا القيمتين يجب أن تكون 20 ك.بايت/ث على الأقل."
 
-#: serverpage.cpp:68
-msgctxt "ServerPage"
-msgid "Server"
-msgstr ""
-
-#: serverpage.cpp:133
+#: serverpage.cpp:140
 msgctxt "ServerPage"
 msgid "Bridge Support Unavailable"
 msgstr ""
 
-#: serverpage.cpp:136
+#: serverpage.cpp:143
 msgctxt "ServerPage"
 msgid "You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges."
 msgstr ""
 
-#: serverpage.cpp:138
+#: serverpage.cpp:145
 msgctxt "ServerPage"
 msgid "Please upgrade your Tor software or configure Tor to act as a normal Tor relay."
 msgstr ""
 
-#: serverpage.cpp:192
+#: serverpage.cpp:199
 msgctxt "ServerPage"
 msgid "Your bridge relay is not running."
 msgstr ""
 
-#: serverpage.cpp:256
+#: serverpage.cpp:263
 msgctxt "ServerPage"
 msgid "You must specify at least a relay nickname and port."
 msgstr ""
@@ -2274,17 +2264,17 @@ msgctxt "ServerPage"
 msgid "Port on which users and other relays can communicate with your relay"
 msgstr ""
 
-#: serverpage.ui:1005
+#: serverpage.ui:1015
 msgctxt "ServerPage"
 msgid "Let others access your bridge by giving them this line:"
 msgstr ""
 
-#: serverpage.ui:1029
+#: serverpage.ui:1039
 msgctxt "ServerPage"
 msgid "This is the identity of your bridge relay that you can give to other people"
 msgstr ""
 
-#: serverpage.ui:1051
+#: serverpage.ui:1061
 msgctxt "ServerPage"
 msgid "Copy your bridge relay's identity to the clipboard"
 msgstr ""
@@ -2324,42 +2314,42 @@ msgctxt "ServerPage"
 msgid "Show help topic on port forwarding"
 msgstr ""
 
-#: servicepage.cpp:27
-msgctxt "ServicePage"
-msgid "Services"
+#: serverpage.ui:979
+msgctxt "ServerPage"
+msgid "Tor will still block some outgoing mail and file sharing applications by default to reduce spam and other abuse."
 msgstr ""
 
-#: servicepage.cpp:109
+#: servicepage.cpp:116
 msgctxt "ServicePage"
 msgid "Error while trying to unpublish all services"
 msgstr ""
 
-#: servicepage.cpp:590
+#: servicepage.cpp:597
 msgctxt "ServicePage"
 msgid "Error"
 msgstr ""
 
-#: servicepage.cpp:445
+#: servicepage.cpp:452
 msgctxt "ServicePage"
 msgid "Please select a Service."
 msgstr ""
 
-#: servicepage.cpp:451
+#: servicepage.cpp:458
 msgctxt "ServicePage"
 msgid "Select Service Directory"
 msgstr ""
 
-#: servicepage.cpp:540
+#: servicepage.cpp:547
 msgctxt "ServicePage"
 msgid "Virtual Port may only contain valid port numbers [1..65535]."
 msgstr ""
 
-#: servicepage.cpp:571
+#: servicepage.cpp:578
 msgctxt "ServicePage"
 msgid "Target may only contain address:port, address, or port."
 msgstr ""
 
-#: servicepage.cpp:591
+#: servicepage.cpp:598
 msgctxt "ServicePage"
 msgid "Directory already in use by another service."
 msgstr ""
@@ -2419,52 +2409,57 @@ msgctxt "ServicePage"
 msgid "Browse in local file system and choose directory for selected service"
 msgstr ""
 
-#: servicepage.cpp:116
+#: servicepage.cpp:123
 msgctxt "ServicePage"
 msgid "Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones."
 msgstr ""
 
-#: stream.cpp:118
+#: servicepage.cpp:384
+msgctxt "ServicePage"
+msgid "Created by Tor"
+msgstr ""
+
+#: stream.cpp:131
 msgctxt "Stream"
 msgid "New"
 msgstr "جديد"
 
-#: stream.cpp:120
+#: stream.cpp:133
 msgctxt "Stream"
 msgid "Resolving"
 msgstr "يجري البحث"
 
-#: stream.cpp:121
+#: stream.cpp:134
 msgctxt "Stream"
 msgid "Connecting"
 msgstr "يجري الاتصال"
 
-#: stream.cpp:122
+#: stream.cpp:135
 msgctxt "Stream"
 msgid "Open"
 msgstr "مفتوح"
 
-#: stream.cpp:123
+#: stream.cpp:136
 msgctxt "Stream"
 msgid "Failed"
 msgstr "تعذَّر"
 
-#: stream.cpp:124
+#: stream.cpp:137
 msgctxt "Stream"
 msgid "Closed"
 msgstr "مغلق"
 
-#: stream.cpp:127
+#: stream.cpp:140
 msgctxt "Stream"
 msgid "Unknown"
 msgstr "غير معلوم"
 
-#: stream.cpp:125
+#: stream.cpp:138
 msgctxt "Stream"
 msgid "Retrying"
 msgstr "تجري إعادة المحاولة"
 
-#: stream.cpp:126
+#: stream.cpp:139
 msgctxt "Stream"
 msgid "Remapped"
 msgstr ""
@@ -2484,7 +2479,7 @@ msgctxt "TorService"
 msgid "Unable to start the Tor service."
 msgstr "تعذََر تشغيل خدمة تور."
 
-#: torsettings.cpp:107
+#: torsettings.cpp:103
 msgctxt "TorSettings"
 msgid "Failed to hash the control password."
 msgstr ""
@@ -2614,22 +2609,22 @@ msgctxt "VMessageBox"
 msgid "Browse"
 msgstr "تصفّح"
 
-#: vidalia.cpp:235
+#: vidalia.cpp:238
 msgctxt "Vidalia"
 msgid "Invalid language code specified: "
 msgstr "حُدِّد مُعَرِّف لغة غير صحيح:"
 
-#: vidalia.cpp:242
+#: vidalia.cpp:245
 msgctxt "Vidalia"
 msgid "Invalid GUI style specified: "
 msgstr "حُدِّد طراز واجهة رسومية غير صحيح:"
 
-#: main.cpp:88
+#: main.cpp:89
 msgctxt "Vidalia"
 msgid "Vidalia is already running"
 msgstr "ڤيداليا تعمل بالفعل"
 
-#: main.cpp:94
+#: main.cpp:95
 msgctxt "Vidalia"
 msgid "Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway."
 ""
@@ -2638,62 +2633,62 @@ msgstr "غالبا توجد صيرورة أخرى عاملة من ڤيداليا
 "        "
 "        أتريد متابعة تشغيل ڤيداليا؟"
 
-#: main.cpp:74
+#: main.cpp:75
 msgctxt "Vidalia"
 msgid "Invalid Argument"
 msgstr "مُعطى غير صحيح"
 
-#: vidalia.cpp:166
+#: vidalia.cpp:169
 msgctxt "Vidalia"
 msgid "Displays this usage message and exits."
 msgstr "يعرض رسالة الاستخدام هذه و ينهي."
 
-#: vidalia.cpp:168
+#: vidalia.cpp:171
 msgctxt "Vidalia"
 msgid "Resets ALL stored Vidalia settings."
 msgstr "يصفِّر كل تضبيطات ڤيداليا."
 
-#: vidalia.cpp:170
+#: vidalia.cpp:173
 msgctxt "Vidalia"
 msgid "Sets the directory Vidalia uses for data files."
 msgstr "يحدد الدليل الذي تستخدمه ڤيداليا لتخزين ملفات البيانات."
 
-#: vidalia.cpp:172
+#: vidalia.cpp:175
 msgctxt "Vidalia"
 msgid "Sets the name and location of Vidalia's pidfile."
 msgstr "يحدد اسم و موضع ملف pidfile لڤيداليا."
 
-#: vidalia.cpp:174
+#: vidalia.cpp:177
 msgctxt "Vidalia"
 msgid "Sets the name and location of Vidalia's logfile."
 msgstr "يحدد اسم و موضع ملف سِجِّل ڤيداليا."
 
-#: vidalia.cpp:177
+#: vidalia.cpp:180
 msgctxt "Vidalia"
 msgid "Sets the verbosity of Vidalia's logging."
 msgstr "يحدد مدى تفصيل سِجِّل ڤيداليا."
 
-#: vidalia.cpp:180
+#: vidalia.cpp:183
 msgctxt "Vidalia"
 msgid "Sets Vidalia's interface style."
 msgstr "يحدد طراز واجهة ڤيداليا."
 
-#: vidalia.cpp:183
+#: vidalia.cpp:186
 msgctxt "Vidalia"
 msgid "Sets Vidalia's language."
 msgstr "يحدد لغة واجهة ڤيداليا."
 
-#: vidalia.cpp:187
+#: vidalia.cpp:190
 msgctxt "Vidalia"
 msgid "Vidalia Usage Information"
 msgstr "معلومات استخدام ڤيداليا."
 
-#: vidalia.cpp:248
+#: vidalia.cpp:251
 msgctxt "Vidalia"
 msgid "Invalid log level specified: "
 msgstr "مستوى تفصيل للسجِّل غير صحيح."
 
-#: vidalia.cpp:254
+#: vidalia.cpp:257
 msgctxt "Vidalia"
 msgid "Unable to open log file '%1': %2"
 msgstr "تعذَّر فتح ملف السِّجل '%1': %2"
