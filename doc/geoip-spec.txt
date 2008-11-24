@@ -55,7 +55,7 @@ $Id$
    
    Geographic information is formatted in the body of an HTTP response as
     
-      IPAddress,City,State,Country,Latitutde,Longitude
+      IPAddress,City,State,Country,Latitude,Longitude
 
    Multiple IP addresses in a single GET request are separated by commas.
    For example: 
@@ -91,7 +91,7 @@ $Id$
    (e.g., "1.2.3.4,UNKNOWN").
     
    If no IP addresses are provided in a request, geographic information 
-   for the IP address of the requestor is returned. Vidalia currently 
+   for the IP address of the requester is returned. Vidalia currently 
    does not use this feature.
 
    We cache geographic information in an unsorted text file called
