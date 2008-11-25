@@ -45,7 +45,8 @@ case "$1" in
 # OS X .dmg
 #
 "osx")
-  mkdir ../LEGAL ../.background
+  mkdir ../LEGAL 
+  mkdir ../.background
   cp -R ../README ../src/vidalia/Vidalia.app ../
   cp osx/background.png ../.background/
   cp osx/nonbundle-ds_store ../.DS_Store
@@ -72,6 +73,7 @@ case "$1" in
   torversion=`echo "$torpath" | sed -e "s/.*\///" | sed -e "s/tor-//"`
   
   mkdir ../LEGAL
+  mkdir ../.background
   cp -R ../README ../src/vidalia/Vidalia.app ../
   cp osx/background.png ../.background/
   cp osx/bundle-ds_store ../.DS_Store
