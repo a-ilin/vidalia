@@ -237,7 +237,7 @@ if (APPLE)
   set(MACOSX_BUNDLE_SHORT_VERSION_STRING  ${VERSION})
   set(MACOSX_BUNDLE_LONG_VERSION_STRING   "Version ${VERSION}")
   set(MACOSX_BUNDLE_ICON_FILE             vidalia.icns)
-  set(MACOSX_BUNDLE_GUI_IDENTIFIER        "net.vidalia-project")
+  set(MACOSX_BUNDLE_GUI_IDENTIFIER        "net.vidalia-project.vidalia")
   set(MACOSX_BUNDLE_INFO_STRING           "Vidalia ${VERSION}")
 
   ## Put everything inside the application bundle
