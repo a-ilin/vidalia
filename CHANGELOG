@@ -21,7 +21,7 @@
     log toolbar followed by 'Save All'. (Ticket #434)
   o Uncheck the Torbutton options by default in the Windows bundle installer
     if Firefox is not installed. (Ticket #421)
-  o Add an Windows bundle installer page that warns the user that they should
+  o Add a Windows bundle installer page that warns the user that they should
     install Firefox, if it looks like they haven't already done so. (Ticket
     #421)
 
