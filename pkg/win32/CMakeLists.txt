@@ -94,3 +94,18 @@ vidalia_add_nsh(vidalia_NSH
 #  zh_TW/vidalia_ZH_TW.po  TRADCHINESE   GB18030)
 
 add_custom_target(i18n-win32-installer ALL DEPENDS ${vidalia_NSH})
+
+add_custom_target(win32-installer
+  COMMAND ${WIX_CANDLE_EXECUTABLE} 
+      ${CMAKE_CURRENT_BINARY_DIR}/vidalia.wxs 
+      -o ${CMAKE_CURRENT_BINARY_DIR}/vidalia.wixobj
+  
+  COMMAND ${WIX_LIGHT_EXECUTABLE}
+      ${CMAKE_CURRENT_BINARY_DIR}/vidalia.wixobj
+      -o ${CMAKE_CURRENT_BINARY_DIR}/vidalia-${VERSION}.msi
+      -ext ${WIX_BINARY_DIR}/WixUIExtension.dll
+  
+  DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/vidalia.wxs
+  COMMENT "Building vidalia-${VERSION}.msi"
+)
+
