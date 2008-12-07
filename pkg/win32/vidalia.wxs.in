@@ -162,5 +162,6 @@
     <Icon Id="vidalia.ico" SourceFile="@Vidalia_SOURCE_DIR@\src\vidalia\res\icons\vidalia.ico" />
     <WixVariable Id="WixUIBannerBmp" Value="@Vidalia_SOURCE_DIR@\pkg\win32\msi-header.bmp" />
     <WixVariable Id="WixUIDialogBmp" Value="@Vidalia_SOURCE_DIR@\pkg\win32\msi-welcome.bmp" />
+    <WixVariable Id="WixUILicenseRtf" Value="@Vidalia_SOURCE_DIR@\pkg\win32\License.rtf" />
   </Product>
 </Wix>
