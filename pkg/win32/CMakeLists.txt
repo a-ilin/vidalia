@@ -46,7 +46,12 @@ configure_file(
   ${CMAKE_CURRENT_BINARY_DIR}/vidalia.wxs
   @ONLY
 )
-  
+configure_file(
+  ${CMAKE_CURRENT_SOURCE_DIR}/WixUI_Custom.wxs
+  ${CMAKE_CURRENT_BINARY_DIR}/WixUI_Custom.wxs
+  COPYONLY
+)
+
 if (CONFIGURE_BUNDLE_NSI) 
   configure_file(
     ${CMAKE_CURRENT_SOURCE_DIR}/vidalia-bundle.nsi.in
@@ -99,13 +104,19 @@ add_custom_target(win32-installer
   COMMAND ${WIX_CANDLE_EXECUTABLE} 
       ${CMAKE_CURRENT_BINARY_DIR}/vidalia.wxs 
       -o ${CMAKE_CURRENT_BINARY_DIR}/vidalia.wixobj
-  
+
+  COMMAND ${WIX_CANDLE_EXECUTABLE}
+      ${CMAKE_CURRENT_BINARY_DIR}/WixUI_Custom.wxs
+      -o ${CMAKE_CURRENT_BINARY_DIR}/WixUI_Custom.wixobj
+
   COMMAND ${WIX_LIGHT_EXECUTABLE}
       ${CMAKE_CURRENT_BINARY_DIR}/vidalia.wixobj
+      ${CMAKE_CURRENT_BINARY_DIR}/WixUI_Custom.wixobj
       -o ${CMAKE_CURRENT_BINARY_DIR}/vidalia-${VERSION}.msi
       -ext ${WIX_BINARY_DIR}/WixUIExtension.dll
   
-  DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/vidalia.wxs
+  DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/vidalia.wxs 
+          ${CMAKE_CURRENT_SOURCE_DIR}/WixUI_Custom.wxs
   COMMENT "Building vidalia-${VERSION}.msi"
 )
 

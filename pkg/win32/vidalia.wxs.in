@@ -146,7 +146,7 @@
     </Feature>
 
     <!-- Set the UI options -->
-    <UIRef Id="WixUI_Mondo" />
+    <UIRef Id="WixUI_Custom" />
     <Icon Id="vidalia.ico" SourceFile="@Vidalia_SOURCE_DIR@\src\vidalia\res\icons\vidalia.ico" />
     <WixVariable Id="WixUIBannerBmp" Value="@Vidalia_SOURCE_DIR@\pkg\win32\msi-header.bmp" />
     <WixVariable Id="WixUIDialogBmp" Value="@Vidalia_SOURCE_DIR@\pkg\win32\msi-welcome.bmp" />
