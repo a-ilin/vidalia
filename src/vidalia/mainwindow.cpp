@@ -257,13 +257,8 @@ void
 MainWindow::running()
 {
   VidaliaSettings settings;
-  if (_torControl->isRunning()) {
-    /* Tor may be already running, but we still need to connect to it. So,
-     * update our status now. */ 
-    updateTorStatus(Starting);
-    /* Tor was already running */
-    started();
-  } else if (settings.runTorAtStart()) {
+ 
+  if (settings.runTorAtStart()) {
     /* If we're supposed to start Tor when Vidalia starts, then do it now */
     start();
   }
