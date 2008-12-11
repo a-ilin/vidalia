@@ -257,7 +257,14 @@ void
 MainWindow::running()
 {
   VidaliaSettings settings;
- 
+
+  /* Initialize _useSavedPassword to true. If Tor is already running when
+   * Vidalia starts, then there is no point in generating a random password.
+   * If Tor is not already running, then this will be set according to the
+   * current configuration in the start() method.
+   */
+  _useSavedPassword = true;
+
   if (settings.runTorAtStart()) {
     /* If we're supposed to start Tor when Vidalia starts, then do it now */
     start();
