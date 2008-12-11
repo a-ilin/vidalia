@@ -20,6 +20,7 @@
 
 #include <QtGui>
 #include <QTimer>
+#include <QTextStream>
 #include <vidalia.h>
 #include <file.h>
 #include <html.h>
@@ -258,12 +259,18 @@ MainWindow::running()
 {
   VidaliaSettings settings;
 
-  /* Initialize _useSavedPassword to true. If Tor is already running when
-   * Vidalia starts, then there is no point in generating a random password.
-   * If Tor is not already running, then this will be set according to the
-   * current configuration in the start() method.
-   */
-  _useSavedPassword = true;
+  if (vApp->readPasswordFromStdin()) {
+    QTextStream in(stdin);
+    in >> _controlPassword;
+    _useSavedPassword = false;
+  } else {
+    /* Initialize _useSavedPassword to true. If Tor is already running when
+     * Vidalia starts, then there is no point in generating a random password.
+     * If Tor is not already running, then this will be set according to the
+     * current configuration in the start() method.
+     */
+    _useSavedPassword = true;
+  }
 
   if (settings.runTorAtStart()) {
     /* If we're supposed to start Tor when Vidalia starts, then do it now */
@@ -819,12 +826,14 @@ MainWindow::start()
   /* Add the control port authentication arguments */
   switch (settings.getAuthenticationMethod()) {
     case TorSettings::PasswordAuth:
-      if (settings.useRandomPassword()) {
-        _controlPassword = TorSettings::randomPassword();
-        _useSavedPassword = false;
-      } else {
-        _controlPassword = settings.getControlPassword();
-        _useSavedPassword = true;
+      if (! vApp->readPasswordFromStdin()) {
+        if (settings.useRandomPassword()) {
+          _controlPassword = TorSettings::randomPassword();
+          _useSavedPassword = false;
+        } else {
+          _controlPassword = settings.getControlPassword();
+          _useSavedPassword = true;
+        }
       }
       args << "HashedControlPassword"
            << TorSettings::hashPassword(_controlPassword);

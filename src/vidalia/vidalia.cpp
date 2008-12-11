@@ -38,7 +38,8 @@
 #define ARG_PIDFILE    "pidfile"  /**< Location and name of our pidfile.*/
 #define ARG_LOGFILE    "logfile"  /**< Location of our logfile.         */
 #define ARG_LOGLEVEL   "loglevel" /**< Log verbosity.                   */
-
+#define ARG_READ_PASSWORD_FROM_STDIN  \
+  "read-password-from-stdin" /**< Read password from stdin. */
 
 /* Static member variables */
 QMap<QString, QString> Vidalia::_args; /**< List of command-line arguments.  */
@@ -332,6 +333,12 @@ Vidalia::pidFile()
     return _args.value(ARG_PIDFILE);
   }
   return QDir::convertSeparators(dataDirectory() + "/vidalia.pid");
+}
+
+bool
+Vidalia::readPasswordFromStdin()
+{
+  return _args.contains(ARG_READ_PASSWORD_FROM_STDIN);
 }
 
 /** Writes <b>msg</b> with severity <b>level</b> to Vidalia's log. */

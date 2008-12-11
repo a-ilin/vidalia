@@ -86,6 +86,10 @@ public:
   /** Returns the location of Vidalia's pid file. */
   static QString pidFile();
 
+  /** Returns true if Vidalia should read the control password from stdin.
+   */
+  static bool readPasswordFromStdin();
+
   /** Writes <b>msg</b> with severity <b>level</b> to Vidalia's log. */
   static Log::LogMessage log(Log::LogLevel level, QString msg);
  
