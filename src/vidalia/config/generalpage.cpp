@@ -35,6 +35,12 @@ GeneralPage::GeneralPage(QWidget *parent)
           this, SLOT(browseTorExecutable()));
   connect(ui.btnBrowseProxyExecutable, SIGNAL(clicked()), 
           this, SLOT(browseProxyExecutable()));
+
+#if !defined(Q_OS_WIN32)
+  /* Hide platform specific features */
+  ui.chkRunVidaliaAtSystemStartup->setVisible(false);
+  ui.lineHorizontalSeparator->setVisible(false);
+#endif
 }
 
 /** Destructor */
