@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-11-24 15:58+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2008-12-15 20:54+0000\n"
+"Last-Translator: Mfr <mfr@misericordia.be>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Vidalia ts2po 0.2\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Pootle 1.1.0\n"
 
 #: aboutdialog.ui:16
 msgctxt "AboutDialog"
@@ -35,12 +35,12 @@ msgstr "Qt"
 #: aboutdialog.cpp:53
 msgctxt "AboutDialog"
 msgid "Unavailable"
-msgstr ""
+msgstr "Indisponible"
 
 #: aboutdialog.cpp:57
 msgctxt "AboutDialog"
 msgid "Not Running"
-msgstr ""
+msgstr "Non Démarré "
 
 #: aboutdialog.ui:81
 msgctxt "AboutDialog"
@@ -50,7 +50,7 @@ msgstr "0.2.0"
 #: aboutdialog.ui:106
 msgctxt "AboutDialog"
 msgid "0.2.0.31-alpha-dev (r123456)"
-msgstr ""
+msgstr "0.2.0.31-alpha-dev (r123456)"
 
 #: aboutdialog.ui:131
 msgctxt "AboutDialog"
@@ -60,12 +60,12 @@ msgstr "4.4.2"
 #: aboutdialog.ui:107
 msgctxt "AboutDialog"
 msgid "License"
-msgstr ""
+msgstr "Licence"
 
 #: aboutdialog.ui:163
 msgctxt "AboutDialog"
 msgid "version"
-msgstr ""
+msgstr "version"
 
 #: advancedpage.ui:28
 msgctxt "AdvancedPage"
@@ -203,6 +203,8 @@ msgid "Vidalia was unable to remove the Tor service."
 ""
 "You may need to remove it manually."
 msgstr ""
+"Vidalia n'a pas pu enlever le service Tor. Vous devrez le supprimer "
+"manuellement."
 
 #: appearancepage.ui:22
 msgctxt "AppearancePage"
@@ -227,7 +229,7 @@ msgstr "Choisir le style de l'interface de Vidalia"
 #: appearancepage.cpp:67
 msgctxt "AppearancePage"
 msgid "Vidalia was unable to load the selected language translation."
-msgstr ""
+msgstr "Vidalia n'a pas pu charger la traduction sélectionnée."
 
 #: bwgraph.ui:16
 msgctxt "BandwidthGraph"
@@ -432,17 +434,19 @@ msgstr "Vidalia ne peut pas se connecter à Tor. (%1)"
 #: controlpasswordinputdialog.ui:28
 msgctxt "ControlPasswordInputDialog"
 msgid "Password Required"
-msgstr ""
+msgstr "Mot de passe requis."
 
 #: controlpasswordinputdialog.ui:80
 msgctxt "ControlPasswordInputDialog"
 msgid "Vidalia has connected to a running Tor process that requires a password. Please enter your control password: "
 msgstr ""
+"Vidalia s'est connecté à un processus Tor nécessitant un mot de passe. "
+"Veuillez entrer votre mot de passe de contrôle:"
 
 #: controlpasswordinputdialog.ui:99
 msgctxt "ControlPasswordInputDialog"
 msgid "Remember my password"
-msgstr ""
+msgstr "Se souvenir du mot de passe"
 
 #: controlsocket.cpp:80
 msgctxt "ControlSocket"
@@ -512,17 +516,17 @@ msgstr "Tor"
 #: generalpage.ui:93
 msgctxt "GeneralPage"
 msgid "Proxy Application (optional)"
-msgstr ""
+msgstr "Application Proxy (option)"
 
 #: generalpage.ui:99
 msgctxt "GeneralPage"
 msgid "Start a proxy application when Tor starts"
-msgstr ""
+msgstr "Démarrer une application proxy lorsque Tor démarre."
 
 #: generalpage.ui:135
 msgctxt "GeneralPage"
 msgid "Proxy Application Arguments:"
-msgstr ""
+msgstr "Arguments de l'application proxy:"
 
 #: graphframe.cpp:238
 msgctxt "GraphFrame"
@@ -632,7 +636,7 @@ msgstr "Page d'accueil"
 #: helpbrowser.ui:515
 msgctxt "HelpBrowser"
 msgid "Move to the Home page (Ctrl+H)"
-msgstr "Aller à la page d'accueil Ctrl+H)"
+msgstr "Aller à la page d'accueil (Ctrl+H)"
 
 #: helpbrowser.ui:518
 msgctxt "HelpBrowser"
@@ -747,17 +751,17 @@ msgstr "Vidalia a été incapable d'ouvrir le lien selectionné dans votre navig
 #: licensedialog.ui:13
 msgctxt "LicenseDialog"
 msgid "License Information"
-msgstr ""
+msgstr "Information sur la licence"
 
 #: licensedialog.ui:43
 msgctxt "LicenseDialog"
 msgid "License"
-msgstr ""
+msgstr "Licence"
 
 #: licensedialog.ui:76
 msgctxt "LicenseDialog"
 msgid "Credits"
-msgstr ""
+msgstr "Crédits"
 
 #: logevent.cpp:57
 msgctxt "LogEvent"
@@ -1279,6 +1283,8 @@ msgctxt "MainWindow"
 msgid "Your relay is shutting down."
 "Click 'Stop' again to stop your relay now."
 msgstr ""
+"Votre relais est en train de s'arrêter. Cliquer 'Stop' à nouveau pour "
+"stopper immédiatement."
 
 #: mainwindow.cpp:943
 msgctxt "MainWindow"
@@ -1286,6 +1292,9 @@ msgid "You are currently running a relay. Terminating your relay will interrupt 
 ""
 "Would you like to shutdown gracefully and give clients time to find a new relay?"
 msgstr ""
+"Vous opérez un relais. Arrêter le relais va interrompre toutes les "
+"connections des clients. Voulez-vous arrêter proprement et laisser aux "
+"clients le temps de trouver un nouveau relais ?"
 
 #: mainwindow.cpp:1001
 msgctxt "MainWindow"
@@ -1293,16 +1302,22 @@ msgid "Vidalia detected that the Tor software exited unexpectedly."
 ""
 "Please check the message log for recent warning or error messages."
 msgstr ""
+"Vidalia a détecté que le logiciel Tor s'est arrêté de façon inattendue. "
+"Merci de consulter dans l'historique, les derniers messages d'erreur ou "
+"d'alerte."
 
 #: mainwindow.cpp:1210
 msgctxt "MainWindow"
 msgid "Password Reset Failed"
-msgstr ""
+msgstr "Echec de la réinitialisation du mot de passe"
 
 #: mainwindow.cpp:1213
 msgctxt "MainWindow"
 msgid "Vidalia tried to reset Tor's control password, but was not able to restart the Tor software. Please check your Task Manager to ensure there are no other Tor processes running."
 msgstr ""
+"Vidalia a essayé de réinitialiser le mot de passe de Tor, mais n'a pu "
+"redémarrer le logiciel Tor. Merci de consulter votre gestionnaire de Taches "
+"pour vous assurer qu'il n'y a pas d'autres processus Tor actif."
 
 #: messagelog.ui:19
 msgctxt "MessageLog"
@@ -1407,7 +1422,7 @@ msgstr "Effacer"
 #: messagelog.ui:480
 msgctxt "MessageLog"
 msgid "Clear all messages from the Message Log (Ctrl+E)"
-msgstr "Effacer tout l'historique du Journal des messages Ctrl+E)"
+msgstr "Effacer tout l'historique du Journal des messages (Ctrl+E)"
 
 #: messagelog.ui:483
 msgctxt "MessageLog"
@@ -1629,12 +1644,14 @@ msgctxt "MessageLog"
 msgid "Messages that appear when something has "
 "gone very wrong and Tor cannot proceed."
 msgstr ""
+"Messages qui apparaissent quand il y a eu un gros problème et que Tor ne "
+"peut être lancé."
 
 #: messagelog.cpp:128
 msgctxt "MessageLog"
 msgid "Messages that only appear when "
 "something has gone wrong with Tor."
-msgstr ""
+msgstr "Messages qui apparaissent quand il a eu un problème avec Tor."
 
 #: messagelog.cpp:132
 msgctxt "MessageLog"
@@ -1643,25 +1660,29 @@ msgid "Messages that appear infrequently "
 "not considered errors, but you may "
 "care about."
 msgstr ""
+"Messages qui apparaissent peu fréquemment pendant le fonctionnement normal "
+"de Tor et qui ne sont pas des erreurs, mais dont il faut tenir compte."
 
 #: messagelog.cpp:134
 msgctxt "MessageLog"
 msgid "Messages that appear frequently "
 "during normal Tor operation."
 msgstr ""
+"Messages qui apparait fréquemment durant le fonctionnement normal de Tor."
 
 #: messagelog.cpp:136
 msgctxt "MessageLog"
 msgid "Hyper-verbose messages primarily of "
 "interest to Tor developers."
 msgstr ""
+"Nombreux messages principalement intéressant pour les développeurs de Tor."
 
 #: messagelog.cpp:310
 msgctxt "MessageLog"
 msgid "Cannot write file %1"
 ""
 "%2."
-msgstr ""
+msgstr "Impossible d'écrire le fichier %1%2."
 
 #: netviewer.ui:239
 msgctxt "NetViewer"
@@ -2016,12 +2037,12 @@ msgstr "Copier"
 #: routerlistwidget.cpp:68
 msgctxt "RouterListWidget"
 msgid "Nickname"
-msgstr ""
+msgstr "Surnom"
 
 #: routerlistwidget.cpp:71
 msgctxt "RouterListWidget"
 msgid "Fingerprint"
-msgstr ""
+msgstr "Empreinte"
 
 #: serverpage.ui:32
 msgctxt "ServerPage"
@@ -2303,11 +2324,15 @@ msgctxt "ServerPage"
 msgid "Email address at which you may be reached if there is a"
 "problem with your relay. You might also include your PGP or GPG fingerprint."
 msgstr ""
+"Adresse email a laquelle vous pouvez être joint s'il y a un problème avec "
+"votre relais. Vous pouvez aussi inclure votre empreinte PGP ou GPG."
 
 #: serverpage.ui:979
 msgctxt "ServerPage"
 msgid "Tor will still block some outgoing mail and file sharing applications by default to reduce spam and other abuse."
 msgstr ""
+"Tor bloque encore certains programmes mails et partage de fichiers par "
+"défaut pour réduire le spam et les autres abus. "
 
 #: servicepage.cpp:116
 msgctxt "ServicePage"
@@ -2407,7 +2432,7 @@ msgstr "Parcourez le système de fichiers et choisissez le dossier du service s�
 #: servicepage.cpp:384
 msgctxt "ServicePage"
 msgid "Created by Tor"
-msgstr ""
+msgstr "Créé par Tor"
 
 #: stream.cpp:131
 msgctxt "Stream"
@@ -2680,4 +2705,6 @@ msgid "Another Vidalia process is possibly already running. If there really is n
 ""
 "Would you like to continue starting Vidalia?"
 msgstr ""
-
+"Il est possible qu'un autre processus Vidalia soit déjà actif. Si il y a "
+"déjà un autre processus Vidalia en cours, vous pouvez néanmoins choisir de "
+"continuer. Voulez vous continuer à démarrer Vidalia?"
