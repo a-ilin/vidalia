@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-11-24 15:58+0000\n"
-"PO-Revision-Date: 2008-12-15 20:54+0000\n"
+"PO-Revision-Date: 2008-12-15 21:01+0000\n"
 "Last-Translator: Mfr <mfr@misericordia.be>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -40,7 +40,7 @@ msgstr "Indisponible"
 #: aboutdialog.cpp:57
 msgctxt "AboutDialog"
 msgid "Not Running"
-msgstr "Non Démarré "
+msgstr "Non Démarré"
 
 #: aboutdialog.ui:81
 msgctxt "AboutDialog"
@@ -145,7 +145,7 @@ msgstr "Authentification :"
 #: advancedpage.ui:58
 msgctxt "AdvancedPage"
 msgid "Address:"
-msgstr "Adresse : "
+msgstr "Adresse :"
 
 #: advancedpage.ui:91
 msgctxt "AdvancedPage"
@@ -203,7 +203,7 @@ msgid "Vidalia was unable to remove the Tor service."
 ""
 "You may need to remove it manually."
 msgstr ""
-"Vidalia n'a pas pu enlever le service Tor. Vous devrez le supprimer "
+"Vidalia n'a pas pu enlever le service Tor.Vous devrez le supprimer "
 "manuellement."
 
 #: appearancepage.ui:22
@@ -409,7 +409,7 @@ msgstr "Erreur lors de l'application des paramètress"
 #: configdialog.cpp:227
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to apply your %1 settings to Tor."
-msgstr "Vidalia n'est pas parvenu à appliquer vos paramètress  de %1 pour Tor."
+msgstr "Vidalia n'est pas parvenu à appliquer vos paramètres de %1 pour Tor."
 
 #: configdialog.cpp:85
 msgctxt "ConfigDialog"
@@ -1283,8 +1283,8 @@ msgctxt "MainWindow"
 msgid "Your relay is shutting down."
 "Click 'Stop' again to stop your relay now."
 msgstr ""
-"Votre relais est en train de s'arrêter. Cliquer 'Stop' à nouveau pour "
-"stopper immédiatement."
+"Votre relais est en train de s'arrêter.Cliquer 'Stop' à nouveau pour stopper "
+"immédiatement."
 
 #: mainwindow.cpp:943
 msgctxt "MainWindow"
@@ -1292,8 +1292,8 @@ msgid "You are currently running a relay. Terminating your relay will interrupt 
 ""
 "Would you like to shutdown gracefully and give clients time to find a new relay?"
 msgstr ""
-"Vous opérez un relais. Arrêter le relais va interrompre toutes les "
-"connections des clients. Voulez-vous arrêter proprement et laisser aux "
+"Vous opérez un relais.Arrêter le relais va interrompre toutes les "
+"connections des clients.Voulez-vous arrêter proprement et laisser aux "
 "clients le temps de trouver un nouveau relais ?"
 
 #: mainwindow.cpp:1001
@@ -1302,9 +1302,8 @@ msgid "Vidalia detected that the Tor software exited unexpectedly."
 ""
 "Please check the message log for recent warning or error messages."
 msgstr ""
-"Vidalia a détecté que le logiciel Tor s'est arrêté de façon inattendue. "
-"Merci de consulter dans l'historique, les derniers messages d'erreur ou "
-"d'alerte."
+"Vidalia a détecté que le logiciel Tor s'est arrêté de façon inattendue.Merci "
+"de consulter dans l'historique, les derniers messages d'erreur ou d'alerte."
 
 #: mainwindow.cpp:1210
 msgctxt "MainWindow"
@@ -1552,7 +1551,7 @@ msgstr "Non trouvé"
 #: messagelog.cpp:368
 msgctxt "MessageLog"
 msgid "Search found 0 matches."
-msgstr "La recherche n'a trouvé aucun résultat."
+msgstr "La recherche a trouvé 0 résultat."
 
 #: messagelog.ui:553
 msgctxt "MessageLog"
@@ -1802,7 +1801,10 @@ msgstr "Copier (Ctrl+C)"
 #: networkpage.cpp:272
 msgctxt "NetworkPage"
 msgid "You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet."
-msgstr "Vous devez spécifier à la fois une adresse IP ou un nom d'hôte et un numéro de port  pour que Tor puisse utiliser le serveur mandataire (proxy) et accéder à l'Internet."
+msgstr ""
+"Vous devez spécifier à la fois une adresse IP ou un nom d'hôte et un numéro "
+"de port pour que Tor puisse utiliser le serveur mandataire (proxy) et "
+"accéder à l'Internet."
 
 #: networkpage.cpp:278
 msgctxt "NetworkPage"
@@ -1947,42 +1949,42 @@ msgstr "Hors ligne"
 #: routerdescriptorview.cpp:143
 msgctxt "RouterDescriptorView"
 msgid "IP Address:"
-msgstr "Adresse IP : "
+msgstr "Adresse IP :"
 
 #: routerdescriptorview.cpp:144
 msgctxt "RouterDescriptorView"
 msgid "Platform:"
-msgstr "Plateforme : "
+msgstr "Plateforme :"
 
 #: routerdescriptorview.cpp:148
 msgctxt "RouterDescriptorView"
 msgid "Bandwidth:"
-msgstr "Bande passante : "
+msgstr "Bande passante :"
 
 #: routerdescriptorview.cpp:150
 msgctxt "RouterDescriptorView"
 msgid "Uptime:"
-msgstr "Durée de fonctionnement : "
+msgstr "Durée de fonctionnement :"
 
 #: routerdescriptorview.cpp:156
 msgctxt "RouterDescriptorView"
 msgid "Last Updated:"
-msgstr "Dernière mise à jour : "
+msgstr "Dernière mise à jour :"
 
 #: routerdescriptorview.cpp:139
 msgctxt "RouterDescriptorView"
 msgid "Location:"
-msgstr "Localisation : "
+msgstr "Localisation :"
 
 #: routerdescriptorview.cpp:100
 msgctxt "RouterDescriptorView"
 msgid "%1 days "
-msgstr "%1 jours"
+msgstr "%1 jours "
 
 #: routerdescriptorview.cpp:103
 msgctxt "RouterDescriptorView"
 msgid "%1 hours "
-msgstr "%1 heures"
+msgstr "%1 heures "
 
 #: routerdescriptorview.cpp:106
 msgctxt "RouterDescriptorView"
@@ -2052,12 +2054,12 @@ msgstr "Relayer le trafic pour le réseau Tor"
 #: serverpage.ui:234
 msgctxt "ServerPage"
 msgid "Directory Port:"
-msgstr "Port de l'annuaire : "
+msgstr "Port de l'annuaire :"
 
 #: serverpage.ui:380
 msgctxt "ServerPage"
 msgid "Nickname:"
-msgstr "Surnom : "
+msgstr "Surnom :"
 
 #: serverpage.ui:279
 msgctxt "ServerPage"
@@ -2247,7 +2249,7 @@ msgstr "Port relais :"
 #: serverpage.ui:113
 msgctxt "ServerPage"
 msgid "Mirror the Relay Directory "
-msgstr "Servir de miroir à l'annuaire des relais"
+msgstr "Servir de miroir à l'annuaire des relais "
 
 #: serverpage.cpp:199
 msgctxt "ServerPage"
@@ -2332,7 +2334,7 @@ msgctxt "ServerPage"
 msgid "Tor will still block some outgoing mail and file sharing applications by default to reduce spam and other abuse."
 msgstr ""
 "Tor bloque encore certains programmes mails et partage de fichiers par "
-"défaut pour réduire le spam et les autres abus. "
+"défaut pour réduire le spam et les autres abus."
 
 #: servicepage.cpp:116
 msgctxt "ServicePage"
@@ -2542,7 +2544,7 @@ msgstr "Erreur inconnue"
 #: upnptestdialog.cpp:112
 msgctxt "UPNPTestDialog"
 msgid "Discovering UPnP-enabled devices"
-msgstr "Recherche des périphériques  UPnP"
+msgstr "Recherche des périphériques UPnP"
 
 #: upnptestdialog.cpp:117
 msgctxt "UPNPTestDialog"
@@ -2692,7 +2694,7 @@ msgstr "Information sur l'usage de Vidalia"
 #: vidalia.cpp:251
 msgctxt "Vidalia"
 msgid "Invalid log level specified: "
-msgstr "Niveau de gravité des messages invalide :"
+msgstr "Niveau de gravité des messages invalide : "
 
 #: vidalia.cpp:257
 msgctxt "Vidalia"
@@ -2705,6 +2707,6 @@ msgid "Another Vidalia process is possibly already running. If there really is n
 ""
 "Would you like to continue starting Vidalia?"
 msgstr ""
-"Il est possible qu'un autre processus Vidalia soit déjà actif. Si il y a "
-"déjà un autre processus Vidalia en cours, vous pouvez néanmoins choisir de "
-"continuer. Voulez vous continuer à démarrer Vidalia?"
+"Il est possible qu'un autre processus Vidalia soit déjà actif.Si il y a déjà "
+"un autre processus Vidalia en cours, vous pouvez néanmoins choisir de "
+"continuer.Voulez vous continuer à démarrer Vidalia?"
