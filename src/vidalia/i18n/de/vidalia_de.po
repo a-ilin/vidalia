@@ -35,12 +35,12 @@ msgstr "Qt"
 #: aboutdialog.cpp:53
 msgctxt "AboutDialog"
 msgid "Unavailable"
-msgstr ""
+msgstr "Nicht verfügbar"
 
 #: aboutdialog.cpp:57
 msgctxt "AboutDialog"
 msgid "Not Running"
-msgstr ""
+msgstr "Läuft nicht"
 
 #: aboutdialog.ui:81
 msgctxt "AboutDialog"
@@ -60,12 +60,12 @@ msgstr "4.4.2"
 #: aboutdialog.ui:107
 msgctxt "AboutDialog"
 msgid "License"
-msgstr ""
+msgstr "Lizenz"
 
 #: aboutdialog.ui:163
 msgctxt "AboutDialog"
 msgid "version"
-msgstr ""
+msgstr "Version"
 
 #: advancedpage.ui:28
 msgctxt "AdvancedPage"
@@ -187,7 +187,7 @@ msgstr ""
 #: advancedpage.ui:259
 msgctxt "AdvancedPage"
 msgid "Select path to your configuration file"
-msgstr "Wähle den Pfad zu deiner Konfigurationsdatei"
+msgstr "Wählen Sie den Pfad zu Ihrer Konfigurationsdatei"
 
 #: advancedpage.ui:275
 msgctxt "AdvancedPage"
@@ -203,7 +203,7 @@ msgstr "Speichere Daten für die Tor-Software im folgenden Verzeichnis"
 msgctxt "AdvancedPage"
 msgid "Select the directory used to store data for the Tor software"
 msgstr ""
-"Wähle das Verzeichnis, das verwendet wird um Daten für die Tor-Software zu "
+"Wählen Sie das Verzeichnis, das verwendet wird um Daten für die Tor-Software zu "
 "speichern"
 
 #: advancedpage.ui:219
@@ -234,7 +234,7 @@ msgstr "Wählen Sie Vidalias Aussehen"
 #: appearancepage.cpp:67
 msgctxt "AppearancePage"
 msgid "Vidalia was unable to load the selected language translation."
-msgstr ""
+msgstr "Vidalia konnte die gewählte Sprache nicht laden."
 
 #: bwgraph.ui:16
 msgctxt "BandwidthGraph"
@@ -439,17 +439,17 @@ msgstr "Vidalia konnte sich nicht mit Tor verbinden. (%1)"
 #: controlpasswordinputdialog.ui:28
 msgctxt "ControlPasswordInputDialog"
 msgid "Password Required"
-msgstr ""
+msgstr "Password wird benötigt"
 
 #: controlpasswordinputdialog.ui:80
 msgctxt "ControlPasswordInputDialog"
 msgid "Vidalia has connected to a running Tor process that requires a password. Please enter your control password: "
-msgstr ""
+msgstr "Vidalia hat sich mit einem Torprozess verbunden, der ein Passwort benötigt. Bitte geben Sie Ihr Kontrollpasswort ein:"
 
 #: controlpasswordinputdialog.ui:99
 msgctxt "ControlPasswordInputDialog"
 msgid "Remember my password"
-msgstr ""
+msgstr "Mein Passwort speichern"
 
 #: controlsocket.cpp:80
 msgctxt "ControlSocket"
@@ -504,7 +504,7 @@ msgstr "Die Proxy-Argumente sind nicht passend formatiert."
 #: generalpage.ui:28
 msgctxt "GeneralPage"
 msgid "Start Vidalia when my system starts"
-msgstr "Starte Vidalia wenn mein System hochfährt"
+msgstr "Starte Vidalia, wenn mein System hochfährt"
 
 #: generalpage.ui:57
 msgctxt "GeneralPage"
@@ -519,17 +519,17 @@ msgstr "Tor"
 #: generalpage.ui:93
 msgctxt "GeneralPage"
 msgid "Proxy Application (optional)"
-msgstr ""
+msgstr "Proxy-Anwendung (optional)"
 
 #: generalpage.ui:99
 msgctxt "GeneralPage"
 msgid "Start a proxy application when Tor starts"
-msgstr ""
+msgstr "Starte die Proxy-Anwendung, wenn Tor startet"
 
 #: generalpage.ui:135
 msgctxt "GeneralPage"
 msgid "Proxy Application Arguments:"
-msgstr ""
+msgstr "Argumente der Proxy-Anwendung "
 
 #: graphframe.cpp:238
 msgctxt "GraphFrame"
@@ -735,7 +735,7 @@ msgstr "Öffne externen Link"
 msgctxt "HelpTextBrowser"
 msgid "Vidalia can open the link you selected in your default Web browser. If your browser is not currently configured to use Tor then the request will not be anonymous."
 msgstr ""
-"Vidalia kann den gewählten Link in deinem Standard-Webbrowser öffnen. Wenn "
+"Vidalia kann den gewählten Link in Ihrem Standard-Webbrowser öffnen. Wenn "
 "der Browser jedoch nicht für die Nutzung von Tor konfiguriert ist, wird die "
 "Anfrage nicht anonym sein."
 
@@ -753,23 +753,23 @@ msgstr "Fehler beim Öffnen des Links"
 msgctxt "HelpTextBrowser"
 msgid "Vidalia was unable to open the selected link in your Web browser. You can still copy the URL and paste it into your browser."
 msgstr ""
-"Vidalia konnte den gewählten Link nicht im Webbrowser öffnen. Du kannst aber "
-"die URL kopieren und sie in deinem Browser einfügen."
+"Vidalia konnte den gewählten Link nicht im Webbrowser öffnen. Sie können aber "
+"die URL kopieren und sie in Ihrem Browser einfügen."
 
 #: licensedialog.ui:13
 msgctxt "LicenseDialog"
 msgid "License Information"
-msgstr ""
+msgstr "Lizenzinformation"
 
 #: licensedialog.ui:43
 msgctxt "LicenseDialog"
 msgid "License"
-msgstr ""
+msgstr "Lizenz"
 
 #: licensedialog.ui:76
 msgctxt "LicenseDialog"
 msgid "Credits"
-msgstr ""
+msgstr "Mitwirkende"
 
 #: logevent.cpp:57
 msgctxt "LogEvent"
@@ -879,7 +879,7 @@ msgstr "Vidalia konnte Tor nicht starten. Überprüfen Sie Ihre Einstellungen, u
 #: mainwindow.cpp:348
 msgctxt "MainWindow"
 msgid "Network Map"
-msgstr "Netzwerk-Karte"
+msgstr "Netzwerk-Landkarte"
 
 #: mainwindow.ui:380
 msgctxt "MainWindow"
@@ -940,7 +940,7 @@ msgstr "Netzwerk betrachten"
 #: mainwindow.ui:259
 msgctxt "MainWindow"
 msgid "View a map of the Tor network"
-msgstr "Die Tor-Netzwerkkarte betrachten"
+msgstr "Die Tor Netzwerk-Landkarte betrachten"
 
 #: mainwindow.ui:272
 msgctxt "MainWindow"
@@ -1060,7 +1060,7 @@ msgctxt "MainWindow"
 msgid "Your relay is shutting down."
 "Click 'Stop' again to stop your relay now."
 msgstr ""
-"Dein Relay fährt herunter. Klicke 'Stopp' ein weiteres Mal, um das Relay "
+"Ihr Relay fährt herunter. Klicken Sie ein weiteres mal 'Stopp', um das Relay "
 "jetzt zu stoppen."
 
 #: mainwindow.cpp:906
@@ -1074,8 +1074,8 @@ msgid "You are currently running a relay. Terminating your relay will interrupt 
 ""
 "Would you like to shutdown gracefully and give clients time to find a new relay?"
 msgstr ""
-"Du betreibst zur Zeit ein Relay. Das Beenden deines Relays wird alle offenen "
-"Verbindungen von Benutzern unterbrechen. Möchtest du das Herunterfahren "
+"Sie betreiben zur Zeit ein Relay. Das Beenden Ihres Relays wird alle offenen "
+"Verbindungen von Benutzern unterbrechen. Möchten Sie das Herunterfahren "
 "sanft durchführen und Benutzern die Gelegenheit geben einen neuen Relay zu "
 "finden?"
 
@@ -1101,7 +1101,7 @@ msgid "Vidalia detected that the Tor software exited unexpectedly."
 "Please check the message log for recent warning or error messages."
 msgstr ""
 "Vidalia hat beobachtet, dass die Tor-Software unerwartet beendet wurde. "
-"Überprüfe bitte das Nachrichtenprotokoll auf kürzlich erfolgte Warnungen "
+"Überprüfen Sie bitte das Nachrichtenprotokoll auf kürzlich erfolgte Warnungen "
 "oder Fehlernachrichten."
 
 #: mainwindow.cpp:1078
@@ -1329,7 +1329,7 @@ msgstr "Authentifiziere bei Tor"
 #: mainwindow.cpp:1210
 msgctxt "MainWindow"
 msgid "Password Reset Failed"
-msgstr ""
+msgstr "Zurücksetzen des Passworts fehlgeschlagen"
 
 #: mainwindow.cpp:1213
 msgctxt "MainWindow"
