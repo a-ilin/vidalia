@@ -306,7 +306,7 @@ msgctxt "QFileDialog"
 msgid "'%1' is write protected."
 "Do you want to delete it anyway?"
 msgstr "'%1' ist schreibgeschützt."
-"Möchten sie die Datei trotzdem löschen?"
+"Möchten Sie die Datei trotzdem löschen?"
 
 #: qfiledialog.cpp:2286
 msgctxt "QFileDialog"
