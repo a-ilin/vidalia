@@ -40,6 +40,7 @@ GeoIpResolver::GeoIpResolver()
   _socksPort = 9050;
 
 #if defined(USE_QSSLSOCKET)
+  QSslSocket::setDefaultCaCertificates(QList<QSslCertificate>());
   if (! QSslSocket::addDefaultCaCertificates(":/geoip/cacert_root.crt"))
     vWarn("Failed to add the GeoIP CA certificate to the default CA "
           "certificate database.");
