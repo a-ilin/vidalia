@@ -72,9 +72,12 @@ ConfigDialog::ConfigDialog(QWidget* parent)
 
   /* Create the config pages and actions */
   QActionGroup *grp = new QActionGroup(this);
-  ui.stackPages->add(new GeneralPage(ui.stackPages),
+  GeneralPage *generalPage = new GeneralPage(ui.stackPages);
+  ui.stackPages->add(generalPage,
                      createPageAction(QIcon(IMAGE_GENERAL),
                                       tr("General"), "General", grp));
+  connect(generalPage, SIGNAL(checkForUpdates()),
+          this, SLOT(onCheckForUpdates()));
 
   ui.stackPages->add(new NetworkPage(ui.stackPages),
                      createPageAction(QIcon(IMAGE_NETWORK),
@@ -281,6 +284,15 @@ ConfigDialog::help()
       help("config.general"); break;
   }
 }
+
+/** Stub method that relays the checkForUpdates() signal from the General
+ * settings page to the owner of the config dialog (MainWindow). */
+void
+ConfigDialog::onCheckForUpdates()
+{
+  emit checkForUpdates();
+}
+
 
 /** Called when a ConfigPage in the dialog requests help on a specific
  * <b>topic</b>. */

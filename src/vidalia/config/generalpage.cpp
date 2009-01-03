@@ -16,6 +16,7 @@
 
 #include <QDateTime>
 #include <stringutil.h>
+#include <config.h>
 #include "generalpage.h"
 
 
@@ -35,11 +36,15 @@ GeneralPage::GeneralPage(QWidget *parent)
           this, SLOT(browseTorExecutable()));
   connect(ui.btnBrowseProxyExecutable, SIGNAL(clicked()), 
           this, SLOT(browseProxyExecutable()));
+  connect(ui.btnUpdateNow, SIGNAL(clicked()), this, SLOT(updateNow()));
 
 #if !defined(Q_OS_WIN32)
   /* Hide platform specific features */
   ui.chkRunVidaliaAtSystemStartup->setVisible(false);
   ui.lineHorizontalSeparator->setVisible(false);
+#endif
+#if !defined(USE_AUTOUPDATE)
+  ui.grpSoftwareUpdates->setVisible(false);
 #endif
 }
 
@@ -139,5 +144,11 @@ GeneralPage::load()
   ui.lineProxyExecutableArguments->setText(
     string_format_arguments(_vidaliaSettings->getProxyExecutableArguments()));
   ui.chkRunProxyAtTorStartup->setChecked(_vidaliaSettings->runProxyAtStart());
+}
+
+void
+GeneralPage::updateNow()
+{
+  emit checkForUpdates();
 }
 

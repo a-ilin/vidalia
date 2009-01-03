@@ -34,6 +34,10 @@
 #include "mainwindow.h"
 #include "controlpasswordinputdialog.h"
 
+#ifdef USE_AUTOUPDATE
+#include "updatesavailabledialog.h"
+#endif
+
 #define IMG_BWGRAPH        ":/images/16x16/utilities-system-monitor.png"
 #define IMG_CONTROL_PANEL  ":/images/16x16/system-run.png"
 #define IMG_MESSAGELOG     ":/images/16x16/format-justify-fill.png"
@@ -120,6 +124,7 @@ MainWindow::MainWindow()
   createTrayIcon();
   /* Start with Tor initially stopped */
   _status = Unset;
+  _isVidaliaRunningTor = false;
   updateTorStatus(Stopped);
   
   /* Create a new TorControl object, used to communicate with Tor */
@@ -162,6 +167,28 @@ MainWindow::MainWindow()
   /* Catch signals when the application is running or shutting down */
   connect(vApp, SIGNAL(running()), this, SLOT(running()));
   connect(vApp, SIGNAL(shutdown()), this, SLOT(shutdown()));
+
+#if defined(USE_AUTOUPDATE)
+  /* Create a timer used to remind us to check for software updates */
+  connect(&_updateTimer, SIGNAL(timeout()), this, SLOT(checkForUpdates()));
+
+  /* Also check for updates in the foreground when the user clicks the
+   * "Check Now" button in the config dialog. */
+  connect(_configDialog, SIGNAL(checkForUpdates()),
+          this, SLOT(checkForUpdatesWithUI()));
+
+  /* The rest of these slots are called as the update process executes. */
+  connect(&_updateProcess, SIGNAL(downloadProgress(QString,int,int)),
+          &_updateProgressDialog, SLOT(setDownloadProgress(QString,int,int)));
+  connect(&_updateProcess, SIGNAL(updatesAvailable(UpdateProcess::BundleInfo,PackageList)),
+          this, SLOT(updatesAvailable(UpdateProcess::BundleInfo,PackageList)));
+  connect(&_updateProcess, SIGNAL(updatesInstalled(int)),
+          this, SLOT(updatesInstalled(int)));
+  connect(&_updateProcess, SIGNAL(installUpdatesFailed(QString)),
+          this, SLOT(installUpdatesFailed(QString)));
+  connect(&_updateProgressDialog, SIGNAL(cancelUpdate()),
+          &_updateProcess, SLOT(cancel()));
+#endif
 
 #if defined(USE_MINIUPNPC)
   /* Catch UPnP-related signals */
@@ -280,6 +307,34 @@ MainWindow::running()
   /* Start the proxy server, if configured */
   if (settings.runProxyAtStart())
     startProxy();
+
+#if defined(USE_AUTOUPDATE)
+  if (settings.isAutoUpdateEnabled()) {
+    QDateTime lastCheckedAt = settings.lastCheckedForUpdates();
+    if (UpdateProcess::shouldCheckForUpdates(lastCheckedAt)) {
+      if (settings.runTorAtStart() && ! _torControl->circuitEstablished()) {
+        /* We started Tor but it hasn't bootstrapped yet, so give it a bit
+         * before we decide to check for updates. If Tor manages to build a
+         * circuit before this timer times out, we will stop the timer and
+         * launch a check for updates immediately. (see circuitEstablished()).
+         */
+        _updateTimer.start(5*60*1000);
+      } else {
+        /* Initiate a background check for updates now */
+        checkForUpdates();
+      }
+    } else {
+      /* Schedule the next time to check for updates */
+      QDateTime nextCheckAt = UpdateProcess::nextCheckForUpdates(lastCheckedAt);
+      QDateTime now = QDateTime::currentDateTime().toUTC();
+
+      vInfo("Last checked for software updates at %1. Will check again at %2.")
+        .arg(lastCheckedAt.toLocalTime().toString("dd-MM-yyyy hh:mm:ss"))
+        .arg(nextCheckAt.toLocalTime().toString("dd-MM-yyyy hh:mm:ss"));
+      _updateTimer.start((nextCheckAt.toTime_t() - now.toTime_t()) * 1000);
+    }
+  }
+#endif
 }
 
 /** Terminate the Tor process if it is being run under Vidalia, disconnect all
@@ -1307,6 +1362,18 @@ MainWindow::circuitEstablished()
   setStartupProgress(ui.progressBar->maximum(),
                      tr("Connected to the Tor network!"));
   startSubprocesses();
+
+#if defined(USE_AUTOUPDATE)
+  VidaliaSettings settings;
+  if (settings.isAutoUpdateEnabled()) {
+    QDateTime lastCheckedAt = settings.lastCheckedForUpdates();
+    if (UpdateProcess::shouldCheckForUpdates(lastCheckedAt)) {
+      /* Initiate a background check for updates now */
+      _updateTimer.stop();
+      checkForUpdates();
+    }
+  }
+#endif
 }
 
 /** Checks the status of the current version of Tor to see if it's old,
@@ -1332,17 +1399,30 @@ MainWindow::dangerousTorVersion()
   static bool alreadyWarned = false;
 
   if (!alreadyWarned) {
+#if !defined(USE_AUTOUPDATE)
     QString website = "https://www.torproject.org/";
-#if QT_VERSION >= 0x040200
+# if QT_VERSION >= 0x040200
     website = QString("<a href=\"%1\">%1</a>").arg(website);
-#endif
+# endif
 
-    VMessageBox::information(this,
-      tr("Tor Update Available"),
+    VMessageBox::information(this, tr("Tor Update Available"),
       p(tr("The currently installed version of Tor is out of date or no longer "
            "recommended. Please visit the Tor website to download the latest "
            "version.")) + p(tr("Tor website: %1").arg(website)),
       VMessageBox::Ok);
+#else
+    int ret = VMessageBox::information(this,
+                tr("Tor Update Available"),
+                p(tr("The currently installed version of Tor is out of date "
+                     "or no longer recommended."))
+                  + p(tr("Would you like to check if a newer package is "
+                         "available for installation?")),
+                VMessageBox::Yes|VMessageBox::Default,
+                VMessageBox::No|VMessageBox::Escape);
+
+    if (ret == VMessageBox::Yes)
+      checkForUpdatesWithUI();
+#endif
     alreadyWarned = true;
   }
 }
@@ -1472,5 +1552,143 @@ MainWindow::upnpError(UPNPControl::UPNPError error)
     VMessageBox::Ok);
 #endif
 }
+#endif
+
+#if defined(USE_AUTOUPDATE)
+/** Called when the user clicks the 'Check Now' button in the General
+ * settings page. */
+void
+MainWindow::checkForUpdatesWithUI()
+{
+  checkForUpdates(true);
+}
+
+/** Called when the update interval timer expires, notifying Vidalia that
+ * we should check for updates again. */
+void
+MainWindow::checkForUpdates(bool showProgress)
+{
+  VidaliaSettings settings;
+
+  if (_updateProcess.isRunning()) {
+    if (showProgress) {
+      /* A check for updates is already in progress, so just bring the update
+       * progress dialog into focus.
+       */
+      _updateProgressDialog.show();
+    }
+  } else {
+    /* If Tor is running and bootstrapped, then use Tor to check for updates */
+    if (_torControl->isRunning() && _torControl->circuitEstablished())
+      _updateProcess.setSocksPort(_torControl->getSocksPort());
+    else
+      _updateProcess.setSocksPort(0);
+
+    /* Initialize the UpdateProgressDialog and display it, if necessary. */
+    _updateProgressDialog.setStatus(UpdateProgressDialog::CheckingForUpdates);
+    if (showProgress)
+      _updateProgressDialog.show();
+
+    /* Initiate a check for available software updates. This check will
+     * be done in the background, notifying the user only if there are
+     * updates to be installed.
+     */
+    _updateProcess.checkForUpdates(UpdateProcess::TorBundleInfo);
+
+    /* Remember when we last checked for software updates */
+    settings.setLastCheckedForUpdates(QDateTime::currentDateTime().toUTC());
+
+    /* Restart the "Check for Updates" timer */
+    _updateTimer.start(UpdateProcess::checkForUpdatesInterval() * 1000);
+  }
+}
+
+/** Called when the check for software updates fails. */
+void
+MainWindow::checkForUpdatesFailed(const QString &errmsg)
+{
+  if (_updateProgressDialog.isVisible()) {
+    _updateProgressDialog.hide();
+    VMessageBox::warning(this, tr("Update Failed"), errmsg,
+                         VMessageBox::Ok);
+  }
+}
+
+/** Called when there is an update available for installation. */
+void
+MainWindow::updatesAvailable(UpdateProcess::BundleInfo bi,
+                             const PackageList &packageList)
+{
+  vInfo("%1 software update(s) available").arg(packageList.size());
+  if (packageList.size() > 0) {
+    UpdatesAvailableDialog dlg(packageList, &_updateProgressDialog);
+
+    switch (dlg.exec()) {
+      case UpdatesAvailableDialog::InstallUpdatesNow:
+        installUpdates(bi);
+        break;
+
+      default:
+        _updateProgressDialog.hide();
+        break;
+    }
+  } else {
+    if (_updateProgressDialog.isVisible()) {
+      _updateProgressDialog.hide();
+      VMessageBox::information(this, tr("No Updates Available"),
+                               tr("You are currently running the most recent "
+                                  "Tor software available."),
+                               VMessageBox::Ok);
+    }
+  }
+}
+
+/** Stops Tor (if necessary), installs any available for <b>bi</b>, and
+ * restarts Tor (if necessary). */
+void
+MainWindow::installUpdates(UpdateProcess::BundleInfo bi)
+{
+  _updateProgressDialog.setStatus(UpdateProgressDialog::InstallingUpdates);
+  _updateProgressDialog.show();
+
+  if (_isVidaliaRunningTor) {
+    _restartTorAfterUpgrade = true;
+    _isIntentionalExit = true;
+    _torControl->stop();
+  } else {
+    _restartTorAfterUpgrade = false;
+  }
+  _updateProcess.installUpdates(bi);
+}
+
+/** Called when all <b>numUpdates</b> software updates have been installed
+ * successfully. */
+void
+MainWindow::updatesInstalled(int numUpdates)
+{
+  _updateProgressDialog.setStatus(UpdateProgressDialog::UpdatesInstalled);
+  _updateProgressDialog.show();
+
+  if (_restartTorAfterUpgrade)
+    start();
+}
+
+/** Called when an update fails to install. <b>errmsg</b> contains details
+ * about the failure. */
+void
+MainWindow::installUpdatesFailed(const QString &errmsg)
+{
+  _updateProgressDialog.hide();
+
+  VMessageBox::warning(this, tr("Installation Failed"),
+                       p(tr("Vidalia was unable to install your software updates."))
+                         + p(tr("The following error occurred:")) 
+                         + p(errmsg),
+                       VMessageBox::Ok);
+
+  if (_restartTorAfterUpgrade)
+    start();
+}
+
 #endif
 

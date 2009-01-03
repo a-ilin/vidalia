@@ -40,11 +40,17 @@ public:
   /** Called when the user changes the UI translation. */
   virtual void retranslateUi();
 
+signals:
+  /** Emitted when the user clicks the "Check Now" button. */
+  void checkForUpdates();
+
 private slots:
   /** Open a QFileDialog to browse for a Tor executable file. */
   void browseTorExecutable();
   /** Open a QFileDialog to browse for a proxy executable file. */
   void browseProxyExecutable();
+  /** Initiate an immediate check for software updates. */
+  void updateNow();
 
 private:
   /** Displays a file dialog allowing the user to browse for an executable

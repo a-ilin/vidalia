@@ -34,6 +34,10 @@
 #include "helperprocess.h"
 #include "config.h"
 
+#if defined(USE_AUTOUPDATE)
+#include "updateprocess.h"
+#include "updateprogressdialog.h"
+#endif
 #if defined(USE_MINIUPNPC)
 #include "config/upnpcontrol.h"
 #endif
@@ -113,6 +117,28 @@ private slots:
   void onIMFailed(QString errmsg);
   /** Called when the proxy server fails to start */
   void onProxyFailed(QString errmsg);
+
+#if defined(USE_AUTOUPDATE)
+  /** Called when the user clicks the 'Check Now' button in the General
+   * settings page. */
+  void checkForUpdatesWithUI();
+  /** Called when the update interval timer expires, notifying Vidalia that
+   * we should check for updates again. */
+  void checkForUpdates(bool showProgress = false);
+  /** Called when the check for software updates fails. */
+  void checkForUpdatesFailed(const QString &errmsg);
+  /** Called when there is an update available for installation. */
+  void updatesAvailable(UpdateProcess::BundleInfo bi, const PackageList &packageList);
+  /** Stops Tor (if necessary), installs any available for <b>bi</b>, and
+   * restarts Tor (if necessary). */
+  void installUpdates(UpdateProcess::BundleInfo bi);
+  /** Called when all <b>numUpdates</b> software updates have been installed
+   * successfully. */
+  void updatesInstalled(int numUpdates);
+  /** Called when an update fails to install. <b>errmsg</b> contains details
+   * about the failure. */
+  void installUpdatesFailed(const QString &errmsg);
+#endif
 
 #if defined(USE_MINIUPNPC)
   /** Called when a UPnP error occurs. */
@@ -206,6 +232,18 @@ private:
   bool _useSavedPassword;
   /** The Vidalia icon that sits in the tray. */
   TrayIcon _trayIcon;
+
+#if defined(USE_AUTOUPDATE)
+  /** Timer used to remind us to check for software updates. */
+  QTimer _updateTimer;
+  /** The auto-update process used to check for and download updates. */
+  UpdateProcess _updateProcess;
+  /** Dialog instance that is be used to show the progress of the auto-update
+   * executable. */
+  UpdateProgressDialog _updateProgressDialog;
+  /** Set to true if Vidalia should restart Tor after a software upgrade. */
+  bool _restartTorAfterUpgrade;
+#endif
   /** The menubar (Mac OS X only). */
   QMenuBar *_menuBar;
 

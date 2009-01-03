@@ -53,6 +53,11 @@ public slots:
   /** Shows the config dialog with focus set to the given page. */
   void showWindow(Page page = General);
 
+signals:
+  /** Emitted when the user clicks "Check Now" to initiate a check
+   * for software updates. */
+  void checkForUpdates();
+
 protected:
   /** Called when the user changes the UI translation. */
   virtual void retranslateUi();
@@ -74,6 +79,9 @@ private slots:
   /** Shows general help information for whichever settings page the user is
    * currently viewing. */
   void help();
+  /** Stub method that relays the checkForUpdates() signal from the General
+   * settings page to the owner of the config dialog (MainWindow). */
+  void onCheckForUpdates();
 
 private:
   /** Loads the current configuration settings */

@@ -78,6 +78,11 @@ endif(USE_QSSLSOCKET)
 ## UPnP support is currently optional (enabled by default)
 option(USE_MINIUPNPC "Enable UPnP support using the MiniUPnPc library." ON)
 
+## Automatic osftware update is optional (disabled by default)
+if (WIN32)
+  option(USE_AUTOUPDATE "Enable automatic software update support." OFF)
+endif(WIN32)
+
 ## Check for system header files
 check_include_file("limits.h" HAVE_LIMITS_H)
 check_include_file("sys/limits.h" HAVE_SYS_LIMITS_H)

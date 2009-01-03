@@ -1,5 +1,5 @@
 /*
-**  $Id: $
+**  $Id$
 ** 
 **  This file is part of Vidalia, and is subject to the license terms in the 
 **  LICENSE file, found in the top level directory of this distribution. If  
@@ -27,6 +27,8 @@
 #cmakedefine SIZEOF_INT @SIZEOF_INT@
 
 #cmakedefine USE_MINIUPNPC
+
+#cmakedefine USE_AUTOUPDATE
 
 #endif
 

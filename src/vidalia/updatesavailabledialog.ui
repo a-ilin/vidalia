@@ -1,0 +1,96 @@
+<ui version="4.0" >
+ <class>UpdatesAvailableDialog</class>
+ <widget class="QDialog" name="UpdatesAvailableDialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>365</width>
+    <height>350</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Software Updates Available</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="res/vidalia.qrc" >
+    <normaloff>:/images/32x32/system-software-update.png</normaloff>:/images/32x32/system-software-update.png</iconset>
+  </property>
+  <layout class="QGridLayout" name="gridLayout" >
+   <item row="2" column="0" colspan="2" >
+    <layout class="QHBoxLayout" name="horizontalLayout" >
+     <item>
+      <spacer name="horizontalSpacer" >
+       <property name="orientation" >
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0" >
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnInstallLater" >
+       <property name="text" >
+        <string>Remind Me Later</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="btnInstall" >
+       <property name="text" >
+        <string>Install</string>
+       </property>
+       <property name="default" >
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="0" column="0" colspan="2" >
+    <widget class="QLabel" name="lblUpdatesAvailable" >
+     <property name="text" >
+      <string>The following updated software packages are ready for installation:</string>
+     </property>
+     <property name="wordWrap" >
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="1" column="0" colspan="2" >
+    <widget class="QSplitter" name="splitter" >
+     <property name="orientation" >
+      <enum>Qt::Vertical</enum>
+     </property>
+     <widget class="QTreeWidget" name="treeUpdates" >
+      <property name="rootIsDecorated" >
+       <bool>false</bool>
+      </property>
+      <property name="itemsExpandable" >
+       <bool>false</bool>
+      </property>
+      <column>
+       <property name="text" >
+        <string>Package</string>
+       </property>
+      </column>
+      <column>
+       <property name="text" >
+        <string>Version</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QTextBrowser" name="textDetails" />
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources>
+  <include location="res/vidalia.qrc" />
+ </resources>
+ <connections/>
+</ui>

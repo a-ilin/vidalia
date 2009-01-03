@@ -215,9 +215,28 @@ qt4_wrap_ui(vidalia_SRCS
   log/messagelog.ui
   network/netviewer.ui
 )
+
 if (USE_MINIUPNPC)
   qt4_wrap_ui(vidalia_SRCS config/upnptestdialog.ui)
 endif(USE_MINIUPNPC)
+
+if (USE_AUTOUPDATE)
+  set(vidalia_SRCS ${vidalia_SRCS}
+    packageinfo.cpp
+    updateprocess.cpp
+    updateprogressdialog.cpp
+    updatesavailabledialog.cpp
+  )
+  qt4_wrap_cpp(vidalia_SRCS
+    updateprocess.h
+    updateprogressdialog.h
+    updatesavailabledialog.h
+  )
+  qt4_wrap_ui(vidalia_SRCS
+    updateprogressdialog.ui
+    updatesavailabledialog.ui
+  )
+endif(USE_AUTOUPDATE)
 
 ## Add the resource files (icons, etc.)
 qt4_add_resources(vidalia_SRCS

@@ -17,6 +17,7 @@
 #ifndef _VIDALIASETTINGS_H
 #define _VIDALIASETTINGS_H
 
+#include <QDateTime>
 #include "vsettings.h"
 
 
@@ -93,6 +94,19 @@ public:
   QStringList getProxyExecutableArguments() const;
   /** Sets the additional arguments to be passed to Proxy Executable */
   void setProxyExecutableArguments(const QStringList &proxyExecutableArguments);
+  
+  /** Returns true if Vidalia should automatically check for software updates.
+   */
+  bool isAutoUpdateEnabled() const;
+  /** Sets to <b>enabled</b> whether Vidalia should automatically check for
+   * software updates or not. */
+  void setAutoUpdateEnabled(bool enabled);
+
+  /** Returns the time at which Vidalia last checked for software updates. */
+  QDateTime lastCheckedForUpdates() const;
+  /** Sets to <b>checkedAt</b> the time at which Vidalia last checked for
+   * available software updates. */
+  void setLastCheckedForUpdates(const QDateTime &checkedAt);
 };
 
 #endif
