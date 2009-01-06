@@ -23,10 +23,10 @@
 
 /** Defines a type that pairs a mapping's target address with an expiration
  * time for that mapping. */
-typedef QPair<QString, QDateTime> addr_map_entry_t;
+typedef QPair<QString, QDateTime> AddressMapEntry;
 
 
-class AddressMap : public QHash<QString, addr_map_entry_t>
+class AddressMap : public QHash<QString, AddressMapEntry>
 {
 public:
   /** Types of address mappings. */
@@ -39,31 +39,31 @@ public:
 
   /** Constructor. Creates an empty table for storing address mappinsgs. */
   AddressMap()
-   : QHash<QString, addr_map_entry_t>() {}
+   : QHash<QString, AddressMapEntry>() {}
 
   /** Adds a new address mapping or updates an existing one for the address
    * specified by <b>from</b>. The mapping will remain valid until the date in
    * <b>expires</b>. */
-  void add(QString from, QString to, QDateTime expires);
+  void add(const QString &from, const QString &to, const QDateTime &expires);
   /** Adds a new address mapping or updates an existing one based on fields
    * parsed from <b>mapping</b>. */
-  void add(QString mapping);
+  void add(const QString &mapping);
 
   /** Returns true if the address map table contains a mapping for <b>addr</b>
    * that is not expired. */
-  bool isMapped(QString addr) const;
+  bool isMapped(const QString &addr) const;
   
   /** Returns the address to which <b>addr</b> is currently mapped. If there
    * is no mapping for <b>addr</b> (or the mapping is expired), then an
    * empty string is returned. */
-  QString mappedTo(QString addr) const;
+  QString mappedTo(const QString &addr) const;
 
   /** Returns the reverse of this address map. */
   AddressMap reverse() const;
 
 private:
   /** Returns true if <b>entry</b> is expired; false otherwise. */
-  bool isExpired(addr_map_entry_t entry) const;
+  bool isExpired(const AddressMapEntry &entry) const;
 };
 
 #endif

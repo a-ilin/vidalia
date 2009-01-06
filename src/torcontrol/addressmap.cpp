@@ -25,13 +25,14 @@
 /** Adds a new address mapping from the address <b>from</b> to the address
  * <b>to</b>, that expires at <b>expires</b>. */
 void
-AddressMap::add(QString from, QString to, QDateTime expires)
+AddressMap::add(const QString &from, const QString &to,
+                const QDateTime &expires)
 {
   tc::debug("New address mapping: %1 -> %2 (expires %3)").arg(from)
-                                                          .arg(to)
+                                                         .arg(to)
                           .arg(expires.isValid() ? expires.toString(DATE_FMT)
                                                  : "never");
-  insert(from, addr_map_entry_t(to, expires));
+  insert(from, AddressMapEntry(to, expires));
 }
 
 /** Adds a new address mapping by parsing the fields in <b>mapping</b>, which
@@ -41,7 +42,7 @@ AddressMap::add(QString from, QString to, QDateTime expires)
  *   Expiry = DQUOTE ISOTime DQUOTE / "NEVER"
  */
 void
-AddressMap::add(QString mapping)
+AddressMap::add(const QString &mapping)
 {
   QStringList parts = mapping.split(" ");
   if (parts.size() >= 2) {
@@ -61,7 +62,7 @@ AddressMap::add(QString mapping)
 
 /** Returns true if <b>entry</b> is expired; false otherwise. */
 bool
-AddressMap::isExpired(addr_map_entry_t entry) const
+AddressMap::isExpired(const AddressMapEntry &entry) const
 {
   if (entry.second.isValid())
     return (entry.second < QDateTime::currentDateTime());
@@ -71,7 +72,7 @@ AddressMap::isExpired(addr_map_entry_t entry) const
 /** Returns true if there exists a mapping for <b>addr</b> and that mapping is
  * not expired. */
 bool
-AddressMap::isMapped(QString addr) const
+AddressMap::isMapped(const QString &addr) const
 {
   return (contains(addr) && !isExpired(value(addr)));
 }
@@ -80,9 +81,9 @@ AddressMap::isMapped(QString addr) const
  * no mapping for <b>addr</b> (or the mapping is expired), then an empty
  * string is returned. */
 QString
-AddressMap::mappedTo(QString addr) const
+AddressMap::mappedTo(const QString &addr) const
 {
-  addr_map_entry_t entry = value(addr);
+  AddressMapEntry entry = value(addr);
   return (isExpired(entry) ? QString() : entry.first);
 }
 
@@ -94,7 +95,7 @@ AddressMap::reverse() const
   AddressMap reverseMap;
   foreach (QString from, keys()) {
     /* Flip the "from" and the "to" addresses and retain the expiry time. */
-    addr_map_entry_t entry = value(from);
+    AddressMapEntry entry = value(from);
     reverseMap.add(entry.first, from, entry.second);
   }
   return reverseMap;
