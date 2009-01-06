@@ -1026,28 +1026,25 @@ TorControl::closeStream(const StreamId &streamId, QString *errmsg)
 AddressMap
 TorControl::getAddressMap(AddressMap::AddressMapType type, QString *errmsg)
 {
-  ControlCommand cmd("GETINFO");
-  ControlReply reply;
   AddressMap addressMap;
+  QStringList entries;
 
   switch (type) {
     case AddressMap::AddressMapConfig:
-      cmd.addArgument("addr-mappings/config");
+      entries = getInfo("address-mappings/config").toStringList();
       break;
     case AddressMap::AddressMapCache:
-      cmd.addArgument("addr-mappings/cache");
+      entries = getInfo("address-mappings/cache").toStringList();
       break;
     case AddressMap::AddressMapControl:
-      cmd.addArgument("addr-mappings/control");
+      entries = getInfo("address-mappings/control").toStringList();
       break;
     default:
-      cmd.addArgument("addr-mappings/all");
+      entries = getInfo("address-mappings/all").toStringList();
   }
 
-  if (send(cmd, reply, errmsg)) {
-    foreach (QString mapping, reply.getData()) {
-      addressMap.add(mapping);
-    }
+  foreach (QString entry, entries) {
+    addressMap.add(entry);
   }
   return addressMap;
 }

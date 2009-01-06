@@ -46,9 +46,15 @@ AddressMap::add(QString mapping)
   QStringList parts = mapping.split(" ");
   if (parts.size() >= 2) {
     QDateTime expires;
-    if (parts.size() >= 4 && parts.at(2) != "NEVER")
+    if (parts.size() >= 4 && parts.at(2) != "NEVER") {
       expires = QDateTime::fromString(parts.at(2) + " " + parts.at(3),
                                       DATE_FMT);
+
+      /* Tor gives us the expiry time in UTC, but we will do subsequent
+       * comparisons based on local time. So do the proper conversion now. */
+      expires.setTimeSpec(Qt::UTC);
+      expires = expires.toLocalTime();
+    }
     add(parts.at(0), parts.at(1), expires);
   }
 }
