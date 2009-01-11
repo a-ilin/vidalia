@@ -1635,9 +1635,9 @@ MainWindow::updatesAvailable(UpdateProcess::BundleInfo bi,
   } else {
     if (_updateProgressDialog.isVisible()) {
       _updateProgressDialog.hide();
-      VMessageBox::information(this, tr("No Updates Available"),
-                               tr("You are currently running the most recent "
-                                  "Tor software available."),
+      VMessageBox::information(this, tr("Your software is up to date"),
+                               tr("There are no new Tor software packages "
+                                  "available for your computer at this time."),
                                VMessageBox::Ok);
     }
   }
