@@ -27,6 +27,10 @@
 #include <html.h>
 #include <stdlib.h>
 
+#ifdef Q_OS_MACX
+#include <Carbon/Carbon.h>
+#endif
+
 #include "vidalia.h"
 
 /* Available command-line arguments. */
@@ -90,6 +94,10 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
   /* Check if we're supposed to reset our config before proceeding. */
   if (_args.contains(ARG_RESET))
     VidaliaSettings::reset();
+
+  /* See if we should load a default configuration file. */
+  if (! VidaliaSettings::settingsFileExists())
+    copyDefaultSettingsFile();
 
   /* Handle the -loglevel and -logfile options. */
   if (_args.contains(ARG_LOGFILE))
@@ -426,5 +434,34 @@ err:
     delete vidaliaTranslator;
   delete vidaliaTranslator;
   return false;
+}
+
+/** Copies a default settings file (if one exists) to Vidalia's data
+ * directory. */
+void
+Vidalia::copyDefaultSettingsFile() const
+{
+#ifdef Q_OS_MACX
+  CFURLRef confUrlRef;
+  CFStringRef pathRef;
+  const char *path;
+
+  confUrlRef = CFBundleCopyResourceURL(CFBundleGetMainBundle(), 
+                                       CFSTR("vidalia"), CFSTR("conf"), NULL);
+  if (confUrlRef == NULL)
+    return;
+
+  pathRef = CFURLCopyFileSystemPath(confUrlRef, kCFURLPOSIXPathStyle);
+  path    = CFStringGetCStringPtr(pathRef, CFStringGetSystemEncoding());
+
+  if (path) {
+    QString defaultConfFile = QString::fromLocal8Bit(path);
+    QFileInfo fi(defaultConfFile);
+    if (fi.exists())
+      QFile::copy(defaultConfFile, VidaliaSettings::settingsFile());
+  }
+  CFRelease(confUrlRef);
+  CFRelease(pathRef);
+#endif
 }
 
