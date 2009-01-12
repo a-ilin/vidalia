@@ -77,7 +77,7 @@ case "$1" in
   cp -R ../README ../src/vidalia/Vidalia.app ../
   cp osx/background.png ../.background/
   cp osx/bundle-ds_store ../.DS_Store
-  cp osx/vidalia.conf.sample ../Vidalia.app/Contents/Resources/
+  cp osx/vidalia.conf.sample ../Vidalia.app/Contents/Resources/vidalia.conf
   cp ../CREDITS ../CHANGELOG ../Vidalia.app/
   cp ../LICENSE ../LICENSE-GPLV2 ../LICENSE-GPLV3 ../LICENSE-LGPLV3 ../LICENSE-OPENSSL ../LEGAL/
   cp -R ../LEGAL ../Vidalia.app/
