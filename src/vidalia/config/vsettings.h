@@ -31,6 +31,11 @@ public:
    * value() and setValue(). */
   VSettings(const QString group = QString());
 
+  /** Returns the location of Vidalia's configuration settings file. */
+  static QString settingsFile();
+  /** Returns true if Vidalia's configuration settings file already exists. */
+  static bool settingsFileExists();
+
   /** Resets all of Vidalia's settings. */
   static void reset();
 

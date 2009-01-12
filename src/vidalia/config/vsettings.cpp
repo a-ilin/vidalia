@@ -14,6 +14,7 @@
 ** \brief Stores and retrieves settings from Vidalia's configuration file. 
 */
 
+#include <QFileInfo>
 #include <vidalia.h>
 
 #include "vsettings.h"
@@ -28,6 +29,21 @@ VSettings::VSettings(const QString settingsGroup)
 {
   if (!settingsGroup.isEmpty())
     beginGroup(settingsGroup);
+}
+
+/** Returns the location of Vidalia's configuration settings file. */
+QString
+VSettings::settingsFile()
+{
+  return SETTINGS_FILE;
+}
+
+/** Returns true if Vidalia's configuration settings file already exists. */
+bool
+VSettings::settingsFileExists()
+{
+  QFileInfo fi(settingsFile());
+  return fi.exists();
 }
 
 /** Returns the saved value associated with <b>key</b>. If no value has been
