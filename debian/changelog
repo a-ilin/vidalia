@@ -1,3 +1,19 @@
+vidalia (0.1.10-2) unstable; urgency=low
+
+  * DQT_LRELEASE_EXECUTABLE and QT_LUPDATE_EXECUTABLE pointing to qt4 libs
+     avoids building conflicts if alternatives are pointing to qt3 ones.
+  * Patch to default Tor Executable path to Debian Tor's package binary path.
+
+ -- Ulises Vitulli <uvitulli@fi.uba.ar>  Wed, 14 Jan 2009 14:02:06 -0200
+
+vidalia (0.1.10-1) unstable; urgency=low
+
+  * New upstream release.
+  * Debconf translations:
+    - Swedish (Closes #508751).
+
+ -- Vern Sun <s5unty@gmail.com>  Mon, 05 Jan 2009 16:59:04 +0800
+
 vidalia (0.1.9-3) unstable; urgency=low
 
   * Fixing missing copyright holders.

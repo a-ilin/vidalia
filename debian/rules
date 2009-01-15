@@ -8,7 +8,7 @@
 
 # Uncomment this to turn on verbose mode.
 #export DH_VERBOSE=1
-
+include /usr/share/quilt/quilt.make
 
 # These are used for cross-compiling and for saving the configure script
 # from having to guess our platform (since we know it already)
@@ -29,17 +29,19 @@ configure-stamp:
 	dh_testdir
 	touch configure-stamp
 	
-build: build-stamp
+build: build-stamp $(QUILT_STAMPFN)
 
 build-stamp:
 	dh_testdir
 	mkdir -p debian/build;
 	cd debian/build; \
-		cmake ../.. -DCMAKE_INSTALL_PREFIX=/usr; \
+		cmake -DCMAKE_INSTALL_PREFIX=/usr \
+			-DQT_LRELEASE_EXECUTABLE=/usr/bin/lrelease-qt4 \
+			-QT_LUPDATE_EXECUTABLE=/usr/bin/lupdate-qt4 ../.. ;\
 		make
 	touch $@
 
-clean:
+clean: unpatch
 	dh_testdir
 	dh_testroot
 	rm -f build-stamp CMakeCache.txt doc/Doxyfile \

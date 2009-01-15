@@ -1,0 +1,12 @@
+--- old/src/vidalia/config/torsettings.cpp	2009-01-14 13:56:54.000000000 -0200
++++ new/src/vidalia/config/torsettings.cpp	2009-01-14 14:42:46.000000000 -0200
+@@ -67,7 +67,8 @@
+   else
+     setDefault(SETTING_TOR_EXECUTABLE, programFiles + "\\Tor\\tor.exe");
+ #else
+-  setDefault(SETTING_TOR_EXECUTABLE, "tor");
++  /** Debian patch for proper tor binary path */
++  setDefault(SETTING_TOR_EXECUTABLE, "/usr/sbin/tor");
+ #endif
+ 
+   setDefault(SETTING_TORRC,         Vidalia::dataDirectory() + "/torrc");
