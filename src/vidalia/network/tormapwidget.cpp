@@ -18,12 +18,13 @@
 #include <cmath>
 #include "tormapwidget.h"
 
+#include <vidalia.h>
+
 using namespace Marble;
 
 /** QPens to use for drawing different map elements */
-#define PEN_ROUTER        QPen(QColor("#ff030d"), 1.0)
-#define PEN_CIRCUIT       QPen(Qt::yellow, 0.5)
-#define PEN_SELECTED      QPen(Qt::green, 2.0)
+#define CIRCUIT_NORMAL_PEN      QPen(Qt::green,  2.0)
+#define CIRCUIT_SELECTED_PEN    QPen(Qt::yellow, 3.0)
 
 
 /** Default constructor */
@@ -68,53 +69,54 @@ TorMapWidget::addRouter(const RouterDescriptor &desc,
 void
 TorMapWidget::addCircuit(const CircuitId &circid, const QStringList &path)
 {
-#if 0
-  QPainterPath *circPainterPath = new QPainterPath;
-  
-  /* Build the new circuit */
-  for (int i = 0; i < path.size()-1; i++) {
-    QString fromNode = path.at(i);
-    QString toNode = path.at(i+1);
-   
-    /* Add the coordinates of the hops to the circuit */
-    if (_routers.contains(fromNode) && _routers.contains(toNode)) {
-      /* Find the two endpoints for this path segment */
-      QPointF fromPos = _routers.value(fromNode)->first;
-      QPointF endPos = _routers.value(toNode)->first;
-      
-      /* Draw the path segment */ 
-      circPainterPath->moveTo(fromPos);
-      circPainterPath->lineTo(endPos);
-      circPainterPath->moveTo(endPos);
-    }
-  }
-  
-  /** Add the data to the hash of known circuits and plot the circuit on the map */
+  /* XXX: Is it better to do KML LineString-based circuit drawing here,
+   *      instead of going with a QPainter-based approach? I gave it a brief
+   *      try once but failed. It might be worth looking into harder if we
+   *      want to make circuits selectable on the map too.
+   */
+
+  /* It doesn't make sense to draw a path of length less than two */
+  if (path.size() < 2)
+    return;
+
   if (_circuits.contains(circid)) {
-    /* This circuit is being updated, so just update the path, making sure we
-     * free the memory allocated to the old one. */
-    QPair<QPainterPath*,bool> *circuitPair = _circuits.value(circid);
-    delete circuitPair->first;
-    circuitPair->first = circPainterPath;
+    /* Extend an existing path */
+    CircuitGeoPath *geoPath = _circuits.value(circid);
+
+    QString router = path.at(path.size()-1);
+    if (_routerPlacemarks.contains(router)) {
+      GeoDataCoordinates coords = _routerPlacemarks.value(router);
+      geoPath->first.append(new GeoDataCoordinates(coords));
+    }
   } else {
-    /* This is a new path, so just add it to our list */
-    _circuits.insert(circid, new QPair<QPainterPath*,bool>(circPainterPath,false));
+    /* Construct a new path */
+    CircuitGeoPath *geoPath = new CircuitGeoPath();
+    geoPath->second = false; /* initially unselected */
+
+    foreach (QString router, path) {
+      if (_routerPlacemarks.contains(router)) {
+        GeoDataCoordinates coords = _routerPlacemarks.value(router);
+        geoPath->first.append(new GeoDataCoordinates(coords));
+      }      
+    }
+    _circuits.insert(circid, geoPath);
   }
-#endif
+
+  repaint();
 }
 
 /** Removes a circuit from the map. */
 void
 TorMapWidget::removeCircuit(const CircuitId &circid)
 {
-#if 0
-  QPair<QPainterPath*,bool> *circ = _circuits.take(circid);
-  QPainterPath *circpath = circ->first;
-  if (circpath) {
-    delete circpath;
+  CircuitGeoPath *path = _circuits.take(circid);
+  if (path) {
+    GeoDataLineString coords = path->first;
+    coords.erase(coords.begin(), coords.end());
+    delete path;
   }
-  delete circ;
-#endif
+
+  repaint();
 }
 
 /** Selects and highlights the router on the map. */
@@ -135,13 +137,12 @@ TorMapWidget::selectRouter(const QString &id)
 void
 TorMapWidget::selectCircuit(const CircuitId &circid)
 {
-#if 0
   if (_circuits.contains(circid)) {
-    QPair<QPainterPath*, bool> *circuitPair = _circuits.value(circid);
-    circuitPair->second = true;
+    CircuitGeoPath *path = _circuits.value(circid);
+    path->second = true;
   }
+
   repaint();
-#endif
 }
 
 /** Deselects any highlighted routers or circuits */
@@ -154,12 +155,13 @@ TorMapWidget::deselectAll()
     QPair<QPointF,bool> *routerPair = _routers.value(router);
     routerPair->second = false;
   }
-  /* Deselect all circuit paths */
-  foreach (CircuitId circid, _circuits.keys()) {
-    QPair<QPainterPath*,bool> *circuitPair = _circuits.value(circid);
-    circuitPair->second = false;
-  }
 #endif
+  /* Deselect all circuit paths */
+  foreach (CircuitGeoPath *path, _circuits.values()) {
+    path->second = false;
+  }
+
+  repaint();
 }
 
 /** Clears the list of routers and removes all the data on the map */
@@ -169,14 +171,15 @@ TorMapWidget::clear()
   foreach (QString id, _routerPlacemarks.keys()) {
     removePlaceMarkKey(id);
   }
-#if 0
-  /* Clear out all the circuit paths and free their memory */
+
   foreach (CircuitId circid, _circuits.keys()) {
-    QPair<QPainterPath*,bool> *circuitPair = _circuits.take(circid);
-    delete circuitPair->first;
-    delete circuitPair;
+    CircuitGeoPath *path = _circuits.take(circid);
+    GeoDataLineString coords = path->first;
+    coords.erase(coords.begin(), coords.end());
+    delete path;
   }
-#endif
+
+  repaint();
 }
  
 /** Zooms to fit all currently displayed circuits on the map. If there are no
@@ -240,7 +243,10 @@ TorMapWidget::zoomToRouter(const QString &id)
 void
 TorMapWidget::customPaint(GeoPainter *painter)
 {
-  Q_UNUSED(painter);
+  foreach (CircuitGeoPath *path, _circuits.values()) {
+    painter->setPen(path->second ? CIRCUIT_SELECTED_PEN : CIRCUIT_NORMAL_PEN);
+    painter->drawPolyline(path->first);
+  }
 }
 
 

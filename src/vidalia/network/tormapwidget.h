@@ -29,6 +29,8 @@
 #include <GeoDataCoordinates.h>
 #include <GeoDataLineString.h>
 
+typedef QPair<Marble::GeoDataLineString, bool> CircuitGeoPath;
+
 
 class TorMapWidget : public Marble::MarbleWidget
 {
@@ -72,7 +74,7 @@ private:
   /** Stores placemark IDs for Tor routers. */
   QHash<QString, Marble::GeoDataCoordinates> _routerPlacemarks;
   /** Stores circuit information */
-  QHash<CircuitId, QPair<Marble::GeoDataLineString *,bool>* > _circuits;
+  QHash<CircuitId, CircuitGeoPath*> _circuits;
 };
 
 #endif
