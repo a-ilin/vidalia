@@ -31,6 +31,8 @@ TorMapWidget::TorMapWidget(QWidget *parent)
   : MarbleWidget(parent)
 {
   setMapThemeId("earth/srtm/srtm.dgml");
+  setShowScaleBar(false);
+  setShowCrosshairs(false);
 }
 
 /** Destructor */
@@ -228,4 +230,12 @@ TorMapWidget::zoomToRouter(const QString &id)
   }
 #endif
 }
+
+/** Paints the current circuits and streams on the image. */
+void
+TorMapWidget::customPaint(GeoPainter *painter)
+{
+  Q_UNUSED(painter);
+}
+
 
