@@ -26,6 +26,8 @@
 
 #include <MarbleWidget.h>
 #include <GeoPainter.h>
+#include <GeoDataCoordinates.h>
+#include <GeoDataLineString.h>
 
 
 class TorMapWidget : public Marble::MarbleWidget
@@ -67,10 +69,10 @@ protected:
   virtual void customPaint(Marble::GeoPainter *painter);
 
 private:
-  /** Stores map locations for tor routers */
-  QHash<QString, QPair<QPointF,bool>* > _routers;
+  /** Stores placemark IDs for Tor routers. */
+  QHash<QString, Marble::GeoDataCoordinates> _routerPlacemarks;
   /** Stores circuit information */
-  QHash<CircuitId, QPair<QPainterPath *,bool>* > _circuits;
+  QHash<CircuitId, QPair<Marble::GeoDataLineString *,bool>* > _circuits;
 };
 
 #endif

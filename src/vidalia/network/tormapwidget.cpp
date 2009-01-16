@@ -38,9 +38,7 @@ TorMapWidget::TorMapWidget(QWidget *parent)
 /** Destructor */
 TorMapWidget::~TorMapWidget()
 {
-#if 0
   clear();
-#endif
 }
 
 /** Adds a router to the map. */
@@ -49,27 +47,21 @@ TorMapWidget::addRouter(const RouterDescriptor &desc,
                         float latitude, float longitude)
 {
   QString kml;
-  
+
   kml.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
   kml.append("<kml xmlns=\"http://earth.google.com/kml/2.0\">");
   kml.append("<Document><Placemark>");
   kml.append(QString("<name>%1</name>").arg(desc.name()));
   kml.append("<description></description>");
-  kml.append(QString("<Point><coordinates>%1,%2,%3</coordinates></Point>")
-              .arg(longitude).arg(latitude).arg(desc.observedBandwidth()));
+  kml.append(QString("<Point><coordinates>%1,%2</coordinates></Point>")
+                                          .arg(longitude).arg(latitude));
   kml.append("</Placemark></Document>");
   kml.append("</kml>");
 
-  addPlaceMarkData(kml, desc.id());
-#if 0
-  QPointF routerCoord = toMapSpace(latitude, longitude);
-  
-  /* Add data the hash of known routers, and plot the point on the map */
-  if (_routers.contains(id))
-    _routers.value(id)->first = routerCoord;
-  else
-    _routers.insert(id, new QPair<QPointF,bool>(routerCoord, false));
-#endif
+  QString id = desc.id();
+  addPlaceMarkData(kml, id);
+  _routerPlacemarks.insert(id,
+    GeoDataCoordinates(longitude, latitude, 0.0, GeoDataCoordinates::Degree));
 }
 
 /** Adds a circuit to the map using the given ordered list of router IDs. */
@@ -174,11 +166,10 @@ TorMapWidget::deselectAll()
 void
 TorMapWidget::clear()
 {
-#if 0
-  /* Clear out all the router points and free their memory */
-  foreach (QString router, _routers.keys()) {
-    delete _routers.take(router);
+  foreach (QString id, _routerPlacemarks.keys()) {
+    removePlaceMarkKey(id);
   }
+#if 0
   /* Clear out all the circuit paths and free their memory */
   foreach (CircuitId circid, _circuits.keys()) {
     QPair<QPainterPath*,bool> *circuitPair = _circuits.take(circid);
