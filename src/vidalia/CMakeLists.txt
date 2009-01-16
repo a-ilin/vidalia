@@ -16,7 +16,25 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}
   ${CMAKE_CURRENT_SOURCE_DIR}/config
   ${CMAKE_CURRENT_SOURCE_DIR}/help/browser
+  ${MARBLE_INCLUDE_DIR}
 )
+if (APPLE)
+##
+## XXX: The Marble build system on OS X currently doesn't actually install the
+## required include files to /usr/local/include or similar. Instead, we have
+## to pluck them directly from the source tree. Ick.
+##
+  include_directories(
+    ${MARBLE_INCLUDE_DIR}/AbstractLayer
+    ${MARBLE_INCLUDE_DIR}/geodata
+    ${MARBLE_INCLUDE_DIR}/geodata/data
+    ${MARBLE_INCLUDE_DIR}/geodata/handlers
+    ${MARBLE_INCLUDE_DIR}/geodata/parser
+    ${MARBLE_INCLUDE_DIR}/geodata/scene
+    ${MARBLE_INCLUDE_DIR}/Projections
+  )
+endif(APPLE)
+
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/res/vidalia_win.rc.in
   ${CMAKE_CURRENT_SOURCE_DIR}/res/vidalia_win.rc
@@ -245,6 +263,33 @@ qt4_add_resources(vidalia_SRCS
   ${CMAKE_CURRENT_BINARY_DIR}/i18n/vidalia_i18n.qrc
 )
 
+## Specify the map data Marble will need
+set(marble_DATA
+  landcolors.leg
+  seacolors.leg
+  maps/earth/bluemarble/bluemarble.dgml
+  maps/earth/citylights/citylights.dgml
+  maps/earth/srtm/srtm.dgml
+  maps/earth/srtm/srtm.jpg
+  mwdbii/DATELINE.PNT
+  mwdbii/PAUST.PNT
+  mwdbii/PBORDER.PNT
+  mwdbii/PCANPROV.PNT
+  mwdbii/PCOAST.PNT
+  mwdbii/PDIFFBORDER.PNT
+  mwdbii/PGLACIER.PNT
+  mwdbii/PISLAND.PNT
+  mwdbii/PLAKE.PNT
+  mwdbii/PLAKEISLAND.PNT
+  mwdbii/PMEXICO.PNT
+  mwdbii/PUSA48.DIFF.PNT
+  mwdbii/PUSA48.PNT
+  mwdbii/RIVER.PNT
+  placemarks/baseplacemarks.cache
+  placemarks/boundaryplacemarks.cache
+  placemarks/elevplacemarks.cache
+)
+
 ## Set the appropriate executable target for the current platform
 if (APPLE)
   ## Set the output file name (make it uppercase on OS X)
@@ -271,10 +316,41 @@ if (APPLE)
       ARGS ${CMAKE_CURRENT_SOURCE_DIR}/res/icons/*.icns 
            ${CMAKE_CURRENT_BINARY_DIR}/Vidalia.app/Contents/Resources/
   )
+
+  ## Copy the Marble data into the bundle
+  foreach(it ${marble_DATA})
+    get_filename_component(outdir  ${it} PATH)
+    get_filename_component(outfile ${it} NAME)
+    set(outdir Vidalia.app/Contents/Resources/data/${outdir})
+
+    add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
+      COMMAND ${CMAKE_COMMAND}
+        ARGS -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/${outdir}
+      COMMAND ${CMAKE_COMMAND}
+        ARGS -E copy_if_different 
+              ${MARBLE_DATA_DIR}/${it} 
+              ${CMAKE_CURRENT_BINARY_DIR}/${outdir}/${outfile}
+    )
+  endforeach(it)
+
+  ## Create the Marble plugins directory and copy in any wanted plugins
+  add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
+    COMMAND ${CMAKE_COMMAND}
+      ARGS -E make_directory 
+            ${CMAKE_CURRENT_BINARY_DIR}/Vidalia.app/Contents/Resources/plugins
+  )
+  foreach(it ${MARBLE_PLUGINS})
+    add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
+      COMMAND ${CMAKE_COMMAND}
+        ARGS -E copy_if_different ${it}
+          ${CMAKE_CURRENT_BINARY_DIR}/Vidalia.app/Contents/Resources/plugins/
+    )
+  endforeach(it)
+
 else(APPLE)
   ## Set the output file name
   set(vidalia_BIN vidalia)
-  
+
   if (WIN32)
     ## Create a Windows binary
     win32_wrap_rc(vidalia_SRCS res/vidalia_win.rc)
@@ -283,6 +359,20 @@ else(APPLE)
     ## Non-Windows, non-Mac
     add_executable(${vidalia_BIN} ${vidalia_SRCS})
   endif(WIN32)
+
+  ## Copy the Marble data into the data/ directory under the binary
+  foreach(it ${marble_DATA})
+    get_filename_component(outdir  ${it} PATH)
+    get_filename_component(outfile ${it} NAME)
+  
+    add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
+      COMMAND ${CMAKE_COMMAND}
+        ARGS -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/${outdir}
+      COMMAND ${CMAKE_COMMAND}
+        ARGS -E copy_if_different ${MARBLE_DATA_DIR}/${it} 
+                                  ${CMAKE_CURRENT_BINARY_DIR}/data/${it}
+    )
+  endforeach(it)
 endif(APPLE)
 add_dependencies(${vidalia_BIN} i18n)
 
@@ -290,6 +380,7 @@ add_dependencies(${vidalia_BIN} i18n)
 ## Link to the Qt libraries and other libraries built as a part of Vidalia
 target_link_libraries(${vidalia_BIN}
   ${QT_LIBRARIES}
+  ${MARBLE_LIBRARIES}
   common
   torcontrol
 )
@@ -319,5 +410,4 @@ if(NOT WIN32 AND NOT APPLE)
   install(FILES res/22x22/vidalia.png
           DESTINATION share/icons/hicolor/22x22/apps)
 endif(NOT WIN32 AND NOT APPLE)
-
 

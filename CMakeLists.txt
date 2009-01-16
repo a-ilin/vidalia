@@ -33,12 +33,12 @@ include(FindQt4)
 find_package(Qt4 REQUIRED)
 set(QT_USE_QTNETWORK  true)
 set(QT_USE_QTXML      true)
+set(QT_USE_QTSVG      true)
 include(${QT_USE_FILE})
 include(${CMAKE_SOURCE_DIR}/cmake/VidaliaMacros.cmake)
 include(CheckIncludeFile)
 include(CheckIncludeFileCXX)
 include(CheckTypeSize)
-include(CPack)
 if (WIN32)
   include(${CMAKE_SOURCE_DIR}/cmake/FindWiX.cmake)
 endif(WIN32)
@@ -82,6 +82,9 @@ option(USE_MINIUPNPC "Enable UPnP support using the MiniUPnPc library." ON)
 if (WIN32)
   option(USE_AUTOUPDATE "Enable automatic software update support." OFF)
 endif(WIN32)
+
+## Use the KDE Marble library
+include(${CMAKE_SOURCE_DIR}/cmake/FindMarble.cmake)
 
 ## Check for system header files
 check_include_file("limits.h" HAVE_LIMITS_H)
