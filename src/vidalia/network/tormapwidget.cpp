@@ -45,8 +45,22 @@ TorMapWidget::~TorMapWidget()
 
 /** Adds a router to the map. */
 void
-TorMapWidget::addRouter(const QString &id, float latitude, float longitude)
+TorMapWidget::addRouter(const RouterDescriptor &desc,
+                        float latitude, float longitude)
 {
+  QString kml;
+  
+  kml.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+  kml.append("<kml xmlns=\"http://earth.google.com/kml/2.0\">");
+  kml.append("<Document><Placemark>");
+  kml.append(QString("<name>%1</name>").arg(desc.name()));
+  kml.append("<description></description>");
+  kml.append(QString("<Point><coordinates>%1,%2,%3</coordinates></Point>")
+              .arg(longitude).arg(latitude).arg(desc.observedBandwidth()));
+  kml.append("</Placemark></Document>");
+  kml.append("</kml>");
+
+  addPlaceMarkData(kml, desc.id());
 #if 0
   QPointF routerCoord = toMapSpace(latitude, longitude);
   
