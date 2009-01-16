@@ -26,6 +26,7 @@
 #include <stringutil.h>
 #include <html.h>
 #include <stdlib.h>
+#include <MarbleDirs.h>
 
 #ifdef Q_OS_MACX
 #include <Carbon/Carbon.h>
@@ -119,6 +120,9 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
 
   /* Creates a TorControl object, used to talk to Tor. */
   _torControl = new TorControl();
+
+  /* Tell Marble where to stash its generated data */
+  Marble::MarbleDirs::setMarbleDataPath(dataDirectory());
 }
 
 /** Destructor */
