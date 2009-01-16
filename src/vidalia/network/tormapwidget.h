@@ -24,10 +24,10 @@
 #include <circuit.h>
 #include <stream.h>
 
-#include "zimageview.h"
+#include <MarbleWidget.h>
 
 
-class TorMapWidget : public ZImageView
+class TorMapWidget : public Marble::MarbleWidget
 {
   Q_OBJECT
 
@@ -46,7 +46,7 @@ public:
   /** Selects and highlights a circuit on the map. */
   void selectCircuit(const CircuitId &circid);
   /** Returns the minimum size of the widget */
-  QSize minimumSizeHint() const;
+  //QSize minimumSizeHint() const;
 
 public slots:
   /** Removes a circuit from the map. */
@@ -64,16 +64,16 @@ public slots:
 
 protected:
   /** Paints the current circuits and streams on the image. */
-  virtual void paintImage(QPainter *painter);
+ // virtual void paintImage(QPainter *painter);
 
 private:
   /** Converts world space coordinates into map space coordinates */
-  QPointF toMapSpace(float latitude, float longitude);
+  //QPointF toMapSpace(float latitude, float longitude);
   /** Linearly interpolates using the values in the projection table */
-  float lerp(float input, float *table);
+  //float lerp(float input, float *table);
   /** Computes a bounding box around all currently displayed circuit paths on
    * the map. */
-  QRectF circuitBoundingBox();
+  //QRectF circuitBoundingBox();
   
   /** Stores map locations for tor routers */
   QHash<QString, QPair<QPointF,bool>* > _routers;
