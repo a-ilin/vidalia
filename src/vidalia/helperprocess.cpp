@@ -39,7 +39,10 @@
 */
 
 #include <QString>
-  
+#include <QFileInfo>
+#include <stringutil.h>
+#include <vidalia.h>
+
 #include "helperprocess.h"
 
 
@@ -50,12 +53,46 @@ HelperProcess::HelperProcess(QObject *parent)
   // Call error handling routine on errors
   QObject::connect(this, SIGNAL(error(QProcess::ProcessError)),
                    this, SLOT(onError(QProcess::ProcessError)));
+
+  // Call output handling routines on process output
+  QObject::connect(this, SIGNAL(readyReadStandardError()),
+                   this, SLOT(onReadyReadStandardError()));
+  QObject::connect(this, SIGNAL(readyReadStandardOutput()),
+                   this, SLOT(onReadyReadStandardOutput()));
+}
+
+/** Invoked when output is written to the process's stderr. */
+void
+HelperProcess::onReadyReadStandardError()
+{
+  QString output = QString(readAllStandardError());
+  foreach (QString line, output.split("\n")) {
+    vInfo("(%1:stderr): %2").arg(_processName).arg(line);
+  }
+}
+
+/** Invoked when output is written to the process's stdout. */
+void
+HelperProcess::onReadyReadStandardOutput()
+{
+  QString output = QString(readAllStandardOutput());
+  foreach (QString line, output.split("\n")) {
+    vInfo("(%1:stdout): %2").arg(_processName).arg(line);
+  }
 }
 
 /** Start the specified application. */
 void
 HelperProcess::start(const QString &app, const QStringList &args) 
 {
+  // Remember the executable name of the process
+  QFileInfo fi(app);
+  _processName = fi.fileName();
+
+  // Log the process name and arguments
+  vNotice("Launching helper process '%1' with arguments '%2'").arg(app)
+                                     .arg(string_format_arguments(args));
+
   // Start the specified application
   QProcess::start(app, args, QIODevice::ReadOnly | QIODevice::Text);
 }
@@ -66,6 +103,8 @@ HelperProcess::onError(QProcess::ProcessError error)
 {
   // Pass up error messages on startup, but ignore the rest
   if (error == QProcess::FailedToStart) {
+    vWarn("Helper process '%1' failed to start: %2").arg(_processName)
+                                                    .arg(errorString());
     emit startFailed(errorString());
   }
 }

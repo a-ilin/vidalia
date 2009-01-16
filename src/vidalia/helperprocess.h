@@ -56,13 +56,20 @@ public:
   /** Returns true iff process is not running. */
   bool isDone() const;
 
-private slots:
-  /** Invoked when underlying QProcess fails. */
-  void onError(QProcess::ProcessError error);
-
 signals:
   /** Invoked when start() fails. */
   void startFailed(const QString &errorMessage);
+    
+private slots:
+  /** Invoked when underlying QProcess fails. */
+  void onError(QProcess::ProcessError error);
+  /** Invoked when output is written to the process's stderr. */
+  void onReadyReadStandardError();
+  /** Invoked when output is written to the process's stdout. */
+  void onReadyReadStandardOutput();
+
+private:
+  QString _processName;
 };
 
 #endif
