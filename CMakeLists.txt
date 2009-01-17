@@ -25,8 +25,8 @@ if (COMMAND cmake_policy)
   cmake_policy(SET CMP0003 OLD)
 endif(COMMAND cmake_policy)
 
-## Require Qt >= 4.2.0
-set(QT_MIN_VERSION    "4.2.0")
+## Require Qt >= 4.3.0
+set(QT_MIN_VERSION    "4.3.0")
 
 ## Specify the Qt libraries used
 include(FindQt4)

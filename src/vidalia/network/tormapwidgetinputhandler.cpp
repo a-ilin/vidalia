@@ -123,7 +123,7 @@ TorMapWidgetInputHandler::eventFilter(QObject *obj, QEvent *e)
       return true;
 
     default:
-      break;;
+      break;
   }
   return MarbleWidgetInputHandler::eventFilter(obj, e);
 }
