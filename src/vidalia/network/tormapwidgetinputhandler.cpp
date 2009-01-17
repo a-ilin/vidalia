@@ -17,7 +17,7 @@
 #include <MarbleMap.h>
 #include <MarbleModel.h>
 #include <ViewParams.h>
-#include <ViewPortParams.h>
+#include <ViewportParams.h>
 
 #include "tormapwidgetinputhandler.h"
 
@@ -44,7 +44,8 @@ bool
 TorMapWidgetInputHandler::eventFilter(QObject *obj, QEvent *e)
 {
   Q_UNUSED(obj);
-  
+
+  QWheelEvent *wheelEvent = 0;
   QMouseEvent *mouseEvent = static_cast<QMouseEvent*>(e);
 
   switch (e->type()) {
@@ -116,7 +117,7 @@ TorMapWidgetInputHandler::eventFilter(QObject *obj, QEvent *e)
       // Adjust the zoom level on the map
       m_widget->setViewContext(Marble::Animation);
 
-      QWheelEvent *wheelEvent = static_cast<QWheelEvent*>(e);
+      wheelEvent = static_cast<QWheelEvent*>(e);
       m_widget->zoomViewBy((int)(wheelEvent->delta() / 3));
       m_mouseWheelTimer->start(400);
       return true;
