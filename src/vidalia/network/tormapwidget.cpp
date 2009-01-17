@@ -32,6 +32,7 @@ TorMapWidget::TorMapWidget(QWidget *parent)
   : MarbleWidget(parent)
 {
   setMapThemeId("earth/srtm/srtm.dgml");
+  setShowCities(false);
   setShowScaleBar(false);
   setShowCrosshairs(false);
 }
