@@ -169,6 +169,7 @@ set(vidalia_SRCS ${vidalia_SRCS}
   network/routerlistwidget.cpp
   network/streamitem.cpp
   network/tormapwidget.cpp
+  network/tormapwidgetinputhandler.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
   network/circuitlistwidget.h
@@ -177,6 +178,7 @@ qt4_wrap_cpp(vidalia_SRCS
   network/routerdescriptorview.h
   network/routerlistwidget.h
   network/tormapwidget.h
+  network/tormapwidgetinputhandler.h
 )
 
 ## Choose the correct tray icon implementation for the current platform

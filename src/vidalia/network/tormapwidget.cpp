@@ -15,10 +15,10 @@
 */
 
 #include <QStringList>
-#include <cmath>
-#include "tormapwidget.h"
-
 #include <vidalia.h>
+
+#include "tormapwidgetinputhandler.h"
+#include "tormapwidget.h"
 
 using namespace Marble;
 
@@ -34,6 +34,9 @@ TorMapWidget::TorMapWidget(QWidget *parent)
   setMapThemeId("earth/srtm/srtm.dgml");
   setShowScaleBar(false);
   setShowCrosshairs(false);
+
+  setCursor(Qt::OpenHandCursor);
+  setInputHandler(new TorMapWidgetInputHandler());
 }
 
 /** Destructor */
