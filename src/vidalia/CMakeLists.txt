@@ -267,6 +267,7 @@ qt4_add_resources(vidalia_SRCS
 set(marble_DATA
   landcolors.leg
   seacolors.leg
+  bitmaps/default_location.png
   maps/earth/bluemarble/bluemarble.dgml
   maps/earth/citylights/citylights.dgml
   maps/earth/srtm/srtm.dgml
