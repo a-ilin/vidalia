@@ -23,6 +23,7 @@
 #include <routerdescriptor.h>
 #include <circuit.h>
 #include <stream.h>
+#include <network/geoip.h>
 
 #include <MarbleWidget.h>
 #include <GeoPainter.h>
@@ -43,8 +44,7 @@ public:
   ~TorMapWidget();
 
   /** Plots the given router on the map using the given coordinates. */
-  void addRouter(const RouterDescriptor &desc,
-                 float latitude, float longitude);
+  void addRouter(const RouterDescriptor &desc, const GeoIp &geoip);
   /** Plots the given circuit on the map. */
   void addCircuit(const CircuitId &circid, const QStringList &path);
   /** Selects and hightlights a router on the map. */

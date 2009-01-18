@@ -470,8 +470,7 @@ NetViewer::resolved(int id, const QList<GeoIp> &geoips)
         /* Save the location information in the descriptor */
         router->setLocation(geoip);
         /* Plot the router on the map */
-        _map->addRouter(router->descriptor(), 
-                        geoip.latitude(), geoip.longitude());
+        _map->addRouter(router->descriptor(), geoip);
       }
     }
   }

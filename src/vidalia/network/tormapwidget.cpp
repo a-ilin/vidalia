@@ -47,25 +47,38 @@ TorMapWidget::~TorMapWidget()
 
 /** Adds a router to the map. */
 void
-TorMapWidget::addRouter(const RouterDescriptor &desc,
-                        float latitude, float longitude)
+TorMapWidget::addRouter(const RouterDescriptor &desc, const GeoIp &geoip)
 {
   QString kml;
+  qreal lon = geoip.longitude();
+  qreal lat = geoip.latitude();
 
-  kml.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
-  kml.append("<kml xmlns=\"http://earth.google.com/kml/2.0\">");
-  kml.append("<Document><Placemark>");
+  kml.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+             "<kml xmlns=\"http://earth.google.com/kml/2.0\">"
+             "<Document>"
+             "  <Style id=\"normalPlacemark\">"
+             "    <IconStyle><Icon><href>:/images/icons/placemark-relay.png</href></Icon></IconStyle>"
+             "  </Style>"
+             );
+
+  kml.append("<Placemark>");
+  kml.append("<styleUrl>#normalPlacemark</styleUrl>");
   kml.append(QString("<name>%1</name>").arg(desc.name()));
-  kml.append("<description></description>");
-  kml.append(QString("<Point><coordinates>%1,%2</coordinates></Point>")
-                                          .arg(longitude).arg(latitude));
-  kml.append("</Placemark></Document>");
-  kml.append("</kml>");
+  kml.append(QString("<description>%1</description>").arg(desc.id()));
+  kml.append(QString("<role>1</role>"));
+  kml.append(QString("<address>%1</address>").arg(geoip.toString()));
+  kml.append(QString("<CountryNameCode>%1</CountryNameCode>").arg(geoip.country()));
+//  kml.append(QString("<pop>%1</pop>").arg(desc.observedBandwidth()));
+  kml.append(QString("<Point>"
+                     "  <coordinates>%1,%2</coordinates>"
+                     "</Point>").arg(lon).arg(lat));
+  kml.append("</Placemark>");
+  kml.append("</Document></kml>");
 
   QString id = desc.id();
   addPlaceMarkData(kml, id);
-  _routerPlacemarks.insert(id,
-    GeoDataCoordinates(longitude, latitude, 0.0, GeoDataCoordinates::Degree));
+  _routerPlacemarks.insert(id, GeoDataCoordinates(lon, lat, 0.0,
+                                                  GeoDataCoordinates::Degree));
 }
 
 /** Adds a circuit to the map using the given ordered list of router IDs. */
