@@ -14,8 +14,14 @@
 ** \brief Displays Tor servers and circuits on a map of the world
 */
 
+#include <QPoint>
+#include <QVector>
+#include <QPersistentModelIndex>
 #include <QStringList>
 #include <vidalia.h>
+
+#include <MarbleModel.h>
+#include <MarblePlacemarkModel.h>
 
 #include "tormapwidgetinputhandler.h"
 #include "tormapwidget.h"
@@ -34,6 +40,7 @@ TorMapWidget::TorMapWidget(QWidget *parent)
   setMapThemeId("earth/srtm/srtm.dgml");
   setShowScaleBar(false);
   setShowCrosshairs(false);
+  setAnimationsEnabled(true);
 
   setCursor(Qt::OpenHandCursor);
   setInputHandler(new TorMapWidgetInputHandler());
@@ -77,8 +84,8 @@ TorMapWidget::addRouter(const RouterDescriptor &desc, const GeoIp &geoip)
 
   QString id = desc.id();
   addPlaceMarkData(kml, id);
-  _routerPlacemarks.insert(id, GeoDataCoordinates(lon, lat, 0.0,
-                                                  GeoDataCoordinates::Degree));
+  _routers.insert(id, GeoDataCoordinates(lon, lat, 0.0,
+                                         GeoDataCoordinates::Degree));
 }
 
 /** Adds a circuit to the map using the given ordered list of router IDs. */
@@ -100,8 +107,8 @@ TorMapWidget::addCircuit(const CircuitId &circid, const QStringList &path)
     CircuitGeoPath *geoPath = _circuits.value(circid);
 
     QString router = path.at(path.size()-1);
-    if (_routerPlacemarks.contains(router)) {
-      GeoDataCoordinates coords = _routerPlacemarks.value(router);
+    if (_routers.contains(router)) {
+      GeoDataCoordinates coords = _routers.value(router);
       geoPath->first.append(new GeoDataCoordinates(coords));
     }
   } else {
@@ -110,8 +117,8 @@ TorMapWidget::addCircuit(const CircuitId &circid, const QStringList &path)
     geoPath->second = false; /* initially unselected */
 
     foreach (QString router, path) {
-      if (_routerPlacemarks.contains(router)) {
-        GeoDataCoordinates coords = _routerPlacemarks.value(router);
+      if (_routers.contains(router)) {
+        GeoDataCoordinates coords = _routers.value(router);
         geoPath->first.append(new GeoDataCoordinates(coords));
       }      
     }
@@ -184,7 +191,7 @@ TorMapWidget::deselectAll()
 void
 TorMapWidget::clear()
 {
-  foreach (QString id, _routerPlacemarks.keys()) {
+  foreach (QString id, _routers.keys()) {
     removePlaceMarkKey(id);
   }
 
@@ -243,16 +250,14 @@ TorMapWidget::zoomToCircuit(const CircuitId &circid)
 void
 TorMapWidget::zoomToRouter(const QString &id)
 {
-#if 0
-  QPair<QPointF,bool> *routerPair;
-  
   if (_routers.contains(id)) {
-    deselectAll();
-    routerPair = _routers.value(id);
-    routerPair->second = true;  /* Set the router point to "selected" */
-    zoom(routerPair->first.toPoint(), 1.0); 
+    qreal lon, lat;
+    GeoDataCoordinates coords = _routers.value(id);
+    coords.geoCoordinates(lon, lat, GeoDataPoint::Degree);
+
+    zoomView(maximumZoom());
+    centerOn(lon, lat, true);
   }
-#endif
 }
 
 /** Paints the current circuits and streams on the image. */
@@ -264,5 +269,4 @@ TorMapWidget::customPaint(GeoPainter *painter)
     painter->drawPolyline(path->first);
   }
 }
-
 

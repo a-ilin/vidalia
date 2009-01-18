@@ -72,7 +72,7 @@ protected:
 
 private:
   /** Stores placemark IDs for Tor routers. */
-  QHash<QString, Marble::GeoDataCoordinates> _routerPlacemarks;
+  QHash<QString, Marble::GeoDataCoordinates> _routers;
   /** Stores circuit information */
   QHash<CircuitId, CircuitGeoPath*> _circuits;
 };
