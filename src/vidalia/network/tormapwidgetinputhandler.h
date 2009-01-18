@@ -27,6 +27,12 @@ public:
    */
   TorMapWidgetInputHandler();
 
+signals:
+  /** Emitted when the user clicks on a map feature located at <b>point</b>.
+   * <b>button</b> indicates which mouse button was clicked.
+   */
+  void featureClicked(const QPoint &point, Qt::MouseButton button);
+
 protected:
   /** Filter and handles event <b>e</b> that was sent to widget <b>obj</b>.
    * <b>obj</b> is always a MarbleWidget object.
@@ -34,6 +40,9 @@ protected:
   virtual bool eventFilter(QObject *obj, QEvent *e);
 
 private:
+  /** Returns true if the map has one or more features located at the screen
+   * position <b>point</b>.
+   */
   bool pointHasFeatures(const QPoint &point) const;
 
   int   _mousePressedX;

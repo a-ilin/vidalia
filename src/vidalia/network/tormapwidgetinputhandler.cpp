@@ -55,7 +55,9 @@ TorMapWidgetInputHandler::eventFilter(QObject *obj, QEvent *e)
       _mousePressedLon = m_widget->centerLongitude();
       _mousePressedLat = m_widget->centerLatitude();
 
-      if (! pointHasFeatures(mouseEvent->pos()))
+      if (pointHasFeatures(mouseEvent->pos()))
+        emit featureClicked(mouseEvent->pos(), mouseEvent->button());
+      else
         m_widget->setCursor(Qt::ClosedHandCursor);
       break;
 
