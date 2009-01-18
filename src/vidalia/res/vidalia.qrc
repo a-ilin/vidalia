@@ -106,6 +106,7 @@
         <file>icons/node-bw-low.png</file>
         <file>icons/node-bw-med.png</file>
         <file>icons/node-bw-high.png</file>
+        <file>icons/placemark-relay.png</file>
     </qresource>
     <qresource prefix="/images">
         <file>flags/ae.png</file>
