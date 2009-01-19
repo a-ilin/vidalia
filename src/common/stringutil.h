@@ -19,6 +19,7 @@
 
 #include <QStringList>
 #include <QHash>
+#include <QDateTime>
 
 
 /** Creates a QStringList from the array of C strings. */
@@ -72,6 +73,18 @@ QString string_format_arguments(const QStringList &args);
 /** Returns true if <b>str</b> is a valid hexademical string. Returns false
  * otherwise. */
 bool string_is_hex(const QString &str);
+
+/** Returns a human-readable description of the time elapsed given by
+ * <b>seconds</b>, broken down into days, hours, minutes and seconds. */
+QString string_format_uptime(quint64 seconds);
+
+/** Returns a string representation of <b>date</b> formatted according to
+ * "yyyy-MM-dd HH:mm:ss". */
+QString string_format_datetime(const QDateTime &date);
+
+/** Returns a string representation of <b>bytes</b> with the appropriate
+ * (localized) suffix of either "B/s", "KB/s", "MB/s" or "GB/s". */
+QString string_format_bandwidth(quint64 bytes);
 
 #endif
 
