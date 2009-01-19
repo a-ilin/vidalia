@@ -73,8 +73,8 @@ NetViewer::NetViewer(QWidget *parent)
           this, SLOT(displayRouterInfo(QString)));
 
   /* Connect zoom buttons to TorMapWidget zoom slots */
-  connect(ui.actionZoomIn, SIGNAL(triggered()), _map, SLOT(zoomIn()));
-  connect(ui.actionZoomOut, SIGNAL(triggered()), _map, SLOT(zoomOut()));
+  connect(ui.actionZoomIn, SIGNAL(triggered()), this, SLOT(zoomIn()));
+  connect(ui.actionZoomOut, SIGNAL(triggered()), this, SLOT(zoomOut()));
   connect(ui.actionZoomToFit, SIGNAL(triggered()), _map, SLOT(zoomToFit()));
 
   /* Create the timer that will be used to update the router list once every
@@ -519,4 +519,26 @@ NetViewer::displayRouterInfo(const QString &id)
 
   dlg.exec();
 }
+
+/* XXX: The following zoomIn() and zoomOut() slots are a hack. MarbleWidget
+ *      does have zoomIn() and zoomOut() slots to which we could connect the
+ *      buttons, but these slots currently don't force a repaint. So to see
+ *      the zoom effect, the user has to click on the map after clicking one
+ *      of the zoom buttons. Instead, we use the zoomViewBy() method, which
+ *      DOES force a repaint.
+ */
+/** Called when the user clicks the "Zoom In" button. */
+void
+NetViewer::zoomIn()
+{
+  _map->zoomViewBy(40);
+}
+
+/** Called when the user clicks the "Zoom Out" button. */
+void
+NetViewer::zoomOut()
+{
+  _map->zoomViewBy(-40);
+}
+
 

@@ -78,6 +78,10 @@ private slots:
    * dialog with detailed information for the router specified by
    * <b>id</b>.*/
   void displayRouterInfo(const QString &id);
+  /** Called when the user clicks the "Zoom In" button. */
+  void zoomIn();
+  /** Called when the user clicks the "Zoom Out" button. */
+  void zoomOut();
 
 private:
   /** Adds an IP address to the resolve queue and updates the queue timers. */
