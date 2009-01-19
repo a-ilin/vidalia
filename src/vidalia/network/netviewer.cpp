@@ -17,8 +17,10 @@
 #include <QMessageBox>
 #include <QHeaderView>
 #include <vidalia.h>
+#include <vmessagebox.h>
 
 #include "netviewer.h"
+#include "routerinfodialog.h"
 
 #define IMG_MOVE    ":/images/22x22/move-map.png"
 #define IMG_ZOOMIN  ":/images/22x22/zoom-in.png"
@@ -67,8 +69,10 @@ NetViewer::NetViewer(QWidget *parent)
   /* Create the TorMapWidget and add it to the dialog */
   _map = new TorMapWidget();
   ui.gridLayout->addWidget(_map);
+  connect(_map, SIGNAL(displayRouterInfo(QString)),
+          this, SLOT(displayRouterInfo(QString)));
 
-  /* Connect zoom buttons to ZImageView zoom slots */
+  /* Connect zoom buttons to TorMapWidget zoom slots */
   connect(ui.actionZoomIn, SIGNAL(triggered()), _map, SLOT(zoomIn()));
   connect(ui.actionZoomOut, SIGNAL(triggered()), _map, SLOT(zoomOut()));
   connect(ui.actionZoomToFit, SIGNAL(triggered()), _map, SLOT(zoomToFit()));
@@ -482,5 +486,37 @@ NetViewer::resolved(int id, const QList<GeoIp> &geoips)
 
   /* Repaint the map */
   _map->update();
+}
+
+/** Called when the user selects a router on the network map. Displays a 
+ * dialog with detailed information for the router specified by
+ * <b>id</b>.*/
+void
+NetViewer::displayRouterInfo(const QString &id)
+{
+  RouterInfoDialog dlg(this);
+
+  /* Fetch the specified router's descriptor */
+  QStringList rd = _torControl->getRouterDescriptorText(id);
+  if (rd.isEmpty()) {
+    VMessageBox::warning(this, tr("Relay Not Found"),
+                         tr("No details on the selected relay are available."),
+                         VMessageBox::Ok);
+    return;
+  }
+
+  /* Fetch the router's network status information */
+  RouterStatus rs = _torControl->getRouterStatus(id);
+
+  dlg.setRouterInfo(rd, rs);
+
+  /* Populate the UI with information learned from a previous GeoIP request */
+  RouterListItem *item = ui.treeRouterList->findRouterById(id);
+  if (item)
+    dlg.setLocation(item->location());
+  else
+    dlg.setLocation(tr("Unknown"));
+
+  dlg.exec();
 }
 

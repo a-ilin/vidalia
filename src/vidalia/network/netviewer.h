@@ -74,7 +74,11 @@ private slots:
   void onDisconnected();
   /** Resolves IP addresses in the resolve queue to geographic information. */
   void resolve();
-  
+  /** Called when the user selects a router on the network map. Displays a 
+   * dialog with detailed information for the router specified by
+   * <b>id</b>.*/
+  void displayRouterInfo(const QString &id);
+
 private:
   /** Adds an IP address to the resolve queue and updates the queue timers. */
   void addToResolveQueue(const QHostAddress &ip, const QString &id);
