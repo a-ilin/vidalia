@@ -48,6 +48,8 @@ public:
   RouterDescriptor descriptor() const { return *_rd; }
   /** Sets the location information for this router item. */
   void setLocation(const GeoIp &geoip);
+  /** Returns the location information set for this router item. */
+  QString location() const { return _rd->location(); }
 
   /** Overload the comparison operator. */
   virtual bool operator<(const QTreeWidgetItem &other) const;
