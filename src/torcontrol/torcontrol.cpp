@@ -879,14 +879,23 @@ TorControl::resetConf(QString key, QString *errmsg)
   return resetConf(QStringList() << key, errmsg);
 }
 
+/** Returns an unparsed router descriptor for the router whose fingerprint
+ * matches <b>id</b>. The returned text can later be parsed by the
+ * RouterDescriptor class. If <b>id</b> is invalid, then an empty
+ * QStringList is returned. */
+QStringList
+TorControl::getRouterDescriptorText(const QString &id, QString *errmsg)
+{
+  return getInfo("desc/id/" + id, errmsg).toStringList();
+}
+
 /** Returns the descriptor for the router whose fingerprint matches
  * <b>id</b>. If <b>id</b> is invalid or the router's descriptor cannot
  * be parsed, then an invalid RouterDescriptor is returned. */
 RouterDescriptor
 TorControl::getRouterDescriptor(const QString &id, QString *errmsg)
 {
-  QStringList descriptor = getInfo("desc/id/" + id, errmsg).toStringList();
-  return RouterDescriptor(descriptor);
+  return RouterDescriptor(getRouterDescriptorText(id, errmsg));
 }
 
 /** Returns the status of the router whose fingerprint matches <b>id</b>. If

@@ -165,6 +165,11 @@ public:
   /** Tells Tor to reset a configuration key back to its default value. */
   bool resetConf(QString key, QString *errmsg = 0);
 
+  /** Returns an unparsed router descriptor for the router whose fingerprint
+   * matches <b>id</b>. The returned text can later be parsed by the
+   * RouterDescriptor class. If <b>id</b> is invalid, then an empty
+   * QStringList is returned. */
+  QStringList getRouterDescriptorText(const QString &id, QString *errmsg = 0);
   /** Returns the descriptor for the router whose fingerprint matches
    * <b>id</b>. If <b>id</b> is invalid or the router's descriptor cannot be
    * parsed, then an invalid RouterDescriptor is returned. */
