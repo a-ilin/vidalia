@@ -66,6 +66,11 @@ public slots:
   /** Zoom to the circuit on the map with the given <b>circid</b>. */
   void zoomToCircuit(const CircuitId &circid);
 
+signals:
+  /** Emitted when the user selects a router placemark on the map. <b>id</b>
+   * contain's the selected router's fingerprint. */
+  void displayRouterInfo(const QString &id);
+
 protected:
   /** Paints the current circuits and streams on the image. */
   virtual void customPaint(Marble::GeoPainter *painter);

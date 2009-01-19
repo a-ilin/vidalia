@@ -14,16 +14,11 @@
 ** \brief Displays Tor servers and circuits on a map of the world
 */
 
-#include <QPoint>
-#include <QVector>
-#include <QPersistentModelIndex>
 #include <QStringList>
 #include <vidalia.h>
 
-#include <MarbleModel.h>
-#include <MarblePlacemarkModel.h>
-
 #include "tormapwidgetinputhandler.h"
+#include "tormapwidgetpopupmenu.h"
 #include "tormapwidget.h"
 
 using namespace Marble;
@@ -41,9 +36,17 @@ TorMapWidget::TorMapWidget(QWidget *parent)
   setShowScaleBar(false);
   setShowCrosshairs(false);
   setAnimationsEnabled(true);
-
   setCursor(Qt::OpenHandCursor);
-  setInputHandler(new TorMapWidgetInputHandler());
+
+  TorMapWidgetInputHandler *handler = new TorMapWidgetInputHandler();
+  TorMapWidgetPopupMenu *popupMenu  = new TorMapWidgetPopupMenu(this);
+
+  connect(handler, SIGNAL(featureClicked(QPoint,Qt::MouseButton)),
+          popupMenu, SLOT(featureClicked(QPoint,Qt::MouseButton)));
+  connect(popupMenu, SIGNAL(displayRouterInfo(QString)),
+          this, SIGNAL(displayRouterInfo(QString)));
+
+  setInputHandler(handler);
 }
 
 /** Destructor */
