@@ -165,6 +165,7 @@ set(vidalia_SRCS ${vidalia_SRCS}
   network/geoipresponse.cpp
   network/netviewer.cpp
   network/routerdescriptorview.cpp
+  network/routerinfodialog.cpp
   network/routerlistitem.cpp
   network/routerlistwidget.cpp
   network/streamitem.cpp
@@ -177,6 +178,7 @@ qt4_wrap_cpp(vidalia_SRCS
   network/geoipresolver.h
   network/netviewer.h
   network/routerdescriptorview.h
+  network/routerinfodialog.h
   network/routerlistwidget.h
   network/tormapwidget.h
   network/tormapwidgetinputhandler.h
@@ -234,6 +236,7 @@ qt4_wrap_ui(vidalia_SRCS
   help/browser/helpbrowser.ui
   log/messagelog.ui
   network/netviewer.ui
+  network/routerinfodialog.ui
 )
 
 if (USE_MINIUPNPC)
