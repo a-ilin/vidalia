@@ -59,7 +59,8 @@ public slots:
   void deselectAll();
   /** Clears the known routers and removes all the data from the map */
   void clear();
-  /** Zooms to fit all currently displayed circuits on the map. */
+  /** Zooms the map to fit entirely within the constraints of the current
+   * viewport size. */
   void zoomToFit();
   /** Zoom to a particular router on the map. */
   void zoomToRouter(const QString &id);

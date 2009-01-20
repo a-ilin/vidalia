@@ -208,27 +208,19 @@ TorMapWidget::clear()
   repaint();
 }
  
-/** Zooms to fit all currently displayed circuits on the map. If there are no
- * circuits on the map, the viewport will be returned to its default position
- * (zoomed all the way out and centered). */
+/** Zooms the map to fit entirely within the constraints of the current
+ * viewport size. */
 void
 TorMapWidget::zoomToFit()
 {
-#if 0
-  QRectF rect = circuitBoundingBox();
-  
-  if (rect.isNull()) {
-    /* If there are no circuits, zoom all the way out */
-    resetZoomPoint();
-    zoom(0.0);
-  } else {
-    /* Zoom in on the displayed circuits */
-    float zoomLevel = 1.0 - qMax(rect.height()/float(MAP_HEIGHT),
-                                 rect.width()/float(MAP_WIDTH));
-    
-    zoom(rect.center().toPoint(), zoomLevel+0.2);
-  }
-#endif
+  int width  = size().width();
+  int height = size().height();
+
+  setRadius(qMin(width, height) / 2);
+
+  /* XXX: Calling setRadius() seems to cause Marble to no longer draw the
+   *      atmosphere. So, re-enable it. */
+  setShowAtmosphere(true);
 }
 
 /** Zoom to the circuit on the map with the given <b>circid</b>. */
