@@ -27,20 +27,20 @@ TorControl::TorControl()
    * it an object to use to handle asynchronous events. */
   _controlConn = new ControlConnection(&_torEvents);
   QObject::connect(_controlConn, SIGNAL(connected()),
-                   this, SLOT(onConnected()));
+                   this, SIGNAL(connected()));
   QObject::connect(_controlConn, SIGNAL(connectFailed(QString)),
-                   this, SLOT(onConnectFailed(QString)));
+                   this, SIGNAL(connectFailed(QString)));
   QObject::connect(_controlConn, SIGNAL(disconnected()),
                    this, SLOT(onDisconnected()));
 
   /* Create an object used to start and stop a Tor process. */
   _torProcess = new TorProcess(this);
   QObject::connect(_torProcess, SIGNAL(started()),
-                   this, SLOT(onStarted()));
+                   this, SIGNAL(started()));
   QObject::connect(_torProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
                    this, SLOT(onStopped(int, QProcess::ExitStatus)));
   QObject::connect(_torProcess, SIGNAL(startFailed(QString)),
-                   this, SLOT(onStartFailed(QString)));
+                   this, SIGNAL(startFailed(QString)));
   QObject::connect(_torProcess, SIGNAL(log(QString, QString)),
                    this, SLOT(onLogStdout(QString, QString)));
 
@@ -88,21 +88,6 @@ TorControl::start(const QString &tor, const QStringList &args)
     _torProcess->start(expand_filename(tor), args);
 #endif
   }
-}
-
-/** Emits a signal that the Tor process started */
-void
-TorControl::onStarted()
-{
-  emit started();
-}
-
-/** Emits a signal that the Tor process failed to start and includes an error
- * message (hopefully) indicating why. */
-void
-TorControl::onStartFailed(QString errmsg)
-{
-  emit startFailed(errmsg);
 }
 
 /** Stop the Tor process. */
@@ -158,22 +143,6 @@ void
 TorControl::connect(const QHostAddress &address, quint16 port)
 {
   _controlConn->connect(address, port);
-}
-
-/** Emits a signal that the control socket successfully established a
- * connection to Tor. */
-void
-TorControl::onConnected()
-{
-  /* Let interested parties know that the control socket connected */
-  emit connected();
-}
-
-/** Emits a signal that the control connection to Tor failed. */
-void
-TorControl::onConnectFailed(QString errmsg)
-{
-  emit connectFailed(errmsg);
 }
 
 /** Disconnect from Tor's control port */

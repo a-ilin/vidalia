@@ -248,11 +248,7 @@ private:
 
 /* The slots below simply relay signals from the appropriate member objects */
 private slots:
-  void onStarted();
-  void onStartFailed(QString errmsg);
   void onStopped(int exitCode, QProcess::ExitStatus exitStatus);
-  void onConnected();
-  void onConnectFailed(QString errmsg);
   void onDisconnected();
   void onLogStdout(QString severity, QString message);
   void onAuthenticated();
