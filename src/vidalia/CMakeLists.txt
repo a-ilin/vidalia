@@ -293,6 +293,8 @@ set(marble_DATA
   placemarks/baseplacemarks.cache
   placemarks/boundaryplacemarks.cache
   placemarks/elevplacemarks.cache
+  stars/stars.dat
+  svg/worldmap.svg
 )
 
 ## Set the appropriate executable target for the current platform
@@ -339,18 +341,20 @@ if (APPLE)
   endforeach(it)
 
   ## Create the Marble plugins directory and copy in any wanted plugins
-  add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
-    COMMAND ${CMAKE_COMMAND}
-      ARGS -E make_directory 
-            ${CMAKE_CURRENT_BINARY_DIR}/Vidalia.app/Contents/Resources/plugins
-  )
-  foreach(it ${MARBLE_PLUGINS})
+  if (MARBLE_PLUGINS)
     add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
       COMMAND ${CMAKE_COMMAND}
-        ARGS -E copy_if_different ${it}
-          ${CMAKE_CURRENT_BINARY_DIR}/Vidalia.app/Contents/Resources/plugins/
+        ARGS -E make_directory 
+          ${CMAKE_CURRENT_BINARY_DIR}/Vidalia.app/Contents/Resources/plugins
     )
-  endforeach(it)
+    foreach(it ${MARBLE_PLUGINS})
+      add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
+        COMMAND ${CMAKE_COMMAND}
+          ARGS -E copy_if_different ${it}
+           ${CMAKE_CURRENT_BINARY_DIR}/Vidalia.app/Contents/Resources/plugins/
+      )
+    endforeach(it)
+  endif(MARBLE_PLUGINS)
 
 else(APPLE)
   ## Set the output file name
@@ -360,24 +364,39 @@ else(APPLE)
     ## Create a Windows binary
     win32_wrap_rc(vidalia_SRCS res/vidalia_win.rc)
     add_executable(${vidalia_BIN} WIN32 ${vidalia_SRCS})
+
+    ## Copy the Marble data into the data/ directory under the binary
+    foreach(it ${marble_DATA})
+      get_filename_component(outdir  ${it} PATH)
+      get_filename_component(outfile ${it} NAME)
+
+      add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
+        COMMAND ${CMAKE_COMMAND}
+          ARGS -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/${outdir}
+        COMMAND ${CMAKE_COMMAND}
+          ARGS -E copy_if_different ${MARBLE_DATA_DIR}/${it} 
+                                    ${CMAKE_CURRENT_BINARY_DIR}/data/${it}
+      )
+    endforeach(it)
+
+    ## Create the Marble plugins directory and copy in any wanted plugins
+    if (MARBLE_PLUGINS)
+      add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
+        COMMAND ${CMAKE_COMMAND}
+          ARGS -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/plugins
+      )
+      foreach(it ${MARBLE_PLUGINS})
+        add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
+          COMMAND ${CMAKE_COMMAND}
+            ARGS -E copy_if_different ${it} 
+                  ${CMAKE_CURRENT_BINARY_DIR}/plugins/
+        )      
+    endif(MARBLE_PLUGINS)
+
   else (WIN32)
     ## Non-Windows, non-Mac
     add_executable(${vidalia_BIN} ${vidalia_SRCS})
   endif(WIN32)
-
-  ## Copy the Marble data into the data/ directory under the binary
-  foreach(it ${marble_DATA})
-    get_filename_component(outdir  ${it} PATH)
-    get_filename_component(outfile ${it} NAME)
-  
-    add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
-      COMMAND ${CMAKE_COMMAND}
-        ARGS -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/${outdir}
-      COMMAND ${CMAKE_COMMAND}
-        ARGS -E copy_if_different ${MARBLE_DATA_DIR}/${it} 
-                                  ${CMAKE_CURRENT_BINARY_DIR}/data/${it}
-    )
-  endforeach(it)
 endif(APPLE)
 add_dependencies(${vidalia_BIN} i18n)
 

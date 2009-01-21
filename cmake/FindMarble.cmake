@@ -40,31 +40,70 @@
 ##  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ##
 
-
-if (MARBLE_INCLUDE_DIR AND MARBLE_DATA_DIR AND MARBLE_LIBRARIES)
-  set(MARBLE_FIND_QUIETLY TRUE)
-endif(MARBLE_INCLUDE_DIR AND MARBLE_DATA_DIR AND MARBLE_LIBRARIES)
-
+message(STATUS "Looking for Marble header files")
 find_path(MARBLE_INCLUDE_DIR
-  NAMES MarbleMap.h
+  NAMES MarbleWidget.h
   PATH_SUFFIXES marble
 )
+if (MARBLE_INCLUDE_DIR)
+  message(STATUS "Looking for Marble header files - found")
+else(MARBLE_INCLUDE_DIR)
+  message(FATAL_ERROR "Could not find Marble header files. If Marble is installed, you can specify its location with -DMARBLE_INCLUDE_DIR=<path>")
+endif(MARBLE_INCLUDE_DIR)
 
-find_path(MARBLE_DATA_DIR
-  NAMES srtm.dgml
-  PATH_SUFFIXES maps/earth/srtm
-)
-if (MARBLE_DATA_DIR)
-  message(STATUS "Using Marble data from ${MARBLE_DATA_DIR}")
-endif(MARBLE_DATA_DIR)
 
+message(STATUS "Looking for Marble libraries")
 find_library(MARBLE_LIBRARIES
   NAMES marblewidget
   PATHS ${MARBLE_LIBRARY_DIR}
 )
+if (MARBLE_LIBRARY_DIR)
+  message(STATUS "Looking for Marble libraries - found")
+else(MARBLE_LIBRARY_DIR)
+  message(FATAL_ERROR "Could not find Marble libraries. If Marble is installed, you can specify its location with -DMARBLE_LIBRARY_DIR=<path>")
+endif(MARBLE_LIBRARY_DIR)
 
-include(FindPackageHandleStandardArgs)
-find_package_handle_standard_args(marble DEFAULT_MSG 
-  MARBLE_INCLUDE_DIR
-  MARBLE_LIBRARIES
-)
+
+if (APPLE OR WIN32)
+  message(STATUS "Looking for Marble data files")
+  find_path(MARBLE_DATA_DIR
+    NAMES srtm.dgml
+    PATH_SUFFIXES maps/earth/srtm
+  )
+  if (MARBLE_DATA_DIR)
+    message(STATUS "Looking for Marble data files - ${MARBLE_DATA_DIR}")
+  else (MARBLE_DATA_DIR)
+    message(FATAL_ERROR "Could not find Marble libraries. If Marble is installed, you can specify its location with -DMARBLE_DATA_DIR=<path>")
+  endif(MARBLE_DATA_DIR)
+
+
+  message(STATUS "Looking for Marble plugin widgets")
+  find_library(MARBLE_OVERVIEWMAP_PLUGIN
+    NAMES MarbleOverviewMap
+    PATHS ${MARBLE_PLUGIN_DIR}
+    PATH_SUFFIXES render/overviewmap
+  )
+  if (MARBLE_OVERVIEWMAP_PLUGIN)
+    message(STATUS "Looking for Marble plugin widgets - found overview map plugin")
+    set(MARBLE_PLUGINS ${MARBLE_PLUGINS}
+      ${MARBLE_OVERVIEWMAP_PLUGIN}
+    )
+  endif(MARBLE_OVERVIEWMAP_PLUGIN)
+
+  find_library(MARBLE_STARS_PLUGIN
+    NAMES MarbleStarsPlugin
+    PATHS ${MARBLE_PLUGIN_DIR}
+    PATH_SUFFIXES render/stars
+  )
+  if (MARBLE_STARS_PLUGIN)
+    message(STATUS "Looking for Marble plugin widgets - found stars plugin")
+    set(MARBLE_PLUGINS ${MARBLE_PLUGINS}
+      ${MARBLE_STARS_PLUGIN}
+    )
+  endif(MARBLE_STARS_PLUGIN)
+
+  if (NOT MARBLE_PLUGINS)
+    message(STATUS "Looking for Marble plugin widgets - none found")
+  endif(NOT MARBLE_PLUGINS)
+endif(APPLE OR WIN32)
+
