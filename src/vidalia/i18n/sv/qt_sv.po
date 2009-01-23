@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-08-20 05:04+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2009-01-23 19:27+0000\n"
+"Last-Translator: Robin <redyey@gmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Vidalia ts2po 0.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 1.1.0\n"
 
 #: qaccessibleobject.cpp:348
 msgctxt "QApplication"
@@ -20,7 +20,7 @@ msgstr "Aktivera"
 #: qmessagebox.h:319
 msgctxt "QApplication"
 msgid "Executable '%1' requires Qt %2, found Qt %3."
-msgstr "Binären \\"%1\\" kräver Qt %2, hittade Qt %3."
+msgstr "Binären \\"" kräver Qt %2, hittade Qt %3."
 
 #: qmessagebox.h:321
 msgctxt "QApplication"
@@ -135,7 +135,7 @@ msgstr "Återställ standardvärden"
 #: qdialogbuttonbox.cpp:552
 msgctxt "QDialogButtonBox"
 msgid "Close without Saving"
-msgstr ""
+msgstr "Stäng utan att spara"
 
 #: qdialogbuttonbox.cpp:525
 msgctxt "QDialogButtonBox"
@@ -211,7 +211,7 @@ msgstr "%1 "
 #: qdirmodel.cpp:833
 msgctxt "QFileDialog"
 msgid "My Computer"
-msgstr "Min dator"
+msgstr "Den här datorn"
 
 #: qfiledialog.cpp:462
 msgctxt "QFileDialog"
@@ -280,13 +280,13 @@ msgstr "%1 "
 msgctxt "QFileDialog"
 msgid "'%1' is write protected."
 "Do you want to delete it anyway?"
-msgstr "\\"%1\\" är skrivskyddad. "
+msgstr "\\"" är skrivskyddad. "
 "Vill du ta bort den ändå?"
 
 #: qfiledialog.cpp:2286
 msgctxt "QFileDialog"
 msgid "Are sure you want to delete '%1'?"
-msgstr "Är du säker på att du vill ta bort \\"%1\\"?"
+msgstr "Är du säker på att du vill ta bort \\""?"
 
 #: qfiledialog.cpp:2299
 msgctxt "QFileDialog"
@@ -326,7 +326,7 @@ msgstr "Hitta katalog"
 #: qfiledialog.cpp:458
 msgctxt "QFileDialog"
 msgid "Show "
-msgstr ""
+msgstr "Visa"
 
 #: ui_qfiledialog.h:269
 msgctxt "QFileDialog"
@@ -341,17 +341,17 @@ msgstr "Ny mapp"
 #: qfiledialog.cpp:465
 msgctxt "QFileDialog"
 msgid "&New Folder"
-msgstr ""
+msgstr "&Ny mapp"
 
 #: qfiledialog.cpp:917
 msgctxt "QFileDialog"
 msgid "&Choose"
-msgstr ""
+msgstr "&Välj"
 
 #: qsidebar.cpp:388
 msgctxt "QFileDialog"
 msgid "Remove"
-msgstr ""
+msgstr "Ta bort"
 
 #: qfiledialog.cpp:886
 msgctxt "QFileDialog"
@@ -361,7 +361,7 @@ msgstr "Fil&namn:"
 #: ui_qfiledialog.h:261
 msgctxt "QFileDialog"
 msgid "Look in:"
-msgstr ""
+msgstr "Kolla i:"
 
 #: ui_qfiledialog.h:279
 msgctxt "QFileDialog"
@@ -371,37 +371,39 @@ msgstr "Skapa ny mapp"
 #: qfilesystemmodel.cpp:677
 msgctxt "QFileSystemModel"
 msgid "%1 TB"
-msgstr ""
+msgstr "%1 TB"
 
 #: qfilesystemmodel.cpp:679
 msgctxt "QFileSystemModel"
 msgid "%1 GB"
-msgstr ""
+msgstr "%1 GB"
 
 #: qfilesystemmodel.cpp:681
 msgctxt "QFileSystemModel"
 msgid "%1 MB"
-msgstr ""
+msgstr "%1 MB"
 
 #: qfilesystemmodel.cpp:683
 msgctxt "QFileSystemModel"
 msgid "%1 KB"
-msgstr ""
+msgstr "%1 KB"
 
 #: qfilesystemmodel.cpp:684
 msgctxt "QFileSystemModel"
 msgid "%1 bytes"
-msgstr ""
+msgstr "%1 bytes"
 
 #: qfilesystemmodel.cpp:761
 msgctxt "QFileSystemModel"
 msgid "Invalid filename"
-msgstr ""
+msgstr "Ogiltigt filnamn"
 
 #: qfilesystemmodel.cpp:763
 msgctxt "QFileSystemModel"
 msgid "<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer characters or no punctuations marks."
 msgstr ""
+"<b>Namnet \"%1\" kan inte användas.</b><p>Försök använda ett nytt namn, med "
+"färre tecken eller inga skiljetecken."
 
 #: qfilesystemmodel.cpp:832
 msgctxt "QFileSystemModel"
@@ -431,10 +433,9 @@ msgstr "Ändringsdatum"
 #: qfilesystemmodel_p.h:198
 msgctxt "QFileSystemModel"
 msgid "My Computer"
-msgstr "Min dator"
+msgstr "Den här datorn"
 
 #: qfilesystemmodel_p.h:200
 msgctxt "QFileSystemModel"
 msgid "Computer"
-msgstr ""
-
+msgstr "Dator"
