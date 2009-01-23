@@ -48,7 +48,7 @@ find_path(MARBLE_INCLUDE_DIR
 if (MARBLE_INCLUDE_DIR)
   message(STATUS "Looking for Marble header files - found")
 else(MARBLE_INCLUDE_DIR)
-  message(FATAL_ERROR "Could not find Marble header files. If Marble is installed, you can specify its location with -DMARBLE_INCLUDE_DIR=<path>")
+  message(FATAL_ERROR "Could not find Marble header files. If Marble is installed, you can run CMake again and specify its location with -DMARBLE_INCLUDE_DIR=<path>")
 endif(MARBLE_INCLUDE_DIR)
 
 
@@ -60,7 +60,7 @@ find_library(MARBLE_LIBRARIES
 if (MARBLE_LIBRARY_DIR)
   message(STATUS "Looking for Marble libraries - found")
 else(MARBLE_LIBRARY_DIR)
-  message(FATAL_ERROR "Could not find Marble libraries. If Marble is installed, you can specify its location with -DMARBLE_LIBRARY_DIR=<path>")
+  message(FATAL_ERROR "Could not find Marble libraries. If Marble is installed, you can run CMake again and specify its location with -DMARBLE_LIBRARY_DIR=<path>")
 endif(MARBLE_LIBRARY_DIR)
 
 
@@ -73,7 +73,7 @@ if (APPLE OR WIN32)
   if (MARBLE_DATA_DIR)
     message(STATUS "Looking for Marble data files - ${MARBLE_DATA_DIR}")
   else (MARBLE_DATA_DIR)
-    message(FATAL_ERROR "Could not find Marble libraries. If Marble is installed, you can specify its location with -DMARBLE_DATA_DIR=<path>")
+    message(FATAL_ERROR "Could not find Marble libraries. If Marble is installed, you can run CMake again and specify its location with -DMARBLE_DATA_DIR=<path>")
   endif(MARBLE_DATA_DIR)
 
 
