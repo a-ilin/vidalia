@@ -390,7 +390,8 @@ else(APPLE)
           COMMAND ${CMAKE_COMMAND}
             ARGS -E copy_if_different ${it} 
                   ${CMAKE_CURRENT_BINARY_DIR}/plugins/
-        )      
+        )
+      endforeach(it)
     endif(MARBLE_PLUGINS)
 
   else (WIN32)
