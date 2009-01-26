@@ -53,15 +53,17 @@ endif(MARBLE_INCLUDE_DIR)
 
 
 message(STATUS "Looking for Marble libraries")
-find_library(MARBLE_LIBRARIES
+find_library(MARBLEWIDGET_LIBRARY
   NAMES marblewidget
   PATHS ${MARBLE_LIBRARY_DIR}
 )
-if (MARBLE_LIBRARY_DIR)
+if (MARBLEWIDGET_LIBRARY)
   message(STATUS "Looking for Marble libraries - found")
-else(MARBLE_LIBRARY_DIR)
+  set(MARBLE_LIBRARIES ${MARBLEWIDGET_LIBRARY})
+  get_filename_component(MARBLE_LIBRARY_DIR ${MARBLEWIDGET_LIBRARY} PATH)
+else(MARBLEWIDGET_LIBRARY)
   message(FATAL_ERROR "Could not find Marble libraries. If Marble is installed, you can run CMake again and specify its location with -DMARBLE_LIBRARY_DIR=<path>")
-endif(MARBLE_LIBRARY_DIR)
+endif(MARBLEWIDGET_LIBRARY)
 
 
 if (APPLE OR WIN32)
