@@ -19,62 +19,192 @@
            EmbedCab="yes" DiskPrompt="CD-ROM #1" />
     <Property Id="DiskPrompt" Value="Vidalia @VERSION@ Installation [1]" />
 
+    <!-- Define the target installation directory hierarchy -->
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder" Name="ProgramFilesDir">
         <Directory Id="INSTALLDIR" Name="Vidalia">
-
-          <!-- Main Vidalia application files -->
-          <Component Id="VidaliaExecutable" Guid="*">
-            <File Id="VidaliaExe" DiskId="1"
-                  Name="vidalia.exe" Source="@Vidalia_BINARY_DIR@\src\vidalia\vidalia.exe" />
-          </Component>
-
-          <!-- Vidalia-related documents -->
-          <Component Id="VidaliaDocuments" Guid="6A51C86C-A7D4-407f-9B84-7ADCE016E939">
-            <File Id="VidaliaReadme" DiskId="1"
-                  Name="README" Source="@Vidalia_SOURCE_DIR@\README" />
-            <File Id="VidaliaCredits" DiskId="1"
-                  Name="CREDITS" Source="@Vidalia_SOURCE_DIR@\CREDITS" />
-            <File Id="VidaliaChangeLog" DiskId="1"
-                  Name="CHANGELOG" Source="@Vidalia_SOURCE_DIR@\CHANGELOG" />
-            <File Id="VidaliaLicense" DiskId="1"
-                  Name="LICENSE" Source="@Vidalia_SOURCE_DIR@\LICENSE" />
-            <File Id="VidaliaLicenseGplV2" DiskId="1"
-                  Name="LICENSE-GPLV2" Source="@Vidalia_SOURCE_DIR@\LICENSE-GPLV2" />
-            <File Id="VidaliaLicenseGplV3" DiskId="1"
-                  Name="LICENSE-GPLV3" Source="@Vidalia_SOURCE_DIR@\LICENSE-GPLV3" />
-            <File Id="VidaliaLicenseLgplV3" DiskId="1"
-                  Name="LICENSE-LGPLV3" Source="@Vidalia_SOURCE_DIR@\LICENSE-LGPLV3" />
-            <File Id="VidaliaLicenseOpenSSL" DiskId="1"
-                  Name="LICENSE-OPENSSL" Source="@Vidalia_SOURCE_DIR@\LICENSE-OPENSSL" />
-          </Component>
-
-          <!-- Qt-related library files -->
-          <Component Id="QtLibrary" Guid="00F354CB-B313-4100-8900-11293A66B385">
-            <File Id="QtCore4Dll" DiskId="1"
-                  Name="QtCore4.dll" Source="@QT_BINARY_DIR@\QtCore4.dll" />
-            <File Id="QtGui4Dll" DiskId="1"
-                  Name="QtGui4.dll" Source="@QT_BINARY_DIR@\QtGui4.dll" />
-            <File Id="QtNetwork4Dll" DiskId="1"
-                  Name="QtNetwork4.dll" Source="@QT_BINARY_DIR@\QtNetwork4.dll" />
-            <File Id="QtXml4Dll" DiskId="1"
-                  Name="QtXml4.dll" Source="@QT_BINARY_DIR@\QtXml4.dll" />
-          </Component>
-
-          <!-- MinGW-related library files -->
-          <Component Id="MinGWLibrary" Guid="2287E844-F9CD-4129-8BD0-50D071698194">
-            <File Id="MinGWDll" DiskId="1"
-                  Name="mingwm10.dll" Source="@MINGW_BINARY_DIR@\mingwm10.dll" />
-          </Component>
-
-          <!-- OpenSSL-related library files -->
-          <Component Id="OpenSSLLibrary" Guid="C3EDC2EC-D0B1-452a-83A6-85B0BC94735B">
-            <File Id="ssleay32dll" DiskId="1"
-                  Name="ssleay32.dll" Source="@OPENSSL_BINARY_DIR@\ssleay32.dll" />
-          </Component>
+          <Directory Id="MarblePluginsDir" Name="plugins" />
+          <Directory Id="MarbleDataDir" Name="data">
+            <Directory Id="MarbleMapsDir" Name="maps">
+              <Directory Id="MarbleEarthMapsDir" Name="earth">
+                <Directory Id="MarbleBlueMarbleDataDir" Name="bluemarble" />
+                <Directory Id="MarbleCityLightsDataDir" Name="citylights" />
+                <Directory Id="MarbleSrtmDataDir" Name="srtm" />
+              </Directory>
+            </Directory>
+            <Directory Id="MarbleMwdbiiDir" Name="mwdbii" />
+            <Directory Id="MarblePlacemarkDataDir" Name="placemarks" />
+            <Directory Id="MarbleStarsDataDir" Name="stars" />
+            <Directory Id="MarbleSvgDataDir" Name="svg" />
+          </Directory>
         </Directory>
       </Directory>
+    </Directory>
 
+    <DirectoryRef Id="INSTALLDIR">
+      <!-- Main Vidalia application files -->
+      <Component Id="VidaliaExecutable" Guid="*">
+        <File Id="VidaliaExe" DiskId="1"
+              Name="vidalia.exe" Source="@Vidalia_BINARY_DIR@\src\vidalia\vidalia.exe" />
+      </Component>
+
+      <!-- Vidalia-related documents -->
+      <Component Id="VidaliaDocuments" Guid="6A51C86C-A7D4-407f-9B84-7ADCE016E939">
+        <File Id="VidaliaReadme" DiskId="1"
+              Name="README" Source="@Vidalia_SOURCE_DIR@\README" />
+        <File Id="VidaliaCredits" DiskId="1"
+              Name="CREDITS" Source="@Vidalia_SOURCE_DIR@\CREDITS" />
+        <File Id="VidaliaChangeLog" DiskId="1"
+              Name="CHANGELOG" Source="@Vidalia_SOURCE_DIR@\CHANGELOG" />
+        <File Id="VidaliaLicense" DiskId="1"
+              Name="LICENSE" Source="@Vidalia_SOURCE_DIR@\LICENSE" />
+        <File Id="VidaliaLicenseGplV2" DiskId="1"
+              Name="LICENSE-GPLV2" Source="@Vidalia_SOURCE_DIR@\LICENSE-GPLV2" />
+        <File Id="VidaliaLicenseGplV3" DiskId="1"
+              Name="LICENSE-GPLV3" Source="@Vidalia_SOURCE_DIR@\LICENSE-GPLV3" />
+        <File Id="VidaliaLicenseLgplV3" DiskId="1"
+              Name="LICENSE-LGPLV3" Source="@Vidalia_SOURCE_DIR@\LICENSE-LGPLV3" />
+        <File Id="VidaliaLicenseOpenSSL" DiskId="1"
+              Name="LICENSE-OPENSSL" Source="@Vidalia_SOURCE_DIR@\LICENSE-OPENSSL" />
+      </Component>
+
+      <!-- Qt-related library files -->
+      <Component Id="QtLibrary" Guid="00F354CB-B313-4100-8900-11293A66B385">
+        <File Id="QtCore4Dll" DiskId="1"
+              Name="QtCore4.dll" Source="@QT_BINARY_DIR@\QtCore4.dll" />
+        <File Id="QtGui4Dll" DiskId="1"
+              Name="QtGui4.dll" Source="@QT_BINARY_DIR@\QtGui4.dll" />
+        <File Id="QtNetwork4Dll" DiskId="1"
+              Name="QtNetwork4.dll" Source="@QT_BINARY_DIR@\QtNetwork4.dll" />
+        <File Id="QtXml4Dll" DiskId="1"
+              Name="QtXml4.dll" Source="@QT_BINARY_DIR@\QtXml4.dll" />
+      </Component>
+
+      <!-- MinGW-related library files -->
+      <Component Id="MinGWLibrary" Guid="2287E844-F9CD-4129-8BD0-50D071698194">
+        <File Id="MinGWDll" DiskId="1"
+              Name="mingwm10.dll" Source="@MINGW_BINARY_DIR@\mingwm10.dll" />
+      </Component>
+
+      <!-- OpenSSL-related library files -->
+      <Component Id="OpenSSLLibrary" Guid="C3EDC2EC-D0B1-452a-83A6-85B0BC94735B">
+        <File Id="ssleay32dll" DiskId="1"
+              Name="ssleay32.dll" Source="@OPENSSL_BINARY_DIR@\ssleay32.dll" />
+      </Component>
+      
+      <!-- Marble-related library files -->
+      <Component Id="MarbleWidgetLibrary" Guid="A2968B8D-0E23-4649-B8F3-A988A04F823C">
+        <File Id="MarbleWidgetDll" DiskId="1"
+              Name="libmarblewidget.dll" Source="@MARBLEWIDGET_LIBRARY@" />
+      </Component>
+    </DirectoryRef>
+    
+    <!-- Marble-related plugin files -->
+    <DirectoryRef Id="MarblePluginsDir">
+      <Component Id="MarblePlugins" Guid="B4665EC1-3082-4fca-AA7E-60512ED62EF6">
+        <File Id="MarbleOverviewMapPlugin" DiskId="1"
+              Name="libMarbleOverviewMap.dll" Source="@MARBLE_OVERVIEWMAP_PLUGIN@" />
+        <File Id="MarbleStarsPlugin" DiskId="1"
+              Name="libMarbleStarsPlugin.dll" Source="@MARBLE_STARS_PLUGIN@" />
+      </Component>
+    </DirectoryRef>
+          
+    <!-- Marble-related data files -->
+    <DirectoryRef Id="MarbleDataDir">
+      <Component Id="MarbleLegendsData" Guid="FA6F733F-8249-4b2b-B978-2AA04E06F5D5">
+        <File Id="LandColorsLegend" DiskId="1"
+              Name="landcolors.leg" Source="@MARBLE_DATA_DIR@\landcolors.leg" />
+        <File Id="SeaColorsLegend" DiskId="1"
+              Name="seacolors.leg" Source="@MARBLE_DATA_DIR@\seacolors.leg" />
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="MarbleBlueMarbleDataDir">
+      <Component Id="MarbleBlueMarbleData" Guid="392FEE6B-374A-447a-AECC-0422915305DB">
+        <File Id="MarbleBlueMarbleDgml" DiskId="1"
+              Name="bluemarble.dgml" Source="@MARBLE_DATA_DIR@\maps\earth\bluemarble\bluemarble.dgml" />
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="MarbleCityLightsDataDir">
+      <Component Id="MarbleCityLightsData" Guid="DBF9FBE7-012D-4457-ABB4-9085F7E784F8">
+        <File Id="MarbleCityLightsDgml" DiskId="1"
+              Name="citylights.dgml" Source="@MARBLE_DATA_DIR@\maps\earth\citylights\citylights.dgml" />
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="MarbleSrtmDataDir">
+      <Component Id="MarbleSrtmData" Guid="2C3A9C67-92CB-4fc6-A2F6-AD9118AFD58C">
+        <File Id="MarbleSrtmDgml" DiskId="1"
+              Name="srtm.dgml" Source="@MARBLE_DATA_DIR@\maps\earth\srtm\srtm.dgml" />
+        <File Id="MarbleSrtmJpg" DiskId="1"
+              Name="srtm.jpg" Source="@MARBLE_DATA_DIR@\maps\earth\srtm\srtm.jpg" />
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="MarbleMwdbiiDir">
+      <Component Id="MarbleMwdbiiData" Guid="56ACE658-6892-408a-91E5-7B5BD23D8829">
+        <File Id="DatelinePnt" DiskId="1"
+              Name="DATELINE.PNT" Source="@MARBLE_DATA_DIR@\mwdbii\DATELINE.PNT" />
+        <File Id="PAustPnt" DiskId="1"
+              Name="PAUST.PNT" Source="@MARBLE_DATA_DIR@\mwdbii\PAUST.PNT" />
+        <File Id="PBorderPnt" DiskId="1"
+              Name="PBORDER.PNT" Source="@MARBLE_DATA_DIR@\mwdbii\PBORDER.PNT" />
+        <File Id="PCanProvPnt" DiskId="1"
+              Name="PCANPROV.PNT" Source="@MARBLE_DATA_DIR@\mwdbii\PCANPROV.PNT" />
+        <File Id="PCoastPnt" DiskId="1"
+              Name="PCOAST.PNT" Source="@MARBLE_DATA_DIR@\mwdbii\PCOAST.PNT" />
+        <File Id="PDiffBorderPnt" DiskId="1"
+              Name="PDIFFBORDER.PNT" Source="@MARBLE_DATA_DIR@\mwdbii\PDIFFBORDER.PNT" />
+        <File Id="PGlacierPnt" DiskId="1"
+              Name="PGLACIER.PNT" Source="@MARBLE_DATA_DIR@\mwdbii\PGLACIER.PNT" />
+        <File Id="PIslandPnt" DiskId="1"
+              Name="PISLAND.PNT" Source="@MARBLE_DATA_DIR@\mwdbii\PISLAND.PNT" />
+        <File Id="PLakePnt" DiskId="1"
+              Name="PLAKE.PNT" Source="@MARBLE_DATA_DIR@\mwdbii\PLAKE.PNT" />
+        <File Id="PLakeIslandPnt" DiskId="1"
+              Name="PLAKEISLAND.PNT" Source="@MARBLE_DATA_DIR@\mwdbii\PLAKEISLAND.PNT" />
+        <File Id="PMexicoPnt" DiskId="1"
+              Name="PMEXICO.PNT" Source="@MARBLE_DATA_DIR@\mwdbii\PMEXICO.PNT" />
+        <File Id="PUsa48DiffPnt" DiskId="1"
+              Name="PUSA48.DIFF.PNT" Source="@MARBLE_DATA_DIR@\mwdbii\PUSA48.DIFF.PNT" />
+        <File Id="PUsa48Pnt" DiskId="1"
+              Name="PUSA48.PNT" Source="@MARBLE_DATA_DIR@\mwdbii\PUSA48.PNT" />
+        <File Id="RiverPnt" DiskId="1"
+              Name="RIVER.PNT" Source="@MARBLE_DATA_DIR@\mwdbii\RIVER.PNT" />
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="MarblePlacemarkDataDir">
+      <Component Id="MarblePlacemarkData" Guid="27D54547-A819-435b-9A0C-13284169A9D9">
+        <File Id="BasePlacemarksCache" DiskId="1"
+              Name="baseplacemarks.cache" Source="@MARBLE_DATA_DIR@\placemarks\baseplacemarks.cache" />
+        <File Id="BoundaryPlacemarksCache" DiskId="1"
+              Name="boundaryplacemarks.cache" Source="@MARBLE_DATA_DIR@\placemarks\boundaryplacemarks.cache" />
+        <File Id="ElevPlacemarksCache" DiskId="1"
+              Name="elevplacemarks.cache" Source="@MARBLE_DATA_DIR@\placemarks\elevplacemarks.cache" />
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="MarbleStarsDataDir">
+      <Component Id="MarbleStarsData" Guid="8C5C3F32-67E6-4a4a-9B6C-6D67A6D44D67">
+        <File Id="StarsDat" DiskId="1"
+              Name="stars.dat" Source="@MARBLE_DATA_DIR@\stars\stars.dat" />
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="MarbleSvgDataDir">
+      <Component Id="MarbleSvgData" Guid="03E25BCA-4C58-4571-9F17-061D52877714">
+        <File Id="WorldMapSvg" DiskId="1"
+              Name="worldmap.svg" Source="@MARBLE_DATA_DIR@\svg\worldmap.svg" />
+      </Component>
+    </DirectoryRef>
+    <ComponentGroup Id="MarbleData">
+      <ComponentRef Id="MarbleLegendsData" />
+      <ComponentRef Id="MarbleBlueMarbleData" />
+      <ComponentRef Id="MarbleCityLightsData" />
+      <ComponentRef Id="MarbleSrtmData" />
+      <ComponentRef Id="MarbleMwdbiiData" />
+      <ComponentRef Id="MarblePlacemarkData" />
+      <ComponentRef Id="MarbleStarsData" />
+      <ComponentRef Id="MarbleSvgData" />
+    </ComponentGroup>
+
+    <!-- Application shortcuts and menu items -->
+    <DirectoryRef Id="TARGETDIR">
       <Directory Id="ProgramMenuFolder" Name="Programs">
         <Directory Id="ShortcutFolder" Name="Vidalia">
           <Component Id="AddVidaliaToStartMenu" Guid="0F2CEE2C-8730-432e-8A8F-E49AF78AF28C">
@@ -109,7 +239,7 @@
           <RegistryValue Name="Vidalia" Value='"[INSTALLDIR]vidalia.exe"' Type="string" />
         </RegistryKey>
       </Component>
-    </Directory>
+    </DirectoryRef>
 
     <!-- Build up the feature hierarchy -->
     <Feature Id="Complete" Title="Vidalia"
@@ -123,6 +253,9 @@
         <ComponentRef Id="QtLibrary" />
         <ComponentRef Id="MinGWLibrary" />
         <ComponentRef Id="OpenSSLLibrary" />
+        <ComponentRef Id="MarbleWidgetLibrary" />
+        <ComponentRef Id="MarblePlugins" />
+        <ComponentGroupRef Id="MarbleData"/>
       </Feature>
       <Feature Id="Shortcuts" Title="Shortcuts"
                AllowAdvertise="no" Absent="allow" Level="1"
