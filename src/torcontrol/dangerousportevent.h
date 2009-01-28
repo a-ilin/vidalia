@@ -14,8 +14,8 @@
 ** \brief Event sent when Tor realizes its version is not recommended
 */
 
-#ifndef _DANGEROUSPORT_H
-#define _DANGEROUSPORT_H
+#ifndef _DANGEROUSPORTEVENT_H
+#define _DANGEROUSPORTEVENT_H
 
 #include <QString>
 
