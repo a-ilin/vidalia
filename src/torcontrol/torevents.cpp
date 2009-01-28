@@ -25,6 +25,7 @@
 #include "unrecognizedgeneralstatusevent.h"
 #include "circuitestablishedevent.h"
 #include "dangerousversionevent.h"
+#include "dangerousportevent.h"
 #include "bootstrapstatusevent.h"
 
 /** Format of expiry times in address map events. */
@@ -404,8 +405,14 @@ TorEvents::dispatchClientStatusEvent(tc::Severity severity,
 
   switch (status) {
     case ClientStatusEvent::CircuitEstablished:
-      event = new CircuitEstablishedEvent(severity); break;
+      event = new CircuitEstablishedEvent(severity);
+      break;
     
+    case ClientStatusEvent::DangerousPort:
+      event = new DangerousPortEvent(severity, args.value("PORT").toUInt(),
+                    DangerousPortEvent::resultFromString(args.value("RESULT")));
+      break;
+ 
     case ClientStatusEvent::Bootstrap:
       event = new BootstrapStatusEvent(BootstrapStatus(severity,
                     BootstrapStatus::statusFromString(args.value("TAG")),

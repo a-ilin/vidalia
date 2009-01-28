@@ -31,6 +31,7 @@ public:
     CircuitNotEstablished,
     NotEnoughDirectoryInfo,
     EnoughDirectoryInfo,
+    DangerousPort,
     DangerousSocks,
     UnknownSocksProtocol,
     SocksBadHostname

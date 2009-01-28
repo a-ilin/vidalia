@@ -20,6 +20,7 @@ set(torcontrol_SRCS
   controlconnection.cpp
   controlreply.cpp
   controlsocket.cpp
+  dangerousportevent.cpp
   dangerousversionevent.cpp
   generalstatusevent.cpp
   logevent.cpp

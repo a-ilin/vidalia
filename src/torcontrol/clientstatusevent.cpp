@@ -30,6 +30,8 @@ ClientStatusEvent::statusFromString(const QString &str)
     return CircuitEstablished;
   if (!str.compare("CIRCUIT_NOT_ESTABLISHED", Qt::CaseInsensitive))
     return CircuitNotEstablished;
+  if (!str.compare("DANGEROUS_PORT", Qt::CaseInsensitive))
+    return DangerousPort;
   if (!str.compare("DANGEROUS_SOCKS", Qt::CaseInsensitive))
     return DangerousSocks;
   if (!str.compare("SOCKS_UNKNOWN_PROTOCOL", Qt::CaseInsensitive))
