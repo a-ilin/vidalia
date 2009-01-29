@@ -18,6 +18,7 @@
 #include <QTimer>
 #include <vidalia.h>
 
+#include "config.h"
 #include "circuitlistwidget.h"
 
 #define IMG_CLOSE   ":/images/22x22/edit-delete.png"
@@ -83,13 +84,15 @@ CircuitListWidget::customContextMenuRequested(const QPoint &pos)
       return;
 
     /* Set up the circuit context menu */
-//    QAction *zoomAct  = new QAction(QIcon(IMG_ZOOM),
-//                                    tr("Zoom to Circuit"), this);
+    QAction *zoomAct  = new QAction(QIcon(IMG_ZOOM),
+                                    tr("Zoom to Circuit"), this);
     QAction *closeAct = new QAction(QIcon(IMG_CLOSE),
                                     tr("Close Circuit (Del)"), this);
-//    zoomAct->setEnabled(circuitItem->circuit().status() == Circuit::Built);
-//    menu.addAction(zoomAct);
-//    menu.addSeparator();
+#if defined(USE_MARBLE)
+    zoomAct->setEnabled(circuitItem->circuit().status() == Circuit::Built);
+    menu.addAction(zoomAct);
+    menu.addSeparator();
+#endif
     menu.addAction(closeAct);
       
     /* Display the context menu and find out which (if any) action was
@@ -97,8 +100,8 @@ CircuitListWidget::customContextMenuRequested(const QPoint &pos)
     QAction* action = menu.exec(mapToGlobal(pos));
     if (action == closeAct)
       emit closeCircuit(circuitItem->id());
-//    else if (action == zoomAct)
-//      emit zoomToCircuit(circuitItem->id());
+    else if (action == zoomAct)
+      emit zoomToCircuit(circuitItem->id());
   } else {
     /* A stream was selected */
     StreamItem *streamItem = dynamic_cast<StreamItem *>(item);

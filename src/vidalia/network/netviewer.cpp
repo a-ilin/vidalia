@@ -67,10 +67,15 @@ NetViewer::NetViewer(QWidget *parent)
     resizeSection(CircuitListWidget::ConnectionColumn, 235);
 
   /* Create the TorMapWidget and add it to the dialog */
+#if defined(USE_MARBLE)
   _map = new TorMapWidget();
-  ui.gridLayout->addWidget(_map);
   connect(_map, SIGNAL(displayRouterInfo(QString)),
           this, SLOT(displayRouterInfo(QString)));
+#else
+  _map = new TorMapImageView();
+#endif
+  ui.gridLayout->addWidget(_map);
+
 
   /* Connect zoom buttons to TorMapWidget zoom slots */
   connect(ui.actionZoomIn, SIGNAL(triggered()), this, SLOT(zoomIn()));
@@ -531,14 +536,21 @@ NetViewer::displayRouterInfo(const QString &id)
 void
 NetViewer::zoomIn()
 {
+#if defined(USE_MARBLE)
   _map->zoomViewBy(40);
+#else
+  _map->zoomIn();
+#endif
 }
 
 /** Called when the user clicks the "Zoom Out" button. */
 void
 NetViewer::zoomOut()
 {
+#if defined(USE_MARBLE)
   _map->zoomViewBy(-40);
+#else
+  _map->zoomOut();
+#endif
 }
-
 

@@ -169,9 +169,6 @@ set(vidalia_SRCS ${vidalia_SRCS}
   network/routerlistitem.cpp
   network/routerlistwidget.cpp
   network/streamitem.cpp
-  network/tormapwidget.cpp
-  network/tormapwidgetinputhandler.cpp
-  network/tormapwidgetpopupmenu.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
   network/circuitlistwidget.h
@@ -180,10 +177,28 @@ qt4_wrap_cpp(vidalia_SRCS
   network/routerdescriptorview.h
   network/routerinfodialog.h
   network/routerlistwidget.h
-  network/tormapwidget.h
-  network/tormapwidgetinputhandler.h
-  network/tormapwidgetpopupmenu.h
 )
+if (USE_MARBLE)
+  set(vidalia_SRCS ${vidalia_SRCS}
+    network/tormapwidget.cpp
+    network/tormapwidgetinputhandler.cpp
+    network/tormapwidgetpopupmenu.cpp
+  )
+  qt4_wrap_cpp(vidalia_SRCS
+    network/tormapwidget.h
+    network/tormapwidgetinputhandler.h
+    network/tormapwidgetpopupmenu.h
+  )
+else(USE_MARBLE)
+  set(vidalia_SRCS ${vidalia_SRCS}
+    network/tormapimageview.cpp
+    network/zimageview.cpp
+  )
+  qt4_wrap_cpp(vidalia_SRCS
+    network/tormapimageview.h
+    network/zimageview.h
+  )
+endif(USE_MARBLE)
 
 ## Choose the correct tray icon implementation for the current platform
 set(vidalia_SRCS ${vidalia_SRCS} tray/trayicon.cpp)
@@ -325,37 +340,38 @@ if (APPLE)
   )
 
   ## Copy the Marble data into the bundle
-  foreach(it ${marble_DATA})
-    get_filename_component(outdir  ${it} PATH)
-    get_filename_component(outfile ${it} NAME)
-    set(outdir Vidalia.app/Contents/Resources/data/${outdir})
+  if (USE_MARBLE)
+    foreach(it ${marble_DATA})
+      get_filename_component(outdir  ${it} PATH)
+      get_filename_component(outfile ${it} NAME)
+      set(outdir Vidalia.app/Contents/Resources/data/${outdir})
 
-    add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
-      COMMAND ${CMAKE_COMMAND}
-        ARGS -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/${outdir}
-      COMMAND ${CMAKE_COMMAND}
-        ARGS -E copy_if_different 
-              ${MARBLE_DATA_DIR}/${it} 
-              ${CMAKE_CURRENT_BINARY_DIR}/${outdir}/${outfile}
-    )
-  endforeach(it)
-
-  ## Create the Marble plugins directory and copy in any wanted plugins
-  if (MARBLE_PLUGINS)
-    add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
-      COMMAND ${CMAKE_COMMAND}
-        ARGS -E make_directory 
-          ${CMAKE_CURRENT_BINARY_DIR}/Vidalia.app/Contents/Resources/plugins
-    )
-    foreach(it ${MARBLE_PLUGINS})
       add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
         COMMAND ${CMAKE_COMMAND}
-          ARGS -E copy_if_different ${it}
-           ${CMAKE_CURRENT_BINARY_DIR}/Vidalia.app/Contents/Resources/plugins/
+          ARGS -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/${outdir}
+        COMMAND ${CMAKE_COMMAND}
+          ARGS -E copy_if_different 
+                ${MARBLE_DATA_DIR}/${it} 
+                ${CMAKE_CURRENT_BINARY_DIR}/${outdir}/${outfile}
       )
     endforeach(it)
-  endif(MARBLE_PLUGINS)
 
+    ## Create the Marble plugins directory and copy in any wanted plugins
+    if (MARBLE_PLUGINS)
+      add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
+        COMMAND ${CMAKE_COMMAND}
+          ARGS -E make_directory 
+           ${CMAKE_CURRENT_BINARY_DIR}/Vidalia.app/Contents/Resources/plugins
+      )
+      foreach(it ${MARBLE_PLUGINS})
+        add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
+          COMMAND ${CMAKE_COMMAND}
+            ARGS -E copy_if_different ${it}
+             ${CMAKE_CURRENT_BINARY_DIR}/Vidalia.app/Contents/Resources/plugins/
+        )
+      endforeach(it)
+    endif(MARBLE_PLUGINS)
+  endif(USE_MARBLE)
 else(APPLE)
   ## Set the output file name
   set(vidalia_BIN vidalia)
@@ -366,33 +382,35 @@ else(APPLE)
     add_executable(${vidalia_BIN} WIN32 ${vidalia_SRCS})
 
     ## Copy the Marble data into the data/ directory under the binary
-    foreach(it ${marble_DATA})
-      get_filename_component(outdir  ${it} PATH)
-      get_filename_component(outfile ${it} NAME)
+    if (USE_MARBLE)
+      foreach(it ${marble_DATA})
+        get_filename_component(outdir  ${it} PATH)
+        get_filename_component(outfile ${it} NAME)
 
-      add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
-        COMMAND ${CMAKE_COMMAND}
-          ARGS -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/${outdir}
-        COMMAND ${CMAKE_COMMAND}
-          ARGS -E copy_if_different ${MARBLE_DATA_DIR}/${it} 
-                                    ${CMAKE_CURRENT_BINARY_DIR}/data/${it}
-      )
-    endforeach(it)
-
-    ## Create the Marble plugins directory and copy in any wanted plugins
-    if (MARBLE_PLUGINS)
-      add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
-        COMMAND ${CMAKE_COMMAND}
-          ARGS -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/plugins
-      )
-      foreach(it ${MARBLE_PLUGINS})
         add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
           COMMAND ${CMAKE_COMMAND}
-            ARGS -E copy_if_different ${it} 
-                  ${CMAKE_CURRENT_BINARY_DIR}/plugins/
+            ARGS -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/${outdir}
+          COMMAND ${CMAKE_COMMAND}
+            ARGS -E copy_if_different ${MARBLE_DATA_DIR}/${it} 
+                                      ${CMAKE_CURRENT_BINARY_DIR}/data/${it}
         )
       endforeach(it)
-    endif(MARBLE_PLUGINS)
+
+      ## Create the Marble plugins directory and copy in any wanted plugins
+      if (MARBLE_PLUGINS)
+        add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
+          COMMAND ${CMAKE_COMMAND}
+            ARGS -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/plugins
+        )
+        foreach(it ${MARBLE_PLUGINS})
+          add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
+            COMMAND ${CMAKE_COMMAND}
+              ARGS -E copy_if_different ${it} 
+                    ${CMAKE_CURRENT_BINARY_DIR}/plugins/
+          )
+        endforeach(it)
+      endif(MARBLE_PLUGINS)
+    endif(USE_MARBLE)
 
   else (WIN32)
     ## Non-Windows, non-Mac
@@ -412,6 +430,9 @@ target_link_libraries(${vidalia_BIN}
 if (USE_MINIUPNPC)
   target_link_libraries(${vidalia_BIN} miniupnpc)
 endif(USE_MINIUPNPC)
+if (USE_MARBLE)
+  target_link_libraries(${vidalia_BIN} ${MARBLE_LIBRARIES})
+endif(USE_MARBLE)
 
 if (WIN32)
   target_link_libraries(${vidalia_BIN}

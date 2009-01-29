@@ -26,9 +26,13 @@
 #include <vidaliawindow.h>
 
 #include "geoipresolver.h"
-#include "tormapwidget.h"
 #include "ui_netviewer.h"
 
+#if defined(USE_MARBLE)
+#include "tormapwidget.h"
+#else
+#include "tormapimageview.h"
+#endif
 
 class NetViewer : public VidaliaWindow
 {
@@ -103,8 +107,6 @@ private:
   TorControl* _torControl;
   /** Timer that fires once an hour to update the router list. */
   QTimer _refreshTimer;
-  /** TorMapWidget that displays the map. */
-  TorMapWidget* _map;
   /** GeoIpResolver used to geolocate routers by IP address. */
   GeoIpResolver _geoip;
   /** Queue for IPs pending resolution to geographic information. */
@@ -120,7 +122,14 @@ private:
    * MAX_RESOLVE_QUEUE_DELAY milliseconds after inserting the first item 
    * into the queue. */
   QTimer _maxResolveQueueTimer;
-  
+ 
+  /** Widget that displays the Tor network map. */
+#if defined(USE_MARBLE)
+  TorMapWidget* _map;
+#else
+  TorMapImageView* _map;
+#endif
+
   /** Qt Designer generated object **/
   Ui::NetViewer ui;
 };

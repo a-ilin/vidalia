@@ -281,6 +281,9 @@
         <file>flags/zw.png</file>
         <file>flags/unknown.png</file>
     </qresource>
+    <qresource prefix="/images">
+        <file>map/world-map.png</file>
+    </qresource>
     <qresource prefix="/geoip">
         <file>cacert_root.crt</file>
     </qresource>

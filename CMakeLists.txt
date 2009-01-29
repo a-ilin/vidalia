@@ -25,8 +25,16 @@ if (COMMAND cmake_policy)
   cmake_policy(SET CMP0003 OLD)
 endif(COMMAND cmake_policy)
 
-## Require Qt >= 4.3.0
-set(QT_MIN_VERSION    "4.3.0")
+## We declare this option here, because it determines the minimum
+## required Qt version
+option(USE_MARBLE "Enable the KDE Marble-based map widget." OFF)
+
+## Specify the minimum version of Qt required
+if (USE_MARBLE)
+  set(QT_MIN_VERSION    "4.4.0")
+else(USE_MARBLE)
+  set(QT_MIN_VERSION    "4.2.0")
+endif(USE_MARBLE)
 
 ## Specify the Qt libraries used
 include(FindQt4)
@@ -83,8 +91,10 @@ if (WIN32)
   option(USE_AUTOUPDATE "Enable automatic software update support." OFF)
 endif(WIN32)
 
-## Use the KDE Marble library
-include(${CMAKE_SOURCE_DIR}/cmake/FindMarble.cmake)
+## Find the KDE Marble library
+if (USE_MARBLE)
+  include(${CMAKE_SOURCE_DIR}/cmake/FindMarble.cmake)
+endif(USE_MARBLE)
 
 ## Check for system header files
 check_include_file("limits.h" HAVE_LIMITS_H)
