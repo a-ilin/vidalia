@@ -38,6 +38,8 @@
 #define SETTING_AUTH_METHOD         "AuthenticationMethod"
 #define SETTING_CONTROL_PASSWORD    "ControlPassword"
 #define SETTING_USE_RANDOM_PASSWORD "UseRandomPassword"
+#define SETTING_WARN_PLAINTEXT_PORTS    "WarnPlaintextPorts"
+#define SETTING_REJECT_PLAINTEXT_PORTS  "RejectPlaintextPorts"
 
 /** Default to using hashed password authentication */
 #define DEFAULT_AUTH_METHOD     PasswordAuth
@@ -75,6 +77,9 @@ TorSettings::TorSettings(TorControl *torControl)
   setDefault(SETTING_DATA_DIRECTORY, "");
   setDefault(SETTING_CONTROL_PASSWORD, "");
   setDefault(SETTING_USE_RANDOM_PASSWORD, true);
+  setDefault(SETTING_WARN_PLAINTEXT_PORTS, QList<QVariant>() << 23 << 109 
+                                                             << 110 << 143);
+  setDefault(SETTING_REJECT_PLAINTEXT_PORTS, QList<QVariant>());
 }
 
 /** Applies any changes to Tor's control port or authentication settings. */
@@ -254,6 +259,60 @@ void
 TorSettings::setAuthenticationMethod(AuthenticationMethod method)
 {
   setValue(SETTING_AUTH_METHOD, toString(method));
+}
+
+/** Returns the current list of ports that will cause Tor to issue a warning
+ * when the user tries to connect to one of them. */
+QList<quint16>
+TorSettings::getWarnPlaintextPorts() const
+{
+  QList<quint16> out;
+  QList<QVariant> ports;
+
+  ports = value(SETTING_WARN_PLAINTEXT_PORTS).toList();
+  foreach (QVariant port, ports) {
+    out << port.toUInt();
+  }
+  return out;
+}
+
+/** Sets the list of ports that will cause Tor to issue a warning when the
+ * user tries to connect to one of them. */
+void
+TorSettings::setWarnPlaintextPorts(const QList<quint16> &ports)
+{
+  QList<QVariant> warnList;
+  foreach (quint16 port, ports) {
+    warnList << QVariant(port);
+  }
+  setValue(SETTING_WARN_PLAINTEXT_PORTS, warnList);
+}
+
+/** Returns the current list of ports that will cause Tor to reject the
+ * connection when the user tries to connect to one of them. */
+QList<quint16>
+TorSettings::getRejectPlaintextPorts() const
+{
+  QList<quint16> out;
+  QList<QVariant> ports;
+
+  ports = value(SETTING_REJECT_PLAINTEXT_PORTS).toList();
+  foreach (QVariant port, ports) {
+    out << port.toUInt();
+  }
+  return out;
+}
+
+/** Sets the list of ports that will cause Tor to reject the connection
+ * when the user tries to connect to one of them. */
+void
+TorSettings::setRejectPlaintextPorts(const QList<quint16> &ports)
+{
+  QList<QVariant> rejectList;
+  foreach (quint16 port, ports) {
+    rejectList << QVariant(port);
+  }
+  setValue(SETTING_REJECT_PLAINTEXT_PORTS, rejectList);
 }
 
 /** Returns the string description of the authentication method specified by

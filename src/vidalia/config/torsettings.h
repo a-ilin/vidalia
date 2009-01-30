@@ -86,6 +86,20 @@ public:
   /** Sets the authentication method used when starting Tor to <b>method</b>.*/
   void setAuthenticationMethod(AuthenticationMethod method);
 
+  /** Returns the current list of ports that will cause Tor to issue a warning
+   * when the user tries to connect to one of them. */
+  QList<quint16> getWarnPlaintextPorts() const;
+  /** Sets the list of ports that will cause Tor to issue a warning when the
+   * user tries to connect to one of them. */
+  void setWarnPlaintextPorts(const QList<quint16> &ports);
+
+  /** Returns the current list of ports that will cause Tor to reject the
+   * connection when the user tries to connect to one of them. */
+  QList<quint16> getRejectPlaintextPorts() const;
+  /** Sets the list of ports that will cause Tor to reject the connection
+   * when the user tries to connect to one of them. */
+  void setRejectPlaintextPorts(const QList<quint16> &ports);
+
   /** Generates a random control password consisting of PASSWORD_LEN
    * characters. */
   static QString randomPassword();
