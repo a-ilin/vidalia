@@ -198,6 +198,8 @@ the command line and follows the format "-D <var>:<type>=<value>
 
   -DCMAKE_BUILD_TYPE=<buildtype>          Available build types include:
                                             "release", "debug", "minsizerel"
+  -DUSE_MARBLE=1                          Replace the flat map with a
+                                          3-D sphere using the Marble libraries.
 
 For example, to configure CMake to look for Qt in "/usr/local/Qt-4.3.2/bin",
 you would run:
