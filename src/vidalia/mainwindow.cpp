@@ -28,6 +28,7 @@
 #include <net.h>
 #include <clientstatusevent.h>
 #include <dangerousversionevent.h>
+#include <dangerousportevent.h>
 #include <vmessagebox.h>
 #include <procutil.h>
 
@@ -261,6 +262,13 @@ MainWindow::customEvent(QEvent *event)
       BootstrapStatusEvent *bse = dynamic_cast<BootstrapStatusEvent *>(cse);
       if (bse)
         bootstrapStatusChanged(bse->status());
+      cse->accept();
+    } else if (cse->status() == ClientStatusEvent::DangerousPort) {
+      DangerousPortEvent *dpe = dynamic_cast<DangerousPortEvent *>(cse);
+      if (dpe) {
+        bool rejected = (dpe->result() == DangerousPortEvent::Reject);
+        warnDangerousPort(dpe->port(), rejected);
+      }
       cse->accept();
     }
   } else if (event->type() == CustomEventType::GeneralStatusEvent) {
@@ -1424,6 +1432,66 @@ MainWindow::dangerousTorVersion()
       checkForUpdatesWithUI();
 #endif
     alreadyWarned = true;
+  }
+}
+
+/** Called when Tor thinks the user has tried to connect to a port that
+ * typically is used for unencrypted applications. Warns the user and allows
+ * them to ignore future warnings on <b>port</b>. */
+void
+MainWindow::warnDangerousPort(quint16 port, bool rejected)
+{
+  QString warning, application;
+  QMessageBox dlg(QMessageBox::Warning,
+                  tr("Potentially Unsafe Connection"), QString(),
+                  QMessageBox::Ok | QMessageBox::Ignore);
+
+  switch (port) {
+    case  23:
+     application = tr(", probably Telnet, ");
+     break;
+
+    case 109:
+    case 110:
+    case 143:
+      application = tr(", probably an email client, "); 
+      break;
+
+    default:
+      application = " ";
+  }
+
+  warning = p(tr("One of your applications%1appears to be making a "
+                 "potentially unencrypted and unsafe connection to port %2. "
+                 "Anything sent over this connection could be monitored. "
+                 "Please check your application's configuration and use "
+                 "only encrypted protocols, such as SSL, if possible.")
+                 .arg(application).arg(port));
+  if (rejected) {
+    warning.append(p(tr("Tor has automatically closed your connection in "
+                        "order to protect your anonymity.")));
+  }
+  dlg.setText(warning);
+
+  int ret = dlg.exec();
+  if (ret == QMessageBox::Ignore) {
+    TorSettings settings;
+    QList<quint16> ports;
+    int idx;
+
+    ports = settings.getWarnPlaintextPorts();
+    idx   = ports.indexOf(port);
+    if (idx >= 0) {
+      ports.removeAt(idx);
+      settings.setWarnPlaintextPorts(ports);
+    }
+
+    ports = settings.getRejectPlaintextPorts();
+    idx   = ports.indexOf(port);
+    if (idx >= 0) {
+      ports.removeAt(idx);
+      settings.setRejectPlaintextPorts(ports);
+    }
   }
 }
 

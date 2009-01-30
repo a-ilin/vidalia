@@ -190,6 +190,10 @@ private:
   /** Called when Tor thinks its version is old or unrecommended, and displays
    * a message notifying the user. */
   void dangerousTorVersion();
+  /** Called when Tor thinks the user has tried to connect to a port that
+   * typically is used for unencrypted applications. Warns the user and allows
+   * them to ignore future warnings on <b>port</b>. */
+  void warnDangerousPort(quint16 port, bool rejected);
   /** Called when Tor's bootstrapping status changes. <b>bse</b> represents
    * Tor's current estimate of its bootstrapping progress. */
   void bootstrapStatusChanged(const BootstrapStatus &bs);
