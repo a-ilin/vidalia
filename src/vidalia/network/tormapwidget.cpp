@@ -85,7 +85,7 @@ TorMapWidget::addRouter(const RouterDescriptor &desc, const GeoIp &geoip)
   kml.append(QString("<role>1</role>"));
   kml.append(QString("<address>%1</address>").arg(geoip.toString()));
   kml.append(QString("<CountryNameCode>%1</CountryNameCode>").arg(geoip.country()));
-//  kml.append(QString("<pop>%1</pop>").arg(desc.observedBandwidth()));
+  kml.append(QString("<pop>%1</pop>").arg(10 * desc.observedBandwidth()));
   kml.append(QString("<Point>"
                      "  <coordinates>%1,%2</coordinates>"
                      "</Point>").arg(lon).arg(lat));
