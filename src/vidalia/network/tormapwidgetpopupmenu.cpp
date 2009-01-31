@@ -16,7 +16,7 @@
 
 #include <QChar>
 #include <QVector>
-#include <QPersistentModelIndex>
+#include <QModelIndex>
 #include <vidalia.h>
 
 #include <MarbleModel.h>
