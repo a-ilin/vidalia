@@ -25,20 +25,28 @@ if (COMMAND cmake_policy)
   cmake_policy(SET CMP0003 OLD)
 endif(COMMAND cmake_policy)
 
-## Require Qt >= 4.2.0
-set(QT_MIN_VERSION    "4.2.0")
+## We declare this option here, because it determines the minimum
+## required Qt version
+option(USE_MARBLE "Enable the KDE Marble-based map widget." OFF)
+
+## Specify the minimum version of Qt required
+if (USE_MARBLE)
+  set(QT_MIN_VERSION    "4.4.0")
+else(USE_MARBLE)
+  set(QT_MIN_VERSION    "4.2.0")
+endif(USE_MARBLE)
 
 ## Specify the Qt libraries used
 include(FindQt4)
 find_package(Qt4 REQUIRED)
 set(QT_USE_QTNETWORK  true)
 set(QT_USE_QTXML      true)
+set(QT_USE_QTSVG      true)
 include(${QT_USE_FILE})
 include(${CMAKE_SOURCE_DIR}/cmake/VidaliaMacros.cmake)
 include(CheckIncludeFile)
 include(CheckIncludeFileCXX)
 include(CheckTypeSize)
-include(CPack)
 if (WIN32)
   include(${CMAKE_SOURCE_DIR}/cmake/FindWiX.cmake)
 endif(WIN32)
@@ -82,6 +90,11 @@ option(USE_MINIUPNPC "Enable UPnP support using the MiniUPnPc library." ON)
 if (WIN32)
   option(USE_AUTOUPDATE "Enable automatic software update support." OFF)
 endif(WIN32)
+
+## Find the KDE Marble library
+if (USE_MARBLE)
+  include(${CMAKE_SOURCE_DIR}/cmake/FindMarble.cmake)
+endif(USE_MARBLE)
 
 ## Check for system header files
 check_include_file("limits.h" HAVE_LIMITS_H)

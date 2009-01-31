@@ -30,5 +30,7 @@
 
 #cmakedefine USE_AUTOUPDATE
 
+#cmakedefine USE_MARBLE
+
 #endif
 

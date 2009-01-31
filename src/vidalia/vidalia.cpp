@@ -26,12 +26,15 @@
 #include <stringutil.h>
 #include <html.h>
 #include <stdlib.h>
+#include "config.h"
+#include "vidalia.h"
 
 #ifdef Q_OS_MACX
 #include <Carbon/Carbon.h>
 #endif
-
-#include "vidalia.h"
+#ifdef USE_MARBLE
+#include <MarbleDirs.h>
+#endif
 
 /* Available command-line arguments. */
 #define ARG_LANGUAGE   "lang"     /**< Argument specifying language.    */
@@ -119,6 +122,11 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
 
   /* Creates a TorControl object, used to talk to Tor. */
   _torControl = new TorControl();
+
+#ifdef USE_MARBLE
+  /* Tell Marble where to stash its generated data */
+  Marble::MarbleDirs::setMarbleDataPath(dataDirectory());
+#endif
 }
 
 /** Destructor */

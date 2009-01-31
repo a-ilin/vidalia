@@ -22,9 +22,10 @@
 #include <QTextDocumentFragment>
 #include <html.h>
 #include <vidalia.h>
+#include <stringutil.h>
+
 #include "routerdescriptorview.h"
 
-#define DATE_FORMAT   "yyyy-MM-dd HH:mm:ss"
 #define IMG_COPY      ":/images/22x22/edit-copy.png"
 
 
@@ -66,13 +67,6 @@ RouterDescriptorView::copySelectedText()
   vApp->clipboard()->setText(selectedText);
 }
 
-/** Format the date the descriptor was published. */
-QString
-RouterDescriptorView::formatPublished(QDateTime date)
-{
-  return date.toString(DATE_FORMAT) + " GMT";
-}
-
 /** Adjusts the displayed uptime to include time since the router's descriptor
  * was last published. */
 quint64
@@ -84,38 +78,6 @@ RouterDescriptorView::adjustUptime(quint64 uptime, QDateTime published)
     return uptime;
   }
   return (uptime + (now.toTime_t() - published.toTime_t()));
-}
-
-/** Format the uptime for this router in a readable format. */
-QString
-RouterDescriptorView::formatUptime(quint64 seconds)
-{
-  QString uptime;
-  int secs  = (seconds % 60);
-  int mins  = (seconds / 60 % 60);
-  int hours = (seconds / 3600 % 24);
-  int days  = (seconds / 86400);
-
-  if (days) {
-    uptime += tr("%1 days ").arg(days);
-  }
-  if (hours) {
-    uptime += tr("%1 hours ").arg(hours);
-  }
-  if (mins) {
-    uptime += tr("%1 mins ").arg(mins);
-  }
-  if (secs) {
-    uptime += tr("%1 secs").arg(secs);
-  }
-  return uptime;
-}
-
-/** Format the bandwidth into KB/s. */
-QString
-RouterDescriptorView::formatBandwidth(quint64 bandwidth)
-{
-  return QString::number(bandwidth/1024);
 }
 
 /** Displays all router descriptors in the given list. */
@@ -146,18 +108,18 @@ RouterDescriptorView::display(QList<RouterDescriptor> rdlist)
     /* If the router is online, then show the uptime and bandwidth stats. */
     if (!rd.offline()) {
       html.append(trow(tcol(b(tr("Bandwidth:")))  + 
-                       tcol(formatBandwidth(rd.observedBandwidth()) + " KB/s")));
+                       tcol(string_format_bandwidth(rd.observedBandwidth()))));
       html.append(trow(tcol(b(tr("Uptime:")))   + 
-                       tcol(formatUptime(
+                       tcol(string_format_uptime(
                               adjustUptime(rd.uptime(), rd.published())))));
     }
-    
+
     /* Date the router was published */
     html.append(trow(tcol(b(tr("Last Updated:")))  +
-                     tcol(formatPublished(rd.published()))));
-    
+                     tcol(string_format_datetime(rd.published()) + " GMT")));
+
     html.append("</table>");
-    
+
     /* If there are multiple descriptors, and this isn't is the last one 
      * then separate them with a short horizontal line. */
     if (r+1 != rdlist.size()) {

@@ -15,59 +15,38 @@
 */
 
 #include <QStringList>
-#include <cmath>
+#include <vidalia.h>
+
+#include "tormapwidgetinputhandler.h"
+#include "tormapwidgetpopupmenu.h"
 #include "tormapwidget.h"
 
-#define IMG_WORLD_MAP   ":/images/map/world-map.png"
+using namespace Marble;
 
 /** QPens to use for drawing different map elements */
-#define PEN_ROUTER        QPen(QColor("#ff030d"), 1.0)
-#define PEN_CIRCUIT       QPen(Qt::yellow, 0.5)
-#define PEN_SELECTED      QPen(Qt::green, 2.0)
+#define CIRCUIT_NORMAL_PEN      QPen(Qt::green,  2.0)
+#define CIRCUIT_SELECTED_PEN    QPen(Qt::yellow, 3.0)
 
-/** Size of the map image */
-#define IMG_WIDTH       1000
-#define IMG_HEIGHT      507
-
-/** Border between the edge of the image and the actual map */
-#define MAP_TOP         2
-#define MAP_BOTTOM      2
-#define MAP_RIGHT       5
-#define MAP_LEFT        5
-#define MAP_WIDTH       (IMG_WIDTH-MAP_LEFT-MAP_RIGHT)
-#define MAP_HEIGHT      (IMG_HEIGHT-MAP_TOP-MAP_BOTTOM)
-
-/** Map offset from zero longitude */
-#define MAP_ORIGIN       -10
-
-/** Minimum allowable size for this widget */
-#define MIN_SIZE        QSize(512,256)
-
-/** Robinson projection table */
-/** Length of the parallel of latitude */
-static float  plen[] = {
-    1.0000, 0.9986, 0.9954, 0.9900,
-    0.9822, 0.9730, 0.9600, 0.9427,
-    0.9216, 0.8962, 0.8679, 0.8350,
-    0.7986, 0.7597, 0.7186, 0.6732,
-    0.6213, 0.5722, 0.5322
-  };
-
-/** Distance of corresponding parallel from equator */ 
-static float  pdfe[] = {
-    0.0000, 0.0620, 0.1240, 0.1860,
-    0.2480, 0.3100, 0.3720, 0.4340,
-    0.4958, 0.5571, 0.6176, 0.6769,
-    0.7346, 0.7903, 0.8435, 0.8936,
-    0.9394, 0.9761, 1.0000
-  };
 
 /** Default constructor */
 TorMapWidget::TorMapWidget(QWidget *parent)
-: ZImageView(parent)
+  : MarbleWidget(parent)
 {
-  QImage map(IMG_WORLD_MAP);
-  setImage(map);
+  setMapThemeId("earth/srtm/srtm.dgml");
+  setShowScaleBar(false);
+  setShowCrosshairs(false);
+  setAnimationsEnabled(true);
+  setCursor(Qt::OpenHandCursor);
+
+  TorMapWidgetInputHandler *handler = new TorMapWidgetInputHandler();
+  TorMapWidgetPopupMenu *popupMenu  = new TorMapWidgetPopupMenu(this);
+
+  connect(handler, SIGNAL(featureClicked(QPoint,Qt::MouseButton)),
+          popupMenu, SLOT(featureClicked(QPoint,Qt::MouseButton)));
+  connect(popupMenu, SIGNAL(displayRouterInfo(QString)),
+          this, SIGNAL(displayRouterInfo(QString)));
+
+  setInputHandler(handler);
 }
 
 /** Destructor */
@@ -78,75 +57,105 @@ TorMapWidget::~TorMapWidget()
 
 /** Adds a router to the map. */
 void
-TorMapWidget::addRouter(const QString &id, float latitude, float longitude)
+TorMapWidget::addRouter(const RouterDescriptor &desc, const GeoIp &geoip)
 {
-  QPointF routerCoord = toMapSpace(latitude, longitude);
-  
-  /* Add data the hash of known routers, and plot the point on the map */
-  if (_routers.contains(id))
-    _routers.value(id)->first = routerCoord;
-  else
-    _routers.insert(id, new QPair<QPointF,bool>(routerCoord, false));
+  QString kml;
+  qreal lon = geoip.longitude();
+  qreal lat = geoip.latitude();
+
+  kml.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
+             "<kml xmlns=\"http://earth.google.com/kml/2.0\">"
+             "<Document>"
+             "  <Style id=\"normalPlacemark\">"
+             "    <IconStyle><Icon><href>:/images/icons/placemark-relay.png</href></Icon></IconStyle>"
+             "  </Style>"
+             );
+
+  kml.append("<Placemark>");
+  kml.append("<styleUrl>#normalPlacemark</styleUrl>");
+  kml.append(QString("<name>%1</name>").arg(desc.name()));
+  kml.append(QString("<description>%1</description>").arg(desc.id()));
+  kml.append(QString("<role>1</role>"));
+  kml.append(QString("<address>%1</address>").arg(geoip.toString()));
+  kml.append(QString("<CountryNameCode>%1</CountryNameCode>").arg(geoip.country()));
+//  kml.append(QString("<pop>%1</pop>").arg(desc.observedBandwidth()));
+  kml.append(QString("<Point>"
+                     "  <coordinates>%1,%2</coordinates>"
+                     "</Point>").arg(lon).arg(lat));
+  kml.append("</Placemark>");
+  kml.append("</Document></kml>");
+
+  QString id = desc.id();
+  addPlaceMarkData(kml, id);
+  _routers.insert(id, GeoDataCoordinates(lon, lat, 0.0,
+                                         GeoDataCoordinates::Degree));
 }
 
 /** Adds a circuit to the map using the given ordered list of router IDs. */
 void
 TorMapWidget::addCircuit(const CircuitId &circid, const QStringList &path)
 {
-  QPainterPath *circPainterPath = new QPainterPath;
-  
-  /* Build the new circuit */
-  for (int i = 0; i < path.size()-1; i++) {
-    QString fromNode = path.at(i);
-    QString toNode = path.at(i+1);
-   
-    /* Add the coordinates of the hops to the circuit */
-    if (_routers.contains(fromNode) && _routers.contains(toNode)) {
-      /* Find the two endpoints for this path segment */
-      QPointF fromPos = _routers.value(fromNode)->first;
-      QPointF endPos = _routers.value(toNode)->first;
-      
-      /* Draw the path segment */ 
-      circPainterPath->moveTo(fromPos);
-      circPainterPath->lineTo(endPos);
-      circPainterPath->moveTo(endPos);
-    }
-  }
-  
-  /** Add the data to the hash of known circuits and plot the circuit on the map */
+  /* XXX: Is it better to do KML LineString-based circuit drawing here,
+   *      instead of going with a QPainter-based approach? I gave it a brief
+   *      try once but failed. It might be worth looking into harder if we
+   *      want to make circuits selectable on the map too.
+   */
+
+  /* It doesn't make sense to draw a path of length less than two */
+  if (path.size() < 2)
+    return;
+
   if (_circuits.contains(circid)) {
-    /* This circuit is being updated, so just update the path, making sure we
-     * free the memory allocated to the old one. */
-    QPair<QPainterPath*,bool> *circuitPair = _circuits.value(circid);
-    delete circuitPair->first;
-    circuitPair->first = circPainterPath;
+    /* Extend an existing path */
+    CircuitGeoPath *geoPath = _circuits.value(circid);
+
+    QString router = path.at(path.size()-1);
+    if (_routers.contains(router)) {
+      GeoDataCoordinates coords = _routers.value(router);
+      geoPath->first.append(new GeoDataCoordinates(coords));
+    }
   } else {
-    /* This is a new path, so just add it to our list */
-    _circuits.insert(circid, new QPair<QPainterPath*,bool>(circPainterPath,false));
+    /* Construct a new path */
+    CircuitGeoPath *geoPath = new CircuitGeoPath();
+    geoPath->second = false; /* initially unselected */
+
+    foreach (QString router, path) {
+      if (_routers.contains(router)) {
+        GeoDataCoordinates coords = _routers.value(router);
+        geoPath->first.append(new GeoDataCoordinates(coords));
+      }      
+    }
+    _circuits.insert(circid, geoPath);
   }
+
+  repaint();
 }
 
 /** Removes a circuit from the map. */
 void
 TorMapWidget::removeCircuit(const CircuitId &circid)
 {
-  QPair<QPainterPath*,bool> *circ = _circuits.take(circid);
-  QPainterPath *circpath = circ->first;
-  if (circpath) {
-    delete circpath;
+  CircuitGeoPath *path = _circuits.take(circid);
+  if (path) {
+    GeoDataLineString coords = path->first;
+    qDeleteAll(coords.begin(), coords.end());
+    delete path;
   }
-  delete circ;
+
+  repaint();
 }
 
 /** Selects and highlights the router on the map. */
 void
 TorMapWidget::selectRouter(const QString &id)
 {
+#if 0
   if (_routers.contains(id)) {
     QPair<QPointF, bool> *routerPair = _routers.value(id);
     routerPair->second = true;
   }
   repaint();
+#endif
 }
 
 /** Selects and highlights the circuit with the id <b>circid</b> 
@@ -155,9 +164,10 @@ void
 TorMapWidget::selectCircuit(const CircuitId &circid)
 {
   if (_circuits.contains(circid)) {
-    QPair<QPainterPath*, bool> *circuitPair = _circuits.value(circid);
-    circuitPair->second = true;
+    CircuitGeoPath *path = _circuits.value(circid);
+    path->second = true;
   }
+
   repaint();
 }
 
@@ -165,122 +175,59 @@ TorMapWidget::selectCircuit(const CircuitId &circid)
 void
 TorMapWidget::deselectAll()
 {
+#if 0
   /* Deselect all router points */
   foreach (QString router, _routers.keys()) {
     QPair<QPointF,bool> *routerPair = _routers.value(router);
     routerPair->second = false;
   }
+#endif
   /* Deselect all circuit paths */
-  foreach (CircuitId circid, _circuits.keys()) {
-    QPair<QPainterPath*,bool> *circuitPair = _circuits.value(circid);
-    circuitPair->second = false;
+  foreach (CircuitGeoPath *path, _circuits.values()) {
+    path->second = false;
   }
+
+  repaint();
 }
 
 /** Clears the list of routers and removes all the data on the map */
 void
 TorMapWidget::clear()
 {
-  /* Clear out all the router points and free their memory */
-  foreach (QString router, _routers.keys()) {
-    delete _routers.take(router);
+  foreach (QString id, _routers.keys()) {
+    removePlaceMarkKey(id);
   }
-  /* Clear out all the circuit paths and free their memory */
+
   foreach (CircuitId circid, _circuits.keys()) {
-    QPair<QPainterPath*,bool> *circuitPair = _circuits.take(circid);
-    delete circuitPair->first;
-    delete circuitPair;
-  }
-}
-  
-/** Draws the routers and paths onto the map image. */
-void
-TorMapWidget::paintImage(QPainter *painter)
-{
-  painter->setRenderHint(QPainter::Antialiasing);
-  
-  /* Draw the router points */
-  foreach(QString router, _routers.keys()) {
-    QPair<QPointF,bool> *routerPair = _routers.value(router);
-    painter->setPen((routerPair->second ? PEN_SELECTED : PEN_ROUTER)); 
-    painter->drawPoint(routerPair->first);
-  }
-  /* Draw the circuit paths */
-  foreach(CircuitId circid, _circuits.keys()) {
-    QPair<QPainterPath*,bool> *circuitPair = _circuits.value(circid);
-    painter->setPen((circuitPair->second ? PEN_SELECTED : PEN_CIRCUIT));
-    painter->drawPath(*(circuitPair->first));
-  }
-}
-
-/** Converts world space coordinates into map space coordinates */
-QPointF
-TorMapWidget::toMapSpace(float latitude, float longitude)
-{
-  float width  = MAP_WIDTH;
-  float height = MAP_HEIGHT;
-  float deg = width / 360.0;
-  longitude += MAP_ORIGIN;
-
-  float lat;
-  float lon;
-  
-  lat = floor(longitude * (deg * lerp(abs(int(latitude)), plen))
-	      + width/2 + MAP_LEFT);
-  
-  if (latitude < 0) {
-    lon = floor((height/2) + (lerp(abs(int(latitude)), pdfe) * (height/2))
-		+ MAP_TOP);
-  } else {
-    lon = floor((height/2) - (lerp(abs(int(latitude)), pdfe) * (height/2))
-		+ MAP_TOP);
+    CircuitGeoPath *path = _circuits.take(circid);
+    GeoDataLineString coords = path->first;
+    qDeleteAll(coords.begin(), coords.end());
+    delete path;
   }
 
-  return QPointF(lat, lon);
+  repaint();
 }
-  
-/** Linearly interpolates using the values in the Robinson projection table */
-float
-TorMapWidget::lerp(float input, float *table)
-{
-  int x = int(floor(input / 5));
-
-  return ((table[x+1] - table[x]) / 
-	  (((x+1)*5) - (x*5))) * (input - x*5) + table[x];
-}
-
-/** Returns the minimum size of the widget */
-QSize
-TorMapWidget::minimumSizeHint() const
-{
-  return MIN_SIZE;
-}
-
-/** Zooms to fit all currently displayed circuits on the map. If there are no
- * circuits on the map, the viewport will be returned to its default position
- * (zoomed all the way out and centered). */
+ 
+/** Zooms the map to fit entirely within the constraints of the current
+ * viewport size. */
 void
 TorMapWidget::zoomToFit()
 {
-  QRectF rect = circuitBoundingBox();
-  
-  if (rect.isNull()) {
-    /* If there are no circuits, zoom all the way out */
-    resetZoomPoint();
-    zoom(0.0);
-  } else {
-    /* Zoom in on the displayed circuits */
-    float zoomLevel = 1.0 - qMax(rect.height()/float(MAP_HEIGHT),
-                                 rect.width()/float(MAP_WIDTH));
-    
-    zoom(rect.center().toPoint(), zoomLevel+0.2);
-  }
+  int width  = size().width();
+  int height = size().height();
+
+  setRadius(qMin(width, height) / 2);
+
+  /* XXX: Calling setRadius() seems to cause Marble to no longer draw the
+   *      atmosphere. So, re-enable it. */
+  setShowAtmosphere(true);
 }
 
 /** Zoom to the circuit on the map with the given <b>circid</b>. */
 void
 TorMapWidget::zoomToCircuit(const CircuitId &circid)
 {
+#if 0
   if (_circuits.contains(circid)) {
     QPair<QPainterPath*,bool> *pair = _circuits.value(circid);
     QRectF rect = ((QPainterPath *)pair->first)->boundingRect();
@@ -291,35 +238,30 @@ TorMapWidget::zoomToCircuit(const CircuitId &circid)
       zoom(rect.center().toPoint(), zoomLevel+0.2);
     }
   }
+#endif
 }
 
 /** Zooms in on the router with the given <b>id</b>. */
 void
 TorMapWidget::zoomToRouter(const QString &id)
 {
-  QPair<QPointF,bool> *routerPair;
-  
   if (_routers.contains(id)) {
-    deselectAll();
-    routerPair = _routers.value(id);
-    routerPair->second = true;  /* Set the router point to "selected" */
-    zoom(routerPair->first.toPoint(), 1.0); 
+    qreal lon, lat;
+    GeoDataCoordinates coords = _routers.value(id);
+    coords.geoCoordinates(lon, lat, GeoDataPoint::Degree);
+
+    zoomView(maximumZoom());
+    centerOn(lon, lat, true);
   }
 }
 
-/** Computes a bounding box around all currently displayed circuit paths on
- * the map. */
-QRectF
-TorMapWidget::circuitBoundingBox()
+/** Paints the current circuits and streams on the image. */
+void
+TorMapWidget::customPaint(GeoPainter *painter)
 {
-  QRectF rect;
-
-  /* Compute the union of bounding rectangles for all circuit paths */
-  foreach (CircuitId circid, _circuits.keys()) {
-    QPair<QPainterPath*,bool> *pair = _circuits.value(circid);
-    QPainterPath *circuit = pair->first;
-    rect = rect.unite(circuit->boundingRect());
+  foreach (CircuitGeoPath *path, _circuits.values()) {
+    painter->setPen(path->second ? CIRCUIT_SELECTED_PEN : CIRCUIT_NORMAL_PEN);
+    painter->drawPolyline(path->first);
   }
-  return rect;
 }
 

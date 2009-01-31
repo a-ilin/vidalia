@@ -9,39 +9,34 @@
 */
 
 /*
-** \file tormapwidget.h
+** \file tormapimageview.h
 ** \version $Id$
 ** \brief Displays Tor servers and circuits on a map of the world
 */
 
-#ifndef _TORMAPWIDGET_H
-#define _TORMAPWIDGET_H
+#ifndef _TORMAPIMAGEVIEW_H
+#define _TORMAPIMAGEVIEW_H
 
 #include <QHash>
 #include <QPair>
+#include <QPainter>
 #include <QPainterPath>
-#include <routerdescriptor.h>
 #include <circuit.h>
-#include <stream.h>
+#include <routerdescriptor.h>
 #include <network/geoip.h>
 
-#include <MarbleWidget.h>
-#include <GeoPainter.h>
-#include <GeoDataCoordinates.h>
-#include <GeoDataLineString.h>
-
-typedef QPair<Marble::GeoDataLineString, bool> CircuitGeoPath;
+#include "zimageview.h"
 
 
-class TorMapWidget : public Marble::MarbleWidget
+class TorMapImageView : public ZImageView
 {
   Q_OBJECT
 
 public:
   /** Default constructor. */
-  TorMapWidget(QWidget *parent = 0);
+  TorMapImageView(QWidget *parent = 0);
   /** Destructor. */
-  ~TorMapWidget();
+  ~TorMapImageView();
 
   /** Plots the given router on the map using the given coordinates. */
   void addRouter(const RouterDescriptor &desc, const GeoIp &geoip);
@@ -51,6 +46,8 @@ public:
   void selectRouter(const QString &id);
   /** Selects and highlights a circuit on the map. */
   void selectCircuit(const CircuitId &circid);
+  /** Returns the minimum size of the widget */
+  QSize minimumSizeHint() const;
 
 public slots:
   /** Removes a circuit from the map. */
@@ -59,28 +56,30 @@ public slots:
   void deselectAll();
   /** Clears the known routers and removes all the data from the map */
   void clear();
-  /** Zooms the map to fit entirely within the constraints of the current
-   * viewport size. */
+  /** Zooms to fit all currently displayed circuits on the map. */
   void zoomToFit();
   /** Zoom to a particular router on the map. */
   void zoomToRouter(const QString &id);
   /** Zoom to the circuit on the map with the given <b>circid</b>. */
   void zoomToCircuit(const CircuitId &circid);
 
-signals:
-  /** Emitted when the user selects a router placemark on the map. <b>id</b>
-   * contain's the selected router's fingerprint. */
-  void displayRouterInfo(const QString &id);
-
 protected:
   /** Paints the current circuits and streams on the image. */
-  virtual void customPaint(Marble::GeoPainter *painter);
+  virtual void paintImage(QPainter *painter);
 
 private:
-  /** Stores placemark IDs for Tor routers. */
-  QHash<QString, Marble::GeoDataCoordinates> _routers;
+  /** Converts world space coordinates into map space coordinates */
+  QPointF toMapSpace(float latitude, float longitude);
+  /** Linearly interpolates using the values in the projection table */
+  float lerp(float input, float *table);
+  /** Computes a bounding box around all currently displayed circuit paths on
+   * the map. */
+  QRectF circuitBoundingBox();
+  
+  /** Stores map locations for tor routers */
+  QHash<QString, QPair<QPointF,bool>* > _routers;
   /** Stores circuit information */
-  QHash<CircuitId, CircuitGeoPath*> _circuits;
+  QHash<CircuitId, QPair<QPainterPath *,bool>* > _circuits;
 };
 
 #endif

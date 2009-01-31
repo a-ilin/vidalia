@@ -14,6 +14,8 @@
 ** \brief Common string manipulation functions
 */
 
+#include <QCoreApplication>
+
 #include "stringutil.h"
 
 
@@ -303,5 +305,51 @@ string_is_hex(const QString &str)
       return false;
   }
   return true;
+}
+
+/** Returns a human-readable description of the time elapsed given by
+ * <b>seconds</b>, broken down into days, hours, minutes and seconds. */
+QString
+string_format_uptime(quint64 seconds)
+{
+  QString uptime;
+  int secs  = (seconds % 60);
+  int mins  = (seconds / 60 % 60);
+  int hours = (seconds / 3600 % 24);
+  int days  = (seconds / 86400);
+
+  if (days)
+    uptime += qApp->translate("stringutil.h", "%1 days ").arg(days);
+  if (hours)
+    uptime += qApp->translate("stringutil.h", "%1 hours ").arg(hours);
+  if (mins)
+    uptime += qApp->translate("stringutil.h", "%1 mins ").arg(mins);
+  if (secs)
+    uptime += qApp->translate("stringutil.h", "%1 secs").arg(secs);
+
+  return uptime;
+}
+
+/** Returns a string representation of <b>date</b> formatted according to
+ * "yyyy-MM-dd HH:mm:ss". */
+QString
+string_format_datetime(const QDateTime &date)
+{
+  return date.toString("yyyy-MM-dd HH:mm:ss");
+}
+
+/** Returns a string representation of <b>bytes</b> with the appropriate
+ * suffix of either "B/s", "KB/s", "MB/s" or "GB/s". */
+QString
+string_format_bandwidth(quint64 bytes)
+{
+  if (bytes < 1024)
+    return qApp->translate("stringutil.h", "%1 B/s").arg(bytes);
+  if (bytes < 1048576)
+    return qApp->translate("stringutil.h", "%1 KB/s").arg(bytes/1024.0, 0, 'f', 2);
+  if (bytes < 1073741824)
+    return qApp->translate("stringutil.h", "%1 MB/s").arg(bytes/1048576.0, 0, 'f', 2);
+
+  return qApp->translate("stringutil.h", "%1 GB/s").arg(bytes/1073741824.0, 0, 'f', 2);
 }
 

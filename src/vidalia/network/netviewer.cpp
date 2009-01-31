@@ -17,8 +17,10 @@
 #include <QMessageBox>
 #include <QHeaderView>
 #include <vidalia.h>
+#include <vmessagebox.h>
 
 #include "netviewer.h"
+#include "routerinfodialog.h"
 
 #define IMG_MOVE    ":/images/22x22/move-map.png"
 #define IMG_ZOOMIN  ":/images/22x22/zoom-in.png"
@@ -65,12 +67,19 @@ NetViewer::NetViewer(QWidget *parent)
     resizeSection(CircuitListWidget::ConnectionColumn, 235);
 
   /* Create the TorMapWidget and add it to the dialog */
+#if defined(USE_MARBLE)
   _map = new TorMapWidget();
+  connect(_map, SIGNAL(displayRouterInfo(QString)),
+          this, SLOT(displayRouterInfo(QString)));
+#else
+  _map = new TorMapImageView();
+#endif
   ui.gridLayout->addWidget(_map);
 
-  /* Connect zoom buttons to ZImageView zoom slots */
-  connect(ui.actionZoomIn, SIGNAL(triggered()), _map, SLOT(zoomIn()));
-  connect(ui.actionZoomOut, SIGNAL(triggered()), _map, SLOT(zoomOut()));
+
+  /* Connect zoom buttons to TorMapWidget zoom slots */
+  connect(ui.actionZoomIn, SIGNAL(triggered()), this, SLOT(zoomIn()));
+  connect(ui.actionZoomOut, SIGNAL(triggered()), this, SLOT(zoomOut()));
   connect(ui.actionZoomToFit, SIGNAL(triggered()), _map, SLOT(zoomToFit()));
 
   /* Create the timer that will be used to update the router list once every
@@ -470,7 +479,7 @@ NetViewer::resolved(int id, const QList<GeoIp> &geoips)
         /* Save the location information in the descriptor */
         router->setLocation(geoip);
         /* Plot the router on the map */
-        _map->addRouter(router->id(), geoip.latitude(), geoip.longitude());
+        _map->addRouter(router->descriptor(), geoip);
       }
     }
   }
@@ -482,5 +491,66 @@ NetViewer::resolved(int id, const QList<GeoIp> &geoips)
 
   /* Repaint the map */
   _map->update();
+}
+
+/** Called when the user selects a router on the network map. Displays a 
+ * dialog with detailed information for the router specified by
+ * <b>id</b>.*/
+void
+NetViewer::displayRouterInfo(const QString &id)
+{
+  RouterInfoDialog dlg(this);
+
+  /* Fetch the specified router's descriptor */
+  QStringList rd = _torControl->getRouterDescriptorText(id);
+  if (rd.isEmpty()) {
+    VMessageBox::warning(this, tr("Relay Not Found"),
+                         tr("No details on the selected relay are available."),
+                         VMessageBox::Ok);
+    return;
+  }
+
+  /* Fetch the router's network status information */
+  RouterStatus rs = _torControl->getRouterStatus(id);
+
+  dlg.setRouterInfo(rd, rs);
+
+  /* Populate the UI with information learned from a previous GeoIP request */
+  RouterListItem *item = ui.treeRouterList->findRouterById(id);
+  if (item)
+    dlg.setLocation(item->location());
+  else
+    dlg.setLocation(tr("Unknown"));
+
+  dlg.exec();
+}
+
+/* XXX: The following zoomIn() and zoomOut() slots are a hack. MarbleWidget
+ *      does have zoomIn() and zoomOut() slots to which we could connect the
+ *      buttons, but these slots currently don't force a repaint. So to see
+ *      the zoom effect, the user has to click on the map after clicking one
+ *      of the zoom buttons. Instead, we use the zoomViewBy() method, which
+ *      DOES force a repaint.
+ */
+/** Called when the user clicks the "Zoom In" button. */
+void
+NetViewer::zoomIn()
+{
+#if defined(USE_MARBLE)
+  _map->zoomViewBy(40);
+#else
+  _map->zoomIn();
+#endif
+}
+
+/** Called when the user clicks the "Zoom Out" button. */
+void
+NetViewer::zoomOut()
+{
+#if defined(USE_MARBLE)
+  _map->zoomViewBy(-40);
+#else
+  _map->zoomOut();
+#endif
 }
 
