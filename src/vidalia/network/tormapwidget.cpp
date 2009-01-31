@@ -138,7 +138,7 @@ TorMapWidget::removeCircuit(const CircuitId &circid)
   CircuitGeoPath *path = _circuits.take(circid);
   if (path) {
     GeoDataLineString coords = path->first;
-    coords.erase(coords.begin(), coords.end());
+    qDeleteAll(coords.begin(), coords.end());
     delete path;
   }
 
@@ -201,7 +201,7 @@ TorMapWidget::clear()
   foreach (CircuitId circid, _circuits.keys()) {
     CircuitGeoPath *path = _circuits.take(circid);
     GeoDataLineString coords = path->first;
-    coords.erase(coords.begin(), coords.end());
+    qDeleteAll(coords.begin(), coords.end());
     delete path;
   }
 
