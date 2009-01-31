@@ -55,8 +55,8 @@ TorMapWidgetPopupMenu::featureClicked(const QPoint &pos, Qt::MouseButton btn)
 void
 TorMapWidgetPopupMenu::featureLeftClicked(const QPoint &pos)
 {
-  QVector<QPersistentModelIndex>::const_iterator it;
-  QVector<QPersistentModelIndex> features = _widget->model()->whichFeatureAt(pos);
+  QVector<QModelIndex>::const_iterator it;
+  QVector<QModelIndex> features = _widget->model()->whichFeatureAt(pos);
   QString name, id;
   int numRelays = 0;
 
