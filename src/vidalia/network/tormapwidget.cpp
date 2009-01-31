@@ -46,6 +46,13 @@ TorMapWidget::TorMapWidget(QWidget *parent)
   connect(popupMenu, SIGNAL(displayRouterInfo(QString)),
           this, SIGNAL(displayRouterInfo(QString)));
 
+  /* We can't call setInputHandler() until MarbleWidget has called its
+   * internal _q_initGui() method, which doesn't happen until a
+   * QTimer::singleShot(0, this, SLOT(_q_initGui())) timer set in its
+   * constructor times out. So force that event to process now. */ 
+  vApp->processEvents(QEventLoop::ExcludeUserInputEvents
+                        | QEventLoop::ExcludeSocketNotifiers);
+
   setInputHandler(handler);
 }
 
