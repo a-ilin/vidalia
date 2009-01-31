@@ -28,13 +28,6 @@ ServicePage::ServicePage(QWidget *parent)
 {
   /* Invoke the Qt Designer generated object setup routine */
   ui.setupUi(this);
-  /* Keep a pointer to the TorControl object used to talk to Tor */
-  _torControl = Vidalia::torControl();
-  /* Create Tor settings objects */
-  _torSettings = new TorSettings;
-  /* Keep a pointer to the ServiceSettings object used to store
-   * the configuration */
-  _serviceSettings = new ServiceSettings(_torControl);
   /* A QMap, mapping from the row number to the Entity for
    * all services */
   _services = new QMap<int, Service>();
@@ -66,7 +59,8 @@ ServicePage::ServicePage(QWidget *parent)
 /** Destructor */
 ServicePage::~ServicePage()
 {
-  delete _serviceSettings;
+  delete _services;
+  delete _torServices;
 }
 
 /** Called when the user changes the UI translation. */
@@ -80,9 +74,11 @@ ServicePage::retranslateUi()
 bool
 ServicePage::save(QString &errmsg)
 {
+  ServiceSettings serviceSettings(Vidalia::torControl());
   QList<Service> serviceList;
   QList<Service> publishedServices;
   int index = 0;
+
   while(index < ui.serviceWidget->rowCount()) {
     QString address = ui.serviceWidget->item(index,0)->text();
     QString virtualPort = ui.serviceWidget->item(index,1)->text();
@@ -109,13 +105,13 @@ ServicePage::save(QString &errmsg)
       _services = new QMap<int, Service>();
       sList.setServices(_services->values());
     }
-    _serviceSettings->setServices(sList);
+    serviceSettings.setServices(sList);
     if(publishedServices.size() > 0) {
       startServicesInTor(publishedServices);
     } else {
       QString errmsg1 = tr("Error while trying to unpublish all services");
       QString &errmsg = errmsg1;
-      _serviceSettings->unpublishAllServices(&errmsg);
+      serviceSettings.unpublishAllServices(&errmsg);
     }
     return true;
   } else {
@@ -144,6 +140,7 @@ ServicePage::checkBeforeSaving(QList<Service> serviceList)
 void
 ServicePage::startServicesInTor(QList<Service> services)
 {
+  ServiceSettings serviceSettings(Vidalia::torControl());
   QString serviceConfString;
   QString errmsg = "Error while trying to publish services.";
   QListIterator<Service> it(services);
@@ -158,26 +155,28 @@ ServicePage::startServicesInTor(QList<Service> services)
       temp.physicalAddressPort())));
     serviceConfString.append(" " + temp.additionalServiceOptions());
   }
-  _serviceSettings->applyServices(serviceConfString, &errmsg);
+  serviceSettings.applyServices(serviceConfString, &errmsg);
 }
 
 /** Loads previously saved settings */
 void
 ServicePage::load()
 {
+  ServiceSettings serviceSettings(Vidalia::torControl());
+  QList<Service> torServiceList;
+
   ui.removeButton->setEnabled(false);
   ui.copyButton->setEnabled(false);
   ui.browseButton->setEnabled(false);
   // get all services
-  _services = new QMap<int, Service>();
-  _torServices = new QMap<QString, Service>();
-  QList<Service> torServiceList;
+  _services->clear();
+  _torServices->clear();
 
-  QString torConfigurationString = _serviceSettings->getHiddenServiceDirectories();
+  QString torConfigurationString = serviceSettings.getHiddenServiceDirectories();
   torServiceList = extractSingleServices(torConfigurationString);
   QList<Service> completeList = torServiceList;
   // the services stored with vidalia
-  ServiceList serviceList = _serviceSettings->getServices();
+  ServiceList serviceList = serviceSettings.getServices();
   QList<Service> serviceSettingsList = serviceList.services();
   QListIterator<Service> it(serviceSettingsList);
   // check whether a service is already in the list because he is published
@@ -313,7 +312,7 @@ ServicePage::isServicePublished(Service service, QList<Service> torServices)
 /** this method creates/displays the values for each service
  *  shown in the service listing */
 void
-ServicePage::initServiceTable(QMap<int, Service>* _services)
+ServicePage::initServiceTable(QMap<int, Service>* services)
 {
   // clean the widget
   int rows = ui.serviceWidget->rowCount();
@@ -322,8 +321,8 @@ ServicePage::initServiceTable(QMap<int, Service>* _services)
   }
   //for each service
   int index = 0;
-  while(index < _services->size()) {
-    Service tempService = _services->value(index);
+  while(index < services->size()) {
+    Service tempService = services->value(index);
     ui.serviceWidget->insertRow(index);
     QTableWidgetItem *cboxitem = new QTableWidgetItem();
     cboxitem->setFlags(Qt::ItemIsSelectable);

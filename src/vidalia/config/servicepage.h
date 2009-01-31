@@ -65,16 +65,11 @@ private slots:
   void valueChanged();
 
 private:
-  /** A TorControl object used to talk to Tor. */
-  TorControl* _torControl;
-  /** A TorSettings object used for saving/loading the Tor settings */
-  TorSettings *_torSettings;
-  /** A ServiceSettings object used to load/save the services. */
-  ServiceSettings* _serviceSettings;
   /** A QMap, mapping from the row number in the table to the service Entity */
   QMap<int, Service>* _services;
   /** A QList, consisting of all running services before vidalia starts */
   QMap<QString, Service>* _torServices;
+
   /** Qt Designer generated object */
   Ui::ServicePage ui;
 };
