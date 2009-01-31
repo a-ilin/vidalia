@@ -50,7 +50,6 @@ ControlPasswordInputDialog::setResetEnabled(bool enabled)
   } else {
     ui.buttonBox->setStandardButtons(ui.buttonBox->standardButtons()
                                       & ~QDialogButtonBox::Reset);
-    
   }
 }
 
