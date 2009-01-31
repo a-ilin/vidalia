@@ -78,6 +78,8 @@
               Name="QtNetwork4.dll" Source="@QT_BINARY_DIR@\QtNetwork4.dll" />
         <File Id="QtXml4Dll" DiskId="1"
               Name="QtXml4.dll" Source="@QT_BINARY_DIR@\QtXml4.dll" />
+        <File Id="QtSvg4Dll" DiskId="1"
+              Name="QtSvg4.dll" Source="@QT_BINARY_DIR@\QtSvg4.dll" />
       </Component>
 
       <!-- MinGW-related library files -->
