@@ -29,8 +29,6 @@ public:
   /** Default constructor */
   AboutDialog(QWidget *parent = 0, Qt::WindowFlags flags = 0);
 
-  virtual void setVisible(bool visible);
-
 private:
   Ui::AboutDialog ui; /**< Qt Designer generated QObject **/
 };

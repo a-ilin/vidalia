@@ -16,6 +16,7 @@
 
 #include <QFile>
 #include <QDialog>
+#include <QPushButton>
 #include <vidalia.h>
 
 #include "aboutdialog.h"
@@ -24,40 +25,27 @@
 
 /** Default Constructor. */
 AboutDialog::AboutDialog(QWidget *parent, Qt::WindowFlags flags)
-: QDialog(parent, Qt::CustomizeWindowHint | Qt::WindowSystemMenuHint)
+  : QDialog(parent, Qt::CustomizeWindowHint | Qt::WindowSystemMenuHint)
 {
   ui.setupUi(this);
 
+  /* Add a "License" button to the button box at the bottom */
+  QPushButton *licenseButton;
+  licenseButton = ui.buttonBox->addButton(tr("License"),
+                                          QDialogButtonBox::ActionRole);
+  
   /* Get Vidalia's version number */
-  ui.lblVidaliaVersion->setText(Vidalia::version());
+  ui.lblVidaliaVersion->setText(QString("Vidalia %1").arg(Vidalia::version()));
 
   /* Get Qt's version number */
-  ui.lblQtVersion->setText(QT_VERSION_STR);
+  ui.lblQtVersion->setText(QString("Qt %1").arg(QT_VERSION_STR));
 
   /* Display the license information dialog when the "License" button 
    * is clicked. */
-  connect(ui.btnShowLicense, SIGNAL(clicked()),
+  connect(licenseButton, SIGNAL(clicked()),
           new LicenseDialog(this), SLOT(exec()));
-}
 
-/** Displays the About dialog window **/
-void
-AboutDialog::setVisible(bool visible)
-{
-  if (visible) {
-    /* Access the TorControl object to retrieve version */
-    TorControl *tc = Vidalia::torControl();
-    if (tc->isRunning()) {
-      QString version = tc->getTorVersionString();
-      if (version.isEmpty()) {
-        version = tr("Unavailable");
-      }
-      ui.lblTorVersion->setText(version);
-    } else {
-      ui.lblTorVersion->setText(tr("Not Running"));
-    }
-  }
-  adjustSize();
-  QDialog::setVisible(visible);
+  /* Close this dialog when the "Close" button is clicked */
+  connect(ui.buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
 }
 
