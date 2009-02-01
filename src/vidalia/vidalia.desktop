@@ -2,7 +2,7 @@
 Type=Application
 Exec=vidalia
 Name=Vidalia
-Icon=vidalia.png
+Icon=tor-logo.png
 GenericName=Tor GUI
 Terminal=false
 Categories=Network;Qt

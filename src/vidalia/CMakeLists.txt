@@ -451,9 +451,9 @@ endif(APPLE)
 install(TARGETS ${vidalia_BIN} DESTINATION bin)
 if(NOT WIN32 AND NOT APPLE)
   install(FILES vidalia.desktop DESTINATION share/applications)
-  install(FILES res/48x48/vidalia.png
+  install(FILES res/48x48/tor-logo.png
           DESTINATION share/icons/hicolor/48x48/apps)
-  install(FILES res/22x22/vidalia.png
+  install(FILES res/22x22/tor-logo.png
           DESTINATION share/icons/hicolor/22x22/apps)
 endif(NOT WIN32 AND NOT APPLE)
 
