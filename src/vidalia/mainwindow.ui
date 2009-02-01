@@ -19,7 +19,7 @@
    <string>Vidalia Control Panel</string>
   </property>
   <property name="windowIcon" >
-   <iconset resource="res/vidalia.qrc" >:/images/48x48/vidalia.png</iconset>
+   <iconset resource="res/vidalia.qrc" >:/images/32x32/tor-logo.png</iconset>
   </property>
   <widget class="QWidget" name="centralwidget" >
    <layout class="QVBoxLayout" >

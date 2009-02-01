@@ -18,11 +18,12 @@
         <file>16x16/media-playback-stop.png</file>
         <file>16x16/preferences-desktop-notification.png</file>
         <file>16x16/preferences-system.png</file>
-        <file>16x16/status-green.png</file>
-        <file>16x16/status-orange.png</file>
-        <file>16x16/status-red.png</file>
         <file>16x16/system-help.png</file>
         <file>16x16/system-run.png</file>
+        <file>16x16/tor-off.png</file>
+        <file>16x16/tor-on.png</file>
+        <file>16x16/tor-starting.png</file>
+        <file>16x16/tor-stopping.png</file>
         <file>16x16/utilities-log-viewer.png</file>
         <file>16x16/utilities-system-monitor.png</file>
         <file>16x16/view-media-artist.png</file>
@@ -41,10 +42,11 @@
         <file>22x22/list-remove.png</file>
         <file>22x22/page-zoom.png</file>
         <file>22x22/preferences-system.png</file>
-        <file>22x22/status-green.png</file>
-        <file>22x22/status-orange.png</file>
-        <file>22x22/status-red.png</file>
         <file>22x22/system-help.png</file>
+        <file>22x22/tor-off.png</file>
+        <file>22x22/tor-on.png</file>
+        <file>22x22/tor-starting.png</file>
+        <file>22x22/tor-stopping.png</file>
         <file>22x22/utilities-system-monitor.png</file>
     </qresource>
     <qresource prefix="/images">
@@ -68,11 +70,13 @@
         <file>32x32/preferences-system-network.png</file>
         <file>32x32/preferences-system-network-sharing.png</file>
         <file>32x32/services.png</file>
-        <file>32x32/status-green.png</file>
-        <file>32x32/status-orange.png</file>
-        <file>32x32/status-red.png</file>
         <file>32x32/system-help.png</file>
         <file>32x32/system-software-update.png</file>
+        <file>32x32/tor-logo.png</file>
+        <file>32x32/tor-off.png</file>
+        <file>32x32/tor-on.png</file>
+        <file>32x32/tor-starting.png</file>
+        <file>32x32/tor-stopping.png</file>
         <file>32x32/utilities-log-viewer.png</file>
         <file>32x32/utilities-system-monitor.png</file>
         <file>32x32/view-refresh.png</file>
@@ -89,15 +93,15 @@
         <file>48x48/modem.png</file>
         <file>48x48/network-workgroup.png</file>
         <file>48x48/preferences-system-network-sharing.png</file>
-        <file>48x48/status-green.png</file>
-        <file>48x48/status-orange.png</file>
-        <file>48x48/status-red.png</file>
+        <file>48x48/tor-off.png</file>
+        <file>48x48/tor-on.png</file>
+        <file>48x48/tor-starting.png</file>
+        <file>48x48/tor-stopping.png</file>
         <file>48x48/system-software-update.png</file>
-        <file>48x48/vidalia.png</file>
         <file>48x48/view-media-artist.png</file>
     </qresource>
     <qresource prefix="/images">
-        <file>128x128/vidalia-logo.png</file>
+        <file>128x128/tor-logo.png</file>
     </qresource>
     <qresource prefix="/images">
         <file>icons/node-unresponsive.png</file>
