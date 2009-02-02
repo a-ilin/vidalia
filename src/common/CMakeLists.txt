@@ -12,6 +12,7 @@
 
 
 set(common_SRCS
+  countryinfo.cpp
   crypto.cpp
   file.cpp
   html.cpp
@@ -22,7 +23,10 @@ set(common_SRCS
   torsocket.cpp
   zlibbytearray.cpp
 )
-qt4_wrap_cpp(common_SRCS torsocket.h)
+qt4_wrap_cpp(common_SRCS 
+  countryinfo.h
+  torsocket.h
+)
 
 
 if(USE_QSSLSOCKET)
