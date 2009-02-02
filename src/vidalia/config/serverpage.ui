@@ -5,20 +5,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>489</width>
-    <height>351</height>
+    <width>542</width>
+    <height>463</height>
    </rect>
   </property>
   <property name="contextMenuPolicy" >
    <enum>Qt::NoContextMenu</enum>
   </property>
   <layout class="QVBoxLayout" >
-   <property name="margin" >
-    <number>9</number>
-   </property>
-   <property name="spacing" >
-    <number>6</number>
-   </property>
    <item>
     <widget class="QRadioButton" name="rdoClientMode" >
      <property name="text" >
@@ -55,15 +49,10 @@
       <property name="margin" >
        <number>0</number>
       </property>
-      <property name="spacing" >
-       <number>6</number>
-      </property>
       <item>
        <widget class="QTabWidget" name="tabsMenu" >
         <property name="sizePolicy" >
-         <sizepolicy>
-          <hsizetype>7</hsizetype>
-          <vsizetype>7</vsizetype>
+         <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
@@ -76,12 +65,6 @@
           <string>Basic Settings</string>
          </attribute>
          <layout class="QGridLayout" >
-          <property name="margin" >
-           <number>9</number>
-          </property>
-          <property name="spacing" >
-           <number>6</number>
-          </property>
           <item row="2" column="0" >
            <widget class="QLabel" name="lblServerPort" >
             <property name="contextMenuPolicy" >
@@ -119,7 +102,7 @@
             <property name="orientation" >
              <enum>Qt::Horizontal</enum>
             </property>
-            <property name="sizeHint" >
+            <property name="sizeHint" stdset="0" >
              <size>
               <width>40</width>
               <height>20</height>
@@ -133,7 +116,7 @@
              <enum>Qt::NoContextMenu</enum>
             </property>
             <property name="toolTip" >
-             <string></string>
+             <string/>
             </property>
             <property name="text" >
              <string>Attempt to automatically configure port forwarding</string>
@@ -142,9 +125,6 @@
           </item>
           <item row="4" column="6" >
            <layout class="QHBoxLayout" >
-            <property name="margin" >
-             <number>0</number>
-            </property>
             <item>
              <widget class="QPushButton" name="btnTestUpnp" >
               <property name="contextMenuPolicy" >
@@ -167,7 +147,8 @@
                <string/>
               </property>
               <property name="icon" >
-               <iconset resource="../res/vidalia.qrc">:/images/22x22/system-help.png</iconset>
+               <iconset resource="../res/vidalia.qrc" >
+                <normaloff>:/images/22x22/system-help.png</normaloff>:/images/22x22/system-help.png</iconset>
               </property>
               <property name="iconSize" >
                <size>
@@ -176,13 +157,13 @@
                </size>
               </property>
              </widget>
-            </item> 
+            </item>
             <item>
              <spacer>
               <property name="orientation" >
                <enum>Qt::Horizontal</enum>
               </property>
-              <property name="sizeHint" >
+              <property name="sizeHint" stdset="0" >
                <size>
                 <width>40</width>
                 <height>20</height>
@@ -195,7 +176,7 @@
           <item row="1" column="1" colspan="7" >
            <widget class="QLineEdit" name="lineServerContact" >
             <property name="cursor" >
-             <cursor>4</cursor>
+             <cursorShape>IBeamCursor</cursorShape>
             </property>
             <property name="contextMenuPolicy" >
              <enum>Qt::NoContextMenu</enum>
@@ -208,21 +189,13 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
           </item>
           <item row="3" column="3" colspan="3" >
            <layout class="QHBoxLayout" >
-            <property name="margin" >
-             <number>0</number>
-            </property>
-            <property name="spacing" >
-             <number>6</number>
-            </property>
             <item>
              <widget class="QLabel" name="lblDirPort" >
               <property name="enabled" >
                <bool>false</bool>
               </property>
               <property name="sizePolicy" >
-               <sizepolicy>
-                <hsizetype>0</hsizetype>
-                <vsizetype>0</vsizetype>
+               <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
@@ -244,9 +217,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
                <bool>false</bool>
               </property>
               <property name="sizePolicy" >
-               <sizepolicy>
-                <hsizetype>0</hsizetype>
-                <vsizetype>0</vsizetype>
+               <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
@@ -258,7 +229,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
                </size>
               </property>
               <property name="cursor" >
-               <cursor>4</cursor>
+               <cursorShape>IBeamCursor</cursorShape>
               </property>
               <property name="contextMenuPolicy" >
                <enum>Qt::NoContextMenu</enum>
@@ -291,7 +262,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
             <property name="orientation" >
              <enum>Qt::Horizontal</enum>
             </property>
-            <property name="sizeHint" >
+            <property name="sizeHint" stdset="0" >
              <size>
               <width>321</width>
               <height>20</height>
@@ -304,7 +275,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
             <property name="orientation" >
              <enum>Qt::Vertical</enum>
             </property>
-            <property name="sizeHint" >
+            <property name="sizeHint" stdset="0" >
              <size>
               <width>20</width>
               <height>40</height>
@@ -317,7 +288,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
             <property name="orientation" >
              <enum>Qt::Horizontal</enum>
             </property>
-            <property name="sizeHint" >
+            <property name="sizeHint" stdset="0" >
              <size>
               <width>41</width>
               <height>20</height>
@@ -328,7 +299,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
           <item row="0" column="1" colspan="7" >
            <widget class="QLineEdit" name="lineServerNickname" >
             <property name="cursor" >
-             <cursor>4</cursor>
+             <cursorShape>IBeamCursor</cursorShape>
             </property>
             <property name="contextMenuPolicy" >
              <enum>Qt::NoContextMenu</enum>
@@ -347,9 +318,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
           <item row="2" column="1" >
            <widget class="QLineEdit" name="lineServerPort" >
             <property name="sizePolicy" >
-             <sizepolicy>
-              <hsizetype>0</hsizetype>
-              <vsizetype>0</vsizetype>
+             <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -361,7 +330,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
              </size>
             </property>
             <property name="cursor" >
-             <cursor>4</cursor>
+             <cursorShape>IBeamCursor</cursorShape>
             </property>
             <property name="contextMenuPolicy" >
              <enum>Qt::NoContextMenu</enum>
@@ -400,18 +369,10 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
           <string>Bandwidth Limits</string>
          </attribute>
          <layout class="QVBoxLayout" >
-          <property name="margin" >
-           <number>9</number>
-          </property>
-          <property name="spacing" >
-           <number>6</number>
-          </property>
           <item>
            <widget class="QLabel" name="label" >
             <property name="sizePolicy" >
-             <sizepolicy>
-              <hsizetype>5</hsizetype>
-              <vsizetype>5</vsizetype>
+             <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -441,12 +402,6 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
           </item>
           <item>
            <layout class="QHBoxLayout" >
-            <property name="margin" >
-             <number>0</number>
-            </property>
-            <property name="spacing" >
-             <number>6</number>
-            </property>
             <item>
              <widget class="QComboBox" name="cmboRate" >
               <property name="contextMenuPolicy" >
@@ -505,7 +460,8 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
                <string/>
               </property>
               <property name="icon" >
-               <iconset resource="../res/vidalia.qrc">:/images/22x22/system-help.png</iconset>
+               <iconset resource="../res/vidalia.qrc" >
+                <normaloff>:/images/22x22/system-help.png</normaloff>:/images/22x22/system-help.png</iconset>
               </property>
               <property name="iconSize" >
                <size>
@@ -520,7 +476,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
               <property name="orientation" >
                <enum>Qt::Horizontal</enum>
               </property>
-              <property name="sizeHint" >
+              <property name="sizeHint" stdset="0" >
                <size>
                 <width>40</width>
                 <height>20</height>
@@ -542,18 +498,12 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
              <enum>QFrame::Plain</enum>
             </property>
             <layout class="QGridLayout" >
-             <property name="margin" >
-              <number>9</number>
-             </property>
-             <property name="spacing" >
-              <number>6</number>
-             </property>
              <item row="4" column="0" >
               <spacer>
                <property name="orientation" >
                 <enum>Qt::Vertical</enum>
                </property>
-               <property name="sizeHint" >
+               <property name="sizeHint" stdset="0" >
                 <size>
                  <width>20</width>
                  <height>40</height>
@@ -563,26 +513,12 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
              </item>
              <item row="1" column="0" >
               <layout class="QHBoxLayout" >
-               <property name="margin" >
-                <number>0</number>
-               </property>
-               <property name="spacing" >
-                <number>6</number>
-               </property>
                <item>
                 <layout class="QVBoxLayout" >
-                 <property name="margin" >
-                  <number>0</number>
-                 </property>
-                 <property name="spacing" >
-                  <number>6</number>
-                 </property>
                  <item>
                   <widget class="QLabel" name="label_2" >
                    <property name="sizePolicy" >
-                    <sizepolicy>
-                     <hsizetype>1</hsizetype>
-                     <vsizetype>5</vsizetype>
+                    <sizepolicy vsizetype="Preferred" hsizetype="Minimum" >
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
@@ -594,18 +530,10 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
                  </item>
                  <item>
                   <layout class="QHBoxLayout" >
-                   <property name="margin" >
-                    <number>0</number>
-                   </property>
-                   <property name="spacing" >
-                    <number>6</number>
-                   </property>
                    <item>
                     <widget class="QLineEdit" name="lineAvgRateLimit" >
                      <property name="sizePolicy" >
-                      <sizepolicy>
-                       <hsizetype>1</hsizetype>
-                       <vsizetype>0</vsizetype>
+                      <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
                        <horstretch>0</horstretch>
                        <verstretch>0</verstretch>
                       </sizepolicy>
@@ -640,18 +568,10 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
                </item>
                <item>
                 <layout class="QVBoxLayout" >
-                 <property name="margin" >
-                  <number>0</number>
-                 </property>
-                 <property name="spacing" >
-                  <number>6</number>
-                 </property>
                  <item>
                   <widget class="QLabel" name="label_5" >
                    <property name="sizePolicy" >
-                    <sizepolicy>
-                     <hsizetype>1</hsizetype>
-                     <vsizetype>5</vsizetype>
+                    <sizepolicy vsizetype="Preferred" hsizetype="Minimum" >
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
@@ -669,18 +589,10 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
                  </item>
                  <item>
                   <layout class="QHBoxLayout" >
-                   <property name="margin" >
-                    <number>0</number>
-                   </property>
-                   <property name="spacing" >
-                    <number>6</number>
-                   </property>
                    <item>
                     <widget class="QLineEdit" name="lineMaxRateLimit" >
                      <property name="sizePolicy" >
-                      <sizepolicy>
-                       <hsizetype>1</hsizetype>
-                       <vsizetype>0</vsizetype>
+                      <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
                        <horstretch>0</horstretch>
                        <verstretch>0</verstretch>
                       </sizepolicy>
@@ -717,7 +629,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
                      <property name="sizeType" >
                       <enum>QSizePolicy::Expanding</enum>
                      </property>
-                     <property name="sizeHint" >
+                     <property name="sizeHint" stdset="0" >
                       <size>
                        <width>71</width>
                        <height>20</height>
@@ -749,7 +661,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
             <property name="orientation" >
              <enum>Qt::Vertical</enum>
             </property>
-            <property name="sizeHint" >
+            <property name="sizeHint" stdset="0" >
              <size>
               <width>20</width>
               <height>40</height>
@@ -764,12 +676,6 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
           <string>Exit Policies</string>
          </attribute>
          <layout class="QGridLayout" >
-          <property name="margin" >
-           <number>9</number>
-          </property>
-          <property name="spacing" >
-           <number>6</number>
-          </property>
           <item row="1" column="0" >
            <widget class="QFrame" name="frmPolicies" >
             <property name="frameShape" >
@@ -779,20 +685,8 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
              <enum>QFrame::Plain</enum>
             </property>
             <layout class="QHBoxLayout" >
-             <property name="margin" >
-              <number>9</number>
-             </property>
-             <property name="spacing" >
-              <number>6</number>
-             </property>
              <item>
               <layout class="QGridLayout" >
-               <property name="margin" >
-                <number>0</number>
-               </property>
-               <property name="spacing" >
-                <number>6</number>
-               </property>
                <item row="1" column="1" >
                 <widget class="QCheckBox" name="chkIRC" >
                  <property name="contextMenuPolicy" >
@@ -875,12 +769,6 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
              </item>
              <item>
               <layout class="QVBoxLayout" >
-               <property name="margin" >
-                <number>0</number>
-               </property>
-               <property name="spacing" >
-                <number>6</number>
-               </property>
                <item>
                 <widget class="QToolButton" name="btnExitHelp" >
                  <property name="minimumSize" >
@@ -899,7 +787,8 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
                   <string/>
                  </property>
                  <property name="icon" >
-                  <iconset resource="../res/vidalia.qrc">:/images/22x22/system-help.png</iconset>
+                  <iconset resource="../res/vidalia.qrc" >
+                   <normaloff>:/images/22x22/system-help.png</normaloff>:/images/22x22/system-help.png</iconset>
                  </property>
                  <property name="iconSize" >
                   <size>
@@ -914,7 +803,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
                  <property name="orientation" >
                   <enum>Qt::Vertical</enum>
                  </property>
-                 <property name="sizeHint" >
+                 <property name="sizeHint" stdset="0" >
                   <size>
                    <width>20</width>
                    <height>42</height>
@@ -929,7 +818,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
                <property name="orientation" >
                 <enum>Qt::Horizontal</enum>
                </property>
-               <property name="sizeHint" >
+               <property name="sizeHint" stdset="0" >
                 <size>
                  <width>40</width>
                  <height>20</height>
@@ -943,9 +832,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
           <item row="0" column="0" >
            <widget class="QLabel" name="label_3" >
             <property name="sizePolicy" >
-             <sizepolicy>
-              <hsizetype>0</hsizetype>
-              <vsizetype>0</vsizetype>
+             <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -988,7 +875,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
             <property name="orientation" >
              <enum>Qt::Vertical</enum>
             </property>
-            <property name="sizeHint" >
+            <property name="sizeHint" stdset="0" >
              <size>
               <width>20</width>
               <height>40</height>
@@ -1006,7 +893,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
    <item>
     <widget class="QLabel" name="lblYourBridgeRelayIs" >
      <property name="cursor" >
-      <cursor>0</cursor>
+      <cursorShape>ArrowCursor</cursorShape>
      </property>
      <property name="frameShape" >
       <enum>QFrame::NoFrame</enum>
@@ -1018,22 +905,16 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
       <bool>true</bool>
      </property>
      <property name="textInteractionFlags" >
-      <enum>Qt::TextSelectableByMouse</enum>
+      <set>Qt::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
    <item>
     <layout class="QHBoxLayout" >
-     <property name="margin" >
-      <number>0</number>
-     </property>
-     <property name="spacing" >
-      <number>6</number>
-     </property>
      <item>
       <widget class="QLabel" name="lblBridgeIdentity" >
        <property name="cursor" >
-        <cursor>4</cursor>
+        <cursorShape>IBeamCursor</cursorShape>
        </property>
        <property name="toolTip" >
         <string>This is the identity of your bridge relay that you can give to other people</string>
@@ -1048,7 +929,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
         <string/>
        </property>
        <property name="textInteractionFlags" >
-        <enum>Qt::TextSelectableByMouse</enum>
+        <set>Qt::TextSelectableByMouse</set>
        </property>
       </widget>
      </item>
@@ -1064,18 +945,29 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
         <string/>
        </property>
        <property name="icon" >
-        <iconset resource="../res/vidalia.qrc" >:/images/22x22/edit-copy.png</iconset>
+        <iconset resource="../res/vidalia.qrc" >
+         <normaloff>:/images/22x22/edit-copy.png</normaloff>:/images/22x22/edit-copy.png</iconset>
        </property>
       </widget>
      </item>
     </layout>
    </item>
    <item>
+    <widget class="QLabel" name="lblBridgeUsage" >
+     <property name="text" >
+      <string>&lt;a href="#bridgeUsage">Who has used my bridge?&lt;/a></string>
+     </property>
+     <property name="alignment" >
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
     <spacer>
      <property name="orientation" >
       <enum>Qt::Vertical</enum>
      </property>
-     <property name="sizeHint" >
+     <property name="sizeHint" stdset="0" >
       <size>
        <width>420</width>
        <height>16</height>

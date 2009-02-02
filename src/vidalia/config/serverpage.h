@@ -80,6 +80,8 @@ private slots:
   void testUpnp();
   /** Called when the user clicks the UPnP test dialog's help button. */
   void upnpHelp();
+  /** Called when the user clicks on a QLabel containing a hyperlink. */
+  void linkActivated(const QString &url);
 
 private:
   /** Index values of rate values in the bandwidth limits dropdown box. */
@@ -109,6 +111,9 @@ private:
    *  or "address:port fingerprint" will be displayed, depending on whether
    *  our GETCONF and GETINFO commands are successful. */
   void loadBridgeIdentity();
+  /** Retrieves bridge usage history from Tor, parses and validates it, and
+   * then displays it in a new dialog. */
+  void displayBridgeUsage();
 
   /** A ServerSettings object used to get and set information about how a
    * local Tor server is configured. */

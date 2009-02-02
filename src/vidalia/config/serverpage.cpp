@@ -15,10 +15,12 @@
 */
 
 #include <QClipboard>
+#include <QMessageBox>
 #include <vidalia.h>
 #include <vmessagebox.h>
 #include <html.h>
 #include <config.h>
+#include <stringutil.h>
 
 #include "configdialog.h"
 #include "serverpage.h"
@@ -26,6 +28,7 @@
 #include "portvalidator.h"
 #include "domainvalidator.h"
 #include "nicknamevalidator.h"
+#include "bridgeusagedialog.h"
 
 #if defined(USE_MINIUPNPC)
 #include "upnptestdialog.h"
@@ -95,6 +98,8 @@ ServerPage::ServerPage(QWidget *parent)
                            this, SLOT(onDisconnected()));
   connect(ui.btnCopyBridgeIdentity, SIGNAL(clicked()),
                               this, SLOT(copyBridgeIdentity()));
+  connect(ui.lblBridgeUsage, SIGNAL(linkActivated(QString)),
+                       this, SLOT(linkActivated(QString)));
 
   /* Set validators for address, mask and various port number fields */
   ui.lineServerNickname->setValidator(new NicknameValidator(this));
@@ -200,6 +205,7 @@ ServerPage::loadBridgeIdentity()
   ui.lblYourBridgeRelayIs->setEnabled(!bridge.isEmpty());
   ui.lblBridgeIdentity->setEnabled(!bridge.isEmpty());
   ui.btnCopyBridgeIdentity->setEnabled(!bridge.isEmpty());
+  ui.lblBridgeUsage->setVisible(!bridge.isEmpty() && tc->isConnected());
 }
 
 /** Called when the user toggles any one of the server mode radio buttons
@@ -310,7 +316,7 @@ ServerPage::load()
   ui.lineDirPort->setText(QString::number(_settings->getDirPort()));
   ui.lineServerContact->setText(_settings->getContactInfo());
   ui.chkMirrorDirectory->setChecked(_settings->isDirectoryMirror());
-  
+
   loadBandwidthLimits();
   loadExitPolicies();
   loadBridgeIdentity();
@@ -527,5 +533,71 @@ void
 ServerPage::upnpHelp()
 {
   emit helpRequested("server.upnp");
+}
+
+/** Called when the user clicks on a QLabel containing a hyperlink. */
+void
+ServerPage::linkActivated(const QString &url)
+{
+  if (!url.compare("#bridgeUsage"))
+    displayBridgeUsage();
+}
+
+/** Retrieves bridge usage history from Tor, parses and validates it, and
+ * then displays it in a new dialog. */
+void
+ServerPage::displayBridgeUsage()
+{
+  QString info;
+
+  info = Vidalia::torControl()->getInfo("status/clients-seen").toString();
+  if (info.isEmpty()) {
+    QMessageBox dlg(QMessageBox::Information, tr("No Recent Usage"),
+                    tr("No clients have used your relay recently."), 
+                    QMessageBox::Ok, this);
+    dlg.setInformativeText(tr("Leave your relay running so clients have "
+                              "a better chance of finding and using it."));
+    dlg.exec();
+  } else {
+    QDateTime timeStarted;
+    QHash<QString,int> countrySummary;
+    QHash<QString,QString> keyvals;
+    BridgeUsageDialog dlg(this);
+    bool ok;
+
+    keyvals = string_parse_keyvals(info, &ok);
+    if (!ok || !keyvals.contains("TimeStarted") 
+            || !keyvals.contains("CountrySummary"))
+      goto err;
+
+    timeStarted = QDateTime::fromString(keyvals.value("TimeStarted"), 
+                                        "yyyy-MM-dd HH:mm:ss");
+    if (!timeStarted.isValid())
+      goto err;
+
+    foreach (QString pair, keyvals.value("CountrySummary").split(",")) {
+      QStringList parts = pair.split("=");
+      if (parts.size() != 2)
+        goto err;
+
+      countrySummary.insert(parts.at(0).toUpper(), parts.at(1).toInt(&ok));
+      if (!ok)
+        goto err;
+    }
+
+    dlg.update(timeStarted, countrySummary);
+    dlg.exec();
+  }
+  return;
+
+err:
+  QMessageBox dlg(QMessageBox::Warning, tr("Bridge History"),
+                  tr("Vidalia was unable to retrieve your bridge's usage "
+                     "history."), QMessageBox::Ok, this);
+  dlg.setInformativeText(tr("Tor returned an improperly formatted "
+                            "response when Vidalia requested your "
+                            "bridge's usage history."));
+  dlg.setDetailedText(tr("The returned response was: %1").arg(info));
+  dlg.exec();
 }
 
