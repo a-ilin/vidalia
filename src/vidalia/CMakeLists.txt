@@ -72,6 +72,7 @@ set(vidalia_SRCS ${vidalia_SRCS}
   config/abstracttorsettings.cpp
   config/advancedpage.cpp
   config/appearancepage.cpp
+  config/bridgeusagedialog.cpp
   config/configdialog.cpp
   config/configpagestack.cpp
   config/domainvalidator.cpp
@@ -97,6 +98,7 @@ qt4_wrap_cpp(vidalia_SRCS
   config/abstracttorsettings.h
   config/advancedpage.h
   config/appearancepage.h
+  config/bridgeusagedialog.h
   config/configdialog.h
   config/configpage.h
   config/configpagestack.h
@@ -243,6 +245,7 @@ qt4_wrap_ui(vidalia_SRCS
   bwgraph/bwgraph.ui
   config/advancedpage.ui
   config/appearancepage.ui
+  config/bridgeusagedialog.ui
   config/configdialog.ui
   config/generalpage.ui
   config/networkpage.ui
