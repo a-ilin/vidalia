@@ -28,21 +28,21 @@
  * then the full path to <b>filename</b> will be created. Returns true on 
  * success, or false on error and <b>errmsg</b> will be set. */
 bool
-touch_file(QString filename, bool createdir, QString *errmsg)
+touch_file(const QString &filename, bool createdir, QString *errmsg)
 {
   /* Expand the file's path if it starts with a shortcut, like "~/" or
    * "%APPDATA%" */
-  filename = expand_filename(filename);
+  QString expanded = expand_filename(filename);
     
   /* If the file's path doesn't exist and we're supposed to create it, do that
    * now. */
-  if (createdir && !create_path(QFileInfo(filename).absolutePath())) {
+  if (createdir && !create_path(QFileInfo(expanded).absolutePath())) {
     return false;
   }
  
   /* Touch the file */
-  QFile file(filename);
-  if (!QFileInfo(filename).exists()) {
+  QFile file(expanded);
+  if (!QFileInfo(expanded).exists()) {
     if (!file.open(QIODevice::WriteOnly)) {
       return err(errmsg, file.errorString());
     } 
@@ -52,12 +52,11 @@ touch_file(QString filename, bool createdir, QString *errmsg)
 
 /** Creates all directories in <b>path</b>, if they do not exist. */
 bool
-create_path(QString path)
+create_path(const QString &path)
 {
   QDir dir(path);
   if (!dir.exists()) {
-    path = dir.absolutePath();
-    if (!dir.mkpath(path)) {
+    if (!dir.mkpath(dir.absolutePath())) {
       return false;
     }
   }
@@ -68,14 +67,15 @@ create_path(QString path)
  * destination must already exist. Returns true on success, and false
  * otherwise. */
 bool
-copy_dir(QString source, QString dest)
+copy_dir(const QString &source, const QString &dest)
 {
   /* Source and destination as QDir's */
   QDir src(source);
   QDir dst(dest);
   
   /* Get contents of the directory */
-  QFileInfoList contents = src.entryInfoList(QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot);
+  QFileInfoList contents = src.entryInfoList(QDir::Files | QDir::Dirs 
+                                               | QDir::NoDotAndDotDot);
 
   /* Copy each entry in src to dst */
   foreach (QFileInfo fileInfo, contents) {
@@ -105,20 +105,21 @@ copy_dir(QString source, QString dest)
  * expand "%APPDATA%" and "%PROGRAMFILES%". If <b>filename</b> does not
  * start with a shortcut, <b>filename</b> will be returned unmodified. */
 QString
-expand_filename(QString filename)
+expand_filename(const QString &filename)
 {
+  QString fname = filename;
 #if defined(Q_OS_WIN32)
-  if (filename.startsWith("%APPDATA%\\") ||
-      filename.startsWith("%APPDATA%/"))
-    return filename.replace(0, 9, win32_app_data_folder());
+  if (fname.startsWith("%APPDATA%\\") ||
+      fname.startsWith("%APPDATA%/"))
+    return fname.replace(0, 9, win32_app_data_folder());
     
-  if (filename.startsWith("%PROGRAMFILES%\\") ||
-      filename.startsWith("%PROGRAMFILES%/"))
-    return filename.replace(0, 14, win32_program_files_folder());
+  if (fname.startsWith("%PROGRAMFILES%\\") ||
+      fname.startsWith("%PROGRAMFILES%/"))
+    return fname.replace(0, 14, win32_program_files_folder());
 #else
-  if (filename.startsWith("~/"))
-    return filename.replace(0, 1, QDir::homePath());
+  if (fname.startsWith("~/"))
+    return fname.replace(0, 1, QDir::homePath());
 #endif
-  return filename;
+  return fname;
 }
 

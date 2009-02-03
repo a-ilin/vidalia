@@ -639,7 +639,9 @@ MainWindow::onSubprocessFinished(int exitCode, QProcess::ExitStatus exitStatus)
   QString imExecutable = settings.getIMExecutable();
 
   /* A subprocess is finished if it successfully exited or was never asked to start */
-  bool browserDone = (browserExecutable.isEmpty() && browserDirectory.isEmpty()) || _browserProcess->isDone();
+  bool browserDone = (browserExecutable.isEmpty()
+                        && browserDirectory.isEmpty())
+                        || _browserProcess->isDone();
   bool imDone = imExecutable.isEmpty() || _imProcess->isDone();
 
   /* Exit if both subprocesses are finished */

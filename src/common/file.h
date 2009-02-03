@@ -23,20 +23,21 @@
 /**  Create an empty file named <b>filename</b>. if <b>createdir</b> is true,
  * then the full path to <b>filename</b> will be created. Returns true on 
  * success, or false on error and <b>errmsg</b> will be set. */
-bool touch_file(QString filename, bool createdir = false, QString *errmsg = 0);
+bool touch_file(const QString &filename, bool createdir = false,
+                QString *errmsg = 0);
 
 /** Creates all directories in <b>path</b>, if they do not exist. */
-bool create_path(QString path);
+bool create_path(const QString &path);
 
 /** Expands <b>filename</b> if it starts with "~/". On Windows, this will
  * expand "%APPDATA%" and "%PROGRAMFILES%". If <b>filename</b> does not
  * start with a shortcut, <b>filename</b> will be returned unmodified. */
-QString expand_filename(QString filename);
+QString expand_filename(const QString &filename);
     
 /** Recursively copy the contents of one directory to another. The
  * destination must already exist. Returns true on success, and false
  * otherwise. */
-bool copy_dir(QString source, QString dest);
+bool copy_dir(const QString &source, const QString &dest);
 
 #endif
 
