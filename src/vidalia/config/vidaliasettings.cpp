@@ -32,6 +32,7 @@
 #define SETTING_DATA_DIRECTORY      "DataDirectory"
 #define SETTING_SHOW_MAINWINDOW_AT_START  "ShowMainWindowAtStart"
 #define SETTING_BROWSER_EXECUTABLE  "BrowserExecutable"
+#define SETTING_BROWSER_DIRECTORY   "BrowserDirectory"
 #define SETTING_IM_EXECUTABLE       "IMExecutable"
 #define SETTING_RUN_PROXY_AT_START  "RunProxyAtStart"
 #define SETTING_PROXY_EXECUTABLE    "ProxyExecutable"
@@ -175,8 +176,9 @@ VidaliaSettings::setRunVidaliaOnBoot(bool run)
 #endif
 }
 
-/** Returns a fully-qualified path to the web browser, including the
- * executable name. */
+/** If browserDirectory is empty, returns a fully-qualified path to
+ * the web browser, including the executable name. If browserDirectory
+ * is set, then returns the basename of the configured web browser */
 QString
 VidaliaSettings::getBrowserExecutable() const
 {
@@ -189,6 +191,21 @@ void
 VidaliaSettings::setBrowserExecutable(const QString &browserExecutable)
 {
   setValue(SETTING_BROWSER_EXECUTABLE, browserExecutable);
+}
+
+/** Returns a fully-qualified path to the web browser directory */
+QString
+VidaliaSettings::getBrowserDirectory() const
+{
+  return QDir::convertSeparators(value(SETTING_BROWSER_DIRECTORY).toString());
+}
+
+/** Sets the location and name of the web browser directory to the given string.
+ * If set to the empty string, the browser will not be started. */
+void
+VidaliaSettings::setBrowserDirectory(const QString &browserDirectory)
+{
+  setValue(SETTING_BROWSER_DIRECTORY, browserDirectory);
 }
 
 /** Returns a fully-qualified path to the IM client, including the

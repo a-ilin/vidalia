@@ -32,6 +32,8 @@
 #include <vmessagebox.h>
 #include <procutil.h>
 
+#include "procutil.h"
+
 #include "mainwindow.h"
 #include "controlpasswordinputdialog.h"
 
@@ -151,7 +153,6 @@ MainWindow::MainWindow()
            this, SLOT(onSubprocessFinished(int, QProcess::ExitStatus)));
   connect(_browserProcess, SIGNAL(startFailed(QString)),
            this, SLOT(onBrowserFailed(QString)));
-  _browserProcess->setEnvironment(QProcess::systemEnvironment() << "TZ=UTC");
 
   /* Create a new HelperProcess object, used to start the IM client */
   _imProcess = new HelperProcess(this);
@@ -551,20 +552,77 @@ MainWindow::createMenuBar()
 #endif
 }
 
+/** Start a web browser when given the directory containing the executable and profile */
+void
+MainWindow::launchBrowserFromDirectory()
+{
+  VidaliaSettings settings;
+
+  QString browserDirectory = settings.getBrowserDirectory();
+  QString browserDirectoryFilename = settings.getBrowserExecutable();
+
+  /* Set TZ=UTC (to stop leaking timezone information) and
+   * MOZ_NO_REMOTE=1 (to allow multiple instances of Firefox */
+  QStringList env = QProcess::systemEnvironment();
+  env << "TZ=UTC";
+  env << "MOZ_NO_REMOTE=1";
+  _browserProcess->setEnvironment(env);
+
+  /* The browser is in <browserDirectory>/App/Firefox/<browserDirectoryFilename> */
+  QString browserExecutable =
+    QDir::toNativeSeparators(browserDirectory + "/App/Firefox/" + browserDirectoryFilename);
+  /* The profile is in <browserDirectory>/Data/profile */
+  QString profileDir =
+    QDir::toNativeSeparators(browserDirectory + "/Data/profile");
+
+  /* Copy the profile directory if it's not already there */
+  QDir browserDirObj = QDir(browserDirectory);
+
+  /* Copy the profile directory if it's not already there */
+  if (!browserDirObj.exists("Data/profile")) {
+    browserDirObj.mkdir("Data/profile");
+    copy_dir(browserDirectory + "/App/DefaultData/profile", browserDirectory + "/Data/profile");
+  }
+
+  /* Copy the plugins directory if it's not already there */
+  if (!browserDirObj.exists("Data/plugins")) {
+    browserDirObj.mkdir("Data/plugins");
+    copy_dir(browserDirectory + "/App/DefaultData/plugins", browserDirectory + "/Data/plugins");
+  }
+
+  /* Build the command line arguments */
+  QStringList commandLine;
+  // Is this better or worse than MOZ_NO_REMOTE?
+  //commandLine << "-no-remote";
+  commandLine << "-profile";
+  commandLine << profileDir;
+
+  /* Launch the browser */
+  _browserProcess->start(browserExecutable, commandLine);
+}
+
 /** Starts the web browser and IM client, if appropriately configured */
 void
 MainWindow::startSubprocesses()
 {
   VidaliaSettings settings;
-  QString executable = settings.getBrowserExecutable();
-  
-  if (!executable.isEmpty())
-    _browserProcess->start(executable, QStringList());
+  QString subprocess;
 
-  executable = settings.getIMExecutable();
+  /* Launch the web browser */
+  if (!(subprocess = settings.getBrowserDirectory()).isEmpty()) {
+    /* The user has set BrowserDirectory; use this */
+    launchBrowserFromDirectory();
+  } else if (!(subprocess = settings.getBrowserExecutable()).isEmpty()) {
+    /* BrowserDirectory is not set, but BrowserExecutable is; use this */
+    _browserProcess->setEnvironment(QProcess::systemEnvironment() << "TZ=UTC");
+    _browserProcess->start(subprocess, QStringList());
+  }
 
-  if (!executable.isEmpty())
-    _imProcess->start(executable, QStringList());
+  /* Launch the IM client */
+  subprocess = settings.getIMExecutable();
+
+  if (!subprocess.isEmpty())
+    _imProcess->start(subprocess, QStringList());
 }
 
 /** Called when browser or IM client have exited */
@@ -577,15 +635,60 @@ MainWindow::onSubprocessFinished(int exitCode, QProcess::ExitStatus exitStatus)
   /* Get path to browser and IM client */
   VidaliaSettings settings;
   QString browserExecutable = settings.getBrowserExecutable();
+  QString browserDirectory = settings.getBrowserDirectory();
   QString imExecutable = settings.getIMExecutable();
 
   /* A subprocess is finished if it successfully exited or was never asked to start */
-  bool browserDone = browserExecutable.isEmpty() || _browserProcess->isDone();
+  bool browserDone = (browserExecutable.isEmpty() && browserDirectory.isEmpty()) || _browserProcess->isDone();
   bool imDone = imExecutable.isEmpty() || _imProcess->isDone();
 
   /* Exit if both subprocesses are finished */
-  if (browserDone && imDone)
-    shutdown();
+  if (browserDone && imDone) {
+    if (browserDirectory.isEmpty()) {
+      /* We are using the standard launcher, exit immediately */
+      shutdown();
+    } else {
+      /* We are using the alternate launcher, wait until the browser has really died */
+      QTimer *browserWatcher = new QTimer(this);
+      connect(browserWatcher, SIGNAL(timeout()), this, SLOT(onCheckForBrowser()));
+      browserWatcher->start(2000);
+    }
+  }
+}
+
+/** Called periodically to check if the browser is running. If it is not,
+ * exit Vidalia cleanly */
+void
+MainWindow::onCheckForBrowser()
+{
+/* This only works on Windows for now */
+#if defined(Q_OS_WIN)
+
+  VidaliaSettings settings;
+  QString browserDirectoryFilename = settings.getBrowserExecutable();
+
+  /* Get list of running processes */
+  QHash<qint64, QString> procList = win32_process_list();
+
+  /* On old versions of Windows win32_process_list() will return
+     an empty list. In this case, just keep Vidalia open */
+  if (procList.isEmpty()) {
+    return;
+  }
+
+  /* Loop over all processes or until we find <browserDirectoryFilename> */
+  QHashIterator<qint64, QString> i(procList);
+  while (i.hasNext()) {
+    i.next();
+    if (i.value().toLower() == browserDirectoryFilename) {
+      /* The browser is still running, so Vidalia should keep running too */
+      return;
+    }
+  }
+
+  /* The browser isn't running, exit Vidalia */
+  shutdown();
+#endif  
 }
 
 /** Called when the web browser failed to start, for example, because the path

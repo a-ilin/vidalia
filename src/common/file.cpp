@@ -64,6 +64,43 @@ create_path(QString path)
   return true;
 }
 
+/** Recursively copy the contents of one directory to another. The
+ * destination must already exist. Returns true on success, and false
+ * otherwise. */
+bool
+copy_dir(QString source, QString dest)
+{
+  /* Source and destination as QDir's */
+  QDir src(source);
+  QDir dst(dest);
+  
+  /* Get contents of the directory */
+  QFileInfoList contents = src.entryInfoList(QDir::Files | QDir::Dirs | QDir::NoDotAndDotDot);
+
+  /* Copy each entry in src to dst */
+  foreach (QFileInfo fileInfo, contents) {
+    /* Get absolute path of source and destination */
+    QString fileName = fileInfo.fileName();
+    QString srcFilePath = src.absoluteFilePath(fileName);
+    QString dstFilePath = dst.absoluteFilePath(fileName);
+
+    if (fileInfo.isDir()) {
+      /* This is a directory, make it and recurse */
+      if (!dst.mkdir(fileName))
+	return false;
+      if (!copy_dir(srcFilePath, dstFilePath))
+	return false;
+    } else if (fileInfo.isFile()) {
+      /* This is a file, copy it */
+      if (!QFile::copy(srcFilePath, dstFilePath))
+	return false;
+    } 
+    /* Ignore special files (e.g. symlinks, devices) */
+
+  }
+  return true;
+}
+
 /** Expands <b>filename</b> if it starts with "~/". On Windows, this will
  * expand "%APPDATA%" and "%PROGRAMFILES%". If <b>filename</b> does not
  * start with a shortcut, <b>filename</b> will be returned unmodified. */

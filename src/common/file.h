@@ -32,6 +32,11 @@ bool create_path(QString path);
  * expand "%APPDATA%" and "%PROGRAMFILES%". If <b>filename</b> does not
  * start with a shortcut, <b>filename</b> will be returned unmodified. */
 QString expand_filename(QString filename);
+    
+/** Recursively copy the contents of one directory to another. The
+ * destination must already exist. Returns true on success, and false
+ * otherwise. */
+bool copy_dir(QString source, QString dest);
 
 #endif
 

@@ -111,6 +111,9 @@ private slots:
   void toggleShowOnStartup(bool checked);
   /** Called when the web browser or IM client have stopped */
   void onSubprocessFinished(int exitCode, QProcess::ExitStatus exitStatus);
+  /** Called periodically to check if the browser is running. If it is not,
+   * exit Vidalia cleanly */
+  void onCheckForBrowser();
   /** Called web the web browser failed to start */
   void onBrowserFailed(QString errmsg);
   /** Called web the IM client failed to start */
@@ -168,6 +171,8 @@ private:
   /** Updates the UI to reflect Tor's current <b>status</b>. Returns the
    * previously set TorStatus value. */
   TorStatus updateTorStatus(TorStatus status);
+  /** Start a web browser when given the directory containing the executable and profile */
+  void launchBrowserFromDirectory();
   /** Starts the web browser, if appropriately configured */
   void startSubprocesses();
   /** Starts the proxy server, if appropriately configured */
