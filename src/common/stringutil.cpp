@@ -15,6 +15,7 @@
 */
 
 #include <QCoreApplication>
+#include <QApplication>
 
 #include "stringutil.h"
 
