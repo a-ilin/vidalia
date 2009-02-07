@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-11-24 15:58+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2009-02-07 04:29+0000\n"
+"Last-Translator: John Dissident <arrakistor.test1@gmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Vidalia ts2po 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 1.1.0\n"
 
 #: aboutdialog.ui:16
 msgctxt "AboutDialog"
@@ -35,12 +35,12 @@ msgstr "Qt"
 #: aboutdialog.cpp:53
 msgctxt "AboutDialog"
 msgid "Unavailable"
-msgstr ""
+msgstr "Elérhetetlen"
 
 #: aboutdialog.cpp:57
 msgctxt "AboutDialog"
 msgid "Not Running"
-msgstr ""
+msgstr "Nem fut"
 
 #: aboutdialog.ui:81
 msgctxt "AboutDialog"
@@ -50,7 +50,7 @@ msgstr "0.2.0"
 #: aboutdialog.ui:106
 msgctxt "AboutDialog"
 msgid "0.2.0.31-alpha-dev (r123456)"
-msgstr ""
+msgstr "0.2.0.31-alpha-dev (r123456)"
 
 #: aboutdialog.ui:131
 msgctxt "AboutDialog"
@@ -60,12 +60,12 @@ msgstr "4.4.2"
 #: aboutdialog.ui:107
 msgctxt "AboutDialog"
 msgid "License"
-msgstr ""
+msgstr "Licensz"
 
 #: aboutdialog.ui:163
 msgctxt "AboutDialog"
 msgid "version"
-msgstr ""
+msgstr "verzió"
 
 #: advancedpage.ui:28
 msgctxt "AdvancedPage"
@@ -227,7 +227,7 @@ msgstr "Vidalia külalakja"
 #: appearancepage.cpp:67
 msgctxt "AppearancePage"
 msgid "Vidalia was unable to load the selected language translation."
-msgstr ""
+msgstr "Nem sikerült a választott nyelvi fordítás betöltése."
 
 #: bwgraph.ui:16
 msgctxt "BandwidthGraph"
@@ -432,17 +432,19 @@ msgstr "Nem sikerült a TOR-hoz kapcsolódni. (%1)"
 #: controlpasswordinputdialog.ui:28
 msgctxt "ControlPasswordInputDialog"
 msgid "Password Required"
-msgstr ""
+msgstr "Jelszó szükséges"
 
 #: controlpasswordinputdialog.ui:80
 msgctxt "ControlPasswordInputDialog"
 msgid "Vidalia has connected to a running Tor process that requires a password. Please enter your control password: "
 msgstr ""
+"A Vidalia csatlakozott egy már futó TOR folyamathoz, amely jelszót kér. Írja "
+"be a kotroll jelszót: "
 
 #: controlpasswordinputdialog.ui:99
 msgctxt "ControlPasswordInputDialog"
 msgid "Remember my password"
-msgstr ""
+msgstr "Emlékezzen a jelszavamra"
 
 #: controlsocket.cpp:80
 msgctxt "ControlSocket"
@@ -512,17 +514,17 @@ msgstr "TOR"
 #: generalpage.ui:93
 msgctxt "GeneralPage"
 msgid "Proxy Application (optional)"
-msgstr ""
+msgstr "Proxy Program (opcionális)"
 
 #: generalpage.ui:99
 msgctxt "GeneralPage"
 msgid "Start a proxy application when Tor starts"
-msgstr ""
+msgstr "Proxy program indítása a TOR-ral"
 
 #: generalpage.ui:135
 msgctxt "GeneralPage"
 msgid "Proxy Application Arguments:"
-msgstr ""
+msgstr "Proxy program parancssori kapcsolói: "
 
 #: graphframe.cpp:238
 msgctxt "GraphFrame"
@@ -757,17 +759,17 @@ msgstr ""
 #: licensedialog.ui:13
 msgctxt "LicenseDialog"
 msgid "License Information"
-msgstr ""
+msgstr "Licensz információk"
 
 #: licensedialog.ui:43
 msgctxt "LicenseDialog"
 msgid "License"
-msgstr ""
+msgstr "Licensz"
 
 #: licensedialog.ui:76
 msgctxt "LicenseDialog"
 msgid "Credits"
-msgstr ""
+msgstr "Készítők"
 
 #: logevent.cpp:57
 msgctxt "LogEvent"
@@ -1323,12 +1325,15 @@ msgstr "TOR beléptetése"
 #: mainwindow.cpp:1210
 msgctxt "MainWindow"
 msgid "Password Reset Failed"
-msgstr ""
+msgstr "A jelszó-visszaállítás nem sikerült"
 
 #: mainwindow.cpp:1213
 msgctxt "MainWindow"
 msgid "Vidalia tried to reset Tor's control password, but was not able to restart the Tor software. Please check your Task Manager to ensure there are no other Tor processes running."
 msgstr ""
+"A Vidalia megpróbálta visszaállítani a TOR kontroll-jelszót, de nem tudta a "
+"TOR-t újraindítani. Ellenőrizze, hogy nem fut-e más TOR példány a "
+"Feladatkezelőben !"
 
 #: messagelog.ui:19
 msgctxt "MessageLog"
@@ -2059,12 +2064,12 @@ msgstr "Másolás"
 #: routerlistwidget.cpp:68
 msgctxt "RouterListWidget"
 msgid "Nickname"
-msgstr ""
+msgstr "Becenév"
 
 #: routerlistwidget.cpp:71
 msgctxt "RouterListWidget"
 msgid "Fingerprint"
-msgstr ""
+msgstr "Digitális Ujjlenyomat"
 
 #: serverpage.ui:32
 msgctxt "ServerPage"
@@ -2369,6 +2374,8 @@ msgstr "Port továbbítással kapcsolatos súgó témakörök megtekintése"
 msgctxt "ServerPage"
 msgid "Tor will still block some outgoing mail and file sharing applications by default to reduce spam and other abuse."
 msgstr ""
+"A TOR továbbra is blokkolni fog némely levelező és fájlmegosztó "
+"szolgáltatásokat, a visszaélések megfékezése érdekében."
 
 #: servicepage.cpp:116
 msgctxt "ServicePage"
@@ -2435,7 +2442,7 @@ msgstr "Cél"
 #: servicepage.ui:71
 msgctxt "ServicePage"
 msgid "Directory Path"
-msgstr "Könyvtár Útvonal"
+msgstr "Címtár Útvonal"
 
 #: servicepage.ui:76
 msgctxt "ServicePage"
@@ -2472,7 +2479,7 @@ msgstr ""
 #: servicepage.cpp:384
 msgctxt "ServicePage"
 msgid "Created by Tor"
-msgstr ""
+msgstr "TOR által generálva"
 
 #: stream.cpp:131
 msgctxt "Stream"
@@ -2747,4 +2754,3 @@ msgstr "Érvénytelen naplózási szint:"
 msgctxt "Vidalia"
 msgid "Unable to open log file '%1': %2"
 msgstr "A '%1' napló megnyitása sikertelen: %2"
-
