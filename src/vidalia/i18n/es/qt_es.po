@@ -419,10 +419,6 @@ msgctxt "QFileSystemModel"
 msgid "Kind"
 msgstr "Clase"
 
-msgctxt "QFileSystemModel"
-msgid "Type"
-msgstr "Tipo"
-
 #: qfilesystemmodel.cpp:849
 msgctxt "QFileSystemModel"
 msgid "Date Modified"
