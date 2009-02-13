@@ -152,10 +152,6 @@ msgctxt "QDirModel"
 msgid "Size"
 msgstr "Tamaño"
 
-msgctxt "QDirModel"
-msgid "Kind"
-msgstr "Clase"
-
 #: qdirmodel.cpp:431
 msgctxt "QDirModel"
 msgid "Type"
