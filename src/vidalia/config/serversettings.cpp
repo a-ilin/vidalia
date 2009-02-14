@@ -46,7 +46,6 @@
 #define SETTING_ENABLE_UPNP     "EnableUPnP"
 #define SETTING_RELAY_BANDWIDTH_RATE   "RelayBandwidthRate"
 #define SETTING_RELAY_BANDWIDTH_BURST  "RelayBandwidthBurst"
-#define SETTING_PUBLISH_DESCRIPTOR     "PublishServerDescriptor"
 
 
 /** Constructor.
@@ -70,10 +69,10 @@ ServerSettings::ServerSettings(TorControl *torControl)
   setDefault(SETTING_RELAY_BANDWIDTH_RATE,  5242880);
   setDefault(SETTING_BANDWIDTH_BURST,       10485760);
   setDefault(SETTING_RELAY_BANDWIDTH_BURST, 10485760);
-  setDefault(SETTING_PUBLISH_DESCRIPTOR,    "1");
   setDefault(SETTING_EXITPOLICY,
     ExitPolicy(ExitPolicy::Default).toString());
   setDefault(SETTING_ENABLE_UPNP, false); 
+  setDefault(SETTING_BRIDGE_RELAY, false);
 }
 
 /** Returns a QHash of Tor-recognizable configuratin keys to their current
@@ -120,13 +119,9 @@ ServerSettings::confValues()
   }
   conf.insert(SETTING_CONTACT, scrub_email_addr(contact));
   
-  /* If we're a bridge, don't publish our server descriptor */
-  if (torVersion < 0x020014) {
-    conf.insert(SETTING_PUBLISH_DESCRIPTOR,
-                (torVersion >= 0x020008 && isBridgeEnabled() ? "bridge" : "1"));
-  }
-  if (torVersion >= 0x020013)
-    conf.insert(SETTING_BRIDGE_RELAY, isBridgeEnabled() ? "1" : "0");
+  /* Set if we're a bridge relay */
+  conf.insert(SETTING_BRIDGE_RELAY, isBridgeEnabled() ? "1" : "0");
+
   return conf;
 }
 
@@ -150,7 +145,7 @@ ServerSettings::apply(QString *errmsg)
               << SETTING_DIRPORT
               << SETTING_CONTACT
               << SETTING_EXITPOLICY
-              << SETTING_PUBLISH_DESCRIPTOR;
+              << SETTING_BRIDGE_RELAY;
     if (torVersion >= 0x020001) {
       resetKeys << SETTING_RELAY_BANDWIDTH_RATE
                 << SETTING_RELAY_BANDWIDTH_BURST;
@@ -244,15 +239,14 @@ ServerSettings::isServerEnabled()
 void
 ServerSettings::setBridgeEnabled(bool enabled)
 {
-  setValue(SETTING_PUBLISH_DESCRIPTOR, enabled ? "bridge" : "1");
+  setValue(SETTING_BRIDGE_RELAY, enabled);
 }
 
 /** Returns true if Tor is configured to act as a bridge node. */
 bool
 ServerSettings::isBridgeEnabled()
 {
-  return (isServerEnabled() && 
-          value(SETTING_PUBLISH_DESCRIPTOR).toString().toLower() == "bridge");
+  return value(SETTING_BRIDGE_RELAY).toBool() && isServerEnabled();
 }
 
 /** Sets the server's ORPort. */
