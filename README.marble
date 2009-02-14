@@ -1,0 +1,56 @@
+
+Building Vidalia with KDE Marble Support
+----------------------------------------
+
+Vidalia recently added experimental support for replacing the existing 2D
+network map widget with the KDE Marble 3D globe widget. It is currently a
+compile-time option and is disabled by default.
+
+The following steps build Vidalia with the Marble widget.
+
+1. Download the patched version of Marble.
+
+  svn co https://svn.vidalia-project.net/svn/marble/trunk marble
+
+Hopefully these patches will soon be merged into Marble's trunk. For now, we
+still have to build with the Vidalia-specific patched Marble.
+
+2. Build the patched Marble.
+
+  OS X:
+    cd ~/marble
+    mkdir build && cd build
+    cmake -DCMAKE_INSTALL_PREFIX=. -DQTONLY=1 ..
+    make && make install
+
+  If you are building a Universal binary, you will need to make the following
+  changes to ~/marble/CMakeLists.txt before building Marble:
+
+  -      #SET( CMAKE_OSX_ARCHITECTURES ppc;i386 ) #Comment out if not universal binary
+  -      SET( CMAKE_OSX_ARCHITECTURES i386 ) #Comment out if universal binary
+  +      SET( CMAKE_OSX_ARCHITECTURES ppc;i386 ) #Comment out if not universal binary
+  +      #SET( CMAKE_OSX_ARCHITECTURES i386 ) #Comment out if universal binary
+
+  Everywhere else:
+    cd marble
+    mkdir build && cd build
+    cmake -DQTONLY=1 ..
+    make && make install
+
+3. Configure Vidalia with Marble support.
+
+  cd vidalia (or wherever your Vidalia source tree lives)
+  mkdir build && cd build
+  cmake -DUSE_MARBLE=1 \
+        -DMARBLE_INCLUDE_DIR=~/marble/src/lib \
+        -DMARBLE_DATA_DIR=~/marble/data \
+        -DMARBLE_LIBRARY_DIR=~/marble/build/src/lib \
+        -DMARBLE_PLUGIN_DIR=~/marble/build/src/plugins ..
+
+You will need to adjust each of the paths above according to where you checked
+out and installed Marble in Steps 1 and 2.
+
+4. Build Vidalia
+
+  See the INSTALL file included with Vidalia for details.
+
