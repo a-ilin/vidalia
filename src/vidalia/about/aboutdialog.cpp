@@ -37,6 +37,17 @@ AboutDialog::AboutDialog(QWidget *parent, Qt::WindowFlags flags)
   /* Get Vidalia's version number */
   ui.lblVidaliaVersion->setText(QString("Vidalia %1").arg(Vidalia::version()));
 
+  /* Get Tor's version number or hide it if Tor isn't running */
+  if (Vidalia::torControl()->isConnected()) {
+    QString version = Vidalia::torControl()->getTorVersionString();
+    if (! version.isEmpty())
+      ui.lblTorVersion->setText(QString("Tor %1").arg(version));
+    else
+      ui.lblTorVersion->setVisible(false);
+  } else {
+    ui.lblTorVersion->setVisible(false);
+  }
+
   /* Get Qt's version number */
   ui.lblQtVersion->setText(QString("Qt %1").arg(QT_VERSION_STR));
 

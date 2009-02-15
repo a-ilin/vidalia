@@ -8,8 +8,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>192</width>
-    <height>220</height>
+    <width>215</width>
+    <height>271</height>
    </rect>
   </property>
   <property name="sizePolicy" >
@@ -61,6 +61,16 @@
      </property>
      <property name="text" >
       <string>Vidalia 0.2.0</string>
+     </property>
+     <property name="alignment" >
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="lblTorVersion" >
+     <property name="text" >
+      <string>Tor 0.2.0.32</string>
      </property>
      <property name="alignment" >
       <set>Qt::AlignCenter</set>
