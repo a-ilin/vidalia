@@ -17,7 +17,6 @@
 #include <QDomDocument>
 #include <QDir>
 #include <vidalia.h>
-#include <mainwindow.h>
 
 #include "helpbrowser.h"
 
