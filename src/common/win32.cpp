@@ -35,8 +35,6 @@
 typedef HANDLE (WINAPI *CreateToolhelp32Snapshot_fn)(DWORD, DWORD);
 typedef BOOL (WINAPI *Process32First_fn)(HANDLE, LPPROCESSENTRY32);
 typedef BOOL (WINAPI *Process32Next_fn)(HANDLE, LPPROCESSENTRY32);
-typedef BOOL (WINAPI *Thread32First_fn)(HANDLE, LPTHREADENTRY32);
-typedef BOOL (WINAPI *Thread32Next_fn)(HANDLE, LPTHREADENTRY32);
 
 
 /** Finds the location of the "special" Windows folder using the given CSIDL
@@ -153,54 +151,41 @@ win32_registry_remove_key(QString keyLocation, QString keyName)
 }
 
 /**
- * Callback for EnumThreadWindows which sends the WM_CLOSE message
+ * Callback for EnumThreadWindows which sends the WM_QUIT message
  */
-BOOL CALLBACK closeWindowCallback(HWND hwnd, LPARAM lParam)
+BOOL CALLBACK quitWindowCallback(HWND hwnd, LPARAM targetPID)
 {
-  PostMessage(hwnd, WM_CLOSE, 0, (LPARAM)NULL);
+  DWORD hwndPID = 0;
+
+  /* If the process ID for hwnd matches the target PID, post
+     WM_QUIT to the window */
+  GetWindowThreadProcessId(hwnd, &hwndPID);
+  if (hwndPID == (DWORD)targetPID)
+    PostMessage(hwnd, WM_QUIT, 0, (LPARAM)NULL);
 }
 
 /**
- * Close process with the specified PID. Sends WM_CLOSE to all
- * top-level windows, then to all threads. A process snapshot, with
- * TH32CS_SNAPTHREAD enabled, must be provided.
+ * Close process with the specified PID. Sends WM_QUIT to all
+ * top-level windows.
  */
 void
-win32_end_process_by_pid(HANDLE hSnapshot, DWORD pid)
+win32_end_process_by_pid(DWORD pid)
 {
-  Thread32First_fn pThread32First;
-  Thread32Next_fn pThread32Next;
-  THREADENTRY32 thread;
-
-  /* Load the tool help functions */
-  pThread32First = (Thread32First_fn)QLibrary::resolve("kernel32", "Thread32First");
-  pThread32Next = (Thread32Next_fn)QLibrary::resolve("kernel32", "Thread32Next");
-
-  if (!pThread32First || !pThread32Next) {
-    qWarning("Unable to load tool help functions. Running process information "
-             "will be unavailable.");
-  }
-
-  /* Iterate through all the threads in the snapshot */
-  thread.dwSize = sizeof(THREADENTRY32);
-  
-  if (pThread32First(hSnapshot, &thread)) {
-    do {
-      /* If the PID matches the target, kill this thread's windows */
-      if (thread.th32OwnerProcessID == pid) {
-        /* Kill all top level windows */
-        EnumThreadWindows(thread.th32ThreadID, &closeWindowCallback, (LPARAM)NULL);
-        /* Kill the thread */
-        PostThreadMessage(thread.th32ThreadID, WM_CLOSE, 0, (LPARAM)NULL);
-      }
-    } while (pThread32Next(hSnapshot, &thread));
-  }
+  /* Send WM_QUIT to all windows */
+  EnumWindows(&quitWindowCallback, (LPARAM)pid);
+  /* At this point we could kill the main thread, but how do we find
+     the ID of the main thread? We can find the ID of all threads
+     but killing them all seems to cause a problem for Firefox */
+  //PostThreadMessage(thread.th32ThreadID, WM_CLOSE, 0, (LPARAM)NULL);
 }
 
 /**
  * Close all processes started from the specified filename. Sends
- * WM_CLOSE to all top-level windows, then to all threads. Filename
- * should be given in lowercase, and comparison is case insensitive.
+ * WM_QUIT to all top-level windows. Filename should be given in
+ * lowercase, and comparison is case insensitive. Note: the MSDN
+ * documentation for WM_QUIT states that the message should not be
+ * sent by PostMessage(). However, sending WM_CLOSE leaves Firefox
+ * running, whereas WM_QUIT seems to work.
  */
 void
 win32_end_process_by_filename(QString filename)
@@ -225,7 +210,7 @@ win32_end_process_by_filename(QString filename)
   }
 
   /* Create a snapshot of all active processes */
-  hSnapshot = pCreateToolhelp32Snapshot(TH32CS_SNAPPROCESS | TH32CS_SNAPTHREAD, 0);
+  hSnapshot = pCreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
   if (hSnapshot != INVALID_HANDLE_VALUE) {
     proc.dwSize = sizeof(PROCESSENTRY32);
     
@@ -238,7 +223,7 @@ win32_end_process_by_filename(QString filename)
 
         /* If the filename matches the target, kill this process */
         if (exeFile.toLower() == filename) {
-          win32_end_process_by_pid(hSnapshot, pid);
+          win32_end_process_by_pid(pid);
         }
       } while (pProcess32Next(hSnapshot, &proc));
     }

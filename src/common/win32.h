@@ -43,8 +43,11 @@ QHash<qint64, QString> win32_process_list();
 
 /**
  * Close all processes started from the specified filename. Sends
- * WM_CLOSE to all top-level windows, then to all threads. Filename
- * should be given in lowercase, and comparison is case insensitive.
+ * WM_QUIT to all top-level windows. Filename should be given in
+ * lowercase, and comparison is case insensitive. Note: the MSDN
+ * documentation for WM_QUIT states that the message should not be
+ * sent by PostMessage(). However, sending WM_CLOSE leaves Firefox
+ * running, whereas WM_QUIT seems to work.
  */
 void win32_end_process_by_filename(QString filename);
 
