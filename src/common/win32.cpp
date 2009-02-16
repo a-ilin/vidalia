@@ -190,44 +190,23 @@ win32_end_process_by_pid(DWORD pid)
 void
 win32_end_process_by_filename(QString filename)
 {
-  CreateToolhelp32Snapshot_fn pCreateToolhelp32Snapshot;
-  Process32First_fn pProcess32First;
-  Process32Next_fn pProcess32Next;
-  HANDLE hSnapshot;
-  PROCESSENTRY32 proc;
-  QString exeFile;
-  DWORD pid;
+  /* Get list of running processes */
+  QHash<qint64, QString> procList = win32_process_list();
 
-  /* Load the tool help functions */
-  pCreateToolhelp32Snapshot =
-    (CreateToolhelp32Snapshot_fn)QLibrary::resolve("kernel32", "CreateToolhelp32Snapshot");
-  pProcess32First = (Process32First_fn)QLibrary::resolve("kernel32", "Process32First");
-  pProcess32Next = (Process32Next_fn)QLibrary::resolve("kernel32", "Process32Next");
-
-  if (!pCreateToolhelp32Snapshot || !pProcess32First || !pProcess32Next) {
-    qWarning("Unable to load tool help functions. Running process information "
-             "will be unavailable.");
+  /* On old versions of Windows win32_process_list() will return
+     an empty list. In this case, just keep Vidalia open */
+  if (procList.isEmpty()) {
+    return;
   }
 
-  /* Create a snapshot of all active processes */
-  hSnapshot = pCreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
-  if (hSnapshot != INVALID_HANDLE_VALUE) {
-    proc.dwSize = sizeof(PROCESSENTRY32);
-    
-    /* Iterate through all the processes in the snapshot */
-    if (pProcess32First(hSnapshot, &proc)) {
-      do {
-        /* Extract the PID and exe filename from the process record */
-        pid = proc.th32ProcessID;
-        exeFile = QString::fromAscii((const char *)proc.szExeFile);
-
-        /* If the filename matches the target, kill this process */
-        if (exeFile.toLower() == filename) {
-          win32_end_process_by_pid(pid);
-        }
-      } while (pProcess32Next(hSnapshot, &proc));
+  /* Loop over all processes */
+  QHashIterator<qint64, QString> i(procList);
+  while (i.hasNext()) {
+    i.next();
+    if (i.value().toLower() == filename) {
+      /* Kill this process */
+      win32_end_process_by_pid((DWORD)i.key());
     }
-    CloseHandle(hSnapshot);
   }
 }
 
