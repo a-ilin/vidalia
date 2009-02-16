@@ -35,6 +35,8 @@
 typedef HANDLE (WINAPI *CreateToolhelp32Snapshot_fn)(DWORD, DWORD);
 typedef BOOL (WINAPI *Process32First_fn)(HANDLE, LPPROCESSENTRY32);
 typedef BOOL (WINAPI *Process32Next_fn)(HANDLE, LPPROCESSENTRY32);
+typedef BOOL (WINAPI *Thread32First_fn)(HANDLE, LPTHREADENTRY32);
+typedef BOOL (WINAPI *Thread32Next_fn)(HANDLE, LPTHREADENTRY32);
 
 
 /** Finds the location of the "special" Windows folder using the given CSIDL
@@ -148,6 +150,100 @@ win32_registry_remove_key(QString keyLocation, QString keyName)
 
   /* Close anything that was opened */
   RegCloseKey(key);
+}
+
+/**
+ * Callback for EnumThreadWindows which sends the WM_CLOSE message
+ */
+BOOL CALLBACK closeWindowCallback(HWND hwnd, LPARAM lParam)
+{
+  PostMessage(hwnd, WM_CLOSE, 0, (LPARAM)NULL);
+}
+
+/**
+ * Close process with the specified PID. Sends WM_CLOSE to all
+ * top-level windows, then to all threads. A process snapshot, with
+ * TH32CS_SNAPTHREAD enabled, must be provided.
+ */
+void
+win32_end_process_by_pid(HANDLE hSnapshot, DWORD pid)
+{
+  Thread32First_fn pThread32First;
+  Thread32Next_fn pThread32Next;
+  THREADENTRY32 thread;
+
+  /* Load the tool help functions */
+  pThread32First = (Thread32First_fn)QLibrary::resolve("kernel32", "Thread32First");
+  pThread32Next = (Thread32Next_fn)QLibrary::resolve("kernel32", "Thread32Next");
+
+  if (!pThread32First || !pThread32Next) {
+    qWarning("Unable to load tool help functions. Running process information "
+             "will be unavailable.");
+  }
+
+  /* Iterate through all the threads in the snapshot */
+  thread.dwSize = sizeof(THREADENTRY32);
+  
+  if (pThread32First(hSnapshot, &thread)) {
+    do {
+      /* If the PID matches the target, kill this thread's windows */
+      if (thread.th32OwnerProcessID == pid) {
+        /* Kill all top level windows */
+        EnumThreadWindows(thread.th32ThreadID, &closeWindowCallback, (LPARAM)NULL);
+        /* Kill the thread */
+        PostThreadMessage(thread.th32ThreadID, WM_CLOSE, 0, (LPARAM)NULL);
+      }
+    } while (pThread32Next(hSnapshot, &thread));
+  }
+}
+
+/**
+ * Close all processes started from the specified filename. Sends
+ * WM_CLOSE to all top-level windows, then to all threads. Filename
+ * should be given in lowercase, and comparison is case insensitive.
+ */
+void
+win32_end_process_by_filename(QString filename)
+{
+  CreateToolhelp32Snapshot_fn pCreateToolhelp32Snapshot;
+  Process32First_fn pProcess32First;
+  Process32Next_fn pProcess32Next;
+  HANDLE hSnapshot;
+  PROCESSENTRY32 proc;
+  QString exeFile;
+  DWORD pid;
+
+  /* Load the tool help functions */
+  pCreateToolhelp32Snapshot =
+    (CreateToolhelp32Snapshot_fn)QLibrary::resolve("kernel32", "CreateToolhelp32Snapshot");
+  pProcess32First = (Process32First_fn)QLibrary::resolve("kernel32", "Process32First");
+  pProcess32Next = (Process32Next_fn)QLibrary::resolve("kernel32", "Process32Next");
+
+  if (!pCreateToolhelp32Snapshot || !pProcess32First || !pProcess32Next) {
+    qWarning("Unable to load tool help functions. Running process information "
+             "will be unavailable.");
+  }
+
+  /* Create a snapshot of all active processes */
+  hSnapshot = pCreateToolhelp32Snapshot(TH32CS_SNAPPROCESS | TH32CS_SNAPTHREAD, 0);
+  if (hSnapshot != INVALID_HANDLE_VALUE) {
+    proc.dwSize = sizeof(PROCESSENTRY32);
+    
+    /* Iterate through all the processes in the snapshot */
+    if (pProcess32First(hSnapshot, &proc)) {
+      do {
+        /* Extract the PID and exe filename from the process record */
+        pid = proc.th32ProcessID;
+        exeFile = QString::fromAscii((const char *)proc.szExeFile);
+
+        /* If the filename matches the target, kill this process */
+        if (exeFile.toLower() == filename) {
+          win32_end_process_by_pid(hSnapshot, pid);
+        }
+      } while (pProcess32Next(hSnapshot, &proc));
+    }
+    CloseHandle(hSnapshot);
+  }
 }
 
 /** Returns a list of all currently active processes, including their pid

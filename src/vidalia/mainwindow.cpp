@@ -366,6 +366,25 @@ MainWindow::shutdown()
     _proxyProcess->kill();
   }
 
+  /* Kill the browser and IM client if using the new launcher */
+  VidaliaSettings vidalia_settings;
+
+  if (! vidalia_settings.getBrowserDirectory().isEmpty()) {
+    /* Disconnect the finished signals so that we won't try to exit Vidalia again */
+    QObject::disconnect(_browserProcess, SIGNAL(finished(int, QProcess::ExitStatus)), 0, 0);
+    QObject::disconnect(_imProcess, SIGNAL(finished(int, QProcess::ExitStatus)), 0, 0);
+
+    /* Use QProcess terminate function */
+    if (_browserProcess->state() == QProcess::Running)
+      _browserProcess->terminate();
+
+    /* Kill any processes which might have been forked off */
+    win32_end_process_by_filename(vidalia_settings.getBrowserExecutable());
+
+    if (_imProcess->state() == QProcess::Running)
+      _imProcess->terminate();    
+  }
+
   /* Disconnect all of the TorControl object's signals */
   QObject::disconnect(_torControl, 0, 0, 0);
 

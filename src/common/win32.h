@@ -41,5 +41,12 @@ void win32_registry_remove_key(QString keyLocation, QString keyName);
  * and exe filename. */
 QHash<qint64, QString> win32_process_list();
 
+/**
+ * Close all processes started from the specified filename. Sends
+ * WM_CLOSE to all top-level windows, then to all threads. Filename
+ * should be given in lowercase, and comparison is case insensitive.
+ */
+void win32_end_process_by_filename(QString filename);
+
 #endif
 
