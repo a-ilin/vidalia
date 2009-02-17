@@ -378,8 +378,10 @@ MainWindow::shutdown()
     if (_browserProcess->state() == QProcess::Running)
       _browserProcess->terminate();
 
+#if defined(Q_OS_WIN)
     /* Kill any processes which might have been forked off */
     win32_end_process_by_filename(vidalia_settings.getBrowserExecutable());
+#endif
 
     if (_imProcess->state() == QProcess::Running)
       _imProcess->terminate();    
