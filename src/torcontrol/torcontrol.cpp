@@ -46,11 +46,11 @@ TorControl::TorControl()
 
 #if defined(Q_OS_WIN32)
   _torService = new TorService(this);
-  QObject::connect(_torService, SIGNAL(started()), this, SLOT(onStarted()));
+  QObject::connect(_torService, SIGNAL(started()), this, SIGNAL(started()));
   QObject::connect(_torService, SIGNAL(finished(int, QProcess::ExitStatus)),
                    this, SLOT(onStopped(int, QProcess::ExitStatus)));
   QObject::connect(_torService, SIGNAL(startFailed(QString)),
-                   this, SLOT(onStartFailed(QString))); 
+                   this, SIGNAL(onStartFailed(QString))); 
 #endif
 }
 
