@@ -49,7 +49,7 @@ Circuit::Circuit(const QString &circuit)
     _status = Circuit::toStatus(parts.at(1));
 
     /* Get the circuit path (list of routers) */
-    if (parts.size() > 2) {
+    if (parts.size() > 2 && parts.at(2).startsWith("$")) {
       foreach (QString hop, parts.at(2).split(",")) {
         QStringList parts = hop.split(QRegExp("[=~]"));
         if (parts.size() != 2)
