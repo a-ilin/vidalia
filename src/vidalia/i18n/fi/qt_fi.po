@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-08-20 03:25+0000\n"
-"PO-Revision-Date: 2008-09-13 19:34+0000\n"
+"PO-Revision-Date: 2009-02-07 23:08+0000\n"
 "Last-Translator: Harri Vähätalo <harri@svahatalo.fi>\n"
 "Language-Team: none\n"
 "MIME-Version: 1.0\n"
@@ -404,7 +404,7 @@ msgstr "Tietokone"
 #: qfilesystemmodel.cpp:677
 msgctxt "QFileSystemModel"
 msgid "%1 TB"
-msgstr ""
+msgstr "%1 TB"
 
 #: qfilesystemmodel.cpp:679
 msgctxt "QFileSystemModel"
