@@ -2604,9 +2604,12 @@ msgid "Quit"
 msgstr ""
 
 #: vmessagebox.cpp:87
+#: advancedpage.ui:318
+#: AdvancedPage#2
+#: VMessageBox#11
 msgctxt "VMessageBox"
 msgid "Browse"
-msgstr ""
+msgstr "Разлисти"
 
 #: vidalia.cpp:238
 msgctxt "Vidalia"
@@ -2689,4 +2692,3 @@ msgstr ""
 msgctxt "Vidalia"
 msgid "Unable to open log file '%1': %2"
 msgstr ""
-
