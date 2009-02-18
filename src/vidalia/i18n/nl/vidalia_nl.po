@@ -2694,4 +2694,3 @@ msgstr "Ongeldig log niveau opgegeven: "
 msgctxt "Vidalia"
 msgid "Unable to open log file '%1': %2"
 msgstr "Openen mislukt van log bestand '%1': %2"
-
