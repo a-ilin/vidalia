@@ -2695,4 +2695,3 @@ msgstr " Указан неверный уровень сообщений:"
 msgctxt "Vidalia"
 msgid "Unable to open log file '%1': %2"
 msgstr "Не удалось открыть файл '%1': %2"
-
