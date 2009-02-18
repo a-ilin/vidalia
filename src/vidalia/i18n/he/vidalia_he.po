@@ -2685,4 +2685,3 @@ msgstr "רמת יומן בלתי חוקית נבחרה:"
 msgctxt "Vidalia"
 msgid "Unable to open log file '%1': %2"
 msgstr "כשלון בפתחיחת קובץ יומן '%1': %2"
-
