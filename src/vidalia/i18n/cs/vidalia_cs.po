@@ -2605,9 +2605,11 @@ msgid "Quit"
 msgstr "Ukoncit"
 
 #: vmessagebox.cpp:87
+#: AdvancedPage#2
+#: VMessageBox#11
 msgctxt "VMessageBox"
 msgid "Browse"
-msgstr ""
+msgstr "Prochazet"
 
 #: vidalia.cpp:238
 msgctxt "Vidalia"
@@ -2692,4 +2694,3 @@ msgstr "Level chybovych zazanmu."
 msgctxt "Vidalia"
 msgid "Unable to open log file '%1': %2"
 msgstr "Nemohu otevrit soubor zaznamu '%1': %2"
-
