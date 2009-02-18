@@ -2686,4 +2686,3 @@ msgstr "Ugyldig loggnivå valgt: "
 msgctxt "Vidalia"
 msgid "Unable to open log file '%1': %2"
 msgstr "Kunne ikke åpne loggfil '%1': %2"
-
