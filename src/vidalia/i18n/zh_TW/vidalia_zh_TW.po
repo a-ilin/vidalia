@@ -2680,4 +2680,3 @@ msgstr "指定日誌級別無效:"
 msgctxt "Vidalia"
 msgid "Unable to open log file '%1': %2"
 msgstr "無法打開日誌文件 '%1': %2"
-
