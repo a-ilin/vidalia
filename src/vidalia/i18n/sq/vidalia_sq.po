@@ -2695,4 +2695,3 @@ msgstr "Niveli i logut i zgjedhur është i gabuar:"
 msgctxt "Vidalia"
 msgid "Unable to open log file '%1': %2"
 msgstr "E pamundur të hap fajlin e logut '%1': %2"
-
