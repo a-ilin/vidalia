@@ -136,6 +136,7 @@ TorMapWidget::addCircuit(const CircuitId &circid, const QStringList &path)
         geoPath->first.append(new GeoDataCoordinates(coords));
       }      
     }
+    geoPath->first.setTessellationFlags(Tessellate | RespectLatitudeCircle);
     _circuits.insert(circid, geoPath);
   }
 
