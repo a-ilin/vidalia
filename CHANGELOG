@@ -1,7 +1,5 @@
 0.2.0   xx-xxx-2008
   o Support changing UI languages without having to restart Vidalia.
-  o Remove support for configuring Tor's User and Group options in the
-    Advanced settings page.
   o Add tooltips to tree items in the help browser's table of contents. Some 
     of the help topic labels are a bit long.
   o Switch to a simpler About dialog and move the license information to a
@@ -13,6 +11,26 @@
   o Support building with Visual Studio again.
   o Add a Debian package structure from dererk.
   o Updated Czech, Polish, Romanian and Turkish translations.
+
+
+0.1.11  16-Feb-2009
+  o Remove support for configuring Tor's User and Group options in the
+    Advanced settings page.
+  o Only set HttpsProxy if both the "I use a proxy..." checkbox and the
+    "Use this proxy for HTTPS also" checkboxes are checked. Otherwise,
+    unset it. (Ticket #440)
+  o Fix a use of an uninitialized variable that would occur when Tor was
+    already running when Vidalia started, and the "Start Tor when Vidalia
+    Starts" checkbox is checked. (Ticket #443)
+  o Switch to using 'getinfo address-mappings' instead of
+    'getinfo addr-mappings'. (Ticket #454)
+  o Backport a change that removes a verticalSpacing property from a .ui
+    file, so Vidalia 0.1.x will still build on Qt 4.2. (Ticket #442)
+  o Fix some memory leaks in the hidden service configuration dialog.
+  o Fix a CIRC event parsing bug that would occur when the CIRC event
+    contained a 0-hop circuit path and EXTENDED_EVENTS is enabled.
+  o Include patches from Steven J. Murdoch that enables the Tor Browser
+    Bundle to launch Firefox itself without relying on Portable Firefox.
 
 
 0.1.10  02-Nov-2008
