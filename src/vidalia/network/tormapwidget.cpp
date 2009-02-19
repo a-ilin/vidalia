@@ -270,6 +270,8 @@ TorMapWidget::zoomToRouter(const QString &id)
 void
 TorMapWidget::customPaint(GeoPainter *painter)
 {
+  painter->autoMapQuality();
+
   foreach (CircuitGeoPath *path, _circuits.values()) {
     painter->setPen(path->second ? CIRCUIT_SELECTED_PEN : CIRCUIT_NORMAL_PEN);
     painter->drawPolyline(path->first);
