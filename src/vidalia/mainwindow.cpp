@@ -229,7 +229,18 @@ void
 MainWindow::retranslateUi()
 {
   ui.retranslateUi(this);
+
   updateTorStatus(_status);
+  if (_status == Stopped) {
+    _startStopAct->setText(tr("Start Tor"));
+    ui.lblStartStopTor->setText(tr("Start Tor"));
+  } else if (_status == Starting) {
+    _startStopAct->setText(tr("Starting Tor"));
+    ui.lblStartStopTor->setText(tr("Starting Tor"));
+  } else {
+    _startStopAct->setText(tr("Stop Tor"));
+    ui.lblStartStopTor->setText(tr("Stop Tor"));
+  }
 
   _bandwidthAct->setText(tr("Bandwidth Graph"));
   _messageAct->setText(tr("Message Log"));
