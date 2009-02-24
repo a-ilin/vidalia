@@ -4,6 +4,8 @@
  -->
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 
+  <?define VidaliaVersion="@VER_MAJOR@.@VER_MINOR@.@VER_PATCH@" ?>
+  <?define VidaliaUpgradeCode="B7FBFE11-D7CA-4895-A1FB-1D7E065E4D04" ?>
   <?define VidaliaProductGuid="B3C22D59-D907-4559-9569-92AAA34DB6F0" ?>
   <?define VidaliaDocumentsGuid="6A51C86C-A7D4-407f-9B84-7ADCE016E939" ?>
   <?define QtLibraryGuid="00F354CB-B313-4100-8900-11293A66B385" ?>
@@ -23,9 +25,9 @@
 
   <Product Name="Vidalia @VERSION@" Id="$(var.VidaliaProductGuid)"
            Language="1033" Codepage="1252"
-           Version="@VER_MAJOR@.@VER_MINOR@.@VER_PATCH@" 
+           Version="$(var.VidaliaVersion)" 
            Manufacturer="vidalia-project.net"
-           UpgradeCode="B7FBFE11-D7CA-4895-A1FB-1D7E065E4D04">
+           UpgradeCode="$(var.VidaliaUpgradeCode)">
     
     <Package Id="*" Keywords="Installer"
              Description="Vidalia @VERSION@ Installer"
@@ -36,6 +38,12 @@
     <Media Id="1" Cabinet="Vidalia.cab" CompressionLevel="high"
            EmbedCab="yes" DiskPrompt="CD-ROM #1" />
     <Property Id="DiskPrompt" Value="Vidalia @VERSION@ Installation [1]" />
+
+    <Upgrade Id="$(var.VidaliaUpgradeCode)">
+      <UpgradeVersion Property="UPGRADEFOUND" OnlyDetect="no"
+                      Minimum="0.0.1" IncludeMinimum="yes"
+                      Maximum="$(var.VidaliaVersion)" IncludeMaximum="no" />
+    </Upgrade>
 
     <!-- Define the target installation directory hierarchy -->
     <Directory Id="TARGETDIR" Name="SourceDir">
@@ -311,6 +319,11 @@
         </Feature>
       </Feature>
     </Feature>
+
+    <!-- Upgrade installation sequence -->
+    <InstallExecuteSequence>
+      <RemoveExistingProducts After="InstallValidate" />
+    </InstallExecuteSequence>
 
     <!-- Set the UI options -->
     <UIRef Id="WixUI_Custom" />
