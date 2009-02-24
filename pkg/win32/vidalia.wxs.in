@@ -23,7 +23,12 @@
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder" Name="ProgramFilesDir">
         <Directory Id="INSTALLDIR" Name="Vidalia">
-          <Directory Id="MarblePluginsDir" Name="plugins" />
+          <Directory Id="PluginsDir" Name="plugins">
+            <Directory Id="QtPluginsDir" Name="qt">
+              <Directory Id="QtImageFormatPluginsDir" Name="imageformats" />
+            </Directory>
+            <Directory Id="MarblePluginsDir" Name="marble" />
+          </Directory>
           <Directory Id="MarbleDataDir" Name="data">
             <Directory Id="MarbleMapsDir" Name="maps">
               <Directory Id="MarbleEarthMapsDir" Name="earth">
@@ -100,7 +105,15 @@
               Name="libmarblewidget.dll" Source="@MARBLEWIDGET_LIBRARY@" />
       </Component>
     </DirectoryRef>
-    
+
+    <!-- Qt-related plugin files -->
+    <DirectoryRef Id="QtImageFormatPluginsDir">
+      <Component Id="QtImageFormatPlugins" Guid="9A0F1EA5-3A5F-4456-B211-9368C24E22F3">
+        <File Id="QJpeg4Dll" DiskId="1"
+              Name="qjpeg4.dll" Source="@QT_PLUGINS_DIR@\imageformats\qjpeg4.dll" />
+      </Component>
+    </DirectoryRef>
+
     <!-- Marble-related plugin files -->
     <DirectoryRef Id="MarblePluginsDir">
       <Component Id="MarblePlugins" Guid="B4665EC1-3082-4fca-AA7E-60512ED62EF6">
@@ -253,6 +266,7 @@
         <ComponentRef Id="VidaliaExecutable" />
         <ComponentRef Id="VidaliaDocuments" />
         <ComponentRef Id="QtLibrary" />
+        <ComponentRef Id="QtImageFormatPlugins" />
         <ComponentRef Id="MinGWLibrary" />
         <ComponentRef Id="OpenSSLLibrary" />
         <ComponentRef Id="MarbleWidgetLibrary" />
