@@ -50,7 +50,7 @@ TorControl::TorControl()
   QObject::connect(_torService, SIGNAL(finished(int, QProcess::ExitStatus)),
                    this, SLOT(onStopped(int, QProcess::ExitStatus)));
   QObject::connect(_torService, SIGNAL(startFailed(QString)),
-                   this, SIGNAL(onStartFailed(QString))); 
+                   this, SIGNAL(startFailed(QString))); 
 #endif
 }
 
