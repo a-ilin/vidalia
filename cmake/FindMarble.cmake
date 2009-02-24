@@ -54,7 +54,7 @@ endif(MARBLE_INCLUDE_DIR)
 
 message(STATUS "Looking for Marble libraries")
 find_library(MARBLEWIDGET_LIBRARY
-  NAMES marblewidget
+  NAMES marblewidget.7 marblewidget
   PATHS ${MARBLE_LIBRARY_DIR}
 )
 if (MARBLEWIDGET_LIBRARY)
