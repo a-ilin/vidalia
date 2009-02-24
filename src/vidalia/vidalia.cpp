@@ -126,6 +126,11 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
 #ifdef USE_MARBLE
   /* Tell Marble where to stash its generated data */
   Marble::MarbleDirs::setMarbleDataPath(dataDirectory());
+
+#ifdef Q_OS_WIN32
+  Marble::MarbleDirs::setMarblePluginPath(vApp->applicationDirPath() 
+                                            + "/plugins/marble");
+#endif
 #endif
 }
 

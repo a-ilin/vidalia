@@ -18,7 +18,7 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/help/browser
   ${MARBLE_INCLUDE_DIR}
 )
-if (APPLE)
+if (APPLE OR WIN32)
 ##
 ## XXX: The Marble build system on OS X currently doesn't actually install the
 ## required include files to /usr/local/include or similar. Instead, we have
@@ -33,7 +33,7 @@ if (APPLE)
     ${MARBLE_INCLUDE_DIR}/geodata/scene
     ${MARBLE_INCLUDE_DIR}/Projections
   )
-endif(APPLE)
+endif(APPLE OR WIN32)
 
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/res/vidalia_win.rc.in
@@ -403,13 +403,13 @@ else(APPLE)
       if (MARBLE_PLUGINS)
         add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
           COMMAND ${CMAKE_COMMAND}
-            ARGS -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/plugins
+            ARGS -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/plugins/marble
         )
         foreach(it ${MARBLE_PLUGINS})
           add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
             COMMAND ${CMAKE_COMMAND}
               ARGS -E copy_if_different ${it} 
-                    ${CMAKE_CURRENT_BINARY_DIR}/plugins/
+                    ${CMAKE_CURRENT_BINARY_DIR}/plugins/marble/
           )
         endforeach(it)
       endif(MARBLE_PLUGINS)
