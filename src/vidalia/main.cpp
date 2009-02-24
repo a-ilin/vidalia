@@ -20,6 +20,7 @@
 #include <vmessagebox.h>
 #include <procutil.h>
 #include <stringutil.h>
+#include <config.h>
 
 #if defined(Q_OS_WIN32)
 #include <QSysInfo>
@@ -61,6 +62,10 @@ main(int argc, char *argv[])
   Vidalia vidalia(args, argc, argv);
   vNotice("Vidalia %1 using Qt %2").arg(Vidalia::version())
                                    .arg(QT_VERSION_STR);
+
+#if defined(USE_MARBLE) && defined(Q_OS_WIN32)
+  vApp->addLibraryPath(vApp->applicationDirPath() + "/plugins/qt");
+#endif
 
   /* Validate any command-line arguments, or show usage message box, if
    * necessary. */
