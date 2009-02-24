@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-11-24 15:58+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2009-02-24 04:39+0000\n"
+"Last-Translator: phobos <phobos@rootme.org>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Vidalia ts2po 0.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 1.1.0\n"
 
 #: aboutdialog.ui:16
 msgctxt "AboutDialog"
@@ -1483,7 +1483,7 @@ msgstr "Esc"
 #: messagelog.ui:598
 msgctxt "MessageLog"
 msgid "Find"
-msgstr "חפש"
+msgstr "מצא"
 
 #: messagelog.ui:601
 msgctxt "MessageLog"
