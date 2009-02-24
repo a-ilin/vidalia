@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-11-24 15:58+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2009-02-24 04:27+0000\n"
+"Last-Translator: phobos <phobos@rootme.org>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Vidalia ts2po 0.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 1.1.0\n"
 
 #: aboutdialog.ui:16
 msgctxt "AboutDialog"
@@ -1320,7 +1320,7 @@ msgstr ""
 #: messagelog.ui:19
 msgctxt "MessageLog"
 msgid "Message Log"
-msgstr "Log dei Messaggi"
+msgstr "Log dei messaggi"
 
 #: messagelog.ui:66
 msgctxt "MessageLog"
@@ -2604,7 +2604,7 @@ msgstr "Mostra log"
 #: vmessagebox.cpp:84
 msgctxt "VMessageBox"
 msgid "Show Settings"
-msgstr "Mostra impostazioni"
+msgstr "Mostra Impostazioni"
 
 #: vmessagebox.cpp:85
 msgctxt "VMessageBox"
@@ -2704,4 +2704,3 @@ msgstr "Livello di log specificato non valido: "
 msgctxt "Vidalia"
 msgid "Unable to open log file '%1': %2"
 msgstr "Non è stato possibile aprire il file '%1' di log: "
-
