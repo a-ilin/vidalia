@@ -3,7 +3,25 @@
   $Id$
  -->
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <Product Name="Vidalia @VERSION@" Id="B3C22D59-D907-4559-9569-92AAA34DB6F0"
+
+  <?define VidaliaProductGuid="B3C22D59-D907-4559-9569-92AAA34DB6F0" ?>
+  <?define VidaliaDocumentsGuid="6A51C86C-A7D4-407f-9B84-7ADCE016E939" ?>
+  <?define QtLibraryGuid="00F354CB-B313-4100-8900-11293A66B385" ?>
+  <?define QtImageFormatPluginsGuid="9A0F1EA5-3A5F-4456-B211-9368C24E22F3" ?>
+  <?define MinGWLibraryGuid="2287E844-F9CD-4129-8BD0-50D071698194" ?>
+  <?define OpenSSLLibraryGuid="C3EDC2EC-D0B1-452a-83A6-85B0BC94735B" ?>
+  <?define MarbleWidgetLibraryGuid="A2968B8D-0E23-4649-B8F3-A988A04F823C" ?>
+  <?define MarblePluginsGuid="B4665EC1-3082-4fca-AA7E-60512ED62EF6" ?>
+  <?define MarbleLegendsDataGuid="FA6F733F-8249-4b2b-B978-2AA04E06F5D5" ?>
+  <?define MarbleBlueMarbleDataGuid="392FEE6B-374A-447a-AECC-0422915305DB" ?>
+  <?define MarbleCityLightsDataGuid="DBF9FBE7-012D-4457-ABB4-9085F7E784F8" ?>
+  <?define MarbleMwdbiiDataGuid="56ACE658-6892-408a-91E5-7B5BD23D8829" ?>
+  <?define MarbleSrtmDataGuid="2C3A9C67-92CB-4fc6-A2F6-AD9118AFD58C" ?>
+  <?define MarblePlacemarkDataGuid="27D54547-A819-435b-9A0C-13284169A9D9" ?>
+  <?define MarbleStarsDataGuid="8C5C3F32-67E6-4a4a-9B6C-6D67A6D44D67" ?>
+  <?define MarbleSvgDataGuid="03E25BCA-4C58-4571-9F17-061D52877714" ?>
+
+  <Product Name="Vidalia @VERSION@" Id="$(var.VidaliaProductGuid)"
            Language="1033" Codepage="1252"
            Version="@VER_MAJOR@.@VER_MINOR@.@VER_PATCH@" 
            Manufacturer="vidalia-project.net"
@@ -54,7 +72,7 @@
       </Component>
 
       <!-- Vidalia-related documents -->
-      <Component Id="VidaliaDocuments" Guid="6A51C86C-A7D4-407f-9B84-7ADCE016E939">
+      <Component Id="VidaliaDocuments" Guid="$(var.VidaliaDocumentsGuid)">
         <File Id="VidaliaReadme" DiskId="1"
               Name="README" Source="@Vidalia_SOURCE_DIR@\README" />
         <File Id="VidaliaCredits" DiskId="1"
@@ -74,7 +92,7 @@
       </Component>
 
       <!-- Qt-related library files -->
-      <Component Id="QtLibrary" Guid="00F354CB-B313-4100-8900-11293A66B385">
+      <Component Id="QtLibrary" Guid="$(var.QtLibraryGuid)">
         <File Id="QtCore4Dll" DiskId="1"
               Name="QtCore4.dll" Source="@QT_BINARY_DIR@\QtCore4.dll" />
         <File Id="QtGui4Dll" DiskId="1"
@@ -88,19 +106,19 @@
       </Component>
 
       <!-- MinGW-related library files -->
-      <Component Id="MinGWLibrary" Guid="2287E844-F9CD-4129-8BD0-50D071698194">
+      <Component Id="MinGWLibrary" Guid="$(var.MinGWLibraryGuid)">
         <File Id="MinGWDll" DiskId="1"
               Name="mingwm10.dll" Source="@MINGW_BINARY_DIR@\mingwm10.dll" />
       </Component>
 
       <!-- OpenSSL-related library files -->
-      <Component Id="OpenSSLLibrary" Guid="C3EDC2EC-D0B1-452a-83A6-85B0BC94735B">
+      <Component Id="OpenSSLLibrary" Guid="$(var.OpenSSLLibraryGuid)">
         <File Id="ssleay32dll" DiskId="1"
               Name="ssleay32.dll" Source="@OPENSSL_BINARY_DIR@\ssleay32.dll" />
       </Component>
       
       <!-- Marble-related library files -->
-      <Component Id="MarbleWidgetLibrary" Guid="A2968B8D-0E23-4649-B8F3-A988A04F823C">
+      <Component Id="MarbleWidgetLibrary" Guid="$(var.MarbleWidgetLibraryGuid)">
         <File Id="MarbleWidgetDll" DiskId="1"
               Name="libmarblewidget.dll" Source="@MARBLEWIDGET_LIBRARY@" />
       </Component>
@@ -108,7 +126,7 @@
 
     <!-- Qt-related plugin files -->
     <DirectoryRef Id="QtImageFormatPluginsDir">
-      <Component Id="QtImageFormatPlugins" Guid="9A0F1EA5-3A5F-4456-B211-9368C24E22F3">
+      <Component Id="QtImageFormatPlugins" Guid="$(var.QtImageFormatPluginsGuid)">
         <File Id="QJpeg4Dll" DiskId="1"
               Name="qjpeg4.dll" Source="@QT_PLUGINS_DIR@\imageformats\qjpeg4.dll" />
       </Component>
@@ -116,7 +134,7 @@
 
     <!-- Marble-related plugin files -->
     <DirectoryRef Id="MarblePluginsDir">
-      <Component Id="MarblePlugins" Guid="B4665EC1-3082-4fca-AA7E-60512ED62EF6">
+      <Component Id="MarblePlugins" Guid="$(var.MarblePluginsGuid)">
         <File Id="MarbleOverviewMapPlugin" DiskId="1"
               Name="libMarbleOverviewMap.dll" Source="@MARBLE_OVERVIEWMAP_PLUGIN@" />
         <File Id="MarbleStarsPlugin" DiskId="1"
@@ -126,7 +144,7 @@
           
     <!-- Marble-related data files -->
     <DirectoryRef Id="MarbleDataDir">
-      <Component Id="MarbleLegendsData" Guid="FA6F733F-8249-4b2b-B978-2AA04E06F5D5">
+      <Component Id="MarbleLegendsData" Guid="$(var.MarbleLegendsDataGuid)">
         <File Id="LandColorsLegend" DiskId="1"
               Name="landcolors.leg" Source="@MARBLE_DATA_DIR@\landcolors.leg" />
         <File Id="SeaColorsLegend" DiskId="1"
@@ -134,19 +152,19 @@
       </Component>
     </DirectoryRef>
     <DirectoryRef Id="MarbleBlueMarbleDataDir">
-      <Component Id="MarbleBlueMarbleData" Guid="392FEE6B-374A-447a-AECC-0422915305DB">
+      <Component Id="MarbleBlueMarbleData" Guid="$(var.MarbleBlueMarbleDataGuid)">
         <File Id="MarbleBlueMarbleDgml" DiskId="1"
               Name="bluemarble.dgml" Source="@MARBLE_DATA_DIR@\maps\earth\bluemarble\bluemarble.dgml" />
       </Component>
     </DirectoryRef>
     <DirectoryRef Id="MarbleCityLightsDataDir">
-      <Component Id="MarbleCityLightsData" Guid="DBF9FBE7-012D-4457-ABB4-9085F7E784F8">
+      <Component Id="MarbleCityLightsData" Guid="$(var.MarbleCityLightsDataGuid)">
         <File Id="MarbleCityLightsDgml" DiskId="1"
               Name="citylights.dgml" Source="@MARBLE_DATA_DIR@\maps\earth\citylights\citylights.dgml" />
       </Component>
     </DirectoryRef>
     <DirectoryRef Id="MarbleSrtmDataDir">
-      <Component Id="MarbleSrtmData" Guid="2C3A9C67-92CB-4fc6-A2F6-AD9118AFD58C">
+      <Component Id="MarbleSrtmData" Guid="$(var.MarbleSrtmDataGuid)">
         <File Id="MarbleSrtmDgml" DiskId="1"
               Name="srtm.dgml" Source="@MARBLE_DATA_DIR@\maps\earth\srtm\srtm.dgml" />
         <File Id="MarbleSrtmJpg" DiskId="1"
@@ -154,7 +172,7 @@
       </Component>
     </DirectoryRef>
     <DirectoryRef Id="MarbleMwdbiiDir">
-      <Component Id="MarbleMwdbiiData" Guid="56ACE658-6892-408a-91E5-7B5BD23D8829">
+      <Component Id="MarbleMwdbiiData" Guid="$(var.MarbleMwdbiiDataGuid)">
         <File Id="DatelinePnt" DiskId="1"
               Name="DATELINE.PNT" Source="@MARBLE_DATA_DIR@\mwdbii\DATELINE.PNT" />
         <File Id="PAustPnt" DiskId="1"
@@ -186,7 +204,7 @@
       </Component>
     </DirectoryRef>
     <DirectoryRef Id="MarblePlacemarkDataDir">
-      <Component Id="MarblePlacemarkData" Guid="27D54547-A819-435b-9A0C-13284169A9D9">
+      <Component Id="MarblePlacemarkData" Guid="$(var.MarblePlacemarkDataGuid)">
         <File Id="BasePlacemarksCache" DiskId="1"
               Name="baseplacemarks.cache" Source="@MARBLE_DATA_DIR@\placemarks\baseplacemarks.cache" />
         <File Id="BoundaryPlacemarksCache" DiskId="1"
@@ -196,13 +214,13 @@
       </Component>
     </DirectoryRef>
     <DirectoryRef Id="MarbleStarsDataDir">
-      <Component Id="MarbleStarsData" Guid="8C5C3F32-67E6-4a4a-9B6C-6D67A6D44D67">
+      <Component Id="MarbleStarsData" Guid="$(var.MarbleStarsDataGuid)">
         <File Id="StarsDat" DiskId="1"
               Name="stars.dat" Source="@MARBLE_DATA_DIR@\stars\stars.dat" />
       </Component>
     </DirectoryRef>
     <DirectoryRef Id="MarbleSvgDataDir">
-      <Component Id="MarbleSvgData" Guid="03E25BCA-4C58-4571-9F17-061D52877714">
+      <Component Id="MarbleSvgData" Guid="$(var.MarbleSvgDataGuid)">
         <File Id="WorldMapSvg" DiskId="1"
               Name="worldmap.svg" Source="@MARBLE_DATA_DIR@\svg\worldmap.svg" />
       </Component>
