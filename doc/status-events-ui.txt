@@ -1,0 +1,227 @@
+
+                Adding an Interface for Tor Status Events
+
+
+1. Introduction & Motivation
+
+This document is intended to describe the addition of an interface to display
+summaries of Tor status events in Vidalia. The status event interface is
+intended to supplant the existing message log interface. The messages that
+appear in the message log are often useful for developers helping users
+determine why their Tor is not functioning as expected, but the messages
+themselves are usually too confusing for average users.
+
+The goal of the status event interface is to provide two functions. First, it
+should promptly notify users when their Tor process is not working properly
+(e.g., unable to fetch any directory information). Currently, relevant error
+messages from Tor are simply appended to the message log without any
+indication to the user that there is something in the log they should look at.
+Second, in the case of a warning or error status event, the status event
+interface should help the user understand what the problem is and make
+specific suggestions for the user to correct the problem.
+
+
+2. Overview
+
+2.1. Main Interface
+
+The main Vidalia UI will be a single window with multiple tabs or toolbar
+buttons at the top. The first tab will always be a "Home" tab. The Home tab
+displays general information on Tor, such as whether or not Tor is running,
+Tor version information (if Tor is running), whether Vidalia is also running a
+proxy application (e.g., Polipo), and information on whether the user is
+currently running a Tor relay.
+
+Below the general information is where the status event information will be
+located. Status events will be added as a series of items to a QListBox. Each
+item in the list box has a 48x48 icon indicating the type of status event.
+Available types are STATUS_GENERAL, STATUS_CLIENT and STATUS_SERVER. If the
+event has a WARN or ERR, a "badge" will be added to the lower-right corner of
+the status event icon. WARN events will have a "yellow triangle with a black
+exclamation point" badge. ERR events will have a "red circle with white X"
+badge added to the status event icon.
+
+To the right of the icon (or to the left, if the current translation is a RTL
+language), will be two to three lines of text. The first line will be in a
+bold typeface and will contain a short, one sentence summary of the event. For
+example, "Your Tor server is inaccessible" could be the summary sentence for
+REACHABILITY_FAILED events.
+
+Below the summary line is up to two lines of descriptive text. In the event of
+WARN or ERR status events, the descriptive text gives the user possible
+suggestions as to what caused the status event and how they can fix it. If the
+descriptive text does not fit in two lines, the part of the message that does
+not fit will be replaced with an ellipses ("..."). Clicking on the status
+event once will expand the QListBox item vertically allowing the item's full
+descriptive text to be seen. Hovering over an item will also display the full
+text in a tooltip.
+
+On the far right (or, again, far left in the case of RTL languages), will be a
+clickable gray "X". Users can click on the "X" to remove the associated event
+from the QListBox. Some events may be removed from the list automatically,
+since they can be superseded by another event. As an example, consider an item
+representing a REACHABILITY_FAILED status event indicating to the user that
+their Tor relay is not reachable from outside their network. If Tor
+subsequently emits a REACHABILITY_SUCCEEDED status event, the
+REACHABILITY_FAILED event is no longer relevant or accurate and may be removed
+from the list. In any case, the list of status events will automatically be
+cleared each time Tor is restarted.
+
+The list of status events can also be filtered by the user in order to display
+only WARN and/or ERR events. The filtering is accomplished via three clickable
+QAction buttons near the status event list. Each button is labeled with the
+same badge icon that is used to denote status event severity on the list
+item's icon.
+
+
+2.2. Tray Icon Notifications
+
+As mentioned earlier, currently important warning or error messages are simply
+appended to the user's message log without any indication to the user that
+they should go look at the log. Consequently, we will use badges on the tray
+or dock icon to indicate to the user that there are status event messages they
+should look at more closely.
+
+In the case of ERR or WARN status events, a message "balloon" or "bubble" may
+also be displayed if the user's window manager permits it. While icon badges
+are common on OS X dock icons, dock icons do not support message balloons.
+Instead, we will make the dock icon bounce in order to get the user's
+attention, which is a common notification mechanism on OS X.
+
+
+3. Displayed Status Events
+
+Tor currently exposes many status events via its control interface. Like log
+messages, however, not all of them are of interest to the user. In this
+section, we describe the particular set of status events that will be handled
+and displayed to the user in the status event summary interface. Note that
+some status events, such as BOOTSTRAP and DANGEROUS_VERSION events are already
+handled by Vidalia and displayed to the user via other means, such as a
+progress bar or a message boxes, respectively.
+
+
+3.1. DIR_ALL_UNREACHABLE
+
+Tor sends this events when it is unable to connect to any of the known
+directory servers, likely because the user's local network is down. Vidalia
+should suggest to the user that they verify their computer is connected to the
+Internet.
+
+
+3.3. ENOUGH_DIR_INFO
+
+This event indicates that Tor has enough directory information to begin
+building circuits, but hasn't built one yet. This event can be superseded by a
+subsequent CIRCUIT_ESTABLISHED event.
+
+
+3.4. NOT_ENOUGH_DIR_INFO
+
+Tor sends this event when it believes it does not have sufficient directory
+information to build circuits.
+
+
+3.5. CIRCUIT_ESTABLISHED
+
+This event indicates that Tor has successfully retrieved enough directory
+information and has constructed a circuit. No further user action needs to be
+taken, but a status event message should still be added indicating to the user
+that their Tor client is functioning properly. Additionally, Vidalia currently
+changes its tray or dock to green when this event is received.
+
+
+3.6. CHECKING_REACHABILITY
+      "ORADDRESS=IP:port"
+      "DIRADDRESS=IP:port"
+
+This status event will indicate to the user that Tor is checking to see if
+their Tor relay is accessible from outside their network. No further action
+needs to be taken unless a REACHABILITY_FAILED status event is subsequently
+received.
+
+
+3.7. REACHABILITY_FAILED
+      "ORADDRESS=IP:port"
+      "DIRADDRESS=IP:port"
+
+When Vidalia receives a REACHABILITY_FAILED status event, it will notify the
+user and suggest ways to make their relay reachable by Tor clients. Most often
+this means they have a NAT or firewall that needs the user's ORPort and
+possibly DirPort opened. Vidalia could offer to use its UPnP functionality to
+attempt to configure the user's network for them.
+
+
+3.8. REACHABILITY_SUCCEEDED
+      "ORADDRESS=IP:port"
+      "DIRADDRESS=IP:port
+
+This event should indicate to the user that their relay was found to be
+reachable. No further user action needs to be taken.
+
+
+3.9. GOOD_SERVER_DESCRIPTOR and ACCEPTED_SERVER_DESCRIPTOR
+                                "DIRAUTH=addr:port"
+Tor will send these event after the user's Tor relay has successfully uploaded
+its server descriptor to at least one of the directory authorities. This
+typically means that the user's relay is functioning properly. No further user
+action needs to be taken.
+
+
+3.10. BAD_SERVER_DESCRIPTOR
+      "DIRAUTH=addr:port"
+      "REASON=string"
+
+When Vidalia receives this event, it should notify the user. The most likely
+reason for this problem is the user's clock is not set correctly. The status
+event text should suggest to the user that they should verify their system's
+clock is accurate.
+
+
+3.11. BUG
+      "REASON=STRING"
+
+Tor sends this status event when an internal check has indicated that there is
+likely a Tor software bug. The descriptive text will suggest to the user how
+and where to report the bug, as well as what information to include in the bug
+report. It may also be useful to generate additional information
+automatically, such as the user's operating system version, Tor software
+version, etc. The user can then just copy-paste that information into the bug
+report.
+
+It is possible that a bug can be triggered repeatedly, so Vidalia will make
+sure that only one status event for a particular bug will be displayed. Bug
+status events will be compared based on the string provided in the event's
+REASON field.
+
+
+3.12. CLOCK_SKEW
+      SKEW="+" / "-" SECONDS
+      MIN_SKEW="+" / "-" SECONDS.
+      SOURCE="DIRSERV:IP:Port" / "NETWORKSTATUS:IP:PORT" / "CONSENSUS"
+
+If the user's clock skew is high relative to the directory authorities,
+Vidalia should notify the user and suggest that they check the accuracy of
+their system clock. If the skew is low, then this event should be ignored and
+no further action needs to be taken.
+
+
+4. Unhandled Status Events
+
+The status events described in the previous section are a subset of the status
+events Tor currently is capable of reporting. Further, it is quite likely that
+Tor will add status events after a particular Vidalia version is released.
+Since all status events follow a similar, well-defined interface, it is
+possible for Vidalia to still parse these and display them to the user in some
+generic format; however, this is not likely to be useful to the user. Recall
+that the purpose of adding the status event interface is to be able to provide
+specific and directed suggestions to users about how to fix a particular
+problem that occurs with their Tor process. If Vidalia just blindly displays
+some status events without adding any details on the problem or how to fix it,
+the interface is not likely to be any more useful than the existing message
+log interface.
+
+As a result, the default behavior should be for Vidalia to simply discard
+status events that it does not recognize. We may want to consider adding a
+"verbose" option that does display all status events for the user. It's not
+clear that this would be benefical to the user, though.
+
