@@ -24,6 +24,10 @@
 
 #cmakedefine HAVE_SYS_LIMITS_H
 
+#cmakedefine HAVE_MATH_H
+
+#cmakedefine HAVE_CMATH
+
 #cmakedefine SIZEOF_INT @SIZEOF_INT@
 
 #cmakedefine USE_MINIUPNPC

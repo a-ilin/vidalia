@@ -101,6 +101,8 @@ endif(USE_MARBLE)
 ## Check for system header files
 check_include_file("limits.h" HAVE_LIMITS_H)
 check_include_file("sys/limits.h" HAVE_SYS_LIMITS_H)
+check_include_file("math.h"  HAVE_MATH_H)
+check_include_file_cxx("cmath" HAVE_CMATH)
 
 ## Check for the sizes of various data types
 check_type_size(int SIZEOF_INT)

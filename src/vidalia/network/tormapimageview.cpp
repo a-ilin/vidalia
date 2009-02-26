@@ -15,7 +15,14 @@
 */
 
 #include <QStringList>
+#include <config.h>
+
+#if defined(HAVE_CMATH)
 #include <cmath>
+#elif defined(HAVE_MATH_H)
+#include <math.h>
+#endif
+
 #include "tormapimageview.h"
 
 #define IMG_WORLD_MAP   ":/images/map/world-map.png"
