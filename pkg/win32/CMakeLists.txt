@@ -100,6 +100,44 @@ vidalia_add_nsh(vidalia_NSH
 
 add_custom_target(i18n-win32-installer ALL DEPENDS ${vidalia_NSH})
 
+## Convert the .po files to WiX .wxl files at build time
+vidalia_add_wxl(vidalia_WXL
+  cs/vidalia_cs.po  cs    ISO-8859-2)
+vidalia_add_wxl(vidalia_WXL
+  de/vidalia_de.po  de    ISO-8859-1)
+vidalia_add_wxl(vidalia_WXL
+  en/vidalia_en.po  en   ISO-8859-1)
+vidalia_add_wxl(vidalia_WXL
+  es/vidalia_es.po  es   ISO-8859-1)
+vidalia_add_wxl(vidalia_WXL
+  fa/vidalia_fa.po  fa     ISO-8859-6)
+vidalia_add_wxl(vidalia_WXL
+  fi/vidalia_fi.po  fi   ISO-8859-1)
+vidalia_add_wxl(vidalia_WXL
+  fr/vidalia_fr.po  fr    ISO-8859-1)
+vidalia_add_wxl(vidalia_WXL
+  he/vidalia_he.po  he    ISO-8859-8)
+vidalia_add_wxl(vidalia_WXL
+  it/vidalia_it.po  it   ISO-8859-1)
+vidalia_add_wxl(vidalia_WXL
+  nl/vidalia_nl.po  nl     ISO-8859-1)
+vidalia_add_wxl(vidalia_WXL
+  pl/vidalia_pl.po  pl    ISO-8859-2)
+vidalia_add_wxl(vidalia_WXL
+  pt/vidalia_pt.po  pt  ISO-8859-1)
+vidalia_add_wxl(vidalia_WXL
+  ro/vidalia_ro.po  ro  ISO-8859-2)
+vidalia_add_wxl(vidalia_WXL
+  ru/vidalia_ru.po  ru   1251)
+vidalia_add_wxl(vidalia_WXL
+  sv/vidalia_sv.po  sv   ISO-8859-1)
+vidalia_add_wxl(vidalia_WXL
+  zh_CN/vidalia_zh_CN.po  zh-CN   936)
+vidalia_add_wxl(vidalia_WXL
+  zh_TW/vidalia_ZH_TW.po  zh-TW   950)
+  
+add_custom_target(wix-i18n-localizations ALL DEPENDS ${vidalia_WXL})
+
 add_custom_target(win32-installer
   COMMAND ${WIX_CANDLE_EXECUTABLE} 
       ${CMAKE_CURRENT_BINARY_DIR}/vidalia.wxs 

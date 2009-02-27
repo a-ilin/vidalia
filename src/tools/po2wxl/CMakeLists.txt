@@ -10,12 +10,19 @@
 ##  the terms described in the LICENSE file.
 ##
 
-add_subdirectory(ts2po)
-add_subdirectory(po2ts)
+## po2wxl source files
+set(po2wxl_SRCS
+  po2wxl.cpp
+)
 
-if (WIN32)
-  add_subdirectory(po2nsh)
-  add_subdirectory(nsh2po EXCLUDE_FROM_ALL)
-  add_subdirectory(po2wxl)
-endif(WIN32)
+## Create the po2wxl executable
+add_executable(po2wxl ${po2wxl_SRCS})
+
+## Link the executable with the appropriate Qt libraries
+target_link_libraries(po2wxl ${QT_LIBRARIES})
+
+## Remember the location of po2wxl so we can use it in custom commands
+get_target_property(PO2WXL_EXECUTABLE po2wxl LOCATION)
+set(VIDALIA_PO2WXL_EXECUTABLE ${PO2WXL_EXECUTABLE}
+    CACHE STRING "Location of Vidalia's po2wxl converter." FORCE)
 

@@ -122,6 +122,28 @@ macro(VIDALIA_ADD_NSH OUTFILES PO NSIS_LANGUAGE CHARSET)
 endmacro(VIDALIA_ADD_NSH)
 
 
+## Wraps the input .po file specified by PO in a custom command to convert it
+## to WiX's localization XML document in a .wxl file. The culture name is
+## specified by CULTURE and codepage by CHARSET.
+## Note that CHARSET is not currently used to set codepage of String elements
+## but this may be necessary if Wix is not smart enough to do this right.
+macro(VIDALIA_ADD_WXL OUTFILES PO CULTURE CHARSET)
+  get_filename_component(po ${PO} ABSOLUTE)
+  get_filename_component(outfile ${PO} NAME_WE)
+
+  ## Create the .po -> .wxl conversion step
+  set(wxl ${CMAKE_CURRENT_BINARY_DIR}/${outfile}.wxl)
+  add_custom_command(OUTPUT ${wxl}
+    COMMAND ${VIDALIA_PO2WXL_EXECUTABLE}
+    ARGS -q -n ${CULTURE} -i ${po} -o ${wxl}
+    MAIN_DEPENDENCY ${po}
+    DEPENDS ${VIDALIA_PO2WXL_EXECUTABLE}
+    COMMENT "Generating ${outfile}.wxl"
+  )
+  set(${OUTFILES} ${${OUTFILES}} ${wxl})
+endmacro(VIDALIA_ADD_WXL)
+
+
 if (WIN32)
   ## Wraps the supplied .rc files in windres commands
   macro(WIN32_WRAP_RC outfiles)
