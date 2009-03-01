@@ -21,6 +21,7 @@
 #define WXL_ELEMENT_MESSAGE            "String"
 #define WXL_ATTR_MESSAGE_ID            "Id"
 #define WXL_ATTR_TRANSLATION_TYPE      "Culture"
+#define WXL_ATTR_OVERRIDABLE           "Overridable"
 
 /** Create a new message string element using the source string <b>msgid</b>
  * and the translation <b>msgstr</b> and assign identifier attribute. */
@@ -32,6 +33,11 @@ new_message_element(QDomDocument *wxl, const QString &strid,
 
   message = wxl->createElement(WXL_ELEMENT_MESSAGE);
   message.setAttribute(WXL_ATTR_MESSAGE_ID, strid);
+
+  /* Always allow localized string to be dynamic. This is required for
+   * multi-language packages to link correctly.
+   */
+  message.setAttribute(WXL_ATTR_OVERRIDABLE, "yes");
   if (!msgstr.isEmpty())
     message.appendChild(wxl->createTextNode(msgstr));
   else
