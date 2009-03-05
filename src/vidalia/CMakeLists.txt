@@ -343,19 +343,8 @@ if (APPLE)
   )
 
   if (USE_MARBLE)
-    ## Copy the Marble widget libraries into the bundle
-    set(outdir ${CMAKE_CURRENT_BINARY_DIR}/Vidalia.app/Contents/MacOS)
-    foreach (it ${MARBLE_LIBRARIES})
-      get_filename_component(outfile ${it} NAME)
-      add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
-        COMMAND ${CMAKE_COMMAND}
-          ARGS -E copy_if_different ${it} ${outdir}/
-        COMMAND install_name_tool
-          ARGS -change ${it} @executable_path/${outfile} ${outdir}/${vidalia_BIN} 
-      )
-    endforeach(it)
-
     ## Copy the Marble data into the bundle
+    set(outdir ${CMAKE_CURRENT_BINARY_DIR}/Vidalia.app/Contents/MacOS)
     foreach(it ${marble_DATA})
       get_filename_component(outdir  ${it} PATH)
       get_filename_component(outfile ${it} NAME)
