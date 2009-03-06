@@ -47,6 +47,26 @@ configure_file(
   @ONLY
 )
 configure_file(
+  ${CMAKE_CURRENT_SOURCE_DIR}/polipo.wxs.in
+  ${CMAKE_CURRENT_BINARY_DIR}/polipo.wxs
+  @ONLY
+)
+configure_file(
+  ${CMAKE_CURRENT_SOURCE_DIR}/thandy.wxs.in
+  ${CMAKE_CURRENT_BINARY_DIR}/thandy.wxs
+  @ONLY
+)
+configure_file(
+  ${CMAKE_CURRENT_SOURCE_DIR}/torbutton.wxs.in
+  ${CMAKE_CURRENT_BINARY_DIR}/torbutton.wxs
+  @ONLY
+)
+configure_file(
+  ${CMAKE_CURRENT_SOURCE_DIR}/tor.wxs.in
+  ${CMAKE_CURRENT_BINARY_DIR}/tor.wxs
+  @ONLY
+)
+configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/WixUI_Custom.wxs
   ${CMAKE_CURRENT_BINARY_DIR}/WixUI_Custom.wxs
   COPYONLY
