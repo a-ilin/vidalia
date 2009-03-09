@@ -15,7 +15,7 @@
   <Product Name="Thandy $(var.ThisProductVersionDisp)" Id="$(var.CurrProductGUID)"
            Version="$(var.ThisProductVersion)"
            Manufacturer="www.torproject.org"
-           Language="$(loc.LCID)"
+           Language="!(loc.LCID)"
            UpgradeCode="$(var.UpgradeCode)">
     
     <Package Id="*" Keywords="Installer"

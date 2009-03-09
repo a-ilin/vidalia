@@ -23,7 +23,7 @@
   <Product Name="Polipo $(var.ThisProductVersionDisp)" Id="$(var.CurrProductGUID)"
            Version="$(var.ThisProductVersion)"
            Manufacturer="mailto: coderman at gmail.com - test package for The Tor Project, Inc."
-           Language="$(loc.LCID)"
+           Language="!(loc.LCID)"
            UpgradeCode="$(var.UpgradeCode)">
     
     <Package Id="*" Keywords="Installer"

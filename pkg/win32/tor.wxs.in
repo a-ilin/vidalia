@@ -64,7 +64,7 @@
     UpgradeCode="$(var.UpgradeCode)"
     Version="$(var.ThisProductVersion)"
     Manufacturer="$(var.TPI)"
-    Language="1033" Codepage="1252">
+    Language="!(loc.LCID)">
 
     <!-- Common package definitions.  Most of these elements are self
     explanatory or do not need modification.
@@ -78,8 +78,6 @@
       Manufacturer="$(var.TPI)"
       Compressed="yes"
       InstallerVersion="100"
-      Languages="1033"
-      SummaryCodepage="1252"
       InstallPrivileges="limited"
     />
     <Media Id="1"
