@@ -21,16 +21,15 @@
   <?define CurrLocalProgramsGUID="e0c517aa-5eb7-4909-a23f-7fccd7fddeef" ?>
 
   <Product Name="Polipo $(var.ThisProductVersionDisp)" Id="$(var.CurrProductGUID)"
-           Language="1033" Codepage="1252"
            Version="$(var.ThisProductVersion)"
            Manufacturer="mailto: coderman at gmail.com - test package for The Tor Project, Inc."
+           Language="$(loc.LCID)"
            UpgradeCode="$(var.UpgradeCode)">
     
     <Package Id="*" Keywords="Installer"
              Description="Polipo $(var.ThisProductVersionDisp) Installer"
              Manufacturer="mailto: coderman at gmail.com - test package for The Tor Project, Inc."
              InstallerVersion="100" Compressed="yes"
-             Languages="1033"  SummaryCodepage="1252"
              InstallPrivileges="limited" />
 
     <Media Id="1" Cabinet="Polipo.cab" CompressionLevel="high"

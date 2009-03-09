@@ -13,16 +13,15 @@
   <?define CurrLocalProgramsGUID="c5971fba-b0bc-46e1-881c-a9139122a45d" ?>
 
   <Product Name="Thandy $(var.ThisProductVersionDisp)" Id="$(var.CurrProductGUID)"
-           Language="1033" Codepage="1252"
            Version="$(var.ThisProductVersion)"
-           Manufacturer="mailto: coderman at gmail.com - test package for The Tor Project, Inc."
+           Manufacturer="www.torproject.org"
+           Language="$(loc.LCID)"
            UpgradeCode="$(var.UpgradeCode)">
     
     <Package Id="*" Keywords="Installer"
              Description="Thandy $(var.ThisProductVersionDisp) Installer"
-             Manufacturer="mailto: coderman at gmail.com - test package for The Tor Project, Inc."
+             Manufacturer="www.torproject.org"
              InstallerVersion="100" Compressed="yes"
-             Languages="1033"  SummaryCodepage="1252"
              InstallPrivileges="limited" />
 
     <Media Id="1" Cabinet="Thandy.cab" CompressionLevel="high"
