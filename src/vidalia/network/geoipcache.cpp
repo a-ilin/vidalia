@@ -74,7 +74,7 @@ GeoIpCache::saveToDisk(QString *errmsg)
     }
   }
   /* Rename the temporary file into place. */
-  if (tmpCacheFile.rename(cacheFile.fileName())) {
+  if (!tmpCacheFile.rename(cacheFile.fileName())) {
     return err(errmsg, tmpCacheFile.errorString());
   }
   return true;
