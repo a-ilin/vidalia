@@ -22,7 +22,7 @@
     <Package Id="*" Keywords="Installer"
              Description="TorButton $(var.ThisProductVersionDisp) Installer"
              Manufacturer="www.torproject.org"
-             InstallerVersion="100" Compressed="yes"
+             InstallerVersion="200" Compressed="yes"
              InstallPrivileges="limited" />
 
     <Media Id="1" Cabinet="TorButton.cab" CompressionLevel="high"

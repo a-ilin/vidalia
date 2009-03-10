@@ -29,7 +29,7 @@
     <Package Id="*" Keywords="Installer"
              Description="Polipo $(var.ThisProductVersionDisp) Installer"
              Manufacturer="mailto: coderman at gmail.com - test package for The Tor Project, Inc."
-             InstallerVersion="100" Compressed="yes"
+             InstallerVersion="200" Compressed="yes"
              InstallPrivileges="limited" />
 
     <Media Id="1" Cabinet="Polipo.cab" CompressionLevel="high"
@@ -71,7 +71,7 @@
          Note that this directory will be left in place if it is in use by any other app.
            -->
          <Component Id="LocalProgramsFolderRef" Guid="$(var.CurrLocalProgramsGUID)">
-           <CreateFolder/>
+           <CreateFolder />
            <RemoveFolder Id="RemoveLocalProgramsFolder" On="uninstall" />
            <RegistryKey Root="HKCU" Key="Software\Polipo" Action="createAndRemoveOnUninstall">
              <RegistryValue Name="LocalProgramsFolderRef" Value="1" Type="integer" KeyPath="yes" />
@@ -114,7 +114,7 @@
 
         <Directory Id="INSTALLDIR" Name="Polipo">
           <Component Id="PolipoConfig" Guid="$(var.CurrConfigFileGUID)">
-            <CreateFolder/>
+            <CreateFolder />
             <RemoveFolder Id="RemoveINSTALLDIR" On="uninstall" />
             <RegistryKey Root="HKCU" Key="Software\Polipo" Action="createAndRemoveOnUninstall">
               <RegistryValue Name="ConfigFile" Value="1" Type="integer" KeyPath="yes" />
