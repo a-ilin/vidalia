@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-11-24 15:58+0000\n"
-"PO-Revision-Date: 2009-02-24 04:27+0000\n"
-"Last-Translator: phobos <phobos@rootme.org>\n"
+"PO-Revision-Date: 2009-02-27 10:43+0000\n"
+"Last-Translator: Mark Stock <topgun89@hotmail.it>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,12 +35,12 @@ msgstr "Qt"
 #: aboutdialog.cpp:53
 msgctxt "AboutDialog"
 msgid "Unavailable"
-msgstr ""
+msgstr "Non disponibile"
 
 #: aboutdialog.cpp:57
 msgctxt "AboutDialog"
 msgid "Not Running"
-msgstr ""
+msgstr "Non in esecuzione"
 
 #: aboutdialog.ui:81
 msgctxt "AboutDialog"
@@ -50,7 +50,7 @@ msgstr "0.2.0"
 #: aboutdialog.ui:106
 msgctxt "AboutDialog"
 msgid "0.2.0.31-alpha-dev (r123456)"
-msgstr ""
+msgstr "0.2.0.31-alpha-dev (r123456)"
 
 #: aboutdialog.ui:131
 msgctxt "AboutDialog"
@@ -60,12 +60,12 @@ msgstr "4.4.2"
 #: aboutdialog.ui:107
 msgctxt "AboutDialog"
 msgid "License"
-msgstr ""
+msgstr "Licenza"
 
 #: aboutdialog.ui:163
 msgctxt "AboutDialog"
 msgid "version"
-msgstr ""
+msgstr "versione"
 
 #: advancedpage.ui:28
 msgctxt "AdvancedPage"
@@ -230,6 +230,7 @@ msgstr "Scegliere lo stile dell'interfaccia di Vidalia"
 msgctxt "AppearancePage"
 msgid "Vidalia was unable to load the selected language translation."
 msgstr ""
+"Vidalia non è in grado di caricare la traduzione della lingua selezionata"
 
 #: bwgraph.ui:16
 msgctxt "BandwidthGraph"
@@ -434,17 +435,19 @@ msgstr "Vidalia non &egrave; riuscito a collegarsi a Tor. (%1)"
 #: controlpasswordinputdialog.ui:28
 msgctxt "ControlPasswordInputDialog"
 msgid "Password Required"
-msgstr ""
+msgstr "Password richiesta"
 
 #: controlpasswordinputdialog.ui:80
 msgctxt "ControlPasswordInputDialog"
 msgid "Vidalia has connected to a running Tor process that requires a password. Please enter your control password: "
 msgstr ""
+"Vidalia si è connesso a un processo Tor che richiede una password. Inserisci "
+"la tua password:"
 
 #: controlpasswordinputdialog.ui:99
 msgctxt "ControlPasswordInputDialog"
 msgid "Remember my password"
-msgstr ""
+msgstr "Ricorda la mia password"
 
 #: controlsocket.cpp:80
 msgctxt "ControlSocket"
@@ -517,17 +520,17 @@ msgstr "Tor"
 #: generalpage.ui:93
 msgctxt "GeneralPage"
 msgid "Proxy Application (optional)"
-msgstr ""
+msgstr "Applicazione Proxy (opzionale)"
 
 #: generalpage.ui:99
 msgctxt "GeneralPage"
 msgid "Start a proxy application when Tor starts"
-msgstr ""
+msgstr "Avvia un'applicazione proxy quando Tor si avvia"
 
 #: generalpage.ui:135
 msgctxt "GeneralPage"
 msgid "Proxy Application Arguments:"
-msgstr ""
+msgstr "Argomenti applicazione proxy:"
 
 #: graphframe.cpp:238
 msgctxt "GraphFrame"
@@ -757,17 +760,17 @@ msgstr ""
 #: licensedialog.ui:13
 msgctxt "LicenseDialog"
 msgid "License Information"
-msgstr ""
+msgstr "Informazioni licenza"
 
 #: licensedialog.ui:43
 msgctxt "LicenseDialog"
 msgid "License"
-msgstr ""
+msgstr "Licenza"
 
 #: licensedialog.ui:76
 msgctxt "LicenseDialog"
 msgid "Credits"
-msgstr ""
+msgstr "Crediti"
 
 #: logevent.cpp:57
 msgctxt "LogEvent"
@@ -1057,11 +1060,13 @@ msgctxt "MainWindow"
 msgid "Your relay is shutting down."
 "Click 'Stop' again to stop your relay now."
 msgstr ""
+"Il tuo relay si sta disattivando. Premi 'Stop' di nuovo per disattivare il "
+"tuo relay ora."
 
 #: mainwindow.cpp:906
 msgctxt "MainWindow"
 msgid "Connection Error"
-msgstr ""
+msgstr "Errore di connessione"
 
 #: mainwindow.cpp:943
 msgctxt "MainWindow"
@@ -1069,21 +1074,24 @@ msgid "You are currently running a relay. Terminating your relay will interrupt 
 ""
 "Would you like to shutdown gracefully and give clients time to find a new relay?"
 msgstr ""
+"Attualmente stai eseguendo un relay. Terminando il tuo relay interromperai "
+"tutte le connessioni aperte dai clients. Vuoi chiudere con grazia e dare "
+"tempo ai client di trovare un nuovo relay?"
 
 #: mainwindow.cpp:965
 msgctxt "MainWindow"
 msgid "Error Shutting Down"
-msgstr ""
+msgstr "Errore chiusura"
 
 #: mainwindow.cpp:966
 msgctxt "MainWindow"
 msgid "Vidalia was unable to stop the Tor software."
-msgstr ""
+msgstr "Vidalia non è riuscito a chiudere Tor"
 
 #: mainwindow.cpp:997
 msgctxt "MainWindow"
 msgid "Unexpected Error"
-msgstr ""
+msgstr "Errore inaspettato"
 
 #: mainwindow.cpp:1001
 msgctxt "MainWindow"
@@ -1091,11 +1099,15 @@ msgid "Vidalia detected that the Tor software exited unexpectedly."
 ""
 "Please check the message log for recent warning or error messages."
 msgstr ""
+"Vidalia ha notato che Tor si è chiuso inaspettatamente. Controlla il message "
+"log per avvisi o messaggi di errore recenti."
 
 #: mainwindow.cpp:1078
 msgctxt "MainWindow"
 msgid "The Tor software requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one."
 msgstr ""
+"Tor richiede Vidalia per mandare i contenuti di un cookie di autenticazione, "
+"ma Vidalia non è stato in grado di trovarne uno."
 
 #: mainwindow.cpp:1087
 msgctxt "MainWindow"
@@ -1105,32 +1117,34 @@ msgstr "Directory dai dati"
 #: mainwindow.cpp:1089
 msgctxt "MainWindow"
 msgid "Control Cookie (control_auth_cookie)"
-msgstr ""
+msgstr "Cookie di controllo (control_auth_cookie)"
 
 #: mainwindow.cpp:1143
 msgctxt "MainWindow"
 msgid "Vidalia was unable to register for some events. Many of Vidalia's features may be unavailable."
 msgstr ""
+"Vidalia non è stato in grado di registrare alcuni eventi. Alcune funzioni di "
+"Vidalia potrebbero non essere disponibili"
 
 #: mainwindow.cpp:1222
 msgctxt "MainWindow"
 msgid "Authentication Error"
-msgstr ""
+msgstr "Errore di autenticazione"
 
 #: mainwindow.cpp:1224
 msgctxt "MainWindow"
 msgid "Vidalia was unable to authenticate to the Tor software. (%1)"
-msgstr ""
+msgstr "Vidalia non è riuscito ad autenticare Tor. (%1)"
 
 #: mainwindow.cpp:1458
 msgctxt "MainWindow"
 msgid "Port Forwarding Failed"
-msgstr ""
+msgstr "Port Forwarding fallito"
 
 #: mainwindow.cpp:1459
 msgctxt "MainWindow"
 msgid "Vidalia was unable to configure automatic port forwarding."
-msgstr ""
+msgstr "Vidalia non è riuscito a configurare il port forwarding automatico"
 
 #: mainwindow.ui:49
 msgctxt "MainWindow"
@@ -1140,182 +1154,185 @@ msgstr "Stato"
 #: mainwindow.ui:246
 msgctxt "MainWindow"
 msgid "Set up a relay and help the network grow"
-msgstr ""
+msgstr "Imposta un relay e aiuta la rete a crescere"
 
 #: mainwindow.ui:307
 msgctxt "MainWindow"
 msgid "View recent bandwidth usage"
-msgstr ""
+msgstr "Guarda l'utilizzo della banda recente"
 
 #: mainwindow.ui:320
 msgctxt "MainWindow"
 msgid "View log message history"
-msgstr ""
+msgstr "Guarda la cronologia dei log message"
 
 #: mainwindow.ui:383
 msgctxt "MainWindow"
 msgid "Configure Vidalia"
-msgstr ""
+msgstr "Configura Vidalia"
 
 #: mainwindow.ui:233
 msgctxt "MainWindow"
 msgid "Start Tor"
-msgstr ""
+msgstr "Avvia Tor"
 
 #: mainwindow.cpp:540
 msgctxt "MainWindow"
 msgid "Error starting IM client"
-msgstr ""
+msgstr "Errore all'avvio del client IM"
 
 #: mainwindow.cpp:541
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured IM client"
-msgstr ""
+msgstr "Vidalia non è riuscito a configurare il client IM"
 
 #: mainwindow.cpp:579
 msgctxt "MainWindow"
 msgid "Connecting to a relay directory"
-msgstr ""
+msgstr "Connessione alla directory del relay"
 
 #: mainwindow.cpp:583
 msgctxt "MainWindow"
 msgid "Establishing an encrypted directory connection"
-msgstr ""
+msgstr "Creando una connessione a directory criptata"
 
 #: mainwindow.cpp:586
 msgctxt "MainWindow"
 msgid "Retrieving network status"
-msgstr ""
+msgstr "Recupero stato della rete"
 
 #: mainwindow.cpp:589
 msgctxt "MainWindow"
 msgid "Loading network status"
-msgstr ""
+msgstr "Caricamento stato della rete"
 
 #: mainwindow.cpp:592
 msgctxt "MainWindow"
 msgid "Loading authority certificates"
-msgstr ""
+msgstr "Caricamento certificati autorità"
 
 #: mainwindow.cpp:595
 msgctxt "MainWindow"
 msgid "Requesting relay information"
-msgstr ""
+msgstr "Richiesta informazioni relay"
 
 #: mainwindow.cpp:598
 msgctxt "MainWindow"
 msgid "Loading relay information"
-msgstr ""
+msgstr "Caricamento informazioni del relay"
 
 #: mainwindow.cpp:1132
 msgctxt "MainWindow"
 msgid "Connecting to the Tor network"
-msgstr ""
+msgstr "Connessione alla rete Tor"
 
 #: mainwindow.cpp:605
 msgctxt "MainWindow"
 msgid "Establishing a Tor circuit"
-msgstr ""
+msgstr "Creazione circuito Tor"
 
 #: mainwindow.cpp:1297
 msgctxt "MainWindow"
 msgid "Connected to the Tor network!"
-msgstr ""
+msgstr "Connesso alla rete Tor!"
 
 #: mainwindow.cpp:612
 msgctxt "MainWindow"
 msgid "Unrecognized startup status"
-msgstr ""
+msgstr "Stato di avvio non riconosciuto"
 
 #: mainwindow.cpp:619
 msgctxt "MainWindow"
 msgid "miscellaneous"
-msgstr ""
+msgstr "varie"
 
 #: mainwindow.cpp:622
 msgctxt "MainWindow"
 msgid "identity mismatch"
-msgstr ""
+msgstr "discordanza di identità"
 
 #: mainwindow.cpp:625
 msgctxt "MainWindow"
 msgid "done"
-msgstr ""
+msgstr "fatto"
 
 #: mainwindow.cpp:628
 msgctxt "MainWindow"
 msgid "connection refused"
-msgstr ""
+msgstr "connessione rifiutata"
 
 #: mainwindow.cpp:631
 msgctxt "MainWindow"
 msgid "connection timeout"
-msgstr ""
+msgstr "timeout connessione"
 
 #: mainwindow.cpp:634
 msgctxt "MainWindow"
 msgid "read/write error"
-msgstr ""
+msgstr "errore lettura/scrittura"
 
 #: mainwindow.cpp:637
 msgctxt "MainWindow"
 msgid "no route to host"
-msgstr ""
+msgstr "nessun route da ospitare"
 
 #: mainwindow.cpp:640
 msgctxt "MainWindow"
 msgid "insufficient resources"
-msgstr ""
+msgstr "risorse insufficienti"
 
 #: mainwindow.cpp:643
 msgctxt "MainWindow"
 msgid "unknown"
-msgstr ""
+msgstr "sconosciuto"
 
 #: mainwindow.cpp:645
 msgctxt "MainWindow"
 msgid " failed (%1)"
-msgstr ""
+msgstr "fallito (%1)"
 
 #: mainwindow.cpp:693
 msgctxt "MainWindow"
 msgid "Stop Tor Now"
-msgstr ""
+msgstr "Stop Tor ora"
 
 #: mainwindow.cpp:695
 msgctxt "MainWindow"
 msgid "Stop Tor"
-msgstr ""
+msgstr "Stop Tor"
 
 #: mainwindow.cpp:711
 msgctxt "MainWindow"
 msgid "Starting the Tor software"
-msgstr ""
+msgstr "Avvio software Tor"
 
 #: mainwindow.ui:75
 msgctxt "MainWindow"
 msgid "Starting Tor"
-msgstr ""
+msgstr "Avvio Tor"
 
 #: mainwindow.cpp:896
 msgctxt "MainWindow"
 msgid "Connecting to Tor"
-msgstr ""
+msgstr "Connessione a Tor"
 
 #: mainwindow.cpp:1055
 msgctxt "MainWindow"
 msgid "Authenticating to Tor"
-msgstr ""
+msgstr "Autenticazione a Tor"
 
 #: mainwindow.cpp:1210
 msgctxt "MainWindow"
 msgid "Password Reset Failed"
-msgstr ""
+msgstr "reset password fallito"
 
 #: mainwindow.cpp:1213
 msgctxt "MainWindow"
 msgid "Vidalia tried to reset Tor's control password, but was not able to restart the Tor software. Please check your Task Manager to ensure there are no other Tor processes running."
 msgstr ""
+"Vidalia ha provato a resettare la password di controllo di Tor, ma non è "
+"riuscito a riavviare Tor. Controlla il tuo Task Manager per assicurarsi che "
+"non vi sono altri processi Tor in esecuzione"
 
 #: messagelog.ui:19
 msgctxt "MessageLog"
@@ -1783,87 +1800,91 @@ msgstr "Mappa della rete Tor"
 #: netviewer.ui:245
 msgctxt "NetViewer"
 msgid "Refresh the list of Tor relays and connections"
-msgstr ""
+msgstr "Ricarica la lista dei relay Tor e delle connessioni"
 
 #: networkpage.cpp:193
 msgctxt "NetworkPage"
 msgid "Invalid Bridge"
-msgstr ""
+msgstr "Bridge non valido"
 
 #: networkpage.cpp:194
 msgctxt "NetworkPage"
 msgid "The specified bridge identifier is not valid."
-msgstr ""
+msgstr "L'identifier del bridge specifico non è valido."
 
 #: networkpage.cpp:241
 msgctxt "NetworkPage"
 msgid "Copy (Ctrl+C)"
-msgstr ""
+msgstr "Copia (Ctrl+C)"
 
 #: networkpage.cpp:272
 msgctxt "NetworkPage"
 msgid "You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet."
 msgstr ""
+"Devi specificare sia un indirizzo IP o un nome dell'host e un numero della "
+"porta per configurare Tor e usare un proxy per accedere a Internet"
 
 #: networkpage.cpp:278
 msgctxt "NetworkPage"
 msgid "You must specify one or more ports to which your firewall allows you to connect."
 msgstr ""
+"Devi specificare una o più porte a cui il tuo firewall permette di "
+"connettersi"
 
 #: networkpage.cpp:314
 msgctxt "NetworkPage"
 msgid "'%1' is not a valid port number."
-msgstr ""
+msgstr "'%1' non è un numero di porta valido."
 
 #: networkpage.ui:28
 msgctxt "NetworkPage"
 msgid "I use a proxy to access the Internet"
-msgstr ""
+msgstr "Uso un proxy per accedere a Internet"
 
 #: networkpage.ui:58
 msgctxt "NetworkPage"
 msgid "Proxy Settings"
-msgstr ""
+msgstr "Impostazioni proxy"
 
 #: networkpage.ui:70
 msgctxt "NetworkPage"
 msgid "HTTP Proxy:"
-msgstr ""
+msgstr "HTTP Proxy:"
 
 #: networkpage.ui:80
 msgctxt "NetworkPage"
 msgid "Username:"
-msgstr ""
+msgstr "Nome utente:"
 
 #: networkpage.ui:90
 msgctxt "NetworkPage"
 msgid "Use this proxy for HTTPS also"
-msgstr ""
+msgstr "Usa questo proxy anche per HTTPS"
 
 #: networkpage.ui:108
 msgctxt "NetworkPage"
 msgid "Password:"
-msgstr ""
+msgstr "Password:"
 
 #: networkpage.ui:135
 msgctxt "NetworkPage"
 msgid "Port:"
-msgstr ""
+msgstr "Porta:"
 
 #: networkpage.ui:179
 msgctxt "NetworkPage"
 msgid "My firewall only lets me connect to certain ports"
-msgstr ""
+msgstr "Il mio firewall mi permette di connettermi solo a certe porte"
 
 #: networkpage.ui:203
 msgctxt "NetworkPage"
 msgid "Firewall Settings"
-msgstr ""
+msgstr "Impostazioni Firewall"
 
 #: networkpage.ui:215
 msgctxt "NetworkPage"
 msgid "Allowed Ports:"
-msgstr ""
+msgstr "Porte consentite:"
 
 #: networkpage.ui:225
 msgctxt "NetworkPage"
@@ -1873,37 +1894,40 @@ msgstr "80, 443"
 #: networkpage.ui:238
 msgctxt "NetworkPage"
 msgid "My ISP blocks connections to the Tor network"
-msgstr ""
+msgstr "Il mio ISP blocca le connessioni alla rete Tor"
 
 #: networkpage.ui:295
 msgctxt "NetworkPage"
 msgid "Add a Bridge:"
-msgstr ""
+msgstr "Aggiungi un bridge"
 
 #: networkpage.ui:383
 msgctxt "NetworkPage"
 msgid "Remove the selected bridges from the list"
-msgstr ""
+msgstr "Rimuovi i bridge selezionati dalla lista"
 
 #: networkpage.ui:399
 msgctxt "NetworkPage"
 msgid "Copy the selected bridges to the clipboard"
-msgstr ""
+msgstr "Copia i bridge selezionati nella clipboard"
 
 #: networkpage.ui:318
 msgctxt "NetworkPage"
 msgid "<a href=\"bridges.finding\">How do I find a bridge?</a>"
-msgstr ""
+msgstr "<a href=\"bridges.finding\">Come trovo un bridge?</a>"
 
 #: networkpage.ui:25
 msgctxt "NetworkPage"
 msgid "Check if your local network requires a proxy to access the Internet"
 msgstr ""
+"Controlla se la tua rete locale richiede un proxy per accedere a Internet"
 
 #: networkpage.ui:176
 msgctxt "NetworkPage"
 msgid "Check to only connect to relays using ports allowed by your firewall"
 msgstr ""
+"Controlla che si connetta ai relay solo tramite le porte consentite dal tuo "
+"firewall"
 
 #: networkpage.ui:235
 msgctxt "NetworkPage"
@@ -1913,7 +1937,7 @@ msgstr ""
 #: networkpage.ui:262
 msgctxt "NetworkPage"
 msgid "Bridge Settings"
-msgstr ""
+msgstr "Impostazioni Bridge"
 
 #: networkpage.ui:274
 msgctxt "NetworkPage"
@@ -1978,22 +2002,22 @@ msgstr "Luogo:"
 #: routerdescriptorview.cpp:100
 msgctxt "RouterDescriptorView"
 msgid "%1 days "
-msgstr ""
+msgstr "%1 giorni"
 
 #: routerdescriptorview.cpp:103
 msgctxt "RouterDescriptorView"
 msgid "%1 hours "
-msgstr ""
+msgstr "%1 ore"
 
 #: routerdescriptorview.cpp:106
 msgctxt "RouterDescriptorView"
 msgid "%1 mins "
-msgstr ""
+msgstr "%1 min"
 
 #: routerdescriptorview.cpp:109
 msgctxt "RouterDescriptorView"
 msgid "%1 secs"
-msgstr ""
+msgstr "%1 sec"
 
 #: routerdescriptorview.cpp:48
 msgctxt "RouterDescriptorView"
@@ -2018,17 +2042,17 @@ msgstr "Ibernazione"
 #: routerlistwidget.cpp:49
 msgctxt "RouterListWidget"
 msgid "Relay"
-msgstr ""
+msgstr "Relay"
 
 #: routerlistwidget.cpp:74
 msgctxt "RouterListWidget"
 msgid "Zoom to Relay"
-msgstr ""
+msgstr "Centra sul relay"
 
 #: routerlistwidget.cpp:220
 msgctxt "RouterListWidget"
 msgid "%1 relays online"
-msgstr ""
+msgstr "%1 relay connessi"
 
 #: routerlistwidget.cpp:67
 msgctxt "RouterListWidget"
@@ -2038,12 +2062,12 @@ msgstr "Copia"
 #: routerlistwidget.cpp:68
 msgctxt "RouterListWidget"
 msgid "Nickname"
-msgstr ""
+msgstr "Nickname"
 
 #: routerlistwidget.cpp:71
 msgctxt "RouterListWidget"
 msgid "Fingerprint"
-msgstr ""
+msgstr "Impronta digitale"
 
 #: serverpage.ui:32
 msgctxt "ServerPage"
@@ -2223,33 +2247,39 @@ msgstr "La banda massima deve essere maggiore o uguale alla banda allocata media
 #: serverpage.cpp:140
 msgctxt "ServerPage"
 msgid "Bridge Support Unavailable"
-msgstr ""
+msgstr "Supporto dei bridge non disponibile"
 
 #: serverpage.cpp:143
 msgctxt "ServerPage"
 msgid "You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges."
 msgstr ""
+"Hai configurato Tor per agire da relay bridge per utendi censurati, ma la "
+"tua versione di Tor non supporta i bridge"
 
 #: serverpage.cpp:145
 msgctxt "ServerPage"
 msgid "Please upgrade your Tor software or configure Tor to act as a normal Tor relay."
 msgstr ""
+"Aggiorna il tuo software Tor o configura Tor per agire come un normale relay "
+"Tor"
 
 #: serverpage.cpp:263
 msgctxt "ServerPage"
 msgid "You must specify at least a relay nickname and port."
-msgstr ""
+msgstr "Devi specificare un relay nickname e una porta"
 
 #: serverpage.ui:91
 msgctxt "ServerPage"
 msgid "Relay Port:"
-msgstr ""
+msgstr "Porta relay:"
 
 #: serverpage.ui:204
 msgctxt "ServerPage"
 msgid "Email address at which you may be reached if there is a"
 "problem with your relay. You might also include your PGP or GPG fingerprint."
 msgstr ""
+"Indirizzo email a cui puoi essere raggiunto se c'è un problema con il tuo "
+"relay. Puoi anche includere la tua impronta digitale PGP o GPG"
 
 #: serverpage.ui:113
 msgctxt "ServerPage"
@@ -2259,47 +2289,51 @@ msgstr ""
 #: serverpage.cpp:199
 msgctxt "ServerPage"
 msgid "Your bridge relay is not running."
-msgstr ""
+msgstr "Il tuo bridge relay non è attivo."
 
 #: serverpage.ui:39
 msgctxt "ServerPage"
 msgid "Help censored users reach the Tor network (Tor 0.2.0.8-alpha or newer)"
 msgstr ""
+"Aiuta utenti censurati a raggiungere la rete Tor (Tor 0.2.0.8-alpha o più "
+"recente)"
 
 #: serverpage.ui:337
 msgctxt "ServerPage"
 msgid "Name of your relay"
-msgstr ""
+msgstr "Nome del tuo relay"
 
 #: serverpage.ui:370
 msgctxt "ServerPage"
 msgid "Port on which users and other relays can communicate with your relay"
 msgstr ""
+"Porta tramite cui utenti e altri relay possono comunicare con il tuo relay"
 
 #: serverpage.ui:1015
 msgctxt "ServerPage"
 msgid "Let others access your bridge by giving them this line:"
 msgstr ""
+"Consenti agli altri di accedere al tuo bridge dando questa linea di testo:"
 
 #: serverpage.ui:1039
 msgctxt "ServerPage"
 msgid "This is the identity of your bridge relay that you can give to other people"
-msgstr ""
+msgstr "Questa è l'identità del tuo bridge relay che puoi dare a altre persone"
 
 #: serverpage.ui:1061
 msgctxt "ServerPage"
 msgid "Copy your bridge relay's identity to the clipboard"
-msgstr ""
+msgstr "Copia l'identità del tuo bridge relay nel clipboard"
 
 #: serverpage.ui:841
 msgctxt "ServerPage"
 msgid "Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 and 8888"
-msgstr "Porte 706, 1863, 5050, 5190, 5222, 8300 e 8888 {706, 1863, 5050, 5190, 5222, 5223, 8300 ?}"
+msgstr "Porte 706, 1863, 5050, 5190, 5222, 8300 e 8888"
 
 #: serverpage.ui:25
 msgctxt "ServerPage"
 msgid "Run as a client only"
-msgstr ""
+msgstr "Utilizza solo come client"
 
 #: serverpage.ui:110
 msgctxt "ServerPage"
@@ -2309,27 +2343,31 @@ msgstr ""
 #: serverpage.ui:139
 msgctxt "ServerPage"
 msgid "Attempt to automatically configure port forwarding"
-msgstr ""
+msgstr "Tenta di configurare automaticamente il port forwarding"
 
 #: serverpage.ui:154
 msgctxt "ServerPage"
 msgid "Test"
-msgstr ""
+msgstr "Test"
 
 #: serverpage.ui:969
 msgctxt "ServerPage"
 msgid "What Internet resources should users be able to access from your relay?"
 msgstr ""
+"A quali risorse di internet gli utenti possono accedere tramite il tuo "
+"relay?"
 
 #: serverpage.ui:164
 msgctxt "ServerPage"
 msgid "Show help topic on port forwarding"
-msgstr ""
+msgstr "Mostra il topic di aiuto sul port forwarding"
 
 #: serverpage.ui:979
 msgctxt "ServerPage"
 msgid "Tor will still block some outgoing mail and file sharing applications by default to reduce spam and other abuse."
 msgstr ""
+"Tor bloccherà alcune mail in uscita e programmi di condivisione file di base "
+"per ridurre spam e altri abusi"
 
 #: servicepage.cpp:116
 msgctxt "ServicePage"
@@ -2339,32 +2377,32 @@ msgstr ""
 #: servicepage.cpp:597
 msgctxt "ServicePage"
 msgid "Error"
-msgstr "Errori"
+msgstr "Error"
 
 #: servicepage.cpp:452
 msgctxt "ServicePage"
 msgid "Please select a Service."
-msgstr ""
+msgstr "Seleziona un Servizio"
 
 #: servicepage.cpp:458
 msgctxt "ServicePage"
 msgid "Select Service Directory"
-msgstr ""
+msgstr "Seleziona la directory del servizio"
 
 #: servicepage.cpp:547
 msgctxt "ServicePage"
 msgid "Virtual Port may only contain valid port numbers [1..65535]."
-msgstr ""
+msgstr "La porta virtuale può solo contenere numeri di porta validi [1..65535]."
 
 #: servicepage.cpp:578
 msgctxt "ServicePage"
 msgid "Target may only contain address:port, address, or port."
-msgstr ""
+msgstr "il target può solo contenere l'indirizzo:porta, indirizzo o porta."
 
 #: servicepage.cpp:598
 msgctxt "ServicePage"
 msgid "Directory already in use by another service."
-msgstr ""
+msgstr "Directory già in uno da un altro servizio."
 
 #: servicepage.ui:19
 msgctxt "ServicePage"
@@ -2379,12 +2417,12 @@ msgstr ""
 #: servicepage.ui:56
 msgctxt "ServicePage"
 msgid "Onion Address"
-msgstr ""
+msgstr "Indirizzo .onion"
 
 #: servicepage.ui:61
 msgctxt "ServicePage"
 msgid "Virtual Port"
-msgstr ""
+msgstr "Porta virtuale"
 
 #: servicepage.ui:66
 msgctxt "ServicePage"
@@ -2394,42 +2432,46 @@ msgstr ""
 #: servicepage.ui:71
 msgctxt "ServicePage"
 msgid "Directory Path"
-msgstr ""
+msgstr "Percorso directory"
 
 #: servicepage.ui:76
 msgctxt "ServicePage"
 msgid "Enabled"
-msgstr ""
+msgstr "Abilitato"
 
 #: servicepage.ui:84
 msgctxt "ServicePage"
 msgid "Add new service to list"
-msgstr ""
+msgstr "Aggiungi un nuovo servizio alla lista"
 
 #: servicepage.ui:97
 msgctxt "ServicePage"
 msgid "Remove selected service from list"
-msgstr ""
+msgstr "Remuovi il servizio selezionato dalla lista"
 
 #: servicepage.ui:110
 msgctxt "ServicePage"
 msgid "Copy onion address of selected service to clipboard"
-msgstr ""
+msgstr "Copia l'indirizzo onion selezionato nella clipboard"
 
 #: servicepage.ui:123
 msgctxt "ServicePage"
 msgid "Browse in local file system and choose directory for selected service"
 msgstr ""
+"Esplora nei file di sistema locali e scegli una directory per i servizi "
+"selezionati"
 
 #: servicepage.cpp:123
 msgctxt "ServicePage"
 msgid "Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones."
 msgstr ""
+"Configura almeno una service directory e una porta virtuale per ogni "
+"servizio che vuoi salvare. Rimuovi gli altri."
 
 #: servicepage.cpp:384
 msgctxt "ServicePage"
 msgid "Created by Tor"
-msgstr ""
+msgstr "Creato da Tor"
 
 #: stream.cpp:131
 msgctxt "Stream"
@@ -2449,7 +2491,7 @@ msgstr "Connessione"
 #: stream.cpp:135
 msgctxt "Stream"
 msgid "Open"
-msgstr "Aperto"
+msgstr "Apri"
 
 #: stream.cpp:136
 msgctxt "Stream"
@@ -2484,7 +2526,7 @@ msgstr "Il processo %1 non è riuscito a terminare. [%2]"
 #: torservice.cpp:143
 msgctxt "TorService"
 msgid "The Tor service is not installed."
-msgstr "Il servizio Tor non è nell'elenco dei servizi."
+msgstr "Il servizio Tor non è installato."
 
 #: torservice.cpp:161
 msgctxt "TorService"
@@ -2499,12 +2541,12 @@ msgstr ""
 #: upnpcontrol.cpp:139
 msgctxt "UPNPControl"
 msgid "Success"
-msgstr ""
+msgstr "Successo"
 
 #: upnpcontrol.cpp:141
 msgctxt "UPNPControl"
 msgid "No UPnP-enabled devices found"
-msgstr ""
+msgstr "Nessuna periferica UpnP-enabled trovata"
 
 #: upnpcontrol.cpp:143
 msgctxt "UPNPControl"
@@ -2514,7 +2556,7 @@ msgstr ""
 #: upnpcontrol.cpp:145
 msgctxt "UPNPControl"
 msgid "WSAStartup failed"
-msgstr ""
+msgstr "WSA avvio fallito"
 
 #: upnpcontrol.cpp:147
 msgctxt "UPNPControl"
@@ -2534,7 +2576,7 @@ msgstr ""
 #: upnpcontrol.cpp:153
 msgctxt "UPNPControl"
 msgid "Unknown error"
-msgstr ""
+msgstr "Errore sconosciuto"
 
 #: upnptestdialog.cpp:112
 msgctxt "UPNPTestDialog"
@@ -2554,17 +2596,17 @@ msgstr ""
 #: upnptestdialog.cpp:127
 msgctxt "UPNPTestDialog"
 msgid "Test completed successfully!"
-msgstr ""
+msgstr "Test completato con successo!"
 
 #: upnptestdialog.ui:13
 msgctxt "UPNPTestDialog"
 msgid "Testing UPnP Support"
-msgstr ""
+msgstr "Test supporto UPnP"
 
 #: upnptestdialog.ui:92
 msgctxt "UPNPTestDialog"
 msgid "Testing Universal Plug & Play Support"
-msgstr ""
+msgstr "Test Universal Plug & Play supporto"
 
 #: vmessagebox.cpp:77
 msgctxt "VMessageBox"
