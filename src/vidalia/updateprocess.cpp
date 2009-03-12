@@ -39,7 +39,7 @@ UpdateProcess::checkForUpdates(BundleInfo bi)
 {
   QStringList args;
 
-  args << "update"  << "--controller-log-format"
+  args << "update"  << "--force-check --controller-log-format"
        << "--repo=" + updateRepositoryDir()
        << "--debug";
   if (_socksPort)
