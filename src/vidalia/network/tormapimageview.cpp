@@ -17,10 +17,10 @@
 #include <QStringList>
 #include <config.h>
 
-#if defined(HAVE_CMATH)
-#include <cmath>
-#elif defined(HAVE_MATH_H)
+#if defined(__sgi) && defined(_COMPILER_VERSION) && _COMPILER_VERSION >= 730
 #include <math.h>
+#else
+#include <cmath>
 #endif
 
 #include "tormapimageview.h"
