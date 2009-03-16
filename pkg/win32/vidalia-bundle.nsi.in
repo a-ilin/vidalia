@@ -71,13 +71,11 @@ XPStyle         on
 ; MUI Options
 !define MUI_WELCOMEPAGE_TITLE "$(BundleWelcomeTitle)"
 !define MUI_WELCOMEPAGE_TEXT  "$(BundleWelcomeText)"
-!define MUI_WELCOMEFINISHPAGE_BITMAP "@Vidalia_SOURCE_DIR@\pkg\win32\welcome-bundle.bmp"
-!define MUI_UNWELCOMEFINISHPAGE_BITMAP "@Vidalia_SOURCE_DIR@\pkg\win32\welcome-bundle.bmp"
 !define MUI_ABORTWARNING
 !define MUI_FINISHPAGE_NOAUTOCLOSE
 !define MUI_ICON "${NSISDIR}\Contrib\Graphics\Icons\win-install.ico"
 !define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\win-uninstall.ico"
-!define MUI_HEADERIMAGE_BITMAP "@Vidalia_SOURCE_DIR@\pkg\win32\header.bmp"
+!define MUI_HEADERIMAGE_BITMAP "${NSISDIR}\Contrib\Graphics\Header\win.bmp"
 !define MUI_HEADERIMAGE
 !define MUI_FINISHPAGE_TEXT "$(BundleFinishText)"
 !define MUI_FINISHPAGE_RUN
