@@ -13,6 +13,22 @@
   o Updated Czech, Polish, Romanian and Turkish translations.
 
 
+0.1.12  16-Mar-2009
+  o Fix a bug in the hidden service settings configuration class that
+    could lead to compile errors in Visual Studio and on IRIX.
+  o Fix a build error that occurred on IRIX when using the MIPSPro
+    compiler. Patch from Matthew Saunier.
+  o Remove two duplicated strings in the Spanish translation of Qt's
+    internal strings (qt_es.po). The duplicated strings caused build
+    errors when building with Qt 4.5. (Ticket #469)
+  o Remove the code that altered PublishServerDescriptor when becoming a
+    bridge, since Tor handles that itself now, and ensure that BridgeRelay
+    is reset when going from bridge to just-a-client mode.
+  o Remove an unnecessary #include from helpbrowser.cpp.
+  o Add an application icon based on Tor's logo to the vidalia.desktop
+    file.
+
+
 0.1.11  16-Feb-2009
   o Remove support for configuring Tor's User and Group options in the
     Advanced settings page.
