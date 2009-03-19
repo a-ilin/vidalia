@@ -1,4 +1,4 @@
-0.2.0   18-Mar-2009
+0.2.0   19-Mar-2009
   o Add support for changing UI languages without having to restart
     Vidalia.
   o Add preliminary support for using the KDE Marble widget for the
@@ -18,7 +18,8 @@
     the only one we care about. Suggested by coderman.
   o Support building with Visual Studio again.
   o Add a Debian package structure from dererk.
-  o Updated Czech, Polish, Romanian and Turkish translations.
+  o Updated Albanian, Czech, Finnish, Polish, Portuguese, Romanian,
+    Swedish, Turkish and many other translations.
 
 
 0.1.12  16-Mar-2009
