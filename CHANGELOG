@@ -1,11 +1,19 @@
-0.2.0   xx-xxx-2008
-  o Support changing UI languages without having to restart Vidalia.
+0.2.0   18-Mar-2009
+  o Add support for changing UI languages without having to restart
+    Vidalia.
+  o Add preliminary support for using the KDE Marble widget for the
+    network map. It's currently a compile-time option and is disabled by
+    default.
+  o Add support for displaying Tor's plaintext port warnings. Also gives
+    the user the option to disable future warnings.
+  o Add an interface for displaying the geographic distribution of
+    clients who have recently used a bridge operator's relay.
   o Add tooltips to tree items in the help browser's table of contents. Some 
     of the help topic labels are a bit long.
   o Switch to a simpler About dialog and move the license information to a
     separate HTML-formatted display.
-  o Include new Vidalia graphics in the Windows Vidalia and bundle installers.
-    The graphics were created by dr|z3d.
+  o Switch to a simpler drag-and-drop installer in the OS X bundles.
+  o Switch to an MSI-based installer on Windows.
   o Clear the list of default CA certificates used by QSslSocket before adding
     the only one we care about. Suggested by coderman.
   o Support building with Visual Studio again.
