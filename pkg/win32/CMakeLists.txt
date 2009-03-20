@@ -158,7 +158,7 @@ vidalia_add_wxl(vidalia_WXL
   
 add_custom_target(wix-i18n-localizations ALL DEPENDS ${vidalia_WXL})
 
-add_custom_target(win32-installer
+add_custom_target(dist-win32
   COMMAND ${WIX_CANDLE_EXECUTABLE} 
       ${CMAKE_CURRENT_BINARY_DIR}/vidalia.wxs 
       -o ${CMAKE_CURRENT_BINARY_DIR}/vidalia.wixobj

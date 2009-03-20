@@ -1,3 +1,8 @@
+0.2.1   xx-xxx-2009
+  o Renamed the 'make win32-installer' CMake target to 'make dist-win32'
+    for consistency with our 'make dist-osx' target.
+
+
 0.2.0   19-Mar-2009
   o Add support for changing UI languages without having to restart
     Vidalia.
