@@ -115,6 +115,8 @@
         <?if $(var.UseMarble) = "ON"?>
           <File Id="QtSvg4Dll" DiskId="1"
                 Name="QtSvg4.dll" Source="@QT_BINARY_DIR@\QtSvg4.dll" />
+          <File Id="QtWebKit4Dll" DiskId="1"
+                Name="QtWebKit4.dll" Source="@QT_BINARY_DIR@\QtWebKit4.dll" />
         <?endif?>
       </Component>
 
