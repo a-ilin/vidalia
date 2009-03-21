@@ -130,7 +130,7 @@
               Name="ssleay32.dll" Source="@OPENSSL_BINARY_DIR@\ssleay32.dll" />
       </Component>
       
-      <?ifdef $(var.UseMarble) = "ON"?>
+      <?if $(var.UseMarble) = "ON"?>
         <!-- Marble-related library files -->
         <Component Id="MarbleWidgetLibrary" Guid="$(var.MarbleWidgetLibraryGuid)">
           <File Id="MarbleWidgetDll" DiskId="1"
