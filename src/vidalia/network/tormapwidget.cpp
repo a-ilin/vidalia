@@ -24,8 +24,8 @@
 using namespace Marble;
 
 /** QPens to use for drawing different map elements */
-#define CIRCUIT_NORMAL_PEN      QPen(Qt::green,  2.0)
-#define CIRCUIT_SELECTED_PEN    QPen(Qt::yellow, 3.0)
+#define CIRCUIT_NORMAL_PEN      QPen(Qt::blue,  2.0)
+#define CIRCUIT_SELECTED_PEN    QPen(Qt::green, 3.0)
 
 
 /** Default constructor */
