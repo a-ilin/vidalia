@@ -17,5 +17,6 @@ if (WIN32)
   add_subdirectory(po2nsh)
   add_subdirectory(nsh2po EXCLUDE_FROM_ALL)
   add_subdirectory(po2wxl)
+  add_subdirectory(wixtool)
 endif(WIN32)
 
