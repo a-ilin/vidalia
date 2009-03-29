@@ -20,8 +20,49 @@
 #define WXL_ELEMENT_ROOT               "WixLocalization"
 #define WXL_ELEMENT_MESSAGE            "String"
 #define WXL_ATTR_MESSAGE_ID            "Id"
+#define WXL_ATTR_LANGUAGE              "LCID"
 #define WXL_ATTR_TRANSLATION_TYPE      "Culture"
 #define WXL_ATTR_OVERRIDABLE           "Overridable"
+
+/** We need to provide an element with the LCID for this locale 
+ * that is used in the WiX Product definition. */
+QString
+culture_lcid(const QString &culture)
+{
+  /* For now character encoding focused, not generally locale / dialect aware. */
+  QString lcid = "0";
+  if(!culture.compare("en", Qt::CaseInsensitive)) 
+    lcid = "1033";
+  else if(!culture.compare("cs", Qt::CaseInsensitive)) 
+    lcid = "1029";
+  else if(!culture.compare("de", Qt::CaseInsensitive)) 
+    lcid = "1031";
+  else if(!culture.compare("es", Qt::CaseInsensitive)) 
+    lcid = "1034";
+  else if(!culture.compare("fa", Qt::CaseInsensitive)) 
+    lcid = "1065";
+  else if(!culture.compare("fi", Qt::CaseInsensitive)) 
+    lcid = "1035";
+  else if(!culture.compare("fr", Qt::CaseInsensitive)) 
+    lcid = "1036";
+  else if(!culture.compare("he", Qt::CaseInsensitive)) 
+    lcid = "1037";
+  else if(!culture.compare("it", Qt::CaseInsensitive)) 
+    lcid = "1040";
+  else if(!culture.compare("nl", Qt::CaseInsensitive)) 
+    lcid = "1043";
+  else if(!culture.compare("pl", Qt::CaseInsensitive)) 
+    lcid = "1045";
+  else if(!culture.compare("pt", Qt::CaseInsensitive)) 
+    lcid = "1046";
+  else if(!culture.compare("ro", Qt::CaseInsensitive)) 
+    lcid = "1048";
+  else if(!culture.compare("ru", Qt::CaseInsensitive)) 
+    lcid = "1049";
+  else if(!culture.compare("sv", Qt::CaseInsensitive)) 
+    lcid = "1053";
+  return lcid;
+}
 
 /** Create a new message string element using the source string <b>msgid</b>
  * and the translation <b>msgstr</b> and assign identifier attribute. */
@@ -146,7 +187,12 @@ po2wxl(const QString& culture, QTextStream *po, QDomDocument *wxl,
   Q_ASSERT(errorMessage);
 
   *wxl = new_wxl_document(culture);
-  
+
+  /* Set the LCID to Language code for use as !(loc.LCID) in Product. */
+  QString lcid = culture_lcid(culture); 
+  wxl->documentElement().appendChild(
+    new_message_element(wxl, WXL_ATTR_LANGUAGE, lcid, lcid)); 
+
   skip_po_header(po);
   line = read_next_line(po);
   while (!po->atEnd()) {
