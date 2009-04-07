@@ -3,19 +3,19 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-08-20 03:25+0000\n"
-"PO-Revision-Date: 2008-08-20 03:25+0000\n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2009-04-07 10:37+0000\n"
+"Last-Translator: Runa Sandvik <runa.sandvik@gmail.com>\n"
 "Language-Team: none\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Vidalia ts2po 0.2\n"
+"X-Generator: Pootle 1.1.0\n"
 
 #: qaccessibleobject.cpp:348
 msgctxt "QApplication"
 msgid "Activate"
-msgstr ""
+msgstr "Aktiver"
 
 #: qmessagebox.h:319
 msgctxt "QApplication"
@@ -40,27 +40,27 @@ msgstr ""
 #: qmessagebox.cpp:2104
 msgctxt "QDialogButtonBox"
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: qdialogbuttonbox.cpp:528
 msgctxt "QDialogButtonBox"
 msgid "Save"
-msgstr ""
+msgstr "Lagre"
 
 #: qdialogbuttonbox.cpp:531
 msgctxt "QDialogButtonBox"
 msgid "Open"
-msgstr ""
+msgstr "Åpne"
 
 #: qdialogbuttonbox.cpp:534
 msgctxt "QDialogButtonBox"
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt"
 
 #: qdialogbuttonbox.cpp:537
 msgctxt "QDialogButtonBox"
 msgid "Close"
-msgstr ""
+msgstr "Lukk"
 
 #: qdialogbuttonbox.cpp:540
 msgctxt "QDialogButtonBox"
@@ -75,32 +75,32 @@ msgstr ""
 #: qdialogbuttonbox.cpp:546
 msgctxt "QDialogButtonBox"
 msgid "Help"
-msgstr ""
+msgstr "Hjelp"
 
 #: qdialogbuttonbox.cpp:550
 msgctxt "QDialogButtonBox"
 msgid "Don't Save"
-msgstr ""
+msgstr "Ikke lagre"
 
 #: qdialogbuttonbox.cpp:554
 msgctxt "QDialogButtonBox"
 msgid "Discard"
-msgstr ""
+msgstr "Forkast"
 
 #: qdialogbuttonbox.cpp:557
 msgctxt "QDialogButtonBox"
 msgid "&Yes"
-msgstr ""
+msgstr "&Ja"
 
 #: qdialogbuttonbox.cpp:560
 msgctxt "QDialogButtonBox"
 msgid "Yes to &All"
-msgstr ""
+msgstr "Ja til &Alt"
 
 #: qdialogbuttonbox.cpp:563
 msgctxt "QDialogButtonBox"
 msgid "&No"
-msgstr ""
+msgstr "&Nei"
 
 #: qdialogbuttonbox.cpp:566
 msgctxt "QDialogButtonBox"
@@ -110,22 +110,22 @@ msgstr ""
 #: qdialogbuttonbox.cpp:569
 msgctxt "QDialogButtonBox"
 msgid "Save All"
-msgstr ""
+msgstr "Lagre alt"
 
 #: qdialogbuttonbox.cpp:572
 msgctxt "QDialogButtonBox"
 msgid "Abort"
-msgstr ""
+msgstr "Avbryt"
 
 #: qdialogbuttonbox.cpp:575
 msgctxt "QDialogButtonBox"
 msgid "Retry"
-msgstr ""
+msgstr "Prøv på nytt"
 
 #: qdialogbuttonbox.cpp:578
 msgctxt "QDialogButtonBox"
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorer"
 
 #: qdialogbuttonbox.cpp:581
 msgctxt "QDialogButtonBox"
@@ -135,22 +135,22 @@ msgstr ""
 #: qdialogbuttonbox.cpp:552
 msgctxt "QDialogButtonBox"
 msgid "Close without Saving"
-msgstr ""
+msgstr "Lukk uten å lagre"
 
 #: qdialogbuttonbox.cpp:525
 msgctxt "QDialogButtonBox"
 msgid "&OK"
-msgstr ""
+msgstr "&OK"
 
 #: qdirmodel.cpp:423
 msgctxt "QDirModel"
 msgid "Name"
-msgstr ""
+msgstr "Navn"
 
 #: qdirmodel.cpp:424
 msgctxt "QDirModel"
 msgid "Size"
-msgstr ""
+msgstr "Størrelse"
 
 #: qdirmodel.cpp:427
 msgctxt "QDirModel"
@@ -160,7 +160,7 @@ msgstr ""
 #: qdirmodel.cpp:429
 msgctxt "QDirModel"
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #: qdirmodel.cpp:435
 msgctxt "QDirModel"
@@ -170,7 +170,7 @@ msgstr ""
 #: qfiledialog_win.cpp:126
 msgctxt "QFileDialog"
 msgid "All Files (*)"
-msgstr ""
+msgstr "Alle filer (*)"
 
 #: qfiledialog.cpp:881
 msgctxt "QFileDialog"
@@ -180,52 +180,52 @@ msgstr ""
 #: qfiledialog.cpp:2408
 msgctxt "QFileDialog"
 msgid "&Open"
-msgstr ""
+msgstr "&Åpne"
 
 #: qfiledialog.cpp:919
 msgctxt "QFileDialog"
 msgid "&Save"
-msgstr ""
+msgstr "&Lagre"
 
 #: qfiledialog.cpp:435
 msgctxt "QFileDialog"
 msgid "Open"
-msgstr ""
+msgstr "Åpen"
 
 #: qfiledialog.cpp:1670
 msgctxt "QFileDialog"
 msgid "%1 already exists.Do you want to replace it?"
-msgstr ""
+msgstr "%1 finnes allerede. Vil du overskrive?"
 
 #: qfiledialog.cpp:1690
 msgctxt "QFileDialog"
 msgid "%1File not found.Please verify the correct file name was given."
-msgstr ""
+msgstr "%1File ble ikke funnet. Vennligst se at riktig filnavn ble gitt."
 
 #: qdirmodel.cpp:833
 msgctxt "QFileDialog"
 msgid "My Computer"
-msgstr ""
+msgstr "Min Datamaskin"
 
 #: qfiledialog.cpp:462
 msgctxt "QFileDialog"
 msgid "&Rename"
-msgstr ""
+msgstr "&Gi nytt navn"
 
 #: qfiledialog.cpp:463
 msgctxt "QFileDialog"
 msgid "&Delete"
-msgstr ""
+msgstr "&Slett"
 
 #: qfiledialog.cpp:464
 msgctxt "QFileDialog"
 msgid "Show &hidden files"
-msgstr ""
+msgstr "Vis &skjulte filer"
 
 #: ui_qfiledialog.h:264
 msgctxt "QFileDialog"
 msgid "Back"
-msgstr ""
+msgstr "Tilbake"
 
 #: ui_qfiledialog.h:274
 msgctxt "QFileDialog"
@@ -245,7 +245,7 @@ msgstr ""
 #: ui_qfiledialog.h:292
 msgctxt "QFileDialog"
 msgid "Files of type:"
-msgstr ""
+msgstr "Filer av type:"
 
 #: qfiledialog.cpp:883
 msgctxt "QFileDialog"
@@ -266,7 +266,7 @@ msgstr ""
 #: qfiledialog.cpp:2286
 msgctxt "QFileDialog"
 msgid "Are sure you want to delete '%1'?"
-msgstr ""
+msgstr "Er du sikker på at du vil slette '%1'?"
 
 #: qfiledialog.cpp:2299
 msgctxt "QFileDialog"
@@ -276,12 +276,12 @@ msgstr ""
 #: qfiledialog_win.cpp:128
 msgctxt "QFileDialog"
 msgid "All Files (*.*)"
-msgstr ""
+msgstr "Alle filer (*.*)"
 
 #: qfiledialog.cpp:437
 msgctxt "QFileDialog"
 msgid "Save As"
-msgstr ""
+msgstr "Lagre som"
 
 #: qfileiconprovider.cpp:379
 msgctxt "QFileDialog"
@@ -291,12 +291,12 @@ msgstr ""
 #: qfileiconprovider.cpp:383
 msgctxt "QFileDialog"
 msgid "File"
-msgstr ""
+msgstr "Fil"
 
 #: qfileiconprovider.cpp:412
 msgctxt "QFileDialog"
 msgid "Unknown"
-msgstr ""
+msgstr "Ukjent"
 
 #: qfiledialog.cpp:439
 msgctxt "QFileDialog"
@@ -306,7 +306,7 @@ msgstr ""
 #: qfiledialog.cpp:458
 msgctxt "QFileDialog"
 msgid "Show "
-msgstr ""
+msgstr "Vis "
 
 #: ui_qfiledialog.h:269
 msgctxt "QFileDialog"
@@ -326,12 +326,12 @@ msgstr ""
 #: qfiledialog.cpp:917
 msgctxt "QFileDialog"
 msgid "&Choose"
-msgstr ""
+msgstr "&Velg"
 
 #: qsidebar.cpp:388
 msgctxt "QFileDialog"
 msgid "Remove"
-msgstr ""
+msgstr "Fjern"
 
 #: qfiledialog.cpp:886
 msgctxt "QFileDialog"
@@ -363,12 +363,12 @@ msgstr ""
 #: qfilesystemmodel.cpp:832
 msgctxt "QFileSystemModel"
 msgid "Name"
-msgstr ""
+msgstr "Navn"
 
 #: qfilesystemmodel.cpp:834
 msgctxt "QFileSystemModel"
 msgid "Size"
-msgstr ""
+msgstr "Størrelse"
 
 #: qfilesystemmodel.cpp:838
 msgctxt "QFileSystemModel"
@@ -378,7 +378,7 @@ msgstr ""
 #: qfilesystemmodel.cpp:840
 msgctxt "QFileSystemModel"
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #: qfilesystemmodel.cpp:847
 msgctxt "QFileSystemModel"
@@ -388,34 +388,34 @@ msgstr ""
 #: qfilesystemmodel_p.h:198
 msgctxt "QFileSystemModel"
 msgid "My Computer"
-msgstr ""
+msgstr "Min Datamaskin"
 
 #: qfilesystemmodel_p.h:200
 msgctxt "QFileSystemModel"
 msgid "Computer"
-msgstr ""
+msgstr "Datamaskin"
 
 #: qfilesystemmodel.cpp:677
 msgctxt "QFileSystemModel"
 msgid "%1 TB"
-msgstr ""
+msgstr "%1 TB"
 
 #: qfilesystemmodel.cpp:679
 msgctxt "QFileSystemModel"
 msgid "%1 GB"
-msgstr ""
+msgstr "%1 GB"
 
 #: qfilesystemmodel.cpp:681
 msgctxt "QFileSystemModel"
 msgid "%1 MB"
-msgstr ""
+msgstr "%1 MB"
 
 #: qfilesystemmodel.cpp:683
 msgctxt "QFileSystemModel"
 msgid "%1 KB"
-msgstr ""
+msgstr "%1 KB"
 
 #: qfilesystemmodel.cpp:684
 msgctxt "QFileSystemModel"
 msgid "%1 bytes"
-msgstr ""
+msgstr "%1 bytes"
