@@ -101,6 +101,9 @@ if (QT_USE_FRAMEWORKS)
         -change QtDBus.framework/Versions/4/QtDBus
                 @executable_path/QtDBus ${bindir}/Vidalia
       COMMAND install_name_tool
+        -change @executable_path/lib/${marblewidget}
+                @executable_path/${marblewidget} ${bindir}/Vidalia
+      COMMAND install_name_tool
         -change ${MARBLEWIDGET_LIBRARY}
                 @executable_path/${marblewidget} ${bindir}/Vidalia
 
