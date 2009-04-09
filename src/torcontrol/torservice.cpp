@@ -27,7 +27,8 @@
 ServiceFunctions TorService::_service_fns = 
   { false,
     NULL, NULL, NULL, NULL, NULL,
-    NULL, NULL, NULL, NULL, NULL };
+    NULL, NULL, NULL, NULL, NULL
+  };
 
 
 /** Default ctor. */
