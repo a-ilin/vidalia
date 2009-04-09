@@ -21,9 +21,9 @@
 bool
 ProtocolInfo::isEmpty() const
 {
-  return (_torVersion.isEmpty() && 
-         _authMethods.isEmpty() &&
-         _cookieAuthFile.isEmpty());
+  return (_torVersion.isEmpty()
+            && _authMethods.isEmpty()
+            && _cookieAuthFile.isEmpty());
 }
 
 /** Sets the authentication methods Tor currently accepts. <b>methods</b>
