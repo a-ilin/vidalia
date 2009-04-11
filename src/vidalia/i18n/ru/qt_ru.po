@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-08-20 03:25+0000\n"
-"PO-Revision-Date: 2009-02-18 03:04+0000\n"
-"Last-Translator: Roger Dingledine <arma@mit.edu>\n"
+"PO-Revision-Date: 2009-03-17 03:32+0000\n"
+"Last-Translator: Pavel <dik_pavel@mail.ru>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,7 +36,7 @@ msgstr "LTR"
 #: qaccessibleobject.cpp:350
 msgctxt "QApplication"
 msgid "Activates the program's main window"
-msgstr ""
+msgstr "Активировать главное окно"
 
 #: qmessagebox.cpp:2104
 msgctxt "QDialogButtonBox"
@@ -81,7 +81,7 @@ msgstr "Справка"
 #: qdialogbuttonbox.cpp:550
 msgctxt "QDialogButtonBox"
 msgid "Don't Save"
-msgstr ""
+msgstr "Не сохранять"
 
 #: qdialogbuttonbox.cpp:554
 msgctxt "QDialogButtonBox"
@@ -96,7 +96,7 @@ msgstr "&Да"
 #: qdialogbuttonbox.cpp:560
 msgctxt "QDialogButtonBox"
 msgid "Yes to &All"
-msgstr ""
+msgstr "Всегда ДА"
 
 #: qdialogbuttonbox.cpp:563
 msgctxt "QDialogButtonBox"
@@ -106,37 +106,37 @@ msgstr "&Нет"
 #: qdialogbuttonbox.cpp:566
 msgctxt "QDialogButtonBox"
 msgid "N&o to All"
-msgstr ""
+msgstr "Всегда НЕТ"
 
 #: qdialogbuttonbox.cpp:569
 msgctxt "QDialogButtonBox"
 msgid "Save All"
-msgstr ""
+msgstr "Сохранить всё"
 
 #: qdialogbuttonbox.cpp:572
 msgctxt "QDialogButtonBox"
 msgid "Abort"
-msgstr ""
+msgstr "Отмена"
 
 #: qdialogbuttonbox.cpp:575
 msgctxt "QDialogButtonBox"
 msgid "Retry"
-msgstr ""
+msgstr "Повтор"
 
 #: qdialogbuttonbox.cpp:578
 msgctxt "QDialogButtonBox"
 msgid "Ignore"
-msgstr ""
+msgstr "Игнорировать"
 
 #: qdialogbuttonbox.cpp:581
 msgctxt "QDialogButtonBox"
 msgid "Restore Defaults"
-msgstr ""
+msgstr "Востановить стандартные настройки"
 
 #: qdialogbuttonbox.cpp:552
 msgctxt "QDialogButtonBox"
 msgid "Close without Saving"
-msgstr ""
+msgstr "Выйти без сохранения"
 
 #: qdialogbuttonbox.cpp:525
 msgctxt "QDialogButtonBox"
@@ -166,7 +166,7 @@ msgstr "Тип"
 #: qdirmodel.cpp:435
 msgctxt "QDirModel"
 msgid "Date Modified"
-msgstr ""
+msgstr "Дата изменения"
 
 #: qfiledialog_win.cpp:126
 msgctxt "QFileDialog"
@@ -206,7 +206,8 @@ msgid ""
 "%1\n"
 "File not found.\n"
 "Please verify the correct file name was given."
-msgstr ""
+msgstr "%1Файл не найден. Пожалуста проверьте правильность имени и пути."
+
 
 #: qdirmodel.cpp:833
 msgctxt "QFileDialog"
@@ -236,7 +237,7 @@ msgstr "Назад"
 #: ui_qfiledialog.h:274
 msgctxt "QFileDialog"
 msgid "Parent Directory"
-msgstr ""
+msgstr "Родительская директория"
 
 #: ui_qfiledialog.h:284
 msgctxt "QFileDialog"
@@ -251,7 +252,7 @@ msgstr "Детальный вид"
 #: ui_qfiledialog.h:292
 msgctxt "QFileDialog"
 msgid "Files of type:"
-msgstr ""
+msgstr "Тип Файла:"
 
 #: qfiledialog.cpp:883
 msgctxt "QFileDialog"
@@ -265,13 +266,14 @@ msgid ""
 "Directory not found.\n"
 "Please verify the correct directory name was given."
 msgstr ""
+"%1Директория не найдена. Пожалуйста проверьте правильность имени и пути."
 
 #: qfiledialog.cpp:2281
 msgctxt "QFileDialog"
 msgid ""
 "'%1' is write protected.\n"
 "Do you want to delete it anyway?"
-msgstr ""
+msgstr "'%1' защащён от записи. Действительно хотите удалить?"
 
 #: qfiledialog.cpp:2286
 msgctxt "QFileDialog"
@@ -398,7 +400,7 @@ msgstr ""
 #: qfilesystemmodel_p.h:198
 msgctxt "QFileSystemModel"
 msgid "My Computer"
-msgstr ""
+msgstr "Мой Компьютер"
 
 #: qfilesystemmodel_p.h:200
 msgctxt "QFileSystemModel"
