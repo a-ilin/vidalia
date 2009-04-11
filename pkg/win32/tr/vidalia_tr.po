@@ -1,0 +1,206 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
+"POT-Creation-Date: 2008-07-12 05:29+0000\n"
+"PO-Revision-Date: 2009-03-22 12:57+0200\n"
+"Last-Translator: yunuskaba <yunuskaba@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.1.1\n"
+
+msgctxt "BundleSetupCaption"
+msgid "${BUNDLE_NAME} setup"
+msgstr "${BUNDLE_NAME} Kurulumu"
+
+msgctxt "BundleWelcomeText"
+msgid "This wizard will guide you through the installation of Tor, Vidalia, Privoxy, and Torbutton.\n\nTor is a system for using the Internet anonymously, helping you anonymize Web browsing and publishing, instant messaging, IRC, and more. Vidalia is a GUI that helps you control, monitor, and configure Tor.\n\nPrivoxy is a filtering web proxy that protects your privacy and helps remove ads, banners, and popups.\n\nTorbutton is a Firefox extension that allows you to quickly enable or disable anonymous web browsing.\n\nIf you have previously installed Tor, Vidalia, Privoxy, or Firefox, please make sure they are not running before continuing this installation.\n\n$_CLICK"
+msgstr ""
+
+msgctxt "BundleWelcomeTitle"
+msgid "Welcome to the ${BUNDLE_NAME} Setup Wizard"
+msgstr "${BUNDLE_NAME} Kurulum sihibazına Hoş Geldiniz"
+
+msgctxt "BundleLinkText"
+msgid "${TOR_NAME} installation documentation"
+msgstr "${TOR_NAME} kurulum dökümanları"
+
+msgctxt "BundleFinishText"
+msgid "Installation is complete.\nPlease see https://www.torproject.org/docs/tor-doc-windows to learn how to configure your applications to use Tor.\n\nIf you installed Torbutton, you will need to restart Firefox."
+msgstr ""
+
+msgctxt "BundleRunNow"
+msgid "Run installed components now"
+msgstr "Yüklü bileşenleri çalıştır"
+
+msgctxt "VidaliaGroupDesc"
+msgid "Vidalia is a GUI that helps you control, monitor, and configure Tor."
+msgstr ""
+
+msgctxt "VidaliaUninstDesc"
+msgid "Remove ${VIDALIA_DESC}."
+msgstr "Kaldır ${VIDALIA_DESC}."
+
+msgctxt "VidaliaSetupCaption"
+msgid "${VIDALIA_NAME} setup"
+msgstr "${VIDALIA_NAME} Kurulumu"
+
+msgctxt "VidaliaWelcomeText"
+msgid "This wizard will guide you through the installation of Vidalia, a GUI that helps you control, monitor, and configure Tor.\n\n$_CLICK"
+msgstr ""
+
+msgctxt "VidaliaWelcomeTitle"
+msgid "Welcome to the ${VIDALIA_NAME} Setup Wizard"
+msgstr "${BUNDLE_NAME} Kurulum sihibazına Hoş Geldiniz"
+
+msgctxt "VidaliaLinkText"
+msgid "${VIDALIA_NAME} homepage"
+msgstr "${VIDALIA_NAME} anasayfası"
+
+msgctxt "VidaliaAppDesc"
+msgid "Vidalia is a GUI that helps you control, monitor, and configure Tor."
+msgstr "Vidalia arayüzü Tor'u kolayca yönetmenize yardımcı eder."
+
+msgctxt "VidaliaStartup"
+msgid "Run At Startup"
+msgstr ""
+
+msgctxt "VidaliaStartupDesc"
+msgid "Automatically run ${VIDALIA_NAME} at startup."
+msgstr "${VIDALIA_NAME} başlangıçta çalıştır."
+
+msgctxt "VidaliaShortcuts"
+msgid "Add to Start Menu"
+msgstr ""
+
+msgctxt "VidaliaShortcutsDesc"
+msgid "Add ${VIDALIA_NAME} to your Start menu."
+msgstr " ${VIDALIA_NAME} Başlangıca ekle."
+
+msgctxt "VidaliaRunNow"
+msgid "Run ${VIDALIA_NAME}"
+msgstr "Çalıştır ${VIDALIA_NAME}"
+
+msgctxt "TorGroupDesc"
+msgid "Tor is a system for using the Internet anonymously, helping you anonymize Web browsing and publishing, instant messaging, IRC, and more."
+msgstr ""
+
+msgctxt "TorUninstDesc"
+msgid "Remove ${TOR_DESC}."
+msgstr "Kaldır ${PRIVOXY_DESC}."
+
+msgctxt "TorAppDesc"
+msgid "Install ${TOR_DESC}."
+msgstr "Kur ${TORBUTTON_DESC}."
+
+msgctxt "TorAskOverwriteTorrc"
+msgid "You already have a Tor configuration file.$\n$\nDo you want to overwrite it with the default sample configuration file?"
+msgstr ""
+
+msgctxt "TorDocumentation"
+msgid "Documentation"
+msgstr "Dökümanlar"
+
+msgctxt "TorDocumentationDesc"
+msgid "Install ${TOR_NAME} documentation."
+msgstr "${TOR_NAME} kurulum dökümanlarını yükle."
+
+msgctxt "TorShortcuts"
+msgid "Add to Start Menu"
+msgstr ""
+
+msgctxt "TorShortcutsDesc"
+msgid "Add ${TOR_NAME} to your Start menu."
+msgstr " ${VIDALIA_NAME} Başlangıca ekle."
+
+msgctxt "PrivoxyGroupDesc"
+msgid "Privoxy is a filtering web proxy that protects your privacy and helps remove ads, banners, and popups."
+msgstr ""
+
+msgctxt "PrivoxyUninstDesc"
+msgid "Remove ${PRIVOXY_DESC}."
+msgstr "Kaldır ${PRIVOXY_DESC}."
+
+msgctxt "PrivoxyAppDesc"
+msgid "Install ${PRIVOXY_DESC}."
+msgstr "Kur ${PRIVOXY_DESC}."
+
+msgctxt "PrivoxyShortcuts"
+msgid "Add to Start Menu"
+msgstr "Başlangıç Menüsüne Ekle"
+
+msgctxt "PrivoxyShortcutsDesc"
+msgid "Add ${PRIVOXY_NAME} to your Start menu."
+msgstr " ${VIDALIA_NAME} Başlangıca ekle."
+
+msgctxt "PrivoxyStartup"
+msgid "Run At Startup"
+msgstr "Başlangıçta Çalıştır"
+
+msgctxt "PrivoxyStartupDesc"
+msgid "Automatically run ${PRIVOXY_NAME} at startup."
+msgstr "${PRIVOXY_NAME} başlangıçta otomaik olarak çalıştır."
+
+msgctxt "TorbuttonGroupDesc"
+msgid "Torbutton is a Firefox extension that allows you to quickly enable or disable anonymous web browsing."
+msgstr ""
+
+msgctxt "TorbuttonUninstDesc"
+msgid "Remove ${TORBUTTON_DESC}."
+msgstr "Kaldır ${TORBUTTON_DESC}."
+
+msgctxt "TorbuttonAppDesc"
+msgid "Install ${TORBUTTON_DESC}."
+msgstr "Kur ${TORBUTTON_DESC}."
+
+msgctxt "TorbuttonAddToFirefox"
+msgid "Add to Firefox"
+msgstr "Firefoxa ekle"
+
+msgctxt "TorbuttonAddToFirefoxDesc"
+msgid "Add the ${TORBUTTON_DESC} extension to Firefox."
+msgstr " ${VIDALIA_NAME} eklentisini Firefoxa ekle."
+
+msgctxt "TorbuttonFirefoxNotFound"
+msgid "Firefox was not found on your system. Not installing Torbutton."
+msgstr "Yüklü bir Firefox bulunamadı, torbutton kurulamadı"
+
+msgctxt "AppData"
+msgid "Application Data"
+msgstr "Uygulama Verisi"
+
+msgctxt "AppDataUninstDesc"
+msgid "Remove saved application data and configuration files."
+msgstr "Uygulama veriliverini ve ayar dosylarını kaldır"
+
+msgctxt "LanguageCode"
+msgid "en"
+msgstr "İngilizce"
+
+msgctxt "FirefoxWarningPageTitle"
+msgid "Firefox is not installed"
+msgstr "Firefox yüklü değil"
+
+msgctxt "FirefoxWarningPageSubtitle"
+msgid "We recommend that you install Firefox before continuing, for best safety."
+msgstr "Güvenliğiniz için yüklemeden önce Firefoxu yüklemenizi tavsiye ederiz."
+
+msgctxt "FirefoxWarningPageUpperText"
+msgid "The Mozilla Firefox Web browser is not installed on your computer.\n"
+"Tor will work with other browsers, such as Internet Explorer, but\n"
+"is easier to use with Firefox, which also does a better job of\n"
+"protecting your anonymity."
+"\n\n"
+"If you would like to install Firefox, please press Cancel, then go\n"
+"to the Firefox download page at"
+msgstr ""
+
+msgctxt "FirefoxWarningPageLowerText"
+msgid "When you are done installing Firefox, you can once again run the\n"
+"Tor installer."
+"\n\n"
+"Or, if you would prefer to install Tor without Firefox, simply\n"
+"press Next to continue."
+msgstr ""
