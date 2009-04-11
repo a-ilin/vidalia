@@ -1777,9 +1777,10 @@ msgid "License Information"
 msgstr ""
 
 #: licensedialog.ui:43
+#: aboutdialog.cpp:34
 msgctxt "LicenseDialog"
 msgid "License"
-msgstr ""
+msgstr "ترخيص"
 
 #: licensedialog.ui:76
 msgctxt "LicenseDialog"
@@ -2148,9 +2149,10 @@ msgid "Would you like to browse for the file 'control_auth_cookie' yourself?"
 msgstr ""
 
 #: mainwindow.cpp:1298
+#: advancedpage.ui:275
 msgctxt "MainWindow"
 msgid "Data Directory"
-msgstr ""
+msgstr "مجلد البيانات"
 
 #: mainwindow.cpp:1300
 msgctxt "MainWindow"
