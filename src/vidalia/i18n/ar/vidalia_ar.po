@@ -1,3 +1,5 @@
+msgid ""
+msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-04-10 22:39+0000\n"

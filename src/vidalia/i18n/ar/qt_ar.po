@@ -1,3 +1,5 @@
+msgid ""
+msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-08-20 03:25+0000\n"
@@ -429,4 +431,3 @@ msgstr "%1 كيلو بايت"
 msgctxt "QFileSystemModel"
 msgid "%1 bytes"
 msgstr "%1 بايت"
->>>>>>> .r3695
