@@ -1,10 +1,8 @@
-msgid ""
-msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-04-10 22:39+0000\n"
-"PO-Revision-Date: 2009-02-24 04:08+0000\n"
-"Last-Translator: phobos <phobos@rootme.org>\n"
+"PO-Revision-Date: 2009-03-22 12:13+0000\n"
+"Last-Translator: Magid Hussein Musa <magidhmusa@hotmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -32,7 +30,7 @@ msgstr "Vidalia"
 #: aboutdialog.ui:73
 msgctxt "AboutDialog"
 msgid "Tor 0.2.0.32"
-msgstr ""
+msgstr "Tor 0.2.0.32"
 
 #: aboutdialog.ui:88
 #, fuzzy
@@ -78,7 +76,7 @@ msgstr "تعذَّر إنشاء الملف %1 [%2]"
 #: advancedpage.cpp:265
 msgctxt "AdvancedPage"
 msgid "Select a Directory to Use for Tor Data"
-msgstr ""
+msgstr "إختار مجلد لحفظ بيانات التور"
 
 #: advancedpage.cpp:287
 msgctxt "AdvancedPage"
@@ -103,7 +101,7 @@ msgstr "مركز التحكم"
 #: advancedpage.ui:48
 msgctxt "AdvancedPage"
 msgid "Authentication:"
-msgstr ""
+msgstr "مصادقة:"
 
 #: advancedpage.ui:58
 msgctxt "AdvancedPage"
@@ -113,22 +111,22 @@ msgstr "العنوان:"
 #: advancedpage.ui:86
 msgctxt "AdvancedPage"
 msgid "None"
-msgstr ""
+msgstr "لا شيء"
 
 #: advancedpage.ui:91
 msgctxt "AdvancedPage"
 msgid "Cookie"
-msgstr ""
+msgstr "كعكة"
 
 #: advancedpage.ui:96
 msgctxt "AdvancedPage"
 msgid "Password"
-msgstr ""
+msgstr "كلمة مرور"
 
 #: advancedpage.ui:111
 msgctxt "AdvancedPage"
 msgid "Randomly Generate"
-msgstr ""
+msgstr "توليد عشوائي"
 
 #: advancedpage.ui:157
 msgctxt "AdvancedPage"
@@ -143,12 +141,12 @@ msgstr ""
 #: advancedpage.ui:240
 msgctxt "AdvancedPage"
 msgid "Start the Tor software with the specified configuration file (torrc)"
-msgstr ""
+msgstr "إبتدء برنامج التور بملف الإعدادات (torrc)"
 
 #: advancedpage.ui:259
 msgctxt "AdvancedPage"
 msgid "Select path to your configuration file"
-msgstr ""
+msgstr "إختار مسار ملف إعداداتك"
 
 #: advancedpage.ui:318
 msgctxt "AdvancedPage"
@@ -158,17 +156,17 @@ msgstr "تصفّح"
 #: advancedpage.ui:275
 msgctxt "AdvancedPage"
 msgid "Data Directory"
-msgstr ""
+msgstr "مجلد البيانات"
 
 #: advancedpage.ui:296
 msgctxt "AdvancedPage"
 msgid "Store data for the Tor software in the following directory"
-msgstr ""
+msgstr "إحفظ بيانات برنامج التور في المجلد التالي"
 
 #: advancedpage.ui:315
 msgctxt "AdvancedPage"
 msgid "Select the directory used to store data for the Tor software"
-msgstr ""
+msgstr "إختار المجلد المستعمل لحفظ بيانات برنامج التور"
 
 #: advancedpage.cpp:289
 #, fuzzy
@@ -177,7 +175,7 @@ msgid ""
 "Vidalia was unable to remove the Tor service.\n"
 "\n"
 "You may need to remove it manually."
-msgstr ""
+msgstr "ملف إعدادات التور"
 "لم تتمكن ڤيداليا من إزالة خدمة تور.                قد تضطر إلى إزالتها يدويا."
 
 #: appearancepage.ui:22
@@ -353,12 +351,12 @@ msgstr "قارب إلى الدائرة"
 #: circuitlistwidget.cpp:90
 msgctxt "CircuitListWidget"
 msgid "Close Circuit (Del)"
-msgstr ""
+msgstr "إغلق الدائرة(مسح)"
 
 #: circuitlistwidget.cpp:113
 msgctxt "CircuitListWidget"
 msgid "Close Stream (Del)"
-msgstr ""
+msgstr "إغلق الإنسياب (مسح)"
 
 #: configdialog.cpp:78
 msgctxt "ConfigDialog"
@@ -368,12 +366,12 @@ msgstr "عامة"
 #: configdialog.cpp:84
 msgctxt "ConfigDialog"
 msgid "Network"
-msgstr ""
+msgstr "الشبكة"
 
 #: configdialog.cpp:88
 msgctxt "ConfigDialog"
 msgid "Sharing"
-msgstr ""
+msgstr "مشاركة"
 
 #: configdialog.cpp:92
 msgctxt "ConfigDialog"
@@ -398,22 +396,22 @@ msgstr "مساعدة"
 #: configdialog.cpp:199
 msgctxt "ConfigDialog"
 msgid "Error Saving Settings"
-msgstr ""
+msgstr "خطأ في حفظ الإعدادات"
 
 #: configdialog.cpp:201
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to save your %1 settings."
-msgstr ""
+msgstr "فيداليا لا يستطيع حفظ  إعداداتك %1"
 
 #: configdialog.cpp:228
 msgctxt "ConfigDialog"
 msgid "Error Applying Settings"
-msgstr ""
+msgstr "خطأ في تطبيق الإعدادات"
 
 #: configdialog.cpp:230
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to apply your %1 settings to Tor."
-msgstr ""
+msgstr "فيداليا لا يستطيع تطبيق إعداداتك %1 في التور"
 
 #: configdialog.ui:16
 msgctxt "ConfigDialog"
@@ -423,7 +421,7 @@ msgstr "تضبيطات"
 #: controlconnection.cpp:134
 msgctxt "ControlConnection"
 msgid "Vidalia was unable to connect to Tor. (%1)"
-msgstr ""
+msgstr "فيداليا لا يستطيع الإتصال بالتور. (%1)"
 
 #: controlconnection.cpp:331
 msgctxt "ControlConnection"
@@ -433,7 +431,7 @@ msgstr "مقبس التحكم غير متصل."
 #: controlpasswordinputdialog.ui:28
 msgctxt "ControlPasswordInputDialog"
 msgid "Password Required"
-msgstr ""
+msgstr "مطلوب كلمة المرور"
 
 #: controlpasswordinputdialog.ui:80
 msgctxt "ControlPasswordInputDialog"
@@ -441,11 +439,12 @@ msgid ""
 "Vidalia has connected to a running Tor process that requires a password. "
 "Please enter your control password:"
 msgstr ""
+"فيداليا اتصل بعملية تور تحتاج لكلمة مرور.رجاءاً أدخل كلمة المرور للتحكم:_"
 
 #: controlpasswordinputdialog.ui:99
 msgctxt "ControlPasswordInputDialog"
 msgid "Remember my password"
-msgstr ""
+msgstr "تذكر كلمة المرور"
 
 #: controlsocket.cpp:70
 msgctxt "ControlSocket"
@@ -1479,22 +1478,22 @@ msgstr "اختر مسار تور"
 #: generalpage.cpp:96
 msgctxt "GeneralPage"
 msgid "Select Proxy Executable"
-msgstr ""
+msgstr "إختار الوكيل التنفيذي"
 
 #: generalpage.cpp:109
 msgctxt "GeneralPage"
 msgid "You must specify the name of your Tor executable."
-msgstr ""
+msgstr "يجب تحديد اسم التور التنفيذي"
 
 #: generalpage.cpp:117
 msgctxt "GeneralPage"
 msgid "The proxy arguments specified are not properly formatted."
-msgstr ""
+msgstr "معاملات الوكيل المحددة غير صحيحة الهيئة"
 
 #: generalpage.ui:28
 msgctxt "GeneralPage"
 msgid "Start Vidalia when my system starts"
-msgstr ""
+msgstr "إبدأ فيداليا عند بدء تشغيل النظام"
 
 #: generalpage.ui:121
 msgctxt "GeneralPage"
@@ -1504,27 +1503,27 @@ msgstr "تصفّح"
 #: generalpage.ui:57
 msgctxt "GeneralPage"
 msgid "Start the Tor software when Vidalia starts"
-msgstr ""
+msgstr "إبدء عمل برنامج التور مع بداية تشغيل فيداليا"
 
 #: generalpage.ui:51
 msgctxt "GeneralPage"
 msgid "Tor"
-msgstr ""
+msgstr "تور"
 
 #: generalpage.ui:93
 msgctxt "GeneralPage"
 msgid "Proxy Application (optional)"
-msgstr ""
+msgstr "تطبيق الوكيل (إختياري)"
 
 #: generalpage.ui:99
 msgctxt "GeneralPage"
 msgid "Start a proxy application when Tor starts"
-msgstr ""
+msgstr "إبدء ال تطبيق الوكيل مع بدء تشغيل التور"
 
 #: generalpage.ui:135
 msgctxt "GeneralPage"
 msgid "Proxy Application Arguments:"
-msgstr ""
+msgstr "معاملات تطبيق الوكيل:"
 
 #: generalpage.ui:154
 msgctxt "GeneralPage"
@@ -1743,7 +1742,7 @@ msgstr "عُطل في فتح ملف المساعدة: "
 #: helptextbrowser.cpp:72
 msgctxt "HelpTextBrowser"
 msgid "Opening External Link"
-msgstr ""
+msgstr "فتح رابط خارجي"
 
 #: helptextbrowser.cpp:76
 msgctxt "HelpTextBrowser"

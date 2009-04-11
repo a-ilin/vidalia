@@ -1,10 +1,8 @@
-msgid ""
-msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-08-20 03:25+0000\n"
-"PO-Revision-Date: 2009-02-28 04:26+0000\n"
-"Last-Translator: Wael Abbas <wa2el_3abbas@yahoo.com>\n"
+"PO-Revision-Date: 2009-03-22 11:47+0000\n"
+"Last-Translator: Magid Hussein Musa <magidhmusa@hotmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -96,7 +94,7 @@ msgstr "&نعم"
 #: qdialogbuttonbox.cpp:560
 msgctxt "QDialogButtonBox"
 msgid "Yes to &All"
-msgstr ""
+msgstr "نع&م للكل"
 
 #: qdialogbuttonbox.cpp:563
 msgctxt "QDialogButtonBox"
@@ -106,7 +104,7 @@ msgstr "&لا"
 #: qdialogbuttonbox.cpp:566
 msgctxt "QDialogButtonBox"
 msgid "N&o to All"
-msgstr ""
+msgstr "ل&ا للكل"
 
 #: qdialogbuttonbox.cpp:569
 msgctxt "QDialogButtonBox"
@@ -206,12 +204,12 @@ msgid ""
 "%1\n"
 "File not found.\n"
 "Please verify the correct file name was given."
-msgstr ""
+msgstr "%1ملف غير موجود. رجاءاً تأكد من صحة إسم الملف."
 
 #: qdirmodel.cpp:833
 msgctxt "QFileDialog"
 msgid "My Computer"
-msgstr ""
+msgstr "كمبيوتري"
 
 #: qfiledialog.cpp:462
 msgctxt "QFileDialog"
@@ -236,7 +234,7 @@ msgstr "رجوع"
 #: ui_qfiledialog.h:274
 msgctxt "QFileDialog"
 msgid "Parent Directory"
-msgstr ""
+msgstr "المجلد الرئيسي"
 
 #: ui_qfiledialog.h:284
 msgctxt "QFileDialog"
@@ -251,7 +249,7 @@ msgstr "معاينة مفصّلة"
 #: ui_qfiledialog.h:292
 msgctxt "QFileDialog"
 msgid "Files of type:"
-msgstr ""
+msgstr "ملفات النوع:"
 
 #: qfiledialog.cpp:883
 msgctxt "QFileDialog"
@@ -264,24 +262,24 @@ msgid ""
 "%1\n"
 "Directory not found.\n"
 "Please verify the correct directory name was given."
-msgstr ""
+msgstr "%1مجلد غير موجود. رجاءاً تأكد من صحة إسم المجلد."
 
 #: qfiledialog.cpp:2281
 msgctxt "QFileDialog"
 msgid ""
 "'%1' is write protected.\n"
 "Do you want to delete it anyway?"
-msgstr ""
+msgstr "'%1' محمي من الكتابة.هل تريد حذفه علي أي حال؟"
 
 #: qfiledialog.cpp:2286
 msgctxt "QFileDialog"
 msgid "Are sure you want to delete '%1'?"
-msgstr ""
+msgstr "هل أنت متأكد أنك تريد حذفه '%1'؟"
 
 #: qfiledialog.cpp:2299
 msgctxt "QFileDialog"
 msgid "Could not delete directory."
-msgstr ""
+msgstr "لا تستطيع حذف المجلد."
 
 #: qfiledialog_win.cpp:128
 msgctxt "QFileDialog"
@@ -296,7 +294,7 @@ msgstr "حفظ تحت"
 #: qfileiconprovider.cpp:379
 msgctxt "QFileDialog"
 msgid "Drive"
-msgstr ""
+msgstr "السواقة"
 
 #: qfileiconprovider.cpp:383
 msgctxt "QFileDialog"
@@ -306,7 +304,7 @@ msgstr "ملفّ"
 #: qfileiconprovider.cpp:412
 msgctxt "QFileDialog"
 msgid "Unknown"
-msgstr ""
+msgstr "غير معروف"
 
 #: qfiledialog.cpp:439
 msgctxt "QFileDialog"
@@ -316,7 +314,7 @@ msgstr "إيجاد الدّليل"
 #: qfiledialog.cpp:458
 msgctxt "QFileDialog"
 msgid "Show "
-msgstr ""
+msgstr "إعرض"
 
 #: ui_qfiledialog.h:269
 msgctxt "QFileDialog"
@@ -331,37 +329,37 @@ msgstr "دليل جديد"
 #: qfiledialog.cpp:465
 msgctxt "QFileDialog"
 msgid "&New Folder"
-msgstr ""
+msgstr "م&جلد جديد"
 
 #: qfiledialog.cpp:917
 msgctxt "QFileDialog"
 msgid "&Choose"
-msgstr ""
+msgstr "إ&ختار"
 
 #: qsidebar.cpp:388
 msgctxt "QFileDialog"
 msgid "Remove"
-msgstr ""
+msgstr "حذف"
 
 #: qfiledialog.cpp:886
 msgctxt "QFileDialog"
 msgid "File &name:"
-msgstr ""
+msgstr "إسم ال&ملف"
 
 #: ui_qfiledialog.h:261
 msgctxt "QFileDialog"
 msgid "Look in:"
-msgstr ""
+msgstr "إنظر في:"
 
 #: ui_qfiledialog.h:279
 msgctxt "QFileDialog"
 msgid "Create New Folder"
-msgstr ""
+msgstr "انشئ مجلد جديد"
 
 #: qfilesystemmodel.cpp:761
 msgctxt "QFileSystemModel"
 msgid "Invalid filename"
-msgstr ""
+msgstr "إسم ملف غير صالح"
 
 #: qfilesystemmodel.cpp:763
 msgctxt "QFileSystemModel"
@@ -369,6 +367,8 @@ msgid ""
 "<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer "
 "characters or no punctuations marks."
 msgstr ""
+"<b>لايمكن إستعمال الإسم \"%1\".</b>حاول إستخدام إسم أخر, مع تقليل عدد الأحرف "
+"ولا تستخدم علامات التنقيط<p>"
 
 #: qfilesystemmodel.cpp:832
 msgctxt "QFileSystemModel"
@@ -383,7 +383,7 @@ msgstr "السّعة"
 #: qfilesystemmodel.cpp:838
 msgctxt "QFileSystemModel"
 msgid "Kind"
-msgstr ""
+msgstr "النوع"
 
 #: qfilesystemmodel.cpp:840
 msgctxt "QFileSystemModel"
@@ -393,39 +393,40 @@ msgstr "الطّراز"
 #: qfilesystemmodel.cpp:847
 msgctxt "QFileSystemModel"
 msgid "Date Modified"
-msgstr ""
+msgstr "تأريخ التعديل"
 
 #: qfilesystemmodel_p.h:198
 msgctxt "QFileSystemModel"
 msgid "My Computer"
-msgstr ""
+msgstr "كمبيوتري"
 
 #: qfilesystemmodel_p.h:200
 msgctxt "QFileSystemModel"
 msgid "Computer"
-msgstr ""
+msgstr "كمبيوتر"
 
 #: qfilesystemmodel.cpp:677
 msgctxt "QFileSystemModel"
 msgid "%1 TB"
-msgstr ""
+msgstr "%1 تيرابايت"
 
 #: qfilesystemmodel.cpp:679
 msgctxt "QFileSystemModel"
 msgid "%1 GB"
-msgstr ""
+msgstr "%1 جيجابايت"
 
 #: qfilesystemmodel.cpp:681
 msgctxt "QFileSystemModel"
 msgid "%1 MB"
-msgstr ""
+msgstr "%1 ميقابايت"
 
 #: qfilesystemmodel.cpp:683
 msgctxt "QFileSystemModel"
 msgid "%1 KB"
-msgstr ""
+msgstr "%1 كيلو بايت"
 
 #: qfilesystemmodel.cpp:684
 msgctxt "QFileSystemModel"
 msgid "%1 bytes"
-msgstr ""
+msgstr "%1 بايت"
+>>>>>>> .r3695
