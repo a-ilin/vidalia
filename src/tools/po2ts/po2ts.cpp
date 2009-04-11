@@ -112,7 +112,7 @@ parse_message_string(const QString &msg)
 {
   QString out = msg.trimmed(); 
   
-  out.replace("\"\n\"", "\n");
+  out.replace("\"\n\"", "");
   if (out.startsWith("\""))
     out = out.remove(0, 1);
   if (out.endsWith("\""))

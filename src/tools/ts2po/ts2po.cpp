@@ -104,17 +104,17 @@ convert_context(const QDomElement &context, QString *po, QString *errorMessage)
                               "(line %1)").arg(msg.lineNumber());
       return -1;
     }
-    msgid = source.text();
+    msgid = source.text().trimmed();
     msgid.replace("\r", "");
     msgid.replace("\"", "\\\"");
-    msgid.replace("\n", "\"\n\"");
+    msgid.replace("\n", "\\n\"\n\"");
 
     /* Extract the <translation> tags */
     translation = msg.firstChildElement(TS_ELEMENT_TRANSLATION);
-    msgstr = translation.text();
+    msgstr = translation.text().trimmed();
     msgstr.replace("\r", "");
     msgstr.replace("\"", "\\\"");
-    msgstr.replace("\n", "\"\n\"");
+    msgstr.replace("\n", "\\n\"\n\"");
   
     /* Try to extract the <location> tags (optional) */
     location = msg.firstChildElement(TS_ELEMENT_LOCATION);
