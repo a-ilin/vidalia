@@ -193,13 +193,20 @@ msgid "Open"
 msgstr "Megnyitás"
 
 #: qfiledialog.cpp:1670
+#, fuzzy
 msgctxt "QFileDialog"
-msgid "%1 already exists.Do you want to replace it?"
+msgid ""
+"%1 already exists.\n"
+"Do you want to replace it?"
 msgstr "%1 már létezik. Kívánja felülírni?"
 
 #: qfiledialog.cpp:1690
+#, fuzzy
 msgctxt "QFileDialog"
-msgid "%1File not found.Please verify the correct file name was given."
+msgid ""
+"%1\n"
+"File not found.\n"
+"Please verify the correct file name was given."
 msgstr "%1 nem létezik. Ellenõrizze, hogy pontosan adta meg a nevet."
 
 #: qdirmodel.cpp:833
@@ -253,14 +260,20 @@ msgid "Directory:"
 msgstr "Könyvtár:"
 
 #: qfiledialog.cpp:2476
+#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
-"%1Directory not found.Please verify the correct directory name was given."
+"%1\n"
+"Directory not found.\n"
+"Please verify the correct directory name was given."
 msgstr "%1 könyvtár nem létezik. Ellenõrizze, hogy jól adta-e meg a nevet."
 
 #: qfiledialog.cpp:2281
+#, fuzzy
 msgctxt "QFileDialog"
-msgid "'%1' is write protected.Do you want to delete it anyway?"
+msgid ""
+"'%1' is write protected.\n"
+"Do you want to delete it anyway?"
 msgstr "'%1' írásvédett. Mégis kívánja törölni?"
 
 #: qfiledialog.cpp:2286

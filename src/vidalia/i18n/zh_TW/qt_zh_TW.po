@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
-"POT-Creation-Date: 2008-08-20 05:05+0000\n"
+"POT-Creation-Date: 2008-08-20 03:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: translations@vidalia-project.net\n"
@@ -193,20 +193,21 @@ msgid "Open"
 msgstr "開啟"
 
 #: qfiledialog.cpp:1670
+#, fuzzy
 msgctxt "QFileDialog"
-msgid "%1 already exists."
+msgid ""
+"%1 already exists.\n"
 "Do you want to replace it?"
-msgstr "%1 已存在"
-"您要取代它嗎？"
+msgstr "%1 已存在您要取代它嗎？"
 
 #: qfiledialog.cpp:1690
+#, fuzzy
 msgctxt "QFileDialog"
-msgid "%1"
-"File not found."
+msgid ""
+"%1\n"
+"File not found.\n"
 "Please verify the correct file name was given."
-msgstr "%1"
-"找不到檔案。"
-"請檢查檔名是否正確。"
+msgstr "%1找不到檔案。請檢查檔名是否正確。"
 
 #: qdirmodel.cpp:833
 msgctxt "QFileDialog"
@@ -228,27 +229,27 @@ msgctxt "QFileDialog"
 msgid "Show &hidden files"
 msgstr "顯示隱藏檔(&H)"
 
-#: qfiledialog_wince.ui:43
+#: ui_qfiledialog.h:264
 msgctxt "QFileDialog"
 msgid "Back"
 msgstr "返回"
 
-#: qfiledialog_wince.ui:57
+#: ui_qfiledialog.h:274
 msgctxt "QFileDialog"
 msgid "Parent Directory"
 msgstr "父目錄"
 
-#: qfiledialog_wince.ui:71
+#: ui_qfiledialog.h:284
 msgctxt "QFileDialog"
 msgid "List View"
 msgstr "列表檢視"
 
-#: qfiledialog_wince.ui:78
+#: ui_qfiledialog.h:289
 msgctxt "QFileDialog"
 msgid "Detail View"
 msgstr "詳細檢視"
 
-#: qfiledialog_wince.ui:240
+#: ui_qfiledialog.h:292
 msgctxt "QFileDialog"
 msgid "Files of type:"
 msgstr "檔案型態："
@@ -258,30 +259,22 @@ msgctxt "QFileDialog"
 msgid "Directory:"
 msgstr "目錄："
 
-#: qfiledialog.cpp:1518
+#: qfiledialog.cpp:2476
+#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
-"File not found."
-"Please verify the correct file name was given"
-msgstr ""
-"檔案找不到。"
-"請檢查檔名是否正確。"
-
-#: qfiledialog.cpp:2476
-msgctxt "QFileDialog"
-msgid "%1"
-"Directory not found."
+"%1\n"
+"Directory not found.\n"
 "Please verify the correct directory name was given."
-msgstr "%1"
-"找不到目錄。"
-"請檢查目錄名稱是否正確。"
+msgstr "%1找不到目錄。請檢查目錄名稱是否正確。"
 
 #: qfiledialog.cpp:2281
+#, fuzzy
 msgctxt "QFileDialog"
-msgid "'%1' is write protected."
+msgid ""
+"'%1' is write protected.\n"
 "Do you want to delete it anyway?"
-msgstr "%1 有寫入保護。"
-"您確定要刪除它嗎？"
+msgstr "%1 有寫入保護。您確定要刪除它嗎？"
 
 #: qfiledialog.cpp:2286
 msgctxt "QFileDialog"
@@ -328,7 +321,7 @@ msgctxt "QFileDialog"
 msgid "Show "
 msgstr "顯示 "
 
-#: qfiledialog_wince.ui:50
+#: ui_qfiledialog.h:269
 msgctxt "QFileDialog"
 msgid "Forward"
 msgstr "往前"
@@ -358,12 +351,12 @@ msgctxt "QFileDialog"
 msgid "File &name:"
 msgstr "檔名(&N)："
 
-#: qfiledialog_wince.ui:262
+#: ui_qfiledialog.h:261
 msgctxt "QFileDialog"
 msgid "Look in:"
 msgstr "尋找於："
 
-#: qfiledialog_wince.ui:64
+#: ui_qfiledialog.h:279
 msgctxt "QFileDialog"
 msgid "Create New Folder"
 msgstr "建立新資料夾"
@@ -375,8 +368,12 @@ msgstr "不合法的檔名"
 
 #: qfilesystemmodel.cpp:763
 msgctxt "QFileSystemModel"
-msgid "<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer characters or no punctuations marks."
-msgstr "<b>無法使用名稱 \"%1\"。</b><p>請使用其它名稱，字元數少一點，或是不要有標點符號。"
+msgid ""
+"<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer "
+"characters or no punctuations marks."
+msgstr ""
+"<b>無法使用名稱 \"%1\"。</b><p>請使用其它名稱，字元數少一點，或是不要有標點符"
+"號。"
 
 #: qfilesystemmodel.cpp:832
 msgctxt "QFileSystemModel"
@@ -437,4 +434,3 @@ msgstr "%1 KB"
 msgctxt "QFileSystemModel"
 msgid "%1 bytes"
 msgstr "%1 位元組"
-

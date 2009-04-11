@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
-"POT-Creation-Date: 2008-08-20 04:58+0000\n"
+"POT-Creation-Date: 2008-08-20 03:25+0000\n"
 "PO-Revision-Date: 2008-09-16 09:57+0000\n"
 "Last-Translator: Susan Neni Meiro <y57ctq_translation@spamavert.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
@@ -142,47 +142,47 @@ msgctxt "QDialogButtonBox"
 msgid "&OK"
 msgstr "&Aceptar"
 
-#: qdirmodel.cpp:425
+#: qdirmodel.cpp:423
 msgctxt "QDirModel"
 msgid "Name"
 msgstr "Nombre"
 
-#: qdirmodel.cpp:426
+#: qdirmodel.cpp:424
 msgctxt "QDirModel"
 msgid "Size"
 msgstr "Tamaño"
 
-#: qdirmodel.cpp:431
+#: qdirmodel.cpp:427
+msgctxt "QDirModel"
+msgid "Kind"
+msgstr "Clase"
+
+#: qdirmodel.cpp:429
 msgctxt "QDirModel"
 msgid "Type"
 msgstr "Tipo"
 
-#: qdirmodel.cpp:437
+#: qdirmodel.cpp:435
 msgctxt "QDirModel"
 msgid "Date Modified"
 msgstr "Última modificación"
-
-#: qdirmodel.cpp:429
-msgctxt "QDirModel"
-msgid "Kind"
-msgstr "Clase"
 
 #: qfiledialog_win.cpp:126
 msgctxt "QFileDialog"
 msgid "All Files (*)"
 msgstr "Todos los ficheros (*)"
 
-#: qfiledialog.cpp:893
+#: qfiledialog.cpp:881
 msgctxt "QFileDialog"
 msgid "Directories"
 msgstr "Directorios"
 
-#: qfiledialog.cpp:2432
+#: qfiledialog.cpp:2408
 msgctxt "QFileDialog"
 msgid "&Open"
 msgstr "&Abrir"
 
-#: qfiledialog.cpp:931
+#: qfiledialog.cpp:919
 msgctxt "QFileDialog"
 msgid "&Save"
 msgstr "&Guardar"
@@ -192,21 +192,25 @@ msgctxt "QFileDialog"
 msgid "Open"
 msgstr "Abrir"
 
-#: qfiledialog.cpp:1682
+#: qfiledialog.cpp:1670
+#, fuzzy
 msgctxt "QFileDialog"
-msgid "%1 already exists."
+msgid ""
+"%1 already exists.\n"
 "Do you want to replace it?"
 msgstr "El fichero %1 ya existe. ¿Desea reemplazarlo?"
 
-#: qfiledialog.cpp:1702
+#: qfiledialog.cpp:1690
+#, fuzzy
 msgctxt "QFileDialog"
-msgid "%1"
-"File not found."
+msgid ""
+"%1\n"
+"File not found.\n"
 "Please verify the correct file name was given."
 msgstr ""
 "%1Fichero no encontrado. Verifique que el nombre del fichero es correcto."
 
-#: qdirmodel.cpp:835
+#: qdirmodel.cpp:833
 msgctxt "QFileDialog"
 msgid "My Computer"
 msgstr "Mi equipo"
@@ -251,41 +255,36 @@ msgctxt "QFileDialog"
 msgid "Files of type:"
 msgstr "Ficheros de tipo:"
 
-#: qfiledialog.cpp:895
+#: qfiledialog.cpp:883
 msgctxt "QFileDialog"
 msgid "Directory:"
 msgstr "Directorio:"
 
+#: qfiledialog.cpp:2476
+#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
-"File not found."
-"Please verify the correct file name was given"
-msgstr ""
-"Fichero no encontrado. "
-"Compruebe que el nombre del fichero es correcto"
-
-#: qfiledialog.cpp:2500
-msgctxt "QFileDialog"
-msgid "%1"
-"Directory not found."
+"%1\n"
+"Directory not found.\n"
 "Please verify the correct directory name was given."
 msgstr ""
 "%1Directorio no encontrado. Verifique que el nombre del directorio es "
 "correcto."
 
-#: qfiledialog.cpp:2296
+#: qfiledialog.cpp:2281
+#, fuzzy
 msgctxt "QFileDialog"
-msgid "'%1' is write protected."
+msgid ""
+"'%1' is write protected.\n"
 "Do you want to delete it anyway?"
-msgstr "«%1» está protegido contra escritura. "
-"¿Desea borrarlo de todas formas?"
+msgstr "«%1» está protegido contra escritura. ¿Desea borrarlo de todas formas?"
 
-#: qfiledialog.cpp:2301
+#: qfiledialog.cpp:2286
 msgctxt "QFileDialog"
 msgid "Are sure you want to delete '%1'?"
 msgstr "¿Seguro que desea borrar «%1»?"
 
-#: qfiledialog.cpp:2314
+#: qfiledialog.cpp:2299
 msgctxt "QFileDialog"
 msgid "Could not delete directory."
 msgstr "No fue posible borrar el directorio."
@@ -330,7 +329,7 @@ msgctxt "QFileDialog"
 msgid "Forward"
 msgstr "Siguiente (histórico)"
 
-#: qfiledialog.cpp:2152
+#: qfiledialog.cpp:2137
 msgctxt "QFileDialog"
 msgid "New Folder"
 msgstr "Nueva carpeta"
@@ -340,7 +339,7 @@ msgctxt "QFileDialog"
 msgid "&New Folder"
 msgstr "&Nueva carpeta"
 
-#: qfiledialog.cpp:929
+#: qfiledialog.cpp:917
 msgctxt "QFileDialog"
 msgid "&Choose"
 msgstr "&Seleccionar"
@@ -350,7 +349,7 @@ msgctxt "QFileDialog"
 msgid "Remove"
 msgstr "Eliminar"
 
-#: qfiledialog.cpp:898
+#: qfiledialog.cpp:886
 msgctxt "QFileDialog"
 msgid "File &name:"
 msgstr "&Nombre de fichero:"
@@ -365,57 +364,41 @@ msgctxt "QFileDialog"
 msgid "Create New Folder"
 msgstr "Crear una nueva carpeta"
 
-#: qfilesystemmodel.cpp:679
-msgctxt "QFileSystemModel"
-msgid "%1 TB"
-msgstr "%1 TiB"
-
-#: qfilesystemmodel.cpp:681
-msgctxt "QFileSystemModel"
-msgid "%1 GB"
-msgstr "%1 GiB"
-
-#: qfilesystemmodel.cpp:683
-msgctxt "QFileSystemModel"
-msgid "%1 MB"
-msgstr "%1 MiB"
-
-#: qfilesystemmodel.cpp:685
-msgctxt "QFileSystemModel"
-msgid "%1 KB"
-msgstr "%1 KiB"
-
-#: qfilesystemmodel.cpp:686
-msgctxt "QFileSystemModel"
-msgid "%1 bytes"
-msgstr "%1 bytes"
-
-#: qfilesystemmodel.cpp:763
+#: qfilesystemmodel.cpp:761
 msgctxt "QFileSystemModel"
 msgid "Invalid filename"
 msgstr "Nombre de fichero no válido"
 
-#: qfilesystemmodel.cpp:765
+#: qfilesystemmodel.cpp:763
 msgctxt "QFileSystemModel"
-msgid "<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer characters or no punctuations marks."
-msgstr "<b>No se puede utilizar el nombre «%1».</b><p>Intente usar otro nombre con menos caracteres o sin signos de puntuación."
+msgid ""
+"<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer "
+"characters or no punctuations marks."
+msgstr ""
+"<b>No se puede utilizar el nombre «%1».</b><p>Intente usar otro nombre con "
+"menos caracteres o sin signos de puntuación."
 
-#: qfilesystemmodel.cpp:834
+#: qfilesystemmodel.cpp:832
 msgctxt "QFileSystemModel"
 msgid "Name"
 msgstr "Nombre"
 
-#: qfilesystemmodel.cpp:836
+#: qfilesystemmodel.cpp:834
 msgctxt "QFileSystemModel"
 msgid "Size"
 msgstr "Tamaño"
 
-#: qfilesystemmodel.cpp:840
+#: qfilesystemmodel.cpp:838
 msgctxt "QFileSystemModel"
 msgid "Kind"
 msgstr "Clase"
 
-#: qfilesystemmodel.cpp:849
+#: qfilesystemmodel.cpp:840
+msgctxt "QFileSystemModel"
+msgid "Type"
+msgstr "Tipo"
+
+#: qfilesystemmodel.cpp:847
 msgctxt "QFileSystemModel"
 msgid "Date Modified"
 msgstr "Última modificación"
@@ -430,7 +413,27 @@ msgctxt "QFileSystemModel"
 msgid "Computer"
 msgstr "Equipo"
 
-#: qfilesystemmodel.cpp:842
+#: qfilesystemmodel.cpp:677
 msgctxt "QFileSystemModel"
-msgid "Type"
-msgstr "Tipo"
+msgid "%1 TB"
+msgstr "%1 TiB"
+
+#: qfilesystemmodel.cpp:679
+msgctxt "QFileSystemModel"
+msgid "%1 GB"
+msgstr "%1 GiB"
+
+#: qfilesystemmodel.cpp:681
+msgctxt "QFileSystemModel"
+msgid "%1 MB"
+msgstr "%1 MiB"
+
+#: qfilesystemmodel.cpp:683
+msgctxt "QFileSystemModel"
+msgid "%1 KB"
+msgstr "%1 KiB"
+
+#: qfilesystemmodel.cpp:684
+msgctxt "QFileSystemModel"
+msgid "%1 bytes"
+msgstr "%1 bytes"

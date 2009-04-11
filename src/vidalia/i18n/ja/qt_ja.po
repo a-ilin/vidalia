@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
-"POT-Creation-Date: 2008-08-20 05:03+0000\n"
+"POT-Creation-Date: 2008-08-20 03:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: translations@vidalia-project.net\n"
@@ -16,11 +16,6 @@ msgstr ""
 msgctxt "QApplication"
 msgid "Activate"
 msgstr "アクティブに"
-
-#: qaccessibleobject.cpp:350
-msgctxt "QApplication"
-msgid "Activates the program's main window"
-msgstr "メインウィンドウをアクティブにする"
 
 #: qmessagebox.h:319
 msgctxt "QApplication"
@@ -37,40 +32,15 @@ msgctxt "QApplication"
 msgid "QT_LAYOUT_DIRECTION"
 msgstr "LTR"
 
+#: qaccessibleobject.cpp:350
+msgctxt "QApplication"
+msgid "Activates the program's main window"
+msgstr "メインウィンドウをアクティブにする"
+
 #: qmessagebox.cpp:2104
 msgctxt "QDialogButtonBox"
 msgid "OK"
 msgstr "OK"
-
-#: qdialogbuttonbox.cpp:534
-msgctxt "QDialogButtonBox"
-msgid "Cancel"
-msgstr "キャンセル"
-
-#: qdialogbuttonbox.cpp:540
-msgctxt "QDialogButtonBox"
-msgid "Apply"
-msgstr "適用"
-
-#: qdialogbuttonbox.cpp:578
-msgctxt "QDialogButtonBox"
-msgid "Ignore"
-msgstr "無視"
-
-#: qdialogbuttonbox.cpp:575
-msgctxt "QDialogButtonBox"
-msgid "Retry"
-msgstr "再試行"
-
-#: qdialogbuttonbox.cpp:572
-msgctxt "QDialogButtonBox"
-msgid "Abort"
-msgstr "中止"
-
-#: qdialogbuttonbox.cpp:546
-msgctxt "QDialogButtonBox"
-msgid "Help"
-msgstr "ヘルプ"
 
 #: qdialogbuttonbox.cpp:528
 msgctxt "QDialogButtonBox"
@@ -82,25 +52,35 @@ msgctxt "QDialogButtonBox"
 msgid "Open"
 msgstr "オープン"
 
+#: qdialogbuttonbox.cpp:534
+msgctxt "QDialogButtonBox"
+msgid "Cancel"
+msgstr "キャンセル"
+
 #: qdialogbuttonbox.cpp:537
 msgctxt "QDialogButtonBox"
 msgid "Close"
 msgstr "閉じる"
+
+#: qdialogbuttonbox.cpp:540
+msgctxt "QDialogButtonBox"
+msgid "Apply"
+msgstr "適用"
 
 #: qdialogbuttonbox.cpp:543
 msgctxt "QDialogButtonBox"
 msgid "Reset"
 msgstr "リセット"
 
+#: qdialogbuttonbox.cpp:546
+msgctxt "QDialogButtonBox"
+msgid "Help"
+msgstr "ヘルプ"
+
 #: qdialogbuttonbox.cpp:550
 msgctxt "QDialogButtonBox"
 msgid "Don't Save"
 msgstr "保存しない"
-
-#: qdialogbuttonbox.cpp:552
-msgctxt "QDialogButtonBox"
-msgid "Close without Saving"
-msgstr "保存せずに閉じる"
 
 #: qdialogbuttonbox.cpp:554
 msgctxt "QDialogButtonBox"
@@ -132,10 +112,30 @@ msgctxt "QDialogButtonBox"
 msgid "Save All"
 msgstr "すべて保存"
 
+#: qdialogbuttonbox.cpp:572
+msgctxt "QDialogButtonBox"
+msgid "Abort"
+msgstr "中止"
+
+#: qdialogbuttonbox.cpp:575
+msgctxt "QDialogButtonBox"
+msgid "Retry"
+msgstr "再試行"
+
+#: qdialogbuttonbox.cpp:578
+msgctxt "QDialogButtonBox"
+msgid "Ignore"
+msgstr "無視"
+
 #: qdialogbuttonbox.cpp:581
 msgctxt "QDialogButtonBox"
 msgid "Restore Defaults"
 msgstr "デフォルトに戻す"
+
+#: qdialogbuttonbox.cpp:552
+msgctxt "QDialogButtonBox"
+msgid "Close without Saving"
+msgstr "保存せずに閉じる"
 
 #: qdialogbuttonbox.cpp:525
 msgctxt "QDialogButtonBox"
@@ -152,11 +152,6 @@ msgctxt "QDirModel"
 msgid "Size"
 msgstr "サイズ"
 
-#: qdirmodel.cpp:435
-msgctxt "QDirModel"
-msgid "Date Modified"
-msgstr "更新日"
-
 #: qdirmodel.cpp:427
 msgctxt "QDirModel"
 msgid "Kind"
@@ -167,6 +162,11 @@ msgctxt "QDirModel"
 msgid "Type"
 msgstr "タイプ"
 
+#: qdirmodel.cpp:435
+msgctxt "QDirModel"
+msgid "Date Modified"
+msgstr "更新日"
+
 #: qfiledialog_win.cpp:126
 msgctxt "QFileDialog"
 msgid "All Files (*)"
@@ -176,16 +176,6 @@ msgstr "すべてのファイル(*)"
 msgctxt "QFileDialog"
 msgid "Directories"
 msgstr "ディレクトリ"
-
-#: qfiledialog.cpp:883
-msgctxt "QFileDialog"
-msgid "Directory:"
-msgstr "ディレクトリ:"
-
-#: qfiledialog.cpp:886
-msgctxt "QFileDialog"
-msgid "File &name:"
-msgstr "ファイル名:"
 
 #: qfiledialog.cpp:2408
 msgctxt "QFileDialog"
@@ -202,53 +192,29 @@ msgctxt "QFileDialog"
 msgid "Open"
 msgstr "オープン"
 
-msgctxt "QFileDialog"
-msgid "Save"
-msgstr "保存"
-
-#: qfiledialog.cpp:1515
+#: qfiledialog.cpp:1670
+#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
-"File not found."
-"Please verify the correct file name was given"
-msgstr ""
-"ファイルが見つかりません。"
-"正しいファイル名が入力されたかどうか確認してください"
-
-#: qfiledialog.cpp:1670
-msgctxt "QFileDialog"
-msgid "%1 already exists."
+"%1 already exists.\n"
 "Do you want to replace it?"
-msgstr "%1はすでに存在します。"
-"置き換えますか?"
+msgstr "%1はすでに存在します。置き換えますか?"
 
 #: qfiledialog.cpp:1690
+#, fuzzy
 msgctxt "QFileDialog"
-msgid "%1"
-"File not found."
+msgid ""
+"%1\n"
+"File not found.\n"
 "Please verify the correct file name was given."
-msgstr "%1"
-"ファイルが見つかりません。"
-"正しいファイル名が入力されたかどうか確認してください。"
+msgstr ""
+"%1ファイルが見つかりません。正しいファイル名が入力されたかどうか確認してくだ"
+"さい。"
 
 #: qdirmodel.cpp:833
 msgctxt "QFileDialog"
 msgid "My Computer"
 msgstr "マイ コンピュータ"
-
-#: qfiledialog.cpp:2476
-msgctxt "QFileDialog"
-msgid "%1"
-"Directory not found."
-"Please verify the correct directory name was given."
-msgstr "%1"
-"ディレクトリが見つかりません。"
-"正しいディレクトリ名が入力されたかどうか確認してください。"
-
-#: qfiledialog.cpp:1417
-msgctxt "QFileDialog"
-msgid "Sort"
-msgstr "ソート"
 
 #: qfiledialog.cpp:462
 msgctxt "QFileDialog"
@@ -259,31 +225,6 @@ msgstr "名前の変更(&R)"
 msgctxt "QFileDialog"
 msgid "&Delete"
 msgstr "削除(&D)"
-
-#: qfiledialog.cpp:1696
-msgctxt "QFileDialog"
-msgid "&Reload"
-msgstr "リロード(&R)"
-
-#: qfiledialog.cpp:1699
-msgctxt "QFileDialog"
-msgid "Sort by &Name"
-msgstr "名前順にソート(&N)"
-
-#: qfiledialog.cpp:1704
-msgctxt "QFileDialog"
-msgid "Sort by &Size"
-msgstr "サイズ順にソート(&S)"
-
-#: qfiledialog.cpp:1708
-msgctxt "QFileDialog"
-msgid "Sort by &Date"
-msgstr "日付順にソート(&D)"
-
-#: qfiledialog.cpp:1712
-msgctxt "QFileDialog"
-msgid "&Unsorted"
-msgstr "ソート解除(&U)"
 
 #: qfiledialog.cpp:464
 msgctxt "QFileDialog"
@@ -300,11 +241,6 @@ msgctxt "QFileDialog"
 msgid "Parent Directory"
 msgstr "親ディレクトリ"
 
-#: ui_qfiledialog.h:279
-msgctxt "QFileDialog"
-msgid "Create New Folder"
-msgstr "新しいフォルダの作成"
-
 #: ui_qfiledialog.h:284
 msgctxt "QFileDialog"
 msgid "List View"
@@ -315,15 +251,54 @@ msgctxt "QFileDialog"
 msgid "Detail View"
 msgstr "詳細表示"
 
-#: ui_qfiledialog.h:261
-msgctxt "QFileDialog"
-msgid "Look in:"
-msgstr "検索する場所:"
-
 #: ui_qfiledialog.h:292
 msgctxt "QFileDialog"
 msgid "Files of type:"
 msgstr "ファイルの種類:"
+
+#: qfiledialog.cpp:883
+msgctxt "QFileDialog"
+msgid "Directory:"
+msgstr "ディレクトリ:"
+
+#: qfiledialog.cpp:2476
+#, fuzzy
+msgctxt "QFileDialog"
+msgid ""
+"%1\n"
+"Directory not found.\n"
+"Please verify the correct directory name was given."
+msgstr ""
+"%1ディレクトリが見つかりません。正しいディレクトリ名が入力されたかどうか確認"
+"してください。"
+
+#: qfiledialog.cpp:2281
+#, fuzzy
+msgctxt "QFileDialog"
+msgid ""
+"'%1' is write protected.\n"
+"Do you want to delete it anyway?"
+msgstr "'%1' は書き込みが禁止されています。本当に削除しますか？"
+
+#: qfiledialog.cpp:2286
+msgctxt "QFileDialog"
+msgid "Are sure you want to delete '%1'?"
+msgstr "'%1' を本当に削除しますか？"
+
+#: qfiledialog.cpp:2299
+msgctxt "QFileDialog"
+msgid "Could not delete directory."
+msgstr "ディレクトリを削除できませんでした。"
+
+#: qfiledialog_win.cpp:128
+msgctxt "QFileDialog"
+msgid "All Files (*.*)"
+msgstr "すべてのファイル(*.*)"
+
+#: qfiledialog.cpp:437
+msgctxt "QFileDialog"
+msgid "Save As"
+msgstr "名前を付けて保存"
 
 #: qfileiconprovider.cpp:379
 msgctxt "QFileDialog"
@@ -340,41 +315,6 @@ msgctxt "QFileDialog"
 msgid "Unknown"
 msgstr "不明"
 
-#: qfiledialog_win.cpp:128
-msgctxt "QFileDialog"
-msgid "All Files (*.*)"
-msgstr "すべてのファイル(*.*)"
-
-#: qfiledialog.cpp:437
-msgctxt "QFileDialog"
-msgid "Save As"
-msgstr "名前を付けて保存"
-
-msgctxt "QFileDialog"
-msgid "Open "
-msgstr "オープン"
-
-msgctxt "QFileDialog"
-msgid "Select a Directory"
-msgstr "ディレクトリを選択"
-
-#: qfiledialog.cpp:2281
-msgctxt "QFileDialog"
-msgid "'%1' is write protected."
-"Do you want to delete it anyway?"
-msgstr "'%1' は書き込みが禁止されています。"
-"本当に削除しますか？"
-
-#: qfiledialog.cpp:2286
-msgctxt "QFileDialog"
-msgid "Are sure you want to delete '%1'?"
-msgstr "'%1' を本当に削除しますか？"
-
-#: qfiledialog.cpp:2299
-msgctxt "QFileDialog"
-msgid "Could not delete directory."
-msgstr "ディレクトリを削除できませんでした。"
-
 #: qfiledialog.cpp:439
 msgctxt "QFileDialog"
 msgid "Find Directory"
@@ -384,6 +324,16 @@ msgstr "ディレクトリの検索"
 msgctxt "QFileDialog"
 msgid "Show "
 msgstr ""
+
+#: ui_qfiledialog.h:269
+msgctxt "QFileDialog"
+msgid "Forward"
+msgstr "進む"
+
+#: qfiledialog.cpp:2137
+msgctxt "QFileDialog"
+msgid "New Folder"
+msgstr "新しいフォルダ"
 
 #: qfiledialog.cpp:465
 msgctxt "QFileDialog"
@@ -395,19 +345,36 @@ msgctxt "QFileDialog"
 msgid "&Choose"
 msgstr ""
 
-#: qfiledialog.cpp:2137
-msgctxt "QFileDialog"
-msgid "New Folder"
-msgstr "新しいフォルダ"
-
-#: ui_qfiledialog.h:269
-msgctxt "QFileDialog"
-msgid "Forward"
-msgstr "進む"
-
 #: qsidebar.cpp:388
 msgctxt "QFileDialog"
 msgid "Remove"
+msgstr ""
+
+#: qfiledialog.cpp:886
+msgctxt "QFileDialog"
+msgid "File &name:"
+msgstr "ファイル名:"
+
+#: ui_qfiledialog.h:261
+msgctxt "QFileDialog"
+msgid "Look in:"
+msgstr "検索する場所:"
+
+#: ui_qfiledialog.h:279
+msgctxt "QFileDialog"
+msgid "Create New Folder"
+msgstr "新しいフォルダの作成"
+
+#: qfilesystemmodel.cpp:761
+msgctxt "QFileSystemModel"
+msgid "Invalid filename"
+msgstr ""
+
+#: qfilesystemmodel.cpp:763
+msgctxt "QFileSystemModel"
+msgid ""
+"<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer "
+"characters or no punctuations marks."
 msgstr ""
 
 #: qfilesystemmodel.cpp:832
@@ -420,11 +387,6 @@ msgctxt "QFileSystemModel"
 msgid "Size"
 msgstr "サイズ"
 
-#: qfilesystemmodel.cpp:847
-msgctxt "QFileSystemModel"
-msgid "Date Modified"
-msgstr "更新日"
-
 #: qfilesystemmodel.cpp:838
 msgctxt "QFileSystemModel"
 msgid "Kind"
@@ -434,6 +396,21 @@ msgstr "種類"
 msgctxt "QFileSystemModel"
 msgid "Type"
 msgstr "タイプ"
+
+#: qfilesystemmodel.cpp:847
+msgctxt "QFileSystemModel"
+msgid "Date Modified"
+msgstr "更新日"
+
+#: qfilesystemmodel_p.h:198
+msgctxt "QFileSystemModel"
+msgid "My Computer"
+msgstr "マイ コンピュータ"
+
+#: qfilesystemmodel_p.h:200
+msgctxt "QFileSystemModel"
+msgid "Computer"
+msgstr ""
 
 #: qfilesystemmodel.cpp:677
 msgctxt "QFileSystemModel"
@@ -459,24 +436,3 @@ msgstr ""
 msgctxt "QFileSystemModel"
 msgid "%1 bytes"
 msgstr ""
-
-#: qfilesystemmodel.cpp:761
-msgctxt "QFileSystemModel"
-msgid "Invalid filename"
-msgstr ""
-
-#: qfilesystemmodel.cpp:763
-msgctxt "QFileSystemModel"
-msgid "<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer characters or no punctuations marks."
-msgstr ""
-
-#: qfilesystemmodel_p.h:198
-msgctxt "QFileSystemModel"
-msgid "My Computer"
-msgstr "マイ コンピュータ"
-
-#: qfilesystemmodel_p.h:200
-msgctxt "QFileSystemModel"
-msgid "Computer"
-msgstr ""
-

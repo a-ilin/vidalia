@@ -193,13 +193,20 @@ msgid "Open"
 msgstr "Åpen"
 
 #: qfiledialog.cpp:1670
+#, fuzzy
 msgctxt "QFileDialog"
-msgid "%1 already exists.Do you want to replace it?"
+msgid ""
+"%1 already exists.\n"
+"Do you want to replace it?"
 msgstr "%1 finnes allerede. Vil du overskrive?"
 
 #: qfiledialog.cpp:1690
+#, fuzzy
 msgctxt "QFileDialog"
-msgid "%1File not found.Please verify the correct file name was given."
+msgid ""
+"%1\n"
+"File not found.\n"
+"Please verify the correct file name was given."
 msgstr "%1File ble ikke funnet. Vennligst se at riktig filnavn ble gitt."
 
 #: qdirmodel.cpp:833
@@ -253,15 +260,21 @@ msgid "Directory:"
 msgstr ""
 
 #: qfiledialog.cpp:2476
+#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
-"%1Directory not found.Please verify the correct directory name was given."
-msgstr ""
+"%1\n"
+"Directory not found.\n"
+"Please verify the correct directory name was given."
+msgstr "%1File ble ikke funnet. Vennligst se at riktig filnavn ble gitt."
 
 #: qfiledialog.cpp:2281
+#, fuzzy
 msgctxt "QFileDialog"
-msgid "'%1' is write protected.Do you want to delete it anyway?"
-msgstr ""
+msgid ""
+"'%1' is write protected.\n"
+"Do you want to delete it anyway?"
+msgstr "%1 finnes allerede. Vil du overskrive?"
 
 #: qfiledialog.cpp:2286
 msgctxt "QFileDialog"

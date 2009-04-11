@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
-"POT-Creation-Date: 2008-08-20 05:04+0000\n"
+"POT-Creation-Date: 2008-08-20 03:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: translations@vidalia-project.net\n"
@@ -16,11 +16,6 @@ msgstr ""
 msgctxt "QApplication"
 msgid "Activate"
 msgstr "Uaktywnij"
-
-#: qaccessibleobject.cpp:350
-msgctxt "QApplication"
-msgid "Activates the program's main window"
-msgstr "Uaktywnia główne okno programu"
 
 #: qmessagebox.h:319
 msgctxt "QApplication"
@@ -37,15 +32,25 @@ msgctxt "QApplication"
 msgid "QT_LAYOUT_DIRECTION"
 msgstr "LTR"
 
-#: qdialogbuttonbox.cpp:572
-msgctxt "QDialogButtonBox"
-msgid "Abort"
-msgstr "Przerwij"
+#: qaccessibleobject.cpp:350
+msgctxt "QApplication"
+msgid "Activates the program's main window"
+msgstr "Uaktywnia główne okno programu"
 
-#: qdialogbuttonbox.cpp:540
+#: qmessagebox.cpp:2104
 msgctxt "QDialogButtonBox"
-msgid "Apply"
-msgstr "Zastosuj"
+msgid "OK"
+msgstr "OK"
+
+#: qdialogbuttonbox.cpp:528
+msgctxt "QDialogButtonBox"
+msgid "Save"
+msgstr "Zachowaj"
+
+#: qdialogbuttonbox.cpp:531
+msgctxt "QDialogButtonBox"
+msgid "Open"
+msgstr "Otwórz"
 
 #: qdialogbuttonbox.cpp:534
 msgctxt "QDialogButtonBox"
@@ -57,75 +62,30 @@ msgctxt "QDialogButtonBox"
 msgid "Close"
 msgstr "Zamknij"
 
-#: qdialogbuttonbox.cpp:552
+#: qdialogbuttonbox.cpp:540
 msgctxt "QDialogButtonBox"
-msgid "Close without Saving"
-msgstr "Zamknij bez zapisywania"
-
-#: qdialogbuttonbox.cpp:554
-msgctxt "QDialogButtonBox"
-msgid "Discard"
-msgstr "Odrzuć"
-
-#: qdialogbuttonbox.cpp:550
-msgctxt "QDialogButtonBox"
-msgid "Don't Save"
-msgstr "Nie zachowuj"
-
-#: qdialogbuttonbox.cpp:546
-msgctxt "QDialogButtonBox"
-msgid "Help"
-msgstr "Pomoc"
-
-#: qdialogbuttonbox.cpp:578
-msgctxt "QDialogButtonBox"
-msgid "Ignore"
-msgstr "Zignoruj"
-
-#: qdialogbuttonbox.cpp:563
-msgctxt "QDialogButtonBox"
-msgid "&No"
-msgstr "&Nie"
-
-#: qdialogbuttonbox.cpp:566
-msgctxt "QDialogButtonBox"
-msgid "N&o to All"
-msgstr "Ni&e dla wszystkich"
-
-#: qmessagebox.cpp:2104
-msgctxt "QDialogButtonBox"
-msgid "OK"
-msgstr "OK"
-
-#: qdialogbuttonbox.cpp:531
-msgctxt "QDialogButtonBox"
-msgid "Open"
-msgstr "Otwórz"
+msgid "Apply"
+msgstr "Zastosuj"
 
 #: qdialogbuttonbox.cpp:543
 msgctxt "QDialogButtonBox"
 msgid "Reset"
 msgstr "Resetuj"
 
-#: qdialogbuttonbox.cpp:581
+#: qdialogbuttonbox.cpp:546
 msgctxt "QDialogButtonBox"
-msgid "Restore Defaults"
-msgstr "Przywróć ustawienia"
+msgid "Help"
+msgstr "Pomoc"
 
-#: qdialogbuttonbox.cpp:575
+#: qdialogbuttonbox.cpp:550
 msgctxt "QDialogButtonBox"
-msgid "Retry"
-msgstr "Ponów"
+msgid "Don't Save"
+msgstr "Nie zachowuj"
 
-#: qdialogbuttonbox.cpp:528
+#: qdialogbuttonbox.cpp:554
 msgctxt "QDialogButtonBox"
-msgid "Save"
-msgstr "Zachowaj"
-
-#: qdialogbuttonbox.cpp:569
-msgctxt "QDialogButtonBox"
-msgid "Save All"
-msgstr "Zachowaj wszystko"
+msgid "Discard"
+msgstr "Odrzuć"
 
 #: qdialogbuttonbox.cpp:557
 msgctxt "QDialogButtonBox"
@@ -137,20 +97,50 @@ msgctxt "QDialogButtonBox"
 msgid "Yes to &All"
 msgstr "Ta&k dla wszystkich"
 
+#: qdialogbuttonbox.cpp:563
+msgctxt "QDialogButtonBox"
+msgid "&No"
+msgstr "&Nie"
+
+#: qdialogbuttonbox.cpp:566
+msgctxt "QDialogButtonBox"
+msgid "N&o to All"
+msgstr "Ni&e dla wszystkich"
+
+#: qdialogbuttonbox.cpp:569
+msgctxt "QDialogButtonBox"
+msgid "Save All"
+msgstr "Zachowaj wszystko"
+
+#: qdialogbuttonbox.cpp:572
+msgctxt "QDialogButtonBox"
+msgid "Abort"
+msgstr "Przerwij"
+
+#: qdialogbuttonbox.cpp:575
+msgctxt "QDialogButtonBox"
+msgid "Retry"
+msgstr "Ponów"
+
+#: qdialogbuttonbox.cpp:578
+msgctxt "QDialogButtonBox"
+msgid "Ignore"
+msgstr "Zignoruj"
+
+#: qdialogbuttonbox.cpp:581
+msgctxt "QDialogButtonBox"
+msgid "Restore Defaults"
+msgstr "Przywróć ustawienia"
+
+#: qdialogbuttonbox.cpp:552
+msgctxt "QDialogButtonBox"
+msgid "Close without Saving"
+msgstr "Zamknij bez zapisywania"
+
 #: qdialogbuttonbox.cpp:525
 msgctxt "QDialogButtonBox"
 msgid "&OK"
 msgstr "&OK"
-
-#: qdirmodel.cpp:435
-msgctxt "QDirModel"
-msgid "Date Modified"
-msgstr "Data modyfikacji"
-
-#: qdirmodel.cpp:427
-msgctxt "QDirModel"
-msgid "Kind"
-msgstr "Typ"
 
 #: qdirmodel.cpp:423
 msgctxt "QDirModel"
@@ -162,77 +152,149 @@ msgctxt "QDirModel"
 msgid "Size"
 msgstr "Rozmiar"
 
+#: qdirmodel.cpp:427
+msgctxt "QDirModel"
+msgid "Kind"
+msgstr "Typ"
+
 #: qdirmodel.cpp:429
 msgctxt "QDirModel"
 msgid "Type"
 msgstr "Rodzaj"
 
-#: qfiledialog.cpp:1670
-msgctxt "QFileDialog"
-msgid "%1 already exists."
-"Do you want to replace it?"
-msgstr "%1 już istnieje."
-"Czy chcesz zamienić?"
+#: qdirmodel.cpp:435
+msgctxt "QDirModel"
+msgid "Date Modified"
+msgstr "Data modyfikacji"
 
-#: qfiledialog.cpp:2281
+#: qfiledialog_win.cpp:126
 msgctxt "QFileDialog"
-msgid "'%1' is write protected."
-"Do you want to delete it anyway?"
-msgstr "'%1' jest zabezpieczony przed zapisem."
-"Czy na pewno chcesz go skasować?"
-
-#: qfiledialog.cpp:2476
-msgctxt "QFileDialog"
-msgid "%1"
-"Directory not found."
-"Please verify the correct directory name was given."
-msgstr "%1"
-"Katalog nie znaleziony."
-"Sprawdź podaną nazwę katalogu."
-
-#: qfiledialog.cpp:1690
-msgctxt "QFileDialog"
-msgid "%1"
-"File not found."
-"Please verify the correct file name was given."
-msgstr "%1"
-"Plik nie znaleziony."
-"Proszę o sprawdzenie podanej nazwy pliku."
-
-#: qfiledialog.cpp:2286
-msgctxt "QFileDialog"
-msgid "Are sure you want to delete '%1'?"
-msgstr "Czy na pewno chcesz skasować '%1'?"
-
-#: ui_qfiledialog.h:264
-msgctxt "QFileDialog"
-msgid "Back"
-msgstr "Powrót"
-
-#: qfiledialog.cpp:2299
-msgctxt "QFileDialog"
-msgid "Could not delete directory."
-msgstr "Nie można skasować katalogu."
-
-#: qfiledialog.cpp:463
-msgctxt "QFileDialog"
-msgid "&Delete"
-msgstr "&Skasuj"
-
-#: ui_qfiledialog.h:289
-msgctxt "QFileDialog"
-msgid "Detail View"
-msgstr "Szczegóły"
+msgid "All Files (*)"
+msgstr "Wszystkie pliki (*)"
 
 #: qfiledialog.cpp:881
 msgctxt "QFileDialog"
 msgid "Directories"
 msgstr "Katalogi"
 
+#: qfiledialog.cpp:2408
+msgctxt "QFileDialog"
+msgid "&Open"
+msgstr "&Otwórz"
+
+#: qfiledialog.cpp:919
+msgctxt "QFileDialog"
+msgid "&Save"
+msgstr "&Zachowaj"
+
+#: qfiledialog.cpp:435
+msgctxt "QFileDialog"
+msgid "Open"
+msgstr "Otwórz"
+
+#: qfiledialog.cpp:1670
+#, fuzzy
+msgctxt "QFileDialog"
+msgid ""
+"%1 already exists.\n"
+"Do you want to replace it?"
+msgstr "%1 już istnieje.Czy chcesz zamienić?"
+
+#: qfiledialog.cpp:1690
+#, fuzzy
+msgctxt "QFileDialog"
+msgid ""
+"%1\n"
+"File not found.\n"
+"Please verify the correct file name was given."
+msgstr "%1Plik nie znaleziony.Proszę o sprawdzenie podanej nazwy pliku."
+
+#: qdirmodel.cpp:833
+msgctxt "QFileDialog"
+msgid "My Computer"
+msgstr "Mój komputer"
+
+#: qfiledialog.cpp:462
+msgctxt "QFileDialog"
+msgid "&Rename"
+msgstr "&Zmień nazwę"
+
+#: qfiledialog.cpp:463
+msgctxt "QFileDialog"
+msgid "&Delete"
+msgstr "&Skasuj"
+
+#: qfiledialog.cpp:464
+msgctxt "QFileDialog"
+msgid "Show &hidden files"
+msgstr "Pokaż &ukryte pliki"
+
+#: ui_qfiledialog.h:264
+msgctxt "QFileDialog"
+msgid "Back"
+msgstr "Powrót"
+
+#: ui_qfiledialog.h:274
+msgctxt "QFileDialog"
+msgid "Parent Directory"
+msgstr "Katalog wyżej"
+
+#: ui_qfiledialog.h:284
+msgctxt "QFileDialog"
+msgid "List View"
+msgstr "Lista"
+
+#: ui_qfiledialog.h:289
+msgctxt "QFileDialog"
+msgid "Detail View"
+msgstr "Szczegóły"
+
+#: ui_qfiledialog.h:292
+msgctxt "QFileDialog"
+msgid "Files of type:"
+msgstr "Pliki rodzaju:"
+
 #: qfiledialog.cpp:883
 msgctxt "QFileDialog"
 msgid "Directory:"
 msgstr "Katalog:"
+
+#: qfiledialog.cpp:2476
+#, fuzzy
+msgctxt "QFileDialog"
+msgid ""
+"%1\n"
+"Directory not found.\n"
+"Please verify the correct directory name was given."
+msgstr "%1Katalog nie znaleziony.Sprawdź podaną nazwę katalogu."
+
+#: qfiledialog.cpp:2281
+#, fuzzy
+msgctxt "QFileDialog"
+msgid ""
+"'%1' is write protected.\n"
+"Do you want to delete it anyway?"
+msgstr "'%1' jest zabezpieczony przed zapisem.Czy na pewno chcesz go skasować?"
+
+#: qfiledialog.cpp:2286
+msgctxt "QFileDialog"
+msgid "Are sure you want to delete '%1'?"
+msgstr "Czy na pewno chcesz skasować '%1'?"
+
+#: qfiledialog.cpp:2299
+msgctxt "QFileDialog"
+msgid "Could not delete directory."
+msgstr "Nie można skasować katalogu."
+
+#: qfiledialog_win.cpp:128
+msgctxt "QFileDialog"
+msgid "All Files (*.*)"
+msgstr "Wszystkie pliki (*.*)"
+
+#: qfiledialog.cpp:437
+msgctxt "QFileDialog"
+msgid "Save As"
+msgstr "Zachowaj jako"
 
 #: qfileiconprovider.cpp:379
 msgctxt "QFileDialog"
@@ -244,70 +306,15 @@ msgctxt "QFileDialog"
 msgid "File"
 msgstr "Plik"
 
-#: ui_qfiledialog.h:292
-msgctxt "QFileDialog"
-msgid "Files of type:"
-msgstr "Pliki rodzaju:"
-
-#: ui_qfiledialog.h:284
-msgctxt "QFileDialog"
-msgid "List View"
-msgstr "Lista"
-
-#: qdirmodel.cpp:833
-msgctxt "QFileDialog"
-msgid "My Computer"
-msgstr "Mój komputer"
-
-#: qfiledialog.cpp:2408
-msgctxt "QFileDialog"
-msgid "&Open"
-msgstr "&Otwórz"
-
-#: ui_qfiledialog.h:274
-msgctxt "QFileDialog"
-msgid "Parent Directory"
-msgstr "Katalog wyżej"
-
-#: qfiledialog.cpp:462
-msgctxt "QFileDialog"
-msgid "&Rename"
-msgstr "&Zmień nazwę"
-
-#: qfiledialog.cpp:919
-msgctxt "QFileDialog"
-msgid "&Save"
-msgstr "&Zachowaj"
-
-#: qfiledialog.cpp:464
-msgctxt "QFileDialog"
-msgid "Show &hidden files"
-msgstr "Pokaż &ukryte pliki"
-
 #: qfileiconprovider.cpp:412
 msgctxt "QFileDialog"
 msgid "Unknown"
 msgstr "Nieznany"
 
-#: qfiledialog.cpp:435
-msgctxt "QFileDialog"
-msgid "Open"
-msgstr "Otwórz"
-
-#: qfiledialog.cpp:437
-msgctxt "QFileDialog"
-msgid "Save As"
-msgstr "Zachowaj jako"
-
 #: qfiledialog.cpp:439
 msgctxt "QFileDialog"
 msgid "Find Directory"
 msgstr "Znajdź katalog"
-
-#: qfiledialog_win.cpp:128
-msgctxt "QFileDialog"
-msgid "All Files (*.*)"
-msgstr "Wszystkie pliki (*.*)"
 
 #: qfiledialog.cpp:458
 msgctxt "QFileDialog"
@@ -339,11 +346,6 @@ msgctxt "QFileDialog"
 msgid "Remove"
 msgstr "Usuń"
 
-#: qfiledialog_win.cpp:126
-msgctxt "QFileDialog"
-msgid "All Files (*)"
-msgstr "Wszystkie pliki (*)"
-
 #: qfiledialog.cpp:886
 msgctxt "QFileDialog"
 msgid "File &name:"
@@ -359,31 +361,6 @@ msgctxt "QFileDialog"
 msgid "Create New Folder"
 msgstr "Utwórz nowy katalog"
 
-#: qfilesystemmodel.cpp:677
-msgctxt "QFileSystemModel"
-msgid "%1 TB"
-msgstr "%1 TB"
-
-#: qfilesystemmodel.cpp:679
-msgctxt "QFileSystemModel"
-msgid "%1 GB"
-msgstr "%1 GB"
-
-#: qfilesystemmodel.cpp:681
-msgctxt "QFileSystemModel"
-msgid "%1 MB"
-msgstr "%1 MB"
-
-#: qfilesystemmodel.cpp:683
-msgctxt "QFileSystemModel"
-msgid "%1 KB"
-msgstr "%1 KB"
-
-#: qfilesystemmodel.cpp:684
-msgctxt "QFileSystemModel"
-msgid "%1 bytes"
-msgstr "%1 b"
-
 #: qfilesystemmodel.cpp:761
 msgctxt "QFileSystemModel"
 msgid "Invalid filename"
@@ -391,8 +368,12 @@ msgstr "Niepoprawna nazwa pliku"
 
 #: qfilesystemmodel.cpp:763
 msgctxt "QFileSystemModel"
-msgid "<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer characters or no punctuations marks."
-msgstr "<b>Nazwa \"%1\" nie może zostać użyta.</b><p>Spróbuj użyć nowej nazwy z mniejszą liczbą znaków lub bez znaków przystankowych."
+msgid ""
+"<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer "
+"characters or no punctuations marks."
+msgstr ""
+"<b>Nazwa \"%1\" nie może zostać użyta.</b><p>Spróbuj użyć nowej nazwy z "
+"mniejszą liczbą znaków lub bez znaków przystankowych."
 
 #: qfilesystemmodel.cpp:832
 msgctxt "QFileSystemModel"
@@ -429,3 +410,27 @@ msgctxt "QFileSystemModel"
 msgid "Computer"
 msgstr "Komputer"
 
+#: qfilesystemmodel.cpp:677
+msgctxt "QFileSystemModel"
+msgid "%1 TB"
+msgstr "%1 TB"
+
+#: qfilesystemmodel.cpp:679
+msgctxt "QFileSystemModel"
+msgid "%1 GB"
+msgstr "%1 GB"
+
+#: qfilesystemmodel.cpp:681
+msgctxt "QFileSystemModel"
+msgid "%1 MB"
+msgstr "%1 MB"
+
+#: qfilesystemmodel.cpp:683
+msgctxt "QFileSystemModel"
+msgid "%1 KB"
+msgstr "%1 KB"
+
+#: qfilesystemmodel.cpp:684
+msgctxt "QFileSystemModel"
+msgid "%1 bytes"
+msgstr "%1 b"

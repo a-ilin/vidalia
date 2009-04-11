@@ -194,12 +194,17 @@ msgstr ""
 
 #: qfiledialog.cpp:1670
 msgctxt "QFileDialog"
-msgid "%1 already exists.Do you want to replace it?"
+msgid ""
+"%1 already exists.\n"
+"Do you want to replace it?"
 msgstr ""
 
 #: qfiledialog.cpp:1690
 msgctxt "QFileDialog"
-msgid "%1File not found.Please verify the correct file name was given."
+msgid ""
+"%1\n"
+"File not found.\n"
+"Please verify the correct file name was given."
 msgstr ""
 
 #: qdirmodel.cpp:833
@@ -255,12 +260,16 @@ msgstr ""
 #: qfiledialog.cpp:2476
 msgctxt "QFileDialog"
 msgid ""
-"%1Directory not found.Please verify the correct directory name was given."
+"%1\n"
+"Directory not found.\n"
+"Please verify the correct directory name was given."
 msgstr ""
 
 #: qfiledialog.cpp:2281
 msgctxt "QFileDialog"
-msgid "'%1' is write protected.Do you want to delete it anyway?"
+msgid ""
+"'%1' is write protected.\n"
+"Do you want to delete it anyway?"
 msgstr ""
 
 #: qfiledialog.cpp:2286
