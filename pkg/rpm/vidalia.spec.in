@@ -25,10 +25,10 @@ Packager  : Oliver Niesner <digi_news@gmx.de>
 
 Source0   : %{name}-%{version}.tar.gz
 
-#AutoReq      : No
+#AutoReq  : No
 #AutoProv : No
 
-Requires      : tor >= 0.1.2.18
+Requires      : tor >= 0.2.0.34
 BuildRequires : qt4 >= 4.2
 BuildRequires : cmake >= 2.4
 #BuildRoot  : /var/tmp/%{name}-buildroot
@@ -98,6 +98,10 @@ rm -rf %{buildroot}
 %defattr(-, root, root)
 
 %changelog
+* Sat Apr 11 2009 Andrew Lewman <andrew@torproject.org> 0.1.6-2
+- fix required Tor version
+- start integration into "package.sh"
+ 
 * Wed Jul 30 2008  Oliver Niesner <digi_news@gmx.de> 0.1.6-1
 - bump to 0.1.6 
 - fix man path 
