@@ -53,7 +53,7 @@ msgstr ""
 
 msgctxt "VidaliaWelcomeTitle"
 msgid "Welcome to the ${VIDALIA_NAME} Setup Wizard"
-msgstr "${BUNDLE_NAME} Kurulum sihibazına Hoş Geldiniz"
+msgstr "${VIDALIA_NAME} Kurulum sihibazına Hoş Geldiniz"
 
 msgctxt "VidaliaLinkText"
 msgid "${VIDALIA_NAME} homepage"
@@ -89,11 +89,11 @@ msgstr ""
 
 msgctxt "TorUninstDesc"
 msgid "Remove ${TOR_DESC}."
-msgstr "Kaldır ${PRIVOXY_DESC}."
+msgstr "Kaldır ${TOR_DESC}."
 
 msgctxt "TorAppDesc"
 msgid "Install ${TOR_DESC}."
-msgstr "Kur ${TORBUTTON_DESC}."
+msgstr "Kur ${TOR_DESC}."
 
 msgctxt "TorAskOverwriteTorrc"
 msgid "You already have a Tor configuration file.$\n$\nDo you want to overwrite it with the default sample configuration file?"
@@ -113,7 +113,7 @@ msgstr ""
 
 msgctxt "TorShortcutsDesc"
 msgid "Add ${TOR_NAME} to your Start menu."
-msgstr " ${VIDALIA_NAME} Başlangıca ekle."
+msgstr " ${TOR_NAME} Başlangıca ekle."
 
 msgctxt "PrivoxyGroupDesc"
 msgid "Privoxy is a filtering web proxy that protects your privacy and helps remove ads, banners, and popups."
@@ -133,7 +133,7 @@ msgstr "Başlangıç Menüsüne Ekle"
 
 msgctxt "PrivoxyShortcutsDesc"
 msgid "Add ${PRIVOXY_NAME} to your Start menu."
-msgstr " ${VIDALIA_NAME} Başlangıca ekle."
+msgstr " ${PRIVOXY_NAME} Başlangıca ekle."
 
 msgctxt "PrivoxyStartup"
 msgid "Run At Startup"
@@ -161,7 +161,7 @@ msgstr "Firefoxa ekle"
 
 msgctxt "TorbuttonAddToFirefoxDesc"
 msgid "Add the ${TORBUTTON_DESC} extension to Firefox."
-msgstr " ${VIDALIA_NAME} eklentisini Firefoxa ekle."
+msgstr " ${TORBUTTON_DESC} eklentisini Firefoxa ekle."
 
 msgctxt "TorbuttonFirefoxNotFound"
 msgid "Firefox was not found on your system. Not installing Torbutton."
