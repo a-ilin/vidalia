@@ -269,6 +269,7 @@ msgid "Always on Top"
 msgstr "हमेशा उपर रहो "
 
 #: bwgraph.ui:234
+#: appearancepage.ui:75
 msgctxt "BandwidthGraph"
 msgid "Style"
 msgstr "शैलि"
@@ -749,9 +750,10 @@ msgid "License Information"
 msgstr ""
 
 #: licensedialog.ui:43
+#: aboutdialog.ui:107
 msgctxt "LicenseDialog"
 msgid "License"
-msgstr ""
+msgstr "लाइसेंस"
 
 #: licensedialog.ui:76
 msgctxt "LicenseDialog"
@@ -1134,9 +1136,10 @@ msgid "Would you like to browse for the file 'control_auth_cookie' yourself?"
 msgstr ""
 
 #: mainwindow.cpp:1087
+#: advancedpage.ui:275
 msgctxt "MainWindow"
 msgid "Data Directory"
-msgstr ""
+msgstr "आंकडो के लिये निर्देशिका "
 
 #: mainwindow.cpp:1089
 msgctxt "MainWindow"
@@ -1209,9 +1212,10 @@ msgid "Vidalia Control Panel"
 msgstr ""
 
 #: mainwindow.ui:49
+#: circuitlistwidget.cpp:55
 msgctxt "MainWindow"
 msgid "Status"
-msgstr ""
+msgstr "स्थिति"
 
 #: mainwindow.ui:218
 msgctxt "MainWindow"
@@ -1381,9 +1385,10 @@ msgid "Text Files (*.txt)"
 msgstr ""
 
 #: messagelog.cpp:309
+#: aboutdialog.ui:53
 msgctxt "MessageLog"
 msgid "Vidalia"
-msgstr ""
+msgstr "विडालिया "
 
 #: messagelog.cpp:310
 msgctxt "MessageLog"
@@ -2409,9 +2414,10 @@ msgid "Created by Tor"
 msgstr ""
 
 #: stream.cpp:131
+#: circuit.cpp:112
 msgctxt "Stream"
 msgid "New"
-msgstr ""
+msgstr "नया"
 
 #: stream.cpp:133
 msgctxt "Stream"
@@ -2424,19 +2430,22 @@ msgid "Connecting"
 msgstr ""
 
 #: stream.cpp:135
+#: circuit.cpp:113
 msgctxt "Stream"
 msgid "Open"
-msgstr ""
+msgstr "खोले"
 
 #: stream.cpp:136
+#: circuit.cpp:115
 msgctxt "Stream"
 msgid "Failed"
-msgstr ""
+msgstr "विफ़ल"
 
 #: stream.cpp:137
+#: circuit.cpp:116
 msgctxt "Stream"
 msgid "Closed"
-msgstr ""
+msgstr "बन्द"
 
 #: stream.cpp:138
 msgctxt "Stream"
@@ -2449,9 +2458,10 @@ msgid "Remapped"
 msgstr ""
 
 #: stream.cpp:140
+#: circuit.cpp:117
 msgctxt "Stream"
 msgid "Unknown"
-msgstr ""
+msgstr "अज्ञात"
 
 #: torprocess.cpp:107
 msgctxt "TorProcess"
@@ -2549,9 +2559,10 @@ msgid "OK"
 msgstr ""
 
 #: vmessagebox.cpp:78
+#: bwgraph.ui:450
 msgctxt "VMessageBox"
 msgid "Cancel"
-msgstr ""
+msgstr "रद्द "
 
 #: vmessagebox.cpp:79
 msgctxt "VMessageBox"
@@ -2579,9 +2590,10 @@ msgid "Show Log"
 msgstr ""
 
 #: vmessagebox.cpp:84
+#: bwgraph.ui:40
 msgctxt "VMessageBox"
 msgid "Show Settings"
-msgstr ""
+msgstr "अनुकुलन दिखाओ"
 
 #: vmessagebox.cpp:85
 msgctxt "VMessageBox"
