@@ -30,6 +30,8 @@ Source0   : %{name}-%{version}.tar.gz
 
 Requires      : tor >= 0.2.0.34
 BuildRequires : qt4 >= 4.2
+# This fails on some systems because they lack a cmake rpm, such as
+# Redhat 5 and earlier
 BuildRequires : cmake >= 2.4
 #BuildRoot  : /var/tmp/%{name}-buildroot
 
