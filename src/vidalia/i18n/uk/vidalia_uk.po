@@ -273,6 +273,7 @@ msgid "Always on Top"
 msgstr "Завжди поверх інших вікон"
 
 #: bwgraph.ui:234
+#: appearancepage.ui:75
 msgctxt "BandwidthGraph"
 msgid "Style"
 msgstr "Стиль"
@@ -753,9 +754,10 @@ msgid "License Information"
 msgstr ""
 
 #: licensedialog.ui:43
+#: aboutdialog.ui:107
 msgctxt "LicenseDialog"
 msgid "License"
-msgstr ""
+msgstr "Ліцензія"
 
 #: licensedialog.ui:76
 msgctxt "LicenseDialog"
@@ -878,9 +880,10 @@ msgid "Ctrl+P"
 msgstr ""
 
 #: mainwindow.cpp:463
+#: aboutdialog.ui:69
 msgctxt "MainWindow"
 msgid "Tor"
-msgstr ""
+msgstr "Tor"
 
 #: mainwindow.cpp:468
 msgctxt "MainWindow"
@@ -1385,9 +1388,10 @@ msgid "Text Files (*.txt)"
 msgstr ""
 
 #: messagelog.cpp:309
+#: aboutdialog.ui:53
 msgctxt "MessageLog"
 msgid "Vidalia"
-msgstr ""
+msgstr "Vidalia"
 
 #: messagelog.cpp:310
 msgctxt "MessageLog"
@@ -2413,9 +2417,10 @@ msgid "Created by Tor"
 msgstr ""
 
 #: stream.cpp:131
+#: circuit.cpp:112
 msgctxt "Stream"
 msgid "New"
-msgstr ""
+msgstr "Новий"
 
 #: stream.cpp:133
 msgctxt "Stream"
@@ -2428,9 +2433,10 @@ msgid "Connecting"
 msgstr ""
 
 #: stream.cpp:135
+#: circuit.cpp:113
 msgctxt "Stream"
 msgid "Open"
-msgstr ""
+msgstr "Відкрити"
 
 #: stream.cpp:136
 msgctxt "Stream"
@@ -2553,9 +2559,10 @@ msgid "OK"
 msgstr ""
 
 #: vmessagebox.cpp:78
+#: bwgraph.ui:450
 msgctxt "VMessageBox"
 msgid "Cancel"
-msgstr ""
+msgstr "Відмова"
 
 #: vmessagebox.cpp:79
 msgctxt "VMessageBox"
