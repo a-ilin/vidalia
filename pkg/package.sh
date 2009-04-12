@@ -11,14 +11,17 @@
 ##  the terms described in the LICENSE file.
 ##
 
+
 # Builds distribution packages for various platforms.
+
 
 # Check for proper script arguments
 if [ "$#" -eq 0 ]
 then
-  echo "Usage: $0 <tarball|win32|osx|osx-bundle>"
+  echo "Usage: $0 <tarball|osx|osx-bundle|rpm>"
   exit 1
 fi
+
 
 # Make the distribution depending on what type was requested
 case "$1" in
@@ -45,56 +48,44 @@ case "$1" in
 # OS X .dmg
 #
 "osx")
-  mkdir ../LEGAL 
-  mkdir ../.background
-  cp -R ../README ../src/vidalia/Vidalia.app ../
-  cp osx/background.png ../.background/
-  cp osx/nonbundle-ds_store ../.DS_Store
-  cp ../CREDITS ../CHANGELOG ../Vidalia.app/
-  cp ../LICENSE ../LICENSE-GPLV2 ../LICENSE-GPLV3 ../LICENSE-LGPLV3 ../LICENSE-OPENSSL ../LEGAL/
-  cp -R ../LEGAL ../Vidalia.app/
+  cp -R ../src/vidalia/Vidalia.app ../
   srcdir="../"
-  srcfiles="Vidalia.app README LEGAL .background .DS_Store"
+  srcfiles="Vidalia.app README CREDITS CHANGELOG"
+  srcfiles="$srcfiles LICENSE LICENSE-GPLV2 LICENSE-GPLV3"
+  srcfiles="$srcfiles LICENSE-LGPLV3 LICENSE-OPENSSL"
   osx/builddmg.sh "$srcdir" "$srcfiles"
   ;;
 
 #
-# OS X (Bundle)
+# OS X .mpkg (Bundle)
 #
 "osx-bundle")
-  if [ $# -ne 4 ]
+  if [ $# -ne 3 ]
   then
-    echo "Usage: $0 osx-bundle <path-to-tor> <path-to-polipo> <path-to-torbutton-file>"
+    echo "Usage: $0 osx-bundle <path-to-tor> <privoxy-pkg.zip>"
     exit 1
   fi
   torpath="$2"
-  polipopath="$3"
-  torbuttonpath="$4"
-  torversion=`echo "$torpath" | sed -e "s/.*\///" | sed -e "s/tor-//"`
+  privoxy="$3"
   
-  mkdir ../LEGAL
-  mkdir ../.background
-  cp -R ../README ../src/vidalia/Vidalia.app ../
-  cp osx/background.png ../.background/
-  cp osx/bundle-ds_store ../.DS_Store
-  cp osx/vidalia.conf.sample ../Vidalia.app/Contents/Resources/vidalia.conf
-  cp ../CREDITS ../CHANGELOG ../Vidalia.app/
-  cp ../LICENSE ../LICENSE-GPLV2 ../LICENSE-GPLV3 ../LICENSE-LGPLV3 ../LICENSE-OPENSSL ../LEGAL/
-  cp -R ../LEGAL ../Vidalia.app/
-  cp $torpath/src/or/tor $torpath/src/tools/tor-checkkey $torpath/src/tools/tor-gencert $torpath/src/tools/tor-resolve ../Vidalia.app/
-  cp $torpath/src/config/geoip $torpath/src/config/torrc.sample ../Vidalia.app/
-  cp $polipopath/polipo $polipopath/contrib/tor-polipo.conf ../Vidalia.app/
-  cp $torbuttonpath ../Vidalia.app/
-  srcdir="../"
-  srcfiles="Vidalia.app README LEGAL .background .DS_Store"
-  osx/builddmg.sh "$srcdir" "$srcfiles" "bundle" "$torversion"
+  pushd "osx"
+  ./buildmpkg.sh "$torpath" "$privoxy"
+  popd
   ;;
   
 #
-#  Windows .exe installer
+#  rpm package
 #
-"win32")
-  echo "Unimplemented"
+"rpm")
+  if [ $# -ne 2 ]
+  then
+     echo "Usage: $0 rpm <path-to-vidalia-source-tarball>"
+     exit 1
+  fi
+  vidalia_source_path="$2"
+  pushd rpm
+  rpmbuild -ba --define "_sourcedir $vidalia_source_path" vidalia.spec
+  popd
   ;;
 
 #
