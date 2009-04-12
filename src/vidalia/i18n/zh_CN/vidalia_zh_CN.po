@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-04-10 22:39+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2009-04-11 16:13+0000\n"
+"Last-Translator: Runxin Luo <aishan.bruce@gmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Vidalia ts2po 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 1.1.0\n"
 
 #: aboutdialog.ui:28
 msgctxt "AboutDialog"
@@ -20,24 +20,22 @@ msgstr "关于 Vidalia"
 #: aboutdialog.cpp:34
 msgctxt "AboutDialog"
 msgid "License"
-msgstr ""
+msgstr "许可"
 
 #: aboutdialog.ui:63
-#, fuzzy
 msgctxt "AboutDialog"
 msgid "Vidalia 0.2.0"
-msgstr "Vidalia"
+msgstr "Vidalia 0.2.0"
 
 #: aboutdialog.ui:73
 msgctxt "AboutDialog"
 msgid "Tor 0.2.0.32"
-msgstr ""
+msgstr "Tor 0.2.0.32"
 
 #: aboutdialog.ui:88
-#, fuzzy
 msgctxt "AboutDialog"
 msgid "Qt 4.4.2"
-msgstr "4.4.2"
+msgstr "Qt 4.4.2"
 
 #: advancedpage.cpp:109
 msgctxt "AdvancedPage"
@@ -137,17 +135,17 @@ msgstr ":"
 #: advancedpage.ui:219
 msgctxt "AdvancedPage"
 msgid "Tor Configuration File"
-msgstr ""
+msgstr "Tor配置文件"
 
 #: advancedpage.ui:240
 msgctxt "AdvancedPage"
 msgid "Start the Tor software with the specified configuration file (torrc)"
-msgstr ""
+msgstr "使用指定的配置文件来启动Tor软件（torrc）"
 
 #: advancedpage.ui:259
 msgctxt "AdvancedPage"
 msgid "Select path to your configuration file"
-msgstr ""
+msgstr "选择您的配置文件地址"
 
 #: advancedpage.ui:318
 msgctxt "AdvancedPage"
@@ -157,26 +155,28 @@ msgstr "浏览"
 #: advancedpage.ui:275
 msgctxt "AdvancedPage"
 msgid "Data Directory"
-msgstr ""
+msgstr "数据目录"
 
 #: advancedpage.ui:296
 msgctxt "AdvancedPage"
 msgid "Store data for the Tor software in the following directory"
-msgstr ""
+msgstr "使用下列文件夹储存Tor软件的数据"
 
 #: advancedpage.ui:315
 msgctxt "AdvancedPage"
 msgid "Select the directory used to store data for the Tor software"
-msgstr ""
+msgstr "选择储存Tor软件数据的文件夹"
 
 #: advancedpage.cpp:289
-#, fuzzy
 msgctxt "AdvancedPage"
 msgid ""
 "Vidalia was unable to remove the Tor service.\n"
 "\n"
 "You may need to remove it manually."
-msgstr "Vidalia 无法移除 Tor 服务.请手动移除(或禁用该服务)."
+msgstr ""
+"Vidalia 无法移除 Tor 服务.\n"
+"\n"
+"请手动移除该服务."
 
 #: appearancepage.ui:22
 msgctxt "AppearancePage"
@@ -276,27 +276,27 @@ msgstr "取消"
 #: bridgeusagedialog.ui:50
 msgctxt "BridgeUsageDialog"
 msgid "Country"
-msgstr ""
+msgstr "国家"
 
 #: bridgeusagedialog.ui:55
 msgctxt "BridgeUsageDialog"
 msgid "# Clients"
-msgstr ""
+msgstr "# 客户端"
 
 #: bridgeusagedialog.cpp:58
 msgctxt "BridgeUsageDialog"
 msgid "Clients from the following countries have used your relay since %1"
-msgstr ""
+msgstr "来自下列国家的客户端从%1起开始使用您的中继"
 
 #: bridgeusagedialog.ui:13
 msgctxt "BridgeUsageDialog"
 msgid "Bridge Usage Summary"
-msgstr ""
+msgstr "桥接使用摘要"
 
 #: bridgeusagedialog.ui:19
 msgctxt "BridgeUsageDialog"
 msgid "Client Summary"
-msgstr ""
+msgstr "客户端摘要"
 
 #: circuit.cpp:112
 msgctxt "Circuit"
@@ -351,12 +351,12 @@ msgstr "缩放至回路"
 #: circuitlistwidget.cpp:90
 msgctxt "CircuitListWidget"
 msgid "Close Circuit (Del)"
-msgstr ""
+msgstr "删除回路（Del）"
 
 #: circuitlistwidget.cpp:113
 msgctxt "CircuitListWidget"
 msgid "Close Stream (Del)"
-msgstr ""
+msgstr "删除流（Del）"
 
 #: configdialog.cpp:78
 msgctxt "ConfigDialog"
@@ -371,12 +371,12 @@ msgstr "网络"
 #: configdialog.cpp:88
 msgctxt "ConfigDialog"
 msgid "Sharing"
-msgstr ""
+msgstr "共享"
 
 #: configdialog.cpp:92
 msgctxt "ConfigDialog"
 msgid "Services"
-msgstr ""
+msgstr "服务"
 
 #: configdialog.cpp:96
 msgctxt "ConfigDialog"
@@ -431,19 +431,19 @@ msgstr "控制接口当前未连接."
 #: controlpasswordinputdialog.ui:28
 msgctxt "ControlPasswordInputDialog"
 msgid "Password Required"
-msgstr ""
+msgstr "需要密码"
 
 #: controlpasswordinputdialog.ui:80
 msgctxt "ControlPasswordInputDialog"
 msgid ""
 "Vidalia has connected to a running Tor process that requires a password. "
 "Please enter your control password:"
-msgstr ""
+msgstr "Vidalia 已经连接了一个运行中的需要密码的Tor进程。请输入您的密码："
 
 #: controlpasswordinputdialog.ui:99
 msgctxt "ControlPasswordInputDialog"
 msgid "Remember my password"
-msgstr ""
+msgstr "记住我的密码"
 
 #: controlsocket.cpp:70
 msgctxt "ControlSocket"
@@ -468,306 +468,302 @@ msgstr "无效控制回应. [%1]"
 #: countryinfo.cpp:33
 msgctxt "CountryInfo"
 msgid "Afghanistan"
-msgstr ""
+msgstr "阿富汗"
 
 #: countryinfo.cpp:34
 msgctxt "CountryInfo"
 msgid "Albania"
-msgstr ""
+msgstr "阿尔巴尼亚"
 
 #: countryinfo.cpp:35
 msgctxt "CountryInfo"
 msgid "Algeria"
-msgstr ""
+msgstr "阿尔及利亚"
 
 #: countryinfo.cpp:36
 msgctxt "CountryInfo"
 msgid "Andorra"
-msgstr ""
+msgstr "安道尔"
 
 #: countryinfo.cpp:37
 msgctxt "CountryInfo"
 msgid "Angola"
-msgstr ""
+msgstr "安哥拉"
 
 #: countryinfo.cpp:38
 msgctxt "CountryInfo"
 msgid "Antigua & Barbuda"
-msgstr ""
+msgstr "安提瓜和巴布达"
 
 #: countryinfo.cpp:39
 msgctxt "CountryInfo"
 msgid "Argentina"
-msgstr ""
+msgstr "阿根廷"
 
 #: countryinfo.cpp:40
 msgctxt "CountryInfo"
 msgid "Armenia"
-msgstr ""
+msgstr "亚美尼亚"
 
 #: countryinfo.cpp:41
-#, fuzzy
 msgctxt "CountryInfo"
 msgid "Australia"
-msgstr "关于 Vidalia"
+msgstr "澳大利亚"
 
 #: countryinfo.cpp:42
 msgctxt "CountryInfo"
 msgid "Austria"
-msgstr ""
+msgstr "奥地利"
 
 #: countryinfo.cpp:43
 msgctxt "CountryInfo"
 msgid "Azerbaijan"
-msgstr ""
+msgstr "阿塞拜疆"
 
 #: countryinfo.cpp:44
 msgctxt "CountryInfo"
 msgid "Bahamas"
-msgstr ""
+msgstr "巴哈马"
 
 #: countryinfo.cpp:45
 msgctxt "CountryInfo"
 msgid "Bahrain"
-msgstr ""
+msgstr "巴林"
 
 #: countryinfo.cpp:46
 msgctxt "CountryInfo"
 msgid "Bangladesh"
-msgstr ""
+msgstr "孟加拉国"
 
 #: countryinfo.cpp:47
 msgctxt "CountryInfo"
 msgid "Barbados"
-msgstr ""
+msgstr "巴巴多斯"
 
 #: countryinfo.cpp:48
 msgctxt "CountryInfo"
 msgid "Belarus"
-msgstr ""
+msgstr "白俄罗斯"
 
 #: countryinfo.cpp:49
 msgctxt "CountryInfo"
 msgid "Belgium"
-msgstr ""
+msgstr "比利时"
 
 #: countryinfo.cpp:50
 msgctxt "CountryInfo"
 msgid "Belize"
-msgstr ""
+msgstr "伯利兹"
 
 #: countryinfo.cpp:51
 msgctxt "CountryInfo"
 msgid "Benin"
-msgstr ""
+msgstr "贝宁"
 
 #: countryinfo.cpp:52
 msgctxt "CountryInfo"
 msgid "Bhutan"
-msgstr ""
+msgstr "不丹"
 
 #: countryinfo.cpp:53
 msgctxt "CountryInfo"
 msgid "Bolivia"
-msgstr ""
+msgstr "玻利维亚"
 
 #: countryinfo.cpp:54
 msgctxt "CountryInfo"
 msgid "Bosnia & Herzegovina"
-msgstr ""
+msgstr "波黑"
 
 #: countryinfo.cpp:55
 msgctxt "CountryInfo"
 msgid "Botswana"
-msgstr ""
+msgstr "博茨瓦纳"
 
 #: countryinfo.cpp:56
 msgctxt "CountryInfo"
 msgid "Brazil"
-msgstr ""
+msgstr "巴西"
 
 #: countryinfo.cpp:57
 msgctxt "CountryInfo"
 msgid "Brunei Darussalam"
-msgstr ""
+msgstr "文莱"
 
 #: countryinfo.cpp:58
 msgctxt "CountryInfo"
 msgid "Bulgaria"
-msgstr ""
+msgstr "保加利亚"
 
 #: countryinfo.cpp:59
 msgctxt "CountryInfo"
 msgid "Burkina Faso"
-msgstr ""
+msgstr "布基纳法索"
 
 #: countryinfo.cpp:60
 msgctxt "CountryInfo"
 msgid "Burundi"
-msgstr ""
+msgstr "布隆迪"
 
 #: countryinfo.cpp:61
 msgctxt "CountryInfo"
 msgid "Cambodia"
-msgstr ""
+msgstr "柬埔寨"
 
 #: countryinfo.cpp:62
 msgctxt "CountryInfo"
 msgid "Cameroon"
-msgstr ""
+msgstr "喀麦隆"
 
 #: countryinfo.cpp:63
 msgctxt "CountryInfo"
 msgid "Canada"
-msgstr ""
+msgstr "加拿大"
 
 #: countryinfo.cpp:64
 msgctxt "CountryInfo"
 msgid "Cape Verde"
-msgstr ""
+msgstr "佛得角"
 
 #: countryinfo.cpp:65
 msgctxt "CountryInfo"
 msgid "Central African Republic"
-msgstr ""
+msgstr "中非"
 
 #: countryinfo.cpp:66
 msgctxt "CountryInfo"
 msgid "Chad"
-msgstr ""
+msgstr "乍得"
 
 #: countryinfo.cpp:67
 msgctxt "CountryInfo"
 msgid "Chile"
-msgstr ""
+msgstr "智利"
 
 #: countryinfo.cpp:68
 msgctxt "CountryInfo"
 msgid "China"
-msgstr ""
+msgstr "中国"
 
 #: countryinfo.cpp:69
 msgctxt "CountryInfo"
 msgid "Colombia"
-msgstr ""
+msgstr "哥伦比亚"
 
 #: countryinfo.cpp:70
 msgctxt "CountryInfo"
 msgid "Comoros"
-msgstr ""
+msgstr "科摩罗"
 
 #: countryinfo.cpp:71
 msgctxt "CountryInfo"
 msgid "Congo, The Democratic Republic of the"
-msgstr ""
+msgstr "刚果（金）"
 
 #: countryinfo.cpp:72
 msgctxt "CountryInfo"
 msgid "Congo"
-msgstr ""
+msgstr "刚果"
 
 #: countryinfo.cpp:73
 msgctxt "CountryInfo"
 msgid "Costa Rica"
-msgstr ""
+msgstr "哥斯达黎加"
 
 #: countryinfo.cpp:74
 msgctxt "CountryInfo"
 msgid "Cote dâIvoire"
-msgstr ""
+msgstr "科特迪瓦"
 
 #: countryinfo.cpp:75
 msgctxt "CountryInfo"
 msgid "Croatia"
-msgstr ""
+msgstr "克罗地亚"
 
 #: countryinfo.cpp:76
 msgctxt "CountryInfo"
 msgid "Cuba"
-msgstr ""
+msgstr "古巴"
 
 #: countryinfo.cpp:77
 msgctxt "CountryInfo"
 msgid "Cyprus"
-msgstr ""
+msgstr "塞浦路斯"
 
 #: countryinfo.cpp:78
 msgctxt "CountryInfo"
 msgid "Czech Republic"
-msgstr ""
+msgstr "捷克"
 
 #: countryinfo.cpp:79
 msgctxt "CountryInfo"
 msgid "Denmark"
-msgstr ""
+msgstr "丹麦"
 
 #: countryinfo.cpp:80
-#, fuzzy
 msgctxt "CountryInfo"
 msgid "Djibouti"
-msgstr "关于"
+msgstr "吉布提"
 
 #: countryinfo.cpp:81
 msgctxt "CountryInfo"
 msgid "Dominica"
-msgstr ""
+msgstr "多米尼加"
 
 #: countryinfo.cpp:82
 msgctxt "CountryInfo"
 msgid "Dominican Republic"
-msgstr ""
+msgstr "多米尼加共和国"
 
 #: countryinfo.cpp:83
 msgctxt "CountryInfo"
 msgid "Ecuador"
-msgstr ""
+msgstr "厄瓜多尔"
 
 #: countryinfo.cpp:84
 msgctxt "CountryInfo"
 msgid "Egypt"
-msgstr ""
+msgstr "埃及"
 
 #: countryinfo.cpp:85
 msgctxt "CountryInfo"
 msgid "El Salvador"
-msgstr ""
+msgstr "萨尔瓦多"
 
 #: countryinfo.cpp:86
 msgctxt "CountryInfo"
 msgid "Equatorial Guinea"
-msgstr ""
+msgstr "赤道几内亚"
 
 #: countryinfo.cpp:87
 msgctxt "CountryInfo"
 msgid "Eritrea"
-msgstr ""
+msgstr "厄立特里亚"
 
 #: countryinfo.cpp:88
 msgctxt "CountryInfo"
 msgid "Estonia"
-msgstr ""
+msgstr "爱沙尼亚"
 
 #: countryinfo.cpp:89
 msgctxt "CountryInfo"
 msgid "Ethiopia"
-msgstr ""
+msgstr "埃塞俄比亚"
 
 #: countryinfo.cpp:90
 msgctxt "CountryInfo"
 msgid "Fiji"
-msgstr ""
+msgstr "斐济"
 
 #: countryinfo.cpp:91
-#, fuzzy
 msgctxt "CountryInfo"
 msgid "Finland"
-msgstr "查找"
+msgstr "芬兰"
 
 #: countryinfo.cpp:92
-#, fuzzy
 msgctxt "CountryInfo"
 msgid "France"
-msgstr "取消"
+msgstr "法国"
 
 #: countryinfo.cpp:93
 msgctxt "CountryInfo"
