@@ -752,7 +752,6 @@ msgid "License Information"
 msgstr ""
 
 #: licensedialog.ui:43
-#: aboutdialog.ui:107
 msgctxt "LicenseDialog"
 msgid "License"
 msgstr "Licens"
@@ -878,7 +877,6 @@ msgid "Ctrl+P"
 msgstr ""
 
 #: mainwindow.cpp:463
-#: aboutdialog.ui:69
 msgctxt "MainWindow"
 msgid "Tor"
 msgstr "Tor"
@@ -1386,7 +1384,6 @@ msgid "Text Files (*.txt)"
 msgstr ""
 
 #: messagelog.cpp:309
-#: aboutdialog.ui:53
 msgctxt "MessageLog"
 msgid "Vidalia"
 msgstr "Vidalia"
