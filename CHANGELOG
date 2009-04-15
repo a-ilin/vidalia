@@ -1,4 +1,6 @@
 0.2.1   xx-xxx-2009
+  o Tolerate bridge addresses that do not specify a port number, since Tor
+    now defaults to using port 443 in such cases.
   o Renamed the 'make win32-installer' CMake target to 'make dist-win32'
     for consistency with our 'make dist-osx' target.
   o Fix a couple bugs in the WiX-based Windows installer related to building

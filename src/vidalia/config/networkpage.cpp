@@ -18,6 +18,7 @@
 #include <QIntValidator>
 #include <QClipboard>
 #include <QHostAddress>
+#include <QRegExp>
 #include <networksettings.h>
 #include <vmessagebox.h>
 #include <vidalia.h>
@@ -150,18 +151,23 @@ NetworkPage::validateBridge(const QString &bridge, QString *out)
     return false;
 
   QString s = parts.at(0);
-  if (s.contains(":")) {
+  QRegExp re("(\\d{1,3}\\.){3}\\d{1,3}(:\\d{1,5})?");
+  if (re.exactMatch(s)) {
     if (s.endsWith(":"))
       return false;
 
     int index = s.indexOf(":");
     QString host = s.mid(0, index);
-    QString port = s.mid(index + 1);
     if (QHostAddress(host).isNull()
-          || QHostAddress(host).protocol() != QAbstractSocket::IPv4Protocol
-          || port.toUInt() < 1 
-          || port.toUInt() > 65535)
+          || QHostAddress(host).protocol() != QAbstractSocket::IPv4Protocol) {
       return false;
+    }
+    if (index > 0) {
+      QString port = s.mid(index + 1);
+      if (port.toUInt() < 1 || port.toUInt() > 65535)
+        return false;
+    }
+
     temp = s;
     if (parts.size() > 1) {
       QString fp = static_cast<QStringList>(parts.mid(1)).join("");
