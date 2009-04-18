@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-04-10 22:39+0000\n"
-"PO-Revision-Date: 2009-04-11 16:13+0000\n"
-"Last-Translator: Runxin Luo <aishan.bruce@gmail.com>\n"
+"PO-Revision-Date: 2009-04-18 08:36+0000\n"
+"Last-Translator: Pei Hanru <peihanru+comment@gmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -768,697 +768,693 @@ msgstr "法国"
 #: countryinfo.cpp:93
 msgctxt "CountryInfo"
 msgid "Gabon"
-msgstr ""
+msgstr "加蓬"
 
 #: countryinfo.cpp:94
 msgctxt "CountryInfo"
 msgid "Gambia"
-msgstr ""
+msgstr "冈比亚"
 
 #: countryinfo.cpp:95
 msgctxt "CountryInfo"
 msgid "Georgia"
-msgstr ""
+msgstr "格鲁吉亚"
 
 #: countryinfo.cpp:96
 msgctxt "CountryInfo"
 msgid "Germany"
-msgstr ""
+msgstr "德国"
 
 #: countryinfo.cpp:97
 msgctxt "CountryInfo"
 msgid "Ghana"
-msgstr ""
+msgstr "加纳"
 
 #: countryinfo.cpp:98
-#, fuzzy
 msgctxt "CountryInfo"
 msgid "Greece"
-msgstr "拒绝"
+msgstr "希腊"
 
 #: countryinfo.cpp:99
 msgctxt "CountryInfo"
 msgid "Grenada"
-msgstr ""
+msgstr "格林纳达"
 
 #: countryinfo.cpp:100
 msgctxt "CountryInfo"
 msgid "Guatemala"
-msgstr ""
+msgstr "危地马拉"
 
 #: countryinfo.cpp:101
 msgctxt "CountryInfo"
 msgid "Guam"
-msgstr ""
+msgstr "关岛"
 
 #: countryinfo.cpp:102
-#, fuzzy
 msgctxt "CountryInfo"
 msgid "Guinea"
-msgstr "常规"
+msgstr "几内亚"
 
 #: countryinfo.cpp:103
 msgctxt "CountryInfo"
 msgid "Guinea-Bissau"
-msgstr ""
+msgstr "几内亚比绍"
 
 #: countryinfo.cpp:104
 msgctxt "CountryInfo"
 msgid "Guyana"
-msgstr ""
+msgstr "圭亚那"
 
 #: countryinfo.cpp:105
 msgctxt "CountryInfo"
 msgid "Hong Kong"
-msgstr ""
+msgstr "香港"
 
 #: countryinfo.cpp:106
 msgctxt "CountryInfo"
 msgid "Haiti"
-msgstr ""
+msgstr "海地"
 
 #: countryinfo.cpp:107
 msgctxt "CountryInfo"
 msgid "Honduras"
-msgstr ""
+msgstr "洪都拉斯"
 
 #: countryinfo.cpp:108
 msgctxt "CountryInfo"
 msgid "Hungary"
-msgstr ""
+msgstr "匈牙利"
 
 #: countryinfo.cpp:109
 msgctxt "CountryInfo"
 msgid "Iceland"
-msgstr ""
+msgstr "冰岛"
 
 #: countryinfo.cpp:110
 msgctxt "CountryInfo"
 msgid "India"
-msgstr ""
+msgstr "印度"
 
 #: countryinfo.cpp:111
 msgctxt "CountryInfo"
 msgid "Indonesia"
-msgstr ""
+msgstr "印度尼西亚"
 
 #: countryinfo.cpp:112
 msgctxt "CountryInfo"
 msgid "Iran"
-msgstr ""
+msgstr "伊朗"
 
 #: countryinfo.cpp:113
 msgctxt "CountryInfo"
 msgid "Iraq"
-msgstr ""
+msgstr "伊拉克"
 
 #: countryinfo.cpp:114
 msgctxt "CountryInfo"
 msgid "Ireland"
-msgstr ""
+msgstr "爱尔兰"
 
 #: countryinfo.cpp:115
 msgctxt "CountryInfo"
 msgid "Israel"
-msgstr ""
+msgstr "以色列"
 
 #: countryinfo.cpp:116
 msgctxt "CountryInfo"
 msgid "Italy"
-msgstr ""
+msgstr "意大利"
 
 #: countryinfo.cpp:117
 msgctxt "CountryInfo"
 msgid "Jamaica"
-msgstr ""
+msgstr "牙买加"
 
 #: countryinfo.cpp:118
 msgctxt "CountryInfo"
 msgid "Japan"
-msgstr ""
+msgstr "日本"
 
 #: countryinfo.cpp:119
 msgctxt "CountryInfo"
 msgid "Jordan"
-msgstr ""
+msgstr "约旦"
 
 #: countryinfo.cpp:120
 msgctxt "CountryInfo"
 msgid "Kazakhstan"
-msgstr ""
+msgstr "哈萨克斯坦"
 
 #: countryinfo.cpp:121
 msgctxt "CountryInfo"
 msgid "Kenya"
-msgstr ""
+msgstr "肯尼亚"
 
 #: countryinfo.cpp:122
 msgctxt "CountryInfo"
 msgid "Kiribati"
-msgstr ""
+msgstr "基里巴斯"
 
 #: countryinfo.cpp:123
 msgctxt "CountryInfo"
 msgid "Korea, North"
-msgstr ""
+msgstr "朝鲜"
 
 #: countryinfo.cpp:124
 msgctxt "CountryInfo"
 msgid "Korea, South"
-msgstr ""
+msgstr "韩国"
 
 #: countryinfo.cpp:125
 msgctxt "CountryInfo"
 msgid "Kuwait"
-msgstr ""
+msgstr "科威特"
 
 #: countryinfo.cpp:126
 msgctxt "CountryInfo"
 msgid "Kyrgyzstan"
-msgstr ""
+msgstr "吉尔吉斯斯坦"
 
 #: countryinfo.cpp:127
 msgctxt "CountryInfo"
 msgid "Laos"
-msgstr ""
+msgstr "老挝"
 
 #: countryinfo.cpp:128
 msgctxt "CountryInfo"
 msgid "Latvia"
-msgstr ""
+msgstr "拉脱维亚"
 
 #: countryinfo.cpp:129
 msgctxt "CountryInfo"
 msgid "Lebanon"
-msgstr ""
+msgstr "黎巴嫩"
 
 #: countryinfo.cpp:130
 msgctxt "CountryInfo"
 msgid "Lesotho"
-msgstr ""
+msgstr "莱索托"
 
 #: countryinfo.cpp:131
 msgctxt "CountryInfo"
 msgid "Liberia"
-msgstr ""
+msgstr "利比里亚"
 
 #: countryinfo.cpp:132
 msgctxt "CountryInfo"
 msgid "Libya"
-msgstr ""
+msgstr "利比亚"
 
 #: countryinfo.cpp:133
 msgctxt "CountryInfo"
 msgid "Liechtenstein"
-msgstr ""
+msgstr "列支敦士登"
 
 #: countryinfo.cpp:134
 msgctxt "CountryInfo"
 msgid "Lithuania"
-msgstr ""
+msgstr "立陶宛"
 
 #: countryinfo.cpp:135
 msgctxt "CountryInfo"
 msgid "Luxembourg"
-msgstr ""
+msgstr "卢森堡"
 
 #: countryinfo.cpp:136
 msgctxt "CountryInfo"
 msgid "Macedonia"
-msgstr ""
+msgstr "马其顿"
 
 #: countryinfo.cpp:137
 msgctxt "CountryInfo"
 msgid "Madagascar"
-msgstr ""
+msgstr "马达加斯加"
 
 #: countryinfo.cpp:138
 msgctxt "CountryInfo"
 msgid "Malawi"
-msgstr ""
+msgstr "马拉维"
 
 #: countryinfo.cpp:139
 msgctxt "CountryInfo"
 msgid "Malaysia"
-msgstr ""
+msgstr "马来西亚"
 
 #: countryinfo.cpp:140
 msgctxt "CountryInfo"
 msgid "Maldives"
-msgstr ""
+msgstr "马尔代夫"
 
 #: countryinfo.cpp:141
 msgctxt "CountryInfo"
 msgid "Mali"
-msgstr ""
+msgstr "马里"
 
 #: countryinfo.cpp:142
 msgctxt "CountryInfo"
 msgid "Malta"
-msgstr ""
+msgstr "马耳他"
 
 #: countryinfo.cpp:143
 msgctxt "CountryInfo"
 msgid "Marshall Islands"
-msgstr ""
+msgstr "马绍尔群岛"
 
 #: countryinfo.cpp:144
 msgctxt "CountryInfo"
 msgid "Mauritania"
-msgstr ""
+msgstr "毛里塔尼亚"
 
 #: countryinfo.cpp:145
 msgctxt "CountryInfo"
 msgid "Mauritius"
-msgstr ""
+msgstr "毛里求斯"
 
 #: countryinfo.cpp:146
 msgctxt "CountryInfo"
 msgid "Mexico"
-msgstr ""
+msgstr "墨西哥"
 
 #: countryinfo.cpp:147
 msgctxt "CountryInfo"
 msgid "Micronesia"
-msgstr ""
+msgstr "密克罗尼西亚"
 
 #: countryinfo.cpp:148
 msgctxt "CountryInfo"
 msgid "Moldova"
-msgstr ""
+msgstr "摩尔多瓦"
 
 #: countryinfo.cpp:149
 msgctxt "CountryInfo"
 msgid "Monaco"
-msgstr ""
+msgstr "摩纳哥"
 
 #: countryinfo.cpp:150
 msgctxt "CountryInfo"
 msgid "Mongolia"
-msgstr ""
+msgstr "蒙古"
 
 #: countryinfo.cpp:151
 msgctxt "CountryInfo"
 msgid "Montenegro"
-msgstr ""
+msgstr "黑山"
 
 #: countryinfo.cpp:152
 msgctxt "CountryInfo"
 msgid "Morocco"
-msgstr ""
+msgstr "摩洛哥"
 
 #: countryinfo.cpp:153
 msgctxt "CountryInfo"
 msgid "Mozambique"
-msgstr ""
+msgstr "莫桑比克"
 
 #: countryinfo.cpp:154
 msgctxt "CountryInfo"
 msgid "Myanmar"
-msgstr ""
+msgstr "缅甸"
 
 #: countryinfo.cpp:155
 msgctxt "CountryInfo"
 msgid "Namibia"
-msgstr ""
+msgstr "纳米比亚"
 
 #: countryinfo.cpp:156
 msgctxt "CountryInfo"
 msgid "Nauru"
-msgstr ""
+msgstr "瑙鲁"
 
 #: countryinfo.cpp:157
 msgctxt "CountryInfo"
 msgid "Nepal"
-msgstr ""
+msgstr "尼泊尔"
 
 #: countryinfo.cpp:158
 msgctxt "CountryInfo"
 msgid "Netherlands"
-msgstr ""
+msgstr "荷兰"
 
 #: countryinfo.cpp:159
 msgctxt "CountryInfo"
 msgid "New Zealand"
-msgstr ""
+msgstr "新西兰"
 
 #: countryinfo.cpp:160
 msgctxt "CountryInfo"
 msgid "Nicaragua"
-msgstr ""
+msgstr "尼加拉瓜"
 
 #: countryinfo.cpp:161
 msgctxt "CountryInfo"
 msgid "Niger"
-msgstr ""
+msgstr "尼日尔"
 
 #: countryinfo.cpp:162
 msgctxt "CountryInfo"
 msgid "Nigeria"
-msgstr ""
+msgstr "尼日利亚"
 
 #: countryinfo.cpp:163
-#, fuzzy
 msgctxt "CountryInfo"
 msgid "Norway"
-msgstr "前进"
+msgstr "挪威"
 
 #: countryinfo.cpp:164
 msgctxt "CountryInfo"
 msgid "Oman"
-msgstr ""
+msgstr "阿曼"
 
 #: countryinfo.cpp:165
 msgctxt "CountryInfo"
 msgid "Pakistan"
-msgstr ""
+msgstr "巴基斯坦"
 
 #: countryinfo.cpp:166
 msgctxt "CountryInfo"
 msgid "Palau"
-msgstr ""
+msgstr "帕劳"
 
 #: countryinfo.cpp:167
 msgctxt "CountryInfo"
 msgid "Palestine"
-msgstr ""
+msgstr "巴勒斯坦"
 
 #: countryinfo.cpp:168
 msgctxt "CountryInfo"
 msgid "Panama"
-msgstr ""
+msgstr "巴拿马"
 
 #: countryinfo.cpp:169
 msgctxt "CountryInfo"
 msgid "Papua New Guinea"
-msgstr ""
+msgstr "巴布亚新几内亚"
 
 #: countryinfo.cpp:170
 msgctxt "CountryInfo"
 msgid "Paraguay"
-msgstr ""
+msgstr "巴拉圭"
 
 #: countryinfo.cpp:171
 msgctxt "CountryInfo"
 msgid "Peru"
-msgstr ""
+msgstr "秘鲁"
 
 #: countryinfo.cpp:172
 msgctxt "CountryInfo"
 msgid "Philippines"
-msgstr ""
+msgstr "菲律宾"
 
 #: countryinfo.cpp:173
 msgctxt "CountryInfo"
 msgid "Poland"
-msgstr ""
+msgstr "波兰"
 
 #: countryinfo.cpp:174
-#, fuzzy
 msgctxt "CountryInfo"
 msgid "Portugal"
-msgstr "端口:"
+msgstr "葡萄牙"
 
 #: countryinfo.cpp:175
 msgctxt "CountryInfo"
 msgid "Qatar"
-msgstr ""
+msgstr "卡塔尔"
 
 #: countryinfo.cpp:176
 msgctxt "CountryInfo"
 msgid "Romania"
-msgstr ""
+msgstr "罗马尼亚"
 
 #: countryinfo.cpp:177
 msgctxt "CountryInfo"
 msgid "Russia"
-msgstr ""
+msgstr "俄罗斯"
 
 #: countryinfo.cpp:178
 msgctxt "CountryInfo"
 msgid "Rwanda"
-msgstr ""
+msgstr "卢旺达"
 
 #: countryinfo.cpp:179
+#, fuzzy
 msgctxt "CountryInfo"
 msgid "Saint Kitts & Nevis"
-msgstr ""
+msgstr "圣基茨和尼维斯"
 
 #: countryinfo.cpp:180
 msgctxt "CountryInfo"
 msgid "Saint Lucia"
-msgstr ""
+msgstr "圣卢西亚"
 
 #: countryinfo.cpp:181
 msgctxt "CountryInfo"
 msgid "Saint Vincent & the Grenadines"
-msgstr ""
+msgstr "圣文森特和格林纳丁斯"
 
 #: countryinfo.cpp:182
 msgctxt "CountryInfo"
 msgid "Samoa"
-msgstr ""
+msgstr "萨摩亚"
 
 #: countryinfo.cpp:183
 msgctxt "CountryInfo"
 msgid "San Marino"
-msgstr ""
+msgstr "圣马力诺"
 
 #: countryinfo.cpp:184
 msgctxt "CountryInfo"
 msgid "Sao Tome & Principe"
-msgstr ""
+msgstr "圣多美及普林西比"
 
 #: countryinfo.cpp:185
 msgctxt "CountryInfo"
 msgid "Saudi Arabia"
-msgstr ""
+msgstr "沙特阿拉伯"
 
 #: countryinfo.cpp:186
-#, fuzzy
 msgctxt "CountryInfo"
 msgid "Senegal"
-msgstr "常规"
+msgstr "塞内加尔"
 
 #: countryinfo.cpp:187
 msgctxt "CountryInfo"
 msgid "Serbia"
-msgstr ""
+msgstr "塞尔维亚"
 
 #: countryinfo.cpp:188
 msgctxt "CountryInfo"
 msgid "Seychelles"
-msgstr ""
+msgstr "塞舌尔"
 
 #: countryinfo.cpp:189
 msgctxt "CountryInfo"
 msgid "Sierra Leone"
-msgstr ""
+msgstr "塞拉利昂"
 
 #: countryinfo.cpp:190
 msgctxt "CountryInfo"
 msgid "Singapore"
-msgstr ""
+msgstr "新加坡"
 
 #: countryinfo.cpp:191
 msgctxt "CountryInfo"
 msgid "Slovakia"
-msgstr ""
+msgstr "斯洛伐克"
 
 #: countryinfo.cpp:192
 msgctxt "CountryInfo"
 msgid "Slovenia"
-msgstr ""
+msgstr "斯罗文尼亚"
 
 #: countryinfo.cpp:193
 msgctxt "CountryInfo"
 msgid "Solomon Islands"
-msgstr ""
+msgstr "所罗门群岛"
 
 #: countryinfo.cpp:194
 msgctxt "CountryInfo"
 msgid "Somalia"
-msgstr ""
+msgstr "索马里"
 
 #: countryinfo.cpp:195
 msgctxt "CountryInfo"
 msgid "South Africa"
-msgstr ""
+msgstr "南非"
 
 #: countryinfo.cpp:196
 msgctxt "CountryInfo"
 msgid "Spain"
-msgstr ""
+msgstr "西班牙"
 
 #: countryinfo.cpp:197
 msgctxt "CountryInfo"
 msgid "Sri Lanka"
-msgstr ""
+msgstr "斯里兰卡"
 
 #: countryinfo.cpp:198
 msgctxt "CountryInfo"
 msgid "Sudan"
-msgstr ""
+msgstr "苏丹"
 
 #: countryinfo.cpp:199
 msgctxt "CountryInfo"
 msgid "Suriname"
-msgstr ""
+msgstr "苏里南"
 
 #: countryinfo.cpp:200
 msgctxt "CountryInfo"
 msgid "Swaziland"
-msgstr ""
+msgstr "斯威士兰"
 
 #: countryinfo.cpp:201
 msgctxt "CountryInfo"
 msgid "Sweden"
-msgstr ""
+msgstr "瑞典"
 
 #: countryinfo.cpp:202
 msgctxt "CountryInfo"
 msgid "Switzerland"
-msgstr ""
+msgstr "瑞士"
 
 #: countryinfo.cpp:203
 msgctxt "CountryInfo"
 msgid "Syria"
-msgstr ""
+msgstr "叙利亚"
 
 #: countryinfo.cpp:204
 msgctxt "CountryInfo"
 msgid "Taiwan"
-msgstr ""
+msgstr "台湾"
 
 #: countryinfo.cpp:205
 msgctxt "CountryInfo"
 msgid "Tajikistan"
-msgstr ""
+msgstr "塔吉克斯坦"
 
 #: countryinfo.cpp:206
 msgctxt "CountryInfo"
 msgid "Tanzania"
-msgstr ""
+msgstr "坦桑尼亚"
 
 #: countryinfo.cpp:207
 msgctxt "CountryInfo"
 msgid "Thailand"
-msgstr ""
+msgstr "泰国"
 
 #: countryinfo.cpp:208
 msgctxt "CountryInfo"
 msgid "Timor-Leste (East Timor)"
-msgstr ""
+msgstr "东帝汶"
 
 #: countryinfo.cpp:209
 msgctxt "CountryInfo"
 msgid "Togo"
-msgstr ""
+msgstr "多哥"
 
 #: countryinfo.cpp:210
 msgctxt "CountryInfo"
 msgid "Tonga"
-msgstr ""
+msgstr "汤加"
 
 #: countryinfo.cpp:211
 msgctxt "CountryInfo"
 msgid "Trinidad & Tobago"
-msgstr ""
+msgstr "特立尼达和多巴哥"
 
 #: countryinfo.cpp:212
 msgctxt "CountryInfo"
 msgid "Tunisia"
-msgstr ""
+msgstr "突尼斯"
 
 #: countryinfo.cpp:213
 msgctxt "CountryInfo"
 msgid "Turkey"
-msgstr ""
+msgstr "土耳其"
 
 #: countryinfo.cpp:214
 msgctxt "CountryInfo"
 msgid "Turkmenistan"
-msgstr ""
+msgstr "土库曼尼斯坦"
 
 #: countryinfo.cpp:215
 msgctxt "CountryInfo"
 msgid "Tuvalu"
-msgstr ""
+msgstr "图瓦卢"
 
 #: countryinfo.cpp:216
 msgctxt "CountryInfo"
 msgid "Uganda"
-msgstr ""
+msgstr "乌干达"
 
 #: countryinfo.cpp:217
 msgctxt "CountryInfo"
 msgid "Ukraine"
-msgstr ""
+msgstr "乌克兰"
 
 #: countryinfo.cpp:218
 msgctxt "CountryInfo"
 msgid "United Arab Emirates"
-msgstr ""
+msgstr "阿拉伯联合酋长国"
 
 #: countryinfo.cpp:219
 msgctxt "CountryInfo"
 msgid "United Kingdom"
-msgstr ""
+msgstr "英国"
 
 #: countryinfo.cpp:220
 msgctxt "CountryInfo"
 msgid "United States"
-msgstr ""
+msgstr "美国"
 
 #: countryinfo.cpp:221
 msgctxt "CountryInfo"
 msgid "Uruguay"
-msgstr ""
+msgstr "乌拉圭"
 
 #: countryinfo.cpp:222
 msgctxt "CountryInfo"
 msgid "Uzbekistan"
-msgstr ""
+msgstr "乌兹别克斯坦"
 
 #: countryinfo.cpp:223
 msgctxt "CountryInfo"
 msgid "Vanuatu"
-msgstr ""
+msgstr "瓦努阿图"
 
 #: countryinfo.cpp:224
 msgctxt "CountryInfo"
 msgid "Vatican"
-msgstr ""
+msgstr "梵蒂冈"
 
 #: countryinfo.cpp:225
 msgctxt "CountryInfo"
 msgid "Venezuela"
-msgstr ""
+msgstr "委内瑞拉"
 
 #: countryinfo.cpp:226
 msgctxt "CountryInfo"
 msgid "Vietnam"
-msgstr ""
+msgstr "越南"
 
 #: countryinfo.cpp:227
 msgctxt "CountryInfo"
 msgid "Western Sahara"
-msgstr ""
+msgstr "西撒哈拉"
 
 #: countryinfo.cpp:228
 msgctxt "CountryInfo"
 msgid "Yemen"
-msgstr ""
+msgstr "也门"
 
 #: countryinfo.cpp:229
 msgctxt "CountryInfo"
 msgid "Zambia"
-msgstr ""
+msgstr "赞比亚"
 
 #: countryinfo.cpp:230
 msgctxt "CountryInfo"
 msgid "Zimbabwe"
-msgstr ""
+msgstr "津巴布韦"
 
 #: generalpage.cpp:73
 msgctxt "GeneralPage"
