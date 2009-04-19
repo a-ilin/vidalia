@@ -64,9 +64,9 @@ NetworkPage::NetworkPage(QWidget *parent)
   ui.grpFirewallSettings->setTitle("");
   ui.grpBridgeSettings->setTitle("");
 #endif
-//#if !defined(USE_QSSLSOCKET)
+#if !defined(USE_QSSLSOCKET) || 1
   ui.btnFindBridges->setVisible(false);
-//#endif
+#endif
 }
 
 /** Called when the user changes the UI translation. */
