@@ -52,8 +52,8 @@ NetworkPage::NetworkPage(QWidget *parent)
           this, SLOT(onDisconnected()));
   connect(ui.lblHelpFindBridges, SIGNAL(linkActivated(QString)),
           this, SLOT(onLinkActivated(QString)));
-          
-  ui.lblNoBridgeSupport->setVisible(false);
+  connect(ui.btnFindBridges, SIGNAL(clicked()), this, SLOT(findBridges()));
+
   ui.lineHttpProxyAddress->setValidator(new DomainValidator(this));
   ui.lineHttpProxyPort->setValidator(new QIntValidator(1, 65535, this));
 
@@ -68,6 +68,9 @@ NetworkPage::NetworkPage(QWidget *parent)
   ui.grpFirewallSettings->setTitle("");
   ui.grpBridgeSettings->setTitle("");
 #endif
+//#if !defined(USE_QSSLSOCKET)
+  ui.btnFindBridges->setVisible(false);
+//#endif
 }
 
 /** Called when the user changes the UI translation. */
@@ -101,29 +104,6 @@ NetworkPage::revert()
 {
   NetworkSettings settings(Vidalia::torControl());
   settings.revert();
-}
-
-/** Called when Vidalia has connected and authenticated to Tor. This will
- * check Tor's version number and, if it's too old, will disable the bridge
- * settings UI and show a message indicating the user's Tor is too old. */
-void
-NetworkPage::onAuthenticated()
-{
-  quint32 torVersion = Vidalia::torControl()->getTorVersion();
-  if (torVersion < 0x020003) {
-    ui.grpBridgeSettings->setEnabled(false);
-    ui.lblNoBridgeSupport->setVisible(true);
-  }
-}
-
-/** Called when Vidalia disconnects from Tor. This will reenable the bridge
- * settings (if they were previously disabled) and hide the warning message
- * indicating the user's Tor does not support bridges. */
-void
-NetworkPage::onDisconnected()
-{
-  ui.grpBridgeSettings->setEnabled(true);
-  ui.lblNoBridgeSupport->setVisible(false);
 }
 
 /** Called when a link in a label is clicked. <b>url</b> is the target of
@@ -366,5 +346,14 @@ NetworkPage::load()
   ui.chkUseBridges->setChecked(settings.getUseBridges()); 
   ui.listBridges->clear();
   ui.listBridges->addItems(settings.getBridgeList());
+}
+
+/** Called when the user clicks the "Find Bridges Now" button.
+ * Attempts to establish an HTTP connection to bridges.torproject.org
+ * and download one or more bridge addresses. */
+void
+NetworkPage::findBridges()
+{
+
 }
 
