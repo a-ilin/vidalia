@@ -288,7 +288,8 @@
     <qresource prefix="/images">
         <file>map/world-map.png</file>
     </qresource>
-    <qresource prefix="/geoip">
+    <qresource prefix="/pki">
         <file>cacert_root.crt</file>
+        <file>EntrustSecureServerCA.crt</file>
     </qresource>
 </RCC>

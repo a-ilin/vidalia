@@ -38,13 +38,6 @@ GeoIpResolver::GeoIpResolver()
 {
   _socksAddr = QHostAddress::LocalHost;
   _socksPort = 9050;
-
-#if defined(USE_QSSLSOCKET)
-  QSslSocket::setDefaultCaCertificates(QList<QSslCertificate>());
-  if (! QSslSocket::addDefaultCaCertificates(":/geoip/cacert_root.crt"))
-    vWarn("Failed to add the GeoIP CA certificate to the default CA "
-          "certificate database.");
-#endif
 }
 
 /** Sets the address and port of Tor, through which GeoIP requests will be

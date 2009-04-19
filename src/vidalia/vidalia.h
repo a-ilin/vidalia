@@ -128,9 +128,6 @@ protected:
   bool winEventFilter(MSG *msg, long *result);
 #endif
 
-  /** Copies a default settings file (if one exists) to Vidalia's data
-   * directory. */
-  void copyDefaultSettingsFile() const;
   /** Removes all currently installed QTranslators. */
   static void removeAllTranslators();
 
@@ -149,6 +146,16 @@ private:
   void parseArguments(QStringList args);
   /** Returns true if the specified arguments wants a value. */
   bool argNeedsValue(QString argName);
+
+  /** Copies a default settings file (if one exists) to Vidalia's data
+   * directory.
+   */
+  void copyDefaultSettingsFile() const;
+
+  /** Clears the list of default CA certificates and adds only the ones
+   * Vidalia is interested in.
+   */
+  void loadDefaultCaCertificates() const;
 
   static QMap<QString, QString> _args; /**< List of command-line arguments.  */
   static QString _style;               /**< The current GUI style.           */

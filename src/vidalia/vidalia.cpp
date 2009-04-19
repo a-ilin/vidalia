@@ -35,6 +35,9 @@
 #ifdef USE_MARBLE
 #include <MarbleDirs.h>
 #endif
+#ifdef USE_QSSLSOCKET
+#include <QSslSocket>
+#endif
 
 /* Available command-line arguments. */
 #define ARG_LANGUAGE   "lang"     /**< Argument specifying language.    */
@@ -122,6 +125,10 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
 
   /* Creates a TorControl object, used to talk to Tor. */
   _torControl = new TorControl();
+
+  /* If we were built with QSslSocket support, then populate the default
+   * CA certificate store. */
+  loadDefaultCaCertificates();
 
 #ifdef USE_MARBLE
   /* Tell Marble where to stash its generated data */
@@ -475,6 +482,23 @@ Vidalia::copyDefaultSettingsFile() const
   }
   CFRelease(confUrlRef);
   CFRelease(pathRef);
+#endif
+}
+
+void
+Vidalia::loadDefaultCaCertificates() const
+{
+#ifdef USE_QSSLSOCKET
+  QSslSocket::setDefaultCaCertificates(QList<QSslCertificate>());
+
+  if (! QSslSocket::addDefaultCaCertificates(":/pki/cacert_root.crt"))
+    vWarn("Failed to add the GeoIP CA certificate to the default CA "
+          "certificate database.");
+
+  if (! QSslSocket::addDefaultCaCertificates(":/pki/EntrustSecureServerCA.crt"))
+    vWarn("Failed to add the Entrust Secure Server CA certificate to the "
+          "default CA certificate database.");
+
 #endif
 }
 
