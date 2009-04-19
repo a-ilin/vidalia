@@ -46,10 +46,6 @@ NetworkPage::NetworkPage(QWidget *parent)
   connect(ui.listBridges, SIGNAL(itemSelectionChanged()),
           this, SLOT(bridgeSelectionChanged()));
   connect(ui.lineBridge, SIGNAL(returnPressed()), this, SLOT(addBridge()));
-  connect(Vidalia::torControl(), SIGNAL(authenticated()),
-          this, SLOT(onAuthenticated()));
-  connect(Vidalia::torControl(), SIGNAL(disconnected()),
-          this, SLOT(onDisconnected()));
   connect(ui.lblHelpFindBridges, SIGNAL(linkActivated(QString)),
           this, SLOT(onLinkActivated(QString)));
   connect(ui.btnFindBridges, SIGNAL(clicked()), this, SLOT(findBridges()));
