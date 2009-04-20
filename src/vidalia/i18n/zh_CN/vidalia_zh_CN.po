@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-04-10 22:39+0000\n"
-"PO-Revision-Date: 2009-04-18 08:36+0000\n"
+"PO-Revision-Date: 2009-04-18 09:09+0000\n"
 "Last-Translator: Pei Hanru <peihanru+comment@gmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -199,9 +199,10 @@ msgid "Choose Vidalia's interface style"
 msgstr "请选择 Vidalia 的界面风格"
 
 #: appearancepage.cpp:67
+#, fuzzy
 msgctxt "AppearancePage"
 msgid "Vidalia was unable to load the selected language translation."
-msgstr ""
+msgstr "Vidalia 无法载入选中的语言。"
 
 #: bwgraph.cpp:166
 msgctxt "BandwidthGraph"
@@ -1196,7 +1197,6 @@ msgid "Rwanda"
 msgstr "卢旺达"
 
 #: countryinfo.cpp:179
-#, fuzzy
 msgctxt "CountryInfo"
 msgid "Saint Kitts & Nevis"
 msgstr "圣基茨和尼维斯"
