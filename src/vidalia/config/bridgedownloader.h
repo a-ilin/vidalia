@@ -42,6 +42,14 @@ public:
    */
   bool downloadBridges(BridgeDownloadMethod method);
 
+  /** Enables HTTPS proxy support, using the proxy server <b>host</b> on
+   * port <b>port</b>. A <b>username</b> and <b>password</b> can also
+   * optionally be supplied, if required by the proxy.
+   */
+  void setProxy(const QString &host, int port,
+                const QString &username = QString(),
+                const QString &password = QString());
+
   /** Returns true if <b>method</b> is supported by the currently
    * available Qt libraries.
    */

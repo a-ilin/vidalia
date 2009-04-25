@@ -39,6 +39,13 @@ BridgeDownloader::BridgeDownloader(QObject *parent)
           this, SLOT(sslErrors(QList<QSslError>)));  
 }
 
+void
+BridgeDownloader::setProxy(const QString &host, int port,
+                           const QString &username, const QString &password)
+{
+  _https->setProxy(host, port, username, password);
+}
+
 bool
 BridgeDownloader::downloadBridges(BridgeDownloadMethod method)
 {

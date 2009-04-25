@@ -386,7 +386,14 @@ NetworkPage::findBridges()
 /** Starts a new request for additional bridge addresses. */
 void
 NetworkPage::startBridgeRequest()
-{
+{ 
+  if (ui.chkUseProxy->isChecked() && ui.chkProxyUseHttps->isChecked()) {
+    _bridgeDownloader->setProxy(ui.lineHttpProxyAddress->text(),
+                                ui.lineHttpProxyPort->text().toUInt(),
+                                ui.lineHttpProxyUsername->text(),
+                                ui.lineHttpProxyPassword->text());
+  }
+
   _bridgeDownloader->downloadBridges(BridgeDownloader::DownloadMethodHttps);
 }
 
