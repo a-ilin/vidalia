@@ -30,11 +30,7 @@ endif(COMMAND cmake_policy)
 option(USE_MARBLE "Enable the KDE Marble-based map widget." OFF)
 
 ## Specify the minimum version of Qt required
-if (USE_MARBLE)
-  set(QT_MIN_VERSION    "4.3.0")
-else(USE_MARBLE)
-  set(QT_MIN_VERSION    "4.2.0")
-endif(USE_MARBLE)
+set(QT_MIN_VERSION    "4.3.0")
 
 ## Specify the Qt libraries used
 include(FindQt4)

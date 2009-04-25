@@ -8,6 +8,7 @@
     for consistency with our 'make dist-osx' target.
   o Fix a couple bugs in the WiX-based Windows installer related to building
     a Marble-enabled Vidalia installer.
+  o Raise the minimum required Qt version from 4.2 to 4.3.
 
 
 0.2.0   19-Mar-2009
