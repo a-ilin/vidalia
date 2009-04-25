@@ -48,6 +48,7 @@ http://interloper.org/tmp/polipo/polipo-1.0.4-with-tor-mods.tgz
 8. Follow the directions to build polipo at
   https://www.torproject.org/svn/trunk/contrib/polipo/README
 
+
 Tor
 9. Download and extract the latest Tor source from
    https://www.torproject.org/download
@@ -58,9 +59,12 @@ Tor
 10. Configure Tor with the following:
    ./configure --prefix=/Applications/Vidalia.app --bindir=/Applications/Vidalia.app --sysconfdir=/Applications/Vidalia.app
 
+
 Vidalia
 11. Configure Vidalia with the following:
-      cmake -DOSX_FAT_BINARY=1 . 
+
+      export MACOSX_DEPLOYMENT_TARGET=10.4
+      cmake -DOSX_FAT_BINARY=1 -DCMAKE_OSX_SYSROOT=/Developer/SDKs/MacOSX10.4u.sdk  . 
 
    The Vidalia binary on OS X links to Qt statically, so you will need to have
    your Qt installation configured appropriately.
