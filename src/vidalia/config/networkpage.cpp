@@ -19,10 +19,12 @@
 #include <QClipboard>
 #include <QHostAddress>
 #include <QRegExp>
+#include <QMessageBox>
 #include <networksettings.h>
 #include <vmessagebox.h>
 #include <vidalia.h>
 #include <stringutil.h>
+#include <bridgedownloaderprogressdialog.h>
 
 #include "networkpage.h"
 #include "domainvalidator.h"
@@ -36,7 +38,7 @@ NetworkPage::NetworkPage(QWidget *parent)
 {
   /* Invoke the Qt Designer generated object setup routine */
   ui.setupUi(this);
- 
+
   connect(ui.btnAddBridge, SIGNAL(clicked()), this, SLOT(addBridge()));
   connect(ui.btnRemoveBridge, SIGNAL(clicked()), this, SLOT(removeBridge()));
   connect(ui.btnCopyBridge, SIGNAL(clicked()), 
@@ -57,15 +59,23 @@ NetworkPage::NetworkPage(QWidget *parent)
                        ui.listBridges, this,
                        SLOT(copySelectedBridgesToClipboard()));
 
+  if (! BridgeDownloader::isMethodSupported(BridgeDownloader::DownloadMethodHttps)) {
+    ui.btnFindBridges->setVisible(false);
+    ui.lblHelpFindBridges->setText(
+      tr("<a href=\"bridges.finding\">How can I find bridges?</a>"));
+    _bridgeDownloader = 0;
+  } else {
+    _bridgeDownloader = new BridgeDownloader(this);
+    connect(_bridgeDownloader, SIGNAL(bridgeRequestFinished(QStringList)),
+            this, SLOT(bridgeRequestFinished(QStringList)));
+  }
+
 #if defined(Q_WS_MAC)
   /* On OS X, the network page looks better without frame titles. Everywhere
    * else needs titles or else there's a break in the frame border. */
   ui.grpProxySettings->setTitle("");
   ui.grpFirewallSettings->setTitle("");
   ui.grpBridgeSettings->setTitle("");
-#endif
-#if !defined(USE_QSSLSOCKET) || 1
-  ui.btnFindBridges->setVisible(false);
 #endif
 }
 
@@ -152,10 +162,7 @@ NetworkPage::validateBridge(const QString &bridge, QString *out)
       temp += " " + fp.toUpper();
     }
   } else {
-    QString fp = parts.join("");
-    if (fp.length() != 40 || !string_is_hex(fp))
-      return false;
-    temp = fp.toUpper();
+    return false;
   }
   *out = temp;
   return true;
@@ -345,11 +352,76 @@ NetworkPage::load()
 }
 
 /** Called when the user clicks the "Find Bridges Now" button.
- * Attempts to establish an HTTP connection to bridges.torproject.org
+ * Attempts to establish an HTTPS connection to bridges.torproject.org
  * and download one or more bridge addresses. */
 void
 NetworkPage::findBridges()
 {
+  BridgeDownloaderProgressDialog *dlg = new BridgeDownloaderProgressDialog(this);
 
+  connect(_bridgeDownloader, SIGNAL(statusChanged(QString)),
+          dlg, SLOT(setStatus(QString)));
+  connect(_bridgeDownloader, SIGNAL(downloadProgress(int, int)),
+          dlg, SLOT(setDownloadProgress(int, int)));
+  connect(_bridgeDownloader, SIGNAL(bridgeRequestFailed(QString)),
+          dlg, SLOT(bridgeRequestFailed(QString)));
+  connect(_bridgeDownloader, SIGNAL(bridgeRequestFinished(QStringList)),
+          dlg, SLOT(bridgeRequestFinished(QStringList)));
+  connect(dlg, SIGNAL(retry()), this, SLOT(startBridgeRequest()));
+
+  startBridgeRequest();
+  switch (dlg->exec()) {
+    case QDialogButtonBox::Cancel:
+      _bridgeDownloader->cancelBridgeRequest();
+      break;
+
+    case QDialogButtonBox::Help:
+      emit helpRequested("bridges.finding");
+      break;
+  }
+
+  delete dlg;
+}
+
+/** Starts a new request for additional bridge addresses. */
+void
+NetworkPage::startBridgeRequest()
+{
+  _bridgeDownloader->downloadBridges(BridgeDownloader::DownloadMethodHttps);
+}
+
+/** Called when a previous bridge request initiated by the findBridges()
+ * method has completed. <b>bridges</b> contains a list of all bridges
+ * received. */
+void
+NetworkPage::bridgeRequestFinished(const QStringList &bridges)
+{
+  bool foundNewBridges = false;
+  QString normalized;
+
+  foreach (QString bridge, bridges) {
+    if (! validateBridge(bridge, &normalized))
+      continue;
+
+    QString address = normalized.split(" ").at(0);
+    if (ui.listBridges->findItems(address, Qt::MatchContains).isEmpty()) {
+      ui.listBridges->addItem(normalized);
+      foundNewBridges = true;
+    }
+  }
+
+  if (! foundNewBridges) {
+    QMessageBox dlg(this);
+    dlg.setIcon(QMessageBox::Information);
+    dlg.setText(tr("No new bridges are currently available. You can either "
+                   "wait a while and try again, or try another method of "
+                   "finding new bridges."));
+    dlg.setInformativeText(tr("Click Help to see other methods of finding "
+                              "new bridges."));
+    dlg.setStandardButtons(QMessageBox::Ok | QMessageBox::Help);
+ 
+    if (dlg.exec() == QMessageBox::Help)
+      emit helpRequested("bridges.finding");      
+  }
 }
 

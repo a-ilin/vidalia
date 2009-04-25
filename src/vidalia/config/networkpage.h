@@ -19,6 +19,7 @@
 
 #include <QPoint>
 #include <vidalia.h>
+#include <bridgedownloader.h>
 
 #include "configpage.h"
 #include "ui_networkpage.h"
@@ -65,10 +66,16 @@ private slots:
   /** Called when a link in a label is clicked. <b>url</b> is the target of
    * the clicked link.*/
   void onLinkActivated(const QString &url);
-  /** Called when the user clicks the "Find Bridges Now" button.
-   * Attempts to establish an HTTP connection to bridges.torproject.org
-   * and download one or more bridge addresses. */
+  /** Called when the user clicks the "Find Bridges Now" button. Calls
+   * startBridgeRequest() to start a new request for additional bridge
+   * addresses, and displays a progress dialog for the user. */
   void findBridges();
+  /** Starts a new request for additional bridge addresses. */
+  void startBridgeRequest();
+  /** Called when a previous bridge request initiated by the findBridges()
+   * method has completed. <b>bridges</b> contains a list of all bridges
+   * received. */
+  void bridgeRequestFinished(const QStringList &bridges);
 
 private:
   /** Verifies that <b>bridge</b> is a valid bridge identifier and places a 
@@ -77,6 +84,10 @@ private:
    * hexadecimal characters converted to uppercase. Returns true if
    * <b>bridge</b> is a valid bridge identifier, false otherwise. */
   bool validateBridge(const QString &bridge, QString *out);
+
+  /** Helper class used to facilitate downloading one or more bridge
+   * addresses. */
+  BridgeDownloader* _bridgeDownloader;
 
   /** Qt Designer generated object */
   Ui::NetworkPage ui;

@@ -72,6 +72,8 @@ set(vidalia_SRCS ${vidalia_SRCS}
   config/abstracttorsettings.cpp
   config/advancedpage.cpp
   config/appearancepage.cpp
+  config/bridgedownloader.cpp
+  config/bridgedownloaderprogressdialog.cpp
   config/bridgeusagedialog.cpp
   config/configdialog.cpp
   config/configpagestack.cpp
@@ -98,6 +100,8 @@ qt4_wrap_cpp(vidalia_SRCS
   config/abstracttorsettings.h
   config/advancedpage.h
   config/appearancepage.h
+  config/bridgedownloader.h
+  config/bridgedownloaderprogressdialog.h
   config/bridgeusagedialog.h
   config/configdialog.h
   config/configpage.h
@@ -245,6 +249,7 @@ qt4_wrap_ui(vidalia_SRCS
   bwgraph/bwgraph.ui
   config/advancedpage.ui
   config/appearancepage.ui
+  config/bridgedownloaderprogressdialog.ui
   config/bridgeusagedialog.ui
   config/configdialog.ui
   config/generalpage.ui

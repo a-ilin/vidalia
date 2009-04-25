@@ -1,4 +1,7 @@
 0.2.1   xx-xxx-2009
+  o Add a "Find Bridges Now" button that will attempt to automatically
+    download a set of bridge addresses and add them to the list of bridges
+    in the Network settings page.
   o Tolerate bridge addresses that do not specify a port number, since Tor
     now defaults to using port 443 in such cases.
   o Renamed the 'make win32-installer' CMake target to 'make dist-win32'
