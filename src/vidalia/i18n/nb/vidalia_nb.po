@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-04-10 22:39+0000\n"
-"PO-Revision-Date: 2009-04-07 10:28+0000\n"
+"PO-Revision-Date: 2009-04-27 18:06+0000\n"
 "Last-Translator: Runa Sandvik <runa.sandvik@gmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -23,21 +23,19 @@ msgid "License"
 msgstr "Lisens"
 
 #: aboutdialog.ui:63
-#, fuzzy
 msgctxt "AboutDialog"
 msgid "Vidalia 0.2.0"
-msgstr "Vidalia"
+msgstr "Vidalia 0.2.0"
 
 #: aboutdialog.ui:73
 msgctxt "AboutDialog"
 msgid "Tor 0.2.0.32"
-msgstr ""
+msgstr "Tor 0.2.0.32"
 
 #: aboutdialog.ui:88
-#, fuzzy
 msgctxt "AboutDialog"
 msgid "Qt 4.4.2"
-msgstr "4.4.2"
+msgstr "Qt 4.4.2"
 
 #: advancedpage.cpp:109
 msgctxt "AdvancedPage"
@@ -172,15 +170,15 @@ msgid "Select the directory used to store data for the Tor software"
 msgstr "Velg mappen med Tor-programvaren"
 
 #: advancedpage.cpp:289
-#, fuzzy
 msgctxt "AdvancedPage"
 msgid ""
 "Vidalia was unable to remove the Tor service.\n"
 "\n"
 "You may need to remove it manually."
 msgstr ""
-"Vidalia klarte ikke installere Tor-tjenesten Du må kanskje fjerne den "
-"manuellt."
+"Vidalia klarte ikke installere Tor-tjenesten.\n"
+"\n"
+"Du må kanskje fjerne den manuellt."
 
 #: appearancepage.ui:22
 msgctxt "AppearancePage"
@@ -280,17 +278,17 @@ msgstr "Avbryt"
 #: bridgeusagedialog.ui:50
 msgctxt "BridgeUsageDialog"
 msgid "Country"
-msgstr ""
+msgstr "Land"
 
 #: bridgeusagedialog.ui:55
 msgctxt "BridgeUsageDialog"
 msgid "# Clients"
-msgstr ""
+msgstr "# Klienter"
 
 #: bridgeusagedialog.cpp:58
 msgctxt "BridgeUsageDialog"
 msgid "Clients from the following countries have used your relay since %1"
-msgstr ""
+msgstr "Klienter fra følgende land har brukt ditt relay siden %1"
 
 #: bridgeusagedialog.ui:13
 msgctxt "BridgeUsageDialog"
@@ -300,7 +298,7 @@ msgstr ""
 #: bridgeusagedialog.ui:19
 msgctxt "BridgeUsageDialog"
 msgid "Client Summary"
-msgstr ""
+msgstr "Oppsummering for klient"
 
 #: circuit.cpp:112
 msgctxt "Circuit"
@@ -439,7 +437,6 @@ msgid "Password Required"
 msgstr "Passord kreves"
 
 #: controlpasswordinputdialog.ui:80
-#, fuzzy
 msgctxt "ControlPasswordInputDialog"
 msgid ""
 "Vidalia has connected to a running Tor process that requires a password. "
@@ -476,203 +473,202 @@ msgstr "Ugyldig kontroll-svar: [%1]"
 #: countryinfo.cpp:33
 msgctxt "CountryInfo"
 msgid "Afghanistan"
-msgstr ""
+msgstr "Afghanistan"
 
 #: countryinfo.cpp:34
 msgctxt "CountryInfo"
 msgid "Albania"
-msgstr ""
+msgstr "Albania"
 
 #: countryinfo.cpp:35
 msgctxt "CountryInfo"
 msgid "Algeria"
-msgstr ""
+msgstr "Algerie"
 
 #: countryinfo.cpp:36
 msgctxt "CountryInfo"
 msgid "Andorra"
-msgstr ""
+msgstr "Andorra"
 
 #: countryinfo.cpp:37
 msgctxt "CountryInfo"
 msgid "Angola"
-msgstr ""
+msgstr "Angola"
 
 #: countryinfo.cpp:38
 msgctxt "CountryInfo"
 msgid "Antigua & Barbuda"
-msgstr ""
+msgstr "Antigua & Barbuda"
 
 #: countryinfo.cpp:39
 msgctxt "CountryInfo"
 msgid "Argentina"
-msgstr ""
+msgstr "Argentina"
 
 #: countryinfo.cpp:40
 msgctxt "CountryInfo"
 msgid "Armenia"
-msgstr ""
+msgstr "Armenia"
 
 #: countryinfo.cpp:41
-#, fuzzy
 msgctxt "CountryInfo"
 msgid "Australia"
-msgstr "Om Vidalia"
+msgstr "Australia"
 
 #: countryinfo.cpp:42
 msgctxt "CountryInfo"
 msgid "Austria"
-msgstr ""
+msgstr "Østerrike"
 
 #: countryinfo.cpp:43
 msgctxt "CountryInfo"
 msgid "Azerbaijan"
-msgstr ""
+msgstr "Aserbajdsjan"
 
 #: countryinfo.cpp:44
 msgctxt "CountryInfo"
 msgid "Bahamas"
-msgstr ""
+msgstr "Bahamas"
 
 #: countryinfo.cpp:45
 msgctxt "CountryInfo"
 msgid "Bahrain"
-msgstr ""
+msgstr "Bahrain"
 
 #: countryinfo.cpp:46
 msgctxt "CountryInfo"
 msgid "Bangladesh"
-msgstr ""
+msgstr "Bangladesh"
 
 #: countryinfo.cpp:47
 msgctxt "CountryInfo"
 msgid "Barbados"
-msgstr ""
+msgstr "Barbados"
 
 #: countryinfo.cpp:48
 msgctxt "CountryInfo"
 msgid "Belarus"
-msgstr ""
+msgstr "Hviterussland"
 
 #: countryinfo.cpp:49
 msgctxt "CountryInfo"
 msgid "Belgium"
-msgstr ""
+msgstr "Belgia"
 
 #: countryinfo.cpp:50
 msgctxt "CountryInfo"
 msgid "Belize"
-msgstr ""
+msgstr "Belize"
 
 #: countryinfo.cpp:51
 msgctxt "CountryInfo"
 msgid "Benin"
-msgstr ""
+msgstr "Benin"
 
 #: countryinfo.cpp:52
 msgctxt "CountryInfo"
 msgid "Bhutan"
-msgstr ""
+msgstr "Bhutan"
 
 #: countryinfo.cpp:53
 msgctxt "CountryInfo"
 msgid "Bolivia"
-msgstr ""
+msgstr "Bolivia"
 
 #: countryinfo.cpp:54
 msgctxt "CountryInfo"
 msgid "Bosnia & Herzegovina"
-msgstr ""
+msgstr "Bosnia & Herzegovina"
 
 #: countryinfo.cpp:55
 msgctxt "CountryInfo"
 msgid "Botswana"
-msgstr ""
+msgstr "Botswana"
 
 #: countryinfo.cpp:56
 msgctxt "CountryInfo"
 msgid "Brazil"
-msgstr ""
+msgstr "Brasil"
 
 #: countryinfo.cpp:57
 msgctxt "CountryInfo"
 msgid "Brunei Darussalam"
-msgstr ""
+msgstr "Brunei Darussalam"
 
 #: countryinfo.cpp:58
 msgctxt "CountryInfo"
 msgid "Bulgaria"
-msgstr ""
+msgstr "Bulgaria"
 
 #: countryinfo.cpp:59
 msgctxt "CountryInfo"
 msgid "Burkina Faso"
-msgstr ""
+msgstr "Burkina Faso"
 
 #: countryinfo.cpp:60
 msgctxt "CountryInfo"
 msgid "Burundi"
-msgstr ""
+msgstr "Burundi"
 
 #: countryinfo.cpp:61
 msgctxt "CountryInfo"
 msgid "Cambodia"
-msgstr ""
+msgstr "Kambodsja"
 
 #: countryinfo.cpp:62
 msgctxt "CountryInfo"
 msgid "Cameroon"
-msgstr ""
+msgstr "Kamerun"
 
 #: countryinfo.cpp:63
 msgctxt "CountryInfo"
 msgid "Canada"
-msgstr ""
+msgstr "Canada"
 
 #: countryinfo.cpp:64
 msgctxt "CountryInfo"
 msgid "Cape Verde"
-msgstr ""
+msgstr "Kapp Verde"
 
 #: countryinfo.cpp:65
 msgctxt "CountryInfo"
 msgid "Central African Republic"
-msgstr ""
+msgstr "Den sentralafrikanske republikk"
 
 #: countryinfo.cpp:66
 msgctxt "CountryInfo"
 msgid "Chad"
-msgstr ""
+msgstr "Tsjad"
 
 #: countryinfo.cpp:67
 msgctxt "CountryInfo"
 msgid "Chile"
-msgstr ""
+msgstr "Chile"
 
 #: countryinfo.cpp:68
 msgctxt "CountryInfo"
 msgid "China"
-msgstr ""
+msgstr "Kina"
 
 #: countryinfo.cpp:69
 msgctxt "CountryInfo"
 msgid "Colombia"
-msgstr ""
+msgstr "Colombia"
 
 #: countryinfo.cpp:70
 msgctxt "CountryInfo"
 msgid "Comoros"
-msgstr ""
+msgstr "Komorene"
 
 #: countryinfo.cpp:71
 msgctxt "CountryInfo"
 msgid "Congo, The Democratic Republic of the"
-msgstr ""
+msgstr "Kongo, Den demokratiske republikken av"
 
 #: countryinfo.cpp:72
 msgctxt "CountryInfo"
 msgid "Congo"
-msgstr ""
+msgstr "Kongo"
 
 #: countryinfo.cpp:73
 msgctxt "CountryInfo"
