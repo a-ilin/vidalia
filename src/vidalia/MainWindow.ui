@@ -1,0 +1,603 @@
+<ui version="4.0" >
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow" >
+  <property name="sizePolicy" >
+   <sizepolicy>
+    <hsizetype>7</hsizetype>
+    <vsizetype>0</vsizetype>
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="maximumSize" >
+   <size>
+     <width>16777215</width>
+     <height>1</height>
+   </size>
+  </property>
+  <property name="windowTitle" >
+   <string>Vidalia Control Panel</string>
+  </property>
+  <property name="windowIcon" >
+   <iconset resource="res/vidalia.qrc" >:/images/32x32/tor-logo.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralwidget" >
+   <layout class="QVBoxLayout" >
+    <property name="margin" >
+     <number>20</number>
+    </property>
+    <property name="spacing" >
+     <number>6</number>
+    </property>
+    <item>
+     <widget class="QGroupBox" name="grpStatus" >
+      <property name="geometry" >
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>400</width>
+        <height>72</height>
+       </rect>
+      </property>
+      <property name="minimumSize" >
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="title" >
+       <string>Status</string>
+      </property>
+      <layout class="QVBoxLayout" >
+       <property name="margin" >
+        <number>4</number>
+       </property>
+       <property name="spacing" >
+        <number>6</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="lblStartupProgress" >
+         <property name="sizePolicy" >
+          <sizepolicy>
+           <hsizetype>3</hsizetype>
+           <vsizetype>3</vsizetype>
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="text" >
+          <string>Starting Tor</string>
+         </property>
+         <property name="wordWrap" >
+          <bool>false</bool>
+         </property>
+         <property name="visible" >
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QProgressBar" name="progressBar" >
+         <property name="sizePolicy" >
+          <sizepolicy>
+           <hsizetype>3</hsizetype>
+           <vsizetype>3</vsizetype>
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="maximumSize" >
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="visible" >
+          <bool>false</bool>
+         </property>
+         <property name="minimum" >
+          <number>0</number>
+         </property>
+         <property name="maximum" >
+          <number>130</number>
+         </property>
+         <property name="textVisible" >
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" >
+         <property name="margin" >
+          <number>4</number>
+         </property>
+         <property name="spacing" >
+          <number>6</number>
+         </property>
+         <item>
+          <spacer>
+           <property name="orientation" >
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizePolicy" >
+            <sizepolicy>
+             <hsizetype>4</hsizetype>
+             <vsizetype>4</vsizetype>
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="sizeHint" >
+            <size>
+             <width>20</width>
+             <height>0</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblTorStatusImg" >
+           <property name="pixmap" >
+            <pixmap>:/images/48x48/tor-off.png</pixmap>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="lblTorStatus" >
+           <property name="sizePolicy" >
+            <sizepolicy>
+             <hsizetype>3</hsizetype>
+             <vsizetype>3</vsizetype>
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="maximumSize" >
+            <size>
+             <width>16777215</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text" >
+            <string>Tor is not running</string>
+           </property>
+           <property name="wordWrap" >
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer>
+           <property name="orientation" >
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizePolicy" >
+            <sizepolicy>
+             <hsizetype>1</hsizetype>
+             <vsizetype>1</vsizetype>
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="sizeHint" >
+            <size>
+             <width>20</width>
+             <height>0</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="grpShortcuts" >
+      <property name="geometry" >
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>400</width>
+        <height>225</height>
+       </rect>
+      </property>
+      <property name="minimumSize" >
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="title" >
+       <string>Vidalia Shortcuts</string>
+      </property>
+       <layout class="QGridLayout" >
+        <property name="margin" >
+         <number>9</number>
+        </property>
+        <property name="spacing" >
+         <number>6</number>
+        </property>
+        <item row="0" column="0" colspan="2" >
+         <widget class="VClickLabel" native="1" name="lblStartStopTor" >
+          <property name="text" >
+           <string>Start Tor</string>
+          </property>
+          <property name="statusTip" >
+           <string>Start Tor</string>
+          </property>
+          <property name="pixmap" >
+           <pixmap>:/images/48x48/start-tor.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2" colspan="2" >
+         <widget class="VClickLabel" native="1" name="lblSetupRelaying" >
+          <property name="text" >
+           <string>Setup Relaying</string>
+          </property>
+          <property name="statusTip" >
+           <string>Set up a relay and help the network grow</string>
+          </property>
+          <property name="pixmap" >
+           <pixmap>:/images/48x48/preferences-system-network-sharing.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="2" >
+         <widget class="VClickLabel" native="1" name="lblViewNetwork" >
+          <property name="text" >
+           <string>View the Network</string>
+          </property>
+          <property name="statusTip" >
+           <string>View a map of the Tor network</string>
+          </property>
+          <property name="pixmap" >
+           <pixmap>:/images/48x48/applications-internet.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="2" colspan="2" >
+         <widget class="VClickLabel" native="1" name="lblNewIdentity" >
+          <property name="enabled" >
+           <bool>false</bool>
+          </property>
+          <property name="text" >
+           <string>Use a New Identity</string>
+          </property>
+          <property name="statusTip" >
+           <string>Make subsequent connections appear new</string>
+          </property>
+          <property name="pixmap" >
+           <pixmap>:/images/48x48/view-media-artist.png</pixmap>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="4" >
+         <widget class="Line" name="line" >
+          <property name="orientation" >
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>  
+        </item>
+        <item row="3" column="0" colspan="4" >
+         <widget class="QWidget" name="lowerLayout" >
+          <layout class="QHBoxLayout">
+           <item>
+            <widget class="QWidget" name="leftVerticalLayout" >
+             <layout class="QVBoxLayout" >
+              <property name="margin" >
+               <number>0</number>
+              </property>
+              <property name="spacing" >
+               <number>6</number>
+              </property>
+              <item>
+               <widget class="VClickLabel" name="lblBandwidthGraph" >
+                <property name="text" >
+                 <string>Bandwidth Graph</string>
+                </property>
+                <property name="statusTip" >
+                 <string>View recent bandwidth usage</string>
+                </property>
+                <property name="pixmap" >
+                 <pixmap>:/images/22x22/utilities-system-monitor.png</pixmap>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="VClickLabel" name="lblMessageLog" >
+                <property name="text" >
+                 <string>Message Log</string>
+                </property>
+                <property name="statusTip" >
+                 <string>View log message history</string>
+                </property>
+                <property name="pixmap" >
+                 <pixmap>:/images/22x22/format-justify-fill.png</pixmap>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer>
+                <property name="orientation" >
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" >
+                 <size>
+                  <width>20</width>
+                  <height>0</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <spacer>
+             <property name="orientation" >
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" >
+              <size>
+               <width>18</width>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QWidget" name="midVerticalLayout" >
+             <layout class="QVBoxLayout" >
+              <property name="margin" >
+               <number>0</number>
+              </property>
+              <property name="spacing" >
+               <number>6</number>
+              </property>
+              <item>
+               <widget class="VClickLabel" name="lblHelpBrowser" >
+                <property name="text" >
+                 <string>Help</string>
+                </property>
+                <property name="statusTip" >
+                 <string>View help documentation</string>
+                </property>
+                <property name="pixmap" >
+                 <pixmap>:/images/22x22/system-help.png</pixmap>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="VClickLabel" name="lblSettings" >
+                <property name="text" >
+                 <string>Settings</string>
+                </property>
+                <property name="statusTip" >
+                 <string>Configure Vidalia</string>
+                </property>
+                <property name="pixmap" >
+                 <pixmap>:/images/22x22/preferences-system.png</pixmap>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer>
+                <property name="orientation" >
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" >
+                 <size>
+                  <width>20</width>
+                  <height>0</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <spacer>
+             <property name="orientation" >
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" >
+              <size>
+               <width>18</width>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QWidget" name="rightVerticalLayout" >
+             <layout class="QVBoxLayout" >
+              <property name="margin" >
+               <number>0</number>
+              </property>
+              <property name="spacing" >
+               <number>6</number>
+              </property>
+              <item>
+               <widget class="VClickLabel" name="lblAboutVidalia" >
+                <property name="text" >
+                 <string>About</string>
+                </property>
+                <property name="statusTip" >
+                 <string>View version and license information</string>
+                </property>
+                <property name="pixmap" >
+                 <pixmap>:/images/22x22/help-about.png</pixmap>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="VClickLabel" name="lblExit" >
+                <property name="text" >
+                 <string>Exit</string>
+                </property>
+                <property name="statusTip" >
+                 <string>Exit Vidalia</string>
+                </property>
+                <property name="pixmap" >
+                 <pixmap>:/images/22x22/application-exit.png</pixmap>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer>
+                <property name="orientation" >
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" >
+                 <size>
+                  <width>20</width>
+                  <height>0</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </widget>
+           </item>
+           <item>
+            <spacer>
+             <property name="orientation" >
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" >
+              <size>
+               <width>18</width>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" >
+      <property name="margin" >
+       <number>0</number>
+      </property>
+      <property name="spacing" >
+       <number>6</number>
+      </property>
+      <item>
+       <widget class="QCheckBox" name="chkShowOnStartup" >
+        <property name="text" >
+         <string>Show this window on startup</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer>
+        <property name="orientation" >
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" >
+         <size>
+          <width>18</width>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btnHide" >
+        <property name="text" >
+         <string>Hide</string>
+        </property>
+        <property name="statusTip" >
+         <string>Hide this window</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <spacer>
+      <property name="orientation" >
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" >
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar" />
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>VClickLabel</class>
+   <extends>QWidget</extends>
+   <header>VClickLabel.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="res/vidalia.qrc" />
+ </resources>
+ <connections>
+  <connection>
+   <sender>lblStartStopTor</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>start()</slot>
+  </connection>
+  <connection>
+   <sender>lblNewIdentity</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>newIdentity()</slot>
+  </connection>
+  <connection>
+   <sender>lblSetupRelaying</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>showServerConfigDialog()</slot>
+  </connection>
+  <connection>
+   <sender>lblSettings</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>showConfigDialog()</slot>
+  </connection>
+  <connection>
+   <sender>lblAboutVidalia</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>showAboutDialog()</slot>
+  </connection>
+  <connection>
+   <sender>lblExit</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+  </connection>
+  <connection>
+   <sender>chkShowOnStartup</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>toggleShowOnStartup(bool)</slot>
+  </connection>
+  <connection>
+   <sender>btnHide</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>hide()</slot>
+  </connection>
+ </connections>
+</ui>

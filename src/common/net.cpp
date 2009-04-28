@@ -14,9 +14,9 @@
 ** \brief Common network I/O and utility functions
 */
 
-#include <QTcpSocket>
-
 #include "net.h"
+
+#include <QTcpSocket>
 
 
 /** Attempts a connection to <b>host</b> on <b>port</b>. Returns true if the

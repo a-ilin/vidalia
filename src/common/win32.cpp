@@ -15,12 +15,14 @@
 */
 
 #include "win32.h"
-#include <tlhelp32.h>
-#include <shlobj.h>
+
 #include <QDir>
 #include <QLibrary>
 #include <QtDebug>
 
+#include <tlhelp32.h>
+#include <shlobj.h>
+#
 #if defined(UNICODE)
 /* Force the ascii verisons of these functions, so we can run on Win98. We
  * don't pass any Unicode strings to these functions anyway. */

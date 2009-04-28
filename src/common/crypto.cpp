@@ -50,10 +50,11 @@
 ** \brief Provides support for pseuodrandom number generation.
 */
 
+#include "crypto.h"
+
 #include <QFile>
 #include <QStringList>
 #include <QtDebug>
-#include "crypto.h"
 
 #if defined(Q_OS_WIN32)
 #include <windows.h>

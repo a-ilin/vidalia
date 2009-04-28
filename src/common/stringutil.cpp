@@ -14,10 +14,10 @@
 ** \brief Common string manipulation functions
 */
 
+#include "stringutil.h"
+
 #include <QCoreApplication>
 #include <QApplication>
-
-#include "stringutil.h"
 
 
 /** Create a QStringList from the array of C-style strings. */

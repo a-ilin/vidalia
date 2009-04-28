@@ -12,26 +12,26 @@
 
 
 set(common_SRCS
-  countryinfo.cpp
+  CountryInfo.cpp
   crypto.cpp
   file.cpp
   html.cpp
-  log.cpp
+  Log.cpp
   net.cpp
   procutil.cpp
   stringutil.cpp
-  torsocket.cpp
-  zlibbytearray.cpp
+  TorSocket.cpp
+  ZlibByteArray.cpp
 )
 qt4_wrap_cpp(common_SRCS 
-  countryinfo.h
-  torsocket.h
+  CountryInfo.h
+  TorSocket.h
 )
 
 
 if(USE_QSSLSOCKET)
-  set(common_SRCS ${common_SRCS} torsslsocket.cpp)
-  qt4_wrap_cpp(common_SRCS torsslsocket.h)
+  set(common_SRCS ${common_SRCS} TorSslSocket.cpp)
+  qt4_wrap_cpp(common_SRCS TorSslSocket.h)
 endif(USE_QSSLSOCKET)
 
 if(WIN32)

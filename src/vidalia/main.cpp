@@ -14,13 +14,15 @@
 ** \brief Main Vidalia entry point
 */
 
+#include "config.h"
+#include "Vidalia.h"
+#include "MainWindow.h"
+#include "VMessageBox.h"
+
+#include "procutil.h"
+#include "stringutil.h"
+
 #include <QObject>
-#include <vidalia.h>
-#include <mainwindow.h>
-#include <vmessagebox.h>
-#include <procutil.h>
-#include <stringutil.h>
-#include <config.h>
 
 #if defined(Q_OS_WIN32)
 #include <QSysInfo>

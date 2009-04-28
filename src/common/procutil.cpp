@@ -14,14 +14,14 @@
 ** \brief Process information and pidfile functions 
 */
 
+#include "procutil.h"
+#include "stringutil.h"
+
 #include <QDir>
 #include <QFile>
 #include <QFileInfo>
 #include <QTextStream>
 #include <QApplication>
-
-#include "stringutil.h"
-#include "procutil.h"
 
 
 /** Returns the PID of the current process. */

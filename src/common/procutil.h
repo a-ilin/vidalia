@@ -17,8 +17,6 @@
 #ifndef _PROCUTIL_H
 #define _PROCUTIL_H
 
-#include <QString>
-
 #if defined(Q_OS_WIN)
 #include "win32.h"
 #else
@@ -28,6 +26,9 @@
 #include <errno.h>
 #endif
 
+#include <QHash>
+
+class QString;
 
 /** Returns the PID of the current process. */
 qint64 get_pid();

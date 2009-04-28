@@ -14,8 +14,13 @@
 include_directories(
   ${CMAKE_CURRENT_BINARY_DIR}
   ${CMAKE_CURRENT_SOURCE_DIR}
+  ${CMAKE_CURRENT_SOURCE_DIR}/about
+  ${CMAKE_CURRENT_SOURCE_DIR}/bwgraph
   ${CMAKE_CURRENT_SOURCE_DIR}/config
   ${CMAKE_CURRENT_SOURCE_DIR}/help/browser
+  ${CMAKE_CURRENT_SOURCE_DIR}/log
+  ${CMAKE_CURRENT_SOURCE_DIR}/network
+  ${CMAKE_CURRENT_SOURCE_DIR}/tray
   ${MARBLE_INCLUDE_DIR}
 )
 if (APPLE OR WIN32)
@@ -49,238 +54,238 @@ add_subdirectory(i18n)
 
 ## About dialog sources
 set(vidalia_SRCS 
-  about/aboutdialog.cpp
-  about/licensedialog.cpp
+  about/AboutDialog.cpp
+  about/LicenseDialog.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
-  about/aboutdialog.h
-  about/licensedialog.h
+  about/AboutDialog.h
+  about/LicenseDialog.h
 )
 
 ## Bandwidth graph sources
 set(vidalia_SRCS ${vidalia_SRCS}
-  bwgraph/bwgraph.cpp
-  bwgraph/graphframe.cpp
+  bwgraph/BandwidthGraph.cpp
+  bwgraph/GraphFrame.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
-  bwgraph/bwgraph.h
-  bwgraph/graphframe.h
+  bwgraph/BandwidthGraph.h
+  bwgraph/GraphFrame.h
 )
 
 ## Configuration dialog sources
 set(vidalia_SRCS ${vidalia_SRCS}
-  config/abstracttorsettings.cpp
-  config/advancedpage.cpp
-  config/appearancepage.cpp
-  config/bridgedownloader.cpp
-  config/bridgedownloaderprogressdialog.cpp
-  config/bridgeusagedialog.cpp
-  config/configdialog.cpp
-  config/configpagestack.cpp
-  config/domainvalidator.cpp
-  config/exitpolicy.cpp
-  config/generalpage.cpp
-  config/ipvalidator.cpp
-  config/networkpage.cpp
-  config/networksettings.cpp
-  config/nicknamevalidator.cpp
-  config/policy.cpp
-  config/portvalidator.cpp
-  config/serverpage.cpp
-  config/serversettings.cpp
-  config/service.cpp
-  config/servicelist.cpp
-  config/servicepage.cpp
-  config/servicesettings.cpp
-  config/torsettings.cpp
-  config/vidaliasettings.cpp
-  config/vsettings.cpp
+  config/AbstractTorSettings.cpp
+  config/AdvancedPage.cpp
+  config/AppearancePage.cpp
+  config/BridgeDownloader.cpp
+  config/BridgeDownloaderProgressDialog.cpp
+  config/BridgeUsageDialog.cpp
+  config/ConfigDialog.cpp
+  config/ConfigPageStack.cpp
+  config/DomainValidator.cpp
+  config/ExitPolicy.cpp
+  config/GeneralPage.cpp
+  config/IpValidator.cpp
+  config/NetworkPage.cpp
+  config/NetworkSettings.cpp
+  config/NicknameValidator.cpp
+  config/Policy.cpp
+  config/PortValidator.cpp
+  config/ServerPage.cpp
+  config/ServerSettings.cpp
+  config/Service.cpp
+  config/ServiceList.cpp
+  config/ServicePage.cpp
+  config/ServiceSettings.cpp
+  config/TorSettings.cpp
+  config/VidaliaSettings.cpp
+  config/VSettings.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
-  config/abstracttorsettings.h
-  config/advancedpage.h
-  config/appearancepage.h
-  config/bridgedownloader.h
-  config/bridgedownloaderprogressdialog.h
-  config/bridgeusagedialog.h
-  config/configdialog.h
-  config/configpage.h
-  config/configpagestack.h
-  config/domainvalidator.h
-  config/generalpage.h
-  config/networkpage.h
-  config/networksettings.h
-  config/nicknamevalidator.h
-  config/portvalidator.h
-  config/serverpage.h
-  config/serversettings.h
-  config/servicepage.h
-  config/torsettings.h
-  config/vidaliasettings.h
-  config/vsettings.h
+  config/AbstractTorSettings.h
+  config/AdvancedPage.h
+  config/AppearancePage.h
+  config/BridgeDownloader.h
+  config/BridgeDownloaderProgressDialog.h
+  config/BridgeUsageDialog.h
+  config/ConfigDialog.h
+  config/ConfigPage.h
+  config/ConfigPageStack.h
+  config/DomainValidator.h
+  config/GeneralPage.h
+  config/NetworkPage.h
+  config/NetworkSettings.h
+  config/NicknameValidator.h
+  config/PortValidator.h
+  config/ServerPage.h
+  config/ServerSettings.h
+  config/ServicePage.h
+  config/TorSettings.h
+  config/VidaliaSettings.h
+  config/VSettings.h
 )
 if (USE_MINIUPNPC)
   include_directories(${MINIUPNPC_INCLUDE_DIR})
   set(vidalia_SRCS ${vidalia_SRCS}
-    config/upnpcontrol.cpp
-    config/upnpcontrolthread.cpp
-    config/upnptestdialog.cpp
+    config/UPNPControl.cpp
+    config/UPNPControlThread.cpp
+    config/UPNPTestDialog.cpp
   )
   qt4_wrap_cpp(vidalia_SRCS
-    config/upnpcontrol.h
-    config/upnpcontrolthread.h
-    config/upnptestdialog.h
+    config/UPNPControl.h
+    config/UPNPControlThread.h
+    config/UPNPTestDialog.h
   )
 endif(USE_MINIUPNPC)
 
 ## Help browser sources
 set(vidalia_SRCS ${vidalia_SRCS}
-  help/browser/helpbrowser.cpp
-  help/browser/helptextbrowser.cpp
+  help/browser/HelpBrowser.cpp
+  help/browser/HelpTextBrowser.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
-  help/browser/helpbrowser.h
-  help/browser/helptextbrowser.h
+  help/browser/HelpBrowser.h
+  help/browser/HelpTextBrowser.h
 )
 
 ## Message log sources
 set(vidalia_SRCS ${vidalia_SRCS}
-  log/logfile.cpp
-  log/logheaderview.cpp
-  log/logmessagecolumndelegate.cpp
-  log/logtreeitem.cpp
-  log/logtreewidget.cpp
-  log/messagelog.cpp
+  log/LogFile.cpp
+  log/LogHeaderView.cpp
+  log/LogMessageColumnDelegate.cpp
+  log/LogTreeItem.cpp
+  log/LogTreeWidget.cpp
+  log/MessageLog.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
-  log/logfile.h
-  log/logheaderview.h
-  log/logtreewidget.h
-  log/messagelog.h
+  log/LogFile.h
+  log/LogHeaderView.h
+  log/LogTreeWidget.h
+  log/MessageLog.h
 )
 
 ## Network map sources
 set(vidalia_SRCS ${vidalia_SRCS}
-  network/circuititem.cpp
-  network/circuitlistwidget.cpp
-  network/geoipcache.cpp
-  network/geoipcacheitem.cpp
-  network/geoip.cpp
-  network/geoiprequest.cpp
-  network/geoipresolver.cpp
-  network/geoipresponse.cpp
-  network/netviewer.cpp
-  network/routerdescriptorview.cpp
-  network/routerinfodialog.cpp
-  network/routerlistitem.cpp
-  network/routerlistwidget.cpp
-  network/streamitem.cpp
+  network/CircuitItem.cpp
+  network/CircuitListWidget.cpp
+  network/GeoIpCache.cpp
+  network/GeoIpCacheItem.cpp
+  network/GeoIp.cpp
+  network/GeoIpRequest.cpp
+  network/GeoIpResolver.cpp
+  network/GeoIpResponse.cpp
+  network/NetViewer.cpp
+  network/RouterDescriptorView.cpp
+  network/RouterInfoDialog.cpp
+  network/RouterListItem.cpp
+  network/RouterListWidget.cpp
+  network/StreamItem.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
-  network/circuitlistwidget.h
-  network/geoipresolver.h
-  network/netviewer.h
-  network/routerdescriptorview.h
-  network/routerinfodialog.h
-  network/routerlistwidget.h
+  network/CircuitListWidget.h
+  network/GeoIpResolver.h
+  network/NetViewer.h
+  network/RouterDescriptorView.h
+  network/RouterInfoDialog.h
+  network/RouterListWidget.h
 )
 if (USE_MARBLE)
   set(vidalia_SRCS ${vidalia_SRCS}
-    network/tormapwidget.cpp
-    network/tormapwidgetinputhandler.cpp
-    network/tormapwidgetpopupmenu.cpp
+    network/TorMapWidget.cpp
+    network/TorMapWidgetInputHandler.cpp
+    network/TorMapWidgetPopupMenu.cpp
   )
   qt4_wrap_cpp(vidalia_SRCS
-    network/tormapwidget.h
-    network/tormapwidgetinputhandler.h
-    network/tormapwidgetpopupmenu.h
+    network/TorMapWidget.h
+    network/TorMapWidgetInputHandler.h
+    network/TorMapWidgetPopupMenu.h
   )
 else(USE_MARBLE)
   set(vidalia_SRCS ${vidalia_SRCS}
-    network/tormapimageview.cpp
-    network/zimageview.cpp
+    network/TorMapImageView.cpp
+    network/ZImageView.cpp
   )
   qt4_wrap_cpp(vidalia_SRCS
-    network/tormapimageview.h
-    network/zimageview.h
+    network/TorMapImageView.h
+    network/ZImageView.h
   )
 endif(USE_MARBLE)
 
 ## Choose the correct tray icon implementation for the current platform
-set(vidalia_SRCS ${vidalia_SRCS} tray/trayicon.cpp)
-qt4_wrap_cpp(vidalia_SRCS tray/trayicon.h)
+set(vidalia_SRCS ${vidalia_SRCS} tray/TrayIcon.cpp)
+qt4_wrap_cpp(vidalia_SRCS tray/TrayIcon.h)
 if(APPLE)
-  set(vidalia_SRCS ${vidalia_SRCS} tray/trayicon_mac.cpp)
-  qt4_wrap_cpp(vidalia_SRCS tray/trayicon_mac.h)
+  set(vidalia_SRCS ${vidalia_SRCS} tray/TrayIconImpl_mac.cpp)
+  qt4_wrap_cpp(vidalia_SRCS tray/TrayIconImpl_mac.h)
 else(APPLE)
   ## Use Qt's QSystemTrayIcon implementation
-  set(vidalia_SRCS ${vidalia_SRCS} tray/trayicon_qt.cpp)
-  qt4_wrap_cpp(vidalia_SRCS tray/trayicon_qt.h)
+  set(vidalia_SRCS ${vidalia_SRCS} tray/TrayIconImpl_qt.cpp)
+  qt4_wrap_cpp(vidalia_SRCS tray/TrayIconImpl_qt.h)
 endif(APPLE)
 
 ## Main Vidalia sources
 set(vidalia_SRCS ${vidalia_SRCS}
   main.cpp
-  vidalia.cpp
-  languagesupport.cpp
-  mainwindow.cpp
-  vclicklabel.cpp
-  vidaliawindow.cpp
-  vmessagebox.cpp
-  helperprocess.cpp
-  controlpasswordinputdialog.cpp
+  Vidalia.cpp
+  LanguageSupport.cpp
+  MainWindow.cpp
+  VClickLabel.cpp
+  VidaliaWindow.cpp
+  VMessageBox.cpp
+  HelperProcess.cpp
+  ControlPasswordInputDialog.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
-  vidalia.h
-  mainwindow.h
-  vclicklabel.h
-  vidaliawindow.h
-  vmessagebox.h
-  helperprocess.h
-  controlpasswordinputdialog.h
+  Vidalia.h
+  MainWindow.h
+  VClickLabel.h
+  VidaliaWindow.h
+  VMessageBox.h
+  HelperProcess.h
+  ControlPasswordInputDialog.h
 )
 
 ## Specify all the Qt Designer .ui files
 qt4_wrap_ui(vidalia_SRCS
-  controlpasswordinputdialog.ui
-  mainwindow.ui
-  about/aboutdialog.ui
-  about/licensedialog.ui
-  bwgraph/bwgraph.ui
-  config/advancedpage.ui
-  config/appearancepage.ui
-  config/bridgedownloaderprogressdialog.ui
-  config/bridgeusagedialog.ui
-  config/configdialog.ui
-  config/generalpage.ui
-  config/networkpage.ui
-  config/serverpage.ui
-  config/servicepage.ui
-  help/browser/helpbrowser.ui
-  log/messagelog.ui
-  network/netviewer.ui
-  network/routerinfodialog.ui
+  ControlPasswordInputDialog.ui
+  MainWindow.ui
+  about/AboutDialog.ui
+  about/LicenseDialog.ui
+  bwgraph/BandwidthGraph.ui
+  config/AdvancedPage.ui
+  config/AppearancePage.ui
+  config/BridgeDownloaderProgressDialog.ui
+  config/BridgeUsageDialog.ui
+  config/ConfigDialog.ui
+  config/GeneralPage.ui
+  config/NetworkPage.ui
+  config/ServerPage.ui
+  config/ServicePage.ui
+  help/browser/HelpBrowser.ui
+  log/MessageLog.ui
+  network/NetViewer.ui
+  network/RouterInfoDialog.ui
 )
 
 if (USE_MINIUPNPC)
-  qt4_wrap_ui(vidalia_SRCS config/upnptestdialog.ui)
+  qt4_wrap_ui(vidalia_SRCS config/UPNPTestDialog.ui)
 endif(USE_MINIUPNPC)
 
 if (USE_AUTOUPDATE)
   set(vidalia_SRCS ${vidalia_SRCS}
-    packageinfo.cpp
-    updateprocess.cpp
-    updateprogressdialog.cpp
-    updatesavailabledialog.cpp
+    PackageInfo.cpp
+    UpdateProcess.cpp
+    UpdateProgressDialog.cpp
+    UpdatesAvailableDialog.cpp
   )
   qt4_wrap_cpp(vidalia_SRCS
-    updateprocess.h
-    updateprogressdialog.h
-    updatesavailabledialog.h
+    UpdateProcess.h
+    UpdateProgressDialog.h
+    UpdatesAvailableDialog.h
   )
   qt4_wrap_ui(vidalia_SRCS
-    updateprogressdialog.ui
-    updatesavailabledialog.ui
+    UpdateProgressDialog.ui
+    UpdatesAvailableDialog.ui
   )
 endif(USE_AUTOUPDATE)
 

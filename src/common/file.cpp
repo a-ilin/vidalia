@@ -14,14 +14,15 @@
 ** \brief Functions and definitions for common file I/O operations
 */
 
-#include <QDir>
-#include <QFile>
-#include "stringutil.h"
 #include "file.h"
+#include "stringutil.h"
 
 #if defined(Q_OS_WIN32)
 #include "win32.h"
 #endif
+
+#include <QDir>
+#include <QFile>
 
 
 /** Create an empty file named <b>filename</b>. if <b>createdir</b> is true,

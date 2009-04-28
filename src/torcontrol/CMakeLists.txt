@@ -12,46 +12,46 @@
 
 
 set(torcontrol_SRCS 
-  addressmap.cpp
-  bootstrapstatus.cpp
-  circuit.cpp
-  clientstatusevent.cpp
-  controlcommand.cpp
-  controlconnection.cpp
-  controlreply.cpp
-  controlsocket.cpp
-  dangerousportevent.cpp
-  dangerousversionevent.cpp
-  generalstatusevent.cpp
-  logevent.cpp
-  orconnevent.cpp
-  protocolinfo.cpp
-  replyline.cpp
-  routerdescriptor.cpp
-  routerstatus.cpp
-  sendcommandevent.cpp
-  serverstatusevent.cpp
-  stream.cpp
+  AddressMap.cpp
+  BootstrapStatus.cpp
+  Circuit.cpp
+  ClientStatusEvent.cpp
+  ControlCommand.cpp
+  ControlConnection.cpp
+  ControlReply.cpp
+  ControlSocket.cpp
+  DangerousPortEvent.cpp
+  DangerousVersionEvent.cpp
+  GeneralStatusEvent.cpp
+  LogEvent.cpp
+  OrConnEvent.cpp
+  ProtocolInfo.cpp
+  ReplyLine.cpp
+  RouterDescriptor.cpp
+  RouterStatus.cpp
+  SendCommandEvent.cpp
+  ServerStatusEvent.cpp
+  Stream.cpp
   tcglobal.cpp
-  torcontrol.cpp
-  torevents.cpp
-  torprocess.cpp
-  torsignal.cpp
+  TorControl.cpp
+  TorEvents.cpp
+  TorProcess.cpp
+  TorSignal.cpp
 )
 qt4_wrap_cpp(torcontrol_SRCS
-  controlconnection.h
-  controlsocket.h
-  torcontrol.h
-  torevents.h
-  torprocess.h
+  ControlConnection.h
+  ControlSocket.h
+  TorControl.h
+  TorEvents.h
+  TorProcess.h
 )
 
 if (WIN32)
   set(torcontrol_SRCS ${torcontrol_SRCS} 
-    torservice.cpp
+    TorService.cpp
   )
   qt4_wrap_cpp(torcontrol_SRCS
-    torservice.h
+    TorService.h
   )
 endif(WIN32)
 
