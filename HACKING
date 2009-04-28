@@ -84,16 +84,16 @@ $Id$
 
 2.1.1. Source File Names
   
-  C++ classes should be divided in to a <classname>.h file, containing the
-  class declarations, and a <classname>.cpp file containg the class
+  C++ classes should be divided in to a <ClassName>.h file, containing the
+  class declarations, and a <ClassName>.cpp file containg the class
   implementation. Each .cpp file should implement only one public class.
+  Filenames containing a class should follow the same "CamelCase"
+  capitalization format as the class name itself.
 
-  Source files that do not implement a C++ class should be named logically.
-  For example, threading code would go in thread.cpp and thread.h.
-  
-  Filenames should be all lower case to prevent potential cross-platform
-  compilation issues due to Windows being case insensitive as opposed to
-  nearly every OS being case sensitive.
+  Source files that do not implement a C++ class should be named logically and
+  in all lowercase letters. For example, threading-related code would go in
+  thread.cpp and thread.h. 
+
 
 2.1.2. Class Names
 
@@ -193,12 +193,14 @@ $Id$
        ------------------------------------------------------------
        QCheckBox             chk            chkEnableFoo
        QComboBox             cmbo           cmboNames
+       QDialogButtonBox       -             buttonBox
        QFrame                frm            frmMain
        QGroupBox             grp            grpAdvanced
        QLabel                lbl            lblHeader
        QLineEdit             line           lineAddress
        QListView             lst            lstMessages
        QProgressBar          pbar           pbarDownload
+                              -             progressBar
        QPushButton           btn            btnClose
        QRadioButton          rdo            rdoSomeOption
        QSpinBox              spn            spnDial
