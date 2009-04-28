@@ -38,7 +38,7 @@
 #include "stringutil.h"
 #include "procutil.h"
 
-#include <QtGui>
+#include <QMenuBar>
 #include <QTimer>
 #include <QTextStream>
 

@@ -18,6 +18,8 @@
 #define _TRAYICON_H
 
 #include "config.h"
+
+#include <QtGlobal>
 #if defined(Q_WS_MAC)
 #include "TrayIconImpl_mac.h"
 #else
