@@ -15,8 +15,18 @@ configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/vidalia.1.in
   ${CMAKE_CURRENT_SOURCE_DIR}/vidalia.1
 )
+
+set(DOXYGEN_INPUT_DIR ${Vidalia_SOURCE_DIR})
+set(DOXYGEN_OUTPUT_DIR ${CMAKE_CURRENT_BINARY_DIR})
 configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in
-  ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile
+  ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile
 )
+
+include(FindDoxygen)
+if (DOXYGEN_FOUND)
+  add_custom_target(doxygen
+    COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile
+  )
+endif(DOXYGEN_FOUND)
 
