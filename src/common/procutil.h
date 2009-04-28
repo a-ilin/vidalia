@@ -17,6 +17,7 @@
 #ifndef _PROCUTIL_H
 #define _PROCUTIL_H
 
+#include <QtGlobal>
 #if defined(Q_OS_WIN)
 #include "win32.h"
 #else
