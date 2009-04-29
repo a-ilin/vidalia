@@ -199,21 +199,11 @@ MainWindow::MainWindow()
          this, SLOT(upnpError(UPNPControl::UPNPError)));
 #endif
 
-  if (TrayIcon::isTrayIconSupported()) {
-    /* Make the tray icon visible */
-    _trayIcon.show();
-    /* Check if we are supposed to show our main window on startup */
-    ui.chkShowOnStartup->setChecked(settings.showMainWindowAtStart());
-    if (ui.chkShowOnStartup->isChecked())
-      show();
-  } else {
-    /* Don't let people hide the main window, since that's all they have. */
-    ui.chkShowOnStartup->hide();
-    ui.btnHide->hide();
-    setMinimumHeight(height()-ui.btnHide->height());
-    setMaximumHeight(height()-ui.btnHide->height());
-    show();
-  }
+  ui.chkShowOnStartup->setChecked(settings.showMainWindowAtStart());
+  if (ui.chkShowOnStartup->isChecked())
+    show(); 
+  /* Optimistically hope that the tray icon gets added. */
+  _trayIcon.show();
 }
 
 /** Destructor. */
@@ -224,6 +214,23 @@ MainWindow::~MainWindow()
   delete _bandwidthGraph;
   delete _netViewer;
   delete _configDialog;
+}
+
+void
+MainWindow::setVisible(bool visible)
+{
+  if (visible) {
+    /* In Gnome, will hide buttons if Vidalia is run on startup. */
+    if (!TrayIcon::isTrayIconSupported()) {
+      /* Don't let people hide the main window, since that's all they have. */
+      ui.chkShowOnStartup->hide();
+      ui.btnHide->hide();
+      /* Causes window to not appear in Enlightenment. */
+      //setMinimumHeight(height()-ui.btnHide->height());
+      //setMaximumHeight(height()-ui.btnHide->height());
+    }
+  }
+  VidaliaWindow::setVisible(visible);
 }
 
 void

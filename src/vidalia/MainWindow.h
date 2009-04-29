@@ -55,6 +55,10 @@ public:
   /** Destructor. */
   ~MainWindow();
 
+public slots:
+  /** Shows or hides this window. **/
+  virtual void setVisible(bool visible);
+
 protected:
   /** Catches and processes Tor client status events. */
   virtual void customEvent(QEvent *event);
