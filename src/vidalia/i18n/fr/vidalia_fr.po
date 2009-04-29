@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-04-10 22:39+0000\n"
-"PO-Revision-Date: 2008-12-15 21:01+0000\n"
+"PO-Revision-Date: 2009-04-29 22:26+0000\n"
 "Last-Translator: Mfr <mfr@misericordia.be>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -23,21 +23,19 @@ msgid "License"
 msgstr "Licence"
 
 #: aboutdialog.ui:63
-#, fuzzy
 msgctxt "AboutDialog"
 msgid "Vidalia 0.2.0"
-msgstr "Vidalia"
+msgstr "Vidalia 0.2.0"
 
 #: aboutdialog.ui:73
 msgctxt "AboutDialog"
 msgid "Tor 0.2.0.32"
-msgstr ""
+msgstr "Tor 0.2.0.32"
 
 #: aboutdialog.ui:88
-#, fuzzy
 msgctxt "AboutDialog"
 msgid "Qt 4.4.2"
-msgstr "4.4.2"
+msgstr "Qt 4.4.2"
 
 #: advancedpage.cpp:109
 msgctxt "AdvancedPage"
@@ -174,15 +172,15 @@ msgstr ""
 "Selectionnez le répertoire utilisé pour sauver les données du logiciel Tor"
 
 #: advancedpage.cpp:289
-#, fuzzy
 msgctxt "AdvancedPage"
 msgid ""
 "Vidalia was unable to remove the Tor service.\n"
 "\n"
 "You may need to remove it manually."
 msgstr ""
-"Vidalia n'a pas pu enlever le service Tor.Vous devrez le supprimer "
-"manuellement."
+"Vidalia n'a pas pu enlever le service Tor.\n"
+"\n"
+"Vous devrez le supprimer manuellement."
 
 #: appearancepage.ui:22
 msgctxt "AppearancePage"
@@ -282,27 +280,27 @@ msgstr "Annuler"
 #: bridgeusagedialog.ui:50
 msgctxt "BridgeUsageDialog"
 msgid "Country"
-msgstr ""
+msgstr "Pays"
 
 #: bridgeusagedialog.ui:55
 msgctxt "BridgeUsageDialog"
 msgid "# Clients"
-msgstr ""
+msgstr "# Clients"
 
 #: bridgeusagedialog.cpp:58
 msgctxt "BridgeUsageDialog"
 msgid "Clients from the following countries have used your relay since %1"
-msgstr ""
+msgstr "Les clients des pays suivants ont utilisé votre relais depuis %1"
 
 #: bridgeusagedialog.ui:13
 msgctxt "BridgeUsageDialog"
 msgid "Bridge Usage Summary"
-msgstr ""
+msgstr "Resumé de l'utilisation du pont"
 
 #: bridgeusagedialog.ui:19
 msgctxt "BridgeUsageDialog"
 msgid "Client Summary"
-msgstr ""
+msgstr "Résumé client"
 
 #: circuit.cpp:112
 msgctxt "Circuit"
@@ -440,7 +438,6 @@ msgid "Password Required"
 msgstr "Mot de passe requis."
 
 #: controlpasswordinputdialog.ui:80
-#, fuzzy
 msgctxt "ControlPasswordInputDialog"
 msgid ""
 "Vidalia has connected to a running Tor process that requires a password. "
@@ -477,27 +474,27 @@ msgstr "Réponse invalide à la commande de contrôle. [%1]"
 #: countryinfo.cpp:33
 msgctxt "CountryInfo"
 msgid "Afghanistan"
-msgstr ""
+msgstr "Afghanistan"
 
 #: countryinfo.cpp:34
 msgctxt "CountryInfo"
 msgid "Albania"
-msgstr ""
+msgstr "Albanie"
 
 #: countryinfo.cpp:35
 msgctxt "CountryInfo"
 msgid "Algeria"
-msgstr ""
+msgstr "Algérie"
 
 #: countryinfo.cpp:36
 msgctxt "CountryInfo"
 msgid "Andorra"
-msgstr ""
+msgstr "Andorre"
 
 #: countryinfo.cpp:37
 msgctxt "CountryInfo"
 msgid "Angola"
-msgstr ""
+msgstr "Angola"
 
 #: countryinfo.cpp:38
 msgctxt "CountryInfo"
@@ -507,23 +504,22 @@ msgstr ""
 #: countryinfo.cpp:39
 msgctxt "CountryInfo"
 msgid "Argentina"
-msgstr ""
+msgstr "Argentine"
 
 #: countryinfo.cpp:40
 msgctxt "CountryInfo"
 msgid "Armenia"
-msgstr ""
+msgstr "Arménie"
 
 #: countryinfo.cpp:41
-#, fuzzy
 msgctxt "CountryInfo"
 msgid "Australia"
-msgstr "À propos de Vidalia"
+msgstr "Australie"
 
 #: countryinfo.cpp:42
 msgctxt "CountryInfo"
 msgid "Austria"
-msgstr ""
+msgstr "Autriche"
 
 #: countryinfo.cpp:43
 msgctxt "CountryInfo"
@@ -533,52 +529,52 @@ msgstr ""
 #: countryinfo.cpp:44
 msgctxt "CountryInfo"
 msgid "Bahamas"
-msgstr ""
+msgstr "Bahamas"
 
 #: countryinfo.cpp:45
 msgctxt "CountryInfo"
 msgid "Bahrain"
-msgstr ""
+msgstr "Bahrain"
 
 #: countryinfo.cpp:46
 msgctxt "CountryInfo"
 msgid "Bangladesh"
-msgstr ""
+msgstr "Bangladesh"
 
 #: countryinfo.cpp:47
 msgctxt "CountryInfo"
 msgid "Barbados"
-msgstr ""
+msgstr "Barbades"
 
 #: countryinfo.cpp:48
 msgctxt "CountryInfo"
 msgid "Belarus"
-msgstr ""
+msgstr "Biélorussie"
 
 #: countryinfo.cpp:49
 msgctxt "CountryInfo"
 msgid "Belgium"
-msgstr ""
+msgstr "Belgique"
 
 #: countryinfo.cpp:50
 msgctxt "CountryInfo"
 msgid "Belize"
-msgstr ""
+msgstr "Bélize"
 
 #: countryinfo.cpp:51
 msgctxt "CountryInfo"
 msgid "Benin"
-msgstr ""
+msgstr "Bénin"
 
 #: countryinfo.cpp:52
 msgctxt "CountryInfo"
 msgid "Bhutan"
-msgstr ""
+msgstr "Boutan"
 
 #: countryinfo.cpp:53
 msgctxt "CountryInfo"
 msgid "Bolivia"
-msgstr ""
+msgstr "Bolivie"
 
 #: countryinfo.cpp:54
 msgctxt "CountryInfo"
@@ -588,7 +584,7 @@ msgstr ""
 #: countryinfo.cpp:55
 msgctxt "CountryInfo"
 msgid "Botswana"
-msgstr ""
+msgstr "Botswana"
 
 #: countryinfo.cpp:56
 msgctxt "CountryInfo"
@@ -711,10 +707,9 @@ msgid "Denmark"
 msgstr ""
 
 #: countryinfo.cpp:80
-#, fuzzy
 msgctxt "CountryInfo"
 msgid "Djibouti"
-msgstr "À propos"
+msgstr "Djibouti"
 
 #: countryinfo.cpp:81
 msgctxt "CountryInfo"
@@ -767,16 +762,14 @@ msgid "Fiji"
 msgstr ""
 
 #: countryinfo.cpp:91
-#, fuzzy
 msgctxt "CountryInfo"
 msgid "Finland"
-msgstr "Chercher"
+msgstr "Finlande"
 
 #: countryinfo.cpp:92
-#, fuzzy
 msgctxt "CountryInfo"
 msgid "France"
-msgstr "Annuler"
+msgstr "France"
 
 #: countryinfo.cpp:93
 msgctxt "CountryInfo"
@@ -804,10 +797,9 @@ msgid "Ghana"
 msgstr ""
 
 #: countryinfo.cpp:98
-#, fuzzy
 msgctxt "CountryInfo"
 msgid "Greece"
-msgstr "rejeter"
+msgstr "Grèce"
 
 #: countryinfo.cpp:99
 msgctxt "CountryInfo"
@@ -825,10 +817,9 @@ msgid "Guam"
 msgstr ""
 
 #: countryinfo.cpp:102
-#, fuzzy
 msgctxt "CountryInfo"
 msgid "Guinea"
-msgstr "Général"
+msgstr "Guinée"
 
 #: countryinfo.cpp:103
 msgctxt "CountryInfo"
@@ -871,10 +862,9 @@ msgid "India"
 msgstr ""
 
 #: countryinfo.cpp:111
-#, fuzzy
 msgctxt "CountryInfo"
 msgid "Indonesia"
-msgstr "fait"
+msgstr "Indonésie"
 
 #: countryinfo.cpp:112
 msgctxt "CountryInfo"
@@ -982,110 +972,109 @@ msgid "Libya"
 msgstr ""
 
 #: countryinfo.cpp:133
-#, fuzzy
 msgctxt "CountryInfo"
 msgid "Liechtenstein"
-msgstr "Licence"
+msgstr "Liechtenstein"
 
 #: countryinfo.cpp:134
 msgctxt "CountryInfo"
 msgid "Lithuania"
-msgstr ""
+msgstr "Lituanie"
 
 #: countryinfo.cpp:135
 msgctxt "CountryInfo"
 msgid "Luxembourg"
-msgstr ""
+msgstr "Luxembourg"
 
 #: countryinfo.cpp:136
 msgctxt "CountryInfo"
 msgid "Macedonia"
-msgstr ""
+msgstr "Macédoine"
 
 #: countryinfo.cpp:137
 msgctxt "CountryInfo"
 msgid "Madagascar"
-msgstr ""
+msgstr "Madagascar"
 
 #: countryinfo.cpp:138
 msgctxt "CountryInfo"
 msgid "Malawi"
-msgstr ""
+msgstr "Malawi"
 
 #: countryinfo.cpp:139
 msgctxt "CountryInfo"
 msgid "Malaysia"
-msgstr ""
+msgstr "Malaisie"
 
 #: countryinfo.cpp:140
 msgctxt "CountryInfo"
 msgid "Maldives"
-msgstr ""
+msgstr "Maldives"
 
 #: countryinfo.cpp:141
 msgctxt "CountryInfo"
 msgid "Mali"
-msgstr ""
+msgstr "Mali"
 
 #: countryinfo.cpp:142
 msgctxt "CountryInfo"
 msgid "Malta"
-msgstr ""
+msgstr "Malte"
 
 #: countryinfo.cpp:143
 msgctxt "CountryInfo"
 msgid "Marshall Islands"
-msgstr ""
+msgstr "Iles Marshall"
 
 #: countryinfo.cpp:144
 msgctxt "CountryInfo"
 msgid "Mauritania"
-msgstr ""
+msgstr "Mauritanie"
 
 #: countryinfo.cpp:145
 msgctxt "CountryInfo"
 msgid "Mauritius"
-msgstr ""
+msgstr "Ile Maurice"
 
 #: countryinfo.cpp:146
 msgctxt "CountryInfo"
 msgid "Mexico"
-msgstr ""
+msgstr "Mexique"
 
 #: countryinfo.cpp:147
 msgctxt "CountryInfo"
 msgid "Micronesia"
-msgstr ""
+msgstr "Micronésie"
 
 #: countryinfo.cpp:148
 msgctxt "CountryInfo"
 msgid "Moldova"
-msgstr ""
+msgstr "Moldavie"
 
 #: countryinfo.cpp:149
 msgctxt "CountryInfo"
 msgid "Monaco"
-msgstr ""
+msgstr "Monaco"
 
 #: countryinfo.cpp:150
 msgctxt "CountryInfo"
 msgid "Mongolia"
-msgstr ""
+msgstr "Mongolie"
 
 #: countryinfo.cpp:151
 msgctxt "CountryInfo"
 msgid "Montenegro"
-msgstr ""
+msgstr "Monténégro"
 
 #: countryinfo.cpp:152
 msgctxt "CountryInfo"
 msgid "Morocco"
-msgstr ""
+msgstr "Maroc"
 
 #: countryinfo.cpp:153
 msgctxt "CountryInfo"
 msgid "Mozambique"
-msgstr ""
+msgstr "Mozambique"
 
 #: countryinfo.cpp:154
 msgctxt "CountryInfo"
@@ -1095,7 +1084,7 @@ msgstr ""
 #: countryinfo.cpp:155
 msgctxt "CountryInfo"
 msgid "Namibia"
-msgstr ""
+msgstr "Namibie"
 
 #: countryinfo.cpp:156
 msgctxt "CountryInfo"
@@ -1105,48 +1094,47 @@ msgstr ""
 #: countryinfo.cpp:157
 msgctxt "CountryInfo"
 msgid "Nepal"
-msgstr ""
+msgstr "Népal"
 
 #: countryinfo.cpp:158
 msgctxt "CountryInfo"
 msgid "Netherlands"
-msgstr ""
+msgstr "Pays-Bas"
 
 #: countryinfo.cpp:159
 msgctxt "CountryInfo"
 msgid "New Zealand"
-msgstr ""
+msgstr "Nouvelle Zélande"
 
 #: countryinfo.cpp:160
 msgctxt "CountryInfo"
 msgid "Nicaragua"
-msgstr ""
+msgstr "Nicaragua"
 
 #: countryinfo.cpp:161
 msgctxt "CountryInfo"
 msgid "Niger"
-msgstr ""
+msgstr "Niger"
 
 #: countryinfo.cpp:162
 msgctxt "CountryInfo"
 msgid "Nigeria"
-msgstr ""
+msgstr "Nigéria"
 
 #: countryinfo.cpp:163
-#, fuzzy
 msgctxt "CountryInfo"
 msgid "Norway"
-msgstr "Avancer"
+msgstr "Norvège"
 
 #: countryinfo.cpp:164
 msgctxt "CountryInfo"
 msgid "Oman"
-msgstr ""
+msgstr "Oman"
 
 #: countryinfo.cpp:165
 msgctxt "CountryInfo"
 msgid "Pakistan"
-msgstr ""
+msgstr "Pakistan"
 
 #: countryinfo.cpp:166
 msgctxt "CountryInfo"
@@ -1156,63 +1144,62 @@ msgstr ""
 #: countryinfo.cpp:167
 msgctxt "CountryInfo"
 msgid "Palestine"
-msgstr ""
+msgstr "Palestine"
 
 #: countryinfo.cpp:168
 msgctxt "CountryInfo"
 msgid "Panama"
-msgstr ""
+msgstr "Panama"
 
 #: countryinfo.cpp:169
 msgctxt "CountryInfo"
 msgid "Papua New Guinea"
-msgstr ""
+msgstr "Papouasie Nouvelle Guinée"
 
 #: countryinfo.cpp:170
 msgctxt "CountryInfo"
 msgid "Paraguay"
-msgstr ""
+msgstr "Paraguay"
 
 #: countryinfo.cpp:171
 msgctxt "CountryInfo"
 msgid "Peru"
-msgstr ""
+msgstr "Péru"
 
 #: countryinfo.cpp:172
 msgctxt "CountryInfo"
 msgid "Philippines"
-msgstr ""
+msgstr "Philippines"
 
 #: countryinfo.cpp:173
 msgctxt "CountryInfo"
 msgid "Poland"
-msgstr ""
+msgstr "Pologne"
 
 #: countryinfo.cpp:174
-#, fuzzy
 msgctxt "CountryInfo"
 msgid "Portugal"
-msgstr "Port :"
+msgstr "Portugal"
 
 #: countryinfo.cpp:175
 msgctxt "CountryInfo"
 msgid "Qatar"
-msgstr ""
+msgstr "Qatar"
 
 #: countryinfo.cpp:176
 msgctxt "CountryInfo"
 msgid "Romania"
-msgstr ""
+msgstr "Roumanie"
 
 #: countryinfo.cpp:177
 msgctxt "CountryInfo"
 msgid "Russia"
-msgstr ""
+msgstr "Russie"
 
 #: countryinfo.cpp:178
 msgctxt "CountryInfo"
 msgid "Rwanda"
-msgstr ""
+msgstr "Rwanda"
 
 #: countryinfo.cpp:179
 msgctxt "CountryInfo"
@@ -1232,120 +1219,117 @@ msgstr ""
 #: countryinfo.cpp:182
 msgctxt "CountryInfo"
 msgid "Samoa"
-msgstr ""
+msgstr "Samoa"
 
 #: countryinfo.cpp:183
 msgctxt "CountryInfo"
 msgid "San Marino"
-msgstr ""
+msgstr "San Marin"
 
 #: countryinfo.cpp:184
 msgctxt "CountryInfo"
 msgid "Sao Tome & Principe"
-msgstr ""
+msgstr "Sao Tome & Principe"
 
 #: countryinfo.cpp:185
 msgctxt "CountryInfo"
 msgid "Saudi Arabia"
-msgstr ""
+msgstr "Arabie Saoudite"
 
 #: countryinfo.cpp:186
-#, fuzzy
 msgctxt "CountryInfo"
 msgid "Senegal"
-msgstr "Général"
+msgstr "Sénégal"
 
 #: countryinfo.cpp:187
 msgctxt "CountryInfo"
 msgid "Serbia"
-msgstr ""
+msgstr "Serbie"
 
 #: countryinfo.cpp:188
 msgctxt "CountryInfo"
 msgid "Seychelles"
-msgstr ""
+msgstr "Seychelles"
 
 #: countryinfo.cpp:189
 msgctxt "CountryInfo"
 msgid "Sierra Leone"
-msgstr ""
+msgstr "Sierra Leone"
 
 #: countryinfo.cpp:190
 msgctxt "CountryInfo"
 msgid "Singapore"
-msgstr ""
+msgstr "Singapour"
 
 #: countryinfo.cpp:191
 msgctxt "CountryInfo"
 msgid "Slovakia"
-msgstr ""
+msgstr "Slovaquie"
 
 #: countryinfo.cpp:192
 msgctxt "CountryInfo"
 msgid "Slovenia"
-msgstr ""
+msgstr "Slovénie"
 
 #: countryinfo.cpp:193
 msgctxt "CountryInfo"
 msgid "Solomon Islands"
-msgstr ""
+msgstr "Iles Salomon"
 
 #: countryinfo.cpp:194
 msgctxt "CountryInfo"
 msgid "Somalia"
-msgstr ""
+msgstr "Somalie"
 
 #: countryinfo.cpp:195
 msgctxt "CountryInfo"
 msgid "South Africa"
-msgstr ""
+msgstr "Afrique du Sud"
 
 #: countryinfo.cpp:196
-#, fuzzy
 msgctxt "CountryInfo"
 msgid "Spain"
-msgstr "Partage"
+msgstr "Espagne"
 
 #: countryinfo.cpp:197
 msgctxt "CountryInfo"
 msgid "Sri Lanka"
-msgstr ""
+msgstr "Sri Lanka"
 
 #: countryinfo.cpp:198
 msgctxt "CountryInfo"
 msgid "Sudan"
-msgstr ""
+msgstr "Soudan"
 
 #: countryinfo.cpp:199
-#, fuzzy
 msgctxt "CountryInfo"
 msgid "Suriname"
-msgstr "Surnom"
+msgstr "Surinam"
 
 #: countryinfo.cpp:200
 msgctxt "CountryInfo"
 msgid "Swaziland"
-msgstr ""
+msgstr "Swaziland"
 
 #: countryinfo.cpp:201
 msgctxt "CountryInfo"
 msgid "Sweden"
-msgstr ""
+msgstr "Suède"
 
 #: countryinfo.cpp:202
 msgctxt "CountryInfo"
 msgid "Switzerland"
-msgstr ""
+msgstr "Suisse"
 
 #: countryinfo.cpp:203
 msgctxt "CountryInfo"
 msgid "Syria"
-msgstr ""
+msgstr "Syrie"
 
 #: countryinfo.cpp:204
 msgctxt "CountryInfo"
 msgid "Taiwan"
-msgstr ""
+msgstr "Taiwan"
 
 #: countryinfo.cpp:205
 msgctxt "CountryInfo"
@@ -1355,82 +1339,82 @@ msgstr ""
 #: countryinfo.cpp:206
 msgctxt "CountryInfo"
 msgid "Tanzania"
-msgstr ""
+msgstr "Tanzanie"
 
 #: countryinfo.cpp:207
 msgctxt "CountryInfo"
 msgid "Thailand"
-msgstr ""
+msgstr "Thailande"
 
 #: countryinfo.cpp:208
 msgctxt "CountryInfo"
 msgid "Timor-Leste (East Timor)"
-msgstr ""
+msgstr "Timor Oriental"
 
 #: countryinfo.cpp:209
 msgctxt "CountryInfo"
 msgid "Togo"
-msgstr ""
+msgstr "Togo"
 
 #: countryinfo.cpp:210
 msgctxt "CountryInfo"
 msgid "Tonga"
-msgstr ""
+msgstr "Tonga"
 
 #: countryinfo.cpp:211
 msgctxt "CountryInfo"
 msgid "Trinidad & Tobago"
-msgstr ""
+msgstr "Trinité & Tobago"
 
 #: countryinfo.cpp:212
 msgctxt "CountryInfo"
 msgid "Tunisia"
-msgstr ""
+msgstr "Tunisie"
 
 #: countryinfo.cpp:213
 msgctxt "CountryInfo"
 msgid "Turkey"
-msgstr ""
+msgstr "Turquie"
 
 #: countryinfo.cpp:214
 msgctxt "CountryInfo"
 msgid "Turkmenistan"
-msgstr ""
+msgstr "Turkménistan"
 
 #: countryinfo.cpp:215
 msgctxt "CountryInfo"
 msgid "Tuvalu"
-msgstr ""
+msgstr "Tuvalu"
 
 #: countryinfo.cpp:216
 msgctxt "CountryInfo"
 msgid "Uganda"
-msgstr ""
+msgstr "Ouganda"
 
 #: countryinfo.cpp:217
 msgctxt "CountryInfo"
 msgid "Ukraine"
-msgstr ""
+msgstr "Ukraine"
 
 #: countryinfo.cpp:218
 msgctxt "CountryInfo"
 msgid "United Arab Emirates"
-msgstr ""
+msgstr "Emirats Arabes Unis"
 
 #: countryinfo.cpp:219
 msgctxt "CountryInfo"
 msgid "United Kingdom"
-msgstr ""
+msgstr "Royaume Uni"
 
 #: countryinfo.cpp:220
 msgctxt "CountryInfo"
 msgid "United States"
-msgstr ""
+msgstr "Etats Unis"
 
 #: countryinfo.cpp:221
 msgctxt "CountryInfo"
 msgid "Uruguay"
-msgstr ""
+msgstr "Uruguay"
 
 #: countryinfo.cpp:222
 msgctxt "CountryInfo"
@@ -1440,42 +1424,42 @@ msgstr ""
 #: countryinfo.cpp:223
 msgctxt "CountryInfo"
 msgid "Vanuatu"
-msgstr ""
+msgstr "Vanuatu"
 
 #: countryinfo.cpp:224
 msgctxt "CountryInfo"
 msgid "Vatican"
-msgstr ""
+msgstr "Cité du Vatican"
 
 #: countryinfo.cpp:225
 msgctxt "CountryInfo"
 msgid "Venezuela"
-msgstr ""
+msgstr "Vénézuela"
 
 #: countryinfo.cpp:226
 msgctxt "CountryInfo"
 msgid "Vietnam"
-msgstr ""
+msgstr "Vietnam"
 
 #: countryinfo.cpp:227
 msgctxt "CountryInfo"
 msgid "Western Sahara"
-msgstr ""
+msgstr "Sahara Occidental"
 
 #: countryinfo.cpp:228
 msgctxt "CountryInfo"
 msgid "Yemen"
-msgstr ""
+msgstr "Yémen"
 
 #: countryinfo.cpp:229
 msgctxt "CountryInfo"
 msgid "Zambia"
-msgstr ""
+msgstr "Zambie"
 
 #: countryinfo.cpp:230
 msgctxt "CountryInfo"
 msgid "Zimbabwe"
-msgstr ""
+msgstr "Zimbabwe"
 
 #: generalpage.cpp:73
 msgctxt "GeneralPage"
@@ -1553,10 +1537,9 @@ msgid "Check Now"
 msgstr ""
 
 #: graphframe.cpp:238
-#, fuzzy
 msgctxt "GraphFrame"
 msgid "Recv:"
-msgstr "Recpt : "
+msgstr "Recpt:"
 
 #: graphframe.cpp:298
 msgctxt "GraphFrame"
@@ -1564,10 +1547,9 @@ msgid "%1 KB/s"
 msgstr "%1 Ko/s"
 
 #: graphframe.cpp:247
-#, fuzzy
 msgctxt "GraphFrame"
 msgid "Sent:"
-msgstr "Envoi : "
+msgstr "Envoi :"
 
 #: graphframe.cpp:259
 msgctxt "GraphFrame"
@@ -1585,7 +1567,6 @@ msgid "%1 GB"
 msgstr "%1 Go"
 
 #: helpbrowser.cpp:134
-#, fuzzy
 msgctxt "HelpBrowser"
 msgid "Error Loading Help Contents:"
 msgstr "Erreur de lecture de l'aide :"
@@ -1746,7 +1727,6 @@ msgid "Found Documents"
 msgstr "Documents trouvés"
 
 #: helptextbrowser.cpp:54
-#, fuzzy
 msgctxt "HelpTextBrowser"
 msgid "Error opening help file:"
 msgstr "Erreur d'ouverture du fichier d'aide :"
@@ -2063,10 +2043,9 @@ msgid "unknown"
 msgstr "inconnu"
 
 #: mainwindow.cpp:854
-#, fuzzy
 msgctxt "MainWindow"
 msgid "failed (%1)"
-msgstr " échec (%1)"
+msgstr "échec (%1)"
 
 #: mainwindow.ui:168
 msgctxt "MainWindow"
@@ -2360,17 +2339,15 @@ msgstr ""
 "pour vous assurer qu'il n'y a pas d'autres processus Tor actif."
 
 #: mainwindow.cpp:895
-#, fuzzy
 msgctxt "MainWindow"
 msgid ""
 "Your relay is shutting down.\n"
 "Click 'Stop' again to stop your relay now."
 msgstr ""
-"Votre relais est en train de s'arrêter.Cliquer 'Stop' à nouveau pour stopper "
-"immédiatement."
+"Votre relais est en train de s'arrêter.\n"
+"Cliquer 'Stop' à nouveau pour stopper immédiatement."
 
 #: mainwindow.cpp:1154
-#, fuzzy
 msgctxt "MainWindow"
 msgid ""
 "You are currently running a relay. Terminating your relay will interrupt any "
@@ -2380,36 +2357,39 @@ msgid ""
 "relay?"
 msgstr ""
 "Vous opérez un relais.Arrêter le relais va interrompre toutes les "
-"connections des clients.Voulez-vous arrêter proprement et laisser aux "
-"clients le temps de trouver un nouveau relais ?"
+"connections des clients.\n"
+"\n"
+"Voulez-vous arrêter proprement et laisser aux clients le temps de trouver un "
+"nouveau relais ?"
 
 #: mainwindow.cpp:1212
-#, fuzzy
 msgctxt "MainWindow"
 msgid ""
 "Vidalia detected that the Tor software exited unexpectedly.\n"
 "\n"
 "Please check the message log for recent warning or error messages."
 msgstr ""
-"Vidalia a détecté que le logiciel Tor s'est arrêté de façon inattendue.Merci "
-"de consulter dans l'historique, les derniers messages d'erreur ou d'alerte."
+"Vidalia a détecté que le logiciel Tor s'est arrêté de façon inattendue.\n"
+"\n"
+"Merci de consulter dans l'historique, les derniers messages d'erreur ou "
+"d'alerte."
 
 #: mainwindow.cpp:1562
-#, fuzzy
 msgctxt "MainWindow"
 msgid ""
 "The currently installed version of Tor is out of date or no longer "
 "recommended."
 msgstr ""
 "La version actuellement installée de Tor est obsolète et n'est plus "
-"recommandée. Merci de visiter le site Web de Tor pour télécharger la "
-"dernière version."
+"recommandée."
 
 #: mainwindow.cpp:1564
 msgctxt "MainWindow"
 msgid ""
 "Would you like to check if a newer package is available for installation?"
 msgstr ""
+" Voulez-vous vérifier si une nouvelle version est disponible pour "
+"l'intstallation ?"
 
 #: mainwindow.cpp:1583
 msgctxt "MainWindow"
@@ -2443,15 +2423,14 @@ msgid ""
 msgstr ""
 
 #: mainwindow.cpp:1817
-#, fuzzy
 msgctxt "MainWindow"
 msgid "Update Failed"
-msgstr "Une mise à jour de Tor est disponible"
+msgstr "Echec de la mise à jour"
 
 #: mainwindow.cpp:1843
 msgctxt "MainWindow"
 msgid "Your software is up to date"
-msgstr ""
+msgstr "Votre logiciel est à jour"
 
 #: mainwindow.cpp:1845
 msgctxt "MainWindow"
@@ -2466,10 +2445,10 @@ msgid "Installation Failed"
 msgstr ""
 
 #: mainwindow.cpp:1889
-#, fuzzy
 msgctxt "MainWindow"
 msgid "Vidalia was unable to install your software updates."
-msgstr "Vidalia n'a pu arrêter le logiciel Tor."
+msgstr ""
+"Vidalia n'a pas été capable d'intaller les mises à jour de votre logiciel."
 
 #: mainwindow.cpp:1890
 msgctxt "MainWindow"
@@ -2799,25 +2778,24 @@ msgid "Automatically save new log messages to a file"
 msgstr "Enregistrer les nouveaux messages dans un fichier"
 
 #: messagelog.cpp:126
-#, fuzzy
 msgctxt "MessageLog"
 msgid ""
 "Messages that appear when something has \n"
 "gone very wrong and Tor cannot proceed."
 msgstr ""
-"Messages qui apparaissent quand il y a eu un gros problème et que Tor ne "
-"peut être lancé."
+"Messages qui apparaissent quand il y a eu\n"
+"un gros problème et que Tor ne peut être lancé."
 
 #: messagelog.cpp:128
-#, fuzzy
 msgctxt "MessageLog"
 msgid ""
 "Messages that only appear when \n"
 "something has gone wrong with Tor."
-msgstr "Messages qui apparaissent quand il a eu un problème avec Tor."
+msgstr ""
+"Messages qui apparaissent quand \n"
+"il a eu un problème avec Tor."
 
 #: messagelog.cpp:132
-#, fuzzy
 msgctxt "MessageLog"
 msgid ""
 "Messages that appear infrequently \n"
@@ -2825,35 +2803,39 @@ msgid ""
 "not considered errors, but you may \n"
 "care about."
 msgstr ""
-"Messages qui apparaissent peu fréquemment pendant le fonctionnement normal "
-"de Tor et qui ne sont pas des erreurs, mais dont il faut tenir compte."
+"Messages qui apparaissent peu fréquemment \n"
+"pendant le fonctionnement normal de Tor \n"
+"et qui ne sont pas des erreurs, \n"
+"mais dont il faut tenir compte."
 
 #: messagelog.cpp:134
-#, fuzzy
 msgctxt "MessageLog"
 msgid ""
 "Messages that appear frequently \n"
 "during normal Tor operation."
 msgstr ""
-"Messages qui apparait fréquemment durant le fonctionnement normal de Tor."
+"Messages qui apparait fréquemment \n"
+"durant le fonctionnement normal de Tor."
 
 #: messagelog.cpp:136
-#, fuzzy
 msgctxt "MessageLog"
 msgid ""
 "Hyper-verbose messages primarily of \n"
 "interest to Tor developers."
 msgstr ""
-"Nombreux messages principalement intéressant pour les développeurs de Tor."
+"Nombreux messages principalement\n"
+" intéressant pour les développeurs de Tor."
 
 #: messagelog.cpp:310
-#, fuzzy
 msgctxt "MessageLog"
 msgid ""
 "Cannot write file %1\n"
 "\n"
 "%2."
-msgstr "Impossible d'écrire le fichier %1%2."
+msgstr ""
+"Impossible d'écrire le fichier %1\n"
+"\n"
+"%2."
 
 #: netviewer.ui:24
 msgctxt "NetViewer"
@@ -2956,10 +2938,9 @@ msgid "Ctrl+Z"
 msgstr "Ctrl+Z"
 
 #: netviewer.cpp:507
-#, fuzzy
 msgctxt "NetViewer"
 msgid "Relay Not Found"
-msgstr "Fichier non trouvé"
+msgstr "Relais non trouvé"
 
 #: netviewer.cpp:508
 msgctxt "NetViewer"
@@ -2967,7 +2948,6 @@ msgid "No details on the selected relay are available."
 msgstr ""
 
 #: netviewer.cpp:523
-#, fuzzy
 msgctxt "NetViewer"
 msgid "Unknown"
 msgstr "Inconnu"
@@ -3191,25 +3171,21 @@ msgid "Copy"
 msgstr "Copier"
 
 #: routerinfodialog.cpp:54
-#, fuzzy
 msgctxt "RouterInfoDialog"
 msgid "Hibernating"
-msgstr "Hibernation"
+msgstr "En hibernation"
 
 #: routerinfodialog.cpp:57
-#, fuzzy
 msgctxt "RouterInfoDialog"
 msgid "Online"
 msgstr "En ligne"
 
 #: routerinfodialog.cpp:59
-#, fuzzy
 msgctxt "RouterInfoDialog"
 msgid "Offline"
 msgstr "Hors ligne"
 
 #: routerinfodialog.cpp:61
-#, fuzzy
 msgctxt "RouterInfoDialog"
 msgid "Unknown"
 msgstr "Inconnu"
@@ -3217,63 +3193,54 @@ msgstr "Inconnu"
 #: routerinfodialog.ui:13
 msgctxt "RouterInfoDialog"
 msgid "Relay Details"
-msgstr ""
+msgstr "Détails du Relais"
 
 #: routerinfodialog.ui:29
 msgctxt "RouterInfoDialog"
 msgid "Summary"
-msgstr ""
+msgstr "Résumé"
 
 #: routerinfodialog.ui:47
-#, fuzzy
 msgctxt "RouterInfoDialog"
 msgid "Name:"
-msgstr "Surnom :"
+msgstr "Nom :"
 
 #: routerinfodialog.ui:82
-#, fuzzy
 msgctxt "RouterInfoDialog"
 msgid "Status:"
-msgstr "État"
+msgstr "État :"
 
 #: routerinfodialog.ui:117
-#, fuzzy
 msgctxt "RouterInfoDialog"
 msgid "Location:"
 msgstr "Localisation :"
 
 #: routerinfodialog.ui:152
-#, fuzzy
 msgctxt "RouterInfoDialog"
 msgid "IP Address:"
 msgstr "Adresse IP :"
 
 #: routerinfodialog.ui:187
-#, fuzzy
 msgctxt "RouterInfoDialog"
 msgid "Platform:"
 msgstr "Plateforme :"
 
 #: routerinfodialog.ui:231
-#, fuzzy
 msgctxt "RouterInfoDialog"
 msgid "Bandwidth:"
 msgstr "Bande passante :"
 
 #: routerinfodialog.ui:266
-#, fuzzy
 msgctxt "RouterInfoDialog"
 msgid "Uptime:"
 msgstr "Durée de fonctionnement :"
 
 #: routerinfodialog.ui:301
-#, fuzzy
 msgctxt "RouterInfoDialog"
 msgid "Contact:"
-msgstr "Info. de contact :"
+msgstr "Contact :"
 
 #: routerinfodialog.ui:352
-#, fuzzy
 msgctxt "RouterInfoDialog"
 msgid "Last Updated:"
 msgstr "Dernière mise à jour :"
@@ -3281,7 +3248,7 @@ msgstr "Dernière mise à jour :"
 #: routerinfodialog.ui:376
 msgctxt "RouterInfoDialog"
 msgid "Descriptor"
-msgstr ""
+msgstr "Identifiant"
 
 #: routerlistitem.cpp:67
 msgctxt "RouterListItem"
@@ -3383,10 +3350,9 @@ msgid "Enable to mirror the relay directory"
 msgstr "Activer le miroir de l'annuaire des relais"
 
 #: serverpage.ui:96
-#, fuzzy
 msgctxt "ServerPage"
 msgid "Mirror the Relay Directory"
-msgstr "Servir de miroir à l'annuaire des relais "
+msgstr "Servir de miroir à l'annuaire des relais"
 
 #: serverpage.ui:122
 msgctxt "ServerPage"
@@ -3655,16 +3621,14 @@ msgid ""
 msgstr ""
 
 #: serverpage.cpp:594
-#, fuzzy
 msgctxt "ServerPage"
 msgid "Bridge History"
-msgstr "Paramètres de Passerelle"
+msgstr "Historique de la Passerelle"
 
 #: serverpage.cpp:596
-#, fuzzy
 msgctxt "ServerPage"
 msgid "Vidalia was unable to retrieve your bridge's usage history."
-msgstr "Vidalia n'a pas réussi à sauvegarder vos paramètress de %1."
+msgstr "Vidalia n'a pas réussi à sauvegarder l'historique de la passerelle."
 
 #: serverpage.cpp:599
 msgctxt "ServerPage"
@@ -3679,30 +3643,24 @@ msgid "The returned response was: %1"
 msgstr ""
 
 #: serverpage.ui:33
-#, fuzzy
 msgctxt "ServerPage"
 msgid "Help censored users reach the Tor network"
-msgstr ""
-"Aider les utilisateurs censurés à accéder au réseau Tor (Tor 0.2.0.8-alpha "
-"ou plus récent)"
+msgstr "Aider les utilisateurs censurés à accéder au réseau Tor"
 
 #: serverpage.ui:185
-#, fuzzy
 msgctxt "ServerPage"
 msgid ""
 "Email address at which you may be reached if there is a\n"
 "problem with your relay. You might also include your PGP or GPG fingerprint."
 msgstr ""
-"Adresse email a laquelle vous pouvez être joint s'il y a un problème avec "
-"votre relais. Vous pouvez aussi inclure votre empreinte PGP ou GPG."
+"Adresse email a laquelle vous pouvez être joint s'il y a\n"
+" un problème avec votre relais. Vous pouvez aussi inclure votre empreinte "
+"PGP ou GPG."
 
 #: serverpage.ui:958
-#, fuzzy
 msgctxt "ServerPage"
 msgid "<a href=\"#bridgeUsage\">Who has used my bridge?</a>"
-msgstr ""
-"<a href=\"bridges.finding\">Comment puis-je trouver un relais passerelle ?</"
-"a>"
+msgstr "<a href=\"#bridgeUsage\">Qui a utilisé ma passerelle ?</a>"
 
 #: servicepage.cpp:112
 msgctxt "ServicePage"
@@ -3967,7 +3925,6 @@ msgid "Checking for available updates..."
 msgstr ""
 
 #: updateprogressdialog.ui:87
-#, fuzzy
 msgctxt "UpdateProgressDialog"
 msgid "Hide"
 msgstr "Cacher"
@@ -3978,10 +3935,9 @@ msgid "Downloading updates..."
 msgstr ""
 
 #: updateprogressdialog.cpp:45
-#, fuzzy
 msgctxt "UpdateProgressDialog"
 msgid "Installing updated software..."
-msgstr "Lancement du logiciel Tor"
+msgstr "Installation d'une mise à jour du logiciel..."
 
 #: updateprogressdialog.cpp:54
 msgctxt "UpdateProgressDialog"
@@ -3989,7 +3945,6 @@ msgid "Done! Your software is now up to date."
 msgstr ""
 
 #: updateprogressdialog.cpp:60
-#, fuzzy
 msgctxt "UpdateProgressDialog"
 msgid "OK"
 msgstr "OK"
@@ -4005,16 +3960,14 @@ msgid "Checking for updates..."
 msgstr ""
 
 #: updateprogressdialog.ui:80
-#, fuzzy
 msgctxt "UpdateProgressDialog"
 msgid "Cancel"
 msgstr "Annuler"
 
 #: updatesavailabledialog.ui:13
-#, fuzzy
 msgctxt "UpdatesAvailableDialog"
 msgid "Software Updates Available"
-msgstr "Une mise à jour de Tor est disponible"
+msgstr "Des mises à jour logicielles sont disponibles"
 
 #: updatesavailabledialog.ui:38
 msgctxt "UpdatesAvailableDialog"
@@ -4032,16 +3985,14 @@ msgid "The following updated software packages are ready for installation:"
 msgstr ""
 
 #: updatesavailabledialog.ui:78
-#, fuzzy
 msgctxt "UpdatesAvailableDialog"
 msgid "Package"
-msgstr "Retour arrière"
+msgstr ""
 
 #: updatesavailabledialog.ui:83
-#, fuzzy
 msgctxt "UpdatesAvailableDialog"
 msgid "Version"
-msgstr "version"
+msgstr "Version"
 
 #: vmessagebox.cpp:77
 msgctxt "VMessageBox"
@@ -4076,7 +4027,7 @@ msgstr "Réessayer"
 #: vmessagebox.cpp:83
 msgctxt "VMessageBox"
 msgid "Show Log"
-msgstr "Voir le Journal"
+msgstr "Voir l'historique"
 
 #: vmessagebox.cpp:84
 msgctxt "VMessageBox"
@@ -4159,22 +4110,19 @@ msgid "Vidalia Usage Information"
 msgstr "Information sur l'usage de Vidalia"
 
 #: vidalia.cpp:260
-#, fuzzy
 msgctxt "Vidalia"
 msgid "Invalid language code specified:"
-msgstr "Code de langue spécifié invalide : "
+msgstr "Code de langue spécifié invalide :"
 
 #: vidalia.cpp:267
-#, fuzzy
 msgctxt "Vidalia"
 msgid "Invalid GUI style specified:"
-msgstr "Style d'interface spécifié invalide : "
+msgstr "Style d'interface utilisateur spécifié invalide :"
 
 #: vidalia.cpp:273
-#, fuzzy
 msgctxt "Vidalia"
 msgid "Invalid log level specified:"
-msgstr "Niveau de gravité des messages invalide : "
+msgstr "Niveau d'historique des messages invalide :"
 
 #: vidalia.cpp:279
 msgctxt "Vidalia"
@@ -4182,7 +4130,6 @@ msgid "Unable to open log file '%1': %2"
 msgstr "Impossible d'ouvrir le fichier du Journal des messages '%1': %2"
 
 #: main.cpp:100
-#, fuzzy
 msgctxt "Vidalia"
 msgid ""
 "Another Vidalia process is possibly already running. If there really is not "
@@ -4190,30 +4137,28 @@ msgid ""
 "\n"
 "Would you like to continue starting Vidalia?"
 msgstr ""
-"Il est possible qu'un autre processus Vidalia soit déjà actif.Si il y a déjà "
-"un autre processus Vidalia en cours, vous pouvez néanmoins choisir de "
-"continuer.Voulez vous continuer à démarrer Vidalia?"
+"Il est possible qu'un autre processus Vidalia soit déjà actif. Si il y a "
+"déjà un autre processus Vidalia en cours, vous pouvez néanmoins choisir de "
+"continuer.\n"
+"\n"
+"Voulez vous continuer à démarrer Vidalia?"
 
 #: stringutil.cpp:323
-#, fuzzy
 msgctxt "stringutil.h"
 msgid "%1 days"
-msgstr "%1 jours "
+msgstr "%1 jours"
 
 #: stringutil.cpp:325
-#, fuzzy
 msgctxt "stringutil.h"
 msgid "%1 hours"
-msgstr "%1 heures "
+msgstr "%1 heures"
 
 #: stringutil.cpp:327
-#, fuzzy
 msgctxt "stringutil.h"
 msgid "%1 mins"
-msgstr "%1 mins "
+msgstr "%1 mins"
 
 #: stringutil.cpp:329
-#, fuzzy
 msgctxt "stringutil.h"
 msgid "%1 secs"
 msgstr "%1 secs"
@@ -4221,10 +4166,9 @@ msgstr "%1 secs"
 #: stringutil.cpp:348
 msgctxt "stringutil.h"
 msgid "%1 B/s"
-msgstr ""
+msgstr "%1 o/s"
 
 #: stringutil.cpp:350
-#, fuzzy
 msgctxt "stringutil.h"
 msgid "%1 KB/s"
 msgstr "%1 Ko/s"
@@ -4232,9 +4176,9 @@ msgstr "%1 Ko/s"
 #: stringutil.cpp:352
 msgctxt "stringutil.h"
 msgid "%1 MB/s"
-msgstr ""
+msgstr "%1 Mo/s"
 
 #: stringutil.cpp:354
 msgctxt "stringutil.h"
 msgid "%1 GB/s"
-msgstr ""
+msgstr "%1 Go/s"
