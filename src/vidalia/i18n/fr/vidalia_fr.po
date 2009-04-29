@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-04-10 22:39+0000\n"
-"PO-Revision-Date: 2009-04-29 22:26+0000\n"
+"PO-Revision-Date: 2009-04-29 22:37+0000\n"
 "Last-Translator: Mfr <mfr@misericordia.be>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -589,7 +589,7 @@ msgstr "Botswana"
 #: countryinfo.cpp:56
 msgctxt "CountryInfo"
 msgid "Brazil"
-msgstr ""
+msgstr "Brésil"
 
 #: countryinfo.cpp:57
 msgctxt "CountryInfo"
@@ -599,12 +599,12 @@ msgstr ""
 #: countryinfo.cpp:58
 msgctxt "CountryInfo"
 msgid "Bulgaria"
-msgstr ""
+msgstr "Bulgarie"
 
 #: countryinfo.cpp:59
 msgctxt "CountryInfo"
 msgid "Burkina Faso"
-msgstr ""
+msgstr "Burkina Faso"
 
 #: countryinfo.cpp:60
 msgctxt "CountryInfo"
@@ -614,97 +614,97 @@ msgstr ""
 #: countryinfo.cpp:61
 msgctxt "CountryInfo"
 msgid "Cambodia"
-msgstr ""
+msgstr "Cambodge"
 
 #: countryinfo.cpp:62
 msgctxt "CountryInfo"
 msgid "Cameroon"
-msgstr ""
+msgstr "Cameroon"
 
 #: countryinfo.cpp:63
 msgctxt "CountryInfo"
 msgid "Canada"
-msgstr ""
+msgstr "Canada"
 
 #: countryinfo.cpp:64
 msgctxt "CountryInfo"
 msgid "Cape Verde"
-msgstr ""
+msgstr "Cap Vert"
 
 #: countryinfo.cpp:65
 msgctxt "CountryInfo"
 msgid "Central African Republic"
-msgstr ""
+msgstr "Centre Afrique"
 
 #: countryinfo.cpp:66
 msgctxt "CountryInfo"
 msgid "Chad"
-msgstr ""
+msgstr "Tchad"
 
 #: countryinfo.cpp:67
 msgctxt "CountryInfo"
 msgid "Chile"
-msgstr ""
+msgstr "Chili"
 
 #: countryinfo.cpp:68
 msgctxt "CountryInfo"
 msgid "China"
-msgstr ""
+msgstr "Chine"
 
 #: countryinfo.cpp:69
 msgctxt "CountryInfo"
 msgid "Colombia"
-msgstr ""
+msgstr "Colombie"
 
 #: countryinfo.cpp:70
 msgctxt "CountryInfo"
 msgid "Comoros"
-msgstr ""
+msgstr "Comores"
 
 #: countryinfo.cpp:71
 msgctxt "CountryInfo"
 msgid "Congo, The Democratic Republic of the"
-msgstr ""
+msgstr "Congo, République démocratique du "
 
 #: countryinfo.cpp:72
 msgctxt "CountryInfo"
 msgid "Congo"
-msgstr ""
+msgstr "Congo"
 
 #: countryinfo.cpp:73
 msgctxt "CountryInfo"
 msgid "Costa Rica"
-msgstr ""
+msgstr "Costa Rica"
 
 #: countryinfo.cpp:74
 msgctxt "CountryInfo"
 msgid "Cote dâIvoire"
-msgstr ""
+msgstr "Côte d'Ivoire"
 
 #: countryinfo.cpp:75
 msgctxt "CountryInfo"
 msgid "Croatia"
-msgstr ""
+msgstr "Croatie"
 
 #: countryinfo.cpp:76
 msgctxt "CountryInfo"
 msgid "Cuba"
-msgstr ""
+msgstr "Cuba"
 
 #: countryinfo.cpp:77
 msgctxt "CountryInfo"
 msgid "Cyprus"
-msgstr ""
+msgstr "Chypre"
 
 #: countryinfo.cpp:78
 msgctxt "CountryInfo"
 msgid "Czech Republic"
-msgstr ""
+msgstr "Tchéquie"
 
 #: countryinfo.cpp:79
 msgctxt "CountryInfo"
 msgid "Denmark"
-msgstr ""
+msgstr "Danemark"
 
 #: countryinfo.cpp:80
 msgctxt "CountryInfo"
@@ -724,42 +724,42 @@ msgstr ""
 #: countryinfo.cpp:83
 msgctxt "CountryInfo"
 msgid "Ecuador"
-msgstr ""
+msgstr "Equateur"
 
 #: countryinfo.cpp:84
 msgctxt "CountryInfo"
 msgid "Egypt"
-msgstr ""
+msgstr "Egypte"
 
 #: countryinfo.cpp:85
 msgctxt "CountryInfo"
 msgid "El Salvador"
-msgstr ""
+msgstr "Salvador"
 
 #: countryinfo.cpp:86
 msgctxt "CountryInfo"
 msgid "Equatorial Guinea"
-msgstr ""
+msgstr "Guinée équatoriale"
 
 #: countryinfo.cpp:87
 msgctxt "CountryInfo"
 msgid "Eritrea"
-msgstr ""
+msgstr "Erytrée"
 
 #: countryinfo.cpp:88
 msgctxt "CountryInfo"
 msgid "Estonia"
-msgstr ""
+msgstr "Estonie"
 
 #: countryinfo.cpp:89
 msgctxt "CountryInfo"
 msgid "Ethiopia"
-msgstr ""
+msgstr "Ethiopie"
 
 #: countryinfo.cpp:90
 msgctxt "CountryInfo"
 msgid "Fiji"
-msgstr ""
+msgstr "Fidji"
 
 #: countryinfo.cpp:91
 msgctxt "CountryInfo"
@@ -774,27 +774,27 @@ msgstr "France"
 #: countryinfo.cpp:93
 msgctxt "CountryInfo"
 msgid "Gabon"
-msgstr ""
+msgstr "Gabon"
 
 #: countryinfo.cpp:94
 msgctxt "CountryInfo"
 msgid "Gambia"
-msgstr ""
+msgstr "Gambie"
 
 #: countryinfo.cpp:95
 msgctxt "CountryInfo"
 msgid "Georgia"
-msgstr ""
+msgstr "Georgie"
 
 #: countryinfo.cpp:96
 msgctxt "CountryInfo"
 msgid "Germany"
-msgstr ""
+msgstr "Allemagne"
 
 #: countryinfo.cpp:97
 msgctxt "CountryInfo"
 msgid "Ghana"
-msgstr ""
+msgstr "Ghana"
 
 #: countryinfo.cpp:98
 msgctxt "CountryInfo"
@@ -804,17 +804,17 @@ msgstr "Grèce"
 #: countryinfo.cpp:99
 msgctxt "CountryInfo"
 msgid "Grenada"
-msgstr ""
+msgstr "Grenade"
 
 #: countryinfo.cpp:100
 msgctxt "CountryInfo"
 msgid "Guatemala"
-msgstr ""
+msgstr "Guatemala"
 
 #: countryinfo.cpp:101
 msgctxt "CountryInfo"
 msgid "Guam"
-msgstr ""
+msgstr "Guam"
 
 #: countryinfo.cpp:102
 msgctxt "CountryInfo"
@@ -824,42 +824,42 @@ msgstr "Guinée"
 #: countryinfo.cpp:103
 msgctxt "CountryInfo"
 msgid "Guinea-Bissau"
-msgstr ""
+msgstr "Guinée-Bissau"
 
 #: countryinfo.cpp:104
 msgctxt "CountryInfo"
 msgid "Guyana"
-msgstr ""
+msgstr "Guyane"
 
 #: countryinfo.cpp:105
 msgctxt "CountryInfo"
 msgid "Hong Kong"
-msgstr ""
+msgstr "Hong Kong"
 
 #: countryinfo.cpp:106
 msgctxt "CountryInfo"
 msgid "Haiti"
-msgstr ""
+msgstr "Haïti"
 
 #: countryinfo.cpp:107
 msgctxt "CountryInfo"
 msgid "Honduras"
-msgstr ""
+msgstr "Honduras"
 
 #: countryinfo.cpp:108
 msgctxt "CountryInfo"
 msgid "Hungary"
-msgstr ""
+msgstr "Hongrie"
 
 #: countryinfo.cpp:109
 msgctxt "CountryInfo"
 msgid "Iceland"
-msgstr ""
+msgstr "Islande"
 
 #: countryinfo.cpp:110
 msgctxt "CountryInfo"
 msgid "India"
-msgstr ""
+msgstr "Inde"
 
 #: countryinfo.cpp:111
 msgctxt "CountryInfo"
@@ -869,42 +869,42 @@ msgstr "Indonésie"
 #: countryinfo.cpp:112
 msgctxt "CountryInfo"
 msgid "Iran"
-msgstr ""
+msgstr "Iran"
 
 #: countryinfo.cpp:113
 msgctxt "CountryInfo"
 msgid "Iraq"
-msgstr ""
+msgstr "Irak"
 
 #: countryinfo.cpp:114
 msgctxt "CountryInfo"
 msgid "Ireland"
-msgstr ""
+msgstr "Irelande"
 
 #: countryinfo.cpp:115
 msgctxt "CountryInfo"
 msgid "Israel"
-msgstr ""
+msgstr "Israël"
 
 #: countryinfo.cpp:116
 msgctxt "CountryInfo"
 msgid "Italy"
-msgstr ""
+msgstr "Italie"
 
 #: countryinfo.cpp:117
 msgctxt "CountryInfo"
 msgid "Jamaica"
-msgstr ""
+msgstr "Jamaïque"
 
 #: countryinfo.cpp:118
 msgctxt "CountryInfo"
 msgid "Japan"
-msgstr ""
+msgstr "Japon"
 
 #: countryinfo.cpp:119
 msgctxt "CountryInfo"
 msgid "Jordan"
-msgstr ""
+msgstr "Jordanie"
 
 #: countryinfo.cpp:120
 msgctxt "CountryInfo"
@@ -919,22 +919,22 @@ msgstr ""
 #: countryinfo.cpp:122
 msgctxt "CountryInfo"
 msgid "Kiribati"
-msgstr ""
+msgstr "Kiribati"
 
 #: countryinfo.cpp:123
 msgctxt "CountryInfo"
 msgid "Korea, North"
-msgstr ""
+msgstr "Corée du Nord"
 
 #: countryinfo.cpp:124
 msgctxt "CountryInfo"
 msgid "Korea, South"
-msgstr ""
+msgstr "Corée du Sud"
 
 #: countryinfo.cpp:125
 msgctxt "CountryInfo"
 msgid "Kuwait"
-msgstr ""
+msgstr "Koweït"
 
 #: countryinfo.cpp:126
 msgctxt "CountryInfo"
@@ -944,7 +944,7 @@ msgstr ""
 #: countryinfo.cpp:127
 msgctxt "CountryInfo"
 msgid "Laos"
-msgstr ""
+msgstr "Laos"
 
 #: countryinfo.cpp:128
 msgctxt "CountryInfo"
@@ -954,22 +954,22 @@ msgstr ""
 #: countryinfo.cpp:129
 msgctxt "CountryInfo"
 msgid "Lebanon"
-msgstr ""
+msgstr "Liban"
 
 #: countryinfo.cpp:130
 msgctxt "CountryInfo"
 msgid "Lesotho"
-msgstr ""
+msgstr "Lesotho"
 
 #: countryinfo.cpp:131
 msgctxt "CountryInfo"
 msgid "Liberia"
-msgstr ""
+msgstr "Libéria"
 
 #: countryinfo.cpp:132
 msgctxt "CountryInfo"
 msgid "Libya"
-msgstr ""
+msgstr "Libye"
 
 #: countryinfo.cpp:133
 msgctxt "CountryInfo"
