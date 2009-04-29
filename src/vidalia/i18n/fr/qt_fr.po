@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-08-20 03:25+0000\n"
-"PO-Revision-Date: 2008-12-15 21:00+0000\n"
+"PO-Revision-Date: 2009-04-29 20:06+0000\n"
 "Last-Translator: Mfr <mfr@misericordia.be>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -193,16 +193,15 @@ msgid "Open"
 msgstr "Ouvrir"
 
 #: qfiledialog.cpp:1670
-#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
 "%1 already exists.\n"
 "Do you want to replace it?"
-msgstr "Le fichier %1 existe déjà.\n"
-"Voulez-vous l'écraser ?"
+msgstr ""
+"%1 existe déjà.\n"
+"Voulez-vous le remplacer ?"
 
 #: qfiledialog.cpp:1690
-#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
 "%1\n"
@@ -264,22 +263,24 @@ msgid "Directory:"
 msgstr "Dossier :"
 
 #: qfiledialog.cpp:2476
-#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
 "%1\n"
 "Directory not found.\n"
 "Please verify the correct directory name was given."
 msgstr ""
-"%1Dossier introuvable.Veuillez vérifier que le nom du dossier est correct."
+"%1\n"
+"Dossier introuvable.\n"
+"Veuillez vérifier que le nom du dossier est correct."
 
 #: qfiledialog.cpp:2281
-#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
 "'%1' is write protected.\n"
 "Do you want to delete it anyway?"
-msgstr "'%1' est protégé en écriture.Voulez-vous quand même le supprimer ?"
+msgstr ""
+"'%1' est protégé en écriture.\n"
+"Voulez-vous quand même le supprimer ?"
 
 #: qfiledialog.cpp:2286
 msgctxt "QFileDialog"
