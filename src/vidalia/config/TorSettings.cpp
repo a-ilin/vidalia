@@ -16,6 +16,7 @@
 
 #include "TorSettings.h"
 #include "Vidalia.h"
+#include "TorProcess.h"
 #include "crypto.h"
 #if defined(Q_OS_WIN32)
 #include "win32.h"
@@ -357,7 +358,7 @@ QString
 TorSettings::hashPassword(const QString &password)
 {
   TorSettings settings;
-  QProcess tor;
+  TorProcess tor;
   QString dataDirectory, line;
   QStringList args;
 
