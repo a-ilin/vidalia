@@ -12,25 +12,25 @@
 
 
 ## Search for lrelease
-find_program(QT_LRELEASE_EXECUTABLE NAMES lrelease-qt4 lrelease
+find_program(VIDALIA_LRELEASE_EXECUTABLE NAMES lrelease-qt4 lrelease
   PATHS ${QT_BINARY_DIR} NO_DEFAULT_PATH
 )
-if (NOT QT_LRELEASE_EXECUTABLE)
+if (NOT VIDALIA_LRELEASE_EXECUTABLE)
   message(FATAL_ERROR
     "Vidalia could not find lrelease. Please make sure Qt >= ${QT_MIN_VERSION} is installed."
   )
-endif(NOT QT_LRELEASE_EXECUTABLE)
+endif(NOT VIDALIA_LRELEASE_EXECUTABLE)
 
 
 ## Search for lupdate
-find_program(QT_LUPDATE_EXECUTABLE NAMES lupdate-qt4 lupdate
+find_program(VIDALIA_LUPDATE_EXECUTABLE NAMES lupdate-qt4 lupdate
   PATHS ${QT_BINARY_DIR} NO_DEFAULT_PATH
 )
-if (NOT QT_LUPDATE_EXECUTABLE)
+if (NOT VIDALIA_LUPDATE_EXECUTABLE)
   message(FATAL_ERROR
     "Vidalia could not find lupdate. Please make sure Qt >= ${QT_MIN_VERSION} is installed."
   )
-endif(NOT QT_LUPDATE_EXECUTABLE)
+endif(NOT VIDALIA_LUPDATE_EXECUTABLE)
 
 
 ## We need windres.exe when building on Win32 to compile the .rc file
@@ -63,7 +63,7 @@ macro(VIDALIA_UPDATE_PO TARGET)
       COMMAND ${VIDALIA_PO2TS_EXECUTABLE}
       ARGS -q -i ${po} -o ${ts}
       # Update the .ts files
-      COMMAND ${QT_LUPDATE_EXECUTABLE}
+      COMMAND ${VIDALIA_LUPDATE_EXECUTABLE}
       ARGS -silent -noobsolete ${translate_SRCS} -ts ${ts}
       # Convert the updated .ts files back to .po
       COMMAND ${VIDALIA_TS2PO_EXECUTABLE}
@@ -90,7 +90,7 @@ macro(VIDALIA_ADD_PO outfiles)
     add_custom_command(OUTPUT ${qm}
       COMMAND ${VIDALIA_PO2TS_EXECUTABLE}
       ARGS -q -i ${po} -o ${ts}
-      COMMAND ${QT_LRELEASE_EXECUTABLE}
+      COMMAND ${VIDALIA_LRELEASE_EXECUTABLE}
       ARGS -compress -silent -nounfinished ${ts} -qm ${qm}
       MAIN_DEPENDENCY ${po}
       DEPENDS ${VIDALIA_PO2TS_EXECUTABLE}
