@@ -8,6 +8,9 @@
     for consistency with our 'make dist-osx' target.
   o Fix a couple bugs in the WiX-based Windows installer related to building
     a Marble-enabled Vidalia installer.
+  o Write the list of source files containing translatable strings to a
+    .pro file and supply just the .pro file as an argument to lupdate, rather
+    than supplying all of the source file names themselves.
   o Raise the minimum required Qt version from 4.2 to 4.3.
 
 
