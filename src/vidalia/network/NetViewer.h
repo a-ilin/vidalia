@@ -17,6 +17,7 @@
 #ifndef _NETVIEWER_H
 #define _NETVIEWER_H
 
+#include "config.h"
 #include "ui_NetViewer.h"
 #include "VidaliaWindow.h"
 #include "GeoIpResolver.h"
