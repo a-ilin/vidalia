@@ -59,7 +59,7 @@ is_process_running(qint64 pid)
 
 /** Writes the given file to disk containing the current process's PID. */
 bool
-write_pidfile(QString pidFileName, QString *errmsg)
+write_pidfile(const QString &pidFileName, QString *errmsg)
 {
   /* Make sure the directory exists */
   QDir pidFileDir = QFileInfo(pidFileName).absoluteDir();
@@ -82,7 +82,7 @@ write_pidfile(QString pidFileName, QString *errmsg)
 /** Reads the given pidfile and returns the value contained in it. If the file
  * does not exist 0 is returned. Returns -1 if an error occurs. */
 qint64 
-read_pidfile(QString pidFileName, QString *errmsg)
+read_pidfile(const QString &pidFileName, QString *errmsg)
 {
   qint64 pid;
   

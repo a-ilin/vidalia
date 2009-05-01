@@ -38,11 +38,11 @@ qint64 get_pid();
 bool is_process_running(qint64 pid);
 
 /** Writes the given file to disk containing the current process's PID. */
-bool write_pidfile(QString pidfile, QString *errmsg = 0);
+bool write_pidfile(const QString &pidfile, QString *errmsg = 0);
 
 /** Reads the giiven pidfile and returns the value in it. If the file does not
  * exist, -1 is returned. */
-qint64 read_pidfile(QString pidfile, QString *errmsg = 0);
+qint64 read_pidfile(const QString &pidfile, QString *errmsg = 0);
 
 /** Return a list of all currently running PIDs and their associated process
  * names. */
