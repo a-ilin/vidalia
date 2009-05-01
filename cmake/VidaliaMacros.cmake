@@ -47,10 +47,11 @@ endif(WIN32)
 ## supplied .po files 
 macro(VIDALIA_UPDATE_PO TARGET)
   ## Gather a list of all the files that might contain translated strings
-  FILE(GLOB_RECURSE translate_SRCS ${Vidalia_SOURCE_DIR}/*.cpp)
-  FILE(GLOB_RECURSE translate_HDRS ${Vidalia_SOURCE_DIR}/*.h)
-  FILE(GLOB_RECURSE translate_UIS  ${Vidalia_SOURCE_DIR}/*.ui)
+  file(GLOB_RECURSE translate_SRCS ${Vidalia_SOURCE_DIR}/*.cpp)
+  file(GLOB_RECURSE translate_HDRS ${Vidalia_SOURCE_DIR}/*.h)
+  file(GLOB_RECURSE translate_UIS  ${Vidalia_SOURCE_DIR}/*.ui)
   set(translate_SRCS ${translate_SRCS} ${translate_HDRS} ${translate_UIS})
+  string(REPLACE ";" " " translate_SRCS "${translate_SRCS}")
  
   foreach (it ${ARGN})
     get_filename_component(po ${it} ABSOLUTE)
@@ -58,13 +59,16 @@ macro(VIDALIA_UPDATE_PO TARGET)
     get_filename_component(outfile ${it} NAME_WE)
 
     set(ts ${CMAKE_CURRENT_BINARY_DIR}/${outfile}.ts)
+    set(pro ${CMAKE_CURRENT_BINARY_DIR}/${outfile}.pro)
+    file(WRITE ${pro} "SOURCES = ${translate_SRCS}")
+
     add_custom_command(TARGET ${TARGET}
       # Convert the current .po files to .ts
       COMMAND ${VIDALIA_PO2TS_EXECUTABLE}
       ARGS -q -i ${po} -o ${ts}
       # Update the .ts files
       COMMAND ${VIDALIA_LUPDATE_EXECUTABLE}
-      ARGS -silent -noobsolete ${translate_SRCS} -ts ${ts}
+      ARGS -silent -noobsolete ${pro} -ts ${ts}
       # Convert the updated .ts files back to .po
       COMMAND ${VIDALIA_TS2PO_EXECUTABLE}
       ARGS -q -i ${ts} -o ${po}
