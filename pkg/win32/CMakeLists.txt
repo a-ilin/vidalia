@@ -118,7 +118,7 @@ vidalia_add_nsh(vidalia_NSH
 #vidalia_add_nsh(vidalia_NSH
 #  zh_TW/vidalia_ZH_TW.po  TRADCHINESE   GB18030)
 
-add_custom_target(i18n-win32-installer ALL DEPENDS ${vidalia_NSH})
+add_custom_target(i18n-win32-installer DEPENDS ${vidalia_NSH})
 
 ## Convert the .po files to WiX .wxl files at build time
 vidalia_add_wxl(vidalia_WXL
@@ -155,8 +155,6 @@ vidalia_add_wxl(vidalia_WXL
   zh_CN/vidalia_zh_CN.po  zh-CN   936)
 vidalia_add_wxl(vidalia_WXL
   zh_TW/vidalia_ZH_TW.po  zh-TW   950)
-  
-add_custom_target(wix-i18n-localizations ALL DEPENDS ${vidalia_WXL})
 
 add_custom_target(dist-win32
   COMMAND ${WIX_CANDLE_EXECUTABLE} 
@@ -175,6 +173,8 @@ add_custom_target(dist-win32
   
   DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/vidalia.wxs 
           ${CMAKE_CURRENT_SOURCE_DIR}/WixUI_Custom.wxs
+          ${vidalia_WXL}
+
   COMMENT "Building vidalia-${VERSION}.msi"
 )
 
