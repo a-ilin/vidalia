@@ -38,6 +38,7 @@ RouterDescriptorView::RouterDescriptorView(QWidget *parent)
    * tweaking of the selected text before putting it on the clipboard. */
   QShortcut *shortcut = new QShortcut(QKeySequence::Copy, this,
                                       SLOT(copySelectedText()));
+  Q_UNUSED(shortcut);
 }
 
 /** Displays a context menu for the user when they right-click on the
