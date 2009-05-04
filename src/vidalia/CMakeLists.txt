@@ -343,30 +343,33 @@ if (APPLE)
   set(CMAKE_INSTALL_PREFIX ${CMAKE_INSTALL_PREFIX}/)
   add_executable(${vidalia_BIN} MACOSX_BUNDLE ${vidalia_SRCS})
 
+  ## Get the location of the app bundle for the current configuration
+  get_target_property(VIDALIA_EXECUTABLE ${vidalia_BIN} LOCATION)
+  get_filename_component(MACOSX_BUNDLE_DIRECTORY ${VIDALIA_EXECUTABLE} PATH)
+  get_filename_component(MACOSX_BUNDLE_DIRECTORY "${MACOSX_BUNDLE_DIRECTORY}/../../" ABSOLUTE)
+
   ## Include the bundle resource files
   add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
-    COMMAND mkdir 
-      ARGS -p ${CMAKE_CURRENT_BINARY_DIR}/Vidalia.app/Contents/Resources
+    COMMAND ${CMAKE_COMMAND}
+      ARGS -E make_directory ${MACOSX_BUNDLE_DIRECTORY}/Contents/Resources
     COMMAND cp
       ARGS ${CMAKE_CURRENT_SOURCE_DIR}/res/icons/*.icns 
-           ${CMAKE_CURRENT_BINARY_DIR}/Vidalia.app/Contents/Resources/
+           ${MACOSX_BUNDLE_DIRECTORY}/Contents/Resources/
   )
 
   if (USE_MARBLE)
     ## Copy the Marble data into the bundle
-    set(outdir ${CMAKE_CURRENT_BINARY_DIR}/Vidalia.app/Contents/MacOS)
     foreach(it ${marble_DATA})
       get_filename_component(outdir  ${it} PATH)
       get_filename_component(outfile ${it} NAME)
-      set(outdir Vidalia.app/Contents/Resources/data/${outdir})
+      set(outdir ${MACOSX_BUNDLE_DIRECTORY}/Contents/Resources/data/${outdir})
 
       add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
         COMMAND ${CMAKE_COMMAND}
-          ARGS -E make_directory ${CMAKE_CURRENT_BINARY_DIR}/${outdir}
+          ARGS -E make_directory ${outdir}
         COMMAND ${CMAKE_COMMAND}
           ARGS -E copy_if_different 
-                ${MARBLE_DATA_DIR}/${it} 
-                ${CMAKE_CURRENT_BINARY_DIR}/${outdir}/${outfile}
+                ${MARBLE_DATA_DIR}/${it} ${outdir}/${outfile}
       )
     endforeach(it)
 
@@ -375,13 +378,13 @@ if (APPLE)
       add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
         COMMAND ${CMAKE_COMMAND}
           ARGS -E make_directory 
-           ${CMAKE_CURRENT_BINARY_DIR}/Vidalia.app/Contents/Resources/plugins
+               ${MACOSX_BUNDLE_DIRECTORY}/Contents/Resources/plugins
       )
       foreach(it ${MARBLE_PLUGINS})
         add_custom_command(TARGET ${vidalia_BIN} POST_BUILD
           COMMAND ${CMAKE_COMMAND}
             ARGS -E copy_if_different ${it}
-             ${CMAKE_CURRENT_BINARY_DIR}/Vidalia.app/Contents/Resources/plugins/
+             ${MACOSX_BUNDLE_DIRECTORY}/Contents/Resources/plugins/
         )
       endforeach(it)
     endif(MARBLE_PLUGINS)
