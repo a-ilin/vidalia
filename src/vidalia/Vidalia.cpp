@@ -503,6 +503,9 @@ Vidalia::loadDefaultCaCertificates() const
     vWarn("Failed to add the Entrust Secure Server CA certificate to the "
           "default CA certificate database.");
 
+  if (! QSslSocket::addDefaultCaCertificates(":/pki/gd-class2-root.crt"))
+    vWarn("Failed to add the GoDaddy Class 2 CA certificate to the "
+          "default CA certificate database.");
 #endif
 }
 
