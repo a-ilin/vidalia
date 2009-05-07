@@ -1,34 +1,47 @@
+##
+##  $Id$
+## 
+##  This file is part of Vidalia, and is subject to the license terms in the
+##  LICENSE file, found in the top level directory of this distribution. If 
+##  you did not receive the LICENSE file with this file, you may obtain it
+##  from the Vidalia source package distributed by the Vidalia Project at
+##  http://www.vidalia-project.net/. No part of Vidalia, including this file,
+##  may be copied, modified, propagated, or distributed except according to
+##  the terms described in the LICENSE file.
+##
+
 #%package vidalia
 
-%define _prefix         /usr/local
-%define _mandir         %{_prefix}/share/man
+%define _prefix   /usr/local
+%define _mandir   %{_prefix}/share/man
 
-
-Name		: vidalia
-Version		: 0.1.12
-Release		: RH5_3
+Name          : vidalia
+Version       : @VERSION@
+Release       : RH5_3
 #
-License		: GPL
-Summary		: The Tor-GUI for Linux
-Group		: Applications/Internet
+License       : GPL
+Summary       : A Tor GUI for Linux
+Group         : Applications/Internet
 
-URL		: http://www.vidalia-project.net
-Vendor		: Matt Edman, Justin Hipple
-Packager	: Oliver Niesner <digi_news@gmx.de> 
+URL           : https://www.torproject.org/vidalia/
+Vendor        : Matt Edman, Justin Hipple
+Packager      : Oliver Niesner <digi_news@gmx.de> 
 
-Source0		: %{name}-%{version}.tar.gz
+Source0       : %{name}-%{version}.tar.gz
 
-#AutoReq     	: No
-#AutoProv	: No
+#AutoReq      : No
+#AutoProv     : No
 
-Requires        : tor >= 0.1.2.18
-BuildRequires	: qt4 >= 4.2
-BuildRequires	: cmake >= 2.4
-BuildRoot	: /var/tmp/%{name}-buildroot
+Requires      : tor >= 0.2.0.34
+BuildRequires : qt4 >= 4.2
+# This fails on some systems because they lack a cmake rpm, such as
+# Redhat 5 and earlier
+BuildRequires : cmake >= 2.4
+BuildRoot     : /var/tmp/%{name}-buildroot
 
 %description
 
-Vidalia is an easy to use Tor-Controller GUI
+Vidalia is an easy-to-use Tor controller GUI
 
 %prep
 rm -rf %{buildroot}
@@ -43,14 +56,10 @@ rm -rf %{buildroot}
 # -q      : Run quiety with minimum output
 # -T      : Disable the automatic unpacking of the archives.
 #######################################################################
-
-
-
 %setup
 %build  
 
 cmake -DQT_QMAKE_EXECUTABLE=/usr/lib/qt4/bin/qmake . && make
-
 
 
 #########################################################
@@ -70,7 +79,6 @@ cmake -DQT_QMAKE_EXECUTABLE=/usr/lib/qt4/bin/qmake . && make
 #########################################################
 
 %install
-
 
 make install DESTDIR=%{buildroot}
 #mkdir -p %{_prefix}/share/man/man1/
@@ -93,9 +101,6 @@ rm -rf %{buildroot}
 %{_prefix}/share/icons/hicolor/64x64/apps/vidalia.png
 
 
-
-
-
 #####################################################
 # defattr sets the default attributes for all files
 #####################################################
@@ -105,19 +110,20 @@ rm -rf %{buildroot}
 * Wed May 06 2009 Oliver Niesner <digi_news@gmx.de> 0.1.12
 - fix rebuild errors due wrong version usage of qmake
 - added additional icons
- 
+
+* Sat Apr 11 2009 Andrew Lewman <andrew@torproject.org> 0.1.6-2
+- fix required Tor version
+- start integration into "package.sh"
+
 * Mon Mar 23 2009 Oliver Niesner <digi_news@gmx.de> 0.1.12
 - bump to 0.1.12
 
 * Mon Nov 3 2008 Oliver Niesner <digi_news@gmx.de> 0.1.6-1
 - bump to 0.1.10
 
-* Tue Jul 30 2008 Oliver Niesner <digi_news@gmx.de> 0.1.6-1
-- bump to 0.1.6
-- fix man path
-
-* Tue May 27 2008 Oliver Niesner <digi_news@gmx.de> 0.1.3-1
-- bump to 0.1.3
+* Wed Jul 30 2008  Oliver Niesner <digi_news@gmx.de> 0.1.6-1
+- bump to 0.1.6 
+- fix man path 
 
 * Mon Mar 31 2008 Oliver Niesner <digi_news@gmx.de> 0.1.2-1
 - bump to 0.1.2
