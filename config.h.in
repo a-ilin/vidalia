@@ -16,10 +16,6 @@
 
 #define VIDALIA_VERSION    "@VERSION@"
 
-#cmakedefine HAVE_QSSLSOCKET_H
-
-#cmakedefine USE_QSSLSOCKET
-
 #cmakedefine HAVE_LIMITS_H
 
 #cmakedefine HAVE_SYS_LIMITS_H

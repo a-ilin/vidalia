@@ -33,9 +33,7 @@
 #include <QShortcut>
 #include <QTranslator>
 #include <QLibraryInfo>
-#ifdef USE_QSSLSOCKET
 #include <QSslSocket>
-#endif
 
 #ifdef Q_OS_MACX
 #include <Carbon/Carbon.h>
@@ -492,7 +490,6 @@ Vidalia::copyDefaultSettingsFile() const
 void
 Vidalia::loadDefaultCaCertificates() const
 {
-#ifdef USE_QSSLSOCKET
   QSslSocket::setDefaultCaCertificates(QList<QSslCertificate>());
 
   if (! QSslSocket::addDefaultCaCertificates(":/pki/cacert_root.crt"))
@@ -506,6 +503,5 @@ Vidalia::loadDefaultCaCertificates() const
   if (! QSslSocket::addDefaultCaCertificates(":/pki/gd-class2-root.crt"))
     vWarn("Failed to add the GoDaddy Class 2 CA certificate to the "
           "default CA certificate database.");
-#endif
 }
 

@@ -21,18 +21,14 @@ set(common_SRCS
   procutil.cpp
   stringutil.cpp
   TorSocket.cpp
+  TorSslSocket.cpp
   ZlibByteArray.cpp
 )
 qt4_wrap_cpp(common_SRCS 
   CountryInfo.h
   TorSocket.h
+  TorSslSocket.h
 )
-
-
-if(USE_QSSLSOCKET)
-  set(common_SRCS ${common_SRCS} TorSslSocket.cpp)
-  qt4_wrap_cpp(common_SRCS TorSslSocket.h)
-endif(USE_QSSLSOCKET)
 
 if(WIN32)
   set(common_SRCS ${common_SRCS}
@@ -44,7 +40,7 @@ endif(WIN32)
 add_library(common STATIC ${common_SRCS})
 target_link_libraries(common ${QT_LIBRARIES})
 
-if(USE_QSSLSOCKET AND OPENSSL_LIBRARIES)
+if(OPENSSL_LIBRARIES)
   target_link_libraries(common ${OPENSSL_LIBRARIES})
-endif(USE_QSSLSOCKET AND OPENSSL_LIBRARIES)
+endif(OPENSSL_LIBRARIES)
 
