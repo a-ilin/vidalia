@@ -109,21 +109,26 @@ $Id$
     {
     };
 
+
+  Doxygen-style comments should be used above each method declaration in
+  the class.
+
 2.1.3. Method Names
   
   Method names should begin with a lower case letter. If a method name is a
   combination of distinct words, each word should be capitalized. Methods
-  should have descriptions of their purpose in Doxygen tags. Example:
+  should have descriptions of their purpose. Example:
 
-    /** Description of what someMethod does.
-     * \param foo The number of foo.
-     * \return the return value of someMethod.
-     */
+    /* Description of what someMethod does. */
     int 
     MyClass::someMethod(int foo)
     {
     }
-    
+  
+  Doxygen tags should be used for comments above the method definition
+  ONLY if the method's declaration in the class header file does not
+  already have a Doxygen-style comments.
+
   Note that the method's return type is declared on a line by itself. Private
   member function should NOT have an underscore prepended to their name.
 
@@ -270,8 +275,11 @@ $Id$
 
 2.5. Parentheses
 
+  There should NOT be a space between an opening parenthesis and the
+  first argument, nor between the end of the last argument and a closing
+  parenthesis.
   
-  int value = someObject.someMethod(foo, bar, baz);
+    int value = someObject.someMethod(foo, bar, baz);
 
 2.6. Method Arguments
 
