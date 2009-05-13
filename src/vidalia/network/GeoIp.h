@@ -17,6 +17,7 @@
 #ifndef _GEOIP_H
 #define _GEOIP_H
 
+#include <QHash>
 #include <QString>
 #include <QHostAddress>
 
@@ -24,48 +25,71 @@
 class GeoIp
 {
 public:
-  /** Default constructor */
-  GeoIp() : _latitude(0xFFFF), _longitude(0xFFFF) {}
-  /** Constructor. */
-  GeoIp(QHostAddress ip);
+  /** Default constructor. Creates an empty GeoIp object.
+   */
+  GeoIp();
 
-  /** Constructor */
-  GeoIp(QHostAddress ip, float latitude, float longitude, 
-        QString city, QString state, QString country);
-  
-  /** Creates a GeoIp object from a string. */
-  static GeoIp fromString(QString geoip);
-  /** Builds a comma-delimited string of GeoIp fields. */
+  GeoIp(const QHostAddress &ip, float latitude, float longitude,
+        const QString &city = QString(),
+        const QString &region = QString(),
+        const QString &country = QString(),
+        const QString &countryCode = QString());
+
+  /** Returns the IP address associated with this GeoIP object.
+   */
+  QHostAddress ip() const { return _ip; }
+
+  /** Returns the latitude portion of the geographic coordinates associated
+   * with this IP address or range of IP addresses.
+   */
+  float latitude() const { return _latitude; }
+
+  /** Returns the longitude portion of the geographic coordinates associated
+   * with this IP address or range of IP addresses.
+   */
+  float longitude() const { return _longitude; }
+
+  /** Returns the name of the city associated with this IP address, if known.
+   * Otherwise, returns an empty QString.
+   */
+  QString city() const { return _city; }
+
+  /** Returns the full region name (e.g., state) in which this IP address 
+   * resides, if known. Otherwise, returns an empty QString.
+   */
+  QString region() const { return _region; }
+
+  /** Returns the full name of the country associated with this IP address
+   * or range of IP addresses, if known. Otherwise, returns an empty QString.
+   */
+  QString country() const { return _country; }
+
+  /** Returns the ISO 3166-1 alpha-2 two-letter country code of the country
+   * associated with this IP address or range of IP addresses, if known.
+   * Otherwise, returns an empty QString.
+   */
+  QString countryCode() const { return _countryCode; }
+
+  /** Returns a human-readable string of city, region(state), and country.
+   * Some fields may be absent if they are not known. If no fields are known,
+   * this will return an empty QString.
+   */
   QString toString() const;
 
-  /** Returns the IP address for this object. */
-  QHostAddress ip() const { return _ip; }
-  /** Returns the latitude coordinate for this IP. */
-  float latitude() const { return _latitude; }
-  /** Returns the longitude coordinate for this IP. */
-  float longitude() const { return _longitude; }
-  /** Returns the city in which this IP lives. */
-  QString city() const { return _city; }
-  /** Returns the state or district in which this IP lives. */
-  QString state() const { return _state; }
-  /** Returns the country in which this IP lives. */
-  QString country() const { return _country; }
-  /** Returns a human-readable string of city, region(state), and country. */
-  QString toLocation() const;
-
-  /** Returns true if the GeoIp object is invalid. */
-  bool isEmpty() const;
-  /** Returns true if the GeoIp object is valid, but no location information
-   * is known for the associated IP address. */
-   bool isUnknown() const;
+  /** Returns true if the GeoIp object is valid. A valid GeoIp object must
+   * have valid IP address, valid latitude and longitude coordinates and a 
+   * two-letter country code.
+   */
+  bool isValid() const;
 
 private:
   QHostAddress _ip; /**< IP address for this location. */
   float _latitude;  /**< Latitudinal coordinate for this IP's location. */
   float _longitude; /**< Longitudinal coordinate for this IP's location. */
   QString _city;    /**< City in which this IP lives. */
-  QString _state;   /**< State or district in which this IP lives. */
+  QString _region;   /**< State or district in which this IP lives. */
   QString _country; /**< Country in which this IP lives. */
+  QString _countryCode; /**< ISO-3166-1 alpha-2 country code. */
 };
 
 #endif

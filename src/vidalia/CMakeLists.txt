@@ -183,6 +183,7 @@ set(vidalia_SRCS ${vidalia_SRCS}
 )
 qt4_wrap_cpp(vidalia_SRCS
   network/CircuitListWidget.h
+  network/GeoIpCache.h
   network/GeoIpResolver.h
   network/NetViewer.h
   network/RouterDescriptorView.h

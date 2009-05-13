@@ -15,6 +15,8 @@
 */
 
 #include "GeoIpCache.h"
+#include "GeoIpCacheItem.h"
+#include "GeoIp.h"
 #include "Vidalia.h"
 
 #include "file.h"
@@ -22,27 +24,24 @@
 
 #include <QFile>
 #include <QDir>
+#include <QString>
+#include <QDateTime>
 #include <QTextStream>
-
-/* Location of Vidalia's geoip cache file. Qt docs claims that QFile will
- * translate the "/" correctly on Windows. Hopefully they didn't lie. */
-#define CACHE_FILENAME  (Vidalia::dataDirectory() + "/geoip-cache")
+#include <QHostAddress>
 
 
-/** Constructor. */
-GeoIpCache::GeoIpCache()
+GeoIpCache::GeoIpCache(QObject *parent)
+  : QObject(parent)
 {
   loadFromDisk();
 }
 
-/** Returns the location currently used for the cache file. */
 QString
-GeoIpCache::cacheFilename()
+GeoIpCache::cacheFileName() const
 {
-  return CACHE_FILENAME;
+  return (Vidalia::dataDirectory() + "/geoip-cache");
 }
 
-/** Writes the current cache to disk. */
 bool
 GeoIpCache::saveToDisk(QString *errmsg)
 {
@@ -52,21 +51,21 @@ GeoIpCache::saveToDisk(QString *errmsg)
   }
   
   /* Try to open a temporary cache file for writing */
-  QFile tmpCacheFile(CACHE_FILENAME + ".tmp");
+  QFile tmpCacheFile(cacheFileName() + ".tmp");
   if (!tmpCacheFile.open(QIODevice::WriteOnly | QIODevice::Text)) {
     return err(errmsg, tmpCacheFile.errorString());
   }
-  
+
   /* Write the cache entries to the file. */
   QTextStream cache(&tmpCacheFile);
-  foreach (GeoIpCacheItem cacheItem, _cache.values()) {
+  foreach (GeoIpCacheItem cacheItem, _cache) {
     /* Save the cache item if it's not too old. */
     if (!cacheItem.isExpired()) {
-      cache << cacheItem.toString() << endl;
+      cache << cacheItem.toCacheString() << endl;
     }
   }
-  
-  QFile cacheFile(CACHE_FILENAME);
+
+  QFile cacheFile(cacheFileName());
   /* Check if an previous cache file exists. */
   if (cacheFile.exists()) {
     /* A previous cache file exists, so try to remove it */
@@ -81,13 +80,11 @@ GeoIpCache::saveToDisk(QString *errmsg)
   return true;
 }
 
-/** Reads the cache contents in from disk. This function returns true if no
- * cache file exists, since it's possible nothing has been cached yet. */
 bool
 GeoIpCache::loadFromDisk(QString *errmsg)
 {
-  QFile cacheFile(CACHE_FILENAME);
-  
+  QFile cacheFile(cacheFileName());
+
   if (cacheFile.exists()) {
     /* Try to open the cache file */
     if (!cacheFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
@@ -97,49 +94,67 @@ GeoIpCache::loadFromDisk(QString *errmsg)
     /* Read the cached items from the cache file */
     QTextStream cache(&cacheFile);
     QString line = cache.readLine();
-    while (!line.isNull()) {
+    while (! line.isNull()) {
       /* Create a GeoIpCacheItem from the line and save it */
-      GeoIpCacheItem item = GeoIpCacheItem::fromString(line);
-      if (!item.isEmpty() && !item.isExpired()) {
-        /* Only load non-stale cache items. */
-        _cache.insert(item.ip().toIPv4Address(), item);
-      }
+      GeoIpCacheItem item = GeoIpCacheItem::fromCacheString(line);
+      if (item.isValid() && ! item.isExpired())
+        addToCache(item);
+
       line = cache.readLine();
     }
+    vInfo("Parsed %1 GeoIP entries from '%2'").arg(_cache.size())
+                                              .arg(cacheFileName());
   }
   return true;
 }
 
-/** Caches the given IP and geographic information to disk. Call saveToDisk()
- * when you want to write the cache to disk. */
 void
-GeoIpCache::cache(GeoIp geoip)
+GeoIpCache::addToCache(const GeoIp &geoip)
 {
-  /* Store the entry in our in-memory cache */
-  _cache.insert(geoip.ip().toIPv4Address(), 
-                GeoIpCacheItem(geoip,QDateTime::currentDateTime()));
+  /* Create a "range" consisting of only a single IP address. */
+  if (! contains(geoip.ip()))
+    addToCache(geoip.ip(), geoip.ip(), geoip);
 }
 
-/** Returns a GeoIp object for the given IP from cache. */
-GeoIp
-GeoIpCache::geoip(QHostAddress ip)
+void
+GeoIpCache::addToCache(const QHostAddress &from, const QHostAddress &to,
+                       const GeoIp &geoip)
 {
-  if (this->contains(ip)) {
-    return _cache.value(ip.toIPv4Address()).geoip();
-  }
+  /* New cache entries expire 30 days from the time they are first cached. */
+  QDateTime expires = QDateTime::currentDateTime().toUTC().addDays(30);
+  
+  /* Create a new GeoIpCacheItem and add it to the cache */
+  addToCache(GeoIpCacheItem(from, to, geoip, expires));
+}
+
+void
+GeoIpCache::addToCache(const GeoIpCacheItem &ci)
+{
+  if (! ci.isValid() || ci.isExpired())
+    return;
+
+  /* The key for the cache is the last IP address in the range of IP addresses
+   * covered by the GeoIpCacheItem. We do this because QMap::upperBound() and 
+   * QMap::lowerBound() return an iterator to the next item higher than the
+   * search value (an IP address) if an exact match is not found.
+   */
+  _cache.insert(ci.ipRangeEnd().toIPv4Address(), ci);
+}
+
+GeoIp
+GeoIpCache::geoIpForAddress(const QHostAddress &ip)
+{
+  GeoIpCacheMap::iterator i = _cache.upperBound(ip.toIPv4Address());
+  if (i != _cache.end() && (*i).contains(ip)) 
+    return (*i).toGeoIp(ip);
   return GeoIp();
 }
 
-/** Returns true if the given IP address is cached and the cached information
- * is not stale. */
 bool
-GeoIpCache::contains(QHostAddress ip)
+GeoIpCache::contains(const QHostAddress &ip)
 {
-  quint32 ipv4 = ip.toIPv4Address();
-  if (_cache.contains(ipv4)) {
-    GeoIpCacheItem cacheItem = _cache.value(ipv4);
-    return !cacheItem.isExpired();
-  }
-  return false;
+  GeoIpCacheMap::iterator i = _cache.upperBound(ip.toIPv4Address());
+  return (i != _cache.end() && (*i).contains(ip));
 }
+
 

@@ -15,70 +15,169 @@
 */
 
 #include "GeoIpCacheItem.h"
+#include "GeoIp.h"
 
+#include "stringutil.h"
+
+#include <QString>
+#include <QDateTime>
 #include <QStringList>
 
+#define CACHE_KEY_FROM_IP       "FROM"
+#define CACHE_KEY_TO_IP         "TO"
+#define CACHE_KEY_EXPIRES       "EXPIRES"
+#define CACHE_KEY_LATITUDE      "LAT"
+#define CACHE_KEY_LONGITUDE     "LON"
+#define CACHE_KEY_CITY          "CITY"
+#define CACHE_KEY_REGION        "REGION"
+#define CACHE_KEY_COUNTRY       "COUNTRY"
+#define CACHE_KEY_COUNTRY_CODE  "CC"
 
-/** Constructor */
-GeoIpCacheItem::GeoIpCacheItem(GeoIp geoip, QDateTime timestamp)
+
+GeoIpCacheItem::GeoIpCacheItem()
 {
-  _geoip = geoip;
-  _timestamp = timestamp;
+  _fromIp = 0;
+  _toIp = 0;
 }
 
-/** Returns true if this cache item is empty and invalid. A valid cache item
- * must have a valid GeoIp object and timestamp. */
+GeoIpCacheItem::GeoIpCacheItem(const QHostAddress &from, const QHostAddress &to,
+                               const GeoIp &geoip, const QDateTime &expires)
+{
+  _fromIp = from.toIPv4Address();
+  _toIp = to.toIPv4Address();
+  _expires = expires;
+
+  _fields.insert(CACHE_KEY_LATITUDE, geoip.latitude());
+  _fields.insert(CACHE_KEY_LONGITUDE, geoip.longitude());
+  if (! geoip.city().isEmpty())
+    _fields.insert(CACHE_KEY_CITY, geoip.city());
+  if (! geoip.region().isEmpty())
+    _fields.insert(CACHE_KEY_REGION, geoip.region());
+  if (! geoip.country().isEmpty())
+    _fields.insert(CACHE_KEY_COUNTRY, geoip.country());
+  if (! geoip.countryCode().isEmpty())
+    _fields.insert(CACHE_KEY_COUNTRY_CODE, geoip.countryCode());
+}
+
+QHostAddress
+GeoIpCacheItem::ipRangeStart() const
+{
+  return QHostAddress(_fromIp);
+}
+
+QHostAddress
+GeoIpCacheItem::ipRangeEnd() const
+{
+  return QHostAddress(_toIp);
+}
+
 bool
-GeoIpCacheItem::isEmpty() const
+GeoIpCacheItem::contains(const QHostAddress &ip) const
 {
-  return (_geoip.isEmpty() || _timestamp.isNull());
+  quint32 ipv4 = ip.toIPv4Address();
+
+  return (ipv4 >= _fromIp && ipv4 <= _toIp);
 }
 
-/** Returns a string representing the contents of this cache item, suitable
- * for writing to disk. The format is as in the following example:
- *                     <Geo IP Data>:<Timestamp>
- */
-QString
-GeoIpCacheItem::toString() const
+bool
+GeoIpCacheItem::isValid() const
 {
-  return _geoip.toString() + ":" + QString::number(_timestamp.toTime_t());
+  return (_expires.isValid()
+            && ! QHostAddress(_fromIp).isNull()
+            && ! QHostAddress(_toIp).isNull()
+            && _fromIp <= _toIp
+            && _fields.contains(CACHE_KEY_LATITUDE)
+            && _fields.contains(CACHE_KEY_LONGITUDE));
 }
 
-/** Returns a GeoIpCacheItem from a string as read from the cache that was
- * written to disk. The format is:
- *                     <Geo IP Data>[:<Timestamp>]
- *
- * If no value for Timestamp is given, the current date and time will be used.
- * If the string cannot be parsed for valid cached GeoIP data, then an empty
- * GeoIpCacheItem object is returned. The calling method should call isEmpty()
- * on the returned GeoIpCacheItem object to ensure it got a valid object.
- */
-GeoIpCacheItem
-GeoIpCacheItem::fromString(QString cacheString)
-{
-  QDateTime timestamp;
-  QStringList cacheData = cacheString.split(":");
-
-  if (cacheData.size() >= 1) {
-    GeoIp geoip = GeoIp::fromString(cacheData.at(0));
-    if (cacheData.size() >= 2)
-      timestamp.setTime_t(cacheData.at(1).toUInt());
-    else
-      timestamp = QDateTime::currentDateTime();
-    return GeoIpCacheItem(geoip, timestamp);
-  }
-  return GeoIpCacheItem();
-}
-
-/** Returns true if the cache item is too old to be considered valid. Normal
- * cached responses are valid for one month. Cached UNKNOWN responses are
- * considered valid for one week. */
 bool
 GeoIpCacheItem::isExpired() const
 {
-  if (_geoip.isUnknown()) {
-    return (_timestamp.addDays(7) < QDateTime::currentDateTime());
+  return (_expires < QDateTime::currentDateTime().toUTC());
+}
+
+GeoIp
+GeoIpCacheItem::toGeoIp(const QHostAddress &ip) const
+{
+  if (this->contains(ip))
+    return GeoIp(ip,
+                 _fields.value(CACHE_KEY_LATITUDE).toDouble(),
+                 _fields.value(CACHE_KEY_LONGITUDE).toDouble(),
+                 _fields.value(CACHE_KEY_CITY).toString(),
+                 _fields.value(CACHE_KEY_REGION).toString(),
+                 _fields.value(CACHE_KEY_COUNTRY).toString(),
+                 _fields.value(CACHE_KEY_COUNTRY_CODE).toString());
+  return GeoIp();
+}
+
+QString
+GeoIpCacheItem::toCacheString() const
+{
+  QStringList keyvals;
+
+  keyvals << QString(CACHE_KEY_FROM_IP"=%1").arg(QHostAddress(_fromIp).toString());
+  keyvals << QString(CACHE_KEY_TO_IP"=%1").arg(QHostAddress(_toIp).toString());
+  keyvals << QString(CACHE_KEY_EXPIRES"=\"%1\"").arg(_expires.toString(Qt::ISODate));
+
+  foreach (QString key, _fields.keys()) {
+    QString value = _fields.value(key).toString();
+    if (value.contains(" ")) {
+      value.replace("\\", "\\\\");
+      value.replace("\"", "\\\"");
+      value = "\"" + value + "\"";
+    }
+    keyvals << key + "=" + value;
   }
-  return (_timestamp.addMonths(1) < QDateTime::currentDateTime()); 
+  return keyvals.join(" ");
+}
+
+GeoIpCacheItem
+GeoIpCacheItem::fromCacheString(const QString &line)
+{
+  GeoIpCacheItem ci;
+  bool ok;
+
+  QHash<QString,QString> keyvals = string_parse_keyvals(line, &ok);
+  if (! ok)
+    return GeoIpCacheItem();
+  
+  /* Get the range of IP addresses associated with this cache entry */
+  QHostAddress fromIp(keyvals.value(CACHE_KEY_FROM_IP));
+  QHostAddress toIp(keyvals.value(CACHE_KEY_TO_IP));
+  if (fromIp.isNull() || toIp.isNull())
+    return GeoIpCacheItem();
+  ci._fromIp = fromIp.toIPv4Address();
+  ci._toIp = toIp.toIPv4Address();
+
+  /* Extract the expiration timestamp of this entry */
+  ci._expires = QDateTime::fromString(keyvals.value(CACHE_KEY_EXPIRES),
+                                   Qt::ISODate);
+  if (! ci._expires.isValid())
+    ci._expires = QDateTime::currentDateTime().toUTC().addDays(30);
+  
+  
+  /* Make sure we have valid geographic coordinates */
+  float latitude = keyvals.value(CACHE_KEY_LATITUDE).toFloat(&ok);
+  if (! ok)
+    return GeoIpCacheItem();
+  ci._fields.insert(CACHE_KEY_LATITUDE, latitude);
+
+  float longitude = keyvals.value(CACHE_KEY_LONGITUDE).toFloat(&ok);
+  if (! ok)
+    return GeoIpCacheItem();
+  ci._fields.insert(CACHE_KEY_LONGITUDE, longitude);
+  
+  /* Each of these fields is optional */
+  if (keyvals.contains(CACHE_KEY_CITY))
+    ci._fields.insert(CACHE_KEY_CITY, keyvals.value(CACHE_KEY_CITY));
+  if (keyvals.contains(CACHE_KEY_REGION))
+    ci._fields.insert(CACHE_KEY_REGION, keyvals.value(CACHE_KEY_REGION));
+  if (keyvals.contains(CACHE_KEY_COUNTRY))
+    ci._fields.insert(CACHE_KEY_COUNTRY, keyvals.value(CACHE_KEY_COUNTRY));
+  if (keyvals.contains(CACHE_KEY_COUNTRY_CODE))
+    ci._fields.insert(CACHE_KEY_COUNTRY_CODE,
+                      keyvals.value(CACHE_KEY_COUNTRY_CODE));
+
+  return ci;
 }
 

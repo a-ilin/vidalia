@@ -19,9 +19,10 @@
 
 #include <QList>
 #include <QString>
-#include <QByteArray>
-#include <QHostAddress>
 #include <QHttpRequestHeader>
+
+class QHostAddress;
+class QByteArray;
 
 
 class GeoIpRequest

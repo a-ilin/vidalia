@@ -17,11 +17,13 @@
 #ifndef _GEOIPRESPONSE_H
 #define _GEOIPRESPONSE_H
 
-#include <GeoIp.h>
-
 #include <QList>
 #include <QByteArray>
 #include <QHttpResponseHeader>
+
+class GeoIp;
+class QString;
+class QStringList;
 
 
 class GeoIpResponse
@@ -29,22 +31,27 @@ class GeoIpResponse
 public:
   /** Constructor. Parses the response data for an HTTP header and Geo IP
    * information.  */
-  GeoIpResponse(QByteArray response);
+  GeoIpResponse(const QByteArray &response);
 
-  /** Returns the HTTP status code for this response. */
-  int statusCode() { return _header.statusCode(); }
-  /** Returns the HTTP status message for this response. */
-  QString statusMessage() { return _header.reasonPhrase(); }
-  /** Returns the Geo IP information contained in this response. */
-  QList<GeoIp> geoIps() { return _geoips; }
+  /** Returns the HTTP status code for this response.
+   */
+  int statusCode() const;
+
+  /** Returns the HTTP status message for this response.
+   */
+  QString statusMessage() const;
+
+  /** Returns the Geo IP information contained in this response.
+   */
+  QByteArray content() const;
   
 private:
   /** Decodes a <b>chunked</b> transfer encoding. Returns the unchunked 
    * result on success, or an empty QByteArray if decoding fails. */
-  QByteArray decodeChunked(QByteArray chunked);
+  QByteArray decodeChunked(const QByteArray &chunked);
   
   QHttpResponseHeader _header; /**< HTTP response header. */
-  QList<GeoIp> _geoips;        /**< Geo IP information in this response. */
+  QByteArray _content; /**< Geo IP information in this response. */
 };
 
 #endif

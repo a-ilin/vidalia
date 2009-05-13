@@ -17,38 +17,80 @@
 #ifndef _GEOIPCACHEITEM_H
 #define _GEOIPCACHEITEM_H
 
-#include "GeoIp.h"
-
+#include <QHash>
+#include <QString>
+#include <QVariant>
 #include <QDateTime>
+
+class GeoIp;
+class QHostAddress;
 
 
 class GeoIpCacheItem
 {
 public:
-  /** Default constructor */
-  GeoIpCacheItem() {};
-  /** Constructor. */
-  GeoIpCacheItem(GeoIp geoip, QDateTime timestamp);
+  /** Default constructor
+   */
+  GeoIpCacheItem();
 
-  /** Returns the IP of this cache item. */
-  QHostAddress ip() const { return _geoip.ip(); }
-  /** Returns the cached GeoIp object. */
-  GeoIp geoip() const { return _geoip; }
-  /** Returns true if this cache item is expired. */
+  /** Constructor.
+   */
+  GeoIpCacheItem(const QHostAddress &from, const QHostAddress &to,
+                 const GeoIp &geoIp, const QDateTime &expires);
+
+  /** Returns the first IP address in the range of IP addresses associated
+   * with this GeoIpCacheItem.
+   */
+  QHostAddress ipRangeStart() const;
+
+  /** Returns the last IP address in the range of IP addresses associated
+   * with this GeoIpCacheItem.
+   */
+  QHostAddress ipRangeEnd() const;
+
+  /** Returns true if <b>ip</b> is within the range of IP addresses associated
+   * with this GeoIpCacheItem.
+   * \sa ipRangeStart()
+   * \sa ipRangeEnd()
+   */
+  bool contains(const QHostAddress &ip) const;
+
+  /** Returns true if this GeoIpCacheItem object contains valid values for
+   * all required fields.
+   */
+  bool isValid() const;
+
+  /** Returns true if the cache item is too old to be considered accurate.
+   * Cached GeoIp responses are considered valid for thirty days after they
+   * are first added to the cache.
+   */
   bool isExpired() const;
-  /** Returns true if this cache item is empty and invalid. */
-  bool isEmpty() const;
 
-  /** Returns a string representing the contents of this cache item, suitable
-   * for writing to disk. */
-  QString toString() const;
-  /** Returns a GeoIpCacheItem from a string as read from the cache that was
-   * written to disk. */
-  static GeoIpCacheItem fromString(QString cacheString);
+  /** Returns a GeoIp object for <b>ip</b>, populated with the cached
+   * geographic information stored by this GeoIpCacheObject. If <b>ip</b>
+   * is not within the range of IP addresses associated with this object,
+   * an empty GeoIp object is returned.
+   * \sa contains
+   */
+  GeoIp toGeoIp(const QHostAddress &ip) const;
+
+  /** Formats the fields contained in this GeoIpCacheItem as a string
+   * suitable for writing to a cache file.
+   */
+  QString toCacheString() const;
+  
+  /** Parses <b>cacheLine</b> and constructs a new GeoIpCacheItem object
+   * with the parsed values. The format of <b>cacheLine</b> must follow the
+   * format as produced by toCacheString().
+   * \sa toCacheString()
+   */
+  static GeoIpCacheItem fromCacheString(const QString &cacheLine);
 
 private:
-  GeoIp     _geoip;      /**< Cached GeoIp item. */
-  QDateTime _timestamp;  /**< Time this item was cached. */
+  quint32 _fromIp;
+  quint32 _toIp;
+  QDateTime _expires;  /**< Time this item was cached. */
+  QHash<QString,QVariant> _fields;
 };
 
 #endif

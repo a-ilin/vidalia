@@ -461,6 +461,7 @@ void
 NetViewer::resolved(int id, const QList<GeoIp> &geoips)
 {
   Q_UNUSED(id);
+
   QString ip;
   RouterListItem *router;
  
@@ -469,8 +470,6 @@ NetViewer::resolved(int id, const QList<GeoIp> &geoips)
     ip = geoip.ip().toString();
     QList<QString> ids = _resolveMap.values(ip);
     _resolveMap.remove(ip);
-    if (geoip.isUnknown())
-      continue; /* We don't know where this router is */
       
     /* Update their geographic location information with the results of this
      * GeoIP query. */

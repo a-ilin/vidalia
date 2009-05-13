@@ -19,33 +19,68 @@
 
 #include "GeoIpCacheItem.h"
 
-#include <QString>
-#include <QHash>
-#include <QHostAddress>
+#include <QObject>
+#include <QMap>
+
+class GeoIp;
+class QString;
+class QHostAddress;
+
+typedef QMap<quint32, GeoIpCacheItem> GeoIpCacheMap;
 
 
-class GeoIpCache
+class GeoIpCache : public QObject
 {
+  Q_OBJECT
+
 public:
   /** Default constructor. */
-  GeoIpCache();
+  GeoIpCache(QObject *parent = 0);
   
-  /** Writes the current cache to disk. */
+  /** Writes the current cache to disk. Returns true if the cache file was
+   * successfully saved to disk. Otherwise, returns false and sets
+   * <b>errmsg</b> to a string describing the error encountered, if
+   * <b>errmsg</b> is not null.
+   */
   bool saveToDisk(QString *errmsg = 0);
-  /** Reads the cache in from disk. */
+  
+  /** Reads the cache in from disk. Returns true if the cache file was
+   * successfully read. Otherwise, returns false and sets <b>errmsg</b> to
+   * a string describing the error encountered, if <b>errmsg</b> is not null.
+   */
   bool loadFromDisk(QString *errmsg = 0);
   
-  /** Returns the location currently used for the cache file. */
-  QString cacheFilename();
-  /** Caches the given IP and geographic information to disk. */
-  void cache(GeoIp geoip);
-  /** Returns a GeoIp object for the given IP from cache. */
-  GeoIp geoip(QHostAddress ip);
-  /** Returns true if the given IP address is cached. */
-  bool contains(QHostAddress ip);
-  
+  /** Returns the location currently used for the cache file.
+   */
+  QString cacheFileName() const;
+
+  /** Caches the geographic information in <b>geoip</b> associated with a
+   * single IP address.
+   */
+  void addToCache(const GeoIp &geoip);
+
+  /** Caches the geographic information in <b>geoip</b> associated with a
+   * range of IP addresses, from <b>from</b> to <b>to</b> (inclusive).
+   */
+  void addToCache(const QHostAddress &from, const QHostAddress &to,
+                  const GeoIp &geoip);
+
+  /** Returns a GeoIp object for the given <b>ip</b> from cache. If no cached
+   * information is known for <b>ip</b>, an empty GeoIp object is returned.
+   */
+  GeoIp geoIpForAddress(const QHostAddress &ip);
+
+  /** Returns true if the cache contains geographic location information for
+   * <b>ip</b>. Otherwise, returns false.
+   */
+  bool contains(const QHostAddress &ip);
+
 private:
-  QHash<quint32, GeoIpCacheItem> _cache;  /**< List of cached GeoIp objects. */  
+  /** Adds the GeoIpCacheItem <b>ci</b> to the cache. */
+  void addToCache(const GeoIpCacheItem &ci);
+
+  /**< List of cached GeoIp objects. */
+  GeoIpCacheMap _cache;  
 };
 
 #endif

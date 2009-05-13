@@ -17,6 +17,10 @@
 #include "GeoIpRequest.h"
 #include "ZlibByteArray.h"
 
+#include <QString>
+#include <QHostAddress>
+#include <QHttpRequestHeader>
+
 
 /** Creates an HTTP POST header for this request, based on the 
  * Host, Page, and content-length values. */
@@ -45,7 +49,7 @@ GeoIpRequest::createHeader() const
 void
 GeoIpRequest::setRequest(const QList<QHostAddress> &ips)
 {
-  _request = "ip=";
+  _request = "format=long&ip=";
   int ipcount = ips.size();
 
   /* Add each IP to a comma-delimited list. */

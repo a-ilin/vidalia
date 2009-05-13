@@ -93,15 +93,15 @@ RouterListItem::update(const RouterDescriptor &rd)
 void
 RouterListItem::setLocation(const GeoIp &geoip)
 {
-  QPixmap flag(":/images/flags/" + geoip.country().toLower() + ".png");
+  QPixmap flag(":/images/flags/" + geoip.countryCode().toLower() + ".png");
   if (!flag.isNull()) {
     setIcon(COUNTRY_COLUMN, QIcon(flag));
   }
-  setToolTip(COUNTRY_COLUMN, geoip.toLocation());
+  setToolTip(COUNTRY_COLUMN, geoip.toString());
   
   if (_rd)
-    _rd->setLocation(geoip.toLocation());
-  _country = geoip.country();
+    _rd->setLocation(geoip.toString());
+  _country = geoip.countryCode();
 }
 
 /** Overload the comparison operator. */

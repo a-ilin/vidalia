@@ -14,10 +14,15 @@
 ** \brief Parses a response to a previous GeoIP request
 */
 
-#include <GeoIpResponse.h>
-#include <ZlibByteArray.h>
+#include "GeoIpResponse.h"
+#include "GeoIp.h"
+#include "Vidalia.h"
 
+#include "ZlibByteArray.h"
+
+#include <QByteArray>
 #include <QStringList>
+#include <QHttpResponseHeader>
 
 /** Status code for a successful HTTP request. */
 #define STATUS_HTTP_OK                 200
@@ -27,9 +32,7 @@
 #define STATUS_TRANSFER_ENCODING_ERR   602
 
 
-/** Constructor. Parses the response data for an HTTP header and Geo IP
- * information. */
-GeoIpResponse::GeoIpResponse(QByteArray response)
+GeoIpResponse::GeoIpResponse(const QByteArray &response)
 {
   QString errmsg;
   
@@ -39,13 +42,13 @@ GeoIpResponse::GeoIpResponse(QByteArray response)
 
   /* Parse out the Geo IP information, if any was included. */
   if (headerPos > 0 && _header.statusCode() == STATUS_HTTP_OK) {
-    QByteArray content = response.mid(headerPos+4);
+    _content = response.mid(headerPos+4);
  
     if (_header.hasKey("Transfer-Encoding")) {
       QString encoding = _header.value("Transfer-Encoding");
       if (encoding == "chunked") {
-        content = decodeChunked(content);
-        if (content.isEmpty()) {
+        _content = decodeChunked(_content);
+        if (_content.isEmpty()) {
           _header.setStatusLine(STATUS_TRANSFER_ENCODING_ERR,
             QString("Failed to decode chunked response"));
           return;
@@ -72,29 +75,19 @@ GeoIpResponse::GeoIpResponse(QByteArray response)
         return;
       }
  
-      content = ZlibByteArray::uncompress(content, method, &errmsg);
-      if (content.isEmpty()) {
+      _content = ZlibByteArray::uncompress(_content, method, &errmsg);
+      if (_content.isEmpty()) {
         _header.setStatusLine(STATUS_CONTENT_ENCODING_ERR,
           QString("Content decoding using method '%1' failed: %2")
                                        .arg(encoding).arg(errmsg));
         return;
       }
     }
-
-    /* Parse the Geo IP information in each line */
-    QStringList lines = QString(content).split("\n");
-    foreach (QString line, lines) {
-      GeoIp geoip = GeoIp::fromString(line);
-      if (!geoip.isEmpty())
-        _geoips << geoip;
-    }
   }
 }
 
-/** Decodes a <b>chunked</b> transfer encoding. Returns the unchunked 
- * result on success, or an empty QByteArray if decoding fails. */
 QByteArray
-GeoIpResponse::decodeChunked(QByteArray chunked)
+GeoIpResponse::decodeChunked(const QByteArray &chunked)
 {
   QByteArray unchunked;
   QString sizeString;
@@ -122,5 +115,23 @@ GeoIpResponse::decodeChunked(QByteArray chunked)
     offset += 2; /* CRLF after each chunk */
   }
   return unchunked;
+}
+
+int
+GeoIpResponse::statusCode() const
+{
+  return _header.statusCode();
+}
+
+QString
+GeoIpResponse::statusMessage() const
+{
+  return _header.reasonPhrase();
+}
+
+QByteArray
+GeoIpResponse::content() const
+{
+  return _content;
 }
 
