@@ -91,6 +91,8 @@ RouterDescriptorView::display(QList<RouterDescriptor> rdlist)
   
   for (int r = 0; r < rdlist.size(); r++) { 
     rd = rdlist.at(r);
+    if (rd.isEmpty())
+      continue;
     
     /* Router name and status */
     html.append(p(b(rd.name()) + " (" + i(rd.status()) + ")"));
