@@ -224,6 +224,7 @@
    <addaction name="actionZoomIn" />
    <addaction name="actionZoomOut" />
    <addaction name="actionZoomToFit" />
+   <addaction name="actionZoomFullScreen" />
    <addaction name="separator" />
    <addaction name="actionHelp" />
    <addaction name="actionClose" />
@@ -331,6 +332,23 @@
    </property>
    <property name="shortcut" >
     <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="actionZoomFullScreen" >
+   <property name="icon" >
+    <iconset resource="../res/vidalia.qrc" >:/images/32x32/view-fullscreen.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Full Screen</string>
+   </property>
+   <property name="toolTip" >
+    <string>View the network map as a full screen window</string>
+   </property>
+   <property name="statusTip" >
+    <string>View the network map as a full screen window</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+F</string>
    </property>
   </action>
  </widget>

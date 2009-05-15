@@ -44,6 +44,7 @@ NetViewer::NetViewer(QWidget *parent)
 {
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
+
 #if defined(Q_WS_MAC)
   ui.actionHelp->setShortcut(QString("Ctrl+?"));
 #endif
@@ -72,8 +73,12 @@ NetViewer::NetViewer(QWidget *parent)
   _map = new TorMapWidget();
   connect(_map, SIGNAL(displayRouterInfo(QString)),
           this, SLOT(displayRouterInfo(QString)));
+  connect(ui.actionZoomFullScreen, SIGNAL(triggered()),
+          this, SLOT(toggleFullScreen()));
+  Vidalia::createShortcut("ESC", _map, this, SLOT(toggleFullScreen()));
 #else
   _map = new TorMapImageView();
+  ui.actionZoomFullScreen->setVisible(false);
 #endif
   ui.gridLayout->addWidget(_map);
 
@@ -552,5 +557,23 @@ NetViewer::zoomOut()
 #else
   _map->zoomOut();
 #endif
+}
+
+/** Called when the user clicks "Full Screen" or presses Escape on the map.
+ * Toggles the map between normal and a full screen viewing modes. */
+void
+NetViewer::toggleFullScreen()
+{
+  if (_map->isFullScreen()) {
+    /* Disabling full screen mode. Put the map back in its container. */
+    ui.gridLayout->addWidget(_map);
+    _map->setWindowState(_map->windowState() & ~Qt::WindowFullScreen);
+  } else {
+    /* Enabling full screen mode. Remove the map from the QGridLayout
+     * container and set its window state to full screen. */
+    _map->setParent(0);
+    _map->setWindowState(_map->windowState() | Qt::WindowFullScreen);
+    _map->show();
+  }
 }
 

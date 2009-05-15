@@ -89,6 +89,9 @@ private slots:
   void zoomIn();
   /** Called when the user clicks the "Zoom Out" button. */
   void zoomOut();
+  /** Called when the user clicks "Full Screen" or presses Escape on the map.
+   * Toggles the map between normal and a full screen viewing modes. */
+  void toggleFullScreen();
 
 private:
   /** Adds an IP address to the resolve queue and updates the queue timers. */

@@ -4,6 +4,8 @@
     in the Network settings page.
   o Tolerate bridge addresses that do not specify a port number, since Tor
     now defaults to using port 443 in such cases.
+  o Add support for viewing the map as a full screen widget when built
+    with KDE Marble support.
   o Renamed the 'make win32-installer' CMake target to 'make dist-win32'
     for consistency with our 'make dist-osx' target.
   o Fix a couple bugs in the WiX-based Windows installer related to building
