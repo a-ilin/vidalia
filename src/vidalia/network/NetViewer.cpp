@@ -504,7 +504,8 @@ NetViewer::resolved(int id, const QList<GeoIp> &geoips)
 void
 NetViewer::displayRouterInfo(const QString &id)
 {
-  RouterInfoDialog dlg(this);
+  RouterInfoDialog dlg(_map->isFullScreen() ? static_cast<QWidget*>(_map) 
+                                            : static_cast<QWidget*>(this));
 
   /* Fetch the specified router's descriptor */
   QStringList rd = _torControl->getRouterDescriptorText(id);
