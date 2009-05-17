@@ -253,11 +253,7 @@ TorControl::onAuthenticated()
   getInfo("version", _torVersion);
   /* We want to use verbose names in events and GETINFO results. */
   useFeature("VERBOSE_NAMES");
-
-  /* The control socket is connected, so we can stop reading from stdout */
-  if (_torProcess)
-    _torProcess->closeStdout();
-  
+ 
   emit authenticated();
 }
 
@@ -617,7 +613,16 @@ TorControl::setLogEvents(uint filter, QObject *obj, QString *errmsg)
   setEvent(TorEvents::LogNotice, obj, filter & LogEvent::Notice, false);
   setEvent(TorEvents::LogInfo  , obj, filter & LogEvent::Info  , false);
   setEvent(TorEvents::LogDebug , obj, filter & LogEvent::Debug , false);
-  return (isConnected() ? setEvents(errmsg) : true);
+
+  if (isConnected()) {
+    bool rc = setEvents(errmsg);
+    if (rc && _torProcess)
+      /* The control socket is connected and the request for log events from
+       * the control port was successful, so we can stop reading from stdout. */
+      _torProcess->closeStdout();
+    return rc;
+  }
+  return true;
 }
 
 /** Register for the events currently in the event list */
