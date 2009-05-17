@@ -52,7 +52,7 @@ VERSION="@VERSION@"
 # Set the Tor version
 TORVERSION="$4"
 # Set the name of the output .dmg file
-if [ $3 = "bundle" || $3 = "split-bundle" ]; then
+if [[ $3 = "bundle" || $3 = "split-bundle" ]]; then
   DMG="vidalia-bundle-$TORVERSION-$VERSION-$ARCH.dmg"
 else
   DMG="vidalia-$VERSION-$ARCH.dmg"
