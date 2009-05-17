@@ -52,9 +52,7 @@ VERSION="@VERSION@"
 # Set the Tor version
 TORVERSION="$4"
 # Set the name of the output .dmg file
-if [ $3 = "bundle" ]; then
-  DMG="vidalia-bundle-$TORVERSION-$VERSION-$ARCH.dmg"
-elseif [ $3 = "split-bundle" ]; then
+if [ $3 = "bundle" || $3 = "split-bundle" ]; then
   DMG="vidalia-bundle-$TORVERSION-$VERSION-$ARCH.dmg"
 else
   DMG="vidalia-$VERSION-$ARCH.dmg"
@@ -79,10 +77,11 @@ done
 ln -s /Applications $BUILD_DIR/Applications
 
 # Create the disk image
-if [ $3 = "bundle" ]; then
+if [ $3 = "split-bundle" ]; then
   hdiutil create -format UDZO -imagekey zlib-level=9 -srcfolder "$BUILD_DIR" -volname "$volname" "$DMG"
-elseif [ $3 = "split-bundle" ]; then
-  hdiutil create -format UDZO -imagekey zlib-level=9 -srcfolder "$BUILD_DIR" -volname "$volname" "$DMG" &&
   hdiutil segment -segmentSize 1.5m -o "split-$DMG" "$DMG"
+else
+  hdiutil create -format UDZO -imagekey zlib-level=9 -srcfolder "$BUILD_DIR" -volname "$volname" "$DMG" &&
 fi
+
 rm -rf "$BUILD_DIR"
