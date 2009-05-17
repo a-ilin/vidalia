@@ -2,6 +2,9 @@
   o Add a "Find Bridges Now" button that will attempt to automatically
     download a set of bridge addresses and add them to the list of bridges
     in the Network settings page.
+  o Show or hide the "Who has used my bridge recently?" link along with
+    the other bridge-related widgets when the user toggles the relay mode
+    in the Network settings page. (Ticket #480)
   o Tolerate bridge addresses that do not specify a port number, since Tor
     now defaults to using port 443 in such cases.
   o Add support for viewing the map as a full screen widget when built

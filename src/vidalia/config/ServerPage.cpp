@@ -230,6 +230,7 @@ ServerPage::serverModeChanged(bool enabled)
   ui.lblYourBridgeRelayIs->setVisible(bridgeEnabled);
   ui.lblBridgeIdentity->setVisible(bridgeEnabled);
   ui.btnCopyBridgeIdentity->setVisible(bridgeEnabled);
+  ui.lblBridgeUsage->setVisible(bridgeEnabled);
 }
 
 /** Returns true if the user has changed their server settings since the
