@@ -2,4173 +2,3292 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
-"POT-Creation-Date: 2009-04-10 22:39+0000\n"
-"PO-Revision-Date: 2009-05-11 10:00+0000\n"
-"Last-Translator: Top Quality Software <tqsoftware@gmail.com>\n"
+"POT-Creation-Date: 2009-05-19 23:56+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: \n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100 > 0 && n%100 < "
-"20)) ? 1 : 2);\n"
-"X-Generator: Pootle 1.1.0\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"X-Generator: Vidalia ts2po 0.2\n"
 
-#: aboutdialog.ui:28
 msgctxt "AboutDialog"
 msgid "About Vidalia"
 msgstr "Despre Vidalia"
 
-#: aboutdialog.cpp:34
 msgctxt "AboutDialog"
 msgid "License"
 msgstr "Licenţă"
 
-#: aboutdialog.ui:63
 msgctxt "AboutDialog"
 msgid "Vidalia 0.2.0"
 msgstr "Vidalia 0.2.0"
 
-#: aboutdialog.ui:73
 msgctxt "AboutDialog"
 msgid "Tor 0.2.0.32"
 msgstr "Tor 0.2.0.32"
 
-#: aboutdialog.ui:88
 msgctxt "AboutDialog"
 msgid "Qt 4.4.2"
 msgstr "Qt 4.4.2"
 
-#: advancedpage.cpp:109
+msgctxt "AboutDialog"
+msgid "Vidalia"
+msgstr "Vidalia"
+
+msgctxt "AboutDialog"
+msgid "Tor"
+msgstr "Tor"
+
+msgctxt "AboutDialog"
+msgid "Qt"
+msgstr ""
+
+msgctxt "AboutDialog"
+msgid "version"
+msgstr ""
+
 msgctxt "AdvancedPage"
 msgid "'%1' is not a valid IP address."
 msgstr "'%1' nu este o adresă IP validă."
 
-#: advancedpage.cpp:120
 msgctxt "AdvancedPage"
 msgid "You selected 'Password' authentication, but did not specify a password."
 msgstr "Aţi ales autentificarea prin parolă, însă nu aţi specificat o parolă."
 
-#: advancedpage.cpp:223
 msgctxt "AdvancedPage"
 msgid "Select Tor Configuration File"
 msgstr "Alege fişierul de configurare Tor"
 
-#: advancedpage.cpp:236
 msgctxt "AdvancedPage"
 msgid "File Not Found"
 msgstr "Fişierul nu a fost găsit"
 
-#: advancedpage.cpp:238
 msgctxt "AdvancedPage"
 msgid "%1 does not exist. Would you like to create it?"
 msgstr "%1 nu există. Doriţi ca acest element să fie creat?"
 
-#: advancedpage.cpp:249
 msgctxt "AdvancedPage"
 msgid "Failed to Create File"
 msgstr "Fişierul nu a putut fi creat"
 
-#: advancedpage.cpp:250
 msgctxt "AdvancedPage"
 msgid "Unable to create %1 [%2]"
 msgstr "%1 nu a putut fi creat. [%2]"
 
-#: advancedpage.cpp:265
 msgctxt "AdvancedPage"
 msgid "Select a Directory to Use for Tor Data"
 msgstr "Alegeţi un director pe care Tor să-l folosească pentru date"
 
-#: advancedpage.cpp:287
 msgctxt "AdvancedPage"
 msgid "Unable to remove Tor Service"
 msgstr "Serviciul Tor nu a putut fi eliminat"
 
-#: advancedpage.cpp:298
 msgctxt "AdvancedPage"
 msgid "Unable to install Tor Service"
 msgstr "Serviciul Tor nu a putut fi instalat"
 
-#: advancedpage.cpp:299
 msgctxt "AdvancedPage"
 msgid "Vidalia was unable to install the Tor service."
 msgstr "Vidalia nu a putut instala serviciul Tor"
 
-#: advancedpage.ui:28
 msgctxt "AdvancedPage"
 msgid "Control Port"
 msgstr "Port de control"
 
-#: advancedpage.ui:48
 msgctxt "AdvancedPage"
 msgid "Authentication:"
 msgstr "Autentificare:"
 
-#: advancedpage.ui:58
 msgctxt "AdvancedPage"
 msgid "Address:"
 msgstr "Adresă:"
 
-#: advancedpage.ui:86
 msgctxt "AdvancedPage"
 msgid "None"
 msgstr "Fără autentificare"
 
-#: advancedpage.ui:91
 msgctxt "AdvancedPage"
 msgid "Cookie"
 msgstr "Cookie:"
 
-#: advancedpage.ui:96
 msgctxt "AdvancedPage"
 msgid "Password"
 msgstr "Parolă:"
 
-#: advancedpage.ui:111
 msgctxt "AdvancedPage"
 msgid "Randomly Generate"
 msgstr "Generează aleator"
 
-#: advancedpage.ui:157
 msgctxt "AdvancedPage"
 msgid ":"
 msgstr ":"
 
-#: advancedpage.ui:219
 msgctxt "AdvancedPage"
 msgid "Tor Configuration File"
 msgstr "Fişierul de configurare Tor"
 
-#: advancedpage.ui:240
 msgctxt "AdvancedPage"
 msgid "Start the Tor software with the specified configuration file (torrc)"
-msgstr ""
-"Tor foloseşte acest fişier de configurare (torrc) atunci când este lansat"
+msgstr "Tor foloseşte acest fişier de configurare (torrc) atunci când este lansat"
 
-#: advancedpage.ui:259
 msgctxt "AdvancedPage"
 msgid "Select path to your configuration file"
 msgstr "Introduceţi calea către fişierul dumneavoastră de configurare"
 
-#: advancedpage.ui:318
 msgctxt "AdvancedPage"
 msgid "Browse"
 msgstr "Răsfoieşte"
 
-#: advancedpage.ui:275
 msgctxt "AdvancedPage"
 msgid "Data Directory"
 msgstr "Directorul de date"
 
-#: advancedpage.ui:296
 msgctxt "AdvancedPage"
 msgid "Store data for the Tor software in the following directory"
 msgstr "Stochează datele pentru programul Tor în acest director"
 
-#: advancedpage.ui:315
 msgctxt "AdvancedPage"
 msgid "Select the directory used to store data for the Tor software"
 msgstr "Alegeţi directorul de stocare a datelor pentru programul Tor"
 
-#: advancedpage.cpp:289
 msgctxt "AdvancedPage"
-msgid ""
-"Vidalia was unable to remove the Tor service.\n"
+msgid "Vidalia was unable to remove the Tor service.\n"
 "\n"
 "You may need to remove it manually."
 msgstr ""
-"Vidalia nu a putut elimina serviciul Tor.\n"
-"\n"
-"S-ar putea să fie nevoie să îl înlăturaţi manual."
 
-#: appearancepage.ui:22
 msgctxt "AppearancePage"
 msgid "Language"
 msgstr "Limbă"
 
-#: appearancepage.ui:37
 msgctxt "AppearancePage"
 msgid "Choose the language used in Vidalia"
 msgstr "Alege limba folosită de Vidalia"
 
-#: appearancepage.ui:75
 msgctxt "AppearancePage"
 msgid "Style"
 msgstr "Înfăţişare"
 
-#: appearancepage.ui:103
 msgctxt "AppearancePage"
 msgid "Choose Vidalia's interface style"
 msgstr "Alege o înfăţişare pentru Vidalia"
 
-#: appearancepage.cpp:67
 msgctxt "AppearancePage"
 msgid "Vidalia was unable to load the selected language translation."
 msgstr "Vidalia nu a putut încărca traducerea în limba selectată."
 
-#: bwgraph.cpp:166
 msgctxt "BandwidthGraph"
 msgid "Since:"
 msgstr "Se contorizează din:"
 
-#: bwgraph.cpp:232
 msgctxt "BandwidthGraph"
 msgid "Hide Settings"
 msgstr "Ascunde setările"
 
-#: bwgraph.ui:40
 msgctxt "BandwidthGraph"
 msgid "Show Settings"
 msgstr "Arată setările"
 
-#: bwgraph.ui:16
 msgctxt "BandwidthGraph"
 msgid "Tor Bandwidth Usage"
 msgstr "Statistici trafic Tor"
 
-#: bwgraph.ui:63
 msgctxt "BandwidthGraph"
 msgid "Reset"
 msgstr "Reiniţializare"
 
-#: bwgraph.ui:151
 msgctxt "BandwidthGraph"
 msgid "Receive Rate"
 msgstr "Rata de primire"
 
-#: bwgraph.ui:170
 msgctxt "BandwidthGraph"
 msgid "Send Rate"
 msgstr "Rata de transmitere"
 
-#: bwgraph.ui:183
 msgctxt "BandwidthGraph"
 msgid "Always on Top"
 msgstr "Întotdeauna deasupra"
 
-#: bwgraph.ui:234
 msgctxt "BandwidthGraph"
 msgid "Style"
 msgstr "Înfăţişare"
 
-#: bwgraph.ui:284
 msgctxt "BandwidthGraph"
 msgid "Changes the transparency of the Bandwidth Graph"
 msgstr "Modifică nivelul de transparenţă al graficului"
 
-#: bwgraph.ui:368
 msgctxt "BandwidthGraph"
 msgid "100"
 msgstr "100"
 
-#: bwgraph.ui:383
 msgctxt "BandwidthGraph"
 msgid "% Opaque"
 msgstr "% opac"
 
-#: bwgraph.ui:443
 msgctxt "BandwidthGraph"
 msgid "Save"
 msgstr "Salvează"
 
-#: bwgraph.ui:450
 msgctxt "BandwidthGraph"
 msgid "Cancel"
 msgstr "Revocare"
 
-#: bridgeusagedialog.ui:50
+msgctxt "BridgeDownloader"
+msgid "Starting HTTPS bridge request..."
+msgstr ""
+
+msgctxt "BridgeDownloader"
+msgid "Connecting to %1:%2..."
+msgstr ""
+
+msgctxt "BridgeDownloader"
+msgid "Sending an HTTPS request for bridges..."
+msgstr ""
+
+msgctxt "BridgeDownloader"
+msgid "Downloading a list of bridges..."
+msgstr ""
+
+msgctxt "BridgeDownloaderProgressDialog"
+msgid "Downloading Bridges"
+msgstr ""
+
+msgctxt "BridgeDownloaderProgressDialog"
+msgid "Unable to download bridges: %1"
+msgstr ""
+
+msgctxt "BridgeDownloaderProgressDialog"
+msgid "Retrying bridge request..."
+msgstr ""
+
 msgctxt "BridgeUsageDialog"
 msgid "Country"
 msgstr "Ţară"
 
-#: bridgeusagedialog.ui:55
 msgctxt "BridgeUsageDialog"
 msgid "# Clients"
 msgstr "# clienţi"
 
-#: bridgeusagedialog.cpp:58
 msgctxt "BridgeUsageDialog"
 msgid "Clients from the following countries have used your relay since %1"
 msgstr "Clienţi din următoarele ţări au folosit nodul tău din %1"
 
-#: bridgeusagedialog.ui:13
 msgctxt "BridgeUsageDialog"
 msgid "Bridge Usage Summary"
 msgstr "Sumar folosire Bridge"
 
-#: bridgeusagedialog.ui:19
 msgctxt "BridgeUsageDialog"
 msgid "Client Summary"
 msgstr "Sumar client"
 
-#: circuit.cpp:112
 msgctxt "Circuit"
 msgid "New"
 msgstr "Nou"
 
-#: circuit.cpp:113
 msgctxt "Circuit"
 msgid "Open"
 msgstr "Deschis"
 
-#: circuit.cpp:114
 msgctxt "Circuit"
 msgid "Building"
 msgstr "Se construieşte"
 
-#: circuit.cpp:115
 msgctxt "Circuit"
 msgid "Failed"
 msgstr "Eşuat"
 
-#: circuit.cpp:116
 msgctxt "Circuit"
 msgid "Closed"
 msgstr "Închis"
 
-#: circuit.cpp:117
 msgctxt "Circuit"
 msgid "Unknown"
 msgstr "Necunoscut"
 
-#: circuititem.cpp:39
 msgctxt "CircuitItem"
 msgid "<Path Empty>"
 msgstr "<Cale vidă>"
 
-#: circuitlistwidget.cpp:56
 msgctxt "CircuitListWidget"
 msgid "Connection"
 msgstr "Conexiune"
 
-#: circuitlistwidget.cpp:56
 msgctxt "CircuitListWidget"
 msgid "Status"
 msgstr "Stare"
 
-#: circuitlistwidget.cpp:88
 msgctxt "CircuitListWidget"
 msgid "Zoom to Circuit"
 msgstr "Zoom pe circuit"
 
-#: circuitlistwidget.cpp:90
 msgctxt "CircuitListWidget"
 msgid "Close Circuit (Del)"
 msgstr "Închide circuitul (Del)"
 
-#: circuitlistwidget.cpp:113
 msgctxt "CircuitListWidget"
 msgid "Close Stream (Del)"
 msgstr "Închide fluxul (Del)"
 
-#: configdialog.cpp:78
 msgctxt "ConfigDialog"
 msgid "General"
 msgstr "General"
 
-#: configdialog.cpp:84
 msgctxt "ConfigDialog"
 msgid "Network"
 msgstr "Reţea"
 
-#: configdialog.cpp:88
 msgctxt "ConfigDialog"
 msgid "Sharing"
 msgstr "Partajare"
 
-#: configdialog.cpp:92
 msgctxt "ConfigDialog"
 msgid "Services"
 msgstr "Servicii"
 
-#: configdialog.cpp:96
 msgctxt "ConfigDialog"
 msgid "Appearance"
 msgstr "Aspect"
 
-#: configdialog.cpp:100
 msgctxt "ConfigDialog"
 msgid "Advanced"
 msgstr "Avansat"
 
-#: configdialog.cpp:114
 msgctxt "ConfigDialog"
 msgid "Help"
 msgstr "Ajutor"
 
-#: configdialog.cpp:199
 msgctxt "ConfigDialog"
 msgid "Error Saving Settings"
 msgstr "Setările nu au putut fi salvate"
 
-#: configdialog.cpp:201
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to save your %1 settings."
 msgstr "Vidalia nu a putut salva setările dumneavoastră de %1."
 
-#: configdialog.cpp:228
 msgctxt "ConfigDialog"
 msgid "Error Applying Settings"
 msgstr "Eroare la aplicarea setărilor"
 
-#: configdialog.cpp:230
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to apply your %1 settings to Tor."
 msgstr "Vidalia nu a putut aplica Tor setările de %1."
 
-#: configdialog.ui:16
 msgctxt "ConfigDialog"
 msgid "Settings"
 msgstr "Setări"
 
-#: controlconnection.cpp:134
 msgctxt "ControlConnection"
 msgid "Vidalia was unable to connect to Tor. (%1)"
 msgstr "Vidalia nu s-a putut conecta la Tor. (%1)"
 
-#: controlconnection.cpp:331
 msgctxt "ControlConnection"
 msgid "Control socket is not connected."
 msgstr "Socketul de control nu este conectat."
 
-#: controlpasswordinputdialog.ui:28
 msgctxt "ControlPasswordInputDialog"
 msgid "Password Required"
 msgstr "Parolă necesară"
 
-#: controlpasswordinputdialog.ui:80
-msgctxt "ControlPasswordInputDialog"
-msgid ""
-"Vidalia has connected to a running Tor process that requires a password. "
-"Please enter your control password:"
-msgstr ""
-"Vidalia s-a conectat la un proces Tor în funcţiune, care are nevoie de "
-"parolă. Vă rog să introduceţi parola de control:"
-
-#: controlpasswordinputdialog.ui:99
 msgctxt "ControlPasswordInputDialog"
 msgid "Remember my password"
 msgstr "Reţine parola"
 
-#: controlsocket.cpp:70
+msgctxt "ControlPasswordInputDialog"
+msgid "Vidalia has connected to a running Tor process that requires a password. Please enter your control password:"
+msgstr ""
+
 msgctxt "ControlSocket"
 msgid "Control socket is not connected."
 msgstr "Socketul de control nu este conectat."
 
-#: controlsocket.cpp:80
 msgctxt "ControlSocket"
 msgid "Error sending control command. [%1]"
 msgstr "Eroare la trimiterea comenzii de control. [%1]"
 
-#: controlsocket.cpp:117
 msgctxt "ControlSocket"
 msgid "Socket disconnected while attempting to read a line of data."
 msgstr "Socketul a fost deconectat în timp ce se încerca citirea unor date."
 
-#: controlsocket.cpp:156
 msgctxt "ControlSocket"
 msgid "Invalid control reply. [%1]"
 msgstr "Replică de control invalidă. [%1]"
 
-#: countryinfo.cpp:33
 msgctxt "CountryInfo"
 msgid "Afghanistan"
 msgstr "Afganistan"
 
-#: countryinfo.cpp:34
-msgctxt "CountryInfo"
-msgid "Albania"
-msgstr "Albania"
-
-#: countryinfo.cpp:35
-msgctxt "CountryInfo"
-msgid "Algeria"
-msgstr "Algeria"
-
-#: countryinfo.cpp:36
 msgctxt "CountryInfo"
 msgid "Andorra"
 msgstr "Andorra"
 
-#: countryinfo.cpp:37
 msgctxt "CountryInfo"
 msgid "Angola"
 msgstr "Angola"
 
-#: countryinfo.cpp:38
 msgctxt "CountryInfo"
 msgid "Antigua & Barbuda"
 msgstr "Antigua şi Barbuda"
 
-#: countryinfo.cpp:39
 msgctxt "CountryInfo"
 msgid "Argentina"
 msgstr "Argentina"
 
-#: countryinfo.cpp:40
 msgctxt "CountryInfo"
 msgid "Armenia"
 msgstr "Armenia"
 
-#: countryinfo.cpp:41
 msgctxt "CountryInfo"
 msgid "Australia"
 msgstr "Australia"
 
-#: countryinfo.cpp:42
-msgctxt "CountryInfo"
-msgid "Austria"
-msgstr "Austria"
-
-#: countryinfo.cpp:43
 msgctxt "CountryInfo"
 msgid "Azerbaijan"
 msgstr "Azerbaidjan"
 
-#: countryinfo.cpp:44
 msgctxt "CountryInfo"
 msgid "Bahamas"
 msgstr "Bahamas"
 
-#: countryinfo.cpp:45
-msgctxt "CountryInfo"
-msgid "Bahrain"
-msgstr "Bahrain"
-
-#: countryinfo.cpp:46
 msgctxt "CountryInfo"
 msgid "Bangladesh"
 msgstr "Bangladesh"
 
-#: countryinfo.cpp:47
 msgctxt "CountryInfo"
 msgid "Barbados"
 msgstr "Barbados"
 
-#: countryinfo.cpp:48
 msgctxt "CountryInfo"
 msgid "Belarus"
 msgstr "Belarus"
 
-#: countryinfo.cpp:49
 msgctxt "CountryInfo"
 msgid "Belgium"
 msgstr "Belgia"
 
-#: countryinfo.cpp:50
 msgctxt "CountryInfo"
 msgid "Belize"
 msgstr "Belize"
 
-#: countryinfo.cpp:51
-msgctxt "CountryInfo"
-msgid "Benin"
-msgstr "Benin"
-
-#: countryinfo.cpp:52
 msgctxt "CountryInfo"
 msgid "Bhutan"
 msgstr "Bhutan"
 
-#: countryinfo.cpp:53
 msgctxt "CountryInfo"
 msgid "Bolivia"
 msgstr "Bolivia"
 
-#: countryinfo.cpp:54
 msgctxt "CountryInfo"
 msgid "Bosnia & Herzegovina"
 msgstr "Bosnia şi Herţegovina"
 
-#: countryinfo.cpp:55
 msgctxt "CountryInfo"
 msgid "Botswana"
 msgstr "Botswana"
 
-#: countryinfo.cpp:56
 msgctxt "CountryInfo"
 msgid "Brazil"
 msgstr "Brazilia"
 
-#: countryinfo.cpp:57
 msgctxt "CountryInfo"
 msgid "Brunei Darussalam"
 msgstr "Brunei Darussalam"
 
-#: countryinfo.cpp:58
 msgctxt "CountryInfo"
 msgid "Bulgaria"
 msgstr "Bulgaria"
 
-#: countryinfo.cpp:59
 msgctxt "CountryInfo"
 msgid "Burkina Faso"
 msgstr "Burkina Faso"
 
-#: countryinfo.cpp:60
 msgctxt "CountryInfo"
 msgid "Burundi"
 msgstr "Burundi"
 
-#: countryinfo.cpp:61
 msgctxt "CountryInfo"
 msgid "Cambodia"
 msgstr "Cambodgia"
 
-#: countryinfo.cpp:62
 msgctxt "CountryInfo"
 msgid "Cameroon"
 msgstr "Camerun"
 
-#: countryinfo.cpp:63
 msgctxt "CountryInfo"
 msgid "Canada"
 msgstr "Canada"
 
-#: countryinfo.cpp:64
 msgctxt "CountryInfo"
 msgid "Cape Verde"
 msgstr "Cabo Verde"
 
-#: countryinfo.cpp:65
 msgctxt "CountryInfo"
 msgid "Central African Republic"
 msgstr "Republica Central-Africană"
 
-#: countryinfo.cpp:66
 msgctxt "CountryInfo"
 msgid "Chad"
 msgstr "Ciad"
 
-#: countryinfo.cpp:67
 msgctxt "CountryInfo"
 msgid "Chile"
 msgstr "Chile"
 
-#: countryinfo.cpp:68
 msgctxt "CountryInfo"
 msgid "China"
 msgstr "China"
 
-#: countryinfo.cpp:69
 msgctxt "CountryInfo"
 msgid "Colombia"
 msgstr "Columbia"
 
-#: countryinfo.cpp:70
 msgctxt "CountryInfo"
 msgid "Comoros"
 msgstr "Insulele Comore"
 
-#: countryinfo.cpp:71
 msgctxt "CountryInfo"
 msgid "Congo, The Democratic Republic of the"
 msgstr "Republica Democrată Congo"
 
-#: countryinfo.cpp:72
 msgctxt "CountryInfo"
 msgid "Congo"
 msgstr "Congo"
 
-#: countryinfo.cpp:73
 msgctxt "CountryInfo"
 msgid "Costa Rica"
 msgstr "Costa Rica"
 
-#: countryinfo.cpp:74
 msgctxt "CountryInfo"
 msgid "Cote dâIvoire"
 msgstr "Côte d'Ivore"
 
-#: countryinfo.cpp:75
 msgctxt "CountryInfo"
 msgid "Croatia"
 msgstr "Croaţia"
 
-#: countryinfo.cpp:76
 msgctxt "CountryInfo"
 msgid "Cuba"
 msgstr "Cuba"
 
-#: countryinfo.cpp:77
 msgctxt "CountryInfo"
 msgid "Cyprus"
 msgstr "Cipru"
 
-#: countryinfo.cpp:78
 msgctxt "CountryInfo"
 msgid "Czech Republic"
 msgstr "Republica Cehă"
 
-#: countryinfo.cpp:79
 msgctxt "CountryInfo"
 msgid "Denmark"
 msgstr "Danemarca"
 
-#: countryinfo.cpp:80
 msgctxt "CountryInfo"
 msgid "Djibouti"
 msgstr "Djibouti"
 
-#: countryinfo.cpp:81
 msgctxt "CountryInfo"
 msgid "Dominica"
 msgstr "Dominica"
 
-#: countryinfo.cpp:82
 msgctxt "CountryInfo"
 msgid "Dominican Republic"
 msgstr "Republica Dominicană"
 
-#: countryinfo.cpp:83
 msgctxt "CountryInfo"
 msgid "Ecuador"
 msgstr "Ecuador"
 
-#: countryinfo.cpp:84
 msgctxt "CountryInfo"
 msgid "Egypt"
 msgstr "Egipt"
 
-#: countryinfo.cpp:85
 msgctxt "CountryInfo"
 msgid "El Salvador"
 msgstr "El Salvador"
 
-#: countryinfo.cpp:86
 msgctxt "CountryInfo"
 msgid "Equatorial Guinea"
 msgstr "Guineea Ecuatorială"
 
-#: countryinfo.cpp:87
 msgctxt "CountryInfo"
 msgid "Eritrea"
 msgstr "Eritreea"
 
-#: countryinfo.cpp:88
 msgctxt "CountryInfo"
 msgid "Estonia"
 msgstr "Estonia"
 
-#: countryinfo.cpp:89
-msgctxt "CountryInfo"
-msgid "Ethiopia"
-msgstr "Etiopia"
-
-#: countryinfo.cpp:90
-msgctxt "CountryInfo"
-msgid "Fiji"
-msgstr "Fiji"
-
-#: countryinfo.cpp:91
-msgctxt "CountryInfo"
-msgid "Finland"
-msgstr "Finlanda"
-
-#: countryinfo.cpp:92
 msgctxt "CountryInfo"
 msgid "France"
 msgstr "Franţa"
 
-#: countryinfo.cpp:93
 msgctxt "CountryInfo"
 msgid "Gabon"
 msgstr "Gabon"
 
-#: countryinfo.cpp:94
 msgctxt "CountryInfo"
 msgid "Gambia"
 msgstr "Gambia"
 
-#: countryinfo.cpp:95
 msgctxt "CountryInfo"
 msgid "Georgia"
 msgstr "Georgia"
 
-#: countryinfo.cpp:96
 msgctxt "CountryInfo"
 msgid "Germany"
 msgstr "Germania"
 
-#: countryinfo.cpp:97
 msgctxt "CountryInfo"
 msgid "Ghana"
 msgstr "Ghana"
 
-#: countryinfo.cpp:98
-msgctxt "CountryInfo"
-msgid "Greece"
-msgstr "Grecia"
-
-#: countryinfo.cpp:99
 msgctxt "CountryInfo"
 msgid "Grenada"
 msgstr "Grenada"
 
-#: countryinfo.cpp:100
 msgctxt "CountryInfo"
 msgid "Guatemala"
 msgstr "Guatemala"
 
-#: countryinfo.cpp:101
-msgctxt "CountryInfo"
-msgid "Guam"
-msgstr "Guam"
-
-#: countryinfo.cpp:102
 msgctxt "CountryInfo"
 msgid "Guinea"
 msgstr "Guineea"
 
-#: countryinfo.cpp:103
 msgctxt "CountryInfo"
 msgid "Guinea-Bissau"
 msgstr "Guineea-Bissau"
 
-#: countryinfo.cpp:104
 msgctxt "CountryInfo"
 msgid "Guyana"
 msgstr "Guyana"
 
-#: countryinfo.cpp:105
 msgctxt "CountryInfo"
 msgid "Hong Kong"
 msgstr "Hong Kong"
 
-#: countryinfo.cpp:106
 msgctxt "CountryInfo"
 msgid "Haiti"
 msgstr "Haiti"
 
-#: countryinfo.cpp:107
 msgctxt "CountryInfo"
 msgid "Honduras"
 msgstr "Honduras"
 
-#: countryinfo.cpp:108
-msgctxt "CountryInfo"
-msgid "Hungary"
-msgstr "Ungaria"
-
-#: countryinfo.cpp:109
-msgctxt "CountryInfo"
-msgid "Iceland"
-msgstr "Islanda"
-
-#: countryinfo.cpp:110
-msgctxt "CountryInfo"
-msgid "India"
-msgstr "India"
-
-#: countryinfo.cpp:111
-msgctxt "CountryInfo"
-msgid "Indonesia"
-msgstr "Indonezia"
-
-#: countryinfo.cpp:112
-msgctxt "CountryInfo"
-msgid "Iran"
-msgstr "Iran"
-
-#: countryinfo.cpp:113
-msgctxt "CountryInfo"
-msgid "Iraq"
-msgstr "Irak"
-
-#: countryinfo.cpp:114
-msgctxt "CountryInfo"
-msgid "Ireland"
-msgstr "Irlanda"
-
-#: countryinfo.cpp:115
 msgctxt "CountryInfo"
 msgid "Israel"
 msgstr "Israel"
 
-#: countryinfo.cpp:116
 msgctxt "CountryInfo"
 msgid "Italy"
 msgstr "Italia"
 
-#: countryinfo.cpp:117
 msgctxt "CountryInfo"
 msgid "Jamaica"
 msgstr "Jamaica"
 
-#: countryinfo.cpp:118
 msgctxt "CountryInfo"
 msgid "Japan"
 msgstr "Japonia"
 
-#: countryinfo.cpp:119
 msgctxt "CountryInfo"
 msgid "Jordan"
 msgstr "Iordania"
 
-#: countryinfo.cpp:120
 msgctxt "CountryInfo"
 msgid "Kazakhstan"
 msgstr "Kazahstan"
 
-#: countryinfo.cpp:121
 msgctxt "CountryInfo"
 msgid "Kenya"
 msgstr "Kenya"
 
-#: countryinfo.cpp:122
 msgctxt "CountryInfo"
 msgid "Kiribati"
 msgstr "Kiribati"
 
-#: countryinfo.cpp:123
-msgctxt "CountryInfo"
-msgid "Korea, North"
-msgstr "Coreea de Nord"
-
-#: countryinfo.cpp:124
-msgctxt "CountryInfo"
-msgid "Korea, South"
-msgstr "Coreea de Sud"
-
-#: countryinfo.cpp:125
 msgctxt "CountryInfo"
 msgid "Kuwait"
 msgstr "Kuweit"
 
-#: countryinfo.cpp:126
 msgctxt "CountryInfo"
 msgid "Kyrgyzstan"
 msgstr "Kârgâzstan"
 
-#: countryinfo.cpp:127
 msgctxt "CountryInfo"
 msgid "Laos"
 msgstr "Laos"
 
-#: countryinfo.cpp:128
 msgctxt "CountryInfo"
 msgid "Latvia"
 msgstr "Letonia"
 
-#: countryinfo.cpp:129
 msgctxt "CountryInfo"
 msgid "Lebanon"
 msgstr "Liban"
 
-#: countryinfo.cpp:130
 msgctxt "CountryInfo"
 msgid "Lesotho"
 msgstr "Lesotho"
 
-#: countryinfo.cpp:131
 msgctxt "CountryInfo"
 msgid "Liberia"
 msgstr "Liberia"
 
-#: countryinfo.cpp:132
-msgctxt "CountryInfo"
-msgid "Libya"
-msgstr "Libia"
-
-#: countryinfo.cpp:133
 msgctxt "CountryInfo"
 msgid "Liechtenstein"
 msgstr "Liechtenstein"
 
-#: countryinfo.cpp:134
 msgctxt "CountryInfo"
 msgid "Lithuania"
 msgstr "Lituania"
 
-#: countryinfo.cpp:135
 msgctxt "CountryInfo"
 msgid "Luxembourg"
 msgstr "Luxemburg"
 
-#: countryinfo.cpp:136
 msgctxt "CountryInfo"
 msgid "Macedonia"
 msgstr "Macedonia"
 
-#: countryinfo.cpp:137
 msgctxt "CountryInfo"
 msgid "Madagascar"
 msgstr "Madagascar"
 
-#: countryinfo.cpp:138
 msgctxt "CountryInfo"
 msgid "Malawi"
 msgstr "Malawi"
 
-#: countryinfo.cpp:139
 msgctxt "CountryInfo"
 msgid "Malaysia"
 msgstr "Malaezia"
 
-#: countryinfo.cpp:140
-msgctxt "CountryInfo"
-msgid "Maldives"
-msgstr "Insulele Maldive"
-
-#: countryinfo.cpp:141
 msgctxt "CountryInfo"
 msgid "Mali"
 msgstr "Mali"
 
-#: countryinfo.cpp:142
 msgctxt "CountryInfo"
 msgid "Malta"
 msgstr "Malta"
 
-#: countryinfo.cpp:143
 msgctxt "CountryInfo"
 msgid "Marshall Islands"
 msgstr "Insulele Marshall"
 
-#: countryinfo.cpp:144
 msgctxt "CountryInfo"
 msgid "Mauritania"
 msgstr "Mauritania"
 
-#: countryinfo.cpp:145
 msgctxt "CountryInfo"
 msgid "Mauritius"
 msgstr "Mauritius"
 
-#: countryinfo.cpp:146
-msgctxt "CountryInfo"
-msgid "Mexico"
-msgstr "Mexic"
-
-#: countryinfo.cpp:147
 msgctxt "CountryInfo"
 msgid "Micronesia"
 msgstr "Micronezia"
 
-#: countryinfo.cpp:148
 msgctxt "CountryInfo"
 msgid "Moldova"
 msgstr "Moldova"
 
-#: countryinfo.cpp:149
 msgctxt "CountryInfo"
 msgid "Monaco"
 msgstr "Monaco"
 
-#: countryinfo.cpp:150
 msgctxt "CountryInfo"
 msgid "Mongolia"
 msgstr "Mongolia"
 
-#: countryinfo.cpp:151
 msgctxt "CountryInfo"
 msgid "Montenegro"
 msgstr "Muntenegru"
 
-#: countryinfo.cpp:152
 msgctxt "CountryInfo"
 msgid "Morocco"
 msgstr "Maroc"
 
-#: countryinfo.cpp:153
 msgctxt "CountryInfo"
 msgid "Mozambique"
 msgstr "Mozambic"
 
-#: countryinfo.cpp:154
-msgctxt "CountryInfo"
-msgid "Myanmar"
-msgstr "Birmania"
-
-#: countryinfo.cpp:155
 msgctxt "CountryInfo"
 msgid "Namibia"
 msgstr "Namibia"
 
-#: countryinfo.cpp:156
 msgctxt "CountryInfo"
 msgid "Nauru"
 msgstr "Nauru"
 
-#: countryinfo.cpp:157
 msgctxt "CountryInfo"
 msgid "Nepal"
 msgstr "Nepal"
 
-#: countryinfo.cpp:158
 msgctxt "CountryInfo"
 msgid "Netherlands"
 msgstr "Olanda"
 
-#: countryinfo.cpp:159
 msgctxt "CountryInfo"
 msgid "New Zealand"
 msgstr "Noua Zeelandă"
 
-#: countryinfo.cpp:160
 msgctxt "CountryInfo"
 msgid "Nicaragua"
 msgstr "Nicaragua"
 
-#: countryinfo.cpp:161
 msgctxt "CountryInfo"
 msgid "Niger"
 msgstr "Niger"
 
-#: countryinfo.cpp:162
 msgctxt "CountryInfo"
 msgid "Nigeria"
 msgstr "Nigeria"
 
-#: countryinfo.cpp:163
 msgctxt "CountryInfo"
 msgid "Norway"
 msgstr "Norvegia"
 
-#: countryinfo.cpp:164
 msgctxt "CountryInfo"
 msgid "Oman"
 msgstr "Oman"
 
-#: countryinfo.cpp:165
 msgctxt "CountryInfo"
 msgid "Pakistan"
 msgstr "Pakistan"
 
-#: countryinfo.cpp:166
 msgctxt "CountryInfo"
 msgid "Palau"
 msgstr "Palau"
 
-#: countryinfo.cpp:167
 msgctxt "CountryInfo"
 msgid "Palestine"
 msgstr "Palestina"
 
-#: countryinfo.cpp:168
 msgctxt "CountryInfo"
 msgid "Panama"
 msgstr "Panama"
 
-#: countryinfo.cpp:169
 msgctxt "CountryInfo"
 msgid "Papua New Guinea"
 msgstr "Papua Noua Guinee"
 
-#: countryinfo.cpp:170
 msgctxt "CountryInfo"
 msgid "Paraguay"
 msgstr "Paraguay"
 
-#: countryinfo.cpp:171
 msgctxt "CountryInfo"
 msgid "Peru"
 msgstr "Peru"
 
-#: countryinfo.cpp:172
 msgctxt "CountryInfo"
 msgid "Philippines"
 msgstr "Filipine"
 
-#: countryinfo.cpp:173
 msgctxt "CountryInfo"
 msgid "Poland"
 msgstr "Polonia"
 
-#: countryinfo.cpp:174
 msgctxt "CountryInfo"
 msgid "Portugal"
 msgstr "Portugalia"
 
-#: countryinfo.cpp:175
 msgctxt "CountryInfo"
 msgid "Qatar"
 msgstr "Qatar"
 
-#: countryinfo.cpp:176
 msgctxt "CountryInfo"
 msgid "Romania"
 msgstr "Romania"
 
-#: countryinfo.cpp:177
 msgctxt "CountryInfo"
 msgid "Russia"
 msgstr "Rusia"
 
-#: countryinfo.cpp:178
 msgctxt "CountryInfo"
 msgid "Rwanda"
 msgstr "Rwanda"
 
-#: countryinfo.cpp:179
 msgctxt "CountryInfo"
 msgid "Saint Kitts & Nevis"
 msgstr "Sfântul Kitts şi Nevis"
 
-#: countryinfo.cpp:180
 msgctxt "CountryInfo"
 msgid "Saint Lucia"
 msgstr "Sfânta Lucia"
 
-#: countryinfo.cpp:181
 msgctxt "CountryInfo"
 msgid "Saint Vincent & the Grenadines"
 msgstr "Sfântul Vincent şi Grenadinele"
 
-#: countryinfo.cpp:182
 msgctxt "CountryInfo"
 msgid "Samoa"
 msgstr "Samoa"
 
-#: countryinfo.cpp:183
 msgctxt "CountryInfo"
 msgid "San Marino"
 msgstr "San Marino"
 
-#: countryinfo.cpp:184
 msgctxt "CountryInfo"
 msgid "Sao Tome & Principe"
 msgstr "São Tomé şi Príncipe"
 
-#: countryinfo.cpp:185
 msgctxt "CountryInfo"
 msgid "Saudi Arabia"
 msgstr "Arabia Saudită"
 
-#: countryinfo.cpp:186
 msgctxt "CountryInfo"
 msgid "Senegal"
 msgstr "Senegal"
 
-#: countryinfo.cpp:187
 msgctxt "CountryInfo"
 msgid "Serbia"
 msgstr "Serbia"
 
-#: countryinfo.cpp:188
 msgctxt "CountryInfo"
 msgid "Seychelles"
 msgstr "Seychelles"
 
-#: countryinfo.cpp:189
 msgctxt "CountryInfo"
 msgid "Sierra Leone"
 msgstr "Sierra Leone"
 
-#: countryinfo.cpp:190
 msgctxt "CountryInfo"
 msgid "Singapore"
 msgstr "Singapore"
 
-#: countryinfo.cpp:191
 msgctxt "CountryInfo"
 msgid "Slovakia"
 msgstr "Slovacia"
 
-#: countryinfo.cpp:192
 msgctxt "CountryInfo"
 msgid "Slovenia"
 msgstr "Slovenia"
 
-#: countryinfo.cpp:193
 msgctxt "CountryInfo"
 msgid "Solomon Islands"
 msgstr "Insulele Solomon"
 
-#: countryinfo.cpp:194
 msgctxt "CountryInfo"
 msgid "Somalia"
 msgstr "Somalia"
 
-#: countryinfo.cpp:195
 msgctxt "CountryInfo"
 msgid "South Africa"
 msgstr "Africa de Sud"
 
-#: countryinfo.cpp:196
 msgctxt "CountryInfo"
 msgid "Spain"
 msgstr "Spania"
 
-#: countryinfo.cpp:197
 msgctxt "CountryInfo"
 msgid "Sri Lanka"
 msgstr "Sri Lanka"
 
-#: countryinfo.cpp:198
 msgctxt "CountryInfo"
 msgid "Sudan"
 msgstr "Sudan"
 
-#: countryinfo.cpp:199
 msgctxt "CountryInfo"
 msgid "Suriname"
 msgstr "Suriname"
 
-#: countryinfo.cpp:200
 msgctxt "CountryInfo"
 msgid "Swaziland"
 msgstr "Swaziland"
 
-#: countryinfo.cpp:201
 msgctxt "CountryInfo"
 msgid "Sweden"
 msgstr "Suedia"
 
-#: countryinfo.cpp:202
 msgctxt "CountryInfo"
 msgid "Switzerland"
 msgstr "Elveţia"
 
-#: countryinfo.cpp:203
 msgctxt "CountryInfo"
 msgid "Syria"
 msgstr "Siria"
 
-#: countryinfo.cpp:204
-msgctxt "CountryInfo"
-msgid "Taiwan"
-msgstr "Taiwan"
-
-#: countryinfo.cpp:205
 msgctxt "CountryInfo"
 msgid "Tajikistan"
 msgstr "Tadjikistan"
 
-#: countryinfo.cpp:206
 msgctxt "CountryInfo"
 msgid "Tanzania"
 msgstr "Tanzania"
 
-#: countryinfo.cpp:207
 msgctxt "CountryInfo"
 msgid "Thailand"
 msgstr "Thailanda"
 
-#: countryinfo.cpp:208
 msgctxt "CountryInfo"
 msgid "Timor-Leste (East Timor)"
 msgstr "Timorul de Est"
 
-#: countryinfo.cpp:209
 msgctxt "CountryInfo"
 msgid "Togo"
 msgstr "Togo"
 
-#: countryinfo.cpp:210
 msgctxt "CountryInfo"
 msgid "Tonga"
 msgstr "Tonga"
 
-#: countryinfo.cpp:211
 msgctxt "CountryInfo"
 msgid "Trinidad & Tobago"
 msgstr "Trinidad şi Tobago"
 
-#: countryinfo.cpp:212
 msgctxt "CountryInfo"
 msgid "Tunisia"
 msgstr "Tunisia"
 
-#: countryinfo.cpp:213
 msgctxt "CountryInfo"
 msgid "Turkey"
 msgstr "Turcia"
 
-#: countryinfo.cpp:214
 msgctxt "CountryInfo"
 msgid "Turkmenistan"
 msgstr "Turkmenistan"
 
-#: countryinfo.cpp:215
 msgctxt "CountryInfo"
 msgid "Tuvalu"
 msgstr "Tuvalu"
 
-#: countryinfo.cpp:216
 msgctxt "CountryInfo"
 msgid "Uganda"
 msgstr "Uganda"
 
-#: countryinfo.cpp:217
 msgctxt "CountryInfo"
 msgid "Ukraine"
 msgstr "Ucraina"
 
-#: countryinfo.cpp:218
 msgctxt "CountryInfo"
 msgid "United Arab Emirates"
 msgstr "Emiratele Arabe Unite"
 
-#: countryinfo.cpp:219
 msgctxt "CountryInfo"
 msgid "United Kingdom"
 msgstr "Marea Britanie"
 
-#: countryinfo.cpp:220
 msgctxt "CountryInfo"
 msgid "United States"
 msgstr "Statele Unite"
 
-#: countryinfo.cpp:221
 msgctxt "CountryInfo"
 msgid "Uruguay"
 msgstr "Uruguay"
 
-#: countryinfo.cpp:222
 msgctxt "CountryInfo"
 msgid "Uzbekistan"
 msgstr "Uzbekistan"
 
-#: countryinfo.cpp:223
 msgctxt "CountryInfo"
 msgid "Vanuatu"
 msgstr "Vanuatu"
 
-#: countryinfo.cpp:224
 msgctxt "CountryInfo"
 msgid "Vatican"
 msgstr "Vatican"
 
-#: countryinfo.cpp:225
 msgctxt "CountryInfo"
 msgid "Venezuela"
 msgstr "Venezuela"
 
-#: countryinfo.cpp:226
 msgctxt "CountryInfo"
 msgid "Vietnam"
 msgstr "Vietnam"
 
-#: countryinfo.cpp:227
 msgctxt "CountryInfo"
 msgid "Western Sahara"
 msgstr "Sahara Occidentală"
 
-#: countryinfo.cpp:228
 msgctxt "CountryInfo"
 msgid "Yemen"
 msgstr "Yemen"
 
-#: countryinfo.cpp:229
 msgctxt "CountryInfo"
 msgid "Zambia"
 msgstr "Zambia"
 
-#: countryinfo.cpp:230
 msgctxt "CountryInfo"
 msgid "Zimbabwe"
 msgstr "Zimbabwe"
 
-#: generalpage.cpp:73
+msgctxt "CountryInfo"
+msgid "Albania"
+msgstr ""
+
+msgctxt "CountryInfo"
+msgid "Algeria"
+msgstr ""
+
+msgctxt "CountryInfo"
+msgid "Austria"
+msgstr ""
+
+msgctxt "CountryInfo"
+msgid "Bahrain"
+msgstr ""
+
+msgctxt "CountryInfo"
+msgid "Benin"
+msgstr ""
+
+msgctxt "CountryInfo"
+msgid "Ethiopia"
+msgstr ""
+
+msgctxt "CountryInfo"
+msgid "Fiji"
+msgstr ""
+
+msgctxt "CountryInfo"
+msgid "Finland"
+msgstr ""
+
+msgctxt "CountryInfo"
+msgid "Greece"
+msgstr ""
+
+msgctxt "CountryInfo"
+msgid "Guam"
+msgstr ""
+
+msgctxt "CountryInfo"
+msgid "Hungary"
+msgstr ""
+
+msgctxt "CountryInfo"
+msgid "Iceland"
+msgstr ""
+
+msgctxt "CountryInfo"
+msgid "India"
+msgstr ""
+
+msgctxt "CountryInfo"
+msgid "Indonesia"
+msgstr ""
+
+msgctxt "CountryInfo"
+msgid "Iran"
+msgstr ""
+
+msgctxt "CountryInfo"
+msgid "Iraq"
+msgstr ""
+
+msgctxt "CountryInfo"
+msgid "Ireland"
+msgstr ""
+
+msgctxt "CountryInfo"
+msgid "Korea, North"
+msgstr ""
+
+msgctxt "CountryInfo"
+msgid "Korea, South"
+msgstr ""
+
+msgctxt "CountryInfo"
+msgid "Libya"
+msgstr ""
+
+msgctxt "CountryInfo"
+msgid "Maldives"
+msgstr ""
+
+msgctxt "CountryInfo"
+msgid "Mexico"
+msgstr ""
+
+msgctxt "CountryInfo"
+msgid "Myanmar"
+msgstr ""
+
+msgctxt "CountryInfo"
+msgid "Taiwan"
+msgstr ""
+
 msgctxt "GeneralPage"
 msgid "Executables (*.exe)"
 msgstr "Fişiere executabile (*.exe)"
 
-#: generalpage.cpp:86
 msgctxt "GeneralPage"
 msgid "Select Path to Tor"
 msgstr "Alege calea către Tor"
 
-#: generalpage.cpp:96
 msgctxt "GeneralPage"
 msgid "Select Proxy Executable"
 msgstr "Alegeţi fişierul executabil al proxy-ului"
 
-#: generalpage.cpp:109
 msgctxt "GeneralPage"
 msgid "You must specify the name of your Tor executable."
 msgstr "Trebuie să specificaţi numele fişierului executabil Tor."
 
-#: generalpage.cpp:117
 msgctxt "GeneralPage"
 msgid "The proxy arguments specified are not properly formatted."
 msgstr "Argumentele specificate pentru proxy sunt invalide."
 
-#: generalpage.ui:28
 msgctxt "GeneralPage"
 msgid "Start Vidalia when my system starts"
 msgstr "Porneşte Vidalia odată cu sistemul de operare"
 
-#: generalpage.ui:121
 msgctxt "GeneralPage"
 msgid "Browse"
 msgstr "Răsfoieşte"
 
-#: generalpage.ui:57
 msgctxt "GeneralPage"
 msgid "Start the Tor software when Vidalia starts"
 msgstr "Porneşte Tor odată cu Vidalia"
 
-#: generalpage.ui:51
 msgctxt "GeneralPage"
 msgid "Tor"
 msgstr "Tor"
 
-#: generalpage.ui:93
 msgctxt "GeneralPage"
 msgid "Proxy Application (optional)"
 msgstr "Aplicaţie Proxy (opţional)"
 
-#: generalpage.ui:99
 msgctxt "GeneralPage"
 msgid "Start a proxy application when Tor starts"
 msgstr "Porneşte o aplicaţie proxy odată cu Tor"
 
-#: generalpage.ui:135
 msgctxt "GeneralPage"
 msgid "Proxy Application Arguments:"
 msgstr "Argumente aplicaţie proxy:"
 
-#: generalpage.ui:154
 msgctxt "GeneralPage"
 msgid "Software Updates"
 msgstr "Actualizări software"
 
-#: generalpage.ui:160
 msgctxt "GeneralPage"
 msgid "Check for new software updates automatically"
 msgstr "Verifică automat actualizări de software"
 
-#: generalpage.ui:193
 msgctxt "GeneralPage"
 msgid "Check Now"
 msgstr "Verifică acum"
 
-#: graphframe.cpp:238
-msgctxt "GraphFrame"
-msgid "Recv:"
-msgstr "Primit:"
-
-#: graphframe.cpp:298
 msgctxt "GraphFrame"
 msgid "%1 KB/s"
 msgstr "%1 KO/s"
 
-#: graphframe.cpp:247
-msgctxt "GraphFrame"
-msgid "Sent:"
-msgstr "Trimis:"
-
-#: graphframe.cpp:259
 msgctxt "GraphFrame"
 msgid "%1 KB"
 msgstr "%1 KO"
 
-#: graphframe.cpp:262
 msgctxt "GraphFrame"
 msgid "%1 MB"
 msgstr "%1 MO"
 
-#: graphframe.cpp:265
 msgctxt "GraphFrame"
 msgid "%1 GB"
 msgstr "%1 GO"
 
-#: helpbrowser.cpp:134
-msgctxt "HelpBrowser"
-msgid "Error Loading Help Contents:"
-msgstr "Eroare la încărcarea documentaţiei:"
+msgctxt "GraphFrame"
+msgid "Recv:"
+msgstr ""
 
-#: helpbrowser.cpp:146
+msgctxt "GraphFrame"
+msgid "Sent:"
+msgstr ""
+
 msgctxt "HelpBrowser"
 msgid "Supplied XML file is not a valid Contents document."
 msgstr "Fişierul furnizat nu este un fişier valid XML de cuprins."
 
-#: helpbrowser.cpp:395
 msgctxt "HelpBrowser"
 msgid "Search reached end of document"
 msgstr "Căutarea a ajuns la sfârşitul documentului"
 
-#: helpbrowser.cpp:397
 msgctxt "HelpBrowser"
 msgid "Search reached start of document"
 msgstr "Căutarea a ajuns la începutul documentului"
 
-#: helpbrowser.cpp:399
 msgctxt "HelpBrowser"
 msgid "Text not found in document"
 msgstr "Textul nu a fost găsit în document"
 
-#: helpbrowser.cpp:444
 msgctxt "HelpBrowser"
 msgid "Found %1 results"
 msgstr "S-au găsit %1 rezultate"
 
-#: helpbrowser.ui:33
 msgctxt "HelpBrowser"
 msgid "Vidalia Help"
 msgstr "Documentaţie Vidalia"
 
-#: helpbrowser.ui:484
 msgctxt "HelpBrowser"
 msgid "Back"
 msgstr "Înapoi"
 
-#: helpbrowser.ui:487
 msgctxt "HelpBrowser"
 msgid "Move to previous page (Backspace)"
 msgstr "Către pagina precedentă (Backspace)"
 
-#: helpbrowser.ui:490
 msgctxt "HelpBrowser"
 msgid "Backspace"
 msgstr "Backspace"
 
-#: helpbrowser.ui:498
 msgctxt "HelpBrowser"
 msgid "Forward"
 msgstr "Înainte"
 
-#: helpbrowser.ui:501
 msgctxt "HelpBrowser"
 msgid "Move to next page (Shift+Backspace)"
 msgstr "Către pagina următoare (Shift+Backspace)"
 
-#: helpbrowser.ui:504
 msgctxt "HelpBrowser"
 msgid "Shift+Backspace"
 msgstr "Shift+Backspace"
 
-#: helpbrowser.ui:512
 msgctxt "HelpBrowser"
 msgid "Home"
 msgstr "Pagina de start"
 
-#: helpbrowser.ui:515
 msgctxt "HelpBrowser"
 msgid "Move to the Home page (Ctrl+H)"
 msgstr "Către pagina de start (Ctrl+H)"
 
-#: helpbrowser.ui:518
 msgctxt "HelpBrowser"
 msgid "Ctrl+H"
 msgstr "Ctrl+H"
 
-#: helpbrowser.ui:535
 msgctxt "HelpBrowser"
 msgid "Find"
 msgstr "Căutare"
 
-#: helpbrowser.ui:538
 msgctxt "HelpBrowser"
 msgid "Search for a word or phrase on current page (Ctrl+F)"
 msgstr "Caută un cuvânt sau mai multe în pagina curentă (Ctrl+F)"
 
-#: helpbrowser.ui:541
 msgctxt "HelpBrowser"
 msgid "Ctrl+F"
 msgstr "Ctrl+F"
 
-#: helpbrowser.ui:549
 msgctxt "HelpBrowser"
 msgid "Close"
 msgstr "Închide"
 
-#: helpbrowser.ui:552
 msgctxt "HelpBrowser"
 msgid "Close Vidalia Help"
 msgstr "Închide centrul de asistenţă Vidalia"
 
-#: helpbrowser.ui:555
 msgctxt "HelpBrowser"
 msgid "Esc"
 msgstr "Esc"
 
-#: helpbrowser.ui:152
 msgctxt "HelpBrowser"
 msgid "Find:"
 msgstr "Caută:"
 
-#: helpbrowser.ui:174
 msgctxt "HelpBrowser"
 msgid "Find Previous"
 msgstr "Căutare înapoi"
 
-#: helpbrowser.ui:187
 msgctxt "HelpBrowser"
 msgid "Find Next"
 msgstr "Căutare înainte"
 
-#: helpbrowser.ui:221
 msgctxt "HelpBrowser"
 msgid "Case sensitive"
 msgstr "Cu majuscule semnificative"
 
-#: helpbrowser.ui:231
 msgctxt "HelpBrowser"
 msgid "Whole words only"
 msgstr "Numai cuvinte întregi"
 
-#: helpbrowser.ui:305
 msgctxt "HelpBrowser"
 msgid "Help Topics"
 msgstr "Categorii"
 
-#: helpbrowser.ui:260
 msgctxt "HelpBrowser"
 msgid "Contents"
 msgstr "Cuprins"
 
-#: helpbrowser.ui:350
 msgctxt "HelpBrowser"
 msgid "Search"
 msgstr "Caută"
 
-#: helpbrowser.ui:362
 msgctxt "HelpBrowser"
 msgid "Searching for:"
 msgstr "Introduceţi un termen sau mai mulţi:"
 
-#: helpbrowser.ui:405
 msgctxt "HelpBrowser"
 msgid "Found Documents"
 msgstr "Documente găsite"
 
-#: helptextbrowser.cpp:54
-msgctxt "HelpTextBrowser"
-msgid "Error opening help file:"
-msgstr "Eroare la deschiderea fişierului documentaţie:"
+msgctxt "HelpBrowser"
+msgid "Error Loading Help Contents:"
+msgstr ""
 
-#: helptextbrowser.cpp:72
 msgctxt "HelpTextBrowser"
 msgid "Opening External Link"
 msgstr "Se deschide legătură externă"
 
-#: helptextbrowser.cpp:76
 msgctxt "HelpTextBrowser"
-msgid ""
-"Vidalia can open the link you selected in your default Web browser. If your "
-"browser is not currently configured to use Tor then the request will not be "
-"anonymous."
-msgstr ""
-"Vidalia poate deschide legătura pe care aţi ales-o cu navigatorul "
-"dumneavoastră web implicit. Dacă navigatorul dumneavoastră nu este "
-"configurat pentru a folosi Tor, atunci cererea nu va fi anonimă."
+msgid "Vidalia can open the link you selected in your default Web browser. If your browser is not currently configured to use Tor then the request will not be anonymous."
+msgstr "Vidalia poate deschide legătura pe care aţi ales-o cu navigatorul dumneavoastră web implicit. Dacă navigatorul dumneavoastră nu este configurat pentru a folosi Tor, atunci cererea nu va fi anonimă."
 
-#: helptextbrowser.cpp:78
 msgctxt "HelpTextBrowser"
 msgid "Do you want Vidalia to open the link in your Web browser?"
-msgstr ""
-"Doriţi ca Vidalia să deschidă legătura cu navigatorul dumneavoastră web?"
+msgstr "Doriţi ca Vidalia să deschidă legătura cu navigatorul dumneavoastră web?"
 
-#: helptextbrowser.cpp:88
 msgctxt "HelpTextBrowser"
 msgid "Unable to Open Link"
 msgstr "Legătura nu a putut fi deschisă"
 
-#: helptextbrowser.cpp:90
 msgctxt "HelpTextBrowser"
-msgid ""
-"Vidalia was unable to open the selected link in your Web browser. You can "
-"still copy the URL and paste it into your browser."
-msgstr ""
-"Vidalia nu a putut deschide adresa aleasă. Puteţi copia şi apoi lipi adresa "
-"direct în navigatorul web."
+msgid "Vidalia was unable to open the selected link in your Web browser. You can still copy the URL and paste it into your browser."
+msgstr "Vidalia nu a putut deschide adresa aleasă. Puteţi copia şi apoi lipi adresa direct în navigatorul web."
 
-#: licensedialog.ui:13
+msgctxt "HelpTextBrowser"
+msgid "Error opening help file:"
+msgstr ""
+
 msgctxt "LicenseDialog"
 msgid "License Information"
 msgstr "Informaţii licenţă"
 
-#: licensedialog.ui:43
 msgctxt "LicenseDialog"
 msgid "License"
 msgstr "Licenţă"
 
-#: licensedialog.ui:76
 msgctxt "LicenseDialog"
 msgid "Credits"
 msgstr "Credite"
 
-#: logevent.cpp:57
 msgctxt "LogEvent"
 msgid "Debug"
 msgstr "Depanare"
 
-#: logevent.cpp:58
 msgctxt "LogEvent"
 msgid "Info"
 msgstr "Detalii"
 
-#: logevent.cpp:59
 msgctxt "LogEvent"
 msgid "Notice"
 msgstr "Înştiinţare"
 
-#: logevent.cpp:60
 msgctxt "LogEvent"
 msgid "Warning"
 msgstr "Atenţionare"
 
-#: logevent.cpp:61
 msgctxt "LogEvent"
 msgid "Error"
 msgstr "Eroare"
 
-#: logevent.cpp:62
 msgctxt "LogEvent"
 msgid "Unknown"
 msgstr "Necunoscut"
 
-#: mainwindow.ui:233
 msgctxt "MainWindow"
 msgid "Start Tor"
 msgstr "Porneşte Tor"
 
-#: mainwindow.ui:443
 msgctxt "MainWindow"
 msgid "Exit"
 msgstr "Ieşire"
 
-#: mainwindow.ui:304
 msgctxt "MainWindow"
 msgid "Bandwidth Graph"
 msgstr "Informaţii trafic"
 
-#: mainwindow.ui:317
 msgctxt "MainWindow"
 msgid "Message Log"
 msgstr "Jurnal"
 
-#: mainwindow.cpp:453
 msgctxt "MainWindow"
 msgid "Network Map"
 msgstr "Harta reţelei"
 
-#: mainwindow.cpp:459
 msgctxt "MainWindow"
 msgid "Control Panel"
 msgstr "Panou de control"
 
-#: mainwindow.ui:380
 msgctxt "MainWindow"
 msgid "Settings"
 msgstr "Setări"
 
-#: mainwindow.ui:430
 msgctxt "MainWindow"
 msgid "About"
 msgstr "Despre"
 
-#: mainwindow.ui:367
 msgctxt "MainWindow"
 msgid "Help"
 msgstr "Asistenţă"
 
-#: mainwindow.cpp:1687
 msgctxt "MainWindow"
 msgid "New Identity"
 msgstr "Identitate nouă"
 
-#: mainwindow.cpp:542
 msgctxt "MainWindow"
 msgid "Ctrl+T"
 msgstr "Ctrl+T"
 
-#: mainwindow.cpp:543
 msgctxt "MainWindow"
 msgid "Ctrl+B"
 msgstr "Ctrl+B"
 
-#: mainwindow.cpp:544
 msgctxt "MainWindow"
 msgid "Ctrl+L"
 msgstr "Ctrl+L"
 
-#: mainwindow.cpp:545
 msgctxt "MainWindow"
 msgid "Ctrl+N"
 msgstr "Ctrl+N"
 
-#: mainwindow.cpp:546
 msgctxt "MainWindow"
 msgid "Ctrl+?"
 msgstr "Ctrl+?"
 
-#: mainwindow.cpp:547
 msgctxt "MainWindow"
 msgid "Ctrl+I"
 msgstr "Ctrl+I"
 
-#: mainwindow.cpp:548
 msgctxt "MainWindow"
 msgid "Ctrl+P"
 msgstr "Ctrl+P"
 
-#: mainwindow.cpp:568
 msgctxt "MainWindow"
 msgid "Tor"
 msgstr "Tor"
 
-#: mainwindow.cpp:573
 msgctxt "MainWindow"
 msgid "View"
 msgstr "Mod afişare"
 
-#: mainwindow.cpp:581
 msgctxt "MainWindow"
 msgid "Vidalia Help"
 msgstr "Asistenţă Vidalia"
 
-#: mainwindow.cpp:736
 msgctxt "MainWindow"
 msgid "Error starting web browser"
 msgstr "Eroare la pornirea navigatorului web"
 
-#: mainwindow.cpp:737
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured web browser"
 msgstr "Vidalia nu a putut porni navigatorul web specificat în setări"
 
-#: mainwindow.cpp:749
 msgctxt "MainWindow"
 msgid "Error starting IM client"
 msgstr "Eroare la pornirea clientului de mesagerie instantanee"
 
-#: mainwindow.cpp:750
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured IM client"
-msgstr ""
-"Vidalia nu a putut porni clientul de mesagerie instantanee specificat în "
-"setări"
+msgstr "Vidalia nu a putut porni clientul de mesagerie instantanee specificat în setări"
 
-#: mainwindow.cpp:771
 msgctxt "MainWindow"
 msgid "Error starting proxy server"
 msgstr "Eroare la pornirea serverului proxy"
 
-#: mainwindow.cpp:772
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured proxy server"
 msgstr "Vidalia nu a putut porni serverul proxy specificat în setări"
 
-#: mainwindow.cpp:788
 msgctxt "MainWindow"
 msgid "Connecting to a relay directory"
 msgstr "Conectare la un director relay"
 
-#: mainwindow.cpp:792
 msgctxt "MainWindow"
 msgid "Establishing an encrypted directory connection"
 msgstr "Se stabileşte o conexiune criptată la director"
 
-#: mainwindow.cpp:795
 msgctxt "MainWindow"
 msgid "Retrieving network status"
 msgstr "Se obţin informaţii despre starea reţelei"
 
-#: mainwindow.cpp:798
 msgctxt "MainWindow"
 msgid "Loading network status"
 msgstr "Se încarcă informaţiile despre starea reţelei"
 
-#: mainwindow.cpp:801
 msgctxt "MainWindow"
 msgid "Loading authority certificates"
 msgstr "Se încarcă certificatele de autoritate"
 
-#: mainwindow.cpp:804
 msgctxt "MainWindow"
 msgid "Requesting relay information"
 msgstr "Se cer informaţii despre relay"
 
-#: mainwindow.cpp:807
 msgctxt "MainWindow"
 msgid "Loading relay information"
 msgstr "Se încarcă informaţiile despre relay"
 
-#: mainwindow.cpp:1343
 msgctxt "MainWindow"
 msgid "Connecting to the Tor network"
 msgstr "Conctare la reţeaua Tor"
 
-#: mainwindow.cpp:814
 msgctxt "MainWindow"
 msgid "Establishing a Tor circuit"
 msgstr "Se stabileşte un circuit Tor"
 
-#: mainwindow.cpp:1508
 msgctxt "MainWindow"
 msgid "Connected to the Tor network!"
 msgstr "Conectare efectuată cu succes!"
 
-#: mainwindow.cpp:821
 msgctxt "MainWindow"
 msgid "Unrecognized startup status"
 msgstr "Stare necunoscută la pornire"
 
-#: mainwindow.cpp:828
 msgctxt "MainWindow"
 msgid "miscellaneous"
 msgstr "diverse"
 
-#: mainwindow.cpp:831
 msgctxt "MainWindow"
 msgid "identity mismatch"
 msgstr "identităţile nu se potrivesc"
 
-#: mainwindow.cpp:834
 msgctxt "MainWindow"
 msgid "done"
 msgstr "efectuat"
 
-#: mainwindow.cpp:837
 msgctxt "MainWindow"
 msgid "connection refused"
 msgstr "conexiune refuzată"
 
-#: mainwindow.cpp:840
 msgctxt "MainWindow"
 msgid "connection timeout"
 msgstr "timpul alocat pentru conexiune a expirat (timeout)"
 
-#: mainwindow.cpp:843
 msgctxt "MainWindow"
 msgid "read/write error"
 msgstr "eroare la scriere/citire"
 
-#: mainwindow.cpp:846
 msgctxt "MainWindow"
 msgid "no route to host"
 msgstr "nici o rută către gazdă"
 
-#: mainwindow.cpp:849
 msgctxt "MainWindow"
 msgid "insufficient resources"
 msgstr "resurse insuficiente"
 
-#: mainwindow.cpp:852
 msgctxt "MainWindow"
 msgid "unknown"
 msgstr "necunoscut"
 
-#: mainwindow.cpp:854
-msgctxt "MainWindow"
-msgid "failed (%1)"
-msgstr "eşuat (%1)"
-
-#: mainwindow.ui:168
 msgctxt "MainWindow"
 msgid "Tor is not running"
 msgstr "Tor nu rulează"
 
-#: mainwindow.cpp:897
 msgctxt "MainWindow"
 msgid "Tor is shutting down"
 msgstr "Se închide Tor"
 
-#: mainwindow.cpp:902
 msgctxt "MainWindow"
 msgid "Stop Tor Now"
 msgstr "Opriţi Tor acum"
 
-#: mainwindow.cpp:904
 msgctxt "MainWindow"
 msgid "Stop Tor"
 msgstr "Opriţi Tor"
 
-#: mainwindow.cpp:920
 msgctxt "MainWindow"
 msgid "Starting the Tor software"
 msgstr "Se lansează Tor"
 
-#: mainwindow.ui:75
 msgctxt "MainWindow"
 msgid "Starting Tor"
 msgstr "Tor se iniţializează"
 
-#: mainwindow.cpp:1070
 msgctxt "MainWindow"
 msgid "Error Starting Tor"
 msgstr "Eroare la iniţializarea Tor"
 
-#: mainwindow.cpp:1073
 msgctxt "MainWindow"
-msgid ""
-"Vidalia was unable to start Tor. Check your settings to ensure the correct "
-"name and location of your Tor executable is specified."
-msgstr ""
-"Vidalia nu a putut porni Tor. Verificaţi setările pentru a vă asigura că "
-"numele şi locaţia fişierului executabil Tor sunt corect specificate."
+msgid "Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified."
+msgstr "Vidalia nu a putut porni Tor. Verificaţi setările pentru a vă asigura că numele şi locaţia fişierului executabil Tor sunt corect specificate."
 
-#: mainwindow.cpp:1107
 msgctxt "MainWindow"
 msgid "Connecting to Tor"
 msgstr "Conectare la Tor"
 
-#: mainwindow.cpp:1117
 msgctxt "MainWindow"
 msgid "Connection Error"
 msgstr "Eroare de conexiune"
 
-#: mainwindow.cpp:1149
 msgctxt "MainWindow"
 msgid "Relaying is Enabled"
 msgstr "Modul relay este activat"
 
-#: mainwindow.cpp:1176
 msgctxt "MainWindow"
 msgid "Error Shutting Down"
 msgstr "Eroare la închidere"
 
-#: mainwindow.cpp:1177
 msgctxt "MainWindow"
 msgid "Vidalia was unable to stop the Tor software."
 msgstr "Vidalia nu a putut opri Tor."
 
-#: mainwindow.cpp:1208
 msgctxt "MainWindow"
 msgid "Unexpected Error"
 msgstr "Eroare inopinată"
 
-#: mainwindow.cpp:1266
 msgctxt "MainWindow"
 msgid "Authenticating to Tor"
 msgstr "Autentificare faţă de Tor"
 
-#: mainwindow.cpp:1286
 msgctxt "MainWindow"
 msgid "Cookie Authentication Required"
 msgstr "Impune autentificare prin cookie"
 
-#: mainwindow.cpp:1289
 msgctxt "MainWindow"
-msgid ""
-"The Tor software requires Vidalia to send the contents of an authentication "
-"cookie, but Vidalia was unable to find one."
-msgstr ""
-"Tor cere Vidalia transmiterea unui cookie de autentificare, dar Vidalia nu a "
-"putut găsi unul."
+msgid "The Tor software requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one."
+msgstr "Tor cere Vidalia transmiterea unui cookie de autentificare, dar Vidalia nu a putut găsi unul."
 
-#: mainwindow.cpp:1291
 msgctxt "MainWindow"
 msgid "Would you like to browse for the file 'control_auth_cookie' yourself?"
 msgstr "Doriţi să căutaţi manual fişierul 'control_auth_cookie'?"
 
-#: mainwindow.cpp:1298
 msgctxt "MainWindow"
 msgid "Data Directory"
 msgstr "Directorul pentru date"
 
-#: mainwindow.cpp:1300
 msgctxt "MainWindow"
 msgid "Control Cookie (control_auth_cookie)"
 msgstr "Cookie de control (control_auth_cookie)"
 
-#: mainwindow.cpp:1352
 msgctxt "MainWindow"
 msgid "Error Registering for Events"
 msgstr "Eroare la înregistrarea evenimentelor"
 
-#: mainwindow.cpp:1354
 msgctxt "MainWindow"
-msgid ""
-"Vidalia was unable to register for some events. Many of Vidalia's features "
-"may be unavailable."
-msgstr ""
-"Vidalia nu a putut înregistra anumite evenimente. O parte din "
-"caracteristicile Vidalia pot fi indisponibile."
+msgid "Vidalia was unable to register for some events. Many of Vidalia's features may be unavailable."
+msgstr "Vidalia nu a putut înregistra anumite evenimente. O parte din caracteristicile Vidalia pot fi indisponibile."
 
-#: mainwindow.cpp:1433
 msgctxt "MainWindow"
 msgid "Authentication Error"
 msgstr "Eroare la autentificare"
 
-#: mainwindow.cpp:1435
 msgctxt "MainWindow"
 msgid "Vidalia was unable to authenticate to the Tor software. (%1)"
 msgstr "Tor nu a putut fi autentificat de către Vidalia. (%1)"
 
-#: mainwindow.cpp:1437
 msgctxt "MainWindow"
 msgid "Please check your control port authentication settings."
 msgstr "Verificaţi setările de autentificare ale portului de control."
 
-#: mainwindow.cpp:1560
 msgctxt "MainWindow"
 msgid "Tor Update Available"
 msgstr "O nouă versiune Tor este disponibilă"
 
-#: mainwindow.cpp:1556
 msgctxt "MainWindow"
-msgid ""
-"The currently installed version of Tor is out of date or no longer "
-"recommended. Please visit the Tor website to download the latest version."
-msgstr ""
-"Versiunea curentă Tor este depăşită şi nu mai este recomandată. Vizitaţi "
-"site-ul Tor pentru a descărca cea mai recentă versiune."
+msgid "The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version."
+msgstr "Versiunea curentă Tor este depăşită şi nu mai este recomandată. Vizitaţi site-ul Tor pentru a descărca cea mai recentă versiune."
 
-#: mainwindow.cpp:1556
 msgctxt "MainWindow"
 msgid "Tor website: %1"
 msgstr "Site-ul Tor: %1"
 
-#: mainwindow.cpp:1690
 msgctxt "MainWindow"
-msgid ""
-"All subsequent connections will appear to be different than your old "
-"connections."
+msgid "All subsequent connections will appear to be different than your old connections."
 msgstr "Toate conexiunile noi vor apare ca fiind diferite faţă de cele vechi."
 
-#: mainwindow.cpp:1705
 msgctxt "MainWindow"
 msgid "Failed to Create New Identity"
 msgstr "Nu s-a putut obţine o identitate nouă"
 
-#: mainwindow.cpp:1754
 msgctxt "MainWindow"
 msgid "Port Forwarding Failed"
 msgstr "Operaţiunea de port forwarding a eşuat"
 
-#: mainwindow.cpp:1755
 msgctxt "MainWindow"
 msgid "Vidalia was unable to configure automatic port forwarding."
 msgstr "Vidalia nu a putut configura automat port forwarding."
 
-#: mainwindow.ui:19
 msgctxt "MainWindow"
 msgid "Vidalia Control Panel"
 msgstr "Panoul de control Vidalia"
 
-#: mainwindow.ui:49
 msgctxt "MainWindow"
 msgid "Status"
 msgstr "Stare"
 
-#: mainwindow.ui:218
 msgctxt "MainWindow"
 msgid "Vidalia Shortcuts"
 msgstr "Comenzi rapide Vidalia"
 
-#: mainwindow.ui:243
 msgctxt "MainWindow"
 msgid "Setup Relaying"
 msgstr "Setări pentru relay"
 
-#: mainwindow.ui:246
 msgctxt "MainWindow"
 msgid "Set up a relay and help the network grow"
 msgstr "Menţineţi un relay şi ajutaţi astfel reţeaua să crească"
 
-#: mainwindow.ui:256
 msgctxt "MainWindow"
 msgid "View the Network"
 msgstr "Vizualizare reţea"
 
-#: mainwindow.ui:259
 msgctxt "MainWindow"
 msgid "View a map of the Tor network"
 msgstr "Vizualizează harta reţelei Tor"
 
-#: mainwindow.ui:272
 msgctxt "MainWindow"
 msgid "Use a New Identity"
 msgstr "Foloseşte o nouă identitate"
 
-#: mainwindow.ui:275
 msgctxt "MainWindow"
 msgid "Make subsequent connections appear new"
 msgstr "Fă ca toate conexiunile următoare să apară ca fiind noi"
 
-#: mainwindow.ui:307
 msgctxt "MainWindow"
 msgid "View recent bandwidth usage"
 msgstr "Istoricul recent al traficului"
 
-#: mainwindow.ui:320
 msgctxt "MainWindow"
 msgid "View log message history"
 msgstr "Vizualizare jurnal"
 
-#: mainwindow.ui:370
 msgctxt "MainWindow"
 msgid "View help documentation"
 msgstr "Documentaţie şi asistenţă"
 
-#: mainwindow.ui:383
 msgctxt "MainWindow"
 msgid "Configure Vidalia"
 msgstr "Configurează Vidalia"
 
-#: mainwindow.ui:433
 msgctxt "MainWindow"
 msgid "View version and license information"
 msgstr "Versiune şi informaţii despre licenţă"
 
-#: mainwindow.ui:446
 msgctxt "MainWindow"
 msgid "Exit Vidalia"
 msgstr "Închide Vidalia"
 
-#: mainwindow.ui:498
 msgctxt "MainWindow"
 msgid "Show this window on startup"
 msgstr "Arată această fereastră la pornire"
 
-#: mainwindow.ui:517
 msgctxt "MainWindow"
 msgid "Hide"
 msgstr "Ascunde"
 
-#: mainwindow.ui:520
 msgctxt "MainWindow"
 msgid "Hide this window"
 msgstr "Ascunde această fereastră"
 
-#: mainwindow.cpp:1421
 msgctxt "MainWindow"
 msgid "Password Reset Failed"
 msgstr "Resetarea parolei a eşuat"
 
-#: mainwindow.cpp:1424
 msgctxt "MainWindow"
-msgid ""
-"Vidalia tried to reset Tor's control password, but was not able to restart "
-"the Tor software. Please check your Task Manager to ensure there are no "
-"other Tor processes running."
-msgstr ""
-"Vidalia a încercat să reiniţializeze parola de control pentru Tor, dar nu a "
-"reuşit să repornească Tor. Vă rugăm să verificaţi Task Manager pentru a vă "
-"asigura ca nu există alte procese Tor care rulează."
+msgid "Vidalia tried to reset Tor's control password, but was not able to restart the Tor software. Please check your Task Manager to ensure there are no other Tor processes running."
+msgstr "Vidalia a încercat să reiniţializeze parola de control pentru Tor, dar nu a reuşit să repornească Tor. Vă rugăm să verificaţi Task Manager pentru a vă asigura ca nu există alte procese Tor care rulează."
 
-#: mainwindow.cpp:895
 msgctxt "MainWindow"
-msgid ""
-"Your relay is shutting down.\n"
-"Click 'Stop' again to stop your relay now."
-msgstr ""
-"Relay-ul dumneavoastră se închide.\n"
-"Faceţi din nou clic pe 'Stop' pentru a-l opri acum."
-
-#: mainwindow.cpp:1154
-msgctxt "MainWindow"
-msgid ""
-"You are currently running a relay. Terminating your relay will interrupt any "
-"open connections from clients.\n"
-"\n"
-"Would you like to shutdown gracefully and give clients time to find a new "
-"relay?"
-msgstr ""
-"Aveţi activat modul relay. Oprirea relay-ului va întrerupe toate conexiunile "
-"celor conectaţi la acest relay.\n"
-"\n"
-"Aţi dori să închideţi acest relay treptat, astfel încât să daţi clienţilor "
-"conectaţi posibilitatea de a găsi un nou relay?"
-
-#: mainwindow.cpp:1212
-msgctxt "MainWindow"
-msgid ""
-"Vidalia detected that the Tor software exited unexpectedly.\n"
-"\n"
-"Please check the message log for recent warning or error messages."
-msgstr ""
-"Vidalia a detectat că Tor s-a închis inopinat.\n"
-"\n"
-"Vă rugăm verificaţi jurnalul pentru meaje recente de eroare."
-
-#: mainwindow.cpp:1562
-msgctxt "MainWindow"
-msgid ""
-"The currently installed version of Tor is out of date or no longer "
-"recommended."
+msgid "The currently installed version of Tor is out of date or no longer recommended."
 msgstr "Versiunea curentă Tor este depăşită sau nu mai este recomandată."
 
-#: mainwindow.cpp:1564
 msgctxt "MainWindow"
-msgid ""
-"Would you like to check if a newer package is available for installation?"
+msgid "Would you like to check if a newer package is available for installation?"
 msgstr "Vrei să verifici dacă este disponibil un nou pachet pentru instalare?"
 
-#: mainwindow.cpp:1583
 msgctxt "MainWindow"
 msgid "Potentially Unsafe Connection"
 msgstr "Conexiune potenţial nesigură"
 
-#: mainwindow.cpp:1588
 msgctxt "MainWindow"
-msgid ", probably Telnet,"
-msgstr ", probabil Telnet,"
+msgid "One of your applications%1appears to be making a potentially unencrypted and unsafe connection to port %2. Anything sent over this connection could be monitored. Please check your application's configuration and use only encrypted protocols, such as SSL, if possible."
+msgstr "Una dintre aplicaţiile dumneavoastră %1 se pare că face o potenţială conexiune necriptată şi nesigură către portul %2. Orice lucru trimis pe această conexiune poate să fie monitorizată. Vă rugăm să verificaţi configuraţia aplicaţiei şi să folosiţi numai protocale criptate, cum ar fi SLL, dacă este posibil."
 
-#: mainwindow.cpp:1594
 msgctxt "MainWindow"
-msgid ", probably an email client,"
-msgstr ", probabil un client de email,"
+msgid "Tor has automatically closed your connection in order to protect your anonymity."
+msgstr "Tor a închis automat conexiunea dumneavoastră pentru a vă proteja anonimitatea."
 
-#: mainwindow.cpp:1606
-msgctxt "MainWindow"
-msgid ""
-"One of your applications%1appears to be making a potentially unencrypted and "
-"unsafe connection to port %2. Anything sent over this connection could be "
-"monitored. Please check your application's configuration and use only "
-"encrypted protocols, such as SSL, if possible."
-msgstr ""
-"Una dintre aplicaţiile dumneavoastră %1 se pare că face o potenţială "
-"conexiune necriptată şi nesigură către portul %2. Orice lucru trimis pe "
-"această conexiune poate să fie monitorizată. Vă rugăm să verificaţi "
-"configuraţia aplicaţiei şi să folosiţi numai protocale criptate, cum ar fi "
-"SLL, dacă este posibil."
-
-#: mainwindow.cpp:1609
-msgctxt "MainWindow"
-msgid ""
-"Tor has automatically closed your connection in order to protect your "
-"anonymity."
-msgstr ""
-"Tor a închis automat conexiunea dumneavoastră pentru a vă proteja "
-"anonimitatea."
-
-#: mainwindow.cpp:1817
 msgctxt "MainWindow"
 msgid "Update Failed"
 msgstr "Actualizare eşuată"
 
-#: mainwindow.cpp:1843
 msgctxt "MainWindow"
 msgid "Your software is up to date"
 msgstr "Software-ul dumneavostră este actualizat"
 
-#: mainwindow.cpp:1845
 msgctxt "MainWindow"
-msgid ""
-"There are no new Tor software packages available for your computer at this "
-"time."
-msgstr ""
-"Nu sunt disponibile noi pachete software Tor pentru calculatorul "
-"dumneavoastră în acest moment."
+msgid "There are no new Tor software packages available for your computer at this time."
+msgstr "Nu sunt disponibile noi pachete software Tor pentru calculatorul dumneavoastră în acest moment."
 
-#: mainwindow.cpp:1888
 msgctxt "MainWindow"
 msgid "Installation Failed"
 msgstr "Instalare eşuată"
 
-#: mainwindow.cpp:1889
 msgctxt "MainWindow"
 msgid "Vidalia was unable to install your software updates."
 msgstr "Vidalia nu a putut instala actualizările software."
 
-#: mainwindow.cpp:1890
 msgctxt "MainWindow"
 msgid "The following error occurred:"
 msgstr "A apărut următoarea eroare:"
 
-#: messagelog.cpp:189
+msgctxt "MainWindow"
+msgid "failed (%1)"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Your relay is shutting down.\n"
+"Click 'Stop' again to stop your relay now."
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "You are currently running a relay. Terminating your relay will interrupt any open connections from clients.\n"
+"\n"
+"Would you like to shutdown gracefully and give clients time to find a new relay?"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Vidalia detected that the Tor software exited unexpectedly.\n"
+"\n"
+"Please check the message log for recent warning or error messages."
+msgstr ""
+
+msgctxt "MainWindow"
+msgid ", probably Telnet,"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid ", probably an email client,"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "Vidalia"
+msgstr "Vidalia"
+
+msgctxt "MainWindow"
+msgid "File"
+msgstr ""
+
+msgctxt "MainWindow"
+msgid "About Vidalia"
+msgstr "Despre Vidalia"
+
+msgctxt "MainWindow"
+msgid "Home"
+msgstr "Pagina de start"
+
+msgctxt "MainWindow"
+msgid "Check For Updates"
+msgstr ""
+
 msgctxt "MessageLog"
 msgid "Error Setting Filter"
 msgstr "Eroare la setarea filtrului"
 
-#: messagelog.cpp:190
 msgctxt "MessageLog"
 msgid "Vidalia was unable to register for Tor's log events."
 msgstr "Vidalia nu a putut înregistra mesajele din jurnalul Tor."
 
-#: messagelog.cpp:205
 msgctxt "MessageLog"
 msgid "Error Opening Log File"
 msgstr "Eroare la deschiderea fişierului jurnal"
 
-#: messagelog.cpp:206
 msgctxt "MessageLog"
 msgid "Vidalia was unable to open the specified log file."
 msgstr "Vidalia nu a putut deschide fişierul jurnal specificat."
 
-#: messagelog.cpp:227
 msgctxt "MessageLog"
 msgid "Log Filename Required"
 msgstr "Este necesar numele fişierului jurnal"
 
-#: messagelog.cpp:229
 msgctxt "MessageLog"
 msgid "You must enter a filename to be able to save log messages to a file."
-msgstr ""
-"Trebuie să introduceţi un nume de fişier pentru a putea salva mesajele din "
-"jurnal."
+msgstr "Trebuie să introduceţi un nume de fişier pentru a putea salva mesajele din jurnal."
 
-#: messagelog.cpp:280
 msgctxt "MessageLog"
 msgid "Select Log File"
 msgstr "Alege fişierul jurnal"
 
-#: messagelog.cpp:297
 msgctxt "MessageLog"
 msgid "Save Log Messages"
 msgstr "Salvează mesajele din jurnal"
 
-#: messagelog.cpp:300
 msgctxt "MessageLog"
 msgid "Text Files (*.txt)"
 msgstr "Fişiere text (*.txt)"
 
-#: messagelog.cpp:309
 msgctxt "MessageLog"
 msgid "Vidalia"
 msgstr "Vidalia"
 
-#: messagelog.cpp:360
 msgctxt "MessageLog"
 msgid "Find in Message Log"
 msgstr "Caută mesaje în jurnal"
 
-#: messagelog.cpp:361
 msgctxt "MessageLog"
 msgid "Find:"
 msgstr "Caută:"
 
-#: messagelog.cpp:367
 msgctxt "MessageLog"
 msgid "Not Found"
 msgstr "Nu s-a găsit"
 
-#: messagelog.cpp:368
 msgctxt "MessageLog"
 msgid "Search found 0 matches."
 msgstr "Căutarea a returnat 0 rezultate."
 
-#: messagelog.ui:19
 msgctxt "MessageLog"
 msgid "Message Log"
 msgstr "Jurnal"
 
-#: messagelog.ui:452
 msgctxt "MessageLog"
 msgid "Message Filters..."
 msgstr "Filtre mesaje..."
 
-#: messagelog.ui:455
 msgctxt "MessageLog"
 msgid "Set message filters"
 msgstr "Setează filtrele de mesaje"
 
-#: messagelog.ui:463
 msgctxt "MessageLog"
 msgid "History Size..."
 msgstr "Dimensiune istoric..."
 
-#: messagelog.ui:466
 msgctxt "MessageLog"
 msgid "Set maximum number of messages to display"
 msgstr "Setează numărul maxim de mesaje afişat"
 
-#: messagelog.ui:477
 msgctxt "MessageLog"
 msgid "Clear"
 msgstr "Şterge"
 
-#: messagelog.ui:480
 msgctxt "MessageLog"
 msgid "Clear all messages from the Message Log (Ctrl+E)"
 msgstr "Şterge toate mesajele din jurnal (Ctrl+E)"
 
-#: messagelog.ui:483
 msgctxt "MessageLog"
 msgid "Ctrl+E"
 msgstr "Ctrl+E"
 
-#: messagelog.ui:497
 msgctxt "MessageLog"
 msgid "Copy"
 msgstr "Copiază"
 
-#: messagelog.ui:500
 msgctxt "MessageLog"
 msgid "Copy the selected messages to the clipboard (Ctrl+C)"
 msgstr "Copiază mesajele alese în clipboard (Ctrl+C)"
 
-#: messagelog.ui:503
 msgctxt "MessageLog"
 msgid "Ctrl+C"
 msgstr "Ctrl+C"
 
-#: messagelog.ui:514
 msgctxt "MessageLog"
 msgid "Select All"
 msgstr "Selectează tot"
 
-#: messagelog.ui:517
 msgctxt "MessageLog"
 msgid "Select all messages (Ctrl+A)"
 msgstr "Selectează toate mesajele (Ctrl+A)"
 
-#: messagelog.ui:520
 msgctxt "MessageLog"
 msgid "Ctrl+A"
 msgstr "Ctrl+A"
 
-#: messagelog.ui:528
 msgctxt "MessageLog"
 msgid "Save All"
 msgstr "Salvează tot"
 
-#: messagelog.ui:531
 msgctxt "MessageLog"
 msgid "Save all messages to a file"
 msgstr "Salvează toate mesajele într-un fişier"
 
-#: messagelog.ui:539
 msgctxt "MessageLog"
 msgid "Save Selected"
 msgstr "Salvează itemii selectaţi"
 
-#: messagelog.ui:542
 msgctxt "MessageLog"
 msgid "Save selected messages to a file"
 msgstr "Salvează mesajele selectate într-un fişier"
 
-#: messagelog.ui:553
 msgctxt "MessageLog"
 msgid "Settings"
 msgstr "Setări"
 
-#: messagelog.ui:556
 msgctxt "MessageLog"
 msgid "Adjust Message Log Settings"
 msgstr "Modifică setările jurnalului"
 
-#: messagelog.ui:559
 msgctxt "MessageLog"
 msgid "Ctrl+T"
 msgstr "Ctrl+T"
 
-#: messagelog.ui:567
 msgctxt "MessageLog"
 msgid "Help"
 msgstr "Ajutor"
 
-#: messagelog.ui:570
 msgctxt "MessageLog"
 msgid "Show the help browser"
 msgstr "Arată documentaţia ajutătoare"
 
-#: messagelog.ui:573
 msgctxt "MessageLog"
 msgid "F1"
 msgstr "F1"
 
-#: messagelog.ui:581
 msgctxt "MessageLog"
 msgid "Close"
 msgstr "Închide"
 
-#: messagelog.ui:584
 msgctxt "MessageLog"
 msgid "Close the Message Log"
 msgstr "Închide jurnalul"
 
-#: messagelog.ui:587
 msgctxt "MessageLog"
 msgid "Esc"
 msgstr "Esc"
 
-#: messagelog.ui:598
 msgctxt "MessageLog"
 msgid "Find"
 msgstr "Căutare"
 
-#: messagelog.ui:601
 msgctxt "MessageLog"
 msgid "Find all messages containing the search text (Ctrl+F)"
 msgstr "Găseşte toate mesajele ce conţin textul (Ctrl+F)"
 
-#: messagelog.ui:604
 msgctxt "MessageLog"
 msgid "Ctrl+F"
 msgstr "Ctrl+F"
 
-#: messagelog.ui:66
 msgctxt "MessageLog"
 msgid "Time"
 msgstr "Ora"
 
-#: messagelog.ui:71
 msgctxt "MessageLog"
 msgid "Type"
 msgstr "Tipul"
 
-#: messagelog.ui:76
 msgctxt "MessageLog"
 msgid "Message"
 msgstr "Mesaj"
 
-#: messagelog.ui:160
 msgctxt "MessageLog"
 msgid "Saves the current Message Log settings"
 msgstr "Salvează setările curente ale jurnalului"
 
-#: messagelog.ui:163
 msgctxt "MessageLog"
 msgid "Save Settings"
 msgstr "Salvează setările"
 
-#: messagelog.ui:179
 msgctxt "MessageLog"
 msgid "Cancels changes made to settings"
 msgstr "Anulează modificările făcute setărilor"
 
-#: messagelog.ui:182
 msgctxt "MessageLog"
 msgid "Cancel"
 msgstr "Revocare"
 
-#: messagelog.ui:196
 msgctxt "MessageLog"
 msgid "Message Filter"
 msgstr "Filtru mesaje"
 
-#: messagelog.ui:217
 msgctxt "MessageLog"
 msgid "Error"
 msgstr "Eroare"
 
-#: messagelog.ui:233
 msgctxt "MessageLog"
 msgid "Warning"
 msgstr "Atenţie!"
 
-#: messagelog.ui:249
 msgctxt "MessageLog"
 msgid "Notice"
 msgstr "Înştiinţare"
 
-#: messagelog.ui:265
 msgctxt "MessageLog"
 msgid "Info"
 msgstr "Detalii"
 
-#: messagelog.ui:281
 msgctxt "MessageLog"
 msgid "Debug"
 msgstr "Depanare"
 
-#: messagelog.ui:297
 msgctxt "MessageLog"
 msgid "Message Log History"
 msgstr "Istoricul jurnalului."
 
-#: messagelog.ui:318
 msgctxt "MessageLog"
 msgid "Number of messages to display in the message log window"
 msgstr "Numărul mesajelor ce apar în fereastra jurnalului"
 
-#: messagelog.ui:337
 msgctxt "MessageLog"
 msgid "messages"
 msgstr "mesaje"
 
-#: messagelog.ui:356
 msgctxt "MessageLog"
 msgid "Always Save New Log Messages"
 msgstr "Salvează întotdeauna mesajele noi din jurnal"
 
-#: messagelog.ui:371
 msgctxt "MessageLog"
 msgid "Browse"
 msgstr "Răsfoieşte"
 
-#: messagelog.ui:394
 msgctxt "MessageLog"
 msgid "Enable automatically saving all new log messages to a file"
 msgstr "Activează salvarea automată într-un fişier a mesajelor noi din jurnal"
 
-#: messagelog.ui:397
 msgctxt "MessageLog"
 msgid "Automatically save new log messages to a file"
 msgstr "Salvează automat noile mesaje din jurnal într-un fişier."
 
-#: messagelog.cpp:126
 msgctxt "MessageLog"
-msgid ""
-"Messages that appear when something has \n"
+msgid "Messages that appear when something has \n"
 "gone very wrong and Tor cannot proceed."
 msgstr ""
-"Mesaje care apar atunci când ceva \n"
-"n-a mers cum trebuie şi Tor nu mai poate continua să funcţioneze."
 
-#: messagelog.cpp:128
 msgctxt "MessageLog"
-msgid ""
-"Messages that only appear when \n"
+msgid "Messages that only appear when \n"
 "something has gone wrong with Tor."
 msgstr ""
-"Mesaje care apar numai atunci când \n"
-"s-a întâmplat ceva cu Tor."
 
-#: messagelog.cpp:132
 msgctxt "MessageLog"
-msgid ""
-"Messages that appear infrequently \n"
+msgid "Messages that appear infrequently \n"
 "during normal Tor operation and are \n"
 "not considered errors, but you may \n"
 "care about."
 msgstr ""
-"Mesaje care apar ocazional \n"
-"în timpul funcţionării normale a Tor şi care \n"
-"nu sunt considerate erori, dar care v-ar \n"
-"putea interesa."
 
-#: messagelog.cpp:134
 msgctxt "MessageLog"
-msgid ""
-"Messages that appear frequently \n"
+msgid "Messages that appear frequently \n"
 "during normal Tor operation."
 msgstr ""
-"Mesaje care apar frecvent \n"
-"în timpul funcţionării normale a Tor."
 
-#: messagelog.cpp:136
 msgctxt "MessageLog"
-msgid ""
-"Hyper-verbose messages primarily of \n"
+msgid "Hyper-verbose messages primarily of \n"
 "interest to Tor developers."
 msgstr ""
-"Mesaje ce interesează în mod special \n"
-"pe autorii programului Tor."
 
-#: messagelog.cpp:310
 msgctxt "MessageLog"
-msgid ""
-"Cannot write file %1\n"
+msgid "Cannot write file %1\n"
 "\n"
 "%2."
 msgstr ""
-"Nu se poate scrie fişierul %1\n"
-"\n"
-"%2."
 
-#: netviewer.ui:24
 msgctxt "NetViewer"
 msgid "Tor Network Map"
 msgstr "Harta reţelei Tor"
 
-#: netviewer.ui:239
 msgctxt "NetViewer"
 msgid "Refresh"
 msgstr "Reîmprospătează"
 
-#: netviewer.ui:245
 msgctxt "NetViewer"
 msgid "Refresh the list of Tor relays and connections"
 msgstr "Reîmprospătează lista relay-urilor şi conexiunilor Tor"
 
-#: netviewer.ui:248
 msgctxt "NetViewer"
 msgid "Ctrl+R"
 msgstr "Ctrl+R"
 
-#: netviewer.ui:256
 msgctxt "NetViewer"
 msgid "Help"
 msgstr "Ajutor"
 
-#: netviewer.ui:259
 msgctxt "NetViewer"
 msgid "Show the network map help"
 msgstr "Ajutor în privinţa hărţii"
 
-#: netviewer.ui:262
 msgctxt "NetViewer"
 msgid "Show network map help"
 msgstr "Ajutor în privinţa hărţii"
 
-#: netviewer.ui:265
 msgctxt "NetViewer"
 msgid "F1"
 msgstr "F1"
 
-#: netviewer.ui:273
 msgctxt "NetViewer"
 msgid "Close"
 msgstr "Închide"
 
-#: netviewer.ui:279
 msgctxt "NetViewer"
 msgid "Close the network map"
 msgstr "Închide harta"
 
-#: netviewer.ui:282
 msgctxt "NetViewer"
 msgid "Esc"
 msgstr "Esc"
 
-#: netviewer.ui:290
 msgctxt "NetViewer"
 msgid "Zoom In"
 msgstr "Măreşte"
 
-#: netviewer.ui:296
 msgctxt "NetViewer"
 msgid "Zoom in on the network map"
 msgstr "Măreşte pe hartă"
 
-#: netviewer.ui:299
 msgctxt "NetViewer"
 msgid "+"
 msgstr "+"
 
-#: netviewer.ui:307
 msgctxt "NetViewer"
 msgid "Zoom Out"
 msgstr "Micşorează"
 
-#: netviewer.ui:313
 msgctxt "NetViewer"
 msgid "Zoom out on the network map"
 msgstr "Micşorează pe hartă"
 
-#: netviewer.ui:316
 msgctxt "NetViewer"
 msgid "-"
 msgstr "-"
 
-#: netviewer.ui:324
 msgctxt "NetViewer"
 msgid "Zoom To Fit"
 msgstr "Potriveşte în fereastră"
 
-#: netviewer.ui:330
 msgctxt "NetViewer"
 msgid "Zooms to fit all currently displayed circuits"
 msgstr "Încadrează astfel încât toate circuitele afişate să încapă"
 
-#: netviewer.ui:333
 msgctxt "NetViewer"
 msgid "Ctrl+Z"
 msgstr "Ctrl+Z"
 
-#: netviewer.cpp:507
 msgctxt "NetViewer"
 msgid "Relay Not Found"
 msgstr "Relay-ul nu a fost găsit"
 
-#: netviewer.cpp:508
 msgctxt "NetViewer"
 msgid "No details on the selected relay are available."
 msgstr "Nu există detalii pentru relay-ul selectat."
 
-#: netviewer.cpp:523
 msgctxt "NetViewer"
 msgid "Unknown"
 msgstr "Necunoscut"
 
-#: networkpage.cpp:193
+msgctxt "NetViewer"
+msgid "Full Screen"
+msgstr ""
+
+msgctxt "NetViewer"
+msgid "View the network map as a full screen window"
+msgstr ""
+
+msgctxt "NetViewer"
+msgid "Ctrl+F"
+msgstr "Ctrl+F"
+
 msgctxt "NetworkPage"
 msgid "Invalid Bridge"
 msgstr "Bridge invalid"
 
-#: networkpage.cpp:194
 msgctxt "NetworkPage"
 msgid "The specified bridge identifier is not valid."
 msgstr "Identificatorul specificat al bridge-ului nu este valid."
 
-#: networkpage.cpp:241
 msgctxt "NetworkPage"
 msgid "Copy (Ctrl+C)"
 msgstr "Copiază (Ctrl+C)"
 
-#: networkpage.cpp:272
 msgctxt "NetworkPage"
-msgid ""
-"You must specify both an IP address or hostname and a port number to "
-"configure Tor to use a proxy to access the Internet."
-msgstr ""
-"Pentru a folosi Tor ca proxy, prin care să accesaţi internetul, este nevoie "
-"să specificaţi atât o adresă de IP, cât şi un port."
+msgid "You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet."
+msgstr "Pentru a folosi Tor ca proxy, prin care să accesaţi internetul, este nevoie să specificaţi atât o adresă de IP, cât şi un port."
 
-#: networkpage.cpp:278
 msgctxt "NetworkPage"
-msgid ""
-"You must specify one or more ports to which your firewall allows you to "
-"connect."
-msgstr ""
-"Trebuie să specificaţi unul sau mai multe porturi la care firewall-ul "
-"dumneavoastră să vă permită conectarea."
+msgid "You must specify one or more ports to which your firewall allows you to connect."
+msgstr "Trebuie să specificaţi unul sau mai multe porturi la care firewall-ul dumneavoastră să vă permită conectarea."
 
-#: networkpage.cpp:314
 msgctxt "NetworkPage"
 msgid "'%1' is not a valid port number."
 msgstr "'%1' nu este un număr valid de port."
 
-#: networkpage.ui:25
 msgctxt "NetworkPage"
 msgid "Check if your local network requires a proxy to access the Internet"
-msgstr ""
-"Bifaţi aici dacă reţeaua dumneavoastră locală necesită un proxy pentru a "
-"accesa internetul"
+msgstr "Bifaţi aici dacă reţeaua dumneavoastră locală necesită un proxy pentru a accesa internetul"
 
-#: networkpage.ui:28
 msgctxt "NetworkPage"
 msgid "I use a proxy to access the Internet"
 msgstr "Folosesc un proxy pentru a accesa internetul."
 
-#: networkpage.ui:58
 msgctxt "NetworkPage"
 msgid "Proxy Settings"
 msgstr "Setări proxy"
 
-#: networkpage.ui:70
 msgctxt "NetworkPage"
 msgid "HTTP Proxy:"
 msgstr "Proxy HTTP:"
 
-#: networkpage.ui:80
 msgctxt "NetworkPage"
 msgid "Username:"
 msgstr "Nume utilizator:"
 
-#: networkpage.ui:90
 msgctxt "NetworkPage"
 msgid "Use this proxy for HTTPS also"
 msgstr "Foloseşte acest proxy şi pentru protocolul HTTPS"
 
-#: networkpage.ui:108
 msgctxt "NetworkPage"
 msgid "Password:"
 msgstr "Parola:"
 
-#: networkpage.ui:135
 msgctxt "NetworkPage"
 msgid "Port:"
 msgstr "Port:"
 
-#: networkpage.ui:176
 msgctxt "NetworkPage"
 msgid "Check to only connect to relays using ports allowed by your firewall"
-msgstr ""
-"Bifaţi aici pentru a folosi numai conexiuni către relay-uri ce folosesc "
-"porturi permise de firewall-ul dumneavoastră"
+msgstr "Bifaţi aici pentru a folosi numai conexiuni către relay-uri ce folosesc porturi permise de firewall-ul dumneavoastră"
 
-#: networkpage.ui:179
 msgctxt "NetworkPage"
 msgid "My firewall only lets me connect to certain ports"
 msgstr "Firewall-ul meu îmi permite să mă conectez doar la anumite porturi"
 
-#: networkpage.ui:203
 msgctxt "NetworkPage"
 msgid "Firewall Settings"
 msgstr "Setări firewall"
 
-#: networkpage.ui:215
 msgctxt "NetworkPage"
 msgid "Allowed Ports:"
 msgstr "Porturi permise:"
 
-#: networkpage.ui:225
 msgctxt "NetworkPage"
 msgid "80, 443"
 msgstr "80, 443"
 
-#: networkpage.ui:235
 msgctxt "NetworkPage"
-msgid ""
-"Check to encrypt directory requests and, optionally, use bridge relays to "
-"access the Tor network"
-msgstr ""
-"Bifaţi aici pentru a cripta cererile către director şi, opţional, pentru a "
-"folosi bridge relay-uri pentru a accesa reţeaua Tor."
+msgid "Check to encrypt directory requests and, optionally, use bridge relays to access the Tor network"
+msgstr "Bifaţi aici pentru a cripta cererile către director şi, opţional, pentru a folosi bridge relay-uri pentru a accesa reţeaua Tor."
 
-#: networkpage.ui:238
 msgctxt "NetworkPage"
 msgid "My ISP blocks connections to the Tor network"
 msgstr "Providerul meu blochează conexiunile către reţeaua Tor"
 
-#: networkpage.ui:262
 msgctxt "NetworkPage"
 msgid "Bridge Settings"
 msgstr "Setări bridge relay"
 
-#: networkpage.ui:274
 msgctxt "NetworkPage"
-msgid ""
-"The Tor software you are currently running does not support bridges. "
-"<br>Directory connections will still be encrypted."
-msgstr ""
-"Versiunea Tor pe care o folosiţi nu are suport pentru bridge-uri. "
-"<br>Conexiunile către director vor fi, totuşi, criptate."
+msgid "The Tor software you are currently running does not support bridges. <br>Directory connections will still be encrypted."
+msgstr "Versiunea Tor pe care o folosiţi nu are suport pentru bridge-uri. <br>Conexiunile către director vor fi, totuşi, criptate."
 
-#: networkpage.ui:295
 msgctxt "NetworkPage"
 msgid "Add a Bridge:"
 msgstr "Adaugă un bridge relay:"
 
-#: networkpage.ui:318
 msgctxt "NetworkPage"
 msgid "<a href=\"bridges.finding\">How do I find a bridge?</a>"
 msgstr "<a href=\"bridges.finding\">Cum găsesc un bridge?</a>"
 
-#: networkpage.ui:383
 msgctxt "NetworkPage"
 msgid "Remove the selected bridges from the list"
 msgstr "Elimină bridge relay-urile alese din listă"
 
-#: networkpage.ui:399
 msgctxt "NetworkPage"
 msgid "Copy the selected bridges to the clipboard"
 msgstr "Copiază bridge relay-urile alese în clipboard"
 
-#: policy.cpp:167
+msgctxt "NetworkPage"
+msgid "Find Bridges Now"
+msgstr ""
+
+msgctxt "NetworkPage"
+msgid "<a href=\"bridges.finding\">How else can I find bridges?</a>"
+msgstr ""
+
+msgctxt "NetworkPage"
+msgid "<a href=\"bridges.finding\">How can I find bridges?</a>"
+msgstr ""
+
+msgctxt "NetworkPage"
+msgid "No new bridges are currently available. You can either wait a while and try again, or try another method of finding new bridges."
+msgstr ""
+
+msgctxt "NetworkPage"
+msgid "Click Help to see other methods of finding new bridges."
+msgstr ""
+
 msgctxt "Policy"
 msgid "accept"
 msgstr "acceptă"
 
-#: policy.cpp:167
 msgctxt "Policy"
 msgid "reject"
 msgstr "nu accepta"
 
-#: routerdescriptor.cpp:76
 msgctxt "RouterDescriptor"
 msgid "Online"
 msgstr "Conectat"
 
-#: routerdescriptor.cpp:78
 msgctxt "RouterDescriptor"
 msgid "Hibernating"
 msgstr "În hibernare"
 
-#: routerdescriptor.cpp:80
 msgctxt "RouterDescriptor"
 msgid "Offline"
 msgstr "Deconectat"
 
-#: routerdescriptorview.cpp:101
 msgctxt "RouterDescriptorView"
 msgid "Location:"
 msgstr "Locaţie:"
 
-#: routerdescriptorview.cpp:105
 msgctxt "RouterDescriptorView"
 msgid "IP Address:"
 msgstr "Adresă IP:"
 
-#: routerdescriptorview.cpp:106
 msgctxt "RouterDescriptorView"
 msgid "Platform:"
 msgstr "Platformă:"
 
-#: routerdescriptorview.cpp:110
 msgctxt "RouterDescriptorView"
 msgid "Bandwidth:"
 msgstr "Lăţime de bandă:"
 
-#: routerdescriptorview.cpp:112
 msgctxt "RouterDescriptorView"
 msgid "Uptime:"
 msgstr "Timp de la pornire:"
 
-#: routerdescriptorview.cpp:118
 msgctxt "RouterDescriptorView"
 msgid "Last Updated:"
 msgstr "Actualizat ultima oară la:"
 
-#: routerdescriptorview.cpp:49
 msgctxt "RouterDescriptorView"
 msgid "Copy"
 msgstr "Copiază"
 
-#: routerinfodialog.cpp:54
 msgctxt "RouterInfoDialog"
 msgid "Hibernating"
 msgstr "În hibernare"
 
-#: routerinfodialog.cpp:57
 msgctxt "RouterInfoDialog"
 msgid "Online"
 msgstr "Conectat"
 
-#: routerinfodialog.cpp:59
 msgctxt "RouterInfoDialog"
 msgid "Offline"
 msgstr "Deconectat"
 
-#: routerinfodialog.cpp:61
 msgctxt "RouterInfoDialog"
 msgid "Unknown"
 msgstr "Necunoscut"
 
-#: routerinfodialog.ui:13
 msgctxt "RouterInfoDialog"
 msgid "Relay Details"
 msgstr "Detalii relay"
 
-#: routerinfodialog.ui:29
 msgctxt "RouterInfoDialog"
 msgid "Summary"
 msgstr "Sumar"
 
-#: routerinfodialog.ui:47
 msgctxt "RouterInfoDialog"
 msgid "Name:"
 msgstr "Pseudonim:"
 
-#: routerinfodialog.ui:82
 msgctxt "RouterInfoDialog"
 msgid "Status:"
 msgstr "Stare"
 
-#: routerinfodialog.ui:117
 msgctxt "RouterInfoDialog"
 msgid "Location:"
 msgstr "Locaţie:"
 
-#: routerinfodialog.ui:152
 msgctxt "RouterInfoDialog"
 msgid "IP Address:"
 msgstr "Adresă IP:"
 
-#: routerinfodialog.ui:187
 msgctxt "RouterInfoDialog"
 msgid "Platform:"
 msgstr "Platformă:"
 
-#: routerinfodialog.ui:231
 msgctxt "RouterInfoDialog"
 msgid "Bandwidth:"
 msgstr "Lăţime de bandă:"
 
-#: routerinfodialog.ui:266
 msgctxt "RouterInfoDialog"
 msgid "Uptime:"
 msgstr "Timp de la pornire:"
 
-#: routerinfodialog.ui:301
 msgctxt "RouterInfoDialog"
 msgid "Contact:"
 msgstr "Informaţii de contact:"
 
-#: routerinfodialog.ui:352
 msgctxt "RouterInfoDialog"
 msgid "Last Updated:"
 msgstr "Actualizat ultima oară la:"
 
-#: routerinfodialog.ui:376
 msgctxt "RouterInfoDialog"
 msgid "Descriptor"
 msgstr "Descriptor"
 
-#: routerlistitem.cpp:67
 msgctxt "RouterListItem"
 msgid "Offline"
 msgstr "Deconectat"
 
-#: routerlistitem.cpp:71
 msgctxt "RouterListItem"
 msgid "Hibernating"
 msgstr "În hibernare"
 
-#: routerlistitem.cpp:83
 msgctxt "RouterListItem"
 msgid "%1 KB/s"
 msgstr "%1 KO/s"
 
-#: routerlistwidget.cpp:49
 msgctxt "RouterListWidget"
 msgid "Relay"
 msgstr "Relay"
 
-#: routerlistwidget.cpp:74
 msgctxt "RouterListWidget"
 msgid "Zoom to Relay"
 msgstr "Zoom pe relay"
 
-#: routerlistwidget.cpp:220
 msgctxt "RouterListWidget"
 msgid "%1 relays online"
 msgstr "%1 relay-uri conectate"
 
-#: routerlistwidget.cpp:67
 msgctxt "RouterListWidget"
 msgid "Copy"
 msgstr "Copiază"
 
-#: routerlistwidget.cpp:68
 msgctxt "RouterListWidget"
 msgid "Nickname"
 msgstr "Pseudonim"
 
-#: routerlistwidget.cpp:71
 msgctxt "RouterListWidget"
 msgid "Fingerprint"
 msgstr "Amprentă"
 
-#: serverpage.cpp:145
 msgctxt "ServerPage"
 msgid "Bridge Support Unavailable"
 msgstr "Suport pentru bridge relay-uri este indisponibil"
 
-#: serverpage.cpp:148
 msgctxt "ServerPage"
-msgid ""
-"You have configured Tor to act as a bridge relay for censored users, but "
-"your version of Tor does not support bridges."
-msgstr ""
-"Aţi configurat Tor să se comporte ca un bridge relay pentru utilizatorii "
-"cenzuraţi, însă versiunea dumneavoastră de Tor nu oferă suport pentru astfel "
-"de relay-uri."
+msgid "You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges."
+msgstr "Aţi configurat Tor să se comporte ca un bridge relay pentru utilizatorii cenzuraţi, însă versiunea dumneavoastră de Tor nu oferă suport pentru astfel de relay-uri."
 
-#: serverpage.cpp:150
 msgctxt "ServerPage"
-msgid ""
-"Please upgrade your Tor software or configure Tor to act as a normal Tor "
-"relay."
+msgid "Please upgrade your Tor software or configure Tor to act as a normal Tor relay."
 msgstr "Actualizaţi Tor sau configuraţi-l să se comporte ca un relay normal."
 
-#: serverpage.cpp:204
 msgctxt "ServerPage"
 msgid "Your bridge relay is not running."
 msgstr "Bridge relay-ul dumneavoastră este oprit."
 
-#: serverpage.cpp:269
 msgctxt "ServerPage"
 msgid "You must specify at least a relay nickname and port."
-msgstr ""
-"Este necesar să specificaţi cel puţin un pseudonim de relay şi un port."
+msgstr "Este necesar să specificaţi cel puţin un pseudonim de relay şi un port."
 
-#: serverpage.ui:19
 msgctxt "ServerPage"
 msgid "Run as a client only"
 msgstr "Rulează doar ca şi client."
 
-#: serverpage.ui:26
 msgctxt "ServerPage"
 msgid "Relay traffic for the Tor network"
 msgstr "Contribuie la reţeaua Tor acţionând ca un relay pentru trafic"
 
-#: serverpage.ui:74
 msgctxt "ServerPage"
 msgid "Relay Port:"
 msgstr "Portul relay-ului:"
 
-#: serverpage.ui:93
 msgctxt "ServerPage"
 msgid "Enable to mirror the relay directory"
 msgstr "Activează pentru a crea o copie locală a directorului relay"
 
-#: serverpage.ui:96
-msgctxt "ServerPage"
-msgid "Mirror the Relay Directory"
-msgstr "Site alternativ pentru directorul relay"
-
-#: serverpage.ui:122
 msgctxt "ServerPage"
 msgid "Attempt to automatically configure port forwarding"
 msgstr "Încearcă configurarea automată a port forwarding"
 
-#: serverpage.ui:134
 msgctxt "ServerPage"
 msgid "Test"
 msgstr "Test"
 
-#: serverpage.ui:144
 msgctxt "ServerPage"
 msgid "Show help topic on port forwarding"
 msgstr "Asistenţă pentru port forwarding"
 
-#: serverpage.ui:207
 msgctxt "ServerPage"
 msgid "Directory Port:"
 msgstr "Portul directorului:"
 
-#: serverpage.ui:238
 msgctxt "ServerPage"
 msgid "Directory Port Number"
 msgstr "Numărul portului directorului:"
 
-#: serverpage.ui:250
 msgctxt "ServerPage"
 msgid "Contact Info:"
 msgstr "Informaţii de contact:"
 
-#: serverpage.ui:308
 msgctxt "ServerPage"
 msgid "Name of your relay"
 msgstr "Numele relay-ului dumneavoastră"
 
-#: serverpage.ui:339
 msgctxt "ServerPage"
 msgid "Port on which users and other relays can communicate with your relay"
-msgstr ""
-"Portul prin care utilizatorii şi alte relay-uri pot comunica cu relay-ul "
-"dumneavoastră"
+msgstr "Portul prin care utilizatorii şi alte relay-uri pot comunica cu relay-ul dumneavoastră"
 
-#: serverpage.ui:349
 msgctxt "ServerPage"
 msgid "Nickname:"
 msgstr "Pseudonim:"
 
-#: serverpage.ui:65
 msgctxt "ServerPage"
 msgid "Basic Settings"
 msgstr "Setări de bază"
 
-#: serverpage.ui:396
 msgctxt "ServerPage"
-msgid ""
-"For Internet connections with fast download speed but slow upload, please "
-"list your upload speed here."
-msgstr ""
-"Dacă aveţi o conexiune cu descărcare rapidă dar încărcare lentă, specificaţi "
-"aici viteza de încărcare (upload)."
+msgid "For Internet connections with fast download speed but slow upload, please list your upload speed here."
+msgstr "Dacă aveţi o conexiune cu descărcare rapidă dar încărcare lentă, specificaţi aici viteza de încărcare (upload)."
 
-#: serverpage.ui:421
 msgctxt "ServerPage"
 msgid "Cable/DSL 256 Kbps"
 msgstr "Cablu/DSL 256 Kbps"
 
-#: serverpage.ui:426
 msgctxt "ServerPage"
 msgid "Cable/DSL 512 Kbps"
 msgstr "Cablu/DSL 512 Kbps"
 
-#: serverpage.ui:431
 msgctxt "ServerPage"
 msgid "Cable/DSL 768 Kbps"
 msgstr "Cablu/DSL 768 Kbps"
 
-#: serverpage.ui:436
 msgctxt "ServerPage"
 msgid "T1/Cable/DSL 1.5 Mbps"
 msgstr "T1/Cablu/DSL 1.5 Mbps"
 
-#: serverpage.ui:441
 msgctxt "ServerPage"
 msgid "> 1.5 Mbps"
 msgstr "> 1.5 Mbps"
 
-#: serverpage.ui:446
 msgctxt "ServerPage"
 msgid "Custom"
 msgstr "Personalizată"
 
-#: serverpage.ui:411
 msgctxt "ServerPage"
 msgid "Select the entry that most closely resembles your Internet connection"
 msgstr "Alegeţi o conexiune similară cu conexiunea dumneavoastră la internet"
 
-#: serverpage.ui:457
 msgctxt "ServerPage"
 msgid "Show help topic on bandwidth rate limits"
 msgstr "Asistenţă pentru limitarea traficului"
 
-#: serverpage.ui:527
 msgctxt "ServerPage"
 msgid "Average Rate"
 msgstr "Rata medie"
 
-#: serverpage.ui:548
 msgctxt "ServerPage"
 msgid "Long-term average bandwidth limit"
 msgstr "Limita medie pe termen lung a lăţimii de bandă"
 
-#: serverpage.ui:620
 msgctxt "ServerPage"
 msgid "KB/s"
 msgstr "KO/s"
 
-#: serverpage.ui:586
 msgctxt "ServerPage"
 msgid "Maximum Rate"
 msgstr "Rata maximă"
 
-#: serverpage.ui:607
 msgctxt "ServerPage"
 msgid "Peak bandwidth rate limit"
 msgstr "Limita de vârf a raţiei lăţimii de bandă"
 
-#: serverpage.ui:649
 msgctxt "ServerPage"
-msgid ""
-"Your maximum bandwidth rate must be greater than or equal to your average "
-"bandwidth rate. Both values must be at least 20 KB/s."
-msgstr ""
-"Rata maximă a lăţimii de bandă trebuie să fie mai mare sau egală cu rata "
-"medie. Ambele valori trebuie să fie cel puţin egale cu 20 KO/s."
+msgid "Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s."
+msgstr "Rata maximă a lăţimii de bandă trebuie să fie mai mare sau egală cu rata medie. Ambele valori trebuie să fie cel puţin egale cu 20 KO/s."
 
-#: serverpage.ui:369
 msgctxt "ServerPage"
 msgid "Bandwidth Limits"
 msgstr "Limitări de trafic"
 
-#: serverpage.ui:696
 msgctxt "ServerPage"
 msgid "Ports 6660 - 6669 and 6697"
 msgstr "Porturile 6660 - 6669 şi 6697"
 
-#: serverpage.ui:699
 msgctxt "ServerPage"
 msgid "Internet Relay Chat (IRC)"
 msgstr "Internet Relay Chat (IRC)"
 
-#: serverpage.ui:709
 msgctxt "ServerPage"
 msgid "Ports 110, 143, 993 and 995"
 msgstr "Porturile 110, 143, 993 şi 995"
 
-#: serverpage.ui:712
 msgctxt "ServerPage"
 msgid "Retrieve Mail (POP, IMAP)"
 msgstr "Poştă electronică (POP, IMAP)"
 
-#: serverpage.ui:722
 msgctxt "ServerPage"
 msgid "Ports unspecified by other checkboxes"
 msgstr "Porturi nespecificate de celelalte căsuţe de bifare"
 
-#: serverpage.ui:725
 msgctxt "ServerPage"
 msgid "Misc Other Services"
 msgstr "Servicii diverse"
 
-#: serverpage.ui:735
 msgctxt "ServerPage"
 msgid "Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 and 8888"
 msgstr "Porturile 706, 1863, 5050, 5190, 5222, 5223, 8300 şi 8888"
 
-#: serverpage.ui:738
 msgctxt "ServerPage"
 msgid "Instant Messaging (IM)"
 msgstr "Mesagerie instantanee (IM)"
 
-#: serverpage.ui:748
 msgctxt "ServerPage"
 msgid "Port 443"
 msgstr "Portul 443"
 
-#: serverpage.ui:751
 msgctxt "ServerPage"
 msgid "Secure Websites (SSL)"
 msgstr "Site-uri sigure (SSL)"
 
-#: serverpage.ui:761
 msgctxt "ServerPage"
 msgid "Port 80"
 msgstr "Portul 80"
 
-#: serverpage.ui:764
 msgctxt "ServerPage"
 msgid "Websites"
 msgstr "Site-uri"
 
-#: serverpage.ui:784
 msgctxt "ServerPage"
 msgid "Show help topic on exit policies"
 msgstr "Asistenţă pentru politicile de ieşire"
 
-#: serverpage.ui:856
 msgctxt "ServerPage"
 msgid "What Internet resources should users be able to access from your relay?"
 msgstr "Alegeţi resursele internet accesibile prin relay-ul dumneavoastră:"
 
-#: serverpage.ui:866
 msgctxt "ServerPage"
-msgid ""
-"Tor will still block some outgoing mail and file sharing applications by "
-"default to reduce spam and other abuse."
-msgstr ""
-"Tor va bloca anumite programe pentru email şi partajare a fişierelor "
-"implicit, pentru a reduce spam-ul şi alte abuzuri."
+msgid "Tor will still block some outgoing mail and file sharing applications by default to reduce spam and other abuse."
+msgstr "Tor va bloca anumite programe pentru email şi partajare a fişierelor implicit, pentru a reduce spam-ul şi alte abuzuri."
 
-#: serverpage.ui:676
 msgctxt "ServerPage"
 msgid "Exit Policies"
 msgstr "Politici de ieşire"
 
-#: serverpage.ui:902
 msgctxt "ServerPage"
 msgid "Let others access your bridge by giving them this line:"
-msgstr ""
-"Pentru ca alţii să acceseze bridge relay-ul dumneavoastră, au nevoie de "
-"textul de mai jos:"
+msgstr "Pentru ca alţii să acceseze bridge relay-ul dumneavoastră, au nevoie de textul de mai jos:"
 
-#: serverpage.ui:920
 msgctxt "ServerPage"
-msgid ""
-"This is the identity of your bridge relay that you can give to other people"
-msgstr ""
-"Aceasta este identitatea relay-ului dumneavoastră pe care o puteţi folosi în "
-"comunicarea cu alţii"
+msgid "This is the identity of your bridge relay that you can give to other people"
+msgstr "Aceasta este identitatea relay-ului dumneavoastră pe care o puteţi folosi în comunicarea cu alţii"
 
-#: serverpage.ui:942
 msgctxt "ServerPage"
 msgid "Copy your bridge relay's identity to the clipboard"
 msgstr "Copiază identitatea relay-ului în clipboard"
 
-#: serverpage.cpp:555
 msgctxt "ServerPage"
 msgid "No Recent Usage"
 msgstr "Nefolosit recent"
 
-#: serverpage.cpp:556
 msgctxt "ServerPage"
 msgid "No clients have used your relay recently."
 msgstr "Niciun client nu a folosit relay-ul dumneavoastră recent."
 
-#: serverpage.cpp:559
 msgctxt "ServerPage"
-msgid ""
-"Leave your relay running so clients have a better chance of finding and "
-"using it."
-msgstr ""
-"Lăsaţi relay-ul pornit pentru ca alţi clienţi să aibe şanse mai bune în a-l "
-"găsi şi folosi."
+msgid "Leave your relay running so clients have a better chance of finding and using it."
+msgstr "Lăsaţi relay-ul pornit pentru ca alţi clienţi să aibe şanse mai bune în a-l găsi şi folosi."
 
-#: serverpage.cpp:594
 msgctxt "ServerPage"
 msgid "Bridge History"
 msgstr "Istoric bridge"
 
-#: serverpage.cpp:596
 msgctxt "ServerPage"
 msgid "Vidalia was unable to retrieve your bridge's usage history."
-msgstr ""
-"Vidalia nu a putut găsi istoricul de folosire a bridge-ului dumneavoastră."
+msgstr "Vidalia nu a putut găsi istoricul de folosire a bridge-ului dumneavoastră."
 
-#: serverpage.cpp:599
 msgctxt "ServerPage"
-msgid ""
-"Tor returned an improperly formatted response when Vidalia requested your "
-"bridge's usage history."
-msgstr ""
-"Tor a returnat un răspuns formatat necorespunzător când Vidalia a cerut "
-"istoricul de folosire a bridge-ului dumneavoastră."
+msgid "Tor returned an improperly formatted response when Vidalia requested your bridge's usage history."
+msgstr "Tor a returnat un răspuns formatat necorespunzător când Vidalia a cerut istoricul de folosire a bridge-ului dumneavoastră."
 
-#: serverpage.cpp:600
 msgctxt "ServerPage"
 msgid "The returned response was: %1"
 msgstr "Răspunsul returnat a fost: %1"
 
-#: serverpage.ui:33
 msgctxt "ServerPage"
 msgid "Help censored users reach the Tor network"
 msgstr "Ajutaţi utilizatorii cenzuraţi să acceseze reţeaua Tor"
 
-#: serverpage.ui:185
-msgctxt "ServerPage"
-msgid ""
-"Email address at which you may be reached if there is a\n"
-"problem with your relay. You might also include your PGP or GPG fingerprint."
-msgstr ""
-"Adresa de poştă electronică unde puteţi fi contactat în caz că \n"
-"exista o problemă cu relay-ul dumneavoastră. Puteţi introduce şi o amprentă "
-"PGP sau GPG."
-
-#: serverpage.ui:958
 msgctxt "ServerPage"
 msgid "<a href=\"#bridgeUsage\">Who has used my bridge?</a>"
 msgstr "<a href=\"#bridgeUsage\">Cine a folosit bridge-ul meu?</a>"
 
-#: servicepage.cpp:112
+msgctxt "ServerPage"
+msgid "Mirror the Relay Directory"
+msgstr ""
+
+msgctxt "ServerPage"
+msgid "Email address at which you may be reached if there is a\n"
+"problem with your relay. You might also include your PGP or GPG fingerprint."
+msgstr ""
+
 msgctxt "ServicePage"
 msgid "Error while trying to unpublish all services"
 msgstr "Eroare la încercarea de a şterge toate serviciile"
 
-#: servicepage.cpp:119
 msgctxt "ServicePage"
-msgid ""
-"Please configure at least a service directory and a virtual port for each "
-"service you want to save. Remove the other ones."
-msgstr ""
-"Configuraţi cel puţin un director de serviciu şi un port virtual pentru "
-"fiecare serviciu pe care doriţi să-l salvaţi. Eliminaţi-le pe celelalte."
+msgid "Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones."
+msgstr "Configuraţi cel puţin un director de serviciu şi un port virtual pentru fiecare serviciu pe care doriţi să-l salvaţi. Eliminaţi-le pe celelalte."
 
-#: servicepage.cpp:596
 msgctxt "ServicePage"
 msgid "Error"
 msgstr "Eroare"
 
-#: servicepage.cpp:451
 msgctxt "ServicePage"
 msgid "Please select a Service."
 msgstr "Alegeţi un serviciu"
 
-#: servicepage.cpp:457
 msgctxt "ServicePage"
 msgid "Select Service Directory"
 msgstr "Alegere director de servicii"
 
-#: servicepage.cpp:546
 msgctxt "ServicePage"
 msgid "Virtual Port may only contain valid port numbers [1..65535]."
 msgstr "Numărul portului virtual trebuie să fie în intervalul [1 - 65535]."
 
-#: servicepage.cpp:577
 msgctxt "ServicePage"
 msgid "Target may only contain address:port, address, or port."
-msgstr ""
-"Destinaţia poate conţine numai forme de tip adresă:port, adresă sau port."
+msgstr "Destinaţia poate conţine numai forme de tip adresă:port, adresă sau port."
 
-#: servicepage.cpp:597
 msgctxt "ServicePage"
 msgid "Directory already in use by another service."
 msgstr "Directorul este deja folosit de alt serviciu."
 
-#: servicepage.ui:19
 msgctxt "ServicePage"
 msgid "Form"
 msgstr "Formular"
 
-#: servicepage.ui:31
 msgctxt "ServicePage"
 msgid "Provided Hidden Services"
 msgstr "Servicii ascunse furnizate"
 
-#: servicepage.ui:56
 msgctxt "ServicePage"
 msgid "Onion Address"
 msgstr "Adresa onion"
 
-#: servicepage.ui:61
 msgctxt "ServicePage"
 msgid "Virtual Port"
 msgstr "Port virtual"
 
-#: servicepage.ui:66
 msgctxt "ServicePage"
 msgid "Target"
 msgstr "Destinaţie"
 
-#: servicepage.ui:71
 msgctxt "ServicePage"
 msgid "Directory Path"
 msgstr "Cale"
 
-#: servicepage.ui:76
 msgctxt "ServicePage"
 msgid "Enabled"
 msgstr "Activat"
 
-#: servicepage.ui:84
 msgctxt "ServicePage"
 msgid "Add new service to list"
 msgstr "Adaugă în listă un nou serviciu"
 
-#: servicepage.ui:97
 msgctxt "ServicePage"
 msgid "Remove selected service from list"
 msgstr "Elimină din listă serviciul ales"
 
-#: servicepage.ui:110
 msgctxt "ServicePage"
 msgid "Copy onion address of selected service to clipboard"
 msgstr "Copiază în clipboard adresa onion a serviciului ales"
 
-#: servicepage.ui:123
 msgctxt "ServicePage"
 msgid "Browse in local file system and choose directory for selected service"
-msgstr ""
-"Răsfoieşte sistemul local de fişiere şi alege directorul pentru serviciul "
-"ales"
+msgstr "Răsfoieşte sistemul local de fişiere şi alege directorul pentru serviciul ales"
 
-#: servicepage.cpp:383
 msgctxt "ServicePage"
 msgid "Created by Tor"
 msgstr "Creat de Tor"
 
-#: stream.cpp:131
 msgctxt "Stream"
 msgid "New"
 msgstr "Nou"
 
-#: stream.cpp:133
 msgctxt "Stream"
 msgid "Resolving"
 msgstr "Se caută"
 
-#: stream.cpp:134
 msgctxt "Stream"
 msgid "Connecting"
 msgstr "Se conectează"
 
-#: stream.cpp:135
 msgctxt "Stream"
 msgid "Open"
 msgstr "Deschide"
 
-#: stream.cpp:136
 msgctxt "Stream"
 msgid "Failed"
 msgstr "Acţiunea a eşuat"
 
-#: stream.cpp:137
 msgctxt "Stream"
 msgid "Closed"
 msgstr "Închis"
 
-#: stream.cpp:138
 msgctxt "Stream"
 msgid "Retrying"
 msgstr "Se încearcă din nou"
 
-#: stream.cpp:139
 msgctxt "Stream"
 msgid "Remapped"
 msgstr "Remapat"
 
-#: stream.cpp:140
 msgctxt "Stream"
 msgid "Unknown"
 msgstr "Necunoscut"
 
-#: torprocess.cpp:107
 msgctxt "TorProcess"
 msgid "Process %1 failed to stop. [%2]"
 msgstr "Procesul %1 nu a putut fi oprit. [%2]"
 
-#: torservice.cpp:144
 msgctxt "TorService"
 msgid "The Tor service is not installed."
 msgstr "Tor nu este instalat ca serviciu."
 
-#: torservice.cpp:162
 msgctxt "TorService"
 msgid "Unable to start the Tor service."
 msgstr "Serviciul Tor nu a putut fi pornit."
 
-#: torsettings.cpp:108
 msgctxt "TorSettings"
 msgid "Failed to hash the control password."
 msgstr "Nu s-a putut face hash pentru parola de control."
 
-#: upnpcontrol.cpp:139
 msgctxt "UPNPControl"
 msgid "Success"
 msgstr "Reuşit"
 
-#: upnpcontrol.cpp:141
 msgctxt "UPNPControl"
 msgid "No UPnP-enabled devices found"
 msgstr "Nu a fost găsit nici un dispozitiv cu capabilităţi UPnP"
 
-#: upnpcontrol.cpp:143
 msgctxt "UPNPControl"
 msgid "No valid UPnP-enabled Internet gateway devices found"
 msgstr "Nu a fost găsit nici un gateway internet cu capabilităţi UPnP"
 
-#: upnpcontrol.cpp:145
 msgctxt "UPNPControl"
 msgid "WSAStartup failed"
 msgstr "Pornirea WSA a eşuat"
 
-#: upnpcontrol.cpp:147
 msgctxt "UPNPControl"
 msgid "Failed to add a port mapping"
 msgstr "Eroare la maparea portului"
 
-#: upnpcontrol.cpp:149
 msgctxt "UPNPControl"
 msgid "Failed to retrieve a port mapping"
 msgstr "Obţinerea mapării unui port a eşuat"
 
-#: upnpcontrol.cpp:151
 msgctxt "UPNPControl"
 msgid "Failed to remove a port mapping"
 msgstr "Eliminarea mapării unui port a eşuat"
 
-#: upnpcontrol.cpp:153
 msgctxt "UPNPControl"
 msgid "Unknown error"
 msgstr "Eroare necunoscută"
 
-#: upnptestdialog.cpp:112
 msgctxt "UPNPTestDialog"
 msgid "Discovering UPnP-enabled devices"
 msgstr "Se caută dispozitive cu capabilităţi UPnP"
 
-#: upnptestdialog.cpp:117
 msgctxt "UPNPTestDialog"
 msgid "Updating directory port mapping"
 msgstr "Se acutalizează maparea porturilor directorului"
 
-#: upnptestdialog.cpp:122
 msgctxt "UPNPTestDialog"
 msgid "Updating relay port mapping"
 msgstr "Se actualizează maparea porturilor relay-ului"
 
-#: upnptestdialog.cpp:127
 msgctxt "UPNPTestDialog"
 msgid "Test completed successfully!"
 msgstr "Testul s-a terminat cu succes!"
 
-#: upnptestdialog.ui:13
 msgctxt "UPNPTestDialog"
 msgid "Testing UPnP Support"
 msgstr "Se testează suportul pentru UPnP"
 
-#: upnptestdialog.ui:92
 msgctxt "UPNPTestDialog"
 msgid "Testing Universal Plug & Play Support"
 msgstr "Se testează suportul pentru Universal Plug & Play"
 
-#: updateprocess.cpp:195
 msgctxt "UpdateProcess"
-msgid ""
-"Vidalia was unable to check for available software updates because Tor's "
-"handy pocket creature died. Sorry."
-msgstr ""
-"Vidalia nu a fost în stare să verifice pentru actualizări software "
-"disponibile, deoarece creatura din buzunar a murit. Îmi pare rău."
+msgid "Vidalia was unable to check for available software updates because it could not find '%1'."
+msgstr "Vidalia nu a fost în stare să verifice pentru actualizări software disponibile, deoarece nu a putut găsi '%1'."
 
-#: updateprocess.cpp:211
 msgctxt "UpdateProcess"
-msgid ""
-"Vidalia was unable to check for available software updates because it could "
-"not find '%1'."
+msgid "Vidalia was unable to check for available software updates because Tor's update process exited unexpectedly."
 msgstr ""
-"Vidalia nu a fost în stare să verifice pentru actualizări software "
-"disponibile, deoarece nu a putut găsi '%1'."
 
-#: updateprogressdialog.cpp:30
 msgctxt "UpdateProgressDialog"
 msgid "Checking for available updates..."
 msgstr "Verific pentru actualizări disponibile..."
 
-#: updateprogressdialog.ui:87
 msgctxt "UpdateProgressDialog"
 msgid "Hide"
 msgstr "Ascunde"
 
-#: updateprogressdialog.cpp:41
 msgctxt "UpdateProgressDialog"
 msgid "Downloading updates..."
 msgstr "Descarc actualizările..."
 
-#: updateprogressdialog.cpp:45
 msgctxt "UpdateProgressDialog"
 msgid "Installing updated software..."
 msgstr "Instalez software-ul actualizat..."
 
-#: updateprogressdialog.cpp:54
 msgctxt "UpdateProgressDialog"
 msgid "Done! Your software is now up to date."
 msgstr "Gata! Software-ul dumneavoastră este actualizat."
 
-#: updateprogressdialog.cpp:60
 msgctxt "UpdateProgressDialog"
 msgid "OK"
 msgstr "OK"
 
-#: updateprogressdialog.ui:13
 msgctxt "UpdateProgressDialog"
 msgid "Software Updates"
 msgstr "Actualizări software"
 
-#: updateprogressdialog.ui:36
 msgctxt "UpdateProgressDialog"
 msgid "Checking for updates..."
 msgstr "Verific pentru actualizări..."
 
-#: updateprogressdialog.ui:80
 msgctxt "UpdateProgressDialog"
 msgid "Cancel"
 msgstr "Revocare"
 
-#: updatesavailabledialog.ui:13
 msgctxt "UpdatesAvailableDialog"
 msgid "Software Updates Available"
 msgstr "Actualizări software disponibile"
 
-#: updatesavailabledialog.ui:38
 msgctxt "UpdatesAvailableDialog"
 msgid "Remind Me Later"
 msgstr "Adu-mi aminte mai târziu"
 
-#: updatesavailabledialog.ui:45
 msgctxt "UpdatesAvailableDialog"
 msgid "Install"
 msgstr "Instalează"
 
-#: updatesavailabledialog.ui:57
 msgctxt "UpdatesAvailableDialog"
 msgid "The following updated software packages are ready for installation:"
-msgstr ""
-"Următoarele pachete software actualizate sunt disponibile pentru instalare:"
+msgstr "Următoarele pachete software actualizate sunt disponibile pentru instalare:"
 
-#: updatesavailabledialog.ui:78
 msgctxt "UpdatesAvailableDialog"
 msgid "Package"
 msgstr "Pachet"
 
-#: updatesavailabledialog.ui:83
 msgctxt "UpdatesAvailableDialog"
 msgid "Version"
 msgstr "Versiune"
 
-#: vmessagebox.cpp:77
 msgctxt "VMessageBox"
 msgid "OK"
 msgstr "OK"
 
-#: vmessagebox.cpp:78
 msgctxt "VMessageBox"
 msgid "Cancel"
 msgstr "Revocare"
 
-#: vmessagebox.cpp:79
 msgctxt "VMessageBox"
 msgid "Yes"
 msgstr "Da"
 
-#: vmessagebox.cpp:80
 msgctxt "VMessageBox"
 msgid "No"
 msgstr "Nu"
 
-#: vmessagebox.cpp:81
 msgctxt "VMessageBox"
 msgid "Help"
 msgstr "Asistenţă"
 
-#: vmessagebox.cpp:82
 msgctxt "VMessageBox"
 msgid "Retry"
 msgstr "Încearcă din nou"
 
-#: vmessagebox.cpp:83
 msgctxt "VMessageBox"
 msgid "Show Log"
 msgstr "Arată jurnalul"
 
-#: vmessagebox.cpp:84
 msgctxt "VMessageBox"
 msgid "Show Settings"
 msgstr "Arată setările"
 
-#: vmessagebox.cpp:85
 msgctxt "VMessageBox"
 msgid "Continue"
 msgstr "Continuare"
 
-#: vmessagebox.cpp:86
 msgctxt "VMessageBox"
 msgid "Quit"
 msgstr "Revocare"
 
-#: vmessagebox.cpp:87
 msgctxt "VMessageBox"
 msgid "Browse"
 msgstr "Răsfoieşte"
 
-#: main.cpp:80
 msgctxt "Vidalia"
 msgid "Invalid Argument"
 msgstr "Argument invalid"
 
-#: main.cpp:94
 msgctxt "Vidalia"
 msgid "Vidalia is already running"
 msgstr "Vidalia rulează deja"
 
-#: vidalia.cpp:191
 msgctxt "Vidalia"
 msgid "Displays this usage message and exits."
 msgstr "Afişează acest mesaj de înştiinţare şi închide."
 
-#: vidalia.cpp:193
 msgctxt "Vidalia"
 msgid "Resets ALL stored Vidalia settings."
 msgstr "Restabileşte TOATE setările implicite ale Vidalia."
 
-#: vidalia.cpp:195
 msgctxt "Vidalia"
 msgid "Sets the directory Vidalia uses for data files."
 msgstr "Alege directorul pe care Vidalia să-l folosească pentru date."
 
-#: vidalia.cpp:197
 msgctxt "Vidalia"
 msgid "Sets the name and location of Vidalia's pidfile."
 msgstr "Alege numele şi locaţia fişierului pid."
 
-#: vidalia.cpp:199
 msgctxt "Vidalia"
 msgid "Sets the name and location of Vidalia's logfile."
 msgstr "Alege numele şi locaţia jurnalului."
 
-#: vidalia.cpp:202
 msgctxt "Vidalia"
 msgid "Sets the verbosity of Vidalia's logging."
 msgstr "Alege cât de multe evenimente să înregistreze Vidalia."
 
-#: vidalia.cpp:205
 msgctxt "Vidalia"
 msgid "Sets Vidalia's interface style."
 msgstr "Alege înfăţişarea interfeţei Vidalia."
 
-#: vidalia.cpp:208
 msgctxt "Vidalia"
 msgid "Sets Vidalia's language."
 msgstr "Alege limba în care se prezintă Vidalia."
 
-#: vidalia.cpp:212
 msgctxt "Vidalia"
 msgid "Vidalia Usage Information"
 msgstr "Informaţii despre modul de utilizare al Vidalia"
 
-#: vidalia.cpp:260
-msgctxt "Vidalia"
-msgid "Invalid language code specified:"
-msgstr "A fost specificat un cod de limbă invalid:"
-
-#: vidalia.cpp:267
-msgctxt "Vidalia"
-msgid "Invalid GUI style specified:"
-msgstr "A fost specificată o înfăţişare invalidă a interfeţei"
-
-#: vidalia.cpp:273
-msgctxt "Vidalia"
-msgid "Invalid log level specified:"
-msgstr "Nivelul de jurnal specificat este invalid:"
-
-#: vidalia.cpp:279
 msgctxt "Vidalia"
 msgid "Unable to open log file '%1': %2"
 msgstr "Nu s-a putut deschide jurnalul '%1': %2"
 
-#: main.cpp:100
 msgctxt "Vidalia"
-msgid ""
-"Another Vidalia process is possibly already running. If there really is not "
-"another Vidalia process running, you can choose to continue anyway.\n"
+msgid "Invalid language code specified:"
+msgstr ""
+
+msgctxt "Vidalia"
+msgid "Invalid GUI style specified:"
+msgstr ""
+
+msgctxt "Vidalia"
+msgid "Invalid log level specified:"
+msgstr ""
+
+msgctxt "Vidalia"
+msgid "Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.\n"
 "\n"
 "Would you like to continue starting Vidalia?"
 msgstr ""
-"Este posibil ca încă un proces Vidalia să ruleze deja. Dacă nu rulează "
-"niciun proces Vidalia, puteţi alege să continuaţi oricum.\n"
-"\n"
-"Doriţi să continuaţi cu pornirea Vidaliei?"
 
-#: stringutil.cpp:323
-msgctxt "stringutil.h"
-msgid "%1 days"
-msgstr "%1 zile"
-
-#: stringutil.cpp:325
-msgctxt "stringutil.h"
-msgid "%1 hours"
-msgstr "%1 ore"
-
-#: stringutil.cpp:327
-msgctxt "stringutil.h"
-msgid "%1 mins"
-msgstr "%1 minute"
-
-#: stringutil.cpp:329
 msgctxt "stringutil.h"
 msgid "%1 secs"
 msgstr "%1 secunde"
 
-#: stringutil.cpp:348
 msgctxt "stringutil.h"
 msgid "%1 B/s"
 msgstr "%1 B/s"
 
-#: stringutil.cpp:350
 msgctxt "stringutil.h"
 msgid "%1 KB/s"
 msgstr "%1 KO/s"
 
-#: stringutil.cpp:352
 msgctxt "stringutil.h"
 msgid "%1 MB/s"
 msgstr "%1 MO/s"
 
-#: stringutil.cpp:354
 msgctxt "stringutil.h"
 msgid "%1 GB/s"
 msgstr "%1 GO/s"
+
+msgctxt "stringutil.h"
+msgid "%1 days"
+msgstr ""
+
+msgctxt "stringutil.h"
+msgid "%1 hours"
+msgstr ""
+
+msgctxt "stringutil.h"
+msgid "%1 mins"
+msgstr ""
+
