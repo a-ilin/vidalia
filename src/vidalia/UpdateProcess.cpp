@@ -192,8 +192,8 @@ UpdateProcess::onFinished(int exitCode, QProcess::ExitStatus exitStatus)
       emit updatesAvailable(_currentBundle, _packageList);
     } else {
       emit checkForUpdatesFailed(tr("Vidalia was unable to check for available "
-                                    "software updates because Tor's handy pocket "
-                                    "creature died. Sorry."));
+                                    "software updates because Tor's update process "
+                                    "exited unexpectedly."));
     }
   } else if (_currentCommand == InstallUpdates) {
     if (exitStatus == QProcess::NormalExit && exitCode == 0)
