@@ -727,7 +727,7 @@ MainWindow::onCheckForBrowser()
   }
 
   /* The browser isn't running, exit Vidalia */
-  shutdown();
+  vApp->quit();
 #endif  
 }
 
