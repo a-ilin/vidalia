@@ -174,7 +174,7 @@ bool
 Vidalia::winEventFilter(MSG *msg, long *result)
 {
   if (msg->message == WM_QUERYENDSESSION) {
-    emit shutdown();
+    quit();
   }
   return QApplication::winEventFilter(msg, result);
 }

@@ -20,6 +20,12 @@
 
 #cmakedefine HAVE_SYS_LIMITS_H
 
+#cmakedefine HAVE_SIGNAL_H
+
+#cmakedefine HAVE_SIGACTION
+
+#cmakedefine HAVE_SIGNAL
+
 #cmakedefine SIZEOF_INT @SIZEOF_INT@
 
 #cmakedefine USE_MINIUPNPC

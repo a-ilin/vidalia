@@ -106,7 +106,7 @@ private slots:
   void running();
   /** Terminate the Tor process if it is being run under Vidalia, disconnect
    * all TorControl signals, and exit Vidalia. */
-  void shutdown();
+  void aboutToQuit();
   /** Creates and displays Vidalia's About dialog. */
   void showAboutDialog();
   /** Creates and displays the Configuration dialog with the current page set

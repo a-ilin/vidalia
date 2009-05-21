@@ -118,8 +118,6 @@ signals:
   /** Emitted when the application is running and the main event loop has
    * started. */ 
   void running();
-  /** Signals that the application needs to shutdown now. */
-  void shutdown();
 
 protected:
 #if defined(Q_OS_WIN)
@@ -135,7 +133,7 @@ private slots:
    * will emit the running() signal to indicate that the application's event
    * loop is running. */
   void onEventLoopStarted();
-  
+ 
 private:
   /** Catches debugging messages from Qt and sends them to 
    * Vidalia's logs. */

@@ -169,7 +169,7 @@ MainWindow::MainWindow()
 
   /* Catch signals when the application is running or shutting down */
   connect(vApp, SIGNAL(running()), this, SLOT(running()));
-  connect(vApp, SIGNAL(shutdown()), this, SLOT(shutdown()));
+  connect(vApp, SIGNAL(aboutToQuit()), this, SLOT(aboutToQuit()));
 
 #if defined(USE_AUTOUPDATE)
   /* Create a timer used to remind us to check for software updates */
@@ -368,8 +368,10 @@ MainWindow::running()
 /** Terminate the Tor process if it is being run under Vidalia, disconnect all
  * TorControl signals, and exit Vidalia. */
 void
-MainWindow::shutdown()
+MainWindow::aboutToQuit()
 {
+  vNotice("Cleaning up before exiting.");
+
   if (_torControl->isVidaliaRunningTor()) {
     /* Kill our Tor process now */ 
     _torControl->stop();
@@ -408,9 +410,6 @@ MainWindow::shutdown()
 
   /* Disconnect all of the TorControl object's signals */
   QObject::disconnect(_torControl, 0, 0, 0);
-
-  /* And then quit for real */
-  QCoreApplication::quit();
 }
 
 /** Called when the application is closing, by selecting "Exit" from the tray
@@ -425,14 +424,13 @@ MainWindow::close()
      * kill Tor and bail now. */
     ServerSettings settings(_torControl);
     if (_torControl->isConnected() && settings.isServerEnabled()) {
-      connect(_torControl, SIGNAL(stopped()), this, SLOT(shutdown()));
+      connect(_torControl, SIGNAL(stopped()), vApp, SLOT(quit()));
       if (!stop())
-        QObject::disconnect(_torControl, SIGNAL(stopped()), this, SLOT(shutdown()));
+        QObject::disconnect(_torControl, SIGNAL(stopped()), vApp, SLOT(quit()));
       return;
     }
   }
-  /* Shut down Tor (if necessary) and exit Vidalia */
-  shutdown();
+  vApp->quit();
 }
 
 /** Create and bind actions to events. Setup for initial
@@ -688,7 +686,7 @@ MainWindow::onSubprocessFinished(int exitCode, QProcess::ExitStatus exitStatus)
   if (browserDone && imDone) {
     if (browserDirectory.isEmpty()) {
       /* We are using the standard launcher, exit immediately */
-      shutdown();
+      vApp->quit();
     } else {
       /* We are using the alternate launcher, wait until the browser has really died */
       QTimer *browserWatcher = new QTimer(this);

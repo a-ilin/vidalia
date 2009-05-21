@@ -48,6 +48,7 @@ include(${CMAKE_SOURCE_DIR}/cmake/VidaliaMacros.cmake)
 include(CheckIncludeFile)
 include(CheckIncludeFileCXX)
 include(CheckTypeSize)
+include(CheckFunctionExists)
 if (WIN32)
   include(${CMAKE_SOURCE_DIR}/cmake/FindWiX.cmake)
 endif(WIN32)
@@ -88,9 +89,17 @@ endif(USE_MARBLE)
 ## Check for system header files
 check_include_file("limits.h" HAVE_LIMITS_H)
 check_include_file("sys/limits.h" HAVE_SYS_LIMITS_H)
+check_include_file("signal.h" HAVE_SIGNAL_H)
 
 ## Check for the sizes of various data types
 check_type_size(int SIZEOF_INT)
+
+## Check for the existence of some platform-specific functions
+if (HAVE_SIGNAL_H)
+  set(CMAKE_REQUIRED_INCLUDES ${CMAKE_REQUIRED_INCLUDES} "signal.h")
+  check_function_exists(sigaction HAVE_SIGACTION)
+  check_function_exists(signal HAVE_SIGNAL)
+endif(HAVE_SIGNAL_H)
 
 ## Write out a configuration file
 configure_file(

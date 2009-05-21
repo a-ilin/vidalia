@@ -27,6 +27,41 @@
 #if defined(Q_OS_WIN32)
 #include <QSysInfo>
 #endif
+#if defined(HAVE_SIGNAL_H)
+#include <signal.h>
+#endif
+
+
+extern "C" void
+signal_handler(int signal)
+{
+#ifdef HAVE_SIGNAL_H
+  if (signal == SIGINT || signal == SIGTERM)
+    vApp->quit();
+#endif
+}
+
+void
+install_signal_handler()
+{
+#ifdef HAVE_SIGACTION
+  struct sigaction action;
+  
+  sigemptyset(&action.sa_mask);
+  action.sa_handler = signal_handler;
+  action.sa_flags   = 0;
+
+  if (sigaction(SIGINT,  &action, NULL) < 0)
+    vWarn("Failed to install SIGINT handler.");
+  if (sigaction(SIGTERM, &action, NULL) < 0)
+    vWarn("Failed to install SIGTERM handler.");
+#elif HAVE_SIGNAL
+  if (signal(SIGINT, signal_handler) == SIG_ERR)
+    vWarn("Failed to install SIGINT handler.");
+  if (signal(SIGTERM, signal_handler) == SIG_ERR)
+    vWarn("Failed to install SIGTERM handler.");
+#endif
+}
 
 
 /** Returns true if there is already another Vidalia process running. */
@@ -64,6 +99,10 @@ main(int argc, char *argv[])
   Vidalia vidalia(args, argc, argv);
   vNotice("Vidalia %1 using Qt %2").arg(Vidalia::version())
                                    .arg(QT_VERSION_STR);
+
+  /* Install a signal handler to clean up properly after a catching a 
+   * SIGINT or SIGTERM. */
+  install_signal_handler();
 
 #if defined(USE_MARBLE) && defined(Q_OS_WIN32)
   vApp->addLibraryPath(vApp->applicationDirPath() + "/plugins/qt");
