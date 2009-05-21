@@ -44,9 +44,9 @@ signal_handler(int signal)
 void
 install_signal_handler()
 {
-#ifdef HAVE_SIGACTION
+#if defined(HAVE_SIGACTION)
   struct sigaction action;
-  
+
   sigemptyset(&action.sa_mask);
   action.sa_handler = signal_handler;
   action.sa_flags   = 0;
@@ -55,7 +55,7 @@ install_signal_handler()
     vWarn("Failed to install SIGINT handler.");
   if (sigaction(SIGTERM, &action, NULL) < 0)
     vWarn("Failed to install SIGTERM handler.");
-#elif HAVE_SIGNAL
+#elif defined(HAVE_SIGNAL)
   if (signal(SIGINT, signal_handler) == SIG_ERR)
     vWarn("Failed to install SIGINT handler.");
   if (signal(SIGTERM, signal_handler) == SIG_ERR)
