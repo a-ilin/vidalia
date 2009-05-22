@@ -81,7 +81,7 @@ if [ $3 = "split-bundle" ]; then
   hdiutil create -format UDZO -imagekey zlib-level=9 -srcfolder "$BUILD_DIR" -volname "$volname" "$DMG"
   hdiutil segment -segmentSize 1.5m -o "split-$DMG" "$DMG"
 else
-  hdiutil create -format UDZO -imagekey zlib-level=9 -srcfolder "$BUILD_DIR" -volname "$volname" "$DMG" &&
+  hdiutil create -format UDZO -imagekey zlib-level=9 -srcfolder "$BUILD_DIR" -volname "$volname" "$DMG" 
 fi
 
 rm -rf "$BUILD_DIR"
