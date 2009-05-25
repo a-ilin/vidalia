@@ -81,6 +81,7 @@ MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
  * variables. */
 MessageLog::~MessageLog()
 {
+  _torControl->setLogEvents(0, this);
   _logFile.close();
 }
 
