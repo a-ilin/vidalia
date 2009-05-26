@@ -34,14 +34,14 @@ endif(NOT VIDALIA_LUPDATE_EXECUTABLE)
 
 
 ## We need windres.exe when building on Win32 to compile the .rc file
-if (WIN32)
+if (WIN32 AND NOT MSVC)
   find_program(WIN32_WINDRES_EXECUTABLE  NAMES windres.exe ${QT_BINARY_DIR})
   if (NOT WIN32_WINDRES_EXECUTABLE)
     message(FATAL_ERROR
-      "Vidalia could not find windres. Please make sure Qt is installed and its bin directory is in your PATH environment variable."
+      "Vidalia could not find windres. Please make sure MinGW is installed and its bin directory is in your PATH environment variable."
     )
   endif(NOT WIN32_WINDRES_EXECUTABLE)
-endif(WIN32)
+endif(WIN32 AND NOT MSVC)
 
 ## Adds custom commands to the specified target that will update each of the
 ## supplied .po files 
@@ -149,23 +149,29 @@ endmacro(VIDALIA_ADD_WXL)
 
 
 if (WIN32)
-  ## Wraps the supplied .rc files in windres commands
-  macro(WIN32_WRAP_RC outfiles)
+  ## Wraps the supplied .rc files in windres commands if we're building
+  ## with MinGW. Otherwise, it just adds the .rc files directly to the
+  ## list of output files.
+  macro(WIN32_ADD_RC outfiles)
     foreach(it ${ARGN})
-      get_filename_component(it      ${it} ABSOLUTE)
-      get_filename_component(outfile ${it} NAME_WE)
-      get_filename_component(rc_path ${it} PATH)
+      if (NOT MSVC)
+        get_filename_component(it      ${it} ABSOLUTE)
+        get_filename_component(outfile ${it} NAME_WE)
+        get_filename_component(rc_path ${it} PATH)
       
-      set(outfile
-        ${CMAKE_CURRENT_BINARY_DIR}/${outfile}_res${CMAKE_CXX_OUTPUT_EXTENSION}
-      )
-      add_custom_command(OUTPUT ${outfile}
-        COMMAND ${WIN32_WINDRES_EXECUTABLE}
-        ARGS -i ${it} -o ${outfile} --include-dir=${rc_path}
-        MAIN_DEPENDENCY ${it}
-      )
-      set(${outfiles} ${${outfiles}} ${outfile})
+        set(outfile
+          ${CMAKE_CURRENT_BINARY_DIR}/${outfile}_res${CMAKE_CXX_OUTPUT_EXTENSION}
+        )
+        add_custom_command(OUTPUT ${outfile}
+          COMMAND ${WIN32_WINDRES_EXECUTABLE}
+          ARGS -i ${it} -o ${outfile} --include-dir=${rc_path}
+          MAIN_DEPENDENCY ${it}
+        )
+        set(${outfiles} ${${outfiles}} ${outfile})
+      else (NOT MSVC)
+        set(${outfiles} ${${outfiles}} ${it})
+      endif(NOT MSVC)
     endforeach(it)
-  endmacro(WIN32_WRAP_RC)
+  endmacro(WIN32_ADD_RC)
 endif(WIN32)
 

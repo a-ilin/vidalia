@@ -396,7 +396,7 @@ else(APPLE)
 
   if (WIN32)
     ## Create a Windows binary
-    win32_wrap_rc(vidalia_SRCS res/vidalia_win.rc)
+    win32_add_rc(vidalia_SRCS res/vidalia_win.rc)
     add_executable(${vidalia_BIN} WIN32 ${vidalia_SRCS})
 
     ## Copy the Marble data into the data/ directory under the binary
