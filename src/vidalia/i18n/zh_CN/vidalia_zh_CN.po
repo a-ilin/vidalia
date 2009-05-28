@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-05-19 23:56+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2009-05-28 11:24+0000\n"
+"Last-Translator: Pei Hanru <peihanru+comment@gmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Vidalia ts2po 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 1.1.0\n"
 
 msgctxt "AboutDialog"
 msgid "About Vidalia"
@@ -42,11 +42,11 @@ msgstr "Tor"
 
 msgctxt "AboutDialog"
 msgid "Qt"
-msgstr ""
+msgstr "Qt"
 
 msgctxt "AboutDialog"
 msgid "version"
-msgstr ""
+msgstr "版本"
 
 msgctxt "AdvancedPage"
 msgid "'%1' is not a valid IP address."
@@ -157,6 +157,9 @@ msgid "Vidalia was unable to remove the Tor service.\n"
 "\n"
 "You may need to remove it manually."
 msgstr ""
+"Vidalia 无法删除 Tor 服务。\n"
+"\n"
+"你需要手工将其删除。"
 
 msgctxt "AppearancePage"
 msgid "Language"
@@ -236,31 +239,31 @@ msgstr "取消"
 
 msgctxt "BridgeDownloader"
 msgid "Starting HTTPS bridge request..."
-msgstr ""
+msgstr "开始 HTTPS 网桥请求..."
 
 msgctxt "BridgeDownloader"
 msgid "Connecting to %1:%2..."
-msgstr ""
+msgstr "连接到 %1:%2..."
 
 msgctxt "BridgeDownloader"
 msgid "Sending an HTTPS request for bridges..."
-msgstr ""
+msgstr "发送网桥的 HTTPS 请求..."
 
 msgctxt "BridgeDownloader"
 msgid "Downloading a list of bridges..."
-msgstr ""
+msgstr "下载网桥的列表..."
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Downloading Bridges"
-msgstr ""
+msgstr "下载网桥"
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Unable to download bridges: %1"
-msgstr ""
+msgstr "无法下载网桥: %1"
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Retrying bridge request..."
-msgstr ""
+msgstr "重试网桥请求..."
 
 msgctxt "BridgeUsageDialog"
 msgid "Country"
@@ -272,11 +275,11 @@ msgstr "# 客户端"
 
 msgctxt "BridgeUsageDialog"
 msgid "Clients from the following countries have used your relay since %1"
-msgstr "来自下列国家的客户端从%1起开始使用您的中继"
+msgstr "来自下列国家的客户端从 %1 起开始使用您的中继"
 
 msgctxt "BridgeUsageDialog"
 msgid "Bridge Usage Summary"
-msgstr "桥接使用摘要"
+msgstr "网桥使用摘要"
 
 msgctxt "BridgeUsageDialog"
 msgid "Client Summary"
@@ -340,7 +343,7 @@ msgstr "网络"
 
 msgctxt "ConfigDialog"
 msgid "Sharing"
-msgstr "共享"
+msgstr "分享"
 
 msgctxt "ConfigDialog"
 msgid "Services"
@@ -360,31 +363,31 @@ msgstr "帮助"
 
 msgctxt "ConfigDialog"
 msgid "Error Saving Settings"
-msgstr "保存设定时发生错误"
+msgstr "保存设置时发生错误"
 
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to save your %1 settings."
-msgstr "Vidalia 无法保存你的 %1 设定."
+msgstr "Vidalia 无法保存你的 %1 设置。"
 
 msgctxt "ConfigDialog"
 msgid "Error Applying Settings"
-msgstr "应用设定时发生错误"
+msgstr "应用设置时发生错误"
 
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to apply your %1 settings to Tor."
-msgstr "Vidalia 无法应用你的 %1 设定于 Tor."
+msgstr "Vidalia 无法应用你的 %1 设置于 Tor."
 
 msgctxt "ConfigDialog"
 msgid "Settings"
-msgstr "设定"
+msgstr "设置"
 
 msgctxt "ControlConnection"
 msgid "Vidalia was unable to connect to Tor. (%1)"
-msgstr "Vidalia 无法连接至 Tor. (%1)"
+msgstr "Vidalia 无法连接至 Tor。 (%1)"
 
 msgctxt "ControlConnection"
 msgid "Control socket is not connected."
-msgstr "控制接口当前未连接."
+msgstr "控制接口当前未连接。"
 
 msgctxt "ControlPasswordInputDialog"
 msgid "Password Required"
@@ -396,23 +399,23 @@ msgstr "记住我的密码"
 
 msgctxt "ControlPasswordInputDialog"
 msgid "Vidalia has connected to a running Tor process that requires a password. Please enter your control password:"
-msgstr ""
+msgstr "Vidalia 已经连接至一个运行中的需要密码的 Tor 进程。请输入您的控制密码："
 
 msgctxt "ControlSocket"
 msgid "Control socket is not connected."
-msgstr "控制接口当前未连接."
+msgstr "控制接口当前未连接。"
 
 msgctxt "ControlSocket"
 msgid "Error sending control command. [%1]"
-msgstr "发送控制命令时发生错误. [%1]"
+msgstr "发送控制命令时发生错误。 [%1]"
 
 msgctxt "ControlSocket"
 msgid "Socket disconnected while attempting to read a line of data."
-msgstr "当尝试读取数据时意外断开接口连接."
+msgstr "当尝试读取数据时意外断开接口连接。"
 
 msgctxt "ControlSocket"
 msgid "Invalid control reply. [%1]"
-msgstr "无效控制回应. [%1]"
+msgstr "无效控制回应。 [%1]"
 
 msgctxt "CountryInfo"
 msgid "Afghanistan"
@@ -1112,99 +1115,99 @@ msgstr "津巴布韦"
 
 msgctxt "CountryInfo"
 msgid "Albania"
-msgstr ""
+msgstr "阿尔巴尼亚"
 
 msgctxt "CountryInfo"
 msgid "Algeria"
-msgstr ""
+msgstr "阿尔及利亚"
 
 msgctxt "CountryInfo"
 msgid "Austria"
-msgstr ""
+msgstr "奥地利"
 
 msgctxt "CountryInfo"
 msgid "Bahrain"
-msgstr ""
+msgstr "巴林"
 
 msgctxt "CountryInfo"
 msgid "Benin"
-msgstr ""
+msgstr "贝宁"
 
 msgctxt "CountryInfo"
 msgid "Ethiopia"
-msgstr ""
+msgstr "埃塞俄比亚"
 
 msgctxt "CountryInfo"
 msgid "Fiji"
-msgstr ""
+msgstr "斐济"
 
 msgctxt "CountryInfo"
 msgid "Finland"
-msgstr ""
+msgstr "芬兰"
 
 msgctxt "CountryInfo"
 msgid "Greece"
-msgstr ""
+msgstr "希腊"
 
 msgctxt "CountryInfo"
 msgid "Guam"
-msgstr ""
+msgstr "关岛"
 
 msgctxt "CountryInfo"
 msgid "Hungary"
-msgstr ""
+msgstr "匈牙利"
 
 msgctxt "CountryInfo"
 msgid "Iceland"
-msgstr ""
+msgstr "冰岛"
 
 msgctxt "CountryInfo"
 msgid "India"
-msgstr ""
+msgstr "印度"
 
 msgctxt "CountryInfo"
 msgid "Indonesia"
-msgstr ""
+msgstr "印度尼西亚"
 
 msgctxt "CountryInfo"
 msgid "Iran"
-msgstr ""
+msgstr "伊朗"
 
 msgctxt "CountryInfo"
 msgid "Iraq"
-msgstr ""
+msgstr "伊拉克"
 
 msgctxt "CountryInfo"
 msgid "Ireland"
-msgstr ""
+msgstr "爱尔兰"
 
 msgctxt "CountryInfo"
 msgid "Korea, North"
-msgstr ""
+msgstr "朝鲜"
 
 msgctxt "CountryInfo"
 msgid "Korea, South"
-msgstr ""
+msgstr "韩国"
 
 msgctxt "CountryInfo"
 msgid "Libya"
-msgstr ""
+msgstr "利比亚"
 
 msgctxt "CountryInfo"
 msgid "Maldives"
-msgstr ""
+msgstr "马尔代夫"
 
 msgctxt "CountryInfo"
 msgid "Mexico"
-msgstr ""
+msgstr "墨西哥"
 
 msgctxt "CountryInfo"
 msgid "Myanmar"
-msgstr ""
+msgstr "缅甸"
 
 msgctxt "CountryInfo"
 msgid "Taiwan"
-msgstr ""
+msgstr "台湾"
 
 msgctxt "GeneralPage"
 msgid "Executables (*.exe)"
@@ -1216,19 +1219,19 @@ msgstr "请选择 Tor 的路径"
 
 msgctxt "GeneralPage"
 msgid "Select Proxy Executable"
-msgstr ""
+msgstr "请选择代理程序"
 
 msgctxt "GeneralPage"
 msgid "You must specify the name of your Tor executable."
-msgstr ""
+msgstr "您必须指定 Tor 程序的名字。"
 
 msgctxt "GeneralPage"
 msgid "The proxy arguments specified are not properly formatted."
-msgstr ""
+msgstr "代理程序的参数格式不正确。"
 
 msgctxt "GeneralPage"
 msgid "Start Vidalia when my system starts"
-msgstr ""
+msgstr "系统启动时运行 Vidalia"
 
 msgctxt "GeneralPage"
 msgid "Browse"
@@ -1236,7 +1239,7 @@ msgstr "浏览"
 
 msgctxt "GeneralPage"
 msgid "Start the Tor software when Vidalia starts"
-msgstr ""
+msgstr "Vidalia 启动时运行 Tor 软件"
 
 msgctxt "GeneralPage"
 msgid "Tor"
@@ -1244,31 +1247,31 @@ msgstr "Tor"
 
 msgctxt "GeneralPage"
 msgid "Proxy Application (optional)"
-msgstr ""
+msgstr "代理程序（可选）"
 
 msgctxt "GeneralPage"
 msgid "Start a proxy application when Tor starts"
-msgstr ""
+msgstr "Tor 启动时运行代理程序"
 
 msgctxt "GeneralPage"
 msgid "Proxy Application Arguments:"
-msgstr ""
+msgstr "代理程序参数："
 
 msgctxt "GeneralPage"
 msgid "Software Updates"
-msgstr ""
+msgstr "软件更新"
 
 msgctxt "GeneralPage"
 msgid "Check for new software updates automatically"
-msgstr ""
+msgstr "自动检查软件更新"
 
 msgctxt "GeneralPage"
 msgid "Check Now"
-msgstr ""
+msgstr "现在检查"
 
 msgctxt "GraphFrame"
 msgid "%1 KB/s"
-msgstr "%1 KB/s"
+msgstr "%1 KB/秒"
 
 msgctxt "GraphFrame"
 msgid "%1 KB"
@@ -1284,12 +1287,13 @@ msgstr "%1 GB"
 
 msgctxt "GraphFrame"
 msgid "Recv:"
-msgstr ""
+msgstr "已接收："
 
 msgctxt "GraphFrame"
 msgid "Sent:"
-msgstr ""
+msgstr "已发送："
 
+#, fuzzy
 msgctxt "HelpBrowser"
 msgid "Supplied XML file is not a valid Contents document."
 msgstr "所提供的 XML 文档并非有效的目录文档."
@@ -1320,7 +1324,7 @@ msgstr "返回"
 
 msgctxt "HelpBrowser"
 msgid "Move to previous page (Backspace)"
-msgstr "移动至上一页(Backspace)"
+msgstr "移至上一页(Backspace)"
 
 msgctxt "HelpBrowser"
 msgid "Backspace"
@@ -1332,7 +1336,7 @@ msgstr "前进"
 
 msgctxt "HelpBrowser"
 msgid "Move to next page (Shift+Backspace)"
-msgstr "移动至下一页(Shift+Backspace)"
+msgstr "移至下一页(Shift+Backspace)"
 
 msgctxt "HelpBrowser"
 msgid "Shift+Backspace"
@@ -1344,7 +1348,7 @@ msgstr "主页"
 
 msgctxt "HelpBrowser"
 msgid "Move to the Home page (Ctrl+H)"
-msgstr "移动至主页(Ctrl+H)"
+msgstr "移至主页(Ctrl+H)"
 
 msgctxt "HelpBrowser"
 msgid "Ctrl+H"
@@ -1416,35 +1420,35 @@ msgstr "搜索结果"
 
 msgctxt "HelpBrowser"
 msgid "Error Loading Help Contents:"
-msgstr ""
+msgstr "载入帮助时发生了错误："
 
 msgctxt "HelpTextBrowser"
 msgid "Opening External Link"
-msgstr ""
+msgstr "打开外部链接"
 
 msgctxt "HelpTextBrowser"
 msgid "Vidalia can open the link you selected in your default Web browser. If your browser is not currently configured to use Tor then the request will not be anonymous."
-msgstr ""
+msgstr "Vidalia 会在默认的浏览器里打开您选择的链接。如果浏览器没有设置为使用 Tor，请求将不是匿名的。"
 
 msgctxt "HelpTextBrowser"
 msgid "Do you want Vidalia to open the link in your Web browser?"
-msgstr ""
+msgstr "您希望 Vidalia 在浏览器里打开链接吗？"
 
 msgctxt "HelpTextBrowser"
 msgid "Unable to Open Link"
-msgstr ""
+msgstr "无法打开链接"
 
 msgctxt "HelpTextBrowser"
 msgid "Vidalia was unable to open the selected link in your Web browser. You can still copy the URL and paste it into your browser."
-msgstr ""
+msgstr "Vidalia 无法在浏览器里打开您选择的链接。您可以将 URL 复制，然后粘贴到浏览器里。"
 
 msgctxt "HelpTextBrowser"
 msgid "Error opening help file:"
-msgstr ""
+msgstr "打开帮助文件时发生了错误："
 
 msgctxt "LicenseDialog"
 msgid "License Information"
-msgstr ""
+msgstr "许可信息"
 
 msgctxt "LicenseDialog"
 msgid "License"
@@ -1452,7 +1456,7 @@ msgstr "许可"
 
 msgctxt "LicenseDialog"
 msgid "Credits"
-msgstr ""
+msgstr "致谢"
 
 msgctxt "LogEvent"
 msgid "Debug"
@@ -1480,7 +1484,7 @@ msgstr "未知"
 
 msgctxt "MainWindow"
 msgid "Start Tor"
-msgstr ""
+msgstr "启动 Tor"
 
 msgctxt "MainWindow"
 msgid "Exit"
@@ -1560,95 +1564,96 @@ msgstr "Vidalia 帮助"
 
 msgctxt "MainWindow"
 msgid "Error starting web browser"
-msgstr ""
+msgstr "启动浏览器时发生了错误"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured web browser"
-msgstr ""
+msgstr "Vidalia 无法启动选定的浏览器"
 
 msgctxt "MainWindow"
 msgid "Error starting IM client"
-msgstr ""
+msgstr "启动即时通讯客户端时发生了错误"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured IM client"
-msgstr ""
+msgstr "Vidalia 无法启动选定的即时通讯客户端"
 
 msgctxt "MainWindow"
 msgid "Error starting proxy server"
-msgstr ""
+msgstr "启动代理服务器时发生了错误"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured proxy server"
-msgstr ""
+msgstr "Vidalia 无法启动选定的代理服务器"
 
 msgctxt "MainWindow"
 msgid "Connecting to a relay directory"
-msgstr ""
+msgstr "连接中继目录"
 
 msgctxt "MainWindow"
 msgid "Establishing an encrypted directory connection"
-msgstr ""
+msgstr "建立加密的目录连接"
 
 msgctxt "MainWindow"
 msgid "Retrieving network status"
-msgstr ""
+msgstr "接收网络状态"
 
 msgctxt "MainWindow"
 msgid "Loading network status"
-msgstr ""
+msgstr "载入网络状态"
 
+#, fuzzy
 msgctxt "MainWindow"
 msgid "Loading authority certificates"
-msgstr ""
+msgstr "载入权威证书"
 
 msgctxt "MainWindow"
 msgid "Requesting relay information"
-msgstr ""
+msgstr "请求中继信息"
 
 msgctxt "MainWindow"
 msgid "Loading relay information"
-msgstr ""
+msgstr "载入中继信息"
 
 msgctxt "MainWindow"
 msgid "Connecting to the Tor network"
-msgstr ""
+msgstr "连接 Tor 网络"
 
 msgctxt "MainWindow"
 msgid "Establishing a Tor circuit"
-msgstr ""
+msgstr "建立 Tor 回路"
 
 msgctxt "MainWindow"
 msgid "Connected to the Tor network!"
-msgstr ""
+msgstr "Tor 网络已经连接！"
 
 msgctxt "MainWindow"
 msgid "Unrecognized startup status"
-msgstr ""
+msgstr "未知的启动状态"
 
 msgctxt "MainWindow"
 msgid "miscellaneous"
-msgstr ""
+msgstr "杂项"
 
 msgctxt "MainWindow"
 msgid "identity mismatch"
-msgstr ""
+msgstr "身份不一致"
 
 msgctxt "MainWindow"
 msgid "done"
-msgstr ""
+msgstr "结束"
 
 msgctxt "MainWindow"
 msgid "connection refused"
-msgstr ""
+msgstr "连接被拒绝"
 
 msgctxt "MainWindow"
 msgid "connection timeout"
-msgstr ""
+msgstr "连接超时"
 
 msgctxt "MainWindow"
 msgid "read/write error"
-msgstr ""
+msgstr "读写错误"
 
 msgctxt "MainWindow"
 msgid "no route to host"
@@ -1656,11 +1661,11 @@ msgstr ""
 
 msgctxt "MainWindow"
 msgid "insufficient resources"
-msgstr ""
+msgstr "资源不够"
 
 msgctxt "MainWindow"
 msgid "unknown"
-msgstr ""
+msgstr "未知"
 
 msgctxt "MainWindow"
 msgid "Tor is not running"
@@ -1672,19 +1677,19 @@ msgstr "正在关闭 Tor"
 
 msgctxt "MainWindow"
 msgid "Stop Tor Now"
-msgstr ""
+msgstr "立刻停止 Tor"
 
 msgctxt "MainWindow"
 msgid "Stop Tor"
-msgstr ""
+msgstr "停止 Tor"
 
 msgctxt "MainWindow"
 msgid "Starting the Tor software"
-msgstr ""
+msgstr "Tor 软件启动中"
 
 msgctxt "MainWindow"
 msgid "Starting Tor"
-msgstr ""
+msgstr "启动 Tor"
 
 msgctxt "MainWindow"
 msgid "Error Starting Tor"
@@ -1696,11 +1701,11 @@ msgstr "Vidalia 无法启动 Tor.请检查 Tor 可执行程序的路径以及设
 
 msgctxt "MainWindow"
 msgid "Connecting to Tor"
-msgstr ""
+msgstr "连接 Tor"
 
 msgctxt "MainWindow"
 msgid "Connection Error"
-msgstr ""
+msgstr "连接错误"
 
 msgctxt "MainWindow"
 msgid "Relaying is Enabled"
@@ -1708,19 +1713,19 @@ msgstr "中继功能已启用"
 
 msgctxt "MainWindow"
 msgid "Error Shutting Down"
-msgstr ""
+msgstr "关闭时发生了错误"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to stop the Tor software."
-msgstr ""
+msgstr "Vidalia 无法停止 Tor 软件。"
 
 msgctxt "MainWindow"
 msgid "Unexpected Error"
-msgstr ""
+msgstr "异常错误"
 
 msgctxt "MainWindow"
 msgid "Authenticating to Tor"
-msgstr ""
+msgstr "Tor 验证中"
 
 msgctxt "MainWindow"
 msgid "Cookie Authentication Required"
@@ -3290,4 +3295,3 @@ msgstr ""
 msgctxt "stringutil.h"
 msgid "%1 mins"
 msgstr ""
-
