@@ -17,6 +17,7 @@
 #include "TorSettings.h"
 #include "Vidalia.h"
 #include "crypto.h"
+#include "file.h"
 #if defined(Q_OS_WIN32)
 #include "win32.h"
 #include <QFileInfo>
@@ -382,7 +383,7 @@ TorSettings::hashPassword(const QString &password)
   
   /* Run Tor, tell it to hash the given password, and then wait for it to
    * finish. */
-  tor.start(settings.getExecutable(), args);
+  tor.start(expand_filename(settings.getExecutable()), args);
   if (!tor.waitForStarted() || !tor.waitForFinished())
     return QString();
 
