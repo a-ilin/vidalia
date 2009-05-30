@@ -97,7 +97,8 @@ UPNPControlThread::run()
  * \sa UPNPControl::setDesiredState 
  */
 void
-UPNPControlThread::configurePorts() {
+UPNPControlThread::configurePorts()
+{
   quint16 desiredDirPort, desiredOrPort;
   bool force_init = false;
   UPNPControl::UPNPError retval = UPNPControl::Success;
