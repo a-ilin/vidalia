@@ -246,7 +246,7 @@ UPNPControlThread::initializeUPNP()
 
   UPNPControl::instance()->setState(UPNPControl::DiscoverState);
 
-  devlist = upnpDiscover(UPNPCONTROL_DISCOVER_TIMEOUT, NULL, NULL);
+  devlist = upnpDiscover(UPNPCONTROL_DISCOVER_TIMEOUT, NULL, NULL, 0);
   if (NULL == devlist) {
     vWarn("upnpDiscover returned: NULL");
     return UPNPControl::NoUPNPDevicesFound;
@@ -281,7 +281,7 @@ UPNPControlThread::forwardPort(quint16 port)
   // Add the port mapping of external:port -> internal:port
   retval = UPNP_AddPortMapping(urls.controlURL, data.servicetype,
                                qPrintable(sPort), qPrintable(sPort), lanaddr,
-                               "Tor relay", "TCP");
+                               "Tor relay", "TCP", NULL);
   if(UPNPCOMMAND_SUCCESS != retval) {
     vWarn("AddPortMapping(%1, %2, %3) failed with code %4")
             .arg(sPort).arg(sPort).arg(lanaddr).arg(retval);
@@ -317,7 +317,7 @@ UPNPControlThread::disablePort(quint16 port)
 
   // Remove the mapping
   int retval = UPNP_DeletePortMapping(urls.controlURL, data.servicetype,
-                                      qPrintable(sPort), "TCP");
+                                      qPrintable(sPort), "TCP", NULL);
   if(UPNPCOMMAND_SUCCESS != retval) {
     vWarn("DeletePortMapping() failed with code %1").arg(retval);
     return UPNPControl::DeletePortMappingFailed;

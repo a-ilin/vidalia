@@ -1,4 +1,4 @@
-/* $Id: miniupnpc.c,v 1.52 2008/02/18 13:28:33 nanard Exp $ */
+/* $Id: miniupnpc.c,v 1.57 2008/12/18 17:46:36 nanard Exp $ */
 /* Project : miniupnp
  * Author : Thomas BERNARD
  * copyright (c) 2005-2007 Thomas Bernard
@@ -8,13 +8,19 @@
 #include <stdlib.h>
 #include <string.h>
 #ifdef WIN32
+/* Win32 Specific includes and defines */
 #include <winsock2.h>
 #include <Ws2tcpip.h>
 #include <io.h>
 #define snprintf _snprintf
+#if defined(_MSC_VER) && (_MSC_VER >= 1400)
+#define strncasecmp _memicmp
+#else
 #define strncasecmp memicmp
+#endif
 #define MAXHOSTNAMELEN 64
 #else
+/* Standard POSIX includes */
 #include <unistd.h>
 #include <sys/socket.h>
 #include <sys/types.h>
@@ -32,17 +38,15 @@
 #include "minixml.h"
 #include "upnpcommands.h"
 
-/* Uncomment the following to transmit the msearch from the same port
- * as the UPnP multicast port. With WinXP this seems to result in the
- * responses to the msearch being lost, thus if things dont work then
- * comment this out. */
-/* #define TX_FROM_UPNP_PORT */
-
 #ifdef WIN32
 #define PRINT_SOCKET_ERROR(x)    printf("Socket error: %s, %d\n", x, WSAGetLastError());
 #else
 #define PRINT_SOCKET_ERROR(x) perror(x)
 #endif
+
+#define SOAPPREFIX "s"
+#define SERVICEPREFIX "u"
+#define SERVICEPREFIX2 'u'
 
 /* root description parsing */
 void parserootdesc(const char * buffer, int bufsize, struct IGDdatas * data)
@@ -57,7 +61,7 @@ void parserootdesc(const char * buffer, int bufsize, struct IGDdatas * data)
 	parser.datafunc = IGDdata;
 	parser.attfunc = 0;
 	parsexml(&parser);
-#ifndef NDEBUG
+#ifdef DEBUG
 	printIGD(data);
 #endif
 }
@@ -141,7 +145,6 @@ int simpleUPnPcommand(int s, const char * url, const char * service,
 	char * path;
 	char soapact[128];
 	char soapbody[2048];
-	int soapbodylen;
 	char * buf;
 	int buffree;
     int n;
@@ -149,37 +152,29 @@ int simpleUPnPcommand(int s, const char * url, const char * service,
 	snprintf(soapact, sizeof(soapact), "%s#%s", service, action);
 	if(args==NULL)
 	{
-		/*soapbodylen = snprintf(soapbody, sizeof(soapbody),
+		/*soapbodylen = */snprintf(soapbody, sizeof(soapbody),
 						"<?xml version=\"1.0\"?>\r\n"
-	    	              "<SOAP-ENV:Envelope "
-						  "xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" "
-						  "SOAP-ENV:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\">"
-						  "<SOAP-ENV:Body>"
-						  "<m:%s xmlns:m=\"%s\"/>"
-						  "</SOAP-ENV:Body></SOAP-ENV:Envelope>"
-					 	  "\r\n", action, service);*/
-		soapbodylen = snprintf(soapbody, sizeof(soapbody),
-						"<?xml version=\"1.0\"?>\r\n"
-	    	              "<s:Envelope "
-						  "xmlns:s=\"http://schemas.xmlsoap.org/soap/envelope/\" "
-						  "s:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\">"
-						  "<s:Body>"
-						  "<m:%s xmlns:m=\"%s\">"
-						  "</m:%s>"
-						  "</s:Body></s:Envelope>"
+	    	              "<" SOAPPREFIX ":Envelope "
+						  "xmlns:" SOAPPREFIX "=\"http://schemas.xmlsoap.org/soap/envelope/\" "
+						  SOAPPREFIX ":encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\">"
+						  "<" SOAPPREFIX ":Body>"
+						  "<" SERVICEPREFIX ":%s xmlns:" SERVICEPREFIX "=\"%s\">"
+						  "</" SERVICEPREFIX ":%s>"
+						  "</" SOAPPREFIX ":Body></" SOAPPREFIX ":Envelope>"
 					 	  "\r\n", action, service, action);
 	}
 	else
 	{
 		char * p;
 		const char * pe, * pv;
+		int soapbodylen;
 		soapbodylen = snprintf(soapbody, sizeof(soapbody),
 						"<?xml version=\"1.0\"?>\r\n"
-	    	            "<SOAP-ENV:Envelope "
-						"xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\" "
-						"SOAP-ENV:encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\">"
-						"<SOAP-ENV:Body>"
-						"<m:%s xmlns:m=\"%s\">",
+	    	            "<" SOAPPREFIX ":Envelope "
+						"xmlns:" SOAPPREFIX "=\"http://schemas.xmlsoap.org/soap/envelope/\" "
+						SOAPPREFIX ":encodingStyle=\"http://schemas.xmlsoap.org/soap/encoding/\">"
+						"<" SOAPPREFIX ":Body>"
+						"<" SERVICEPREFIX ":%s xmlns:" SERVICEPREFIX "=\"%s\">",
 						action, service);
 		p = soapbody + soapbodylen;
 		while(args->elt)
@@ -211,12 +206,12 @@ int simpleUPnPcommand(int s, const char * url, const char * service,
 		}
 		*(p++) = '<';
 		*(p++) = '/';
-		*(p++) = 'm';
+		*(p++) = SERVICEPREFIX2;
 		*(p++) = ':';
 		pe = action;
 		while(*pe)
 			*(p++) = *(pe++);
-		strncpy(p, "></SOAP-ENV:Body></SOAP-ENV:Envelope>\r\n",
+		strncpy(p, "></" SOAPPREFIX ":Body></" SOAPPREFIX ":Envelope>\r\n",
 		        soapbody + sizeof(soapbody) - p);
 	}
 	if(!parseURL(url, hostname, &port, &path)) return -1;
@@ -335,7 +330,9 @@ parseMSEARCHReply(const char * reply, int size,
 }
 
 /* port upnp discover : SSDP protocol */
-#define PORT (1900)
+#define PORT 1900
+#define XSTR(s) STR(s)
+#define STR(s) #s
 #define UPNP_MCAST_ADDR "239.255.255.250"
 
 /* upnpDiscover() :
@@ -344,14 +341,14 @@ parseMSEARCHReply(const char * reply, int size,
  * It is up to the caller to free the chained list
  * delay is in millisecond (poll) */
 struct UPNPDev * upnpDiscover(int delay, const char * multicastif,
-                              const char * minissdpdsock)
+                              const char * minissdpdsock, int sameport)
 {
 	struct UPNPDev * tmp;
 	struct UPNPDev * devlist = 0;
 	int opt = 1;
 	static const char MSearchMsgFmt[] = 
 	"M-SEARCH * HTTP/1.1\r\n"
-	"HOST: " UPNP_MCAST_ADDR ":" "1900" "\r\n"
+	"HOST: " UPNP_MCAST_ADDR ":" XSTR(PORT) "\r\n"
 	"ST: %s\r\n"
 	"MAN: \"ssdp:discover\"\r\n"
 	"MX: 3\r\n"
@@ -397,9 +394,8 @@ struct UPNPDev * upnpDiscover(int delay, const char * multicastif,
     /* reception */
     memset(&sockudp_r, 0, sizeof(struct sockaddr_in));
     sockudp_r.sin_family = AF_INET;
-#ifdef TX_FROM_UPNP_PORT
-    sockudp_r.sin_port = htons(PORT);
-#endif
+	if(sameport)
+    	sockudp_r.sin_port = htons(PORT);
     sockudp_r.sin_addr.s_addr = INADDR_ANY;
     /* emission */
     memset(&sockudp_w, 0, sizeof(struct sockaddr_in));
