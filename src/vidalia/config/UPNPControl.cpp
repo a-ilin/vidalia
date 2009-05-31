@@ -31,8 +31,10 @@ UPNPControl* UPNPControl::_instance = 0;
 /** Returns a pointer to this object's singleton instance. */
 UPNPControl* UPNPControl::instance()
 {
-  if (0 == _instance)
-    _instance = new UPNPControl;
+  if (0 == _instance) {
+    _instance = new UPNPControl();
+    _instance->_controlThread->start();
+  }
   return _instance;
 }
 
@@ -50,7 +52,6 @@ UPNPControl::UPNPControl()
 
   _mutex = new QMutex();
   _controlThread = new UPNPControlThread(this);
-  _controlThread->start();
 }
 
 /** Destructor. cleanup() should be called before the object is destroyed.
