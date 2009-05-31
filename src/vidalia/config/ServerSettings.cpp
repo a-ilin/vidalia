@@ -163,8 +163,8 @@ ServerSettings::apply(QString *errmsg)
 /* TODO: init_upnp() will block for up to 2 seconds. We should fire off a thread */
 
 /** Configure UPnP device to forward DirPort and ORPort. If enable is
-true, will forward ORPort and DirPort; otherwise will remove exising
-port mappings */
+ * true, will forward ORPort and DirPort; otherwise will remove exising
+ * port mappings */
 void
 ServerSettings::configurePortForwarding()
 {
