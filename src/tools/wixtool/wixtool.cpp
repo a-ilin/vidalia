@@ -387,7 +387,7 @@ docadd(QDomDocument *doc,
   return walkdoc(doc, &addfunc, &cbdata, errorMessage);
 }
 
-bool
+void
 createRegLocalComponent(QDomElement e,
  QString dirName,
  QString keyPath)
@@ -405,7 +405,7 @@ createRegLocalComponent(QDomElement e,
   e.appendChild(nrk);
 }
 
-bool
+void
 createDirMgmtComponent(QDomElement e,
  QString dirName)
 {
