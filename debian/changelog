@@ -1,18 +1,50 @@
-vidalia (0.1.10-2) unstable; urgency=low
+vidalia (0.1.13-1) unstable; urgency=low
 
-  * DQT_LRELEASE_EXECUTABLE and QT_LUPDATE_EXECUTABLE pointing to qt4 libs
-     avoids building conflicts if alternatives are pointing to qt3 ones.
-  * Patch to default Tor Executable path to Debian Tor's package binary path.
+  [ Vern Sun ]
+  * New upstream release.
+  * Add Debconf zh_TW.po.
 
- -- Ulises Vitulli <uvitulli@fi.uba.ar>  Wed, 14 Jan 2009 14:02:06 -0200
+  [ Ulises Vitulli ]
+  * Minor changes on debconf files.
 
-vidalia (0.1.10-1) unstable; urgency=low
+ -- Ulises Vitulli <uvitulli@fi.uba.ar>  Tue, 02 Jun 2009 13:07:54 -0300
+
+vidalia (0.1.12-1) unstable; urgency=low
+
+  [ Vern Sun ]
+  * New upstream release
+
+  [ Ulises Vitulli ]
+  * debian/watch: avoid evaluating development releases.
+  * debian/control: updated to 3.8.1 Policy.
+
+ -- Ulises Vitulli <uvitulli@fi.uba.ar>  Sat, 11 Apr 2009 11:00:18 -0300
+
+vidalia (0.1.11-1) unstable; urgency=low
 
   * New upstream release.
-  * Debconf translations:
-    - Swedish (Closes #508751).
+  * Added README.source.
 
- -- Vern Sun <s5unty@gmail.com>  Mon, 05 Jan 2009 16:59:04 +0800
+ -- Vern Sun <s5unty@gmail.com>  Wed, 25 Feb 2009 11:55:46 +0800
+
+vidalia (0.1.10-1) unstable; urgency=low
+   
+  [ Vern Sun ]
+  * New upstream release.
+  * Debconf translations:
+    - Swedish (Closes: #508751)
+  
+  [ Ulises Vitulli ]
+  * DQT_LRELEASE_EXECUTABLE and QT_LUPDATE_EXECUTABLE pointing to qt4 libs
+     avoids building conflicts if alternatives are pointing to qt3 ones.
+  * Applying temporal patch pointing to default Debian Tor's binary.
+  * Little pkg modifications:
+    - Added Vidalia's FAQ licence
+    - Moved .xpm and .desktop to vidalia.install.
+    - Added Description on quilt patch
+    - Remove 'Encoding' field on vidalia.desktop
+
+ -- Ulises Vitulli <uvitulli@fi.uba.ar>  Wed, 14 Jan 2009 14:02:06 -0200
 
 vidalia (0.1.9-3) unstable; urgency=low
 

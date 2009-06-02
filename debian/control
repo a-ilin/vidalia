@@ -4,7 +4,7 @@ Priority: extra
 Maintainer: Vern Sun <s5unty@gmail.com>
 Uploaders: Ulises Vitulli <uvitulli@fi.uba.ar>
 Build-Depends: debhelper (>= 5), autotools-dev, libqt4-dev (>= 4.1.0), po-debconf (>= 1.0), cmake (>= 2.4.8), libssl-dev (>= 0.9.8g), quilt
-Standards-Version: 3.8.0
+Standards-Version: 3.8.1
 Homepage: http://www.vidalia-project.net
 
 Package: vidalia

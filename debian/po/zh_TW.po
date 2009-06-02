@@ -5,9 +5,9 @@ msgstr ""
 "Project-Id-Version: Vidalia 0.1.13\n"
 "Report-Msgid-Bugs-To: vidalia@packages.debian.org\n"
 "POT-Creation-Date: 2008-09-18 00:31-0300\n"
-"PO-Revision-Date: 2008-05-21 21:26+0800\n"
+"PO-Revision-Date: 2009-06-01 14:26+0800\n"
 "Last-Translator: Vern Sun <s5unty@gmail.com>\n"
-"Language-Team: Simplified Chinese <debian-chinese-gb@lists.debian.org>\n"
+"Language-Team: Traditional Chinese <debian-chinese-big5@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -17,7 +17,7 @@ msgstr ""
 #: ../templates:1001
 msgid ""
 "Do you want to stop the existing Tor process and let Vidalia start Tor?"
-msgstr "您希望停止正在运行的 Tor 进程并且让 Vidalia 启动 Tor 吗？"
+msgstr "您希望停止正在運行的 Tor 進程並且讓 Vidalia 啟動 Tor 嗎？"
 
 #. Type: boolean
 #. Description
@@ -29,9 +29,9 @@ msgid ""
 "in the documentation  carried with this package ('/usr/share/doc/vidalia/"
 "README.Debian')."
 msgstr ""
-"看起来这里已经有一个 Tor 程序正在运行。如果您想用 Vidalia 启动 Tor，您或许要"
-"停止当前正在运行的 Tor 程序。否则您应该像本软件包提供的说明('/usr/share/doc/"
-"vidalia/README.Debian')那样启用 Tor 的 'ControlPort' 选项。"
+"看起來這裏已經有一個 Tor 程序正在運行。如果您想用 Vidalia 啟動 Tor，您或許要"
+"停止當前正在運行的 Tor 程序。否則您應該像本軟件包提供的説明('/usr/share/doc/"
+"vidalia/README.Debian')那樣啟用 Tor 的 'ControlPort' 選項。"
 
 #. Type: boolean
 #. Description
@@ -40,6 +40,6 @@ msgid ""
 "Note that if you choose to let Vidalia start Tor, you will have to manually "
 "disable  Tor starting automatically on every reboot (See 'README.Debian')."
 msgstr ""
-"请注意如果您选择让 Vidalia 启动 Tor，那么您应该手工禁止 Tor 在每次计算机重启"
-"时自动运行 (请参考 'README.Debian')。"
+"請注意如果您選擇讓 Vidalia 啟動 Tor，那麼您應該手工禁止 Tor 在每次計算機重啓"
+"時自動運行 (請參考 'README.Debian')。"
 

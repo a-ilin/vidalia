@@ -60,8 +60,6 @@ install: build
 	# Install the package
 	cd debian/build; \
 		make install DESTDIR=$(CURDIR)/debian/vidalia
-	dh_install debian/vidalia.xpm usr/share/pixmaps
-	dh_install debian/vidalia.desktop usr/share/applications
 
 # Build architecture-independent files here.
 binary-indep: build install
@@ -71,6 +69,7 @@ binary-indep: build install
 binary-arch: build install
 	dh_testdir
 	dh_testroot
+	dh_install
 	dh_installdocs
 	dh_installchangelogs CHANGELOG
 	dh_installman doc/vidalia.1

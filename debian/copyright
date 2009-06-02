@@ -2,8 +2,8 @@ This is Debian's prepackaged version of Vidalia, controller GUI for the Tor
 software.
 
 Original source has been downloaded from:
-    
-    http://www.vidalia-project.net/dist/vidalia-0.1.9.tar.gz
+
+    http://www.torproject.org/vidalia/dist/vidalia-0.1.13.tar.gz
 
 The following copyright notices apply to most of the program. Some modules are
 under different licenses, or in the public domain.
@@ -72,23 +72,6 @@ you distribute Vidalia.  Inclusion of this notice with such a
 distribution constitutes a grant of such permission.  If you do not wish
 to grant these permissions, remove this section entitled "OpenSSL
 Exception" from your distribution.
-===================================================================
-
-trayicon_x11.cpp is derived from systemtray.cpp from QMPDClient, licensed
-as follows:
-
-QMPDClient - An MPD client written in Qt 4.
-Copyright (C) 2005 Håvard Tautra Knutsen <havtknut@tihlde.org>
-
-This program is free software; you can redistribute it and/or
-modify it under the terms of the GNU General Public License
-as published by the Free Software Foundation; either version 2
-of the License, or (at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
 ===================================================================
 
 Some of the help documentation text used in Vidalia is derived from the TorFAQ
@@ -501,6 +484,12 @@ License of src/common/strlcat.c and src/common/strlcpy.c:
  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+==============================================================================
+
+Some of the help documentation text used in this package was copied from the
+Vidalia FAQ Wiki <http://trac.vidalia-project.net/wiki/FAQ>.
+It's content is licensed under the Creative Commons Attribution-Share Alike 3.0.
+     Copyright (C) 2006-2008, Matt Edman <edmanm@vidalia-project.net>
 ==============================================================================
 
 
