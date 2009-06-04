@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-05-19 23:56+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2009-06-04 15:45+0000\n"
+"Last-Translator: alpha <alpha@mailinator.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Vidalia ts2po 0.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 1.1.0\n"
 
 msgctxt "AboutDialog"
 msgid "About Vidalia"
@@ -26,11 +26,11 @@ msgstr "Vidalia"
 
 msgctxt "AboutDialog"
 msgid "Tor 0.2.0.32"
-msgstr ""
+msgstr "Tor 0.2.0.32"
 
 msgctxt "AboutDialog"
 msgid "Qt 4.4.2"
-msgstr "4.4.2"
+msgstr "Qt 4.4.2"
 
 msgctxt "AboutDialog"
 msgid "Vidalia"
@@ -42,11 +42,11 @@ msgstr "Tor"
 
 msgctxt "AboutDialog"
 msgid "Qt"
-msgstr ""
+msgstr "Qt"
 
 msgctxt "AboutDialog"
 msgid "version"
-msgstr ""
+msgstr "Version"
 
 msgctxt "AdvancedPage"
 msgid "'%1' is not a valid IP address."
@@ -58,7 +58,7 @@ msgstr "Sie haben 'Passwort'-Authentifizierung ausgewählt, aber kein Passwort a
 
 msgctxt "AdvancedPage"
 msgid "Select Tor Configuration File"
-msgstr "Wählen Sie die Tor-Konfigurationsdatei aus"
+msgstr "Wählen Sie die Tor-Konfigurationsdatei aus."
 
 msgctxt "AdvancedPage"
 msgid "File Not Found"
@@ -66,7 +66,7 @@ msgstr "Datei nicht gefunden"
 
 msgctxt "AdvancedPage"
 msgid "%1 does not exist. Would you like to create it?"
-msgstr "%1 existiert nicht. Soll es erstellt werden?"
+msgstr "%1 existiert nicht. Möchten Sie es erstellen?"
 
 msgctxt "AdvancedPage"
 msgid "Failed to Create File"
@@ -78,7 +78,7 @@ msgstr "Konnte %1 nicht erstellen [2%]"
 
 msgctxt "AdvancedPage"
 msgid "Select a Directory to Use for Tor Data"
-msgstr "Wählen Sie ein Verzeichnis zum Speichern der Tordaten aus"
+msgstr "Wählen Sie ein Verzeichnis zum Speichern der Daten für Tor aus"
 
 msgctxt "AdvancedPage"
 msgid "Unable to remove Tor Service"
@@ -130,7 +130,7 @@ msgstr "Tor-Konfigurationsdatei"
 
 msgctxt "AdvancedPage"
 msgid "Start the Tor software with the specified configuration file (torrc)"
-msgstr "Starte die Tor-Software mit der spezifizierten Konfigurationsdatei (torrc)"
+msgstr "Starte die Tor-Software mit der angegebenen Konfigurationsdatei (torrc)"
 
 msgctxt "AdvancedPage"
 msgid "Select path to your configuration file"
@@ -150,13 +150,18 @@ msgstr "Speichere Daten für die Tor-Software im folgenden Verzeichnis"
 
 msgctxt "AdvancedPage"
 msgid "Select the directory used to store data for the Tor software"
-msgstr "Wählen Sie das Verzeichnis, das verwendet wird um Daten für die Tor-Software zu speichern"
+msgstr ""
+"Wählen Sie das Verzeichnis, das verwendet wird, um Daten für die Tor-"
+"Software zu speichern"
 
 msgctxt "AdvancedPage"
 msgid "Vidalia was unable to remove the Tor service.\n"
 "\n"
 "You may need to remove it manually."
 msgstr ""
+"Vidalia konnte den Tor-Dienst nicht entfernen\n"
+"\n"
+"Sie müssen diesen manuell entfernen."
 
 msgctxt "AppearancePage"
 msgid "Language"
@@ -236,51 +241,52 @@ msgstr "Abbrechen"
 
 msgctxt "BridgeDownloader"
 msgid "Starting HTTPS bridge request..."
-msgstr ""
+msgstr "Starte HTTPS-Anfrage..."
 
 msgctxt "BridgeDownloader"
 msgid "Connecting to %1:%2..."
-msgstr ""
+msgstr "Verbinde zu %1:%2..."
 
 msgctxt "BridgeDownloader"
 msgid "Sending an HTTPS request for bridges..."
-msgstr ""
+msgstr "Schicke eine HTTPS-Anfrage für Brückenserver..."
 
 msgctxt "BridgeDownloader"
 msgid "Downloading a list of bridges..."
-msgstr ""
+msgstr "Liste eine Liste von Brückenservern herunter..."
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Downloading Bridges"
-msgstr ""
+msgstr "Lade Brückenserver herunter..."
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Unable to download bridges: %1"
-msgstr ""
+msgstr "Brückenserver konnten nicht heruntergeladen werden: %1"
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Retrying bridge request..."
-msgstr ""
+msgstr "Versuche noch eine Anfrage nach Brückenservern..."
 
 msgctxt "BridgeUsageDialog"
 msgid "Country"
-msgstr ""
+msgstr "Land"
 
 msgctxt "BridgeUsageDialog"
 msgid "# Clients"
-msgstr ""
+msgstr "Anzahl der Clients"
 
 msgctxt "BridgeUsageDialog"
 msgid "Clients from the following countries have used your relay since %1"
 msgstr ""
+"Rechner aus den folgenden Ländern haben deinen Tor-Server seit %1 benutzt"
 
 msgctxt "BridgeUsageDialog"
 msgid "Bridge Usage Summary"
-msgstr ""
+msgstr "Zusammenfassung der Nutzung des Brückenservers"
 
 msgctxt "BridgeUsageDialog"
 msgid "Client Summary"
-msgstr ""
+msgstr "Zusammenfassung der Clientrechner"
 
 msgctxt "Circuit"
 msgid "New"
@@ -397,6 +403,8 @@ msgstr "Mein Passwort speichern"
 msgctxt "ControlPasswordInputDialog"
 msgid "Vidalia has connected to a running Tor process that requires a password. Please enter your control password:"
 msgstr ""
+"Vidalia hat sich zu einem laufenden Tor-Prozess verbunden, der ein Passwort "
+"benötigt. Bitte gib das Kontroll-Passwort ein:"
 
 msgctxt "ControlSocket"
 msgid "Control socket is not connected."
@@ -584,7 +592,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Djibouti"
-msgstr "Über"
+msgstr "Djibouti"
 
 msgctxt "CountryInfo"
 msgid "Dominica"
@@ -620,7 +628,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "France"
-msgstr "Abbrechen"
+msgstr "Frankreich"
 
 msgctxt "CountryInfo"
 msgid "Gabon"
@@ -652,7 +660,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Guinea"
-msgstr "Allgemein"
+msgstr "Guinea"
 
 msgctxt "CountryInfo"
 msgid "Guinea-Bissau"
@@ -736,7 +744,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Liechtenstein"
-msgstr "Lizenz"
+msgstr "Liechtenstein"
 
 msgctxt "CountryInfo"
 msgid "Lithuania"
@@ -844,7 +852,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Norway"
-msgstr "Vorwärts"
+msgstr "Norwegen"
 
 msgctxt "CountryInfo"
 msgid "Oman"
@@ -888,7 +896,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Portugal"
-msgstr "Port:"
+msgstr "Portugal"
 
 msgctxt "CountryInfo"
 msgid "Qatar"
@@ -936,7 +944,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Senegal"
-msgstr "Allgemein"
+msgstr "Senegal"
 
 msgctxt "CountryInfo"
 msgid "Serbia"
@@ -976,7 +984,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Spain"
-msgstr "Beteiligung"
+msgstr "Spanien"
 
 msgctxt "CountryInfo"
 msgid "Sri Lanka"
@@ -1256,15 +1264,15 @@ msgstr "Argumente der Proxy-Anwendung"
 
 msgctxt "GeneralPage"
 msgid "Software Updates"
-msgstr ""
+msgstr "Aktualisierungen der Software"
 
 msgctxt "GeneralPage"
 msgid "Check for new software updates automatically"
-msgstr ""
+msgstr "Prüfe automatisch auf neue Software"
 
 msgctxt "GeneralPage"
 msgid "Check Now"
-msgstr ""
+msgstr "Prüfe jetzt"
 
 msgctxt "GraphFrame"
 msgid "%1 KB/s"
@@ -1284,11 +1292,11 @@ msgstr "%1 GB"
 
 msgctxt "GraphFrame"
 msgid "Recv:"
-msgstr ""
+msgstr "Empfangen:"
 
 msgctxt "GraphFrame"
 msgid "Sent:"
-msgstr ""
+msgstr "Gesendet:"
 
 msgctxt "HelpBrowser"
 msgid "Supplied XML file is not a valid Contents document."
@@ -1416,7 +1424,7 @@ msgstr "Gefundene Dokumente"
 
 msgctxt "HelpBrowser"
 msgid "Error Loading Help Contents:"
-msgstr ""
+msgstr "Fehler beim Laden der Hilfe:"
 
 msgctxt "HelpTextBrowser"
 msgid "Opening External Link"
@@ -1440,7 +1448,7 @@ msgstr "Vidalia konnte den gewählten Link nicht im Webbrowser öffnen. Sie kön
 
 msgctxt "HelpTextBrowser"
 msgid "Error opening help file:"
-msgstr ""
+msgstr "Fehler beim Öffnen der Hilfedatei:"
 
 msgctxt "LicenseDialog"
 msgid "License Information"
@@ -3290,4 +3298,3 @@ msgstr ""
 msgctxt "stringutil.h"
 msgid "%1 mins"
 msgstr ""
-
