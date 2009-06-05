@@ -10,7 +10,7 @@
 
 /*
 ** \file vidalia_win.rc
-** \version $Id: mainwindow.cpp 644 2006-04-11 08:49:24Z edmanm $
+** \version $Id$
 ** Defines resource identifiers for icons used on Win32.
 */
 
@@ -35,12 +35,12 @@ FILETYPE        VFT_APP
             VALUE "ProductName",      "Vidalia"
             VALUE "OriginalFilename", "vidalia.exe"
             VALUE "CompanyName",      "vidalia-project.net"
-            VALUE "LegalCopyright",   "Copyright (C) 2007-2008, Matt Edman, Justin Hipple"
+            VALUE "LegalCopyright",   "Copyright (C) 2007-2009, Matt Edman, Justin Hipple"
         }
     }
 }
 
 
-/** Application icon */
+/* Application icon */
 101 ICON DISCARDABLE "icons/vidalia.ico"
 
