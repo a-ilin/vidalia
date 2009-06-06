@@ -18,6 +18,7 @@
 #include "Vidalia.h"
 #include "crypto.h"
 #include "file.h"
+#include "stringutil.h"
 #if defined(Q_OS_WIN32)
 #include "win32.h"
 #include <QFileInfo>
@@ -357,42 +358,27 @@ TorSettings::randomPassword()
 QString
 TorSettings::hashPassword(const QString &password)
 {
-  TorSettings settings;
-  QProcess tor;
-  QString dataDirectory, line;
-  QStringList args;
-
-  QStringList env = QProcess::systemEnvironment();
-#if !defined(Q_OS_WIN32)
-  /* Add "/usr/sbin" to an existing $PATH, so this works on Debian too. */
-  for (int i = 0; i < env.size(); i++) {
-    QString envVar = env.at(i);
-    if (envVar.startsWith("PATH="))
-      env.replace(i, envVar += ":/usr/sbin");
-  }
-#endif
-  tor.setEnvironment(env);
-
-  /* Tor writes its state file even if all we're doing is --hash-password. So
-   * if the user has configured a non-default data directory, then include
-   * that in the list of command line arguments. */
-  dataDirectory = settings.getDataDirectory();
-  if (!dataDirectory.isEmpty())
-    args << "DataDirectory" << dataDirectory;
-  args << "--hash-password" << password;
+  QByteArray salt;
   
-  /* Run Tor, tell it to hash the given password, and then wait for it to
-   * finish. */
-  tor.start(expand_filename(settings.getExecutable()), args);
-  if (!tor.waitForStarted() || !tor.waitForFinished())
-    return QString();
-
-  /* The hashed password will (hopefully) be the line that starts with "16:" */
-  while (tor.canReadLine()) {
-    line = tor.readLine();
-    if (line.startsWith("16:"))
-      return line.trimmed();
+  /* Generate an 8 octet salt value. Bail if we fail to generate enough
+   * random bytes (unlikely). */
+  while (salt.size() < 8) {
+    QByteArray bytes = crypto_rand_bytes(8-salt.size());
+    if (bytes.isNull())
+      return QString();
+    salt.append(bytes);
   }
-  return QString();
+
+  /* Generate the salted hash of the specified password. 96 is the one-octet
+   * RFC 2440 coded count value hardcoded into Tor. Specifies that we should
+   * hash 64K worth of data. */
+  QByteArray key = crypto_secret_to_key(password, salt, 96);
+  if (key.isNull())
+    return QString();
+  salt.append(96); /* Append the coded count value to the salt */
+
+  /* Convert the result to hexadecimal and put it in the format Tor wants. */
+  return QString("16:%1%2").arg(base16_encode(salt))
+                           .arg(base16_encode(key));
 }
 

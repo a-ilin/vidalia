@@ -67,6 +67,13 @@ quint32 crypto_rand_quint32(quint32 max);
 /** Generates a pseudorandom string of length <b>len</b> containing printable
  * ASCII characters from the range '!' (0x21) to '~' (0x7e). */
 QString crypto_rand_string(int len);
+/** Generates a salted hash of <b>secret</b> using the random <b>salt</b>
+ * according to the iterated and salted S2K algorithm in RFC 2440. <b>c</b>
+ * is the one-octet coded count value that specifies how much data to hash. 
+ * <b>salt</b> must contain at least 8 bytes, otherwise this method will
+ * return a default-constructed QByteArray. */
+QByteArray 
+crypto_secret_to_key(const QString &secret, const QByteArray &salt, quint8 c);
 
 #endif
 

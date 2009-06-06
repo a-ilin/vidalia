@@ -9,6 +9,9 @@
     now defaults to using port 443 in such cases.
   o Add support for viewing the map as a full screen widget when built
     with KDE Marble support.
+  o Compute the salted hash of the control password ourself when starting
+    Tor, rather than launching Tor once to hash the password, parsing the
+    output, and then again to actually start Tor.
   o Add a signal handler that allows Vidalia to clean up and exit normally
     when it catches a SIGINT or SIGTERM signal. (Ticket #481)
   o Renamed the 'make win32-installer' CMake target to 'make dist-win32'

@@ -54,6 +54,7 @@
 
 #include <QFile>
 #include <QStringList>
+#include <QCryptographicHash>
 #include <QtDebug>
 
 #if defined(Q_OS_WIN32)
@@ -155,5 +156,35 @@ crypto_rand_string(int len)
   for (int i = 0; i < len; i++)
     str += QChar('!' + crypto_rand_quint32('~'-'!'+1));
   return str;
+}
+
+/** Generates a salted hash of <b>secret</b> using the random <b>salt</b>
+ * according to the iterated and salted S2K algorithm in RFC 2440. <b>c</b>
+ * is the one-octet coded count value that specifies how much data to hash. 
+ * <b>salt</b> must contain at least 8 bytes, otherwise this method will
+ * return a default-constructed QByteArray. */
+QByteArray
+crypto_secret_to_key(const QString &secret, const QByteArray &salt, quint8 c)
+{
+  if (salt.size() < 8)
+    return QByteArray();
+
+#define EXPBIAS 6
+  int count = ((quint32)16 + (c & 15)) << ((c >> 4) + EXPBIAS);
+#undef EXPBIAS
+
+  QCryptographicHash hash(QCryptographicHash::Sha1);
+  QByteArray tmp = salt.left(8).append(secret.toAscii());
+  while (count) {
+    if (count > tmp.length()) {
+      hash.addData(tmp);
+      count -= tmp.length();
+    } else {
+      hash.addData(tmp.left(count));
+      count = 0;
+    }
+  }
+
+  return hash.result();
 }
 
