@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-08-20 03:25+0000\n"
-"PO-Revision-Date: 2009-03-25 11:24+0000\n"
+"PO-Revision-Date: 2009-06-04 06:39+0000\n"
 "Last-Translator: Jan Reister <jan.reister@unimi.it>\n"
 "Language-Team: none\n"
 "MIME-Version: 1.0\n"
@@ -20,7 +20,7 @@ msgstr "Attiva"
 #: qmessagebox.h:319
 msgctxt "QApplication"
 msgid "Executable '%1' requires Qt %2, found Qt %3."
-msgstr "L'eseguibile '%1' richiedere Qt %2, trovata Qt %3."
+msgstr "Eseguibile '%1' richiede Qt %2, trovato Qt %3."
 
 #: qmessagebox.h:321
 msgctxt "QApplication"
@@ -384,7 +384,7 @@ msgstr "Nome"
 #: qfilesystemmodel.cpp:834
 msgctxt "QFileSystemModel"
 msgid "Size"
-msgstr "Nome"
+msgstr "Dimensione"
 
 #: qfilesystemmodel.cpp:838
 msgctxt "QFileSystemModel"
@@ -404,7 +404,7 @@ msgstr "Data modifica"
 #: qfilesystemmodel_p.h:198
 msgctxt "QFileSystemModel"
 msgid "My Computer"
-msgstr "Mio computer"
+msgstr "Mio Computer"
 
 #: qfilesystemmodel_p.h:200
 msgctxt "QFileSystemModel"
