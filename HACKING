@@ -54,7 +54,7 @@ $Id$
 
        This directory contains code that implements the GUI components of
        Vidalia. Whenever possible and sane, each component should be placed in
-       an appropriately-named subdirectory of ./trunk/src/gui.
+       an appropriately-named subdirectory of ./trunk/src/vidalia.
 
     ./trunk/src/vidalia/res:
 
