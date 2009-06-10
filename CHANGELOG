@@ -24,6 +24,32 @@
   o Raise the minimum required Qt version from 4.2 to 4.3.
 
 
+0.1.13  25-May-2009
+  o Remove an old warning on the relay settings page that running a bridge
+    relay requires Tor 0.2.0.8-alpha or newer.
+  o Add a workaround for a bug that prevented Vidalia's tray icon from
+    getting added to the system notification area on Gnome when Vidalia was 
+    run on system startup. Patch by Steve Tyree. (Ticket #247)
+  o Fix a bug that prevented the control panel from displaying when
+    running on the Enlightenment window manager. Patch by Steve Tyree.
+  o Rename the CMake variables used to store the location of Qt's lupdate
+    and lrelease executables. Recent versions of CMake decided to use the 
+    same variable name, which was stomping on mine, resulting in the wrong
+    lupdate and lrelease executables being used.
+  o Use the TorProcess subclass of QProcess for launching Tor when hashing
+    a control password so we can take advantage of its PATH+=:/usr/sbin
+    trick on Debian there too.
+  o If a RouterDescriptor object is empty, don't try to display it in the 
+    router descriptor details viewer. (Ticket #479)
+  o Wait until Vidalia has registered for log events via the control port
+    before ignoring Tor's output on stdout. Previously we would start
+    ignoring Tor's stdout after successfully authenticating, but before
+    registering for log events which, in some cases, could lead to
+    messages not appearing in the message log.
+  o Update many translations and remove others than are no longer
+    up-to-date enough to be useful.
+
+
 0.2.0   19-Mar-2009
   o Add support for changing UI languages without having to restart
     Vidalia.
