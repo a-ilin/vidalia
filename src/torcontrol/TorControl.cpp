@@ -656,7 +656,14 @@ TorControl::setConf(QHash<QString,QString> map, QString *errmsg)
   
   /* Add each keyvalue to the argument list */
   foreach (QString key, map.uniqueKeys()) {
-    foreach (QString value, map.values(key)) {
+    /* If a key has multiple values (e.g., a QMultiHash), they are stored
+     * in order from most recently inserted to least recently inserted.
+     * So, walk the list in reverse so that we append the configuration
+     * values to the SETCONF command in the same order they were inserted
+     * into the QHash. */
+    QList<QString> values = map.values(key);
+    for (int i = values.size()-1; i >= 0; i--) {
+      QString value = values.at(i);
       if (value.length() > 0)
         cmd.addArgument(key + "=" + string_escape(value));
       else
