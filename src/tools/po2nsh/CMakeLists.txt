@@ -19,7 +19,10 @@ set(po2nsh_SRCS
 add_executable(po2nsh ${po2nsh_SRCS})
 
 ## Link the executable with the appropriate Qt libraries
-target_link_libraries(po2nsh ${QT_LIBRARIES} common)
+target_link_libraries(po2nsh
+  ${QT_QTCORE_LIBRARY}
+  common
+)
 
 ## Remember the location of po2nsh so we can use it in custom commands
 get_target_property(PO2NSH_EXECUTABLE po2nsh LOCATION)

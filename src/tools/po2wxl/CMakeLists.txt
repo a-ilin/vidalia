@@ -19,7 +19,10 @@ set(po2wxl_SRCS
 add_executable(po2wxl ${po2wxl_SRCS})
 
 ## Link the executable with the appropriate Qt libraries
-target_link_libraries(po2wxl ${QT_LIBRARIES})
+target_link_libraries(po2wxl
+  ${QT_QTCORE_LIBRARY}
+  ${QT_QTXML_LIBRARY}
+)
 
 ## Remember the location of po2wxl so we can use it in custom commands
 get_target_property(PO2WXL_EXECUTABLE po2wxl LOCATION)

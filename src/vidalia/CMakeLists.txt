@@ -443,7 +443,6 @@ add_dependencies(${vidalia_BIN} i18n)
 ## Link to the Qt libraries and other libraries built as a part of Vidalia
 target_link_libraries(${vidalia_BIN}
   ${QT_LIBRARIES}
-  ${MARBLE_LIBRARIES}
   common
   torcontrol
 )

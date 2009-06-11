@@ -38,7 +38,10 @@ endif(WIN32)
 
 
 add_library(common STATIC ${common_SRCS})
-target_link_libraries(common ${QT_LIBRARIES})
+target_link_libraries(common
+  ${QT_QTCORE_LIBRARY}
+  ${QT_QTNETWORK_LIBRARY}
+)
 
 if(OPENSSL_LIBRARIES)
   target_link_libraries(common ${OPENSSL_LIBRARIES})

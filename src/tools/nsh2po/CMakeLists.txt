@@ -40,5 +40,7 @@ configure_file(
 add_executable(nsh2po ${nsh2po_SRCS})
 
 ## Link the executable with the appropriate Qt libraries
-target_link_libraries(nsh2po ${QT_LIBRARIES})
+target_link_libraries(nsh2po
+  ${QT_QTCORE_LIBRARY}
+)
 

@@ -19,7 +19,10 @@ set(po2ts_SRCS
 add_executable(po2ts ${po2ts_SRCS})
 
 ## Link the executable with the appropriate Qt libraries
-target_link_libraries(po2ts ${QT_LIBRARIES})
+target_link_libraries(po2ts
+  ${QT_QTCORE_LIBRARY}
+  ${QT_QTXML_LIBRARY}
+)
 
 ## Remember the location of po2ts so we can use it in custom commands
 get_target_property(PO2TS_EXECUTABLE po2ts LOCATION)

@@ -15,7 +15,10 @@ set(wixtool_SRCS
 add_executable(wixtool ${wixtool_SRCS})
 
 ## Link the executable with the appropriate Qt libraries
-target_link_libraries(wixtool ${QT_LIBRARIES})
+target_link_libraries(wixtool
+  ${QT_QTCORE_LIBRARY}
+  ${QT_QTXML_LIBRARY}
+)
 
 ## Remember location so we can use it in custom commands
 get_target_property(WIXTOOL_EXECUTABLE wixtool LOCATION)

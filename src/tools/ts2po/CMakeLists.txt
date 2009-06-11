@@ -40,7 +40,10 @@ configure_file(
 add_executable(ts2po ${ts2po_SRCS})
 
 ## Link the executable with the appropriate Qt libraries
-target_link_libraries(ts2po ${QT_LIBRARIES})
+target_link_libraries(ts2po
+  ${QT_QTCORE_LIBRARY}
+  ${QT_QTXML_LIBRARY}
+)
 
 ## Remember the location of ts2po so we can use it in custom commands
 get_target_property(TS2PO_EXECUTABLE ts2po LOCATION)
