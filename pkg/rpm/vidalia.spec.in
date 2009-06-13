@@ -1,159 +1,144 @@
-##
-##  $Id$
-## 
-##  This file is part of Vidalia, and is subject to the license terms in the
-##  LICENSE file, found in the top level directory of this distribution. If 
-##  you did not receive the LICENSE file with this file, you may obtain it
-##  from the Vidalia source package distributed by the Vidalia Project at
-##  http://www.vidalia-project.net/. No part of Vidalia, including this file,
-##  may be copied, modified, propagated, or distributed except according to
-##  the terms described in the LICENSE file.
-##
+Name:             vidalia
+Version:          @VERSION@
+Release:          2%{?dist}
+Summary:          GUI controller for the Tor Onion Routing Network
 
-#%package vidalia
+Group:            Applications/Internet
+License:          GPLv2+
+URL:              https://www.torproject.org/vidalia/
+Source0:          https://www.torproject.org/%{name}/dist/%{name}-%{version}.tar.gz
+Source1:          %{name}.desktop
+BuildRoot:        %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n) 
 
-%define _prefix   /usr/local
-%define _mandir   %{_prefix}/share/man
+BuildRequires:    desktop-file-utils
+BuildRequires:    openssl-devel
+BuildRequires:    qt4-devel
+BuildRequires:    cmake
 
-Name          : vidalia
-Version       : @VERSION@
-Release       : RH5_3
-#
-License       : GPL
-Summary       : A Tor GUI for Linux
-Group         : Applications/Internet
+Requires:         tor
+Requires:         privoxy
+Requires:         hicolor-icon-theme
 
-URL           : https://www.torproject.org/vidalia/
-Vendor        : Matt Edman, Justin Hipple
-Packager      : Oliver Niesner <digi_news@gmx.de> 
-
-Source0       : %{name}-%{version}.tar.gz
-
-#AutoReq      : No
-#AutoProv     : No
-
-Requires      : tor >= 0.2.0.34
-BuildRequires : qt4 >= 4.2
-# This fails on some systems because they lack a cmake rpm, such as
-# Redhat 5 and earlier
-BuildRequires : cmake >= 2.4
-BuildRoot     : /var/tmp/%{name}-buildroot
 
 %description
+Vidalia is a cross-platform controller GUI for Tor, built using the Qt 
+framework. Vidalia allows you to start and stop Tor, view the status of Tor at 
+a glance, and monitor Tor's bandwidth usage. Vidalia also makes it easy to 
+contribute to the Tor network by helping you setup a Tor server, if you wish.
 
-Vidalia is an easy-to-use Tor controller GUI
+
+%package doc
+Summary:        Documentation for %{name}
+Group:          Documentation
+BuildRequires:  doxygen
+Requires:       %{name} = %{version}-%{release}
+
+
+%description doc
+Doxygen generated documentations for %{name}.
+
 
 %prep
-rm -rf %{buildroot}
-
-#######################################################################
-# setup macro
-# -a num  : Only unpack source number after changing to the directory
-# -b num  : Only unpack source number before changing to the directory
-# -c      : Create directory before unpacking.
-# -D      : Do not delete the directory before unpacking
-# -n name : Name the directory as name
-# -q      : Run quiety with minimum output
-# -T      : Disable the automatic unpacking of the archives.
-#######################################################################
-%setup
-%build  
-
-cmake -DQT_QMAKE_EXECUTABLE=/usr/lib/qt4/bin/qmake . && make
+%setup -q
 
 
-#########################################################
-# Common Red Hat RPM macros (rpm --showrc for more info)
-# {_sourcedir} : /usr/src/redhat/SOURCES
-# {_builddir}  : /usr/src/redhat/BUILD
-# {_tmppath}   : /var/tmp
-# {_libdir}    : /usr/lib
-# {_bindir}    : /usr/bin
-# {_datadir}   : /usr/share
-# {_mandir}    : /usr/share/man
-# {_docdir}    : /usr/share/doc
-# {buildroot}
-# {name}
-# {version}
-# {release}
-#########################################################
+%build
+%if 0%{?_qt4_bindir:1}
+PATH=%{_qt4_bindir}:$PATH; export PATH
+%else
+PATH=%{_libdir}/qt4/bin:$PATH; export PATH
+%endif
+
+%cmake .
+
+make %{?_smp_mflags}
+
+cd doc
+doxygen Doxyfile.in
+
 
 %install
+rm -rf %{buildroot}
 
-make install DESTDIR=%{buildroot}
-#mkdir -p %{_prefix}/share/man/man1/
-#cp %{buildroot}/doc/vidalia.1 %{_prefix}/share/man/man1
-#%post
+make install \
+     INSTALL="install -p" \
+     DESTDIR=%{buildroot}
+
+rm -rf  %{buildroot}%{_datadir}/applications/%{name}.desktop
+
+install -Dpm0644 doc/%{name}.1 \
+        %{buildroot}%{_mandir}/man1/%{name}.1
+
+desktop-file-install \
+        %if 0%{?rhel}
+        --vendor="" \
+        %endif
+        --dir %{buildroot}%{_datadir}/applications \
+        %{SOURCE1}
+
+mkdir -p %{buildroot}%{_docdir}/%{name}-%{version}-doxygen/
+install -Dpm0644 doc/html/* \
+        %{buildroot}%{_docdir}/%{name}-%{version}-doxygen/
+
+
+%post
+touch --no-create %{_datadir}/icons/hicolor &>/dev/null || :
+
+
+%postun
+if [ $1 -eq 0 ] ; then
+    touch --no-create %{_datadir}/icons/hicolor &>/dev/null
+    gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
+fi
+
+
+%posttrans
+gtk-update-icon-cache %{_datadir}/icons/hicolor &>/dev/null || :
+
 
 %clean
 rm -rf %{buildroot}
 
+
 %files
-%{_prefix}/bin/vidalia
-%{_prefix}/share/applications/vidalia.desktop
-#%{_prefix}/share/man/man1/vidalia.1
-#%{_builddir}/%{name}-%{version}/doc/vidalia.1
-%{_prefix}/share/icons/hicolor/128x128/apps/vidalia.png
-%{_prefix}/share/icons/hicolor/16x16/apps/vidalia.png
-%{_prefix}/share/icons/hicolor/22x22/apps/vidalia.png
-%{_prefix}/share/icons/hicolor/32x32/apps/vidalia.png
-%{_prefix}/share/icons/hicolor/48x48/apps/vidalia.png
-%{_prefix}/share/icons/hicolor/64x64/apps/vidalia.png
+%defattr(-,root,root,-)
+%doc CHANGELOG CREDITS HACKING LICENSE LICENSE-GPLV2 LICENSE-GPLV3 LICENSE-OPENSSL README
+%{_bindir}/%{name}
+%{_mandir}/man1/%{name}*
+%{_datadir}/applications/%{name}.desktop
+%{_datadir}/icons/hicolor/*/apps/%{name}.png
 
 
-#####################################################
-# defattr sets the default attributes for all files
-#####################################################
-%defattr(-, root, root)
+%files doc
+%defattr(-,root,root,-)
+%{_docdir}/%{name}-%{version}-doxygen/
+
 
 %changelog
-* Wed May 06 2009 Oliver Niesner <digi_news@gmx.de> 0.1.12
-- fix rebuild errors due wrong version usage of qmake
-- added additional icons
+* Sat Jun 13 2009 Matt Edman <edmanm@vidalia-project.net> - 0.2.1-1
+- Added to Vidalia Subversion repository
 
-* Sat Apr 11 2009 Andrew Lewman <andrew@torproject.org> 0.1.6-2
-- fix required Tor version
-- start integration into "package.sh"
+* Mon Jun 01 2009 Simon Wesp <cassmodiah@fedoraproject.org> - 0.1.13-2
+- Merge builds for fedora and epel
 
-* Mon Mar 23 2009 Oliver Niesner <digi_news@gmx.de> 0.1.12
-- bump to 0.1.12
+* Mon Jun 01 2009 Simon Wesp <cassmodiah@fedoraproject.org> - 0.1.13-1
+- Update to 0.1.13
+- Adjust to fedora and epel
 
-* Mon Nov 3 2008 Oliver Niesner <digi_news@gmx.de> 0.1.6-1
-- bump to 0.1.10
+* Sun Apr 06 2009 Simon Wesp <cassmodiah@fedoraproject.org> - 0.1.12-1
+- New upstream release
+- Correct typo in URL
+- Add R: hicolor for new handling of icons
+- Add update-icon-cache sniplet
+- Use summary of upstream for Desktopfile and in spec file
+- Create doxygen-documentations
 
-* Wed Jul 30 2008  Oliver Niesner <digi_news@gmx.de> 0.1.6-1
-- bump to 0.1.6 
-- fix man path 
+* Sun Feb 15 2009 Simon Wesp <cassmodiah@fedoraproject.org> - 0.1.10-2
+- Correct Qt in Summary
+- Correct Qt in desktop-file-source
+- Add a german Translation in the desktop-file-source
+- Using CMAKE-macro instead of cmake
+- Add more files to more documentation
 
-* Mon Mar 31 2008 Oliver Niesner <digi_news@gmx.de> 0.1.2-1
-- bump to 0.1.2
-
-* Tue Mar 04 2008 Oliver Niesner <digi_news@gmx.de> 0.1.0-1
-- bump to 0.1.0 and modifications to meet cmake requirements!
-
-* Mon Nov 26 2007 Oliver Niesner <digi_news@gmx.de> 0.0.16-1
-- bump to 0.0.16
-
-* Thu Oct 29 2007 Oliver Niesner <digi_news@gmx.de> 0.0.15-1
--  bump to 0.0.15
-
-* Thu Aug 30 2007 Oliver Niesner <digi_news@gmx.de> 0.0.14-1
-- bump to 0.0.14
-
-* Thu Aug 07 2007 Oliver Niesner <digi_news@gmx.de> 0.0.13-1
-- bump to 0.0.13
-
-* Thu Jun 05 2007 Oliver Niesner <digi_news@gmx.de> 0.0.12-1
-- bump to 0.0.12
-
-* Thu Feb 08 2007 Oliver Niesner <digi_news@gmx.de> 0.0.11-1
-- bump to 0.0.11 release
-
-* Mon Jan 08 2007 Oliver Niesner <digi_news@gmx.de> 0.0.10-1
-- bump to 0.0.10 release
-
-* Mon Nov 06 2006 Oliver Niesner <digi_news@gmx.de> 0.0.9-1
-- first release build for 0.0.9
-
-* Tue Oct 11 2006 Oliver Niesner <digi_news@gmx.de> 0.0.8-1
-- initial release
+* Tue Feb 10 2009 Simon Wesp <cassmodiah@fedoraproject.org> - 0.1.10-1
+- Initial Package build
