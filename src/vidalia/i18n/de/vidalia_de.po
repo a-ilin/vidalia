@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-05-19 23:56+0000\n"
-"PO-Revision-Date: 2009-06-04 15:45+0000\n"
+"PO-Revision-Date: 2009-06-11 20:57+0000\n"
 "Last-Translator: alpha <alpha@mailinator.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -444,11 +444,11 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Armenia"
-msgstr ""
+msgstr "Armenien"
 
 msgctxt "CountryInfo"
 msgid "Australia"
-msgstr "Über Vidalia"
+msgstr "Australien"
 
 msgctxt "CountryInfo"
 msgid "Azerbaijan"
@@ -496,7 +496,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Brazil"
-msgstr ""
+msgstr "Brasilien"
 
 msgctxt "CountryInfo"
 msgid "Brunei Darussalam"
@@ -504,7 +504,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Bulgaria"
-msgstr ""
+msgstr "Bulgarien"
 
 msgctxt "CountryInfo"
 msgid "Burkina Faso"
@@ -524,7 +524,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Canada"
-msgstr ""
+msgstr "Kanada"
 
 msgctxt "CountryInfo"
 msgid "Cape Verde"
@@ -548,7 +548,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Colombia"
-msgstr ""
+msgstr "Kolumbien"
 
 msgctxt "CountryInfo"
 msgid "Comoros"
@@ -572,11 +572,11 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Croatia"
-msgstr ""
+msgstr "Kroatien"
 
 msgctxt "CountryInfo"
 msgid "Cuba"
-msgstr ""
+msgstr "Kuba"
 
 msgctxt "CountryInfo"
 msgid "Cyprus"
@@ -588,7 +588,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Denmark"
-msgstr ""
+msgstr "Dänemark"
 
 msgctxt "CountryInfo"
 msgid "Djibouti"
@@ -600,7 +600,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Dominican Republic"
-msgstr ""
+msgstr "Dominikanische Republik"
 
 msgctxt "CountryInfo"
 msgid "Ecuador"
@@ -640,11 +640,11 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Georgia"
-msgstr ""
+msgstr "Georgien"
 
 msgctxt "CountryInfo"
 msgid "Germany"
-msgstr ""
+msgstr "Deutschland"
 
 msgctxt "CountryInfo"
 msgid "Ghana"
@@ -688,7 +688,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Italy"
-msgstr ""
+msgstr "Italien"
 
 msgctxt "CountryInfo"
 msgid "Jamaica"
@@ -832,11 +832,11 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Netherlands"
-msgstr ""
+msgstr "Niederlande"
 
 msgctxt "CountryInfo"
 msgid "New Zealand"
-msgstr ""
+msgstr "Neu Seeland"
 
 msgctxt "CountryInfo"
 msgid "Nicaragua"
@@ -892,7 +892,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Poland"
-msgstr ""
+msgstr "Polen"
 
 msgctxt "CountryInfo"
 msgid "Portugal"
@@ -912,7 +912,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Rwanda"
-msgstr ""
+msgstr "Russland"
 
 msgctxt "CountryInfo"
 msgid "Saint Kitts & Nevis"
@@ -948,7 +948,7 @@ msgstr "Senegal"
 
 msgctxt "CountryInfo"
 msgid "Serbia"
-msgstr ""
+msgstr "Serbien"
 
 msgctxt "CountryInfo"
 msgid "Seychelles"
@@ -968,7 +968,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Slovenia"
-msgstr ""
+msgstr "Slowenien"
 
 msgctxt "CountryInfo"
 msgid "Solomon Islands"
@@ -980,7 +980,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "South Africa"
-msgstr ""
+msgstr "Südafrika"
 
 msgctxt "CountryInfo"
 msgid "Spain"
@@ -1004,15 +1004,15 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Sweden"
-msgstr ""
+msgstr "Schweden"
 
 msgctxt "CountryInfo"
 msgid "Switzerland"
-msgstr ""
+msgstr "Schweiz"
 
 msgctxt "CountryInfo"
 msgid "Syria"
-msgstr ""
+msgstr "Syrien"
 
 msgctxt "CountryInfo"
 msgid "Tajikistan"
@@ -1048,7 +1048,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Turkey"
-msgstr ""
+msgstr "Türkei"
 
 msgctxt "CountryInfo"
 msgid "Turkmenistan"
@@ -1120,15 +1120,15 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Albania"
-msgstr ""
+msgstr "Albanien"
 
 msgctxt "CountryInfo"
 msgid "Algeria"
-msgstr ""
+msgstr "Algerien"
 
 msgctxt "CountryInfo"
 msgid "Austria"
-msgstr ""
+msgstr "Österreich"
 
 msgctxt "CountryInfo"
 msgid "Bahrain"
@@ -1152,7 +1152,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Greece"
-msgstr ""
+msgstr "Griechenland"
 
 msgctxt "CountryInfo"
 msgid "Guam"
@@ -1160,15 +1160,15 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Hungary"
-msgstr ""
+msgstr "Ungarn"
 
 msgctxt "CountryInfo"
 msgid "Iceland"
-msgstr ""
+msgstr "Island"
 
 msgctxt "CountryInfo"
 msgid "India"
-msgstr ""
+msgstr "Indien"
 
 msgctxt "CountryInfo"
 msgid "Indonesia"
@@ -1180,7 +1180,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Iraq"
-msgstr ""
+msgstr "Irak"
 
 msgctxt "CountryInfo"
 msgid "Ireland"
@@ -1188,11 +1188,11 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Korea, North"
-msgstr ""
+msgstr "Nordkorea"
 
 msgctxt "CountryInfo"
 msgid "Korea, South"
-msgstr ""
+msgstr "Südkorea"
 
 msgctxt "CountryInfo"
 msgid "Libya"
@@ -1204,7 +1204,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Mexico"
-msgstr ""
+msgstr "Mexiko"
 
 msgctxt "CountryInfo"
 msgid "Myanmar"
@@ -1885,10 +1885,11 @@ msgstr "Die installierte Tor-Version ist veraltet und wird nicht länger empfohl
 msgctxt "MainWindow"
 msgid "Would you like to check if a newer package is available for installation?"
 msgstr ""
+"Wollen Sie überpüfen, ob eine neuere Version zur Installation verfügbar ist?"
 
 msgctxt "MainWindow"
 msgid "Potentially Unsafe Connection"
-msgstr ""
+msgstr "Möglicherweise unsichere Verbindung"
 
 msgctxt "MainWindow"
 msgid "One of your applications%1appears to be making a potentially unencrypted and unsafe connection to port %2. Anything sent over this connection could be monitored. Please check your application's configuration and use only encrypted protocols, such as SSL, if possible."
@@ -1897,6 +1898,8 @@ msgstr ""
 msgctxt "MainWindow"
 msgid "Tor has automatically closed your connection in order to protect your anonymity."
 msgstr ""
+"Tor hat Ihre Verbindung automatisch geschlossen, um Ihre Anonymität zu "
+"schützen."
 
 msgctxt "MainWindow"
 msgid "Update Failed"
@@ -1904,7 +1907,7 @@ msgstr "Tor-Update verfügbar"
 
 msgctxt "MainWindow"
 msgid "Your software is up to date"
-msgstr ""
+msgstr "Ihre Software ist aktuell"
 
 msgctxt "MainWindow"
 msgid "There are no new Tor software packages available for your computer at this time."
@@ -1912,7 +1915,7 @@ msgstr ""
 
 msgctxt "MainWindow"
 msgid "Installation Failed"
-msgstr ""
+msgstr "Installation fehlgeschlagen"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to install your software updates."
@@ -1920,7 +1923,7 @@ msgstr "Vidalia konnte die Tor-Software nicht stoppen."
 
 msgctxt "MainWindow"
 msgid "The following error occurred:"
-msgstr ""
+msgstr "Der folgende Fehler ist aufgetreten:"
 
 msgctxt "MainWindow"
 msgid "failed (%1)"
@@ -1957,7 +1960,7 @@ msgstr "Vidalia"
 
 msgctxt "MainWindow"
 msgid "File"
-msgstr ""
+msgstr "Datei"
 
 msgctxt "MainWindow"
 msgid "About Vidalia"
@@ -1969,7 +1972,7 @@ msgstr "Startseite"
 
 msgctxt "MainWindow"
 msgid "Check For Updates"
-msgstr ""
+msgstr "Auf Updates prüfen"
 
 msgctxt "MessageLog"
 msgid "Error Setting Filter"
@@ -2346,7 +2349,7 @@ msgstr "Datei nicht gefunden"
 
 msgctxt "NetViewer"
 msgid "No details on the selected relay are available."
-msgstr ""
+msgstr "Für den gewählten Verteiler sind keine Details verfügbar."
 
 msgctxt "NetViewer"
 msgid "Unknown"
@@ -2354,11 +2357,11 @@ msgstr "Unbekannt"
 
 msgctxt "NetViewer"
 msgid "Full Screen"
-msgstr ""
+msgstr "Vollbild"
 
 msgctxt "NetViewer"
 msgid "View the network map as a full screen window"
-msgstr ""
+msgstr "Die Netzwerkkarte als Vollbild anzeigen"
 
 msgctxt "NetViewer"
 msgid "Ctrl+F"
@@ -2562,7 +2565,7 @@ msgstr ""
 
 msgctxt "RouterInfoDialog"
 msgid "Summary"
-msgstr ""
+msgstr "Zusammenfassung"
 
 msgctxt "RouterInfoDialog"
 msgid "Name:"
@@ -2634,11 +2637,11 @@ msgstr "Kopieren"
 
 msgctxt "RouterListWidget"
 msgid "Nickname"
-msgstr ""
+msgstr "Spitzname"
 
 msgctxt "RouterListWidget"
 msgid "Fingerprint"
-msgstr ""
+msgstr "Fingerabdruck"
 
 msgctxt "ServerPage"
 msgid "Bridge Support Unavailable"
@@ -2882,7 +2885,7 @@ msgstr ""
 
 msgctxt "ServerPage"
 msgid "The returned response was: %1"
-msgstr ""
+msgstr "Die zurückgelieferte Antwort war: %1"
 
 msgctxt "ServerPage"
 msgid "Help censored users reach the Tor network"
@@ -2979,7 +2982,7 @@ msgstr "Durchsuchen Sie ihr lokales Dateisystem um ein Verzeichnis auszuwählen"
 
 msgctxt "ServicePage"
 msgid "Created by Tor"
-msgstr ""
+msgstr "Erstellt von Tor"
 
 msgctxt "Stream"
 msgid "New"
@@ -3107,7 +3110,7 @@ msgstr "Verstecken"
 
 msgctxt "UpdateProgressDialog"
 msgid "Downloading updates..."
-msgstr ""
+msgstr "Updates werden heruntergeladen..."
 
 msgctxt "UpdateProgressDialog"
 msgid "Installing updated software..."
@@ -3115,7 +3118,7 @@ msgstr "Starte die Tor-Software"
 
 msgctxt "UpdateProgressDialog"
 msgid "Done! Your software is now up to date."
-msgstr ""
+msgstr "Fertig! Ihre Software ist nun aktuell."
 
 msgctxt "UpdateProgressDialog"
 msgid "OK"
@@ -3123,7 +3126,7 @@ msgstr "OK"
 
 msgctxt "UpdateProgressDialog"
 msgid "Software Updates"
-msgstr ""
+msgstr "Aktualisierungen der Software"
 
 msgctxt "UpdateProgressDialog"
 msgid "Checking for updates..."
@@ -3139,11 +3142,11 @@ msgstr "Tor-Update verfügbar"
 
 msgctxt "UpdatesAvailableDialog"
 msgid "Remind Me Later"
-msgstr ""
+msgstr "Erinnere mich später"
 
 msgctxt "UpdatesAvailableDialog"
 msgid "Install"
-msgstr ""
+msgstr "Installieren"
 
 msgctxt "UpdatesAvailableDialog"
 msgid "The following updated software packages are ready for installation:"
@@ -3289,12 +3292,12 @@ msgstr "%1 GB/s"
 
 msgctxt "stringutil.h"
 msgid "%1 days"
-msgstr ""
+msgstr "%1 Tage"
 
 msgctxt "stringutil.h"
 msgid "%1 hours"
-msgstr ""
+msgstr "%1 Stunden"
 
 msgctxt "stringutil.h"
 msgid "%1 mins"
-msgstr ""
+msgstr "%1 Minuten"

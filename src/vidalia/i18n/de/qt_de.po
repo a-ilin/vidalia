@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-08-20 03:25+0000\n"
-"PO-Revision-Date: 2009-04-11 04:00+0000\n"
+"PO-Revision-Date: 2009-06-11 20:52+0000\n"
 "Last-Translator: Matt <edmanm@vidalia-project.net>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -130,7 +130,7 @@ msgstr "Ignorieren"
 #: qdialogbuttonbox.cpp:581
 msgctxt "QDialogButtonBox"
 msgid "Restore Defaults"
-msgstr "Voreinstellungen"
+msgstr "Voreinstellungen wiederherstellen"
 
 #: qdialogbuttonbox.cpp:552
 msgctxt "QDialogButtonBox"
@@ -193,7 +193,6 @@ msgid "Open"
 msgstr "Öffnen"
 
 #: qfiledialog.cpp:1670
-#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
 "%1 already exists.\n"
@@ -203,7 +202,6 @@ msgstr ""
 "Soll sie überschrieben werden?"
 
 #: qfiledialog.cpp:1690
-#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
 "%1\n"
@@ -265,7 +263,6 @@ msgid "Directory:"
 msgstr "Verzeichnis:"
 
 #: qfiledialog.cpp:2476
-#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
 "%1\n"
@@ -277,7 +274,6 @@ msgstr ""
 "Stellen Sie sicher, dass der Verzeichnisname richtig ist."
 
 #: qfiledialog.cpp:2281
-#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
 "'%1' is write protected.\n"
@@ -289,7 +285,7 @@ msgstr ""
 #: qfiledialog.cpp:2286
 msgctxt "QFileDialog"
 msgid "Are sure you want to delete '%1'?"
-msgstr "Sind Sie sicher, dass Sie %1 löschen möchten?"
+msgstr "Sind Sie sicher, dass Sie '%1' löschen möchten?"
 
 #: qfiledialog.cpp:2299
 msgctxt "QFileDialog"
