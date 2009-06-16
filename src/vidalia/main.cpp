@@ -63,10 +63,9 @@ install_signal_handler()
 #endif
 }
 
-
 /** Returns true if there is already another Vidalia process running. */
 bool
-is_vidalia_running(QString pidfile)
+is_vidalia_running(const QString &pidfile)
 {
   /* Read the pidfile and find out if that process still exists */
   qint64 pid = read_pidfile(pidfile);
@@ -92,7 +91,7 @@ main(int argc, char *argv[])
 {
   Q_INIT_RESOURCE(vidalia);
   QStringList args = char_array_to_stringlist(argv+1, argc-1);
-
+ 
   /* Construct the application object. Qt strips any command-line arguments
    * that it recognizes in argv, so we'll pass a stringlist of the original
    * list of command-line arguments too. */
