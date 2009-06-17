@@ -13,7 +13,6 @@
 #include <QTextStream>
 #include <QTextCodec>
 #include <stdlib.h>
-#include <stringutil.h>
 
 
 /** Parse the context name from <b>str</b>, where the context name is of the
