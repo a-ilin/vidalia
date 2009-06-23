@@ -23,6 +23,11 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/tray
   ${MARBLE_INCLUDE_DIR}
 )
+
+if (USE_BREAKPAD AND BREAKPAD_INCLUDE_DIR)
+  include_directories(${BREAKPAD_INCLUDE_DIR})
+endif(USE_BREAKPAD AND BREAKPAD_INCLUDE_DIR)
+
 if (USE_MARBLE)
   if (APPLE OR WIN32)
   ##
@@ -247,6 +252,11 @@ qt4_wrap_cpp(vidalia_SRCS
   HelperProcess.h
   ControlPasswordInputDialog.h
 )
+if (USE_BREAKPAD)
+  set(vidalia_SRCS ${vidalia_SRCS}
+    CrashReporter.cpp
+  )
+endif(USE_BREAKPAD)
 
 ## Specify all the Qt Designer .ui files
 qt4_wrap_ui(vidalia_SRCS
@@ -449,8 +459,14 @@ target_link_libraries(${vidalia_BIN}
 if (USE_MINIUPNPC)
   target_link_libraries(${vidalia_BIN} miniupnpc)
 endif(USE_MINIUPNPC)
+if (USE_BREAKPAD)
+  target_link_libraries(${vidalia_BIN} ${BREAKPAD_LIBRARIES})
+endif(USE_BREAKPAD)
 if (USE_MARBLE)
-  target_link_libraries(${vidalia_BIN} ${MARBLE_LIBRARIES})
+  target_link_libraries(${vidalia_BIN}
+    ${MARBLE_LIBRARIES}
+    ${QT_QTSVG_LIBRARY}
+  )
 endif(USE_MARBLE)
 
 if (WIN32)

@@ -24,6 +24,24 @@ link_directories(
 
 if(MSVC)
   add_definitions(-D_USE_MATH_DEFINES=1)
+ 
+  ## Qt's Visual Studio builds explicitly disable treating wchar_t as a
+  ## built-in type, so we need to do that as well otherwise we get linker
+  ## errors due to name mangling if we try to use a wchar_t-related method
+  add_definitions(/Zc:wchar_t-)
+
+  ## Specify that we want the "W" version of Windows methods, such as
+  ## CreateFileW or WriteFileW
+  add_definitions(-DUNICODE=1)
+
+  ## Disable incremental linking for all build types, not just Release
+  ## and MinSizeRel
+  set(CMAKE_EXE_LINKER_FLAGS_DEBUG
+      "${CMAKE_EXE_LINKER_FLAGS_DEBUG} /INCREMENTAL:NO"
+  )
+  set(CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO
+      "${CMAKE_EXE_LINKER_FLAGS_RELWITHDEBINFO} /INCREMENTAL:NO"
+  )
 endif(MSVC)
 
 ## Add some Qt definitions
@@ -39,6 +57,9 @@ if (USE_MINIUPNPC)
   link_directories(${CMAKE_CURRENT_BINARY_DIR}/miniupnpc)
   add_subdirectory(miniupnpc)
 endif(USE_MINIUPNPC)
+if (USE_BREAKPAD)
+  add_subdirectory(crashreporter)
+endif(USE_BREAKPAD)
 
 add_subdirectory(common)
 add_subdirectory(tools)

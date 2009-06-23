@@ -32,7 +32,7 @@ public:
   BridgeDownloaderProgressDialog(QWidget *parent = 0);
 
 public slots:
-   /** Sets the status message text in the dialog to <b>status</b>.
+  /** Sets the status message text in the dialog to <b>status</b>.
    */
   void setStatus(const QString &status);
 

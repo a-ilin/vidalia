@@ -18,12 +18,14 @@
 #include "Vidalia.h"
 #include "MainWindow.h"
 #include "VMessageBox.h"
+#if defined(USE_BREAKPAD)
+#include "CrashReporter.h"
+#endif
 
 #include "procutil.h"
 #include "stringutil.h"
 
 #include <QObject>
-
 #if defined(Q_OS_WIN32)
 #include <QSysInfo>
 #endif
@@ -31,6 +33,49 @@
 #include <signal.h>
 #endif
 
+#if defined(USE_BREAKPAD)
+void
+setup_crash_reporter()
+{
+  /* Set the crash reporting application used to submit minidumps. On Windows,
+   * crashreporter.exe is assumed to live in the same directory as vidalia.exe.
+   */
+#if defined(Q_OS_WIN32)
+  QString crashReporter = Vidalia::applicationDirPath() + "\\crashreporter.exe";
+#elif defined(Q_OS_MAC)
+  QString crashReporter = Vidalia::applicationDirPath() + "/CrashReporter.app";
+#endif
+  if (! QFileInfo(crashReporter).isExecutable()) {
+    vWarn("Unable to find crash reporting application. Crash reporting will "
+          "be unavailable.");
+    return;
+  }
+  if (! CrashReporter::set_crash_reporter(crashReporter)) {
+    vWarn("Vidalia found the crash reporting application, but the path is "
+          "longer than your platform supports. Skipping crash reporting.");
+    return;
+  }
+
+  /* Set the Vidalia executable and options used to restart Vidalia after a 
+   * crash. We strip off the first argument in Vidalia::arguments(), since
+   * it's the application name again anyway. */
+  CrashReporter::set_restart_options(Vidalia::applicationFilePath(),
+                                     Vidalia::arguments().mid(1));
+
+  /* Set the build version that gets saved with a minidump. */
+  CrashReporter::set_build_version(VIDALIA_VERSION);
+
+  /* Install the exception handler and give it the location to which Breakpad
+   * should write its minidumps. */
+  QString dumpPath = Vidalia::dataDirectory() + "/crashreports";
+  if (! CrashReporter::install_exception_handler(dumpPath)) {
+    vWarn("Unable to setup Breakpad exception handler. Crash reporting "
+          "will be unavailable.");
+  } else {
+    vInfo("Installed Breakpad exception handler.");
+  }
+}
+#endif
 
 extern "C" void
 signal_handler(int signal)
@@ -99,13 +144,17 @@ main(int argc, char *argv[])
   vNotice("Vidalia %1 using Qt %2").arg(Vidalia::version())
                                    .arg(QT_VERSION_STR);
 
-  /* Install a signal handler to clean up properly after a catching a 
-   * SIGINT or SIGTERM. */
-  install_signal_handler();
-
+#if defined(USE_BREAKPAD)
+  /* Set up the crash reporting application and exception handlers. */
+  setup_crash_reporter();
+#endif
 #if defined(USE_MARBLE) && defined(Q_OS_WIN32)
   vApp->addLibraryPath(vApp->applicationDirPath() + "/plugins/qt");
 #endif
+
+  /* Install a signal handler to clean up properly after a catching a 
+   * SIGINT or SIGTERM. */
+  install_signal_handler();
 
   /* Validate any command-line arguments, or show usage message box, if
    * necessary. */
@@ -162,6 +211,12 @@ main(int argc, char *argv[])
   /* Vidalia exited, so cleanup our pidfile and return */
   QFile::remove(pidfile);
   vNotice("Vidalia is exiting cleanly (return code %1).").arg(ret);
+
+#if defined(USE_BREAKPAD)
+  vInfo("Removing Breakpad exception handler.");
+  CrashReporter::remove_exception_handler();
+#endif
+
   return ret;
 }
 

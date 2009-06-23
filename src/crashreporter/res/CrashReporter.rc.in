@@ -1,0 +1,46 @@
+/*
+**  This file is part of Vidalia, and is subject to the license terms in the
+**  LICENSE file, found in the top level directory of this distribution. If you
+**  did not receive the LICENSE file with this file, you may obtain it from the
+**  Vidalia source package distributed by the Vidalia Project at
+**  http://www.vidalia-project.net/. No part of Vidalia, including this file,
+**  may be copied, modified, propagated, or distributed except according to the
+**  terms described in the LICENSE file.
+*/
+
+/*
+** \file CrashReporter.rc.in
+** \version $Id$
+** Defines resource identifiers for icons used on Win32.
+*/
+
+#include <winver.h>
+
+
+1 VERSIONINFO
+FILEVERSION     @VER_MAJOR@,@VER_MINOR@,@VER_PATCH@,0
+PRODUCTVERSION  @VER_MAJOR@,@VER_MINOR@,@VER_PATCH@,0
+FILEFLAGSMASK   0
+FILEOS          VOS__WINDOWS32
+FILETYPE        VFT_APP
+{
+    BLOCK "StringFileInfo"
+    {
+        BLOCK "040904E4"
+        {
+            VALUE "FileVersion",      "@VERSION@"
+            VALUE "ProductVersion",   "@VERSION@"
+            VALUE "InternalName",     "CrashReporter"
+            VALUE "ProductName",      "Vidalia Crash Reporter"
+            VALUE "FileDescription",  "Vidalia Crash Reporter"
+            VALUE "OriginalFilename", "CrashReporter.exe"
+            VALUE "CompanyName",      "vidalia-project.net"
+            VALUE "LegalCopyright",   "Copyright (C) 2009, Matt Edman"
+        }
+    }
+}
+
+
+/* Application icon */
+101 ICON DISCARDABLE "@CMAKE_CURRENT_SOURCE_DIR@/res/CrashReporter.ico"
+

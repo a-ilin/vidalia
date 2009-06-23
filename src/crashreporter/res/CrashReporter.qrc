@@ -1,0 +1,11 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+  <qresource prefix="images">
+    <file>32x32/tools-report-bug.png</file>
+    <file>48x48/tools-report-bug.png</file>
+    <file>64x64/tools-report-bug.png</file>
+  </qresource>
+  <qresource prefix="pki">
+    <file>gd-class2-root.crt</file>
+  </qresource>
+</RCC>

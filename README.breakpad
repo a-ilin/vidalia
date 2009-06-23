@@ -1,0 +1,94 @@
+
+       Building Vidalia with Breakpad-based Crash Reporting Support
+
+
+Windows
+--------
+Pre-requisites:
+  * Subversion
+  * CMake 2.4 or later (CMake >= 2.6 preferred)
+  * Microsoft Visual C++ Professional 2005 or later (VC++ >= 2008 preferred)
+     NOTE: Google Breakpad requires Microsoft's ATL, so users of Visual Studio
+           "Express" editions may need to install that separately (if even
+           supported).
+
+1. Download and build Qt with Visual Studio support
+  1.1. Download the latest Qt source code for Windows from Qt's website:
+
+       http://get.qtsoftware.com/qt/source/
+
+  1.2. Extract the .zip file to a directory
+  1.3. Open a Visual Studio command prompt
+  1.4. 'cd' to the location of your extract Qt source
+  1.5. We want to enable building .pdb files for the release versions of the
+       Qt DLLs, since Breakpad derives its symbol information from the .pdb
+       files. To do so, unfortunately we have to edit the qmake.conf "mkspec"
+       for the compiler we're using. For example, if you're using Visual
+       Studio 2008, you would open the file 
+
+           $QTDIR\mkspecs\win32-msvc2008\qmake.conf
+
+       (where $QTDIR is the location of your Qt source code) and add "-Zi" to
+       QMAKE_CFLAGS_RELEASE. The resulting line would look like:
+
+ 
+           QMAKE_CFLAGS_RELEASE    = -Zi -O2 -MD -GL
+
+       You also need to add "/DEBUG /OPT:REF /OPT:ICF" to the list of linker
+       flags in QMAKE_LFLAGS_RELEASE. The resulting line should look like the
+       following:
+
+           QMAKE_LFLAGS_RELEASE    = /DEBUG /OPT:REF /OPT:ICF /INCREMENTAL:NO /LTCG
+  
+       Different Visual Studio mkspecs may look slightly different and have
+       different sets of default flags. Save your changes to qmake.conf after
+       you're done.
+
+  1.6. Configure the Qt source for a Visual Studio build, along with whatever
+       other options you want (e.g., OpenSSL support). As an example, I used
+       the following command to configure my Qt:
+  
+       $ configure.exe -platform win32-msvc2008 \
+                       -opensource -debug-and-release       \
+                       -fast -no-qt3support                 \
+                       -nomake demos -nomake examples       \
+                       -openssl -I E:\OpenSSL\9.8k\include  \
+                       -L E:\OpenSSL\9.8k\lib\VC 
+
+  1.7. After configure.exe is finished running, simply run nmake.exe to build
+       Qt. The entire process may take several hours depending on the options
+       used and the speed of your machine.
+
+2. Download and build the latest Breakpad source from Subversion
+  2.1. Fetch the latest Google Breakpad source code from Subversion
+    
+       $ svn cp http://google-breakpad.googlecode.com/svn/trunk/ breakpad
+
+  2.2. Open breakpad\src\client\windows\breakpad_client.sln
+  2.3. Right-click on the "crash_generation" project and select 'Properties'
+  2.4. Go to "Configuration Properties" -> "C/C++" -> "Language" and disable
+       "Treat wchar_t as Built-in Type".
+  2.5. Repeat 2.2 and 2.3 for the "crash_report_sender" and "exception_handler"
+       projects as well.
+  2.6. Right-click on the top-level solution and select "Build Solution" or
+       hit F7 to build the entire solution.
+
+3. Build Vidalia with Breakpad support enabled 
+  3.1. Fetch the latest 'breakpad' branch from Vidalia's Subversion repository.
+
+       $ svn co https://svn.vidalia-project.net/svn/vidalia/branches/breakpad vidalia-breakpad
+  
+  3.2. Use CMake to generate a Visual Studio .sln file for Vidalia with
+       Breakpad support enabled.
+       
+       $ mkdir build-vs
+       $ cd build-vs
+       $ cmake.exe -DUSE_BREAKPAD=1 \
+                   -DBREAKPAD_INCLUDE_DIR=E:\breakpad\src  \
+                   -DBREAKPAD_LIBRARY_DIR=E:\Breakpad\src\client\windows\Debug ..
+       
+       You will need to adjust the paths above to point to the location of
+       the Breakpad source directory and binaries you built in Step 2.
+  3.3. Open the solution file build-vs\Vidalia.sln with Visual Studio.
+  3.4. Right-click on the top-level solution and select "Build Solution", or
+       hit F7 to build the entire solution.

@@ -34,5 +34,7 @@
 
 #cmakedefine USE_MARBLE
 
+#cmakedefine USE_BREAKPAD
+
 #endif
 
