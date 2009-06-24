@@ -64,7 +64,7 @@ Vidalia
 11. Configure Vidalia with the following:
 
       export MACOSX_DEPLOYMENT_TARGET=10.4
-      cmake -DOSX_FAT_BINARY=1 -DCMAKE_OSX_SYSROOT=/Developer/SDKs/MacOSX10.4u.sdk  . 
+      cmake -DOSX_FAT_BINARY=1  . 
 
    The Vidalia binary on OS X links to Qt statically, so you will need to have
    your Qt installation configured appropriately.
