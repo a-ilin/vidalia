@@ -75,7 +75,6 @@ binary-arch: build install
 	dh_installman doc/vidalia.1
 	dh_installdebconf
 	dh_installmenu
-	dh_desktop
 	dh_link
 	dh_strip
 	dh_compress

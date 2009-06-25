@@ -1,3 +1,15 @@
+vidalia (0.1.13-3) unstable; urgency=low
+
+  * Fixing debconf scripts issue that output twice the same message.
+
+ -- Ulises Vitulli <uvitulli@fi.uba.ar>  Thu, 11 Jun 2009 00:48:57 -0300
+
+vidalia (0.1.13-2) unstable; urgency=low
+
+  * Update Upstream URL on debian/watch
+
+ -- Ulises Vitulli <uvitulli@fi.uba.ar>  Tue, 09 Jun 2009 22:05:58 -0300
+
 vidalia (0.1.13-1) unstable; urgency=low
 
   [ Vern Sun ]
@@ -5,9 +17,12 @@ vidalia (0.1.13-1) unstable; urgency=low
   * Add Debconf zh_TW.po.
 
   [ Ulises Vitulli ]
-  * Minor changes on debconf files.
+  * Force scripts to die in case something goes wrong:
+    - debian/config
+    - debian/postinst
+  * Remove deprecated directive dh_desktop.
 
- -- Ulises Vitulli <uvitulli@fi.uba.ar>  Tue, 02 Jun 2009 13:07:54 -0300
+ -- Ulises Vitulli <uvitulli@fi.uba.ar>  Wed, 03 Jun 2009 20:11:57 -0300
 
 vidalia (0.1.12-1) unstable; urgency=low
 
