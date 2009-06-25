@@ -65,3 +65,9 @@ if (WIN32)
   )
 endif(WIN32)
 
+## Remember the location of the crash reporter binary so we can use it in 
+## the Windows packaging scripts
+get_target_property(CRASHREPORTER_EXECUTABLE crashreporter LOCATION_RelWithDebInfo)
+set(VIDALIA_CRASHREPORTER_EXECUTABLE ${CRASHREPORTER_EXECUTABLE}
+    CACHE STRING "Location of Vidalia's crash reporting application." FORCE)
+

@@ -500,3 +500,9 @@ if(NOT WIN32 AND NOT APPLE)
           DESTINATION share/icons/hicolor/128x128/apps)
 endif(NOT WIN32 AND NOT APPLE)
 
+## Remember the location of the Vidalia binary so we can use it in
+## the Windows packaging scripts
+get_target_property(VIDALIA_EXECUTABLE ${vidalia_BIN} LOCATION_RelWithDebInfo)
+set(VIDALIA_EXECUTABLE ${VIDALIA_EXECUTABLE}
+    CACHE STRING "Location of the Vidalia executable." FORCE)
+
