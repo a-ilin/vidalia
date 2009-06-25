@@ -23,6 +23,7 @@
   <?define MarbleStarsDataGuid="8C5C3F32-67E6-4a4a-9B6C-6D67A6D44D67" ?>
   <?define MarbleSvgDataGuid="03E25BCA-4C58-4571-9F17-061D52877714" ?>
   <?define UseMarble="@USE_MARBLE@"?>
+  <?define UseBreakpad="@USE_BREAKPAD@"?>
 
   <Product Name="Vidalia @VERSION@" Id="$(var.VidaliaProductGuid)"
            Language="1033" Codepage="1252"
@@ -33,7 +34,7 @@
     <Package Id="*" Keywords="Installer"
              Description="Vidalia @VERSION@ Installer"
              Manufacturer="vidalia-project.net"
-             InstallerVersion="100" Compressed="yes"
+             InstallerVersion="300" Compressed="yes"
              Languages="1033"  SummaryCodepage="1252" />
 
     <Media Id="1" Cabinet="Vidalia.cab" CompressionLevel="high"
@@ -79,7 +80,7 @@
       <!-- Main Vidalia application files -->
       <Component Id="VidaliaExecutable" Guid="*">
         <File Id="VidaliaExe" DiskId="1"
-              Name="vidalia.exe" Source="@Vidalia_BINARY_DIR@\src\vidalia\vidalia.exe" />
+              Name="vidalia.exe" Source="@VIDALIA_EXECUTABLE@" />
       </Component>
 
       <!-- Vidalia-related documents -->
@@ -120,18 +121,29 @@
         <?endif?>
       </Component>
 
-      <!-- MinGW-related library files -->
-      <Component Id="MinGWLibrary" Guid="$(var.MinGWLibraryGuid)">
-        <File Id="MinGWDll" DiskId="1"
-              Name="mingwm10.dll" Source="@MINGW_BINARY_DIR@\mingwm10.dll" />
-      </Component>
-
       <!-- OpenSSL-related library files -->
       <Component Id="OpenSSLLibrary" Guid="$(var.OpenSSLLibraryGuid)">
         <File Id="ssleay32dll" DiskId="1"
               Name="ssleay32.dll" Source="@OPENSSL_BINARY_DIR@\ssleay32.dll" />
       </Component>
-      
+
+      <?if $(var.UseBreakpad) = "ON"?>
+        <!-- Builds with Breakpad support must include the CRT. -->
+        <Merge Id="CRT" Language="0" DiskId="1"
+               SourceFile="C:\Program Files\Common Files\Merge Modules\microsoft_vc90_crt_x86.msm" />
+        <Component Id="CrashReporterExecutable" Guid="*">
+          <File Id="CrashReporterExe" DiskId="1"
+                Name="crashreporter.exe"
+                Source="E:/Vidalia/trunk/build-vs/bin/RelWithDebInfo/crashreporter.exe" />
+        </Component>
+      <?else?>
+        <!-- Include MinGW-related library files -->
+        <Component Id="MinGWLibrary" Guid="$(var.MinGWLibraryGuid)">
+          <File Id="MinGWDll" DiskId="1"
+                Name="mingwm10.dll" Source="\mingwm10.dll" />
+        </Component>
+      <?endif?>
+
       <?if $(var.UseMarble) = "ON"?>
         <!-- Marble-related library files -->
         <Component Id="MarbleWidgetLibrary" Guid="$(var.MarbleWidgetLibraryGuid)">
@@ -303,13 +315,18 @@
         <ComponentRef Id="VidaliaExecutable" />
         <ComponentRef Id="VidaliaDocuments" />
         <ComponentRef Id="QtLibrary" />
-        <ComponentRef Id="MinGWLibrary" />
         <ComponentRef Id="OpenSSLLibrary" />
         <?if $(var.UseMarble) = "ON"?>
           <ComponentRef Id="QtImageFormatPlugins" />
           <ComponentRef Id="MarbleWidgetLibrary" />
           <ComponentRef Id="MarblePlugins" />
           <ComponentGroupRef Id="MarbleData"/>
+        <?endif?>
+        <?if $(var.UseBreakpad) = "ON"?>
+          <MergeRef Id="CRT"/>
+          <ComponentRef Id="CrashReporterExecutable"/>
+        <?else?>
+          <ComponentRef Id="MinGWLibrary" />
         <?endif?>
       </Feature>
       <Feature Id="Shortcuts" Title="Shortcuts"
