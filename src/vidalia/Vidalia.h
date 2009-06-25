@@ -53,8 +53,6 @@ public:
   /** Destructor. */
   ~Vidalia();
 
-  /** Return the map of command-line arguments and values. */
-  static QMap<QString, QString> arguments() { return _args; }
   /** Validates that all arguments were well-formed. */
   static bool validateArguments(QString &errmsg);
   /** Displays usage information for command-line args. */
