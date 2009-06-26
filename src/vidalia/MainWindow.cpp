@@ -1580,15 +1580,21 @@ MainWindow::dangerousTorVersion()
 
 /** Called when Tor thinks the user has tried to connect to a port that
  * typically is used for unencrypted applications. Warns the user and allows
- * them to ignore future warnings on <b>port</b>. */
+ * them to ignore future warnings on <b>port</b>. It is possible that Tor
+ * will produce multiple asynchronous status events warning of dangerous ports
+ * while the message box is displayed (for example, while the user is away
+ * from the keyboard), so subsequent messages will be discarded until the
+ * first message box is dismissed. */
 void
 MainWindow::warnDangerousPort(quint16 port, bool rejected)
 {
-  QString warning, application;
-  QMessageBox dlg(QMessageBox::Warning,
-                  tr("Potentially Unsafe Connection"), QString(),
-                  QMessageBox::Ok | QMessageBox::Ignore);
+  static QMessageBox *dlg = 0;
 
+  /* Don't display another message box until the first one is dismissed */
+  if (dlg)
+    return;
+
+  QString application;
   switch (port) {
     case  23:
      application = tr(", probably Telnet, ");
@@ -1604,19 +1610,27 @@ MainWindow::warnDangerousPort(quint16 port, bool rejected)
       application = " ";
   }
 
-  warning = p(tr("One of your applications%1appears to be making a "
-                 "potentially unencrypted and unsafe connection to port %2. "
-                 "Anything sent over this connection could be monitored. "
-                 "Please check your application's configuration and use "
-                 "only encrypted protocols, such as SSL, if possible.")
-                 .arg(application).arg(port));
-  if (rejected) {
-    warning.append(p(tr("Tor has automatically closed your connection in "
-                        "order to protect your anonymity.")));
-  }
-  dlg.setText(warning);
+  QString text = tr("One of your applications%1appears to be making a "
+                    "potentially unencrypted and unsafe connection to port %2.")
+                    .arg(application).arg(port);
 
-  int ret = dlg.exec();
+  QString extraText = p(tr("Anything sent over this connection could be "
+                           "monitored. Please check your application's "
+                           "configuration and use only encrypted protocols, "
+                           "such as SSL, if possible."));
+  if (rejected) {
+    extraText.append(p(tr("Tor has automatically closed your connection in "
+                          "order to protect your anonymity.")));
+  }
+
+  dlg = new QMessageBox(QMessageBox::Warning,
+                        tr("Potentially Unsafe Connection"), text,
+                        QMessageBox::Ok | QMessageBox::Ignore);
+  dlg->setInformativeText(extraText);
+  dlg->setDefaultButton(QMessageBox::Ok);
+  dlg->setEscapeButton(QMessageBox::Ok);
+
+  int ret = dlg->exec();
   if (ret == QMessageBox::Ignore) {
     TorSettings settings;
     QList<quint16> ports;
@@ -1636,6 +1650,8 @@ MainWindow::warnDangerousPort(quint16 port, bool rejected)
       settings.setRejectPlaintextPorts(ports);
     }
   }
+  delete dlg;
+  dlg = 0;
 }
 
 /** Creates and displays Vidalia's About dialog. */
