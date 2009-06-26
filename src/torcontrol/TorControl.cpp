@@ -131,6 +131,15 @@ TorControl::isRunning()
             || _controlConn->isConnected());
 }
 
+/** Stops reading log messages from the Tor process's stdout. This has no
+ * effect if isVidaliaRunningTor() is false. */
+void
+TorControl::closeTorStdout()
+{
+  if (_torProcess)
+    _torProcess->closeStdout();
+}
+
 /** Called when Tor has printed a log message to stdout. */
 void
 TorControl::onLogStdout(QString severity, QString message)

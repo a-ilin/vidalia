@@ -61,7 +61,10 @@ public:
   bool isRunning();
   /** Detects if the Tor process is running under Vidalia. */
   bool isVidaliaRunningTor();
-  
+  /** Stops reading log messages from the Tor process's stdout. This has no
+   * effect if isVidaliaRunningTor() is false. */
+  void closeTorStdout();
+
   /** Connect to Tor's control socket */
   void connect(const QHostAddress &address, quint16 port);
   /** Disconnect from Tor's control socket */

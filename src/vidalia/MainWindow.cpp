@@ -1360,6 +1360,10 @@ MainWindow::authenticated()
            "Many of Vidalia's features may be unavailable."))
          + p(errmsg),
       VMessageBox::Ok);
+  } else {
+    /* Stop reading from Tor's stdout immediately, since we successfully
+     * registered for Tor events, including any desired log events. */
+    _torControl->closeTorStdout();
   }
 
   /* Configure UPnP port forwarding if needed */
