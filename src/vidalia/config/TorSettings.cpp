@@ -116,6 +116,12 @@ TorSettings::apply(QString *errmsg)
       conf.insert(TOR_ARG_COOKIE_AUTH,    "0");
       conf.insert(TOR_ARG_HASHED_PASSWORD, "");
   }
+
+  conf.insert(SETTING_WARN_PLAINTEXT_PORTS,
+              localValue(SETTING_WARN_PLAINTEXT_PORTS).toStringList().join(","));
+  conf.insert(SETTING_REJECT_PLAINTEXT_PORTS,
+              localValue(SETTING_REJECT_PLAINTEXT_PORTS).toStringList().join(","));
+
   return torControl()->setConf(conf, errmsg);
 }
 

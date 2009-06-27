@@ -1636,7 +1636,9 @@ MainWindow::warnDangerousPort(quint16 port, bool rejected)
 
   int ret = dlg->exec();
   if (ret == QMessageBox::Ignore) {
+    TorControl *tc = Vidalia::torControl();
     TorSettings settings;
+    QStringList portList;
     QList<quint16> ports;
     int idx;
 
@@ -1645,6 +1647,12 @@ MainWindow::warnDangerousPort(quint16 port, bool rejected)
     if (idx >= 0) {
       ports.removeAt(idx);
       settings.setWarnPlaintextPorts(ports);
+
+      foreach (quint16 port, ports) {
+        portList << QString::number(port);
+      }
+      tc->setConf("WarnPlaintextPorts", portList.join(","));
+      portList.clear();
     }
 
     ports = settings.getRejectPlaintextPorts();
@@ -1652,6 +1660,11 @@ MainWindow::warnDangerousPort(quint16 port, bool rejected)
     if (idx >= 0) {
       ports.removeAt(idx);
       settings.setRejectPlaintextPorts(ports);
+
+      foreach (quint16 port, ports) {
+        portList << QString::number(port);
+      }
+      tc->setConf("RejectPlaintextPorts", portList.join(","));
     }
   }
   delete dlg;

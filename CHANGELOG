@@ -14,6 +14,10 @@
     output, and then again to actually start Tor.
   o Add a signal handler that allows Vidalia to clean up and exit normally
     when it catches a SIGINT or SIGTERM signal. (Ticket #481)
+  o If the user chooses to ignore further warnings for a particular port,
+    remove it from the WarnPlaintextPorts and RejectPlaintextPorts
+    settings immediately. Also remember their preferences and reapply them
+    later, even if Tor is unable to writes to its torrc.(Ticket #493)
   o Don't display additional plaintext port warning message boxes until
     the first visible message box is dismissed. (Ticket #493)
   o Renamed the 'make win32-installer' CMake target to 'make dist-win32'
