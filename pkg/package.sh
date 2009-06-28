@@ -16,31 +16,12 @@
 # Check for proper script arguments
 if [ "$#" -eq 0 ]
 then
-  echo "Usage: $0 <tarball|win32|osx|osx-bundle|osx-split-bundle>"
+  echo "Usage: $0 <osx|osx-bundle|osx-split-bundle|rpm>"
   exit 1
 fi
 
 # Make the distribution depending on what type was requested
 case "$1" in
-#
-# Source tarball (.tar.gz)
-#
-"tarball")
-  # Put the tarball in the current directory
-  destdir=`pwd`
-  srcdir=`dirname $(pwd) | sed -e "s/.*\///"`
-  tarball="$destdir/$srcdir.tar.gz"
-  
-  echo "Creating source tarball: $tarball"  
-  pushd "../.." 1>/dev/null
-  filelist=`svn ls -R $srcdir/ | 
-              sed -e "s/^/$srcdir\/&/" | 
-              sed -e "/\/$/d" |
-              sed -e "s/\n/ /"`
-  tar -czf "$tarball" $filelist
-  popd -1 1>/dev/null
-  ;;
- 
 #
 # OS X .dmg
 #

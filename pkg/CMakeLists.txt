@@ -25,3 +25,20 @@ configure_file(
   ${CMAKE_CURRENT_BINARY_DIR}/package.sh
   COPYONLY
 )
+
+set(basename "vidalia-${VERSION}")
+set(tarname "${basename}.tar.gz")
+add_custom_target(dist
+  COMMAND svn export
+    ${Vidalia_SOURCE_DIR} ${CMAKE_CURRENT_BINARY_DIR}/${basename}
+  COMMAND ${CMAKE_COMMAND} -E chdir ${CMAKE_CURRENT_BINARY_DIR}
+    tar czf ${tarname} ${basename}/
+  COMMAND ${CMAKE_COMMAND} -E copy
+    ${CMAKE_CURRENT_BINARY_DIR}/${tarname} ${Vidalia_BINARY_DIR}
+  COMMAND ${CMAKE_COMMAND} -E remove -f
+    ${CMAKE_CURRENT_BINARY_DIR}/${tarname}
+  COMMAND ${CMAKE_COMMAND} -E remove_directory
+    ${CMAKE_CURRENT_BINARY_DIR}/${basename}
+  COMMENT "Creating ${tarname}"
+)
+
