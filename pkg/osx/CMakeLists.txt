@@ -16,146 +16,80 @@ configure_file(
   ${CMAKE_CURRENT_BINARY_DIR}/builddmg.sh
 )
 
+set(VIDALIA_APP_BUNDLE_ROOT ${Vidalia_BINARY_DIR}/src/vidalia/Vidalia.app)
+get_target_property(VIDALIA_EXECUTABLE Vidalia LOCATION)
+add_custom_target(dist-osx-libraries DEPENDS Vidalia)
 if (QT_USE_FRAMEWORKS)
-  set(bindir ${Vidalia_BINARY_DIR}/src/vidalia/Vidalia.app/Contents/MacOS)
-  add_custom_target(dist-osx
-    COMMAND cp 
-      ${QT_QTCORE_LIBRARY}/QtCore ${bindir}/
-    COMMAND cp
-      ${QT_QTGUI_LIBRARY}/QtGui ${bindir}/
-    COMMAND cp 
-      ${QT_QTNETWORK_LIBRARY}/QtNetwork ${bindir}/
-    COMMAND cp 
-      ${QT_QTXML_LIBRARY}/QtXml ${bindir}/
-
-    COMMAND install_name_tool
-      -id @executable_path/QtCore ${bindir}/QtCore
-    COMMAND install_name_tool
-      -id @executable_path/QtGui ${bindir}/QtGui
-    COMMAND install_name_tool
-      -id @executable_path/QtNetwork ${bindir}/QtNetwork
-    COMMAND install_name_tool
-      -id @executable_path/QtXml ${bindir}/QtXml
-
-    COMMAND install_name_tool
-      -change QtCore.framework/Versions/4/QtCore
-              @executable_path/QtCore ${bindir}/Vidalia
-    COMMAND install_name_tool
-      -change QtGui.framework/Versions/4/QtGui
-              @executable_path/QtGui ${bindir}/Vidalia
-    COMMAND install_name_tool
-      -change QtNetwork.framework/Versions/4/QtNetwork
-              @executable_path/QtNetwork ${bindir}/Vidalia
-    COMMAND install_name_tool
-      -change QtXml.framework/Versions/4/QtXml
-              @executable_path/QtXml ${bindir}/Vidalia
-
-    COMMAND install_name_tool
-      -change QtCore.framework/Versions/4/QtCore
-              @executable_path/QtCore ${bindir}/QtGui
-    COMMAND install_name_tool
-      -change QtCore.framework/Versions/4/QtCore
-              @executable_path/QtCore ${bindir}/QtNetwork
-    COMMAND install_name_tool
-      -change QtCore.framework/Versions/4/QtCore
-              @executable_path/QtCore ${bindir}/QtXml
-
-    DEPENDS ${bindir}/Vidalia
+  vidalia_install_qt4_framework(QtCore
+    TARGET dist-osx-libraries NAME QtCore
+    LIBRARY ${QT_QTCORE_LIBRARY}/QtCore
+    APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
+  )
+  vidalia_install_qt4_framework(QtGui
+    TARGET dist-osx-libraries NAME QtGui
+    LIBRARY ${QT_QTGUI_LIBRARY}/QtGui
+    APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
+    DEPENDS_FRAMEWORKS ${QtCore}
+  )
+  vidalia_install_qt4_framework(QtNetwork
+    TARGET dist-osx-libraries NAME QtNetwork
+    LIBRARY ${QT_QTNETWORK_LIBRARY}/QtNetwork
+    APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
+    DEPENDS_FRAMEWORKS ${QtCore}
+  )
+  vidalia_install_qt4_framework(QtXml
+    TARGET dist-osx-libraries NAME QtXml
+    LIBRARY ${QT_QTXML_LIBRARY}/QtXml
+    APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
+    DEPENDS_FRAMEWORKS ${QtCore}
+  )
+  vidalia_install_name_tool(${VIDALIA_EXECUTABLE}
+    TARGET dist-osx-libraries
+    FRAMEWORKS ${QtCore} ${QtGui} ${QtNetwork} ${QtXml}
   )
   if (USE_MARBLE)
-    get_filename_component(marblewidget ${MARBLEWIDGET_LIBRARY} NAME)
-
-    add_custom_command(TARGET dist-osx
-      COMMAND cp
-        ${QT_QTSVG_LIBRARY}/QtSvg ${bindir}/
-      COMMAND cp
-        ${QT_QTWEBKIT_LIBRARY}/QtWebKit ${bindir}/
-      COMMAND cp
-        ${QT_QTSCRIPT_LIBRARY}/QtScript ${bindir}/
-      COMMAND cp
-        ${QT_QTDBUS_LIBRARY}/QtDBus ${bindir}/
-      COMMAND cp
-        ${MARBLEWIDGET_LIBRARY} ${bindir}/
-
-      COMMAND install_name_tool
-        -id @executable_path/QtSvg ${bindir}/QtSvg
-      COMMAND install_name_tool
-        -id @executable_path/QtWebKit ${bindir}/QtWebKit
-      COMMAND install_name_tool
-        -id @executable_path/QtScript ${bindir}/QtScript
-      COMMAND install_name_tool
-        -id @executable_path/QtDBus ${bindir}/QtDBus
-      COMMAND install_name_tool
-        -id @executable_path/${marblewidget} ${bindir}/${marblewidget}
-
-      COMMAND install_name_tool
-        -change QtSvg.framework/Versions/4/QtSvg
-                @executable_path/QtSvg ${bindir}/Vidalia
-      COMMAND install_name_tool
-        -change QtWebKit.framework/Versions/4/QtWebKit
-                @executable_path/QtWebKit ${bindir}/Vidalia
-      COMMAND install_name_tool
-        -change QtScript.framework/Versions/4/QtScript
-                @executable_path/QtScript ${bindir}/Vidalia
-      COMMAND install_name_tool
-        -change QtDBus.framework/Versions/4/QtDBus
-                @executable_path/QtDBus ${bindir}/Vidalia
-      COMMAND install_name_tool
-        -change @executable_path/lib/${marblewidget}
-                @executable_path/${marblewidget} ${bindir}/Vidalia
-      COMMAND install_name_tool
-        -change ${MARBLEWIDGET_LIBRARY}
-                @executable_path/${marblewidget} ${bindir}/Vidalia
-
-      COMMAND install_name_tool
-        -change QtCore.framework/Versions/4/QtCore
-                @executable_path/QtCore ${bindir}/${marblewidget}
-      COMMAND install_name_tool
-        -change QtGui.framework/Versions/4/QtGui
-                @executable_path/QtGui ${bindir}/${marblewidget}
-      COMMAND install_name_tool
-        -change QtNetwork.framework/Versions/4/QtNetwork
-                @executable_path/QtNetwork ${bindir}/${marblewidget}
-      COMMAND install_name_tool
-        -change QtXml.framework/Versions/4/QtXml
-                @executable_path/QtXml ${bindir}/${marblewidget}
-      COMMAND install_name_tool
-        -change QtSvg.framework/Versions/4/QtSvg
-                @executable_path/QtSvg ${bindir}/${marblewidget}
-      COMMAND install_name_tool
-        -change QtScript.framework/Versions/4/QtScript
-                @executable_path/QtScript ${bindir}/${marblewidget}
-      COMMAND install_name_tool
-        -change QtWebKit.framework/Versions/4/QtWebKit
-                @executable_path/QtWebKit ${bindir}/${marblewidget}
-      COMMAND install_name_tool
-        -change QtDBus.framework/Versions/4/QtDBus
-                @executable_path/QtDBus ${bindir}/${marblewidget}
-
-      COMMAND install_name_tool
-        -change QtGui.framework/Versions/4/QtGui
-                @executable_path/QtGui ${bindir}/QtSvg
-      COMMAND install_name_tool
-        -change QtCore.framework/Versions/4/QtCore
-                @executable_path/QtCore ${bindir}/QtSvg
-      COMMAND install_name_tool
-        -change QtGui.framework/Versions/4/QtGui
-                @executable_path/QtGui ${bindir}/QtWebKit
-      COMMAND install_name_tool
-        -change QtNetwork.framework/Versions/4/QtNetwork
-                @executable_path/QtNetwork ${bindir}/QtWebKit
-      COMMAND install_name_tool
-        -change QtCore.framework/Versions/4/QtCore
-                @executable_path/QtCore ${bindir}/QtWebKit
-      COMMAND install_name_tool
-        -change QtCore.framework/Versions/4/QtCore
-                @executable_path/QtCore ${bindir}/QtScript
-      COMMAND install_name_tool
-        -change QtXml.framework/Versions/4/QtXml
-                @executable_path/QtXml ${bindir}/QtDBus
-      COMMAND install_name_tool
-        -change QtCore.framework/Versions/4/QtCore
-                @executable_path/QtCore ${bindir}/QtDBus
+    vidalia_install_qt4_framework(QtSvg
+      TARGET dist-osx-libraries NAME QtSvg
+      LIBRARY ${QT_QTSVG_LIBRARY}/QtSvg
+      APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
+      DEPENDS_FRAMEWORKS ${QtCore} ${QtGui}
+    )
+    vidalia_install_qt4_framework(QtScript
+      TARGET dist-osx-libraries NAME QtScript
+      LIBRARY ${QT_QTSCRIPT_LIBRARY}/QtScript
+      APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
+      DEPENDS_FRAMEWORKS ${QtCore}
+    )
+    vidalia_install_qt4_framework(QtDBus
+      TARGET dist-osx-libraries NAME QtDBus
+      LIBRARY ${QT_QTDBUS_LIBRARY}/QtDBus
+      APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
+      DEPENDS_FRAMEWORKS ${QtCore} ${QtXml}
+    )
+    vidalia_install_qt4_framework(QtPhonon
+      TARGET dist-osx-libraries NAME phonon
+      LIBRARY ${QT_PHONON_LIBRARY}/phonon
+      APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
+      DEPENDS_FRAMEWORKS ${QtCore} ${QtGui} ${QtXml} ${QtDBus}
+    )
+    vidalia_install_qt4_framework(QtWebKit
+      TARGET dist-osx-libraries NAME QtWebKit
+      LIBRARY ${QT_QTWEBKIT_LIBRARY}/QtWebKit
+      APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
+      DEPENDS_FRAMEWORKS ${QtCore} ${QtGui} ${QtNetwork} ${QtXml} ${QtDBus}
+                         ${QtPhonon}
+    )
+    vidalia_install_dylib(MarbleWidget
+      TARGET dist-osx-libraries
+      LIBRARY ${MARBLEWIDGET_LIBRARY}
+      APP_BUNDLE ${VIDALIA_APP_BUNDLE_ROOT}
+      DEPENDS_FRAMEWORKS ${QtCore} ${QtGui} ${QtNetwork} ${QtXml} ${QtSvg}
+                         ${QtDBus} ${QtScript} ${QtWebKit}
+    )
+    vidalia_install_name_tool(${VIDALIA_EXECUTABLE}
+      TARGET dist-osx-libraries
+      FRAMEWORKS ${QtSvg} ${QtDBus} ${QtScript} ${QtWebKit}
+      LIBRARIES ${MARBLEWIDGET_LIBRARY}
     )
   endif(USE_MARBLE)
 endif(QT_USE_FRAMEWORKS)

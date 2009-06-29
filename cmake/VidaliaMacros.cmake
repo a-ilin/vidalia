@@ -147,6 +147,86 @@ macro(VIDALIA_ADD_WXL OUTFILES PO CULTURE CHARSET)
   set(${OUTFILES} ${${OUTFILES}} ${wxl})
 endmacro(VIDALIA_ADD_WXL)
 
+if (APPLE)
+  include(${Vidalia_SOURCE_DIR}/cmake/ParseArgumentsMacro.cmake)
+
+  ## Calls the install_name_tool utility to change the dependent shared
+  ## library or framework install name to the corresponding library or
+  ## framework that was previously installed in the .app bundle using
+  ## VIDALIA_INSTALL_QT4_FRAMEWORK or VIDALIA_INSTALL_DYLIB when the given
+  ## build target is executed.
+  macro(VIDALIA_INSTALL_NAME_TOOL)
+    parse_arguments(INSTALL_NAME_TOOL "TARGET;LIBRARIES;FRAMEWORKS" "" ${ARGN})
+
+    foreach(bin ${INSTALL_NAME_TOOL_DEFAULT_ARGS})
+      foreach(it ${INSTALL_NAME_TOOL_FRAMEWORKS})
+        add_custom_command(TARGET ${INSTALL_NAME_TOOL_TARGET}
+          COMMAND install_name_tool -change
+            ${it} @executable_path/../Frameworks/${it} ${bin}
+        )
+      endforeach(it)
+      foreach(it ${INSTALL_NAME_TOOL_LIBRARIES})
+        get_filename_component(libname ${it} NAME)
+        add_custom_command(TARGET ${INSTALL_NAME_TOOL_TARGET}
+          COMMAND install_name_tool -change
+            ${it} @executable_path/lib/${libname} ${bin}
+        )
+      endforeach(it)
+    endforeach(bin)
+  endmacro(VIDALIA_INSTALL_NAME_TOOL)
+
+  ## Copies the specified Qt4 framework into the .app bundle, updates its
+  ## shared library identification name, and changes any dependent Qt4
+  ## framework or shared library names to reference a framework previously
+  ## installed in the .app bundle using VIDALIA_INSTALL_QT4_FRAMEWORK.
+  macro(VIDALIA_INSTALL_QT4_FRAMEWORK)
+    parse_arguments(INSTALL_QT4_FRAMEWORK
+      "NAME;TARGET;LIBRARY;APP_BUNDLE;DEPENDS_FRAMEWORKS;DEPENDS_LIBRARIES" ""
+      ${ARGN}
+    )
+ 
+    set(framework "${INSTALL_QT4_FRAMEWORK_NAME}.framework/Versions/4")
+    set(outdir "${INSTALL_QT4_FRAMEWORK_APP_BUNDLE}/Contents/Frameworks/${framework}")
+    get_filename_component(libname "${INSTALL_QT4_FRAMEWORK_LIBRARY}" NAME)
+    add_custom_command(TARGET ${INSTALL_QT4_FRAMEWORK_TARGET}
+      COMMAND ${CMAKE_COMMAND} -E make_directory ${outdir}
+      COMMAND ${CMAKE_COMMAND} -E copy ${INSTALL_QT4_FRAMEWORK_LIBRARY} ${outdir}/
+      COMMAND install_name_tool -id
+        @executable_path/../Frameworks/${framework}/${libname} ${outdir}/${libname}
+    )
+    vidalia_install_name_tool(${outdir}/${libname}
+      TARGET     ${INSTALL_QT4_FRAMEWORK_TARGET}
+      LIBRARIES  ${INSTALL_QT4_FRAMEWORK_DEPENDS_LIBRARIES}
+      FRAMEWORKS ${INSTALL_QT4_FRAMEWORK_DEPENDS_FRAMEWORKS}
+    )
+    set(${INSTALL_QT4_FRAMEWORK_DEFAULT_ARGS} ${framework}/${libname})
+  endmacro(VIDALIA_INSTALL_QT4_FRAMEWORK)
+
+  ## Copies the specified .dylib into the .app bundle, updates its shared
+  ## library identification name, and changes any dependent framework or
+  ## shared library names to reference a framework or shared library
+  ## previously installed in the .app bundle.
+  macro(VIDALIA_INSTALL_DYLIB)
+    parse_arguments(INSTALL_DYLIB
+      "TARGET;LIBRARY;APP_BUNDLE;DEPENDS_FRAMEWORKS;DEPENDS_LIBRARIES" ""
+      ${ARGN}
+    )
+
+    set(outdir "${INSTALL_DYLIB_APP_BUNDLE}/Contents/MacOS/lib/")
+    get_filename_component(libname "${INSTALL_DYLIB_LIBRARY}" NAME)
+    add_custom_command(TARGET ${INSTALL_DYLIB_TARGET}
+      COMMAND ${CMAKE_COMMAND} -E make_directory ${outdir}
+      COMMAND ${CMAKE_COMMAND} -E copy ${INSTALL_DYLIB_LIBRARY} ${outdir}/
+      COMMAND install_name_tool -id @executable_path/lib/${libname}
+    )
+    vidalia_install_name_tool(${outir}/${libname}
+      TARGET     ${INSTALL_DYLIB_TARGET}
+      LIBRARIES  ${INSTALL_DYLIB_DEPENDS_LIBRARIES}
+      FRAMEWORKS ${INSTALL_DYLIB_DEPENDS_FRAMEWORKS}
+    )
+   set(${INSTALL_DYLIB_DEFAULT_ARGS} "${libname}")
+  endmacro(VIDALIA_INSTALL_DYLIB)
+endif(APPLE)
 
 if (WIN32)
   ## Wraps the supplied .rc files in windres commands if we're building
