@@ -16,29 +16,12 @@
 # Check for proper script arguments
 if [ "$#" -eq 0 ]
 then
-  echo "Usage: $0 <osx|osx-bundle|osx-split-bundle|rpm>"
+  echo "Usage: $0 <osx-bundle|osx-split-bundle|rpm>"
   exit 1
 fi
 
 # Make the distribution depending on what type was requested
 case "$1" in
-#
-# OS X .dmg
-#
-"osx")
-  mkdir ../LEGAL 
-  mkdir ../.background
-  cp -R ../README ../src/vidalia/Vidalia.app ../
-  cp osx/background.png ../.background/
-  cp osx/nonbundle-ds_store ../.DS_Store
-  cp ../CREDITS ../CHANGELOG ../Vidalia.app/
-  cp ../LICENSE ../LICENSE-GPLV2 ../LICENSE-GPLV3 ../LICENSE-LGPLV3 ../LICENSE-OPENSSL ../LEGAL/
-  cp -R ../LEGAL ../Vidalia.app/
-  srcdir="../"
-  srcfiles="Vidalia.app README LEGAL .background .DS_Store"
-  osx/builddmg.sh "$srcdir" "$srcfiles"
-  ;;
-
 #
 # OS X (Bundle)
 #
