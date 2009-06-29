@@ -19,7 +19,7 @@ message(STATUS  "Configuring Vidalia ${VERSION}")
 project(Vidalia)
 
 ## Specify the minimim required CMake version
-cmake_minimum_required(VERSION 2.4.0)
+cmake_minimum_required(VERSION 2.4.7)
 if (COMMAND cmake_policy)
   # Force CMake 2.4 compatibility for handling linker search paths
   cmake_policy(SET CMP0003 OLD)
