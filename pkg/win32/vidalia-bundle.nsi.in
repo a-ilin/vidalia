@@ -248,7 +248,10 @@ SectionGroup "${TOR_DESC}" TorGroup
        File "@TOR_PACKAGE_DIR@\tor.exe"
        File "@TOR_PACKAGE_DIR@\tor-resolve.exe"
        WriteIniStr "$INSTDIR\Tor\Tor Website.url" "InternetShortcut" "URL" "https://www.torproject.org"
-
+       ; Include tor's geoip file, too
+       SetOutPath "$APPDATA\Tor"
+       File "@TOR_PACKAGE_DIR@\geoip"
+       
        ; If the user is also installing Vidalia, then don't confuse them by
        ; an extra torrc in %APPDATA%\Tor
        SectionGetFlags ${Vidalia} $0
@@ -256,10 +259,6 @@ SectionGroup "${TOR_DESC}" TorGroup
        IntCmp $0 ${SF_SELECTED} skiptorrc
 
        StrCpy $configfile "torrc"
-       SetOutPath "$APPDATA\Tor"
-
-       ; Include tor's geoip file, too
-       File "@TOR_PACKAGE_DIR@\geoip"
 
        ; If there's already a torrc config file, ask if they want to
        ; overwrite it with the new one.
