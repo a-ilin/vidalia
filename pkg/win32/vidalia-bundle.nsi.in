@@ -236,7 +236,6 @@ SectionGroupEnd
 ;--------------------------------
 ; Tor
 var bInstallTor
-Var torgeoipfile
 SectionGroup "${TOR_DESC}" TorGroup
     ;--------------------------------
     ; Tor application binaries
@@ -260,7 +259,6 @@ SectionGroup "${TOR_DESC}" TorGroup
        SetOutPath "$APPDATA\Tor"
 
        ; Include tor's geoip file, too
-       StrCpy $torgeoipfile "geoip"
        File "@TOR_PACKAGE_DIR@\geoip"
 
        ; If there's already a torrc config file, ask if they want to
