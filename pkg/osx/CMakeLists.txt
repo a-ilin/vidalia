@@ -94,3 +94,30 @@ if (QT_USE_FRAMEWORKS)
   endif(USE_MARBLE)
 endif(QT_USE_FRAMEWORKS)
 
+if (OSX_FAT_BINARY)
+  set(DMG_ARCH "universal")
+else(OSX_FAT_BINARY)
+  set(DMG_ARCH ${CMAKE_OSX_ARCHITECTURES})
+endif(OSX_FAT_BINARY)
+
+add_custom_target(dist-osx
+  COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/pkg-dmg
+    --source ${VIDALIA_APP_BUNDLE_ROOT}
+    --target ${Vidalia_BINARY_DIR}/vidalia-${VERSION}-${DMG_ARCH}.dmg
+    --sourcefile --volname "Vidalia ${VERSION}"
+    --icon ${Vidalia_SOURCE_DIR}/src/vidalia/res/icons/Vidalia.icns
+    --symlink "/Applications:/Drag to here"
+    --mkdir /.background
+    --copy ${CMAKE_CURRENT_SOURCE_DIR}/background.png:/.background/
+    --copy ${CMAKE_CURRENT_SOURCE_DIR}/nonbundle-ds_store:/.DS_Store
+    --mkdir /Licenses
+    --copy ${Vidalia_SOURCE_DIR}/LICENSE:/Licenses/License.txt
+    --copy ${Vidalia_SOURCE_DIR}/LICENSE-GPLV2:/Licenses/License-GPLv2.txt
+    --copy ${Vidalia_SOURCE_DIR}/LICENSE-GPLV3:/Licenses/License-GPLv3.txt
+    --copy ${Vidalia_SOURCE_DIR}/LICENSE-OPENSSL:/Licenses/License-OpenSSL.txt
+    --copy ${Vidalia_SOURCE_DIR}/README:/ReadMe.txt
+    --copy ${Vidalia_SOURCE_DIR}/CHANGELOG:/Changes.txt
+  VERBATIM
+)
+add_dependencies(dist-osx dist-osx-libraries)
+
