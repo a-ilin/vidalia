@@ -24,7 +24,7 @@ SetCompressor /SOLID lzma
 
 !define TOR_NAME            "Tor"
 !define TOR_EXEC            "tor.exe"
-!define TOR_APPVERSION      "0.2.1.5"
+!define TOR_APPVERSION      "0.2.1.16-rc"
 !define TOR_DESC            "${TOR_NAME} ${TOR_APPVERSION}"
 
 !define PRIVOXY_NAME        "Privoxy"
@@ -33,7 +33,7 @@ SetCompressor /SOLID lzma
 !define PRIVOXY_DESC        "${PRIVOXY_NAME} ${PRIVOXY_APPVERSION}"
 
 !define TORBUTTON_NAME      "Torbutton"
-!define TORBUTTON_APPVERSION "1.2.0"
+!define TORBUTTON_APPVERSION "1.2.1-fx"
 !define TORBUTTON_DESC      "${TORBUTTON_NAME} ${TORBUTTON_APPVERSION}"
 
 !define BUNDLE_NAME         "Vidalia Bundle"
@@ -147,6 +147,7 @@ Page custom FirefoxWarningPage
 ;--------------------------------
 ; Vidalia
 Var configfile
+Var torgeoipfile
 var bInstallVidalia
 SectionGroup "${VIDALIA_DESC}" VidaliaGroup
     ;--------------------------------
@@ -177,6 +178,10 @@ SectionGroup "${VIDALIA_DESC}" VidaliaGroup
       CreateDirectory "$APPDATA\Vidalia"
       SetOutPath "$APPDATA\Vidalia"
       File "@Vidalia_SOURCE_DIR@\pkg\geoip-cache"
+
+      ; Include tor's geoip file, too
+      StrCpy $torgeoipfile "geoip"
+      File /oname=$torgeoipfile "@TOR_PACKAGE_DIR@\geoip"
       
       ;If there's already a torrc config file, ask if they want to
       ;overwrite it with the new one.
@@ -255,6 +260,10 @@ SectionGroup "${TOR_DESC}" TorGroup
        IntOp $0 $0 & ${SF_SELECTED}
        IntCmp $0 ${SF_SELECTED} skiptorrc
 
+       ; Include tor's geoip file, too
+       StrCpy $torgeoipfile "geoip"
+       File /oname=$torgeoipfile "@TOR_PACKAGE_DIR@\geoip"
+
        StrCpy $configfile "torrc"
        SetOutPath "$APPDATA\Tor"
 
@@ -319,6 +328,7 @@ SectionGroup "${TOR_DESC}" TorGroup
           goto torrc_shortcut
         use_tor_torrc:
           StrCpy $configfile "$APPDATA\Tor\torrc"
+          StrCpy $torgeoipfile "$APPDATA\Tor\geoip"
         torrc_shortcut:
           SetShellVarContext all
           CreateShortCut  "${SHORTCUTS}\Tor\Torrc.lnk" "Notepad.exe" $configfile
