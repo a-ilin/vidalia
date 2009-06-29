@@ -179,10 +179,6 @@ SectionGroup "${VIDALIA_DESC}" VidaliaGroup
       SetOutPath "$APPDATA\Vidalia"
       File "@Vidalia_SOURCE_DIR@\pkg\geoip-cache"
 
-      ; Include tor's geoip file, too
-      StrCpy $torgeoipfile "geoip"
-      File /oname=$torgeoipfile "@TOR_PACKAGE_DIR@\geoip"
-      
       ;If there's already a torrc config file, ask if they want to
       ;overwrite it with the new one.
       StrCpy $configfile "torrc"
@@ -260,12 +256,12 @@ SectionGroup "${TOR_DESC}" TorGroup
        IntOp $0 $0 & ${SF_SELECTED}
        IntCmp $0 ${SF_SELECTED} skiptorrc
 
-       ; Include tor's geoip file, too
-       StrCpy $torgeoipfile "geoip"
-       File /oname=$torgeoipfile "@TOR_PACKAGE_DIR@\geoip"
-
        StrCpy $configfile "torrc"
        SetOutPath "$APPDATA\Tor"
+
+       ; Include tor's geoip file, too
+       StrCpy $torgeoipfile "geoip"
+       File "@TOR_PACKAGE_DIR@\geoip"
 
        ; If there's already a torrc config file, ask if they want to
        ; overwrite it with the new one.
