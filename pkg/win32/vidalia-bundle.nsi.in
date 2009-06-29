@@ -147,7 +147,6 @@ Page custom FirefoxWarningPage
 ;--------------------------------
 ; Vidalia
 Var configfile
-Var torgeoipfile
 var bInstallVidalia
 SectionGroup "${VIDALIA_DESC}" VidaliaGroup
     ;--------------------------------
@@ -237,6 +236,7 @@ SectionGroupEnd
 ;--------------------------------
 ; Tor
 var bInstallTor
+Var torgeoipfile
 SectionGroup "${TOR_DESC}" TorGroup
     ;--------------------------------
     ; Tor application binaries
@@ -324,7 +324,6 @@ SectionGroup "${TOR_DESC}" TorGroup
           goto torrc_shortcut
         use_tor_torrc:
           StrCpy $configfile "$APPDATA\Tor\torrc"
-          StrCpy $torgeoipfile "$APPDATA\Tor\geoip"
         torrc_shortcut:
           SetShellVarContext all
           CreateShortCut  "${SHORTCUTS}\Tor\Torrc.lnk" "Notepad.exe" $configfile
