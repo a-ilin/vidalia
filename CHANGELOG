@@ -30,6 +30,15 @@
   o Raise the minimum required Qt version from 4.2 to 4.3.
 
 
+0.1.14  29-Jun-2009
+  o Close the TorProcess more quickly after registering for log events, so
+    we avoid displaying duplicate log messages received over Tor's control
+    port and Tor's stdout log. (Ticket #484)
+  o Explicitly set CMAKE_OSX_SYSROOT to the 10.4 SDK rather than expecting
+    the packager to do so when building a Universal binary.
+  o Include Tor's geoip file in the Windows bundles.
+
+
 0.1.13  25-May-2009
   o Remove an old warning on the relay settings page that running a bridge
     relay requires Tor 0.2.0.8-alpha or newer.
