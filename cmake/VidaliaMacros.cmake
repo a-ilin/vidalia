@@ -147,6 +147,28 @@ macro(VIDALIA_ADD_WXL OUTFILES PO CULTURE CHARSET)
   set(${OUTFILES} ${${OUTFILES}} ${wxl})
 endmacro(VIDALIA_ADD_WXL)
 
+## Queries the specified TOR_EXECUTABLE for its version string using the 
+## --version argument, parses its output and sets TOR_VERSION to the result.
+## If no version could be determined, ${TOR_VERSION} will be undefined.
+macro(VIDALIA_GET_TOR_VERSION TOR_VERSION TOR_EXECUTABLE)
+  get_filename_component(TOR_EXE_PATH ${TOR_EXECUTABLE} ABSOLUTE)
+  if (UNIX)
+    execute_process(
+      COMMAND ${TOR_EXE_PATH} --version
+      COMMAND tail -n 1
+      COMMAND awk "{print $3}"
+      COMMAND sed -e s/\\.$//
+      OUTPUT_VARIABLE ${TOR_VERSION}
+    )
+  else(UNIX)
+    message(FATAL_ERROR
+      "The vidalia_get_tor_version macro is not implemented for your platform")
+  endif(UNIX)
+  if (DEFINED ${TOR_VERSION})
+    string(STRIP ${${TOR_VERSION}} ${TOR_VERSION})
+  endif(DEFINED ${TOR_VERSION})
+endmacro(VIDALIA_GET_TOR_VERSION)
+
 if (APPLE)
   include(${Vidalia_SOURCE_DIR}/cmake/ParseArgumentsMacro.cmake)
 
