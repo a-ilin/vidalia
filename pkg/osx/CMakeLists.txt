@@ -10,11 +10,6 @@
 ##  the terms described in the LICENSE file.
 ##
 
-## OS X Packaging Files
-configure_file(
-  ${CMAKE_CURRENT_SOURCE_DIR}/builddmg.sh.in
-  ${CMAKE_CURRENT_BINARY_DIR}/builddmg.sh
-)
 
 set(VIDALIA_APP_BUNDLE_ROOT ${Vidalia_BINARY_DIR}/src/vidalia/Vidalia.app)
 get_target_property(VIDALIA_EXECUTABLE Vidalia LOCATION)
@@ -117,7 +112,91 @@ add_custom_target(dist-osx
     --copy ${Vidalia_SOURCE_DIR}/LICENSE-OPENSSL:/Licenses/License-OpenSSL.txt
     --copy ${Vidalia_SOURCE_DIR}/README:/ReadMe.txt
     --copy ${Vidalia_SOURCE_DIR}/CHANGELOG:/Changes.txt
+  COMMENT "Creating vidalia-${VERSION}-${DMG_ARCH}.dmg"
   VERBATIM
 )
 add_dependencies(dist-osx dist-osx-libraries)
+
+if (TOR_SOURCE_DIR AND POLIPO_SOURCE_DIR AND TORBUTTON_XPI)
+  get_filename_component(TOR_SOURCE_DIR ${TOR_SOURCE_DIR} ABSOLUTE)
+  get_filename_component(POLIPO_SOURCE_DIR ${POLIPO_SOURCE_DIR} ABSOLUTE)
+  get_filename_component(TORBUTTON_XPI ${TORBUTTON_XPI} ABSOLUTE)
+
+  ## Determine Tor's version string used to build the .dmg filename
+  vidalia_get_tor_version(TOR_VERSION "${TOR_SOURCE_DIR}/src/or/tor")
+  if (TOR_VERSION)
+    message(STATUS "Found Tor ${TOR_VERSION}")
+  else (TOR_VERSION)
+    message(FATAL_ERROR "Unable to determine version of ${TOR_SOURCE_DIR}/src/or/tor")
+  endif(TOR_VERSION)
+
+  ## Configure the Torbutton installation script file
+  get_filename_component(TORBUTTON_XPI_FILENAME ${TORBUTTON_XPI} NAME)
+  configure_file(
+    ${CMAKE_CURRENT_SOURCE_DIR}/InstallTorbutton.scpt.in
+    ${CMAKE_CURRENT_BINARY_DIR}/InstallTorbutton.scpt
+  )
+
+  set(bundle_DMG "vidalia-bundle-${TOR_VERSION}-${VERSION}-${DMG_ARCH}.dmg")
+  add_custom_target(dist-osx-bundle
+    COMMAND osacompile
+      -o "${CMAKE_CURRENT_BINARY_DIR}/Install Torbutton for Firefox.app"
+          ${CMAKE_CURRENT_BINARY_DIR}/InstallTorbutton.scpt
+    COMMAND ${CMAKE_COMMAND} -E copy
+      ${TORBUTTON_XPI}
+      "${CMAKE_CURRENT_BINARY_DIR}/Install Torbutton for Firefox.app/"
+    COMMAND ${CMAKE_CURRENT_SOURCE_DIR}/pkg-dmg
+      --source ${VIDALIA_APP_BUNDLE_ROOT}
+      --target ${Vidalia_BINARY_DIR}/${bundle_DMG}
+      --sourcefile --volname "Vidalia Bundle ${VERSION}"
+      --icon ${Vidalia_SOURCE_DIR}/src/vidalia/res/icons/Vidalia.icns
+      --symlink "/Applications:/Drag to here"
+      --mkdir /.background
+      --copy ${CMAKE_CURRENT_SOURCE_DIR}/bundle-background.png:/.background/
+      --copy ${CMAKE_CURRENT_SOURCE_DIR}/bundle-ds_store:/.DS_Store
+      --copy ${CMAKE_CURRENT_SOURCE_DIR}/vidalia.conf.sample:/Vidalia.app/Contents/Resources/vidalia.conf
+      --mkdir /Licenses
+      --copy ${Vidalia_SOURCE_DIR}/LICENSE:/Licenses/License.txt
+      --copy ${Vidalia_SOURCE_DIR}/LICENSE-GPLV2:/Licenses/License-GPLv2.txt
+      --copy ${Vidalia_SOURCE_DIR}/LICENSE-GPLV3:/Licenses/License-GPLv3.txt
+      --copy ${Vidalia_SOURCE_DIR}/LICENSE-OPENSSL:/Licenses/License-OpenSSL.txt
+      --copy ${Vidalia_SOURCE_DIR}/CHANGELOG:/Changes.txt
+      --copy ${TOR_SOURCE_DIR}/src/or/tor:/Vidalia.app/Contents/MacOS/
+      --copy ${TOR_SOURCE_DIR}/src/tools/tor-checkkey:/Vidalia.app/Contents/MacOS/
+      --copy ${TOR_SOURCE_DIR}/src/tools/tor-gencert:/Vidalia.app/Contents/MacOS/
+      --copy ${TOR_SOURCE_DIR}/src/tools/tor-resolve:/Vidalia.app/Contents/MacOS/
+      --copy ${TOR_SOURCE_DIR}/src/config/geoip:/Vidalia.app/Contents/Resources/
+      --copy ${TOR_SOURCE_DIR}/src/config/torrc.sample:/Vidalia.app/Contents/Resources/
+      --copy ${POLIPO_SOURCE_DIR}/polipo:/Vidalia.app/Contents/MacOS/
+      --copy ${CMAKE_CURRENT_SOURCE_DIR}/polipo.conf:/Vidalia.app/Contents/Resources/
+      --copy "${CMAKE_CURRENT_BINARY_DIR}/Install Torbutton for Firefox.app:/"
+    COMMENT "Creating ${bundle_DMG}"
+    VERBATIM
+  )
+  add_dependencies(dist-osx-bundle dist-osx-libraries)
+
+  add_custom_target(dist-osx-split-bundle
+    COMMAND hdiutil segment -segmentSize 1.5m 
+      -o "${Vidalia_BINARY_DIR}/split-${bundle_DMG}" "${Vidalia_BINARY_DIR}/${bundle_DMG}"
+    COMMENT "Creating split-${bundle_DMG}"
+    VERBATIM
+  )
+  add_dependencies(dist-osx-split-bundle dist-osx-bundle)
+else(TOR_SOURCE_DIR AND POLIPO_SOURCE_DIR AND TORBUTTON_XPI)
+  message("-- Skipping dist-osx-bundle build target")
+  add_custom_target(dist-osx-bundle
+    COMMAND ${CMAKE_COMMAND} -E echo
+      "!! The dist-osx-bundle target is not configured."
+    COMMAND ${CMAKE_COMMAND} -E echo
+      "!! You must set the -DTOR_SOURCE_DIR,-DPOLIPO_SOURCE_DIR and TORBUTTON_XPI CMake variables."
+    COMMAND ${CMAKE_COMMAND} -E echo "!! Quitting."
+  )
+  add_custom_target(dist-osx-split-bundle
+    COMMAND ${CMAKE_COMMAND} -E echo
+      "!! The dist-osx-split-bundle target is not configured. Quitting."
+    COMMAND ${CMAKE_COMMAND} -E echo
+      "!! You must set the -DTOR_SOURCE_DIR, -DPOLIPO_SOURCE_DIR and TORBUTTON_XPI CMake variables."
+    COMMAND ${CMAKE_COMMAND} -E echo "!! Quitting."
+  )
+endif(TOR_SOURCE_DIR AND POLIPO_SOURCE_DIR AND TORBUTTON_XPI)
 

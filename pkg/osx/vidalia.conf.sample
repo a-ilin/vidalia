@@ -1,9 +1,9 @@
 [General]
-ProxyExecutable=/Applications/Vidalia.app/polipo
-ProxyExecutableArguments=-c, /Applications/Vidalia.app/tor-polipo.conf
+ProxyExecutable=/Applications/Vidalia.app/Contents/MacOS/polipo
+ProxyExecutableArguments=-c, /Applications/Vidalia.app/Contents/Resources/tor-polipo.conf
 RunProxyAtStart=true
 InterfaceStyle=Macintosh (Aqua)
 
 [Tor]
-TorExecutable=/Applications/Vidalia.app/tor
+TorExecutable=/Applications/Vidalia.app/Contents/MacOS/tor
 DataDirectory=~/.tor/
