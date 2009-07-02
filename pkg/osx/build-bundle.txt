@@ -53,44 +53,36 @@ Tor
 9. Download and extract the latest Tor source from
    https://www.torproject.org/download
 
-   Note the location in which you extract Tor's source, because you will need
-   to specify it in Step 14.
-   
+   Note the location to which you extract Tor's source, because you will need
+   to specify it in Step 12.
+
 10. Configure Tor with the following:
    ./configure --prefix=/Applications/Vidalia.app --bindir=/Applications/Vidalia.app --sysconfdir=/Applications/Vidalia.app
 
+11. Build Tor by running 'make'. You do NOT need to run 'make install'
+afterwards.
+
 
 Vidalia
-11. Configure Vidalia with the following:
+12. Configure Vidalia with the following:
 
       export MACOSX_DEPLOYMENT_TARGET=10.4
-      cmake -DOSX_FAT_BINARY=1  . 
+      mkdir build && cd build
+      cmake -DOSX_FAT_BINARY=1 \
+            -DTOR_SOURCE_DIR=<path-to-tor> \
+            -DPOLIPO_SOURCE_DIR=<path-to-polipo> \
+            -DTORBUTTON_XPI=<path-torbutton.xpi> ..
 
-   The Vidalia binary on OS X links to Qt statically, so you will need to have
-   your Qt installation configured appropriately.
+13. Run `make dist-osx-bundle` to build Vidalia and package all of the
+components (Vidalia, Tor, Polipo and Torbutton) into a single .dmg. The resulting
+.dmg will be placed in the 'build' directory created in Step 11.
 
-12. Run `make` to build Vidalia.
+14. (Optional) Run 'make dist-osx-split-bundle' if you would like to build
+the split OS X bundle.
 
-13. Download the latest Torbutton and LICENSE file from https://torbutton.torproject.org/dev/.
-Remember where you put this file.
-
-   
-Finish
-14. From Vidalia's pkg/ directory in Vidalia's source, run the following:
-     ./package.sh osx-bundle <path-to-tor> <path-to-polipo> <path-to-torbutton-file>
-  
-  Example:
-     ./package.sh osx-bundle ~/tor-0.2.1.7-alpha ~/tmp/polipo-1.0.4 ~/tmp/torbutton-1.2.0-fx
-
-  The script that builds the .dmg (pkg/osx/bundle/builddmg.sh) gets Tor's
-  version number from the directory name, so it should be named appropriately,
-  as in the example above.
-  
-The resulting .dmg will be placed in the 'pkg' directory under Vidalia's source.
-
-NOTE: Steps 1-6 only need to be done once initially, unless you need to change the
-packaged version of Libevent or Qt. Step 7 also only needs to be done once,
-unless Privoxy ever gets updated. Steps 9-10 need to be repeated when the
-bundled version of Tor changes. Steps 11-12 need to be repeated when the
-bundled version of Vidalia changes.
+NOTE: Steps 1-6 only need to be done once initially, unless you need to
+change the packaged version of Libevent or Qt. Step 7 also only needs to
+be done once, unless Polipo ever gets updated. Steps 9-11 need to be
+repeated when the bundled version of Tor changes. Steps 12-13 need to be
+repeated when the bundled version of Vidalia changes.
 
