@@ -140,6 +140,7 @@ Section "${VIDALIA_DESC}" Vidalia
   File "@Vidalia_BINARY_DIR@\src\vidalia\${VIDALIA_EXEC}"
   File "@MINGW_BINARY_DIR@\mingwm10.dll"
   File "@OPENSSL_BINARY_DIR@\ssleay32.dll"
+  File "@OPENSSL_BINARY_DIR@\libeay32.dll"
   File "@QT_BINARY_DIR@\QtCore4.dll"
   File "@QT_BINARY_DIR@\QtGui4.dll"
   File "@QT_BINARY_DIR@\QtNetwork4.dll"

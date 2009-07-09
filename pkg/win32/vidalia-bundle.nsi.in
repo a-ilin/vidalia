@@ -163,6 +163,7 @@ SectionGroup "${VIDALIA_DESC}" VidaliaGroup
       File "@QT_BINARY_DIR@\QtXml4.dll"
       File "@MINGW_BINARY_DIR@\mingwm10.dll"
       File "@OPENSSL_BINARY_DIR@\ssleay32.dll"
+      File "@OPENSSL_BINARY_DIR@\libeay32.dll"
       File "@Vidalia_SOURCE_DIR@\README"
       File "@Vidalia_SOURCE_DIR@\CHANGELOG"
       File "@Vidalia_SOURCE_DIR@\LICENSE"

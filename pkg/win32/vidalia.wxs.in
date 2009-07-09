@@ -125,6 +125,8 @@
       <Component Id="OpenSSLLibrary" Guid="$(var.OpenSSLLibraryGuid)">
         <File Id="ssleay32dll" DiskId="1"
               Name="ssleay32.dll" Source="@OPENSSL_BINARY_DIR@\ssleay32.dll" />
+        <File Id="libeay32dll" DiskId="1"
+              Name="libeay32.dll" Source="@OPENSSL_BINARY_DIR@\libeay32.dll" />
       </Component>
 
       <?if $(var.UseBreakpad) = "ON"?>
