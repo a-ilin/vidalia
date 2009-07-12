@@ -44,43 +44,17 @@ executable installers.
   
   Configure Vidalia as follows:
 
-    cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=minsizerel ..
+    cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=minsizerel \
+          -DMINGW_BINARY_DIR=C:\<PathToMinGW>\bin            \
+          -DOPENSSL_BINARY_DIR=C:\<PathToOpenSSL>\bin ..
+
+  MINGW_BINARY_DIR should point to the MinGW installation directory that
+  contains mingwm10.dll. OPENSSL_BINARY_DIR should point to the OpenSSL
+  installation directory that contains ssleay32.dll and libeay32.dll.
 
   Finally, compile Vidalia by running:
   
     make
-
-
-1.2. Collect Required Dependencies 
-
-  Create a "bin" directory by running the following command from your build
-  directory:
-
-    mkdir bin
-
-
-  Copy the following Qt .dll files from your Qt installation into your "bin"
-  directory:
-
-    copy $QTDIR\QtCore4.dll bin\
-    copy $QTDIR\QtGui4.dll bin\
-    copy $QTDIR\QtNetwork4.dll bin\
-    copy $QTDIR\QtXml4.dll bin\
-  
-  where "$QTDIR" is the path to your Qt installation.
-
-
-  Copy the MinGW .dll file into your "bin" directory:
-
-    copy $MINGWDIR\bin\mingwm10.dll bin\
-
-  where "$MINGWDIR" is the path to your MinGW installation.
-
-
-  Copy the Vidalia executable into your "bin" directory:
-
-    copy src\vidalia\vidalia.exe bin\
-
 
 1.3. Create the Executable Installer
 
