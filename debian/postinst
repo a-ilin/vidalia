@@ -1,33 +1,26 @@
 #!/bin/sh 
 set -e
+if [ -f /usr/share/debconf/confmodule ]; then
+	. /usr/share/debconf/confmodule
+fi
 
-#DEBHELPER#
-
-. /usr/share/debconf/confmodule
-
-
-seen='false'
-askuser() {
-	db_get vidalia/info
-}
-
-if [ "$1" = "configure" ]; then
+if [ "$1" = "configure" ] || [ "$1" = "reconfigure" ]; then
 	if dpkg -l tor > /dev/null 2>&1; then
 	    # installed
 	    if [ -e '/var/run/tor/tor.pid' ]; then
 		# and already running
-		askuser
-        	seen='true'
+		db_get vidalia/info
 		if [ "$RET" = "true" ]; then
 		    invoke-rc.d --force tor stop
 		fi
+        	seen='true'
 	    fi
 	fi
 
 	if pgrep -x tor > /dev/null 2>&1; then 
 		# still running?? (e.g. chroot)
-    		if [ "$seen" = "false" ]; then
-			askuser
+   		if [ "$seen" = "false" ]; then
+			db_get vidalia/info
 			if [ "$RET" = "true" ]; then
 			    echo -n "Stopping tor daemon: "
 			    pkill -x tor > /dev/null && echo "tor." || echo 'Failed!'
@@ -37,4 +30,4 @@ if [ "$1" = "configure" ]; then
 	db_stop
 fi
 
-exit 0
+#DEBHELPER#

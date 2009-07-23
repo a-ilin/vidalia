@@ -1,14 +1,13 @@
 #!/bin/sh
+
 set -e
-
-#DEBHELPER#
-
-. /usr/share/debconf/confmodule
-
-if [ "$1" = "configure" ]; then
-	db_fset vidalia/info seen false
-	db_input high vidalia/info || true
-	db_go 
+if [ -f /usr/share/debconf/confmodule ]; then
+        . /usr/share/debconf/confmodule
 fi
 
-exit 0
+if [ "$1" = "configure" ] || [ "$1" = "reconfigure" ]; then
+        db_input high vidalia/info || true
+        db_go
+fi
+
+#DEBHELPER#

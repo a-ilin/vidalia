@@ -1,3 +1,13 @@
+vidalia (0.1.15-1) unstable; urgency=low
+
+  * New upstream release.
+  * Debconf translations:
+    - Czech (Closes: #535973).
+  * Really fix debconf script issue.
+  * Update Standard-version to 3.8.2 (no changes needed)
+
+ -- Ulises Vitulli <uvitulli@fi.uba.ar>  Tue, 21 Jul 2009 06:00:49 -0300
+
 vidalia (0.1.13-3) unstable; urgency=low
 
   * Fixing debconf scripts issue that output twice the same message.
