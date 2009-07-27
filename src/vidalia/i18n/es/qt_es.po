@@ -207,8 +207,9 @@ msgid ""
 "%1\n"
 "File not found.\n"
 "Please verify the correct file name was given."
-msgstr ""
-Archivo no encontrado. Verifique que el nombre del archivo es correcto."
+msgstr "%1\n
+Archivo no encontrado.\n
+Verifique que el nombre del archivo es correcto."
 
 #: qdirmodel.cpp:833
 msgctxt "QFileDialog"
@@ -267,9 +268,10 @@ msgid ""
 "%1\n"
 "Directory not found.\n"
 "Please verify the correct directory name was given."
-msgstr "
-Archivo no encontrado. Verifique que el nombre del directorio es "
-"correcto."
+msgstr ""
+"%1\n"
+"Archivo no encontrado.\n"
+"Verifique que el nombre del directorio es correcto."
 
 #: qfiledialog.cpp:2281
 #, fuzzy
