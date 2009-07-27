@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-05-19 23:56+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2009-07-25 20:47+0000\n"
+"Last-Translator: Irma <monochrome.technicolor@gmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Vidalia ts2po 0.2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Pootle 1.1.0\n"
 
 msgctxt "AboutDialog"
 msgid "About Vidalia"
@@ -26,7 +26,7 @@ msgstr "Vidalia"
 
 msgctxt "AboutDialog"
 msgid "Tor 0.2.0.32"
-msgstr ""
+msgstr "Tor 0.2.0.32"
 
 msgctxt "AboutDialog"
 msgid "Qt 4.4.2"
@@ -42,11 +42,11 @@ msgstr "Tor"
 
 msgctxt "AboutDialog"
 msgid "Qt"
-msgstr ""
+msgstr "Qt"
 
 msgctxt "AboutDialog"
 msgid "version"
-msgstr ""
+msgstr "versio"
 
 msgctxt "AdvancedPage"
 msgid "'%1' is not a valid IP address."
@@ -78,7 +78,7 @@ msgstr "Tiedoston %1 luominen epäonnistui [%2]"
 
 msgctxt "AdvancedPage"
 msgid "Select a Directory to Use for Tor Data"
-msgstr "Valitse kansio Tor-ohjelman tiedoille"
+msgstr "Valitse hakemisto Tor-ohjelman tiedoille"
 
 msgctxt "AdvancedPage"
 msgid "Unable to remove Tor Service"
@@ -157,6 +157,8 @@ msgid "Vidalia was unable to remove the Tor service.\n"
 "\n"
 "You may need to remove it manually."
 msgstr ""
+"Vidalia ei onnistunut poistamaan Tor-plavelua.Joudut ehkä poistamaan sen "
+"manuaalisesti."
 
 msgctxt "AppearancePage"
 msgid "Language"
@@ -264,23 +266,24 @@ msgstr ""
 
 msgctxt "BridgeUsageDialog"
 msgid "Country"
-msgstr ""
+msgstr "Maa"
 
 msgctxt "BridgeUsageDialog"
 msgid "# Clients"
-msgstr ""
+msgstr "# Asiakasohjelma"
 
 msgctxt "BridgeUsageDialog"
 msgid "Clients from the following countries have used your relay since %1"
 msgstr ""
+"Asiakasohjelmia seuraavista maista ovat käyttäneet välitystäsi alkaen %1"
 
 msgctxt "BridgeUsageDialog"
 msgid "Bridge Usage Summary"
-msgstr ""
+msgstr "Sillan Käytön Yhteenveto"
 
 msgctxt "BridgeUsageDialog"
 msgid "Client Summary"
-msgstr ""
+msgstr "Asiakasohjelman Yhteenveto"
 
 msgctxt "Circuit"
 msgid "New"
@@ -416,11 +419,11 @@ msgstr "Virheellinen ohjausvastaus. [%1]"
 
 msgctxt "CountryInfo"
 msgid "Afghanistan"
-msgstr ""
+msgstr "Afghanistan"
 
 msgctxt "CountryInfo"
 msgid "Andorra"
-msgstr ""
+msgstr "Andorra"
 
 msgctxt "CountryInfo"
 msgid "Angola"
@@ -432,15 +435,15 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Argentina"
-msgstr ""
+msgstr "Argentina"
 
 msgctxt "CountryInfo"
 msgid "Armenia"
-msgstr ""
+msgstr "Armenia"
 
 msgctxt "CountryInfo"
 msgid "Australia"
-msgstr "Tietoja Vidaliasta"
+msgstr "Australia"
 
 msgctxt "CountryInfo"
 msgid "Azerbaijan"
@@ -456,7 +459,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Barbados"
-msgstr ""
+msgstr "Barbados"
 
 msgctxt "CountryInfo"
 msgid "Belarus"
@@ -464,7 +467,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Belgium"
-msgstr ""
+msgstr "Belgia"
 
 msgctxt "CountryInfo"
 msgid "Belize"
@@ -480,7 +483,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Bosnia & Herzegovina"
-msgstr ""
+msgstr "Bosnia & Herzegovina"
 
 msgctxt "CountryInfo"
 msgid "Botswana"
@@ -488,7 +491,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Brazil"
-msgstr ""
+msgstr "Brasilia"
 
 msgctxt "CountryInfo"
 msgid "Brunei Darussalam"
@@ -496,7 +499,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Bulgaria"
-msgstr ""
+msgstr "Bulgaria"
 
 msgctxt "CountryInfo"
 msgid "Burkina Faso"
@@ -516,7 +519,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Canada"
-msgstr ""
+msgstr "Kanada"
 
 msgctxt "CountryInfo"
 msgid "Cape Verde"
@@ -536,7 +539,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "China"
-msgstr ""
+msgstr "Kiina"
 
 msgctxt "CountryInfo"
 msgid "Colombia"
@@ -564,7 +567,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Croatia"
-msgstr ""
+msgstr "Kroatia"
 
 msgctxt "CountryInfo"
 msgid "Cuba"
@@ -572,15 +575,15 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Cyprus"
-msgstr ""
+msgstr "Kypros"
 
 msgctxt "CountryInfo"
 msgid "Czech Republic"
-msgstr ""
+msgstr "Ťsekin Tasavalta"
 
 msgctxt "CountryInfo"
 msgid "Denmark"
-msgstr ""
+msgstr "Tanska"
 
 msgctxt "CountryInfo"
 msgid "Djibouti"
@@ -600,7 +603,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Egypt"
-msgstr ""
+msgstr "Egypti"
 
 msgctxt "CountryInfo"
 msgid "El Salvador"
@@ -616,11 +619,11 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Estonia"
-msgstr ""
+msgstr "Viro"
 
 msgctxt "CountryInfo"
 msgid "France"
-msgstr "Peruuta"
+msgstr "Ranska"
 
 msgctxt "CountryInfo"
 msgid "Gabon"
@@ -636,11 +639,11 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Germany"
-msgstr ""
+msgstr "Saksa"
 
 msgctxt "CountryInfo"
 msgid "Ghana"
-msgstr ""
+msgstr "Ghana"
 
 msgctxt "CountryInfo"
 msgid "Grenada"
@@ -652,7 +655,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Guinea"
-msgstr "Yleiset"
+msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Guinea-Bissau"
@@ -664,7 +667,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Hong Kong"
-msgstr ""
+msgstr "Hong Kong"
 
 msgctxt "CountryInfo"
 msgid "Haiti"
@@ -676,11 +679,11 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Israel"
-msgstr ""
+msgstr "Israel"
 
 msgctxt "CountryInfo"
 msgid "Italy"
-msgstr ""
+msgstr "Italia"
 
 msgctxt "CountryInfo"
 msgid "Jamaica"
@@ -688,7 +691,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Japan"
-msgstr ""
+msgstr "Japani"
 
 msgctxt "CountryInfo"
 msgid "Jordan"
@@ -716,15 +719,15 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Laos"
-msgstr ""
+msgstr "Laos"
 
 msgctxt "CountryInfo"
 msgid "Latvia"
-msgstr ""
+msgstr "Latvia"
 
 msgctxt "CountryInfo"
 msgid "Lebanon"
-msgstr ""
+msgstr "Lebanon"
 
 msgctxt "CountryInfo"
 msgid "Lesotho"
@@ -740,19 +743,19 @@ msgstr "Lisenssi"
 
 msgctxt "CountryInfo"
 msgid "Lithuania"
-msgstr ""
+msgstr "Liettua"
 
 msgctxt "CountryInfo"
 msgid "Luxembourg"
-msgstr ""
+msgstr "Luxemburg"
 
 msgctxt "CountryInfo"
 msgid "Macedonia"
-msgstr ""
+msgstr "Makedonia"
 
 msgctxt "CountryInfo"
 msgid "Madagascar"
-msgstr ""
+msgstr "Madagaskar"
 
 msgctxt "CountryInfo"
 msgid "Malawi"
@@ -768,7 +771,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Malta"
-msgstr ""
+msgstr "Malta"
 
 msgctxt "CountryInfo"
 msgid "Marshall Islands"
@@ -804,7 +807,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Morocco"
-msgstr ""
+msgstr "Marokko"
 
 msgctxt "CountryInfo"
 msgid "Mozambique"
@@ -1256,15 +1259,15 @@ msgstr "Välityspalvelin-ohjelman käyttöarvot:"
 
 msgctxt "GeneralPage"
 msgid "Software Updates"
-msgstr ""
+msgstr "Ohjelmiston Päivitykset"
 
 msgctxt "GeneralPage"
 msgid "Check for new software updates automatically"
-msgstr ""
+msgstr "Tarkista automaattisesti onko uusia ohjelmiston päivityksiä"
 
 msgctxt "GeneralPage"
 msgid "Check Now"
-msgstr ""
+msgstr "Tarkista Nyt"
 
 msgctxt "GraphFrame"
 msgid "%1 KB/s"
@@ -1292,7 +1295,7 @@ msgstr ""
 
 msgctxt "HelpBrowser"
 msgid "Supplied XML file is not a valid Contents document."
-msgstr "Tarjottu XML-tiedosto ei ole kelvollinen sisällön sivu"
+msgstr "Tarjottu XML-tiedosto ei ole kelvollinen Sisällön sivu"
 
 msgctxt "HelpBrowser"
 msgid "Search reached end of document"
@@ -1304,7 +1307,7 @@ msgstr "Etsintä saavutti sivun alun"
 
 msgctxt "HelpBrowser"
 msgid "Text not found in document"
-msgstr "Tekstiä ei löytynyt sivulta"
+msgstr "Tekstiä ei löytynyt asiakirjasta"
 
 msgctxt "HelpBrowser"
 msgid "Found %1 results"
@@ -1872,62 +1875,75 @@ msgstr ""
 
 msgctxt "MainWindow"
 msgid "The currently installed version of Tor is out of date or no longer recommended."
-msgstr "Asennettu versio Tor-ohjelmasta on vanhentunut tai sitä ei suositella enään. Ole hyvä ja lataa uusin versio Tor-ohjelman kotisivulta."
+msgstr ""
+"Asennettu versio Tor-ohjelmasta on vanhentunut tai sitä ei suositella enään."
 
 msgctxt "MainWindow"
 msgid "Would you like to check if a newer package is available for installation?"
-msgstr ""
+msgstr "Haluatko tarkistaa onko uudempaa pakettia saatavana asennettavaksi?"
 
 msgctxt "MainWindow"
 msgid "Potentially Unsafe Connection"
-msgstr ""
+msgstr "Mahdollisesti Epäluotettava Yhteys"
 
 msgctxt "MainWindow"
 msgid "One of your applications%1appears to be making a potentially unencrypted and unsafe connection to port %2. Anything sent over this connection could be monitored. Please check your application's configuration and use only encrypted protocols, such as SSL, if possible."
 msgstr ""
+"Jokin sovelluksistasi%1näyttä luoda mahdollisesti epäluotettavaa ja "
+"salatonta yhteyttä porttiin %2. Kaikki tieto lähetetty tämän yhteyden kautta "
+"tulisi valvoa. Ole hyvä ja varmista sovelluksesi kokoonpano ja käytä vain "
+"salattuja protokolleja kuten SSL jos mahdollista."
 
 msgctxt "MainWindow"
 msgid "Tor has automatically closed your connection in order to protect your anonymity."
-msgstr ""
+msgstr "Tor on automaattisesti sulkenut yhteytesi suojatakseen nimettömyyttäsi."
 
 msgctxt "MainWindow"
 msgid "Update Failed"
-msgstr "Tor-ohjelmaan on saatavilla päivitys"
+msgstr "Päivitys Epäonnistui"
 
 msgctxt "MainWindow"
 msgid "Your software is up to date"
-msgstr ""
+msgstr "Ohjelmistosi on ajan tasalla"
 
 msgctxt "MainWindow"
 msgid "There are no new Tor software packages available for your computer at this time."
 msgstr ""
+"Uusia Tor-ohjelmiston paketteja ei ole saatavana tietokoneellesi juuri nyt."
 
 msgctxt "MainWindow"
 msgid "Installation Failed"
-msgstr ""
+msgstr "Asennus Epäonnistui"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to install your software updates."
-msgstr "Vidalia ei onnistunut pysäyttämään Tor-ohjelmaa."
+msgstr "Vidalia ei onnistunut asentamaan ohjelmiston päivityksiä."
 
 msgctxt "MainWindow"
 msgid "The following error occurred:"
-msgstr ""
+msgstr "Seuraava virhe ilmaantui:"
 
 msgctxt "MainWindow"
 msgid "failed (%1)"
-msgstr ""
+msgstr "epäonnistui (%1)"
 
 msgctxt "MainWindow"
 msgid "Your relay is shutting down.\n"
 "Click 'Stop' again to stop your relay now."
 msgstr ""
+"Välityksesi on sammumassa.\n"
+"Napsauta 'Pysäytä'-nappia uudelleen pysäyttääksesi välityksen nyt. "
 
 msgctxt "MainWindow"
 msgid "You are currently running a relay. Terminating your relay will interrupt any open connections from clients.\n"
 "\n"
 "Would you like to shutdown gracefully and give clients time to find a new relay?"
 msgstr ""
+"Ajat parhaillaan välitystä. Välityksen pysäyttäminen katkaisee kaikki "
+"avoimet yhteykset asiakasohjelmilta.\n"
+"\n"
+"Haluatko sammuttaa sulavasti ja antaa asiakaohjelmien aikaa löytää uusi "
+"välitys?"
 
 msgctxt "MainWindow"
 msgid "Vidalia detected that the Tor software exited unexpectedly.\n"
@@ -1937,7 +1953,7 @@ msgstr ""
 
 msgctxt "MainWindow"
 msgid ", probably Telnet,"
-msgstr ""
+msgstr ", varmaankin Telnet,"
 
 msgctxt "MainWindow"
 msgid ", probably an email client,"
@@ -1949,7 +1965,7 @@ msgstr "Vidalia"
 
 msgctxt "MainWindow"
 msgid "File"
-msgstr ""
+msgstr "Tiedosto"
 
 msgctxt "MainWindow"
 msgid "About Vidalia"
@@ -1961,11 +1977,11 @@ msgstr "Koti"
 
 msgctxt "MainWindow"
 msgid "Check For Updates"
-msgstr ""
+msgstr "Etsi Päivityksiä"
 
 msgctxt "MessageLog"
 msgid "Error Setting Filter"
-msgstr "Virhe suodatuksen asettamisessa"
+msgstr "Virhe Suodatuksen Asettamisessa"
 
 msgctxt "MessageLog"
 msgid "Vidalia was unable to register for Tor's log events."
@@ -2251,6 +2267,9 @@ msgid "Cannot write file %1\n"
 "\n"
 "%2."
 msgstr ""
+"Ei pysty laatia tiedostoa %1\n"
+"\n"
+"%2"
 
 msgctxt "NetViewer"
 msgid "Tor Network Map"
@@ -2346,11 +2365,11 @@ msgstr "Tuntematon"
 
 msgctxt "NetViewer"
 msgid "Full Screen"
-msgstr ""
+msgstr "Koko Näyttö"
 
 msgctxt "NetViewer"
 msgid "View the network map as a full screen window"
-msgstr ""
+msgstr "Näytä verkkokartta koko näyttönä"
 
 msgctxt "NetViewer"
 msgid "Ctrl+F"
@@ -2466,23 +2485,25 @@ msgstr "Kopioi valitut sillat leikepöydälle"
 
 msgctxt "NetworkPage"
 msgid "Find Bridges Now"
-msgstr ""
+msgstr "Etsi Siltoja Heti"
 
 msgctxt "NetworkPage"
 msgid "<a href=\"bridges.finding\">How else can I find bridges?</a>"
-msgstr ""
+msgstr "<a href=\"bridges.finding\">Kuinka muuten voin löytää siltoja?</a>"
 
 msgctxt "NetworkPage"
 msgid "<a href=\"bridges.finding\">How can I find bridges?</a>"
-msgstr ""
+msgstr "<a href=\"bridges.finding\">Kuinka voin löytää siltoja?</a>"
 
 msgctxt "NetworkPage"
 msgid "No new bridges are currently available. You can either wait a while and try again, or try another method of finding new bridges."
 msgstr ""
+"Uusia siltoja ei ole juuri nyt saatavana. Voit joko odottaa hetken ja "
+"yrittää uudelleen, tai voit kokeilla toista tapaa löytää siltoja."
 
 msgctxt "NetworkPage"
 msgid "Click Help to see other methods of finding new bridges."
-msgstr ""
+msgstr "Napsauta \"Ohje\"-painiketta nähdäksesi muita tapoja löytää siltoja."
 
 msgctxt "Policy"
 msgid "accept"
@@ -2490,11 +2511,11 @@ msgstr "salli"
 
 msgctxt "Policy"
 msgid "reject"
-msgstr "estä"
+msgstr "hylkää"
 
 msgctxt "RouterDescriptor"
 msgid "Online"
-msgstr "Päällä"
+msgstr "Online"
 
 msgctxt "RouterDescriptor"
 msgid "Hibernating"
@@ -2550,11 +2571,11 @@ msgstr "Tuntematon"
 
 msgctxt "RouterInfoDialog"
 msgid "Relay Details"
-msgstr ""
+msgstr "Välitystiedot"
 
 msgctxt "RouterInfoDialog"
 msgid "Summary"
-msgstr ""
+msgstr "Yhteenveto"
 
 msgctxt "RouterInfoDialog"
 msgid "Name:"
@@ -3084,10 +3105,14 @@ msgstr "Testataan Universal Plug & Play -tukea"
 msgctxt "UpdateProcess"
 msgid "Vidalia was unable to check for available software updates because it could not find '%1'."
 msgstr ""
+"Vidalia ei onnistunut tarkistamaan ohjelmistopäivityksien varalta koska "
+"kohdetta '%1' ei löytynyt."
 
 msgctxt "UpdateProcess"
 msgid "Vidalia was unable to check for available software updates because Tor's update process exited unexpectedly."
 msgstr ""
+"Vidalia ei onnistunut tarkistamaan ohjelmistopäivityksien varalta koska "
+"Tor:in  päivitysprosessi suljettiin yllättäen."
 
 msgctxt "UpdateProgressDialog"
 msgid "Checking for available updates..."
@@ -3099,15 +3124,15 @@ msgstr "Piilota"
 
 msgctxt "UpdateProgressDialog"
 msgid "Downloading updates..."
-msgstr ""
+msgstr "Ladataan päivityksiä..."
 
 msgctxt "UpdateProgressDialog"
 msgid "Installing updated software..."
-msgstr "Käynnistetään Tor-ohjelmaa"
+msgstr "Asennetaan päivitettyä ohjelmistoa..."
 
 msgctxt "UpdateProgressDialog"
 msgid "Done! Your software is now up to date."
-msgstr ""
+msgstr "Valmis! Ohjelmistosi on nyt ajan tasalla."
 
 msgctxt "UpdateProgressDialog"
 msgid "OK"
@@ -3115,11 +3140,11 @@ msgstr "OK"
 
 msgctxt "UpdateProgressDialog"
 msgid "Software Updates"
-msgstr ""
+msgstr "Ohjelmistopäivitykset"
 
 msgctxt "UpdateProgressDialog"
 msgid "Checking for updates..."
-msgstr ""
+msgstr "Tarkistetaan päivityksien varalta..."
 
 msgctxt "UpdateProgressDialog"
 msgid "Cancel"
@@ -3131,15 +3156,15 @@ msgstr "Tor-ohjelmaan on saatavilla päivitys"
 
 msgctxt "UpdatesAvailableDialog"
 msgid "Remind Me Later"
-msgstr ""
+msgstr "Muistuta Minua Myöhemmin"
 
 msgctxt "UpdatesAvailableDialog"
 msgid "Install"
-msgstr ""
+msgstr "Asenna"
 
 msgctxt "UpdatesAvailableDialog"
 msgid "The following updated software packages are ready for installation:"
-msgstr ""
+msgstr "Seuraavat päivitetyt ohjelmistopaketit ovat valmiina asennettaviksi:"
 
 msgctxt "UpdatesAvailableDialog"
 msgid "Package"
@@ -3265,7 +3290,7 @@ msgstr "%1 sekuntia"
 
 msgctxt "stringutil.h"
 msgid "%1 B/s"
-msgstr ""
+msgstr "%1 t/s"
 
 msgctxt "stringutil.h"
 msgid "%1 KB/s"
@@ -3273,21 +3298,20 @@ msgstr "%1 Kt/s"
 
 msgctxt "stringutil.h"
 msgid "%1 MB/s"
-msgstr ""
+msgstr "%1 Mt/s"
 
 msgctxt "stringutil.h"
 msgid "%1 GB/s"
-msgstr ""
+msgstr "%1 Gt/s"
 
 msgctxt "stringutil.h"
 msgid "%1 days"
-msgstr ""
+msgstr "%1 päivää"
 
 msgctxt "stringutil.h"
 msgid "%1 hours"
-msgstr ""
+msgstr "%1 tuntia"
 
 msgctxt "stringutil.h"
 msgid "%1 mins"
-msgstr ""
-
+msgstr "%1 minuuttia"
