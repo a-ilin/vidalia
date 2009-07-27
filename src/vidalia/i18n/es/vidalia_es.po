@@ -42,7 +42,7 @@ msgstr "Tor"
 
 msgctxt "AboutDialog"
 msgid "Qt."
-msgstr "Cant."
+msgstr "Qt."
 
 msgctxt "AboutDialog"
 msgid "version"
@@ -156,7 +156,7 @@ msgctxt "AdvancedPage"
 msgid "Vidalia was unable to install the Tor service."
 "\n"
 "You may need to remove it manually."
-msgstr "Es posible que tenga que eliminarlo manualmente.”
+msgstr "Es posible que tenga que eliminarlo manualmente."
 
 msgctxt "AppearancePage"
 msgid "Language"
@@ -176,7 +176,7 @@ msgstr "Escoja el estilo de la interfaz de Vidalia"
 
 msgctxt "AppearancePage"
 msgid "Vidalia was unable to load the selected language translation."
-msgstr "Vidalia no pudo cargar la traducción al idioma seleccionado.”
+msgstr "Vidalia no pudo cargar la traducción al idioma seleccionado."
 
 msgctxt "BandwidthGraph"
 msgid "Since:"
@@ -236,51 +236,51 @@ msgstr "Cancelar"
 
 msgctxt "BridgeDownloader"
 msgid "Starting HTTPS bridge request..."
-msgstr "Iniciando la solicitud de puente HTTPS.”
+msgstr "Iniciando la solicitud de puente HTTPS."
 
 msgctxt "BridgeDownloader"
 msgid "Connecting to %1:%2..."
-msgstr "Conectando a %1:%2….”
+msgstr "Conectando a %1:%2..."
 
 msgctxt "BridgeDownloader"
 msgid "Sending an HTTPS request for bridges..."
-msgstr "Enviando una solicitud HTTPS para puentes.”
+msgstr "Enviando una solicitud HTTPS para puentes."
 
 msgctxt "BridgeDownloader"
 msgid "Downloading a list of bridges..."
-msgstr "Descargando una lista de puentes...”
+msgstr "Descargando una lista de puentes..."
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Downloading Bridges"
-msgstr "Descargando puentes”
+msgstr "Descargando puentes"
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Unable to download bridges: %1"
-msgstr "No pudo descargar puentes:”
+msgstr "No pudo descargar puentes: %1"
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Retrying bridge request..."
-msgstr "Reintentando la solicitud de puentes…”
+msgstr "Reintentando la solicitud de puentes..."
 
 msgctxt "BridgeUsageDialog"
 msgid "Country"
-msgstr "País”
+msgstr "País"
 
 msgctxt "BridgeUsageDialog"
 msgid "# Clients"
-msgstr "Nº. de Clientes”
+msgstr "Nº. de Clientes"
 
 msgctxt "BridgeUsageDialog"
 msgid "Clients from the following countries have used your relay since %1"
-msgstr "Clientes de los siguientes países han usado su retransmisor desde %1”
+msgstr "Clientes de los siguientes países han usado su retransmisor desde %1"
 
 msgctxt "BridgeUsageDialog"
 msgid "Bridge Usage Summary"
-msgstr "Resumen de utilización del puente”
+msgstr "Resumen de utilización del puente"
 
 msgctxt "BridgeUsageDialog"
 msgid "Client Summary"
-msgstr "Resumen del cliente”
+msgstr "Resumen del cliente"
 
 msgctxt "Circuit"
 msgid "New"
@@ -332,7 +332,7 @@ msgstr "Cerrar flujo (Del)"
 
 msgctxt "ConfigDialog"
 msgid "General"
-msgid "General"msgstr “General”
+msgstr "General"
 
 msgctxt "ConfigDialog"
 msgid "Network"
@@ -704,7 +704,7 @@ msgstr "Kenya"
 
 msgctxt "CountryInfo"
 msgid "Kiribati"
-msgstr "Kiribati”
+msgstr "Kiribati"
 
 msgctxt "CountryInfo"
 msgid "Kuwait"
@@ -1872,7 +1872,7 @@ msgstr "Vidalia trató de reiniciar la contraseña de control de Tor, pero no pu
 
 msgctxt "MainWindow"
 msgid "The currently installed version of Tor is out of date or no longer recommended."
-msgstr "La versión actualmente instalada de Tor está desactualizada o no se recomiendo su uso.” 
+msgstr "La versión actualmente instalada de Tor está desactualizada o no se recomiendo su uso."
 
 msgctxt "MainWindow"
 msgid "Would you like to check if a newer package is available for installation?"
@@ -1921,27 +1921,30 @@ msgstr "falló (%1)"
 msgctxt "MainWindow"
 msgid "Your relay is shutting down.\n"
 "Click 'Stop' again to stop your relay now."
-msgstr "Su repetidor se está deteniendo." “Haga clic de nuevo en “Detener” para detener ahora su repetidor.”
+msgstr "Su repetidor se está deteniendo.\n"
+"Haga clic de nuevo en “Detener” para detener ahora su repetidor."
 
 msgctxt "MainWindow"
 msgid "You are currently running a relay. Terminating your relay will interrupt any open connections from clients.\n"
 "\n"
 "Would you like to shutdown gracefully and give clients time to find a new relay?"
-msgstr "Actualmente está ejecutando un repetidor. La detención del mismo interrumpiría cualesquiera conexiones que tengan abiertas los clientes.\n" “¿Podría darle tiempo a los clientes de encontrar un nuevo repetidor?”
+msgstr "Actualmente está ejecutando un repetidor. La detención del mismo interrumpiría cualesquiera conexiones que tengan abiertas los clientes.\n"
+"\n"
+"¿Podría darle tiempo a los clientes de encontrar un nuevo repetidor?"
 
 msgctxt "MainWindow"
 msgid "Vidalia detected that the Tor software exited unexpectedly.\n"
 "\n"
 "Please check the message log for recent warning or error messages."
-msgstr "Vidalia detectó que el software de Tor terminó de manera inesperada.”
+msgstr "Vidalia detectó que el software de Tor terminó de manera inesperada."
 
 msgctxt "MainWindow"
 msgid ", probably Telnet,"
-msgstr "probablemente Telnet,”
+msgstr "probablemente Telnet,"
 
 msgctxt "MainWindow"
 msgid ", probably an email client,"
-msgstr ", probablemente un cliente de correo electrónico,”
+msgstr ", probablemente un cliente de correo electrónico,"
 
 msgctxt "MainWindow"
 msgid "Vidalia"
@@ -1949,7 +1952,7 @@ msgstr "Vidalia"
 
 msgctxt "MainWindow"
 msgid "File"
-msgstr "Documento”
+msgstr "Documento"
 
 msgctxt "MainWindow"
 msgid "About Vidalia"
@@ -1961,7 +1964,7 @@ msgstr "Inicio"
 
 msgctxt "MainWindow"
 msgid "Check For Updates"
-msgstr "Verifique si hay actualizaciones”
+msgstr "Verifique si hay actualizaciones"
 
 msgctxt "MessageLog"
 msgid "Error Setting Filter"
@@ -2222,35 +2225,43 @@ msgstr "Guardar automáticamente a un archivo los nuevos mensajes del registro"
 msgctxt "MessageLog"
 msgid "Messages that appear when something has \n"
 "gone very wrong and Tor cannot proceed."
-msgstr "Mensajes que aparecen cuando algo ha " “ido muy mal y Tor no puede continuar”
+msgstr "Mensajes que aparecen cuando algo ha \n"
+"ido muy mal y Tor no puede continuar."
 
 msgctxt "MessageLog"
 msgid "Messages that only appear when \n"
 "something has gone wrong with Tor."
-msgstr "Mensajes que aparecen solamente cuando  \n" “algo ha ido mal con Tor.”
+msgstr "Mensajes que aparecen solamente cuando \n"
+"algo ha ido mal con Tor."
 
 msgctxt "MessageLog"
 msgid "Messages that appear infrequently \n"
 "during normal Tor operation and are \n"
 "not considered errors, but you may \n"
 "care about."
-msgstr "Mensajes que aparecen raramente \n" “durante la operación normal de Tor y no”“se consideran errores, pero de los que es posible que 
+msgstr "Mensajes que aparecen raramente \n"
+"durante la operación normal de Tor y no \n"
+"se consideran errores, pero de los que es posible que"
 
 msgctxt "MessageLog"
 msgid "Messages that appear frequently \n"
 "during normal Tor operation."
-msgstr "Mensajes que aparecen frecuentemente \n"“durante la operación normal de Tor.” 
+msgstr "Mensajes que aparecen frecuentemente \n"
+"durante la operación normal de Tor."
 
 msgctxt "MessageLog"
 msgid "Hyper-verbose messages primarily of \n"
 "interest to Tor developers."
-msgstr "Mensajes muy especializados principalmente para \n"“uso de los desarrolladores de Tor.”
+msgstr "Mensajes muy especializados principalmente para \n"
+"uso de los desarrolladores de Tor."
 
 msgctxt "MessageLog"
 msgid "Cannot write file %1\n"
 "\n"
 "%2."
-msgstr "No se puede escribir el archivo %1\n"“
+msgstr "No se puede escribir el archivo %1\n"
+"\n"
+"%2."
 
 msgctxt "NetViewer"
 msgid "Tor Network Map"
@@ -2891,7 +2902,8 @@ msgstr "Replicar el Directorio repetidor"
 msgctxt "ServerPage"
 msgid "Email address at which you may be reached if there is a\n"
 "problem with your relay. You might also include your PGP or GPG fingerprint."
-msgstr "Dirección de correo electrónico en la cual podría localizársele si hubiera un" “problema con su repetidor. Pudiera incluir también su huella PGP o GPG.”
+msgstr "Dirección de correo electrónico en la cual podría localizársele si hubiera un\n"
+"problema con su repetidor. Pudiera incluir también su huella PGP o GPG."
 
 msgctxt "ServicePage"
 msgid "Error while trying to unpublish all services"
@@ -2899,7 +2911,7 @@ msgstr "Error al tratar de quitar la publicación de todos los servicios"
 
 msgctxt "ServicePage"
 msgid "Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones."
-msgstr "Por favor, configure al menos un servidor de directorios y un puerto virtual por cada servicio que quiera guardar. Elimine los otros.”
+msgstr "Por favor, configure al menos un servidor de directorios y un puerto virtual por cada servicio que quiera guardar. Elimine los otros."
 
 msgctxt "ServicePage"
 msgid "Error"
@@ -3091,7 +3103,7 @@ msgstr "Vidalia no pudo verificar si hay actualizaciones de software disponibles
 
 msgctxt "UpdateProgressDialog"
 msgid "Checking for available updates..."
-msgstr "Verificando si hay actualizaciones disponibles…"
+msgstr "Verificando si hay actualizaciones disponibles..."
 
 msgctxt "UpdateProgressDialog"
 msgid "Hide"
@@ -3119,7 +3131,7 @@ msgstr "Actualizaciones de Software"
 
 msgctxt "UpdateProgressDialog"
 msgid "Checking for updates..."
-msgstr "Verificando si hay actualizaciones…"
+msgstr "Verificando si hay actualizaciones..."
 
 msgctxt "UpdateProgressDialog"
 msgid "Cancel"
@@ -3257,7 +3269,9 @@ msgctxt "Vidalia"
 msgid "Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.\n"
 "\n"
 "Would you like to continue starting Vidalia?"
-msgstr "Posiblemente ya se esté ejecutando otro proceso de Vidalia. Si realmente no hay otro proceso de Vidalia ejecutándose, puede optar por continuar de todos modos.\n" “Quiere continuar con el inicio de Vidalia?”
+msgstr "Posiblemente ya se esté ejecutando otro proceso de Vidalia. Si realmente no hay otro proceso de Vidalia ejecutándose, puede optar por continuar de todos modos.\n"
+"\n"
+"Quiere continuar con el inicio de Vidalia?"
 
 msgctxt "stringutil.h"
 msgid "%1 secs"
