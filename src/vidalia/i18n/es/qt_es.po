@@ -30,7 +30,7 @@ msgstr "Error: biblioteca Qt incompatible"
 #: qapplication.cpp:2095
 msgctxt "QApplication"
 msgid "QT_LAYOUT_DIRECTION"
-msgstr "RTL"
+msgstr "LTR"
 
 #: qaccessibleobject.cpp:350
 msgctxt "QApplication"
