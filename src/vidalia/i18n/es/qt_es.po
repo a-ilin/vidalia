@@ -209,8 +209,7 @@ msgid ""
 msgstr ""
 "%1\n"
 "Archivo no encontrado.\n"
-"                                                                             "
-"           Verifique que el nombre del archivo es correcto."
+"Verifique que el nombre del archivo es correcto."
 
 #: qdirmodel.cpp:833
 msgctxt "QFileDialog"
@@ -439,5 +438,4 @@ msgstr "%1 KB"
 #: qfilesystemmodel.cpp:684
 msgctxt "QFileSystemModel"
 msgid "%1 bytes"
-"%1 bytes"
 msgstr ""
