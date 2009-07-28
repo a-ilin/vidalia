@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-08-20 03:25+0000\n"
-"PO-Revision-Date: 2009-07-28 00:07+0000\n"
+"PO-Revision-Date: 2009-07-28 00:10+0000\n"
 "Last-Translator: Matt <edmanm@vidalia-project.net>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -201,17 +201,16 @@ msgid ""
 msgstr "El archivo %1 ya existe. ¿Desea reemplazarlo?"
 
 #: qfiledialog.cpp:1690
-#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
 "%1\n"
 "File not found.\n"
 "Please verify the correct file name was given."
-msgstr "%1\n
-
-
-"
-
+msgstr ""
+"%1\n"
+"Archivo no encontrado.\n"
+"                                                                             "
+"           Verifique que el nombre del archivo es correcto."
 
 #: qdirmodel.cpp:833
 msgctxt "QFileDialog"
