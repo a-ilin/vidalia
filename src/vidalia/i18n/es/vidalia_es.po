@@ -936,7 +936,7 @@ msgstr "Arabia Saudita"
 
 msgctxt "CountryInfo"
 msgid "Senegal"
-msgid "Senegal"
+msgstr "Senegal"
 
 msgctxt "CountryInfo"
 msgid "Serbia"
@@ -2485,7 +2485,7 @@ msgstr "<a href=\"bridges.finding\">¿De qué otra forma puedo buscar puentes?</
 
 msgctxt "NetworkPage"
 msgid "<a href=\"bridges.finding\">How can I find bridges?</a>"
-msgstr "<a href=\"bridges.finding\">¿Cómo puedo buscar puentes?</a>""
+msgstr "<a href=\"bridges.finding\">¿Cómo puedo buscar puentes?</a>"
 
 msgctxt "NetworkPage"
 msgid "No new bridges are currently available. You can either wait a while and try again, or try another method of finding new bridges."
@@ -2737,11 +2737,11 @@ msgstr "Cable/DSL 768 Kbps"
 
 msgctxt "ServerPage"
 msgid "T1/Cable/DSL 1.5 Mbps"
-msgid "T1/Cable/DSL 1.5 Mbps"
+msgstr "T1/Cable/DSL 1.5 Mbps"
 
 msgctxt "ServerPage"
 msgid "> 1.5 Mbps"
-msgid "> 1.5 Mbps"
+msgstr "> 1.5 Mbps"
 
 msgctxt "ServerPage"
 msgid "Custom"
