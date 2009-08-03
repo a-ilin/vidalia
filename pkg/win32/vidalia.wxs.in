@@ -136,7 +136,7 @@
         <Component Id="CrashReporterExecutable" Guid="*">
           <File Id="CrashReporterExe" DiskId="1"
                 Name="crashreporter.exe"
-                Source="E:/Vidalia/trunk/build-vs/bin/RelWithDebInfo/crashreporter.exe" />
+                Source="@VIDALIA_CRASHREPORTER_EXECUTABLE@" />
         </Component>
       <?else?>
         <!-- Include MinGW-related library files -->
