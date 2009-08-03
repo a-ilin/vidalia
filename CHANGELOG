@@ -1,7 +1,9 @@
-0.2.1   xx-xxx-2009
+0.2.1   03-Aug-2009
   o Add a "Find Bridges Now" button that will attempt to automatically
     download a set of bridge addresses and add them to the list of bridges
     in the Network settings page.
+  o Add support for building with Google's Breakpad crash reporting
+    library (currently disabled by default).
   o Show or hide the "Who has used my bridge recently?" link along with
     the other bridge-related widgets when the user toggles the relay mode
     in the Network settings page. (Ticket #480)
