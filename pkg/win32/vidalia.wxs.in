@@ -142,7 +142,7 @@
         <!-- Include MinGW-related library files -->
         <Component Id="MinGWLibrary" Guid="$(var.MinGWLibraryGuid)">
           <File Id="MinGWDll" DiskId="1"
-                Name="mingwm10.dll" Source="\mingwm10.dll" />
+                Name="mingwm10.dll" Source="@MINGW_BINARY_DIR@\mingwm10.dll" />
         </Component>
       <?endif?>
 
