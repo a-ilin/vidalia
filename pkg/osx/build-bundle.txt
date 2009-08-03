@@ -39,14 +39,14 @@ Polipo
 http://www.pps.jussieu.fr/~jch/software/files/polipo/.
 
 7a. Download the Tor modifications to Polipo from:
-https://svn.torproject.org/svn/tor/trunk/contrib/polipo/.  
+https://git.torproject.org/checkout/tor/master/contrib/polipo/.  
 
 Alternatively, download a tarball with the Polipo source and Tor
 modifications together from:
 http://interloper.org/tmp/polipo/polipo-1.0.4-with-tor-mods.tgz
 
 8. Follow the directions to build polipo at
-  https://www.torproject.org/svn/trunk/contrib/polipo/README
+  https://git.torproject.org/checkout/tor/master/contrib/polipo/README
 
 
 Tor
@@ -57,7 +57,9 @@ Tor
    to specify it in Step 12.
 
 10. Configure Tor with the following:
-   ./configure --prefix=/Applications/Vidalia.app --bindir=/Applications/Vidalia.app --sysconfdir=/Applications/Vidalia.app
+   ./configure --prefix=/Applications/Vidalia.app \
+               --bindir=/Applications/Vidalia.app/Contents/MacOS \
+               --sysconfdir=/Applications/Vidalia.app/Contents/Resources
 
 11. Build Tor by running 'make'. You do NOT need to run 'make install'
 afterwards.
