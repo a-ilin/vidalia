@@ -29,7 +29,15 @@
   o Write the list of source files containing translatable strings to a
     .pro file and supply just the .pro file as an argument to lupdate, rather
     than supplying all of the source file names themselves.
-  o Raise the minimum required Qt version from 4.2 to 4.3.
+
+
+0.1.15  09-Jul-2009
+  o Bump the minimum required Qt version to 4.3.0.
+  o Remove USE_QSSLSOCKET as a build option. If your Qt doesn't support
+    OpenSSL, then you don't get GeoIP lookups.
+  o Fix the TorPostFlight portion of the OS X bundle installer so it
+    doesn't fail when installing Torbutton.
+  o Include libeay32.dll in the Windows installers.
 
 
 0.1.14  29-Jun-2009
