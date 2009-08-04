@@ -168,7 +168,7 @@ add_custom_target(dist-win32
   COMMAND ${WIX_LIGHT_EXECUTABLE}
       ${CMAKE_CURRENT_BINARY_DIR}/vidalia.wixobj
       ${CMAKE_CURRENT_BINARY_DIR}/WixUI_Custom.wixobj
-      -o ${CMAKE_CURRENT_BINARY_DIR}/vidalia-${VERSION}.msi
+      -o ${Vidalia_BINARY_DIR}/vidalia-${VERSION}.msi
       -ext ${WIX_BINARY_DIR}/WixUIExtension.dll
   
   DEPENDS ${CMAKE_CURRENT_BINARY_DIR}/vidalia.wxs 
