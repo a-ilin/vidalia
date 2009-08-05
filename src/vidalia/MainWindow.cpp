@@ -178,7 +178,7 @@ MainWindow::MainWindow()
   /* Also check for updates in the foreground when the user clicks the
    * "Check Now" button in the config dialog. */
   connect(_configDialog, SIGNAL(checkForUpdates()),
-          this, SLOT(checkForUpdatesWithUI()));
+          this, SLOT(checkForUpdatesWithUi()));
 
   /* The rest of these slots are called as the update process executes. */
   connect(&_updateProcess, SIGNAL(downloadProgress(QString,int,int)),
@@ -1576,7 +1576,7 @@ MainWindow::dangerousTorVersion()
                 VMessageBox::No|VMessageBox::Escape);
 
     if (ret == VMessageBox::Yes)
-      checkForUpdatesWithUI();
+      checkForUpdatesWithUi();
 #endif
     alreadyWarned = true;
   }
@@ -1802,7 +1802,7 @@ MainWindow::upnpError(UPNPControl::UPNPError error)
 /** Called when the user clicks the 'Check Now' button in the General
  * settings page. */
 void
-MainWindow::checkForUpdatesWithUI()
+MainWindow::checkForUpdatesWithUi()
 {
   checkForUpdates(true);
 }

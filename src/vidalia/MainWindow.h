@@ -131,7 +131,7 @@ private slots:
 #if defined(USE_AUTOUPDATE)
   /** Called when the user clicks the 'Check Now' button in the General
    * settings page. */
-  void checkForUpdatesWithUI();
+  void checkForUpdatesWithUi();
   /** Called when the update interval timer expires, notifying Vidalia that
    * we should check for updates again. */
   void checkForUpdates(bool showProgress = false);
