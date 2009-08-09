@@ -97,7 +97,7 @@ TorMapWidget::addRouter(const RouterDescriptor &desc, const GeoIp &geoip)
   kml.append("</Document></kml>");
 
   QString id = desc.id();
-  addPlaceMarkData(kml, id);
+  addPlacemarkData(kml, id);
   _routers.insert(id, GeoDataCoordinates(lon, lat, 0.0,
                                          GeoDataCoordinates::Degree));
 }
@@ -121,20 +121,16 @@ TorMapWidget::addCircuit(const CircuitId &circid, const QStringList &path)
     CircuitGeoPath *geoPath = _circuits.value(circid);
 
     QString router = path.at(path.size()-1);
-    if (_routers.contains(router)) {
-      GeoDataCoordinates coords = _routers.value(router);
-      geoPath->first.append(new GeoDataCoordinates(coords));
-    }
+    if (_routers.contains(router))
+      geoPath->first.append(_routers.value(router));
   } else {
     /* Construct a new path */
     CircuitGeoPath *geoPath = new CircuitGeoPath();
     geoPath->second = false; /* initially unselected */
 
     foreach (QString router, path) {
-      if (_routers.contains(router)) {
-        GeoDataCoordinates coords = _routers.value(router);
-        geoPath->first.append(new GeoDataCoordinates(coords));
-      }      
+      if (_routers.contains(router))
+        geoPath->first.append(_routers.value(router));
     }
     geoPath->first.setTessellationFlags(Tessellate | RespectLatitudeCircle);
     _circuits.insert(circid, geoPath);
@@ -148,11 +144,8 @@ void
 TorMapWidget::removeCircuit(const CircuitId &circid)
 {
   CircuitGeoPath *path = _circuits.take(circid);
-  if (path) {
-    GeoDataLineString coords = path->first;
-    qDeleteAll(coords.begin(), coords.end());
+  if (path)
     delete path;
-  }
 
   repaint();
 }
@@ -207,13 +200,11 @@ void
 TorMapWidget::clear()
 {
   foreach (QString id, _routers.keys()) {
-    removePlaceMarkKey(id);
+    removePlacemarkKey(id);
   }
 
   foreach (CircuitId circid, _circuits.keys()) {
     CircuitGeoPath *path = _circuits.take(circid);
-    GeoDataLineString coords = path->first;
-    qDeleteAll(coords.begin(), coords.end());
     delete path;
   }
 
