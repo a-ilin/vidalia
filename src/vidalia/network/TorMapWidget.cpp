@@ -19,6 +19,9 @@
 #include "TorMapWidgetPopupMenu.h"
 #include "Vidalia.h"
 
+#include <MarbleModel.h>
+#include <HttpDownloadManager.h>
+
 #include <QStringList>
 
 using namespace Marble;
@@ -37,6 +40,8 @@ TorMapWidget::TorMapWidget(QWidget *parent)
   setShowCrosshairs(false);
   setAnimationsEnabled(true);
   setCursor(Qt::OpenHandCursor);
+
+  model()->downloadManager()->setDownloadEnabled(false);
 
   TorMapWidgetInputHandler *handler = new TorMapWidgetInputHandler();
   TorMapWidgetPopupMenu *popupMenu  = new TorMapWidgetPopupMenu(this);
