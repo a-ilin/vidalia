@@ -1,3 +1,9 @@
+0.2.2   xx-xxx-2009
+  o When the user clicks "Browse" in the Advanced settings page to locate
+    a new torrc, set the initial directory shown in the file dialog to the
+    current location of the user's torrc. (Ticket #505)
+
+
 0.2.1   03-Aug-2009
   o Add a "Find Bridges Now" button that will attempt to automatically
     download a set of bridge addresses and add them to the list of bridges
