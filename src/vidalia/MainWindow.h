@@ -264,16 +264,16 @@ private:
   QMenuBar *_menuBar;
 
   /** Defines the actions for the tray menu */
-  QAction* _controlPanelAct;
-  QAction* _startStopAct;
-  QAction* _configAct;
-  QAction* _aboutAct;
-  QAction* _exitAct;
-  QAction* _bandwidthAct;
-  QAction* _messageAct;
-  QAction* _helpAct;
-  QAction* _networkAct;
-  QAction* _newIdentityAct;
+  QAction* _actionShowControlPanel;
+  QAction* _actionStartStopTor;
+  QAction* _actionShowConfig;
+  QAction* _actionShowAbout;
+  QAction* _actionExit;
+  QAction* _actionShowBandwidth;
+  QAction* _actionShowMessageLog;
+  QAction* _actionShowHelp;
+  QAction* _actionShowNetworkMap;
+  QAction* _actionNewIdentity;
 
   Ui::MainWindow ui; /**< Qt Designer generated object. */
 };

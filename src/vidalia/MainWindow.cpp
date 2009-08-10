@@ -240,27 +240,27 @@ MainWindow::retranslateUi()
 
   updateTorStatus(_status);
   if (_status == Stopped) {
-    _startStopAct->setText(tr("Start Tor"));
+    _actionStartStopTor->setText(tr("Start Tor"));
     ui.lblStartStopTor->setText(tr("Start Tor"));
   } else if (_status == Starting) {
-    _startStopAct->setText(tr("Starting Tor"));
+    _actionStartStopTor->setText(tr("Starting Tor"));
     ui.lblStartStopTor->setText(tr("Starting Tor"));
   } else {
-    _startStopAct->setText(tr("Stop Tor"));
+    _actionStartStopTor->setText(tr("Stop Tor"));
     ui.lblStartStopTor->setText(tr("Stop Tor"));
   }
 
-  _bandwidthAct->setText(tr("Bandwidth Graph"));
-  _messageAct->setText(tr("Message Log"));
-  _networkAct->setText(tr("Network Map"));
-  _controlPanelAct->setText(tr("Control Panel"));
-  _helpAct->setText(tr("Help"));
-  _newIdentityAct->setText(tr("New Identity"));
+  _actionShowBandwidth->setText(tr("Bandwidth Graph"));
+  _actionShowMessageLog->setText(tr("Message Log"));
+  _actionShowNetworkMap->setText(tr("Network Map"));
+  _actionShowControlPanel->setText(tr("Control Panel"));
+  _actionShowHelp->setText(tr("Help"));
+  _actionNewIdentity->setText(tr("New Identity"));
 
 #if !defined(Q_WS_MAC)
-  _aboutAct->setText(tr("About"));
-  _configAct->setText(tr("Settings"));
-  _exitAct->setText(tr("Exit"));
+  _actionShowAbout->setText(tr("About"));
+  _actionShowConfig->setText(tr("Settings"));
+  _actionExit->setText(tr("Exit"));
 #else
   createMenuBar();
 #endif
@@ -438,61 +438,61 @@ MainWindow::close()
 void 
 MainWindow::createActions()
 {
-  _startStopAct = new QAction(tr("Start Tor"), this);
-  connect(_startStopAct, SIGNAL(triggered()), this, SLOT(start()));
+  _actionStartStopTor = new QAction(tr("Start Tor"), this);
+  connect(_actionStartStopTor, SIGNAL(triggered()), this, SLOT(start()));
 
-  _exitAct = new QAction(tr("Exit"), this);
-  connect(_exitAct, SIGNAL(triggered()), this, SLOT(close()));
+  _actionExit = new QAction(tr("Exit"), this);
+  connect(_actionExit, SIGNAL(triggered()), this, SLOT(close()));
 
-  _bandwidthAct = new QAction(tr("Bandwidth Graph"), this);
-  connect(_bandwidthAct, SIGNAL(triggered()), 
+  _actionShowBandwidth = new QAction(tr("Bandwidth Graph"), this);
+  connect(_actionShowBandwidth, SIGNAL(triggered()), 
           _bandwidthGraph, SLOT(showWindow()));
   connect(ui.lblBandwidthGraph, SIGNAL(clicked()),
           _bandwidthGraph, SLOT(showWindow()));
 
-  _messageAct = new QAction(tr("Message Log"), this);
-  connect(_messageAct, SIGNAL(triggered()),
+  _actionShowMessageLog = new QAction(tr("Message Log"), this);
+  connect(_actionShowMessageLog, SIGNAL(triggered()),
           _messageLog, SLOT(showWindow()));
   connect(ui.lblMessageLog, SIGNAL(clicked()),
           _messageLog, SLOT(showWindow()));
 
-  _networkAct = new QAction(tr("Network Map"), this);
-  connect(_networkAct, SIGNAL(triggered()), 
+  _actionShowNetworkMap = new QAction(tr("Network Map"), this);
+  connect(_actionShowNetworkMap, SIGNAL(triggered()), 
           _netViewer, SLOT(showWindow()));
   connect(ui.lblViewNetwork, SIGNAL(clicked()),
           _netViewer, SLOT(showWindow()));
 
-  _controlPanelAct = new QAction(tr("Control Panel"), this);
-  connect(_controlPanelAct, SIGNAL(triggered()), this, SLOT(show()));
+  _actionShowControlPanel = new QAction(tr("Control Panel"), this);
+  connect(_actionShowControlPanel, SIGNAL(triggered()), this, SLOT(show()));
 
-  _configAct = new QAction(tr("Settings"), this);
-  connect(_configAct, SIGNAL(triggered()), this, SLOT(showConfigDialog()));
+  _actionShowConfig = new QAction(tr("Settings"), this);
+  connect(_actionShowConfig, SIGNAL(triggered()), this, SLOT(showConfigDialog()));
   
-  _aboutAct = new QAction(tr("About"), this);
-  connect(_aboutAct, SIGNAL(triggered()), this, SLOT(showAboutDialog()));
+  _actionShowAbout = new QAction(tr("About"), this);
+  connect(_actionShowAbout, SIGNAL(triggered()), this, SLOT(showAboutDialog()));
 
-  _helpAct = new QAction(tr("Help"), this);
-  connect(_helpAct, SIGNAL(triggered()), this, SLOT(showHelpDialog()));
+  _actionShowHelp = new QAction(tr("Help"), this);
+  connect(_actionShowHelp, SIGNAL(triggered()), this, SLOT(showHelpDialog()));
   connect(ui.lblHelpBrowser, SIGNAL(clicked()), this, SLOT(showHelpDialog()));
 
-  _newIdentityAct = new QAction(tr("New Identity"), this);
-  _newIdentityAct->setEnabled(false);
-  connect(_newIdentityAct, SIGNAL(triggered()), this, SLOT(newIdentity()));
+  _actionNewIdentity = new QAction(tr("New Identity"), this);
+  _actionNewIdentity->setEnabled(false);
+  connect(_actionNewIdentity, SIGNAL(triggered()), this, SLOT(newIdentity()));
 
 #if !defined(Q_WS_MAC)
   /* Don't give the menu items icons on OS X, since they end up in the
    * application menu bar. Menu bar items on OS X typically do not have
    * icons. */
-  _startStopAct->setIcon(QIcon(IMG_START_TOR_16));
-  _exitAct->setIcon(QIcon(IMG_EXIT));
-  _bandwidthAct->setIcon(QIcon(IMG_BWGRAPH));
-  _messageAct->setIcon(QIcon(IMG_MESSAGELOG));
-  _networkAct->setIcon(QIcon(IMG_NETWORK));
-  _controlPanelAct->setIcon(QIcon(IMG_CONTROL_PANEL));
-  _configAct->setIcon(QIcon(IMG_CONFIG));
-  _aboutAct->setIcon(QIcon(IMG_ABOUT));
-  _helpAct->setIcon(QIcon(IMG_HELP));
-  _newIdentityAct->setIcon(QIcon(IMG_IDENTITY));
+  _actionStartStopTor->setIcon(QIcon(IMG_START_TOR_16));
+  _actionExit->setIcon(QIcon(IMG_EXIT));
+  _actionShowBandwidth->setIcon(QIcon(IMG_BWGRAPH));
+  _actionShowMessageLog->setIcon(QIcon(IMG_MESSAGELOG));
+  _actionShowNetworkMap->setIcon(QIcon(IMG_NETWORK));
+  _actionShowControlPanel->setIcon(QIcon(IMG_CONTROL_PANEL));
+  _actionShowConfig->setIcon(QIcon(IMG_CONFIG));
+  _actionShowAbout->setIcon(QIcon(IMG_ABOUT));
+  _actionShowHelp->setIcon(QIcon(IMG_HELP));
+  _actionNewIdentity->setIcon(QIcon(IMG_IDENTITY));
 #endif
 }
 
@@ -514,23 +514,23 @@ QMenu*
 MainWindow::createTrayMenu()
 {
   QMenu *menu = new QMenu(this);
-  menu->addAction(_startStopAct);
+  menu->addAction(_actionStartStopTor);
   menu->addSeparator();
-  menu->addAction(_bandwidthAct);
-  menu->addAction(_messageAct);
-  menu->addAction(_networkAct);
-  menu->addAction(_newIdentityAct);
+  menu->addAction(_actionShowBandwidth);
+  menu->addAction(_actionShowMessageLog);
+  menu->addAction(_actionShowNetworkMap);
+  menu->addAction(_actionNewIdentity);
   menu->addSeparator();
-  menu->addAction(_controlPanelAct);
+  menu->addAction(_actionShowControlPanel);
   
 #if !defined(Q_WS_MAC)
   /* These aren't added to the dock menu on Mac, since they are in the
    * standard Mac locations in the menu bar. */
-  menu->addAction(_configAct);
-  menu->addAction(_helpAct);
-  menu->addAction(_aboutAct);
+  menu->addAction(_actionShowConfig);
+  menu->addAction(_actionShowHelp);
+  menu->addAction(_actionShowAbout);
   menu->addSeparator();
-  menu->addAction(_exitAct);
+  menu->addAction(_actionExit);
 #endif
   return menu;
 }
@@ -545,22 +545,22 @@ MainWindow::createMenuBar()
   /* Mac users sure like their shortcuts. Actions NOT mentioned below
    * don't explicitly need shortcuts, since they are merged to the default
    * menubar and get the default shortcuts anyway. */
-  _startStopAct->setShortcut(tr("Ctrl+T"));
-  _bandwidthAct->setShortcut(tr("Ctrl+B"));
-  _messageAct->setShortcut(tr("Ctrl+L"));
-  _networkAct->setShortcut(tr("Ctrl+N"));
-  _helpAct->setShortcut(tr("Ctrl+?"));
-  _newIdentityAct->setShortcut(tr("Ctrl+I"));
-  _controlPanelAct->setShortcut(tr("Ctrl+P"));
+  _actionStartStopTor->setShortcut(tr("Ctrl+T"));
+  _actionShowBandwidth->setShortcut(tr("Ctrl+B"));
+  _actionShowMessageLog->setShortcut(tr("Ctrl+L"));
+  _actionShowNetworkMap->setShortcut(tr("Ctrl+N"));
+  _actionShowHelp->setShortcut(tr("Ctrl+?"));
+  _actionNewIdentity->setShortcut(tr("Ctrl+I"));
+  _actionShowControlPanel->setShortcut(tr("Ctrl+P"));
 
   /* Force Qt to put merge the Exit, Configure, and About menubar options into
    * the default menu, even if Vidalia is currently not speaking English. */
-  _configAct->setText("config");
-  _configAct->setMenuRole(QAction::PreferencesRole);
-  _aboutAct->setText("about");
-  _aboutAct->setMenuRole(QAction::AboutRole);
-  _exitAct->setText("quit");
-  _exitAct->setMenuRole(QAction::QuitRole);
+  _actionShowConfig->setText("config");
+  _actionShowConfig->setMenuRole(QAction::PreferencesRole);
+  _actionShowAbout->setText("about");
+  _actionShowAbout->setMenuRole(QAction::AboutRole);
+  _actionExit->setText("quit");
+  _actionExit->setMenuRole(QAction::QuitRole);
 
   /* The File, Help, and Configure menus will get merged into the application
    * menu by Qt. */
@@ -568,25 +568,25 @@ MainWindow::createMenuBar()
     delete _menuBar;
   _menuBar = new QMenuBar(0);
   QMenu *fileMenu = _menuBar->addMenu("File");
-  fileMenu->addAction(_exitAct);
-  fileMenu->addAction(_configAct);
+  fileMenu->addAction(_actionExit);
+  fileMenu->addAction(_actionShowConfig);
 
   QMenu *torMenu = _menuBar->addMenu(tr("Tor"));
-  torMenu->addAction(_startStopAct);
+  torMenu->addAction(_actionStartStopTor);
   torMenu->addSeparator();
-  torMenu->addAction(_newIdentityAct);
+  torMenu->addAction(_actionNewIdentity);
 
   QMenu *viewMenu = _menuBar->addMenu(tr("View"));
-  viewMenu->addAction(_controlPanelAct);
+  viewMenu->addAction(_actionShowControlPanel);
   viewMenu->addSeparator();
-  viewMenu->addAction(_bandwidthAct);
-  viewMenu->addAction(_messageAct);
-  viewMenu->addAction(_networkAct);
+  viewMenu->addAction(_actionShowBandwidth);
+  viewMenu->addAction(_actionShowMessageLog);
+  viewMenu->addAction(_actionShowNetworkMap);
   
   QMenu *helpMenu = _menuBar->addMenu(tr("Help"));
-  _helpAct->setText(tr("Vidalia Help"));
-  helpMenu->addAction(_helpAct);
-  helpMenu->addAction(_aboutAct);
+  _actionShowHelp->setText(tr("Vidalia Help"));
+  helpMenu->addAction(_actionShowHelp);
+  helpMenu->addAction(_actionShowAbout);
 #endif
 }
 
@@ -880,9 +880,9 @@ MainWindow::updateTorStatus(TorStatus status)
       actionText = tr("Start Tor");
       trayIconFile = IMG_TOR_STOPPED;
       statusIconFile = IMG_TOR_STOPPED_48;
-      _startStopAct->setEnabled(true);
-      _startStopAct->setText(actionText);
-      _startStopAct->setIcon(QIcon(IMG_START_TOR_16));
+      _actionStartStopTor->setEnabled(true);
+      _actionStartStopTor->setText(actionText);
+      _actionStartStopTor->setIcon(QIcon(IMG_START_TOR_16));
       ui.lblStartStopTor->setEnabled(true);
       ui.lblStartStopTor->setText(actionText);
       ui.lblStartStopTor->setPixmap(QPixmap(IMG_START_TOR_48));
@@ -890,9 +890,9 @@ MainWindow::updateTorStatus(TorStatus status)
 
       /* XXX: This might need to be smarter if we ever start connecting other
        * slots to these triggered() and clicked() signals. */
-      QObject::disconnect(_startStopAct, SIGNAL(triggered()), this, 0);
+      QObject::disconnect(_actionStartStopTor, SIGNAL(triggered()), this, 0);
       QObject::disconnect(ui.lblStartStopTor, SIGNAL(clicked()), this, 0);
-      connect(_startStopAct, SIGNAL(triggered()), this, SLOT(start()));
+      connect(_actionStartStopTor, SIGNAL(triggered()), this, SLOT(start()));
       connect(ui.lblStartStopTor, SIGNAL(clicked()), this, SLOT(start()));
       setStartupProgressVisible(false);
   } else if (status == Stopping) {
@@ -908,9 +908,9 @@ MainWindow::updateTorStatus(TorStatus status)
       ui.lblStartStopTor->setStatusTip(tr("Stop Tor Now"));
   } else if (status == Started) {
       actionText = tr("Stop Tor");
-      _startStopAct->setEnabled(true);
-      _startStopAct->setText(actionText);
-      _startStopAct->setIcon(QIcon(IMG_STOP_TOR_16));
+      _actionStartStopTor->setEnabled(true);
+      _actionStartStopTor->setText(actionText);
+      _actionStartStopTor->setIcon(QIcon(IMG_STOP_TOR_16));
       ui.lblStartStopTor->setEnabled(true);
       ui.lblStartStopTor->setText(actionText);
       ui.lblStartStopTor->setPixmap(QPixmap(IMG_STOP_TOR_48));
@@ -918,15 +918,15 @@ MainWindow::updateTorStatus(TorStatus status)
             
       /* XXX: This might need to be smarter if we ever start connecting other
        * slots to these triggered() and clicked() signals. */
-      QObject::disconnect(_startStopAct, SIGNAL(triggered()), this, 0);
+      QObject::disconnect(_actionStartStopTor, SIGNAL(triggered()), this, 0);
       QObject::disconnect(ui.lblStartStopTor, SIGNAL(clicked()), this, 0);
-      connect(_startStopAct, SIGNAL(triggered()), this, SLOT(stop()));
+      connect(_actionStartStopTor, SIGNAL(triggered()), this, SLOT(stop()));
       connect(ui.lblStartStopTor, SIGNAL(clicked()), this, SLOT(stop()));
   } else if (status == Starting)  {
       statusText = tr("Starting the Tor software");
       trayIconFile = IMG_TOR_STARTING;
       statusIconFile = IMG_TOR_STARTING_48;
-      _startStopAct->setEnabled(false);
+      _actionStartStopTor->setEnabled(false);
       ui.lblStartStopTor->setText(tr("Starting Tor"));
       ui.lblStartStopTor->setEnabled(false);
       ui.lblStartStopTor->setStatusTip(statusText);
@@ -1252,7 +1252,7 @@ MainWindow::disconnected()
   }
   
   /*XXX We should warn here if we get disconnected when we didn't intend to */
-  _newIdentityAct->setEnabled(false);
+  _actionNewIdentity->setEnabled(false);
   ui.lblNewIdentity->setEnabled(false);
   _isVidaliaRunningTor = false;
 }
@@ -1350,7 +1350,7 @@ MainWindow::authenticated()
   }
   
   /* Let people click on their beloved "New Identity" button */
-  _newIdentityAct->setEnabled(true);
+  _actionNewIdentity->setEnabled(true);
   ui.lblNewIdentity->setEnabled(true);
 
   /* Register for any pertinent asynchronous events. */
@@ -1729,7 +1729,7 @@ MainWindow::newIdentity()
                          "old connections.");
 
     /* Disable the New Identity button for MIN_NEWIDENTITY_INTERVAL */
-    _newIdentityAct->setEnabled(false);
+    _actionNewIdentity->setEnabled(false);
     ui.lblNewIdentity->setEnabled(false);
     QTimer::singleShot(MIN_NEWIDENTITY_INTERVAL, 
                        this, SLOT(enableNewIdentity()));
@@ -1751,7 +1751,7 @@ void
 MainWindow::enableNewIdentity()
 {
   if (_torControl->isConnected()) {
-    _newIdentityAct->setEnabled(true);
+    _actionNewIdentity->setEnabled(true);
     ui.lblNewIdentity->setEnabled(true);
   }
 }
