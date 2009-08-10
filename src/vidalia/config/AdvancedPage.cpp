@@ -222,7 +222,8 @@ AdvancedPage::browseTorConfig()
   /* Prompt the user to select a file or create a new one */
   QString filename = QFileDialog::getOpenFileName(this, 
                        tr("Select Tor Configuration File"),
-                       QFileInfo(ui.lineTorConfig->text()).fileName());
+                       QFileInfo(ui.lineTorConfig->text()).filePath(),
+                       tr("Tor Configuration File (torrc);;All Files (*)"));
  
   /* Make sure a filename was selected */
   if (filename.isEmpty()) {
