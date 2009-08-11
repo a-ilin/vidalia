@@ -206,13 +206,18 @@ if (APPLE)
       "NAME;TARGET;LIBRARY;APP_BUNDLE;DEPENDS_FRAMEWORKS;DEPENDS_LIBRARIES" ""
       ${ARGN}
     )
- 
+    set(ditto_ARGS "--rsrc")
+    foreach (it ${CMAKE_OSX_ARCHITECTURES})
+      set(ditto_ARGS ${ditto_ARGS} --arch ${it})
+    endforeach(it)
+
     set(framework "${INSTALL_QT4_FRAMEWORK_NAME}.framework/Versions/4")
     set(outdir "${INSTALL_QT4_FRAMEWORK_APP_BUNDLE}/Contents/Frameworks/${framework}")
     get_filename_component(libname "${INSTALL_QT4_FRAMEWORK_LIBRARY}" NAME)
     add_custom_command(TARGET ${INSTALL_QT4_FRAMEWORK_TARGET}
       COMMAND ${CMAKE_COMMAND} -E make_directory ${outdir}
-      COMMAND ${CMAKE_COMMAND} -E copy ${INSTALL_QT4_FRAMEWORK_LIBRARY} ${outdir}/
+      COMMAND ditto ${ditto_ARGS}
+        ${INSTALL_QT4_FRAMEWORK_LIBRARY} ${outdir}/
       COMMAND install_name_tool -id
         @executable_path/../Frameworks/${framework}/${libname} ${outdir}/${libname}
     )
@@ -233,12 +238,17 @@ if (APPLE)
       "TARGET;LIBRARY;APP_BUNDLE;DEPENDS_FRAMEWORKS;DEPENDS_LIBRARIES" ""
       ${ARGN}
     )
+    set(ditto_ARGS "--rsrc")
+    foreach (it ${CMAKE_OSX_ARCHITECTURES})
+      set(ditto_ARGS ${ditto_ARGS} --arch ${it})
+    endforeach(it)
 
     set(outdir "${INSTALL_DYLIB_APP_BUNDLE}/Contents/MacOS/lib/")
     get_filename_component(libname "${INSTALL_DYLIB_LIBRARY}" NAME)
     add_custom_command(TARGET ${INSTALL_DYLIB_TARGET}
       COMMAND ${CMAKE_COMMAND} -E make_directory ${outdir}
-      COMMAND ${CMAKE_COMMAND} -E copy ${INSTALL_DYLIB_LIBRARY} ${outdir}/
+      COMMAND ditto  ${ditto_ARGS} 
+        ${INSTALL_DYLIB_LIBRARY} ${outdir}/
       COMMAND install_name_tool -id @executable_path/lib/${libname}
     )
     vidalia_install_name_tool(${outir}/${libname}
