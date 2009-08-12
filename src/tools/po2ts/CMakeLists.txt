@@ -21,14 +21,9 @@ add_executable(po2ts ${po2ts_SRCS})
 ## Link the executable with the appropriate Qt libraries
 target_link_libraries(po2ts
   ${QT_QTCORE_LIBRARY}
+  ${QT_QTCORE_LIB_DEPENDENCIES}
   ${QT_QTXML_LIBRARY}
 )
-if (APPLE)
-  target_link_libraries(po2ts
-    "-framework AppKit"
-    iconv
-  )
-endif(APPLE)
 
 ## Remember the location of po2ts so we can use it in custom commands
 get_target_property(PO2TS_EXECUTABLE po2ts LOCATION)

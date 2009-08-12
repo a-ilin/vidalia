@@ -42,14 +42,9 @@ add_executable(ts2po ${ts2po_SRCS})
 ## Link the executable with the appropriate Qt libraries
 target_link_libraries(ts2po
   ${QT_QTCORE_LIBRARY}
+  ${QT_QTCORE_LIB_DEPENDENCIES}
   ${QT_QTXML_LIBRARY}
 )
-if (APPLE)
-  target_link_libraries(ts2po
-    "-framework AppKit"
-    iconv
-  )
-endif(APPLE)
 
 ## Remember the location of ts2po so we can use it in custom commands
 get_target_property(TS2PO_EXECUTABLE ts2po LOCATION)
