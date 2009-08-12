@@ -18,7 +18,7 @@ Libevent
 
 
 Qt
-4. Download and extract the open source version of Qt 4.2 or higher from 
+4. Download and extract the open source version of Qt 4.3 or higher from 
    Trolltech at the following address:
    http://www.trolltech.com/developer/downloads/qt/mac
 
