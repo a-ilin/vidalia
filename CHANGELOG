@@ -5,6 +5,8 @@
   o Use 'ditto' to strip the architectures we don't want from the Qt
     frameworks installed into the app bundle with the dist-osx,
     dist-osx-bundle and dist-osx-split-bundle build targets.
+  o Fix a bug in the CMakeLists.txt files for ts2po and po2ts that caused
+    build errors on Panther for those two tools.
 
 
 0.2.1   03-Aug-2009
