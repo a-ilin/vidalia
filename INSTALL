@@ -175,7 +175,6 @@ You can then compile Vidalia from the command line by simply running:
 
 Available Configuration Options
 -------------------------------
-
 You can customize your Vidalia build by supplying arguments and values to the
 `cmake` commands above. Each of the configuration options can be specified on
 the command line and follows the format "-D <var>:<type>=<value>
@@ -217,4 +216,28 @@ Don't forget the dot(s) at the end!
 CMake also supports other generators besides Makefiles on certain platforms. 
 See  'cmake --help' or 'man cmake' (on non-Windows platforms) for more 
 information about supported generators and configuration options.
+
+
+Additional Build Targets
+-------------------------
+Vidalia contains a number of additional CMake build targets to assist in
+building platform-specific packages. The targets are:
+
+  'dist'                    Creates a Vidalia source code tarball.
+
+  'dist-osx'                Creates a Vidalia-only Mac OS X .dmg.
+
+  'dist-osx-bundle'         Creates a Vidalia bundle .dmg. See
+                            pkg/osx/build-bundle.txt for additional
+                            information on the CMake options necessary to create
+                            a proper OS X bundle.
+
+  'dist-osx-split-bundle'   Creates a "split" Mac OS X bundle. See 
+                            pkg/osx/build-bundle.txt for additional
+                            information on the CMake options necessary to create
+                            a proper OS X bundle.
+
+  'dist-win32'              Creates a Windows .msi package. You will also
+                            need to define -DWIX_BINARY_DIR=<path-to-WiX>
+                            in order to use this build target.
 
