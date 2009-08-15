@@ -8,15 +8,12 @@ This document describes the procedure for building an executable Windows
 installer for Vidalia. For information on building a Windows bundle installer,
 please see Vidalia's pkg/win32/build-bundle.txt.
 
-Before building the Vidalia installer for the first time, you will need to
-download and install a recent version of NSIS (Nullsoft Scriptable Install
-System). NSIS can be downloaded from the following website:
-
-    http://nsis.sourceforge.net/Download 
-
-You will also need all of the prerequisites necessary for building Vidalia,
-such as Qt and CMake. These requirements are detailed in the INSTALL file, in
-the root of Vidalia's source tree.
+You will all of the prerequisites necessary for building Vidalia, such as
+Qt and CMake. These requirements are detailed in the INSTALL file, in the
+root of Vidalia's source tree. If you need to build OpenSSL from source
+(Step 2 below), you will also need Microsoft Visual Studio installed.
+These instructions were tested with Visual Studio 2008 Professional, but
+may work with earlier versions of Visual Studio as well.
 
 To sign the resulting installer suitable for distribution, you will need to 
 install GnuPG or PGP. GnuPG can be downloaded here:
@@ -24,64 +21,129 @@ install GnuPG or PGP. GnuPG can be downloaded here:
   http://www.gnupg.org/download/index.html
 
 
-1. Compiling the Installer
+The following steps describe the process used to create Vidalia's
+"release" installers. Note that these instructions use the character ">"
+to represent a command prompt. Yours probably looks slightly different.
 
-The following steps describe the process used to create Vidalia's "release"
-executable installers.
 
+1. Install the Windows Installer XML Toolset
 
-1.1. Compile a 'release' Version of Vidalia
-
-  First, extract Vidalia's source to a directory, or fetch the latest
-  revision from our Subversion repository.
-
-    http://trac.vidalia-project.net/wiki/GettingTheCode
-
-  In the root of Vidalia's source tree, create a build directory:
-
-    mkdir build
-    cd build
+Vidalia uses the Windows Installer XML Toolset (WiX) to create a .msi
+installer file from a source file generated from pkg/win32/vidalia.wxs.in,
+so you must have WiX 3.0 or later installed.  This only needs to be done
+once.
   
-  Configure Vidalia as follows:
+If you already have WiX installed, you can skip to the next step.
+Otherwise, download and run the most recent WiX installer from here: 
 
-    cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=minsizerel \
-          -DMINGW_BINARY_DIR=C:\<PathToMinGW>\bin            \
-          -DOPENSSL_BINARY_DIR=C:\<PathToOpenSSL>\bin ..
+    http://wix.sourceforge.net/downloadv3.html
 
-  MINGW_BINARY_DIR should point to the MinGW installation directory that
-  contains mingwm10.dll. OPENSSL_BINARY_DIR should point to the OpenSSL
-  installation directory that contains ssleay32.dll and libeay32.dll.
 
-  Finally, compile Vidalia by running:
+2. Download and build OpenSSL
+
+The OpenSSL DLL files shipped in Vidalia's Windows installers are compiled
+with the static version of the Microsoft Visual C Runtime (MSVCRT).  Doing
+so allows Qt's OpenSSL support to function on computers without the latest
+MSVCRT installed, which is important for portable installations such as
+the Tor Browser Bundle.
+
+If you have previously completed this step, you can skip to Step 3. If you
+do not want to compile OpenSSL from source, you can use the pre-built
+OpenSSL libraries available here:
+
+    http://pasiphae.cs.rpi.edu/~edmanm/vidalia/openssl-0.9.8k.zip
+    http://pasiphae.cs.rpi.edu/~edmanm/vidalia/openssl-0.9.8k.zip.asc (sig)
+
+Otherwise, continue with the steps below.
+
+2.1. Download the OpenSSL 0.9.8k source code from here:
+
+    http://www.openssl.org/source/
+
+You should verify PGP signature or SHA1 hash of the file you download.
+
+2.2. Extract the source code to a directory on your hard drive. In the
+interest of simplifying exposition, let %OPENSSLDIR% denote the location
+to which you extract the OpenSSL source code.
+
+2.3. Configure the OpenSSL source code by running:
+
+    > perl Configure VC-WIN32 --prefix C:/OpenSSL/0.9.8k
+
+You can replace "C:/OpenSSL/0.9.8k" with another directory of your choice,
+but you MUST use forward slashes in the path.
+
+2.4. Build the assembly language files by running:
+
+    > ms\do_masm
+
+2.5. Open ms\ntdll.mak in a text editor and find the line that starts with
+"CFLAG=". Change the "/MD" argument near the start of that line to "/MT".
+
+2.6. In the same file, find the line that starts with "LFLAGS". Add the
+argument "/manifest:no" to the end of it. Save your changes and close the
+editor.
+
+2.7. From a Visual Studio command prompt, compile OpenSSL by running:
+
+    > nmake -f ms\ntdll.mak
+
+2.8. After OpenSSL has finished compiling, you can test and install it by
+running:
+
+    > nmake -f ms\ntdll.mak test
+    > nmake -f ms\ntdll.mak install
+
+2.9. After the "install" command completes, your OpenSSL libraries will be
+copied to the install prefix specified in Step 2.3 above.
+
+
+3. Compile a 'release' Version of Vidalia
+
+3.1. First, extract Vidalia's source to a directory, or fetch the latest
+revision from our Subversion repository.
+
+    https://trac.vidalia-project.net/wiki/GettingTheCode
+
+3.2. In the root of Vidalia's source tree, create a build directory and
+'cd' into it:
+
+    > mkdir build
+    > cd build
   
-    make
+3.3. Configure Vidalia as follows:
 
-1.3. Create the Executable Installer
+    > cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=minsizerel \
+            -DMINGW_BINARY_DIR=C:\<PathToMinGW>\bin            \
+            -DOPENSSL_BINARY_DIR=C:\<PathToOpenSSL>\bin        \
+            -DWIX_BINARY_DIR=C:\<PathToWiX>\bin ..
 
-  Open Windows Explorer and navigate to
- 
-    $BUILDIR\pkg\win32
+MINGW_BINARY_DIR should point to the MinGW installation directory that
+contains mingwm10.dll. OPENSSL_BINARY_DIR should point to the OpenSSL
+directory that contains ssleay32.dll and libeay32.dll. If you compiled
+OpenSSL from source in Step 2.
+
+3.4. Finally, compile Vidalia by running:
   
-  where "$BUILDIR" is replaced by the path to the build directory you created
-  in Step 1.1.2 above.
+    > make
 
-  Locate the file "vidalia.nsi" and right-click on it. From the context menu,
-  select "Compile NSIS Script". You will see an NSIS window appear and display
-  some progress information while it compiles the installer. When it completes,
-  you will have a complete Vidalia installation executable located in:
+4. Create the Installer .msi File
 
-    $BUILDIR\pkg\win32\vidalia-$VERSION.exe
+After the previous 'make' command has completed, you can run:
 
-  where "$VERSION" is the version of Vidalia for which the installer was built.
+    > make dist-win32
+
+When it completes, you will have a complete Vidalia installer located in
+the current directory named 'vidalia-$VERSION.msi', where $VERSION is the
+version of the Vidalia source code you compiled.
 
 
-1.4. Sign the Package (optional, recommended)
+4.1. Sign the completed installer (optional, recommended)
 
-  From the root of Vidalia's source tree, run the following commands:
+From the root of Vidalia's source tree, run the following commands:
 
-    cd pkg\win32
-    gpg -ba vidalia-$VERSION.exe
+    > gpg -ba vidalia-$VERSION.msi
 
-  where "$VERSION" is replaced by the version of Vidalia for which you just
-  built a Windows installer.
+where "$VERSION" is replaced by the version of Vidalia for which you just
+built a Windows installer.
 
