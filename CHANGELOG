@@ -1,4 +1,4 @@
-0.2.2   xx-xxx-2009
+0.2.2   14-Aug-2009
   o When the user clicks "Browse" in the Advanced settings page to locate
     a new torrc, set the initial directory shown in the file dialog to the
     current location of the user's torrc. (Ticket #505)
@@ -7,6 +7,11 @@
     dist-osx-bundle and dist-osx-split-bundle build targets.
   o Fix a bug in the CMakeLists.txt files for ts2po and po2ts that caused
     build errors on Panther for those two tools.
+  o Include rebuilt OpenSSL libraries in the Windows packages that are
+    built with the static (/MT) version of the Microsoft Visual C++
+    Runtime. Otherwise, we would require users to install the MSVC
+    Redistributable, which doesn't work for portable installations such as
+    the Tor Browser Bundle.
 
 
 0.2.1   03-Aug-2009
