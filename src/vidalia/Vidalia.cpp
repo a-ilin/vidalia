@@ -479,8 +479,12 @@ Vidalia::copyDefaultSettingsFile() const
   if (path) {
     QString defaultConfFile = QString::fromLocal8Bit(path);
     QFileInfo fi(defaultConfFile);
-    if (fi.exists())
-      QFile::copy(defaultConfFile, VidaliaSettings::settingsFile());
+    if (fi.exists()) {
+      QFileInfo out(VidaliaSettings::settingsFile());
+      if (! out.dir().exists())
+        out.dir().mkpath(".");
+      QFile::copy(defaultConfFile, out.absoluteFilePath());
+    }
   }
   CFRelease(confUrlRef);
   CFRelease(pathRef);

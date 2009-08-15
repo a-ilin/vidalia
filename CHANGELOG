@@ -1,3 +1,10 @@
+0.2.3   xx-xxx-2009
+  o Create the data directory before trying to copy over the default
+    Vidalia configuration file from inside the application bundle on Mac 
+    OS X. Affects only OS X drag-and-drop installer users without a
+    previous Vidalia installation.
+
+
 0.2.2   14-Aug-2009
   o When the user clicks "Browse" in the Advanced settings page to locate
     a new torrc, set the initial directory shown in the file dialog to the
