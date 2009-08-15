@@ -12,6 +12,8 @@
     Runtime. Otherwise, we would require users to install the MSVC
     Redistributable, which doesn't work for portable installations such as
     the Tor Browser Bundle.
+  o Remove the NSIS file for the Vidalia installer since we now ship
+    MSI-based installers on Windows.
 
 
 0.2.1   03-Aug-2009

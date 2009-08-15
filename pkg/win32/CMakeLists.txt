@@ -37,11 +37,6 @@ endif(NOT TORBUTTON_PACKAGE_DIR)
 
 ## Windows Packages
 configure_file(
-  ${CMAKE_CURRENT_SOURCE_DIR}/vidalia.nsi.in
-  ${CMAKE_CURRENT_BINARY_DIR}/vidalia.nsi
-  @ONLY
-)
-configure_file(
   ${CMAKE_CURRENT_SOURCE_DIR}/vidalia.wxs.in
   ${CMAKE_CURRENT_BINARY_DIR}/vidalia.wxs
   @ONLY
