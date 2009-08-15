@@ -221,7 +221,7 @@ information about supported generators and configuration options.
 Additional Build Targets
 -------------------------
 Vidalia contains a number of additional CMake build targets to assist in
-building platform-specific packages. The targets are:
+building code documentation and platform-specific packages. The targets are:
 
   'dist'                    Creates a Vidalia source code tarball.
 
@@ -240,4 +240,9 @@ building platform-specific packages. The targets are:
   'dist-win32'              Creates a Windows .msi package. You will also
                             need to define -DWIX_BINARY_DIR=<path-to-WiX>
                             in order to use this build target.
+
+  'doxygen'                 Creates the Doxygen-generated code
+                            documentation for Vidalia's source. You must
+                            have Doxygen installed for this target to
+                            function.
 
