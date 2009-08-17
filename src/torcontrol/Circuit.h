@@ -19,6 +19,7 @@
 
 #include <QCoreApplication>
 #include <QStringList>
+#include <QMetaType>
 
 /** Circuit IDs contains 1-16 alphanumeric ASCII characters. */
 typedef QString CircuitId;
@@ -74,6 +75,8 @@ private:
   QStringList _ids;    /**< IDs of the routers in the circuit. */
   bool _isValid;
 };
+
+Q_DECLARE_METATYPE(Circuit);
 
 /** A collection of circuits. */
 typedef QList<Circuit> CircuitList;

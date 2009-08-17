@@ -21,7 +21,7 @@
 
 
 SendCommandEvent::SendCommandEvent(const ControlCommand &cmd, SendWaiter *w)
-  : QEvent((QEvent::Type)CustomEventType::SendCommandEvent)
+  : QEvent(QEvent::User)
 {
   _cmd    = cmd;
   _waiter = w;

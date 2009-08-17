@@ -55,10 +55,26 @@ NetViewer::NetViewer(QWidget *parent)
 
   /* Get the TorControl object */
   _torControl = Vidalia::torControl();
-  _torControl->setEvent(TorEvents::NewDescriptor, this, true);
-  _torControl->setEvent(TorEvents::CircuitStatus, this, true);
-  _torControl->setEvent(TorEvents::StreamStatus,  this, true);
-  _torControl->setEvent(TorEvents::AddressMap,    this, true);
+  connect(_torControl, SIGNAL(authenticated()),
+          this, SLOT(onAuthenticated()));
+  connect(_torControl, SIGNAL(disconnected()),
+          this, SLOT(onDisconnected()));
+
+  _torControl->setEvent(TorEvents::CircuitStatus);
+  connect(_torControl, SIGNAL(circuitStatusChanged(Circuit)),
+          this, SLOT(addCircuit(Circuit)));
+
+  _torControl->setEvent(TorEvents::StreamStatus);
+  connect(_torControl, SIGNAL(streamStatusChanged(Stream)),
+          this, SLOT(addStream(Stream)));
+
+  _torControl->setEvent(TorEvents::AddressMap);
+  connect(_torControl, SIGNAL(addressMapped(QString, QString, QDateTime)),
+          this, SLOT(addressMapped(QString, QString, QDateTime)));
+
+  _torControl->setEvent(TorEvents::NewDescriptor);
+  connect(_torControl, SIGNAL(newDescriptors(QStringList)),
+          this, SLOT(newDescriptors(QStringList)));
 
   /* Change the column widths of the tree widgets */
   ui.treeRouterList->header()->
@@ -119,10 +135,6 @@ NetViewer::NetViewer(QWidget *parent)
           _torControl, SLOT(closeCircuit(CircuitId)));
   connect(ui.treeCircuitList, SIGNAL(closeStream(StreamId)),
           _torControl, SLOT(closeStream(StreamId)));
-
-  /* Respond to changes in the status of the control connection */
-  connect(_torControl, SIGNAL(authenticated()), this, SLOT(onAuthenticated()));
-  connect(_torControl, SIGNAL(disconnected()), this, SLOT(onDisconnected())); 
 
   /* Connect the slot to find out when geoip information has arrived */
   connect(&_geoip, SIGNAL(resolved(int, QList<GeoIp>)), 
@@ -186,35 +198,6 @@ NetViewer::onDisconnected()
   clear();
   _refreshTimer.stop();
   ui.actionRefresh->setEnabled(false);
-}
-
-/** Custom event handler. Catches the new descriptor events. */
-void
-NetViewer::customEvent(QEvent *event)
-{
-  int type = event->type();
-  
-  if (type == CustomEventType::NewDescriptorEvent) {
-    /* New router descriptor, so load it and add it to the list */
-    NewDescriptorEvent *nde = (NewDescriptorEvent *)event;
-    newDescriptors(nde->descriptorIDs());
-  } else if (type == CustomEventType::CircuitEvent) {
-    /* New or updated circuit information */
-    CircuitEvent *ce = (CircuitEvent *)event;
-    addCircuit(ce->circuit());
-  } else if (type == CustomEventType::StreamEvent) {
-    /* New or updated stream information */
-    StreamEvent *se = (StreamEvent *)event;
-    addStream(se->stream());
-  } else if (type == CustomEventType::AddressMapEvent) {
-    /* New or updated address mapping. We store the reverse of the new
-     * mapping, so we can go from an IP address back to a hostname. */
-    AddressMapEvent *ae = (AddressMapEvent *)event;
-    _addressMap.add(ae->to(), ae->from(), ae->expires());
-  }
-
-  /* Update the world map */
-  _map->update();
 }
 
 /** Reloads the lists of routers, circuits that Tor knows about */
@@ -312,6 +295,13 @@ NetViewer::addStream(const Stream &stream)
   } else {
     ui.treeCircuitList->addStream(stream);
   }
+}
+
+void
+NetViewer::addressMapped(const QString &from, const QString &to,
+                         const QDateTime &expires)
+{
+  _addressMap.add(to, from, expires);
 }
 
 /** Called when the user selects the "Help" action from the toolbar. */

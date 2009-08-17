@@ -17,6 +17,7 @@
 #ifndef _TORCONTROL_H
 #define _TORCONTROL_H
 
+#include "tcglobal.h"
 #include "ControlConnection.h"
 #include "TorProcess.h"
 #include "TorEvents.h"
@@ -24,8 +25,9 @@
 #include "RouterDescriptor.h"
 #include "RouterStatus.h"
 #include "BootstrapStatus.h"
+#include "Circuit.h"
+#include "Stream.h"
 #include "AddressMap.h"
-#include "ProtocolInfo.h"
 
 #if defined(Q_OS_WIN32)
 #include "TorService.h"
@@ -35,8 +37,9 @@
 #include <QHash>
 #include <QList>
 #include <QStringList>
-#include <QVariant>
+#include <QVariantMap>
 
+class ProtocolInfo;
 
 /** DescriptorAnnotations stores a map of annotation keys to (possibly empty)
  * annotation values. */
@@ -74,7 +77,7 @@ public:
   /** Sends an authentication cookie to Tor. */
   bool authenticate(const QByteArray cookie, QString *errmsg = 0);
   /** Sends an authentication password to Tor. */
-  bool authenticate(const QString password = QString(), QString *errmsg = 0);
+  bool authenticate(const QString &password = QString(), QString *errmsg = 0);
   
   /** Sends a PROTOCOLINFO command to Tor and parses the response. */
   ProtocolInfo protocolInfo(QString *errmsg = 0);
@@ -84,7 +87,7 @@ public:
 
   /** Returns true if Tor either has an open circuit or (on Tor >= 
    * 0.2.0.1-alpha) has previously decided it's able to establish a circuit. */
-  bool circuitEstablished();
+  bool isCircuitEstablished();
 
   /** Sends a GETINFO message to Tor based on the given keys */
   bool getInfo(QHash<QString,QString> &map, QString *errmsg = 0);
@@ -99,7 +102,6 @@ public:
    * QVariant containing the value returned by Tor. Returns a default
    * constructed QVariant on failure. */
   QVariant getInfo(const QString &key, QString *errmsg = 0);
-
 
   /** Sends a signal to Tor */
   bool signal(TorSignal::Signal sig, QString *errmsg = 0);
@@ -125,13 +127,12 @@ public:
   /** Sets an event and its handler. If add is true, then the event is added,
    * otherwise it is removed. If set is true, then the given event will be
    * registered with Tor. */
-  bool setEvent(TorEvents::TorEvent e, QObject *obj, 
-                bool add, bool set = true, QString *errmsg = 0);
+  bool setEvent(TorEvents::Event e, bool add = true, bool set = true,
+                QString *errmsg = 0);
   /** Registers for a set of logging events according to the given filter. */
-  bool setLogEvents(uint filter, QObject *obj, QString *errmsg = 0);
+  bool setLogEventFilter(uint filter, QString *errmsg = 0);
   /** Register events of interest with Tor */
   bool setEvents(QString *errmsg = 0);
-  
 
   /** Sets each configuration key in <b>map</b> to the value associated with its key. */
   bool setConf(QHash<QString,QString> map, QString *errmsg = 0);
@@ -231,13 +232,81 @@ signals:
   /** Emitted when Tor rejects our authentication attempt. */
   void authenticationFailed(QString errmsg);
 
+  /** Emitted when Tor writes the message <b>msg</b> to the control port
+   * with message severity <b>level</b>.
+   */
+  void logMessage(tc::Severity level, const QString &msg);
+
+  /** Emitted when Tor sends a bandwidth usage update (roughly once every
+   * second). <b>bytesReceived</b> is the number of bytes read by Tor over
+   * the previous second and <b>bytesWritten</b> is the number of bytes
+   * sent over the same interval.
+   */
+  void bandwidthUpdate(quint64 bytesReceived, quint64 bytesSent);
+
+  /** Emitted when the stream status of <b>stream</b> has changed.
+   */
+  void streamStatusChanged(const Stream &stream);
+
+  /** Emitted when the circuit status of <b>circuit</b> has changed.
+   */
+  void circuitStatusChanged(const Circuit &circuit);
+
+  /** Emitted when Tor has mapped the address <b>from</b> to the address
+   * <b>to</b>. <b>expires</b> indicates the time at which when the address
+   * mapping will no longer be considered valid.
+   */
+  void addressMapped(const QString &from, const QString &to,
+                     const QDateTime &expires);
+
+  /** Emitted when Tor has received one or more new router descriptors.
+   * <b>ids</b> contains a list of digests of the new descriptors.
+   */
+  void newDescriptors(const QStringList &ids);
+
+  /** Indicates Tor has been able to successfully establish one or more
+   * circuits.
+   */
+  void circuitEstablished();
+
+  /** Indicates that Tor has decided the user's Tor software <b>version</b>
+   * is no longer recommended for some <b>reason</b>. <b>recommended</b> is
+   * a list of Tor software versions that are considered current.
+   */
+  void dangerousTorVersion(tc::TorVersionStatus reason,
+                           const QString &version,
+                           const QStringList &recommended);
+
+  /** Emitted during Tor's startup process to indicate how far in its
+   * bootstrapping process it has progressed. <b>status</b> may indicate
+   * the current bootstrapping stage or an error during bootstrapping.
+   */
+  void bootstrapStatusChanged(const BootstrapStatus &status);
+
+  /** Emitted when the user attempts to establish a connection to some
+   * destination on port <b>port</b>, which is a port known to use
+   * plaintext connections (as determined by Tor's WarnPlaintextPorts and
+   * RejectPlaintextPorts torrc options). <b>rejected</b> indicates whether
+   * Tor rejected the connection or permitted it to connect anyway.
+   */
+  void dangerousPort(quint16 port, bool rejected);
+
+  /** Emitted when Tor detects a problem with a SOCKS connection from the
+   * user, such as a bad hostname, dangerous SOCKS protocol type, or a bad
+   * hostname. <b>type</b> indicates the type of error encountered and
+   * <b>destination</b> (if non-empty) specifies the attempted connection
+   * destination address or hostname.
+   */
+  void socksError(tc::SocksError type, const QString &destination);
+
 private:
   /** Instantiates a connection used to talk to Tor's control port */
   ControlConnection* _controlConn;
   /** Manages and monitors the Tor process */
   TorProcess* _torProcess;
   /** Keep track of which events we're interested in */
-  TorEvents _torEvents;
+  TorEvents* _eventHandler;
+  TorEvents::Events _events;
   /** The version of Tor we're currently talking to. */
   QString _torVersion;
 #if defined(Q_OS_WIN32)
@@ -258,7 +327,7 @@ private:
 private slots:
   void onStopped(int exitCode, QProcess::ExitStatus exitStatus);
   void onDisconnected();
-  void onLogStdout(QString severity, QString message);
+  void onLogStdout(const QString &severity, const QString &message);
   void onAuthenticated();
 };
 

@@ -32,7 +32,7 @@
 #define SETTING_ENABLE_LOGFILE      "EnableLogFile"
 #define SETTING_LOGFILE             "LogFile"
 #define DEFAULT_MSG_FILTER \
-  (LogEvent::Error|LogEvent::Warn|LogEvent::Notice)
+  (tc::ErrorSeverity|tc::WarnSeverity|tc::NoticeSeverity)
 #define DEFAULT_MAX_MSG_COUNT       50
 #define DEFAULT_ENABLE_LOGFILE      false
 #if defined(Q_OS_WIN32)
@@ -49,10 +49,10 @@
 
 /** Constructor. The constructor will load the message log's settings from
  * VidaliSettings and register for log events according to the most recently
- * set severity filter. 
+ * set severity filter.
  * \param torControl A TorControl object used to register for log events.
  * \param parent The parent widget of this MessageLog object.
- * \param flags Any desired window creation flags. 
+ * \param flags Any desired window creation flags.
  */
 MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
 : VidaliaWindow("MessageLog", parent, flags)
@@ -62,26 +62,27 @@ MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
 
   /* Create necessary Message Log QObjects */
   _torControl = Vidalia::torControl();
- 
+  connect(_torControl, SIGNAL(logMessage(tc::Severity, QString)),
+          this, SLOT(log(tc::Severity, QString)));
+
   /* Bind events to actions */
   createActions();
 
   /* Set tooltips for necessary widgets */
   setToolTips();
-  
+
   /* Load the message log's stored settings */
   loadSettings();
 
-  /* Sort in ascending chronological order */ 
-  ui.lstMessages->sortItems(LogTreeWidget::TimeColumn, 
-                            Qt::AscendingOrder);
+  /* Sort in ascending chronological order */
+  ui.lstMessages->sortItems(LogTreeWidget::TimeColumn,
+                             Qt::AscendingOrder);
 }
 
 /** Default Destructor. Simply frees up any memory allocated for member
  * variables. */
 MessageLog::~MessageLog()
 {
-  _torControl->setLogEvents(0, this);
   _logFile.close();
 }
 
@@ -89,29 +90,29 @@ MessageLog::~MessageLog()
 void
 MessageLog::createActions()
 {
-  connect(ui.actionSave_Selected, SIGNAL(triggered()), 
-      this, SLOT(saveSelected()));
-  
-  connect(ui.actionSave_All, SIGNAL(triggered()), 
-      this, SLOT(saveAll()));
-  
+  connect(ui.actionSave_Selected, SIGNAL(triggered()),
+          this, SLOT(saveSelected()));
+
+  connect(ui.actionSave_All, SIGNAL(triggered()),
+          this, SLOT(saveAll()));
+
   connect(ui.actionCopy, SIGNAL(triggered()),
-      this, SLOT(copy()));
+          this, SLOT(copy()));
 
   connect(ui.actionFind, SIGNAL(triggered()),
-      this, SLOT(find()));
+          this, SLOT(find()));
 
   connect(ui.actionHelp, SIGNAL(triggered()),
-      this, SLOT(help()));
-  
+          this, SLOT(help()));
+
   connect(ui.btnSaveSettings, SIGNAL(clicked()),
-      this, SLOT(saveSettings()));
+          this, SLOT(saveSettings()));
 
   connect(ui.btnCancelSettings, SIGNAL(clicked()),
-      this, SLOT(cancelChanges()));
+          this, SLOT(cancelChanges()));
 
   connect(ui.btnBrowse, SIGNAL(clicked()),
-      this, SLOT(browse()));
+          this, SLOT(browse()));
 
 #if defined(Q_WS_MAC)
   ui.actionHelp->setShortcut(QString("Ctrl+?"));
@@ -136,7 +137,7 @@ MessageLog::setToolTips()
   ui.chkTorInfo->setToolTip(tr("Messages that appear frequently \n"
                                "during normal Tor operation."));
   ui.chkTorDebug->setToolTip(tr("Hyper-verbose messages primarily of \n"
-                                "interest to Tor developers.")); 
+                                "interest to Tor developers."));
 }
 
 /** Called when the user changes the UI translation. */
@@ -168,13 +169,13 @@ MessageLog::loadSettings()
 
   /* Set the checkboxes accordingly */
   _filter = getSetting(SETTING_MSG_FILTER, DEFAULT_MSG_FILTER).toUInt();
-  ui.chkTorErr->setChecked(_filter & LogEvent::Error);
-  ui.chkTorWarn->setChecked(_filter & LogEvent::Warn);
-  ui.chkTorNote->setChecked(_filter & LogEvent::Notice);
-  ui.chkTorInfo->setChecked(_filter & LogEvent::Info);
-  ui.chkTorDebug->setChecked(_filter & LogEvent::Debug);
+  ui.chkTorErr->setChecked(_filter & tc::ErrorSeverity);
+  ui.chkTorWarn->setChecked(_filter & tc::WarnSeverity);
+  ui.chkTorNote->setChecked(_filter & tc::NoticeSeverity);
+  ui.chkTorInfo->setChecked(_filter & tc::InfoSeverity);
+  ui.chkTorDebug->setChecked(_filter & tc::DebugSeverity);
   registerLogEvents();
- 
+
   /* Filter the message log */
   QApplication::setOverrideCursor(Qt::WaitCursor);
   ui.lstMessages->filter(_filter);
@@ -186,9 +187,20 @@ MessageLog::loadSettings()
 void
 MessageLog::registerLogEvents()
 {
-  QString errmsg;
   _filter = getSetting(SETTING_MSG_FILTER, DEFAULT_MSG_FILTER).toUInt();
-  if (!_torControl->setLogEvents(_filter, this, &errmsg)) {
+  _torControl->setEvent(TorEvents::LogDebug,
+                        _filter & tc::DebugSeverity, false);
+  _torControl->setEvent(TorEvents::LogInfo,
+                        _filter & tc::InfoSeverity, false);
+  _torControl->setEvent(TorEvents::LogNotice,
+                        _filter & tc::NoticeSeverity, false);
+  _torControl->setEvent(TorEvents::LogWarn,
+                        _filter & tc::WarnSeverity, false);
+  _torControl->setEvent(TorEvents::LogError,
+                        _filter & tc::ErrorSeverity, false);
+
+  QString errmsg;
+  if (_torControl->isConnected() && !_torControl->setEvents(&errmsg)) {
     VMessageBox::warning(this, tr("Error Setting Filter"),
       p(tr("Vidalia was unable to register for Tor's log events.")) + p(errmsg),
       VMessageBox::Ok);
@@ -200,7 +212,7 @@ MessageLog::registerLogEvents()
  * file will be rotated to the new filename. In the case that the new filename
  * can not be openend, the old file will remain open and writable. */
 bool
-MessageLog::rotateLogFile(QString filename)
+MessageLog::rotateLogFile(const QString &filename)
 {
   QString errmsg;
   if (_enableLogging) {
@@ -242,29 +254,29 @@ MessageLog::saveSettings()
   /* Update the maximum displayed item count */
   saveSetting(SETTING_MAX_MSG_COUNT, ui.spnbxMaxCount->value());
   ui.lstMessages->setMaximumMessageCount(ui.spnbxMaxCount->value());
-  
+
   /* Save message filter and refilter the list */
   uint filter = 0;
-  ADD_TO_FILTER(filter, LogEvent::Error, ui.chkTorErr->isChecked());
-  ADD_TO_FILTER(filter, LogEvent::Warn, ui.chkTorWarn->isChecked());
-  ADD_TO_FILTER(filter, LogEvent::Notice, ui.chkTorNote->isChecked());
-  ADD_TO_FILTER(filter, LogEvent::Info, ui.chkTorInfo->isChecked());
-  ADD_TO_FILTER(filter, LogEvent::Debug, ui.chkTorDebug->isChecked());
+  ADD_TO_FILTER(filter, tc::ErrorSeverity, ui.chkTorErr->isChecked());
+  ADD_TO_FILTER(filter, tc::WarnSeverity, ui.chkTorWarn->isChecked());
+  ADD_TO_FILTER(filter, tc::NoticeSeverity, ui.chkTorNote->isChecked());
+  ADD_TO_FILTER(filter, tc::InfoSeverity, ui.chkTorInfo->isChecked());
+  ADD_TO_FILTER(filter, tc::DebugSeverity, ui.chkTorDebug->isChecked());
   saveSetting(SETTING_MSG_FILTER, filter);
   registerLogEvents();
-  
+
   /* Filter the message log */
   QApplication::setOverrideCursor(Qt::WaitCursor);
   ui.lstMessages->filter(_filter);
   QApplication::restoreOverrideCursor();
-   
+
   /* Hide the settings frame and reset toggle button*/
-  ui.actionSettings->toggle(); 
+  ui.actionSettings->toggle();
 }
 
 /** Simply restores the previously saved settings and hides the settings
  * frame. */
-void 
+void
 MessageLog::cancelChanges()
 {
   /* Hide the settings frame and reset toggle button */
@@ -287,10 +299,10 @@ MessageLog::browse()
 }
 
 /** Saves the given list of items to a file.
- * \param items A list of log message items to save. 
+ * \param items A list of log message items to save.
  */
 void
-MessageLog::save(QStringList messages)
+MessageLog::save(const QStringList &messages)
 {
   if (!messages.size()) {
     return;
@@ -298,15 +310,15 @@ MessageLog::save(QStringList messages)
 
   QString fileName = QFileDialog::getSaveFileName(this,
                           tr("Save Log Messages"),
-                          "VidaliaLog-" + 
+                          "VidaliaLog-" +
                           QDateTime::currentDateTime().toString("MM.dd.yyyy")
                           + ".txt", tr("Text Files (*.txt)"));
-  
+
   /* If the choose to save */
   if (!fileName.isEmpty()) {
     LogFile logFile;
     QString errmsg;
-    
+
     /* If can't write to file, show error message */
     if (!logFile.open(fileName, &errmsg)) {
       VMessageBox::warning(this, tr("Vidalia"),
@@ -316,7 +328,7 @@ MessageLog::save(QStringList messages)
                            VMessageBox::Ok);
       return;
     }
-   
+
     /* Write out the message log to the file */
     QApplication::setOverrideCursor(Qt::WaitCursor);
     foreach (QString msg, messages) {
@@ -353,7 +365,7 @@ MessageLog::copy()
 
 /** Prompts the user for a search string. If the search string is not found in
  * any of the currently displayed log entires, then a message will be
- * displayed for the user informing them that no matches were found. 
+ * displayed for the user informing them that no matches were found.
  * \sa search()
  */
 void
@@ -362,13 +374,13 @@ MessageLog::find()
   bool ok;
   QString text = QInputDialog::getText(this, tr("Find in Message Log"),
                   tr("Find:"), QLineEdit::Normal, QString(), &ok);
-  
+
   if (ok && !text.isEmpty()) {
     /* Search for the user-specified text */
     QList<LogTreeItem *> results = ui.lstMessages->find(text);
     if (!results.size()) {
-      VMessageBox::information(this, tr("Not Found"), 
-                               p(tr("Search found 0 matches.")), 
+      VMessageBox::information(this, tr("Not Found"),
+                               p(tr("Search found 0 matches.")),
                                VMessageBox::Ok);
     } else {
       /* Set the focus to the first match */
@@ -382,14 +394,14 @@ MessageLog::find()
  * \param type The message's severity type.
  * \param message The log message to be added.
  */
-void 
-MessageLog::log(LogEvent::Severity type, QString message)
+void
+MessageLog::log(tc::Severity type, const QString &message)
 {
   /* Only add the message if it's not being filtered out */
   if (_filter & (uint)type) {
     /* Add the message to the list and scroll to it if necessary. */
-    LogTreeItem *item = ui.lstMessages->log(type, message); 
-   
+    LogTreeItem *item = ui.lstMessages->log(type, message);
+
     /* This is a workaround to force Qt to update the statusbar text (if any
      * is currently displayed) to reflect the new message added. */
     QString currStatusTip = ui.statusbar->currentMessage();
@@ -397,25 +409,11 @@ MessageLog::log(LogEvent::Severity type, QString message)
       currStatusTip = ui.lstMessages->statusTip();
       ui.statusbar->showMessage(currStatusTip);
     }
-    
+
     /* If we're saving log messages to a file, go ahead and do that now */
     if (_enableLogging) {
       _logFile << item->toString();
     }
-  }
-}
-
-/** Custom event handler. Checks if the event is a log event. If it is, then
- * it will write the message to the message log. 
- * \param event The custom log event. 
- */
-void
-MessageLog::customEvent(QEvent *event)
-{
-  if (event->type() == CustomEventType::LogEvent) {
-    LogEvent *e = (LogEvent *)event;
-    log(e->severity(), e->message());
-    e->accept();
   }
 }
 

@@ -23,7 +23,7 @@
 #include <QString>
 #include <QObject>
 #include <QList>
-
+#include <QMetaType>
 
 /** Stream IDs contains 1-16 alphanumeric ASCII characters. */
 typedef QString StreamId;
@@ -91,6 +91,8 @@ private:
   Status  _status;     /**< Stream status value. */
   quint16 _port;       /**< Stream target port. */
 };
+
+Q_DECLARE_METATYPE(Stream);
 
 /** A collection of Stream objects. */
 typedef QList<Stream> StreamList;

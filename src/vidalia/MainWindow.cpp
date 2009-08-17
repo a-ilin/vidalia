@@ -28,9 +28,7 @@
 #include "UpdatesAvailableDialog.h"
 #endif
 
-#include "ClientStatusEvent.h"
-#include "DangerousVersionEvent.h"
-#include "DangerousPortEvent.h"
+#include "ProtocolInfo.h"
 
 #include "net.h"
 #include "file.h"
@@ -130,23 +128,35 @@ MainWindow::MainWindow()
   _status = Unset;
   _isVidaliaRunningTor = false;
   updateTorStatus(Stopped);
-  
+
   /* Create a new TorControl object, used to communicate with Tor */
   _torControl = Vidalia::torControl(); 
   connect(_torControl, SIGNAL(started()), this, SLOT(started()));
   connect(_torControl, SIGNAL(startFailed(QString)),
-                 this,   SLOT(startFailed(QString)));
+          this, SLOT(startFailed(QString)));
   connect(_torControl, SIGNAL(stopped(int, QProcess::ExitStatus)),
-                 this,   SLOT(stopped(int, QProcess::ExitStatus)));
+          this, SLOT(stopped(int, QProcess::ExitStatus)));
   connect(_torControl, SIGNAL(connected()), this, SLOT(connected()));
   connect(_torControl, SIGNAL(disconnected()), this, SLOT(disconnected()));
   connect(_torControl, SIGNAL(connectFailed(QString)), 
-                 this,   SLOT(connectFailed(QString)));
+          this, SLOT(connectFailed(QString)));
   connect(_torControl, SIGNAL(authenticated()), this, SLOT(authenticated()));
   connect(_torControl, SIGNAL(authenticationFailed(QString)),
-                 this,   SLOT(authenticationFailed(QString)));
-  _torControl->setEvent(TorEvents::ClientStatus,  this, true);
-  _torControl->setEvent(TorEvents::GeneralStatus, this, true);
+          this, SLOT(authenticationFailed(QString)));
+
+  _torControl->setEvent(TorEvents::GeneralStatus);
+  connect(_torControl, SIGNAL(dangerousTorVersion(tc::TorVersionStatus,
+                                                  QString, QStringList)),
+          this, SLOT(dangerousTorVersion(tc::TorVersionStatus,
+                                         QString, QStringList)));
+
+  _torControl->setEvent(TorEvents::ClientStatus);
+  connect(_torControl, SIGNAL(bootstrapStatusChanged(BootstrapStatus)),
+          this, SLOT(bootstrapStatusChanged(BootstrapStatus)));
+  connect(_torControl, SIGNAL(circuitEstablished()),
+          this, SLOT(circuitEstablished()));
+  connect(_torControl, SIGNAL(dangerousPort(quint16, bool)),
+          this, SLOT(warnDangerousPort(quint16, bool)));
 
   /* Create a new HelperProcess object, used to start the web browser */
   _browserProcess = new HelperProcess(this);
@@ -266,47 +276,6 @@ MainWindow::retranslateUi()
 #endif
 }
 
-/** Catches and processes Tor client and general status events. */
-void
-MainWindow::customEvent(QEvent *event)
-{
-  if (event->type() == CustomEventType::ClientStatusEvent) {
-    ClientStatusEvent *cse = dynamic_cast<ClientStatusEvent *>(event);
-    if (!cse)
-      return;
-
-    if (cse->status() == ClientStatusEvent::CircuitEstablished) {
-      circuitEstablished();
-      cse->accept();
-    } else if (cse->status() == ClientStatusEvent::Bootstrap) {
-      BootstrapStatusEvent *bse = dynamic_cast<BootstrapStatusEvent *>(cse);
-      if (bse)
-        bootstrapStatusChanged(bse->status());
-      cse->accept();
-    } else if (cse->status() == ClientStatusEvent::DangerousPort) {
-      DangerousPortEvent *dpe = dynamic_cast<DangerousPortEvent *>(cse);
-      if (dpe) {
-        bool rejected = (dpe->result() == DangerousPortEvent::Reject);
-        warnDangerousPort(dpe->port(), rejected);
-      }
-      cse->accept();
-    }
-  } else if (event->type() == CustomEventType::GeneralStatusEvent) {
-    GeneralStatusEvent *gse = dynamic_cast<GeneralStatusEvent *>(event);
-    if (!gse)
-      return;
-
-    if (gse->status() == GeneralStatusEvent::DangerousTorVersion) {
-      DangerousVersionEvent *dve = dynamic_cast<DangerousVersionEvent *>(gse);
-      if (dve && (dve->reason() == DangerousVersionEvent::ObsoleteVersion
-           || dve->reason() == DangerousVersionEvent::UnrecommendedVersion)) {
-        dangerousTorVersion();
-      }
-      gse->accept();
-    }
-  }
-}
-
 /** Called when the application has started and the main event loop is
  * running. */
 void
@@ -340,7 +309,7 @@ MainWindow::running()
   if (settings.isAutoUpdateEnabled()) {
     QDateTime lastCheckedAt = settings.lastCheckedForUpdates();
     if (UpdateProcess::shouldCheckForUpdates(lastCheckedAt)) {
-      if (settings.runTorAtStart() && ! _torControl->circuitEstablished()) {
+      if (settings.runTorAtStart() && ! _torControl->isCircuitEstablished()) {
         /* We started Tor but it hasn't bootstrapped yet, so give it a bit
          * before we decide to check for updates. If Tor manages to build a
          * circuit before this timer times out, we will stop the timer and
@@ -785,7 +754,7 @@ void
 MainWindow::bootstrapStatusChanged(const BootstrapStatus &bs)
 {
   int percentComplete = STARTUP_PROGRESS_BOOTSTRAPPING + bs.percentComplete();
-  bool warn = (bs.severity() == tc::SeverityWarn && 
+  bool warn = (bs.severity() == tc::WarnSeverity && 
                bs.recommendedAction() != BootstrapStatus::RecommendIgnore);
 
   QString description;
@@ -1370,7 +1339,7 @@ MainWindow::authenticated()
   serverSettings.configurePortForwarding();
 
   /* Check if Tor has a circuit established */
-  if (_torControl->circuitEstablished())
+  if (_torControl->isCircuitEstablished())
     circuitEstablished();
   /* Check the status of Tor's version */
   if (_torControl->getTorVersion() >= 0x020001)
@@ -1541,15 +1510,30 @@ MainWindow::checkTorVersion()
     if (!status.compare("old", Qt::CaseInsensitive)
           || !status.compare("unrecommended", Qt::CaseInsensitive)
           || !status.compare("obsolete", Qt::CaseInsensitive)) {
-      dangerousTorVersion();
+      displayTorVersionWarning();
     }
   }
+}
+
+/** Called when Tor thinks its version is old or unrecommended, and displays
+ * a message notifying the user. */
+void
+MainWindow::dangerousTorVersion(tc::TorVersionStatus reason,
+                                const QString &current,
+                                const QStringList &recommended)
+{
+  Q_UNUSED(current);
+  Q_UNUSED(recommended);
+
+  if (reason == tc::ObsoleteTorVersion
+        || reason == tc::UnrecommendedTorVersion)
+    displayTorVersionWarning();
 }
 
 /** Called when Tor thinks its version is old or unrecommended, and displays a
  * message notifying the user. */
 void
-MainWindow::dangerousTorVersion()
+MainWindow::displayTorVersionWarning()
 {
   static bool alreadyWarned = false;
 

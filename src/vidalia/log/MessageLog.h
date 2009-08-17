@@ -20,14 +20,11 @@
 #include "ui_MessageLog.h"
 #include "VidaliaWindow.h"
 #include "LogFile.h"
-#include "LogTreeItem.h"
 #include "TorControl.h"
 #include "VidaliaSettings.h"
 
-#include <QMainWindow>
-#include <QStringList>
-#include <QResizeEvent>
-
+class LogTreeItem;
+class QStringList;
 
 class MessageLog : public VidaliaWindow
 {
@@ -40,12 +37,12 @@ public:
   ~MessageLog();
   
 protected:
-  /** Called to deliver custom event types */
-  void customEvent(QEvent *event);
   /** Called when the user changes the UI translation. */
   virtual void retranslateUi();
 
 private slots:
+  /** Adds the passed message to the message log as the specified type **/
+  void log(tc::Severity severity, const QString &msg);
   /** Called when the user triggers the save all action **/
   void saveAll();
   /** Called when the user triggers save selected action **/
@@ -75,11 +72,9 @@ private:
   /** Registers the current message filter with Tor */
   void registerLogEvents();
   /** Saves the given list of items to a file */
-  void save(QStringList messages);
-  /** Adds the passed message to the message log as the specified type **/
-  void log(LogEvent::Severity, QString msg);
+  void save(const QStringList &messages);
   /** Rotates the log file based on the filename and the current logging status. */
-  bool rotateLogFile(QString filename);
+  bool rotateLogFile(const QString &filename);
 
   /** A pointer to a TorControl object, used to register for log events */
   TorControl* _torControl;

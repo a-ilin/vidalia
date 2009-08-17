@@ -36,6 +36,8 @@
 #include <QTimer>
 #include <QHash>
 
+class QDateTime;
+
 
 class NetViewer : public VidaliaWindow
 {
@@ -55,12 +57,24 @@ public slots:
   /** Adds <b>stream</b> to the list of circuits, under the appropriate
    * circuit. */
   void addStream(const Stream &stream);
+
+  /** Called when a NEWDESC event arrives. Retrieves new router descriptors
+   * for the router identities given in <b>ids</b> and updates the router list
+   * and network map.
+   */
+  void newDescriptors(const QStringList &ids);
+
+  /** Called when Tor has mapped the address <b>from</b> to the address
+   * <b>to</b>. <b>expires</b> indicates the time at which when the address
+   * mapping will no longer be considered valid.
+   */
+  void addressMapped(const QString &from, const QString &to,
+                     const QDateTime &expires);
+
   /** Clears all known information */
   void clear();
 
 protected:
-  /** Called to deliver a NEWDESC event from Tor. */
-  void customEvent(QEvent *event);
   /** Called when the user changes the UI translation. */
   void retranslateUi();
 
@@ -104,10 +118,6 @@ private:
   /** Adds a router to our list of servers and retrieves geographic location
    * information for the server. */
   void addRouter(const RouterDescriptor &rd);
-  /** Called when a NEWDESC event arrives. Retrieves new router descriptors
-   * for the router identities given in <b>ids</b> and updates the router list
-   * and network map. */
-  void newDescriptors(const QStringList &ids);
 
   /** TorControl object used to talk to Tor. */
   TorControl* _torControl;

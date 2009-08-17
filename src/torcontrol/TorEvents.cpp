@@ -16,81 +16,36 @@
 
 
 #include "TorEvents.h"
+#include "ControlReply.h"
+#include "ReplyLine.h"
 #include "Circuit.h"
 #include "Stream.h"
-#include "UnrecognizedServerStatusEvent.h"
-#include "UnrecognizedClientStatusEvent.h"
-#include "UnrecognizedGeneralStatusEvent.h"
-#include "CircuitEstablishedEvent.h"
-#include "DangerousVersionEvent.h"
-#include "DangerousPortEvent.h"
-#include "BootstrapStatusEvent.h"
+#include "BootstrapStatus.h"
 
 #include "stringutil.h"
 
-#include <QApplication>
+#include <QMetaType>
 
 /** Format of expiry times in address map events. */
 #define DATE_FMT "\"yyyy-MM-dd HH:mm:ss\""
 
 
 /** Default constructor */
-TorEvents::TorEvents()
+TorEvents::TorEvents(QObject *parent)
+  : QObject(parent)
 {
-}
+  qRegisterMetaType<tc::Severity>();
+  qRegisterMetaType<tc::SocksError>();
+  qRegisterMetaType<tc::TorVersionStatus>();
 
-/** Adds an event and interested object to the list */
-void
-TorEvents::add(TorEvent e, QObject *obj)
-{
-  if (!_eventList.values(e).contains(obj)) {
-    _eventList.insert(e, obj);
-  }
-}
-
-/** Removes <b>obj</b> from the list of target objects for event <b>e</b>. */
-void
-TorEvents::remove(TorEvent e, QObject *obj)
-{
-  QMultiHash<TorEvent,QObject*>::iterator i = _eventList.find(e);
-  while (i != _eventList.end() && i.key() == e) {
-    if (i.value() == obj) {
-      _eventList.erase(i);
-      break;
-    }
-    i++;
-  }
-}
-
-/** Returns true if an event has any registered handlers */
-bool
-TorEvents::contains(TorEvent event)
-{
-  if (_eventList.contains(event)) {
-    return (_eventList.values(event).count() > 0);
-  }
-  return false;
-}
-
-/** Returns the list of events in which we're interested */
-QList<TorEvents::TorEvent>
-TorEvents::eventList()
-{
-  return _eventList.keys();
-}
-
-/** Dispatches a given event to all its handler targets. */
-void
-TorEvents::dispatch(TorEvent e, QEvent *event)
-{
-  foreach (QObject *obj, _eventList.values(e)) {
-    QApplication::postEvent(obj, event);
-  }
+  qRegisterMetaType<BootstrapStatus>("BootstrapStatus");
+  qRegisterMetaType<Circuit>("Circuit");
+  qRegisterMetaType<Stream>("Stream");
 }
 
 /** Converts an event type to a string Tor understands */
 QString
-TorEvents::toString(TorEvent e)
+TorEvents::toString(Event e)
 {
   QString event;
   switch (e) {
@@ -102,7 +57,6 @@ TorEvents::toString(TorEvent e)
     case LogError:  event = "ERR"; break;
     case CircuitStatus:   event = "CIRC"; break;
     case StreamStatus:    event = "STREAM"; break;
-    case OrConnStatus:    event = "ORCONN"; break;
     case NewDescriptor:   event = "NEWDESC"; break;
     case AddressMap:      event = "ADDRMAP"; break;
     case GeneralStatus:   event = "STATUS_GENERAL"; break;
@@ -113,27 +67,11 @@ TorEvents::toString(TorEvent e)
   return event;
 }
 
-/** Converts a log severity to its related Tor event */
-TorEvents::TorEvent
-TorEvents::toTorEvent(LogEvent::Severity severity)
-{
-  TorEvent e;
-  switch (severity) {
-    case LogEvent::Debug:  e = LogDebug; break;
-    case LogEvent::Info:   e = LogInfo; break;
-    case LogEvent::Notice: e = LogNotice; break;
-    case LogEvent::Warn:   e = LogWarn; break;
-    case LogEvent::Error:  e = LogError; break;
-    default: e = Unknown; break;
-  }
-  return e;
-}
-
 /** Converts an event in the string form sent by Tor to its enum value */
-TorEvents::TorEvent
+TorEvents::Event
 TorEvents::toTorEvent(const QString &event)
 {
-  TorEvent e;
+  Event e;
   if (event == "BW") {
     e = Bandwidth;
   } else if (event == "CIRC") {
@@ -160,8 +98,6 @@ TorEvents::toTorEvent(const QString &event)
     e = ClientStatus;
   } else if (event == "STATUS_SERVER") {
     e = ServerStatus;
-  } else if (event == "ORCONN") {
-    e = OrConnStatus;
   } else {
     e = Unknown;
   }
@@ -170,7 +106,7 @@ TorEvents::toTorEvent(const QString &event)
 
 /** Parse the event type out of a message line and return the corresponding
  * Event enum value */
-TorEvents::TorEvent
+TorEvents::Event
 TorEvents::parseEventType(const ReplyLine &line)
 {
   QString msg = line.getMessage();
@@ -189,7 +125,6 @@ TorEvents::handleEvent(const ControlReply &reply)
       case Bandwidth:      handleBandwidthUpdate(line); break;
       case CircuitStatus:  handleCircuitStatus(line); break;
       case StreamStatus:   handleStreamStatus(line); break;
-      case OrConnStatus:   handleOrConnStatus(line); break;
       case NewDescriptor:  handleNewDescriptor(line); break;
       case AddressMap:     handleAddressMap(line); break;
 
@@ -227,7 +162,7 @@ TorEvents::handleBandwidthUpdate(const ReplyLine &line)
     quint64 bytesOut = (quint64)msg.at(2).toULongLong();
   
     /* Post the event to each of the interested targets */
-    dispatch(Bandwidth, new BandwidthEvent(bytesIn, bytesOut));
+    emit bandwidthUpdate(bytesIn, bytesOut);
   }
 }
 
@@ -251,7 +186,7 @@ TorEvents::handleCircuitStatus(const ReplyLine &line)
     /* Post the event to each of the interested targets */
     Circuit circ(msg.mid(i));
     if (circ.isValid())
-      dispatch(CircuitStatus, new CircuitEvent(circ));
+      emit circuitStatusChanged(circ);
   }
 }
 
@@ -277,8 +212,9 @@ TorEvents::handleStreamStatus(const ReplyLine &line)
   QString msg = line.getMessage().trimmed();
   int i  = msg.indexOf(" ") + 1;
   if (i > 0) {
-    /* Post the event to each of the interested targets */
-    dispatch(StreamStatus, new StreamEvent(Stream::fromString(msg.mid(i))));
+    Stream stream = Stream::fromString(msg.mid(i));
+    if (stream.isValid())
+      emit streamStatusChanged(stream);
   }
 }
 
@@ -295,35 +231,11 @@ TorEvents::handleLogMessage(const ReplyLine &line)
 {
   QString msg = line.getMessage();
   int i = msg.indexOf(" ");
-  LogEvent::Severity severity = LogEvent::toSeverity(msg.mid(0, i));
+  tc::Severity severity = tc::severityFromString(msg.mid(0, i));
   QString logLine = (line.getData().size() > 0 ? line.getData().join("\n") :
                                                  msg.mid(i+1));
 
-  dispatch(toTorEvent(severity), new LogEvent(severity, logLine));
-}
-
-/** Handle an OR Connection Status event. The syntax is:
- *     "650" SP "ORCONN" SP (ServerID / Target) SP ORStatus
- *
- *     ORStatus = "NEW" / "LAUNCHED" / "CONNECTED" / "FAILED" / "CLOSED"
- *
- *     NEW is for incoming connections, and LAUNCHED is for outgoing
- *     connections. CONNECTED means the TLS handshake has finished (in
- *     either direction). FAILED means a connection is being closed
- *     that hasn't finished its handshake, and CLOSED is for connections
- *     that have handshaked.
- *
- *     A ServerID is specified unless it's a NEW connection, in which
- *     case we don't know what server it is yet, so we use Address:Port.
- */
-void
-TorEvents::handleOrConnStatus(const ReplyLine &line)
-{
-  QStringList msg = line.getMessage().split(" ");
-  if (msg.size() >= 3) {
-    dispatch(OrConnStatus, 
-      new OrConnEvent(OrConnEvent::toStatus(msg.at(2)), msg.at(1)));
-  }
+  emit logMessage(severity, logLine);
 }
 
 /** Handles a new descriptor event. The format for event messages of this type
@@ -336,9 +248,7 @@ TorEvents::handleNewDescriptor(const ReplyLine &line)
 {
   QString descs = line.getMessage();
   QStringList descList = descs.mid(descs.indexOf(" ")+1).split(" ");
-  if (descList.size() > 0) {
-    dispatch(NewDescriptor, new NewDescriptorEvent(descList));
-  }
+  emit newDescriptors(descList);
 }
 
 /** Handles a new or updated address mapping event. The format for event
@@ -357,7 +267,7 @@ TorEvents::handleAddressMap(const ReplyLine &line)
     QDateTime expires;
     if (msg.size() >= 5 && msg.at(3) != "NEVER")
       expires = QDateTime::fromString(msg.at(3) + " " + msg.at(4), DATE_FMT);
-    dispatch(AddressMap, new AddressMapEvent(msg.at(1), msg.at(2), expires));
+    emit addressMapped(msg.at(1), msg.at(2), expires);
   }
 }
 
@@ -375,102 +285,95 @@ TorEvents::handleAddressMap(const ReplyLine &line)
  *  StatusValue = 1*(ALNUM / '_')  / QuotedString
  */
 void
-TorEvents::handleStatusEvent(TorEvent type, const ReplyLine &line)
+TorEvents::handleStatusEvent(Event e, const ReplyLine &line)
 {
   QString status;
   tc::Severity severity;
   QHash<QString,QString> args;
   QString msg = line.getMessage();
   
-  severity = tc::toSeverity(msg.section(' ', 1, 1));
+  severity = tc::severityFromString(msg.section(' ', 1, 1));
   status   = msg.section(' ', 2, 2);
   args     = string_parse_keyvals(msg.section(' ', 3));
-  switch (type) {
+  switch (e) {
     case ClientStatus:
-      dispatchClientStatusEvent(severity, status, args); break;
+      handleClientStatusEvent(severity, status, args);
+      break;
+
     case ServerStatus:
-      dispatchServerStatusEvent(severity, status, args); break;
+      handleServerStatusEvent(severity, status, args);
+      break;
+
+    case GeneralStatus:
+      handleGeneralStatusEvent(severity, status, args);
+      break;
+
     default:
-      dispatchGeneralStatusEvent(severity, status, args);
+      break;
   }
 }
 
-/** Parses and posts a Tor client status event. */
+/** Parses and emits a general Tor status event. */
 void
-TorEvents::dispatchClientStatusEvent(tc::Severity severity,
-                                     const QString &action,
-                                     const QHash<QString,QString> &args)
+TorEvents::handleGeneralStatusEvent(tc::Severity severity,
+                                    const QString &action,
+                                    const QHash<QString,QString> &args)
 {
-  ClientStatusEvent *event;
-  ClientStatusEvent::Status status 
-    = ClientStatusEvent::statusFromString(action);
-
-  switch (status) {
-    case ClientStatusEvent::CircuitEstablished:
-      event = new CircuitEstablishedEvent(severity);
-      break;
-    
-    case ClientStatusEvent::DangerousPort:
-      event = new DangerousPortEvent(severity, args.value("PORT").toUInt(),
-                    DangerousPortEvent::resultFromString(args.value("RESULT")));
-      break;
- 
-    case ClientStatusEvent::Bootstrap:
-      event = new BootstrapStatusEvent(BootstrapStatus(severity,
-                    BootstrapStatus::statusFromString(args.value("TAG")),
-                    args.value("PROGRESS").toInt(),
-                    args.value("SUMMARY"),
-                    args.value("WARNING"),
-                    tc::toConnectionStatusReason(args.value("REASON")),
-                    BootstrapStatus::actionFromString(
-                      args.value("RECOMMENDATION"))));
-
-      break;
-
-    default:
-      event = new UnrecognizedClientStatusEvent(severity, action, args);
+  if (! action.compare("DANGEROUS_TOR_VERSION", Qt::CaseInsensitive)) {
+    QString reason = args.value("REASON");
+    QString current = args.value("CURRENT");
+    QStringList recommended = args.value("RECOMMENDED")
+                                  .split(",", QString::SkipEmptyParts);
+    if (! reason.compare("NEW", Qt::CaseInsensitive))
+      emit dangerousTorVersion(tc::NewTorVersion, current, recommended);
+    else if (! reason.compare("UNRECOMMENDED", Qt::CaseInsensitive))
+      emit dangerousTorVersion(tc::UnrecommendedTorVersion, current, recommended);
+    else if (! reason.compare("OBSOLETE", Qt::CaseInsensitive)
+               || ! reason.compare("OLD", Qt::CaseInsensitive))
+      emit dangerousTorVersion(tc::ObsoleteTorVersion, current, recommended);
   }
-  dispatch(ClientStatus, event);
 }
 
-/** Parses and posts a Tor server status event. */
+/** Parses and emits a Tor client status event. */
 void
-TorEvents::dispatchServerStatusEvent(tc::Severity severity,
-                                     const QString &action,
-                                     const QHash<QString,QString> &args)
+TorEvents::handleClientStatusEvent(tc::Severity severity,
+                                   const QString &action,
+                                   const QHash<QString,QString> &args)
 {
-  ServerStatusEvent *event;
-  ServerStatusEvent::Status status
-    = ServerStatusEvent::statusFromString(action);
-
-  switch (status) {
-    default:
-      event = new UnrecognizedServerStatusEvent(severity, action, args);
+  if (! action.compare("CIRCUIT_ESTABLISHED", Qt::CaseInsensitive)) {
+    emit circuitEstablished();
+  } else if (! action.compare("DANGEROUS_PORT", Qt::CaseInsensitive)) {
+    bool reject = ! args.value("RESULT").compare("REJECT", Qt::CaseInsensitive);
+    emit dangerousPort(args.value("PORT").toUInt(), reject);
+  } else if (! action.compare("DANGEROUS_SOCKS", Qt::CaseInsensitive)) {
+    emit socksError(tc::DangerousSocksTypeError, args.value("ADDRESS"));
+  } else if (! action.compare("SOCKS_UNKNOWN_PROTOCOL", Qt::CaseInsensitive)) {
+    emit socksError(tc::UnknownSocksProtocolError, QString());
+  } else if (! action.compare("SOCKS_BAD_HOSTNAME", Qt::CaseInsensitive)) {
+    emit socksError(tc::BadSocksHostnameError, args.value("HOSTNAME"));
+  } else if (! action.compare("BOOTSTRAP", Qt::CaseInsensitive)) {
+    BootstrapStatus status
+      = BootstrapStatus(severity,
+                        BootstrapStatus::statusFromString(args.value("TAG")),
+                        args.value("PROGRESS").toInt(),
+                        args.value("SUMMARY"),
+                        args.value("WARNING"),
+                        tc::connectionStatusReasonFromString(args.value("REASON")),
+                        BootstrapStatus::actionFromString(
+                        args.value("RECOMMENDATION")));
+    emit bootstrapStatusChanged(status);
   }
-  dispatch(ServerStatus, event);
 }
 
-/** Parses and posts a general Tor status event. */
+/** Parses and emits a Tor server status event. */
 void
-TorEvents::dispatchGeneralStatusEvent(tc::Severity severity,
-                                      const QString &action,
-                                      const QHash<QString,QString> &args)
+TorEvents::handleServerStatusEvent(tc::Severity severity,
+                                   const QString &action,
+                                   const QHash<QString,QString> &args)
 {
-  GeneralStatusEvent *event;
-  GeneralStatusEvent::Status status
-    = GeneralStatusEvent::statusFromString(action);
-
-  switch (status) {
-    case GeneralStatusEvent::DangerousTorVersion:
-      /* Dangerous Tor version ("DANGEROUS_VERSION") */
-      event = new DangerousVersionEvent(severity,
-                DangerousVersionEvent::reasonFromString(args.value("REASON")),
-                args.value("CURRENT"),
-                args.value("RECOMMENDED").split(",", QString::SkipEmptyParts));
-      break;
-    default:
-      event = new UnrecognizedGeneralStatusEvent(severity, action, args);
-  }
-  dispatch(GeneralStatus, event);
+  Q_UNUSED(severity);
+  Q_UNUSED(action);
+  Q_UNUSED(args);
 }
+
 

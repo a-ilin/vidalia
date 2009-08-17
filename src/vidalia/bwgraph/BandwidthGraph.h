@@ -42,8 +42,6 @@ public slots:
   void showWindow();
 
 protected:
-  /** Called to deliver a bandwidth update event from Tor. */
-  void customEvent(QEvent *event);
   /** Called when the user changes the UI translation. */
   virtual void retranslateUi();
 

@@ -19,7 +19,6 @@
 #define _SENDCOMMANDEVENT_H
 
 #include "ControlCommand.h"
-#include "eventtype.h"
 
 #include <QEvent>
 #include <QMutex>

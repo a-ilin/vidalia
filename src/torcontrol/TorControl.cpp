@@ -1,6 +1,6 @@
 /*
 **  This file is part of Vidalia, and is subject to the license terms in the
-**  LICENSE file, found in the top level directory of this distribution. If 
+**  LICENSE file, found in the top level directory of this distribution. If
 **  you did not receive the LICENSE file with this file, you may obtain it
 **  from the Vidalia source package distributed by the Vidalia Project at
 **  http://www.vidalia-project.net/. No part of Vidalia, including this file,
@@ -8,52 +8,70 @@
 **  the terms described in the LICENSE file.
 */
 
-/* 
+/*
 ** \file TorControl.cpp
 ** \version $Id$
 ** \brief Object for interacting with the Tor process and control interface
 */
 
 #include "TorControl.h"
-
+#include "RouterDescriptor.h"
+#include "ProtocolInfo.h"
+#include "RouterStatus.h"
 #include "file.h"
 #include "stringutil.h"
 
 #include <QHostAddress>
+#include <QVariantMap>
 
 
 /** Default constructor */
 TorControl::TorControl()
 {
+#define RELAY_SIGNAL(src, sig) \
+  QObject::connect((src), (sig), this, (sig))
+
+  /* Create a TorEvents object to receive and parse asynchronous events
+   * from Tor's control port, and relay them as external signals from
+   * this TorControl object. */
+  _eventHandler = new TorEvents(this);
+  RELAY_SIGNAL(_eventHandler, SIGNAL(circuitEstablished()));
+  RELAY_SIGNAL(_eventHandler, SIGNAL(dangerousTorVersion(tc::TorVersionStatus,
+                                                         QString, QStringList)));
+  RELAY_SIGNAL(_eventHandler, SIGNAL(bandwidthUpdate(quint64, quint64)));
+  RELAY_SIGNAL(_eventHandler, SIGNAL(circuitStatusChanged(Circuit)));
+  RELAY_SIGNAL(_eventHandler, SIGNAL(streamStatusChanged(Stream)));
+  RELAY_SIGNAL(_eventHandler, SIGNAL(newDescriptors(QStringList)));
+  RELAY_SIGNAL(_eventHandler, SIGNAL(logMessage(tc::Severity, QString)));
+  RELAY_SIGNAL(_eventHandler, SIGNAL(dangerousPort(quint16, bool)));
+  RELAY_SIGNAL(_eventHandler, SIGNAL(socksError(tc::SocksError, QString)));
+  RELAY_SIGNAL(_eventHandler, SIGNAL(bootstrapStatusChanged(BootstrapStatus)));
+
   /* Create an instance of a connection to Tor's control interface and give
    * it an object to use to handle asynchronous events. */
-  _controlConn = new ControlConnection(&_torEvents);
-  QObject::connect(_controlConn, SIGNAL(connected()),
-                   this, SIGNAL(connected()));
-  QObject::connect(_controlConn, SIGNAL(connectFailed(QString)),
-                   this, SIGNAL(connectFailed(QString)));
+  _controlConn = new ControlConnection(_eventHandler);
+  RELAY_SIGNAL(_controlConn, SIGNAL(connected()));
+  RELAY_SIGNAL(_controlConn, SIGNAL(connectFailed(QString)));
   QObject::connect(_controlConn, SIGNAL(disconnected()),
                    this, SLOT(onDisconnected()));
 
   /* Create an object used to start and stop a Tor process. */
   _torProcess = new TorProcess(this);
-  QObject::connect(_torProcess, SIGNAL(started()),
-                   this, SIGNAL(started()));
+  RELAY_SIGNAL(_torProcess, SIGNAL(started()));
+  RELAY_SIGNAL(_torProcess, SIGNAL(startFailed(QString)));
   QObject::connect(_torProcess, SIGNAL(finished(int, QProcess::ExitStatus)),
                    this, SLOT(onStopped(int, QProcess::ExitStatus)));
-  QObject::connect(_torProcess, SIGNAL(startFailed(QString)),
-                   this, SIGNAL(startFailed(QString)));
   QObject::connect(_torProcess, SIGNAL(log(QString, QString)),
                    this, SLOT(onLogStdout(QString, QString)));
 
 #if defined(Q_OS_WIN32)
   _torService = new TorService(this);
-  QObject::connect(_torService, SIGNAL(started()), this, SIGNAL(started()));
+  RELAY_SIGNAL(_torService, SIGNAL(started()));
+  RELAY_SIGNAL(_torService, SIGNAL(startFailed(QString)));
   QObject::connect(_torService, SIGNAL(finished(int, QProcess::ExitStatus)),
                    this, SLOT(onStopped(int, QProcess::ExitStatus)));
-  QObject::connect(_torService, SIGNAL(startFailed(QString)),
-                   this, SIGNAL(startFailed(QString))); 
 #endif
+#undef RELAY_SIGNAL
 }
 
 /** Default destructor */
@@ -110,7 +128,7 @@ TorControl::onStopped(int exitCode, QProcess::ExitStatus exitStatus)
 {
   if (_controlConn->status() == ControlConnection::Connecting)
     _controlConn->cancelConnect();
-  
+
   emit stopped();
   emit stopped(exitCode, exitStatus);
 }
@@ -142,10 +160,9 @@ TorControl::closeTorStdout()
 
 /** Called when Tor has printed a log message to stdout. */
 void
-TorControl::onLogStdout(QString severity, QString message)
+TorControl::onLogStdout(const QString &severity, const QString &message)
 {
-  LogEvent::Severity s = LogEvent::toSeverity(severity);
-  _torEvents.dispatch(TorEvents::toTorEvent(s), new LogEvent(s, message));
+  emit logMessage(tc::severityFromString(severity), message.trimmed());
 }
 
 /** Connect to Tor's control port. The control port to use is determined by
@@ -171,7 +188,7 @@ TorControl::onDisconnected()
   if (_torProcess) {
     /* If we're running a Tor process, then start reading logs from stdout
      * again, in case our control connection just died but Tor is still
-     * running. In this case, there may be relevant information in the logs. */ 
+     * running. In this case, there may be relevant information in the logs. */
     _torProcess->openStdout();
   }
   /* Tor isn't running, so it has no version */
@@ -215,7 +232,7 @@ TorControl::send(ControlCommand cmd, QString *errmsg)
 }
 
 /** Sends an authentication cookie to Tor. The syntax is:
- * 
+ *
  *   "AUTHENTICATE" SP 1*HEXDIG CRLF
  */
 bool
@@ -224,32 +241,31 @@ TorControl::authenticate(const QByteArray cookie, QString *errmsg)
   ControlCommand cmd("AUTHENTICATE", base16_encode(cookie));
   ControlReply reply;
   QString str;
-  
+
   if (!send(cmd, reply, &str)) {
     emit authenticationFailed(str);
     return err(errmsg, str);
   }
-  onAuthenticated(); 
+  onAuthenticated();
   return true;
 }
 
 /** Sends an authentication password to Tor. The syntax is:
- * 
+ *
  *   "AUTHENTICATE" SP QuotedString CRLF
  */
 bool
-TorControl::authenticate(const QString password, QString *errmsg)
+TorControl::authenticate(const QString &password, QString *errmsg)
 {
-  ControlCommand cmd("AUTHENTICATE", QString("%1")
-                                      .arg(string_escape(password)));
+  ControlCommand cmd("AUTHENTICATE", string_escape(password));
   ControlReply reply;
   QString str;
-  
+
   if (!send(cmd, reply, &str)) {
     emit authenticationFailed(str);
     return err(errmsg, str);
   }
-  onAuthenticated(); 
+  onAuthenticated();
   return true;
 }
 
@@ -262,7 +278,9 @@ TorControl::onAuthenticated()
   getInfo("version", _torVersion);
   /* We want to use verbose names in events and GETINFO results. */
   useFeature("VERBOSE_NAMES");
- 
+  /* We want to use extended events in all async events */
+  useFeature("EXTENDED_EVENTS");
+
   emit authenticated();
 }
 
@@ -284,11 +302,11 @@ TorControl::protocolInfo(QString *errmsg)
   foreach (ReplyLine line, reply.getLines()) {
     if (line.getStatus() != "250")
       continue;
-    
+
     msg = line.getMessage().trimmed();
     idx = msg.indexOf(" ");
     topic = msg.mid(0, idx).toUpper();
-    
+
     if (idx > 0) {
       keyvals = string_parse_keyvals(msg.mid(idx+1), &ok);
       if (!ok)
@@ -296,7 +314,7 @@ TorControl::protocolInfo(QString *errmsg)
     } else {
       keyvals = QHash<QString,QString>();
     }
-   
+
     if (topic == "AUTH") {
       if (keyvals.contains("METHODS"))
         pi.setAuthMethods(keyvals.value("METHODS"));
@@ -317,7 +335,7 @@ bool
 TorControl::useFeature(const QString &feature, QString *errmsg)
 {
   ControlCommand cmd("USEFEATURE", feature);
-  return send(cmd, errmsg); 
+  return send(cmd, errmsg);
 }
 
 BootstrapStatus
@@ -325,14 +343,14 @@ TorControl::bootstrapStatus(QString *errmsg)
 {
   QString str = getInfo("status/bootstrap-phase").toString();
   if (!str.isEmpty()) {
-    tc::Severity severity = tc::toSeverity(str.section(' ', 0, 0));
+    tc::Severity severity = tc::severityFromString(str.section(' ', 0, 0));
     QHash<QString,QString> args = string_parse_keyvals(str);
     return BootstrapStatus(severity,
               BootstrapStatus::statusFromString(args.value("TAG")),
               args.value("PROGRESS").toInt(),
               args.value("SUMMARY"),
               args.value("WARNING"),
-              tc::toConnectionStatusReason(args.value("REASON")),
+              tc::connectionStatusReasonFromString(args.value("REASON")),
               BootstrapStatus::actionFromString(
                 args.value("RECOMMENDATION")));
   }
@@ -342,7 +360,7 @@ TorControl::bootstrapStatus(QString *errmsg)
 /** Returns true if Tor either has an open circuit or (on Tor >=
  * 0.2.0.1-alpha) has previously decided it's able to establish a circuit. */
 bool
-TorControl::circuitEstablished()
+TorControl::isCircuitEstablished()
 {
   /* If Tor is recent enough, we can 'getinfo status/circuit-established' to
    * see if Tor has an open circuit */
@@ -364,8 +382,8 @@ TorControl::circuitEstablished()
 
 /** Sends a GETINFO message to Tor based on the given map of keyvals. The
  * syntax is:
- * 
- *    "GETINFO" 1*(SP keyword) CRLF 
+ *
+ *    "GETINFO" 1*(SP keyword) CRLF
  */
 bool
 TorControl::getInfo(QHash<QString,QString> &map, QString *errmsg)
@@ -377,7 +395,7 @@ TorControl::getInfo(QHash<QString,QString> &map, QString *errmsg)
   foreach (QString key, map.keys()) {
     cmd.addArgument(key);
   }
- 
+
   /* Ask Tor for the specified info values */
   if (send(cmd, reply, errmsg)) {
     /* Parse the response for the returned values */
@@ -412,7 +430,7 @@ TorControl::getInfo(const QStringList &keys, QString *errmsg)
     int index   = msg.indexOf("=");
     QString key = msg.mid(0, index);
     QStringList val;
-   
+
     if (index > 0 && index < msg.length()-1)
       val << msg.mid(index+1);
     if (line.hasData())
@@ -465,7 +483,7 @@ TorControl::signal(TorSignal::Signal sig, QString *errmsg)
      * asking it to stop running, so don't try to get a response. */
     return _controlConn->send(cmd, errmsg);
   }
-  return send(cmd, errmsg); 
+  return send(cmd, errmsg);
 }
 
 /** Returns an address on which Tor is listening for application
@@ -479,7 +497,7 @@ TorControl::getSocksAddress(QString *errmsg)
   if (getSocksPort() == 0) {
     return QHostAddress::Null;
   }
-  
+
   /* Get a list of SocksListenAddress lines and return the first valid IP
    * address parsed from the list. */
   QStringList addrList = getSocksAddressList(errmsg);
@@ -493,7 +511,7 @@ TorControl::getSocksAddress(QString *errmsg)
   return QHostAddress::LocalHost;
 }
 
-/** Returns a (possibly empty) list of all currently configured 
+/** Returns a (possibly empty) list of all currently configured
  * SocksListenAddress entries. */
 QStringList
 TorControl::getSocksAddressList(QString *errmsg)
@@ -526,8 +544,8 @@ TorControl::getSocksPortList(QString *errmsg)
   quint16 port, socksPort;
   QString portString;
   QList<quint16> portList;
- 
-  /* Get the value of the SocksPort configuration variable */ 
+
+  /* Get the value of the SocksPort configuration variable */
   if (getConf("SocksPort", portString, errmsg)) {
     socksPort = (quint16)portString.toUInt(&valid);
     if (valid) {
@@ -597,40 +615,11 @@ TorControl::getTorVersion()
  * otherwise it is removed. If set is true, then the given event will be
  * registered with Tor. */
 bool
-TorControl::setEvent(TorEvents::TorEvent e, QObject *obj, 
-                     bool add, bool set, QString *errmsg)
+TorControl::setEvent(TorEvents::Event e, bool add, bool set, QString *errmsg)
 {
-  if (add) {
-    _torEvents.add(e, obj);
-  } else {
-    _torEvents.remove(e, obj);
-  }
-  if (set && isConnected()) {
+  _events = (add ? (_events | e) : (_events & ~e));
+  if (set && isConnected())
     return setEvents(errmsg);
-  }
-  return true;
-}
-
-/** Registers for a set of logging events according to the given filter. If
- * the control socket is currently connected, this method will try to register
- * the log events with Tor, otherwise it will simply return true. */
-bool
-TorControl::setLogEvents(uint filter, QObject *obj, QString *errmsg)
-{
-  setEvent(TorEvents::LogError , obj, filter & LogEvent::Error , false);
-  setEvent(TorEvents::LogWarn  , obj, filter & LogEvent::Warn  , false);
-  setEvent(TorEvents::LogNotice, obj, filter & LogEvent::Notice, false);
-  setEvent(TorEvents::LogInfo  , obj, filter & LogEvent::Info  , false);
-  setEvent(TorEvents::LogDebug , obj, filter & LogEvent::Debug , false);
-
-  if (isConnected()) {
-    bool rc = setEvents(errmsg);
-    if (rc && _torProcess)
-      /* The control socket is connected and the request for log events from
-       * the control port was successful, so we can stop reading from stdout. */
-      _torProcess->closeStdout();
-    return rc;
-  }
   return true;
 }
 
@@ -638,31 +627,23 @@ TorControl::setLogEvents(uint filter, QObject *obj, QString *errmsg)
 bool
 TorControl::setEvents(QString *errmsg)
 {
-  ControlCommand cmd("SETEVENTS"); 
-  quint32 torVersion = getTorVersion();
+  ControlCommand cmd("SETEVENTS");
 
-  /* Add each event to the argument list */
-  foreach (TorEvents::TorEvent e, _torEvents.eventList()) {
-    if (torVersion < 0x010203
-          && (e == TorEvents::GeneralStatus
-                || e == TorEvents::ClientStatus
-                || e == TorEvents::ServerStatus)) {
-      /* Tor < 0.1.2.3-alpha does not support STATUS_GENERAL, STATUS_CLIENT
-       * and STATUS_SERVER events. */
-        continue;
-    }
-    cmd.addArgument(TorEvents::toString(e));
+  for (TorEvents::Event e = TorEvents::EVENT_MIN; e <= TorEvents::EVENT_MAX;) {
+    if (_events & e)
+      cmd.addArgument(TorEvents::toString(e));
+    e = static_cast<TorEvents::Event>(e << 1);
   }
   return send(cmd, errmsg);
 }
 
-/** Sets each configuration key in <b>map</b> to the value associated 
+/** Sets each configuration key in <b>map</b> to the value associated
  * with its key. */
 bool
 TorControl::setConf(QHash<QString,QString> map, QString *errmsg)
 {
   ControlCommand cmd("SETCONF");
-  
+
   /* Add each keyvalue to the argument list */
   foreach (QString key, map.uniqueKeys()) {
     /* If a key has multiple values (e.g., a QMultiHash), they are stored
@@ -679,7 +660,7 @@ TorControl::setConf(QHash<QString,QString> map, QString *errmsg)
         cmd.addArgument(key);
     }
   }
-  return send(cmd, errmsg); 
+  return send(cmd, errmsg);
 }
 
 /** Sets a single configuration key to the given value. */
@@ -741,7 +722,7 @@ TorControl::getConf(QHash<QString,QStringList> &map, QString *errmsg)
       QStringList keyval = line.getMessage().split("=");
       if (keyval.size() == 2) {
         confKey = keyval.at(0);
-       
+
         if (map.contains(confKey)) {
           /* This configuration key has multiple values, so add this one to
            * the list. */
@@ -801,7 +782,7 @@ TorControl::getConf(const QStringList &keys, QString *errmsg)
     int index   = msg.indexOf("=");
     QString key = msg.mid(0, index);
     QString val;
-   
+
     if (index > 0 && index < msg.length()-1)
       val = msg.mid(index+1);
 
@@ -811,7 +792,7 @@ TorControl::getConf(const QStringList &keys, QString *errmsg)
       confMap.insert(key, values);
     } else {
       confMap.insert(key, val);
-    }  
+    }
   }
   return confMap;
 }
@@ -910,14 +891,14 @@ TorControl::getNetworkStatus(QString *errmsg)
   QList<RouterStatus> networkStatus;
   int len = networkStatusLines.size();
   int i = 0;
-  
+
   while (i < len) {
     /* Extract the "r", "s", and whatever other status lines */
     QStringList routerStatusLines;
     do {
       routerStatusLines << networkStatusLines.at(i);
     } while (++i < len && ! networkStatusLines.at(i).startsWith("r "));
-    
+
     /* Create a new RouterStatus object and add it to the network status, if
      * it's valid. */
     RouterStatus routerStatus(routerStatusLines);
@@ -940,12 +921,12 @@ TorControl::getDescriptorAnnotations(const QString &id, QString *errmsg)
 
   foreach (QString line, lines) {
     int idx = line.indexOf(" ");
-    
+
     /* Extract the annotation key */
-    key = line.mid(0, idx); 
+    key = line.mid(0, idx);
     if (key.startsWith("@"))
       key = key.remove(0, 1);
-    
+
     /* Extract the annotation value (if present) */
     if (idx > 0 && idx < line.length()-1)
       annotations.insert(key, line.mid(idx + 1).trimmed());
@@ -962,7 +943,7 @@ TorControl::getCircuits(QString *errmsg)
   ControlCommand cmd("GETINFO", "circuit-status");
   ControlReply reply;
   CircuitList circuits;
-  
+
   if (!send(cmd, reply, errmsg))
     return CircuitList();
 
@@ -995,14 +976,14 @@ TorControl::getStreams(QString *errmsg)
   ControlReply reply;
   QList<Stream> streams;
   Stream s;
-  
+
   if (send(cmd, reply, errmsg)) {
     /* Sometimes there is a stream on the first message line */
     QString msg = reply.getMessage();
     s = Stream::fromString(msg.mid(msg.indexOf("=")+1));
     if (s.isValid())
       streams << s;
-    
+
     /* The rest of the streams just come as data, one per line */
     foreach (QString line, reply.getData()) {
       s = Stream::fromString(line);

@@ -31,7 +31,6 @@
 #include "NetViewer.h"
 
 #include "TorControl.h"
-#include "BootstrapStatusEvent.h"
 
 #if defined(USE_AUTOUPDATE)
 #include "UpdateProcess.h"
@@ -60,8 +59,6 @@ public slots:
   virtual void setVisible(bool visible);
 
 protected:
-  /** Catches and processes Tor client status events. */
-  virtual void customEvent(QEvent *event);
   /** Called when the user changes the UI translation. */
   virtual void retranslateUi();
 
@@ -128,6 +125,21 @@ private slots:
   /** Called when the proxy server fails to start */
   void onProxyFailed(QString errmsg);
 
+  /** Called when Tor has successfully established a circuit. */
+  void circuitEstablished();
+  /** Called when Tor thinks the user has tried to connect to a port that
+   * typically is used for unencrypted applications. Warns the user and allows
+   * them to ignore future warnings on <b>port</b>. */
+  void warnDangerousPort(quint16 port, bool rejected);
+  /** Called when Tor's bootstrapping status changes. <b>bse</b> represents
+   * Tor's current estimate of its bootstrapping progress. */
+  void bootstrapStatusChanged(const BootstrapStatus &bs);
+  /** Called when Tor thinks its version is old or unrecommended, and displays
+   * a message notifying the user. */
+  void dangerousTorVersion(tc::TorVersionStatus reason,
+                           const QString &version,
+                           const QStringList &recommended);
+
 #if defined(USE_AUTOUPDATE)
   /** Called when the user clicks the 'Check Now' button in the General
    * settings page. */
@@ -138,7 +150,8 @@ private slots:
   /** Called when the check for software updates fails. */
   void checkForUpdatesFailed(const QString &errmsg);
   /** Called when there is an update available for installation. */
-  void updatesAvailable(UpdateProcess::BundleInfo bi, const PackageList &packageList);
+  void updatesAvailable(UpdateProcess::BundleInfo bi,
+                        const PackageList &packageList);
   /** Stops Tor (if necessary), installs any available for <b>bi</b>, and
    * restarts Tor (if necessary). */
   void installUpdates(UpdateProcess::BundleInfo bi);
@@ -194,21 +207,13 @@ private:
    * depending on the current platform. <b>cookiePath</b> can point to either
    * a cookie file or a directory containing the cookie file. */
   QByteArray loadControlCookie(QString cookiePath = QString());
-  /** Called when Tor has successfully established a circuit. */
-  void circuitEstablished();
   /** Checks the status of the current version of Tor to see if it's old,
    * unrecommended, or obsolete. */
   void checkTorVersion();
-  /** Called when Tor thinks its version is old or unrecommended, and displays
-   * a message notifying the user. */
-  void dangerousTorVersion();
-  /** Called when Tor thinks the user has tried to connect to a port that
-   * typically is used for unencrypted applications. Warns the user and allows
-   * them to ignore future warnings on <b>port</b>. */
-  void warnDangerousPort(quint16 port, bool rejected);
-  /** Called when Tor's bootstrapping status changes. <b>bse</b> represents
-   * Tor's current estimate of its bootstrapping progress. */
-  void bootstrapStatusChanged(const BootstrapStatus &bs);
+  /** Alerts the user that their current Tor version is either obsolete or
+   * no longer recommended. If Vidalia was built with auto-update support,
+   * they will be given the option to check for available updates. */
+  void displayTorVersionWarning();
   /** Sets the visibility of the startup status description and progress bar
    * to <b>visible</b>. */
   void setStartupProgressVisible(bool visible);

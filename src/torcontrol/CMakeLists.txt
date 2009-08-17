@@ -15,22 +15,15 @@ set(torcontrol_SRCS
   AddressMap.cpp
   BootstrapStatus.cpp
   Circuit.cpp
-  ClientStatusEvent.cpp
   ControlCommand.cpp
   ControlConnection.cpp
   ControlReply.cpp
   ControlSocket.cpp
-  DangerousPortEvent.cpp
-  DangerousVersionEvent.cpp
-  GeneralStatusEvent.cpp
-  LogEvent.cpp
-  OrConnEvent.cpp
   ProtocolInfo.cpp
   ReplyLine.cpp
   RouterDescriptor.cpp
   RouterStatus.cpp
   SendCommandEvent.cpp
-  ServerStatusEvent.cpp
   Stream.cpp
   tcglobal.cpp
   TorControl.cpp

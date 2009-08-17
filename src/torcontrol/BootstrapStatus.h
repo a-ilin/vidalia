@@ -20,6 +20,7 @@
 #include "tcglobal.h"
 
 #include <QString>
+#include <QMetaType>
 
 
 class BootstrapStatus
@@ -139,6 +140,8 @@ private:
    */
   Recommendation _action;
 };
+
+Q_DECLARE_METATYPE(BootstrapStatus);
 
 #endif
 

@@ -30,8 +30,8 @@
 
 
 /** Default constructor. */
-LogTreeItem::LogTreeItem(LogEvent::Severity type, QString message, 
-                         QDateTime timestamp)
+LogTreeItem::LogTreeItem(tc::Severity type, const QString &message, 
+                         const QDateTime &timestamp)
   : QTreeWidgetItem()
 {
   static quint32 seqnum = 0;
@@ -57,7 +57,7 @@ LogTreeItem::toString() const
 
 /** Sets the item's log time. */
 void
-LogTreeItem::setTimestamp(QDateTime timestamp)
+LogTreeItem::setTimestamp(const QDateTime &timestamp)
 {
   QString strtime = timestamp.toString(DATETIME_FMT);
   setText(COL_TIME, strtime);
@@ -66,16 +66,16 @@ LogTreeItem::setTimestamp(QDateTime timestamp)
 
 /** Sets the item's severity and the appropriate background color. */
 void
-LogTreeItem::setSeverity(LogEvent::Severity type)
+LogTreeItem::setSeverity(tc::Severity type)
 {
   /* Change row and text color for serious warnings and errors. */
-  if (type == LogEvent::Error) {
+  if (type == tc::ErrorSeverity) {
     /* Critical messages are red with white text. */
     for (int i = 0; i < 3; i++) {
       setBackgroundColor(i, Qt::red);
       setTextColor(i, Qt::white);
     }
-  } else if (type == LogEvent::Warn) {
+  } else if (type == tc::WarnSeverity) {
     /* Warning messages are yellow with black text. */
     for (int i = 0; i < 3; i++) {
       setBackgroundColor(i, Qt::yellow);
@@ -83,23 +83,23 @@ LogTreeItem::setSeverity(LogEvent::Severity type)
   }
   
   setTextAlignment(COL_TYPE, Qt::AlignCenter);
-  setText(COL_TYPE, LogEvent::severityToString(type));
+  setText(COL_TYPE, severityToString(type));
   setData(COL_TYPE, ROLE_TYPE, (uint)type);
 }
 
 /** Sets the item's message text. */
 void
-LogTreeItem::setMessage(QString message)
+LogTreeItem::setMessage(const QString &message)
 {
   setText(COL_MESG, message);
   setToolTip(COL_MESG, string_wrap(message, 80, " ", "\r\n"));
 }
 
 /** Returns the severity associated with this log item. */
-LogEvent::Severity
+tc::Severity
 LogTreeItem::severity() const
 {
-  return (LogEvent::Severity)data(COL_TYPE, ROLE_TYPE).toUInt();
+  return (tc::Severity)data(COL_TYPE, ROLE_TYPE).toUInt();
 }
 
 /** Returns the timestamp for this log message. */
@@ -114,6 +114,22 @@ QString
 LogTreeItem::message() const
 {
   return text(COL_MESG);
+}
+
+/** Converts a tc::Severity enum value to a localized string description. */
+QString
+LogTreeItem::severityToString(tc::Severity severity)
+{
+  QString str;
+  switch (severity) {
+    case tc::DebugSeverity:  str = tr("Debug"); break;
+    case tc::InfoSeverity:   str = tr("Info"); break;
+    case tc::NoticeSeverity: str = tr("Notice"); break;
+    case tc::WarnSeverity:   str = tr("Warning"); break;
+    case tc::ErrorSeverity:  str = tr("Error"); break;
+    default: str = tr("Unknown"); break;
+  }
+  return str;
 }
 
 /** Compares <b>other</b> to this log message item based on the current sort

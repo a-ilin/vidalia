@@ -18,7 +18,8 @@
 #define _LOGTREEWIDGET_H
 
 #include "LogTreeItem.h"
-#include "LogEvent.h"
+
+#include "TorControl.h"
 
 #include <QList>
 #include <QString>
@@ -58,7 +59,7 @@ public:
   void filter(uint filter);
   
   /** Adds a log item to the tree. */
-  LogTreeItem* log(LogEvent::Severity type, QString message);
+  LogTreeItem* log(tc::Severity severity, const QString &message);
   
   /** Searches the log for entries that contain the given text. */
   QList<LogTreeItem *> find(QString text, bool highlight = true);

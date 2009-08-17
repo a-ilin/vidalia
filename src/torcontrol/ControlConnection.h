@@ -21,7 +21,6 @@
 #include "ControlSocket.h"
 #include "TorEvents.h"
 #include "SendCommandEvent.h"
-#include "eventtype.h"
 
 #include <QThread>
 #include <QMutex>

@@ -18,7 +18,7 @@
 #define _TCGLOBAL_H
 
 #include <QString>
-
+#include <QMetaType>
 
 namespace tc {
   /** Helper class to handle formatting log messages with arguments. */
@@ -68,19 +68,33 @@ namespace tc {
   };
   /** Severity values used in log message and status events. */
   enum Severity {
-    UnrecognizedSeverity, /**< An unrecognized severity value. */
-    SeverityDebug,  /**< Hyper-verbose events used for debugging. */
-    SeverityInfo,   /**< Verbose events that can occur frequently. */
-    SeverityNotice, /**< A not-so-bad event. */
-    SeverityWarn,   /**< An important, but non-fatal event. */
-    SeverityError   /**< A critical event. */
+    UnrecognizedSeverity = 0, /**< An unrecognized severity value. */
+    DebugSeverity  = (1u<<4), /**< Hyper-verbose events used for debugging. */
+    InfoSeverity   = (1u<<3), /**< Verbose events that can occur frequently. */
+    NoticeSeverity = (1u<<2), /**< A not-so-bad event. */
+    WarnSeverity   = (1u<<1), /**< An important, but non-fatal event. */
+    ErrorSeverity  = (1u<<0)  /**< A critical event. */
+  };
+  /** SOCKS error types used by Tor status event notifications. These are
+   * emitted in the TorControl::socksError() signal. */
+  enum SocksError {
+    DangerousSocksTypeError, /**< The SOCKS type uses only IP addresses. */
+    UnknownSocksProtocolError, /**< Unknown SOCKS protocol type. */
+    BadSocksHostnameError /**< Application provided an invalid hostname. */
+  };
+  /** Reasons that use of the user's current Tor version would be
+   * discouraged. */
+  enum TorVersionStatus {
+    ObsoleteTorVersion,
+    UnrecommendedTorVersion,
+    NewTorVersion
   };
 
   /** Converts <b>str</b> to a Severity enum value. */
-  Severity toSeverity(const QString &str);
+  Severity severityFromString(const QString &str);
 
   /** Converts <b>str</b> to a ConnectionStatusReason enum value. */
-  ConnectionStatusReason toConnectionStatusReason(const QString &str);
+  ConnectionStatusReason connectionStatusReasonFromString(const QString &str);
 
   /** Creates a new message using <b>fmt</b> and a severity level of
    * QtDebugMsg. */
@@ -98,6 +112,10 @@ namespace tc {
    * QtFatalMsg. */
   DebugMessage fatal(const QString &fmt);
 }
+
+Q_DECLARE_METATYPE(tc::Severity)
+Q_DECLARE_METATYPE(tc::SocksError)
+Q_DECLARE_METATYPE(tc::TorVersionStatus)
 
 #endif
 

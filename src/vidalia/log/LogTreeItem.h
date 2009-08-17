@@ -17,7 +17,7 @@
 #ifndef _LOGTREEITEM_H
 #define _LOGTREEITEM_H
 
-#include "LogEvent.h"
+#include "TorControl.h"
 
 #include <QTreeWidgetItem>
 #include <QDateTime>
@@ -26,24 +26,26 @@
 
 class LogTreeItem : public QTreeWidgetItem
 {
+  Q_DECLARE_TR_FUNCTIONS(LogTreeItem)
+
 public:
   /** Default constructor. */
-  LogTreeItem(LogEvent::Severity type, QString message, 
-              QDateTime timestamp = QDateTime::currentDateTime());
+  LogTreeItem(tc::Severity type, const QString &message, 
+              const QDateTime &timestamp = QDateTime::currentDateTime());
 
   /** Sets the item's log time. */
-  void setTimestamp(QDateTime timestamp);
+  void setTimestamp(const QDateTime &timestamp);
   /** Sets the item's severity and appropriate background color. */
-  void setSeverity(LogEvent::Severity type);
+  void setSeverity(tc::Severity type);
   /** Sets the item's message text. */
-  void setMessage(QString message);
+  void setMessage(const QString &message);
 
   /** Returns this message's sequence number. */
   quint32 id() const { return _seqnum; }
   /** Returns the timestamp for this log message. */
   QDateTime timestamp() const;
   /** Returns the severity associated with this log item. */
-  LogEvent::Severity severity() const;
+  tc::Severity severity() const;
   /** Returns the message associated with this log item. */
   QString message() const;
   
@@ -52,6 +54,9 @@ public:
   /** Compares <b>other</b> to this log message item based on the current sort
    * column and order. */
   virtual bool operator<(const QTreeWidgetItem &other) const;
+
+  /** Converts a tc::Severity enum value to a localized string description.*/
+  static QString severityToString(tc::Severity severity);
 
 private:
   quint32 _seqnum;  /**< Sequence number used to disambiguate messages with

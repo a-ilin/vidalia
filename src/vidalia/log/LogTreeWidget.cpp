@@ -167,7 +167,7 @@ LogTreeWidget::deselectAll()
 
 /** Adds a log item to the tree and returns a pointer to the new item. */
 LogTreeItem*
-LogTreeWidget::log(LogEvent::Severity type, QString message)
+LogTreeWidget::log(tc::Severity type, const QString &message)
 {
   int oldScrollValue;
   QScrollBar *scrollBar = verticalScrollBar();

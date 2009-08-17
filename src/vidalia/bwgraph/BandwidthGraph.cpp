@@ -15,7 +15,6 @@
 */
 
 #include "BandwidthGraph.h"
-#include "BandwidthEvent.h"
 #include "Vidalia.h"
 
 #define BWGRAPH_LINE_SEND       (1u<<0)
@@ -46,16 +45,17 @@ BandwidthGraph::BandwidthGraph(QWidget *parent, Qt::WFlags flags)
   /* Invoke Qt Designer generated QObject setup routine */
   ui.setupUi(this);
 
+  /* Ask Tor to notify us about bandwidth updates */
+  Vidalia::torControl()->setEvent(TorEvents::Bandwidth);
+  connect(Vidalia::torControl(), SIGNAL(bandwidthUpdate(quint64,quint64)),
+          this, SLOT(updateGraph(quint64,quint64)));
+
   /* Pressing 'Esc' or 'Ctrl+W' will close the window */
   setShortcut("Esc", SLOT(close()));
   setShortcut("Ctrl+W", SLOT(close()));
 
   /* Bind events to actions */
   createActions();
-
-  /* Ask Tor to notify us about bandwidth updates */
-  _torControl = Vidalia::torControl();
-  _torControl->setEvent(TorEvents::Bandwidth, this, true);
 
   /* Initialize Sent/Receive data counters */
   reset();
@@ -84,35 +84,24 @@ BandwidthGraph::retranslateUi()
   ui.retranslateUi(this);
 }
 
-/** Custom event handler. Checks if the event is a bandwidth update event. If it
- * is, it will add the data point to the history and updates the graph. */
-void
-BandwidthGraph::customEvent(QEvent *event)
-{
-  if (event->type() == CustomEventType::BandwidthEvent) {
-    BandwidthEvent *bw = (BandwidthEvent *)event;
-    updateGraph(bw->bytesRead(), bw->bytesWritten());
-  }
-}
-
 /** Binds events to actions. */
 void
 BandwidthGraph::createActions()
 {
   connect(ui.btnToggleSettings, SIGNAL(toggled(bool)),
-      this, SLOT(showSettingsFrame(bool)));
+          this, SLOT(showSettingsFrame(bool)));
 
   connect(ui.btnReset, SIGNAL(clicked()),
-      this, SLOT(reset()));
+          this, SLOT(reset()));
 
   connect(ui.btnSaveSettings, SIGNAL(clicked()),
-      this, SLOT(saveChanges()));
+          this, SLOT(saveChanges()));
 
   connect(ui.btnCancelSettings, SIGNAL(clicked()),
-      this, SLOT(cancelChanges()));
-  
+          this, SLOT(cancelChanges()));
+
   connect(ui.sldrOpacity, SIGNAL(valueChanged(int)),
-      this, SLOT(setOpacity(int)));
+          this, SLOT(setOpacity(int)));
 }
 
 /** Adds new data to the graph. */
@@ -164,8 +153,8 @@ BandwidthGraph::reset()
 {
   /* Set to current time */
   ui.statusbar->showMessage(tr("Since:") + " " + 
-			    QDateTime::currentDateTime()
-			    .toString(DATETIME_FMT));
+          QDateTime::currentDateTime()
+          .toString(DATETIME_FMT));
   /* Reset the graph */
   ui.frmGraph->resetGraph();
 }

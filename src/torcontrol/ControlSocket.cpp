@@ -43,7 +43,7 @@ ControlSocket::isConnected()
 void
 ControlSocket::customEvent(QEvent *event)
 {
-  if (event->type() == CustomEventType::SendCommandEvent) {
+  if (event->type() == QEvent::User) {
     SendCommandEvent *sce = dynamic_cast<SendCommandEvent *>(event);
     if (! sce)
       return;
