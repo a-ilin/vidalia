@@ -3,6 +3,8 @@
     Vidalia configuration file from inside the application bundle on Mac 
     OS X. Affects only OS X drag-and-drop installer users without a
     previous Vidalia installation.
+  o Change all Tor event handling to use Qt's signals and slots mechanism
+    instead of custom QEvent subclasses.
 
 
 0.2.2   14-Aug-2009
