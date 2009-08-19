@@ -39,13 +39,19 @@ still have to build with the Vidalia-specific patched Marble.
 
 3. Configure Vidalia with Marble support.
 
-  cd vidalia (or wherever your Vidalia source tree lives)
-  mkdir build && cd build
-  cmake -DUSE_MARBLE=1 \
-        -DMARBLE_INCLUDE_DIR=~/marble/src/lib \
-        -DMARBLE_DATA_DIR=~/marble/data \
-        -DMARBLE_LIBRARY_DIR=~/marble/build/src/lib \
-        -DMARBLE_PLUGIN_DIR=~/marble/build/src/plugins ..
+  OS X & Windows:
+    cd vidalia (or wherever your Vidalia source tree lives)
+    mkdir build && cd build
+    cmake -DUSE_MARBLE=1 \
+          -DMARBLE_INCLUDE_DIR=~/marble/src/lib \
+          -DMARBLE_DATA_DIR=~/marble/data \
+          -DMARBLE_LIBRARY_DIR=~/marble/build/src/lib \
+          -DMARBLE_PLUGIN_DIR=~/marble/build/src/plugins ..
+
+  Everywhere else:
+    cd vidalia (or wherever your Vidalia source tree lives)
+    mkdir build && cd build
+    cmake -DUSE_MARBLE=1 ..
 
 You will need to adjust each of the paths above according to where you checked
 out and installed Marble in Steps 1 and 2.
