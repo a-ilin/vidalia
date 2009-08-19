@@ -129,8 +129,6 @@ public:
    * registered with Tor. */
   bool setEvent(TorEvents::Event e, bool add = true, bool set = true,
                 QString *errmsg = 0);
-  /** Registers for a set of logging events according to the given filter. */
-  bool setLogEventFilter(uint filter, QString *errmsg = 0);
   /** Register events of interest with Tor */
   bool setEvents(QString *errmsg = 0);
 
