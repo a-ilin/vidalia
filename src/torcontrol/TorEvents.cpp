@@ -24,6 +24,7 @@
 
 #include "stringutil.h"
 
+#include <QHostAddress>
 #include <QMetaType>
 
 /** Format of expiry times in address map events. */
@@ -331,6 +332,17 @@ TorEvents::handleGeneralStatusEvent(tc::Severity severity,
     else if (! reason.compare("OBSOLETE", Qt::CaseInsensitive)
                || ! reason.compare("OLD", Qt::CaseInsensitive))
       emit dangerousTorVersion(tc::ObsoleteTorVersion, current, recommended);
+  } else if (! action.compare("CLOCK_SKEW", Qt::CaseInsensitive)) {
+    int skew;
+    bool ok = false;
+    if (args.contains("SKEW"))
+      skew = args.value("SKEW").toInt(&ok);
+    else if (args.contains("MIN_SKEW"))
+      skew = args.value("MIN_SKEW").toInt(&ok);
+    if (ok)
+      emit clockSkewed(skew, args.value("SOURCE"));
+  } else if (! action.compare("BUG", Qt::CaseInsensitive)) {
+    emit bug(args.value("REASON"));
   }
 }
 
@@ -371,9 +383,73 @@ TorEvents::handleServerStatusEvent(tc::Severity severity,
                                    const QString &action,
                                    const QHash<QString,QString> &args)
 {
-  Q_UNUSED(severity);
-  Q_UNUSED(action);
-  Q_UNUSED(args);
+  if (! action.compare("EXTERNAL_ADDRESS", Qt::CaseInsensitive)) {
+    emit externalAddressChanged(QHostAddress(args.value("ADDRESS")),
+                                args.value("HOSTNAME"));
+  } else if (! action.compare("CHECKING_REACHABILITY", Qt::CaseInsensitive)) {
+    if (args.contains("ORADDRESS")) {
+      QPair<QHostAddress,quint16> pair = splitAddress(args.value("ORADDRESS"));
+      if (! pair.first.isNull())
+        emit checkingOrPortReachability(pair.first, pair.second);
+    } else if (args.contains("DIRADDRESS")) {
+      QPair<QHostAddress,quint16> pair = splitAddress(args.value("DIRADDRESS"));
+      if (! pair.first.isNull())
+        emit checkingDirPortReachability(pair.first, pair.second);
+    }
+  } else if (! action.compare("REACHABILITY_SUCCEEDED", Qt::CaseInsensitive)) {
+    if (args.contains("ORADDRESS")) {
+      QPair<QHostAddress,quint16> pair = splitAddress(args.value("ORADDRESS"));
+      if (! pair.first.isNull())
+        emit orPortReachabilityFinished(pair.first, pair.second, true);
+    } else if (args.contains("DIRADDRESS")) {
+      QPair<QHostAddress,quint16> pair = splitAddress(args.value("DIRADDRESS"));
+      if (! pair.first.isNull())
+        emit dirPortReachabilityFinished(pair.first, pair.second, true);
+    }
+  } else if (! action.compare("REACHABILITY_FAILED", Qt::CaseInsensitive)) {
+    if (args.contains("ORADDRESS")) {
+      QPair<QHostAddress,quint16> pair = splitAddress(args.value("ORADDRESS"));
+      if (! pair.first.isNull())
+        emit orPortReachabilityFinished(pair.first, pair.second, false);
+    } else if (args.contains("DIRADDRESS")) {
+      QPair<QHostAddress,quint16> pair = splitAddress(args.value("DIRADDRESS"));
+      if (! pair.first.isNull())
+        emit dirPortReachabilityFinished(pair.first, pair.second, false);
+    }
+  } else if (! action.compare("GOOD_SERVER_DESCRIPTOR", Qt::CaseInsensitive)) {
+    emit serverDescriptorAccepted();
+  } else if (! action.compare("ACCEPTED_SERVER_DESCRIPTOR", Qt::CaseInsensitive)) {
+    QPair<QHostAddress,quint16> pair = splitAddress(args.value("DIRAUTH"));
+    if (! pair.first.isNull())
+      emit serverDescriptorAccepted(pair.first, pair.second);
+  } else if (! action.compare("BAD_SERVER_DESCRIPTOR", Qt::CaseInsensitive)) {
+    QPair<QHostAddress,quint16> pair = splitAddress(args.value("DIRAUTH"));
+    if (! pair.first.isNull())
+      emit serverDescriptorRejected(pair.first, pair.second,
+                                    args.value("REASON"));
+  } else if (! action.compare("DNS_HIJACKED", Qt::CaseInsensitive)) {
+    emit dnsHijacked();
+  } else if (! action.compare("DNS_USELESS", Qt::CaseInsensitive)) {
+    emit dnsUseless();
+  }
+}
+
+/** Splits a string in the form "IP:PORT" into a QHostAddress and quint16
+ * pair. If either portion is invalid, a default-constructed QPair() is
+ * returned. */
+QPair<QHostAddress,quint16>
+TorEvents::splitAddress(const QString &address)
+{
+  bool ok;
+  int idx = address.indexOf(":");
+  if (idx <= 0 || idx >= address.length()-1)
+    return QPair<QHostAddress,quint16>();
+
+  QHostAddress ip = QHostAddress(address.mid(0, idx));
+  quint16 port = static_cast<quint16>(address.mid(idx+1).toUInt(&ok));
+  if (ip.isNull() || ! ok)
+    return QPair<QHostAddress,quint16>();
+  return QPair<QHostAddress,quint16>(ip, port);
 }
 
 

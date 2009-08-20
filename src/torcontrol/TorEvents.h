@@ -139,12 +139,85 @@ signals:
    */
   void socksError(tc::SocksError error, const QString &destination);
 
+  /** Emitted when Tor has encountered an internal bug. <b>reason</b> is
+   * Tor's description of the bug.
+   */
+  void bug(const QString &reason);
+
+  /** Emitted when Tor decides the clients external IP address has changed
+   * to <b>ip</b>. If <b>hostname</b> is non-empty, Tor obtained the new
+   * value for <b>ip</b> by resolving <b>hostname</b>. 
+   */
+  void externalAddressChanged(const QHostAddress &ip, const QString &hostname);
+
+  /** Indicates that Tor has determined the client's clock is potentially
+   * skewed by <b>skew</b> seconds relative to <b>source</b>.
+   */
+  void clockSkewed(int skew, const QString &source);
+
+  /** Emitted when Tor determines that the user's DNS provider is providing
+   * an address for non-existent domains when it should really be saying
+   * "NXDOMAIN".
+   */
+  void dnsHijacked();
+
+  /** Emitted when Tor determines that the user's DNS provider is providing
+   * a hijacked address even for well-known websites.
+   */
+  void dnsUseless();
+
+  /** Indicates Tor has started testing the reachability of its OR port 
+   * using the IP address <b>ip</b> and port <b>port</b>.
+   */
+  void checkingOrPortReachability(const QHostAddress &ip, quint16 port);
+
+  /** Tor has completed testing the reachability of its OR port using
+   * the IP address <b>ip</b> and port <b>port</b>. If the user's OR port
+   * was reachable, <b>reachable</b> will be set to true.
+   */
+  void orPortReachabilityFinished(const QHostAddress &ip, quint16 port,
+                                  bool reachable);
+
+  /** Indicates Tor has started testing the reachability of its directory
+   * port using the IP address <b>ip</b> and port <b>port</b>.
+   */
+  void checkingDirPortReachability(const QHostAddress &ip, quint16 port);
+
+  /** Tor has completed testing the reachability of its directory port using
+   * the IP address <b>ip</b> and port <b>port</b>. If the user's directory
+   * port was reachable, <b>reachable</b> will be set to true.
+   */
+  void dirPortReachabilityFinished(const QHostAddress &ip, quint16 port,
+                                   bool reachable);
+
+  /** Emitted when the directory authority with IP address <b>ip</b> and
+   * port <b>port</b> rejected the user's server descriptor. <b>reason</b>
+   * describes why the descriptor was rejected (e.g., malformed, skewed
+   * clock, etc.).
+   */
+  void serverDescriptorRejected(const QHostAddress &ip, quint16 port,
+                                const QString &reason);
+
+  /** Emitted when the directory authority with IP address <b>ip</b> and
+   * port <b>port</b> accepted the user's server descriptor.
+   */
+  void serverDescriptorAccepted(const QHostAddress &ip, quint16 port);
+
+  /** Emitted when at least one directory authority has accepted the user's
+   * server descriptor.
+   */
+  void serverDescriptorAccepted();
+
 private:
   /** Parses the event type from the event message */
   static Event parseEventType(const ReplyLine &line);
   /** Converts a string to an Event */
   static Event toTorEvent(const QString &event);
-
+  /** Splits a string in the form "IP:PORT" into a QHostAddress and quint16
+   * pair. If either portion is invalid, a default-constructed QPair() is
+   * returned. */
+   static QPair<QHostAddress,quint16> splitAddress(const QString &address);
+  
   /** Handle a bandwidth update event */
   void handleBandwidthUpdate(const ReplyLine &line);
   /** Handle a circuit status event */

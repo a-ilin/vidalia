@@ -46,6 +46,25 @@ TorControl::TorControl()
   RELAY_SIGNAL(_eventHandler, SIGNAL(dangerousPort(quint16, bool)));
   RELAY_SIGNAL(_eventHandler, SIGNAL(socksError(tc::SocksError, QString)));
   RELAY_SIGNAL(_eventHandler, SIGNAL(bootstrapStatusChanged(BootstrapStatus)));
+  RELAY_SIGNAL(_eventHandler, SIGNAL(clockSkewed(int, QString)));
+  RELAY_SIGNAL(_eventHandler, SIGNAL(bug(QString)));
+  RELAY_SIGNAL(_eventHandler, SIGNAL(dnsHijacked()));
+  RELAY_SIGNAL(_eventHandler, SIGNAL(dnsUseless()));
+  RELAY_SIGNAL(_eventHandler,
+               SIGNAL(externalAddressChanged(QHostAddress, QString)));
+  RELAY_SIGNAL(_eventHandler,
+               SIGNAL(checkingOrPortReachability(QHostAddress, quint16)));
+  RELAY_SIGNAL(_eventHandler,
+               SIGNAL(orPortReachabilityFinished(QHostAddress,quint16,bool)));
+  RELAY_SIGNAL(_eventHandler,
+               SIGNAL(checkingDirPortReachability(QHostAddress, quint16)));
+  RELAY_SIGNAL(_eventHandler,
+               SIGNAL(dirPortReachabilityFinished(QHostAddress,quint16,bool)));
+  RELAY_SIGNAL(_eventHandler,
+               SIGNAL(serverDescriptorRejected(QHostAddress, quint16, QString)));
+  RELAY_SIGNAL(_eventHandler,
+               SIGNAL(serverDescriptorAccepted(QHostAddress, quint16)));
+  RELAY_SIGNAL(_eventHandler, SIGNAL(serverDescriptorAccepted()));
 
   /* Create an instance of a connection to Tor's control interface and give
    * it an object to use to handle asynchronous events. */
