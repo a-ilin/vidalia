@@ -297,7 +297,7 @@ signals:
    */
   void socksError(tc::SocksError type, const QString &destination);
 
-  /** Emitted when Tor decides the clients external IP address has changed
+  /** Emitted when Tor decides the client's external IP address has changed
    * to <b>ip</b>. If <b>hostname</b> is non-empty, Tor obtained the new
    * value for <b>ip</b> by resolving <b>hostname</b>. 
    */
