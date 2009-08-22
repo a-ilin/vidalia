@@ -42,6 +42,8 @@ TorEvents::TorEvents(QObject *parent)
   qRegisterMetaType<BootstrapStatus>("BootstrapStatus");
   qRegisterMetaType<Circuit>("Circuit");
   qRegisterMetaType<Stream>("Stream");
+
+  qRegisterMetaType<QHostAddress>("QHostAddress");
 }
 
 /** Converts an event type to a string Tor understands */
