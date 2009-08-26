@@ -207,7 +207,6 @@ ServerPage::loadBridgeIdentity()
   ui.lblYourBridgeRelayIs->setEnabled(!bridge.isEmpty());
   ui.lblBridgeIdentity->setEnabled(!bridge.isEmpty());
   ui.btnCopyBridgeIdentity->setEnabled(!bridge.isEmpty());
-  ui.lblBridgeUsage->setVisible(!bridge.isEmpty() && tc->isConnected());
 }
 
 /** Called when the user toggles any one of the server mode radio buttons
@@ -230,7 +229,8 @@ ServerPage::serverModeChanged(bool enabled)
   ui.lblYourBridgeRelayIs->setVisible(bridgeEnabled);
   ui.lblBridgeIdentity->setVisible(bridgeEnabled);
   ui.btnCopyBridgeIdentity->setVisible(bridgeEnabled);
-  ui.lblBridgeUsage->setVisible(bridgeEnabled);
+  ui.lblBridgeUsage->setVisible(bridgeEnabled
+                                  && Vidalia::torControl()->isConnected());
 }
 
 /** Returns true if the user has changed their server settings since the
@@ -319,6 +319,8 @@ ServerPage::load()
   ui.lineDirPort->setText(QString::number(_settings->getDirPort()));
   ui.lineServerContact->setText(_settings->getContactInfo());
   ui.chkMirrorDirectory->setChecked(_settings->isDirectoryMirror());
+  ui.lblBridgeUsage->setVisible(_settings->isBridgeEnabled()
+                                  && Vidalia::torControl()->isConnected());
 
   loadBandwidthLimits();
   loadExitPolicies();

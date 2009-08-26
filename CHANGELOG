@@ -5,6 +5,13 @@
     previous Vidalia installation.
   o Change all Tor event handling to use Qt's signals and slots mechanism
     instead of custom QEvent subclasses.
+  o Fix another bug that resulted in the "Who has used my bridge?" link
+    initially being visible when the user clicks "Setup Relaying" from
+    the control panel if they are running a non-bridge relay.
+    (Ticket #509, reported by "vrapp")
+  o Always hide the "Who has used my bridge?" link when Tor isn't running,
+    since clicking it won't return useful information until Tor actually
+    is running.
 
 
 0.2.2   14-Aug-2009
