@@ -12,7 +12,7 @@
 
 
 ## Search for lrelease
-find_program(VIDALIA_LRELEASE_EXECUTABLE NAMES lrelease-qt4 lrelease lrelease.debug
+find_program(VIDALIA_LRELEASE_EXECUTABLE NAMES lrelease-qt4 lrelease
   PATHS ${QT_BINARY_DIR} NO_DEFAULT_PATH
 )
 if (NOT VIDALIA_LRELEASE_EXECUTABLE)
@@ -23,7 +23,7 @@ endif(NOT VIDALIA_LRELEASE_EXECUTABLE)
 
 
 ## Search for lupdate
-find_program(VIDALIA_LUPDATE_EXECUTABLE NAMES lupdate-qt4 lupdate lupdate.debug
+find_program(VIDALIA_LUPDATE_EXECUTABLE NAMES lupdate-qt4 lupdate
   PATHS ${QT_BINARY_DIR} NO_DEFAULT_PATH
 )
 if (NOT VIDALIA_LUPDATE_EXECUTABLE)
