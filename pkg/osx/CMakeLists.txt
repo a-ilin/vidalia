@@ -188,14 +188,14 @@ else(TOR_SOURCE_DIR AND POLIPO_SOURCE_DIR AND TORBUTTON_XPI)
     COMMAND ${CMAKE_COMMAND} -E echo
       "!! The dist-osx-bundle target is not configured."
     COMMAND ${CMAKE_COMMAND} -E echo
-      "!! You must set the -DTOR_SOURCE_DIR,-DPOLIPO_SOURCE_DIR and TORBUTTON_XPI CMake variables."
+      "!! You must set the -DTOR_SOURCE_DIR,-DPOLIPO_SOURCE_DIR and -DTORBUTTON_XPI CMake variables."
     COMMAND ${CMAKE_COMMAND} -E echo "!! Quitting."
   )
   add_custom_target(dist-osx-split-bundle
     COMMAND ${CMAKE_COMMAND} -E echo
       "!! The dist-osx-split-bundle target is not configured. Quitting."
     COMMAND ${CMAKE_COMMAND} -E echo
-      "!! You must set the -DTOR_SOURCE_DIR, -DPOLIPO_SOURCE_DIR and TORBUTTON_XPI CMake variables."
+      "!! You must set the -DTOR_SOURCE_DIR, -DPOLIPO_SOURCE_DIR and -DTORBUTTON_XPI CMake variables."
     COMMAND ${CMAKE_COMMAND} -E echo "!! Quitting."
   )
 endif(TOR_SOURCE_DIR AND POLIPO_SOURCE_DIR AND TORBUTTON_XPI)
