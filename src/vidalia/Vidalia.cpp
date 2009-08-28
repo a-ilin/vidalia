@@ -141,6 +141,9 @@ Vidalia::Vidalia(QStringList args, int &argc, char **argv)
                                             + "/plugins/marble");
 #endif
 #endif
+#ifdef Q_WS_MAC
+  setStyleSheet("QTreeWidget { font-size: 12pt }");
+#endif
 }
 
 /** Destructor */

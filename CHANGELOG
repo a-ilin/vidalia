@@ -1,3 +1,9 @@
+0.2.4   xx-xxx-2009
+  o Apply an application-global stylesheet on OS X that forces all tree
+    widgets in Vidalia to use the 12pt font recommended by Apple's human
+    interface guidelines.
+
+
 0.2.3   27-Aug-2009
   o Create the data directory before trying to copy over the default
     Vidalia configuration file from inside the application bundle on Mac 
