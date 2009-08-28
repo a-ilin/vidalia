@@ -56,8 +56,8 @@ StatusEventItemDelegate::paint(QPainter *painter,
 
   // Draw the status icon
   QPoint center = iconRect.center();
-  int x = center.x() - (icon.width() / 2.0);
-  int y = center.y() - ((icon.height() + fm.lineSpacing()) / 2.0);
+  int x = center.x() - qRound(icon.width() / 2.0);
+  int y = center.y() - qRound((icon.height() + fm.lineSpacing()) / 2.0);
   painter->drawPixmap(x, y, icon);
 
   // Draw the timestamp text underneath the status icon
