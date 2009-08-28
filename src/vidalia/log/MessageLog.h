@@ -41,15 +41,20 @@ protected:
   virtual void retranslateUi();
 
 private slots:
+  /** Called when the currently visible tab changes and updates the available
+   * toolbar options accordingly. */
+  void currentTabChanged(int index);
   /** Adds the passed message to the message log as the specified type **/
   void log(tc::Severity severity, const QString &msg);
-  /** Called when the user triggers the save all action **/
+  /** Called when the user triggers the "Save All" action. */
   void saveAll();
-  /** Called when the user triggers save selected action **/
+  /** Called when the user triggers "Save Selected" action. */
   void saveSelected();
-  /** Called when the user triggers the copy action **/
+  /** Called when the user triggers the "Copy" action. */
   void copy();
-  /** Called when the user triggers the find action. This will search
+  /** Called when the user triggers the "Clear" action. */
+  void clear();
+  /** Called when the user triggers the "Find" action. This will search
    * through all currently displayed log entries for text specified by the
    * user, highlighting the entries that contain a match. */
   void find();
