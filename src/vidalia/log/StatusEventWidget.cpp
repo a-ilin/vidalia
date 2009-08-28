@@ -221,15 +221,17 @@ StatusEventWidget::clockSkewed(int skew, const QString &source)
   if (skew < 0) {
     description = 
       tr("Tor has determined that your computer's clock may be set to %1 "
-         "seconds in the past. If your clock is not correct, Tor will not be "
-         "able to function. Please verify your computer displays the correct "
-         "time.").arg(qAbs(skew));
+         "seconds in the past compared to the directory server at %2. If your "
+         "clock is not correct, Tor will not be able to function. Please "
+         "verify your computer displays the correct time.").arg(qAbs(skew))
+                                                           .arg(source);
   } else {
     description = 
-      tr("Tor has determined that your computer's clock may be set to %1 "
-         "seconds in the future. If your clock is not correct, Tor will not be "
-         "able to function. Please verify your computer displays the correct "
-         "time.").arg(qAbs(skew));
+      tr("Tor has determined th at your computer's clock may be set to %1 "
+         "seconds in the future compared to the directory server at %2. If "
+         "your clock is not correct, Tor will not be able to function. Please "
+         "verify your computer displays the correct time.").arg(qAbs(skew))
+                                                           .arg(source);
   }
   addNotification(icon, tr("Your Computer's Clock is Potentially Incorrect"),
                   description);
