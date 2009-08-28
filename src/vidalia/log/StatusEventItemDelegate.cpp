@@ -151,11 +151,11 @@ StatusEventItemDelegate::layoutText(const QString &text,
   qreal height = 0.0;
 
   textLayout.beginLayout();
-  while (lines.length() < maxLines) {
+  while (lines.size() < maxLines) {
     QTextLine line = textLayout.createLine();
     if (! line.isValid())
       break;
-    if (maxLines <= 0 || lines.length() < maxLines-1) {
+    if (maxLines <= 0 || lines.size() < maxLines-1) {
       // Wrap the current line at or below the maximum line width
       line.setLineWidth(maxLineWidth);
       lines.append(text.mid(line.textStart(), line.textLength()));
