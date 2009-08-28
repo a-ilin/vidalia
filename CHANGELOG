@@ -1,4 +1,4 @@
-0.2.3   xx-xxx-2009
+0.2.3   27-Aug-2009
   o Create the data directory before trying to copy over the default
     Vidalia configuration file from inside the application bundle on Mac 
     OS X. Affects only OS X drag-and-drop installer users without a
