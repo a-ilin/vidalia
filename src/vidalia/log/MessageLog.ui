@@ -45,9 +45,6 @@
       <property name="currentIndex">
        <number>0</number>
       </property>
-      <property name="documentMode">
-       <bool>false</bool>
-      </property>
       <widget class="QWidget" name="tabBasic">
        <attribute name="title">
         <string>Basic</string>
