@@ -52,10 +52,13 @@
     <qresource prefix="/images">
         <file>32x32/applications-internet.png</file>
         <file>32x32/applications-system.png</file>
+        <file>32x32/dialog-ok-apply.png</file>
+        <file>32x32/dialog-warning.png</file>
         <file>32x32/document-save.png</file>
         <file>32x32/document-save-all.png</file>
         <file>32x32/edit-clear.png</file>
         <file>32x32/edit-copy.png</file>
+        <file>32x32/edit-delete.png</file>
         <file>32x32/edit-find.png</file>
         <file>32x32/edit-select-all.png</file>
         <file>32x32/format-justify-fill.png</file>
@@ -69,6 +72,9 @@
         <file>32x32/preferences-system.png</file>
         <file>32x32/preferences-system-network.png</file>
         <file>32x32/preferences-system-network-sharing.png</file>
+        <file>32x32/script-error.png</file>
+        <file>32x32/security-low.png</file>
+        <file>32x32/security-medium.png</file>
         <file>32x32/services.png</file>
         <file>32x32/system-help.png</file>
         <file>32x32/system-software-update.png</file>
@@ -88,12 +94,15 @@
     </qresource>
     <qresource prefix="/images">
         <file>48x48/applications-internet.png</file>
+        <file>48x48/chronometer.png</file>
         <file>48x48/dialog-password.png</file>
         <file>48x48/media-playback-start.png</file>
         <file>48x48/media-playback-stop.png</file>
         <file>48x48/modem.png</file>
+        <file>48x48/network-connect.png</file>
         <file>48x48/network-workgroup.png</file>
         <file>48x48/preferences-system-network-sharing.png</file>
+        <file>48x48/tor-logo.png</file>
         <file>48x48/tor-off.png</file>
         <file>48x48/tor-on.png</file>
         <file>48x48/tor-starting.png</file>

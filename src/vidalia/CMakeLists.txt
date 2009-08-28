@@ -163,12 +163,17 @@ set(vidalia_SRCS ${vidalia_SRCS}
   log/LogTreeItem.cpp
   log/LogTreeWidget.cpp
   log/MessageLog.cpp
+  log/StatusEventItem.cpp
+  log/StatusEventItemDelegate.cpp
+  log/StatusEventWidget.cpp
 )
 qt4_wrap_cpp(vidalia_SRCS
   log/LogFile.h
   log/LogHeaderView.h
   log/LogTreeWidget.h
   log/MessageLog.h
+  log/StatusEventItemDelegate.h
+  log/StatusEventWidget.h
 )
 
 ## Network map sources
