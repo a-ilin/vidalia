@@ -2,6 +2,9 @@
   o Apply an application-global stylesheet on OS X that forces all tree
     widgets in Vidalia to use the 12pt font recommended by Apple's human
     interface guidelines.
+  o Add an OSX_FORCE_32BIT CMake option that can be used to force a 32-bit
+    build on Mac OS X versions that default to 64-bit builds (e.g., Snow
+    Leopard), if only 32-bit versions of the Qt libraries are available.
 
 
 0.2.3   27-Aug-2009

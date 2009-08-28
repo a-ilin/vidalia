@@ -179,31 +179,48 @@ You can customize your Vidalia build by supplying arguments and values to the
 `cmake` commands above. Each of the configuration options can be specified on
 the command line and follows the format "-D <var>:<type>=<value>
 
-  -DUSE_QSSLSOCKET=0                      Disable building Vidalia with SSL
-                                          support.
+  -DUSE_QSSLSOCKET=0 
+  
+      Disable building Vidalia with SSL support.
 
-  -DUSE_MINIUPNPC=0                       Disable UPnP support in Vidalia.
+  -DUSE_MINIUPNPC=0
+    
+    Disable UPnP support in Vidalia.
 
-  -DOSX_FAT_BINARY=1                      Build Vidalia as a Universal binary.
+  -DOSX_FAT_BINARY=1 
+    
+    Build Vidalia as a Universal binary.
 
-  -DQT_QMAKE_EXECUTABLE=/path/to/qmake    Specifies the location of Qt's
-                                          'qmake' binary.
+  -DOSX_FORCE_32BIT=1
 
-  -DOPENSSL_LIBRARY_DIR=/path/to/openssl  Specifies the location of OpenSSL's
-                                          libraries.
+    Forces a 32-bit build. This is useful on platforms that default to 64-bit
+    (e.g. Snow Leopard), but only have 32-bit versions of the Qt libraries
+    available.
 
-  -DCMAKE_INSTALL_PREFIX=/usr/local       Specifies the install prefix used
-                                          for `make install`.
+  -DQT_QMAKE_EXECUTABLE=/path/to/qmake
+  
+    Specifies the location of Qt's 'qmake' binary.
 
-  -DCMAKE_BUILD_TYPE=<buildtype>          Available build types include:
-                                            "release", "debug", "minsizerel"
-  -DUSE_MARBLE=1                          Replace the flat map with a
-                                          3-D sphere using the Marble libraries.
+  -DOPENSSL_LIBRARY_DIR=/path/to/openssl
+  
+    Specifies the location of OpenSSL's libraries.
 
-  -DWIX_BINARY_DIR=C:\Path\To\WiX\        Specifies the location of your
-                                          WiX executables, such as
-                                          candle.exe and light.exe
-                                          (optional, Windows-only).
+  -DCMAKE_INSTALL_PREFIX=/usr/local
+  
+    Specifies the install prefix used for `make install`.
+
+  -DCMAKE_BUILD_TYPE=<buildtype>
+  
+    Available build types include: "release", "debug", "minsizerel"
+
+  -DUSE_MARBLE=1
+  
+    Replace the flat map with a 3-D sphere using the Marble libraries.
+
+  -DWIX_BINARY_DIR=C:\Path\To\WiX\
+  
+    Specifies the location of your WiX executables, such as candle.exe and
+    light.exe (optional, Windows-only).
 
 
 For example, to configure CMake to look for Qt in "/usr/local/Qt-4.3.2/bin",
