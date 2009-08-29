@@ -102,6 +102,9 @@ MessageLog::createActions()
   connect(ui.actionSave_All, SIGNAL(triggered()),
           this, SLOT(saveAll()));
 
+  connect(ui.actionSelect_All, SIGNAL(triggered()),
+          this, SLOT(selectAll()));
+
   connect(ui.actionCopy, SIGNAL(triggered()),
           this, SLOT(copy()));
 
@@ -164,8 +167,6 @@ MessageLog::currentTabChanged(int index)
 
   ui.actionSave_Selected->setEnabled(isAdvancedTabVisible);
   ui.actionSave_All->setEnabled(isAdvancedTabVisible);
-  ui.actionSelect_All->setEnabled(isAdvancedTabVisible);
-  ui.actionCopy->setEnabled(isAdvancedTabVisible);
   ui.actionFind->setEnabled(isAdvancedTabVisible);
 }
 
@@ -375,11 +376,26 @@ MessageLog::saveAll()
   save(ui.listMessages->allMessages());
 }
 
+void
+MessageLog::selectAll()
+{
+  if (ui.tabWidget->currentIndex() == 0)
+    ui.listNotifications->selectAll();
+  else
+    ui.listMessages->selectAll();
+}
+
 /** Copies contents of currently selected messages to the 'clipboard'. */
 void
 MessageLog::copy()
 {
-  QString contents = ui.listMessages->selectedMessages().join("");
+  QString contents;
+
+  if (ui.tabWidget->currentIndex() == 0)
+    contents = ui.listNotifications->selectedEvents().join("\n");
+  else
+    contents = ui.listMessages->selectedMessages().join("");
+
   if (!contents.isEmpty()) {
     /* Copy the selected messages to the clipboard */
     QApplication::clipboard()->setText(contents);

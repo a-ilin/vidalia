@@ -50,6 +50,8 @@ private slots:
   void saveAll();
   /** Called when the user triggers "Save Selected" action. */
   void saveSelected();
+  /** Called when the user triggers the "Select All" action. */
+  void selectAll();
   /** Called when the user triggers the "Copy" action. */
   void copy();
   /** Called when the user triggers the "Clear" action. */

@@ -46,6 +46,11 @@ public:
    */
   int maximumItemCount() const;
 
+  /** Returns a QStringList of status events formatted as human-readable
+   * text. Each item in the QStringList represents a single status event.
+   */
+  QStringList selectedEvents() const;
+
 protected:
   /** Called when the user has changed the UI display language in Vidalia
    * indicating all the displayed text widgets need to be updated to

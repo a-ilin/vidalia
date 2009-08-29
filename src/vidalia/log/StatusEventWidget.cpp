@@ -29,6 +29,12 @@
 #include <QObject>
 #include <QHeaderView>
 
+bool compareStatusEventItems(const QTreeWidgetItem *a,
+                             const QTreeWidgetItem *b)
+{
+  return (*a < *b);
+}
+
 StatusEventWidget::StatusEventWidget(QWidget *parent)
   : QTreeWidget(parent)
 {
@@ -104,6 +110,33 @@ int
 StatusEventWidget::maximumItemCount() const
 {
   return _maximumItemCount;
+}
+
+QStringList
+StatusEventWidget::selectedEvents() const
+{
+  QString text;
+  QStringList out;
+  QList<QTreeWidgetItem *> items = selectedItems();
+
+  // We have to sort the items since selectedItems() returns the order in
+  // which the items were selected, not the order in which they appear in the
+  // current list.
+  qStableSort(items.begin(), items.end(), compareStatusEventItems);
+
+  for (int i = 0; i < items.size(); i++) {
+    StatusEventItem *event = dynamic_cast<StatusEventItem *>(items.at(i));
+    if (event) {
+      // Format the output string with the timestamp, title and description
+      text = QString("[%1] %2 - %3").arg(event->timestamp().toString())
+                                    .arg(event->title())
+                                    .arg(event->description());
+
+      // Place the item in the list, sorted in ascending order by timestamp
+      out.append(text);
+    }
+  }
+  return out;
 }
 
 void
