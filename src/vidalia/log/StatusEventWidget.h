@@ -99,6 +99,60 @@ private slots:
    */
   void socksError(tc::SocksError type, const QString &destination);
 
+  /** Called when Tor decides the client's external IP address has changed
+   * to <b>ip</b>. If <b>hostname</b> is non-empty, Tor obtained the new
+   * value for <b>ip</b> by resolving <b>hostname</b>. 
+   */
+  void externalAddressChanged(const QHostAddress &ip, const QString &hostname);
+
+  /** Called when Tor determines that the user's DNS provider is providing
+   * an address for non-existent domains when it should really be saying
+   * "NXDOMAIN".
+   */
+  void dnsHijacked();
+  
+  /** Called when Tor determines that the user's DNS provider is providing
+   * a hijacked address even for well-known websites.
+   */
+  void dnsUseless();
+  
+  /** Indicates Tor has started testing the reachability of its OR port 
+   * using the IP address <b>ip</b> and port <b>port</b>.
+   */
+  void checkingOrPortReachability(const QHostAddress &ip, quint16 port);
+  
+  /** Tor has completed testing the reachability of its OR port using
+   * the IP address <b>ip</b> and port <b>port</b>. If the user's OR port
+   * was reachable, <b>reachable</b> will be set to true.
+   */
+  void orPortReachabilityFinished(const QHostAddress &ip, quint16 port,
+                                  bool reachable);
+  
+  /** Indicates Tor has started testing the reachability of its directory
+   * port using the IP address <b>ip</b> and port <b>port</b>.
+   */
+  void checkingDirPortReachability(const QHostAddress &ip, quint16 port);
+  
+  /** Tor has completed testing the reachability of its directory port using
+   * the IP address <b>ip</b> and port <b>port</b>. If the user's directory
+   * port was reachable, <b>reachable</b> will be set to true.
+   */
+  void dirPortReachabilityFinished(const QHostAddress &ip, quint16 port,
+                                   bool reachable);
+  
+  /** Called when the directory authority with IP address <b>ip</b> and
+   * port <b>port</b> rejected the user's server descriptor. <b>reason</b>
+   * describes why the descriptor was rejected (e.g., malformed, skewed
+   * clock, etc.).
+   */
+  void serverDescriptorRejected(const QHostAddress &ip, quint16 port,
+                                const QString &reason);
+
+  /** Called when at least one directory authority has accepted the user's
+   * server descriptor.
+   */
+  void serverDescriptorAccepted();
+
 private:
   /** Adds a new status event notification item to the widget. The item will
    * be drawn using the specified <b>icon</b>, short event <b>title</b>,
@@ -116,6 +170,20 @@ private:
    */
   static QPixmap addBadgeToPixmap(const QPixmap &pixmap,
                                   const QPixmap &badge);
+
+  /** Overloaded method provided for convenience. Constructs QPixmap objects
+   * from the Qt resource URLs <b>pixmap</b> and <b>badge</b>.
+   * \sa addBadgeToPixmap(QPixmap, QPixmap)
+   */
+  static QPixmap addBadgeToPixmap(const QString &pixmap,
+                                  const QString &badge);
+
+  /** Overloaded method provided for convenience. Constructs a QPixmap object
+   * for the Qt resource URL <b>badge</b>, and applies it to <b>pixmap</b>.
+   * \sa addBadgeToPixmap(QPixmap, QPixmap)
+   */
+  static QPixmap addBadgeToPixmap(const QPixmap &pixmap,
+                                  const QString &badge);
 
   /** Maximum number of event notifications contained in the StatusEventWidget
    * at any given time.

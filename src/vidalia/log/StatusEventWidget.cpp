@@ -50,6 +50,22 @@ StatusEventWidget::StatusEventWidget(QWidget *parent)
           this, SLOT(dangerousPort(quint16, bool)));
   connect(tc, SIGNAL(socksError(tc::SocksError, QString)),
           this, SLOT(socksError(tc::SocksError, QString)));
+  connect(tc, SIGNAL(externalAddressChanged(QHostAddress, QString)),
+          this, SLOT(externalAddressChanged(QHostAddress, QString)));
+  connect(tc, SIGNAL(dnsHijacked()), this, SLOT(dnsHijacked()));
+  connect(tc, SIGNAL(dnsUseless()), this, SLOT(dnsUseless()));
+  connect(tc, SIGNAL(checkingOrPortReachability(QHostAddress, quint16)),
+          this, SLOT(checkingOrPortReachability(QHostAddress, quint16)));
+  connect(tc, SIGNAL(orPortReachabilityFinished(QHostAddress, quint16, bool)),
+          this, SLOT(orPortReachabilityFinished(QHostAddress, quint16, bool)));
+  connect(tc, SIGNAL(checkingDirPortReachability(QHostAddress, quint16)),
+          this, SLOT(checkingDirPortReachability(QHostAddress, quint16)));
+  connect(tc, SIGNAL(dirPortReachabilityFinished(QHostAddress, quint16, bool)),
+          this, SLOT(dirPortReachabilityFinished(QHostAddress, quint16, bool)));
+  connect(tc, SIGNAL(serverDescriptorRejected(QHostAddress, quint16, QString)),
+          this, SLOT(serverDescriptorRejected(QHostAddress, quint16, QString)));
+  connect(tc, SIGNAL(serverDescriptorAccepted()),
+          this, SLOT(serverDescriptorAccepted()));
 
   setItemDelegate(new StatusEventItemDelegate(this));
 }
@@ -132,12 +148,26 @@ StatusEventWidget::addBadgeToPixmap(const QPixmap &pixmap,
   return out;
 }
 
+QPixmap
+StatusEventWidget::addBadgeToPixmap(const QPixmap &pixmap,
+                                    const QString &badge)
+{
+  return StatusEventWidget::addBadgeToPixmap(pixmap, QPixmap(badge));
+}
+
+QPixmap
+StatusEventWidget::addBadgeToPixmap(const QString &pixmap,
+                                    const QString &badge)
+{
+  return StatusEventWidget::addBadgeToPixmap(QPixmap(pixmap), QPixmap(badge));
+}
+
 void
 StatusEventWidget::authenticated()
 {
   QString version = Vidalia::torControl()->getTorVersionString();
-  QPixmap icon = addBadgeToPixmap(QPixmap(":/images/48x48/tor-logo.png"),
-                                  QPixmap(":/images/32x32/dialog-ok-apply.png"));
+  QPixmap icon = addBadgeToPixmap(":/images/48x48/tor-logo.png",
+                                  ":/images/32x32/dialog-ok-apply.png");
   addNotification(icon,
     tr("The Tor Software is Running"),
     tr("You are currently running version \"%1\" of the Tor software.")
@@ -147,8 +177,8 @@ StatusEventWidget::authenticated()
 void
 StatusEventWidget::disconnected()
 {
-  QPixmap icon = addBadgeToPixmap(QPixmap(":/images/48x48/tor-logo.png"),
-                                  QPixmap(":/images/32x32/edit-delete.png"));
+  QPixmap icon = addBadgeToPixmap(":/images/48x48/tor-logo.png",
+                                  ":/images/32x32/edit-delete.png");
 
   addNotification(icon,
     tr("The Tor Software is not Running"),
@@ -167,8 +197,8 @@ StatusEventWidget::dangerousTorVersion(tc::TorVersionStatus reason,
   QPixmap icon;
 
   if (reason == tc::UnrecommendedTorVersion) {
-    icon = addBadgeToPixmap(QPixmap(":/images/48x48/tor-logo.png"),
-                            QPixmap(":/images/32x32/security-medium.png"));
+    icon = addBadgeToPixmap(":/images/48x48/tor-logo.png",
+                            ":/images/32x32/security-medium.png");
 
     description = 
       tr("You are currently running version \"%1\" of the Tor software, which "
@@ -176,8 +206,8 @@ StatusEventWidget::dangerousTorVersion(tc::TorVersionStatus reason,
          "of the software, which may contain important security, reliability "
          "and performance fixes.").arg(version);
   } else if (reason == tc::ObsoleteTorVersion) {
-    icon = addBadgeToPixmap(QPixmap(":/images/48x48/tor-logo.png"),
-                            QPixmap(":/images/32x32/security-low.png"));
+    icon = addBadgeToPixmap(":/images/48x48/tor-logo.png",
+                            ":/images/32x32/security-low.png");
 
     description =
       tr("You are currently running version \"%1\" of the Tor software, which "
@@ -202,9 +232,8 @@ StatusEventWidget::circuitEstablished()
 void
 StatusEventWidget::bug(const QString &description)
 {
-  QString bugsUrl = "https://bugs.torproject.org/";
-  QPixmap icon = addBadgeToPixmap(QPixmap(":/images/48x48/tor-logo.png"),
-                                  QPixmap(":/images/32x32/script-error.png"));
+  QPixmap icon = addBadgeToPixmap(":/images/48x48/tor-logo.png",
+                                  ":/images/32x32/script-error.png");
   addNotification(icon,
     tr("Tor Software Error"),
     tr("The Tor software encountered an internal bug. Please report the "
@@ -227,8 +256,8 @@ StatusEventWidget::clockSkewed(int skew, const QString &source)
   }
 
   QString description;
-  QPixmap icon = addBadgeToPixmap(QPixmap(":/images/48x48/chronometer.png"),
-                                  QPixmap(":/images/48x48/dialog-warning.png"));
+  QPixmap icon = addBadgeToPixmap(":/images/48x48/chronometer.png",
+                                  ":/images/48x48/dialog-warning.png");
 
   if (skew < 0) {
     description = 
@@ -256,8 +285,8 @@ StatusEventWidget::dangerousPort(quint16 port, bool rejected)
   QString description;
 
   if (rejected) {
-    icon = addBadgeToPixmap(QPixmap(":/images/48x48/applications-internet.png"),
-                            QPixmap(":/images/32x32/security-low.png"));
+    icon = addBadgeToPixmap(":/images/48x48/applications-internet.png",
+                            ":/images/32x32/security-low.png");
 
     description =
       tr("One of the applications on your computer may have attempted to "
@@ -266,8 +295,8 @@ StatusEventWidget::dangerousPort(quint16 port, bool rejected)
          "recommended. For your protection, Tor has automatically closed this "
          "connection.");
   } else {
-    icon = addBadgeToPixmap(QPixmap(":/images/48x48/applications-internet.png"),
-                            QPixmap(":/images/32x32/security-medium.png"));
+    icon = addBadgeToPixmap(":/images/48x48/applications-internet.png",
+                            ":/images/32x32/security-medium.png");
     description =
       tr("One of the applications on your computer may have attempted to "
          "make an unencrypted connection through Tor to port %1. Sending "
@@ -285,10 +314,9 @@ StatusEventWidget::socksError(tc::SocksError type, const QString &destination)
   QPixmap icon = QPixmap(":/images/48x48/applications-internet.png");
 
   if (type == tc::DangerousSocksTypeError) {
-    icon  = addBadgeToPixmap(icon,
-                             QPixmap(":/images/32x32/security-medium.png"));
+    icon  = addBadgeToPixmap(icon, ":/images/32x32/security-medium.png");
+    
     title = tr("Potentially Dangerous Connection!");
-
     description =
       tr("One of your applications established a connection through Tor "
          "to \"%1\" using a protocol that may leak information about your "
@@ -296,18 +324,16 @@ StatusEventWidget::socksError(tc::SocksError type, const QString &destination)
          "only SOCKS4a or SOCKS5 with remote hostname resolution.")
                                                             .arg(destination);
   } else if (type == tc::UnknownSocksProtocolError) {
-    icon = addBadgeToPixmap(icon,
-                            QPixmap(":/images/32x32/dialog-warning.png"));
-    title = tr("Unknown SOCKS Protocol");
+    icon = addBadgeToPixmap(icon, ":/images/32x32/dialog-warning.png");
 
+    title = tr("Unknown SOCKS Protocol");
     description =
       tr("One of your applications tried to establish a connection through "
          "Tor using a protocol that Tor does not understand. Please ensure "
          "you configure your applications to use only SOCKS4a or SOCKS5 with "
          "remote hostname resolution.");
   } else if (type == tc::BadSocksHostnameError) {
-    icon = addBadgeToPixmap(icon,
-                            QPixmap(":/images/32x32/dialog-warning.png"));
+    icon = addBadgeToPixmap(icon, ":/images/32x32/dialog-warning.png");
 
     title = tr("Invalid Destination Hostname");
     description =
@@ -319,5 +345,150 @@ StatusEventWidget::socksError(tc::SocksError type, const QString &destination)
   }
 
   addNotification(icon, title, description);
+}
+
+void 
+StatusEventWidget::externalAddressChanged(const QHostAddress &ip,
+                                          const QString &hostname)
+{
+  QString hostString = hostname.isEmpty() ? QString() 
+                                          : QString(" (%1)").arg(hostname);
+
+  addNotification(QPixmap(":/images/48x48/applications-internet.png"),
+    tr("External IP Address Changed"),
+    tr("Tor has determined your relay's public IP address is currently %1%2. "
+       "If that is not correct, please consider setting the 'Address' option "
+       "in your relay's configuration.").arg(ip.toString()).arg(hostString));
+}
+
+void
+StatusEventWidget::dnsHijacked()
+{
+  QPixmap icon = addBadgeToPixmap(":/images/48x48/applications-internet.png",
+                                  ":/images/32x32/dialog-warning.png");
+  addNotification(icon,
+    tr("DNS Hijacking Detected"),
+    tr("Tor detected that your DNS provider is providing false responses for "
+       "domains that do not exist. Some ISPs and other DNS providers, such as "
+       "OpenDNS, are known to do this in order to display their own search or "
+       "advertising pages."));
+}
+
+void
+StatusEventWidget::dnsUseless()
+{
+  QPixmap icon = addBadgeToPixmap(":/images/48x48/applications-internet.png",
+                                  ":/images/32x32/edit-delete.png");
+  addNotification(icon,
+    tr("DNS Hijacking Detected"),
+    tr("Tor detected that your DNS provider is providing false responses for "
+       "well known domains. Since clients rely on Tor network relays to "
+       "provide accurate DNS repsonses, your relay will not be configured as "
+       "an exit relay."));
+}
+
+void
+StatusEventWidget::checkingOrPortReachability(const QHostAddress &ip,
+                                              quint16 port)
+{
+  addNotification(QPixmap(":/images/48x48/network-wired.png"),
+    tr("Checking Server Port Reachability"),
+    tr("Tor is trying to determine if your relay's server port is reachable "
+       "from the Tor network by connecting to itself at %1:%2. This test "
+       "could take several minutes.").arg(ip.toString()).arg(port));
+}
+
+void
+StatusEventWidget::orPortReachabilityFinished(const QHostAddress &ip,
+                                              quint16 port,
+                                              bool reachable)
+{
+  QString title, description;
+  QPixmap icon = QPixmap(":/images/48x48/network-wired.png");
+  if (reachable) {
+    icon = addBadgeToPixmap(icon, ":/images/32x32/dialog-ok-apply.png");
+    title = tr("Server Port Reachability Test Successful!");
+    description =
+      tr("Your relay's server port is reachable from the Tor network!");
+  } else {
+    icon = addBadgeToPixmap(icon, ":/images/32x32/dialog-warning.png");
+    title = tr("Server Port Reachability Test Failed");
+    description =
+      tr("Your relay's server port is not reachable by other Tor clients. This "
+         "can happen if you are behind a router or firewall that requires you "
+         "to set up port forwarding. If %1:%2 is not your correct IP address "
+         "and server port, please check your relay's configuration.")
+                                                .arg(ip.toString()).arg(port);
+  }
+
+  addNotification(icon, title, description);
+}
+
+void
+StatusEventWidget::checkingDirPortReachability(const QHostAddress &ip,
+                                               quint16 port)
+{
+  addNotification(QPixmap(":/images/48x48/network-wired.png"),
+    tr("Checking Directory Port Reachability"),
+    tr("Tor is trying to determine if your relay's directory port is reachable "
+       "from the Tor network by connecting to itself at %1:%2. This test "
+       "could take several minutes.").arg(ip.toString()).arg(port));
+}
+
+void
+StatusEventWidget::dirPortReachabilityFinished(const QHostAddress &ip,
+                                               quint16 port,
+                                               bool reachable)
+{
+  QString title, description;
+  QPixmap icon = QPixmap(":/images/48x48/network-wired.png");
+  if (reachable) {
+    icon = addBadgeToPixmap(icon, ":/images/32x32/dialog-ok-apply.png");
+    title = tr("Directory Port Reachability Test Successful!");
+    description = 
+      tr("Your relay's directory port is reachable from the Tor network!");
+  } else {
+    icon = addBadgeToPixmap(icon, ":/images/32x32/dialog-warning.png");
+    title = tr("Directory Port Reachability Test Failed");
+    description = 
+      tr("Your relay's directory port is not reachable by other Tor clients. "
+         "This can happen if you are behind a router or firewall that requires "
+         "you to set up port forwarding. If %1:%2 is not your correct IP "
+         "address and directory port, please check your relay's configuration.")
+                                                .arg(ip.toString()).arg(port);
+  }
+  
+  addNotification(icon, title, description);
+}
+
+void
+StatusEventWidget::serverDescriptorRejected(const QHostAddress &ip,
+                                            quint16 port,
+                                            const QString &reason)
+{
+  QPixmap icon =
+    addBadgeToPixmap(":/images/48x48/preferences-system-networking.png",
+                     ":/images/32x32/dialog-warning.png");
+
+  addNotification(icon,
+    tr("Relay Descriptor Rejected"),
+    tr("Your relay's descriptor, which enables clients to connect to your "
+       "relay, was rejected by the directory server at %1:%2. The reason "
+       "given was: %3").arg(ip.toString()).arg(port).arg(reason));
+}
+
+void
+StatusEventWidget::serverDescriptorAccepted()
+{
+  QPixmap icon =
+  addBadgeToPixmap(":/images/48x48/preferences-system-networking.png",
+                   ":/images/32x32/dialog-ok-apply.png");
+
+  addNotification(icon,
+    tr("Your Relay is Online"),
+    tr("Your relay is now online and available for Tor clients to use. You "
+       "should see an increase in network traffic shown by the Bandwidth "
+       "Graph within a few hours as more clients learn about your relay. "
+       "Thank you for contributing to the Tor network!"));
 }
 
