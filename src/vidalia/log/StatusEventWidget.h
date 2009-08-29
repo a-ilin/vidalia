@@ -91,6 +91,14 @@ private slots:
    */
   void dangerousPort(quint16 port, bool rejected);
 
+  /** Called when Tor detects a problem with a SOCKS connection from the
+   * user, such as a bad hostname, dangerous SOCKS protocol type, or a bad
+   * hostname. <b>type</b> indicates the type of error encountered and
+   * <b>destination</b> (if non-empty) specifies the attempted connection
+   * destination address or hostname.
+   */
+  void socksError(tc::SocksError type, const QString &destination);
+
 private:
   /** Adds a new status event notification item to the widget. The item will
    * be drawn using the specified <b>icon</b>, short event <b>title</b>,

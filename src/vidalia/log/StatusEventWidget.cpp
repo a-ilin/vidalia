@@ -48,6 +48,8 @@ StatusEventWidget::StatusEventWidget(QWidget *parent)
           this, SLOT(clockSkewed(int, QString)));
   connect(tc, SIGNAL(dangerousPort(quint16, bool)),
           this, SLOT(dangerousPort(quint16, bool)));
+  connect(tc, SIGNAL(socksError(tc::SocksError, QString)),
+          this, SLOT(socksError(tc::SocksError, QString)));
 
   setItemDelegate(new StatusEventItemDelegate(this));
 }
@@ -274,5 +276,48 @@ StatusEventWidget::dangerousPort(quint16 port, bool rejected)
   }
 
   addNotification(icon, tr("Potentially Dangerous Connection!"), description);
+}
+
+void
+StatusEventWidget::socksError(tc::SocksError type, const QString &destination)
+{
+  QString title, description;
+  QPixmap icon = QPixmap(":/images/48x48/applications-internet.png");
+
+  if (type == tc::DangerousSocksTypeError) {
+    icon  = addBadgeToPixmap(icon,
+                             QPixmap(":/images/32x32/security-medium.png"));
+    title = tr("Potentially Dangerous Connection!");
+
+    description =
+      tr("One of your applications established a connection through Tor "
+         "to \"%1\" using a protocol that may leak information about your "
+         "destination. Please ensure you configure your applications to use "
+         "only SOCKS4a or SOCKS5 with remote hostname resolution.")
+                                                            .arg(destination);
+  } else if (type == tc::UnknownSocksProtocolError) {
+    icon = addBadgeToPixmap(icon,
+                            QPixmap(":/images/32x32/dialog-warning.png"));
+    title = tr("Unknown SOCKS Protocol");
+
+    description =
+      tr("One of your applications tried to establish a connection through "
+         "Tor using a protocol that Tor does not understand. Please ensure "
+         "you configure your applications to use only SOCKS4a or SOCKS5 with "
+         "remote hostname resolution.");
+  } else if (type == tc::BadSocksHostnameError) {
+    icon = addBadgeToPixmap(icon,
+                            QPixmap(":/images/32x32/dialog-warning.png"));
+
+    title = tr("Invalid Destination Hostname");
+    description =
+      tr("One of your applications tried to establish a connection through "
+         "Tor to \"%1\", which Tor does not recognize as a valid hostname. "
+         "Please check your application's configuration.").arg(destination);
+  } else {
+    return;
+  }
+
+  addNotification(icon, title, description);
 }
 
