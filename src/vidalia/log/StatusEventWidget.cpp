@@ -213,22 +213,32 @@ StatusEventWidget::bug(const QString &description)
 void
 StatusEventWidget::clockSkewed(int skew, const QString &source)
 {
-  Q_UNUSED(source);
+  if (source.startsWith("OR:", Qt::CaseInsensitive)) {
+    // Tor versions 0.2.1.19 and earlier, and 0.2.2.1 and earlier, throw
+    // this message a little too liberally in this case.
+    quint32 torVersion = Vidalia::torControl()->getTorVersion();
+    if (torVersion <= 0x00020113)
+      return;
+    QString str = Vidalia::torControl()->getTorVersionString();
+    if (str.startsWith("0.2.2.") && torVersion <= 0x00020201)
+      return;
+  }
+
   QString description;
   QPixmap icon = addBadgeToPixmap(QPixmap(":/images/48x48/chronometer.png"),
                                   QPixmap(":/images/48x48/dialog-warning.png"));
-  
+
   if (skew < 0) {
     description = 
       tr("Tor has determined that your computer's clock may be set to %1 "
-         "seconds in the past compared to the directory server at %2. If your "
+         "seconds in the past compared to the source \"%2\". If your "
          "clock is not correct, Tor will not be able to function. Please "
          "verify your computer displays the correct time.").arg(qAbs(skew))
                                                            .arg(source);
   } else {
     description = 
       tr("Tor has determined th at your computer's clock may be set to %1 "
-         "seconds in the future compared to the directory server at %2. If "
+         "seconds in the future compared to the source \"%2\". If "
          "your clock is not correct, Tor will not be able to function. Please "
          "verify your computer displays the correct time.").arg(qAbs(skew))
                                                            .arg(source);
