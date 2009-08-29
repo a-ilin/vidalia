@@ -41,7 +41,8 @@ bool err(QString *str, const QString &errmsg);
  * word separator (" ", for example), and placing the line ending <b>le</b> at
  * the end of each line, except the last.*/
 QString string_wrap(const QString &str, int width, 
-                    const QString &sep, const QString &le);
+                    const QString &sep = QString(" "),
+                    const QString &le = QString("\n"));
 
 /** Encodes the bytes in <b>buf</b> as an uppercase hexadecimal string and
  * returns the result. This function is derived from base16_encode() in Tor's
