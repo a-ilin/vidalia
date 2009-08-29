@@ -43,23 +43,47 @@ public:
   StatusEventItem(QTreeWidget *parent = 0);
 
   /** Sets the <b>timestamp</b> at which this status event occurred.
+   * \sa timestamp()
    */
   void setTimestamp(const QTime &timestamp);
 
+  /** Returns the timestamp at which this status event occurred.
+   * \sa setTimestamp()
+   */
+  QTime timestamp() const;
+
   /** Sets the icon to be drawn along with this status event to <b>pixmap</b>.
+   * \sa icon()
    */
   void setIcon(const QPixmap &pixmap);
 
+  /** Returns the icon draw along with this status event.
+   * \sa setIcon()
+   */
+  QPixmap icon() const;
+
   /** Sets the <b>title</b> text for this status event. The title is a short
    * (fewer than 10 words or so) summary of the event.
+   * \sa title()
    */
   void setTitle(const QString &title);
+
+  /** Returns the title text for this status event.
+   * \sa setTitle()
+   */
+  QString title() const;
 
   /** Sets the detailed <b>description</b> text for this status event. The
    * text should explain what the event means to the user, and any corrective
    * action they might need to take.
+   * \sa description()
    */
   void setDescription(const QString &description);
+
+  /** Returns the detailed description text for this status event.
+   * \sa setDescription()
+   */
+  QString description() const;
 
   /** Sets the help topic URL that contains more information about this
    * particular status event.
@@ -70,7 +94,7 @@ public:
   /** Returns the help topic URL associated with this event item.
    * \sa setHelpUrl
    */
-  void helpUrl() const;
+  QString helpUrl() const;
 
   /** Sets <b>toolTip</b> as the text displayed when the user hovers the mouse
    * over a StatusEventItem. It is more useful for particularly long item

@@ -31,10 +31,22 @@ StatusEventItem::setTimestamp(const QTime &timestamp)
   setData(0, TimestampRole, timestamp);
 }
 
+QTime
+StatusEventItem::timestamp() const
+{
+  return data(0, TimestampRole).toTime();
+}
+
 void
 StatusEventItem::setIcon(const QPixmap &pixmap)
 {
   setData(0, IconRole, pixmap);
+}
+
+QPixmap
+StatusEventItem::icon() const
+{
+  return data(0, IconRole).value<QPixmap>();
 }
 
 void
@@ -43,16 +55,34 @@ StatusEventItem::setTitle(const QString &title)
   setData(0, TitleRole, title);
 }
 
+QString
+StatusEventItem::title() const
+{
+  return data(0, TitleRole).toString();
+}
+
 void
 StatusEventItem::setDescription(const QString &description)
 {
   setData(0, DescriptionRole, description);
 }
 
+QString
+StatusEventItem::description() const
+{
+  return data(0, DescriptionRole).toString();
+}
+
 void
 StatusEventItem::setHelpUrl(const QString &url)
 {
   setData(0, HelpUrlRole, url);
+}
+
+QString
+StatusEventItem::helpUrl() const
+{
+  return data(0, HelpUrlRole).toString();
 }
 
 void
