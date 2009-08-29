@@ -20,6 +20,7 @@
 #include "Vidalia.h"
 
 #include "TorEvents.h"
+#include "stringutil.h"
 
 #include <QTime>
 #include <QPainter>
@@ -130,6 +131,7 @@ StatusEventWidget::addNotification(const QPixmap &icon,
   item->setTitle(title);
   item->setDescription(description);
   item->setHelpUrl(helpUrl);
+  item->setToolTip(string_wrap(description, 80));
 
   // Add the new item to the list and ensure it is visible
   addTopLevelItem(item);

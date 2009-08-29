@@ -55,6 +55,12 @@ StatusEventItem::setHelpUrl(const QString &url)
   setData(0, HelpUrlRole, url);
 }
 
+void
+StatusEventItem::setToolTip(const QString &toolTip)
+{
+  QTreeWidgetItem::setToolTip(0, toolTip);
+}
+
 bool
 StatusEventItem::operator<(const QTreeWidgetItem &other) const
 {

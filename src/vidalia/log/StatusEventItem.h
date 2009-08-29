@@ -72,6 +72,12 @@ public:
    */
   void helpUrl() const;
 
+  /** Sets <b>toolTip</b> as the text displayed when the user hovers the mouse
+   * over a StatusEventItem. It is more useful for particularly long item
+   * descriptions.
+   */
+  void setToolTip(const QString &toolTip);
+
   /** Overloaded comparison operator that allows sorting StatusEventItem
    * objects based on timestamp. Returns true if <i>this</i> StatusEventItem
    * occurred before <b>other</b>.
