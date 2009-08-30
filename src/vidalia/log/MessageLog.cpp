@@ -15,6 +15,7 @@
 */
 
 #include "MessageLog.h"
+#include "StatusEventItem.h"
 #include "Vidalia.h"
 #include "VMessageBox.h"
 
@@ -167,7 +168,6 @@ MessageLog::currentTabChanged(int index)
 
   ui.actionSave_Selected->setEnabled(isAdvancedTabVisible);
   ui.actionSave_All->setEnabled(isAdvancedTabVisible);
-  ui.actionFind->setEnabled(isAdvancedTabVisible);
 }
 
 /** Loads the saved Message Log settings */
@@ -426,15 +426,30 @@ MessageLog::find()
                   tr("Find:"), QLineEdit::Normal, QString(), &ok);
 
   if (ok && !text.isEmpty()) {
-    /* Search for the user-specified text */
-    QList<LogTreeItem *> results = ui.listMessages->find(text);
-    if (!results.size()) {
+    QTreeWidget *tree;
+    QTreeWidgetItem *firstItem = 0;
+
+    /* Pick the right tree widget to search based on the current tab */
+    if (ui.tabWidget->currentIndex() == 0) {
+      QList<StatusEventItem *> results = ui.listNotifications->find(text, true);
+      if (results.size() > 0) {
+        tree = ui.listNotifications;
+        firstItem = dynamic_cast<QTreeWidgetItem *>(results.at(0));
+      }
+    } else {
+      QList<LogTreeItem *> results = ui.listMessages->find(text, true);
+      if (results.size() > 0) {
+        tree = ui.listMessages;
+        firstItem = dynamic_cast<QTreeWidgetItem *>(results.at(0));
+      }
+    }
+
+    if (! firstItem) {
       VMessageBox::information(this, tr("Not Found"),
                                p(tr("Search found 0 matches.")),
                                VMessageBox::Ok);
     } else {
-      /* Set the focus to the first match */
-      ui.listMessages->scrollToItem(results.at(0));
+      tree->scrollToItem(firstItem);
     }
   }
 }

@@ -139,6 +139,28 @@ StatusEventWidget::selectedEvents() const
   return out;
 }
 
+QList<StatusEventItem *>
+StatusEventWidget::find(const QString &text, bool highlight)
+{
+  QList<StatusEventItem *> items;
+
+  for (int i = 0; i < topLevelItemCount(); i++) {
+    StatusEventItem *item = dynamic_cast<StatusEventItem *>(topLevelItem(i));
+    if (! item)
+      continue;
+
+    if (item->title().contains(text, Qt::CaseInsensitive)
+          || item->description().contains(text, Qt::CaseInsensitive)) {
+      items.append(item);
+      if (highlight)
+        item->setSelected(true);
+    } else if (highlight) {
+      item->setSelected(false);
+    }
+  }
+  return items;
+}
+
 void
 StatusEventWidget::addNotification(const QPixmap &icon,
                                    const QString &title,

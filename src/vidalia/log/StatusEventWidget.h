@@ -21,9 +21,13 @@
 
 #include "TorControl.h"
 
+#include <QList>
+
 class QPixmap;
 class QString;
 class QStringList;
+
+class StatusEventItem;
 
 class StatusEventWidget : public QTreeWidget
 {
@@ -50,6 +54,14 @@ public:
    * text. Each item in the QStringList represents a single status event.
    */
   QStringList selectedEvents() const;
+
+  /** Searches the list of current status event items for any items that
+   * contain <b>text</b> in either the event title or description. Searching
+   * is done case-insensitively. If <b>highlight</b> is true, any previously
+   * selected items will be deselected and the matching items will be
+   * highlighted. Returns a (possibly empty) list of matching items.
+   */
+  QList<StatusEventItem *> find(const QString &text, bool highlight = true);
 
 protected:
   /** Called when the user has changed the UI display language in Vidalia
