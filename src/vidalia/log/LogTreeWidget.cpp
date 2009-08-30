@@ -161,7 +161,7 @@ void
 LogTreeWidget::deselectAll()
 {
   foreach(QTreeWidgetItem *item, selectedItems()) {
-    setItemSelected(item, false);
+    item->setSelected(false);
   }
 }
 
@@ -258,7 +258,7 @@ LogTreeWidget::find(QString text, bool highlight)
     deselectAll();
     foreach (LogTreeItem *item, items) {
       /* Highlight a matched item */
-      setItemSelected(item, true);
+      item->setSelected(true);
     }
   }
 
