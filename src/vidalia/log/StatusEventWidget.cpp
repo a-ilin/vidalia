@@ -126,15 +126,28 @@ StatusEventWidget::selectedEvents() const
 
   for (int i = 0; i < items.size(); i++) {
     StatusEventItem *event = dynamic_cast<StatusEventItem *>(items.at(i));
-    if (event) {
-      // Format the output string with the timestamp, title and description
-      text = QString("[%1] %2 - %3").arg(event->timestamp().toString())
-                                    .arg(event->title())
-                                    .arg(event->description());
+    if (event)
+      out.append(event->toString());
+  }
+  return out;
+}
 
-      // Place the item in the list, sorted in ascending order by timestamp
-      out.append(text);
-    }
+QStringList
+StatusEventWidget::allEvents() const
+{
+  QStringList out;
+  QList<QTreeWidgetItem *> items;
+
+  for (int i = 0; i < topLevelItemCount(); i++)
+    items.append(topLevelItem(i));
+
+  // Ensure the items are sorted in ascending order according to timestamp
+  qStableSort(items.begin(), items.end(), compareStatusEventItems);
+
+  for (int i = 0; i < items.size(); i++) {
+    StatusEventItem *event = dynamic_cast<StatusEventItem *>(items.at(i));
+    if (event)
+      out.append(event->toString());
   }
   return out;
 }

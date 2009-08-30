@@ -65,8 +65,6 @@ MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
   _torControl = Vidalia::torControl();
   connect(_torControl, SIGNAL(logMessage(tc::Severity, QString)),
           this, SLOT(log(tc::Severity, QString)));
-  connect(ui.tabWidget, SIGNAL(currentChanged(int)),
-          this, SLOT(currentTabChanged(int)));
 
   /* Bind events to actions */
   createActions();
@@ -81,9 +79,6 @@ MessageLog::MessageLog(QWidget *parent, Qt::WFlags flags)
   ui.listMessages->sortItems(LogTreeWidget::TimeColumn,
                              Qt::AscendingOrder);
   ui.listNotifications->sortItems(0, Qt::AscendingOrder);
-
-  /* Initialize the toolbar actions based on the default tab */
-  currentTabChanged(ui.tabWidget->currentIndex());
 }
 
 /** Default Destructor. Simply frees up any memory allocated for member
@@ -159,15 +154,6 @@ MessageLog::retranslateUi()
 {
   ui.retranslateUi(this);
   setToolTips();
-}
-
-void
-MessageLog::currentTabChanged(int index)
-{
-  bool isAdvancedTabVisible = (index == 1);
-
-  ui.actionSave_Selected->setEnabled(isAdvancedTabVisible);
-  ui.actionSave_All->setEnabled(isAdvancedTabVisible);
 }
 
 /** Loads the saved Message Log settings */
@@ -356,7 +342,7 @@ MessageLog::save(const QStringList &messages)
     /* Write out the message log to the file */
     QApplication::setOverrideCursor(Qt::WaitCursor);
     foreach (QString msg, messages) {
-      logFile << msg;
+      logFile << msg << "\n";
     }
     QApplication::restoreOverrideCursor();
   }
@@ -366,14 +352,20 @@ MessageLog::save(const QStringList &messages)
 void
 MessageLog::saveSelected()
 {
-  save(ui.listMessages->selectedMessages());
+  if (ui.tabWidget->currentIndex() == 0)
+    save(ui.listNotifications->selectedEvents());
+  else
+    save(ui.listMessages->selectedMessages());
 }
 
 /** Saves all shown messages to a file. */
 void
 MessageLog::saveAll()
 {
-  save(ui.listMessages->allMessages());
+  if (ui.tabWidget->currentIndex() == 0)
+    save(ui.listNotifications->allEvents());
+  else
+    save(ui.listMessages->allMessages());
 }
 
 void
@@ -394,7 +386,7 @@ MessageLog::copy()
   if (ui.tabWidget->currentIndex() == 0)
     contents = ui.listNotifications->selectedEvents().join("\n");
   else
-    contents = ui.listMessages->selectedMessages().join("");
+    contents = ui.listMessages->selectedMessages().join("\n");
 
   if (!contents.isEmpty()) {
     /* Copy the selected messages to the clipboard */
@@ -477,7 +469,7 @@ MessageLog::log(tc::Severity type, const QString &message)
 
     /* If we're saving log messages to a file, go ahead and do that now */
     if (_enableLogging) {
-      _logFile << item->toString();
+      _logFile << item->toString() << "\n";
     }
   }
 }

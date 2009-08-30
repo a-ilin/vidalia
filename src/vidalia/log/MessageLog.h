@@ -41,9 +41,6 @@ protected:
   virtual void retranslateUi();
 
 private slots:
-  /** Called when the currently visible tab changes and updates the available
-   * toolbar options accordingly. */
-  void currentTabChanged(int index);
   /** Adds the passed message to the message log as the specified type **/
   void log(tc::Severity severity, const QString &msg);
   /** Called when the user triggers the "Save All" action. */

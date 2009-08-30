@@ -91,6 +91,14 @@ StatusEventItem::setToolTip(const QString &toolTip)
   QTreeWidgetItem::setToolTip(0, toolTip);
 }
 
+QString
+StatusEventItem::toString() const
+{
+  return QString("[%1] %2 - %3").arg(timestamp().toString())
+                                .arg(title())
+                                .arg(description());
+}
+
 bool
 StatusEventItem::operator<(const QTreeWidgetItem &other) const
 {

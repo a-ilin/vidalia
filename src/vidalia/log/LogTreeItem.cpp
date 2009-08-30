@@ -50,9 +50,9 @@ LogTreeItem::LogTreeItem(tc::Severity type, const QString &message,
 QString
 LogTreeItem::toString() const
 {
-  return QString("%1 [%2] %3\n").arg(text(COL_TIME))
-                                .arg(text(COL_TYPE))
-                                .arg(text(COL_MESG).trimmed());
+  return QString("%1 [%2] %3").arg(text(COL_TIME))
+                              .arg(text(COL_TYPE))
+                              .arg(text(COL_MESG).trimmed());
 }
 
 /** Sets the item's log time. */

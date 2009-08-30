@@ -102,6 +102,14 @@ public:
    */
   void setToolTip(const QString &toolTip);
 
+  /** Returns a formatted QString containing this item's timestamp, title
+   * and description text.
+   * \sa timestamp()
+   * \sa title()
+   * \sa description()
+   */
+  QString toString() const;
+
   /** Overloaded comparison operator that allows sorting StatusEventItem
    * objects based on timestamp. Returns true if <i>this</i> StatusEventItem
    * occurred before <b>other</b>.

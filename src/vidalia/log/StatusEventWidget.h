@@ -50,10 +50,17 @@ public:
    */
   int maximumItemCount() const;
 
-  /** Returns a QStringList of status events formatted as human-readable
-   * text. Each item in the QStringList represents a single status event.
+  /** Returns a QStringList of the currently selected status events formatted
+   * as human-readable text. Each item in the returned QStringList represents
+   * a single status event.
    */
   QStringList selectedEvents() const;
+
+  /** Returns a QStringList of all current status events formatted as
+   * human-readable text. Each item in the returned QStringList represents
+   * a single status event.
+   */
+  QStringList allEvents() const;
 
   /** Searches the list of current status event items for any items that
    * contain <b>text</b> in either the event title or description. Searching
