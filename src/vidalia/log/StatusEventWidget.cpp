@@ -552,8 +552,8 @@ StatusEventWidget::serverDescriptorAccepted(const QHostAddress &ip,
                                             quint16 port)
 {
   QPixmap icon =
-  addBadgeToPixmap(":/images/48x48/preferences-system-networking.png",
-                   ":/images/32x32/dialog-ok-apply.png");
+    addBadgeToPixmap(":/images/48x48/preferences-system-networking.png",
+                     ":/images/32x32/dialog-ok-apply.png");
 
   addNotification(icon,
     tr("Your Relay is Online"),
