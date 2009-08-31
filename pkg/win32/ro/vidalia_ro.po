@@ -18,26 +18,27 @@ msgid "${BUNDLE_NAME} setup"
 msgstr "Instalare ${BUNDLE_NAME}"
 
 # "supliment Firefox" este terminologia folosita de Mozilla in interfata in limba romana a mozilla.org. De aceea am preferat aceasta exprimare in locul "extensie Firefox".
-# 
+#
 # Pe viitor, incercati ca in traduceri, atunci cand va adresati utiliyatorului, sa folositi persoana a II-a plural si nu singular.
-# 
+#
 # De asemenea, evitati articularea inutila a numelor proprii, de exemplu "Tor-ului". "Tor" e mai corect, mai curat si mai simplu.
+#, fuzzy
 msgctxt "BundleWelcomeText"
 msgid ""
-"This wizard will guide you through the installation of Tor, Vidalia, "
-"Privoxy, and Torbutton.\n"
+"This wizard will guide you through the installation of Tor, Vidalia, Polipo, "
+"and Torbutton.\n"
 "\n"
 "Tor is a system for using the Internet anonymously, helping you anonymize "
 "Web browsing and publishing, instant messaging, IRC, and more. Vidalia is a "
 "GUI that helps you control, monitor, and configure Tor.\n"
 "\n"
-"Privoxy is a filtering web proxy that protects your privacy and helps remove "
-"ads, banners, and popups.\n"
+"Polipo is a caching web proxy that helps increase performance of browsing "
+"the web through Tor.\n"
 "\n"
 "Torbutton is a Firefox extension that allows you to quickly enable or "
 "disable anonymous web browsing.\n"
 "\n"
-"If you have previously installed Tor, Vidalia, Privoxy, or Firefox, please "
+"If you have previously installed Tor, Vidalia, Polipo, or Firefox, please "
 "make sure they are not running before continuing this installation.\n"
 "\n"
 "$_CLICK"
@@ -190,37 +191,41 @@ msgctxt "TorShortcutsDesc"
 msgid "Add ${TOR_NAME} to your Start menu."
 msgstr "Adaugă ${TOR_NAME} în meniul Start."
 
-msgctxt "PrivoxyGroupDesc"
+msgctxt "PolipoGroupDesc"
 msgid ""
-"Privoxy is a filtering web proxy that protects your privacy and helps remove "
-"ads, banners, and popups."
+"Polipo is a caching web proxy that increases performance of web browsing "
+"through Tor."
 msgstr ""
-"Privoxy este un proxy web pentru filtrare care vă protejează intimitatea şi "
-"ajută la înlăturarea reclamelor, bannerelor şi ferestrelor de tip pop-up."
 
-msgctxt "PrivoxyUninstDesc"
-msgid "Remove ${PRIVOXY_DESC}."
-msgstr "Înlătură ${PRIVOXY_DESC}."
+#, fuzzy
+msgctxt "PolipoUninstDesc"
+msgid "Remove ${POLIPO_DESC}."
+msgstr "Înlătură ${POLIPO_DESC}."
 
-msgctxt "PrivoxyAppDesc"
-msgid "Install ${PRIVOXY_DESC}."
-msgstr "Instalează ${PRIVOXY_DESC}."
+#, fuzzy
+msgctxt "PolipoAppDesc"
+msgid "Install ${POLIPO_DESC}."
+msgstr "Instalează ${POLIPO_DESC}."
 
-msgctxt "PrivoxyShortcuts"
+#, fuzzy
+msgctxt "PolipoShortcuts"
 msgid "Add to Start Menu"
 msgstr "Adaugă în meniul Start"
 
-msgctxt "PrivoxyShortcutsDesc"
-msgid "Add ${PRIVOXY_NAME} to your Start menu."
-msgstr "Adaugă ${PRIVOXY_NAME} în meniul Start."
+#, fuzzy
+msgctxt "PolipoShortcutsDesc"
+msgid "Add ${POLIPO_NAME} to your Start menu."
+msgstr "Adaugă ${POLIPO_NAME} în meniul Start."
 
-msgctxt "PrivoxyStartup"
+#, fuzzy
+msgctxt "PolipoStartup"
 msgid "Run At Startup"
 msgstr "Porneşte odată cu sistemul de operare"
 
-msgctxt "PrivoxyStartupDesc"
-msgid "Automatically run ${PRIVOXY_NAME} at startup."
-msgstr "Rulează ${PRIVOXY_NAME} la pornire."
+#, fuzzy
+msgctxt "PolipoStartupDesc"
+msgid "Automatically run ${POLIPO_NAME} at startup."
+msgstr "Rulează ${POLIPO_NAME} la pornire."
 
 msgctxt "TorbuttonGroupDesc"
 msgid ""
@@ -306,3 +311,4 @@ msgstr ""
 "\n"
 "Dacă preferaţi să instalaţi Tor fără Firefox,\n"
 "apăsaţi Înainte pentru a continua."
+

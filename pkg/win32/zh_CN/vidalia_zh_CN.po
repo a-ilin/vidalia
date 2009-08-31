@@ -16,22 +16,23 @@ msgctxt "BundleSetupCaption"
 msgid "${BUNDLE_NAME} setup"
 msgstr "${BUNDLE_NAME} 安装向导"
 
+#, fuzzy
 msgctxt "BundleWelcomeText"
 msgid ""
-"This wizard will guide you through the installation of Tor, Vidalia, "
-"Privoxy, and Torbutton.\n"
+"This wizard will guide you through the installation of Tor, Vidalia, Polipo, "
+"and Torbutton.\n"
 "\n"
 "Tor is a system for using the Internet anonymously, helping you anonymize "
 "Web browsing and publishing, instant messaging, IRC, and more. Vidalia is a "
 "GUI that helps you control, monitor, and configure Tor.\n"
 "\n"
-"Privoxy is a filtering web proxy that protects your privacy and helps remove "
-"ads, banners, and popups.\n"
+"Polipo is a caching web proxy that helps increase performance of browsing "
+"the web through Tor.\n"
 "\n"
 "Torbutton is a Firefox extension that allows you to quickly enable or "
 "disable anonymous web browsing.\n"
 "\n"
-"If you have previously installed Tor, Vidalia, Privoxy, or Firefox, please "
+"If you have previously installed Tor, Vidalia, Polipo, or Firefox, please "
 "make sure they are not running before continuing this installation.\n"
 "\n"
 "$_CLICK"
@@ -167,36 +168,41 @@ msgctxt "TorShortcutsDesc"
 msgid "Add ${TOR_NAME} to your Start menu."
 msgstr "添加 ${TOR_NAME} 至开始菜单程序组."
 
-#, fuzzy
-msgctxt "PrivoxyGroupDesc"
+msgctxt "PolipoGroupDesc"
 msgid ""
-"Privoxy is a filtering web proxy that protects your privacy and helps remove "
-"ads, banners, and popups."
-msgstr "安装 ${PRIVOXY_DESC}."
+"Polipo is a caching web proxy that increases performance of web browsing "
+"through Tor."
+msgstr ""
 
-msgctxt "PrivoxyUninstDesc"
-msgid "Remove ${PRIVOXY_DESC}."
-msgstr "Remove ${PRIVOXY_DESC}."
+#, fuzzy
+msgctxt "PolipoUninstDesc"
+msgid "Remove ${POLIPO_DESC}."
+msgstr "Remove ${POLIPO_DESC}."
 
-msgctxt "PrivoxyAppDesc"
-msgid "Install ${PRIVOXY_DESC}."
-msgstr "安装 ${PRIVOXY_DESC}."
+#, fuzzy
+msgctxt "PolipoAppDesc"
+msgid "Install ${POLIPO_DESC}."
+msgstr "安装 ${POLIPO_DESC}."
 
-msgctxt "PrivoxyShortcuts"
+#, fuzzy
+msgctxt "PolipoShortcuts"
 msgid "Add to Start Menu"
 msgstr "添加至开始菜单程序组"
 
-msgctxt "PrivoxyShortcutsDesc"
-msgid "Add ${PRIVOXY_NAME} to your Start menu."
-msgstr "添加 ${PRIVOXY_NAME} 至开始菜单程序组."
+#, fuzzy
+msgctxt "PolipoShortcutsDesc"
+msgid "Add ${POLIPO_NAME} to your Start menu."
+msgstr "添加 ${POLIPO_NAME} 至开始菜单程序组."
 
-msgctxt "PrivoxyStartup"
+#, fuzzy
+msgctxt "PolipoStartup"
 msgid "Run At Startup"
 msgstr "在系统启动时运行"
 
-msgctxt "PrivoxyStartupDesc"
-msgid "Automatically run ${PRIVOXY_NAME} at startup."
-msgstr "自动在系统启动时运行 ${PRIVOXY_NAME}."
+#, fuzzy
+msgctxt "PolipoStartupDesc"
+msgid "Automatically run ${POLIPO_NAME} at startup."
+msgstr "自动在系统启动时运行 ${POLIPO_NAME}."
 
 #, fuzzy
 msgctxt "TorbuttonGroupDesc"
@@ -265,3 +271,4 @@ msgid ""
 "Or, if you would prefer to install Tor without Firefox, simply\n"
 "press Next to continue."
 msgstr ""
+
