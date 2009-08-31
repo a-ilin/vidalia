@@ -1,6 +1,6 @@
 [General]
 ProxyExecutable=/Applications/Vidalia.app/Contents/MacOS/polipo
-ProxyExecutableArguments=-c, /Applications/Vidalia.app/Contents/Resources/tor-polipo.conf
+ProxyExecutableArguments=-c, /Applications/Vidalia.app/Contents/Resources/polipo.conf
 RunProxyAtStart=true
 InterfaceStyle=Macintosh (Aqua)
 
