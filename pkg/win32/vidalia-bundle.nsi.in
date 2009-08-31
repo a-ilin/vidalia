@@ -27,13 +27,13 @@ SetCompressor /SOLID lzma
 !define TOR_APPVERSION      "0.2.1.19"
 !define TOR_DESC            "${TOR_NAME} ${TOR_APPVERSION}"
 
-!define PRIVOXY_NAME        "Privoxy"
-!define PRIVOXY_EXEC        "privoxy.exe"
-!define PRIVOXY_APPVERSION  "3.0.6"
-!define PRIVOXY_DESC        "${PRIVOXY_NAME} ${PRIVOXY_APPVERSION}"
+!define POLIPO_NAME        "Polipo"
+!define POLIPO_EXEC        "polipo.exe"
+!define POLIPO_APPVERSION  "1.0.4"
+!define POLIPO_DESC        "${POLIPO_NAME} ${POLIPO_APPVERSION}"
 
 !define TORBUTTON_NAME      "Torbutton"
-!define TORBUTTON_APPVERSION "1.2.1-fx"
+!define TORBUTTON_APPVERSION "1.2.2-fx"
 !define TORBUTTON_DESC      "${TORBUTTON_NAME} ${TORBUTTON_APPVERSION}"
 
 !define BUNDLE_NAME         "Vidalia Bundle"
@@ -201,6 +201,10 @@ SectionGroup "${VIDALIA_DESC}" VidaliaGroup
       Pop $R0 ; contains the modified version of $INSTDIR
       WriteINIStr "$APPDATA\Vidalia\vidalia.conf" Tor TorExecutable "$R0\\Tor\\${TOR_EXEC}"
       WriteINIStr "$APPDATA\Vidalia\vidalia.conf" General LanguageCode "$(LanguageCode)"
+      WriteINIStr "$APPDATA\Vidalia\vidalia.conf" General ProxyExecutable "$R0\\Polipo\\${POLIPO_EXEC}"
+      WriteINIStr "$APPDATA\Vidalia\vidalia.conf" General ProxyExecutableArguments "$R0\\Polipo\\polipo.conf"
+      WriteINIStr "$APPDATA\Vidalia\vidalia.conf" General RunProxyAtStart "true"
+
 
       ; Write the uninstall keys for Windows  
       SetShellVarContext all
@@ -330,71 +334,49 @@ SectionGroupEnd
 
 
 ;--------------------------------
-; Privoxy
-var bInstallPrivoxy
-SectionGroup "${PRIVOXY_DESC}" PrivoxyGroup
+; Polipo
+var bInstallPolipo
+SectionGroup "${POLIPO_DESC}" PolipoGroup
     ;--------------------------------
-    ; Privoxy application binaries
-    Section "${PRIVOXY_NAME}" Privoxy
+    ; Polipo application binaries
+    Section "${POLIPO_NAME}" Polipo
         SectionIn 1 2
         ; add files / whatever that need to be installed here.
-        SetOutPath "$INSTDIR\Privoxy"
-        File /r /x @PRIVOXY_PACKAGE_DIR@\config.txt @PRIVOXY_PACKAGE_DIR@\*.*
-        File /nonfatal /oname=config.original @PRIVOXY_PACKAGE_DIR@\config.txt
-        File /oname=config.txt @Vidalia_SOURCE_DIR@\pkg\win32\privoxy.config
+        SetOutPath "$INSTDIR\Polipo"
+        File /r /x @POLIPO_PACKAGE_DIR@\polipo.conf @POLIPO_PACKAGE_DIR@\*.*
 
-        WriteRegStr HKEY_CLASSES_ROOT "PrivoxyActionFile\shell\open\command" "" 'Notepad.exe "%1"'
-        WriteRegStr HKEY_CLASSES_ROOT ".action" "" "PrivoxyActionFile"
-        WriteRegStr HKEY_CLASSES_ROOT "PrivoxyFilterFile\shell\open\command" "" 'Notepad.exe "%1"'
-        WriteRegStr HKEY_CLASSES_ROOT ".filter" "" "PrivoxyFilterFile"
-       
         ; Write the installation path into the registry
-        WriteRegStr HKCU SOFTWARE\Privoxy "Install_Dir" "$INSTDIR"
+        WriteRegStr HKCU SOFTWARE\Polipo "Install_Dir" "$INSTDIR"
 
         ; Write the uninstall keys for Windows
-        WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Privoxy" "DisplayName" "${PRIVOXY_DESC}"
-        WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Privoxy" "UninstallString" '"$INSTDIR\${UNINSTALLER}"'
-        WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Privoxy" "NoModify" 1
-        WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Privoxy" "NoRepair" 1
+        WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Polipo" "DisplayName" "${POLIPO_DESC}"
+        WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Polipo" "UninstallString" '"$INSTDIR\${UNINSTALLER}"'
+        WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Polipo" "NoModify" 1
+        WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Polipo" "NoRepair" 1
        
-        IntOp $bInstallPrivoxy 0 + 1
+        IntOp $bInstallPolipo 0 + 1
     SectionEnd
 
     ;--------------------------------
-    ; Privoxy Start menu shortcuts
-    Section "$(PrivoxyShortcuts)" PrivoxyShortcuts
+    ; Polipo Start menu shortcuts
+    Section "$(PolipoShortcuts)" PolipoShortcuts
         SectionIn 1
         SetShellVarContext all ; (Add to "All Users" Start Menu if possible)
-        RMDir /r "${SHORTCUTS}\Privoxy"
-        CreateDirectory "${SHORTCUTS}\Privoxy"
-        CreateShortCut "${SHORTCUTS}\Privoxy\Privoxy.lnk" "$INSTDIR\Privoxy\privoxy.exe"
-        CreateShortCut "${SHORTCUTS}\Privoxy\Web-based Feedback.lnk" "$INSTDIR\Privoxy\doc\user-manual\contact.html"
-        WriteINIStr "${SHORTCUTS}\Privoxy\Web-based Configuration.url" "InternetShortcut" "URL" "http://config.privoxy.org/"
+        RMDir /r "${SHORTCUTS}\Polipo"
+        CreateDirectory "${SHORTCUTS}\Polipo"
+        CreateShortCut "${SHORTCUTS}\Polipo\Polipo.lnk" "$INSTDIR\Polipo\polipo.exe"
+        CreateShortCut "${SHORTCUTS}\Polipo\Web-based Feedback.lnk" "$INSTDIR\Polipo\doc\user-manual\contact.html"
         
-        CreateDirectory "${SHORTCUTS}\Privoxy\Edit Config"
-        CreateShortCut "${SHORTCUTS}\Privoxy\Edit Config\Main Configuration.lnk" "Notepad.exe" '"$INSTDIR\Privoxy\config.txt"'
-        CreateShortCut "${SHORTCUTS}\Privoxy\Edit Config\Default Actions.lnk" "Notepad.exe" '"$INSTDIR\Privoxy\default.action"'
-        CreateShortCut "${SHORTCUTS}\Privoxy\Edit Config\User Actions.lnk" "Notepad.exe" '"$INSTDIR\Privoxy\user.action"'
-        CreateShortCut "${SHORTCUTS}\Privoxy\Edit Config\Filters.lnk" "Notepad.exe" '"$INSTDIR\Privoxy\default.filter"'
-        CreateShortCut "${SHORTCUTS}\Privoxy\Edit Config\Trust list.lnk" "Notepad.exe" '"$INSTDIR\Privoxy\trust.txt"'
+        CreateDirectory "${SHORTCUTS}\Polipo\Edit Config"
+        CreateShortCut "${SHORTCUTS}\Polipo\Edit Config\Main Configuration.lnk" "Notepad.exe" '"$INSTDIR\Polipo\polipo.conf"'
         
-        CreateDirectory "${SHORTCUTS}\Privoxy\Documentation"
-        CreateShortCut "${SHORTCUTS}\Privoxy\Documentation\User Manual.lnk" "$INSTDIR\Privoxy\doc\user-manual\index.html"
-        CreateShortCut "${SHORTCUTS}\Privoxy\Documentation\Frequently Asked Questions.lnk" "$INSTDIR\Privoxy\doc\faq\index.html"
-        CreateShortCut "${SHORTCUTS}\Privoxy\Documentation\Credits.lnk" "Notepad.exe" '"$INSTDIR\Privoxy\AUTHORS.txt"'
-        CreateShortCut "${SHORTCUTS}\Privoxy\Documentation\License.lnk" "Notepad.exe" '"$INSTDIR\Privoxy\LICENSE.txt"'
-        CreateShortCut "${SHORTCUTS}\Privoxy\Documentation\ReadMe file.lnk" "Notepad.exe" '"$INSTDIR\Privoxy\README.txt"'
-        WriteINIStr "$SMPROGRAMS\Privoxy\Documentation\Web Site.url" "InternetShortcut" "URL" "http://privoxy.org/"
+        CreateDirectory "${SHORTCUTS}\Polipo\Documentation"
+        CreateShortCut "${SHORTCUTS}\Polipo\Documentation\User Manual.lnk" "$INSTDIR\Polipo\doc\user-manual\index.html"
+        WriteINIStr "$SMPROGRAMS\Polipo\Documentation\Web Site.url" "InternetShortcut" "URL" "http://www.pps.jussieu.fr/~jch/software/polipo/"
         
         CreateShortCut "${SHORTCUTS}\Uninstall.lnk" "$INSTDIR\Uninstall.exe" "" "$INSTDIR\${UNINSTALLER}" 0
     SectionEnd
  
-    ;--------------------------------
-    ; Run Privoxy at startup
-    Section "$(PrivoxyStartup)" PrivoxyStartup
-      SectionIn 1
-      CreateShortCut "$SMSTARTUP\Privoxy.lnk" "$INSTDIR\Privoxy\privoxy.exe" "" "" 0 SW_SHOWMINIMIZED
-    SectionEnd     
 SectionGroupEnd
 
 ;--------------------------------
@@ -481,18 +463,18 @@ Function CustomFinishFn
     IntCmp $bInstallVidalia 1 run_vidalia check_tor check_tor
     run_vidalia:
         Exec '"$INSTDIR\Vidalia\${VIDALIA_EXEC}"'
-        goto check_privoxy
+        goto check_polipo
     
     check_tor:
-    IntCmp $bInstallTor 1 run_tor check_privoxy check_privoxy
+    IntCmp $bInstallTor 1 run_tor check_polipo check_polipo
     run_tor:
         Exec '"$INSTDIR\Tor\${TOR_EXEC}"'
     
-    check_privoxy:
-    IntCmp $bInstallPrivoxy 1 run_privoxy done done
-    run_privoxy:
-        SetOutPath "$INSTDIR\Privoxy"
-        ExecShell "" '"$INSTDIR\Privoxy\${PRIVOXY_EXEC}"' "" SW_SHOWMINIMIZED
+    check_polipo:
+    IntCmp $bInstallPolipo 1 run_polipo done done
+    run_polipo:
+        SetOutPath "$INSTDIR\Polipo"
+        ExecShell "" '"$INSTDIR\Polipo\${POLIPO_EXEC}"' "" SW_SHOWMINIMIZED
     done:
 FunctionEnd
 
@@ -531,16 +513,11 @@ SectionGroup "un.Vidalia ${VIDALIA_APPVERSION}" UninstallVidaliaGroup
   SectionEnd
 SectionGroupEnd
 
-Section "un.Privoxy ${PRIVOXY_APPVERSION}" UninstallPrivoxy
+Section "un.Polipo ${POLIPO_APPVERSION}" UninstallPolipo
   SetShellVarContext all
-  RMDir /r "$INSTDIR\Privoxy"
-  RMDir /r "${SHORTCUTS}\Privoxy"
-  Delete "$SMSTARTUP\Privoxy.lnk"
-  DeleteRegKey HKEY_CLASSES_ROOT ".action"
-  DeleteRegKey HKEY_CLASSES_ROOT "PrivoxyActionFile"
-  DeleteRegKey HKEY_CLASSES_ROOT ".filter"
-  DeleteRegKey HKEY_CLASSES_ROOT "PrivoxyFilterFile"
-  DeleteRegKey HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Privoxy"
+  RMDir /r "$INSTDIR\Polipo"
+  RMDir /r "${SHORTCUTS}\Polipo"
+  DeleteRegKey HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Polipo"
 SectionEnd
 
 ; XXX: We still need to find a way to actually remove Torbutton from Firefox
@@ -571,16 +548,16 @@ Function un.onInit
     SectionSetFlags ${UninstallVidalia} $0
 
   CheckVidaliaAppData:
-  IfFileExists "$APPDATA\Vidalia\*.*" CheckPrivoxy
+  IfFileExists "$APPDATA\Vidalia\*.*" CheckPolipo
     SectionGetFlags ${UninstallVidaliaAppData} $0
     IntOp $0 $0 & ${SECTION_OFF}
     SectionSetFlags ${UninstallVidaliaAppData} $0
 
-  CheckPrivoxy:
-  IfFileExists "$INSTDIR\Privoxy\*.*" Done
-    SectionGetFlags ${UninstallPrivoxy} $0
+  CheckPolipo:
+  IfFileExists "$INSTDIR\Polipo\*.*" Done
+    SectionGetFlags ${UninstallPolipo} $0
     IntOp $0 $0 & ${SECTION_OFF}
-    SectionSetFlags ${UninstallPrivoxy} $0
+    SectionSetFlags ${UninstallPolipo} $0
 
   Done:
 FunctionEnd
@@ -589,7 +566,7 @@ Function un.onUninstSuccess
   SetShellVarContext all
   IfFileExists "$INSTDIR\Tor\*.*" DontRemoveTheUninstaller
   IfFileExists "$INSTDIR\Vidalia\*.*" DontRemoveTheUninstaller
-  IfFileExists "$INSTDIR\Privoxy\*.*" DontRemoveTheUninstaller
+  IfFileExists "$INSTDIR\Polipo\*.*" DontRemoveTheUninstaller
   RMDir /r "$INSTDIR"
   RMDir /r "${SHORTCUTS}"
   DontRemoveTheUninstaller:
@@ -606,10 +583,10 @@ FunctionEnd
   !insertmacro MUI_DESCRIPTION_TEXT ${VidaliaStartup} "$(VidaliaStartupDesc)"
   !insertmacro MUI_DESCRIPTION_TEXT ${VidaliaShortcuts} "$(VidaliaShortcutsDesc)"
 
-  !insertmacro MUI_DESCRIPTION_TEXT ${Privoxy} "$(PrivoxyAppDesc)"
-  !insertmacro MUI_DESCRIPTION_TEXT ${PrivoxyGroup} "$(PrivoxyGroupDesc)"
-  !insertmacro MUI_DESCRIPTION_TEXT ${PrivoxyStartup} "$(PrivoxyStartupDesc)"
-  !insertmacro MUI_DESCRIPTION_TEXT ${PrivoxyShortcuts} "$(PrivoxyShortcutsDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${Polipo} "$(PolipoAppDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${PolipoGroup} "$(PolipoGroupDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${PolipoStartup} "$(PolipoStartupDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${PolipoShortcuts} "$(PolipoShortcutsDesc)"
 
   !insertmacro MUI_DESCRIPTION_TEXT ${Torbutton} "$(TorbuttonAppDesc)"
   !insertmacro MUI_DESCRIPTION_TEXT ${TorbuttonGroup} "$(TorbuttonGroupDesc)"
@@ -621,7 +598,7 @@ FunctionEnd
   !insertmacro MUI_DESCRIPTION_TEXT ${UninstallTorAppData} "$(AppDataUninstDesc)"
   !insertmacro MUI_DESCRIPTION_TEXT ${UninstallVidalia} "$(VidaliaUninstDesc)"
   !insertmacro MUI_DESCRIPTION_TEXT ${UninstallVidaliaAppData} "$(AppDataUninstDesc)"
-  !insertmacro MUI_DESCRIPTION_TEXT ${UninstallPrivoxy} "$(PrivoxyUninstDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${UninstallPolipo} "$(PolipoUninstDesc)"
 !insertmacro MUI_UNFUNCTION_DESCRIPTION_END
 
 

@@ -1,4 +1,4 @@
-         Building the Vidalia/Tor/Privoxy/Torbutton Bundle
+         Building the Vidalia/Tor/Polipo/Torbutton Bundle
 
 
 1. Create a base directory under which the necessary sources will be extracted
@@ -13,22 +13,22 @@ this example, we will just use C:\bundle\.
 
 2. Create directories for each component in the bundle.
 
-        C:\bundle\privoxy\
+        C:\bundle\polipo\
         C:\bundle\tor\
         C:\bundle\vidalia\
         C:\bundle\torbutton\
 
 3. Modify the appropriate version values (VIDALIA_APPVERSION, TOR_APPVERSION,
-PRIVOXY_APPVERSION, and TORBUTTON_APPVERSION) at the top of vidalia-bundle.nsi.
+POLIPO_APPVERSION, and TORBUTTON_APPVERSION) at the top of vidalia-bundle.nsi.
 
 4. Create directories for the appropriate versions of each component.
 
-        C:\bundle\privoxy\3.0.6\
-        C:\bundle\tor\0.2.0.29-rc\
-        C:\bundle\vidalia\0.1.6\
-        C:\bundle\torbutton\1.2.0rc6\
+        C:\bundle\polipo\1.0.4\
+        C:\bundle\tor\0.2.1.19\
+        C:\bundle\vidalia\0.2.3\
+        C:\bundle\torbutton\1.2.2\
 
-5. Install Vidalia, Tor, and Privoxy to the directories you created for them
+5. Install Vidalia, Tor, and Polipo to the directories you created for them
 in Step 4. Remember that you may need to grab the torrc.sample file from
 %APPDATA%\Tor that was created by Tor's installer and place it in the directory
 for the bundle's version of Tor. You may also need to grab
@@ -39,25 +39,7 @@ Vidalia.
 6. Place the Torbutton Firefox extension (.xpi) and license file (LICENSE) in
 the directory you created for it in Step 4.
 
-7. Modify Privoxy's config.txt file as follows:
-
-    * Add "forward-socks4a / localhost:9050 ." (without quotes) to the top
-    * Comment out "logfile privoxy.log" in Section 1.5
-    * Comment out "jarfile jar.log" in Section 1.6
-    * Uncomment "log-messages 1" in Section 6 and change the '1' to a '0'
-    * Modify the values of enable-remote-toggle, enable-remote-http-toggle,
-      and enable-edit-actions to be '0'. (Sections 4.3, 4.4, and 4.5)
-
-   Also modify Privoxy's default.action as follows:
- 
-    * Replace the line that says "-limit-connect \" with "+limit-connect{1-} \"
-
-  A privoxy.config and default.action with the necessary changes are included
-  in Vidalia's pkg/win32/ directory. If you use the privoxy.config from
-  Vidalia's pkg/win32/ directory, you will need to rename the file to
-  config.txt after copying it to Privoxy's directory. Vidalia's default.action
-  file only needs to be copied to Privoxy's directory; you do not need to
-  rename it.
+7. Place the polipo.conf into the polipo directory you created in Step 4.
 
 8. Run the vidalia-bundle.nsi script. The bundle will be named according the
 the versions you specified in Step 4 and placed in the base directory created
@@ -67,5 +49,5 @@ in Step 1.
 
 For each additional release of some component of the bundle, follow Steps 4-8.
 If the version of some component didn't change, you can skip its step. For
-example, if the version of Privoxy didn't change then you can skip Step 7.
+example, if the version of polipo didn't change then you can skip Step 7.
 

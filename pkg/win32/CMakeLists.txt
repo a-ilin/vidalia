@@ -22,15 +22,15 @@ if (USE_QSSLSOCKET)
   endif(NOT OPENSSL_BINARY_DIR)
 endif(USE_QSSLSOCKET)
 
-## Only configure the bundle installer if paths to Tor, Privoxy, and
+## Only configure the bundle installer if paths to Tor, Polipo, and
 ## Torbutton are specified 
 set(CONFIGURE_BUNDLE_NSI TRUE)
 if (NOT TOR_PACKAGE_DIR)
   set(CONFIGURE_BUNDLE_NSI FALSE)
 endif(NOT TOR_PACKAGE_DIR)
-if (NOT PRIVOXY_PACKAGE_DIR)
+if (NOT POLIPO_PACKAGE_DIR)
   set(CONFIGURE_BUNDLE_NSI FALSE)
-endif(NOT PRIVOXY_PACKAGE_DIR)
+endif(NOT POLIPO_PACKAGE_DIR)
 if (NOT TORBUTTON_PACKAGE_DIR)
   set(CONFIGURE_BUNDLE_NSI FALSE)
 endif(NOT TORBUTTON_PACKAGE_DIR)

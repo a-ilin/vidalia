@@ -16,7 +16,16 @@ msgid "${BUNDLE_NAME} setup"
 msgstr ""
 
 msgctxt "BundleWelcomeText"
-msgid "This wizard will guide you through the installation of Tor, Vidalia, Privoxy, and Torbutton.\n\nTor is a system for using the Internet anonymously, helping you anonymize Web browsing and publishing, instant messaging, IRC, and more. Vidalia is a GUI that helps you control, monitor, and configure Tor.\n\nPrivoxy is a filtering web proxy that protects your privacy and helps remove ads, banners, and popups.\n\nTorbutton is a Firefox extension that allows you to quickly enable or disable anonymous web browsing.\n\nIf you have previously installed Tor, Vidalia, Privoxy, or Firefox, please make sure they are not running before continuing this installation.\n\n$_CLICK"
+msgid "This wizard will guide you through the installation of Tor,
+Vidalia, Polipo, and Torbutton.\n\nTor is a system for using the
+Internet anonymously, helping you anonymize Web browsing and publishing,
+instant messaging, IRC, and more. Vidalia is a GUI that helps you
+control, monitor, and configure Tor.\n\nPolipo is a caching web proxy
+that helps increase performance of browsing the web through
+Tor.\n\nTorbutton is a Firefox extension that allows you to quickly
+enable or disable anonymous web browsing.\n\nIf you have previously
+installed Tor, Vidalia, Polipo, or Firefox, please make sure they are
+not running before continuing this installation.\n\n$_CLICK"
 msgstr ""
 
 msgctxt "BundleWelcomeTitle"
@@ -115,32 +124,32 @@ msgctxt "TorShortcutsDesc"
 msgid "Add ${TOR_NAME} to your Start menu."
 msgstr ""
 
-msgctxt "PrivoxyGroupDesc"
-msgid "Privoxy is a filtering web proxy that protects your privacy and helps remove ads, banners, and popups."
+msgctxt "PolipoGroupDesc"
+msgid "Polipo is a caching web proxy that increases performance of web browsing through Tor."
 msgstr ""
 
-msgctxt "PrivoxyUninstDesc"
-msgid "Remove ${PRIVOXY_DESC}."
+msgctxt "PolipoUninstDesc"
+msgid "Remove ${POLIPO_DESC}."
 msgstr ""
 
-msgctxt "PrivoxyAppDesc"
-msgid "Install ${PRIVOXY_DESC}."
+msgctxt "PolipoAppDesc"
+msgid "Install ${POLIPO_DESC}."
 msgstr ""
 
-msgctxt "PrivoxyShortcuts"
+msgctxt "PolipoShortcuts"
 msgid "Add to Start Menu"
 msgstr ""
 
-msgctxt "PrivoxyShortcutsDesc"
-msgid "Add ${PRIVOXY_NAME} to your Start menu."
+msgctxt "PolipoShortcutsDesc"
+msgid "Add ${POLIPO_NAME} to your Start menu."
 msgstr ""
 
-msgctxt "PrivoxyStartup"
+msgctxt "PolipoStartup"
 msgid "Run At Startup"
 msgstr ""
 
-msgctxt "PrivoxyStartupDesc"
-msgid "Automatically run ${PRIVOXY_NAME} at startup."
+msgctxt "PolipoStartupDesc"
+msgid "Automatically run ${POLIPO_NAME} at startup."
 msgstr ""
 
 msgctxt "TorbuttonGroupDesc"
