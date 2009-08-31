@@ -16,16 +16,17 @@ msgid "${BUNDLE_NAME} setup"
 msgstr ""
 
 msgctxt "BundleWelcomeText"
-msgid "This wizard will guide you through the installation of Tor,
-Vidalia, Polipo, and Torbutton.\n\nTor is a system for using the
-Internet anonymously, helping you anonymize Web browsing and publishing,
-instant messaging, IRC, and more. Vidalia is a GUI that helps you
-control, monitor, and configure Tor.\n\nPolipo is a caching web proxy
-that helps increase performance of browsing the web through
-Tor.\n\nTorbutton is a Firefox extension that allows you to quickly
-enable or disable anonymous web browsing.\n\nIf you have previously
-installed Tor, Vidalia, Polipo, or Firefox, please make sure they are
-not running before continuing this installation.\n\n$_CLICK"
+msgid ""
+"This wizard will guide you through the installation of Tor, "
+"Vidalia, Polipo, and Torbutton.\n\nTor is a system for using the "
+"Internet anonymously, helping you anonymize Web browsing and publishing, "
+"instant messaging, IRC, and more. Vidalia is a GUI that helps you "
+"control, monitor, and configure Tor.\n\nPolipo is a caching web proxy "
+"that helps increase performance of browsing the web through "
+"Tor.\n\nTorbutton is a Firefox extension that allows you to quickly "
+"enable or disable anonymous web browsing.\n\nIf you have previously "
+"installed Tor, Vidalia, Polipo, or Firefox, please make sure they are "
+"not running before continuing this installation.\n\n$_CLICK"
 msgstr ""
 
 msgctxt "BundleWelcomeTitle"
