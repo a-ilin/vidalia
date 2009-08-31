@@ -71,8 +71,8 @@ StatusEventWidget::StatusEventWidget(QWidget *parent)
           this, SLOT(dirPortReachabilityFinished(QHostAddress, quint16, bool)));
   connect(tc, SIGNAL(serverDescriptorRejected(QHostAddress, quint16, QString)),
           this, SLOT(serverDescriptorRejected(QHostAddress, quint16, QString)));
-  connect(tc, SIGNAL(serverDescriptorAccepted()),
-          this, SLOT(serverDescriptorAccepted()));
+  connect(tc, SIGNAL(serverDescriptorAccepted(QHostAddress, quint16)),
+          this, SLOT(serverDescriptorAccepted(QHostAddress, quint16)));
 
   setItemDelegate(new StatusEventItemDelegate(this));
 }
@@ -548,7 +548,8 @@ StatusEventWidget::serverDescriptorRejected(const QHostAddress &ip,
 }
 
 void
-StatusEventWidget::serverDescriptorAccepted()
+StatusEventWidget::serverDescriptorAccepted(const QHostAddress &ip,
+                                            quint16 port)
 {
   QPixmap icon =
   addBadgeToPixmap(":/images/48x48/preferences-system-networking.png",

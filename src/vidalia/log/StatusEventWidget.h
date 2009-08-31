@@ -172,10 +172,10 @@ private slots:
   void serverDescriptorRejected(const QHostAddress &ip, quint16 port,
                                 const QString &reason);
 
-  /** Called when at least one directory authority has accepted the user's
-   * server descriptor.
+  /** Emitted when the directory authority with IP address <b>ip</b> and
+   * port <b>port</b> accepted the user's server descriptor.
    */
-  void serverDescriptorAccepted();
+  void serverDescriptorAccepted(const QHostAddress &ip, quint16 port);
 
 private:
   /** Adds a new status event notification item to the widget. The item will
