@@ -5,6 +5,10 @@
   o Add an OSX_FORCE_32BIT CMake option that can be used to force a 32-bit
     build on Mac OS X versions that default to 64-bit builds (e.g., Snow
     Leopard), if only 32-bit versions of the Qt libraries are available.
+  o Fix a bug introduced in 0.2.3 that prevented Vidalia from correctly
+    responding to ADDRMAP events from Tor. The result was that users would
+    sometimes see IP addresses in the connection list shown under the network
+    map rather than hostnames.
 
 
 0.2.3   27-Aug-2009

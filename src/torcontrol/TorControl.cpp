@@ -38,6 +38,7 @@ TorControl::TorControl()
   RELAY_SIGNAL(_eventHandler, SIGNAL(circuitEstablished()));
   RELAY_SIGNAL(_eventHandler, SIGNAL(dangerousTorVersion(tc::TorVersionStatus,
                                                          QString, QStringList)));
+  RELAY_SIGNAL(_eventHandler, SIGNAL(addressMapped(QString,QString,QDateTime)));
   RELAY_SIGNAL(_eventHandler, SIGNAL(bandwidthUpdate(quint64, quint64)));
   RELAY_SIGNAL(_eventHandler, SIGNAL(circuitStatusChanged(Circuit)));
   RELAY_SIGNAL(_eventHandler, SIGNAL(streamStatusChanged(Stream)));

@@ -44,6 +44,7 @@ TorEvents::TorEvents(QObject *parent)
   qRegisterMetaType<Stream>("Stream");
 
   qRegisterMetaType<QHostAddress>("QHostAddress");
+  qRegisterMetaType<QDateTime>("QDateTime");
 }
 
 /** Converts an event type to a string Tor understands */
