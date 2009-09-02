@@ -214,6 +214,13 @@ private:
    * \sa setMaximumItemCount()
    */
   int _maximumItemCount;
+
+  /** Tor sends a ACCEPTED_SERVER_DESCRIPTOR event every time it manages to
+   * upload the user's relay's descriptor to a directory authority. So we
+   * squelch any such events after the first to avoid blasting the user with
+   * "Hey, your relay is working!" messages.
+   */
+  bool _squelchDescriptorAcceptedEvent;
 };
 
 #endif

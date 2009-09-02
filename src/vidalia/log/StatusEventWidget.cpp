@@ -47,8 +47,8 @@ StatusEventWidget::StatusEventWidget(QWidget *parent)
   connect(tc, SIGNAL(disconnected()), this, SLOT(disconnected()));
   connect(tc, SIGNAL(dangerousTorVersion(tc::TorVersionStatus, QString,
                                          QStringList)),
-         this, SLOT(dangerousTorVersion(tc::TorVersionStatus, QString,
-                                        QStringList)));
+          this, SLOT(dangerousTorVersion(tc::TorVersionStatus, QString,
+                                         QStringList)));
   connect(tc, SIGNAL(circuitEstablished()), this, SLOT(circuitEstablished()));
   connect(tc, SIGNAL(bug(QString)), this, SLOT(bug(QString)));
   connect(tc, SIGNAL(clockSkewed(int, QString)),
@@ -255,6 +255,8 @@ StatusEventWidget::disconnected()
     tr("Click \"Start Tor\" in the Vidalia Control Panel to restart the Tor "
        "software. If Tor exited unexpectedly, select the \"Advanced\" tab "
        "above for details about any errors encountered."));
+
+  _squelchDescriptorAcceptedEvent = false;
 }
 
 void
@@ -270,7 +272,7 @@ StatusEventWidget::dangerousTorVersion(tc::TorVersionStatus reason,
     icon = addBadgeToPixmap(":/images/48x48/tor-logo.png",
                             ":/images/32x32/security-medium.png");
 
-    description = 
+    description =
       tr("You are currently running version \"%1\" of the Tor software, which "
          "is no longer recommended. Please upgrade to the most recent version "
          "of the software, which may contain important security, reliability "
@@ -330,14 +332,14 @@ StatusEventWidget::clockSkewed(int skew, const QString &source)
                                   ":/images/48x48/dialog-warning.png");
 
   if (skew < 0) {
-    description = 
+    description =
       tr("Tor has determined that your computer's clock may be set to %1 "
          "seconds in the past compared to the source \"%2\". If your "
          "clock is not correct, Tor will not be able to function. Please "
          "verify your computer displays the correct time.").arg(qAbs(skew))
                                                            .arg(source);
   } else {
-    description = 
+    description =
       tr("Tor has determined th at your computer's clock may be set to %1 "
          "seconds in the future compared to the source \"%2\". If "
          "your clock is not correct, Tor will not be able to function. Please "
@@ -385,7 +387,7 @@ StatusEventWidget::socksError(tc::SocksError type, const QString &destination)
 
   if (type == tc::DangerousSocksTypeError) {
     icon  = addBadgeToPixmap(icon, ":/images/32x32/security-medium.png");
-    
+
     title = tr("Potentially Dangerous Connection!");
     description =
       tr("One of your applications established a connection through Tor "
@@ -417,11 +419,11 @@ StatusEventWidget::socksError(tc::SocksError type, const QString &destination)
   addNotification(icon, title, description);
 }
 
-void 
+void
 StatusEventWidget::externalAddressChanged(const QHostAddress &ip,
                                           const QString &hostname)
 {
-  QString hostString = hostname.isEmpty() ? QString() 
+  QString hostString = hostname.isEmpty() ? QString()
                                           : QString(" (%1)").arg(hostname);
 
   addNotification(QPixmap(":/images/48x48/applications-internet.png"),
@@ -515,19 +517,19 @@ StatusEventWidget::dirPortReachabilityFinished(const QHostAddress &ip,
   if (reachable) {
     icon = addBadgeToPixmap(icon, ":/images/32x32/dialog-ok-apply.png");
     title = tr("Directory Port Reachability Test Successful!");
-    description = 
+    description =
       tr("Your relay's directory port is reachable from the Tor network!");
   } else {
     icon = addBadgeToPixmap(icon, ":/images/32x32/dialog-warning.png");
     title = tr("Directory Port Reachability Test Failed");
-    description = 
+    description =
       tr("Your relay's directory port is not reachable by other Tor clients. "
          "This can happen if you are behind a router or firewall that requires "
          "you to set up port forwarding. If %1:%2 is not your correct IP "
          "address and directory port, please check your relay's configuration.")
                                                 .arg(ip.toString()).arg(port);
   }
-  
+
   addNotification(icon, title, description);
 }
 
@@ -537,7 +539,7 @@ StatusEventWidget::serverDescriptorRejected(const QHostAddress &ip,
                                             const QString &reason)
 {
   QPixmap icon =
-    addBadgeToPixmap(":/images/48x48/preferences-system-networking.png",
+    addBadgeToPixmap(":/images/48x48/preferences-system-network-sharing.png",
                      ":/images/32x32/dialog-warning.png");
 
   addNotification(icon,
@@ -551,8 +553,15 @@ void
 StatusEventWidget::serverDescriptorAccepted(const QHostAddress &ip,
                                             quint16 port)
 {
+  Q_UNUSED(ip);
+  Q_UNUSED(port);
+
+  if (_squelchDescriptorAcceptedEvent)
+    return;
+   _squelchDescriptorAcceptedEvent = true;
+
   QPixmap icon =
-    addBadgeToPixmap(":/images/48x48/preferences-system-networking.png",
+    addBadgeToPixmap(":/images/48x48/preferences-system-network-sharing.png",
                      ":/images/32x32/dialog-ok-apply.png");
 
   addNotification(icon,
