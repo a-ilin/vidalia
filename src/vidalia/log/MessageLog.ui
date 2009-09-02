@@ -82,9 +82,6 @@
           <property name="sortingEnabled">
            <bool>true</bool>
           </property>
-          <property name="expandsOnDoubleClick">
-           <bool>false</bool>
-          </property>
           <attribute name="headerShowSortIndicator" stdset="0">
            <bool>true</bool>
           </attribute>
