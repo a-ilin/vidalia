@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-05-19 23:56+0000\n"
-"PO-Revision-Date: 2009-09-01 16:21+0000\n"
+"PO-Revision-Date: 2009-09-02 04:13+0000\n"
 "Last-Translator: ttuuuxxxx <zhazhenzhong@gmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -1293,7 +1293,6 @@ msgctxt "GraphFrame"
 msgid "Sent:"
 msgstr "已发送："
 
-#, fuzzy
 msgctxt "HelpBrowser"
 msgid "Supplied XML file is not a valid Contents document."
 msgstr "所提供的 XML 文档并非有效的目录文档."
@@ -1602,10 +1601,9 @@ msgctxt "MainWindow"
 msgid "Loading network status"
 msgstr "载入网络状态"
 
-#, fuzzy
 msgctxt "MainWindow"
 msgid "Loading authority certificates"
-msgstr "载入权威证书"
+msgstr "载入授权服务器证书"
 
 msgctxt "MainWindow"
 msgid "Requesting relay information"
@@ -1734,7 +1732,7 @@ msgstr "需要 Cookie 验证"
 
 msgctxt "MainWindow"
 msgid "The Tor software requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one."
-msgstr ""
+msgstr "Tor 要求 Vidalia 发送 认证Cookie 中的内容但 Vidalia 无法找到 Cookie。"
 
 msgctxt "MainWindow"
 msgid "Would you like to browse for the file 'control_auth_cookie' yourself?"
@@ -1746,7 +1744,7 @@ msgstr "数据目录"
 
 msgctxt "MainWindow"
 msgid "Control Cookie (control_auth_cookie)"
-msgstr ""
+msgstr "认证Cookie (control_auth_cookie)"
 
 msgctxt "MainWindow"
 msgid "Error Registering for Events"
@@ -1754,15 +1752,15 @@ msgstr "事件记录错误"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to register for some events. Many of Vidalia's features may be unavailable."
-msgstr ""
+msgstr "Vidalia 无法注册某些事件，可能造成 Vidalia 的很多功能不可用。"
 
 msgctxt "MainWindow"
 msgid "Authentication Error"
-msgstr ""
+msgstr "认证出错"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to authenticate to the Tor software. (%1)"
-msgstr ""
+msgstr "Vidalia无法通过Tor软件的认证。(%1)"
 
 msgctxt "MainWindow"
 msgid "Please check your control port authentication settings."
@@ -1770,15 +1768,15 @@ msgstr "请检查控制端口验证设定."
 
 msgctxt "MainWindow"
 msgid "Tor Update Available"
-msgstr ""
+msgstr "有可用的 Tor 更新"
 
 msgctxt "MainWindow"
 msgid "The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version."
-msgstr ""
+msgstr "目前安装的 Tor 版本已过时或不再推荐使用。请访问 Tor 网站下载最新版。"
 
 msgctxt "MainWindow"
 msgid "Tor website: %1"
-msgstr ""
+msgstr "Tor 网站：%1"
 
 msgctxt "MainWindow"
 msgid "All subsequent connections will appear to be different than your old connections."
@@ -1786,15 +1784,15 @@ msgstr "所有新建连接将会不同于之前的连接."
 
 msgctxt "MainWindow"
 msgid "Failed to Create New Identity"
-msgstr "创建新身份失败"
+msgstr "新身份创建失败"
 
 msgctxt "MainWindow"
 msgid "Port Forwarding Failed"
-msgstr ""
+msgstr "端口映射失败"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to configure automatic port forwarding."
-msgstr ""
+msgstr "Vidalia 无法配置端口的自动映射。"
 
 msgctxt "MainWindow"
 msgid "Vidalia Control Panel"
@@ -1814,7 +1812,7 @@ msgstr "设置中继服务器"
 
 msgctxt "MainWindow"
 msgid "Set up a relay and help the network grow"
-msgstr ""
+msgstr "创建中继节点帮助Tor网络成长"
 
 msgctxt "MainWindow"
 msgid "View the Network"
@@ -1834,11 +1832,11 @@ msgstr "创建一个新的网络连接"
 
 msgctxt "MainWindow"
 msgid "View recent bandwidth usage"
-msgstr ""
+msgstr "浏览最近的带宽使用情况"
 
 msgctxt "MainWindow"
 msgid "View log message history"
-msgstr ""
+msgstr "浏览日志记录"
 
 msgctxt "MainWindow"
 msgid "View help documentation"
@@ -1846,7 +1844,7 @@ msgstr "查看帮助文档"
 
 msgctxt "MainWindow"
 msgid "Configure Vidalia"
-msgstr ""
+msgstr "配置 Vidalia"
 
 msgctxt "MainWindow"
 msgid "View version and license information"
@@ -1870,31 +1868,32 @@ msgstr "隐藏此窗口"
 
 msgctxt "MainWindow"
 msgid "Password Reset Failed"
-msgstr ""
+msgstr "重置密码失败"
 
 msgctxt "MainWindow"
 msgid "Vidalia tried to reset Tor's control password, but was not able to restart the Tor software. Please check your Task Manager to ensure there are no other Tor processes running."
-msgstr ""
+msgstr "Vidalia尝试重置Tor的控制密码，但无法重新启动Tor。请检查任务管理器确保没有其他的Tor进程运行。"
 
 msgctxt "MainWindow"
 msgid "The currently installed version of Tor is out of date or no longer recommended."
-msgstr ""
+msgstr "当前安装的Tor版本已经过时，不再推荐使用。"
 
 msgctxt "MainWindow"
 msgid "Would you like to check if a newer package is available for installation?"
-msgstr ""
+msgstr "您是否需要检查有无新的安装包可以安装。"
 
 msgctxt "MainWindow"
 msgid "Potentially Unsafe Connection"
-msgstr ""
+msgstr "潜在的不安全连接"
 
 msgctxt "MainWindow"
 msgid "One of your applications%1appears to be making a potentially unencrypted and unsafe connection to port %2. Anything sent over this connection could be monitored. Please check your application's configuration and use only encrypted protocols, such as SSL, if possible."
 msgstr ""
+"程序 %1 似乎正与端口 %2 建立不安全的未加密链接。任何通过此连接的流量都可能被监视。请检查您的程序配置，如果可能，尽量使用加密协议例如SSL。"
 
 msgctxt "MainWindow"
 msgid "Tor has automatically closed your connection in order to protect your anonymity."
-msgstr ""
+msgstr "Tor 已经自动关闭了您的连接保护您的匿名性。"
 
 msgctxt "MainWindow"
 msgid "Update Failed"
@@ -1902,15 +1901,15 @@ msgstr "失败"
 
 msgctxt "MainWindow"
 msgid "Your software is up to date"
-msgstr ""
+msgstr "您的软件已是最新"
 
 msgctxt "MainWindow"
 msgid "There are no new Tor software packages available for your computer at this time."
-msgstr ""
+msgstr "您的系统目前没有更新的Tor软件包可用。"
 
 msgctxt "MainWindow"
 msgid "Installation Failed"
-msgstr ""
+msgstr "安装失败"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to install your software updates."
@@ -1918,36 +1917,44 @@ msgstr "Vidalia 无法安装 Tor 为系统服务."
 
 msgctxt "MainWindow"
 msgid "The following error occurred:"
-msgstr ""
+msgstr "发生如下错误："
 
 msgctxt "MainWindow"
 msgid "failed (%1)"
-msgstr ""
+msgstr "失败（%1）"
 
 msgctxt "MainWindow"
 msgid "Your relay is shutting down.\n"
 "Click 'Stop' again to stop your relay now."
 msgstr ""
+"正在关闭您的中继服务。\n"
+"再次单击'停止'立刻关闭中继。"
 
 msgctxt "MainWindow"
 msgid "You are currently running a relay. Terminating your relay will interrupt any open connections from clients.\n"
 "\n"
 "Would you like to shutdown gracefully and give clients time to find a new relay?"
 msgstr ""
+"您目前正在运行中继服务。中断中继将意外中断其与各客户端间的连接。\n"
+"\n"
+"您是否想延迟关闭以便给与您的客户端时间转移至新的中继？"
 
 msgctxt "MainWindow"
 msgid "Vidalia detected that the Tor software exited unexpectedly.\n"
 "\n"
 "Please check the message log for recent warning or error messages."
 msgstr ""
+"Vidalia检测到Tor软件意外退出。\n"
+"\n"
+"请检查消息日志获取最近的警告及错误信息。"
 
 msgctxt "MainWindow"
 msgid ", probably Telnet,"
-msgstr ""
+msgstr "，也许是Telnet程序，"
 
 msgctxt "MainWindow"
 msgid ", probably an email client,"
-msgstr ""
+msgstr "，也许是Email客户端，"
 
 msgctxt "MainWindow"
 msgid "Vidalia"
@@ -1955,7 +1962,7 @@ msgstr "Vidalia"
 
 msgctxt "MainWindow"
 msgid "File"
-msgstr ""
+msgstr "文件"
 
 msgctxt "MainWindow"
 msgid "About Vidalia"
@@ -1967,7 +1974,7 @@ msgstr "主页"
 
 msgctxt "MainWindow"
 msgid "Check For Updates"
-msgstr ""
+msgstr "检查更新"
 
 msgctxt "MessageLog"
 msgid "Error Setting Filter"
@@ -2228,12 +2235,12 @@ msgstr "自动保存新的消息内容至文件"
 msgctxt "MessageLog"
 msgid "Messages that appear when something has \n"
 "gone very wrong and Tor cannot proceed."
-msgstr ""
+msgstr "此类消息表示有故障发生Tor无法继续执行。"
 
 msgctxt "MessageLog"
 msgid "Messages that only appear when \n"
 "something has gone wrong with Tor."
-msgstr ""
+msgstr "此类消息表示Tor发生出现问题。"
 
 msgctxt "MessageLog"
 msgid "Messages that appear infrequently \n"
@@ -2241,22 +2248,27 @@ msgid "Messages that appear infrequently \n"
 "not considered errors, but you may \n"
 "care about."
 msgstr ""
+"此类消息在Tor运行时偶尔出现\n"
+"并非错误但可能需要关注。"
 
 msgctxt "MessageLog"
 msgid "Messages that appear frequently \n"
 "during normal Tor operation."
-msgstr ""
+msgstr "此类消息在Tor正常运行中经常出现。"
 
 msgctxt "MessageLog"
 msgid "Hyper-verbose messages primarily of \n"
 "interest to Tor developers."
-msgstr ""
+msgstr "Tor开发者需要的详细消息。"
 
 msgctxt "MessageLog"
 msgid "Cannot write file %1\n"
 "\n"
 "%2."
 msgstr ""
+"无法写入文件%1\n"
+"\n"
+"%2。"
 
 msgctxt "NetViewer"
 msgid "Tor Network Map"
@@ -2344,7 +2356,7 @@ msgstr "未找到该文件"
 
 msgctxt "NetViewer"
 msgid "No details on the selected relay are available."
-msgstr ""
+msgstr "尚无所选中继节点的细节信息。"
 
 msgctxt "NetViewer"
 msgid "Unknown"
@@ -2352,11 +2364,11 @@ msgstr "未知"
 
 msgctxt "NetViewer"
 msgid "Full Screen"
-msgstr ""
+msgstr "全屏"
 
 msgctxt "NetViewer"
 msgid "View the network map as a full screen window"
-msgstr ""
+msgstr "全屏查看网络地图"
 
 msgctxt "NetViewer"
 msgid "Ctrl+F"
@@ -2388,7 +2400,7 @@ msgstr "'%1' 不是一个有效的端口."
 
 msgctxt "NetworkPage"
 msgid "Check if your local network requires a proxy to access the Internet"
-msgstr ""
+msgstr "如果您的局域网需要代理服务器接入Internet请选择此项"
 
 msgctxt "NetworkPage"
 msgid "I use a proxy to access the Internet"
@@ -2420,7 +2432,7 @@ msgstr "端口:"
 
 msgctxt "NetworkPage"
 msgid "Check to only connect to relays using ports allowed by your firewall"
-msgstr ""
+msgstr "选择此项Tor将仅连接端口被防火墙所允许的中继。"
 
 msgctxt "NetworkPage"
 msgid "My firewall only lets me connect to certain ports"
@@ -2440,7 +2452,7 @@ msgstr "80, 443"
 
 msgctxt "NetworkPage"
 msgid "Check to encrypt directory requests and, optionally, use bridge relays to access the Tor network"
-msgstr ""
+msgstr "选择此项则加密目录请求，您还可以选择性地通过 桥接中继 访问Tor网络。"
 
 msgctxt "NetworkPage"
 msgid "My ISP blocks connections to the Tor network"
@@ -2448,11 +2460,11 @@ msgstr "我的 ISP 阻挡了对 Tor 网络的连接"
 
 msgctxt "NetworkPage"
 msgid "Bridge Settings"
-msgstr ""
+msgstr "网桥设置"
 
 msgctxt "NetworkPage"
 msgid "The Tor software you are currently running does not support bridges. <br>Directory connections will still be encrypted."
-msgstr ""
+msgstr "您正运行的Tor软件不支持网桥功能。<br>但与目录服务器的连接仍可加密。"
 
 msgctxt "NetworkPage"
 msgid "Add a Bridge:"
@@ -2460,7 +2472,7 @@ msgstr "添加一个网桥:"
 
 msgctxt "NetworkPage"
 msgid "<a href=\"bridges.finding\">How do I find a bridge?</a>"
-msgstr ""
+msgstr "<a href=\"bridges.finding\">如何获取网桥?</a>"
 
 msgctxt "NetworkPage"
 msgid "Remove the selected bridges from the list"
@@ -2472,23 +2484,23 @@ msgstr "复制选中的网桥至剪贴板"
 
 msgctxt "NetworkPage"
 msgid "Find Bridges Now"
-msgstr ""
+msgstr "立刻搜索网桥"
 
 msgctxt "NetworkPage"
 msgid "<a href=\"bridges.finding\">How else can I find bridges?</a>"
-msgstr ""
+msgstr "<a href=\"bridges.finding\">如果通过其他方式获取网桥?</a>"
 
 msgctxt "NetworkPage"
 msgid "<a href=\"bridges.finding\">How can I find bridges?</a>"
-msgstr ""
+msgstr "<a href=\"bridges.finding\">如何才能搜集到网桥?</a>"
 
 msgctxt "NetworkPage"
 msgid "No new bridges are currently available. You can either wait a while and try again, or try another method of finding new bridges."
-msgstr ""
+msgstr "目前没有新网桥可用，您可以稍后再试，或通过其他渠道搜集新网桥。"
 
 msgctxt "NetworkPage"
 msgid "Click Help to see other methods of finding new bridges."
-msgstr ""
+msgstr "单击帮助查看获取新网桥的其他渠道。"
 
 msgctxt "Policy"
 msgid "accept"
@@ -2556,11 +2568,11 @@ msgstr "未知"
 
 msgctxt "RouterInfoDialog"
 msgid "Relay Details"
-msgstr ""
+msgstr "中继详情"
 
 msgctxt "RouterInfoDialog"
 msgid "Summary"
-msgstr ""
+msgstr "概况"
 
 msgctxt "RouterInfoDialog"
 msgid "Name:"
@@ -2600,7 +2612,7 @@ msgstr "最后更新:"
 
 msgctxt "RouterInfoDialog"
 msgid "Descriptor"
-msgstr ""
+msgstr "描述信息块"
 
 msgctxt "RouterListItem"
 msgid "Offline"
@@ -2624,7 +2636,7 @@ msgstr "移动至中继"
 
 msgctxt "RouterListWidget"
 msgid "%1 relays online"
-msgstr ""
+msgstr "%1 中继在线"
 
 msgctxt "RouterListWidget"
 msgid "Copy"
@@ -2632,11 +2644,11 @@ msgstr "复制"
 
 msgctxt "RouterListWidget"
 msgid "Nickname"
-msgstr ""
+msgstr "昵称"
 
 msgctxt "RouterListWidget"
 msgid "Fingerprint"
-msgstr ""
+msgstr "节点密钥指纹"
 
 msgctxt "ServerPage"
 msgid "Bridge Support Unavailable"
@@ -2652,7 +2664,7 @@ msgstr "请升级你的 Tor 软件或者将 Tor 设定为普通中继服务器."
 
 msgctxt "ServerPage"
 msgid "Your bridge relay is not running."
-msgstr ""
+msgstr "您的桥接中继尚未运行"
 
 msgctxt "ServerPage"
 msgid "You must specify at least a relay nickname and port."
@@ -2660,7 +2672,7 @@ msgstr "你必须指定至少一个中继名称和端口."
 
 msgctxt "ServerPage"
 msgid "Run as a client only"
-msgstr ""
+msgstr "仅运行客户端功能"
 
 msgctxt "ServerPage"
 msgid "Relay traffic for the Tor network"
@@ -2672,19 +2684,19 @@ msgstr "中继端口:"
 
 msgctxt "ServerPage"
 msgid "Enable to mirror the relay directory"
-msgstr ""
+msgstr "启用此项为中继目录服务器创建镜像"
 
 msgctxt "ServerPage"
 msgid "Attempt to automatically configure port forwarding"
-msgstr ""
+msgstr "尝试自动配置端口映射"
 
 msgctxt "ServerPage"
 msgid "Test"
-msgstr ""
+msgstr "测试"
 
 msgctxt "ServerPage"
 msgid "Show help topic on port forwarding"
-msgstr ""
+msgstr "显示有关端口映射的帮助主题"
 
 msgctxt "ServerPage"
 msgid "Directory Port:"
@@ -2700,11 +2712,11 @@ msgstr "信息:"
 
 msgctxt "ServerPage"
 msgid "Name of your relay"
-msgstr ""
+msgstr "您中继服务的名称"
 
 msgctxt "ServerPage"
 msgid "Port on which users and other relays can communicate with your relay"
-msgstr ""
+msgstr "您中继服务的端口，供其他用户或中继与其通讯时连接。"
 
 msgctxt "ServerPage"
 msgid "Nickname:"
@@ -2832,11 +2844,11 @@ msgstr "显示关于服务策略的相关帮助主题"
 
 msgctxt "ServerPage"
 msgid "What Internet resources should users be able to access from your relay?"
-msgstr ""
+msgstr "用户通过您的中继服务可以访问的Internet资源"
 
 msgctxt "ServerPage"
 msgid "Tor will still block some outgoing mail and file sharing applications by default to reduce spam and other abuse."
-msgstr ""
+msgstr "Tor仍会默认拦截某些出站邮件或文件共享程序以减少垃圾邮件及其他网络滥用行为。"
 
 msgctxt "ServerPage"
 msgid "Exit Policies"
@@ -2844,27 +2856,27 @@ msgstr "服务策略"
 
 msgctxt "ServerPage"
 msgid "Let others access your bridge by giving them this line:"
-msgstr ""
+msgstr "将此行告诉朋友他们就可以访问您的网桥："
 
 msgctxt "ServerPage"
 msgid "This is the identity of your bridge relay that you can give to other people"
-msgstr ""
+msgstr "此行为您的网桥身份，您可以将其告知他人。"
 
 msgctxt "ServerPage"
 msgid "Copy your bridge relay's identity to the clipboard"
-msgstr ""
+msgstr "复制网桥身份至剪切板"
 
 msgctxt "ServerPage"
 msgid "No Recent Usage"
-msgstr ""
+msgstr "最近没有使用"
 
 msgctxt "ServerPage"
 msgid "No clients have used your relay recently."
-msgstr ""
+msgstr "最近没有客户端使用您的中继"
 
 msgctxt "ServerPage"
 msgid "Leave your relay running so clients have a better chance of finding and using it."
-msgstr ""
+msgstr "保持您的中继运行，让其他客户端有更多的机会发现并使用它。"
 
 msgctxt "ServerPage"
 msgid "Bridge History"
@@ -2876,11 +2888,11 @@ msgstr "Vidalia 无法保存你的 %1 设定."
 
 msgctxt "ServerPage"
 msgid "Tor returned an improperly formatted response when Vidalia requested your bridge's usage history."
-msgstr ""
+msgstr "Vidalia请求网桥使用历史时，Tor返回了格式错误的响应。"
 
 msgctxt "ServerPage"
 msgid "The returned response was: %1"
-msgstr ""
+msgstr "返回的响应为：%1"
 
 msgctxt "ServerPage"
 msgid "Help censored users reach the Tor network"
@@ -2888,24 +2900,26 @@ msgstr "帮助用户访问 Tor 网络(限于 Tor 0.2.0.3-alpha 或更高版本) 
 
 msgctxt "ServerPage"
 msgid "<a href=\"#bridgeUsage\">Who has used my bridge?</a>"
-msgstr ""
+msgstr "<a href=\"#bridgeUsage\">谁曾使用过我的网桥?</a>"
 
 msgctxt "ServerPage"
 msgid "Mirror the Relay Directory"
-msgstr ""
+msgstr "镜像中继目录"
 
 msgctxt "ServerPage"
 msgid "Email address at which you may be reached if there is a\n"
 "problem with your relay. You might also include your PGP or GPG fingerprint."
 msgstr ""
+"中继故障时联系您的Email地址\n"
+"您还可以同时提供您的PGP/GPG指纹。"
 
 msgctxt "ServicePage"
 msgid "Error while trying to unpublish all services"
-msgstr ""
+msgstr "取消发布所有服务时出错"
 
 msgctxt "ServicePage"
 msgid "Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones."
-msgstr ""
+msgstr "请至少配置一个服务目录并为每项服务配置一个虚拟端口。删除其他的项目。"
 
 msgctxt "ServicePage"
 msgid "Error"
@@ -2913,71 +2927,72 @@ msgstr "错误"
 
 msgctxt "ServicePage"
 msgid "Please select a Service."
-msgstr ""
+msgstr "请选择一项服务"
 
 msgctxt "ServicePage"
 msgid "Select Service Directory"
-msgstr ""
+msgstr "选择服务目录"
 
 msgctxt "ServicePage"
 msgid "Virtual Port may only contain valid port numbers [1..65535]."
-msgstr ""
+msgstr "虚拟端口必须合法的端口号[1-65535]。"
 
 msgctxt "ServicePage"
 msgid "Target may only contain address:port, address, or port."
-msgstr ""
+msgstr "目标可必须包含地址:端口、地址或端口。"
 
 msgctxt "ServicePage"
 msgid "Directory already in use by another service."
-msgstr ""
+msgstr "此目录已被其他服务占用。"
 
+# what do you mean? a table?  
 msgctxt "ServicePage"
 msgid "Form"
 msgstr ""
 
 msgctxt "ServicePage"
 msgid "Provided Hidden Services"
-msgstr ""
+msgstr "已提供隐藏服务"
 
 msgctxt "ServicePage"
 msgid "Onion Address"
-msgstr ""
+msgstr "Oninon地址"
 
 msgctxt "ServicePage"
 msgid "Virtual Port"
-msgstr ""
+msgstr "虚拟端口"
 
 msgctxt "ServicePage"
 msgid "Target"
-msgstr ""
+msgstr "本地目标"
 
 msgctxt "ServicePage"
 msgid "Directory Path"
-msgstr ""
+msgstr "目录位置"
 
 msgctxt "ServicePage"
 msgid "Enabled"
-msgstr ""
+msgstr "启用"
 
 msgctxt "ServicePage"
 msgid "Add new service to list"
-msgstr ""
+msgstr "向列表中添加新服务"
 
 msgctxt "ServicePage"
 msgid "Remove selected service from list"
-msgstr ""
+msgstr "从列表中移除选中的服务"
 
 msgctxt "ServicePage"
 msgid "Copy onion address of selected service to clipboard"
-msgstr ""
+msgstr "将选中服务的.Onion地址复制到剪贴板"
 
 msgctxt "ServicePage"
 msgid "Browse in local file system and choose directory for selected service"
-msgstr ""
+msgstr "浏览本地文件系统为所选服务设定服务目录"
 
 msgctxt "ServicePage"
 msgid "Created by Tor"
-msgstr ""
+msgstr "由Tor创建"
 
 msgctxt "Stream"
 msgid "New"
