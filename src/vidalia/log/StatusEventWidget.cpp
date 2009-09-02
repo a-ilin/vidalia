@@ -235,13 +235,29 @@ StatusEventWidget::addBadgeToPixmap(const QString &pixmap,
 void
 StatusEventWidget::authenticated()
 {
-  QString version = Vidalia::torControl()->getTorVersionString();
+  TorControl *tc = Vidalia::torControl();
+
+  QString version = tc->getTorVersionString();
   QPixmap icon = addBadgeToPixmap(":/images/48x48/tor-logo.png",
                                   ":/images/32x32/dialog-ok-apply.png");
   addNotification(icon,
     tr("The Tor Software is Running"),
     tr("You are currently running version \"%1\" of the Tor software.")
                                                             .arg(version));
+
+  // Check if Tor established a circuit before we were able to authenticate,
+  // in which case we missed the CIRCUIT_ESTABLISHED event. So fake it.
+  if (tc->isCircuitEstablished())
+    circuitEstablished();
+
+  // Check on the status of Tor's version, in case we missed that event too
+  QString status = tc->getInfo("status/version/current").toString();
+  if (! status.compare("old", Qt::CaseInsensitive)
+        || ! status.compare("obsolete", Qt::CaseInsensitive)) {
+    dangerousTorVersion(tc::ObsoleteTorVersion, version, QStringList());
+  } else if (! status.compare("unrecommended", Qt::CaseInsensitive)) {
+    dangerousTorVersion(tc::UnrecommendedTorVersion, version, QStringList());
+  }
 }
 
 void
@@ -261,8 +277,8 @@ StatusEventWidget::disconnected()
 
 void
 StatusEventWidget::dangerousTorVersion(tc::TorVersionStatus reason,
-                                     const QString &version,
-                                     const QStringList &recommended)
+                                       const QString &version,
+                                       const QStringList &recommended)
 {
   Q_UNUSED(recommended);
   QString description;
@@ -283,7 +299,7 @@ StatusEventWidget::dangerousTorVersion(tc::TorVersionStatus reason,
 
     description =
       tr("You are currently running version \"%1\" of the Tor software, which "
-         "likely no longer works with the current Tor network. Please upgrade "
+         "may no longer work with the current Tor network. Please upgrade "
          "to the most recent version of the software, which may contain "
          "important security, reliability and performance fixes.").arg(version);
   }
