@@ -12,6 +12,9 @@
     responding to ADDRMAP events from Tor. The result was that users would
     sometimes see IP addresses in the connection list shown under the network
     map rather than hostnames.
+  o Fix a bug in the default "bootstrap" vidalia.conf file included in the
+    OS X drag-and-drop bundles that pointed to a non-existent Polipo
+    configuration file, causing Polipo to fail on startup.
 
 
 0.2.3   27-Aug-2009
