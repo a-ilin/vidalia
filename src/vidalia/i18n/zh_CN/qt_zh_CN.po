@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-08-20 03:25+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2009-09-06 14:50+0000\n"
+"Last-Translator: Ben <zhazhenzhong@gmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Vidalia ts2po 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 1.1.0\n"
 
 #: qaccessibleobject.cpp:348
 msgctxt "QApplication"
@@ -193,7 +193,6 @@ msgid "Open"
 msgstr "打开"
 
 #: qfiledialog.cpp:1670
-#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
 "%1 already exists.\n"
@@ -201,13 +200,14 @@ msgid ""
 msgstr "%1已经存在。你想要替换它么？"
 
 #: qfiledialog.cpp:1690
-#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
 "%1\n"
 "File not found.\n"
 "Please verify the correct file name was given."
-msgstr "文件%1没有找到。请核实已给定正确文件名。"
+msgstr ""
+"文件 %1 没有找到。\n"
+"请核实已给定正确文件名。"
 
 #: qdirmodel.cpp:833
 msgctxt "QFileDialog"
@@ -266,15 +266,18 @@ msgid ""
 "%1\n"
 "Directory not found.\n"
 "Please verify the correct directory name was given."
-msgstr "目录%1没有找到。请核实已给定正确目录名。"
+msgstr ""
+"目录%1 没有找到。\n"
+"请核实已给定正确目录名。"
 
 #: qfiledialog.cpp:2281
-#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
 "'%1' is write protected.\n"
 "Do you want to delete it anyway?"
-msgstr "“%1“是写保护的。你还是想删除它么？"
+msgstr ""
+"“%1“ 只读。\n"
+"你还是想删除它么？"
 
 #: qfiledialog.cpp:2286
 msgctxt "QFileDialog"
