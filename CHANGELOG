@@ -1,7 +1,8 @@
-0.2.4   xx-xxx-2009
+0.2.4   07-Sep-2009
   o Split the message log into "Basic" and "Advanced" views. The
     "Advanced" view contains standard log messages from Tor, while the new
-    "Basic" view displays status events received from Tor. (Ticket #265)
+    experimental "Basic" view displays status events received from Tor.
+    (Ticket #265)
   o Apply an application-global stylesheet on OS X that forces all tree
     widgets in Vidalia to use the 12pt font recommended by Apple's human
     interface guidelines.
