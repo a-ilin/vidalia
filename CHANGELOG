@@ -1,3 +1,8 @@
+0.2.5   xx-xxx-2009
+  o Add ports 7000 and 7001 to the list of ports excluded by the IRC
+    category in the exit policy configuration tab. (Ticket #517)
+
+
 0.2.4   07-Sep-2009
   o Split the message log into "Basic" and "Advanced" views. The
     "Advanced" view contains standard log messages from Tor, while the new

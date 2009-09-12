@@ -64,8 +64,8 @@
 #define PORTS_IM     (QStringList() << "706" << "1863" << "5050" << "5190" \
                                     << "5222" << "5223" << "8300" << "8888")
 /** Ports represented by the "Internet Relay Chat" checkbox. 
- * (6660-6669,6697) */
-#define PORTS_IRC    (QStringList() << "6660-6669" << "6697")
+ * (6660-6669,6697,7000-7001) */
+#define PORTS_IRC    (QStringList() << "6660-6669" << "6697" << "7000-7001")
 
 
 /** Constructor */
