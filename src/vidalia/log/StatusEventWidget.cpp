@@ -23,11 +23,13 @@
 #include "stringutil.h"
 
 #include <QTime>
+#include <QMenu>
 #include <QPainter>
 #include <QPixmap>
 #include <QStringList>
 #include <QObject>
 #include <QHeaderView>
+#include <QClipboard>
 
 bool compareStatusEventItems(const QTreeWidgetItem *a,
                              const QTreeWidgetItem *b)
@@ -43,6 +45,8 @@ StatusEventWidget::StatusEventWidget(QWidget *parent)
   tc->setEvent(TorEvents::ClientStatus);
   tc->setEvent(TorEvents::ServerStatus);
 
+  connect(this, SIGNAL(customContextMenuRequested(QPoint)),
+            this, SLOT(customContextMenuRequested(QPoint)));
   connect(tc, SIGNAL(authenticated()), this, SLOT(authenticated()));
   connect(tc, SIGNAL(disconnected()), this, SLOT(disconnected()));
   connect(tc, SIGNAL(dangerousTorVersion(tc::TorVersionStatus, QString,
@@ -150,6 +154,26 @@ StatusEventWidget::allEvents() const
       out.append(event->toString());
   }
   return out;
+}
+
+void
+StatusEventWidget::customContextMenuRequested(const QPoint &pos)
+{
+  QMenu menu(this);
+
+  StatusEventItem *item = dynamic_cast<StatusEventItem *>(itemAt(pos));
+  if (! item || ! item->isSelected())
+    return;
+
+  QAction *copyAction = menu.addAction(QIcon(":/images/22x22/edit-copy.png"),
+                                       tr("Copy to Clipboard"));
+
+  QAction *action = menu.exec(mapToGlobal(pos));
+  if (action == copyAction) {
+    QStringList eventText = selectedEvents();
+    if (! eventText.isEmpty())
+      QApplication::clipboard()->setText(eventText.join("\n"));
+  }
 }
 
 QList<StatusEventItem *>

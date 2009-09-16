@@ -25,6 +25,7 @@
 
 class QPixmap;
 class QString;
+class QPoint;
 class QStringList;
 
 class StatusEventItem;
@@ -78,6 +79,12 @@ protected:
   virtual void retranslateUi();
 
 private slots:
+  /** Copies the text for all selected event items to the system
+   * clipboard.
+   * \sa selectedEvents()
+   */
+  void customContextMenuRequested(const QPoint &pos);
+
   /** Called when the control socket is connected and authenticated. */
   void authenticated();
 

@@ -55,6 +55,9 @@
         </property>
         <item row="0" column="0">
          <widget class="StatusEventWidget" name="listNotifications">
+          <property name="contextMenuPolicy">
+           <enum>Qt::CustomContextMenu</enum>
+          </property>
           <property name="horizontalScrollBarPolicy">
            <enum>Qt::ScrollBarAsNeeded</enum>
           </property>
