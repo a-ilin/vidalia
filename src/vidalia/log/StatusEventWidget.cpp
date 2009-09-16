@@ -46,7 +46,7 @@ StatusEventWidget::StatusEventWidget(QWidget *parent)
   tc->setEvent(TorEvents::ServerStatus);
 
   connect(this, SIGNAL(customContextMenuRequested(QPoint)),
-            this, SLOT(customContextMenuRequested(QPoint)));
+          this, SLOT(customContextMenuRequested(QPoint)));
   connect(tc, SIGNAL(authenticated()), this, SLOT(authenticated()));
   connect(tc, SIGNAL(disconnected()), this, SLOT(disconnected()));
   connect(tc, SIGNAL(dangerousTorVersion(tc::TorVersionStatus, QString,
