@@ -24,7 +24,7 @@ SetCompressor /SOLID lzma
 
 !define TOR_NAME            "Tor"
 !define TOR_EXEC            "tor.exe"
-!define TOR_APPVERSION      "0.2.1.19"
+!define TOR_APPVERSION      "0.2.2.3-alpha"
 !define TOR_DESC            "${TOR_NAME} ${TOR_APPVERSION}"
 
 !define POLIPO_NAME        "Polipo"
@@ -202,7 +202,7 @@ SectionGroup "${VIDALIA_DESC}" VidaliaGroup
       WriteINIStr "$APPDATA\Vidalia\vidalia.conf" Tor TorExecutable "$R0\\Tor\\${TOR_EXEC}"
       WriteINIStr "$APPDATA\Vidalia\vidalia.conf" General LanguageCode "$(LanguageCode)"
       WriteINIStr "$APPDATA\Vidalia\vidalia.conf" General ProxyExecutable "$R0\\Polipo\\${POLIPO_EXEC}"
-      WriteINIStr "$APPDATA\Vidalia\vidalia.conf" General ProxyExecutableArguments "$R0\\Polipo\\polipo.conf"
+      WriteINIStr "$APPDATA\Vidalia\vidalia.conf" General ProxyExecutableArguments "-c $R0\\Polipo\\polipo.conf"
       WriteINIStr "$APPDATA\Vidalia\vidalia.conf" General RunProxyAtStart "true"
 
 
