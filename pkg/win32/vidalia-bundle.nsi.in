@@ -341,7 +341,7 @@ SectionGroup "${POLIPO_DESC}" PolipoGroup
         SetOutPath "$INSTDIR\Polipo"
         File /r /x @POLIPO_PACKAGE_DIR@\polipo.conf @POLIPO_PACKAGE_DIR@\*.*
 
-        IntCmp $bInstallVidalia 1 add_to_vidalia_conf setup_polipo_reg_keys setup_polipo_reg_keys
+        IntCmp $bInstallVidalia 1 add_to_vidalia_conf skip_vidalia_conf skip_vidalia_conf
         add_to_vidalia_conf:
           ; Let Vidalia know that Polipo was installed
           Push $INSTDIR
