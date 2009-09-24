@@ -51,6 +51,10 @@ class HelperProcess : public QProcess
 public:
   /** Default constructor */
   HelperProcess(QObject *parent = 0);
+  /** Start <b>app</b> with <b>args</b> appended to the end of the command
+   * line. <b>app</b> will be quoted, so an executable name with spaces is
+   * acceptable. */
+  void start(const QString &app, const QString &args);
   /** Start the specified application. */
   void start(const QString &app, const QStringList &args);
   /** Returns true iff process is not running. */

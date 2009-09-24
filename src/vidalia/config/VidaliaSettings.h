@@ -99,9 +99,9 @@ public:
 
   /** Returns a list containing additional command line arguments to be
    * passed to ProxyExecutable */
-  QStringList getProxyExecutableArguments() const;
+  QString getProxyExecutableArguments() const;
   /** Sets the additional arguments to be passed to Proxy Executable */
-  void setProxyExecutableArguments(const QStringList &proxyExecutableArguments);
+  void setProxyExecutableArguments(const QString &proxyExecutableArguments);
   
   /** Returns true if Vidalia should automatically check for software updates.
    */

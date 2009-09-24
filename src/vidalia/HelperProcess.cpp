@@ -82,6 +82,21 @@ HelperProcess::onReadyReadStandardOutput()
   }
 }
 
+void
+HelperProcess::start(const QString &app, const QString &args)
+{
+  QFileInfo fi(app);
+  _processName = fi.fileName();
+
+  QString commandLine = QString("\"%1\" %2").arg(app).arg(args);
+
+   // Log the process name and arguments
+  vNotice("Launching helper process with command line '%1'")
+                                           .arg(commandLine);
+
+  QProcess::start(commandLine, QIODevice::ReadOnly | QIODevice::Text);
+}
+
 /** Start the specified application. */
 void
 HelperProcess::start(const QString &app, const QStringList &args) 

@@ -4,6 +4,10 @@
   o Add a context menu for highlighted event items in the "Basic" message
     log view that allows the user to copy the selected item text to the
     clipboard.
+  o Stop trying to enforce proper quoting and escaping of arguments to be
+    given to the proxy executable (e.g., Polipo). Now the user is on their
+    own for properly formatting the command line used to start the proxy
+    executable. (Ticket #523)
 
 
 0.2.4   07-Sep-2009

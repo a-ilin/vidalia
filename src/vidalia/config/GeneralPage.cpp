@@ -112,15 +112,9 @@ GeneralPage::save(QString &errmsg)
     return false;
   }
   if (ui.chkRunProxyAtTorStartup->isChecked()) {
-    bool ok;
-    QStringList proxyArgs = string_parse_arguments(
-                              ui.lineProxyExecutableArguments->text(), &ok);
-    if (! ok) {
-      errmsg = tr("The proxy arguments specified are not properly formatted.");
-      return false;
-    }
     _vidaliaSettings->setProxyExecutable(ui.lineProxyExecutable->text());
-    _vidaliaSettings->setProxyExecutableArguments(proxyArgs);
+    _vidaliaSettings->setProxyExecutableArguments(
+      ui.lineProxyExecutableArguments->text());
   }
   
   _torSettings->setExecutable(torExecutable);
@@ -144,7 +138,7 @@ GeneralPage::load()
 
   ui.lineProxyExecutable->setText(_vidaliaSettings->getProxyExecutable());
   ui.lineProxyExecutableArguments->setText(
-    string_format_arguments(_vidaliaSettings->getProxyExecutableArguments()));
+    _vidaliaSettings->getProxyExecutableArguments());
   ui.chkRunProxyAtTorStartup->setChecked(_vidaliaSettings->runProxyAtStart());
 }
 

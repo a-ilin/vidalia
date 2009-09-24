@@ -72,7 +72,7 @@ VidaliaSettings::VidaliaSettings()
   setDefault(SETTING_IM_EXECUTABLE, "");
   setDefault(SETTING_RUN_PROXY_AT_START, false);
   setDefault(SETTING_PROXY_EXECUTABLE, "");
-  setDefault(SETTING_PROXY_EXECUTABLE_ARGUMENTS, QStringList());
+  setDefault(SETTING_PROXY_EXECUTABLE_ARGUMENTS, QString());
 #if defined(Q_WS_WIN)
   setDefault(SETTING_CHECK_FOR_UPDATES, true);
 #else
@@ -254,17 +254,17 @@ VidaliaSettings::setProxyExecutable(const QString &proxyExecutable)
   setValue(SETTING_PROXY_EXECUTABLE, proxyExecutable);
 }
 
-/** Returns a list containing additional command line arguments to be passed
+/** Returns a string containing additional command line arguments to be passed
  * to ProxyExecutable */
-QStringList
+QString
 VidaliaSettings::getProxyExecutableArguments() const
 {
-  return value(SETTING_PROXY_EXECUTABLE_ARGUMENTS).toStringList();
+  return value(SETTING_PROXY_EXECUTABLE_ARGUMENTS).toString();
 }
 
 /** Sets the additional arguments to be passed to Proxy Executable */
 void
-VidaliaSettings::setProxyExecutableArguments(const QStringList
+VidaliaSettings::setProxyExecutableArguments(const QString
                                              &proxyExecutableArguments)
 {
   setValue(SETTING_PROXY_EXECUTABLE_ARGUMENTS, proxyExecutableArguments);
