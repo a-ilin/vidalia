@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-07-12 05:29+0000\n"
-"PO-Revision-Date: 2008-11-19 23:27+0000\n"
-"Last-Translator: Mfr <mfr@misericordia.be>\n"
+"PO-Revision-Date: 2009-09-21 10:44+0000\n"
+"Last-Translator: Michael Scherer <misc@zarb.org>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,8 +16,7 @@ msgctxt "BundleSetupCaption"
 msgid "${BUNDLE_NAME} setup"
 msgstr "Mise à jour de ${BUNDLE_NAME}"
 
-# GUI traduit en logiciel pour plus de clarté
-#, fuzzy
+# Traduction de la partie sur Polipo
 msgctxt "BundleWelcomeText"
 msgid ""
 "This wizard will guide you through the installation of Tor, Vidalia, Polipo, "
@@ -43,11 +42,11 @@ msgstr ""
 "\n"
 "Tor est un système pour utiliser internet anonymement, vous aidant à "
 "anonymer la navigation Web, la publication, la messagerie instantanée, "
-"l'IRC, et plus encore. Vidalia est un logiciel qui vous aide à contrôler,"
-"surveiller et configurer Tor.\n"
+"l'IRC, et plus encore. Vidalia est un logiciel qui vous aide à "
+"contrôler,surveiller et configurer Tor.\n"
 "\n"
-"Privoxy est un mandataire proxy web de filtrage qui protège votre anonymat "
-"et aide à supprimer les publicités, bannières et les popups.\n"
+"Polipo est un mandataire proxy de cache qui améliore la navigation web à "
+"travers Tor.\n"
 "\n"
 "Torbutton est un module complémentaire de Firefox qui vous permet d'activer "
 "ou de désactiver rapidement la navigation anonyme.\n"
@@ -192,33 +191,29 @@ msgid ""
 "Polipo is a caching web proxy that increases performance of web browsing "
 "through Tor."
 msgstr ""
+"Polipo est un mandataire proxy de cache qui améliore la navigation web à "
+"travers Tor."
 
-#, fuzzy
 msgctxt "PolipoUninstDesc"
 msgid "Remove ${POLIPO_DESC}."
 msgstr "Supprimer ${POLIPO_DESC}."
 
-#, fuzzy
 msgctxt "PolipoAppDesc"
 msgid "Install ${POLIPO_DESC}."
 msgstr "Installer ${POLIPO_DESC}."
 
-#, fuzzy
 msgctxt "PolipoShortcuts"
 msgid "Add to Start Menu"
 msgstr "Ajouter au Menu Démarrer"
 
-#, fuzzy
 msgctxt "PolipoShortcutsDesc"
 msgid "Add ${POLIPO_NAME} to your Start menu."
 msgstr "Ajouter ${POLIPO_NAME} à votre Menu Démarrer."
 
-#, fuzzy
 msgctxt "PolipoStartup"
 msgid "Run At Startup"
 msgstr "Lancer au démarrage"
 
-#, fuzzy
 msgctxt "PolipoStartupDesc"
 msgid "Automatically run ${POLIPO_NAME} at startup."
 msgstr "Lancer automatiquement ${POLIPO_NAME} au démarrage."
@@ -307,4 +302,3 @@ msgstr ""
 "\n"
 "Ou, si vous préférez installer Tor sans Firefox, pressez simplement\n"
 "Continuer."
-
