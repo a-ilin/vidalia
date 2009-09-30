@@ -339,21 +339,24 @@ SectionGroup "${POLIPO_DESC}" PolipoGroup
         SectionIn 1 2
         ; add files / whatever that need to be installed here.
         SetOutPath "$INSTDIR\Polipo"
-        File /r /x @POLIPO_PACKAGE_DIR@\polipo.conf @POLIPO_PACKAGE_DIR@\*.*
+        SetShellVarContext current
 
-        IntCmp $bInstallVidalia 1 add_to_vidalia_conf skip_vidalia_conf skip_vidalia_conf
-        add_to_vidalia_conf:
-          ; Let Vidalia know that Polipo was installed
+        File /r /x "@POLIPO_PACKAGE_DIR@\polipo.conf" "@POLIPO_PACKAGE_DIR@\*.*"
+        File "@CMAKE_CURRENT_SOURCE_DIR@\polipo.conf"
+
+        ; Let Vidalia know that Polipo was installed
+        IntCmp $bInstallVidalia 1 AddVidaliaSettings SkipVidaliaSettings SkipVidaliaSettings
+        AddVidaliaSettings:
           Push $INSTDIR
           Push "\"
           Push "\\"
           Call StrRep
           Pop $R0
           WriteINIStr "$APPDATA\Vidalia\vidalia.conf" General ProxyExecutable "$R0\\Polipo\\${POLIPO_EXEC}"
-          WriteINIStr "$APPDATA\Vidalia\vidalia.conf" General ProxyExecutableArguments "-c, $R0\\Polipo\\polipo.conf"
+          WriteINIStr "$APPDATA\Vidalia\vidalia.conf" General ProxyExecutableArguments '-c \"$R0\\Polipo\\polipo.conf\"'
           WriteINIStr "$APPDATA\Vidalia\vidalia.conf" General RunProxyAtStart "true"
+        SkipVidaliaSettings:
 
-        skip_vidalia_conf:
         ; Write the installation path into the registry
         WriteRegStr HKCU SOFTWARE\Polipo "Install_Dir" "$INSTDIR"
 
