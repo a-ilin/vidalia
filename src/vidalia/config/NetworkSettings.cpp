@@ -18,12 +18,23 @@
 
 #define SETTING_FASCIST_FIREWALL    "FascistFirewall"
 #define SETTING_REACHABLE_ADDRESSES "ReachableAddresses"
-#define SETTING_USE_HTTP_PROXY      "UseHttpProxy"
+
+/* Vidalia-specific proxy options */
+#define SETTING_PROXY_TYPE          "ProxyType"
+#define SETTING_PROXY_ADDRESS       "ProxyAddress"
+#define SETTING_PROXY_USERNAME      "ProxyUsername"
+#define SETTING_PROXY_PASSWORD      "ProxyPassword"
+
+/* Tor's proxy options */
 #define SETTING_HTTP_PROXY          "HttpProxy"
 #define SETTING_HTTP_PROXY_AUTH     "HttpProxyAuthenticator"
-#define SETTING_USE_HTTPS_PROXY     "UseHttpsProxy"
 #define SETTING_HTTPS_PROXY         "HttpsProxy"
 #define SETTING_HTTPS_PROXY_AUTH    "HttpsProxyAuthenticator"
+#define SETTING_SOCKS4_PROXY        "Socks4Proxy"
+#define SETTING_SOCKS5_PROXY        "Socks5Proxy"
+#define SETTING_SOCKS5_USERNAME     "Socks5ProxyUsername"
+#define SETTING_SOCKS5_PASSWORD     "Socks5ProxyPassword"
+
 #define SETTING_USE_BRIDGES         "UseBridges"
 #define SETTING_BRIDGE_LIST         "Bridge"
 #define SETTING_UPDATE_BRIDGES      "UpdateBridgesFromAuthority"
@@ -35,12 +46,10 @@
 NetworkSettings::NetworkSettings(TorControl *torControl)
 : AbstractTorSettings("Network", torControl)
 {
-  setDefault(SETTING_USE_HTTP_PROXY,    false);
-  setDefault(SETTING_HTTP_PROXY,        "");
-  setDefault(SETTING_HTTP_PROXY_AUTH,   "");
-  setDefault(SETTING_USE_HTTPS_PROXY,   true);
-  setDefault(SETTING_HTTPS_PROXY,       "");
-  setDefault(SETTING_HTTPS_PROXY_AUTH,  "");
+  setDefault(SETTING_PROXY_TYPE,        NoProxy);
+  setDefault(SETTING_PROXY_ADDRESS,     "");
+  setDefault(SETTING_PROXY_USERNAME,    "");
+  setDefault(SETTING_PROXY_PASSWORD,    "");
   setDefault(SETTING_USE_BRIDGES,       false);
   setDefault(SETTING_BRIDGE_LIST,       QStringList());
   setDefault(SETTING_FASCIST_FIREWALL,  false);
@@ -61,20 +70,47 @@ NetworkSettings::apply(QString *errmsg)
   conf.insert(SETTING_REACHABLE_ADDRESSES,
     (getFascistFirewall() ? 
       localValue(SETTING_REACHABLE_ADDRESSES).toStringList().join(",") : ""));
+ 
+  QString socks4, socks5, http, https;
+  QString addr, user, pass, auth;
 
-  if (getUseHttpProxy())
-    conf.insert(SETTING_HTTP_PROXY, localValue(SETTING_HTTP_PROXY).toString());
-  else
-    conf.insert(SETTING_HTTP_PROXY,  "");
-  conf.insert(SETTING_HTTP_PROXY_AUTH,
-              localValue(SETTING_HTTP_PROXY_AUTH).toString());
+  addr = localValue(SETTING_PROXY_ADDRESS).toString();
+  user = localValue(SETTING_PROXY_USERNAME).toString();
+  pass = localValue(SETTING_PROXY_PASSWORD).toString();
 
-  if (getUseHttpProxy() && getUseHttpsProxy())
-    conf.insert(SETTING_HTTPS_PROXY, localValue(SETTING_HTTPS_PROXY).toString());
-  else
-    conf.insert(SETTING_HTTPS_PROXY, "");
-  conf.insert(SETTING_HTTPS_PROXY_AUTH,
-              localValue(SETTING_HTTPS_PROXY_AUTH).toString());
+  if (!user.isEmpty() || !pass.isEmpty())
+    auth = QString("%1:%2").arg(user).arg(pass);
+ 
+  switch (getProxyType()) {
+    case NoProxy:
+      break;
+    case Socks4Proxy:
+      socks4 = addr;
+      break;
+    case Socks5Proxy:
+      socks5 = addr;
+      break;
+    case HttpProxy:
+      http = addr;
+      break;
+    case HttpHttpsProxy:
+      http = addr;
+      https = http;
+      break;
+  }
+
+  if (torVersion >= 0x020201) {
+    /* SOCKS support was implemented in 0.2.2.1 */
+    conf.insert(SETTING_SOCKS4_PROXY, socks4);
+    conf.insert(SETTING_SOCKS5_PROXY, socks5);
+    conf.insert(SETTING_SOCKS5_USERNAME, user);
+    conf.insert(SETTING_SOCKS5_PASSWORD, pass);
+  }
+
+  conf.insert(SETTING_HTTP_PROXY, http);
+  conf.insert(SETTING_HTTPS_PROXY, https);
+  conf.insert(SETTING_HTTP_PROXY_AUTH, auth);
+  conf.insert(SETTING_HTTPS_PROXY_AUTH, auth);
 
   if (getUseBridges()) {
     /* We want to always enable TunnelDirConns and friends when using
@@ -159,106 +195,62 @@ NetworkSettings::setReachablePorts(const QList<quint16> &reachablePorts)
   }
 }
 
-/** Returns true if Tor should make all its directory requests through a
- * proxy. */
-bool
-NetworkSettings::getUseHttpProxy()
+/** Returns the proxy type Tor is using, or NoProxy if it makes direct
+ * connections. */ 
+NetworkSettings::ProxyType
+NetworkSettings::getProxyType()
 {
-  return localValue(SETTING_USE_HTTP_PROXY).toBool();
+  QString type = value(SETTING_PROXY_TYPE).toString();
+  return proxyTypeFromString(type);
 }
 
-/** Sets to <b>useHttpProxy</b> whether Tor should make all its directory
- * requests through the proxy specified to setHttpProxy().
- * \sa setHttpProxy() */
+/** Set the type of proxy Tor should use to <b>type</b>. */
 void
-NetworkSettings::setUseHttpProxy(bool useHttpProxy)
+NetworkSettings::setProxyType(ProxyType type)
 {
-  setValue(SETTING_USE_HTTP_PROXY, useHttpProxy);
+  setValue(SETTING_PROXY_TYPE, proxyTypeToString(type));
 }
 
-/** Returns the proxy used for making Tor's directory requests, in the form
- * of <i>host[:port]</i>. */
+/** Returns the address of the proxy server Tor makes connections through. */
 QString
-NetworkSettings::getHttpProxy()
+NetworkSettings::getProxyAddress()
 {
-  return value(SETTING_HTTP_PROXY).toString();
+  return value(SETTING_PROXY_ADDRESS).toString();
 }
 
-/** Sets the proxy used for making Tor's directory requests. <b>proxy</b>
- * should be in the form <i>host[:port]</i>. If <i>:port</i> is not
- * specified, then Tor will use its default of port 80. */
+/** Sets the proxy address and port to <b>addr</b>. */
 void
-NetworkSettings::setHttpProxy(const QString &proxy)
+NetworkSettings::setProxyAddress(const QString &addr)
 {
-  setValue(SETTING_HTTP_PROXY, proxy);
+  setValue(SETTING_PROXY_ADDRESS, addr);
 }
 
-/** Returns the authentication information Tor should use to authenticate to
- * an Http proxy. The returned value is in the form 
- * <i>username:password</i>. */
+/** Returns the username used to login to the proxy server. */
 QString
-NetworkSettings::getHttpProxyAuthenticator()
+NetworkSettings::getProxyUsername()
 {
-  return value(SETTING_HTTP_PROXY_AUTH).toString();
+  return value(SETTING_PROXY_USERNAME).toString();
 }
 
-/** Sets the authentication information required by an Http proxy.
- * <b>authenticator</b> should be in the form <i>username:password</i>. */
+/** Sets the proxy server username to <b>user</b>. */ 
 void
-NetworkSettings::setHttpProxyAuthenticator(const QString &auth)
+NetworkSettings::setProxyUsername(const QString &user)
 {
-  setValue(SETTING_HTTP_PROXY_AUTH, auth);
+  setValue(SETTING_PROXY_USERNAME, user);
 }
 
-/** Returns true if Tor should make all its OR connections through a
- * proxy. */
-bool
-NetworkSettings::getUseHttpsProxy()
-{
-  return localValue(SETTING_USE_HTTPS_PROXY).toBool();
-}
-
-/** Sets to <b>useHttpsProxy</b> whether Tor should make all its OR
- * connections through the proxy specified to setHttpsProxy().
- * \sa setHttpsProxy() */
-void
-NetworkSettings::setUseHttpsProxy(bool useHttpsProxy)
-{
-  setValue(SETTING_USE_HTTPS_PROXY, useHttpsProxy);
-}
-
-/** Returns the proxy used for making Tor's OR connections, in the form
- * of <i>host[:port]</i>. */
+/** Returns the password used to login to the proxy server. */
 QString
-NetworkSettings::getHttpsProxy()
+NetworkSettings::getProxyPassword()
 {
-  return value(SETTING_HTTPS_PROXY).toString();
+  return value(SETTING_PROXY_PASSWORD).toString();
 }
 
-/** Sets the proxy used for making Tor's OR connections. <b>proxy</b>
- * should be in the form <i>host[:port]</i>. If <i>:port</i> is not
- * specified, then Tor will use its default of port 443. */
+/** Sets the proxy server password to <b>pass</b>. */ 
 void
-NetworkSettings::setHttpsProxy(const QString &proxy)
+NetworkSettings::setProxyPassword(const QString &pass)
 {
-  setValue(SETTING_HTTPS_PROXY, proxy);
-}
-
-/** Returns the authentication information Tor should use to authenticate to
- * an Https proxy. The returned value is in the form 
- * <i>username:password</i>. */
-QString
-NetworkSettings::getHttpsProxyAuthenticator()
-{
-  return value(SETTING_HTTPS_PROXY_AUTH).toString();
-}
-
-/** Sets the authentication information required by an Https proxy.
- * <b>authenticator</b> should be in the form <i>username:password</i>. */
-void
-NetworkSettings::setHttpsProxyAuthenticator(const QString &auth)
-{
-  setValue(SETTING_HTTPS_PROXY_AUTH, auth);
+  setValue(SETTING_PROXY_PASSWORD, pass);
 }
 
 /** Returns true if Tor should try to use bridge nodes to access the Tor
@@ -297,5 +289,52 @@ bool
 NetworkSettings::getTunnelDirConns()
 {
   return value(SETTING_TUNNEL_DIR_CONNS).toBool();
+}
+
+/** Converts the ProxyType <b>type</b> to a string to store in the
+ * configuration file. */
+QString
+NetworkSettings::proxyTypeToString(ProxyType type)
+{
+  QString ret;
+
+  switch (type) {
+    case Socks4Proxy:
+      ret = "socks4";
+      break;
+    case Socks5Proxy:
+      ret = "socks5";
+      break;
+    case HttpProxy:
+      ret = "http";
+      break;
+    case HttpHttpsProxy:
+      ret = "httphttps";
+      break;
+    case NoProxy:
+    default:
+      ret = "none";
+      break;
+  }
+
+  return ret;
+}
+
+/** Converts the proxy type string <b>type</b> to its ProxyType counterpart. */
+NetworkSettings::ProxyType
+NetworkSettings::proxyTypeFromString(const QString &type)
+{
+  QString str = type.toLower();
+  
+  if (str == "socks4")
+    return Socks4Proxy;
+  if (str == "socks5")
+    return Socks5Proxy;
+  if (str == "http")
+    return HttpProxy;
+  if (str == "httphttps")
+    return HttpHttpsProxy;
+
+  return NoProxy;
 }
 

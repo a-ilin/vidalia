@@ -1,4 +1,7 @@
 0.2.5   xx-xxx-2009
+  o Add support in the Network settings page for configuring the
+    Socks4Proxy and Socks5Proxy* options that were added in
+    Tor 0.2.2.1-alpha. Patch from Christopher Davis.
   o Add ports 7000 and 7001 to the list of ports excluded by the IRC
     category in the exit policy configuration tab. (Ticket #517)
   o Add a context menu for highlighted event items in the "Basic" message

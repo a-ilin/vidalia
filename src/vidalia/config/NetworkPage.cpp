@@ -52,9 +52,17 @@ NetworkPage::NetworkPage(QWidget *parent)
   connect(ui.lblHelpFindBridges, SIGNAL(linkActivated(QString)),
           this, SLOT(onLinkActivated(QString)));
   connect(ui.btnFindBridges, SIGNAL(clicked()), this, SLOT(findBridges()));
+  connect(ui.cmboProxyType, SIGNAL(currentIndexChanged(int)),
+          this, SLOT(proxyTypeChanged(int)));
 
-  ui.lineHttpProxyAddress->setValidator(new DomainValidator(this));
-  ui.lineHttpProxyPort->setValidator(new QIntValidator(1, 65535, this));
+  ui.lineProxyAddress->setValidator(new DomainValidator(this));
+  ui.lineProxyPort->setValidator(new QIntValidator(1, 65535, this));
+
+  ui.cmboProxyType->insertItem(NetworkSettings::Socks4Proxy, tr("SOCKS 4"));
+  ui.cmboProxyType->insertItem(NetworkSettings::Socks5Proxy, tr("SOCKS 5"));
+  ui.cmboProxyType->insertItem(NetworkSettings::HttpProxy, tr("HTTP"));
+  ui.cmboProxyType->insertItem(NetworkSettings::HttpHttpsProxy,
+                               tr("HTTP / HTTPS"));
 
   vApp->createShortcut(QKeySequence(QKeySequence::Copy),
                        ui.listBridges, this,
@@ -250,17 +258,25 @@ bool
 NetworkPage::save(QString &errmsg)
 {
   NetworkSettings settings(Vidalia::torControl());
+  QString addr;
+  QString user, pass;
+  NetworkSettings::ProxyType proxy = NetworkSettings::NoProxy;
   QStringList bridgeList;
   QList<quint16> reachablePorts;
   bool ok;
   
-  if (ui.chkUseProxy->isChecked()
-        && (ui.lineHttpProxyAddress->text().isEmpty()
-            || ui.lineHttpProxyPort->text().isEmpty())) {
-    errmsg = tr("You must specify both an IP address or hostname and a "
-                "port number to configure Tor to use a proxy to access "
-                "the Internet.");
-    return false;
+  if (ui.chkUseProxy->isChecked()) {
+    if (ui.lineProxyAddress->text().isEmpty()
+          || ui.lineProxyPort->text().isEmpty()) {
+      errmsg = tr("You must specify both an IP address or hostname and a "
+                  "port number to configure Tor to use a proxy to access "
+                  "the Internet.");
+      return false;
+    }
+    if (ui.cmboProxyType->currentIndex() < 0) {
+      errmsg = tr("You must select the proxy type.");
+      return false;
+    }
   }
   if (ui.chkFascistFirewall->isChecked()
         && ui.lineReachablePorts->text().isEmpty()) {
@@ -269,32 +285,28 @@ NetworkPage::save(QString &errmsg)
     return false;
   }
 
-  /* Save the HTTP/HTTPS proxy settings */
-  settings.setUseHttpProxy(ui.chkUseProxy->isChecked());
-  settings.setUseHttpsProxy(ui.chkProxyUseHttps->isChecked());
-  if (!ui.lineHttpProxyAddress->text().isEmpty()) {
-    QString proxy = ui.lineHttpProxyAddress->text();
-    if (!ui.lineHttpProxyPort->text().isEmpty())
-      proxy += ":" + ui.lineHttpProxyPort->text();
+  if (ui.chkUseProxy->isChecked()) {
+    if (!ui.lineProxyAddress->text().isEmpty()) {
+      addr = ui.lineProxyAddress->text();
+      if (!ui.lineProxyPort->text().isEmpty())
+        addr += ":" + ui.lineProxyPort->text();
+    }
 
-    settings.setHttpProxy(proxy);
-    settings.setHttpsProxy(proxy);
-  } else {
-    settings.setHttpProxy("");
-    settings.setHttpsProxy("");
-  }
-
-  if (!ui.lineHttpProxyUsername->text().isEmpty() ||
-      !ui.lineHttpProxyPassword->text().isEmpty()) {
-    QString auth = ui.lineHttpProxyUsername->text() + ":" +
-                   ui.lineHttpProxyPassword->text();
-    settings.setHttpProxyAuthenticator(auth);
-    settings.setHttpsProxyAuthenticator(auth);
-  } else {
-    settings.setHttpProxyAuthenticator("");
-    settings.setHttpsProxyAuthenticator("");
-  }
+    user = ui.lineProxyUsername->text();
+    pass = ui.lineProxyPassword->text();
   
+    int type = ui.cmboProxyType->currentIndex();
+
+    Q_ASSERT(type >= NetworkSettings::ProxyTypeMin &&
+             type <= NetworkSettings::ProxyTypeMax);
+    proxy = static_cast<NetworkSettings::ProxyType>(type);
+  }
+
+  settings.setProxyType(proxy);
+  settings.setProxyAddress(addr);
+  settings.setProxyUsername(user);
+  settings.setProxyPassword(pass);
+ 
   /* Save the reachable port settings */
   settings.setFascistFirewall(ui.chkFascistFirewall->isChecked());
   foreach (QString portString,
@@ -324,19 +336,16 @@ NetworkPage::load()
   NetworkSettings settings(Vidalia::torControl());
   QStringList reachablePortStrings;
 
-  /* Load HTTP/HTTPS proxy settings */
-  ui.chkUseProxy->setChecked(settings.getUseHttpProxy());
-  ui.chkProxyUseHttps->setChecked(settings.getUseHttpsProxy());
-  QStringList proxy = settings.getHttpProxy().split(":");
-  QStringList proxyAuth = settings.getHttpProxyAuthenticator().split(":");
+  /* Load proxy settings */
+  ui.chkUseProxy->setChecked(settings.getProxyType() != NetworkSettings::NoProxy);
+  ui.cmboProxyType->setCurrentIndex(settings.getProxyType());
+  QStringList proxy = settings.getProxyAddress().split(":");
   if (proxy.size() >= 1)
-    ui.lineHttpProxyAddress->setText(proxy.at(0));
+    ui.lineProxyAddress->setText(proxy.at(0));
   if (proxy.size() >= 2)
-    ui.lineHttpProxyPort->setText(proxy.at(1));
-  if (proxyAuth.size() >= 1)  
-    ui.lineHttpProxyUsername->setText(proxyAuth.at(0));
-  if (proxyAuth.size() >= 2)
-    ui.lineHttpProxyPassword->setText(proxyAuth.at(1));
+    ui.lineProxyPort->setText(proxy.at(1));
+  ui.lineProxyUsername->setText(settings.getProxyUsername());
+  ui.lineProxyPassword->setText(settings.getProxyPassword());
 
   /* Load firewall settings */
   ui.chkFascistFirewall->setChecked(settings.getFascistFirewall());
@@ -388,11 +397,12 @@ NetworkPage::findBridges()
 void
 NetworkPage::startBridgeRequest()
 { 
-  if (ui.chkUseProxy->isChecked() && ui.chkProxyUseHttps->isChecked()) {
-    _bridgeDownloader->setProxy(ui.lineHttpProxyAddress->text(),
-                                ui.lineHttpProxyPort->text().toUInt(),
-                                ui.lineHttpProxyUsername->text(),
-                                ui.lineHttpProxyPassword->text());
+  if (ui.chkUseProxy->isChecked() &&
+     ui.cmboProxyType->currentIndex() == NetworkSettings::HttpHttpsProxy) {
+    _bridgeDownloader->setProxy(ui.lineProxyAddress->text(),
+                                ui.lineProxyPort->text().toUInt(),
+                                ui.lineProxyUsername->text(),
+                                ui.lineProxyPassword->text());
   }
 
   _bridgeDownloader->downloadBridges(BridgeDownloader::DownloadMethodHttps);
@@ -430,6 +440,20 @@ NetworkPage::bridgeRequestFinished(const QStringList &bridges)
  
     if (dlg.exec() == QMessageBox::Help)
       emit helpRequested("bridges.finding");      
+  }
+}
+
+/** Disable proxy username and password fields when the user wants to use
+ * a SOCKS 4 proxy. */
+void
+NetworkPage::proxyTypeChanged(int selection)
+{
+  if (selection == NetworkSettings::Socks4Proxy) {
+    ui.lineProxyUsername->setEnabled(false);
+    ui.lineProxyPassword->setEnabled(false);
+  } else {
+    ui.lineProxyUsername->setEnabled(true);
+    ui.lineProxyPassword->setEnabled(true);
   }
 }
 

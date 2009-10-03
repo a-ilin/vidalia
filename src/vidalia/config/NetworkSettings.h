@@ -28,6 +28,18 @@ class NetworkSettings : public AbstractTorSettings
   Q_OBJECT
 
 public:
+  enum ProxyType
+  {
+    ProxyTypeMin = -1,
+    NoProxy = -1, /**< Have Tor connect directly to the Internet. */
+    Socks4Proxy = 0, /**< Use a SOCKS 4 proxy for OR connections. */
+    Socks5Proxy = 1, /**< Use a SOCKS 5 proxy for OR connections. */
+    HttpProxy = 2, /**< Use an HTTP proxy for non-tunneled dir fetches. */
+    HttpHttpsProxy = 3, /**< Use HTTP proxy for both dir and OR connections. */
+    ProxyTypeMax = 3
+  };
+
+public:
   /** Default constructor. */
   NetworkSettings(TorControl *torControl);
 
@@ -50,53 +62,26 @@ public:
    * <b>reachablePorts</b>. */
   void setReachablePorts(const QList<quint16> &reachablePorts);
 
-  /** Returns true if Tor should make all its directory requests through a
-   * proxy. */
-  bool getUseHttpProxy();
-  /** Sets to <b>useHttpProxy</b> whether Tor should make all its directory
-   * requests through the proxy specified to setHttpProxy()
-   * \sa setHttpProxy() */
-  void setUseHttpProxy(bool useHttpProxy);
-  
-  /** Returns the proxy used for making Tor's directory requests, in the form
-   * of <i>host[:port]</i>. */
-  QString getHttpProxy();
-  /** Sets the proxy used for making Tor's directory requests. <b>proxy</b>
-   * should be in the form <i>host[:port]</i>. If <i>:port</i> is not
-   * specified, then Tor will use its default of port 80. */
-  void setHttpProxy(const QString &proxy);
+  /** Returns the proxy type Tor is using, or NoProxy if it makes direct
+   * connections. */ 
+  ProxyType getProxyType();
+  /** Set the type of proxy Tor should use to <b>type</b>. */
+  void setProxyType(ProxyType type);
 
-  /** Returns the authentication information Tor should use to authenticate to
-   * an Http proxy. The returned value is in the form 
-   * <i>username:password</i>. */
-  QString getHttpProxyAuthenticator();
-  /** Sets the authentication information required by an Http proxy.
-   * <b>authenticator</b> should be in the form <i>username:password</i>. */
-  void setHttpProxyAuthenticator(const QString &authenticator);
+  /** Returns the address of the proxy server Tor makes connections through. */
+  QString getProxyAddress();
+  /** Sets the proxy address and port to <b>addr</b>. */
+  void setProxyAddress(const QString &addr);
 
-  /** Returns true if Tor should make all its OR connections through a
-   * proxy. */
-  bool getUseHttpsProxy();
-  /** Sets to <b>useHttpsProxy</b> whether Tor should make all its OR
-   * connections through the proxy specified to setHttpsProxy.
-   * \sa setHttpsProxy() */
-  void setUseHttpsProxy(bool useHttpsProxy);
-  
-  /** Returns the proxy used for making Tor's OR connections, in the form
-   * of <i>host[:port]</i>. */
-  QString getHttpsProxy();
-  /** Sets the proxy used for making Tor's OR connections. <b>proxy</b>
-   * should be in the form <i>host[:port]</i>. If <i>:port</i> is not
-   * specified, then Tor will use its default of port 443. */
-  void setHttpsProxy(const QString &proxy);
+  /** Returns the username used to login to the proxy server. */
+  QString getProxyUsername();
+  /** Sets the proxy server username to <b>user</b>. */ 
+  void setProxyUsername(const QString &user);
 
-  /** Returns the authentication information Tor should use to authenticate to
-   * an Https proxy. The returned value is in the form 
-   * <i>username:password</i>. */
-  QString getHttpsProxyAuthenticator();
-  /** Sets the authentication information required by an Https proxy.
-   * <b>authenticator</b> should be in the form <i>username:password</i>. */
-  void setHttpsProxyAuthenticator(const QString &authenticator);
+  /** Returns the password used to login to the proxy server. */
+  QString getProxyPassword();
+  /** Sets the proxy server password to <b>pass</b>. */ 
+  void setProxyPassword(const QString &pass);
  
   /** Returns true if Tor should try to use bridge nodes to access the Tor
    * network. */
@@ -113,6 +98,14 @@ public:
   /** Returns true if Tor is configured to try to tunnel its directory
    * connections through a one-hop circuit. */
   bool getTunnelDirConns();
+
+private:
+  /** Converts the ProxyType <b>type</b> to a string to store in the
+   * configuration file. */
+  QString proxyTypeToString(ProxyType type);
+
+  /** Converts the proxy type string <b>type</b> to its ProxyType counterpart. */
+  ProxyType proxyTypeFromString(const QString &type);
 };
 
 #endif

@@ -77,6 +77,10 @@ private slots:
    * received. */
   void bridgeRequestFinished(const QStringList &bridges);
 
+  /** Disable proxy username and password fields when the user wants to use
+   * a SOCKS 4 proxy. */
+  void proxyTypeChanged(int selection);
+
 private:
   /** Verifies that <b>bridge</b> is a valid bridge identifier and places a 
    * normalized identifier in <b>out</b>. The normalized identifier will have
