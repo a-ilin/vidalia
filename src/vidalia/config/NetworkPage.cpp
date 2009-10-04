@@ -58,12 +58,6 @@ NetworkPage::NetworkPage(QWidget *parent)
   ui.lineProxyAddress->setValidator(new DomainValidator(this));
   ui.lineProxyPort->setValidator(new QIntValidator(1, 65535, this));
 
-  ui.cmboProxyType->insertItem(NetworkSettings::Socks4Proxy, tr("SOCKS 4"));
-  ui.cmboProxyType->insertItem(NetworkSettings::Socks5Proxy, tr("SOCKS 5"));
-  ui.cmboProxyType->insertItem(NetworkSettings::HttpProxy, tr("HTTP"));
-  ui.cmboProxyType->insertItem(NetworkSettings::HttpHttpsProxy,
-                               tr("HTTP / HTTPS"));
-
   vApp->createShortcut(QKeySequence(QKeySequence::Copy),
                        ui.listBridges, this,
                        SLOT(copySelectedBridgesToClipboard()));
@@ -294,9 +288,13 @@ NetworkPage::save(QString &errmsg)
 
     user = ui.lineProxyUsername->text();
     pass = ui.lineProxyPassword->text();
-  
-    int type = ui.cmboProxyType->currentIndex();
+ 
+    QVariant data;
+    int type;
 
+    data = ui.cmboProxyType->itemData(ui.cmboProxyType->currentIndex());
+    Q_ASSERT(data.isValid());
+    type = data.toInt();
     Q_ASSERT(type >= NetworkSettings::ProxyTypeMin &&
              type <= NetworkSettings::ProxyTypeMax);
     proxy = static_cast<NetworkSettings::ProxyType>(type);
@@ -335,10 +333,11 @@ NetworkPage::load()
 {
   NetworkSettings settings(Vidalia::torControl());
   QStringList reachablePortStrings;
+  NetworkSettings::ProxyType proxyType;
 
   /* Load proxy settings */
-  ui.chkUseProxy->setChecked(settings.getProxyType() != NetworkSettings::NoProxy);
-  ui.cmboProxyType->setCurrentIndex(settings.getProxyType());
+  proxyType = settings.getProxyType();
+  ui.chkUseProxy->setChecked(proxyType != NetworkSettings::NoProxy);
   QStringList proxy = settings.getProxyAddress().split(":");
   if (proxy.size() >= 1)
     ui.lineProxyAddress->setText(proxy.at(0));
@@ -346,6 +345,26 @@ NetworkPage::load()
     ui.lineProxyPort->setText(proxy.at(1));
   ui.lineProxyUsername->setText(settings.getProxyUsername());
   ui.lineProxyPassword->setText(settings.getProxyPassword());
+
+  /* SOCKS options are only available on Tor >= 0.2.2.1-alpha, so don't show
+   * them if Tor is running and its version is less than that. */
+  ui.cmboProxyType->clear();
+  if (!vApp->torControl()->isRunning()
+        || vApp->torControl()->getTorVersion() >= 0x020201) {
+    ui.cmboProxyType->addItem(tr("SOCKS 4"), NetworkSettings::Socks4Proxy);
+    ui.cmboProxyType->addItem(tr("SOCKS 5"), NetworkSettings::Socks5Proxy);
+  } else if (proxyType == NetworkSettings::Socks4Proxy
+              || proxyType == NetworkSettings::Socks5Proxy) {
+    /* Disable proxy if the settings include a SOCKS proxy and our version of
+     * Tor is not compatible. */
+    proxyType = NetworkSettings::NoProxy;
+    ui.chkUseProxy->setChecked(false);
+  }
+  ui.cmboProxyType->addItem(tr("HTTP"), NetworkSettings::HttpProxy);
+  ui.cmboProxyType->addItem(tr("HTTP / HTTPS"),
+                            NetworkSettings::HttpHttpsProxy);
+
+  ui.cmboProxyType->setCurrentIndex(ui.cmboProxyType->findData(proxyType));
 
   /* Load firewall settings */
   ui.chkFascistFirewall->setChecked(settings.getFascistFirewall());
@@ -448,7 +467,10 @@ NetworkPage::bridgeRequestFinished(const QStringList &bridges)
 void
 NetworkPage::proxyTypeChanged(int selection)
 {
-  if (selection == NetworkSettings::Socks4Proxy) {
+  QVariant data = ui.cmboProxyType->itemData(selection);
+
+  if (data.isValid()
+      && data.toInt() == NetworkSettings::Socks4Proxy) {
     ui.lineProxyUsername->setEnabled(false);
     ui.lineProxyPassword->setEnabled(false);
   } else {
