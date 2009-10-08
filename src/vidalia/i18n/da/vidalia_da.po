@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-11-24 15:59+0000\n"
-"PO-Revision-Date: 2009-04-06 18:18+0000\n"
-"Last-Translator: Hans-Jørgen Martinus Hansen <hans-jorgen@live.dk>\n"
+"PO-Revision-Date: 2009-10-01 12:33+0000\n"
+"Last-Translator: Manuel Ojeda <ojeda@ojeda.dk>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -71,21 +71,27 @@ msgctxt "AdvancedPage"
 msgid "'%1' is not a valid IP address."
 msgstr "'%1' er ikke en gyldig IP-adresse."
 
+# Faulty translation
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: advancedpage.cpp:120
 msgctxt "AdvancedPage"
 msgid "You selected 'Password' authentication, but did not specify a password."
 msgstr ""
-"Du har valgt 'Password' autentificering, men ikke angive en adgangskode."
+"Du har valgt 'Password' autentificering, men har ikke angive en adgangskode."
 
+# Faulty translation
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: advancedpage.cpp:223
 msgctxt "AdvancedPage"
 msgid "Select Tor Configuration File"
-msgstr "Vælg Tor konfigurationsfil"
+msgstr "Vælg Tor konfigurations fil"
 
+# Faulty translation
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: advancedpage.cpp:236
 msgctxt "AdvancedPage"
 msgid "File Not Found"
-msgstr "Filen er ikke fundet"
+msgstr "Filen blev ikke fundet"
 
 #: advancedpage.cpp:238
 msgctxt "AdvancedPage"
@@ -102,10 +108,12 @@ msgctxt "AdvancedPage"
 msgid "Unable to create %1 [%2]"
 msgstr "Kunne ikke oprette %1 [%2]"
 
+# Faulty translation.
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: advancedpage.cpp:265
 msgctxt "AdvancedPage"
 msgid "Select a Directory to Use for Tor Data"
-msgstr "Vælg en mappe som bruges til Tor Data"
+msgstr "Vælg en mappe som skal bruges til Tor Data"
 
 #: advancedpage.cpp:287
 msgctxt "AdvancedPage"
@@ -176,1148 +184,1408 @@ msgctxt "AdvancedPage"
 msgid "Tor Configuration File"
 msgstr "Tor konfigurationsfil"
 
+# Faulty translation.
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: advancedpage.ui:240
 msgctxt "AdvancedPage"
 msgid "Start the Tor software with the specified configuration file (torrc)"
-msgstr "Start Tor software med det angivne opsætningsfil (torrc)"
+msgstr "Start Tor med den angivne opsætningsfil (torrc)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: advancedpage.ui:259
 msgctxt "AdvancedPage"
 msgid "Select path to your configuration file"
-msgstr ""
+msgstr "Valg stien til din konfigurationsfil"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: advancedpage.ui:318
 msgctxt "AdvancedPage"
 msgid "Browse"
-msgstr ""
+msgstr "Gennemse"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: advancedpage.ui:275
 msgctxt "AdvancedPage"
 msgid "Data Directory"
-msgstr ""
+msgstr "Data Mappe"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: advancedpage.ui:296
 msgctxt "AdvancedPage"
 msgid "Store data for the Tor software in the following directory"
-msgstr ""
+msgstr "Gem Tors data i den følgende mappe"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: advancedpage.ui:315
 msgctxt "AdvancedPage"
 msgid "Select the directory used to store data for the Tor software"
-msgstr ""
+msgstr "Vælg hvilken mappe der skal bruges til at gemme data fra Tor"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: appearancepage.ui:22
 msgctxt "AppearancePage"
 msgid "Language"
-msgstr ""
+msgstr "Sprog"
 
+# Choose the language used in Vidalia
 #: appearancepage.ui:37
 msgctxt "AppearancePage"
 msgid "Choose the language used in Vidalia"
-msgstr ""
+msgstr "Vælg sproget brugt i Vidalia"
 
+# Choose the language used in Vidalia
 #: appearancepage.ui:75
 msgctxt "AppearancePage"
 msgid "Style"
-msgstr ""
+msgstr "Stil"
 
+# 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: appearancepage.ui:103
 msgctxt "AppearancePage"
 msgid "Choose Vidalia's interface style"
-msgstr ""
+msgstr "Vælg Vidalia's grænseflade stil"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: appearancepage.cpp:67
 msgctxt "AppearancePage"
 msgid "Vidalia was unable to load the selected language translation."
-msgstr ""
+msgstr "Vidalia kunne ikke hente det valgte sprog"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: bwgraph.cpp:166
 msgctxt "BandwidthGraph"
 msgid "Since:"
-msgstr ""
+msgstr "Siden:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: bwgraph.cpp:232
 msgctxt "BandwidthGraph"
 msgid "Hide Settings"
-msgstr ""
+msgstr "Skjul Indstillinger"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: bwgraph.ui:40
 msgctxt "BandwidthGraph"
 msgid "Show Settings"
-msgstr ""
+msgstr "Vis Indstillinger"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: bwgraph.ui:16
 msgctxt "BandwidthGraph"
 msgid "Tor Bandwidth Usage"
-msgstr ""
+msgstr "Tors Båndbreddeforbrug"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: bwgraph.ui:63
 msgctxt "BandwidthGraph"
 msgid "Reset"
-msgstr ""
+msgstr "Nulstil"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: bwgraph.ui:151
 msgctxt "BandwidthGraph"
 msgid "Receive Rate"
-msgstr ""
+msgstr "Modtagelses hastighed"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: bwgraph.ui:170
 msgctxt "BandwidthGraph"
 msgid "Send Rate"
-msgstr ""
+msgstr "Sende hastighed"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: bwgraph.ui:183
 msgctxt "BandwidthGraph"
 msgid "Always on Top"
-msgstr ""
+msgstr "Altid øverst"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: bwgraph.ui:234
 msgctxt "BandwidthGraph"
 msgid "Style"
-msgstr ""
+msgstr "Stil"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: bwgraph.ui:284
 msgctxt "BandwidthGraph"
 msgid "Changes the transparency of the Bandwidth Graph"
-msgstr ""
+msgstr "Ændre gennemsigtigheden af Båndbreds Grafen"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: bwgraph.ui:368
 msgctxt "BandwidthGraph"
 msgid "100"
-msgstr ""
+msgstr "100"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: bwgraph.ui:383
 msgctxt "BandwidthGraph"
 msgid "% Opaque"
-msgstr ""
+msgstr "% Uigennemsigtig"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: bwgraph.ui:443
 msgctxt "BandwidthGraph"
 msgid "Save"
-msgstr ""
+msgstr "Gem"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: bwgraph.ui:450
 msgctxt "BandwidthGraph"
 msgid "Cancel"
-msgstr ""
+msgstr "Annuller"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: circuit.cpp:112
 msgctxt "Circuit"
 msgid "New"
-msgstr ""
+msgstr "Ny"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: circuit.cpp:113
 msgctxt "Circuit"
 msgid "Open"
-msgstr ""
+msgstr "Åben"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: circuit.cpp:114
 msgctxt "Circuit"
 msgid "Building"
-msgstr ""
+msgstr "Bygger"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: circuit.cpp:115
 msgctxt "Circuit"
 msgid "Failed"
-msgstr ""
+msgstr "Mislykkedes"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: circuit.cpp:116
 msgctxt "Circuit"
 msgid "Closed"
-msgstr ""
+msgstr "Lukket"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: circuit.cpp:117
 msgctxt "Circuit"
 msgid "Unknown"
-msgstr ""
+msgstr "Ukendt"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: circuititem.cpp:39
 msgctxt "CircuitItem"
 msgid "<Path Empty>"
-msgstr ""
+msgstr "<Tom Sti>"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: circuitlistwidget.cpp:55
 msgctxt "CircuitListWidget"
 msgid "Connection"
-msgstr ""
+msgstr "Forbindelse"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: circuitlistwidget.cpp:55
 msgctxt "CircuitListWidget"
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
+# Not 100% sure @translation "Circuit".
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: circuitlistwidget.cpp:87
 msgctxt "CircuitListWidget"
 msgid "Zoom to Circuit"
-msgstr ""
+msgstr "Zoom til Kredsløb"
 
+# Not 100% sure @translation "Circuit".
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: circuitlistwidget.cpp:89
 msgctxt "CircuitListWidget"
 msgid "Close Circuit (Del)"
-msgstr ""
+msgstr "Luk Kredsløb (Del)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: circuitlistwidget.cpp:110
 msgctxt "CircuitListWidget"
 msgid "Close Stream (Del)"
-msgstr ""
+msgstr "Luk Strøm (Del)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: configdialog.cpp:77
 msgctxt "ConfigDialog"
 msgid "General"
-msgstr ""
+msgstr "Generelt"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: configdialog.cpp:81
 msgctxt "ConfigDialog"
 msgid "Network"
-msgstr ""
+msgstr "Netværk"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: configdialog.cpp:85
 msgctxt "ConfigDialog"
 msgid "Sharing"
-msgstr ""
+msgstr "Deling"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: configdialog.cpp:89
 msgctxt "ConfigDialog"
 msgid "Services"
-msgstr ""
+msgstr "Tjenester"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: configdialog.cpp:93
 msgctxt "ConfigDialog"
 msgid "Appearance"
-msgstr ""
+msgstr "Udseende"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: configdialog.cpp:97
 msgctxt "ConfigDialog"
 msgid "Advanced"
-msgstr ""
+msgstr "Avanceret"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: configdialog.cpp:111
 msgctxt "ConfigDialog"
 msgid "Help"
-msgstr ""
+msgstr "Hjælp"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: configdialog.cpp:196
 msgctxt "ConfigDialog"
 msgid "Error Saving Settings"
-msgstr ""
+msgstr "Fejl ved Gemning af Indstillinger"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: configdialog.cpp:198
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to save your %1 settings."
-msgstr ""
+msgstr "Vidalia kunne ikke gemme dine %1 indstillinger."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: configdialog.cpp:225
 msgctxt "ConfigDialog"
 msgid "Error Applying Settings"
-msgstr ""
+msgstr "Fejl ved anvendelse af Indstillinger"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: configdialog.cpp:227
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to apply your %1 settings to Tor."
-msgstr ""
+msgstr "Vidalia kunne ikke anvende dine %1 indstillinger til Tor."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: configdialog.ui:16
 msgctxt "ConfigDialog"
 msgid "Settings"
-msgstr ""
+msgstr "Indstillinger"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: controlconnection.cpp:134
 msgctxt "ControlConnection"
 msgid "Vidalia was unable to connect to Tor. (%1)"
-msgstr ""
+msgstr "Vidalia kunne ikke forbinde til Tor. (%1)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: controlconnection.cpp:331
 msgctxt "ControlConnection"
 msgid "Control socket is not connected."
-msgstr ""
+msgstr "Kontrol socket er ikke tilsluttet."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: controlpasswordinputdialog.ui:28
 msgctxt "ControlPasswordInputDialog"
 msgid "Password Required"
-msgstr ""
+msgstr "Kodeord påkrævet"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: controlpasswordinputdialog.ui:80
 msgctxt "ControlPasswordInputDialog"
 msgid "Vidalia has connected to a running Tor process that requires a password. Please enter your control password: "
 msgstr ""
+"Vidalia har forbundet til en kørende Tor process der kræver kodeord.Angiv "
+"venligst dit kontrol kodeord:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: controlpasswordinputdialog.ui:99
 msgctxt "ControlPasswordInputDialog"
 msgid "Remember my password"
-msgstr ""
+msgstr "Husk mit kodeord"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: controlsocket.cpp:70
 msgctxt "ControlSocket"
 msgid "Control socket is not connected."
-msgstr ""
+msgstr "Kontrol socket er ikke forbundet."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: controlsocket.cpp:80
 msgctxt "ControlSocket"
 msgid "Error sending control command. [%1]"
-msgstr ""
+msgstr "Fejl ved sending af kontrol kommando. [%1]"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: controlsocket.cpp:117
 msgctxt "ControlSocket"
 msgid "Socket disconnected while attempting to read a line of data."
-msgstr ""
+msgstr "Socket afbrudt mens forsøg på læsning af en linje data."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: controlsocket.cpp:156
 msgctxt "ControlSocket"
 msgid "Invalid control reply. [%1]"
-msgstr ""
+msgstr "Ugyldigt kontrol svar. [%1]"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: generalpage.cpp:62
 msgctxt "GeneralPage"
 msgid "Executables (*.exe)"
-msgstr ""
+msgstr "Program filer (*.exe)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: generalpage.cpp:75
 msgctxt "GeneralPage"
 msgid "Select Path to Tor"
-msgstr ""
+msgstr "Vælg Stien til Tor"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: generalpage.cpp:85
 msgctxt "GeneralPage"
 msgid "Select Proxy Executable"
-msgstr ""
+msgstr "Vælg Proxy Programfil"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: generalpage.cpp:98
 msgctxt "GeneralPage"
 msgid "You must specify the name of your Tor executable."
-msgstr ""
+msgstr "Du skal angive navnet på din Tor programfil."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: generalpage.cpp:106
 msgctxt "GeneralPage"
 msgid "The proxy arguments specified are not properly formatted."
-msgstr ""
+msgstr "Proxy angivne argumenter er ikke korrekt formaterede."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: generalpage.ui:28
 msgctxt "GeneralPage"
 msgid "Start Vidalia when my system starts"
-msgstr ""
+msgstr "Start Vidalia når mit system starter"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: generalpage.ui:121
 msgctxt "GeneralPage"
 msgid "Browse"
-msgstr ""
+msgstr "Gennemse"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: generalpage.ui:57
 msgctxt "GeneralPage"
 msgid "Start the Tor software when Vidalia starts"
-msgstr ""
+msgstr "Start Tor når Vidalia starter"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: generalpage.ui:51
 msgctxt "GeneralPage"
 msgid "Tor"
-msgstr ""
+msgstr "Tor"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: generalpage.ui:93
 msgctxt "GeneralPage"
 msgid "Proxy Application (optional)"
-msgstr ""
+msgstr "Proxy Program (valgfri)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: generalpage.ui:99
 msgctxt "GeneralPage"
 msgid "Start a proxy application when Tor starts"
-msgstr ""
+msgstr "Start et proxy program når Tor starter"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: generalpage.ui:135
 msgctxt "GeneralPage"
 msgid "Proxy Application Arguments:"
-msgstr ""
+msgstr "Proxy Program Argumenter:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: graphframe.cpp:238
 msgctxt "GraphFrame"
 msgid "Recv: "
-msgstr ""
+msgstr "Recv:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: graphframe.cpp:298
 msgctxt "GraphFrame"
 msgid "%1 KB/s"
-msgstr ""
+msgstr "%1 KB/s"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: graphframe.cpp:247
 msgctxt "GraphFrame"
 msgid "Sent: "
-msgstr ""
+msgstr "Sendt:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: graphframe.cpp:259
 msgctxt "GraphFrame"
 msgid "%1 KB"
-msgstr ""
+msgstr "%1 KB"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: graphframe.cpp:262
 msgctxt "GraphFrame"
 msgid "%1 MB"
-msgstr ""
+msgstr "%1 MB"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: graphframe.cpp:265
 msgctxt "GraphFrame"
 msgid "%1 GB"
-msgstr ""
+msgstr "%1 GB"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.cpp:135
 msgctxt "HelpBrowser"
 msgid "Error Loading Help Contents: "
-msgstr ""
+msgstr "Fejl ved indlæsning Hjælp Indholdet:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.cpp:147
 msgctxt "HelpBrowser"
 msgid "Supplied XML file is not a valid Contents document."
-msgstr ""
+msgstr "Angivne XML fil er ikke et gyldigt Indholds dokument"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.cpp:396
 msgctxt "HelpBrowser"
 msgid "Search reached end of document"
-msgstr ""
+msgstr "Søgning har nået slutning af dokument"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.cpp:398
 msgctxt "HelpBrowser"
 msgid "Search reached start of document"
-msgstr ""
+msgstr "Søgning har nået start af dokument"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.cpp:400
 msgctxt "HelpBrowser"
 msgid "Text not found in document"
-msgstr ""
+msgstr "Tekst ikke fundet i dokument"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.cpp:445
 msgctxt "HelpBrowser"
 msgid "Found %1 results"
-msgstr ""
+msgstr "Fundet %1 resultat(er)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:33
 msgctxt "HelpBrowser"
 msgid "Vidalia Help"
-msgstr ""
+msgstr "Vidalia Hjælp"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:484
 msgctxt "HelpBrowser"
 msgid "Back"
-msgstr ""
+msgstr "Tilbage"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:487
 msgctxt "HelpBrowser"
 msgid "Move to previous page (Backspace)"
-msgstr ""
+msgstr "Gå til sidste side (Slet)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:490
 msgctxt "HelpBrowser"
 msgid "Backspace"
-msgstr ""
+msgstr "Slet"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:498
 msgctxt "HelpBrowser"
 msgid "Forward"
-msgstr ""
+msgstr "Frem"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:501
 msgctxt "HelpBrowser"
 msgid "Move to next page (Shift+Backspace)"
-msgstr ""
+msgstr "Gå til næste side (Shift+Slet)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:504
 msgctxt "HelpBrowser"
 msgid "Shift+Backspace"
-msgstr ""
+msgstr "Shift+Slet"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:512
 msgctxt "HelpBrowser"
 msgid "Home"
-msgstr ""
+msgstr "Hjem"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:515
 msgctxt "HelpBrowser"
 msgid "Move to the Home page (Ctrl+H)"
-msgstr ""
+msgstr "Gå til Hjem siden (Ctrl+H)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:518
 msgctxt "HelpBrowser"
 msgid "Ctrl+H"
-msgstr ""
+msgstr "Ctrl+H"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:535
 msgctxt "HelpBrowser"
 msgid "Find"
-msgstr ""
+msgstr "Find"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:538
 msgctxt "HelpBrowser"
 msgid "Search for a word or phrase on current page (Ctrl+F)"
-msgstr ""
+msgstr "Søg efter et ord eller en frase på denne side (Ctrl+F)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:541
 msgctxt "HelpBrowser"
 msgid "Ctrl+F"
-msgstr ""
+msgstr "Ctrl+F"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:549
 msgctxt "HelpBrowser"
 msgid "Close"
-msgstr ""
+msgstr "Luk"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:552
 msgctxt "HelpBrowser"
 msgid "Close Vidalia Help"
-msgstr ""
+msgstr "Luk Vidalia Hjælp"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:555
 msgctxt "HelpBrowser"
 msgid "Esc"
-msgstr ""
+msgstr "Esc"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:152
 msgctxt "HelpBrowser"
 msgid "Find:"
-msgstr ""
+msgstr "Find:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:174
 msgctxt "HelpBrowser"
 msgid "Find Previous"
-msgstr ""
+msgstr "Find Sidste"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:187
 msgctxt "HelpBrowser"
 msgid "Find Next"
-msgstr ""
+msgstr "Find Næste"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:221
 msgctxt "HelpBrowser"
 msgid "Case sensitive"
-msgstr ""
+msgstr "Versalfølsomt"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:231
 msgctxt "HelpBrowser"
 msgid "Whole words only"
-msgstr ""
+msgstr "Kun hele ord"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:305
 msgctxt "HelpBrowser"
 msgid "Help Topics"
-msgstr ""
+msgstr "Hjælpe Emner"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:260
 msgctxt "HelpBrowser"
 msgid "Contents"
-msgstr ""
+msgstr "Indhold"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:350
 msgctxt "HelpBrowser"
 msgid "Search"
-msgstr ""
+msgstr "Søg"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:362
 msgctxt "HelpBrowser"
 msgid "Searching for:"
-msgstr ""
+msgstr "Søger efter:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helpbrowser.ui:405
 msgctxt "HelpBrowser"
 msgid "Found Documents"
-msgstr ""
+msgstr "Fundet Dokumenter"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helptextbrowser.cpp:54
 msgctxt "HelpTextBrowser"
 msgid "Error opening help file: "
-msgstr ""
+msgstr "Fejl ved åbning af hjælpfil: "
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helptextbrowser.cpp:72
 msgctxt "HelpTextBrowser"
 msgid "Opening External Link"
-msgstr ""
+msgstr "Åbner Eksternt Link"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helptextbrowser.cpp:76
 msgctxt "HelpTextBrowser"
 msgid "Vidalia can open the link you selected in your default Web browser. If your browser is not currently configured to use Tor then the request will not be anonymous."
 msgstr ""
+"Vidalia kan åbne det valgte link i din standart Internet Browser. Hvis din "
+"browser ikke er opsat til at anvende Tor, vil din anmodning ikke være "
+"anonym. "
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helptextbrowser.cpp:78
 msgctxt "HelpTextBrowser"
 msgid "Do you want Vidalia to open the link in your Web browser?"
-msgstr ""
+msgstr "Skal Vidalia åbne linket i din Internet Browser?"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helptextbrowser.cpp:88
 msgctxt "HelpTextBrowser"
 msgid "Unable to Open Link"
-msgstr ""
+msgstr "Kan ikke Åbne Linket"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: helptextbrowser.cpp:90
 msgctxt "HelpTextBrowser"
 msgid "Vidalia was unable to open the selected link in your Web browser. You can still copy the URL and paste it into your browser."
 msgstr ""
+"Vidalia kunne ikke åben det valgte link i din Internet Browser. Du kan "
+"stadig kopiere URLen og paste den ind i din browser."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: licensedialog.ui:13
 msgctxt "LicenseDialog"
 msgid "License Information"
-msgstr ""
+msgstr "Licens Information"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: licensedialog.ui:43
 msgctxt "LicenseDialog"
 msgid "License"
 msgstr "Licens"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: licensedialog.ui:76
 msgctxt "LicenseDialog"
 msgid "Credits"
-msgstr ""
+msgstr "Tak til"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: logevent.cpp:57
 msgctxt "LogEvent"
 msgid "Debug"
-msgstr ""
+msgstr "Debug"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: logevent.cpp:58
 msgctxt "LogEvent"
 msgid "Info"
-msgstr ""
+msgstr "Info"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: logevent.cpp:59
 msgctxt "LogEvent"
 msgid "Notice"
-msgstr ""
+msgstr "Meddelelse"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: logevent.cpp:60
 msgctxt "LogEvent"
 msgid "Warning"
-msgstr ""
+msgstr "Advarsel"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: logevent.cpp:61
 msgctxt "LogEvent"
 msgid "Error"
-msgstr ""
+msgstr "Fejl"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: logevent.cpp:62
 msgctxt "LogEvent"
 msgid "Unknown"
-msgstr ""
+msgstr "Ukendt"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:233
 msgctxt "MainWindow"
 msgid "Start Tor"
-msgstr ""
+msgstr "Start Tor"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:443
 msgctxt "MainWindow"
 msgid "Exit"
-msgstr ""
+msgstr "Afslut"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:304
 msgctxt "MainWindow"
 msgid "Bandwidth Graph"
-msgstr ""
+msgstr "Båndbredde graf"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:317
 msgctxt "MainWindow"
 msgid "Message Log"
-msgstr ""
+msgstr "Meddelelses Log"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:348
 msgctxt "MainWindow"
 msgid "Network Map"
-msgstr ""
+msgstr "Netværks Kort"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:354
 msgctxt "MainWindow"
 msgid "Control Panel"
-msgstr ""
+msgstr "Kontrolpanel"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:380
 msgctxt "MainWindow"
 msgid "Settings"
-msgstr ""
+msgstr "Indstillinger"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:430
 msgctxt "MainWindow"
 msgid "About"
-msgstr ""
+msgstr "Om"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:367
 msgctxt "MainWindow"
 msgid "Help"
-msgstr ""
+msgstr "Hjælp"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:1391
 msgctxt "MainWindow"
 msgid "New Identity"
-msgstr ""
+msgstr "Ny Identitet"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:437
 msgctxt "MainWindow"
 msgid "Ctrl+T"
-msgstr ""
+msgstr "Ctrl+T"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:438
 msgctxt "MainWindow"
 msgid "Ctrl+B"
-msgstr ""
+msgstr "Ctrl+B"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:439
 msgctxt "MainWindow"
 msgid "Ctrl+L"
-msgstr ""
+msgstr "Ctrl+L"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:440
 msgctxt "MainWindow"
 msgid "Ctrl+N"
-msgstr ""
+msgstr "Ctrl+N"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:441
 msgctxt "MainWindow"
 msgid "Ctrl+?"
-msgstr ""
+msgstr "Ctrl+?"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:442
 msgctxt "MainWindow"
 msgid "Ctrl+I"
-msgstr ""
+msgstr "Ctrl+I"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:443
 msgctxt "MainWindow"
 msgid "Ctrl+P"
-msgstr ""
+msgstr "Ctrl+P"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:463
 msgctxt "MainWindow"
 msgid "Tor"
 msgstr "Tor"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:468
 msgctxt "MainWindow"
 msgid "View"
-msgstr ""
+msgstr "Se"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:476
 msgctxt "MainWindow"
 msgid "Vidalia Help"
-msgstr ""
+msgstr "Vidalia Hjælp"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:527
 msgctxt "MainWindow"
 msgid "Error starting web browser"
-msgstr ""
+msgstr "Fejl ved start af Internetbrowser"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:528
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured web browser"
-msgstr ""
+msgstr "Vidalia kunne ikke starte den konfigurerede internetbrowser"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:540
 msgctxt "MainWindow"
 msgid "Error starting IM client"
-msgstr ""
+msgstr "Fejl ved start af IM klient"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:541
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured IM client"
-msgstr ""
+msgstr "Vidalia kunne ikke starte den konfigurerede IM klient"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:562
 msgctxt "MainWindow"
 msgid "Error starting proxy server"
-msgstr ""
+msgstr "Fejl ved start af proxy server"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:563
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured proxy server"
-msgstr ""
+msgstr "Vidalia kunne ikke starte den konfigurerede proxy server"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:579
 msgctxt "MainWindow"
 msgid "Connecting to a relay directory"
-msgstr ""
+msgstr "Tilslutter til relæ mappe"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:583
 msgctxt "MainWindow"
 msgid "Establishing an encrypted directory connection"
-msgstr ""
+msgstr "Opretter en krypteret mappe forbindelse"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:586
 msgctxt "MainWindow"
 msgid "Retrieving network status"
-msgstr ""
+msgstr "Henter netværk status"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:589
 msgctxt "MainWindow"
 msgid "Loading network status"
-msgstr ""
+msgstr "Henter netværk status"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:592
 msgctxt "MainWindow"
 msgid "Loading authority certificates"
-msgstr ""
+msgstr "Henter nøglecentercertifikater"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:595
 msgctxt "MainWindow"
 msgid "Requesting relay information"
-msgstr ""
+msgstr "Beder om relæ information"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:598
 msgctxt "MainWindow"
 msgid "Loading relay information"
-msgstr ""
+msgstr "Henter relæ information"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:1132
 msgctxt "MainWindow"
 msgid "Connecting to the Tor network"
-msgstr ""
+msgstr "Forbinder til Tor netværk"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:605
 msgctxt "MainWindow"
 msgid "Establishing a Tor circuit"
-msgstr ""
+msgstr "Opretter et Tor kredsløb"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:1297
 msgctxt "MainWindow"
 msgid "Connected to the Tor network!"
-msgstr ""
+msgstr "Forbinder til Tor netværket!"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:612
 msgctxt "MainWindow"
 msgid "Unrecognized startup status"
-msgstr ""
+msgstr "Ukendt startop status"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:619
 msgctxt "MainWindow"
 msgid "miscellaneous"
-msgstr ""
+msgstr "diverse"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:622
 msgctxt "MainWindow"
 msgid "identity mismatch"
-msgstr ""
+msgstr "identitet matcher ikke"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:625
 msgctxt "MainWindow"
 msgid "done"
-msgstr ""
+msgstr "færdig"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:628
 msgctxt "MainWindow"
 msgid "connection refused"
-msgstr ""
+msgstr "forbindelse afvist"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:631
 msgctxt "MainWindow"
 msgid "connection timeout"
-msgstr ""
+msgstr "forbindelse timeout"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:634
 msgctxt "MainWindow"
 msgid "read/write error"
-msgstr ""
+msgstr "læs/skriv fejl"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:637
 msgctxt "MainWindow"
 msgid "no route to host"
-msgstr ""
+msgstr "ingen rute til vært"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:640
 msgctxt "MainWindow"
 msgid "insufficient resources"
-msgstr ""
+msgstr "utilstrækkelige ressourcer"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:643
 msgctxt "MainWindow"
 msgid "unknown"
-msgstr ""
+msgstr "ukendt"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:645
 msgctxt "MainWindow"
 msgid " failed (%1)"
-msgstr ""
+msgstr "mislykkedes (%1)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:168
 msgctxt "MainWindow"
 msgid "Tor is not running"
-msgstr ""
+msgstr "Tor kører ikke"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:686
 msgctxt "MainWindow"
 msgid "Your relay is shutting down."
 "Click 'Stop' again to stop your relay now."
 msgstr ""
+"Dit relæ er ved at lukke ned. Klik 'Stop' igen for at stoppe dit relæ nu."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:688
 msgctxt "MainWindow"
 msgid "Tor is shutting down"
-msgstr ""
+msgstr "Tor er ved at lukke ned"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:693
 msgctxt "MainWindow"
 msgid "Stop Tor Now"
-msgstr ""
+msgstr "Stop Tor Nu"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:695
 msgctxt "MainWindow"
 msgid "Stop Tor"
-msgstr ""
+msgstr "Stop Tor"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:711
 msgctxt "MainWindow"
 msgid "Starting the Tor software"
-msgstr ""
+msgstr "Starter Tor"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:75
 msgctxt "MainWindow"
 msgid "Starting Tor"
-msgstr ""
+msgstr "Starter Tor"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:859
 msgctxt "MainWindow"
 msgid "Error Starting Tor"
-msgstr ""
+msgstr "Mislykket Tor Start"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:862
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified."
 msgstr ""
+"Vidalia kunne ikke starte Tor. Kontroller dine indstillinger for at sikre, "
+"at din Tor programfil er korrekt angivet med navn og placering."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:896
 msgctxt "MainWindow"
 msgid "Connecting to Tor"
-msgstr ""
+msgstr "Forbinder til Tor"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:906
 msgctxt "MainWindow"
 msgid "Connection Error"
-msgstr ""
+msgstr "Forbindelse mislykkedes"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:938
 msgctxt "MainWindow"
 msgid "Relaying is Enabled"
-msgstr ""
+msgstr "Genudlægning er aktiveret"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:943
 msgctxt "MainWindow"
 msgid "You are currently running a relay. Terminating your relay will interrupt any open connections from clients."
 ""
 "Would you like to shutdown gracefully and give clients time to find a new relay?"
 msgstr ""
+"Du kører i øjeblikket et relæ. Slukning af dit relæ af afbryde alle åbne "
+"forbindelse fra klienter. Vil du lukke gradvist ned og give klienterne tid "
+"til at finde et nyt relæ?"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:965
 msgctxt "MainWindow"
 msgid "Error Shutting Down"
-msgstr ""
+msgstr "Fejl ved Nedlukning"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:966
 msgctxt "MainWindow"
 msgid "Vidalia was unable to stop the Tor software."
-msgstr ""
+msgstr "Vidalia kunne ikke stoppe Tor."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:997
 msgctxt "MainWindow"
 msgid "Unexpected Error"
-msgstr ""
+msgstr "Uforventet fejl"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:1001
 msgctxt "MainWindow"
 msgid "Vidalia detected that the Tor software exited unexpectedly."
 ""
 "Please check the message log for recent warning or error messages."
 msgstr ""
+"Vidalia har opdaget at Tor blev afsluttet uventet. Undersøg venligst dine "
+"log-beskeder for nylige fejl og beskeder. "
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:1055
 msgctxt "MainWindow"
 msgid "Authenticating to Tor"
-msgstr ""
+msgstr "Godkender til Tor"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:1075
 msgctxt "MainWindow"
 msgid "Cookie Authentication Required"
-msgstr ""
+msgstr "Cookie Godkendelse Påkrævet"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:1078
 msgctxt "MainWindow"
 msgid "The Tor software requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one."
 msgstr ""
+"Tor kræver at Vidalia sender indholdet af en godkendelses-cookie, men "
+"Vidalia var i stand til at finde en."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:1080
 msgctxt "MainWindow"
 msgid "Would you like to browse for the file 'control_auth_cookie' yourself?"
-msgstr ""
+msgstr "Vil du kigge efter filen 'control_auth_cookie' selv?"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:1087
 msgctxt "MainWindow"
 msgid "Data Directory"
-msgstr ""
+msgstr "Data Mappe"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:1089
 msgctxt "MainWindow"
 msgid "Control Cookie (control_auth_cookie)"
-msgstr ""
+msgstr "Kontrol Cookie (control_auth_cookie)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:1141
 msgctxt "MainWindow"
 msgid "Error Registering for Events"
-msgstr ""
+msgstr "Fejl Registrering af Begivenheder"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:1143
 msgctxt "MainWindow"
 msgid "Vidalia was unable to register for some events. Many of Vidalia's features may be unavailable."
 msgstr ""
+"Vidalia kunne ikke registrere bestemte begivenheder. Mange af Vidalia's "
+"funktioner kan være utilgængelige."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:1222
 msgctxt "MainWindow"
 msgid "Authentication Error"
-msgstr ""
+msgstr "Godkendelsesfejl"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:1224
 msgctxt "MainWindow"
 msgid "Vidalia was unable to authenticate to the Tor software. (%1)"
-msgstr ""
+msgstr "Vidalia kunne ikke godkende Tor. (%1)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:1226
 msgctxt "MainWindow"
 msgid "Please check your control port authentication settings."
-msgstr ""
+msgstr "Tjek venligst din kontrolports godkendelses indstillinger."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:1330
 msgctxt "MainWindow"
 msgid "Tor Update Available"
-msgstr ""
+msgstr "Tor Opdatering Tilgængelig"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:1333
 msgctxt "MainWindow"
 msgid "The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version."
 msgstr ""
+"Den nuværende installation af Tor er enten for gammel eller ikke længere "
+"anbefalelsesværdig. Besøg venligst hjemmesiden for Tor og hent den nyeste "
+"version."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:1333
 msgctxt "MainWindow"
 msgid "Tor website: %1"
-msgstr ""
+msgstr "Tor hjemmeside: %1"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:1394
 msgctxt "MainWindow"
 msgid "All subsequent connections will appear to be different than your old connections."
 msgstr ""
+"Alle efterfølgende forbindelser vil synes at være anderledes end dine gamle "
+"forbindelser."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:1409
 msgctxt "MainWindow"
 msgid "Failed to Create New Identity"
-msgstr ""
+msgstr "Mislykkedes af Oprette Ny Identitet"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:1458
 msgctxt "MainWindow"
 msgid "Port Forwarding Failed"
-msgstr ""
+msgstr "Port Viderestilling Mislykkedes"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:1459
 msgctxt "MainWindow"
 msgid "Vidalia was unable to configure automatic port forwarding."
-msgstr ""
+msgstr "Vidalia kunne ikke opsætte automatisk port viderestilling."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:19
 msgctxt "MainWindow"
 msgid "Vidalia Control Panel"
-msgstr ""
+msgstr "Vidalia Kontrolpanel"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:49
 msgctxt "MainWindow"
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:218
 msgctxt "MainWindow"
 msgid "Vidalia Shortcuts"
-msgstr ""
+msgstr "Vidalia Genveje"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:243
 msgctxt "MainWindow"
 msgid "Setup Relaying"
-msgstr ""
+msgstr "Indstil Relæ"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:246
 msgctxt "MainWindow"
 msgid "Set up a relay and help the network grow"
-msgstr ""
+msgstr "Opsæt et relæ and hjælp netværket gro"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:256
 msgctxt "MainWindow"
 msgid "View the Network"
-msgstr ""
+msgstr "Se Netværket"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:259
 msgctxt "MainWindow"
 msgid "View a map of the Tor network"
-msgstr ""
+msgstr "Se et kort over Tor netværket"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:272
 msgctxt "MainWindow"
 msgid "Use a New Identity"
-msgstr ""
+msgstr "Brug en Ny Identitet"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:275
 msgctxt "MainWindow"
 msgid "Make subsequent connections appear new"
-msgstr ""
+msgstr "Få efterfølgende forbindelse til at se nye ud"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:307
 msgctxt "MainWindow"
 msgid "View recent bandwidth usage"
-msgstr ""
+msgstr "Vis seneste båndbredde"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:320
 msgctxt "MainWindow"
 msgid "View log message history"
-msgstr ""
+msgstr "Se log-besked historie"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:370
 msgctxt "MainWindow"
 msgid "View help documentation"
-msgstr ""
+msgstr "Se hjælpe dokumentation"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:383
 msgctxt "MainWindow"
 msgid "Configure Vidalia"
-msgstr ""
+msgstr "Indstil Vidalia"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:433
 msgctxt "MainWindow"
 msgid "View version and license information"
-msgstr ""
+msgstr "Se version og licens information"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:446
 msgctxt "MainWindow"
 msgid "Exit Vidalia"
-msgstr ""
+msgstr "Afslut Vidalia"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:498
 msgctxt "MainWindow"
 msgid "Show this window on startup"
-msgstr ""
+msgstr "Vis vinduet ved opstart"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:517
 msgctxt "MainWindow"
 msgid "Hide"
-msgstr ""
+msgstr "Skjul"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.ui:520
 msgctxt "MainWindow"
 msgid "Hide this window"
-msgstr ""
+msgstr "Skjul dette vindue"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:1210
 msgctxt "MainWindow"
 msgid "Password Reset Failed"
-msgstr ""
+msgstr "Nulstil Kodeord Mislykkedes"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: mainwindow.cpp:1213
 msgctxt "MainWindow"
 msgid "Vidalia tried to reset Tor's control password, but was not able to restart the Tor software. Please check your Task Manager to ensure there are no other Tor processes running."
 msgstr ""
+"Vidalia prøvede at nulstille Tors kontrol kodeord, men kunne ikke genstarte "
+"programmet. Kontroller venligst, at der ikke køre nogle Tor processer i din "
+"Jobliste."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.cpp:126
 msgctxt "MessageLog"
 msgid "Messages that appear when something has "
 "gone very wrong and Tor cannot proceed."
 msgstr ""
+"Besked der kommer når noget er gået helt galt og Tor ikke kan komme videre."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.cpp:128
 msgctxt "MessageLog"
 msgid "Messages that only appear when "
 "something has gone wrong with Tor."
-msgstr ""
+msgstr "Besked der kun kommer når der er gået noget galt med Tor."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.cpp:132
 msgctxt "MessageLog"
 msgid "Messages that appear infrequently "
@@ -1325,1360 +1593,1660 @@ msgid "Messages that appear infrequently "
 "not considered errors, but you may "
 "care about."
 msgstr ""
+"Beskeder, der vises sjældent under normal Tor drift og anses ikke for fejl, "
+"men du kan interesserer dig for."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.cpp:134
 msgctxt "MessageLog"
 msgid "Messages that appear frequently "
 "during normal Tor operation."
-msgstr ""
+msgstr "Besked der ofte kommer under normal Tor drift."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.cpp:136
 msgctxt "MessageLog"
 msgid "Hyper-verbose messages primarily of "
 "interest to Tor developers."
-msgstr ""
+msgstr " Hyper-verbose beskeder primært af interesse for Tor udviklere."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.cpp:189
 msgctxt "MessageLog"
 msgid "Error Setting Filter"
-msgstr ""
+msgstr "Fejl ved Indstilling af Filter"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.cpp:190
 msgctxt "MessageLog"
 msgid "Vidalia was unable to register for Tor's log events."
-msgstr ""
+msgstr "Vidalia var i stand til at registrere for Tor's log begivenheder."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.cpp:205
 msgctxt "MessageLog"
 msgid "Error Opening Log File"
-msgstr ""
+msgstr "Fejl ved Åbning af Logfil"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.cpp:206
 msgctxt "MessageLog"
 msgid "Vidalia was unable to open the specified log file."
-msgstr ""
+msgstr "Vidalia kunne ikke åbne den angivne logfil."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.cpp:227
 msgctxt "MessageLog"
 msgid "Log Filename Required"
-msgstr ""
+msgstr "Log Filnavn Påkrævet"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.cpp:229
 msgctxt "MessageLog"
 msgid "You must enter a filename to be able to save log messages to a file."
-msgstr ""
+msgstr "Do skal angive et filnavn for at kunne gemme log beskeder til en fil."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.cpp:280
 msgctxt "MessageLog"
 msgid "Select Log File"
-msgstr ""
+msgstr "Vælg Log Fil"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.cpp:297
 msgctxt "MessageLog"
 msgid "Save Log Messages"
-msgstr ""
+msgstr "Gem Log Besked"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.cpp:300
 msgctxt "MessageLog"
 msgid "Text Files (*.txt)"
-msgstr ""
+msgstr "Tekst Filer (*.txt)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.cpp:309
 msgctxt "MessageLog"
 msgid "Vidalia"
 msgstr "Vidalia"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.cpp:310
 msgctxt "MessageLog"
 msgid "Cannot write file %1"
 ""
 "%2."
-msgstr ""
+msgstr "Kan ikke skrive fil %1%2."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.cpp:360
 msgctxt "MessageLog"
 msgid "Find in Message Log"
-msgstr ""
+msgstr "Find i Besked Log"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.cpp:361
 msgctxt "MessageLog"
 msgid "Find:"
-msgstr ""
+msgstr "Find:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.cpp:367
 msgctxt "MessageLog"
 msgid "Not Found"
-msgstr ""
+msgstr "Ikke Fundet"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.cpp:368
 msgctxt "MessageLog"
 msgid "Search found 0 matches."
-msgstr ""
+msgstr "Søgning fandt 0 resultater."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:19
 msgctxt "MessageLog"
 msgid "Message Log"
-msgstr ""
+msgstr "Besked Log"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:452
 msgctxt "MessageLog"
 msgid "Message Filters..."
-msgstr ""
+msgstr "Besked Filtre..."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:455
 msgctxt "MessageLog"
 msgid "Set message filters"
-msgstr ""
+msgstr "Indstil besked filtre"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:463
 msgctxt "MessageLog"
 msgid "History Size..."
-msgstr ""
+msgstr "Historie Størrelse..."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:466
 msgctxt "MessageLog"
 msgid "Set maximum number of messages to display"
-msgstr ""
+msgstr "Angiv hvor mange beskeder der skal vises"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:477
 msgctxt "MessageLog"
 msgid "Clear"
-msgstr ""
+msgstr "Ryd"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:480
 msgctxt "MessageLog"
 msgid "Clear all messages from the Message Log (Ctrl+E)"
-msgstr ""
+msgstr "Ryd alle beskeder fra Besked Loggen (Ctrl+E)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:483
 msgctxt "MessageLog"
 msgid "Ctrl+E"
-msgstr ""
+msgstr "Ctrl+E"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:497
 msgctxt "MessageLog"
 msgid "Copy"
-msgstr ""
+msgstr "Kopier"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:500
 msgctxt "MessageLog"
 msgid "Copy the selected messages to the clipboard (Ctrl+C)"
-msgstr ""
+msgstr "Kopier den valgte besked til udklipholderen (Ctrl+C)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:503
 msgctxt "MessageLog"
 msgid "Ctrl+C"
-msgstr ""
+msgstr "Ctrl+C"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:514
 msgctxt "MessageLog"
 msgid "Select All"
-msgstr ""
+msgstr "Vælg alle"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:517
 msgctxt "MessageLog"
 msgid "Select all messages (Ctrl+A)"
-msgstr ""
+msgstr "Vælg alle beskeder (Ctrl+A)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:520
 msgctxt "MessageLog"
 msgid "Ctrl+A"
-msgstr ""
+msgstr "Ctrl+A"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:528
 msgctxt "MessageLog"
 msgid "Save All"
-msgstr ""
+msgstr "Gem Alle"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:531
 msgctxt "MessageLog"
 msgid "Save all messages to a file"
-msgstr ""
+msgstr "Gem alle beskeder til en fil"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:539
 msgctxt "MessageLog"
 msgid "Save Selected"
-msgstr ""
+msgstr "Gem Valgte"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:542
 msgctxt "MessageLog"
 msgid "Save selected messages to a file"
-msgstr ""
+msgstr "Gem valgte beskeder til en fil"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:553
 msgctxt "MessageLog"
 msgid "Settings"
-msgstr ""
+msgstr "Indstillinger"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:556
 msgctxt "MessageLog"
 msgid "Adjust Message Log Settings"
-msgstr ""
+msgstr "Juster Logbesked Instillingerne"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:559
 msgctxt "MessageLog"
 msgid "Ctrl+T"
-msgstr ""
+msgstr "Ctrl+T"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:567
 msgctxt "MessageLog"
 msgid "Help"
-msgstr ""
+msgstr "Hjælp"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:570
 msgctxt "MessageLog"
 msgid "Show the help browser"
-msgstr ""
+msgstr "Vis hjælp browseren"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:573
 msgctxt "MessageLog"
 msgid "F1"
-msgstr ""
+msgstr "F1"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:581
 msgctxt "MessageLog"
 msgid "Close"
-msgstr ""
+msgstr "Luk"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:584
 msgctxt "MessageLog"
 msgid "Close the Message Log"
-msgstr ""
+msgstr "Luk Besked Loggen"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:587
 msgctxt "MessageLog"
 msgid "Esc"
-msgstr ""
+msgstr "Esc"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:598
 msgctxt "MessageLog"
 msgid "Find"
-msgstr ""
+msgstr "Find"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:601
 msgctxt "MessageLog"
 msgid "Find all messages containing the search text (Ctrl+F)"
-msgstr ""
+msgstr "Find alle beskeder indeholdende søge teksten (Ctrl+F)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:604
 msgctxt "MessageLog"
 msgid "Ctrl+F"
-msgstr ""
+msgstr "Ctrl+F"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:66
 msgctxt "MessageLog"
 msgid "Time"
-msgstr ""
+msgstr "Tid"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:71
 msgctxt "MessageLog"
 msgid "Type"
-msgstr ""
+msgstr "Type"
 
 #: messagelog.ui:76
 msgctxt "MessageLog"
 msgid "Message"
-msgstr ""
+msgstr "Besked"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:160
 msgctxt "MessageLog"
 msgid "Saves the current Message Log settings"
-msgstr ""
+msgstr "Gemmer de nuværende Logbesked instillinger"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:163
 msgctxt "MessageLog"
 msgid "Save Settings"
-msgstr ""
+msgstr "Gem Indstillinger"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:179
 msgctxt "MessageLog"
 msgid "Cancels changes made to settings"
-msgstr ""
+msgstr "Annullerer ændringer foretaget i indstillingerne"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:182
 msgctxt "MessageLog"
 msgid "Cancel"
-msgstr ""
+msgstr "Annuller"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:196
 msgctxt "MessageLog"
 msgid "Message Filter"
-msgstr ""
+msgstr "Besked Filter"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:217
 msgctxt "MessageLog"
 msgid "Error"
-msgstr ""
+msgstr "Fejl"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:233
 msgctxt "MessageLog"
 msgid "Warning"
-msgstr ""
+msgstr "Advarsel"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:249
 msgctxt "MessageLog"
 msgid "Notice"
-msgstr ""
+msgstr "Meddelelse"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:265
 msgctxt "MessageLog"
 msgid "Info"
-msgstr ""
+msgstr "Info"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:281
 msgctxt "MessageLog"
 msgid "Debug"
-msgstr ""
+msgstr "Debug"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:297
 msgctxt "MessageLog"
 msgid "Message Log History"
-msgstr ""
+msgstr "Logbesked Historie"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:318
 msgctxt "MessageLog"
 msgid "Number of messages to display in the message log window"
-msgstr ""
+msgstr "Antal beskeder der skal vises i logbesked vinduet"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:337
 msgctxt "MessageLog"
 msgid "messages"
-msgstr ""
+msgstr "beskeder"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:356
 msgctxt "MessageLog"
 msgid "Always Save New Log Messages"
-msgstr ""
+msgstr "Gem Altid Nye Log Beskeder"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:371
 msgctxt "MessageLog"
 msgid "Browse"
-msgstr ""
+msgstr "Gennemse"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:394
 msgctxt "MessageLog"
 msgid "Enable automatically saving all new log messages to a file"
-msgstr ""
+msgstr "Aktiver automatisk at gemme alle nye log-meddelelser til en fil"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: messagelog.ui:397
 msgctxt "MessageLog"
 msgid "Automatically save new log messages to a file"
-msgstr ""
+msgstr "Gem automatisk nye log-meddelelser til en fil"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: netviewer.ui:24
 msgctxt "NetViewer"
 msgid "Tor Network Map"
-msgstr ""
+msgstr "Tor Netværks Kort"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: netviewer.ui:239
 msgctxt "NetViewer"
 msgid "Refresh"
-msgstr ""
+msgstr "Genopfrisk"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: netviewer.ui:245
 msgctxt "NetViewer"
 msgid "Refresh the list of Tor relays and connections"
-msgstr ""
+msgstr "Genopfrisk listen med Tor relæer og forbindelser"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: netviewer.ui:248
 msgctxt "NetViewer"
 msgid "Ctrl+R"
-msgstr ""
+msgstr "Ctrl+R"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: netviewer.ui:256
 msgctxt "NetViewer"
 msgid "Help"
-msgstr ""
+msgstr "Hjælp"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: netviewer.ui:259
 msgctxt "NetViewer"
 msgid "Show the network map help"
-msgstr ""
+msgstr "Vis netværk kort hjælpen"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: netviewer.ui:262
 msgctxt "NetViewer"
 msgid "Show network map help"
-msgstr ""
+msgstr "Vis netværk kort hjælp"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: netviewer.ui:265
 msgctxt "NetViewer"
 msgid "F1"
-msgstr ""
+msgstr "F1"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: netviewer.ui:273
 msgctxt "NetViewer"
 msgid "Close"
-msgstr ""
+msgstr "Luk"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: netviewer.ui:279
 msgctxt "NetViewer"
 msgid "Close the network map"
-msgstr ""
+msgstr "Luk netværks kortet"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: netviewer.ui:282
 msgctxt "NetViewer"
 msgid "Esc"
-msgstr ""
+msgstr "Esc"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: netviewer.ui:290
 msgctxt "NetViewer"
 msgid "Zoom In"
-msgstr ""
+msgstr "Zoom Ind"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: netviewer.ui:296
 msgctxt "NetViewer"
 msgid "Zoom in on the network map"
-msgstr ""
+msgstr "Zoom ind på netværks kortet"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: netviewer.ui:299
 msgctxt "NetViewer"
 msgid "+"
-msgstr ""
+msgstr "+"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: netviewer.ui:307
 msgctxt "NetViewer"
 msgid "Zoom Out"
-msgstr ""
+msgstr "Zoom Ud"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: netviewer.ui:313
 msgctxt "NetViewer"
 msgid "Zoom out on the network map"
-msgstr ""
+msgstr "Zoom ud på netværks kortet"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: netviewer.ui:316
 msgctxt "NetViewer"
 msgid "-"
-msgstr ""
+msgstr "-"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: netviewer.ui:324
 msgctxt "NetViewer"
 msgid "Zoom To Fit"
-msgstr ""
+msgstr "Zoom til at Passe"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: netviewer.ui:330
 msgctxt "NetViewer"
 msgid "Zooms to fit all currently displayed circuits"
-msgstr ""
+msgstr "Zoomer til at passe for alle pt. viste relæ"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: netviewer.ui:333
 msgctxt "NetViewer"
 msgid "Ctrl+Z"
-msgstr ""
+msgstr "Ctrl+Z"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.cpp:193
 msgctxt "NetworkPage"
 msgid "Invalid Bridge"
-msgstr ""
+msgstr "Ugyldig Bro"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.cpp:194
 msgctxt "NetworkPage"
 msgid "The specified bridge identifier is not valid."
-msgstr ""
+msgstr "Den angivne bro identifikator er ikke gyldigt."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.cpp:241
 msgctxt "NetworkPage"
 msgid "Copy (Ctrl+C)"
-msgstr ""
+msgstr "Kopier (Ctrl+C)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.cpp:272
 msgctxt "NetworkPage"
 msgid "You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet."
 msgstr ""
+"Du skal angive både IP adresse eller værts navn og en port, for at indstille "
+"Tor til at bruge en proxy som forbindelse til Internettet."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.cpp:278
 msgctxt "NetworkPage"
 msgid "You must specify one or more ports to which your firewall allows you to connect."
 msgstr ""
+"Du skal angive en eller flere porte, som din firewall tillader dig at "
+"tilslutte."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.cpp:314
 msgctxt "NetworkPage"
 msgid "'%1' is not a valid port number."
-msgstr ""
+msgstr "'%1' er ikke et accepteret port nummer."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.ui:25
 msgctxt "NetworkPage"
 msgid "Check if your local network requires a proxy to access the Internet"
 msgstr ""
+"Kontroller, om dit lokale netværk kræver en proxy for at få adgang til "
+"Internettet"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.ui:28
 msgctxt "NetworkPage"
 msgid "I use a proxy to access the Internet"
-msgstr ""
+msgstr "Jeg bruger en proxy for at forbinde til Internettet"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.ui:58
 msgctxt "NetworkPage"
 msgid "Proxy Settings"
-msgstr ""
+msgstr "Proxy Indstillinger"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.ui:70
 msgctxt "NetworkPage"
 msgid "HTTP Proxy:"
-msgstr ""
+msgstr "HTTP Proxy:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.ui:80
 msgctxt "NetworkPage"
 msgid "Username:"
-msgstr ""
+msgstr "Brugernavn:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.ui:90
 msgctxt "NetworkPage"
 msgid "Use this proxy for HTTPS also"
-msgstr ""
+msgstr "Brug også denne proxy til HTTPS"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.ui:108
 msgctxt "NetworkPage"
 msgid "Password:"
-msgstr ""
+msgstr "Kodeord:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.ui:135
 msgctxt "NetworkPage"
 msgid "Port:"
-msgstr ""
+msgstr "Port:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.ui:176
 msgctxt "NetworkPage"
 msgid "Check to only connect to relays using ports allowed by your firewall"
 msgstr ""
+"Kryds for kun at forbinde til relæer der benytter porte godkendt af din "
+"firewall"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.ui:179
 msgctxt "NetworkPage"
 msgid "My firewall only lets me connect to certain ports"
-msgstr ""
+msgstr "Min firewall lader mig kun forbinde til specifikke porte"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.ui:203
 msgctxt "NetworkPage"
 msgid "Firewall Settings"
-msgstr ""
+msgstr "Firewall Indstillinger"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.ui:215
 msgctxt "NetworkPage"
 msgid "Allowed Ports:"
-msgstr ""
+msgstr "Tilladte Porte:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.ui:225
 msgctxt "NetworkPage"
 msgid "80, 443"
-msgstr ""
+msgstr "80, 443"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.ui:235
 msgctxt "NetworkPage"
 msgid "Check to encrypt directory requests and, optionally, use bridge relays to access the Tor network"
 msgstr ""
+"Kryds for at kryptere mappe anmodninger, og eventuelt bruge bro relæer til "
+"at få adgang til Tor nettet"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.ui:238
 msgctxt "NetworkPage"
 msgid "My ISP blocks connections to the Tor network"
-msgstr ""
+msgstr "Min udbyder (ISP) blokerer forbindelse til Tor netværket"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.ui:262
 msgctxt "NetworkPage"
 msgid "Bridge Settings"
-msgstr ""
+msgstr "Bro Indstillinger"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.ui:274
 msgctxt "NetworkPage"
 msgid "The Tor software you are currently running does not support bridges. <br>Directory connections will still be encrypted."
 msgstr ""
+"Tor programmet som du kører i øjeblikket understøtter ikke "
+"broer.<br>Mappeforbindelser vil stadig være krypterede."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.ui:295
 msgctxt "NetworkPage"
 msgid "Add a Bridge:"
-msgstr ""
+msgstr "Tilføj en Bro:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.ui:318
 msgctxt "NetworkPage"
 msgid "<a href=\"bridges.finding\">How do I find a bridge?</a>"
-msgstr ""
+msgstr "<a href=\"bridges.finding\">Hvordan finder Jeg en bro?</a>"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.ui:383
 msgctxt "NetworkPage"
 msgid "Remove the selected bridges from the list"
-msgstr ""
+msgstr "Fjern den valgte bro fra listen"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: networkpage.ui:399
 msgctxt "NetworkPage"
 msgid "Copy the selected bridges to the clipboard"
-msgstr ""
+msgstr "Kopier den valgte bro til udklipsholderen"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: policy.cpp:167
 msgctxt "Policy"
 msgid "accept"
-msgstr ""
+msgstr "godkend"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: policy.cpp:167
 msgctxt "Policy"
 msgid "reject"
-msgstr ""
+msgstr "afvis"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: routerdescriptor.cpp:76
 msgctxt "RouterDescriptor"
 msgid "Online"
-msgstr ""
+msgstr "Online"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: routerdescriptor.cpp:78
 msgctxt "RouterDescriptor"
 msgid "Hibernating"
-msgstr ""
+msgstr "Dvale"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: routerdescriptor.cpp:80
 msgctxt "RouterDescriptor"
 msgid "Offline"
-msgstr ""
+msgstr "Offline"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: routerdescriptorview.cpp:139
 msgctxt "RouterDescriptorView"
 msgid "Location:"
-msgstr ""
+msgstr "Lokation:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: routerdescriptorview.cpp:143
 msgctxt "RouterDescriptorView"
 msgid "IP Address:"
-msgstr ""
+msgstr "IP Adresse:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: routerdescriptorview.cpp:144
 msgctxt "RouterDescriptorView"
 msgid "Platform:"
-msgstr ""
+msgstr "Platform:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: routerdescriptorview.cpp:148
 msgctxt "RouterDescriptorView"
 msgid "Bandwidth:"
-msgstr ""
+msgstr "Båndbrede:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: routerdescriptorview.cpp:150
 msgctxt "RouterDescriptorView"
 msgid "Uptime:"
-msgstr ""
+msgstr "Oppe tid:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: routerdescriptorview.cpp:156
 msgctxt "RouterDescriptorView"
 msgid "Last Updated:"
-msgstr ""
+msgstr "Sidst Opdateret:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: routerdescriptorview.cpp:100
 msgctxt "RouterDescriptorView"
 msgid "%1 days "
-msgstr ""
+msgstr "%1 dage"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: routerdescriptorview.cpp:103
 msgctxt "RouterDescriptorView"
 msgid "%1 hours "
-msgstr ""
+msgstr "%1 timer"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: routerdescriptorview.cpp:106
 msgctxt "RouterDescriptorView"
 msgid "%1 mins "
-msgstr ""
+msgstr "%1 min."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: routerdescriptorview.cpp:109
 msgctxt "RouterDescriptorView"
 msgid "%1 secs"
-msgstr ""
+msgstr "%1 sek."
 
 #: routerdescriptorview.cpp:48
 msgctxt "RouterDescriptorView"
 msgid "Copy"
-msgstr ""
+msgstr "Kopier"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: routerlistitem.cpp:67
 msgctxt "RouterListItem"
 msgid "Offline"
-msgstr ""
+msgstr "Offline"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: routerlistitem.cpp:71
 msgctxt "RouterListItem"
 msgid "Hibernating"
-msgstr ""
+msgstr "I Dvale"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: routerlistitem.cpp:83
 msgctxt "RouterListItem"
 msgid "%1 KB/s"
-msgstr ""
+msgstr "%1 KB/s"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: routerlistwidget.cpp:49
 msgctxt "RouterListWidget"
 msgid "Relay"
-msgstr ""
+msgstr "Relæ"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: routerlistwidget.cpp:74
 msgctxt "RouterListWidget"
 msgid "Zoom to Relay"
-msgstr ""
+msgstr "Zoom til Relæ"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: routerlistwidget.cpp:220
 msgctxt "RouterListWidget"
 msgid "%1 relays online"
-msgstr ""
+msgstr "%1 relæer online"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: routerlistwidget.cpp:67
 msgctxt "RouterListWidget"
 msgid "Copy"
-msgstr ""
+msgstr "Kopier"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: routerlistwidget.cpp:68
 msgctxt "RouterListWidget"
 msgid "Nickname"
-msgstr ""
+msgstr "Kaldenavn"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: routerlistwidget.cpp:71
 msgctxt "RouterListWidget"
 msgid "Fingerprint"
-msgstr ""
+msgstr "Fingeraftryk"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.cpp:140
 msgctxt "ServerPage"
 msgid "Bridge Support Unavailable"
-msgstr ""
+msgstr "Bro Support er Ikke Tilgælgelig"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.cpp:143
 msgctxt "ServerPage"
 msgid "You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges."
 msgstr ""
+"Du har konfigureret Tor til at fungere som en relæ-bro for censureret "
+"brugere, men din version af Tor understøtter ikke broer."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.cpp:145
 msgctxt "ServerPage"
 msgid "Please upgrade your Tor software or configure Tor to act as a normal Tor relay."
 msgstr ""
+"Du skal opgradere din Tor software eller konfigurere Tor til at fungere som "
+"et normalt Tor relæ."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.cpp:199
 msgctxt "ServerPage"
 msgid "Your bridge relay is not running."
-msgstr ""
+msgstr "Din relæ-bro kører ikke"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.cpp:263
 msgctxt "ServerPage"
 msgid "You must specify at least a relay nickname and port."
-msgstr ""
+msgstr "Du skal angive mindst et kaldenavn og port."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:25
 msgctxt "ServerPage"
 msgid "Run as a client only"
-msgstr ""
+msgstr "Kør kun som en klient"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:32
 msgctxt "ServerPage"
 msgid "Relay traffic for the Tor network"
-msgstr ""
+msgstr "Relæ trafik til Tor netværket"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:39
 msgctxt "ServerPage"
 msgid "Help censored users reach the Tor network (Tor 0.2.0.8-alpha or newer)"
 msgstr ""
+"Hjælp censurerede brugere nå Tor netværket (Tor 0.2.0.8-alpha eller nyere)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:91
 msgctxt "ServerPage"
 msgid "Relay Port:"
-msgstr ""
+msgstr "Relæ Port:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:110
 msgctxt "ServerPage"
 msgid "Enable to mirror the relay directory"
-msgstr ""
+msgstr "Tænd for at afbillede relæ mappe"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:113
 msgctxt "ServerPage"
 msgid "Mirror the Relay Directory "
-msgstr ""
+msgstr "Afbillede Relæ Mappen"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:139
 msgctxt "ServerPage"
 msgid "Attempt to automatically configure port forwarding"
-msgstr ""
+msgstr "Forsøg at indstille automatisk port viderestilling"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:154
 msgctxt "ServerPage"
 msgid "Test"
-msgstr ""
+msgstr "Test"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:164
 msgctxt "ServerPage"
 msgid "Show help topic on port forwarding"
-msgstr ""
+msgstr "Vis hjælp emner om viderestilling af porte"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:204
 msgctxt "ServerPage"
 msgid "Email address at which you may be reached if there is a"
 "problem with your relay. You might also include your PGP or GPG fingerprint."
 msgstr ""
+"E-mail-adresse, hvor du kan nås, hvis der er aproblem med dit relæ. Du kan "
+"også inkludere din PGP eller GPG fingeraftryk."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:234
 msgctxt "ServerPage"
 msgid "Directory Port:"
-msgstr ""
+msgstr "Mappe Port:"
 
 #: serverpage.ui:267
 msgctxt "ServerPage"
 msgid "Directory Port Number"
-msgstr ""
+msgstr "Mappe Port Nummer:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:279
 msgctxt "ServerPage"
 msgid "Contact Info:"
-msgstr ""
+msgstr "Kontakt Info:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:337
 msgctxt "ServerPage"
 msgid "Name of your relay"
-msgstr ""
+msgstr "Navnet på dit relæ"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:370
 msgctxt "ServerPage"
 msgid "Port on which users and other relays can communicate with your relay"
-msgstr ""
+msgstr "Port hvor brugere og andre relæer kan kommunikere med dit relæ"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:380
 msgctxt "ServerPage"
 msgid "Nickname:"
-msgstr ""
+msgstr "Kaldenavn:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:76
 msgctxt "ServerPage"
 msgid "Basic Settings"
-msgstr ""
+msgstr "Grundlæggende indstillinger"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:435
 msgctxt "ServerPage"
 msgid "For Internet connections with fast download speed but slow upload, please list your upload speed here."
 msgstr ""
+"For internetforbindelser med hurtig download hastighed, men langsom upload, "
+"skal du angive din upload hastighed her."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:466
 msgctxt "ServerPage"
 msgid "Cable/DSL 256 Kbps"
-msgstr ""
+msgstr "Kabel/DSL 256 Kbps"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:471
 msgctxt "ServerPage"
 msgid "Cable/DSL 512 Kbps"
-msgstr ""
+msgstr "Kabel/DSL 512 Kbps"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:476
 msgctxt "ServerPage"
 msgid "Cable/DSL 768 Kbps"
-msgstr ""
+msgstr "Kabel/DSL 768 Kbps"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:481
 msgctxt "ServerPage"
 msgid "T1/Cable/DSL 1.5 Mbps"
-msgstr ""
+msgstr "T1/Kabel/DSL 1.5 Mbps"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:486
 msgctxt "ServerPage"
 msgid "> 1.5 Mbps"
-msgstr ""
+msgstr "> 1.5 Mbps"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:491
 msgctxt "ServerPage"
 msgid "Custom"
-msgstr ""
+msgstr "Tilpasset"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:456
 msgctxt "ServerPage"
 msgid "Select the entry that most closely resembles your Internet connection"
-msgstr ""
+msgstr "Vælg den adgang, der mest ligner din internetforbindelse"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:502
 msgctxt "ServerPage"
 msgid "Show help topic on bandwidth rate limits"
-msgstr ""
+msgstr "Vis hjælp emner om båndbrede grænser"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:591
 msgctxt "ServerPage"
 msgid "Average Rate"
-msgstr ""
+msgstr "Gennemsnitlig"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:620
 msgctxt "ServerPage"
 msgid "Long-term average bandwidth limit"
-msgstr ""
+msgstr "Langsigtede gennemsnit båndbredde grænse"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:708
 msgctxt "ServerPage"
 msgid "KB/s"
-msgstr ""
+msgstr "KB/s"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:666
 msgctxt "ServerPage"
 msgid "Maximum Rate"
-msgstr ""
+msgstr "Maksimal Hastighed"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:695
 msgctxt "ServerPage"
 msgid "Peak bandwidth rate limit"
-msgstr ""
+msgstr "Peak båndbrede grænse"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:737
 msgctxt "ServerPage"
 msgid "Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s."
 msgstr ""
+"Dit maksimale båndbredde grænse skal være større end eller lig med din "
+"gennemsnitlige båndbredde grænse. Begge værdier skal være mindst 20 kb/s."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:400
 msgctxt "ServerPage"
 msgid "Bandwidth Limits"
-msgstr ""
+msgstr "Båndbrede Grænser"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:802
 msgctxt "ServerPage"
 msgid "Ports 6660 - 6669 and 6697"
-msgstr ""
+msgstr "Porte 6660 - 6669 og 6697"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:805
 msgctxt "ServerPage"
 msgid "Internet Relay Chat (IRC)"
-msgstr ""
+msgstr "Internet Relæ Chat (IRC)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:815
 msgctxt "ServerPage"
 msgid "Ports 110, 143, 993 and 995"
-msgstr ""
+msgstr "Porte 110, 143, 993 og 995"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:818
 msgctxt "ServerPage"
 msgid "Retrieve Mail (POP, IMAP)"
-msgstr ""
+msgstr "Modtag Mail (POP, IMAP)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:828
 msgctxt "ServerPage"
 msgid "Ports unspecified by other checkboxes"
-msgstr ""
+msgstr "Porte uspecificerede af andre afkrydsningsfelter"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:831
 msgctxt "ServerPage"
 msgid "Misc Other Services"
-msgstr ""
+msgstr "Diverse Andre Tjenester"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:841
 msgctxt "ServerPage"
 msgid "Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 and 8888"
-msgstr ""
+msgstr "Porte 706, 1863, 5050, 5190, 5222, 5223, 8300 og 8888"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:844
 msgctxt "ServerPage"
 msgid "Instant Messaging (IM)"
-msgstr ""
+msgstr "Instant Messaging (IM)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:854
 msgctxt "ServerPage"
 msgid "Port 443"
-msgstr ""
+msgstr "Port 443"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:857
 msgctxt "ServerPage"
 msgid "Secure Websites (SSL)"
-msgstr ""
+msgstr "Sikker Hjemmeside (SSL)"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:867
 msgctxt "ServerPage"
 msgid "Port 80"
-msgstr ""
+msgstr "Port 80"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:870
 msgctxt "ServerPage"
 msgid "Websites"
-msgstr ""
+msgstr "Hjemmeside"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:896
 msgctxt "ServerPage"
 msgid "Show help topic on exit policies"
-msgstr ""
+msgstr "Vis hjælpe emne om afslutningspolitikker"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:969
 msgctxt "ServerPage"
 msgid "What Internet resources should users be able to access from your relay?"
 msgstr ""
+"Hvilke Internet ressourcer skal brugere kunne få adgang til fra dit relæ?"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:979
 msgctxt "ServerPage"
 msgid "Tor will still block some outgoing mail and file sharing applications by default to reduce spam and other abuse."
 msgstr ""
+"Tor vil stadig blokere nogle udgående post og fildeling applikationer som "
+"standard for at reducere spam og anden misbrug."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:764
 msgctxt "ServerPage"
 msgid "Exit Policies"
-msgstr ""
+msgstr "Afslutningspolitikker"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:1015
 msgctxt "ServerPage"
 msgid "Let others access your bridge by giving them this line:"
-msgstr ""
+msgstr "Lad andre få adgang til din bro ved at give dem denne linje:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:1039
 msgctxt "ServerPage"
 msgid "This is the identity of your bridge relay that you can give to other people"
 msgstr ""
+"Dette er identiteten af dit bro relæ, som du kan give til andre mennesker"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: serverpage.ui:1061
 msgctxt "ServerPage"
 msgid "Copy your bridge relay's identity to the clipboard"
-msgstr ""
+msgstr "Kopier dit bro relæs identitet til udklipsholderen"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: servicepage.cpp:116
 msgctxt "ServicePage"
 msgid "Error while trying to unpublish all services"
-msgstr ""
+msgstr "Fejl under forsøg på at annullere udgivelsen af alle tjenester"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: servicepage.cpp:123
 msgctxt "ServicePage"
 msgid "Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones."
 msgstr ""
+"Opsæt mindst en tjeneste mappe og en virtuel port for hver tjeneste du vil "
+"gemme. Fjern de andre."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: servicepage.cpp:597
 msgctxt "ServicePage"
 msgid "Error"
-msgstr ""
+msgstr "Fejl"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: servicepage.cpp:452
 msgctxt "ServicePage"
 msgid "Please select a Service."
-msgstr ""
+msgstr "Vælg venligst en Tjeneste."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: servicepage.cpp:458
 msgctxt "ServicePage"
 msgid "Select Service Directory"
-msgstr ""
+msgstr "Vælg en Service Mappe"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: servicepage.cpp:547
 msgctxt "ServicePage"
 msgid "Virtual Port may only contain valid port numbers [1..65535]."
-msgstr ""
+msgstr "Virtuel Port må kun indeholde godkendte port numre [1...65535]."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: servicepage.cpp:578
 msgctxt "ServicePage"
 msgid "Target may only contain address:port, address, or port."
-msgstr ""
+msgstr "Målet kan kun indeholde adresse: port, adresse, eller port."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: servicepage.cpp:598
 msgctxt "ServicePage"
 msgid "Directory already in use by another service."
-msgstr ""
+msgstr "Mappen er allerede i brug af en anden tjeneste."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: servicepage.ui:19
 msgctxt "ServicePage"
 msgid "Form"
-msgstr ""
+msgstr "Form"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: servicepage.ui:31
 msgctxt "ServicePage"
 msgid "Provided Hidden Services"
-msgstr ""
+msgstr "Angivne Skjulte Tjenester"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: servicepage.ui:56
 msgctxt "ServicePage"
 msgid "Onion Address"
-msgstr ""
+msgstr "Onion Adresse"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: servicepage.ui:61
 msgctxt "ServicePage"
 msgid "Virtual Port"
-msgstr ""
+msgstr "Virtuel Port"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: servicepage.ui:66
 msgctxt "ServicePage"
 msgid "Target"
-msgstr ""
+msgstr "Mål"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: servicepage.ui:71
 msgctxt "ServicePage"
 msgid "Directory Path"
-msgstr ""
+msgstr "Mappe Sti"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: servicepage.ui:76
 msgctxt "ServicePage"
 msgid "Enabled"
-msgstr ""
+msgstr "Aktiveret"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: servicepage.ui:84
 msgctxt "ServicePage"
 msgid "Add new service to list"
-msgstr ""
+msgstr "Tilføj en ny tjeneste til listen"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: servicepage.ui:97
 msgctxt "ServicePage"
 msgid "Remove selected service from list"
-msgstr ""
+msgstr "Fjern den valgte tjeneste fra listen"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: servicepage.ui:110
 msgctxt "ServicePage"
 msgid "Copy onion address of selected service to clipboard"
-msgstr ""
+msgstr "Kopier onion adresse fra den valgte tjeneste til udklipsholderen"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: servicepage.ui:123
 msgctxt "ServicePage"
 msgid "Browse in local file system and choose directory for selected service"
-msgstr ""
+msgstr "Gennemse lokale filsystem og vælg bibliotek til udvalgte tjenester"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: servicepage.cpp:384
 msgctxt "ServicePage"
 msgid "Created by Tor"
-msgstr ""
+msgstr "Lavet af Tor"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: stream.cpp:131
 msgctxt "Stream"
 msgid "New"
-msgstr ""
+msgstr "Ny"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: stream.cpp:133
 msgctxt "Stream"
 msgid "Resolving"
-msgstr ""
+msgstr "Finder"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: stream.cpp:134
 msgctxt "Stream"
 msgid "Connecting"
-msgstr ""
+msgstr "Forbinder"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: stream.cpp:135
 msgctxt "Stream"
 msgid "Open"
-msgstr ""
+msgstr "Åben"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: stream.cpp:136
 msgctxt "Stream"
 msgid "Failed"
-msgstr ""
+msgstr "Mislykkedes"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: stream.cpp:137
 msgctxt "Stream"
 msgid "Closed"
-msgstr ""
+msgstr "Lukket"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: stream.cpp:138
 msgctxt "Stream"
 msgid "Retrying"
-msgstr ""
+msgstr "Prøver igen"
 
 #: stream.cpp:139
 msgctxt "Stream"
 msgid "Remapped"
-msgstr ""
+msgstr "Genmapped"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: stream.cpp:140
 msgctxt "Stream"
 msgid "Unknown"
-msgstr ""
+msgstr "Ukendt"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: torprocess.cpp:107
 msgctxt "TorProcess"
 msgid "Process %1 failed to stop. [%2]"
-msgstr ""
+msgstr "Tjeneste %1 mislykkedes at stoppe. [%2]"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: torservice.cpp:143
 msgctxt "TorService"
 msgid "The Tor service is not installed."
-msgstr ""
+msgstr "Tor tjenesten er ikke installeret."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: torservice.cpp:161
 msgctxt "TorService"
 msgid "Unable to start the Tor service."
-msgstr ""
+msgstr "Kan ikke starte Tor tjenesten."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: torsettings.cpp:103
 msgctxt "TorSettings"
 msgid "Failed to hash the control password."
-msgstr ""
+msgstr "Kunne ikke finde hash-værdi af kodeordet."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: upnpcontrol.cpp:139
 msgctxt "UPNPControl"
 msgid "Success"
-msgstr ""
+msgstr "Succes"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: upnpcontrol.cpp:141
 msgctxt "UPNPControl"
 msgid "No UPnP-enabled devices found"
-msgstr ""
+msgstr "Ingen UPnP-aktiverede enheder fundet"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: upnpcontrol.cpp:143
 msgctxt "UPNPControl"
 msgid "No valid UPnP-enabled Internet gateway devices found"
-msgstr ""
+msgstr "Ingen gyldige UPnP-aktiverede Internet gateway enheder fundet"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: upnpcontrol.cpp:145
 msgctxt "UPNPControl"
 msgid "WSAStartup failed"
-msgstr ""
+msgstr "WSAStartop mislykkedes"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: upnpcontrol.cpp:147
 msgctxt "UPNPControl"
 msgid "Failed to add a port mapping"
-msgstr ""
+msgstr "Det lykkedes ikke at tilføje en port angivning"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: upnpcontrol.cpp:149
 msgctxt "UPNPControl"
 msgid "Failed to retrieve a port mapping"
-msgstr ""
+msgstr "Det lykkedes ikke at hente en port angivning"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: upnpcontrol.cpp:151
 msgctxt "UPNPControl"
 msgid "Failed to remove a port mapping"
-msgstr ""
+msgstr "Det lykkedes ikke at fjerne en port angivning"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: upnpcontrol.cpp:153
 msgctxt "UPNPControl"
 msgid "Unknown error"
-msgstr ""
+msgstr "Ukendt fejl"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: upnptestdialog.cpp:112
 msgctxt "UPNPTestDialog"
 msgid "Discovering UPnP-enabled devices"
-msgstr ""
+msgstr "Søger efter UPnP-aktiverede enheder"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: upnptestdialog.cpp:117
 msgctxt "UPNPTestDialog"
 msgid "Updating directory port mapping"
-msgstr ""
+msgstr "Opdaterer mappe port angivninger"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: upnptestdialog.cpp:122
 msgctxt "UPNPTestDialog"
 msgid "Updating relay port mapping"
-msgstr ""
+msgstr "Opdaterer relæ port angivninger"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: upnptestdialog.cpp:127
 msgctxt "UPNPTestDialog"
 msgid "Test completed successfully!"
-msgstr ""
+msgstr "Test gennemført succesfuldt!"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: upnptestdialog.ui:13
 msgctxt "UPNPTestDialog"
 msgid "Testing UPnP Support"
-msgstr ""
+msgstr "Tester UPnP Understøttelse"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: upnptestdialog.ui:92
 msgctxt "UPNPTestDialog"
 msgid "Testing Universal Plug & Play Support"
-msgstr ""
+msgstr "Tester Universal Plug & Plug Understøttelse"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: vmessagebox.cpp:77
 msgctxt "VMessageBox"
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: vmessagebox.cpp:78
 msgctxt "VMessageBox"
 msgid "Cancel"
-msgstr ""
+msgstr "Annuller"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: vmessagebox.cpp:79
 msgctxt "VMessageBox"
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: vmessagebox.cpp:80
 msgctxt "VMessageBox"
 msgid "No"
-msgstr ""
+msgstr "Nej"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: vmessagebox.cpp:81
 msgctxt "VMessageBox"
 msgid "Help"
-msgstr ""
+msgstr "Hjælp"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: vmessagebox.cpp:82
 msgctxt "VMessageBox"
 msgid "Retry"
-msgstr ""
+msgstr "Forsøg igen"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: vmessagebox.cpp:83
 msgctxt "VMessageBox"
 msgid "Show Log"
-msgstr ""
+msgstr "Vis Log"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: vmessagebox.cpp:84
 msgctxt "VMessageBox"
 msgid "Show Settings"
-msgstr ""
+msgstr "Vis Indstillinger"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: vmessagebox.cpp:85
 msgctxt "VMessageBox"
 msgid "Continue"
-msgstr ""
+msgstr "Fortsæt"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: vmessagebox.cpp:86
 msgctxt "VMessageBox"
 msgid "Quit"
-msgstr ""
+msgstr "Afslut"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: vmessagebox.cpp:87
 msgctxt "VMessageBox"
 msgid "Browse"
-msgstr ""
+msgstr "Gennemse"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: main.cpp:75
 msgctxt "Vidalia"
 msgid "Invalid Argument"
-msgstr ""
+msgstr "Argumentet er ugyldigt"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: main.cpp:89
 msgctxt "Vidalia"
 msgid "Vidalia is already running"
-msgstr ""
+msgstr "Vidalia kører allerede"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: main.cpp:95
 msgctxt "Vidalia"
 msgid "Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway."
 ""
 "Would you like to continue starting Vidalia?"
 msgstr ""
+"Der kører muligvis en anden Vidalia proces allerede. Hvis der virkelig ikke "
+"kører en anden Vidalia proces, kan du vælge at fortsætte alligevel. Vil du "
+"fortsætte med at starte Vidalia?"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: vidalia.cpp:169
 msgctxt "Vidalia"
 msgid "Displays this usage message and exits."
-msgstr ""
+msgstr "Viser denne brugs beskeder og afslutter."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: vidalia.cpp:171
 msgctxt "Vidalia"
 msgid "Resets ALL stored Vidalia settings."
-msgstr ""
+msgstr "Nulstiller ALLE gemte Vidalia indstillinger."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: vidalia.cpp:173
 msgctxt "Vidalia"
 msgid "Sets the directory Vidalia uses for data files."
-msgstr ""
+msgstr "Indstiller mappen som Vidalia bruger til data filer."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: vidalia.cpp:175
 msgctxt "Vidalia"
 msgid "Sets the name and location of Vidalia's pidfile."
-msgstr ""
+msgstr "Indstiller navn og placering af Vidalias profil."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: vidalia.cpp:177
 msgctxt "Vidalia"
 msgid "Sets the name and location of Vidalia's logfile."
-msgstr ""
+msgstr "Indstiller navn og placering af Vidalias logfil."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: vidalia.cpp:180
 msgctxt "Vidalia"
 msgid "Sets the verbosity of Vidalia's logging."
-msgstr ""
+msgstr "Indstiller mængden af data Vidalia logger."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: vidalia.cpp:183
 msgctxt "Vidalia"
 msgid "Sets Vidalia's interface style."
-msgstr ""
+msgstr "Indstiller Vidalias græseflade stil."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: vidalia.cpp:186
 msgctxt "Vidalia"
 msgid "Sets Vidalia's language."
-msgstr ""
+msgstr "Indstiller Vidalias sprog."
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: vidalia.cpp:190
 msgctxt "Vidalia"
 msgid "Vidalia Usage Information"
-msgstr ""
+msgstr "Vidalia Forbrugs Information"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: vidalia.cpp:238
 msgctxt "Vidalia"
 msgid "Invalid language code specified: "
-msgstr ""
+msgstr "Ugyldig sprog kode angivet:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: vidalia.cpp:245
 msgctxt "Vidalia"
 msgid "Invalid GUI style specified: "
-msgstr ""
+msgstr "Ugyldig GUI stil angivet:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: vidalia.cpp:251
 msgctxt "Vidalia"
 msgid "Invalid log level specified: "
-msgstr ""
+msgstr "Ugyldig log niveau angivet:"
 
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
 #: vidalia.cpp:257
 msgctxt "Vidalia"
 msgid "Unable to open log file '%1': %2"
-msgstr ""
+msgstr "Kunne ikke åbne log fil '%1': %2"
