@@ -46,6 +46,7 @@
 #define SETTING_ENABLE_UPNP     "EnableUPnP"
 #define SETTING_RELAY_BANDWIDTH_RATE   "RelayBandwidthRate"
 #define SETTING_RELAY_BANDWIDTH_BURST  "RelayBandwidthBurst"
+#define SETTING_PUBLISH_SERVER_DESCRIPTOR "PublishServerDescriptor"
 
 
 /** Constructor.
@@ -73,6 +74,7 @@ ServerSettings::ServerSettings(TorControl *torControl)
     ExitPolicy(ExitPolicy::Default).toString());
   setDefault(SETTING_ENABLE_UPNP, false); 
   setDefault(SETTING_BRIDGE_RELAY, false);
+  setDefault(SETTING_PUBLISH_SERVER_DESCRIPTOR, "1");
 }
 
 /** Returns a QHash of Tor-recognizable configuratin keys to their current
@@ -120,8 +122,14 @@ ServerSettings::confValues()
   conf.insert(SETTING_CONTACT, scrub_email_addr(contact));
   
   /* Set if we're a bridge relay */
-  conf.insert(SETTING_BRIDGE_RELAY, isBridgeEnabled() ? "1" : "0");
-
+  if (isBridgeEnabled()) {
+    conf.insert(SETTING_BRIDGE_RELAY, "1");
+    conf.insert(SETTING_PUBLISH_SERVER_DESCRIPTOR,
+                publishServerDescriptor() ? "1" : "0");
+  } else {
+    conf.insert(SETTING_BRIDGE_RELAY, "0");
+    conf.insert(SETTING_PUBLISH_SERVER_DESCRIPTOR, "1");
+  }
   return conf;
 }
 
@@ -145,7 +153,8 @@ ServerSettings::apply(QString *errmsg)
               << SETTING_DIRPORT
               << SETTING_CONTACT
               << SETTING_EXITPOLICY
-              << SETTING_BRIDGE_RELAY;
+              << SETTING_BRIDGE_RELAY
+              << SETTING_PUBLISH_SERVER_DESCRIPTOR;
     if (torVersion >= 0x020001) {
       resetKeys << SETTING_RELAY_BANDWIDTH_RATE
                 << SETTING_RELAY_BANDWIDTH_BURST;
@@ -362,6 +371,27 @@ void
 ServerSettings::setBandwidthBurstRate(quint32 rate)
 {
   setValue(SETTING_BANDWIDTH_BURST, rate);
+}
+
+/** Sets whether the user's server descriptor will be published or not.
+ * Currently this only affects publishing of bridge descriptors. If the
+ * user is running a normal relay, its descriptor will always be
+ * published regardless of this setting. */
+void
+ServerSettings::setPublishServerDescriptor(bool publish)
+{
+  if (publish)
+    setValue(SETTING_PUBLISH_SERVER_DESCRIPTOR, "1");
+  else
+    setValue(SETTING_PUBLISH_SERVER_DESCRIPTOR, "0");
+}
+
+/** Returns true if the user's server descriptor will be published to the
+ * appropriate authorities. */
+bool
+ServerSettings::publishServerDescriptor() const
+{
+  return (value(SETTING_PUBLISH_SERVER_DESCRIPTOR).toString() != "0"); 
 }
 
 /** Returns true if UPnP support is available and enabled. */

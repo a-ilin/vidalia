@@ -1,108 +1,109 @@
-<ui version="4.0" >
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
  <class>ServerPage</class>
- <widget class="QWidget" name="ServerPage" >
-  <property name="geometry" >
+ <widget class="QWidget" name="ServerPage">
+  <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>542</width>
+    <width>546</width>
     <height>463</height>
    </rect>
   </property>
-  <property name="contextMenuPolicy" >
+  <property name="contextMenuPolicy">
    <enum>Qt::NoContextMenu</enum>
   </property>
-  <layout class="QVBoxLayout" >
+  <layout class="QVBoxLayout">
    <item>
-    <widget class="QRadioButton" name="rdoClientMode" >
-     <property name="text" >
+    <widget class="QRadioButton" name="rdoClientMode">
+     <property name="text">
       <string>Run as a client only</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QRadioButton" name="rdoServerMode" >
-     <property name="text" >
+    <widget class="QRadioButton" name="rdoServerMode">
+     <property name="text">
       <string>Relay traffic for the Tor network</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QRadioButton" name="rdoBridgeMode" >
-     <property name="text" >
+    <widget class="QRadioButton" name="rdoBridgeMode">
+     <property name="text">
       <string>Help censored users reach the Tor network</string>
      </property>
     </widget>
    </item>
    <item>
-    <widget class="QFrame" name="frmServer" >
-     <property name="contextMenuPolicy" >
+    <widget class="QFrame" name="frmServer">
+     <property name="contextMenuPolicy">
       <enum>Qt::NoContextMenu</enum>
      </property>
-     <property name="frameShape" >
+     <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
      </property>
-     <property name="frameShadow" >
+     <property name="frameShadow">
       <enum>QFrame::Plain</enum>
      </property>
-     <layout class="QVBoxLayout" >
-      <property name="margin" >
+     <layout class="QVBoxLayout">
+      <property name="margin">
        <number>0</number>
       </property>
       <item>
-       <widget class="QTabWidget" name="tabsMenu" >
-        <property name="sizePolicy" >
-         <sizepolicy vsizetype="Expanding" hsizetype="Expanding" >
+       <widget class="QTabWidget" name="tabsMenu">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
-        <property name="currentIndex" >
+        <property name="currentIndex">
          <number>0</number>
         </property>
-        <widget class="QWidget" name="ServerConfig" >
-         <attribute name="title" >
+        <widget class="QWidget" name="ServerConfig">
+         <attribute name="title">
           <string>Basic Settings</string>
          </attribute>
-         <layout class="QGridLayout" >
-          <item row="2" column="0" >
-           <widget class="QLabel" name="lblServerPort" >
-            <property name="contextMenuPolicy" >
+         <layout class="QGridLayout">
+          <item row="2" column="0">
+           <widget class="QLabel" name="lblServerPort">
+            <property name="contextMenuPolicy">
              <enum>Qt::NoContextMenu</enum>
             </property>
-            <property name="text" >
+            <property name="text">
              <string>Relay Port:</string>
             </property>
-            <property name="alignment" >
+            <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
-            <property name="margin" >
+            <property name="margin">
              <number>0</number>
             </property>
-            <property name="indent" >
+            <property name="indent">
              <number>0</number>
             </property>
            </widget>
           </item>
-          <item row="3" column="0" colspan="3" >
-           <widget class="QCheckBox" name="chkMirrorDirectory" >
-            <property name="contextMenuPolicy" >
+          <item row="3" column="0" colspan="3">
+           <widget class="QCheckBox" name="chkMirrorDirectory">
+            <property name="contextMenuPolicy">
              <enum>Qt::NoContextMenu</enum>
             </property>
-            <property name="toolTip" >
+            <property name="toolTip">
              <string>Enable to mirror the relay directory</string>
             </property>
-            <property name="text" >
+            <property name="text">
              <string>Mirror the Relay Directory </string>
             </property>
            </widget>
           </item>
-          <item row="3" column="6" >
+          <item row="3" column="6">
            <spacer>
-            <property name="orientation" >
+            <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
-            <property name="sizeHint" stdset="0" >
+            <property name="sizeHint" stdset="0">
              <size>
               <width>40</width>
               <height>20</height>
@@ -110,47 +111,47 @@
             </property>
            </spacer>
           </item>
-          <item row="4" column="0" colspan="6" >
-           <widget class="QCheckBox" name="chkEnableUpnp" >
-            <property name="contextMenuPolicy" >
+          <item row="4" column="0" colspan="6">
+           <widget class="QCheckBox" name="chkEnableUpnp">
+            <property name="contextMenuPolicy">
              <enum>Qt::NoContextMenu</enum>
             </property>
-            <property name="toolTip" >
+            <property name="toolTip">
              <string/>
             </property>
-            <property name="text" >
+            <property name="text">
              <string>Attempt to automatically configure port forwarding</string>
             </property>
            </widget>
           </item>
-          <item row="4" column="6" >
-           <layout class="QHBoxLayout" >
+          <item row="4" column="6">
+           <layout class="QHBoxLayout">
             <item>
-             <widget class="QPushButton" name="btnTestUpnp" >
-              <property name="contextMenuPolicy" >
+             <widget class="QPushButton" name="btnTestUpnp">
+              <property name="contextMenuPolicy">
                <enum>Qt::NoContextMenu</enum>
               </property>
-              <property name="text" >
+              <property name="text">
                <string>Test</string>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QToolButton" name="btnUpnpHelp" >
-              <property name="contextMenuPolicy" >
+             <widget class="QToolButton" name="btnUpnpHelp">
+              <property name="contextMenuPolicy">
                <enum>Qt::NoContextMenu</enum>
               </property>
-              <property name="toolTip" >
+              <property name="toolTip">
                <string>Show help topic on port forwarding</string>
               </property>
-              <property name="text" >
+              <property name="text">
                <string/>
               </property>
-              <property name="icon" >
-               <iconset resource="../res/vidalia.qrc" >
+              <property name="icon">
+               <iconset resource="../res/vidalia.qrc">
                 <normaloff>:/images/22x22/system-help.png</normaloff>:/images/22x22/system-help.png</iconset>
               </property>
-              <property name="iconSize" >
+              <property name="iconSize">
                <size>
                 <width>22</width>
                 <height>22</height>
@@ -160,10 +161,10 @@
             </item>
             <item>
              <spacer>
-              <property name="orientation" >
+              <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
-              <property name="sizeHint" stdset="0" >
+              <property name="sizeHint" stdset="0">
                <size>
                 <width>40</width>
                 <height>20</height>
@@ -173,96 +174,96 @@
             </item>
            </layout>
           </item>
-          <item row="1" column="1" colspan="7" >
-           <widget class="QLineEdit" name="lineServerContact" >
-            <property name="cursor" >
+          <item row="1" column="1" colspan="7">
+           <widget class="QLineEdit" name="lineServerContact">
+            <property name="cursor">
              <cursorShape>IBeamCursor</cursorShape>
             </property>
-            <property name="contextMenuPolicy" >
+            <property name="contextMenuPolicy">
              <enum>Qt::NoContextMenu</enum>
             </property>
-            <property name="toolTip" >
+            <property name="toolTip">
              <string>Email address at which you may be reached if there is a
 problem with your relay. You might also include your PGP or GPG fingerprint.</string>
             </property>
            </widget>
           </item>
-          <item row="3" column="3" colspan="3" >
-           <layout class="QHBoxLayout" >
+          <item row="3" column="3" colspan="3">
+           <layout class="QHBoxLayout">
             <item>
-             <widget class="QLabel" name="lblDirPort" >
-              <property name="enabled" >
+             <widget class="QLabel" name="lblDirPort">
+              <property name="enabled">
                <bool>false</bool>
               </property>
-              <property name="sizePolicy" >
-               <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
-              <property name="contextMenuPolicy" >
+              <property name="contextMenuPolicy">
                <enum>Qt::NoContextMenu</enum>
               </property>
-              <property name="text" >
+              <property name="text">
                <string>Directory Port:</string>
               </property>
-              <property name="alignment" >
+              <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
               </property>
              </widget>
             </item>
             <item>
-             <widget class="QLineEdit" name="lineDirPort" >
-              <property name="enabled" >
+             <widget class="QLineEdit" name="lineDirPort">
+              <property name="enabled">
                <bool>false</bool>
               </property>
-              <property name="sizePolicy" >
-               <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
-              <property name="maximumSize" >
+              <property name="maximumSize">
                <size>
                 <width>50</width>
                 <height>16777215</height>
                </size>
               </property>
-              <property name="cursor" >
+              <property name="cursor">
                <cursorShape>IBeamCursor</cursorShape>
               </property>
-              <property name="contextMenuPolicy" >
+              <property name="contextMenuPolicy">
                <enum>Qt::NoContextMenu</enum>
               </property>
-              <property name="toolTip" >
+              <property name="toolTip">
                <string>Directory Port Number</string>
               </property>
              </widget>
             </item>
            </layout>
           </item>
-          <item row="1" column="0" >
-           <widget class="QLabel" name="label_1" >
-            <property name="contextMenuPolicy" >
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_1">
+            <property name="contextMenuPolicy">
              <enum>Qt::NoContextMenu</enum>
             </property>
-            <property name="text" >
+            <property name="text">
              <string>Contact Info:</string>
             </property>
-            <property name="alignment" >
+            <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
-            <property name="indent" >
+            <property name="indent">
              <number>0</number>
             </property>
            </widget>
           </item>
-          <item row="2" column="2" colspan="6" >
+          <item row="2" column="2" colspan="6">
            <spacer>
-            <property name="orientation" >
+            <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
-            <property name="sizeHint" stdset="0" >
+            <property name="sizeHint" stdset="0">
              <size>
               <width>321</width>
               <height>20</height>
@@ -270,12 +271,12 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
             </property>
            </spacer>
           </item>
-          <item row="8" column="0" >
+          <item row="8" column="0">
            <spacer>
-            <property name="orientation" >
+            <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
-            <property name="sizeHint" stdset="0" >
+            <property name="sizeHint" stdset="0">
              <size>
               <width>20</width>
               <height>40</height>
@@ -283,12 +284,12 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
             </property>
            </spacer>
           </item>
-          <item row="3" column="5" colspan="2" >
+          <item row="3" column="5" colspan="2">
            <spacer>
-            <property name="orientation" >
+            <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
-            <property name="sizeHint" stdset="0" >
+            <property name="sizeHint" stdset="0">
              <size>
               <width>41</width>
               <height>20</height>
@@ -296,174 +297,174 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
             </property>
            </spacer>
           </item>
-          <item row="0" column="1" colspan="7" >
-           <widget class="QLineEdit" name="lineServerNickname" >
-            <property name="cursor" >
+          <item row="0" column="1" colspan="7">
+           <widget class="QLineEdit" name="lineServerNickname">
+            <property name="cursor">
              <cursorShape>IBeamCursor</cursorShape>
             </property>
-            <property name="contextMenuPolicy" >
+            <property name="contextMenuPolicy">
              <enum>Qt::NoContextMenu</enum>
             </property>
-            <property name="toolTip" >
+            <property name="toolTip">
              <string>Name of your relay</string>
             </property>
-            <property name="text" >
+            <property name="text">
              <string/>
             </property>
-            <property name="maxLength" >
+            <property name="maxLength">
              <number>19</number>
             </property>
            </widget>
           </item>
-          <item row="2" column="1" >
-           <widget class="QLineEdit" name="lineServerPort" >
-            <property name="sizePolicy" >
-             <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="lineServerPort">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
-            <property name="maximumSize" >
+            <property name="maximumSize">
              <size>
               <width>50</width>
               <height>16777215</height>
              </size>
             </property>
-            <property name="cursor" >
+            <property name="cursor">
              <cursorShape>IBeamCursor</cursorShape>
             </property>
-            <property name="contextMenuPolicy" >
+            <property name="contextMenuPolicy">
              <enum>Qt::NoContextMenu</enum>
             </property>
-            <property name="toolTip" >
+            <property name="toolTip">
              <string>Port on which users and other relays can communicate with your relay</string>
             </property>
            </widget>
           </item>
-          <item row="0" column="0" >
-           <widget class="QLabel" name="lblNickname" >
-            <property name="contextMenuPolicy" >
+          <item row="0" column="0">
+           <widget class="QLabel" name="lblNickname">
+            <property name="contextMenuPolicy">
              <enum>Qt::NoContextMenu</enum>
             </property>
-            <property name="text" >
+            <property name="text">
              <string>Nickname:</string>
             </property>
-            <property name="textFormat" >
+            <property name="textFormat">
              <enum>Qt::AutoText</enum>
             </property>
-            <property name="alignment" >
+            <property name="alignment">
              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
             </property>
-            <property name="margin" >
+            <property name="margin">
              <number>0</number>
             </property>
-            <property name="indent" >
+            <property name="indent">
              <number>0</number>
             </property>
            </widget>
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="BandwidthLimits" >
-         <attribute name="title" >
+        <widget class="QWidget" name="BandwidthLimits">
+         <attribute name="title">
           <string>Bandwidth Limits</string>
          </attribute>
-         <layout class="QVBoxLayout" >
+         <layout class="QVBoxLayout">
           <item>
-           <widget class="QLabel" name="label" >
-            <property name="sizePolicy" >
-             <sizepolicy vsizetype="Preferred" hsizetype="Preferred" >
+           <widget class="QLabel" name="label">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
-            <property name="minimumSize" >
+            <property name="minimumSize">
              <size>
               <width>0</width>
               <height>0</height>
              </size>
             </property>
-            <property name="maximumSize" >
+            <property name="maximumSize">
              <size>
               <width>16777215</width>
               <height>16777215</height>
              </size>
             </property>
-            <property name="contextMenuPolicy" >
+            <property name="contextMenuPolicy">
              <enum>Qt::NoContextMenu</enum>
             </property>
-            <property name="text" >
+            <property name="text">
              <string>For Internet connections with fast download speed but slow upload, please list your upload speed here.</string>
             </property>
-            <property name="wordWrap" >
+            <property name="wordWrap">
              <bool>true</bool>
             </property>
            </widget>
           </item>
           <item>
-           <layout class="QHBoxLayout" >
+           <layout class="QHBoxLayout">
             <item>
-             <widget class="QComboBox" name="cmboRate" >
-              <property name="contextMenuPolicy" >
+             <widget class="QComboBox" name="cmboRate">
+              <property name="contextMenuPolicy">
                <enum>Qt::NoContextMenu</enum>
               </property>
-              <property name="toolTip" >
+              <property name="toolTip">
                <string>Select the entry that most closely resembles your Internet connection</string>
               </property>
-              <property name="maxVisibleItems" >
+              <property name="maxVisibleItems">
                <number>10</number>
               </property>
-              <property name="sizeAdjustPolicy" >
+              <property name="sizeAdjustPolicy">
                <enum>QComboBox::AdjustToContents</enum>
               </property>
               <item>
-               <property name="text" >
+               <property name="text">
                 <string>Cable/DSL 256 Kbps</string>
                </property>
               </item>
               <item>
-               <property name="text" >
+               <property name="text">
                 <string>Cable/DSL 512 Kbps</string>
                </property>
               </item>
               <item>
-               <property name="text" >
+               <property name="text">
                 <string>Cable/DSL 768 Kbps</string>
                </property>
               </item>
               <item>
-               <property name="text" >
+               <property name="text">
                 <string>T1/Cable/DSL 1.5 Mbps</string>
                </property>
               </item>
               <item>
-               <property name="text" >
-                <string>> 1.5 Mbps</string>
+               <property name="text">
+                <string>&gt; 1.5 Mbps</string>
                </property>
               </item>
               <item>
-               <property name="text" >
+               <property name="text">
                 <string>Custom</string>
                </property>
               </item>
              </widget>
             </item>
             <item>
-             <widget class="QToolButton" name="btnRateHelp" >
-              <property name="contextMenuPolicy" >
+             <widget class="QToolButton" name="btnRateHelp">
+              <property name="contextMenuPolicy">
                <enum>Qt::NoContextMenu</enum>
               </property>
-              <property name="toolTip" >
+              <property name="toolTip">
                <string>Show help topic on bandwidth rate limits</string>
               </property>
-              <property name="text" >
+              <property name="text">
                <string/>
               </property>
-              <property name="icon" >
-               <iconset resource="../res/vidalia.qrc" >
+              <property name="icon">
+               <iconset resource="../res/vidalia.qrc">
                 <normaloff>:/images/22x22/system-help.png</normaloff>:/images/22x22/system-help.png</iconset>
               </property>
-              <property name="iconSize" >
+              <property name="iconSize">
                <size>
                 <width>22</width>
                 <height>22</height>
@@ -473,10 +474,10 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
             </item>
             <item>
              <spacer>
-              <property name="orientation" >
+              <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
-              <property name="sizeHint" stdset="0" >
+              <property name="sizeHint" stdset="0">
                <size>
                 <width>40</width>
                 <height>20</height>
@@ -487,23 +488,23 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
            </layout>
           </item>
           <item>
-           <widget class="QFrame" name="frmCustomRate" >
-            <property name="contextMenuPolicy" >
+           <widget class="QFrame" name="frmCustomRate">
+            <property name="contextMenuPolicy">
              <enum>Qt::NoContextMenu</enum>
             </property>
-            <property name="frameShape" >
+            <property name="frameShape">
              <enum>QFrame::NoFrame</enum>
             </property>
-            <property name="frameShadow" >
+            <property name="frameShadow">
              <enum>QFrame::Plain</enum>
             </property>
-            <layout class="QGridLayout" >
-             <item row="4" column="0" >
+            <layout class="QGridLayout">
+             <item row="4" column="0">
               <spacer>
-               <property name="orientation" >
+               <property name="orientation">
                 <enum>Qt::Vertical</enum>
                </property>
-               <property name="sizeHint" stdset="0" >
+               <property name="sizeHint" stdset="0">
                 <size>
                  <width>20</width>
                  <height>40</height>
@@ -511,53 +512,53 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
                </property>
               </spacer>
              </item>
-             <item row="1" column="0" >
-              <layout class="QHBoxLayout" >
+             <item row="1" column="0">
+              <layout class="QHBoxLayout">
                <item>
-                <layout class="QVBoxLayout" >
+                <layout class="QVBoxLayout">
                  <item>
-                  <widget class="QLabel" name="label_2" >
-                   <property name="sizePolicy" >
-                    <sizepolicy vsizetype="Preferred" hsizetype="Minimum" >
+                  <widget class="QLabel" name="label_2">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Average Rate</string>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <layout class="QHBoxLayout" >
+                  <layout class="QHBoxLayout">
                    <item>
-                    <widget class="QLineEdit" name="lineAvgRateLimit" >
-                     <property name="sizePolicy" >
-                      <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+                    <widget class="QLineEdit" name="lineAvgRateLimit">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                        <horstretch>0</horstretch>
                        <verstretch>0</verstretch>
                       </sizepolicy>
                      </property>
-                     <property name="maximumSize" >
+                     <property name="maximumSize">
                       <size>
                        <width>60</width>
                        <height>22</height>
                       </size>
                      </property>
-                     <property name="toolTip" >
+                     <property name="toolTip">
                       <string>Long-term average bandwidth limit</string>
                      </property>
-                     <property name="maxLength" >
+                     <property name="maxLength">
                       <number>12</number>
                      </property>
-                     <property name="alignment" >
+                     <property name="alignment">
                       <set>Qt::AlignRight</set>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="label_6" >
-                     <property name="text" >
+                    <widget class="QLabel" name="label_6">
+                     <property name="text">
                       <string>KB/s</string>
                      </property>
                     </widget>
@@ -567,69 +568,69 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
                 </layout>
                </item>
                <item>
-                <layout class="QVBoxLayout" >
+                <layout class="QVBoxLayout">
                  <item>
-                  <widget class="QLabel" name="label_5" >
-                   <property name="sizePolicy" >
-                    <sizepolicy vsizetype="Preferred" hsizetype="Minimum" >
+                  <widget class="QLabel" name="label_5">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
                    </property>
-                   <property name="maximumSize" >
+                   <property name="maximumSize">
                     <size>
                      <width>100</width>
                      <height>20</height>
                     </size>
                    </property>
-                   <property name="text" >
+                   <property name="text">
                     <string>Maximum Rate</string>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <layout class="QHBoxLayout" >
+                  <layout class="QHBoxLayout">
                    <item>
-                    <widget class="QLineEdit" name="lineMaxRateLimit" >
-                     <property name="sizePolicy" >
-                      <sizepolicy vsizetype="Fixed" hsizetype="Minimum" >
+                    <widget class="QLineEdit" name="lineMaxRateLimit">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                        <horstretch>0</horstretch>
                        <verstretch>0</verstretch>
                       </sizepolicy>
                      </property>
-                     <property name="maximumSize" >
+                     <property name="maximumSize">
                       <size>
                        <width>60</width>
                        <height>20</height>
                       </size>
                      </property>
-                     <property name="toolTip" >
+                     <property name="toolTip">
                       <string>Peak bandwidth rate limit</string>
                      </property>
-                     <property name="maxLength" >
+                     <property name="maxLength">
                       <number>12</number>
                      </property>
-                     <property name="alignment" >
+                     <property name="alignment">
                       <set>Qt::AlignRight</set>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="label_7" >
-                     <property name="text" >
+                    <widget class="QLabel" name="label_7">
+                     <property name="text">
                       <string>KB/s</string>
                      </property>
                     </widget>
                    </item>
                    <item>
                     <spacer>
-                     <property name="orientation" >
+                     <property name="orientation">
                       <enum>Qt::Horizontal</enum>
                      </property>
-                     <property name="sizeType" >
+                     <property name="sizeType">
                       <enum>QSizePolicy::Expanding</enum>
                      </property>
-                     <property name="sizeHint" stdset="0" >
+                     <property name="sizeHint" stdset="0">
                       <size>
                        <width>71</width>
                        <height>20</height>
@@ -643,12 +644,12 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
                </item>
               </layout>
              </item>
-             <item row="0" column="0" >
-              <widget class="QLabel" name="label_8" >
-               <property name="text" >
+             <item row="0" column="0">
+              <widget class="QLabel" name="label_8">
+               <property name="text">
                 <string>Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s.</string>
                </property>
-               <property name="wordWrap" >
+               <property name="wordWrap">
                 <bool>true</bool>
                </property>
               </widget>
@@ -658,10 +659,10 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
           </item>
           <item>
            <spacer>
-            <property name="orientation" >
+            <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
-            <property name="sizeHint" stdset="0" >
+            <property name="sizeHint" stdset="0">
              <size>
               <width>20</width>
               <height>40</height>
@@ -671,96 +672,96 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
           </item>
          </layout>
         </widget>
-        <widget class="QWidget" name="ExitPolicies" >
-         <attribute name="title" >
+        <widget class="QWidget" name="ExitPolicies">
+         <attribute name="title">
           <string>Exit Policies</string>
          </attribute>
-         <layout class="QGridLayout" >
-          <item row="1" column="0" >
-           <widget class="QFrame" name="frmPolicies" >
-            <property name="frameShape" >
+         <layout class="QGridLayout">
+          <item row="1" column="0">
+           <widget class="QFrame" name="frmPolicies">
+            <property name="frameShape">
              <enum>QFrame::NoFrame</enum>
             </property>
-            <property name="frameShadow" >
+            <property name="frameShadow">
              <enum>QFrame::Plain</enum>
             </property>
-            <layout class="QHBoxLayout" >
+            <layout class="QHBoxLayout">
              <item>
-              <layout class="QGridLayout" >
-               <item row="1" column="1" >
-                <widget class="QCheckBox" name="chkIRC" >
-                 <property name="contextMenuPolicy" >
+              <layout class="QGridLayout">
+               <item row="1" column="1">
+                <widget class="QCheckBox" name="chkIRC">
+                 <property name="contextMenuPolicy">
                   <enum>Qt::NoContextMenu</enum>
                  </property>
-                 <property name="toolTip" >
+                 <property name="toolTip">
                   <string>Ports 6660 - 6669 and 6697</string>
                  </property>
-                 <property name="text" >
+                 <property name="text">
                   <string>Internet Relay Chat (IRC)</string>
                  </property>
                 </widget>
                </item>
-               <item row="2" column="0" >
-                <widget class="QCheckBox" name="chkMail" >
-                 <property name="contextMenuPolicy" >
+               <item row="2" column="0">
+                <widget class="QCheckBox" name="chkMail">
+                 <property name="contextMenuPolicy">
                   <enum>Qt::NoContextMenu</enum>
                  </property>
-                 <property name="toolTip" >
+                 <property name="toolTip">
                   <string>Ports 110, 143, 993 and 995</string>
                  </property>
-                 <property name="text" >
+                 <property name="text">
                   <string>Retrieve Mail (POP, IMAP)</string>
                  </property>
                 </widget>
                </item>
-               <item row="2" column="1" >
-                <widget class="QCheckBox" name="chkMisc" >
-                 <property name="contextMenuPolicy" >
+               <item row="2" column="1">
+                <widget class="QCheckBox" name="chkMisc">
+                 <property name="contextMenuPolicy">
                   <enum>Qt::NoContextMenu</enum>
                  </property>
-                 <property name="toolTip" >
+                 <property name="toolTip">
                   <string>Ports unspecified by other checkboxes</string>
                  </property>
-                 <property name="text" >
+                 <property name="text">
                   <string>Misc Other Services</string>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="1" >
-                <widget class="QCheckBox" name="chkIM" >
-                 <property name="contextMenuPolicy" >
+               <item row="0" column="1">
+                <widget class="QCheckBox" name="chkIM">
+                 <property name="contextMenuPolicy">
                   <enum>Qt::NoContextMenu</enum>
                  </property>
-                 <property name="toolTip" >
+                 <property name="toolTip">
                   <string>Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 and 8888</string>
                  </property>
-                 <property name="text" >
+                 <property name="text">
                   <string>Instant Messaging (IM)</string>
                  </property>
                 </widget>
                </item>
-               <item row="1" column="0" >
-                <widget class="QCheckBox" name="chkSecWebsites" >
-                 <property name="contextMenuPolicy" >
+               <item row="1" column="0">
+                <widget class="QCheckBox" name="chkSecWebsites">
+                 <property name="contextMenuPolicy">
                   <enum>Qt::NoContextMenu</enum>
                  </property>
-                 <property name="toolTip" >
+                 <property name="toolTip">
                   <string>Port 443</string>
                  </property>
-                 <property name="text" >
+                 <property name="text">
                   <string>Secure Websites (SSL)</string>
                  </property>
                 </widget>
                </item>
-               <item row="0" column="0" >
-                <widget class="QCheckBox" name="chkWebsites" >
-                 <property name="contextMenuPolicy" >
+               <item row="0" column="0">
+                <widget class="QCheckBox" name="chkWebsites">
+                 <property name="contextMenuPolicy">
                   <enum>Qt::NoContextMenu</enum>
                  </property>
-                 <property name="toolTip" >
+                 <property name="toolTip">
                   <string>Port 80</string>
                  </property>
-                 <property name="text" >
+                 <property name="text">
                   <string>Websites</string>
                  </property>
                 </widget>
@@ -768,29 +769,29 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
               </layout>
              </item>
              <item>
-              <layout class="QVBoxLayout" >
+              <layout class="QVBoxLayout">
                <item>
-                <widget class="QToolButton" name="btnExitHelp" >
-                 <property name="minimumSize" >
+                <widget class="QToolButton" name="btnExitHelp">
+                 <property name="minimumSize">
                   <size>
                    <width>32</width>
                    <height>32</height>
                   </size>
                  </property>
-                 <property name="contextMenuPolicy" >
+                 <property name="contextMenuPolicy">
                   <enum>Qt::NoContextMenu</enum>
                  </property>
-                 <property name="toolTip" >
+                 <property name="toolTip">
                   <string>Show help topic on exit policies</string>
                  </property>
-                 <property name="text" >
+                 <property name="text">
                   <string/>
                  </property>
-                 <property name="icon" >
-                  <iconset resource="../res/vidalia.qrc" >
+                 <property name="icon">
+                  <iconset resource="../res/vidalia.qrc">
                    <normaloff>:/images/22x22/system-help.png</normaloff>:/images/22x22/system-help.png</iconset>
                  </property>
-                 <property name="iconSize" >
+                 <property name="iconSize">
                   <size>
                    <width>22</width>
                    <height>22</height>
@@ -800,10 +801,10 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
                </item>
                <item>
                 <spacer>
-                 <property name="orientation" >
+                 <property name="orientation">
                   <enum>Qt::Vertical</enum>
                  </property>
-                 <property name="sizeHint" stdset="0" >
+                 <property name="sizeHint" stdset="0">
                   <size>
                    <width>20</width>
                    <height>42</height>
@@ -815,10 +816,10 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
              </item>
              <item>
               <spacer>
-               <property name="orientation" >
+               <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
-               <property name="sizeHint" stdset="0" >
+               <property name="sizeHint" stdset="0">
                 <size>
                  <width>40</width>
                  <height>20</height>
@@ -829,53 +830,53 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
             </layout>
            </widget>
           </item>
-          <item row="0" column="0" >
-           <widget class="QLabel" name="label_3" >
-            <property name="sizePolicy" >
-             <sizepolicy vsizetype="Fixed" hsizetype="Fixed" >
+          <item row="0" column="0">
+           <widget class="QLabel" name="label_3">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
-            <property name="minimumSize" >
+            <property name="minimumSize">
              <size>
               <width>300</width>
               <height>41</height>
              </size>
             </property>
-            <property name="maximumSize" >
+            <property name="maximumSize">
              <size>
               <width>300</width>
               <height>41</height>
              </size>
             </property>
-            <property name="contextMenuPolicy" >
+            <property name="contextMenuPolicy">
              <enum>Qt::NoContextMenu</enum>
             </property>
-            <property name="text" >
+            <property name="text">
              <string>What Internet resources should users be able to access from your relay?</string>
             </property>
-            <property name="wordWrap" >
+            <property name="wordWrap">
              <bool>true</bool>
             </property>
            </widget>
           </item>
-          <item row="2" column="0" >
-           <widget class="QLabel" name="label_4" >
-            <property name="text" >
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_4">
+            <property name="text">
              <string>Tor will still block some outgoing mail and file sharing applications by default to reduce spam and other abuse.</string>
             </property>
-            <property name="wordWrap" >
+            <property name="wordWrap">
              <bool>true</bool>
             </property>
            </widget>
           </item>
-          <item row="2" column="0" >
+          <item row="2" column="0">
            <spacer>
-            <property name="orientation" >
+            <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
-            <property name="sizeHint" stdset="0" >
+            <property name="sizeHint" stdset="0">
              <size>
               <width>20</width>
               <height>40</height>
@@ -891,61 +892,61 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
     </widget>
    </item>
    <item>
-    <widget class="QLabel" name="lblYourBridgeRelayIs" >
-     <property name="cursor" >
+    <widget class="QLabel" name="lblYourBridgeRelayIs">
+     <property name="cursor">
       <cursorShape>ArrowCursor</cursorShape>
      </property>
-     <property name="frameShape" >
+     <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
      </property>
-     <property name="text" >
+     <property name="text">
       <string>Let others access your bridge by giving them this line:</string>
      </property>
-     <property name="wordWrap" >
+     <property name="wordWrap">
       <bool>true</bool>
      </property>
-     <property name="textInteractionFlags" >
+     <property name="textInteractionFlags">
       <set>Qt::TextSelectableByMouse</set>
      </property>
     </widget>
    </item>
    <item>
-    <layout class="QHBoxLayout" >
+    <layout class="QHBoxLayout">
      <item>
-      <widget class="QLabel" name="lblBridgeIdentity" >
-       <property name="cursor" >
+      <widget class="QLabel" name="lblBridgeIdentity">
+       <property name="cursor">
         <cursorShape>IBeamCursor</cursorShape>
        </property>
-       <property name="toolTip" >
+       <property name="toolTip">
         <string>This is the identity of your bridge relay that you can give to other people</string>
        </property>
-       <property name="frameShape" >
+       <property name="frameShape">
         <enum>QFrame::StyledPanel</enum>
        </property>
-       <property name="frameShadow" >
+       <property name="frameShadow">
         <enum>QFrame::Sunken</enum>
        </property>
-       <property name="text" >
+       <property name="text">
         <string/>
        </property>
-       <property name="textInteractionFlags" >
+       <property name="textInteractionFlags">
         <set>Qt::TextSelectableByMouse</set>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QToolButton" name="btnCopyBridgeIdentity" >
-       <property name="enabled" >
+      <widget class="QToolButton" name="btnCopyBridgeIdentity">
+       <property name="enabled">
         <bool>false</bool>
        </property>
-       <property name="toolTip" >
+       <property name="toolTip">
         <string>Copy your bridge relay's identity to the clipboard</string>
        </property>
-       <property name="text" >
+       <property name="text">
         <string/>
        </property>
-       <property name="icon" >
-        <iconset resource="../res/vidalia.qrc" >
+       <property name="icon">
+        <iconset resource="../res/vidalia.qrc">
          <normaloff>:/images/22x22/edit-copy.png</normaloff>:/images/22x22/edit-copy.png</iconset>
        </property>
       </widget>
@@ -953,21 +954,45 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
     </layout>
    </item>
    <item>
-    <widget class="QLabel" name="lblBridgeUsage" >
-     <property name="text" >
-      <string>&lt;a href="#bridgeUsage">Who has used my bridge?&lt;/a></string>
-     </property>
-     <property name="alignment" >
-      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-     </property>
-    </widget>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QCheckBox" name="chkPublishBridgeAddress">
+       <property name="text">
+        <string>Automatically distribute my bridge address</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>40</width>
+         <height>20</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblBridgeUsage">
+       <property name="text">
+        <string>&lt;a href=&quot;#bridgeUsage&quot;&gt;Who has used my bridge?&lt;/a&gt;</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </item>
    <item>
     <spacer>
-     <property name="orientation" >
+     <property name="orientation">
       <enum>Qt::Vertical</enum>
      </property>
-     <property name="sizeHint" stdset="0" >
+     <property name="sizeHint" stdset="0">
       <size>
        <width>420</width>
        <height>16</height>
@@ -997,7 +1022,7 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
   <tabstop>btnExitHelp</tabstop>
  </tabstops>
  <resources>
-  <include location="../res/vidalia.qrc" />
+  <include location="../res/vidalia.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -1006,11 +1031,11 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
    <receiver>lineDirPort</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>-1</x>
      <y>-1</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>-1</x>
      <y>-1</y>
     </hint>
@@ -1022,11 +1047,11 @@ problem with your relay. You might also include your PGP or GPG fingerprint.</st
    <receiver>lblDirPort</receiver>
    <slot>setEnabled(bool)</slot>
    <hints>
-    <hint type="sourcelabel" >
+    <hint type="sourcelabel">
      <x>-1</x>
      <y>-1</y>
     </hint>
-    <hint type="destinationlabel" >
+    <hint type="destinationlabel">
      <x>-1</x>
      <y>-1</y>
     </hint>

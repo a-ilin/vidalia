@@ -82,6 +82,15 @@ public:
   /** Gets the maximum burst rate (in B/s) of this server. */
   quint32 getBandwidthBurstRate();
 
+  /** Sets whether the user's server descriptor will be published or not.
+   * Currently this only affects publishing of bridge descriptors. If the
+   * user is running a normal relay, its descriptor will always be
+   * published regardless of this setting. */
+  void setPublishServerDescriptor(bool publish);
+  /** Returns true if the user's server descriptor will be published to
+   * the appropriate authorities. */
+  bool publishServerDescriptor() const;
+
   /** Configure port forwarding. */
   void configurePortForwarding();
 

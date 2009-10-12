@@ -229,6 +229,7 @@ ServerPage::serverModeChanged(bool enabled)
   ui.lblYourBridgeRelayIs->setVisible(bridgeEnabled);
   ui.lblBridgeIdentity->setVisible(bridgeEnabled);
   ui.btnCopyBridgeIdentity->setVisible(bridgeEnabled);
+  ui.chkPublishBridgeAddress->setVisible(bridgeEnabled);
   ui.lblBridgeUsage->setVisible(bridgeEnabled
                                   && Vidalia::torControl()->isConnected());
 }
@@ -286,7 +287,9 @@ ServerPage::save(QString &errmsg)
   _settings->setServerEnabled(ui.rdoServerMode->isChecked()
                                 || ui.rdoBridgeMode->isChecked());
   _settings->setBridgeEnabled(ui.rdoBridgeMode->isChecked());
-  
+  if (ui.rdoBridgeMode->isChecked())
+    _settings->setPublishServerDescriptor(ui.chkPublishBridgeAddress->isChecked());
+
   /* Save the rest of the server settings. */
   _settings->setDirectoryMirror(ui.chkMirrorDirectory->isChecked());
   _settings->setNickname(ui.lineServerNickname->text());
@@ -321,6 +324,7 @@ ServerPage::load()
   ui.chkMirrorDirectory->setChecked(_settings->isDirectoryMirror());
   ui.lblBridgeUsage->setVisible(_settings->isBridgeEnabled()
                                   && Vidalia::torControl()->isConnected());
+  ui.chkPublishBridgeAddress->setChecked(_settings->publishServerDescriptor());
 
   loadBandwidthLimits();
   loadExitPolicies();
