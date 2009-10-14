@@ -45,6 +45,7 @@ RouterDescriptor::parseDescriptor(QStringList descriptor)
       _published = QDateTime::fromString(
                                line.remove(0,qstrlen("published ")),
                                "yyyy-MM-dd HH:mm:ss");
+      _published.setTimeSpec(Qt::UTC);
     } else if (line.startsWith("opt fingerprint ")) {
       _fingerprint = line.remove(0,qstrlen("opt fingerprint "));
       _id = _fingerprint.remove(" ");
