@@ -1,4 +1,4 @@
-0.2.5   xx-xxx-2009
+0.2.5   14-Oct-2009
   o Add support in the Network settings page for configuring the
     Socks4Proxy and Socks5Proxy* options that were added in
     Tor 0.2.2.1-alpha. Patch from Christopher Davis.
@@ -9,6 +9,8 @@
   o Add a context menu for highlighted event items in the "Basic" message
     log view that allows the user to copy the selected item text to the
     clipboard.
+  o Maybe fix a time conversion bug that could result in Vidalia
+    displaying the wrong uptime for a relay in the network map.
   o Stop trying to enforce proper quoting and escaping of arguments to be
     given to the proxy executable (e.g., Polipo). Now the user is on their
     own for properly formatting the command line used to start the proxy
