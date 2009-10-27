@@ -20,7 +20,7 @@ Libevent
 Qt
 4. Download and extract the open source version of Qt 4.3 or higher from 
    Trolltech at the following address:
-   http://www.trolltech.com/developer/downloads/qt/mac
+   http://qt.nokia.com/downloads/mac-os-cpp
 
   Alternatively, download the open source Qt dmg and install.  You can now skip 5
 and 6.
