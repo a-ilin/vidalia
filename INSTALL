@@ -1,11 +1,11 @@
 
-         Instruction for Building and Installing Vidalia from Source
+         Instructions for Building and Installing Vidalia from Source
 
 
 Before building and running Vidalia, you will need to have the following
 packages installed:
 
-  * Qt >= 4.3           http://trolltech.com/downloads/opensource
+  * Qt >= 4.3           http://qt.nokia.com/downloads
   * Tor >= 0.2.0.34     https://www.torproject.org/download.html
   * CMake >= 2.4.0      http://www.cmake.org/HTML/Download.html
 
@@ -111,7 +111,7 @@ similar process can be followed for other versions of VS.
   3. Download the Qt/Windows open source edition source code and extract it to a
      directory with no spaces (e.g., C:\Qt\4.3.3).
 
-       http://trolltech.com/developer/downloads/qt/windows
+       http://qt.nokia.com/downloads/windows-cpp
 
   4. Edit the Visual Studio  2005 command prompt environment variables to
      include the platform SDK files, by opening
