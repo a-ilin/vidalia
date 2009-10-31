@@ -3,14 +3,15 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-05-19 23:56+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2009-10-31 01:14+0000\n"
+"Last-Translator: Alexey Vertinsky <webbegemot@gmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Vidalia ts2po 0.2\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Pootle 1.1.0\n"
 
 msgctxt "AboutDialog"
 msgid "About Vidalia"
@@ -18,7 +19,7 @@ msgstr "О программе Vidalia"
 
 msgctxt "AboutDialog"
 msgid "License"
-msgstr ""
+msgstr "Лицензия"
 
 msgctxt "AboutDialog"
 msgid "Vidalia 0.2.0"
@@ -26,7 +27,7 @@ msgstr "Vidalia"
 
 msgctxt "AboutDialog"
 msgid "Tor 0.2.0.32"
-msgstr ""
+msgstr "Tor 0.2.0.32"
 
 msgctxt "AboutDialog"
 msgid "Qt 4.4.2"
@@ -42,11 +43,11 @@ msgstr "Tor"
 
 msgctxt "AboutDialog"
 msgid "Qt"
-msgstr ""
+msgstr "Qt"
 
 msgctxt "AboutDialog"
 msgid "version"
-msgstr ""
+msgstr "версия"
 
 msgctxt "AdvancedPage"
 msgid "'%1' is not a valid IP address."
@@ -126,15 +127,15 @@ msgstr ":"
 
 msgctxt "AdvancedPage"
 msgid "Tor Configuration File"
-msgstr ""
+msgstr "Файл Конфигурации Tor"
 
 msgctxt "AdvancedPage"
 msgid "Start the Tor software with the specified configuration file (torrc)"
-msgstr ""
+msgstr "Запускать Tor с указаным файлом конфигурации (torrc)"
 
 msgctxt "AdvancedPage"
 msgid "Select path to your configuration file"
-msgstr ""
+msgstr "Укажите путь к вашему файлу конфигурации"
 
 msgctxt "AdvancedPage"
 msgid "Browse"
@@ -142,21 +143,24 @@ msgstr "Выбрать"
 
 msgctxt "AdvancedPage"
 msgid "Data Directory"
-msgstr ""
+msgstr "Директория хранения Данных"
 
 msgctxt "AdvancedPage"
 msgid "Store data for the Tor software in the following directory"
-msgstr ""
+msgstr "Хранить данные Tor в следующей директории"
 
 msgctxt "AdvancedPage"
 msgid "Select the directory used to store data for the Tor software"
-msgstr ""
+msgstr "Выберите директорию для хранения данных программы Tor"
 
 msgctxt "AdvancedPage"
 msgid "Vidalia was unable to remove the Tor service.\n"
 "\n"
 "You may need to remove it manually."
 msgstr ""
+"Vidalia не может удалить сервис Tor.\n"
+"\n"
+"Вам возможно придется удалить его \"вручную\"."
 
 msgctxt "AppearancePage"
 msgid "Language"
@@ -176,7 +180,7 @@ msgstr "Выберите стиль интерфейса"
 
 msgctxt "AppearancePage"
 msgid "Vidalia was unable to load the selected language translation."
-msgstr ""
+msgstr "Vidalia не может загрузить выбранный язык перевода."
 
 msgctxt "BandwidthGraph"
 msgid "Since:"
@@ -236,51 +240,51 @@ msgstr "Отменить"
 
 msgctxt "BridgeDownloader"
 msgid "Starting HTTPS bridge request..."
-msgstr ""
+msgstr "Начало HTTPS запроса на \"мост\" ..."
 
 msgctxt "BridgeDownloader"
 msgid "Connecting to %1:%2..."
-msgstr ""
+msgstr "Соединяемся с %1:%2..."
 
 msgctxt "BridgeDownloader"
 msgid "Sending an HTTPS request for bridges..."
-msgstr ""
+msgstr "Посылаем HTTPS запросы на \"мосты\" ..."
 
 msgctxt "BridgeDownloader"
 msgid "Downloading a list of bridges..."
-msgstr ""
+msgstr "Получаем список \"мостов\"...."
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Downloading Bridges"
-msgstr ""
+msgstr "Получаем \"мосты\""
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Unable to download bridges: %1"
-msgstr ""
+msgstr "Невозможно получить мосты: %1"
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Retrying bridge request..."
-msgstr ""
+msgstr "Повторный запрос \"мостов\"..."
 
 msgctxt "BridgeUsageDialog"
 msgid "Country"
-msgstr ""
+msgstr "Страна"
 
 msgctxt "BridgeUsageDialog"
 msgid "# Clients"
-msgstr ""
+msgstr "# Клиенты"
 
 msgctxt "BridgeUsageDialog"
 msgid "Clients from the following countries have used your relay since %1"
-msgstr ""
+msgstr "Клиенты из следующих стран используют ваш сервер с %1"
 
 msgctxt "BridgeUsageDialog"
 msgid "Bridge Usage Summary"
-msgstr ""
+msgstr "Суммарное Использование Моста"
 
 msgctxt "BridgeUsageDialog"
 msgid "Client Summary"
-msgstr ""
+msgstr "Суммарно о Клиенте"
 
 msgctxt "Circuit"
 msgid "New"
@@ -308,7 +312,7 @@ msgstr "Неизвестно"
 
 msgctxt "CircuitItem"
 msgid "<Path Empty>"
-msgstr "<Нет пути>"
+msgstr "<Путь не указан>"
 
 msgctxt "CircuitListWidget"
 msgid "Connection"
@@ -340,11 +344,11 @@ msgstr "Сеть"
 
 msgctxt "ConfigDialog"
 msgid "Sharing"
-msgstr ""
+msgstr "Разделение"
 
 msgctxt "ConfigDialog"
 msgid "Services"
-msgstr ""
+msgstr "Сервисы"
 
 msgctxt "ConfigDialog"
 msgid "Appearance"
@@ -388,15 +392,17 @@ msgstr "Нет соединения на сокете контроллера."
 
 msgctxt "ControlPasswordInputDialog"
 msgid "Password Required"
-msgstr ""
+msgstr "Введите Пароль"
 
 msgctxt "ControlPasswordInputDialog"
 msgid "Remember my password"
-msgstr ""
+msgstr "Запомнить мой пароль"
 
 msgctxt "ControlPasswordInputDialog"
 msgid "Vidalia has connected to a running Tor process that requires a password. Please enter your control password:"
 msgstr ""
+"Vidalia соединена с процессом Tor требующим пароль. Пожалуйста введите свой "
+"управляющий пароль:"
 
 msgctxt "ControlSocket"
 msgid "Control socket is not connected."
@@ -416,799 +422,799 @@ msgstr "Ошибочный ответ контроллера. [%1]"
 
 msgctxt "CountryInfo"
 msgid "Afghanistan"
-msgstr ""
+msgstr "Afghanistan"
 
 msgctxt "CountryInfo"
 msgid "Andorra"
-msgstr ""
+msgstr "Andorra"
 
 msgctxt "CountryInfo"
 msgid "Angola"
-msgstr ""
+msgstr "Angola"
 
 msgctxt "CountryInfo"
 msgid "Antigua & Barbuda"
-msgstr ""
+msgstr "Antigua & Barbuda"
 
 msgctxt "CountryInfo"
 msgid "Argentina"
-msgstr ""
+msgstr "Argentina"
 
 msgctxt "CountryInfo"
 msgid "Armenia"
-msgstr ""
+msgstr "Армения"
 
 msgctxt "CountryInfo"
 msgid "Australia"
-msgstr "О программе Vidalia"
+msgstr "Australia"
 
 msgctxt "CountryInfo"
 msgid "Azerbaijan"
-msgstr ""
+msgstr "Азербайджан"
 
 msgctxt "CountryInfo"
 msgid "Bahamas"
-msgstr ""
+msgstr "Bahamas"
 
 msgctxt "CountryInfo"
 msgid "Bangladesh"
-msgstr ""
+msgstr "Bangladesh"
 
 msgctxt "CountryInfo"
 msgid "Barbados"
-msgstr ""
+msgstr "Barbados"
 
 msgctxt "CountryInfo"
 msgid "Belarus"
-msgstr ""
+msgstr "Беларусь"
 
 msgctxt "CountryInfo"
 msgid "Belgium"
-msgstr ""
+msgstr "Belgium"
 
 msgctxt "CountryInfo"
 msgid "Belize"
-msgstr ""
+msgstr "Belize"
 
 msgctxt "CountryInfo"
 msgid "Bhutan"
-msgstr ""
+msgstr "Bhutan"
 
 msgctxt "CountryInfo"
 msgid "Bolivia"
-msgstr ""
+msgstr "Bolivia"
 
 msgctxt "CountryInfo"
 msgid "Bosnia & Herzegovina"
-msgstr ""
+msgstr "Bosnia & Herzegovina"
 
 msgctxt "CountryInfo"
 msgid "Botswana"
-msgstr ""
+msgstr "Botswana"
 
 msgctxt "CountryInfo"
 msgid "Brazil"
-msgstr ""
+msgstr "Brazil"
 
 msgctxt "CountryInfo"
 msgid "Brunei Darussalam"
-msgstr ""
+msgstr "Brunei Darussalam"
 
 msgctxt "CountryInfo"
 msgid "Bulgaria"
-msgstr ""
+msgstr "Bulgaria"
 
 msgctxt "CountryInfo"
 msgid "Burkina Faso"
-msgstr ""
+msgstr "Burkina Faso"
 
 msgctxt "CountryInfo"
 msgid "Burundi"
-msgstr ""
+msgstr "Burundi"
 
 msgctxt "CountryInfo"
 msgid "Cambodia"
-msgstr ""
+msgstr "Cambodia"
 
 msgctxt "CountryInfo"
 msgid "Cameroon"
-msgstr ""
+msgstr "Cameroon"
 
 msgctxt "CountryInfo"
 msgid "Canada"
-msgstr ""
+msgstr "Canada"
 
 msgctxt "CountryInfo"
 msgid "Cape Verde"
-msgstr ""
+msgstr "Cape Verde"
 
 msgctxt "CountryInfo"
 msgid "Central African Republic"
-msgstr ""
+msgstr "Central African Republic"
 
 msgctxt "CountryInfo"
 msgid "Chad"
-msgstr ""
+msgstr "Chad"
 
 msgctxt "CountryInfo"
 msgid "Chile"
-msgstr ""
+msgstr "Chile"
 
 msgctxt "CountryInfo"
 msgid "China"
-msgstr ""
+msgstr "China"
 
 msgctxt "CountryInfo"
 msgid "Colombia"
-msgstr ""
+msgstr "Colombia"
 
 msgctxt "CountryInfo"
 msgid "Comoros"
-msgstr ""
+msgstr "Comoros"
 
 msgctxt "CountryInfo"
 msgid "Congo, The Democratic Republic of the"
-msgstr ""
+msgstr "Congo, The Democratic Republic of the"
 
 msgctxt "CountryInfo"
 msgid "Congo"
-msgstr ""
+msgstr "Congo"
 
 msgctxt "CountryInfo"
 msgid "Costa Rica"
-msgstr ""
+msgstr "Costa Rica"
 
 msgctxt "CountryInfo"
 msgid "Cote dâIvoire"
-msgstr ""
+msgstr "Cote dâ Ivoire"
 
 msgctxt "CountryInfo"
 msgid "Croatia"
-msgstr ""
+msgstr "Croatia"
 
 msgctxt "CountryInfo"
 msgid "Cuba"
-msgstr ""
+msgstr "Cuba"
 
 msgctxt "CountryInfo"
 msgid "Cyprus"
-msgstr ""
+msgstr "Cyprus"
 
 msgctxt "CountryInfo"
 msgid "Czech Republic"
-msgstr ""
+msgstr "Czech Republic"
 
 msgctxt "CountryInfo"
 msgid "Denmark"
-msgstr ""
+msgstr "Denmark"
 
 msgctxt "CountryInfo"
 msgid "Djibouti"
-msgstr "О программе"
+msgstr "Djibouti"
 
 msgctxt "CountryInfo"
 msgid "Dominica"
-msgstr ""
+msgstr "Dominica"
 
 msgctxt "CountryInfo"
 msgid "Dominican Republic"
-msgstr ""
+msgstr "Dominican Republic"
 
 msgctxt "CountryInfo"
 msgid "Ecuador"
-msgstr ""
+msgstr "Ecuador"
 
 msgctxt "CountryInfo"
 msgid "Egypt"
-msgstr ""
+msgstr "Egypt"
 
 msgctxt "CountryInfo"
 msgid "El Salvador"
-msgstr ""
+msgstr "El Salvador"
 
 msgctxt "CountryInfo"
 msgid "Equatorial Guinea"
-msgstr ""
+msgstr "Equatorial Guinea"
 
 msgctxt "CountryInfo"
 msgid "Eritrea"
-msgstr ""
+msgstr "Eritrea"
 
 msgctxt "CountryInfo"
 msgid "Estonia"
-msgstr ""
+msgstr "Эстония"
 
 msgctxt "CountryInfo"
 msgid "France"
-msgstr "Отменить"
+msgstr "France"
 
 msgctxt "CountryInfo"
 msgid "Gabon"
-msgstr ""
+msgstr "Gabon"
 
 msgctxt "CountryInfo"
 msgid "Gambia"
-msgstr ""
+msgstr "Gambia"
 
 msgctxt "CountryInfo"
 msgid "Georgia"
-msgstr ""
+msgstr "Грузия"
 
 msgctxt "CountryInfo"
 msgid "Germany"
-msgstr ""
+msgstr "Germany"
 
 msgctxt "CountryInfo"
 msgid "Ghana"
-msgstr ""
+msgstr "Ghana"
 
 msgctxt "CountryInfo"
 msgid "Grenada"
-msgstr ""
+msgstr "Grenada"
 
 msgctxt "CountryInfo"
 msgid "Guatemala"
-msgstr ""
+msgstr "Guatemala"
 
 msgctxt "CountryInfo"
 msgid "Guinea"
-msgstr "Общие"
+msgstr "Guinea"
 
 msgctxt "CountryInfo"
 msgid "Guinea-Bissau"
-msgstr ""
+msgstr "Guinea-Bissau"
 
 msgctxt "CountryInfo"
 msgid "Guyana"
-msgstr ""
+msgstr "Guyana"
 
 msgctxt "CountryInfo"
 msgid "Hong Kong"
-msgstr ""
+msgstr "Hong Kong"
 
 msgctxt "CountryInfo"
 msgid "Haiti"
-msgstr ""
+msgstr "Haiti"
 
 msgctxt "CountryInfo"
 msgid "Honduras"
-msgstr ""
+msgstr "Honduras"
 
 msgctxt "CountryInfo"
 msgid "Israel"
-msgstr ""
+msgstr "Israel"
 
 msgctxt "CountryInfo"
 msgid "Italy"
-msgstr ""
+msgstr "Italy"
 
 msgctxt "CountryInfo"
 msgid "Jamaica"
-msgstr ""
+msgstr "Jamaica"
 
 msgctxt "CountryInfo"
 msgid "Japan"
-msgstr ""
+msgstr "Japan"
 
 msgctxt "CountryInfo"
 msgid "Jordan"
-msgstr ""
+msgstr "Jordan"
 
 msgctxt "CountryInfo"
 msgid "Kazakhstan"
-msgstr ""
+msgstr "Казахстан"
 
 msgctxt "CountryInfo"
 msgid "Kenya"
-msgstr ""
+msgstr "Kenya"
 
 msgctxt "CountryInfo"
 msgid "Kiribati"
-msgstr ""
+msgstr "Kiribati"
 
 msgctxt "CountryInfo"
 msgid "Kuwait"
-msgstr ""
+msgstr "Kuwait"
 
 msgctxt "CountryInfo"
 msgid "Kyrgyzstan"
-msgstr ""
+msgstr "Киргизстан"
 
 msgctxt "CountryInfo"
 msgid "Laos"
-msgstr ""
+msgstr "Laos"
 
 msgctxt "CountryInfo"
 msgid "Latvia"
-msgstr ""
+msgstr "Латвия"
 
 msgctxt "CountryInfo"
 msgid "Lebanon"
-msgstr ""
+msgstr "Lebanon"
 
 msgctxt "CountryInfo"
 msgid "Lesotho"
-msgstr ""
+msgstr "Lesotho"
 
 msgctxt "CountryInfo"
 msgid "Liberia"
-msgstr ""
+msgstr "Liberia"
 
 msgctxt "CountryInfo"
 msgid "Liechtenstein"
-msgstr ""
+msgstr "Liechtenstein"
 
 msgctxt "CountryInfo"
 msgid "Lithuania"
-msgstr ""
+msgstr "Литва"
 
 msgctxt "CountryInfo"
 msgid "Luxembourg"
-msgstr ""
+msgstr "Luxembourg"
 
 msgctxt "CountryInfo"
 msgid "Macedonia"
-msgstr ""
+msgstr "Macedonia"
 
 msgctxt "CountryInfo"
 msgid "Madagascar"
-msgstr ""
+msgstr "Madagascar"
 
 msgctxt "CountryInfo"
 msgid "Malawi"
-msgstr ""
+msgstr "Malawi"
 
 msgctxt "CountryInfo"
 msgid "Malaysia"
-msgstr ""
+msgstr "Malaysia"
 
 msgctxt "CountryInfo"
 msgid "Mali"
-msgstr ""
+msgstr "Mali"
 
 msgctxt "CountryInfo"
 msgid "Malta"
-msgstr ""
+msgstr "Malta"
 
 msgctxt "CountryInfo"
 msgid "Marshall Islands"
-msgstr ""
+msgstr "Marshall Islands"
 
 msgctxt "CountryInfo"
 msgid "Mauritania"
-msgstr ""
+msgstr "Mauritania"
 
 msgctxt "CountryInfo"
 msgid "Mauritius"
-msgstr ""
+msgstr "Mauritius"
 
 msgctxt "CountryInfo"
 msgid "Micronesia"
-msgstr ""
+msgstr "Micronesia"
 
 msgctxt "CountryInfo"
 msgid "Moldova"
-msgstr ""
+msgstr "Moldova"
 
 msgctxt "CountryInfo"
 msgid "Monaco"
-msgstr ""
+msgstr "Monaco"
 
 msgctxt "CountryInfo"
 msgid "Mongolia"
-msgstr ""
+msgstr "Mongolia"
 
 msgctxt "CountryInfo"
 msgid "Montenegro"
-msgstr ""
+msgstr "Montenegro"
 
 msgctxt "CountryInfo"
 msgid "Morocco"
-msgstr ""
+msgstr "Morocco"
 
 msgctxt "CountryInfo"
 msgid "Mozambique"
-msgstr ""
+msgstr "Mozambique"
 
 msgctxt "CountryInfo"
 msgid "Namibia"
-msgstr ""
+msgstr "Namibia"
 
 msgctxt "CountryInfo"
 msgid "Nauru"
-msgstr ""
+msgstr "Nauru"
 
 msgctxt "CountryInfo"
 msgid "Nepal"
-msgstr ""
+msgstr "Nepal"
 
 msgctxt "CountryInfo"
 msgid "Netherlands"
-msgstr ""
+msgstr "Netherlands"
 
 msgctxt "CountryInfo"
 msgid "New Zealand"
-msgstr ""
+msgstr "New Zealand"
 
 msgctxt "CountryInfo"
 msgid "Nicaragua"
-msgstr ""
+msgstr "Nicaragua"
 
 msgctxt "CountryInfo"
 msgid "Niger"
-msgstr ""
+msgstr "Niger"
 
 msgctxt "CountryInfo"
 msgid "Nigeria"
-msgstr ""
+msgstr "Nigeria"
 
 msgctxt "CountryInfo"
 msgid "Norway"
-msgstr "Вперёд"
+msgstr "Norway"
 
 msgctxt "CountryInfo"
 msgid "Oman"
-msgstr ""
+msgstr "Oman"
 
 msgctxt "CountryInfo"
 msgid "Pakistan"
-msgstr ""
+msgstr "Pakistan"
 
 msgctxt "CountryInfo"
 msgid "Palau"
-msgstr ""
+msgstr "Palau"
 
 msgctxt "CountryInfo"
 msgid "Palestine"
-msgstr ""
+msgstr "Palestine"
 
 msgctxt "CountryInfo"
 msgid "Panama"
-msgstr ""
+msgstr "Panama"
 
 msgctxt "CountryInfo"
 msgid "Papua New Guinea"
-msgstr ""
+msgstr "Papua New Guinea"
 
 msgctxt "CountryInfo"
 msgid "Paraguay"
-msgstr ""
+msgstr "Paraguay"
 
 msgctxt "CountryInfo"
 msgid "Peru"
-msgstr ""
+msgstr "Peru"
 
 msgctxt "CountryInfo"
 msgid "Philippines"
-msgstr ""
+msgstr "Philippines"
 
 msgctxt "CountryInfo"
 msgid "Poland"
-msgstr ""
+msgstr "Poland"
 
 msgctxt "CountryInfo"
 msgid "Portugal"
-msgstr "Порт:"
+msgstr "Portugal"
 
 msgctxt "CountryInfo"
 msgid "Qatar"
-msgstr ""
+msgstr "Qatar"
 
 msgctxt "CountryInfo"
 msgid "Romania"
-msgstr ""
+msgstr "Romania"
 
 msgctxt "CountryInfo"
 msgid "Russia"
-msgstr ""
+msgstr "Россия"
 
 msgctxt "CountryInfo"
 msgid "Rwanda"
-msgstr ""
+msgstr "Rwanda"
 
 msgctxt "CountryInfo"
 msgid "Saint Kitts & Nevis"
-msgstr ""
+msgstr "Saint Kitts & Nevis"
 
 msgctxt "CountryInfo"
 msgid "Saint Lucia"
-msgstr ""
+msgstr "Saint Lucia"
 
 msgctxt "CountryInfo"
 msgid "Saint Vincent & the Grenadines"
-msgstr ""
+msgstr "Saint Vincent & the Grenadines"
 
 msgctxt "CountryInfo"
 msgid "Samoa"
-msgstr ""
+msgstr "Samoa"
 
 msgctxt "CountryInfo"
 msgid "San Marino"
-msgstr ""
+msgstr "San Marino"
 
 msgctxt "CountryInfo"
 msgid "Sao Tome & Principe"
-msgstr ""
+msgstr "Sao Tome & Principe"
 
 msgctxt "CountryInfo"
 msgid "Saudi Arabia"
-msgstr ""
+msgstr "Saudi Arabia"
 
 msgctxt "CountryInfo"
 msgid "Senegal"
-msgstr "Общие"
+msgstr "Senegal"
 
 msgctxt "CountryInfo"
 msgid "Serbia"
-msgstr ""
+msgstr "Serbia"
 
 msgctxt "CountryInfo"
 msgid "Seychelles"
-msgstr ""
+msgstr "Seychelles"
 
 msgctxt "CountryInfo"
 msgid "Sierra Leone"
-msgstr ""
+msgstr "Sierra Leone"
 
 msgctxt "CountryInfo"
 msgid "Singapore"
-msgstr ""
+msgstr "Singapore"
 
 msgctxt "CountryInfo"
 msgid "Slovakia"
-msgstr ""
+msgstr "Slovakia"
 
 msgctxt "CountryInfo"
 msgid "Slovenia"
-msgstr ""
+msgstr "Slovenia"
 
 msgctxt "CountryInfo"
 msgid "Solomon Islands"
-msgstr ""
+msgstr "Solomon Islands"
 
 msgctxt "CountryInfo"
 msgid "Somalia"
-msgstr ""
+msgstr "Somalia"
 
 msgctxt "CountryInfo"
 msgid "South Africa"
-msgstr ""
+msgstr "South Africa"
 
 msgctxt "CountryInfo"
 msgid "Spain"
-msgstr ""
+msgstr "Spain"
 
 msgctxt "CountryInfo"
 msgid "Sri Lanka"
-msgstr ""
+msgstr "Sri Lanka"
 
 msgctxt "CountryInfo"
 msgid "Sudan"
-msgstr ""
+msgstr "Sudan"
 
 msgctxt "CountryInfo"
 msgid "Suriname"
-msgstr ""
+msgstr "Suriname"
 
 msgctxt "CountryInfo"
 msgid "Swaziland"
-msgstr ""
+msgstr "Swaziland"
 
 msgctxt "CountryInfo"
 msgid "Sweden"
-msgstr ""
+msgstr "Sweden"
 
 msgctxt "CountryInfo"
 msgid "Switzerland"
-msgstr ""
+msgstr "Switzerland"
 
 msgctxt "CountryInfo"
 msgid "Syria"
-msgstr ""
+msgstr "Syria"
 
 msgctxt "CountryInfo"
 msgid "Tajikistan"
-msgstr ""
+msgstr "Таджикистан"
 
 msgctxt "CountryInfo"
 msgid "Tanzania"
-msgstr ""
+msgstr "Tanzania"
 
 msgctxt "CountryInfo"
 msgid "Thailand"
-msgstr ""
+msgstr "Thailand"
 
 msgctxt "CountryInfo"
 msgid "Timor-Leste (East Timor)"
-msgstr ""
+msgstr "Timor-Leste (East Timor)"
 
 msgctxt "CountryInfo"
 msgid "Togo"
-msgstr ""
+msgstr "Togo"
 
 msgctxt "CountryInfo"
 msgid "Tonga"
-msgstr ""
+msgstr "Tonga"
 
 msgctxt "CountryInfo"
 msgid "Trinidad & Tobago"
-msgstr ""
+msgstr "Trinidad & Tobago"
 
 msgctxt "CountryInfo"
 msgid "Tunisia"
-msgstr ""
+msgstr "Tunisia"
 
 msgctxt "CountryInfo"
 msgid "Turkey"
-msgstr ""
+msgstr "Turkey"
 
 msgctxt "CountryInfo"
 msgid "Turkmenistan"
-msgstr ""
+msgstr "Туркменистан"
 
 msgctxt "CountryInfo"
 msgid "Tuvalu"
-msgstr ""
+msgstr "Tuvalu"
 
 msgctxt "CountryInfo"
 msgid "Uganda"
-msgstr ""
+msgstr "Uganda"
 
 msgctxt "CountryInfo"
 msgid "Ukraine"
-msgstr ""
+msgstr "Украина"
 
 msgctxt "CountryInfo"
 msgid "United Arab Emirates"
-msgstr ""
+msgstr "United Arab Emirates"
 
 msgctxt "CountryInfo"
 msgid "United Kingdom"
-msgstr ""
+msgstr "United Kingdom"
 
 msgctxt "CountryInfo"
 msgid "United States"
-msgstr ""
+msgstr "United States"
 
 msgctxt "CountryInfo"
 msgid "Uruguay"
-msgstr ""
+msgstr "Uruguay"
 
 msgctxt "CountryInfo"
 msgid "Uzbekistan"
-msgstr ""
+msgstr "Узбекистан"
 
 msgctxt "CountryInfo"
 msgid "Vanuatu"
-msgstr ""
+msgstr "Vanuatu"
 
 msgctxt "CountryInfo"
 msgid "Vatican"
-msgstr ""
+msgstr "Vatican"
 
 msgctxt "CountryInfo"
 msgid "Venezuela"
-msgstr ""
+msgstr "Venezuela"
 
 msgctxt "CountryInfo"
 msgid "Vietnam"
-msgstr ""
+msgstr "Vietnam"
 
 msgctxt "CountryInfo"
 msgid "Western Sahara"
-msgstr ""
+msgstr "Western Sahara"
 
 msgctxt "CountryInfo"
 msgid "Yemen"
-msgstr ""
+msgstr "Yemen"
 
 msgctxt "CountryInfo"
 msgid "Zambia"
-msgstr ""
+msgstr "Zambia"
 
 msgctxt "CountryInfo"
 msgid "Zimbabwe"
-msgstr ""
+msgstr "Zimbabwe"
 
 msgctxt "CountryInfo"
 msgid "Albania"
-msgstr ""
+msgstr "Albania"
 
 msgctxt "CountryInfo"
 msgid "Algeria"
-msgstr ""
+msgstr "Algeria"
 
 msgctxt "CountryInfo"
 msgid "Austria"
-msgstr ""
+msgstr "Austria"
 
 msgctxt "CountryInfo"
 msgid "Bahrain"
-msgstr ""
+msgstr "Bahrain"
 
 msgctxt "CountryInfo"
 msgid "Benin"
-msgstr ""
+msgstr "Benin"
 
 msgctxt "CountryInfo"
 msgid "Ethiopia"
-msgstr ""
+msgstr "Ethiopia"
 
 msgctxt "CountryInfo"
 msgid "Fiji"
-msgstr ""
+msgstr "Fiji"
 
 msgctxt "CountryInfo"
 msgid "Finland"
-msgstr ""
+msgstr "Finland"
 
 msgctxt "CountryInfo"
 msgid "Greece"
-msgstr ""
+msgstr "Greece"
 
 msgctxt "CountryInfo"
 msgid "Guam"
-msgstr ""
+msgstr "Guam"
 
 msgctxt "CountryInfo"
 msgid "Hungary"
-msgstr ""
+msgstr "Hungary"
 
 msgctxt "CountryInfo"
 msgid "Iceland"
-msgstr ""
+msgstr "Iceland"
 
 msgctxt "CountryInfo"
 msgid "India"
-msgstr ""
+msgstr "India"
 
 msgctxt "CountryInfo"
 msgid "Indonesia"
-msgstr ""
+msgstr "Indonesia"
 
 msgctxt "CountryInfo"
 msgid "Iran"
-msgstr ""
+msgstr "Iran"
 
 msgctxt "CountryInfo"
 msgid "Iraq"
-msgstr ""
+msgstr "Iraq"
 
 msgctxt "CountryInfo"
 msgid "Ireland"
-msgstr ""
+msgstr "Ireland"
 
 msgctxt "CountryInfo"
 msgid "Korea, North"
-msgstr ""
+msgstr "Korea, North"
 
 msgctxt "CountryInfo"
 msgid "Korea, South"
-msgstr ""
+msgstr "Korea, South"
 
 msgctxt "CountryInfo"
 msgid "Libya"
-msgstr ""
+msgstr "Libya"
 
 msgctxt "CountryInfo"
 msgid "Maldives"
-msgstr ""
+msgstr "Maldives"
 
 msgctxt "CountryInfo"
 msgid "Mexico"
-msgstr ""
+msgstr "Mexico"
 
 msgctxt "CountryInfo"
 msgid "Myanmar"
-msgstr ""
+msgstr "Myanmar"
 
 msgctxt "CountryInfo"
 msgid "Taiwan"
-msgstr ""
+msgstr "Taiwan"
 
 msgctxt "GeneralPage"
 msgid "Executables (*.exe)"
-msgstr "Исполняемые файлы (*.exe)"
+msgstr "Выполняемые (*.exe)"
 
 msgctxt "GeneralPage"
 msgid "Select Path to Tor"
@@ -1216,7 +1222,7 @@ msgstr "Выберите путь к Tor"
 
 msgctxt "GeneralPage"
 msgid "Select Proxy Executable"
-msgstr ""
+msgstr "Выберите исполняемый файл proxy"
 
 msgctxt "GeneralPage"
 msgid "You must specify the name of your Tor executable."
@@ -1224,11 +1230,11 @@ msgstr "Вы должны указать имя исполняемого фай�
 
 msgctxt "GeneralPage"
 msgid "The proxy arguments specified are not properly formatted."
-msgstr ""
+msgstr "Аргументы для proxy не соответствуют формату."
 
 msgctxt "GeneralPage"
 msgid "Start Vidalia when my system starts"
-msgstr ""
+msgstr "Запускать Vidalia при старте системы"
 
 msgctxt "GeneralPage"
 msgid "Browse"
@@ -1236,7 +1242,7 @@ msgstr "Выбрать"
 
 msgctxt "GeneralPage"
 msgid "Start the Tor software when Vidalia starts"
-msgstr ""
+msgstr "Стартовать Tor вместе с Vidalia"
 
 msgctxt "GeneralPage"
 msgid "Tor"
@@ -1244,27 +1250,27 @@ msgstr "Tor"
 
 msgctxt "GeneralPage"
 msgid "Proxy Application (optional)"
-msgstr ""
+msgstr "Программа proxy (опционально)"
 
 msgctxt "GeneralPage"
 msgid "Start a proxy application when Tor starts"
-msgstr ""
+msgstr "Запускать proxy вместе с Tor"
 
 msgctxt "GeneralPage"
 msgid "Proxy Application Arguments:"
-msgstr ""
+msgstr "Аргументы для proxy:"
 
 msgctxt "GeneralPage"
 msgid "Software Updates"
-msgstr ""
+msgstr "Обновление Программы"
 
 msgctxt "GeneralPage"
 msgid "Check for new software updates automatically"
-msgstr ""
+msgstr "Автоматически проверять наличие обновлений"
 
 msgctxt "GeneralPage"
 msgid "Check Now"
-msgstr ""
+msgstr "Проверить сейчас"
 
 msgctxt "GraphFrame"
 msgid "%1 KB/s"
@@ -1284,15 +1290,15 @@ msgstr "%1 ГБ"
 
 msgctxt "GraphFrame"
 msgid "Recv:"
-msgstr ""
+msgstr "Входящий:"
 
 msgctxt "GraphFrame"
 msgid "Sent:"
-msgstr ""
+msgstr "Исходящий:"
 
 msgctxt "HelpBrowser"
 msgid "Supplied XML file is not a valid Contents document."
-msgstr "Предоставленный XML не является корректным дрокументом Содержания."
+msgstr "Предоставленный XML не является корректным документом Содержания."
 
 msgctxt "HelpBrowser"
 msgid "Search reached end of document"
@@ -1416,43 +1422,48 @@ msgstr "Найденные документы"
 
 msgctxt "HelpBrowser"
 msgid "Error Loading Help Contents:"
-msgstr ""
+msgstr "Ошибка Загрузки Содержимого Справки:"
 
 msgctxt "HelpTextBrowser"
 msgid "Opening External Link"
-msgstr ""
+msgstr "Открытие Внешней Ссылки"
 
 msgctxt "HelpTextBrowser"
 msgid "Vidalia can open the link you selected in your default Web browser. If your browser is not currently configured to use Tor then the request will not be anonymous."
 msgstr ""
+"Vidalia может открыть выбраную ссылку в выбраном вами по умолчанию броузере. "
+"В случае если ваш броузер не настроен для работы с Tor запрос не будет "
+"анонимным."
 
 msgctxt "HelpTextBrowser"
 msgid "Do you want Vidalia to open the link in your Web browser?"
-msgstr ""
+msgstr "Хотите ли вы открыть ссылку в вашем Web Броузере?"
 
 msgctxt "HelpTextBrowser"
 msgid "Unable to Open Link"
-msgstr ""
+msgstr "Не возможно открыть ссылку"
 
 msgctxt "HelpTextBrowser"
 msgid "Vidalia was unable to open the selected link in your Web browser. You can still copy the URL and paste it into your browser."
 msgstr ""
+"Vidalia не может открыть выбраную ссылку в вашем Web Броузере. Вы можете "
+"скопировать ссылку в буфер обмена и вставить в адресную строку браузера."
 
 msgctxt "HelpTextBrowser"
 msgid "Error opening help file:"
-msgstr ""
+msgstr "Ошибка открытия файла помощи:"
 
 msgctxt "LicenseDialog"
 msgid "License Information"
-msgstr ""
+msgstr "Информация о лицензии"
 
 msgctxt "LicenseDialog"
 msgid "License"
-msgstr ""
+msgstr "Лицензия"
 
 msgctxt "LicenseDialog"
 msgid "Credits"
-msgstr ""
+msgstr "Кредитс"
 
 msgctxt "LogEvent"
 msgid "Debug"
@@ -1480,7 +1491,7 @@ msgstr "Неизвестно"
 
 msgctxt "MainWindow"
 msgid "Start Tor"
-msgstr ""
+msgstr "Запустить Tor"
 
 msgctxt "MainWindow"
 msgid "Exit"
@@ -1568,11 +1579,11 @@ msgstr "Vidalia не смогла запустить браузер указан
 
 msgctxt "MainWindow"
 msgid "Error starting IM client"
-msgstr ""
+msgstr "Ошибка запуска IM клиента"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured IM client"
-msgstr ""
+msgstr "Vidalia не может запустить сконфигурированый IM клиент"
 
 msgctxt "MainWindow"
 msgid "Error starting proxy server"
@@ -3290,4 +3301,3 @@ msgstr ""
 msgctxt "stringutil.h"
 msgid "%1 mins"
 msgstr ""
-
