@@ -1,3 +1,11 @@
+0.2.6   02-Nov-2009
+  o Remove the erroneous comma in the default vidalia.conf in the
+    Mac OS X drag-and-drop bundle, since we now dump whatever the
+    user types into a QString rather than parsing it into a
+    QStringList.
+  o Updated the Arabic, Russian and Slovenian translations.
+
+
 0.2.5   14-Oct-2009
   o Add support in the Network settings page for configuring the
     Socks4Proxy and Socks5Proxy* options that were added in
