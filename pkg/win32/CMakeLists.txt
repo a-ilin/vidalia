@@ -105,7 +105,7 @@ vidalia_add_nsh(vidalia_NSH
 vidalia_add_nsh(vidalia_NSH
   ro/vidalia_ro.po  ROMANIAN  ISO-8859-2)
 vidalia_add_nsh(vidalia_NSH
-  ru/vidalia_ru.po  RUSSIAN   KOI8-R)
+  ru/vidalia_ru.po  RUSSIAN   Windows-1251)
 vidalia_add_nsh(vidalia_NSH
   sv/vidalia_sv.po  SWEDISH   ISO-8859-1)
 #vidalia_add_nsh(vidalia_NSH

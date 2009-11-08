@@ -1,3 +1,8 @@
+0.2.7   xx-xxx-xxxx
+  o Change the vidalia_ru.nsh output encoding from KOI8-R to Windows-1251. 
+    (Ticket #527)
+
+
 0.2.6   02-Nov-2009
   o Remove the erroneous comma in the default vidalia.conf in the
     Mac OS X drag-and-drop bundle, since we now dump whatever the
