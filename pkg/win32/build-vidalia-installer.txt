@@ -68,7 +68,7 @@ to which you extract the OpenSSL source code.
 
 2.3. Configure the OpenSSL source code by running:
 
-    > perl Configure VC-WIN32 --prefix C:/OpenSSL/0.9.8k
+    > perl Configure VC-WIN32 --prefix=C:/OpenSSL/0.9.8k
 
 You can replace "C:/OpenSSL/0.9.8k" with another directory of your choice,
 but you MUST use forward slashes in the path.
