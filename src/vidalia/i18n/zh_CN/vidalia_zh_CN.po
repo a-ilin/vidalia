@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-05-19 23:56+0000\n"
-"PO-Revision-Date: 2009-09-06 14:46+0000\n"
-"Last-Translator: Ben <zhazhenzhong@gmail.com>\n"
+"PO-Revision-Date: 2009-11-28 04:09+0800\n"
+"Last-Translator: yfdyh000 <yfdyh000@Gmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -1401,6 +1401,8 @@ msgctxt "HelpBrowser"
 msgid "Help Topics"
 msgstr "帮助主题"
 
+# 是目录还是内容？
+#, fuzzy
 msgctxt "HelpBrowser"
 msgid "Contents"
 msgstr "目录"
@@ -1654,6 +1656,7 @@ msgid "read/write error"
 msgstr "读写错误"
 
 # do you mean no circuit available to route traffic? if so this is the right translation. 
+# do you mean no circuit available to route traffic? if so this is the right translation.
 msgctxt "MainWindow"
 msgid "no route to host"
 msgstr "没有可用链路"
@@ -2946,6 +2949,8 @@ msgid "Directory already in use by another service."
 msgstr "此目录已被其他服务占用。"
 
 # what do you mean? a table?  
+# what do you mean? a table?
+#, fuzzy
 msgctxt "ServicePage"
 msgid "Form"
 msgstr "Form"
