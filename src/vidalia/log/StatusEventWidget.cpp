@@ -380,7 +380,7 @@ StatusEventWidget::clockSkewed(int skew, const QString &source)
                                                            .arg(source);
   } else {
     description =
-      tr("Tor has determined th at your computer's clock may be set to %1 "
+      tr("Tor has determined that your computer's clock may be set to %1 "
          "seconds in the future compared to the source \"%2\". If "
          "your clock is not correct, Tor will not be able to function. Please "
          "verify your computer displays the correct time.").arg(qAbs(skew))
@@ -405,7 +405,7 @@ StatusEventWidget::dangerousPort(quint16 port, bool rejected)
          "make an unencrypted connection through Tor to port %1. Sending "
          "unencrypted information over the Tor network is dangerous and not "
          "recommended. For your protection, Tor has automatically closed this "
-         "connection.");
+         "connection.").arg(port);
   } else {
     icon = addBadgeToPixmap(":/images/48x48/applications-internet.png",
                             ":/images/32x32/security-medium.png");
@@ -413,7 +413,7 @@ StatusEventWidget::dangerousPort(quint16 port, bool rejected)
       tr("One of the applications on your computer may have attempted to "
          "make an unencrypted connection through Tor to port %1. Sending "
          "unencrypted information over the Tor network is dangerous and not "
-         "recommended.");
+         "recommended.").arg(port);
   }
 
   addNotification(icon, tr("Potentially Dangerous Connection!"), description);
