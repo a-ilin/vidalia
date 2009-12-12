@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-05-19 23:55+0000\n"
-"PO-Revision-Date: 2009-10-24 23:52+0000\n"
-"Last-Translator: Magid Hussein Musa <magidhmusa@hotmail.com>\n"
+"PO-Revision-Date: 2009-12-02 01:10-0700\n"
+"Last-Translator: Junk Male <junkm452@yahoo.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,17 +21,19 @@ msgctxt "AboutDialog"
 msgid "License"
 msgstr "ترخيص"
 
+# لا توجد تعليقات.
 msgctxt "AboutDialog"
 msgid "Vidalia 0.2.0"
-msgstr "Vidalia"
+msgstr "VidaliaAboutDialog"
 
 msgctxt "AboutDialog"
 msgid "Tor 0.2.0.32"
 msgstr "Tor 0.2.0.32"
 
+# لا توجد تعليقات.
 msgctxt "AboutDialog"
 msgid "Qt 4.4.2"
-msgstr "4.4.2"
+msgstr "4.4.2AboutDialog"
 
 msgctxt "AboutDialog"
 msgid "Vidalia"
@@ -420,27 +422,27 @@ msgstr "رد تحكم غير صحيح. [%1]"
 
 msgctxt "CountryInfo"
 msgid "Afghanistan"
-msgstr ""
+msgstr "أفغانستان"
 
 msgctxt "CountryInfo"
 msgid "Andorra"
-msgstr ""
+msgstr "أندورا"
 
 msgctxt "CountryInfo"
 msgid "Angola"
-msgstr ""
+msgstr "أنجولا"
 
 msgctxt "CountryInfo"
 msgid "Antigua & Barbuda"
-msgstr ""
+msgstr "أنتيغوا وبربودا"
 
 msgctxt "CountryInfo"
 msgid "Argentina"
-msgstr ""
+msgstr "الأرجنتين"
 
 msgctxt "CountryInfo"
 msgid "Armenia"
-msgstr ""
+msgstr "أرميني"
 
 msgctxt "CountryInfo"
 msgid "Australia"
@@ -460,131 +462,131 @@ msgstr "بنغلاديش"
 
 msgctxt "CountryInfo"
 msgid "Barbados"
-msgstr ""
+msgstr "باربادوس"
 
 msgctxt "CountryInfo"
 msgid "Belarus"
-msgstr ""
+msgstr "روسيا البيضاء"
 
 msgctxt "CountryInfo"
 msgid "Belgium"
-msgstr ""
+msgstr "بلجيكا"
 
 msgctxt "CountryInfo"
 msgid "Belize"
-msgstr ""
+msgstr "بليز"
 
 msgctxt "CountryInfo"
 msgid "Bhutan"
-msgstr ""
+msgstr "بوتان"
 
 msgctxt "CountryInfo"
 msgid "Bolivia"
-msgstr ""
+msgstr "بوليفيا"
 
 msgctxt "CountryInfo"
 msgid "Bosnia & Herzegovina"
-msgstr ""
+msgstr "البوسنة والهرسك"
 
 msgctxt "CountryInfo"
 msgid "Botswana"
-msgstr ""
+msgstr "بتسوان"
 
 msgctxt "CountryInfo"
 msgid "Brazil"
-msgstr ""
+msgstr "البرازيل"
 
 msgctxt "CountryInfo"
 msgid "Brunei Darussalam"
-msgstr ""
+msgstr "بروناي دار السلام"
 
 msgctxt "CountryInfo"
 msgid "Bulgaria"
-msgstr ""
+msgstr "بلغاريا"
 
 msgctxt "CountryInfo"
 msgid "Burkina Faso"
-msgstr ""
+msgstr "بوركينا فاسو"
 
 msgctxt "CountryInfo"
 msgid "Burundi"
-msgstr ""
+msgstr "بوروندي"
 
 msgctxt "CountryInfo"
 msgid "Cambodia"
-msgstr ""
+msgstr "كمبوديا"
 
 msgctxt "CountryInfo"
 msgid "Cameroon"
-msgstr ""
+msgstr "الكاميرون"
 
 msgctxt "CountryInfo"
 msgid "Canada"
-msgstr ""
+msgstr "كندا"
 
 msgctxt "CountryInfo"
 msgid "Cape Verde"
-msgstr ""
+msgstr "الرأس الأخضر"
 
 msgctxt "CountryInfo"
 msgid "Central African Republic"
-msgstr ""
+msgstr "جمهورية افريقيا الوسطى"
 
 msgctxt "CountryInfo"
 msgid "Chad"
-msgstr ""
+msgstr "تشاد"
 
 msgctxt "CountryInfo"
 msgid "Chile"
-msgstr ""
+msgstr "شيلي"
 
 msgctxt "CountryInfo"
 msgid "China"
-msgstr ""
+msgstr "الصين"
 
 msgctxt "CountryInfo"
 msgid "Colombia"
-msgstr ""
+msgstr "كولومبيا"
 
 msgctxt "CountryInfo"
 msgid "Comoros"
-msgstr ""
+msgstr "جزر القمر"
 
 msgctxt "CountryInfo"
 msgid "Congo, The Democratic Republic of the"
-msgstr ""
+msgstr "جمهورية الكونغو الديمقراطية ،"
 
 msgctxt "CountryInfo"
 msgid "Congo"
-msgstr ""
+msgstr "الكونغو"
 
 msgctxt "CountryInfo"
 msgid "Costa Rica"
-msgstr ""
+msgstr "كوستاريكا"
 
 msgctxt "CountryInfo"
 msgid "Cote dâIvoire"
-msgstr ""
+msgstr "كوت ديفوار"
 
 msgctxt "CountryInfo"
 msgid "Croatia"
-msgstr ""
+msgstr "كرواتيا"
 
 msgctxt "CountryInfo"
 msgid "Cuba"
-msgstr ""
+msgstr "كوبا"
 
 msgctxt "CountryInfo"
 msgid "Cyprus"
-msgstr ""
+msgstr "قبرص"
 
 msgctxt "CountryInfo"
 msgid "Czech Republic"
-msgstr ""
+msgstr "جمهورية التشيك"
 
 msgctxt "CountryInfo"
 msgid "Denmark"
-msgstr ""
+msgstr "الدنمارك"
 
 msgctxt "CountryInfo"
 msgid "Djibouti"
@@ -592,15 +594,15 @@ msgstr "جيبوتي"
 
 msgctxt "CountryInfo"
 msgid "Dominica"
-msgstr ""
+msgstr "دومينيكا"
 
 msgctxt "CountryInfo"
 msgid "Dominican Republic"
-msgstr ""
+msgstr "جمهورية الدومينيكان"
 
 msgctxt "CountryInfo"
 msgid "Ecuador"
-msgstr ""
+msgstr "الاكوادور"
 
 msgctxt "CountryInfo"
 msgid "Egypt"
@@ -608,11 +610,11 @@ msgstr "مصر"
 
 msgctxt "CountryInfo"
 msgid "El Salvador"
-msgstr ""
+msgstr "السلفادور"
 
 msgctxt "CountryInfo"
 msgid "Equatorial Guinea"
-msgstr ""
+msgstr "غينيا الاستوائية"
 
 msgctxt "CountryInfo"
 msgid "Eritrea"
@@ -620,7 +622,7 @@ msgstr "إريتريا"
 
 msgctxt "CountryInfo"
 msgid "Estonia"
-msgstr ""
+msgstr "استونيا"
 
 msgctxt "CountryInfo"
 msgid "France"
@@ -628,87 +630,87 @@ msgstr "فرنسا"
 
 msgctxt "CountryInfo"
 msgid "Gabon"
-msgstr ""
+msgstr "الغابون"
 
 msgctxt "CountryInfo"
 msgid "Gambia"
-msgstr ""
+msgstr "غامبيا"
 
 msgctxt "CountryInfo"
 msgid "Georgia"
-msgstr ""
+msgstr "جورجيا"
 
 msgctxt "CountryInfo"
 msgid "Germany"
-msgstr ""
+msgstr "ألمانيا"
 
 msgctxt "CountryInfo"
 msgid "Ghana"
-msgstr ""
+msgstr "غانا"
 
 msgctxt "CountryInfo"
 msgid "Grenada"
-msgstr ""
+msgstr "جرينادا"
 
 msgctxt "CountryInfo"
 msgid "Guatemala"
-msgstr ""
+msgstr "جواتيمالا"
 
 msgctxt "CountryInfo"
 msgid "Guinea"
-msgstr ""
+msgstr "غينيا"
 
 msgctxt "CountryInfo"
 msgid "Guinea-Bissau"
-msgstr ""
+msgstr "غينيا بيساو"
 
 msgctxt "CountryInfo"
 msgid "Guyana"
-msgstr ""
+msgstr "غيانا"
 
 msgctxt "CountryInfo"
 msgid "Hong Kong"
-msgstr ""
+msgstr "هونج كونج"
 
 msgctxt "CountryInfo"
 msgid "Haiti"
-msgstr ""
+msgstr "هايتي"
 
 msgctxt "CountryInfo"
 msgid "Honduras"
-msgstr ""
+msgstr "هندوراس"
 
 msgctxt "CountryInfo"
 msgid "Israel"
-msgstr ""
+msgstr "اسرائيل"
 
 msgctxt "CountryInfo"
 msgid "Italy"
-msgstr ""
+msgstr "ايطاليا"
 
 msgctxt "CountryInfo"
 msgid "Jamaica"
-msgstr ""
+msgstr "جامايكا"
 
 msgctxt "CountryInfo"
 msgid "Japan"
-msgstr ""
+msgstr "اليابان"
 
 msgctxt "CountryInfo"
 msgid "Jordan"
-msgstr ""
+msgstr "الأردن"
 
 msgctxt "CountryInfo"
 msgid "Kazakhstan"
-msgstr ""
+msgstr "كازاخستان"
 
 msgctxt "CountryInfo"
 msgid "Kenya"
-msgstr ""
+msgstr "كينيا"
 
 msgctxt "CountryInfo"
 msgid "Kiribati"
-msgstr ""
+msgstr "كيريباتي"
 
 msgctxt "CountryInfo"
 msgid "Kuwait"
@@ -716,15 +718,15 @@ msgstr "الكويت"
 
 msgctxt "CountryInfo"
 msgid "Kyrgyzstan"
-msgstr ""
+msgstr "قيرغيزستان"
 
 msgctxt "CountryInfo"
 msgid "Laos"
-msgstr ""
+msgstr "لاوس"
 
 msgctxt "CountryInfo"
 msgid "Latvia"
-msgstr ""
+msgstr "لاتفيا"
 
 msgctxt "CountryInfo"
 msgid "Lebanon"
@@ -732,11 +734,11 @@ msgstr "لبنان"
 
 msgctxt "CountryInfo"
 msgid "Lesotho"
-msgstr ""
+msgstr "ليسوتو"
 
 msgctxt "CountryInfo"
 msgid "Liberia"
-msgstr ""
+msgstr "ليبيريا"
 
 msgctxt "CountryInfo"
 msgid "Liechtenstein"

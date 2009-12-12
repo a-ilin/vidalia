@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-08-20 03:25+0000\n"
-"PO-Revision-Date: 2009-06-01 13:09+0000\n"
-"Last-Translator: Souheb Al.Zyuod <souheb.almala@gmail.com>\n"
+"PO-Revision-Date: 2009-12-09 15:52-0700\n"
+"Last-Translator: Anas Qtiesh <anasqtiesh@gmail.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -131,7 +131,7 @@ msgstr "تجاهل"
 #: qdialogbuttonbox.cpp:581
 msgctxt "QDialogButtonBox"
 msgid "Restore Defaults"
-msgstr "أرجاع الإعدادات الأصلية"
+msgstr "استرجاع الإعدادات الافتراضية"
 
 #: qdialogbuttonbox.cpp:552
 msgctxt "QDialogButtonBox"
@@ -146,7 +146,7 @@ msgstr "&موافق"
 #: qdirmodel.cpp:423
 msgctxt "QDirModel"
 msgid "Name"
-msgstr "الإسم"
+msgstr "الاسم"
 
 #: qdirmodel.cpp:424
 msgctxt "QDirModel"
@@ -246,12 +246,12 @@ msgstr "المجلد الرئيسي"
 #: ui_qfiledialog.h:284
 msgctxt "QFileDialog"
 msgid "List View"
-msgstr "معاينة بالقائمة"
+msgstr "عرض القائمة"
 
 #: ui_qfiledialog.h:289
 msgctxt "QFileDialog"
 msgid "Detail View"
-msgstr "معاينة مفصّلة"
+msgstr "عرض التفاصيل"
 
 #: ui_qfiledialog.h:292
 msgctxt "QFileDialog"
@@ -366,7 +366,7 @@ msgstr "إنظر في:"
 #: ui_qfiledialog.h:279
 msgctxt "QFileDialog"
 msgid "Create New Folder"
-msgstr "انشئ مجلد جديد"
+msgstr "أنشئ مجلد جديد"
 
 #: qfilesystemmodel.cpp:761
 msgctxt "QFileSystemModel"
@@ -379,13 +379,13 @@ msgid ""
 "<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer "
 "characters or no punctuations marks."
 msgstr ""
-"<b>لايمكن إستعمال الإسم \"%1\".</b>حاول إستخدام إسم أخر, مع تقليل عدد الأحرف "
-"ولا تستخدم علامات التنقيط<p>"
+"<b>لايمكن إستعمال الاسم \"%1\".</b>حاول إستخدام اسم أخر, مع تقليل عدد المحارف "
+"أو عدم استخدام علامات التنقيط<p>"
 
 #: qfilesystemmodel.cpp:832
 msgctxt "QFileSystemModel"
 msgid "Name"
-msgstr "الإسم"
+msgstr "الاسم"
 
 #: qfilesystemmodel.cpp:834
 msgctxt "QFileSystemModel"
@@ -410,7 +410,7 @@ msgstr "تاريخ التعديل"
 #: qfilesystemmodel_p.h:198
 msgctxt "QFileSystemModel"
 msgid "My Computer"
-msgstr "جهاز الكمبيوتر الخاص بي"
+msgstr "جهاز الكمبيوتر"
 
 #: qfilesystemmodel_p.h:200
 msgctxt "QFileSystemModel"
