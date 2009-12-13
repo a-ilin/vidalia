@@ -2,6 +2,8 @@
   o Remove the explicit palette set for the configuration dialog that
     prevented the dialog from inheriting colors from the user's current
     system theme. (Ticket #485. Patch from mkirk.)
+  o Correct the path to the badge pixmap used in time skew warning
+    messages. (Ticket #537. Patch from mkirk.)
   o Clean up a couple status event messages related to dangerous port
     warnings.
   o Change the vidalia_ru.nsh output encoding from KOI8-R to Windows-1251. 

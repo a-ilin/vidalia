@@ -369,7 +369,7 @@ StatusEventWidget::clockSkewed(int skew, const QString &source)
 
   QString description;
   QPixmap icon = addBadgeToPixmap(":/images/48x48/chronometer.png",
-                                  ":/images/48x48/dialog-warning.png");
+                                  ":/images/32x32/dialog-warning.png");
 
   if (skew < 0) {
     description =
