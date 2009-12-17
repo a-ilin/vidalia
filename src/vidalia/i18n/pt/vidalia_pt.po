@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-05-19 23:56+0000\n"
-"PO-Revision-Date: 2009-12-16 07:25-0700\n"
+"PO-Revision-Date: 2009-12-17 07:07-0700\n"
 "Last-Translator: Tiago Faria <gouki@goukihq.org>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -250,7 +250,7 @@ msgstr "A estabelecer ligação com %1:%2..."
 
 msgctxt "BridgeDownloader"
 msgid "Sending an HTTPS request for bridges..."
-msgstr "A enviar o pedido de brdiges HTTPS..."
+msgstr "A enviar o pedido de bridges HTTPS..."
 
 msgctxt "BridgeDownloader"
 msgid "Downloading a list of bridges..."
@@ -258,15 +258,15 @@ msgstr "A descarregar a lista de bridges..."
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Downloading Bridges"
-msgstr "A descarregar as Pontes (Bridges)"
+msgstr "A descarregar as bridges"
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Unable to download bridges: %1"
-msgstr "Impossível descarregar as pontes (bridges): %1"
+msgstr "Impossível descarregar as bridges: %1"
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Retrying bridge request..."
-msgstr "A tentar novamente o pedido de ponte (bridge)..."
+msgstr "A tentar novamente o pedido de bridge..."
 
 msgctxt "BridgeUsageDialog"
 msgid "Country"
@@ -278,15 +278,15 @@ msgstr "# Clientes"
 
 msgctxt "BridgeUsageDialog"
 msgid "Clients from the following countries have used your relay since %1"
-msgstr "Clientes do seguinte país tem utilizado o seu relay desde %1"
+msgstr "Clientes dos seguintes países tem utilizado o seu relay desde %1"
 
 msgctxt "BridgeUsageDialog"
 msgid "Bridge Usage Summary"
-msgstr ""
+msgstr "Resumo de utilização da bridge"
 
 msgctxt "BridgeUsageDialog"
 msgid "Client Summary"
-msgstr ""
+msgstr "Resumo de utilização do Cliente"
 
 msgctxt "Circuit"
 msgid "New"
@@ -298,7 +298,7 @@ msgstr "Conectado"
 
 msgctxt "Circuit"
 msgid "Building"
-msgstr "Conectando"
+msgstr "A estabelecer ligação"
 
 msgctxt "Circuit"
 msgid "Failed"
@@ -306,7 +306,7 @@ msgstr "Falhou"
 
 msgctxt "Circuit"
 msgid "Closed"
-msgstr "Desconectado"
+msgstr "Encerrado"
 
 msgctxt "Circuit"
 msgid "Unknown"
@@ -314,11 +314,11 @@ msgstr "Desconhecido"
 
 msgctxt "CircuitItem"
 msgid "<Path Empty>"
-msgstr "<Diretório Vazio>"
+msgstr "<Directório Vazio>"
 
 msgctxt "CircuitListWidget"
 msgid "Connection"
-msgstr "Conexão"
+msgstr "Ligação"
 
 msgctxt "CircuitListWidget"
 msgid "Status"
@@ -326,15 +326,15 @@ msgstr "Estado"
 
 msgctxt "CircuitListWidget"
 msgid "Zoom to Circuit"
-msgstr "Zoom no Circuito"
+msgstr "Zoom ao Circuito"
 
 msgctxt "CircuitListWidget"
 msgid "Close Circuit (Del)"
-msgstr "Fechar Ciruito (Del)"
+msgstr "Fechar Circuito (Del)"
 
 msgctxt "CircuitListWidget"
 msgid "Close Stream (Del)"
-msgstr ""
+msgstr "Fechar Transmissão (Del)"
 
 msgctxt "ConfigDialog"
 msgid "General"
@@ -342,15 +342,15 @@ msgstr "Geral"
 
 msgctxt "ConfigDialog"
 msgid "Network"
-msgstr ""
+msgstr "Rede"
 
 msgctxt "ConfigDialog"
 msgid "Sharing"
-msgstr ""
+msgstr "Partilha"
 
 msgctxt "ConfigDialog"
 msgid "Services"
-msgstr ""
+msgstr "Serviços"
 
 msgctxt "ConfigDialog"
 msgid "Appearance"
@@ -366,19 +366,19 @@ msgstr "Ajuda"
 
 msgctxt "ConfigDialog"
 msgid "Error Saving Settings"
-msgstr ""
+msgstr "Erro ao salvar as configurações"
 
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to save your %1 settings."
-msgstr ""
+msgstr "O Vidalia não conseguiu salvar as suas configurações de %1."
 
 msgctxt "ConfigDialog"
 msgid "Error Applying Settings"
-msgstr ""
+msgstr "Erro ao aplicar configurações "
 
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to apply your %1 settings to Tor."
-msgstr ""
+msgstr "O Vidalia não conseguiu aplicar as configurações %1 ao Tor."
 
 msgctxt "ConfigDialog"
 msgid "Settings"
@@ -386,35 +386,37 @@ msgstr "Configurações"
 
 msgctxt "ControlConnection"
 msgid "Vidalia was unable to connect to Tor. (%1)"
-msgstr ""
+msgstr "O Vidalia não conseguiu estabelecer uma ligação ao Tor. (%1)"
 
 msgctxt "ControlConnection"
 msgid "Control socket is not connected."
-msgstr "O soquete de controle não está conectado."
+msgstr "O socket de controle não está conectado."
 
 msgctxt "ControlPasswordInputDialog"
 msgid "Password Required"
-msgstr ""
+msgstr "Necessário palavra-passe"
 
 msgctxt "ControlPasswordInputDialog"
 msgid "Remember my password"
-msgstr ""
+msgstr "Memorizar a minha palavra-passe"
 
 msgctxt "ControlPasswordInputDialog"
 msgid "Vidalia has connected to a running Tor process that requires a password. Please enter your control password:"
 msgstr ""
+"O Vidalia estabeleceu uma ligação a um processo do Tor que necessita de "
+"palavra-passe. Por favor introduza a sua palavra-passe:"
 
 msgctxt "ControlSocket"
 msgid "Control socket is not connected."
-msgstr "O soquete de controle não está conectado."
+msgstr "O socket de controle não está conectado."
 
 msgctxt "ControlSocket"
 msgid "Error sending control command. [%1]"
-msgstr "Erro ao enviar um comando de controle. [%1]"
+msgstr "Erro ao enviar comando de controle. [%1]"
 
 msgctxt "ControlSocket"
 msgid "Socket disconnected while attempting to read a line of data."
-msgstr "Soquete desconectado enquanto tentava ler uma linha de dados."
+msgstr "Socket perdeu a ligação enquanto tentava ler uma linha de dados."
 
 msgctxt "ControlSocket"
 msgid "Invalid control reply. [%1]"
@@ -422,307 +424,329 @@ msgstr "Resposta de controle Inválida. [%1]"
 
 msgctxt "CountryInfo"
 msgid "Afghanistan"
-msgstr ""
+msgstr "Afeganistão"
 
 msgctxt "CountryInfo"
 msgid "Andorra"
-msgstr ""
+msgstr "Andorra"
 
 msgctxt "CountryInfo"
 msgid "Angola"
-msgstr ""
+msgstr "Angola"
 
+#, fuzzy
 msgctxt "CountryInfo"
 msgid "Antigua & Barbuda"
-msgstr ""
+msgstr "Antigua & Barbuda"
 
 msgctxt "CountryInfo"
 msgid "Argentina"
-msgstr ""
+msgstr "Argentina"
 
 msgctxt "CountryInfo"
 msgid "Armenia"
-msgstr ""
+msgstr "Arménia"
 
 msgctxt "CountryInfo"
 msgid "Australia"
-msgstr "Sobre o Vidalia"
+msgstr "Austrália"
 
 msgctxt "CountryInfo"
 msgid "Azerbaijan"
-msgstr ""
+msgstr "Azerbaijão "
 
 msgctxt "CountryInfo"
 msgid "Bahamas"
-msgstr ""
+msgstr "Bahamas"
 
 msgctxt "CountryInfo"
 msgid "Bangladesh"
-msgstr ""
+msgstr "Bangladeche "
 
 msgctxt "CountryInfo"
 msgid "Barbados"
-msgstr ""
+msgstr "Barbados"
 
+#, fuzzy
 msgctxt "CountryInfo"
 msgid "Belarus"
-msgstr ""
+msgstr "Belarus"
 
 msgctxt "CountryInfo"
 msgid "Belgium"
-msgstr ""
+msgstr "Bélgica"
 
 msgctxt "CountryInfo"
 msgid "Belize"
-msgstr ""
+msgstr "Belize"
 
+#, fuzzy
 msgctxt "CountryInfo"
 msgid "Bhutan"
-msgstr ""
+msgstr "Bhutan"
 
 msgctxt "CountryInfo"
 msgid "Bolivia"
-msgstr ""
+msgstr "Bolívia"
 
 msgctxt "CountryInfo"
 msgid "Bosnia & Herzegovina"
-msgstr ""
+msgstr "Bósnia & Herzegovina"
 
 msgctxt "CountryInfo"
 msgid "Botswana"
-msgstr ""
+msgstr "Botswana"
 
 msgctxt "CountryInfo"
 msgid "Brazil"
-msgstr ""
+msgstr "Brasil"
 
 msgctxt "CountryInfo"
 msgid "Brunei Darussalam"
-msgstr ""
+msgstr "Brunei Darussalam"
 
 msgctxt "CountryInfo"
 msgid "Bulgaria"
-msgstr ""
+msgstr "Bulgária"
 
+#, fuzzy
 msgctxt "CountryInfo"
 msgid "Burkina Faso"
-msgstr ""
+msgstr "Burkina Faso"
 
 msgctxt "CountryInfo"
 msgid "Burundi"
-msgstr ""
+msgstr "Burúndi "
 
 msgctxt "CountryInfo"
 msgid "Cambodia"
-msgstr ""
+msgstr "Cambodja "
 
+#, fuzzy
 msgctxt "CountryInfo"
 msgid "Cameroon"
-msgstr ""
+msgstr "Cameroon"
 
 msgctxt "CountryInfo"
 msgid "Canada"
-msgstr ""
+msgstr "Canadá"
 
 msgctxt "CountryInfo"
 msgid "Cape Verde"
-msgstr ""
+msgstr "Cabo Verde"
 
 msgctxt "CountryInfo"
 msgid "Central African Republic"
-msgstr ""
+msgstr "República central Africana"
 
+#, fuzzy
 msgctxt "CountryInfo"
 msgid "Chad"
-msgstr ""
+msgstr "Chad"
 
 msgctxt "CountryInfo"
 msgid "Chile"
-msgstr ""
+msgstr "Chile"
 
 msgctxt "CountryInfo"
 msgid "China"
-msgstr ""
+msgstr "China"
 
 msgctxt "CountryInfo"
 msgid "Colombia"
-msgstr ""
+msgstr "Colômbia"
 
+#, fuzzy
 msgctxt "CountryInfo"
 msgid "Comoros"
-msgstr ""
+msgstr "Comoros"
 
 msgctxt "CountryInfo"
 msgid "Congo, The Democratic Republic of the"
-msgstr ""
+msgstr "Congo, A República Democrática de"
 
 msgctxt "CountryInfo"
 msgid "Congo"
-msgstr ""
+msgstr "Congo"
 
 msgctxt "CountryInfo"
 msgid "Costa Rica"
-msgstr ""
+msgstr "Costa Rica"
 
+#, fuzzy
 msgctxt "CountryInfo"
 msgid "Cote dâIvoire"
-msgstr ""
+msgstr "Cote dâ Ivoire"
 
 msgctxt "CountryInfo"
 msgid "Croatia"
-msgstr ""
+msgstr "Croácia"
 
 msgctxt "CountryInfo"
 msgid "Cuba"
-msgstr ""
+msgstr "Cuba"
 
+#, fuzzy
 msgctxt "CountryInfo"
 msgid "Cyprus"
-msgstr ""
+msgstr "Cyprus"
 
 msgctxt "CountryInfo"
 msgid "Czech Republic"
-msgstr ""
+msgstr "República Checa"
 
 msgctxt "CountryInfo"
 msgid "Denmark"
-msgstr ""
+msgstr "Dinamarca"
 
+#, fuzzy
 msgctxt "CountryInfo"
 msgid "Djibouti"
-msgstr "Sobre"
+msgstr "Djibouti"
 
 msgctxt "CountryInfo"
 msgid "Dominica"
-msgstr ""
+msgstr "Domínica"
 
 msgctxt "CountryInfo"
 msgid "Dominican Republic"
-msgstr ""
+msgstr "República Dominicana"
 
 msgctxt "CountryInfo"
 msgid "Ecuador"
-msgstr ""
+msgstr "Equador"
 
 msgctxt "CountryInfo"
 msgid "Egypt"
-msgstr ""
+msgstr "Egipto "
 
 msgctxt "CountryInfo"
 msgid "El Salvador"
-msgstr ""
+msgstr "El Salvador"
 
+#, fuzzy
 msgctxt "CountryInfo"
 msgid "Equatorial Guinea"
-msgstr ""
+msgstr "Equatorial Guinea"
 
+#, fuzzy
 msgctxt "CountryInfo"
 msgid "Eritrea"
-msgstr ""
+msgstr "Eritrea"
 
 msgctxt "CountryInfo"
 msgid "Estonia"
-msgstr ""
+msgstr "Estónia"
 
 msgctxt "CountryInfo"
 msgid "France"
-msgstr "Cancelar"
+msgstr "França"
 
+#, fuzzy
 msgctxt "CountryInfo"
 msgid "Gabon"
-msgstr ""
+msgstr "Gabon"
 
+#, fuzzy
 msgctxt "CountryInfo"
 msgid "Gambia"
-msgstr ""
+msgstr "Gambia"
 
 msgctxt "CountryInfo"
 msgid "Georgia"
-msgstr ""
+msgstr "Geórgia "
 
 msgctxt "CountryInfo"
 msgid "Germany"
-msgstr ""
+msgstr "Alemanha"
 
+#, fuzzy
 msgctxt "CountryInfo"
 msgid "Ghana"
-msgstr ""
+msgstr "Ghana"
 
+#, fuzzy
 msgctxt "CountryInfo"
 msgid "Grenada"
-msgstr ""
+msgstr "Grenada"
 
 msgctxt "CountryInfo"
 msgid "Guatemala"
-msgstr ""
+msgstr "Guatemala"
 
+#, fuzzy
 msgctxt "CountryInfo"
 msgid "Guinea"
-msgstr "Geral"
+msgstr "Guinea"
 
 msgctxt "CountryInfo"
 msgid "Guinea-Bissau"
-msgstr ""
+msgstr "Guiné-Bissau"
 
+#, fuzzy
 msgctxt "CountryInfo"
 msgid "Guyana"
-msgstr ""
+msgstr "Guyana"
 
 msgctxt "CountryInfo"
 msgid "Hong Kong"
-msgstr ""
+msgstr "Hong Kong"
 
 msgctxt "CountryInfo"
 msgid "Haiti"
-msgstr ""
+msgstr "Haiti"
 
 msgctxt "CountryInfo"
 msgid "Honduras"
-msgstr ""
+msgstr "Honduras"
 
 msgctxt "CountryInfo"
 msgid "Israel"
-msgstr ""
+msgstr "Israel"
 
 msgctxt "CountryInfo"
 msgid "Italy"
-msgstr ""
+msgstr "Itália"
 
 msgctxt "CountryInfo"
 msgid "Jamaica"
-msgstr ""
+msgstr "Jamaica"
 
 msgctxt "CountryInfo"
 msgid "Japan"
-msgstr ""
+msgstr "Japão"
 
 msgctxt "CountryInfo"
 msgid "Jordan"
-msgstr ""
+msgstr "Jordânia"
 
 msgctxt "CountryInfo"
 msgid "Kazakhstan"
-msgstr ""
+msgstr "Cazaquistão"
 
 msgctxt "CountryInfo"
 msgid "Kenya"
-msgstr ""
+msgstr "Quénia"
 
+#, fuzzy
 msgctxt "CountryInfo"
 msgid "Kiribati"
-msgstr ""
+msgstr "Kiribati"
 
+#, fuzzy
 msgctxt "CountryInfo"
 msgid "Kuwait"
-msgstr ""
+msgstr "Kuwait"
 
+#, fuzzy
 msgctxt "CountryInfo"
 msgid "Kyrgyzstan"
-msgstr ""
+msgstr "Kyrgyzstan"
 
+#, fuzzy
 msgctxt "CountryInfo"
 msgid "Laos"
-msgstr ""
+msgstr "Laos"
 
 msgctxt "CountryInfo"
 msgid "Latvia"
