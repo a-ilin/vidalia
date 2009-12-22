@@ -191,6 +191,10 @@ the command line and follows the format "-D <var>:<type>=<value>
     
     Build Vidalia as a Universal binary.
 
+  -DOSX_TIGER_COMPAT=1
+  
+    Build Vidalia compatible with OS X Tiger (10.4).
+
   -DOSX_FORCE_32BIT=1
 
     Forces a 32-bit build. This is useful on platforms that default to 64-bit

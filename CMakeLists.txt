@@ -64,6 +64,14 @@ endif(MSVC_IDE)
   
 ## Define Vidalia-specific CMake options
 if (APPLE)
+  option(OSX_TIGER_COMPAT "Build an OS X 10.4 Compatible Vidalia." OFF)
+  if (OSX_TIGER_COMPAT)
+    set(CMAKE_EXE_LINKER_FLAGS "-mmacosx-version-min=10.4"
+      CACHE STRING "Flags used by the linker." FORCE)
+    set(CMAKE_OSX_SYSROOT "/Developer/SDKs/MacOSX10.4u.sdk"
+      CACHE STRING "isysroot used for universal binary support" FORCE)
+  endif(OSX_TIGER_COMPAT)
+
   option(OSX_FAT_BINARY "Build Vidalia as a Universal binary." OFF)
   if (OSX_FAT_BINARY)
     set(CMAKE_OSX_ARCHITECTURES "ppc;i386" 

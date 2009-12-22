@@ -8,6 +8,7 @@
     warnings.
   o Change the vidalia_ru.nsh output encoding from KOI8-R to Windows-1251. 
     (Ticket #527)
+  o Add an option for building an OS X 10.4 compatible binary.
 
 
 0.2.6   02-Nov-2009
