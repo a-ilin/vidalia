@@ -5,7 +5,9 @@ Libevent
    http://www.monkey.org/~provos/libevent/
 
 2. Configure libevent with the following:
-   ./configure --enable-static --disable-shared
+CFLAGS="-O -g -mmacosx-version-min=10.4 -isysroot /Developer/SDKs/MacOSX10.4u.sdk -arch i386" \
+LDFLAGS="-Wl,-syslibroot,/Developer/SDKs/MacOSX10.4u.sdk" \
+./configure --enable-static --disable-shared --disable-dependency-tracking
 
 3. Build and install libevent as follows:
    make && make install
@@ -57,9 +59,11 @@ Tor
    to specify it in Step 12.
 
 10. Configure Tor with the following:
-   ./configure --prefix=/Applications/Vidalia.app \
-               --bindir=/Applications/Vidalia.app/Contents/MacOS \
-               --sysconfdir=/Applications/Vidalia.app/Contents/Resources
+CFLAGS="-O -g -mmacosx-version-min=10.4 -isysroot /Developer/SDKs/MacOSX10.4u.sdk -arch i386" \
+LDFLAGS="-Wl,-syslibroot,/Developer/SDKs/MacOSX10.4u.sdk" \
+CONFDIR=/Applications/Vidalia.app \
+./configure --prefix=/Applications/Vidalia.app --bindir=/Applications/Vidalia.app \
+--sysconfdir=/Library --disable-dependency-tracking   
 
 11. Build Tor by running 'make'. You do NOT need to run 'make install'
 afterwards.
@@ -70,7 +74,7 @@ Vidalia
 
       export MACOSX_DEPLOYMENT_TARGET=10.4
       mkdir build && cd build
-      cmake -DOSX_FAT_BINARY=1 \
+      cmake -DOSX_TIGER_COMPAT=1 \
             -DTOR_SOURCE_DIR=<path-to-tor> \
             -DPOLIPO_SOURCE_DIR=<path-to-polipo> \
             -DTORBUTTON_XPI=<path-torbutton.xpi> ..
