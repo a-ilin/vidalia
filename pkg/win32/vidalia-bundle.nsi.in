@@ -24,7 +24,7 @@ SetCompressor /SOLID lzma
 
 !define TOR_NAME            "Tor"
 !define TOR_EXEC            "tor.exe"
-!define TOR_APPVERSION      "0.2.2.3-alpha"
+!define TOR_APPVERSION      "0.2.2.6-alpha"
 !define TOR_DESC            "${TOR_NAME} ${TOR_APPVERSION}"
 
 !define POLIPO_NAME        "Polipo"
@@ -33,7 +33,7 @@ SetCompressor /SOLID lzma
 !define POLIPO_DESC        "${POLIPO_NAME} ${POLIPO_APPVERSION}"
 
 !define TORBUTTON_NAME      "Torbutton"
-!define TORBUTTON_APPVERSION "1.2.2-fx"
+!define TORBUTTON_APPVERSION "1.2.4-fx"
 !define TORBUTTON_DESC      "${TORBUTTON_NAME} ${TORBUTTON_APPVERSION}"
 
 !define BUNDLE_NAME         "Vidalia Bundle"
