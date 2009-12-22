@@ -75,6 +75,7 @@ Vidalia
       export MACOSX_DEPLOYMENT_TARGET=10.4
       mkdir build && cd build
       cmake -DOSX_TIGER_COMPAT=1 \
+            -DQT_QMAKE_EXECUTABLE=/path/to/qmake \
             -DTOR_SOURCE_DIR=<path-to-tor> \
             -DPOLIPO_SOURCE_DIR=<path-to-polipo> \
             -DTORBUTTON_XPI=<path-torbutton.xpi> ..
