@@ -99,7 +99,7 @@ if (USE_BREAKPAD)
   include(${CMAKE_SOURCE_DIR}/cmake/FindBreakpad.cmake)
 endif(USE_BREAKPAD)
 
-## Automatic osftware update is optional (disabled by default)
+## Automatic software update is optional (disabled by default)
 if (WIN32)
   option(USE_AUTOUPDATE "Enable automatic software update support." OFF)
 endif(WIN32)
