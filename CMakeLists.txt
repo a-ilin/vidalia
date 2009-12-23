@@ -70,6 +70,8 @@ if (APPLE)
       CACHE STRING "Flags used by the linker." FORCE)
     set(CMAKE_OSX_SYSROOT "/Developer/SDKs/MacOSX10.4u.sdk"
       CACHE STRING "isysroot used for universal binary support" FORCE)
+    set(CMAKE_OSX_ARCHITECTURES "i386" 
+        CACHE STRING "OS X build architectures" FORCE)
   endif(OSX_TIGER_COMPAT)
 
   option(OSX_FAT_BINARY "Build Vidalia as a Universal binary." OFF)
