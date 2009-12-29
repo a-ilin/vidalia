@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-05-19 23:55+0000\n"
-"PO-Revision-Date: 2009-12-02 01:10-0700\n"
+"PO-Revision-Date: 2009-12-19 01:18-0700\n"
 "Last-Translator: Junk Male <junkm452@yahoo.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -261,7 +261,7 @@ msgstr "جاري تحميل الـbridges"
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Unable to download bridges: %1"
-msgstr ""
+msgstr "غير قادر على تحميل bridges: %1"
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Retrying bridge request..."
@@ -742,27 +742,27 @@ msgstr "ليبيريا"
 
 msgctxt "CountryInfo"
 msgid "Liechtenstein"
-msgstr ""
+msgstr "ليختنشتاين"
 
 msgctxt "CountryInfo"
 msgid "Lithuania"
-msgstr ""
+msgstr "ليتوانيا"
 
 msgctxt "CountryInfo"
 msgid "Luxembourg"
-msgstr ""
+msgstr "لوكسمبورج"
 
 msgctxt "CountryInfo"
 msgid "Macedonia"
-msgstr ""
+msgstr "مقدونيا"
 
 msgctxt "CountryInfo"
 msgid "Madagascar"
-msgstr ""
+msgstr "مدغشقر"
 
 msgctxt "CountryInfo"
 msgid "Malawi"
-msgstr ""
+msgstr "مالاوي"
 
 msgctxt "CountryInfo"
 msgid "Malaysia"
@@ -770,15 +770,15 @@ msgstr "ماليزيا"
 
 msgctxt "CountryInfo"
 msgid "Mali"
-msgstr ""
+msgstr "مالي"
 
 msgctxt "CountryInfo"
 msgid "Malta"
-msgstr ""
+msgstr "مالطا"
 
 msgctxt "CountryInfo"
 msgid "Marshall Islands"
-msgstr ""
+msgstr "جزر مارشال"
 
 msgctxt "CountryInfo"
 msgid "Mauritania"
@@ -786,27 +786,27 @@ msgstr "موريتانيا"
 
 msgctxt "CountryInfo"
 msgid "Mauritius"
-msgstr ""
+msgstr "موريشيوس"
 
 msgctxt "CountryInfo"
 msgid "Micronesia"
-msgstr ""
+msgstr "ميكرونيزيا"
 
 msgctxt "CountryInfo"
 msgid "Moldova"
-msgstr ""
+msgstr "مولدافيا"
 
 msgctxt "CountryInfo"
 msgid "Monaco"
-msgstr ""
+msgstr "موناكو"
 
 msgctxt "CountryInfo"
 msgid "Mongolia"
-msgstr ""
+msgstr "منغوليا"
 
 msgctxt "CountryInfo"
 msgid "Montenegro"
-msgstr ""
+msgstr "الجبل الأسود"
 
 msgctxt "CountryInfo"
 msgid "Morocco"
@@ -814,31 +814,31 @@ msgstr "المغرب"
 
 msgctxt "CountryInfo"
 msgid "Mozambique"
-msgstr ""
+msgstr "موزامبيق"
 
 msgctxt "CountryInfo"
 msgid "Namibia"
-msgstr ""
+msgstr "ناميبيا"
 
 msgctxt "CountryInfo"
 msgid "Nauru"
-msgstr ""
+msgstr "ناورو"
 
 msgctxt "CountryInfo"
 msgid "Nepal"
-msgstr ""
+msgstr "نيبال"
 
 msgctxt "CountryInfo"
 msgid "Netherlands"
-msgstr ""
+msgstr "هولندا"
 
 msgctxt "CountryInfo"
 msgid "New Zealand"
-msgstr ""
+msgstr "نيوزيلندا"
 
 msgctxt "CountryInfo"
 msgid "Nicaragua"
-msgstr ""
+msgstr "نيكاراجوا"
 
 msgctxt "CountryInfo"
 msgid "Niger"
@@ -850,7 +850,7 @@ msgstr "نيجيريا"
 
 msgctxt "CountryInfo"
 msgid "Norway"
-msgstr ""
+msgstr "النرويج"
 
 msgctxt "CountryInfo"
 msgid "Oman"
@@ -862,7 +862,7 @@ msgstr "باكستان"
 
 msgctxt "CountryInfo"
 msgid "Palau"
-msgstr ""
+msgstr "بالاو"
 
 msgctxt "CountryInfo"
 msgid "Palestine"
@@ -870,31 +870,31 @@ msgstr "فلسطين"
 
 msgctxt "CountryInfo"
 msgid "Panama"
-msgstr ""
+msgstr "بنما"
 
 msgctxt "CountryInfo"
 msgid "Papua New Guinea"
-msgstr ""
+msgstr "بابوا غينيا الجديدة"
 
 msgctxt "CountryInfo"
 msgid "Paraguay"
-msgstr ""
+msgstr "باراجواي"
 
 msgctxt "CountryInfo"
 msgid "Peru"
-msgstr ""
+msgstr "بيرو"
 
 msgctxt "CountryInfo"
 msgid "Philippines"
-msgstr ""
+msgstr "الفلبين"
 
 msgctxt "CountryInfo"
 msgid "Poland"
-msgstr ""
+msgstr "بولندا"
 
 msgctxt "CountryInfo"
 msgid "Portugal"
-msgstr ""
+msgstr "البرتغال"
 
 msgctxt "CountryInfo"
 msgid "Qatar"
@@ -902,43 +902,43 @@ msgstr "قطر"
 
 msgctxt "CountryInfo"
 msgid "Romania"
-msgstr ""
+msgstr "رومانيا"
 
 msgctxt "CountryInfo"
 msgid "Russia"
-msgstr ""
+msgstr "روسيا"
 
 msgctxt "CountryInfo"
 msgid "Rwanda"
-msgstr ""
+msgstr "رواندا"
 
 msgctxt "CountryInfo"
 msgid "Saint Kitts & Nevis"
-msgstr ""
+msgstr "سانت كيتس ونيفيس"
 
 msgctxt "CountryInfo"
 msgid "Saint Lucia"
-msgstr ""
+msgstr "سانت لوسيا"
 
 msgctxt "CountryInfo"
 msgid "Saint Vincent & the Grenadines"
-msgstr ""
+msgstr "سانت فنسنت وغرينادين"
 
 msgctxt "CountryInfo"
 msgid "Samoa"
-msgstr ""
+msgstr "ساموا"
 
 msgctxt "CountryInfo"
 msgid "San Marino"
-msgstr ""
+msgstr "سان مارينو"
 
 msgctxt "CountryInfo"
 msgid "Sao Tome & Principe"
-msgstr ""
+msgstr "ساوتومي وبرنسيب"
 
 msgctxt "CountryInfo"
 msgid "Saudi Arabia"
-msgstr ""
+msgstr "المملكة العربية السعودية"
 
 msgctxt "CountryInfo"
 msgid "Senegal"
@@ -946,15 +946,15 @@ msgstr "السنغال"
 
 msgctxt "CountryInfo"
 msgid "Serbia"
-msgstr ""
+msgstr "صربيا"
 
 msgctxt "CountryInfo"
 msgid "Seychelles"
-msgstr ""
+msgstr "سيشيل"
 
 msgctxt "CountryInfo"
 msgid "Sierra Leone"
-msgstr ""
+msgstr "سيراليون"
 
 msgctxt "CountryInfo"
 msgid "Singapore"
@@ -962,15 +962,15 @@ msgstr "سنغافورة"
 
 msgctxt "CountryInfo"
 msgid "Slovakia"
-msgstr ""
+msgstr "سلوفاكيا"
 
 msgctxt "CountryInfo"
 msgid "Slovenia"
-msgstr ""
+msgstr "سلوفينيا"
 
 msgctxt "CountryInfo"
 msgid "Solomon Islands"
-msgstr ""
+msgstr "جزر سليمان"
 
 msgctxt "CountryInfo"
 msgid "Somalia"
@@ -978,15 +978,15 @@ msgstr "الصومال"
 
 msgctxt "CountryInfo"
 msgid "South Africa"
-msgstr ""
+msgstr "جنوب إفريقيا"
 
 msgctxt "CountryInfo"
 msgid "Spain"
-msgstr ""
+msgstr "أسبانيا"
 
 msgctxt "CountryInfo"
 msgid "Sri Lanka"
-msgstr ""
+msgstr "سريلانكا"
 
 msgctxt "CountryInfo"
 msgid "Sudan"
@@ -994,19 +994,19 @@ msgstr "السودان"
 
 msgctxt "CountryInfo"
 msgid "Suriname"
-msgstr ""
+msgstr "سورينام"
 
 msgctxt "CountryInfo"
 msgid "Swaziland"
-msgstr ""
+msgstr "سوازيلاند"
 
 msgctxt "CountryInfo"
 msgid "Sweden"
-msgstr ""
+msgstr "السويد"
 
 msgctxt "CountryInfo"
 msgid "Switzerland"
-msgstr ""
+msgstr "سويسرا"
 
 msgctxt "CountryInfo"
 msgid "Syria"
@@ -1018,27 +1018,27 @@ msgstr "طاجيكستان"
 
 msgctxt "CountryInfo"
 msgid "Tanzania"
-msgstr ""
+msgstr "تنزانيا"
 
 msgctxt "CountryInfo"
 msgid "Thailand"
-msgstr ""
+msgstr "تايلاند"
 
 msgctxt "CountryInfo"
 msgid "Timor-Leste (East Timor)"
-msgstr ""
+msgstr "تيمور الشرقية (تيمور الشرقية)"
 
 msgctxt "CountryInfo"
 msgid "Togo"
-msgstr ""
+msgstr "توغو"
 
 msgctxt "CountryInfo"
 msgid "Tonga"
-msgstr ""
+msgstr "تونجا"
 
 msgctxt "CountryInfo"
 msgid "Trinidad & Tobago"
-msgstr ""
+msgstr "ترينيداد وتوباجو"
 
 msgctxt "CountryInfo"
 msgid "Tunisia"
@@ -1050,19 +1050,19 @@ msgstr "تركيا"
 
 msgctxt "CountryInfo"
 msgid "Turkmenistan"
-msgstr ""
+msgstr "تركمانستان"
 
 msgctxt "CountryInfo"
 msgid "Tuvalu"
-msgstr ""
+msgstr "توفالو"
 
 msgctxt "CountryInfo"
 msgid "Uganda"
-msgstr ""
+msgstr "أوغندا"
 
 msgctxt "CountryInfo"
 msgid "Ukraine"
-msgstr ""
+msgstr "أوكرانيا"
 
 msgctxt "CountryInfo"
 msgid "United Arab Emirates"
@@ -1070,35 +1070,35 @@ msgstr "الإمارات العربية المتحدة"
 
 msgctxt "CountryInfo"
 msgid "United Kingdom"
-msgstr ""
+msgstr "المملكة المتحدة"
 
 msgctxt "CountryInfo"
 msgid "United States"
-msgstr ""
+msgstr "الولايات المتحدة الأمريكية"
 
 msgctxt "CountryInfo"
 msgid "Uruguay"
-msgstr ""
+msgstr "أوروغواي"
 
 msgctxt "CountryInfo"
 msgid "Uzbekistan"
-msgstr ""
+msgstr "أوزبكستان"
 
 msgctxt "CountryInfo"
 msgid "Vanuatu"
-msgstr ""
+msgstr "فانواتو"
 
 msgctxt "CountryInfo"
 msgid "Vatican"
-msgstr ""
+msgstr "الفاتيكان"
 
 msgctxt "CountryInfo"
 msgid "Venezuela"
-msgstr ""
+msgstr "فنزويلا"
 
 msgctxt "CountryInfo"
 msgid "Vietnam"
-msgstr ""
+msgstr "فيتنام"
 
 msgctxt "CountryInfo"
 msgid "Western Sahara"
@@ -1110,11 +1110,11 @@ msgstr "اليمن"
 
 msgctxt "CountryInfo"
 msgid "Zambia"
-msgstr ""
+msgstr "زامبيا"
 
 msgctxt "CountryInfo"
 msgid "Zimbabwe"
-msgstr ""
+msgstr "زيمبابوي"
 
 msgctxt "CountryInfo"
 msgid "Albania"
@@ -1126,7 +1126,7 @@ msgstr "الجزائر"
 
 msgctxt "CountryInfo"
 msgid "Austria"
-msgstr ""
+msgstr "النمسا"
 
 msgctxt "CountryInfo"
 msgid "Bahrain"
@@ -1134,39 +1134,39 @@ msgstr "البحرين"
 
 msgctxt "CountryInfo"
 msgid "Benin"
-msgstr ""
+msgstr "بنين"
 
 msgctxt "CountryInfo"
 msgid "Ethiopia"
-msgstr ""
+msgstr "اثيوبيا"
 
 msgctxt "CountryInfo"
 msgid "Fiji"
-msgstr ""
+msgstr "فيجي"
 
 msgctxt "CountryInfo"
 msgid "Finland"
-msgstr ""
+msgstr "فنلندا"
 
 msgctxt "CountryInfo"
 msgid "Greece"
-msgstr ""
+msgstr "اليونان"
 
 msgctxt "CountryInfo"
 msgid "Guam"
-msgstr ""
+msgstr "غوام"
 
 msgctxt "CountryInfo"
 msgid "Hungary"
-msgstr ""
+msgstr "المجر"
 
 msgctxt "CountryInfo"
 msgid "Iceland"
-msgstr ""
+msgstr "أيسلندا"
 
 msgctxt "CountryInfo"
 msgid "India"
-msgstr ""
+msgstr "الهند"
 
 msgctxt "CountryInfo"
 msgid "Indonesia"
@@ -1182,15 +1182,15 @@ msgstr "العراق"
 
 msgctxt "CountryInfo"
 msgid "Ireland"
-msgstr ""
+msgstr "أيرلاندا"
 
 msgctxt "CountryInfo"
 msgid "Korea, North"
-msgstr ""
+msgstr "كوريا الشمالية"
 
 msgctxt "CountryInfo"
 msgid "Korea, South"
-msgstr ""
+msgstr "كوريا الجنوبية"
 
 msgctxt "CountryInfo"
 msgid "Libya"
@@ -1198,19 +1198,19 @@ msgstr "ليبيا"
 
 msgctxt "CountryInfo"
 msgid "Maldives"
-msgstr ""
+msgstr "جزر المالديف"
 
 msgctxt "CountryInfo"
 msgid "Mexico"
-msgstr ""
+msgstr "المكسيك"
 
 msgctxt "CountryInfo"
 msgid "Myanmar"
-msgstr ""
+msgstr "ميانمار"
 
 msgctxt "CountryInfo"
 msgid "Taiwan"
-msgstr ""
+msgstr "تايوان"
 
 msgctxt "GeneralPage"
 msgid "Executables (*.exe)"
@@ -1422,7 +1422,7 @@ msgstr "الوثائق الموجودة"
 
 msgctxt "HelpBrowser"
 msgid "Error Loading Help Contents:"
-msgstr ""
+msgstr "الخطأ تحميل محتويات التعليمات :"
 
 msgctxt "HelpTextBrowser"
 msgid "Opening External Link"
@@ -1431,26 +1431,30 @@ msgstr "فتح رابط خارجي"
 msgctxt "HelpTextBrowser"
 msgid "Vidalia can open the link you selected in your default Web browser. If your browser is not currently configured to use Tor then the request will not be anonymous."
 msgstr ""
+"فيداليا يمكن فتح الارتباط الذي حددته في مستعرض ويب الافتراضي. إذا لم يكن "
+"متصفحك حاليا تهيئتها لاستخدام تور ثم طلب لن تكون مجهولة المصدر."
 
 msgctxt "HelpTextBrowser"
 msgid "Do you want Vidalia to open the link in your Web browser?"
-msgstr ""
+msgstr "هل تريد فيداليا لفتح الارتباط في مستعرض الويب الخاص بك؟"
 
 msgctxt "HelpTextBrowser"
 msgid "Unable to Open Link"
-msgstr ""
+msgstr "غير قادر على فتح الرابط"
 
 msgctxt "HelpTextBrowser"
 msgid "Vidalia was unable to open the selected link in your Web browser. You can still copy the URL and paste it into your browser."
 msgstr ""
+"فيداليا لم يتمكن من فتح الارتباط المحدد في مستعرض ويب. مازال يمكنك نسخ "
+"العنوان ولصقه في المتصفح."
 
 msgctxt "HelpTextBrowser"
 msgid "Error opening help file:"
-msgstr ""
+msgstr "مساعدة خطأ في فتح الملف :"
 
 msgctxt "LicenseDialog"
 msgid "License Information"
-msgstr ""
+msgstr "معلومات الترخيص"
 
 msgctxt "LicenseDialog"
 msgid "License"
@@ -1458,7 +1462,7 @@ msgstr "ترخيص"
 
 msgctxt "LicenseDialog"
 msgid "Credits"
-msgstr ""
+msgstr "ائتمانات"
 
 msgctxt "LogEvent"
 msgid "Debug"
@@ -1486,7 +1490,7 @@ msgstr "غير معلوم"
 
 msgctxt "MainWindow"
 msgid "Start Tor"
-msgstr ""
+msgstr "يبدأ Tor"
 
 msgctxt "MainWindow"
 msgid "Exit"
