@@ -56,7 +56,7 @@
 
 #ifdef HAVE_LIMITS_H
 #include <limits.h>
-#elif HAVE_SYS_LIMITS_H
+#elif defined(HAVE_SYS_LIMITS_H)
 #include <sys/limits.h>
 #endif
 

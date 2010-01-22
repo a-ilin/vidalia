@@ -4,6 +4,7 @@
     system theme. (Ticket #485. Patch from mkirk.)
   o Correct the path to the badge pixmap used in time skew warning
     messages. (Ticket #537. Patch from mkirk.)
+  o Fix compilation on Debian GNU/kFreeBSD. Patch from dererk.
   o Clean up a couple status event messages related to dangerous port
     warnings.
   o Change the vidalia_ru.nsh output encoding from KOI8-R to Windows-1251. 
