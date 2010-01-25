@@ -1,4 +1,4 @@
-0.2.7   xx-xxx-xxxx
+0.2.7   25-Jan-2009
   o Remove the explicit palette set for the configuration dialog that
     prevented the dialog from inheriting colors from the user's current
     system theme. (Ticket #485. Patch from mkirk.)
