@@ -1,4 +1,0 @@
-version=3
-# avoid evaluating development releases (0.2.x branches)
-opts=uversionmangle=s/0\.2\./~pre/ \
-	http://www.torproject.org/vidalia/dist/vidalia-(.*)\.tar\.gz
