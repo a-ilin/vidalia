@@ -24,8 +24,8 @@ Instructions
 For information about building Debian and Ubuntu packages, please consult 
 the following documentation:
 
-1. http://wiki.debian.org/DebianPackagingHandbook
+1. https://wiki.debian.org/DebianPackagingHandbook
 2. http://www.debian.org/doc/maint-guide/ch-build.en.html
-3. http://www.netfort.gr.jp/~dancer/software/pbuilder-doc/pbuilder-doc.html
+3. https://www.netfort.gr.jp/~dancer/software/pbuilder-doc/pbuilder-doc.html
 4. https://wiki.ubuntu.com/PackagingGuide/Complete
 5. https://wiki.ubuntu.com/PbuilderHowto
