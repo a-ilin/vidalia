@@ -5,7 +5,7 @@ Debian and Ubuntu packages
 Binary packages
 --------------------------------
 Debian and Ubuntu packages are now available in the Tor Debian/Ubuntu 
-repository. Instructions for  adding the repository to your
+repository. Instructions for adding the repository to your
 /etc/apt/sources.list and installing Vidalia can be found here:
 http://www.torproject.org/docs/debian-vidalia.html.en
 
@@ -24,7 +24,8 @@ Instructions
 For information about building Debian and Ubuntu packages, please consult 
 the following documentation:
 
-1. http://www.debian.org/doc/maint-guide/ch-build.en.html
-2. http://www.netfort.gr.jp/~dancer/software/pbuilder-doc/pbuilder-doc.html
-3. https://wiki.ubuntu.com/PackagingGuide/Complete
-4. https://wiki.ubuntu.com/PbuilderHowto
+1. http://wiki.debian.org/DebianPackagingHandbook
+2. http://www.debian.org/doc/maint-guide/ch-build.en.html
+3. http://www.netfort.gr.jp/~dancer/software/pbuilder-doc/pbuilder-doc.html
+4. https://wiki.ubuntu.com/PackagingGuide/Complete
+5. https://wiki.ubuntu.com/PbuilderHowto
