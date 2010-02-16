@@ -7,7 +7,7 @@ Binary packages
 Debian and Ubuntu packages are now available in the Tor Debian/Ubuntu 
 repository. Instructions for adding the repository to your
 /etc/apt/sources.list and installing Vidalia can be found here:
-http://www.torproject.org/docs/debian-vidalia.html.en
+https://www.torproject.org/docs/debian-vidalia.html.en
 
 Building your own
 --------------------------------
