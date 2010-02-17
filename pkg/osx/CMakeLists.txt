@@ -105,6 +105,7 @@ add_custom_target(dist-osx
     --mkdir /.background
     --copy ${CMAKE_CURRENT_SOURCE_DIR}/background.png:/.background/
     --copy ${CMAKE_CURRENT_SOURCE_DIR}/nonbundle-ds_store:/.DS_Store
+    --copy ${CMAKE_CURRENT_SOURCE_DIR}/qt.conf:/Vidalia.app/Contents/Resources/qt.conf
     --mkdir /Licenses
     --copy ${Vidalia_SOURCE_DIR}/LICENSE:/Licenses/License.txt
     --copy ${Vidalia_SOURCE_DIR}/LICENSE-GPLV2:/Licenses/License-GPLv2.txt
@@ -155,6 +156,7 @@ if (TOR_SOURCE_DIR AND POLIPO_SOURCE_DIR AND TORBUTTON_XPI)
       --copy ${CMAKE_CURRENT_SOURCE_DIR}/bundle-background.png:/.background/
       --copy ${CMAKE_CURRENT_SOURCE_DIR}/bundle-ds_store:/.DS_Store
       --copy ${CMAKE_CURRENT_SOURCE_DIR}/vidalia.conf.sample:/Vidalia.app/Contents/Resources/vidalia.conf
+      --copy ${CMAKE_CURRENT_SOURCE_DIR}/qt.conf:/Vidalia.app/Contents/Resources/qt.conf
       --mkdir /Licenses
       --copy ${Vidalia_SOURCE_DIR}/LICENSE:/Licenses/License.txt
       --copy ${Vidalia_SOURCE_DIR}/LICENSE-GPLV2:/Licenses/License-GPLv2.txt
