@@ -24,12 +24,12 @@ SetCompressor /SOLID lzma
 
 !define TOR_NAME            "Tor"
 !define TOR_EXEC            "tor.exe"
-!define TOR_APPVERSION      "0.2.2.6-alpha"
+!define TOR_APPVERSION      "0.2.2.8-alpha"
 !define TOR_DESC            "${TOR_NAME} ${TOR_APPVERSION}"
 
 !define POLIPO_NAME        "Polipo"
 !define POLIPO_EXEC        "polipo.exe"
-!define POLIPO_APPVERSION  "1.0.4"
+!define POLIPO_APPVERSION  "1.0.4.1"
 !define POLIPO_DESC        "${POLIPO_NAME} ${POLIPO_APPVERSION}"
 
 !define TORBUTTON_NAME      "Torbutton"
@@ -161,6 +161,7 @@ SectionGroup "${VIDALIA_DESC}" VidaliaGroup
       File "@QT_BINARY_DIR@\QtGui4.dll"
       File "@QT_BINARY_DIR@\QtNetwork4.dll"
       File "@QT_BINARY_DIR@\QtXml4.dll"
+      File "@QT_BINARY_DIR@\libgcc_s_dw2-1.dll"
       File "@MINGW_BINARY_DIR@\mingwm10.dll"
       File "@OPENSSL_BINARY_DIR@\ssleay32.dll"
       File "@OPENSSL_BINARY_DIR@\libeay32.dll"
