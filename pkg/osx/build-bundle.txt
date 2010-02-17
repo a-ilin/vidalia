@@ -1,5 +1,10 @@
            Building the Vidalia/Tor/Polipo OS X Bundle
 
+XCode
+0. You need the most recent version of XCode, including the 10.4 SDK.
+Download the latest XCode updates available from http://developer.apple.com and make sure
+you're installing 10.4 support.
+
 Libevent
 1. Download and extract the latest libevent source from
    http://www.monkey.org/~provos/libevent/
@@ -7,7 +12,7 @@ Libevent
 2. Configure libevent with the following:
 CFLAGS="-O -g -mmacosx-version-min=10.4 -isysroot /Developer/SDKs/MacOSX10.4u.sdk -arch i386" \
 LDFLAGS="-Wl,-syslibroot,/Developer/SDKs/MacOSX10.4u.sdk" \
-./configure --enable-static --disable-shared --disable-dependency-tracking
+./configure --enable-static --disable-shared --disable-dependency-tracking CC="gcc-4.0"
 
 3. Build and install libevent as follows:
    make && make install
@@ -45,7 +50,7 @@ https://git.torproject.org/checkout/tor/master/contrib/polipo/.
 
 Alternatively, download a tarball with the Polipo source and Tor
 modifications together from:
-http://interloper.org/tmp/polipo/polipo-1.0.4-with-tor-mods.tgz
+http://interloper.org/tmp/polipo/polipo-1.0.4.1-with-mods.tar.gz
 
 8. Follow the directions to build polipo at
   https://git.torproject.org/checkout/tor/master/contrib/polipo/README
@@ -63,7 +68,7 @@ CFLAGS="-O -g -mmacosx-version-min=10.4 -isysroot /Developer/SDKs/MacOSX10.4u.sd
 LDFLAGS="-Wl,-syslibroot,/Developer/SDKs/MacOSX10.4u.sdk" \
 CONFDIR=/Applications/Vidalia.app \
 ./configure --prefix=/Applications/Vidalia.app --bindir=/Applications/Vidalia.app \
---sysconfdir=/Library --disable-dependency-tracking   
+--sysconfdir=/Library --disable-dependency-tracking CC="gcc-4.0"
 
 11. Build Tor by running 'make'. You do NOT need to run 'make install'
 afterwards.
