@@ -33,6 +33,7 @@ LanguageSupport::languages()
 //    languages.insert("bg",
 //      QString::fromUtf8("\320\221\321\212\320\273\320\263\320"
 //                        "\260\321\200\321\201\320\272\320\270"));
+    languages.insert("bms",   "Burmese");
 //    languages.insert("cs",    
 //      QString::fromUtf8("\304\215e\305\241tina"));
     languages.insert("de",    "Deutsch");
@@ -61,6 +62,7 @@ LanguageSupport::languages()
       QString::fromUtf8("\320\240\321\203\321\201\321\201\320\272\320\270\320\271"));
 //    languages.insert("sq",    "Shqip");
     languages.insert("sv",    "svenska");
+    languages.insert("th",    "Thai");
     languages.insert("tr",    QString::fromUtf8("T\303\274rk\303\247e"));
     languages.insert("zh_CN", 
       QString::fromUtf8("\347\256\200\344\275\223\345\255\227"));
