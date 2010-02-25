@@ -67,12 +67,13 @@
 #define IMG_TOR_STARTING ":/images/16x16/tor-starting.png"
 #define IMG_TOR_STOPPING ":/images/16x16/tor-stopping.png"
 #elif defined(Q_WS_MAC)
-/* On Mac, we always go straight to Carbon to load our dock images 
- * from .icns files */
-#define IMG_TOR_STOPPED    "tor-off"
-#define IMG_TOR_RUNNING    "tor-on"
-#define IMG_TOR_STARTING   "tor-starting"
-#define IMG_TOR_STOPPING   "tor-stopping"
+/* On Mac, the dock icons look best at 128x128, otherwise they get blurry
+ * if resized from a smaller image */
+#define IMG_TOR_STOPPED    ":/images/128x128/tor-off.png"
+#define IMG_TOR_RUNNING    ":/images/128x128/tor-on.png"
+#define IMG_TOR_STARTING   ":/images/128x128/tor-starting.png"
+#define IMG_TOR_STOPPING   ":/images/128x128/tor-stopping.png"
+void qt_mac_set_dock_menu(QMenu *menu);
 #else
 /* On X11, we just use always the 22x22 .png files */
 #define IMG_TOR_STOPPED    ":/images/22x22/tor-off.png"
@@ -91,7 +92,6 @@
 #define STARTUP_PROGRESS_BOOTSTRAPPING    30
 #define STARTUP_PROGRESS_CIRCUITBUILD     75
 #define STARTUP_PROGRESS_MAXIMUM          (STARTUP_PROGRESS_BOOTSTRAPPING+100)
-
 
 /** Default constructor. It installs an icon in the system tray area and
  * creates the popup menu associated with that icon. */
@@ -231,7 +231,7 @@ MainWindow::setVisible(bool visible)
 {
   if (visible) {
     /* In Gnome, will hide buttons if Vidalia is run on startup. */
-    if (!TrayIcon::isTrayIconSupported()) {
+    if (!QSystemTrayIcon::isSystemTrayAvailable()) {
       /* Don't let people hide the main window, since that's all they have. */
       ui.chkShowOnStartup->hide();
       ui.btnHide->hide();
@@ -470,11 +470,18 @@ MainWindow::createActions()
 void
 MainWindow::createTrayIcon()
 {
-  /* Create the default menu bar (Mac) */
+  QMenu *menu = createTrayMenu();
+
+  /* Add the menu it to the tray icon */
+  _trayIcon.setContextMenu(menu);
+
+  connect(&_trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
+          this, SLOT(trayIconActivated(QSystemTrayIcon::ActivationReason)));
+
+#if defined(Q_WS_MAC)
   createMenuBar();
-  /* Create a tray menu and add it to the tray icon */
-  _trayIcon.setContextMenu(createTrayMenu());
-  connect(&_trayIcon, SIGNAL(doubleClicked()), this, SLOT(show()));
+  qt_mac_set_dock_menu(menu);
+#endif
 }
 
 /** Creates a QMenu object that contains QActions which compose the system 
@@ -557,6 +564,26 @@ MainWindow::createMenuBar()
   helpMenu->addAction(_actionShowHelp);
   helpMenu->addAction(_actionShowAbout);
 #endif
+}
+
+/** Sets the current tray or dock icon image to <b>iconFile</b>. */
+void
+MainWindow::setTrayIcon(const QString &iconFile)
+{
+#if defined(Q_WS_MAC)
+  QApplication::setWindowIcon(QPixmap(iconFile));
+#else
+  _trayIcon.setIcon(QIcon(iconFile));
+#endif
+}
+
+/** Respond to a double-click on the tray icon by opening the Control Panel
+ * window. */
+void
+MainWindow::trayIconActivated(QSystemTrayIcon::ActivationReason reason)
+{
+  if (reason == QSystemTrayIcon::DoubleClick)
+    setVisible(true);
 }
 
 /** Start a web browser when given the directory containing the executable and profile */
@@ -910,7 +937,7 @@ MainWindow::updateTorStatus(TorStatus status)
 
   /* Update the tray icon */
   if (!trayIconFile.isEmpty()) {
-    _trayIcon.setIcon(trayIconFile);
+    setTrayIcon(trayIconFile);
   }
   /* Update the status banner on the control panel */
   if (!statusIconFile.isEmpty())
@@ -1718,8 +1745,8 @@ MainWindow::newIdentity()
     QTimer::singleShot(MIN_NEWIDENTITY_INTERVAL, 
                        this, SLOT(enableNewIdentity()));
 
-    if (TrayIcon::supportsBalloonMessages())
-      _trayIcon.showBalloonMessage(title, message, TrayIcon::Information);
+    if (QSystemTrayIcon::supportsMessages())
+      _trayIcon.showMessage(title, message, QSystemTrayIcon::Information);
     else
       VMessageBox::information(this, title, message, VMessageBox::Ok);
   } else {

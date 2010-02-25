@@ -113,6 +113,10 @@
     </qresource>
     <qresource prefix="/images">
         <file>128x128/tor-logo.png</file>
+        <file>128x128/tor-off.png</file>
+        <file>128x128/tor-on.png</file>
+        <file>128x128/tor-starting.png</file>
+        <file>128x128/tor-stopping.png</file>
     </qresource>
     <qresource prefix="/images">
         <file>icons/node-unresponsive.png</file>

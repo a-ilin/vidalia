@@ -22,7 +22,6 @@
 
 #include "VidaliaWindow.h"
 #include "HelperProcess.h"
-#include "TrayIcon.h"
 #include "AboutDialog.h"
 #include "MessageLog.h"
 #include "BandwidthGraph.h"
@@ -42,7 +41,7 @@
 
 #include <QMainWindow>
 #include <QTimer>
-
+#include <QSystemTrayIcon>
 
 class MainWindow : public VidaliaWindow
 {
@@ -63,6 +62,9 @@ protected:
   virtual void retranslateUi();
 
 private slots:
+  /** Respond to a double-click on the tray icon by opening the Control Panel
+   * window. */
+  void trayIconActivated(QSystemTrayIcon::ActivationReason reason);
   /** Displays the help browser and displays the most recently viewed help
    * topic. */
   void showHelpDialog();
@@ -188,6 +190,8 @@ private:
   QMenu* createTrayMenu();
   /** Creates a default menubar on Mac */
   void createMenuBar();
+  /** Sets the current tray or dock icon image to <b>iconFile</b>. */
+  void setTrayIcon(const QString &iconFile);
   /** Updates the UI to reflect Tor's current <b>status</b>. Returns the
    * previously set TorStatus value. */
   TorStatus updateTorStatus(TorStatus status);
@@ -252,7 +256,7 @@ private:
    * when authenticating to Tor. */
   bool _useSavedPassword;
   /** The Vidalia icon that sits in the tray. */
-  TrayIcon _trayIcon;
+  QSystemTrayIcon _trayIcon;
 
 #if defined(USE_AUTOUPDATE)
   /** Timer used to remind us to check for software updates. */

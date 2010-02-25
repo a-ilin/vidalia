@@ -20,7 +20,6 @@ include_directories(
   ${CMAKE_CURRENT_SOURCE_DIR}/help/browser
   ${CMAKE_CURRENT_SOURCE_DIR}/log
   ${CMAKE_CURRENT_SOURCE_DIR}/network
-  ${CMAKE_CURRENT_SOURCE_DIR}/tray
   ${MARBLE_INCLUDE_DIR}
 )
 
@@ -223,18 +222,6 @@ else(USE_MARBLE)
     network/ZImageView.h
   )
 endif(USE_MARBLE)
-
-## Choose the correct tray icon implementation for the current platform
-set(vidalia_SRCS ${vidalia_SRCS} tray/TrayIcon.cpp)
-qt4_wrap_cpp(vidalia_SRCS tray/TrayIcon.h)
-if(APPLE)
-  set(vidalia_SRCS ${vidalia_SRCS} tray/TrayIconImpl_mac.cpp)
-  qt4_wrap_cpp(vidalia_SRCS tray/TrayIconImpl_mac.h)
-else(APPLE)
-  ## Use Qt's QSystemTrayIcon implementation
-  set(vidalia_SRCS ${vidalia_SRCS} tray/TrayIconImpl_qt.cpp)
-  qt4_wrap_cpp(vidalia_SRCS tray/TrayIconImpl_qt.h)
-endif(APPLE)
 
 ## Main Vidalia sources
 set(vidalia_SRCS ${vidalia_SRCS}

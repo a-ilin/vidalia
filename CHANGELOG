@@ -1,4 +1,17 @@
-0.2.7   25-Jan-2009
+0.2.8   xx-xxx-2010
+  o Stop using our custom dock icon implementation on OS X and just use
+    QSystemTrayIcon everywhere. Fixes the build on Snow Leopard.
+    (Ticket #562)
+  o Include a pre-configured qt.conf file in the Mac OS X bundles that
+    disable Qt plugin loading from the default directories. Otherwise,
+    users who have Qt installed in a system-wide location would end up
+    loading the libraries twice and crashing.
+  o Include libgcc_s_dw2-1.dll in the Windows installers, since Qt 4.6 now
+    depends on that DLL. (Ticket #555)
+  o Add Burmese and Thai UI translations.
+
+
+0.2.7   25-Jan-2010
   o Remove the explicit palette set for the configuration dialog that
     prevented the dialog from inheriting colors from the user's current
     system theme. (Ticket #485. Patch from mkirk.)
