@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-05-19 23:56+0000\n"
-"PO-Revision-Date: 2010-02-26 09:19-0700\n"
+"PO-Revision-Date: 2010-03-08 10:09-0700\n"
 "Last-Translator: CS <cs@carlostrub.ch>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -292,7 +292,6 @@ msgctxt "Circuit"
 msgid "New"
 msgstr "Neu"
 
-#, fuzzy
 msgctxt "Circuit"
 msgid "Open"
 msgstr "Verbunden"
@@ -1876,13 +1875,12 @@ msgid "Password Reset Failed"
 msgstr "Zurücksetzen des Passworts fehlgeschlagen"
 
 # Not very good translated / Nicht wirklich gut uebersetzt.
-#, fuzzy
 msgctxt "MainWindow"
 msgid "Vidalia tried to reset Tor's control password, but was not able to restart the Tor software. Please check your Task Manager to ensure there are no other Tor processes running."
 msgstr ""
-"Vidalia versuchte das Tor Kontroll-Passwort zurück zu setzen, konnte die Tor "
-"Software aber nicht neu starten. Bitte überprüfe ob nicht ein anderen Tor "
-"Prozess läuft."
+"Vidalia versuchte das Tor Kontroll-Passwort zurückzusetzen, konnte die Tor "
+"Software aber nicht neu starten. Bitte überprüfen Sie im Task Manager, ob "
+"nicht andere Tor Prozesse laufen."
 
 msgctxt "MainWindow"
 msgid "The currently installed version of Tor is out of date or no longer recommended."
@@ -1898,15 +1896,14 @@ msgid "Potentially Unsafe Connection"
 msgstr "Möglicherweise unsichere Verbindung"
 
 # It's Okay but not Perfect / Soweit in Ordnung aber noch verbesserungs wuerdig..
-#, fuzzy
 msgctxt "MainWindow"
 msgid "One of your applications%1appears to be making a potentially unencrypted and unsafe connection to port %2. Anything sent over this connection could be monitored. Please check your application's configuration and use only encrypted protocols, such as SSL, if possible."
 msgstr ""
-"Eine deiner Anwendungen%1scheint potenziell unverschlüsselte und unsichere "
-"Verbindungen zu Port %2 zu verwenden. Alles was über diese Verbindung "
-"gesendet wird, könnte überwacht werden. Bitte überprüfe die Konfiguration "
-"deiner Anwendungen und verwende wenn möglich nur verschlüsselte Protokolle "
-"wie SSL."
+"Eine Ihrer Anwendungen%1scheint potenziell unverschlüsselte und unsichere "
+"Verbindungen zu Port %2 aufzubauen. Alles, was über diese Verbindung "
+"gesendet wird, könnte überwacht werden. Bitte überprüfen Sie die "
+"Konfiguration Ihrer Anwendungen und verwenden Sie, wenn möglich, nur "
+"verschlüsselte Protokolle wie zum Beispiel SSL."
 
 msgctxt "MainWindow"
 msgid "Tor has automatically closed your connection in order to protect your anonymity."
@@ -1938,7 +1935,6 @@ msgctxt "MainWindow"
 msgid "The following error occurred:"
 msgstr "Der folgende Fehler ist aufgetreten:"
 
-#, fuzzy
 msgctxt "MainWindow"
 msgid "failed (%1)"
 msgstr "fehlgeschlagen (%1)"
@@ -2256,20 +2252,19 @@ msgid "Automatically save new log messages to a file"
 msgstr "Alle neuen Nachrichten automatisch in einer Datei speichern"
 
 # quiet bad. but better then english.
-#, fuzzy
 msgctxt "MessageLog"
 msgid "Messages that appear when something has \n"
 "gone very wrong and Tor cannot proceed."
 msgstr ""
-"Nachricht, welche erscheint, wenn etwas mit Tor schief gegangen ist und es "
-"nicht mehr weiter laufen kann."
+"Meldung, welche erscheint, wenn etwas mit Tor schief \n"
+"gegangen ist, und es nicht mehr weiter laufen kann."
 
-#, fuzzy
 msgctxt "MessageLog"
 msgid "Messages that only appear when \n"
 "something has gone wrong with Tor."
 msgstr ""
-"Nachricht, welche nur erscheint, wenn etwas mit Tor schief gegangen ist."
+"Meldung, welche nur erscheint, wenn \n"
+"etwas mit Tor schief gegangen ist."
 
 msgctxt "MessageLog"
 msgid "Messages that appear infrequently \n"
@@ -2277,9 +2272,9 @@ msgid "Messages that appear infrequently \n"
 "not considered errors, but you may \n"
 "care about."
 msgstr ""
-"Meldungen die in unregelmäßigen Abständen erscheinen\n"
+"Meldungen, die in unregelmässigen Abständen erscheinen\n"
 "und nicht offensichtlich als Fehler erkennbar sind\n"
-"sollten unkritisch sein. Dennoch sollten sie diese beachten.\n"
+"sollten unkritisch sein. Dennoch sollten Sie diese beachten.\n"
 
 msgctxt "MessageLog"
 msgid "Messages that appear frequently \n"
@@ -2536,10 +2531,9 @@ msgstr ""
 "es später erneut versuchen oder andere Methoden versuchen um neue Bridges zu "
 "finden."
 
-#, fuzzy
 msgctxt "NetworkPage"
 msgid "Click Help to see other methods of finding new bridges."
-msgstr "Klicke auf Hilfe für andere Methoden, neue Brücken zu finden."
+msgstr "Klicken Sie auf Hilfe, um mit anderen Methoden neue Brücken zu finden."
 
 msgctxt "Policy"
 msgid "accept"
@@ -2651,7 +2645,7 @@ msgstr "Zuletzt aktualisiert:"
 
 msgctxt "RouterInfoDialog"
 msgid "Descriptor"
-msgstr ""
+msgstr "Stichwort"
 
 msgctxt "RouterListItem"
 msgid "Offline"
@@ -3084,7 +3078,6 @@ msgctxt "TorService"
 msgid "Unable to start the Tor service."
 msgstr "Der Tor-Dienst konnte nicht gestartet werden."
 
-#, fuzzy
 msgctxt "TorSettings"
 msgid "Failed to hash the control password."
 msgstr "Berechnung des Kontrollpasswortes fehlgeschlagen."
