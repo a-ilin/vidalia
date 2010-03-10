@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-05-19 23:56+0000\n"
-"PO-Revision-Date: 2010-03-08 10:09-0700\n"
+"PO-Revision-Date: 2010-03-09 23:56-0700\n"
 "Last-Translator: CS <cs@carlostrub.ch>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -118,7 +118,7 @@ msgstr "Passwort"
 
 msgctxt "AdvancedPage"
 msgid "Randomly Generate"
-msgstr "erzeuge zufällig"
+msgstr "zufällig erzeugen"
 
 msgctxt "AdvancedPage"
 msgid ":"
@@ -197,11 +197,11 @@ msgstr "Zeige Einstellungen"
 
 msgctxt "BandwidthGraph"
 msgid "Tor Bandwidth Usage"
-msgstr "Bandbreitenbenutzung von Tor"
+msgstr "Bandbreitennutzung von Tor"
 
 msgctxt "BandwidthGraph"
 msgid "Reset"
-msgstr "Reset"
+msgstr "Zurücksetzen"
 
 msgctxt "BandwidthGraph"
 msgid "Receive Rate"
@@ -233,7 +233,7 @@ msgstr "% undurchsichtig"
 
 msgctxt "BandwidthGraph"
 msgid "Save"
-msgstr "Speichern"
+msgstr "Anwenden"
 
 msgctxt "BandwidthGraph"
 msgid "Cancel"
@@ -1244,7 +1244,7 @@ msgstr "Durchsuchen"
 
 msgctxt "GeneralPage"
 msgid "Start the Tor software when Vidalia starts"
-msgstr "Starte die Tor-Anwendung, wenn Vidalia startet"
+msgstr "Tor starten, wenn Vidalia startet"
 
 msgctxt "GeneralPage"
 msgid "Tor"
@@ -1252,15 +1252,15 @@ msgstr "Tor"
 
 msgctxt "GeneralPage"
 msgid "Proxy Application (optional)"
-msgstr "Proxy-Anwendung (optional)"
+msgstr "Proxy (optional)"
 
 msgctxt "GeneralPage"
 msgid "Start a proxy application when Tor starts"
-msgstr "Starte die Proxy-Anwendung, wenn Tor startet"
+msgstr "Proxy starten, wenn Tor startet"
 
 msgctxt "GeneralPage"
 msgid "Proxy Application Arguments:"
-msgstr "Argumente der Proxy-Anwendung"
+msgstr "Argumente für die Proxy-Anwendung"
 
 msgctxt "GeneralPage"
 msgid "Software Updates"
@@ -1488,7 +1488,7 @@ msgstr "Unbekannt"
 
 msgctxt "MainWindow"
 msgid "Start Tor"
-msgstr "Starte Tor"
+msgstr "Tor Starten"
 
 msgctxt "MainWindow"
 msgid "Exit"
@@ -1500,7 +1500,7 @@ msgstr "Bandbreitengraph"
 
 msgctxt "MainWindow"
 msgid "Message Log"
-msgstr "Nachrichtenprotokoll"
+msgstr "Logbuch"
 
 msgctxt "MainWindow"
 msgid "Network Map"
@@ -1680,11 +1680,11 @@ msgstr "Tor wird beendet"
 
 msgctxt "MainWindow"
 msgid "Stop Tor Now"
-msgstr "Stoppe Tor jetzt"
+msgstr "Tor jetzt stoppen"
 
 msgctxt "MainWindow"
 msgid "Stop Tor"
-msgstr "Stoppe Tor"
+msgstr "Tor stoppen"
 
 msgctxt "MainWindow"
 msgid "Starting the Tor software"
@@ -1692,7 +1692,7 @@ msgstr "Starte die Tor-Software"
 
 msgctxt "MainWindow"
 msgid "Starting Tor"
-msgstr "Starte Tor"
+msgstr "Tor Starten"
 
 msgctxt "MainWindow"
 msgid "Error Starting Tor"
@@ -1816,7 +1816,7 @@ msgstr "Weiterleitung einrichten"
 
 msgctxt "MainWindow"
 msgid "Set up a relay and help the network grow"
-msgstr "Richte ein Relay ein und hilf dem Netzwerk zu wachsen"
+msgstr "Richten Sie ein Relay ein und helfen Sie dem Netzwerk zu wachsen."
 
 msgctxt "MainWindow"
 msgid "View the Network"
@@ -1840,7 +1840,7 @@ msgstr "Betrachte kürzlich genutzte Bandbreite"
 
 msgctxt "MainWindow"
 msgid "View log message history"
-msgstr "Betrachte Nachrichtenprotokoll"
+msgstr "Logbuch betrachten"
 
 msgctxt "MainWindow"
 msgid "View help documentation"
@@ -1848,7 +1848,7 @@ msgstr "Hilfe anzeigen"
 
 msgctxt "MainWindow"
 msgid "Configure Vidalia"
-msgstr "Konfiguriere Vidalia"
+msgstr "Vidalia konfigurieren"
 
 msgctxt "MainWindow"
 msgid "View version and license information"
@@ -2037,7 +2037,7 @@ msgstr "Vidalia"
 
 msgctxt "MessageLog"
 msgid "Find in Message Log"
-msgstr "Suche im Nachrichtenprotokoll"
+msgstr "Im Logbuch suchen"
 
 msgctxt "MessageLog"
 msgid "Find:"
@@ -2053,7 +2053,7 @@ msgstr "Die Suche hat 0 passende Einträge gefunden."
 
 msgctxt "MessageLog"
 msgid "Message Log"
-msgstr "Nachrichtenprotokoll"
+msgstr "Logbuch"
 
 msgctxt "MessageLog"
 msgid "Message Filters..."
@@ -2077,7 +2077,7 @@ msgstr "Löschen"
 
 msgctxt "MessageLog"
 msgid "Clear all messages from the Message Log (Ctrl+E)"
-msgstr "Lösche alle Nachrichten aus dem Nachrichtenprotokoll (Strg+E)"
+msgstr "Alle Einträge aus dem Logbuch löschen (Strg+E)"
 
 msgctxt "MessageLog"
 msgid "Ctrl+E"
@@ -2109,7 +2109,7 @@ msgstr "Strg+A"
 
 msgctxt "MessageLog"
 msgid "Save All"
-msgstr "Speichere alles"
+msgstr "Alles Speichern"
 
 msgctxt "MessageLog"
 msgid "Save all messages to a file"
@@ -2117,11 +2117,11 @@ msgstr "Speichere alle Nachrichten in eine Datei"
 
 msgctxt "MessageLog"
 msgid "Save Selected"
-msgstr "Speichere markierte"
+msgstr "Markiertes speichern"
 
 msgctxt "MessageLog"
 msgid "Save selected messages to a file"
-msgstr "Speichere markierte Nachrichten in eine Datei"
+msgstr "Markierte Einträge in einer Datei speichern"
 
 msgctxt "MessageLog"
 msgid "Settings"
@@ -2129,7 +2129,7 @@ msgstr "Einstellungen"
 
 msgctxt "MessageLog"
 msgid "Adjust Message Log Settings"
-msgstr "Ändere Nachrichtenprotokoll-Einstellungen"
+msgstr "Logbuch-Einstellungen ändern"
 
 msgctxt "MessageLog"
 msgid "Ctrl+T"
@@ -2141,7 +2141,7 @@ msgstr "Hilfe"
 
 msgctxt "MessageLog"
 msgid "Show the help browser"
-msgstr "Zeige Hilfe-Browser"
+msgstr "Hilfe anzeigen"
 
 msgctxt "MessageLog"
 msgid "F1"
@@ -2149,11 +2149,11 @@ msgstr "F1"
 
 msgctxt "MessageLog"
 msgid "Close"
-msgstr "Schließen"
+msgstr "Schliessen"
 
 msgctxt "MessageLog"
 msgid "Close the Message Log"
-msgstr "Schließe das Nachrichtenprotokoll"
+msgstr "Logbuch schliessen"
 
 msgctxt "MessageLog"
 msgid "Esc"
@@ -2185,7 +2185,7 @@ msgstr "Nachricht"
 
 msgctxt "MessageLog"
 msgid "Saves the current Message Log settings"
-msgstr "Speichert die aktuellen Nachrichtenprotokoll-Einstellungen"
+msgstr "Speichert die aktuellen Logbuch-Einstellungen"
 
 msgctxt "MessageLog"
 msgid "Save Settings"
@@ -2225,11 +2225,11 @@ msgstr "Debug"
 
 msgctxt "MessageLog"
 msgid "Message Log History"
-msgstr "Verlauf des Nachrichtenprotokolls"
+msgstr "Verlauf des Logbuchs"
 
 msgctxt "MessageLog"
 msgid "Number of messages to display in the message log window"
-msgstr "Anzahl der Nachrichten, die im Nachrichtenprotokoll-Fenster angezeigt werden"
+msgstr "Anzahl der Nachrichten, die im Logbuch angezeigt werden"
 
 msgctxt "MessageLog"
 msgid "messages"
@@ -2709,7 +2709,7 @@ msgstr "Benutze Tor nur als Client"
 
 msgctxt "ServerPage"
 msgid "Relay traffic for the Tor network"
-msgstr "Leite Verkehr für das Tor-Netzwerk weiter"
+msgstr "Verkehr für das Tor-Netzwerk weiterleiten"
 
 msgctxt "ServerPage"
 msgid "Relay Port:"
@@ -2933,7 +2933,9 @@ msgstr "Die zurückgelieferte Antwort war: %1"
 
 msgctxt "ServerPage"
 msgid "Help censored users reach the Tor network"
-msgstr "Nutzern helfen, die einer Internetzensur unterliegen, das Tor-Netzwerk zu nutzen (Tor 0.2.0.8-alpha oder neuer)"
+msgstr ""
+"Nutzern, die einer Internetzensur unterliegen, helfen das Tor-Netzwerk zu "
+"nutzen (Tor 0.2.0.8-alpha oder neuer)"
 
 msgctxt "ServerPage"
 msgid "<a href=\"#bridgeUsage\">Who has used my bridge?</a>"
@@ -3286,7 +3288,7 @@ msgstr "Legt den Namen und Speicherort für Vidalias Nachrichtendatei fest."
 
 msgctxt "Vidalia"
 msgid "Sets the verbosity of Vidalia's logging."
-msgstr "Legt die Umfang von Vidalias Nachrichtenprotokoll fest."
+msgstr "Legt fest, wie ausführlich Vidalias Logbuch geführt werden soll."
 
 msgctxt "Vidalia"
 msgid "Sets Vidalia's interface style."
