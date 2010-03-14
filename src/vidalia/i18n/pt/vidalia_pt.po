@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-05-19 23:56+0000\n"
-"PO-Revision-Date: 2009-12-17 07:07-0700\n"
+"PO-Revision-Date: 2010-03-14 17:42-0600\n"
 "Last-Translator: Tiago Faria <gouki@goukihq.org>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -120,7 +120,7 @@ msgstr "Senha"
 
 msgctxt "AdvancedPage"
 msgid "Randomly Generate"
-msgstr "Gerar Aleatoriamente   "
+msgstr "Gerar Aleatoriamente"
 
 msgctxt "AdvancedPage"
 msgid ":"
@@ -242,7 +242,7 @@ msgstr "Cancelar"
 
 msgctxt "BridgeDownloader"
 msgid "Starting HTTPS bridge request..."
-msgstr "A iniciar o pedido de ponte HTTPS..."
+msgstr "A iniciar o pedido de bridge HTTPS..."
 
 msgctxt "BridgeDownloader"
 msgid "Connecting to %1:%2..."
@@ -258,7 +258,7 @@ msgstr "A descarregar a lista de bridges..."
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Downloading Bridges"
-msgstr "A descarregar as bridges"
+msgstr "A descarregar as Bridges"
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Unable to download bridges: %1"
@@ -282,11 +282,11 @@ msgstr "Clientes dos seguintes países tem utilizado o seu relay desde %1"
 
 msgctxt "BridgeUsageDialog"
 msgid "Bridge Usage Summary"
-msgstr "Resumo de utilização da bridge"
+msgstr "Relatório de utilização da Bridge"
 
 msgctxt "BridgeUsageDialog"
 msgid "Client Summary"
-msgstr "Resumo de utilização do Cliente"
+msgstr "Relatório de utilização do Cliente"
 
 msgctxt "Circuit"
 msgid "New"
@@ -294,11 +294,11 @@ msgstr "Novo"
 
 msgctxt "Circuit"
 msgid "Open"
-msgstr "Conectado"
+msgstr "Abrir"
 
 msgctxt "Circuit"
 msgid "Building"
-msgstr "A estabelecer ligação"
+msgstr "A construir ligação"
 
 msgctxt "Circuit"
 msgid "Failed"
