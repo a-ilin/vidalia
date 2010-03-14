@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-08-20 03:25+0000\n"
-"PO-Revision-Date: 2010-03-09 23:57-0700\n"
+"PO-Revision-Date: 2010-03-13 16:58-0700\n"
 "Last-Translator: CS <cs@carlostrub.ch>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,7 @@ msgstr "Abbrechen"
 #: qdialogbuttonbox.cpp:537
 msgctxt "QDialogButtonBox"
 msgid "Close"
-msgstr "Schließen"
+msgstr "Schliessen"
 
 #: qdialogbuttonbox.cpp:540
 msgctxt "QDialogButtonBox"
@@ -135,7 +135,7 @@ msgstr "Voreinstellungen wiederherstellen"
 #: qdialogbuttonbox.cpp:552
 msgctxt "QDialogButtonBox"
 msgid "Close without Saving"
-msgstr "Schließen ohne Speichern"
+msgstr "Schliessen ohne Speichern"
 
 #: qdialogbuttonbox.cpp:525
 msgctxt "QDialogButtonBox"
@@ -150,7 +150,7 @@ msgstr "Name"
 #: qdirmodel.cpp:424
 msgctxt "QDirModel"
 msgid "Size"
-msgstr "Größe"
+msgstr "Grösse"
 
 #: qdirmodel.cpp:427
 msgctxt "QDirModel"
@@ -389,7 +389,7 @@ msgstr "Name"
 #: qfilesystemmodel.cpp:834
 msgctxt "QFileSystemModel"
 msgid "Size"
-msgstr "Größe"
+msgstr "Grösse"
 
 #: qfilesystemmodel.cpp:838
 msgctxt "QFileSystemModel"
