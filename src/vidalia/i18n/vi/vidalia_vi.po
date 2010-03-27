@@ -3,13 +3,13 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-11-24 15:59+0000\n"
-"PO-Revision-Date: 2010-03-16 06:05-0600\n"
-"Last-Translator: Steve Wang <doctorswan@gmail.com>\n"
+"PO-Revision-Date: 2010-03-16 22:08+0930\n"
+"Last-Translator: Lyndon Johnson <lyndon.johnson58@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Pootle 1.1.0\n"
+"X-Generator: Vidalia ts2po 0.2\n"
 
 #: aboutdialog.ui:16
 msgctxt "AboutDialog"
@@ -29,7 +29,7 @@ msgstr "Qt"
 #: aboutdialog.ui:69
 msgctxt "AboutDialog"
 msgid "Tor"
-msgstr "Tor"
+msgstr "Bộ định tuyến củ hành (The onion router)"
 
 #: aboutdialog.cpp:53
 msgctxt "AboutDialog"
@@ -113,9 +113,7 @@ msgstr "Không thể gỡ bỏ Dịch vụ Tor"
 
 #: advancedpage.cpp:289
 msgctxt "AdvancedPage"
-msgid "Vidalia was unable to remove the Tor service."
-""
-"You may need to remove it manually."
+msgid "Vidalia was unable to remove the Tor service.You may need to remove it manually."
 msgstr "Vidalia không thể gỡ bỏ Dịch vụ Tor. Bạn có thể cần phải tự gỡ bỏ."
 
 #: advancedpage.cpp:298
@@ -241,7 +239,7 @@ msgstr "Ẩn những Thiết lập"
 #: bwgraph.ui:40
 msgctxt "BandwidthGraph"
 msgid "Show Settings"
-msgstr ""
+msgstr "Hiện những Thiết lập"
 
 #: bwgraph.ui:16
 msgctxt "BandwidthGraph"
@@ -296,17 +294,17 @@ msgstr "Lưu"
 #: bwgraph.ui:450
 msgctxt "BandwidthGraph"
 msgid "Cancel"
-msgstr ""
+msgstr "Thôi"
 
 #: circuit.cpp:112
 msgctxt "Circuit"
 msgid "New"
-msgstr ""
+msgstr "Mới"
 
 #: circuit.cpp:113
 msgctxt "Circuit"
 msgid "Open"
-msgstr ""
+msgstr "Mở"
 
 #: circuit.cpp:114
 msgctxt "Circuit"
@@ -316,17 +314,17 @@ msgstr "Xây dựng"
 #: circuit.cpp:115
 msgctxt "Circuit"
 msgid "Failed"
-msgstr ""
+msgstr "Thất bại"
 
 #: circuit.cpp:116
 msgctxt "Circuit"
 msgid "Closed"
-msgstr ""
+msgstr "Đóng"
 
 #: circuit.cpp:117
 msgctxt "Circuit"
 msgid "Unknown"
-msgstr ""
+msgstr "Không biết"
 
 #: circuititem.cpp:39
 msgctxt "CircuitItem"
@@ -341,7 +339,7 @@ msgstr "Kết nối"
 #: circuitlistwidget.cpp:55
 msgctxt "CircuitListWidget"
 msgid "Status"
-msgstr ""
+msgstr "Tình trạng"
 
 #: circuitlistwidget.cpp:87
 msgctxt "CircuitListWidget"
@@ -391,7 +389,7 @@ msgstr "Nâng cao"
 #: configdialog.cpp:111
 msgctxt "ConfigDialog"
 msgid "Help"
-msgstr ""
+msgstr "Giúp đỡ"
 
 #: configdialog.cpp:196
 msgctxt "ConfigDialog"
@@ -416,7 +414,7 @@ msgstr "Vidalia không thể ứng dụng %1 những thiết lập của bạn v
 #: configdialog.ui:16
 msgctxt "ConfigDialog"
 msgid "Settings"
-msgstr ""
+msgstr "Thiết lập"
 
 #: controlconnection.cpp:134
 msgctxt "ControlConnection"
@@ -426,7 +424,7 @@ msgstr "Vidalia không thể kết nối với Tor. (% 1)"
 #: controlconnection.cpp:331
 msgctxt "ControlConnection"
 msgid "Control socket is not connected."
-msgstr ""
+msgstr "Socket kiểm soát không được kết nối."
 
 #: controlpasswordinputdialog.ui:28
 msgctxt "ControlPasswordInputDialog"
@@ -436,9 +434,7 @@ msgstr "Mật khẩu bắt buộc"
 #: controlpasswordinputdialog.ui:80
 msgctxt "ControlPasswordInputDialog"
 msgid "Vidalia has connected to a running Tor process that requires a password. Please enter your control password: "
-msgstr ""
-"Vidalia đã kết nối với một quá trình Tor đang chạy mà nó yêu cầu một mật "
-"khẩu. Xin vui lòng nhập mật khẩu điều khiển của bạn:"
+msgstr "Vidalia đã kết nối với một quá trình Tor đang chạy mà nó yêu cầu một mật khẩu. Xin vui lòng nhập mật khẩu điều khiển của bạn:"
 
 #: controlpasswordinputdialog.ui:99
 msgctxt "ControlPasswordInputDialog"
@@ -498,7 +494,7 @@ msgstr "Bắt đầu Vidalia khi hệ thống của tôi bắt đầu"
 #: generalpage.ui:121
 msgctxt "GeneralPage"
 msgid "Browse"
-msgstr ""
+msgstr "Trình duyệt"
 
 #: generalpage.ui:57
 msgctxt "GeneralPage"
@@ -508,7 +504,7 @@ msgstr "Bắt đầu phần mềm Tor khi bắt đầu Vidalia"
 #: generalpage.ui:51
 msgctxt "GeneralPage"
 msgid "Tor"
-msgstr ""
+msgstr "The-onion-router"
 
 #: generalpage.ui:93
 msgctxt "GeneralPage"
@@ -533,7 +529,7 @@ msgstr "Recv: "
 #: graphframe.cpp:298
 msgctxt "GraphFrame"
 msgid "%1 KB/s"
-msgstr ""
+msgstr "%1 KB/s"
 
 #: graphframe.cpp:247
 msgctxt "GraphFrame"
@@ -588,7 +584,7 @@ msgstr "Tìm thấy% 1 kết quả"
 #: helpbrowser.ui:33
 msgctxt "HelpBrowser"
 msgid "Vidalia Help"
-msgstr ""
+msgstr "Vidalia Trợ giúp"
 
 #: helpbrowser.ui:484
 msgctxt "HelpBrowser"
@@ -638,7 +634,7 @@ msgstr "Ctrl+H"
 #: helpbrowser.ui:535
 msgctxt "HelpBrowser"
 msgid "Find"
-msgstr ""
+msgstr "Ti`m"
 
 #: helpbrowser.ui:538
 msgctxt "HelpBrowser"
@@ -648,12 +644,12 @@ msgstr "Tìm kiếm một từ hoặc cụm từ trên trang hiện tại (Ctrl 
 #: helpbrowser.ui:541
 msgctxt "HelpBrowser"
 msgid "Ctrl+F"
-msgstr ""
+msgstr "Ctrl+F"
 
 #: helpbrowser.ui:549
 msgctxt "HelpBrowser"
 msgid "Close"
-msgstr ""
+msgstr "Đóng"
 
 #: helpbrowser.ui:552
 msgctxt "HelpBrowser"
@@ -663,12 +659,12 @@ msgstr "Đóng Vidalia Trợ giúp"
 #: helpbrowser.ui:555
 msgctxt "HelpBrowser"
 msgid "Esc"
-msgstr ""
+msgstr "Esc"
 
 #: helpbrowser.ui:152
 msgctxt "HelpBrowser"
 msgid "Find:"
-msgstr ""
+msgstr "Tìm:"
 
 #: helpbrowser.ui:174
 msgctxt "HelpBrowser"
@@ -728,10 +724,7 @@ msgstr "Mở Liên kết ngoài"
 #: helptextbrowser.cpp:76
 msgctxt "HelpTextBrowser"
 msgid "Vidalia can open the link you selected in your default Web browser. If your browser is not currently configured to use Tor then the request will not be anonymous."
-msgstr ""
-"Vidalia có thể mở các liên kết mà bạn đã chọn trong trình duyệt web mặc định "
-"của bạn. Nếu trình duyệt của bạn hiện không có cấu hình để sử dụng Tor thì "
-"yêu cầu sẽ không được ẩn danh."
+msgstr "Vidalia có thể mở các liên kết mà bạn đã chọn trong trình duyệt web mặc định của bạn. Nếu trình duyệt của bạn hiện không có cấu hình để sử dụng Tor thì yêu cầu sẽ không được ẩn danh."
 
 #: helptextbrowser.cpp:78
 msgctxt "HelpTextBrowser"
@@ -746,9 +739,7 @@ msgstr "Không thể  mở Liên kết "
 #: helptextbrowser.cpp:90
 msgctxt "HelpTextBrowser"
 msgid "Vidalia was unable to open the selected link in your Web browser. You can still copy the URL and paste it into your browser."
-msgstr ""
-"Vidalia không thể mở liên kết được lựa chọn trong trình duyệt web của bạn. "
-"Bạn vẫn có thể sao chép URL và dán nó vào trình duyệt của bạn."
+msgstr "Vidalia không thể mở liên kết được lựa chọn trong trình duyệt web của bạn. Bạn vẫn có thể sao chép URL và dán nó vào trình duyệt của bạn."
 
 #: licensedialog.ui:13
 msgctxt "LicenseDialog"
@@ -768,32 +759,32 @@ msgstr "Tín dụng"
 #: logevent.cpp:57
 msgctxt "LogEvent"
 msgid "Debug"
-msgstr ""
+msgstr "De lỗi"
 
 #: logevent.cpp:58
 msgctxt "LogEvent"
 msgid "Info"
-msgstr ""
+msgstr "Thông tin "
 
 #: logevent.cpp:59
 msgctxt "LogEvent"
 msgid "Notice"
-msgstr ""
+msgstr "chú ý "
 
 #: logevent.cpp:60
 msgctxt "LogEvent"
 msgid "Warning"
-msgstr ""
+msgstr "Cảnh báo"
 
 #: logevent.cpp:61
 msgctxt "LogEvent"
 msgid "Error"
-msgstr ""
+msgstr "Lỗi"
 
 #: logevent.cpp:62
 msgctxt "LogEvent"
 msgid "Unknown"
-msgstr ""
+msgstr "Không biết"
 
 #: mainwindow.ui:233
 msgctxt "MainWindow"
@@ -813,7 +804,7 @@ msgstr "Đồ thị Băng thông "
 #: mainwindow.ui:317
 msgctxt "MainWindow"
 msgid "Message Log"
-msgstr ""
+msgstr "Thông báo Đăng nhập"
 
 #: mainwindow.cpp:348
 msgctxt "MainWindow"
@@ -828,7 +819,7 @@ msgstr "Bản điều khiển"
 #: mainwindow.ui:380
 msgctxt "MainWindow"
 msgid "Settings"
-msgstr ""
+msgstr "Cài đặt"
 
 #: mainwindow.ui:430
 msgctxt "MainWindow"
@@ -838,7 +829,7 @@ msgstr "Về"
 #: mainwindow.ui:367
 msgctxt "MainWindow"
 msgid "Help"
-msgstr ""
+msgstr "Giúp"
 
 #: mainwindow.cpp:1391
 msgctxt "MainWindow"
@@ -848,7 +839,7 @@ msgstr "Giám định Mới"
 #: mainwindow.cpp:437
 msgctxt "MainWindow"
 msgid "Ctrl+T"
-msgstr ""
+msgstr "Ctrl+T"
 
 #: mainwindow.cpp:438
 msgctxt "MainWindow"
@@ -883,7 +874,7 @@ msgstr "Ctrl+P"
 #: mainwindow.cpp:463
 msgctxt "MainWindow"
 msgid "Tor"
-msgstr "Bộ định tuyến củ hành (The onion router)"
+msgstr "Tor"
 
 #: mainwindow.cpp:468
 msgctxt "MainWindow"
@@ -1037,11 +1028,8 @@ msgstr "Tor không hoạt động"
 
 #: mainwindow.cpp:686
 msgctxt "MainWindow"
-msgid "Your relay is shutting down."
-"Click 'Stop' again to stop your relay now."
-msgstr ""
-"Chuyển tiếp của bạn đang bị tắt. Nhấn 'Stop' một lần nữa để dừng phần chuyển "
-"tiếp của bạn bây giờ."
+msgid "Your relay is shutting down.Click 'Stop' again to stop your relay now."
+msgstr "Chuyển tiếp của bạn đang bị tắt. Nhấn 'Stop' một lần nữa để dừng phần chuyển tiếp của bạn bây giờ."
 
 #: mainwindow.cpp:688
 msgctxt "MainWindow"
@@ -1076,9 +1064,7 @@ msgstr "lỗi bắt đầu Tor"
 #: mainwindow.cpp:862
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified."
-msgstr ""
-"Vidalia không thể bắt đầu Tor. Kiểm tra các thiết lập của bạn để đảm bảo "
-"đúng tên và vị trí của Tor thực thi được chỉ định của bạn."
+msgstr "Vidalia không thể bắt đầu Tor. Kiểm tra các thiết lập của bạn để đảm bảo đúng tên và vị trí của Tor thực thi được chỉ định của bạn."
 
 #: mainwindow.cpp:896
 msgctxt "MainWindow"
@@ -1097,13 +1083,8 @@ msgstr "Tiếp nhận được cho phép"
 
 #: mainwindow.cpp:943
 msgctxt "MainWindow"
-msgid "You are currently running a relay. Terminating your relay will interrupt any open connections from clients."
-""
-"Would you like to shutdown gracefully and give clients time to find a new relay?"
-msgstr ""
-"Bạn hiện đang chạy một chuyển tiếp. Chấm dứt phần chuyển tiếp của bạn sẽ "
-"gián đoạn bất kỳ kết nối công khai từ khách hàng. Bạn co' muốn tắt máy từ từ "
-"và cho khách hàng thời gian để tìm một chuyển tiếp mới?"
+msgid "You are currently running a relay. Terminating your relay will interrupt any open connections from clients.Would you like to shutdown gracefully and give clients time to find a new relay?"
+msgstr "Bạn hiện đang chạy một chuyển tiếp. Chấm dứt phần chuyển tiếp của bạn sẽ gián đoạn bất kỳ kết nối công khai từ khách hàng. Bạn co' muốn tắt máy từ từ và cho khách hàng thời gian để tìm một chuyển tiếp mới?"
 
 #: mainwindow.cpp:965
 msgctxt "MainWindow"
@@ -1122,12 +1103,8 @@ msgstr "Lỗi bất ngờ"
 
 #: mainwindow.cpp:1001
 msgctxt "MainWindow"
-msgid "Vidalia detected that the Tor software exited unexpectedly."
-""
-"Please check the message log for recent warning or error messages."
-msgstr ""
-"Vidalia phát hiện ra rằng phần mềm Tor đã thoát bất ngờ.Hảy vui lòng kiểm "
-"tra đăng nhập thông điệp cho cảnh báo mới đây hay các thông báo lỗi."
+msgid "Vidalia detected that the Tor software exited unexpectedly.Please check the message log for recent warning or error messages."
+msgstr "Vidalia phát hiện ra rằng phần mềm Tor đã thoát bất ngờ.Hảy vui lòng kiểm tra đăng nhập thông điệp cho cảnh báo mới đây hay các thông báo lỗi."
 
 #: mainwindow.cpp:1055
 msgctxt "MainWindow"
@@ -1142,9 +1119,7 @@ msgstr "Xác thực Cookie đòi hỏi"
 #: mainwindow.cpp:1078
 msgctxt "MainWindow"
 msgid "The Tor software requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one."
-msgstr ""
-"Các phần mềm Tor đòi hỏi Vidalia gửi yêu cầu về nội dung của một cookie xác "
-"thực, nhưng Vidalia đã không thể tìm thấy một cookie."
+msgstr "Các phần mềm Tor đòi hỏi Vidalia gửi yêu cầu về nội dung của một cookie xác thực, nhưng Vidalia đã không thể tìm thấy một cookie."
 
 #: mainwindow.cpp:1080
 msgctxt "MainWindow"
@@ -1154,7 +1129,7 @@ msgstr "Bạn có muốn duyệt hồ sơ 'control_auth_cookie' chính mình?"
 #: mainwindow.cpp:1087
 msgctxt "MainWindow"
 msgid "Data Directory"
-msgstr "Từ điển Dữ liệu"
+msgstr "Thư mục Dữ liệu "
 
 #: mainwindow.cpp:1089
 msgctxt "MainWindow"
@@ -1169,9 +1144,7 @@ msgstr "Lỗi Đăng ký Sự kiện"
 #: mainwindow.cpp:1143
 msgctxt "MainWindow"
 msgid "Vidalia was unable to register for some events. Many of Vidalia's features may be unavailable."
-msgstr ""
-"Vidalia không thể đăng ghi cho một số sự kiện. Nhiều trong số các tính năng "
-"của Vidalia có thể không có sẵn."
+msgstr "Vidalia không thể đăng ghi cho một số sự kiện. Nhiều trong số các tính năng của Vidalia có thể không có sẵn."
 
 #: mainwindow.cpp:1222
 msgctxt "MainWindow"
@@ -1186,8 +1159,7 @@ msgstr "Vidalia không thể xác nhận phần mềm Tor. (% 1)"
 #: mainwindow.cpp:1226
 msgctxt "MainWindow"
 msgid "Please check your control port authentication settings."
-msgstr ""
-"Vui lòng kiểm tra các thiết lập xác thực cổng truy nhập điều khiển của bạn."
+msgstr "Vui lòng kiểm tra các thiết lập xác thực cổng truy nhập điều khiển của bạn."
 
 #: mainwindow.cpp:1330
 msgctxt "MainWindow"
@@ -1197,9 +1169,7 @@ msgstr "Có sẵn Cập nhật Tor "
 #: mainwindow.cpp:1333
 msgctxt "MainWindow"
 msgid "The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version."
-msgstr ""
-"Phiên bản cài đặt hiện thời của Tor hết hạn hoặc không còn được đề nghị. Xin "
-"vui lòng truy cập vào trang web Tor để tải phiên bản mới nhất."
+msgstr "Phiên bản cài đặt hiện thời của Tor hết hạn hoặc không còn được đề nghị. Xin vui lòng truy cập vào trang web Tor để tải phiên bản mới nhất."
 
 #: mainwindow.cpp:1333
 msgctxt "MainWindow"
@@ -1209,8 +1179,7 @@ msgstr "Tor trang web:% 1"
 #: mainwindow.cpp:1394
 msgctxt "MainWindow"
 msgid "All subsequent connections will appear to be different than your old connections."
-msgstr ""
-"Tất cả các kết nối tiếp theo sẽ xuất hiện khác với các kết nối cũ của bạn."
+msgstr "Tất cả các kết nối tiếp theo sẽ xuất hiện khác với các kết nối cũ của bạn."
 
 #: mainwindow.cpp:1409
 msgctxt "MainWindow"
@@ -1325,45 +1294,31 @@ msgstr "Đặt lại mật khẩu bị lỗi"
 #: mainwindow.cpp:1213
 msgctxt "MainWindow"
 msgid "Vidalia tried to reset Tor's control password, but was not able to restart the Tor software. Please check your Task Manager to ensure there are no other Tor processes running."
-msgstr ""
-"Vidalia đã thu*? đặt lại mật khẩu điều khiển Tor, nhưng đã không thể khởi "
-"động lại phần mềm Tor. Vui lòng kiểm tra quản lý công việc của bạn để đảm "
-"bảo không có tiến trình Tor khác đang chạy."
+msgstr "Vidalia đã thu*? đặt lại mật khẩu điều khiển Tor, nhưng đã không thể khởi động lại phần mềm Tor. Vui lòng kiểm tra quản lý công việc của bạn để đảm bảo không có tiến trình Tor khác đang chạy."
 
 #: messagelog.cpp:126
 msgctxt "MessageLog"
-msgid "Messages that appear when something has "
-"gone very wrong and Tor cannot proceed."
-msgstr ""
-"Thông điệp xuất hiện khi một cái gì đó đã đi rất sai và Tor không thể tiến "
-"hành."
+msgid "Messages that appear when something has gone very wrong and Tor cannot proceed."
+msgstr "Thông điệp xuất hiện khi một cái gì đó đã đi rất sai và Tor không thể tiến hành."
 
 #: messagelog.cpp:128
 msgctxt "MessageLog"
-msgid "Messages that only appear when "
-"something has gone wrong with Tor."
+msgid "Messages that only appear when something has gone wrong with Tor."
 msgstr "Thông điệp mà chỉ xuất hiện khi một cái gì đó đã đi sai với Tor."
 
 #: messagelog.cpp:132
 msgctxt "MessageLog"
-msgid "Messages that appear infrequently "
-"during normal Tor operation and are "
-"not considered errors, but you may "
-"care about."
-msgstr ""
-"Thông điệp xuất hiện thường xuyên trong khi vận hành Tor bình thường và "
-"không được coi là lỗi, nhưng bạn có thể quan tâm."
+msgid "Messages that appear infrequently during normal Tor operation and are not considered errors, but you may care about."
+msgstr "Thông điệp xuất hiện thường xuyên trong khi vận hành Tor bình thường và không được coi là lỗi, nhưng bạn có thể quan tâm."
 
 #: messagelog.cpp:134
 msgctxt "MessageLog"
-msgid "Messages that appear frequently "
-"during normal Tor operation."
+msgid "Messages that appear frequently during normal Tor operation."
 msgstr "Thông điệp xuất hiện thường xuyên trong khi vận hành Tor bình thường."
 
 #: messagelog.cpp:136
 msgctxt "MessageLog"
-msgid "Hyper-verbose messages primarily of "
-"interest to Tor developers."
+msgid "Hyper-verbose messages primarily of interest to Tor developers."
 msgstr "Hyper-tiết bài viết chủ yếu quan tâm đến các nhà phát triển Tor."
 
 #: messagelog.cpp:189
@@ -1394,9 +1349,7 @@ msgstr "Tên Tập tin Đăng nhập bắt buộc"
 #: messagelog.cpp:229
 msgctxt "MessageLog"
 msgid "You must enter a filename to be able to save log messages to a file."
-msgstr ""
-"Bạn phải nhập một tên tập tin để có thể lưu các tin nhắn đăng nhập vào một "
-"tập tin."
+msgstr "Bạn phải nhập một tên tập tin để có thể lưu các tin nhắn đăng nhập vào một tập tin."
 
 #: messagelog.cpp:280
 msgctxt "MessageLog"
@@ -1420,9 +1373,7 @@ msgstr "Vidalia"
 
 #: messagelog.cpp:310
 msgctxt "MessageLog"
-msgid "Cannot write file %1"
-""
-"%2."
+msgid "Cannot write file %1%2."
 msgstr "Không thể ghi tập tin% 1% 2."
 
 #: messagelog.cpp:360
@@ -1488,7 +1439,7 @@ msgstr "Ctrl+E"
 #: messagelog.ui:497
 msgctxt "MessageLog"
 msgid "Copy"
-msgstr ""
+msgstr "Bản sao"
 
 #: messagelog.ui:500
 msgctxt "MessageLog"
@@ -1553,7 +1504,7 @@ msgstr "Ctrl+T"
 #: messagelog.ui:567
 msgctxt "MessageLog"
 msgid "Help"
-msgstr ""
+msgstr "Giúp "
 
 #: messagelog.ui:570
 msgctxt "MessageLog"
@@ -1563,12 +1514,12 @@ msgstr "SHiển thị trình duyệt trợ giúp"
 #: messagelog.ui:573
 msgctxt "MessageLog"
 msgid "F1"
-msgstr ""
+msgstr "F1"
 
 #: messagelog.ui:581
 msgctxt "MessageLog"
 msgid "Close"
-msgstr ""
+msgstr "Đóng"
 
 #: messagelog.ui:584
 msgctxt "MessageLog"
@@ -1578,12 +1529,12 @@ msgstr "Đóng Đăng nhập tin nhắn"
 #: messagelog.ui:587
 msgctxt "MessageLog"
 msgid "Esc"
-msgstr ""
+msgstr "Esc"
 
 #: messagelog.ui:598
 msgctxt "MessageLog"
 msgid "Find"
-msgstr "Ti`m"
+msgstr "Tìm"
 
 #: messagelog.ui:601
 msgctxt "MessageLog"
@@ -1628,7 +1579,7 @@ msgstr "Hủy bỏ các thay đổi được thực hiện cho các cài đặt"
 #: messagelog.ui:182
 msgctxt "MessageLog"
 msgid "Cancel"
-msgstr ""
+msgstr "Hủy"
 
 #: messagelog.ui:196
 msgctxt "MessageLog"
@@ -1638,7 +1589,7 @@ msgstr "Lọc Thông báo"
 #: messagelog.ui:217
 msgctxt "MessageLog"
 msgid "Error"
-msgstr ""
+msgstr "Lỗi"
 
 #: messagelog.ui:233
 msgctxt "MessageLog"
@@ -1648,17 +1599,17 @@ msgstr "Cảnh báo"
 #: messagelog.ui:249
 msgctxt "MessageLog"
 msgid "Notice"
-msgstr "chú ý "
+msgstr "Thông báo"
 
 #: messagelog.ui:265
 msgctxt "MessageLog"
 msgid "Info"
-msgstr "Thông tin "
+msgstr "Tin"
 
 #: messagelog.ui:281
 msgctxt "MessageLog"
 msgid "Debug"
-msgstr "De lỗi"
+msgstr "Gở lỗi"
 
 #: messagelog.ui:297
 msgctxt "MessageLog"
@@ -1683,14 +1634,12 @@ msgstr "Luôn luôn Đăng Lưu Thông điệp mới"
 #: messagelog.ui:371
 msgctxt "MessageLog"
 msgid "Browse"
-msgstr ""
+msgstr "Trình duyệt"
 
 #: messagelog.ui:394
 msgctxt "MessageLog"
 msgid "Enable automatically saving all new log messages to a file"
-msgstr ""
-"Kích hoạt tính năng ưu tự động ltất cả các tin nhắn đăng nhập mới vào một "
-"tập tin"
+msgstr "Kích hoạt tính năng ưu tự động ltất cả các tin nhắn đăng nhập mới vào một tập tin"
 
 #: messagelog.ui:397
 msgctxt "MessageLog"
@@ -1720,7 +1669,7 @@ msgstr "Ctrl+R"
 #: netviewer.ui:256
 msgctxt "NetViewer"
 msgid "Help"
-msgstr ""
+msgstr "Giúp "
 
 #: netviewer.ui:259
 msgctxt "NetViewer"
@@ -1815,16 +1764,12 @@ msgstr "Sao chép (Ctrl+C)"
 #: networkpage.cpp:272
 msgctxt "NetworkPage"
 msgid "You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet."
-msgstr ""
-"Bạn phải xác định cả hai một địa chỉ IP hay tên máy và số cổng để cấu hình "
-"Tor để sử dụng một proxy ủy quyền truy cập vào  Liên mạng"
+msgstr "Bạn phải xác định cả hai một địa chỉ IP hay tên máy và số cổng để cấu hình Tor để sử dụng một proxy ủy quyền truy cập vào  Liên mạng"
 
 #: networkpage.cpp:278
 msgctxt "NetworkPage"
 msgid "You must specify one or more ports to which your firewall allows you to connect."
-msgstr ""
-"Bạn phải chỉ định một hoặc nhiều cổng để  firewall của bạn cho phép bạn kết "
-"nối."
+msgstr "Bạn phải chỉ định một hoặc nhiều cổng để  firewall của bạn cho phép bạn kết nối."
 
 #: networkpage.cpp:314
 msgctxt "NetworkPage"
@@ -1834,9 +1779,7 @@ msgstr "'% 1' không phải là một số cổng hợp lệ."
 #: networkpage.ui:25
 msgctxt "NetworkPage"
 msgid "Check if your local network requires a proxy to access the Internet"
-msgstr ""
-"Kiểm tra nếu mạng địa phương của bạn yêu cầu một máy ủy quyền proxy để truy "
-"cập  Liên mạng"
+msgstr "Kiểm tra nếu mạng địa phương của bạn yêu cầu một máy ủy quyền proxy để truy cập  Liên mạng"
 
 #: networkpage.ui:28
 msgctxt "NetworkPage"
@@ -1876,9 +1819,7 @@ msgstr "Cổng:"
 #: networkpage.ui:176
 msgctxt "NetworkPage"
 msgid "Check to only connect to relays using ports allowed by your firewall"
-msgstr ""
-"Kiểm tra chỉ kết nối với những tiếp sức sử dụng cổng được cho phép bởi tường "
-"lửa của bạn"
+msgstr "Kiểm tra chỉ kết nối với những tiếp sức sử dụng cổng được cho phép bởi tường lửa của bạn"
 
 #: networkpage.ui:179
 msgctxt "NetworkPage"
@@ -1903,9 +1844,7 @@ msgstr "80, 443"
 #: networkpage.ui:235
 msgctxt "NetworkPage"
 msgid "Check to encrypt directory requests and, optionally, use bridge relays to access the Tor network"
-msgstr ""
-"Kiểm tra để mã hóa các yêu cầu thư mục và, mo^.t ca'ch tùy chọn, sử dụng "
-"những tiếp sức cầu để truy cập vào mạng Tor"
+msgstr "Kiểm tra để mã hóa các yêu cầu thư mục và, mo^.t ca'ch tùy chọn, sử dụng những tiếp sức cầu để truy cập vào mạng Tor"
 
 #: networkpage.ui:238
 msgctxt "NetworkPage"
@@ -1920,9 +1859,7 @@ msgstr "Những Thiết lập Cầu"
 #: networkpage.ui:274
 msgctxt "NetworkPage"
 msgid "The Tor software you are currently running does not support bridges. <br>Directory connections will still be encrypted."
-msgstr ""
-"Phần mềm Tor ma` bạn hiện đang chạy không hỗ trợ cầu. <br> Nhu*~ng kết nối "
-"danh mục sẽ vẫn được mã hóa."
+msgstr "Phần mềm Tor ma` bạn hiện đang chạy không hỗ trợ cầu. <br> Nhu*~ng kết nối danh mục sẽ vẫn được mã hóa."
 
 #: networkpage.ui:295
 msgctxt "NetworkPage"
@@ -1962,12 +1899,12 @@ msgstr "Trực tuyến"
 #: routerdescriptor.cpp:78
 msgctxt "RouterDescriptor"
 msgid "Hibernating"
-msgstr ""
+msgstr "Không hoạt động"
 
 #: routerdescriptor.cpp:80
 msgctxt "RouterDescriptor"
 msgid "Offline"
-msgstr ""
+msgstr "thoát tuyến"
 
 #: routerdescriptorview.cpp:139
 msgctxt "RouterDescriptorView"
@@ -2022,17 +1959,17 @@ msgstr "% 1 giây"
 #: routerdescriptorview.cpp:48
 msgctxt "RouterDescriptorView"
 msgid "Copy"
-msgstr ""
+msgstr "Sao chép"
 
 #: routerlistitem.cpp:67
 msgctxt "RouterListItem"
 msgid "Offline"
-msgstr "thoát tuyến"
+msgstr "Ngoại tuyến"
 
 #: routerlistitem.cpp:71
 msgctxt "RouterListItem"
 msgid "Hibernating"
-msgstr "Không hoạt động"
+msgstr "Đang không hoạt động"
 
 #: routerlistitem.cpp:83
 msgctxt "RouterListItem"
@@ -2057,7 +1994,7 @@ msgstr "% 1 rơ le trực tuyến"
 #: routerlistwidget.cpp:67
 msgctxt "RouterListWidget"
 msgid "Copy"
-msgstr "Bản sao"
+msgstr "Sao chép"
 
 #: routerlistwidget.cpp:68
 msgctxt "RouterListWidget"
@@ -2077,16 +2014,12 @@ msgstr "Hết Cầu Hỗ trợ"
 #: serverpage.cpp:143
 msgctxt "ServerPage"
 msgid "You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges."
-msgstr ""
-"Bạn đã cấu hình Tor để hoạt động như một cầu nối tiếp sức cho người sử dụng "
-"kiểm duyệt, nhưng phiên bản Tor của bạn không hỗ trợ cầu."
+msgstr "Bạn đã cấu hình Tor để hoạt động như một cầu nối tiếp sức cho người sử dụng kiểm duyệt, nhưng phiên bản Tor của bạn không hỗ trợ cầu."
 
 #: serverpage.cpp:145
 msgctxt "ServerPage"
 msgid "Please upgrade your Tor software or configure Tor to act as a normal Tor relay."
-msgstr ""
-"Xin vui lòng nâng cấp phần mềm Tor của bạn hoặc cấu hình Tor để hành động "
-"như là một Tor tiếp sức bình thường."
+msgstr "Xin vui lòng nâng cấp phần mềm Tor của bạn hoặc cấu hình Tor để hành động như là một Tor tiếp sức bình thường."
 
 #: serverpage.cpp:199
 msgctxt "ServerPage"
@@ -2111,9 +2044,7 @@ msgstr "Tiếp sức giao thông cho mạng Tor"
 #: serverpage.ui:39
 msgctxt "ServerPage"
 msgid "Help censored users reach the Tor network (Tor 0.2.0.8-alpha or newer)"
-msgstr ""
-"Trợ giúp người dùng kiểm duyệt tiến tới mạng Tor (Tor 0.2.0.8-alpha hay mới "
-"hơn)"
+msgstr "Trợ giúp người dùng kiểm duyệt tiến tới mạng Tor (Tor 0.2.0.8-alpha hay mới hơn)"
 
 #: serverpage.ui:91
 msgctxt "ServerPage"
@@ -2147,11 +2078,8 @@ msgstr "Hiển thị chủ đề trợ giúp cho chuyển tới cổng"
 
 #: serverpage.ui:204
 msgctxt "ServerPage"
-msgid "Email address at which you may be reached if there is a"
-"problem with your relay. You might also include your PGP or GPG fingerprint."
-msgstr ""
-"Hãy thư điện tử d-ịa chỉ mà bạn có thể đến nếu có một vấn đề với tiếp sức "
-"của bạn. Bạn cũng có thể bao gồm PGP của bạn hoặc vân tay GPG."
+msgid "Email address at which you may be reached if there is aproblem with your relay. You might also include your PGP or GPG fingerprint."
+msgstr "Hãy thư điện tử d-ịa chỉ mà bạn có thể đến nếu có một vấn đề với tiếp sức của bạn. Bạn cũng có thể bao gồm PGP của bạn hoặc vân tay GPG."
 
 #: serverpage.ui:234
 msgctxt "ServerPage"
@@ -2176,9 +2104,7 @@ msgstr "Tên tiếp sức của bạn"
 #: serverpage.ui:370
 msgctxt "ServerPage"
 msgid "Port on which users and other relays can communicate with your relay"
-msgstr ""
-"Cổng mà người sử dụng và những chuyển tiếp khác có thể giao tiếp với tiếp "
-"sức của bạn"
+msgstr "Cổng mà người sử dụng và những chuyển tiếp khác có thể giao tiếp với tiếp sức của bạn"
 
 #: serverpage.ui:380
 msgctxt "ServerPage"
@@ -2193,9 +2119,7 @@ msgstr "Những Cài đặt Cơ bản"
 #: serverpage.ui:435
 msgctxt "ServerPage"
 msgid "For Internet connections with fast download speed but slow upload, please list your upload speed here."
-msgstr ""
-"Cho các kết nối Liên mạng với tốc độ tải xuống nhanh, nhưng nạp lên chậm, "
-"xin ghi vào danh sách tốc độ nạp lên của bạn ở đây."
+msgstr "Cho các kết nối Liên mạng với tốc độ tải xuống nhanh, nhưng nạp lên chậm, xin ghi vào danh sách tốc độ nạp lên của bạn ở đây."
 
 #: serverpage.ui:466
 msgctxt "ServerPage"
@@ -2265,9 +2189,7 @@ msgstr "Đỉnh giới hạn tỷ lệ băng thông"
 #: serverpage.ui:737
 msgctxt "ServerPage"
 msgid "Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s."
-msgstr ""
-"Tỷ lệ băng thông tối đa của bạn phải lớn hơn hoặc bằng mức băng thông trung "
-"bình của bạn. Cả hai giá trị phải có ít nhất 20 kB / s."
+msgstr "Tỷ lệ băng thông tối đa của bạn phải lớn hơn hoặc bằng mức băng thông trung bình của bạn. Cả hai giá trị phải có ít nhất 20 kB / s."
 
 #: serverpage.ui:400
 msgctxt "ServerPage"
@@ -2342,16 +2264,12 @@ msgstr "Hiển thị chủ đề về các chính sách trợ giúp thoát"
 #: serverpage.ui:969
 msgctxt "ServerPage"
 msgid "What Internet resources should users be able to access from your relay?"
-msgstr ""
-"Người sử dụng những nguồn năng lực Liên mạng gì sẽ có thể truy nhập từ "
-"tiếp sức của bạn?"
+msgstr "Người sử dụng những nguồn năng lực Liên mạng gì sẽ có thể truy nhập từ tiếp sức của bạn?"
 
 #: serverpage.ui:979
 msgctxt "ServerPage"
 msgid "Tor will still block some outgoing mail and file sharing applications by default to reduce spam and other abuse."
-msgstr ""
-"Tor vẫn sẽ chặn một số thư gửi đi và chia sẻ tập tin ứng dụng mặc định để "
-"giảm thư rác và lạm dụng khác."
+msgstr "Tor vẫn sẽ chặn một số thư gửi đi và chia sẻ tập tin ứng dụng mặc định để giảm thư rác và lạm dụng khác."
 
 #: serverpage.ui:764
 msgctxt "ServerPage"
@@ -2366,9 +2284,7 @@ msgstr "Hãy để những người khác tiếp cận cầu của bạn bằng 
 #: serverpage.ui:1039
 msgctxt "ServerPage"
 msgid "This is the identity of your bridge relay that you can give to other people"
-msgstr ""
-"Đây là danh tính của cầu tiếp sức của bạn mà bạn có thể cung cấp cho người "
-"khác"
+msgstr "Đây là danh tính của cầu tiếp sức của bạn mà bạn có thể cung cấp cho người khác"
 
 #: serverpage.ui:1061
 msgctxt "ServerPage"
@@ -2383,9 +2299,7 @@ msgstr "Lỗi trong khi đang thử thôi xuất bản tất cả các dịch v
 #: servicepage.cpp:123
 msgctxt "ServicePage"
 msgid "Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones."
-msgstr ""
-"Xin cấu hình ít nhất một thư mục dịch vụ và một cổng ảo cho mỗi dịch vụ mà "
-"bạn muốn lưu. Hãy hủy bỏ những cái khác."
+msgstr "Xin cấu hình ít nhất một thư mục dịch vụ và một cổng ảo cho mỗi dịch vụ mà bạn muốn lưu. Hãy hủy bỏ những cái khác."
 
 #: servicepage.cpp:597
 msgctxt "ServicePage"
@@ -2470,9 +2384,7 @@ msgstr "Sao lại địa chỉ onion của dịch vụ được chọn vào bộ
 #: servicepage.ui:123
 msgctxt "ServicePage"
 msgid "Browse in local file system and choose directory for selected service"
-msgstr ""
-"Trình duyệt trong hệ thống tập tin địa phương và chọn thư mục cho dịch vụ "
-"được chọn"
+msgstr "Trình duyệt trong hệ thống tập tin địa phương và chọn thư mục cho dịch vụ được chọn"
 
 #: servicepage.cpp:384
 msgctxt "ServicePage"
@@ -2507,7 +2419,7 @@ msgstr "Thất bại"
 #: stream.cpp:137
 msgctxt "Stream"
 msgid "Closed"
-msgstr "Đóng"
+msgstr "Đóng cửa"
 
 #: stream.cpp:138
 msgctxt "Stream"
@@ -2622,7 +2534,7 @@ msgstr "OK"
 #: vmessagebox.cpp:78
 msgctxt "VMessageBox"
 msgid "Cancel"
-msgstr "Thôi"
+msgstr "Hủy"
 
 #: vmessagebox.cpp:79
 msgctxt "VMessageBox"
@@ -2652,7 +2564,7 @@ msgstr "Hiển Đăng nhập"
 #: vmessagebox.cpp:84
 msgctxt "VMessageBox"
 msgid "Show Settings"
-msgstr "Hiện những Thiết lập"
+msgstr "Hiển thị Thiết lập"
 
 #: vmessagebox.cpp:85
 msgctxt "VMessageBox"
@@ -2681,13 +2593,8 @@ msgstr "Vidalia đang chạy"
 
 #: main.cpp:95
 msgctxt "Vidalia"
-msgid "Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway."
-""
-"Would you like to continue starting Vidalia?"
-msgstr ""
-"Một quá trình Vidalia khác có thể đang chạy ro^`i. Nếu thực sự không phải là "
-"một quá trình Vidalia khác đang chạy, bạn có thể chọn để tiếp tục. Bạn co' "
-"muốn tiếp tục khởi động Vidalia?"
+msgid "Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.Would you like to continue starting Vidalia?"
+msgstr "Một quá trình Vidalia khác có thể đang chạy ro^`i. Nếu thực sự không phải là một quá trình Vidalia khác đang chạy, bạn có thể chọn để tiếp tục. Bạn co' muốn tiếp tục khởi động Vidalia?"
 
 #: vidalia.cpp:169
 msgctxt "Vidalia"
@@ -2753,3 +2660,4 @@ msgstr "Mức Đăng nhập chỉ định không hợp lệ:"
 msgctxt "Vidalia"
 msgid "Unable to open log file '%1': %2"
 msgstr "Không thể mở hồ sơ đăng nhập '%1':% 2"
+
