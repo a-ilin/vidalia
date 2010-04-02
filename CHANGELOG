@@ -2,6 +2,8 @@
   o Stop using our custom dock icon implementation on OS X and just use
     QSystemTrayIcon everywhere. Fixes the build on Snow Leopard.
     (Ticket #562)
+  o Update the bundled CA certificates to re-enable downloading bridges
+    from bridges.torproject.org via SSL.
   o Include a pre-configured qt.conf file in the Mac OS X bundles that
     disable Qt plugin loading from the default directories. Otherwise,
     users who have Qt installed in a system-wide location would end up

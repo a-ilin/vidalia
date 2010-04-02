@@ -305,7 +305,7 @@
     </qresource>
     <qresource prefix="/pki">
         <file>cacert_root.crt</file>
-        <file>EntrustSecureServerCA.crt</file>
+        <file>EquifaxSecureCA.crt</file>
         <file>gd-class2-root.crt</file>
     </qresource>
 </RCC>
