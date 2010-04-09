@@ -21,6 +21,7 @@ set(miniupnpc_SRCS
   upnpcommands.c
   upnperrors.c
   upnpreplyparse.c
+  connecthostport.c
 )
 if (NOT WIN32)
   set(miniupnpc_SRCS ${miniupnpc_SRCS} minissdpc.c)
