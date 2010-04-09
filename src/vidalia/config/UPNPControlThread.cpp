@@ -280,7 +280,7 @@ UPNPControlThread::forwardPort(quint16 port)
   sPort = QString::number(port);
 
   // Add the port mapping of external:port -> internal:port
-  retval = UPNP_AddPortMapping(urls.controlURL, data.servicetype,
+  retval = UPNP_AddPortMapping(urls.controlURL, data.first.servicetype,
                                qPrintable(sPort), qPrintable(sPort), lanaddr,
                                "Tor relay", "TCP", NULL);
   if(UPNPCOMMAND_SUCCESS != retval) {
@@ -290,7 +290,7 @@ UPNPControlThread::forwardPort(quint16 port)
   }
 
   // Check if the port mapping was accepted
-  retval = UPNP_GetSpecificPortMappingEntry(urls.controlURL, data.servicetype,
+  retval = UPNP_GetSpecificPortMappingEntry(urls.controlURL, data.first.servicetype,
                                             qPrintable(sPort), "TCP",
                                             intClient, intPort);
   if(UPNPCOMMAND_SUCCESS != retval) {
@@ -317,7 +317,7 @@ UPNPControlThread::disablePort(quint16 port)
   QString sPort = QString::number(port);
 
   // Remove the mapping
-  int retval = UPNP_DeletePortMapping(urls.controlURL, data.servicetype,
+  int retval = UPNP_DeletePortMapping(urls.controlURL, data.first.servicetype,
                                       qPrintable(sPort), "TCP", NULL);
   if(UPNPCOMMAND_SUCCESS != retval) {
     vWarn("DeletePortMapping() failed with code %1").arg(retval);

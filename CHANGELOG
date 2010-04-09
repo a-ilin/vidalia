@@ -10,6 +10,7 @@
     loading the libraries twice and crashing.
   o Include libgcc_s_dw2-1.dll in the Windows installers, since Qt 4.6 now
     depends on that DLL. (Ticket #555)
+  o Update the included version of miniupnpc to 1.4.20100407.
   o Add Burmese and Thai UI translations.
 
 
