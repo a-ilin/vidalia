@@ -1,4 +1,4 @@
-0.2.8   xx-xxx-2010
+0.2.8   11-Apr-2010
   o Stop using our custom dock icon implementation on OS X and just use
     QSystemTrayIcon everywhere. Fixes the build on Snow Leopard.
     (Ticket #562)
@@ -9,7 +9,8 @@
     users who have Qt installed in a system-wide location would end up
     loading the libraries twice and crashing.
   o Include libgcc_s_dw2-1.dll in the Windows installers, since Qt 4.6 now
-    depends on that DLL. (Ticket #555)
+    depends on that DLL. Including the .dll is currently hardcoded, so the
+    Windows installer must be built using Qt 4.6. (Ticket #555)
   o Update the included version of miniupnpc to 1.4.20100407.
   o Add Burmese and Thai UI translations.
 
