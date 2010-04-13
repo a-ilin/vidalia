@@ -3,14 +3,14 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-05-19 23:56+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2010-04-10 02:06-0600\n"
+"Last-Translator: Shinji R. Yamane <s-yamane@computer.org>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Vidalia ts2po 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 1.1.0\n"
 
 msgctxt "AboutDialog"
 msgid "About Vidalia"
@@ -26,7 +26,7 @@ msgstr "Vidalia 0.2.0"
 
 msgctxt "AboutDialog"
 msgid "Tor 0.2.0.32"
-msgstr "0.2.0.31-alpha-dev (r123456)"
+msgstr "Tor 0.2.0.32"
 
 msgctxt "AboutDialog"
 msgid "Qt 4.4.2"
@@ -42,11 +42,11 @@ msgstr "Tor"
 
 msgctxt "AboutDialog"
 msgid "Qt"
-msgstr ""
+msgstr "Qt"
 
 msgctxt "AboutDialog"
 msgid "version"
-msgstr ""
+msgstr "version"
 
 msgctxt "AdvancedPage"
 msgid "'%1' is not a valid IP address."
@@ -248,7 +248,7 @@ msgstr ""
 
 msgctxt "BridgeDownloader"
 msgid "Downloading a list of bridges..."
-msgstr ""
+msgstr "ブリッジのリストをダウンロード..."
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Downloading Bridges"
@@ -264,7 +264,7 @@ msgstr ""
 
 msgctxt "BridgeUsageDialog"
 msgid "Country"
-msgstr ""
+msgstr "国"
 
 msgctxt "BridgeUsageDialog"
 msgid "# Clients"
@@ -440,7 +440,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Australia"
-msgstr "Vidalia のバージョン情報"
+msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Azerbaijan"
@@ -584,7 +584,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Djibouti"
-msgstr "バージョン情報"
+msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Dominica"
@@ -620,7 +620,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "France"
-msgstr "キャンセル"
+msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Gabon"
@@ -652,7 +652,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Guinea"
-msgstr "全般"
+msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Guinea-Bissau"
@@ -688,7 +688,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Japan"
-msgstr ""
+msgstr "日本"
 
 msgctxt "CountryInfo"
 msgid "Jordan"
@@ -844,7 +844,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Norway"
-msgstr "進む"
+msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Oman"
@@ -888,7 +888,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Portugal"
-msgstr "ポート:"
+msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Qatar"
@@ -936,7 +936,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Senegal"
-msgstr "全般"
+msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Serbia"
@@ -976,7 +976,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Spain"
-msgstr "共有"
+msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Sri Lanka"
@@ -1620,7 +1620,7 @@ msgstr ""
 
 msgctxt "MainWindow"
 msgid "Connected to the Tor network!"
-msgstr ""
+msgstr "Torネットワークに接続しました!"
 
 msgctxt "MainWindow"
 msgid "Unrecognized startup status"
@@ -1636,7 +1636,7 @@ msgstr ""
 
 msgctxt "MainWindow"
 msgid "done"
-msgstr ""
+msgstr "完了"
 
 msgctxt "MainWindow"
 msgid "connection refused"
@@ -1892,11 +1892,11 @@ msgstr ""
 
 msgctxt "MainWindow"
 msgid "Update Failed"
-msgstr "Tor の更新が利用可能です"
+msgstr "更新に失敗しました"
 
 msgctxt "MainWindow"
 msgid "Your software is up to date"
-msgstr ""
+msgstr "ソフトウェアは最新版です"
 
 msgctxt "MainWindow"
 msgid "There are no new Tor software packages available for your computer at this time."
@@ -1904,7 +1904,7 @@ msgstr ""
 
 msgctxt "MainWindow"
 msgid "Installation Failed"
-msgstr ""
+msgstr "インストール失敗"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to install your software updates."
@@ -2346,7 +2346,7 @@ msgstr "不明"
 
 msgctxt "NetViewer"
 msgid "Full Screen"
-msgstr ""
+msgstr "フルスクリーン表示"
 
 msgctxt "NetViewer"
 msgid "View the network map as a full screen window"
@@ -3143,7 +3143,7 @@ msgstr ""
 
 msgctxt "UpdatesAvailableDialog"
 msgid "Package"
-msgstr "Backspace"
+msgstr ""
 
 msgctxt "UpdatesAvailableDialog"
 msgid "Version"
@@ -3290,4 +3290,3 @@ msgstr ""
 msgctxt "stringutil.h"
 msgid "%1 mins"
 msgstr ""
-

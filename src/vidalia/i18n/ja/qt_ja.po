@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-08-20 03:25+0000\n"
-"PO-Revision-Date: 2009-03-21 19:43+0000\n"
-"Last-Translator: Damian Johnson <atagar1@gmail.com>\n"
+"PO-Revision-Date: 2010-04-10 02:29-0600\n"
+"Last-Translator: Shinji R. Yamane <s-yamane@computer.org>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -193,23 +193,24 @@ msgid "Open"
 msgstr "オープン"
 
 #: qfiledialog.cpp:1670
-#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
 "%1 already exists.\n"
 "Do you want to replace it?"
-msgstr "%1はすでに存在します。置き換えますか?"
+msgstr ""
+"%1はすでに存在します。\n"
+"置き換えますか?"
 
 #: qfiledialog.cpp:1690
-#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
 "%1\n"
 "File not found.\n"
 "Please verify the correct file name was given."
 msgstr ""
-"%1ファイルが見つかりません。正しいファイル名が入力されたかどうか確認してくだ"
-"さい。"
+"%1\n"
+"ファイルが見つかりません。\n"
+"正しいファイル名が入力されたかどうか確認してください。"
 
 #: qdirmodel.cpp:833
 msgctxt "QFileDialog"
@@ -262,23 +263,24 @@ msgid "Directory:"
 msgstr "ディレクトリ:"
 
 #: qfiledialog.cpp:2476
-#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
 "%1\n"
 "Directory not found.\n"
 "Please verify the correct directory name was given."
 msgstr ""
-"%1ディレクトリが見つかりません。正しいディレクトリ名が入力されたかどうか確認"
-"してください。"
+"%1\n"
+"ディレクトリが見つかりません。\n"
+"正しいディレクトリ名が入力されたかどうか確認してください。"
 
 #: qfiledialog.cpp:2281
-#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
 "'%1' is write protected.\n"
 "Do you want to delete it anyway?"
-msgstr "'%1' は書き込みが禁止されています。本当に削除しますか？"
+msgstr ""
+"'%1' は書き込みが禁止されています。\n"
+"本当に削除しますか？"
 
 #: qfiledialog.cpp:2286
 msgctxt "QFileDialog"
@@ -323,7 +325,7 @@ msgstr "ディレクトリの検索"
 #: qfiledialog.cpp:458
 msgctxt "QFileDialog"
 msgid "Show "
-msgstr ""
+msgstr "表示"
 
 #: ui_qfiledialog.h:269
 msgctxt "QFileDialog"
@@ -348,7 +350,7 @@ msgstr ""
 #: qsidebar.cpp:388
 msgctxt "QFileDialog"
 msgid "Remove"
-msgstr ""
+msgstr "削除"
 
 #: qfiledialog.cpp:886
 msgctxt "QFileDialog"
