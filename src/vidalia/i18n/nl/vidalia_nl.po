@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-05-19 23:56+0000\n"
-"PO-Revision-Date: 2009-09-22 16:13+0000\n"
+"PO-Revision-Date: 2010-04-16 05:34-0600\n"
 "Last-Translator: Flabber <flabber@online.be>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
@@ -794,427 +794,428 @@ msgstr "Micronesië"
 
 msgctxt "CountryInfo"
 msgid "Moldova"
-msgstr ""
+msgstr "Moldavië"
 
 msgctxt "CountryInfo"
 msgid "Monaco"
-msgstr ""
+msgstr "Monaco"
 
 msgctxt "CountryInfo"
 msgid "Mongolia"
-msgstr ""
+msgstr "Mongolië"
 
 msgctxt "CountryInfo"
 msgid "Montenegro"
-msgstr ""
+msgstr "Montenegro"
 
 msgctxt "CountryInfo"
 msgid "Morocco"
-msgstr ""
+msgstr "Marokko"
 
 msgctxt "CountryInfo"
 msgid "Mozambique"
-msgstr ""
+msgstr "Mozambique"
 
 msgctxt "CountryInfo"
 msgid "Namibia"
-msgstr ""
+msgstr "Namibië"
 
 msgctxt "CountryInfo"
 msgid "Nauru"
-msgstr ""
+msgstr "Nauru"
 
 msgctxt "CountryInfo"
 msgid "Nepal"
-msgstr ""
+msgstr "Nepal"
 
 msgctxt "CountryInfo"
 msgid "Netherlands"
-msgstr ""
+msgstr "Nederland"
 
 msgctxt "CountryInfo"
 msgid "New Zealand"
-msgstr ""
+msgstr "Nieuw Zeeland"
 
 msgctxt "CountryInfo"
 msgid "Nicaragua"
-msgstr ""
+msgstr "Nicaragua"
 
 msgctxt "CountryInfo"
 msgid "Niger"
-msgstr ""
+msgstr "Niger"
 
 msgctxt "CountryInfo"
 msgid "Nigeria"
-msgstr ""
+msgstr "Nigerië"
 
 msgctxt "CountryInfo"
 msgid "Norway"
-msgstr "Verder"
+msgstr "Noorwegen"
 
 msgctxt "CountryInfo"
 msgid "Oman"
-msgstr ""
+msgstr "Oman"
 
 msgctxt "CountryInfo"
 msgid "Pakistan"
-msgstr ""
+msgstr "Pakistan"
 
 msgctxt "CountryInfo"
 msgid "Palau"
-msgstr ""
+msgstr "Palau"
 
 msgctxt "CountryInfo"
 msgid "Palestine"
-msgstr ""
+msgstr "Palestina"
 
 msgctxt "CountryInfo"
 msgid "Panama"
-msgstr ""
+msgstr "Panama"
 
 msgctxt "CountryInfo"
 msgid "Papua New Guinea"
-msgstr ""
+msgstr "Papua Nieuw Guinea"
 
 msgctxt "CountryInfo"
 msgid "Paraguay"
-msgstr ""
+msgstr "Paraguay"
 
 msgctxt "CountryInfo"
 msgid "Peru"
-msgstr ""
+msgstr "Peru"
 
 msgctxt "CountryInfo"
 msgid "Philippines"
-msgstr ""
+msgstr "Filipijnen"
 
 msgctxt "CountryInfo"
 msgid "Poland"
-msgstr ""
+msgstr "Polen"
 
 msgctxt "CountryInfo"
 msgid "Portugal"
-msgstr ""
+msgstr "Portugal"
 
 msgctxt "CountryInfo"
 msgid "Qatar"
-msgstr ""
+msgstr "Qatar"
 
 msgctxt "CountryInfo"
 msgid "Romania"
-msgstr ""
+msgstr "Roemenië"
 
 msgctxt "CountryInfo"
 msgid "Russia"
-msgstr ""
+msgstr "Rusland"
 
 msgctxt "CountryInfo"
 msgid "Rwanda"
-msgstr ""
+msgstr "Rwanda"
 
 msgctxt "CountryInfo"
 msgid "Saint Kitts & Nevis"
-msgstr ""
+msgstr "Sint Kitts & Nevis"
 
 msgctxt "CountryInfo"
 msgid "Saint Lucia"
-msgstr ""
+msgstr "Sint Lucia"
 
+#, fuzzy
 msgctxt "CountryInfo"
 msgid "Saint Vincent & the Grenadines"
-msgstr ""
+msgstr "Sint Vincent & the Grenadines"
 
 msgctxt "CountryInfo"
 msgid "Samoa"
-msgstr ""
+msgstr "Samoa"
 
 msgctxt "CountryInfo"
 msgid "San Marino"
-msgstr ""
+msgstr "San Marino"
 
 msgctxt "CountryInfo"
 msgid "Sao Tome & Principe"
-msgstr ""
+msgstr "Sao Tome & Principe"
 
 msgctxt "CountryInfo"
 msgid "Saudi Arabia"
-msgstr ""
+msgstr "Saudi Arabië"
 
 msgctxt "CountryInfo"
 msgid "Senegal"
-msgstr "Algemeen"
+msgstr "Senegal"
 
 msgctxt "CountryInfo"
 msgid "Serbia"
-msgstr ""
+msgstr "Servië"
 
 msgctxt "CountryInfo"
 msgid "Seychelles"
-msgstr ""
+msgstr "Seychellen"
 
 msgctxt "CountryInfo"
 msgid "Sierra Leone"
-msgstr ""
+msgstr "Sierra Leone"
 
 msgctxt "CountryInfo"
 msgid "Singapore"
-msgstr ""
+msgstr "Singapore"
 
 msgctxt "CountryInfo"
 msgid "Slovakia"
-msgstr ""
+msgstr "Slovakije"
 
 msgctxt "CountryInfo"
 msgid "Slovenia"
-msgstr ""
+msgstr "Slovenië"
 
 msgctxt "CountryInfo"
 msgid "Solomon Islands"
-msgstr ""
+msgstr "Salomonseilanden"
 
 msgctxt "CountryInfo"
 msgid "Somalia"
-msgstr ""
+msgstr "Somalië"
 
 msgctxt "CountryInfo"
 msgid "South Africa"
-msgstr ""
+msgstr "Zuidafrika"
 
 msgctxt "CountryInfo"
 msgid "Spain"
-msgstr ""
+msgstr "Spanje"
 
 msgctxt "CountryInfo"
 msgid "Sri Lanka"
-msgstr ""
+msgstr "Sri Lanka"
 
 msgctxt "CountryInfo"
 msgid "Sudan"
-msgstr ""
+msgstr "Soedan"
 
 msgctxt "CountryInfo"
 msgid "Suriname"
-msgstr ""
+msgstr "Suriname"
 
 msgctxt "CountryInfo"
 msgid "Swaziland"
-msgstr ""
+msgstr "Swaziland"
 
 msgctxt "CountryInfo"
 msgid "Sweden"
-msgstr ""
+msgstr "Zweden"
 
 msgctxt "CountryInfo"
 msgid "Switzerland"
-msgstr ""
+msgstr "Zwitserland"
 
 msgctxt "CountryInfo"
 msgid "Syria"
-msgstr ""
+msgstr "Syrië"
 
 msgctxt "CountryInfo"
 msgid "Tajikistan"
-msgstr ""
+msgstr "Tadjikistan"
 
 msgctxt "CountryInfo"
 msgid "Tanzania"
-msgstr ""
+msgstr "Tanzania"
 
 msgctxt "CountryInfo"
 msgid "Thailand"
-msgstr ""
+msgstr "Thailand"
 
 msgctxt "CountryInfo"
 msgid "Timor-Leste (East Timor)"
-msgstr ""
+msgstr "Timor-Leste (Oosttimor)"
 
 msgctxt "CountryInfo"
 msgid "Togo"
-msgstr ""
+msgstr "Togo"
 
 msgctxt "CountryInfo"
 msgid "Tonga"
-msgstr ""
+msgstr "Tonga"
 
 msgctxt "CountryInfo"
 msgid "Trinidad & Tobago"
-msgstr ""
+msgstr "Trinidad & Tobago"
 
 msgctxt "CountryInfo"
 msgid "Tunisia"
-msgstr ""
+msgstr "Tunisië"
 
 msgctxt "CountryInfo"
 msgid "Turkey"
-msgstr ""
+msgstr "Turkije"
 
 msgctxt "CountryInfo"
 msgid "Turkmenistan"
-msgstr ""
+msgstr "Turkmenistan"
 
 msgctxt "CountryInfo"
 msgid "Tuvalu"
-msgstr ""
+msgstr "Tuvalu"
 
 msgctxt "CountryInfo"
 msgid "Uganda"
-msgstr ""
+msgstr "Oeganda"
 
 msgctxt "CountryInfo"
 msgid "Ukraine"
-msgstr ""
+msgstr "Oekraine"
 
 msgctxt "CountryInfo"
 msgid "United Arab Emirates"
-msgstr ""
+msgstr "Verenigde Arabische Emiraten"
 
 msgctxt "CountryInfo"
 msgid "United Kingdom"
-msgstr ""
+msgstr "Verenigd Koninkrijk"
 
 msgctxt "CountryInfo"
 msgid "United States"
-msgstr ""
+msgstr "Verenigde Staten"
 
 msgctxt "CountryInfo"
 msgid "Uruguay"
-msgstr ""
+msgstr "Uruguay"
 
 msgctxt "CountryInfo"
 msgid "Uzbekistan"
-msgstr ""
+msgstr "Oezbekistan"
 
 msgctxt "CountryInfo"
 msgid "Vanuatu"
-msgstr ""
+msgstr "Vanuatu"
 
 msgctxt "CountryInfo"
 msgid "Vatican"
-msgstr ""
+msgstr "Vatikaanstad"
 
 msgctxt "CountryInfo"
 msgid "Venezuela"
-msgstr ""
+msgstr "Venezuela"
 
 msgctxt "CountryInfo"
 msgid "Vietnam"
-msgstr ""
+msgstr "Vietnam"
 
 msgctxt "CountryInfo"
 msgid "Western Sahara"
-msgstr ""
+msgstr "Westelijke Sahara"
 
 msgctxt "CountryInfo"
 msgid "Yemen"
-msgstr ""
+msgstr "Jemen"
 
 msgctxt "CountryInfo"
 msgid "Zambia"
-msgstr ""
+msgstr "Zambië"
 
 msgctxt "CountryInfo"
 msgid "Zimbabwe"
-msgstr ""
+msgstr "Zimbabwe"
 
 msgctxt "CountryInfo"
 msgid "Albania"
-msgstr ""
+msgstr "Albanië"
 
 msgctxt "CountryInfo"
 msgid "Algeria"
-msgstr ""
+msgstr "Algerije"
 
 msgctxt "CountryInfo"
 msgid "Austria"
-msgstr ""
+msgstr "Oostenrijk"
 
 msgctxt "CountryInfo"
 msgid "Bahrain"
-msgstr ""
+msgstr "Bahrein"
 
 msgctxt "CountryInfo"
 msgid "Benin"
-msgstr ""
+msgstr "Benin"
 
 msgctxt "CountryInfo"
 msgid "Ethiopia"
-msgstr ""
+msgstr "Ethiopië"
 
 msgctxt "CountryInfo"
 msgid "Fiji"
-msgstr ""
+msgstr "Fiji"
 
 msgctxt "CountryInfo"
 msgid "Finland"
-msgstr ""
+msgstr "Finland"
 
 msgctxt "CountryInfo"
 msgid "Greece"
-msgstr ""
+msgstr "Griekenland"
 
 msgctxt "CountryInfo"
 msgid "Guam"
-msgstr ""
+msgstr "Guam"
 
 msgctxt "CountryInfo"
 msgid "Hungary"
-msgstr ""
+msgstr "Hongarije"
 
 msgctxt "CountryInfo"
 msgid "Iceland"
-msgstr ""
+msgstr "Ijsland"
 
 msgctxt "CountryInfo"
 msgid "India"
-msgstr ""
+msgstr "Indië"
 
 msgctxt "CountryInfo"
 msgid "Indonesia"
-msgstr ""
+msgstr "Indonesië"
 
 msgctxt "CountryInfo"
 msgid "Iran"
-msgstr ""
+msgstr "Iran"
 
 msgctxt "CountryInfo"
 msgid "Iraq"
-msgstr ""
+msgstr "Irak"
 
 msgctxt "CountryInfo"
 msgid "Ireland"
-msgstr ""
+msgstr "Ierland"
 
 msgctxt "CountryInfo"
 msgid "Korea, North"
-msgstr ""
+msgstr "Noord-Korea"
 
 msgctxt "CountryInfo"
 msgid "Korea, South"
-msgstr ""
+msgstr "Zuid-Korea"
 
 msgctxt "CountryInfo"
 msgid "Libya"
-msgstr ""
+msgstr "Libië"
 
 msgctxt "CountryInfo"
 msgid "Maldives"
-msgstr ""
+msgstr "Malediven"
 
 msgctxt "CountryInfo"
 msgid "Mexico"
-msgstr ""
+msgstr "Mexico"
 
 msgctxt "CountryInfo"
 msgid "Myanmar"
-msgstr ""
+msgstr "Myanmar"
 
 msgctxt "CountryInfo"
 msgid "Taiwan"
-msgstr ""
+msgstr "Taiwan"
 
 msgctxt "GeneralPage"
 msgid "Executables (*.exe)"
-msgstr "Executables (*.exe)"
+msgstr "Toepassingen (*.exe)"
 
 msgctxt "GeneralPage"
 msgid "Select Path to Tor"
@@ -1222,19 +1223,19 @@ msgstr "Kies het Pad naar Tor"
 
 msgctxt "GeneralPage"
 msgid "Select Proxy Executable"
-msgstr ""
+msgstr "Proxy-toepassing selecteren"
 
 msgctxt "GeneralPage"
 msgid "You must specify the name of your Tor executable."
-msgstr ""
+msgstr "Er moet een naam gekozen worden voor de tor-toepassing"
 
 msgctxt "GeneralPage"
 msgid "The proxy arguments specified are not properly formatted."
-msgstr ""
+msgstr "De gespecifieerde proxy argumenten zijn niet in het juiste formaat"
 
 msgctxt "GeneralPage"
 msgid "Start Vidalia when my system starts"
-msgstr ""
+msgstr "Vidalia starten als het systeem start"
 
 msgctxt "GeneralPage"
 msgid "Browse"
@@ -1242,7 +1243,7 @@ msgstr "Bladeren"
 
 msgctxt "GeneralPage"
 msgid "Start the Tor software when Vidalia starts"
-msgstr ""
+msgstr "De Tor toepassing starten als Vidalia start"
 
 msgctxt "GeneralPage"
 msgid "Tor"
@@ -1250,27 +1251,27 @@ msgstr "Tor"
 
 msgctxt "GeneralPage"
 msgid "Proxy Application (optional)"
-msgstr ""
+msgstr "Proxy toepassing (optioneel)"
 
 msgctxt "GeneralPage"
 msgid "Start a proxy application when Tor starts"
-msgstr ""
+msgstr "De proxy toepassing starten als Tor start"
 
 msgctxt "GeneralPage"
 msgid "Proxy Application Arguments:"
-msgstr ""
+msgstr "Proxy toepassingsargumenten:"
 
 msgctxt "GeneralPage"
 msgid "Software Updates"
-msgstr ""
+msgstr "Software Updates"
 
 msgctxt "GeneralPage"
 msgid "Check for new software updates automatically"
-msgstr ""
+msgstr "Automatisch nieuwe software updates controleren"
 
 msgctxt "GeneralPage"
 msgid "Check Now"
-msgstr ""
+msgstr "Nu controleren"
 
 msgctxt "GraphFrame"
 msgid "%1 KB/s"
@@ -1290,11 +1291,11 @@ msgstr "%1 GB"
 
 msgctxt "GraphFrame"
 msgid "Recv:"
-msgstr ""
+msgstr "Ontv:"
 
 msgctxt "GraphFrame"
 msgid "Sent:"
-msgstr ""
+msgstr "Verz:"
 
 msgctxt "HelpBrowser"
 msgid "Supplied XML file is not a valid Contents document."
@@ -1422,43 +1423,48 @@ msgstr "Gevonden Documenten"
 
 msgctxt "HelpBrowser"
 msgid "Error Loading Help Contents:"
-msgstr ""
+msgstr "Fout tijdens het laden van de helpinhoud"
 
 msgctxt "HelpTextBrowser"
 msgid "Opening External Link"
-msgstr ""
+msgstr "Openen externe link"
 
 msgctxt "HelpTextBrowser"
 msgid "Vidalia can open the link you selected in your default Web browser. If your browser is not currently configured to use Tor then the request will not be anonymous."
 msgstr ""
+"Vidalia kan de geselecteerde link openen in uw standaard browser. Als deze "
+"browser niet ingesteld is om via Tor te werken, dan zal de vraag niet "
+"anoniem zijn."
 
 msgctxt "HelpTextBrowser"
 msgid "Do you want Vidalia to open the link in your Web browser?"
-msgstr ""
+msgstr "Mag vidalia deze link openen in uw browser ?"
 
 msgctxt "HelpTextBrowser"
 msgid "Unable to Open Link"
-msgstr ""
+msgstr "Openen van de link niet mogelijk"
 
 msgctxt "HelpTextBrowser"
 msgid "Vidalia was unable to open the selected link in your Web browser. You can still copy the URL and paste it into your browser."
 msgstr ""
+"Vidalia kon de geselecteerde link niet in uw browser openen. De URL kan nog "
+"steeds gekopieerd worden en daarna geplakt worden in de browseradresbalk."
 
 msgctxt "HelpTextBrowser"
 msgid "Error opening help file:"
-msgstr ""
+msgstr "Fout tijdens het openen van het helpbestand:"
 
 msgctxt "LicenseDialog"
 msgid "License Information"
-msgstr ""
+msgstr "Licentieinformatie"
 
 msgctxt "LicenseDialog"
 msgid "License"
-msgstr ""
+msgstr "Licentie"
 
 msgctxt "LicenseDialog"
 msgid "Credits"
-msgstr ""
+msgstr "Dank aan"
 
 msgctxt "LogEvent"
 msgid "Debug"
@@ -1486,7 +1492,7 @@ msgstr "Onbekend"
 
 msgctxt "MainWindow"
 msgid "Start Tor"
-msgstr ""
+msgstr "Tor starten"
 
 msgctxt "MainWindow"
 msgid "Exit"
@@ -1566,107 +1572,107 @@ msgstr "Vidalia Help"
 
 msgctxt "MainWindow"
 msgid "Error starting web browser"
-msgstr ""
+msgstr "Fout tijdens het starten van de browser"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured web browser"
-msgstr ""
+msgstr "Vidalia kon de geconfigureerde browser niet starten"
 
 msgctxt "MainWindow"
 msgid "Error starting IM client"
-msgstr ""
+msgstr "Fout tijdens het starten van de IM-toepassing"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured IM client"
-msgstr ""
+msgstr "Vidalia kon de geconfigureerde IM-toepassing niet starten"
 
 msgctxt "MainWindow"
 msgid "Error starting proxy server"
-msgstr ""
+msgstr "Fout tijdens het start van de proxy server"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured proxy server"
-msgstr ""
+msgstr "Vidalia kon de geconfigureerde proxy server niet starten"
 
 msgctxt "MainWindow"
 msgid "Connecting to a relay directory"
-msgstr ""
+msgstr "Verbinden met een verbindingslijst"
 
 msgctxt "MainWindow"
 msgid "Establishing an encrypted directory connection"
-msgstr ""
+msgstr "Maken van een versleutelde verbinding met de lijst"
 
 msgctxt "MainWindow"
 msgid "Retrieving network status"
-msgstr ""
+msgstr "Ontvangen van de netwerkstatus"
 
 msgctxt "MainWindow"
 msgid "Loading network status"
-msgstr ""
+msgstr "Laden van de netwerkstatus"
 
 msgctxt "MainWindow"
 msgid "Loading authority certificates"
-msgstr ""
+msgstr "Laden van de authoriteitcertificaten"
 
 msgctxt "MainWindow"
 msgid "Requesting relay information"
-msgstr ""
+msgstr "Opvragen van verbindingsinformatie"
 
 msgctxt "MainWindow"
 msgid "Loading relay information"
-msgstr ""
+msgstr "Laden van verbindingsinformatie"
 
 msgctxt "MainWindow"
 msgid "Connecting to the Tor network"
-msgstr ""
+msgstr "Verbinden met het Tor netwerk"
 
 msgctxt "MainWindow"
 msgid "Establishing a Tor circuit"
-msgstr ""
+msgstr "Maken van een Tor circuit"
 
 msgctxt "MainWindow"
 msgid "Connected to the Tor network!"
-msgstr ""
+msgstr "Verbonden met het Tor netwerk!"
 
 msgctxt "MainWindow"
 msgid "Unrecognized startup status"
-msgstr ""
+msgstr "Onbekende opstartstatus"
 
 msgctxt "MainWindow"
 msgid "miscellaneous"
-msgstr ""
+msgstr "willekeurig"
 
 msgctxt "MainWindow"
 msgid "identity mismatch"
-msgstr ""
+msgstr "identiteitsfout"
 
 msgctxt "MainWindow"
 msgid "done"
-msgstr ""
+msgstr "uitgevoerd"
 
 msgctxt "MainWindow"
 msgid "connection refused"
-msgstr ""
+msgstr "verbinding geweigerd"
 
 msgctxt "MainWindow"
 msgid "connection timeout"
-msgstr ""
+msgstr "verbindingstimeout"
 
 msgctxt "MainWindow"
 msgid "read/write error"
-msgstr ""
+msgstr "lees/schrijffout"
 
 msgctxt "MainWindow"
 msgid "no route to host"
-msgstr ""
+msgstr "geen route naar de server"
 
 msgctxt "MainWindow"
 msgid "insufficient resources"
-msgstr ""
+msgstr "onvoldoende resourcen"
 
 msgctxt "MainWindow"
 msgid "unknown"
-msgstr ""
+msgstr "onbekend"
 
 msgctxt "MainWindow"
 msgid "Tor is not running"
@@ -1678,19 +1684,19 @@ msgstr "Tor is bezig met afsluiten."
 
 msgctxt "MainWindow"
 msgid "Stop Tor Now"
-msgstr ""
+msgstr "Tor nu stoppen"
 
 msgctxt "MainWindow"
 msgid "Stop Tor"
-msgstr ""
+msgstr "Tor stoppen"
 
 msgctxt "MainWindow"
 msgid "Starting the Tor software"
-msgstr ""
+msgstr "Opstarten Tor software"
 
 msgctxt "MainWindow"
 msgid "Starting Tor"
-msgstr ""
+msgstr "Tor starten"
 
 msgctxt "MainWindow"
 msgid "Error Starting Tor"
@@ -1702,83 +1708,89 @@ msgstr "Vidalia was niet in staat om Tor te starten. Raadpleeg uw instellingen o
 
 msgctxt "MainWindow"
 msgid "Connecting to Tor"
-msgstr ""
+msgstr "Verbinden met Tor"
 
 msgctxt "MainWindow"
 msgid "Connection Error"
-msgstr ""
+msgstr "Verbindingsfout"
 
 msgctxt "MainWindow"
 msgid "Relaying is Enabled"
-msgstr ""
+msgstr "Doorsturen is ingeschakeld"
 
 msgctxt "MainWindow"
 msgid "Error Shutting Down"
-msgstr ""
+msgstr "Fout tijdens afsluiten"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to stop the Tor software."
-msgstr ""
+msgstr "Vidalia kon de Tor software niet afsluiten"
 
 msgctxt "MainWindow"
 msgid "Unexpected Error"
-msgstr ""
+msgstr "Overwachte fout"
 
 msgctxt "MainWindow"
 msgid "Authenticating to Tor"
-msgstr ""
+msgstr "Aanmelden bij Tor"
 
 msgctxt "MainWindow"
 msgid "Cookie Authentication Required"
-msgstr ""
+msgstr "Authenticatiecookie vereist"
 
 msgctxt "MainWindow"
 msgid "The Tor software requires Vidalia to send the contents of an authentication cookie, but Vidalia was unable to find one."
 msgstr ""
+"De Tor software verlangt van Vidalia om een authenticatiecookie te sturen "
+"maar Vidalia heeft er geen gevonden."
 
 msgctxt "MainWindow"
 msgid "Would you like to browse for the file 'control_auth_cookie' yourself?"
-msgstr ""
+msgstr "Wenst U zelf te zoeken naar het bestand 'control_auth_cookie'?"
 
 msgctxt "MainWindow"
 msgid "Data Directory"
-msgstr ""
+msgstr "Gegevensmap"
 
 msgctxt "MainWindow"
 msgid "Control Cookie (control_auth_cookie)"
-msgstr ""
+msgstr "Controlecookie (control_auth_cookie)"
 
 msgctxt "MainWindow"
 msgid "Error Registering for Events"
-msgstr ""
+msgstr "Fout tijdens het registreren van gebeurtenissen"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to register for some events. Many of Vidalia's features may be unavailable."
 msgstr ""
+"Vidalia kon bepaalde gebeurtenissen niet registreren. Hierdoor zijn "
+"verschillende functies van Vidalia niet beschikbaar."
 
 msgctxt "MainWindow"
 msgid "Authentication Error"
-msgstr ""
+msgstr "Aanmeldfout"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to authenticate to the Tor software. (%1)"
-msgstr ""
+msgstr "Vidalia kon zich niet bij de Tor software aanmelden (%1)"
 
 msgctxt "MainWindow"
 msgid "Please check your control port authentication settings."
-msgstr ""
+msgstr "Controleer de beheerspoort aanmeldinstellingen."
 
 msgctxt "MainWindow"
 msgid "Tor Update Available"
-msgstr ""
+msgstr "Tor update beschikbaar"
 
 msgctxt "MainWindow"
 msgid "The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version."
 msgstr ""
+"De huidige geïnstalleerde versie van Tor is verlopen en niet langer "
+"aangeraden. Bezoek de Tor website om de nieuwste versie te laden."
 
 msgctxt "MainWindow"
 msgid "Tor website: %1"
-msgstr ""
+msgstr "Tor website: %1"
 
 msgctxt "MainWindow"
 msgid "All subsequent connections will appear to be different than your old connections."

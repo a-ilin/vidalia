@@ -1,378 +1,362 @@
+#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Vidalia\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-08-20 03:25+0000\n"
-"PO-Revision-Date: 2010-04-16 05:08-0600\n"
-"Last-Translator: Flabber <flabber@online.be>\n"
-"Language-Team: none\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 1.1.0\n"
+"X-Generator: Vidalia ts2po 0.2\n"
 
 #: qaccessibleobject.cpp:348
 msgctxt "QApplication"
 msgid "Activate"
-msgstr "Activeer"
+msgstr ""
 
 #: qmessagebox.h:319
 msgctxt "QApplication"
 msgid "Executable '%1' requires Qt %2, found Qt %3."
-msgstr "Programma '%1' heeft Qt %2 nodig, Qt %3 is gevonden."
+msgstr ""
 
 #: qmessagebox.h:321
 msgctxt "QApplication"
 msgid "Incompatible Qt Library Error"
-msgstr "Fout : onverenigbare Qt bibliotheek."
+msgstr ""
 
 #: qapplication.cpp:2095
-#, fuzzy
 msgctxt "QApplication"
 msgid "QT_LAYOUT_DIRECTION"
-msgstr "QT_LAYOUT_DIRECTION"
+msgstr ""
 
 #: qaccessibleobject.cpp:350
 msgctxt "QApplication"
 msgid "Activates the program's main window"
-msgstr "Activeert het hoofdscherm van het programma"
+msgstr ""
 
 #: qmessagebox.cpp:2104
 msgctxt "QDialogButtonBox"
 msgid "OK"
-msgstr "OK"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:528
 msgctxt "QDialogButtonBox"
 msgid "Save"
-msgstr "Opslaan"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:531
 msgctxt "QDialogButtonBox"
 msgid "Open"
-msgstr "Openen"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:534
 msgctxt "QDialogButtonBox"
 msgid "Cancel"
-msgstr "Annuleren"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:537
 msgctxt "QDialogButtonBox"
 msgid "Close"
-msgstr "Sluiten"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:540
 msgctxt "QDialogButtonBox"
 msgid "Apply"
-msgstr "Toepassen"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:543
 msgctxt "QDialogButtonBox"
 msgid "Reset"
-msgstr "Herstellen"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:546
 msgctxt "QDialogButtonBox"
 msgid "Help"
-msgstr "Help"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:550
 msgctxt "QDialogButtonBox"
 msgid "Don't Save"
-msgstr "Niet opslaan"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:554
 msgctxt "QDialogButtonBox"
 msgid "Discard"
-msgstr "Afwijzen"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:557
 msgctxt "QDialogButtonBox"
 msgid "&Yes"
-msgstr "&Ja"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:560
 msgctxt "QDialogButtonBox"
 msgid "Yes to &All"
-msgstr "Ja op &alles"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:563
 msgctxt "QDialogButtonBox"
 msgid "&No"
-msgstr "&Nee"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:566
 msgctxt "QDialogButtonBox"
 msgid "N&o to All"
-msgstr "N&ee op alles"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:569
 msgctxt "QDialogButtonBox"
 msgid "Save All"
-msgstr "Alles opslaan"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:572
 msgctxt "QDialogButtonBox"
 msgid "Abort"
-msgstr "Afbreken"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:575
 msgctxt "QDialogButtonBox"
 msgid "Retry"
-msgstr "Opnieuw"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:578
-#, fuzzy
 msgctxt "QDialogButtonBox"
 msgid "Ignore"
-msgstr "Ignoreren"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:581
 msgctxt "QDialogButtonBox"
 msgid "Restore Defaults"
-msgstr "Oorspronkelijke terugplaatsen"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:552
 msgctxt "QDialogButtonBox"
 msgid "Close without Saving"
-msgstr "Sluiten zonder opslaan"
+msgstr ""
 
 #: qdialogbuttonbox.cpp:525
 msgctxt "QDialogButtonBox"
 msgid "&OK"
-msgstr "&OK"
+msgstr ""
 
 #: qdirmodel.cpp:423
 msgctxt "QDirModel"
 msgid "Name"
-msgstr "Naam"
+msgstr ""
 
 #: qdirmodel.cpp:424
 msgctxt "QDirModel"
 msgid "Size"
-msgstr "Grootte"
+msgstr ""
 
 #: qdirmodel.cpp:427
 msgctxt "QDirModel"
 msgid "Kind"
-msgstr "Soort"
+msgstr ""
 
 #: qdirmodel.cpp:429
 msgctxt "QDirModel"
 msgid "Type"
-msgstr "Type"
+msgstr ""
 
 #: qdirmodel.cpp:435
 msgctxt "QDirModel"
 msgid "Date Modified"
-msgstr "Gewijzigd op"
+msgstr ""
 
 #: qfiledialog_win.cpp:126
 msgctxt "QFileDialog"
 msgid "All Files (*)"
-msgstr "Alle bestanden (*)"
+msgstr ""
 
 #: qfiledialog.cpp:881
 msgctxt "QFileDialog"
 msgid "Directories"
-msgstr "Mappen"
+msgstr ""
 
 #: qfiledialog.cpp:2408
 msgctxt "QFileDialog"
 msgid "&Open"
-msgstr "&Openen"
+msgstr ""
 
 #: qfiledialog.cpp:919
 msgctxt "QFileDialog"
 msgid "&Save"
-msgstr "Op&slaan"
+msgstr ""
 
 #: qfiledialog.cpp:435
 msgctxt "QFileDialog"
 msgid "Open"
-msgstr "Openen"
+msgstr ""
 
 #: qfiledialog.cpp:1670
 msgctxt "QFileDialog"
-msgid ""
-"%1 already exists.\n"
+msgid "%1 already exists.\n"
 "Do you want to replace it?"
 msgstr ""
-"%1 bestaat al.\n"
-"Wil U het vervangen?"
 
 #: qfiledialog.cpp:1690
 msgctxt "QFileDialog"
-msgid ""
-"%1\n"
+msgid "%1\n"
 "File not found.\n"
 "Please verify the correct file name was given."
 msgstr ""
-"%1\n"
-"Bestand niet gevonden.\n"
-"Controlleer of de bestandsnaam correct was."
 
 #: qdirmodel.cpp:833
 msgctxt "QFileDialog"
 msgid "My Computer"
-msgstr "Mijn computer"
+msgstr ""
 
 #: qfiledialog.cpp:462
 msgctxt "QFileDialog"
 msgid "&Rename"
-msgstr "&Naam wijzigen"
+msgstr ""
 
 #: qfiledialog.cpp:463
 msgctxt "QFileDialog"
 msgid "&Delete"
-msgstr "&Verwijderen"
+msgstr ""
 
 #: qfiledialog.cpp:464
 msgctxt "QFileDialog"
 msgid "Show &hidden files"
-msgstr "Verborgen bestanden &tonen"
+msgstr ""
 
 #: ui_qfiledialog.h:264
 msgctxt "QFileDialog"
 msgid "Back"
-msgstr "Terug"
+msgstr ""
 
 #: ui_qfiledialog.h:274
 msgctxt "QFileDialog"
 msgid "Parent Directory"
-msgstr "Bovenliggende map"
+msgstr ""
 
 #: ui_qfiledialog.h:284
 msgctxt "QFileDialog"
 msgid "List View"
-msgstr "Lijst"
+msgstr ""
 
 #: ui_qfiledialog.h:289
 msgctxt "QFileDialog"
 msgid "Detail View"
-msgstr "Details"
+msgstr ""
 
 #: ui_qfiledialog.h:292
 msgctxt "QFileDialog"
 msgid "Files of type:"
-msgstr "Bestanden van het type:"
+msgstr ""
 
 #: qfiledialog.cpp:883
 msgctxt "QFileDialog"
 msgid "Directory:"
-msgstr "Map:"
+msgstr ""
 
 #: qfiledialog.cpp:2476
 msgctxt "QFileDialog"
-msgid ""
-"%1\n"
+msgid "%1\n"
 "Directory not found.\n"
 "Please verify the correct directory name was given."
 msgstr ""
-"%1\n"
-"Map niet gevonden.\n"
-"Gelieve te controlleren of de juiste mapnaam werd gegeven."
 
 #: qfiledialog.cpp:2281
 msgctxt "QFileDialog"
-msgid ""
-"'%1' is write protected.\n"
+msgid "'%1' is write protected.\n"
 "Do you want to delete it anyway?"
 msgstr ""
-"'%1' is beschermd tegen overschrijven.\n"
-"Wilt U het toch verwijderen?"
 
 #: qfiledialog.cpp:2286
 msgctxt "QFileDialog"
 msgid "Are sure you want to delete '%1'?"
-msgstr "Bent U zeker dat U '%1' wilt verwijderen ?"
+msgstr ""
 
 #: qfiledialog.cpp:2299
 msgctxt "QFileDialog"
 msgid "Could not delete directory."
-msgstr "De map kon niet verwijderd worden."
+msgstr ""
 
 #: qfiledialog_win.cpp:128
 msgctxt "QFileDialog"
 msgid "All Files (*.*)"
-msgstr "Alle bestanden (*.*)"
+msgstr ""
 
 #: qfiledialog.cpp:437
 msgctxt "QFileDialog"
 msgid "Save As"
-msgstr "Opslaan als"
+msgstr ""
 
 #: qfileiconprovider.cpp:379
 msgctxt "QFileDialog"
 msgid "Drive"
-msgstr "Schijf"
+msgstr ""
 
 #: qfileiconprovider.cpp:383
 msgctxt "QFileDialog"
 msgid "File"
-msgstr "Bestand"
+msgstr ""
 
 #: qfileiconprovider.cpp:412
 msgctxt "QFileDialog"
 msgid "Unknown"
-msgstr "Onbekend"
+msgstr ""
 
 #: qfiledialog.cpp:439
 msgctxt "QFileDialog"
 msgid "Find Directory"
-msgstr "Map zoeken"
+msgstr ""
 
 #: qfiledialog.cpp:458
 msgctxt "QFileDialog"
 msgid "Show "
-msgstr "Tonen"
+msgstr ""
 
 #: ui_qfiledialog.h:269
 msgctxt "QFileDialog"
 msgid "Forward"
-msgstr "Verder"
+msgstr ""
 
 #: qfiledialog.cpp:2137
 msgctxt "QFileDialog"
 msgid "New Folder"
-msgstr "Nieuwe map"
+msgstr ""
 
 #: qfiledialog.cpp:465
 msgctxt "QFileDialog"
 msgid "&New Folder"
-msgstr "&Nieuwe map"
+msgstr ""
 
 #: qfiledialog.cpp:917
 msgctxt "QFileDialog"
 msgid "&Choose"
-msgstr "&Kies"
+msgstr ""
 
 #: qsidebar.cpp:388
 msgctxt "QFileDialog"
 msgid "Remove"
-msgstr "Verwijderen"
+msgstr ""
 
 #: qfiledialog.cpp:886
 msgctxt "QFileDialog"
 msgid "File &name:"
-msgstr "Bestands&naam:"
+msgstr ""
 
 #: ui_qfiledialog.h:261
 msgctxt "QFileDialog"
 msgid "Look in:"
-msgstr "Zoek in:"
+msgstr ""
 
 #: ui_qfiledialog.h:279
 msgctxt "QFileDialog"
 msgid "Create New Folder"
-msgstr "Nieuwe map aanmaken"
+msgstr ""
 
 #: qfilesystemmodel.cpp:761
 msgctxt "QFileSystemModel"
 msgid "Invalid filename"
-msgstr "Ongeldige bestandsnaam"
+msgstr ""
 
 #: qfilesystemmodel.cpp:763
 msgctxt "QFileSystemModel"
@@ -380,65 +364,63 @@ msgid ""
 "<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer "
 "characters or no punctuations marks."
 msgstr ""
-"<b>De naam \"%1\" kan niet gebruikt worden.</b><p>Probeer een andere naam te "
-"gebruiken met minder letters of zonder punten of komma's."
 
 #: qfilesystemmodel.cpp:832
 msgctxt "QFileSystemModel"
 msgid "Name"
-msgstr "Naam"
+msgstr ""
 
 #: qfilesystemmodel.cpp:834
 msgctxt "QFileSystemModel"
 msgid "Size"
-msgstr "Grootte"
+msgstr ""
 
 #: qfilesystemmodel.cpp:838
 msgctxt "QFileSystemModel"
 msgid "Kind"
-msgstr "Soort"
+msgstr ""
 
 #: qfilesystemmodel.cpp:840
 msgctxt "QFileSystemModel"
 msgid "Type"
-msgstr "Type"
+msgstr ""
 
 #: qfilesystemmodel.cpp:847
 msgctxt "QFileSystemModel"
 msgid "Date Modified"
-msgstr "Gewijzigd op"
+msgstr ""
 
 #: qfilesystemmodel_p.h:198
 msgctxt "QFileSystemModel"
 msgid "My Computer"
-msgstr "Mijn computer"
+msgstr ""
 
 #: qfilesystemmodel_p.h:200
 msgctxt "QFileSystemModel"
 msgid "Computer"
-msgstr "Computer"
+msgstr ""
 
 #: qfilesystemmodel.cpp:677
 msgctxt "QFileSystemModel"
 msgid "%1 TB"
-msgstr "%1 TB"
+msgstr ""
 
 #: qfilesystemmodel.cpp:679
 msgctxt "QFileSystemModel"
 msgid "%1 GB"
-msgstr "%1 GB"
+msgstr ""
 
 #: qfilesystemmodel.cpp:681
 msgctxt "QFileSystemModel"
 msgid "%1 MB"
-msgstr "%1 MB"
+msgstr ""
 
 #: qfilesystemmodel.cpp:683
 msgctxt "QFileSystemModel"
 msgid "%1 KB"
-msgstr "%1 KB"
+msgstr ""
 
 #: qfilesystemmodel.cpp:684
 msgctxt "QFileSystemModel"
 msgid "%1 bytes"
-msgstr "%1 bytes"
+msgstr ""
