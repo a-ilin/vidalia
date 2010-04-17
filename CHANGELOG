@@ -1,3 +1,7 @@
+0.2.9   xx-xxx-2010
+  o Add Danish, Brazilian Portguese and Vietnamese translations.
+
+
 0.2.8   11-Apr-2010
   o Stop using our custom dock icon implementation on OS X and just use
     QSystemTrayIcon everywhere. Fixes the build on Snow Leopard.

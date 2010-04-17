@@ -17,6 +17,7 @@ set(vidalia_PO
   bg/vidalia_bg.po
   bms/vidalia_bms.po
   cs/vidalia_cs.po
+  da/vidalia_da.po
   de/vidalia_de.po
   es/vidalia_es.po
   fa/vidalia_fa.po
@@ -30,12 +31,14 @@ set(vidalia_PO
   nl/vidalia_nl.po
   pl/vidalia_pl.po
   pt/vidalia_pt.po
+  pt_BR/vidalia_pt_BR.po
   ro/vidalia_ro.po
   ru/vidalia_ru.po
   sq/vidalia_sq.po
   sv/vidalia_sv.po
   th/vidalia_th.po
   tr/vidalia_tr.po
+  vi/vidalia_vi.po
   zh_CN/vidalia_zh_CN.po
   zh_TW/vidalia_zh_TW.po
 )
@@ -47,6 +50,7 @@ set(qt_PO
   bg/qt_bg.po
   bms/qt_bms.po
   cs/qt_cs.po
+  da/qt_da.po
   de/qt_de.po
   es/qt_es.po
   fa/qt_fa.po
@@ -60,12 +64,14 @@ set(qt_PO
   nl/qt_nl.po
   pl/qt_pl.po
   pt/qt_pt.po
+  pt_BR/qt_pt_BR.po
   ro/qt_ro.po
   ru/qt_ru.po
   sq/qt_sq.po
   sv/qt_sv.po
   th/qt_th.po
   tr/qt_tr.po
+  vi/qt_vi.po
   zh_CN/qt_zh_CN.po
   zh_TW/qt_zh_TW.po
 )
