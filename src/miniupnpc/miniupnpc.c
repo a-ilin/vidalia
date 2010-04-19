@@ -45,6 +45,9 @@
 #else
 #include <sys/select.h>
 #endif
+#if defined(__APPLE__)
+#undef _POSIX_C_SOURCE
+#endif
 #include <sys/socket.h>
 #include <sys/types.h>
 #include <sys/param.h>
