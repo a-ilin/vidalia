@@ -29,7 +29,7 @@ endif(NOT WIN32)
 
 add_library(miniupnpc STATIC ${miniupnpc_SRCS})
 if (WIN32)
-  add_definitions(-D_WINNT_WIN32=0x0501)
+  add_definitions(-D_WIN32_WINNT=0x0501)
   target_link_libraries(miniupnpc ws2_32)
 endif(WIN32)
 
