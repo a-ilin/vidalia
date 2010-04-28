@@ -1,6 +1,8 @@
 0.2.9   xx-xxx-2010
   o Define -D_WIN32_WINNT=0x0501 on Windows builds so that MiniUPnPc will
     build with the latest versions of MinGW.
+  o Modify miniupnpc.c from MiniUPnPc's source so that it will build on
+    Mac OS X 10.4.
   o Add Danish, Brazilian Portguese and Vietnamese translations.
 
 
