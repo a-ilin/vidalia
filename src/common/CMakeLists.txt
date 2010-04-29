@@ -46,4 +46,8 @@ target_link_libraries(common
 if(OPENSSL_LIBRARIES)
   target_link_libraries(common ${OPENSSL_LIBRARIES})
 endif(OPENSSL_LIBRARIES)
+if (APPLE)
+  include(FindZLIB)
+  target_link_libraries(common ${ZLIB_LIBRARIES})
+endif(APPLE)
 
