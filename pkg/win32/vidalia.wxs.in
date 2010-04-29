@@ -113,7 +113,7 @@
               Name="QtNetwork4.dll" Source="@QT_BINARY_DIR@\QtNetwork4.dll" />
         <File Id="QtXml4Dll" DiskId="1"
               Name="QtXml4.dll" Source="@QT_BINARY_DIR@\QtXml4.dll" />
-        <File Id="libgcc_s_dw2-1.dll" DiskID="1"
+        <File Id="LibGccDll" DiskID="1"
               Name="libgcc_s_dw2-1.dll" Source="@QT_BINARY_DIR@\libgcc_s_dw2-1.dll" />
         <?if $(var.UseMarble) = "ON"?>
           <File Id="QtSvg4Dll" DiskId="1"
