@@ -403,6 +403,7 @@ Vidalia::createShortcut(const QString &key, QWidget *sender,
 void
 Vidalia::removeAllTranslators()
 {
+  vInfo("Removing all currently installed UI translator objects.");
   foreach (QTranslator *translator, _translators) {
     QApplication::removeTranslator(translator);
     delete translator;
@@ -417,9 +418,12 @@ Vidalia::retranslateUi(const QString &languageCode)
   QTranslator *vidaliaQtTranslator = 0;
   QTranslator *vidaliaTranslator = 0;
 
-  if (! LanguageSupport::isValidLanguageCode(languageCode))
+  if (! LanguageSupport::isValidLanguageCode(languageCode)) {
+    vWarn("Invalid language code: %1").arg(languageCode);
     return false;
+  }
   if (! languageCode.compare("en", Qt::CaseInsensitive)) {
+    vNotice("Resetting UI translation to English default.");
     _language = languageCode;
     removeAllTranslators();
     return true;
@@ -441,6 +445,8 @@ Vidalia::retranslateUi(const QString &languageCode)
     goto err;
 
   removeAllTranslators();
+  vNotice("Changing UI translation from '%1' to '%2'").arg(_language)
+                                                      .arg(languageCode);
   _language = languageCode;
   QApplication::installTranslator(systemQtTranslator);
   QApplication::installTranslator(vidaliaQtTranslator);
@@ -448,9 +454,11 @@ Vidalia::retranslateUi(const QString &languageCode)
   _translators << systemQtTranslator
                << vidaliaQtTranslator
                << vidaliaTranslator;
+
   return true;
 
 err:
+  vWarn("Unable to set UI translation to '%1'").arg(languageCode);
   if (systemQtTranslator)
     delete systemQtTranslator;
   if (vidaliaQtTranslator)
