@@ -1,16 +1,16 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Vidalia\n"
+"Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
-"POT-Creation-Date: 2009-05-19 23:56+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
-"Language-Team: translations@vidalia-project.net\n"
+"POT-Creation-Date: 2008-07-12 05:29+0000\n"
+"PO-Revision-Date: 2010-05-13 01:40-0600\n"
+"Last-Translator: yunus kaba <yunuskaba@gmail.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Vidalia ts2po 0.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Pootle 1.1.0\n"
 
 msgctxt "AboutDialog"
 msgid "About Vidalia"
@@ -26,7 +26,7 @@ msgstr "Vidalia"
 
 msgctxt "AboutDialog"
 msgid "Tor 0.2.0.32"
-msgstr ""
+msgstr "Tor 0.2.0.32"
 
 msgctxt "AboutDialog"
 msgid "Qt 4.4.2"
@@ -42,11 +42,11 @@ msgstr "Tor"
 
 msgctxt "AboutDialog"
 msgid "Qt"
-msgstr ""
+msgstr "Qt"
 
 msgctxt "AboutDialog"
 msgid "version"
-msgstr ""
+msgstr "Sürüm"
 
 msgctxt "AdvancedPage"
 msgid "'%1' is not a valid IP address."
@@ -58,7 +58,7 @@ msgstr "Şifre ile doğralamayı seçtiniz ama şifre girmediniz."
 
 msgctxt "AdvancedPage"
 msgid "Select Tor Configuration File"
-msgstr "Tor Yapılandırma Dosyası Seçin"
+msgstr "Yapılandırma Dosyası Seçin"
 
 msgctxt "AdvancedPage"
 msgid "File Not Found"
@@ -78,19 +78,19 @@ msgstr "%1 [%2] Oluşturulamadı"
 
 msgctxt "AdvancedPage"
 msgid "Select a Directory to Use for Tor Data"
-msgstr "Tor verileri için dizin seçiniz"
+msgstr "Tor verileri için klasör seçiniz"
 
 msgctxt "AdvancedPage"
 msgid "Unable to remove Tor Service"
-msgstr "Tor Servisi kaldırılamadı"
+msgstr "Hizmet kaldırılamadı"
 
 msgctxt "AdvancedPage"
 msgid "Unable to install Tor Service"
-msgstr "Tor Servisi yüklenemedi"
+msgstr "Hizmet yüklenemedi"
 
 msgctxt "AdvancedPage"
 msgid "Vidalia was unable to install the Tor service."
-msgstr "Vidalia, Tor Servisini yükleyemedi"
+msgstr "Vidalia, Hizmeti kuramadı."
 
 msgctxt "AdvancedPage"
 msgid "Control Port"
@@ -126,15 +126,15 @@ msgstr ":"
 
 msgctxt "AdvancedPage"
 msgid "Tor Configuration File"
-msgstr "Tor Yapılandırma Dosyası"
+msgstr "Yapılandırma Dosyası"
 
 msgctxt "AdvancedPage"
 msgid "Start the Tor software with the specified configuration file (torrc)"
-msgstr "Tor yazılımını, belirtilen yapılandırma dosyası (torrc) ile çalıştır"
+msgstr "Tor'u, belirtilen yapılandırma dosyası (torrc) ile çalıştır"
 
 msgctxt "AdvancedPage"
 msgid "Select path to your configuration file"
-msgstr "Yapılandırma dosyasının yolunu seçin"
+msgstr "Yapılandırma dosyasının için klasör seç"
 
 msgctxt "AdvancedPage"
 msgid "Browse"
@@ -142,21 +142,21 @@ msgstr "Gezgin"
 
 msgctxt "AdvancedPage"
 msgid "Data Directory"
-msgstr "Veri Dizini"
+msgstr "Kayıt Klasörü"
 
 msgctxt "AdvancedPage"
 msgid "Store data for the Tor software in the following directory"
-msgstr "Tor yazılımına ait verileri, aşağıdaki dizinde depola"
+msgstr "Tora ait verileri, aşağıdaki klasörde depola"
 
 msgctxt "AdvancedPage"
 msgid "Select the directory used to store data for the Tor software"
-msgstr "Tor yazılımı için kullanılacak depolanmış veri dizinini seçin"
+msgstr "Tor için kullanılacak kayıt klasörünü seç"
 
 msgctxt "AdvancedPage"
 msgid "Vidalia was unable to remove the Tor service.\n"
 "\n"
 "You may need to remove it manually."
-msgstr ""
+msgstr "Vidali hizmeti silemiyor.Kendiniz silmeyi deneyebilirsiniz."
 
 msgctxt "AppearancePage"
 msgid "Language"
@@ -164,19 +164,19 @@ msgstr "Dil"
 
 msgctxt "AppearancePage"
 msgid "Choose the language used in Vidalia"
-msgstr "Vidalia kullanmak istediğiniz dili seçin"
+msgstr "Kullanmak istediğiniz dili seçin"
 
 msgctxt "AppearancePage"
 msgid "Style"
-msgstr "Biçim"
+msgstr "Stil"
 
 msgctxt "AppearancePage"
 msgid "Choose Vidalia's interface style"
-msgstr "Vidalia arayüz biçimini seçin"
+msgstr "Vidalia için arayüz seç"
 
 msgctxt "AppearancePage"
 msgid "Vidalia was unable to load the selected language translation."
-msgstr "Vidalia şu anda seçmiş olduğunuz dili yükleyemiyor."
+msgstr "Vidalia seçmiş olduğunuz dili yükleyemiyor."
 
 msgctxt "BandwidthGraph"
 msgid "Since:"
@@ -192,7 +192,7 @@ msgstr "Ayarları göster"
 
 msgctxt "BandwidthGraph"
 msgid "Tor Bandwidth Usage"
-msgstr "Tor Bant genlişliği kullanımı"
+msgstr "Tor Bant kullanımı"
 
 msgctxt "BandwidthGraph"
 msgid "Reset"
@@ -200,11 +200,11 @@ msgstr "Sıfırla"
 
 msgctxt "BandwidthGraph"
 msgid "Receive Rate"
-msgstr "Alınan Veri Oranı"
+msgstr "Alınan Veri"
 
 msgctxt "BandwidthGraph"
 msgid "Send Rate"
-msgstr "Gönderilen Veri Oranı"
+msgstr "Gönderilen Veri"
 
 msgctxt "BandwidthGraph"
 msgid "Always on Top"
@@ -216,7 +216,7 @@ msgstr "Stil"
 
 msgctxt "BandwidthGraph"
 msgid "Changes the transparency of the Bandwidth Graph"
-msgstr "Bant genişliği grafiğinin saydamlığını değiştir"
+msgstr "Bant grafiğinin saydamlığını değiştir"
 
 msgctxt "BandwidthGraph"
 msgid "100"
@@ -236,51 +236,51 @@ msgstr "İptal"
 
 msgctxt "BridgeDownloader"
 msgid "Starting HTTPS bridge request..."
-msgstr ""
+msgstr "HTTPS isteğini başlatıyor..."
 
 msgctxt "BridgeDownloader"
 msgid "Connecting to %1:%2..."
-msgstr ""
+msgstr "Bağlanıyor %1:%2..."
 
 msgctxt "BridgeDownloader"
 msgid "Sending an HTTPS request for bridges..."
-msgstr ""
+msgstr "HTTPS başlatma isteğini gönderiyor..."
 
 msgctxt "BridgeDownloader"
 msgid "Downloading a list of bridges..."
-msgstr ""
+msgstr "Köprü listesini indiriyor..."
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Downloading Bridges"
-msgstr ""
+msgstr "İndiriyor"
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Unable to download bridges: %1"
-msgstr ""
+msgstr "Köprüleri inderemiyor: %1"
 
 msgctxt "BridgeDownloaderProgressDialog"
 msgid "Retrying bridge request..."
-msgstr ""
+msgstr "İsteğinizi tekrar deniyor..."
 
 msgctxt "BridgeUsageDialog"
 msgid "Country"
-msgstr ""
+msgstr "Ülke"
 
 msgctxt "BridgeUsageDialog"
 msgid "# Clients"
-msgstr ""
+msgstr "# Kullanıclar"
 
 msgctxt "BridgeUsageDialog"
 msgid "Clients from the following countries have used your relay since %1"
-msgstr ""
+msgstr "Belirlenen ülkelerden sizi kullanan kullanıcılar %1"
 
 msgctxt "BridgeUsageDialog"
 msgid "Bridge Usage Summary"
-msgstr ""
+msgstr "Köprü Kullanımı"
 
 msgctxt "BridgeUsageDialog"
 msgid "Client Summary"
-msgstr ""
+msgstr "Kullanıcı"
 
 msgctxt "Circuit"
 msgid "New"
@@ -308,7 +308,7 @@ msgstr "Bilinmeyen"
 
 msgctxt "CircuitItem"
 msgid "<Path Empty>"
-msgstr "<Klasöy yolu boş>"
+msgstr "<Klasör yolu boş>"
 
 msgctxt "CircuitListWidget"
 msgid "Connection"
@@ -320,11 +320,11 @@ msgstr "Durum"
 
 msgctxt "CircuitListWidget"
 msgid "Zoom to Circuit"
-msgstr "Alana yakınlaş"
+msgstr "Yakınlaş"
 
 msgctxt "CircuitListWidget"
 msgid "Close Circuit (Del)"
-msgstr "Alanı dapat(Del)"
+msgstr "Bağlantıyı kes(Del)"
 
 msgctxt "CircuitListWidget"
 msgid "Close Stream (Del)"
@@ -344,7 +344,7 @@ msgstr "Paylaşım"
 
 msgctxt "ConfigDialog"
 msgid "Services"
-msgstr "Servisler"
+msgstr "Hizmetler"
 
 msgctxt "ConfigDialog"
 msgid "Appearance"
@@ -364,7 +364,7 @@ msgstr "Ayarlar kaydedilemedi"
 
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to save your %1 settings."
-msgstr "Vidali %1 ayarlarnızı kaydedemiyor."
+msgstr "Vidali %1 ayarlarınızı kaydedemiyor."
 
 msgctxt "ConfigDialog"
 msgid "Error Applying Settings"
@@ -412,7 +412,7 @@ msgstr "Veri okurken soket bağlantısı kootu."
 
 msgctxt "ControlSocket"
 msgid "Invalid control reply. [%1]"
-msgstr "Hatalı kontorl yanıtı.[%1]"
+msgstr "Hatalı yanıtı.[%1]"
 
 msgctxt "CountryInfo"
 msgid "Afghanistan"
@@ -440,7 +440,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Australia"
-msgstr "Hakkında"
+msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Azerbaijan"
@@ -1212,7 +1212,7 @@ msgstr "Çalıştırılabilir(*.exe)"
 
 msgctxt "GeneralPage"
 msgid "Select Path to Tor"
-msgstr "Tor için dizin seç"
+msgstr "Tor için klasör seç"
 
 msgctxt "GeneralPage"
 msgid "Select Proxy Executable"
@@ -1252,7 +1252,7 @@ msgstr "Tor başladığında proxyide başlat"
 
 msgctxt "GeneralPage"
 msgid "Proxy Application Arguments:"
-msgstr "Proxy uygulamasının argümanları:"
+msgstr "Proxy parametleri:"
 
 msgctxt "GeneralPage"
 msgid "Software Updates"
@@ -1368,7 +1368,7 @@ msgstr "Kapat"
 
 msgctxt "HelpBrowser"
 msgid "Close Vidalia Help"
-msgstr "Vidalia Yardımı Kapat"
+msgstr "Yardımı Kapat"
 
 msgctxt "HelpBrowser"
 msgid "Esc"
@@ -1516,7 +1516,7 @@ msgstr "Yardım"
 
 msgctxt "MainWindow"
 msgid "New Identity"
-msgstr "Yeni Kimlik"
+msgstr "Yeni Bağlantı"
 
 msgctxt "MainWindow"
 msgid "Ctrl+T"
@@ -1556,7 +1556,7 @@ msgstr "Görünüm"
 
 msgctxt "MainWindow"
 msgid "Vidalia Help"
-msgstr "Vidalia Yardım"
+msgstr "Yardım"
 
 msgctxt "MainWindow"
 msgid "Error starting web browser"
@@ -1572,7 +1572,7 @@ msgstr "Im kullanıcısını başlatamada hata oluştu"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured IM client"
-msgstr "Vidalia ayarlanmış IM kullanıcısını başlatamıyor"
+msgstr "Vidalia IM kullanıcısını başlatamıyor"
 
 msgctxt "MainWindow"
 msgid "Error starting proxy server"
@@ -1580,11 +1580,11 @@ msgstr "Proxy sunucusu başlatmada hata"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured proxy server"
-msgstr "Vidalia proxy sunucusunu başlatamıyor"
+msgstr "Proxy sunucusu başlatılamıyor"
 
 msgctxt "MainWindow"
 msgid "Connecting to a relay directory"
-msgstr "Aktarım dizinine bağlanıyor"
+msgstr "Aktarım klasörüne bağlanıyor"
 
 msgctxt "MainWindow"
 msgid "Establishing an encrypted directory connection"
@@ -1592,11 +1592,11 @@ msgstr "Şifrelenmiş dizin bağlantısı kuruluyor"
 
 msgctxt "MainWindow"
 msgid "Retrieving network status"
-msgstr "Ağ durumunu güncelliyor"
+msgstr "Ağ durumu güncelliyor"
 
 msgctxt "MainWindow"
 msgid "Loading network status"
-msgstr "Ağ durumunu yüklüyor"
+msgstr "Ağ yükleniyor"
 
 msgctxt "MainWindow"
 msgid "Loading authority certificates"
@@ -1608,7 +1608,7 @@ msgstr "Aktarım bilgisi isteniyor"
 
 msgctxt "MainWindow"
 msgid "Loading relay information"
-msgstr "Aktarım bilgisi yüklemiyor"
+msgstr "Aktarım bilgisi yükleniyor"
 
 msgctxt "MainWindow"
 msgid "Connecting to the Tor network"
@@ -1616,7 +1616,7 @@ msgstr "Tor ağına bağlanıyor"
 
 msgctxt "MainWindow"
 msgid "Establishing a Tor circuit"
-msgstr "Tor ağına bağlantı kuruluyor"
+msgstr "Tor ağına bağlantı sağlanıyor"
 
 msgctxt "MainWindow"
 msgid "Connected to the Tor network!"
@@ -1624,7 +1624,7 @@ msgstr "Tor ağına bağlandı!"
 
 msgctxt "MainWindow"
 msgid "Unrecognized startup status"
-msgstr "Tanımlanamayan başlangıç durumu."
+msgstr "Tanımlanamayan başlangıç."
 
 msgctxt "MainWindow"
 msgid "miscellaneous"
@@ -1632,31 +1632,31 @@ msgstr "Diğer"
 
 msgctxt "MainWindow"
 msgid "identity mismatch"
-msgstr "Kimlik uyumsuzluğu"
+msgstr "Kimlik uyumsuz"
 
 msgctxt "MainWindow"
 msgid "done"
-msgstr "tamam"
+msgstr "Tamam"
 
 msgctxt "MainWindow"
 msgid "connection refused"
-msgstr "bağlantı red edildi"
+msgstr "Bağlantı red edildi"
 
 msgctxt "MainWindow"
 msgid "connection timeout"
-msgstr "bağlantıda zaman aşımı"
+msgstr "Zaman aşımı"
 
 msgctxt "MainWindow"
 msgid "read/write error"
-msgstr "okuma/yazma hatasu"
+msgstr "Okuma/yazma hatası"
 
 msgctxt "MainWindow"
 msgid "no route to host"
-msgstr "yönlendirecek host yok"
+msgstr "Yönlendirilecek sunucu yok"
 
 msgctxt "MainWindow"
 msgid "insufficient resources"
-msgstr "yetersiz kaynak"
+msgstr "Yetersiz kaynak"
 
 msgctxt "MainWindow"
 msgid "unknown"
@@ -1672,7 +1672,7 @@ msgstr "Tor kapatılıyor"
 
 msgctxt "MainWindow"
 msgid "Stop Tor Now"
-msgstr "Şimdi durdur"
+msgstr "Hemen Durdur"
 
 msgctxt "MainWindow"
 msgid "Stop Tor"
@@ -1692,7 +1692,8 @@ msgstr "Tor'u başlatırken hata oluştu"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified."
-msgstr "Vidalia Tor'u başlatamıyor.Ayarlardan Tor için belirlediğiniz konumu kontrol ediniz."
+msgstr ""
+"Vidalia Tor'u başlatamıyor.Ayarlardan belirlediğiniz konumu kontrol ediniz."
 
 msgctxt "MainWindow"
 msgid "Connecting to Tor"
@@ -1712,7 +1713,7 @@ msgstr "Programı kapatmada hata"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to stop the Tor software."
-msgstr "Vidalia tor yazlımını sonlandıramıyor."
+msgstr "Vidalia tor'u sonlandıramıyor."
 
 msgctxt "MainWindow"
 msgid "Unexpected Error"
@@ -1736,7 +1737,7 @@ msgstr "Kenidiniz bir 'control_auth_cookie' belirlemek istermisiniz?"
 
 msgctxt "MainWindow"
 msgid "Data Directory"
-msgstr "Veri Dizini"
+msgstr "Kayıt klasörü"
 
 msgctxt "MainWindow"
 msgid "Control Cookie (control_auth_cookie)"
@@ -1748,7 +1749,9 @@ msgstr "Olayları kaydederken hata oluştu"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to register for some events. Many of Vidalia's features may be unavailable."
-msgstr "Vidalia bazı olayarın kaydını gerçekleştiremedi.Şu anda bir çok vidalia fonkisyonu çalışmıyor olabilir."
+msgstr ""
+"Vidalia bazı olayarın kaydını gerçekleştiremedi.Şu anda bir çok vidalia "
+"fonksiyonu çalışmıyor olabilir."
 
 msgctxt "MainWindow"
 msgid "Authentication Error"
@@ -1756,7 +1759,7 @@ msgstr "Kimlik doğrulamada hata oluştu"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to authenticate to the Tor software. (%1)"
-msgstr "vidalia Tor yazılımını doğruluğunu sağlayamadı.(%1)"
+msgstr "Tor'un doğruluğu sağlanamadı.(%1)"
 
 msgctxt "MainWindow"
 msgid "Please check your control port authentication settings."
@@ -1764,11 +1767,13 @@ msgstr "Lütfen kimlik doğrulama portunuzu kontrol edin."
 
 msgctxt "MainWindow"
 msgid "Tor Update Available"
-msgstr "Tor yeni güncelleştirmesi var"
+msgstr "Tor'un yeni güncelleştirmesi var"
 
 msgctxt "MainWindow"
 msgid "The currently installed version of Tor is out of date or no longer recommended. Please visit the Tor website to download the latest version."
-msgstr "Tor şuanda kullanmış olduğunuz versiyonu tavsyie etmiyor.Lütfen Tor'un websitesini ziyaret edip en son versiyonunu indirin."
+msgstr ""
+"Tor şu anda kullanmış olduğunuz sürümü tavsiye etmiyor.Lütfen Tor'un "
+"websitesini ziyaret edip en son sürümünü indirin."
 
 msgctxt "MainWindow"
 msgid "Tor website: %1"
@@ -1776,15 +1781,15 @@ msgstr "Tor websitesi: %1"
 
 msgctxt "MainWindow"
 msgid "All subsequent connections will appear to be different than your old connections."
-msgstr "Tüm altbağlantılarınız önceki bağlantılarınızdan farklı gözükecektir."
+msgstr "Tüm alt bağlantılarınız önceki bağlantılarınızdan farklı gözükecektir."
 
 msgctxt "MainWindow"
 msgid "Failed to Create New Identity"
-msgstr "Yeni kimlik almada hata oluştu"
+msgstr "Yeni kimlik alırken hata oluştu"
 
 msgctxt "MainWindow"
 msgid "Port Forwarding Failed"
-msgstr "Port yanıtlamada hata oluştu"
+msgstr "Port yanıtlarken hata oluştu"
 
 msgctxt "MainWindow"
 msgid "Vidalia was unable to configure automatic port forwarding."
@@ -1792,7 +1797,7 @@ msgstr "Vidalia port yanıtlama ayarlarını uygulayamıyor."
 
 msgctxt "MainWindow"
 msgid "Vidalia Control Panel"
-msgstr "Vidalia Kontrol Paneli"
+msgstr "Kontrol Paneli"
 
 msgctxt "MainWindow"
 msgid "Status"
@@ -1800,7 +1805,7 @@ msgstr "Durum"
 
 msgctxt "MainWindow"
 msgid "Vidalia Shortcuts"
-msgstr "Vidalia Kısayolları"
+msgstr "Kısayollar"
 
 msgctxt "MainWindow"
 msgid "Setup Relaying"
@@ -1808,7 +1813,7 @@ msgstr "Bağlantı ayarları"
 
 msgctxt "MainWindow"
 msgid "Set up a relay and help the network grow"
-msgstr "Bir aktarım ayarla ve ağın büyümesini sağla"
+msgstr "Bir kur ve ağın büyümesini sağla"
 
 msgctxt "MainWindow"
 msgid "View the Network"
@@ -1824,19 +1829,19 @@ msgstr "Kimliği Yenile"
 
 msgctxt "MainWindow"
 msgid "Make subsequent connections appear new"
-msgstr "Yeni altbağlantılar oluştur"
+msgstr "Yeni bağlantılar oluşturur"
 
 msgctxt "MainWindow"
 msgid "View recent bandwidth usage"
-msgstr "En son band kullanımı"
+msgstr "Band kullanımı"
 
 msgctxt "MainWindow"
 msgid "View log message history"
-msgstr "En son log kayıtları"
+msgstr "Günlük kayıtları"
 
 msgctxt "MainWindow"
 msgid "View help documentation"
-msgstr "Yardım dosyalarını görüntüle"
+msgstr "Yardım"
 
 msgctxt "MainWindow"
 msgid "Configure Vidalia"
@@ -1844,15 +1849,15 @@ msgstr "Ayarlar"
 
 msgctxt "MainWindow"
 msgid "View version and license information"
-msgstr "Version ve lisans bilgisine bak"
+msgstr "Sürüm ve Lisans"
 
 msgctxt "MainWindow"
 msgid "Exit Vidalia"
-msgstr "Vidalia Çıkış"
+msgstr "Çıkış"
 
 msgctxt "MainWindow"
 msgid "Show this window on startup"
-msgstr "Penceri başlangıçta göster"
+msgstr "Başlangıçta göster"
 
 msgctxt "MainWindow"
 msgid "Hide"
@@ -1872,15 +1877,17 @@ msgstr "Vidilia kontrol şifresinizi sıfırlamayı denedi, ama başaramadı.Lü
 
 msgctxt "MainWindow"
 msgid "The currently installed version of Tor is out of date or no longer recommended."
-msgstr "Tor şuanda kullanmış olduğunuz versiyonu tavsyie etmiyor.Lütfen Tor'un websitesini ziyaret edip en son versiyonunu indirin."
+msgstr ""
+"Tor şu anda kullanmış olduğunuz versiyonu tavsyie etmiyor.Lütfen Tor'un "
+"websitesini ziyaret edip en son sürümünü indirin."
 
 msgctxt "MainWindow"
 msgid "Would you like to check if a newer package is available for installation?"
-msgstr ""
+msgstr "Yeni bir sürüm olup olmadığını kontrol etmek ister misin?"
 
 msgctxt "MainWindow"
 msgid "Potentially Unsafe Connection"
-msgstr ""
+msgstr "Güvenli olmayan bağlantı"
 
 msgctxt "MainWindow"
 msgid "One of your applications%1appears to be making a potentially unencrypted and unsafe connection to port %2. Anything sent over this connection could be monitored. Please check your application's configuration and use only encrypted protocols, such as SSL, if possible."
@@ -1892,11 +1899,11 @@ msgstr ""
 
 msgctxt "MainWindow"
 msgid "Update Failed"
-msgstr "Tor yeni güncelleştirmesi var"
+msgstr "Güncellenemedi"
 
 msgctxt "MainWindow"
 msgid "Your software is up to date"
-msgstr ""
+msgstr "Yazılımınız güncellendi"
 
 msgctxt "MainWindow"
 msgid "There are no new Tor software packages available for your computer at this time."
@@ -1949,7 +1956,7 @@ msgstr "Vidalia"
 
 msgctxt "MainWindow"
 msgid "File"
-msgstr ""
+msgstr "Dosya"
 
 msgctxt "MainWindow"
 msgid "About Vidalia"
@@ -2029,7 +2036,7 @@ msgstr "Mesaj Filtreleri..."
 
 msgctxt "MessageLog"
 msgid "Set message filters"
-msgstr "Mesaj filtreleri ayarla"
+msgstr "Mesaj filtresi ayarla"
 
 msgctxt "MessageLog"
 msgid "History Size..."
@@ -2109,7 +2116,7 @@ msgstr "Yardım"
 
 msgctxt "MessageLog"
 msgid "Show the help browser"
-msgstr "Yardımı sayafada göster"
+msgstr "Yardım"
 
 msgctxt "MessageLog"
 msgid "F1"
@@ -2149,11 +2156,11 @@ msgstr "Tür"
 
 msgctxt "MessageLog"
 msgid "Message"
-msgstr "MEsaj"
+msgstr "Mesaj"
 
 msgctxt "MessageLog"
 msgid "Saves the current Message Log settings"
-msgstr "Şuanki mesajı günlüğe kaydet"
+msgstr "Şu anki mesajı günlüğe kaydet"
 
 msgctxt "MessageLog"
 msgid "Save Settings"
@@ -2274,11 +2281,11 @@ msgstr "Yardım"
 
 msgctxt "NetViewer"
 msgid "Show the network map help"
-msgstr "Yardımı göster"
+msgstr "Yardım"
 
 msgctxt "NetViewer"
 msgid "Show network map help"
-msgstr "Yardımı göster"
+msgstr "Yardım"
 
 msgctxt "NetViewer"
 msgid "F1"
@@ -2346,11 +2353,11 @@ msgstr "Bilinmeyen"
 
 msgctxt "NetViewer"
 msgid "Full Screen"
-msgstr ""
+msgstr "Tam ekran"
 
 msgctxt "NetViewer"
 msgid "View the network map as a full screen window"
-msgstr ""
+msgstr "Tam ekran"
 
 msgctxt "NetViewer"
 msgid "Ctrl+F"
@@ -2434,7 +2441,9 @@ msgstr "80, 443"
 
 msgctxt "NetworkPage"
 msgid "Check to encrypt directory requests and, optionally, use bridge relays to access the Tor network"
-msgstr "Tor ağına bağlanmak için  köprü kullanr yada şifrelenmiş dizinindeki istekleri kontrol et"
+msgstr ""
+"Tor ağına bağlanmak için  köprü kullan yada şifrelenmiş klasördeki istekleri "
+"kontrol et"
 
 msgctxt "NetworkPage"
 msgid "My ISP blocks connections to the Tor network"
@@ -2466,7 +2475,7 @@ msgstr "Seçilen köprüyü panoya kopyala"
 
 msgctxt "NetworkPage"
 msgid "Find Bridges Now"
-msgstr ""
+msgstr "Köprü bul"
 
 msgctxt "NetworkPage"
 msgid "<a href=\"bridges.finding\">How else can I find bridges?</a>"
@@ -2554,7 +2563,7 @@ msgstr ""
 
 msgctxt "RouterInfoDialog"
 msgid "Summary"
-msgstr ""
+msgstr "Özet"
 
 msgctxt "RouterInfoDialog"
 msgid "Name:"
@@ -2594,7 +2603,7 @@ msgstr "Son güncelleme:"
 
 msgctxt "RouterInfoDialog"
 msgid "Descriptor"
-msgstr ""
+msgstr "Açıklayıcı"
 
 msgctxt "RouterListItem"
 msgid "Offline"
@@ -2630,7 +2639,7 @@ msgstr "Kullanıcı adı"
 
 msgctxt "RouterListWidget"
 msgid "Fingerprint"
-msgstr "Prmakizi"
+msgstr "Parmakizi"
 
 msgctxt "ServerPage"
 msgid "Bridge Support Unavailable"
@@ -2638,11 +2647,13 @@ msgstr "Köprü desteği kullanım dışı"
 
 msgctxt "ServerPage"
 msgid "You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges."
-msgstr "Ayarlarınız Tor'u köprü gibi davranmaya zorluyor, ama şu anki versiyonunuz köprülemeyi desteklemiyor."
+msgstr ""
+"Ayarlarınız Tor'u köprü gibi davranmaya zorluyor, ama şu anki sürümü "
+"köprülemeyi desteklemiyor."
 
 msgctxt "ServerPage"
 msgid "Please upgrade your Tor software or configure Tor to act as a normal Tor relay."
-msgstr "Lütfen Tor yazılımınızı kendi Tor ağınız için ayarlamak için yazılımınızı güncelleyin."
+msgstr "Lütfen Tor'ukendi Tor ağınız için ayarlamak için Tor'u güncelleyin."
 
 msgctxt "ServerPage"
 msgid "Your bridge relay is not running."
@@ -2666,7 +2677,7 @@ msgstr "Aktarım portu:"
 
 msgctxt "ServerPage"
 msgid "Enable to mirror the relay directory"
-msgstr "Aktarım dizinin etkinleştir"
+msgstr "Aktarım klasörünü etkinleştir"
 
 msgctxt "ServerPage"
 msgid "Attempt to automatically configure port forwarding"
@@ -2710,7 +2721,7 @@ msgstr "Temel ayarlar"
 
 msgctxt "ServerPage"
 msgid "For Internet connections with fast download speed but slow upload, please list your upload speed here."
-msgstr "Internet bağlantınızla hızlı indirme yapıp yavaş gönderme yapıyorsanız, lütfen gönderim hızlarınızı burada listeleyin."
+msgstr "Daha hızlı indirme yapmak yapmak için lütfen bağlantı tipinizi seçin."
 
 msgctxt "ServerPage"
 msgid "Cable/DSL 256 Kbps"
@@ -2738,7 +2749,7 @@ msgstr "Özel"
 
 msgctxt "ServerPage"
 msgid "Select the entry that most closely resembles your Internet connection"
-msgstr "Internet bağlantısı için en sık kullanılan girişi seç"
+msgstr "Internet bağlantısı için en sık kullanılan bağlantınızı seçin"
 
 msgctxt "ServerPage"
 msgid "Show help topic on bandwidth rate limits"
@@ -2794,7 +2805,7 @@ msgstr "Diğer portlar tanımlanmadı"
 
 msgctxt "ServerPage"
 msgid "Misc Other Services"
-msgstr "Diğer servisler"
+msgstr "Diğer hizmetler"
 
 msgctxt "ServerPage"
 msgid "Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 and 8888"
@@ -2899,7 +2910,9 @@ msgstr "Türm servsileri durdururken ahta oluştu"
 
 msgctxt "ServicePage"
 msgid "Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones."
-msgstr "Lütfen sanal port kullanımı  için en az biri himzet dizin belirleyiniz.Diğerlerini kaldırın."
+msgstr ""
+"Lütfen sanal port kullanımı  için en az biri hizmet klasörü "
+"belirleyiniz.Diğerlerini kaldırın."
 
 msgctxt "ServicePage"
 msgid "Error"
@@ -2907,11 +2920,11 @@ msgstr "Hata"
 
 msgctxt "ServicePage"
 msgid "Please select a Service."
-msgstr "Lütfen bir servis seçin."
+msgstr "Lütfen bir hizmet seçin."
 
 msgctxt "ServicePage"
 msgid "Select Service Directory"
-msgstr "Servis dizini seç"
+msgstr "Hizmet klasörü seç"
 
 msgctxt "ServicePage"
 msgid "Virtual Port may only contain valid port numbers [1..65535]."
@@ -2923,7 +2936,7 @@ msgstr "Hedef adres sadece:port,adres veya port olabilir."
 
 msgctxt "ServicePage"
 msgid "Directory already in use by another service."
-msgstr "Bu dizin zaten başka bir servis tarafından kullanılıyor."
+msgstr "Bu klasör zaten başka bir hizmet tarafından kullanılıyor."
 
 msgctxt "ServicePage"
 msgid "Form"
@@ -2931,7 +2944,7 @@ msgstr "Form"
 
 msgctxt "ServicePage"
 msgid "Provided Hidden Services"
-msgstr "Desteklenen gizli servisler"
+msgstr "Arkaplan hizmetleri"
 
 msgctxt "ServicePage"
 msgid "Onion Address"
@@ -2947,7 +2960,7 @@ msgstr "Hedef"
 
 msgctxt "ServicePage"
 msgid "Directory Path"
-msgstr "Dizin yolu"
+msgstr "Klasör yolu"
 
 msgctxt "ServicePage"
 msgid "Enabled"
@@ -2955,19 +2968,19 @@ msgstr "Aktif"
 
 msgctxt "ServicePage"
 msgid "Add new service to list"
-msgstr "Listeye yeni servis ekle"
+msgstr "Yeni hizmet ekle"
 
 msgctxt "ServicePage"
 msgid "Remove selected service from list"
-msgstr "Listeden seçilen servisi sil"
+msgstr "Seçilen hizmeti sil"
 
 msgctxt "ServicePage"
 msgid "Copy onion address of selected service to clipboard"
-msgstr "Ağ servisinin adresini panoya kopyala"
+msgstr "Ağ hizmetinin adresini panoya kopyala"
 
 msgctxt "ServicePage"
 msgid "Browse in local file system and choose directory for selected service"
-msgstr "Yerel dosya sistemine gözatarak seçili servis için dizin seç"
+msgstr "Seçili hizmet için klasör seç"
 
 msgctxt "ServicePage"
 msgid "Created by Tor"
@@ -2987,7 +3000,7 @@ msgstr "Bağlanıyor"
 
 msgctxt "Stream"
 msgid "Open"
-msgstr "Aç"
+msgstr "Açık"
 
 msgctxt "Stream"
 msgid "Failed"
@@ -3015,11 +3028,11 @@ msgstr "%1 işlemini durdurken hata oluştu.[%2]"
 
 msgctxt "TorService"
 msgid "The Tor service is not installed."
-msgstr "Tor servisi yüklenemedi."
+msgstr "Tor hizmeti yüklenemedi."
 
 msgctxt "TorService"
 msgid "Unable to start the Tor service."
-msgstr "Tor servisi başlatılamadı."
+msgstr "Tor hizmeti başlatılamadı."
 
 msgctxt "TorSettings"
 msgid "Failed to hash the control password."
@@ -3091,7 +3104,7 @@ msgstr ""
 
 msgctxt "UpdateProgressDialog"
 msgid "Checking for available updates..."
-msgstr ""
+msgstr "Güncellemeleri kontrol ediyor"
 
 msgctxt "UpdateProgressDialog"
 msgid "Hide"
@@ -3099,15 +3112,15 @@ msgstr "Gizle"
 
 msgctxt "UpdateProgressDialog"
 msgid "Downloading updates..."
-msgstr ""
+msgstr "Güncellemeleri indiriyor..."
 
 msgctxt "UpdateProgressDialog"
 msgid "Installing updated software..."
-msgstr "Tor'u başlatıyor"
+msgstr "Güncellemeleri kuruyor..."
 
 msgctxt "UpdateProgressDialog"
 msgid "Done! Your software is now up to date."
-msgstr ""
+msgstr "Güncellendi."
 
 msgctxt "UpdateProgressDialog"
 msgid "OK"
@@ -3115,11 +3128,11 @@ msgstr "Tamam"
 
 msgctxt "UpdateProgressDialog"
 msgid "Software Updates"
-msgstr ""
+msgstr "Güncellemeler"
 
 msgctxt "UpdateProgressDialog"
 msgid "Checking for updates..."
-msgstr ""
+msgstr "Güncellemeler kontrol ediyor..."
 
 msgctxt "UpdateProgressDialog"
 msgid "Cancel"
@@ -3131,11 +3144,11 @@ msgstr "Tor yeni güncelleştirmesi var"
 
 msgctxt "UpdatesAvailableDialog"
 msgid "Remind Me Later"
-msgstr ""
+msgstr "Daha sonra"
 
 msgctxt "UpdatesAvailableDialog"
 msgid "Install"
-msgstr ""
+msgstr "Kur"
 
 msgctxt "UpdatesAvailableDialog"
 msgid "The following updated software packages are ready for installation:"
@@ -3143,11 +3156,11 @@ msgstr ""
 
 msgctxt "UpdatesAvailableDialog"
 msgid "Package"
-msgstr "Backspace"
+msgstr "Paket"
 
 msgctxt "UpdatesAvailableDialog"
 msgid "Version"
-msgstr "version"
+msgstr "Sürüm"
 
 msgctxt "VMessageBox"
 msgid "OK"
@@ -3199,7 +3212,7 @@ msgstr "Hatalı arguman"
 
 msgctxt "Vidalia"
 msgid "Vidalia is already running"
-msgstr "Vidali zaten çalışıyor"
+msgstr "Vidalia zaten çalışıyor"
 
 msgctxt "Vidalia"
 msgid "Displays this usage message and exits."
@@ -3211,7 +3224,7 @@ msgstr "Bütün kayıtlı Vidaila ayarlarını sıfırla."
 
 msgctxt "Vidalia"
 msgid "Sets the directory Vidalia uses for data files."
-msgstr "Vidalia kullanıcılarının dosyalarını için dizin ayarla."
+msgstr "Vidalia kullanıcılarının dosyalarını için klasör ayarla."
 
 msgctxt "Vidalia"
 msgid "Sets the name and location of Vidalia's pidfile."
@@ -3243,21 +3256,23 @@ msgstr "Günlük dosyası açılamıyor'%1':%2"
 
 msgctxt "Vidalia"
 msgid "Invalid language code specified:"
-msgstr ""
+msgstr "Yanlış dil kodu belirtildi:"
 
 msgctxt "Vidalia"
 msgid "Invalid GUI style specified:"
-msgstr ""
+msgstr "Yanlış arayüz belirtildi:"
 
 msgctxt "Vidalia"
 msgid "Invalid log level specified:"
-msgstr ""
+msgstr "Yanlış log seviyesi belirtildi:"
 
 msgctxt "Vidalia"
 msgid "Another Vidalia process is possibly already running. If there really is not another Vidalia process running, you can choose to continue anyway.\n"
 "\n"
 "Would you like to continue starting Vidalia?"
 msgstr ""
+"Şu anda vidalia zaten çalışıyor.Başka bir vidalia uygulaması başlatmak "
+"istediğinden emin misin?"
 
 msgctxt "stringutil.h"
 msgid "%1 secs"
@@ -3281,13 +3296,12 @@ msgstr "%1 GB/s"
 
 msgctxt "stringutil.h"
 msgid "%1 days"
-msgstr ""
+msgstr "%1 gün"
 
 msgctxt "stringutil.h"
 msgid "%1 hours"
-msgstr ""
+msgstr " saat"
 
 msgctxt "stringutil.h"
 msgid "%1 mins"
-msgstr ""
-
+msgstr "%1 dakika"
