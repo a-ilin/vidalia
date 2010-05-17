@@ -78,6 +78,8 @@ else(CONFIGURE_BUNDLE_NSI)
 endif(CONFIGURE_BUNDLE_NSI)
 
 ## Convert the .po files to NSIS .nsh files at build time
+#vidalia_add_nsh(vidalia_NSH
+#  bu/vidalia_cs.po  BURMESE   ISO-8859-2)
 vidalia_add_nsh(vidalia_NSH
   cs/vidalia_cs.po  CZECH     ISO-8859-2)
 vidalia_add_nsh(vidalia_NSH
@@ -108,14 +110,18 @@ vidalia_add_nsh(vidalia_NSH
   ru/vidalia_ru.po  RUSSIAN   Windows-1251)
 vidalia_add_nsh(vidalia_NSH
   sv/vidalia_sv.po  SWEDISH   ISO-8859-1)
-#vidalia_add_nsh(vidalia_NSH
-#  zh_CN/vidalia_zh_CN.po  SIMPCHINESE   GB18030)
+vidalia_add_nsh(vidalia_NSH
+  zh_CN/vidalia_zh_CN.po  SIMPCHINESE   GB18030)
 #vidalia_add_nsh(vidalia_NSH
 #  zh_TW/vidalia_ZH_TW.po  TRADCHINESE   GB18030)
+vidalia_add_nsh(vidalia_NSH
+  vi/vidalia_vi.po  VIETNAMESE Windows-1258)
 
 add_custom_target(i18n-win32-installer DEPENDS ${vidalia_NSH})
 
 ## Convert the .po files to WiX .wxl files at build time
+vidalia_add_wxl(vidalia_WXL
+  bu/vidalia_bu.po  bu    ISO-8859-2)
 vidalia_add_wxl(vidalia_WXL
   cs/vidalia_cs.po  cs    ISO-8859-2)
 vidalia_add_wxl(vidalia_WXL
@@ -150,6 +156,8 @@ vidalia_add_wxl(vidalia_WXL
   zh_CN/vidalia_zh_CN.po  zh-CN   936)
 vidalia_add_wxl(vidalia_WXL
   zh_TW/vidalia_ZH_TW.po  zh-TW   950)
+vidalia_add_wxl(vidalia_WXL
+  vi/vidalia_vi.po  vi            1258)
 
 add_custom_target(dist-win32
   COMMAND ${WIX_CANDLE_EXECUTABLE} 
