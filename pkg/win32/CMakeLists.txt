@@ -78,7 +78,7 @@ else(CONFIGURE_BUNDLE_NSI)
 endif(CONFIGURE_BUNDLE_NSI)
 
 ## Convert the .po files to NSIS .nsh files at build time
-#vidalia_add_nsh(vidalia_NSH
+vidalia_add_nsh(vidalia_NSH
   cs/vidalia_cs.po  CZECH     ISO-8859-2)
 vidalia_add_nsh(vidalia_NSH
   de/vidalia_de.po  GERMAN    ISO-8859-1)
