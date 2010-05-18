@@ -22,7 +22,7 @@
 
 #include <tlhelp32.h>
 #include <shlobj.h>
-#
+
 #if defined(UNICODE)
 /* Force the ascii verisons of these functions, so we can run on Win98. We
  * don't pass any Unicode strings to these functions anyway. */
@@ -49,6 +49,12 @@ win32_get_folder_location(int folder, QString defaultPath)
   IMalloc *m;
   HRESULT result;
 
+  /* XXX: It would probably be a good idea to replace this function with simple
+   *      calls to QDesktopServices::storageLocation(). Note that it returns the
+   *      "Local Settings" application data directory though, so our installers
+   *      would need to be updated as well.
+   */
+
   /* Find the location of %PROGRAMFILES% */
   if (SUCCEEDED(SHGetSpecialFolderLocation(NULL, folder, &idl))) {
     /* Get the path from the IDL */
@@ -58,8 +64,11 @@ win32_get_folder_location(int folder, QString defaultPath)
       m->Release();
     }
     if (SUCCEEDED(result)) {
-      QT_WA(return QString::fromUtf16((const ushort *)path);,
-            return QString::fromLocal8Bit((char *)path);)
+#if defined(UNICODE)
+      return QString::fromUtf16(static_cast<const ushort *>(path));
+#else
+      return QString::fromLocal8Bit(static_cast<const char *>(path));
+#endif
     }
   }
   return defaultPath;

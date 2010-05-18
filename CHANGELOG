@@ -6,6 +6,8 @@
     build with the latest versions of MinGW.
   o Modify miniupnpc.c from MiniUPnPc's source so that it will build on
     Mac OS X 10.4.
+  o Work around Qt's new behavior for the QT_WA macro so that Vidalia will
+    work correctly again on Windows with Qt >= 4.6.
   o Force CMake to include the *_RELEASE versions of Qt libraries when
     building a .dmg on Mac OS X, so that it will work with CMake >= 2.8 as
     well.
