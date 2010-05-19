@@ -1,0 +1,310 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
+"POT-Creation-Date: 2008-07-12 05:29+0000\n"
+"PO-Revision-Date: 2009-10-01 09:16+0000\n"
+"Last-Translator: Manuel Ojeda <ojeda@ojeda.dk>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Pootle 1.1.0\n"
+
+# Not much to translate.
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "BundleSetupCaption"
+msgid "${BUNDLE_NAME} setup"
+msgstr "${BUNDLE_NAME} setup"
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "BundleWelcomeText"
+msgid "This wizard will guide you through the installation of Tor, Vidalia, Privoxy, and Torbutton.\n\nTor is a system for using the Internet anonymously, helping you anonymize Web browsing and publishing, instant messaging, IRC, and more. Vidalia is a GUI that helps you control, monitor, and configure Tor.\n\nPrivoxy is a filtering web proxy that protects your privacy and helps remove ads, banners, and popups.\n\nTorbutton is a Firefox extension that allows you to quickly enable or disable anonymous web browsing.\n\nIf you have previously installed Tor, Vidalia, Privoxy, or Firefox, please make sure they are not running before continuing this installation.\n\n$_CLICK"
+msgstr ""
+"Denne guide fører dig gennem installationen af Tor, Vidalia, Privoxy, og "
+"Torbutton.\n"
+"\n"
+"Tor er et system til at bruge internettet anonymt, hjælpe dig med at "
+"anonymisere internet browsing og udgivning, instant messaging, IRC, og meget "
+"mere. Vidalia er en GUI, som hjælper med at styre, overvåge og konfigurere "
+"Tor.\n"
+"\n"
+"Privoxy er en filtrering web proxy, der beskytter dit privatliv og hjælper "
+"med at fjerne annoncer, bannere og popups.\n"
+"\n"
+"Torbutton er en Firefox udvidelse, som giver dig mulighed for hurtigt at "
+"aktivere eller deaktivere anonyme webbrowsing.\n"
+"\n"
+"Hvis du tidligere har installeret Tor, Vidalia, Privoxy, eller Firefox, skal "
+"du sikre, at de ikke kører, før du fortsætter denne installation.\n"
+"\n"
+"$_CLICK"
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "BundleWelcomeTitle"
+msgid "Welcome to the ${BUNDLE_NAME} Setup Wizard"
+msgstr "Velkommen til ${BUNDLE_NAME} Setup Guide"
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "BundleLinkText"
+msgid "${TOR_NAME} installation documentation"
+msgstr "${TOR_NAME} installations dokumentation"
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "BundleFinishText"
+msgid "Installation is complete.\nPlease see https://www.torproject.org/docs/tor-doc-windows to learn how to configure your applications to use Tor.\n\nIf you installed Torbutton, you will need to restart Firefox."
+msgstr ""
+"Installationen er fuldført.\n"
+"Se her https://www.torproject.org/docs/tor-doc-windows for at lære hvordan "
+"du konfigurerer dine programmer til at bruge Tor.\n"
+"\n"
+"Hvis du har installeret Torbutton, skal du genstarte Firefox."
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "BundleRunNow"
+msgid "Run installed components now"
+msgstr "Kør installerede komponenter nu"
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "VidaliaGroupDesc"
+msgid "Vidalia is a GUI that helps you control, monitor, and configure Tor."
+msgstr ""
+"Vidalia er en grafisk brugergrænseflade som hjælper dig kontrollere, "
+"overvåge og konfigurere Tor."
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "VidaliaUninstDesc"
+msgid "Remove ${VIDALIA_DESC}."
+msgstr "Fjern ${VIDALIA_DESC}."
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "VidaliaSetupCaption"
+msgid "${VIDALIA_NAME} setup"
+msgstr "${VIDALIA_NAME} setup"
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "VidaliaWelcomeText"
+msgid "This wizard will guide you through the installation of Vidalia, a GUI that helps you control, monitor, and configure Tor.\n\n$_CLICK"
+msgstr ""
+"Denne guide fører dig gennem installationen af Vidalia, en grafisk "
+"brugergrænseflade, der hjælper med at styre, overvåge og konfigurere Tor.\n"
+"\n"
+"$_CLICK"
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "VidaliaWelcomeTitle"
+msgid "Welcome to the ${VIDALIA_NAME} Setup Wizard"
+msgstr "Velkommen til ${VIDALIA_NAME} Setup Guide"
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "VidaliaLinkText"
+msgid "${VIDALIA_NAME} homepage"
+msgstr "${VIDALIA_NAME} hjemmeside"
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "VidaliaAppDesc"
+msgid "Vidalia is a GUI that helps you control, monitor, and configure Tor."
+msgstr ""
+"Vidalia er en grafisk brugergrænseflade der hjælper dig kontrollere, "
+"overvåge og konfigurere Tor."
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "VidaliaStartup"
+msgid "Run At Startup"
+msgstr "Kør ved opstart"
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "VidaliaStartupDesc"
+msgid "Automatically run ${VIDALIA_NAME} at startup."
+msgstr "Kør automatisk ${VIDALIA_NAME} ved opstart."
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "VidaliaShortcuts"
+msgid "Add to Start Menu"
+msgstr "Tilføj til Start Menuen"
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "VidaliaShortcutsDesc"
+msgid "Add ${VIDALIA_NAME} to your Start menu."
+msgstr "Tilføj ${VIDALIA_NAME} til din Start menu."
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "VidaliaRunNow"
+msgid "Run ${VIDALIA_NAME}"
+msgstr "Kør ${VIDALIA_NAME}"
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "TorGroupDesc"
+msgid "Tor is a system for using the Internet anonymously, helping you anonymize Web browsing and publishing, instant messaging, IRC, and more."
+msgstr ""
+"Tor er et system til at bruge internettet anonymt, hjælpe dig med at "
+"anonymisere web browsing og udgivning, instant messaging, IRC, og meget "
+"mere."
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "TorUninstDesc"
+msgid "Remove ${TOR_DESC}."
+msgstr "Fjern ${TOR_DESC}."
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "TorAppDesc"
+msgid "Install ${TOR_DESC}."
+msgstr "Installer ${TOR_DESC}."
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "TorAskOverwriteTorrc"
+msgid "You already have a Tor configuration file.$\n$\nDo you want to overwrite it with the default sample configuration file?"
+msgstr ""
+"Du har allerede en Tor konfigurations fil.$\n"
+"$\n"
+"Ønsker du at overskrive den med den standard prøve konfigurations fil?"
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "TorDocumentation"
+msgid "Documentation"
+msgstr "Dokumentation"
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "TorDocumentationDesc"
+msgid "Install ${TOR_NAME} documentation."
+msgstr "Installer ${TOR_NAME} dokumentation"
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "TorShortcuts"
+msgid "Add to Start Menu"
+msgstr "Tilføj til Start menuen"
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "TorShortcutsDesc"
+msgid "Add ${TOR_NAME} to your Start menu."
+msgstr "Tilføj ${TOR_NAME} til din Start menu."
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "PrivoxyGroupDesc"
+msgid "Privoxy is a filtering web proxy that protects your privacy and helps remove ads, banners, and popups."
+msgstr ""
+"Privoxy er en filtrering web proxy, der beskytter dit privatliv og hjælper "
+"med at fjerne annoncer, bannere og popups."
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "PrivoxyUninstDesc"
+msgid "Remove ${PRIVOXY_DESC}."
+msgstr "Fjern ${PRIVOXY_DESC}."
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "PrivoxyAppDesc"
+msgid "Install ${PRIVOXY_DESC}."
+msgstr "Installer ${PRIVOXY_DESC}."
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "PrivoxyShortcuts"
+msgid "Add to Start Menu"
+msgstr "Tilføj til Start Menuen"
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "PrivoxyShortcutsDesc"
+msgid "Add ${PRIVOXY_NAME} to your Start menu."
+msgstr "Tilføj ${PRIVOXY_NAME} til din Start menu."
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "PrivoxyStartup"
+msgid "Run At Startup"
+msgstr "Kør ved opstart"
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "PrivoxyStartupDesc"
+msgid "Automatically run ${PRIVOXY_NAME} at startup."
+msgstr "Kør automatisk ${PRIVOXY_NAME} ved opstart."
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "TorbuttonGroupDesc"
+msgid "Torbutton is a Firefox extension that allows you to quickly enable or disable anonymous web browsing."
+msgstr ""
+"Torbutton er en Firefox udvidelse, som giver dig mulighed for hurtigt at "
+"aktivere eller deaktivere anonymt webbrowsing."
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "TorbuttonUninstDesc"
+msgid "Remove ${TORBUTTON_DESC}."
+msgstr "Fjern ${TORBUTTON_DESC}."
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "TorbuttonAppDesc"
+msgid "Install ${TORBUTTON_DESC}."
+msgstr "Installer ${TORBUTTON_DESC}."
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "TorbuttonAddToFirefox"
+msgid "Add to Firefox"
+msgstr "Tilføj til Firefox"
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "TorbuttonAddToFirefoxDesc"
+msgid "Add the ${TORBUTTON_DESC} extension to Firefox."
+msgstr "Tilføj ${TORBUTTON_DESC} udvidelsen til Firefox."
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "TorbuttonFirefoxNotFound"
+msgid "Firefox was not found on your system. Not installing Torbutton."
+msgstr "Firefox blev ikke fundet på dit system. Installerer ikke Torbutton."
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "AppData"
+msgid "Application Data"
+msgstr "Program Data"
+
+# Remove saved application data and configuration files.
+msgctxt "AppDataUninstDesc"
+msgid "Remove saved application data and configuration files."
+msgstr "Fjern gemte program data og konfigurations filer."
+
+# Cant translate languagecode? EN=EN ; DA=DK ?
+# Remove saved application data and configuration files.
+msgctxt "LanguageCode"
+msgid "en"
+msgstr "en"
+
+# Remove saved application data and configuration files.
+msgctxt "FirefoxWarningPageTitle"
+msgid "Firefox is not installed"
+msgstr "Firefox er ikke installeret."
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "FirefoxWarningPageSubtitle"
+msgid "We recommend that you install Firefox before continuing, for best safety."
+msgstr ""
+"Vi foreslår at du installere Firefox før du fortsætter, for bedre sikkerhed."
+
+# You should check the \NewLine markers
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "FirefoxWarningPageUpperText"
+msgid "The Mozilla Firefox Web browser is not installed on your computer.\n"
+"Tor will work with other browsers, such as Internet Explorer, but\n"
+"is easier to use with Firefox, which also does a better job of\n"
+"protecting your anonymity."
+"\n\n"
+"If you would like to install Firefox, please press Cancel, then go\n"
+"to the Firefox download page at"
+msgstr ""
+"Mozilla Firefox web browser er ikke installeret på din computer.\n"
+"Tor kan arbejde sammen med andre browsere, såsom Internet Explorer, men\n"
+"er nemmere at bruge med Firefox, som også gør et bedre stykke arbejde\n"
+"med at beskytter din anonymitet.\n"
+"\n"
+"Hvis du ønsker at installere Firefox, skal du trykke på Annuller og derefter "
+"gå\n"
+"til Firefox download siden på"
+
+# Translated by Manuel Ojeda - ojeda@ojeda.dk
+msgctxt "FirefoxWarningPageLowerText"
+msgid "When you are done installing Firefox, you can once again run the\n"
+"Tor installer."
+"\n\n"
+"Or, if you would prefer to install Tor without Firefox, simply\n"
+"press Next to continue."
+msgstr ""
+"Når du er færdig med at installerer Firefox, kan du igen køre Tor "
+"installationen.\n"
+"\n"
+"Eller, hvis du foretrækker at installere Tor uden Firefox, tryk på Næste for "
+"at fortsætte."
