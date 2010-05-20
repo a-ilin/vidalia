@@ -1,4 +1,4 @@
-0.2.9   xx-xxx-2010
+0.2.9   20-May-2010
   o Remove the GoDaddy CA certificate bundle since we changed the
     certificate used to authenticate connections to
     geoips.vidalia-project.net for downloading GeoIP information from a
@@ -12,6 +12,8 @@
   o Force CMake to include the *_RELEASE versions of Qt libraries when
     building a .dmg on Mac OS X, so that it will work with CMake >= 2.8 as
     well.
+  o Explicitly link zlib into src/common to avoid link errors on some
+    older versions of Mac OS X.
   o Add Danish, Brazilian Portguese and Vietnamese translations.
 
 
