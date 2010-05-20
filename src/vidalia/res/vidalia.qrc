@@ -306,6 +306,5 @@
     <qresource prefix="/pki">
         <file>cacert_root.crt</file>
         <file>EquifaxSecureCA.crt</file>
-        <file>gd_bundle.crt</file>
     </qresource>
 </RCC>

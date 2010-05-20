@@ -514,9 +514,5 @@ Vidalia::loadDefaultCaCertificates() const
   if (! QSslSocket::addDefaultCaCertificates(":/pki/EquifaxSecureCA.crt"))
     vWarn("Failed to add the Equifax Secure CA certificate to the default CA "
           "certificate database.");
- 
-  if (! QSslSocket::addDefaultCaCertificates(":/pki/gd_bundle.crt"))
-    vWarn("Failed to add the GoDaddy certificate bundle to the default "
-          "CA certificate database.");
 }
 
