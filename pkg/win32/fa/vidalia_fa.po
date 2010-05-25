@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-07-12 05:29+0000\n"
-"PO-Revision-Date: 2009-06-23 05:14+0000\n"
-"Last-Translator: Nami B <pesarefahmideh@gmail.com>\n"
+"PO-Revision-Date: 2010-05-22 00:12-0600\n"
+"Last-Translator: Javad Ahangari <javad@ahangari.com>\n"
 "Language-Team: translations@vidalia-project.net\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -15,7 +15,7 @@ msgstr ""
 #, fuzzy
 msgctxt "BundleSetupCaption"
 msgid "${BUNDLE_NAME} setup"
-msgstr "بر?ا?? ${BUNDLE_NAME}"
+msgstr "نصب ${BUNDLE_NAME}"
 
 #, fuzzy
 msgctxt "BundleWelcomeText"
@@ -38,28 +38,30 @@ msgid ""
 "\n"
 "$_CLICK"
 msgstr ""
-"این دستیار شما را در طی بارگذاری تُر، ویدالیا، پریواکسی، و تُرباتِن راه‌نمایی "
+"اين دستيار، شما را در طی بارگذاری تُر، ويداليا، پوليپو، و تُرباتِن راهنمايی "
 "می‌کند.\n"
 "\n"
-"تُر سیستمی برای استفاده از اینترنت به‌صورت ناشناس است و به شما کمک می‌کند که "
-"کارهایی مثل گردش و نوشتن در وب، پیام فوری، IRC را مخفی کنید.\n"
-"پریواکسی یک پراکسی برای فیلتر کردن وب است که از حریم شخصی شما محافظت می‌کند و "
-"تبلیغات را حذف می‌کند.\n"
-"تُرباتِن یک افزونه‌ی فایرفاکس است که به شما اجازه می‌دهد امکان گردش ناشناس در وب "
-"را به‌سرعت فعال یا غیرفعال کنید.\n"
-"اگر پیش از این تُر، ویدالیا، پریواکس، یا فایرفاکس را نصب کرده‌اید، خواهشمند "
-"است از بسته بودن آن‌ها در حین نصب این برنامه اطمینان پیدا کنید.\n"
+"تُر سيستمی برای استفاده از اينترنت به‌صورت ناشناس است و به شما کمک می‌کند که "
+"کارهايي مثل گردش و نوشتن در وب، پيام فوری، IRC  و برنامه‌هاي ديگري را مخفی "
+"کنيد. ويداليا يك واسط گرافيكي است كه به كنترل، مديريت و تنظيم تُر كمك "
+"مي‌كند.\n"
+"پوليپو يك وب پراكسي كش كننده است كه قابليتهاي مشاهده وب سايت از طريق تُر را "
+"افزايش مي‌دهد..\n"
+"تُرباتِن يک افزونه فايرفاکس است که به شما اجازه می‌دهد امکان مرور ناشناس در "
+"وب را به‌سرعت فعال يا غيرفعال کنيد.\n"
+"اگر پيش از اين تُر، ويداليا، پوليپو، يا فايرفاکس را نصب کرده‌ايد، خواهشمند "
+"است از بسته بودن آن‌ها در حين نصب اين برنامه اطمينان پيدا کنيد.\n"
 "$_CLICK"
 
 #, fuzzy
 msgctxt "BundleWelcomeTitle"
 msgid "Welcome to the ${BUNDLE_NAME} Setup Wizard"
-msgstr "به دستیار تنظیم ${BUNDLE_NAME} خوش آمدید"
+msgstr "به دستيار تنظيم ${BUNDLE_NAME} خوش آمديد"
 
 #, fuzzy
 msgctxt "BundleLinkText"
 msgid "${TOR_NAME} installation documentation"
-msgstr "مستندات بارگذاری ${TOR_NAME}"
+msgstr "مستندات نصب ${TOR_NAME}"
 
 #, fuzzy
 msgctxt "BundleFinishText"
@@ -70,29 +72,32 @@ msgid ""
 "\n"
 "If you installed Torbutton, you will need to restart Firefox."
 msgstr ""
-"?ار?ذار? انجام شد.\n"
-" خواهشمند است برا? آ?اه? ?افتن از ??ون?? ???ربند? ?ردن برنامه ها? ?اربرد?تان "
-"برا? ب?اربردن تور https://www.torproject.org/docs/tor-doc-windows را مشاهده ?"
-"ن?د."
+"عمليات نصب انجام شد.\n"
+" خواهشمند است براي آگاهي يافتن از چگونگي پيكربندي برنامه هاي كاربردي‌تان در "
+"تُر به آدرس https://www.torproject.org/docs/tor-doc-windows مراجعه نماييد. "
+"/nاگر شما تُرباتن را نصب كرده‌ايد، نياز خواهيد داشت تا يكبار فايرفاكس را "
+"ري‌استارت كنيد."
 
 #, fuzzy
 msgctxt "BundleRunNow"
 msgid "Run installed components now"
-msgstr "اجرا?ردن مولفه ها? ?ار?ذار? شده"
+msgstr "اجرا كردن گزينه‌هاي نصب شده"
 
 #, fuzzy
 msgctxt "VidaliaGroupDesc"
 msgid "Vidalia is a GUI that helps you control, monitor, and configure Tor."
-msgstr "?ار?ذار? ${VIDALIA_DESC}."
+msgstr ""
+"ويداليا، يك واسط گرافيكي است كه به شما در كنترل، مديريت و تنظيم كردن تُر كمك "
+"مي‌كند. ${VIDALIA_DESC}."
 
 msgctxt "VidaliaUninstDesc"
 msgid "Remove ${VIDALIA_DESC}."
-msgstr ""
+msgstr "حذف كردن ${VIDALIA_DESC}."
 
 #, fuzzy
 msgctxt "VidaliaSetupCaption"
 msgid "${VIDALIA_NAME} setup"
-msgstr "بر?ا?? ${VIDALIA_NAME}"
+msgstr "نصب${VIDALIA_NAME}"
 
 #, fuzzy
 msgctxt "VidaliaWelcomeText"
@@ -102,63 +107,70 @@ msgid ""
 "\n"
 "$_CLICK"
 msgstr ""
-"ا?ن دست?ار شما را در سرتاسر ?ار?ذار? ${VIDALIA_DESC} هدا?ت م? ?ند.\n"
+"اين دستيار شما را در سرتاسر مراحل نصب ويداليا كه يك واسط گرافيكي براي كنترل، "
+"مديريت و تنظيم تُر است، كمك مي‌كند.\n"
 "\n"
 "$_CLICK"
 
 #, fuzzy
 msgctxt "VidaliaWelcomeTitle"
 msgid "Welcome to the ${VIDALIA_NAME} Setup Wizard"
-msgstr "به دست?ار بر?ا?? ${VIDALIA_NAME} خوش آمد?د"
+msgstr "به دستيار نصب ${VIDALIA_NAME} خوش آمديد."
 
 #, fuzzy
 msgctxt "VidaliaLinkText"
 msgid "${VIDALIA_NAME} homepage"
-msgstr "بر?ه اصل? ${VIDALIA_NAME}"
+msgstr "صفحه اصلي ${VIDALIA_NAME}"
 
 #, fuzzy
 msgctxt "VidaliaAppDesc"
 msgid "Vidalia is a GUI that helps you control, monitor, and configure Tor."
-msgstr "?ار?ذار? ${VIDALIA_DESC}."
+msgstr ""
+"ويداليا يك واسط گرافيكي است كه به شما در كنترل، مديريت و تنظيم كردن تُر كمك "
+"مي‌كند."
 
 #, fuzzy
 msgctxt "VidaliaStartup"
 msgid "Run At Startup"
-msgstr "اجرا ?ردن در راه انداز?"
+msgstr "اجرا شدن در هنگام بوت شدن ويندوز"
 
 #, fuzzy
 msgctxt "VidaliaStartupDesc"
 msgid "Automatically run ${VIDALIA_NAME} at startup."
-msgstr "اجرا ?ردن ${VIDALIA_NAME} در راه انداز? بطور خود?ار."
+msgstr "اجرا شدن اتوماتيك ${VIDALIA_NAME} در هنگام بوت شدن ويندوز."
 
 msgctxt "VidaliaShortcuts"
 msgid "Add to Start Menu"
-msgstr "افزودن به فهرست آغاز"
+msgstr "افزودن به منوي استارت ويندوز"
 
 msgctxt "VidaliaShortcutsDesc"
 msgid "Add ${VIDALIA_NAME} to your Start menu."
-msgstr "افزودن ${VIDALIA_NAME} به فهرست آغاز."
+msgstr "افزودن ${VIDALIA_NAME} به منوي استارت ويندوز."
 
 #, fuzzy
 msgctxt "VidaliaRunNow"
 msgid "Run ${VIDALIA_NAME}"
-msgstr "اجرا?ردن ${VIDALIA_NAME}"
+msgstr "اجراي ${VIDALIA_NAME}"
 
 #, fuzzy
 msgctxt "TorGroupDesc"
 msgid ""
 "Tor is a system for using the Internet anonymously, helping you anonymize "
 "Web browsing and publishing, instant messaging, IRC, and more."
-msgstr "?ار?ذار? ${TOR_DESC}."
+msgstr ""
+"تُر سيستمي براي استفاده از اينترنت به صورت ناشناس است كه به شما كمك مي‌كند "
+"تا وب سايتها را به صورت ناشناس ديده و يا بارگذاري نماييد، پيام بفرستيد، از "
+"آي‌آرسي به صورت ناشناس استفاده كنيد و همچنين براي استفاده‌هاي بيشتر ديگري "
+"نيز مورد مصرف قرار مي‌گيرد."
 
 msgctxt "TorUninstDesc"
 msgid "Remove ${TOR_DESC}."
-msgstr ""
+msgstr "حذف ${TOR_DESC}."
 
 #, fuzzy
 msgctxt "TorAppDesc"
 msgid "Install ${TOR_DESC}."
-msgstr "?ار?ذار? ${TOR_DESC}."
+msgstr "نصب ${TOR_DESC}."
 
 #, fuzzy
 msgctxt "TorAskOverwriteTorrc"
@@ -167,9 +179,9 @@ msgid ""
 "$\n"
 "Do you want to overwrite it with the default sample configuration file?"
 msgstr ""
-"شما ??شتر دارا? ?? ?رونده ???ربند? تور م? باش?د.$\n"
+"شما هم اكنون فايل پيكربندي تُر را داريد.$\n"
 "$\n"
-"آ?ا م? خواه?د آن را با ?رونده ???ربند? نمونه ??ش ?ز?ده جا? نوشت ?ن?د؟"
+"آيا مايليد آن‌ را با فايل نمونه پيش فرض پيكربندي جايگزين كنيد؟"
 
 msgctxt "TorDocumentation"
 msgid "Documentation"
@@ -178,89 +190,93 @@ msgstr "مستندات"
 #, fuzzy
 msgctxt "TorDocumentationDesc"
 msgid "Install ${TOR_NAME} documentation."
-msgstr "?ار?ذار? مستندات ${TOR_NAME}."
+msgstr "نصب مستندات ${TOR_NAME}."
 
 msgctxt "TorShortcuts"
 msgid "Add to Start Menu"
-msgstr "افزودن به فهرست آغاز"
+msgstr "افزودن به منوي استارت ويندوز"
 
 msgctxt "TorShortcutsDesc"
 msgid "Add ${TOR_NAME} to your Start menu."
-msgstr "افزودن ${TOR_NAME} به فهرست آغاز."
+msgstr "افزودن ${TOR_NAME} به منوي استارت ويندوز."
 
 msgctxt "PolipoGroupDesc"
 msgid ""
 "Polipo is a caching web proxy that increases performance of web browsing "
 "through Tor."
 msgstr ""
+"پوليپو يك وب پراكسي كش كننده است كه قابليتهاي مرور وب از طريق تُر را افزايش "
+"مي‌دهد."
 
 msgctxt "PolipoUninstDesc"
 msgid "Remove ${POLIPO_DESC}."
-msgstr ""
+msgstr "حذف ${POLIPO_DESC}."
 
 #, fuzzy
 msgctxt "PolipoAppDesc"
 msgid "Install ${POLIPO_DESC}."
-msgstr "?ار?ذار? ${POLIPO_DESC}."
+msgstr "نصب ${POLIPO_DESC}."
 
 #, fuzzy
 msgctxt "PolipoShortcuts"
 msgid "Add to Start Menu"
-msgstr "افزودن به فهرست آغاز"
+msgstr "افزودن به منوي استارت ويندوز"
 
 #, fuzzy
 msgctxt "PolipoShortcutsDesc"
 msgid "Add ${POLIPO_NAME} to your Start menu."
-msgstr "افزودن ${POLIPO_NAME} به فهرست آغاز."
+msgstr "افزودن ${POLIPO_NAME} به منوي استارت ويندوز."
 
 #, fuzzy
 msgctxt "PolipoStartup"
 msgid "Run At Startup"
-msgstr "اجرا ?ردن در راه انداز?"
+msgstr "اجرا شدن در هنگام بوت شدن ويندوز"
 
 #, fuzzy
 msgctxt "PolipoStartupDesc"
 msgid "Automatically run ${POLIPO_NAME} at startup."
-msgstr "اجرا ?ردن ${POLIPO_NAME} در راه انداز? بطور خود?ار."
+msgstr "اجرا شدن ${POLIPO_NAME} به صورت اتوماتيك در هنگام بوت شدن ويندوز."
 
 #, fuzzy
 msgctxt "TorbuttonGroupDesc"
 msgid ""
 "Torbutton is a Firefox extension that allows you to quickly enable or "
 "disable anonymous web browsing."
-msgstr "?ار?ذار? ${TORBUTTON_DESC}."
+msgstr ""
+"تُرباتِن يک افزونه فايرفاکس است که به شما اجازه می‌دهد امکان مرور ناشناس در "
+"وب را به‌سرعت فعال يا غيرفعال کنيد."
 
 msgctxt "TorbuttonUninstDesc"
 msgid "Remove ${TORBUTTON_DESC}."
-msgstr ""
+msgstr "حذف ${TORBUTTON_DESC}."
 
 #, fuzzy
 msgctxt "TorbuttonAppDesc"
 msgid "Install ${TORBUTTON_DESC}."
-msgstr "?ار?ذار? ${TORBUTTON_DESC}."
+msgstr "نصب ${TORBUTTON_DESC}."
 
 #, fuzzy
 msgctxt "TorbuttonAddToFirefox"
 msgid "Add to Firefox"
-msgstr "افزودن به فا?رفا?س"
+msgstr "افزودن به فايرفاكس"
 
 #, fuzzy
 msgctxt "TorbuttonAddToFirefoxDesc"
 msgid "Add the ${TORBUTTON_DESC} extension to Firefox."
-msgstr "افزودن ?سوند ${TORBUTTON_DESC} به فا?رفا?س."
+msgstr "اضافه‌كردن افزونه ${TORBUTTON_DESC} به فايرفاكس"
 
 #, fuzzy
 msgctxt "TorbuttonFirefoxNotFound"
 msgid "Firefox was not found on your system. Not installing Torbutton."
-msgstr "فا?رفا?س در س?ستم شما ??دا نشد. ?ار?ذار? نشدن د?مه تور."
+msgstr "فايرفاكس در سيستم شما نصب نشده است. تُرباتن نصب نخواهد شد."
 
 msgctxt "AppData"
 msgid "Application Data"
-msgstr ""
+msgstr "اطلاعات نرم افزار"
 
 msgctxt "AppDataUninstDesc"
 msgid "Remove saved application data and configuration files."
-msgstr ""
+msgstr "حذف اطلاعات مربوط به نرم افزار و فايلهاي پيكربندي."
 
 msgctxt "LanguageCode"
 msgid "en"
@@ -268,12 +284,12 @@ msgstr "fa"
 
 msgctxt "FirefoxWarningPageTitle"
 msgid "Firefox is not installed"
-msgstr ""
+msgstr "فايرفاكس نصب نشده است"
 
 msgctxt "FirefoxWarningPageSubtitle"
 msgid ""
 "We recommend that you install Firefox before continuing, for best safety."
-msgstr ""
+msgstr "پيشنهاد مي‌شود قبل از ادامه و براي امنيت بيشتر، فايرفاكس را نصب كنيد."
 
 msgctxt "FirefoxWarningPageUpperText"
 msgid ""
@@ -285,6 +301,11 @@ msgid ""
 "If you would like to install Firefox, please press Cancel, then go\n"
 "to the Firefox download page at"
 msgstr ""
+"مرورگر موزيلا فايرفاكس روي كامپيوتر شما نصب نشده است. /nتُر با مرورگرهاي "
+"اينترنتي ديگر مثل اينترنت اكسپلورر نيز كار خواهد كرد ولي /nكار با فايرفاكس  "
+"به دليل اينكه داراي امكانات بهتري /nجهت حفاظت از ناشناس ماندن شما است،‌ "
+"آسانتر است. /nاگر مايل به نصب فايرفاكس هستيد، لطفاً دكمه كنسل را زده و سپس "
+"به/nصفحه بارگذاري فايرفاكس در آدرس"
 
 msgctxt "FirefoxWarningPageLowerText"
 msgid ""
@@ -294,4 +315,6 @@ msgid ""
 "Or, if you would prefer to install Tor without Firefox, simply\n"
 "press Next to continue."
 msgstr ""
-
+"وقتي نصب فايرفاكس را به اتمام رسانديد، مي‌توانيد مجدداً/nنصب كننده تُر/n/nرا "
+"اجرا كنيد يا اگر مايل به نصب آن بدون نصب فايرفاكس هستيد، لطفاً/nدكمه ادامه "
+"را بزنيد."
