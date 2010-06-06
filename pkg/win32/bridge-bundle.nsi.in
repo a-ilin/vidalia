@@ -1,0 +1,667 @@
+;;
+;;  $Id: vidalia-bundle.nsi.in 4290 2010-05-17 16:15:27Z phobos $
+;; 
+;;  This file is part of Vidalia, and is subject to the license terms in the
+;;  LICENSE file, found in the top level directory of this distribution. If 
+;;  you did not receive the LICENSE file with this file, you may obtain it
+;;  from the Vidalia source package distributed by the Vidalia Project at
+;;  http://www.vidalia-project.net/. No part of Vidalia, including this file,
+;;  may be copied, modified, propagated, or distributed except according to
+;;  the terms described in the LICENSE file.
+;;
+
+!include "MUI.nsh"
+
+SetCompressor /SOLID lzma
+!packhdr header.dat "upx --best header.dat"
+
+;---------------------------------
+; Global definitions
+!define VIDALIA_NAME        "Vidalia"
+!define VIDALIA_EXEC        "vidalia.exe"
+!define VIDALIA_APPVERSION  "@VERSION@"
+!define VIDALIA_DESC        "${VIDALIA_NAME} ${VIDALIA_APPVERSION}"
+
+!define TOR_NAME            "Tor"
+!define TOR_EXEC            "tor.exe"
+!define TOR_APPVERSION      "0.2.2.13-alpha"
+!define TOR_DESC            "${TOR_NAME} ${TOR_APPVERSION}"
+
+!define POLIPO_NAME        "Polipo"
+!define POLIPO_EXEC        "polipo.exe"
+!define POLIPO_APPVERSION  "1.0.4.1"
+!define POLIPO_DESC        "${POLIPO_NAME} ${POLIPO_APPVERSION}"
+
+!define TORBUTTON_NAME      "Torbutton"
+!define TORBUTTON_APPVERSION "1.2.5"
+!define TORBUTTON_DESC      "${TORBUTTON_NAME} ${TORBUTTON_APPVERSION}"
+
+!define BUNDLE_NAME         "Vidalia Bundle"
+!define BUNDLE_APPVERSION   "${TOR_APPVERSION}-${VIDALIA_APPVERSION}"
+!define BUNDLE_REVISION     "1"
+!define BUNDLE_PRODVERSION  "@VER_MAJOR@.@VER_MINOR@.@VER_PATCH@.${BUNDLE_REVISION}"
+!define BUNDLE_DESC         "${BUNDLE_NAME} ${BUNDLE_APPVERSION}"
+!define INSTALLFILE         "vidalia-bundle-${BUNDLE_APPVERSION}.exe"
+!define UNINSTALLER         "Uninstall.exe"
+!define SHORTCUTS           "$SMPROGRAMS\${BUNDLE_NAME}"
+
+;--------------------------------
+; Installer file details
+VIAddVersionKey "ProductName"     "${BUNDLE_NAME}"
+VIAddVersionKey "Comments"        "${BUNDLE_DESC}"
+VIAddVersionKey "FileVersion"     "${BUNDLE_APPVERSION}"
+VIAddVersionKey "FileDescription" "${BUNDLE_DESC}"
+VIProductVersion "${BUNDLE_PRODVERSION}"
+
+;--------------------------------
+; Basic installer information
+Name            "${BUNDLE_NAME}"
+Caption         "$(BundleSetupCaption)"
+BrandingText    "${BUNDLE_DESC} (Rev. ${BUNDLE_REVISION})"
+OutFile         "${INSTALLFILE}"
+InstallDir      "$PROGRAMFILES\Vidalia Bundle"
+InstallDirRegKey HKCU "Software" "${BUNDLE_NAME}"
+SetOverWrite    ifnewer
+AutoCloseWindow false
+ShowInstDetails show
+CRCCheck        on
+XPStyle         on
+
+;--------------------------------
+; MUI Options
+!define MUI_WELCOMEPAGE_TITLE "$(BundleWelcomeTitle)"
+!define MUI_WELCOMEPAGE_TEXT  "$(BundleWelcomeText)"
+!define MUI_ABORTWARNING
+!define MUI_FINISHPAGE_NOAUTOCLOSE
+!define MUI_ICON "${NSISDIR}\Contrib\Graphics\Icons\win-install.ico"
+!define MUI_UNICON "${NSISDIR}\Contrib\Graphics\Icons\win-uninstall.ico"
+!define MUI_HEADERIMAGE_BITMAP "${NSISDIR}\Contrib\Graphics\Header\win.bmp"
+!define MUI_HEADERIMAGE
+!define MUI_FINISHPAGE_TEXT "$(BundleFinishText)"
+!define MUI_FINISHPAGE_RUN
+!define MUI_FINISHPAGE_RUN_FUNCTION CustomFinishFn
+!define MUI_FINISHPAGE_RUN_TEXT "$(BundleRunNow)"
+!define MUI_FINISHPAGE_LINK "$(BundleLinkText)"
+!define MUI_FINISHPAGE_LINK_LOCATION  "https://www.torproject.org/docs/tor-doc-win32.html"
+
+;--------------------------------
+; Pages
+!insertmacro MUI_PAGE_WELCOME
+Page custom FirefoxWarningPage
+!insertmacro MUI_PAGE_COMPONENTS
+!insertmacro MUI_PAGE_DIRECTORY
+!insertmacro MUI_PAGE_INSTFILES
+!insertmacro MUI_PAGE_FINISH
+
+!insertmacro MUI_UNPAGE_WELCOME
+!insertmacro MUI_UNPAGE_COMPONENTS
+!insertmacro MUI_UNPAGE_CONFIRM
+!insertmacro MUI_UNPAGE_INSTFILES
+!insertmacro MUI_UNPAGE_FINISH
+
+;--------------------------------
+; Available languages
+!insertmacro MUI_LANGUAGE "Czech"
+!insertmacro MUI_LANGUAGE "Dutch"
+!insertmacro MUI_LANGUAGE "English"
+!insertmacro MUI_LANGUAGE "Farsi"
+!insertmacro MUI_LANGUAGE "Finnish"
+!insertmacro MUI_LANGUAGE "French"
+!insertmacro MUI_LANGUAGE "German"
+!insertmacro MUI_LANGUAGE "Hebrew"
+!insertmacro MUI_LANGUAGE "Italian"
+!insertmacro MUI_LANGUAGE "Polish"
+!insertmacro MUI_LANGUAGE "Portuguese"
+!insertmacro MUI_LANGUAGE "Romanian"
+!insertmacro MUI_LANGUAGE "Russian"
+!insertmacro MUI_LANGUAGE "Spanish"
+#!insertmacro MUI_LANGUAGE "SimpChinese"
+!insertmacro MUI_LANGUAGE "Swedish"
+#!insertmacro MUI_LANGUAGE "TradChinese"
+!include "vidalia_cs.nsh"
+!include "vidalia_de.nsh"
+!include "vidalia_en.nsh"
+!include "vidalia_es.nsh"
+!include "vidalia_fa.nsh"
+!include "vidalia_fi.nsh"
+!include "vidalia_fr.nsh"
+!include "vidalia_he.nsh"
+!include "vidalia_it.nsh"
+!include "vidalia_nl.nsh"
+!include "vidalia_pl.nsh"
+!include "vidalia_pt.nsh"
+!include "vidalia_ro.nsh"
+!include "vidalia_ru.nsh"
+!include "vidalia_sv.nsh"
+#!include "vidalia_zh-cn.nsh"
+#!include "vidalia_zh-tw.nsh"
+
+;--------------------------------
+; Install types
+!ifndef NOINSTTYPES ; only if not defined
+  InstType "Full"
+  InstType "Base"
+  ;InstType /COMPONENTSONLYONCUSTOM
+!endif
+
+;--------------------------------
+; Vidalia
+Var configfile
+var bInstallVidalia
+SectionGroup "${VIDALIA_DESC}" VidaliaGroup
+    ;--------------------------------
+    ; Vidalia application binaries
+    Section "${VIDALIA_NAME}" Vidalia
+      SectionIn 1 2
+
+      ; Set output path to the installation directory.
+      SetOutPath "$INSTDIR\Vidalia"
+      File "@Vidalia_BINARY_DIR@\src\vidalia\${VIDALIA_EXEC}"
+      File "@QT_BINARY_DIR@\QtCore4.dll"
+      File "@QT_BINARY_DIR@\QtGui4.dll"
+      File "@QT_BINARY_DIR@\QtNetwork4.dll"
+      File "@QT_BINARY_DIR@\QtXml4.dll"
+      File "@QT_BINARY_DIR@\libgcc_s_dw2-1.dll"
+      File "@MINGW_BINARY_DIR@\mingwm10.dll"
+      File "@OPENSSL_BINARY_DIR@\ssleay32.dll"
+      File "@OPENSSL_BINARY_DIR@\libeay32.dll"
+      File "@Vidalia_SOURCE_DIR@\README"
+      File "@Vidalia_SOURCE_DIR@\CHANGELOG"
+      File "@Vidalia_SOURCE_DIR@\LICENSE"
+      File "@Vidalia_SOURCE_DIR@\LICENSE-GPLV2"
+      File "@Vidalia_SOURCE_DIR@\LICENSE-GPLV3"
+      File "@Vidalia_SOURCE_DIR@\LICENSE-LGPLV3"
+      File "@Vidalia_SOURCE_DIR@\LICENSE-OPENSSL"
+      File "@Vidalia_SOURCE_DIR@\CREDITS"
+      
+      ; Include a prebuilt GeoIP cache
+      SetShellVarContext current
+      CreateDirectory "$APPDATA\Vidalia"
+      SetOutPath "$APPDATA\Vidalia"
+      File "@Vidalia_SOURCE_DIR@\pkg\geoip-cache"
+
+      ;If there's already a torrc config file, ask if they want to
+      ;overwrite it with the new one.
+      StrCpy $configfile "torrc"
+      IfFileExists "$APPDATA\Vidalia\torrc" "" endiftorrc
+        MessageBox MB_ICONQUESTION|MB_YESNO "$(TorAskOverwriteTorrc)" IDNO noreplace
+        Delete "$APPDATA\Vidalia\torrc"
+        Goto endiftorrc
+      noreplace:
+        StrCpy $configfile "torrc.sample"
+      endiftorrc:
+        File /oname=$configfile "@TOR_PACKAGE_DIR@\torrc.sample"
+
+      ; Tor gets installed to $INSTDIR\Tor, so let's remember it
+      ; But first, we have to replace all the '\'s with '\\'s in the $INSTDIR
+      ; Does NSIS make this easy by providing the ability to replace substrings? No.
+      Push $INSTDIR
+      Push "\"
+      Push "\\"
+      Call StrRep
+      Pop $R0 ; contains the modified version of $INSTDIR
+      WriteINIStr "$APPDATA\Vidalia\vidalia.conf" Tor TorExecutable "$R0\\Tor\\${TOR_EXEC}"
+      WriteINIStr "$APPDATA\Vidalia\vidalia.conf" General LanguageCode "$(LanguageCode)"
+      WriteINIStr "$APPDATA\Vidalia\vidalia.conf" Server ExitPolicy ""
+      WriteINIStr "$APPDATA\Vidalia\vidalia.conf" Server Enabled "true"
+      WriteINIStr "$APPDATA\Vidalia\vidalia.conf" Server BridgeRelay "true"
+      WriteINIStr "$APPDATA\Vidalia\vidalia.conf" Server EnableUPnP "true"
+
+
+      ; Write the uninstall keys for Windows  
+      SetShellVarContext all
+      WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "DisplayName" "${VIDALIA_DESC}"
+      WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "UninstallString" '"$INSTDIR\${UNINSTALLER}"'
+      WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "NoModify" 1
+      WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia" "NoRepair" 1
+     
+      IntOp $bInstallVidalia 0 + 1
+    SectionEnd
+
+    ;--------------------------------
+    ; Vidalia Start menu shortcuts
+    Section "$(VidaliaShortcuts)" VidaliaShortcuts
+      SectionIn 1
+      SetShellVarContext all ; (Add to "All Users" Start Menu if possible)
+      CreateDirectory "${SHORTCUTS}"
+      CreateShortCut "${SHORTCUTS}\Uninstall.lnk" "$INSTDIR\Uninstall.exe" "" "$INSTDIR\${UNINSTALLER}" 0
+      CreateShortCut "${SHORTCUTS}\Vidalia.lnk" "$INSTDIR\Vidalia\${VIDALIA_EXEC}" "" "$INSTDIR\Vidalia\${VIDALIA_EXEC}" 0
+      
+      WriteIniStr "$INSTDIR\Vidalia\Vidalia Website.url" "InternetShortcut" "URL" "http://www.vidalia-project.net"
+      CreateShortCut "${SHORTCUTS}\Vidalia Website.lnk" "$INSTDIR\Vidalia\Vidalia Website.url"
+    SectionEnd
+
+    ;--------------------------------
+    ; Run Vidalia at startup
+    Section "$(VidaliaStartup)" VidaliaStartup
+      SectionIn 1
+      WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "${VIDALIA_NAME}" '"$INSTDIR\Vidalia\${VIDALIA_EXEC}"'
+    SectionEnd    
+SectionGroupEnd
+
+
+;--------------------------------
+; Tor
+var bInstallTor
+SectionGroup "${TOR_DESC}" TorGroup
+    ;--------------------------------
+    ; Tor application binaries
+    Section "${TOR_NAME}" Tor
+    ;Files that have to be installed for tor to run and that the user
+    ;cannot choose not to install
+       SectionIn 1 2
+       SetShellVarContext current
+       SetOutPath "$INSTDIR\Tor"
+       File "@TOR_PACKAGE_DIR@\tor.exe"
+       File "@TOR_PACKAGE_DIR@\tor-resolve.exe"
+       WriteIniStr "$INSTDIR\Tor\Tor Website.url" "InternetShortcut" "URL" "https://www.torproject.org"
+       ; Include tor's geoip file, too
+       SetOutPath "$APPDATA\Tor"
+       File "@TOR_PACKAGE_DIR@\geoip"
+       
+       ; If the user is also installing Vidalia, then don't confuse them by
+       ; an extra torrc in %APPDATA%\Tor
+       SectionGetFlags ${Vidalia} $0
+       IntOp $0 $0 & ${SF_SELECTED}
+       IntCmp $0 ${SF_SELECTED} skiptorrc
+
+       StrCpy $configfile "torrc"
+
+       ; If there's already a torrc config file, ask if they want to
+       ; overwrite it with the new one.
+       IfFileExists "$APPDATA\Tor\torrc" "" endiftorrc
+         MessageBox MB_ICONQUESTION|MB_YESNO "$(TorAskOverwriteTorrc)" IDNO noreplace
+         Delete "$APPDATA\Tor\torrc"
+         Goto endiftorrc
+       noreplace:
+         StrCpy $configfile "torrc.sample"
+       endiftorrc:
+         File /oname=$configfile "@TOR_PACKAGE_DIR@\torrc.sample"
+       
+       skiptorrc:
+        ; Write the uninstall keys for Windows
+        WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "DisplayName" "${TOR_DESC}"
+        WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "UninstallString" '"$INSTDIR\${UNINSTALLER}"'
+        WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "NoModify" 1
+        WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Tor" "NoRepair" 1
+       
+       IntOp $bInstallTor 0 + 1
+    SectionEnd
+
+    ;--------------------------------
+    ; Tor documentation
+    Section "$(TorDocumentation)" TorDocs
+       SectionIn 1
+       SetOutPath "$INSTDIR\Tor\Documents"
+       File "@TOR_PACKAGE_DIR@\Documents\*.*"
+    SectionEnd
+
+    ;--------------------------------
+    ; Tor Start menu shortcuts
+    Section "$(TorShortcuts)" TorShortcuts
+      SectionIn 1
+        SetShellVarContext all ; (Add to "All Users" Start Menu if possible)
+        SetOutPath "$INSTDIR\Tor"
+        IfFileExists "${SHORTCUTS}\Tor\*.*" "" +2
+           RMDir /r "${SHORTCUTS}\Tor"
+ 
+        CreateDirectory "${SHORTCUTS}\Tor"
+        CreateShortCut  "${SHORTCUTS}\Tor\Tor.lnk" "$INSTDIR\Tor\tor.exe"
+        CreateShortCut  "${SHORTCUTS}\Tor\Tor Website.lnk" "$INSTDIR\Tor\Tor Website.url"
+        CreateShortCut "${SHORTCUTS}\Uninstall.lnk" "$INSTDIR\Uninstall.exe" "" "$INSTDIR\${UNINSTALLER}" 0
+ 
+        IfFileExists "$INSTDIR\Tor\Documents\*.*" "" endifdocs
+          CreateDirectory "${SHORTCUTS}\Tor\Documents"
+          CreateShortCut  "${SHORTCUTS}\Tor\Documents\Tor Manual.lnk" "$INSTDIR\Tor\Documents\tor-reference.html"
+          CreateShortCut  "${SHORTCUTS}\Tor\Documents\Tor Documentation.lnk" "$INSTDIR\Tor\Documents"
+          CreateShortCut  "${SHORTCUTS}\Tor\Documents\Tor Specification.lnk" "$INSTDIR\Tor\Documents\tor-spec.txt"
+        endifdocs:
+        
+        ; If the user is installing Vidalia, then make the shortcut link to
+        ; %APPDATA%\Vidalia\torrc instead of %APPDATA%\Tor\torrc
+        SetShellVarContext current
+        SectionGetFlags ${Vidalia} $0
+        IntOp $0 $0 & ${SF_SELECTED}
+        IntCmp $0 ${SF_SELECTED} use_vidalia_torrc use_tor_torrc
+        use_vidalia_torrc:
+          StrCpy $configfile "$APPDATA\Vidalia\torrc"
+          goto torrc_shortcut
+        use_tor_torrc:
+          StrCpy $configfile "$APPDATA\Tor\torrc"
+        torrc_shortcut:
+          SetShellVarContext all
+          CreateShortCut  "${SHORTCUTS}\Tor\Torrc.lnk" "Notepad.exe" $configfile
+    SectionEnd
+SectionGroupEnd
+
+
+;--------------------------------
+; Polipo
+var bInstallPolipo
+SectionGroup "${POLIPO_DESC}" PolipoGroup
+    ;--------------------------------
+    ; Polipo application binaries
+    Section "${POLIPO_NAME}" Polipo
+        SectionIn 1 2
+        ; add files / whatever that need to be installed here.
+        SetOutPath "$INSTDIR\Polipo"
+        SetShellVarContext current
+
+        File /r /x "@POLIPO_PACKAGE_DIR@\polipo.conf" "@POLIPO_PACKAGE_DIR@\*.*"
+        File "@CMAKE_CURRENT_SOURCE_DIR@\polipo.conf"
+
+        ; Let Vidalia know that Polipo was installed
+        IntCmp $bInstallVidalia 1 AddVidaliaSettings SkipVidaliaSettings SkipVidaliaSettings
+        AddVidaliaSettings:
+          Push $INSTDIR
+          Push "\"
+          Push "\\"
+          Call StrRep
+          Pop $R0
+          WriteINIStr "$APPDATA\Vidalia\vidalia.conf" General ProxyExecutable "$R0\\Polipo\\${POLIPO_EXEC}"
+          WriteINIStr "$APPDATA\Vidalia\vidalia.conf" General ProxyExecutableArguments '-c \"$R0\\Polipo\\polipo.conf\"'
+          WriteINIStr "$APPDATA\Vidalia\vidalia.conf" General RunProxyAtStart "true"
+        SkipVidaliaSettings:
+
+        ; Write the installation path into the registry
+        WriteRegStr HKCU SOFTWARE\Polipo "Install_Dir" "$INSTDIR"
+
+        ; Write the uninstall keys for Windows
+        WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Polipo" "DisplayName" "${POLIPO_DESC}"
+        WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Polipo" "UninstallString" '"$INSTDIR\${UNINSTALLER}"'
+        WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Polipo" "NoModify" 1
+        WriteRegDWORD HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Polipo" "NoRepair" 1
+       
+        IntOp $bInstallPolipo 0 + 1
+    SectionEnd
+
+    ;--------------------------------
+    ; Polipo Start menu shortcuts
+    Section "$(PolipoShortcuts)" PolipoShortcuts
+        SectionIn 1
+        SetShellVarContext all ; (Add to "All Users" Start Menu if possible)
+        RMDir /r "${SHORTCUTS}\Polipo"
+        CreateDirectory "${SHORTCUTS}\Polipo"
+        CreateShortCut "${SHORTCUTS}\Polipo\Polipo.lnk" "$INSTDIR\Polipo\polipo.exe"
+        CreateShortCut "${SHORTCUTS}\Polipo\Web-based Feedback.lnk" "$INSTDIR\Polipo\doc\user-manual\contact.html"
+        
+        CreateDirectory "${SHORTCUTS}\Polipo\Edit Config"
+        CreateShortCut "${SHORTCUTS}\Polipo\Edit Config\Main Configuration.lnk" "Notepad.exe" '"$INSTDIR\Polipo\polipo.conf"'
+        
+        CreateDirectory "${SHORTCUTS}\Polipo\Documentation"
+        CreateShortCut "${SHORTCUTS}\Polipo\Documentation\User Manual.lnk" "$INSTDIR\Polipo\doc\user-manual\index.html"
+        WriteINIStr "$SMPROGRAMS\Polipo\Documentation\Web Site.url" "InternetShortcut" "URL" "http://www.pps.jussieu.fr/~jch/software/polipo/"
+        
+        CreateShortCut "${SHORTCUTS}\Uninstall.lnk" "$INSTDIR\Uninstall.exe" "" "$INSTDIR\${UNINSTALLER}" 0
+    SectionEnd
+ 
+SectionGroupEnd
+
+;--------------------------------
+; Torbutton
+SectionGroup "${TORBUTTON_DESC}" TorbuttonGroup
+  Section "${TORBUTTON_NAME}" Torbutton
+    SectionIn 1 2
+    SetOutPath "$INSTDIR\Torbutton"
+    File @TORBUTTON_PACKAGE_DIR@\LICENSE
+    File @TORBUTTON_PACKAGE_DIR@\torbutton-${TORBUTTON_APPVERSION}.xpi
+  SectionEnd
+
+  Section "$(TorbuttonAddToFirefox)" TorbuttonAddToFirefox
+    SectionIn 1 2
+    ReadRegStr $1 HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\firefox.exe" ""
+    StrCmp $1 "" FirefoxNotFound 0 ; if Path is empty or null, then skip to an error, otherwise proceed
+	  Exec '"$1" "$INSTDIR\Torbutton\torbutton-${TORBUTTON_APPVERSION}.xpi"'
+  	Goto TorbuttonInstalled
+    FirefoxNotFound:
+	  MessageBox MB_OK|MB_ICONSTOP "$(TorbuttonFirefoxNotFound)"
+    TorbuttonInstalled:
+  SectionEnd
+SectionGroupEnd
+
+Section "" end
+  SetOutPath "$INSTDIR"
+  WriteUninstaller "$INSTDIR\${UNINSTALLER}"
+SectionEnd
+
+;--------------------------------
+; Functions
+Function .onInit
+  !insertmacro MUI_LANGDLL_DISPLAY
+  !insertmacro MUI_INSTALLOPTIONS_EXTRACT_AS "@Vidalia_SOURCE_DIR@\pkg\win32\firefox-warning.ini" "firefox-warning.ini"
+
+  ReadRegStr $1 HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\firefox.exe" ""
+  StrCmp $1 "" FirefoxNotFound FirefoxFound
+
+  FirefoxNotFound:
+    ; Uncheck the Torbutton options
+    SectionGetFlags ${Torbutton} $0
+    IntOp $0 $0 & ${SECTION_OFF}
+    SectionSetFlags ${Torbutton} $0
+
+    SectionGetFlags ${TorbuttonAddToFirefox} $0
+    IntOp $0 $0 & ${SECTION_OFF}
+    SectionSetFlags ${TorbuttonAddToFirefox} $0
+ 
+  FirefoxFound:
+FunctionEnd
+
+Function .onSelChange
+  Push $0
+
+  ; Check if the Torbutton option was unchecked
+  SectionGetFlags ${Torbutton} $0
+  IntOp $0 $0 & ${SF_SELECTED}
+  IntCmp $0 0 0 SelChangeDone SelChangeDone
+
+  ; Uncheck the "Add to Firefox" box
+  SectionGetFlags ${TorbuttonAddToFirefox} $0
+  IntOp $0 $0 & ${SECTION_OFF}
+  SectionSetFlags ${TorbuttonAddToFirefox} $0
+  
+  SelChangeDone:
+  Pop $0
+FunctionEnd
+
+Function FirefoxWarningPage
+  ReadRegStr $1 HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\App Paths\firefox.exe" ""
+  StrCmp $1 "" FirefoxNotFound FirefoxFound
+
+  FirefoxNotFound:
+    !insertmacro MUI_INSTALLOPTIONS_WRITE "firefox-warning.ini" "Settings" "Title" "$(FirefoxWarningPageTitle)"
+    !insertmacro MUI_INSTALLOPTIONS_WRITE "firefox-warning.ini" "Field 1" "Text" "$(FirefoxWarningPageUpperText)"
+    !insertmacro MUI_INSTALLOPTIONS_WRITE "firefox-warning.ini" "Field 3" "Text" "$(FirefoxWarningPageLowerText)"
+    !insertmacro MUI_HEADER_TEXT "$(FirefoxWarningPageTitle)" "$(FirefoxWarningPageSubtitle)" 
+    !insertmacro MUI_INSTALLOPTIONS_DISPLAY "firefox-warning.ini"
+
+  FirefoxFound:
+FunctionEnd
+
+Function CustomFinishFn
+    IntCmp $bInstallVidalia 1 run_vidalia check_tor check_tor
+    run_vidalia:
+        Exec '"$INSTDIR\Vidalia\${VIDALIA_EXEC}"'
+        goto done
+    
+    check_tor:
+    IntCmp $bInstallTor 1 run_tor check_polipo check_polipo
+    run_tor:
+        Exec '"$INSTDIR\Tor\${TOR_EXEC}"'
+    
+    check_polipo:
+    IntCmp $bInstallPolipo 1 run_polipo done done
+    run_polipo:
+        SetOutPath "$INSTDIR\Polipo"
+        Exec '"$INSTDIR\Polipo\${POLIPO_EXEC}" -c "$INSTDIR\Polipo\polipo.conf"'
+    done:
+FunctionEnd
+
+;-------------------------
+; Uninstaller
+Section "-Uninstall" Uninstall
+SectionEnd
+
+SectionGroup "un.Tor ${TOR_APPVERSION}" UninstallTorGroup
+  Section "un.Tor" UninstallTor
+    SetShellVarContext all
+    RMDir /r "$INSTDIR\Tor"
+    RMDir /r "${SHORTCUTS}\Tor"
+    DeleteRegKey HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Tor"
+  SectionEnd
+
+  Section "un.$(AppData)" UninstallTorAppData
+    SetShellVarContext current
+    RMDir /r "$APPDATA\Tor"
+  SectionEnd
+SectionGroupEnd
+
+SectionGroup "un.Vidalia ${VIDALIA_APPVERSION}" UninstallVidaliaGroup
+  Section "un.Vidalia" UninstallVidalia
+    SetShellVarContext all
+    RMDir /r "$INSTDIR\Vidalia"
+    Delete "${SHORTCUTS}\Vidalia.lnk"
+    Delete "${SHORTCUTS}\Vidalia Website.lnk"
+    DeleteRegKey HKCU "Software\Microsoft\Windows\CurrentVersion\Run\Vidalia"
+    DeleteRegKey HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\Vidalia"
+  SectionEnd
+
+  Section "un.$(AppData)" UninstallVidaliaAppData
+    SetShellVarContext current
+    RMDir /r "$APPDATA\Vidalia"
+  SectionEnd
+SectionGroupEnd
+
+Section "un.Polipo ${POLIPO_APPVERSION}" UninstallPolipo
+  SetShellVarContext all
+  RMDir /r "$INSTDIR\Polipo"
+  RMDir /r "${SHORTCUTS}\Polipo"
+  DeleteRegKey HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Polipo"
+SectionEnd
+
+; XXX: We still need to find a way to actually remove Torbutton from Firefox
+;Section "un.Torbutton ${TORBUTTON_APPVERSION}" UninstallTorbutton
+;  RMDir /r "$INSTDIR\Torbutton"
+;  DeleteRegKey HKLM "SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\Tor"
+;SectionEnd
+
+Function un.onInit
+  !insertmacro MUI_LANGDLL_DISPLAY
+  SetShellVarContext current
+
+  IfFileExists "$INSTDIR\Tor\*.*" CheckTorAppData
+    SectionGetFlags ${UninstallTor} $0
+    IntOp $0 $0 & ${SECTION_OFF}
+    SectionSetFlags ${UninstallTor} $0
+  
+  CheckTorAppData:
+  IfFileExists "$APPDATA\Tor\*.*" CheckVidalia
+    SectionGetFlags ${UninstallTorAppData} $0
+    IntOp $0 $0 & ${SECTION_OFF}
+    SectionSetFlags ${UninstallTorAppData} $0
+
+  CheckVidalia:
+  IfFileExists "$INSTDIR\Vidalia\*.*" CheckVidaliaAppData
+    SectionGetFlags ${UninstallVidalia} $0
+    IntOp $0 $0 & ${SECTION_OFF}
+    SectionSetFlags ${UninstallVidalia} $0
+
+  CheckVidaliaAppData:
+  IfFileExists "$APPDATA\Vidalia\*.*" CheckPolipo
+    SectionGetFlags ${UninstallVidaliaAppData} $0
+    IntOp $0 $0 & ${SECTION_OFF}
+    SectionSetFlags ${UninstallVidaliaAppData} $0
+
+  CheckPolipo:
+  IfFileExists "$INSTDIR\Polipo\*.*" Done
+    SectionGetFlags ${UninstallPolipo} $0
+    IntOp $0 $0 & ${SECTION_OFF}
+    SectionSetFlags ${UninstallPolipo} $0
+
+  Done:
+FunctionEnd
+
+Function un.onUninstSuccess
+  SetShellVarContext all
+  IfFileExists "$INSTDIR\Tor\*.*" DontRemoveTheUninstaller
+  IfFileExists "$INSTDIR\Vidalia\*.*" DontRemoveTheUninstaller
+  IfFileExists "$INSTDIR\Polipo\*.*" DontRemoveTheUninstaller
+  RMDir /r "$INSTDIR"
+  RMDir /r "${SHORTCUTS}"
+  DontRemoveTheUninstaller:
+FunctionEnd
+
+!insertmacro MUI_FUNCTION_DESCRIPTION_BEGIN
+  !insertmacro MUI_DESCRIPTION_TEXT ${Tor} "$(TorAppDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${TorGroup} "$(TorGroupDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${TorDocs} "$(TorDocumentationDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${TorShortcuts} "$(TorShortcutsDesc)"
+
+  !insertmacro MUI_DESCRIPTION_TEXT ${Vidalia} "$(VidaliaAppDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${VidaliaGroup} "$(VidaliaGroupDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${VidaliaStartup} "$(VidaliaStartupDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${VidaliaShortcuts} "$(VidaliaShortcutsDesc)"
+
+  !insertmacro MUI_DESCRIPTION_TEXT ${Polipo} "$(PolipoAppDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${PolipoGroup} "$(PolipoGroupDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${PolipoStartup} "$(PolipoStartupDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${PolipoShortcuts} "$(PolipoShortcutsDesc)"
+
+  !insertmacro MUI_DESCRIPTION_TEXT ${Torbutton} "$(TorbuttonAppDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${TorbuttonGroup} "$(TorbuttonGroupDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${TorbuttonAddToFirefox} "$(TorbuttonAddToFirefoxDesc)"
+!insertmacro MUI_FUNCTION_DESCRIPTION_END
+
+!insertmacro MUI_UNFUNCTION_DESCRIPTION_BEGIN
+  !insertmacro MUI_DESCRIPTION_TEXT ${UninstallTor} "$(TorUninstDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${UninstallTorAppData} "$(AppDataUninstDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${UninstallVidalia} "$(VidaliaUninstDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${UninstallVidaliaAppData} "$(AppDataUninstDesc)"
+  !insertmacro MUI_DESCRIPTION_TEXT ${UninstallPolipo} "$(PolipoUninstDesc)"
+!insertmacro MUI_UNFUNCTION_DESCRIPTION_END
+
+
+Function StrRep
+ 
+  ;Written by dirtydingus 2003-02-20 04:30:09 
+  ; USAGE
+  ;Push String to do replacement in (haystack)
+  ;Push String to replace (needle)
+  ;Push Replacement
+  ;Call StrRep
+  ;Pop $R0 result	
+ 
+  Exch $R4 ; $R4 = Replacement String
+  Exch
+  Exch $R3 ; $R3 = String to replace (needle)
+  Exch 2
+  Exch $R1 ; $R1 = String to do replacement in (haystack)
+  Push $R2 ; Replaced haystack
+  Push $R5 ; Len (needle)
+  Push $R6 ; len (haystack)
+  Push $R7 ; Scratch reg
+  StrCpy $R2 ""
+  StrLen $R5 $R3
+  StrLen $R6 $R1
+loop:
+  StrCpy $R7 $R1 $R5
+  StrCmp $R7 $R3 found
+  StrCpy $R7 $R1 1 ; - optimization can be removed if U know len needle=1
+  StrCpy $R2 "$R2$R7"
+  StrCpy $R1 $R1 $R6 1
+  StrCmp $R1 "" done loop
+found:
+  StrCpy $R2 "$R2$R4"
+  StrCpy $R1 $R1 $R6 $R5
+  StrCmp $R1 "" done loop
+done:
+  StrCpy $R3 $R2
+  Pop $R7
+  Pop $R6
+  Pop $R5
+  Pop $R2
+  Pop $R1
+  Pop $R4
+  Exch $R3
+	
+FunctionEnd
+
