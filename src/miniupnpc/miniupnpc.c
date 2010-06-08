@@ -27,7 +27,6 @@
 /* Win32 Specific includes and defines */
 #include <winsock2.h>
 #include <ws2tcpip.h>
-#include <Wspiapi.h>
 #include <io.h>
 /*#include <IPHlpApi.h>*/
 #define snprintf _snprintf
