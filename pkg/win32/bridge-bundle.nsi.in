@@ -206,6 +206,7 @@ SectionGroup "${VIDALIA_DESC}" VidaliaGroup
       WriteINIStr "$APPDATA\Vidalia\vidalia.conf" Server Enabled "true"
       WriteINIStr "$APPDATA\Vidalia\vidalia.conf" Server BridgeRelay "true"
       WriteINIStr "$APPDATA\Vidalia\vidalia.conf" Server EnableUPnP "true"
+      WriteINIStr "$APPDATA\Vidalia\vidalia.conf" Server Changed "true"
 
 
       ; Write the uninstall keys for Windows  
