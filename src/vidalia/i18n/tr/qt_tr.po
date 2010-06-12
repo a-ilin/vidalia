@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-08-20 03:25+0000\n"
-"PO-Revision-Date: 2010-05-12 04:19-0600\n"
+"PO-Revision-Date: 2010-06-12 02:45-0600\n"
 "Last-Translator: yunus kaba <yunuskaba@gmail.com>\n"
 "Language-Team: none\n"
 "MIME-Version: 1.0\n"
@@ -193,21 +193,24 @@ msgid "Open"
 msgstr "Aç"
 
 #: qfiledialog.cpp:1670
-#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
 "%1 already exists.\n"
 "Do you want to replace it?"
-msgstr "Belirtilen dosya zaten var. Değiştirmek ister misiniz?"
+msgstr ""
+"%1 Belirtilen dosya zaten var.\n"
+"Değiştirmek ister misiniz?"
 
 #: qfiledialog.cpp:1690
-#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
 "%1\n"
 "File not found.\n"
 "Please verify the correct file name was given."
-msgstr "Dosya bulunamadı. Lütfen dosya adından emin olup tekrar deneyin."
+msgstr ""
+"%1\n"
+"Dosya bulunamadı. \n"
+"Lütfen dosya adından emin olup tekrar deneyin."
 
 #: qdirmodel.cpp:833
 msgctxt "QFileDialog"
@@ -261,21 +264,24 @@ msgid "Directory:"
 msgstr "Dizin"
 
 #: qfiledialog.cpp:2476
-#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
 "%1\n"
 "Directory not found.\n"
 "Please verify the correct directory name was given."
-msgstr "Klasör bulunamadı. Lütfen Klasör adından emin olarak tekrar deneyiniz."
+msgstr ""
+"%1\n"
+"Klasör bulunamadı.\n"
+" Lütfen Klasör adından emin olarak tekrar deneyiniz."
 
 #: qfiledialog.cpp:2281
-#, fuzzy
 msgctxt "QFileDialog"
 msgid ""
 "'%1' is write protected.\n"
 "Do you want to delete it anyway?"
-msgstr "salt okunur. Yine de silmek ister misiniz?"
+msgstr ""
+"%1 yazmaya karşı korumalı.\n"
+"Yine de silmek ister misiniz?"
 
 #: qfiledialog.cpp:2286
 msgctxt "QFileDialog"
@@ -373,8 +379,8 @@ msgid ""
 "<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer "
 "characters or no punctuations marks."
 msgstr ""
-"\"%1\" ismi kullanılarmıyor. Lütfen başka bir ismi biraz daha karakterle ve "
-"yazım işareti kullanmadan deneyiniz."
+"<b>\"%1\" ismi kullanılamıyor.</b><p> Lütfen başka bir ismi biraz daha "
+"karakterle ve yazım işareti kullanmadan deneyiniz."
 
 #: qfilesystemmodel.cpp:832
 msgctxt "QFileSystemModel"
@@ -432,7 +438,6 @@ msgid "%1 KB"
 msgstr "KB"
 
 #: qfilesystemmodel.cpp:684
-#, fuzzy
 msgctxt "QFileSystemModel"
 msgid "%1 bytes"
 msgstr "%1 bayt"
