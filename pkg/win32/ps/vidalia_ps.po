@@ -1,0 +1,217 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
+"POT-Creation-Date: 2008-07-12 05:29+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.1.1\n"
+
+msgctxt "BundleSetupCaption"
+msgid "${BUNDLE_NAME} setup"
+msgstr ""
+
+msgctxt "BundleWelcomeText"
+msgid ""
+"This wizard will guide you through the installation of Tor, "
+"Vidalia, Polipo, and Torbutton.\n\nTor is a system for using the "
+"Internet anonymously, helping you anonymize Web browsing and publishing, "
+"instant messaging, IRC, and more. Vidalia is a GUI that helps you "
+"control, monitor, and configure Tor.\n\nPolipo is a caching web proxy "
+"that helps increase performance of browsing the web through "
+"Tor.\n\nTorbutton is a Firefox extension that allows you to quickly "
+"enable or disable anonymous web browsing.\n\nIf you have previously "
+"installed Tor, Vidalia, Polipo, or Firefox, please make sure they are "
+"not running before continuing this installation.\n\n$_CLICK"
+msgstr ""
+
+msgctxt "BundleWelcomeTitle"
+msgid "Welcome to the ${BUNDLE_NAME} Setup Wizard"
+msgstr ""
+
+msgctxt "BundleLinkText"
+msgid "${TOR_NAME} installation documentation"
+msgstr ""
+
+msgctxt "BundleFinishText"
+msgid "Installation is complete.\nPlease see https://www.torproject.org/docs/tor-doc-windows to learn how to configure your applications to use Tor.\n\nIf you installed Torbutton, you will need to restart Firefox."
+msgstr ""
+
+msgctxt "BundleRunNow"
+msgid "Run installed components now"
+msgstr ""
+
+msgctxt "VidaliaGroupDesc"
+msgid "Vidalia is a GUI that helps you control, monitor, and configure Tor."
+msgstr ""
+
+msgctxt "VidaliaUninstDesc"
+msgid "Remove ${VIDALIA_DESC}."
+msgstr ""
+
+msgctxt "VidaliaSetupCaption"
+msgid "${VIDALIA_NAME} setup"
+msgstr ""
+
+msgctxt "VidaliaWelcomeText"
+msgid "This wizard will guide you through the installation of Vidalia, a GUI that helps you control, monitor, and configure Tor.\n\n$_CLICK"
+msgstr ""
+
+msgctxt "VidaliaWelcomeTitle"
+msgid "Welcome to the ${VIDALIA_NAME} Setup Wizard"
+msgstr ""
+
+msgctxt "VidaliaLinkText"
+msgid "${VIDALIA_NAME} homepage"
+msgstr ""
+
+msgctxt "VidaliaAppDesc"
+msgid "Vidalia is a GUI that helps you control, monitor, and configure Tor."
+msgstr ""
+
+msgctxt "VidaliaStartup"
+msgid "Run At Startup"
+msgstr ""
+
+msgctxt "VidaliaStartupDesc"
+msgid "Automatically run ${VIDALIA_NAME} at startup."
+msgstr ""
+
+msgctxt "VidaliaShortcuts"
+msgid "Add to Start Menu"
+msgstr ""
+
+msgctxt "VidaliaShortcutsDesc"
+msgid "Add ${VIDALIA_NAME} to your Start menu."
+msgstr ""
+
+msgctxt "VidaliaRunNow"
+msgid "Run ${VIDALIA_NAME}"
+msgstr ""
+
+msgctxt "TorGroupDesc"
+msgid "Tor is a system for using the Internet anonymously, helping you anonymize Web browsing and publishing, instant messaging, IRC, and more."
+msgstr ""
+
+msgctxt "TorUninstDesc"
+msgid "Remove ${TOR_DESC}."
+msgstr ""
+
+msgctxt "TorAppDesc"
+msgid "Install ${TOR_DESC}."
+msgstr ""
+
+msgctxt "TorAskOverwriteTorrc"
+msgid "You already have a Tor configuration file.$\n$\nDo you want to overwrite it with the default sample configuration file?"
+msgstr ""
+
+msgctxt "TorDocumentation"
+msgid "Documentation"
+msgstr ""
+
+msgctxt "TorDocumentationDesc"
+msgid "Install ${TOR_NAME} documentation."
+msgstr ""
+
+msgctxt "TorShortcuts"
+msgid "Add to Start Menu"
+msgstr ""
+
+msgctxt "TorShortcutsDesc"
+msgid "Add ${TOR_NAME} to your Start menu."
+msgstr ""
+
+msgctxt "PolipoGroupDesc"
+msgid "Polipo is a caching web proxy that increases performance of web browsing through Tor."
+msgstr ""
+
+msgctxt "PolipoUninstDesc"
+msgid "Remove ${POLIPO_DESC}."
+msgstr ""
+
+msgctxt "PolipoAppDesc"
+msgid "Install ${POLIPO_DESC}."
+msgstr ""
+
+msgctxt "PolipoShortcuts"
+msgid "Add to Start Menu"
+msgstr ""
+
+msgctxt "PolipoShortcutsDesc"
+msgid "Add ${POLIPO_NAME} to your Start menu."
+msgstr ""
+
+msgctxt "PolipoStartup"
+msgid "Run At Startup"
+msgstr ""
+
+msgctxt "PolipoStartupDesc"
+msgid "Automatically run ${POLIPO_NAME} at startup."
+msgstr ""
+
+msgctxt "TorbuttonGroupDesc"
+msgid "Torbutton is a Firefox extension that allows you to quickly enable or disable anonymous web browsing."
+msgstr ""
+
+msgctxt "TorbuttonUninstDesc"
+msgid "Remove ${TORBUTTON_DESC}."
+msgstr ""
+
+msgctxt "TorbuttonAppDesc"
+msgid "Install ${TORBUTTON_DESC}."
+msgstr ""
+
+msgctxt "TorbuttonAddToFirefox"
+msgid "Add to Firefox"
+msgstr ""
+
+msgctxt "TorbuttonAddToFirefoxDesc"
+msgid "Add the ${TORBUTTON_DESC} extension to Firefox."
+msgstr ""
+
+msgctxt "TorbuttonFirefoxNotFound"
+msgid "Firefox was not found on your system. Not installing Torbutton."
+msgstr ""
+
+msgctxt "AppData"
+msgid "Application Data"
+msgstr ""
+
+msgctxt "AppDataUninstDesc"
+msgid "Remove saved application data and configuration files."
+msgstr ""
+
+msgctxt "LanguageCode"
+msgid "en"
+msgstr ""
+
+msgctxt "FirefoxWarningPageTitle"
+msgid "Firefox is not installed"
+msgstr ""
+
+msgctxt "FirefoxWarningPageSubtitle"
+msgid "We recommend that you install Firefox before continuing, for best safety."
+msgstr ""
+
+msgctxt "FirefoxWarningPageUpperText"
+msgid "The Mozilla Firefox Web browser is not installed on your computer.\n"
+"Tor will work with other browsers, such as Internet Explorer, but\n"
+"is easier to use with Firefox, which also does a better job of\n"
+"protecting your anonymity."
+"\n\n"
+"If you would like to install Firefox, please press Cancel, then go\n"
+"to the Firefox download page at"
+msgstr ""
+
+msgctxt "FirefoxWarningPageLowerText"
+msgid "When you are done installing Firefox, you can once again run the\n"
+"Tor installer."
+"\n\n"
+"Or, if you would prefer to install Tor without Firefox, simply\n"
+"press Next to continue."
+msgstr ""
