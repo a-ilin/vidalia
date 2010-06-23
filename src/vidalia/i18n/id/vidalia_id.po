@@ -1,116 +1,117 @@
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-11-24 15:59+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-06-23 01:15-0600\n"
+"Last-Translator: Jadied <jadied@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Vidalia ts2po 0.2\n"
+"X-Generator: Pootle 1.1.0\n"
 
 #: aboutdialog.ui:16
 msgctxt "AboutDialog"
 msgid "About Vidalia"
-msgstr ""
+msgstr "Tentang Vidalia"
 
 #: aboutdialog.ui:53
 msgctxt "AboutDialog"
 msgid "Vidalia"
-msgstr ""
+msgstr "Vidalia"
 
 #: aboutdialog.ui:88
 msgctxt "AboutDialog"
 msgid "Qt"
-msgstr ""
+msgstr "Qt"
 
 #: aboutdialog.ui:69
 msgctxt "AboutDialog"
 msgid "Tor"
-msgstr ""
+msgstr "Tor"
 
 #: aboutdialog.cpp:53
 msgctxt "AboutDialog"
 msgid "Unavailable"
-msgstr ""
+msgstr "Tidak tersedia"
 
 #: aboutdialog.cpp:57
 msgctxt "AboutDialog"
 msgid "Not Running"
-msgstr ""
+msgstr "Tidak berjalan"
 
 #: aboutdialog.ui:81
 msgctxt "AboutDialog"
 msgid "0.2.0"
-msgstr ""
+msgstr "0.2.0"
 
 #: aboutdialog.ui:106
 msgctxt "AboutDialog"
 msgid "0.2.0.31-alpha-dev (r123456)"
-msgstr ""
+msgstr "0.2.0.31-alpha-dev (r123456)"
 
 #: aboutdialog.ui:131
 msgctxt "AboutDialog"
 msgid "4.4.2"
-msgstr ""
+msgstr "4.4.2"
 
 #: aboutdialog.ui:107
 msgctxt "AboutDialog"
 msgid "License"
-msgstr ""
+msgstr "Lisensi"
 
 #: aboutdialog.ui:163
 msgctxt "AboutDialog"
 msgid "version"
-msgstr ""
+msgstr "versi"
 
 #: advancedpage.cpp:109
 msgctxt "AdvancedPage"
 msgid "'%1' is not a valid IP address."
-msgstr ""
+msgstr "'%1' bukanlah alamat IP yang valid."
 
 #: advancedpage.cpp:120
 msgctxt "AdvancedPage"
 msgid "You selected 'Password' authentication, but did not specify a password."
 msgstr ""
+"Anda memilih 'Password' authentication, tetapi Anda tidak memberikan "
+"password."
 
 #: advancedpage.cpp:223
 msgctxt "AdvancedPage"
 msgid "Select Tor Configuration File"
-msgstr ""
+msgstr "Pilih File Konfigurasi Tor"
 
 #: advancedpage.cpp:236
 msgctxt "AdvancedPage"
 msgid "File Not Found"
-msgstr ""
+msgstr "File tidak ditemukan"
 
 #: advancedpage.cpp:238
 msgctxt "AdvancedPage"
 msgid "%1 does not exist. Would you like to create it?"
-msgstr ""
+msgstr "%1 tidak ada. Apakah Anda akan membuatnya?"
 
 #: advancedpage.cpp:249
 msgctxt "AdvancedPage"
 msgid "Failed to Create File"
-msgstr ""
+msgstr "Gagal untuk membuat file"
 
 #: advancedpage.cpp:250
 msgctxt "AdvancedPage"
 msgid "Unable to create %1 [%2]"
-msgstr ""
+msgstr "Tidak bisa membuat %1 [%2]"
 
 #: advancedpage.cpp:265
 msgctxt "AdvancedPage"
 msgid "Select a Directory to Use for Tor Data"
-msgstr ""
+msgstr "Pilih Direktori yang akan digunakan untuk Tor Data"
 
 #: advancedpage.cpp:287
 msgctxt "AdvancedPage"
 msgid "Unable to remove Tor Service"
-msgstr ""
+msgstr "Tidak bisa untuk menghapus Tor Service"
 
 #: advancedpage.cpp:289
 msgctxt "AdvancedPage"
@@ -118,972 +119,985 @@ msgid "Vidalia was unable to remove the Tor service."
 ""
 "You may need to remove it manually."
 msgstr ""
+"Vidalia tidak bisa menghapus Tor Service. Anda harus menghapusnya secara "
+"manual."
 
 #: advancedpage.cpp:298
 msgctxt "AdvancedPage"
 msgid "Unable to install Tor Service"
-msgstr ""
+msgstr "Tidak bisa menginstall Tor Service"
 
 #: advancedpage.cpp:299
 msgctxt "AdvancedPage"
 msgid "Vidalia was unable to install the Tor service."
-msgstr ""
+msgstr "Vidalia tidak bisa menginstall Tor Service"
 
 #: advancedpage.ui:28
 msgctxt "AdvancedPage"
 msgid "Control Port"
-msgstr ""
+msgstr "Kendali Port"
 
 #: advancedpage.ui:48
 msgctxt "AdvancedPage"
 msgid "Authentication:"
-msgstr ""
+msgstr "Autentifikasi:"
 
 #: advancedpage.ui:58
 msgctxt "AdvancedPage"
 msgid "Address:"
-msgstr ""
+msgstr "Alamat:"
 
 #: advancedpage.ui:86
 msgctxt "AdvancedPage"
 msgid "None"
-msgstr ""
+msgstr "Tidak ada"
 
 #: advancedpage.ui:91
 msgctxt "AdvancedPage"
 msgid "Cookie"
-msgstr ""
+msgstr "Cookie"
 
 #: advancedpage.ui:96
 msgctxt "AdvancedPage"
 msgid "Password"
-msgstr ""
+msgstr "Password"
 
 #: advancedpage.ui:111
 msgctxt "AdvancedPage"
 msgid "Randomly Generate"
-msgstr ""
+msgstr "Hasilkan secara acak"
 
 #: advancedpage.ui:157
 msgctxt "AdvancedPage"
 msgid ":"
-msgstr ""
+msgstr ":"
 
 #: advancedpage.ui:219
 msgctxt "AdvancedPage"
 msgid "Tor Configuration File"
-msgstr ""
+msgstr "File Konfigurasi Tor"
 
 #: advancedpage.ui:240
 msgctxt "AdvancedPage"
 msgid "Start the Tor software with the specified configuration file (torrc)"
-msgstr ""
+msgstr "Jalankan software Tor dengan file konfigurasi spesifik (torrc)"
 
 #: advancedpage.ui:259
 msgctxt "AdvancedPage"
 msgid "Select path to your configuration file"
-msgstr ""
+msgstr "Pilih path ke file konfigurasimu"
 
 #: advancedpage.ui:318
 msgctxt "AdvancedPage"
 msgid "Browse"
-msgstr ""
+msgstr "Browse"
 
 #: advancedpage.ui:275
 msgctxt "AdvancedPage"
 msgid "Data Directory"
-msgstr ""
+msgstr "Direktori Data"
 
 #: advancedpage.ui:296
 msgctxt "AdvancedPage"
 msgid "Store data for the Tor software in the following directory"
-msgstr ""
+msgstr "Simpan data untuk software Tor  pada direktori berikut ini"
 
 #: advancedpage.ui:315
 msgctxt "AdvancedPage"
 msgid "Select the directory used to store data for the Tor software"
-msgstr ""
+msgstr "Pilih direktori yang digunakan untuk menyimpan data pada software Tor."
 
 #: appearancepage.ui:22
 msgctxt "AppearancePage"
 msgid "Language"
-msgstr ""
+msgstr "Bahasa"
 
 #: appearancepage.ui:37
 msgctxt "AppearancePage"
 msgid "Choose the language used in Vidalia"
-msgstr ""
+msgstr "Pilih bahasa yang digunakan dalam Vidalia"
 
 #: appearancepage.ui:75
 msgctxt "AppearancePage"
 msgid "Style"
-msgstr ""
+msgstr "Ragam"
 
 #: appearancepage.ui:103
 msgctxt "AppearancePage"
 msgid "Choose Vidalia's interface style"
-msgstr ""
+msgstr "Pilih ragam interface Vidalia"
 
 #: appearancepage.cpp:67
 msgctxt "AppearancePage"
 msgid "Vidalia was unable to load the selected language translation."
-msgstr ""
+msgstr "Vidalia tidak bisa memuat bahasa yang dipilih."
 
 #: bwgraph.cpp:166
 msgctxt "BandwidthGraph"
 msgid "Since:"
-msgstr ""
+msgstr "Sejak:"
 
 #: bwgraph.cpp:232
 msgctxt "BandwidthGraph"
 msgid "Hide Settings"
-msgstr ""
+msgstr "Sembunyikan Pengaturan"
 
 #: bwgraph.ui:40
 msgctxt "BandwidthGraph"
 msgid "Show Settings"
-msgstr ""
+msgstr "Tampilkan Pengaturan"
 
 #: bwgraph.ui:16
 msgctxt "BandwidthGraph"
 msgid "Tor Bandwidth Usage"
-msgstr ""
+msgstr "Penggunaan Bandwidth Tor "
 
 #: bwgraph.ui:63
 msgctxt "BandwidthGraph"
 msgid "Reset"
-msgstr ""
+msgstr "Reset"
 
 #: bwgraph.ui:151
 msgctxt "BandwidthGraph"
 msgid "Receive Rate"
-msgstr ""
+msgstr "Tingkat Penerimaan"
 
 #: bwgraph.ui:170
 msgctxt "BandwidthGraph"
 msgid "Send Rate"
-msgstr ""
+msgstr "Tingkat Pengiriman"
 
 #: bwgraph.ui:183
 msgctxt "BandwidthGraph"
 msgid "Always on Top"
-msgstr ""
+msgstr "Selalu diatas"
 
 #: bwgraph.ui:234
 msgctxt "BandwidthGraph"
 msgid "Style"
-msgstr ""
+msgstr "Ragam"
 
 #: bwgraph.ui:284
 msgctxt "BandwidthGraph"
 msgid "Changes the transparency of the Bandwidth Graph"
-msgstr ""
+msgstr "Ubah transparansi grafik bandwidth"
 
 #: bwgraph.ui:368
 msgctxt "BandwidthGraph"
 msgid "100"
-msgstr ""
+msgstr "100"
 
 #: bwgraph.ui:383
 msgctxt "BandwidthGraph"
 msgid "% Opaque"
-msgstr ""
+msgstr "% kekusaman"
 
 #: bwgraph.ui:443
 msgctxt "BandwidthGraph"
 msgid "Save"
-msgstr ""
+msgstr "Simpan"
 
 #: bwgraph.ui:450
 msgctxt "BandwidthGraph"
 msgid "Cancel"
-msgstr ""
+msgstr "Batal"
 
 #: circuit.cpp:112
 msgctxt "Circuit"
 msgid "New"
-msgstr ""
+msgstr "Baru"
 
 #: circuit.cpp:113
 msgctxt "Circuit"
 msgid "Open"
-msgstr ""
+msgstr "Buka"
 
 #: circuit.cpp:114
 msgctxt "Circuit"
 msgid "Building"
-msgstr ""
+msgstr "Building"
 
 #: circuit.cpp:115
 msgctxt "Circuit"
 msgid "Failed"
-msgstr ""
+msgstr "Gagal"
 
 #: circuit.cpp:116
 msgctxt "Circuit"
 msgid "Closed"
-msgstr ""
+msgstr "Tutup"
 
 #: circuit.cpp:117
 msgctxt "Circuit"
 msgid "Unknown"
-msgstr ""
+msgstr "Tidak diketahui"
 
 #: circuititem.cpp:39
 msgctxt "CircuitItem"
 msgid "<Path Empty>"
-msgstr ""
+msgstr "<Path Kosong>"
 
 #: circuitlistwidget.cpp:55
 msgctxt "CircuitListWidget"
 msgid "Connection"
-msgstr ""
+msgstr "Koneksi"
 
 #: circuitlistwidget.cpp:55
 msgctxt "CircuitListWidget"
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 #: circuitlistwidget.cpp:87
 msgctxt "CircuitListWidget"
 msgid "Zoom to Circuit"
-msgstr ""
+msgstr "Zoom ke sirkuit"
 
 #: circuitlistwidget.cpp:89
 msgctxt "CircuitListWidget"
 msgid "Close Circuit (Del)"
-msgstr ""
+msgstr "Tutup sirkuit (Del)"
 
 #: circuitlistwidget.cpp:110
 msgctxt "CircuitListWidget"
 msgid "Close Stream (Del)"
-msgstr ""
+msgstr "Tutup Aliran (Del)"
 
 #: configdialog.cpp:77
 msgctxt "ConfigDialog"
 msgid "General"
-msgstr ""
+msgstr "Umum"
 
 #: configdialog.cpp:81
 msgctxt "ConfigDialog"
 msgid "Network"
-msgstr ""
+msgstr "Jaringan"
 
 #: configdialog.cpp:85
 msgctxt "ConfigDialog"
 msgid "Sharing"
-msgstr ""
+msgstr "Berbagi"
 
 #: configdialog.cpp:89
 msgctxt "ConfigDialog"
 msgid "Services"
-msgstr ""
+msgstr "Layanan"
 
 #: configdialog.cpp:93
 msgctxt "ConfigDialog"
 msgid "Appearance"
-msgstr ""
+msgstr "Penampilan"
 
 #: configdialog.cpp:97
 msgctxt "ConfigDialog"
 msgid "Advanced"
-msgstr ""
+msgstr "Tingkat tinggi"
 
 #: configdialog.cpp:111
 msgctxt "ConfigDialog"
 msgid "Help"
-msgstr ""
+msgstr "Bantuan"
 
 #: configdialog.cpp:196
 msgctxt "ConfigDialog"
 msgid "Error Saving Settings"
-msgstr ""
+msgstr "Error Menyimpan Pengaturan"
 
 #: configdialog.cpp:198
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to save your %1 settings."
-msgstr ""
+msgstr "Vidalia tidak bisa menyimpan pengaturan %1. "
 
 #: configdialog.cpp:225
 msgctxt "ConfigDialog"
 msgid "Error Applying Settings"
-msgstr ""
+msgstr "Error Menerapkan Pengaturan"
 
 #: configdialog.cpp:227
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to apply your %1 settings to Tor."
-msgstr ""
+msgstr "Vidalia tidak bisa menerapkan pengaturan %1 ke Tor."
 
 #: configdialog.ui:16
 msgctxt "ConfigDialog"
 msgid "Settings"
-msgstr ""
+msgstr "Pengaturan"
 
 #: controlconnection.cpp:134
 msgctxt "ControlConnection"
 msgid "Vidalia was unable to connect to Tor. (%1)"
-msgstr ""
+msgstr "Vidalia tidak bisa terhubung ke Tor. (%1)"
 
 #: controlconnection.cpp:331
 msgctxt "ControlConnection"
 msgid "Control socket is not connected."
-msgstr ""
+msgstr "Kendali socket tidak terhubung."
 
 #: controlpasswordinputdialog.ui:28
 msgctxt "ControlPasswordInputDialog"
 msgid "Password Required"
-msgstr ""
+msgstr "Diperlukan Password"
 
 #: controlpasswordinputdialog.ui:80
 msgctxt "ControlPasswordInputDialog"
 msgid "Vidalia has connected to a running Tor process that requires a password. Please enter your control password: "
 msgstr ""
+"Vidalia yang telah terhubung ke Tor membutuhkan password. Mohon masukkan "
+"kendali password Anda:"
 
 #: controlpasswordinputdialog.ui:99
 msgctxt "ControlPasswordInputDialog"
 msgid "Remember my password"
-msgstr ""
+msgstr "Ingat password saya"
 
 #: controlsocket.cpp:70
 msgctxt "ControlSocket"
 msgid "Control socket is not connected."
-msgstr ""
+msgstr "Kendali socket tidak terhubung."
 
 #: controlsocket.cpp:80
 msgctxt "ControlSocket"
 msgid "Error sending control command. [%1]"
-msgstr ""
+msgstr "Error mengirim perintah kendali. [%1]"
 
 #: controlsocket.cpp:117
 msgctxt "ControlSocket"
 msgid "Socket disconnected while attempting to read a line of data."
-msgstr ""
+msgstr "Koneksi socket terputus ketika mencoba untuk membaca aliran data."
 
 #: controlsocket.cpp:156
 msgctxt "ControlSocket"
 msgid "Invalid control reply. [%1]"
-msgstr ""
+msgstr "Balasan Kendali tidak valid. [%1]"
 
 #: generalpage.cpp:62
 msgctxt "GeneralPage"
 msgid "Executables (*.exe)"
-msgstr ""
+msgstr "Executables (*.exe)"
 
 #: generalpage.cpp:75
 msgctxt "GeneralPage"
 msgid "Select Path to Tor"
-msgstr ""
+msgstr "Pilih path ke Tor"
 
 #: generalpage.cpp:85
 msgctxt "GeneralPage"
 msgid "Select Proxy Executable"
-msgstr ""
+msgstr "Pilih Proxy Executable"
 
 #: generalpage.cpp:98
 msgctxt "GeneralPage"
 msgid "You must specify the name of your Tor executable."
-msgstr ""
+msgstr "Anda harus merinci nama Tor executable."
 
 #: generalpage.cpp:106
 msgctxt "GeneralPage"
 msgid "The proxy arguments specified are not properly formatted."
-msgstr ""
+msgstr "Proxy argument tidak terformat secara benar."
 
 #: generalpage.ui:28
 msgctxt "GeneralPage"
 msgid "Start Vidalia when my system starts"
-msgstr ""
+msgstr "Jalankan Vidalia ketika sistem saya berjalan"
 
 #: generalpage.ui:121
 msgctxt "GeneralPage"
 msgid "Browse"
-msgstr ""
+msgstr "Browse"
 
 #: generalpage.ui:57
 msgctxt "GeneralPage"
 msgid "Start the Tor software when Vidalia starts"
-msgstr ""
+msgstr "Jalankan software Tor ketika Vidalia berjalan"
 
 #: generalpage.ui:51
 msgctxt "GeneralPage"
 msgid "Tor"
-msgstr ""
+msgstr "Tor"
 
 #: generalpage.ui:93
 msgctxt "GeneralPage"
 msgid "Proxy Application (optional)"
-msgstr ""
+msgstr "Proxy Application (pilihan)"
 
 #: generalpage.ui:99
 msgctxt "GeneralPage"
 msgid "Start a proxy application when Tor starts"
-msgstr ""
+msgstr "Jalankan Proxy Application ketika Tor berjalan"
 
 #: generalpage.ui:135
 msgctxt "GeneralPage"
 msgid "Proxy Application Arguments:"
-msgstr ""
+msgstr "Proxy Application Arguments:"
 
 #: graphframe.cpp:238
 msgctxt "GraphFrame"
 msgid "Recv: "
-msgstr ""
+msgstr "Recv:"
 
 #: graphframe.cpp:298
 msgctxt "GraphFrame"
 msgid "%1 KB/s"
-msgstr ""
+msgstr "%1 KB/s"
 
 #: graphframe.cpp:247
 msgctxt "GraphFrame"
 msgid "Sent: "
-msgstr ""
+msgstr "Kirim:"
 
 #: graphframe.cpp:259
 msgctxt "GraphFrame"
 msgid "%1 KB"
-msgstr ""
+msgstr "%1 KB"
 
 #: graphframe.cpp:262
 msgctxt "GraphFrame"
 msgid "%1 MB"
-msgstr ""
+msgstr "%1 MB"
 
 #: graphframe.cpp:265
 msgctxt "GraphFrame"
 msgid "%1 GB"
-msgstr ""
+msgstr "%1 GB"
 
 #: helpbrowser.cpp:135
 msgctxt "HelpBrowser"
 msgid "Error Loading Help Contents: "
-msgstr ""
+msgstr "Error Memuat Isi Bantuan:"
 
 #: helpbrowser.cpp:147
 msgctxt "HelpBrowser"
 msgid "Supplied XML file is not a valid Contents document."
-msgstr ""
+msgstr "File XML yang disediakan tidak berisi dokumen yang valid."
 
 #: helpbrowser.cpp:396
 msgctxt "HelpBrowser"
 msgid "Search reached end of document"
-msgstr ""
+msgstr "Pencarian mencapai akhir dari dokumen"
 
 #: helpbrowser.cpp:398
 msgctxt "HelpBrowser"
 msgid "Search reached start of document"
-msgstr ""
+msgstr "Pencarian mencapai awal dari dokumen"
 
 #: helpbrowser.cpp:400
 msgctxt "HelpBrowser"
 msgid "Text not found in document"
-msgstr ""
+msgstr "Teks tidak ditemukan di dokumen"
 
 #: helpbrowser.cpp:445
 msgctxt "HelpBrowser"
 msgid "Found %1 results"
-msgstr ""
+msgstr "Menemukan %1 hasil"
 
 #: helpbrowser.ui:33
 msgctxt "HelpBrowser"
 msgid "Vidalia Help"
-msgstr ""
+msgstr "Bantuan Vidalia"
 
 #: helpbrowser.ui:484
 msgctxt "HelpBrowser"
 msgid "Back"
-msgstr ""
+msgstr "Kembali"
 
 #: helpbrowser.ui:487
 msgctxt "HelpBrowser"
 msgid "Move to previous page (Backspace)"
-msgstr ""
+msgstr "Pindah ke halaman sebelumnya (Backspace)"
 
 #: helpbrowser.ui:490
 msgctxt "HelpBrowser"
 msgid "Backspace"
-msgstr ""
+msgstr "Backspace"
 
 #: helpbrowser.ui:498
 msgctxt "HelpBrowser"
 msgid "Forward"
-msgstr ""
+msgstr "Maju"
 
 #: helpbrowser.ui:501
 msgctxt "HelpBrowser"
 msgid "Move to next page (Shift+Backspace)"
-msgstr ""
+msgstr "Pindah ke halaman selanjutnya (Shift+Backspace)"
 
 #: helpbrowser.ui:504
 msgctxt "HelpBrowser"
 msgid "Shift+Backspace"
-msgstr ""
+msgstr "Shift+Backspace"
 
 #: helpbrowser.ui:512
 msgctxt "HelpBrowser"
 msgid "Home"
-msgstr ""
+msgstr "Home"
 
 #: helpbrowser.ui:515
 msgctxt "HelpBrowser"
 msgid "Move to the Home page (Ctrl+H)"
-msgstr ""
+msgstr "Pindah ke Home page (Ctrl+H)"
 
 #: helpbrowser.ui:518
 msgctxt "HelpBrowser"
 msgid "Ctrl+H"
-msgstr ""
+msgstr "Ctrl+H"
 
 #: helpbrowser.ui:535
 msgctxt "HelpBrowser"
 msgid "Find"
-msgstr ""
+msgstr "Cari"
 
 #: helpbrowser.ui:538
 msgctxt "HelpBrowser"
 msgid "Search for a word or phrase on current page (Ctrl+F)"
-msgstr ""
+msgstr "Cari kata atau prase pada halaman ini (Ctrl+F)"
 
 #: helpbrowser.ui:541
 msgctxt "HelpBrowser"
 msgid "Ctrl+F"
-msgstr ""
+msgstr "Ctrl+F"
 
 #: helpbrowser.ui:549
 msgctxt "HelpBrowser"
 msgid "Close"
-msgstr ""
+msgstr "Tutup"
 
 #: helpbrowser.ui:552
 msgctxt "HelpBrowser"
 msgid "Close Vidalia Help"
-msgstr ""
+msgstr "Tutup Bantuan Vidalia"
 
 #: helpbrowser.ui:555
 msgctxt "HelpBrowser"
 msgid "Esc"
-msgstr ""
+msgstr "Esc"
 
 #: helpbrowser.ui:152
 msgctxt "HelpBrowser"
 msgid "Find:"
-msgstr ""
+msgstr "Cari:"
 
 #: helpbrowser.ui:174
 msgctxt "HelpBrowser"
 msgid "Find Previous"
-msgstr ""
+msgstr "Cari Sebelumnya"
 
 #: helpbrowser.ui:187
 msgctxt "HelpBrowser"
 msgid "Find Next"
-msgstr ""
+msgstr "Cari Selanjutnya"
 
 #: helpbrowser.ui:221
 msgctxt "HelpBrowser"
 msgid "Case sensitive"
-msgstr ""
+msgstr "Besar kecil huruf berpengaruh"
 
 #: helpbrowser.ui:231
 msgctxt "HelpBrowser"
 msgid "Whole words only"
-msgstr ""
+msgstr "Kata-kata utuh saja"
 
 #: helpbrowser.ui:305
 msgctxt "HelpBrowser"
 msgid "Help Topics"
-msgstr ""
+msgstr "Topik Bantuan"
 
 #: helpbrowser.ui:260
 msgctxt "HelpBrowser"
 msgid "Contents"
-msgstr ""
+msgstr "Isi"
 
 #: helpbrowser.ui:350
 msgctxt "HelpBrowser"
 msgid "Search"
-msgstr ""
+msgstr "Cari"
 
 #: helpbrowser.ui:362
 msgctxt "HelpBrowser"
 msgid "Searching for:"
-msgstr ""
+msgstr "Mencari:"
 
 #: helpbrowser.ui:405
 msgctxt "HelpBrowser"
 msgid "Found Documents"
-msgstr ""
+msgstr "Dokumen ditemukan"
 
 #: helptextbrowser.cpp:54
 msgctxt "HelpTextBrowser"
 msgid "Error opening help file: "
-msgstr ""
+msgstr "Error membuka file bantuan:"
 
 #: helptextbrowser.cpp:72
 msgctxt "HelpTextBrowser"
 msgid "Opening External Link"
-msgstr ""
+msgstr "Membuka Tautan Ekternal"
 
 #: helptextbrowser.cpp:76
 msgctxt "HelpTextBrowser"
 msgid "Vidalia can open the link you selected in your default Web browser. If your browser is not currently configured to use Tor then the request will not be anonymous."
 msgstr ""
+"Vidalia dapat membuka tautan yang Anda pilih melalui default browser. Jika "
+"browser Anda tidak dikonfigurasi untuk penggunaan Tor maka aktivitas "
+"browsing Anda tidak anonymous lagi."
 
 #: helptextbrowser.cpp:78
 msgctxt "HelpTextBrowser"
 msgid "Do you want Vidalia to open the link in your Web browser?"
-msgstr ""
+msgstr "Anda ingin Vidalia membuka tautan di browser Anda?"
 
 #: helptextbrowser.cpp:88
 msgctxt "HelpTextBrowser"
 msgid "Unable to Open Link"
-msgstr ""
+msgstr "Tidak bisa membuka tautan"
 
 #: helptextbrowser.cpp:90
 msgctxt "HelpTextBrowser"
 msgid "Vidalia was unable to open the selected link in your Web browser. You can still copy the URL and paste it into your browser."
 msgstr ""
+"Vidalia tidak bisa membuka tautan yang dipilih pada browser Anda. Anda dapat "
+"menyalin URL dan menempelkannya pada browser Anda."
 
 #: licensedialog.ui:13
 msgctxt "LicenseDialog"
 msgid "License Information"
-msgstr ""
+msgstr "Informasi Lisensi"
 
 #: licensedialog.ui:43
 msgctxt "LicenseDialog"
 msgid "License"
-msgstr ""
+msgstr "Lisensi"
 
 #: licensedialog.ui:76
 msgctxt "LicenseDialog"
 msgid "Credits"
-msgstr ""
+msgstr "Kredit"
 
 #: logevent.cpp:57
 msgctxt "LogEvent"
 msgid "Debug"
-msgstr ""
+msgstr "Debug"
 
 #: logevent.cpp:58
 msgctxt "LogEvent"
 msgid "Info"
-msgstr ""
+msgstr "Informasi"
 
 #: logevent.cpp:59
 msgctxt "LogEvent"
 msgid "Notice"
-msgstr ""
+msgstr "Perhatian"
 
 #: logevent.cpp:60
 msgctxt "LogEvent"
 msgid "Warning"
-msgstr ""
+msgstr "Peringatan"
 
 #: logevent.cpp:61
 msgctxt "LogEvent"
 msgid "Error"
-msgstr ""
+msgstr "Error"
 
 #: logevent.cpp:62
 msgctxt "LogEvent"
 msgid "Unknown"
-msgstr ""
+msgstr "Tidak diketahui"
 
 #: mainwindow.ui:233
 msgctxt "MainWindow"
 msgid "Start Tor"
-msgstr ""
+msgstr "Jalankan Tor"
 
 #: mainwindow.ui:443
 msgctxt "MainWindow"
 msgid "Exit"
-msgstr ""
+msgstr "Keluar"
 
 #: mainwindow.ui:304
 msgctxt "MainWindow"
 msgid "Bandwidth Graph"
-msgstr ""
+msgstr "Grafik Bandwidth"
 
 #: mainwindow.ui:317
 msgctxt "MainWindow"
 msgid "Message Log"
-msgstr ""
+msgstr "Pesan Log"
 
 #: mainwindow.cpp:348
 msgctxt "MainWindow"
 msgid "Network Map"
-msgstr ""
+msgstr "Peta Jaringan"
 
 #: mainwindow.cpp:354
 msgctxt "MainWindow"
 msgid "Control Panel"
-msgstr ""
+msgstr "Panel Kendali"
 
 #: mainwindow.ui:380
 msgctxt "MainWindow"
 msgid "Settings"
-msgstr ""
+msgstr "Pengaturan"
 
 #: mainwindow.ui:430
 msgctxt "MainWindow"
 msgid "About"
-msgstr ""
+msgstr "Mengenai"
 
 #: mainwindow.ui:367
 msgctxt "MainWindow"
 msgid "Help"
-msgstr ""
+msgstr "Bantuan"
 
 #: mainwindow.cpp:1391
 msgctxt "MainWindow"
 msgid "New Identity"
-msgstr ""
+msgstr "Identitas Baru"
 
 #: mainwindow.cpp:437
 msgctxt "MainWindow"
 msgid "Ctrl+T"
-msgstr ""
+msgstr "Ctrl+T"
 
 #: mainwindow.cpp:438
 msgctxt "MainWindow"
 msgid "Ctrl+B"
-msgstr ""
+msgstr "Ctrl+B"
 
 #: mainwindow.cpp:439
 msgctxt "MainWindow"
 msgid "Ctrl+L"
-msgstr ""
+msgstr "Ctrl+L"
 
 #: mainwindow.cpp:440
 msgctxt "MainWindow"
 msgid "Ctrl+N"
-msgstr ""
+msgstr "Ctrl+N"
 
 #: mainwindow.cpp:441
 msgctxt "MainWindow"
 msgid "Ctrl+?"
-msgstr ""
+msgstr "Ctrl+?"
 
 #: mainwindow.cpp:442
 msgctxt "MainWindow"
 msgid "Ctrl+I"
-msgstr ""
+msgstr "Ctrl+I"
 
 #: mainwindow.cpp:443
 msgctxt "MainWindow"
 msgid "Ctrl+P"
-msgstr ""
+msgstr "Ctrl+P"
 
 #: mainwindow.cpp:463
 msgctxt "MainWindow"
 msgid "Tor"
-msgstr ""
+msgstr "Tor"
 
 #: mainwindow.cpp:468
 msgctxt "MainWindow"
 msgid "View"
-msgstr ""
+msgstr "Tampilan"
 
 #: mainwindow.cpp:476
 msgctxt "MainWindow"
 msgid "Vidalia Help"
-msgstr ""
+msgstr "Bantuan Vidalia"
 
 #: mainwindow.cpp:527
 msgctxt "MainWindow"
 msgid "Error starting web browser"
-msgstr ""
+msgstr "Error menjalankan browser"
 
 #: mainwindow.cpp:528
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured web browser"
-msgstr ""
+msgstr "Vidalia tidak bisa menjalankan browser yang telah dikonfigurasi"
 
 #: mainwindow.cpp:540
 msgctxt "MainWindow"
 msgid "Error starting IM client"
-msgstr ""
+msgstr "Error menjalankan IM klien"
 
 #: mainwindow.cpp:541
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured IM client"
-msgstr ""
+msgstr "Vidalia tidak bisa menjalankan IM klien yang telah dikonfigurasi"
 
 #: mainwindow.cpp:562
 msgctxt "MainWindow"
 msgid "Error starting proxy server"
-msgstr ""
+msgstr "Error menjalankan proxy server"
 
 #: mainwindow.cpp:563
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start the configured proxy server"
-msgstr ""
+msgstr "Vidalia tidak bisa menjalankan proxy server yang telah dikonfigurasi"
 
 #: mainwindow.cpp:579
 msgctxt "MainWindow"
 msgid "Connecting to a relay directory"
-msgstr ""
+msgstr "Menghubungkan diri ke direktori relay"
 
 #: mainwindow.cpp:583
 msgctxt "MainWindow"
 msgid "Establishing an encrypted directory connection"
-msgstr ""
+msgstr "Membuat koneksi direktori terenkripsi "
 
 #: mainwindow.cpp:586
 msgctxt "MainWindow"
 msgid "Retrieving network status"
-msgstr ""
+msgstr "Mengambil status jaringan"
 
 #: mainwindow.cpp:589
 msgctxt "MainWindow"
 msgid "Loading network status"
-msgstr ""
+msgstr "Memuat status jaringan"
 
 #: mainwindow.cpp:592
 msgctxt "MainWindow"
 msgid "Loading authority certificates"
-msgstr ""
+msgstr "Memuat sertifikat otoritas"
 
 #: mainwindow.cpp:595
 msgctxt "MainWindow"
 msgid "Requesting relay information"
-msgstr ""
+msgstr "Meminta informasi relay"
 
 #: mainwindow.cpp:598
 msgctxt "MainWindow"
 msgid "Loading relay information"
-msgstr ""
+msgstr "Memuat informasi relay"
 
 #: mainwindow.cpp:1132
 msgctxt "MainWindow"
 msgid "Connecting to the Tor network"
-msgstr ""
+msgstr "Menghubungkan diri ke jaringan Tor"
 
 #: mainwindow.cpp:605
 msgctxt "MainWindow"
 msgid "Establishing a Tor circuit"
-msgstr ""
+msgstr "Membuat sirkuit Tor"
 
 #: mainwindow.cpp:1297
 msgctxt "MainWindow"
 msgid "Connected to the Tor network!"
-msgstr ""
+msgstr "Telah terhubung ke jaringan Tor"
 
 #: mainwindow.cpp:612
 msgctxt "MainWindow"
 msgid "Unrecognized startup status"
-msgstr ""
+msgstr "Status startup tidak dikenal"
 
 #: mainwindow.cpp:619
 msgctxt "MainWindow"
 msgid "miscellaneous"
-msgstr ""
+msgstr "aneka"
 
 #: mainwindow.cpp:622
 msgctxt "MainWindow"
 msgid "identity mismatch"
-msgstr ""
+msgstr "identitas tidak cocok"
 
 #: mainwindow.cpp:625
 msgctxt "MainWindow"
 msgid "done"
-msgstr ""
+msgstr "selesai"
 
 #: mainwindow.cpp:628
 msgctxt "MainWindow"
 msgid "connection refused"
-msgstr ""
+msgstr "koneksi ditolak"
 
 #: mainwindow.cpp:631
 msgctxt "MainWindow"
 msgid "connection timeout"
-msgstr ""
+msgstr "waktu koneksi habis"
 
 #: mainwindow.cpp:634
 msgctxt "MainWindow"
 msgid "read/write error"
-msgstr ""
+msgstr "error baca/tulis"
 
 #: mainwindow.cpp:637
 msgctxt "MainWindow"
 msgid "no route to host"
-msgstr ""
+msgstr "tidak ada rute ke host"
 
 #: mainwindow.cpp:640
 msgctxt "MainWindow"
 msgid "insufficient resources"
-msgstr ""
+msgstr "sumber daya tidak mencukupi"
 
 #: mainwindow.cpp:643
 msgctxt "MainWindow"
 msgid "unknown"
-msgstr ""
+msgstr "tidak diketahui"
 
 #: mainwindow.cpp:645
 msgctxt "MainWindow"
 msgid " failed (%1)"
-msgstr ""
+msgstr "gagal (%1)"
 
 #: mainwindow.ui:168
 msgctxt "MainWindow"
 msgid "Tor is not running"
-msgstr ""
+msgstr "Tor tidak berjalan"
 
 #: mainwindow.cpp:686
 msgctxt "MainWindow"
 msgid "Your relay is shutting down."
 "Click 'Stop' again to stop your relay now."
 msgstr ""
+"Relay Anda mati. Klik kembali tombol 'Berhenti' untuk menghentikan relay "
+"Anda sekarang. "
 
 #: mainwindow.cpp:688
 msgctxt "MainWindow"
 msgid "Tor is shutting down"
-msgstr ""
+msgstr "Tor mati"
 
 #: mainwindow.cpp:693
 msgctxt "MainWindow"
 msgid "Stop Tor Now"
-msgstr ""
+msgstr "Hentikan Tor Sekarang"
 
 #: mainwindow.cpp:695
 msgctxt "MainWindow"
 msgid "Stop Tor"
-msgstr ""
+msgstr "Hentikan Tor"
 
 #: mainwindow.cpp:711
 msgctxt "MainWindow"
 msgid "Starting the Tor software"
-msgstr ""
+msgstr "Menjalankan software Tor"
 
 #: mainwindow.ui:75
 msgctxt "MainWindow"
 msgid "Starting Tor"
-msgstr ""
+msgstr "Menjalankan Tor"
 
 #: mainwindow.cpp:859
 msgctxt "MainWindow"
 msgid "Error Starting Tor"
-msgstr ""
+msgstr "Error menjalankan Tor"
 
 #: mainwindow.cpp:862
 msgctxt "MainWindow"
 msgid "Vidalia was unable to start Tor. Check your settings to ensure the correct name and location of your Tor executable is specified."
 msgstr ""
+"Vidalia tidak bisa menjalankan Tor. Periksa pengaturan Anda untuk memastikan "
+"nama dan lokasi yang benar dari executable Tor Anda."
 
 #: mainwindow.cpp:896
 msgctxt "MainWindow"
 msgid "Connecting to Tor"
-msgstr ""
+msgstr "Menghubungkan diri ke Tor"
 
 #: mainwindow.cpp:906
 msgctxt "MainWindow"
 msgid "Connection Error"
-msgstr ""
+msgstr "Error Koneksi"
 
 #: mainwindow.cpp:938
 msgctxt "MainWindow"
 msgid "Relaying is Enabled"
-msgstr ""
+msgstr "Relay diaktifkan"
 
 #: mainwindow.cpp:943
 msgctxt "MainWindow"
