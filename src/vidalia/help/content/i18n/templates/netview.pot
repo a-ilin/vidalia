@@ -1,0 +1,248 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR The Tor Project, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2010-06-26 17:00+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit"
+
+#. type: Content of: <html><body><h1>
+#: en/netview.html:16
+msgid "Network Viewer"
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/netview.html:20
+msgid ""
+"The network viewer lets you see relays in the Tor network and where your "
+"traffic is going."
+msgstr ""
+
+#. type: Content of: <html><body>
+#: en/netview.html:25
+msgid "<a name=\"overview\"/>"
+msgstr ""
+
+#. type: Content of: <html><body><h3>
+#: en/netview.html:26
+msgid "Overview"
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/netview.html:28
+msgid ""
+"When you want to communicate anonymously through Tor (say, connecting to a "
+"website), Tor creates a tunnel, or <i>circuit</i>, of encrypted connections "
+"through a series of relays on the network. Your application's traffic is "
+"then sent as a <i>stream</i> through that circuit. For efficiency, multiple "
+"streams may share the same circuit."
+msgstr ""
+
+#. type: Content of: <html><body>
+#: en/netview.html:35
+msgid "<a name=\"netmap\"/>"
+msgstr ""
+
+#. type: Content of: <html><body><h3>
+#: en/netview.html:36
+msgid "Network Map"
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/netview.html:38
+msgid ""
+"The network map consists of a map of the world, with red pinpoints "
+"indicating the geographic location of relays in the Tor network. Green lines "
+"are drawn between relays to indicate the path of circuits that your Tor "
+"client has created through the Tor network."
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/netview.html:44
+msgid ""
+"You can zoom in on locations in the map by clicking the <b>Zoom In</b> and "
+"<b>Zoom Out</b> buttons in the toolbar. You can also scroll around on the "
+"map by clicking on the map and then dragging it in whatever direction you "
+"would like to move the map."
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/netview.html:50
+msgid ""
+"The geographic location of a Tor relay is determined by looking up the IP "
+"address of the relay in a GeoIP database, created by MaxMind and located at "
+"geoip.vidalia-project.net."
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/netview.html:55
+msgid ""
+"In the middle of the dialog, below the network map, you will see a list of "
+"your current circuits, as well as any application traffic currently on those "
+"circuits. When the network map first loads, you will probably see a "
+"connection to geoip.vidalia-project.net, which occurs when Vidalia is "
+"looking up geographic information for the list of Tor relays. It is "
+"important to note that this request is done through Tor, so your location is "
+"not revealed to the GeoIP relay. The results of the lookups will be cached "
+"locally in order to reduce load on Vidalia's GeoIP relays."
+msgstr ""
+
+#. type: Content of: <html><body>
+#: en/netview.html:66
+msgid "<a name=\"relaylist\"/>"
+msgstr ""
+
+#. type: Content of: <html><body><h3>
+#: en/netview.html:67
+msgid "Relay Status"
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/netview.html:69
+msgid ""
+"On the left side of the network view, you will see a list of relays in the "
+"Tor network. Next to each relay is an icon indicating that relay's status.  "
+"The following table summarizes the possible relay status icons:"
+msgstr ""
+
+#. type: Content of: <html><body><p><table><tr><td>
+#: en/netview.html:78
+msgid "The relay is offline or simply not responding."
+msgstr ""
+
+#. type: Content of: <html><body><p><table><tr><td>
+#: en/netview.html:84
+msgid ""
+"The relay is <i>hibernating</i>, meaning it is online, but has used up as "
+"much bandwidth as the operator is willing to allow for a given time period."
+msgstr ""
+
+#. type: Content of: <html><body><p><table><tr><td>
+#: en/netview.html:92
+msgid "The relay is online, but has shown only minimal throughput."
+msgstr ""
+
+#. type: Content of: <html><body><p><table><tr><td>
+#: en/netview.html:98
+msgid "The relay is online and has shown a throughput &gt;= 20 KB/s."
+msgstr ""
+
+#. type: Content of: <html><body><p><table><tr><td>
+#: en/netview.html:104
+msgid "The relay is online and has shown a throughput &gt;= 60 KB/s."
+msgstr ""
+
+#. type: Content of: <html><body><p><table><tr><td>
+#: en/netview.html:110
+msgid "The relay is online and has shown a throughput &gt;= 400 KB/s."
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/netview.html:116
+msgid ""
+"All bandwidth values are estimates based on the minimum of either the "
+"maximum bandwidth sustained input or output over any ten second period in "
+"the past day."
+msgstr ""
+
+#. type: Content of: <html><body>
+#: en/netview.html:122
+msgid "<a name=\"details\"/>"
+msgstr ""
+
+#. type: Content of: <html><body><h3>
+#: en/netview.html:123
+msgid "Relay Details"
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/netview.html:125
+msgid ""
+"The relay details panel at the right side of the screen gives you details "
+"about the relay or relays currently selected in the <a "
+"href=\"#relaylist\">relay list</a>. If you have selected a circuit or stream "
+"in the list of your current circuits and streams, this panel will show you "
+"details about each relay through which your traffic is currently being sent."
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/netview.html:132
+msgid ""
+"The fields that you may see in the panel are as follows (<i>Note</i>: not "
+"all of these fields will always be present):"
+msgstr ""
+
+#. type: Content of: <html><body><p><table><tr><td>
+#: en/netview.html:138
+msgid "<b>Location</b>"
+msgstr ""
+
+#. type: Content of: <html><body><p><table><tr><td>
+#: en/netview.html:139
+msgid "The geographic location of this Tor relay."
+msgstr ""
+
+#. type: Content of: <html><body><p><table><tr><td>
+#: en/netview.html:142
+msgid "<b>IP Address</b>"
+msgstr ""
+
+#. type: Content of: <html><body><p><table><tr><td>
+#: en/netview.html:143
+msgid "IP address at which this Tor relay can be reached."
+msgstr ""
+
+#. type: Content of: <html><body><p><table><tr><td>
+#: en/netview.html:146
+msgid "<b>Platform</b>"
+msgstr ""
+
+#. type: Content of: <html><body><p><table><tr><td>
+#: en/netview.html:148
+msgid ""
+"Operating system information and Tor version on which this relay is "
+"currently running."
+msgstr ""
+
+#. type: Content of: <html><body><p><table><tr><td>
+#: en/netview.html:153
+msgid "<b>Bandwidth</b>"
+msgstr ""
+
+#. type: Content of: <html><body><p><table><tr><td>
+#: en/netview.html:155
+msgid ""
+"Estimated maximum amount of bandwidth that the directory relays have seen "
+"this relay handle recently."
+msgstr ""
+
+#. type: Content of: <html><body><p><table><tr><td>
+#: en/netview.html:160
+msgid "<b>Uptime</b>"
+msgstr ""
+
+#. type: Content of: <html><body><p><table><tr><td>
+#: en/netview.html:162
+msgid ""
+"Length of time this relay has been available, which can be used to help "
+"estimate this relay's stability."
+msgstr ""
+
+#. type: Content of: <html><body><p><table><tr><td>
+#: en/netview.html:167
+msgid "<b>Last Updated</b>"
+msgstr ""
+
+#. type: Content of: <html><body><p><table><tr><td>
+#: en/netview.html:168
+msgid "Date this relay's information was last updated."
+msgstr ""

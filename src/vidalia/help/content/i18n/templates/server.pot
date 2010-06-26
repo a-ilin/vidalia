@@ -1,0 +1,403 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR The Tor Project, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2010-06-26 17:00+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit"
+
+#. type: Content of: <html><body><h1>
+#: en/server.html:16
+msgid "Setting Up a Tor Relay"
+msgstr ""
+
+#. type: Content of: <html><body>
+#: en/server.html:19
+msgid ""
+"The Tor network is made up of volunteers all over the world who donate some "
+"of their spare bandwidth by running a Tor relay. Vidalia helps you do your "
+"part by making it easy to set up a relay of your own.  <a name=\"basic\"/>"
+msgstr ""
+
+#. type: Content of: <html><body><h3>
+#: en/server.html:24
+msgid "Basic Settings"
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/server.html:26
+msgid ""
+"If you decide you want to help the Tor network grow by running a relay, you "
+"can follow these steps to get started:"
+msgstr ""
+
+#. type: Content of: <html><body><ol><li>
+#: en/server.html:31
+msgid ""
+"Open the <i>Configuration Dialog</i> by selecting <i>Settings</i> from the "
+"tray menu or <i>Preferences</i> from your system menubar on Macintosh "
+"systems."
+msgstr ""
+
+#. type: Content of: <html><body><ol><li>
+#: en/server.html:35
+msgid "Select the <i>Relay</i> configuration page."
+msgstr ""
+
+#. type: Content of: <html><body><ol><li>
+#: en/server.html:37
+msgid ""
+"Decide whether you want to run a normal Tor relay or a <i>bridge</i> relay "
+"(Tor 0.2.0.8-alpha or newer). Bridge relays help censored Tor users who are "
+"blocked from accessing the Tor network directly.  Check the box labeled "
+"<i>Relay traffic for the Tor network</i> if you want to run a normal Tor "
+"relay or <i>Help censored users reach the Tor network</i> if you want to run "
+"a bridge relay."
+msgstr ""
+
+#. type: Content of: <html><body><ol><li>
+#: en/server.html:44
+msgid "Enter the following information:"
+msgstr ""
+
+#. type: Content of: <html><body><ol><ul><li>
+#: en/server.html:46
+msgid ""
+"<b>Nickname</b>: The name which your relay will be known as on the Tor "
+"network. An example of a relay nickname is \"MyVidaliaRelay\"."
+msgstr ""
+
+#. type: Content of: <html><body><ol><ul><li>
+#: en/server.html:50
+msgid ""
+"<b>Contact Info</b>: Your e-mail address. This address will only be used to "
+"contact you in case there is an important Tor security update or something "
+"goes wrong with your relay. You might also include your PGP or GPG key ID "
+"and fingerprint."
+msgstr ""
+
+#. type: Content of: <html><body><ol><ul><li>
+#: en/server.html:56
+msgid ""
+"<b>Relay Port</b>: The port on which your relay will listen for traffic from "
+"clients or other Tor relays."
+msgstr ""
+
+#. type: Content of: <html><body><ol><li>
+#: en/server.html:62
+msgid ""
+"If you would like to mirror Tor's directory of relays for others on the "
+"network you can check the box labeled <i>Mirror the Relay Directory</i>.  If "
+"you do not have much bandwidth, uncheck this box. If you do decide to mirror "
+"the relay directory, make sure the <i>Directory Port</i> is different than "
+"the <i>Relay port</i> you entered above. Bridge relays <i>must</i> mirror "
+"the relay directory."
+msgstr ""
+
+#. type: Content of: <html><body>
+#: en/server.html:71
+msgid "<a name=\"bandwidth\"/>"
+msgstr ""
+
+#. type: Content of: <html><body><h3>
+#: en/server.html:72
+msgid "Bandwidth Limits"
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/server.html:74
+msgid ""
+"Running a Tor relay can consume a large amount of bandwidth; however, Tor "
+"allows you to limit the amount of bandwidth that you are willing to "
+"contribute to the Tor network. You can run a relay, while still keeping your "
+"network connection usable for your own use."
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/server.html:80
+msgid ""
+"You should select the option in the dropdown box that best matches your "
+"connection speed. If you select <i>Custom</i>, you will be able to specify "
+"your own limits."
+msgstr ""
+
+#. type: Content of: <html><body><h4>
+#: en/server.html:84
+msgid "Custom Limits"
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/server.html:86
+msgid ""
+"The <i>maximum rate</i> is a pool of bytes used to fulfill requests during "
+"short periods of traffic higher than your specified <i>average rate</i>, but "
+"still maintains the average over a long period. A low average rate but a "
+"high maximum rate enforces a long-term average while still allowing more "
+"traffic during peak times if the average hasn't been reached lately. If your "
+"average rate is the same as your <i>maximum rate</i>, then Tor will never "
+"exceed the specified rate. Your <i>maximum rate</i> must always be greater "
+"than or equal to your <i>average rate</i>."
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/server.html:96
+msgid ""
+"The <i>average rate</i> is the maximum long-term average bandwidth allowed "
+"(in kilobytes per second). For example, you might want to choose 2 megabytes "
+"per second (2048 KB/s), or 50 kilobytes per second (a medium-speed cable "
+"connection). Tor requires a minimum of 20 kilobytes per second to run a "
+"relay."
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/server.html:103
+msgid ""
+"It is important to remember that Tor measures bandwidth in <b>bytes</b>, not "
+"bits. Also, Tor only looks at incoming bytes instead of outgoing bytes. For "
+"example, if your relay acts as a directory mirror, you may be sending more "
+"outgoing bytes than incoming. If you find this is the case and is putting "
+"too much strain on your bandwidth, you should consider unchecking the "
+"checkbox labeled <i>Mirror the relay directory</i>."
+msgstr ""
+
+#. type: Content of: <html><body>
+#: en/server.html:111
+msgid "<a name=\"exitpolicy\"/>"
+msgstr ""
+
+#. type: Content of: <html><body><h3>
+#: en/server.html:112
+msgid "Exit Policies"
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/server.html:114
+msgid ""
+"Exit policies give you a way to specify what kinds of resources on the "
+"Internet you are willing let other Tor users access from your Tor relay.  "
+"Tor uses a default list of exit policies that restrict some services, such "
+"as mail to prevent spam and some default file sharing ports to reduce abuse "
+"of the Tor network."
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/server.html:121
+msgid ""
+"Each of the checkboxes represents a type of resource that you can allow Tor "
+"users to access through your relay. If you uncheck the box next to a "
+"particular type of resource, Tor users will not be allowed to access that "
+"resource from your relay. If the box labeled <i>Misc Other Services</i> is "
+"checked, Tor users will be able to access other services not covered by the "
+"other checkboxes or Tor's default exit policy."
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/server.html:130
+msgid ""
+"For completeness, the following table lists the specific port numbers "
+"represented by each of the exit policy checkboxes. The <b>Description</b> "
+"column describes the resources Tor clients will be allowed to access through "
+"your relay, if the associated box is checked."
+msgstr ""
+
+#. type: Content of: <html><body><table><tr><td>
+#: en/server.html:138
+msgid "<b>Checkbox</b>"
+msgstr ""
+
+#. type: Content of: <html><body><table><tr><td>
+#: en/server.html:139
+msgid "<b>Ports</b>"
+msgstr ""
+
+#. type: Content of: <html><body><table><tr><td>
+#: en/server.html:140
+msgid "<b>Description</b>"
+msgstr ""
+
+#. type: Content of: <html><body><table><tr><td>
+#: en/server.html:143
+msgid "Websites"
+msgstr ""
+
+#. type: Content of: <html><body><table><tr><td>
+#: en/server.html:144
+msgid "80"
+msgstr ""
+
+#. type: Content of: <html><body><table><tr><td>
+#: en/server.html:145
+msgid "Normal, unencrypted Web browsing"
+msgstr ""
+
+#. type: Content of: <html><body><table><tr><td>
+#: en/server.html:148
+msgid "Secure Websites (SSL)"
+msgstr ""
+
+#. type: Content of: <html><body><table><tr><td>
+#: en/server.html:149
+msgid "443"
+msgstr ""
+
+#. type: Content of: <html><body><table><tr><td>
+#: en/server.html:150
+msgid "Encrypted Web browsing"
+msgstr ""
+
+#. type: Content of: <html><body><table><tr><td>
+#: en/server.html:153
+msgid "Retrieve Mail (POP, IMAP)"
+msgstr ""
+
+#. type: Content of: <html><body><table><tr><td>
+#: en/server.html:154
+msgid "110, 143, 993, 995"
+msgstr ""
+
+#. type: Content of: <html><body><table><tr><td>
+#: en/server.html:155
+msgid "Downloading email (does not permit sending email)"
+msgstr ""
+
+#. type: Content of: <html><body><table><tr><td>
+#: en/server.html:158
+msgid "Instant Messaging (IM)"
+msgstr ""
+
+#. type: Content of: <html><body><table><tr><td>
+#: en/server.html:159
+msgid "703, 1863, 5050, 5190, 5222, 5223, 8300, 8888"
+msgstr ""
+
+#. type: Content of: <html><body><table><tr><td>
+#: en/server.html:160
+msgid "Instant messaging applications like MSN Messenger, AIM, ICQ, and Jabber"
+msgstr ""
+
+#. type: Content of: <html><body><table><tr><td>
+#: en/server.html:163
+msgid "Internet Relay Chat (IRC)"
+msgstr ""
+
+#. type: Content of: <html><body><table><tr><td>
+#: en/server.html:164
+msgid "6660-6669, 6697, 7000-7001"
+msgstr ""
+
+#. type: Content of: <html><body><table><tr><td>
+#: en/server.html:165
+msgid "IRC clients and servers"
+msgstr ""
+
+#. type: Content of: <html><body><table><tr><td>
+#: en/server.html:168
+msgid "Misc. Other Services"
+msgstr ""
+
+#. type: Content of: <html><body><table><tr><td>
+#: en/server.html:169
+msgid "*"
+msgstr ""
+
+#. type: Content of: <html><body><table><tr><td>
+#: en/server.html:170
+msgid "All other applications that aren't covered by the previous checkboxes"
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/server.html:175
+msgid ""
+"If you do not want to let other Tor users make connections outside the Tor "
+"network from your relay, you can uncheck all of the checkboxes. Even if you "
+"uncheck all of the checkboxes, your relay is still useful to the Tor "
+"network.  Your relay will allow other Tor users to connect to the Tor "
+"network and will help relay traffic between other Tor relays."
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/server.html:182
+msgid ""
+"If you chose to run a bridge relay, the <i>Exit Policies</i> tab will be "
+"grayed out, since bridge relays do not allow exit connections. Bridges are "
+"only used by Tor clients to connect to the Tor network."
+msgstr ""
+
+#. type: Content of: <html><body>
+#: en/server.html:188
+msgid "<a name=\"upnp\"/>"
+msgstr ""
+
+#. type: Content of: <html><body><h3>
+#: en/server.html:189
+msgid "Port Forwarding"
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/server.html:191
+msgid ""
+"Many home users connect to the Internet via a <i>router</i>, which allows "
+"multiple computers on a local network to share the same Internet "
+"connection.  Some users may also be behind a <i>firewall</i> that blocks "
+"incoming connections to your computer from other computers on the Internet.  "
+"If you want to run a Tor relay, however, other Tor clients and relays must "
+"be able to connect to your relay through your home router or firewall."
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/server.html:200
+msgid ""
+"To make your relay publicly accessible, your router or firewall needs to "
+"know which ports to allow through to your computer by setting up what is "
+"known as <i>port forwarding</i>. Port forwarding configures your router or "
+"firewall to \"forward\" all connections to certain ports on your router or "
+"firewall to local ports on your computer."
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/server.html:208
+msgid ""
+"If you check the box labeled <i>Attempt to automatically configure port "
+"forwarding</i>, Vidalia will attempt to automatically set up port forwarding "
+"on your local network connection so that other Tor clients can connect to "
+"your relay. Not all routers support automatic port forwarding, though. You "
+"can use the <i>Test</i> button next to the checkbox to find out if Vidalia "
+"is able to automatically set up port forwarding for you."
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/server.html:217
+msgid ""
+"If the <i>Test</i> button finds that Vidalia is unable to set up port "
+"forwarding for you, you may need to enable this feature on your router or "
+"set up port forwarding manually. Some network devices have a feature called "
+"<i>Universal Plug-and-Play</i> (UPnP). If you can access your router's "
+"administrative interface, you should look for an option to enable UPnP. The "
+"administrative interface for most routers can be accessed by opening <a "
+"href=\"http://192.168.0.1/\">http://192.168.0.1</a> or <a "
+"href=\"http://192.168.1.1/\">http://192.168.1.1</a> in your Web browser. You "
+"should consult your router's instruction manual for more information."
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/server.html:229
+msgid ""
+"If you need to set up port forwarding manually, the website <a "
+"href=\"http://www.portforward.com/english/routers/port_forwarding/routerindex.htm\"> "
+"portforward.com</a> has instructions for how to set up port forwarding for "
+"many types of routers and firewalls. At a minimum, you will need to forward "
+"your <i>Relay Port</i>, which defaults to port 443 on Windows and 9001 on "
+"all other operating systems. If you also checked the checkbox labeled "
+"<i>Mirror the relay directory</i>, then you will also need to forward your "
+"<i>Directory Port</i>. The <i>Directory Port</i> is set to port 9030 by "
+"default on all operating systems."
+msgstr ""

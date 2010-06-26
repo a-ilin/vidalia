@@ -1,0 +1,157 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR The Tor Project, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2010-06-26 17:00+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit"
+
+#. type: Content of: <html><body><h1>
+#: en/log.html:16
+msgid "Message Log"
+msgstr ""
+
+#. type: Content of: <html><body>
+#: en/log.html:19
+msgid ""
+"The message log lets you see status information about a running Tor "
+"process.  <a name=\"basic\"/> Each message has a <i>severity</i> associated "
+"with it, ranging from <b>Error</b> (most serious) to <b>Debug</b> (most "
+"verbose). See the help section on <a href=\"#severities\">message "
+"severities</a> for more information.  <a name=\"severities\"/>"
+msgstr ""
+
+#. type: Content of: <html><body><h3>
+#: en/log.html:28
+msgid "Message Severities"
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/log.html:30
+msgid ""
+"A message's severity tells you how important the message is. A higher "
+"severity message usually indicates that something has gone wrong with "
+"Tor. Lower severity messages appear frequently during normal Tor operations "
+"and usually do not need to be logged."
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/log.html:37
+msgid "The possible message severities, from most severe to least severe, are:"
+msgstr ""
+
+#. type: Content of: <html><body><ul><li>
+#: en/log.html:41
+msgid ""
+"<b>Error</b>: Messages that appear when something has gone very wrong and "
+"Tor cannot proceed. These messages will be highlighted in <i>red</i> in the "
+"message log."
+msgstr ""
+
+#. type: Content of: <html><body><ul><li>
+#: en/log.html:46
+msgid ""
+"<b>Warning</b>: Messages that only appear when something has gone wrong with "
+"Tor, but are not fatal and Tor will continue running. These messages will be "
+"highlighted in <i>yellow</i>."
+msgstr ""
+
+#. type: Content of: <html><body><ul><li>
+#: en/log.html:51
+msgid ""
+"<b>Notice</b>: Messages that appear infrequently during normal Tor operation "
+"and are not considered errors, but you still may care about."
+msgstr ""
+
+#. type: Content of: <html><body><ul><li>
+#: en/log.html:55
+msgid ""
+"<b>Info</b>: Messages that appear frequently during normal Tor operation and "
+"are not usually of interest to most users."
+msgstr ""
+
+#. type: Content of: <html><body><ul><li>
+#: en/log.html:59
+msgid ""
+"<b>Debug</b>: Extremely verbose messages that are primarily of interest to "
+"developers. You should generally not log debug messages unless you know what "
+"you are doing."
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/log.html:66
+msgid ""
+"Most users should only log <i>Error</i>, <i>Warning</i>, and <i>Notice</i> "
+"messages."
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/log.html:71
+msgid "To select which message severities you would like to see, do the following:"
+msgstr ""
+
+#. type: Content of: <html><body><ol><li>
+#: en/log.html:73 en/log.html:92
+msgid "Open the message log from the Vidalia tray menu."
+msgstr ""
+
+#. type: Content of: <html><body><ol><li>
+#: en/log.html:74 en/log.html:93
+msgid "Click on <i>Settings</i> at the top of the message log window."
+msgstr ""
+
+#. type: Content of: <html><body><p><ol><li>
+#: en/log.html:76
+msgid ""
+"Check message severities you would like to see from the Message Filter group "
+"on the left and uncheck message severities you would like to hide."
+msgstr ""
+
+#. type: Content of: <html><body><p><ol><li>
+#: en/log.html:79
+msgid "Click <i>Save Settings</i> to apply your new message filter."
+msgstr ""
+
+#. type: Content of: <html><body>
+#: en/log.html:84
+msgid "<a name=\"logfile\"/>"
+msgstr ""
+
+#. type: Content of: <html><body><h3>
+#: en/log.html:85
+msgid "Logging to a File"
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/log.html:87
+msgid ""
+"Vidalia can also write log messages to a file, as well as logging them in "
+"the message log window. To enable logging to a file, follow these steps:"
+msgstr ""
+
+#. type: Content of: <html><body><ol><li>
+#: en/log.html:94
+msgid "Check the box labeled <i>Automatically save new log messages to a file</i>."
+msgstr ""
+
+#. type: Content of: <html><body><ol><li>
+#: en/log.html:96
+msgid ""
+"If you would like to change the file to which messages will be written, "
+"either type the path and filename into the text box, or click <i>Browse</i> "
+"to navigate to a location for your log file."
+msgstr ""
+
+#. type: Content of: <html><body><ol><li>
+#: en/log.html:100
+msgid "Click <i>Save Settings</i> to save your log destination."
+msgstr ""
