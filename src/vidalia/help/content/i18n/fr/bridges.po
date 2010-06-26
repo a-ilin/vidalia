@@ -10,34 +10,33 @@
 #   distributed except according to the terms described in the LICENSE
 #   file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 16:58+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-06-26 15:42-0600\n"
+"Last-Translator: Runa Sandvik <runa.sandvik@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1\n"
+"X-Generator: Pootle 1.1.0\n"
 
 #. type: Content of: <html><body><h1>
 #: en/bridges.html:16
 msgid "Bridge Relays"
-msgstr ""
+msgstr "Relais passerelles"
 
 #. type: Content of: <html><body>
 #: en/bridges.html:19
 msgid "<a name=\"about\"/>"
-msgstr ""
+msgstr "\"<a name=\\\"about\\\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/bridges.html:20
 msgid "What are bridge relays?"
-msgstr ""
+msgstr "Que sont les relais passerelles&nbsp;?"
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:22
@@ -51,31 +50,42 @@ msgid ""
 "filtering connections to all the known Tor relays, they probably won't be "
 "able to block all the bridges."
 msgstr ""
+"Certains fournisseurs d'accès à Internet (FAI) tentent d'empêcher les "
+"utilisateurs d'accéder au réseau Tor en bloquant les connexions aux relais "
+"Tor connus. Les relais passerelles (ou simplement <i>passerelles</i>) sont "
+"des relais qui permettent à ces utilisateurs censurés d'accéder au réseau "
+"Tor.  Contrairement aux autres relais Tor, les passerelles ne sont pas "
+"listées dans le même annuaire public que les relais normaux. Comme il "
+"n'existe pas de liste publique complète de ces passerelles, même si votre "
+"FAI filtre toutes les connexions vers les relais Tor connus, il ne pourra "
+"probablement pas bloquer l'ensemble des passerelles."
 
 #. type: Content of: <html><body>
 #: en/bridges.html:31
 msgid "<a name=\"finding\"/>"
-msgstr ""
+msgstr "<a name=\\\"finding\\\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/bridges.html:32
 msgid "How do I find a bridge relay?"
-msgstr ""
+msgstr "Comment puis-je trouver un relais passerelle&nbsp;?"
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:34
 msgid "There are two main ways to learn about a bridge address:"
 msgstr ""
+"Deux moyens principaux permettent de trouver l'adresse d'une "
+"passerelle&nbsp;:"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/bridges.html:36
 msgid "Get some friends to run private bridges for you"
-msgstr ""
+msgstr "Demander à vos amis d'installer une passerelle privée pour vous"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/bridges.html:37
 msgid "Use some of the public bridges"
-msgstr ""
+msgstr "Utiliser une passerelle publique"
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:42
@@ -88,6 +98,15 @@ msgid ""
 "just passes data to and from the Tor network, so it shouldn't expose the "
 "operator to any abuse complaints."
 msgstr ""
+"Pour utiliser une passerelle privée, demandez à vos amis de lancer Vidalia "
+"et Tor dans une zone non censurée de l'Internet puis de cliquer sur le "
+"bouton <i>Aider un utilisateur censuré</i> situé dans la page <a "
+"href=\\\"server.html\\\">Paramètres du relais</a> de Vidalia. Ensuite, ils "
+"doivent vous envoyer l'<i>adresse de la passerelle</i> indiquée en bas de "
+"leur page Relais. Contrairement à un relais de sortie, une passerelle "
+"transmet uniquement les données depuis et vers le réseau Tor. De ce fait, "
+"elle n'expose pas vos amis à une plainte de leur opérateur Internet pour "
+"utilisation abusive."
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:52
@@ -101,6 +120,15 @@ msgid ""
 "attacker to learn lots of bridge addresses, you must send this request from "
 "a Gmail account."
 msgstr ""
+"Vous pouvez trouver des adresses de passerelles publiques en visitant "
+"<b>https://bridges.torproject.org</b>. Ces passerelles changent "
+"régulièrement.  Vous devez en conséquence vérifier les réponses tous les "
+"quelques jours si vous avez besoin de nouvelles adresses passerelles.  Un "
+"autre moyen de trouver des passerelles publiques est d'envoyer un courriel à "
+"<b>bridges@torproject.org</b> avec le texte <b>get bridges</b> dans le "
+"corps du message. Pour qu'il soit encore plus difficile pour un attaquant de "
+"repérer des passerelles, vous devez envoyer la requête depuis une "
+"messagerie en ligne telle que GMail ou Yahoo!."
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:63
@@ -108,3 +136,5 @@ msgid ""
 "Configuring more than one bridge address will make your Tor connection more "
 "stable, in case some of the bridges become unreachable."
 msgstr ""
+"Configurer plusieurs passerelles rend la connexion Tor plus stable au cas où "
+"certaines passerelles deviennent inaccessibles."
