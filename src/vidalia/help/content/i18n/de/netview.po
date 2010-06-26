@@ -10,24 +10,23 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-06-26 15:09-0600\n"
+"Last-Translator: Runa Sandvik <runa.sandvik@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1\n"
+"X-Generator: Pootle 1.1.0\n"
 
 #. type: Content of: <html><body><h1>
 #: en/netview.html:16
 msgid "Network Viewer"
-msgstr ""
+msgstr "Netzwerk-Betrachter"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:20
@@ -35,16 +34,18 @@ msgid ""
 "The network viewer lets you see relays in the Tor network and where your "
 "traffic is going."
 msgstr ""
+"Der Netzwerk-Betrachter zeigt die Server im Tor-Netzwerk und den Weg des "
+"Datenverkehrs an."
 
 #. type: Content of: <html><body>
 #: en/netview.html:25
 msgid "<a name=\"overview\"/>"
-msgstr ""
+msgstr "<a name=\\\"overview\\\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/netview.html:26
 msgid "Overview"
-msgstr ""
+msgstr "&Uuml;berblick"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:28
@@ -55,16 +56,23 @@ msgid ""
 "then sent as a <i>stream</i> through that circuit. For efficiency, multiple "
 "streams may share the same circuit."
 msgstr ""
+"Wenn Sie anonym mit Hilfe von Tor kommunizieren wollen (bspw. eine "
+"Verbindung zu einer Webseite herstellen), erstellt Tor einen Tunnel oder "
+"<i>Kanal</i> von verschl&uuml;sselten Verbindungen &uuml;ber verschiedene "
+"Server im Netzwerk.  Der von ihrem Programm erzeugte Netzwerkverkehr wird "
+"dann als <i>Datenstrom</i> durch einen solchen Kanal geleitet. Aus "
+"Effizienzgr&uuml;nden werden mehrere Datenstr&ouml;me &uuml;ber den selben "
+"Kanal geleitet."
 
 #. type: Content of: <html><body>
 #: en/netview.html:35
 msgid "<a name=\"netmap\"/>"
-msgstr ""
+msgstr "<a name=\\\"netmap\\\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/netview.html:36
 msgid "Network Map"
-msgstr ""
+msgstr "Netzwerk-Karte"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:38
@@ -74,6 +82,10 @@ msgid ""
 "are drawn between relays to indicate the path of circuits that your Tor "
 "client has created through the Tor network."
 msgstr ""
+"Die Netzwerk-Karte besteht aus einer Weltkarte, auf der durch rote Punkte "
+"die geographischen Standorte der Server im Tor-Netzwerk gekennzeichnet sind. "
+"Anhand der gr&uuml;nen Linien zwischen den Servern werden die von Ihrem "
+"Tor-Client hergestellten Verbindungen im Tor-Netzwerk gekennzeichnet."
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:44
@@ -83,6 +95,11 @@ msgid ""
 "map by clicking on the map and then dragging it in whatever direction you "
 "would like to move the map."
 msgstr ""
+"Durch einen Klick auf <b>Vergr&ouml;&szlig;ern</b> oder <b>Verkleinern</b> "
+"k&ouml;nnen Sie die Standorte auf der Karte betrachten. Um sich einen "
+"anderen Kartenausschnitt anzeigen zu lassen, klicken auf die Karte und "
+"bewegen Sie den Mauszeiger bei gedr&uuml;ckter Maustaste in die "
+"gew&uuml;nschte Richtung."
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:50
@@ -91,6 +108,9 @@ msgid ""
 "address of the relay in a GeoIP database, created by MaxMind and located at "
 "geoip.vidalia-project.net."
 msgstr ""
+"Der geographische Standort eines Tor-Servers wird mit Hilfe der IP-Adresse "
+"und der GeoIP-Datenbank ermittelt. Die GeoIP-Datenbank wurde von Maxmind "
+"erstellt und ist unter geoip.vidalia-project.net zu finden."
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:55
@@ -104,16 +124,25 @@ msgid ""
 "not revealed to the GeoIP relay. The results of the lookups will be cached "
 "locally in order to reduce load on Vidalia's GeoIP relays."
 msgstr ""
+"In der Mitte unterhalb der Netzwerk-Karte finden Sie eine Liste mit Ihren "
+"momentanen Verbindungen und den dar&uuml;br laufenden Netzwerkverkehr. Beim "
+"ersten Start der Netzwerk-Karte wird Ihnen m&ouml;glicherweise eine "
+"Verbindung zu geoip.vidalia-project.net auffallen. Diese Verbindung "
+"erscheint, wenn Vidalia den geographischen Standort f&uuml;r die Liste der "
+"Tor-Server ermittelt.  Diese Verbindung wird ebenfalls &uuml;ber Tor "
+"hergestellt, so dass ihr Standort gegen&uuml;ber dem GeoIP-Server nicht "
+"bekannt gegeben wird. Die Ergebnisse dieser Anfragen werden lokal zwischen "
+"gespeichert, um Vidalias GeoIP-Server zu entlasten."
 
 #. type: Content of: <html><body>
 #: en/netview.html:66
 msgid "<a name=\"relaylist\"/>"
-msgstr ""
+msgstr "<a name=\\\"relaylist\\\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/netview.html:67
 msgid "Relay Status"
-msgstr ""
+msgstr "Server-Status"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:69
@@ -122,11 +151,15 @@ msgid ""
 "Tor network. Next to each relay is an icon indicating that relay's status.  "
 "The following table summarizes the possible relay status icons:"
 msgstr ""
+"Auf der linken Seite des Netzwerk-Betrachters befindet sich eine Liste von "
+"Servern im Tor-Netzwerk. Neben jeden Server befindet sich ein Symbol, dass "
+"den Server-Status anzeigt. Die folgende Tabelle beschreibt die "
+"\"m&ouml;glichen Symbole:"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:78
 msgid "The relay is offline or simply not responding."
-msgstr ""
+msgstr "Der Server ist offline oder antwortet einfach nicht."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:84
@@ -134,26 +167,35 @@ msgid ""
 "The relay is <i>hibernating</i>, meaning it is online, but has used up as "
 "much bandwidth as the operator is willing to allow for a given time period."
 msgstr ""
+"Der Server ist im <i>Ruhezustand</i>, d.h. er ist online, hat aber bereits "
+"alle ihm vom Serverbetreiber zugestandene Bandbreite w&auml;hrend eines "
+"bestimmten Zeitraums verbraucht."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:92
 msgid "The relay is online, but has shown only minimal throughput."
-msgstr ""
+msgstr "Der Server ist online, hat aber nur einen minimalen Datendurchsatz."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:98
 msgid "The relay is online and has shown a throughput &gt;= 20 KB/s."
 msgstr ""
+"Der Server ist online und hat einen ermittelten Datendurchsatz von &gt;= 20 "
+"KB/s."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:104
 msgid "The relay is online and has shown a throughput &gt;= 60 KB/s."
 msgstr ""
+"Der Server ist online und hat einen ermittelten Datendurchsatz von &gt;= 60 "
+"KB/s."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:110
 msgid "The relay is online and has shown a throughput &gt;= 400 KB/s."
 msgstr ""
+"Der Server ist online und hat einen ermittelten Datendurchsatz von &gt;= 400 "
+"KB/s."
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:116
@@ -162,16 +204,20 @@ msgid ""
 "maximum bandwidth sustained input or output over any ten second period in "
 "the past day."
 msgstr ""
+"Alle Bandbreitenangaben sind Sch&auml;tzungen, die auf dem kleinsten Wert "
+"der maximalen Bandbreite des eingehenden oder ausgehenden Datenverkehrs "
+"basieren. Dieser Wert wurde innerhalb eines beliebigen zehn Sekunden langen "
+"Intervalls am vergangenen Tag gemessen."
 
 #. type: Content of: <html><body>
 #: en/netview.html:122
 msgid "<a name=\"details\"/>"
-msgstr ""
+msgstr "<a name=\\\"details\\\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/netview.html:123
 msgid "Relay Details"
-msgstr ""
+msgstr "Server-Details"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:125
@@ -182,6 +228,12 @@ msgid ""
 "in the list of your current circuits and streams, this panel will show you "
 "details about each relay through which your traffic is currently being sent."
 msgstr ""
+"Die Server-Details auf der rechten Seite des Fensters zeigen weitere "
+"Informationen zu den Servern an, die momentan in der <a href=\\\"#serverlist"
+"\\\">Server-Liste</a> ausgew&auml;hlt wurden. Wenn Sie einen Kanal oder einen "
+"Datenstrom aus der entsprechenden Liste ausgew&auml;hlt haben, werden Ihnen "
+"in detailierte Informationen &uuml;ber jeden Server angezeigt, der Ihren "
+"Datenverkehr weiter leitet."
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:132
@@ -189,31 +241,33 @@ msgid ""
 "The fields that you may see in the panel are as follows (<i>Note</i>: not "
 "all of these fields will always be present):"
 msgstr ""
+"Folgende Informationen werden in den Server-Details angezeigt "
+"(<i>Hinweis</i>: nicht immer sind alle Informationen verf&uuml;gbar):"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:138
 msgid "<b>Location</b>"
-msgstr ""
+msgstr "<b>Ort</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:139
 msgid "The geographic location of this Tor relay."
-msgstr ""
+msgstr "Der geographische Standort dieses Tor-Servers."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:142
 msgid "<b>IP Address</b>"
-msgstr ""
+msgstr "<b>IP-Adresse</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:143
 msgid "IP address at which this Tor relay can be reached."
-msgstr ""
+msgstr "IP-Adresse &uuml;ber die dieser Tor-Server erreicht werden kann."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:146
 msgid "<b>Platform</b>"
-msgstr ""
+msgstr "<b>Plattform</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:148
@@ -221,11 +275,13 @@ msgid ""
 "Operating system information and Tor version on which this relay is "
 "currently running."
 msgstr ""
+"Gibt an, mit welchen Betriebssystem und welcher Tor-Version dieser Server "
+"betrieben wird."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:153
 msgid "<b>Bandwidth</b>"
-msgstr ""
+msgstr "<b>Bandbreite</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:155
@@ -233,11 +289,13 @@ msgid ""
 "Estimated maximum amount of bandwidth that the directory relays have seen "
 "this relay handle recently."
 msgstr ""
+"Gesch&auml;tzte maximal Bandbreite, die der Verzeichnis-Server f&uuml;r "
+"diesen Server in letzter Zeit beobachtet hat."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:160
 msgid "<b>Uptime</b>"
-msgstr ""
+msgstr "<b>L&auml;uft seit</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:162
@@ -245,13 +303,15 @@ msgid ""
 "Length of time this relay has been available, which can be used to help "
 "estimate this relay's stability."
 msgstr ""
+"Gibt an, seit wann der Server bereits l&auml;ft. Dadurch kann die "
+"Stabilit&auml;t des Servers abgesch&auml;tzt werden."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:167
 msgid "<b>Last Updated</b>"
-msgstr ""
+msgstr "<b>Zuletzt aktualisiert</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:168
 msgid "Date this relay's information was last updated."
-msgstr ""
+msgstr "Zeitpunkt an dem die Serverinformationen zuletzt aktualisiert wurden."
