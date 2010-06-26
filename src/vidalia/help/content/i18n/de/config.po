@@ -10,24 +10,23 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 16:58+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-06-26 14:46-0600\n"
+"Last-Translator: Runa Sandvik <runa.sandvik@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1\n"
+"X-Generator: Pootle 1.1.0\n"
 
 #. type: Content of: <html><body><h1>
 #: en/config.html:16
 msgid "Configuring Vidalia and Tor"
-msgstr ""
+msgstr "Konfiguration von Vidalia und Tor"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:20
@@ -36,21 +35,27 @@ msgid ""
 "of Vidalia and Tor. It also lets you set up and manage a <a "
 "href=\"server.html\">Tor relay</a> so you can help the Tor network grow."
 msgstr ""
+"Vidalia erm&ouml;glicht es Ihnen die am gebr&auml;chlisten Einstellungen von "
+"Vidalia und Tor vorzunehmen. Au&szlig;erdem k&ouml;nnen Sie mit Vidalia "
+"einen <a href=\"server.html\">Tor-Server</a> einrichten und betreiben und "
+"dadurchdem Tor-Netzwerk zu weiterem Wachtums verhelfen."
 
 #. type: Content of: <html><body>
 #: en/config.html:26
 msgid "<a name=\"general\"/>"
-msgstr ""
+msgstr "<a name=\"general\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:27
 msgid "General Settings"
-msgstr ""
+msgstr "Allgemeine Einstellungen"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:29
 msgid "Settings on the <i>General</i> page are the most commonly modified settings."
 msgstr ""
+"Die Seite <i>Allgemein</i> enth&auml;lt die am meisten gebrauchten "
+"Einstellungen."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:32
@@ -61,6 +66,11 @@ msgid ""
 "clicking the <i>Browse</i> button and navigating to the particular Tor "
 "installation you want."
 msgstr ""
+"<b>Pfad zur Tor-Anwendung</b>: Dies ist die ausf&uuml;hrbare Tor-Datei, die "
+"Vidalia startet, wenn Sie <i>Start</i> aus dem Tray-Men&uuml; "
+"ausw&auml;hlen. Falls Sie mehrere Versionen von Tor installiert haben, "
+"k&ouml;nnen Sie durch Klicken auf die <i>W&auml;hlen</i> Schaltfl&auml;che "
+"die Tor-Version ausw&auml;hlen, die Vidalia benutzen soll."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:39
@@ -69,6 +79,9 @@ msgid ""
 "automatically start Tor when Vidalia starts. You can also configure Vidalia "
 "to run when your system starts (<i>Windows only</i>)."
 msgstr ""
+"<b>Start Einstellungen</b>: Durch diese Einstellung wird Tor automatisch "
+"zusammen mit Vidalia gestartet. Sie k&ouml;nnen Vidalia auch konfigurieren, "
+"dass es beim Systemstart ausge&uuml;hrt wird (<i>nur unter Windows</i>)."
 
 #. type: Content of: <html><body>
 #: en/config.html:46
