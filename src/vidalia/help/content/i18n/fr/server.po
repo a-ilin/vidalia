@@ -1,69 +1,83 @@
-# 
-#   $Id$
-# 
-#   This file is part of Vidalia, and is subject to the license terms in
-#   the LICENSE file, found in the top level directory of this
-#   distribution. If you did not receive the LICENSE file with this
-#   file, you may obtain it from the Vidalia source package distributed
-#   by the Vidalia Project at http://www.vidalia-project.net/. No part
-#   of Vidalia, including this file, may be copied, modified,
-#   propagated, or distributed except according to the terms described
-#   in the LICENSE file.
-# 
+##
+##  $Id$
+##
+##  This file is part of Vidalia, and is subject to the license terms in
+##  the LICENSE file, found in the top level directory of this
+##  distribution. If you did not receive the LICENSE file with this
+##  file, you may obtain it from the Vidalia source package distributed by
+##  the Vidalia Project at http://www.vidalia-project.net/. No part of
+##  Vidalia, including this file, may be copied, modified, propagated, or
+##  distributed except according to the terms described in the LICENSE
+##  file.
+##
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-06-26 17:00+0200\n"
+"POT-Creation-Date: 2010-06-26 23:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1\n"
+"Content-Transfer-Encoding: 8bit"
 
 #. type: Content of: <html><body><h1>
 #: en/server.html:16
+#, fuzzy
 msgid "Setting Up a Tor Relay"
-msgstr ""
+msgstr "Installer un relais Tor"
 
 #. type: Content of: <html><body>
 #: en/server.html:19
+#, fuzzy
 msgid ""
 "The Tor network is made up of volunteers all over the world who donate some "
 "of their spare bandwidth by running a Tor relay. Vidalia helps you do your "
 "part by making it easy to set up a relay of your own.  <a name=\"basic\"/>"
 msgstr ""
+"Le réseau Tor est constitué par des bénévoles du monde entier qui donnent "
+"une partie de leur bande passante perdue en installant un relais "
+"Tor. Vidalia vous aide à participer au réseau Tor en facilitant "
+"l'installation de votre propre relais.  <a name=\"basic\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/server.html:24
+#, fuzzy
 msgid "Basic Settings"
-msgstr ""
+msgstr "Options de base"
 
 #. type: Content of: <html><body><p>
 #: en/server.html:26
+#, fuzzy
 msgid ""
 "If you decide you want to help the Tor network grow by running a relay, you "
 "can follow these steps to get started:"
 msgstr ""
+"Si vous décidez de participer à la croissance du réseau Tor en installant un "
+"relais, vous pouvez suivre la procédure suivante."
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:31
+#, fuzzy
 msgid ""
 "Open the <i>Configuration Dialog</i> by selecting <i>Settings</i> from the "
 "tray menu or <i>Preferences</i> from your system menubar on Macintosh "
 "systems."
 msgstr ""
+"Ouvrez la <i>fenêtre de configuration</i> en sélectionnant <i>Options</i> "
+"dans le menu de la zone de notification ou <i>Préférences</i> dans la barre "
+"de menu système pour les systèmes Macintosh."
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:35
+#, fuzzy
 msgid "Select the <i>Relay</i> configuration page."
-msgstr ""
+msgstr "Sélectionnez la page de configuration <i>Relais</i>."
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:37
+#, fuzzy
 msgid ""
 "Decide whether you want to run a normal Tor relay or a <i>bridge</i> relay "
 "(Tor 0.2.0.8-alpha or newer). Bridge relays help censored Tor users who are "
@@ -72,37 +86,57 @@ msgid ""
 "relay or <i>Help censored users reach the Tor network</i> if you want to run "
 "a bridge relay."
 msgstr ""
+"Précisez si vous souhaitez installer un relais Tor normal ou un relais "
+"<i>passerelle</i> (Tor 0.2.0.8-alpha ou plus récent). Une passerelle permet "
+"d'aider les utilisateurs de Tor bloqués par la censure et qui ne peuvent pas "
+"accéder directement au réseau Tor. Cochez la case <i>Relayer le trafic pour "
+"le réseau Tor</i> si vous voulez installer un relais Tor normal ou <i>Aider "
+"les utilisateurs censurés à accéder au réseau Tor</i> si vous voulez "
+"installer un relais passerelle."
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:44
+#, fuzzy
 msgid "Enter the following information:"
-msgstr ""
+msgstr "Indiquez les informations suivantes:"
 
 #. type: Content of: <html><body><ol><ul><li>
 #: en/server.html:46
+#, fuzzy
 msgid ""
 "<b>Nickname</b>: The name which your relay will be known as on the Tor "
 "network. An example of a relay nickname is \"MyVidaliaRelay\"."
 msgstr ""
+"<b>Surnom (nickname)</b>: Le nom qui permettra à votre relais d'être connu "
+"sur le réseau Tor. Il s'agit par exemple de \"MonRelaisVidalia\"."
 
 #. type: Content of: <html><body><ol><ul><li>
 #: en/server.html:50
+#, fuzzy
 msgid ""
 "<b>Contact Info</b>: Your e-mail address. This address will only be used to "
 "contact you in case there is an important Tor security update or something "
 "goes wrong with your relay. You might also include your PGP or GPG key ID "
 "and fingerprint."
 msgstr ""
+"<b>Information de contact</b>: Votre adresse électronique. Cette adresse "
+"sera utilisée seulement pour vous signaler une mise à jour de sécurité "
+"importante ou un problème avec votre relais. Vous pouvez également préciser "
+"votre identifiant PGP ou GPG et votre empreinte."
 
 #. type: Content of: <html><body><ol><ul><li>
 #: en/server.html:56
+#, fuzzy
 msgid ""
 "<b>Relay Port</b>: The port on which your relay will listen for traffic from "
 "clients or other Tor relays."
 msgstr ""
+"<b>Port du relais</b>: Le port par lequel votre relais écoutera le trafic de "
+"clients ou d'autres relais Tor."
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:62
+#, fuzzy
 msgid ""
 "If you would like to mirror Tor's directory of relays for others on the "
 "network you can check the box labeled <i>Mirror the Relay Directory</i>.  If "
@@ -111,41 +145,62 @@ msgid ""
 "the <i>Relay port</i> you entered above. Bridge relays <i>must</i> mirror "
 "the relay directory."
 msgstr ""
+"Si vous voulez également installer un miroir de l'annuaire Tor des relais, "
+"cochez la case <i>Servir de miroir à l'annuaire des relais</i>.  Si vous "
+"disposez d'une bande passante limitée, décochez cette case. Si vous décidez "
+"malgré tout d'installer un miroir de l'annuaire, assurez-vous que le <i>port "
+"de l'annuaire</i> est différent du <i>port du relais</i> que vous avez "
+"indiquez plus haut. Les passerelles <i>doivent</i> avoir un miroir de "
+"l'annuaire des relais."
 
 #. type: Content of: <html><body>
 #: en/server.html:71
+#, fuzzy
 msgid "<a name=\"bandwidth\"/>"
-msgstr ""
+msgstr "<a name=\"bandwidth\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/server.html:72
+#, fuzzy
 msgid "Bandwidth Limits"
-msgstr ""
+msgstr "Limites de la bande passante"
 
 #. type: Content of: <html><body><p>
 #: en/server.html:74
+#, fuzzy
 msgid ""
 "Running a Tor relay can consume a large amount of bandwidth; however, Tor "
 "allows you to limit the amount of bandwidth that you are willing to "
 "contribute to the Tor network. You can run a relay, while still keeping your "
 "network connection usable for your own use."
 msgstr ""
+"Un relais Tor peut consommer une grande quantité de bande passante. C'est la "
+"raison pour laquelle Tor vous permet de préciser le niveau de bande passante "
+"que vous souhaitez accorder au réseau Tor. Cela vous permet de faire "
+"fonctionner un relais Tor tout en conservant une connexion suffisante pour "
+"votre propre usage."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:80
+#, fuzzy
 msgid ""
 "You should select the option in the dropdown box that best matches your "
 "connection speed. If you select <i>Custom</i>, you will be able to specify "
 "your own limits."
 msgstr ""
+"Vous devez sélectionner dans la liste déroulante l'option qui correspond le "
+"mieux au débit de votre connexion. Si vous choisissez <i>Personnalisé</i>, "
+"vous pourrez paramétrer vous-mêmes les seuils."
 
 #. type: Content of: <html><body><h4>
 #: en/server.html:84
+#, fuzzy
 msgid "Custom Limits"
-msgstr ""
+msgstr "Limites personnalisées"
 
 #. type: Content of: <html><body><p>
 #: en/server.html:86
+#, fuzzy
 msgid ""
 "The <i>maximum rate</i> is a pool of bytes used to fulfill requests during "
 "short periods of traffic higher than your specified <i>average rate</i>, but "
@@ -156,9 +211,19 @@ msgid ""
 "exceed the specified rate. Your <i>maximum rate</i> must always be greater "
 "than or equal to your <i>average rate</i>."
 msgstr ""
+"Le <i>débit maximal</i> correspond au nombre d'octets utilisables pour "
+"répondre aux requêtes pendant les courtes périodes où le trafic est "
+"supérieur au <i>débit moyen</i> que vous avez spécifié, mais qui permet de "
+"respecter la moyenne sur une longue période. Un débit moyen bas et un débit "
+"maximal élevé améliorent le niveau de trafic à long terme en autorisant "
+"davantage de trafic lors des pics, tant que le débit moyen n'a pas été "
+"atteint. Si votre débit moyen est identique à votre <i>débit maximal</i>, "
+"alors Tor ne dépassera jamais ce débit. Le <i>débit maximal</i> doit "
+"toujours être supérieur ou égal au <i>débit moyen</i>."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:96
+#, fuzzy
 msgid ""
 "The <i>average rate</i> is the maximum long-term average bandwidth allowed "
 "(in kilobytes per second). For example, you might want to choose 2 megabytes "
@@ -166,9 +231,16 @@ msgid ""
 "connection). Tor requires a minimum of 20 kilobytes per second to run a "
 "relay."
 msgstr ""
+"Le <i>débit moyen</i> correspond à la bande passante moyenne maximale "
+"autorisée à long terme (en kilo-octets par seconde). Par exemple, vous "
+"pouvez choisir de contribuer au réseau Tor pour 2 méga-octets par seconde "
+"(2048 Kio/s) ou 50 kilo-octets par seconde (soit une connexion moyenne par "
+"cable). Tor a besoin au minimum de 20 kilo-octets par seconde pour faire "
+"fonctionner un relais."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:103
+#, fuzzy
 msgid ""
 "It is important to remember that Tor measures bandwidth in <b>bytes</b>, not "
 "bits. Also, Tor only looks at incoming bytes instead of outgoing bytes. For "
@@ -177,19 +249,29 @@ msgid ""
 "too much strain on your bandwidth, you should consider unchecking the "
 "checkbox labeled <i>Mirror the relay directory</i>."
 msgstr ""
+"Il est important de se rappeler que Tor mesure la bande passante en "
+"<b>octets</b> et non en bits. En outre, Tor comptabilise les octets entrants "
+"et non les octets sortants. De ce fait, si votre relais est également un "
+"miroir de l'annuaire des relais, vous enverrez davantage de données que vous "
+"n'en recevrez. Si vous constatez que cela constitue une contrainte trop "
+"forte pour votre bande passante, vous devrez penser à décocher la case "
+"<i>Servir de miroir à l'annuaire des relais</i>."
 
 #. type: Content of: <html><body>
 #: en/server.html:111
+#, fuzzy
 msgid "<a name=\"exitpolicy\"/>"
-msgstr ""
+msgstr "<a name=\"exitpolicy\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/server.html:112
+#, fuzzy
 msgid "Exit Policies"
-msgstr ""
+msgstr "Politiques de sortie"
 
 #. type: Content of: <html><body><p>
 #: en/server.html:114
+#, fuzzy
 msgid ""
 "Exit policies give you a way to specify what kinds of resources on the "
 "Internet you are willing let other Tor users access from your Tor relay.  "
@@ -197,9 +279,16 @@ msgid ""
 "as mail to prevent spam and some default file sharing ports to reduce abuse "
 "of the Tor network."
 msgstr ""
+"Les politiques de sortie vous permettent de spécifier les ressources "
+"Internet auxquelles les utilisateurs du réseau Tor peuvent accéder par le "
+"biais de votre relais. Par défaut, Tor utilise une liste de politiques de "
+"sortie qui empêche l'utisation de certains services, notamment l'envoi de "
+"courriels (afin d'éviter les spams) et certains ports de partage de fichiers "
+"(afin de réduire l'usage abusif du réseau Tor)."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:121
+#, fuzzy
 msgid ""
 "Each of the checkboxes represents a type of resource that you can allow Tor "
 "users to access through your relay. If you uncheck the box next to a "
@@ -208,123 +297,161 @@ msgid ""
 "checked, Tor users will be able to access other services not covered by the "
 "other checkboxes or Tor's default exit policy."
 msgstr ""
+"Chaque case représente un type de ressources. Vous pouvez permettre ou "
+"refuser aux utilisateurs de Tor de passer par votre relais pour y "
+"accéder. Si vous décocher une case, les utilisateurs de Tor ne seront pas "
+"autorisés à accéder à la ressource correspondante à travers votre relais. Si "
+"la case <i>Autres services</i> est cochée, les utilisateurs de Tor pourront "
+"accéder aux services non couverts par les autres cases à cocher ou par la "
+"politique de sortie par défaut de Tor."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:130
+#, fuzzy
 msgid ""
 "For completeness, the following table lists the specific port numbers "
 "represented by each of the exit policy checkboxes. The <b>Description</b> "
 "column describes the resources Tor clients will be allowed to access through "
 "your relay, if the associated box is checked."
 msgstr ""
+"Pour information, le tableau suivant liste les numéros de ports des "
+"politiques de sortie. La colonne <b>Description</b> signale les ressources "
+"auxquelles les clients Tor pourront accéder à travers votre relais, si la "
+"case correspondante est coché."
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:138
+#, fuzzy
 msgid "<b>Checkbox</b>"
-msgstr ""
+msgstr "<b>Case à cocher</b>"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:139
+#, fuzzy
 msgid "<b>Ports</b>"
-msgstr ""
+msgstr "<b>Ports</b>"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:140
+#, fuzzy
 msgid "<b>Description</b>"
-msgstr ""
+msgstr "<b>Description</b>"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:143
+#, fuzzy
 msgid "Websites"
-msgstr ""
+msgstr "Sites web"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:144
+#, fuzzy
 msgid "80"
-msgstr ""
+msgstr "80"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:145
+#, fuzzy
 msgid "Normal, unencrypted Web browsing"
-msgstr ""
+msgstr "Normal, navigation web non chiffrée"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:148
+#, fuzzy
 msgid "Secure Websites (SSL)"
-msgstr ""
+msgstr "Sites web sécurisés (SSL)"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:149
+#, fuzzy
 msgid "443"
-msgstr ""
+msgstr "443"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:150
+#, fuzzy
 msgid "Encrypted Web browsing"
-msgstr ""
+msgstr "Accès aux sites web sécurisés"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:153
+#, fuzzy
 msgid "Retrieve Mail (POP, IMAP)"
-msgstr ""
+msgstr "Téléchargement des courriels (POP, IMAP)"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:154
+#, fuzzy
 msgid "110, 143, 993, 995"
-msgstr ""
+msgstr "110, 143, 993, 995"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:155
+#, fuzzy
 msgid "Downloading email (does not permit sending email)"
-msgstr ""
+msgstr "Téléchargement des courriels (ne permet pas d'en envoyer)"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:158
+#, fuzzy
 msgid "Instant Messaging (IM)"
-msgstr ""
+msgstr "Messagerie instantanée (IM)"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:159
+#, fuzzy
 msgid "703, 1863, 5050, 5190, 5222, 5223, 8300, 8888"
-msgstr ""
+msgstr "703, 1863, 5050, 5190, 5222, 5223, 8300, 8888"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:160
+#, fuzzy
 msgid "Instant messaging applications like MSN Messenger, AIM, ICQ, and Jabber"
 msgstr ""
+"Applications de messageries instantanées telles que Jabber, MSN Messenger, "
+"AIM et ICQ"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:163
+#, fuzzy
 msgid "Internet Relay Chat (IRC)"
-msgstr ""
+msgstr "Chat (IRC)"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:164
+#, fuzzy
 msgid "6660-6669, 6697, 7000-7001"
-msgstr ""
+msgstr "6660-6669, 6697, 7000-7001"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:165
+#, fuzzy
 msgid "IRC clients and servers"
-msgstr ""
+msgstr "Clients et serveurs IRC"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:168
+#, fuzzy
 msgid "Misc. Other Services"
-msgstr ""
+msgstr "Autres services"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:169
+#, fuzzy
 msgid "*"
-msgstr ""
+msgstr "*"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:170
+#, fuzzy
 msgid "All other applications that aren't covered by the previous checkboxes"
 msgstr ""
+"Toutes les autres applications non couvertes par les précédentes cases à "
+"cocher"
 
 #. type: Content of: <html><body><p>
 #: en/server.html:175
+#, fuzzy
 msgid ""
 "If you do not want to let other Tor users make connections outside the Tor "
 "network from your relay, you can uncheck all of the checkboxes. Even if you "
@@ -332,27 +459,40 @@ msgid ""
 "network.  Your relay will allow other Tor users to connect to the Tor "
 "network and will help relay traffic between other Tor relays."
 msgstr ""
+"Si vous ne voulez pas autoriser les utilisateurs de Tor à sortir du réseau "
+"par votre relais, vous pouvez décocher toutes les cases. Même dans ce cas, "
+"votre relais est utile pour le réseau Tor, car il permet encore aux "
+"utilisateurs de s'y connecter. Il permet également de relayer du trafic "
+"entre les autres relais Tor."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:182
+#, fuzzy
 msgid ""
 "If you chose to run a bridge relay, the <i>Exit Policies</i> tab will be "
 "grayed out, since bridge relays do not allow exit connections. Bridges are "
 "only used by Tor clients to connect to the Tor network."
 msgstr ""
+"Si vous choisissez d'installer un relais passerelle, l'onglet des "
+"<i>Politiques de sortie</i> sera grisé et inacessible, puisque une "
+"passerelle n'autorise pas les sorties&nbsp;: elle sert uniquement à se "
+"connecter au réseau Tor."
 
 #. type: Content of: <html><body>
 #: en/server.html:188
+#, fuzzy
 msgid "<a name=\"upnp\"/>"
-msgstr ""
+msgstr "<a name=\"upnp\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/server.html:189
+#, fuzzy
 msgid "Port Forwarding"
-msgstr ""
+msgstr "Transfert de Ports"
 
 #. type: Content of: <html><body><p>
 #: en/server.html:191
+#, fuzzy
 msgid ""
 "Many home users connect to the Internet via a <i>router</i>, which allows "
 "multiple computers on a local network to share the same Internet "
@@ -361,9 +501,17 @@ msgid ""
 "If you want to run a Tor relay, however, other Tor clients and relays must "
 "be able to connect to your relay through your home router or firewall."
 msgstr ""
+"De nombreux utilisateurs se connectent à Internet par un <i>routeur</i>, qui "
+"permet plusieurs ordinateurs sur un réseau local de partager la même "
+"connexion Internet.  Certains utilisateurs peuvent également être derrière "
+"un <i>pare-feu</i> qui bloque les connexions à votre ordinateur à partir "
+"d'autres ordinateurs d'Internet. Si vous voulez, toutefois, opérer un relais "
+"Tor, d'autres clients et relais Tor doivent être en mesure de se connecter à "
+"votre relais à travers votre routeur ou votre pare-feu."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:200
+#, fuzzy
 msgid ""
 "To make your relay publicly accessible, your router or firewall needs to "
 "know which ports to allow through to your computer by setting up what is "
@@ -371,9 +519,16 @@ msgid ""
 "firewall to \"forward\" all connections to certain ports on your router or "
 "firewall to local ports on your computer."
 msgstr ""
+"Pour rendre votre relais publiquement accessible, votre routeur ou pare-feu "
+"doit savoir quels ports autoriser pour votre ordinateur, la mise en place "
+"est connu sous le nom de <i> transfert de ports </i>. Le transfert de ports "
+"configure votre routeur ou pare-feu pour \"rediriger\" toutes les connexions "
+"de certains ports de votre routeur ou pare-feu locaux vers les ports ouverts "
+"correspondants de votre ordinateur."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:208
+#, fuzzy
 msgid ""
 "If you check the box labeled <i>Attempt to automatically configure port "
 "forwarding</i>, Vidalia will attempt to automatically set up port forwarding "
@@ -382,9 +537,17 @@ msgid ""
 "can use the <i>Test</i> button next to the checkbox to find out if Vidalia "
 "is able to automatically set up port forwarding for you."
 msgstr ""
+"Si vous cochez la case <i>Tenter de configurer automatiquement le transfert "
+"de ports</i>, Vidalia tentera de mettre en place automatiquement le "
+"transfert de port sur votre connexion réseau pour que les autres Tor clients "
+"puissent se connecter à votre relais. Mais, tous les routeurs ne supportent "
+"pas le transfert automatique de ports.  Vous pouvez utiliser le "
+"bouton<i>Test</i> à côté de la case à cocher pour savoir si Vidalia est en "
+"mesure de mettre en place automatiquement le transfert de port pour vous."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:217
+#, fuzzy
 msgid ""
 "If the <i>Test</i> button finds that Vidalia is unable to set up port "
 "forwarding for you, you may need to enable this feature on your router or "
@@ -396,9 +559,21 @@ msgid ""
 "href=\"http://192.168.1.1/\">http://192.168.1.1</a> in your Web browser. You "
 "should consult your router's instruction manual for more information."
 msgstr ""
+"Si le <i>Test</i> estime que Vidalia n'est pas en mesure de mettre en place "
+"le transfert de port pour vous, vous pouvez activer cette fonctionalité sur "
+"votre routeur ou paramétrer la redirection de port manuellement. Certains "
+"périphériques réseau ont une fonction appelée <i>Universal Plug-and-Play</i> "
+"(UPnP). Si vous pouvez accéder à votre routeur interface d'administration, "
+"vous devriez chercher à activer une option UPnP. Le interface "
+"d'administration de la plupart des routeurs peut être accessible en ouvrant "
+"<a href=\"http://192.168.0.1/\">http://192.168.0.1</a> ou <a "
+"href=\"http://192.168.1.1/\">http://192.168.1.1</a> dans votre "
+"navigateur. Vous devriez consulter le manuel d'instruction de votre routeur "
+"pour de plus amples informations."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:229
+#, fuzzy
 msgid ""
 "If you need to set up port forwarding manually, the website <a "
 "href=\"http://www.portforward.com/english/routers/port_forwarding/routerindex.htm\"> "
@@ -410,3 +585,14 @@ msgid ""
 "<i>Directory Port</i>. The <i>Directory Port</i> is set to port 9030 by "
 "default on all operating systems."
 msgstr ""
+"Si vous devez configurer manuellement le transfert de port, le site <a href "
+"= "
+"\"http://www.portforward.com/english/routers/port_forwarding/routerindex.htm\"> "
+"portforward.com </a> contient des instructions sur la manière de mettre en "
+"place la redirection de port pour de nombreux types de routeurs et "
+"pare-feu.  Au minimum, vous aurez besoin de transférer <i>votre Port "
+"Relais</i>, qui par défaut est le port 443 sur Windows et 9001 sur tous les "
+"autres systèmes d'exploitation. Si vous avez aussi coché la case <i>Servir "
+"de miroir à l'annuaire des relais</i>, vous devrez également trasferrer "
+"votre <i> Port Annuaire</i>. Le <i> Port Annuaire</i> est le port 9030 par "
+"défaut sur tous les les systèmes d'exploitation."
