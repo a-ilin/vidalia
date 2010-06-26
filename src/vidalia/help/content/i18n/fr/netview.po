@@ -24,13 +24,11 @@ msgstr ""
 
 #. type: Content of: <html><body><h1>
 #: en/netview.html:16
-#, fuzzy
 msgid "Network Viewer"
 msgstr "Aperçu du réseau Tor"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:20
-#, fuzzy
 msgid ""
 "The network viewer lets you see relays in the Tor network and where your "
 "traffic is going."
@@ -40,19 +38,16 @@ msgstr ""
 
 #. type: Content of: <html><body>
 #: en/netview.html:25
-#, fuzzy
 msgid "<a name=\"overview\"/>"
 msgstr "<a name=\"overview\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/netview.html:26
-#, fuzzy
 msgid "Overview"
 msgstr "Présentation"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:28
-#, fuzzy
 msgid ""
 "When you want to communicate anonymously through Tor (say, connecting to a "
 "website), Tor creates a tunnel, or <i>circuit</i>, of encrypted connections "
@@ -69,19 +64,16 @@ msgstr ""
 
 #. type: Content of: <html><body>
 #: en/netview.html:35
-#, fuzzy
 msgid "<a name=\"netmap\"/>"
 msgstr "<a name=\"netmap\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/netview.html:36
-#, fuzzy
 msgid "Network Map"
 msgstr "Carte du réseau"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:38
-#, fuzzy
 msgid ""
 "The network map consists of a map of the world, with red pinpoints "
 "indicating the geographic location of relays in the Tor network. Green lines "
@@ -95,7 +87,6 @@ msgstr ""
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:44
-#, fuzzy
 msgid ""
 "You can zoom in on locations in the map by clicking the <b>Zoom In</b> and "
 "<b>Zoom Out</b> buttons in the toolbar. You can also scroll around on the "
@@ -109,7 +100,6 @@ msgstr ""
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:50
-#, fuzzy
 msgid ""
 "The geographic location of a Tor relay is determined by looking up the IP "
 "address of the relay in a GeoIP database, created by MaxMind and located at "
@@ -121,7 +111,6 @@ msgstr ""
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:55
-#, fuzzy
 msgid ""
 "In the middle of the dialog, below the network map, you will see a list of "
 "your current circuits, as well as any application traffic currently on those "
@@ -144,19 +133,16 @@ msgstr ""
 
 #. type: Content of: <html><body>
 #: en/netview.html:66
-#, fuzzy
 msgid "<a name=\"relaylist\"/>"
 msgstr "<a name=\"status\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/netview.html:67
-#, fuzzy
 msgid "Relay Status"
 msgstr "États des relais"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:69
-#, fuzzy
 msgid ""
 "On the left side of the network view, you will see a list of relays in the "
 "Tor network. Next to each relay is an icon indicating that relay's status.  "
@@ -168,13 +154,11 @@ msgstr ""
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:78
-#, fuzzy
 msgid "The relay is offline or simply not responding."
 msgstr "Le relais est hors ligne ou ne répond pas."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:84
-#, fuzzy
 msgid ""
 "The relay is <i>hibernating</i>, meaning it is online, but has used up as "
 "much bandwidth as the operator is willing to allow for a given time period."
@@ -185,31 +169,26 @@ msgstr ""
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:92
-#, fuzzy
 msgid "The relay is online, but has shown only minimal throughput."
 msgstr "Le relais est en ligne, mais il supporte seulement un trafic minimal."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:98
-#, fuzzy
 msgid "The relay is online and has shown a throughput &gt;= 20 KB/s."
 msgstr "Le relais est en ligne et supporte un trafic &gt;= 20 Ko/s."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:104
-#, fuzzy
 msgid "The relay is online and has shown a throughput &gt;= 60 KB/s."
 msgstr "Le relais est en ligne et supporte un trafic &gt;= 60 Ko/s."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:110
-#, fuzzy
 msgid "The relay is online and has shown a throughput &gt;= 400 KB/s."
 msgstr "Le relais est en ligne et supporte un trafic &gt;= 400 Ko/s."
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:116
-#, fuzzy
 msgid ""
 "All bandwidth values are estimates based on the minimum of either the "
 "maximum bandwidth sustained input or output over any ten second period in "
@@ -221,19 +200,16 @@ msgstr ""
 
 #. type: Content of: <html><body>
 #: en/netview.html:122
-#, fuzzy
 msgid "<a name=\"details\"/>"
 msgstr "<a name=\"details\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/netview.html:123
-#, fuzzy
 msgid "Relay Details"
 msgstr "Détails du relais"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:125
-#, fuzzy
 msgid ""
 "The relay details panel at the right side of the screen gives you details "
 "about the relay or relays currently selected in the <a "
@@ -249,7 +225,6 @@ msgstr ""
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:132
-#, fuzzy
 msgid ""
 "The fields that you may see in the panel are as follows (<i>Note</i>: not "
 "all of these fields will always be present):"
@@ -259,37 +234,31 @@ msgstr ""
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:138
-#, fuzzy
 msgid "<b>Location</b>"
 msgstr "<b>Localisation</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:139
-#, fuzzy
 msgid "The geographic location of this Tor relay."
 msgstr "Localisation géographique de ce relais Tor."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:142
-#, fuzzy
 msgid "<b>IP Address</b>"
 msgstr "<b>Adresse IP</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:143
-#, fuzzy
 msgid "IP address at which this Tor relay can be reached."
 msgstr "Adresse IP par laquelle ce relais Tor peut être atteint."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:146
-#, fuzzy
 msgid "<b>Platform</b>"
 msgstr "<b>Plateforme</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:148
-#, fuzzy
 msgid ""
 "Operating system information and Tor version on which this relay is "
 "currently running."
@@ -299,13 +268,11 @@ msgstr ""
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:153
-#, fuzzy
 msgid "<b>Bandwidth</b>"
 msgstr "<b>Bande passante</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:155
-#, fuzzy
 msgid ""
 "Estimated maximum amount of bandwidth that the directory relays have seen "
 "this relay handle recently."
@@ -315,13 +282,11 @@ msgstr ""
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:160
-#, fuzzy
 msgid "<b>Uptime</b>"
 msgstr "<b>Durée de fonctionnement</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:162
-#, fuzzy
 msgid ""
 "Length of time this relay has been available, which can be used to help "
 "estimate this relay's stability."
@@ -331,12 +296,10 @@ msgstr ""
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:167
-#, fuzzy
 msgid "<b>Last Updated</b>"
 msgstr "<b>Dernière mise à jour</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:168
-#, fuzzy
 msgid "Date this relay's information was last updated."
 msgstr "Date à laquelle les informations sur ce relais ont été mises à jour."

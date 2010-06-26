@@ -24,13 +24,11 @@ msgstr ""
 
 #. type: Content of: <html><body><h1>
 #: en/log.html:16
-#, fuzzy
 msgid "Message Log"
 msgstr "Journal des messages"
 
 #. type: Content of: <html><body>
 #: en/log.html:19
-#, fuzzy
 msgid ""
 "The message log lets you see status information about a running Tor "
 "process.  <a name=\"basic\"/> Each message has a <i>severity</i> associated "
@@ -47,13 +45,11 @@ msgstr ""
 
 #. type: Content of: <html><body><h3>
 #: en/log.html:28
-#, fuzzy
 msgid "Message Severities"
 msgstr "Niveaux de gravité des messages"
 
 #. type: Content of: <html><body><p>
 #: en/log.html:30
-#, fuzzy
 msgid ""
 "A message's severity tells you how important the message is. A higher "
 "severity message usually indicates that something has gone wrong with "
@@ -68,13 +64,11 @@ msgstr ""
 
 #. type: Content of: <html><body><p>
 #: en/log.html:37
-#, fuzzy
 msgid "The possible message severities, from most severe to least severe, are:"
 msgstr "Les niveaux de gravité sont les suivants, du plus au moins sévère:"
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:41
-#, fuzzy
 msgid ""
 "<b>Error</b>: Messages that appear when something has gone very wrong and "
 "Tor cannot proceed. These messages will be highlighted in <i>red</i> in the "
@@ -86,7 +80,6 @@ msgstr ""
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:46
-#, fuzzy
 msgid ""
 "<b>Warning</b>: Messages that only appear when something has gone wrong with "
 "Tor, but are not fatal and Tor will continue running. These messages will be "
@@ -98,7 +91,6 @@ msgstr ""
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:51
-#, fuzzy
 msgid ""
 "<b>Notice</b>: Messages that appear infrequently during normal Tor operation "
 "and are not considered errors, but you still may care about."
@@ -109,7 +101,6 @@ msgstr ""
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:55
-#, fuzzy
 msgid ""
 "<b>Info</b>: Messages that appear frequently during normal Tor operation and "
 "are not usually of interest to most users."
@@ -120,7 +111,6 @@ msgstr ""
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:59
-#, fuzzy
 msgid ""
 "<b>Debug</b>: Extremely verbose messages that are primarily of interest to "
 "developers. You should generally not log debug messages unless you know what "
@@ -132,7 +122,6 @@ msgstr ""
 
 #. type: Content of: <html><body><p>
 #: en/log.html:66
-#, fuzzy
 msgid ""
 "Most users should only log <i>Error</i>, <i>Warning</i>, and <i>Notice</i> "
 "messages."
@@ -142,7 +131,6 @@ msgstr ""
 
 #. type: Content of: <html><body><p>
 #: en/log.html:71
-#, fuzzy
 msgid "To select which message severities you would like to see, do the following:"
 msgstr ""
 "Pour choisir les niveaux de gravité des messages que vous souhaitez "
@@ -150,7 +138,6 @@ msgstr ""
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:73 en/log.html:92
-#, fuzzy
 msgid "Open the message log from the Vidalia tray menu."
 msgstr ""
 "Ouvrez le Journal des messages à partir du menu Vidalia situé dans la zone "
@@ -158,13 +145,11 @@ msgstr ""
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:74 en/log.html:93
-#, fuzzy
 msgid "Click on <i>Settings</i> at the top of the message log window."
 msgstr "Cliquez <i>Options</i> en haut de la fenêtre du Journal."
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/log.html:76
-#, fuzzy
 msgid ""
 "Check message severities you would like to see from the Message Filter group "
 "on the left and uncheck message severities you would like to hide."
@@ -174,7 +159,6 @@ msgstr ""
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/log.html:79
-#, fuzzy
 msgid "Click <i>Save Settings</i> to apply your new message filter."
 msgstr ""
 "Cliquez <i>Enregistrer les options</i> pour utiliser votre nouveau filtre "
@@ -182,19 +166,16 @@ msgstr ""
 
 #. type: Content of: <html><body>
 #: en/log.html:84
-#, fuzzy
 msgid "<a name=\"logfile\"/>"
 msgstr "<a name=\"logfile\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/log.html:85
-#, fuzzy
 msgid "Logging to a File"
 msgstr "Enregistrer les messages dans un fichier"
 
 #. type: Content of: <html><body><p>
 #: en/log.html:87
-#, fuzzy
 msgid ""
 "Vidalia can also write log messages to a file, as well as logging them in "
 "the message log window. To enable logging to a file, follow these steps:"
@@ -205,7 +186,6 @@ msgstr ""
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:94
-#, fuzzy
 msgid "Check the box labeled <i>Automatically save new log messages to a file</i>."
 msgstr ""
 "Cochez la case intitulé <i>Enregistrer automatiquement les nouveaux messages "
@@ -213,7 +193,6 @@ msgstr ""
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:96
-#, fuzzy
 msgid ""
 "If you would like to change the file to which messages will be written, "
 "either type the path and filename into the text box, or click <i>Browse</i> "
@@ -225,7 +204,6 @@ msgstr ""
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:100
-#, fuzzy
 msgid "Click <i>Save Settings</i> to save your log destination."
 msgstr ""
 "Cliquez <i>Enregistrer les options</i> pour sauvegarder le chemin du "

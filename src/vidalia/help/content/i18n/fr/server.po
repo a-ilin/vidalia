@@ -24,13 +24,11 @@ msgstr ""
 
 #. type: Content of: <html><body><h1>
 #: en/server.html:16
-#, fuzzy
 msgid "Setting Up a Tor Relay"
 msgstr "Installer un relais Tor"
 
 #. type: Content of: <html><body>
 #: en/server.html:19
-#, fuzzy
 msgid ""
 "The Tor network is made up of volunteers all over the world who donate some "
 "of their spare bandwidth by running a Tor relay. Vidalia helps you do your "
@@ -43,13 +41,11 @@ msgstr ""
 
 #. type: Content of: <html><body><h3>
 #: en/server.html:24
-#, fuzzy
 msgid "Basic Settings"
 msgstr "Options de base"
 
 #. type: Content of: <html><body><p>
 #: en/server.html:26
-#, fuzzy
 msgid ""
 "If you decide you want to help the Tor network grow by running a relay, you "
 "can follow these steps to get started:"
@@ -59,7 +55,6 @@ msgstr ""
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:31
-#, fuzzy
 msgid ""
 "Open the <i>Configuration Dialog</i> by selecting <i>Settings</i> from the "
 "tray menu or <i>Preferences</i> from your system menubar on Macintosh "
@@ -71,13 +66,11 @@ msgstr ""
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:35
-#, fuzzy
 msgid "Select the <i>Relay</i> configuration page."
 msgstr "Sélectionnez la page de configuration <i>Relais</i>."
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:37
-#, fuzzy
 msgid ""
 "Decide whether you want to run a normal Tor relay or a <i>bridge</i> relay "
 "(Tor 0.2.0.8-alpha or newer). Bridge relays help censored Tor users who are "
@@ -96,13 +89,11 @@ msgstr ""
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:44
-#, fuzzy
 msgid "Enter the following information:"
 msgstr "Indiquez les informations suivantes:"
 
 #. type: Content of: <html><body><ol><ul><li>
 #: en/server.html:46
-#, fuzzy
 msgid ""
 "<b>Nickname</b>: The name which your relay will be known as on the Tor "
 "network. An example of a relay nickname is \"MyVidaliaRelay\"."
@@ -112,7 +103,6 @@ msgstr ""
 
 #. type: Content of: <html><body><ol><ul><li>
 #: en/server.html:50
-#, fuzzy
 msgid ""
 "<b>Contact Info</b>: Your e-mail address. This address will only be used to "
 "contact you in case there is an important Tor security update or something "
@@ -126,7 +116,6 @@ msgstr ""
 
 #. type: Content of: <html><body><ol><ul><li>
 #: en/server.html:56
-#, fuzzy
 msgid ""
 "<b>Relay Port</b>: The port on which your relay will listen for traffic from "
 "clients or other Tor relays."
@@ -136,7 +125,6 @@ msgstr ""
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:62
-#, fuzzy
 msgid ""
 "If you would like to mirror Tor's directory of relays for others on the "
 "network you can check the box labeled <i>Mirror the Relay Directory</i>.  If "
@@ -155,19 +143,16 @@ msgstr ""
 
 #. type: Content of: <html><body>
 #: en/server.html:71
-#, fuzzy
 msgid "<a name=\"bandwidth\"/>"
 msgstr "<a name=\"bandwidth\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/server.html:72
-#, fuzzy
 msgid "Bandwidth Limits"
 msgstr "Limites de la bande passante"
 
 #. type: Content of: <html><body><p>
 #: en/server.html:74
-#, fuzzy
 msgid ""
 "Running a Tor relay can consume a large amount of bandwidth; however, Tor "
 "allows you to limit the amount of bandwidth that you are willing to "
@@ -182,7 +167,6 @@ msgstr ""
 
 #. type: Content of: <html><body><p>
 #: en/server.html:80
-#, fuzzy
 msgid ""
 "You should select the option in the dropdown box that best matches your "
 "connection speed. If you select <i>Custom</i>, you will be able to specify "
@@ -194,13 +178,11 @@ msgstr ""
 
 #. type: Content of: <html><body><h4>
 #: en/server.html:84
-#, fuzzy
 msgid "Custom Limits"
 msgstr "Limites personnalisées"
 
 #. type: Content of: <html><body><p>
 #: en/server.html:86
-#, fuzzy
 msgid ""
 "The <i>maximum rate</i> is a pool of bytes used to fulfill requests during "
 "short periods of traffic higher than your specified <i>average rate</i>, but "
@@ -223,7 +205,6 @@ msgstr ""
 
 #. type: Content of: <html><body><p>
 #: en/server.html:96
-#, fuzzy
 msgid ""
 "The <i>average rate</i> is the maximum long-term average bandwidth allowed "
 "(in kilobytes per second). For example, you might want to choose 2 megabytes "
@@ -240,7 +221,6 @@ msgstr ""
 
 #. type: Content of: <html><body><p>
 #: en/server.html:103
-#, fuzzy
 msgid ""
 "It is important to remember that Tor measures bandwidth in <b>bytes</b>, not "
 "bits. Also, Tor only looks at incoming bytes instead of outgoing bytes. For "
@@ -259,19 +239,16 @@ msgstr ""
 
 #. type: Content of: <html><body>
 #: en/server.html:111
-#, fuzzy
 msgid "<a name=\"exitpolicy\"/>"
 msgstr "<a name=\"exitpolicy\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/server.html:112
-#, fuzzy
 msgid "Exit Policies"
 msgstr "Politiques de sortie"
 
 #. type: Content of: <html><body><p>
 #: en/server.html:114
-#, fuzzy
 msgid ""
 "Exit policies give you a way to specify what kinds of resources on the "
 "Internet you are willing let other Tor users access from your Tor relay.  "
@@ -288,7 +265,6 @@ msgstr ""
 
 #. type: Content of: <html><body><p>
 #: en/server.html:121
-#, fuzzy
 msgid ""
 "Each of the checkboxes represents a type of resource that you can allow Tor "
 "users to access through your relay. If you uncheck the box next to a "
@@ -307,7 +283,6 @@ msgstr ""
 
 #. type: Content of: <html><body><p>
 #: en/server.html:130
-#, fuzzy
 msgid ""
 "For completeness, the following table lists the specific port numbers "
 "represented by each of the exit policy checkboxes. The <b>Description</b> "
@@ -321,91 +296,76 @@ msgstr ""
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:138
-#, fuzzy
 msgid "<b>Checkbox</b>"
 msgstr "<b>Case à cocher</b>"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:139
-#, fuzzy
 msgid "<b>Ports</b>"
 msgstr "<b>Ports</b>"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:140
-#, fuzzy
 msgid "<b>Description</b>"
 msgstr "<b>Description</b>"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:143
-#, fuzzy
 msgid "Websites"
 msgstr "Sites web"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:144
-#, fuzzy
 msgid "80"
 msgstr "80"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:145
-#, fuzzy
 msgid "Normal, unencrypted Web browsing"
 msgstr "Normal, navigation web non chiffrée"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:148
-#, fuzzy
 msgid "Secure Websites (SSL)"
 msgstr "Sites web sécurisés (SSL)"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:149
-#, fuzzy
 msgid "443"
 msgstr "443"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:150
-#, fuzzy
 msgid "Encrypted Web browsing"
 msgstr "Accès aux sites web sécurisés"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:153
-#, fuzzy
 msgid "Retrieve Mail (POP, IMAP)"
 msgstr "Téléchargement des courriels (POP, IMAP)"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:154
-#, fuzzy
 msgid "110, 143, 993, 995"
 msgstr "110, 143, 993, 995"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:155
-#, fuzzy
 msgid "Downloading email (does not permit sending email)"
 msgstr "Téléchargement des courriels (ne permet pas d'en envoyer)"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:158
-#, fuzzy
 msgid "Instant Messaging (IM)"
 msgstr "Messagerie instantanée (IM)"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:159
-#, fuzzy
 msgid "703, 1863, 5050, 5190, 5222, 5223, 8300, 8888"
 msgstr "703, 1863, 5050, 5190, 5222, 5223, 8300, 8888"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:160
-#, fuzzy
 msgid "Instant messaging applications like MSN Messenger, AIM, ICQ, and Jabber"
 msgstr ""
 "Applications de messageries instantanées telles que Jabber, MSN Messenger, "
@@ -413,37 +373,31 @@ msgstr ""
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:163
-#, fuzzy
 msgid "Internet Relay Chat (IRC)"
 msgstr "Chat (IRC)"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:164
-#, fuzzy
 msgid "6660-6669, 6697, 7000-7001"
 msgstr "6660-6669, 6697, 7000-7001"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:165
-#, fuzzy
 msgid "IRC clients and servers"
 msgstr "Clients et serveurs IRC"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:168
-#, fuzzy
 msgid "Misc. Other Services"
 msgstr "Autres services"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:169
-#, fuzzy
 msgid "*"
 msgstr "*"
 
 #. type: Content of: <html><body><table><tr><td>
 #: en/server.html:170
-#, fuzzy
 msgid "All other applications that aren't covered by the previous checkboxes"
 msgstr ""
 "Toutes les autres applications non couvertes par les précédentes cases à "
@@ -451,7 +405,6 @@ msgstr ""
 
 #. type: Content of: <html><body><p>
 #: en/server.html:175
-#, fuzzy
 msgid ""
 "If you do not want to let other Tor users make connections outside the Tor "
 "network from your relay, you can uncheck all of the checkboxes. Even if you "
@@ -467,7 +420,6 @@ msgstr ""
 
 #. type: Content of: <html><body><p>
 #: en/server.html:182
-#, fuzzy
 msgid ""
 "If you chose to run a bridge relay, the <i>Exit Policies</i> tab will be "
 "grayed out, since bridge relays do not allow exit connections. Bridges are "
@@ -480,19 +432,16 @@ msgstr ""
 
 #. type: Content of: <html><body>
 #: en/server.html:188
-#, fuzzy
 msgid "<a name=\"upnp\"/>"
 msgstr "<a name=\"upnp\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/server.html:189
-#, fuzzy
 msgid "Port Forwarding"
 msgstr "Transfert de Ports"
 
 #. type: Content of: <html><body><p>
 #: en/server.html:191
-#, fuzzy
 msgid ""
 "Many home users connect to the Internet via a <i>router</i>, which allows "
 "multiple computers on a local network to share the same Internet "
@@ -511,7 +460,6 @@ msgstr ""
 
 #. type: Content of: <html><body><p>
 #: en/server.html:200
-#, fuzzy
 msgid ""
 "To make your relay publicly accessible, your router or firewall needs to "
 "know which ports to allow through to your computer by setting up what is "
@@ -528,7 +476,6 @@ msgstr ""
 
 #. type: Content of: <html><body><p>
 #: en/server.html:208
-#, fuzzy
 msgid ""
 "If you check the box labeled <i>Attempt to automatically configure port "
 "forwarding</i>, Vidalia will attempt to automatically set up port forwarding "
@@ -547,7 +494,6 @@ msgstr ""
 
 #. type: Content of: <html><body><p>
 #: en/server.html:217
-#, fuzzy
 msgid ""
 "If the <i>Test</i> button finds that Vidalia is unable to set up port "
 "forwarding for you, you may need to enable this feature on your router or "
@@ -573,7 +519,6 @@ msgstr ""
 
 #. type: Content of: <html><body><p>
 #: en/server.html:229
-#, fuzzy
 msgid ""
 "If you need to set up port forwarding manually, the website <a "
 "href=\"http://www.portforward.com/english/routers/port_forwarding/routerindex.htm\"> "
