@@ -1,0 +1,48 @@
+# SOME DESCRIPTIVE TITLE
+# Copyright (C) YEAR The Tor Project, Inc.
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-06-26 16:59+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.1.1\n"
+
+#. type: Content of: <html><body><h1>
+#: en/index.html:16
+msgid "Vidalia Help"
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/index.html:20
+msgid ""
+"Select a help topic from the tree on the left or click on the Search button "
+"above the list of topics to search through all available help topics."
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/index.html:25
+msgid ""
+"You can use the <i>Find</i> button on the toolbar above to search within a "
+"particular help topic."
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/index.html:30
+msgid "The <i>Home</i> button above will bring you back to this home page."
+msgstr ""
+
+#. type: Content of: <html><body><p>
+#: en/index.html:34
+msgid ""
+"See the <a href=\"links.html\">Helpful Links</a> topic for some places you "
+"can visit to find additional help and information about Vidalia and Tor."
+msgstr ""
