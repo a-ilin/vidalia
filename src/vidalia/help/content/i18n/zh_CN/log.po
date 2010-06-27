@@ -10,24 +10,23 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-06-27 07:54-0600\n"
+"Last-Translator: Runa Sandvik <runa.sandvik@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1\n"
+"X-Generator: Pootle 1.1.0\n"
 
 #. type: Content of: <html><body><h1>
 #: en/log.html:16
 msgid "Message Log"
-msgstr ""
+msgstr "消息日志"
 
 #. type: Content of: <html><body>
 #: en/log.html:19
@@ -38,11 +37,14 @@ msgid ""
 "verbose). See the help section on <a href=\"#severities\">message "
 "severities</a> for more information.  <a name=\"severities\"/>"
 msgstr ""
+"通过消息日志您可以看到Tor进程的运行状态信息。 <a name=\\\"basic\\\"/> 每则消息都有一个关联的<i>程度级别</i>，从<b>出错 "
+"</b> (最严重) 到 <b>Debug</b> (最冗长)，可参考 <a "
+"href=\\\"#severities\\\">消息级别</a>段落的更多介绍。<a name=\\\"severities\\\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/log.html:28
 msgid "Message Severities"
-msgstr ""
+msgstr "消息级别"
 
 #. type: Content of: <html><body><p>
 #: en/log.html:30
@@ -51,12 +53,12 @@ msgid ""
 "severity message usually indicates that something has gone wrong with "
 "Tor. Lower severity messages appear frequently during normal Tor operations "
 "and usually do not need to be logged."
-msgstr ""
+msgstr "消息级别表明了该消息的重要程度。高级别的消息表明Tor出现了问题； 低级别消息则在Tor的正常运行中出现，一般来说不需要纪录"
 
 #. type: Content of: <html><body><p>
 #: en/log.html:37
 msgid "The possible message severities, from most severe to least severe, are:"
-msgstr ""
+msgstr "消息级别从高到低分为："
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:41
@@ -64,7 +66,7 @@ msgid ""
 "<b>Error</b>: Messages that appear when something has gone very wrong and "
 "Tor cannot proceed. These messages will be highlighted in <i>red</i> in the "
 "message log."
-msgstr ""
+msgstr "<b>出错</b>：发生了严重的错误，Tor无法继续运行。此类消息在日志窗口中会以<i>红色</i>高亮显示。"
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:46
@@ -72,21 +74,21 @@ msgid ""
 "<b>Warning</b>: Messages that only appear when something has gone wrong with "
 "Tor, but are not fatal and Tor will continue running. These messages will be "
 "highlighted in <i>yellow</i>."
-msgstr ""
+msgstr "<b>警告</b>：发生了错误，但还不致命，Tor可以继续运行。此类消息以<i>黄色</i>高亮显示。"
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:51
 msgid ""
 "<b>Notice</b>: Messages that appear infrequently during normal Tor operation "
 "and are not considered errors, but you still may care about."
-msgstr ""
+msgstr "<b>注意</b>：Tor正常运行中较少出现的消息，不被视作错误，但仍要引起注意。"
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:55
 msgid ""
 "<b>Info</b>: Messages that appear frequently during normal Tor operation and "
 "are not usually of interest to most users."
-msgstr ""
+msgstr "<b>信息</b>：Tor正常运行中经常出现的消息，通常用不着关注。"
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:59
@@ -94,63 +96,63 @@ msgid ""
 "<b>Debug</b>: Extremely verbose messages that are primarily of interest to "
 "developers. You should generally not log debug messages unless you know what "
 "you are doing."
-msgstr ""
+msgstr "<b>Debug</b>：非常冗长的消息，开发员会感兴趣。除非你知根知底，否则不需要纪录这类消息。"
 
 #. type: Content of: <html><body><p>
 #: en/log.html:66
 msgid ""
 "Most users should only log <i>Error</i>, <i>Warning</i>, and <i>Notice</i> "
 "messages."
-msgstr ""
+msgstr "大部分用户只需要纪录<i>出错</i>、<i>警告</i>和<i>注意</i>三类消息。"
 
 #. type: Content of: <html><body><p>
 #: en/log.html:71
 msgid "To select which message severities you would like to see, do the following:"
-msgstr ""
+msgstr "选择您要查看哪些消息级别，按如下步骤："
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:73 en/log.html:92
 msgid "Open the message log from the Vidalia tray menu."
-msgstr ""
+msgstr "从Vidalia托盘中打开消息日志；"
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:74 en/log.html:93
 msgid "Click on <i>Settings</i> at the top of the message log window."
-msgstr ""
+msgstr "在消息日志窗口底部点击<i>显示设置</i>；"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/log.html:76
 msgid ""
 "Check message severities you would like to see from the Message Filter group "
 "on the left and uncheck message severities you would like to hide."
-msgstr ""
+msgstr "在消息过滤器组中，将想查看的消息级别打勾；想隐藏的话，就取消勾选。"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/log.html:79
 msgid "Click <i>Save Settings</i> to apply your new message filter."
-msgstr ""
+msgstr "点击<i>保存设置</i>，以应用新的消息过滤器。"
 
 #. type: Content of: <html><body>
 #: en/log.html:84
 msgid "<a name=\"logfile\"/>"
-msgstr ""
+msgstr "<a name=\\\"logfile\\\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/log.html:85
 msgid "Logging to a File"
-msgstr ""
+msgstr "记录到文件"
 
 #. type: Content of: <html><body><p>
 #: en/log.html:87
 msgid ""
 "Vidalia can also write log messages to a file, as well as logging them in "
 "the message log window. To enable logging to a file, follow these steps:"
-msgstr ""
+msgstr "除了将消息记录到窗口，也可以将其记录到一个文件。记录至文件的步骤如下："
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:94
 msgid "Check the box labeled <i>Automatically save new log messages to a file</i>."
-msgstr ""
+msgstr "勾选<i>将消息保存到文件</i>标签；"
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:96
@@ -158,9 +160,9 @@ msgid ""
 "If you would like to change the file to which messages will be written, "
 "either type the path and filename into the text box, or click <i>Browse</i> "
 "to navigate to a location for your log file."
-msgstr ""
+msgstr "您若想改变消息写入的文件，可以在文本框中直接输入文件路径、名称，也可以点击<i>浏览</i>以重新定位日志文件。"
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:100
 msgid "Click <i>Save Settings</i> to save your log destination."
-msgstr ""
+msgstr "最后点击<i>保存设置</i>。"
