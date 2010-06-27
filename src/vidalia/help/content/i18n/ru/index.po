@@ -10,24 +10,23 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 16:59+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-06-27 07:37-0600\n"
+"Last-Translator: Runa Sandvik <runa.sandvik@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1\n"
+"X-Generator: Pootle 1.1.0\n"
 
 #. type: Content of: <html><body><h1>
 #: en/index.html:16
 msgid "Vidalia Help"
-msgstr ""
+msgstr "Справка Vidalia"
 
 #. type: Content of: <html><body><p>
 #: en/index.html:20
@@ -35,6 +34,8 @@ msgid ""
 "Select a help topic from the tree on the left or click on the Search button "
 "above the list of topics to search through all available help topics."
 msgstr ""
+"Выберите раздел помощи из дерева слева или используйте кнопку \\\"Поиск\\\" (над "
+"списком разделов) для поиска во всех доступных разделах сразу."
 
 #. type: Content of: <html><body><p>
 #: en/index.html:25
@@ -42,11 +43,13 @@ msgid ""
 "You can use the <i>Find</i> button on the toolbar above to search within a "
 "particular help topic."
 msgstr ""
+"Используйте кнопу <i>Найти</i> (вверху) чтобы найти текст в выбранном "
+"разделе."
 
 #. type: Content of: <html><body><p>
 #: en/index.html:30
 msgid "The <i>Home</i> button above will bring you back to this home page."
-msgstr ""
+msgstr "Кнопка <i>Домой</i> вернёт вас на эту стартовую страницу."
 
 #. type: Content of: <html><body><p>
 #: en/index.html:34
@@ -54,3 +57,5 @@ msgid ""
 "See the <a href=\"links.html\">Helpful Links</a> topic for some places you "
 "can visit to find additional help and information about Vidalia and Tor."
 msgstr ""
+"В разделе <a href=\\\"links.html\\\">Полезные Ссылки</a> перечислены некоторые "
+"места где можно найти дополнительную информацию по Vidalia и Tor."
