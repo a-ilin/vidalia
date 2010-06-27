@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: 2010-06-27 08:53-0600\n"
+"PO-Revision-Date: 2010-06-27 08:54-0600\n"
 "Last-Translator: b4ry0n <florianraemisch@web.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -51,6 +51,8 @@ msgid ""
 "If you decide you want to help the Tor network grow by running a relay, you "
 "can follow these steps to get started:"
 msgstr ""
+"Wenn du dich dazu entschließt dem Tor Netzwerk beim wachsen zu helfen, dann "
+"befolge einfach diese Schritte um loszulegen:"
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:31
