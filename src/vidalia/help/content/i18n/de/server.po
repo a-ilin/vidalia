@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: 2010-06-27 08:54-0600\n"
+"PO-Revision-Date: 2010-06-27 08:55-0600\n"
 "Last-Translator: b4ry0n <florianraemisch@web.de>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -61,6 +61,9 @@ msgid ""
 "tray menu or <i>Preferences</i> from your system menubar on Macintosh "
 "systems."
 msgstr ""
+"Öffne das <i>Konfigurationsfenster</i> durch einen Klick auf <i>Optionen</i> "
+"im Taskmenü oder <i>Einstellungen</i> in der Menüleiste auf Macintosh "
+"Systemen"
 
 #. type: Content of: <html><body><ol><li>
 #: en/server.html:35

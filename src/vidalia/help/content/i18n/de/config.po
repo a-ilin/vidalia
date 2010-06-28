@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 16:58+0200\n"
-"PO-Revision-Date: 2010-06-27 08:38-0600\n"
+"PO-Revision-Date: 2010-06-27 09:05-0600\n"
 "Last-Translator: crypt x. <cryptix@riseup.net>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -86,12 +86,12 @@ msgstr ""
 #. type: Content of: <html><body>
 #: en/config.html:46
 msgid "<a name=\"network\"/>"
-msgstr ""
+msgstr "<a name=\"network\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:47
 msgid "Network Settings"
-msgstr ""
+msgstr "Netzwerk Einstellungen"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:49
@@ -99,8 +99,8 @@ msgid ""
 "The <i>Network</i> settings page lets you change how Tor connects to the Tor "
 "network."
 msgstr ""
-"Auf der Seite für <i>Netzwerk</i> Einstellungen, können Sie beeinflussen wie "
-"Tor sich mit dem Tor Netzwerk verbindet. "
+"Auf der Seite für <i>Netzwerk</i> Einstellungen, k&ouml;nnen Sie "
+"beeinflussen wie Tor sich mit dem Tor Netzwerk verbindet. "
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:53
@@ -116,12 +116,12 @@ msgstr ""
 "<b>Ich benutze einen Proxy für meine Internet Verbindung</b>: Wenn  für "
 "Ihren Zugriff aufs Internet ein HTTP Proxy notwendig ist, können sie Tor so "
 "einstellen, dass die Verzeichnissanfragen und die weitergeleiteten "
-"Torverbindungen durch Ihren Proxy geschickt werden.Sie müssen mindestens die "
-"Addresse oder den Hostnamen Ihres Proxys angeben, sowie den Port auf dem "
+"Torverbindungen durch Ihren Proxy geschickt werden. Sie müssen mindestens "
+"die Addresse oder den Hostnamen Ihres Proxys angeben, sowie den Port auf dem "
 "Ihr Proxy auf Verbindungen wartet. Falls Sie sich bei Ihrem Proxy "
-"authentifizieren müssen, können sie auch den <i>Benutzernamen</i> und das "
-"<i>Passwort</i> hierfür angeben, anderenfalls können sie diese Felder leer "
-"lassen."
+"authentifizieren müssen, k&ouml;nnen sie auch den <i>Benutzernamen</i> und "
+"das <i>Passwort</i> hierfür angeben, anderenfalls können sie diese Felder "
+"leer lassen."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:62
@@ -133,6 +133,12 @@ msgid ""
 "list of ports permitted by your firewall or proxy, separated by "
 "commas. (<i>Example: 80,443,8080</i>)"
 msgstr ""
+"<b>Meine Firewall lässt nur Verbindungen auf bestimmten Ports zu</b>: Wenn "
+"eine restriktive Firewall oder ein Proxy, die m&auml;glichen Ports auf denen "
+"sie Verbindungen eröffnen k&ouml;nnen beschr&auml;nkt, k&ouml;nnen Sie Tor "
+"so einstellen, dass nur Verbindungen zu Relays aufgebaut werden, mit denen "
+"Sie sich auch Verbinden k&ouml;nnen. Geben sie einfach die funktionierenden "
+"Ports ein, durch Kommas getrennt. (<i>Beispiel: 80,443,8080 </i>)"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:69
