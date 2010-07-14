@@ -92,6 +92,7 @@ set(vidalia_SRCS ${vidalia_SRCS}
   config/ExitPolicy.cpp
   config/GeneralPage.cpp
   config/IpValidator.cpp
+  config/Local8BitStringValidator.cpp
   config/NetworkPage.cpp
   config/NetworkSettings.cpp
   config/NicknameValidator.cpp
@@ -119,6 +120,7 @@ qt4_wrap_cpp(vidalia_SRCS
   config/ConfigPageStack.h
   config/DomainValidator.h
   config/GeneralPage.h
+  config/Local8BitStringValidator.h
   config/NetworkPage.h
   config/NetworkSettings.h
   config/NicknameValidator.h

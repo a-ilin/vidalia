@@ -18,6 +18,7 @@
 #include "Vidalia.h"
 #include "VMessageBox.h"
 #include "IpValidator.h"
+#include "Local8BitStringValidator.h"
 
 #include "file.h"
 
@@ -28,6 +29,7 @@
 #include <QFile>
 #include <QFileInfo>
 #include <QHostAddress>
+#include <QTextCodec>
 
 
 /** Constructor */
@@ -39,11 +41,17 @@ AdvancedPage::AdvancedPage(QWidget *parent)
 
   /* Create TorSettings object */
   _settings = new TorSettings(Vidalia::torControl());
-  
+
   /* Set validators for the control port and IP address fields */
   ui.lineControlAddress->setValidator(new IpValidator(this));
   ui.lineControlPort->setValidator(new QIntValidator(1, 65535, this));
-  
+
+  /* Set encoding validators for text boxes containing values that may be
+   * passed to Tor via the control port. */
+  ui.lineTorConfig->setValidator(new Local8BitStringValidator(this));
+  ui.lineTorDataDirectory->setValidator(new Local8BitStringValidator(this));
+  ui.linePassword->setValidator(new Local8BitStringValidator(this));
+
   /* Bind event to actions */
   connect(ui.btnBrowseTorConfig, SIGNAL(clicked()), this, SLOT(browseTorConfig()));
   connect(ui.btnBrowseTorDataDirectory, SIGNAL(clicked()),
@@ -121,7 +129,22 @@ AdvancedPage::save(QString &errmsg)
                 "specify a password.");
     return false;
   }
- 
+
+  /* Ensure that the DataDirectory and torrc options only contain characters
+   * that are valid in the local 8-bit encoding. */
+  if (! Local8BitStringValidator::canEncode(ui.lineTorConfig->text())) {
+    errmsg = tr("The specified Tor configuration file location contains "
+                "characters that cannot be represented in your system's "
+                "current 8-bit character encoding.");
+    return false;
+  }
+  if (! Local8BitStringValidator::canEncode(ui.lineTorDataDirectory->text())) {
+    errmsg = tr("The specified Tor data directory location contains "
+                "characters that cannot be represented in your system's "
+                "current 8-bit character encoding.");
+    return false;
+  }
+
   /* Only remember the torrc and datadir values if Vidalia started Tor, or
    * if the user changed the displayed values. */
   if (!Vidalia::torControl()->isVidaliaRunningTor()) {
@@ -224,7 +247,7 @@ AdvancedPage::browseTorConfig()
                        tr("Select Tor Configuration File"),
                        QFileInfo(ui.lineTorConfig->text()).filePath(),
                        tr("Tor Configuration File (torrc);;All Files (*)"));
- 
+
   /* Make sure a filename was selected */
   if (filename.isEmpty()) {
     return;
@@ -266,7 +289,7 @@ AdvancedPage::browseTorDataDirectory()
   QString dataDir = QFileDialog::getExistingDirectory(this,
                       tr("Select a Directory to Use for Tor Data"),
                       ui.lineTorDataDirectory->text());
-  
+
   if (!dataDir.isEmpty()) 
     ui.lineTorDataDirectory->setText(dataDir);
 }
