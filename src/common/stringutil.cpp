@@ -123,44 +123,119 @@ base16_encode(const QByteArray &buf)
   return hex;
 }
 
-/** Given a string <b>str</b>, this function returns a quoted string with all
- * '"' and '\' characters escaped with a single '\'. */
+/** Given an ASCII string <b>str</b>, this function returns a quoted string
+ * with all escaped characters unescaped. Non-ASCII characters in the string
+ * will be converted to the local 8-bit character encoding and encoded using
+ * an escaped octal sequence. The returned string will thus contain only
+ * printable ASCII characters. */
 QString
 string_escape(const QString &str)
 {
-  QString out;
-  out.append("\"");
-  for (int i = 0; i < str.length(); i++) {
-    if (str[i] == '\"' || str[i] == '\\')
-      out.append('\\');
-    out.append(str[i]);
+  QByteArray in;
+  QByteArray out;
+  char c;
+
+  in = str.toLocal8Bit();
+  out.append('\"');
+  for (int i = 0; i < in.length(); i++) {
+    c = in[i];
+    switch (c) {
+      case '\"':
+        out.append("\\\"");
+        break;
+      case '\\':
+        out.append("\\\\");
+        break;
+      case '\n':
+        out.append("\\n");
+        break;
+      case '\r':
+        out.append("\\r");
+        break;
+      case '\t':
+        out.append("\\t");
+        break;
+      default:
+        if (QChar(c).isPrint() && c < 127) {
+          out.append(c);
+        } else {
+          out.append('\\');
+          out.append(QString::number(c, 8).toAscii());
+        }
+    }
   }
-  out.append("\"");
-  return out;
+  out.append('\"');
+  return QString::fromAscii(out);
 }
 
 /** Given a quoted string <b>str</b>, this function returns an unquoted,
- * unescaped string. <b>str</b> must start and end with an unescaped quote. */
+ * unescaped string. <b>str</b> must start and end with an unescaped DQUOTE,
+ * The input string must contain only ASCII characters; however, non-ASCII
+ * characters can be included by encoding their byte sequences in either
+ * escaped hexadecimal (e.g., "\xFF") or octal (e.g., "\301"). The result
+ * will be converted to a QString using the local 8-bit encoding. */
 QString
 string_unescape(const QString &str, bool *ok)
 {
-  QString out;
- 
+  QByteArray out;
+  int i;
+
   /* The string must start and end with an unescaped dquote */
-  if (str.length() < 2 || !str.startsWith("\"") || !str.endsWith("\"") ||
-      (str.endsWith("\\\"") && !str.endsWith("\\\\\""))) {
-    if (ok)
-      *ok = false;
-    return QString();
-  }
-  for (int i = 1; i < str.length()-1; i++) {
-    if (str[i] == '\\')
-      i++;
-    out.append(str[i]);
+  if (str.length() < 2)
+    goto err;
+  if (! str.startsWith("\"") || ! str.endsWith("\""))
+    goto err;
+  if (str.endsWith("\\\"") && ! str.endsWith("\\\\\""))
+    goto err;
+
+  i = 1;
+  while (i < str.length()-1) {
+    if (str[i] == QLatin1Char('\\')) {
+      QChar c = str[++i];
+      if (c == QLatin1Char('n')) {
+        out.append('\n');
+      } else if (c == QLatin1Char('r')) {
+        out.append('\r');
+      } else if (c == QLatin1Char('t')) {
+        out.append('\t');
+      } else if (c == QLatin1Char('x')) {
+        if (i + 2 >= str.length())
+          goto err;
+        bool isHex;
+        char val = static_cast<char>(str.mid(i+1, 2).toUInt(&isHex, 16));
+        if (! isHex)
+          goto err;
+        out.append(val);
+        i = i + 2;
+      } else if (c.isDigit()) {
+        if (i + 2 >= str.length())
+          goto err;
+        bool isOctal;
+        uint val = str.mid(i, 3).toUInt(&isOctal, 8);
+        if (! isOctal || val > 255)
+          goto err;
+        out.append(static_cast<char>(val));
+        i = i + 2;
+      } else {
+        out.append(str[i].toLatin1());
+      }
+    } else if (str[i] == QLatin1Char('\"')) {
+      /* Unescaped DQUOTE in the middle of the string, so terminate
+       * processing and return a failure. */
+      goto err;
+    } else {
+      out.append(str[i].toLatin1());
+    }
+    i++;
   }
   if (ok)
     *ok = true;
-  return out;
+  return QString::fromLocal8Bit(out.data());
+
+err:
+  if (ok)
+    *ok = false;
+  return QString();
 }
 
 /** Parses a series of space-separated key[=value|="value"] tokens from
