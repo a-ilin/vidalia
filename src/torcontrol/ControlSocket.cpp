@@ -75,7 +75,7 @@ ControlSocket::sendCommand(ControlCommand cmd, QString *errmsg)
   tc::debug("Control Command: %1").arg(strCmd.trimmed());
 
   /* Attempt to send the command to Tor */
-  if (write(strCmd.toAscii()) != strCmd.length()) {
+  if (write(strCmd.toLocal8Bit()) != strCmd.length()) {
     return err(errmsg, tr("Error sending control command. [%1]")
                                             .arg(errorString()));
   }
@@ -91,7 +91,7 @@ ControlSocket::readLineData(QString &line, QString *errmsg)
   char buffer[1024];  /* Read in 1024 byte chunks at a time */
   int bytesRecv = QAbstractSocket::readLine(buffer, 1024);
   while (bytesRecv != -1) {
-    line.append(buffer);
+    line.append(QString::fromLocal8Bit(buffer, bytesRecv));
     if (buffer[bytesRecv-1] == '\n') {
       break;
     }
