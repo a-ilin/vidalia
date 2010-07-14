@@ -423,7 +423,16 @@ TorControl::getInfo(QHash<QString,QString> &map, QString *errmsg)
       /* Split the "key=val" line and map them */
       QStringList keyval = line.getMessage().split("=");
       if (keyval.size() == 2) {
-        map.insert(keyval.at(0), keyval.at(1));
+        QString key = keyval.at(0);
+        QString val = keyval.at(1);
+        if (val.startsWith(QLatin1Char('\"')) &&
+            val.endsWith(QLatin1Char('\"'))) {
+          bool ok;
+          val = string_unescape(val, &ok);
+          if (! ok)
+            continue;
+        }
+        map.insert(key, val);
       }
     }
     return true;
@@ -451,8 +460,17 @@ TorControl::getInfo(const QStringList &keys, QString *errmsg)
     QString key = msg.mid(0, index);
     QStringList val;
 
-    if (index > 0 && index < msg.length()-1)
-      val << msg.mid(index+1);
+    if (index > 0 && index < msg.length()-1) {
+      QString str = msg.mid(index+1);
+      if (str.startsWith(QLatin1Char('\"')) &&
+          str.endsWith(QLatin1Char('\"'))) {
+        bool ok;
+        str = string_unescape(str, &ok);
+        if (! ok)
+          continue;
+      }
+      val << str;
+    }
     if (line.hasData())
       val << line.getData();
 
@@ -805,6 +823,13 @@ TorControl::getConf(const QStringList &keys, QString *errmsg)
 
     if (index > 0 && index < msg.length()-1)
       val = msg.mid(index+1);
+    if (val.startsWith(QLatin1Char('\"')) &&
+        val.endsWith(QLatin1Char('\"'))) {
+      bool ok;
+      val = string_unescape(val, &ok);
+      if (! ok)
+        continue;
+    }
 
     if (confMap.contains(key)) {
       QStringList values = confMap.value(key).toStringList();
