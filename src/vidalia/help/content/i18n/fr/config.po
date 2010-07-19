@@ -10,24 +10,23 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 16:58+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2010-07-12 15:29-0600\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.1.1\n"
+"X-Generator: Pootle 1.1.0\n"
 
 #. type: Content of: <html><body><h1>
 #: en/config.html:16
 msgid "Configuring Vidalia and Tor"
-msgstr ""
+msgstr "Configurer Vidalia et Tor"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:20
@@ -36,24 +35,31 @@ msgid ""
 "of Vidalia and Tor. It also lets you set up and manage a <a "
 "href=\"server.html\">Tor relay</a> so you can help the Tor network grow."
 msgstr ""
+"Vidalia vous permet de configurer quelques-uns des aspects communément "
+"modifiables de Vidalia et de Tor. Il vous permet aussi de mettre en place et "
+"de gérer un <a href=\"server.html\">relai Tor</a> afin d'aider le réseau Tor "
+"à grandir."
 
 #. type: Content of: <html><body>
 #: en/config.html:26
 msgid "<a name=\"general\"/>"
-msgstr ""
+msgstr "<a name=\"general\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:27
 msgid "General Settings"
-msgstr ""
+msgstr "Paramètres généraux"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:29
 msgid "Settings on the <i>General</i> page are the most commonly modified settings."
 msgstr ""
+"Les paramètres sur la page <i>Paramètres généraux</i> sont les paramètres "
+"les plus souvent modifiés."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:32
+#, fuzzy
 msgid ""
 "<b>Tor Executable</b>: This is the Tor executable that Vidalia will run when "
 "you select <i>Start</i> from the tray menu. If you have multiple versions of "
@@ -61,6 +67,12 @@ msgid ""
 "clicking the <i>Browse</i> button and navigating to the particular Tor "
 "installation you want."
 msgstr ""
+"<b>Exécutable Tor</b>: Ceci est le fichier exécutable de Tor que Vidalia "
+"démarrera quand vous sélectionnez <i>Start</i> du menu dans la barre des "
+"tâches. Si vous avez plusieurs versions de Tor d'installées, vous pouvez "
+"dire à Vidalia quelle version vous aimeriez utiliser en cliquant le bouton "
+"<i>Parcourir</i> pour naviguer ensuite vers l'installation de Tor que vous "
+"préférez."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:39
@@ -69,16 +81,19 @@ msgid ""
 "automatically start Tor when Vidalia starts. You can also configure Vidalia "
 "to run when your system starts (<i>Windows only</i>)."
 msgstr ""
+"<b>Options de démarrage</b>: Ce paramètre vous permet de démarrer Tor "
+"automatiquement quand Vidalia démarre. Vous pouvez aussi configurer Vidalia "
+"pour démarrer en même temps que le système (<i>seulement Windows</i>)."
 
 #. type: Content of: <html><body>
 #: en/config.html:46
 msgid "<a name=\"network\"/>"
-msgstr ""
+msgstr "<a name=\"network\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:47
 msgid "Network Settings"
-msgstr ""
+msgstr "Paramètres du réseau"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:49
@@ -86,6 +101,8 @@ msgid ""
 "The <i>Network</i> settings page lets you change how Tor connects to the Tor "
 "network."
 msgstr ""
+"La page des paramètres <i>Réseau</i> vous permet de modifier comment Tor se "
+"connecte au réseau Tor."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:53
@@ -98,6 +115,14 @@ msgid ""
 "you can also enter the <i>Username</i> and <i>Password</i> you use to "
 "connect to your proxy.  Otherwise, you can leave those fields blank."
 msgstr ""
+"<b>J'utilise un proxy pour accéder à internet</b>: Si votre connexion "
+"Internet requiert un proxy HTTP, vous pouvez configurer Tor pour diriger "
+"toutes les requêtes et les connexions relais à travers ce proxy. Vous devez "
+"au moins spécifier le nom d'hôte ou l'adresse de votre proxy, et le port sur "
+"lequel le proxy attend des connexions. Si votre proxy demande une "
+"authetification, vous pouvez aussi entrer le <i>nom d'utilisateur</i> et le "
+"<i>mot de passe</i> que vous utilisez pour vous connecter à votre proxy.  "
+"Autrement, vous pouvez laisser ces champs vides."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:62
@@ -109,9 +134,17 @@ msgid ""
 "list of ports permitted by your firewall or proxy, separated by "
 "commas. (<i>Example: 80,443,8080</i>)"
 msgstr ""
+"<b>Mon pare-feu me permet de me connecter seulement sur certains ports</b>: "
+"si vous êtes derrière un pare-feu réstrictif ou derrière un proxy qui limite "
+"les connexions à certains ports seulement, vous pouvez configurer Tor de "
+"sorte à se connecter directement sur des relais qui écoutent seulement sur "
+"les ports autorisés par votre pare-feu ou proxy. Entrez simplement une liste "
+"de ports autorisés par votre pare-feu ou proxy, séparé par des virgules. "
+"(<i>Exemple: 80,443,8080</i>)"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:69
+#, fuzzy
 msgid ""
 "<b>My ISP blocks connections to the Tor network</b>: If your ISP (Internet "
 "Service Provider) blocks connections to the Tor network, Tor can attempt to "
@@ -120,29 +153,37 @@ msgid ""
 "or newer only). You can add bridge relays by specifying either their address "
 "and port number, or their address, port number, and fingerprint."
 msgstr ""
+"<b>Mon FAI bloque des connexions sur le réseau Tor</b>: Si votre FAI "
+"(Fournisseur d'accès à Internet) bloque les connexions sur le réseau Tor, "
+"Tor peut tenter d'éviter ce filtrage en chifrant ses connexions et en "
+"passant par des relais <i>pont (bridge)</i> (à partir de la version Tor "
+"0.2.0.3-alpha seulement). Vous pouvez ajouter des relais pont en spécifiant "
+"soit leur adresse et port soit leur adresse, numéro de port et empreinte."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:77
+#, fuzzy
 msgid "Below are examples of valid bridge address formats:"
-msgstr ""
+msgstr "Voici quelques exemples de formats bridge valides :"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:80
 msgid "128.213.48.13:8080"
-msgstr ""
+msgstr "128.213.48.13:8080"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:83
 msgid "128.213.48.13:8080 1054 13B1 DBDA F867 B226 74D2 52DF 3D9F A367 1F73"
-msgstr ""
+msgstr "128.213.48.13:8080 1054 13B1 DBDA F867 B226 74D2 52DF 3D9F A367 1F73"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:86
 msgid "128.213.48.13:8080 105413B1DBDAF867B22674D252DF3D9FA3671F73"
-msgstr ""
+msgstr "128.213.48.13:8080 105413B1DBDAF867B22674D252DF3D9FA3671F73"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:89
+#, fuzzy
 msgid ""
 "Even if you do not know any bridge relay addresses, checking this checkbox "
 "may still be helpful. Tor will encrypt its directory requests, which can "
@@ -153,16 +194,23 @@ msgid ""
 "relays</a> for more information on how to learn new bridge relay addresses "
 "and fingerprints."
 msgstr ""
+"Même si vous ne connaissez pas d'adresses de relais pont, il peut être utile "
+"de cocher cette case. Tor chiffrera alors ses requêtes, ce qui peut aider à "
+"dépasser des mécanisme de blocage qui cherchent à filtrer les requêtes de "
+"Tor qui concernent l'information sur d'autres relais. Si les connexions des "
+"relais Tor normaux sont aussi bloqes, il vous faudra trouver l'adresse d'un "
+"relai pont d'une manière ou d'une autre pour l'ajouter ici. A ce sujet, voir "
+"l'aide sur <a href=\"bridges.html#finding\">trouver un relai pont</a>."
 
 #. type: Content of: <html><body>
 #: en/config.html:100
 msgid "<a name=\"relay\"/>"
-msgstr ""
+msgstr "<a name=\"relay\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:101
 msgid "Relay Settings"
-msgstr ""
+msgstr "Paramètres relai"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:103
@@ -170,16 +218,18 @@ msgid ""
 "<i> See <a href=\"server.html\">this help topic</a> for detailed information "
 "about setting up and managing a Tor relay.  </i>"
 msgstr ""
+"<i> Lire <a href=\"server.html\">l'aide</a> pour des informations détaillées "
+"sur la mise en place et la gestion d'un relai Tor.  </i>"
 
 #. type: Content of: <html><body>
 #: en/config.html:109
 msgid "<a name=\"appearance\"/>"
-msgstr ""
+msgstr "<a name=\"appearance\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:110
 msgid "Appearance Settings"
-msgstr ""
+msgstr "Paramètres d'apparence"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:112
@@ -187,6 +237,8 @@ msgid ""
 "The settings on the <i>Appearance</i> page allow you to customize the look "
 "and feel of Vidalia."
 msgstr ""
+"Les paramètres d'<i>apparence</i> vous permettent de personnaliser "
+"l'apparence de Vidalia."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:116
@@ -210,12 +262,12 @@ msgstr ""
 #. type: Content of: <html><body>
 #: en/config.html:131
 msgid "<a name=\"advanced\"/>"
-msgstr ""
+msgstr "<a name=\"advanced\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:132
 msgid "Advanced Settings"
-msgstr ""
+msgstr "Paramètres avancés"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:134
@@ -298,12 +350,13 @@ msgstr ""
 #. type: Content of: <html><body>
 #: en/config.html:189
 msgid "<a name=\"services\"/>"
-msgstr ""
+msgstr "<a name=\"services\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:190
+#, fuzzy
 msgid "Hidden Service Settings"
-msgstr ""
+msgstr "Paramètres Services cachés"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:192
@@ -311,3 +364,6 @@ msgid ""
 "Hidden services allow you to provide any kind of TCP-based service, e.g.  an "
 "HTTP service, to others without revealing your IP address."
 msgstr ""
+"Les services cachés vous permettent de mettre à disposition d'autres "
+"personnes tout type de service basé sur le TCP, par exemple, un service "
+"HTTP, sans révéler votre adresse IP."
