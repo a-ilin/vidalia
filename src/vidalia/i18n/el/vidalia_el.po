@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-11-24 15:59+0000\n"
-"PO-Revision-Date: 2010-03-25 13:38-0600\n"
-"Last-Translator: George Fragos <fragos.george@gmail.com>\n"
+"PO-Revision-Date: 2010-07-15 15:43-0600\n"
+"Last-Translator: mashua <masiakos@csd.uoc.gr>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -425,7 +425,6 @@ msgid "Vidalia was unable to connect to Tor. (%1)"
 msgstr "Το Βινταλια δεν μπόρεσε να συνδεθεί στο Tor. (%1)"
 
 #: controlconnection.cpp:331
-#, fuzzy
 msgctxt "ControlConnection"
 msgid "Control socket is not connected."
 msgstr "Η υποδοχή (socket) ελέγχου δεν είναι συνδεδεμένη."
@@ -448,7 +447,6 @@ msgid "Remember my password"
 msgstr "Απομνημόνευση Κωδικού"
 
 #: controlsocket.cpp:70
-#, fuzzy
 msgctxt "ControlSocket"
 msgid "Control socket is not connected."
 msgstr "Η υποδοχή (socket) ελέγχου δεν είναι συνδεδεμένη."
@@ -488,7 +486,7 @@ msgstr "Επιλέξτε το Εκτελέσιμο του Πληρεξούσιο
 #: generalpage.cpp:98
 msgctxt "GeneralPage"
 msgid "You must specify the name of your Tor executable."
-msgstr ""
+msgstr "Πρέπει να ορίσεις το όνομα του εκτελέσιμου αρχείου του Tor."
 
 #: generalpage.cpp:106
 msgctxt "GeneralPage"
@@ -681,12 +679,12 @@ msgstr "Εύρεση:"
 #: helpbrowser.ui:174
 msgctxt "HelpBrowser"
 msgid "Find Previous"
-msgstr "Εύρεση για προηγούμενο"
+msgstr "Εύρεση προηγούμενου"
 
 #: helpbrowser.ui:187
 msgctxt "HelpBrowser"
 msgid "Find Next"
-msgstr "Εύρεση για επόμενο"
+msgstr "Εύρεση επομένου"
 
 #: helpbrowser.ui:221
 msgctxt "HelpBrowser"
@@ -1338,18 +1336,24 @@ msgstr "Ο μηδενισμός του κωδικού απέτυχε"
 msgctxt "MainWindow"
 msgid "Vidalia tried to reset Tor's control password, but was not able to restart the Tor software. Please check your Task Manager to ensure there are no other Tor processes running."
 msgstr ""
+"Το Βιντάλια (Vidalia) προσπάθησε να επαναφέρει τον αρχικό κωδικό για τις "
+"ρυθμίεις του Tor, αλλά δεν μπόρεσε να επαναεκkινήσει το Tor. Παρακαλούμε "
+"ελένξτε στη διαχείρηση εργασιών του συστήματος ότι δεν έκτελείται κάποια "
+"άλλη υπηρεσία του Tor."
 
 #: messagelog.cpp:126
 msgctxt "MessageLog"
 msgid "Messages that appear when something has "
 "gone very wrong and Tor cannot proceed."
 msgstr ""
+"Μηνύματα τα οποία εμφανίζονται όταν κάτι έχει πάει πάρα πολυ στραβά και το "
+"Tor δεν μπορεί να συνεχίσει είτε να εκτελείται έιτε να ξεκινήσει."
 
 #: messagelog.cpp:128
 msgctxt "MessageLog"
 msgid "Messages that only appear when "
 "something has gone wrong with Tor."
-msgstr ""
+msgstr "Μηνύματα τα οποία εμφανίζονται όταν κάτι έχει πάει στραβά με το Tor."
 
 #: messagelog.cpp:132
 msgctxt "MessageLog"
@@ -1358,1291 +1362,1369 @@ msgid "Messages that appear infrequently "
 "not considered errors, but you may "
 "care about."
 msgstr ""
+"Μηνύματα τα οποία εμφανίζονται χωρίς συγκεκριμμένη συχνότητα κατά τη "
+"κανονική λειτουργία του Tor και τα οποία δεν θεωρούνται σφάλματα, αλλά ίσως "
+"να σας ενδιαφέρουν."
 
 #: messagelog.cpp:134
 msgctxt "MessageLog"
 msgid "Messages that appear frequently "
 "during normal Tor operation."
 msgstr ""
+"Μηνύματα τα οποία εμφανίζονται περιοδικά κατά την κανονική λειτουργία του "
+"Tor."
 
 #: messagelog.cpp:136
 msgctxt "MessageLog"
 msgid "Hyper-verbose messages primarily of "
 "interest to Tor developers."
 msgstr ""
+"Πολύ συγκεκριμμένα μηνύματα τα οποία ενδιαφέρουν κυρίως άτομα τα οποία "
+"ασχολούνται με την ανάπτυξη του Tor."
 
 #: messagelog.cpp:189
 msgctxt "MessageLog"
 msgid "Error Setting Filter"
-msgstr ""
+msgstr "Φίλτρο ρύθμισης λαθών"
 
 #: messagelog.cpp:190
 msgctxt "MessageLog"
 msgid "Vidalia was unable to register for Tor's log events."
 msgstr ""
+"Το Βιντάλια (Vidalia) δεν ήταν ικανό να καταχωρήσει τα δεδομένα σχετικά με "
+"το αρχείο καταγραφής του Tor."
 
 #: messagelog.cpp:205
 msgctxt "MessageLog"
 msgid "Error Opening Log File"
-msgstr ""
+msgstr "Λάθος κατά το άνοιγμα του αρχείου καταγραφής."
 
 #: messagelog.cpp:206
 msgctxt "MessageLog"
 msgid "Vidalia was unable to open the specified log file."
 msgstr ""
+"Το Βιντάλια (Vidalia) δεν ήταν ικανό να ανοίξει το συγκεκριμμένο αρχείο "
+"καταγραφής."
 
 #: messagelog.cpp:227
 msgctxt "MessageLog"
 msgid "Log Filename Required"
-msgstr ""
+msgstr "Απαιτείται ένα όνομα για το αρχείο καταγραφής"
 
 #: messagelog.cpp:229
 msgctxt "MessageLog"
 msgid "You must enter a filename to be able to save log messages to a file."
 msgstr ""
+"Πρέπει να εισάγεις ένα όνομα αρχείου ώστε να μπορείς να αποθηκευσεις ένα "
+"αρχείο καταγραφής."
 
 #: messagelog.cpp:280
 msgctxt "MessageLog"
 msgid "Select Log File"
-msgstr ""
+msgstr "Επέλεξε αρχείο καταγραφής"
 
 #: messagelog.cpp:297
 msgctxt "MessageLog"
 msgid "Save Log Messages"
-msgstr ""
+msgstr "Αποθήκευση αρχείων καταγραφής"
 
 #: messagelog.cpp:300
 msgctxt "MessageLog"
 msgid "Text Files (*.txt)"
-msgstr ""
+msgstr "Αρχεία κειμένου (*.txt)"
 
 #: messagelog.cpp:309
 msgctxt "MessageLog"
 msgid "Vidalia"
-msgstr ""
+msgstr "Βιντάλια (Vidalia)"
 
 #: messagelog.cpp:310
 msgctxt "MessageLog"
 msgid "Cannot write file %1"
 ""
 "%2."
-msgstr ""
+msgstr "Δεν είναι δυνατή η εγγραφή του αρχείου %1%2."
 
 #: messagelog.cpp:360
 msgctxt "MessageLog"
 msgid "Find in Message Log"
-msgstr ""
+msgstr "Εύρεση στο αρχείο καταγραφής μυνημάτων"
 
 #: messagelog.cpp:361
 msgctxt "MessageLog"
 msgid "Find:"
-msgstr ""
+msgstr "Ευρεση:"
 
 #: messagelog.cpp:367
 msgctxt "MessageLog"
 msgid "Not Found"
-msgstr ""
+msgstr "Δεν βρέθηκε"
 
 #: messagelog.cpp:368
 msgctxt "MessageLog"
 msgid "Search found 0 matches."
-msgstr ""
+msgstr "Η αναζήτηση βρήκε 0 αποτελέσματα."
 
 #: messagelog.ui:19
 msgctxt "MessageLog"
 msgid "Message Log"
-msgstr ""
+msgstr "Αρχείο καταγραφής μηνυμάτων"
 
 #: messagelog.ui:452
 msgctxt "MessageLog"
 msgid "Message Filters..."
-msgstr ""
+msgstr "Φίλτρα μηνυμάτων"
 
 #: messagelog.ui:455
 msgctxt "MessageLog"
 msgid "Set message filters"
-msgstr ""
+msgstr "Ρύθμιση φίλτρων μηνυμάτων"
 
 #: messagelog.ui:463
 msgctxt "MessageLog"
 msgid "History Size..."
-msgstr ""
+msgstr "Μέγεθος ιστορικού..."
 
 #: messagelog.ui:466
 msgctxt "MessageLog"
 msgid "Set maximum number of messages to display"
-msgstr ""
+msgstr "Θέσε τον μέγιστο άριθμο των εμφανιζόμενων μηνυμάτων"
 
 #: messagelog.ui:477
 msgctxt "MessageLog"
 msgid "Clear"
-msgstr ""
+msgstr "Καθαρισμός"
 
 #: messagelog.ui:480
 msgctxt "MessageLog"
 msgid "Clear all messages from the Message Log (Ctrl+E)"
 msgstr ""
+"Καθαρισμός όλων των μηνυμάτων απο το αρχείο καταγραφής μηνυμάτων (Ctrl + E)"
 
 #: messagelog.ui:483
 msgctxt "MessageLog"
 msgid "Ctrl+E"
-msgstr ""
+msgstr "Ctrl + E"
 
 #: messagelog.ui:497
 msgctxt "MessageLog"
 msgid "Copy"
-msgstr ""
+msgstr "Αντιγραφή"
 
 #: messagelog.ui:500
 msgctxt "MessageLog"
 msgid "Copy the selected messages to the clipboard (Ctrl+C)"
-msgstr ""
+msgstr "Αντιγραφή των επιλεγμένων μηνυμάτων στο πρόχειρο (Ctrl+C)"
 
 #: messagelog.ui:503
 msgctxt "MessageLog"
 msgid "Ctrl+C"
-msgstr ""
+msgstr "Ctrl+C"
 
 #: messagelog.ui:514
 msgctxt "MessageLog"
 msgid "Select All"
-msgstr ""
+msgstr "Επιλογή όλων"
 
 #: messagelog.ui:517
 msgctxt "MessageLog"
 msgid "Select all messages (Ctrl+A)"
-msgstr ""
+msgstr "Επέλεξε όλα τα μηνύματα (Ctrl+A)"
 
 #: messagelog.ui:520
 msgctxt "MessageLog"
 msgid "Ctrl+A"
-msgstr ""
+msgstr "Ctrl+A"
 
 #: messagelog.ui:528
 msgctxt "MessageLog"
 msgid "Save All"
-msgstr ""
+msgstr "Αποθήκευση όλων"
 
 #: messagelog.ui:531
 msgctxt "MessageLog"
 msgid "Save all messages to a file"
-msgstr ""
+msgstr "Αποθήκευση όλων των μηνυμάτων σε αρχείο"
 
 #: messagelog.ui:539
 msgctxt "MessageLog"
 msgid "Save Selected"
-msgstr ""
+msgstr "Αποθήκευση επιλεγμένων"
 
 #: messagelog.ui:542
 msgctxt "MessageLog"
 msgid "Save selected messages to a file"
-msgstr ""
+msgstr "Αποθήκευση επιλεγμένων μηνυμάτων σε αρχείο"
 
 #: messagelog.ui:553
 msgctxt "MessageLog"
 msgid "Settings"
-msgstr ""
+msgstr "Ρυθμίσεις"
 
 #: messagelog.ui:556
 msgctxt "MessageLog"
 msgid "Adjust Message Log Settings"
-msgstr ""
+msgstr "Τροποποίηση ρυθμίσεων αρχείου καταγραφής μηνυμάτων"
 
 #: messagelog.ui:559
 msgctxt "MessageLog"
 msgid "Ctrl+T"
-msgstr ""
+msgstr "Ctrl+T"
 
 #: messagelog.ui:567
 msgctxt "MessageLog"
 msgid "Help"
-msgstr ""
+msgstr "Βοήθεια"
 
 #: messagelog.ui:570
 msgctxt "MessageLog"
 msgid "Show the help browser"
-msgstr ""
+msgstr "Εμφάνηση του περιηγητή βοήθειας"
 
 #: messagelog.ui:573
 msgctxt "MessageLog"
 msgid "F1"
-msgstr ""
+msgstr "F1"
 
 #: messagelog.ui:581
 msgctxt "MessageLog"
 msgid "Close"
-msgstr ""
+msgstr "Κλείσιμο"
 
 #: messagelog.ui:584
 msgctxt "MessageLog"
 msgid "Close the Message Log"
-msgstr ""
+msgstr "Κλείσε το αρχείο καταγραφής μηνυμάτων"
 
 #: messagelog.ui:587
 msgctxt "MessageLog"
 msgid "Esc"
-msgstr ""
+msgstr "Esc"
 
 #: messagelog.ui:598
 msgctxt "MessageLog"
 msgid "Find"
-msgstr ""
+msgstr "Εύρεση"
 
 #: messagelog.ui:601
 msgctxt "MessageLog"
 msgid "Find all messages containing the search text (Ctrl+F)"
 msgstr ""
+"Εύρεση όλων των μηνυμάτων που περιέχουν το προς αναζήτηση κείμενο (Ctrl+F)"
 
 #: messagelog.ui:604
 msgctxt "MessageLog"
 msgid "Ctrl+F"
-msgstr ""
+msgstr "Ctrl+F"
 
 #: messagelog.ui:66
 msgctxt "MessageLog"
 msgid "Time"
-msgstr ""
+msgstr "Χρόνος"
 
 #: messagelog.ui:71
 msgctxt "MessageLog"
 msgid "Type"
-msgstr ""
+msgstr "Τύπος"
 
 #: messagelog.ui:76
 msgctxt "MessageLog"
 msgid "Message"
-msgstr ""
+msgstr "Μήνυμα"
 
 #: messagelog.ui:160
 msgctxt "MessageLog"
 msgid "Saves the current Message Log settings"
-msgstr ""
+msgstr "Αποθηκεύει τις τρέχουσες ρυθμίσεις του αρχείου καταγραφής μηνυμάτων"
 
 #: messagelog.ui:163
 msgctxt "MessageLog"
 msgid "Save Settings"
-msgstr ""
+msgstr "Αποθήκευση ρυθμίσεων"
 
 #: messagelog.ui:179
 msgctxt "MessageLog"
 msgid "Cancels changes made to settings"
-msgstr ""
+msgstr "Ακυρώνει τις αλλαγές που έγιναν στις ρυθμίσεις"
 
 #: messagelog.ui:182
 msgctxt "MessageLog"
 msgid "Cancel"
-msgstr ""
+msgstr "Ακύρωση"
 
 #: messagelog.ui:196
 msgctxt "MessageLog"
 msgid "Message Filter"
-msgstr ""
+msgstr "Φίλτρο μηνύματος"
 
 #: messagelog.ui:217
 msgctxt "MessageLog"
 msgid "Error"
-msgstr ""
+msgstr "Λάθος"
 
 #: messagelog.ui:233
 msgctxt "MessageLog"
 msgid "Warning"
-msgstr ""
+msgstr "Προειδοποίηση"
 
 #: messagelog.ui:249
 msgctxt "MessageLog"
 msgid "Notice"
-msgstr ""
+msgstr "Σημείωση"
 
 #: messagelog.ui:265
 msgctxt "MessageLog"
 msgid "Info"
-msgstr ""
+msgstr "Πληροφορίες"
 
 #: messagelog.ui:281
 msgctxt "MessageLog"
 msgid "Debug"
-msgstr ""
+msgstr "Απασφαλμάτωση"
 
 #: messagelog.ui:297
 msgctxt "MessageLog"
 msgid "Message Log History"
-msgstr ""
+msgstr "Ιστορικό αρχείου καταγραφής μηνυμάτων"
 
 #: messagelog.ui:318
 msgctxt "MessageLog"
 msgid "Number of messages to display in the message log window"
 msgstr ""
+"Αριθμός μηνυμάτων προς εμφάνιση στο παράθυρο του αρχείου καταγραφής "
+"μηνυμάτων"
 
 #: messagelog.ui:337
 msgctxt "MessageLog"
 msgid "messages"
-msgstr ""
+msgstr "μυνήματα"
 
 #: messagelog.ui:356
 msgctxt "MessageLog"
 msgid "Always Save New Log Messages"
-msgstr ""
+msgstr "Πάντα να αποθηκεύεις τα νέα αρχεία καταγραφής μηνυμάτων"
 
 #: messagelog.ui:371
 msgctxt "MessageLog"
 msgid "Browse"
-msgstr ""
+msgstr "Πλοήγηση"
 
 #: messagelog.ui:394
 msgctxt "MessageLog"
 msgid "Enable automatically saving all new log messages to a file"
 msgstr ""
+"Ενεργοποίση αυτόματης αποθήκευσης όλων των νέων μηνυμάτων καταγραφής σε "
+"αρχείο"
 
 #: messagelog.ui:397
 msgctxt "MessageLog"
 msgid "Automatically save new log messages to a file"
-msgstr ""
+msgstr "Αυτόματη αποθήκευση νέων μηνυμάτων καταγραφής σε αρχείο"
 
 #: netviewer.ui:24
 msgctxt "NetViewer"
 msgid "Tor Network Map"
-msgstr ""
+msgstr "Χάρτης δικτύου Tor"
 
 #: netviewer.ui:239
 msgctxt "NetViewer"
 msgid "Refresh"
-msgstr ""
+msgstr "Ανανέωση"
 
 #: netviewer.ui:245
 msgctxt "NetViewer"
 msgid "Refresh the list of Tor relays and connections"
-msgstr ""
+msgstr "Ανανέωση της λίστας των σταθμών και των συνδέσεων του Tor"
 
 #: netviewer.ui:248
 msgctxt "NetViewer"
 msgid "Ctrl+R"
-msgstr ""
+msgstr "Ctrl+R"
 
 #: netviewer.ui:256
 msgctxt "NetViewer"
 msgid "Help"
-msgstr ""
+msgstr "Βοήθεια"
 
 #: netviewer.ui:259
 msgctxt "NetViewer"
 msgid "Show the network map help"
-msgstr ""
+msgstr "Εμφάνιση της βοήθειας του χάρτη δικτύου"
 
 #: netviewer.ui:262
 msgctxt "NetViewer"
 msgid "Show network map help"
-msgstr ""
+msgstr "Εμφάνιση βοήθειας του χάρτη δικτύου"
 
 #: netviewer.ui:265
 msgctxt "NetViewer"
 msgid "F1"
-msgstr ""
+msgstr "F1"
 
 #: netviewer.ui:273
 msgctxt "NetViewer"
 msgid "Close"
-msgstr ""
+msgstr "Κλείσιμο"
 
 #: netviewer.ui:279
 msgctxt "NetViewer"
 msgid "Close the network map"
-msgstr ""
+msgstr "Κλείσε το χάρτη δικτύου"
 
 #: netviewer.ui:282
 msgctxt "NetViewer"
 msgid "Esc"
-msgstr ""
+msgstr "Esc"
 
 #: netviewer.ui:290
 msgctxt "NetViewer"
 msgid "Zoom In"
-msgstr ""
+msgstr "Αύξηση μεγέθους"
 
 #: netviewer.ui:296
 msgctxt "NetViewer"
 msgid "Zoom in on the network map"
-msgstr ""
+msgstr "Εστίασε μέσα στο χάρτη δικτύου"
 
 #: netviewer.ui:299
 msgctxt "NetViewer"
 msgid "+"
-msgstr ""
+msgstr "+"
 
 #: netviewer.ui:307
 msgctxt "NetViewer"
 msgid "Zoom Out"
-msgstr ""
+msgstr "Μείωση μεγέθους"
 
 #: netviewer.ui:313
 msgctxt "NetViewer"
 msgid "Zoom out on the network map"
-msgstr ""
+msgstr "Εστίασε έξω απο το χάρτη δικτύου"
 
 #: netviewer.ui:316
 msgctxt "NetViewer"
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: netviewer.ui:324
 msgctxt "NetViewer"
 msgid "Zoom To Fit"
-msgstr ""
+msgstr "Εστίασε ώστε να χωραέι"
 
 #: netviewer.ui:330
 msgctxt "NetViewer"
 msgid "Zooms to fit all currently displayed circuits"
-msgstr ""
+msgstr "Εστίασε ώστε να χωραέι όλα τα κυκλώματα τα οποία είναι φανερά τώρα"
 
 #: netviewer.ui:333
 msgctxt "NetViewer"
 msgid "Ctrl+Z"
-msgstr ""
+msgstr "Ctrl+Z"
 
 #: networkpage.cpp:193
 msgctxt "NetworkPage"
 msgid "Invalid Bridge"
-msgstr ""
+msgstr "Μη έγκυρη γέφυρα"
 
 #: networkpage.cpp:194
 msgctxt "NetworkPage"
 msgid "The specified bridge identifier is not valid."
-msgstr ""
+msgstr "Ο καθορισμένος αριθμός αναγνώρισης της γέφυρας δεν είναι έγκυρος"
 
 #: networkpage.cpp:241
 msgctxt "NetworkPage"
 msgid "Copy (Ctrl+C)"
-msgstr ""
+msgstr "Αντιγραφή (Ctrl+C)"
 
 #: networkpage.cpp:272
 msgctxt "NetworkPage"
 msgid "You must specify both an IP address or hostname and a port number to configure Tor to use a proxy to access the Internet."
 msgstr ""
+"Πρέπει να καθορίσεις μία διεύθυνση IP ή ένα όνομα υπολογιστή και μία θύρα "
+"συστήματος για να ρυθμίσεις το Tor να χρησιμοποιεί ενα πρόξυ (proxy server) "
+"για να έχει πρόσβαση στο διαδίκτυο."
 
 #: networkpage.cpp:278
 msgctxt "NetworkPage"
 msgid "You must specify one or more ports to which your firewall allows you to connect."
 msgstr ""
+"Πρέπει να καθορίσεις μία ή και περισσότερες θύρες συστήματος στις οποίες το "
+"τείχος προστασίας σου επιτρέπει συνδέσεις."
 
 #: networkpage.cpp:314
 msgctxt "NetworkPage"
 msgid "'%1' is not a valid port number."
-msgstr ""
+msgstr "%1 δεν είναι έγκυρος αριθμός θύρας συστήματος"
 
 #: networkpage.ui:25
 msgctxt "NetworkPage"
 msgid "Check if your local network requires a proxy to access the Internet"
 msgstr ""
+"Επέλεξε εδω αν το τοπικό σου δίκτυο απαιτεί ένα πρόξυ (proxy server) για να "
+"έχεις πρόσβαση στο διαδίκτυο"
 
 #: networkpage.ui:28
 msgctxt "NetworkPage"
 msgid "I use a proxy to access the Internet"
-msgstr ""
+msgstr "Χρησιμοποιώ ένα πρόξυ (proxy server) για να έχω πρόσβαση στο διαδίκτυο"
 
 #: networkpage.ui:58
 msgctxt "NetworkPage"
 msgid "Proxy Settings"
-msgstr ""
+msgstr "Ρυθμίσεις πρόξυ (proxy server)"
 
 #: networkpage.ui:70
 msgctxt "NetworkPage"
 msgid "HTTP Proxy:"
-msgstr ""
+msgstr "Πρόξυ (proxy server) για HTTP"
 
 #: networkpage.ui:80
 msgctxt "NetworkPage"
 msgid "Username:"
-msgstr ""
+msgstr "Όνομα Χρήστη:"
 
 #: networkpage.ui:90
 msgctxt "NetworkPage"
 msgid "Use this proxy for HTTPS also"
 msgstr ""
+"Χρησιμοποίησε αυτόν τον πρόξυ (proxy server) και για το πρωτόκολλο HTTPS "
+"(HTTP_Secure)"
 
 #: networkpage.ui:108
 msgctxt "NetworkPage"
 msgid "Password:"
-msgstr ""
+msgstr "Κωδικός:"
 
 #: networkpage.ui:135
 msgctxt "NetworkPage"
 msgid "Port:"
-msgstr ""
+msgstr "Θύρα συστήματος:"
 
 #: networkpage.ui:176
 msgctxt "NetworkPage"
 msgid "Check to only connect to relays using ports allowed by your firewall"
 msgstr ""
+"Επέλεξε εδώ για να συνδέεσε σε σταθμούς μόνο στις επιτρεπόμενες απο το "
+"τείχος προστασίας θύρες συστήματος"
 
 #: networkpage.ui:179
 msgctxt "NetworkPage"
 msgid "My firewall only lets me connect to certain ports"
 msgstr ""
+"Το τείχος προστασίας μου με αφήνει να συνδέομαι μόνο σε συγκεκριμμένες θύρες "
+"συστήματος"
 
 #: networkpage.ui:203
 msgctxt "NetworkPage"
 msgid "Firewall Settings"
-msgstr ""
+msgstr "Ρυθμίσεις τείχους προστασίας"
 
 #: networkpage.ui:215
 msgctxt "NetworkPage"
 msgid "Allowed Ports:"
-msgstr ""
+msgstr "Επιτρεπόμενες Θύρες:"
 
 #: networkpage.ui:225
 msgctxt "NetworkPage"
 msgid "80, 443"
-msgstr ""
+msgstr "80, 443"
 
 #: networkpage.ui:235
 msgctxt "NetworkPage"
 msgid "Check to encrypt directory requests and, optionally, use bridge relays to access the Tor network"
 msgstr ""
+"Τσεκάρισε ώστε να κρυπτογραφείς τις αιτήσεις καταλόγου και, επιλεκτικά, να "
+"χρησιμοποιήσεις σταθμούς με συνδέσεις γέφυρας για να φτάσεις το δίκτυο του "
+"Tor"
 
 #: networkpage.ui:238
 msgctxt "NetworkPage"
 msgid "My ISP blocks connections to the Tor network"
-msgstr ""
+msgstr "Ο πάροχος μου του Internet μπλοκάρει τις συνδέσεις στο δίκτυο του Tor"
 
 #: networkpage.ui:262
 msgctxt "NetworkPage"
 msgid "Bridge Settings"
-msgstr ""
+msgstr "Ρυθμίσεις συνδέσεων γέφυρας"
 
 #: networkpage.ui:274
 msgctxt "NetworkPage"
 msgid "The Tor software you are currently running does not support bridges. <br>Directory connections will still be encrypted."
 msgstr ""
+"Η έκδοση του Tor που χρησιμοποιείς δεν υποστηρίζει συνδέσεις γέφυρας. <br>Οι "
+"συνδέσεις καταλόγου θα κρυπτογραφηθούν έτσι και άλλιώς."
 
 #: networkpage.ui:295
 msgctxt "NetworkPage"
 msgid "Add a Bridge:"
-msgstr ""
+msgstr "Προσθήκη μίας σύνδεσης γέφυρας:"
 
 #: networkpage.ui:318
 msgctxt "NetworkPage"
 msgid "<a href=\"bridges.finding\">How do I find a bridge?</a>"
-msgstr ""
+msgstr "<a href=\"bridges.finding\">Πως βρίσκω μία γέφυρα;</a>"
 
 #: networkpage.ui:383
 msgctxt "NetworkPage"
 msgid "Remove the selected bridges from the list"
-msgstr ""
+msgstr "Διαγραφή των επιλεγμένων συνδέσεων γέφυρας απο τη λίστα"
 
 #: networkpage.ui:399
 msgctxt "NetworkPage"
 msgid "Copy the selected bridges to the clipboard"
-msgstr ""
+msgstr "Αντιγραφή επιλεγμένων συνδέσεων γέφυρας στο πρόχειρο"
 
 #: policy.cpp:167
 msgctxt "Policy"
 msgid "accept"
-msgstr ""
+msgstr "Αποδοχή"
 
 #: policy.cpp:167
 msgctxt "Policy"
 msgid "reject"
-msgstr ""
+msgstr "Απόρριψη"
 
 #: routerdescriptor.cpp:76
 msgctxt "RouterDescriptor"
 msgid "Online"
-msgstr ""
+msgstr "Συνδεμένο"
 
 #: routerdescriptor.cpp:78
 msgctxt "RouterDescriptor"
 msgid "Hibernating"
-msgstr ""
+msgstr "Αδρανοποίηση"
 
 #: routerdescriptor.cpp:80
 msgctxt "RouterDescriptor"
 msgid "Offline"
-msgstr ""
+msgstr "Εκτός σύνδεσης"
 
 #: routerdescriptorview.cpp:139
 msgctxt "RouterDescriptorView"
 msgid "Location:"
-msgstr ""
+msgstr "Τοποθεσία:"
 
 #: routerdescriptorview.cpp:143
 msgctxt "RouterDescriptorView"
 msgid "IP Address:"
-msgstr ""
+msgstr "Διεύθησνη ΙΡ:"
 
 #: routerdescriptorview.cpp:144
 msgctxt "RouterDescriptorView"
 msgid "Platform:"
-msgstr ""
+msgstr "Πλατφόρμα:"
 
 #: routerdescriptorview.cpp:148
 msgctxt "RouterDescriptorView"
 msgid "Bandwidth:"
-msgstr ""
+msgstr "Εύρος ζώνης:"
 
 #: routerdescriptorview.cpp:150
 msgctxt "RouterDescriptorView"
 msgid "Uptime:"
-msgstr ""
+msgstr "Χρόνος που εκτελείται:"
 
 #: routerdescriptorview.cpp:156
 msgctxt "RouterDescriptorView"
 msgid "Last Updated:"
-msgstr ""
+msgstr "Τελευταία ενημέρωση:"
 
 #: routerdescriptorview.cpp:100
 msgctxt "RouterDescriptorView"
 msgid "%1 days "
-msgstr ""
+msgstr "%1 μέρες"
 
 #: routerdescriptorview.cpp:103
 msgctxt "RouterDescriptorView"
 msgid "%1 hours "
-msgstr ""
+msgstr "%1 ώρες "
 
 #: routerdescriptorview.cpp:106
 msgctxt "RouterDescriptorView"
 msgid "%1 mins "
-msgstr ""
+msgstr "%1 λεπτά"
 
 #: routerdescriptorview.cpp:109
 msgctxt "RouterDescriptorView"
 msgid "%1 secs"
-msgstr ""
+msgstr "%1 δευτερόλεπτα"
 
 #: routerdescriptorview.cpp:48
 msgctxt "RouterDescriptorView"
 msgid "Copy"
-msgstr ""
+msgstr "Αντιγραφή"
 
 #: routerlistitem.cpp:67
 msgctxt "RouterListItem"
 msgid "Offline"
-msgstr ""
+msgstr "Εκτός σύνδεσης"
 
 #: routerlistitem.cpp:71
 msgctxt "RouterListItem"
 msgid "Hibernating"
-msgstr ""
+msgstr "Αδρανοποίηση"
 
 #: routerlistitem.cpp:83
 msgctxt "RouterListItem"
 msgid "%1 KB/s"
-msgstr ""
+msgstr "%1 KB/s"
 
 #: routerlistwidget.cpp:49
 msgctxt "RouterListWidget"
 msgid "Relay"
-msgstr ""
+msgstr "Σταθμός"
 
 #: routerlistwidget.cpp:74
 msgctxt "RouterListWidget"
 msgid "Zoom to Relay"
-msgstr ""
+msgstr "Εστίασε στο σταθμό"
 
 #: routerlistwidget.cpp:220
 msgctxt "RouterListWidget"
 msgid "%1 relays online"
-msgstr ""
+msgstr "%1 σταθμοί ενεργοί"
 
 #: routerlistwidget.cpp:67
 msgctxt "RouterListWidget"
 msgid "Copy"
-msgstr ""
+msgstr "Αντιγραφή"
 
 #: routerlistwidget.cpp:68
 msgctxt "RouterListWidget"
 msgid "Nickname"
-msgstr ""
+msgstr "Ψευδώνυμο"
 
 #: routerlistwidget.cpp:71
 msgctxt "RouterListWidget"
 msgid "Fingerprint"
-msgstr ""
+msgstr "Αποτύπωμα"
 
 #: serverpage.cpp:140
 msgctxt "ServerPage"
 msgid "Bridge Support Unavailable"
-msgstr ""
+msgstr "Υποστήριξη σύνδεσης γέφυρας μη διαθέσιμη"
 
 #: serverpage.cpp:143
 msgctxt "ServerPage"
 msgid "You have configured Tor to act as a bridge relay for censored users, but your version of Tor does not support bridges."
 msgstr ""
+"Έχεις ρυθμίσει το Tor να δρά σαν σταθμός με σύνδέσεις γέφυρας για τους "
+"''απαγορευμένους'' χρήστες, αλλά η έκδοση του Tor που έχεις εγκατεστημένη "
+"δεν υποστηρίζει συνδέσεις γέφυρας."
 
 #: serverpage.cpp:145
 msgctxt "ServerPage"
 msgid "Please upgrade your Tor software or configure Tor to act as a normal Tor relay."
 msgstr ""
+"Παρακαλούμε αναβαθμίστε το λογισμικό Tor, ή ρυθμίστε το να δρά μόνο σαν "
+"κανονικός σταθμός. "
 
 #: serverpage.cpp:199
 msgctxt "ServerPage"
 msgid "Your bridge relay is not running."
-msgstr ""
+msgstr "Η σύνδεση γέφυρας σου δεν εκτελείται."
 
 #: serverpage.cpp:263
 msgctxt "ServerPage"
 msgid "You must specify at least a relay nickname and port."
-msgstr ""
+msgstr "Πρέπει να καθορίσεις τουλάχιστο ένα ψευδώνυμο σταθμού και μια θύρα."
 
 #: serverpage.ui:25
 msgctxt "ServerPage"
 msgid "Run as a client only"
-msgstr ""
+msgstr "Εκτέλεση μόνο σαν πελάτης"
 
 #: serverpage.ui:32
 msgctxt "ServerPage"
 msgid "Relay traffic for the Tor network"
-msgstr ""
+msgstr "Αναμετάδωσε κίνηση για το δίκτυο του Tor"
 
 #: serverpage.ui:39
 msgctxt "ServerPage"
 msgid "Help censored users reach the Tor network (Tor 0.2.0.8-alpha or newer)"
 msgstr ""
+"Βοήθησε τους ''απαγορευμένους'' χρήστες να φτάσουν το δίκτυο του Tor ( Tor "
+"0.2.0.8-alpha ή νεότερη έκδοση )"
 
 #: serverpage.ui:91
 msgctxt "ServerPage"
 msgid "Relay Port:"
-msgstr ""
+msgstr "Θύρα σταθμού:"
 
 #: serverpage.ui:110
 msgctxt "ServerPage"
 msgid "Enable to mirror the relay directory"
-msgstr ""
+msgstr "Ενεργοποίηση διπλο-αντιστοιχίας του καταλόγου σταθμών"
 
 #: serverpage.ui:113
 msgctxt "ServerPage"
 msgid "Mirror the Relay Directory "
-msgstr ""
+msgstr "Διπλο-αντιστοίχησε τον κατάλογο σταθμών"
 
 #: serverpage.ui:139
 msgctxt "ServerPage"
 msgid "Attempt to automatically configure port forwarding"
-msgstr ""
+msgstr "Επιχείρησε να ρυθμίσεις αυτόματα την προώθηση θυρών"
 
 #: serverpage.ui:154
 msgctxt "ServerPage"
 msgid "Test"
-msgstr ""
+msgstr "Τέστ"
 
 #: serverpage.ui:164
 msgctxt "ServerPage"
 msgid "Show help topic on port forwarding"
-msgstr ""
+msgstr "Εμφάνηση θεμάτων βοήθειας σχετικά με την προώθηση θυρών"
 
 #: serverpage.ui:204
 msgctxt "ServerPage"
 msgid "Email address at which you may be reached if there is a"
 "problem with your relay. You might also include your PGP or GPG fingerprint."
 msgstr ""
+"Διεύθηνση Email στην οποία μπορέις να ανεβρεθείς αν υπάρξει κάποιο πρόβλημα "
+"με τον σταθμό σου. Μπορείς ακόμη και να συμπέριλάβεις το PGP σου ή το GPG "
+"αποτύπωμα"
 
 #: serverpage.ui:234
 msgctxt "ServerPage"
 msgid "Directory Port:"
-msgstr ""
+msgstr "Θύρα καταλόγου"
 
 #: serverpage.ui:267
 msgctxt "ServerPage"
 msgid "Directory Port Number"
-msgstr ""
+msgstr "Αριθμός θύρας καταλόγου"
 
 #: serverpage.ui:279
 msgctxt "ServerPage"
 msgid "Contact Info:"
-msgstr ""
+msgstr "Πληροφορίες επικοινωνίας"
 
 #: serverpage.ui:337
 msgctxt "ServerPage"
 msgid "Name of your relay"
-msgstr ""
+msgstr "Όνομα του σταθμού σου"
 
 #: serverpage.ui:370
 msgctxt "ServerPage"
 msgid "Port on which users and other relays can communicate with your relay"
-msgstr ""
+msgstr "Θύρα στην οποία χρήστες και άλλοι σταθμοί επικοινωνούν με το σταθμό σου"
 
 #: serverpage.ui:380
 msgctxt "ServerPage"
 msgid "Nickname:"
-msgstr ""
+msgstr "Ψευδώνυμο"
 
 #: serverpage.ui:76
 msgctxt "ServerPage"
 msgid "Basic Settings"
-msgstr ""
+msgstr "Βασικές Ρυθμίσεις"
 
 #: serverpage.ui:435
 msgctxt "ServerPage"
 msgid "For Internet connections with fast download speed but slow upload, please list your upload speed here."
 msgstr ""
+"Για συνέσεις με γρήγορο download αλλά χαμηλό upload, παρακαλούμε αναφέρετε "
+"την ταχύτητα upload εδω."
 
 #: serverpage.ui:466
 msgctxt "ServerPage"
 msgid "Cable/DSL 256 Kbps"
-msgstr ""
+msgstr "Cable/DSL 256 Kbps"
 
 #: serverpage.ui:471
 msgctxt "ServerPage"
 msgid "Cable/DSL 512 Kbps"
-msgstr ""
+msgstr "Cable/DSL 512 Kbps"
 
 #: serverpage.ui:476
 msgctxt "ServerPage"
 msgid "Cable/DSL 768 Kbps"
-msgstr ""
+msgstr "Cable/DSL 768 Kbps"
 
 #: serverpage.ui:481
 msgctxt "ServerPage"
 msgid "T1/Cable/DSL 1.5 Mbps"
-msgstr ""
+msgstr "T1/Cable/DSL 1.5 Mbps"
 
 #: serverpage.ui:486
 msgctxt "ServerPage"
 msgid "> 1.5 Mbps"
-msgstr ""
+msgstr "> 1.5 Mbps"
 
 #: serverpage.ui:491
 msgctxt "ServerPage"
 msgid "Custom"
-msgstr ""
+msgstr "Προσαρμοσμένο"
 
 #: serverpage.ui:456
 msgctxt "ServerPage"
 msgid "Select the entry that most closely resembles your Internet connection"
 msgstr ""
+"Επέλεξε την καταχώρηση η οποία αντιπροσωπεύει καλύτερα την σύνδεση σου στο "
+"Internet"
 
 #: serverpage.ui:502
 msgctxt "ServerPage"
 msgid "Show help topic on bandwidth rate limits"
-msgstr ""
+msgstr "Εμφάνιση θεμάτων βοήθειας σχετικών με όρια εύρους ζώνης"
 
 #: serverpage.ui:591
 msgctxt "ServerPage"
 msgid "Average Rate"
-msgstr ""
+msgstr "Μέσος ρυθμός"
 
 #: serverpage.ui:620
 msgctxt "ServerPage"
 msgid "Long-term average bandwidth limit"
-msgstr ""
+msgstr "Βραχυπρόθεσμο όριο μέσου εύρους ζώνης"
 
 #: serverpage.ui:708
 msgctxt "ServerPage"
 msgid "KB/s"
-msgstr ""
+msgstr "KB/s"
 
 #: serverpage.ui:666
 msgctxt "ServerPage"
 msgid "Maximum Rate"
-msgstr ""
+msgstr "Μέγιστος ρυθμός"
 
 #: serverpage.ui:695
 msgctxt "ServerPage"
 msgid "Peak bandwidth rate limit"
-msgstr ""
+msgstr "Άνω όριο ρυθμού εύρους ζώνης"
 
 #: serverpage.ui:737
 msgctxt "ServerPage"
 msgid "Your maximum bandwidth rate must be greater than or equal to your average bandwidth rate. Both values must be at least 20 KB/s."
 msgstr ""
+"Ο μέγιστος ρυθμός σου εύρους ζώνης πρέπει να είναι μεγαλύτερος ή ίσος απο το "
+"μέσο όρο του ρυθμού έυρους ζώνης. Και οι δύο τιμές πρέπει να είναι "
+"τουλάχιστο 20 KB/s."
 
 #: serverpage.ui:400
 msgctxt "ServerPage"
 msgid "Bandwidth Limits"
-msgstr ""
+msgstr "Όρια εύρους ζώνης"
 
 #: serverpage.ui:802
 msgctxt "ServerPage"
 msgid "Ports 6660 - 6669 and 6697"
-msgstr ""
+msgstr "Θύρες 6660 - 6669 και 6697"
 
 #: serverpage.ui:805
 msgctxt "ServerPage"
 msgid "Internet Relay Chat (IRC)"
-msgstr ""
+msgstr "Κουβέντα μεταδιδόμενη απο σταθμούς στο Internet (IRC)"
 
 #: serverpage.ui:815
 msgctxt "ServerPage"
 msgid "Ports 110, 143, 993 and 995"
-msgstr ""
+msgstr "Θύρες 110, 143, 993, και 995"
 
 #: serverpage.ui:818
 msgctxt "ServerPage"
 msgid "Retrieve Mail (POP, IMAP)"
-msgstr ""
+msgstr "Λήψη Ηλεκρονικού ταχυδρομίου (POP, IMAP)"
 
 #: serverpage.ui:828
 msgctxt "ServerPage"
 msgid "Ports unspecified by other checkboxes"
-msgstr ""
+msgstr "Μη καθοριζόμενες θύρες απο αλλά checkboxes"
 
 #: serverpage.ui:831
 msgctxt "ServerPage"
 msgid "Misc Other Services"
-msgstr ""
+msgstr "Διάφορες άλλες υπηρεσίες"
 
 #: serverpage.ui:841
 msgctxt "ServerPage"
 msgid "Ports 706, 1863, 5050, 5190, 5222, 5223, 8300 and 8888"
-msgstr ""
+msgstr "Θύρες 706, 1863, 5050, 5190, 5222, 5223, 8300, και 8888"
 
 #: serverpage.ui:844
 msgctxt "ServerPage"
 msgid "Instant Messaging (IM)"
-msgstr ""
+msgstr "Άμμεσα Μηνύματα (IM)"
 
 #: serverpage.ui:854
 msgctxt "ServerPage"
 msgid "Port 443"
-msgstr ""
+msgstr "Θύρα 443"
 
 #: serverpage.ui:857
 msgctxt "ServerPage"
 msgid "Secure Websites (SSL)"
-msgstr ""
+msgstr "Ασφαλείς Ιστοχώροι (SSL)"
 
 #: serverpage.ui:867
 msgctxt "ServerPage"
 msgid "Port 80"
-msgstr ""
+msgstr "Θύρα 80"
 
 #: serverpage.ui:870
 msgctxt "ServerPage"
 msgid "Websites"
-msgstr ""
+msgstr "Ιστοχώροι"
 
 #: serverpage.ui:896
 msgctxt "ServerPage"
 msgid "Show help topic on exit policies"
-msgstr ""
+msgstr "Εμφάνηση περιεχομένου βοήθειας σχετικό με τις πολιτικές εξόδου"
 
 #: serverpage.ui:969
 msgctxt "ServerPage"
 msgid "What Internet resources should users be able to access from your relay?"
 msgstr ""
+"Σε τι είδους υπηρεσίες Internet θα μπορούν οι χρήστες να έχουν πρόσβαση απο "
+"το σταθμό σου;"
 
 #: serverpage.ui:979
 msgctxt "ServerPage"
 msgid "Tor will still block some outgoing mail and file sharing applications by default to reduce spam and other abuse."
 msgstr ""
+"Το Tor απο προεπιλογή θα μπλοκάρει μερικά εξερχόμενα e-mail και κάποιες "
+"εφαρμογές διαμοιρασμού αρχείων για να ελατώσει το spam και άλλες ενοχλήσεις. "
+"(που θα προκαλόυσαν άσκοπη φόρτωση του δικτύου)"
 
 #: serverpage.ui:764
 msgctxt "ServerPage"
 msgid "Exit Policies"
-msgstr ""
+msgstr "Πολιτικές Εξόδου"
 
 #: serverpage.ui:1015
 msgctxt "ServerPage"
 msgid "Let others access your bridge by giving them this line:"
 msgstr ""
+"Επέτρεψε σε άλλους χρήστες να έχουν πρόσβαση στη δικιά σου σύνδεση γέφυρας, "
+"δινοντάς τους αυτή τη γραμμη:"
 
 #: serverpage.ui:1039
 msgctxt "ServerPage"
 msgid "This is the identity of your bridge relay that you can give to other people"
 msgstr ""
+"Αυτή είναι η ταυτότητα της σύνδεσης γέφυρας του σταθμού σου, την οποία "
+"μπορείς να δώσεις σε άλλους ανθρώπους"
 
 #: serverpage.ui:1061
 msgctxt "ServerPage"
 msgid "Copy your bridge relay's identity to the clipboard"
 msgstr ""
+"Αντέγραψε τη ταυτότητα της σύνδεσης γέφυρας του σταθμού σου στο πρόχειρο "
 
 #: servicepage.cpp:116
 msgctxt "ServicePage"
 msgid "Error while trying to unpublish all services"
 msgstr ""
+"Κάποιο λάθος παρουσιάστηκε στην προσπάθεια απενεργοποίησης των υπηρεσιών"
 
 #: servicepage.cpp:123
 msgctxt "ServicePage"
 msgid "Please configure at least a service directory and a virtual port for each service you want to save. Remove the other ones."
 msgstr ""
+"Παρακαλούμε ρυθμίστε τουλάχιστο ένα κατάλογο υπηρεσίας και μία εικονική "
+"πόρτα συστήματος για κάθε μία υπηρεσία που θέλετε να αποθηκεύσετε. Διαγράψτε "
+"τα υπόλοιπα."
 
 #: servicepage.cpp:597
 msgctxt "ServicePage"
 msgid "Error"
-msgstr ""
+msgstr "Λάθος"
 
 #: servicepage.cpp:452
 msgctxt "ServicePage"
 msgid "Please select a Service."
-msgstr ""
+msgstr "Παρακαλούμε επιλέξτε μια υπηρεσία."
 
 #: servicepage.cpp:458
 msgctxt "ServicePage"
 msgid "Select Service Directory"
-msgstr ""
+msgstr "Επέλεξε κατάλογο υπηρεσίας"
 
 #: servicepage.cpp:547
 msgctxt "ServicePage"
 msgid "Virtual Port may only contain valid port numbers [1..65535]."
 msgstr ""
+"Οι εικονικές πόρτες συστήματος μπορούν να περιέχουν μόνο έγκυρους αριθμούς "
+"πορτών συστήματος, απο 1 εώς 65535"
 
 #: servicepage.cpp:578
 msgctxt "ServicePage"
 msgid "Target may only contain address:port, address, or port."
 msgstr ""
+"Ο στόχος μπορεί να περιέχει τα εξής, διεύθηνση:πόρτα συστήματος,  διεύθηνση "
+" ή πόρτα συστήματος"
 
 #: servicepage.cpp:598
 msgctxt "ServicePage"
 msgid "Directory already in use by another service."
-msgstr ""
+msgstr "Ο κατάλογος ήδη χρησιμοποιήται απο άλλη υπηρεσία."
 
 #: servicepage.ui:19
 msgctxt "ServicePage"
 msgid "Form"
-msgstr ""
+msgstr "Φόρμα"
 
 #: servicepage.ui:31
 msgctxt "ServicePage"
 msgid "Provided Hidden Services"
-msgstr ""
+msgstr "Παρεχόμενες κρυφές υπηρεσίες"
 
 #: servicepage.ui:56
 msgctxt "ServicePage"
 msgid "Onion Address"
-msgstr ""
+msgstr "''Διεύθηνση Κρεμμυδιού'' (masked i.p) "
 
 #: servicepage.ui:61
 msgctxt "ServicePage"
 msgid "Virtual Port"
-msgstr ""
+msgstr "Εικονική πόρτα συστήματος"
 
 #: servicepage.ui:66
 msgctxt "ServicePage"
 msgid "Target"
-msgstr ""
+msgstr "Στόχος"
 
 #: servicepage.ui:71
 msgctxt "ServicePage"
 msgid "Directory Path"
-msgstr ""
+msgstr "Διαδρομή καταλόγου"
 
 #: servicepage.ui:76
 msgctxt "ServicePage"
 msgid "Enabled"
-msgstr ""
+msgstr "Ενεργοποιημένη"
 
 #: servicepage.ui:84
 msgctxt "ServicePage"
 msgid "Add new service to list"
-msgstr ""
+msgstr "Προσθήκη νέας υπηρεσίας στη λίστα"
 
 #: servicepage.ui:97
 msgctxt "ServicePage"
 msgid "Remove selected service from list"
-msgstr ""
+msgstr "Απομάκρυνση της επιλεγμένης υπηρεσίας απο τη λίστα"
 
 #: servicepage.ui:110
 msgctxt "ServicePage"
 msgid "Copy onion address of selected service to clipboard"
 msgstr ""
+"Αντιγραφή της ''διεύθηνσης κρεμμυδιού'' (masked i.p) της επιλεγμένης "
+"υπηρεσίας στο πρόχειρο"
 
 #: servicepage.ui:123
 msgctxt "ServicePage"
 msgid "Browse in local file system and choose directory for selected service"
 msgstr ""
+"Περιήγηση στο τοπικό σύστημα αρχείων και επιλογή καταλόγου για την "
+"επιλεγμένη υπηρεσία."
 
 #: servicepage.cpp:384
 msgctxt "ServicePage"
 msgid "Created by Tor"
-msgstr ""
+msgstr "Δημιουργήθηκε απο το Tor"
 
 #: stream.cpp:131
 msgctxt "Stream"
 msgid "New"
-msgstr ""
+msgstr "Νέο"
 
 #: stream.cpp:133
 msgctxt "Stream"
 msgid "Resolving"
-msgstr ""
+msgstr "Επίλυση..."
 
 #: stream.cpp:134
 msgctxt "Stream"
 msgid "Connecting"
-msgstr ""
+msgstr "Σύνδεση..."
 
 #: stream.cpp:135
 msgctxt "Stream"
 msgid "Open"
-msgstr ""
+msgstr "Ανοικτό"
 
 #: stream.cpp:136
 msgctxt "Stream"
 msgid "Failed"
-msgstr ""
+msgstr "Απέτυχε"
 
 #: stream.cpp:137
 msgctxt "Stream"
 msgid "Closed"
-msgstr ""
+msgstr "Κλειστό"
 
 #: stream.cpp:138
 msgctxt "Stream"
 msgid "Retrying"
-msgstr ""
+msgstr "Ξαναδικιμάζω"
 
 #: stream.cpp:139
 msgctxt "Stream"
 msgid "Remapped"
-msgstr ""
+msgstr "''Ανα-χαρτογραφημένο\""
 
 #: stream.cpp:140
 msgctxt "Stream"
 msgid "Unknown"
-msgstr ""
+msgstr "Άγνωστο"
 
 #: torprocess.cpp:107
 msgctxt "TorProcess"
 msgid "Process %1 failed to stop. [%2]"
-msgstr ""
+msgstr "Η διεργασία %1 απέτυχε να σταματήσει. [%2]"
 
 #: torservice.cpp:143
 msgctxt "TorService"
 msgid "The Tor service is not installed."
-msgstr ""
+msgstr "Η Υπηρεσία του Tor δεν είναι εγκατεστημένη."
 
 #: torservice.cpp:161
 msgctxt "TorService"
 msgid "Unable to start the Tor service."
-msgstr ""
+msgstr "Δεν ήταν δυνατό να ξεκινήσει η υπηρεσία του Tor."
 
 #: torsettings.cpp:103
 msgctxt "TorSettings"
 msgid "Failed to hash the control password."
-msgstr ""
+msgstr "Αποτυχία ''ανακατώματος'' του κωδικού ελέγχου."
 
 #: upnpcontrol.cpp:139
 msgctxt "UPNPControl"
 msgid "Success"
-msgstr ""
+msgstr "Επιτυχία"
 
 #: upnpcontrol.cpp:141
 msgctxt "UPNPControl"
 msgid "No UPnP-enabled devices found"
-msgstr ""
+msgstr "Δεν βρέθηκαν συσκευές που να υποστηρίζουν UPnP"
 
 #: upnpcontrol.cpp:143
 msgctxt "UPNPControl"
 msgid "No valid UPnP-enabled Internet gateway devices found"
 msgstr ""
+"Δεν βρέθηκαν έγκυρες συσκευές Internet gateways (μόντεμς)  που να "
+"υποστηρίζουν UPnP"
 
 #: upnpcontrol.cpp:145
 msgctxt "UPNPControl"
 msgid "WSAStartup failed"
-msgstr ""
+msgstr "Η αρχικοποίηση του WSA απέτυχε"
 
 #: upnpcontrol.cpp:147
 msgctxt "UPNPControl"
 msgid "Failed to add a port mapping"
-msgstr ""
+msgstr "Αποτυχία προσθήκης ''χαρτογράφισης'' πορτών συστήματος (ports)"
 
 #: upnpcontrol.cpp:149
 msgctxt "UPNPControl"
 msgid "Failed to retrieve a port mapping"
-msgstr ""
+msgstr "Αποτυχία λήψης ''χαρτογραφησης'' πορτών συστήματος (ports)"
 
 #: upnpcontrol.cpp:151
 msgctxt "UPNPControl"
 msgid "Failed to remove a port mapping"
-msgstr ""
+msgstr "Αποτυχία διαγραφής ''χαρτογράφησης'' πορτών συστήματος (ports)"
 
 #: upnpcontrol.cpp:153
 msgctxt "UPNPControl"
 msgid "Unknown error"
-msgstr ""
+msgstr "Άγνωστο Σφάλμα"
 
 #: upnptestdialog.cpp:112
 msgctxt "UPNPTestDialog"
 msgid "Discovering UPnP-enabled devices"
-msgstr ""
+msgstr "Αναζήτηση συσκευών που είναι συμβατές με το UPnP"
 
 #: upnptestdialog.cpp:117
 msgctxt "UPNPTestDialog"
 msgid "Updating directory port mapping"
-msgstr ""
+msgstr "Ενημέρωση καταλόγου ''χαρτογράφησης'' πορτών συστήματος (ports)"
 
 #: upnptestdialog.cpp:122
 msgctxt "UPNPTestDialog"
 msgid "Updating relay port mapping"
-msgstr ""
+msgstr "Ενημέρωση ''χαρτογράφησης''  πορτών συστήματος (ports) των σταθμών"
 
 #: upnptestdialog.cpp:127
 msgctxt "UPNPTestDialog"
 msgid "Test completed successfully!"
-msgstr ""
+msgstr "Ο έλεγχος ολοκληρώθηκε με επιτυχία!"
 
 #: upnptestdialog.ui:13
 msgctxt "UPNPTestDialog"
 msgid "Testing UPnP Support"
-msgstr ""
+msgstr "Δοκιμάζουμε την υποστήριξη για UPnP."
 
 #: upnptestdialog.ui:92
 msgctxt "UPNPTestDialog"
 msgid "Testing Universal Plug & Play Support"
-msgstr ""
+msgstr "Δοκιμάζουμε την υποστήριξη για USB (Universal Serial Bus)"
 
 #: vmessagebox.cpp:77
 msgctxt "VMessageBox"
 msgid "OK"
-msgstr ""
+msgstr "Εντάξει"
 
 #: vmessagebox.cpp:78
 msgctxt "VMessageBox"
 msgid "Cancel"
-msgstr ""
+msgstr "Άκυρο"
 
 #: vmessagebox.cpp:79
 msgctxt "VMessageBox"
 msgid "Yes"
-msgstr ""
+msgstr "Ναι"
 
 #: vmessagebox.cpp:80
 msgctxt "VMessageBox"
 msgid "No"
-msgstr ""
+msgstr "Όχι"
 
 #: vmessagebox.cpp:81
 msgctxt "VMessageBox"
 msgid "Help"
-msgstr ""
+msgstr "Βοήθεια"
 
 #: vmessagebox.cpp:82
 msgctxt "VMessageBox"
 msgid "Retry"
-msgstr ""
+msgstr "Ξαναδοκίμασε"
 
 #: vmessagebox.cpp:83
 msgctxt "VMessageBox"
 msgid "Show Log"
-msgstr ""
+msgstr "Εμφάνιση αρχείου καταγραφής"
 
 #: vmessagebox.cpp:84
 msgctxt "VMessageBox"
 msgid "Show Settings"
-msgstr ""
+msgstr "Εμφάνιση Ρυθμίσεων"
 
 #: vmessagebox.cpp:85
 msgctxt "VMessageBox"
 msgid "Continue"
-msgstr ""
+msgstr "Συνέχεια"
 
 #: vmessagebox.cpp:86
 msgctxt "VMessageBox"
 msgid "Quit"
-msgstr ""
+msgstr "Έξοδος"
 
 #: vmessagebox.cpp:87
 msgctxt "VMessageBox"
 msgid "Browse"
-msgstr ""
+msgstr "Κοίταξε..."
 
 #: main.cpp:75
 msgctxt "Vidalia"
 msgid "Invalid Argument"
-msgstr ""
+msgstr "Μη έγκυρο όρισμα"
 
 #: main.cpp:89
 msgctxt "Vidalia"
 msgid "Vidalia is already running"
-msgstr ""
+msgstr "Το Vidalia (Βιντάλια) εκτελείται ήδη"
 
 #: main.cpp:95
 msgctxt "Vidalia"
@@ -2650,31 +2732,42 @@ msgid "Another Vidalia process is possibly already running. If there really is n
 ""
 "Would you like to continue starting Vidalia?"
 msgstr ""
+"Μια άλλη διαδικασία του Vidalia (Βιντάλια) πιθανότατα ήδη εκτελείται. Αν "
+"είσαστε σίγουροι ότι δεν εκτλείται κάποια σχετική διαδικασία του Vidalia "
+"(Βιντάλια), μπορείτε να επιλέξετε να συνεχίσει η αρχικοποίηση του Vidalia "
+"(Βιντάλια). Θέλετε να συνχίσει η αρχικοποίηση του Vidalia (Βιντάλια) ;"
 
 #: vidalia.cpp:169
 msgctxt "Vidalia"
 msgid "Displays this usage message and exits."
-msgstr ""
+msgstr "Εμφανίζει αυτό το μύνημα χρήσης και προκαλεί έξοδο."
 
 #: vidalia.cpp:171
 msgctxt "Vidalia"
 msgid "Resets ALL stored Vidalia settings."
 msgstr ""
+"Επαναφέρει στην αρχική τους μορφή ΟΛΕΣ τις αποθηκευμένες ρυθμίσεις του "
+"Vidalia (Βιντάλια)."
 
 #: vidalia.cpp:173
 msgctxt "Vidalia"
 msgid "Sets the directory Vidalia uses for data files."
 msgstr ""
+"Θέτει τον κατάλογο όπου το Vidalia (Βιντάλια) χρησιμοποιεί για τα αρχεία "
+"δεδομένων."
 
 #: vidalia.cpp:175
 msgctxt "Vidalia"
 msgid "Sets the name and location of Vidalia's pidfile."
 msgstr ""
+"Θέτει το όνομα και την τοποθεσία του αρχείου pidfile του Vidalia (Βιντάλια)"
 
 #: vidalia.cpp:177
 msgctxt "Vidalia"
 msgid "Sets the name and location of Vidalia's logfile."
 msgstr ""
+"Ορίζει το όνομα και την τοποθεσία του αρχείου καταγραφής του Vidalia "
+"(Βιντάλια)"
 
 #: vidalia.cpp:180
 msgctxt "Vidalia"
@@ -2699,19 +2792,19 @@ msgstr "Πληροφορίες για την χρήση του Vidalia"
 #: vidalia.cpp:238
 msgctxt "Vidalia"
 msgid "Invalid language code specified: "
-msgstr ""
+msgstr "Καθορίστηκε μη έγκυρος κωδικός γλώσσας"
 
 #: vidalia.cpp:245
 msgctxt "Vidalia"
 msgid "Invalid GUI style specified: "
-msgstr ""
+msgstr "Καθορίστικε μη έγκυρο στύλ GUI (Γραφικό Περιβάλλον Χρήστη)"
 
 #: vidalia.cpp:251
 msgctxt "Vidalia"
 msgid "Invalid log level specified: "
-msgstr ""
+msgstr "Καθορίστικε μη έγκυρο επίπεδο καταγραφής"
 
 #: vidalia.cpp:257
 msgctxt "Vidalia"
 msgid "Unable to open log file '%1': %2"
-msgstr ""
+msgstr "Δεν ήταν δυνατό να ανοίξει το αρχείο καταγραφής '%1': %2"
