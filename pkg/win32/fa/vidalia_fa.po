@@ -3,21 +3,20 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-07-12 05:29+0000\n"
-"PO-Revision-Date: 2010-05-22 00:12-0600\n"
-"Last-Translator: Javad Ahangari <javad@ahangari.com>\n"
+"PO-Revision-Date: 2010-07-29 04:40+0200\n"
+"Last-Translator: carolyn anhalt <carolyn@anhalt.org>\n"
 "Language-Team: translations@vidalia-project.net\n"
+"Language: fa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Pootle 1.1.0\n"
+"X-Generator: Pootle 2.0.5\n"
 
-#, fuzzy
 msgctxt "BundleSetupCaption"
 msgid "${BUNDLE_NAME} setup"
 msgstr "نصب ${BUNDLE_NAME}"
 
-#, fuzzy
 msgctxt "BundleWelcomeText"
 msgid ""
 "This wizard will guide you through the installation of Tor, Vidalia, Polipo, "
@@ -53,17 +52,14 @@ msgstr ""
 "است از بسته بودن آن‌ها در حين نصب اين برنامه اطمينان پيدا کنيد.\n"
 "$_CLICK"
 
-#, fuzzy
 msgctxt "BundleWelcomeTitle"
 msgid "Welcome to the ${BUNDLE_NAME} Setup Wizard"
 msgstr "به دستيار تنظيم ${BUNDLE_NAME} خوش آمديد"
 
-#, fuzzy
 msgctxt "BundleLinkText"
 msgid "${TOR_NAME} installation documentation"
 msgstr "مستندات نصب ${TOR_NAME}"
 
-#, fuzzy
 msgctxt "BundleFinishText"
 msgid ""
 "Installation is complete.\n"
@@ -78,12 +74,10 @@ msgstr ""
 "/nاگر شما تُرباتن را نصب كرده‌ايد، نياز خواهيد داشت تا يكبار فايرفاكس را "
 "ري‌استارت كنيد."
 
-#, fuzzy
 msgctxt "BundleRunNow"
 msgid "Run installed components now"
 msgstr "اجرا كردن گزينه‌هاي نصب شده"
 
-#, fuzzy
 msgctxt "VidaliaGroupDesc"
 msgid "Vidalia is a GUI that helps you control, monitor, and configure Tor."
 msgstr ""
@@ -94,12 +88,10 @@ msgctxt "VidaliaUninstDesc"
 msgid "Remove ${VIDALIA_DESC}."
 msgstr "حذف كردن ${VIDALIA_DESC}."
 
-#, fuzzy
 msgctxt "VidaliaSetupCaption"
 msgid "${VIDALIA_NAME} setup"
 msgstr "نصب${VIDALIA_NAME}"
 
-#, fuzzy
 msgctxt "VidaliaWelcomeText"
 msgid ""
 "This wizard will guide you through the installation of Vidalia, a GUI that "
@@ -112,29 +104,24 @@ msgstr ""
 "\n"
 "$_CLICK"
 
-#, fuzzy
 msgctxt "VidaliaWelcomeTitle"
 msgid "Welcome to the ${VIDALIA_NAME} Setup Wizard"
 msgstr "به دستيار نصب ${VIDALIA_NAME} خوش آمديد."
 
-#, fuzzy
 msgctxt "VidaliaLinkText"
 msgid "${VIDALIA_NAME} homepage"
 msgstr "صفحه اصلي ${VIDALIA_NAME}"
 
-#, fuzzy
 msgctxt "VidaliaAppDesc"
 msgid "Vidalia is a GUI that helps you control, monitor, and configure Tor."
 msgstr ""
 "ويداليا يك واسط گرافيكي است كه به شما در كنترل، مديريت و تنظيم كردن تُر كمك "
 "مي‌كند."
 
-#, fuzzy
 msgctxt "VidaliaStartup"
 msgid "Run At Startup"
 msgstr "اجرا شدن در هنگام بوت شدن ويندوز"
 
-#, fuzzy
 msgctxt "VidaliaStartupDesc"
 msgid "Automatically run ${VIDALIA_NAME} at startup."
 msgstr "اجرا شدن اتوماتيك ${VIDALIA_NAME} در هنگام بوت شدن ويندوز."
@@ -147,12 +134,10 @@ msgctxt "VidaliaShortcutsDesc"
 msgid "Add ${VIDALIA_NAME} to your Start menu."
 msgstr "افزودن ${VIDALIA_NAME} به منوي استارت ويندوز."
 
-#, fuzzy
 msgctxt "VidaliaRunNow"
 msgid "Run ${VIDALIA_NAME}"
 msgstr "اجراي ${VIDALIA_NAME}"
 
-#, fuzzy
 msgctxt "TorGroupDesc"
 msgid ""
 "Tor is a system for using the Internet anonymously, helping you anonymize "
@@ -167,12 +152,10 @@ msgctxt "TorUninstDesc"
 msgid "Remove ${TOR_DESC}."
 msgstr "حذف ${TOR_DESC}."
 
-#, fuzzy
 msgctxt "TorAppDesc"
 msgid "Install ${TOR_DESC}."
 msgstr "نصب ${TOR_DESC}."
 
-#, fuzzy
 msgctxt "TorAskOverwriteTorrc"
 msgid ""
 "You already have a Tor configuration file.$\n"
@@ -187,7 +170,6 @@ msgctxt "TorDocumentation"
 msgid "Documentation"
 msgstr "مستندات"
 
-#, fuzzy
 msgctxt "TorDocumentationDesc"
 msgid "Install ${TOR_NAME} documentation."
 msgstr "نصب مستندات ${TOR_NAME}."
@@ -212,32 +194,26 @@ msgctxt "PolipoUninstDesc"
 msgid "Remove ${POLIPO_DESC}."
 msgstr "حذف ${POLIPO_DESC}."
 
-#, fuzzy
 msgctxt "PolipoAppDesc"
 msgid "Install ${POLIPO_DESC}."
 msgstr "نصب ${POLIPO_DESC}."
 
-#, fuzzy
 msgctxt "PolipoShortcuts"
 msgid "Add to Start Menu"
 msgstr "افزودن به منوي استارت ويندوز"
 
-#, fuzzy
 msgctxt "PolipoShortcutsDesc"
 msgid "Add ${POLIPO_NAME} to your Start menu."
 msgstr "افزودن ${POLIPO_NAME} به منوي استارت ويندوز."
 
-#, fuzzy
 msgctxt "PolipoStartup"
 msgid "Run At Startup"
 msgstr "اجرا شدن در هنگام بوت شدن ويندوز"
 
-#, fuzzy
 msgctxt "PolipoStartupDesc"
 msgid "Automatically run ${POLIPO_NAME} at startup."
 msgstr "اجرا شدن ${POLIPO_NAME} به صورت اتوماتيك در هنگام بوت شدن ويندوز."
 
-#, fuzzy
 msgctxt "TorbuttonGroupDesc"
 msgid ""
 "Torbutton is a Firefox extension that allows you to quickly enable or "
@@ -250,22 +226,18 @@ msgctxt "TorbuttonUninstDesc"
 msgid "Remove ${TORBUTTON_DESC}."
 msgstr "حذف ${TORBUTTON_DESC}."
 
-#, fuzzy
 msgctxt "TorbuttonAppDesc"
 msgid "Install ${TORBUTTON_DESC}."
 msgstr "نصب ${TORBUTTON_DESC}."
 
-#, fuzzy
 msgctxt "TorbuttonAddToFirefox"
 msgid "Add to Firefox"
 msgstr "افزودن به فايرفاكس"
 
-#, fuzzy
 msgctxt "TorbuttonAddToFirefoxDesc"
 msgid "Add the ${TORBUTTON_DESC} extension to Firefox."
 msgstr "اضافه‌كردن افزونه ${TORBUTTON_DESC} به فايرفاكس"
 
-#, fuzzy
 msgctxt "TorbuttonFirefoxNotFound"
 msgid "Firefox was not found on your system. Not installing Torbutton."
 msgstr "فايرفاكس در سيستم شما نصب نشده است. تُرباتن نصب نخواهد شد."
