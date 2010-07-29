@@ -3,14 +3,15 @@ msgstr ""
 "Project-Id-Version: Vidalia Windows Installers\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-07-12 05:29+0000\n"
-"PO-Revision-Date: 2009-11-18 18:44-0700\n"
-"Last-Translator: ariel viera <avd@resolution.de>\n"
+"PO-Revision-Date: 2010-07-29 21:38+0200\n"
+"Last-Translator: carolyn anhalt <carolyn@anhalt.org>\n"
 "Language-Team: none\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Pootle 1.1.0\n"
+"X-Generator: Pootle 2.0.5\n"
 
 msgctxt "BundleSetupCaption"
 msgid "${BUNDLE_NAME} setup"
@@ -193,27 +194,22 @@ msgctxt "PolipoUninstDesc"
 msgid "Remove ${POLIPO_DESC}."
 msgstr "Eliminar ${POLIPO_DESC}."
 
-#, fuzzy
 msgctxt "PolipoAppDesc"
 msgid "Install ${POLIPO_DESC}."
 msgstr "Instalar ${POLIPO_DESC}."
 
-#, fuzzy
 msgctxt "PolipoShortcuts"
 msgid "Add to Start Menu"
 msgstr "Añadir al menú Inicio"
 
-#, fuzzy
 msgctxt "PolipoShortcutsDesc"
 msgid "Add ${POLIPO_NAME} to your Start menu."
-msgstr "Añadir ${POLIPO_NAME} a al menú Inicio."
+msgstr "Añadir ${POLIPO_NAME} al menú Inicio."
 
-#, fuzzy
 msgctxt "PolipoStartup"
 msgid "Run At Startup"
-msgstr "Ejecutar al inciar sesión"
+msgstr "Ejecutar al iniciar sesión"
 
-#, fuzzy
 msgctxt "PolipoStartupDesc"
 msgid "Automatically run ${POLIPO_NAME} at startup."
 msgstr "Ejecutar automáticamente ${POLIPO_NAME} al iniciar sesión."
