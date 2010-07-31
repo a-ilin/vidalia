@@ -21,6 +21,10 @@
 /** Constructor */
 StreamItem::StreamItem(const Stream &stream)
 {
+  /* Set the stream's displayed target information */
+  setText(CircuitListWidget::ConnectionColumn, stream.target());
+  setToolTip(CircuitListWidget::ConnectionColumn, stream.target());
+ 
   /* Update the status and target */
   update(stream);
 }
@@ -30,8 +34,6 @@ void
 StreamItem::update(const Stream &stream)
 {
   _stream = stream;
-  setText(CircuitListWidget::ConnectionColumn, stream.target());
-  setToolTip(CircuitListWidget::ConnectionColumn, stream.target());
   setText(CircuitListWidget::StatusColumn, stream.statusString());
   setToolTip(CircuitListWidget::StatusColumn, stream.statusString());
 }

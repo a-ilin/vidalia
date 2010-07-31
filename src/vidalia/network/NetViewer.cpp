@@ -281,17 +281,17 @@ NetViewer::addCircuit(const Circuit &circuit)
 void
 NetViewer::addStream(const Stream &stream)
 {
-  QString target = stream.targetAddress();
-  QHostAddress addr(target);
-  
-  /* If the stream's target has an IP address instead of a host name,
+  /* If the new stream's target has an IP address instead of a host name,
    * check our cache for an existing reverse address mapping. */
-  if (!addr.isNull() && _addressMap.isMapped(target)) {
-    /* Replace the IP address in the stream event with the original 
-     * hostname */
-    ui.treeCircuitList->addStream(
-      Stream(stream.id(), stream.status(), stream.circuitId(),
-             _addressMap.mappedTo(target), stream.targetPort()));
+  if (stream.status() == Stream::New) {
+    QString target = stream.targetAddress();
+    if (! QHostAddress(target).isNull() && _addressMap.isMapped(target)) {
+      /* Replace the IP address in the stream event with the original 
+       * hostname */
+      ui.treeCircuitList->addStream(
+        Stream(stream.id(), stream.status(), stream.circuitId(),
+               _addressMap.mappedTo(target), stream.targetPort()));
+    }
   } else {
     ui.treeCircuitList->addStream(stream);
   }

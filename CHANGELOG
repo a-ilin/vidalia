@@ -1,3 +1,9 @@
+0.2.10  xx-xxx-2010
+  o  Only update a stream's displayed target address in the network map if
+     no hostname was given in the stream's NEW status event. Fix suggested
+     by Robert Hogan. (Ticket #608)
+
+
 0.2.9   20-May-2010
   o Remove the GoDaddy CA certificate bundle since we changed the
     certificate used to authenticate connections to
