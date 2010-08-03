@@ -73,11 +73,18 @@ anonymity.
 
 <p>
 Usually this process of generating and setting a random control password
-happens in the background. There are two common situations, though, where
+happens in the background. There are three common situations, though, where
 Vidalia may prompt you for a password:
 </p>
 
 <ul>
+  <li>
+    You're already running Vidalia and Tor. For example, this situation
+    can happen if you installed the Vidalia bundle and now you're trying
+    to run the Tor Browser Bundle. In that case, you'll need to close the
+    old Vidalia and Tor before you can run this one.
+  </li>
+
   <li>
     <p>Vidalia crashed, but left Tor running with the last known random
     password. After you restart Vidalia, it generates a new random password,
