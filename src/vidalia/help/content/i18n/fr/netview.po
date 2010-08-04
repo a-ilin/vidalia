@@ -1,26 +1,28 @@
-##
-##  $Id$
-##
-##  This file is part of Vidalia, and is subject to the license terms in
-##  the LICENSE file, found in the top level directory of this
-##  distribution. If you did not receive the LICENSE file with this
-##  file, you may obtain it from the Vidalia source package distributed by
-##  the Vidalia Project at http://www.vidalia-project.net/. No part of
-##  Vidalia, including this file, may be copied, modified, propagated, or
-##  distributed except according to the terms described in the LICENSE
-##  file.
-##
+# 
+#   $Id$
+# 
+#   This file is part of Vidalia, and is subject to the license terms in
+#   the LICENSE file, found in the top level directory of this
+#   distribution. If you did not receive the LICENSE file with this
+#   file, you may obtain it from the Vidalia source package distributed by
+#   the Vidalia Project at http://www.vidalia-project.net/. No part of
+#   Vidalia, including this file, may be copied, modified, propagated, or
+#   distributed except according to the terms described in the LICENSE
+#   file.
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-06-26 23:00+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-06-26 17:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.5.3\n"
 
 #. type: Content of: <html><body><h1>
 #: en/netview.html:16
@@ -219,9 +221,9 @@ msgid ""
 msgstr ""
 "Le panneau des détails du relais situé à la droite de l'écran montre les "
 "informations détaillées sur le ou les relais sélectionnés dans la <a "
-"href=\"#relaylist\">liste des relais</a>. Si vous avez sélectionné un "
-"circuit ou un flux dans la liste de vos circuits et flux actuels, ce panneau "
-"donne des informations sur tous les relais où est envoyé votre trafic."
+"href=\"#relaylist\">liste des relais</a>. Si vous avez sélectionné un circuit "
+"ou un flux dans la liste de vos circuits et flux actuels, ce panneau donne "
+"des informations sur tous les relais où est envoyé votre trafic."
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:132

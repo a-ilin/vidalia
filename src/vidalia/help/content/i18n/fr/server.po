@@ -1,26 +1,28 @@
-##
-##  $Id$
-##
-##  This file is part of Vidalia, and is subject to the license terms in
-##  the LICENSE file, found in the top level directory of this
-##  distribution. If you did not receive the LICENSE file with this
-##  file, you may obtain it from the Vidalia source package distributed by
-##  the Vidalia Project at http://www.vidalia-project.net/. No part of
-##  Vidalia, including this file, may be copied, modified, propagated, or
-##  distributed except according to the terms described in the LICENSE
-##  file.
-##
+# 
+#   $Id$
+# 
+#   This file is part of Vidalia, and is subject to the license terms in
+#   the LICENSE file, found in the top level directory of this
+#   distribution. If you did not receive the LICENSE file with this
+#   file, you may obtain it from the Vidalia source package distributed by
+#   the Vidalia Project at http://www.vidalia-project.net/. No part of
+#   Vidalia, including this file, may be copied, modified, propagated, or
+#   distributed except according to the terms described in the LICENSE
+#   file.
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2010-06-26 23:01+0200\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-06-26 17:00+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Translate Toolkit 1.5.3\n"
 
 #. type: Content of: <html><body><h1>
 #: en/server.html:16
@@ -35,9 +37,9 @@ msgid ""
 "part by making it easy to set up a relay of your own.  <a name=\"basic\"/>"
 msgstr ""
 "Le réseau Tor est constitué par des bénévoles du monde entier qui donnent "
-"une partie de leur bande passante perdue en installant un relais "
-"Tor. Vidalia vous aide à participer au réseau Tor en facilitant "
-"l'installation de votre propre relais.  <a name=\"basic\"/>"
+"une partie de leur bande passante perdue en installant un relais Tor. "
+"Vidalia vous aide à participer au réseau Tor en facilitant l'installation de "
+"votre propre relais.  <a name=\"basic\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/server.html:24
@@ -160,10 +162,10 @@ msgid ""
 "network connection usable for your own use."
 msgstr ""
 "Un relais Tor peut consommer une grande quantité de bande passante. C'est la "
-"raison pour laquelle Tor vous permet de préciser le niveau de bande passante "
-"que vous souhaitez accorder au réseau Tor. Cela vous permet de faire "
-"fonctionner un relais Tor tout en conservant une connexion suffisante pour "
-"votre propre usage."
+"raison pour laquelle Tor vous permet de préciser le niveau de bande "
+"passante que vous souhaitez accorder au réseau Tor. Cela vous permet de "
+"faire fonctionner un relais Tor tout en conservant une connexion suffisante "
+"pour votre propre usage."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:80
@@ -274,12 +276,12 @@ msgid ""
 "other checkboxes or Tor's default exit policy."
 msgstr ""
 "Chaque case représente un type de ressources. Vous pouvez permettre ou "
-"refuser aux utilisateurs de Tor de passer par votre relais pour y "
-"accéder. Si vous décocher une case, les utilisateurs de Tor ne seront pas "
-"autorisés à accéder à la ressource correspondante à travers votre relais. Si "
-"la case <i>Autres services</i> est cochée, les utilisateurs de Tor pourront "
-"accéder aux services non couverts par les autres cases à cocher ou par la "
-"politique de sortie par défaut de Tor."
+"refuser aux utilisateurs de Tor de passer par votre relais pour y accéder. "
+"Si vous décocher une case, les utilisateurs de Tor ne seront pas autorisés à "
+"accéder à la ressource correspondante à travers votre relais. Si la case "
+"<i>Autres services</i> est cochée, les utilisateurs de Tor pourront accéder "
+"aux services non couverts par les autres cases à cocher ou par la politique "
+"de sortie par défaut de Tor."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:130
@@ -455,8 +457,8 @@ msgstr ""
 "connexion Internet.  Certains utilisateurs peuvent également être derrière "
 "un <i>pare-feu</i> qui bloque les connexions à votre ordinateur à partir "
 "d'autres ordinateurs d'Internet. Si vous voulez, toutefois, opérer un relais "
-"Tor, d'autres clients et relais Tor doivent être en mesure de se connecter à "
-"votre relais à travers votre routeur ou votre pare-feu."
+"Tor, d'autres clients et relais Tor doivent être en mesure de se connecter "
+"à votre relais à travers votre routeur ou votre pare-feu."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:200
@@ -513,9 +515,9 @@ msgstr ""
 "vous devriez chercher à activer une option UPnP. Le interface "
 "d'administration de la plupart des routeurs peut être accessible en ouvrant "
 "<a href=\"http://192.168.0.1/\">http://192.168.0.1</a> ou <a "
-"href=\"http://192.168.1.1/\">http://192.168.1.1</a> dans votre "
-"navigateur. Vous devriez consulter le manuel d'instruction de votre routeur "
-"pour de plus amples informations."
+"href=\"http://192.168.1.1/\">http://192.168.1.1</a> dans votre navigateur. "
+"Vous devriez consulter le manuel d'instruction de votre routeur pour de plus "
+"amples informations."
 
 #. type: Content of: <html><body><p>
 #: en/server.html:229
@@ -531,13 +533,12 @@ msgid ""
 "default on all operating systems."
 msgstr ""
 "Si vous devez configurer manuellement le transfert de port, le site <a href "
-"= "
-"\"http://www.portforward.com/english/routers/port_forwarding/routerindex.htm\"> "
-"portforward.com </a> contient des instructions sur la manière de mettre en "
-"place la redirection de port pour de nombreux types de routeurs et "
-"pare-feu.  Au minimum, vous aurez besoin de transférer <i>votre Port "
-"Relais</i>, qui par défaut est le port 443 sur Windows et 9001 sur tous les "
-"autres systèmes d'exploitation. Si vous avez aussi coché la case <i>Servir "
-"de miroir à l'annuaire des relais</i>, vous devrez également trasferrer "
-"votre <i> Port Annuaire</i>. Le <i> Port Annuaire</i> est le port 9030 par "
-"défaut sur tous les les systèmes d'exploitation."
+"= \"http://www.portforward.com/english/routers/port_forwarding/routerindex.ht"
+"m\"> portforward.com </a> contient des instructions sur la manière de mettre "
+"en place la redirection de port pour de nombreux types de routeurs et pare-"
+"feu.  Au minimum, vous aurez besoin de transférer <i>votre Port Relais</i>, "
+"qui par défaut est le port 443 sur Windows et 9001 sur tous les autres "
+"systèmes d'exploitation. Si vous avez aussi coché la case <i>Servir de "
+"miroir à l'annuaire des relais</i>, vous devrez également trasferrer votre "
+"<i> Port Annuaire</i>. Le <i> Port Annuaire</i> est le port 9030 par défaut "
+"sur tous les les systèmes d'exploitation."
