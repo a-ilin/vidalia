@@ -1,0 +1,47 @@
+
+Building Vidalia with MaxMind GeoIP Support
+-------------------------------------------
+
+Vidalia now contains support for using a local city- or country-level
+database from MaxMind.
+
+    http://www.maxmind.com/app/ip-location
+
+The following steps build Vidalia with MaxMind GeoIP support.
+
+1. Install the MaxMind GeoIP C library. If your operating system does not
+provide packages for the library (typically called libGeoIP or similar),
+then you can download, build and install the latest version from here:
+
+    http://www.maxmind.com/app/c
+
+2. Configure Vidalia with GeoIP support.
+
+    cd vidalia (or wherever your Vidalia source tree lives)
+    mkdir build && cd build
+    cmake -DUSE_GEOIP=1 \
+          -DGEOIP_INCLUDE_DIR=<path to GeoIP.h> \
+          -DGEOIP_LIBRARY_DIR=<path to libGeoIp> ..
+
+If the GeoIP library and headers are in the normal locations on OS X and
+Linux (e.g., /usr/local/lib and /usr/local/include), you can most likely
+omit -DGEOIP_INCLUDE_DIR and -DGEOIP_LIBRARY_DIR from the command above.
+
+3. Build Vidalia
+
+    See the INSTALL file included with Vidalia for details.
+
+4. Edit your Vidalia.conf to enable using a local database via the
+UseLocalGeoIpDatabase and LocalGeoIpDatabase options. For example:
+
+    [General]
+    UseLocalGeoIpDatabase=true
+    LocalGeoIpDatabase=/home/someuser/Library/Vidalia/GeoLiteCity.dat
+
+You can then start or restart Vidalia to pick up your changes and start
+using a local GeoIP database. See this URL for the latest binary version
+of MaxMind's city-level GeoIP database:
+
+    http://www.maxmind.com/app/geolitecity
+
+
