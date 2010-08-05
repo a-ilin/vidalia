@@ -26,6 +26,10 @@
 
 #cmakedefine HAVE_SIGNAL
 
+#cmakedefine HAVE_GEOIP_H
+
+#cmakedefine HAVE_GEOIPCITY_H
+
 #cmakedefine SIZEOF_INT @SIZEOF_INT@
 
 #cmakedefine USE_MINIUPNPC
@@ -35,6 +39,8 @@
 #cmakedefine USE_MARBLE
 
 #cmakedefine USE_BREAKPAD
+
+#cmakedefine USE_GEOIP
 
 #endif
 
