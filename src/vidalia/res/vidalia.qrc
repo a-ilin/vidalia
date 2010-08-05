@@ -307,4 +307,7 @@
         <file>cacert_root.crt</file>
         <file>EquifaxSecureCA.crt</file>
     </qresource>
+    <qresource prefix="/geoip">
+        <file>country-coordinates.csv</file>
+    </qresource>
 </RCC>
