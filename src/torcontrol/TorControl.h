@@ -202,6 +202,12 @@ public:
     AddressMap::AddressMapType type = AddressMap::AddressMapAll,
     QString *errmsg = 0);
 
+  /** Gets the ISO-3166 two-letter country code for <b>ip</b> from Tor.
+   * Returns a default-constructed QString on failure or if a country code
+   * is not known for <b>ip</b>. On failure, <b>errmsg</b> will be set if
+   * it's not NULL. */
+  QString ipToCountry(const QHostAddress &ip, QString *errmsg = 0);
+
 public slots:
   /** Closes the circuit specified by <b>circId</b>. If <b>ifUnused</b> is
    * true, then the circuit will not be closed unless it is unused. */

@@ -1076,3 +1076,17 @@ TorControl::getAddressMap(AddressMap::AddressMapType type, QString *errmsg)
   return addressMap;
 }
 
+/** Gets the ISO-3166 two-letter country code for <b>ip</b> from Tor.
+ * Returns a default-constructed QString on failure or if a country code
+ * is not known for <b>ip</b>. On failure, <b>errmsg</b> will be set if
+ * it's not NULL. */
+QString
+TorControl::ipToCountry(const QHostAddress &ip, QString *errmsg)
+{
+  QString request   = QString("ip-to-country/%1").arg(ip.toString());
+  QVariant response = getInfo(request, errmsg);
+  if (! response.isNull())
+    return response.toString();
+  return QString();
+}
+
