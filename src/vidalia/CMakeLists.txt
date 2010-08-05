@@ -26,6 +26,9 @@ include_directories(
 if (USE_BREAKPAD AND BREAKPAD_INCLUDE_DIR)
   include_directories(${BREAKPAD_INCLUDE_DIR})
 endif(USE_BREAKPAD AND BREAKPAD_INCLUDE_DIR)
+if (USE_GEOIP AND GEOIP_INCLUDE_DIR)
+  include_directories(${GEOIP_INCLUDE_DIR})
+endif(USE_GEOIP AND GEOIP_INCLUDE_DIR)
 
 if (USE_MARBLE)
   if (APPLE OR WIN32)
@@ -181,12 +184,9 @@ qt4_wrap_cpp(vidalia_SRCS
 set(vidalia_SRCS ${vidalia_SRCS}
   network/CircuitItem.cpp
   network/CircuitListWidget.cpp
-  network/GeoIpCache.cpp
-  network/GeoIpCacheItem.cpp
-  network/GeoIp.cpp
-  network/GeoIpRequest.cpp
+  network/CountryInfo.cpp
+  network/GeoIpRecord.cpp
   network/GeoIpResolver.cpp
-  network/GeoIpResponse.cpp
   network/NetViewer.cpp
   network/RouterDescriptorView.cpp
   network/RouterInfoDialog.cpp
@@ -196,7 +196,7 @@ set(vidalia_SRCS ${vidalia_SRCS}
 )
 qt4_wrap_cpp(vidalia_SRCS
   network/CircuitListWidget.h
-  network/GeoIpCache.h
+  network/CountryInfo.h
   network/GeoIpResolver.h
   network/NetViewer.h
   network/RouterDescriptorView.h
@@ -224,6 +224,14 @@ else(USE_MARBLE)
     network/ZImageView.h
   )
 endif(USE_MARBLE)
+if (USE_GEOIP)
+  set(vidalia_SRCS ${vidalia_SRCS}
+    network/GeoIpDatabase.cpp
+  )
+  qt4_wrap_cpp(vidalia_SRCS
+    network/GeoIpDatabase.h
+  )
+endif(USE_GEOIP)
 
 ## Main Vidalia sources
 set(vidalia_SRCS ${vidalia_SRCS}
@@ -462,6 +470,9 @@ if (USE_MARBLE)
     ${QT_QTSVG_LIBRARY}
   )
 endif(USE_MARBLE)
+if (USE_GEOIP)
+  target_link_libraries(${vidalia_BIN} ${GEOIP_LIBRARIES})
+endif(USE_GEOIP)
 
 if (WIN32)
   target_link_libraries(${vidalia_BIN}

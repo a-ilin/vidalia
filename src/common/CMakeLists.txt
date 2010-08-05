@@ -12,7 +12,6 @@
 
 
 set(common_SRCS
-  CountryInfo.cpp
   crypto.cpp
   file.cpp
   html.cpp
@@ -25,7 +24,6 @@ set(common_SRCS
   ZlibByteArray.cpp
 )
 qt4_wrap_cpp(common_SRCS 
-  CountryInfo.h
   TorSocket.h
   TorSslSocket.h
 )
