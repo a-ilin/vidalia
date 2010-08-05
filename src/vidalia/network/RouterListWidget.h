@@ -47,7 +47,7 @@ public:
   RouterListWidget(QWidget *parent = 0);
 
   /** Adds a new descriptor the list. */
-  void addRouter(RouterDescriptor rd);
+  RouterListItem* addRouter(const RouterDescriptor &rd);
   /** Finds the list item whose key ID matches <b>id</b>. Returns 0 if not 
    * found. */
   RouterListItem* findRouterById(QString id);

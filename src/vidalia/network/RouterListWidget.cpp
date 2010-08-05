@@ -201,12 +201,12 @@ RouterListWidget::findRouterById(QString id)
 }
 
 /** Adds a router descriptor to the list. */
-void
-RouterListWidget::addRouter(RouterDescriptor rd)
+RouterListItem*
+RouterListWidget::addRouter(const RouterDescriptor &rd)
 {
   QString id = rd.id();
   if (id.isEmpty())
-    return;
+    return 0;
 
   RouterListItem *item = findRouterById(id);
   if (item) {
@@ -219,6 +219,8 @@ RouterListWidget::addRouter(RouterDescriptor rd)
 
   /* Set our status tip to the number of servers in the list */
   setStatusTip(tr("%1 relays online").arg(topLevelItemCount()));
+
+  return item;
 }
 
 /** Called when the selected items have changed. This emits the 

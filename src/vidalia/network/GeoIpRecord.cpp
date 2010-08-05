@@ -9,12 +9,12 @@
 */
 
 /*
-** \file GeoIp.cpp
+** \file GeoIpRecord.cpp
 ** \version $Id$
 ** \brief Associates an IP with a geographic location
 */
 
-#include "GeoIp.h"
+#include "GeoIpRecord.h"
 
 #include <QStringList>
 
@@ -24,15 +24,25 @@
 #define IS_VALID_LONGITUDE(x)   (((x) >= -180.0) && ((x) <= 180.0))
 
 
-GeoIp::GeoIp()
+GeoIpRecord::GeoIpRecord()
 {
   _latitude  = 0.0;
   _longitude = 0.0;
 }
 
-GeoIp::GeoIp(const QHostAddress &ip, float latitude, float longitude,
-             const QString &city, const QString &region,
-             const QString &country, const QString &countryCode) 
+GeoIpRecord::GeoIpRecord(const QHostAddress &ip, float latitude, float longitude,
+                         const QString &country, const QString &countryCode)
+{
+  _ip = ip;
+  _latitude = latitude;
+  _longitude = longitude;
+  _country  = country;
+  _countryCode = countryCode;
+}
+
+GeoIpRecord::GeoIpRecord(const QHostAddress &ip, float latitude, float longitude,
+                         const QString &city, const QString &region,
+                         const QString &country, const QString &countryCode) 
 {
   _ip = ip;
   _latitude = latitude;
@@ -44,7 +54,7 @@ GeoIp::GeoIp(const QHostAddress &ip, float latitude, float longitude,
 }
 
 bool
-GeoIp::isValid() const
+GeoIpRecord::isValid() const
 {
   return (! _ip.isNull()
             && IS_VALID_LATITUDE(_latitude)
@@ -52,7 +62,7 @@ GeoIp::isValid() const
 }
 
 QString
-GeoIp::toString() const
+GeoIpRecord::toString() const
 {
   QStringList location;
 

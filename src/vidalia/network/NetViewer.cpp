@@ -22,11 +22,13 @@
 
 #include <QMessageBox>
 #include <QHeaderView>
+#include <QCoreApplication>
 
 #define IMG_MOVE    ":/images/22x22/move-map.png"
 #define IMG_ZOOMIN  ":/images/22x22/zoom-in.png"
 #define IMG_ZOOMOUT ":/images/22x22/zoom-out.png"
 
+#if 0
 /** Number of milliseconds to wait after the arrival of the last descriptor whose
  * IP needs to be resolved to geographic information, in case more descriptors
  * arrive. Then we can simply lump the IPs into a single request. */
@@ -34,7 +36,7 @@
 /** Maximum number of milliseconds to wait after the arrival of the first
  * IP address into the resolve queue, before we flush the entire queue. */
 #define MAX_RESOLVE_QUEUE_DELAY   (30*1000)
-
+#endif
 
 /** Constructor. Loads settings from VidaliaSettings.
  * \param parent The parent widget of this NetViewer object.\
@@ -109,15 +111,7 @@ NetViewer::NetViewer(QWidget *parent)
    * needs to be called to get rid of any descriptors that were removed. */
   _refreshTimer.setInterval(60*60*1000);
   connect(&_refreshTimer, SIGNAL(timeout()), this, SLOT(refresh()));
-  
-  /* Set up the timers used to group together GeoIP requests for new
-   * descriptors arriving within MIN_RESOLVE_QUEUE_DELAY milliseconds, but no
-   * more than MAX_RESOLVE_QUEUE_DELAY milliseconds of each other. */
-  _minResolveQueueTimer.setSingleShot(true);
-  connect(&_minResolveQueueTimer, SIGNAL(timeout()), this, SLOT(resolve()));
-  _maxResolveQueueTimer.setSingleShot(true);
-  connect(&_maxResolveQueueTimer, SIGNAL(timeout()), this, SLOT(resolve()));
-
+ 
   /* Connect the necessary slots and signals */
   connect(ui.actionHelp, SIGNAL(triggered()), this, SLOT(help()));
   connect(ui.actionRefresh, SIGNAL(triggered()), this, SLOT(refresh()));
@@ -136,9 +130,7 @@ NetViewer::NetViewer(QWidget *parent)
   connect(ui.treeCircuitList, SIGNAL(closeStream(StreamId)),
           _torControl, SLOT(closeStream(StreamId)));
 
-  /* Connect the slot to find out when geoip information has arrived */
-  connect(&_geoip, SIGNAL(resolved(int, QList<GeoIp>)), 
-             this,   SLOT(resolved(int, QList<GeoIp>)));
+  setupGeoIpResolver();
 }
 
 /** Called when the user changes the UI translation. */
@@ -168,24 +160,31 @@ NetViewer::retranslateUi()
   }
 }
 
-/** Display the network map window. If there are geoip requests waiting in the
- * queue, start the queue timers now. */
 void
-NetViewer::showWindow()
+NetViewer::setupGeoIpResolver()
 {
-  if (!_resolveQueue.isEmpty()) {
-    _minResolveQueueTimer.start(MIN_RESOLVE_QUEUE_DELAY);
-    _maxResolveQueueTimer.start(MAX_RESOLVE_QUEUE_DELAY);
+  VidaliaSettings settings;
+
+#if defined(USE_GEOIP)
+  if (settings.useLocalGeoIpDatabase()) {
+    QString databaseFile = settings.localGeoIpDatabase();
+    if (! databaseFile.isEmpty()) {
+      _geoip.setLocalDatabase(databaseFile);
+      _geoip.setUseLocalDatabase(true);
+      vInfo("Using local database file for relay mapping: %1")
+                                            .arg(databaseFile);
+      return;
+    }
   }
-  VidaliaWindow::showWindow();
+#endif
+  vInfo("Using Tor's GeoIP database for country-level relay mapping.");
+  _geoip.setUseLocalDatabase(false);
 }
 
 /** Loads data into map, lists and starts timer when we get connected*/
 void
 NetViewer::onAuthenticated()
 {
-  _geoip.setSocksHost(_torControl->getSocksAddress(),
-                      _torControl->getSocksPort());
   refresh();
   _refreshTimer.start();
   ui.actionRefresh->setEnabled(true);
@@ -225,9 +224,6 @@ NetViewer::refresh()
 void
 NetViewer::clear()
 {
-  /* Clear the resolve queue and map */
-  _resolveMap.clear();
-  _resolveQueue.clear();
   /* Clear the network map */
   _map->clear();
   _map->update();
@@ -324,6 +320,8 @@ NetViewer::loadNetworkStatus()
     RouterDescriptor rd = _torControl->getRouterDescriptor(rs.id());
     if (!rd.isEmpty())
       addRouter(rd);
+
+    QCoreApplication::processEvents();
   }
 }
 
@@ -333,18 +331,19 @@ void
 NetViewer::addRouter(const RouterDescriptor &rd)
 {
   /* Add the descriptor to the list of server */
-  ui.treeRouterList->addRouter(rd);
+  RouterListItem *item = ui.treeRouterList->addRouter(rd);
+  if (! item)
+    return;
 
-  /* Add this IP to a list of addresses whose geographic location we'd like to
-   * find, but not for special purpose descriptors (e.g., bridges). This
-   * check is only valid for Tor >= 0.2.0.13-alpha. */
-  if (_torControl->getTorVersion() >= 0x020013) {
-    DescriptorAnnotations annotations =
-      _torControl->getDescriptorAnnotations(rd.id());
-    if (!annotations.contains("purpose"))
-      addToResolveQueue(rd.ip(), rd.id());
-  } else {
-    addToResolveQueue(rd.ip(), rd.id());
+  /* Attempt to map this relay to an approximate geographic location. The
+   * accuracy of the result depends on the database information currently
+   * available to the GeoIP resolver. */
+  if (! item->location().isValid() || rd.ip() != item->location().ip()) {
+    GeoIpRecord location = _geoip.resolve(rd.ip());
+    if (location.isValid()) {
+      item->setLocation(location);
+      _map->addRouter(rd, location);
+    }
   }
 }
 
@@ -358,33 +357,6 @@ NetViewer::newDescriptors(const QStringList &ids)
     RouterDescriptor rd = _torControl->getRouterDescriptor(id);
     if (!rd.isEmpty())
       addRouter(rd); /* Updates the existing entry */
-  }
-}
-
-/** Adds an IP address to the resolve queue and updates the queue timers. */
-void
-NetViewer::addToResolveQueue(const QHostAddress &ip, const QString &id)
-{
-  QString ipstr = ip.toString();
-  if (!_resolveMap.values(ipstr).contains(id)) {
-    /* Remember which server ids belong to which IP addresses */
-    _resolveMap.insertMulti(ipstr, id);
-  }
- 
-  if (!_resolveQueue.contains(ip) && !_geoip.resolveFromCache(ip)) {
-    /* Add the IP to the queue of IPs waiting for geographic information  */
-    _resolveQueue << ip;
- 
-    /* Wait MIN_RESOLVE_QUEUE_DELAY after the last item inserted into the
-     * queue, before sending the resolve request. */
-    _minResolveQueueTimer.start(MIN_RESOLVE_QUEUE_DELAY);
-    
-    /* Do not wait longer than MAX_RESOLVE_QUEUE_DELAY from the time the first
-     * item is inserted into the queue, before flushing and resolving the
-     * queue. */
-    if (_resolveQueue.size() == 1) {
-      _maxResolveQueueTimer.start(MAX_RESOLVE_QUEUE_DELAY);
-    }
   }
 }
 
@@ -429,65 +401,6 @@ NetViewer::routerSelected(const QList<RouterDescriptor> &routers)
     _map->selectRouter(routers[0].id());
 }
 
-/** If there are any IPs in the resolve queue, do the request now. */
-void
-NetViewer::resolve()
-{
-  if (!_resolveQueue.isEmpty()) {
-    /* Send the request now if either the network map is visible, or the
-     * request is for more than a quarter of the servers in the list. */
-    if (isVisible() || 
-        (_resolveQueue.size() >= ui.treeRouterList->topLevelItemCount()/4)) {
-      vInfo("Sending GeoIP request for %1 IP addresses.")
-                               .arg(_resolveQueue.size());
-      /* Flush the resolve queue and stop the timers */
-      _geoip.resolve(_resolveQueue);
-      _resolveQueue.clear();
-    }
-  }
-  /* Stop the queue timers. Only one should be active since the other is what
-   * called this slot, but calling stop() on a stopped timer does not hurt. */
-  _minResolveQueueTimer.stop();
-  _maxResolveQueueTimer.stop();
-}
-
-/** Called when a list of GeoIp information has been resolved. */
-void
-NetViewer::resolved(int id, const QList<GeoIp> &geoips)
-{
-  Q_UNUSED(id);
-
-  QString ip;
-  RouterListItem *router;
- 
-  foreach (GeoIp geoip, geoips) {
-    /* Find all routers that are at this IP address */
-    ip = geoip.ip().toString();
-    QList<QString> ids = _resolveMap.values(ip);
-    _resolveMap.remove(ip);
-      
-    /* Update their geographic location information with the results of this
-     * GeoIP query. */
-    foreach (QString id, ids) {
-      router = ui.treeRouterList->findRouterById(id);
-      if (router) {
-        /* Save the location information in the descriptor */
-        router->setLocation(geoip);
-        /* Plot the router on the map */
-        _map->addRouter(router->descriptor(), geoip);
-      }
-    }
-  }
-
-  /* Update the circuit lines */
-  foreach (Circuit circuit, ui.treeCircuitList->circuits()) {
-    _map->addCircuit(circuit.id(), circuit.routerIDs());
-  }
-
-  /* Repaint the map */
-  _map->update();
-}
-
 /** Called when the user selects a router on the network map. Displays a 
  * dialog with detailed information for the router specified by
  * <b>id</b>.*/
@@ -514,7 +427,7 @@ NetViewer::displayRouterInfo(const QString &id)
   /* Populate the UI with information learned from a previous GeoIP request */
   RouterListItem *item = ui.treeRouterList->findRouterById(id);
   if (item)
-    dlg.setLocation(item->location());
+    dlg.setLocation(item->location().toString());
   else
     dlg.setLocation(tr("Unknown"));
 

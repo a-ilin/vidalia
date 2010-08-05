@@ -69,7 +69,7 @@ TorMapWidget::~TorMapWidget()
 
 /** Adds a router to the map. */
 void
-TorMapWidget::addRouter(const RouterDescriptor &desc, const GeoIp &geoip)
+TorMapWidget::addRouter(const RouterDescriptor &desc, const GeoIpRecord &geoip)
 {
   QString kml;
   qreal lon = geoip.longitude();

@@ -9,31 +9,36 @@
 */
 
 /*
-** \file GeoIp.h
+** \file GeoIpRecord.h
 ** \version $Id$
 ** \brief Associates an IP with a geographic location
 */
 
-#ifndef _GEOIP_H
-#define _GEOIP_H
+#ifndef _GEOIPRECORD_H
+#define _GEOIPRECORD_H
 
 #include <QHash>
 #include <QString>
 #include <QHostAddress>
 
 
-class GeoIp
+class GeoIpRecord
 {
 public:
-  /** Default constructor. Creates an empty GeoIp object.
+  /** Default constructor. Creates an empty GeoIpRecord object.
    */
-  GeoIp();
+  GeoIpRecord();
 
-  GeoIp(const QHostAddress &ip, float latitude, float longitude,
-        const QString &city = QString(),
-        const QString &region = QString(),
-        const QString &country = QString(),
-        const QString &countryCode = QString());
+  /**
+   */
+  GeoIpRecord(const QHostAddress &ip, float latitude, float longitude,
+              const QString &country, const QString &countryCode);
+
+  /**
+   */
+  GeoIpRecord(const QHostAddress &ip, float latitude, float longitude,
+              const QString &city, const QString &region,
+              const QString &country, const QString &countryCode);
 
   /** Returns the IP address associated with this GeoIP object.
    */
@@ -76,7 +81,7 @@ public:
    */
   QString toString() const;
 
-  /** Returns true if the GeoIp object is valid. A valid GeoIp object must
+  /** Returns true if the GeoIpRecord object is valid. A valid GeoIpRecord object must
    * have valid IP address, valid latitude and longitude coordinates and a 
    * two-letter country code.
    */

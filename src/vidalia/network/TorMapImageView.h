@@ -18,7 +18,7 @@
 #define _TORMAPIMAGEVIEW_H
 
 #include "ZImageView.h"
-#include "GeoIp.h"
+#include "GeoIpRecord.h"
 
 #include "RouterDescriptor.h"
 #include "Circuit.h"
@@ -40,7 +40,7 @@ public:
   ~TorMapImageView();
 
   /** Plots the given router on the map using the given coordinates. */
-  void addRouter(const RouterDescriptor &desc, const GeoIp &geoip);
+  void addRouter(const RouterDescriptor &desc, const GeoIpRecord &geoip);
   /** Plots the given circuit on the map. */
   void addCircuit(const CircuitId &circid, const QStringList &path);
   /** Selects and hightlights a router on the map. */

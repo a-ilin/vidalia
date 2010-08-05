@@ -11,24 +11,26 @@
 /*
 G** \file GeoIpResolver.h
 ** \version $Id$
-** \brief Requests GeoIP information and caches the result
+** \brief Retrieves GeoIP information either from Tor or from a local
+** database and returns the result.
 */
 
 #ifndef _GEOIPRESOLVER_H
 #define _GEOIPRESOLVER_H
 
-#include "GeoIpCache.h"
+#include "Vidalia.h"
+#ifdef USE_GEOIP
+#include "GeoIpDatabase.h"
+#endif
+#include "CountryInfo.h"
 
 #include <QObject>
 #include <QList>
 #include <QHash>
 #include <QHostAddress>
 
-class GeoIp;
-class GeoIpRequest;
-class GeoIpResponse;
 class QString;
-class QAbstractSocket;
+class GeoIpRecord;
 
 
 class GeoIpResolver : public QObject
@@ -36,50 +38,51 @@ class GeoIpResolver : public QObject
   Q_OBJECT
 
 public:
-  /** Default constructor. */
+  /** Default constructor.
+   */
   GeoIpResolver(QObject *parent = 0);
-  
-  /** Sets the address and port of Tor, through which GeoIP requests will be
-   * made. */
-  void setSocksHost(const QHostAddress &addr, quint16 port);
-  /** Resolves a single IP to a geographic location. */
-  int resolve(const QHostAddress &ip);
-  /** Resolves a list of IPs to a geographic location. */
-  int resolve(const QList<QHostAddress> &ips);
-  /** Resolves <b>ip</b> to geographic information only if it is cached. */
-  bool resolveFromCache(const QHostAddress &ip);
-  /** Resolves a list of IPs to a geographic location, but only those which
-   * are cached. Returns a list of which IPs were not cached. */
-  QList<QHostAddress> resolveFromCache(const QList<QHostAddress> &ips);
 
-signals:
-  /** Emitted when a list of IPs have been resolved to lat/long. */
-  void resolved(int id, const QList<GeoIp> &geoips);
-  /** Emitted when a resolve has failed. */
-  void resolveFailed(int id, const QString &errorString);
+  /** Sets the local database file to <b>databaseFile</b>. Returns true if
+   * <b>databaseFile</b> could be opened for reading. Otherwise, returns
+   * false.
+   * \sa setUseLocalDatabase()
+   */
+  bool setLocalDatabase(const QString &databaseFile);
 
-private slots:
-  /** Called when the socket has connected to the Geo IP host. */
-  void connected();
-  /** Called when the socket has disconnected from the Geo IP host. */
-  void disconnected();
-  /** Called when an error has occurred getting the Geo IP information. */
-  void socketError(const QString &errorString);
+  /** Enables or disables the use of a local GeoIP database, depending on
+   * the value of <b>useLocalDatabase</b>.
+   * \sa setLocalDatabase()
+   */
+  void setUseLocalDatabase(bool useLocalDatabase);
+
+  /** Resolves a single IP to a geographic location and returns the
+   * result on success. On failure, this returns a default-constructed
+   * GeoIpRecord object.
+   */
+  GeoIpRecord resolve(const QHostAddress &ip);
+
+protected:
+  /** Maps <b>ip</b> to a country code using Tor, and then maps the
+   * country code to a geographic location using the built-in
+   * country-to-coordinate database.
+   */
+  GeoIpRecord resolveUsingTor(const QHostAddress &ip);
+
+  /** Maps <b>ip</b> to an approximate geographic location using a local
+   * GeoIP database and returns the result on success.
+   * \sa setLocalDatabase()
+   * \sa setUseLocalDatabase()
+   */
+  GeoIpRecord resolveUsingLocalDatabase(const QHostAddress &ip);
 
 private:
-  /** Creates an HTTP request for Geo IP information. */
-  GeoIpRequest* createRequest(const QList<QHostAddress> &ips);
-
-  void parseGeoIpResponse(const QByteArray &response, GeoIpRequest *request);
-
-  /**< Cached GeoIp objects. */
-  GeoIpCache*  _cache;
-  /**< List of sockets used for requests. */
-  QHash<QAbstractSocket *,GeoIpRequest*> _requestList;
-  /** Tor's SocksListenAddress. */
-  QHostAddress _socksAddr;
-  /** Tor's SocksPort. */
-  quint16 _socksPort;
+#ifdef USE_GEOIP
+  /** Wrapper around a local database used for looking up GeoIP
+   * information.
+   */
+  GeoIpDatabase _database;
+#endif
+  bool _useLocalDatabase;
 };
 
 #endif

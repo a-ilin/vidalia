@@ -49,7 +49,7 @@ public:
 
 public slots:
   /** Displays the network map window. */
-  void showWindow();
+//  void showWindow();
   /** Loads a list of current circuits and streams. */
   void loadConnections();
   /** Adds <b>circuit</b> to the list and the map */
@@ -85,16 +85,12 @@ private slots:
   void refresh();
   /** Called when the user selects a circuit on the circuit list */
   void circuitSelected(const Circuit &circuit);
-  /** Called when an IP has been resolved to geographic information. */
-  void resolved(int id, const QList<GeoIp> &geoips);
   /** Called when the user selects one or more routers in the list. */
   void routerSelected(const QList<RouterDescriptor> &routers);
   /** Handles when we get connected to Tor network */
   void onAuthenticated();
   /** Handles when we get disconnected from Tor network */
   void onDisconnected();
-  /** Resolves IP addresses in the resolve queue to geographic information. */
-  void resolve();
   /** Called when the user selects a router on the network map. Displays a 
    * dialog with detailed information for the router specified by
    * <b>id</b>.*/
@@ -108,8 +104,8 @@ private slots:
   void toggleFullScreen();
 
 private:
-  /** Adds an IP address to the resolve queue and updates the queue timers. */
-  void addToResolveQueue(const QHostAddress &ip, const QString &id);
+  /** */
+  void setupGeoIpResolver();
   /** Retrieves a list of all running routers from Tor and their descriptors,
    * and adds them to the RouterListWidget. */
   void loadNetworkStatus();
@@ -125,19 +121,8 @@ private:
   QTimer _refreshTimer;
   /** GeoIpResolver used to geolocate routers by IP address. */
   GeoIpResolver _geoip;
-  /** Queue for IPs pending resolution to geographic information. */
-  QList<QHostAddress> _resolveQueue;
-  /** Maps pending GeoIP requests to server IDs. */
-  QHash<QString, QString> _resolveMap;
   /** Stores a list of address mappings from Tor. */
   AddressMap _addressMap;
-  /** Timer used to delay GeoIP requests for MIN_RESOLVE_QUEUE_DELAY
-   * milliseconds after we've inserted the last item into the queue. */
-  QTimer _minResolveQueueTimer;
-  /** Timer used to limit the delay of GeoIP requests to
-   * MAX_RESOLVE_QUEUE_DELAY milliseconds after inserting the first item 
-   * into the queue. */
-  QTimer _maxResolveQueueTimer;
  
   /** Widget that displays the Tor network map. */
 #if defined(USE_MARBLE)

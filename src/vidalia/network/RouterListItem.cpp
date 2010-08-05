@@ -38,7 +38,7 @@ RouterListItem::RouterListItem(RouterListWidget *list, RouterDescriptor rd)
 {
   _list = list;
   _rd   = 0;
-  _country = "~"; /* Force items with no country to the bottom */
+  _countryCode = "~"; /* Force items with no country to the bottom */
   setIcon(COUNTRY_COLUMN, QIcon(IMG_FLAG_UNKNOWN));
   update(rd);
 }
@@ -91,17 +91,17 @@ RouterListItem::update(const RouterDescriptor &rd)
 
 /** Sets the location information for this item's router descriptor. */
 void
-RouterListItem::setLocation(const GeoIp &geoip)
+RouterListItem::setLocation(const GeoIpRecord &geoip)
 {
   QPixmap flag(":/images/flags/" + geoip.countryCode().toLower() + ".png");
   if (!flag.isNull()) {
     setIcon(COUNTRY_COLUMN, QIcon(flag));
   }
   setToolTip(COUNTRY_COLUMN, geoip.toString());
-  
+
   if (_rd)
     _rd->setLocation(geoip.toString());
-  _country = geoip.countryCode();
+  _countryCode = geoip.countryCode();
 }
 
 /** Overload the comparison operator. */
@@ -125,13 +125,13 @@ RouterListItem::operator<(const QTreeWidgetItem &other) const
         return (a->_statusValue < b->_statusValue);
       case RouterListWidget::CountryColumn:
         /* Compare based on country code */
-        if (a->_country == b->_country) {
+        if (a->_countryCode == b->_countryCode) {
           if (order == Qt::AscendingOrder)
             return (a->_statusValue > b->_statusValue);
           else
             return (a->_statusValue < b->_statusValue);
         }
-        return (a->_country < b->_country);
+        return (a->_countryCode < b->_countryCode);
       case RouterListWidget::NameColumn:
         /* Case-insensitive comparison based on router name */
         if (a->name().toLower() == b->name().toLower()) {

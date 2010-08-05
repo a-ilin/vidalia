@@ -85,7 +85,7 @@ TorMapImageView::~TorMapImageView()
 
 /** Adds a router to the map. */
 void
-TorMapImageView::addRouter(const RouterDescriptor &desc, const GeoIp &geoip)
+TorMapImageView::addRouter(const RouterDescriptor &desc, const GeoIpRecord &geoip)
 {
   QString id = desc.id();
   QPointF routerCoord = toMapSpace(geoip.latitude(), geoip.longitude());
