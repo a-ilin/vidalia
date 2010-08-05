@@ -23,6 +23,14 @@ then you can download, build and install the latest version from here:
           -DGEOIP_INCLUDE_DIR=<path to GeoIP.h> \
           -DGEOIP_LIBRARY_DIR=<path to libGeoIp> ..
 
+Here is an example of what the previous command might look like, if you
+don't have the MaxMind GeoIP library installed somewhere in the normal
+search path:
+
+   cmake -DUSE_GEOIP=1 \
+         -DGEOIP_INCLUDE_DIR=/home/someuser/GeoIP-1.4.6/libGeoIP/ \
+         -DGEOIP_LIBRARY_DIR=/home/someuser/GeoIP-1.4.6/libGeoIP/
+ 
 If the GeoIP library and headers are in the normal locations on OS X and
 Linux (e.g., /usr/local/lib and /usr/local/include), you can most likely
 omit -DGEOIP_INCLUDE_DIR and -DGEOIP_LIBRARY_DIR from the command above.
