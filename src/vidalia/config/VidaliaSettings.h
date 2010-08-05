@@ -115,6 +115,17 @@ public:
   /** Sets to <b>checkedAt</b> the time at which Vidalia last checked for
    * available software updates. */
   void setLastCheckedForUpdates(const QDateTime &checkedAt);
+
+  /** Returns true if Vidalia is currently configured to use a local GeoIP
+   * database. */
+  bool useLocalGeoIpDatabase() const;
+  /** Enables or disables use of a local GeoIP database. */
+  void setUseLocalGeoIpDatabase(bool enabled);
+
+  /** Returns the file, if set, to be used as the local GeoIP database. */
+  QString localGeoIpDatabase() const;
+  /** Sets the file to use as a local GeoIP database. */
+  void setLocalGeoIpDatabase(const QString &databaseFile);
 };
 
 #endif

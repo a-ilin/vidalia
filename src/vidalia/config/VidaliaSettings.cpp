@@ -38,6 +38,8 @@
 #define SETTING_PROXY_EXECUTABLE_ARGUMENTS  "ProxyExecutableArguments"
 #define SETTING_CHECK_FOR_UPDATES   "CheckForUpdates"
 #define SETTING_LAST_UPDATE_CHECK   "LastUpdateCheck"
+#define SETTING_USE_LOCAL_GEOIP_DATABASE  "UseLocalGeoIpDatabase"
+#define SETTING_LOCAL_GEOIP_DATABASE "LocalGeoIpDatabase"
 
 #if defined(Q_OS_WIN32)
 #define STARTUP_REG_KEY        "Software\\Microsoft\\Windows\\CurrentVersion\\Run"
@@ -79,6 +81,8 @@ VidaliaSettings::VidaliaSettings()
   setDefault(SETTING_CHECK_FOR_UPDATES, false);
 #endif
   setDefault(SETTING_LAST_UPDATE_CHECK, QDateTime());
+  setDefault(SETTING_USE_LOCAL_GEOIP_DATABASE, false);
+  setDefault(SETTING_LOCAL_GEOIP_DATABASE, "");
 }
 
 /** Gets the currently preferred language code for Vidalia. */
@@ -292,5 +296,29 @@ void
 VidaliaSettings::setLastCheckedForUpdates(const QDateTime &checkedAt)
 {
   setValue(SETTING_LAST_UPDATE_CHECK, checkedAt);
+}
+
+bool
+VidaliaSettings::useLocalGeoIpDatabase() const
+{
+  return value(SETTING_USE_LOCAL_GEOIP_DATABASE).toBool();
+}
+
+void
+VidaliaSettings::setUseLocalGeoIpDatabase(bool enabled)
+{
+  setValue(SETTING_USE_LOCAL_GEOIP_DATABASE, enabled);
+}
+
+QString
+VidaliaSettings::localGeoIpDatabase() const
+{
+  return QDir::convertSeparators(value(SETTING_LOCAL_GEOIP_DATABASE).toString());
+}
+
+void
+VidaliaSettings::setLocalGeoIpDatabase(const QString &databaseFile)
+{
+  setValue(SETTING_LOCAL_GEOIP_DATABASE, databaseFile);
 }
 
