@@ -109,6 +109,12 @@ if (USE_MARBLE)
   include(${CMAKE_SOURCE_DIR}/cmake/FindMarble.cmake)
 endif(USE_MARBLE)
 
+## Find the MaxMind GeoIP library
+option(USE_GEOIP "Enable GeoIP lookups via a local MaxMind database" OFF)
+if (USE_GEOIP)
+  include(${CMAKE_SOURCE_DIR}/cmake/FindGeoIP.cmake)
+endif(USE_GEOIP)
+
 ## Check for system header files
 check_include_file("limits.h" HAVE_LIMITS_H)
 check_include_file("sys/limits.h" HAVE_SYS_LIMITS_H)
