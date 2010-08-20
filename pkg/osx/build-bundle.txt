@@ -46,15 +46,14 @@ Polipo
 http://www.pps.jussieu.fr/~jch/software/files/polipo/.
 
 7a. Download the Tor modifications to Polipo from:
-https://git.torproject.org/checkout/tor/master/contrib/polipo/.  
+https://gitweb.torproject.org/tor.git/tree/HEAD:/contrib/polipo
 
 Alternatively, download a tarball with the Polipo source and Tor
 modifications together from:
 http://interloper.org/tmp/polipo/polipo-1.0.4.1-with-mods.tar.gz
 
 8. Follow the directions to build polipo at
-  https://git.torproject.org/checkout/tor/master/contrib/polipo/README
-
+   https://gitweb.torproject.org/tor.git/blob/HEAD:/contrib/polipo/README
 
 Tor
 9. Download and extract the latest Tor source from
