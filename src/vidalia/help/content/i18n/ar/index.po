@@ -10,24 +10,26 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 16:59+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-08-21 06:01+0200\n"
+"Last-Translator: shadi <shadi@35point5.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.5.3\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/index.html:16
 msgid "Vidalia Help"
-msgstr ""
+msgstr "مساعدة فيداليا"
 
 #. type: Content of: <html><body><p>
 #: en/index.html:20
@@ -35,6 +37,8 @@ msgid ""
 "Select a help topic from the tree on the left or click on the Search button "
 "above the list of topics to search through all available help topics."
 msgstr ""
+"إختر موضوع مساعدة من الشجرة على اليسار أو أنقر على زر البحث في أعلى قائمة "
+"المواضيع للبحث من خلال جميع مواضيع المساعدة المتاحة."
 
 #. type: Content of: <html><body><p>
 #: en/index.html:25
@@ -42,11 +46,14 @@ msgid ""
 "You can use the <i>Find</i> button on the toolbar above to search within a "
 "particular help topic."
 msgstr ""
+"يمكنك استخدام زر <i>بحث</i> على شريط الأدوات أعلاه للبحث في موضوع مساعدة "
+"خاص."
 
 #. type: Content of: <html><body><p>
 #: en/index.html:30
 msgid "The <i>Home</i> button above will bring you back to this home page."
 msgstr ""
+"زر <i>الصفحة الرئيسية</i> أعلاه سوف يقوم بإرجاعك الى الصفحة الرئيسة هذه."
 
 #. type: Content of: <html><body><p>
 #: en/index.html:34
@@ -54,3 +61,5 @@ msgid ""
 "See the <a href=\"links.html\">Helpful Links</a> topic for some places you "
 "can visit to find additional help and information about Vidalia and Tor."
 msgstr ""
+"أنظر موضوع <a href=\"links.html\">روابط مفيدة</a> للحصول على بعض الاماكن التي "
+"يمكنك زيارتها والعثور على مساعدة ومعلومات إضافية حول فيداليا وتور."
