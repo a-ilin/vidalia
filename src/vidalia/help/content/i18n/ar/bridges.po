@@ -10,34 +10,36 @@
 #   distributed except according to the terms described in the LICENSE
 #   file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 16:58+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-08-21 05:36+0200\n"
+"Last-Translator: shadi <shadi@35point5.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.5.3\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/bridges.html:16
 msgid "Bridge Relays"
-msgstr ""
+msgstr "مرحلات الجسر"
 
 #. type: Content of: <html><body>
 #: en/bridges.html:19
 msgid "<a name=\"about\"/>"
-msgstr ""
+msgstr "<a name=\"about\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/bridges.html:20
 msgid "What are bridge relays?"
-msgstr ""
+msgstr "ما هي مرحلات الجسر؟"
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:22
@@ -51,31 +53,38 @@ msgid ""
 "filtering connections to all the known Tor relays, they probably won't be "
 "able to block all the bridges."
 msgstr ""
+"يحاول بعض مزودي خدمة الانترنت (ISPs) منع المستخدمين من الوصول الى شبكة تور "
+"عن طريق منع الاتصالات الى مرحلات تور المعروفة. مرحلات الجسر (او "
+"<i>الجسور</i> للاختصار) هي مرحلات تساعد هؤلاء المستخدمين المراقبين على "
+"الوصول الى شبكة تور. خلافا لمرحلات تور الاخرى, الجسور ليست مدرجة في نفس "
+"الدلائل العامة كالمرحلات العادية. طالما انه لا توجد قائمة عامة كاملة لهم, "
+"حتى اذا كان مزود خدمة الانترنت (ISP) الخاص بك يقوم بتصفية الاتصالات الى جميع "
+"مرحلات تور المعروفة, فإنهم على الارجع غير قادرين على منع جميع الجسور."
 
 #. type: Content of: <html><body>
 #: en/bridges.html:31
 msgid "<a name=\"finding\"/>"
-msgstr ""
+msgstr "<a name=\"finding\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/bridges.html:32
 msgid "How do I find a bridge relay?"
-msgstr ""
+msgstr "كيف أجد مرحل جسر؟"
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:34
 msgid "There are two main ways to learn about a bridge address:"
-msgstr ""
+msgstr "هناك طريقتين رئيسيتين لمعرفة عنوان الجسر:"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/bridges.html:36
 msgid "Get some friends to run private bridges for you"
-msgstr ""
+msgstr "أحصل على بعض الأصدقاء لتشغيل الجسور الخاصة لك"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/bridges.html:37
 msgid "Use some of the public bridges"
-msgstr ""
+msgstr "إستخدم بعضا من الجسور العامة"
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:42
@@ -88,6 +97,12 @@ msgid ""
 "just passes data to and from the Tor network, so it shouldn't expose the "
 "operator to any abuse complaints."
 msgstr ""
+"لإستخدام الجسور الخاصة, اطلب من اصدقائك تشغيل فيداليا وتور في منطقة غير "
+"خاضعة لرقابة الإنترنت, ثم أنقر على <i>مساعدة المستخدمين المراقبين</i> في "
+"صفحة إعدادات <a href=\"server.html\">مرحل فيداليا</a>. بعد ذلك ينبغي ان يرسلوا "
+"لك سرا خط <i>عنوان الجسر</i> في أسفل صفحة المرحل الخاصة بهم. خلافا لتشغيل "
+"مرحل مخرج, تشغيل مرحل جسر يمرر فقط البيانات الى ومن شبكة تور, حتى لا ينبغي "
+"تعريض المشغل الى أي شكوى سوء استخدام."
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:52
@@ -101,6 +116,13 @@ msgid ""
 "attacker to learn lots of bridge addresses, you must send this request from "
 "a Gmail account."
 msgstr ""
+"يمكنك إيجاد عناوين جسر عامة عن طريق زيارتك "
+"<b>https://bridges.torproject.org</b>.  الإجابات التي تحصل عليها من تلك "
+"الصفحة سوف تتغير كل بضعة أيام, لذلك قم بالتحقق دورياً إذا أردت المزيد من "
+"عناوين الجسر. طريقة أخرى للعثور على عناوين جسر عامة هو بإرسال رسالة "
+"إلكترونية إلى <b>bridges@torproject.org</b> مع العنوان <b>get bridges</b> by "
+"itself في داخل الرسالة. ومع ذلك ، حتى يمكننا أن نجعل من الصعب على مهاجم ان "
+"يتعلم الكثير من عناوين الجسر, يجب إرسال هذا الطلب من حساب بريد جوجل (Gmail)."
 
 #. type: Content of: <html><body><p>
 #: en/bridges.html:63
@@ -108,3 +130,5 @@ msgid ""
 "Configuring more than one bridge address will make your Tor connection more "
 "stable, in case some of the bridges become unreachable."
 msgstr ""
+"تكوين أكثر من عنوان جسر واحد سوف يجعل اتصال تور الخاص بك أكثر استقرارا, في "
+"حالة ان بعض الجسور أصبحت غير قابلة للوصول."
