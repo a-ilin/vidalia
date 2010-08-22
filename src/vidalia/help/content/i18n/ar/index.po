@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 16:59+0200\n"
-"PO-Revision-Date: 2010-08-21 06:01+0200\n"
+"PO-Revision-Date: 2010-08-22 06:15+0200\n"
 "Last-Translator: shadi <shadi@35point5.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ar\n"
@@ -37,7 +37,7 @@ msgid ""
 "Select a help topic from the tree on the left or click on the Search button "
 "above the list of topics to search through all available help topics."
 msgstr ""
-"إختر موضوع مساعدة من الشجرة على اليسار أو أنقر على زر البحث في أعلى قائمة "
+"إختر موضوع مساعدة من الهيكل على اليسار أو أنقر على زر البحث في أعلى قائمة "
 "المواضيع للبحث من خلال جميع مواضيع المساعدة المتاحة."
 
 #. type: Content of: <html><body><p>
@@ -53,7 +53,7 @@ msgstr ""
 #: en/index.html:30
 msgid "The <i>Home</i> button above will bring you back to this home page."
 msgstr ""
-"زر <i>الصفحة الرئيسية</i> أعلاه سوف يقوم بإرجاعك الى الصفحة الرئيسة هذه."
+"زر <i>الصفحة الرئيسية</i> أعلاه سوف يقوم بإرجاعك الى الصفحة الرئيسية هذه."
 
 #. type: Content of: <html><body><p>
 #: en/index.html:34
