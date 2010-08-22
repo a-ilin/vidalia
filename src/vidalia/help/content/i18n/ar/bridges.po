@@ -15,7 +15,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 16:58+0200\n"
-"PO-Revision-Date: 2010-08-21 05:36+0200\n"
+"PO-Revision-Date: 2010-08-22 06:13+0200\n"
 "Last-Translator: shadi <shadi@35point5.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: ar\n"
@@ -74,7 +74,7 @@ msgstr "كيف أجد مرحل جسر؟"
 #. type: Content of: <html><body><p>
 #: en/bridges.html:34
 msgid "There are two main ways to learn about a bridge address:"
-msgstr "هناك طريقتين رئيسيتين لمعرفة عنوان الجسر:"
+msgstr "هناك طريقتين رئيسيتين لمعرفة عنوان جسر:"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/bridges.html:36
