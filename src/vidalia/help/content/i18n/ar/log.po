@@ -10,24 +10,26 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-08-22 07:55+0200\n"
+"Last-Translator: shadi <shadi@35point5.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.5.3\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/log.html:16
 msgid "Message Log"
-msgstr ""
+msgstr "سجل الرسائل"
 
 #. type: Content of: <html><body>
 #: en/log.html:19
@@ -38,11 +40,16 @@ msgid ""
 "verbose). See the help section on <a href=\"#severities\">message "
 "severities</a> for more information.  <a name=\"severities\"/>"
 msgstr ""
+"يسمح لك سجل الرسالة بمشاهدة معلومات الحالة حول عملية تور قيد التشغيل.  <a "
+"name=\"basic\"/> كل رسالة لديها <i>خطورة</i> مرتبطة بها, تتراوح من <b>خطأ</b> "
+"(الأشد خطورة) الى <b>تصحيح</b> (الأكثر إسهابا). أنظر قسم المساعدة في <a "
+"href=\"#severities\">خطورات الرسالة</a> للمزيد من المعلوماتn.  <a "
+"name=\"severities\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/log.html:28
 msgid "Message Severities"
-msgstr ""
+msgstr "خطورات الرسالة"
 
 #. type: Content of: <html><body><p>
 #: en/log.html:30
@@ -52,11 +59,14 @@ msgid ""
 "Tor. Lower severity messages appear frequently during normal Tor operations "
 "and usually do not need to be logged."
 msgstr ""
+"خطورة رسالة تخبرك مدى أهمية الرسالة. رسالة خطورة أعلى عادة تشير إلى أن شيئا "
+"ما خطأ مع تور. الرسائل الأقل خطورة تظهر مرارا أثناء عمليات تور العادية وعادة "
+"لا تحتاج إلى تسجيل. "
 
 #. type: Content of: <html><body><p>
 #: en/log.html:37
 msgid "The possible message severities, from most severe to least severe, are:"
-msgstr ""
+msgstr "خطورات الرسالة الممكنة, من الأشد خطورة الى الأقل خطورة, هي"
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:41
@@ -65,6 +75,9 @@ msgid ""
 "Tor cannot proceed. These messages will be highlighted in <i>red</i> in the "
 "message log."
 msgstr ""
+"<b>خطأ</b>: الرسائل التي تظهر عندما يكون هناك خطأ كبير جدا قد حدث وتور لا "
+"يستطيع المواصلة. سوف تكون تلك الرسائل بارزة باللون <i>الأحمر</i> في سجل "
+"الرسالة."
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:46
@@ -73,6 +86,9 @@ msgid ""
 "Tor, but are not fatal and Tor will continue running. These messages will be "
 "highlighted in <i>yellow</i>."
 msgstr ""
+"<b>تحذير</b>: الرسائل التي تظهر عندما يكون هناك خطأ قد حدث مع تور, لكنها "
+"ليست مميتة، وسوف يستمر تور بالتشغيل. سوف تكون تلك الرسائل بارزة باللون "
+"<i>الأصفر</i>."
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:51
@@ -80,6 +96,8 @@ msgid ""
 "<b>Notice</b>: Messages that appear infrequently during normal Tor operation "
 "and are not considered errors, but you still may care about."
 msgstr ""
+"<b>إنذار</b>: الرسائل التي تظهر أحيانا أثناء تشغيل تور العادي و لا تعد "
+"أخطاءا, ولكن لا تزال قد تهمك."
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:55
@@ -87,6 +105,8 @@ msgid ""
 "<b>Info</b>: Messages that appear frequently during normal Tor operation and "
 "are not usually of interest to most users."
 msgstr ""
+"<b>معلومات</b>: الرسائل التي تظهر كثيرا أثناء تشغيل تور العادي و لا تسترعي "
+"عادة إهتمام معظم المستخدمين."
 
 #. type: Content of: <html><body><ul><li>
 #: en/log.html:59
@@ -95,6 +115,9 @@ msgid ""
 "developers. You should generally not log debug messages unless you know what "
 "you are doing."
 msgstr ""
+"<b>تصحيح</b>: الرسائل المطولة للغاية التي تكون في المقام الأول من الأهمية "
+"للمطورين. عموما ينبغي عليك أن لا تقوم بتسجيل رسائل التصحيح إلا إذا كنت تعرف "
+"ما تقوم به."
 
 #. type: Content of: <html><body><p>
 #: en/log.html:66
@@ -102,21 +125,23 @@ msgid ""
 "Most users should only log <i>Error</i>, <i>Warning</i>, and <i>Notice</i> "
 "messages."
 msgstr ""
+"معظم المستخدمين ينبغي عليهم فقط تسجيل رسائل <i>الخطأ</i>, <i>التحذير</i>, و "
+"<i>الإنذار</i>."
 
 #. type: Content of: <html><body><p>
 #: en/log.html:71
 msgid "To select which message severities you would like to see, do the following:"
-msgstr ""
+msgstr "لإختيار أي خطورات الرسالة التي ترغب في رويتها, إعمل الآتي:"
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:73 en/log.html:92
 msgid "Open the message log from the Vidalia tray menu."
-msgstr ""
+msgstr "إفتح سجل الرسالة من قائمة صينية فيداليا."
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:74 en/log.html:93
 msgid "Click on <i>Settings</i> at the top of the message log window."
-msgstr ""
+msgstr "أنقر على <i>الإعدادات</i> في الجزء العلوي من نافذة سجل الرسالة."
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/log.html:76
@@ -124,21 +149,23 @@ msgid ""
 "Check message severities you would like to see from the Message Filter group "
 "on the left and uncheck message severities you would like to hide."
 msgstr ""
+"ضع علامة على خطورات الرسالة التي ترغب في رؤيتها من مجموعة تصفية الرسالة على "
+"اليسار وأزل العلامة عن خطورات الرسالة التي ترغب في إخفائها."
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/log.html:79
 msgid "Click <i>Save Settings</i> to apply your new message filter."
-msgstr ""
+msgstr "أنقر على <i>حفظ الإعدادات</i> لتطبيق تصفية الرسالة الجديدة الخاصة بك."
 
 #. type: Content of: <html><body>
 #: en/log.html:84
 msgid "<a name=\"logfile\"/>"
-msgstr ""
+msgstr "<a name=\"logfile\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/log.html:85
 msgid "Logging to a File"
-msgstr ""
+msgstr "تسجيل الدخول الى ملف"
 
 #. type: Content of: <html><body><p>
 #: en/log.html:87
@@ -146,11 +173,15 @@ msgid ""
 "Vidalia can also write log messages to a file, as well as logging them in "
 "the message log window. To enable logging to a file, follow these steps:"
 msgstr ""
+"تستطيع فيداليا ايضا كتابة رسائل سجل الى ملف, إضافة الى تسجيلهم في نافذة سجل "
+"الرسالة. لتمكين تسجيل الدخول إلى ملف، إتّبع الخطوات التالية :"
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:94
 msgid "Check the box labeled <i>Automatically save new log messages to a file</i>."
 msgstr ""
+"ضع علامة في الصندوق المسمى <i>تلقائيا يحفظ رسائل السجل الجديدة الى "
+"الملف</i>."
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:96
@@ -159,8 +190,11 @@ msgid ""
 "either type the path and filename into the text box, or click <i>Browse</i> "
 "to navigate to a location for your log file."
 msgstr ""
+"إذا كنت ترغب في تغيير الملف الذي سيتم كتابة الرسائل اليه, إما ان تكتب المسار "
+"واسم الملف في مربع النص, أو أنقر على <i>تصفح</i> للانتقال إلى موقع لملف "
+"السجل الخاص بك."
 
 #. type: Content of: <html><body><ol><li>
 #: en/log.html:100
 msgid "Click <i>Save Settings</i> to save your log destination."
-msgstr ""
+msgstr "أنقر على <i>حفظ الإعدادات</i> لحفظ وجهة السجل الخاص بك."
