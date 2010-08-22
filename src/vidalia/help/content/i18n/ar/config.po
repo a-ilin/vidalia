@@ -10,24 +10,26 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 16:58+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-08-22 06:10+0200\n"
+"Last-Translator: shadi <shadi@35point5.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.5.3\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/config.html:16
 msgid "Configuring Vidalia and Tor"
-msgstr ""
+msgstr "تكوين فيداليا وتور"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:20
@@ -36,21 +38,24 @@ msgid ""
 "of Vidalia and Tor. It also lets you set up and manage a <a "
 "href=\"server.html\">Tor relay</a> so you can help the Tor network grow."
 msgstr ""
+"يسمح لك فيداليا بتكوين بعض الجوانب المعدلة الأكثر شيوعا لفيداليا وتور. تسمح "
+"لك ايضا بضبط وإدارة <a href=\"server.html\">مرحل تور</a> حتى تتمكن من مساعدة "
+"شبكة تور بالنموّ.."
 
 #. type: Content of: <html><body>
 #: en/config.html:26
 msgid "<a name=\"general\"/>"
-msgstr ""
+msgstr "<a name=\"general\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:27
 msgid "General Settings"
-msgstr ""
+msgstr "إعدادات عامة"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:29
 msgid "Settings on the <i>General</i> page are the most commonly modified settings."
-msgstr ""
+msgstr "الاعدادات في الصفحة <i>العامة</i> هي الإعدادات الأكثر تعديلا."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:32
@@ -61,6 +66,10 @@ msgid ""
 "clicking the <i>Browse</i> button and navigating to the particular Tor "
 "installation you want."
 msgstr ""
+"<b>تور التنفيذي</b>: هذا هو تور التنفيذي الذي سوف يقوم فيداليا بتشغيله عند "
+"إختيارك when you select <i>بدء</i> من قائمة الصينية. اذا كان لديك عدة "
+"إصدارات مثبتة لتور, يمكنك إخبار فيداليا أي إصدار تريد تشغيله عن طريق نقر زر "
+"<i>تصفّح</i>  والانتقال الى تثبيت تور المعين الذي تريده."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:39
@@ -69,23 +78,26 @@ msgid ""
 "automatically start Tor when Vidalia starts. You can also configure Vidalia "
 "to run when your system starts (<i>Windows only</i>)."
 msgstr ""
+"<b>خيارات بدء التشغيل</b>: هذا الإعداد يسمح لك بتشغيل فيداليا لتور تلقائيا "
+"عند تشغيل فيداليا. يمكنك أيضا تكوين فيداليا ليتم تشغيله عند بدء تشغيل النظام "
+"الخاص بك (<i>ويندوز فقط</i>)."
 
 #. type: Content of: <html><body>
 #: en/config.html:46
 msgid "<a name=\"network\"/>"
-msgstr ""
+msgstr "<a name=\"network\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:47
 msgid "Network Settings"
-msgstr ""
+msgstr "إعدادات الشبكة"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:49
 msgid ""
 "The <i>Network</i> settings page lets you change how Tor connects to the Tor "
 "network."
-msgstr ""
+msgstr "صفحة <i>إعدادات</i> الشبكة تتيح لك تغيير كيفية إتصال تور بشبكة تور."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:53
@@ -98,6 +110,13 @@ msgid ""
 "you can also enter the <i>Username</i> and <i>Password</i> you use to "
 "connect to your proxy.  Otherwise, you can leave those fields blank."
 msgstr ""
+"<b>أنا أستخدم وكيل للوصول الى الانترنت</b>: اذا كان اتصال الانترنت الخاص بك "
+"يتطلب وكيل بروتوكول نقل النص التشعبي (HTTP), يمكنك تكوين تور لإرسال جميع "
+"طلبات دليل الخاصة به و واتصالات مرحل تور من خلال الوكيل الخاص بك. يجب عليك "
+"تحديد على الاقل اسم المسضيف أو عنوان الوكيل الخاص بك, والمنفذ الذي يصغي اليه "
+"الوكيل الخاص بك للاتصالات. اذا طلب وكيلك مصادقة, يمكنك ايضا إدخال <i>اسم "
+"المستخدم</i> و <i>كلمة المرور</i> الذين تستخدمهم للاتصال بالوكيل الخاص بك.  "
+"وإلا, يمكنك ترك هذه الحقول فارغة."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:62
@@ -109,6 +128,11 @@ msgid ""
 "list of ports permitted by your firewall or proxy, separated by "
 "commas. (<i>Example: 80,443,8080</i>)"
 msgstr ""
+"<b>جدار الحماية الخاص بي يسمح لي فقط بالاتصال بمنافذ معينة</b>: إذا كنت تعمل "
+"خلف جدار حماية أو وكيل تقييدي يحد من المنافذ التي يمكنك الاتصال بها, يمكنك "
+"تكوين تور للاتصال مباشرة بمرحلات فقط تستمع على المنافذ المسموح بها من قبل "
+"جدار الحماية أو الوكيل الخاص بك. يكفي أن تدخل قائمة المنافذ التي يسمح بها "
+"جدار الحماية أو الوكيل الخاص بك, مفصولة بفواصل. (<i>مثال: 80,443,8080</i>)"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:69
@@ -120,26 +144,32 @@ msgid ""
 "or newer only). You can add bridge relays by specifying either their address "
 "and port number, or their address, port number, and fingerprint."
 msgstr ""
+"<b>مزود خدمة الانترنت (ISP) الخاص بي يمنع الاتصالات الى شبكة تور</b>: اذا "
+"كان مزود خدمة الانترنت (ISP) الخاص بك يمنع الاتصالات الى شبكة تور, يستطيع "
+"تور محاولة تجنب التعرض للتصفية عن طريق تشفير اتصالات الدليل الخاص به "
+"والاتصال بشبكة تور عبر مرحلات تسمى <i>جسور</i> (تور 0.2.0.3-ألفا او احدث "
+"فقط). يمكنك إضافة مرحلات جسر عن طريق تحديد إما عنوان ورقم المنفذ الخاص بهم, "
+"او العنوان, رقم المنفذ والبصمة الخاص بهم."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:77
 msgid "Below are examples of valid bridge address formats:"
-msgstr ""
+msgstr "وفيما يلي أمثلة على صيغ عنوان جسر صالح:"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:80
 msgid "128.213.48.13:8080"
-msgstr ""
+msgstr "128.213.48.13:8080"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:83
 msgid "128.213.48.13:8080 1054 13B1 DBDA F867 B226 74D2 52DF 3D9F A367 1F73"
-msgstr ""
+msgstr "128.213.48.13:8080 1054 13B1 DBDA F867 B226 74D2 52DF 3D9F A367 1F73"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:86
 msgid "128.213.48.13:8080 105413B1DBDAF867B22674D252DF3D9FA3671F73"
-msgstr ""
+msgstr "128.213.48.13:8080 105413B1DBDAF867B22674D252DF3D9FA3671F73"
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:89
@@ -153,16 +183,23 @@ msgid ""
 "relays</a> for more information on how to learn new bridge relay addresses "
 "and fingerprints."
 msgstr ""
+"حتى اذا كنت لا تعرف اية عناوين مرحّل الجسر, تفقد صندوق الفحص يمكن ان لا يزال "
+"مفيدا. سوف يقوم تور بتشفير طلبات الدليل الخاص به, التي يمكنها هزيمة آليات "
+"المنع التي تحاول تصفية طلبات تور للحصول على معلومات حول المرحلات الأخرى. اذا "
+"كانت الاتصالات الى مرحلات تور العادية محظورة ايضا, فإنك تحتاج الى تعلم "
+"عنوان مرحل جسر بطريقة ما وإضافته هنا. أنظر موضوع المساعدة حول <a "
+"href=\"bridges.html#finding\">إيجاد مرحلات جسر</a> للمزيد من المعلومات حول "
+"كيفية تعلم عناوين مرحل الجسر والبصمات."
 
 #. type: Content of: <html><body>
 #: en/config.html:100
 msgid "<a name=\"relay\"/>"
-msgstr ""
+msgstr "<a name=\"relay\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:101
 msgid "Relay Settings"
-msgstr ""
+msgstr "إعدادات مرحل"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:103
@@ -170,23 +207,25 @@ msgid ""
 "<i> See <a href=\"server.html\">this help topic</a> for detailed information "
 "about setting up and managing a Tor relay.  </i>"
 msgstr ""
+"<i> أنظر <a href=\"server.html\">موضوع المساعدة هذا</a> للحصول على معلومات "
+"مفصلة حول ضبط وإدارة مرحّل تور.  </i>"
 
 #. type: Content of: <html><body>
 #: en/config.html:109
 msgid "<a name=\"appearance\"/>"
-msgstr ""
+msgstr "<a name=\"appearance\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:110
 msgid "Appearance Settings"
-msgstr ""
+msgstr "إعدادات المظهر"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:112
 msgid ""
 "The settings on the <i>Appearance</i> page allow you to customize the look "
 "and feel of Vidalia."
-msgstr ""
+msgstr "الاعدادات في صفحة <i>المظهر</i> تسمح لك بتخصيص شكل وأسلوب فيداليا."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:116
@@ -198,6 +237,11 @@ msgid ""
 "the dropdown box. You will need to restart Vidalia after changing the "
 "displayed language for the changes to take effect."
 msgstr ""
+"<b>اللغة</b>: تم ترجمت واجهة فيداليا إلى لغات عديدة من قبل متطوعين مساعدين. "
+"عند تشغيل فيداليا لأول مرة, سوف يحاول تخمين أي لغة حاليا يستخدمها جهازك. اذا "
+"كانت تخمينات فيداليا غير صحيحة, أو إذا كنت تفضل لغة مختلفة, يمكنك اختيار "
+"لغة أخرى من صندوق القائمة المنسدلة. سوف تحتاج إلى إعادة تشغيل فيداليا بعد "
+"تغيير لغة العرض لتصبح التغييرات نافذة المفعول."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:124
@@ -206,16 +250,19 @@ msgid ""
 "default interface style. If you dislike the default, you can choose "
 "whichever interface style you prefer from the dropdown box."
 msgstr ""
+"<b>الأسلوب</b>: في معظم الحالات ، سوف يقوم فيداليا افتراضيا بإستخدام أسلوب "
+"الواجهة الافتراضي للنظام الأساسي الخاص بك. إذا لم يعجبك الخيار الافتراضي ، "
+"يمكنك اختيار أي أسلوب واجهة تفضل من صندوق القائمة المنسدلة."
 
 #. type: Content of: <html><body>
 #: en/config.html:131
 msgid "<a name=\"advanced\"/>"
-msgstr ""
+msgstr "<a name=\"advanced\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:132
 msgid "Advanced Settings"
-msgstr ""
+msgstr "إعدادات متقدمة"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:134
@@ -223,6 +270,8 @@ msgid ""
 "The settings on the <i>Advanced</i> page should generally only be modified "
 "by more experienced users."
 msgstr ""
+"الاعدادات في الصفحة <i>المتقدمة</i> ينبغي تعديلها بشكل عام فقط من قبل "
+"مستخدمين أكثر خبرة."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:138
@@ -232,6 +281,10 @@ msgid ""
 "have a conflict with another service on your machine, or if you are using "
 "Vidalia to control and monitor a Tor process running on another machine."
 msgstr ""
+"<b>التحكم بالعنوان والامبير; منفذ</b>: منفذ <i>التحكم</i> هو المنفذ الذي "
+"يستخدم فيداليا لمخاطبة تور.  هذا لا يحتاج إلى تغيير ما لم يكن لديك تعارض مع "
+"خدمة أخرى على جهازك, أو إذا كنت تستخدم فيداليا للتحكم ومراقبة عملية تور تعمل "
+"على جهاز آخر."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:144
@@ -240,6 +293,9 @@ msgid ""
 "limit the applications on your machine that can connect to and reconfigure "
 "your Tor installation. The available authentication methods are:"
 msgstr ""
+"<b>مصادقة منفذ التحكم</b>: تستخدم مصادقة منفذ التحكم للحد من التطبيقات على "
+"جهازك التي يمكن الاتصال بها وإعادة تكوين تثبيت تور. أساليب المصادقة المتوفرة "
+"هي:"
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:150
@@ -248,6 +304,8 @@ msgid ""
 "<b>strongly</b> discouraged. Any application or user on your computer can "
 "reconfigure your Tor installation."
 msgstr ""
+"<b>لا يوجد</b> -- لا يلزم مصادقة. لا ينصح <b>بإستخدام هذا الخيار</b> بشدة. "
+"يستطيع أي تطبيق أو مستخدم على جهاز الكمبيوتر الخاص بك إعادة تكوين تثبيت تور."
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:155
@@ -258,6 +316,11 @@ msgid ""
 "Vidalia randomly generate a new password each time it starts Tor by checking "
 "the <i>Randomly Generate</i> checkbox."
 msgstr ""
+"<b>كلمة المرور</b> <i>(افتراضيا)</i> -- اذا تم إختيار هذه الطريقة, يمكنك "
+"تحديد كلمة المرور التي سوف يطلبها تور في كل مرة يقوم مستخدم أو تطبيق "
+"بالاتصال بمنفذ التحكم لتور. اذا قام فيداليا بتشغيل تور لك, يمكنك جعل فيداليا "
+"بتوليد كلمة مرور جديدة عشوائيا في كل مرة يقوم بتشغيل تور عن طريق تفقد صندوق "
+"فحص <i>التوليد</i> العشوائي."
 
 #. type: Content of: <html><body><ul><li><ul><li>
 #: en/config.html:162
@@ -267,6 +330,10 @@ msgid ""
 "starts. Any user or application that tries to connect to Tor's control port "
 "must be able to provide the contents of this cookie."
 msgstr ""
+"<b>ملف تعريف الارتباط</b> -- اذا تم إختيار مصادقة ملف تعريف الارتباط, سوف "
+"يقوم تور بكتابة ملف (أو, <i>ملف تعريف الارتباط</i>) يحتوي بايتات عشوائية "
+"لدليل البيانات الخاص به عند تشغيله. أي مستخدم أو تطبيق يحاول الاتصال بمنفذ "
+"التحكم لتور يجب أن يكون قادرا على توفير محتويات ملف تعريف الارتباط هذا ."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:170
@@ -276,6 +343,9 @@ msgid ""
 "file. If you leave this field blank, Tor will uses its own default torrc "
 "location."
 msgstr ""
+"<b>ملف تكوين تور</b> <i>(إختياري)</i>: يمكنك إستخدام هذا الخيار لجعل فيداليا "
+"يقوم بتشغيل تور بإستخدامc <i>تورك</i> محدد, ملف تكوين تور. اذا تركت هذا "
+"الحقل فارغا, سوف يستخدم تور موقع تورك الافتراضي الخاص به."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:175
@@ -285,6 +355,10 @@ msgid ""
 "information, Tor relay keys, and configuration files. If you leave this "
 "field blank, Tor will use its own default data directory location."
 msgstr ""
+"<b>دليل بيانات تور</b> <i>(إختياري)</i>: يمكنك تحديد الدليل الذي سوف يقوم "
+"تور بتخزين بياناته المحفوظة, مثل معلومات مرحل تور المؤقتة, مفاتيح مرحل تور, "
+"وملفات التكوين. اذا تركت هذا الحقل فارغا, سوف يستخدم تور موقع دليل البيانات "
+"الافتراضي الخاص به."
 
 #. type: Content of: <html><body><ul><li>
 #: en/config.html:181
@@ -294,16 +368,20 @@ msgid ""
 "starts.  If you enter a value for <b>Run as Group</b>, Tor will "
 "<i>setgid</i> to this group when it starts."
 msgstr ""
+"<b>الأذونات</b> <i>(إختياري, غير متوفر في ويندوز)</i>: اذا قمت بإدخال قيمة "
+"<b>للتشغيل كمستخدم</b>, سوف يقوم تور <i>بضبط هوية المستخدم</i> لهذا المسخدم "
+"عند بدء تشغيله.  اذا قمت بإدخال قيمة <b>للتشغيل كمجموعة</b>, سوف يقوم تور "
+"<i>بضبط هوية المجموعة</i> لهذه المجموعة عند بدء تشغيلها."
 
 #. type: Content of: <html><body>
 #: en/config.html:189
 msgid "<a name=\"services\"/>"
-msgstr ""
+msgstr "<a name=\"services\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/config.html:190
 msgid "Hidden Service Settings"
-msgstr ""
+msgstr "إعدادات الخدمة الخفية"
 
 #. type: Content of: <html><body><p>
 #: en/config.html:192
@@ -311,3 +389,6 @@ msgid ""
 "Hidden services allow you to provide any kind of TCP-based service, e.g.  an "
 "HTTP service, to others without revealing your IP address."
 msgstr ""
+"الخدمات الخفية تسمح لك بتقديم أي نوع من الخدمة على أساس برنامج التعاون الفني "
+"(TCP), على سبيل المثال:  خدمة بروتوكول نقل النص التشعبي (HTTP), الى الآخرين "
+"بدون كشف عنوان IP الخاص بك."
