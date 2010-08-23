@@ -3,194 +3,195 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2008-08-20 03:25+0000\n"
-"PO-Revision-Date: 2008-08-20 03:25+0000\n"
-"Last-Translator: Automatically generated\n"
+"PO-Revision-Date: 2010-08-22 23:06+0200\n"
+"Last-Translator: Martin <martinbarta@czech-city.eu>\n"
 "Language-Team: none\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: Vidalia ts2po 0.2\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #: qaccessibleobject.cpp:348
 msgctxt "QApplication"
 msgid "Activate"
-msgstr ""
+msgstr "Aktivovat"
 
 #: qmessagebox.h:319
 msgctxt "QApplication"
 msgid "Executable '%1' requires Qt %2, found Qt %3."
-msgstr ""
+msgstr "Spuštěný '%1' vyžaduje aby %2, byl nazalezen"
 
 #: qmessagebox.h:321
 msgctxt "QApplication"
 msgid "Incompatible Qt Library Error"
-msgstr ""
+msgstr "Chyba nekompatibility knihovny Qt"
 
 #: qapplication.cpp:2095
 msgctxt "QApplication"
 msgid "QT_LAYOUT_DIRECTION"
-msgstr ""
+msgstr "QT_LAYOUT_DIRECTION"
 
 #: qaccessibleobject.cpp:350
 msgctxt "QApplication"
 msgid "Activates the program's main window"
-msgstr ""
+msgstr "Aktivovat program do hlavního okna"
 
 #: qmessagebox.cpp:2104
 msgctxt "QDialogButtonBox"
 msgid "OK"
-msgstr ""
+msgstr "OK"
 
 #: qdialogbuttonbox.cpp:528
 msgctxt "QDialogButtonBox"
 msgid "Save"
-msgstr ""
+msgstr "Uložit"
 
 #: qdialogbuttonbox.cpp:531
 msgctxt "QDialogButtonBox"
 msgid "Open"
-msgstr ""
+msgstr "Otevřít"
 
 #: qdialogbuttonbox.cpp:534
 msgctxt "QDialogButtonBox"
 msgid "Cancel"
-msgstr ""
+msgstr "Zrušit"
 
 #: qdialogbuttonbox.cpp:537
 msgctxt "QDialogButtonBox"
 msgid "Close"
-msgstr ""
+msgstr "Zavřít"
 
 #: qdialogbuttonbox.cpp:540
 msgctxt "QDialogButtonBox"
 msgid "Apply"
-msgstr ""
+msgstr "Použít"
 
 #: qdialogbuttonbox.cpp:543
 msgctxt "QDialogButtonBox"
 msgid "Reset"
-msgstr ""
+msgstr "Resetovat"
 
 #: qdialogbuttonbox.cpp:546
 msgctxt "QDialogButtonBox"
 msgid "Help"
-msgstr ""
+msgstr "Nápověda"
 
 #: qdialogbuttonbox.cpp:550
 msgctxt "QDialogButtonBox"
 msgid "Don't Save"
-msgstr ""
+msgstr "Neukládat"
 
 #: qdialogbuttonbox.cpp:554
 msgctxt "QDialogButtonBox"
 msgid "Discard"
-msgstr ""
+msgstr "Odložit"
 
 #: qdialogbuttonbox.cpp:557
 msgctxt "QDialogButtonBox"
 msgid "&Yes"
-msgstr ""
+msgstr "&Ano"
 
 #: qdialogbuttonbox.cpp:560
 msgctxt "QDialogButtonBox"
 msgid "Yes to &All"
-msgstr ""
+msgstr "Ano pro &Všechny"
 
 #: qdialogbuttonbox.cpp:563
 msgctxt "QDialogButtonBox"
 msgid "&No"
-msgstr ""
+msgstr "&Ne"
 
 #: qdialogbuttonbox.cpp:566
 msgctxt "QDialogButtonBox"
 msgid "N&o to All"
-msgstr ""
+msgstr "Ne & pro všechny"
 
 #: qdialogbuttonbox.cpp:569
 msgctxt "QDialogButtonBox"
 msgid "Save All"
-msgstr ""
+msgstr "Uložit vše"
 
 #: qdialogbuttonbox.cpp:572
 msgctxt "QDialogButtonBox"
 msgid "Abort"
-msgstr ""
+msgstr "Přerušit"
 
 #: qdialogbuttonbox.cpp:575
 msgctxt "QDialogButtonBox"
 msgid "Retry"
-msgstr ""
+msgstr "Znovu"
 
 #: qdialogbuttonbox.cpp:578
 msgctxt "QDialogButtonBox"
 msgid "Ignore"
-msgstr ""
+msgstr "Ignorovat"
 
 #: qdialogbuttonbox.cpp:581
 msgctxt "QDialogButtonBox"
 msgid "Restore Defaults"
-msgstr ""
+msgstr "Původní nastavení"
 
 #: qdialogbuttonbox.cpp:552
 msgctxt "QDialogButtonBox"
 msgid "Close without Saving"
-msgstr ""
+msgstr "Zavřít bez uložení"
 
 #: qdialogbuttonbox.cpp:525
 msgctxt "QDialogButtonBox"
 msgid "&OK"
-msgstr ""
+msgstr "&OK"
 
 #: qdirmodel.cpp:423
 msgctxt "QDirModel"
 msgid "Name"
-msgstr ""
+msgstr "Jméno"
 
 #: qdirmodel.cpp:424
 msgctxt "QDirModel"
 msgid "Size"
-msgstr ""
+msgstr "Velikost"
 
 #: qdirmodel.cpp:427
 msgctxt "QDirModel"
 msgid "Kind"
-msgstr ""
+msgstr "Druh"
 
 #: qdirmodel.cpp:429
 msgctxt "QDirModel"
 msgid "Type"
-msgstr ""
+msgstr "Typ"
 
 #: qdirmodel.cpp:435
 msgctxt "QDirModel"
 msgid "Date Modified"
-msgstr ""
+msgstr "Datum změny"
 
 #: qfiledialog_win.cpp:126
 msgctxt "QFileDialog"
 msgid "All Files (*)"
-msgstr ""
+msgstr "Všechny Soubory (*)"
 
 #: qfiledialog.cpp:881
 msgctxt "QFileDialog"
 msgid "Directories"
-msgstr ""
+msgstr "Adresáře"
 
 #: qfiledialog.cpp:2408
 msgctxt "QFileDialog"
 msgid "&Open"
-msgstr ""
+msgstr "&Otevřít"
 
 #: qfiledialog.cpp:919
 msgctxt "QFileDialog"
 msgid "&Save"
-msgstr ""
+msgstr "&Uložit"
 
 #: qfiledialog.cpp:435
 msgctxt "QFileDialog"
 msgid "Open"
-msgstr ""
+msgstr "Otevřít"
 
 #: qfiledialog.cpp:1670
 msgctxt "QFileDialog"
@@ -198,6 +199,8 @@ msgid ""
 "%1 already exists.\n"
 "Do you want to replace it?"
 msgstr ""
+"%1 již existuje.\n"
+"Přejete si jej nahradit?"
 
 #: qfiledialog.cpp:1690
 msgctxt "QFileDialog"
@@ -206,56 +209,59 @@ msgid ""
 "File not found.\n"
 "Please verify the correct file name was given."
 msgstr ""
+"%1\n"
+"Soubor nebyl nalezen.\n"
+"Prosím ověřte správný název souboru."
 
 #: qdirmodel.cpp:833
 msgctxt "QFileDialog"
 msgid "My Computer"
-msgstr ""
+msgstr "Můj počítač"
 
 #: qfiledialog.cpp:462
 msgctxt "QFileDialog"
 msgid "&Rename"
-msgstr ""
+msgstr "&Přejmenovat"
 
 #: qfiledialog.cpp:463
 msgctxt "QFileDialog"
 msgid "&Delete"
-msgstr ""
+msgstr "&Smazat"
 
 #: qfiledialog.cpp:464
 msgctxt "QFileDialog"
 msgid "Show &hidden files"
-msgstr ""
+msgstr "Zobrazit & skrýt složky"
 
 #: ui_qfiledialog.h:264
 msgctxt "QFileDialog"
 msgid "Back"
-msgstr ""
+msgstr "Zpět"
 
 #: ui_qfiledialog.h:274
 msgctxt "QFileDialog"
 msgid "Parent Directory"
-msgstr ""
+msgstr "Hlavní adresář"
 
 #: ui_qfiledialog.h:284
 msgctxt "QFileDialog"
 msgid "List View"
-msgstr ""
+msgstr "Zobrazit seznam"
 
 #: ui_qfiledialog.h:289
 msgctxt "QFileDialog"
 msgid "Detail View"
-msgstr ""
+msgstr "Zobrazit detail"
 
 #: ui_qfiledialog.h:292
 msgctxt "QFileDialog"
 msgid "Files of type:"
-msgstr ""
+msgstr "Soubory typu:"
 
 #: qfiledialog.cpp:883
 msgctxt "QFileDialog"
 msgid "Directory:"
-msgstr ""
+msgstr "Adresář:"
 
 #: qfiledialog.cpp:2476
 msgctxt "QFileDialog"
@@ -264,6 +270,9 @@ msgid ""
 "Directory not found.\n"
 "Please verify the correct directory name was given."
 msgstr ""
+"%1\n"
+"Adresář nebyl nalezen.\n"
+"Prosím ověřte, zda bylo jméno adresáře zadáno správně."
 
 #: qfiledialog.cpp:2281
 msgctxt "QFileDialog"
@@ -271,96 +280,98 @@ msgid ""
 "'%1' is write protected.\n"
 "Do you want to delete it anyway?"
 msgstr ""
+"'%1'  je chráněn proti přepisu.\n"
+"Chcete jej smazat i tak?"
 
 #: qfiledialog.cpp:2286
 msgctxt "QFileDialog"
 msgid "Are sure you want to delete '%1'?"
-msgstr ""
+msgstr "Jste si jisti, že chcete odstranit '%1'?"
 
 #: qfiledialog.cpp:2299
 msgctxt "QFileDialog"
 msgid "Could not delete directory."
-msgstr ""
+msgstr "Nelze smazat adresář."
 
 #: qfiledialog_win.cpp:128
 msgctxt "QFileDialog"
 msgid "All Files (*.*)"
-msgstr ""
+msgstr "Všechny soubory (*.*)"
 
 #: qfiledialog.cpp:437
 msgctxt "QFileDialog"
 msgid "Save As"
-msgstr ""
+msgstr "Uložit jako"
 
 #: qfileiconprovider.cpp:379
 msgctxt "QFileDialog"
 msgid "Drive"
-msgstr ""
+msgstr "Disk"
 
 #: qfileiconprovider.cpp:383
 msgctxt "QFileDialog"
 msgid "File"
-msgstr ""
+msgstr "Soubor"
 
 #: qfileiconprovider.cpp:412
 msgctxt "QFileDialog"
 msgid "Unknown"
-msgstr ""
+msgstr "Neznámý"
 
 #: qfiledialog.cpp:439
 msgctxt "QFileDialog"
 msgid "Find Directory"
-msgstr ""
+msgstr "Vybrat adresář"
 
 #: qfiledialog.cpp:458
 msgctxt "QFileDialog"
 msgid "Show "
-msgstr ""
+msgstr "Zobrazit"
 
 #: ui_qfiledialog.h:269
 msgctxt "QFileDialog"
 msgid "Forward"
-msgstr ""
+msgstr "vpřed"
 
 #: qfiledialog.cpp:2137
 msgctxt "QFileDialog"
 msgid "New Folder"
-msgstr ""
+msgstr "Nová složka"
 
 #: qfiledialog.cpp:465
 msgctxt "QFileDialog"
 msgid "&New Folder"
-msgstr ""
+msgstr "&Nová složka"
 
 #: qfiledialog.cpp:917
 msgctxt "QFileDialog"
 msgid "&Choose"
-msgstr ""
+msgstr "&Vybrat"
 
 #: qsidebar.cpp:388
 msgctxt "QFileDialog"
 msgid "Remove"
-msgstr ""
+msgstr "Odebrat"
 
 #: qfiledialog.cpp:886
 msgctxt "QFileDialog"
 msgid "File &name:"
-msgstr ""
+msgstr "Soubor & jméno:"
 
 #: ui_qfiledialog.h:261
 msgctxt "QFileDialog"
 msgid "Look in:"
-msgstr ""
+msgstr "Podívejte se:"
 
 #: ui_qfiledialog.h:279
 msgctxt "QFileDialog"
 msgid "Create New Folder"
-msgstr ""
+msgstr "Vytvořit novou složku"
 
 #: qfilesystemmodel.cpp:761
 msgctxt "QFileSystemModel"
 msgid "Invalid filename"
-msgstr ""
+msgstr "Špatné jméno souboru"
 
 #: qfilesystemmodel.cpp:763
 msgctxt "QFileSystemModel"
@@ -368,63 +379,65 @@ msgid ""
 "<b>The name \"%1\" can not be used.</b><p>Try using another name, with fewer "
 "characters or no punctuations marks."
 msgstr ""
+"<b>Název \"%1\" nelze použít.</b><p>Zkuste použít jiný název s menším počtem "
+"znaků nebo bez zvláštních znaků."
 
 #: qfilesystemmodel.cpp:832
 msgctxt "QFileSystemModel"
 msgid "Name"
-msgstr ""
+msgstr "Jméno"
 
 #: qfilesystemmodel.cpp:834
 msgctxt "QFileSystemModel"
 msgid "Size"
-msgstr ""
+msgstr "Velikost"
 
 #: qfilesystemmodel.cpp:838
 msgctxt "QFileSystemModel"
 msgid "Kind"
-msgstr ""
+msgstr "Druh"
 
 #: qfilesystemmodel.cpp:840
 msgctxt "QFileSystemModel"
 msgid "Type"
-msgstr ""
+msgstr "Typ"
 
 #: qfilesystemmodel.cpp:847
 msgctxt "QFileSystemModel"
 msgid "Date Modified"
-msgstr ""
+msgstr "Datum úpravy"
 
 #: qfilesystemmodel_p.h:198
 msgctxt "QFileSystemModel"
 msgid "My Computer"
-msgstr ""
+msgstr "Můj počítač"
 
 #: qfilesystemmodel_p.h:200
 msgctxt "QFileSystemModel"
 msgid "Computer"
-msgstr ""
+msgstr "Počítač"
 
 #: qfilesystemmodel.cpp:677
 msgctxt "QFileSystemModel"
 msgid "%1 TB"
-msgstr ""
+msgstr "%1 TB"
 
 #: qfilesystemmodel.cpp:679
 msgctxt "QFileSystemModel"
 msgid "%1 GB"
-msgstr ""
+msgstr "%1 GB"
 
 #: qfilesystemmodel.cpp:681
 msgctxt "QFileSystemModel"
 msgid "%1 MB"
-msgstr ""
+msgstr "%1 MB"
 
 #: qfilesystemmodel.cpp:683
 msgctxt "QFileSystemModel"
 msgid "%1 KB"
-msgstr ""
+msgstr "%1 KB"
 
 #: qfilesystemmodel.cpp:684
 msgctxt "QFileSystemModel"
 msgid "%1 bytes"
-msgstr ""
+msgstr "%1 bajt"

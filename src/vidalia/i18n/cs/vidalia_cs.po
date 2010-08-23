@@ -3,14 +3,15 @@ msgstr ""
 "Project-Id-Version: Vidalia\n"
 "Report-Msgid-Bugs-To: translations@vidalia-project.net\n"
 "POT-Creation-Date: 2009-05-19 23:56+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: \n"
+"PO-Revision-Date: 2010-08-22 23:35+0200\n"
+"Last-Translator: Martin <martinbarta@czech-city.eu>\n"
 "Language-Team: translations@vidalia-project.net\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
-"X-Generator: Vidalia ts2po 0.2\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Pootle 2.0.5\n"
 
 msgctxt "AboutDialog"
 msgid "About Vidalia"
@@ -18,19 +19,19 @@ msgstr "O Vidalia"
 
 msgctxt "AboutDialog"
 msgid "License"
-msgstr ""
+msgstr "Licence"
 
 msgctxt "AboutDialog"
 msgid "Vidalia 0.2.0"
-msgstr "Vidalia"
+msgstr "Vidalia 0.2.0"
 
 msgctxt "AboutDialog"
 msgid "Tor 0.2.0.32"
-msgstr ""
+msgstr "Tor 0.2.0.32"
 
 msgctxt "AboutDialog"
 msgid "Qt 4.4.2"
-msgstr "4.4.2"
+msgstr "Qt 4.4.2"
 
 msgctxt "AboutDialog"
 msgid "Vidalia"
@@ -42,11 +43,11 @@ msgstr "Tor"
 
 msgctxt "AboutDialog"
 msgid "Qt"
-msgstr ""
+msgstr "Qt"
 
 msgctxt "AboutDialog"
 msgid "version"
-msgstr ""
+msgstr "verze"
 
 msgctxt "AdvancedPage"
 msgid "'%1' is not a valid IP address."
@@ -58,23 +59,23 @@ msgstr ""
 
 msgctxt "AdvancedPage"
 msgid "Select Tor Configuration File"
-msgstr "Vyber Tor konfiguracni soubor"
+msgstr "Vyber Tor konfigurační soubor"
 
 msgctxt "AdvancedPage"
 msgid "File Not Found"
-msgstr "Soubro nenalezen"
+msgstr "Soubor nenalezen"
 
 msgctxt "AdvancedPage"
 msgid "%1 does not exist. Would you like to create it?"
-msgstr "%1 neexistuje. Chces to vytvorit?"
+msgstr "%1 neexistuje. Chcete jej vytvořit?"
 
 msgctxt "AdvancedPage"
 msgid "Failed to Create File"
-msgstr "Vytvoreni souboru neuspesne"
+msgstr "Vytvoření souboru bylo neúspěšné."
 
 msgctxt "AdvancedPage"
 msgid "Unable to create %1 [%2]"
-msgstr "Nemohu vytvorit %1 [%2]"
+msgstr "Nelze vytvořit %1 [%2]"
 
 msgctxt "AdvancedPage"
 msgid "Select a Directory to Use for Tor Data"
@@ -98,7 +99,7 @@ msgstr "Kontrolni port"
 
 msgctxt "AdvancedPage"
 msgid "Authentication:"
-msgstr ""
+msgstr "Autentizace:"
 
 msgctxt "AdvancedPage"
 msgid "Address:"
@@ -106,15 +107,15 @@ msgstr "Adresa:"
 
 msgctxt "AdvancedPage"
 msgid "None"
-msgstr ""
+msgstr "Není"
 
 msgctxt "AdvancedPage"
 msgid "Cookie"
-msgstr ""
+msgstr "Koláčky"
 
 msgctxt "AdvancedPage"
 msgid "Password"
-msgstr ""
+msgstr "Heslo"
 
 msgctxt "AdvancedPage"
 msgid "Randomly Generate"
@@ -126,7 +127,7 @@ msgstr ":"
 
 msgctxt "AdvancedPage"
 msgid "Tor Configuration File"
-msgstr ""
+msgstr "Tor Konfigurační soubor"
 
 msgctxt "AdvancedPage"
 msgid "Start the Tor software with the specified configuration file (torrc)"
@@ -138,11 +139,11 @@ msgstr ""
 
 msgctxt "AdvancedPage"
 msgid "Browse"
-msgstr "Prochazet"
+msgstr "Prohlížet"
 
 msgctxt "AdvancedPage"
 msgid "Data Directory"
-msgstr ""
+msgstr "Adresář dat"
 
 msgctxt "AdvancedPage"
 msgid "Store data for the Tor software in the following directory"
@@ -164,7 +165,7 @@ msgstr "Jazyk"
 
 msgctxt "AppearancePage"
 msgid "Choose the language used in Vidalia"
-msgstr "Vyber jazyk pro puziti ve Vidalia"
+msgstr "Vyber jazyk pro použití ve Vidalia"
 
 msgctxt "AppearancePage"
 msgid "Style"
@@ -172,11 +173,11 @@ msgstr "Styl"
 
 msgctxt "AppearancePage"
 msgid "Choose Vidalia's interface style"
-msgstr "Vyber styl rozhrani Vidalia"
+msgstr "Vyber styl rozhrání Vidalia"
 
 msgctxt "AppearancePage"
 msgid "Vidalia was unable to load the selected language translation."
-msgstr ""
+msgstr "Vidalia nebyl schopen načíst vybraný překlad."
 
 msgctxt "BandwidthGraph"
 msgid "Since:"
@@ -184,31 +185,32 @@ msgstr "Od:"
 
 msgctxt "BandwidthGraph"
 msgid "Hide Settings"
-msgstr "Schovat nastaveni"
+msgstr "Skrýt nastavení"
 
 msgctxt "BandwidthGraph"
 msgid "Show Settings"
-msgstr "Ukaz nastaveni"
+msgstr "Zobrazit Nastavení"
 
+#, fuzzy
 msgctxt "BandwidthGraph"
 msgid "Tor Bandwidth Usage"
 msgstr "Vyuziti sirky pasma Tor."
 
 msgctxt "BandwidthGraph"
 msgid "Reset"
-msgstr "Reset"
+msgstr "Resetovat"
 
 msgctxt "BandwidthGraph"
 msgid "Receive Rate"
-msgstr "Prijato"
+msgstr "Udělené hodnocení"
 
 msgctxt "BandwidthGraph"
 msgid "Send Rate"
-msgstr "Odeslano"
+msgstr "Odeslat hodnocení"
 
 msgctxt "BandwidthGraph"
 msgid "Always on Top"
-msgstr "Vzdy viditelne"
+msgstr "Vždy nahoře"
 
 msgctxt "BandwidthGraph"
 msgid "Style"
@@ -216,7 +218,7 @@ msgstr "Styl"
 
 msgctxt "BandwidthGraph"
 msgid "Changes the transparency of the Bandwidth Graph"
-msgstr "Zmena pruhlednosti Grafu toku dat"
+msgstr "Změna průhlednosti grafu pro tok dat"
 
 msgctxt "BandwidthGraph"
 msgid "100"
@@ -224,15 +226,15 @@ msgstr "100"
 
 msgctxt "BandwidthGraph"
 msgid "% Opaque"
-msgstr "% Nepruhlednost"
+msgstr "% Neprůhlednost"
 
 msgctxt "BandwidthGraph"
 msgid "Save"
-msgstr "Uloz"
+msgstr "Uložit"
 
 msgctxt "BandwidthGraph"
 msgid "Cancel"
-msgstr "Smaz"
+msgstr "Zrušit"
 
 msgctxt "BridgeDownloader"
 msgid "Starting HTTPS bridge request..."
@@ -264,7 +266,7 @@ msgstr ""
 
 msgctxt "BridgeUsageDialog"
 msgid "Country"
-msgstr ""
+msgstr "Země"
 
 msgctxt "BridgeUsageDialog"
 msgid "# Clients"
@@ -284,35 +286,35 @@ msgstr ""
 
 msgctxt "Circuit"
 msgid "New"
-msgstr "Nove"
+msgstr "Nový"
 
 msgctxt "Circuit"
 msgid "Open"
-msgstr "Otevrit"
+msgstr "Otevřít"
 
 msgctxt "Circuit"
 msgid "Building"
-msgstr "Sestaveni"
+msgstr "Sestavení"
 
 msgctxt "Circuit"
 msgid "Failed"
-msgstr "Neuspesne"
+msgstr "Neúspěšný"
 
 msgctxt "Circuit"
 msgid "Closed"
-msgstr "Zavreno"
+msgstr "Zavřít"
 
 msgctxt "Circuit"
 msgid "Unknown"
-msgstr "Nezname"
+msgstr "Neznámé"
 
 msgctxt "CircuitItem"
 msgid "<Path Empty>"
-msgstr "<Prazdna cesta>"
+msgstr "<Prázdná cesta>"
 
 msgctxt "CircuitListWidget"
 msgid "Connection"
-msgstr "Pripojeni"
+msgstr "Připojení"
 
 msgctxt "CircuitListWidget"
 msgid "Status"
@@ -332,15 +334,15 @@ msgstr ""
 
 msgctxt "ConfigDialog"
 msgid "General"
-msgstr "Hlavni"
+msgstr "Hlavní"
 
 msgctxt "ConfigDialog"
 msgid "Network"
-msgstr ""
+msgstr "Síť"
 
 msgctxt "ConfigDialog"
 msgid "Sharing"
-msgstr ""
+msgstr "Sdílení"
 
 msgctxt "ConfigDialog"
 msgid "Services"
@@ -360,7 +362,7 @@ msgstr "Pomoc"
 
 msgctxt "ConfigDialog"
 msgid "Error Saving Settings"
-msgstr ""
+msgstr "Chyba ukládání nastavení"
 
 msgctxt "ConfigDialog"
 msgid "Vidalia was unable to save your %1 settings."
@@ -376,7 +378,7 @@ msgstr ""
 
 msgctxt "ConfigDialog"
 msgid "Settings"
-msgstr "Nastaveni"
+msgstr "Nastavení"
 
 msgctxt "ControlConnection"
 msgid "Vidalia was unable to connect to Tor. (%1)"
@@ -388,7 +390,7 @@ msgstr "Kontrolni socket neni detekovan"
 
 msgctxt "ControlPasswordInputDialog"
 msgid "Password Required"
-msgstr ""
+msgstr "Heslo je povinné"
 
 msgctxt "ControlPasswordInputDialog"
 msgid "Remember my password"
@@ -400,7 +402,7 @@ msgstr ""
 
 msgctxt "ControlSocket"
 msgid "Control socket is not connected."
-msgstr "Kontrolni socket neni pripojen."
+msgstr "Kontrolní socket není připojen."
 
 msgctxt "ControlSocket"
 msgid "Error sending control command. [%1]"
@@ -416,15 +418,15 @@ msgstr "Chybna controlni odpoved. [%1]"
 
 msgctxt "CountryInfo"
 msgid "Afghanistan"
-msgstr ""
+msgstr "Afghánistán"
 
 msgctxt "CountryInfo"
 msgid "Andorra"
-msgstr ""
+msgstr "Andorra"
 
 msgctxt "CountryInfo"
 msgid "Angola"
-msgstr ""
+msgstr "Angola"
 
 msgctxt "CountryInfo"
 msgid "Antigua & Barbuda"
@@ -432,27 +434,27 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Argentina"
-msgstr ""
+msgstr "Argentina"
 
 msgctxt "CountryInfo"
 msgid "Armenia"
-msgstr ""
+msgstr "Arménie"
 
 msgctxt "CountryInfo"
 msgid "Australia"
-msgstr "O Vidalia"
+msgstr "Austrálie"
 
 msgctxt "CountryInfo"
 msgid "Azerbaijan"
-msgstr ""
+msgstr "Azerbajdžán"
 
 msgctxt "CountryInfo"
 msgid "Bahamas"
-msgstr ""
+msgstr "Bahamy"
 
 msgctxt "CountryInfo"
 msgid "Bangladesh"
-msgstr ""
+msgstr "Bangladéš"
 
 msgctxt "CountryInfo"
 msgid "Barbados"
@@ -460,11 +462,11 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Belarus"
-msgstr ""
+msgstr "Bělorusko"
 
 msgctxt "CountryInfo"
 msgid "Belgium"
-msgstr ""
+msgstr "Belgie"
 
 msgctxt "CountryInfo"
 msgid "Belize"
@@ -476,11 +478,11 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Bolivia"
-msgstr ""
+msgstr "Bolívie"
 
 msgctxt "CountryInfo"
 msgid "Bosnia & Herzegovina"
-msgstr ""
+msgstr "Bosna a Hercegovina"
 
 msgctxt "CountryInfo"
 msgid "Botswana"
@@ -488,7 +490,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Brazil"
-msgstr ""
+msgstr "Brazílie"
 
 msgctxt "CountryInfo"
 msgid "Brunei Darussalam"
@@ -496,7 +498,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Bulgaria"
-msgstr ""
+msgstr "Bulharsko"
 
 msgctxt "CountryInfo"
 msgid "Burkina Faso"
@@ -508,15 +510,15 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Cambodia"
-msgstr ""
+msgstr "Kambodža"
 
 msgctxt "CountryInfo"
 msgid "Cameroon"
-msgstr ""
+msgstr "Kamerun"
 
 msgctxt "CountryInfo"
 msgid "Canada"
-msgstr ""
+msgstr "Kanada"
 
 msgctxt "CountryInfo"
 msgid "Cape Verde"
@@ -524,39 +526,39 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Central African Republic"
-msgstr ""
+msgstr "Centrální Africká republika"
 
 msgctxt "CountryInfo"
 msgid "Chad"
-msgstr ""
+msgstr "Čad"
 
 msgctxt "CountryInfo"
 msgid "Chile"
-msgstr ""
+msgstr "Chile"
 
 msgctxt "CountryInfo"
 msgid "China"
-msgstr ""
+msgstr "Čína"
 
 msgctxt "CountryInfo"
 msgid "Colombia"
-msgstr ""
+msgstr "Kolumbie"
 
 msgctxt "CountryInfo"
 msgid "Comoros"
-msgstr ""
+msgstr "Comoros"
 
 msgctxt "CountryInfo"
 msgid "Congo, The Democratic Republic of the"
-msgstr ""
+msgstr "Demokratická republika Kongo"
 
 msgctxt "CountryInfo"
 msgid "Congo"
-msgstr ""
+msgstr "Kongo"
 
 msgctxt "CountryInfo"
 msgid "Costa Rica"
-msgstr ""
+msgstr "Kosta Rika"
 
 msgctxt "CountryInfo"
 msgid "Cote dâIvoire"
@@ -564,23 +566,23 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Croatia"
-msgstr ""
+msgstr "Chorvatsko"
 
 msgctxt "CountryInfo"
 msgid "Cuba"
-msgstr ""
+msgstr "Kuba"
 
 msgctxt "CountryInfo"
 msgid "Cyprus"
-msgstr ""
+msgstr "Kypr"
 
 msgctxt "CountryInfo"
 msgid "Czech Republic"
-msgstr ""
+msgstr "Česká republika"
 
 msgctxt "CountryInfo"
 msgid "Denmark"
-msgstr ""
+msgstr "Dánsko"
 
 msgctxt "CountryInfo"
 msgid "Djibouti"
@@ -592,15 +594,15 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Dominican Republic"
-msgstr ""
+msgstr "Dominikánská republika"
 
 msgctxt "CountryInfo"
 msgid "Ecuador"
-msgstr ""
+msgstr "Ekvádor"
 
 msgctxt "CountryInfo"
 msgid "Egypt"
-msgstr ""
+msgstr "Egypt"
 
 msgctxt "CountryInfo"
 msgid "El Salvador"
@@ -616,11 +618,11 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Estonia"
-msgstr ""
+msgstr "Estonsko"
 
 msgctxt "CountryInfo"
 msgid "France"
-msgstr "Smaz"
+msgstr "Francie"
 
 msgctxt "CountryInfo"
 msgid "Gabon"
@@ -636,7 +638,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Germany"
-msgstr ""
+msgstr "Německo"
 
 msgctxt "CountryInfo"
 msgid "Ghana"
@@ -652,7 +654,7 @@ msgstr ""
 
 msgctxt "CountryInfo"
 msgid "Guinea"
-msgstr "Hlavni"
+msgstr "Guinea"
 
 msgctxt "CountryInfo"
 msgid "Guinea-Bissau"
@@ -3290,4 +3292,3 @@ msgstr ""
 msgctxt "stringutil.h"
 msgid "%1 mins"
 msgstr ""
-
