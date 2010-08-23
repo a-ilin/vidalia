@@ -10,24 +10,26 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-08-23 17:08+0200\n"
+"Last-Translator: shadi <shadi@35point5.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.5.3\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/services.html:16
 msgid "Hidden Services"
-msgstr ""
+msgstr "الخدمات الخفية"
 
 #. type: Content of: <html><body>
 #: en/services.html:19
@@ -38,11 +40,15 @@ msgid ""
 "goes wrong. If you find bugs or have comments on this new feature, please "
 "let us know! We need your feedback.  <a name=\"about\"/>"
 msgstr ""
+"ملاحظة : دعم الخدمات الخفية هو جديد في فيداليا. يجب أن تتوقع إحتوائه على "
+"أخطاء، وبعضها ربما يفسد تكوين الخدمة الخفية الخاصة بك. لذا، لا تعتمد عليه، "
+"أو بالأحرى، لا تقم بلومنا إذا حدث خطأ ما. اذا وجدت أخطاء أو تعليقات على هذه "
+"الميزة الجديدة، يرجى إعلامنا! نحن بحاجة إلى ملاحظاتك.  <a name=\"about\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:26
 msgid "What is a hidden service?"
-msgstr ""
+msgstr "ما هي الخدمة الخفية؟"
 
 #. type: Content of: <html><body><p>
 #: en/services.html:28
@@ -52,6 +58,11 @@ msgid ""
 "provide a hidden service is built on top of the same circuits that Tor uses "
 "for anonymous browsing and roughly has similar anonymity properties."
 msgstr ""
+" تسمح لك الخدمات الخفية بتقديم أي نوع من الخدمة على أساس برنامج التعاون "
+"الفني (TCP), على سبيل المثال: خدمة بروتوكول نقل النص التشعبي (HTTP), للآخرين "
+"بدون الكشف عن عنوان IP الخاص بك. البروتوكول الذي يقوم بتوفير الخدمة الخفية "
+"يكون مبني على رأس الدوائر نفسها التي يستخدمها تور للتصفح المجهول وتقريبا "
+"لديه خصائص غير مكشوفة مشابهة."
 
 #. type: Content of: <html><body><p>
 #: en/services.html:35
@@ -60,21 +71,24 @@ msgid ""
 "Tor's design paper (doc/design-paper/tor-design.pdf) or the Rendezvous "
 "Specification (doc/spec/rend-spec.txt)."
 msgstr ""
+"للمزيد من المعلومات حول الخدمة الخفية قد تحتاج لقراءة المادة 5 لصفحة تصميم "
+"تور (doc/design-paper/tor-design.pdf) أو مواصفات المواعيد (doc/spec/rend-"
+"spec.txt)."
 
 #. type: Content of: <html><body>
 #: en/services.html:40
 msgid "<a name=\"provide\"/>"
-msgstr ""
+msgstr "<a name=\"provide\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:41
 msgid "How do I provide a hidden service?"
-msgstr ""
+msgstr "كيف يمكنني تقديم خدمة خفية؟"
 
 #. type: Content of: <html><body><p>
 #: en/services.html:43
 msgid "Providing a hidden service consists of at least two steps:"
-msgstr ""
+msgstr "توفير خدمة خفية يتكون على الاقل من خطوتين:"
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/services.html:45
@@ -82,6 +96,8 @@ msgid ""
 "Install a web server locally (or a server for whatever service you want to "
 "provide, e.g. IRC) to listen for local requests."
 msgstr ""
+"ثبت خادم الويب محليا (أو خادم لمهما كانت الخدمة التي ترغب في توفيرها, على "
+"سبيل المثال: دردشة مرحّل الإنترنت IRC) للاستماع للطلبات المحلية."
 
 #. type: Content of: <html><body><p><ol><li>
 #: en/services.html:47
@@ -89,6 +105,8 @@ msgid ""
 "Configure your hidden service, so that Tor relays requests coming from Tor "
 "users to your local server."
 msgstr ""
+"قم بتكوين الخدمة الخفية الخاصة بك، بحيث تأتي طلبات مرحلات تور من مستخدمي تور "
+"إلى الخادم المحلي الخاص بك."
 
 #. type: Content of: <html><body><p>
 #: en/services.html:50
@@ -97,16 +115,18 @@ msgid ""
 "(https://www.torproject.org/docs/tor-hidden-service.html) that describes "
 "these steps in more detail."
 msgstr ""
+"هناك برنامج تعليمي جيد على موقع تور (https://www.torproject.org/docs/tor-"
+"hidden-service.html) الذي يصف هذه الخطوات بتفصيل أكثر."
 
 #. type: Content of: <html><body>
 #: en/services.html:55
 msgid "<a name=\"data\"/>"
-msgstr ""
+msgstr "<a name=\"data\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:56
 msgid "What data do I need to provide?"
-msgstr ""
+msgstr "ما هي البيانات التي أحتاج لتوفيرها؟"
 
 #. type: Content of: <html><body><p>
 #: en/services.html:58
@@ -114,6 +134,8 @@ msgid ""
 "The services table contains five columns containing data about configured "
 "hidden services:"
 msgstr ""
+"جدول الخدمات يحتوي على خمسة أعمدة تحتوي على بيانات عن الخدمات الخفية "
+"المكوّنة:"
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:61
@@ -178,17 +200,17 @@ msgstr ""
 #. type: Content of: <html><body>
 #: en/services.html:103
 msgid "<a name=\"buttons\"/>"
-msgstr ""
+msgstr "<a name=\"buttons\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:104
 msgid "What are the five buttons used for?"
-msgstr ""
+msgstr "ما هي إستخدامات الأزرار الخمسة؟"
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:107
 msgid "Add service: Creates a new empty service configuration."
-msgstr ""
+msgstr "إضافة خدمة: إنشاء تكوين خدمة فارغ جديد."
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:108
@@ -196,6 +218,8 @@ msgid ""
 "Remove service: Permanently removes a hidden service configuration.  (If you "
 "want to temporarily remove a service, uncheck its Enabled checkbox.)"
 msgstr ""
+"إزالة خدمة: يزيل بشكل دائم تكوين خدمة خفية. (إذا كنت تريد إزالة خدمة مؤقتا، "
+"قم بإزالة التحديد من صندوق اختيار التمكين)."
 
 #. type: Content of: <html><body><p><ul><li>
 #: en/services.html:111
@@ -212,7 +236,7 @@ msgstr ""
 #. type: Content of: <html><body>
 #: en/services.html:119
 msgid "<a name=\"advanced\"/>"
-msgstr ""
+msgstr "<a name=\"advanced\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:120
@@ -240,12 +264,12 @@ msgstr ""
 #. type: Content of: <html><body>
 #: en/services.html:135
 msgid "<a name=\"client\"/>"
-msgstr ""
+msgstr "<a name=\"client\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/services.html:136
 msgid "How does Vidalia help me to access other hidden services?"
-msgstr ""
+msgstr "كيف يستطيع فيداليا مساعدتي للوصول الى خدمات خفية أخرى؟"
 
 #. type: Content of: <html><body><p>
 #: en/services.html:138
