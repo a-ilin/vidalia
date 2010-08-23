@@ -10,24 +10,26 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-06-26 17:00+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-08-23 06:11+0200\n"
+"Last-Translator: shadi <shadi@35point5.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.5.3\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Pootle 2.0.5\n"
 
 #. type: Content of: <html><body><h1>
 #: en/netview.html:16
 msgid "Network Viewer"
-msgstr ""
+msgstr "عارض الشبكة"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:20
@@ -35,16 +37,18 @@ msgid ""
 "The network viewer lets you see relays in the Tor network and where your "
 "traffic is going."
 msgstr ""
+"يسمح لك عارض الشبكة بمشاهدة المرحلات في شبكة تور والى أين تتجه حركة المرور "
+"الخاصة بك."
 
 #. type: Content of: <html><body>
 #: en/netview.html:25
 msgid "<a name=\"overview\"/>"
-msgstr ""
+msgstr "<a name=\"overview\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/netview.html:26
 msgid "Overview"
-msgstr ""
+msgstr "نظرة عامة"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:28
@@ -55,16 +59,21 @@ msgid ""
 "then sent as a <i>stream</i> through that circuit. For efficiency, multiple "
 "streams may share the same circuit."
 msgstr ""
+"عندما تريد الاتصال بشكل مجهول الهوية من خلال تور (مثال: الاتصال بموقع), سوف "
+"يقوم تور بإنشاء نفق, أو <i>دائرة</i>, من الاتصالات المشفرة من خلال سلسلة من "
+"المرحلات على الشبكة. يتم إرسال حركة مرور التطبيق الخاص بك بعد ذلك "
+"<i>كتيار</i> من خلال تلك الدائرة. للحصول على الكفاءة، يمكن ان تتشارك عدة "
+"تيارات في نفس الدائرة."
 
 #. type: Content of: <html><body>
 #: en/netview.html:35
 msgid "<a name=\"netmap\"/>"
-msgstr ""
+msgstr "<a name=\"netmap\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/netview.html:36
 msgid "Network Map"
-msgstr ""
+msgstr "خريطة الشبكة"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:38
@@ -74,6 +83,9 @@ msgid ""
 "are drawn between relays to indicate the path of circuits that your Tor "
 "client has created through the Tor network."
 msgstr ""
+"خريطة الشبكة تتكون من خريطة العالم, مع بروز باللون الأحمر يشير إلى الموقع "
+"الجغرافي للمرحّلات في شبكة تور. يتم رسم خطوط خضراء بين المرحّلات للإشارة إلى "
+"مسار الدوائر التي أنشأها عميل تور خاصتك من خلال شبكة تور."
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:44
@@ -83,6 +95,9 @@ msgid ""
 "map by clicking on the map and then dragging it in whatever direction you "
 "would like to move the map."
 msgstr ""
+"يمكنك تكبير المواقع في الخريطة بواسطة النقر على أزرار <b>تكبير</b> و "
+"<b>تصغير</b> في شريط الأدوات. يمكنك ايضا التنقل على الخريطة بواسطة النقر "
+"عليها تم سحبها الى اي اتجاه تريد تحريكها اليه."
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:50
@@ -91,6 +106,9 @@ msgid ""
 "address of the relay in a GeoIP database, created by MaxMind and located at "
 "geoip.vidalia-project.net."
 msgstr ""
+"يتم تحديد الموقع الجغرافي لمرحل تور عن طريق البحث عن عنوان IP للمرحل في "
+"قاعدة بيانات الموقع الجغرافي لعنوان بروتوكول الانترنت (GeoIP), تم إنشاؤها من "
+"قبل MaxMind وتقع في geoip.vidalia-project.net."
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:55
@@ -104,16 +122,24 @@ msgid ""
 "not revealed to the GeoIP relay. The results of the lookups will be cached "
 "locally in order to reduce load on Vidalia's GeoIP relays."
 msgstr ""
+"في منتصف صندوق الحوار, أسقل خريطة الشبكة, سترى قائمة من الدوائر الحالية ، "
+"فضلا عن أي حركة مرور حاليا للتطبيق على تلك الدوائر. عند تحميل خريطة الشبكة "
+"لأول مرة, فإنك على الاغلب سترى اتصال الى geoip.vidalia-project.net, الذي "
+"يحدث عندما يقوم فيداليا بالبحث عن معلومات جغرافية لقائمة مرحلات تور. من "
+"المهم ملاحظة أن هذا الطلب تم من خلال تور, بحيث لا يتم كشف موقعك لمرحل الموقع "
+"الجغرافي لعنوان بروتوكول الانترنت (GeoIP).نتائج عمليات البحث سوف تكون محلية "
+"مؤقتا من اجل الحد من حمل على مرحلات الموقع الجغرافي لعنوان بروتوكول "
+"الانترنت (GeoIP) لفيداليا."
 
 #. type: Content of: <html><body>
 #: en/netview.html:66
 msgid "<a name=\"relaylist\"/>"
-msgstr ""
+msgstr "<a name=\"relaylist\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/netview.html:67
 msgid "Relay Status"
-msgstr ""
+msgstr "حالة المرحل"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:69
@@ -122,11 +148,14 @@ msgid ""
 "Tor network. Next to each relay is an icon indicating that relay's status.  "
 "The following table summarizes the possible relay status icons:"
 msgstr ""
+"على الجانب الأيسر من عرض الشبكة، سترى قائمة المرحلات في شبكة تور. بجانب كل "
+"مرحل هو رمز يشير إلى حالة المرحل. يلخص الجدول التالي رموز حالة المرحّل "
+"الممكنة:"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:78
 msgid "The relay is offline or simply not responding."
-msgstr ""
+msgstr "المرحّل غير متصل او ببساطة لا يستجيب."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:84
@@ -134,26 +163,28 @@ msgid ""
 "The relay is <i>hibernating</i>, meaning it is online, but has used up as "
 "much bandwidth as the operator is willing to allow for a given time period."
 msgstr ""
+"المرحّل <i>يدخل في سبات</i>, بمعنى انه متصل, لكن قد إستخدم الكثير من عرض "
+"النطاق الترددي كما المشغل على إستعداد للسماح لفترة زمنية معينة."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:92
 msgid "The relay is online, but has shown only minimal throughput."
-msgstr ""
+msgstr "المرحّل متصل، لكن قد أظهر الحد الأدنى فقط من الناتج. "
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:98
 msgid "The relay is online and has shown a throughput &gt;= 20 KB/s."
-msgstr ""
+msgstr "المرحل متصل وقد أظهر ناتج أكبر من= 20 كيلو بايت في الثانية."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:104
 msgid "The relay is online and has shown a throughput &gt;= 60 KB/s."
-msgstr ""
+msgstr "المرحل متصل وقد أظهر ناتج أكبر من= 60 كيلو بايت في الثانية."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:110
 msgid "The relay is online and has shown a throughput &gt;= 400 KB/s."
-msgstr ""
+msgstr "المرحل متصل وقد أظهر ناتج أكبر من= 400 كيلو بايت في الثانية."
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:116
@@ -162,16 +193,19 @@ msgid ""
 "maximum bandwidth sustained input or output over any ten second period in "
 "the past day."
 msgstr ""
+"جميع قيم عرض النطاق الترددي تقدر استناداً إلى الحد الأدنى من إما الإدخال أو "
+"الإخراج المطّرد لعرض النطاق الترددي الاقصى أكثر من أي فترة عشرة ثانية في "
+"اليوم السابق."
 
 #. type: Content of: <html><body>
 #: en/netview.html:122
 msgid "<a name=\"details\"/>"
-msgstr ""
+msgstr "<a name=\"details\"/>"
 
 #. type: Content of: <html><body><h3>
 #: en/netview.html:123
 msgid "Relay Details"
-msgstr ""
+msgstr "تفاصيل المرحّل"
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:125
@@ -182,6 +216,11 @@ msgid ""
 "in the list of your current circuits and streams, this panel will show you "
 "details about each relay through which your traffic is currently being sent."
 msgstr ""
+"تظهر لوحة تفاصيل المرحّل على الجانب الايمن من الشاشة تعطيك تفاصيل حول "
+"المرحّل أو المرحلات المختارة حاليا في <a href=\"#relaylist\">قائمة "
+"المرحّل</a>. اذا قمت بإختيار دائرة او تيار في قائمة الدوائر والتيارات "
+"الحالية الخاصة بك, سوف تظهر لك هذه اللوحة تفاصيل حول كل مرحل والذي من خلاله "
+"تم إرسال حركة مرور خاصة بك حاليا."
 
 #. type: Content of: <html><body><p>
 #: en/netview.html:132
@@ -189,43 +228,47 @@ msgid ""
 "The fields that you may see in the panel are as follows (<i>Note</i>: not "
 "all of these fields will always be present):"
 msgstr ""
+"الحقول التي قد تراها في اللوحة هي كما يلي (<i>لاحظ</i>: ليست كل هذه الحقول "
+"سوف تكون حاضرة دائما):"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:138
 msgid "<b>Location</b>"
-msgstr ""
+msgstr "<b>موقع</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:139
 msgid "The geographic location of this Tor relay."
-msgstr ""
+msgstr "الموقع الجغرافي لمرحّل تور هذا."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:142
 msgid "<b>IP Address</b>"
-msgstr ""
+msgstr "<b>عنوان بروتوكول الانترنت (IP)</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:143
 msgid "IP address at which this Tor relay can be reached."
 msgstr ""
+"عنوان بروتوكول الإنترنت (IP) الذي يمكن ان يقوم مرحّل تور هذا من الوصول إليه. "
+""
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:146
 msgid "<b>Platform</b>"
-msgstr ""
+msgstr "<b>النظام الأساسي</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:148
 msgid ""
 "Operating system information and Tor version on which this relay is "
 "currently running."
-msgstr ""
+msgstr "معلومات نظام التشغيل وإصدار تور الذي يتم حاليا تشغيل هذا المرحل عليه."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:153
 msgid "<b>Bandwidth</b>"
-msgstr ""
+msgstr "<b>عرض النطاق الترددي</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:155
@@ -233,11 +276,13 @@ msgid ""
 "Estimated maximum amount of bandwidth that the directory relays have seen "
 "this relay handle recently."
 msgstr ""
+"أقصى مقدار مقدر لعرض النطاق الترددي الذي عنده لاحظت مرحّلات الدليل التعامل "
+"مع هذا المرحّل مؤخرا. "
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:160
 msgid "<b>Uptime</b>"
-msgstr ""
+msgstr "<b>الجهوزية</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:162
@@ -245,13 +290,15 @@ msgid ""
 "Length of time this relay has been available, which can be used to help "
 "estimate this relay's stability."
 msgstr ""
+"طول الوقت الذي كان فيه المرحّل متوفرا, والذي يمكن استخدامه للمساعدة في تقدير "
+"إستقرار هذا المرحّل."
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:167
 msgid "<b>Last Updated</b>"
-msgstr ""
+msgstr "<b>آخر تحديث</b>"
 
 #. type: Content of: <html><body><p><table><tr><td>
 #: en/netview.html:168
 msgid "Date this relay's information was last updated."
-msgstr ""
+msgstr "تاريخ آخر تحديث لمعلومات هذا المرحل."
