@@ -10,24 +10,26 @@
 #   propagated, or distributed except according to the terms described
 #   in the LICENSE file.
 # 
-#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-08-03 15:49-0300\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2010-08-24 01:56+0200\n"
+"Last-Translator: shadi <shadi@35point5.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: ar\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Translate Toolkit 1.5.3\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+"X-Generator: Pootle 2.0.5\n"
 
 # type: Content of: <html><body><h1>
 #: en/troubleshooting.html:16
 msgid "Troubleshooting"
-msgstr ""
+msgstr "إستكشاف الأخطاء وإصلاحها"
 
 # type: Content of: <html><body>
 #: en/troubleshooting.html:19
@@ -37,11 +39,15 @@ msgid ""
 "having, check out our website at <i>www.vidalia-project.net</i> for more "
 "support and information.  <a name=\"start\"/>"
 msgstr ""
+"المدرجة أدناه هي بعض من المشاكل أو الأسئلة الأكثر شيوعا لدى الناس أثناء "
+"تشغيل تور. إذا لم تتمكن من العثور على أي شيء حول مشكلة معينة تواجهك, راجع "
+"موقعنا على شبكة الإنترنت على <i>www.vidalia-project.net</i> للمزيد من الدعم "
+"والمعلومات.  <a name=\"start\"/>"
 
 # type: Content of: <html><body><h3>
 #: en/troubleshooting.html:25
 msgid "I Can't Start Tor"
-msgstr ""
+msgstr "لا أستطيع تشغيل تور"
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:27
@@ -51,6 +57,10 @@ msgid ""
 "Vidalia where Tor is located by updating the <i>Tor Executable</i> option in "
 "the <a href=\"config.html#general\">general configuration settings</a>."
 msgstr ""
+"السبب الأكثر احتمالا أن فيداليا لا يستطيع تشغيل تورهو لأن فيداليا يبحث عن "
+"تثبيت تور الخاص بك في الدليل خاطئ. يمكنك إخبار فيداليا عن موقع تور عن طريق "
+"تحديث خيار <i>تور التنفيذي</i> في <a href=\"config.html#general\">إعدادات "
+"التكوين العامة</a>."
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:33
@@ -59,6 +69,9 @@ msgid ""
 "another Tor process running. Check your list of running process and stop the "
 "previous Tor process, if you find one. Then, try running Tor again."
 msgstr ""
+"السبب المحتمل آخر وراء عدم إمكانية تشغيل تور أن هناك عملية تور أخرى قيد "
+"التشغيل. تحقق من قائمة العمليات قيد التشغيل الخاصة بك وأوقف عملية تور "
+"السابقة، اذا وجد. ثم، حاول تشغيل تور مرة أخرى."
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:38
@@ -67,21 +80,23 @@ msgid ""
 "if Tor printed any information about errors it encountered while trying to "
 "start."
 msgstr ""
+"إذا لم يساعد ذلك, تحقق من <a href=\"log.html\">سجل الرسالة</a> الخاص بك لمعرفة "
+"اذا قام تور بطباعة أية معلومات حول الأخطاء التي حصلت أثناء محاولة التشغيل."
 
 # type: Content of: <html><body>
 #: en/troubleshooting.html:43
 msgid "<a name=\"connect\"/>"
-msgstr ""
+msgstr "<a name=\"connect\"/>"
 
 # type: Content of: <html><body><h3>
 #: en/troubleshooting.html:44
 msgid "Vidalia Can't Connect to Tor"
-msgstr ""
+msgstr "لا يستطيع فيداليا الاتصال بتور"
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:46
 msgid "Vidalia manages Tor by communicating with it via Tor's <i>control port</i>."
-msgstr ""
+msgstr "يقوم فيداليا بإدارة تور عن طريق الاتصال معه عبر <i>منفذ التحكم</i>لتور."
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:49
@@ -91,6 +106,10 @@ msgid ""
 "your <a href=\"log.html\">message log</a> to see if Tor reported any errors "
 "while it started."
 msgstr ""
+"السبب الأكثر شيوعا وراء عدم إستطاعة فيداليا الاتصال بتور هو ان تور بدأ, لكن "
+"واجهه خطأ وخرج على الفور. ينبغي عليك التحقق من <a href=\"log.html\">سجل "
+"الرسالة</a> الخاص بك لمعرفة اذا كان تور أبلغ عن أي أخطاء في الوقت الذي بدأ "
+"به."
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:55
@@ -102,16 +121,21 @@ msgid ""
 "setting in Vidalia's <a href=\"config.html#advanced\">advanced configuration "
 "settings</a>."
 msgstr ""
+"إذا كان تور يستمع على منفذ مختلف عن الذي توقّعه فيداليا, سوف يكون فيداليا "
+"غير قادر على الاتصال بتور. نادرا ما تحتاج إلى تغيير هذا الإعداد, لكن إذا "
+"كانت هناك خدمة أخرى تعمل على جهازك الذي يتعارض مع منفذ تحكم تور, سوف تحتاج "
+"الى تحديد منفذ آخر. يمكنك تغيير هذا الاعداد في اعدادات التكوين <a "
+"href=\"config.html#advanced\">المتقدمة لفيداليا</a>."
 
 # type: Content of: <html><body>
 #: en/troubleshooting.html:63
 msgid "<a name=\"password\"/>"
-msgstr ""
+msgstr "<a name=\"password\"/>"
 
 # type: Content of: <html><body><h3>
 #: en/troubleshooting.html:64
 msgid "Why is Vidalia asking me for a \"control password\"?"
-msgstr ""
+msgstr "لماذا يسألني فيداليا عن \"كلمة مرور التحكم\"؟"
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:66
@@ -123,6 +147,11 @@ msgid ""
 "applications from also connecting to the control port and potentially "
 "compromising your anonymity."
 msgstr ""
+"يتفاعل فيداليا مع برنامج تور عن طريق \"منفذ التحكم\" لتور. يتيح منفذ التحكم "
+"لفيداليا بتلقي تحديثات الحالة من تور, طلب هوية جديدة, تكوين اعدادات تور, "
+"إلخ. في كل مرة يقوم فيداليا بتشغيل تور, يقوم بضبط كلمة مرور عشوائية لمنفذ "
+"تحكم تور لمنع التطبيقات الأخرى من الاتصال بمنفذ التحكم وإحتمالية كشف حالة "
+"التخفّي الخاصة بك."
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:75
@@ -131,6 +160,8 @@ msgid ""
 "happens in the background. There are three common situations, though, where "
 "Vidalia may prompt you for a password:"
 msgstr ""
+"عادة تحدث عملية توليد وضبط كلمة مرور التحكم العشوائية هذه في الخلفية. هناك "
+"ثلاث حالات شائعة، رغم ذلك, حيث قد يطالبك فيداليا بكلمة مرور:"
 
 # type: Content of: <html><body><ul><li>
 #: en/troubleshooting.html:82
@@ -140,6 +171,9 @@ msgid ""
 "Tor Browser Bundle. In that case, you'll need to close the old Vidalia and "
 "Tor before you can run this one."
 msgstr ""
+"فيداليا وتور قيد التشغيل فعليا. على سبيل المثال: يمكن أن يحدث هذا الموقف إذا "
+"قمت بتثبيت حزمة فيداليا والآن تحاول تشغيل حزمة متصفح تور. في هذه الحالة, "
+"ستحتاج إلى إغلاق فيداليا وتور القدماء قبل أن تتمكن من تشغيلها."
 
 # type: Content of: <html><body><ul><li><p>
 #: en/troubleshooting.html:89
@@ -148,6 +182,9 @@ msgid ""
 "password. After you restart Vidalia, it generates a new random password, but "
 "Vidalia can't talk to Tor, because the random passwords are different."
 msgstr ""
+"إنهار فيداليا, لكنه ترك تور قيد التشغيل مع آخر كلمة مرور عشوائية معروفة. بعد "
+"إعادة تشغيل فيداليا, يقوم بتوليد كلمة مرور عشوائية جديدة, لكن لن يتمكن "
+"فيداليا من مخاطبة تور, لأن كلمات المرور العشوائية مختلفة."
 
 # type: Content of: <html><body><ul><li><p>
 #: en/troubleshooting.html:94
@@ -156,6 +193,9 @@ msgid ""
 "button, you can click the button and Vidalia will restart Tor with a new "
 "random control password."
 msgstr ""
+"اذا إحتوى صندوق الحوار الذي يطالبك بكلمة مرور التحكم على زر<i>إعادة ضبط</i> "
+", يمكنك النقر على الزر وسيقوم فيداليا بإعادة تشغيل تور مع كلمة مرور تحكم "
+"عشوائية جديدة."
 
 # type: Content of: <html><body><ul><li><p>
 #: en/troubleshooting.html:99
@@ -165,6 +205,10 @@ msgid ""
 "process or task manager, and terminate the Tor process. Then use Vidalia to "
 "restart Tor and all will work again."
 msgstr ""
+"اذا كنت لا ترى <i>Reset</i> الزر, أو إذا كان فيداليا غير قادر على إعادة "
+"تشغيل تور لك, لا يزال يمكنك حل المشكلة يدويا. ببساطة إذهب إلى عمليتك أو مدير "
+"المهام, وقم بإنهاء عملية تور. ثم استخدم فيداليا لإعادة تشغيل تور وسوف يعمل "
+"الجميع مرة أخرى."
 
 # type: Content of: <html><body><ul><li><p>
 #: en/troubleshooting.html:106
@@ -177,6 +221,12 @@ msgid ""
 "running Tor. Vidalia generates a random password, but it is different than "
 "the saved password in the Tor service."
 msgstr ""
+"لقد قمت بضبط تور سابقا ليعمل كخدمة. عند ضبط تور للعمل كخدمة, يبدأ بالتشغيل "
+"عند تشغيل النظام. إذا قمت بتكوين تور للبدء كخدمة من خلال فيداليا, يتم ضبط "
+"كلمة مرور عشوائية وحفظها في تور. عند إعادة تشغيل الكمبيوتر, يبدأ تور "
+"بالتشغيل ويستخدم كلمة المرور العشوائية التي خزّنها. يمكنك تسجيل الدخول وبدء "
+"تشغيل فيداليا. يحاول فيداليا مخاطبة تور قيد التشغيل مسبقا. يقوم فيداليا "
+"بتوليد كلمة مرور عشوائية, لكنها مختلفة عن كلمة المرور المحفوظة في خدمة تور."
 
 # type: Content of: <html><body><ul><li><p>
 #: en/troubleshooting.html:114
@@ -186,16 +236,19 @@ msgid ""
 "href=\"https://wiki.torproject.org/noreply/TheOnionRouter/TorFAQ#WinNTService\"> "
 "Tor as a service</a> for more information on how to remove the Tor service."
 msgstr ""
+"تحتاج الى إعادة تكوين تور حتى لا يكون خدمة. أنظر صفحة تور ويكي (wiki) حول "
+"تشغيل <a href=\"https://wiki.torproject.org/noreply/TheOnionRouter/TorFAQ#Win"
+"NTService\"> تور كخدمة</a> للمزيد من المعلومات حول كيفية إزالة خدمة تور."
 
 # type: Content of: <html><body>
 #: en/troubleshooting.html:122
 msgid "<a name=\"torexited\"/>"
-msgstr ""
+msgstr "<a name=\"torexited\"/>"
 
 # type: Content of: <html><body><h3>
 #: en/troubleshooting.html:123
 msgid "Tor Exited Unexpectedly"
-msgstr ""
+msgstr "خروج تور بشكل غير متوقع"
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:125
@@ -205,6 +258,10 @@ msgid ""
 "to see if any of the last few messages in the list are highlighted in yellow "
 "and contain a message similar to the following:"
 msgstr ""
+"إذا خرج تور مباشرة بعد محاولة بدء تشغيل, من المرجح أن يكون لديك عملية تور "
+"أخرى قيد التشغيل. تحقق من <a href=\"log.html\">سجل الرسالة</a>لترى اذا كان أي "
+"من الرسائل القليلة السابقة في القائمة بارزة باللون الأصفر وتحتوي على رسالة "
+"مشابهة للتالي:"
 
 # type: Content of: <html><body><pre>
 #: en/troubleshooting.html:131
@@ -214,6 +271,8 @@ msgid ""
 "already in use. \n"
 "Is Tor already running?\n"
 msgstr ""
+"اتصال_ينشيء_مستمع(): لم يمكن الربط الى 127.0.0.1:9050: عنوان قيد الاستخدام. \n"
+"هل تور قيد التشغيل؟\n"
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:135
@@ -237,12 +296,12 @@ msgstr ""
 # type: Content of: <html><body>
 #: en/troubleshooting.html:147
 msgid "<a name=\"stop\"/>"
-msgstr ""
+msgstr "<a name=\"stop\"/>"
 
 # type: Content of: <html><body><h3>
 #: en/troubleshooting.html:148
 msgid "Vidalia Can't Stop Tor"
-msgstr ""
+msgstr "لا يستطيع فيداليا إيقاف تور"
 
 # type: Content of: <html><body><p>
 #: en/troubleshooting.html:150
@@ -251,3 +310,6 @@ msgid ""
 "href=\"log.html\">message log</a> to see if Tor reported any errors while "
 "trying to exit."
 msgstr ""
+"اذا لم يستطع فيداليا إيقاف تور, يجب عليك التحقق من <a href=\"log.html\">سجل "
+"الرسالة</a> الخاص بك لمعرفة اذا كان تور أبلغ عن أي أخطاء أثناء محاولته "
+"الخروج."
